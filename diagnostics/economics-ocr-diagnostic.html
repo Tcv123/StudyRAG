@@ -446,7 +446,7 @@ function renderWritten(q) {
       </div>
       <div class="diagram-canvas-wrap"><canvas id="drawCanvas" width="700" height="300"></canvas></div>
     </div>
-    <p class="diagram-label">Use the drawing tools above to sketch your diagram</p>` : ''}
+    <p class="diagram-label" id="diagramLabel">Use the drawing tools above to sketch your diagram</p>` : ''}
     <textarea class="written-area" id="writtenInput" placeholder="Write your answer here…"></textarea>
     <p class="written-hint">${q.diagram ? 'Draw your diagram above and write your explanation below.' : 'Write your answer above, then reveal the model answer to compare.'}</p>
     <button class="btn-reveal" id="btnReveal" onclick="revealModel()">Reveal Model Answer</button>
@@ -641,7 +641,13 @@ function saveUndoState() {
   drawState.redoStack = [];
 }
 
+function hideDrawLabel() {
+  const lbl = document.getElementById('diagramLabel');
+  if (lbl) lbl.style.display = 'none';
+}
+
 function canvasDown(x, y) {
+  hideDrawLabel();
   const s = drawState;
   if (s.tool === 'text') {
     const text = prompt('Enter label text:');
