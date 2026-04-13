@@ -116,12 +116,22 @@
     .written-area { width: 100%; min-height: 160px; padding: 18px 20px; background: var(--surface2); border: 2px solid var(--border); border-radius: 14px; color: var(--text); font-family: var(--font-body); font-size: 16px; font-weight: 500; line-height: 1.6; resize: vertical; outline: none; transition: border-color 0.15s; }
     .written-area::placeholder { color: var(--muted2); }
     .written-area:focus { border-color: var(--accent); }
-    .diagram-area { margin: 16px 0; border: 2px dashed var(--border); border-radius: 14px; padding: 16px; background: var(--surface2); position: relative; }
-    .diagram-area::before { content: '✏️ Draw your diagram here'; position: absolute; top: 8px; left: 16px; font-size: 12px; color: var(--muted2); pointer-events: none; }
-    .diagram-area canvas { width: 100%; height: 250px; cursor: crosshair; display: block; border-radius: 8px; }
-    .diagram-tools { display: flex; gap: 8px; margin-top: 8px; }
-    .diagram-tools button { padding: 6px 14px; font-size: 12px; font-weight: 600; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; font-family: var(--font-body); }
-    .diagram-tools button:hover { border-color: var(--accent); color: var(--accent); }
+    .diagram-area { margin: 16px 0; border: 2px solid var(--border); border-radius: 14px; overflow: hidden; background: #fff; }
+    .draw-toolbar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: var(--surface2); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .draw-toolbar .tool-group { display: flex; align-items: center; gap: 4px; padding-right: 10px; margin-right: 6px; border-right: 1px solid var(--border); }
+    .draw-toolbar .tool-group:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .draw-btn { width: 34px; height: 34px; border-radius: 8px; border: 2px solid var(--border); background: var(--surface); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: all 0.15s; padding: 0; }
+    .draw-btn:hover { border-color: var(--accent); background: rgba(91,173,207,0.08); }
+    .draw-btn.active { border-color: var(--accent); background: rgba(91,173,207,0.15); box-shadow: 0 0 0 2px rgba(91,173,207,0.2); }
+    .draw-btn-wide { height: 34px; padding: 0 12px; border-radius: 8px; border: 2px solid var(--border); background: var(--surface); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 12px; font-weight: 600; font-family: var(--font-body); color: var(--muted); transition: all 0.15s; }
+    .draw-btn-wide:hover { border-color: var(--accent); color: var(--accent); }
+    .color-swatch { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border); cursor: pointer; transition: all 0.15s; padding: 0; }
+    .color-swatch:hover, .color-swatch.active { border-color: var(--text); transform: scale(1.15); box-shadow: 0 0 0 2px rgba(91,173,207,0.3); }
+    .size-slider { width: 70px; height: 6px; -webkit-appearance: none; appearance: none; background: var(--border); border-radius: 3px; outline: none; cursor: pointer; }
+    .size-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); cursor: pointer; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+    .size-label { font-size: 11px; color: var(--muted); font-weight: 600; min-width: 22px; text-align: center; }
+    .diagram-canvas-wrap { position: relative; cursor: crosshair; }
+    .diagram-canvas-wrap canvas { display: block; width: 100%; }
     .diagram-label { font-size: 12px; color: var(--muted); margin-top: 6px; font-style: italic; }
     .written-hint { font-size: 13px; color: var(--muted); margin-top: 10px; }
 
@@ -404,7 +414,39 @@ function renderMCQ(q) {
 
 function renderWritten(q) {
   return `
-    ${q.diagram ? '<div class="diagram-area"><canvas id="drawCanvas" width="600" height="250"></canvas><div class="diagram-tools"><button onclick="clearCanvas()">🗑️ Clear</button><button onclick="toggleEraser()">🧹 Eraser</button></div></div><p class="diagram-label">Use the canvas above to sketch your diagram</p>' : ''}
+    ${q.diagram ? `<div class="diagram-area">
+      <div class="draw-toolbar">
+        <div class="tool-group">
+          <button class="draw-btn active" id="toolPen" onclick="setTool('pen')" title="Pen">✏️</button>
+          <button class="draw-btn" id="toolLine" onclick="setTool('line')" title="Straight Line">📏</button>
+          <button class="draw-btn" id="toolRect" onclick="setTool('rect')" title="Rectangle">⬜</button>
+          <button class="draw-btn" id="toolCircle" onclick="setTool('circle')" title="Circle">⭕</button>
+          <button class="draw-btn" id="toolArrow" onclick="setTool('arrow')" title="Arrow">➡️</button>
+          <button class="draw-btn" id="toolText" onclick="setTool('text')" title="Text">🔤</button>
+          <button class="draw-btn" id="toolEraser" onclick="setTool('eraser')" title="Eraser">🧹</button>
+        </div>
+        <div class="tool-group">
+          <button class="color-swatch active" style="background:#1B2D4F" onclick="setColor('#1B2D4F')" data-color="#1B2D4F"></button>
+          <button class="color-swatch" style="background:#DC2626" onclick="setColor('#DC2626')" data-color="#DC2626"></button>
+          <button class="color-swatch" style="background:#16A34A" onclick="setColor('#16A34A')" data-color="#16A34A"></button>
+          <button class="color-swatch" style="background:#2563EB" onclick="setColor('#2563EB')" data-color="#2563EB"></button>
+          <button class="color-swatch" style="background:#D97706" onclick="setColor('#D97706')" data-color="#D97706"></button>
+          <button class="color-swatch" style="background:#7C3AED" onclick="setColor('#7C3AED')" data-color="#7C3AED"></button>
+          <button class="color-swatch" style="background:#000000" onclick="setColor('#000000')" data-color="#000000"></button>
+        </div>
+        <div class="tool-group">
+          <span class="size-label" id="sizeLabel">2</span>
+          <input type="range" class="size-slider" id="sizeSlider" min="1" max="12" value="2" oninput="setSize(this.value)">
+        </div>
+        <div class="tool-group">
+          <button class="draw-btn-wide" onclick="undoDraw()" title="Undo">↩️ Undo</button>
+          <button class="draw-btn-wide" onclick="redoDraw()" title="Redo">↪️ Redo</button>
+          <button class="draw-btn-wide" onclick="clearCanvas()" title="Clear All">🗑️ Clear</button>
+        </div>
+      </div>
+      <div class="diagram-canvas-wrap"><canvas id="drawCanvas" width="700" height="300"></canvas></div>
+    </div>
+    <p class="diagram-label">Use the drawing tools above to sketch your diagram</p>` : ''}
     <textarea class="written-area" id="writtenInput" placeholder="Write your answer here…"></textarea>
     <p class="written-hint">${q.diagram ? 'Draw your diagram above and write your explanation below.' : 'Write your answer above, then reveal the model answer to compare.'}</p>
     <button class="btn-reveal" id="btnReveal" onclick="revealModel()">Reveal Model Answer</button>
@@ -476,46 +518,157 @@ function selfMark(level) {
   document.getElementById('btnNext').classList.add('show');
 }
 
-let isEraser = false;
+// ═══ DRAWING ENGINE ═══
+let drawState = {
+  tool: 'pen', color: '#1B2D4F', size: 2,
+  drawing: false, canvas: null, ctx: null,
+  undoStack: [], redoStack: [], snapshot: null,
+  startX: 0, startY: 0, textMode: false
+};
 
 function initCanvas() {
   const canvas = document.getElementById('drawCanvas');
   if (!canvas) return;
-  canvas.width = canvas.offsetWidth;
-  canvas.height = 250;
+  const wrap = canvas.parentElement;
+  canvas.width = wrap.offsetWidth;
+  canvas.height = 300;
   const ctx = canvas.getContext('2d');
   ctx.fillStyle = '#fff';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  let drawing = false;
-  canvas.addEventListener('mousedown', e => { drawing = true; ctx.beginPath(); ctx.moveTo(e.offsetX, e.offsetY); });
-  canvas.addEventListener('mousemove', e => {
-    if (drawing) {
-      ctx.lineTo(e.offsetX, e.offsetY);
-      ctx.strokeStyle = isEraser ? '#FFFFFF' : '#1B2D4F';
-      ctx.lineWidth = isEraser ? 20 : 2;
-      ctx.stroke();
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  drawState.canvas = canvas;
+  drawState.ctx = ctx;
+  drawState.undoStack = [];
+  drawState.redoStack = [];
+  drawState.drawing = false;
+  saveUndoState();
+
+  canvas.onmousedown = e => canvasDown(e.offsetX, e.offsetY);
+  canvas.onmousemove = e => canvasMove(e.offsetX, e.offsetY);
+  canvas.onmouseup = e => canvasUp(e.offsetX, e.offsetY);
+  canvas.onmouseleave = () => { if (drawState.drawing) canvasUp(0, 0); };
+  canvas.ontouchstart = e => { e.preventDefault(); const r = canvas.getBoundingClientRect(); canvasDown(e.touches[0].clientX - r.left, e.touches[0].clientY - r.top); };
+  canvas.ontouchmove = e => { e.preventDefault(); const r = canvas.getBoundingClientRect(); canvasMove(e.touches[0].clientX - r.left, e.touches[0].clientY - r.top); };
+  canvas.ontouchend = e => { e.preventDefault(); canvasUp(0, 0); };
+}
+
+function saveUndoState() {
+  if (!drawState.canvas) return;
+  drawState.undoStack.push(drawState.canvas.toDataURL());
+  if (drawState.undoStack.length > 30) drawState.undoStack.shift();
+  drawState.redoStack = [];
+}
+
+function canvasDown(x, y) {
+  const s = drawState;
+  if (s.tool === 'text') {
+    const text = prompt('Enter label text:');
+    if (text) {
+      s.ctx.font = `${Math.max(s.size * 4, 14)}px 'DM Sans', sans-serif`;
+      s.ctx.fillStyle = s.color;
+      s.ctx.fillText(text, x, y);
+      saveUndoState();
     }
-  });
-  canvas.addEventListener('mouseup', () => drawing = false);
-  canvas.addEventListener('mouseleave', () => drawing = false);
-  canvas.addEventListener('touchstart', e => { e.preventDefault(); drawing = true; const r = canvas.getBoundingClientRect(); ctx.beginPath(); ctx.moveTo(e.touches[0].clientX - r.left, e.touches[0].clientY - r.top); });
-  canvas.addEventListener('touchmove', e => { e.preventDefault(); if (drawing) { const r = canvas.getBoundingClientRect(); ctx.lineTo(e.touches[0].clientX - r.left, e.touches[0].clientY - r.top); ctx.strokeStyle = isEraser ? '#FFFFFF' : '#1B2D4F'; ctx.lineWidth = isEraser ? 20 : 2; ctx.stroke(); } });
-  canvas.addEventListener('touchend', () => drawing = false);
+    return;
+  }
+  s.drawing = true;
+  s.startX = x;
+  s.startY = y;
+  s.snapshot = s.ctx.getImageData(0, 0, s.canvas.width, s.canvas.height);
+  if (s.tool === 'pen' || s.tool === 'eraser') {
+    s.ctx.beginPath();
+    s.ctx.moveTo(x, y);
+  }
+}
+
+function canvasMove(x, y) {
+  const s = drawState;
+  if (!s.drawing) return;
+  if (s.tool === 'pen' || s.tool === 'eraser') {
+    s.ctx.strokeStyle = s.tool === 'eraser' ? '#FFFFFF' : s.color;
+    s.ctx.lineWidth = s.tool === 'eraser' ? s.size * 6 : s.size;
+    s.ctx.lineTo(x, y);
+    s.ctx.stroke();
+  } else {
+    s.ctx.putImageData(s.snapshot, 0, 0);
+    s.ctx.strokeStyle = s.color;
+    s.ctx.lineWidth = s.size;
+    s.ctx.beginPath();
+    if (s.tool === 'line') {
+      s.ctx.moveTo(s.startX, s.startY);
+      s.ctx.lineTo(x, y);
+    } else if (s.tool === 'rect') {
+      s.ctx.rect(s.startX, s.startY, x - s.startX, y - s.startY);
+    } else if (s.tool === 'circle') {
+      const rx = Math.abs(x - s.startX) / 2, ry = Math.abs(y - s.startY) / 2;
+      const cx = s.startX + (x - s.startX) / 2, cy = s.startY + (y - s.startY) / 2;
+      s.ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
+    } else if (s.tool === 'arrow') {
+      s.ctx.moveTo(s.startX, s.startY);
+      s.ctx.lineTo(x, y);
+      s.ctx.stroke();
+      const angle = Math.atan2(y - s.startY, x - s.startX);
+      const headLen = 12 + s.size * 2;
+      s.ctx.beginPath();
+      s.ctx.moveTo(x, y);
+      s.ctx.lineTo(x - headLen * Math.cos(angle - 0.4), y - headLen * Math.sin(angle - 0.4));
+      s.ctx.moveTo(x, y);
+      s.ctx.lineTo(x - headLen * Math.cos(angle + 0.4), y - headLen * Math.sin(angle + 0.4));
+    }
+    s.ctx.stroke();
+  }
+}
+
+function canvasUp(x, y) {
+  if (!drawState.drawing) return;
+  drawState.drawing = false;
+  saveUndoState();
+}
+
+function setTool(t) {
+  drawState.tool = t;
+  document.querySelectorAll('.draw-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('tool' + t.charAt(0).toUpperCase() + t.slice(1));
+  if (btn) btn.classList.add('active');
+  if (drawState.canvas) drawState.canvas.style.cursor = t === 'text' ? 'text' : t === 'eraser' ? 'cell' : 'crosshair';
+}
+
+function setColor(c) {
+  drawState.color = c;
+  document.querySelectorAll('.color-swatch').forEach(s => s.classList.toggle('active', s.dataset.color === c));
+}
+
+function setSize(v) {
+  drawState.size = parseInt(v);
+  document.getElementById('sizeLabel').textContent = v;
+}
+
+function undoDraw() {
+  const s = drawState;
+  if (s.undoStack.length <= 1) return;
+  s.redoStack.push(s.undoStack.pop());
+  const img = new Image();
+  img.onload = () => { s.ctx.clearRect(0, 0, s.canvas.width, s.canvas.height); s.ctx.drawImage(img, 0, 0); };
+  img.src = s.undoStack[s.undoStack.length - 1];
+}
+
+function redoDraw() {
+  const s = drawState;
+  if (s.redoStack.length === 0) return;
+  const data = s.redoStack.pop();
+  s.undoStack.push(data);
+  const img = new Image();
+  img.onload = () => { s.ctx.clearRect(0, 0, s.canvas.width, s.canvas.height); s.ctx.drawImage(img, 0, 0); };
+  img.src = data;
 }
 
 function clearCanvas() {
-  const canvas = document.getElementById('drawCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  ctx.fillStyle = '#fff';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-}
-
-function toggleEraser() {
-  isEraser = !isEraser;
-  const btn = document.querySelector('.diagram-tools button:nth-child(2)');
-  if (btn) btn.style.borderColor = isEraser ? 'var(--accent)' : 'var(--border)';
-  if (btn) btn.style.color = isEraser ? 'var(--accent)' : 'var(--muted)';
+  const s = drawState;
+  if (!s.canvas) return;
+  s.ctx.fillStyle = '#fff';
+  s.ctx.fillRect(0, 0, s.canvas.width, s.canvas.height);
+  saveUndoState();
 }
 
 function nextQuestion() {
