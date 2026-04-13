@@ -116,6 +116,13 @@
     .written-area { width: 100%; min-height: 160px; padding: 18px 20px; background: var(--surface2); border: 2px solid var(--border); border-radius: 14px; color: var(--text); font-family: var(--font-body); font-size: 16px; font-weight: 500; line-height: 1.6; resize: vertical; outline: none; transition: border-color 0.15s; }
     .written-area::placeholder { color: var(--muted2); }
     .written-area:focus { border-color: var(--accent); }
+    .diagram-area { margin: 16px 0; border: 2px dashed var(--border); border-radius: 14px; padding: 16px; background: var(--surface2); position: relative; }
+    .diagram-area::before { content: '\270F\FE0F Draw your diagram here'; position: absolute; top: 8px; left: 16px; font-size: 12px; color: var(--muted2); pointer-events: none; }
+    .diagram-area canvas { width: 100%; height: 250px; cursor: crosshair; display: block; border-radius: 8px; }
+    .diagram-tools { display: flex; gap: 8px; margin-top: 8px; }
+    .diagram-tools button { padding: 6px 14px; font-size: 12px; font-weight: 600; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; font-family: var(--font-body); }
+    .diagram-tools button:hover { border-color: var(--accent); color: var(--accent); }
+    .diagram-label { font-size: 12px; color: var(--muted); margin-top: 6px; font-style: italic; }
     .written-hint { font-size: 13px; color: var(--muted); margin-top: 10px; }
 
     .model-answer-wrap { margin-top: 20px; background: rgba(245,158,11,0.07); border: 1px solid var(--amber-border); border-radius: 14px; overflow: hidden; }
@@ -374,6 +381,7 @@ function renderQuestion() {
       ${q.type === 'written' ? renderWritten(q) : renderMCQ(q)}
     </div>
   `;
+  setTimeout(initCanvas, 50);
 }
 
 function renderMCQ(q) {
@@ -396,8 +404,9 @@ function renderMCQ(q) {
 
 function renderWritten(q) {
   return `
+    ${q.diagram ? '<div class="diagram-area"><canvas id="drawCanvas" width="600" height="250"></canvas><div class="diagram-tools"><button onclick="clearCanvas()">🗑️ Clear</button><button onclick="toggleEraser()">🧹 Eraser</button></div></div><p class="diagram-label">Use the canvas above to sketch your diagram</p>' : ''}
     <textarea class="written-area" id="writtenInput" placeholder="Write your answer here…"></textarea>
-    <p class="written-hint">Write your answer above, then reveal the model answer to compare.</p>
+    <p class="written-hint">${q.diagram ? 'Draw your diagram above and write your explanation below.' : 'Write your answer above, then reveal the model answer to compare.'}</p>
     <button class="btn-reveal" id="btnReveal" onclick="revealModel()">Reveal Model Answer</button>
     <div id="modelAnswerWrap" style="display:none">
       <div class="model-answer-wrap">
@@ -547,6 +556,41 @@ async function saveResult(rag, results) {
       await supabaseClient.from('user_medals').insert({ user_id: user.id, medal_id: 'perfect_score' });
     }
   }
+}
+
+let isEraser = false;
+
+function initCanvas() {
+  const canvas = document.getElementById('drawCanvas');
+  if (!canvas) return;
+  canvas.width = canvas.offsetWidth;
+  canvas.height = 250;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  let drawing = false;
+  canvas.addEventListener('mousedown', e => { drawing = true; ctx.beginPath(); ctx.moveTo(e.offsetX, e.offsetY); });
+  canvas.addEventListener('mousemove', e => { if (drawing) { ctx.lineTo(e.offsetX, e.offsetY); ctx.strokeStyle = isEraser ? '#FFFFFF' : '#1B2D4F'; ctx.lineWidth = isEraser ? 20 : 2; ctx.stroke(); } });
+  canvas.addEventListener('mouseup', () => drawing = false);
+  canvas.addEventListener('mouseleave', () => drawing = false);
+  canvas.addEventListener('touchstart', e => { e.preventDefault(); drawing = true; const r = canvas.getBoundingClientRect(); ctx.beginPath(); ctx.moveTo(e.touches[0].clientX - r.left, e.touches[0].clientY - r.top); });
+  canvas.addEventListener('touchmove', e => { e.preventDefault(); if (drawing) { const r = canvas.getBoundingClientRect(); ctx.lineTo(e.touches[0].clientX - r.left, e.touches[0].clientY - r.top); ctx.strokeStyle = isEraser ? '#FFFFFF' : '#1B2D4F'; ctx.lineWidth = isEraser ? 20 : 2; ctx.stroke(); } });
+  canvas.addEventListener('touchend', () => drawing = false);
+}
+
+function clearCanvas() {
+  const canvas = document.getElementById('drawCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+function toggleEraser() {
+  isEraser = !isEraser;
+  const btn = document.querySelector('.diagram-tools button:nth-child(2)');
+  if (btn) btn.style.borderColor = isEraser ? 'var(--accent)' : 'var(--border)';
+  if (btn) btn.style.color = isEraser ? 'var(--accent)' : 'var(--muted)';
 }
 
 function showError(msg) {
