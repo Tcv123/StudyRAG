@@ -13,5 +13,19 @@
       "Bash(cp \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes/economics-ocr/\"* \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-ocr/\")",
       "Bash(cp \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes/economics-edexcel-b/\"* \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-edexcel-b/\")"
     ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"C:/Users/tcvas/OneDrive/Desktop/Learning\" && if [ -n \"$(git status --porcelain)\" ]; then git add -A && git commit -m \"Auto-push: $(date +%Y-%m-%d\\ %H:%M)\" && git push origin main; fi 2>/dev/null || true",
+            "timeout": 60,
+            "statusMessage": "Auto-pushing to GitHub..."
+          }
+        ]
+      }
+    ]
   }
 }
