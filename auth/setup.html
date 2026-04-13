@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Setup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EEF5FC;
+      --surface: #FFFFFF;
+      --surface2: #F4F9FE;
+      --surface3: #E6F1FA;
+      --border: #D2E5F3;
+      --border-hover: #93C4E2;
+      --text: #1B2D4F;
+      --muted: #6B87A8;
+      --muted2: #A0B8CE;
+      --accent: #5BADCF;
+      --accent-dark: #3D95BC;
+      --accent-dim: rgba(91,173,207,0.1);
+      --accent-glow: rgba(91,173,207,0.2);
+      --red: #DC2626; --red-bg: rgba(220,38,38,0.07); --red-border: rgba(220,38,38,0.18); --red-text: #B91C1C;
+      --green: #16A34A; --green-bg: rgba(22,163,74,0.07); --green-border: rgba(22,163,74,0.18); --green-text: #15803D;
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(91,173,207,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(91,173,207,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── PAGE ── */
+    .page {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── LOGO ── */
+    .logo {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 40px; align-self: flex-start;
+      max-width: 680px; width: 100%;
+    }
+
+    .logo-dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 8px var(--accent-glow);
+    }
+
+    .logo-name { font-family: var(--font-display); font-size: 18px; color: var(--text); }
+
+    /* ── PROGRESS BAR ── */
+    .progress-wrap {
+      width: 100%; max-width: 680px;
+      margin-bottom: 36px;
+    }
+
+    .progress-steps {
+      display: flex; align-items: center; gap: 0;
+    }
+
+    .p-step {
+      display: flex; align-items: center; gap: 8px;
+      flex: 0 0 auto;
+    }
+
+    .p-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 600;
+      border: 2px solid var(--border);
+      color: var(--muted2); background: var(--surface);
+      transition: all 0.3s; flex-shrink: 0;
+    }
+
+    .p-step.done .p-num   { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .p-step.active .p-num { background: var(--surface); border-color: var(--accent); color: var(--accent-dark); font-weight: 700; }
+
+    .p-label { font-size: 13px; color: var(--muted); font-weight: 500; }
+    .p-step.active .p-label { color: var(--text); font-weight: 600; }
+    .p-step.done   .p-label { color: var(--accent-dark); }
+
+    .p-line {
+      flex: 1; height: 2px; background: var(--border); margin: 0 12px;
+      border-radius: 1px; transition: background 0.3s;
+    }
+
+    .p-line.done { background: var(--accent); }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 44px;
+      width: 100%; max-width: 680px;
+      box-shadow: 0 4px 32px rgba(91,173,207,0.12);
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 24px; letter-spacing: -0.02em;
+      color: var(--text); margin-bottom: 6px;
+    }
+
+    .step-sub {
+      font-size: 14px; color: var(--muted);
+      margin-bottom: 28px; line-height: 1.6;
+    }
+
+    /* ── STEP 1: LEVEL ── */
+    .level-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .level-card {
+      border: 2px solid var(--border);
+      border-radius: 14px; padding: 20px 16px;
+      text-align: center; cursor: pointer;
+      transition: all 0.2s; background: var(--surface2);
+      user-select: none;
+    }
+
+    .level-card:hover { border-color: var(--border-hover); background: var(--surface); }
+
+    .level-card.selected {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    .level-icon { font-size: 28px; margin-bottom: 10px; }
+
+    .level-name {
+      font-size: 15px; font-weight: 600; color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .level-desc { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .level-tag  { font-size: 11px; color: var(--muted); }
+
+    .level-card.selected .level-name { color: var(--accent-dark); }
+
+    /* ── STEP 2: SUBJECTS ── */
+    .subjects-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .subj-card {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 14px; cursor: pointer;
+      background: var(--surface2); transition: all 0.18s;
+      user-select: none; position: relative;
+    }
+
+    .subj-card:hover { border-color: var(--border-hover); background: var(--surface); }
+
+    .subj-card.selected {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    .subj-card-emoji {
+      font-size: 26px; flex-shrink: 0;
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--surface); border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .subj-card.selected .subj-card-emoji {
+      background: var(--accent-dim); border-color: rgba(91,173,207,0.3);
+    }
+
+    .subj-card-name {
+      font-size: 14px; font-weight: 600; color: var(--text); flex: 1;
+    }
+
+    .subj-card.selected .subj-card-name { color: var(--accent-dark); }
+
+    .subj-check {
+      width: 20px; height: 20px; border-radius: 50%;
+      border: 2px solid var(--border); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; transition: all 0.18s;
+      color: transparent; background: var(--surface);
+    }
+
+    .subj-card.selected .subj-check {
+      background: var(--accent); border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* ── SELECTED SUBJECTS BOARD PICKER ── */
+    .selected-label {
+      font-size: 12px; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+
+    .selected-list {
+      display: flex; flex-direction: column; gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .selected-row {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 14px; padding: 14px 16px;
+      animation: fadeUp 0.2s ease both;
+    }
+
+    .selected-row-top {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+    }
+
+    .selected-emoji { font-size: 18px; }
+    .selected-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--text); }
+
+    .remove-btn {
+      background: none; border: none; cursor: pointer;
+      color: var(--muted2); font-size: 15px; padding: 3px 5px;
+      border-radius: 6px; transition: color 0.15s; line-height: 1;
+    }
+    .remove-btn:hover { color: var(--red); }
+
+    .board-pills { display: flex; gap: 7px; flex-wrap: wrap; }
+
+    .board-pill {
+      padding: 6px 14px; border-radius: 20px;
+      font-size: 12px; font-weight: 600; cursor: pointer;
+      border: 1.5px solid var(--border); background: var(--surface);
+      color: var(--muted); transition: all 0.15s; user-select: none;
+    }
+
+    .board-pill:hover { border-color: var(--border-hover); color: var(--text); }
+
+    .board-pill.active {
+      background: var(--accent); border-color: var(--accent);
+      color: #fff; box-shadow: 0 2px 8px var(--accent-glow);
+    }
+
+    .no-selected {
+      text-align: center; padding: 20px;
+      font-size: 13px; color: var(--muted2);
+      border: 1px dashed var(--border);
+      border-radius: 10px; margin-bottom: 28px;
+    }
+
+    /* ── FOOTER BUTTONS ── */
+    .footer-row {
+      display: flex; gap: 12px; align-items: center;
+      margin-top: 4px;
+    }
+
+    .btn {
+      padding: 12px 24px; border: none; border-radius: 10px;
+      font-family: var(--font-body); font-size: 14px; font-weight: 600;
+      cursor: pointer; transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; box-shadow: 0 4px 14px var(--accent-glow);
+      flex: 1;
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px var(--accent-glow); }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    .btn-back {
+      background: none; border: 1px solid var(--border);
+      color: var(--muted); padding: 12px 20px;
+    }
+
+    .btn-back:hover { border-color: var(--border-hover); color: var(--text); background: var(--surface2); }
+
+    .msg {
+      margin-top: 14px; font-size: 13px; text-align: center;
+      border-radius: 8px; min-height: 18px; padding: 0; transition: all 0.2s;
+    }
+
+    .msg:not(:empty) { padding: 10px 14px; }
+    .msg.error   { color: var(--red-text);   background: var(--red-bg);   border: 1px solid var(--red-border); }
+    .msg.success { color: var(--green-text); background: var(--green-bg); border: 1px solid var(--green-border); }
+
+    .hidden { display: none !important; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .card { padding: 28px 20px; }
+      .level-grid { grid-template-columns: 1fr; }
+      .subjects-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Logo -->
+  <div class="logo">
+    <div class="logo-dot"></div>
+    <div class="logo-name">RAG Learning</div>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-wrap">
+    <div class="progress-steps">
+      <div class="p-step active" id="ps1">
+        <div class="p-num">1</div>
+        <div class="p-label">Study level</div>
+      </div>
+      <div class="p-line" id="pl1"></div>
+      <div class="p-step" id="ps2">
+        <div class="p-num">2</div>
+        <div class="p-label">Your subjects</div>
+      </div>
+      <div class="p-line" id="pl2"></div>
+      <div class="p-step" id="ps3">
+        <div class="p-num">3</div>
+        <div class="p-label">Your grades</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+
+    <!-- ── STEP 1 ── -->
+    <div id="step1">
+      <div class="step-title">What are you studying?</div>
+      <p class="step-sub">Choose your current study level. This helps us load the right topics and exam content for you.</p>
+
+      <div class="level-grid">
+        <div class="level-card" onclick="selectLevel('gcse', this)">
+          <div class="level-icon">📘</div>
+          <div class="level-name">GCSE</div>
+          <div class="level-desc">Years 10 & 11</div>
+          <div class="level-tag">Secondary school</div>
+        </div>
+        <div class="level-card" onclick="selectLevel('as', this)">
+          <div class="level-icon">📗</div>
+          <div class="level-name">AS Level</div>
+          <div class="level-desc">Year 12</div>
+          <div class="level-tag">Lower sixth form</div>
+        </div>
+        <div class="level-card" onclick="selectLevel('a-level', this)">
+          <div class="level-icon">📙</div>
+          <div class="level-name">A Level</div>
+          <div class="level-desc">Year 13</div>
+          <div class="level-tag">Upper sixth form</div>
+        </div>
+      </div>
+
+      <div class="footer-row">
+        <button class="btn btn-primary" onclick="goToStep2()">Next — Choose subjects →</button>
+      </div>
+    </div>
+
+    <!-- ── STEP 2 ── -->
+    <div id="step2" class="hidden">
+      <div class="step-title">Which subjects are you taking?</div>
+      <p class="step-sub">Select all your subjects below, then choose your exam board for each one.</p>
+
+      <div class="subjects-grid" id="subjectsGrid"></div>
+
+      <div id="selectedSection"></div>
+
+      <div class="footer-row">
+        <button class="btn btn-back" onclick="goToStep1()">← Back</button>
+        <button class="btn btn-primary" onclick="goToStep3()">Next — Set your grades →</button>
+      </div>
+      <p id="msg2" class="msg"></p>
+    </div>
+
+    <!-- ── STEP 3 ── -->
+    <div id="step3" class="hidden">
+      <div class="step-title">Set your grades</div>
+      <p class="step-sub">Select your current grade and the grade you're aiming for in each subject.</p>
+
+      <div id="gradesSection"></div>
+
+      <div class="footer-row">
+        <button class="btn btn-back" onclick="backToStep2()">← Back</button>
+        <button class="btn btn-primary" id="saveBtn" onclick="save()">Start Learning →</button>
+      </div>
+      <p id="msg" class="msg"></p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── Data ────────────────────────────────────────────────────────────────
+const SUBJECTS = [
+  { name: 'Mathematics',     emoji: '➗' },
+  { name: 'Chemistry',       emoji: '⚗️' },
+  { name: 'Biology',         emoji: '🧬' },
+  { name: 'Computer Science',emoji: '💻' },
+  { name: 'Physics',         emoji: '⚡' },
+  { name: 'Economics',       emoji: '📈' },
+  { name: 'Geography',       emoji: '🌍' },
+];
+
+const BOARDS = ['AQA', 'OCR', 'Edexcel'];
+// Subjects where Edexcel is NOT available at A-Level / AS
+const NO_EDEXCEL_ALEVEL = ['Computer Science'];
+// Subjects with custom board lists
+const CUSTOM_BOARDS = {
+  'Economics': ['AQA', 'Edexcel A', 'OCR', 'Edexcel B'],
+  'Physics': ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
+  'Chemistry': ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
+  'Biology': ['AQA', 'Edexcel A', 'Edexcel B', 'OCR A', 'OCR B'],
+};
+function getBoardsFor(subjectName) {
+  if (CUSTOM_BOARDS[subjectName]) return CUSTOM_BOARDS[subjectName];
+  if ((selectedLevel === 'a-level' || selectedLevel === 'as') && NO_EDEXCEL_ALEVEL.includes(subjectName)) {
+    return BOARDS.filter(b => b !== 'Edexcel');
+  }
+  return BOARDS;
+}
+
+// ── State ────────────────────────────────────────────────────────────────
+let selectedLevel    = 'as';
+let selectedSubjects = [];   // [{ name, emoji }]
+let subjectBoards    = {};   // { name: board }
+let subjectCurrentGrade = {};  // { name: grade }
+let subjectTargetGrade  = {};  // { name: grade }
+
+// ── Step navigation ──────────────────────────────────────────────────────
+function selectLevel(val, el) {
+  if (selectedLevel !== val) {
+    subjectCurrentGrade = {};
+    subjectTargetGrade = {};
+    // Reset Edexcel for subjects that don't offer it at this level
+    Object.keys(subjectBoards).forEach(name => {
+      const available = getBoardsFor(name);
+      if (!available.includes(subjectBoards[name])) subjectBoards[name] = available[0];
+    });
+  }
+  selectedLevel = val;
+  document.querySelectorAll('.level-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function goToStep2() {
+  document.getElementById('step1').classList.add('hidden');
+  document.getElementById('step2').classList.remove('hidden');
+  document.getElementById('ps1').classList.remove('active');
+  document.getElementById('ps1').classList.add('done');
+  document.getElementById('pl1').classList.add('done');
+  document.getElementById('ps2').classList.add('active');
+  renderGrid();
+  renderSelected();
+}
+
+function goToStep1() {
+  document.getElementById('step2').classList.add('hidden');
+  document.getElementById('step1').classList.remove('hidden');
+  document.getElementById('ps1').classList.add('active');
+  document.getElementById('ps1').classList.remove('done');
+  document.getElementById('pl1').classList.remove('done');
+  document.getElementById('ps2').classList.remove('active');
+}
+
+// ── Subject grid ─────────────────────────────────────────────────────────
+function renderGrid() {
+  const grid = document.getElementById('subjectsGrid');
+  grid.innerHTML = SUBJECTS.map(s => {
+    const sel = selectedSubjects.some(x => x.name === s.name);
+    return `
+      <div class="subj-card ${sel ? 'selected' : ''}" onclick="toggleSubject('${s.name}','${s.emoji}',this)">
+        <div class="subj-card-emoji">${s.emoji}</div>
+        <div class="subj-card-name">${s.name}</div>
+        <div class="subj-check">✓</div>
+      </div>`;
+  }).join('');
+}
+
+function toggleSubject(name, emoji, el) {
+  const idx = selectedSubjects.findIndex(s => s.name === name);
+  if (idx === -1) {
+    selectedSubjects.push({ name, emoji });
+    if (!subjectBoards[name]) subjectBoards[name] = 'AQA';
+    if (!subjectCurrentGrade[name]) subjectCurrentGrade[name] = null;
+    if (!subjectTargetGrade[name]) subjectTargetGrade[name] = null;
+    el.classList.add('selected');
+  } else {
+    selectedSubjects.splice(idx, 1);
+    delete subjectBoards[name];
+    el.classList.remove('selected');
+  }
+  renderSelected();
+}
+
+function getGradeList() {
+  return selectedLevel === 'gcse' ? [9,8,7,6,5,4,3,2,1] : ['A*','A','B','C','D','E','U'];
+}
+
+function setCurrentGrade(name, grade) {
+  subjectCurrentGrade[name] = grade;
+  const GRADES = getGradeList();
+  if (grade === GRADES[0]) subjectTargetGrade[name] = GRADES[0];
+  const curIdx = GRADES.indexOf(grade);
+  const tgtIdx = GRADES.indexOf(subjectTargetGrade[name]);
+  if (subjectTargetGrade[name] != null && tgtIdx > curIdx) subjectTargetGrade[name] = grade;
+  renderGrades();
+}
+
+function setTargetGrade(name, grade) {
+  subjectTargetGrade[name] = grade;
+  renderGrades();
+}
+
+function goToStep3() {
+  if (!selectedSubjects.length) {
+    const msg2 = document.getElementById('msg2');
+    msg2.className = 'msg error';
+    msg2.innerText = 'Please select at least one subject.';
+    return;
+  }
+  document.getElementById('step2').classList.add('hidden');
+  document.getElementById('step3').classList.remove('hidden');
+  document.getElementById('ps2').classList.remove('active');
+  document.getElementById('ps2').classList.add('done');
+  document.getElementById('pl2').classList.add('done');
+  document.getElementById('ps3').classList.add('active');
+  renderGrades();
+}
+
+function backToStep2() {
+  document.getElementById('step3').classList.add('hidden');
+  document.getElementById('step2').classList.remove('hidden');
+  document.getElementById('ps3').classList.remove('active');
+  document.getElementById('ps2').classList.add('active');
+  document.getElementById('ps2').classList.remove('done');
+  document.getElementById('pl2').classList.remove('done');
+}
+
+function removeSubject(name) {
+  selectedSubjects = selectedSubjects.filter(s => s.name !== name);
+  delete subjectBoards[name];
+  delete subjectCurrentGrade[name];
+  delete subjectTargetGrade[name];
+  renderGrid();
+  renderSelected();
+}
+
+function setBoard(name, board) {
+  subjectBoards[name] = board;
+  renderSelected();
+}
+
+function renderSelected() {
+  const sec = document.getElementById('selectedSection');
+
+  if (!selectedSubjects.length) {
+    sec.innerHTML = `<div class="selected-label">Selected subjects</div>
+      <div class="no-selected">No subjects selected yet — pick from the grid above</div>`;
+    return;
+  }
+
+  sec.innerHTML = `<div class="selected-label">Selected subjects (${selectedSubjects.length})</div>
+    <div class="selected-list">
+      ${selectedSubjects.map(s => `
+        <div class="selected-row">
+          <div class="selected-row-top">
+            <span class="selected-emoji">${s.emoji}</span>
+            <span class="selected-name">${s.name}</span>
+            <button class="remove-btn" onclick="removeSubject('${s.name}')" title="Remove">✕</button>
+          </div>
+          <div class="board-pills">
+            ${getBoardsFor(s.name).map(b => `
+              <div class="board-pill ${subjectBoards[s.name] === b ? 'active' : ''}"
+                   onclick="setBoard('${s.name}','${b}')">
+                ${b}
+              </div>`).join('')}
+          </div>
+        </div>`).join('')}
+    </div>`;
+}
+
+function renderGrades() {
+  const sec = document.getElementById('gradesSection');
+  const GCSE_GRADES = [9,8,7,6,5,4,3,2,1];
+  const ALEVEL_GRADES = ['A*','A','B','C','D','E','U'];
+  const isGCSE = selectedLevel === 'gcse';
+  const GRADES = isGCSE ? GCSE_GRADES : ALEVEL_GRADES;
+
+  function gradeIndex(g) { return GRADES.indexOf(g); }
+  function isMaxGrade(g) { return g === GRADES[0]; }
+  function gradeVal(g) { return typeof g === 'string' ? `'${g}'` : g; }
+
+  sec.innerHTML = `<div class="selected-list">
+    ${selectedSubjects.map(s => {
+      const cur = subjectCurrentGrade[s.name];
+      const tgt = subjectTargetGrade[s.name];
+      const maxed = isMaxGrade(cur);
+      const curIdx = gradeIndex(cur);
+      const validTargets = cur != null ? GRADES.filter((g, i) => i <= curIdx) : GRADES;
+      return `
+      <div class="selected-row">
+        <div class="selected-row-top" style="margin-bottom:14px;">
+          <span class="selected-emoji">${s.emoji}</span>
+          <span class="selected-name">${s.name}</span>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:140px;">
+            <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Current grade</div>
+            <div class="board-pills">
+              ${GRADES.map(g => `
+                <div class="board-pill ${cur === g ? 'active' : ''}" style="min-width:28px;text-align:center;padding:6px 10px;"
+                     onclick="setCurrentGrade('${s.name}',${gradeVal(g)})">
+                  ${g}
+                </div>`).join('')}
+            </div>
+          </div>
+          <div style="flex:1;min-width:140px;">
+            <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Target grade</div>
+            <div class="board-pills">
+              ${maxed ? `<div class="board-pill active" style="min-width:28px;text-align:center;padding:6px 10px;">${GRADES[0]}</div>` :
+                validTargets.map(g => `
+                <div class="board-pill ${tgt === g ? 'active' : ''}" style="min-width:28px;text-align:center;padding:6px 10px;"
+                     onclick="setTargetGrade('${s.name}',${gradeVal(g)})">
+                  ${g}
+                </div>`).join('')}
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }).join('')}
+  </div>`;
+}
+
+// ── Save ─────────────────────────────────────────────────────────────────
+async function save() {
+  const msg     = document.getElementById('msg');
+  const saveBtn = document.getElementById('saveBtn');
+
+  if (!selectedSubjects.length) {
+    msg.className = 'msg error';
+    msg.innerText = 'Please select at least one subject.';
+    return;
+  }
+
+  saveBtn.disabled    = true;
+  saveBtn.textContent = 'Saving…';
+  msg.className = 'msg';
+  msg.innerText = '';
+
+  const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
+  if (authErr || !user) { window.location = 'login.html'; return; }
+
+  // Try update first (row already exists)
+  const { error: updateErr, count } = await supabaseClient
+    .from('profiles')
+    .update({ level: selectedLevel, setup_complete: true })
+    .eq('id', user.id);
+
+  // If update failed or row didn't exist, fall back to insert
+  if (updateErr || count === 0) {
+    const { error: insertErr } = await supabaseClient
+      .from('profiles')
+      .insert({
+        id: user.id,
+        email: user.email,
+        first_name: user.user_metadata?.first_name || '',
+        last_name: user.user_metadata?.last_name || '',
+        level: selectedLevel,
+        setup_complete: true
+      });
+
+    if (insertErr) {
+      msg.className       = 'msg error';
+      msg.innerText       = 'Could not save profile: ' + insertErr.message;
+      saveBtn.disabled    = false;
+      saveBtn.textContent = 'Start Learning →';
+      return;
+    }
+  }
+
+  // Delete old subjects then insert new ones
+  await supabaseClient.from('user_subjects').delete().eq('user_id', user.id);
+
+  const rows = selectedSubjects.map(s => ({
+    user_id:       user.id,
+    subject:       s.name,
+    exam_board:    subjectBoards[s.name] || 'AQA',
+    emoji:         s.emoji,
+    rag_status:    'pending',
+    current_grade: subjectCurrentGrade[s.name] || null,
+    target_grade:  subjectTargetGrade[s.name] || null
+  }));
+
+  const { error: subErr } = await supabaseClient.from('user_subjects').insert(rows);
+
+  if (subErr) {
+    msg.className       = 'msg error';
+    msg.innerText       = 'Could not save subjects: ' + subErr.message;
+    saveBtn.disabled    = false;
+    saveBtn.textContent = 'Start Learning →';
+    return;
+  }
+
+  window.location = '../Dashboard.html';
+}
+
+// ── Guard + pre-populate existing subjects ───────────────────────────────
+(async () => {
+  const { data: { user } } = await supabaseClient.auth.getUser();
+  if (!user) { window.location = 'login.html'; return; }
+
+  // Load existing profile and subjects
+  const [{ data: profile }, { data: existingSubjects }] = await Promise.all([
+    supabaseClient.from('profiles').select('level').eq('id', user.id).single(),
+    supabaseClient.from('user_subjects').select('*').eq('user_id', user.id)
+  ]);
+
+  if (existingSubjects && existingSubjects.length > 0) {
+    // Pre-select the level
+    if (profile?.level) {
+      selectedLevel = profile.level;
+      document.querySelectorAll('.level-card').forEach(c => c.classList.remove('selected'));
+      const levelCards = document.querySelectorAll('.level-card');
+      const levelIdx = { gcse: 0, as: 1, 'a-level': 2 }[selectedLevel];
+      if (levelCards[levelIdx]) levelCards[levelIdx].classList.add('selected');
+    }
+
+    // Pre-select subjects, boards, and grades
+    existingSubjects.forEach(s => {
+      const match = SUBJECTS.find(sub => sub.name === s.subject);
+      if (match) {
+        selectedSubjects.push({ name: match.name, emoji: match.emoji });
+        subjectBoards[match.name] = s.exam_board || 'AQA';
+        if (s.current_grade != null) subjectCurrentGrade[match.name] = s.current_grade;
+        if (s.target_grade != null) subjectTargetGrade[match.name] = s.target_grade;
+      }
+    });
+
+    // Re-render so selections are visible
+    renderGrid();
+    renderSelected();
+  }
+})();
+</script>
+</body>
+</html>

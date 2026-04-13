@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 7 — Electric and Magnetic Fields</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e40af;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #2563eb;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #374151;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        .definition {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before {
+            content: "Exam Tip: ";
+            font-weight: 700;
+            color: #d97706;
+        }
+        .equation {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 12px 20px;
+            margin: 12px 0;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            text-align: center;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #1e40af;
+        }
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        ul, ol {
+            margin: 10px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        strong {
+            color: #1e293b;
+        }
+        @media print {
+            body { padding: 20px; }
+            .exam-tip, .definition { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Topic 7 — Electric and Magnetic Fields</h1>
+
+<h2>7.1 Electric Fields</h2>
+
+<div class="definition">
+    <strong>An electric field</strong> is a region of space where a charged particle experiences a force. Electric field lines show the direction of force on a positive test charge.
+</div>
+
+<h3>Radial Fields</h3>
+<p>A <strong>radial field</strong> is produced by a point charge (or a charged sphere). The field lines radiate outward from a positive charge and inward toward a negative charge. The field strength decreases with distance from the charge according to an inverse-square law.</p>
+
+<h3>Uniform Fields</h3>
+<p>A <strong>uniform field</strong> exists between two parallel charged plates. The field lines are parallel and equally spaced. The field strength is the same at all points between the plates.</p>
+
+<div class="equation">E = V / d</div>
+<p>where V is the potential difference between the plates and d is the separation.</p>
+
+<h3>Coulomb's Law</h3>
+<p>The force between two point charges is given by Coulomb's law:</p>
+
+<div class="equation">F = kQ₁Q₂ / r² = (1 / 4πε₀) × Q₁Q₂ / r²</div>
+
+<p>where k = 1/(4πε₀) = 8.99 × 10⁹ N m² C⁻² and ε₀ = 8.85 × 10⁻¹² F m⁻¹ is the permittivity of free space.</p>
+<p>The force is attractive between unlike charges and repulsive between like charges.</p>
+
+<h3>Electric Field Strength</h3>
+
+<div class="definition">
+    <strong>Electric field strength (E)</strong> at a point is the force per unit positive charge placed at that point.<br>
+    <strong>E = F / Q</strong> &nbsp; (unit: N C⁻¹ or V m⁻¹)
+</div>
+
+<p>For a radial field around a point charge Q:</p>
+<div class="equation">E = kQ / r² = Q / (4πε₀r²)</div>
+
+<p>For a uniform field between parallel plates:</p>
+<div class="equation">E = V / d</div>
+
+<h3>Electric Potential</h3>
+
+<div class="definition">
+    <strong>Electric potential (V)</strong> at a point is the work done per unit positive charge in bringing a small test charge from infinity to that point.
+</div>
+
+<div class="equation">V = kQ / r = Q / (4πε₀r)</div>
+
+<p>Key points about electric potential:</p>
+<ul>
+    <li>Potential is a scalar quantity</li>
+    <li>Potential is zero at infinity</li>
+    <li>Positive charges create positive potential; negative charges create negative potential</li>
+    <li>Work done moving charge q through potential difference ΔV: W = qΔV</li>
+</ul>
+
+<h3>Equipotentials</h3>
+<p><strong>Equipotential lines</strong> (or surfaces) connect points of equal potential. They are always perpendicular to field lines. No work is done moving a charge along an equipotential.</p>
+
+<div class="exam-tip">The electric field strength is the negative of the potential gradient: E = −dV/dr. On a V-r graph, the gradient at any point gives E at that distance.</div>
+
+<h2>7.2 Capacitance</h2>
+
+<div class="definition">
+    <strong>Capacitance (C)</strong> is the charge stored per unit potential difference across the capacitor.<br>
+    <strong>C = Q / V</strong> &nbsp; (unit: farad, F)
+</div>
+
+<h3>Parallel Plate Capacitor</h3>
+<div class="equation">C = ε₀εᵣA / d</div>
+<p>where A is the area of overlap of the plates, d is the separation, ε₀ is the permittivity of free space, and εᵣ is the relative permittivity (dielectric constant) of the material between the plates.</p>
+
+<h3>Capacitors in Combination</h3>
+<table>
+    <tr>
+        <th>Arrangement</th>
+        <th>Formula</th>
+        <th>Notes</th>
+    </tr>
+    <tr>
+        <td>Parallel</td>
+        <td>C_total = C₁ + C₂ + C₃ + ...</td>
+        <td>Same p.d. across each; charges add</td>
+    </tr>
+    <tr>
+        <td>Series</td>
+        <td>1/C_total = 1/C₁ + 1/C₂ + 1/C₃ + ...</td>
+        <td>Same charge on each; p.d.s add</td>
+    </tr>
+</table>
+
+<h3>Energy Stored in a Capacitor</h3>
+<p>The energy stored in a charged capacitor is the area under the Q-V graph (a straight line through the origin):</p>
+
+<div class="equation">E = ½QV = ½CV² = ½Q²/C</div>
+
+<h3>Charging and Discharging</h3>
+<p>When a capacitor charges or discharges through a resistor, the charge, voltage, and current change exponentially.</p>
+
+<p><strong>Discharging:</strong></p>
+<div class="equation">Q = Q₀ e^(−t/RC)</div>
+<div class="equation">V = V₀ e^(−t/RC)</div>
+<div class="equation">I = I₀ e^(−t/RC)</div>
+
+<p><strong>Charging:</strong></p>
+<div class="equation">Q = Q₀ (1 − e^(−t/RC))</div>
+<div class="equation">V = V₀ (1 − e^(−t/RC))</div>
+<p>The current during charging still decays: I = I₀ e^(−t/RC)</p>
+
+<h3>Time Constant</h3>
+<div class="definition">
+    <strong>The time constant (τ = RC)</strong> is the time taken for the charge (or voltage or current) to fall to 1/e (≈ 37%) of its initial value during discharge, or to rise to (1 − 1/e) ≈ 63% of its final value during charging.
+</div>
+
+<p>After 5 time constants (5RC), the capacitor is considered fully charged or fully discharged (>99%).</p>
+
+<div class="exam-tip">To find the time constant from a graph, read off the time at which V (or Q) has fallen to 0.37 of its initial value. Alternatively, use ln(V) vs t — the gradient equals −1/RC.</div>
+
+<h2>7.3 Magnetic Fields</h2>
+
+<div class="definition">
+    <strong>Magnetic flux density (B)</strong> is a measure of the strength of a magnetic field. It is defined as the force per unit length per unit current on a conductor carrying current perpendicular to the field.<br>
+    Unit: tesla (T), where 1 T = 1 kg s⁻² A⁻¹
+</div>
+
+<h3>Force on a Current-Carrying Conductor</h3>
+<p>A straight conductor of length L carrying current I at angle θ to a uniform magnetic field B experiences a force:</p>
+
+<div class="equation">F = BIL sin θ</div>
+
+<p>The direction of the force is given by <strong>Fleming's left-hand rule</strong>:</p>
+<ul>
+    <li>First finger: Field (B)</li>
+    <li>Second finger: Current (I, conventional)</li>
+    <li>Thumb: Thrust (Force)</li>
+</ul>
+
+<h3>Force on a Moving Charge</h3>
+<p>A charged particle moving through a magnetic field experiences a force:</p>
+
+<div class="equation">F = BQv sin θ</div>
+
+<p>where Q is the charge, v is the velocity, and θ is the angle between v and B.</p>
+<p>The force is always perpendicular to the velocity, so it does no work on the charge and cannot change its speed — only its direction. A charged particle moving perpendicular to a uniform magnetic field follows a circular path:</p>
+
+<div class="equation">BQv = mv²/r &nbsp; → &nbsp; r = mv / (BQ)</div>
+
+<h3>Magnetic Flux</h3>
+
+<div class="definition">
+    <strong>Magnetic flux (Φ)</strong> through a surface is the product of the magnetic flux density and the area perpendicular to the field.<br>
+    <strong>Φ = BA cos θ</strong> &nbsp; (unit: weber, Wb, where 1 Wb = 1 T m²)
+</div>
+
+<p><strong>Flux linkage</strong> for a coil of N turns: NΦ = BAN cos θ</p>
+
+<h2>7.4 Electromagnetic Induction</h2>
+
+<div class="definition">
+    <strong>Faraday's law:</strong> The magnitude of the induced EMF is equal to the rate of change of magnetic flux linkage through the circuit.<br>
+    <strong>ε = −d(NΦ)/dt</strong>
+</div>
+
+<div class="definition">
+    <strong>Lenz's law:</strong> The direction of the induced EMF (and hence the induced current) is such that it opposes the change in flux that produces it. This is represented by the negative sign in Faraday's law.
+</div>
+
+<p>Lenz's law is a consequence of conservation of energy — the induced current creates a magnetic field that opposes the change causing it, so work must be done to maintain the change.</p>
+
+<p>Methods of inducing an EMF:</p>
+<ul>
+    <li>Moving a conductor through a magnetic field</li>
+    <li>Changing the area of a circuit in a magnetic field</li>
+    <li>Rotating a coil in a magnetic field</li>
+    <li>Changing the magnetic flux density (e.g., moving a magnet towards a coil)</li>
+</ul>
+
+<div class="exam-tip">When applying Faraday's law, identify what is changing: is it B, A, or θ? For a rotating coil, Φ = BAN cos(ωt), so ε = BANω sin(ωt). The maximum EMF is ε₀ = BANω.</div>
+
+<table>
+    <tr>
+        <th>Quantity</th>
+        <th>Symbol</th>
+        <th>Unit</th>
+    </tr>
+    <tr>
+        <td>Electric field strength</td>
+        <td>E</td>
+        <td>N C⁻¹ or V m⁻¹</td>
+    </tr>
+    <tr>
+        <td>Electric potential</td>
+        <td>V</td>
+        <td>V (volts)</td>
+    </tr>
+    <tr>
+        <td>Capacitance</td>
+        <td>C</td>
+        <td>F (farads)</td>
+    </tr>
+    <tr>
+        <td>Time constant</td>
+        <td>τ = RC</td>
+        <td>s</td>
+    </tr>
+    <tr>
+        <td>Magnetic flux density</td>
+        <td>B</td>
+        <td>T (tesla)</td>
+    </tr>
+    <tr>
+        <td>Magnetic flux</td>
+        <td>Φ</td>
+        <td>Wb (weber)</td>
+    </tr>
+    <tr>
+        <td>EMF</td>
+        <td>ε</td>
+        <td>V (volts)</td>
+    </tr>
+</table>
+
+</div>
+</body>
+</html>

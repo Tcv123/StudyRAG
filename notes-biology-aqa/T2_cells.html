@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T2 — Cells</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; } ul, ol { margin: 10px 0 15px 25px; } li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; } tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head><body><div class="container">
+
+<h1>T2 — Cells</h1>
+
+<h2>2.1 Cell Structure</h2>
+
+<div class="definition">
+<strong>Cell:</strong> The basic structural and functional unit of all living organisms. Cells are classified as either prokaryotic (no membrane-bound nucleus) or eukaryotic (membrane-bound nucleus and organelles).
+</div>
+
+<h3>Eukaryotic Cell Organelles</h3>
+
+<table>
+<tr><th>Organelle</th><th>Structure</th><th>Function</th></tr>
+<tr><td>Nucleus</td><td>Double membrane (nuclear envelope) with pores; contains chromatin and nucleolus</td><td>Contains DNA; controls cell activities via mRNA production; nucleolus makes rRNA</td></tr>
+<tr><td>Mitochondria</td><td>Double membrane; inner membrane folded into cristae; matrix contains enzymes and own DNA</td><td>Site of aerobic respiration; produces ATP via oxidative phosphorylation</td></tr>
+<tr><td>Rough ER</td><td>Flattened membrane sacs (cisternae) studded with ribosomes</td><td>Synthesis and transport of proteins (especially secretory proteins)</td></tr>
+<tr><td>Smooth ER</td><td>Tubular membrane network; no ribosomes</td><td>Lipid and steroid synthesis; detoxification</td></tr>
+<tr><td>Golgi apparatus</td><td>Stack of flattened membrane sacs with vesicles</td><td>Modifies, packages, and sorts proteins; produces lysosomes and secretory vesicles</td></tr>
+<tr><td>Lysosomes</td><td>Single membrane vesicle containing hydrolytic enzymes</td><td>Intracellular digestion; breakdown of worn organelles; immune defence (after phagocytosis)</td></tr>
+<tr><td>Ribosomes</td><td>Two subunits (large + small); 80S in eukaryotes, 70S in prokaryotes</td><td>Site of translation (protein synthesis)</td></tr>
+<tr><td>Centrioles</td><td>Two cylindrical bundles of microtubules at right angles</td><td>Organise spindle fibres during cell division</td></tr>
+<tr><td>Chloroplasts (plants)</td><td>Double membrane; internal thylakoid membranes arranged in grana; stroma contains enzymes and own DNA</td><td>Site of photosynthesis</td></tr>
+<tr><td>Cell wall (plants)</td><td>Made of cellulose microfibrils</td><td>Provides structural support; prevents lysis due to osmotic pressure</td></tr>
+<tr><td>Vacuole (plants)</td><td>Large central vacuole with tonoplast membrane</td><td>Maintains turgor pressure; stores ions, pigments, waste</td></tr>
+</table>
+
+<h3>Prokaryotic Cells</h3>
+<p>Prokaryotic cells (bacteria) are smaller (typically 1-5 micrometres) and simpler than eukaryotic cells:</p>
+<ul>
+<li>No membrane-bound nucleus — DNA is a single circular chromosome in the nucleoid region</li>
+<li>Small circular plasmids may also be present (carry genes for antibiotic resistance)</li>
+<li>70S ribosomes (smaller than eukaryotic 80S)</li>
+<li>No membrane-bound organelles (no mitochondria, ER, Golgi)</li>
+<li>Cell wall made of peptidoglycan (murein), not cellulose</li>
+<li>May have flagella for movement, pili for attachment, and a capsule (slime layer) for protection</li>
+</ul>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Mitochondria and chloroplasts both have their own DNA and 70S ribosomes — this is evidence for the endosymbiotic theory (they were once free-living prokaryotes engulfed by an ancestral eukaryote).
+</div>
+
+<h2>2.2 Cell Fractionation and Ultracentrifugation</h2>
+
+<div class="definition">
+<strong>Cell fractionation:</strong> The process of separating cell components by breaking open cells (homogenisation) and spinning at increasing speeds (differential centrifugation) to isolate organelles by size and density.
+</div>
+
+<p>Steps in cell fractionation:</p>
+<ol>
+<li><strong>Homogenisation:</strong> Cells are broken open in ice-cold, isotonic, buffered solution. Ice-cold prevents enzyme activity; isotonic prevents osmotic damage to organelles; buffered maintains constant pH.</li>
+<li><strong>Filtration:</strong> The homogenate is filtered to remove large debris (cell walls, connective tissue).</li>
+<li><strong>Differential centrifugation:</strong> The filtrate is centrifuged at increasing speeds. The heaviest organelles sediment first as a pellet; the supernatant is transferred to a new tube and spun faster.</li>
+</ol>
+
+<p>Order of sedimentation (heaviest first): Nuclei → Mitochondria → Lysosomes → Ribosomes/ER</p>
+
+<h2>2.3 Transport Across Cell Membranes</h2>
+
+<h3>The Fluid Mosaic Model</h3>
+<div class="definition">
+<strong>Fluid Mosaic Model:</strong> The cell membrane is described as a phospholipid bilayer with proteins embedded (integral/transmembrane) or attached to the surface (peripheral). It is "fluid" because phospholipids and proteins can move laterally, and "mosaic" because of the varied pattern of protein molecules.
+</div>
+
+<p>Components of the membrane:</p>
+<ul>
+<li><strong>Phospholipid bilayer:</strong> Forms the basic barrier; hydrophobic core prevents passage of polar/charged molecules</li>
+<li><strong>Cholesterol:</strong> Regulates fluidity — prevents membranes becoming too fluid or too rigid</li>
+<li><strong>Channel proteins:</strong> Water-filled pores allowing specific ions/polar molecules through (some are gated)</li>
+<li><strong>Carrier proteins:</strong> Change shape to transport specific molecules (facilitated diffusion or active transport)</li>
+<li><strong>Glycoproteins/glycolipids:</strong> Cell recognition, signalling, and adhesion</li>
+</ul>
+
+<h3>Diffusion</h3>
+<div class="definition">
+<strong>Diffusion:</strong> The net movement of molecules or ions from a region of higher concentration to a region of lower concentration, down a concentration gradient. It is a passive process requiring no metabolic energy.
+</div>
+
+<p>Factors affecting rate of diffusion: concentration gradient (steeper = faster), temperature (higher = faster kinetic energy), surface area, thickness of membrane/exchange surface, size of molecule (smaller = faster).</p>
+
+<p><strong>Facilitated diffusion:</strong> Diffusion of polar molecules or ions through channel proteins or carrier proteins. Still passive (down the concentration gradient) but requires specific membrane proteins.</p>
+
+<h3>Osmosis</h3>
+<div class="definition">
+<strong>Osmosis:</strong> The net movement of water molecules from a region of higher water potential (less negative) to a region of lower water potential (more negative) across a partially permeable membrane.
+</div>
+
+<div class="equation">
+Water potential (Ψ) = Pressure potential (Ψ<sub>p</sub>) + Solute potential (Ψ<sub>s</sub>)
+</div>
+
+<p>Pure water has Ψ = 0. Adding solute makes Ψ<sub>s</sub> more negative, lowering overall Ψ. Water always moves from higher Ψ to lower Ψ.</p>
+
+<p>Effects on cells:</p>
+<ul>
+<li><strong>Animal cell in hypotonic solution:</strong> Water enters by osmosis → cell swells → may lyse (cytolysis)</li>
+<li><strong>Animal cell in hypertonic solution:</strong> Water leaves → cell shrinks (crenation)</li>
+<li><strong>Plant cell in hypotonic solution:</strong> Water enters → vacuole expands → cell becomes turgid (cell wall prevents lysis)</li>
+<li><strong>Plant cell in hypertonic solution:</strong> Water leaves → membrane pulls away from wall (plasmolysis)</li>
+</ul>
+
+<h3>Active Transport</h3>
+<div class="definition">
+<strong>Active transport:</strong> The movement of molecules or ions across a membrane against their concentration gradient (from low to high concentration), requiring metabolic energy from ATP hydrolysis and specific carrier proteins.
+</div>
+
+<h3>Co-transport</h3>
+<p>Co-transport couples the movement of one substance down its concentration gradient with the transport of another substance against its gradient. In the ileum:</p>
+<ol>
+<li>Na<sup>+</sup>/K<sup>+</sup> ATPase pumps Na<sup>+</sup> out of the epithelial cell into blood, maintaining a low intracellular Na<sup>+</sup> concentration.</li>
+<li>Na<sup>+</sup> diffuses back into the cell from the gut lumen via a sodium-glucose co-transporter, carrying glucose with it against glucose's concentration gradient.</li>
+<li>Glucose exits the cell into blood via facilitated diffusion through GLUT2 transporters on the basal membrane.</li>
+</ol>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Co-transport still requires ATP indirectly — the Na+/K+ ATPase creates the sodium gradient that drives glucose uptake. It is not purely passive.
+</div>
+
+<h2>2.4 Cell Recognition and the Immune System</h2>
+
+<h3>Self and Non-Self</h3>
+<p>Every cell displays specific proteins and glycoproteins on its surface. The immune system recognises "self" antigens (the organism's own markers) and mounts a response against "non-self" antigens (from pathogens or foreign cells).</p>
+
+<div class="definition">
+<strong>Antigen:</strong> A molecule (usually a protein or glycoprotein) on the surface of a cell that can trigger an immune response. Pathogens carry foreign antigens that are recognised by the immune system.
+</div>
+
+<h3>Phagocytosis</h3>
+<ol>
+<li>Phagocyte (e.g. macrophage) is attracted to pathogen by chemicals released at site of infection (chemotaxis).</li>
+<li>Phagocyte recognises non-self antigens on the pathogen surface.</li>
+<li>Phagocyte engulfs pathogen by endocytosis, forming a phagosome.</li>
+<li>Lysosomes fuse with phagosome, releasing hydrolytic enzymes (lysozymes) that digest the pathogen.</li>
+<li>Phagocyte presents pathogen antigens on its surface (becomes an antigen-presenting cell, APC) to activate the specific immune response.</li>
+</ol>
+
+<h3>T Lymphocytes (T Cells)</h3>
+<p>T cells mature in the thymus and have specific receptors complementary to one antigen. When activated by APCs:</p>
+<ul>
+<li><strong>Helper T cells (T<sub>H</sub>):</strong> Release cytokines that stimulate B cells to divide, activate cytotoxic T cells, and attract phagocytes.</li>
+<li><strong>Cytotoxic T cells (T<sub>C</sub>):</strong> Kill infected body cells by releasing perforin (creates pores in target cell membrane) causing lysis.</li>
+<li><strong>Memory T cells:</strong> Remain in the body long-term for a faster secondary response.</li>
+</ul>
+
+<h3>B Lymphocytes (B Cells) and Antibodies</h3>
+<p>B cells mature in the bone marrow. Each B cell produces one type of antibody complementary to one specific antigen. When activated (by helper T cells and antigen binding):</p>
+<ul>
+<li>B cells undergo clonal expansion (rapid mitosis).</li>
+<li>They differentiate into plasma cells (secrete large quantities of antibodies) and memory B cells.</li>
+</ul>
+
+<div class="definition">
+<strong>Antibody:</strong> A Y-shaped glycoprotein (immunoglobulin) produced by plasma cells. It has two identical antigen-binding sites in the variable regions, which are complementary to one specific antigen. The constant region determines the class of antibody.
+</div>
+
+<p>How antibodies work:</p>
+<ul>
+<li><strong>Agglutination:</strong> Clumping pathogens together so phagocytes can engulf them more easily</li>
+<li><strong>Neutralisation:</strong> Blocking binding sites on toxins or viruses</li>
+<li><strong>Opsonisation:</strong> Coating pathogens to make them more recognisable to phagocytes</li>
+</ul>
+
+<h3>Primary and Secondary Immune Response</h3>
+<table>
+<tr><th>Feature</th><th>Primary Response</th><th>Secondary Response</th></tr>
+<tr><td>Speed</td><td>Slow (days to weeks)</td><td>Rapid (hours to days)</td></tr>
+<tr><td>Antibody quantity</td><td>Low</td><td>Much higher</td></tr>
+<tr><td>Cause</td><td>First exposure to antigen</td><td>Re-exposure to same antigen</td></tr>
+<tr><td>Cells involved</td><td>Naive B and T cells</td><td>Memory B and T cells</td></tr>
+</table>
+
+<h3>Vaccination</h3>
+<div class="definition">
+<strong>Vaccination:</strong> The introduction of a weakened, inactivated, or fragment of a pathogen (containing antigens) to stimulate a primary immune response and production of memory cells, without causing the disease. This provides immunity against future infection.
+</div>
+
+<p>Types of vaccines: live attenuated, inactivated whole pathogen, subunit (purified antigen), toxoid, mRNA vaccines.</p>
+
+<h3>HIV and the Immune System</h3>
+<p>HIV (Human Immunodeficiency Virus) is a retrovirus that infects and destroys helper T cells (CD4+ cells):</p>
+<ol>
+<li>HIV binds to CD4 receptor on helper T cells using its glycoprotein gp120.</li>
+<li>Viral RNA is reverse transcribed into DNA by reverse transcriptase.</li>
+<li>Viral DNA integrates into host genome.</li>
+<li>Host cell machinery produces new viral particles.</li>
+<li>Helper T cell is destroyed during viral budding.</li>
+</ol>
+<p>As helper T cell count falls, the immune system becomes compromised. The patient becomes vulnerable to opportunistic infections — this stage is AIDS (Acquired Immunodeficiency Syndrome).</p>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> HIV does not directly kill the person — it destroys helper T cells, meaning the body cannot mount effective immune responses to other infections. Always make this distinction clear in exam answers.
+</div>
+
+</div></body></html>

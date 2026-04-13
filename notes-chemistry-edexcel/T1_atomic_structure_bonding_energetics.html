@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T1 — Atomic Structure, Bonding and Energetics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>T1 — Atomic Structure, Bonding and Energetics</h1>
+
+<h2>1.1 Atomic Models and Fundamental Particles</h2>
+
+<p>The atom consists of a dense, positively charged nucleus containing protons and neutrons, surrounded by electrons in energy levels (shells and sub-shells). The development of atomic models progressed from Dalton's solid sphere, through Thomson's plum pudding model, to Rutherford's nuclear model, and finally Bohr's model with quantised energy levels.</p>
+
+<div class="definition">
+  <strong>Mass number (A):</strong> The total number of protons and neutrons in the nucleus of an atom.<br>
+  <strong>Atomic number (Z):</strong> The number of protons in the nucleus, which defines the element.<br>
+  <strong>Isotopes:</strong> Atoms of the same element with the same number of protons but different numbers of neutrons.
+</div>
+
+<table>
+  <tr><th>Particle</th><th>Relative Mass</th><th>Relative Charge</th><th>Location</th></tr>
+  <tr><td>Proton</td><td>1</td><td>+1</td><td>Nucleus</td></tr>
+  <tr><td>Neutron</td><td>1</td><td>0</td><td>Nucleus</td></tr>
+  <tr><td>Electron</td><td>1/1836</td><td>-1</td><td>Shells / orbitals</td></tr>
+</table>
+
+<h3>Relative Atomic Mass and Isotopic Abundance</h3>
+
+<div class="definition">
+  <strong>Relative atomic mass (A<sub>r</sub>):</strong> The weighted mean mass of an atom of an element relative to 1/12th the mass of a carbon-12 atom.
+</div>
+
+<div class="equation">
+  A<sub>r</sub> = &Sigma;(isotopic mass &times; percentage abundance) / 100
+</div>
+
+<p>Mass spectrometry is used to determine isotopic masses and their relative abundances. A mass spectrum shows peaks corresponding to each isotope, with the height of each peak proportional to its abundance. From these data, you can calculate A<sub>r</sub>.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When calculating A<sub>r</sub> from a mass spectrum, always check whether abundances are given as percentages or as raw peak heights. If raw heights, divide each by the total of all heights first.
+</div>
+
+<h2>1.2 Electron Configuration</h2>
+
+<p>Electrons occupy atomic orbitals, which are regions of space where there is a high probability of finding an electron. Each orbital can hold a maximum of two electrons with opposite spins (Pauli exclusion principle).</p>
+
+<h3>Sub-shells and Orbitals</h3>
+
+<table>
+  <tr><th>Sub-shell</th><th>Number of Orbitals</th><th>Max Electrons</th><th>Shape</th></tr>
+  <tr><td>s</td><td>1</td><td>2</td><td>Spherical</td></tr>
+  <tr><td>p</td><td>3</td><td>6</td><td>Dumbbell</td></tr>
+  <tr><td>d</td><td>5</td><td>10</td><td>Cloverleaf (various)</td></tr>
+  <tr><td>f</td><td>7</td><td>14</td><td>Complex</td></tr>
+</table>
+
+<p>The order of filling follows the Aufbau principle: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f, 5d, 6p... Electrons fill the lowest energy sub-shell first.</p>
+
+<p>Hund's rule states that electrons occupy orbitals of the same sub-shell singly before pairing. Each singly occupied orbital has electrons with parallel spin.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Remember the exceptions for chromium (Cr: [Ar] 3d<sup>5</sup> 4s<sup>1</sup>) and copper (Cu: [Ar] 3d<sup>10</sup> 4s<sup>1</sup>). Half-filled and fully-filled d sub-shells provide extra stability.
+</div>
+
+<h3>Electron Configuration Notation</h3>
+
+<p>Full notation writes out every sub-shell, e.g. iron: 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>6</sup> 3d<sup>6</sup> 4s<sup>2</sup>. Shorthand uses the previous noble gas core, e.g. [Ar] 3d<sup>6</sup> 4s<sup>2</sup>.</p>
+
+<p>When transition metals form ions, electrons are removed from the 4s sub-shell before the 3d. For example, Fe<sup>2+</sup> is [Ar] 3d<sup>6</sup>, not [Ar] 3d<sup>4</sup> 4s<sup>2</sup>.</p>
+
+<h2>1.3 Ionisation Energies</h2>
+
+<div class="definition">
+  <strong>First ionisation energy:</strong> The energy required to remove one mole of electrons from one mole of gaseous atoms to form one mole of gaseous 1+ ions.<br>
+  <strong>M(g) &rarr; M<sup>+</sup>(g) + e<sup>&minus;</sup></strong>
+</div>
+
+<h3>Factors Affecting Ionisation Energy</h3>
+
+<ul>
+  <li><strong>Nuclear charge:</strong> More protons = stronger attraction = higher IE</li>
+  <li><strong>Atomic radius:</strong> Greater distance from nucleus = weaker attraction = lower IE</li>
+  <li><strong>Shielding:</strong> More inner electron shells = greater shielding = lower IE</li>
+  <li><strong>Sub-shell structure:</strong> Paired electrons in the same orbital repel, making them easier to remove</li>
+</ul>
+
+<h3>Trends in Ionisation Energy</h3>
+
+<p><strong>Across a period:</strong> General increase due to increasing nuclear charge with the same shielding. Two notable drops occur: between Group 2 and Group 3 (the Group 3 element loses a p-electron, which is higher in energy than the s-electron of Group 2), and between Group 5 and Group 6 (Group 6 has a paired p-electron, easier to remove due to electron-electron repulsion).</p>
+
+<p><strong>Down a group:</strong> Decrease because atomic radius increases and shielding increases, outweighing the increase in nuclear charge.</p>
+
+<h3>Successive Ionisation Energies</h3>
+
+<p>Successive ionisation energies always increase because each subsequent electron is removed from an increasingly positive ion. A large jump occurs when an electron is removed from a new inner shell (closer to nucleus, less shielding), which reveals the number of outer-shell electrons and hence the group of the element.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> If asked to deduce the group of an element from successive IE data, look for the biggest jump between consecutive IEs. If the big jump is between the 3rd and 4th IE, the element is in Group 3.
+</div>
+
+<h2>1.4 Ionic Bonding</h2>
+
+<div class="definition">
+  <strong>Ionic bonding:</strong> The electrostatic attraction between oppositely charged ions, formed by the transfer of electrons from a metal to a non-metal.
+</div>
+
+<p>Ionic compounds form giant ionic lattices. Each ion is surrounded by ions of the opposite charge. The lattice structure gives ionic compounds high melting points, as a large amount of energy is needed to overcome the strong electrostatic attractions throughout the lattice.</p>
+
+<h3>Properties of Ionic Compounds</h3>
+
+<ul>
+  <li>High melting and boiling points (strong electrostatic forces)</li>
+  <li>Conduct electricity when molten or dissolved (ions are free to move)</li>
+  <li>Do not conduct when solid (ions are fixed in position)</li>
+  <li>Often soluble in water (polar water molecules can surround and stabilise ions)</li>
+  <li>Brittle (displacement of layers causes like charges to align, causing repulsion)</li>
+</ul>
+
+<h2>1.5 Covalent Bonding</h2>
+
+<div class="definition">
+  <strong>Covalent bond:</strong> A shared pair of electrons between two atoms, where the electrostatic attraction between the shared electrons and the nuclei of both atoms holds the atoms together.
+</div>
+
+<h3>Types of Covalent Bond</h3>
+
+<ul>
+  <li><strong>Single bond:</strong> One shared pair of electrons (sigma bond, &sigma;)</li>
+  <li><strong>Double bond:</strong> Two shared pairs (one &sigma; + one &pi;)</li>
+  <li><strong>Triple bond:</strong> Three shared pairs (one &sigma; + two &pi;)</li>
+  <li><strong>Dative (coordinate) bond:</strong> Both electrons in the shared pair come from one atom. Shown by an arrow from donor to acceptor. Example: NH<sub>4</sub><sup>+</sup>, where NH<sub>3</sub> donates a lone pair to H<sup>+</sup>.</li>
+</ul>
+
+<h3>Shapes of Molecules — VSEPR Theory</h3>
+
+<div class="definition">
+  <strong>VSEPR (Valence Shell Electron Pair Repulsion):</strong> Electron pairs around a central atom arrange themselves as far apart as possible to minimise repulsion. Lone pairs repel more than bonding pairs.
+</div>
+
+<table>
+  <tr><th>Electron Pairs</th><th>Bonding Pairs</th><th>Lone Pairs</th><th>Shape</th><th>Bond Angle</th><th>Example</th></tr>
+  <tr><td>2</td><td>2</td><td>0</td><td>Linear</td><td>180&deg;</td><td>CO<sub>2</sub>, BeCl<sub>2</sub></td></tr>
+  <tr><td>3</td><td>3</td><td>0</td><td>Trigonal planar</td><td>120&deg;</td><td>BF<sub>3</sub>, AlCl<sub>3</sub></td></tr>
+  <tr><td>3</td><td>2</td><td>1</td><td>Bent (V-shape)</td><td>~117&deg;</td><td>SO<sub>2</sub></td></tr>
+  <tr><td>4</td><td>4</td><td>0</td><td>Tetrahedral</td><td>109.5&deg;</td><td>CH<sub>4</sub>, NH<sub>4</sub><sup>+</sup></td></tr>
+  <tr><td>4</td><td>3</td><td>1</td><td>Trigonal pyramidal</td><td>107&deg;</td><td>NH<sub>3</sub>, PCl<sub>3</sub></td></tr>
+  <tr><td>4</td><td>2</td><td>2</td><td>Bent (V-shape)</td><td>104.5&deg;</td><td>H<sub>2</sub>O</td></tr>
+  <tr><td>5</td><td>5</td><td>0</td><td>Trigonal bipyramidal</td><td>90&deg;/120&deg;</td><td>PCl<sub>5</sub></td></tr>
+  <tr><td>6</td><td>6</td><td>0</td><td>Octahedral</td><td>90&deg;</td><td>SF<sub>6</sub></td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The order of repulsion strength is: lone pair-lone pair > lone pair-bonding pair > bonding pair-bonding pair. This is why bond angles decrease as lone pairs replace bonding pairs.
+</div>
+
+<h2>1.6 Metallic Bonding</h2>
+
+<div class="definition">
+  <strong>Metallic bonding:</strong> The electrostatic attraction between a lattice of positive metal ions (cations) and a sea of delocalised electrons.
+</div>
+
+<p>Metallic bond strength increases with: (1) greater number of delocalised electrons per atom, and (2) smaller ionic radius. This explains why melting points increase from Na to Mg to Al across Period 3.</p>
+
+<h3>Properties of Metals</h3>
+
+<ul>
+  <li><strong>Electrical conductivity:</strong> Delocalised electrons can flow through the structure when a potential difference is applied</li>
+  <li><strong>Thermal conductivity:</strong> Delocalised electrons transfer kinetic energy rapidly through the lattice</li>
+  <li><strong>Malleability/ductility:</strong> Layers of ions can slide over each other without breaking bonds, as the sea of electrons adjusts</li>
+  <li><strong>High melting points:</strong> Strong electrostatic attraction throughout the lattice (varies with charge and size of ions)</li>
+</ul>
+
+<h2>1.7 Intermolecular Forces</h2>
+
+<p>Intermolecular forces are the weak attractions between molecules. They determine physical properties such as boiling point, solubility, and viscosity.</p>
+
+<h3>London (Dispersion) Forces</h3>
+
+<p>Present in all molecules. Caused by temporary, instantaneous dipoles arising from random fluctuations in electron distribution. A temporary dipole induces a dipole in a neighbouring molecule. Strength increases with number of electrons (larger molecules/greater M<sub>r</sub>) and with greater surface area of contact.</p>
+
+<h3>Permanent Dipole-Dipole Forces</h3>
+
+<p>Occur between polar molecules. The &delta;+ end of one molecule attracts the &delta;&minus; end of another. Stronger than London forces alone for molecules of similar size.</p>
+
+<h3>Hydrogen Bonding</h3>
+
+<div class="definition">
+  <strong>Hydrogen bond:</strong> A strong intermolecular force between a hydrogen atom bonded to a highly electronegative atom (N, O, or F) and a lone pair on another N, O, or F atom on a neighbouring molecule.
+</div>
+
+<p>Hydrogen bonding explains the anomalously high boiling points of NH<sub>3</sub>, H<sub>2</sub>O, and HF compared to other hydrides in their groups. It also explains the relatively low density of ice (hydrogen bonds hold water molecules in an open lattice structure).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When explaining boiling point trends, always name the specific intermolecular force, explain how it arises, and relate it to the energy needed to overcome those forces.
+</div>
+
+<h2>1.8 Electronegativity and Bond Polarity</h2>
+
+<div class="definition">
+  <strong>Electronegativity:</strong> The ability of an atom to attract the bonding pair of electrons in a covalent bond towards itself.
+</div>
+
+<p>Electronegativity increases across a period (greater nuclear charge, same shielding) and decreases down a group (greater atomic radius, more shielding). Fluorine is the most electronegative element.</p>
+
+<p>A polar bond has an uneven distribution of electron density. If the molecule is symmetrical, individual bond dipoles may cancel, making the molecule non-polar overall (e.g. CO<sub>2</sub>, CCl<sub>4</sub>). If asymmetrical, the molecule has a net dipole moment (e.g. H<sub>2</sub>O, CHCl<sub>3</sub>).</p>
+
+<h2>1.9 Enthalpy Changes</h2>
+
+<div class="definition">
+  <strong>Enthalpy change (&Delta;H):</strong> The heat energy change measured at constant pressure. Exothermic reactions have &Delta;H &lt; 0 (heat released). Endothermic reactions have &Delta;H &gt; 0 (heat absorbed).
+</div>
+
+<h3>Standard Enthalpy Changes</h3>
+
+<table>
+  <tr><th>Enthalpy Change</th><th>Definition (per mole, standard conditions: 298 K, 100 kPa)</th></tr>
+  <tr><td>&Delta;<sub>c</sub>H&deg; (combustion)</td><td>Complete combustion of one mole of a substance in excess oxygen</td></tr>
+  <tr><td>&Delta;<sub>f</sub>H&deg; (formation)</td><td>Formation of one mole of a compound from its elements in their standard states</td></tr>
+  <tr><td>&Delta;<sub>neut</sub>H&deg; (neutralisation)</td><td>Reaction of an acid and base to form one mole of water</td></tr>
+  <tr><td>&Delta;<sub>at</sub>H&deg; (atomisation)</td><td>Formation of one mole of gaseous atoms from the element in its standard state</td></tr>
+</table>
+
+<h3>Calorimetry</h3>
+
+<p>In calorimetry experiments, the heat change is calculated using:</p>
+
+<div class="equation">
+  q = mc&Delta;T
+</div>
+
+<p>where q = heat energy (J), m = mass of solution (g), c = specific heat capacity (4.18 J g<sup>&minus;1</sup> K<sup>&minus;1</sup> for water), and &Delta;T = temperature change (K or &deg;C).</p>
+
+<p>To find the enthalpy change per mole, divide q by the number of moles of the limiting reagent:</p>
+
+<div class="equation">
+  &Delta;H = &minus;q / n
+</div>
+
+<p>The negative sign is included because if the solution temperature increases (exothermic), the enthalpy change of the reaction is negative.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Common sources of error in calorimetry: heat loss to surroundings, incomplete combustion, assuming the specific heat capacity of the solution equals that of water, and assuming the density of the solution is 1 g cm<sup>&minus;3</sup>.
+</div>
+
+<h2>1.10 Hess's Law</h2>
+
+<div class="definition">
+  <strong>Hess's Law:</strong> The total enthalpy change of a reaction is independent of the route taken, provided the initial and final conditions are the same. This is a consequence of the law of conservation of energy.
+</div>
+
+<h3>Using Formation Enthalpies</h3>
+
+<div class="equation">
+  &Delta;<sub>r</sub>H&deg; = &Sigma;&Delta;<sub>f</sub>H&deg;(products) &minus; &Sigma;&Delta;<sub>f</sub>H&deg;(reactants)
+</div>
+
+<h3>Using Combustion Enthalpies</h3>
+
+<div class="equation">
+  &Delta;<sub>r</sub>H&deg; = &Sigma;&Delta;<sub>c</sub>H&deg;(reactants) &minus; &Sigma;&Delta;<sub>c</sub>H&deg;(products)
+</div>
+
+<p>Note the reversal: for combustion data, reactants minus products (the opposite of formation data). This is because combustion enthalpies provide a route down from reactants and products to a common set of combustion products (CO<sub>2</sub> and H<sub>2</sub>O).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When drawing Hess's law cycles, always include state symbols and ensure arrows point in the correct direction. If you need to reverse a reaction, change the sign of &Delta;H.
+</div>
+
+<h2>1.11 Bond Enthalpies</h2>
+
+<div class="definition">
+  <strong>Mean bond enthalpy:</strong> The average energy required to break one mole of a particular type of bond in the gaseous state, measured over a range of different compounds containing that bond.
+</div>
+
+<div class="equation">
+  &Delta;<sub>r</sub>H = &Sigma;(bond enthalpies broken) &minus; &Sigma;(bond enthalpies formed)
+</div>
+
+<p>Bond enthalpy calculations give approximate values because mean bond enthalpies are averages. The actual energy of a specific bond depends on the molecular environment. For example, the O-H bond in water has a different exact bond enthalpy from the O-H bond in ethanol.</p>
+
+<p>Breaking bonds is endothermic (energy input required). Forming bonds is exothermic (energy released). If more energy is released forming new bonds than is required to break old bonds, the reaction is exothermic overall.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Bond enthalpy calculations only apply to reactions where all species are in the gaseous state. If a question gives you a liquid product, you need additional data (enthalpy of vaporisation) for an accurate answer.
+</div>
+
+</div>
+</body>
+</html>

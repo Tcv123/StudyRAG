@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 9 — Thermodynamics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e40af;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #2563eb;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #374151;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        .definition {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before {
+            content: "Exam Tip: ";
+            font-weight: 700;
+            color: #d97706;
+        }
+        .equation {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 12px 20px;
+            margin: 12px 0;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            text-align: center;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #1e40af;
+        }
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        ul, ol {
+            margin: 10px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        strong {
+            color: #1e293b;
+        }
+        @media print {
+            body { padding: 20px; }
+            .exam-tip, .definition { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Topic 9 — Thermodynamics</h1>
+
+<h2>9.1 Internal Energy</h2>
+
+<div class="definition">
+    <strong>Internal energy</strong> is the sum of the randomly distributed kinetic energies and potential energies of all the molecules in a system.
+</div>
+
+<p>The <strong>kinetic energy</strong> component is associated with the random translational, rotational, and vibrational motion of molecules. It depends on temperature.</p>
+<p>The <strong>potential energy</strong> component is associated with the intermolecular forces between molecules. It depends on the separation of molecules (i.e., the state of matter).</p>
+
+<p>When you heat a substance:</p>
+<ul>
+    <li>If temperature rises: internal energy increases due to increased kinetic energy of molecules</li>
+    <li>If a change of state occurs (at constant temperature): internal energy increases due to increased potential energy as molecules move further apart (bonds breaking)</li>
+</ul>
+
+<h2>9.2 Specific Heat Capacity</h2>
+
+<div class="definition">
+    <strong>Specific heat capacity (c)</strong> is the energy required to raise the temperature of 1 kg of a substance by 1 K (or 1°C), without a change of state.<br>
+    Unit: J kg⁻¹ K⁻¹
+</div>
+
+<div class="equation">Q = mcΔθ</div>
+
+<p>where Q = energy transferred (J), m = mass (kg), c = specific heat capacity (J kg⁻¹ K⁻¹), Δθ = temperature change (K or °C).</p>
+
+<h3>Experimental Determination</h3>
+<p>A typical experiment uses an electrical heater immersed in a block or liquid:</p>
+<ul>
+    <li>Measure mass of substance (m)</li>
+    <li>Record initial temperature (θ₁)</li>
+    <li>Heat with known power P for time t, so energy supplied = Pt = VIt</li>
+    <li>Record final temperature (θ₂)</li>
+    <li>Calculate: c = Pt / (m × Δθ)</li>
+</ul>
+<p>Sources of error: heat losses to surroundings, uneven heating, thermometer response time. Insulation and stirring help reduce errors.</p>
+
+<div class="exam-tip">In calculations, remember that energy supplied by the heater may not all go into raising the temperature — some is lost. The experimental value of c will typically be higher than the true value because of heat losses.</div>
+
+<h2>9.3 Specific Latent Heat</h2>
+
+<div class="definition">
+    <strong>Specific latent heat (L)</strong> is the energy required to change the state of 1 kg of a substance without a change in temperature.<br>
+    <strong>Specific latent heat of fusion (L_f):</strong> solid → liquid<br>
+    <strong>Specific latent heat of vaporisation (L_v):</strong> liquid → gas<br>
+    Unit: J kg⁻¹
+</div>
+
+<div class="equation">Q = mL</div>
+
+<p>During a change of state, temperature remains constant because all energy input goes into breaking/forming intermolecular bonds (changing potential energy), not increasing kinetic energy.</p>
+
+<h3>Heating Curves</h3>
+<p>A heating curve plots temperature against time (or energy) for a substance being heated at constant power:</p>
+<ul>
+    <li><strong>Sloped sections:</strong> Temperature is rising — substance is in a single phase. Gradient depends on specific heat capacity (steeper = lower c or lower mass).</li>
+    <li><strong>Flat sections:</strong> Temperature constant — change of state occurring. Length depends on specific latent heat (longer = higher L or greater mass).</li>
+</ul>
+
+<h2>9.4 Gas Laws</h2>
+
+<h3>Boyle's Law</h3>
+<div class="definition">
+    <strong>Boyle's law:</strong> For a fixed mass of gas at constant temperature, the pressure is inversely proportional to the volume.<br>
+    <strong>pV = constant</strong> &nbsp; (at constant T)
+</div>
+<div class="equation">p₁V₁ = p₂V₂</div>
+
+<h3>Charles's Law</h3>
+<div class="definition">
+    <strong>Charles's law:</strong> For a fixed mass of gas at constant pressure, the volume is directly proportional to the absolute temperature.<br>
+    <strong>V / T = constant</strong> &nbsp; (at constant p)
+</div>
+<div class="equation">V₁ / T₁ = V₂ / T₂</div>
+
+<h3>Pressure Law (Gay-Lussac's Law)</h3>
+<div class="definition">
+    <strong>Pressure law:</strong> For a fixed mass of gas at constant volume, the pressure is directly proportional to the absolute temperature.<br>
+    <strong>p / T = constant</strong> &nbsp; (at constant V)
+</div>
+<div class="equation">p₁ / T₁ = p₂ / T₂</div>
+
+<div class="exam-tip">All gas law calculations require temperature in kelvin. Convert from Celsius: T(K) = T(°C) + 273.15. A common error is forgetting to convert.</div>
+
+<h2>9.5 Ideal Gas Equation</h2>
+
+<p>Combining the three gas laws gives the <strong>ideal gas equation</strong>:</p>
+
+<div class="equation">pV = nRT = NkT</div>
+
+<p>where:</p>
+<table>
+    <tr>
+        <th>Symbol</th>
+        <th>Quantity</th>
+        <th>Value / Unit</th>
+    </tr>
+    <tr>
+        <td>p</td>
+        <td>Pressure</td>
+        <td>Pa</td>
+    </tr>
+    <tr>
+        <td>V</td>
+        <td>Volume</td>
+        <td>m³</td>
+    </tr>
+    <tr>
+        <td>n</td>
+        <td>Number of moles</td>
+        <td>mol</td>
+    </tr>
+    <tr>
+        <td>R</td>
+        <td>Molar gas constant</td>
+        <td>8.314 J mol⁻¹ K⁻¹</td>
+    </tr>
+    <tr>
+        <td>N</td>
+        <td>Number of molecules</td>
+        <td>dimensionless</td>
+    </tr>
+    <tr>
+        <td>k</td>
+        <td>Boltzmann constant</td>
+        <td>1.38 × 10⁻²³ J K⁻¹</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td>Absolute temperature</td>
+        <td>K</td>
+    </tr>
+</table>
+
+<p>The relationship between the constants: <strong>R = N_A × k</strong>, where N_A = 6.02 × 10²³ mol⁻¹ (Avogadro's number).</p>
+
+<p>Also: N = n × N_A (total number of molecules = moles × Avogadro's number).</p>
+
+<div class="definition">
+    <strong>An ideal gas</strong> is one that obeys the ideal gas equation (pV = nRT) at all pressures and temperatures. Real gases approximate ideal behaviour at low pressures and high temperatures (when molecules are far apart and intermolecular forces are negligible).
+</div>
+
+<h2>9.6 Kinetic Theory of Gases</h2>
+
+<h3>Assumptions of the Kinetic Theory</h3>
+<ol>
+    <li>The gas contains a very large number of molecules in rapid, random motion</li>
+    <li>The volume of the molecules is negligible compared to the volume of the container</li>
+    <li>Collisions between molecules and with the walls are perfectly elastic</li>
+    <li>The time of a collision is negligible compared to the time between collisions</li>
+    <li>There are no intermolecular forces between molecules (except during collisions)</li>
+    <li>Molecules exert pressure on the container walls due to their collisions with the walls</li>
+</ol>
+
+<h3>Derivation of the Pressure Equation</h3>
+<p>By considering the momentum change when a molecule bounces off a wall and using Newton's laws, the kinetic theory gives:</p>
+
+<div class="equation">p = ⅓ρc̄²</div>
+
+<p>or equivalently:</p>
+
+<div class="equation">pV = ⅓Nmc̄²</div>
+
+<p>where ρ is the gas density, m is the mass of one molecule, N is the total number of molecules, and c̄² is the mean square speed.</p>
+
+<p>Key steps in the derivation:</p>
+<ol>
+    <li>Consider one molecule of mass m moving with velocity component c_x towards a wall</li>
+    <li>Change in momentum per collision = 2mc_x (elastic collision, reverses x-component)</li>
+    <li>Time between collisions with same wall = 2L/c_x (L = length of container)</li>
+    <li>Force from one molecule = rate of change of momentum = mc_x²/L</li>
+    <li>Sum over all N molecules: F = Nm c̄_x² / L</li>
+    <li>Pressure = F/A = Nm c̄_x² / V</li>
+    <li>Since motion is random: c̄² = c̄_x² + c̄_y² + c̄_z² = 3c̄_x², so c̄_x² = c̄²/3</li>
+    <li>Therefore: p = Nmc̄² / (3V), or pV = ⅓Nmc̄²</li>
+</ol>
+
+<h3>Mean Kinetic Energy</h3>
+<p>Combining pV = ⅓Nmc̄² with pV = NkT gives:</p>
+
+<div class="equation">½mc̄² = (3/2)kT</div>
+
+<p>This shows that the <strong>mean translational kinetic energy</strong> of a gas molecule is directly proportional to absolute temperature and is the same for all gases at the same temperature, regardless of molecular mass.</p>
+
+<p>For one mole of gas:</p>
+<div class="equation">½Mc̄² = (3/2)RT</div>
+<p>where M is the molar mass.</p>
+
+<h3>Root Mean Square Speed</h3>
+
+<div class="definition">
+    <strong>Root mean square (rms) speed</strong> is the square root of the mean square speed of molecules in a gas:<br>
+    <strong>c_rms = √(c̄²) = √(3kT/m) = √(3RT/M)</strong>
+</div>
+
+<p>Note: The rms speed is not the same as the mean speed. For a Maxwell-Boltzmann distribution, c_rms > c_mean > c_most probable.</p>
+
+<div class="exam-tip">When calculating rms speed, make sure mass is in kg (for single molecule, use m = M/N_A where M is molar mass in kg mol⁻¹). A common error is using molar mass in g mol⁻¹ without converting.</div>
+
+<table>
+    <tr>
+        <th>Quantity</th>
+        <th>Formula</th>
+        <th>Unit</th>
+    </tr>
+    <tr>
+        <td>Internal energy</td>
+        <td>Sum of KE + PE of all molecules</td>
+        <td>J</td>
+    </tr>
+    <tr>
+        <td>Heat capacity equation</td>
+        <td>Q = mcΔθ</td>
+        <td>J</td>
+    </tr>
+    <tr>
+        <td>Latent heat equation</td>
+        <td>Q = mL</td>
+        <td>J</td>
+    </tr>
+    <tr>
+        <td>Ideal gas equation</td>
+        <td>pV = nRT = NkT</td>
+        <td>—</td>
+    </tr>
+    <tr>
+        <td>Pressure equation</td>
+        <td>p = ⅓ρc̄²</td>
+        <td>Pa</td>
+    </tr>
+    <tr>
+        <td>Mean KE per molecule</td>
+        <td>½mc̄² = 3/2 kT</td>
+        <td>J</td>
+    </tr>
+    <tr>
+        <td>rms speed</td>
+        <td>c_rms = √(3kT/m)</td>
+        <td>m s⁻¹</td>
+    </tr>
+</table>
+
+<div class="exam-tip">The derivation of p = ⅓ρc̄² is a common 6-mark question. Learn the key steps and be clear about where the factor of ⅓ comes from (random motion equally distributed in 3 dimensions).</div>
+
+</div>
+</body>
+</html>

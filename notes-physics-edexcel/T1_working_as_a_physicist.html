@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 1 — Working as a Physicist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e3a5f;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 4px solid #2563eb;
+            padding-left: 12px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #334155;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        .definition-box {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before {
+            content: "Exam Tip: ";
+            font-weight: 700;
+            color: #b45309;
+        }
+        .equation {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 1.1rem;
+            background: #f8fafc;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        strong {
+            color: #1e3a5f;
+        }
+        @media print {
+            body { padding: 20px; }
+            .exam-tip, .definition-box { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Topic 1 — Working as a Physicist</h1>
+
+        <h2>1.1 SI Base Units</h2>
+        <div class="definition-box">
+            <strong>SI units</strong> (Systeme International) are the internationally agreed system of measurement used in physics. All physical quantities can be expressed using combinations of seven base units.
+        </div>
+
+        <table>
+            <tr><th>Quantity</th><th>Unit</th><th>Symbol</th></tr>
+            <tr><td>Mass</td><td>kilogram</td><td>kg</td></tr>
+            <tr><td>Length</td><td>metre</td><td>m</td></tr>
+            <tr><td>Time</td><td>second</td><td>s</td></tr>
+            <tr><td>Electric current</td><td>ampere</td><td>A</td></tr>
+            <tr><td>Temperature</td><td>kelvin</td><td>K</td></tr>
+            <tr><td>Amount of substance</td><td>mole</td><td>mol</td></tr>
+            <tr><td>Luminous intensity</td><td>candela</td><td>cd</td></tr>
+        </table>
+
+        <h3>Derived Units</h3>
+        <p><strong>Derived units</strong> are combinations of base units. They are formed by multiplying or dividing base units together.</p>
+        <table>
+            <tr><th>Quantity</th><th>Derived Unit</th><th>In Base Units</th></tr>
+            <tr><td>Force (Newton)</td><td>N</td><td>kg m s<sup>-2</sup></td></tr>
+            <tr><td>Energy (Joule)</td><td>J</td><td>kg m<sup>2</sup> s<sup>-2</sup></td></tr>
+            <tr><td>Power (Watt)</td><td>W</td><td>kg m<sup>2</sup> s<sup>-3</sup></td></tr>
+            <tr><td>Pressure (Pascal)</td><td>Pa</td><td>kg m<sup>-1</sup> s<sup>-2</sup></td></tr>
+            <tr><td>Charge (Coulomb)</td><td>C</td><td>A s</td></tr>
+            <tr><td>Potential difference (Volt)</td><td>V</td><td>kg m<sup>2</sup> s<sup>-3</sup> A<sup>-1</sup></td></tr>
+            <tr><td>Resistance (Ohm)</td><td>&Omega;</td><td>kg m<sup>2</sup> s<sup>-3</sup> A<sup>-2</sup></td></tr>
+        </table>
+
+        <div class="exam-tip">
+            To check if an equation is <strong>homogeneous</strong>, substitute the SI base units into both sides. If they match, the equation is dimensionally consistent (though it may still have incorrect numerical constants).
+        </div>
+
+        <h2>1.2 SI Prefixes</h2>
+        <p>Prefixes are used to represent very large or very small quantities without using full scientific notation.</p>
+        <table>
+            <tr><th>Prefix</th><th>Symbol</th><th>Multiplier</th><th>Power of 10</th></tr>
+            <tr><td>tera</td><td>T</td><td>1,000,000,000,000</td><td>10<sup>12</sup></td></tr>
+            <tr><td>giga</td><td>G</td><td>1,000,000,000</td><td>10<sup>9</sup></td></tr>
+            <tr><td>mega</td><td>M</td><td>1,000,000</td><td>10<sup>6</sup></td></tr>
+            <tr><td>kilo</td><td>k</td><td>1,000</td><td>10<sup>3</sup></td></tr>
+            <tr><td>centi</td><td>c</td><td>0.01</td><td>10<sup>-2</sup></td></tr>
+            <tr><td>milli</td><td>m</td><td>0.001</td><td>10<sup>-3</sup></td></tr>
+            <tr><td>micro</td><td>&mu;</td><td>0.000001</td><td>10<sup>-6</sup></td></tr>
+            <tr><td>nano</td><td>n</td><td>0.000000001</td><td>10<sup>-9</sup></td></tr>
+            <tr><td>pico</td><td>p</td><td>0.000000000001</td><td>10<sup>-12</sup></td></tr>
+        </table>
+
+        <h3>Converting Units</h3>
+        <p>To convert between prefixed units, multiply or divide by the appropriate power of 10:</p>
+        <ul>
+            <li>3.5 km = 3.5 &times; 10<sup>3</sup> m = 3500 m</li>
+            <li>250 nm = 250 &times; 10<sup>-9</sup> m = 2.50 &times; 10<sup>-7</sup> m</li>
+            <li>4.7 M&Omega; = 4.7 &times; 10<sup>6</sup> &Omega;</li>
+        </ul>
+        <p>Always convert to SI base units before substituting into equations.</p>
+
+        <h2>1.3 Significant Figures and Decimal Places</h2>
+        <div class="definition-box">
+            <strong>Significant figures (s.f.)</strong> are the number of meaningful digits in a value. Leading zeros are not significant; trailing zeros after a decimal point are significant.
+        </div>
+        <h3>Rules for Significant Figures</h3>
+        <ul>
+            <li>All non-zero digits are significant: 3456 has 4 s.f.</li>
+            <li>Zeros between non-zero digits are significant: 3006 has 4 s.f.</li>
+            <li>Leading zeros are NOT significant: 0.0045 has 2 s.f.</li>
+            <li>Trailing zeros after a decimal point ARE significant: 2.50 has 3 s.f.</li>
+        </ul>
+        <h3>Using Significant Figures in Calculations</h3>
+        <ul>
+            <li>Your final answer should have the same number of significant figures as the <strong>least precise</strong> value used in the calculation.</li>
+            <li>Keep extra significant figures during intermediate steps to avoid rounding errors.</li>
+        </ul>
+
+        <div class="exam-tip">
+            In exam calculations, give your answer to 2 or 3 significant figures unless told otherwise. If data is given to 3 s.f., give your answer to 3 s.f.
+        </div>
+
+        <h2>1.4 Estimation and Orders of Magnitude</h2>
+        <div class="definition-box">
+            <strong>Order of magnitude</strong> refers to the power of 10 closest to a quantity. Two values are of the same order of magnitude if they are within a factor of 10 of each other.
+        </div>
+        <h3>Common Estimations</h3>
+        <table>
+            <tr><th>Quantity</th><th>Approximate Value</th><th>Order of Magnitude</th></tr>
+            <tr><td>Mass of an electron</td><td>9.1 &times; 10<sup>-31</sup> kg</td><td>10<sup>-30</sup> kg</td></tr>
+            <tr><td>Diameter of an atom</td><td>1 &times; 10<sup>-10</sup> m</td><td>10<sup>-10</sup> m</td></tr>
+            <tr><td>Height of a person</td><td>~1.7 m</td><td>10<sup>0</sup> m</td></tr>
+            <tr><td>Mass of a car</td><td>~1500 kg</td><td>10<sup>3</sup> kg</td></tr>
+            <tr><td>Radius of the Earth</td><td>6.4 &times; 10<sup>6</sup> m</td><td>10<sup>7</sup> m</td></tr>
+            <tr><td>Speed of light</td><td>3 &times; 10<sup>8</sup> m/s</td><td>10<sup>8</sup> m/s</td></tr>
+        </table>
+
+        <h2>1.5 Planning Experiments and Variables</h2>
+        <div class="definition-box">
+            <p><strong>Independent variable</strong> — the variable that you deliberately change during the experiment.</p>
+            <p><strong>Dependent variable</strong> — the variable that you measure as a result of changing the independent variable.</p>
+            <p><strong>Control variables</strong> — variables that must be kept constant to ensure a fair test.</p>
+        </div>
+        <h3>Planning an Experiment</h3>
+        <ul>
+            <li>Identify the independent, dependent, and control variables.</li>
+            <li>Choose appropriate measuring instruments with suitable resolution.</li>
+            <li>Plan to take repeat readings and calculate a mean to reduce random error.</li>
+            <li>Consider the range of values and the number of data points (at least 5-6).</li>
+            <li>Identify potential sources of systematic and random error.</li>
+            <li>Write a clear method that another person could follow to replicate the experiment.</li>
+        </ul>
+
+        <h3>Types of Error</h3>
+        <table>
+            <tr><th>Type</th><th>Description</th><th>How to Reduce</th></tr>
+            <tr><td><strong>Random error</strong></td><td>Unpredictable variation between measurements, causing scatter around the true value</td><td>Take repeat readings and calculate the mean</td></tr>
+            <tr><td><strong>Systematic error</strong></td><td>A consistent error in the same direction every time (e.g., a zero error)</td><td>Recalibrate instruments; check for zero errors before use</td></tr>
+        </table>
+
+        <h2>1.6 Uncertainties</h2>
+        <div class="definition-box">
+            <strong>Uncertainty</strong> is a measure of the range within which the true value is likely to lie. It quantifies the confidence in a measurement.
+        </div>
+
+        <h3>Absolute Uncertainty</h3>
+        <p>The absolute uncertainty is expressed in the same units as the measurement. For a single reading, it is typically half the smallest division of the measuring instrument (the resolution).</p>
+        <p>For repeated readings:</p>
+        <div class="equation">
+            Absolute uncertainty = (max value - min value) / 2
+        </div>
+
+        <h3>Percentage Uncertainty</h3>
+        <div class="equation">
+            Percentage uncertainty = (absolute uncertainty / measured value) &times; 100%
+        </div>
+
+        <h3>Combining Uncertainties</h3>
+        <table>
+            <tr><th>Operation</th><th>Rule</th></tr>
+            <tr><td>Adding or subtracting quantities</td><td>Add the <strong>absolute</strong> uncertainties</td></tr>
+            <tr><td>Multiplying or dividing quantities</td><td>Add the <strong>percentage</strong> uncertainties</td></tr>
+            <tr><td>Raising to a power (x<sup>n</sup>)</td><td>Multiply the percentage uncertainty by n</td></tr>
+        </table>
+
+        <div class="exam-tip">
+            When a quantity is squared (e.g., v<sup>2</sup>), the percentage uncertainty is doubled. When a quantity is square-rooted, the percentage uncertainty is halved.
+        </div>
+
+        <h2>1.7 Graphs</h2>
+        <h3>Drawing Graphs</h3>
+        <ul>
+            <li>Use at least half the graph paper for your plotted points.</li>
+            <li>Label both axes with the quantity and its unit (e.g., "velocity / m s<sup>-1</sup>").</li>
+            <li>Choose sensible scales — use easy divisions (1, 2, 5, 10 per square).</li>
+            <li>Plot points accurately with small crosses.</li>
+            <li>Draw a line of best fit — this can be a straight line or a smooth curve.</li>
+        </ul>
+
+        <h3>Gradient</h3>
+        <p>The gradient of a straight-line graph is calculated using:</p>
+        <div class="equation">
+            gradient = &Delta;y / &Delta;x = (y<sub>2</sub> - y<sub>1</sub>) / (x<sub>2</sub> - x<sub>1</sub>)
+        </div>
+        <p>Use a large triangle (at least half the line length) for accuracy. The gradient often represents a physical quantity (e.g., gradient of a distance-time graph = velocity).</p>
+
+        <h3>Y-Intercept</h3>
+        <p>The y-intercept is the value of y when x = 0. It may represent a physical constant in the experiment (e.g., the y-intercept of a V against I graph gives EMF if the equation is rearranged as V = &epsilon; - Ir).</p>
+
+        <h3>Error Bars</h3>
+        <ul>
+            <li><strong>Error bars</strong> are drawn on each point to represent the uncertainty in the measurement.</li>
+            <li>They extend above and below (or left and right) of the plotted point by the size of the absolute uncertainty.</li>
+            <li>Draw a <strong>best fit line</strong> that passes as close to as many points as possible.</li>
+            <li>Draw <strong>worst fit lines</strong> — the steepest and shallowest lines that still pass through all error bars.</li>
+        </ul>
+
+        <h3>Uncertainty in Gradient</h3>
+        <div class="equation">
+            Uncertainty in gradient = (gradient of steepest line - gradient of shallowest line) / 2
+        </div>
+
+        <h3>Uncertainty in Y-Intercept</h3>
+        <div class="equation">
+            Uncertainty in intercept = (intercept of steepest - intercept of shallowest) / 2
+        </div>
+
+        <div class="exam-tip">
+            Always use data points that lie ON your line of best fit when calculating the gradient, not raw data points from the table. The two points should be far apart for maximum accuracy.
+        </div>
+    </div>
+</body>
+</html>

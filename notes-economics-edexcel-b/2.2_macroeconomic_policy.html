@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macroeconomic Policy — Edexcel B A-Level Economics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .diagram-box { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
+  .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 8px; font-style: italic; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>2.2 Macroeconomic Policy</h1>
+
+<h2>Aggregate Demand (AD)</h2>
+
+<div class="def-box">
+<strong>Aggregate Demand:</strong> The total planned expenditure on goods and services produced in an economy at a given price level in a given time period.
+</div>
+
+<div class="eq">AD = C + I + G + (X - M)</div>
+
+<h3>Components of AD</h3>
+<table>
+  <tr><th>Component</th><th>Description</th><th>Determinants</th></tr>
+  <tr><td>C (Consumption)</td><td>Household spending on goods/services (~60% of AD in UK)</td><td>Income, interest rates, confidence, wealth, credit availability, taxes</td></tr>
+  <tr><td>I (Investment)</td><td>Firm spending on capital goods</td><td>Interest rates, confidence, profit levels, technology, government incentives</td></tr>
+  <tr><td>G (Government spending)</td><td>Public expenditure on goods/services</td><td>Fiscal policy decisions, political priorities</td></tr>
+  <tr><td>(X-M) Net exports</td><td>Exports minus imports</td><td>Exchange rate, relative prices, income abroad, competitiveness</td></tr>
+</table>
+
+<h3>The AD Curve</h3>
+<p>AD slopes downward because at lower price levels:</p>
+<ul>
+  <li><strong>Wealth effect:</strong> Real value of wealth increases, boosting consumption</li>
+  <li><strong>Interest rate effect:</strong> Lower prices reduce demand for money, lowering interest rates, stimulating C and I</li>
+  <li><strong>International competitiveness effect:</strong> Lower domestic prices make exports cheaper and imports dearer</li>
+</ul>
+
+<h2>Aggregate Supply (AS)</h2>
+
+<div class="def-box">
+<strong>Aggregate Supply:</strong> The total output that all firms in an economy are willing and able to produce at a given price level in a given time period.
+</div>
+
+<h3>Short-Run Aggregate Supply (SRAS)</h3>
+<p>SRAS slopes upward because higher prices lead to higher output in the short run (some costs are fixed, e.g. wages set by contracts). Shifts of SRAS are caused by changes in costs of production: wages, raw material prices, exchange rate, indirect taxes.</p>
+
+<h3>Long-Run Aggregate Supply (LRAS)</h3>
+<p>LRAS is vertical at the full employment level of output (Yfe). In the long run, output is determined by supply-side factors (quantity and quality of factors of production), not the price level. Shifts of LRAS are caused by: changes in labour force size/quality, capital investment, technology, institutional factors.</p>
+
+<div class="diagram-box">
+<svg viewBox="0 0 450 320" width="450" height="320">
+  <defs><marker id="arr2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#333"/></marker></defs>
+  <!-- Axes -->
+  <line x1="50" y1="270" x2="420" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="50" y1="270" x2="50" y2="20" stroke="#333" stroke-width="2" marker-end="url(#arr2)"/>
+  <text x="235" y="295" text-anchor="middle" font-size="12">Real GDP</text>
+  <text x="15" y="145" text-anchor="middle" font-size="12" transform="rotate(-90,15,145)">Price Level</text>
+  <!-- LRAS -->
+  <line x1="300" y1="40" x2="300" y2="270" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="310" y="35" font-size="12" fill="#dc2626" font-weight="bold">LRAS</text>
+  <!-- SRAS -->
+  <path d="M 80,220 Q 200,200 280,160 Q 340,120 370,60" stroke="#2a9d8f" stroke-width="2.5" fill="none"/>
+  <text x="375" y="55" font-size="12" fill="#2a9d8f" font-weight="bold">SRAS</text>
+  <!-- AD -->
+  <path d="M 80,80 Q 180,150 250,190 Q 320,230 380,250" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+  <text x="385" y="248" font-size="12" fill="#2563eb" font-weight="bold">AD</text>
+  <!-- Equilibrium -->
+  <circle cx="260" cy="175" r="4" fill="#1a1a2e"/>
+  <line x1="260" y1="175" x2="260" y2="270" stroke="#999" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="50" y1="175" x2="260" y2="175" stroke="#999" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="260" y="283" text-anchor="middle" font-size="11">Y1</text>
+  <text x="300" y="283" text-anchor="middle" font-size="11">Yfe</text>
+  <text x="40" y="178" font-size="11">P1</text>
+  <!-- Output gap label -->
+  <line x1="260" y1="265" x2="300" y2="265" stroke="#dc2626" stroke-width="2"/>
+  <text x="280" y="260" text-anchor="middle" font-size="9" fill="#dc2626">-ve gap</text>
+</svg>
+<div class="diagram-caption">AD/AS model showing short-run equilibrium below full employment (negative output gap)</div>
+</div>
+
+<h2>Fiscal Policy</h2>
+
+<div class="def-box">
+<strong>Fiscal policy:</strong> The use of government spending (G) and taxation (T) to influence aggregate demand and achieve macroeconomic objectives. Controlled by HM Treasury and announced in the Budget.
+</div>
+
+<h3>Expansionary Fiscal Policy</h3>
+<p>Increase in G and/or decrease in T to boost AD during a recession:</p>
+<ul>
+  <li>Increases disposable income, raising consumption</li>
+  <li>Increased government spending directly adds to AD</li>
+  <li>Subject to the multiplier effect</li>
+</ul>
+
+<h3>Contractionary Fiscal Policy</h3>
+<p>Decrease in G and/or increase in T to reduce AD during inflationary boom:</p>
+<ul>
+  <li>Reduces disposable income, dampening consumption</li>
+  <li>Reduced government spending directly subtracts from AD</li>
+</ul>
+
+<h3>Automatic Stabilisers</h3>
+<p>Fiscal mechanisms that automatically moderate economic fluctuations without active policy changes:</p>
+<ul>
+  <li><strong>Progressive taxation:</strong> In a boom, incomes rise, pushing people into higher tax brackets, automatically reducing disposable income</li>
+  <li><strong>Welfare payments:</strong> In a recession, more people claim benefits, automatically sustaining incomes and spending</li>
+</ul>
+
+<h3>Limitations of Fiscal Policy</h3>
+<ul>
+  <li><strong>Time lags:</strong> Recognition, decision, and implementation lags (12-18 months)</li>
+  <li><strong>Crowding out:</strong> Higher government borrowing may raise interest rates, reducing private sector investment</li>
+  <li><strong>National debt:</strong> Budget deficits add to the national debt; sustainability concerns</li>
+  <li><strong>Political constraints:</strong> Tax rises and spending cuts are electorally unpopular</li>
+  <li><strong>Multiplier uncertainty:</strong> Difficult to predict the size of the multiplier effect</li>
+  <li><strong>Ricardian equivalence:</strong> Consumers may save more if they expect future tax rises to pay for current spending</li>
+</ul>
+
+<h2>Monetary Policy</h2>
+
+<div class="def-box">
+<strong>Monetary policy:</strong> The use of interest rates, money supply, and other monetary tools to influence aggregate demand. In the UK, conducted by the Bank of England's Monetary Policy Committee (MPC), independent since 1997.
+</div>
+
+<h3>The Transmission Mechanism</h3>
+<p>How a change in Bank Rate affects the economy:</p>
+<ol>
+  <li>MPC changes Bank Rate (base rate)</li>
+  <li>Commercial banks adjust lending/savings rates</li>
+  <li>Affects cost of borrowing and return on savings</li>
+  <li>Influences consumption (C) and investment (I)</li>
+  <li>Also affects exchange rate and asset prices</li>
+  <li>Changes in AD affect output, employment, and inflation</li>
+</ol>
+
+<h3>Effects of Lower Interest Rates</h3>
+<ul>
+  <li>Cheaper borrowing encourages consumption and investment</li>
+  <li>Lower mortgage payments increase disposable income</li>
+  <li>Reduced incentive to save; money spent instead</li>
+  <li>Exchange rate may depreciate (capital outflows), boosting net exports</li>
+  <li>Asset prices rise (houses, shares), creating wealth effect</li>
+</ul>
+
+<h3>Quantitative Easing (QE)</h3>
+<div class="def-box">
+<strong>QE:</strong> An unconventional monetary policy tool where the central bank creates new electronic money to purchase government bonds and other financial assets from financial institutions, increasing the money supply and lowering long-term interest rates.
+</div>
+<p><strong>How it works:</strong> Bank of England buys bonds from banks, increasing their reserves. Banks should then lend more to businesses and consumers. Also pushes down bond yields and raises asset prices.</p>
+<p><strong>Limitations:</strong> Banks may not lend (liquidity trap); money may inflate asset prices rather than reaching real economy; risk of future inflation; increases inequality (asset holders benefit).</p>
+
+<h3>Limitations of Monetary Policy</h3>
+<ul>
+  <li><strong>Time lags:</strong> Takes 18-24 months for full effect on inflation</li>
+  <li><strong>Liquidity trap:</strong> At very low rates, further cuts ineffective (consumers/firms won't borrow)</li>
+  <li><strong>Consumer confidence:</strong> If confidence is low, cheaper credit won't stimulate spending</li>
+  <li><strong>Exchange rate effects:</strong> May cause import-price inflation if currency depreciates</li>
+  <li><strong>Asset bubbles:</strong> Low rates for extended periods may inflate housing/stock bubbles</li>
+  <li><strong>Blunt instrument:</strong> Cannot target specific sectors or regions</li>
+</ul>
+
+<h2>The Multiplier Effect</h2>
+
+<div class="def-box">
+<strong>The multiplier:</strong> The process by which an initial injection into the circular flow leads to a larger final increase in national income. The size of the multiplier depends on the marginal propensity to consume (MPC) and the marginal propensity to withdraw (MPW).
+</div>
+
+<div class="eq">Multiplier (k) = 1 / (1 - MPC) = 1 / MPW</div>
+<div class="eq">MPW = MPS + MPT + MPM</div>
+
+<p>Where: MPS = marginal propensity to save; MPT = marginal propensity to tax; MPM = marginal propensity to import</p>
+
+<div class="diagram-box">
+<svg viewBox="0 0 420 220" width="420" height="220">
+  <!-- Flow diagram -->
+  <rect x="20" y="80" width="120" height="50" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="80" y="100" text-anchor="middle" font-size="11" font-weight="bold">Initial Injection</text>
+  <text x="80" y="118" text-anchor="middle" font-size="10">(e.g. G rises by 10bn)</text>
+
+  <line x1="140" y1="105" x2="165" y2="105" stroke="#333" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <rect x="170" y="80" width="100" height="50" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="220" y="100" text-anchor="middle" font-size="11" font-weight="bold">Incomes Rise</text>
+  <text x="220" y="118" text-anchor="middle" font-size="10">Spending rises</text>
+
+  <line x1="270" y1="105" x2="295" y2="105" stroke="#333" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <rect x="300" y="80" width="100" height="50" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="350" y="100" text-anchor="middle" font-size="11" font-weight="bold">Further Rounds</text>
+  <text x="350" y="118" text-anchor="middle" font-size="10">Diminishing each time</text>
+
+  <!-- Withdrawals -->
+  <line x1="220" y1="130" x2="220" y2="170" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <rect x="160" y="172" width="120" height="35" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="220" y="193" text-anchor="middle" font-size="10" fill="#dc2626">Withdrawals (S, T, M)</text>
+
+  <!-- Final result -->
+  <text x="210" y="35" text-anchor="middle" font-size="12" font-weight="bold">If MPC = 0.8, multiplier = 1/(1-0.8) = 5</text>
+  <text x="210" y="55" text-anchor="middle" font-size="11">Final increase in GDP = 5 x 10bn = 50bn</text>
+</svg>
+<div class="diagram-caption">The multiplier process: initial injection leads to successive rounds of spending, with withdrawals reducing each round</div>
+</div>
+
+<h3>Factors Affecting the Size of the Multiplier</h3>
+<table>
+  <tr><th>Factor</th><th>Larger Multiplier</th><th>Smaller Multiplier</th></tr>
+  <tr><td>Savings rate</td><td>Low MPS</td><td>High MPS</td></tr>
+  <tr><td>Tax rates</td><td>Low tax rates</td><td>High tax rates</td></tr>
+  <tr><td>Import propensity</td><td>Low MPM (closed economy)</td><td>High MPM (open economy)</td></tr>
+  <tr><td>Spare capacity</td><td>Large output gap</td><td>Economy near full capacity</td></tr>
+  <tr><td>Consumer confidence</td><td>High confidence</td><td>Low confidence (save more)</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> The multiplier works in reverse too (negative multiplier). A withdrawal of spending (e.g. austerity cuts) leads to a larger final fall in GDP. Always discuss the multiplier when evaluating the effectiveness of fiscal policy.
+</div>
+
+<h2>Supply-Side Policies</h2>
+
+<div class="def-box">
+<strong>Supply-side policies:</strong> Government policies designed to increase the productive potential of the economy by shifting LRAS to the right. They aim to improve efficiency, productivity, and competitiveness.
+</div>
+
+<h3>Market-Based (Interventionist vs Free-Market)</h3>
+<table>
+  <tr><th>Free-Market Supply-Side</th><th>Interventionist Supply-Side</th></tr>
+  <tr><td>Deregulation (reduce red tape)</td><td>Education and training investment</td></tr>
+  <tr><td>Privatisation</td><td>Infrastructure spending (roads, broadband)</td></tr>
+  <tr><td>Trade union reform</td><td>R&D subsidies and tax credits</td></tr>
+  <tr><td>Income tax cuts (incentive to work)</td><td>Regional development grants</td></tr>
+  <tr><td>Corporation tax cuts (incentive to invest)</td><td>Industrial strategy (supporting key sectors)</td></tr>
+  <tr><td>Flexible labour markets</td><td>Healthcare investment (productivity)</td></tr>
+  <tr><td>Reducing welfare (incentive to work)</td><td>Public sector housing (labour mobility)</td></tr>
+</table>
+
+<h3>Benefits of Supply-Side Policies</h3>
+<ul>
+  <li>Increase potential output without causing inflation</li>
+  <li>Reduce NAIRU (lower structural unemployment)</li>
+  <li>Improve international competitiveness</li>
+  <li>Can achieve growth and low inflation simultaneously (no trade-off)</li>
+  <li>Address root causes of economic problems</li>
+</ul>
+
+<h3>Limitations of Supply-Side Policies</h3>
+<ul>
+  <li><strong>Long time lags:</strong> Education/infrastructure take years to impact productivity</li>
+  <li><strong>Uncertain outcomes:</strong> No guarantee of success</li>
+  <li><strong>Opportunity cost:</strong> Government spending on supply-side has alternatives</li>
+  <li><strong>Inequality:</strong> Free-market policies may increase income inequality</li>
+  <li><strong>Cannot address demand-deficient unemployment:</strong> Supply-side alone insufficient in recession</li>
+  <li><strong>Political difficulty:</strong> Some reforms (e.g. welfare cuts) are unpopular</li>
+</ul>
+
+<div class="diagram-box">
+<svg viewBox="0 0 420 280" width="420" height="280">
+  <!-- Axes -->
+  <line x1="50" y1="250" x2="400" y2="250" stroke="#333" stroke-width="2"/>
+  <line x1="50" y1="250" x2="50" y2="20" stroke="#333" stroke-width="2"/>
+  <text x="225" y="275" text-anchor="middle" font-size="12">Real GDP</text>
+  <text x="15" y="135" text-anchor="middle" font-size="12" transform="rotate(-90,15,135)">Price Level</text>
+  <!-- LRAS1 -->
+  <line x1="240" y1="35" x2="240" y2="250" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="245" y="30" font-size="11" fill="#dc2626">LRAS1</text>
+  <!-- LRAS2 -->
+  <line x1="320" y1="35" x2="320" y2="250" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="325" y="30" font-size="11" fill="#16a34a">LRAS2</text>
+  <!-- AD -->
+  <path d="M 80,60 Q 200,150 350,230" stroke="#2563eb" stroke-width="2" fill="none"/>
+  <text x="355" y="228" font-size="11" fill="#2563eb">AD</text>
+  <!-- Arrow showing shift -->
+  <line x1="255" y1="140" x2="305" y2="140" stroke="#333" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <text x="280" y="130" text-anchor="middle" font-size="10">Supply-side</text>
+  <text x="280" y="118" text-anchor="middle" font-size="10">improvement</text>
+</svg>
+<div class="diagram-caption">Successful supply-side policies shift LRAS right, increasing potential output</div>
+</div>
+
+<h2>Policy Conflicts and Combinations</h2>
+
+<h3>The Policy Mix</h3>
+<p>In practice, governments use a combination of fiscal, monetary, and supply-side policies. The optimal mix depends on:</p>
+<ul>
+  <li>The nature of the economic problem (demand-side vs supply-side)</li>
+  <li>The current position in the economic cycle</li>
+  <li>The time horizon (short-run stabilisation vs long-run growth)</li>
+  <li>Political constraints and institutional arrangements</li>
+</ul>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> In 25-mark essays, always discuss the policy mix rather than single policies in isolation. Explain how fiscal and monetary policy can work together (or conflict), and how supply-side policies provide long-run solutions. Use AD/AS diagrams to illustrate policy effects and always evaluate with reference to time lags, effectiveness, and side effects.
+</div>
+
+<h2>The Phillips Curve</h2>
+<p>The short-run Phillips curve suggests an inverse relationship between inflation and unemployment. Policymakers face a trade-off: reducing unemployment may require accepting higher inflation.</p>
+<p><strong>Long-run view (Monetarist):</strong> The long-run Phillips curve is vertical at the NAIRU. Attempts to reduce unemployment below NAIRU through demand management only cause accelerating inflation with no permanent reduction in unemployment.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M2 Foundations in Biology — OCR A A-Level Biology</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
+            line-height: 1.7;
+            padding: 40px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 12px;
+            margin-bottom: 32px;
+        }
+        h1 .spec-ref {
+            display: block;
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e3a5f;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        h3 {
+            font-size: 1.15rem;
+            color: #374151;
+            margin-top: 24px;
+            margin-bottom: 10px;
+        }
+        p { margin-bottom: 14px; }
+        ul, ol {
+            margin-bottom: 14px;
+            padding-left: 28px;
+        }
+        li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f0f4ff;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        tr:nth-child(even) { background: #f9fafb; }
+        code {
+            font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px 20px;
+            overflow-x: auto;
+            margin-bottom: 18px;
+            font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .definition-box {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 16px 20px;
+            margin-bottom: 18px;
+            border-radius: 0 8px 8px 0;
+        }
+        .definition-box strong { color: #1e40af; }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            margin-bottom: 18px;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before {
+            content: "Exam Tip: ";
+            font-weight: 700;
+            color: #b45309;
+        }
+        @media print {
+            body { padding: 20px; }
+            h2 { break-before: auto; }
+            pre, .definition-box, .exam-tip { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module 2: Foundations in Biology
+    <span class="spec-ref">OCR A A-Level Biology (H420)</span>
+</h1>
+
+<h2>2.1 Cell Structure</h2>
+
+<h3>Eukaryotic Cell Organelles</h3>
+<p>Eukaryotic cells contain membrane-bound organelles that compartmentalise metabolic reactions. Each organelle has a distinct structure closely related to its function. The compartmentalisation allows incompatible reactions (such as synthesis and hydrolysis) to occur simultaneously within the same cell without interference.</p>
+
+<table>
+    <tr><th>Organelle</th><th>Structure</th><th>Function</th></tr>
+    <tr><td>Nucleus</td><td>Double membrane (nuclear envelope) with nuclear pores; contains chromatin and nucleolus</td><td>Houses DNA; controls protein synthesis; nucleolus produces ribosomal RNA</td></tr>
+    <tr><td>Mitochondria</td><td>Double membrane; inner membrane folded into cristae; matrix contains enzymes and circular DNA</td><td>Site of aerobic respiration; produces ATP via oxidative phosphorylation on cristae</td></tr>
+    <tr><td>Rough Endoplasmic Reticulum</td><td>Flattened membrane sacs (cisternae) studded with ribosomes</td><td>Synthesis of proteins destined for secretion or membrane insertion</td></tr>
+    <tr><td>Smooth Endoplasmic Reticulum</td><td>Tubular membrane network without ribosomes</td><td>Lipid and steroid synthesis; detoxification; calcium storage</td></tr>
+    <tr><td>Golgi Apparatus</td><td>Stack of flattened membrane sacs with associated vesicles</td><td>Modifies, packages, and sorts proteins into vesicles for secretion or lysosome formation</td></tr>
+    <tr><td>Lysosomes</td><td>Single-membrane spherical vesicles containing hydrolytic enzymes</td><td>Intracellular digestion; autophagy; destruction of pathogens in phagocytes</td></tr>
+    <tr><td>Chloroplasts</td><td>Double membrane; internal thylakoid membranes arranged in grana; stroma contains enzymes and circular DNA</td><td>Site of photosynthesis; light reactions on thylakoids, Calvin cycle in stroma</td></tr>
+    <tr><td>Ribosomes</td><td>Two subunits (80S in eukaryotes, 70S in prokaryotes); composed of rRNA and protein</td><td>Translation of mRNA into polypeptide chains</td></tr>
+    <tr><td>Centrioles</td><td>Paired cylindrical structures of nine microtubule triplets</td><td>Organise spindle fibres during cell division; form basal bodies of cilia and flagella</td></tr>
+</table>
+
+<h3>Prokaryotic Cells</h3>
+<p>Prokaryotic cells lack membrane-bound organelles and have no true nucleus. Their DNA is a single circular chromosome located in the nucleoid region, often supplemented by smaller circular plasmids. Prokaryotes possess 70S ribosomes (smaller than eukaryotic 80S ribosomes), a cell wall made of peptidoglycan (murein), and may have additional structures including a capsule (slime layer for protection), flagella (for motility), and pili (for attachment and conjugation).</p>
+
+<p>Key differences from eukaryotes: no nuclear envelope, no mitochondria or chloroplasts, no endoplasmic reticulum or Golgi apparatus, smaller cell size (typically 1-5 micrometres compared to 10-100 micrometres for eukaryotic cells), and cell division by binary fission rather than mitosis.</p>
+
+<h3>Microscopy</h3>
+<p><strong>Magnification</strong> is the number of times larger an image appears compared to the actual specimen. <strong>Resolution</strong> is the minimum distance between two distinguishable points. Light microscopes have a maximum resolution of approximately 200 nm (limited by the wavelength of visible light), while transmission electron microscopes achieve resolution below 1 nm.</p>
+
+<div class="definition-box">
+    <strong>Magnification formula:</strong> Magnification = Image size / Actual size. This can be rearranged to find actual size: Actual size = Image size / Magnification. Units must be consistent (convert between mm, micrometres, and nm as needed: 1 mm = 1000 micrometres = 1,000,000 nm).
+</div>
+
+<p>Electron microscopy uses beams of electrons instead of light, achieving far higher resolution. Transmission electron microscopes (TEM) produce two-dimensional images of thin sections showing internal ultrastructure. Scanning electron microscopes (SEM) produce three-dimensional surface images. Specimens must be dead and placed in a vacuum, which is a limitation compared to light microscopy where living specimens can be observed.</p>
+
+<h2>2.2 Biological Molecules</h2>
+
+<h3>Water</h3>
+<p>Water is a polar molecule due to the uneven distribution of charge resulting from the difference in electronegativity between oxygen and hydrogen atoms. The slightly negative oxygen of one molecule forms hydrogen bonds with the slightly positive hydrogen of adjacent molecules. These hydrogen bonds, although individually weak, collectively give water its unique biological properties.</p>
+
+<ul>
+    <li><strong>High specific heat capacity</strong> — large amounts of energy are needed to raise water temperature, buffering organisms against rapid temperature fluctuations</li>
+    <li><strong>High latent heat of vaporisation</strong> — evaporation of water from surfaces (sweating, transpiration) provides effective cooling</li>
+    <li><strong>Cohesion and surface tension</strong> — hydrogen bonds between water molecules create cohesion, enabling water columns in xylem vessels and surface tension that supports small organisms</li>
+    <li><strong>Solvent properties</strong> — the polarity of water allows it to dissolve ionic compounds and polar molecules, making it an excellent transport medium and reaction medium</li>
+    <li><strong>Maximum density at 4 degrees Celsius</strong> — ice floats, insulating water bodies beneath and allowing aquatic life to survive in frozen environments</li>
+</ul>
+
+<h3>Carbohydrates</h3>
+<p>Carbohydrates contain carbon, hydrogen, and oxygen in the ratio Cn(H2O)n. Monosaccharides are the monomers, joined by glycosidic bonds formed through condensation reactions (releasing water) and broken by hydrolysis reactions (consuming water).</p>
+
+<p><strong>Monosaccharides</strong> include glucose (hexose, C6H12O6) which exists as alpha-glucose and beta-glucose isomers differing in the position of the hydroxyl group on carbon-1. Ribose and deoxyribose are pentose sugars found in RNA and DNA respectively.</p>
+
+<p><strong>Disaccharides</strong> are formed when two monosaccharides join by condensation: maltose (glucose + glucose, alpha-1,4 glycosidic bond), sucrose (glucose + fructose), and lactose (glucose + galactose). <strong>Polysaccharides</strong> are long chains of monosaccharides:</p>
+
+<ul>
+    <li><strong>Starch</strong> (amylose and amylopectin) — energy storage in plants. Amylose is an unbranched helix of alpha-glucose with 1,4 bonds; amylopectin is branched with 1,4 and 1,6 bonds. Compact and insoluble, so does not affect water potential.</li>
+    <li><strong>Glycogen</strong> — energy storage in animals. Highly branched (more than amylopectin), allowing rapid hydrolysis for quick glucose release. Stored in liver and muscle cells.</li>
+    <li><strong>Cellulose</strong> — structural polysaccharide in plant cell walls. Unbranched chains of beta-glucose linked by 1,4 glycosidic bonds. Adjacent chains form hydrogen bonds creating microfibrils with high tensile strength.</li>
+</ul>
+
+<h3>Lipids</h3>
+<p>Triglycerides consist of one glycerol molecule esterified to three fatty acid chains via ester bonds formed by condensation reactions. Fatty acids may be <strong>saturated</strong> (no carbon-carbon double bonds, straight chains that pack tightly, solid at room temperature) or <strong>unsaturated</strong> (one or more double bonds creating kinks, preventing close packing, liquid at room temperature).</p>
+
+<p><strong>Phospholipids</strong> have two fatty acid tails and one phosphate head group attached to glycerol. The phosphate head is hydrophilic (polar) while the fatty acid tails are hydrophobic (non-polar), making phospholipids amphipathic. This property drives spontaneous bilayer formation in aqueous environments, creating the structural basis of all biological membranes.</p>
+
+<div class="exam-tip">When comparing triglycerides and phospholipids, emphasise that triglycerides have three fatty acids (energy storage, insulation, protection) while phospholipids have two fatty acids plus a phosphate group (membrane structure). Link structure to function precisely.</div>
+
+<h3>Proteins</h3>
+<p>Proteins are polymers of amino acids joined by peptide bonds formed through condensation reactions between the amino group (-NH2) of one amino acid and the carboxyl group (-COOH) of another. There are 20 different amino acids, distinguished by their R-groups, which determine protein properties.</p>
+
+<p>Protein structure exists at four levels:</p>
+<ol>
+    <li><strong>Primary structure</strong> — the specific sequence of amino acids in the polypeptide chain, determined by the base sequence of the gene</li>
+    <li><strong>Secondary structure</strong> — regular folding patterns (alpha-helices and beta-pleated sheets) stabilised by hydrogen bonds between C=O and N-H groups of the peptide backbone</li>
+    <li><strong>Tertiary structure</strong> — the overall three-dimensional shape of a single polypeptide, maintained by interactions between R-groups: hydrogen bonds, ionic bonds, disulfide bridges (covalent, between cysteine residues), and hydrophobic interactions</li>
+    <li><strong>Quaternary structure</strong> — the arrangement of multiple polypeptide subunits and any prosthetic groups (e.g., haemoglobin has four subunits each with a haem prosthetic group)</li>
+</ol>
+
+<p><strong>Globular proteins</strong> (e.g., enzymes, antibodies, haemoglobin) fold into compact spherical shapes with hydrophilic R-groups on the surface, making them soluble and functionally active in aqueous environments. <strong>Fibrous proteins</strong> (e.g., collagen, keratin) have long, repetitive structures forming fibres with high tensile strength, serving structural roles.</p>
+
+<h3>Nucleic Acids</h3>
+<p>DNA (deoxyribonucleic acid) is a double-stranded polymer of nucleotides. Each nucleotide consists of a deoxyribose sugar, a phosphate group, and one of four nitrogenous bases: adenine (A), thymine (T), cytosine (C), or guanine (G). Nucleotides are joined by phosphodiester bonds between the 5' phosphate of one nucleotide and the 3' hydroxyl of the next, forming the sugar-phosphate backbone.</p>
+
+<p>The two antiparallel strands are held together by hydrogen bonds between complementary bases (A=T with two hydrogen bonds; C=G with three hydrogen bonds). The double helix structure provides stability, protection of bases, and a mechanism for semi-conservative replication.</p>
+
+<p>RNA (ribonucleic acid) is single-stranded, contains ribose sugar and uracil instead of thymine. Types include mRNA (carries genetic code from nucleus to ribosomes), tRNA (carries amino acids to ribosomes, has anticodon loop and amino acid attachment site), and rRNA (structural component of ribosomes).</p>
+
+<h3>DNA Replication</h3>
+<p>Semi-conservative replication ensures each daughter molecule contains one original and one new strand. The process involves: DNA helicase unwinding the double helix and breaking hydrogen bonds between bases; each exposed strand serving as a template; DNA polymerase adding complementary free nucleotides in the 5' to 3' direction; and DNA ligase joining Okazaki fragments on the lagging strand.</p>
+
+<h2>2.3 Enzymes</h2>
+
+<p>Enzymes are globular proteins that act as biological catalysts, lowering the activation energy of metabolic reactions without being consumed. Each enzyme has a specific three-dimensional active site, formed by the precise arrangement of amino acid R-groups in the tertiary structure.</p>
+
+<div class="definition-box">
+    <strong>Activation Energy:</strong> The minimum energy required for a reaction to occur. Enzymes lower activation energy by forming enzyme-substrate complexes that strain bonds in the substrate, bringing reactive groups into close proximity, and providing an alternative reaction pathway.
+</div>
+
+<h3>Models of Enzyme Action</h3>
+<p>The <strong>lock and key model</strong> proposes that the substrate fits exactly into the active site like a key in a lock. The <strong>induced fit model</strong> (more accurate) proposes that the active site changes shape slightly upon substrate binding, moulding around the substrate to form a more precise fit. This conformational change places strain on substrate bonds, lowering activation energy further.</p>
+
+<h3>Factors Affecting Enzyme Activity</h3>
+<p><strong>Temperature:</strong> Increasing temperature increases kinetic energy of molecules, leading to more frequent and energetic enzyme-substrate collisions, increasing reaction rate. Above the optimum temperature, increased vibration breaks hydrogen bonds and ionic bonds maintaining tertiary structure, causing denaturation (permanent loss of shape and function of the active site).</p>
+
+<p><strong>pH:</strong> Changes in pH alter the ionisation of R-groups in the active site, disrupting ionic bonds and hydrogen bonds that maintain the active site shape. Each enzyme has an optimum pH at which the active site shape is optimal for substrate binding. Extreme pH changes cause irreversible denaturation.</p>
+
+<p><strong>Substrate concentration:</strong> At low substrate concentration, increasing substrate increases reaction rate as more active sites are occupied. At high substrate concentration, all active sites are saturated (occupied) and the rate reaches Vmax. Further increases in substrate have no effect unless enzyme concentration increases.</p>
+
+<h3>Inhibition</h3>
+<p><strong>Competitive inhibitors</strong> have a similar shape to the substrate and bind reversibly to the active site, blocking substrate access. They can be overcome by increasing substrate concentration. Vmax remains the same but a higher substrate concentration is needed to achieve it.</p>
+
+<p><strong>Non-competitive inhibitors</strong> bind to an allosteric site (away from the active site), causing a conformational change that alters the active site shape so the substrate can no longer bind. Increasing substrate concentration cannot overcome non-competitive inhibition. Vmax is reduced.</p>
+
+<h2>2.4 Cell Membranes</h2>
+
+<h3>The Fluid Mosaic Model</h3>
+<p>Cell membranes consist of a phospholipid bilayer with proteins embedded (integral proteins spanning the membrane) or attached to the surface (peripheral proteins). The model is described as "fluid" because phospholipids and proteins can move laterally within the layer, and "mosaic" because of the scattered pattern of proteins throughout.</p>
+
+<p>Components include: cholesterol (regulates fluidity by preventing phospholipid packing at low temperatures and restricting movement at high temperatures), glycoproteins and glycolipids (cell signalling, cell recognition, immune identification), and channel and carrier proteins (facilitating transport of specific molecules).</p>
+
+<h3>Transport Across Membranes</h3>
+<table>
+    <tr><th>Mechanism</th><th>Description</th><th>Energy Required?</th></tr>
+    <tr><td>Simple diffusion</td><td>Net movement of molecules from high to low concentration down the concentration gradient through the phospholipid bilayer</td><td>No (passive)</td></tr>
+    <tr><td>Facilitated diffusion</td><td>Movement down the concentration gradient through channel proteins (ions) or carrier proteins (larger polar molecules like glucose)</td><td>No (passive)</td></tr>
+    <tr><td>Osmosis</td><td>Net movement of water molecules from high water potential to low water potential across a partially permeable membrane</td><td>No (passive)</td></tr>
+    <tr><td>Active transport</td><td>Movement against the concentration gradient using carrier proteins that change shape using energy from ATP hydrolysis</td><td>Yes (ATP)</td></tr>
+    <tr><td>Endocytosis</td><td>Cell membrane engulfs material, forming a vesicle that pinches off into the cytoplasm (phagocytosis for solids, pinocytosis for liquids)</td><td>Yes (ATP)</td></tr>
+    <tr><td>Exocytosis</td><td>Vesicles fuse with the cell membrane, releasing contents outside the cell (secretion of proteins, neurotransmitters)</td><td>Yes (ATP)</td></tr>
+</table>
+
+<div class="definition-box">
+    <strong>Water Potential (psi):</strong> The tendency of water molecules to move from one area to another. Pure water has a water potential of zero (the highest possible). Adding solute lowers water potential (makes it more negative). Water always moves by osmosis from a region of higher (less negative) water potential to a region of lower (more negative) water potential.
+</div>
+
+<h2>2.5 Cell Division</h2>
+
+<h3>The Cell Cycle</h3>
+<p>The cell cycle consists of interphase (G1, S, and G2 phases) and mitotic phase (mitosis and cytokinesis). During G1, the cell grows and produces proteins and organelles. During S phase, DNA replication occurs, producing two identical copies of each chromosome (sister chromatids joined at the centromere). During G2, the cell continues to grow and produces proteins needed for division, including tubulin for spindle formation.</p>
+
+<h3>Mitosis</h3>
+<p>Mitosis produces two genetically identical daughter cells for growth, repair, and asexual reproduction. The stages are:</p>
+<ol>
+    <li><strong>Prophase</strong> — chromatin condenses into visible chromosomes; centrioles move to poles and spindle fibres form; nuclear envelope breaks down; nucleolus disappears</li>
+    <li><strong>Metaphase</strong> — chromosomes line up on the cell equator (metaphase plate); spindle fibres attach to centromeres</li>
+    <li><strong>Anaphase</strong> — centromeres divide; spindle fibres shorten, pulling sister chromatids to opposite poles</li>
+    <li><strong>Telophase</strong> — chromatids reach poles and decondense; nuclear envelope reforms around each set; nucleolus reappears</li>
+</ol>
+<p>Cytokinesis follows: in animal cells, a cleavage furrow pinches the cell in two; in plant cells, a cell plate forms across the middle.</p>
+
+<h3>Meiosis</h3>
+<p>Meiosis produces four genetically different haploid cells (gametes) through two successive divisions. It introduces genetic variation through independent assortment of homologous chromosomes during meiosis I and crossing over between non-sister chromatids during prophase I.</p>
+
+<p><strong>Meiosis I</strong> (reduction division): homologous chromosomes pair up (bivalents), crossing over occurs at chiasmata, bivalents align randomly on the metaphase plate (independent assortment), and homologous chromosomes are separated to opposite poles. <strong>Meiosis II</strong> is similar to mitosis: sister chromatids are separated, producing four haploid cells each with a unique combination of alleles.</p>
+
+<div class="exam-tip">When comparing mitosis and meiosis, always address: number of divisions, number of daughter cells, ploidy of daughter cells, genetic variation (identical vs. different), and biological purpose (growth/repair vs. gamete production).</div>
+
+</div>
+</body>
+</html>

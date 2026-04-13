@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 4 — Electrons, Waves and Photons</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module 4 — Electrons, Waves and Photons</h1>
+<p>This module covers electricity, wave behaviour, and quantum physics — bridging classical and modern physics.</p>
+
+<h2>4.1 Charge, Current, and Potential Difference</h2>
+
+<div class="definition">
+  <strong>Electric current (I):</strong> The rate of flow of electric charge. Conventional current flows from positive to negative (opposite to electron flow).<br>
+  <strong>Charge (Q):</strong> A fundamental property of matter. The elementary charge e = 1.60 &times; 10<sup>&minus;19</sup> C.
+</div>
+
+<div class="equation">Q = It</div>
+<p>Where Q = charge (C), I = current (A), t = time (s). One coulomb is the charge carried by a current of 1 A in 1 s.</p>
+
+<div class="definition">
+  <strong>Potential difference (V):</strong> The energy transferred per unit charge between two points. 1 V = 1 J C<sup>&minus;1</sup>.
+</div>
+<div class="equation">V = W / Q</div>
+<p>Where V = potential difference (V), W = energy transferred (J), Q = charge (C).</p>
+
+<p><strong>Electron volt (eV):</strong> The energy gained by an electron accelerated through a PD of 1 V.</p>
+<div class="equation">1 eV = 1.60 &times; 10<sup>&minus;19</sup> J</div>
+
+<h2>4.2 Resistance and Ohm's Law</h2>
+
+<div class="definition">
+  <strong>Resistance (R):</strong> The opposition to current flow. Defined as the ratio of PD across a component to the current through it.
+</div>
+<div class="equation">V = IR &nbsp;&nbsp;&rArr;&nbsp;&nbsp; R = V / I</div>
+<p>Units: ohms (&Omega;), where 1 &Omega; = 1 V A<sup>&minus;1</sup>.</p>
+
+<div class="definition">
+  <strong>Ohm's Law:</strong> The current through a conductor is directly proportional to the PD across it, provided physical conditions (especially temperature) remain constant. A component that obeys this is called an ohmic conductor.
+</div>
+
+<h3>I-V Characteristics</h3>
+<table>
+  <tr><th>Component</th><th>I-V Graph Shape</th><th>Behaviour</th></tr>
+  <tr><td>Ohmic resistor (wire)</td><td>Straight line through the origin</td><td>Constant resistance. Current proportional to PD. Same in both directions.</td></tr>
+  <tr><td>Filament lamp</td><td>S-shaped curve through the origin</td><td>Resistance increases with current (and temperature). As current increases, the filament heats up, atoms vibrate more, and electrons collide more frequently with the lattice.</td></tr>
+  <tr><td>Semiconductor diode</td><td>Negligible current for negative PD; exponential increase above ~0.6 V forward bias</td><td>Very high resistance in reverse bias; low resistance in forward bias above the threshold voltage (~0.6 V for silicon).</td></tr>
+  <tr><td>Thermistor (NTC)</td><td>Non-linear</td><td>Resistance decreases as temperature increases. More charge carriers are released at higher temperatures.</td></tr>
+  <tr><td>LDR</td><td>Non-linear</td><td>Resistance decreases as light intensity increases. More photons release more charge carriers in the semiconductor.</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For I-V characteristics, always state whether the component is ohmic or non-ohmic. An ohmic component has a straight line through the origin. For a filament lamp, the curve gets less steep at higher currents because resistance is increasing.
+</div>
+
+<h2>4.3 Resistivity</h2>
+
+<div class="definition">
+  <strong>Resistivity (&rho;):</strong> A material property that quantifies how strongly it resists current flow, independent of the dimensions of the sample.
+</div>
+<div class="equation">&rho; = RA / L</div>
+<p>Where &rho; = resistivity (&Omega; m), R = resistance (&Omega;), A = cross-sectional area (m<sup>2</sup>), L = length (m).</p>
+<ul>
+  <li>Metals: low resistivity (~10<sup>&minus;8</sup> &Omega; m), good conductors</li>
+  <li>Semiconductors: intermediate resistivity (~10<sup>&minus;1</sup> to 10<sup>3</sup> &Omega; m)</li>
+  <li>Insulators: very high resistivity (~10<sup>10</sup> to 10<sup>16</sup> &Omega; m)</li>
+</ul>
+
+<h2>4.4 Circuit Rules — Kirchhoff's Laws</h2>
+
+<div class="definition">
+  <strong>Kirchhoff's First Law (junction rule):</strong> The sum of currents entering a junction equals the sum of currents leaving it. This is based on conservation of charge.<br>
+  &Sigma;I<sub>in</sub> = &Sigma;I<sub>out</sub>
+</div>
+
+<div class="definition">
+  <strong>Kirchhoff's Second Law (loop rule):</strong> The sum of EMFs in any closed loop equals the sum of PDs around that loop. This is based on conservation of energy.<br>
+  &Sigma;&epsilon; = &Sigma;IR
+</div>
+
+<h3>Series Circuits</h3>
+<ul>
+  <li>Current is the same through all components: I<sub>total</sub> = I<sub>1</sub> = I<sub>2</sub> = ...</li>
+  <li>PDs add up: V<sub>total</sub> = V<sub>1</sub> + V<sub>2</sub> + ...</li>
+  <li>Resistances add up: R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub> + ...</li>
+</ul>
+
+<h3>Parallel Circuits</h3>
+<ul>
+  <li>PD is the same across all branches: V<sub>total</sub> = V<sub>1</sub> = V<sub>2</sub> = ...</li>
+  <li>Currents add up: I<sub>total</sub> = I<sub>1</sub> + I<sub>2</sub> + ...</li>
+  <li>Reciprocals of resistance add: 1/R<sub>total</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + ...</li>
+</ul>
+
+<h2>4.5 EMF and Internal Resistance</h2>
+
+<div class="definition">
+  <strong>Electromotive force (EMF, &epsilon;):</strong> The energy transferred per unit charge by the source (battery/cell). It is the total PD when no current flows.<br>
+  <strong>Internal resistance (r):</strong> The resistance within the source itself, which causes energy to be dissipated as heat inside the source.
+</div>
+
+<div class="equation">&epsilon; = I(R + r) = IR + Ir = V + Ir</div>
+<p>Where &epsilon; = EMF (V), I = current (A), R = external resistance (&Omega;), r = internal resistance (&Omega;), V = terminal PD (V).</p>
+
+<ul>
+  <li>The terminal PD (V = IR) is always less than the EMF when current flows, because some energy is lost in the internal resistance</li>
+  <li>"Lost volts" = Ir (the PD dropped across the internal resistance)</li>
+  <li>To find &epsilon; and r experimentally: plot V against I. The y-intercept = &epsilon;, the gradient = &minus;r</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The EMF can be measured by connecting a high-resistance voltmeter across the terminals with no external circuit (open circuit), so I &asymp; 0 and V &asymp; &epsilon;.
+</div>
+
+<h2>4.6 Potential Dividers</h2>
+
+<div class="definition">
+  <strong>Potential divider:</strong> A circuit with two (or more) resistors in series, used to produce a variable output voltage from a fixed supply.
+</div>
+
+<div class="equation">V<sub>out</sub> = V<sub>in</sub> &times; R<sub>2</sub> / (R<sub>1</sub> + R<sub>2</sub>)</div>
+
+<p>Applications:</p>
+<ul>
+  <li><strong>With a thermistor:</strong> As temperature rises, thermistor resistance falls, changing V<sub>out</sub>. Used in temperature-sensing circuits.</li>
+  <li><strong>With an LDR:</strong> As light intensity increases, LDR resistance falls, changing V<sub>out</sub>. Used in light-sensing circuits.</li>
+  <li><strong>With a potentiometer:</strong> A variable resistor used to give a continuously variable output voltage from 0 to V<sub>in</sub>.</li>
+</ul>
+
+<h2>4.7 Electrical Power and Energy</h2>
+
+<div class="equation">P = IV = I<sup>2</sup>R = V<sup>2</sup> / R</div>
+<div class="equation">E = Pt = IVt = I<sup>2</sup>Rt</div>
+<p>Units: power in watts (W), energy in joules (J).</p>
+
+<h2>4.8 Progressive Waves</h2>
+
+<div class="definition">
+  <strong>Progressive wave:</strong> A wave that transfers energy from one place to another without transferring matter. Particles oscillate about their equilibrium positions.
+</div>
+
+<table>
+  <tr><th>Property</th><th>Transverse Wave</th><th>Longitudinal Wave</th></tr>
+  <tr><td>Oscillation direction</td><td>Perpendicular to direction of energy transfer</td><td>Parallel to direction of energy transfer</td></tr>
+  <tr><td>Examples</td><td>EM waves, water waves, waves on a string, S-waves</td><td>Sound waves, ultrasound, P-waves, compression springs</td></tr>
+  <tr><td>Can be polarised?</td><td>Yes</td><td>No</td></tr>
+  <tr><td>Features</td><td>Crests and troughs</td><td>Compressions and rarefactions</td></tr>
+</table>
+
+<h3>Wave Quantities</h3>
+<ul>
+  <li><strong>Wavelength (&lambda;):</strong> Distance between two consecutive points in phase (e.g., crest to crest). Units: m</li>
+  <li><strong>Frequency (f):</strong> Number of complete oscillations per second. Units: Hz (s<sup>&minus;1</sup>)</li>
+  <li><strong>Period (T):</strong> Time for one complete oscillation. T = 1/f. Units: s</li>
+  <li><strong>Amplitude (A):</strong> Maximum displacement from the equilibrium position. Units: m</li>
+  <li><strong>Phase difference:</strong> The fraction of a cycle between two points, measured in degrees or radians. In phase = 0&deg;/360&deg;; antiphase = 180&deg;</li>
+</ul>
+
+<h3>The Wave Equation</h3>
+<div class="equation">v = f&lambda;</div>
+<p>Where v = wave speed (m s<sup>&minus;1</sup>), f = frequency (Hz), &lambda; = wavelength (m).</p>
+
+<h2>4.9 Superposition and Stationary Waves</h2>
+
+<div class="definition">
+  <strong>Principle of superposition:</strong> When two or more waves meet at a point, the resultant displacement is the vector sum of the individual displacements.
+</div>
+
+<ul>
+  <li><strong>Constructive interference:</strong> Waves in phase; displacements add. Resultant amplitude is maximised.</li>
+  <li><strong>Destructive interference:</strong> Waves in antiphase; displacements cancel. Resultant amplitude is minimised (or zero for equal amplitudes).</li>
+</ul>
+
+<h3>Stationary (Standing) Waves</h3>
+<div class="definition">
+  <strong>Stationary wave:</strong> Formed by the superposition of two progressive waves of the same frequency, amplitude, and speed, travelling in opposite directions.
+</div>
+
+<ul>
+  <li><strong>Nodes:</strong> Points of zero displacement (permanent destructive interference). Separated by &lambda;/2.</li>
+  <li><strong>Antinodes:</strong> Points of maximum displacement (constructive interference). Midway between nodes.</li>
+  <li>No energy is transferred along a stationary wave</li>
+  <li>All points between two adjacent nodes oscillate in phase; points on opposite sides of a node oscillate in antiphase</li>
+</ul>
+
+<h3>Harmonics on a String</h3>
+<table>
+  <tr><th>Harmonic</th><th>Nodes</th><th>Antinodes</th><th>Wavelength</th><th>Frequency</th></tr>
+  <tr><td>1st (fundamental)</td><td>2</td><td>1</td><td>&lambda; = 2L</td><td>f<sub>0</sub></td></tr>
+  <tr><td>2nd</td><td>3</td><td>2</td><td>&lambda; = L</td><td>2f<sub>0</sub></td></tr>
+  <tr><td>3rd</td><td>4</td><td>3</td><td>&lambda; = 2L/3</td><td>3f<sub>0</sub></td></tr>
+  <tr><td>nth</td><td>n + 1</td><td>n</td><td>&lambda; = 2L/n</td><td>nf<sub>0</sub></td></tr>
+</table>
+
+<p>For a pipe open at both ends: antinodes at both ends (same harmonics as a string).</p>
+<p>For a pipe closed at one end: node at closed end, antinode at open end. Only odd harmonics (1st, 3rd, 5th...) are possible. Fundamental: &lambda; = 4L.</p>
+
+<h2>4.10 Refraction</h2>
+
+<div class="definition">
+  <strong>Refraction:</strong> The change in direction of a wave when it passes from one medium to another, caused by a change in wave speed. Frequency remains constant; wavelength and speed change.
+</div>
+
+<h3>Snell's Law</h3>
+<div class="equation">n<sub>1</sub> sin &theta;<sub>1</sub> = n<sub>2</sub> sin &theta;<sub>2</sub></div>
+<p>Where n = refractive index, &theta; = angle to the normal.</p>
+<div class="equation">n = c / v</div>
+<p>Where c = speed of light in a vacuum (3.00 &times; 10<sup>8</sup> m s<sup>&minus;1</sup>), v = speed of light in the medium.</p>
+
+<h3>Total Internal Reflection</h3>
+<div class="definition">
+  <strong>Total internal reflection (TIR):</strong> Occurs when light travels from a denser medium to a less dense medium, and the angle of incidence exceeds the critical angle. All light is reflected back into the denser medium.
+</div>
+<p>Conditions for TIR: (1) Light must travel from a medium with higher n to lower n. (2) Angle of incidence must exceed the critical angle.</p>
+<div class="equation">sin &theta;<sub>c</sub> = n<sub>2</sub> / n<sub>1</sub></div>
+<p>Applications: optical fibres, endoscopes, prisms in binoculars.</p>
+
+<h2>4.11 Diffraction and Interference</h2>
+
+<div class="definition">
+  <strong>Diffraction:</strong> The spreading of a wave as it passes through a gap or around an obstacle. Maximum diffraction occurs when the gap width is approximately equal to the wavelength.
+</div>
+
+<h3>Young's Double Slit Experiment</h3>
+<p>Coherent light passes through two narrow slits. An interference pattern of bright and dark fringes is observed on a screen.</p>
+<ul>
+  <li><strong>Bright fringes (maxima):</strong> Constructive interference; path difference = n&lambda; (where n = 0, 1, 2, ...)</li>
+  <li><strong>Dark fringes (minima):</strong> Destructive interference; path difference = (n + &frac12;)&lambda;</li>
+</ul>
+<div class="equation">&lambda; = ax / D</div>
+<p>Where a = slit separation (m), x = fringe spacing (m), D = distance from slits to screen (m).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For interference to be observable, the sources must be coherent (same frequency, constant phase difference). Young's experiment demonstrates that light is a wave — this cannot be explained by a particle model.
+</div>
+
+<h3>Diffraction Gratings</h3>
+<div class="equation">d sin &theta; = n&lambda;</div>
+<p>Where d = slit spacing (m), &theta; = angle of diffraction, n = order number (0, 1, 2, ...), &lambda; = wavelength (m).</p>
+<ul>
+  <li>d = 1 / N, where N = number of slits per metre</li>
+  <li>Higher orders appear at larger angles</li>
+  <li>Maximum order: n<sub>max</sub> = d / &lambda; (rounded down, since sin &theta; &le; 1)</li>
+  <li>Gratings produce sharper, brighter maxima than double slits</li>
+  <li>White light produces a spectrum at each order (violet closest to centre, red furthest)</li>
+</ul>
+
+<h2>4.12 Polarisation</h2>
+
+<div class="definition">
+  <strong>Polarisation:</strong> The restriction of the oscillations of a transverse wave to a single plane. Only transverse waves can be polarised — this is evidence that EM waves are transverse.
+</div>
+<ul>
+  <li>Unpolarised light oscillates in all planes perpendicular to the direction of travel</li>
+  <li>A polarising filter (Polaroid) transmits only oscillations in one plane</li>
+  <li>Two crossed polarisers (at 90&deg;) block all light — Malus's Law: I = I<sub>0</sub> cos<sup>2</sup>&theta;</li>
+  <li>Applications: polarising sunglasses (reduce glare), LCD screens, stress analysis</li>
+</ul>
+
+<h2>4.13 Electromagnetic Spectrum</h2>
+
+<table>
+  <tr><th>Type</th><th>Wavelength Range</th><th>Source Examples</th></tr>
+  <tr><td>Radio waves</td><td>&gt; 0.1 m</td><td>Oscillating circuits, transmitters</td></tr>
+  <tr><td>Microwaves</td><td>0.1 m &ndash; 1 mm</td><td>Magnetron, cosmic background</td></tr>
+  <tr><td>Infrared</td><td>1 mm &ndash; 700 nm</td><td>Hot objects, heaters</td></tr>
+  <tr><td>Visible light</td><td>700 nm &ndash; 400 nm</td><td>Sun, lamps, lasers</td></tr>
+  <tr><td>Ultraviolet</td><td>400 nm &ndash; 10 nm</td><td>Sun, UV lamps, very hot objects</td></tr>
+  <tr><td>X-rays</td><td>10 nm &ndash; 0.01 nm</td><td>X-ray tubes, synchrotrons</td></tr>
+  <tr><td>Gamma rays</td><td>&lt; 0.01 nm</td><td>Radioactive decay, nuclear reactions</td></tr>
+</table>
+<p>All EM waves travel at c = 3.00 &times; 10<sup>8</sup> m s<sup>&minus;1</sup> in a vacuum, are transverse, and can be polarised.</p>
+
+<h2>4.14 Photon Model and the Photoelectric Effect</h2>
+
+<div class="definition">
+  <strong>Photon:</strong> A quantum (discrete packet) of electromagnetic energy. The energy of a photon is proportional to its frequency.
+</div>
+<div class="equation">E = hf = hc / &lambda;</div>
+<p>Where h = Planck's constant = 6.63 &times; 10<sup>&minus;34</sup> J s.</p>
+
+<h3>The Photoelectric Effect</h3>
+<div class="definition">
+  <strong>Photoelectric effect:</strong> The emission of electrons from the surface of a metal when electromagnetic radiation of sufficiently high frequency is incident on it.
+</div>
+
+<p>Key observations that cannot be explained by the wave model:</p>
+<ol>
+  <li>Electrons are emitted instantaneously (no time delay), even at low intensity</li>
+  <li>Below the threshold frequency f<sub>0</sub>, no electrons are emitted regardless of intensity</li>
+  <li>Increasing intensity increases the number of photoelectrons, not their maximum kinetic energy</li>
+  <li>Increasing frequency above f<sub>0</sub> increases the maximum kinetic energy of photoelectrons</li>
+</ol>
+
+<h3>Einstein's Photoelectric Equation</h3>
+<div class="equation">hf = &phi; + E<sub>k(max)</sub></div>
+<p>Where hf = energy of the incident photon, &phi; = work function (minimum energy to release an electron from the surface), E<sub>k(max)</sub> = maximum kinetic energy of the emitted electron.</p>
+
+<div class="definition">
+  <strong>Threshold frequency (f<sub>0</sub>):</strong> The minimum frequency of radiation needed to release electrons. At the threshold: hf<sub>0</sub> = &phi;, so f<sub>0</sub> = &phi; / h.<br>
+  <strong>Work function (&phi;):</strong> The minimum energy needed to free an electron from the metal surface.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> On a graph of E<sub>k(max)</sub> vs frequency, the gradient = h (Planck's constant), the y-intercept = &minus;&phi;, and the x-intercept = f<sub>0</sub> (threshold frequency). Different metals have different work functions but the same gradient.
+</div>
+
+<h2>4.15 Energy Levels and Line Spectra</h2>
+
+<div class="definition">
+  <strong>Energy levels:</strong> Electrons in atoms can only exist at specific, discrete energy values. The ground state is the lowest energy level; excited states are higher.
+</div>
+
+<ul>
+  <li>When an electron moves from a higher energy level E<sub>2</sub> to a lower level E<sub>1</sub>, a photon is emitted with energy: E = hf = E<sub>2</sub> &minus; E<sub>1</sub></li>
+  <li>When a photon with exactly the right energy is absorbed, an electron moves up to a higher level</li>
+  <li><strong>Emission spectrum:</strong> Bright coloured lines on a dark background (from excited gas). Each line corresponds to a specific transition between energy levels.</li>
+  <li><strong>Absorption spectrum:</strong> Dark lines on a continuous coloured background. The dark lines correspond to photons absorbed by the gas at specific frequencies.</li>
+</ul>
+
+<h2>4.16 De Broglie Wavelength</h2>
+
+<div class="definition">
+  <strong>Wave-particle duality:</strong> All matter exhibits both wave and particle properties. The de Broglie wavelength is the wavelength associated with a moving particle.
+</div>
+<div class="equation">&lambda; = h / mv = h / p</div>
+<p>Where &lambda; = de Broglie wavelength (m), h = Planck's constant, m = mass (kg), v = velocity (m s<sup>&minus;1</sup>), p = momentum (kg m s<sup>&minus;1</sup>).</p>
+<ul>
+  <li>Electrons show wave behaviour (diffraction) when their de Broglie wavelength is comparable to atomic spacing (~10<sup>&minus;10</sup> m)</li>
+  <li>Evidence: electron diffraction patterns (rings) when electrons pass through graphite</li>
+  <li>Faster electrons have shorter wavelengths; more massive particles have shorter wavelengths</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The de Broglie wavelength applies to all particles, not just electrons. However, for macroscopic objects the wavelength is negligibly small and wave effects are undetectable.
+</div>
+
+</div>
+</body>
+</html>

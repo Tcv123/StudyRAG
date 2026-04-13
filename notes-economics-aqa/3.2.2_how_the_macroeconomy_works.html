@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.2.2 How the Macroeconomy Works — AQA A-Level Economics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .diagram-box { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
+  .diagram-box svg { max-width: 100%; }
+  .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 8px; font-style: italic; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>3.2.2 How the Macroeconomy Works</h1>
+
+<h2>The Circular Flow of Income</h2>
+
+<div class="def-box">
+<strong>The circular flow of income</strong> is a model showing how money flows between households and firms in the economy. Households provide factors of production to firms and receive income; firms produce goods and services which households purchase.
+</div>
+
+<div class="diagram-box">
+<svg width="420" height="320" viewBox="0 0 420 320">
+  <!-- Households box -->
+  <rect x="30" y="130" width="120" height="60" rx="8" fill="#1a73e8"/>
+  <text x="90" y="165" text-anchor="middle" font-size="13" fill="white" font-weight="bold">Households</text>
+  <!-- Firms box -->
+  <rect x="270" y="130" width="120" height="60" rx="8" fill="#22c55e"/>
+  <text x="330" y="165" text-anchor="middle" font-size="13" fill="white" font-weight="bold">Firms</text>
+  <!-- Top flow (factor services) -->
+  <path d="M 150,140 Q 210,90 270,140" fill="none" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlk)"/>
+  <text x="210" y="100" text-anchor="middle" font-size="10" fill="#1a1a2e">Factor services (labour, land, capital)</text>
+  <!-- Bottom flow (goods/services) -->
+  <path d="M 270,180 Q 210,230 150,180" fill="none" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlk)"/>
+  <text x="210" y="240" text-anchor="middle" font-size="10" fill="#1a1a2e">Goods and services</text>
+  <!-- Income flow (top, going left) -->
+  <path d="M 270,145 Q 210,110 150,145" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowRd)"/>
+  <text x="210" y="120" text-anchor="middle" font-size="9" fill="#ef4444">Income (wages, rent, interest, profit)</text>
+  <!-- Spending flow (bottom, going right) -->
+  <path d="M 150,175 Q 210,210 270,175" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowRd)"/>
+  <text x="210" y="220" text-anchor="middle" font-size="9" fill="#ef4444">Spending (consumption)</text>
+  <!-- Injections -->
+  <text x="210" y="30" text-anchor="middle" font-size="12" fill="#22c55e" font-weight="bold">INJECTIONS</text>
+  <text x="100" y="50" font-size="10" fill="#22c55e">Investment (I)</text>
+  <text x="200" y="50" font-size="10" fill="#22c55e">Gov spending (G)</text>
+  <text x="320" y="50" font-size="10" fill="#22c55e">Exports (X)</text>
+  <line x1="210" y1="55" x2="210" y2="85" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrowGr)"/>
+  <!-- Withdrawals -->
+  <text x="210" y="280" text-anchor="middle" font-size="12" fill="#ef4444" font-weight="bold">WITHDRAWALS (LEAKAGES)</text>
+  <text x="100" y="300" font-size="10" fill="#ef4444">Savings (S)</text>
+  <text x="210" y="300" font-size="10" fill="#ef4444">Taxation (T)</text>
+  <text x="320" y="300" font-size="10" fill="#ef4444">Imports (M)</text>
+  <line x1="210" y1="245" x2="210" y2="270" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrowRd)"/>
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowBlk" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#1a1a2e"/></marker>
+    <marker id="arrowRd" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#ef4444"/></marker>
+    <marker id="arrowGr" markerWidth="8" markerHeight="8" refX="4" refY="8" orient="auto"><path d="M0,0 L4,8 L8,0" fill="#22c55e"/></marker>
+  </defs>
+</svg>
+<div class="diagram-caption">Figure 1: The circular flow of income showing injections and withdrawals</div>
+</div>
+
+<h3>Injections and Withdrawals</h3>
+<ul>
+  <li><strong>Injections (J)</strong> — additions to the circular flow: Investment (I), Government spending (G), Exports (X)</li>
+  <li><strong>Withdrawals/Leakages (W)</strong> — money leaving the circular flow: Savings (S), Taxation (T), Imports (M)</li>
+</ul>
+
+<p><strong>Equilibrium in the circular flow:</strong> National income is in equilibrium when total injections equal total withdrawals (J = W, i.e., I + G + X = S + T + M). If injections exceed withdrawals, national income rises; if withdrawals exceed injections, national income falls.</p>
+
+<h2>Aggregate Demand (AD)</h2>
+
+<div class="def-box">
+<strong>Aggregate Demand (AD)</strong> is the total planned expenditure on goods and services produced in the economy at a given price level, in a given time period.
+</div>
+
+<div class="eq">AD = C + I + G + (X - M)</div>
+
+<p>Where:</p>
+<ul>
+  <li><strong>C</strong> = Consumer spending (largest component, ~60% of AD in the UK)</li>
+  <li><strong>I</strong> = Investment (spending by firms on capital goods)</li>
+  <li><strong>G</strong> = Government spending (on public services and infrastructure)</li>
+  <li><strong>(X - M)</strong> = Net exports (exports minus imports)</li>
+</ul>
+
+<h3>Why the AD Curve Slopes Downward</h3>
+<p>The AD curve shows an inverse relationship between the price level and real output demanded:</p>
+<ul>
+  <li><strong>Real balance (wealth) effect</strong> — a higher price level reduces the real value of money/savings, reducing spending power and consumption</li>
+  <li><strong>Interest rate effect</strong> — a higher price level may lead to higher interest rates, reducing investment and consumption</li>
+  <li><strong>International competitiveness effect</strong> — a higher domestic price level makes exports more expensive and imports cheaper, reducing net exports</li>
+</ul>
+
+<h3>Shifts of the AD Curve</h3>
+<p>AD shifts right (increases) when any component of AD rises at every price level. Key shifters include:</p>
+
+<table>
+<tr><th>Component</th><th>Factors Causing AD to Shift Right</th></tr>
+<tr><td>Consumption (C)</td><td>Lower interest rates, rising house prices (wealth effect), rising consumer confidence, tax cuts, credit availability</td></tr>
+<tr><td>Investment (I)</td><td>Lower interest rates, improved business confidence, technological advances, tax incentives for investment</td></tr>
+<tr><td>Government spending (G)</td><td>Expansionary fiscal policy, increased public infrastructure projects</td></tr>
+<tr><td>Net exports (X-M)</td><td>Depreciation of exchange rate, growth in trading partner economies, improved competitiveness</td></tr>
+</table>
+
+<h2>The Consumption Function</h2>
+
+<div class="def-box">
+<strong>The consumption function</strong> shows the relationship between disposable income and consumer spending. As income rises, consumption rises, but by less than the increase in income (some is saved).
+</div>
+
+<div class="eq">C = a + bY</div>
+
+<p>Where:</p>
+<ul>
+  <li><strong>a</strong> = autonomous consumption (spending unrelated to income, e.g., using savings or borrowing)</li>
+  <li><strong>b</strong> = marginal propensity to consume (MPC)</li>
+  <li><strong>Y</strong> = disposable income</li>
+</ul>
+
+<h3>Marginal Propensity to Consume and Save</h3>
+
+<div class="def-box">
+<strong>Marginal Propensity to Consume (MPC)</strong> = the proportion of each additional pound of income that is spent on consumption = &Delta;C &divide; &Delta;Y<br><br>
+<strong>Marginal Propensity to Save (MPS)</strong> = the proportion of each additional pound of income that is saved = &Delta;S &divide; &Delta;Y<br><br>
+MPC + MPS = 1 (in a simple two-sector model)
+</div>
+
+<h3>Factors Influencing Consumption</h3>
+<ul>
+  <li><strong>Disposable income</strong> — the most important determinant (Keynesian consumption function)</li>
+  <li><strong>Interest rates</strong> — higher rates encourage saving over spending</li>
+  <li><strong>Consumer confidence</strong> — optimism increases spending</li>
+  <li><strong>Wealth effects</strong> — rising asset prices (houses, shares) make consumers feel wealthier</li>
+  <li><strong>Credit availability</strong> — easier access to borrowing increases consumption</li>
+  <li><strong>Distribution of income</strong> — lower-income households have higher MPC</li>
+  <li><strong>Expectations of future income/prices</strong></li>
+</ul>
+
+<h3>Factors Influencing Saving</h3>
+<ul>
+  <li><strong>Interest rates</strong> — higher rates increase the reward for saving</li>
+  <li><strong>Income levels</strong> — higher income enables more saving</li>
+  <li><strong>Confidence</strong> — uncertainty increases precautionary saving</li>
+  <li><strong>Access to credit</strong> — easy credit reduces need to save</li>
+  <li><strong>Cultural factors and age demographics</strong></li>
+</ul>
+
+<h3>Factors Influencing Investment</h3>
+<ul>
+  <li><strong>Interest rates</strong> — the cost of borrowing; lower rates encourage investment</li>
+  <li><strong>Business confidence/expectations</strong> — "animal spirits" (Keynes)</li>
+  <li><strong>Rate of economic growth</strong> — accelerator effect (rising demand triggers investment)</li>
+  <li><strong>Retained profit</strong> — internal funds available for investment</li>
+  <li><strong>Technological change</strong> — need to invest in new technology</li>
+  <li><strong>Government policy</strong> — tax allowances, subsidies, regulation</li>
+  <li><strong>Spare capacity</strong> — firms are less likely to invest if they have excess capacity</li>
+</ul>
+
+<h2>Aggregate Supply (AS)</h2>
+
+<div class="def-box">
+<strong>Aggregate Supply (AS)</strong> is the total output of goods and services that firms in the economy are willing and able to produce at a given price level, in a given time period.
+</div>
+
+<h3>Short-Run Aggregate Supply (SRAS)</h3>
+<p>SRAS slopes upward — as the price level rises, firms are willing to supply more output because:</p>
+<ul>
+  <li>Higher prices increase profit margins (wages and input costs are sticky in the short run)</li>
+  <li>Firms have incentive to increase production</li>
+</ul>
+
+<p><strong>Shifts in SRAS:</strong> caused by changes in costs of production:</p>
+<ul>
+  <li>Wage changes, raw material prices, energy costs</li>
+  <li>Exchange rate changes (affecting import costs)</li>
+  <li>Indirect taxes or subsidies</li>
+  <li>Supply shocks (e.g., oil price spike, pandemic)</li>
+</ul>
+
+<h3>Long-Run Aggregate Supply (LRAS)</h3>
+<p>The LRAS curve represents the economy's productive capacity — the maximum sustainable output when all resources are fully employed.</p>
+
+<p><strong>Classical view:</strong> LRAS is vertical at the full-employment level of output (Yfe). Changes in AD only affect the price level in the long run, not real output. The economy self-corrects to full employment.</p>
+
+<p><strong>Keynesian view:</strong> LRAS has three sections — a horizontal section (spare capacity), an upward-sloping section (approaching capacity), and a vertical section (full capacity). This suggests the economy can be stuck below full employment.</p>
+
+<div class="diagram-box">
+<svg width="420" height="330" viewBox="0 0 420 330">
+  <!-- Axes -->
+  <line x1="60" y1="280" x2="390" y2="280" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="280" x2="60" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="390,280 380,275 380,285" fill="#1a1a2e"/>
+  <polygon points="60,30 55,40 65,40" fill="#1a1a2e"/>
+  <text x="225" y="310" text-anchor="middle" font-size="13" fill="#1a1a2e">Real Output (Y)</text>
+  <text x="20" y="155" text-anchor="middle" font-size="13" fill="#1a1a2e" transform="rotate(-90,20,155)">Price Level</text>
+  <!-- AD1 curve -->
+  <path d="M 100,70 Q 200,150 340,260" stroke="#ef4444" stroke-width="2.5" fill="none"/>
+  <text x="345" y="260" font-size="11" fill="#ef4444" font-weight="bold">AD1</text>
+  <!-- AD2 curve (shifted right) -->
+  <path d="M 150,60 Q 250,140 380,240" stroke="#ef4444" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
+  <text x="375" y="230" font-size="11" fill="#ef4444">AD2</text>
+  <!-- SRAS curve -->
+  <path d="M 80,240 Q 180,200 280,120 Q 340,70 370,40" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
+  <text x="375" y="40" font-size="11" fill="#1a73e8" font-weight="bold">SRAS</text>
+  <!-- LRAS (classical - vertical) -->
+  <line x1="300" y1="40" x2="300" y2="275" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="310" y="45" font-size="11" fill="#22c55e" font-weight="bold">LRAS</text>
+  <!-- Full employment label -->
+  <text x="295" y="295" font-size="10" fill="#22c55e">Yfe</text>
+  <!-- Equilibrium points -->
+  <circle cx="220" cy="170" r="4" fill="#555"/>
+  <text x="205" y="163" font-size="10" fill="#555">E1</text>
+  <circle cx="270" cy="140" r="4" fill="#555"/>
+  <text x="275" y="133" font-size="10" fill="#555">E2</text>
+</svg>
+<div class="diagram-caption">Figure 2: The AD/AS model showing SRAS, LRAS (classical vertical), and the effect of an increase in AD</div>
+</div>
+
+<h3>Shifts in LRAS</h3>
+<p>LRAS shifts right (increased productive capacity) due to:</p>
+<ul>
+  <li>Increases in quality/quantity of labour (education, training, immigration)</li>
+  <li>Increases in quality/quantity of capital (investment, technological progress)</li>
+  <li>Discovery of new natural resources</li>
+  <li>Institutional improvements (better governance, rule of law, property rights)</li>
+  <li>Enterprise and innovation</li>
+</ul>
+
+<h2>The Multiplier Effect</h2>
+
+<div class="def-box">
+<strong>The multiplier effect</strong> is the process by which an initial injection into the circular flow leads to a larger final increase in national income. This occurs because one person's spending becomes another person's income, which is then partly spent again.
+</div>
+
+<div class="eq">Multiplier (k) = 1 &divide; (1 - MPC) = 1 &divide; MPW</div>
+
+<p>Where MPW (marginal propensity to withdraw) = MPS + MPT + MPM</p>
+
+<div class="diagram-box">
+<svg width="420" height="200" viewBox="0 0 420 200">
+  <!-- Boxes showing multiplier chain -->
+  <rect x="10" y="30" width="80" height="50" rx="6" fill="#1a73e8"/>
+  <text x="50" y="50" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Initial</text>
+  <text x="50" y="65" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Injection £100</text>
+  <line x1="90" y1="55" x2="110" y2="55" stroke="#555" stroke-width="1.5" marker-end="url(#arrM)"/>
+  <rect x="110" y="30" width="70" height="50" rx="6" fill="#22c55e"/>
+  <text x="145" y="50" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Round 1</text>
+  <text x="145" y="65" text-anchor="middle" font-size="9" fill="white">£80 spent</text>
+  <line x1="180" y1="55" x2="200" y2="55" stroke="#555" stroke-width="1.5" marker-end="url(#arrM)"/>
+  <rect x="200" y="30" width="70" height="50" rx="6" fill="#22c55e"/>
+  <text x="235" y="50" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Round 2</text>
+  <text x="235" y="65" text-anchor="middle" font-size="9" fill="white">£64 spent</text>
+  <line x1="270" y1="55" x2="290" y2="55" stroke="#555" stroke-width="1.5" marker-end="url(#arrM)"/>
+  <rect x="290" y="30" width="70" height="50" rx="6" fill="#22c55e"/>
+  <text x="325" y="50" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Round 3</text>
+  <text x="325" y="65" text-anchor="middle" font-size="9" fill="white">£51.20</text>
+  <text x="380" y="55" font-size="14" fill="#555">...</text>
+  <!-- Withdrawals arrows -->
+  <line x1="145" y1="80" x2="145" y2="110" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrRd2)"/>
+  <text x="145" y="125" text-anchor="middle" font-size="9" fill="#ef4444">£20 saved</text>
+  <line x1="235" y1="80" x2="235" y2="110" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrRd2)"/>
+  <text x="235" y="125" text-anchor="middle" font-size="9" fill="#ef4444">£16 saved</text>
+  <line x1="325" y1="80" x2="325" y2="110" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrRd2)"/>
+  <text x="325" y="125" text-anchor="middle" font-size="9" fill="#ef4444">£12.80</text>
+  <!-- Result -->
+  <rect x="80" y="145" width="260" height="40" rx="6" fill="#f8fafc" stroke="#1a73e8"/>
+  <text x="210" y="165" text-anchor="middle" font-size="11" fill="#1a1a2e" font-weight="bold">MPC = 0.8 → Multiplier = 1/(1-0.8) = 5</text>
+  <text x="210" y="178" text-anchor="middle" font-size="10" fill="#555">£100 injection → £500 total increase in national income</text>
+  <defs>
+    <marker id="arrM" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#555"/></marker>
+    <marker id="arrRd2" markerWidth="8" markerHeight="8" refX="4" refY="8" orient="auto"><path d="M0,0 L4,8 L8,0" fill="#ef4444"/></marker>
+  </defs>
+</svg>
+<div class="diagram-caption">Figure 3: The multiplier process — with MPC of 0.8, an initial £100 injection creates £500 of national income</div>
+</div>
+
+<h3>Example Calculation</h3>
+<p>If MPC = 0.8, then the multiplier = 1 / (1 - 0.8) = 1 / 0.2 = 5. A £10 billion increase in government spending would lead to a £50 billion increase in national income (assuming no change in other withdrawals).</p>
+
+<h3>Factors Affecting the Size of the Multiplier</h3>
+<ul>
+  <li>Higher MPC → larger multiplier (more income is respent in each round)</li>
+  <li>Higher marginal rates of tax → smaller multiplier (more withdrawn at each stage)</li>
+  <li>Higher marginal propensity to import → smaller multiplier (spending leaks abroad)</li>
+  <li>Higher marginal propensity to save → smaller multiplier</li>
+</ul>
+
+<h3>The Negative (Reverse) Multiplier</h3>
+<p>The multiplier also works in reverse. A withdrawal from the circular flow (e.g., a cut in government spending) leads to a multiplied fall in national income.</p>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> The multiplier is central to Keynesian economics. It suggests that fiscal policy can have a powerful impact on national income. However, evaluate by considering: time lags, crowding out (government spending may displace private spending), the impact on inflation if the economy is near full capacity, and the difficulty of estimating the actual MPC.
+</div>
+
+<h2>AD/AS Analysis: Key Scenarios</h2>
+
+<h3>Demand-Pull Inflation</h3>
+<p>AD shifts right when the economy is near full capacity → price level rises significantly with little increase in real output.</p>
+
+<h3>Cost-Push Inflation</h3>
+<p>SRAS shifts left due to rising costs → price level rises while real output falls (stagflation).</p>
+
+<h3>Economic Growth</h3>
+<p>LRAS shifts right (increased productive capacity) → potential for higher output at all price levels. If AD also increases, the economy grows with moderate inflation.</p>
+
+<h3>Recession</h3>
+<p>AD shifts left → real output falls, unemployment rises. In the Keynesian model, the economy may not self-correct without intervention.</p>
+
+</div>
+</body>
+</html>

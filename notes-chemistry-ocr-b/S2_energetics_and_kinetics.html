@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S2 — Energetics and Kinetics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>S2 — Energetics and Kinetics</h1>
+
+<!-- ============================================================ -->
+<h2>2.1 Enthalpy Changes</h2>
+<!-- ============================================================ -->
+
+<h3>Standard Conditions and Notation</h3>
+
+<div class="definition">
+  <strong>Standard conditions:</strong> A pressure of 100 kPa (approximately 1 atm), a stated temperature (usually 298 K / 25 &deg;C), and all substances in their standard states (most stable form under these conditions). The standard enthalpy change is denoted &Delta;H&deg;.
+</div>
+
+<div class="definition">
+  <strong>Enthalpy change (&Delta;H):</strong> The heat energy transferred in a reaction at constant pressure. Measured in kJ mol<sup>&minus;1</sup>.<br><br>
+  <strong>Exothermic reaction:</strong> A reaction that releases heat energy to the surroundings. &Delta;H is negative. The products are at a lower energy level than the reactants.<br><br>
+  <strong>Endothermic reaction:</strong> A reaction that absorbs heat energy from the surroundings. &Delta;H is positive. The products are at a higher energy level than the reactants.
+</div>
+
+<h3>Standard Enthalpy Definitions</h3>
+
+<table>
+  <tr><th>Enthalpy Change</th><th>Symbol</th><th>Definition</th></tr>
+  <tr><td>Formation</td><td>&Delta;<sub>f</sub>H&deg;</td><td>The enthalpy change when one mole of a compound is formed from its elements in their standard states under standard conditions</td></tr>
+  <tr><td>Combustion</td><td>&Delta;<sub>c</sub>H&deg;</td><td>The enthalpy change when one mole of a substance is completely burned in excess oxygen under standard conditions</td></tr>
+  <tr><td>Neutralisation</td><td>&Delta;<sub>neut</sub>H&deg;</td><td>The enthalpy change when an acid and a base react to form one mole of water under standard conditions</td></tr>
+  <tr><td>Atomisation</td><td>&Delta;<sub>at</sub>H&deg;</td><td>The enthalpy change when one mole of gaseous atoms is formed from the element in its standard state</td></tr>
+  <tr><td>Bond dissociation</td><td>D or &Delta;<sub>bond</sub>H&deg;</td><td>The enthalpy change when one mole of a specific covalent bond is broken homolytically in the gaseous state</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The standard enthalpy of formation of any element in its standard state is zero by definition. This is essential for Hess's law calculations using formation enthalpies.
+</div>
+
+<h3>Calorimetry</h3>
+
+<p>Calorimetry measures enthalpy changes experimentally by measuring temperature changes of a known mass of water (or solution).</p>
+
+<div class="equation">
+  q = mc&Delta;T
+</div>
+
+<p>where q is the heat energy transferred (in J), m is the mass of water/solution (in g), c is the specific heat capacity (4.18 J g<sup>&minus;1</sup> K<sup>&minus;1</sup> for water), and &Delta;T is the temperature change (in K or &deg;C).</p>
+
+<p>To find the molar enthalpy change: &Delta;H = &minus;q / n, where n is the number of moles of the limiting reagent. The negative sign is because heat gained by the surroundings (water) is heat lost by the system (reaction).</p>
+
+<p>Sources of error in calorimetry include: heat loss to the surroundings (the most significant source), incomplete combustion, the assumption that the solution has the same specific heat capacity and density as pure water, and heat absorbed by the calorimeter itself.</p>
+
+<h3>Hess's Law</h3>
+
+<div class="definition">
+  <strong>Hess's law:</strong> The total enthalpy change for a reaction is independent of the route taken, provided the initial and final conditions are the same. This is a consequence of conservation of energy.
+</div>
+
+<p>Hess's law can be applied using enthalpy cycles. Two common approaches:</p>
+
+<p><strong>Using enthalpies of formation:</strong></p>
+<div class="equation">
+  &Delta;<sub>r</sub>H&deg; = &Sigma;&Delta;<sub>f</sub>H&deg;(products) &minus; &Sigma;&Delta;<sub>f</sub>H&deg;(reactants)
+</div>
+
+<p><strong>Using enthalpies of combustion:</strong></p>
+<div class="equation">
+  &Delta;<sub>r</sub>H&deg; = &Sigma;&Delta;<sub>c</sub>H&deg;(reactants) &minus; &Sigma;&Delta;<sub>c</sub>H&deg;(products)
+</div>
+
+<h3>Bond Enthalpies</h3>
+
+<p>Mean bond enthalpy is the average energy required to break one mole of a particular type of bond across a range of different molecules. The enthalpy change of a reaction can be estimated:</p>
+
+<div class="equation">
+  &Delta;H &approx; &Sigma;(bonds broken) &minus; &Sigma;(bonds formed)
+</div>
+
+<p>Breaking bonds is endothermic (energy input required); forming bonds is exothermic (energy released). This calculation uses mean bond enthalpies and gives only an estimate because actual bond energies vary depending on the molecular environment.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Bond enthalpy calculations apply only to reactions where all reactants and products are in the gaseous state. If substances are liquids or solids, additional enthalpy changes (e.g. vaporisation) would need to be included.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.2 Born-Haber Cycles and Lattice Enthalpy</h2>
+<!-- ============================================================ -->
+
+<h3>Lattice Enthalpy</h3>
+
+<div class="definition">
+  <strong>Lattice enthalpy of formation (&Delta;<sub>LE</sub>H&deg;):</strong> The enthalpy change when one mole of an ionic compound is formed from its gaseous ions under standard conditions. This is exothermic (negative value).<br><br>
+  <strong>Lattice enthalpy of dissociation:</strong> The enthalpy change when one mole of an ionic compound is completely separated into gaseous ions. This is endothermic (positive value) and is the reverse of lattice enthalpy of formation.
+</div>
+
+<p>Lattice enthalpy cannot be measured directly. It is calculated indirectly using a Born-Haber cycle, which is an application of Hess's law applied to the formation of an ionic compound from its elements.</p>
+
+<h3>The Born-Haber Cycle</h3>
+
+<p>A Born-Haber cycle for a compound like NaCl includes the following steps:</p>
+<ol>
+  <li>Atomisation of sodium: Na(s) &rarr; Na(g) &mdash; &Delta;<sub>at</sub>H&deg;</li>
+  <li>First ionisation energy of sodium: Na(g) &rarr; Na<sup>+</sup>(g) + e<sup>&minus;</sup> &mdash; IE<sub>1</sub></li>
+  <li>Atomisation of chlorine: &frac12;Cl<sub>2</sub>(g) &rarr; Cl(g) &mdash; &Delta;<sub>at</sub>H&deg;</li>
+  <li>First electron affinity of chlorine: Cl(g) + e<sup>&minus;</sup> &rarr; Cl<sup>&minus;</sup>(g) &mdash; EA<sub>1</sub></li>
+  <li>Lattice enthalpy of formation: Na<sup>+</sup>(g) + Cl<sup>&minus;</sup>(g) &rarr; NaCl(s) &mdash; &Delta;<sub>LE</sub>H&deg;</li>
+</ol>
+
+<p>By Hess's law: &Delta;<sub>f</sub>H&deg;(NaCl) = &Delta;<sub>at</sub>H&deg;(Na) + IE<sub>1</sub>(Na) + &Delta;<sub>at</sub>H&deg;(Cl) + EA<sub>1</sub>(Cl) + &Delta;<sub>LE</sub>H&deg;</p>
+
+<div class="definition">
+  <strong>Electron affinity:</strong> The enthalpy change when one mole of gaseous atoms gains one mole of electrons to form one mole of gaseous 1&minus; ions. The first electron affinity is usually exothermic (negative); the second is always endothermic (positive) because energy is needed to overcome the repulsion between the incoming electron and the already negative ion.
+</div>
+
+<h3>Enthalpies of Hydration and Solution</h3>
+
+<div class="definition">
+  <strong>Enthalpy of hydration (&Delta;<sub>hyd</sub>H&deg;):</strong> The enthalpy change when one mole of gaseous ions is dissolved in sufficient water to form an infinitely dilute solution. Always exothermic because ion-dipole bonds form between the ions and water molecules.<br><br>
+  <strong>Enthalpy of solution (&Delta;<sub>sol</sub>H&deg;):</strong> The enthalpy change when one mole of an ionic compound dissolves in sufficient water to form an infinitely dilute solution.
+</div>
+
+<div class="equation">
+  &Delta;<sub>sol</sub>H&deg; = &minus;&Delta;<sub>LE</sub>H&deg; + &Sigma;&Delta;<sub>hyd</sub>H&deg;
+</div>
+
+<p>A compound dissolves if the enthalpy of hydration of the ions is sufficiently exothermic to compensate for the energy needed to break apart the lattice. Smaller ions with higher charges have more exothermic hydration enthalpies because they create stronger electric fields that attract water molecules more strongly.</p>
+
+<!-- ============================================================ -->
+<h2>2.3 Entropy and Gibbs Free Energy</h2>
+<!-- ============================================================ -->
+
+<h3>Entropy</h3>
+
+<div class="definition">
+  <strong>Entropy (S):</strong> A measure of the disorder or the number of ways energy can be distributed among the particles in a system. Measured in J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>. The greater the disorder, the greater the entropy.
+</div>
+
+<p>General trends: gases have much higher entropy than liquids, which have higher entropy than solids. Entropy increases with temperature. Entropy increases when the number of moles of gas increases in a reaction.</p>
+
+<div class="equation">
+  &Delta;S<sub>system</sub> = &Sigma;S&deg;(products) &minus; &Sigma;S&deg;(reactants)
+</div>
+
+<p>A positive &Delta;S indicates an increase in disorder (more ways of arranging energy). The Second Law of Thermodynamics states that for a spontaneous process, the total entropy of the universe must increase: &Delta;S<sub>total</sub> &gt; 0.</p>
+
+<h3>Gibbs Free Energy</h3>
+
+<div class="definition">
+  <strong>Gibbs free energy change (&Delta;G):</strong> A thermodynamic quantity that combines enthalpy and entropy to predict whether a reaction is feasible (thermodynamically spontaneous). A reaction is feasible when &Delta;G &lt; 0.
+</div>
+
+<div class="equation">
+  &Delta;G = &Delta;H &minus; T&Delta;S
+</div>
+
+<p>where &Delta;G is in kJ mol<sup>&minus;1</sup>, &Delta;H is in kJ mol<sup>&minus;1</sup>, T is in K, and &Delta;S is in kJ K<sup>&minus;1</sup> mol<sup>&minus;1</sup> (convert from J by dividing by 1000).</p>
+
+<table>
+  <tr><th>&Delta;H</th><th>&Delta;S</th><th>&Delta;G</th><th>Feasibility</th></tr>
+  <tr><td>Negative (exo)</td><td>Positive</td><td>Always negative</td><td>Feasible at all temperatures</td></tr>
+  <tr><td>Negative (exo)</td><td>Negative</td><td>Negative at low T</td><td>Feasible at low temperatures</td></tr>
+  <tr><td>Positive (endo)</td><td>Positive</td><td>Negative at high T</td><td>Feasible at high temperatures</td></tr>
+  <tr><td>Positive (endo)</td><td>Negative</td><td>Always positive</td><td>Never feasible</td></tr>
+</table>
+
+<p>At the temperature where &Delta;G = 0, the system is at equilibrium. Rearranging: T = &Delta;H / &Delta;S gives the temperature at which the reaction becomes feasible.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Feasibility (&Delta;G &lt; 0) does not mean the reaction will actually occur at an observable rate. Kinetic barriers (high activation energy) may prevent a thermodynamically feasible reaction from happening. For example, the combustion of diamond in air is thermodynamically feasible but kinetically extremely slow at room temperature.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.4 Rates of Reaction and Collision Theory</h2>
+<!-- ============================================================ -->
+
+<h3>Collision Theory</h3>
+
+<div class="definition">
+  <strong>Collision theory:</strong> For a reaction to occur, particles must collide with sufficient energy (equal to or greater than the activation energy, E<sub>a</sub>) and with the correct orientation.
+</div>
+
+<div class="definition">
+  <strong>Activation energy (E<sub>a</sub>):</strong> The minimum energy that colliding particles must have in order to react. It represents the energy barrier that must be overcome for bonds to break and new bonds to form.
+</div>
+
+<h3>Factors Affecting Rate</h3>
+
+<table>
+  <tr><th>Factor</th><th>Effect</th><th>Explanation</th></tr>
+  <tr><td>Concentration (or pressure for gases)</td><td>Increases rate</td><td>More particles per unit volume &rarr; more frequent collisions &rarr; more successful collisions per unit time</td></tr>
+  <tr><td>Temperature</td><td>Increases rate</td><td>Particles have greater kinetic energy &rarr; more frequent collisions AND a greater proportion of particles exceed E<sub>a</sub> (the latter is the dominant effect)</td></tr>
+  <tr><td>Surface area</td><td>Increases rate</td><td>More surface exposed to reactant particles &rarr; more frequent collisions</td></tr>
+  <tr><td>Catalyst</td><td>Increases rate</td><td>Provides an alternative reaction pathway with a lower activation energy</td></tr>
+</table>
+
+<h3>The Boltzmann Distribution</h3>
+
+<p>The Boltzmann (Maxwell-Boltzmann) distribution shows the distribution of molecular kinetic energies in a sample of gas at a given temperature. Key features:</p>
+<ul>
+  <li>No molecules have zero energy.</li>
+  <li>The distribution is asymmetric with a long tail to the right (some molecules have very high energies).</li>
+  <li>The peak (most probable energy) shifts to the right and becomes lower and broader at higher temperatures.</li>
+  <li>The area under the curve is constant (total number of molecules is unchanged).</li>
+  <li>The shaded area to the right of E<sub>a</sub> represents the proportion of molecules with enough energy to react.</li>
+</ul>
+
+<p>Increasing temperature shifts the distribution to the right and significantly increases the proportion of molecules exceeding E<sub>a</sub>. A catalyst lowers E<sub>a</sub>, so a greater proportion of molecules exceed the new, lower E<sub>a</sub> without changing the distribution itself.</p>
+
+<h3>Catalysts</h3>
+
+<div class="definition">
+  <strong>Catalyst:</strong> A substance that increases the rate of a reaction by providing an alternative pathway with a lower activation energy, without being consumed in the overall reaction.<br><br>
+  <strong>Homogeneous catalyst:</strong> A catalyst in the same phase as the reactants (e.g. H<sup>+</sup>(aq) catalysing an esterification in aqueous solution).<br><br>
+  <strong>Heterogeneous catalyst:</strong> A catalyst in a different phase from the reactants (e.g. iron in the Haber process, vanadium(V) oxide in the Contact process). Reactions occur on the surface of the catalyst, so a greater surface area increases effectiveness.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.5 Rate Equations and the Arrhenius Equation</h2>
+<!-- ============================================================ -->
+
+<h3>Rate Equations</h3>
+
+<div class="definition">
+  <strong>Rate equation:</strong> An expression showing how the rate of a reaction depends on the concentrations of reactants. For a reaction involving reactants A and B: rate = k[A]<sup>m</sup>[B]<sup>n</sup>, where k is the rate constant, m and n are the orders of reaction with respect to A and B, and the overall order is m + n.
+</div>
+
+<p>The orders m and n can only be determined experimentally (they cannot be deduced from the balanced equation). Common orders:</p>
+
+<table>
+  <tr><th>Order</th><th>Effect of doubling [A]</th><th>Rate&ndash;concentration graph</th></tr>
+  <tr><td>0 (zero order)</td><td>Rate unchanged</td><td>Horizontal line (rate independent of [A])</td></tr>
+  <tr><td>1 (first order)</td><td>Rate doubles</td><td>Straight line through origin (rate &propto; [A])</td></tr>
+  <tr><td>2 (second order)</td><td>Rate quadruples</td><td>Upward curve (rate &propto; [A]<sup>2</sup>)</td></tr>
+</table>
+
+<p>The rate constant k changes with temperature (increases as temperature increases) and is affected by catalysts, but is independent of concentration.</p>
+
+<h3>Determining Orders from Experimental Data</h3>
+
+<p>The <strong>initial rates method</strong> uses data from experiments where the initial concentration of one reactant is varied while others are held constant. Compare pairs of experiments to see how changing the concentration of one reactant affects the initial rate.</p>
+
+<p>A <strong>concentration-time graph</strong> for a first-order reaction shows exponential decay. The half-life (the time for the concentration to halve) is constant for a first-order reaction. For zero order, the concentration decreases linearly with time. For second order, the concentration decreases as a reciprocal function.</p>
+
+<h3>Rate-Determining Step</h3>
+
+<div class="definition">
+  <strong>Rate-determining step:</strong> The slowest step in a multi-step reaction mechanism. It acts as a bottleneck and determines the overall rate. The rate equation reflects the species involved in the rate-determining step and any preceding steps.
+</div>
+
+<p>If the rate equation is rate = k[A][B], then both A and B (or species derived from them) are involved in or before the rate-determining step. Species that appear in the balanced equation but not in the rate equation are involved in steps after the rate-determining step.</p>
+
+<h3>The Arrhenius Equation</h3>
+
+<div class="equation">
+  k = Ae<sup>&minus;E<sub>a</sub>/RT</sup>
+</div>
+
+<p>where k is the rate constant, A is the pre-exponential factor (related to collision frequency and orientation), E<sub>a</sub> is the activation energy (J mol<sup>&minus;1</sup>), R = 8.314 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>, and T is temperature in K.</p>
+
+<p>Taking natural logarithms gives the linear form:</p>
+
+<div class="equation">
+  ln k = ln A &minus; E<sub>a</sub> / RT
+</div>
+
+<p>Plotting ln k against 1/T gives a straight line with gradient = &minus;E<sub>a</sub>/R and y-intercept = ln A. This allows E<sub>a</sub> to be determined experimentally.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The Arrhenius equation quantitatively explains why rate increases with temperature. A small increase in T produces a large increase in k because of the exponential relationship. When reading values from an Arrhenius plot, ensure you convert the gradient correctly: E<sub>a</sub> = &minus;gradient &times; R, and remember units must be consistent (J not kJ for R).
+</div>
+
+</div>
+</body>
+</html>

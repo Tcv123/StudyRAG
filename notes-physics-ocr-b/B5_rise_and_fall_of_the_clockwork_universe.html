@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module B5 — Rise and Fall of the Clockwork Universe</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module B5 — Rise and Fall of the Clockwork Universe</h1>
+
+<h2>5.1 Newton's Laws of Motion</h2>
+
+<div class="definition">
+  <strong>Newton's first law:</strong> An object remains at rest or continues to move at constant velocity unless acted upon by a resultant external force.<br><br>
+  <strong>Newton's second law:</strong> The net force acting on an object is equal to the rate of change of its momentum. For constant mass: F = ma.<br><br>
+  <strong>Newton's third law:</strong> When two objects interact, they exert equal and opposite forces on each other. These forces act on different objects, are of the same type, and act along the same line.
+</div>
+
+<div class="equation">
+  F = ma &nbsp;&nbsp; (constant mass)
+</div>
+<div class="equation">
+  F = &Delta;p / &Delta;t &nbsp;&nbsp; (general form)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Newton's third law pairs must be the same type of force (both gravitational, both electromagnetic, etc.) acting on different objects. "The table pushes up on the book and the book pushes down on the table" is a valid Newton's third law pair. "Weight of the book and the normal reaction" is NOT — these are different types of force acting on the same object.
+</div>
+
+<h3>Free Body Diagrams</h3>
+<p>A free body diagram shows all forces acting on a single object, drawn as arrows from the object in the correct directions with appropriate labels. Only forces acting ON the object are shown, not forces the object exerts on other objects. These diagrams are essential for resolving forces and applying Newton's second law.</p>
+
+<h2>5.2 Kinematics — Equations of Motion</h2>
+
+<p>For objects moving with uniform (constant) acceleration in a straight line, the SUVAT equations apply:</p>
+
+<div class="equation">v = u + at</div>
+<div class="equation">s = ut + &frac12;at&sup2;</div>
+<div class="equation">s = vt &minus; &frac12;at&sup2;</div>
+<div class="equation">v&sup2; = u&sup2; + 2as</div>
+<div class="equation">s = &frac12;(u + v)t</div>
+
+<table>
+  <tr><th>Symbol</th><th>Quantity</th><th>Unit</th></tr>
+  <tr><td>s</td><td>Displacement</td><td>m</td></tr>
+  <tr><td>u</td><td>Initial velocity</td><td>m s<sup>&minus;1</sup></td></tr>
+  <tr><td>v</td><td>Final velocity</td><td>m s<sup>&minus;1</sup></td></tr>
+  <tr><td>a</td><td>Acceleration</td><td>m s<sup>&minus;2</sup></td></tr>
+  <tr><td>t</td><td>Time</td><td>s</td></tr>
+</table>
+
+<h3>Projectile Motion</h3>
+<p>Projectiles experience only gravitational acceleration (ignoring air resistance). The horizontal and vertical components of motion are independent:</p>
+<ul>
+  <li>Horizontally: constant velocity (a<sub>x</sub> = 0), so x = u cos&theta; &times; t</li>
+  <li>Vertically: uniform acceleration g downward, so use SUVAT with a = &minus;g</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For projectile problems, always separate horizontal and vertical motion. List the SUVAT variables for each direction independently. The time of flight is usually the link between the two components.
+</div>
+
+<h2>5.3 Energy</h2>
+
+<div class="definition">
+  <strong>Kinetic energy:</strong> The energy an object possesses due to its motion. E<sub>k</sub> = &frac12;mv&sup2;<br><br>
+  <strong>Gravitational potential energy:</strong> The energy an object possesses due to its position in a gravitational field. Near the Earth's surface: E<sub>p</sub> = mgh<br><br>
+  <strong>Work done:</strong> The energy transferred when a force causes a displacement. W = Fs cos&theta;, where &theta; is the angle between the force and the direction of displacement.
+</div>
+
+<div class="equation">E<sub>k</sub> = &frac12;mv&sup2;</div>
+<div class="equation">E<sub>p</sub> = mgh</div>
+<div class="equation">W = Fs cos &theta;</div>
+
+<h3>Conservation of Energy</h3>
+<p>Energy cannot be created or destroyed, only transferred from one form to another. In a closed system, the total energy remains constant. For a falling object (no air resistance), the loss in gravitational potential energy equals the gain in kinetic energy:</p>
+
+<div class="equation">mgh = &frac12;mv&sup2;</div>
+
+<h3>Power and Efficiency</h3>
+
+<div class="equation">Power: P = W / t = Fv</div>
+<div class="equation">Efficiency = useful output energy / total input energy &times; 100%</div>
+
+<div class="definition">
+  <strong>Power:</strong> The rate of energy transfer or the rate of doing work. Measured in watts (W), where 1 W = 1 J s<sup>&minus;1</sup>.
+</div>
+
+<h2>5.4 Momentum</h2>
+
+<div class="definition">
+  <strong>Linear momentum:</strong> The product of an object's mass and velocity. p = mv. Momentum is a vector quantity, measured in kg m s<sup>&minus;1</sup> or N s.<br><br>
+  <strong>Conservation of momentum:</strong> In a closed system (no external forces), the total momentum before an interaction equals the total momentum after the interaction.
+</div>
+
+<div class="equation">p = mv</div>
+
+<h3>Types of Collision</h3>
+<table>
+  <tr><th>Type</th><th>Momentum</th><th>Kinetic Energy</th><th>Example</th></tr>
+  <tr><td>Perfectly elastic</td><td>Conserved</td><td>Conserved</td><td>Collisions between gas molecules, hard sphere collisions</td></tr>
+  <tr><td>Inelastic</td><td>Conserved</td><td>Not conserved (some converted to other forms)</td><td>Most real-world collisions</td></tr>
+  <tr><td>Perfectly inelastic</td><td>Conserved</td><td>Maximum kinetic energy lost (objects stick together)</td><td>Car crash where vehicles join</td></tr>
+  <tr><td>Explosion</td><td>Conserved (total = 0 if system was initially at rest)</td><td>Increases (energy input from chemical/nuclear source)</td><td>Firework, bullet fired from gun</td></tr>
+</table>
+
+<h3>Impulse</h3>
+<div class="equation">Impulse = F&Delta;t = &Delta;p = mv &minus; mu</div>
+
+<p>Impulse equals the change in momentum. The area under a force-time graph gives the impulse. This explains why crumple zones, airbags, and crash helmets work: they increase the time over which the momentum changes, reducing the average force on the person.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Momentum is always conserved in collisions (assuming no external forces). Kinetic energy is only conserved in elastic collisions. To check whether a collision is elastic, calculate the total kinetic energy before and after — if they are equal, it is elastic.
+</div>
+
+<h2>5.5 Circular Motion</h2>
+
+<div class="definition">
+  <strong>Centripetal acceleration:</strong> The acceleration directed towards the centre of the circular path. It is caused by the centripetal force and continuously changes the direction of velocity without changing its magnitude.<br><br>
+  <strong>Angular velocity (&omega;):</strong> The rate of change of angular displacement, measured in rad s<sup>&minus;1</sup>. &omega; = 2&pi;f = 2&pi;/T
+</div>
+
+<div class="equation">v = &omega;r</div>
+<div class="equation">Centripetal acceleration: a = v&sup2;/r = &omega;&sup2;r</div>
+<div class="equation">Centripetal force: F = mv&sup2;/r = m&omega;&sup2;r</div>
+
+<p>The centripetal force is not a new type of force — it is the resultant of the forces acting towards the centre of the circle. It could be provided by gravity (orbits), tension (conical pendulum), friction (car on a bend), or the normal contact force (clothes in a washing machine drum).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Never describe centripetal force as a separate force in a free body diagram. It is the net inward force. For example, for a car going over a hill, the centripetal force is the difference between the weight and the normal reaction: mg &minus; N = mv&sup2;/r.
+</div>
+
+<h2>5.6 Simple Harmonic Motion (SHM)</h2>
+
+<div class="definition">
+  <strong>Simple harmonic motion:</strong> Motion in which the acceleration is directly proportional to the displacement from the equilibrium position and is always directed towards that equilibrium position. a = &minus;&omega;&sup2;x
+</div>
+
+<div class="equation">Defining equation: a = &minus;&omega;&sup2;x</div>
+<div class="equation">Displacement: x = A cos(&omega;t) &nbsp; or &nbsp; x = A sin(&omega;t)</div>
+<div class="equation">Velocity: v = &plusmn;&omega;&radic;(A&sup2; &minus; x&sup2;)</div>
+<div class="equation">Maximum velocity: v<sub>max</sub> = &omega;A</div>
+<div class="equation">Maximum acceleration: a<sub>max</sub> = &omega;&sup2;A</div>
+
+<h3>SHM Systems</h3>
+
+<p><strong>Mass-spring system:</strong></p>
+<div class="equation">T = 2&pi;&radic;(m/k) &nbsp;&nbsp; so &nbsp;&nbsp; &omega; = &radic;(k/m)</div>
+
+<p><strong>Simple pendulum:</strong></p>
+<div class="equation">T = 2&pi;&radic;(l/g) &nbsp;&nbsp; so &nbsp;&nbsp; &omega; = &radic;(g/l)</div>
+
+<p>Note that the period of a simple pendulum is independent of mass and amplitude (for small angles only, typically &lt; 10&deg;). The period of a mass-spring system is independent of amplitude and gravity.</p>
+
+<h3>Energy in SHM</h3>
+<p>During SHM, energy continually transfers between kinetic and potential energy. The total energy remains constant (for undamped oscillations):</p>
+<ul>
+  <li>At the equilibrium position: E<sub>k</sub> is maximum, E<sub>p</sub> is minimum (zero)</li>
+  <li>At the amplitude: E<sub>k</sub> is zero, E<sub>p</sub> is maximum</li>
+  <li>Total energy: E<sub>total</sub> = &frac12;kA&sup2; = &frac12;m&omega;&sup2;A&sup2;</li>
+</ul>
+
+<h3>Damping</h3>
+
+<div class="definition">
+  <strong>Damping:</strong> The reduction in amplitude of oscillations over time due to energy being dissipated (usually as heat) by resistive forces.<br><br>
+  <strong>Light damping:</strong> The amplitude decreases gradually over many oscillations (exponential decay of amplitude). The frequency remains approximately constant.<br><br>
+  <strong>Heavy (over) damping:</strong> The system returns to equilibrium slowly without oscillating.<br><br>
+  <strong>Critical damping:</strong> The system returns to equilibrium as quickly as possible without oscillating. This is the ideal damping for systems like car suspension and door closing mechanisms.
+</div>
+
+<h3>Forced Oscillations and Resonance</h3>
+
+<div class="definition">
+  <strong>Resonance:</strong> The dramatic increase in amplitude that occurs when the driving frequency of an external periodic force matches the natural frequency of the oscillating system. At resonance, energy is transferred most efficiently from the driver to the oscillator.
+</div>
+
+<p>Effects of damping on resonance:</p>
+<ul>
+  <li>The peak amplitude at resonance decreases</li>
+  <li>The resonance peak becomes broader (less sharp)</li>
+  <li>The resonant frequency shifts slightly below the natural frequency</li>
+</ul>
+
+<h2>5.7 Thermodynamics</h2>
+
+<h3>Thermal Energy and Temperature</h3>
+
+<div class="definition">
+  <strong>Internal energy:</strong> The sum of the random kinetic energies and potential energies of all the particles in a system. Temperature is a measure of the average kinetic energy of the particles.<br><br>
+  <strong>Absolute zero:</strong> The lowest possible temperature (0 K = &minus;273.15 &deg;C), at which particles have the minimum possible kinetic energy (zero-point energy in quantum mechanics).
+</div>
+
+<div class="equation">T(K) = T(&deg;C) + 273.15</div>
+
+<h3>Ideal Gas Laws</h3>
+
+<div class="equation">pV = nRT &nbsp;&nbsp; (n = number of moles, R = 8.31 J mol<sup>&minus;1</sup> K<sup>&minus;1</sup>)</div>
+<div class="equation">pV = NkT &nbsp;&nbsp; (N = number of molecules, k = 1.38 &times; 10<sup>&minus;23</sup> J K<sup>&minus;1</sup>)</div>
+
+<p>The three individual gas laws are special cases:</p>
+<table>
+  <tr><th>Law</th><th>Constant</th><th>Relationship</th></tr>
+  <tr><td>Boyle's law</td><td>Temperature</td><td>p &prop; 1/V &nbsp; (pV = constant)</td></tr>
+  <tr><td>Charles's law</td><td>Pressure</td><td>V &prop; T &nbsp; (V/T = constant)</td></tr>
+  <tr><td>Pressure law</td><td>Volume</td><td>p &prop; T &nbsp; (p/T = constant)</td></tr>
+</table>
+
+<h3>Kinetic Theory of Gases</h3>
+<p>The kinetic theory models a gas as a large number of tiny particles in rapid random motion. Key assumptions include:</p>
+<ul>
+  <li>The gas contains a large number of identical molecules</li>
+  <li>Molecules move in random directions with a range of speeds</li>
+  <li>The volume of the molecules is negligible compared to the volume of the container</li>
+  <li>Collisions between molecules and with container walls are perfectly elastic</li>
+  <li>The time of a collision is negligible compared to the time between collisions</li>
+  <li>There are no intermolecular forces except during collisions</li>
+</ul>
+
+<div class="equation">pV = &frac13;Nm&lt;c&sup2;&gt;</div>
+<div class="equation">Average kinetic energy per molecule: &frac12;m&lt;c&sup2;&gt; = &frac32;kT</div>
+
+<p>where &lt;c&sup2;&gt; is the mean square speed and k is the Boltzmann constant. The root mean square speed is c<sub>rms</sub> = &radic;&lt;c&sup2;&gt;.</p>
+
+<h3>The Boltzmann Factor</h3>
+<p>The Boltzmann factor describes the probability that a molecule has energy at least E at temperature T:</p>
+
+<div class="equation">Probability &prop; e<sup>&minus;E/(kT)</sup></div>
+
+<p>This explains many temperature-dependent phenomena: the rate of chemical reactions, the proportion of molecules that can escape a liquid (evaporation), thermionic emission, and the electrical conductivity of semiconductors all follow Boltzmann-type relationships.</p>
+
+<h2>5.8 Gravitational Fields</h2>
+
+<div class="definition">
+  <strong>Gravitational field:</strong> A region of space where a mass experiences a force due to the presence of another mass. Gravitational field strength at a point is the force per unit mass: g = F/m.<br><br>
+  <strong>Newton's law of gravitation:</strong> Every particle attracts every other particle with a force that is proportional to the product of their masses and inversely proportional to the square of the distance between them.
+</div>
+
+<div class="equation">F = GMm / r&sup2;</div>
+<div class="equation">g = GM / r&sup2;</div>
+
+<p>where G is the gravitational constant (6.67 &times; 10<sup>&minus;11</sup> N m&sup2; kg<sup>&minus;2</sup>), M is the mass creating the field, and r is the distance from the centre of the mass.</p>
+
+<h3>Gravitational Potential</h3>
+
+<div class="definition">
+  <strong>Gravitational potential (V<sub>g</sub>):</strong> The work done per unit mass in bringing a small test mass from infinity to that point. Gravitational potential is always negative (with the zero defined at infinity) because work must be done against the gravitational field to move a mass from the point to infinity.
+</div>
+
+<div class="equation">V<sub>g</sub> = &minus;GM / r</div>
+<div class="equation">Gravitational potential energy: E<sub>p</sub> = &minus;GMm / r</div>
+
+<h3>Orbital Motion</h3>
+<p>For a satellite in circular orbit, the gravitational force provides the centripetal force:</p>
+
+<div class="equation">GMm/r&sup2; = mv&sup2;/r</div>
+
+<p>This gives the orbital speed: v = &radic;(GM/r). The orbital period can be found from T = 2&pi;r/v, leading to Kepler's third law:</p>
+
+<div class="equation">T&sup2; = (4&pi;&sup2;/GM) r&sup3;</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Remember that gravitational potential is always negative and increases (becomes less negative) as you move away from the mass. The gravitational potential at infinity is zero. Students often confuse gravitational potential (energy per unit mass) with gravitational potential energy (energy of the mass in the field).
+</div>
+
+</div>
+</body>
+</html>

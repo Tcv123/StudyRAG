@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S4 — Organic Chemistry</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>S4 — Organic Chemistry</h1>
+
+<!-- ============================================================ -->
+<h2>4.1 Nomenclature and Functional Groups</h2>
+<!-- ============================================================ -->
+
+<h3>IUPAC Nomenclature</h3>
+
+<p>Organic compounds are named systematically using IUPAC rules. The name consists of a root (indicating the longest carbon chain), a prefix (indicating substituents), and a suffix (indicating the principal functional group). Numbers (locants) indicate the positions of branches and functional groups on the chain, chosen to give the lowest possible set of numbers.</p>
+
+<table>
+  <tr><th>Carbon chain length</th><th>Root name</th></tr>
+  <tr><td>1</td><td>meth-</td></tr>
+  <tr><td>2</td><td>eth-</td></tr>
+  <tr><td>3</td><td>prop-</td></tr>
+  <tr><td>4</td><td>but-</td></tr>
+  <tr><td>5</td><td>pent-</td></tr>
+  <tr><td>6</td><td>hex-</td></tr>
+</table>
+
+<h3>Key Functional Groups</h3>
+
+<table>
+  <tr><th>Functional Group</th><th>General Formula</th><th>Suffix / Prefix</th><th>Example</th></tr>
+  <tr><td>Alkane</td><td>C<sub>n</sub>H<sub>2n+2</sub></td><td>-ane</td><td>Ethane, C<sub>2</sub>H<sub>6</sub></td></tr>
+  <tr><td>Alkene (C=C)</td><td>C<sub>n</sub>H<sub>2n</sub></td><td>-ene</td><td>Propene, C<sub>3</sub>H<sub>6</sub></td></tr>
+  <tr><td>Alcohol (&minus;OH)</td><td>C<sub>n</sub>H<sub>2n+1</sub>OH</td><td>-ol</td><td>Ethanol, C<sub>2</sub>H<sub>5</sub>OH</td></tr>
+  <tr><td>Halogenoalkane (&minus;X)</td><td>C<sub>n</sub>H<sub>2n+1</sub>X</td><td>halo- prefix</td><td>Chloroethane, C<sub>2</sub>H<sub>5</sub>Cl</td></tr>
+  <tr><td>Aldehyde (&minus;CHO)</td><td>RCHO</td><td>-al</td><td>Ethanal, CH<sub>3</sub>CHO</td></tr>
+  <tr><td>Ketone (C=O)</td><td>RCOR'</td><td>-one</td><td>Propanone, CH<sub>3</sub>COCH<sub>3</sub></td></tr>
+  <tr><td>Carboxylic acid (&minus;COOH)</td><td>RCOOH</td><td>-oic acid</td><td>Ethanoic acid, CH<sub>3</sub>COOH</td></tr>
+  <tr><td>Ester (&minus;COO&minus;)</td><td>RCOOR'</td><td>-oate</td><td>Ethyl ethanoate</td></tr>
+  <tr><td>Amine (&minus;NH<sub>2</sub>)</td><td>RNH<sub>2</sub></td><td>-amine</td><td>Ethylamine, C<sub>2</sub>H<sub>5</sub>NH<sub>2</sub></td></tr>
+</table>
+
+<div class="definition">
+  <strong>Homologous series:</strong> A family of organic compounds with the same functional group and general formula, in which successive members differ by CH<sub>2</sub>. Members have similar chemical properties and show a gradual trend in physical properties.
+</div>
+
+<!-- ============================================================ -->
+<h2>4.2 Isomerism</h2>
+<!-- ============================================================ -->
+
+<h3>Structural Isomerism</h3>
+
+<div class="definition">
+  <strong>Structural isomers:</strong> Molecules with the same molecular formula but different structural formulae (different arrangement of atoms). Types include chain isomerism (different carbon skeletons), position isomerism (same functional group at different positions), and functional group isomerism (different functional groups, e.g. an alcohol and an ether).
+</div>
+
+<h3>E/Z (Geometric) Isomerism</h3>
+
+<div class="definition">
+  <strong>E/Z isomerism:</strong> A type of stereoisomerism that arises in molecules with a C=C double bond where each carbon of the double bond is attached to two different groups. The restricted rotation around the double bond means the groups can be arranged differently in space.<br><br>
+  <strong>Z (zusammen):</strong> The higher-priority groups (assigned by Cahn-Ingold-Prelog rules based on atomic number) are on the same side of the double bond.<br><br>
+  <strong>E (entgegen):</strong> The higher-priority groups are on opposite sides.
+</div>
+
+<h3>Optical Isomerism</h3>
+
+<div class="definition">
+  <strong>Optical isomers (enantiomers):</strong> Non-superimposable mirror images of each other, arising when a carbon atom is bonded to four different groups (a chiral centre / asymmetric carbon). Enantiomers have identical physical and chemical properties except that they rotate the plane of plane-polarised light in opposite directions and may react differently with other chiral molecules (important in biological systems).
+</div>
+
+<p>A <strong>racemic mixture (racemate)</strong> contains equal amounts of both enantiomers and shows no overall rotation of plane-polarised light because the rotations cancel out. Many synthetic reactions produce racemic mixtures, whereas enzymes typically produce a single enantiomer.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> To identify a chiral centre, look for a carbon atom bonded to four different groups. Draw the two mirror images to show the enantiomers. Remember that optical isomerism is a type of stereoisomerism, not structural isomerism.
+</div>
+
+<!-- ============================================================ -->
+<h2>4.3 Alkanes</h2>
+<!-- ============================================================ -->
+
+<p>Alkanes are saturated hydrocarbons with only C&minus;C single bonds and C&minus;H bonds. They are relatively unreactive because the C&minus;C and C&minus;H bonds are strong and non-polar (or only very slightly polar).</p>
+
+<h3>Combustion</h3>
+
+<p>Alkanes undergo combustion in oxygen. Complete combustion produces carbon dioxide and water and is highly exothermic, making alkanes excellent fuels:</p>
+
+<div class="equation">
+  C<sub>n</sub>H<sub>2n+2</sub> + (3n+1)/2 O<sub>2</sub> &rarr; nCO<sub>2</sub> + (n+1)H<sub>2</sub>O
+</div>
+
+<p>Incomplete combustion (in limited oxygen) produces carbon monoxide (toxic) and/or carbon (soot) instead of CO<sub>2</sub>.</p>
+
+<h3>Radical Substitution</h3>
+
+<p>Alkanes react with halogens (Cl<sub>2</sub>, Br<sub>2</sub>) in the presence of UV light via a free radical substitution mechanism. For methane and chlorine:</p>
+
+<p><strong>Initiation:</strong> UV light causes homolytic fission of the Cl&minus;Cl bond to form two chlorine radicals.</p>
+<div class="equation">Cl<sub>2</sub> &rarr; 2Cl&bull;</div>
+
+<p><strong>Propagation:</strong> Chain reactions where a radical reacts with a molecule to form a new radical.</p>
+<div class="equation">Cl&bull; + CH<sub>4</sub> &rarr; CH<sub>3</sub>&bull; + HCl</div>
+<div class="equation">CH<sub>3</sub>&bull; + Cl<sub>2</sub> &rarr; CH<sub>3</sub>Cl + Cl&bull;</div>
+
+<p><strong>Termination:</strong> Two radicals combine, removing radicals from the system.</p>
+<div class="equation">Cl&bull; + Cl&bull; &rarr; Cl<sub>2</sub> &nbsp;&nbsp;|&nbsp;&nbsp; CH<sub>3</sub>&bull; + Cl&bull; &rarr; CH<sub>3</sub>Cl &nbsp;&nbsp;|&nbsp;&nbsp; CH<sub>3</sub>&bull; + CH<sub>3</sub>&bull; &rarr; C<sub>2</sub>H<sub>6</sub></div>
+
+<p>Limitations: a mixture of products is formed (mono-, di-, tri-substituted etc.) because further substitution can occur. The reaction is not selective.</p>
+
+<!-- ============================================================ -->
+<h2>4.4 Alkenes</h2>
+<!-- ============================================================ -->
+
+<p>Alkenes are unsaturated hydrocarbons containing a C=C double bond. The double bond consists of a sigma (&sigma;) bond and a pi (&pi;) bond. The &pi; bond is a region of high electron density above and below the plane of the molecule, making alkenes susceptible to attack by electrophiles.</p>
+
+<h3>Electrophilic Addition</h3>
+
+<div class="definition">
+  <strong>Electrophile:</strong> An electron-pair acceptor; a species attracted to regions of high electron density. Examples: H<sup>+</sup>, NO<sub>2</sub><sup>+</sup>, Br<sub>2</sub> (when polarised).<br><br>
+  <strong>Electrophilic addition:</strong> A reaction in which an electrophile is attracted to the electron-rich C=C double bond, and atoms/groups add across the double bond, breaking the &pi; bond.
+</div>
+
+<p><strong>Reaction with bromine (Br<sub>2</sub>):</strong> The test for unsaturation. Bromine water is decolourised from orange/brown to colourless. The &pi; electrons in the C=C bond induce a dipole in the approaching Br<sub>2</sub> molecule. The &delta;+ bromine atom acts as the electrophile, forming a bond with one carbon while the Br&minus;Br bond breaks heterolytically. A carbocation intermediate forms, which is then attacked by the Br<sup>&minus;</sup> ion.</p>
+
+<p><strong>Reaction with hydrogen halides (HBr):</strong> The H<sup>+</sup> (the electrophile) adds to one carbon of the double bond, and the halide ion adds to the other. Markovnikov's rule states that the hydrogen adds to the carbon already bonded to more hydrogen atoms, forming the more stable (more substituted) carbocation intermediate.</p>
+
+<p><strong>Reaction with concentrated sulfuric acid:</strong> H<sub>2</sub>SO<sub>4</sub> adds across the double bond. Subsequent hydrolysis with water produces an alcohol (indirect hydration).</p>
+
+<p><strong>Reaction with steam (hydration):</strong> In the presence of an acid catalyst (H<sub>3</sub>PO<sub>4</sub>) at high temperature and pressure, steam adds across the double bond to form an alcohol directly. This is the industrial method for producing ethanol from ethene.</p>
+
+<h3>Polymerisation</h3>
+
+<div class="definition">
+  <strong>Addition polymerisation:</strong> Many alkene monomers join together by breaking their C=C double bonds and forming new C&minus;C single bonds. No other molecules are produced (100% atom economy). The polymer is named poly(monomer), e.g. poly(ethene), poly(propene), poly(chloroethene) (PVC).
+</div>
+
+<p>Addition polymers are generally non-biodegradable because the C&minus;C backbone is very stable and resistant to attack by microorganisms or enzymes.</p>
+
+<!-- ============================================================ -->
+<h2>4.5 Alcohols</h2>
+<!-- ============================================================ -->
+
+<h3>Classification</h3>
+
+<div class="definition">
+  <strong>Primary alcohol (1&deg;):</strong> The &minus;OH group is attached to a carbon bonded to one other carbon (or none, as in methanol).<br>
+  <strong>Secondary alcohol (2&deg;):</strong> The &minus;OH group is attached to a carbon bonded to two other carbons.<br>
+  <strong>Tertiary alcohol (3&deg;):</strong> The &minus;OH group is attached to a carbon bonded to three other carbons.
+</div>
+
+<h3>Oxidation of Alcohols</h3>
+
+<p>The oxidising agent is acidified potassium dichromate (K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> / H<sub>2</sub>SO<sub>4</sub>). The dichromate changes from orange to green (Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> to Cr<sup>3+</sup>) when oxidation occurs. The oxidising agent is represented as [O] in equations.</p>
+
+<table>
+  <tr><th>Alcohol type</th><th>Product with distillation</th><th>Product with reflux</th></tr>
+  <tr><td>Primary (1&deg;)</td><td>Aldehyde (distil immediately to prevent further oxidation)</td><td>Carboxylic acid</td></tr>
+  <tr><td>Secondary (2&deg;)</td><td colspan="2">Ketone (cannot be further oxidised)</td></tr>
+  <tr><td>Tertiary (3&deg;)</td><td colspan="2">No reaction (resistant to oxidation under these conditions)</td></tr>
+</table>
+
+<h3>Dehydration</h3>
+
+<p>Alcohols can be dehydrated to form alkenes by heating with a strong acid catalyst (concentrated H<sub>2</sub>SO<sub>4</sub> or H<sub>3</sub>PO<sub>4</sub>) or by passing alcohol vapour over heated aluminium oxide (Al<sub>2</sub>O<sub>3</sub>). Water is eliminated:</p>
+
+<div class="equation">
+  C<sub>2</sub>H<sub>5</sub>OH &rarr; C<sub>2</sub>H<sub>4</sub> + H<sub>2</sub>O
+</div>
+
+<h3>Esterification</h3>
+
+<p>Alcohols react with carboxylic acids in the presence of a concentrated sulfuric acid catalyst to form esters and water (a condensation reaction):</p>
+
+<div class="equation">
+  RCOOH + R'OH &rlhar; RCOOR' + H<sub>2</sub>O
+</div>
+
+<p>This is a reversible reaction. Esters have characteristic fruity smells and are used as flavourings, solvents, and in making plasticisers.</p>
+
+<!-- ============================================================ -->
+<h2>4.6 Halogenoalkanes</h2>
+<!-- ============================================================ -->
+
+<div class="definition">
+  <strong>Halogenoalkane:</strong> An organic compound in which one or more hydrogen atoms of an alkane have been replaced by halogen atoms (F, Cl, Br, I). The C&minus;X bond is polar because halogens are more electronegative than carbon, making the carbon atom susceptible to attack by nucleophiles.
+</div>
+
+<h3>Nucleophilic Substitution</h3>
+
+<div class="definition">
+  <strong>Nucleophile:</strong> An electron-pair donor; a species with a lone pair that it can donate to an electron-deficient atom. Examples: OH<sup>&minus;</sup>, CN<sup>&minus;</sup>, NH<sub>3</sub>, H<sub>2</sub>O.
+</div>
+
+<p><strong>SN2 mechanism (primary halogenoalkanes):</strong> A one-step mechanism. The nucleophile attacks the &delta;+ carbon from the opposite side to the halogen (backside attack). Bond making and bond breaking happen simultaneously in a single transition state. The rate equation is: rate = k[halogenoalkane][nucleophile]. SN2 produces inversion of configuration at the chiral centre.</p>
+
+<p><strong>SN1 mechanism (tertiary halogenoalkanes):</strong> A two-step mechanism. Step 1: the C&minus;X bond breaks heterolytically to form a carbocation and a halide ion (slow, rate-determining step). Step 2: the nucleophile rapidly attacks the planar carbocation from either side. The rate equation is: rate = k[halogenoalkane]. SN1 produces a racemic mixture if the carbon was a chiral centre, because the planar carbocation can be attacked equally from both sides.</p>
+
+<p>Secondary halogenoalkanes undergo a mixture of SN1 and SN2 mechanisms.</p>
+
+<h3>Reactions of Halogenoalkanes</h3>
+
+<table>
+  <tr><th>Nucleophile</th><th>Conditions</th><th>Product</th></tr>
+  <tr><td>NaOH(aq) / OH<sup>&minus;</sup></td><td>Warm aqueous solution</td><td>Alcohol</td></tr>
+  <tr><td>KCN / CN<sup>&minus;</sup></td><td>Warm ethanol/water</td><td>Nitrile (extends carbon chain by 1)</td></tr>
+  <tr><td>NH<sub>3</sub></td><td>Excess, warm, sealed tube</td><td>Amine</td></tr>
+</table>
+
+<h3>Elimination</h3>
+
+<p>When a halogenoalkane is heated with a strong base in ethanolic solution (e.g. NaOH in ethanol), elimination occurs instead of substitution. A hydrogen atom and the halogen are removed from adjacent carbons, forming an alkene and water:</p>
+
+<div class="equation">
+  C<sub>2</sub>H<sub>5</sub>Br + NaOH (in ethanol) &rarr; C<sub>2</sub>H<sub>4</sub> + NaBr + H<sub>2</sub>O
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The choice between substitution and elimination depends on the conditions. Aqueous NaOH favours substitution (nucleophilic); ethanolic NaOH favours elimination (OH<sup>&minus;</sup> acts as a base). Tertiary halogenoalkanes favour elimination and SN1; primary halogenoalkanes favour SN2.
+</div>
+
+<h3>Reactivity of Halogenoalkanes</h3>
+
+<p>The rate of hydrolysis (reaction with aqueous silver nitrate to test for the halide ion) decreases in the order: R&minus;I &gt; R&minus;Br &gt; R&minus;Cl. This is because the C&minus;I bond is the weakest (lowest bond enthalpy) and easiest to break, despite being the least polar. Bond strength is the dominant factor, not polarity.</p>
+
+<!-- ============================================================ -->
+<h2>4.7 Organic Mechanisms Summary</h2>
+<!-- ============================================================ -->
+
+<div class="definition">
+  <strong>Curly arrow:</strong> Represents the movement of a pair of electrons. A curly arrow starts from an electron-rich source (lone pair or bond) and points to an electron-deficient destination. A single-headed (fishhook) arrow represents the movement of a single electron (used in radical mechanisms).
+</div>
+
+<p>Types of organic reaction:</p>
+<ul>
+  <li><strong>Addition:</strong> Two molecules combine to form one product (atoms add across a double bond).</li>
+  <li><strong>Substitution:</strong> An atom or group is replaced by another atom or group.</li>
+  <li><strong>Elimination:</strong> A small molecule (e.g. H<sub>2</sub>O, HBr) is removed from a larger molecule, forming a double bond.</li>
+  <li><strong>Oxidation/Reduction:</strong> Gain or loss of oxygen/hydrogen, or change in oxidation state.</li>
+  <li><strong>Hydrolysis:</strong> A bond is broken by the addition of water (or OH<sup>&minus;</sup>).</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When drawing mechanisms, every curly arrow must start from a lone pair or bond and point to where the electrons are going. Show relevant partial charges (&delta;+ and &delta;&minus;) on polar bonds. For ionic intermediates, show the charge clearly. Marks are awarded for correct curly arrows, intermediate species, and products.
+</div>
+
+</div>
+</body>
+</html>

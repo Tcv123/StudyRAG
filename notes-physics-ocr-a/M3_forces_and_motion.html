@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 3 — Forces and Motion</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module 3 — Forces and Motion</h1>
+<p>This module covers kinematics, dynamics, momentum, energy, and power — the core mechanics of A-Level Physics.</p>
+
+<h2>3.1 Motion Graphs</h2>
+
+<h3>Displacement-Time Graphs</h3>
+<ul>
+  <li><strong>Gradient</strong> = velocity</li>
+  <li>A horizontal line means the object is stationary</li>
+  <li>A straight line with a positive gradient means constant velocity in the positive direction</li>
+  <li>A curve means the velocity is changing (accelerating or decelerating)</li>
+  <li>The gradient of the tangent to a curve at any point gives the instantaneous velocity</li>
+  <li>A negative gradient means the object is moving in the negative direction</li>
+</ul>
+
+<h3>Velocity-Time Graphs</h3>
+<ul>
+  <li><strong>Gradient</strong> = acceleration</li>
+  <li><strong>Area under the graph</strong> = displacement</li>
+  <li>A horizontal line means constant velocity (zero acceleration)</li>
+  <li>A straight line with a positive gradient means constant acceleration</li>
+  <li>A straight line with a negative gradient means constant deceleration</li>
+  <li>The area under the curve can be found by counting squares, using the trapezium rule, or geometric shapes</li>
+  <li>Area below the time axis represents negative displacement (motion in the opposite direction)</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Be careful to distinguish between distance-time and displacement-time graphs. Distance can only increase or stay the same; displacement can decrease (return to start). Similarly, speed-time graphs have no negative values; velocity-time graphs can.
+</div>
+
+<h2>3.2 SUVAT Equations</h2>
+
+<div class="definition">
+  <strong>SUVAT equations</strong> apply only to motion with <strong>constant (uniform) acceleration</strong> in a straight line.
+</div>
+
+<p>Variables: <strong>s</strong> = displacement, <strong>u</strong> = initial velocity, <strong>v</strong> = final velocity, <strong>a</strong> = acceleration, <strong>t</strong> = time.</p>
+
+<div class="equation">v = u + at</div>
+<div class="equation">s = ut + &frac12;at<sup>2</sup></div>
+<div class="equation">s = vt &minus; &frac12;at<sup>2</sup></div>
+<div class="equation">v<sup>2</sup> = u<sup>2</sup> + 2as</div>
+<div class="equation">s = &frac12;(u + v)t</div>
+
+<table>
+  <tr><th>Equation</th><th>Missing Variable</th></tr>
+  <tr><td>v = u + at</td><td>s</td></tr>
+  <tr><td>s = ut + &frac12;at<sup>2</sup></td><td>v</td></tr>
+  <tr><td>s = vt &minus; &frac12;at<sup>2</sup></td><td>u</td></tr>
+  <tr><td>v<sup>2</sup> = u<sup>2</sup> + 2as</td><td>t</td></tr>
+  <tr><td>s = &frac12;(u + v)t</td><td>a</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> To choose which equation to use, list the three known quantities and the one unknown. Pick the equation that contains exactly those four variables (the one that is missing the variable you do not know and do not need).
+</div>
+
+<h2>3.3 Projectile Motion</h2>
+
+<div class="definition">
+  <strong>Projectile motion:</strong> The motion of an object under the influence of gravity alone (ignoring air resistance). The horizontal and vertical components of motion are independent.
+</div>
+
+<ul>
+  <li><strong>Horizontal:</strong> No acceleration (constant velocity). x = v<sub>x</sub>t, where v<sub>x</sub> = v cos &theta;</li>
+  <li><strong>Vertical:</strong> Constant acceleration g = 9.81 m s<sup>&minus;2</sup> downwards. Use SUVAT with a = &plusmn;g</li>
+  <li>At the highest point of a trajectory, the vertical velocity = 0 (but horizontal velocity remains unchanged)</li>
+  <li>The time of flight is determined by the vertical motion</li>
+  <li>The range is determined by the horizontal velocity multiplied by the time of flight</li>
+</ul>
+
+<p><strong>For a projectile launched at speed v at angle &theta; above the horizontal:</strong></p>
+<ul>
+  <li>Horizontal component of velocity: v<sub>x</sub> = v cos &theta; (constant throughout)</li>
+  <li>Initial vertical component: v<sub>y</sub> = v sin &theta;</li>
+  <li>At any time t: vertical velocity = v sin &theta; &minus; gt</li>
+  <li>At any time t: horizontal displacement = (v cos &theta;)t</li>
+  <li>At any time t: vertical displacement = (v sin &theta;)t &minus; &frac12;gt<sup>2</sup></li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always resolve the initial velocity into horizontal and vertical components first. Then treat horizontal and vertical motions separately, linked only by the common variable time.
+</div>
+
+<h2>3.4 Newton's Laws of Motion</h2>
+
+<div class="definition">
+  <strong>Newton's First Law:</strong> An object will remain at rest or continue to move at constant velocity unless acted upon by a resultant force.
+</div>
+
+<div class="definition">
+  <strong>Newton's Second Law:</strong> The resultant force on an object is equal to the rate of change of its momentum. For constant mass: F = ma, where F is the resultant force (N), m is mass (kg), and a is acceleration (m s<sup>&minus;2</sup>).
+</div>
+
+<div class="definition">
+  <strong>Newton's Third Law:</strong> If body A exerts a force on body B, then body B exerts an equal and opposite force on body A. The two forces are of the same type, act on different objects, and exist simultaneously.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Newton's Third Law pairs must be: (1) the same type of force, (2) equal in magnitude, (3) opposite in direction, (4) acting on different objects. "Weight and normal contact force" is NOT a Newton's Third Law pair — they act on the same object.
+</div>
+
+<h3>Weight</h3>
+<div class="equation">W = mg</div>
+<p>Where W = weight (N), m = mass (kg), g = gravitational field strength (N kg<sup>&minus;1</sup> or m s<sup>&minus;2</sup>). On Earth's surface, g = 9.81 N kg<sup>&minus;1</sup>.</p>
+
+<h3>Free Body Diagrams</h3>
+<p>A free body diagram shows all the forces acting on a single object as labelled arrows. The length of each arrow represents the relative magnitude. Forces to include:</p>
+<ul>
+  <li>Weight (always vertically downward from the centre of mass)</li>
+  <li>Normal contact / reaction force (perpendicular to the surface)</li>
+  <li>Friction / drag (opposing the direction of motion)</li>
+  <li>Tension (along a string or cable, away from the object)</li>
+  <li>Applied / driving force</li>
+</ul>
+
+<h2>3.5 Friction and Drag</h2>
+
+<div class="definition">
+  <strong>Friction:</strong> A contact force that opposes the relative motion (or attempted motion) between two surfaces.<br>
+  <strong>Drag:</strong> A resistive force that opposes the motion of an object through a fluid (liquid or gas). Drag depends on speed, cross-sectional area, shape, and fluid density.
+</div>
+
+<h3>Terminal Velocity</h3>
+<p>When an object falls through a fluid:</p>
+<ol>
+  <li>Initially, the only force is weight, so the object accelerates at g</li>
+  <li>As speed increases, drag increases (drag is proportional to speed or speed<sup>2</sup>)</li>
+  <li>The resultant force decreases, so acceleration decreases</li>
+  <li>Eventually, drag equals weight: resultant force = 0, acceleration = 0</li>
+  <li>The object now moves at a constant speed called <strong>terminal velocity</strong></li>
+</ol>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A velocity-time graph for a falling object approaching terminal velocity shows a curve that starts steep and gradually flattens to a horizontal line. The gradient (acceleration) decreases over time.
+</div>
+
+<h2>3.6 Momentum</h2>
+
+<div class="definition">
+  <strong>Momentum (p):</strong> The product of mass and velocity. It is a vector quantity.
+</div>
+<div class="equation">p = mv</div>
+<p>Units: kg m s<sup>&minus;1</sup> (or equivalently, N s)</p>
+
+<h3>Newton's Second Law (General Form)</h3>
+<div class="equation">F = &Delta;p / &Delta;t = (mv &minus; mu) / &Delta;t</div>
+<p>The resultant force equals the rate of change of momentum. For constant mass, this reduces to F = ma.</p>
+
+<h3>Impulse</h3>
+<div class="definition">
+  <strong>Impulse:</strong> The product of force and the time for which it acts. Impulse equals the change in momentum.
+</div>
+<div class="equation">Impulse = F&Delta;t = &Delta;p = mv &minus; mu</div>
+<p>Units: N s (or kg m s<sup>&minus;1</sup>)</p>
+<ul>
+  <li>On a force-time graph, the impulse is the area under the graph</li>
+  <li>A longer collision time means a smaller average force for the same impulse — this is the principle behind crumple zones, airbags, and crash mats</li>
+</ul>
+
+<h3>Conservation of Momentum</h3>
+<div class="definition">
+  <strong>Law of Conservation of Momentum:</strong> In a closed system (no external forces), the total momentum before an interaction equals the total momentum after the interaction.
+</div>
+<div class="equation">m<sub>1</sub>u<sub>1</sub> + m<sub>2</sub>u<sub>2</sub> = m<sub>1</sub>v<sub>1</sub> + m<sub>2</sub>v<sub>2</sub></div>
+
+<h3>Types of Collision</h3>
+<table>
+  <tr><th>Property</th><th>Elastic Collision</th><th>Inelastic Collision</th><th>Perfectly Inelastic</th></tr>
+  <tr><td>Momentum</td><td>Conserved</td><td>Conserved</td><td>Conserved</td></tr>
+  <tr><td>Kinetic Energy</td><td>Conserved</td><td>NOT conserved (some KE converted to other forms)</td><td>Maximum KE lost (objects stick together)</td></tr>
+  <tr><td>Total Energy</td><td>Conserved</td><td>Conserved</td><td>Conserved</td></tr>
+  <tr><td>Example</td><td>Colliding gas molecules</td><td>Most real collisions</td><td>Catching a ball; cars crumpling together</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Momentum is always conserved in collisions (provided the system is closed). To check if a collision is elastic, calculate total KE before and after — if they are equal, it is elastic. Explosions are the reverse of perfectly inelastic collisions.
+</div>
+
+<h2>3.7 Work, Energy, and Power</h2>
+
+<h3>Work Done</h3>
+<div class="definition">
+  <strong>Work done:</strong> The product of the force and the displacement in the direction of the force. Work done is equal to energy transferred.
+</div>
+<div class="equation">W = Fd cos &theta;</div>
+<p>Where W = work done (J), F = force (N), d = displacement (m), &theta; = angle between force and displacement.</p>
+<ul>
+  <li>If &theta; = 0&deg;: W = Fd (force and displacement in the same direction)</li>
+  <li>If &theta; = 90&deg;: W = 0 (force perpendicular to displacement — no work done)</li>
+  <li>If &theta; = 180&deg;: W = &minus;Fd (force opposes displacement)</li>
+  <li>1 joule = 1 newton-metre: the work done when a force of 1 N moves through 1 m</li>
+</ul>
+
+<h3>Kinetic Energy</h3>
+<div class="equation">E<sub>k</sub> = &frac12;mv<sup>2</sup></div>
+<p>Derived from: the work done to accelerate an object from rest to speed v equals &frac12;mv<sup>2</sup>.</p>
+
+<h3>Gravitational Potential Energy</h3>
+<div class="equation">E<sub>p</sub> = mgh</div>
+<p>Where h is the vertical height gained. This applies near Earth's surface where g is approximately constant.</p>
+
+<h3>Conservation of Energy</h3>
+<div class="definition">
+  <strong>Principle of Conservation of Energy:</strong> Energy cannot be created or destroyed, only transferred from one form to another. The total energy of a closed system remains constant.
+</div>
+
+<p>For a falling object (no air resistance):</p>
+<div class="equation">mgh = &frac12;mv<sup>2</sup> &nbsp;&nbsp;&rArr;&nbsp;&nbsp; v = &radic;(2gh)</div>
+
+<h3>Power</h3>
+<div class="definition">
+  <strong>Power:</strong> The rate of doing work or the rate of energy transfer.
+</div>
+<div class="equation">P = W / t = E / t</div>
+<p>Units: watts (W), where 1 W = 1 J s<sup>&minus;1</sup>.</p>
+
+<p>For a constant force producing constant velocity:</p>
+<div class="equation">P = Fv</div>
+<p>This is useful for calculating the driving force or power of a vehicle at a given speed.</p>
+
+<h3>Efficiency</h3>
+<div class="equation">Efficiency = (useful output energy / total input energy) &times; 100%</div>
+<div class="equation">Efficiency = (useful output power / total input power) &times; 100%</div>
+<ul>
+  <li>Efficiency is always less than 100% in real systems (energy is dissipated as heat due to friction, air resistance, etc.)</li>
+  <li>Efficiency has no units — it is a ratio (often expressed as a percentage)</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When a vehicle travels at constant velocity, the driving force equals the total resistive force (by Newton's First Law). The power output at this point is P = Fv = (resistive force) &times; v.
+</div>
+
+</div>
+</body>
+</html>

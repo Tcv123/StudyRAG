@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Practice Questions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="study-tracker.js"></script>
+  <script src="questions/cs/cs-ocr-practice.js"></script>
+  <script src="questions/cs/cs-aqa-practice.js"></script>
+  <script src="questions/physics/physics-edexcel-practice.js"></script>
+  <script src="questions/physics/physics-aqa-practice.js"></script>
+  <script src="questions/physics/physics-ocr-a-practice.js"></script>
+  <script src="questions/physics/physics-ocr-b-practice.js"></script>
+  <script src="questions/economics-aqa/economics-aqa-practice.js"></script>
+  <script src="questions/economics-edexcel-a/economics-edexcel-a-practice.js"></script>
+  <script src="questions/economics-ocr/economics-ocr-practice.js"></script>
+  <script src="questions/economics-edexcel-b/economics-edexcel-b-practice.js"></script>
+  <script src="questions/chemistry/chemistry-aqa-practice.js"></script>
+  <script src="questions/chemistry/chemistry-edexcel-practice.js"></script>
+  <script src="questions/chemistry/chemistry-ocr-a-practice.js"></script>
+  <script src="questions/chemistry/chemistry-ocr-b-practice.js"></script>
+  <script src="questions/biology/biology-aqa-practice.js"></script>
+  <script src="questions/biology/biology-edexcel-a-practice.js"></script>
+  <script src="questions/biology/biology-edexcel-b-practice.js"></script>
+  <script src="questions/biology/biology-ocr-a-practice.js"></script>
+  <script src="questions/biology/biology-ocr-b-practice.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EEF5FC;
+      --surface: #FFFFFF;
+      --surface2: #F4F9FE;
+      --surface3: #E6F1FA;
+      --border: #D2E5F3;
+      --border-hover: #93C4E2;
+      --text: #1B2D4F;
+      --muted: #6B87A8;
+      --muted2: #A0B8CE;
+      --accent: #5BADCF;
+      --accent-dark: #3D95BC;
+      --accent-dim: rgba(91,173,207,0.1);
+      --accent-glow: rgba(91,173,207,0.2);
+      --red: #DC2626; --red-bg: rgba(220,38,38,0.07); --red-border: rgba(220,38,38,0.18);
+      --amber: #D97706; --amber-bg: rgba(217,119,6,0.07); --amber-border: rgba(217,119,6,0.18);
+      --green: #16A34A; --green-bg: rgba(22,163,74,0.07); --green-border: rgba(22,163,74,0.18);
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+      --topics-w: 300px;
+    }
+
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    .app { display: flex; height: 100vh; overflow: hidden; }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: var(--sidebar-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      padding: 24px 0; flex-shrink: 0;
+      box-shadow: 2px 0 16px rgba(91,173,207,0.08);
+    }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted);
+      cursor: pointer; transition: all 0.15s; text-decoration: none;
+      border: none; background: none; width: 100%; text-align: left; font-family: var(--font-body);
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name  { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .user-email { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; flex-shrink: 0; }
+    .logout-btn:hover { color: #DC2626; }
+
+    /* ── TOPICS PANEL ── */
+    .topics-panel {
+      width: var(--topics-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      flex-shrink: 0; overflow: hidden;
+    }
+    .topics-header { padding: 28px 22px 20px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+    .topics-subject { font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+    .topics-title { font-family: var(--font-display); font-size: 21px; letter-spacing: -0.01em; }
+    .topics-board { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; padding: 4px 12px; border-radius: 20px; background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.25); font-size: 11px; font-weight: 600; color: var(--accent-dark); }
+
+    .subj-pick {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 16px; border-radius: 12px;
+      background: var(--surface); border: 1px solid var(--border);
+      cursor: pointer; transition: all 0.15s;
+    }
+    .subj-pick:hover { border-color: var(--border-hover); background: var(--surface2); }
+    .subj-pick-emoji {
+      width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
+      background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.2);
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
+    }
+    .subj-pick-info { flex: 1; min-width: 0; }
+    .subj-pick-name { font-size: 14px; font-weight: 600; }
+    .subj-pick-board { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .subj-pick-arrow { font-size: 14px; color: var(--accent); }
+
+    .topics-body { flex: 1; overflow-y: auto; padding: 14px; }
+    .topics-body::-webkit-scrollbar { width: 4px; }
+    .topics-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .paper-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 10px 10px 6px; margin-top: 10px; }
+    .paper-label:first-child { margin-top: 0; }
+
+    .topic-btn {
+      display: flex; flex-direction: column;
+      width: 100%; padding: 12px 14px;
+      border: 1px solid transparent; border-radius: 12px;
+      background: none; cursor: pointer; text-align: left;
+      font-family: var(--font-body); transition: all 0.15s;
+      margin-bottom: 6px;
+    }
+    .topic-btn:hover { background: var(--surface2); border-color: var(--border); }
+    .topic-btn.active { background: var(--accent-dim); border-color: rgba(91,173,207,0.3); }
+    .topic-main { display: flex; align-items: center; gap: 12px; width: 100%; }
+    .topic-num {
+      width: 30px; height: 30px; border-radius: 9px; flex-shrink: 0;
+      background: var(--surface2); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--muted);
+    }
+    .topic-btn.active .topic-num { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .topic-info { flex: 1; min-width: 0; }
+    .topic-name { font-size: 13.5px; font-weight: 500; color: var(--text); line-height: 1.4; }
+    .topic-btn.active .topic-name { color: var(--accent-dark); font-weight: 600; }
+    .topic-sub { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+    .topic-count { font-size: 11px; color: var(--muted2); font-weight: 500; margin-top: 4px; }
+    .rag-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; background: var(--border); transition: background 0.3s; }
+    .rag-dot.green { background: #22C55E; box-shadow: 0 0 6px rgba(34,197,94,0.4); }
+    .rag-dot.amber { background: #F59E0B; box-shadow: 0 0 6px rgba(245,158,11,0.4); }
+    .rag-dot.red   { background: #EF4444; box-shadow: 0 0 6px rgba(239,68,68,0.4); }
+
+    /* ── MAIN CONTENT AREA ── */
+    .content { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+    .content-header {
+      padding: 20px 32px; border-bottom: 1px solid var(--border);
+      background: var(--surface); display: flex; align-items: center; justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .content-title { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.01em; }
+    .content-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+    .content-body {
+      flex: 1; overflow-y: auto; padding: 32px;
+      display: flex; justify-content: center;
+    }
+    .content-body::-webkit-scrollbar { width: 6px; }
+    .content-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    .quiz-wrap { width: 100%; max-width: 720px; }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 14px; padding: 48px; text-align: center;
+    }
+    .empty-icon { font-size: 52px; opacity: 0.5; }
+    .empty-title { font-family: var(--font-display); font-size: 22px; color: var(--text); }
+    .empty-sub { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 360px; }
+
+    /* ── MODE SELECTOR ── */
+    .mode-card {
+      background: var(--surface); border: 2px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: 20px; padding: 40px 36px; text-align: center;
+      box-shadow: 0 6px 32px rgba(91,173,207,0.14);
+    }
+    .mode-card h2 { font-family: var(--font-display); font-size: 24px; margin-bottom: 8px; }
+    .mode-card p { color: var(--muted); font-size: 14px; margin-bottom: 28px; line-height: 1.6; }
+
+    .mode-grid { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .mode-btn {
+      flex: 1; min-width: 180px; max-width: 220px;
+      padding: 24px 16px; border-radius: 16px;
+      border: 2px solid var(--border); background: var(--surface2);
+      cursor: pointer; text-align: center; font-family: var(--font-body);
+      transition: all 0.2s;
+    }
+    .mode-btn:hover { border-color: var(--accent); background: var(--accent-dim); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(91,173,207,0.15); }
+    .mode-btn .mode-icon { font-size: 32px; margin-bottom: 10px; }
+    .mode-btn .mode-name { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .mode-btn .mode-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .mode-btn .mode-time { font-size: 11px; color: var(--accent-dark); font-weight: 600; margin-top: 6px; }
+
+    /* ── TIMER ── */
+    .timer-bar {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 16px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .timer-icon { font-size: 18px; }
+    .timer-track { flex: 1; height: 6px; background: var(--surface2); border-radius: 99px; overflow: hidden; }
+    .timer-fill { height: 100%; border-radius: 99px; background: var(--accent); transition: width 1s linear; }
+    .timer-fill.warning { background: var(--amber); }
+    .timer-fill.danger { background: var(--red); }
+    .timer-text { font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--text); min-width: 52px; text-align: right; }
+    .timer-text.warning { color: var(--amber); }
+    .timer-text.danger { color: var(--red); }
+
+    /* ── QUESTION CARD ── */
+    .q-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 36px;
+      box-shadow: 0 4px 24px rgba(91,173,207,0.1);
+      margin-bottom: 20px;
+    }
+    .q-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+    .q-badge {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; padding: 5px 12px; border-radius: 20px; border: 1px solid;
+    }
+    .q-badge.mcq { background: rgba(91,173,207,0.12); color: var(--accent); border-color: rgba(91,173,207,0.3); }
+    .q-badge.written { background: var(--amber-bg); color: var(--amber); border-color: var(--amber-border); }
+    .q-marks { font-size: 13px; font-weight: 600; color: var(--muted); }
+    .q-counter { font-size: 13px; font-weight: 500; color: var(--muted2); }
+
+    .q-text { font-size: 20px; font-weight: 700; line-height: 1.5; color: var(--text); margin-bottom: 28px; }
+
+    /* ── MCQ OPTIONS ── */
+    .options { display: flex; flex-direction: column; gap: 12px; }
+    .option-btn {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 16px 18px; background: var(--surface2);
+      border: 2px solid var(--border); border-radius: 14px;
+      cursor: pointer; text-align: left;
+      font-family: var(--font-body); font-size: 15px; font-weight: 500;
+      color: var(--text); line-height: 1.5; transition: all 0.15s;
+    }
+    .option-btn:hover:not(:disabled):not(.selected) { border-color: var(--accent); background: rgba(91,173,207,0.08); }
+    .option-btn.selected { border-color: var(--accent); background: rgba(91,173,207,0.15); }
+    .option-btn.correct { border-color: var(--green); background: var(--green-bg); }
+    .option-btn.wrong { border-color: var(--red); background: var(--red-bg); }
+    .option-btn.reveal { border-color: var(--green); background: var(--green-bg); opacity: 0.6; }
+    .option-btn:disabled { cursor: default; }
+
+    .option-letter {
+      flex-shrink: 0; width: 30px; height: 30px; border-radius: 9px;
+      background: var(--border); color: var(--muted);
+      font-size: 12px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s;
+    }
+    .option-btn.selected .option-letter { background: var(--accent); color: #fff; }
+    .option-btn.correct  .option-letter { background: var(--green); color: #fff; }
+    .option-btn.wrong    .option-letter { background: var(--red); color: #fff; }
+    .option-btn.reveal   .option-letter { background: var(--green); color: #fff; }
+
+    /* ── WRITTEN ── */
+    .written-area {
+      width: 100%; min-height: 140px; padding: 16px 18px;
+      background: var(--surface2); border: 2px solid var(--border);
+      border-radius: 14px; color: var(--text);
+      font-family: var(--font-body); font-size: 15px; font-weight: 500;
+      line-height: 1.6; resize: vertical; outline: none; transition: border-color 0.15s;
+    }
+    .written-area::placeholder { color: var(--muted2); }
+    .written-area:focus { border-color: var(--accent); }
+    .diagram-area {
+      width: 100%; min-height: 220px; padding: 14px;
+      background: #fff; border: 2px dashed var(--border);
+      border-radius: 14px; margin-top: 10px; position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .diagram-area::before {
+      content: '✏️ Draw your diagram here';
+      color: var(--muted2); font-size: 14px; font-weight: 500;
+      position: absolute; pointer-events: none;
+    }
+    .diagram-area canvas { width: 100%; height: 200px; cursor: crosshair; }
+    .diagram-label { font-size: 12px; color: var(--muted); margin-top: 6px; font-style: italic; }
+    .mark-scheme-diagram { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin: 10px 0; text-align: center; }
+    .mark-scheme-diagram img, .mark-scheme-diagram svg { max-width: 100%; }
+    .written-hint { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+    .mark-scheme-wrap {
+      margin-top: 20px; background: var(--green-bg);
+      border: 1px solid var(--green-border); border-radius: 14px; overflow: hidden;
+    }
+    .mark-scheme-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--green);
+      padding: 12px 20px; border-bottom: 1px solid var(--green-border);
+      background: rgba(22,163,74,0.05);
+    }
+    .mark-scheme-text {
+      padding: 18px 20px; font-size: 14px; color: var(--text);
+      line-height: 1.75; white-space: pre-line;
+    }
+
+    /* ── FEEDBACK ── */
+    .feedback-bar {
+      margin-top: 16px; padding: 12px 16px;
+      border-radius: 12px; font-size: 14px; font-weight: 600;
+      display: none; line-height: 1.5;
+    }
+    .feedback-bar.show { display: block; }
+    .feedback-bar.correct-fb { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+    .feedback-bar.wrong-fb { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      padding: 14px 28px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; font-family: var(--font-body); font-size: 15px; font-weight: 700;
+      border: none; border-radius: 14px; cursor: pointer;
+      transition: all 0.15s; display: inline-flex; align-items: center; gap: 8px;
+      box-shadow: 0 4px 16px rgba(91,173,207,0.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(91,173,207,0.4); }
+
+    .btn-confirm {
+      margin-top: 20px; width: 100%; padding: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; font-family: var(--font-body); font-size: 16px; font-weight: 700;
+      border: none; border-radius: 14px; cursor: pointer;
+      transition: all 0.15s; display: none;
+      box-shadow: 0 4px 16px rgba(91,173,207,0.3);
+    }
+    .btn-confirm.show { display: block; }
+    .btn-confirm:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(91,173,207,0.4); }
+
+    .btn-reveal {
+      margin-top: 16px; width: 100%; padding: 14px;
+      background: var(--green-bg); color: var(--green);
+      font-family: var(--font-body); font-size: 15px; font-weight: 700;
+      border: 2px solid var(--green-border); border-radius: 14px; cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-reveal:hover { background: rgba(22,163,74,0.15); }
+
+    .btn-next {
+      margin-top: 20px; width: 100%; padding: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; font-family: var(--font-body); font-size: 16px; font-weight: 700;
+      border: none; border-radius: 14px; cursor: pointer;
+      transition: all 0.15s; display: none;
+      box-shadow: 0 4px 16px rgba(91,173,207,0.3);
+    }
+    .btn-next.show { display: block; }
+    .btn-next:hover { transform: translateY(-2px); }
+
+    .btn-outline {
+      padding: 12px 24px; background: var(--surface); color: var(--muted);
+      font-family: var(--font-body); font-size: 14px; font-weight: 600;
+      border: 1px solid var(--border); border-radius: 12px; cursor: pointer;
+      transition: all 0.15s; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-outline:hover { border-color: var(--border-hover); color: var(--text); }
+
+    /* ── PROGRESS BAR ── */
+    .progress-row { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    .progress-track { flex: 1; height: 6px; background: var(--surface2); border-radius: 99px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--accent), #4FC3F7); transition: width 0.5s ease; }
+    .progress-label { font-size: 13px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+
+    /* ── RESULT CARD ── */
+    .result-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 44px 36px; text-align: center;
+      box-shadow: 0 4px 24px rgba(91,173,207,0.1);
+    }
+    .result-score { font-family: var(--font-display); font-size: 52px; color: var(--accent); margin-bottom: 8px; }
+    .result-label { font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 24px; }
+    .result-breakdown { display: flex; gap: 10px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap; }
+    .result-chip {
+      padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; border: 1px solid;
+    }
+    .result-chip.correct { background: var(--green-bg); color: var(--green); border-color: var(--green-border); }
+    .result-chip.wrong { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+    .result-chip.partial { background: var(--amber-bg); color: var(--amber); border-color: var(--amber-border); }
+    .result-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── SELF-MARK ── */
+    .self-mark-row { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .self-mark-btn {
+      flex: 1; min-width: 120px; padding: 12px 14px;
+      border-radius: 12px; border: 2px solid;
+      font-family: var(--font-body); font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .self-mark-btn.full    { background: var(--green-bg); border-color: var(--green-border); color: var(--green); }
+    .self-mark-btn.partial { background: var(--amber-bg); border-color: var(--amber-border); color: var(--amber); }
+    .self-mark-btn.miss    { background: var(--red-bg);   border-color: var(--red-border);   color: var(--red); }
+    .self-mark-btn:hover   { filter: brightness(1.1); transform: translateY(-1px); }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ── SIDEBAR ── -->
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item active" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials">?</div>
+        <div class="user-info">
+          <div class="user-name" id="sidebarName">Loading...</div>
+          <div class="user-email" id="sidebarEmail"></div>
+        </div>
+        <button class="logout-btn" onclick="logout()" title="Sign out">⏻</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TOPICS PANEL ── -->
+  <div class="topics-panel">
+    <div class="topics-header">
+      <div class="topics-subject" id="panelSubject">Practice</div>
+      <div class="topics-title">Practice Questions</div>
+      <div class="topics-board" id="panelBoard">Select a subject</div>
+    </div>
+
+    <div id="subjectCards" style="padding:12px;display:flex;flex-direction:column;gap:8px;">
+      <!-- populated dynamically -->
+    </div>
+
+    <div class="topics-body" id="topicsList" style="display:none;">
+      <button onclick="showSubjectCards()" style="background:none;border:none;cursor:pointer;padding:8px 16px;color:var(--accent-dark);font-size:13px;font-weight:500;text-align:left;display:flex;align-items:center;gap:6px;">← Back to subjects</button>
+      <!-- populated dynamically based on selected subject -->
+    </div>
+  </div>
+
+  <!-- ── MAIN CONTENT ── -->
+  <div class="content">
+    <div class="content-header" id="contentHeader">
+      <div>
+        <div class="content-title" id="contentTitle">Practice Questions</div>
+        <div class="content-sub" id="contentSub">Select a topic from the left to start practising</div>
+      </div>
+      <div id="headerActions"></div>
+    </div>
+
+    <div class="content-body" id="contentBody">
+      <div class="empty-state">
+        <div class="empty-icon">✦</div>
+        <div class="empty-title">Choose a topic</div>
+        <div class="empty-sub">Pick a topic from the panel on the left to practice exam-style questions with mark schemes.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* ═══════════════════════════════════════
+   STATE
+═══════════════════════════════════════ */
+let currentUser = null;
+let activeTopic = null;
+let activeSubjectKey = null;
+
+const PRACTICE_MAP = {
+  'Computer Science_OCR': () => typeof CS_OCR_PRACTICE !== 'undefined' ? CS_OCR_PRACTICE : null,
+  'Computer Science_AQA': () => typeof CS_AQA_PRACTICE !== 'undefined' ? CS_AQA_PRACTICE : null,
+  'Physics_Edexcel': () => typeof PHYSICS_EDEXCEL_PRACTICE !== 'undefined' ? PHYSICS_EDEXCEL_PRACTICE : null,
+  'Physics_AQA': () => typeof PHYSICS_AQA_PRACTICE !== 'undefined' ? PHYSICS_AQA_PRACTICE : null,
+  'Physics_OCR A': () => typeof PHYSICS_OCR_A_PRACTICE !== 'undefined' ? PHYSICS_OCR_A_PRACTICE : null,
+  'Physics_OCR B': () => typeof PHYSICS_OCR_B_PRACTICE !== 'undefined' ? PHYSICS_OCR_B_PRACTICE : null,
+  'Economics_AQA': () => typeof ECONOMICS_AQA_PRACTICE !== 'undefined' ? ECONOMICS_AQA_PRACTICE : null,
+  'Economics_Edexcel A': () => typeof ECONOMICS_EDEXCEL_A_PRACTICE !== 'undefined' ? ECONOMICS_EDEXCEL_A_PRACTICE : null,
+  'Economics_OCR': () => typeof ECONOMICS_OCR_PRACTICE !== 'undefined' ? ECONOMICS_OCR_PRACTICE : null,
+  'Economics_Edexcel B': () => typeof ECONOMICS_EDEXCEL_B_PRACTICE !== 'undefined' ? ECONOMICS_EDEXCEL_B_PRACTICE : null,
+  'Chemistry_AQA': () => typeof CHEMISTRY_AQA_PRACTICE !== 'undefined' ? CHEMISTRY_AQA_PRACTICE : null,
+  'Chemistry_Edexcel': () => typeof CHEMISTRY_EDEXCEL_PRACTICE !== 'undefined' ? CHEMISTRY_EDEXCEL_PRACTICE : null,
+  'Chemistry_OCR A': () => typeof CHEMISTRY_OCR_A_PRACTICE !== 'undefined' ? CHEMISTRY_OCR_A_PRACTICE : null,
+  'Chemistry_OCR B': () => typeof CHEMISTRY_OCR_B_PRACTICE !== 'undefined' ? CHEMISTRY_OCR_B_PRACTICE : null,
+  'Biology_AQA': () => typeof BIOLOGY_AQA_PRACTICE !== 'undefined' ? BIOLOGY_AQA_PRACTICE : null,
+  'Biology_Edexcel A': () => typeof BIOLOGY_EDEXCEL_A_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_A_PRACTICE : null,
+  'Biology_Edexcel B': () => typeof BIOLOGY_EDEXCEL_B_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_B_PRACTICE : null,
+  'Biology_OCR A': () => typeof BIOLOGY_OCR_A_PRACTICE !== 'undefined' ? BIOLOGY_OCR_A_PRACTICE : null,
+  'Biology_OCR B': () => typeof BIOLOGY_OCR_B_PRACTICE !== 'undefined' ? BIOLOGY_OCR_B_PRACTICE : null,
+};
+
+function getPracticeData(topicKey) {
+  // Use the active subject to look up the correct practice data
+  if (activeSubjectKey && PRACTICE_MAP[activeSubjectKey]) {
+    const bank = PRACTICE_MAP[activeSubjectKey]();
+    if (bank && bank[topicKey]) return bank[topicKey];
+  }
+  // Fallback: search all (for backwards compatibility)
+  for (const getter of Object.values(PRACTICE_MAP)) {
+    const bank = getter();
+    if (bank && bank[topicKey]) return bank[topicKey];
+  }
+  return null;
+}
+
+/* ═══════════════════════════════════════
+   SUBJECT TOPIC DEFINITIONS
+═══════════════════════════════════════ */
+const SUBJECT_TOPICS = {
+  'Computer Science_OCR': {
+    sections: [
+      { label: 'OCR — Paper 1: Computer Systems', topics: [
+        { id: '1.1', name: 'Systems Architecture', sub: 'CPU, fetch-execute, performance' },
+        { id: '1.2', name: 'Memory and Storage', sub: 'RAM, ROM, secondary storage' },
+        { id: '1.3', name: 'Networks, Connections & Protocols', sub: 'LAN, WAN, TCP/IP, HTTP' },
+        { id: '1.4', name: 'Network Security', sub: 'Threats, prevention, encryption' },
+        { id: '1.5', name: 'Systems Software', sub: 'OS, translators, utilities' },
+        { id: '1.6', name: 'Ethical, Legal, Cultural & Environmental', sub: 'Laws, impacts, sustainability' },
+      ]},
+      { label: 'OCR — Paper 2: Computational Thinking', topics: [
+        { id: '2.1', name: 'Algorithms', sub: 'Searching, sorting, computational thinking' },
+        { id: '2.2', name: 'Programming Fundamentals', sub: 'Variables, loops, functions' },
+        { id: '2.3', name: 'Producing Robust Programs', sub: 'Testing, validation, maintainability' },
+        { id: '2.4', name: 'Boolean Logic', sub: 'Logic gates, truth tables, expressions' },
+        { id: '2.5', name: 'Languages and IDEs', sub: 'High/low level, translators, IDE features' },
+      ]},
+    ]
+  },
+  'Computer Science_AQA': {
+    sections: [
+      { label: 'AQA — Paper 1: Programming & Theory', topics: [
+        { id: '4.1', name: 'Fundamentals of Programming', sub: 'Data types, OOP, recursion' },
+        { id: '4.2', name: 'Fundamentals of Data Structures', sub: 'Stacks, queues, trees, graphs' },
+        { id: '4.3', name: 'Fundamentals of Algorithms', sub: 'Sorting, searching, Big-O' },
+        { id: '4.4', name: 'Theory of Computation', sub: 'FSMs, regex, Turing machines' },
+      ]},
+      { label: 'AQA — Paper 2: Computer Systems & Data', topics: [
+        { id: '4.5', name: 'Data Representation', sub: 'Number systems, floating point, compression' },
+        { id: '4.6', name: 'Computer Systems', sub: 'OS, Boolean algebra, logic gates' },
+        { id: '4.7', name: 'Computer Organisation & Architecture', sub: 'Von Neumann, FDE, CISC/RISC' },
+        { id: '4.8', name: 'Consequences of Uses of Computing', sub: 'Ethics, legislation, environment' },
+        { id: '4.9', name: 'Communication & Networking', sub: 'TCP/IP, topologies, encryption' },
+        { id: '4.10', name: 'Fundamentals of Databases', sub: 'SQL, normalisation, ER modelling' },
+        { id: '4.11', name: 'Big Data', sub: 'Machine learning, MapReduce' },
+        { id: '4.12', name: 'Fundamentals of Functional Programming', sub: 'Map, filter, fold, higher-order functions' },
+      ]},
+    ]
+  },
+  'Physics_Edexcel': {
+    sections: [
+      { label: 'Edexcel — Paper 1: Advanced Physics I', topics: [
+        { id: 'T1', name: 'Working as a Physicist', sub: 'SI units, prefixes, uncertainties' },
+        { id: 'T2', name: 'Mechanics', sub: 'Vectors, SUVAT, Newton\'s laws, momentum, energy' },
+        { id: 'T3', name: 'Electric Circuits', sub: 'Current, PD, resistance, EMF, Kirchhoff\'s laws' },
+        { id: 'T6', name: 'Further Mechanics', sub: 'Impulse, 2D momentum, circular motion' },
+        { id: 'T7', name: 'Electric & Magnetic Fields', sub: 'Coulomb\'s law, capacitors, EM induction' },
+        { id: 'T8', name: 'Nuclear & Particle Physics', sub: 'Quarks, leptons, Standard Model' },
+      ]},
+      { label: 'Edexcel — Paper 2: Advanced Physics II', topics: [
+        { id: 'T4', name: 'Materials', sub: 'Density, Hooke\'s law, stress, strain, Young\'s modulus' },
+        { id: 'T5', name: 'Waves & Particle Nature of Light', sub: 'Superposition, diffraction, photoelectric effect' },
+        { id: 'T9', name: 'Thermodynamics', sub: 'Specific heat, gas laws, kinetic theory' },
+        { id: 'T10', name: 'Space', sub: 'Stellar evolution, HR diagram, Hubble\'s law' },
+        { id: 'T11', name: 'Nuclear Radiation', sub: 'Half-life, decay, fission, fusion, E=mc²' },
+        { id: 'T12', name: 'Gravitational Fields', sub: 'Newton\'s gravitation, orbits, Kepler\'s laws' },
+        { id: 'T13', name: 'Oscillations', sub: 'SHM, damping, resonance' },
+      ]},
+    ]
+  },
+  'Physics_AQA': {
+    sections: [
+      { label: 'AQA — Paper 1', topics: [
+        { id: '3.1', name: 'Measurements and Their Errors', sub: 'SI units, uncertainties, errors' },
+        { id: '3.2', name: 'Particles and Radiation', sub: 'Quarks, leptons, photoelectric effect, energy levels' },
+        { id: '3.3', name: 'Waves', sub: 'Progressive, stationary waves, refraction, diffraction' },
+        { id: '3.4', name: 'Mechanics and Materials', sub: 'Forces, energy, momentum, stress, strain' },
+        { id: '3.5', name: 'Electricity', sub: 'Current, PD, resistance, EMF, circuits' },
+      ]},
+      { label: 'AQA — Paper 2', topics: [
+        { id: '3.6', name: 'Further Mechanics and Thermal Physics', sub: 'Circular motion, SHM, gas laws, kinetic theory' },
+        { id: '3.7', name: 'Fields and Their Consequences', sub: 'Gravitational, electric, magnetic fields, capacitance' },
+        { id: '3.8', name: 'Nuclear Physics', sub: 'Radioactivity, nuclear energy, binding energy' },
+      ]},
+    ]
+  },
+  'Physics_OCR A': {
+    sections: [
+      { label: 'OCR A — Practical & Foundations', topics: [
+        { id: 'M1', name: 'Development of Practical Skills', sub: 'Planning, analysis, evaluation' },
+        { id: 'M2', name: 'Foundations of Physics', sub: 'Quantities, units, vectors, measurements' },
+      ]},
+      { label: 'OCR A — Paper 1: Modelling Physics', topics: [
+        { id: 'M3', name: 'Forces and Motion', sub: 'Kinematics, Newton\'s laws, momentum, circular motion' },
+        { id: 'M5', name: 'Newtonian World and Astrophysics', sub: 'Thermal physics, gravity, astrophysics, cosmology' },
+      ]},
+      { label: 'OCR A — Paper 2: Exploring Physics', topics: [
+        { id: 'M4', name: 'Electrons, Waves and Photons', sub: 'Charge, circuits, waves, quantum physics' },
+        { id: 'M6', name: 'Particles and Medical Physics', sub: 'Capacitors, EM fields, nuclear, particle, medical' },
+      ]},
+    ]
+  },
+  'Physics_OCR B': {
+    sections: [
+      { label: 'OCR B — Practical & Data Analysis', topics: [
+        { id: 'B1', name: 'Development of Practical Skills', sub: 'Planning, measurements, analysis, uncertainties' },
+        { id: 'B2', name: 'Fundamental Data Analysis', sub: 'SI units, quantities, estimation, graphs' },
+      ]},
+      { label: 'OCR B — Paper 1: Fundamentals of Physics', topics: [
+        { id: 'B3', name: 'Physics in Action', sub: 'Imaging, sensing, materials, signalling' },
+        { id: 'B5', name: 'Rise and Fall of the Clockwork Universe', sub: 'Mechanics, energy, oscillations, thermal, gravity' },
+      ]},
+      { label: 'OCR B — Paper 2: Scientific Literacy', topics: [
+        { id: 'B4', name: 'Understanding Processes', sub: 'Waves, quantum behaviour, space & time' },
+        { id: 'B6', name: 'Field and Particle Physics', sub: 'EM fields, capacitors, induction, particles, nuclear' },
+      ]},
+    ]
+  },
+  'Economics_AQA': {
+    sections: [
+      { label: 'AQA — Microeconomics (Paper 1)', topics: [
+        { id: '3.1.1', name: 'Economic Problem & Methodology', sub: 'Scarcity, opportunity cost, PPF, economic methodology' },
+        { id: '3.1.2', name: 'Price Determination', sub: 'Demand, supply, equilibrium, elasticity (PED, YED, XED, PES)' },
+        { id: '3.1.3', name: 'Production Costs & Revenue', sub: 'Short/long run costs, economies of scale, revenue curves' },
+        { id: '3.1.4', name: 'Competitive & Concentrated Markets', sub: 'Perfect competition, monopoly, oligopoly, monopolistic competition' },
+        { id: '3.1.5', name: 'Market Failure & Government Intervention', sub: 'Externalities, public goods, merit goods, government failure' },
+      ]},
+      { label: 'AQA — Macroeconomics (Paper 2)', topics: [
+        { id: '3.2.1', name: 'Measurement of Macroeconomic Performance', sub: 'GDP, inflation (CPI/RPI), unemployment, balance of payments' },
+        { id: '3.2.2', name: 'How the Macroeconomy Works', sub: 'AD/AS model, circular flow, multiplier, consumption & investment' },
+        { id: '3.2.3', name: 'Economic Performance', sub: 'Economic growth, trade cycles, Phillips curve, conflicts' },
+        { id: '3.2.4', name: 'Financial Markets & Monetary Policy', sub: 'Money supply, interest rates, central banks, quantitative easing' },
+        { id: '3.2.5', name: 'Fiscal & Supply-Side Policies', sub: 'Taxation, government spending, supply-side reforms, laffer curve' },
+      ]},
+    ]
+  },
+  'Economics_Edexcel A': {
+    sections: [
+      { label: 'Edexcel A — Theme 1: Introduction to Markets', topics: [
+        { id: '1.1', name: 'Nature of Economics & Markets', sub: 'Scarcity, opportunity cost, demand/supply, price mechanism, elasticity' },
+        { id: '1.2', name: 'Market Failure & Government Intervention', sub: 'Externalities, public/merit goods, government failure, cost-benefit' },
+      ]},
+      { label: 'Edexcel A — Theme 2: The UK Economy', topics: [
+        { id: '2.1', name: 'Economic Performance & AD', sub: 'GDP, inflation, unemployment, balance of payments, aggregate demand' },
+        { id: '2.2', name: 'AS, National Income & Macro Policy', sub: 'AS curves, multiplier, fiscal/monetary/supply-side policies' },
+      ]},
+      { label: 'Edexcel A — Theme 3: Business Behaviour', topics: [
+        { id: '3.1', name: 'Business Growth & Objectives', sub: 'Revenue, costs, economies of scale, profit maximisation, objectives' },
+        { id: '3.2', name: 'Market Structures & Labour', sub: 'Perfect competition, monopoly, oligopoly, labour market, wage determination' },
+      ]},
+      { label: 'Edexcel A — Theme 4: Global Perspective', topics: [
+        { id: '4.1', name: 'International Economics & Trade', sub: 'Comparative advantage, trade blocs, exchange rates, globalisation' },
+        { id: '4.2', name: 'Poverty, Inequality & Development', sub: 'Measures of development, inequality, strategies for development' },
+      ]},
+    ]
+  },
+  'Economics_OCR': {
+    sections: [
+      { label: 'OCR — Microeconomics (Component 1)', topics: [
+        { id: '1.1', name: 'Economic Problem & Market Systems', sub: 'Scarcity, opportunity cost, demand/supply, price mechanism, elasticity' },
+        { id: '1.2', name: 'Market Failure & Government Intervention', sub: 'Externalities, public goods, information failure, government failure' },
+        { id: '1.3', name: 'Firm Objectives, Costs & Revenue', sub: 'Profit maximisation, revenue, short/long run costs, economies of scale' },
+        { id: '1.4', name: 'Market Structures', sub: 'Perfect competition, monopoly, oligopoly, contestable markets, efficiency' },
+      ]},
+      { label: 'OCR — Macroeconomics (Component 2)', topics: [
+        { id: '2.1', name: 'National & International Economy', sub: 'GDP, inflation, unemployment, balance of payments, economic cycle' },
+        { id: '2.2', name: 'AD/AS & Equilibrium', sub: 'Aggregate demand, aggregate supply, national income, multiplier' },
+        { id: '2.3', name: 'Economic Policy', sub: 'Fiscal, monetary, supply-side policies, policy conflicts & trade-offs' },
+        { id: '2.4', name: 'International Economics & Development', sub: 'Trade, exchange rates, globalisation, development, inequality' },
+      ]},
+    ]
+  },
+  'Economics_Edexcel B': {
+    sections: [
+      { label: 'Edexcel B — Theme 1: Markets', topics: [
+        { id: '1.1', name: 'How Markets Work & Surplus', sub: 'Demand, supply, equilibrium, consumer/producer surplus, elasticity' },
+        { id: '1.2', name: 'Market Failure & Government Intervention', sub: 'Externalities, public goods, information gaps, government intervention' },
+      ]},
+      { label: 'Edexcel B — Theme 2: The Wider Economy', topics: [
+        { id: '2.1', name: 'National Economic Performance', sub: 'GDP, inflation, unemployment, balance of payments, HDI' },
+        { id: '2.2', name: 'Macroeconomic Policy', sub: 'AD/AS model, fiscal/monetary/supply-side policies, multiplier' },
+      ]},
+      { label: 'Edexcel B — Theme 3: Business Economics', topics: [
+        { id: '3.1', name: 'Business Economics', sub: 'Revenue, costs, profit, economies of scale, business objectives' },
+        { id: '3.2', name: 'Market Structures & Competition', sub: 'Perfect competition, monopoly, oligopoly, contestability, efficiency' },
+      ]},
+      { label: 'Edexcel B — Theme 4: Global Economy', topics: [
+        { id: '4.1', name: 'International Economics & Globalisation', sub: 'Comparative advantage, trade, exchange rates, WTO, trading blocs' },
+        { id: '4.2', name: 'Development & Inequality', sub: 'Measures of development, causes of inequality, strategies, sustainability' },
+      ]},
+    ]
+  },
+  'Chemistry_AQA': {
+    sections: [
+      { label: 'AQA — Paper 1: Physical & Inorganic', topics: [
+        { id: 'P1', name: 'Physical Chemistry I', sub: 'Atomic structure, bonding, energetics, amount of substance' },
+        { id: 'I1', name: 'Inorganic Chemistry I', sub: 'Periodicity, Group 2, Group 7' },
+      ]},
+      { label: 'AQA — Paper 2: Organic & Physical', topics: [
+        { id: 'O1', name: 'Organic Chemistry I', sub: 'Alkanes, alkenes, halogenoalkanes, alcohols, analysis' },
+        { id: 'P2', name: 'Physical Chemistry II', sub: 'Kinetics, equilibria, thermodynamics, acids & bases, electrodes' },
+      ]},
+      { label: 'AQA — Paper 3: Synoptic', topics: [
+        { id: 'I2', name: 'Inorganic Chemistry II', sub: 'Period 3, transition metals, ions in solution' },
+        { id: 'O2', name: 'Organic Chemistry II', sub: 'Carbonyls, aromatics, amines, polymers, NMR' },
+      ]},
+    ]
+  },
+  'Chemistry_Edexcel': {
+    sections: [
+      { label: 'Edexcel — Paper 1: Core', topics: [
+        { id: 'T1', name: 'Atomic Structure, Bonding and Energetics', sub: 'Atomic models, bonding, intermolecular forces, enthalpy' },
+        { id: 'T2', name: 'Kinetics, Equilibrium and Redox', sub: 'Rates, Boltzmann, equilibrium, oxidation states' },
+      ]},
+      { label: 'Edexcel — Paper 2: Advanced', topics: [
+        { id: 'T3', name: 'Inorganic Chemistry', sub: 'Periodicity, Groups 1/2/7, transition metals' },
+        { id: 'T4', name: 'Organic Chemistry I', sub: 'Alkanes, alkenes, halogenoalkanes, alcohols, mechanisms' },
+      ]},
+      { label: 'Edexcel — Paper 3: General', topics: [
+        { id: 'T5', name: 'Thermodynamics, Acids & Bases', sub: 'Born-Haber, entropy, free energy, pH, buffers' },
+        { id: 'T6', name: 'Advanced Organic & Analysis', sub: 'Aromatics, carbonyls, amines, polymers, NMR, IR' },
+      ]},
+    ]
+  },
+  'Chemistry_OCR A': {
+    sections: [
+      { label: 'OCR A — Practical', topics: [
+        { id: 'M1', name: 'Development of Practical Skills', sub: 'Planning, analysis, evaluation, techniques' },
+      ]},
+      { label: 'OCR A — Paper 1: Periodic Table, Elements & Physical', topics: [
+        { id: 'M2', name: 'Foundations in Chemistry', sub: 'Atoms, moles, bonding, shapes, acid-base, redox' },
+        { id: 'M3', name: 'Periodic Table and Energy', sub: 'Periodicity, Groups 2 & 7, enthalpy, rates, equilibrium' },
+      ]},
+      { label: 'OCR A — Paper 2: Synthesis & Analytical', topics: [
+        { id: 'M4', name: 'Core Organic Chemistry', sub: 'Alkanes, alkenes, alcohols, haloalkanes, synthesis, IR/MS' },
+        { id: 'M5', name: 'Physical Chemistry & Transition Elements', sub: 'Rate equations, Kc/Kp, acids/bases, electrodes, transition metals' },
+        { id: 'M6', name: 'Organic Chemistry & Analysis', sub: 'Aromatics, carbonyls, amines, polymers, NMR' },
+      ]},
+    ]
+  },
+  'Chemistry_OCR B': {
+    sections: [
+      { label: 'OCR B — Foundations', topics: [
+        { id: 'S1', name: 'Foundations of Chemistry', sub: 'Atomic structure, moles, bonding, shapes' },
+      ]},
+      { label: 'OCR B — Physical Chemistry', topics: [
+        { id: 'S2', name: 'Energetics and Kinetics', sub: 'Enthalpy, Hess\'s law, entropy, rates, Arrhenius' },
+        { id: 'S3', name: 'Equilibrium and Acid-Base', sub: 'Kc, Kp, pH, Ka, buffers, titrations' },
+      ]},
+      { label: 'OCR B — Organic & Inorganic', topics: [
+        { id: 'S4', name: 'Organic Chemistry', sub: 'Alkanes, alkenes, alcohols, halogenoalkanes, mechanisms' },
+        { id: 'S5', name: 'Redox & Transition Metals', sub: 'Electrode potentials, cells, complexes, catalysis' },
+        { id: 'S6', name: 'Advanced Organic & Analysis', sub: 'Aromatics, carbonyls, amines, polymers, NMR, IR, MS' },
+      ]},
+    ]
+  },
+  'Biology_AQA': {
+    sections: [
+      { label: 'AQA — Year 1', topics: [
+        { id: 'T1', name: 'Biological Molecules', sub: 'Water, carbs, lipids, proteins, enzymes, nucleic acids' },
+        { id: 'T2', name: 'Cells', sub: 'Cell structure, membranes, transport, immune system' },
+        { id: 'T3', name: 'Organisms Exchange Substances', sub: 'Gas exchange, digestion, mass transport' },
+        { id: 'T4', name: 'Genetic Information & Variation', sub: 'DNA, protein synthesis, meiosis, biodiversity' },
+      ]},
+      { label: 'AQA — Year 2', topics: [
+        { id: 'T5', name: 'Energy Transfers', sub: 'Photosynthesis, respiration, ecosystems' },
+        { id: 'T6', name: 'Organisms Respond to Changes', sub: 'Nervous system, muscles, homeostasis' },
+        { id: 'T7', name: 'Genetics, Populations & Evolution', sub: 'Inheritance, populations, evolution, speciation' },
+        { id: 'T8', name: 'Control of Gene Expression', sub: 'Gene technology, epigenetics, biotechnology' },
+      ]},
+    ]
+  },
+  'Biology_Edexcel A': {
+    sections: [
+      { label: 'Edexcel A — Paper 1', topics: [
+        { id: 'T1', name: 'Molecules, Transport and Health', sub: 'Biological molecules, enzymes, membranes, cardiovascular' },
+        { id: 'T2', name: 'Cells, Development and Biodiversity', sub: 'Cell structure, division, stem cells, classification' },
+        { id: 'T3', name: 'Exchange, Transport and Reproduction', sub: 'Plant/animal transport, gas exchange, reproduction' },
+        { id: 'T4', name: 'Energy, Environment and Microbiology', sub: 'Photosynthesis, respiration, ecosystems, microbes' },
+      ]},
+      { label: 'Edexcel A — Paper 2', topics: [
+        { id: 'T5', name: 'Genetics and Evolution', sub: 'DNA, protein synthesis, inheritance, evolution' },
+        { id: 'T6', name: 'Immunity, Infection and Forensics', sub: 'Immune system, pathogens, forensic biology' },
+        { id: 'T7', name: 'Homeostasis and Response', sub: 'Nervous system, hormones, muscles, homeostasis' },
+        { id: 'T8', name: 'Gene Expression and Biotechnology', sub: 'Gene technology, epigenetics, genomics' },
+      ]},
+    ]
+  },
+  'Biology_Edexcel B': {
+    sections: [
+      { label: 'Edexcel B — Paper 1', topics: [
+        { id: 'S1', name: 'Lifestyle, Health and Risk', sub: 'Cardiovascular disease, diet, lipids, water transport' },
+        { id: 'S2', name: 'Genes and Health', sub: 'DNA, protein synthesis, genetic disease, membranes' },
+        { id: 'S3', name: 'Voice of the Genome', sub: 'Cell division, development, stem cells, gene expression' },
+        { id: 'S4', name: 'Biodiversity and Natural Resources', sub: 'Classification, biodiversity, plant biology, sustainability' },
+      ]},
+      { label: 'Edexcel B — Paper 2', topics: [
+        { id: 'S5', name: 'On the Wild Side', sub: 'Photosynthesis, climate change, ecosystems, evolution' },
+        { id: 'S6', name: 'Immunity, Infection and Forensics', sub: 'Immune system, pathogens, forensic biology' },
+        { id: 'S7', name: 'Run for Your Life', sub: 'Respiration, muscles, exercise, homeostasis' },
+        { id: 'S8', name: 'Grey Matter', sub: 'Nervous system, brain, vision, learning, drugs' },
+      ]},
+    ]
+  },
+  'Biology_OCR A': {
+    sections: [
+      { label: 'OCR A — Practical', topics: [
+        { id: 'M1', name: 'Development of Practical Skills', sub: 'Planning, analysis, evaluation' },
+      ]},
+      { label: 'OCR A — Paper 1: Biological Processes', topics: [
+        { id: 'M2', name: 'Foundations in Biology', sub: 'Cell structure, molecules, enzymes, membranes' },
+        { id: 'M3', name: 'Exchange and Transport', sub: 'Gas exchange, circulatory system, plant transport' },
+        { id: 'M5', name: 'Communication, Homeostasis and Energy', sub: 'Nervous/hormonal, homeostasis, photosynthesis, respiration' },
+      ]},
+      { label: 'OCR A — Paper 2: Biological Diversity', topics: [
+        { id: 'M4', name: 'Biodiversity, Evolution and Disease', sub: 'Pathogens, immunity, classification, evolution' },
+        { id: 'M6', name: 'Genetics, Evolution and Ecosystems', sub: 'Inheritance, gene technology, ecosystems' },
+      ]},
+    ]
+  },
+  'Biology_OCR B': {
+    sections: [
+      { label: 'OCR B — Practical', topics: [
+        { id: 'B1', name: 'Development of Practical Skills', sub: 'Planning, analysis, evaluation' },
+      ]},
+      { label: 'OCR B — Paper 1', topics: [
+        { id: 'B2', name: 'Cells, Chemicals and Transport', sub: 'Cell structure, molecules, enzymes, membranes' },
+        { id: 'B3', name: 'Cell Division, Development and Disease', sub: 'Mitosis, meiosis, stem cells, immunity' },
+      ]},
+      { label: 'OCR B — Paper 2', topics: [
+        { id: 'B4', name: 'Energy, Reproduction and Populations', sub: 'Photosynthesis, respiration, ecosystems, evolution' },
+        { id: 'B5', name: 'Genetics, Control and Homeostasis', sub: 'DNA, inheritance, nervous/hormonal, homeostasis' },
+        { id: 'B6', name: 'Biotechnology, Ecosystems and Human Impact', sub: 'Gene tech, cloning, conservation, sustainability' },
+      ]},
+    ]
+  },
+};
+
+let questionCount = 0;
+let timeLimitSec = 0;
+let questions   = [];
+let qIndex      = 0;
+let results     = [];
+let timerInterval = null;
+let secondsLeft   = 0;
+let timerStarted  = false;
+
+const body = document.getElementById('contentBody');
+
+/* ═══════════════════════════════════════
+   EXAM MODES
+═══════════════════════════════════════ */
+const MODES = [
+  { count: 5,  minutes: 10, icon: '📝', name: 'Quick Practice',  desc: '5 questions' },
+  { count: 10, minutes: 20, icon: '📋', name: 'Standard Practice', desc: '10 questions' },
+  { count: 20, minutes: 45, icon: '📄', name: 'Full Exam Practice', desc: '20 questions' },
+];
+
+/* ═══════════════════════════════════════
+   INIT
+═══════════════════════════════════════ */
+let enrolledSubjects = [];
+let progressData = [];
+
+const SUBJECT_EMOJIS = {
+  'Computer Science': '💻',
+  'Physics': '⚡',
+  'Mathematics': '➗',
+  'Chemistry': '⚗️',
+  'Biology': '🧬',
+  'Economics': '📈',
+  'Geography': '🌍',
+};
+
+async function init() {
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if (!session) { location.href = 'auth/login.html'; return; }
+  currentUser = session.user;
+
+  const { data: profile } = await supabaseClient
+    .from('profiles').select('first_name, last_name').eq('id', currentUser.id).single();
+
+  if (profile) {
+    const fn = profile.first_name || '';
+    const ln = profile.last_name || '';
+    document.getElementById('sidebarName').textContent = (fn + ' ' + ln).trim() || 'Student';
+    document.getElementById('avatarInitials').textContent = (fn[0] || '') + (ln[0] || '');
+  }
+  document.getElementById('sidebarEmail').textContent = currentUser.email;
+
+  /* ── Load enrolled subjects ── */
+  const { data: subjects } = await supabaseClient
+    .from('user_subjects').select('subject, exam_board, emoji')
+    .eq('user_id', currentUser.id);
+
+  enrolledSubjects = (subjects || []).filter(s => SUBJECT_TOPICS[`${s.subject}_${s.exam_board}`]);
+
+  /* ── Load RAG progress ── */
+  const { data: progress } = await supabaseClient
+    .from('topic_progress').select('topic, rag_status, subject, exam_board')
+    .eq('user_id', currentUser.id);
+  progressData = progress || [];
+
+  showSubjectCards();
+}
+
+function showSubjectCards() {
+  activeSubjectKey = null;
+  const cards = document.getElementById('subjectCards');
+  const list = document.getElementById('topicsList');
+
+  cards.style.display = 'flex';
+  list.style.display = 'none';
+
+  document.getElementById('panelSubject').textContent = 'Practice';
+  document.getElementById('panelBoard').textContent = 'Select a subject';
+
+  if (!enrolledSubjects.length) {
+    cards.innerHTML = '<div style="padding:30px 16px;text-align:center;color:var(--muted);font-size:13px;">No subjects added yet. Go to <a href="auth/setup.html" style="color:var(--accent-dark);">setup</a> to add subjects.</div>';
+    return;
+  }
+
+  cards.innerHTML = enrolledSubjects.map(s => {
+    const key = `${s.subject}_${s.exam_board}`;
+    const config = SUBJECT_TOPICS[key];
+    const emoji = s.emoji || SUBJECT_EMOJIS[s.subject] || '📚';
+    const totalTopics = config.sections.reduce((sum, sec) => sum + sec.topics.length, 0);
+
+    // Count RAG for this subject
+    const subjProgress = progressData.filter(p => p.subject === s.subject && p.exam_board === s.exam_board);
+    const green = subjProgress.filter(p => p.rag_status === 'green').length;
+    const amber = subjProgress.filter(p => p.rag_status === 'amber').length;
+    const red = subjProgress.filter(p => p.rag_status === 'red').length;
+    const tested = green + amber + red;
+
+    const ragSummary = tested > 0
+      ? `<span style="font-size:11px;color:var(--muted);">${tested}/${totalTopics} tested</span>`
+      : `<span style="font-size:11px;color:var(--muted);">${totalTopics} topics</span>`;
+
+    return `
+      <div class="subj-pick" onclick="selectSubject('${key}')">
+        <div class="subj-pick-emoji">${emoji}</div>
+        <div class="subj-pick-info">
+          <div class="subj-pick-name">${s.subject}</div>
+          <div class="subj-pick-board">${s.exam_board} · ${ragSummary}</div>
+        </div>
+        <div class="subj-pick-arrow">→</div>
+      </div>`;
+  }).join('');
+}
+
+function selectSubject(key) {
+  const config = SUBJECT_TOPICS[key];
+  if (!config) return;
+  activeSubjectKey = key;
+
+  const cards = document.getElementById('subjectCards');
+  const list = document.getElementById('topicsList');
+
+  cards.style.display = 'none';
+  list.style.display = 'block';
+
+  const parts = key.split('_');
+  const subject = parts[0];
+  const board = parts.slice(1).join('_');
+
+  document.getElementById('panelSubject').textContent = subject;
+  document.getElementById('panelBoard').textContent = `${SUBJECT_EMOJIS[subject] || '📚'} ${board} · Exam-Style Questions`;
+
+  // Build topic buttons (keep the back button)
+  let html = `<button onclick="showSubjectCards()" style="background:none;border:none;cursor:pointer;padding:8px 16px;color:var(--accent-dark);font-size:13px;font-weight:500;text-align:left;display:flex;align-items:center;gap:6px;">← Back to subjects</button>`;
+
+  config.sections.forEach(sec => {
+    html += `<div class="paper-label">${sec.label}</div>`;
+    sec.topics.forEach(t => {
+      html += `
+        <button class="topic-btn" id="topicBtn-${t.id}" onclick="selectTopic('${t.id}', this)">
+          <div class="topic-main">
+            <div class="topic-num">${t.id}</div>
+            <div class="topic-info">
+              <div class="topic-name">${t.name}</div>
+              <div class="topic-sub">${t.sub}</div>
+            </div>
+            <span class="rag-dot" id="rag-${t.id}"></span>
+          </div>
+        </button>`;
+    });
+  });
+  list.innerHTML = html;
+
+  // Apply RAG dots
+  const enrolledSet = new Set([key]);
+  progressData.forEach(row => {
+    const rowKey = `${row.subject}_${row.exam_board}`;
+    if (!enrolledSet.has(rowKey)) return;
+    const dot = document.getElementById(`rag-${row.topic}`);
+    if (dot) dot.classList.add(row.rag_status);
+  });
+}
+
+function logout() {
+  supabaseClient.auth.signOut().then(() => { location.href = 'auth/login.html'; });
+}
+
+/* ═══════════════════════════════════════
+   TOPIC SELECTION — shows mode cards
+═══════════════════════════════════════ */
+function selectTopic(topicKey, btn) {
+  stopTimer();
+  document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeTopic = topicKey;
+
+  const data = getPracticeData(topicKey);
+  if (!data) { showEmpty('No questions available for this topic yet.'); return; }
+
+  const total = data.questions ? data.questions.length : 0;
+
+  document.getElementById('contentTitle').textContent = `${topicKey} — ${data.name}`;
+  document.getElementById('contentSub').textContent = 'Choose how many questions';
+  document.getElementById('headerActions').innerHTML = '';
+
+  body.innerHTML = `
+    <div class="quiz-wrap">
+      <div class="mode-card">
+        <h2>Exam Practice</h2>
+        <p style="color:var(--muted);font-size:13.5px;line-height:1.7;max-width:520px;margin:0 auto 20px;">Practice answering written exam-style questions. Questions use command words (State, Describe, Explain, Compare, Discuss) with detailed mark schemes so you can self-assess your answers.</p>
+        <p>Written exam-style questions for <strong>${topicKey} — ${data.name}</strong><br>
+        <span style="font-size:12px;color:var(--muted2);">${total} questions available</span></p>
+        <div class="mode-grid">
+          ${MODES.map(m => {
+            const avail = total >= m.count;
+            return `
+              <button class="mode-btn" ${avail ? `onclick="startExam(${m.count}, ${m.minutes})"` : 'disabled style="opacity:0.4;cursor:not-allowed;"'}>
+                <div class="mode-icon">${m.icon}</div>
+                <div class="mode-name">${m.name}</div>
+                <div class="mode-desc">${m.desc}</div>
+                <div class="mode-time">⏱ ${m.minutes} minutes</div>
+              </button>`;
+          }).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* ═══════════════════════════════════════
+   START EXAM
+═══════════════════════════════════════ */
+function startExam(count, minutes) {
+  stopTimer();
+  questionCount = count;
+  timeLimitSec = minutes * 60;
+  secondsLeft = timeLimitSec;
+  timerStarted = false;
+  qIndex = 0;
+  results = [];
+
+  const data = getPracticeData(activeTopic);
+  questions = shuffle([...data.questions]).slice(0, count);
+
+  document.getElementById('contentSub').textContent = `${count} questions · ${minutes} min`;
+  document.getElementById('headerActions').innerHTML =
+    `<button class="btn-outline" onclick="confirmQuit()">✕ End early</button>`;
+
+  renderQuestion();
+  startTimer();
+}
+
+/* ═══════════════════════════════════════
+   TIMER
+═══════════════════════════════════════ */
+function startTimer() {
+  timerStarted = true;
+  timerInterval = setInterval(() => {
+    secondsLeft--;
+    updateTimerDisplay();
+    if (secondsLeft <= 0) {
+      stopTimer();
+      timeUp();
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+}
+
+function updateTimerDisplay() {
+  const el = document.getElementById('timerText');
+  const fill = document.getElementById('timerFill');
+  if (!el || !fill) return;
+
+  const m = Math.floor(secondsLeft / 60);
+  const s = secondsLeft % 60;
+  el.textContent = `${m}:${s.toString().padStart(2, '0')}`;
+
+  const pct = (secondsLeft / timeLimitSec) * 100;
+  fill.style.width = pct + '%';
+
+  // Color changes
+  el.className = 'timer-text';
+  fill.className = 'timer-fill';
+  if (pct <= 10) { el.classList.add('danger'); fill.classList.add('danger'); }
+  else if (pct <= 25) { el.classList.add('warning'); fill.classList.add('warning'); }
+}
+
+function timeUp() {
+  // Mark remaining questions as missed
+  while (results.length < questions.length) {
+    const q = questions[results.length];
+    results.push({ marks: q.marks, earned: 0, level: 'miss' });
+  }
+  renderResults(true);
+}
+
+function confirmQuit() {
+  if (confirm('End this practice early? Your progress so far will be shown.')) {
+    stopTimer();
+    // Mark remaining as unanswered
+    while (results.length < questions.length) {
+      const q = questions[results.length];
+      results.push({ marks: q.marks, earned: 0, level: 'skip' });
+    }
+    renderResults(false);
+  }
+}
+
+/* ═══════════════════════════════════════
+   UTILS
+═══════════════════════════════════════ */
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function fmtTime(sec) {
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+/* ═══════════════════════════════════════
+   RENDER QUESTION
+═══════════════════════════════════════ */
+function renderQuestion() {
+  const q = questions[qIndex];
+  const total = questions.length;
+  const pct = (qIndex / total) * 100;
+
+  body.innerHTML = `
+    <div class="quiz-wrap">
+      <div class="timer-bar">
+        <span class="timer-icon">⏱</span>
+        <div class="timer-track">
+          <div class="timer-fill" id="timerFill" style="width:${(secondsLeft/timeLimitSec)*100}%"></div>
+        </div>
+        <span class="timer-text" id="timerText">${fmtTime(secondsLeft)}</span>
+      </div>
+
+      <div class="progress-row">
+        <div class="progress-track">
+          <div class="progress-fill" style="width:${pct}%"></div>
+        </div>
+        <span class="progress-label">${qIndex + 1} / ${total}</span>
+      </div>
+
+      <div class="q-card">
+        <div class="q-header">
+          <span class="q-badge written">✏️ Written</span>
+          <span class="q-marks">[${q.marks} mark${q.marks > 1 ? 's' : ''}]</span>
+        </div>
+        <div class="q-text">${q.q}</div>
+
+        ${q.diagram ? '<div class="diagram-area"><canvas id="drawCanvas" width="600" height="200"></canvas></div><p class="diagram-label">Use the canvas above to sketch your diagram (or draw on paper)</p>' : ''}
+        <textarea class="written-area" id="writtenInput" placeholder="Write your answer here..."></textarea>
+        <p class="written-hint">Write your answer, then reveal the mark scheme to compare and self-mark.</p>
+
+        <button class="btn-reveal" id="btnReveal" onclick="revealMarkScheme()">Reveal Mark Scheme</button>
+
+        <div id="markSchemeWrap" style="display:none">
+          <div class="mark-scheme-wrap">
+            <div class="mark-scheme-label">📋 Mark Scheme — ${q.marks} mark${q.marks > 1 ? 's' : ''}</div>
+            <div class="mark-scheme-text">${q.markScheme}</div>
+          </div>
+          <p style="font-size:13px;color:var(--muted);margin-top:14px;text-align:center;">How did you do? Be honest — it helps you learn.</p>
+          <div class="self-mark-row">
+            <button class="self-mark-btn full" onclick="selfMark('full', ${q.marks})">✓ Full marks</button>
+            <button class="self-mark-btn partial" onclick="selfMark('partial', ${q.marks})">~ Partial marks</button>
+            <button class="self-mark-btn miss" onclick="selfMark('miss', ${q.marks})">✗ Missed it</button>
+          </div>
+        </div>
+
+        <button class="btn-next" id="btnNext" onclick="nextQuestion()">
+          ${qIndex + 1 < total ? 'Next Question →' : 'See Results →'}
+        </button>
+      </div>
+    </div>
+  `;
+
+  updateTimerDisplay();
+
+  // Enable canvas drawing if diagram question
+  const canvas = document.getElementById('drawCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let drawing = false;
+    canvas.addEventListener('mousedown', e => { drawing = true; ctx.beginPath(); ctx.moveTo(e.offsetX, e.offsetY); });
+    canvas.addEventListener('mousemove', e => { if (drawing) { ctx.lineTo(e.offsetX, e.offsetY); ctx.strokeStyle = '#1B2D4F'; ctx.lineWidth = 2; ctx.stroke(); } });
+    canvas.addEventListener('mouseup', () => drawing = false);
+    canvas.addEventListener('mouseleave', () => drawing = false);
+  }
+}
+
+/* ═══════════════════════════════════════
+   WRITTEN INTERACTION
+═══════════════════════════════════════ */
+function revealMarkScheme() {
+  document.getElementById('btnReveal').style.display = 'none';
+  document.getElementById('markSchemeWrap').style.display = 'block';
+}
+
+function selfMark(level, totalMarks) {
+  const earned = level === 'full' ? totalMarks : level === 'partial' ? Math.ceil(totalMarks / 2) : 0;
+  results.push({ marks: totalMarks, earned, level });
+
+  document.querySelectorAll('.self-mark-btn').forEach(b => { b.disabled = true; b.style.opacity = '0.5'; });
+  document.getElementById('btnNext').classList.add('show');
+}
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════ */
+function nextQuestion() {
+  qIndex++;
+  if (qIndex < questions.length) {
+    renderQuestion();
+    body.scrollTop = 0;
+  } else {
+    stopTimer();
+    renderResults(false);
+  }
+}
+
+/* ═══════════════════════════════════════
+   RESULTS
+═══════════════════════════════════════ */
+function renderResults(timedOut) {
+  stopTimer();
+  const totalMarks = results.reduce((s, r) => s + r.marks, 0);
+  const earnedMarks = results.reduce((s, r) => s + r.earned, 0);
+  const pct = totalMarks > 0 ? Math.round((earnedMarks / totalMarks) * 100) : 0;
+  const answered = results.filter(r => r.level !== 'skip' && r.level !== 'miss' || r.earned > 0).length;
+  const timeUsed = timeLimitSec - secondsLeft;
+
+  const chips = results.map((r, i) => {
+    if (r.level === 'skip') return `<span class="result-chip wrong">— Q${i+1} skipped</span>`;
+    const cls = r.level === 'full' ? 'correct' : r.level === 'partial' ? 'partial' : 'wrong';
+    const label = r.level === 'full' ? '✓' : r.level === 'partial' ? '~' : '✗';
+    return `<span class="result-chip ${cls}">${label} Q${i+1} (${r.earned}/${r.marks})</span>`;
+  }).join('');
+
+  const color = pct >= 70 ? 'var(--green)' : pct >= 40 ? 'var(--amber)' : 'var(--red)';
+  const msg = timedOut ? 'Time\'s up!' : pct >= 70 ? 'Great work!' : pct >= 40 ? 'Getting there — keep practising' : 'Keep revising this topic';
+
+  document.getElementById('headerActions').innerHTML = '';
+
+  body.innerHTML = `
+    <div class="quiz-wrap">
+      <div class="result-card">
+        ${timedOut ? '<p style="font-size:14px;font-weight:600;color:var(--red);margin-bottom:16px;">⏱ Time ran out!</p>' : ''}
+        <div class="result-score" style="color:${color}">${earnedMarks} / ${totalMarks}</div>
+        <div class="result-label">${pct}% — ${msg}</div>
+        <div style="display:flex;gap:16px;justify-content:center;margin-bottom:20px;font-size:13px;color:var(--muted);">
+          <span>📝 ${answered} answered</span>
+          <span>⏱ ${fmtTime(timeUsed)} used</span>
+        </div>
+        <div class="result-breakdown">${chips}</div>
+        <div class="result-actions">
+          <button class="btn-primary" onclick="startExam(${questionCount}, ${timeLimitSec/60})">Try Again</button>
+          <button class="btn-outline" onclick="selectTopic('${activeTopic}', document.getElementById('topicBtn-${activeTopic}'))">Change Mode</button>
+          <button class="btn-outline" onclick="resetToEmpty()">Choose Topic</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* ═══════════════════════════════════════
+   HELPERS
+═══════════════════════════════════════ */
+function resetToEmpty() {
+  stopTimer();
+  document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
+  activeTopic = null;
+  document.getElementById('contentTitle').textContent = 'Practice Questions';
+  document.getElementById('contentSub').textContent = 'Select a topic from the left to start practising';
+  document.getElementById('headerActions').innerHTML = '';
+  body.innerHTML = `
+    <div class="empty-state">
+      <div class="empty-icon">✦</div>
+      <div class="empty-title">Choose a topic</div>
+      <div class="empty-sub">Pick a topic from the panel on the left to practice exam-style questions with mark schemes.</div>
+    </div>
+  `;
+}
+
+function showEmpty(msg) {
+  body.innerHTML = `
+    <div class="empty-state">
+      <div class="empty-icon">📭</div>
+      <div class="empty-title">Not available</div>
+      <div class="empty-sub">${msg}</div>
+    </div>
+  `;
+}
+
+init();
+</script>
+</body>
+</html>

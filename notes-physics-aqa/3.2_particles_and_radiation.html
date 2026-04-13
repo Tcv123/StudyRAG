@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.2 Particles and Radiation — AQA A-Level Physics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>3.2 Particles and Radiation</h1>
+
+<!-- ATOMIC STRUCTURE -->
+<h2>1. Atomic Structure</h2>
+<div class="def-box"><strong>Atom:</strong> A nucleus (protons + neutrons) surrounded by orbiting electrons. The nucleus contains almost all the mass but occupies a tiny fraction of the volume (~10<sup>-15</sup> m diameter vs ~10<sup>-10</sup> m for the atom).</div>
+
+<table>
+  <tr><th>Particle</th><th>Relative Charge</th><th>Relative Mass</th><th>Absolute Charge / C</th></tr>
+  <tr><td>Proton</td><td>+1</td><td>1</td><td>+1.60 &times; 10<sup>-19</sup></td></tr>
+  <tr><td>Neutron</td><td>0</td><td>1</td><td>0</td></tr>
+  <tr><td>Electron</td><td>-1</td><td>1/1836</td><td>-1.60 &times; 10<sup>-19</sup></td></tr>
+</table>
+
+<h3>Notation</h3>
+<p>A nuclide is written as <sup>A</sup><sub>Z</sub>X, where A = mass number (protons + neutrons), Z = atomic number (protons).</p>
+
+<div class="def-box"><strong>Isotopes:</strong> Atoms of the same element (same Z) with different numbers of neutrons (different A). They have identical chemical properties but different physical properties (e.g. density, stability).</div>
+
+<h3>Specific Charge</h3>
+<div class="eq">Specific charge = charge / mass (units: C kg<sup>-1</sup>)</div>
+<p>For a proton: specific charge = 1.60 &times; 10<sup>-19</sup> / 1.67 &times; 10<sup>-27</sup> = 9.58 &times; 10<sup>7</sup> C kg<sup>-1</sup></p>
+
+<!-- STABLE AND UNSTABLE NUCLEI -->
+<h2>2. Stable and Unstable Nuclei</h2>
+<p>The strong nuclear force holds the nucleus together, overcoming electrostatic repulsion between protons. Nuclei are unstable if they have:</p>
+<ul>
+  <li>Too many neutrons (beta-minus decay)</li>
+  <li>Too many protons (beta-plus decay or electron capture)</li>
+  <li>Too many nucleons overall — too heavy (alpha decay)</li>
+</ul>
+
+<h3>Types of Radioactive Decay</h3>
+<table>
+  <tr><th>Decay</th><th>Particle Emitted</th><th>Change in A</th><th>Change in Z</th></tr>
+  <tr><td>Alpha (&alpha;)</td><td><sup>4</sup><sub>2</sub>He nucleus</td><td>-4</td><td>-2</td></tr>
+  <tr><td>Beta-minus (&beta;<sup>-</sup>)</td><td>Electron + antineutrino</td><td>0</td><td>+1</td></tr>
+  <tr><td>Beta-plus (&beta;<sup>+</sup>)</td><td>Positron + neutrino</td><td>0</td><td>-1</td></tr>
+</table>
+
+<p>In &beta;<sup>-</sup> decay: n &rarr; p + e<sup>-</sup> + <span style="text-decoration:overline;">&nu;</span><sub>e</sub></p>
+<p>In &beta;<sup>+</sup> decay: p &rarr; n + e<sup>+</sup> + &nu;<sub>e</sub></p>
+
+<!-- FUNDAMENTAL FORCES -->
+<h2>3. The Four Fundamental Forces</h2>
+<table>
+  <tr><th>Force</th><th>Range</th><th>Acts On</th><th>Exchange Particle</th><th>Relative Strength</th></tr>
+  <tr><td>Strong nuclear</td><td>~10<sup>-15</sup> m (3&ndash;4 fm)</td><td>Hadrons (quarks)</td><td>Gluon</td><td>1</td></tr>
+  <tr><td>Electromagnetic</td><td>Infinite</td><td>Charged particles</td><td>Virtual photon (&gamma;)</td><td>10<sup>-2</sup></td></tr>
+  <tr><td>Weak nuclear</td><td>~10<sup>-18</sup> m</td><td>All particles</td><td>W<sup>+</sup>, W<sup>-</sup>, Z<sup>0</sup> bosons</td><td>10<sup>-6</sup></td></tr>
+  <tr><td>Gravitational</td><td>Infinite</td><td>All particles with mass</td><td>Graviton (theoretical)</td><td>10<sup>-39</sup></td></tr>
+</table>
+
+<h3>The Strong Nuclear Force</h3>
+<ul>
+  <li>Attractive from about 3 fm down to about 0.5 fm.</li>
+  <li>Becomes <strong>repulsive</strong> below about 0.5 fm (prevents nucleons collapsing into each other).</li>
+  <li>Has zero effect beyond about 3&ndash;4 fm.</li>
+  <li>Acts between all nucleons (p-p, p-n, n-n) equally.</li>
+</ul>
+
+<div class="tip-box"><strong>Exam Tip:</strong> The exchange particles for the weak force (W<sup>+</sup>, W<sup>-</sup>, Z<sup>0</sup>) are massive bosons, which is why the weak force has such a short range.</div>
+
+<!-- CLASSIFICATION OF PARTICLES -->
+<h2>4. Classification of Particles</h2>
+
+<h3>4.1 Hadrons</h3>
+<div class="def-box"><strong>Hadrons:</strong> Particles that experience the strong nuclear force. They are made of quarks.</div>
+
+<table>
+  <tr><th>Type</th><th>Quark Composition</th><th>Examples</th></tr>
+  <tr><td><strong>Baryons</strong></td><td>3 quarks (qqq)</td><td>Proton (uud), Neutron (udd)</td></tr>
+  <tr><td><strong>Antibaryons</strong></td><td>3 antiquarks (<span style="text-decoration:overline;">q</span><span style="text-decoration:overline;">q</span><span style="text-decoration:overline;">q</span>)</td><td>Antiproton (<span style="text-decoration:overline;">u</span><span style="text-decoration:overline;">u</span><span style="text-decoration:overline;">d</span>)</td></tr>
+  <tr><td><strong>Mesons</strong></td><td>Quark-antiquark pair (q<span style="text-decoration:overline;">q</span>)</td><td>Pion (&pi;<sup>+</sup>, &pi;<sup>0</sup>, &pi;<sup>-</sup>), Kaon (K<sup>+</sup>, K<sup>0</sup>, K<sup>-</sup>)</td></tr>
+</table>
+
+<p>Baryons have a baryon number of +1. Antibaryons have a baryon number of -1. Mesons have a baryon number of 0.</p>
+
+<h3>4.2 Leptons</h3>
+<div class="def-box"><strong>Leptons:</strong> Fundamental particles that do NOT experience the strong force. They have a lepton number of +1 (antileptons have -1).</div>
+<ul>
+  <li>Electron (e<sup>-</sup>) and electron neutrino (&nu;<sub>e</sub>)</li>
+  <li>Muon (&mu;<sup>-</sup>) and muon neutrino (&nu;<sub>&mu;</sub>)</li>
+  <li>Tau (&tau;<sup>-</sup>) and tau neutrino (&nu;<sub>&tau;</sub>)</li>
+</ul>
+<p>Each generation has its own lepton number (electron lepton number, muon lepton number) which is separately conserved.</p>
+
+<!-- QUARKS -->
+<h2>5. Quarks</h2>
+<table>
+  <tr><th>Quark</th><th>Symbol</th><th>Charge</th><th>Baryon Number</th><th>Strangeness</th></tr>
+  <tr><td>Up</td><td>u</td><td>+2/3</td><td>+1/3</td><td>0</td></tr>
+  <tr><td>Down</td><td>d</td><td>-1/3</td><td>+1/3</td><td>0</td></tr>
+  <tr><td>Strange</td><td>s</td><td>-1/3</td><td>+1/3</td><td>-1</td></tr>
+</table>
+<p>Antiquarks have opposite charge, baryon number, and strangeness to their quark counterparts.</p>
+
+<h3>Checking Quark Compositions</h3>
+<ul>
+  <li><strong>Proton (uud):</strong> Charge = +2/3 + 2/3 - 1/3 = +1. Correct.</li>
+  <li><strong>Neutron (udd):</strong> Charge = +2/3 - 1/3 - 1/3 = 0. Correct.</li>
+  <li><strong>&pi;<sup>+</sup> (u<span style="text-decoration:overline;">d</span>):</strong> Charge = +2/3 + 1/3 = +1. Correct.</li>
+  <li><strong>K<sup>+</sup> (u<span style="text-decoration:overline;">s</span>):</strong> Charge = +2/3 + 1/3 = +1. Strangeness = 0 + 1 = +1. Correct.</li>
+</ul>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Strangeness is conserved in strong interactions but can change by 0 or &plusmn;1 in weak interactions. If a kaon (strangeness = &plusmn;1) is produced in a strong interaction, another strange particle must be produced alongside it (associated production).</div>
+
+<!-- ANTIPARTICLES -->
+<h2>6. Antiparticles</h2>
+<div class="def-box"><strong>Antiparticle:</strong> Every particle has a corresponding antiparticle with the same mass and rest energy but opposite charge, baryon number, lepton number, and strangeness.</div>
+<table>
+  <tr><th>Particle</th><th>Antiparticle</th><th>Notes</th></tr>
+  <tr><td>Electron (e<sup>-</sup>)</td><td>Positron (e<sup>+</sup>)</td><td>First antiparticle discovered (Anderson, 1932)</td></tr>
+  <tr><td>Proton (p)</td><td>Antiproton (<span style="text-decoration:overline;">p</span>)</td><td>Charge = -1</td></tr>
+  <tr><td>Neutron (n)</td><td>Antineutron (<span style="text-decoration:overline;">n</span>)</td><td>Same charge (0) but opposite baryon number</td></tr>
+  <tr><td>Neutrino (&nu;)</td><td>Antineutrino (<span style="text-decoration:overline;">&nu;</span>)</td><td>Opposite lepton number</td></tr>
+</table>
+
+<h3>Pair Production and Annihilation</h3>
+<p><strong>Annihilation:</strong> A particle meets its antiparticle, both are destroyed, and their mass-energy is converted into two gamma photons (to conserve momentum).</p>
+<div class="eq">Minimum energy of each photon: E = m<sub>0</sub>c<sup>2</sup> (rest energy of one particle)</div>
+
+<p><strong>Pair production:</strong> A photon with sufficient energy creates a particle-antiparticle pair. The photon must have energy of at least 2m<sub>0</sub>c<sup>2</sup>. This usually occurs near a nucleus (to conserve momentum).</p>
+
+<!-- PARTICLE INTERACTIONS -->
+<h2>7. Particle Interactions</h2>
+
+<h3>Conservation Laws</h3>
+<p>In all interactions, the following are conserved:</p>
+<ul>
+  <li><strong>Energy</strong> (including mass-energy)</li>
+  <li><strong>Momentum</strong></li>
+  <li><strong>Charge</strong></li>
+  <li><strong>Baryon number</strong></li>
+  <li><strong>Lepton number</strong> (electron and muon separately)</li>
+</ul>
+<p>Strangeness is conserved in strong and electromagnetic interactions but can change by &plusmn;1 in weak interactions.</p>
+
+<h3>Key Interactions at A-Level</h3>
+<p><strong>Beta-minus decay</strong> (weak interaction):</p>
+<p>n &rarr; p + e<sup>-</sup> + <span style="text-decoration:overline;">&nu;</span><sub>e</sub></p>
+<p>At the quark level: d &rarr; u + e<sup>-</sup> + <span style="text-decoration:overline;">&nu;</span><sub>e</sub> (via W<sup>-</sup> boson)</p>
+
+<p><strong>Beta-plus decay</strong> (weak interaction):</p>
+<p>p &rarr; n + e<sup>+</sup> + &nu;<sub>e</sub></p>
+<p>At the quark level: u &rarr; d + e<sup>+</sup> + &nu;<sub>e</sub> (via W<sup>+</sup> boson)</p>
+
+<p><strong>Electron capture</strong> (weak interaction):</p>
+<p>p + e<sup>-</sup> &rarr; n + &nu;<sub>e</sub> (via W<sup>+</sup> boson)</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> In Feynman diagrams, W bosons change flavour. W<sup>-</sup> emission turns a down quark into an up quark. W<sup>+</sup> emission turns an up quark into a down quark. The W then decays into a lepton pair.</div>
+
+<!-- PHOTOELECTRIC EFFECT -->
+<h2>8. The Photoelectric Effect</h2>
+<div class="def-box"><strong>Photoelectric effect:</strong> The emission of electrons from a metal surface when electromagnetic radiation of sufficiently high frequency is incident on it.</div>
+
+<h3>Key Observations</h3>
+<ul>
+  <li>No electrons are emitted below a certain <strong>threshold frequency</strong> (f<sub>0</sub>), regardless of intensity.</li>
+  <li>Emission is <strong>instantaneous</strong> above the threshold frequency.</li>
+  <li>Increasing intensity increases the number of photoelectrons emitted (rate), not their maximum kinetic energy.</li>
+  <li>Increasing frequency increases the maximum kinetic energy of photoelectrons.</li>
+</ul>
+
+<p>These observations cannot be explained by the wave theory of light. Einstein explained them using the <strong>photon model</strong>:</p>
+
+<div class="def-box"><strong>Photon:</strong> A quantum (discrete packet) of electromagnetic energy. Each photon has energy E = hf, where h is the Planck constant (6.63 &times; 10<sup>-34</sup> J s).</div>
+
+<h3>Einstein's Photoelectric Equation</h3>
+<div class="eq">E = hf = &phi; + E<sub>k(max)</sub></div>
+<div class="eq">hf = hf<sub>0</sub> + &frac12;mv<sub>max</sub><sup>2</sup></div>
+<ul>
+  <li><strong>&phi;</strong> = work function (minimum energy needed to free an electron from the surface), units: J or eV</li>
+  <li><strong>f<sub>0</sub></strong> = threshold frequency: &phi; = hf<sub>0</sub></li>
+  <li><strong>E<sub>k(max)</sub></strong> = maximum kinetic energy of emitted photoelectron</li>
+</ul>
+
+<div class="tip-box"><strong>Exam Tip:</strong> 1 eV = 1.60 &times; 10<sup>-19</sup> J. The electronvolt is the energy gained by an electron moving through a potential difference of 1 V.</div>
+
+<!-- ENERGY LEVELS -->
+<h2>9. Energy Levels and Photon Emission</h2>
+<p>Electrons in atoms occupy discrete energy levels (n = 1, 2, 3...). The ground state (n = 1) has the lowest (most negative) energy.</p>
+
+<h3>Photon Emission</h3>
+<p>When an electron transitions from a higher energy level to a lower one, a photon is emitted with energy equal to the difference between the two levels:</p>
+<div class="eq">E = hf = E<sub>2</sub> &minus; E<sub>1</sub></div>
+
+<h3>Photon Absorption</h3>
+<p>An atom can absorb a photon only if the photon energy exactly matches the difference between two energy levels. The electron is then promoted to the higher level.</p>
+
+<h3>Line Spectra</h3>
+<ul>
+  <li><strong>Emission spectrum:</strong> Bright lines on a dark background. Each line corresponds to a specific electron transition downward.</li>
+  <li><strong>Absorption spectrum:</strong> Dark lines on a continuous spectrum background. Each dark line corresponds to a frequency absorbed by the gas.</li>
+</ul>
+
+<h3>Ionisation</h3>
+<p>If a photon has enough energy, it can remove the electron from the atom entirely. The ionisation energy is the energy required to remove the electron from the ground state (taking it to E = 0).</p>
+
+<!-- WAVE-PARTICLE DUALITY -->
+<h2>10. Wave-Particle Duality</h2>
+<div class="def-box"><strong>Wave-particle duality:</strong> Light and matter exhibit both wave-like and particle-like behaviour. Light shows wave behaviour in diffraction and interference, and particle behaviour in the photoelectric effect. Electrons show particle behaviour in collisions and wave behaviour in electron diffraction.</div>
+
+<h3>de Broglie Wavelength</h3>
+<p>Every moving particle has an associated wavelength:</p>
+<div class="eq">&lambda; = h / p = h / (mv)</div>
+<ul>
+  <li>&lambda; = de Broglie wavelength (m)</li>
+  <li>h = Planck constant (6.63 &times; 10<sup>-34</sup> J s)</li>
+  <li>p = momentum (kg m s<sup>-1</sup>)</li>
+  <li>m = mass (kg), v = velocity (m s<sup>-1</sup>)</li>
+</ul>
+
+<p>Evidence: Electrons fired at a thin crystal produce a diffraction pattern, confirming their wave-like nature. The pattern spacing matches predictions using &lambda; = h/mv.</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Larger objects have extremely tiny de Broglie wavelengths, so wave effects are unobservable for macroscopic objects. Wave-particle duality is only significant at the atomic/subatomic scale.</div>
+
+</div>
+</body>
+</html>

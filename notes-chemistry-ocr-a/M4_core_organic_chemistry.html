@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 4 — Core Organic Chemistry</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module 4 — Core Organic Chemistry</h1>
+
+<h2>4.1 Basic Concepts</h2>
+
+<h3>Nomenclature</h3>
+<p>Organic compounds are named using the IUPAC system based on the longest carbon chain (the parent chain) and any functional groups or substituents present.</p>
+
+<table>
+  <tr><th>Carbon Atoms</th><th>Prefix</th><th>Carbon Atoms</th><th>Prefix</th></tr>
+  <tr><td>1</td><td>meth-</td><td>6</td><td>hex-</td></tr>
+  <tr><td>2</td><td>eth-</td><td>7</td><td>hept-</td></tr>
+  <tr><td>3</td><td>prop-</td><td>8</td><td>oct-</td></tr>
+  <tr><td>4</td><td>but-</td><td>9</td><td>non-</td></tr>
+  <tr><td>5</td><td>pent-</td><td>10</td><td>dec-</td></tr>
+</table>
+
+<p>Suffixes indicate the functional group: -ane (alkane), -ene (alkene), -ol (alcohol), -al (aldehyde), -one (ketone), -oic acid (carboxylic acid), -oate (ester), -amine (amine). Number the chain to give the lowest possible locant to the principal functional group.</p>
+
+<h3>Functional Groups</h3>
+
+<div class="definition">
+  <strong>Functional group:</strong> An atom or group of atoms that determines the chemical properties and reactions of a compound. Compounds with the same functional group belong to the same homologous series.
+</div>
+
+<table>
+  <tr><th>Homologous Series</th><th>Functional Group</th><th>General Formula</th></tr>
+  <tr><td>Alkane</td><td>C&ndash;C and C&ndash;H (single bonds only)</td><td>C<sub>n</sub>H<sub>2n+2</sub></td></tr>
+  <tr><td>Alkene</td><td>C=C (carbon-carbon double bond)</td><td>C<sub>n</sub>H<sub>2n</sub></td></tr>
+  <tr><td>Alcohol</td><td>&ndash;OH (hydroxyl)</td><td>C<sub>n</sub>H<sub>2n+1</sub>OH</td></tr>
+  <tr><td>Haloalkane</td><td>&ndash;X (halogen: F, Cl, Br, I)</td><td>C<sub>n</sub>H<sub>2n+1</sub>X</td></tr>
+  <tr><td>Aldehyde</td><td>&ndash;CHO</td><td>C<sub>n</sub>H<sub>2n</sub>O</td></tr>
+  <tr><td>Ketone</td><td>C=O (carbonyl, not terminal)</td><td>C<sub>n</sub>H<sub>2n</sub>O</td></tr>
+  <tr><td>Carboxylic acid</td><td>&ndash;COOH</td><td>C<sub>n</sub>H<sub>2n</sub>O<sub>2</sub></td></tr>
+  <tr><td>Ester</td><td>&ndash;COO&ndash;</td><td>Variable</td></tr>
+</table>
+
+<h3>Types of Isomerism</h3>
+
+<div class="definition">
+  <strong>Structural isomers:</strong> Molecules with the same molecular formula but different structural arrangements of atoms. Three types: chain isomerism (different carbon skeleton), position isomerism (functional group at different positions), and functional group isomerism (different functional groups).
+</div>
+
+<div class="definition">
+  <strong>Stereoisomers:</strong> Molecules with the same structural formula but a different arrangement of atoms in space. E/Z isomerism (a type of geometrical isomerism) occurs in alkenes when there is restricted rotation around the C=C bond and each carbon of the double bond has two different substituents.
+</div>
+
+<p>E/Z isomers are distinguished using Cahn-Ingold-Prelog (CIP) priority rules based on atomic number. Z (zusammen, "together") has the higher priority groups on the same side; E (entgegen, "opposite") has them on opposite sides.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For E/Z isomerism, you need restricted rotation (C=C) AND two different groups on each carbon of the double bond. If one carbon has two identical groups, E/Z isomers cannot exist.
+</div>
+
+<h2>4.2 Alkanes</h2>
+
+<div class="definition">
+  <strong>Alkanes:</strong> Saturated hydrocarbons with only single C&ndash;C and C&ndash;H bonds. They are relatively unreactive due to the strength of C&ndash;C and C&ndash;H bonds and their non-polar nature.
+</div>
+
+<h3>Combustion</h3>
+<p><strong>Complete combustion</strong> (excess oxygen) produces CO<sub>2</sub> and H<sub>2</sub>O:</p>
+<div class="equation">
+  CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) + 2H<sub>2</sub>O(l)
+</div>
+<p><strong>Incomplete combustion</strong> (limited oxygen) produces CO and/or C (soot) along with H<sub>2</sub>O. Carbon monoxide is toxic because it binds irreversibly to haemoglobin, reducing the blood's ability to carry oxygen.</p>
+
+<h3>Free Radical Substitution</h3>
+<p>Alkanes react with halogens (Cl<sub>2</sub>, Br<sub>2</sub>) in the presence of UV light via a free radical mechanism. This has three stages:</p>
+
+<p><strong>1. Initiation:</strong> UV light provides the energy to break the Cl&ndash;Cl bond homolytically, producing two chlorine radicals.</p>
+<div class="equation">
+  Cl<sub>2</sub> &rarr; 2Cl&bull;
+</div>
+
+<p><strong>2. Propagation:</strong> A chain reaction in which one radical produces another. Each step generates a new radical.</p>
+<div class="equation">
+  Cl&bull; + CH<sub>4</sub> &rarr; &bull;CH<sub>3</sub> + HCl
+</div>
+<div class="equation">
+  &bull;CH<sub>3</sub> + Cl<sub>2</sub> &rarr; CH<sub>3</sub>Cl + Cl&bull;
+</div>
+
+<p><strong>3. Termination:</strong> Two radicals combine, removing radicals from the system.</p>
+<div class="equation">
+  Cl&bull; + Cl&bull; &rarr; Cl<sub>2</sub> &nbsp;&nbsp;&nbsp; &bull;CH<sub>3</sub> + Cl&bull; &rarr; CH<sub>3</sub>Cl &nbsp;&nbsp;&nbsp; &bull;CH<sub>3</sub> + &bull;CH<sub>3</sub> &rarr; C<sub>2</sub>H<sub>6</sub>
+</div>
+
+<p>Limitations: further substitution can occur (producing CH<sub>2</sub>Cl<sub>2</sub>, CHCl<sub>3</sub>, CCl<sub>4</sub>), so a mixture of products is obtained. This makes it unsuitable for preparing specific products in good yield.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always use the correct curly arrow notation: single-headed (fishhook) arrows for radical mechanisms showing the movement of one electron, and double-headed arrows for ionic mechanisms showing the movement of a pair of electrons.
+</div>
+
+<h2>4.3 Alkenes</h2>
+
+<div class="definition">
+  <strong>Alkenes:</strong> Unsaturated hydrocarbons containing at least one C=C double bond. The double bond consists of a sigma bond (head-on overlap) and a pi bond (sideways overlap of p orbitals). The pi bond is an area of high electron density, making alkenes susceptible to attack by electrophiles.
+</div>
+
+<h3>Test for Unsaturation</h3>
+<p>Add bromine water to the sample. If a C=C is present, the orange/brown bromine water is decolourised as Br<sub>2</sub> adds across the double bond.</p>
+
+<h3>Electrophilic Addition Reactions</h3>
+
+<div class="definition">
+  <strong>Electrophilic addition:</strong> A reaction in which an electrophile is attracted to the electron-rich C=C double bond, breaking the pi bond and forming two new sigma bonds.
+</div>
+
+<table>
+  <tr><th>Reagent</th><th>Conditions</th><th>Product</th><th>Notes</th></tr>
+  <tr><td>HBr</td><td>Room temperature</td><td>Bromoalkane</td><td>Markownikoff's rule applies: H adds to the C with more H atoms</td></tr>
+  <tr><td>H<sub>2</sub>O (steam)</td><td>H<sub>3</sub>PO<sub>4</sub> catalyst, 300&deg;C, 60 atm</td><td>Alcohol</td><td>Industrial hydration of ethene to ethanol</td></tr>
+  <tr><td>Br<sub>2</sub></td><td>Room temperature</td><td>Dibromoalkane</td><td>Decolourises bromine water (test for C=C)</td></tr>
+  <tr><td>H<sub>2</sub></td><td>Ni catalyst, 150&deg;C</td><td>Alkane</td><td>Hydrogenation (used in margarine production)</td></tr>
+</table>
+
+<p><strong>Mechanism of electrophilic addition with HBr:</strong></p>
+<ol>
+  <li>The electron-rich C=C double bond attracts the electrophile H&ndash;Br.</li>
+  <li>The H&ndash;Br bond is polarised (&delta;+H&ndash;Br&delta;&minus;). The pi electrons attack the &delta;+ H, forming a new C&ndash;H bond. The H&ndash;Br bond breaks heterolytically, forming Br<sup>&minus;</sup>.</li>
+  <li>A carbocation intermediate forms on the other carbon.</li>
+  <li>The Br<sup>&minus;</sup> ion acts as a nucleophile and attacks the carbocation, forming a C&ndash;Br bond.</li>
+</ol>
+
+<h3>Markownikoff's Rule</h3>
+<p>When HBr adds to an asymmetric alkene, the major product is the one where the H adds to the carbon already bonded to more hydrogen atoms. This is because the secondary (or tertiary) carbocation intermediate is more stable than the primary one. The greater stability arises from the inductive (electron-donating) effect of alkyl groups, which stabilises the positive charge.</p>
+
+<h3>Addition Polymers</h3>
+
+<div class="definition">
+  <strong>Addition polymerisation:</strong> Many small alkene molecules (monomers) join together to form a long-chain polymer by opening their C=C double bonds to form C&ndash;C single bonds. No other substance is produced.
+</div>
+
+<div class="equation">
+  nCH<sub>2</sub>=CH<sub>2</sub> &rarr; (&ndash;CH<sub>2</sub>&ndash;CH<sub>2</sub>&ndash;)<sub>n</sub>
+</div>
+
+<p>Addition polymers such as poly(ethene) and poly(propene) are non-biodegradable because of the strong C&ndash;C backbone. Disposal is a significant environmental concern; recycling and feedstock recovery are more sustainable options.</p>
+
+<h2>4.4 Alcohols</h2>
+
+<h3>Classification</h3>
+<table>
+  <tr><th>Classification</th><th>Structure</th><th>Example</th></tr>
+  <tr><td>Primary (1&deg;)</td><td>OH group on a carbon attached to one other carbon</td><td>Butan-1-ol</td></tr>
+  <tr><td>Secondary (2&deg;)</td><td>OH group on a carbon attached to two other carbons</td><td>Butan-2-ol</td></tr>
+  <tr><td>Tertiary (3&deg;)</td><td>OH group on a carbon attached to three other carbons</td><td>2-methylpropan-2-ol</td></tr>
+</table>
+
+<h3>Oxidation of Alcohols</h3>
+<p>Acidified potassium dichromate(VI), K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>/H<sub>2</sub>SO<sub>4</sub>, is used as the oxidising agent. The orange Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> turns green (Cr<sup>3+</sup>) when reduction occurs.</p>
+
+<table>
+  <tr><th>Alcohol Type</th><th>Product with Distillation</th><th>Product with Reflux</th></tr>
+  <tr><td>Primary</td><td>Aldehyde (distil immediately to prevent further oxidation)</td><td>Carboxylic acid (full oxidation)</td></tr>
+  <tr><td>Secondary</td><td colspan="2">Ketone (no further oxidation possible)</td></tr>
+  <tr><td>Tertiary</td><td colspan="2">No reaction (resistant to oxidation)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> To produce an aldehyde from a primary alcohol, you must distil the product immediately as it forms. If you reflux instead, the aldehyde is further oxidised to a carboxylic acid.
+</div>
+
+<h3>Elimination</h3>
+<p>Heating an alcohol with concentrated sulfuric acid or passing alcohol vapour over hot aluminium oxide (Al<sub>2</sub>O<sub>3</sub>) removes water to form an alkene:</p>
+<div class="equation">
+  CH<sub>3</sub>CH<sub>2</sub>OH &rarr; CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub>O &nbsp;&nbsp;(conc. H<sub>2</sub>SO<sub>4</sub> or Al<sub>2</sub>O<sub>3</sub> catalyst, heat)
+</div>
+
+<h3>Esterification</h3>
+<p>An alcohol reacts with a carboxylic acid in the presence of a concentrated sulfuric acid catalyst to form an ester and water. This is a reversible reaction.</p>
+<div class="equation">
+  CH<sub>3</sub>COOH + CH<sub>3</sub>CH<sub>2</sub>OH &#8652; CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub> + H<sub>2</sub>O
+</div>
+
+<h2>4.5 Haloalkanes</h2>
+
+<h3>Nucleophilic Substitution</h3>
+
+<div class="definition">
+  <strong>Nucleophile:</strong> An electron pair donor that attacks a positively charged or electron-deficient carbon atom. Examples: OH<sup>&minus;</sup>, NH<sub>3</sub>, CN<sup>&minus;</sup>.
+</div>
+
+<p>The carbon bonded to the halogen is electron-deficient (&delta;+) because halogens are more electronegative. Nucleophiles attack this carbon.</p>
+
+<h3>S<sub>N</sub>1 vs S<sub>N</sub>2 Mechanisms</h3>
+
+<table>
+  <tr><th>Feature</th><th>S<sub>N</sub>1</th><th>S<sub>N</sub>2</th></tr>
+  <tr><td>Substrate</td><td>Tertiary haloalkane</td><td>Primary haloalkane</td></tr>
+  <tr><td>Steps</td><td>Two steps: (1) C&ndash;X bond breaks heterolytically to form carbocation, (2) nucleophile attacks carbocation</td><td>One step: nucleophile attacks the &delta;+ carbon at the same time as the C&ndash;X bond breaks</td></tr>
+  <tr><td>Rate-determining step</td><td>Formation of carbocation (depends only on [haloalkane])</td><td>Nucleophilic attack (depends on [haloalkane] and [nucleophile])</td></tr>
+  <tr><td>Rate equation</td><td>Rate = k[haloalkane]</td><td>Rate = k[haloalkane][nucleophile]</td></tr>
+</table>
+
+<p>Secondary haloalkanes can react via either mechanism depending on conditions.</p>
+
+<h3>Hydrolysis Reactions</h3>
+
+<table>
+  <tr><th>Nucleophile</th><th>Conditions</th><th>Product</th></tr>
+  <tr><td>OH<sup>&minus;</sup> (from NaOH)</td><td>Warm aqueous NaOH</td><td>Alcohol</td></tr>
+  <tr><td>NH<sub>3</sub></td><td>Excess concentrated NH<sub>3</sub> in ethanol, heat in sealed tube</td><td>Amine</td></tr>
+  <tr><td>CN<sup>&minus;</sup> (from KCN)</td><td>KCN in ethanol/water, reflux</td><td>Nitrile (increases carbon chain by 1)</td></tr>
+</table>
+
+<h3>Reactivity of Haloalkanes</h3>
+<p>The rate of hydrolysis depends on the strength of the C&ndash;X bond. Bond strength decreases down the group: C&ndash;F &gt; C&ndash;Cl &gt; C&ndash;Br &gt; C&ndash;I. Therefore, iodoalkanes react fastest and fluoroalkanes react slowest. This is a bond enthalpy effect, not an electronegativity effect.</p>
+
+<h3>Ozone Depletion</h3>
+<p>Chlorofluorocarbons (CFCs) were widely used as refrigerants and propellants. In the stratosphere, UV radiation breaks the C&ndash;Cl bond homolytically to produce chlorine radicals that catalytically destroy ozone:</p>
+<div class="equation">
+  Cl&bull; + O<sub>3</sub> &rarr; ClO&bull; + O<sub>2</sub>
+</div>
+<div class="equation">
+  ClO&bull; + O<sub>3</sub> &rarr; Cl&bull; + 2O<sub>2</sub>
+</div>
+<p>The chlorine radical is regenerated, so one CFC molecule can destroy thousands of ozone molecules. CFCs have been replaced by HCFCs and HFCs, which break down in the lower atmosphere before reaching the ozone layer.</p>
+
+<h2>4.6 Organic Synthesis</h2>
+<p>Organic synthesis involves planning a series of reactions to convert a starting material into a desired product. You should be able to suggest suitable reagents and conditions for each step and recognise how different functional groups can be interconverted.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Learn the key reaction pathways connecting alkanes, alkenes, haloalkanes, alcohols, aldehydes, ketones, carboxylic acids, and esters. Be prepared to describe multi-step syntheses with full reagents and conditions at each step.
+</div>
+
+<h2>4.7 Analytical Techniques (AS)</h2>
+
+<h3>Mass Spectrometry</h3>
+<p>A mass spectrometer determines the relative molecular mass (M<sub>r</sub>) of a compound. The molecular ion peak (M<sup>+</sup>) has the highest m/z value (ignoring isotope peaks) and corresponds to the intact molecule minus one electron. Fragmentation patterns provide information about the structure.</p>
+
+<table>
+  <tr><th>m/z Difference</th><th>Fragment Lost</th><th>Likely Group</th></tr>
+  <tr><td>15</td><td>CH<sub>3</sub></td><td>Methyl group</td></tr>
+  <tr><td>17</td><td>OH</td><td>Hydroxyl group</td></tr>
+  <tr><td>29</td><td>CHO</td><td>Aldehyde group</td></tr>
+  <tr><td>45</td><td>OC<sub>2</sub>H<sub>5</sub></td><td>Ethoxy group (ester)</td></tr>
+</table>
+
+<h3>Infrared (IR) Spectroscopy</h3>
+<p>IR spectroscopy identifies functional groups by measuring which frequencies of infrared radiation are absorbed by a molecule. Bonds absorb IR radiation and vibrate (stretch or bend) at characteristic frequencies.</p>
+
+<table>
+  <tr><th>Bond</th><th>Wavenumber / cm<sup>&minus;1</sup></th><th>Absorption Appearance</th></tr>
+  <tr><td>O&ndash;H (alcohol)</td><td>3230&ndash;3550</td><td>Broad</td></tr>
+  <tr><td>O&ndash;H (carboxylic acid)</td><td>2500&ndash;3300</td><td>Very broad</td></tr>
+  <tr><td>N&ndash;H</td><td>3300&ndash;3500</td><td>Medium, sharp</td></tr>
+  <tr><td>C&ndash;H</td><td>2850&ndash;3100</td><td>Medium</td></tr>
+  <tr><td>C=O</td><td>1680&ndash;1750</td><td>Strong, sharp</td></tr>
+  <tr><td>C=C</td><td>1620&ndash;1680</td><td>Medium</td></tr>
+  <tr><td>C&ndash;O</td><td>1000&ndash;1300</td><td>Strong</td></tr>
+</table>
+
+<p>The fingerprint region (below 1500 cm<sup>&minus;1</sup>) is unique to each compound and can be matched against a database for positive identification.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In IR spectroscopy questions, you will be given a data table of characteristic absorptions. Look for the presence or absence of key peaks: a broad O&ndash;H around 3300 cm<sup>&minus;1</sup> (alcohol), a very broad O&ndash;H around 2500&ndash;3300 cm<sup>&minus;1</sup> (carboxylic acid), or a sharp C=O around 1700 cm<sup>&minus;1</sup> (carbonyl). The disappearance or appearance of peaks confirms a reaction has occurred.
+</div>
+
+</div>
+</body>
+</html>

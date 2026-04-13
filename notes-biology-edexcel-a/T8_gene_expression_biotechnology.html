@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T8 Gene Expression and Biotechnology — Edexcel A A-Level Biology</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 32px; }
+        h1 .spec-ref { display: block; font-size: 0.9rem; color: #6b7280; font-weight: 400; margin-top: 4px; }
+        h2 { font-size: 1.5rem; color: #1e3a5f; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #e5e7eb; }
+        h3 { font-size: 1.15rem; color: #374151; margin-top: 24px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; }
+        ul, ol { margin-bottom: 14px; padding-left: 28px; }
+        li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
+        th { background: #f0f4ff; font-weight: 600; color: #1e3a5f; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition-box { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
+        .definition-box strong { color: #1e40af; }
+        .equation { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; font-family: 'Consolas', monospace; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        @media print { body { padding: 20px; } h2 { break-before: auto; } .definition-box, .exam-tip, .equation { break-inside: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Gene Expression and Biotechnology
+    <span class="spec-ref">Edexcel A A-Level Biology &mdash; Topic 8</span>
+</h1>
+
+<!-- ==================== GENE EXPRESSION ==================== -->
+<h2>8.1 Control of Gene Expression</h2>
+
+<div class="definition-box">
+    <strong>Gene expression:</strong> The process by which information from a gene is used to synthesise a functional gene product (usually a protein). Not all genes are expressed in all cells; differential gene expression produces different cell types from the same genome.
+</div>
+
+<h3>Levels of Control</h3>
+<table>
+    <tr><th>Level</th><th>Mechanism</th><th>Example</th></tr>
+    <tr><td>Transcriptional</td><td>Transcription factors bind to promoter/enhancer regions; control whether RNA polymerase can transcribe a gene</td><td>Lac operon in bacteria; hormone-receptor complexes in eukaryotes</td></tr>
+    <tr><td>Post-transcriptional</td><td>Alternative splicing of pre-mRNA (different combinations of exons retained); mRNA stability</td><td>One gene can produce multiple proteins by including different exons</td></tr>
+    <tr><td>Translational</td><td>Regulation of translation initiation; mRNA degradation rate; microRNAs (miRNA) that silence mRNA</td><td>Iron response elements control ferritin translation</td></tr>
+    <tr><td>Post-translational</td><td>Protein modification (phosphorylation, glycosylation); activation/deactivation; targeted degradation</td><td>Insulin processed from proinsulin by cleavage</td></tr>
+</table>
+
+<h3>Transcription Factors</h3>
+<p>Proteins that bind to specific DNA sequences (promoters, enhancers, silencers) to regulate transcription. <strong>Activators</strong> increase transcription by helping RNA polymerase bind to the promoter. <strong>Repressors</strong> decrease transcription by blocking RNA polymerase binding or recruitment.</p>
+
+<p>In eukaryotes, transcription factors often work in combinations, allowing precise control of gene expression in different cell types and at different developmental stages.</p>
+
+<h3>The Lac Operon (Prokaryotic Gene Regulation)</h3>
+<p>In <em>E. coli</em>, the lac operon demonstrates inducible gene expression:</p>
+<ul>
+    <li><strong>Without lactose:</strong> Repressor protein (produced by regulatory gene) binds to operator; blocks RNA polymerase; structural genes (lacZ, lacY, lacA) NOT transcribed</li>
+    <li><strong>With lactose:</strong> Lactose (inducer) binds to repressor, changing its shape; repressor cannot bind operator; RNA polymerase transcribes structural genes; enzymes for lactose metabolism produced</li>
+</ul>
+
+<div class="exam-tip">The lac operon is an example of negative inducible control. The default state is OFF (repressor blocks transcription). The inducer (lactose) switches it ON. This is an efficient use of resources &mdash; enzymes only produced when the substrate is present.</div>
+
+<!-- ==================== EPIGENETICS ==================== -->
+<h2>8.2 Epigenetics</h2>
+
+<div class="definition-box">
+    <strong>Epigenetics:</strong> Heritable changes in gene expression that do NOT involve changes to the DNA base sequence. Epigenetic modifications affect whether genes are switched on or off without altering the genetic code itself.
+</div>
+
+<h3>Mechanisms of Epigenetic Modification</h3>
+<table>
+    <tr><th>Mechanism</th><th>How It Works</th><th>Effect on Gene Expression</th></tr>
+    <tr><td>DNA methylation</td><td>Methyl groups (CH<sub>3</sub>) added to cytosine bases (usually CpG islands near promoters)</td><td>Silences gene (prevents transcription factor binding; recruits proteins that condense chromatin)</td></tr>
+    <tr><td>Histone modification (acetylation)</td><td>Acetyl groups added to histone tails by histone acetyltransferases (HATs)</td><td>Activates gene (loosens DNA-histone interaction; chromatin becomes euchromatin; accessible to transcription machinery)</td></tr>
+    <tr><td>Histone deacetylation</td><td>Acetyl groups removed by histone deacetylases (HDACs)</td><td>Silences gene (tighter DNA wrapping; heterochromatin formed)</td></tr>
+</table>
+
+<h3>Significance of Epigenetics</h3>
+<ul>
+    <li>Explains cell differentiation &mdash; same genome, different gene expression patterns</li>
+    <li>Can be influenced by environment (diet, stress, toxins, age)</li>
+    <li>Some epigenetic marks are heritable (passed to offspring)</li>
+    <li>Involved in diseases: abnormal methylation patterns in cancer (tumour suppressor genes silenced); imprinting disorders</li>
+    <li>Monozygotic twins accumulate epigenetic differences over time, explaining phenotypic divergence</li>
+</ul>
+
+<div class="exam-tip">Key distinction: mutations change the DNA sequence (permanent, irreversible); epigenetic changes modify gene expression WITHOUT changing the sequence (potentially reversible). Both can be heritable and both can contribute to disease.</div>
+
+<!-- ==================== GENE TECHNOLOGY ==================== -->
+<h2>8.3 Gene Technology Tools</h2>
+
+<h3>Restriction Enzymes (Endonucleases)</h3>
+<div class="definition-box">
+    <strong>Restriction enzyme:</strong> A bacterial enzyme that cuts DNA at specific palindromic recognition sequences (4&ndash;8 base pairs). They produce either sticky ends (short single-stranded overhangs) or blunt ends.
+</div>
+<p><strong>Sticky ends</strong> are preferred in genetic engineering because complementary sticky ends from different DNA sources can base-pair and be joined by DNA ligase, allowing recombinant DNA to be formed.</p>
+
+<h3>DNA Ligase</h3>
+<p>An enzyme that joins (ligates) DNA fragments by forming phosphodiester bonds between the sugar-phosphate backbones. Used to seal the gene of interest into a vector after restriction enzyme cutting.</p>
+
+<h3>Polymerase Chain Reaction (PCR)</h3>
+<div class="definition-box">
+    <strong>PCR:</strong> An in vitro technique for amplifying (copying) a specific DNA sequence millions of times in a few hours. It requires: template DNA, primers (short complementary DNA sequences), Taq DNA polymerase (thermostable), and free nucleotides (dNTPs).
+</div>
+
+<ol>
+    <li><strong>Denaturation (94&ndash;98&deg;C):</strong> Heat breaks hydrogen bonds between complementary strands; DNA separates into single strands</li>
+    <li><strong>Annealing (50&ndash;65&deg;C):</strong> Temperature lowered; primers bind (anneal) to complementary sequences on template strands</li>
+    <li><strong>Extension/Elongation (72&deg;C):</strong> Taq polymerase extends primers by adding complementary nucleotides in 5'&rarr;3' direction</li>
+    <li>Cycle repeated 25&ndash;35 times; DNA doubles each cycle (2<sup>n</sup> copies after n cycles)</li>
+</ol>
+
+<div class="equation">Number of DNA copies = 2<sup>n</sup> (where n = number of cycles)</div>
+
+<h3>Gel Electrophoresis</h3>
+<p>Separates DNA (or protein) fragments by size and charge:</p>
+<ol>
+    <li>DNA loaded into wells in agarose gel</li>
+    <li>Electric current applied; DNA moves to positive electrode (DNA is negatively charged due to phosphate groups)</li>
+    <li>Smaller fragments move faster/further through gel pores</li>
+    <li>Bands visualised with UV + ethidium bromide stain (or fluorescent markers)</li>
+    <li>Fragment sizes determined by comparison with a DNA ladder (known size markers)</li>
+</ol>
+
+<!-- ==================== GENETIC ENGINEERING ==================== -->
+<h2>8.4 Genetic Engineering</h2>
+
+<div class="definition-box">
+    <strong>Genetic engineering (recombinant DNA technology):</strong> The deliberate modification of an organism's genome by introducing a gene from another organism (often a different species), producing a transgenic/genetically modified organism (GMO).
+</div>
+
+<h3>Steps in Genetic Engineering</h3>
+<ol>
+    <li><strong>Identify and isolate the gene of interest:</strong> Use restriction enzymes to cut it from source DNA, or use reverse transcriptase to make cDNA from mRNA, or synthesise chemically</li>
+    <li><strong>Insert gene into a vector:</strong> Plasmid (bacterial), virus, or liposome. Cut vector with same restriction enzyme (compatible sticky ends); insert gene; seal with DNA ligase</li>
+    <li><strong>Transform the host cell:</strong> Introduce recombinant vector into host (e.g., heat shock for bacteria, electroporation, viral infection, gene gun for plants)</li>
+    <li><strong>Identify transformed cells:</strong> Use marker genes (e.g., antibiotic resistance, fluorescent protein) to select cells that have taken up the recombinant DNA</li>
+    <li><strong>Clone and express:</strong> Grow transformed cells; gene expressed to produce desired protein</li>
+</ol>
+
+<h3>Applications of Genetic Engineering</h3>
+<table>
+    <tr><th>Application</th><th>Example</th><th>Benefit</th></tr>
+    <tr><td>Medicine</td><td>Human insulin produced by GM bacteria (E. coli or yeast)</td><td>Unlimited supply; no allergic reactions; pure; consistent</td></tr>
+    <tr><td>Agriculture</td><td>Bt crops (gene from Bacillus thuringiensis produces insecticidal toxin)</td><td>Reduced pesticide use; increased yield</td></tr>
+    <tr><td>Agriculture</td><td>Golden Rice (genes for beta-carotene synthesis added)</td><td>Addresses vitamin A deficiency in developing countries</td></tr>
+    <tr><td>Research</td><td>GFP (green fluorescent protein) used as reporter gene</td><td>Tracks gene expression; visualises protein localisation</td></tr>
+</table>
+
+<h3>Cloning Organisms</h3>
+<p><strong>Reproductive cloning (somatic cell nuclear transfer, SCNT):</strong> Remove nucleus from egg cell; insert nucleus from adult somatic cell; stimulate division; implant embryo in surrogate. Example: Dolly the sheep.</p>
+<p><strong>Therapeutic cloning:</strong> Same nuclear transfer technique but embryo used to harvest embryonic stem cells (not implanted); stem cells can differentiate into any tissue for treating disease.</p>
+
+<div class="exam-tip">When discussing genetic engineering in exams, consider both benefits AND risks/ethical concerns: gene transfer to wild populations, loss of biodiversity, unknown long-term effects, ethical concerns about 'playing God', patent issues, and the precautionary principle.</div>
+
+<!-- ==================== BIOTECHNOLOGY ==================== -->
+<h2>8.5 Biotechnology and Fermentation</h2>
+
+<div class="definition-box">
+    <strong>Biotechnology:</strong> The use of living organisms (or their components) in industrial processes to produce useful substances or provide services. Applications include fermentation, enzyme technology, gene therapy and bioremediation.
+</div>
+
+<h3>Fermentation and Bioreactors</h3>
+<p>Industrial fermenters (bioreactors) are large vessels that maintain optimal conditions for microbial growth and product formation:</p>
+<table>
+    <tr><th>Condition Controlled</th><th>How</th><th>Why</th></tr>
+    <tr><td>Temperature</td><td>Water jacket / cooling coils</td><td>Optimum for enzyme activity; microbial metabolism generates heat</td></tr>
+    <tr><td>pH</td><td>Buffers; acid/alkali addition</td><td>Enzyme optimum pH; metabolites can change pH</td></tr>
+    <tr><td>Oxygen</td><td>Sterile air supply; agitator (stirrer)</td><td>Aerobic respiration for maximum growth; even distribution</td></tr>
+    <tr><td>Nutrients</td><td>Sterile nutrient medium</td><td>Carbon source, nitrogen source, minerals for growth</td></tr>
+    <tr><td>Asepsis</td><td>Sterilisation of vessel, medium, air; sealed system</td><td>Prevent contamination by unwanted microorganisms</td></tr>
+</table>
+
+<h3>Batch vs Continuous Culture</h3>
+<table>
+    <tr><th>Feature</th><th>Batch Culture</th><th>Continuous Culture</th></tr>
+    <tr><td>Process</td><td>Fixed amount of nutrients added at start; organism grows; products harvested at end</td><td>Nutrients continuously added; products continuously removed; steady state maintained</td></tr>
+    <tr><td>Growth phase used</td><td>All phases (lag, log, stationary)</td><td>Maintained in log phase</td></tr>
+    <tr><td>Contamination risk</td><td>Lower (closed system, short runs)</td><td>Higher (open system, long runs)</td></tr>
+    <tr><td>Examples</td><td>Penicillin production, beer/wine making</td><td>Single-cell protein (Quorn/mycoprotein), yoghurt on industrial scale</td></tr>
+</table>
+
+<!-- ==================== GENE THERAPY ==================== -->
+<h2>8.6 Gene Therapy</h2>
+
+<div class="definition-box">
+    <strong>Gene therapy:</strong> The introduction of a normal (functional) copy of a gene into cells to treat or prevent disease caused by a defective or missing gene. It aims to correct genetic disorders at the molecular level.
+</div>
+
+<h3>Types of Gene Therapy</h3>
+<table>
+    <tr><th>Type</th><th>Target</th><th>Heritable?</th><th>Status</th></tr>
+    <tr><td>Somatic cell gene therapy</td><td>Body cells of affected individual</td><td>No (not passed to offspring)</td><td>In clinical use for some conditions</td></tr>
+    <tr><td>Germ line gene therapy</td><td>Gametes or early embryo</td><td>Yes (passed to all future generations)</td><td>Currently banned in humans (ethical concerns)</td></tr>
+</table>
+
+<h3>Vectors for Gene Therapy</h3>
+<ul>
+    <li><strong>Viral vectors</strong> (e.g., adenovirus, retrovirus, lentivirus): Efficient at entering cells; virus modified to be non-pathogenic; gene inserted into viral genome</li>
+    <li><strong>Liposomes:</strong> Lipid vesicles that fuse with cell membrane; deliver DNA directly; less immunogenic but less efficient</li>
+    <li><strong>Direct injection:</strong> Naked DNA or via gene gun (biolistics)</li>
+</ul>
+
+<h3>Challenges of Gene Therapy</h3>
+<ul>
+    <li>Difficulty targeting the correct cells</li>
+    <li>Immune response against vector (especially viral vectors)</li>
+    <li>Risk of insertional mutagenesis (gene inserts into wrong location; may disrupt tumour suppressor gene &rarr; cancer)</li>
+    <li>Temporary effect (somatic cells divide; transgene may be lost)</li>
+    <li>Only effective for single-gene disorders (most diseases are polygenic)</li>
+</ul>
+
+<!-- ==================== GENOMICS AND BIOINFORMATICS ==================== -->
+<h2>8.7 Genomics and Bioinformatics</h2>
+
+<div class="definition-box">
+    <strong>Genomics:</strong> The study of the entire genome of an organism, including the mapping, sequencing and analysis of all genes and their interactions. The Human Genome Project (completed 2003) sequenced all ~3 billion base pairs of human DNA.
+</div>
+
+<h3>DNA Sequencing</h3>
+<p>Modern sequencing (next-generation sequencing, NGS) allows rapid, high-throughput determination of DNA base sequences. The original Sanger method (chain termination) used dideoxynucleotides (ddNTPs) that terminate DNA synthesis at specific bases, producing fragments of different lengths separated by electrophoresis.</p>
+
+<h3>Bioinformatics</h3>
+<p>The use of computer science and statistics to store, analyse and interpret biological data (especially DNA and protein sequences). Applications include:</p>
+<ul>
+    <li><strong>Sequence comparison:</strong> BLAST searches to identify similar genes across species</li>
+    <li><strong>Gene annotation:</strong> Identifying gene locations and functions from raw sequence data</li>
+    <li><strong>Phylogenetics:</strong> Constructing evolutionary relationships from sequence data</li>
+    <li><strong>Protein structure prediction:</strong> Predicting 3D protein structure from amino acid sequence</li>
+    <li><strong>Personalised medicine:</strong> Pharmacogenomics (tailoring drugs to individual genotype)</li>
+</ul>
+
+<h3>Applications of Genomics</h3>
+<table>
+    <tr><th>Application</th><th>Description</th></tr>
+    <tr><td>Personalised/precision medicine</td><td>Drug selection based on individual genetic profile; minimise adverse effects</td></tr>
+    <tr><td>Gene discovery</td><td>Identifying genes associated with diseases (GWAS studies)</td></tr>
+    <tr><td>Comparative genomics</td><td>Understanding evolution and gene function by comparing genomes across species</td></tr>
+    <tr><td>Metagenomics</td><td>Sequencing DNA directly from environmental samples (studying unculturable microbes)</td></tr>
+    <tr><td>Synthetic biology</td><td>Designing and constructing new biological systems or organisms</td></tr>
+</table>
+
+<h3>CRISPR-Cas9 Gene Editing</h3>
+<p>A revolutionary gene editing tool that allows precise modification of DNA sequences in living organisms:</p>
+<ol>
+    <li>A <strong>guide RNA</strong> (gRNA) is designed to be complementary to the target DNA sequence</li>
+    <li>The gRNA directs the <strong>Cas9 endonuclease</strong> to the target site in the genome</li>
+    <li>Cas9 creates a <strong>double-strand break</strong> in the DNA at the precise location</li>
+    <li>Cell's repair mechanisms either: disrupt the gene (non-homologous end joining, NHEJ) or insert a new sequence (homology-directed repair, HDR) if a template is provided</li>
+</ol>
+
+<p>Advantages over traditional genetic engineering: more precise, faster, cheaper, can edit genes in situ (no need to remove and reinsert). Applications: correcting genetic diseases, creating disease-resistant crops, studying gene function, potential to eliminate vector-borne diseases (gene drives).</p>
+
+<div class="exam-tip">For any biotechnology question, be prepared to discuss ethical, social and ecological implications. Key points: informed consent, access and inequality, unintended consequences, environmental release of GMOs, designer babies, and the distinction between treating disease vs enhancement.</div>
+
+</div>
+</body>
+</html>

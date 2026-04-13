@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.physicstutoronline.co.uk)",
+      "Bash(node -e ':*)",
+      "Bash(node -c questions/physics/physics-ocr-b.js)",
+      "Bash(node -c questions/physics/physics-ocr-b-written.js)",
+      "Bash(node -c \"C:/Users/tcvas/OneDrive/Desktop/Learning/questions/economics/economics-edexcel-b.js\")",
+      "Bash(node -c \"C:/Users/tcvas/OneDrive/Desktop/Learning/questions/economics/economics-edexcel-b-written.js\")",
+      "Bash(node -c \"C:/Users/tcvas/OneDrive/Desktop/Learning/questions/economics/economics-edexcel-b-practice.js\")",
+      "Bash(cp \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes/economics-aqa/\"* \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-aqa/\")",
+      "Bash(cp \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes/economics-edexcel-a/\"* \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-edexcel-a/\")",
+      "Bash(cp \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes/economics-ocr/\"* \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-ocr/\")",
+      "Bash(cp \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes/economics-edexcel-b/\"* \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-edexcel-b/\")"
+    ]
+  }
+}

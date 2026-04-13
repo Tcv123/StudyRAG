@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T6 Immunity, Infection and Forensics — Edexcel A A-Level Biology</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 32px; }
+        h1 .spec-ref { display: block; font-size: 0.9rem; color: #6b7280; font-weight: 400; margin-top: 4px; }
+        h2 { font-size: 1.5rem; color: #1e3a5f; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #e5e7eb; }
+        h3 { font-size: 1.15rem; color: #374151; margin-top: 24px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; }
+        ul, ol { margin-bottom: 14px; padding-left: 28px; }
+        li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
+        th { background: #f0f4ff; font-weight: 600; color: #1e3a5f; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition-box { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
+        .definition-box strong { color: #1e40af; }
+        .equation { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; font-family: 'Consolas', monospace; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        @media print { body { padding: 20px; } h2 { break-before: auto; } .definition-box, .exam-tip, .equation { break-inside: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Immunity, Infection and Forensics
+    <span class="spec-ref">Edexcel A A-Level Biology &mdash; Topic 6</span>
+</h1>
+
+<!-- ==================== PATHOGENS ==================== -->
+<h2>6.1 Pathogens and Disease</h2>
+
+<div class="definition-box">
+    <strong>Pathogen:</strong> A microorganism that causes disease. Pathogens include bacteria, viruses, fungi and protists. They cause disease by producing toxins or by damaging host cells directly.
+</div>
+
+<h3>Types of Pathogen</h3>
+<table>
+    <tr><th>Type</th><th>Cell Type</th><th>Key Features</th><th>Example Diseases</th></tr>
+    <tr><td>Bacteria</td><td>Prokaryotic</td><td>Cell wall (peptidoglycan); reproduce by binary fission; some produce exotoxins/endotoxins</td><td>Tuberculosis (TB), cholera, MRSA</td></tr>
+    <tr><td>Viruses</td><td>Acellular (not living)</td><td>DNA or RNA core; protein capsid; obligate intracellular parasites; use host machinery to replicate</td><td>HIV/AIDS, influenza, COVID-19</td></tr>
+    <tr><td>Fungi</td><td>Eukaryotic</td><td>Chitin cell walls; heterotrophic; reproduce by spores</td><td>Athlete's foot, ringworm</td></tr>
+    <tr><td>Protists</td><td>Eukaryotic</td><td>Single-celled; diverse; often vector-transmitted</td><td>Malaria (Plasmodium, vector: Anopheles mosquito)</td></tr>
+</table>
+
+<h3>Modes of Transmission</h3>
+<ul>
+    <li><strong>Direct contact</strong> &mdash; skin-to-skin, bodily fluids (STIs, HIV)</li>
+    <li><strong>Airborne (droplet)</strong> &mdash; coughing, sneezing (TB, influenza)</li>
+    <li><strong>Waterborne</strong> &mdash; contaminated water (cholera)</li>
+    <li><strong>Vector-borne</strong> &mdash; transmitted by another organism (malaria via mosquito)</li>
+    <li><strong>Fomites</strong> &mdash; contaminated surfaces/objects</li>
+</ul>
+
+<!-- ==================== INNATE IMMUNITY ==================== -->
+<h2>6.2 Non-Specific (Innate) Immune Response</h2>
+
+<p>The innate immune system provides immediate, non-specific defence against all pathogens. It does not involve memory.</p>
+
+<h3>Physical and Chemical Barriers</h3>
+<table>
+    <tr><th>Barrier</th><th>Mechanism</th></tr>
+    <tr><td>Skin</td><td>Physical barrier; dead keratinised cells; low pH (sebum); antimicrobial peptides</td></tr>
+    <tr><td>Mucous membranes</td><td>Mucus traps pathogens; ciliated epithelium moves mucus to throat</td></tr>
+    <tr><td>Stomach acid</td><td>HCl (pH 1-2) denatures pathogen proteins and enzymes</td></tr>
+    <tr><td>Lysozyme</td><td>Enzyme in tears, saliva, nasal secretions; breaks down bacterial cell walls</td></tr>
+    <tr><td>Commensal bacteria</td><td>Normal flora outcompete pathogens for resources</td></tr>
+</table>
+
+<h3>Inflammatory Response</h3>
+<p>When tissue is damaged or infected: mast cells release <strong>histamine</strong> &rarr; vasodilation and increased permeability of capillaries &rarr; plasma and white blood cells (phagocytes) move to the site &rarr; redness, swelling, heat, pain. This recruits more immune cells to the area of infection.</p>
+
+<h3>Phagocytosis</h3>
+<ol>
+    <li>Phagocyte (neutrophil or macrophage) detects pathogen (attracted by chemicals &mdash; chemotaxis)</li>
+    <li>Phagocyte engulfs pathogen by endocytosis, forming a <strong>phagosome</strong></li>
+    <li>Lysosomes fuse with phagosome, forming a <strong>phagolysosome</strong></li>
+    <li>Hydrolytic enzymes (lysozyme, proteases) digest the pathogen</li>
+    <li>Macrophages present pathogen antigens on their surface (become <strong>antigen-presenting cells</strong>, APCs) to activate the adaptive immune response</li>
+</ol>
+
+<!-- ==================== ADAPTIVE IMMUNITY ==================== -->
+<h2>6.3 Specific (Adaptive) Immune Response</h2>
+
+<div class="definition-box">
+    <strong>Antigen:</strong> A molecule (usually protein or glycoprotein) on the surface of a cell that can trigger an immune response. Self-antigens are recognised as "self"; foreign antigens trigger immune attack.
+</div>
+
+<h3>T Lymphocytes (Cell-Mediated Response)</h3>
+<p>T cells mature in the <strong>thymus</strong> and have specific T-cell receptors that recognise antigens presented by APCs on MHC proteins.</p>
+<table>
+    <tr><th>Type</th><th>Function</th></tr>
+    <tr><td>T helper cells (T<sub>H</sub>)</td><td>Release cytokines that activate B cells and T killer cells; stimulate phagocytosis</td></tr>
+    <tr><td>T killer/cytotoxic cells (T<sub>C</sub>)</td><td>Destroy infected body cells, cancer cells and transplant cells by releasing perforin (creates pores) and granzymes</td></tr>
+    <tr><td>T regulatory cells (T<sub>reg</sub>)</td><td>Suppress immune response; prevent autoimmunity; maintain tolerance to self-antigens</td></tr>
+    <tr><td>T memory cells</td><td>Remain in body long-term; rapid response on re-infection (immunological memory)</td></tr>
+</table>
+
+<h3>B Lymphocytes (Humoral Response)</h3>
+<p>B cells mature in the <strong>bone marrow</strong> and produce <strong>antibodies</strong> (immunoglobulins).</p>
+<ol>
+    <li>B cell with complementary antibody on its surface binds to a specific antigen</li>
+    <li>T helper cell activates the B cell (via cytokines)</li>
+    <li>B cell undergoes <strong>clonal expansion</strong> (rapid mitosis)</li>
+    <li>B cells differentiate into <strong>plasma cells</strong> (secrete large quantities of specific antibodies) and <strong>B memory cells</strong></li>
+</ol>
+
+<h3>Antibody Structure and Function</h3>
+<p>Antibodies are Y-shaped glycoproteins with two heavy chains and two light chains, linked by disulfide bonds. The <strong>variable region</strong> (at the tips) forms the antigen-binding site and is specific to one antigen. The <strong>constant region</strong> determines the antibody class and effector function.</p>
+
+<p>Antibodies work by:</p>
+<ul>
+    <li><strong>Agglutination</strong> &mdash; clumping pathogens together (easier for phagocytes)</li>
+    <li><strong>Neutralisation</strong> &mdash; blocking toxins or viral attachment sites</li>
+    <li><strong>Opsonisation</strong> &mdash; coating pathogen to enhance phagocytosis</li>
+    <li><strong>Complement activation</strong> &mdash; triggering complement cascade to lyse cells</li>
+</ul>
+
+<h3>Primary vs Secondary Immune Response</h3>
+<table>
+    <tr><th>Feature</th><th>Primary Response</th><th>Secondary Response</th></tr>
+    <tr><td>Speed</td><td>Slow (days to weeks)</td><td>Rapid (hours to days)</td></tr>
+    <tr><td>Antibody quantity</td><td>Lower concentration</td><td>Much higher concentration</td></tr>
+    <tr><td>Cells involved</td><td>Naive B and T cells</td><td>Memory B and T cells</td></tr>
+    <tr><td>Duration</td><td>Short-lived</td><td>Longer-lasting</td></tr>
+</table>
+
+<div class="exam-tip">The secondary response is faster and stronger because memory cells are present in higher numbers, have already undergone clonal selection, and can rapidly differentiate into effector cells without needing the full activation process.</div>
+
+<!-- ==================== VACCINATION ==================== -->
+<h2>6.4 Vaccination and Immunity</h2>
+
+<div class="definition-box">
+    <strong>Vaccination:</strong> The administration of an antigen (in a weakened, inactivated or fragment form) to stimulate an immune response and the production of memory cells, providing protection against future infection without causing the disease.
+</div>
+
+<h3>Types of Immunity</h3>
+<table>
+    <tr><th>Type</th><th>How Acquired</th><th>Memory Cells?</th><th>Duration</th></tr>
+    <tr><td>Active natural</td><td>Infection with pathogen</td><td>Yes</td><td>Long-lasting</td></tr>
+    <tr><td>Active artificial</td><td>Vaccination</td><td>Yes</td><td>Long-lasting</td></tr>
+    <tr><td>Passive natural</td><td>Antibodies across placenta or in breast milk</td><td>No</td><td>Temporary</td></tr>
+    <tr><td>Passive artificial</td><td>Injection of antibodies (e.g., antivenom)</td><td>No</td><td>Temporary</td></tr>
+</table>
+
+<h3>Herd Immunity</h3>
+<p>When a high proportion of a population is vaccinated, the pathogen cannot spread easily, protecting unvaccinated individuals (those too young, immunocompromised). The threshold depends on how infectious the pathogen is (e.g., measles requires ~95% coverage).</p>
+
+<!-- ==================== ANTIBIOTICS ==================== -->
+<h2>6.5 Antibiotics and Resistance</h2>
+
+<div class="definition-box">
+    <strong>Antibiotic:</strong> A substance produced by or derived from a microorganism that kills or inhibits the growth of bacteria. Antibiotics do NOT work against viruses (viruses use host cell machinery and lack the targets antibiotics act on).
+</div>
+
+<h3>Mechanisms of Antibiotic Action</h3>
+<ul>
+    <li><strong>Cell wall synthesis inhibitors</strong> (e.g., penicillin) &mdash; prevent cross-linking of peptidoglycan; bactericidal</li>
+    <li><strong>Protein synthesis inhibitors</strong> (e.g., tetracycline, erythromycin) &mdash; bind to 70S ribosomes; bacteriostatic or bactericidal</li>
+    <li><strong>DNA/RNA synthesis inhibitors</strong> (e.g., rifampicin) &mdash; block replication or transcription</li>
+    <li><strong>Membrane disruptors</strong> (e.g., polymyxins) &mdash; increase membrane permeability</li>
+</ul>
+
+<h3>Antibiotic Resistance (MRSA as Example)</h3>
+<ol>
+    <li>Random mutation in bacterial DNA gives resistance (e.g., altered target protein, efflux pump, enzyme that breaks down antibiotic)</li>
+    <li>Antibiotic kills non-resistant bacteria (selection pressure)</li>
+    <li>Resistant bacteria survive and reproduce (natural selection)</li>
+    <li>Resistance allele frequency increases in population</li>
+    <li>Horizontal gene transfer (conjugation via plasmids) can spread resistance between species</li>
+</ol>
+
+<div class="exam-tip">Always emphasise that bacteria do NOT "become resistant" in response to antibiotics. Resistance arises from random pre-existing mutations; antibiotics simply select for resistant individuals. This is evolution by natural selection.</div>
+
+<!-- ==================== FORENSIC BIOLOGY ==================== -->
+<h2>6.6 Forensic Biology</h2>
+
+<h3>DNA Profiling (Genetic Fingerprinting)</h3>
+<div class="definition-box">
+    <strong>DNA profiling:</strong> A technique that uses variable number tandem repeats (VNTRs) or short tandem repeats (STRs) &mdash; non-coding repetitive DNA sequences that vary between individuals &mdash; to produce a unique pattern (profile) for identification.
+</div>
+
+<h3>Steps in DNA Profiling</h3>
+<ol>
+    <li><strong>DNA extraction</strong> from sample (blood, saliva, hair follicle, semen)</li>
+    <li><strong>PCR amplification</strong> of STR regions (if sample is small)</li>
+    <li><strong>Restriction enzymes</strong> cut DNA at specific recognition sequences (or capillary electrophoresis of PCR products)</li>
+    <li><strong>Gel electrophoresis</strong> separates fragments by size (smaller fragments travel further)</li>
+    <li><strong>Southern blotting</strong> and radioactive/fluorescent probes to visualise specific STR regions</li>
+    <li>Pattern of bands compared between samples</li>
+</ol>
+
+<p>Applications: criminal investigations, paternity testing, identification of victims, immigration disputes, evolutionary relationships.</p>
+
+<h3>Estimating Time of Death</h3>
+<table>
+    <tr><th>Method</th><th>Principle</th><th>Limitations</th></tr>
+    <tr><td>Body temperature</td><td>Body cools at ~1.5&deg;C/hour until ambient temperature reached</td><td>Affected by body size, clothing, ambient temperature, air movement</td></tr>
+    <tr><td>Rigor mortis</td><td>Muscles stiffen 4&ndash;6 h after death; peaks at 12&ndash;24 h; subsides by 36&ndash;48 h</td><td>Affected by temperature, exercise before death, body mass</td></tr>
+    <tr><td>Degree of decomposition</td><td>Predictable stages: fresh &rarr; bloat &rarr; active decay &rarr; advanced decay &rarr; dry remains</td><td>Affected by temperature, moisture, oxygen, access by insects</td></tr>
+    <tr><td>Entomology (insect succession)</td><td>Specific insects colonise at predictable times; larval development stages indicate time elapsed</td><td>Affected by temperature, location, season, access</td></tr>
+    <tr><td>Extent of decomposition of stomach contents</td><td>Food type and digestion stage indicate time since last meal</td><td>Variation between individuals; need to know last meal time</td></tr>
+</table>
+
+<h3>Gel Electrophoresis</h3>
+<p>DNA fragments are placed in wells of an agarose gel and an electric current is applied. DNA is negatively charged (phosphate groups), so fragments move towards the positive electrode. Smaller fragments move faster/further. The gel acts as a molecular sieve. Fragments can be visualised with UV light (if stained with ethidium bromide) or by Southern blotting with labelled probes.</p>
+
+<div class="exam-tip">In DNA profiling questions: identical twins have the same profile. Children share approximately half their bands with each parent. The probability of two unrelated individuals having the same profile is extremely low (typically 1 in billions when multiple STR loci are tested).</div>
+
+</div>
+</body>
+</html>

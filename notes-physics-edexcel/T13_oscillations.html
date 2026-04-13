@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 13 — Oscillations | Edexcel A-Level Physics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e3a5f;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3b82f6;
+            padding-left: 12px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #2d4a7a;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        .definition {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before {
+            content: "Exam Tip: ";
+            font-weight: 700;
+            color: #b45309;
+        }
+        .equation {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 12px 20px;
+            margin: 12px 0;
+            border-radius: 6px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        ul, ol {
+            margin: 10px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        strong {
+            color: #1e3a5f;
+        }
+        @media print {
+            body { padding: 20px; }
+            .exam-tip, .definition { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Topic 13 — Oscillations</h1>
+
+<h2>13.1 Simple Harmonic Motion (SHM)</h2>
+
+<div class="definition">
+    <strong>Simple harmonic motion:</strong> An oscillation in which the acceleration of the object is directly proportional to its displacement from the equilibrium position and is always directed towards that equilibrium position.
+</div>
+
+<p>The defining equation of SHM:</p>
+<div class="equation">
+    a = −ω²x
+</div>
+
+<p>where:</p>
+<ul>
+    <li><strong>a</strong> = acceleration (m s⁻²)</li>
+    <li><strong>ω</strong> = angular frequency (rad s⁻¹)</li>
+    <li><strong>x</strong> = displacement from equilibrium (m)</li>
+</ul>
+
+<p>The negative sign indicates the acceleration is always in the <strong>opposite direction</strong> to the displacement — it always acts as a restoring force back towards equilibrium.</p>
+
+<h2>13.2 Equations of SHM</h2>
+
+<h3>Angular Frequency</h3>
+<div class="equation">
+    ω = 2π / T = 2πf
+</div>
+<p>where T is the period (s) and f is the frequency (Hz).</p>
+
+<h3>Displacement</h3>
+<div class="equation">
+    x = A cos(ωt)
+</div>
+<p>(assuming maximum displacement at t = 0; use x = A sin(ωt) if starting from equilibrium)</p>
+
+<h3>Velocity</h3>
+<div class="equation">
+    v = −Aω sin(ωt)
+</div>
+<p>The velocity can also be expressed in terms of displacement:</p>
+<div class="equation">
+    v = ±ω√(A² − x²)
+</div>
+
+<h3>Maximum Velocity</h3>
+<div class="equation">
+    v<sub>max</sub> = Aω
+</div>
+<p>This occurs at the <strong>equilibrium position</strong> (x = 0).</p>
+
+<h3>Acceleration</h3>
+<div class="equation">
+    a = −Aω² cos(ωt) = −ω²x
+</div>
+
+<h3>Maximum Acceleration</h3>
+<div class="equation">
+    a<sub>max</sub> = Aω²
+</div>
+<p>This occurs at the <strong>maximum displacement</strong> (x = ±A).</p>
+
+<div class="exam-tip">
+    The choice of cos or sin depends on the initial conditions. If the object starts at maximum displacement (x = A at t = 0), use x = A cos(ωt). If it starts at equilibrium moving in the positive direction, use x = A sin(ωt). Always state your assumption clearly.
+</div>
+
+<h2>13.3 Phase Relationships</h2>
+
+<table>
+    <tr>
+        <th>Quantity</th>
+        <th>Equation (starting at x = A)</th>
+        <th>Phase relationship</th>
+    </tr>
+    <tr>
+        <td>Displacement (x)</td>
+        <td>A cos(ωt)</td>
+        <td>Reference</td>
+    </tr>
+    <tr>
+        <td>Velocity (v)</td>
+        <td>−Aω sin(ωt)</td>
+        <td>Leads displacement by π/2 (90°)</td>
+    </tr>
+    <tr>
+        <td>Acceleration (a)</td>
+        <td>−Aω² cos(ωt)</td>
+        <td>Leads displacement by π (180°) — i.e., in antiphase</td>
+    </tr>
+</table>
+
+<p>Key points:</p>
+<ul>
+    <li>Velocity is maximum when displacement is zero, and zero when displacement is maximum.</li>
+    <li>Acceleration is maximum (in magnitude) when displacement is maximum, and zero when displacement is zero.</li>
+    <li>Acceleration and displacement are always in <strong>antiphase</strong> (180° out of phase).</li>
+    <li>Velocity leads displacement by a quarter cycle (π/2 radians).</li>
+</ul>
+
+<h2>13.4 SHM Systems</h2>
+
+<h3>Simple Pendulum</h3>
+<p>For small angular displacements (less than ~10°):</p>
+<div class="equation">
+    T = 2π √(L / g)
+</div>
+<p>where:</p>
+<ul>
+    <li><strong>L</strong> = length of the pendulum (from pivot to centre of mass of bob) (m)</li>
+    <li><strong>g</strong> = gravitational field strength (m s⁻²)</li>
+</ul>
+<p>Note: The period does <strong>not</strong> depend on the mass of the bob or the amplitude (for small oscillations).</p>
+
+<h3>Mass–Spring System</h3>
+<div class="equation">
+    T = 2π √(m / k)
+</div>
+<p>where:</p>
+<ul>
+    <li><strong>m</strong> = mass of the oscillating object (kg)</li>
+    <li><strong>k</strong> = spring constant (N m⁻¹)</li>
+</ul>
+<p>Note: The period does <strong>not</strong> depend on the amplitude or on g. This formula applies for both horizontal and vertical mass–spring systems.</p>
+
+<div class="exam-tip">
+    For a pendulum: T depends on L and g (not mass). For a mass–spring: T depends on m and k (not g or amplitude). These are very common exam questions — make sure you know which factors affect the period and which do not.
+</div>
+
+<h2>13.5 Energy in SHM</h2>
+
+<p>In simple harmonic motion, energy is continuously exchanged between kinetic energy and potential energy. The total mechanical energy remains constant (in the absence of damping).</p>
+
+<h3>Kinetic Energy</h3>
+<div class="equation">
+    E<sub>k</sub> = ½mv² = ½mω²(A² − x²)
+</div>
+
+<h3>Potential Energy</h3>
+<div class="equation">
+    E<sub>p</sub> = ½mω²x²
+</div>
+
+<h3>Total Energy</h3>
+<div class="equation">
+    E<sub>total</sub> = ½mω²A² = constant
+</div>
+
+<h3>Energy Variation</h3>
+<table>
+    <tr>
+        <th>Position</th>
+        <th>Displacement</th>
+        <th>KE</th>
+        <th>PE</th>
+    </tr>
+    <tr>
+        <td>Equilibrium</td>
+        <td>x = 0</td>
+        <td>Maximum (½mω²A²)</td>
+        <td>Zero</td>
+    </tr>
+    <tr>
+        <td>Maximum displacement</td>
+        <td>x = ±A</td>
+        <td>Zero</td>
+        <td>Maximum (½mω²A²)</td>
+    </tr>
+</table>
+
+<p>On a graph of energy against displacement:</p>
+<ul>
+    <li>KE is an inverted parabola (maximum at x = 0, zero at x = ±A).</li>
+    <li>PE is an upward parabola (zero at x = 0, maximum at x = ±A).</li>
+    <li>Total energy is a horizontal line (constant).</li>
+</ul>
+
+<p>On a graph of energy against time:</p>
+<ul>
+    <li>Both KE and PE oscillate sinusoidally at <strong>twice the frequency</strong> of the oscillation (2f).</li>
+    <li>KE and PE are in antiphase with each other.</li>
+    <li>Total energy remains constant.</li>
+</ul>
+
+<div class="exam-tip">
+    The total energy of the oscillation is proportional to the square of the amplitude: E ∝ A². Doubling the amplitude quadruples the total energy.
+</div>
+
+<h2>13.6 Free and Forced Oscillations</h2>
+
+<div class="definition">
+    <strong>Free oscillation:</strong> An oscillation where no external driving force acts on the system after the initial displacement. The system oscillates at its natural frequency (f₀).
+</div>
+
+<div class="definition">
+    <strong>Natural frequency (f₀):</strong> The frequency at which a system oscillates freely when displaced from equilibrium and released. Determined by the physical properties of the system.
+</div>
+
+<div class="definition">
+    <strong>Forced oscillation:</strong> An oscillation maintained by a periodic external driving force. The system oscillates at the frequency of the driving force (the driving frequency, f<sub>d</sub>).
+</div>
+
+<h2>13.7 Damping</h2>
+
+<div class="definition">
+    <strong>Damping:</strong> The reduction in amplitude (and energy) of an oscillation caused by dissipative forces (such as friction or air resistance) acting on the system.
+</div>
+
+<h3>Types of Damping</h3>
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Amplitude behaviour</th>
+    </tr>
+    <tr>
+        <td><strong>Light (under) damping</strong></td>
+        <td>Small resistive forces. System oscillates with gradually decreasing amplitude over many cycles.</td>
+        <td>Exponential decrease; many oscillations visible</td>
+    </tr>
+    <tr>
+        <td><strong>Heavy (over) damping</strong></td>
+        <td>Large resistive forces. System returns very slowly to equilibrium without oscillating.</td>
+        <td>No oscillations; very slow return</td>
+    </tr>
+    <tr>
+        <td><strong>Critical damping</strong></td>
+        <td>The system returns to equilibrium in the shortest possible time without oscillating.</td>
+        <td>No oscillations; fastest return to zero</td>
+    </tr>
+</table>
+
+<div class="exam-tip">
+    Critical damping is used in car shock absorbers and door closing mechanisms — the system must return to equilibrium quickly without bouncing. In exams, you should be able to sketch all three types of damping on the same displacement–time graph.
+</div>
+
+<h2>13.8 Resonance</h2>
+
+<div class="definition">
+    <strong>Resonance:</strong> The phenomenon that occurs when the driving frequency equals the natural frequency of the system (f<sub>d</sub> = f₀), resulting in a maximum transfer of energy to the system and hence maximum amplitude of oscillation.
+</div>
+
+<h3>The Resonance Curve</h3>
+<p>A graph of amplitude against driving frequency shows:</p>
+<ul>
+    <li>A peak at the natural frequency f₀.</li>
+    <li>The amplitude is maximum at resonance.</li>
+    <li>At driving frequencies much lower or much higher than f₀, the amplitude is small.</li>
+</ul>
+
+<h3>Effect of Damping on Resonance</h3>
+<ul>
+    <li>Increasing damping <strong>reduces the peak amplitude</strong> at resonance.</li>
+    <li>Increasing damping <strong>broadens the resonance curve</strong> (the peak becomes flatter and wider).</li>
+    <li>Increasing damping causes the resonant frequency to shift <strong>slightly below</strong> f₀ (though for light damping this shift is negligible).</li>
+    <li>With very heavy damping, the resonance peak virtually disappears.</li>
+</ul>
+
+<table>
+    <tr>
+        <th>Damping level</th>
+        <th>Peak amplitude</th>
+        <th>Curve width</th>
+        <th>Resonant frequency</th>
+    </tr>
+    <tr>
+        <td>No damping</td>
+        <td>Infinite (theoretically)</td>
+        <td>Infinitely narrow</td>
+        <td>Exactly f₀</td>
+    </tr>
+    <tr>
+        <td>Light damping</td>
+        <td>Large</td>
+        <td>Narrow (sharp peak)</td>
+        <td>Very close to f₀</td>
+    </tr>
+    <tr>
+        <td>Heavy damping</td>
+        <td>Small</td>
+        <td>Wide (broad peak)</td>
+        <td>Slightly below f₀</td>
+    </tr>
+</table>
+
+<h3>Applications and Examples of Resonance</h3>
+
+<table>
+    <tr>
+        <th>Application</th>
+        <th>Explanation</th>
+    </tr>
+    <tr>
+        <td><strong>Shock absorbers (car suspension)</strong></td>
+        <td>Critical damping prevents resonance of the car body on springs when driving over bumps. Without damping, the car would bounce violently at certain speeds.</td>
+    </tr>
+    <tr>
+        <td><strong>Tuning circuits (radio)</strong></td>
+        <td>An LC circuit resonates at a specific frequency determined by L and C. By adjusting these, the circuit selects (amplifies) the desired radio frequency from all the signals received by the antenna.</td>
+    </tr>
+    <tr>
+        <td><strong>Musical instruments</strong></td>
+        <td>The body of a guitar or violin resonates with the vibrating strings, amplifying the sound.</td>
+    </tr>
+    <tr>
+        <td><strong>MRI scanners</strong></td>
+        <td>Hydrogen nuclei resonate at specific radio frequencies in a magnetic field, allowing imaging of body tissues.</td>
+    </tr>
+    <tr>
+        <td><strong>Bridges and buildings</strong></td>
+        <td>If wind or pedestrians drive a bridge at its natural frequency, dangerous resonance can occur (e.g., Tacoma Narrows Bridge, 1940). Dampers are installed to prevent this.</td>
+    </tr>
+</table>
+
+<div class="exam-tip">
+    When describing resonance, always state three things: (1) the driving frequency equals the natural frequency, (2) maximum energy transfer occurs, and (3) the amplitude reaches a maximum. For full marks on "explain resonance" questions, include all three points.
+</div>
+
+</div>
+</body>
+</html>

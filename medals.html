@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Medals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EEF5FC;
+      --surface: #FFFFFF;
+      --surface2: #F4F9FE;
+      --surface3: #E6F1FA;
+      --border: #D2E5F3;
+      --border-hover: #93C4E2;
+      --text: #1B2D4F;
+      --muted: #6B87A8;
+      --muted2: #A0B8CE;
+      --accent: #5BADCF;
+      --accent-dark: #3D95BC;
+      --accent-dim: rgba(91,173,207,0.1);
+      --accent-glow: rgba(91,173,207,0.2);
+      --red: #DC2626; --red-bg: rgba(220,38,38,0.07); --red-border: rgba(220,38,38,0.18); --red-text: #B91C1C;
+      --amber: #D97706; --amber-bg: rgba(217,119,6,0.07); --amber-border: rgba(217,119,6,0.18); --amber-text: #B45309;
+      --green: #16A34A; --green-bg: rgba(22,163,74,0.07); --green-border: rgba(22,163,74,0.18); --green-text: #15803D;
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    .app { display: flex; min-height: 100vh; }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: var(--sidebar-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; padding: 24px 0;
+      position: fixed; top: 0; left: 0; bottom: 0; z-index: 10;
+      box-shadow: 2px 0 16px rgba(91,173,207,0.08);
+    }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; color: var(--text); }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 12px; border-radius: 8px; font-size: 13px; font-weight: 400;
+      color: var(--muted); cursor: pointer; transition: all 0.12s; text-decoration: none;
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { font-size: 15px; width: 20px; text-align: center; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 16px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 10px; background: var(--surface2); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 12px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .user-email { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; cursor: pointer; color: var(--muted); font-size: 13px; transition: all 0.12s; }
+    .logout-btn:hover { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+
+    /* ── MAIN ── */
+    .main { flex: 1; margin-left: var(--sidebar-w); padding: 32px 36px 48px; }
+
+    .topbar { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 28px; }
+    .page-title { font-family: var(--font-display); font-size: 26px; color: var(--text); letter-spacing: -0.02em; }
+    .page-sub { font-size: 14px; color: var(--muted); margin-top: 4px; }
+
+    /* ── STATS ROW ── */
+    .stats-row { display: flex; gap: 14px; margin-bottom: 28px; }
+    .stat-pill {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 16px 24px; display: flex; align-items: center; gap: 12px;
+      box-shadow: 0 1px 4px rgba(91,173,207,0.07);
+    }
+    .stat-pill-num { font-family: var(--font-display); font-size: 28px; color: var(--text); }
+    .stat-pill-label { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+    /* ── PROGRESS BAR ── */
+    .progress-wrap { margin-bottom: 28px; }
+    .progress-bar-outer {
+      width: 100%; height: 10px; background: var(--surface3); border-radius: 5px;
+      overflow: hidden; border: 1px solid var(--border);
+    }
+    .progress-bar-fill {
+      height: 100%; background: linear-gradient(90deg, var(--amber), #F59E0B);
+      border-radius: 5px; transition: width 0.5s ease;
+    }
+    .progress-text { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    /* ── CATEGORY SECTION ── */
+    .category { margin-bottom: 28px; }
+    .category-title {
+      font-size: 14px; font-weight: 600; color: var(--text);
+      margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+    }
+    .category-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+    }
+
+    /* ── MEDAL CARDS ── */
+    .medal-card {
+      border: 1px solid var(--border); border-radius: 14px; padding: 18px 14px;
+      text-align: center; transition: all 0.15s;
+    }
+    .medal-card.earned {
+      background: linear-gradient(135deg, rgba(217,119,6,0.06), rgba(245,158,11,0.04));
+      border-color: rgba(217,119,6,0.25);
+    }
+    .medal-card.locked {
+      background: var(--surface2); opacity: 0.5; filter: grayscale(0.4);
+    }
+    .medal-card.earned:hover {
+      box-shadow: 0 4px 14px rgba(217,119,6,0.12);
+      transform: translateY(-2px); border-color: rgba(217,119,6,0.35);
+    }
+    .medal-icon { font-size: 30px; margin-bottom: 8px; }
+    .medal-name { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+    .medal-desc { font-size: 11px; color: var(--muted); line-height: 1.4; margin-bottom: 8px; }
+    .medal-badge { font-size: 10px; font-weight: 600; color: var(--amber-text); background: var(--amber-bg); border: 1px solid var(--amber-border); padding: 2px 8px; border-radius: 10px; display: inline-block; }
+    .medal-lock { font-size: 10px; color: var(--muted2); }
+
+    @media (max-width: 1200px) { .category-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 900px) { .category-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 600px) {
+      .sidebar { display: none; }
+      .main { margin-left: 0; padding: 20px 16px; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item active" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials">–</div>
+        <div class="user-info">
+          <div class="user-name" id="sidebarName">Loading…</div>
+          <div class="user-email" id="sidebarEmail"></div>
+        </div>
+        <button class="logout-btn" onclick="logout()" title="Sign out">⏻</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <div class="page-title">🏅 Your Medals</div>
+        <div class="page-sub" id="medalSub">Loading…</div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-pill">
+        <div class="stat-pill-num" id="earnedNum">–</div>
+        <div class="stat-pill-label">Earned</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-pill-num" id="lockedNum">–</div>
+        <div class="stat-pill-label">Locked</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-pill-num" id="totalNum">–</div>
+        <div class="stat-pill-label">Total</div>
+      </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-wrap">
+      <div class="progress-bar-outer">
+        <div class="progress-bar-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-text" id="progressText"></div>
+    </div>
+
+    <!-- Medal categories rendered here -->
+    <div id="medalsContent"></div>
+
+  </main>
+</div>
+
+<script>
+const ALL_MEDALS = [
+  // ── Getting Started ──
+  { id: 'first_diagnostic',  icon: '🎯', name: 'First Steps',       desc: 'Complete your first diagnostic',            cat: 'Getting Started' },
+  { id: 'first_green',       icon: '🥇', name: 'First Green',       desc: 'Get your first green topic',                cat: 'Getting Started' },
+  { id: 'first_amber',       icon: '🟡', name: 'Getting There',     desc: 'Get your first amber topic',                cat: 'Getting Started' },
+  { id: 'setup_complete',    icon: '⚙️', name: 'All Set Up',        desc: 'Complete the setup flow',                   cat: 'Getting Started' },
+  { id: 'profile_complete',  icon: '👤', name: 'Identity',          desc: 'Set your name and details',                 cat: 'Getting Started' },
+
+  // ── Diagnostic Milestones ──
+  { id: 'diag_5',            icon: '📝', name: 'Warming Up',        desc: 'Complete 5 diagnostics',                    cat: 'Diagnostic Milestones' },
+  { id: 'diag_10',           icon: '📋', name: 'Getting Serious',   desc: 'Complete 10 diagnostics',                   cat: 'Diagnostic Milestones' },
+  { id: 'diag_25',           icon: '📊', name: 'Dedicated',         desc: 'Complete 25 diagnostics',                   cat: 'Diagnostic Milestones' },
+  { id: 'diag_50',           icon: '🗂️', name: 'Half Century',      desc: 'Complete 50 diagnostics',                   cat: 'Diagnostic Milestones' },
+  { id: 'diag_100',          icon: '💯', name: 'Century',           desc: 'Complete 100 diagnostics',                  cat: 'Diagnostic Milestones' },
+
+  // ── Perfect Scores ──
+  { id: 'perfect_score',     icon: '⚡', name: 'Perfect Score',     desc: 'Get every question right in a diagnostic',  cat: 'Perfect Scores' },
+  { id: 'perfect_3',         icon: '🌟', name: 'Hat Trick',         desc: 'Get 3 perfect diagnostics',                 cat: 'Perfect Scores' },
+  { id: 'perfect_10',        icon: '💎', name: 'Flawless',          desc: 'Get 10 perfect diagnostics',                cat: 'Perfect Scores' },
+
+  // ── Green Topics ──
+  { id: 'green_3',           icon: '🌱', name: 'Sprouting',         desc: 'Get 3 topics to green',                     cat: 'Green Topics' },
+  { id: 'green_5',           icon: '🌿', name: 'Growing',           desc: 'Get 5 topics to green',                     cat: 'Green Topics' },
+  { id: 'green_10',          icon: '🌳', name: 'Flourishing',       desc: 'Get 10 topics to green',                    cat: 'Green Topics' },
+  { id: 'green_20',          icon: '🏕️', name: 'Forest',            desc: 'Get 20 topics to green',                    cat: 'Green Topics' },
+  { id: 'green_50',          icon: '🌍', name: 'Green Planet',      desc: 'Get 50 topics to green',                    cat: 'Green Topics' },
+
+  // ── Subject Mastery ──
+  { id: 'subject_master',    icon: '📚', name: 'Subject Master',    desc: 'Get all topics green in one subject',       cat: 'Subject Mastery' },
+  { id: 'subject_master_2',  icon: '🎓', name: 'Double Major',      desc: 'Master 2 subjects',                         cat: 'Subject Mastery' },
+  { id: 'subject_master_all',icon: '👑', name: 'Scholar',           desc: 'Master every subject',                      cat: 'Subject Mastery' },
+  { id: 'all_clear',         icon: '🏆', name: 'All Clear',         desc: 'Every single topic is green',               cat: 'Subject Mastery' },
+
+  // ── Improvement ──
+  { id: 'moving_up',         icon: '📈', name: 'Moving Up',         desc: 'Improve 5 topics by a colour',              cat: 'Improvement' },
+  { id: 'moving_up_10',      icon: '🚀', name: 'Rocket Rise',       desc: 'Improve 10 topics by a colour',             cat: 'Improvement' },
+  { id: 'red_to_green',      icon: '🔄', name: 'Full Turnaround',   desc: 'Move a topic from red to green',            cat: 'Improvement' },
+  { id: 'red_to_green_5',    icon: '🦋', name: 'Transformation',    desc: 'Move 5 topics from red to green',           cat: 'Improvement' },
+  { id: 'no_reds',           icon: '🛡️', name: 'No More Reds',      desc: 'Have zero red topics',                      cat: 'Improvement' },
+
+  // ── Streaks ──
+  { id: 'streak_3',          icon: '🔥', name: 'Heating Up',        desc: '3-day study streak',                        cat: 'Streaks' },
+  { id: 'on_fire',           icon: '🔥', name: 'On Fire',           desc: '7-day study streak',                        cat: 'Streaks' },
+  { id: 'streak_14',         icon: '⚡', name: 'Unstoppable',       desc: '14-day study streak',                       cat: 'Streaks' },
+  { id: 'streak_30',         icon: '🌋', name: 'Inferno',           desc: '30-day study streak',                       cat: 'Streaks' },
+  { id: 'streak_60',         icon: '☀️', name: 'Solar Powered',     desc: '60-day study streak',                       cat: 'Streaks' },
+  { id: 'streak_100',        icon: '💫', name: 'Legendary',         desc: '100-day study streak',                      cat: 'Streaks' },
+
+  // ── Speed & Consistency ──
+  { id: 'daily_3_diag',      icon: '⏱️', name: 'Power Hour',        desc: 'Complete 3 diagnostics in one day',         cat: 'Speed & Consistency' },
+  { id: 'daily_5_diag',      icon: '🏃', name: 'Sprint Session',    desc: 'Complete 5 diagnostics in one day',         cat: 'Speed & Consistency' },
+  { id: 'weekend_warrior',   icon: '🗓️', name: 'Weekend Warrior',   desc: 'Study on both Saturday and Sunday',         cat: 'Speed & Consistency' },
+  { id: 'early_bird',        icon: '🌅', name: 'Early Bird',        desc: 'Complete a diagnostic before 8am',          cat: 'Speed & Consistency' },
+  { id: 'night_owl',         icon: '🦉', name: 'Night Owl',         desc: 'Complete a diagnostic after 10pm',          cat: 'Speed & Consistency' },
+
+  // ── Subject Specific ──
+  { id: 'first_written_full',icon: '✍️', name: 'Wordsmith',         desc: 'Get full marks on a written question',      cat: 'Written Questions' },
+  { id: 'written_5_full',    icon: '📖', name: 'Essay Expert',      desc: 'Get full marks on 5 written questions',     cat: 'Written Questions' },
+  { id: 'all_tiers_green',   icon: '🎯', name: 'Tier Conqueror',    desc: 'Answer green, amber & red Qs correctly',    cat: 'Written Questions' },
+
+  // ── Collection ──
+  { id: 'medals_10',         icon: '🎖️', name: 'Collector',         desc: 'Earn 10 medals',                            cat: 'Collection' },
+  { id: 'medals_25',         icon: '🏅', name: 'Medal Hoarder',     desc: 'Earn 25 medals',                            cat: 'Collection' },
+  { id: 'medals_40',         icon: '🥇', name: 'Medal Master',      desc: 'Earn 40 medals',                            cat: 'Collection' },
+  { id: 'medals_all',        icon: '👾', name: 'Completionist',     desc: 'Earn every single medal',                   cat: 'Collection' },
+
+  // ── Milestones ──
+  { id: 'one_week',          icon: '📅', name: 'One Week In',       desc: 'Use RAG Learning for 7 days',               cat: 'Milestones' },
+  { id: 'one_month',         icon: '🗓️', name: 'Monthly Regular',   desc: 'Use RAG Learning for 30 days',              cat: 'Milestones' },
+  { id: 'half_topics',       icon: '⚖️', name: 'Halfway There',     desc: 'Test at least half your topics',            cat: 'Milestones' },
+  { id: 'all_topics_tested', icon: '✅', name: 'Full Coverage',     desc: 'Test every single topic at least once',     cat: 'Milestones' },
+];
+
+// Group medals by category
+const CATEGORIES = [];
+const catMap = {};
+ALL_MEDALS.forEach(m => {
+  if (!catMap[m.cat]) {
+    catMap[m.cat] = [];
+    CATEGORIES.push(m.cat);
+  }
+  catMap[m.cat].push(m);
+});
+
+function renderPage(earnedIds) {
+  const earned = earnedIds.size;
+  const total  = ALL_MEDALS.length;
+  const locked = total - earned;
+  const pct    = Math.round((earned / total) * 100);
+
+  document.getElementById('medalSub').textContent = `${earned} of ${total} medals earned — ${pct}% complete`;
+  document.getElementById('earnedNum').textContent = earned;
+  document.getElementById('lockedNum').textContent = locked;
+  document.getElementById('totalNum').textContent  = total;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = `${pct}% unlocked`;
+
+  const container = document.getElementById('medalsContent');
+  container.innerHTML = CATEGORIES.map(cat => `
+    <div class="category">
+      <div class="category-title">${cat}</div>
+      <div class="category-grid">
+        ${catMap[cat].map(m => {
+          const isEarned = earnedIds.has(m.id);
+          return `
+            <div class="medal-card ${isEarned ? 'earned' : 'locked'}">
+              <div class="medal-icon">${m.icon}</div>
+              <div class="medal-name">${m.name}</div>
+              <div class="medal-desc">${m.desc}</div>
+              ${isEarned
+                ? `<span class="medal-badge">Earned</span>`
+                : `<span class="medal-lock">🔒 Locked</span>`}
+            </div>`;
+        }).join('')}
+      </div>
+    </div>`).join('');
+}
+
+async function logout() {
+  await supabaseClient.auth.signOut();
+  window.location = 'auth/login.html';
+}
+
+async function load() {
+  const { data: { user }, error } = await supabaseClient.auth.getUser();
+  if (error || !user) { window.location = 'auth/login.html'; return; }
+
+  // Load profile for sidebar
+  const { data: profile } = await supabaseClient.from('profiles').select('first_name, last_name').eq('id', user.id).single();
+  const firstName = profile?.first_name || '';
+  const lastName  = profile?.last_name  || '';
+  document.getElementById('sidebarName').textContent  = `${firstName} ${lastName}`.trim();
+  document.getElementById('sidebarEmail').textContent = user.email;
+  document.getElementById('avatarInitials').textContent = ((firstName[0] || '') + (lastName[0] || '')).toUpperCase() || '?';
+
+  // Load earned medals
+  const { data: medals } = await supabaseClient.from('user_medals').select('medal_id').eq('user_id', user.id);
+  const earnedIds = new Set((medals || []).map(m => m.medal_id));
+
+  renderPage(earnedIds);
+}
+
+load();
+</script>
+</body>
+</html>

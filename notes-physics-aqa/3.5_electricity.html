@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.5 Electricity — AQA A-Level Physics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>3.5 Electricity</h1>
+
+<!-- BASICS -->
+<h2>1. Charge, Current, and Potential Difference</h2>
+
+<div class="def-box"><strong>Electric current (I):</strong> The rate of flow of charge. I = Q / t. Units: A (amperes).<br>
+<strong>Charge (Q):</strong> Q = It. Units: C (coulombs). The charge of one electron = 1.60 &times; 10<sup>-19</sup> C.</div>
+
+<p>Conventional current flows from positive to negative (opposite to the direction of electron flow).</p>
+
+<div class="def-box"><strong>Potential difference (V):</strong> The energy transferred per unit charge passing between two points. V = W / Q. Units: V (volts). 1 V = 1 J C<sup>-1</sup>.</div>
+
+<!-- RESISTANCE -->
+<h2>2. Resistance</h2>
+<div class="def-box"><strong>Resistance (R):</strong> The opposition to the flow of current. R = V / I. Units: &Omega; (ohms).</div>
+
+<h3>Ohm's Law</h3>
+<div class="def-box"><strong>Ohm's Law:</strong> The current through a conductor is directly proportional to the potential difference across it, provided physical conditions (e.g. temperature) remain constant. Such a conductor is called an <strong>ohmic conductor</strong>.</div>
+
+<h3>I-V Characteristics</h3>
+<table>
+  <tr><th>Component</th><th>I-V Graph Shape</th><th>Description</th></tr>
+  <tr><td><strong>Ohmic resistor</strong> (e.g. wire at constant temperature)</td><td>Straight line through the origin</td><td>Resistance is constant. Current is proportional to PD.</td></tr>
+  <tr><td><strong>Filament lamp</strong></td><td>Curved line (S-shape through origin)</td><td>Resistance increases as temperature increases (the wire gets hotter at higher currents). Gradient decreases at higher PD.</td></tr>
+  <tr><td><strong>Semiconductor diode</strong></td><td>Virtually zero current in reverse; exponential increase above ~0.6 V forward bias</td><td>Very high resistance in reverse direction. Low resistance in forward direction above the threshold voltage (~0.6 V for silicon).</td></tr>
+  <tr><td><strong>Thermistor (NTC)</strong></td><td>&mdash;</td><td>Resistance <strong>decreases</strong> as temperature increases. Used in temperature sensors.</td></tr>
+  <tr><td><strong>LDR</strong></td><td>&mdash;</td><td>Resistance <strong>decreases</strong> as light intensity increases. Used in light sensors.</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Be careful with thermistor types. AQA specifies NTC (Negative Temperature Coefficient) thermistors, where resistance falls as temperature rises. This is because more charge carriers are released at higher temperatures.</div>
+
+<!-- RESISTIVITY -->
+<h2>3. Resistivity</h2>
+<div class="eq">&rho; = RA / L</div>
+<ul>
+  <li>&rho; = resistivity (&Omega; m) &mdash; a property of the material</li>
+  <li>R = resistance (&Omega;)</li>
+  <li>A = cross-sectional area (m<sup>2</sup>)</li>
+  <li>L = length (m)</li>
+</ul>
+<p>Good conductors (e.g. copper) have very low resistivity (~10<sup>-8</sup> &Omega; m). Insulators (e.g. rubber) have very high resistivity (~10<sup>13</sup> &Omega; m).</p>
+
+<h3>Effect of Temperature on Metals</h3>
+<p>For metals, resistance increases with temperature. As temperature rises, positive metal ions vibrate more, so conduction electrons collide more frequently, reducing their drift velocity. The number of charge carriers stays roughly constant.</p>
+
+<h3>Superconductors</h3>
+<div class="def-box"><strong>Superconductor:</strong> A material whose resistivity drops to zero below a critical temperature (transition temperature). Current flows without any energy loss.</div>
+<p>Applications: MRI scanners, particle accelerators, maglev trains, power transmission without losses.</p>
+
+<!-- EMF AND INTERNAL RESISTANCE -->
+<h2>4. EMF and Internal Resistance</h2>
+<div class="def-box"><strong>Electromotive force (EMF, &epsilon;):</strong> The energy transferred per unit charge by the source in driving charge around a complete circuit. Units: V. It is NOT a force.</div>
+
+<div class="def-box"><strong>Internal resistance (r):</strong> The resistance of the source itself. Some energy is dissipated inside the source as heat.</div>
+
+<div class="eq">&epsilon; = I(R + r) = V + Ir</div>
+<div class="eq">&epsilon; = IR + Ir</div>
+<ul>
+  <li>&epsilon; = EMF of the source (V)</li>
+  <li>I = current (A)</li>
+  <li>R = external (load) resistance (&Omega;)</li>
+  <li>r = internal resistance (&Omega;)</li>
+  <li>V = terminal PD (= IR, the PD across the external resistance)</li>
+  <li>Ir = "lost volts" (energy wasted inside the source)</li>
+</ul>
+
+<p>The terminal PD (V) is always less than the EMF when current flows, because of the voltage drop across the internal resistance.</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> To find &epsilon; and r experimentally, plot V against I. The y-intercept gives &epsilon; and the gradient gives &minus;r (since V = &epsilon; &minus; Ir).</div>
+
+<!-- KIRCHHOFF'S LAWS -->
+<h2>5. Kirchhoff's Laws</h2>
+
+<div class="def-box"><strong>Kirchhoff's First Law (junction rule):</strong> The total current entering a junction equals the total current leaving the junction. This is based on conservation of charge.<br>
+&Sigma;I<sub>in</sub> = &Sigma;I<sub>out</sub></div>
+
+<div class="def-box"><strong>Kirchhoff's Second Law (loop rule):</strong> The sum of EMFs around any closed loop equals the sum of the PDs around that loop. This is based on conservation of energy.<br>
+&Sigma;&epsilon; = &Sigma;IR</div>
+
+<!-- SERIES AND PARALLEL -->
+<h2>6. Series and Parallel Circuits</h2>
+
+<h3>Series</h3>
+<ul>
+  <li>Same current through all components: I<sub>total</sub> = I<sub>1</sub> = I<sub>2</sub> = ...</li>
+  <li>PDs add up: V<sub>total</sub> = V<sub>1</sub> + V<sub>2</sub> + ...</li>
+  <li>Resistances add: R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub> + ...</li>
+</ul>
+
+<h3>Parallel</h3>
+<ul>
+  <li>Same PD across each branch: V<sub>total</sub> = V<sub>1</sub> = V<sub>2</sub> = ...</li>
+  <li>Currents add up: I<sub>total</sub> = I<sub>1</sub> + I<sub>2</sub> + ...</li>
+  <li>Reciprocal of resistances add: 1/R<sub>total</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + ...</li>
+</ul>
+
+<div class="tip-box"><strong>Exam Tip:</strong> For two resistors in parallel, use R<sub>total</sub> = (R<sub>1</sub> &times; R<sub>2</sub>) / (R<sub>1</sub> + R<sub>2</sub>). The total resistance is always less than the smallest individual resistance.</div>
+
+<!-- POTENTIAL DIVIDERS -->
+<h2>7. Potential Dividers</h2>
+<p>A potential divider consists of two (or more) resistors in series connected across a supply voltage. The output voltage is taken across one of the resistors.</p>
+
+<div class="eq">V<sub>out</sub> = V<sub>in</sub> &times; R<sub>2</sub> / (R<sub>1</sub> + R<sub>2</sub>)</div>
+
+<h3>Sensor Circuits</h3>
+<p>Potential dividers with variable resistors (thermistors, LDRs) can be used as sensor circuits:</p>
+<ul>
+  <li><strong>Thermistor in a potential divider:</strong> As temperature rises, thermistor resistance falls, so V<sub>out</sub> across the thermistor falls (and V<sub>out</sub> across the fixed resistor rises).</li>
+  <li><strong>LDR in a potential divider:</strong> As light intensity increases, LDR resistance falls, so V<sub>out</sub> across the LDR falls.</li>
+</ul>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Think about which resistor V<sub>out</sub> is measured across. If V<sub>out</sub> is across the thermistor, then V<sub>out</sub> decreases when temperature increases (because the thermistor resistance decreases). If V<sub>out</sub> is across the fixed resistor, V<sub>out</sub> increases.</div>
+
+<!-- POWER -->
+<h2>8. Electrical Power</h2>
+<div class="eq">P = IV</div>
+<p>Using V = IR, we can derive:</p>
+<div class="eq">P = I<sup>2</sup>R = V<sup>2</sup>/R</div>
+
+<h3>Energy Transferred</h3>
+<div class="eq">E = Pt = IVt = I<sup>2</sup>Rt = V<sup>2</sup>t/R</div>
+<p>Units: J (joules). Sometimes expressed in kWh for domestic energy calculations (1 kWh = 3.6 &times; 10<sup>6</sup> J).</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Choose the power formula based on what you know. If you know I and R but not V, use P = I<sup>2</sup>R. If you know V and R but not I, use P = V<sup>2</sup>/R. This avoids unnecessary intermediate calculations.</div>
+
+</div>
+</body>
+</html>

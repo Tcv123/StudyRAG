@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.1.5 Market Failure and Government Intervention — AQA A-Level Economics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .diagram-box { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
+  .diagram-box svg { max-width: 100%; }
+  .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 8px; font-style: italic; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>3.1.5 Market Failure and Government Intervention</h1>
+
+<h2>What Is Market Failure?</h2>
+
+<div class="def-box">
+<strong>Market failure</strong> occurs when the free market mechanism fails to allocate resources efficiently, leading to a net welfare loss. The market equilibrium does not coincide with the socially optimal outcome (where MSB = MSC).
+</div>
+
+<p>Types of market failure include:</p>
+<ul>
+  <li>Externalities (positive and negative)</li>
+  <li>Public goods</li>
+  <li>Merit and demerit goods</li>
+  <li>Information failure (asymmetric and imperfect information)</li>
+  <li>Market power (monopoly)</li>
+  <li>Factor immobility</li>
+  <li>Income and wealth inequality</li>
+</ul>
+
+<h2>Externalities</h2>
+
+<div class="def-box">
+<strong>Externalities</strong> are costs or benefits that affect a third party not directly involved in the production or consumption of a good. They represent a divergence between private costs/benefits and social costs/benefits.<br><br>
+<strong>MSC = MPC + External Cost</strong><br>
+<strong>MSB = MPB + External Benefit</strong>
+</div>
+
+<h3>Negative Externalities in Production</h3>
+<p>When firms impose costs on third parties (e.g., factory pollution affecting local residents). MSC > MPC. The free market over-produces relative to the socially optimal level.</p>
+
+<div class="diagram-box">
+<svg width="420" height="330" viewBox="0 0 420 330">
+  <!-- Axes -->
+  <line x1="60" y1="280" x2="380" y2="280" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="280" x2="60" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="380,280 370,275 370,285" fill="#1a1a2e"/>
+  <polygon points="60,30 55,40 65,40" fill="#1a1a2e"/>
+  <text x="220" y="310" text-anchor="middle" font-size="12" fill="#1a1a2e">Quantity</text>
+  <text x="20" y="155" text-anchor="middle" font-size="12" fill="#1a1a2e" transform="rotate(-90,20,155)">Cost/Benefit</text>
+  <!-- MPC (Supply) -->
+  <line x1="80" y1="260" x2="350" y2="80" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="340" y="72" font-size="11" fill="#1a73e8" font-weight="bold">MPC (S)</text>
+  <!-- MSC -->
+  <line x1="80" y1="210" x2="350" y2="30" stroke="#ef4444" stroke-width="2.5"/>
+  <text x="340" y="25" font-size="11" fill="#ef4444" font-weight="bold">MSC</text>
+  <!-- MPB = MSB (Demand) -->
+  <line x1="80" y1="60" x2="350" y2="260" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="340" y="255" font-size="11" fill="#22c55e" font-weight="bold">MPB=MSB (D)</text>
+  <!-- Market equilibrium -->
+  <circle cx="240" cy="153" r="4" fill="#1a73e8"/>
+  <line x1="240" y1="153" x2="240" y2="280" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="235" y="293" font-size="11" fill="#1a73e8">Qm</text>
+  <!-- Social optimum -->
+  <circle cx="210" cy="135" r="4" fill="#ef4444"/>
+  <line x1="210" y1="135" x2="210" y2="280" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="200" y="293" font-size="11" fill="#ef4444">Q*</text>
+  <!-- Welfare loss triangle -->
+  <polygon points="210,135 240,153 240,120" fill="rgba(239,68,68,0.25)" stroke="#ef4444" stroke-width="1"/>
+  <text x="245" y="138" font-size="10" fill="#ef4444">Welfare loss</text>
+  <!-- External cost arrow -->
+  <line x1="165" y1="170" x2="165" y2="125" stroke="#555" stroke-width="1.5"/>
+  <text x="100" y="150" font-size="10" fill="#555">External cost</text>
+</svg>
+<div class="diagram-caption">Figure 1: Negative externality in production — overproduction at Qm compared to social optimum Q*</div>
+</div>
+
+<h3>Negative Externalities in Consumption</h3>
+<p>When consumers impose costs on third parties (e.g., smoking, alcohol, driving). MSB &lt; MPB. Over-consumption relative to social optimum.</p>
+
+<h3>Positive Externalities in Production</h3>
+<p>When production creates benefits for third parties (e.g., training workers who may move to other firms). MSC &lt; MPC. Under-production relative to social optimum.</p>
+
+<h3>Positive Externalities in Consumption</h3>
+<p>When consumption creates benefits for third parties (e.g., vaccination — herd immunity, education — lower crime). MSB &gt; MPB. Under-consumption relative to social optimum.</p>
+
+<div class="diagram-box">
+<svg width="420" height="330" viewBox="0 0 420 330">
+  <!-- Axes -->
+  <line x1="60" y1="280" x2="380" y2="280" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="280" x2="60" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="380,280 370,275 370,285" fill="#1a1a2e"/>
+  <polygon points="60,30 55,40 65,40" fill="#1a1a2e"/>
+  <text x="220" y="310" text-anchor="middle" font-size="12" fill="#1a1a2e">Quantity</text>
+  <text x="20" y="155" text-anchor="middle" font-size="12" fill="#1a1a2e" transform="rotate(-90,20,155)">Cost/Benefit</text>
+  <!-- MPC = MSC (Supply) -->
+  <line x1="80" y1="260" x2="350" y2="60" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="340" y="52" font-size="11" fill="#1a73e8" font-weight="bold">MPC=MSC (S)</text>
+  <!-- MPB (Demand) -->
+  <line x1="80" y1="80" x2="330" y2="260" stroke="#f59e0b" stroke-width="2.5"/>
+  <text x="320" y="255" font-size="11" fill="#f59e0b" font-weight="bold">MPB (D)</text>
+  <!-- MSB -->
+  <line x1="120" y1="50" x2="370" y2="230" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="350" y="222" font-size="11" fill="#22c55e" font-weight="bold">MSB</text>
+  <!-- Market equilibrium -->
+  <circle cx="215" cy="157" r="4" fill="#f59e0b"/>
+  <line x1="215" y1="157" x2="215" y2="280" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="210" y="293" font-size="11" fill="#f59e0b">Qm</text>
+  <!-- Social optimum -->
+  <circle cx="248" cy="142" r="4" fill="#22c55e"/>
+  <line x1="248" y1="142" x2="248" y2="280" stroke="#22c55e" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="243" y="293" font-size="11" fill="#22c55e">Q*</text>
+  <!-- Welfare loss triangle -->
+  <polygon points="215,157 248,142 248,170" fill="rgba(34,197,94,0.25)" stroke="#22c55e" stroke-width="1"/>
+  <text x="255" y="165" font-size="10" fill="#22c55e">Welfare loss</text>
+  <!-- External benefit -->
+  <text x="85" y="55" font-size="10" fill="#555">External benefit</text>
+</svg>
+<div class="diagram-caption">Figure 2: Positive externality in consumption — under-consumption at Qm compared to social optimum Q*</div>
+</div>
+
+<h2>Public Goods</h2>
+
+<div class="def-box">
+<strong>Public goods</strong> have two key characteristics:<br>
+<strong>1. Non-excludable</strong> — once provided, it is impossible to prevent anyone from using the good (whether they have paid or not).<br>
+<strong>2. Non-rivalrous</strong> — one person's consumption does not reduce the amount available for others (zero marginal cost of an extra user).<br><br>
+Examples: national defence, street lighting, flood defence systems, lighthouses.
+</div>
+
+<h3>The Free-Rider Problem</h3>
+<p>Because public goods are non-excludable, consumers have an incentive to "free ride" — to enjoy the good without paying. If everyone free rides, no revenue is generated, and private firms will not supply the good. This is a complete market failure — the good will not be produced by the market.</p>
+
+<p>Therefore, public goods must be provided by the government, funded through taxation.</p>
+
+<h3>Quasi-Public Goods</h3>
+<p>Many goods exhibit some but not all characteristics of public goods. For example:</p>
+<ul>
+  <li>Roads are non-excludable (usually) but can be rivalrous (congestion)</li>
+  <li>Parks are rivalrous at peak times but generally non-excludable</li>
+  <li>Technology is making some goods more excludable (e.g., toll roads, encryption)</li>
+</ul>
+
+<h2>Merit and Demerit Goods</h2>
+
+<div class="def-box">
+<strong>Merit goods</strong> are goods that are under-consumed in a free market because consumers undervalue their benefits (due to information failure). They generate positive externalities. Examples: education, healthcare, vaccinations.<br><br>
+<strong>Demerit goods</strong> are goods that are over-consumed in a free market because consumers undervalue their costs/harms (due to information failure). They generate negative externalities. Examples: cigarettes, alcohol, gambling.
+</div>
+
+<p>Merit and demerit goods involve two sources of market failure:</p>
+<ol>
+  <li><strong>Information failure</strong> — consumers do not fully understand the private benefits/costs</li>
+  <li><strong>Externalities</strong> — third-party effects are not reflected in market prices</li>
+</ol>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Merit goods are NOT the same as public goods. Merit goods are excludable and rivalrous — they CAN be provided by the market, but the market provides too little. Public goods will not be provided at all by the market.
+</div>
+
+<h2>Information Failure</h2>
+
+<div class="def-box">
+<strong>Asymmetric information</strong> — one party in a transaction has more or better information than the other. This can lead to adverse selection and moral hazard.<br><br>
+<strong>Imperfect information</strong> — consumers or producers lack complete knowledge about prices, quality, or costs, leading to sub-optimal decisions.
+</div>
+
+<p><strong>Examples:</strong></p>
+<ul>
+  <li>Second-hand car market (seller knows more about car quality than buyer — "lemons problem")</li>
+  <li>Insurance markets (insured person knows more about their risk level — adverse selection)</li>
+  <li>Labour markets (workers know more about their abilities than employers)</li>
+  <li>Healthcare (doctors know more than patients — information asymmetry)</li>
+</ul>
+
+<h2>Government Intervention</h2>
+
+<h3>Indirect Taxes</h3>
+<p>Used to correct negative externalities by raising the price of the good, reducing quantity demanded towards the social optimum.</p>
+<ul>
+  <li><strong>Specific tax</strong> — fixed amount per unit (e.g., £1 per pack of cigarettes). Shifts supply curve up by a constant amount.</li>
+  <li><strong>Ad valorem tax</strong> — percentage of price (e.g., VAT at 20%). Supply curve pivots upward.</li>
+</ul>
+
+<p><strong>Advantages:</strong> Market-based, raises revenue, discourages consumption.</p>
+<p><strong>Disadvantages:</strong> Difficult to calculate the exact external cost, regressive (hits low-income harder), may cause black markets, inelastic demand limits effectiveness (e.g., tobacco).</p>
+
+<h3>Subsidies</h3>
+<p>Used to correct positive externalities by reducing the price, encouraging consumption/production towards the social optimum.</p>
+
+<p><strong>Advantages:</strong> Increases output towards Q*, lowers prices for consumers, market-based.</p>
+<p><strong>Disadvantages:</strong> Costly for taxpayers (opportunity cost), difficult to calculate optimal subsidy, may encourage inefficiency, may benefit producers more than consumers.</p>
+
+<h3>Maximum and Minimum Prices</h3>
+
+<table>
+<tr><th>Feature</th><th>Maximum Price (Price Ceiling)</th><th>Minimum Price (Price Floor)</th></tr>
+<tr><td>Set</td><td>Below equilibrium</td><td>Above equilibrium</td></tr>
+<tr><td>Purpose</td><td>Make goods affordable (e.g., rent controls)</td><td>Protect producers' incomes (e.g., minimum wage, agricultural prices)</td></tr>
+<tr><td>Effect</td><td>Excess demand (shortage)</td><td>Excess supply (surplus)</td></tr>
+<tr><td>Problem</td><td>Shortages, black markets, reduced quality</td><td>Surplus, cost to government (if buying surplus), unemployment (min wage)</td></tr>
+</table>
+
+<h3>Tradeable Pollution Permits</h3>
+<p>Government sets a total cap on pollution and issues permits that firms can buy/sell. Firms that can reduce pollution cheaply sell permits; firms that find it expensive to reduce pollution buy them.</p>
+
+<p><strong>Advantages:</strong> Market-based, creates incentive to reduce pollution, total pollution controlled, flexible.</p>
+<p><strong>Disadvantages:</strong> Difficult to set the correct cap, risk of market manipulation, firms may pass costs to consumers, requires monitoring/enforcement.</p>
+
+<h3>Regulation and Legislation</h3>
+<p>Direct government controls on behaviour (e.g., emission standards, health and safety laws, planning regulations, banning substances).</p>
+
+<p><strong>Advantages:</strong> Direct, clear rules, can target specific problems.</p>
+<p><strong>Disadvantages:</strong> Costly to enforce, reduces flexibility, may stifle innovation, risk of regulatory capture.</p>
+
+<h3>Provision of Public Goods</h3>
+<p>Government directly provides goods that the market would not (national defence, street lighting). Funded through taxation.</p>
+
+<h3>Provision of Information</h3>
+<p>Government campaigns to correct information failure (e.g., health warnings on cigarettes, nutritional labelling, education campaigns about drug dangers).</p>
+
+<h2>Government Failure</h2>
+
+<div class="def-box">
+<strong>Government failure</strong> occurs when government intervention in the economy leads to a net welfare loss, or when intervention fails to correct market failure and may make the situation worse.
+</div>
+
+<h3>Causes of Government Failure</h3>
+<ul>
+  <li><strong>Unintended consequences</strong> — policies create unforeseen problems (e.g., rent controls reducing housing supply)</li>
+  <li><strong>Information gaps</strong> — government may lack information to set optimal tax/subsidy levels</li>
+  <li><strong>Administrative costs</strong> — cost of implementing and enforcing policy may exceed benefits</li>
+  <li><strong>Distortion of market signals</strong> — intervention may distort price signals and create misallocation</li>
+  <li><strong>Regulatory capture</strong> — regulators may serve the interests of the industry they regulate rather than consumers</li>
+  <li><strong>Political self-interest</strong> — politicians may pursue policies for electoral gain rather than efficiency</li>
+  <li><strong>Moral hazard</strong> — government safety nets may encourage risky behaviour</li>
+  <li><strong>Time lags</strong> — policy implementation may be too slow to address rapidly changing conditions</li>
+</ul>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Always evaluate government intervention by considering the possibility of government failure. A strong answer will weigh market failure against government failure. Just because a market fails does not automatically mean intervention will improve outcomes — the cure may be worse than the disease.
+</div>
+
+<h2>Evaluation Framework for Intervention Policies</h2>
+<p>When evaluating any policy, consider:</p>
+<ol>
+  <li>Does it correct the market failure effectively?</li>
+  <li>Are there unintended consequences?</li>
+  <li>What is the cost to taxpayers and the opportunity cost?</li>
+  <li>Is it practically enforceable?</li>
+  <li>What are the distributional effects (who gains, who loses)?</li>
+  <li>Are there better alternative policies?</li>
+  <li>Short-run vs long-run effects?</li>
+  <li>Does the scale of market failure justify the scale of intervention?</li>
+</ol>
+
+</div>
+</body>
+</html>

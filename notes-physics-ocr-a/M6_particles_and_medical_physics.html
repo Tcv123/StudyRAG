@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 6 — Particles and Medical Physics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module 6 — Particles and Medical Physics</h1>
+<p>This module covers capacitors, electric fields, electromagnetism, nuclear and particle physics, and medical imaging.</p>
+
+<h2>6.1 Capacitors</h2>
+
+<div class="definition">
+  <strong>Capacitance (C):</strong> The charge stored per unit potential difference across a capacitor. A capacitor stores energy in an electric field between its plates.
+</div>
+<div class="equation">C = Q / V</div>
+<p>Units: farads (F), where 1 F = 1 C V<sup>&minus;1</sup>. Typical values: &mu;F (10<sup>&minus;6</sup>), nF (10<sup>&minus;9</sup>), pF (10<sup>&minus;12</sup>).</p>
+
+<h3>Energy Stored</h3>
+<div class="equation">E = &frac12;QV = &frac12;CV<sup>2</sup> = &frac12;Q<sup>2</sup>/C</div>
+<p>This energy is stored in the electric field between the plates. On a Q-V graph, the energy stored is the area under the graph (a triangle for a capacitor, since Q &prop; V).</p>
+
+<h3>Capacitors in Series and Parallel</h3>
+<table>
+  <tr><th></th><th>Series</th><th>Parallel</th></tr>
+  <tr><td>Charge</td><td>Same on each: Q<sub>total</sub> = Q<sub>1</sub> = Q<sub>2</sub></td><td>Adds up: Q<sub>total</sub> = Q<sub>1</sub> + Q<sub>2</sub></td></tr>
+  <tr><td>PD</td><td>Adds up: V<sub>total</sub> = V<sub>1</sub> + V<sub>2</sub></td><td>Same across each: V<sub>total</sub> = V<sub>1</sub> = V<sub>2</sub></td></tr>
+  <tr><td>Capacitance</td><td>1/C<sub>total</sub> = 1/C<sub>1</sub> + 1/C<sub>2</sub></td><td>C<sub>total</sub> = C<sub>1</sub> + C<sub>2</sub></td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Note that capacitors in series combine like resistors in parallel, and vice versa. Capacitors in parallel have a larger total capacitance; in series the total is smaller than the smallest individual capacitor.
+</div>
+
+<h3>Charging and Discharging</h3>
+
+<p><strong>Discharging through a resistor:</strong></p>
+<div class="equation">Q = Q<sub>0</sub> e<sup>&minus;t/RC</sup></div>
+<div class="equation">V = V<sub>0</sub> e<sup>&minus;t/RC</sup></div>
+<div class="equation">I = I<sub>0</sub> e<sup>&minus;t/RC</sup></div>
+<p>All three quantities (charge, voltage, current) decay exponentially during discharge.</p>
+
+<p><strong>Charging through a resistor:</strong></p>
+<div class="equation">Q = Q<sub>0</sub>(1 &minus; e<sup>&minus;t/RC</sup>)</div>
+<div class="equation">V = V<sub>0</sub>(1 &minus; e<sup>&minus;t/RC</sup>)</div>
+<p>Charge and voltage grow towards their maximum values. Current still decays: I = I<sub>0</sub> e<sup>&minus;t/RC</sup>.</p>
+
+<h3>Time Constant</h3>
+<div class="definition">
+  <strong>Time constant (&tau;):</strong> &tau; = RC. The time taken for the charge (or voltage or current) to fall to 1/e (&asymp; 37%) of its initial value during discharge, or to rise to (1 &minus; 1/e) &asymp; 63% of its final value during charging.
+</div>
+<ul>
+  <li>After 1&tau;: value falls to 37% (or rises to 63%)</li>
+  <li>After 5&tau;: capacitor is considered fully charged/discharged (&lt; 1% remaining)</li>
+  <li>To find &tau; experimentally, plot ln(V) or ln(Q) against t. The gradient = &minus;1/RC.</li>
+</ul>
+
+<h2>6.2 Electric Fields</h2>
+
+<div class="definition">
+  <strong>Electric field:</strong> A region of space in which a charged particle experiences a force. Field lines go from positive to negative.
+</div>
+
+<h3>Coulomb's Law</h3>
+<div class="equation">F = kQ<sub>1</sub>Q<sub>2</sub> / r<sup>2</sup> = Q<sub>1</sub>Q<sub>2</sub> / (4&pi;&epsilon;<sub>0</sub>r<sup>2</sup>)</div>
+<p>Where k = 1/(4&pi;&epsilon;<sub>0</sub>) = 8.99 &times; 10<sup>9</sup> N m<sup>2</sup> C<sup>&minus;2</sup>, &epsilon;<sub>0</sub> = permittivity of free space = 8.85 &times; 10<sup>&minus;12</sup> F m<sup>&minus;1</sup>. Like charges repel; unlike charges attract.</p>
+
+<h3>Electric Field Strength</h3>
+<div class="definition">
+  <strong>Electric field strength (E):</strong> The force per unit positive charge at a point in the field.
+</div>
+<div class="equation">E = F / Q</div>
+
+<p><strong>Radial field</strong> (around a point charge or charged sphere):</p>
+<div class="equation">E = kQ / r<sup>2</sup> = Q / (4&pi;&epsilon;<sub>0</sub>r<sup>2</sup>)</div>
+
+<p><strong>Uniform field</strong> (between parallel plates):</p>
+<div class="equation">E = V / d</div>
+<p>Where V = potential difference between the plates (V), d = separation (m). Units: V m<sup>&minus;1</sup> or N C<sup>&minus;1</sup>.</p>
+
+<h3>Electric Potential</h3>
+<div class="equation">V = kQ / r = Q / (4&pi;&epsilon;<sub>0</sub>r)</div>
+<p>Units: V (J C<sup>&minus;1</sup>). Unlike gravitational potential, electric potential can be positive or negative depending on the sign of the charge.</p>
+
+<p><strong>Electric potential energy:</strong></p>
+<div class="equation">E<sub>p</sub> = kQ<sub>1</sub>Q<sub>2</sub> / r</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Electric and gravitational fields have many analogies. However, gravity is always attractive while electric forces can be attractive or repulsive. Also, gravitational potential is always negative, while electric potential can be positive or negative.
+</div>
+
+<h2>6.3 Electromagnetism</h2>
+
+<h3>Force on a Current-Carrying Conductor</h3>
+<div class="equation">F = BIL sin &theta;</div>
+<p>Where B = magnetic flux density (T), I = current (A), L = length of conductor in the field (m), &theta; = angle between the conductor and the field. Use Fleming's left-hand rule: First finger = Field (B), seCond finger = Current (I), thuMb = Motion (F).</p>
+
+<h3>Force on a Moving Charge</h3>
+<div class="equation">F = BQv sin &theta;</div>
+<p>Where Q = charge (C), v = velocity (m s<sup>&minus;1</sup>), &theta; = angle between velocity and field. The force is always perpendicular to both v and B, so a charged particle moving perpendicular to a uniform B field follows a circular path (magnetic force provides centripetal force).</p>
+
+<div class="equation">BQv = mv<sup>2</sup> / r &nbsp;&nbsp;&rArr;&nbsp;&nbsp; r = mv / BQ</div>
+
+<h3>Magnetic Flux and Flux Linkage</h3>
+<div class="definition">
+  <strong>Magnetic flux (&Phi;):</strong> The product of the magnetic flux density and the area perpendicular to the field.
+</div>
+<div class="equation">&Phi; = BA cos &theta;</div>
+<p>Where &Phi; = magnetic flux (Wb), B = magnetic flux density (T), A = area (m<sup>2</sup>), &theta; = angle between B and the normal to the area.</p>
+
+<p><strong>Flux linkage</strong> = N&Phi; (for a coil of N turns). Units: Wb (or Wb turns).</p>
+
+<h3>Faraday's Law</h3>
+<div class="definition">
+  <strong>Faraday's law:</strong> The magnitude of the induced EMF is equal to the rate of change of magnetic flux linkage.
+</div>
+<div class="equation">&epsilon; = &minus;N d&Phi;/dt = &minus;d(N&Phi;)/dt</div>
+
+<h3>Lenz's Law</h3>
+<div class="definition">
+  <strong>Lenz's law:</strong> The direction of the induced EMF (and hence the induced current) is such that it opposes the change in flux that produced it. This is a consequence of conservation of energy.
+</div>
+<p>The negative sign in Faraday's law represents Lenz's law.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> To determine the direction of induced current, ask: what change in flux is occurring? The induced current must create a magnetic field that opposes that change. If flux is increasing, the induced field opposes the external field; if decreasing, it supports it.
+</div>
+
+<h2>6.4 Nuclear Physics</h2>
+
+<h3>Radioactive Decay</h3>
+
+<table>
+  <tr><th>Property</th><th>Alpha (&alpha;)</th><th>Beta-minus (&beta;<sup>&minus;</sup>)</th><th>Gamma (&gamma;)</th></tr>
+  <tr><td>Nature</td><td>Helium nucleus (<sup>4</sup><sub>2</sub>He)</td><td>High-speed electron (<sup>0</sup><sub>&minus;1</sub>e)</td><td>High-energy EM radiation (photon)</td></tr>
+  <tr><td>Charge</td><td>+2e</td><td>&minus;e</td><td>0</td></tr>
+  <tr><td>Mass</td><td>4 u</td><td>~1/1836 u</td><td>0</td></tr>
+  <tr><td>Penetrating power</td><td>Low (stopped by paper / few cm of air)</td><td>Medium (stopped by ~3 mm aluminium)</td><td>High (reduced by several cm of lead)</td></tr>
+  <tr><td>Ionising ability</td><td>Strongly ionising</td><td>Moderately ionising</td><td>Weakly ionising</td></tr>
+  <tr><td>Deflection by E/B fields</td><td>Deflected (positive charge, large mass)</td><td>Deflected opposite to &alpha; (negative, small mass &mdash; more deflected)</td><td>Not deflected</td></tr>
+</table>
+
+<h3>Decay Equations</h3>
+<p><strong>Alpha decay:</strong></p>
+<div class="equation"><sup>A</sup><sub>Z</sub>X &rarr; <sup>A&minus;4</sup><sub>Z&minus;2</sub>Y + <sup>4</sup><sub>2</sub>&alpha;</div>
+
+<p><strong>Beta-minus decay</strong> (neutron &rarr; proton + electron + antineutrino):</p>
+<div class="equation"><sup>A</sup><sub>Z</sub>X &rarr; <sup>A</sup><sub>Z+1</sub>Y + <sup>0</sup><sub>&minus;1</sub>&beta; + <span style="text-decoration:overline">&nu;</span><sub>e</sub></div>
+
+<p><strong>Beta-plus decay</strong> (proton &rarr; neutron + positron + neutrino):</p>
+<div class="equation"><sup>A</sup><sub>Z</sub>X &rarr; <sup>A</sup><sub>Z&minus;1</sub>Y + <sup>0</sup><sub>+1</sub>&beta; + &nu;<sub>e</sub></div>
+
+<p>In all nuclear equations, mass number (A) and charge number (Z) are conserved.</p>
+
+<h3>Radioactive Decay Laws</h3>
+<div class="definition">
+  <strong>Activity (A):</strong> The number of decays per unit time (measured in becquerels, Bq, where 1 Bq = 1 decay per second).<br>
+  <strong>Decay constant (&lambda;):</strong> The probability of a nucleus decaying per unit time. Units: s<sup>&minus;1</sup>.<br>
+  <strong>Half-life (t<sub>&frac12;</sub>):</strong> The time taken for half the nuclei in a sample to decay, or for the activity to halve.
+</div>
+
+<div class="equation">A = &lambda;N</div>
+<div class="equation">N = N<sub>0</sub> e<sup>&minus;&lambda;t</sup></div>
+<div class="equation">A = A<sub>0</sub> e<sup>&minus;&lambda;t</sup></div>
+<div class="equation">&lambda; = ln 2 / t<sub>&frac12;</sub></div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> To find the half-life from a decay graph, read the time taken for the activity (or count rate or number of nuclei) to halve from any starting point — not just the initial value. A graph of ln(A) vs t gives a straight line with gradient = &minus;&lambda;.
+</div>
+
+<h3>Binding Energy and Mass Defect</h3>
+
+<div class="definition">
+  <strong>Mass defect (&Delta;m):</strong> The difference between the mass of the separate nucleons and the mass of the assembled nucleus. The assembled nucleus has less mass.<br>
+  <strong>Binding energy:</strong> The energy required to completely separate all the nucleons in a nucleus. Equivalently, the energy released when the nucleus is assembled from its nucleons.
+</div>
+
+<div class="equation">E = &Delta;mc<sup>2</sup></div>
+<p>Where &Delta;m = mass defect (kg), c = speed of light (3.00 &times; 10<sup>8</sup> m s<sup>&minus;1</sup>).</p>
+<p>1 u = 1.661 &times; 10<sup>&minus;27</sup> kg = 931.5 MeV/c<sup>2</sup>.</p>
+
+<p><strong>Binding energy per nucleon:</strong></p>
+<ul>
+  <li>A graph of binding energy per nucleon vs mass number shows a peak at iron-56 (~8.8 MeV per nucleon)</li>
+  <li><strong>Fusion:</strong> Light nuclei (below iron) combine to form heavier nuclei, releasing energy (binding energy per nucleon increases). Powers stars.</li>
+  <li><strong>Fission:</strong> Heavy nuclei (above iron) split into lighter nuclei, releasing energy (binding energy per nucleon increases). Used in nuclear power and weapons.</li>
+</ul>
+
+<h2>6.5 Particle Physics</h2>
+
+<h3>The Standard Model</h3>
+<p>The Standard Model classifies all known fundamental particles:</p>
+
+<table>
+  <tr><th>Category</th><th>Particles</th><th>Properties</th></tr>
+  <tr><td><strong>Quarks</strong> (6 flavours)</td><td>up (u), down (d), charm (c), strange (s), top (t), bottom (b)</td><td>Have fractional charges. Feel strong nuclear force. Always found in combinations (confinement).</td></tr>
+  <tr><td><strong>Leptons</strong> (6 types)</td><td>electron (e<sup>&minus;</sup>), muon (&mu;<sup>&minus;</sup>), tau (&tau;<sup>&minus;</sup>), plus their neutrinos (&nu;<sub>e</sub>, &nu;<sub>&mu;</sub>, &nu;<sub>&tau;</sub>)</td><td>Do not feel the strong force. Electron, muon, tau have charge &minus;1e; neutrinos are neutral.</td></tr>
+  <tr><td><strong>Exchange bosons</strong></td><td>Photon (&gamma;), W<sup>&plusmn;</sup>, Z<sup>0</sup>, gluons, Higgs boson</td><td>Mediate fundamental forces.</td></tr>
+</table>
+
+<h3>Quark Properties</h3>
+<table>
+  <tr><th>Quark</th><th>Charge</th><th>Baryon Number</th><th>Strangeness</th></tr>
+  <tr><td>up (u)</td><td>+2/3 e</td><td>+1/3</td><td>0</td></tr>
+  <tr><td>down (d)</td><td>&minus;1/3 e</td><td>+1/3</td><td>0</td></tr>
+  <tr><td>strange (s)</td><td>&minus;1/3 e</td><td>+1/3</td><td>&minus;1</td></tr>
+  <tr><td>charm (c)</td><td>+2/3 e</td><td>+1/3</td><td>0</td></tr>
+  <tr><td>Antiquarks</td><td colspan="3">All quantum numbers are reversed (e.g., anti-up has charge &minus;2/3 e, baryon number &minus;1/3)</td></tr>
+</table>
+
+<h3>Hadrons</h3>
+<div class="definition">
+  <strong>Hadrons:</strong> Particles made of quarks, that feel the strong nuclear force.<br>
+  <strong>Baryons:</strong> Made of 3 quarks (e.g., proton = uud, neutron = udd). Baryon number = +1.<br>
+  <strong>Antibaryons:</strong> Made of 3 antiquarks. Baryon number = &minus;1.<br>
+  <strong>Mesons:</strong> Made of a quark-antiquark pair (e.g., pion &pi;<sup>+</sup> = u<span style="text-decoration:overline">d</span>, kaon K<sup>+</sup> = u<span style="text-decoration:overline">s</span>). Baryon number = 0.
+</div>
+
+<h3>Conservation Laws in Particle Interactions</h3>
+<table>
+  <tr><th>Quantity</th><th>Always Conserved?</th></tr>
+  <tr><td>Energy and momentum</td><td>Always</td></tr>
+  <tr><td>Charge (Q)</td><td>Always</td></tr>
+  <tr><td>Baryon number (B)</td><td>Always</td></tr>
+  <tr><td>Lepton number (L<sub>e</sub>, L<sub>&mu;</sub>, L<sub>&tau;</sub>)</td><td>Always (each flavour separately)</td></tr>
+  <tr><td>Strangeness (S)</td><td>Conserved in strong and EM interactions; can change by &plusmn;1 in weak interactions</td></tr>
+</table>
+
+<h3>Feynman Diagrams</h3>
+<ul>
+  <li>Feynman diagrams represent particle interactions. Time runs upwards (or left to right).</li>
+  <li>Straight lines represent fermions (quarks, leptons). Wavy lines represent photons. Dashed or wavy lines represent W/Z bosons.</li>
+  <li>At each vertex, charge, baryon number, and lepton number are conserved.</li>
+  <li>The W<sup>&plusmn;</sup> boson mediates the weak interaction (e.g., beta decay). The photon mediates the electromagnetic interaction. Gluons mediate the strong interaction.</li>
+</ul>
+
+<p><strong>Beta-minus decay Feynman diagram:</strong> A down quark emits a W<sup>&minus;</sup> boson and becomes an up quark. The W<sup>&minus;</sup> decays into an electron and an electron antineutrino.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When checking if a particle interaction is allowed, verify all conservation laws. If any one quantity is not conserved, the interaction cannot occur via that force. Remember strangeness can change in weak interactions but not strong ones.
+</div>
+
+<h2>6.6 Medical Imaging</h2>
+
+<h3>X-rays</h3>
+<ul>
+  <li>Produced when high-speed electrons decelerate rapidly upon hitting a metal target (usually tungsten)</li>
+  <li>X-ray images work because different tissues absorb X-rays differently: bone absorbs strongly (appears white), soft tissue absorbs moderately, air absorbs weakly (appears dark)</li>
+  <li>Attenuation: I = I<sub>0</sub>e<sup>&minus;&mu;x</sup>, where &mu; = linear attenuation coefficient (depends on material and X-ray energy), x = thickness</li>
+  <li>Contrast media (e.g., barium, iodine) can be ingested or injected to highlight soft tissues</li>
+  <li>Risk: ionising radiation — doses are kept as low as reasonably achievable (ALARA)</li>
+</ul>
+
+<h3>CT (Computed Tomography) Scans</h3>
+<ul>
+  <li>Multiple X-ray beams are taken from many angles around the body</li>
+  <li>A computer reconstructs cross-sectional (slice) images, which can be combined into a 3D image</li>
+  <li>Much higher radiation dose than a single X-ray</li>
+  <li>Better at distinguishing soft tissues than conventional X-rays</li>
+  <li>Used for: detecting tumours, internal injuries, brain haemorrhages, guiding biopsies</li>
+</ul>
+
+<h3>Ultrasound</h3>
+<div class="definition">
+  <strong>Ultrasound:</strong> Sound waves with frequencies above the range of human hearing (&gt; 20 kHz). Medical ultrasound typically uses 1&ndash;15 MHz.
+</div>
+<ul>
+  <li>A piezoelectric transducer converts electrical signals to ultrasound pulses and detects reflections</li>
+  <li>Ultrasound is partially reflected at boundaries between tissues with different acoustic impedances</li>
+  <li><strong>Acoustic impedance:</strong> Z = &rho;c, where &rho; = density, c = speed of sound in the medium</li>
+  <li>The fraction of intensity reflected at a boundary depends on the difference in acoustic impedances. Greater difference = more reflection.</li>
+  <li>A coupling gel is used to prevent reflection at the skin-air boundary (air has very different Z from tissue)</li>
+  <li>Distance to boundary: d = ct/2, where t = time for echo to return</li>
+  <li>Advantages: non-ionising, real-time imaging, safe for foetus monitoring</li>
+  <li>Disadvantages: lower resolution than X-ray/CT, poor at imaging bone and air-filled structures</li>
+</ul>
+
+<h3>PET (Positron Emission Tomography) Scans</h3>
+<ul>
+  <li>A radioactive tracer that emits positrons (beta-plus emitter) is injected into the patient, typically fluorodeoxyglucose (FDG) labelled with fluorine-18</li>
+  <li>The tracer accumulates in metabolically active tissues (e.g., tumours, brain regions)</li>
+  <li>The positron travels a short distance then annihilates with an electron, producing two gamma photons travelling in opposite directions (180&deg; apart), each with energy 511 keV (from E = mc<sup>2</sup>)</li>
+  <li>A ring of gamma detectors records coincident pairs of gamma photons. The line between the two detectors passes through the annihilation point.</li>
+  <li>A computer reconstructs a 3D image of tracer concentration</li>
+  <li>Used for: detecting cancer, monitoring brain activity, assessing heart function</li>
+  <li>Often combined with CT (PET-CT) for both functional and structural imaging</li>
+</ul>
+
+<h3>Comparison of Medical Imaging Techniques</h3>
+<table>
+  <tr><th>Feature</th><th>X-ray</th><th>CT</th><th>Ultrasound</th><th>PET</th></tr>
+  <tr><td>Radiation type</td><td>X-rays (ionising)</td><td>X-rays (ionising)</td><td>Sound waves (non-ionising)</td><td>Gamma rays (ionising)</td></tr>
+  <tr><td>Image type</td><td>2D shadow</td><td>3D cross-sections</td><td>2D real-time</td><td>3D functional</td></tr>
+  <tr><td>Best for</td><td>Bones, chest</td><td>Soft tissue detail, brain</td><td>Foetus, soft tissue, blood flow</td><td>Cancer, brain activity</td></tr>
+  <tr><td>Resolution</td><td>Good</td><td>Very good</td><td>Moderate</td><td>Lower spatial; high functional</td></tr>
+  <tr><td>Radiation risk</td><td>Low dose</td><td>Higher dose</td><td>None</td><td>Moderate (tracer + gamma)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In PET scans, the two gamma photons from electron-positron annihilation each have energy exactly 511 keV because the rest mass of an electron (and positron) is 0.511 MeV/c<sup>2</sup>. The detection of simultaneous arrivals on opposite sides of the detector ring allows precise localisation.
+</div>
+
+</div>
+</body>
+</html>

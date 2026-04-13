@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 6 — Further Mechanics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e40af;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #2563eb;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #374151;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        .definition {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before {
+            content: "Exam Tip: ";
+            font-weight: 700;
+            color: #d97706;
+        }
+        .equation {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 12px 20px;
+            margin: 12px 0;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            text-align: center;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #1e40af;
+        }
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        ul, ol {
+            margin: 10px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        strong {
+            color: #1e293b;
+        }
+        @media print {
+            body { padding: 20px; }
+            .exam-tip, .definition { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Topic 6 — Further Mechanics</h1>
+
+<h2>6.1 Impulse and Momentum</h2>
+
+<div class="definition">
+    <strong>Momentum (p)</strong> is the product of an object's mass and velocity. It is a vector quantity.<br>
+    <strong>p = mv</strong> &nbsp; (unit: kg m s⁻¹ or N s)
+</div>
+
+<h3>Impulse</h3>
+<p><strong>Impulse</strong> is defined as the change in momentum of an object. It equals the product of the resultant force and the time for which it acts.</p>
+
+<div class="equation">Impulse = F&Delta;t = &Delta;p = mv &minus; mu</div>
+
+<p>The unit of impulse is N s (equivalent to kg m s⁻¹).</p>
+
+<h3>Force-Time Graphs</h3>
+<p>On a force-time graph, the <strong>area under the curve</strong> equals the impulse (change in momentum). This applies whether the force is constant or varying.</p>
+<p>For a variable force, you estimate the area using counting squares or the trapezium rule.</p>
+
+<div class="exam-tip">If a question gives you a force-time graph, calculate the area under it to find the impulse. Remember to include units (N s).</div>
+
+<h2>6.2 Conservation of Momentum</h2>
+
+<div class="definition">
+    <strong>The principle of conservation of linear momentum:</strong> In a closed system (no external resultant force), the total momentum before an interaction equals the total momentum after the interaction.
+</div>
+
+<h3>Conservation of Momentum in 2D</h3>
+<p>In two dimensions, momentum is conserved independently in each perpendicular direction. You resolve momentum into x and y components:</p>
+<ul>
+    <li>Total x-momentum before = Total x-momentum after</li>
+    <li>Total y-momentum before = Total y-momentum after</li>
+</ul>
+<p>Vector diagrams can be drawn to show that the total momentum vectors form a closed triangle (or polygon) if momentum is conserved.</p>
+
+<h3>Elastic vs Inelastic Collisions</h3>
+
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Elastic Collision</th>
+        <th>Inelastic Collision</th>
+    </tr>
+    <tr>
+        <td>Momentum</td>
+        <td>Conserved</td>
+        <td>Conserved</td>
+    </tr>
+    <tr>
+        <td>Kinetic Energy</td>
+        <td>Conserved</td>
+        <td>Not conserved (some KE converted to other forms)</td>
+    </tr>
+    <tr>
+        <td>Total Energy</td>
+        <td>Conserved</td>
+        <td>Conserved</td>
+    </tr>
+    <tr>
+        <td>Examples</td>
+        <td>Collisions between gas molecules, hard spheres</td>
+        <td>Most real-world collisions, car crashes</td>
+    </tr>
+</table>
+
+<p>A <strong>perfectly inelastic</strong> (totally inelastic) collision is one where the objects stick together after impact. Maximum kinetic energy is lost (consistent with momentum conservation).</p>
+
+<div class="exam-tip">To check if a collision is elastic, calculate the total KE before and after. If they are equal, it is elastic. Always show your working clearly.</div>
+
+<h2>6.3 Circular Motion</h2>
+
+<div class="definition">
+    <strong>Circular motion</strong> occurs when an object moves in a circular path at constant speed. Although speed is constant, the velocity is continuously changing direction, so the object is accelerating.
+</div>
+
+<h3>Angular Velocity</h3>
+<p><strong>Angular velocity (ω)</strong> is the rate of change of angular displacement. It is measured in radians per second (rad s⁻¹).</p>
+
+<div class="equation">ω = 2π / T = 2πf</div>
+
+<p>where T is the period (time for one complete revolution) and f is the frequency.</p>
+
+<p>The relationship between linear speed v and angular velocity:</p>
+<div class="equation">v = ωr</div>
+
+<h3>Centripetal Acceleration</h3>
+<p>An object in uniform circular motion has an acceleration directed towards the centre of the circle. This is the <strong>centripetal acceleration</strong>.</p>
+
+<div class="equation">a = v² / r = ω²r</div>
+
+<h3>Centripetal Force</h3>
+<p>The <strong>centripetal force</strong> is the resultant force directed towards the centre of the circle that causes circular motion. It is not a new type of force — it is provided by existing forces (tension, gravity, friction, normal reaction, etc.).</p>
+
+<div class="equation">F = mv² / r = mω²r</div>
+
+<div class="exam-tip">Never label a force as "centripetal force" on a free-body diagram. Instead, identify the real force providing the centripetal force (e.g., tension, weight, friction).</div>
+
+<h3>Examples of Circular Motion</h3>
+
+<h3>Banked Tracks</h3>
+<p>On a banked track (no friction), the horizontal component of the normal reaction provides the centripetal force:</p>
+<ul>
+    <li>Vertical: N cos θ = mg</li>
+    <li>Horizontal: N sin θ = mv²/r</li>
+    <li>Dividing: tan θ = v²/(rg)</li>
+</ul>
+<p>The banking angle determines the speed at which no friction is needed to maintain circular motion.</p>
+
+<h3>Vertical Circles</h3>
+<p>For an object on a string in a vertical circle:</p>
+<ul>
+    <li><strong>At the top:</strong> T + mg = mv²/r (both tension and weight act towards centre)</li>
+    <li><strong>At the bottom:</strong> T − mg = mv²/r (tension acts towards centre, weight acts away)</li>
+</ul>
+<p>The minimum speed at the top occurs when tension T = 0:</p>
+<div class="equation">v_min = √(rg) &nbsp; (at the top)</div>
+
+<h3>Conical Pendulum</h3>
+<p>A conical pendulum consists of a mass on a string that traces a horizontal circle. The string makes angle θ with the vertical.</p>
+<ul>
+    <li>Vertical equilibrium: T cos θ = mg</li>
+    <li>Centripetal force: T sin θ = mω²r</li>
+    <li>Since r = L sin θ, dividing gives: tan θ = ω²r / g</li>
+</ul>
+
+<table>
+    <tr>
+        <th>Quantity</th>
+        <th>Symbol</th>
+        <th>Unit</th>
+    </tr>
+    <tr>
+        <td>Angular velocity</td>
+        <td>ω</td>
+        <td>rad s⁻¹</td>
+    </tr>
+    <tr>
+        <td>Period</td>
+        <td>T</td>
+        <td>s</td>
+    </tr>
+    <tr>
+        <td>Frequency</td>
+        <td>f</td>
+        <td>Hz</td>
+    </tr>
+    <tr>
+        <td>Centripetal acceleration</td>
+        <td>a</td>
+        <td>m s⁻²</td>
+    </tr>
+    <tr>
+        <td>Centripetal force</td>
+        <td>F</td>
+        <td>N</td>
+    </tr>
+    <tr>
+        <td>Radius</td>
+        <td>r</td>
+        <td>m</td>
+    </tr>
+</table>
+
+<div class="exam-tip">In vertical circle problems, always draw a free-body diagram at the point of interest. Apply Newton's second law towards the centre: net inward force = mv²/r.</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.4 Mechanics and Materials — AQA A-Level Physics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>3.4 Mechanics and Materials</h1>
+
+<!-- SCALARS AND VECTORS -->
+<h2>1. Scalars and Vectors</h2>
+<div class="def-box"><strong>Scalar:</strong> A quantity with magnitude only (e.g. mass, temperature, speed, energy, distance, time, power).<br><strong>Vector:</strong> A quantity with both magnitude and direction (e.g. force, velocity, displacement, acceleration, momentum, weight).</div>
+
+<h3>Resolving Vectors</h3>
+<p>Any vector can be resolved into two perpendicular components:</p>
+<ul>
+  <li>Horizontal component: F<sub>x</sub> = F cos&theta;</li>
+  <li>Vertical component: F<sub>y</sub> = F sin&theta;</li>
+</ul>
+<p>where &theta; is the angle between the vector and the horizontal.</p>
+
+<h3>Adding Vectors</h3>
+<p>Vectors are added tip-to-tail. The resultant is found by:</p>
+<ul>
+  <li>Scale drawing and measurement, or</li>
+  <li>Resolving into components: R<sub>x</sub> = &Sigma;F<sub>x</sub>, R<sub>y</sub> = &Sigma;F<sub>y</sub>, then R = &radic;(R<sub>x</sub><sup>2</sup> + R<sub>y</sub><sup>2</sup>), &theta; = tan<sup>-1</sup>(R<sub>y</sub>/R<sub>x</sub>)</li>
+</ul>
+
+<!-- MOMENTS -->
+<h2>2. Moments</h2>
+<div class="def-box"><strong>Moment:</strong> The turning effect of a force about a pivot. Moment = F &times; d, where d is the perpendicular distance from the line of action of the force to the pivot. Units: N m.</div>
+
+<h3>Principle of Moments</h3>
+<p>For a body in rotational equilibrium, the sum of clockwise moments about any point equals the sum of anticlockwise moments about that same point.</p>
+
+<h3>Couples</h3>
+<p>A couple is a pair of equal and opposite forces whose lines of action do not coincide. A couple produces a pure turning effect (torque) with no resultant force.</p>
+<div class="eq">Torque of a couple = F &times; d</div>
+<p>where d is the perpendicular distance between the lines of action of the forces.</p>
+
+<h3>Equilibrium</h3>
+<p>For a body to be in static equilibrium:</p>
+<ul>
+  <li>The resultant force in any direction is zero (no linear acceleration).</li>
+  <li>The resultant moment about any point is zero (no rotational acceleration).</li>
+</ul>
+
+<!-- KINEMATICS -->
+<h2>3. Kinematics (SUVAT)</h2>
+<div class="def-box"><strong>Displacement (s):</strong> Vector distance in a specified direction.<br><strong>Velocity (v):</strong> Rate of change of displacement.<br><strong>Acceleration (a):</strong> Rate of change of velocity.</div>
+
+<h3>SUVAT Equations (constant acceleration only)</h3>
+<table>
+  <tr><th>Equation</th><th>Missing Variable</th></tr>
+  <tr><td>v = u + at</td><td>s</td></tr>
+  <tr><td>s = ut + &frac12;at<sup>2</sup></td><td>v</td></tr>
+  <tr><td>s = vt &minus; &frac12;at<sup>2</sup></td><td>u</td></tr>
+  <tr><td>v<sup>2</sup> = u<sup>2</sup> + 2as</td><td>t</td></tr>
+  <tr><td>s = &frac12;(u + v)t</td><td>a</td></tr>
+</table>
+<p>where s = displacement, u = initial velocity, v = final velocity, a = acceleration, t = time.</p>
+
+<h3>Free Fall</h3>
+<p>An object in free fall near the Earth's surface has acceleration a = g = 9.81 m s<sup>-2</sup> (downward). Air resistance is neglected.</p>
+
+<h3>Projectile Motion</h3>
+<p>A projectile has two independent components of motion:</p>
+<ul>
+  <li><strong>Horizontal:</strong> Constant velocity (no horizontal acceleration, ignoring air resistance). s<sub>x</sub> = v<sub>x</sub>t.</li>
+  <li><strong>Vertical:</strong> Constant acceleration due to gravity (a = g = 9.81 m s<sup>-2</sup> downward). Use SUVAT equations.</li>
+</ul>
+
+<div class="tip-box"><strong>Exam Tip:</strong> For projectiles, always resolve the initial velocity into horizontal (u cos&theta;) and vertical (u sin&theta;) components, then treat each direction separately. Time is the link between the two.</div>
+
+<!-- NEWTON'S LAWS -->
+<h2>4. Newton's Laws of Motion</h2>
+
+<div class="def-box"><strong>Newton's First Law:</strong> An object remains at rest or continues to move at constant velocity unless acted on by a resultant external force.</div>
+
+<div class="def-box"><strong>Newton's Second Law:</strong> The rate of change of momentum of an object is directly proportional to the resultant force acting on it and takes place in the direction of that force. F = ma (for constant mass).</div>
+
+<div class="def-box"><strong>Newton's Third Law:</strong> If object A exerts a force on object B, then object B exerts an equal and opposite force on object A. The two forces act on different objects, are of the same type, and exist simultaneously.</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Newton's third law pairs must be: (1) equal in magnitude, (2) opposite in direction, (3) the same type of force, (4) acting on different objects. Weight and normal contact force are NOT a Newton's third law pair (both act on the same object).</div>
+
+<!-- MOMENTUM -->
+<h2>5. Momentum and Impulse</h2>
+<div class="eq">p = mv</div>
+<p>Momentum is a vector quantity. Units: kg m s<sup>-1</sup> or N s.</p>
+
+<h3>Conservation of Momentum</h3>
+<div class="def-box"><strong>Conservation of linear momentum:</strong> In a system where no external resultant force acts, the total momentum before an event equals the total momentum after the event.</div>
+
+<h3>Impulse</h3>
+<div class="eq">Impulse = F&Delta;t = &Delta;p = mv &minus; mu</div>
+<p>Impulse equals the change in momentum. On a force-time graph, impulse is the area under the curve.</p>
+
+<h3>Types of Collision</h3>
+<table>
+  <tr><th>Type</th><th>Momentum Conserved?</th><th>Kinetic Energy Conserved?</th></tr>
+  <tr><td>Elastic</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Inelastic</td><td>Yes</td><td>No (KE is lost to other forms)</td></tr>
+  <tr><td>Perfectly inelastic</td><td>Yes</td><td>No (objects stick together, maximum KE loss)</td></tr>
+  <tr><td>Explosion</td><td>Yes (total = 0 if from rest)</td><td>No (KE increases, from internal energy)</td></tr>
+</table>
+
+<!-- WORK, ENERGY, POWER -->
+<h2>6. Work, Energy, and Power</h2>
+
+<h3>Work Done</h3>
+<div class="eq">W = Fd cos&theta;</div>
+<p>where &theta; is the angle between the force and the displacement. Units: J (joules).</p>
+<p>If the force is perpendicular to the displacement, no work is done (cos 90&deg; = 0).</p>
+
+<h3>Kinetic Energy and Gravitational Potential Energy</h3>
+<div class="eq">E<sub>k</sub> = &frac12;mv<sup>2</sup></div>
+<div class="eq">&Delta;E<sub>p</sub> = mg&Delta;h</div>
+
+<h3>Conservation of Energy</h3>
+<p>Energy cannot be created or destroyed, only transferred between stores. In the absence of friction/air resistance, loss in GPE = gain in KE (and vice versa).</p>
+
+<h3>Power</h3>
+<div class="eq">P = W / t = &Delta;E / t</div>
+<div class="eq">P = Fv</div>
+<p>Units: W (watts) = J s<sup>-1</sup>.</p>
+
+<h3>Efficiency</h3>
+<div class="eq">Efficiency = useful output energy (or power) / total input energy (or power)</div>
+<p>Often expressed as a percentage. Always less than 100% in real systems.</p>
+
+<!-- MATERIALS -->
+<h2>7. Density</h2>
+<div class="eq">&rho; = m / V</div>
+<p>Units: kg m<sup>-3</sup>. Density is a property of the material, not the object.</p>
+
+<h2>8. Hooke's Law and Springs</h2>
+<div class="def-box"><strong>Hooke's Law:</strong> The extension of a spring is directly proportional to the applied force, provided the limit of proportionality is not exceeded.</div>
+<div class="eq">F = kx</div>
+<ul>
+  <li>F = force (N)</li>
+  <li>k = spring constant (N m<sup>-1</sup>) &mdash; a measure of stiffness</li>
+  <li>x = extension (m)</li>
+</ul>
+
+<h3>Elastic Potential Energy</h3>
+<div class="eq">E<sub>e</sub> = &frac12;Fx = &frac12;kx<sup>2</sup></div>
+<p>This is the area under the force-extension graph (which is a straight line up to the limit of proportionality).</p>
+
+<h3>Springs in Series and Parallel</h3>
+<table>
+  <tr><th>Arrangement</th><th>Combined Spring Constant</th></tr>
+  <tr><td>Series</td><td>1/k<sub>total</sub> = 1/k<sub>1</sub> + 1/k<sub>2</sub> (softer overall)</td></tr>
+  <tr><td>Parallel</td><td>k<sub>total</sub> = k<sub>1</sub> + k<sub>2</sub> (stiffer overall)</td></tr>
+</table>
+
+<h3>Loading and Unloading</h3>
+<ul>
+  <li>Below the <strong>elastic limit</strong>: the material returns to its original length when the force is removed. No permanent deformation.</li>
+  <li>Beyond the <strong>elastic limit</strong>: permanent (plastic) deformation occurs. The material does not fully return to its original length.</li>
+  <li>For a rubber band, the loading and unloading curves do not follow the same path (hysteresis). The area between the curves represents energy dissipated as heat.</li>
+</ul>
+
+<!-- STRESS, STRAIN, YOUNG'S MODULUS -->
+<h2>9. Stress, Strain, and Young's Modulus</h2>
+
+<div class="def-box"><strong>Tensile stress (&sigma;):</strong> Force per unit cross-sectional area. &sigma; = F / A. Units: Pa (N m<sup>-2</sup>).</div>
+<div class="def-box"><strong>Tensile strain (&epsilon;):</strong> Extension per unit original length. &epsilon; = &Delta;L / L. No units (dimensionless).</div>
+<div class="def-box"><strong>Young's modulus (E):</strong> The ratio of stress to strain within the proportional region. E = &sigma; / &epsilon; = (FL) / (A&Delta;L). Units: Pa.</div>
+
+<h3>Stress-Strain Graphs</h3>
+<table>
+  <tr><th>Feature</th><th>Description</th></tr>
+  <tr><td>Limit of proportionality</td><td>Beyond this point, stress is no longer proportional to strain (Hooke's law no longer applies)</td></tr>
+  <tr><td>Elastic limit</td><td>Beyond this point, permanent deformation occurs on unloading</td></tr>
+  <tr><td>Yield point</td><td>A small increase in stress causes a large increase in strain (material begins to flow)</td></tr>
+  <tr><td>Ultimate tensile stress (UTS)</td><td>The maximum stress a material can withstand before breaking</td></tr>
+  <tr><td>Fracture point</td><td>The stress at which the material breaks</td></tr>
+</table>
+
+<h3>Material Behaviour</h3>
+<table>
+  <tr><th>Material Type</th><th>Characteristics</th><th>Example</th></tr>
+  <tr><td><strong>Ductile</strong></td><td>Large plastic deformation before fracture. Can be drawn into wires. Shows a clear yield point.</td><td>Copper, mild steel</td></tr>
+  <tr><td><strong>Brittle</strong></td><td>Little or no plastic deformation. Fractures suddenly without warning. Stress-strain graph is steep and straight until it snaps.</td><td>Glass, ceramics, cast iron</td></tr>
+  <tr><td><strong>Polymeric</strong></td><td>Very large strains possible. Behaviour depends on type (e.g. rubber shows large elastic strain).</td><td>Rubber, polythene</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> The area under a stress-strain graph represents energy stored per unit volume. For a force-extension graph, the area represents energy stored (or work done). Know the difference between the two graph types.</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Young's modulus is found from the gradient of the linear (proportional) region of a stress-strain graph, NOT a force-extension graph. E = stress / strain = gradient of the linear region.</div>
+
+</div>
+</body>
+</html>

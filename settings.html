@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EEF5FC;
+      --surface: #FFFFFF;
+      --surface2: #F4F9FE;
+      --surface3: #E6F1FA;
+      --border: #D2E5F3;
+      --border-hover: #93C4E2;
+      --text: #1B2D4F;
+      --muted: #6B87A8;
+      --muted2: #A0B8CE;
+      --accent: #5BADCF;
+      --accent-dark: #3D95BC;
+      --accent-dim: rgba(91,173,207,0.1);
+      --accent-glow: rgba(91,173,207,0.2);
+      --red: #DC2626; --red-bg: rgba(220,38,38,0.07); --red-border: rgba(220,38,38,0.18); --red-text: #B91C1C;
+      --amber: #D97706; --amber-bg: rgba(217,119,6,0.07); --amber-border: rgba(217,119,6,0.18); --amber-text: #B45309;
+      --green: #16A34A; --green-bg: rgba(22,163,74,0.07); --green-border: rgba(22,163,74,0.18); --green-text: #15803D;
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    .app { display: flex; min-height: 100vh; }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: var(--sidebar-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; padding: 24px 0;
+      position: fixed; top: 0; left: 0; bottom: 0; z-index: 10;
+      box-shadow: 2px 0 16px rgba(91,173,207,0.08);
+    }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; color: var(--text); }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 12px; border-radius: 8px; font-size: 13px; font-weight: 400;
+      color: var(--muted); cursor: pointer; transition: all 0.12s; text-decoration: none;
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { font-size: 15px; width: 20px; text-align: center; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 16px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 10px; background: var(--surface2); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 12px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .user-email { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; cursor: pointer; color: var(--muted); font-size: 13px; transition: all 0.12s; }
+    .logout-btn:hover { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+
+    /* ── MAIN ── */
+    .main { flex: 1; margin-left: var(--sidebar-w); padding: 32px 36px 48px; max-width: 780px; }
+
+    .page-title { font-family: var(--font-display); font-size: 26px; color: var(--text); letter-spacing: -0.02em; margin-bottom: 4px; }
+    .page-sub { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+
+    /* ── SECTIONS ── */
+    .settings-section {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px 28px; margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(91,173,207,0.07);
+    }
+    .section-title {
+      font-size: 15px; font-weight: 600; color: var(--text);
+      margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-icon { font-size: 16px; }
+
+    /* ── FORM ROWS ── */
+    .form-row {
+      display: flex; align-items: center; gap: 16px;
+      padding: 12px 0; border-bottom: 1px solid var(--surface3);
+    }
+    .form-row:last-child { border-bottom: none; }
+    .form-label {
+      flex: 0 0 140px; font-size: 13px; font-weight: 500; color: var(--muted);
+    }
+    .form-value { flex: 1; }
+    .form-input {
+      width: 100%; padding: 9px 14px; border: 1.5px solid var(--border);
+      border-radius: 8px; font-family: var(--font-body); font-size: 13px;
+      color: var(--text); background: var(--surface2); transition: border-color 0.15s;
+    }
+    .form-input:focus { outline: none; border-color: var(--accent); background: var(--surface); }
+    .form-input:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-hint { font-size: 11px; color: var(--muted2); margin-top: 4px; }
+
+    /* ── SELECT ── */
+    .form-select {
+      padding: 9px 14px; border: 1.5px solid var(--border);
+      border-radius: 8px; font-family: var(--font-body); font-size: 13px;
+      color: var(--text); background: var(--surface2); cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .form-select:focus { outline: none; border-color: var(--accent); }
+
+    /* ── BUTTONS ── */
+    .btn {
+      padding: 9px 20px; border: none; border-radius: 8px;
+      font-family: var(--font-body); font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; box-shadow: 0 2px 8px var(--accent-glow);
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 14px var(--accent-glow); }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    .btn-outline {
+      background: none; border: 1.5px solid var(--border); color: var(--muted);
+    }
+    .btn-outline:hover { border-color: var(--border-hover); color: var(--text); background: var(--surface2); }
+
+    .btn-danger {
+      background: none; border: 1.5px solid var(--red-border); color: var(--red-text);
+    }
+    .btn-danger:hover { background: var(--red-bg); }
+
+    .btn-row { display: flex; gap: 10px; margin-top: 16px; }
+
+    /* ── TOGGLE ── */
+    .toggle-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 0; border-bottom: 1px solid var(--surface3);
+    }
+    .toggle-row:last-child { border-bottom: none; }
+    .toggle-info { flex: 1; }
+    .toggle-label { font-size: 13px; font-weight: 500; color: var(--text); }
+    .toggle-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    .toggle {
+      width: 42px; height: 24px; border-radius: 12px;
+      background: var(--border); border: none; cursor: pointer;
+      position: relative; transition: background 0.2s; flex-shrink: 0;
+    }
+    .toggle::after {
+      content: ''; position: absolute; top: 3px; left: 3px;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: #fff; transition: transform 0.2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    .toggle.on { background: var(--accent); }
+    .toggle.on::after { transform: translateX(18px); }
+
+    /* ── STUDY GOAL ── */
+    .goal-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .goal-pill {
+      padding: 7px 16px; border-radius: 20px;
+      font-size: 12px; font-weight: 600; cursor: pointer;
+      border: 1.5px solid var(--border); background: var(--surface);
+      color: var(--muted); transition: all 0.15s; user-select: none;
+    }
+    .goal-pill:hover { border-color: var(--border-hover); color: var(--text); }
+    .goal-pill.active {
+      background: var(--accent); border-color: var(--accent);
+      color: #fff; box-shadow: 0 2px 8px var(--accent-glow);
+    }
+
+    /* ── MSG ── */
+    .msg {
+      margin-top: 12px; font-size: 12px; padding: 8px 12px;
+      border-radius: 8px; display: none;
+    }
+    .msg.show { display: block; }
+    .msg.success { color: var(--green-text); background: var(--green-bg); border: 1px solid var(--green-border); }
+    .msg.error { color: var(--red-text); background: var(--red-bg); border: 1px solid var(--red-border); }
+
+    /* ── ACCOUNT INFO ── */
+    .account-detail {
+      font-size: 13px; color: var(--text); padding: 4px 0;
+    }
+    .account-detail span { color: var(--muted); font-size: 12px; }
+
+    @media (max-width: 600px) {
+      .sidebar { display: none; }
+      .main { margin-left: 0; padding: 20px 16px; }
+      .form-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .form-label { flex: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item active" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials">–</div>
+        <div class="user-info">
+          <div class="user-name" id="sidebarName">Loading…</div>
+          <div class="user-email" id="sidebarEmail"></div>
+        </div>
+        <button class="logout-btn" onclick="logout()" title="Sign out">⏻</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="page-title">⚙ Settings</div>
+    <div class="page-sub">Manage your profile, preferences, and account.</div>
+
+    <!-- ── YOUR PLAN ── -->
+    <div class="settings-section">
+      <div class="section-title"><span class="section-icon">💳</span> Your plan</div>
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <div id="planCard" style="flex:1;min-width:200px;padding:16px 20px;border-radius:12px;border:1.5px solid var(--border);background:var(--surface2);">
+          <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">Current plan</div>
+          <div id="planName" style="font-size:18px;font-weight:600;color:var(--text);font-family:var(--font-display);">Free</div>
+          <div id="planDesc" style="font-size:12px;color:var(--muted);margin-top:4px;">Basic access to notes, diagnostics, and practice questions.</div>
+        </div>
+        <div>
+          <button class="btn btn-primary" id="upgradeBtn" onclick="showUpgrade()">Upgrade to Pro</button>
+          <div id="planPrice" style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;">£9.99/month</div>
+        </div>
+      </div>
+      <div id="proFeatures" style="margin-top:16px;display:none;">
+        <div style="font-size:12px;font-weight:600;color:var(--muted);margin-bottom:8px;">PRO includes:</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="font-size:13px;color:var(--text);">📄 Full timed past papers</div>
+          <div style="font-size:13px;color:var(--text);">📋 Official OCR mark schemes</div>
+          <div style="font-size:13px;color:var(--text);">🤖 AI-powered answer feedback</div>
+          <div style="font-size:13px;color:var(--text);">🚫 Ad-free experience</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PROFILE ── -->
+    <div class="settings-section">
+      <div class="section-title"><span class="section-icon">👤</span> Profile</div>
+      <div class="form-row">
+        <div class="form-label">First name</div>
+        <div class="form-value">
+          <input class="form-input" id="firstName" type="text" placeholder="First name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-label">Last name</div>
+        <div class="form-value">
+          <input class="form-input" id="lastName" type="text" placeholder="Last name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-label">Email</div>
+        <div class="form-value">
+          <input class="form-input" id="emailField" type="email" disabled>
+          <div class="form-hint">Email cannot be changed</div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="saveProfileBtn" onclick="saveProfile()">Save changes</button>
+      </div>
+      <div class="msg" id="profileMsg"></div>
+    </div>
+
+    <!-- ── CHANGE PASSWORD ── -->
+    <div class="settings-section">
+      <div class="section-title"><span class="section-icon">🔒</span> Change password</div>
+      <div class="form-row">
+        <div class="form-label">New password</div>
+        <div class="form-value">
+          <input class="form-input" id="newPassword" type="password" placeholder="Min 6 characters">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-label">Confirm password</div>
+        <div class="form-value">
+          <input class="form-input" id="confirmPassword" type="password" placeholder="Repeat new password">
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="savePasswordBtn" onclick="changePassword()">Update password</button>
+      </div>
+      <div class="msg" id="passwordMsg"></div>
+    </div>
+
+    <!-- ── STUDY PREFERENCES ── -->
+    <div class="settings-section">
+      <div class="section-title"><span class="section-icon">📚</span> Study preferences</div>
+      <div class="form-row">
+        <div class="form-label">Daily study goal</div>
+        <div class="form-value">
+          <div class="goal-pills" id="goalPills">
+            <div class="goal-pill" onclick="setGoal(15)">15 min</div>
+            <div class="goal-pill" onclick="setGoal(30)">30 min</div>
+            <div class="goal-pill" onclick="setGoal(45)">45 min</div>
+            <div class="goal-pill" onclick="setGoal(60)">1 hour</div>
+            <div class="goal-pill" onclick="setGoal(90)">1.5 hours</div>
+            <div class="goal-pill" onclick="setGoal(120)">2 hours</div>
+          </div>
+          <div class="form-hint">Used for your daily streak progress bar</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-label">Study level</div>
+        <div class="form-value">
+          <select class="form-select" id="studyLevel">
+            <option value="gcse">GCSE</option>
+            <option value="as">AS Level</option>
+            <option value="a-level">A Level</option>
+          </select>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="savePreferences()">Save preferences</button>
+      </div>
+      <div class="msg" id="prefsMsg"></div>
+    </div>
+
+    <!-- ── NOTIFICATIONS ── -->
+    <div class="settings-section">
+      <div class="section-title"><span class="section-icon">🔔</span> Notifications</div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Study reminders</div>
+          <div class="toggle-desc">Get a reminder if you haven't studied today</div>
+        </div>
+        <button class="toggle" id="toggleReminders" onclick="toggleSetting(this)"></button>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Streak alerts</div>
+          <div class="toggle-desc">Get notified when your streak is about to break</div>
+        </div>
+        <button class="toggle" id="toggleStreak" onclick="toggleSetting(this)"></button>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">New content updates</div>
+          <div class="toggle-desc">Get notified when new topics or questions are added</div>
+        </div>
+        <button class="toggle" id="toggleContent" onclick="toggleSetting(this)"></button>
+      </div>
+    </div>
+
+    <!-- ── PROGRESS & DATA ── -->
+    <div class="settings-section">
+      <div class="section-title"><span class="section-icon">📊</span> Progress & data</div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Reset all RAG progress</div>
+          <div class="toggle-desc">Clear all diagnostic results and start fresh</div>
+        </div>
+        <button class="btn btn-danger" onclick="confirmResetProgress()">Reset progress</button>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Reset streak</div>
+          <div class="toggle-desc">Set your study streak back to 0 days</div>
+        </div>
+        <button class="btn btn-danger" onclick="confirmResetStreak()">Reset streak</button>
+      </div>
+      <div class="msg" id="dataMsg"></div>
+    </div>
+
+    <!-- ── ACCOUNT ── -->
+    <div class="settings-section">
+      <div class="section-title"><span class="section-icon">🗑️</span> Danger zone</div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Sign out</div>
+          <div class="toggle-desc">Sign out of your account on this device</div>
+        </div>
+        <button class="btn btn-outline" onclick="logout()">Sign out</button>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Delete account</div>
+          <div class="toggle-desc">Permanently delete your account and all data</div>
+        </div>
+        <button class="btn btn-danger" onclick="confirmDeleteAccount()">Delete account</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+let currentUser = null;
+let studyGoal = 30;
+
+// ── Load ──
+function showUpgrade() {
+  const el = document.getElementById('proFeatures');
+  el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+
+async function load() {
+  const { data: { user }, error } = await supabaseClient.auth.getUser();
+  if (error || !user) { window.location = 'auth/login.html'; return; }
+  currentUser = user;
+
+  const { data: profile } = await supabaseClient.from('profiles').select('*').eq('id', user.id).single();
+
+  // Sidebar
+  const firstName = profile?.first_name || '';
+  const lastName  = profile?.last_name  || '';
+  document.getElementById('sidebarName').textContent  = `${firstName} ${lastName}`.trim();
+  document.getElementById('sidebarEmail').textContent = user.email;
+  document.getElementById('avatarInitials').textContent = ((firstName[0] || '') + (lastName[0] || '')).toUpperCase() || '?';
+
+  // Profile fields
+  document.getElementById('firstName').value  = firstName;
+  document.getElementById('lastName').value   = lastName;
+  document.getElementById('emailField').value = user.email;
+
+  // Study level
+  document.getElementById('studyLevel').value = profile?.level || 'as';
+
+  // Study goal from localStorage
+  studyGoal = parseInt(localStorage.getItem('study_goal') || '30');
+  renderGoalPills();
+
+  // Notification toggles from localStorage
+  if (localStorage.getItem('notif_reminders') === 'true')
+    document.getElementById('toggleReminders').classList.add('on');
+  if (localStorage.getItem('notif_streak') === 'true')
+    document.getElementById('toggleStreak').classList.add('on');
+  if (localStorage.getItem('notif_content') === 'true')
+    document.getElementById('toggleContent').classList.add('on');
+}
+
+// ── Profile ──
+async function saveProfile() {
+  const btn = document.getElementById('saveProfileBtn');
+  const msg = document.getElementById('profileMsg');
+  btn.disabled = true; btn.textContent = 'Saving…';
+
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName  = document.getElementById('lastName').value.trim();
+
+  const { error, data, count } = await supabaseClient.from('profiles')
+    .update({ first_name: firstName, last_name: lastName })
+    .eq('id', currentUser.id)
+    .select();
+
+  console.log('Profile save result:', { error, data, count });
+
+  btn.disabled = false; btn.textContent = 'Save changes';
+  if (error) {
+    showMsg(msg, 'error', 'Failed to save: ' + error.message);
+  } else if (!data || data.length === 0) {
+    showMsg(msg, 'error', 'No profile row found — try re-running setup.');
+  } else {
+    showMsg(msg, 'success', 'Profile updated successfully.');
+    document.getElementById('sidebarName').textContent = `${firstName} ${lastName}`.trim();
+    document.getElementById('avatarInitials').textContent = ((firstName[0] || '') + (lastName[0] || '')).toUpperCase() || '?';
+  }
+}
+
+// ── Password ──
+async function changePassword() {
+  const btn = document.getElementById('savePasswordBtn');
+  const msg = document.getElementById('passwordMsg');
+  const pw  = document.getElementById('newPassword').value;
+  const pw2 = document.getElementById('confirmPassword').value;
+
+  if (pw.length < 6) { showMsg(msg, 'error', 'Password must be at least 6 characters.'); return; }
+  if (pw !== pw2)     { showMsg(msg, 'error', 'Passwords do not match.'); return; }
+
+  btn.disabled = true; btn.textContent = 'Updating…';
+  const { error } = await supabaseClient.auth.updateUser({ password: pw });
+  btn.disabled = false; btn.textContent = 'Update password';
+
+  if (error) {
+    showMsg(msg, 'error', 'Failed: ' + error.message);
+  } else {
+    showMsg(msg, 'success', 'Password updated successfully.');
+    document.getElementById('newPassword').value = '';
+    document.getElementById('confirmPassword').value = '';
+  }
+}
+
+// ── Study goal ──
+function setGoal(mins) {
+  studyGoal = mins;
+  localStorage.setItem('study_goal', mins);
+  renderGoalPills();
+}
+
+function renderGoalPills() {
+  document.querySelectorAll('.goal-pill').forEach(p => {
+    const val = parseInt(p.textContent);
+    const mins = p.textContent.includes('hour')
+      ? (p.textContent.includes('1.5') ? 90 : p.textContent.includes('2') ? 120 : 60)
+      : val;
+    p.classList.toggle('active', mins === studyGoal);
+  });
+}
+
+// ── Preferences ──
+async function savePreferences() {
+  const msg = document.getElementById('prefsMsg');
+  const level = document.getElementById('studyLevel').value;
+
+  const { error } = await supabaseClient.from('profiles')
+    .update({ level: level })
+    .eq('id', currentUser.id);
+
+  if (error) {
+    showMsg(msg, 'error', 'Failed: ' + error.message);
+  } else {
+    showMsg(msg, 'success', 'Preferences saved.');
+  }
+}
+
+// ── Toggles ──
+function toggleSetting(el) {
+  el.classList.toggle('on');
+  const id = el.id;
+  const key = id === 'toggleReminders' ? 'notif_reminders'
+            : id === 'toggleStreak'    ? 'notif_streak'
+            : 'notif_content';
+  localStorage.setItem(key, el.classList.contains('on') ? 'true' : 'false');
+}
+
+// ── Reset progress ──
+async function confirmResetProgress() {
+  if (!confirm('Are you sure? This will delete ALL your diagnostic results and RAG colours. This cannot be undone.')) return;
+  const msg = document.getElementById('dataMsg');
+
+  await supabaseClient.from('topic_progress').delete().eq('user_id', currentUser.id);
+  await supabaseClient.from('user_subjects').update({ rag_status: 'pending' }).eq('user_id', currentUser.id);
+
+  showMsg(msg, 'success', 'All progress has been reset.');
+}
+
+// ── Reset streak ──
+async function confirmResetStreak() {
+  if (!confirm('Reset your study streak to 0 days?')) return;
+  const msg = document.getElementById('dataMsg');
+
+  await supabaseClient.from('profiles')
+    .update({ streak_count: 0, last_study_date: null })
+    .eq('id', currentUser.id);
+  localStorage.removeItem('study_seconds');
+
+  showMsg(msg, 'success', 'Streak has been reset to 0.');
+}
+
+// ── Delete account ──
+async function confirmDeleteAccount() {
+  if (!confirm('This will PERMANENTLY delete your account and all data. Are you absolutely sure?')) return;
+  if (!confirm('Last chance — this cannot be undone. Delete everything?')) return;
+
+  // Delete user data
+  await supabaseClient.from('topic_progress').delete().eq('user_id', currentUser.id);
+  await supabaseClient.from('user_medals').delete().eq('user_id', currentUser.id);
+  await supabaseClient.from('user_subjects').delete().eq('user_id', currentUser.id);
+  await supabaseClient.from('profiles').delete().eq('id', currentUser.id);
+
+  await supabaseClient.auth.signOut();
+  window.location = 'auth/login.html';
+}
+
+// ── Logout ──
+async function logout() {
+  await supabaseClient.auth.signOut();
+  window.location = 'auth/login.html';
+}
+
+// ── Message helper ──
+function showMsg(el, type, text) {
+  el.className = `msg show ${type}`;
+  el.textContent = text;
+  setTimeout(() => { el.className = 'msg'; }, 4000);
+}
+
+load();
+</script>
+</body>
+</html>

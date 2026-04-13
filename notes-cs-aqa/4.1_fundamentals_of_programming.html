@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.1 Fundamentals of Programming — AQA A-Level CS</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
+            line-height: 1.7;
+            padding: 40px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 12px;
+            margin-bottom: 32px;
+        }
+        h1 .spec-ref {
+            display: block;
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e3a5f;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        h3 {
+            font-size: 1.15rem;
+            color: #374151;
+            margin-top: 24px;
+            margin-bottom: 10px;
+        }
+        p { margin-bottom: 14px; }
+        ul, ol {
+            margin-bottom: 14px;
+            padding-left: 28px;
+        }
+        li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f0f4ff;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        tr:nth-child(even) { background: #f9fafb; }
+        code {
+            font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px 20px;
+            overflow-x: auto;
+            margin-bottom: 18px;
+            font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .definition-box {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 16px 20px;
+            margin-bottom: 18px;
+            border-radius: 0 8px 8px 0;
+        }
+        .definition-box strong { color: #1e40af; }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            margin-bottom: 18px;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before {
+            content: "Exam Tip: ";
+            font-weight: 700;
+            color: #b45309;
+        }
+        @media print {
+            body { padding: 20px; }
+            h2 { break-before: auto; }
+            pre, .definition-box, .exam-tip { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Fundamentals of Programming
+    <span class="spec-ref">AQA A-Level Computer Science (7517) &mdash; Section 4.1</span>
+</h1>
+
+<!-- ==================== PARADIGMS ==================== -->
+<h2>4.1.1 Programming Paradigms</h2>
+
+<div class="definition-box">
+    <strong>Programming paradigm:</strong> A fundamental style or approach to programming that defines how problems are structured, how data flows, and how computations are expressed.
+</div>
+
+<h3>Procedural Programming</h3>
+<p>A paradigm where a program is structured as a sequence of instructions (procedures/subroutines) that execute one after another. The program follows a <strong>top-down</strong> design and makes use of:</p>
+<ul>
+    <li><strong>Sequence</strong> &mdash; instructions executed in order</li>
+    <li><strong>Selection</strong> &mdash; branching with <code>if</code>/<code>else</code>/<code>switch</code></li>
+    <li><strong>Iteration</strong> &mdash; loops (<code>for</code>, <code>while</code>, <code>repeat</code>)</li>
+    <li><strong>Subroutines</strong> &mdash; reusable blocks of code (functions and procedures)</li>
+</ul>
+<p>Examples: C, Pascal, early BASIC.</p>
+
+<h3>Object-Oriented Programming (OOP)</h3>
+<p>Organises code around <strong>objects</strong> that combine data (attributes) and behaviour (methods). The key principles are encapsulation, inheritance, polymorphism, and abstraction (covered in detail below).</p>
+<p>Examples: Java, C++, Python, C#.</p>
+
+<h3>Functional Programming</h3>
+<p>Based on mathematical functions. Key features:</p>
+<ul>
+    <li><strong>First-class functions</strong> &mdash; functions can be passed as arguments, returned from other functions, and assigned to variables.</li>
+    <li><strong>Higher-order functions</strong> &mdash; functions that take other functions as parameters or return functions (e.g., <code>map</code>, <code>filter</code>, <code>reduce</code>).</li>
+    <li><strong>Immutability</strong> &mdash; once a value is assigned, it cannot be changed. New values are created instead of modifying existing ones.</li>
+    <li><strong>No side effects</strong> &mdash; a function's output depends only on its inputs; it does not modify external state.</li>
+    <li><strong>Recursion</strong> is favoured over iteration.</li>
+    <li><strong>Function composition</strong> &mdash; combining simple functions to build more complex ones.</li>
+    <li><strong>Partial application / currying</strong> &mdash; creating new functions by fixing some parameters of an existing function.</li>
+</ul>
+<p>Examples: Haskell, Erlang, Lisp. Python and JavaScript support functional features.</p>
+
+<h3>Declarative Programming</h3>
+<p>The programmer specifies <strong>what</strong> the result should be, not <strong>how</strong> to achieve it. The language runtime determines the execution strategy.</p>
+<ul>
+    <li><strong>SQL</strong> &mdash; you describe the data you want: <code>SELECT name FROM students WHERE grade &gt; 80</code></li>
+    <li><strong>HTML/CSS</strong> &mdash; you describe the structure and appearance of content</li>
+    <li><strong>Prolog</strong> &mdash; logic programming, stating facts and rules</li>
+</ul>
+
+<div class="exam-tip">
+    You may be asked to compare paradigms. Focus on how each approaches problem-solving: procedural = step-by-step instructions, OOP = modelling real-world entities, functional = mathematical transformations, declarative = describing desired outcomes.
+</div>
+
+<table>
+    <tr><th>Paradigm</th><th>Focus</th><th>State</th><th>Example Languages</th></tr>
+    <tr><td>Procedural</td><td>Steps / procedures</td><td>Mutable variables</td><td>C, Pascal</td></tr>
+    <tr><td>Object-Oriented</td><td>Objects &amp; interactions</td><td>Encapsulated in objects</td><td>Java, C++, Python</td></tr>
+    <tr><td>Functional</td><td>Pure functions</td><td>Immutable</td><td>Haskell, Erlang</td></tr>
+    <tr><td>Declarative</td><td>What, not how</td><td>Abstracted away</td><td>SQL, Prolog, HTML</td></tr>
+</table>
+
+<!-- ==================== OOP ==================== -->
+<h2>4.1.2 Object-Oriented Programming</h2>
+
+<h3>Classes and Objects</h3>
+<div class="definition-box">
+    <strong>Class:</strong> A blueprint or template that defines the attributes (data) and methods (behaviour) that objects of that type will have.<br>
+    <strong>Object:</strong> An instance of a class &mdash; a specific realisation with its own attribute values.
+</div>
+
+<pre>class Dog:
+    def __init__(self, name, breed):
+        self.__name = name       # private attribute
+        self.__breed = breed     # private attribute
+
+    def bark(self):
+        return f"{self.__name} says Woof!"
+
+    def get_name(self):          # getter method
+        return self.__name
+
+rex = Dog("Rex", "Labrador")     # rex is an object (instance)
+print(rex.bark())                # Rex says Woof!</pre>
+
+<h3>Encapsulation</h3>
+<p><strong>Encapsulation</strong> is the bundling of data and methods within a class, and restricting direct access to some of the object's components. Attributes are typically made <strong>private</strong> and accessed through <strong>public getter/setter methods</strong>. This:</p>
+<ul>
+    <li>Protects data from accidental modification</li>
+    <li>Hides internal implementation details</li>
+    <li>Allows validation in setter methods</li>
+</ul>
+
+<h3>Inheritance</h3>
+<div class="definition-box">
+    <strong>Inheritance:</strong> A mechanism where a new class (subclass / child class) derives attributes and methods from an existing class (superclass / parent class), promoting code reuse.
+</div>
+
+<pre>class Animal:
+    def __init__(self, name):
+        self._name = name
+
+    def speak(self):
+        return "..."
+
+class Cat(Animal):                # Cat inherits from Animal
+    def speak(self):              # overriding the parent method
+        return f"{self._name} says Meow!"
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self._name} says Woof!"</pre>
+
+<p><strong>Advantages of inheritance:</strong> reduces code duplication, models real-world relationships (IS-A), makes code easier to extend and maintain.</p>
+
+<h3>Polymorphism</h3>
+<div class="definition-box">
+    <strong>Polymorphism:</strong> The ability for objects of different classes to respond to the same method call in different ways. "Many forms."
+</div>
+<p>In the example above, both <code>Cat</code> and <code>Dog</code> have a <code>speak()</code> method. Calling <code>speak()</code> on any <code>Animal</code> reference produces the correct output for the actual object type. This is <strong>overriding polymorphism</strong>.</p>
+<p><strong>Overloading polymorphism</strong> is when multiple methods share the same name but have different parameter lists (supported in Java/C++, not natively in Python).</p>
+
+<h3>Abstraction</h3>
+<p><strong>Abstraction</strong> means hiding unnecessary complexity and showing only the essential features of an object. An abstract class cannot be instantiated directly; it serves as a template for subclasses that must implement the abstract methods.</p>
+
+<pre>from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass         # subclasses MUST implement this
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.__radius = radius
+
+    def area(self):
+        return 3.14159 * self.__radius ** 2</pre>
+
+<h3>Association, Aggregation, and Composition</h3>
+<table>
+    <tr><th>Relationship</th><th>Description</th><th>Lifetime</th><th>Example</th></tr>
+    <tr><td>Association</td><td>Two objects are related but independent</td><td>Independent</td><td>Teacher &harr; Student</td></tr>
+    <tr><td>Aggregation</td><td>HAS-A (weak). Container holds references to objects that can exist independently</td><td>Independent</td><td>Department &rarr; Employees</td></tr>
+    <tr><td>Composition</td><td>HAS-A (strong). Contained objects cannot exist without the container</td><td>Dependent</td><td>House &rarr; Rooms</td></tr>
+</table>
+
+<div class="exam-tip">
+    Questions often ask you to design class hierarchies from a scenario. Identify the IS-A relationships for inheritance and HAS-A relationships for aggregation/composition.
+</div>
+
+<!-- ==================== DATA TYPES ==================== -->
+<h2>4.1.3 Data Types</h2>
+
+<table>
+    <tr><th>Data Type</th><th>Description</th><th>Example Values</th></tr>
+    <tr><td><strong>Integer</strong></td><td>Whole number (positive, negative, or zero)</td><td><code>-3</code>, <code>0</code>, <code>42</code></td></tr>
+    <tr><td><strong>Real / Float</strong></td><td>Number with a fractional part</td><td><code>3.14</code>, <code>-0.5</code></td></tr>
+    <tr><td><strong>Boolean</strong></td><td>Logical value &mdash; only two possible values</td><td><code>True</code>, <code>False</code></td></tr>
+    <tr><td><strong>Character</strong></td><td>A single symbol (letter, digit, punctuation)</td><td><code>'A'</code>, <code>'7'</code>, <code>'!'</code></td></tr>
+    <tr><td><strong>String</strong></td><td>A sequence of characters</td><td><code>"Hello"</code>, <code>""</code></td></tr>
+    <tr><td><strong>Date/Time</strong></td><td>Represents dates and/or times</td><td><code>2026-04-10</code></td></tr>
+    <tr><td><strong>Pointer / Reference</strong></td><td>Stores a memory address pointing to another value</td><td><code>0x7ffd5e8</code></td></tr>
+    <tr><td><strong>Record</strong></td><td>A composite type with named fields of potentially different types</td><td>A student record with name, age, grade</td></tr>
+    <tr><td><strong>Array</strong></td><td>An ordered, fixed-size collection of elements of the same type</td><td><code>[10, 20, 30]</code></td></tr>
+</table>
+
+<h3>Pointers and References</h3>
+<p>A <strong>pointer</strong> stores the memory address of another variable. A <strong>reference</strong> is an alias for another variable. In languages like C/C++, pointers are used for dynamic memory allocation, linked data structures, and passing data efficiently.</p>
+
+<h3>Records</h3>
+<p>A <strong>record</strong> (also called a struct in C) groups related data items of different types under one name:</p>
+<pre>TYPE Student
+    name : STRING
+    age : INTEGER
+    grade : REAL
+ENDTYPE
+
+pupil : Student
+pupil.name &larr; "Alice"
+pupil.age &larr; 17
+pupil.grade &larr; 92.5</pre>
+
+<!-- ==================== PROGRAMMING CONCEPTS ==================== -->
+<h2>4.1.4 Programming Concepts</h2>
+
+<h3>Variables and Constants</h3>
+<p>A <strong>variable</strong> is a named storage location whose value can change during program execution. A <strong>constant</strong> is a named value that is fixed at the time of definition and cannot be altered. Using constants improves readability and maintainability.</p>
+
+<pre>CONSTANT PI &larr; 3.14159
+radius &larr; 5
+area &larr; PI * radius * radius</pre>
+
+<h3>Operators</h3>
+<table>
+    <tr><th>Type</th><th>Operators</th><th>Examples</th></tr>
+    <tr><td>Arithmetic</td><td><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>MOD</code>, <code>DIV</code>, <code>^</code></td><td><code>17 MOD 5 = 2</code>, <code>17 DIV 5 = 3</code></td></tr>
+    <tr><td>Comparison</td><td><code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></td><td><code>x &lt;&gt; y</code> means "not equal"</td></tr>
+    <tr><td>Boolean / Logical</td><td><code>AND</code>, <code>OR</code>, <code>NOT</code></td><td><code>(x &gt; 5) AND (x &lt; 10)</code></td></tr>
+    <tr><td>String</td><td>Concatenation <code>+</code> or <code>&amp;</code></td><td><code>"Hello" + " World"</code></td></tr>
+</table>
+
+<h3>Assignment</h3>
+<p><strong>Assignment</strong> stores a value in a variable. In pseudocode: <code>x &larr; 10</code>. In Python: <code>x = 10</code>. In many languages the assignment operator is <code>=</code> while comparison uses <code>==</code>.</p>
+
+<h3>Selection (Branching)</h3>
+<pre># IF / ELSE IF / ELSE
+IF score &gt;= 90 THEN
+    grade &larr; "A*"
+ELSE IF score &gt;= 80 THEN
+    grade &larr; "A"
+ELSE IF score &gt;= 70 THEN
+    grade &larr; "B"
+ELSE
+    grade &larr; "C or below"
+ENDIF
+
+# SWITCH / CASE
+SWITCH day:
+    CASE "Mon": output "Monday"
+    CASE "Tue": output "Tuesday"
+    DEFAULT: output "Other day"
+ENDSWITCH</pre>
+
+<h3>Iteration (Loops)</h3>
+<table>
+    <tr><th>Loop Type</th><th>Description</th><th>Example</th></tr>
+    <tr><td><strong>FOR</strong> (count-controlled)</td><td>Repeats a fixed number of times</td><td><code>FOR i &larr; 1 TO 10</code></td></tr>
+    <tr><td><strong>WHILE</strong> (condition-controlled, pre-check)</td><td>Repeats while condition is true; may execute zero times</td><td><code>WHILE x &lt; 100</code></td></tr>
+    <tr><td><strong>REPEAT...UNTIL</strong> (condition-controlled, post-check)</td><td>Repeats until condition is true; always executes at least once</td><td><code>REPEAT ... UNTIL valid</code></td></tr>
+</table>
+
+<h3>Subroutines: Functions and Procedures</h3>
+<div class="definition-box">
+    <strong>Procedure:</strong> A named block of code that performs a task but does <em>not</em> return a value.<br>
+    <strong>Function:</strong> A named block of code that performs a task and <em>returns</em> a value.
+</div>
+
+<p><strong>Advantages of subroutines:</strong></p>
+<ul>
+    <li>Code reuse &mdash; write once, call many times</li>
+    <li>Modularity &mdash; break complex problems into manageable parts</li>
+    <li>Easier testing and debugging of individual components</li>
+    <li>Improved readability and maintainability</li>
+    <li>Supports team development &mdash; different programmers work on different subroutines</li>
+</ul>
+
+<pre>FUNCTION calculateArea(length, width)
+    RETURN length * width
+ENDFUNCTION
+
+PROCEDURE greetUser(name)
+    OUTPUT "Hello, " + name
+ENDPROCEDURE</pre>
+
+<!-- ==================== RECURSION ==================== -->
+<h2>4.1.5 Recursion</h2>
+
+<div class="definition-box">
+    <strong>Recursion:</strong> A programming technique where a subroutine calls itself. Every recursive solution must have a <strong>base case</strong> (stopping condition) and a <strong>recursive case</strong> (where the function calls itself with a simpler input).
+</div>
+
+<h3>How Recursion Works &mdash; The Call Stack</h3>
+<p>Each recursive call is pushed onto the <strong>call stack</strong>. When the base case is reached, the stack unwinds as each call returns its result to the caller. If there is no base case or the recursion is too deep, a <strong>stack overflow</strong> error occurs.</p>
+
+<h3>Example: Factorial</h3>
+<pre>FUNCTION factorial(n)
+    IF n = 0 THEN          # base case
+        RETURN 1
+    ELSE                    # recursive case
+        RETURN n * factorial(n - 1)
+    ENDIF
+ENDFUNCTION
+
+# Call stack for factorial(4):
+# factorial(4) waits for 4 * factorial(3)
+#   factorial(3) waits for 3 * factorial(2)
+#     factorial(2) waits for 2 * factorial(1)
+#       factorial(1) waits for 1 * factorial(0)
+#         factorial(0) returns 1        &larr; base case
+#       factorial(1) returns 1 * 1 = 1
+#     factorial(2) returns 2 * 1 = 2
+#   factorial(3) returns 3 * 2 = 6
+# factorial(4) returns 4 * 6 = 24</pre>
+
+<h3>Example: Fibonacci</h3>
+<pre>FUNCTION fibonacci(n)
+    IF n &lt;= 1 THEN         # base case
+        RETURN n
+    ELSE
+        RETURN fibonacci(n - 1) + fibonacci(n - 2)
+    ENDIF
+ENDFUNCTION</pre>
+
+<h3>Recursion vs Iteration</h3>
+<table>
+    <tr><th>Feature</th><th>Recursion</th><th>Iteration</th></tr>
+    <tr><td>Code clarity</td><td>Often more elegant / readable for inherently recursive problems (trees, fractals)</td><td>Usually simpler for straightforward looping</td></tr>
+    <tr><td>Memory usage</td><td>Higher &mdash; each call uses stack space</td><td>Lower &mdash; constant memory for loop variables</td></tr>
+    <tr><td>Performance</td><td>Can be slower due to function call overhead</td><td>Generally faster</td></tr>
+    <tr><td>Risk</td><td>Stack overflow for deep recursion</td><td>Infinite loop if condition never met</td></tr>
+    <tr><td>Use cases</td><td>Tree traversal, divide-and-conquer, backtracking</td><td>Simple counting, sequential processing</td></tr>
+</table>
+
+<div class="exam-tip">
+    Trace tables for recursion are common in exams. Show each call on the stack, the parameter values, and the return values as the stack unwinds. Always identify the base case and recursive case clearly.
+</div>
+
+<!-- ==================== EXCEPTION HANDLING ==================== -->
+<h2>4.1.6 Exception Handling</h2>
+
+<div class="definition-box">
+    <strong>Exception:</strong> An unexpected event or error that disrupts normal program flow at runtime (e.g., division by zero, file not found, invalid input).
+</div>
+
+<p><strong>Exception handling</strong> allows a program to deal with errors gracefully instead of crashing.</p>
+
+<pre>try:
+    number = int(input("Enter a number: "))
+    result = 100 / number
+    print(f"Result: {result}")
+except ValueError:
+    print("Invalid input - not a number")
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+finally:
+    print("This always executes")</pre>
+
+<table>
+    <tr><th>Block</th><th>Purpose</th></tr>
+    <tr><td><code>try</code></td><td>Contains code that might raise an exception</td></tr>
+    <tr><td><code>except</code> / <code>catch</code></td><td>Handles specific exception types when they occur</td></tr>
+    <tr><td><code>finally</code></td><td>Code that always executes, regardless of whether an exception occurred (used for cleanup, e.g., closing files)</td></tr>
+</table>
+
+<p><strong>Why use exception handling?</strong></p>
+<ul>
+    <li>Prevents the program from crashing unexpectedly</li>
+    <li>Provides meaningful error messages to the user</li>
+    <li>Separates error-handling logic from normal logic</li>
+    <li>Ensures resources (files, connections) are properly released</li>
+</ul>
+
+<!-- ==================== PARAMETER PASSING ==================== -->
+<h2>4.1.7 Parameter Passing</h2>
+
+<h3>By Value</h3>
+<p>A <strong>copy</strong> of the argument's value is passed to the subroutine. Any changes made inside the subroutine do <strong>not</strong> affect the original variable.</p>
+
+<pre>PROCEDURE doubleIt(x)     # x is a copy
+    x &larr; x * 2
+    OUTPUT x               # outputs 10
+ENDPROCEDURE
+
+num &larr; 5
+doubleIt(num)
+OUTPUT num                 # still outputs 5 (unchanged)</pre>
+
+<h3>By Reference</h3>
+<p>The <strong>memory address</strong> of the argument is passed. The subroutine works directly on the original variable, so changes <strong>do</strong> affect the original.</p>
+
+<pre>PROCEDURE doubleIt(BYREF x)
+    x &larr; x * 2
+ENDPROCEDURE
+
+num &larr; 5
+doubleIt(num)
+OUTPUT num                 # outputs 10 (changed)</pre>
+
+<table>
+    <tr><th>Feature</th><th>By Value</th><th>By Reference</th></tr>
+    <tr><td>What is passed</td><td>A copy of the data</td><td>The address of the data</td></tr>
+    <tr><td>Original affected?</td><td>No</td><td>Yes</td></tr>
+    <tr><td>Memory</td><td>Uses more (copy created)</td><td>Uses less (no copy)</td></tr>
+    <tr><td>Safety</td><td>Safer &mdash; original protected</td><td>Less safe &mdash; original can be altered unintentionally</td></tr>
+    <tr><td>Use case</td><td>When you need to protect the original data</td><td>When you need to modify the original, or for large data structures to avoid copying overhead</td></tr>
+</table>
+
+<!-- ==================== SCOPE ==================== -->
+<h2>4.1.8 Scope</h2>
+
+<div class="definition-box">
+    <strong>Scope:</strong> The region of a program in which a variable is accessible.
+</div>
+
+<h3>Local Variables</h3>
+<ul>
+    <li>Declared <strong>inside</strong> a subroutine</li>
+    <li>Only accessible within that subroutine</li>
+    <li>Created when the subroutine is called, destroyed when it ends</li>
+    <li>Cannot be accessed by other subroutines unless passed as parameters</li>
+    <li>Using local variables is considered <strong>good practice</strong></li>
+</ul>
+
+<h3>Global Variables</h3>
+<ul>
+    <li>Declared <strong>outside</strong> all subroutines (at the top level)</li>
+    <li>Accessible from anywhere in the program</li>
+    <li>Persist for the entire duration of the program</li>
+    <li>Generally <strong>discouraged</strong> because they make debugging harder, can be changed unexpectedly, and create dependencies between subroutines</li>
+</ul>
+
+<pre>globalCounter = 0          # global variable
+
+def increment():
+    global globalCounter   # must declare to modify global in Python
+    localTemp = 1          # local variable
+    globalCounter += localTemp
+
+increment()
+print(globalCounter)       # 1
+# print(localTemp)         # ERROR - localTemp is not accessible here</pre>
+
+<div class="exam-tip">
+    In exam questions, identify which variables are local and global. Explain why local variables are preferred: they reduce side effects, improve modularity, and make subroutines self-contained and easier to test.
+</div>
+
+<!-- ==================== STRING HANDLING ==================== -->
+<h2>4.1.9 String Handling</h2>
+
+<p>Common string operations you must know:</p>
+
+<table>
+    <tr><th>Operation</th><th>Description</th><th>Example (Python)</th></tr>
+    <tr><td>Length</td><td>Number of characters in the string</td><td><code>len("Hello") &rarr; 5</code></td></tr>
+    <tr><td>Concatenation</td><td>Joining two strings together</td><td><code>"Hi" + " there" &rarr; "Hi there"</code></td></tr>
+    <tr><td>Substring / Slicing</td><td>Extracting part of a string</td><td><code>"Hello"[1:4] &rarr; "ell"</code></td></tr>
+    <tr><td>Character access</td><td>Accessing a character by index (0-based)</td><td><code>"Hello"[0] &rarr; "H"</code></td></tr>
+    <tr><td>Uppercase / Lowercase</td><td>Converting case</td><td><code>"abc".upper() &rarr; "ABC"</code></td></tr>
+    <tr><td>ASCII conversion</td><td>Character to/from ASCII code</td><td><code>ord('A') &rarr; 65</code>, <code>chr(65) &rarr; 'A'</code></td></tr>
+    <tr><td>Search / Find</td><td>Finding position of a substring</td><td><code>"Hello".find("ll") &rarr; 2</code></td></tr>
+    <tr><td>String comparison</td><td>Comparing using ASCII values</td><td><code>"apple" &lt; "banana" &rarr; True</code></td></tr>
+</table>
+
+<pre># Example: reversing a string
+def reverse_string(s):
+    result = ""
+    for i in range(len(s) - 1, -1, -1):
+        result += s[i]
+    return result
+
+print(reverse_string("Hello"))  # olleH</pre>
+
+<!-- ==================== FILE HANDLING ==================== -->
+<h2>4.1.10 File Handling</h2>
+
+<p>Programs need to read from and write to files for <strong>persistent storage</strong> &mdash; data that survives after the program ends.</p>
+
+<h3>Text File Operations</h3>
+<pre># Writing to a file
+file = open("data.txt", "w")      # "w" = write (overwrites)
+file.write("Line 1\n")
+file.write("Line 2\n")
+file.close()
+
+# Appending to a file
+file = open("data.txt", "a")      # "a" = append
+file.write("Line 3\n")
+file.close()
+
+# Reading from a file
+file = open("data.txt", "r")      # "r" = read
+contents = file.read()            # read entire file
+file.close()
+
+# Reading line by line
+file = open("data.txt", "r")
+for line in file:
+    print(line.strip())           # strip() removes \n
+file.close()</pre>
+
+<h3>Using <code>with</code> Statements</h3>
+<p>Best practice is to use <code>with</code> to automatically close the file, even if an exception occurs:</p>
+<pre>with open("data.txt", "r") as file:
+    for line in file:
+        print(line.strip())
+# file is automatically closed here</pre>
+
+<table>
+    <tr><th>Mode</th><th>Description</th></tr>
+    <tr><td><code>"r"</code></td><td>Read &mdash; file must exist</td></tr>
+    <tr><td><code>"w"</code></td><td>Write &mdash; creates file or overwrites existing</td></tr>
+    <tr><td><code>"a"</code></td><td>Append &mdash; adds to end of file</td></tr>
+    <tr><td><code>"r+"</code></td><td>Read and write</td></tr>
+</table>
+
+<h3>CSV Files</h3>
+<pre>import csv
+
+# Writing CSV
+with open("students.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Name", "Age", "Grade"])
+    writer.writerow(["Alice", 17, "A"])
+    writer.writerow(["Bob", 18, "B"])
+
+# Reading CSV
+with open("students.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)          # ['Name', 'Age', 'Grade'] etc.</pre>
+
+<!-- ==================== ADTs ==================== -->
+<h2>4.1.11 Abstract Data Types</h2>
+
+<div class="definition-box">
+    <strong>Abstract Data Type (ADT):</strong> A logical description of how data is viewed and the operations that can be performed on it, without specifying how it is implemented. It defines <em>what</em> operations are available, not <em>how</em> they work internally.
+</div>
+
+<p>ADTs separate the <strong>interface</strong> (what operations exist) from the <strong>implementation</strong> (how the data is stored and manipulated). This is a form of abstraction and information hiding.</p>
+
+<h3>Common ADTs</h3>
+<table>
+    <tr><th>ADT</th><th>Key Operations</th><th>Possible Implementations</th></tr>
+    <tr><td>Stack</td><td>push, pop, peek, isEmpty</td><td>Array, linked list</td></tr>
+    <tr><td>Queue</td><td>enqueue, dequeue, peek, isEmpty</td><td>Array (circular), linked list</td></tr>
+    <tr><td>List</td><td>insert, delete, search, access by index</td><td>Array, linked list</td></tr>
+    <tr><td>Dictionary / Map</td><td>add, remove, lookup by key</td><td>Hash table, BST</td></tr>
+    <tr><td>Set</td><td>add, remove, union, intersection, difference</td><td>Hash table, BST</td></tr>
+    <tr><td>Tree</td><td>insert, delete, traverse</td><td>Linked nodes, array</td></tr>
+    <tr><td>Graph</td><td>addVertex, addEdge, traverse</td><td>Adjacency matrix, adjacency list</td></tr>
+    <tr><td>Priority Queue</td><td>insert with priority, remove highest priority</td><td>Heap, sorted array</td></tr>
+</table>
+
+<p><strong>Benefits of ADTs:</strong></p>
+<ul>
+    <li>Encapsulation &mdash; internal workings are hidden from the user</li>
+    <li>Flexibility &mdash; the implementation can be changed without affecting code that uses the ADT</li>
+    <li>Modularity &mdash; complex systems can be built from well-defined components</li>
+    <li>Testability &mdash; each ADT can be tested independently</li>
+</ul>
+
+<div class="exam-tip">
+    You may be asked to distinguish between an ADT and a data structure. An ADT is a theoretical concept (e.g., "a stack supports push and pop"). A data structure is the concrete implementation (e.g., "a stack implemented using an array with a top pointer"). The same ADT can have multiple implementations.
+</div>
+
+</div>
+</body>
+</html>

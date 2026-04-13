@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 8 — Nuclear and Particle Physics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e40af;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #2563eb;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #374151;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        .definition {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before {
+            content: "Exam Tip: ";
+            font-weight: 700;
+            color: #d97706;
+        }
+        .equation {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 12px 20px;
+            margin: 12px 0;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            text-align: center;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #1e40af;
+        }
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        ul, ol {
+            margin: 10px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        strong {
+            color: #1e293b;
+        }
+        @media print {
+            body { padding: 20px; }
+            .exam-tip, .definition { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Topic 8 — Nuclear and Particle Physics</h1>
+
+<h2>8.1 Atomic Structure</h2>
+
+<div class="definition">
+    <strong>The atom</strong> consists of a small, dense, positively charged nucleus (containing protons and neutrons) surrounded by orbiting electrons.
+</div>
+
+<table>
+    <tr>
+        <th>Particle</th>
+        <th>Relative Charge</th>
+        <th>Relative Mass</th>
+        <th>Location</th>
+    </tr>
+    <tr>
+        <td>Proton</td>
+        <td>+1</td>
+        <td>1</td>
+        <td>Nucleus</td>
+    </tr>
+    <tr>
+        <td>Neutron</td>
+        <td>0</td>
+        <td>1</td>
+        <td>Nucleus</td>
+    </tr>
+    <tr>
+        <td>Electron</td>
+        <td>−1</td>
+        <td>1/1836 ≈ 0.0005</td>
+        <td>Orbits / electron cloud</td>
+    </tr>
+</table>
+
+<h3>Nuclear Notation</h3>
+<p>A nuclide is represented as: <sup>A</sup><sub>Z</sub>X, where A = mass number (protons + neutrons), Z = atomic number (protons), and X is the chemical symbol.</p>
+
+<h3>Isotopes</h3>
+<p><strong>Isotopes</strong> are atoms of the same element (same number of protons, same Z) but with different numbers of neutrons (different A). They have the same chemical properties but different physical properties (e.g., different mass, some may be radioactive).</p>
+
+<h2>8.2 Fundamental Particles</h2>
+
+<h3>Quarks</h3>
+<p>Quarks are fundamental particles that make up hadrons. There are six flavours arranged in three generations:</p>
+
+<table>
+    <tr>
+        <th>Generation</th>
+        <th>Quark</th>
+        <th>Symbol</th>
+        <th>Charge</th>
+        <th>Baryon Number</th>
+        <th>Strangeness</th>
+    </tr>
+    <tr>
+        <td>1st</td>
+        <td>Up</td>
+        <td>u</td>
+        <td>+2/3</td>
+        <td>+1/3</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>1st</td>
+        <td>Down</td>
+        <td>d</td>
+        <td>−1/3</td>
+        <td>+1/3</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>2nd</td>
+        <td>Charm</td>
+        <td>c</td>
+        <td>+2/3</td>
+        <td>+1/3</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>2nd</td>
+        <td>Strange</td>
+        <td>s</td>
+        <td>−1/3</td>
+        <td>+1/3</td>
+        <td>−1</td>
+    </tr>
+    <tr>
+        <td>3rd</td>
+        <td>Top</td>
+        <td>t</td>
+        <td>+2/3</td>
+        <td>+1/3</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>3rd</td>
+        <td>Bottom</td>
+        <td>b</td>
+        <td>−1/3</td>
+        <td>+1/3</td>
+        <td>0</td>
+    </tr>
+</table>
+
+<p>Each quark has a corresponding <strong>antiquark</strong> with opposite charge, baryon number, and strangeness.</p>
+
+<h3>Leptons</h3>
+<p>Leptons are fundamental particles that do not experience the strong nuclear force.</p>
+
+<table>
+    <tr>
+        <th>Generation</th>
+        <th>Lepton</th>
+        <th>Symbol</th>
+        <th>Charge</th>
+        <th>Lepton Number</th>
+    </tr>
+    <tr>
+        <td>1st</td>
+        <td>Electron</td>
+        <td>e⁻</td>
+        <td>−1</td>
+        <td>+1</td>
+    </tr>
+    <tr>
+        <td>1st</td>
+        <td>Electron neutrino</td>
+        <td>νₑ</td>
+        <td>0</td>
+        <td>+1</td>
+    </tr>
+    <tr>
+        <td>2nd</td>
+        <td>Muon</td>
+        <td>μ⁻</td>
+        <td>−1</td>
+        <td>+1</td>
+    </tr>
+    <tr>
+        <td>2nd</td>
+        <td>Muon neutrino</td>
+        <td>ν_μ</td>
+        <td>0</td>
+        <td>+1</td>
+    </tr>
+    <tr>
+        <td>3rd</td>
+        <td>Tau</td>
+        <td>τ⁻</td>
+        <td>−1</td>
+        <td>+1</td>
+    </tr>
+    <tr>
+        <td>3rd</td>
+        <td>Tau neutrino</td>
+        <td>ν_τ</td>
+        <td>0</td>
+        <td>+1</td>
+    </tr>
+</table>
+
+<p>Each lepton has a corresponding antilepton with opposite charge and lepton number.</p>
+
+<h3>Exchange Particles (Gauge Bosons)</h3>
+
+<div class="definition">
+    <strong>Exchange particles</strong> (gauge bosons) are virtual particles that mediate the fundamental forces between other particles.
+</div>
+
+<table>
+    <tr>
+        <th>Force</th>
+        <th>Exchange Particle</th>
+        <th>Acts On</th>
+        <th>Range</th>
+    </tr>
+    <tr>
+        <td>Electromagnetic</td>
+        <td>Photon (γ)</td>
+        <td>All charged particles</td>
+        <td>Infinite</td>
+    </tr>
+    <tr>
+        <td>Strong nuclear</td>
+        <td>Gluon (g)</td>
+        <td>Quarks and gluons</td>
+        <td>~10⁻¹⁵ m</td>
+    </tr>
+    <tr>
+        <td>Weak nuclear</td>
+        <td>W⁺, W⁻, Z⁰</td>
+        <td>All fermions</td>
+        <td>~10⁻¹⁸ m</td>
+    </tr>
+    <tr>
+        <td>Gravity</td>
+        <td>Graviton (hypothetical)</td>
+        <td>All particles with mass</td>
+        <td>Infinite</td>
+    </tr>
+</table>
+
+<h2>8.3 Hadrons</h2>
+
+<p><strong>Hadrons</strong> are composite particles made of quarks, held together by the strong force. They are divided into two groups:</p>
+
+<h3>Baryons (3 quarks)</h3>
+<ul>
+    <li><strong>Proton (p):</strong> uud — charge = +2/3 +2/3 −1/3 = +1</li>
+    <li><strong>Neutron (n):</strong> udd — charge = +2/3 −1/3 −1/3 = 0</li>
+    <li>Baryon number = +1 for baryons, −1 for antibaryons</li>
+</ul>
+
+<h3>Mesons (quark-antiquark pair)</h3>
+<ul>
+    <li><strong>Pion (π⁺):</strong> ud̄ — charge = +2/3 +1/3 = +1</li>
+    <li><strong>Pion (π⁻):</strong> ūd — charge = −2/3 −1/3 = −1</li>
+    <li><strong>Pion (π⁰):</strong> uū or dd̄ — charge = 0</li>
+    <li><strong>Kaon (K⁺):</strong> us̄ — contains an anti-strange quark, strangeness = +1</li>
+    <li>Baryon number = 0 for all mesons</li>
+</ul>
+
+<h3>Antiparticles</h3>
+<p>Every particle has a corresponding <strong>antiparticle</strong> with the same mass but opposite charge, baryon number, lepton number, and strangeness. For example: the antiproton (p̄) has quark composition ūūd̄ and charge −1.</p>
+
+<h2>8.4 Particle Interactions</h2>
+
+<h3>Conservation Laws</h3>
+<p>In all particle interactions, the following quantities are conserved:</p>
+<table>
+    <tr>
+        <th>Quantity</th>
+        <th>Conserved In</th>
+    </tr>
+    <tr>
+        <td>Charge (Q)</td>
+        <td>All interactions</td>
+    </tr>
+    <tr>
+        <td>Baryon number (B)</td>
+        <td>All interactions</td>
+    </tr>
+    <tr>
+        <td>Lepton number (L)</td>
+        <td>All interactions</td>
+    </tr>
+    <tr>
+        <td>Strangeness (S)</td>
+        <td>Strong and electromagnetic only (can change by 0 or ±1 in weak)</td>
+    </tr>
+    <tr>
+        <td>Energy and momentum</td>
+        <td>All interactions</td>
+    </tr>
+</table>
+
+<div class="exam-tip">Strangeness is conserved in strong interactions but can change by ±1 in weak interactions. This is how strange particles are produced (in pairs via the strong force) but decay individually via the weak force.</div>
+
+<h3>Beta Decay at Quark Level</h3>
+
+<p><strong>Beta-minus decay (β⁻):</strong> A neutron decays into a proton, emitting an electron and an electron antineutrino.</p>
+<div class="equation">n → p + e⁻ + ν̄ₑ</div>
+<p>At quark level: d → u + e⁻ + ν̄ₑ (mediated by W⁻ boson)</p>
+
+<p><strong>Beta-plus decay (β⁺):</strong> A proton decays into a neutron, emitting a positron and an electron neutrino.</p>
+<div class="equation">p → n + e⁺ + νₑ</div>
+<p>At quark level: u → d + e⁺ + νₑ (mediated by W⁺ boson)</p>
+
+<h2>8.5 Feynman Diagrams</h2>
+
+<p><strong>Feynman diagrams</strong> are spacetime diagrams that represent particle interactions. Convention:</p>
+<ul>
+    <li>Time axis runs upward (or left to right — check the diagram)</li>
+    <li>Straight lines represent fermions (particles/antiparticles)</li>
+    <li>Wavy lines represent photons or W/Z bosons</li>
+    <li>Curly lines represent gluons</li>
+    <li>Antiparticles have arrows pointing backward in time</li>
+    <li>At each vertex, charge, baryon number, and lepton number are conserved</li>
+</ul>
+
+<p><strong>Electromagnetic interaction example:</strong> Electron-electron repulsion — two electrons exchange a virtual photon.</p>
+
+<p><strong>Weak interaction example:</strong> Beta-minus decay — a down quark emits a W⁻ boson and becomes an up quark. The W⁻ then decays into an electron and an electron antineutrino.</p>
+
+<div class="exam-tip">When drawing Feynman diagrams, always check conservation of charge at every vertex. The W⁺ carries charge +1 and the W⁻ carries charge −1. The Z⁰ and photon are neutral.</div>
+
+<h2>8.6 The Standard Model</h2>
+
+<p>The <strong>Standard Model</strong> of particle physics classifies all known fundamental particles and describes three of the four fundamental forces (excluding gravity).</p>
+
+<ul>
+    <li><strong>Fermions</strong> (matter particles, spin ½): 6 quarks + 6 leptons (plus their antiparticles)</li>
+    <li><strong>Bosons</strong> (force carriers, integer spin): photon, W±, Z⁰, gluons, Higgs boson</li>
+</ul>
+
+<p>The <strong>Higgs boson</strong> was confirmed in 2012 at CERN. It is associated with the Higgs field, which gives particles their mass through interaction with the field.</p>
+
+<h2>8.7 Pair Production and Annihilation</h2>
+
+<div class="definition">
+    <strong>Pair production:</strong> A photon with sufficient energy creates a particle-antiparticle pair. The minimum photon energy required equals the combined rest mass energy of the pair: E = 2mc².
+</div>
+
+<div class="equation">γ → e⁻ + e⁺ &nbsp; (minimum photon energy = 2 × 0.511 MeV = 1.022 MeV)</div>
+
+<p>Pair production must occur near a nucleus (to conserve momentum).</p>
+
+<div class="definition">
+    <strong>Annihilation:</strong> When a particle meets its antiparticle, they annihilate, converting their combined mass-energy into photon energy. Two photons are produced (to conserve momentum).
+</div>
+
+<div class="equation">e⁻ + e⁺ → 2γ</div>
+
+<p>Each photon has minimum energy E = mc² = 0.511 MeV (for electron-positron annihilation at rest).</p>
+
+<div class="exam-tip">In annihilation, two photons are produced travelling in opposite directions to conserve momentum. In pair production, a nearby nucleus is needed to absorb recoil momentum.</div>
+
+</div>
+</body>
+</html>

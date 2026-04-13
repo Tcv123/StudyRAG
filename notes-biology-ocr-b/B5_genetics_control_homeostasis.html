@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module B5 — Genetics, Control and Homeostasis</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module B5 — Genetics, Control and Homeostasis</h1>
+
+<h2>5.1 DNA, Genes and Protein Synthesis</h2>
+
+<h3>DNA Structure</h3>
+<p>DNA (deoxyribonucleic acid) is a double-stranded polynucleotide that stores genetic information. Each nucleotide consists of a deoxyribose sugar, a phosphate group, and one of four nitrogenous bases: adenine (A), thymine (T), cytosine (C), or guanine (G).</p>
+
+<p>The two strands run antiparallel (one 5' to 3', the other 3' to 5') and are held together by hydrogen bonds between complementary base pairs: A-T (2 hydrogen bonds) and C-G (3 hydrogen bonds). The sugar-phosphate backbones form the outside of the helix.</p>
+
+<div class="definition">
+  <strong>Gene:</strong> A sequence of DNA nucleotides that codes for a functional polypeptide (or functional RNA).<br>
+  <strong>Allele:</strong> A variant form of a gene, arising from mutation, that occupies the same locus on homologous chromosomes.<br>
+  <strong>Genome:</strong> The complete set of genetic material (DNA) in an organism.
+</div>
+
+<h3>DNA Replication</h3>
+<p>DNA replication is semi-conservative, meaning each new molecule contains one original strand and one newly synthesised strand:</p>
+<ol>
+  <li>DNA helicase unwinds the double helix and breaks hydrogen bonds between base pairs, separating the two strands</li>
+  <li>Each strand acts as a template. Free DNA nucleotides align with complementary bases on the template strand</li>
+  <li>DNA polymerase joins adjacent nucleotides with phosphodiester bonds, synthesising the new strand in the 5' to 3' direction</li>
+  <li>The leading strand is synthesised continuously; the lagging strand is synthesised in short Okazaki fragments which are joined by DNA ligase</li>
+</ol>
+
+<h3>Protein Synthesis — Transcription</h3>
+<p>Transcription occurs in the nucleus and produces a messenger RNA (mRNA) copy of a gene:</p>
+<ol>
+  <li>RNA polymerase binds to the promoter region of the gene on the template (antisense) strand</li>
+  <li>RNA polymerase moves along the template strand (3' to 5'), assembling a complementary mRNA strand (5' to 3') using free RNA nucleotides (U pairs with A instead of T)</li>
+  <li>Pre-mRNA is processed: introns (non-coding regions) are spliced out, exons (coding regions) are joined together, a 5' cap and poly-A tail are added</li>
+  <li>Mature mRNA exits the nucleus through nuclear pores</li>
+</ol>
+
+<h3>Protein Synthesis — Translation</h3>
+<p>Translation occurs on ribosomes in the cytoplasm (or on the RER for secretory proteins):</p>
+<ol>
+  <li>mRNA binds to a ribosome. The start codon (AUG) is positioned at the P site</li>
+  <li>Transfer RNA (tRNA) molecules carry specific amino acids. Each tRNA has an anticodon complementary to an mRNA codon</li>
+  <li>The tRNA with the complementary anticodon binds to the codon at the A site of the ribosome</li>
+  <li>A peptide bond forms between adjacent amino acids (catalysed by the ribosome)</li>
+  <li>The ribosome moves along the mRNA (one codon at a time), and the process repeats</li>
+  <li>Translation stops when a stop codon (UAA, UAG, or UGA) is reached; no tRNA has a complementary anticodon for these</li>
+</ol>
+
+<div class="definition">
+  <strong>Codon:</strong> A sequence of three mRNA bases that codes for one amino acid (or a stop signal).<br>
+  <strong>Anticodon:</strong> A sequence of three bases on a tRNA molecule, complementary to a specific mRNA codon.<br>
+  <strong>Degenerate code:</strong> Most amino acids are coded for by more than one codon (64 codons code for 20 amino acids + 3 stop signals).
+</div>
+
+<h3>Gene Expression and Regulation</h3>
+<p>Not all genes are expressed in all cells at all times. Gene expression is regulated at multiple levels:</p>
+<ul>
+  <li><strong>Transcription factors:</strong> Proteins that bind to specific DNA sequences near genes, promoting or inhibiting transcription</li>
+  <li><strong>Epigenetics:</strong> Heritable changes in gene expression without changes to the DNA sequence. Includes DNA methylation (addition of methyl groups to cytosine, silencing genes) and histone modification (acetylation increases transcription; deacetylation decreases it)</li>
+  <li><strong>RNA interference:</strong> Small RNA molecules (siRNA, miRNA) can bind to mRNA and prevent translation or trigger its degradation</li>
+</ul>
+
+<h2>5.2 Inheritance</h2>
+
+<h3>Monohybrid Inheritance</h3>
+<p>Monohybrid crosses involve a single gene with two alleles. If the alleles are different (heterozygous), the dominant allele is expressed in the phenotype. The recessive allele is only expressed when homozygous.</p>
+
+<p>A cross between two heterozygous individuals (Aa x Aa) produces a 3:1 phenotypic ratio in the offspring (3 dominant : 1 recessive) and a 1:2:1 genotypic ratio (1 AA : 2 Aa : 1 aa).</p>
+
+<h3>Dihybrid Inheritance</h3>
+<p>Dihybrid crosses involve two genes on different chromosomes (unlinked genes). A cross between two double heterozygotes (AaBb x AaBb) produces a 9:3:3:1 phenotypic ratio, assuming complete dominance and independent assortment.</p>
+
+<h3>Codominance</h3>
+<p>When both alleles are expressed equally in the heterozygote, neither is dominant. For example, in the ABO blood group system, alleles IA and IB are codominant (both expressed in genotype IAIB, giving blood group AB), while allele IO is recessive to both.</p>
+
+<h3>Sex Linkage</h3>
+<p>Genes located on the X chromosome show sex-linked inheritance. Males (XY) are hemizygous for X-linked genes (only one copy), so recessive X-linked conditions are more common in males. Examples include haemophilia and red-green colour blindness.</p>
+
+<h3>Epistasis</h3>
+<p>Epistasis occurs when the expression of one gene is affected by another gene at a different locus. The epistatic gene masks or modifies the expression of the hypostatic gene. This produces modified dihybrid ratios such as 9:3:4, 12:3:1, or 9:7 depending on the type of epistasis.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always use a genetic diagram (Punnett square) to work out ratios. Show the parental phenotypes, genotypes, gametes, and offspring genotypic and phenotypic ratios. Use correct genetic notation: uppercase for dominant, lowercase for recessive, superscript for codominant alleles.
+</div>
+
+<h2>5.3 Nervous Coordination</h2>
+
+<h3>Structure of Neurones</h3>
+<p>The nervous system enables rapid communication using electrical impulses. There are three types of neurone:</p>
+<ul>
+  <li><strong>Sensory neurones:</strong> Transmit impulses from receptors to the CNS. Long dendron, cell body to one side, short axon.</li>
+  <li><strong>Motor neurones:</strong> Transmit impulses from the CNS to effectors (muscles/glands). Short dendrites, cell body at one end, long axon.</li>
+  <li><strong>Relay (interneurones):</strong> Connect sensory and motor neurones within the CNS. Short axon, many connections.</li>
+</ul>
+
+<h3>Resting Potential and Action Potential</h3>
+<p>At rest, the neurone membrane is polarised at approximately -70 mV (inside negative relative to outside). This resting potential is maintained by the sodium-potassium pump (3 Na+ out, 2 K+ in, using ATP) and potassium leak channels.</p>
+
+<p>An action potential occurs when a stimulus exceeds the threshold:</p>
+<ol>
+  <li><strong>Depolarisation:</strong> Voltage-gated sodium channels open, Na+ floods in, membrane potential rises rapidly to about +40 mV</li>
+  <li><strong>Repolarisation:</strong> Sodium channels close (inactivated), voltage-gated potassium channels open, K+ flows out, membrane potential falls</li>
+  <li><strong>Hyperpolarisation:</strong> Potassium channels are slow to close, causing a brief overshoot below resting potential</li>
+  <li><strong>Recovery:</strong> Na+/K+ pump restores resting ion distribution</li>
+</ol>
+
+<div class="definition">
+  <strong>All-or-nothing principle:</strong> A neurone either fires a full action potential or does not fire at all. There is no partial response. Stimulus intensity is coded by the frequency of action potentials, not their size.<br>
+  <strong>Refractory period:</strong> The brief period after an action potential during which the neurone cannot fire again. This ensures impulses travel in one direction and limits the maximum frequency of impulses.
+</div>
+
+<h3>Saltatory Conduction</h3>
+<p>In myelinated neurones, the myelin sheath (formed by Schwann cells) insulates the axon. Action potentials can only occur at the nodes of Ranvier (gaps in the myelin). The impulse effectively jumps between nodes, greatly increasing conduction speed (up to 120 m/s compared to 1 m/s in unmyelinated neurones).</p>
+
+<h3>Synaptic Transmission</h3>
+<p>Synapses are junctions between neurones where signals are transmitted chemically:</p>
+<ol>
+  <li>Action potential arrives at the presynaptic membrane</li>
+  <li>Voltage-gated calcium channels open; Ca2+ ions enter the presynaptic knob</li>
+  <li>Ca2+ causes synaptic vesicles (containing neurotransmitter, e.g., acetylcholine) to fuse with the presynaptic membrane, releasing neurotransmitter into the synaptic cleft by exocytosis</li>
+  <li>Neurotransmitter diffuses across the cleft and binds to specific receptors on the postsynaptic membrane</li>
+  <li>This opens ion channels (e.g., Na+ channels), causing depolarisation of the postsynaptic membrane</li>
+  <li>If threshold is reached, a new action potential is generated</li>
+  <li>Neurotransmitter is broken down by enzymes (e.g., acetylcholinesterase) and recycled</li>
+</ol>
+
+<h2>5.4 Hormonal Coordination</h2>
+
+<p>The endocrine system uses hormones (chemical messengers) secreted by glands into the blood. Hormones travel to target cells with specific receptors. Endocrine communication is slower but longer-lasting than nervous communication.</p>
+
+<h3>Comparison of Nervous and Hormonal Communication</h3>
+<table>
+  <tr><th>Feature</th><th>Nervous</th><th>Hormonal</th></tr>
+  <tr><td>Speed</td><td>Very fast (milliseconds)</td><td>Slower (seconds to hours)</td></tr>
+  <tr><td>Duration</td><td>Short-lived</td><td>Longer-lasting</td></tr>
+  <tr><td>Transmission</td><td>Electrical impulses along neurones</td><td>Chemical (hormones in blood)</td></tr>
+  <tr><td>Target</td><td>Specific (single effector)</td><td>Widespread (all cells with receptors)</td></tr>
+  <tr><td>Response</td><td>Precise, localised</td><td>General, widespread</td></tr>
+</table>
+
+<h2>5.5 Homeostasis</h2>
+
+<div class="definition">
+  <strong>Homeostasis:</strong> The maintenance of a relatively constant internal environment despite fluctuations in external conditions. It involves negative feedback mechanisms with receptors (detect change), a control centre (processes information), and effectors (bring about a response to correct the deviation).
+</div>
+
+<h3>Blood Glucose Regulation</h3>
+<p>Blood glucose concentration is maintained between approximately 4-6 mmol/L by the hormones insulin and glucagon, both produced by the islets of Langerhans in the pancreas:</p>
+<ul>
+  <li><strong>High blood glucose (after eating):</strong> Beta cells detect the rise and secrete insulin. Insulin binds to receptors on liver and muscle cells, stimulating glucose uptake via GLUT4 transporters, glycogenesis (glucose to glycogen), and increased cellular respiration. Blood glucose falls.</li>
+  <li><strong>Low blood glucose (between meals):</strong> Alpha cells detect the fall and secrete glucagon. Glucagon stimulates glycogenolysis (glycogen to glucose) and gluconeogenesis (amino acids/glycerol to glucose) in the liver. Blood glucose rises.</li>
+</ul>
+
+<p>This is an example of negative feedback: a deviation from the set point triggers a response that returns the variable to normal.</p>
+
+<h3>Thermoregulation</h3>
+<p>Core body temperature is maintained at approximately 37 degrees C by the thermoregulatory centre in the hypothalamus, which monitors blood temperature and receives input from peripheral thermoreceptors in the skin.</p>
+
+<ul>
+  <li><strong>Too hot:</strong> Vasodilation (arterioles dilate, more blood flows near skin surface, increasing radiation), sweating (evaporation removes heat), reduced metabolic rate, behavioural responses (seeking shade)</li>
+  <li><strong>Too cold:</strong> Vasoconstriction (arterioles constrict, less blood near surface, reducing heat loss), shivering (involuntary muscle contractions generate heat), piloerection, increased metabolic rate, behavioural responses (adding layers)</li>
+</ul>
+
+<h3>Kidney Function and Osmoregulation</h3>
+<p>The kidneys regulate blood water potential, ion concentration, and remove urea. Each nephron filters blood and selectively reabsorbs useful substances:</p>
+<ul>
+  <li><strong>Ultrafiltration:</strong> High pressure in the glomerulus forces small molecules (water, glucose, urea, ions) through the basement membrane into the Bowman's capsule. Blood cells and proteins are too large to pass through.</li>
+  <li><strong>Selective reabsorption:</strong> In the proximal convoluted tubule, all glucose and amino acids are reabsorbed by active transport and cotransport. Most water and ions are also reabsorbed.</li>
+  <li><strong>Loop of Henle:</strong> Creates a concentration gradient in the medulla (countercurrent multiplier) that allows water reabsorption from the collecting duct.</li>
+  <li><strong>Collecting duct:</strong> Permeability to water is regulated by ADH (antidiuretic hormone). When blood water potential is low, more ADH is released, more aquaporins are inserted into the collecting duct walls, more water is reabsorbed, and a small volume of concentrated urine is produced.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> ADH does not add water to the blood. It increases the permeability of the collecting duct to water, allowing more water to be reabsorbed by osmosis down the concentration gradient created by the loop of Henle. Always mention osmosis as the mechanism of water movement.
+</div>
+
+</div>
+</body>
+</html>

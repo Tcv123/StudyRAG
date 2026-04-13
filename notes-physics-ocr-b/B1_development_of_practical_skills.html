@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module B1 — Development of Practical Skills</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module B1 — Development of Practical Skills</h1>
+
+<h2>1.1 Planning Experiments</h2>
+
+<p>Good experimental design is the foundation of reliable physics. Before carrying out any investigation, you must identify the independent variable (what you change), the dependent variable (what you measure), and the control variables (what you keep constant).</p>
+
+<div class="definition">
+  <strong>Independent variable:</strong> The variable that is deliberately changed by the experimenter.<br>
+  <strong>Dependent variable:</strong> The variable that is measured or observed as a result of changing the independent variable.<br>
+  <strong>Control variable:</strong> A variable that is kept constant to ensure a fair test.
+</div>
+
+<h3>Writing a Method</h3>
+<p>A good experimental method should be detailed enough that another competent physicist could replicate the experiment and obtain similar results. It should include:</p>
+<ul>
+  <li>A clear statement of the aim and hypothesis</li>
+  <li>A labelled diagram of the apparatus</li>
+  <li>Step-by-step instructions in a logical order</li>
+  <li>The range and intervals of the independent variable</li>
+  <li>How the dependent variable will be measured, including instruments and their resolution</li>
+  <li>How control variables will be maintained</li>
+  <li>Safety precautions and risk assessment</li>
+  <li>How many repeat readings will be taken</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When asked to describe an experimental procedure, always state the measuring instruments you would use and their resolution. For example, "measure the length using a ruler with 1 mm resolution" is much better than just "measure the length."
+</div>
+
+<h2>1.2 Making Measurements</h2>
+
+<h3>Choosing Appropriate Instruments</h3>
+<p>Selecting the right measuring instrument depends on the quantity being measured, the expected magnitude, and the precision required.</p>
+
+<table>
+  <tr><th>Quantity</th><th>Instrument</th><th>Typical Resolution</th></tr>
+  <tr><td>Length (large)</td><td>Metre ruler</td><td>1 mm</td></tr>
+  <tr><td>Length (small)</td><td>Vernier caliper</td><td>0.1 mm (0.05 mm digital)</td></tr>
+  <tr><td>Length (very small)</td><td>Micrometer screw gauge</td><td>0.01 mm</td></tr>
+  <tr><td>Mass</td><td>Digital balance</td><td>0.01 g or 0.1 g</td></tr>
+  <tr><td>Time</td><td>Stopwatch</td><td>0.01 s</td></tr>
+  <tr><td>Temperature</td><td>Thermometer / thermocouple</td><td>0.5 &deg;C / 0.1 &deg;C</td></tr>
+  <tr><td>Current</td><td>Ammeter (digital)</td><td>0.01 A</td></tr>
+  <tr><td>Potential difference</td><td>Voltmeter (digital)</td><td>0.01 V</td></tr>
+  <tr><td>Angle</td><td>Protractor</td><td>1&deg;</td></tr>
+</table>
+
+<div class="definition">
+  <strong>Resolution:</strong> The smallest change in a quantity that an instrument can detect. For analogue instruments, this is usually the smallest scale division. For digital instruments, it is the last digit displayed.
+</div>
+
+<h3>Reading Instruments Correctly</h3>
+<p>For analogue instruments, always read at eye level to avoid parallax error. Ensure the instrument is properly zeroed before use. For a vernier caliper, check the zero error by closing the jaws completely; any offset must be subtracted from all readings. For a micrometer, use the ratchet to avoid over-tightening.</p>
+
+<h2>1.3 Errors and Uncertainties</h2>
+
+<h3>Types of Error</h3>
+
+<div class="definition">
+  <strong>Random error:</strong> An unpredictable variation in measurements that causes readings to scatter around the true value. Random errors can be reduced by taking repeat measurements and calculating a mean.<br><br>
+  <strong>Systematic error:</strong> A consistent, repeatable error that shifts all measurements in the same direction away from the true value. Systematic errors cannot be reduced by averaging — they require recalibration or a change in technique.<br><br>
+  <strong>Zero error:</strong> A specific type of systematic error where an instrument does not read zero when it should.
+</div>
+
+<p>Examples of random errors include slight variations in timing with a stopwatch, fluctuations in readings on a voltmeter, and small differences in the point at which you judge a marker to cross a line. Examples of systematic errors include a ruler that has been worn at the zero end, a balance that has not been tared, or a thermometer that consistently reads 0.5 degrees too high.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A common exam question asks you to distinguish between accuracy and precision. Accuracy relates to systematic error (how close to the true value), while precision relates to random error (how closely repeated readings agree with each other).
+</div>
+
+<h3>Absolute Uncertainty</h3>
+<p>The absolute uncertainty in a single measurement from an analogue instrument is typically &plusmn; half the smallest scale division. For a digital instrument, it is &plusmn; the last displayed digit. When repeat readings are taken, the uncertainty can be estimated as half the range of the readings.</p>
+
+<div class="equation">
+  Absolute uncertainty (from repeats) = (max reading &minus; min reading) / 2
+</div>
+
+<h3>Percentage Uncertainty</h3>
+<div class="equation">
+  Percentage uncertainty = (absolute uncertainty / measured value) &times; 100%
+</div>
+
+<p>Percentage uncertainty is particularly useful because it allows you to compare the significance of uncertainties in different measurements and determine which contributes most to the overall uncertainty in your final result.</p>
+
+<h3>Combining Uncertainties</h3>
+<p>When quantities are added or subtracted, the absolute uncertainties are added together. When quantities are multiplied or divided, the percentage uncertainties are added together.</p>
+
+<table>
+  <tr><th>Operation</th><th>Rule for combining uncertainties</th></tr>
+  <tr><td>A + B or A &minus; B</td><td>Add absolute uncertainties: &Delta;(A &plusmn; B) = &Delta;A + &Delta;B</td></tr>
+  <tr><td>A &times; B or A / B</td><td>Add percentage uncertainties: %unc(AB) = %unc(A) + %unc(B)</td></tr>
+  <tr><td>A<sup>n</sup></td><td>Multiply percentage uncertainty by n: %unc(A<sup>n</sup>) = n &times; %unc(A)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> If a quantity is squared (e.g., v&sup2;), you must double its percentage uncertainty. If a quantity is square-rooted, you halve its percentage uncertainty. Students frequently lose marks by forgetting the power rule.
+</div>
+
+<h2>1.4 Recording and Presenting Data</h2>
+
+<h3>Data Tables</h3>
+<p>A well-constructed data table should include:</p>
+<ul>
+  <li>Column headings with the quantity name and its unit separated by a forward slash (e.g., Length / m)</li>
+  <li>All raw data recorded to the same number of decimal places (consistent with the instrument's resolution)</li>
+  <li>Repeat readings and mean values</li>
+  <li>Processed data columns (e.g., calculated values, logarithms, reciprocals)</li>
+</ul>
+
+<h3>Significant Figures</h3>
+<p>Calculated results should be given to the same number of significant figures as (or one more than) the least precise raw measurement. Never quote a final answer with more significant figures than the data supports, as this implies a false level of precision.</p>
+
+<h2>1.5 Graphical Analysis</h2>
+
+<h3>Plotting Graphs</h3>
+<p>Graphs are powerful tools for identifying relationships and extracting physical quantities. Good practice includes:</p>
+<ul>
+  <li>Choosing axes so the independent variable is on the x-axis and the dependent variable is on the y-axis</li>
+  <li>Using sensible scales that allow plotted points to occupy at least half the available space on each axis</li>
+  <li>Labelling axes with quantity and unit (e.g., "Velocity / m s<sup>&minus;1</sup>")</li>
+  <li>Plotting points with small, precise crosses (not large blobs)</li>
+  <li>Drawing a line of best fit (straight or curved as appropriate)</li>
+</ul>
+
+<h3>Determining the Gradient</h3>
+<p>To find the gradient of a straight line, choose two points on the line of best fit that are far apart (not data points). Use a large triangle to reduce the percentage uncertainty in the gradient calculation.</p>
+
+<div class="equation">
+  gradient = &Delta;y / &Delta;x = (y&sub2; &minus; y&sub1;) / (x&sub2; &minus; x&sub1;)
+</div>
+
+<h3>Determining the Y-intercept</h3>
+<p>The y-intercept is found either by reading where the line of best fit crosses the y-axis (if the origin is visible on the graph) or by substituting a point on the line and the gradient into y = mx + c and solving for c.</p>
+
+<h3>Error Bars and Uncertainty in the Gradient</h3>
+<p>Error bars can be added to data points to represent the uncertainty in each measurement. To determine the uncertainty in the gradient, draw steepest and shallowest lines that pass through all error bars. The uncertainty in the gradient is then:</p>
+
+<div class="equation">
+  Uncertainty in gradient = (steepest gradient &minus; shallowest gradient) / 2
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In OCR B, you are frequently expected to linearise relationships. For example, if you expect y = kx&sup2;, plot y against x&sup2; to get a straight line with gradient k. If y = Ae<sup>kx</sup>, plot ln(y) against x to get gradient k and intercept ln(A).
+</div>
+
+<h2>1.6 Evaluating Results</h2>
+
+<h3>Drawing Conclusions</h3>
+<p>When concluding from an experiment, you must refer to the data collected. State whether your results support or refute the hypothesis, referring to the graph and any calculated values. Quote numerical results with their uncertainties.</p>
+
+<h3>Evaluating the Procedure</h3>
+<p>A good evaluation considers:</p>
+<ul>
+  <li>The largest sources of uncertainty and which measurements contribute most to the overall error</li>
+  <li>Whether systematic errors could have affected results and how they might be identified (e.g., does the best fit line pass through the origin when theory predicts it should?)</li>
+  <li>Whether the range of the independent variable was sufficient</li>
+  <li>Whether enough data points were collected</li>
+  <li>Specific improvements that could reduce the dominant sources of error</li>
+</ul>
+
+<h3>Common Improvements</h3>
+<table>
+  <tr><th>Problem</th><th>Improvement</th></tr>
+  <tr><td>Large uncertainty in timing short events</td><td>Time multiple oscillations and divide; use light gates and a data logger</td></tr>
+  <tr><td>Parallax error reading a ruler</td><td>Use a set square; position the ruler against the object; use a travelling microscope</td></tr>
+  <tr><td>Temperature changes during the experiment</td><td>Use insulation; take readings quickly; use a data logger for continuous monitoring</td></tr>
+  <tr><td>Friction affecting results</td><td>Use an air track; lubricate surfaces; account for friction in analysis</td></tr>
+  <tr><td>Difficulty judging the start/end of motion</td><td>Use motion sensors, video analysis with frame-by-frame playback</td></tr>
+</table>
+
+<h2>1.7 Key Practical Techniques</h2>
+
+<p>OCR B expects familiarity with a range of practical techniques that recur across the course:</p>
+<ul>
+  <li><strong>Use of calipers and micrometers</strong> for precise length measurements, including checking and correcting for zero errors</li>
+  <li><strong>Electrical circuit construction</strong> using ammeters in series and voltmeters in parallel, and varying potential difference with a potential divider</li>
+  <li><strong>Use of oscilloscopes</strong> to measure voltage, time period, and frequency of signals</li>
+  <li><strong>Timing oscillations</strong> to determine period: time at least 10 complete cycles and divide</li>
+  <li><strong>Data logging</strong> with sensors for continuous measurement of quantities like temperature, light intensity, force, and position</li>
+  <li><strong>Use of fiducial markers</strong> to reduce parallax when timing oscillations</li>
+  <li><strong>Video analysis</strong> for recording motion and analysing frame-by-frame</li>
+</ul>
+
+<div class="definition">
+  <strong>Fiducial marker:</strong> A fixed reference point used to judge when an oscillating object passes a specific position, helping to reduce the uncertainty in timing measurements.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Practical questions often carry significant marks in OCR B papers. Always think about what could go wrong in an experiment and how you would improve it. Examiners reward specific, detailed suggestions over vague generalisations like "use better equipment."
+</div>
+
+</div>
+</body>
+</html>

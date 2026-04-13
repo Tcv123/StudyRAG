@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.7 Fields and Their Consequences — AQA A-Level Physics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>3.7 Fields and Their Consequences</h1>
+
+<!-- GRAVITATIONAL FIELDS -->
+<h2>1. Gravitational Fields</h2>
+
+<div class="def-box"><strong>Gravitational field:</strong> A region of space in which a mass experiences a force. All objects with mass create a gravitational field. Gravity is always attractive.</div>
+
+<h3>Newton's Law of Gravitation</h3>
+<div class="eq">F = &minus;GMm / r<sup>2</sup></div>
+<ul>
+  <li>F = gravitational force (N) &mdash; the negative sign indicates attraction</li>
+  <li>G = gravitational constant = 6.67 &times; 10<sup>-11</sup> N m<sup>2</sup> kg<sup>-2</sup></li>
+  <li>M, m = masses of the two objects (kg)</li>
+  <li>r = distance between centres of mass (m)</li>
+</ul>
+
+<h3>Gravitational Field Strength</h3>
+<div class="def-box"><strong>Gravitational field strength (g):</strong> The force per unit mass at a point in a gravitational field. g = F/m. Units: N kg<sup>-1</sup> (or m s<sup>-2</sup>).</div>
+
+<p><strong>Radial field</strong> (point or spherical mass):</p>
+<div class="eq">g = GM / r<sup>2</sup></div>
+<p>Field strength follows an inverse square law. Field lines point radially inward towards the mass.</p>
+
+<p><strong>Uniform field:</strong> Near the Earth's surface, g is approximately constant at 9.81 N kg<sup>-1</sup>. Field lines are parallel and equally spaced.</p>
+
+<h3>Gravitational Potential</h3>
+<div class="def-box"><strong>Gravitational potential (V):</strong> The work done per unit mass in bringing a small test mass from infinity to that point. V is always negative (since gravity is attractive and V = 0 at infinity).</div>
+<div class="eq">V = &minus;GM / r</div>
+
+<p><strong>Gravitational potential energy:</strong></p>
+<div class="eq">E<sub>p</sub> = mV = &minus;GMm / r</div>
+
+<p>The relationship between g and V: g = &minus;dV/dr (the field strength is the negative gradient of the potential).</p>
+
+<h3>Orbits and Satellites</h3>
+<p>For a circular orbit, the gravitational force provides the centripetal force:</p>
+<div class="eq">GMm/r<sup>2</sup> = mv<sup>2</sup>/r</div>
+<div class="eq">v = &radic;(GM/r)</div>
+<div class="eq">T<sup>2</sup> = (4&pi;<sup>2</sup>/GM) r<sup>3</sup></div>
+
+<p>This last equation is <strong>Kepler's Third Law</strong>: T<sup>2</sup> is proportional to r<sup>3</sup>.</p>
+
+<h3>Escape Velocity</h3>
+<p>The minimum velocity needed for an object to escape a gravitational field (reach infinity with zero KE):</p>
+<div class="eq">v<sub>esc</sub> = &radic;(2GM/r)</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> A geostationary orbit has T = 24 hours, orbits above the equator, and moves in the same direction as Earth's rotation. Using Kepler's Third Law, the orbital radius is approximately 42,200 km from Earth's centre.</div>
+
+<!-- ELECTRIC FIELDS -->
+<h2>2. Electric Fields</h2>
+
+<div class="def-box"><strong>Electric field:</strong> A region of space in which a charged particle experiences a force. Field lines go from positive to negative. Like charges repel; unlike charges attract.</div>
+
+<h3>Coulomb's Law</h3>
+<div class="eq">F = kQ<sub>1</sub>Q<sub>2</sub> / r<sup>2</sup> = Q<sub>1</sub>Q<sub>2</sub> / (4&pi;&epsilon;<sub>0</sub>r<sup>2</sup>)</div>
+<ul>
+  <li>k = 1/(4&pi;&epsilon;<sub>0</sub>) = 8.99 &times; 10<sup>9</sup> N m<sup>2</sup> C<sup>-2</sup></li>
+  <li>&epsilon;<sub>0</sub> = permittivity of free space = 8.85 &times; 10<sup>-12</sup> F m<sup>-1</sup></li>
+  <li>F is positive (repulsion) for like charges, negative (attraction) for unlike charges</li>
+</ul>
+
+<h3>Electric Field Strength</h3>
+<div class="def-box"><strong>Electric field strength (E):</strong> The force per unit positive charge at a point. E = F/Q. Units: N C<sup>-1</sup> or V m<sup>-1</sup>.</div>
+
+<p><strong>Radial field</strong> (point charge):</p>
+<div class="eq">E = kQ / r<sup>2</sup> = Q / (4&pi;&epsilon;<sub>0</sub>r<sup>2</sup>)</div>
+
+<p><strong>Uniform field</strong> (between parallel plates):</p>
+<div class="eq">E = V / d</div>
+<p>where V = potential difference between the plates and d = plate separation. The field is uniform (constant E) between the plates.</p>
+
+<h3>Electric Potential</h3>
+<div class="def-box"><strong>Electric potential (V):</strong> The work done per unit positive charge in bringing a small test charge from infinity to that point.</div>
+<div class="eq">V = kQ / r = Q / (4&pi;&epsilon;<sub>0</sub>r)</div>
+<p>V is positive for a positive charge and negative for a negative charge. E = &minus;dV/dr.</p>
+
+<h3>Comparison: Gravitational and Electric Fields</h3>
+<table>
+  <tr><th>Property</th><th>Gravitational</th><th>Electric</th></tr>
+  <tr><td>Source</td><td>Mass</td><td>Charge</td></tr>
+  <tr><td>Force law</td><td>F = &minus;GMm/r<sup>2</sup></td><td>F = kQ<sub>1</sub>Q<sub>2</sub>/r<sup>2</sup></td></tr>
+  <tr><td>Nature</td><td>Always attractive</td><td>Attractive or repulsive</td></tr>
+  <tr><td>Field strength</td><td>g = GM/r<sup>2</sup></td><td>E = kQ/r<sup>2</sup></td></tr>
+  <tr><td>Potential</td><td>V = &minus;GM/r (always negative)</td><td>V = kQ/r (can be + or &minus;)</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> For fields, potential is a scalar (add algebraically with sign), but field strength is a vector (add using vector rules). When finding the resultant potential at a point due to multiple charges, just add the values. For field strength, you need vector addition.</div>
+
+<!-- CAPACITANCE -->
+<h2>3. Capacitance</h2>
+
+<div class="def-box"><strong>Capacitance (C):</strong> The charge stored per unit potential difference across a capacitor. C = Q/V. Units: F (farads). 1 F = 1 C V<sup>-1</sup>.</div>
+
+<h3>Parallel Plate Capacitor</h3>
+<div class="eq">C = &epsilon;<sub>0</sub>&epsilon;<sub>r</sub>A / d</div>
+<ul>
+  <li>&epsilon;<sub>0</sub> = permittivity of free space</li>
+  <li>&epsilon;<sub>r</sub> = relative permittivity (dielectric constant) of the material between the plates</li>
+  <li>A = area of overlap of the plates (m<sup>2</sup>)</li>
+  <li>d = separation of the plates (m)</li>
+</ul>
+
+<h3>Capacitors in Series and Parallel</h3>
+<table>
+  <tr><th>Arrangement</th><th>Rule</th></tr>
+  <tr><td>Series</td><td>1/C<sub>total</sub> = 1/C<sub>1</sub> + 1/C<sub>2</sub> + ... (total capacitance decreases)</td></tr>
+  <tr><td>Parallel</td><td>C<sub>total</sub> = C<sub>1</sub> + C<sub>2</sub> + ... (total capacitance increases)</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Capacitors in series/parallel combine the OPPOSITE way to resistors. Capacitors in series use the reciprocal rule (like resistors in parallel). Capacitors in parallel add directly (like resistors in series).</div>
+
+<h3>Energy Stored in a Capacitor</h3>
+<div class="eq">E = &frac12;QV = &frac12;CV<sup>2</sup> = &frac12;Q<sup>2</sup>/C</div>
+<p>This is the area under a Q-V graph (a straight line through the origin with gradient C).</p>
+
+<h3>Charging and Discharging</h3>
+<p>When a capacitor charges or discharges through a resistor, the process is exponential:</p>
+
+<p><strong>Discharging:</strong></p>
+<div class="eq">Q = Q<sub>0</sub>e<sup>&minus;t/RC</sup></div>
+<div class="eq">V = V<sub>0</sub>e<sup>&minus;t/RC</sup></div>
+<div class="eq">I = I<sub>0</sub>e<sup>&minus;t/RC</sup></div>
+
+<p><strong>Charging:</strong></p>
+<div class="eq">Q = Q<sub>0</sub>(1 &minus; e<sup>&minus;t/RC</sup>)</div>
+<div class="eq">V = V<sub>0</sub>(1 &minus; e<sup>&minus;t/RC</sup>)</div>
+<p>Current still decays exponentially during charging: I = I<sub>0</sub>e<sup>&minus;t/RC</sup></p>
+
+<h3>Time Constant</h3>
+<div class="eq">&tau; = RC</div>
+<p>The time constant is the time taken for the charge (or PD or current) to fall to 1/e (&approx; 37%) of its initial value during discharge. After 5&tau;, the capacitor is considered fully discharged (&lt;1% remaining).</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> To find &tau; from a graph, read off the time when the value drops to 37% of the initial value. Alternatively, plot ln(Q) against t &mdash; the gradient is &minus;1/RC.</div>
+
+<!-- MAGNETIC FIELDS -->
+<h2>4. Magnetic Fields</h2>
+
+<div class="def-box"><strong>Magnetic flux density (B):</strong> A measure of the strength of a magnetic field. Units: T (tesla). 1 T = 1 kg s<sup>-2</sup> A<sup>-1</sup>.</div>
+
+<h3>Force on a Current-Carrying Conductor</h3>
+<div class="eq">F = BIL sin&theta;</div>
+<ul>
+  <li>F = force (N)</li>
+  <li>B = magnetic flux density (T)</li>
+  <li>I = current (A)</li>
+  <li>L = length of conductor in the field (m)</li>
+  <li>&theta; = angle between the current direction and the field direction</li>
+</ul>
+<p>Direction given by Fleming's left-hand rule (thuMb = Motion, First finger = Field, seCond finger = Current).</p>
+
+<h3>Force on a Moving Charge</h3>
+<div class="eq">F = BQv sin&theta;</div>
+<p>A charged particle moving perpendicular to a magnetic field follows a circular path (the magnetic force provides centripetal force):</p>
+<div class="eq">BQv = mv<sup>2</sup>/r &nbsp; &rArr; &nbsp; r = mv / (BQ)</div>
+
+<h3>Magnetic Flux and Flux Linkage</h3>
+<div class="def-box"><strong>Magnetic flux (&Phi;):</strong> The product of the magnetic flux density and the area perpendicular to the field. &Phi; = BA cos&theta;. Units: Wb (webers). 1 Wb = 1 T m<sup>2</sup>.</div>
+
+<div class="def-box"><strong>Flux linkage:</strong> For a coil of N turns, flux linkage = N&Phi; = BAN cos&theta;. Units: Wb (or Wb turns).</div>
+
+<h3>Electromagnetic Induction</h3>
+
+<div class="def-box"><strong>Faraday's Law:</strong> The magnitude of the induced EMF is equal to the rate of change of flux linkage.<br>
+&epsilon; = &minus;d(N&Phi;)/dt = &minus;N d&Phi;/dt</div>
+
+<div class="def-box"><strong>Lenz's Law:</strong> The direction of the induced EMF (and hence the induced current) is such that it opposes the change in flux that caused it. This is the reason for the negative sign in Faraday's Law. It is a consequence of conservation of energy.</div>
+
+<h3>EMF in a Rotating Coil</h3>
+<p>A coil rotating in a uniform magnetic field generates a sinusoidal EMF:</p>
+<div class="eq">&epsilon; = BAN&omega; sin(&omega;t)</div>
+<p>Maximum EMF: &epsilon;<sub>0</sub> = BAN&omega; (when the coil is parallel to the field).</p>
+
+<h3>Transformers</h3>
+<div class="eq">N<sub>s</sub>/N<sub>p</sub> = V<sub>s</sub>/V<sub>p</sub></div>
+<p>For an ideal transformer (100% efficient): V<sub>p</sub>I<sub>p</sub> = V<sub>s</sub>I<sub>s</sub></p>
+<ul>
+  <li>Step-up transformer: N<sub>s</sub> > N<sub>p</sub>, V<sub>s</sub> > V<sub>p</sub></li>
+  <li>Step-down transformer: N<sub>s</sub> < N<sub>p</sub>, V<sub>s</sub> < V<sub>p</sub></li>
+</ul>
+
+<p>Energy losses in real transformers are due to: resistance in coils (I<sup>2</sup>R heating), eddy currents in the core (reduced by lamination), magnetic hysteresis, flux leakage.</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> High-voltage transmission reduces power loss in cables. P<sub>loss</sub> = I<sup>2</sup>R. By stepping up the voltage, the current is reduced (since P = IV is constant), so I<sup>2</sup>R losses are greatly reduced. This is why the National Grid operates at very high voltages (up to 400 kV).</div>
+
+</div>
+</body>
+</html>

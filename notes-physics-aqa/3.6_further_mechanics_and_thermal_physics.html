@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.6 Further Mechanics and Thermal Physics — AQA A-Level Physics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>3.6 Further Mechanics and Thermal Physics</h1>
+
+<!-- CIRCULAR MOTION -->
+<h2>1. Circular Motion</h2>
+<div class="def-box"><strong>Uniform circular motion:</strong> Motion in a circle at constant speed. Although the speed is constant, the velocity is continuously changing (because the direction changes), so the object is accelerating.</div>
+
+<h3>Key Quantities</h3>
+<table>
+  <tr><th>Quantity</th><th>Symbol</th><th>Equation</th><th>Units</th></tr>
+  <tr><td>Angular velocity</td><td>&omega;</td><td>&omega; = 2&pi;f = 2&pi;/T = v/r</td><td>rad s<sup>-1</sup></td></tr>
+  <tr><td>Linear speed</td><td>v</td><td>v = &omega;r = 2&pi;r/T</td><td>m s<sup>-1</sup></td></tr>
+  <tr><td>Centripetal acceleration</td><td>a</td><td>a = v<sup>2</sup>/r = &omega;<sup>2</sup>r</td><td>m s<sup>-2</sup></td></tr>
+  <tr><td>Centripetal force</td><td>F</td><td>F = mv<sup>2</sup>/r = m&omega;<sup>2</sup>r</td><td>N</td></tr>
+</table>
+
+<p>The centripetal acceleration (and force) is always directed towards the centre of the circle. It is perpendicular to the velocity at all times.</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Centripetal force is NOT an extra force. It is the resultant of real forces (gravity, tension, friction, normal contact) that happen to point towards the centre. Never label "centripetal force" as a separate force on a free body diagram.</div>
+
+<!-- SHM -->
+<h2>2. Simple Harmonic Motion (SHM)</h2>
+<div class="def-box"><strong>Simple harmonic motion:</strong> Oscillatory motion in which the acceleration is always directed towards a fixed equilibrium position and is proportional to the displacement from that position.</div>
+<div class="eq">a = &minus;&omega;<sup>2</sup>x</div>
+<p>The negative sign indicates the acceleration is always in the opposite direction to the displacement (i.e. towards the equilibrium).</p>
+
+<h3>SHM Equations</h3>
+<table>
+  <tr><th>Quantity</th><th>Equation</th></tr>
+  <tr><td>Displacement</td><td>x = A cos(&omega;t) &nbsp; (if starting at max displacement)<br>x = A sin(&omega;t) &nbsp; (if starting at equilibrium)</td></tr>
+  <tr><td>Velocity</td><td>v = &minus;A&omega; sin(&omega;t)<br>v = &plusmn;&omega;&radic;(A<sup>2</sup> &minus; x<sup>2</sup>)</td></tr>
+  <tr><td>Maximum velocity</td><td>v<sub>max</sub> = A&omega; &nbsp; (at x = 0, the equilibrium)</td></tr>
+  <tr><td>Maximum acceleration</td><td>a<sub>max</sub> = A&omega;<sup>2</sup> &nbsp; (at x = &plusmn;A, the extremes)</td></tr>
+</table>
+
+<h3>Energy in SHM</h3>
+<ul>
+  <li>At the equilibrium (x = 0): KE is maximum, PE is zero.</li>
+  <li>At the extremes (x = &plusmn;A): KE is zero, PE is maximum.</li>
+  <li>Total energy = KE + PE = constant (in the absence of damping).</li>
+  <li>E<sub>total</sub> = &frac12;m&omega;<sup>2</sup>A<sup>2</sup></li>
+</ul>
+
+<h3>Time Periods of SHM Systems</h3>
+<p><strong>Mass-spring system:</strong></p>
+<div class="eq">T = 2&pi;&radic;(m/k)</div>
+<p>T depends on mass and spring constant. It does NOT depend on amplitude.</p>
+
+<p><strong>Simple pendulum:</strong></p>
+<div class="eq">T = 2&pi;&radic;(L/g)</div>
+<p>T depends on length and gravitational field strength. It does NOT depend on mass or amplitude (for small angles).</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> In SHM, the period is independent of amplitude. This is a defining feature. If an oscillator has a period that changes with amplitude, it is NOT SHM.</div>
+
+<!-- DAMPING AND RESONANCE -->
+<h2>3. Damping</h2>
+<div class="def-box"><strong>Damping:</strong> The reduction in amplitude of an oscillation over time due to energy being transferred to the surroundings (usually as thermal energy due to frictional forces).</div>
+
+<table>
+  <tr><th>Type of Damping</th><th>Description</th></tr>
+  <tr><td><strong>Light damping</strong></td><td>Amplitude decreases gradually over many oscillations. The frequency is hardly affected. Example: pendulum in air.</td></tr>
+  <tr><td><strong>Heavy damping</strong></td><td>Amplitude decreases rapidly. The system returns to equilibrium slowly without oscillating (or with very few oscillations). Example: door closer.</td></tr>
+  <tr><td><strong>Critical damping</strong></td><td>The system returns to equilibrium in the shortest possible time without oscillating. Example: car suspension, needle on a measuring instrument.</td></tr>
+</table>
+
+<h3>Forced Oscillations and Resonance</h3>
+<div class="def-box"><strong>Forced oscillation:</strong> An oscillation caused by an external periodic driving force.<br>
+<strong>Natural frequency (f<sub>0</sub>):</strong> The frequency at which a system oscillates freely when displaced and released.</div>
+
+<div class="def-box"><strong>Resonance:</strong> Occurs when the driving frequency equals the natural frequency of the system. At resonance, maximum energy is transferred from the driver to the oscillating system, resulting in maximum amplitude.</div>
+
+<h3>Effects of Damping on Resonance</h3>
+<ul>
+  <li>Increased damping reduces the maximum amplitude at resonance.</li>
+  <li>Increased damping broadens the resonance peak.</li>
+  <li>Increased damping shifts the resonance frequency slightly below f<sub>0</sub>.</li>
+</ul>
+
+<p><strong>Examples of resonance:</strong> Tuning a radio (electrical resonance), Tacoma Narrows Bridge collapse (mechanical resonance), microwave heating (molecular resonance of water).</p>
+
+<!-- THERMAL PHYSICS -->
+<h2>4. Thermal Physics</h2>
+
+<h3>Internal Energy</h3>
+<div class="def-box"><strong>Internal energy:</strong> The sum of the randomly distributed kinetic energies and potential energies of all the molecules in a system. For an ideal gas, internal energy is purely kinetic (no intermolecular forces, so no PE).</div>
+
+<p>A change in internal energy can result from:</p>
+<ul>
+  <li>Doing work on or by the system</li>
+  <li>Heating or cooling the system</li>
+</ul>
+
+<h3>Specific Heat Capacity</h3>
+<div class="eq">Q = mc&Delta;&theta;</div>
+<ul>
+  <li>Q = energy transferred (J)</li>
+  <li>m = mass (kg)</li>
+  <li>c = specific heat capacity (J kg<sup>-1</sup> K<sup>-1</sup>) &mdash; the energy required to raise the temperature of 1 kg of the substance by 1 K</li>
+  <li>&Delta;&theta; = change in temperature (K or &deg;C)</li>
+</ul>
+
+<h3>Specific Latent Heat</h3>
+<div class="eq">Q = mL</div>
+<ul>
+  <li>L = specific latent heat (J kg<sup>-1</sup>) &mdash; the energy required to change the state of 1 kg of a substance without changing its temperature</li>
+  <li><strong>Specific latent heat of fusion (L<sub>f</sub>):</strong> for solid &harr; liquid transitions</li>
+  <li><strong>Specific latent heat of vaporisation (L<sub>v</sub>):</strong> for liquid &harr; gas transitions</li>
+</ul>
+
+<p>During a change of state, temperature remains constant because the energy supplied is used to break (or form) intermolecular bonds, changing potential energy without changing kinetic energy.</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> In a heating curve (temperature vs time), the flat sections represent changes of state. The gradient of the sloped sections depends on specific heat capacity. A lower gradient means a higher specific heat capacity (for the same power input and mass).</div>
+
+<!-- GAS LAWS -->
+<h2>5. Gas Laws and the Ideal Gas</h2>
+
+<h3>The Three Gas Laws</h3>
+<table>
+  <tr><th>Law</th><th>Statement</th><th>Equation</th><th>Conditions</th></tr>
+  <tr><td>Boyle's Law</td><td>Pressure is inversely proportional to volume</td><td>pV = constant</td><td>Constant temperature and mass</td></tr>
+  <tr><td>Charles's Law</td><td>Volume is directly proportional to absolute temperature</td><td>V/T = constant</td><td>Constant pressure and mass</td></tr>
+  <tr><td>Pressure Law</td><td>Pressure is directly proportional to absolute temperature</td><td>p/T = constant</td><td>Constant volume and mass</td></tr>
+</table>
+
+<p>These combine into:</p>
+<div class="eq">pV / T = constant &nbsp; or &nbsp; p<sub>1</sub>V<sub>1</sub>/T<sub>1</sub> = p<sub>2</sub>V<sub>2</sub>/T<sub>2</sub></div>
+
+<h3>Ideal Gas Equation</h3>
+<div class="eq">pV = nRT = NkT</div>
+<ul>
+  <li>p = pressure (Pa)</li>
+  <li>V = volume (m<sup>3</sup>)</li>
+  <li>n = number of moles</li>
+  <li>R = molar gas constant = 8.31 J mol<sup>-1</sup> K<sup>-1</sup></li>
+  <li>N = number of molecules</li>
+  <li>k = Boltzmann constant = 1.38 &times; 10<sup>-23</sup> J K<sup>-1</sup></li>
+  <li>T = absolute temperature (K)</li>
+</ul>
+<p>Note: N = nN<sub>A</sub> and k = R/N<sub>A</sub>, where N<sub>A</sub> = 6.02 &times; 10<sup>23</sup> mol<sup>-1</sup> (Avogadro's number).</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Always convert temperature to kelvin (K = &deg;C + 273) and volume to m<sup>3</sup> (1 litre = 10<sup>-3</sup> m<sup>3</sup>) before using the ideal gas equation.</div>
+
+<!-- KINETIC THEORY -->
+<h2>6. Kinetic Theory of Gases</h2>
+
+<h3>Assumptions of an Ideal Gas</h3>
+<ul>
+  <li>The gas contains a very large number of molecules in random motion.</li>
+  <li>The volume of the molecules is negligible compared to the volume of the container.</li>
+  <li>Collisions between molecules and between molecules and the walls are perfectly elastic.</li>
+  <li>The time of a collision is negligible compared to the time between collisions.</li>
+  <li>There are no intermolecular forces except during collisions.</li>
+</ul>
+
+<h3>Kinetic Theory Equation</h3>
+<div class="eq">pV = &frac13;Nm<span style="text-decoration:overline;">c<sup>2</sup></span></div>
+<p>where <span style="text-decoration:overline;">c<sup>2</sup></span> is the mean square speed of the molecules.</p>
+
+<h3>Root Mean Square Speed</h3>
+<div class="eq">c<sub>rms</sub> = &radic;<span style="text-decoration:overline;">c<sup>2</sup></span></div>
+<p>The rms speed is NOT the same as the mean speed. It gives more weight to faster molecules.</p>
+
+<h3>Molecular Kinetic Energy</h3>
+<div class="eq">&frac12;m<span style="text-decoration:overline;">c<sup>2</sup></span> = &frac32;kT</div>
+<p>The average translational kinetic energy of a gas molecule is directly proportional to the absolute temperature. This connects the microscopic (molecular KE) to the macroscopic (temperature).</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> The Boltzmann constant k links microscopic energy to temperature. If a question asks about energy per molecule, use &frac32;kT. If it asks about energy per mole, use &frac32;RT.</div>
+
+</div>
+</body>
+</html>

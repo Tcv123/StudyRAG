@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 3 — Electric Circuits</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e3a5f;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 4px solid #2563eb;
+            padding-left: 12px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #334155;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        .definition-box {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before {
+            content: "Exam Tip: ";
+            font-weight: 700;
+            color: #b45309;
+        }
+        .equation {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 1.1rem;
+            background: #f8fafc;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        strong {
+            color: #1e3a5f;
+        }
+        @media print {
+            body { padding: 20px; }
+            .exam-tip, .definition-box { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Topic 3 — Electric Circuits</h1>
+
+        <h2>3.1 Charge, Current, and Potential Difference</h2>
+        <div class="definition-box">
+            <p><strong>Electric current (I)</strong> is the rate of flow of charge. Measured in amperes (A).</p>
+            <p><strong>Charge (Q)</strong> is measured in coulombs (C). One coulomb is the charge that flows when a current of 1 A passes for 1 second.</p>
+            <p><strong>Potential difference (V)</strong> is the energy transferred per unit charge between two points. Measured in volts (V), where 1 V = 1 J C<sup>-1</sup>.</p>
+        </div>
+
+        <div class="equation">
+            Q = It
+        </div>
+        <div class="equation">
+            V = W / Q
+        </div>
+
+        <p><strong>Conventional current</strong> flows from positive to negative (opposite to electron flow). In metals, charge is carried by free electrons (delocalised electrons).</p>
+
+        <h2>3.2 Resistance and Ohm's Law</h2>
+        <div class="definition-box">
+            <strong>Resistance (R)</strong> is a measure of the opposition to current flow. It is defined as the ratio of potential difference to current. Measured in ohms (&Omega;).
+        </div>
+        <div class="equation">
+            V = IR &nbsp;&nbsp; (or equivalently R = V / I)
+        </div>
+
+        <div class="definition-box">
+            <strong>Ohm's Law:</strong> For a conductor at constant temperature, the current through it is directly proportional to the potential difference across it. A component that obeys Ohm's law is called an <strong>ohmic conductor</strong>.
+        </div>
+
+        <h3>I-V Characteristics</h3>
+        <table>
+            <tr><th>Component</th><th>I-V Graph Shape</th><th>Key Features</th></tr>
+            <tr><td><strong>Ohmic conductor</strong> (e.g., wire at constant temp)</td><td>Straight line through origin</td><td>Resistance is constant; I is proportional to V</td></tr>
+            <tr><td><strong>Filament lamp</strong></td><td>Curve — less steep at higher V</td><td>Resistance increases as temperature rises (more lattice vibrations impede electrons)</td></tr>
+            <tr><td><strong>Diode</strong></td><td>Flat for negative V, then steep rise above ~0.6 V</td><td>Very high resistance in reverse bias; low resistance above threshold voltage in forward bias</td></tr>
+            <tr><td><strong>Thermistor</strong> (NTC)</td><td>Not usually plotted as I-V</td><td>Resistance decreases as temperature increases (more charge carriers freed)</td></tr>
+            <tr><td><strong>LDR</strong></td><td>Not usually plotted as I-V</td><td>Resistance decreases as light intensity increases (photons free more charge carriers)</td></tr>
+        </table>
+
+        <div class="exam-tip">
+            For I-V characteristics, the gradient of the graph is NOT the resistance (unless it is linear through the origin). Resistance at any point = V/I, not the gradient.
+        </div>
+
+        <h2>3.3 Resistivity</h2>
+        <div class="definition-box">
+            <strong>Resistivity (&rho;)</strong> is a property of the material itself, independent of the dimensions of the sample. It is defined as the resistance of a 1 m length with a 1 m&sup2; cross-sectional area. Measured in &Omega; m.
+        </div>
+        <div class="equation">
+            &rho; = RA / L
+        </div>
+        <p>where R = resistance (&Omega;), A = cross-sectional area (m&sup2;), L = length (m).</p>
+
+        <h3>Factors Affecting Resistance</h3>
+        <ul>
+            <li>Resistance is proportional to length (R &prop; L)</li>
+            <li>Resistance is inversely proportional to cross-sectional area (R &prop; 1/A)</li>
+            <li>Resistance depends on the material (resistivity &rho;)</li>
+            <li>Resistance depends on temperature (for metals, R increases with T)</li>
+        </ul>
+
+        <div class="exam-tip">
+            Remember to convert diameter to radius, then use A = &pi;r&sup2; to find cross-sectional area. Also ensure length is in metres and area in m&sup2; before substituting into &rho; = RA/L.
+        </div>
+
+        <h2>3.4 EMF and Internal Resistance</h2>
+        <div class="definition-box">
+            <p><strong>Electromotive force (EMF, &epsilon;)</strong> is the total energy transferred per unit charge by the power supply. It is the p.d. across the terminals when no current flows.</p>
+            <p><strong>Internal resistance (r)</strong> is the resistance within the power supply itself, which causes energy to be dissipated inside the battery.</p>
+        </div>
+        <div class="equation">
+            &epsilon; = I(R + r)
+        </div>
+        <div class="equation">
+            &epsilon; = V + Ir &nbsp;&nbsp; (where V = IR is the terminal p.d.)
+        </div>
+        <p>Rearranging: <strong>V = &epsilon; - Ir</strong></p>
+        <p>This shows that the terminal p.d. (V) decreases as current increases. Plotting V against I gives a straight line with gradient = -r and y-intercept = &epsilon;.</p>
+
+        <h3>Lost Volts</h3>
+        <p>The <strong>lost volts</strong> (v = Ir) is the potential difference dropped across the internal resistance. It represents the energy per coulomb dissipated inside the battery.</p>
+
+        <h2>3.5 Kirchhoff's Laws</h2>
+        <div class="definition-box">
+            <p><strong>Kirchhoff's First Law (Junction Rule):</strong> The sum of currents entering a junction equals the sum of currents leaving the junction. This is based on conservation of charge.</p>
+            <p><strong>Kirchhoff's Second Law (Loop Rule):</strong> The sum of EMFs around any closed loop equals the sum of potential differences around that loop. This is based on conservation of energy.</p>
+        </div>
+        <div class="equation">
+            &Sigma;I<sub>in</sub> = &Sigma;I<sub>out</sub> &nbsp;&nbsp; (First Law)
+        </div>
+        <div class="equation">
+            &Sigma;&epsilon; = &Sigma;IR &nbsp;&nbsp; (Second Law)
+        </div>
+
+        <h2>3.6 Series and Parallel Circuits</h2>
+        <h3>Series Circuits</h3>
+        <ul>
+            <li>Current is the same through all components: I<sub>total</sub> = I<sub>1</sub> = I<sub>2</sub> = I<sub>3</sub></li>
+            <li>Total p.d. is shared between components: V<sub>total</sub> = V<sub>1</sub> + V<sub>2</sub> + V<sub>3</sub></li>
+            <li>Total resistance: R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub></li>
+        </ul>
+
+        <h3>Parallel Circuits</h3>
+        <ul>
+            <li>P.d. is the same across each branch: V<sub>total</sub> = V<sub>1</sub> = V<sub>2</sub> = V<sub>3</sub></li>
+            <li>Total current is shared between branches: I<sub>total</sub> = I<sub>1</sub> + I<sub>2</sub> + I<sub>3</sub></li>
+            <li>Combined resistance:</li>
+        </ul>
+        <div class="equation">
+            1/R<sub>total</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + 1/R<sub>3</sub>
+        </div>
+        <p>For two resistors in parallel:</p>
+        <div class="equation">
+            R<sub>total</sub> = (R<sub>1</sub> &times; R<sub>2</sub>) / (R<sub>1</sub> + R<sub>2</sub>)
+        </div>
+
+        <div class="exam-tip">
+            The combined resistance of parallel resistors is always LESS than the smallest individual resistor. Adding more resistors in parallel always decreases total resistance.
+        </div>
+
+        <h2>3.7 Potential Dividers</h2>
+        <div class="definition-box">
+            A <strong>potential divider</strong> is a circuit with two (or more) resistors in series, used to produce an output voltage that is a fraction of the input voltage.
+        </div>
+        <div class="equation">
+            V<sub>out</sub> = V<sub>in</sub> &times; R<sub>2</sub> / (R<sub>1</sub> + R<sub>2</sub>)
+        </div>
+        <p>where V<sub>out</sub> is measured across R<sub>2</sub>.</p>
+
+        <h3>Potential Dividers with Sensors</h3>
+        <ul>
+            <li><strong>Thermistor in a potential divider:</strong> As temperature rises, thermistor resistance falls, so the share of voltage across it decreases (and the share across the other resistor increases).</li>
+            <li><strong>LDR in a potential divider:</strong> As light intensity increases, LDR resistance falls, so voltage across it decreases.</li>
+        </ul>
+        <p>This allows the output voltage to vary automatically with environmental conditions, which can be used to trigger switches or circuits.</p>
+
+        <h2>3.8 Energy and Power in Circuits</h2>
+        <div class="definition-box">
+            <strong>Electrical power</strong> is the rate at which electrical energy is transferred by a component. Measured in watts (W).
+        </div>
+        <div class="equation">
+            P = IV
+        </div>
+        <p>Substituting V = IR and I = V/R gives two alternative forms:</p>
+        <div class="equation">
+            P = I&sup2;R
+        </div>
+        <div class="equation">
+            P = V&sup2; / R
+        </div>
+
+        <h3>Energy Transferred</h3>
+        <div class="equation">
+            E = IVt = I&sup2;Rt = V&sup2;t / R
+        </div>
+        <p>where t is the time in seconds. Energy is measured in joules (J).</p>
+
+        <p>In a resistor, electrical energy is transferred to thermal energy (heating). In a motor, it is transferred to kinetic energy. In a lamp, it is transferred to light and thermal energy.</p>
+
+        <div class="exam-tip">
+            Use P = I&sup2;R when you know current and resistance. Use P = V&sup2;/R when you know voltage and resistance. Remember that the power dissipated in the internal resistance is "wasted" — it heats the battery.
+        </div>
+    </div>
+</body>
+</html>

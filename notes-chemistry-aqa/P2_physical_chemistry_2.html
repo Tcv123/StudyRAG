@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P2 — Physical Chemistry II</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>P2 — Physical Chemistry II</h1>
+
+<!-- ==================== KINETICS ==================== -->
+<h2>1. Kinetics</h2>
+
+<h3>1.1 Rate of Reaction</h3>
+
+<div class="definition">
+  <strong>Rate of reaction:</strong> The change in concentration of a reactant or product per unit time. Units: mol dm<sup>-3</sup> s<sup>-1</sup>.
+</div>
+
+<p>Factors affecting rate: concentration (or pressure for gases), temperature, surface area, and catalysts.</p>
+
+<h3>1.2 Collision Theory and Activation Energy</h3>
+<p>For a reaction to occur, particles must collide with sufficient energy (greater than or equal to the activation energy, E<sub>a</sub>) and with the correct orientation.</p>
+
+<div class="definition">
+  <strong>Activation energy (E<sub>a</sub>):</strong> The minimum energy that colliding particles must have for a reaction to occur.
+</div>
+
+<h3>1.3 Maxwell-Boltzmann Distribution</h3>
+<p>The Maxwell-Boltzmann distribution shows the spread of molecular energies in a gas at a given temperature. Key features:</p>
+<ul>
+  <li>The curve starts at the origin (no molecules have zero energy).</li>
+  <li>The peak represents the most probable energy.</li>
+  <li>The curve is asymmetric with a long tail to the right (no maximum energy).</li>
+  <li>The area under the curve represents the total number of molecules and is constant.</li>
+  <li>The area to the right of E<sub>a</sub> represents molecules with enough energy to react.</li>
+</ul>
+
+<p><strong>Effect of temperature increase:</strong> The peak shifts right and becomes lower and broader. More molecules have energy &ge; E<sub>a</sub>, so the rate increases.</p>
+<p><strong>Effect of a catalyst:</strong> Provides an alternative pathway with a lower E<sub>a</sub>. The distribution curve stays the same, but the E<sub>a</sub> line moves left, so more molecules have sufficient energy.</p>
+
+<h3>1.4 Rate Equations and Orders</h3>
+
+<div class="definition">
+  <strong>Order of reaction (with respect to a reactant):</strong> The power to which the concentration of that reactant is raised in the rate equation. Can only be determined experimentally.
+</div>
+
+<p>For a reaction A + B &#8594; products:</p>
+<div class="equation">
+  Rate = k[A]<sup>m</sup>[B]<sup>n</sup>
+</div>
+<p>Where k = rate constant, m = order with respect to A, n = order with respect to B. The overall order = m + n.</p>
+
+<table>
+  <tr><th>Order</th><th>Effect of doubling [reactant]</th><th>Graph: [reactant] vs time</th><th>Graph: rate vs [reactant]</th></tr>
+  <tr><td>0</td><td>No effect on rate</td><td>Straight line (linear decrease)</td><td>Horizontal line</td></tr>
+  <tr><td>1</td><td>Rate doubles</td><td>Exponential decay curve</td><td>Straight line through origin</td></tr>
+  <tr><td>2</td><td>Rate quadruples</td><td>Steeper curve than first order</td><td>Upward curve (parabola)</td></tr>
+</table>
+
+<p>Orders are determined from experimental data using the initial rates method: compare experiments where only one concentration changes.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The rate equation cannot be deduced from the stoichiometric equation. It must be determined experimentally. The orders tell you about the rate-determining step, not the overall equation.
+</div>
+
+<h3>1.5 The Rate Constant and Units</h3>
+<p>Units of k depend on the overall order:</p>
+<table>
+  <tr><th>Overall order</th><th>Units of k</th></tr>
+  <tr><td>0</td><td>mol dm<sup>-3</sup> s<sup>-1</sup></td></tr>
+  <tr><td>1</td><td>s<sup>-1</sup></td></tr>
+  <tr><td>2</td><td>dm<sup>3</sup> mol<sup>-1</sup> s<sup>-1</sup></td></tr>
+  <tr><td>3</td><td>dm<sup>6</sup> mol<sup>-2</sup> s<sup>-1</sup></td></tr>
+</table>
+
+<p>The value of k increases with temperature.</p>
+
+<h3>1.6 The Arrhenius Equation</h3>
+<div class="equation">
+  k = Ae<sup>-E<sub>a</sub>/RT</sup>
+</div>
+<p>Taking the natural logarithm gives a linear form:</p>
+<div class="equation">
+  ln k = ln A - E<sub>a</sub> / RT
+</div>
+<p>A graph of ln k (y-axis) against 1/T (x-axis) gives a straight line with gradient = -E<sub>a</sub>/R and y-intercept = ln A, where A is the pre-exponential (Arrhenius) factor.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> To calculate E<sub>a</sub> from a graph: gradient = -E<sub>a</sub>/R, so E<sub>a</sub> = -gradient &times; R. Use R = 8.314 J K<sup>-1</sup> mol<sup>-1</sup>. The answer will be in J mol<sup>-1</sup>; divide by 1000 to convert to kJ mol<sup>-1</sup>.
+</div>
+
+<h3>1.7 Rate-Determining Step</h3>
+
+<div class="definition">
+  <strong>Rate-determining step:</strong> The slowest step in a multi-step reaction mechanism. It controls the overall rate of reaction.
+</div>
+
+<p>Only species that appear in or before the rate-determining step appear in the rate equation. If the rate equation is Rate = k[A][B], the rate-determining step involves one molecule of A and one molecule of B.</p>
+
+<!-- ==================== EQUILIBRIA ==================== -->
+<h2>2. Equilibria</h2>
+
+<h3>2.1 Dynamic Equilibrium</h3>
+
+<div class="definition">
+  <strong>Dynamic equilibrium:</strong> A state reached in a closed system when the rate of the forward reaction equals the rate of the reverse reaction, so the concentrations of reactants and products remain constant (though not necessarily equal).
+</div>
+
+<h3>2.2 Kc — The Equilibrium Constant</h3>
+<p>For the reaction: aA + bB &#8652; cC + dD</p>
+<div class="equation">
+  K<sub>c</sub> = [C]<sup>c</sup>[D]<sup>d</sup> / [A]<sup>a</sup>[B]<sup>b</sup>
+</div>
+<p>Where square brackets denote equilibrium concentrations in mol dm<sup>-3</sup>. K<sub>c</sub> has no units if the powers balance, but usually has units that must be calculated.</p>
+
+<p>A large K<sub>c</sub> means the equilibrium lies to the right (products favoured). A small K<sub>c</sub> means the equilibrium lies to the left (reactants favoured).</p>
+
+<h3>2.3 Kp — Equilibrium Constant in Terms of Partial Pressures</h3>
+<p>For gaseous equilibria:</p>
+<div class="equation">
+  p<sub>A</sub> = x<sub>A</sub> &times; P<sub>total</sub>
+</div>
+<p>Where p<sub>A</sub> = partial pressure of A, x<sub>A</sub> = mole fraction of A.</p>
+<div class="equation">
+  K<sub>p</sub> = p<sub>C</sub><sup>c</sup> &times; p<sub>D</sub><sup>d</sup> / (p<sub>A</sub><sup>a</sup> &times; p<sub>B</sub><sup>b</sup>)
+</div>
+
+<h3>2.4 Le Chatelier's Principle</h3>
+
+<div class="definition">
+  <strong>Le Chatelier's Principle:</strong> If a system at equilibrium is subjected to a change in conditions, the position of equilibrium shifts to counteract the change and restore equilibrium.
+</div>
+
+<table>
+  <tr><th>Change</th><th>Effect on position</th><th>Effect on K</th></tr>
+  <tr><td>Increase concentration of reactant</td><td>Shifts right (towards products)</td><td>No change</td></tr>
+  <tr><td>Increase temperature (exothermic forward)</td><td>Shifts left (endothermic direction)</td><td>K decreases</td></tr>
+  <tr><td>Increase temperature (endothermic forward)</td><td>Shifts right (endothermic direction)</td><td>K increases</td></tr>
+  <tr><td>Increase pressure</td><td>Shifts to side with fewer moles of gas</td><td>No change</td></tr>
+  <tr><td>Add catalyst</td><td>No change in position</td><td>No change</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Only temperature changes the value of K. Concentration, pressure, and catalysts change the position of equilibrium but not K itself. A catalyst only speeds up the rate at which equilibrium is reached.
+</div>
+
+<!-- ==================== REDOX ==================== -->
+<h2>3. Oxidation, Reduction and Redox</h2>
+
+<h3>3.1 Oxidation States</h3>
+
+<div class="definition">
+  <strong>Oxidation state (oxidation number):</strong> A measure of the degree of oxidation of an atom in a compound. It represents the charge an atom would have if all bonds were fully ionic.
+</div>
+
+<p>Rules for assigning oxidation states:</p>
+<ul>
+  <li>Uncombined elements = 0</li>
+  <li>Simple ions = the charge on the ion</li>
+  <li>Oxygen = -2 (except in peroxides = -1, and OF<sub>2</sub> = +2)</li>
+  <li>Hydrogen = +1 (except in metal hydrides = -1)</li>
+  <li>Fluorine = always -1</li>
+  <li>Sum of oxidation states in a compound = 0; in a polyatomic ion = the charge</li>
+</ul>
+
+<div class="definition">
+  <strong>Oxidation:</strong> Loss of electrons / increase in oxidation state.<br>
+  <strong>Reduction:</strong> Gain of electrons / decrease in oxidation state. (Remember OIL RIG)
+</div>
+
+<h3>3.2 Half-Equations and Ionic Equations</h3>
+<p>Redox reactions can be split into two half-equations. To balance half-equations:</p>
+<ol>
+  <li>Balance the atoms other than O and H.</li>
+  <li>Balance oxygen by adding H<sub>2</sub>O.</li>
+  <li>Balance hydrogen by adding H<sup>+</sup>.</li>
+  <li>Balance charge by adding electrons.</li>
+</ol>
+
+<p>Combine half-equations by ensuring the number of electrons lost equals the number gained.</p>
+
+<!-- ==================== THERMODYNAMICS ==================== -->
+<h2>4. Thermodynamics</h2>
+
+<h3>4.1 Born-Haber Cycles</h3>
+<p>A Born-Haber cycle applies Hess's law to calculate lattice enthalpy indirectly, since it cannot be measured directly. The cycle links:</p>
+<ul>
+  <li>Enthalpy of formation (&Delta;H<sub>f</sub>)</li>
+  <li>Enthalpy of atomisation (&Delta;H<sub>at</sub>)</li>
+  <li>First and subsequent ionisation energies (IE)</li>
+  <li>Electron affinities (EA) — enthalpy change when a gaseous atom gains an electron</li>
+  <li>Lattice enthalpy (&Delta;H<sub>latt</sub>)</li>
+</ul>
+
+<div class="definition">
+  <strong>Lattice enthalpy of formation:</strong> The enthalpy change when one mole of an ionic lattice is formed from its gaseous ions under standard conditions. Always exothermic (negative).
+</div>
+
+<div class="definition">
+  <strong>Lattice enthalpy of dissociation:</strong> The enthalpy change when one mole of an ionic lattice is separated into gaseous ions. Always endothermic (positive).
+</div>
+
+<p>Lattice enthalpy is affected by ionic charge (higher charge = stronger attraction = more exothermic) and ionic radius (smaller ions = closer together = stronger attraction = more exothermic).</p>
+
+<h3>4.2 Enthalpy of Solution and Hydration</h3>
+<div class="equation">
+  &Delta;H<sub>sol</sub> = -&Delta;H<sub>latt</sub>(formation) + &Delta;H<sub>hyd</sub>(cation) + &Delta;H<sub>hyd</sub>(anion)
+</div>
+
+<div class="definition">
+  <strong>Enthalpy of hydration:</strong> The enthalpy change when one mole of gaseous ions is dissolved in sufficient water to form an infinitely dilute solution.
+</div>
+
+<h3>4.3 Entropy</h3>
+
+<div class="definition">
+  <strong>Entropy (S):</strong> A measure of the disorder or number of ways energy can be distributed in a system. Units: J K<sup>-1</sup> mol<sup>-1</sup>.
+</div>
+
+<p>Entropy increases when: solids melt, liquids boil, the number of moles of gas increases, a solid dissolves.</p>
+<div class="equation">
+  &Delta;S<sub>system</sub> = &Sigma;S(products) - &Sigma;S(reactants)
+</div>
+
+<h3>4.4 Gibbs Free Energy</h3>
+<div class="equation">
+  &Delta;G = &Delta;H - T&Delta;S
+</div>
+<p>A reaction is thermodynamically feasible (spontaneous) when &Delta;G &le; 0.</p>
+
+<table>
+  <tr><th>&Delta;H</th><th>&Delta;S</th><th>Feasibility</th></tr>
+  <tr><td>Negative (exothermic)</td><td>Positive (disorder increases)</td><td>Always feasible at all temperatures</td></tr>
+  <tr><td>Negative</td><td>Negative</td><td>Feasible at low temperatures only</td></tr>
+  <tr><td>Positive (endothermic)</td><td>Positive</td><td>Feasible at high temperatures only</td></tr>
+  <tr><td>Positive</td><td>Negative</td><td>Never feasible</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When using &Delta;G = &Delta;H - T&Delta;S, ensure units are consistent. &Delta;H is usually in kJ mol<sup>-1</sup> and &Delta;S in J K<sup>-1</sup> mol<sup>-1</sup>. Convert &Delta;S to kJ by dividing by 1000, or &Delta;H to J by multiplying by 1000.
+</div>
+
+<!-- ==================== ACIDS & BASES ==================== -->
+<h2>5. Acids and Bases</h2>
+
+<h3>5.1 Bronsted-Lowry Theory</h3>
+
+<div class="definition">
+  <strong>Bronsted-Lowry acid:</strong> A proton (H<sup>+</sup>) donor.<br>
+  <strong>Bronsted-Lowry base:</strong> A proton (H<sup>+</sup>) acceptor.
+</div>
+
+<p>Strong acids (e.g. HCl, H<sub>2</sub>SO<sub>4</sub>, HNO<sub>3</sub>) fully dissociate in water. Weak acids (e.g. CH<sub>3</sub>COOH, H<sub>2</sub>CO<sub>3</sub>) partially dissociate — an equilibrium is established.</p>
+
+<h3>5.2 pH Calculations</h3>
+<div class="equation">
+  pH = -log<sub>10</sub>[H<sup>+</sup>] &nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp; [H<sup>+</sup>] = 10<sup>-pH</sup>
+</div>
+
+<p><strong>Strong acid:</strong> [H<sup>+</sup>] = concentration of acid (for monobasic). For H<sub>2</sub>SO<sub>4</sub>, [H<sup>+</sup>] = 2 &times; concentration.</p>
+
+<p><strong>Strong base:</strong> Calculate [OH<sup>-</sup>], then use K<sub>w</sub> to find [H<sup>+</sup>].</p>
+<div class="equation">
+  K<sub>w</sub> = [H<sup>+</sup>][OH<sup>-</sup>] = 1.00 &times; 10<sup>-14</sup> mol<sup>2</sup> dm<sup>-6</sup> at 298 K
+</div>
+
+<h3>5.3 The Acid Dissociation Constant K<sub>a</sub></h3>
+<p>For a weak acid HA:</p>
+<div class="equation">
+  K<sub>a</sub> = [H<sup>+</sup>][A<sup>-</sup>] / [HA]
+</div>
+<p>Assumptions: [H<sup>+</sup>] = [A<sup>-</sup>] (negligible dissociation of water) and [HA]<sub>equilibrium</sub> &approx; [HA]<sub>initial</sub> (weak acid, very little dissociation).</p>
+<div class="equation">
+  pK<sub>a</sub> = -log<sub>10</sub> K<sub>a</sub>
+</div>
+<p>A smaller K<sub>a</sub> (larger pK<sub>a</sub>) means a weaker acid.</p>
+
+<h3>5.4 Buffer Solutions</h3>
+
+<div class="definition">
+  <strong>Buffer solution:</strong> A solution that resists changes in pH when small amounts of acid or base are added. It consists of a weak acid and its conjugate base (or a weak base and its conjugate acid).
+</div>
+
+<p>An acidic buffer is made by mixing a weak acid with its sodium/potassium salt (e.g. CH<sub>3</sub>COOH + CH<sub>3</sub>COONa), or by partially neutralising a weak acid with a strong base.</p>
+
+<p>How a buffer works:</p>
+<ul>
+  <li>If H<sup>+</sup> is added: the conjugate base (A<sup>-</sup>) reacts with it: A<sup>-</sup> + H<sup>+</sup> &#8594; HA. This removes the added H<sup>+</sup>.</li>
+  <li>If OH<sup>-</sup> is added: the weak acid (HA) reacts with it: HA + OH<sup>-</sup> &#8594; A<sup>-</sup> + H<sub>2</sub>O. This removes the added OH<sup>-</sup>.</li>
+</ul>
+
+<p>To calculate buffer pH, use the Henderson-Hasselbalch approach or rearrange K<sub>a</sub>:</p>
+<div class="equation">
+  [H<sup>+</sup>] = K<sub>a</sub> &times; [HA] / [A<sup>-</sup>]
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Blood is buffered at pH 7.4 by the H<sub>2</sub>CO<sub>3</sub>/HCO<sub>3</sub><sup>-</sup> system. This is a common application question. Explain the buffer action using the equilibrium and the role of both the acid and conjugate base.
+</div>
+
+<h3>5.5 Titration Curves and Indicators</h3>
+<p>The shape of a pH titration curve depends on the strength of the acid and base:</p>
+
+<table>
+  <tr><th>Combination</th><th>pH at equivalence</th><th>Suitable indicator</th></tr>
+  <tr><td>Strong acid + strong base</td><td>7</td><td>Any (phenolphthalein or methyl orange)</td></tr>
+  <tr><td>Strong acid + weak base</td><td>&lt; 7</td><td>Methyl orange</td></tr>
+  <tr><td>Weak acid + strong base</td><td>&gt; 7</td><td>Phenolphthalein</td></tr>
+  <tr><td>Weak acid + weak base</td><td>~7 (gradual change)</td><td>No suitable indicator</td></tr>
+</table>
+
+<p>The half-equivalence point of a weak acid titration gives pH = pK<sub>a</sub> (since [HA] = [A<sup>-</sup>] at this point).</p>
+
+<!-- ==================== ELECTRODE POTENTIALS ==================== -->
+<h2>6. Electrode Potentials</h2>
+
+<h3>6.1 Standard Electrode Potential</h3>
+
+<div class="definition">
+  <strong>Standard electrode potential (E&deg;):</strong> The EMF of a half-cell connected to a standard hydrogen electrode under standard conditions (298 K, 100 kPa, 1.00 mol dm<sup>-3</sup> solutions).
+</div>
+
+<p>The standard hydrogen electrode (SHE) is assigned a potential of 0.00 V. It consists of hydrogen gas at 100 kPa bubbled over a platinum electrode in 1.00 mol dm<sup>-3</sup> H<sup>+</sup>(aq).</p>
+
+<h3>6.2 Electrochemical Cells</h3>
+<div class="equation">
+  E<sub>cell</sub> = E&deg;(positive terminal / cathode) - E&deg;(negative terminal / anode)
+</div>
+<p>Or equivalently: E<sub>cell</sub> = E&deg;(reduction at cathode) - E&deg;(reduction at anode)</p>
+
+<p>The more positive half-cell is the positive terminal (cathode, where reduction occurs). The more negative half-cell is the negative terminal (anode, where oxidation occurs). Electrons flow from the more negative to the more positive electrode through the external circuit.</p>
+
+<h3>6.3 Feasibility of Reactions</h3>
+<p>A reaction is thermodynamically feasible if E<sub>cell</sub> is positive. However, a positive E<sub>cell</sub> does not guarantee a reaction will occur in practice — kinetic factors (e.g. high activation energy) may prevent it.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When predicting feasibility, always state that a positive E<sub>cell</sub> only indicates thermodynamic feasibility. The reaction may be kinetically too slow to observe. Also note that non-standard conditions may alter the electrode potential and thus the feasibility.
+</div>
+
+<div class="equation">
+  &Delta;G = -nFE<sub>cell</sub>
+</div>
+<p>Where n = number of moles of electrons transferred, F = Faraday constant (96485 C mol<sup>-1</sup>). This links electrode potentials to free energy.</p>
+
+</div>
+</body>
+</html>

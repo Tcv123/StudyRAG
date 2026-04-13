@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T6 — Organisms Respond to Changes in Their Environment</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; } ul, ol { margin: 10px 0 15px 25px; } li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; } tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head><body><div class="container">
+
+<h1>T6 — Organisms Respond to Changes in Their Environment</h1>
+
+<h2>6.1 Stimuli and Receptors</h2>
+
+<div class="definition">
+<strong>Stimulus:</strong> A detectable change in the internal or external environment of an organism that produces a response. <strong>Receptor:</strong> A cell or structure that detects a stimulus and converts it into an electrical impulse (a transducer).
+</div>
+
+<p>Types of receptor:</p>
+<table>
+<tr><th>Receptor Type</th><th>Stimulus Detected</th><th>Example</th></tr>
+<tr><td>Photoreceptors</td><td>Light</td><td>Rods and cones in the retina</td></tr>
+<tr><td>Chemoreceptors</td><td>Chemicals</td><td>Taste buds, olfactory receptors, carotid body (blood pH/CO2)</td></tr>
+<tr><td>Mechanoreceptors</td><td>Pressure/movement</td><td>Pacinian corpuscles (pressure), hair cells in cochlea (sound)</td></tr>
+<tr><td>Thermoreceptors</td><td>Temperature</td><td>Peripheral thermoreceptors in skin, central in hypothalamus</td></tr>
+<tr><td>Osmoreceptors</td><td>Water potential changes</td><td>Hypothalamus (detect blood water potential)</td></tr>
+</table>
+
+<h3>Pacinian Corpuscle — A Model Receptor</h3>
+<p>The Pacinian corpuscle is a pressure receptor found in skin, joints, and mesentery. It demonstrates how receptors generate a nerve impulse:</p>
+<ol>
+<li>Pressure deforms the layered (lamellar) capsule.</li>
+<li>Deformation stretches the sensory neurone ending (node of Ranvier exposed).</li>
+<li>Stretch-mediated sodium ion channels open.</li>
+<li>Na<sup>+</sup> ions flood into the neurone, depolarising the membrane.</li>
+<li>If the depolarisation reaches the threshold potential, an action potential (nerve impulse) is generated.</li>
+</ol>
+
+<h2>6.2 Nervous Coordination</h2>
+
+<h3>The Nerve Impulse — Action Potential</h3>
+
+<div class="definition">
+<strong>Resting potential:</strong> The potential difference across a neurone membrane at rest (~-70 mV, inside negative relative to outside). Maintained by the Na<sup>+</sup>/K<sup>+</sup> ATPase pump (3 Na<sup>+</sup> out, 2 K<sup>+</sup> in) and K<sup>+</sup> leak channels.
+</div>
+
+<p>Stages of an action potential:</p>
+<ol>
+<li><strong>Stimulus received:</strong> Sodium ion channels open at the stimulated region.</li>
+<li><strong>Depolarisation:</strong> Na<sup>+</sup> rushes into the axon (down its electrochemical gradient). Membrane potential rises from -70 mV to about +40 mV.</li>
+<li><strong>Repolarisation:</strong> Voltage-gated Na<sup>+</sup> channels close; voltage-gated K<sup>+</sup> channels open. K<sup>+</sup> flows out, restoring negative potential inside.</li>
+<li><strong>Hyperpolarisation:</strong> Slight overshoot below -70 mV as K<sup>+</sup> channels are slow to close.</li>
+<li><strong>Refractory period:</strong> Na<sup>+</sup> channels are inactivated; another action potential cannot be generated. This ensures impulses travel in one direction and limits impulse frequency.</li>
+</ol>
+
+<h3>Transmission Speed</h3>
+<p>Factors affecting the speed of impulse transmission:</p>
+<ul>
+<li><strong>Myelination:</strong> Myelin sheath (Schwann cells) insulates the axon. Depolarisation only occurs at nodes of Ranvier — impulse "jumps" between nodes (saltatory conduction), greatly increasing speed.</li>
+<li><strong>Axon diameter:</strong> Wider axons have less resistance to ion flow, so faster transmission.</li>
+<li><strong>Temperature:</strong> Higher temperature increases rate of ion diffusion and enzyme activity (up to a point).</li>
+</ul>
+
+<h3>Synapses</h3>
+
+<div class="definition">
+<strong>Synapse:</strong> The junction between two neurones (or between a neurone and an effector). Transmission is typically chemical, using neurotransmitter molecules that diffuse across the synaptic cleft.
+</div>
+
+<p>Synaptic transmission (cholinergic synapse):</p>
+<ol>
+<li>Action potential arrives at presynaptic knob.</li>
+<li>Voltage-gated Ca<sup>2+</sup> channels open; Ca<sup>2+</sup> influx into presynaptic knob.</li>
+<li>Ca<sup>2+</sup> causes synaptic vesicles to fuse with presynaptic membrane (exocytosis), releasing acetylcholine (ACh) into the synaptic cleft.</li>
+<li>ACh diffuses across cleft and binds to specific receptors on the postsynaptic membrane.</li>
+<li>Na<sup>+</sup> channels on postsynaptic membrane open → depolarisation → action potential in postsynaptic neurone (if threshold reached).</li>
+<li>ACh is broken down by acetylcholinesterase in the cleft. Choline is reabsorbed and recycled.</li>
+</ol>
+
+<p>Functions of synapses:</p>
+<ul>
+<li>Ensure unidirectional transmission (receptors only on postsynaptic membrane)</li>
+<li>Allow summation (temporal: rapid repeated impulses; spatial: impulses from multiple presynaptic neurones)</li>
+<li>Allow integration and processing of information</li>
+<li>Allow inhibition (inhibitory neurotransmitters cause Cl<sup>-</sup> influx or K<sup>+</sup> efflux — hyperpolarisation, making action potential less likely)</li>
+</ul>
+
+<h3>Reflex Arcs</h3>
+<p>A reflex arc is the neural pathway for a rapid, involuntary response (reflex). Components: receptor → sensory neurone → relay neurone (in CNS) → motor neurone → effector (muscle/gland). Reflexes are fast, protective, and do not require conscious thought.</p>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> When describing synaptic transmission, include specific detail about calcium ions triggering vesicle fusion. A common mistake is to say neurotransmitter "travels" across the cleft — it diffuses. Always use precise terminology.
+</div>
+
+<h2>6.3 Muscle Contraction — The Sliding Filament Theory</h2>
+
+<div class="definition">
+<strong>Sliding Filament Theory:</strong> Muscle contraction occurs when actin (thin) filaments slide over myosin (thick) filaments, shortening the sarcomere. The filaments themselves do not shorten — they slide past each other using cross-bridge cycling powered by ATP.
+</div>
+
+<h3>Structure of Skeletal Muscle</h3>
+<p>Muscle → fascicles → muscle fibres (cells) → myofibrils → sarcomeres (functional units).</p>
+<p>Sarcomere bands:</p>
+<ul>
+<li><strong>I band:</strong> Light band — actin only (shortens during contraction)</li>
+<li><strong>A band:</strong> Dark band — myosin (and overlapping actin). Length stays constant.</li>
+<li><strong>H zone:</strong> Centre of A band — myosin only (shortens during contraction)</li>
+<li><strong>Z line:</strong> Boundary of sarcomere; anchors actin filaments</li>
+<li><strong>M line:</strong> Centre of sarcomere; anchors myosin</li>
+</ul>
+
+<h3>Mechanism of Contraction</h3>
+<ol>
+<li><strong>Nerve impulse arrives</strong> at neuromuscular junction → ACh released → depolarisation of muscle fibre membrane (sarcolemma).</li>
+<li>Impulse travels along sarcolemma and down T-tubules to sarcoplasmic reticulum (SR).</li>
+<li>SR releases stored Ca<sup>2+</sup> ions into the sarcoplasm.</li>
+<li>Ca<sup>2+</sup> binds to troponin on actin filaments, causing tropomyosin to move and expose myosin binding sites.</li>
+<li><strong>Cross-bridge formation:</strong> Myosin head (with ADP + Pi bound) attaches to exposed binding site on actin.</li>
+<li><strong>Power stroke:</strong> Myosin head pivots, pulling actin towards centre of sarcomere. ADP + Pi released.</li>
+<li><strong>Detachment:</strong> New ATP binds to myosin head, causing it to detach from actin.</li>
+<li><strong>Recovery stroke:</strong> ATP is hydrolysed (by myosin ATPase) → myosin head re-cocks to high-energy position. Cycle repeats as long as Ca<sup>2+</sup> and ATP are available.</li>
+</ol>
+
+<p>When stimulation stops, Ca<sup>2+</sup> is actively pumped back into the SR (requiring ATP). Troponin-tropomyosin complex re-covers binding sites. Muscle relaxes.</p>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> ATP is needed for BOTH contraction (myosin head power stroke recovery) AND relaxation (active transport of Ca2+ back into SR). This explains rigor mortis — without ATP after death, myosin heads remain locked to actin.
+</div>
+
+<h2>6.4 Homeostasis</h2>
+
+<div class="definition">
+<strong>Homeostasis:</strong> The maintenance of a constant internal environment within tolerable limits despite changes in the external environment. It involves receptors detecting deviations, a coordination centre processing information, and effectors bringing about corrective responses.
+</div>
+
+<h3>Negative Feedback</h3>
+<p>Negative feedback is the mechanism by which a deviation from a set point triggers a response that returns the system to the set point. It involves: stimulus → receptor → coordination centre → effector → response that opposes the original change.</p>
+
+<h3>Blood Glucose Regulation</h3>
+<table>
+<tr><th>Condition</th><th>Detected by</th><th>Hormone</th><th>Target</th><th>Effect</th></tr>
+<tr><td>High blood glucose (after meal)</td><td>Beta cells of islets of Langerhans (pancreas)</td><td>Insulin</td><td>Liver, muscle, adipose cells</td><td>Stimulates glycogenesis (glucose → glycogen); increases glucose uptake by cells via GLUT4 transporters; stimulates lipogenesis</td></tr>
+<tr><td>Low blood glucose (fasting/exercise)</td><td>Alpha cells of islets of Langerhans</td><td>Glucagon</td><td>Liver (mainly)</td><td>Stimulates glycogenolysis (glycogen → glucose); stimulates gluconeogenesis (amino acids/glycerol → glucose)</td></tr>
+</table>
+
+<p><strong>Type I diabetes:</strong> Autoimmune destruction of beta cells → no insulin production. Treated with insulin injections.</p>
+<p><strong>Type II diabetes:</strong> Cells become resistant to insulin (and/or reduced insulin secretion). Often linked to obesity. Managed with diet, exercise, and medication (e.g. metformin).</p>
+
+<h3>Body Temperature Regulation (Thermoregulation)</h3>
+<p>The thermoregulatory centre in the hypothalamus monitors blood temperature and receives input from peripheral thermoreceptors.</p>
+
+<table>
+<tr><th>Too Hot</th><th>Too Cold</th></tr>
+<tr><td>Vasodilation of skin arterioles — more blood flow to skin surface, more heat lost by radiation</td><td>Vasoconstriction — less blood flow to skin, less heat radiation</td></tr>
+<tr><td>Sweating increases — evaporation of water removes latent heat</td><td>Shivering — involuntary muscle contractions generate heat from respiration</td></tr>
+<tr><td>Hair erector muscles relax — hairs lie flat, thin insulating air layer</td><td>Hair erector muscles contract — hairs raised, trapping insulating air layer</td></tr>
+<tr><td>Reduced metabolic rate</td><td>Increased metabolic rate (adrenaline, thyroxine)</td></tr>
+</table>
+
+<h3>The Kidney and Osmoregulation</h3>
+<p>The kidney regulates water potential of blood by adjusting the volume and concentration of urine produced.</p>
+
+<p><strong>Nephron function:</strong></p>
+<ul>
+<li><strong>Ultrafiltration (Bowman's capsule):</strong> High blood pressure in glomerulus forces small molecules (water, glucose, urea, ions) through basement membrane into capsule. Blood cells and proteins remain.</li>
+<li><strong>Selective reabsorption (PCT):</strong> Glucose, amino acids, and most water/ions are reabsorbed (active transport and osmosis). Na<sup>+</sup>/glucose co-transport on apical membrane.</li>
+<li><strong>Loop of Henle:</strong> Creates a concentration gradient in the medulla (countercurrent multiplier) — essential for concentrating urine.</li>
+<li><strong>Collecting duct:</strong> Permeability to water is controlled by ADH (antidiuretic hormone).</li>
+</ul>
+
+<h3>ADH and Water Reabsorption</h3>
+<p>When blood water potential is low (dehydration):</p>
+<ol>
+<li>Osmoreceptors in hypothalamus detect low Ψ (cells shrink).</li>
+<li>Posterior pituitary releases more ADH into blood.</li>
+<li>ADH binds to receptors on collecting duct cells → aquaporin channels inserted into membrane.</li>
+<li>More water is reabsorbed by osmosis (following the medullary gradient) → small volume of concentrated urine.</li>
+</ol>
+<p>When blood water potential is high: less ADH released → fewer aquaporins → large volume of dilute urine.</p>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> ADH makes the collecting duct MORE permeable to water — it does not "move water." Water moves by osmosis down the water potential gradient created by the loop of Henle. ADH simply opens the channels to allow this.
+</div>
+
+</div></body></html>

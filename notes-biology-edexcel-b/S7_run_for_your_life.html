@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S7 — Run for Your Life</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>S7 — Run for Your Life</h1>
+
+<!-- ============================================================ -->
+<h2>7.1 Cellular Respiration</h2>
+<!-- ============================================================ -->
+
+<h3>Overview</h3>
+
+<div class="definition">
+  <strong>Cellular respiration:</strong> The metabolic process by which cells break down organic molecules (primarily glucose) to release energy in the form of ATP. Aerobic respiration requires oxygen; anaerobic respiration occurs without oxygen.
+</div>
+
+<div class="equation">
+  C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> &rarr; 6CO<sub>2</sub> + 6H<sub>2</sub>O + ATP (+ heat)
+</div>
+
+<p>Respiration occurs in four stages: glycolysis (cytoplasm), the link reaction (mitochondrial matrix), the Krebs cycle (mitochondrial matrix), and oxidative phosphorylation (inner mitochondrial membrane).</p>
+
+<h3>Glycolysis</h3>
+
+<p>Glycolysis occurs in the cytoplasm and does not require oxygen. It is the splitting of one molecule of glucose (6C) into two molecules of pyruvate (3C). Key steps:</p>
+<ol>
+  <li><strong>Phosphorylation:</strong> Glucose is phosphorylated twice using 2 ATP, making it more reactive and preventing it from leaving the cell. This produces fructose-1,6-bisphosphate (6C).</li>
+  <li><strong>Lysis:</strong> The 6C sugar is split into two molecules of triose phosphate (3C each).</li>
+  <li><strong>Oxidation:</strong> Each triose phosphate is oxidised (hydrogen removed by NAD<sup>+</sup>, producing 2 NADH) and phosphorylated, then converted to pyruvate. 4 ATP are produced by substrate-level phosphorylation.</li>
+</ol>
+
+<p>Net yield per glucose: 2 ATP (4 produced minus 2 invested), 2 NADH, 2 pyruvate.</p>
+
+<h3>The Link Reaction</h3>
+
+<p>Pyruvate is actively transported into the mitochondrial matrix. Each pyruvate (3C) is decarboxylated (one CO<sub>2</sub> removed) and dehydrogenated (one NADH produced). The remaining 2C acetyl group combines with coenzyme A to form acetyl CoA, which enters the Krebs cycle. Per glucose: 2 CO<sub>2</sub> released, 2 NADH produced.</p>
+
+<h3>The Krebs Cycle</h3>
+
+<p>The Krebs cycle (citric acid cycle) occurs in the mitochondrial matrix. Acetyl CoA (2C) combines with oxaloacetate (4C) to form citrate (6C). Through a series of enzyme-catalysed reactions, citrate is progressively oxidised and decarboxylated, regenerating oxaloacetate. Per turn of the cycle:</p>
+<ul>
+  <li>2 CO<sub>2</sub> released (decarboxylation)</li>
+  <li>3 NADH produced (by dehydrogenation)</li>
+  <li>1 FADH<sub>2</sub> produced</li>
+  <li>1 ATP produced (substrate-level phosphorylation, actually GTP)</li>
+</ul>
+
+<p>Per glucose (2 turns): 4 CO<sub>2</sub>, 6 NADH, 2 FADH<sub>2</sub>, 2 ATP.</p>
+
+<h3>Oxidative Phosphorylation</h3>
+
+<p>This is the final stage and produces the most ATP. It takes place on the inner mitochondrial membrane (cristae). The process involves:</p>
+<ol>
+  <li><strong>Electron transport chain (ETC):</strong> NADH and FADH<sub>2</sub> donate electrons to a series of protein complexes in the inner membrane. As electrons pass along the chain, they lose energy, which is used to pump H<sup>+</sup> ions from the matrix into the intermembrane space, creating an electrochemical gradient (proton motive force).</li>
+  <li><strong>Chemiosmosis:</strong> H<sup>+</sup> ions flow back into the matrix through ATP synthase, driving the phosphorylation of ADP to ATP. This is analogous to the process in chloroplasts.</li>
+  <li><strong>Final electron acceptor:</strong> At the end of the ETC, electrons combine with H<sup>+</sup> ions and molecular oxygen to form water. Without O<sub>2</sub> to accept electrons, the chain stops and no further ATP is produced by this pathway.</li>
+</ol>
+
+<p>Theoretical maximum yield: ~34 ATP from oxidative phosphorylation (approximately 2.5 ATP per NADH, 1.5 per FADH<sub>2</sub>). Total for aerobic respiration of one glucose: approximately 38 ATP (though actual yield is lower due to proton leakage and energy costs of transport).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Remember that the role of oxygen in respiration is specifically as the final electron acceptor in oxidative phosphorylation. Without it, electrons accumulate on carriers, the ETC stops, NAD<sup>+</sup> and FAD cannot be regenerated, and the Krebs cycle also stops because it cannot be oxidised.
+</div>
+
+<!-- ============================================================ -->
+<h2>7.2 Anaerobic Respiration</h2>
+<!-- ============================================================ -->
+
+<h3>Anaerobic Pathways</h3>
+
+<p>When oxygen is unavailable or insufficient (e.g., during intense exercise), cells switch to anaerobic respiration. Only glycolysis can proceed, but NAD<sup>+</sup> must be regenerated for it to continue.</p>
+
+<p><strong>In animals (lactate fermentation):</strong> Pyruvate is reduced to lactate by lactate dehydrogenase, using NADH and regenerating NAD<sup>+</sup>. This allows glycolysis to continue producing 2 ATP per glucose. Lactate accumulation lowers pH, contributing to muscle fatigue.</p>
+
+<div class="equation">
+  Pyruvate + NADH &rarr; Lactate + NAD<sup>+</sup>
+</div>
+
+<p><strong>In yeast and plants (alcoholic fermentation):</strong> Pyruvate is first decarboxylated to ethanal (acetaldehyde) by pyruvate decarboxylase, releasing CO<sub>2</sub>. Ethanal is then reduced to ethanol by alcohol dehydrogenase, using NADH and regenerating NAD<sup>+</sup>.</p>
+
+<div class="equation">
+  Pyruvate &rarr; Ethanal + CO<sub>2</sub> &rarr; Ethanol (using NADH &rarr; NAD<sup>+</sup>)
+</div>
+
+<p>Anaerobic respiration produces far less ATP (2 per glucose vs ~38 aerobically) because the organic products (lactate or ethanol) still contain significant chemical energy that has not been released.</p>
+
+<h3>Oxygen Debt</h3>
+
+<div class="definition">
+  <strong>Oxygen debt (Excess Post-exercise Oxygen Consumption, EPOC):</strong> The additional oxygen consumed after exercise above the resting level, used to metabolise accumulated lactate (converted back to pyruvate in the liver, then either oxidised in the Krebs cycle or converted to glycogen), replenish oxygen stores in myoglobin, re-synthesise ATP and phosphocreatine, and support elevated metabolic rate.
+</div>
+
+<!-- ============================================================ -->
+<h2>7.3 Muscle Structure and Contraction</h2>
+<!-- ============================================================ -->
+
+<h3>Skeletal Muscle Structure</h3>
+
+<p>Skeletal muscle is made up of muscle fibres (cells), which are multinucleate (formed by fusion of many cells during development). Each fibre contains many myofibrils, which are the contractile units. Myofibrils have a banded (striated) appearance due to the arrangement of thick (myosin) and thin (actin) filaments. The functional unit is the sarcomere, bounded by Z-lines.</p>
+
+<table>
+  <tr><th>Band/Zone</th><th>Contents</th><th>During Contraction</th></tr>
+  <tr><td>I band (light)</td><td>Actin only (thin filaments)</td><td>Gets shorter</td></tr>
+  <tr><td>A band (dark)</td><td>Myosin (+ overlap with actin)</td><td>Stays the same length</td></tr>
+  <tr><td>H zone</td><td>Myosin only (centre of A band)</td><td>Gets shorter</td></tr>
+  <tr><td>Z line</td><td>Boundary between sarcomeres</td><td>Z lines move closer together</td></tr>
+</table>
+
+<h3>The Sliding Filament Theory</h3>
+
+<div class="definition">
+  <strong>Sliding filament theory:</strong> Muscle contraction occurs when actin filaments slide over myosin filaments, shortening the sarcomere. The filaments themselves do not shorten; rather, myosin cross-bridges pull actin filaments toward the centre of the sarcomere.
+</div>
+
+<p>The mechanism of contraction:</p>
+<ol>
+  <li><strong>Nerve impulse arrives</strong> at the neuromuscular junction; acetylcholine is released, depolarising the muscle fibre membrane (sarcolemma).</li>
+  <li><strong>Action potential</strong> travels along the sarcolemma and down T-tubules into the fibre interior.</li>
+  <li><strong>Calcium release:</strong> The action potential stimulates the sarcoplasmic reticulum (SR) to release Ca<sup>2+</sup> ions into the sarcoplasm.</li>
+  <li><strong>Ca<sup>2+</sup> binds to troponin</strong> on the actin filament, causing tropomyosin to move and expose the myosin-binding sites on actin.</li>
+  <li><strong>Cross-bridge formation:</strong> Myosin heads (energised by ATP hydrolysis) bind to exposed sites on actin, forming cross-bridges.</li>
+  <li><strong>Power stroke:</strong> Myosin heads pivot, pulling actin toward the centre of the sarcomere. ADP and Pi are released.</li>
+  <li><strong>Detachment:</strong> A new ATP molecule binds to the myosin head, causing it to detach from actin.</li>
+  <li><strong>Re-cocking:</strong> ATP is hydrolysed to ADP + Pi, re-energising the myosin head for another cycle.</li>
+  <li><strong>Cycle repeats</strong> as long as Ca<sup>2+</sup> and ATP are available.</li>
+</ol>
+
+<p>Relaxation occurs when nerve stimulation stops: Ca<sup>2+</sup> is actively pumped back into the SR (using ATP), troponin-tropomyosin complex returns to its blocking position, cross-bridges cannot form, and the muscle passively returns to its resting length (or is stretched by an antagonistic muscle).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> ATP is needed for both contraction (energising the myosin head) and relaxation (detaching cross-bridges and pumping Ca<sup>2+</sup> back into SR). This explains rigor mortis: after death, no ATP is produced, so cross-bridges remain permanently attached.
+</div>
+
+<!-- ============================================================ -->
+<h2>7.4 Exercise Physiology</h2>
+<!-- ============================================================ -->
+
+<h3>Energy Systems During Exercise</h3>
+
+<p>During exercise, the demand for ATP increases dramatically. Three energy systems supply ATP:</p>
+<ul>
+  <li><strong>Phosphocreatine (PCr) system:</strong> Immediate energy. PCr donates a phosphate group to ADP (catalysed by creatine kinase) to regenerate ATP. Lasts ~10 seconds; used for explosive activities (sprints, jumps).</li>
+  <li><strong>Anaerobic glycolysis:</strong> Short-term energy (up to ~2 minutes). Glucose broken down to lactate, yielding 2 ATP per glucose. Dominant during high-intensity exercise when O<sub>2</sub> supply cannot meet demand.</li>
+  <li><strong>Aerobic respiration:</strong> Long-term energy. Complete oxidation of glucose (and later fatty acids) yielding ~38 ATP per glucose. Dominant during sustained low-to-moderate intensity exercise. Requires adequate O<sub>2</sub> supply.</li>
+</ul>
+
+<h3>Muscle Fibre Types</h3>
+
+<table>
+  <tr><th>Feature</th><th>Slow-Twitch (Type I)</th><th>Fast-Twitch (Type IIa)</th><th>Fast-Twitch (Type IIb)</th></tr>
+  <tr><td>Contraction speed</td><td>Slow</td><td>Fast</td><td>Very fast</td></tr>
+  <tr><td>Fatigue resistance</td><td>High</td><td>Moderate</td><td>Low (fatigues quickly)</td></tr>
+  <tr><td>Mitochondria</td><td>Many</td><td>Many</td><td>Few</td></tr>
+  <tr><td>Myoglobin content</td><td>High (red)</td><td>High</td><td>Low (white)</td></tr>
+  <tr><td>Capillary density</td><td>High</td><td>High</td><td>Low</td></tr>
+  <tr><td>Main energy source</td><td>Aerobic respiration</td><td>Aerobic (some anaerobic)</td><td>Anaerobic glycolysis</td></tr>
+  <tr><td>Activities</td><td>Marathon, posture</td><td>Middle-distance</td><td>Sprinting, weightlifting</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>7.5 Homeostasis and Heart Rate Control</h2>
+<!-- ============================================================ -->
+
+<h3>Homeostasis</h3>
+
+<div class="definition">
+  <strong>Homeostasis:</strong> The maintenance of a relatively constant internal environment within narrow limits, despite fluctuations in the external environment. It involves receptor &rarr; coordination centre &rarr; effector pathways and typically uses negative feedback.
+</div>
+
+<p><strong>Negative feedback:</strong> A mechanism in which a deviation from a set point triggers a response that returns the variable to the set point. For example, if body temperature rises, sweating and vasodilation cool the body back down; if it falls, shivering and vasoconstriction warm it up. Negative feedback maintains stability.</p>
+
+<p><strong>Positive feedback:</strong> A mechanism in which a change triggers responses that amplify the change further (moving away from the set point). Examples include the oxytocin feedback loop during labour and the rapid depolarisation phase of an action potential. Positive feedback is rare in homeostasis but important in certain physiological processes.</p>
+
+<h3>Control of Heart Rate</h3>
+
+<p>Heart rate is controlled by the cardiovascular centre in the medulla oblongata of the brain. The heart is myogenic (contracts without external nerve stimulation) &mdash; the sinoatrial node (SAN, the pacemaker) generates electrical impulses that spread across the atria, causing atrial systole. The impulse is delayed at the atrioventricular node (AVN) before passing along the bundle of His and Purkinje fibres to the ventricles, triggering ventricular systole from the apex upward.</p>
+
+<p>Heart rate is modified by the autonomic nervous system:</p>
+<ul>
+  <li><strong>Sympathetic nerve</strong> (accelerator nerve): Releases noradrenaline at the SAN, increasing heart rate and force of contraction. Activated during exercise, stress, or danger (fight-or-flight response).</li>
+  <li><strong>Parasympathetic nerve</strong> (vagus nerve): Releases acetylcholine at the SAN, decreasing heart rate. Dominant at rest.</li>
+</ul>
+
+<p>Factors that increase heart rate: increased CO<sub>2</sub> concentration in blood (detected by chemoreceptors in the aortic and carotid bodies), decreased blood pH, increased body temperature, adrenaline from the adrenal medulla, and proprioceptor activity during exercise. Baroreceptors in the carotid sinus and aortic arch detect changes in blood pressure and adjust heart rate accordingly.</p>
+
+<h3>Thermoregulation</h3>
+
+<p>Body temperature is regulated by the thermoregulatory centre in the hypothalamus. Peripheral thermoreceptors in the skin detect external temperature changes; central thermoreceptors in the hypothalamus monitor blood temperature. Responses to overheating include vasodilation of skin arterioles, sweating, behavioural changes (seeking shade, removing clothing), and reduced metabolic rate. Responses to cooling include vasoconstriction, shivering (rapid involuntary muscle contractions generating heat), piloerection, increased metabolic rate (controlled by thyroid hormones), and behavioural changes.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When describing heart rate control, make clear the distinction between the myogenic nature of cardiac muscle (SAN generates its own rhythm) and the role of the autonomic nervous system in modifying that rhythm. The heart will beat without any nerve supply, but its rate is adjusted to meet the body's changing demands.
+</div>
+
+</div>
+</body>
+</html>

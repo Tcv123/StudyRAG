@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 4 — Materials</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e3a5f;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 4px solid #2563eb;
+            padding-left: 12px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #334155;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        .definition-box {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before {
+            content: "Exam Tip: ";
+            font-weight: 700;
+            color: #b45309;
+        }
+        .equation {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 1.1rem;
+            background: #f8fafc;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        strong {
+            color: #1e3a5f;
+        }
+        @media print {
+            body { padding: 20px; }
+            .exam-tip, .definition-box { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Topic 4 — Materials</h1>
+
+        <h2>4.1 Density</h2>
+        <div class="definition-box">
+            <strong>Density (&rho;)</strong> is the mass per unit volume of a material. It is a scalar quantity measured in kg m<sup>-3</sup>.
+        </div>
+        <div class="equation">
+            &rho; = m / V
+        </div>
+        <p>where m = mass (kg) and V = volume (m&sup3;).</p>
+
+        <h3>Measuring Density</h3>
+        <ul>
+            <li><strong>Regular solids:</strong> Measure mass with a balance; calculate volume from dimensions (e.g., V = length &times; width &times; height for a cuboid, V = &pi;r&sup2;h for a cylinder).</li>
+            <li><strong>Irregular solids:</strong> Use a displacement method — submerge in water and measure the volume of water displaced.</li>
+            <li><strong>Liquids:</strong> Measure mass of a known volume using a measuring cylinder and balance.</li>
+        </ul>
+
+        <h2>4.2 Hooke's Law</h2>
+        <div class="definition-box">
+            <strong>Hooke's Law:</strong> The extension of a spring is directly proportional to the applied force, provided the limit of proportionality is not exceeded.
+        </div>
+        <div class="equation">
+            F = kx
+        </div>
+        <p>where F = force applied (N), k = spring constant (N m<sup>-1</sup>), x = extension (m).</p>
+
+        <p>The <strong>spring constant (k)</strong> is the force per unit extension. A stiffer spring has a larger value of k. The spring constant is equal to the gradient of the linear section of a force-extension graph.</p>
+
+        <h3>Limit of Proportionality and Elastic Limit</h3>
+        <ul>
+            <li><strong>Limit of proportionality:</strong> The point beyond which force is no longer proportional to extension (Hooke's law no longer applies). The graph is no longer linear.</li>
+            <li><strong>Elastic limit:</strong> The point beyond which the material will not return to its original length when the force is removed. Permanent (plastic) deformation occurs beyond this point.</li>
+        </ul>
+
+        <h3>Springs in Series and Parallel</h3>
+        <table>
+            <tr><th>Arrangement</th><th>Combined Spring Constant</th></tr>
+            <tr><td>Springs in <strong>series</strong> (end to end)</td><td>1/k<sub>total</sub> = 1/k<sub>1</sub> + 1/k<sub>2</sub></td></tr>
+            <tr><td>Springs in <strong>parallel</strong> (side by side)</td><td>k<sub>total</sub> = k<sub>1</sub> + k<sub>2</sub></td></tr>
+        </table>
+
+        <div class="exam-tip">
+            Springs in series are like resistors in parallel — the total spring constant is LESS than either individual constant. Springs in parallel are like resistors in series — the total is the sum. Think of it as: in parallel, the load is shared so it is harder to extend.
+        </div>
+
+        <h2>4.3 Elastic Potential Energy</h2>
+        <div class="definition-box">
+            <strong>Elastic potential energy (E<sub>e</sub>)</strong> is the energy stored in a stretched or compressed spring. It equals the work done in stretching the spring (the area under the force-extension graph in the linear region).
+        </div>
+        <div class="equation">
+            E<sub>e</sub> = &frac12;Fx = &frac12;kx&sup2;
+        </div>
+        <p>This equation only applies when Hooke's law is obeyed (i.e., within the limit of proportionality).</p>
+        <p>For a non-linear force-extension graph, the energy stored is still the area under the graph, but must be estimated (e.g., by counting squares).</p>
+
+        <h2>4.4 Stress, Strain, and Young's Modulus</h2>
+        <div class="definition-box">
+            <p><strong>Tensile stress (&sigma;)</strong> is the force per unit cross-sectional area. Measured in pascals (Pa) or N m<sup>-2</sup>.</p>
+            <p><strong>Tensile strain (&epsilon;)</strong> is the fractional change in length. It is dimensionless (no units).</p>
+            <p><strong>Young's modulus (E)</strong> is the ratio of stress to strain in the linear (elastic) region. It is a measure of the stiffness of a material. Measured in Pa.</p>
+        </div>
+        <div class="equation">
+            Stress: &sigma; = F / A
+        </div>
+        <div class="equation">
+            Strain: &epsilon; = &Delta;L / L
+        </div>
+        <div class="equation">
+            Young's modulus: E = &sigma; / &epsilon; = (FL) / (A&Delta;L)
+        </div>
+
+        <h3>Measuring Young's Modulus</h3>
+        <p>A common experiment uses a long, thin wire:</p>
+        <ul>
+            <li>Measure original length (L) with a metre ruler.</li>
+            <li>Measure diameter with a micrometer (take several readings at different points and calculate mean). Calculate area: A = &pi;(d/2)&sup2;.</li>
+            <li>Gradually add known masses and measure extension using a marker and ruler (or a travelling microscope for greater precision).</li>
+            <li>Plot a stress-strain graph; the gradient of the linear section = Young's modulus.</li>
+        </ul>
+
+        <h2>4.5 Stress-Strain Graphs</h2>
+        <h3>Key Points on a Stress-Strain Graph</h3>
+        <ul>
+            <li><strong>Limit of proportionality (P):</strong> End of the linear region; beyond this, stress is no longer proportional to strain.</li>
+            <li><strong>Elastic limit (E):</strong> Beyond this, the material undergoes permanent plastic deformation.</li>
+            <li><strong>Yield point (Y):</strong> The point at which a large increase in strain occurs with little or no increase in stress. The material begins to "flow."</li>
+            <li><strong>Ultimate tensile stress (UTS):</strong> The maximum stress the material can withstand before necking begins.</li>
+            <li><strong>Fracture point (F):</strong> The stress at which the material breaks.</li>
+        </ul>
+
+        <h2>4.6 Material Properties</h2>
+        <table>
+            <tr><th>Property</th><th>Description</th><th>Example</th></tr>
+            <tr><td><strong>Ductile</strong></td><td>Can be drawn into wires; undergoes large plastic deformation before fracture</td><td>Copper, mild steel</td></tr>
+            <tr><td><strong>Brittle</strong></td><td>Fractures with little or no plastic deformation; snaps suddenly</td><td>Glass, ceramics, cast iron</td></tr>
+            <tr><td><strong>Polymeric</strong></td><td>Can stretch significantly; behaviour depends on type (rubber returns, polythene does not)</td><td>Rubber, polythene</td></tr>
+            <tr><td><strong>Stiff</strong></td><td>High Young's modulus; resists deformation</td><td>Steel, diamond</td></tr>
+            <tr><td><strong>Strong</strong></td><td>High ultimate tensile stress; withstands large forces before breaking</td><td>Steel, kevlar</td></tr>
+            <tr><td><strong>Hard</strong></td><td>Resistant to scratching or indentation</td><td>Diamond</td></tr>
+        </table>
+
+        <h3>Comparing Stress-Strain Curves</h3>
+        <ul>
+            <li><strong>Ductile material (e.g., copper):</strong> Long curve with significant plastic region before fracture. Shows clear yield point and necking.</li>
+            <li><strong>Brittle material (e.g., glass):</strong> Straight line (linear elastic) up to fracture point. Very little strain at fracture. No plastic region.</li>
+            <li><strong>Rubber:</strong> Large strain for relatively small stress. The loading and unloading curves differ (hysteresis). Returns to original length but does not obey Hooke's law.</li>
+            <li><strong>Polythene:</strong> Low initial stiffness, then "gives" easily with large extension. Does not return to original length — permanent deformation.</li>
+        </ul>
+
+        <h2>4.7 Elastic and Plastic Deformation</h2>
+        <div class="definition-box">
+            <p><strong>Elastic deformation:</strong> The material returns to its original shape and size when the force is removed. No permanent change. Energy is fully recoverable.</p>
+            <p><strong>Plastic deformation:</strong> The material is permanently deformed when the force is removed. It does not return to its original dimensions. Energy is dissipated (not recoverable).</p>
+        </div>
+
+        <h3>Hysteresis</h3>
+        <p>When rubber is loaded and then unloaded, the unloading curve lies below the loading curve. The area between the two curves represents the energy dissipated as thermal energy during one loading-unloading cycle. This is called <strong>hysteresis</strong>.</p>
+
+        <h2>4.8 Energy Stored</h2>
+        <p>The <strong>energy stored</strong> in a deformed material equals the area under the force-extension graph.</p>
+        <ul>
+            <li>For a material obeying Hooke's law (linear graph): Energy = &frac12;Fx = &frac12;kx&sup2;</li>
+            <li>For a non-linear graph: estimate the area by counting squares or using the trapezium rule.</li>
+            <li>If the loading and unloading curves differ (hysteresis), the energy returned on unloading is the area under the unloading curve. The difference (area enclosed) is energy lost as heat.</li>
+        </ul>
+
+        <div class="exam-tip">
+            The area under a <strong>force-extension</strong> graph = energy stored (in joules). The area under a <strong>stress-strain</strong> graph = energy stored per unit volume (in J m<sup>-3</sup>). Do not confuse the two.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 2 — Mechanics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e3a5f;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 4px solid #2563eb;
+            padding-left: 12px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #334155;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        .definition-box {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before {
+            content: "Exam Tip: ";
+            font-weight: 700;
+            color: #b45309;
+        }
+        .equation {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 1.1rem;
+            background: #f8fafc;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        strong {
+            color: #1e3a5f;
+        }
+        @media print {
+            body { padding: 20px; }
+            .exam-tip, .definition-box { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Topic 2 — Mechanics</h1>
+
+        <h2>2.1 Scalars and Vectors</h2>
+        <div class="definition-box">
+            <p><strong>Scalar</strong> — a quantity that has magnitude only (e.g., mass, speed, energy, temperature, distance).</p>
+            <p><strong>Vector</strong> — a quantity that has both magnitude and direction (e.g., force, velocity, acceleration, displacement, momentum).</p>
+        </div>
+
+        <h3>Adding Vectors</h3>
+        <p>Vectors are added using the <strong>triangle of vectors</strong> or <strong>parallelogram rule</strong>. For two vectors at right angles, use Pythagoras' theorem to find the resultant magnitude and trigonometry to find the angle:</p>
+        <div class="equation">
+            Resultant = &radic;(A&sup2; + B&sup2;)
+        </div>
+        <div class="equation">
+            &theta; = tan<sup>-1</sup>(opposite / adjacent)
+        </div>
+
+        <h3>Resolving Vectors into Components</h3>
+        <p>Any vector can be split into two perpendicular components (typically horizontal and vertical):</p>
+        <div class="equation">
+            Horizontal component: F<sub>x</sub> = F cos &theta;
+        </div>
+        <div class="equation">
+            Vertical component: F<sub>y</sub> = F sin &theta;
+        </div>
+        <p>where &theta; is the angle between the vector and the horizontal.</p>
+
+        <div class="exam-tip">
+            When resolving forces on an inclined plane, resolve parallel and perpendicular to the slope — not horizontally and vertically. The component of weight along the slope is mg sin &theta; and perpendicular to the slope is mg cos &theta;.
+        </div>
+
+        <h2>2.2 Motion Graphs</h2>
+        <h3>Displacement-Time Graphs</h3>
+        <ul>
+            <li>Gradient = <strong>velocity</strong></li>
+            <li>Horizontal line = stationary (zero velocity)</li>
+            <li>Straight line with positive gradient = constant velocity forwards</li>
+            <li>Curve with increasing gradient = acceleration</li>
+            <li>The instantaneous velocity at a point on a curve is found from the gradient of the tangent at that point.</li>
+        </ul>
+
+        <h3>Velocity-Time Graphs</h3>
+        <ul>
+            <li>Gradient = <strong>acceleration</strong></li>
+            <li>Area under the graph = <strong>displacement</strong></li>
+            <li>Horizontal line = constant velocity (zero acceleration)</li>
+            <li>Straight line with positive gradient = constant acceleration</li>
+            <li>Negative velocity = moving in the opposite direction</li>
+        </ul>
+
+        <h2>2.3 SUVAT Equations</h2>
+        <div class="definition-box">
+            The SUVAT equations apply to objects moving with <strong>constant (uniform) acceleration</strong> in a straight line. The five variables are: <strong>s</strong> (displacement), <strong>u</strong> (initial velocity), <strong>v</strong> (final velocity), <strong>a</strong> (acceleration), <strong>t</strong> (time).
+        </div>
+
+        <table>
+            <tr><th>Equation</th><th>Missing Variable</th></tr>
+            <tr><td class="equation" style="text-align:center; border:none; background:none;">v = u + at</td><td>s</td></tr>
+            <tr><td class="equation" style="text-align:center; border:none; background:none;">s = ut + &frac12;at&sup2;</td><td>v</td></tr>
+            <tr><td class="equation" style="text-align:center; border:none; background:none;">s = vt - &frac12;at&sup2;</td><td>u</td></tr>
+            <tr><td class="equation" style="text-align:center; border:none; background:none;">v&sup2; = u&sup2; + 2as</td><td>t</td></tr>
+            <tr><td class="equation" style="text-align:center; border:none; background:none;">s = &frac12;(u + v)t</td><td>a</td></tr>
+        </table>
+
+        <h3>Derivations</h3>
+        <p><strong>v = u + at</strong> — from the definition of acceleration: a = (v - u)/t, rearranged.</p>
+        <p><strong>s = ut + &frac12;at&sup2;</strong> — area under a v-t graph: s = ut + &frac12;(v - u)t, then substitute v - u = at.</p>
+        <p><strong>v&sup2; = u&sup2; + 2as</strong> — eliminate t: from v = u + at, t = (v-u)/a; substitute into s = &frac12;(u+v)t to get s = (v&sup2; - u&sup2;)/2a, then rearrange.</p>
+
+        <div class="exam-tip">
+            Always list the known values of s, u, v, a, t before choosing which equation to use. Pick the equation that contains the three known quantities and the one unknown you need.
+        </div>
+
+        <h2>2.4 Projectile Motion</h2>
+        <div class="definition-box">
+            <strong>Projectile motion</strong> is the motion of an object under the influence of gravity alone (ignoring air resistance). The horizontal and vertical components of motion are independent of each other.
+        </div>
+
+        <h3>Key Principles</h3>
+        <ul>
+            <li><strong>Horizontally:</strong> No acceleration (ignoring air resistance), so horizontal velocity is constant: x = v<sub>x</sub> t</li>
+            <li><strong>Vertically:</strong> Acceleration = g = 9.81 m s<sup>-2</sup> downwards. Use SUVAT equations with a = g.</li>
+            <li>At the highest point, the vertical component of velocity = 0 (but horizontal velocity remains unchanged).</li>
+            <li>Time of flight is determined entirely by the vertical motion.</li>
+        </ul>
+
+        <h3>Projectile Launched at Angle &theta;</h3>
+        <div class="equation">
+            Horizontal component: u<sub>x</sub> = u cos &theta;
+        </div>
+        <div class="equation">
+            Vertical component: u<sub>y</sub> = u sin &theta;
+        </div>
+
+        <h2>2.5 Newton's Laws of Motion</h2>
+        <div class="definition-box">
+            <p><strong>Newton's First Law:</strong> An object remains at rest or moves with constant velocity unless acted upon by a resultant force.</p>
+            <p><strong>Newton's Second Law:</strong> The resultant force on an object is proportional to its rate of change of momentum. For constant mass: F = ma.</p>
+            <p><strong>Newton's Third Law:</strong> If object A exerts a force on object B, then object B exerts an equal and opposite force on object A. These forces act on different objects, are the same type, and act along the same line.</p>
+        </div>
+
+        <h3>Free Body Diagrams</h3>
+        <p>A <strong>free body diagram</strong> shows all the forces acting on a single object. Each force is drawn as an arrow starting from the object, with length proportional to magnitude.</p>
+        <ul>
+            <li>Weight (mg) acts downwards from the centre of mass</li>
+            <li>Normal contact force acts perpendicular to the surface</li>
+            <li>Friction acts parallel to the surface, opposing motion</li>
+            <li>Tension acts along a rope or string, away from the object</li>
+            <li>Air resistance acts opposite to the direction of motion</li>
+        </ul>
+
+        <div class="exam-tip">
+            Newton's Third Law pairs must be: the same type of force, equal in magnitude, opposite in direction, and acting on two DIFFERENT objects. Weight and normal reaction are NOT a Newton's Third Law pair (they act on the same object and are different types of force).
+        </div>
+
+        <h2>2.6 Momentum</h2>
+        <div class="definition-box">
+            <strong>Momentum (p)</strong> is the product of an object's mass and velocity. It is a vector quantity measured in kg m s<sup>-1</sup>.
+        </div>
+        <div class="equation">
+            p = mv
+        </div>
+
+        <h3>Conservation of Momentum</h3>
+        <p>In a <strong>closed system</strong> (no external forces), the total momentum before an event equals the total momentum after:</p>
+        <div class="equation">
+            m<sub>1</sub>u<sub>1</sub> + m<sub>2</sub>u<sub>2</sub> = m<sub>1</sub>v<sub>1</sub> + m<sub>2</sub>v<sub>2</sub>
+        </div>
+
+        <h3>Types of Collision</h3>
+        <table>
+            <tr><th>Type</th><th>Momentum Conserved?</th><th>Kinetic Energy Conserved?</th></tr>
+            <tr><td>Elastic</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Inelastic</td><td>Yes</td><td>No (some KE lost)</td></tr>
+            <tr><td>Perfectly inelastic</td><td>Yes</td><td>No (objects stick together, maximum KE lost)</td></tr>
+            <tr><td>Explosion</td><td>Yes (total = 0 if initially at rest)</td><td>No (KE increases from internal energy)</td></tr>
+        </table>
+
+        <h2>2.7 Impulse</h2>
+        <div class="definition-box">
+            <strong>Impulse</strong> is the change in momentum of an object. It equals the force multiplied by the time for which it acts.
+        </div>
+        <div class="equation">
+            Impulse = F&Delta;t = &Delta;p = mv - mu
+        </div>
+        <p>The area under a force-time graph equals the impulse (change in momentum).</p>
+        <p>Applications: crumple zones, airbags, and helmets increase the time of impact, reducing the average force on the person for the same change in momentum.</p>
+
+        <h2>2.8 Work, Energy, and Power</h2>
+        <h3>Work Done</h3>
+        <div class="definition-box">
+            <strong>Work done</strong> is the energy transferred when a force moves an object through a distance in the direction of the force.
+        </div>
+        <div class="equation">
+            W = Fd cos &theta;
+        </div>
+        <p>where &theta; is the angle between the force and the direction of motion. Work done is measured in joules (J). If &theta; = 90&deg;, no work is done (e.g., centripetal force).</p>
+
+        <h3>Kinetic Energy</h3>
+        <div class="equation">
+            E<sub>k</sub> = &frac12;mv&sup2;
+        </div>
+
+        <h3>Gravitational Potential Energy</h3>
+        <div class="equation">
+            E<sub>p</sub> = mgh
+        </div>
+        <p>where h is the vertical height change above a reference point.</p>
+
+        <h3>Conservation of Energy</h3>
+        <p>Energy cannot be created or destroyed, only transferred from one form to another. In the absence of dissipative forces:</p>
+        <div class="equation">
+            &frac12;mv&sup2; = mgh
+        </div>
+
+        <h3>Power</h3>
+        <div class="definition-box">
+            <strong>Power</strong> is the rate of doing work (or the rate of energy transfer). Measured in watts (W), where 1 W = 1 J s<sup>-1</sup>.
+        </div>
+        <div class="equation">
+            P = W / t = &Delta;E / t
+        </div>
+        <div class="equation">
+            P = Fv
+        </div>
+        <p>This second equation is useful for finding the driving force at a given speed, or the power needed to maintain a constant velocity against resistive forces.</p>
+
+        <h3>Efficiency</h3>
+        <div class="equation">
+            Efficiency = (useful energy output / total energy input) &times; 100%
+        </div>
+        <div class="equation">
+            Efficiency = (useful power output / total power input) &times; 100%
+        </div>
+
+        <div class="exam-tip">
+            At constant velocity, driving force = resistive force (no net force, so no acceleration). Power at constant velocity is P = Fv where F is the driving force needed to overcome friction and drag.
+        </div>
+    </div>
+</body>
+</html>

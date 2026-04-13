@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 5 — Physical Chemistry and Transition Elements</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module 5 — Physical Chemistry and Transition Elements</h1>
+
+<h2>5.1 How Fast? — Rate Equations</h2>
+
+<h3>Rate Equations and Orders</h3>
+
+<div class="definition">
+  <strong>Rate equation:</strong> An experimentally determined expression that relates the rate of a reaction to the concentrations of reactants raised to certain powers (orders). For a reaction A + B &rarr; products: Rate = k[A]<sup>m</sup>[B]<sup>n</sup>, where m and n are the orders with respect to A and B.
+</div>
+
+<div class="definition">
+  <strong>Order of reaction:</strong> The power to which the concentration of a reactant is raised in the rate equation. It can only be determined experimentally, not from the stoichiometric equation.
+</div>
+
+<ul>
+  <li><strong>Zero order:</strong> Changing the concentration has no effect on rate. Rate vs [A] graph is a horizontal line.</li>
+  <li><strong>First order:</strong> Rate is directly proportional to concentration. Rate vs [A] gives a straight line through the origin. The concentration-time graph shows exponential decay with a constant half-life.</li>
+  <li><strong>Second order:</strong> Rate is proportional to concentration squared. Rate vs [A] gives an upward curve; Rate vs [A]<sup>2</sup> gives a straight line through the origin.</li>
+</ul>
+
+<h3>Determining Orders from Experimental Data</h3>
+<p>Using the initial rates method: compare experiments where only one concentration changes at a time.</p>
+<ul>
+  <li>If doubling [A] has no effect on rate &rarr; zero order in A</li>
+  <li>If doubling [A] doubles the rate &rarr; first order in A</li>
+  <li>If doubling [A] quadruples the rate &rarr; second order in A</li>
+</ul>
+
+<h3>The Rate Constant k</h3>
+
+<div class="definition">
+  <strong>Rate constant (k):</strong> The proportionality constant in the rate equation. Its value depends on temperature but is independent of concentration. A larger k means a faster reaction.
+</div>
+
+<p>Units of k depend on the overall order:</p>
+<table>
+  <tr><th>Overall Order</th><th>Units of k</th></tr>
+  <tr><td>0</td><td>mol dm<sup>&minus;3</sup> s<sup>&minus;1</sup></td></tr>
+  <tr><td>1</td><td>s<sup>&minus;1</sup></td></tr>
+  <tr><td>2</td><td>dm<sup>3</sup> mol<sup>&minus;1</sup> s<sup>&minus;1</sup></td></tr>
+</table>
+
+<h3>The Arrhenius Equation</h3>
+
+<div class="equation">
+  k = Ae<sup>&minus;E<sub>a</sub>/RT</sup>
+</div>
+
+<p>Where A = the pre-exponential (Arrhenius) factor, E<sub>a</sub> = activation energy (J mol<sup>&minus;1</sup>), R = 8.314 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>, T = temperature (K). Taking natural logarithms:</p>
+
+<div class="equation">
+  ln k = ln A &minus; E<sub>a</sub>/RT
+</div>
+
+<p>A plot of ln k vs 1/T gives a straight line with gradient = &minus;E<sub>a</sub>/R and y-intercept = ln A. This allows E<sub>a</sub> to be determined graphically.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When calculating E<sub>a</sub> from the Arrhenius equation, ensure T is in kelvin and E<sub>a</sub> is in J mol<sup>&minus;1</sup> (not kJ mol<sup>&minus;1</sup>). Multiply the gradient by &minus;R to obtain E<sub>a</sub>.
+</div>
+
+<h3>Rate-Determining Step</h3>
+
+<div class="definition">
+  <strong>Rate-determining step:</strong> The slowest step in a multi-step reaction mechanism. The species that appear in the rate equation are those involved in or before the rate-determining step.
+</div>
+
+<p>If the rate equation is Rate = k[A][B], then both A and B are involved in (or before) the rate-determining step. If a reactant does not appear in the rate equation, it is involved in a faster step after the rate-determining step.</p>
+
+<h2>5.2 How Far? — Equilibrium Constants</h2>
+
+<h3>K<sub>c</sub> Calculations</h3>
+<p>Use an ICE (Initial, Change, Equilibrium) table to determine equilibrium concentrations, then substitute into the K<sub>c</sub> expression. Remember to convert amounts (moles) to concentrations (mol dm<sup>&minus;3</sup>) by dividing by the volume of the container.</p>
+
+<h3>K<sub>p</sub> — Equilibrium Constant in Terms of Partial Pressures</h3>
+
+<div class="definition">
+  <strong>Partial pressure:</strong> The pressure exerted by an individual gas in a mixture. It equals the mole fraction of that gas multiplied by the total pressure.
+</div>
+
+<div class="equation">
+  p<sub>A</sub> = x<sub>A</sub> &times; P<sub>total</sub> &nbsp;&nbsp;&nbsp; where x<sub>A</sub> = moles of A / total moles of gas
+</div>
+
+<p>For the reaction: aA(g) + bB(g) &#8652; cC(g) + dD(g)</p>
+<div class="equation">
+  K<sub>p</sub> = (p<sub>C</sub>)<sup>c</sup>(p<sub>D</sub>)<sup>d</sup> / (p<sub>A</sub>)<sup>a</sup>(p<sub>B</sub>)<sup>b</sup>
+</div>
+
+<p>K<sub>p</sub>, like K<sub>c</sub>, is only affected by temperature. Include units for K<sub>p</sub> (typically in terms of the pressure unit used, e.g. Pa or atm).</p>
+
+<h2>5.3 Acids, Bases and Buffers</h2>
+
+<h3>Bronsted-Lowry Theory</h3>
+
+<div class="definition">
+  <strong>Bronsted-Lowry acid:</strong> A proton (H<sup>+</sup>) donor.<br>
+  <strong>Bronsted-Lowry base:</strong> A proton (H<sup>+</sup>) acceptor.
+</div>
+
+<p>A <strong>conjugate acid-base pair</strong> differs by one proton. For example, in the reaction: CH<sub>3</sub>COOH + H<sub>2</sub>O &#8652; CH<sub>3</sub>COO<sup>&minus;</sup> + H<sub>3</sub>O<sup>+</sup>, the conjugate pairs are CH<sub>3</sub>COOH/CH<sub>3</sub>COO<sup>&minus;</sup> and H<sub>2</sub>O/H<sub>3</sub>O<sup>+</sup>.</p>
+
+<h3>pH Calculations</h3>
+
+<div class="equation">
+  pH = &minus;log<sub>10</sub>[H<sup>+</sup>] &nbsp;&nbsp;&nbsp;&nbsp; [H<sup>+</sup>] = 10<sup>&minus;pH</sup>
+</div>
+
+<p><strong>Strong acids</strong> fully dissociate, so [H<sup>+</sup>] = concentration of the acid (for monobasic acids). For strong bases, use K<sub>w</sub> to find [H<sup>+</sup>]:</p>
+
+<div class="equation">
+  K<sub>w</sub> = [H<sup>+</sup>][OH<sup>&minus;</sup>] = 1.00 &times; 10<sup>&minus;14</sup> mol<sup>2</sup> dm<sup>&minus;6</sup> at 25&deg;C
+</div>
+
+<h3>Weak Acids and K<sub>a</sub></h3>
+
+<div class="definition">
+  <strong>Weak acid:</strong> An acid that only partially dissociates in aqueous solution. The equilibrium lies to the left.
+</div>
+
+<div class="equation">
+  K<sub>a</sub> = [H<sup>+</sup>][A<sup>&minus;</sup>] / [HA]
+</div>
+
+<p>Assumptions for weak acid pH calculations: (1) [H<sup>+</sup>] = [A<sup>&minus;</sup>] because H<sup>+</sup> and A<sup>&minus;</sup> are produced in equal amounts; (2) [HA]<sub>equilibrium</sub> &approx; [HA]<sub>initial</sub> because dissociation is so small. Therefore:</p>
+
+<div class="equation">
+  K<sub>a</sub> &approx; [H<sup>+</sup>]<sup>2</sup> / [HA]<sub>initial</sub> &nbsp;&nbsp;&nbsp; so &nbsp;&nbsp;&nbsp; [H<sup>+</sup>] = &radic;(K<sub>a</sub> &times; [HA])
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always state the two assumptions when performing weak acid calculations. Examiners frequently ask for these in multi-mark questions.
+</div>
+
+<h3>Buffer Solutions</h3>
+
+<div class="definition">
+  <strong>Buffer solution:</strong> A solution that resists changes in pH when small amounts of acid or base are added. An acidic buffer consists of a weak acid and its conjugate base (e.g. CH<sub>3</sub>COOH + CH<sub>3</sub>COONa).
+</div>
+
+<p>How a buffer works:</p>
+<ul>
+  <li><strong>When acid (H<sup>+</sup>) is added:</strong> The conjugate base (A<sup>&minus;</sup>) reacts with the added H<sup>+</sup> to form HA, removing the excess H<sup>+</sup>. The equilibrium shifts to the left.</li>
+  <li><strong>When base (OH<sup>&minus;</sup>) is added:</strong> The weak acid (HA) reacts with OH<sup>&minus;</sup> to form A<sup>&minus;</sup> and water, removing the excess OH<sup>&minus;</sup>. The equilibrium shifts to the right.</li>
+</ul>
+
+<p>To calculate the pH of a buffer, rearrange the K<sub>a</sub> expression:</p>
+<div class="equation">
+  [H<sup>+</sup>] = K<sub>a</sub> &times; [HA] / [A<sup>&minus;</sup>]
+</div>
+
+<h3>Titration Curves</h3>
+<table>
+  <tr><th>Titration Type</th><th>pH at Equivalence Point</th><th>Suitable Indicator</th></tr>
+  <tr><td>Strong acid + Strong base</td><td>7</td><td>Any (methyl orange or phenolphthalein)</td></tr>
+  <tr><td>Strong acid + Weak base</td><td>&lt; 7</td><td>Methyl orange</td></tr>
+  <tr><td>Weak acid + Strong base</td><td>&gt; 7</td><td>Phenolphthalein</td></tr>
+  <tr><td>Weak acid + Weak base</td><td>&sim;7</td><td>No suitable indicator; use a pH meter</td></tr>
+</table>
+
+<p>The half-equivalence point is where half the acid has been neutralised. At this point, [HA] = [A<sup>&minus;</sup>], so pH = pK<sub>a</sub>. This is the point of maximum buffering capacity.</p>
+
+<h2>5.4 Enthalpy, Entropy and Free Energy</h2>
+
+<h3>Lattice Enthalpy</h3>
+
+<div class="definition">
+  <strong>Lattice enthalpy of formation:</strong> The enthalpy change when one mole of an ionic lattice is formed from its gaseous ions under standard conditions. It is always exothermic (negative).
+</div>
+
+<p>Lattice enthalpy becomes more exothermic with smaller ionic radii and higher ionic charges, because the electrostatic attraction between the ions is stronger.</p>
+
+<h3>Born-Haber Cycles</h3>
+<p>A Born-Haber cycle applies Hess's Law to calculate the lattice enthalpy of an ionic compound. The cycle includes: enthalpy of atomisation, ionisation energies (for the metal), electron affinities (for the non-metal), and enthalpy of formation. The lattice enthalpy can be calculated as the unknown in the cycle.</p>
+
+<h3>Enthalpy of Hydration and Solution</h3>
+
+<div class="equation">
+  &Delta;<sub>sol</sub>H = &minus;&Delta;<sub>latt</sub>H + &Sigma;&Delta;<sub>hyd</sub>H
+</div>
+
+<p>For a salt to dissolve, the energy released by hydration of the ions must be comparable to or greater than the lattice enthalpy. Enthalpy of hydration is more exothermic for ions with a higher charge density (smaller radius or higher charge).</p>
+
+<h3>Entropy</h3>
+
+<div class="definition">
+  <strong>Entropy (S):</strong> A measure of the disorder or number of possible arrangements of particles in a system. Units: J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>.
+</div>
+
+<p>Entropy increases when: solid &rarr; liquid &rarr; gas, a solid dissolves, the number of gas molecules increases, or temperature increases.</p>
+
+<div class="equation">
+  &Delta;S<sub>system</sub> = &Sigma;S(products) &minus; &Sigma;S(reactants)
+</div>
+
+<h3>Gibbs Free Energy</h3>
+
+<div class="equation">
+  &Delta;G = &Delta;H &minus; T&Delta;S
+</div>
+
+<p>A reaction is thermodynamically feasible (spontaneous) when &Delta;G &lt; 0. Even if &Delta;G is negative, the reaction may still not occur if the activation energy is too high (kinetic barrier).</p>
+
+<table>
+  <tr><th>&Delta;H</th><th>&Delta;S</th><th>Feasibility</th></tr>
+  <tr><td>Negative (exo)</td><td>Positive</td><td>Feasible at all temperatures</td></tr>
+  <tr><td>Negative (exo)</td><td>Negative</td><td>Feasible at low temperatures</td></tr>
+  <tr><td>Positive (endo)</td><td>Positive</td><td>Feasible at high temperatures</td></tr>
+  <tr><td>Positive (endo)</td><td>Negative</td><td>Never feasible</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When using &Delta;G = &Delta;H &minus; T&Delta;S, ensure &Delta;H is in J (not kJ) if &Delta;S is in J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>, or convert &Delta;S to kJ. Temperature must be in kelvin.
+</div>
+
+<h2>5.5 Redox and Electrode Potentials</h2>
+
+<h3>Standard Electrode Potential</h3>
+
+<div class="definition">
+  <strong>Standard electrode potential (E&deg;):</strong> The EMF of a half-cell measured under standard conditions (298 K, 100 kPa, 1.00 mol dm<sup>&minus;3</sup> solutions) relative to the standard hydrogen electrode (SHE), which is assigned a value of 0.00 V.
+</div>
+
+<h3>Electrochemical Cells</h3>
+<div class="equation">
+  E&deg;<sub>cell</sub> = E&deg;<sub>cathode</sub> &minus; E&deg;<sub>anode</sub>
+</div>
+<p>Or equivalently: E&deg;<sub>cell</sub> = E&deg;(more positive half-cell) &minus; E&deg;(more negative half-cell). A positive E&deg;<sub>cell</sub> indicates the reaction is thermodynamically feasible under standard conditions.</p>
+
+<h3>Feasibility of Reactions</h3>
+<p>If E&deg;<sub>cell</sub> &gt; 0, the reaction is feasible. However, a positive E&deg;<sub>cell</sub> does not guarantee the reaction will actually occur because: (1) kinetics may be slow (high activation energy), (2) conditions may not be standard, (3) E&deg; values apply to standard conditions only.</p>
+
+<h3>Fuel Cells</h3>
+
+<div class="definition">
+  <strong>Fuel cell:</strong> An electrochemical cell that converts the chemical energy of a fuel (e.g. hydrogen) directly into electrical energy, as long as fuel is continuously supplied.
+</div>
+
+<p>In a hydrogen fuel cell:</p>
+<ul>
+  <li><strong>Anode:</strong> H<sub>2</sub>(g) &rarr; 2H<sup>+</sup>(aq) + 2e<sup>&minus;</sup> (oxidation)</li>
+  <li><strong>Cathode:</strong> O<sub>2</sub>(g) + 4H<sup>+</sup>(aq) + 4e<sup>&minus;</sup> &rarr; 2H<sub>2</sub>O(l) (reduction)</li>
+  <li><strong>Overall:</strong> 2H<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2H<sub>2</sub>O(l)</li>
+</ul>
+
+<p>Advantages: only product is water (zero emissions at point of use), higher efficiency than combustion engines. Challenges: hydrogen production (often from fossil fuels), storage (high pressure or cryogenic), infrastructure for distribution, platinum catalyst cost.</p>
+
+<h2>5.6 Transition Elements</h2>
+
+<div class="definition">
+  <strong>Transition element:</strong> A d-block element that forms at least one stable ion with an incomplete d sub-shell. This excludes scandium (Sc<sup>3+</sup> has no d electrons) and zinc (Zn<sup>2+</sup> has a full d<sup>10</sup>).
+</div>
+
+<h3>Properties of Transition Elements</h3>
+<ul>
+  <li><strong>Variable oxidation states:</strong> Due to the similar energies of the 3d and 4s sub-shells, transition metals can form ions with different charges (e.g. Fe<sup>2+</sup> and Fe<sup>3+</sup>, Cu<sup>+</sup> and Cu<sup>2+</sup>).</li>
+  <li><strong>Formation of coloured complexes:</strong> Caused by d-d transitions. When ligands surround a transition metal ion, the d orbitals split into two energy levels. Electrons can absorb visible light and transition between these levels. The colour observed is complementary to the colour absorbed.</li>
+  <li><strong>Catalytic activity:</strong> Transition metals act as catalysts due to their ability to change oxidation state and provide a surface for adsorption of reactants (e.g. Fe in the Haber process, V<sub>2</sub>O<sub>5</sub> in the Contact process, MnO<sub>2</sub> in decomposition of H<sub>2</sub>O<sub>2</sub>).</li>
+</ul>
+
+<h3>Complex Ions</h3>
+
+<div class="definition">
+  <strong>Complex ion:</strong> A central metal ion surrounded by ligands. A <strong>ligand</strong> is a molecule or ion that donates a lone pair of electrons to the central metal ion to form a dative (coordinate) bond. The <strong>coordination number</strong> is the total number of dative bonds to the central metal ion.
+</div>
+
+<table>
+  <tr><th>Ligand</th><th>Type</th><th>Examples of Use</th></tr>
+  <tr><td>H<sub>2</sub>O</td><td>Monodentate (one lone pair donated)</td><td>[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup></td></tr>
+  <tr><td>NH<sub>3</sub></td><td>Monodentate</td><td>[Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup></td></tr>
+  <tr><td>Cl<sup>&minus;</sup></td><td>Monodentate</td><td>[CuCl<sub>4</sub>]<sup>2&minus;</sup></td></tr>
+  <tr><td>NH<sub>2</sub>CH<sub>2</sub>CH<sub>2</sub>NH<sub>2</sub> (en)</td><td>Bidentate (two lone pairs donated)</td><td>[Ni(en)<sub>3</sub>]<sup>2+</sup></td></tr>
+  <tr><td>EDTA<sup>4&minus;</sup></td><td>Hexadentate (six lone pairs donated)</td><td>[Fe(EDTA)]<sup>&minus;</sup></td></tr>
+</table>
+
+<h3>Ligand Substitution</h3>
+<p>Ligands can be exchanged for other ligands. Common substitution reactions:</p>
+<ul>
+  <li>[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> (pale blue) + 4Cl<sup>&minus;</sup> &#8652; [CuCl<sub>4</sub>]<sup>2&minus;</sup> (yellow-green) + 6H<sub>2</sub>O — coordination number changes from 6 to 4 because Cl<sup>&minus;</sup> is larger than H<sub>2</sub>O</li>
+  <li>[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> (pale blue) + 4NH<sub>3</sub> &rarr; [Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup> (deep blue) + 4H<sub>2</sub>O — partial substitution, coordination number stays at 6</li>
+</ul>
+
+<h3>Colour of Complexes</h3>
+<p>The colour depends on: (1) the identity of the central metal ion, (2) the oxidation state, (3) the identity of the ligands, and (4) the coordination number. Any change in these factors can change the colour.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When explaining why transition metal complexes are coloured, mention: (1) d orbital splitting by ligands, (2) d-d electron transitions absorbing specific wavelengths of visible light, (3) the transmitted/reflected colour is complementary to the absorbed colour. If the d sub-shell is empty (d<sup>0</sup>) or full (d<sup>10</sup>), no d-d transition is possible and the compound is white or colourless.
+</div>
+
+<h3>Precipitation Reactions</h3>
+<table>
+  <tr><th>Metal Ion</th><th>Colour of Hydroxide Precipitate</th><th>With Excess NaOH</th><th>With Excess NH<sub>3</sub></th></tr>
+  <tr><td>Cu<sup>2+</sup></td><td>Blue</td><td>No change</td><td>Deep blue solution [Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup></td></tr>
+  <tr><td>Fe<sup>2+</sup></td><td>Green</td><td>No change</td><td>No change</td></tr>
+  <tr><td>Fe<sup>3+</sup></td><td>Brown/rust</td><td>No change</td><td>No change</td></tr>
+  <tr><td>Cr<sup>3+</sup></td><td>Green</td><td>Dissolves: green [Cr(OH)<sub>6</sub>]<sup>3&minus;</sup></td><td>Dissolves: purple [Cr(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup></td></tr>
+  <tr><td>Mn<sup>2+</sup></td><td>Pale brown/cream</td><td>No change</td><td>No change</td></tr>
+</table>
+
+</div>
+</body>
+</html>

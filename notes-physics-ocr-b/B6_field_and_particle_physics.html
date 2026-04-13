@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module B6 — Field and Particle Physics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module B6 — Field and Particle Physics</h1>
+
+<h2>6.1 Electric Fields</h2>
+
+<div class="definition">
+  <strong>Electric field:</strong> A region of space where a charged particle experiences a force. The electric field strength at a point is the force per unit positive charge placed at that point: E = F/Q.<br><br>
+  <strong>Coulomb's law:</strong> The force between two point charges is proportional to the product of the charges and inversely proportional to the square of the distance between them.
+</div>
+
+<div class="equation">F = kQ<sub>1</sub>Q<sub>2</sub> / r&sup2; = Q<sub>1</sub>Q<sub>2</sub> / (4&pi;&epsilon;<sub>0</sub>r&sup2;)</div>
+
+<p>where k = 1/(4&pi;&epsilon;<sub>0</sub>) = 8.99 &times; 10<sup>9</sup> N m&sup2; C<sup>&minus;2</sup> and &epsilon;<sub>0</sub> is the permittivity of free space (8.85 &times; 10<sup>&minus;12</sup> F m<sup>&minus;1</sup>).</p>
+
+<h3>Radial Electric Fields</h3>
+<p>The electric field around a point charge or charged sphere is radial (field lines point radially outward from a positive charge, inward toward a negative charge).</p>
+
+<div class="equation">E = kQ / r&sup2; = Q / (4&pi;&epsilon;<sub>0</sub>r&sup2;)</div>
+
+<h3>Uniform Electric Fields</h3>
+<p>Between two parallel charged plates with a potential difference V and separation d, the electric field is uniform (the same magnitude and direction everywhere between the plates).</p>
+
+<div class="equation">E = V / d</div>
+
+<p>A charged particle in a uniform electric field experiences a constant force and undergoes uniform acceleration, analogous to projectile motion in a gravitational field.</p>
+
+<h3>Electric Potential</h3>
+
+<div class="definition">
+  <strong>Electric potential (V):</strong> The work done per unit positive charge in bringing a small positive test charge from infinity to that point. For a point charge: V = kQ/r. Electric potential is a scalar quantity.
+</div>
+
+<div class="equation">V = kQ / r = Q / (4&pi;&epsilon;<sub>0</sub>r)</div>
+<div class="equation">Electric potential energy: E<sub>p</sub> = kQ<sub>1</sub>Q<sub>2</sub> / r</div>
+
+<p>The potential is positive around a positive charge and negative around a negative charge. The work done in moving a charge q through a potential difference &Delta;V is W = q&Delta;V.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Electric and gravitational fields have many parallels. Coulomb's law has the same form as Newton's law of gravitation. However, electric fields can be attractive or repulsive (since charges can be positive or negative), while gravitational fields are always attractive. In exams, you may be asked to compare and contrast the two types of field.
+</div>
+
+<h2>6.2 Capacitors</h2>
+
+<div class="definition">
+  <strong>Capacitance (C):</strong> The charge stored per unit potential difference across the capacitor. C = Q/V. Measured in farads (F), where 1 F = 1 C V<sup>&minus;1</sup>. In practice, capacitances are usually measured in &mu;F, nF, or pF.
+</div>
+
+<div class="equation">C = Q / V</div>
+<div class="equation">C = &epsilon;<sub>0</sub>&epsilon;<sub>r</sub>A / d &nbsp;&nbsp; (parallel plate capacitor)</div>
+
+<p>where A is the area of overlap of the plates, d is the separation, and &epsilon;<sub>r</sub> is the relative permittivity (dielectric constant) of the material between the plates.</p>
+
+<h3>Energy Stored in a Capacitor</h3>
+<div class="equation">E = &frac12;QV = &frac12;CV&sup2; = &frac12;Q&sup2;/C</div>
+
+<p>The energy stored equals the area under the charge-voltage graph (which is a straight line through the origin for a capacitor with constant capacitance).</p>
+
+<h3>Capacitor Combinations</h3>
+<table>
+  <tr><th>Arrangement</th><th>Rule</th></tr>
+  <tr><td>Parallel</td><td>C<sub>total</sub> = C<sub>1</sub> + C<sub>2</sub> + C<sub>3</sub> + ...</td></tr>
+  <tr><td>Series</td><td>1/C<sub>total</sub> = 1/C<sub>1</sub> + 1/C<sub>2</sub> + 1/C<sub>3</sub> + ...</td></tr>
+</table>
+
+<p>Note that capacitors combine in the opposite way to resistors: capacitors in parallel add directly, while capacitors in series add reciprocally.</p>
+
+<h3>Charging and Discharging</h3>
+<p>When a capacitor discharges through a resistor, the charge, current, and voltage all decay exponentially:</p>
+
+<div class="equation">Q = Q<sub>0</sub>e<sup>&minus;t/RC</sup></div>
+<div class="equation">V = V<sub>0</sub>e<sup>&minus;t/RC</sup></div>
+<div class="equation">I = I<sub>0</sub>e<sup>&minus;t/RC</sup></div>
+
+<div class="definition">
+  <strong>Time constant (&tau;):</strong> The product RC, measured in seconds. It is the time taken for the charge (or voltage or current) to fall to 1/e (about 37%) of its initial value. After 5 time constants, the capacitor is considered fully discharged (less than 1% of original charge remains).
+</div>
+
+<p>During charging through a resistor, the charge and voltage increase exponentially toward their maximum values:</p>
+
+<div class="equation">Q = Q<sub>max</sub>(1 &minus; e<sup>&minus;t/RC</sup>)</div>
+<div class="equation">V = V<sub>0</sub>(1 &minus; e<sup>&minus;t/RC</sup>)</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> To find the time constant from a discharge graph, read off the time at which the value falls to 37% of the initial value. Alternatively, plot ln(V) against t — the gradient gives &minus;1/RC. This linearisation technique is frequently tested in OCR B.
+</div>
+
+<h2>6.3 Magnetic Fields</h2>
+
+<div class="definition">
+  <strong>Magnetic flux density (B):</strong> A measure of the strength of a magnetic field. It is defined as the force per unit length per unit current on a straight conductor carrying current at right angles to the field. Measured in tesla (T).
+</div>
+
+<h3>Force on a Current-Carrying Conductor</h3>
+<div class="equation">F = BIl sin &theta;</div>
+<p>where B is the magnetic flux density, I is the current, l is the length of conductor in the field, and &theta; is the angle between the current direction and the magnetic field. The direction of the force is given by Fleming's left-hand rule.</p>
+
+<h3>Force on a Moving Charge</h3>
+<div class="equation">F = BQv sin &theta;</div>
+<p>where Q is the charge and v is its velocity. For a charge moving perpendicular to the field (&theta; = 90&deg;), the magnetic force is always perpendicular to the velocity, so it acts as a centripetal force causing circular motion:</p>
+
+<div class="equation">BQv = mv&sup2;/r &nbsp;&nbsp; giving &nbsp;&nbsp; r = mv / (BQ)</div>
+
+<p>The radius of the circular path depends on the momentum of the particle and the magnetic flux density. This principle is used in mass spectrometers and particle accelerators.</p>
+
+<h3>Magnetic Field Patterns</h3>
+<ul>
+  <li><strong>Long straight wire:</strong> Concentric circles centred on the wire. Direction given by the right-hand grip rule.</li>
+  <li><strong>Solenoid:</strong> Uniform field inside (parallel field lines), similar to a bar magnet outside. Field strength inside: B = &mu;<sub>0</sub>nI, where n is the number of turns per unit length.</li>
+</ul>
+
+<div class="equation">B = &mu;<sub>0</sub>nI &nbsp;&nbsp; (inside a solenoid)</div>
+
+<p>where &mu;<sub>0</sub> is the permeability of free space (4&pi; &times; 10<sup>&minus;7</sup> T m A<sup>&minus;1</sup>).</p>
+
+<h2>6.4 Electromagnetic Induction</h2>
+
+<div class="definition">
+  <strong>Magnetic flux (&Phi;):</strong> The product of the magnetic flux density and the area perpendicular to the field. &Phi; = BA cos &theta;. Measured in webers (Wb), where 1 Wb = 1 T m&sup2;.<br><br>
+  <strong>Magnetic flux linkage:</strong> For a coil with N turns, the flux linkage is N&Phi; = BAN cos &theta;.
+</div>
+
+<div class="equation">&Phi; = BA cos &theta;</div>
+
+<h3>Faraday's Law</h3>
+
+<div class="definition">
+  <strong>Faraday's law:</strong> The magnitude of the induced EMF is equal to the rate of change of magnetic flux linkage through the circuit.
+</div>
+
+<div class="equation">&epsilon; = &minus;N &times; d&Phi;/dt = &minus;d(N&Phi;)/dt</div>
+
+<h3>Lenz's Law</h3>
+
+<div class="definition">
+  <strong>Lenz's law:</strong> The direction of the induced EMF (and hence the induced current) is such that it opposes the change producing it. This is a consequence of conservation of energy — the negative sign in Faraday's law.
+</div>
+
+<p>Applications of electromagnetic induction include generators (AC and DC), transformers, and eddy current braking.</p>
+
+<h3>Transformers</h3>
+<div class="equation">V<sub>s</sub> / V<sub>p</sub> = N<sub>s</sub> / N<sub>p</sub></div>
+
+<p>For an ideal transformer (100% efficient): V<sub>p</sub>I<sub>p</sub> = V<sub>s</sub>I<sub>s</sub>. Step-up transformers increase voltage (N<sub>s</sub> &gt; N<sub>p</sub>), step-down transformers decrease it. Transformers only work with alternating current because a changing current is needed to produce a changing magnetic flux.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Lenz's law questions often ask for the direction of induced current. Think about what magnetic field the induced current would produce, and check that it opposes the change. If flux is increasing through a coil, the induced current creates a field that opposes the increase (pointing in the opposite direction to the existing field).
+</div>
+
+<h2>6.5 Nuclear Physics</h2>
+
+<h3>Radioactive Decay</h3>
+
+<div class="definition">
+  <strong>Radioactive decay:</strong> The spontaneous and random emission of radiation from an unstable nucleus. "Spontaneous" means it is not triggered by external conditions. "Random" means it is impossible to predict which nucleus will decay next or when.
+</div>
+
+<h3>Types of Radiation</h3>
+<table>
+  <tr><th>Property</th><th>Alpha (&alpha;)</th><th>Beta-minus (&beta;<sup>&minus;</sup>)</th><th>Beta-plus (&beta;<sup>+</sup>)</th><th>Gamma (&gamma;)</th></tr>
+  <tr><td>Particle</td><td>Helium nucleus (<sup>4</sup><sub>2</sub>He)</td><td>Electron (e<sup>&minus;</sup>)</td><td>Positron (e<sup>+</sup>)</td><td>High-energy photon</td></tr>
+  <tr><td>Charge</td><td>+2e</td><td>&minus;e</td><td>+e</td><td>0</td></tr>
+  <tr><td>Mass</td><td>4u</td><td>~0 (1/1836 u)</td><td>~0 (1/1836 u)</td><td>0</td></tr>
+  <tr><td>Penetration</td><td>Few cm in air; stopped by paper</td><td>~1 m in air; stopped by few mm aluminium</td><td>~1 m in air; annihilates with electron</td><td>Very penetrating; reduced by thick lead</td></tr>
+  <tr><td>Ionising ability</td><td>Strongly ionising</td><td>Moderately ionising</td><td>Moderately ionising</td><td>Weakly ionising</td></tr>
+  <tr><td>Deflection in fields</td><td>Deflected (low charge-to-mass ratio)</td><td>Deflected strongly (opposite to &alpha;)</td><td>Deflected strongly (same as &alpha;)</td><td>Not deflected</td></tr>
+</table>
+
+<h3>Decay Equations</h3>
+<p>In all nuclear decay equations, the total nucleon number (mass number, A) and total proton number (atomic number, Z) must be conserved.</p>
+
+<p><strong>Alpha decay:</strong></p>
+<div class="equation"><sup>A</sup><sub>Z</sub>X &rarr; <sup>A&minus;4</sup><sub>Z&minus;2</sub>Y + <sup>4</sup><sub>2</sub>&alpha;</div>
+
+<p><strong>Beta-minus decay:</strong> A neutron transforms into a proton, emitting an electron and an antineutrino.</p>
+<div class="equation"><sup>A</sup><sub>Z</sub>X &rarr; <sup>A</sup><sub>Z+1</sub>Y + <sup>0</sup><sub>&minus;1</sub>&beta; + &nu;&#773;<sub>e</sub></div>
+
+<p><strong>Beta-plus decay:</strong> A proton transforms into a neutron, emitting a positron and a neutrino.</p>
+<div class="equation"><sup>A</sup><sub>Z</sub>X &rarr; <sup>A</sup><sub>Z&minus;1</sub>Y + <sup>0</sup><sub>+1</sub>&beta; + &nu;<sub>e</sub></div>
+
+<h3>Exponential Decay and Half-Life</h3>
+
+<div class="definition">
+  <strong>Half-life (t<sub>&frac12;</sub>):</strong> The average time taken for half of the undecayed nuclei in a sample to decay, or equivalently, the time for the activity or count rate to halve.
+</div>
+
+<div class="equation">N = N<sub>0</sub>e<sup>&minus;&lambda;t</sup></div>
+<div class="equation">A = A<sub>0</sub>e<sup>&minus;&lambda;t</sup> = &lambda;N</div>
+<div class="equation">t<sub>&frac12;</sub> = ln 2 / &lambda; = 0.693 / &lambda;</div>
+
+<p>where &lambda; is the decay constant (the probability of a nucleus decaying per unit time), N is the number of undecayed nuclei, and A is the activity (number of decays per second, measured in becquerels, Bq).</p>
+
+<h3>Nuclear Fission and Fusion</h3>
+
+<div class="definition">
+  <strong>Nuclear fission:</strong> The splitting of a heavy nucleus (e.g., uranium-235) into two lighter nuclei, typically triggered by the absorption of a neutron. The products have a lower total mass than the original nucleus, with the mass difference released as energy (E = mc&sup2;). Fission also releases neutrons, which can cause further fission in a chain reaction.<br><br>
+  <strong>Nuclear fusion:</strong> The combining of two light nuclei to form a heavier nucleus. Again, the products have lower total mass and the difference is released as energy. Fusion requires extremely high temperatures (millions of kelvin) to overcome the electrostatic repulsion between the positively charged nuclei.
+</div>
+
+<h3>Binding Energy</h3>
+
+<div class="definition">
+  <strong>Mass defect (&Delta;m):</strong> The difference between the mass of the separated nucleons and the mass of the assembled nucleus. The mass of the nucleus is always less than the sum of its individual nucleons.<br><br>
+  <strong>Binding energy:</strong> The energy equivalent of the mass defect. It is the minimum energy required to completely separate a nucleus into its individual protons and neutrons. Binding energy = &Delta;m &times; c&sup2;.
+</div>
+
+<p>The binding energy per nucleon curve peaks at iron-56 (about 8.8 MeV per nucleon). This means:</p>
+<ul>
+  <li>Nuclei lighter than iron can release energy by fusion (moving up the curve)</li>
+  <li>Nuclei heavier than iron can release energy by fission (also moving toward the peak)</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A higher binding energy per nucleon means a more stable nucleus. Energy is released in nuclear reactions when the products are more tightly bound (higher binding energy per nucleon) than the reactants. The energy released equals the increase in total binding energy.
+</div>
+
+<h2>6.6 Fundamental Particles</h2>
+
+<h3>The Standard Model</h3>
+<p>The Standard Model classifies all known fundamental particles into two groups: fermions (matter particles) and bosons (force carriers).</p>
+
+<h3>Quarks</h3>
+<p>Quarks are fundamental particles that combine to form hadrons. There are six flavours of quark:</p>
+
+<table>
+  <tr><th>Quark</th><th>Symbol</th><th>Charge (e)</th><th>Baryon Number</th></tr>
+  <tr><td>Up</td><td>u</td><td>+2/3</td><td>+1/3</td></tr>
+  <tr><td>Down</td><td>d</td><td>&minus;1/3</td><td>+1/3</td></tr>
+  <tr><td>Charm</td><td>c</td><td>+2/3</td><td>+1/3</td></tr>
+  <tr><td>Strange</td><td>s</td><td>&minus;1/3</td><td>+1/3</td></tr>
+  <tr><td>Top</td><td>t</td><td>+2/3</td><td>+1/3</td></tr>
+  <tr><td>Bottom</td><td>b</td><td>&minus;1/3</td><td>+1/3</td></tr>
+</table>
+
+<p>Each quark has a corresponding antiquark with opposite charge and baryon number.</p>
+
+<h3>Hadrons: Baryons and Mesons</h3>
+
+<div class="definition">
+  <strong>Hadron:</strong> A particle made of quarks, held together by the strong force. Hadrons are either baryons or mesons.<br><br>
+  <strong>Baryon:</strong> A hadron made of three quarks (or three antiquarks for an antibaryon). Examples: proton (uud), neutron (udd).<br><br>
+  <strong>Meson:</strong> A hadron made of a quark-antiquark pair. Examples: pion (&pi;), kaon (K).
+</div>
+
+<table>
+  <tr><th>Particle</th><th>Quark Composition</th><th>Charge</th><th>Baryon Number</th></tr>
+  <tr><td>Proton (p)</td><td>uud</td><td>+1</td><td>+1</td></tr>
+  <tr><td>Neutron (n)</td><td>udd</td><td>0</td><td>+1</td></tr>
+  <tr><td>Antiproton</td><td>u&#773;u&#773;d&#773;</td><td>&minus;1</td><td>&minus;1</td></tr>
+  <tr><td>&pi;<sup>+</sup></td><td>ud&#773;</td><td>+1</td><td>0</td></tr>
+  <tr><td>&pi;<sup>&minus;</sup></td><td>u&#773;d</td><td>&minus;1</td><td>0</td></tr>
+  <tr><td>&pi;<sup>0</sup></td><td>uu&#773; or dd&#773;</td><td>0</td><td>0</td></tr>
+  <tr><td>K<sup>+</sup></td><td>us&#773;</td><td>+1</td><td>0</td></tr>
+</table>
+
+<h3>Leptons</h3>
+<p>Leptons are fundamental particles that do not experience the strong force. There are six leptons:</p>
+<ul>
+  <li>Electron (e<sup>&minus;</sup>) and electron neutrino (&nu;<sub>e</sub>)</li>
+  <li>Muon (&mu;<sup>&minus;</sup>) and muon neutrino (&nu;<sub>&mu;</sub>)</li>
+  <li>Tau (&tau;<sup>&minus;</sup>) and tau neutrino (&nu;<sub>&tau;</sub>)</li>
+</ul>
+<p>Each lepton has a corresponding antiparticle. Lepton number is conserved in all interactions (electron lepton number and muon lepton number are conserved separately).</p>
+
+<h3>Exchange Particles (Gauge Bosons)</h3>
+<p>Forces between particles are mediated by the exchange of gauge bosons:</p>
+
+<table>
+  <tr><th>Force</th><th>Gauge Boson</th><th>Acts On</th><th>Range</th></tr>
+  <tr><td>Strong nuclear</td><td>Gluon (g)</td><td>Quarks (and gluons)</td><td>~10<sup>&minus;15</sup> m</td></tr>
+  <tr><td>Electromagnetic</td><td>Photon (&gamma;)</td><td>Charged particles</td><td>Infinite</td></tr>
+  <tr><td>Weak nuclear</td><td>W<sup>+</sup>, W<sup>&minus;</sup>, Z<sup>0</sup></td><td>All fermions</td><td>~10<sup>&minus;18</sup> m</td></tr>
+  <tr><td>Gravity</td><td>Graviton (hypothetical)</td><td>All particles with mass</td><td>Infinite</td></tr>
+</table>
+
+<h3>Conservation Laws in Particle Interactions</h3>
+<p>In every particle interaction, the following quantities must be conserved:</p>
+<ul>
+  <li><strong>Charge</strong> — always conserved</li>
+  <li><strong>Baryon number</strong> — always conserved</li>
+  <li><strong>Lepton number</strong> — conserved separately for each generation (electron, muon, tau)</li>
+  <li><strong>Strangeness</strong> — conserved in strong and electromagnetic interactions, can change by &plusmn;1 in weak interactions</li>
+  <li><strong>Energy and momentum</strong> — always conserved</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When checking whether a particle interaction is possible, apply all conservation laws. If any one is violated, the interaction cannot occur (or can only occur via a specific force). The weak force is the only force that can change quark flavour, which is why it is responsible for beta decay and strangeness-changing interactions.
+</div>
+
+<h3>Beta Decay at the Quark Level</h3>
+<p>Beta-minus decay involves a down quark changing into an up quark, mediated by a W<sup>&minus;</sup> boson:</p>
+<div class="equation">d &rarr; u + W<sup>&minus;</sup> &nbsp;&nbsp; then &nbsp;&nbsp; W<sup>&minus;</sup> &rarr; e<sup>&minus;</sup> + &nu;&#773;<sub>e</sub></div>
+
+<p>Beta-plus decay involves an up quark changing into a down quark, mediated by a W<sup>+</sup> boson:</p>
+<div class="equation">u &rarr; d + W<sup>+</sup> &nbsp;&nbsp; then &nbsp;&nbsp; W<sup>+</sup> &rarr; e<sup>+</sup> + &nu;<sub>e</sub></div>
+
+<h3>Annihilation and Pair Production</h3>
+
+<div class="definition">
+  <strong>Annihilation:</strong> When a particle meets its antiparticle, they annihilate each other, converting their mass into energy in the form of two gamma photons (to conserve momentum).<br><br>
+  <strong>Pair production:</strong> A high-energy photon can spontaneously create a particle-antiparticle pair (usually near a nucleus to conserve momentum). The photon must have at least enough energy to create the rest masses of both particles: E<sub>min</sub> = 2mc&sup2;.
+</div>
+
+<div class="equation">Minimum photon energy for pair production: E = 2m<sub>0</sub>c&sup2;</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In annihilation, each gamma photon has energy equal to the rest mass energy of one particle (E = m<sub>0</sub>c&sup2;), assuming the particles were approximately at rest. For an electron-positron annihilation, each photon has energy 0.511 MeV. Two photons are produced travelling in opposite directions to conserve momentum.
+</div>
+
+</div>
+</body>
+</html>

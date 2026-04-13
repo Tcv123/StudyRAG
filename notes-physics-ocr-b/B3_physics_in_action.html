@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module B3 — Physics in Action</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module B3 — Physics in Action</h1>
+
+<h2>3.1 Imaging and Signalling</h2>
+
+<h3>Lenses and Image Formation</h3>
+
+<div class="definition">
+  <strong>Converging (convex) lens:</strong> A lens that causes parallel rays of light to converge to a focal point. It is thicker in the middle than at the edges.<br><br>
+  <strong>Diverging (concave) lens:</strong> A lens that causes parallel rays of light to diverge as though they came from a focal point on the same side as the incoming light. It is thinner in the middle.
+</div>
+
+<p>The behaviour of lenses is described by the thin lens equation:</p>
+
+<div class="equation">
+  1/v = 1/u + 1/f
+</div>
+
+<p>where u is the object distance (from lens to object), v is the image distance (from lens to image), and f is the focal length of the lens. All distances are measured from the centre of the lens.</p>
+
+<div class="definition">
+  <strong>Focal length (f):</strong> The distance from the centre of the lens to the principal focus, where parallel rays converge (for a converging lens) or appear to diverge from (for a diverging lens).<br><br>
+  <strong>Power of a lens (P):</strong> The reciprocal of the focal length, measured in dioptres (D). P = 1/f, where f is in metres. A more powerful lens has a shorter focal length and bends light more strongly.
+</div>
+
+<div class="equation">
+  Power: P = 1/f &nbsp;&nbsp; (P in dioptres, f in metres)
+</div>
+
+<p>For a converging lens, f is positive and P is positive. For a diverging lens, f is negative and P is negative. When lenses are combined in contact, their powers add: P<sub>total</sub> = P<sub>1</sub> + P<sub>2</sub>.</p>
+
+<h3>Sign Convention</h3>
+<p>OCR B uses the real-is-positive convention:</p>
+<ul>
+  <li>Real object distances (u) are positive (object on the same side as incoming light)</li>
+  <li>Real image distances (v) are positive (image on the opposite side from the object)</li>
+  <li>Virtual image distances are negative</li>
+  <li>Converging lenses have positive focal length; diverging lenses have negative focal length</li>
+</ul>
+
+<h3>Magnification</h3>
+<div class="equation">
+  Linear magnification: m = image height / object height = v / u
+</div>
+
+<p>If |m| &gt; 1, the image is magnified. If |m| &lt; 1, the image is diminished. A negative magnification indicates the image is inverted.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When using the lens equation, always be careful with signs. A common mistake is to forget that for a diverging lens, f is negative. Substitute values with their correct signs and check that the sign of your answer for v makes physical sense.
+</div>
+
+<h3>Ray Diagrams</h3>
+<p>Three standard rays can be drawn for a converging lens:</p>
+<ol>
+  <li>A ray parallel to the principal axis refracts through the focal point on the other side</li>
+  <li>A ray through the centre of the lens passes straight through undeviated</li>
+  <li>A ray through the focal point on the object side refracts to emerge parallel to the principal axis</li>
+</ol>
+
+<p>The image is formed where at least two of these rays intersect. For objects beyond 2f, the image is real, inverted, and diminished. At 2f, it is the same size. Between f and 2f, it is real, inverted, and magnified. Inside f, the image is virtual, upright, and magnified.</p>
+
+<h2>3.2 Refraction</h2>
+
+<div class="definition">
+  <strong>Refraction:</strong> The change in direction of a wave when it passes from one medium to another due to a change in wave speed. The frequency remains constant while the wavelength and speed change.
+</div>
+
+<div class="equation">
+  Snell's law: n<sub>1</sub> sin &theta;<sub>1</sub> = n<sub>2</sub> sin &theta;<sub>2</sub>
+</div>
+
+<div class="definition">
+  <strong>Refractive index (n):</strong> A measure of how much a medium slows down light. n = c / v, where c is the speed of light in a vacuum and v is the speed of light in the medium. The refractive index of a vacuum is 1; for air it is approximately 1.00; for glass it is typically 1.5; for water it is about 1.33.
+</div>
+
+<h3>Total Internal Reflection</h3>
+<p>When light travels from a more optically dense medium to a less dense one (n<sub>1</sub> &gt; n<sub>2</sub>), there is a critical angle beyond which all light is reflected back into the denser medium.</p>
+
+<div class="equation">
+  Critical angle: sin &theta;<sub>c</sub> = n<sub>2</sub> / n<sub>1</sub>
+</div>
+
+<p>For angles of incidence greater than the critical angle, total internal reflection occurs. This is the principle behind optical fibres, which transmit light signals over long distances with minimal loss.</p>
+
+<h3>Optical Fibres</h3>
+<p>Optical fibres use total internal reflection to guide light along a thin glass or plastic core. They consist of a core with a higher refractive index surrounded by cladding with a lower refractive index. Applications include telecommunications and medical endoscopy.</p>
+
+<p>Signal degradation in optical fibres occurs through:</p>
+<ul>
+  <li><strong>Absorption:</strong> The fibre material absorbs some light energy, converting it to heat</li>
+  <li><strong>Dispersion (pulse broadening):</strong> Different wavelengths travel at slightly different speeds (material dispersion) and rays entering at different angles take different path lengths (modal dispersion), causing pulses to spread out and overlap</li>
+</ul>
+
+<h2>3.3 Diffraction</h2>
+
+<div class="definition">
+  <strong>Diffraction:</strong> The spreading of waves when they pass through a gap or around an obstacle. Diffraction is most significant when the size of the gap or obstacle is comparable to the wavelength of the wave.
+</div>
+
+<h3>Single Slit Diffraction</h3>
+<p>When monochromatic light passes through a single narrow slit, it produces a diffraction pattern consisting of a bright central maximum flanked by alternating dark and bright fringes of decreasing intensity. The central maximum is twice the width of the subsidiary maxima.</p>
+
+<h3>Diffraction Gratings</h3>
+<p>A diffraction grating consists of many equally spaced parallel slits. When monochromatic light passes through, it produces sharp, bright maxima at specific angles determined by the grating equation:</p>
+
+<div class="equation">
+  d sin &theta; = n&lambda;
+</div>
+
+<p>where d is the slit spacing (distance between centres of adjacent slits), &theta; is the angle of diffraction, n is the order number (0, 1, 2, ...), and &lambda; is the wavelength. The slit spacing d = 1/N where N is the number of slits per metre.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The maximum number of orders visible is found by setting sin &theta; = 1 (the maximum possible value), giving n<sub>max</sub> = d/&lambda;, rounded down to the nearest integer. Remember there are orders on both sides of the central maximum.
+</div>
+
+<h2>3.4 Digital Signals and Communication</h2>
+
+<h3>Analogue vs Digital Signals</h3>
+
+<div class="definition">
+  <strong>Analogue signal:</strong> A signal that varies continuously and can take any value within a range.<br><br>
+  <strong>Digital signal:</strong> A signal that has only a limited number of discrete values, typically two levels (0 and 1, or high and low).
+</div>
+
+<p>Digital transmission has several advantages over analogue:</p>
+<ul>
+  <li><strong>Noise immunity:</strong> Digital signals can be regenerated perfectly at repeater stations, removing accumulated noise. Analogue signals can only be amplified, which amplifies the noise too.</li>
+  <li><strong>Multiplexing:</strong> Multiple digital signals can be combined and transmitted simultaneously through the same channel using time-division multiplexing</li>
+  <li><strong>Encryption:</strong> Digital data can be easily encrypted for security</li>
+  <li><strong>Processing:</strong> Digital signals can be processed, stored, and manipulated by computers</li>
+</ul>
+
+<h3>Sampling and Bit Depth</h3>
+<p>To convert an analogue signal to digital, the signal is sampled at regular intervals and each sample is assigned a numerical value (quantisation). The quality of the digital representation depends on:</p>
+<ul>
+  <li><strong>Sampling rate:</strong> How frequently the signal is sampled (in Hz). Must be at least twice the maximum frequency of the signal (Nyquist criterion) to accurately represent it</li>
+  <li><strong>Bit depth (resolution):</strong> The number of bits used to represent each sample. More bits allow more possible values and a finer representation of the original signal</li>
+</ul>
+
+<div class="equation">
+  Number of possible levels = 2<sup>n</sup> &nbsp;&nbsp; (where n = number of bits)
+</div>
+
+<h2>3.5 Materials</h2>
+
+<h3>Stress, Strain, and Young's Modulus</h3>
+
+<div class="definition">
+  <strong>Stress (&sigma;):</strong> The force applied per unit cross-sectional area. Measured in pascals (Pa). &sigma; = F/A<br><br>
+  <strong>Strain (&epsilon;):</strong> The extension per unit original length. Strain has no unit (it is a ratio). &epsilon; = &Delta;L/L<br><br>
+  <strong>Young's modulus (E):</strong> The ratio of stress to strain in the region where the material obeys Hooke's law. Measured in Pa. E = &sigma;/&epsilon;
+</div>
+
+<div class="equation">
+  Stress: &sigma; = F / A
+</div>
+<div class="equation">
+  Strain: &epsilon; = &Delta;L / L
+</div>
+<div class="equation">
+  Young's modulus: E = &sigma; / &epsilon; = FL / A&Delta;L
+</div>
+
+<p>Young's modulus is a property of the material, not the object. A high Young's modulus means the material is stiff and resists deformation. Steel has a Young's modulus of about 200 GPa; rubber is about 0.01 GPa.</p>
+
+<h3>Stress-Strain Graphs</h3>
+<p>The shape of a stress-strain graph reveals important information about material behaviour:</p>
+<ul>
+  <li><strong>Limit of proportionality:</strong> The point beyond which stress is no longer proportional to strain</li>
+  <li><strong>Elastic limit:</strong> The maximum stress from which the material can return to its original shape when the load is removed</li>
+  <li><strong>Yield point:</strong> The stress at which the material begins to deform plastically (permanent deformation)</li>
+  <li><strong>Ultimate tensile stress (UTS):</strong> The maximum stress the material can withstand before failure</li>
+  <li><strong>Breaking point:</strong> The stress at which the material fractures</li>
+</ul>
+
+<h3>Types of Material Behaviour</h3>
+
+<table>
+  <tr><th>Behaviour</th><th>Description</th><th>Examples</th></tr>
+  <tr><td>Brittle</td><td>Breaks with little or no plastic deformation. The stress-strain graph is linear up to the breaking point.</td><td>Glass, ceramics, cast iron</td></tr>
+  <tr><td>Ductile</td><td>Can be drawn into wires. Shows significant plastic deformation before fracture.</td><td>Copper, gold, mild steel</td></tr>
+  <tr><td>Polymeric</td><td>Can undergo very large strains. Often shows non-linear elastic behaviour with hysteresis.</td><td>Rubber, polyethylene</td></tr>
+</table>
+
+<h3>Elastic and Plastic Deformation</h3>
+
+<div class="definition">
+  <strong>Elastic deformation:</strong> Deformation where the material returns to its original shape when the load is removed. The atoms are displaced from their equilibrium positions but return when the force is removed. Energy is stored and fully recovered.<br><br>
+  <strong>Plastic deformation:</strong> Permanent deformation where the material does not return to its original shape. Atoms move to new equilibrium positions. Energy is dissipated (not recovered).
+</div>
+
+<p>The area under a force-extension graph represents the work done (energy stored or transferred). For elastic deformation, this equals the elastic strain energy. For loading and unloading curves that do not overlap (hysteresis), the area between the curves represents energy dissipated as heat.</p>
+
+<div class="equation">
+  Elastic strain energy = &frac12; F &times; &Delta;L = &frac12; k(&Delta;L)<sup>2</sup>
+</div>
+
+<h2>3.6 Sensing</h2>
+
+<h3>Potential Dividers</h3>
+<p>A potential divider is a circuit with two or more resistors in series across a power supply. The voltage is divided between the resistors in proportion to their resistances.</p>
+
+<div class="equation">
+  V<sub>out</sub> = V<sub>in</sub> &times; R<sub>2</sub> / (R<sub>1</sub> + R<sub>2</sub>)
+</div>
+
+<p>By replacing one resistor with a sensor (such as a thermistor or LDR), the output voltage changes in response to the physical quantity being measured. This is the basis of many sensing circuits.</p>
+
+<h3>Sensors and Transducers</h3>
+
+<div class="definition">
+  <strong>Sensor:</strong> A device that detects a physical quantity and produces a signal (usually electrical) in response.<br><br>
+  <strong>Transducer:</strong> A device that converts energy from one form to another. An input transducer converts a physical quantity into an electrical signal; an output transducer converts an electrical signal into another form.
+</div>
+
+<table>
+  <tr><th>Sensor</th><th>Quantity Detected</th><th>How It Works</th></tr>
+  <tr><td>Thermistor (NTC)</td><td>Temperature</td><td>Resistance decreases as temperature increases</td></tr>
+  <tr><td>LDR</td><td>Light intensity</td><td>Resistance decreases as light intensity increases</td></tr>
+  <tr><td>Strain gauge</td><td>Strain / Force</td><td>Resistance changes as the gauge is stretched or compressed</td></tr>
+  <tr><td>Piezoelectric crystal</td><td>Pressure / Vibration</td><td>Generates a voltage when mechanically stressed</td></tr>
+</table>
+
+<h3>Signal Conditioning</h3>
+<p>Raw sensor signals often need processing before they can be used:</p>
+<ul>
+  <li><strong>Amplification:</strong> Increasing the voltage or current of a weak signal</li>
+  <li><strong>Filtering:</strong> Removing unwanted frequency components (noise)</li>
+  <li><strong>Analogue-to-digital conversion (ADC):</strong> Converting a continuous signal to digital for processing by a microcontroller</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In sensing circuit questions, always consider the sensitivity (how much the output changes per unit change in input), the response time (how quickly the sensor responds), and the range (the minimum and maximum values the sensor can detect). These determine whether a sensor is suitable for a given application.
+</div>
+
+<h3>Calibration</h3>
+<p>Sensors must be calibrated against known standards to ensure their readings are accurate. Calibration involves comparing the sensor output with reference values and creating a calibration curve or lookup table. For example, a thermistor-based thermometer would be calibrated using ice-water (0 &deg;C) and boiling water (100 &deg;C) as reference points.</p>
+
+</div>
+</body>
+</html>

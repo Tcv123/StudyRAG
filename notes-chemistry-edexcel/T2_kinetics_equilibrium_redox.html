@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T2 — Kinetics, Equilibrium and Redox</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>T2 — Kinetics, Equilibrium and Redox</h1>
+
+<h2>2.1 Rates of Reaction</h2>
+
+<div class="definition">
+  <strong>Rate of reaction:</strong> The change in concentration of a reactant or product per unit time. Units: mol dm<sup>&minus;3</sup> s<sup>&minus;1</sup>.
+</div>
+
+<p>Rate can be measured by monitoring changes in mass, volume of gas produced, colour intensity (colorimetry), conductivity, or pH over time. The rate at any instant can be found from the gradient of a concentration-time graph at that point.</p>
+
+<h3>Factors Affecting Rate</h3>
+
+<ul>
+  <li><strong>Concentration:</strong> Higher concentration means more particles per unit volume, so more frequent collisions</li>
+  <li><strong>Temperature:</strong> Higher temperature increases the kinetic energy and speed of particles, leading to more frequent collisions and a greater proportion of collisions exceeding the activation energy</li>
+  <li><strong>Surface area:</strong> Smaller particles have greater surface area exposed, increasing collision frequency</li>
+  <li><strong>Catalysts:</strong> Provide an alternative reaction pathway with a lower activation energy</li>
+  <li><strong>Pressure (gases):</strong> Higher pressure forces gas molecules closer together, increasing collision frequency</li>
+</ul>
+
+<h2>2.2 Collision Theory</h2>
+
+<div class="definition">
+  <strong>Collision theory:</strong> For a reaction to occur, particles must collide with sufficient energy (equal to or greater than the activation energy, E<sub>a</sub>) and with the correct orientation.
+</div>
+
+<p>Not all collisions lead to reaction. Only a fraction of collisions have enough energy and the right geometry. Increasing temperature does not just increase collision frequency (a relatively small effect) but more importantly increases the proportion of molecules with energy &ge; E<sub>a</sub>.</p>
+
+<h2>2.3 Maxwell-Boltzmann Distribution</h2>
+
+<p>The Maxwell-Boltzmann distribution shows the spread of molecular energies (or speeds) in a sample of gas at a given temperature. Key features:</p>
+
+<ul>
+  <li>The curve starts at the origin (no molecules have zero energy)</li>
+  <li>The peak represents the most probable energy (E<sub>mp</sub>)</li>
+  <li>The curve is asymmetric, with a long tail to the right (some molecules have very high energies)</li>
+  <li>The area under the curve represents the total number of molecules and remains constant</li>
+  <li>The area to the right of E<sub>a</sub> represents molecules with sufficient energy to react</li>
+</ul>
+
+<h3>Effect of Temperature</h3>
+
+<p>At a higher temperature, the distribution curve shifts to the right and flattens: the peak is lower and at a higher energy, the average energy increases, and the area to the right of E<sub>a</sub> increases significantly. The total area under the curve stays the same (same number of molecules).</p>
+
+<h3>Effect of a Catalyst</h3>
+
+<p>A catalyst lowers E<sub>a</sub>. On the Maxwell-Boltzmann diagram, the distribution curve itself does not change shape — instead, the E<sub>a</sub> line moves to the left. This means a greater proportion of molecules now have energy &ge; E<sub>a</sub>, so the rate increases.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When drawing Maxwell-Boltzmann curves, never let them touch the y-axis or cross the x-axis at high energy. The curve approaches but never reaches the x-axis. Always label axes (number of molecules vs. energy).
+</div>
+
+<h2>2.4 Rate Equations and Orders of Reaction</h2>
+
+<div class="definition">
+  <strong>Rate equation:</strong> An expression relating the rate of reaction to the concentrations of reactants raised to their respective orders. For a reaction A + B &rarr; products:<br>
+  <strong>Rate = k[A]<sup>m</sup>[B]<sup>n</sup></strong><br>
+  where k = rate constant, m = order with respect to A, n = order with respect to B. The overall order = m + n.
+</div>
+
+<p>Orders can only be determined experimentally — they cannot be deduced from the stoichiometric equation. Common orders are 0, 1, and 2.</p>
+
+<table>
+  <tr><th>Order</th><th>Effect of Doubling [A]</th><th>Conc-Time Graph</th><th>Rate-Conc Graph</th><th>Half-life</th></tr>
+  <tr><td>0</td><td>No effect on rate</td><td>Linear decrease</td><td>Horizontal line</td><td>Decreases over time</td></tr>
+  <tr><td>1</td><td>Rate doubles</td><td>Exponential decay</td><td>Straight line through origin</td><td>Constant</td></tr>
+  <tr><td>2</td><td>Rate quadruples</td><td>Steeper curve than 1st order</td><td>Upward curve (parabola)</td><td>Increases over time</td></tr>
+</table>
+
+<h3>Determining Orders from Experimental Data</h3>
+
+<p>Using initial rates data: compare experiments where one reactant concentration changes while others are held constant. If doubling [A] doubles the rate, order with respect to A is 1. If doubling [A] quadruples the rate, order is 2. If doubling [A] has no effect, order is 0.</p>
+
+<h3>The Rate Constant, k</h3>
+
+<p>The units of k depend on the overall order:</p>
+
+<table>
+  <tr><th>Overall Order</th><th>Units of k</th></tr>
+  <tr><td>0</td><td>mol dm<sup>&minus;3</sup> s<sup>&minus;1</sup></td></tr>
+  <tr><td>1</td><td>s<sup>&minus;1</sup></td></tr>
+  <tr><td>2</td><td>mol<sup>&minus;1</sup> dm<sup>3</sup> s<sup>&minus;1</sup></td></tr>
+  <tr><td>3</td><td>mol<sup>&minus;2</sup> dm<sup>6</sup> s<sup>&minus;1</sup></td></tr>
+</table>
+
+<p>k increases with temperature. The relationship is described by the Arrhenius equation.</p>
+
+<h2>2.5 The Arrhenius Equation</h2>
+
+<div class="equation">
+  k = Ae<sup>&minus;E<sub>a</sub>/RT</sup>
+</div>
+
+<p>where A = pre-exponential factor (frequency factor), E<sub>a</sub> = activation energy (J mol<sup>&minus;1</sup>), R = gas constant (8.314 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>), T = temperature (K).</p>
+
+<p>Taking natural logarithms gives the linear form:</p>
+
+<div class="equation">
+  ln k = ln A &minus; E<sub>a</sub>/RT
+</div>
+
+<p>Plotting ln k (y-axis) against 1/T (x-axis) gives a straight line with gradient = &minus;E<sub>a</sub>/R and y-intercept = ln A. This allows E<sub>a</sub> to be determined experimentally.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Remember T must be in Kelvin (add 273 to &deg;C). When calculating gradient, use at least two widely-spaced points for accuracy. E<sub>a</sub> = &minus;gradient &times; R.
+</div>
+
+<h2>2.6 Reaction Mechanisms</h2>
+
+<p>Many reactions occur in a series of steps. The rate-determining step (RDS) is the slowest step and controls the overall rate. Only species involved in the RDS (or in steps up to and including the RDS) appear in the rate equation.</p>
+
+<div class="definition">
+  <strong>Rate-determining step:</strong> The slowest step in a multi-step reaction mechanism. The molecularity of this step corresponds to the orders in the rate equation.
+</div>
+
+<p>If the rate equation is Rate = k[A][B], the RDS involves one molecule of A and one molecule of B colliding. If Rate = k[A]<sup>2</sup>, the RDS involves two molecules of A.</p>
+
+<h2>2.7 Dynamic Equilibrium</h2>
+
+<div class="definition">
+  <strong>Dynamic equilibrium:</strong> A state in a reversible reaction where the rate of the forward reaction equals the rate of the reverse reaction, and the concentrations of reactants and products remain constant (but not necessarily equal). The system must be closed.
+</div>
+
+<h2>2.8 Le Chatelier's Principle</h2>
+
+<div class="definition">
+  <strong>Le Chatelier's Principle:</strong> If a change is imposed on a system at equilibrium, the position of equilibrium shifts to partially counteract the change and restore a new equilibrium.
+</div>
+
+<table>
+  <tr><th>Change</th><th>Effect on Equilibrium Position</th><th>Effect on K</th></tr>
+  <tr><td>Increase concentration of reactant</td><td>Shifts right (towards products)</td><td>No change</td></tr>
+  <tr><td>Decrease concentration of product</td><td>Shifts right</td><td>No change</td></tr>
+  <tr><td>Increase temperature (exothermic forward)</td><td>Shifts left (favours endothermic)</td><td>K decreases</td></tr>
+  <tr><td>Increase temperature (endothermic forward)</td><td>Shifts right (favours endothermic)</td><td>K increases</td></tr>
+  <tr><td>Increase pressure (gases)</td><td>Shifts towards fewer moles of gas</td><td>No change</td></tr>
+  <tr><td>Add catalyst</td><td>No shift — equilibrium reached faster</td><td>No change</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Only temperature changes affect the value of K. Concentration, pressure, and catalyst changes alter the position of equilibrium but not K itself.
+</div>
+
+<h2>2.9 Equilibrium Constants: K<sub>c</sub> and K<sub>p</sub></h2>
+
+<h3>K<sub>c</sub> (Concentration Equilibrium Constant)</h3>
+
+<p>For the reaction aA + bB &#8652; cC + dD:</p>
+
+<div class="equation">
+  K<sub>c</sub> = [C]<sup>c</sup>[D]<sup>d</sup> / [A]<sup>a</sup>[B]<sup>b</sup>
+</div>
+
+<p>Concentrations are equilibrium concentrations in mol dm<sup>&minus;3</sup>. Pure solids and pure liquids are not included in the expression.</p>
+
+<h3>K<sub>p</sub> (Pressure Equilibrium Constant)</h3>
+
+<p>For gaseous equilibria, K<sub>p</sub> uses partial pressures:</p>
+
+<div class="equation">
+  K<sub>p</sub> = p(C)<sup>c</sup> &times; p(D)<sup>d</sup> / p(A)<sup>a</sup> &times; p(B)<sup>b</sup>
+</div>
+
+<p>The partial pressure of a gas is calculated from its mole fraction:</p>
+
+<div class="equation">
+  p(A) = mole fraction of A &times; total pressure
+</div>
+
+<div class="equation">
+  Mole fraction of A = moles of A / total moles of gas
+</div>
+
+<h2>2.10 Oxidation States and Redox</h2>
+
+<div class="definition">
+  <strong>Oxidation:</strong> Loss of electrons / increase in oxidation state.<br>
+  <strong>Reduction:</strong> Gain of electrons / decrease in oxidation state.<br>
+  <strong>Oxidising agent:</strong> A species that accepts electrons (is itself reduced).<br>
+  <strong>Reducing agent:</strong> A species that donates electrons (is itself oxidised).
+</div>
+
+<h3>Rules for Assigning Oxidation States</h3>
+
+<ul>
+  <li>Elements in their standard state: 0</li>
+  <li>Monatomic ions: equal to the charge (e.g. Na<sup>+</sup> = +1, Cl<sup>&minus;</sup> = &minus;1)</li>
+  <li>Oxygen: &minus;2 (except in peroxides &minus;1, OF<sub>2</sub> +2)</li>
+  <li>Hydrogen: +1 (except in metal hydrides &minus;1)</li>
+  <li>Fluorine: always &minus;1</li>
+  <li>Sum of oxidation states in a compound = 0; in a polyatomic ion = the ion charge</li>
+</ul>
+
+<h2>2.11 Redox Equations and Half-Equations</h2>
+
+<p>Half-equations show oxidation and reduction separately. To balance redox equations in acidic solution:</p>
+
+<ol>
+  <li>Write separate half-equations for oxidation and reduction</li>
+  <li>Balance atoms other than O and H</li>
+  <li>Balance O by adding H<sub>2</sub>O</li>
+  <li>Balance H by adding H<sup>+</sup></li>
+  <li>Balance charge by adding electrons</li>
+  <li>Multiply half-equations so electrons cancel, then combine</li>
+</ol>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always check that atoms and charges balance on both sides of the final equation. Electrons should not appear in the overall equation.
+</div>
+
+<h2>2.12 Electrochemical Cells</h2>
+
+<div class="definition">
+  <strong>Electrochemical cell:</strong> A device that converts chemical energy into electrical energy (voltaic/galvanic cell) or uses electrical energy to drive a non-spontaneous reaction (electrolytic cell).
+</div>
+
+<p>A standard electrochemical cell consists of two half-cells connected by a salt bridge (which allows ion flow to complete the circuit) and an external wire (through which electrons flow).</p>
+
+<h3>Standard Electrode Potentials (E&deg;)</h3>
+
+<p>Measured relative to the standard hydrogen electrode (SHE), which has E&deg; = 0.00 V by definition. Standard conditions: 298 K, 100 kPa, 1.00 mol dm<sup>&minus;3</sup> solutions.</p>
+
+<div class="equation">
+  E&deg;<sub>cell</sub> = E&deg;<sub>cathode</sub> &minus; E&deg;<sub>anode</sub>
+</div>
+
+<p>The more positive half-cell is the cathode (reduction occurs). The more negative half-cell is the anode (oxidation occurs). Electrons flow from anode to cathode through the external circuit.</p>
+
+<p>A positive E&deg;<sub>cell</sub> indicates a thermodynamically feasible (spontaneous) reaction. However, feasibility does not guarantee the reaction will occur at an observable rate — kinetic factors may prevent it.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When using electrode potential tables, remember: the species with the more positive E&deg; is reduced (gains electrons), and the species with the more negative E&deg; is oxidised (loses electrons). "More positive = stronger oxidising agent."
+</div>
+
+<h3>Predicting Feasibility</h3>
+
+<p>For a reaction to be feasible: E&deg;<sub>cell</sub> must be positive. This means the difference E&deg;(reduced species) &minus; E&deg;(oxidised species) > 0. Limitations of using E&deg; values: non-standard conditions may alter the actual cell potential, and kinetic barriers (high activation energy) may prevent feasible reactions from occurring.</p>
+
+</div>
+</body>
+</html>

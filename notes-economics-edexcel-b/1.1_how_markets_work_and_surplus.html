@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Markets Work and Surplus — Edexcel B A-Level Economics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .diagram-box { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
+  .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 8px; font-style: italic; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>1.1 How Markets Work and Surplus</h1>
+
+<h2>Demand</h2>
+
+<div class="def-box">
+<strong>Demand:</strong> The quantity of a good or service that consumers are willing and able to purchase at a given price in a given time period. The law of demand states that, ceteris paribus, as price falls, quantity demanded rises.
+</div>
+
+<h3>The Demand Curve</h3>
+<p>The demand curve slopes downward from left to right, reflecting the inverse relationship between price and quantity demanded. This occurs due to:</p>
+<ul>
+  <li><strong>Income effect:</strong> As price falls, real income rises so consumers can buy more</li>
+  <li><strong>Substitution effect:</strong> As price falls relative to substitutes, consumers switch towards the cheaper good</li>
+  <li><strong>Diminishing marginal utility:</strong> Additional units yield less satisfaction, so consumers only buy more at lower prices</li>
+</ul>
+
+<h3>Shifts in Demand</h3>
+<p>A movement along the demand curve is caused by a change in price. A shift of the entire demand curve is caused by non-price factors:</p>
+<table>
+  <tr><th>Factor</th><th>Rightward Shift (Increase)</th><th>Leftward Shift (Decrease)</th></tr>
+  <tr><td>Income (normal goods)</td><td>Income rises</td><td>Income falls</td></tr>
+  <tr><td>Income (inferior goods)</td><td>Income falls</td><td>Income rises</td></tr>
+  <tr><td>Price of substitutes</td><td>Substitute price rises</td><td>Substitute price falls</td></tr>
+  <tr><td>Price of complements</td><td>Complement price falls</td><td>Complement price rises</td></tr>
+  <tr><td>Population</td><td>Population increases</td><td>Population decreases</td></tr>
+  <tr><td>Tastes/preferences</td><td>Good becomes fashionable</td><td>Good becomes unfashionable</td></tr>
+  <tr><td>Advertising</td><td>Successful campaign</td><td>Negative publicity</td></tr>
+  <tr><td>Expectations</td><td>Expected price rise</td><td>Expected price fall</td></tr>
+</table>
+
+<h2>Supply</h2>
+
+<div class="def-box">
+<strong>Supply:</strong> The quantity of a good or service that producers are willing and able to offer for sale at a given price in a given time period. The law of supply states that, ceteris paribus, as price rises, quantity supplied rises.
+</div>
+
+<h3>The Supply Curve</h3>
+<p>The supply curve slopes upward from left to right because higher prices increase the incentive for firms to produce (higher profit margins) and can cover higher marginal costs of production.</p>
+
+<h3>Shifts in Supply</h3>
+<table>
+  <tr><th>Factor</th><th>Rightward Shift (Increase)</th><th>Leftward Shift (Decrease)</th></tr>
+  <tr><td>Costs of production</td><td>Costs fall (e.g. cheaper raw materials)</td><td>Costs rise (e.g. higher wages)</td></tr>
+  <tr><td>Technology</td><td>Technological improvement</td><td>Loss of technology (rare)</td></tr>
+  <tr><td>Taxes</td><td>Reduction in indirect tax</td><td>Increase in indirect tax</td></tr>
+  <tr><td>Subsidies</td><td>Introduction/increase of subsidy</td><td>Removal of subsidy</td></tr>
+  <tr><td>Number of firms</td><td>New firms enter market</td><td>Firms exit market</td></tr>
+  <tr><td>Weather/natural factors</td><td>Favourable conditions</td><td>Adverse conditions</td></tr>
+</table>
+
+<h2>Market Equilibrium</h2>
+
+<div class="def-box">
+<strong>Equilibrium:</strong> The point where quantity demanded equals quantity supplied. At this point there is no tendency for price to change. The equilibrium price is also called the market-clearing price.
+</div>
+
+<div class="diagram-box">
+<svg viewBox="0 0 400 300" width="400" height="300">
+  <defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#333"/></marker></defs>
+  <!-- Axes -->
+  <line x1="50" y1="250" x2="380" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="50" y1="250" x2="50" y2="20" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="200" y="285" text-anchor="middle" font-size="13">Quantity</text>
+  <text x="15" y="140" text-anchor="middle" font-size="13" transform="rotate(-90,15,140)">Price</text>
+  <!-- Demand curve -->
+  <line x1="80" y1="50" x2="350" y2="230" stroke="#e63946" stroke-width="2.5"/>
+  <text x="355" y="235" font-size="12" fill="#e63946">D</text>
+  <!-- Supply curve -->
+  <line x1="80" y1="230" x2="350" y2="50" stroke="#2a9d8f" stroke-width="2.5"/>
+  <text x="355" y="55" font-size="12" fill="#2a9d8f">S</text>
+  <!-- Equilibrium -->
+  <circle cx="215" cy="140" r="5" fill="#1a1a2e"/>
+  <line x1="215" y1="140" x2="215" y2="250" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="50" y1="140" x2="215" y2="140" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="215" y="265" text-anchor="middle" font-size="11">Qe</text>
+  <text x="38" y="144" text-anchor="middle" font-size="11">Pe</text>
+  <text x="215" y="130" text-anchor="middle" font-size="11" font-weight="bold">E</text>
+</svg>
+<div class="diagram-caption">Supply and demand diagram showing market equilibrium at point E</div>
+</div>
+
+<h3>Disequilibrium</h3>
+<p><strong>Excess supply (surplus):</strong> When price is above equilibrium, Qs > Qd. Unsold stock forces producers to lower prices until equilibrium is restored.</p>
+<p><strong>Excess demand (shortage):</strong> When price is below equilibrium, Qd > Qs. Competition among buyers drives prices up until equilibrium is restored.</p>
+
+<h2>Consumer and Producer Surplus</h2>
+
+<div class="def-box">
+<strong>Consumer surplus:</strong> The difference between what consumers are willing to pay and what they actually pay. Graphically, it is the area below the demand curve and above the equilibrium price.<br><br>
+<strong>Producer surplus:</strong> The difference between the price producers receive and the minimum price they would be willing to accept. Graphically, it is the area above the supply curve and below the equilibrium price.
+</div>
+
+<div class="diagram-box">
+<svg viewBox="0 0 400 300" width="400" height="300">
+  <!-- Axes -->
+  <line x1="50" y1="250" x2="380" y2="250" stroke="#333" stroke-width="2"/>
+  <line x1="50" y1="250" x2="50" y2="20" stroke="#333" stroke-width="2"/>
+  <text x="200" y="285" text-anchor="middle" font-size="13">Quantity</text>
+  <text x="15" y="140" text-anchor="middle" font-size="13" transform="rotate(-90,15,140)">Price</text>
+  <!-- Consumer surplus (blue triangle) -->
+  <polygon points="50,50 215,140 50,140" fill="rgba(26,115,232,0.25)" stroke="none"/>
+  <text x="95" y="110" font-size="11" fill="#1a73e8" font-weight="bold">CS</text>
+  <!-- Producer surplus (green triangle) -->
+  <polygon points="50,230 215,140 50,140" fill="rgba(34,197,94,0.25)" stroke="none"/>
+  <text x="95" y="180" font-size="11" fill="#16a34a" font-weight="bold">PS</text>
+  <!-- Demand curve -->
+  <line x1="50" y1="50" x2="350" y2="230" stroke="#e63946" stroke-width="2.5"/>
+  <text x="355" y="235" font-size="12" fill="#e63946">D</text>
+  <!-- Supply curve -->
+  <line x1="50" y1="230" x2="350" y2="50" stroke="#2a9d8f" stroke-width="2.5"/>
+  <text x="355" y="55" font-size="12" fill="#2a9d8f">S</text>
+  <!-- Equilibrium -->
+  <circle cx="215" cy="140" r="4" fill="#1a1a2e"/>
+  <line x1="50" y1="140" x2="215" y2="140" stroke="#999" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="215" y1="140" x2="215" y2="250" stroke="#999" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="38" y="144" font-size="11">Pe</text>
+  <text x="215" y="265" text-anchor="middle" font-size="11">Qe</text>
+</svg>
+<div class="diagram-caption">Consumer surplus (blue) and producer surplus (green) at market equilibrium</div>
+</div>
+
+<p>Total economic welfare = Consumer surplus + Producer surplus. In a free market at equilibrium, total welfare is maximised (allocative efficiency). Any deviation from equilibrium creates deadweight welfare loss.</p>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Always label your surplus diagrams clearly. Show CS as the triangle above price and below demand, PS as the triangle below price and above supply. When answering questions about changes in surplus, shade the areas that are gained/lost and explain direction of change.
+</div>
+
+<h2>Price Elasticity of Demand (PED)</h2>
+
+<div class="def-box">
+<strong>PED:</strong> A measure of the responsiveness of quantity demanded to a change in price.
+</div>
+
+<div class="eq">PED = % change in quantity demanded / % change in price</div>
+
+<p>PED is always negative (due to the inverse relationship) but we usually refer to the absolute value.</p>
+
+<table>
+  <tr><th>Value</th><th>Description</th><th>Example</th></tr>
+  <tr><td>PED = 0</td><td>Perfectly inelastic</td><td>Life-saving medication</td></tr>
+  <tr><td>0 &lt; |PED| &lt; 1</td><td>Inelastic</td><td>Petrol, cigarettes</td></tr>
+  <tr><td>|PED| = 1</td><td>Unit elastic</td><td>Revenue stays constant</td></tr>
+  <tr><td>|PED| &gt; 1</td><td>Elastic</td><td>Luxury holidays, branded goods</td></tr>
+  <tr><td>PED = infinity</td><td>Perfectly elastic</td><td>Perfect competition (theory)</td></tr>
+</table>
+
+<h3>Determinants of PED</h3>
+<ul>
+  <li><strong>Availability of substitutes:</strong> More substitutes = more elastic</li>
+  <li><strong>Necessity vs luxury:</strong> Necessities are inelastic; luxuries are elastic</li>
+  <li><strong>Proportion of income:</strong> Higher proportion = more elastic</li>
+  <li><strong>Time period:</strong> Demand is more elastic in the long run</li>
+  <li><strong>Addiction/habit:</strong> Habit-forming goods are more inelastic</li>
+  <li><strong>Brand loyalty:</strong> Strong loyalty = more inelastic</li>
+  <li><strong>Definition of the market:</strong> Narrow definitions (e.g. Coca-Cola) are more elastic than broad (e.g. soft drinks)</li>
+</ul>
+
+<h3>PED and Total Revenue</h3>
+<table>
+  <tr><th>PED</th><th>Price Rise</th><th>Price Fall</th></tr>
+  <tr><td>Elastic (|PED| &gt; 1)</td><td>TR falls</td><td>TR rises</td></tr>
+  <tr><td>Inelastic (|PED| &lt; 1)</td><td>TR rises</td><td>TR falls</td></tr>
+  <tr><td>Unit elastic (|PED| = 1)</td><td>TR unchanged</td><td>TR unchanged</td></tr>
+</table>
+
+<div class="diagram-box">
+<svg viewBox="0 0 400 250" width="400" height="250">
+  <!-- Axes -->
+  <line x1="50" y1="220" x2="380" y2="220" stroke="#333" stroke-width="2"/>
+  <line x1="50" y1="220" x2="50" y2="20" stroke="#333" stroke-width="2"/>
+  <text x="200" y="245" text-anchor="middle" font-size="12">Quantity</text>
+  <text x="15" y="120" text-anchor="middle" font-size="12" transform="rotate(-90,15,120)">Price</text>
+  <!-- Elastic demand -->
+  <line x1="70" y1="100" x2="350" y2="140" stroke="#e63946" stroke-width="2"/>
+  <text x="355" y="145" font-size="11" fill="#e63946">D (elastic)</text>
+  <!-- Inelastic demand -->
+  <line x1="180" y1="40" x2="220" y2="210" stroke="#2563eb" stroke-width="2"/>
+  <text x="225" y="45" font-size="11" fill="#2563eb">D (inelastic)</text>
+  <!-- Unit elastic (rectangular hyperbola approximation) -->
+  <path d="M 80,50 Q 150,100 200,140 Q 260,180 350,200" stroke="#9333ea" stroke-width="2" fill="none"/>
+  <text x="340" y="195" font-size="11" fill="#9333ea">D (unit)</text>
+</svg>
+<div class="diagram-caption">Comparison of elastic, inelastic, and unit elastic demand curves</div>
+</div>
+
+<h2>Income Elasticity of Demand (YED)</h2>
+
+<div class="def-box">
+<strong>YED:</strong> A measure of the responsiveness of quantity demanded to a change in income.
+</div>
+
+<div class="eq">YED = % change in quantity demanded / % change in income</div>
+
+<table>
+  <tr><th>Value</th><th>Type of Good</th><th>Examples</th></tr>
+  <tr><td>YED &lt; 0</td><td>Inferior good</td><td>Supermarket own-brand products, bus travel</td></tr>
+  <tr><td>0 &lt; YED &lt; 1</td><td>Normal good (necessity)</td><td>Bread, toothpaste, electricity</td></tr>
+  <tr><td>YED &gt; 1</td><td>Normal good (luxury)</td><td>Designer clothes, sports cars, fine dining</td></tr>
+</table>
+
+<h3>Significance of YED</h3>
+<ul>
+  <li>Firms producing luxury goods benefit disproportionately during economic growth</li>
+  <li>Firms producing inferior goods may benefit during recessions</li>
+  <li>Helps firms plan production and diversify product ranges</li>
+  <li>Governments use YED data to forecast tax revenues from specific goods</li>
+</ul>
+
+<h2>Cross Elasticity of Demand (XED)</h2>
+
+<div class="def-box">
+<strong>XED:</strong> A measure of the responsiveness of quantity demanded of good A to a change in the price of good B.
+</div>
+
+<div class="eq">XED = % change in Qd of Good A / % change in price of Good B</div>
+
+<table>
+  <tr><th>Value</th><th>Relationship</th><th>Examples</th></tr>
+  <tr><td>XED &gt; 0 (positive)</td><td>Substitutes</td><td>Coca-Cola and Pepsi, butter and margarine</td></tr>
+  <tr><td>XED &lt; 0 (negative)</td><td>Complements</td><td>Printers and ink, cars and petrol</td></tr>
+  <tr><td>XED = 0</td><td>Unrelated goods</td><td>Bread and televisions</td></tr>
+</table>
+
+<p>The magnitude shows the strength of the relationship. A high positive XED indicates close substitutes; a large negative XED indicates strong complements.</p>
+
+<h3>Significance of XED</h3>
+<ul>
+  <li>Firms use XED for pricing strategies (if competitor raises price, gauge how much demand shifts)</li>
+  <li>Helps firms identify competitive threats</li>
+  <li>Useful for competition authorities assessing market definition</li>
+  <li>Guides complementary product pricing (e.g. loss leaders)</li>
+</ul>
+
+<h2>Price Elasticity of Supply (PES)</h2>
+
+<div class="def-box">
+<strong>PES:</strong> A measure of the responsiveness of quantity supplied to a change in price.
+</div>
+
+<div class="eq">PES = % change in quantity supplied / % change in price</div>
+
+<p>PES is always positive (due to the positive relationship between price and quantity supplied).</p>
+
+<h3>Determinants of PES</h3>
+<ul>
+  <li><strong>Spare capacity:</strong> More spare capacity = more elastic supply</li>
+  <li><strong>Stock availability:</strong> More stocks = more elastic</li>
+  <li><strong>Time period:</strong> Supply is more elastic in the long run</li>
+  <li><strong>Factor mobility:</strong> Easily transferable factors = more elastic</li>
+  <li><strong>Nature of the product:</strong> Perishable goods have inelastic supply</li>
+  <li><strong>Barriers to entry:</strong> Low barriers = more elastic long-run supply</li>
+</ul>
+
+<table>
+  <tr><th>Time Period</th><th>PES</th><th>Reason</th></tr>
+  <tr><td>Momentary (market period)</td><td>Perfectly inelastic</td><td>No time to change output</td></tr>
+  <tr><td>Short run</td><td>Relatively inelastic</td><td>At least one factor fixed</td></tr>
+  <tr><td>Long run</td><td>Relatively elastic</td><td>All factors variable, new firms can enter</td></tr>
+</table>
+
+<h2>Applications of Elasticity</h2>
+
+<h3>Taxation and Elasticity</h3>
+<p>The incidence of an indirect tax depends on PED and PES:</p>
+<ul>
+  <li>If demand is inelastic relative to supply, consumers bear a greater proportion of the tax burden</li>
+  <li>If supply is inelastic relative to demand, producers bear a greater proportion</li>
+  <li>Governments target inelastic goods (tobacco, alcohol, petrol) because tax revenue is higher and quantity reduction is smaller</li>
+</ul>
+
+<h3>Subsidies and Elasticity</h3>
+<p>The benefit of a subsidy also depends on relative elasticities:</p>
+<ul>
+  <li>If demand is inelastic, consumers benefit more (lower prices)</li>
+  <li>If supply is inelastic, producers benefit more (higher revenue)</li>
+</ul>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> When discussing elasticity in essays, always provide a real-world example, state the formula, calculate if data is given, and link to business or government decision-making. For evaluation, discuss limitations such as ceteris paribus assumptions, data accuracy, and time lags in estimating elasticity values.
+</div>
+
+<h2>Price Mechanism and Functions</h2>
+<p>The price mechanism performs three key functions in a free market:</p>
+<ol>
+  <li><strong>Rationing function:</strong> Prices allocate scarce resources to those willing and able to pay</li>
+  <li><strong>Signalling function:</strong> Prices convey information about relative scarcity and changing market conditions</li>
+  <li><strong>Incentive function:</strong> Rising prices incentivise firms to increase supply and consumers to reduce demand</li>
+</ol>
+
+<h2>Market Changes: Combining Shifts</h2>
+<p>In exam questions you may encounter simultaneous shifts. The impact on equilibrium price and quantity depends on the direction and magnitude of each shift:</p>
+<table>
+  <tr><th>Demand Shift</th><th>Supply Shift</th><th>Price Effect</th><th>Quantity Effect</th></tr>
+  <tr><td>Increase</td><td>Increase</td><td>Indeterminate</td><td>Increase</td></tr>
+  <tr><td>Increase</td><td>Decrease</td><td>Increase</td><td>Indeterminate</td></tr>
+  <tr><td>Decrease</td><td>Increase</td><td>Decrease</td><td>Indeterminate</td></tr>
+  <tr><td>Decrease</td><td>Decrease</td><td>Indeterminate</td><td>Decrease</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> When the outcome is indeterminate, state that it depends on the relative magnitude of the shifts. Always draw two diagrams showing both possible outcomes for full marks.
+</div>
+
+</div>
+</body>
+</html>

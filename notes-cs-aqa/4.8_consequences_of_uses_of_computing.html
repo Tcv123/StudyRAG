@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.8 Consequences of Uses of Computing — AQA A-Level CS</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
+            line-height: 1.7;
+            padding: 40px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 12px;
+            margin-bottom: 8px;
+        }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 {
+            font-size: 1.45rem;
+            color: #1e40af;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #dbeafe;
+        }
+        h3 {
+            font-size: 1.15rem;
+            color: #1e3a5f;
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+        p { margin-bottom: 14px; }
+        ul, ol { margin-bottom: 14px; padding-left: 24px; }
+        li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .definition strong { color: #1e40af; }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code {
+            font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f3f4f6;
+            padding: 16px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 16px;
+            font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        @media print {
+            body { padding: 20px; font-size: 11pt; }
+            .exam-tip, .definition { break-inside: avoid; }
+            h2 { break-after: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>4.8 Consequences of Uses of Computing</h1>
+<p class="spec-ref">AQA A-Level Computer Science (7517) &mdash; Paper 2</p>
+
+<!-- ====== MORAL, ETHICAL, LEGAL, CULTURAL ====== -->
+<h2>4.8.1 Moral, Ethical, Legal, and Cultural Issues</h2>
+
+<div class="definition">
+    <strong>Moral issue:</strong> A matter of personal conscience &mdash; what an individual believes is right or wrong.<br>
+    <strong>Ethical issue:</strong> A matter of accepted standards within a profession or society &mdash; what is considered acceptable behaviour by a group.<br>
+    <strong>Legal issue:</strong> A matter governed by law &mdash; what is or is not permitted by legislation.<br>
+    <strong>Cultural issue:</strong> A matter relating to the norms, values, and practices of a particular group or society.
+</div>
+
+<p>Computing raises questions across all four areas. Examples include:</p>
+<ul>
+    <li><strong>Moral:</strong> Is it right to develop autonomous weapons? Should companies collect personal data to maximise profit?</li>
+    <li><strong>Ethical:</strong> Should a programmer report a security vulnerability they discover, even if they were not authorised to test the system?</li>
+    <li><strong>Legal:</strong> Is a company compliant with data protection legislation? Has software been copied without a valid licence?</li>
+    <li><strong>Cultural:</strong> Does a social media platform's algorithm promote content that undermines cultural diversity? Are certain communities excluded from digital services?</li>
+</ul>
+
+<div class="exam-tip">In essay questions, clearly distinguish between moral, ethical, and legal issues. Use specific examples and legislation to support your arguments. Consider multiple stakeholder perspectives.</div>
+
+<!-- ====== LEGISLATION ====== -->
+<h2>4.8.2 Legislation</h2>
+
+<h3>Data Protection Act 2018 / UK GDPR</h3>
+<p>The <strong>Data Protection Act 2018</strong> implements the UK GDPR and governs how personal data must be handled. It applies to any organisation (data controller or data processor) that handles personal data of UK citizens.</p>
+
+<p><strong>Key principles &mdash; personal data must be:</strong></p>
+<ol>
+    <li><strong>Processed lawfully, fairly, and transparently</strong> &mdash; there must be a legal basis for processing (e.g., consent, legitimate interest, legal obligation)</li>
+    <li><strong>Collected for specified, explicit, and legitimate purposes</strong> &mdash; not used for purposes beyond what was stated</li>
+    <li><strong>Adequate, relevant, and limited</strong> to what is necessary (data minimisation)</li>
+    <li><strong>Accurate and kept up to date</strong> &mdash; inaccurate data must be corrected or deleted</li>
+    <li><strong>Kept no longer than necessary</strong> (storage limitation)</li>
+    <li><strong>Processed securely</strong> &mdash; protected against unauthorised access, loss, or damage (integrity and confidentiality)</li>
+</ol>
+
+<p><strong>Rights of data subjects:</strong></p>
+<ul>
+    <li>Right to be informed about how their data is used</li>
+    <li>Right of access (Subject Access Request &mdash; SAR)</li>
+    <li>Right to rectification of inaccurate data</li>
+    <li>Right to erasure ("right to be forgotten")</li>
+    <li>Right to restrict processing</li>
+    <li>Right to data portability</li>
+    <li>Right to object to processing</li>
+    <li>Rights related to automated decision making and profiling</li>
+</ul>
+
+<p>The <strong>Information Commissioner's Office (ICO)</strong> enforces the Act and can issue fines of up to &pound;17.5 million or 4% of annual global turnover.</p>
+
+<h3>Computer Misuse Act 1990</h3>
+<p>The <strong>Computer Misuse Act 1990</strong> was introduced to combat hacking and other computer crimes. It defines three main offences:</p>
+
+<table>
+    <tr><th>Section</th><th>Offence</th><th>Detail</th><th>Max Penalty</th></tr>
+    <tr><td>Section 1</td><td><strong>Unauthorised access</strong> to computer material</td><td>Knowingly accessing a computer system without permission (e.g., guessing someone's password to access their account)</td><td>2 years imprisonment</td></tr>
+    <tr><td>Section 2</td><td><strong>Unauthorised access with intent</strong> to commit a further offence</td><td>Gaining access to commit another crime, such as fraud or blackmail</td><td>5 years imprisonment</td></tr>
+    <tr><td>Section 3</td><td><strong>Unauthorised modification</strong> of computer material</td><td>Deliberately modifying data without permission (e.g., deploying malware, deleting files, planting viruses)</td><td>10 years imprisonment</td></tr>
+</table>
+
+<p>Section 3A (added by the Police and Justice Act 2006) makes it an offence to <strong>make, supply, or obtain tools</strong> for use in computer misuse (e.g., hacking tools, malware).</p>
+
+<h3>Copyright, Designs and Patents Act 1988</h3>
+<p>This Act protects the intellectual property of creators. In computing, it covers:</p>
+<ul>
+    <li><strong>Software</strong> &mdash; the source code and object code of programs are protected as literary works</li>
+    <li><strong>Databases</strong> &mdash; the structure and selection of data</li>
+    <li><strong>Digital media</strong> &mdash; music, video, images, written content</li>
+    <li><strong>Website content</strong> &mdash; text, graphics, and code</li>
+</ul>
+<p>It is illegal to <strong>copy, distribute, modify, or sell</strong> copyrighted material without the owner's permission. This includes pirating software, sharing copyrighted music, or using code without a licence.</p>
+
+<h3>Regulation of Investigatory Powers Act 2000 (RIPA)</h3>
+<p>RIPA governs the <strong>surveillance and investigation powers</strong> of public bodies (police, intelligence agencies, local authorities). Key provisions:</p>
+<ul>
+    <li>Authorises the <strong>interception of communications</strong> (phone, email, internet) with appropriate warrants</li>
+    <li>Allows the <strong>acquisition of communications data</strong> (metadata: who contacted whom, when, and where &mdash; but not content)</li>
+    <li>Permits <strong>covert surveillance</strong> and use of <strong>covert human intelligence sources</strong> (informants)</li>
+    <li>Requires <strong>ISPs to maintain the capability</strong> to intercept communications when served with a warrant</li>
+    <li>Can require individuals to <strong>disclose encryption keys</strong> or plaintext when served with a notice under Section 49</li>
+</ul>
+
+<h3>Freedom of Information Act 2000</h3>
+<p>The <strong>Freedom of Information Act</strong> gives the public the right to <strong>request access to information held by public authorities</strong> (government departments, councils, NHS, schools, police).</p>
+<ul>
+    <li>Public authorities must respond within <strong>20 working days</strong></li>
+    <li>They must have a <strong>publication scheme</strong> that proactively publishes certain information</li>
+    <li>Exemptions exist for national security, personal data, law enforcement, commercial interests, and information intended for future publication</li>
+    <li>Enforced by the <strong>Information Commissioner's Office (ICO)</strong></li>
+</ul>
+
+<div class="exam-tip">When discussing legislation, always name the specific Act, state what it covers, and explain how it applies to the scenario in the question. Use the correct legal terminology (data controller, data subject, unauthorised access, etc.).</div>
+
+<!-- ====== SURVEILLANCE ====== -->
+<h2>4.8.3 Surveillance and Privacy</h2>
+
+<p>Advances in computing have dramatically expanded surveillance capabilities:</p>
+
+<h3>Methods of Digital Surveillance</h3>
+<ul>
+    <li><strong>CCTV and facial recognition</strong> &mdash; automated identification of individuals in public spaces</li>
+    <li><strong>Internet monitoring</strong> &mdash; tracking browsing history, search queries, and online activity</li>
+    <li><strong>Communications interception</strong> &mdash; monitoring email, phone calls, and messaging</li>
+    <li><strong>Location tracking</strong> &mdash; GPS, mobile phone mast triangulation, Wi-Fi positioning</li>
+    <li><strong>Social media monitoring</strong> &mdash; analysing posts, connections, and behaviour patterns</li>
+    <li><strong>Smart device data collection</strong> &mdash; IoT devices, smart speakers, wearable technology</li>
+    <li><strong>Cookies and web tracking</strong> &mdash; third-party cookies, browser fingerprinting, advertising trackers</li>
+</ul>
+
+<h3>Arguments For Surveillance</h3>
+<ul>
+    <li>Helps prevent and investigate crime and terrorism</li>
+    <li>Protects national security</li>
+    <li>Can locate missing persons</li>
+    <li>Provides evidence for criminal prosecution</li>
+    <li>Deters criminal activity</li>
+</ul>
+
+<h3>Arguments Against Surveillance</h3>
+<ul>
+    <li>Infringes on individuals' <strong>right to privacy</strong></li>
+    <li>Risk of <strong>mass surveillance</strong> without targeted justification</li>
+    <li>Potential for <strong>misuse</strong> by governments or organisations</li>
+    <li><strong>Chilling effect</strong> on free speech &mdash; people self-censor when they know they are being watched</li>
+    <li>Data breaches can expose surveillance data</li>
+    <li>Disproportionately affects certain communities (bias in facial recognition)</li>
+</ul>
+
+<!-- ====== AI ====== -->
+<h2>4.8.4 AI and Machine Learning &mdash; Ethical Implications</h2>
+
+<div class="definition">
+    <strong>Artificial Intelligence (AI):</strong> Computer systems designed to perform tasks that normally require human intelligence, such as learning, reasoning, problem-solving, perception, and language understanding.<br>
+    <strong>Machine Learning (ML):</strong> A subset of AI where systems learn from data to improve performance without being explicitly programmed.
+</div>
+
+<h3>Ethical Concerns</h3>
+<ul>
+    <li><strong>Bias and discrimination:</strong> ML models trained on biased data can perpetuate and amplify existing societal biases (e.g., racial bias in criminal justice algorithms, gender bias in recruitment tools)</li>
+    <li><strong>Accountability and transparency:</strong> When an AI system causes harm, it can be unclear who is responsible (the developer, the user, the company). Many AI models are "black boxes" where the reasoning is not transparent.</li>
+    <li><strong>Job displacement:</strong> AI and automation threaten to replace jobs in manufacturing, customer service, transport, legal research, and other fields, potentially increasing inequality.</li>
+    <li><strong>Privacy:</strong> AI systems often require vast amounts of personal data for training. Facial recognition, voice analysis, and behavioural profiling raise significant privacy concerns.</li>
+    <li><strong>Autonomous weapons:</strong> AI-powered weapons systems (drones, targeting systems) raise questions about the ethics of removing human decision-making from lethal force.</li>
+    <li><strong>Deepfakes:</strong> AI-generated fake images, video, and audio can be used for misinformation, fraud, and harassment.</li>
+    <li><strong>Surveillance:</strong> AI enables mass surveillance at a scale previously impossible.</li>
+    <li><strong>Decision-making in healthcare:</strong> AI diagnostic tools may make errors, and questions arise about liability and the role of human oversight.</li>
+</ul>
+
+<div class="exam-tip">AI ethics questions require balanced arguments. Always consider benefits alongside risks, and discuss who the different stakeholders are and how they are affected.</div>
+
+<!-- ====== ENVIRONMENTAL ====== -->
+<h2>4.8.5 Environmental Impact of Computing</h2>
+
+<h3>Negative Impacts</h3>
+<ul>
+    <li><strong>E-waste:</strong> Discarded electronic devices contain toxic materials (lead, mercury, cadmium) that pollute soil and water. The global volume of e-waste is increasing rapidly.</li>
+    <li><strong>Energy consumption:</strong> Data centres consume approximately 1-2% of global electricity. Cryptocurrency mining, AI training, and cloud computing have significantly increased energy demands.</li>
+    <li><strong>Planned obsolescence:</strong> Manufacturers design products with limited lifespans or stop providing software updates, forcing consumers to replace devices unnecessarily.</li>
+    <li><strong>Resource extraction:</strong> Manufacturing computing devices requires mining rare earth metals and minerals, often causing environmental destruction and human exploitation in developing countries.</li>
+    <li><strong>Carbon footprint:</strong> Manufacturing, shipping, and running computing devices all contribute to greenhouse gas emissions.</li>
+</ul>
+
+<h3>Positive Impacts / Mitigations</h3>
+<ul>
+    <li><strong>Dematerialisation:</strong> Digital alternatives reduce physical resource use (e-books replace paper, video calls replace travel)</li>
+    <li><strong>Smart energy management:</strong> IoT and AI can optimise energy use in buildings, transport, and industry</li>
+    <li><strong>Environmental monitoring:</strong> Sensors and satellite data help track deforestation, pollution, and climate change</li>
+    <li><strong>Remote working:</strong> Reduces commuting and office energy consumption</li>
+    <li><strong>Recycling and refurbishment:</strong> Schemes to extend device life and reclaim materials</li>
+    <li><strong>Renewable-powered data centres:</strong> Companies increasingly power data centres with renewable energy</li>
+</ul>
+
+<!-- ====== DIGITAL DIVIDE ====== -->
+<h2>4.8.6 Digital Divide</h2>
+
+<div class="definition">
+    <strong>Digital Divide:</strong> The gap between those who have access to modern information and communications technology and those who do not. This can be between countries, regions, or social groups.
+</div>
+
+<p><strong>Causes:</strong></p>
+<ul>
+    <li><strong>Economic:</strong> Cost of devices, internet connectivity, and software</li>
+    <li><strong>Geographic:</strong> Rural areas may lack broadband infrastructure</li>
+    <li><strong>Age:</strong> Older adults may lack digital skills or confidence</li>
+    <li><strong>Education:</strong> Limited digital literacy prevents effective use of technology</li>
+    <li><strong>Disability:</strong> Inaccessible websites and software exclude disabled users</li>
+    <li><strong>Language:</strong> Most internet content is in English</li>
+</ul>
+
+<p><strong>Consequences:</strong></p>
+<ul>
+    <li>Exclusion from online services (banking, healthcare, government)</li>
+    <li>Reduced access to education and employment opportunities</li>
+    <li>Social isolation</li>
+    <li>Widening economic inequality between and within nations</li>
+</ul>
+
+<p><strong>Mitigations:</strong></p>
+<ul>
+    <li>Government investment in broadband infrastructure</li>
+    <li>Subsidised devices and internet access for low-income households</li>
+    <li>Digital literacy training programmes</li>
+    <li>Accessibility standards (e.g., WCAG) for websites and software</li>
+    <li>Multilingual content and interfaces</li>
+</ul>
+
+<!-- ====== AUTONOMOUS VEHICLES ====== -->
+<h2>4.8.7 Autonomous Vehicles &mdash; Ethical Considerations</h2>
+
+<p>Self-driving vehicles use AI, sensors (LIDAR, cameras, radar), and GPS to navigate without human intervention.</p>
+
+<h3>Ethical Dilemmas</h3>
+<ul>
+    <li><strong>Trolley problem:</strong> If a collision is unavoidable, how should the vehicle decide who to protect &mdash; the passengers, pedestrians, or other road users? Who programmes these decisions?</li>
+    <li><strong>Liability:</strong> In an accident involving an autonomous vehicle, who is responsible &mdash; the manufacturer, the software developer, the vehicle owner, or the AI itself?</li>
+    <li><strong>Safety vs. freedom:</strong> Should autonomous vehicles be restricted to lower speeds even if human-driven vehicles are not?</li>
+    <li><strong>Data collection:</strong> Autonomous vehicles collect vast amounts of data about routes, passengers, and surroundings. Who owns this data and how is it used?</li>
+    <li><strong>Job losses:</strong> Taxi drivers, lorry drivers, and delivery drivers could be displaced.</li>
+    <li><strong>Algorithmic bias:</strong> Object recognition systems may be less accurate at detecting people of certain skin tones or those wearing unusual clothing.</li>
+</ul>
+
+<h3>Potential Benefits</h3>
+<ul>
+    <li>Reduced accidents (most crashes are caused by human error)</li>
+    <li>Increased mobility for elderly and disabled people</li>
+    <li>Reduced traffic congestion through optimised routing</li>
+    <li>Lower emissions through efficient driving patterns</li>
+</ul>
+
+<!-- ====== SOCIAL MEDIA ====== -->
+<h2>4.8.8 Social Media &mdash; Impact on Society</h2>
+
+<h3>Positive Impacts</h3>
+<ul>
+    <li>Enables global communication and connection</li>
+    <li>Platform for free expression and activism</li>
+    <li>Supports small businesses and marketing</li>
+    <li>Facilitates community building around shared interests</li>
+    <li>Rapid dissemination of information (e.g., during emergencies)</li>
+</ul>
+
+<h3>Negative Impacts</h3>
+<ul>
+    <li><strong>Mental health:</strong> Anxiety, depression, body image issues, addiction, and fear of missing out (FOMO), particularly among young people</li>
+    <li><strong>Misinformation:</strong> Fake news, conspiracy theories, and propaganda can spread rapidly. Algorithms may promote sensational or divisive content for engagement.</li>
+    <li><strong>Cyberbullying:</strong> Harassment, trolling, and abusive behaviour online</li>
+    <li><strong>Echo chambers:</strong> Algorithmic filtering shows users content that reinforces their existing views, reducing exposure to diverse perspectives</li>
+    <li><strong>Privacy:</strong> Users often share personal data without fully understanding how it will be used, sold, or exploited</li>
+    <li><strong>Manipulation:</strong> Targeted advertising and political campaigning using personal data (e.g., micro-targeting, psychographic profiling)</li>
+    <li><strong>Copyright infringement:</strong> Easy sharing of copyrighted content without permission</li>
+    <li><strong>Data harvesting:</strong> Social media companies collect and monetise user data</li>
+</ul>
+
+<!-- ====== IP AND LICENSING ====== -->
+<h2>4.8.9 Intellectual Property and Software Licensing</h2>
+
+<div class="definition">
+    <strong>Intellectual Property (IP):</strong> Creations of the mind (inventions, literary/artistic works, designs, names, images) that are protected by law through patents, copyright, and trademarks.
+</div>
+
+<h3>Software Licensing Models</h3>
+<table>
+    <tr><th>Licence Type</th><th>Description</th><th>Examples</th></tr>
+    <tr>
+        <td><strong>Proprietary (Closed Source)</strong></td>
+        <td>Source code is not available. Users purchase a licence to use the software under restrictive terms. Cannot modify, copy, or redistribute without permission.</td>
+        <td>Microsoft Windows, Adobe Photoshop, macOS</td>
+    </tr>
+    <tr>
+        <td><strong>Open Source</strong></td>
+        <td>Source code is freely available. Users can view, modify, and redistribute the software. Often governed by licences like GPL, MIT, or Apache.</td>
+        <td>Linux, Firefox, Python, LibreOffice</td>
+    </tr>
+    <tr>
+        <td><strong>Freeware</strong></td>
+        <td>Free to use but source code is not necessarily available. The developer retains copyright.</td>
+        <td>Skype, Adobe Acrobat Reader</td>
+    </tr>
+    <tr>
+        <td><strong>Shareware</strong></td>
+        <td>Free to try for a limited period or with limited features. Users must pay for the full version.</td>
+        <td>WinRAR, various mobile apps</td>
+    </tr>
+    <tr>
+        <td><strong>Creative Commons</strong></td>
+        <td>A flexible licensing system primarily for creative works (not just software). Authors choose conditions: Attribution (BY), ShareAlike (SA), NonCommercial (NC), NoDerivatives (ND).</td>
+        <td>Wikipedia content (CC BY-SA), Flickr photos, educational resources</td>
+    </tr>
+</table>
+
+<table>
+    <tr><th>Feature</th><th>Proprietary</th><th>Open Source</th></tr>
+    <tr><td>Source code access</td><td>No</td><td>Yes</td></tr>
+    <tr><td>Cost</td><td>Usually paid (licence fee)</td><td>Usually free</td></tr>
+    <tr><td>Modification</td><td>Not permitted</td><td>Permitted (subject to licence terms)</td></tr>
+    <tr><td>Support</td><td>Professional support from vendor</td><td>Community support; paid support available</td></tr>
+    <tr><td>Security</td><td>Security through obscurity; patches from vendor</td><td>Transparent; community auditing; faster patches</td></tr>
+    <tr><td>Customisation</td><td>Limited</td><td>Extensive</td></tr>
+</table>
+
+<!-- ====== STAKEHOLDERS ====== -->
+<h2>4.8.10 Stakeholder Analysis</h2>
+
+<div class="definition">
+    <strong>Stakeholder:</strong> Any individual, group, or organisation that is affected by or has an interest in a particular project, system, or decision.
+</div>
+
+<p>When analysing the consequences of computing, it is important to consider the perspectives of all stakeholders:</p>
+
+<ul>
+    <li><strong>Users / Customers:</strong> How does the system affect their experience, privacy, safety, and rights?</li>
+    <li><strong>Developers / Programmers:</strong> What are their responsibilities regarding quality, security, and ethics?</li>
+    <li><strong>Businesses / Employers:</strong> How does the technology affect profitability, operations, and reputation?</li>
+    <li><strong>Employees / Workers:</strong> Will the technology create or destroy jobs? Does it change working conditions?</li>
+    <li><strong>Government / Regulators:</strong> What legislation and oversight is needed? How does the technology affect public safety?</li>
+    <li><strong>Society at large:</strong> What are the broader social, cultural, and environmental impacts?</li>
+    <li><strong>Vulnerable groups:</strong> How does the technology affect children, elderly, disabled, or economically disadvantaged people?</li>
+</ul>
+
+<div class="exam-tip">In extended-answer questions, explicitly name different stakeholders and discuss how the same technology affects them differently. This demonstrates a balanced, well-reasoned argument and is key to achieving top marks.</div>
+
+<!-- ====== BCS ====== -->
+<h2>4.8.11 Professional Standards &mdash; BCS Code of Conduct</h2>
+
+<p>The <strong>British Computer Society (BCS)</strong> is the Chartered Institute for IT in the UK. It publishes a <strong>Code of Conduct</strong> that sets out the professional and ethical standards expected of IT professionals.</p>
+
+<h3>The Four Sections of the BCS Code of Conduct</h3>
+
+<table>
+    <tr><th>Section</th><th>Key Requirements</th></tr>
+    <tr>
+        <td><strong>1. Public Interest</strong></td>
+        <td>
+            <ul>
+                <li>Have due regard for public health, privacy, security, and wellbeing</li>
+                <li>Have due regard for the environment</li>
+                <li>Consider the rights and interests of others, particularly vulnerable groups</li>
+                <li>Promote equal access to the benefits of IT</li>
+                <li>Do not discriminate</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>2. Professional Competence and Integrity</strong></td>
+        <td>
+            <ul>
+                <li>Only undertake work within your competence</li>
+                <li>Keep professional knowledge and skills up to date</li>
+                <li>Avoid injecting malicious code or engaging in deceptive practices</li>
+                <li>Respect confidential information</li>
+                <li>Reject bribery and unethical inducements</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>3. Duty to Relevant Authority</strong></td>
+        <td>
+            <ul>
+                <li>Carry out professional responsibilities with due care and diligence</li>
+                <li>Avoid conflicts of interest</li>
+                <li>Accept professional responsibility for work done under your supervision</li>
+                <li>Do not disclose or misuse confidential information</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>4. Duty to the Profession</strong></td>
+        <td>
+            <ul>
+                <li>Uphold the reputation of the profession</li>
+                <li>Seek to improve professional standards</li>
+                <li>Support fellow BCS members in their professional development</li>
+                <li>Act with integrity in all professional relationships</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+<p><strong>Whistleblowing:</strong> If an IT professional becomes aware of unethical or illegal practices, the BCS Code supports them in raising concerns through appropriate channels, even if it conflicts with employer interests.</p>
+
+<div class="exam-tip">The BCS Code of Conduct is a professional code, not a law. Breaching it can result in disciplinary action from the BCS (e.g., loss of membership) but not criminal prosecution. However, the activities it prohibits may also breach actual laws.</div>
+
+</div>
+</body>
+</html>

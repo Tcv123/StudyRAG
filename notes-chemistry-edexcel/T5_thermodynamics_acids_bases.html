@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T5 — Thermodynamics, Acids and Bases</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>T5 — Thermodynamics, Acids and Bases</h1>
+
+<h2>5.1 Born-Haber Cycles</h2>
+
+<div class="definition">
+  <strong>Born-Haber cycle:</strong> An enthalpy cycle used to calculate lattice enthalpy indirectly using Hess's law. It combines atomisation enthalpies, ionisation energies, electron affinities, and enthalpy of formation.
+</div>
+
+<h3>Key Enthalpy Terms</h3>
+
+<table>
+  <tr><th>Enthalpy Term</th><th>Definition</th><th>Sign</th></tr>
+  <tr><td>&Delta;<sub>f</sub>H&deg; (formation)</td><td>Formation of 1 mol of compound from elements in standard states</td><td>Usually negative (exothermic)</td></tr>
+  <tr><td>&Delta;<sub>at</sub>H&deg; (atomisation)</td><td>Formation of 1 mol of gaseous atoms from element in standard state</td><td>Always positive (endothermic)</td></tr>
+  <tr><td>IE (ionisation energy)</td><td>Removal of 1 mol of electrons from 1 mol of gaseous atoms/ions</td><td>Always positive (endothermic)</td></tr>
+  <tr><td>EA (electron affinity)</td><td>Addition of 1 mol of electrons to 1 mol of gaseous atoms/ions. 1st EA is exothermic; 2nd EA is endothermic</td><td>1st: negative; 2nd: positive</td></tr>
+  <tr><td>&Delta;<sub>LE</sub>H&deg; (lattice enthalpy)</td><td>Formation of 1 mol of ionic lattice from gaseous ions (exothermic definition) or the dissociation of 1 mol of ionic lattice into gaseous ions (endothermic definition)</td><td>Depends on definition used</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Edexcel typically uses the exothermic definition of lattice enthalpy (formation of lattice from gaseous ions, so the value is negative). Check the wording carefully in the question — some mark schemes accept either convention if applied consistently.
+</div>
+
+<h3>Constructing a Born-Haber Cycle</h3>
+
+<p>For NaCl, the cycle connects the following steps:</p>
+
+<ol>
+  <li>Elements in standard states: Na(s) + 1/2 Cl<sub>2</sub>(g)</li>
+  <li>Atomisation of Na: Na(s) &rarr; Na(g) [&Delta;<sub>at</sub>H&deg;]</li>
+  <li>Atomisation of Cl: 1/2 Cl<sub>2</sub>(g) &rarr; Cl(g) [&Delta;<sub>at</sub>H&deg;]</li>
+  <li>First ionisation of Na: Na(g) &rarr; Na<sup>+</sup>(g) + e<sup>&minus;</sup> [IE<sub>1</sub>]</li>
+  <li>First electron affinity of Cl: Cl(g) + e<sup>&minus;</sup> &rarr; Cl<sup>&minus;</sup>(g) [EA<sub>1</sub>]</li>
+  <li>Lattice enthalpy: Na<sup>+</sup>(g) + Cl<sup>&minus;</sup>(g) &rarr; NaCl(s) [&Delta;<sub>LE</sub>H&deg;]</li>
+</ol>
+
+<p>By Hess's law: &Delta;<sub>f</sub>H&deg; = &Delta;<sub>at</sub>H&deg;(Na) + &Delta;<sub>at</sub>H&deg;(Cl) + IE<sub>1</sub>(Na) + EA<sub>1</sub>(Cl) + &Delta;<sub>LE</sub>H&deg;</p>
+
+<h3>Factors Affecting Lattice Enthalpy</h3>
+
+<p>Lattice enthalpy becomes more exothermic (larger magnitude) with:</p>
+<ul>
+  <li><strong>Smaller ionic radii:</strong> Ions are closer together, so electrostatic attraction is stronger</li>
+  <li><strong>Higher ionic charges:</strong> Greater charge means stronger attraction (e.g. MgO has a much larger lattice enthalpy than NaCl because both ions are 2+/2&minus; rather than 1+/1&minus;)</li>
+</ul>
+
+<h2>5.2 Enthalpy of Hydration and Solution</h2>
+
+<div class="definition">
+  <strong>Enthalpy of hydration (&Delta;<sub>hyd</sub>H&deg;):</strong> The enthalpy change when 1 mol of gaseous ions is dissolved in sufficient water to form an infinitely dilute solution. Always exothermic (ion-dipole attractions form).<br>
+  <strong>Enthalpy of solution (&Delta;<sub>sol</sub>H&deg;):</strong> The enthalpy change when 1 mol of an ionic solid dissolves in sufficient water to form an infinitely dilute solution.
+</div>
+
+<div class="equation">
+  &Delta;<sub>sol</sub>H&deg; = &minus;&Delta;<sub>LE</sub>H&deg; + &Delta;<sub>hyd</sub>H&deg;(cation) + &Delta;<sub>hyd</sub>H&deg;(anion)
+</div>
+
+<p>(Using the exothermic lattice enthalpy convention, where &Delta;<sub>LE</sub>H&deg; is negative, so &minus;&Delta;<sub>LE</sub>H&deg; is positive — representing breaking the lattice.)</p>
+
+<p>A substance dissolves if the enthalpy of hydration of the ions is large enough to compensate for the energy needed to break the lattice. If &Delta;<sub>sol</sub>H is negative or only slightly positive, dissolving is energetically favourable or can be driven by entropy.</p>
+
+<h2>5.3 Entropy</h2>
+
+<div class="definition">
+  <strong>Entropy (S):</strong> A measure of the disorder or number of ways of arranging energy in a system. Units: J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>. Greater disorder = higher entropy.
+</div>
+
+<h3>Entropy Trends</h3>
+
+<ul>
+  <li>S(gas) >> S(liquid) > S(solid) — gases have the most disorder</li>
+  <li>Entropy increases with temperature (more energy arrangements)</li>
+  <li>Entropy increases when the number of moles of gas increases in a reaction</li>
+  <li>Dissolving a solid in a solvent generally increases entropy</li>
+  <li>More complex molecules have higher entropy than simpler ones</li>
+</ul>
+
+<h3>Entropy Change of a Reaction</h3>
+
+<div class="equation">
+  &Delta;S<sub>system</sub> = &Sigma;S&deg;(products) &minus; &Sigma;S&deg;(reactants)
+</div>
+
+<p>If &Delta;S is positive, the system becomes more disordered. If &Delta;S is negative, the system becomes more ordered. Note that a reaction can still be spontaneous even with negative &Delta;S if it is sufficiently exothermic.</p>
+
+<h2>5.4 Gibbs Free Energy</h2>
+
+<div class="definition">
+  <strong>Gibbs free energy (&Delta;G):</strong> A thermodynamic quantity that determines whether a reaction is thermodynamically feasible (spontaneous). A reaction is feasible when &Delta;G &lt; 0.
+</div>
+
+<div class="equation">
+  &Delta;G = &Delta;H &minus; T&Delta;S
+</div>
+
+<p>where &Delta;H = enthalpy change (J mol<sup>&minus;1</sup>), T = temperature (K), &Delta;S = entropy change (J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Ensure units are consistent. If &Delta;H is in kJ mol<sup>&minus;1</sup> and &Delta;S is in J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>, convert &Delta;S to kJ K<sup>&minus;1</sup> mol<sup>&minus;1</sup> by dividing by 1000 before substituting into the equation.
+</div>
+
+<h3>Feasibility at Different Temperatures</h3>
+
+<table>
+  <tr><th>&Delta;H</th><th>&Delta;S</th><th>Feasibility</th></tr>
+  <tr><td>Negative (exo)</td><td>Positive</td><td>Feasible at all temperatures (&Delta;G always negative)</td></tr>
+  <tr><td>Negative (exo)</td><td>Negative</td><td>Feasible at low temperatures (when |&Delta;H| > |T&Delta;S|)</td></tr>
+  <tr><td>Positive (endo)</td><td>Positive</td><td>Feasible at high temperatures (when T&Delta;S > &Delta;H)</td></tr>
+  <tr><td>Positive (endo)</td><td>Negative</td><td>Never feasible (&Delta;G always positive)</td></tr>
+</table>
+
+<p>The temperature at which a reaction becomes feasible (where &Delta;G = 0) can be found by rearranging:</p>
+
+<div class="equation">
+  T = &Delta;H / &Delta;S
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Thermodynamic feasibility (&Delta;G &lt; 0) does not guarantee a reaction will occur. Kinetic barriers (high activation energy) may prevent it. Always state this limitation when asked to discuss feasibility.
+</div>
+
+<h2>5.5 Acids and Bases — Bronsted-Lowry Theory</h2>
+
+<div class="definition">
+  <strong>Bronsted-Lowry acid:</strong> A proton (H<sup>+</sup>) donor.<br>
+  <strong>Bronsted-Lowry base:</strong> A proton (H<sup>+</sup>) acceptor.<br>
+  <strong>Conjugate acid-base pair:</strong> Two species that differ by one proton. When an acid donates a proton, it forms its conjugate base; when a base accepts a proton, it forms its conjugate acid.
+</div>
+
+<p>Example: HCl + H<sub>2</sub>O &rarr; H<sub>3</sub>O<sup>+</sup> + Cl<sup>&minus;</sup>. HCl is the acid (donates H<sup>+</sup>), H<sub>2</sub>O is the base (accepts H<sup>+</sup>). Cl<sup>&minus;</sup> is the conjugate base of HCl, H<sub>3</sub>O<sup>+</sup> is the conjugate acid of H<sub>2</sub>O.</p>
+
+<h3>Strong and Weak Acids</h3>
+
+<table>
+  <tr><th>Property</th><th>Strong Acid</th><th>Weak Acid</th></tr>
+  <tr><td>Dissociation</td><td>Complete — fully ionised in water</td><td>Partial — equilibrium lies to the left</td></tr>
+  <tr><td>Examples</td><td>HCl, H<sub>2</sub>SO<sub>4</sub>, HNO<sub>3</sub></td><td>CH<sub>3</sub>COOH, H<sub>2</sub>CO<sub>3</sub>, HF</td></tr>
+  <tr><td>[H<sup>+</sup>]</td><td>Equal to acid concentration</td><td>Much less than acid concentration</td></tr>
+  <tr><td>pH</td><td>Lower pH for same concentration</td><td>Higher pH for same concentration</td></tr>
+  <tr><td>Conductivity</td><td>Higher (more ions)</td><td>Lower (fewer ions)</td></tr>
+</table>
+
+<h2>5.6 pH Calculations</h2>
+
+<div class="equation">
+  pH = &minus;log<sub>10</sub>[H<sup>+</sup>] &nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp; [H<sup>+</sup>] = 10<sup>&minus;pH</sup>
+</div>
+
+<h3>pH of Strong Acids</h3>
+
+<p>For a strong monoprotic acid (e.g. HCl): [H<sup>+</sup>] = concentration of acid. So pH = &minus;log[acid].</p>
+
+<p>For a strong diprotic acid (e.g. H<sub>2</sub>SO<sub>4</sub>): [H<sup>+</sup>] = 2 &times; concentration of acid (assuming full dissociation of both protons).</p>
+
+<h3>pH of Strong Bases</h3>
+
+<p>Use the ionic product of water:</p>
+
+<div class="equation">
+  K<sub>w</sub> = [H<sup>+</sup>][OH<sup>&minus;</sup>] = 1.00 &times; 10<sup>&minus;14</sup> mol<sup>2</sup> dm<sup>&minus;6</sup> at 25&deg;C
+</div>
+
+<p>Find [OH<sup>&minus;</sup>] from the base concentration, then calculate [H<sup>+</sup>] = K<sub>w</sub> / [OH<sup>&minus;</sup>], then find pH.</p>
+
+<h2>5.7 K<sub>a</sub> and pK<sub>a</sub></h2>
+
+<div class="definition">
+  <strong>Acid dissociation constant (K<sub>a</sub>):</strong> The equilibrium constant for the dissociation of a weak acid in water. For HA &#8652; H<sup>+</sup> + A<sup>&minus;</sup>:<br>
+  K<sub>a</sub> = [H<sup>+</sup>][A<sup>&minus;</sup>] / [HA]
+</div>
+
+<p>A larger K<sub>a</sub> means a stronger acid (greater degree of dissociation).</p>
+
+<div class="equation">
+  pK<sub>a</sub> = &minus;log<sub>10</sub>K<sub>a</sub> &nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp; K<sub>a</sub> = 10<sup>&minus;pK<sub>a</sub></sup>
+</div>
+
+<p>A smaller pK<sub>a</sub> means a stronger acid.</p>
+
+<h3>Calculating pH of a Weak Acid</h3>
+
+<p>For a weak acid HA with concentration c and K<sub>a</sub> known, we assume [H<sup>+</sup>] = [A<sup>&minus;</sup>] and [HA] &approx; c (since dissociation is small):</p>
+
+<div class="equation">
+  K<sub>a</sub> = [H<sup>+</sup>]<sup>2</sup> / c &nbsp;&nbsp;&nbsp; so &nbsp;&nbsp;&nbsp; [H<sup>+</sup>] = &radic;(K<sub>a</sub> &times; c)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The assumptions [H<sup>+</sup>] = [A<sup>&minus;</sup>] and [HA] &approx; c are only valid for weak acids. State these assumptions explicitly in calculations. They break down for very dilute solutions or moderately strong weak acids.
+</div>
+
+<h2>5.8 Buffer Solutions</h2>
+
+<div class="definition">
+  <strong>Buffer solution:</strong> A solution that resists changes in pH when small amounts of acid or base are added. It consists of a weak acid and its conjugate base (or a weak base and its conjugate acid).
+</div>
+
+<h3>How Buffers Work</h3>
+
+<p>An acidic buffer contains a weak acid (HA) and its salt (e.g. NaA, providing A<sup>&minus;</sup>):</p>
+
+<ul>
+  <li><strong>When acid (H<sup>+</sup>) is added:</strong> The conjugate base A<sup>&minus;</sup> reacts with H<sup>+</sup> to form HA. This removes the added H<sup>+</sup>, so pH barely changes.</li>
+  <li><strong>When base (OH<sup>&minus;</sup>) is added:</strong> The weak acid HA reacts with OH<sup>&minus;</sup> to form A<sup>&minus;</sup> + H<sub>2</sub>O. This removes the added OH<sup>&minus;</sup>, so pH barely changes.</li>
+</ul>
+
+<h3>Calculating the pH of a Buffer</h3>
+
+<p>Using the K<sub>a</sub> expression: K<sub>a</sub> = [H<sup>+</sup>][A<sup>&minus;</sup>] / [HA], rearranging gives:</p>
+
+<div class="equation">
+  [H<sup>+</sup>] = K<sub>a</sub> &times; [HA] / [A<sup>&minus;</sup>]
+</div>
+
+<p>Then pH = &minus;log[H<sup>+</sup>]. The Henderson-Hasselbalch equation is an equivalent form:</p>
+
+<div class="equation">
+  pH = pK<sub>a</sub> + log<sub>10</sub>([A<sup>&minus;</sup>] / [HA])
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When preparing a buffer, you can mix a weak acid with its sodium salt, or you can partially neutralise a weak acid with a strong base. In the latter case, calculate the moles of HA remaining and moles of A<sup>&minus;</sup> formed.
+</div>
+
+<h2>5.9 Titration Curves</h2>
+
+<h3>Shapes of Titration Curves</h3>
+
+<table>
+  <tr><th>Combination</th><th>Initial pH</th><th>Equivalence Point pH</th><th>Suitable Indicator</th></tr>
+  <tr><td>Strong acid + Strong base</td><td>Low (~1)</td><td>7</td><td>Any (methyl orange or phenolphthalein)</td></tr>
+  <tr><td>Strong acid + Weak base</td><td>Low (~1)</td><td>&lt; 7 (acidic)</td><td>Methyl orange</td></tr>
+  <tr><td>Weak acid + Strong base</td><td>Higher (~3)</td><td>&gt; 7 (basic)</td><td>Phenolphthalein</td></tr>
+  <tr><td>Weak acid + Weak base</td><td>Higher (~3)</td><td>&asymp; 7</td><td>No suitable indicator (gradual change)</td></tr>
+</table>
+
+<h3>Key Features of a Weak Acid-Strong Base Curve</h3>
+
+<ul>
+  <li>Starts at a higher pH than a strong acid (only partially dissociated)</li>
+  <li>Buffer region: a relatively flat section before equivalence where pH changes slowly (the solution acts as a buffer)</li>
+  <li>Half-equivalence point: halfway to equivalence, [HA] = [A<sup>&minus;</sup>], so pH = pK<sub>a</sub></li>
+  <li>Equivalence point: pH > 7 (the salt of a weak acid and strong base is slightly basic)</li>
+  <li>Steep section around equivalence point is shorter than for strong acid-strong base</li>
+</ul>
+
+<h3>Indicators</h3>
+
+<div class="definition">
+  <strong>Indicator:</strong> A weak acid (HIn) that has a different colour to its conjugate base (In<sup>&minus;</sup>). The end point colour change occurs when pH = pK<sub>in</sub> &plusmn; 1. For a titration, choose an indicator whose pK<sub>in</sub> falls within the steep vertical section of the titration curve.
+</div>
+
+<table>
+  <tr><th>Indicator</th><th>pK<sub>in</sub></th><th>Colour (acid)</th><th>Colour (base)</th><th>pH Range</th></tr>
+  <tr><td>Methyl orange</td><td>3.7</td><td>Red</td><td>Yellow</td><td>3.1 &ndash; 4.4</td></tr>
+  <tr><td>Phenolphthalein</td><td>9.3</td><td>Colourless</td><td>Pink</td><td>8.3 &ndash; 10.0</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For weak acid-weak base titrations, there is no steep vertical section on the curve, so no indicator gives a sharp colour change. These titrations cannot be accurately determined using indicators — use a pH meter instead.
+</div>
+
+</div>
+</body>
+</html>

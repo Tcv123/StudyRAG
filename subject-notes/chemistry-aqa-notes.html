@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — AQA Chemistry Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-config.js"></script>
+  <script src="../study-tracker.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EEF5FC;
+      --surface: #FFFFFF;
+      --surface2: #F4F9FE;
+      --border: #D2E5F3;
+      --border-hover: #93C4E2;
+      --text: #1B2D4F;
+      --muted: #6B87A8;
+      --muted2: #A0B8CE;
+      --accent: #5BADCF;
+      --accent-dark: #3D95BC;
+      --accent-dim: rgba(91,173,207,0.1);
+      --accent-glow: rgba(91,173,207,0.2);
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+      --topics-w: 300px;
+    }
+
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    .app { display: flex; height: 100vh; overflow: hidden; }
+
+    .sidebar {
+      width: var(--sidebar-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      padding: 24px 0; flex-shrink: 0;
+      box-shadow: 2px 0 16px rgba(91,173,207,0.08);
+    }
+
+    .sidebar-logo {
+      display: flex; align-items: center; gap: 10px;
+      padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
+    }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted);
+      cursor: pointer; transition: all 0.15s; text-decoration: none;
+      border: none; background: none; width: 100%; text-align: left; font-family: var(--font-body);
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name  { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .user-email { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; flex-shrink: 0; }
+    .logout-btn:hover { color: #DC2626; }
+
+    .topics-panel {
+      width: var(--topics-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      flex-shrink: 0; overflow: hidden;
+    }
+
+    .topics-header {
+      padding: 28px 22px 20px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .topics-subject { font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+    .topics-title { font-family: var(--font-display); font-size: 21px; letter-spacing: -0.01em; }
+    .topics-board {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 10px; padding: 4px 12px; border-radius: 20px;
+      background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.25);
+      font-size: 11px; font-weight: 600; color: var(--accent-dark);
+    }
+
+    .topics-body { flex: 1; overflow-y: auto; padding: 14px; }
+    .topics-body::-webkit-scrollbar { width: 4px; }
+    .topics-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .paper-label {
+      font-size: 10px; font-weight: 600; color: var(--muted2);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 10px 10px 6px; margin-top: 10px;
+    }
+    .paper-label:first-child { margin-top: 0; }
+
+    .topic-btn {
+      display: flex; flex-direction: column;
+      width: 100%; padding: 12px 14px;
+      border: 1px solid transparent; border-radius: 12px;
+      background: none; cursor: pointer; text-align: left;
+      font-family: var(--font-body); transition: all 0.15s;
+      margin-bottom: 6px;
+    }
+    .topic-btn:hover { background: var(--surface2); border-color: var(--border); }
+    .topic-btn.active { background: var(--accent-dim); border-color: rgba(91,173,207,0.3); }
+
+    .topic-main { display: flex; align-items: center; gap: 12px; width: 100%; }
+
+    .topic-num {
+      width: 30px; height: 30px; border-radius: 9px; flex-shrink: 0;
+      background: var(--surface2); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 700; color: var(--muted);
+    }
+    .topic-btn.active .topic-num { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    .topic-info { flex: 1; min-width: 0; }
+    .topic-name { font-size: 13.5px; font-weight: 500; color: var(--text); line-height: 1.4; }
+    .topic-btn.active .topic-name { color: var(--accent-dark); font-weight: 600; }
+    .topic-sub  { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+
+    .rag-dot {
+      width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+      background: var(--border); transition: background 0.3s;
+    }
+    .rag-dot.green { background: #22C55E; box-shadow: 0 0 6px rgba(34,197,94,0.4); }
+    .rag-dot.amber { background: #F59E0B; box-shadow: 0 0 6px rgba(245,158,11,0.4); }
+    .rag-dot.red   { background: #EF4444; box-shadow: 0 0 6px rgba(239,68,68,0.4); }
+
+    .viewer { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+    .viewer-header {
+      padding: 20px 32px; border-bottom: 1px solid var(--border);
+      background: var(--surface); display: flex; align-items: center; justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .viewer-title { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.01em; }
+    .viewer-sub   { font-size: 13px; color: var(--muted); margin-top: 3px; }
+    .viewer-actions { display: flex; gap: 8px; }
+    .viewer-btn {
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 14px; border-radius: 8px;
+      font-size: 13px; font-weight: 500; cursor: pointer;
+      text-decoration: none; transition: all 0.15s;
+      border: 1px solid var(--border); background: var(--surface2); color: var(--muted);
+      font-family: var(--font-body);
+    }
+    .viewer-btn:hover { border-color: var(--border-hover); color: var(--text); }
+    .viewer-btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; border-color: var(--accent);
+      box-shadow: 0 2px 8px var(--accent-glow);
+    }
+    .viewer-btn.primary:hover { filter: brightness(1.05); }
+
+    .pdf-frame { flex: 1; border: none; display: block; }
+
+    .empty-state {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 14px; padding: 48px; text-align: center;
+    }
+    .empty-icon { font-size: 52px; opacity: 0.5; }
+    .empty-title { font-family: var(--font-display); font-size: 22px; color: var(--text); }
+    .empty-sub { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 320px; }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="../Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="../breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item active" href="../notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="../Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" href="../medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="../practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="../auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="../settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials">?</div>
+        <div class="user-info">
+          <div class="user-name"  id="sidebarName">Loading…</div>
+          <div class="user-email" id="sidebarEmail"></div>
+        </div>
+        <button class="logout-btn" onclick="logout()" title="Sign out">⏻</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topics panel -->
+  <div class="topics-panel">
+    <div class="topics-header">
+      <div class="topics-subject">Chemistry</div>
+      <div class="topics-title">Revision Notes</div>
+      <div class="topics-board">🧪 AQA · A-Level</div>
+    </div>
+
+    <div class="topics-body">
+
+      <div class="paper-label">Paper 1 — Physical & Inorganic</div>
+
+      <button class="topic-btn" id="topicBtn-P1" onclick="openTopic(this, 'P1', 'Physical Chemistry I', '../notes-chemistry-aqa/P1_physical_chemistry_1.html')">
+        <div class="topic-main">
+          <div class="topic-num">P1</div>
+          <div class="topic-info">
+            <div class="topic-name">Physical Chemistry I</div>
+            <div class="topic-sub">Atomic structure, bonding, energetics, amount of substance</div>
+          </div>
+          <span class="rag-dot" id="rag-P1"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-I1" onclick="openTopic(this, 'I1', 'Inorganic Chemistry I', '../notes-chemistry-aqa/I1_inorganic_chemistry_1.html')">
+        <div class="topic-main">
+          <div class="topic-num">I1</div>
+          <div class="topic-info">
+            <div class="topic-name">Inorganic Chemistry I</div>
+            <div class="topic-sub">Periodicity, Group 2, Group 7</div>
+          </div>
+          <span class="rag-dot" id="rag-I1"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Paper 2 — Organic & Physical</div>
+
+      <button class="topic-btn" id="topicBtn-O1" onclick="openTopic(this, 'O1', 'Organic Chemistry I', '../notes-chemistry-aqa/O1_organic_chemistry_1.html')">
+        <div class="topic-main">
+          <div class="topic-num">O1</div>
+          <div class="topic-info">
+            <div class="topic-name">Organic Chemistry I</div>
+            <div class="topic-sub">Alkanes, alkenes, halogenoalkanes, alcohols, analysis</div>
+          </div>
+          <span class="rag-dot" id="rag-O1"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-P2" onclick="openTopic(this, 'P2', 'Physical Chemistry II', '../notes-chemistry-aqa/P2_physical_chemistry_2.html')">
+        <div class="topic-main">
+          <div class="topic-num">P2</div>
+          <div class="topic-info">
+            <div class="topic-name">Physical Chemistry II</div>
+            <div class="topic-sub">Kinetics, equilibria, thermodynamics, acids & bases, electrodes</div>
+          </div>
+          <span class="rag-dot" id="rag-P2"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Paper 3 — Synoptic</div>
+
+      <button class="topic-btn" id="topicBtn-I2" onclick="openTopic(this, 'I2', 'Inorganic Chemistry II', '../notes-chemistry-aqa/I2_inorganic_chemistry_2.html')">
+        <div class="topic-main">
+          <div class="topic-num">I2</div>
+          <div class="topic-info">
+            <div class="topic-name">Inorganic Chemistry II</div>
+            <div class="topic-sub">Period 3, transition metals, ions in solution</div>
+          </div>
+          <span class="rag-dot" id="rag-I2"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-O2" onclick="openTopic(this, 'O2', 'Organic Chemistry II', '../notes-chemistry-aqa/O2_organic_chemistry_2.html')">
+        <div class="topic-main">
+          <div class="topic-num">O2</div>
+          <div class="topic-info">
+            <div class="topic-name">Organic Chemistry II</div>
+            <div class="topic-sub">Carbonyls, aromatics, amines, polymers, NMR</div>
+          </div>
+          <span class="rag-dot" id="rag-O2"></span>
+        </div>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- PDF Viewer -->
+  <div class="viewer" id="viewer">
+
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">📄</div>
+      <div class="empty-title">Select a topic</div>
+      <div class="empty-sub">Choose a topic from the list on the left to open your revision notes.</div>
+    </div>
+
+    <div id="viewerContent" style="display:none; flex:1; flex-direction:column; overflow:hidden;">
+      <div class="viewer-header">
+        <div>
+          <div class="viewer-title" id="viewerTitle">Topic</div>
+          <div class="viewer-sub" id="viewerSub">AQA A-Level Chemistry</div>
+        </div>
+        <div class="viewer-actions">
+          <a id="downloadBtn" href="#" download class="viewer-btn">⬇ Download</a>
+          <a id="openBtn" href="#" target="_blank" class="viewer-btn primary">↗ Open full screen</a>
+        </div>
+      </div>
+      <iframe id="pdfFrame" class="pdf-frame" src=""></iframe>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+(async () => {
+  const { data: { user } } = await supabaseClient.auth.getUser();
+  if (!user) { window.location = '../auth/login.html'; return; }
+
+  const { data: profile } = await supabaseClient
+    .from('profiles').select('first_name, last_name').eq('id', user.id).single();
+  const first = profile?.first_name || '';
+  const last  = profile?.last_name  || '';
+  document.getElementById('sidebarName').textContent    = `${first} ${last}`.trim() || user.email;
+  document.getElementById('sidebarEmail').textContent   = user.email;
+  document.getElementById('avatarInitials').textContent = ((first[0]||'')+(last[0]||'')).toUpperCase() || '?';
+
+  const { data: rows } = await supabaseClient
+    .from('topic_progress')
+    .select('topic, rag_status')
+    .eq('user_id', user.id).eq('subject', 'Chemistry').eq('exam_board', 'AQA');
+
+  if (rows) {
+    rows.forEach(row => {
+      const dot = document.getElementById(`rag-${row.topic}`);
+      if (dot) dot.className = `rag-dot ${row.rag_status}`;
+    });
+  }
+})();
+
+async function logout() {
+  await supabaseClient.auth.signOut();
+  window.location = '../auth/login.html';
+}
+
+function openTopic(btn, num, name, path) {
+  document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('viewerContent').style.display = 'flex';
+
+  document.getElementById('viewerTitle').textContent = `${num} — ${name}`;
+  document.getElementById('viewerSub').textContent   = 'AQA A-Level Chemistry';
+
+  document.getElementById('pdfFrame').src     = path;
+  document.getElementById('downloadBtn').href = path;
+  document.getElementById('openBtn').href     = path;
+}
+</script>
+</body>
+</html>

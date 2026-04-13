@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T8 — Control of Gene Expression</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; } ul, ol { margin: 10px 0 15px 25px; } li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; } tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head><body><div class="container">
+
+<h1>T8 — Control of Gene Expression</h1>
+
+<h2>8.1 Gene Expression and Regulation</h2>
+
+<div class="definition">
+<strong>Gene expression:</strong> The process by which genetic information in DNA is used to produce a functional product (usually a protein). Not all genes are expressed in all cells at all times — differential gene expression determines cell specialisation and development.
+</div>
+
+<p>Gene expression can be controlled at several levels:</p>
+<ul>
+<li><strong>Transcriptional level:</strong> Whether or not a gene is transcribed into mRNA (the most common control point)</li>
+<li><strong>Post-transcriptional level:</strong> mRNA processing (alternative splicing, mRNA stability/degradation)</li>
+<li><strong>Translational level:</strong> Whether mRNA is translated (e.g. RNA interference)</li>
+<li><strong>Post-translational level:</strong> Protein modification, activation, or degradation</li>
+</ul>
+
+<h3>Transcription Factors</h3>
+<div class="definition">
+<strong>Transcription factor:</strong> A protein that binds to specific DNA sequences (promoter or enhancer regions) and controls the rate of transcription. Activators increase transcription; repressors decrease or prevent transcription.
+</div>
+
+<p>How transcription factors work:</p>
+<ul>
+<li>Activators bind to enhancer regions and help RNA polymerase bind to the promoter, increasing transcription rate.</li>
+<li>Repressors bind to silencer regions or directly to the promoter, blocking RNA polymerase and preventing transcription.</li>
+<li>Some transcription factors are activated by signalling molecules (e.g. steroid hormones cross the membrane and bind to intracellular receptors that act as transcription factors — oestrogen activates genes involved in female sexual development).</li>
+</ul>
+
+<h3>Epigenetics</h3>
+<div class="definition">
+<strong>Epigenetics:</strong> Heritable changes in gene expression that do not involve changes to the DNA base sequence. These modifications affect whether genes are "switched on" or "switched off" and can be influenced by environmental factors.
+</div>
+
+<p>Two main epigenetic mechanisms:</p>
+
+<p><strong>1. DNA Methylation:</strong></p>
+<ul>
+<li>Methyl groups (-CH<sub>3</sub>) are added to cytosine bases (usually in CpG islands near promoters).</li>
+<li>Methylation typically silences (switches off) gene expression by preventing transcription factors from binding.</li>
+<li>Hypermethylation of tumour suppressor genes can contribute to cancer development.</li>
+<li>Patterns can be inherited through cell division and sometimes across generations.</li>
+</ul>
+
+<p><strong>2. Histone Modification:</strong></p>
+<ul>
+<li>Histones can be acetylated, methylated, or phosphorylated, changing how tightly DNA is wrapped around them.</li>
+<li><strong>Histone acetylation:</strong> Reduces positive charge on histones → DNA wraps less tightly → chromatin is more open (euchromatin) → transcription is promoted.</li>
+<li><strong>Histone deacetylation:</strong> Tighter wrapping → condensed chromatin (heterochromatin) → genes silenced.</li>
+</ul>
+
+<p>Environmental factors that can cause epigenetic changes include: diet, stress, smoking, toxins, and ageing. These changes may explain why identical twins can develop different phenotypes over time despite having the same DNA sequence.</p>
+
+<h3>RNA Interference (RNAi)</h3>
+<div class="definition">
+<strong>RNA interference:</strong> A mechanism of post-transcriptional gene silencing in which small double-stranded RNA molecules (siRNA or miRNA) cause degradation or translational inhibition of complementary mRNA, preventing protein synthesis.
+</div>
+
+<p>Mechanism of RNAi:</p>
+<ol>
+<li>Double-stranded RNA (dsRNA) is processed by the enzyme Dicer into short interfering RNA (siRNA) fragments (~21 nucleotides).</li>
+<li>siRNA is incorporated into RISC (RNA-Induced Silencing Complex).</li>
+<li>One strand of the siRNA guides RISC to the complementary mRNA target.</li>
+<li>RISC either cleaves (cuts) the mRNA (leading to its degradation) or blocks translation by preventing ribosome binding.</li>
+<li>The target gene is effectively silenced — no protein is produced.</li>
+</ol>
+
+<p>Significance of RNAi:</p>
+<ul>
+<li>Defence against viral RNA (many viruses have dsRNA genomes)</li>
+<li>Regulation of gene expression during development</li>
+<li>Potential therapeutic applications — silencing disease-causing genes (e.g. oncogenes, viral genes)</li>
+<li>Research tool for studying gene function (gene knockdown experiments)</li>
+</ul>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Epigenetics is a common topic for extended response questions. Always emphasise that epigenetic changes are heritable but reversible, do not alter the DNA sequence itself, and can be influenced by environmental factors. Link to examples like cancer or twin studies.
+</div>
+
+<h2>8.2 Gene Technology</h2>
+
+<h3>Restriction Enzymes (Restriction Endonucleases)</h3>
+<div class="definition">
+<strong>Restriction enzyme:</strong> An enzyme that cuts DNA at specific recognition sequences (restriction sites), typically 4-8 base pairs long. Some produce "sticky ends" (short single-stranded overhangs) and others produce "blunt ends."
+</div>
+
+<p>Sticky ends are useful in genetic engineering because they allow complementary base pairing with other DNA fragments cut by the same enzyme, facilitating recombination.</p>
+
+<h3>PCR (Polymerase Chain Reaction)</h3>
+<div class="definition">
+<strong>PCR:</strong> A technique for amplifying (making millions of copies of) a specific DNA sequence in vitro. It uses thermal cycling with a heat-stable DNA polymerase (Taq polymerase from Thermus aquaticus).
+</div>
+
+<p>Steps in each PCR cycle (repeated 25-30 times):</p>
+<ol>
+<li><strong>Denaturation (94-96°C):</strong> Heat breaks hydrogen bonds between complementary strands, separating double-stranded DNA into single strands.</li>
+<li><strong>Annealing (50-65°C):</strong> Temperature is lowered so that short DNA primers bind (anneal) to complementary sequences flanking the target region.</li>
+<li><strong>Extension/Elongation (72°C):</strong> Taq polymerase extends the primers, synthesising new complementary strands using free nucleotides (dNTPs). Works at 72°C (optimum for Taq).</li>
+</ol>
+
+<div class="equation">
+Number of copies after n cycles = 2<sup>n</sup> (exponential amplification)
+</div>
+
+<p>Applications of PCR: forensic DNA profiling, genetic testing for hereditary diseases, ancient DNA analysis, detection of pathogens, research cloning.</p>
+
+<h3>Gel Electrophoresis</h3>
+<div class="definition">
+<strong>Gel electrophoresis:</strong> A technique for separating DNA (or protein) fragments by size and charge. Fragments are placed in wells in an agarose gel and an electric field is applied. DNA fragments (negatively charged due to phosphate groups) migrate towards the positive electrode.
+</div>
+
+<p>Smaller fragments move faster and further through the gel matrix. Fragments are visualised using UV fluorescence (after staining with ethidium bromide or SYBR Safe) or autoradiography with radioactive probes.</p>
+
+<p>Applications: DNA fingerprinting/profiling (comparing VNTR or STR patterns), checking PCR products, restriction mapping, Southern blotting.</p>
+
+<h3>Genetic Engineering (Recombinant DNA Technology)</h3>
+<p>Genetic engineering involves isolating a gene from one organism and inserting it into another organism's DNA so that the gene is expressed.</p>
+
+<p>General steps:</p>
+<ol>
+<li><strong>Isolation of the desired gene:</strong> Using restriction enzymes (cut from genomic DNA), reverse transcriptase (mRNA → cDNA), or chemical synthesis (from known amino acid sequence).</li>
+<li><strong>Insertion into a vector:</strong> The gene is ligated (DNA ligase) into a plasmid or viral vector cut with the same restriction enzyme (complementary sticky ends). A promoter sequence is included to drive expression.</li>
+<li><strong>Transformation:</strong> The recombinant vector is introduced into host cells (e.g. bacteria). Methods include heat shock, electroporation, or using CaCl<sub>2</sub> to make cells competent.</li>
+<li><strong>Identification of transformed cells:</strong> Using selectable markers (antibiotic resistance genes, fluorescent markers) or replica plating to identify cells that have taken up the recombinant plasmid.</li>
+<li><strong>Growth and expression:</strong> Transformed cells are cultured; the inserted gene is expressed, producing the desired protein (e.g. human insulin in E. coli).</li>
+</ol>
+
+<h3>Gene Therapy</h3>
+<div class="definition">
+<strong>Gene therapy:</strong> The introduction of a normal/functional copy of a gene into cells to treat a genetic disorder caused by a faulty/absent gene. It does not alter the defective gene itself but provides a working copy.
+</div>
+
+<table>
+<tr><th>Type</th><th>Target Cells</th><th>Inheritance</th><th>Ethics</th></tr>
+<tr><td>Somatic cell gene therapy</td><td>Body cells (e.g. lung epithelial cells in CF)</td><td>NOT inherited by offspring</td><td>Generally accepted</td></tr>
+<tr><td>Germ line gene therapy</td><td>Gametes or early embryo</td><td>IS inherited by offspring</td><td>Controversial and currently illegal in most countries</td></tr>
+</table>
+
+<p>Vectors for gene therapy:</p>
+<ul>
+<li><strong>Viral vectors:</strong> Adenoviruses or retroviruses with pathogenic genes removed. Efficient at entering cells but may trigger immune responses or insert randomly (risk of oncogene activation).</li>
+<li><strong>Liposomes:</strong> Lipid vesicles carrying DNA. Safer but less efficient at delivering DNA into cells.</li>
+</ul>
+
+<p>Example: Cystic fibrosis — attempts to deliver a functional CFTR gene to lung epithelial cells via adenoviral vectors or liposomes inhaled as an aerosol. Challenges include: immune response destroying vectors, temporary expression, difficulty reaching enough cells.</p>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Gene therapy currently works best for monogenic recessive disorders (one gene, need to add a working copy). It is much harder for dominant conditions (need to silence the faulty allele) or polygenic conditions (multiple genes involved).
+</div>
+
+<h2>8.3 Biotechnology</h2>
+
+<h3>Using Microorganisms in Industry</h3>
+<p>Microorganisms are used in industrial biotechnology because they:</p>
+<ul>
+<li>Grow rapidly with short generation times</li>
+<li>Can be genetically modified to produce specific products</li>
+<li>Can use cheap substrates (waste materials)</li>
+<li>Can be grown in fermenters under controlled conditions year-round</li>
+<li>Produce no ethical concerns (unlike animal farming)</li>
+</ul>
+
+<p>Industrial applications:</p>
+<table>
+<tr><th>Product</th><th>Organism</th><th>Method</th></tr>
+<tr><td>Insulin</td><td>Genetically modified E. coli or yeast</td><td>Recombinant DNA technology; human insulin gene expressed in bacteria</td></tr>
+<tr><td>Antibiotics (e.g. penicillin)</td><td>Penicillium chrysogenum</td><td>Batch fermentation</td></tr>
+<tr><td>Mycoprotein (Quorn)</td><td>Fusarium venenatum</td><td>Continuous fermentation in aerobic conditions with glucose syrup</td></tr>
+<tr><td>Enzymes (e.g. proteases, lipases)</td><td>Bacillus species, Aspergillus</td><td>Secreted into culture medium; purified for use in detergents, food processing</td></tr>
+<tr><td>Bioethanol</td><td>Saccharomyces cerevisiae (yeast)</td><td>Anaerobic fermentation of sugars from crops</td></tr>
+</table>
+
+<h3>Fermenters (Bioreactors)</h3>
+<p>Conditions controlled in industrial fermenters:</p>
+<ul>
+<li><strong>Temperature:</strong> Optimum for enzymes; cooling jacket removes metabolic heat</li>
+<li><strong>pH:</strong> Buffers or acid/alkali additions maintain optimum</li>
+<li><strong>Oxygen:</strong> Air sparger and impeller/stirrer for aerobic organisms</li>
+<li><strong>Nutrients:</strong> Continuous or batch addition of carbon source, nitrogen, minerals</li>
+<li><strong>Aseptic conditions:</strong> Sterilisation of vessel and medium; filtered air; prevents contamination by unwanted microorganisms</li>
+</ul>
+
+<h3>Gene Sequencing and Bioinformatics</h3>
+
+<div class="definition">
+<strong>DNA sequencing:</strong> Determining the precise order of nucleotide bases in a DNA molecule. Modern next-generation sequencing (NGS) technologies can sequence entire genomes rapidly and cheaply.
+</div>
+
+<p>Applications of genome sequencing:</p>
+<ul>
+<li>Identifying genes associated with genetic diseases (e.g. BRCA1 and breast cancer)</li>
+<li>Pharmacogenomics — personalised medicine based on individual genetic variation</li>
+<li>Comparative genomics — understanding evolutionary relationships</li>
+<li>Identifying antibiotic resistance genes in pathogens</li>
+<li>Forensic identification (DNA profiling)</li>
+</ul>
+
+<div class="definition">
+<strong>Bioinformatics:</strong> The use of computers and statistical analysis to store, retrieve, and analyse large biological datasets, particularly DNA and protein sequences. Databases allow comparison of sequences between species to identify conserved regions (functional importance) and determine evolutionary relationships.
+</div>
+
+<p>Key bioinformatics tools and databases:</p>
+<ul>
+<li>BLAST (Basic Local Alignment Search Tool) — compares a query sequence against databases to find similar sequences</li>
+<li>GenBank / EMBL / UniProt — public repositories of DNA and protein sequence data</li>
+<li>Phylogenetic tree construction from sequence alignment data</li>
+<li>Protein structure prediction from amino acid sequences</li>
+</ul>
+
+<h3>Ethical, Social, and Legal Issues</h3>
+<p>Gene technology raises important considerations:</p>
+<ul>
+<li><strong>Genetic testing:</strong> Right to know vs. right not to know; insurance/employment discrimination; psychological impact of learning carrier status</li>
+<li><strong>Genetic engineering:</strong> Environmental concerns (GM organisms escaping, gene transfer to wild populations); labelling of GM foods; potential allergenicity of novel proteins</li>
+<li><strong>Gene therapy:</strong> Somatic is generally accepted; germ line raises concerns about "designer babies" and unforeseen effects on future generations</li>
+<li><strong>Cloning:</strong> Reproductive cloning banned in humans; therapeutic cloning (stem cells) is more accepted but still debated</li>
+<li><strong>Ownership:</strong> Gene patents; should natural sequences be owned? Access to genetic technologies in developing countries</li>
+</ul>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> For essay questions on gene technology, always present a balanced view. Discuss benefits (treating disease, improving agriculture) alongside risks and ethical concerns. Use specific named examples (e.g. Bt cotton for pest resistance, golden rice for vitamin A deficiency, CRISPR for gene editing).
+</div>
+
+</div></body></html>

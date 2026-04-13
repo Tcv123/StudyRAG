@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module B2 — Fundamental Data Analysis</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module B2 — Fundamental Data Analysis</h1>
+
+<h2>2.1 Physical Quantities and SI Units</h2>
+
+<div class="definition">
+  <strong>Physical quantity:</strong> A property of an object or phenomenon that can be measured and expressed as a number multiplied by a unit. Every physical quantity has both a magnitude and a unit.
+</div>
+
+<p>Physics is built on a system of well-defined quantities and units. The International System of Units (SI) provides a coherent framework for all measurements in science. There are seven base quantities, each with a corresponding base unit.</p>
+
+<h3>The Seven SI Base Units</h3>
+
+<table>
+  <tr><th>Base Quantity</th><th>Symbol</th><th>SI Base Unit</th><th>Unit Symbol</th></tr>
+  <tr><td>Mass</td><td>m</td><td>kilogram</td><td>kg</td></tr>
+  <tr><td>Length</td><td>l</td><td>metre</td><td>m</td></tr>
+  <tr><td>Time</td><td>t</td><td>second</td><td>s</td></tr>
+  <tr><td>Electric current</td><td>I</td><td>ampere</td><td>A</td></tr>
+  <tr><td>Temperature</td><td>T</td><td>kelvin</td><td>K</td></tr>
+  <tr><td>Amount of substance</td><td>n</td><td>mole</td><td>mol</td></tr>
+  <tr><td>Luminous intensity</td><td>I<sub>v</sub></td><td>candela</td><td>cd</td></tr>
+</table>
+
+<h3>Derived Units</h3>
+<p>All other physical quantities are derived from combinations of the base units. Some derived units are given special names for convenience.</p>
+
+<table>
+  <tr><th>Quantity</th><th>Derived Unit</th><th>In Base Units</th></tr>
+  <tr><td>Force</td><td>newton (N)</td><td>kg m s<sup>&minus;2</sup></td></tr>
+  <tr><td>Energy / Work</td><td>joule (J)</td><td>kg m<sup>2</sup> s<sup>&minus;2</sup></td></tr>
+  <tr><td>Power</td><td>watt (W)</td><td>kg m<sup>2</sup> s<sup>&minus;3</sup></td></tr>
+  <tr><td>Pressure</td><td>pascal (Pa)</td><td>kg m<sup>&minus;1</sup> s<sup>&minus;2</sup></td></tr>
+  <tr><td>Charge</td><td>coulomb (C)</td><td>A s</td></tr>
+  <tr><td>Potential difference</td><td>volt (V)</td><td>kg m<sup>2</sup> s<sup>&minus;3</sup> A<sup>&minus;1</sup></td></tr>
+  <tr><td>Resistance</td><td>ohm (&Omega;)</td><td>kg m<sup>2</sup> s<sup>&minus;3</sup> A<sup>&minus;2</sup></td></tr>
+  <tr><td>Frequency</td><td>hertz (Hz)</td><td>s<sup>&minus;1</sup></td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Being able to derive units from equations is a commonly tested skill. For example, from F = ma, the unit of force is kg &times; m s<sup>&minus;2</sup> = kg m s<sup>&minus;2</sup> = N. You should be able to work backwards too: given units, deduce the equation.
+</div>
+
+<h3>SI Prefixes</h3>
+<p>SI prefixes are used to express very large or very small quantities conveniently.</p>
+
+<table>
+  <tr><th>Prefix</th><th>Symbol</th><th>Factor</th></tr>
+  <tr><td>tera</td><td>T</td><td>10<sup>12</sup></td></tr>
+  <tr><td>giga</td><td>G</td><td>10<sup>9</sup></td></tr>
+  <tr><td>mega</td><td>M</td><td>10<sup>6</sup></td></tr>
+  <tr><td>kilo</td><td>k</td><td>10<sup>3</sup></td></tr>
+  <tr><td>centi</td><td>c</td><td>10<sup>&minus;2</sup></td></tr>
+  <tr><td>milli</td><td>m</td><td>10<sup>&minus;3</sup></td></tr>
+  <tr><td>micro</td><td>&mu;</td><td>10<sup>&minus;6</sup></td></tr>
+  <tr><td>nano</td><td>n</td><td>10<sup>&minus;9</sup></td></tr>
+  <tr><td>pico</td><td>p</td><td>10<sup>&minus;12</sup></td></tr>
+  <tr><td>femto</td><td>f</td><td>10<sup>&minus;15</sup></td></tr>
+</table>
+
+<h2>2.2 Scalars and Vectors</h2>
+
+<div class="definition">
+  <strong>Scalar:</strong> A quantity that has magnitude only. Examples: mass, speed, energy, temperature, distance, time.<br><br>
+  <strong>Vector:</strong> A quantity that has both magnitude and direction. Examples: force, velocity, acceleration, displacement, momentum.
+</div>
+
+<p>Vectors can be represented by arrows, where the length represents the magnitude and the arrow shows the direction. Vectors can be added using the triangle of vectors or parallelogram rule. For perpendicular vectors, use Pythagoras' theorem for the resultant magnitude and trigonometry for the direction.</p>
+
+<h3>Resolving Vectors into Components</h3>
+<p>Any vector can be resolved into two perpendicular components. For a vector of magnitude F at angle &theta; to the horizontal:</p>
+
+<div class="equation">
+  Horizontal component: F<sub>x</sub> = F cos &theta;
+</div>
+<div class="equation">
+  Vertical component: F<sub>y</sub> = F sin &theta;
+</div>
+
+<p>This technique is essential for analysing forces on inclined planes, projectile motion, and many other situations.</p>
+
+<h2>2.3 Estimation and Orders of Magnitude</h2>
+
+<div class="definition">
+  <strong>Order of magnitude:</strong> The power of ten closest to the value of a quantity. Two quantities are said to be of the same order of magnitude if they are within a factor of about 10 of each other.
+</div>
+
+<p>Estimation is a key physics skill. You should be able to make reasonable estimates by combining known quantities. OCR B particularly values this skill and frequently tests it.</p>
+
+<h3>Useful Estimates to Know</h3>
+<table>
+  <tr><th>Quantity</th><th>Approximate Value</th></tr>
+  <tr><td>Mass of an adult human</td><td>70 kg</td></tr>
+  <tr><td>Height of a person</td><td>1.7 m</td></tr>
+  <tr><td>Walking speed</td><td>1.5 m s<sup>&minus;1</sup></td></tr>
+  <tr><td>Speed of sound in air</td><td>340 m s<sup>&minus;1</sup></td></tr>
+  <tr><td>Speed of light</td><td>3 &times; 10<sup>8</sup> m s<sup>&minus;1</sup></td></tr>
+  <tr><td>Atmospheric pressure</td><td>1 &times; 10<sup>5</sup> Pa</td></tr>
+  <tr><td>Density of water</td><td>1000 kg m<sup>&minus;3</sup></td></tr>
+  <tr><td>Acceleration due to gravity (g)</td><td>9.81 m s<sup>&minus;2</sup></td></tr>
+  <tr><td>Diameter of an atom</td><td>~10<sup>&minus;10</sup> m</td></tr>
+  <tr><td>Diameter of a nucleus</td><td>~10<sup>&minus;15</sup> m</td></tr>
+  <tr><td>Mass of an electron</td><td>9.11 &times; 10<sup>&minus;31</sup> kg</td></tr>
+  <tr><td>Mass of a proton/neutron</td><td>1.67 &times; 10<sup>&minus;27</sup> kg</td></tr>
+  <tr><td>Charge of an electron</td><td>1.60 &times; 10<sup>&minus;19</sup> C</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When making estimates, show your working clearly and state any assumptions. Examiners are looking for a sensible approach and a reasonable order of magnitude, not an exact answer. Break the problem into steps using quantities you know.
+</div>
+
+<h2>2.4 Homogeneity of Equations</h2>
+
+<div class="definition">
+  <strong>Homogeneous equation:</strong> An equation in which every term has the same SI base units. A physically valid equation must be homogeneous, though a homogeneous equation is not necessarily physically correct (numerical constants and dimensionless factors cannot be checked).
+</div>
+
+<p>Checking homogeneity (dimensional analysis) is a powerful technique for verifying equations, deriving possible relationships, and spotting errors. To check homogeneity, substitute the base units for each quantity and verify that both sides of the equation reduce to the same combination of base units.</p>
+
+<h3>Worked Example</h3>
+<p>Check the homogeneity of the kinetic energy equation: E<sub>k</sub> = &frac12;mv&sup2;</p>
+<ul>
+  <li>Left side: E<sub>k</sub> has units of J = kg m<sup>2</sup> s<sup>&minus;2</sup></li>
+  <li>Right side: m has units kg, v&sup2; has units (m s<sup>&minus;1</sup>)<sup>2</sup> = m<sup>2</sup> s<sup>&minus;2</sup></li>
+  <li>So the right side gives kg &times; m<sup>2</sup> s<sup>&minus;2</sup> = kg m<sup>2</sup> s<sup>&minus;2</sup></li>
+  <li>Both sides match, so the equation is homogeneous.</li>
+</ul>
+
+<h2>2.5 Graphical Methods</h2>
+
+<p>Graphs are central to data analysis in OCR B Physics. Understanding how to use graphs to determine relationships and extract physical quantities is essential.</p>
+
+<h3>Straight-Line Graphs</h3>
+<p>The equation of a straight line is y = mx + c, where m is the gradient and c is the y-intercept. If experimental data produces a straight line when plotted, the relationship between the variables is linear.</p>
+
+<h3>Linearisation of Non-Linear Relationships</h3>
+<p>Many physical relationships are not linear, but they can be transformed into a straight-line form by choosing appropriate variables to plot.</p>
+
+<table>
+  <tr><th>Relationship</th><th>Plot</th><th>Gradient</th><th>Y-intercept</th></tr>
+  <tr><td>y = kx<sup>2</sup></td><td>y vs x<sup>2</sup></td><td>k</td><td>0</td></tr>
+  <tr><td>y = k/x</td><td>y vs 1/x</td><td>k</td><td>0</td></tr>
+  <tr><td>y = kx<sup>n</sup></td><td>log y vs log x</td><td>n</td><td>log k</td></tr>
+  <tr><td>y = Ae<sup>kx</sup></td><td>ln y vs x</td><td>k</td><td>ln A</td></tr>
+  <tr><td>y = Ae<sup>&minus;x/&tau;</sup></td><td>ln y vs x</td><td>&minus;1/&tau;</td><td>ln A</td></tr>
+  <tr><td>T<sup>2</sup> = (4&pi;<sup>2</sup>/g)l</td><td>T<sup>2</sup> vs l</td><td>4&pi;<sup>2</sup>/g</td><td>0</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> OCR B frequently asks you to suggest what to plot to obtain a straight line. Always rearrange the equation into y = mx + c form first. Whatever is multiplied by the independent variable becomes the gradient. Whatever is left over becomes the intercept.
+</div>
+
+<h3>Using Logarithmic Plots</h3>
+<p>If you suspect a power law (y = kx<sup>n</sup>) but do not know the power n, plot log y against log x. The gradient gives n and the y-intercept gives log k. This is because:</p>
+
+<div class="equation">
+  log y = n log x + log k
+</div>
+
+<p>For exponential relationships (y = Ae<sup>kx</sup>), plot ln y against x. The gradient gives k and the y-intercept gives ln A:</p>
+
+<div class="equation">
+  ln y = kx + ln A
+</div>
+
+<h3>Area Under Graphs</h3>
+<p>The area under a graph often has physical significance. Common examples include:</p>
+<ul>
+  <li>Area under a velocity-time graph = displacement</li>
+  <li>Area under a force-displacement graph = work done (energy transferred)</li>
+  <li>Area under a force-time graph = impulse (change in momentum)</li>
+  <li>Area under a power-time graph = energy transferred</li>
+  <li>Area under a current-time graph = charge</li>
+</ul>
+
+<h2>2.6 Significant Figures and Standard Form</h2>
+
+<h3>Rules for Significant Figures</h3>
+<ul>
+  <li>All non-zero digits are significant</li>
+  <li>Zeros between non-zero digits are significant (e.g., 305 has 3 s.f.)</li>
+  <li>Leading zeros are not significant (e.g., 0.0042 has 2 s.f.)</li>
+  <li>Trailing zeros after a decimal point are significant (e.g., 2.50 has 3 s.f.)</li>
+  <li>Trailing zeros before a decimal point may or may not be significant (use standard form to clarify)</li>
+</ul>
+
+<h3>Standard Form</h3>
+<p>Standard form (scientific notation) expresses numbers as A &times; 10<sup>n</sup> where 1 &le; A &lt; 10. This removes ambiguity about significant figures and makes it easier to work with very large or very small numbers. For example, 0.00340 = 3.40 &times; 10<sup>&minus;3</sup> (3 s.f.).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When performing calculations, carry extra significant figures through intermediate steps and only round the final answer. State your final answer to an appropriate number of significant figures, typically matching the least precise value used in the calculation.
+</div>
+
+<h2>2.7 Mathematical Skills for Physics</h2>
+
+<p>OCR B expects competence in a range of mathematical techniques applied to physics problems:</p>
+
+<ul>
+  <li><strong>Rearranging equations:</strong> Isolate the desired variable by performing inverse operations on both sides</li>
+  <li><strong>Trigonometry:</strong> sin, cos, tan and their inverses for resolving vectors and analysing wave behaviour</li>
+  <li><strong>Pythagoras' theorem:</strong> For finding resultant vectors and distances</li>
+  <li><strong>Logarithms and exponentials:</strong> Particularly for radioactive decay, capacitor discharge, and data analysis</li>
+  <li><strong>Differentiation (conceptual):</strong> The gradient of a displacement-time graph gives velocity; the gradient of a velocity-time graph gives acceleration</li>
+  <li><strong>Integration (conceptual):</strong> The area under a graph represents the integral of the y-quantity with respect to the x-quantity</li>
+</ul>
+
+<div class="definition">
+  <strong>Natural logarithm (ln):</strong> The logarithm to base e (where e &approx; 2.718). If y = e<sup>x</sup>, then x = ln y. Used frequently in exponential decay and growth problems in physics.
+</div>
+
+</div>
+</body>
+</html>

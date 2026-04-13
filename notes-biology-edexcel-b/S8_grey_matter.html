@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S8 — Grey Matter</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>S8 — Grey Matter</h1>
+
+<!-- ============================================================ -->
+<h2>8.1 The Nervous System</h2>
+<!-- ============================================================ -->
+
+<h3>Organisation of the Nervous System</h3>
+
+<div class="definition">
+  <strong>Nervous system:</strong> The organ system responsible for detecting stimuli, processing information, and coordinating rapid responses. It consists of the central nervous system (CNS: brain and spinal cord) and the peripheral nervous system (PNS: sensory and motor neurones).
+</div>
+
+<p>The PNS is divided into the somatic nervous system (voluntary control of skeletal muscles) and the autonomic nervous system (involuntary control of smooth muscle, cardiac muscle, and glands). The autonomic system is further divided into the sympathetic (fight-or-flight) and parasympathetic (rest-and-digest) divisions, which generally have opposing effects.</p>
+
+<h3>Neurone Structure</h3>
+
+<p>Neurones (nerve cells) are specialised for rapid electrical signalling. They have:</p>
+<ul>
+  <li><strong>Cell body (soma):</strong> Contains the nucleus, many mitochondria, and rough ER (Nissl bodies) for protein synthesis.</li>
+  <li><strong>Dendrites:</strong> Short, branching extensions that receive impulses from other neurones or receptors.</li>
+  <li><strong>Axon:</strong> A long, thin extension that carries impulses away from the cell body. May be up to 1 metre long in motor neurones.</li>
+  <li><strong>Myelin sheath:</strong> Formed by Schwann cells wrapping around the axon (in the PNS). Insulates the axon, increasing the speed of impulse transmission. Gaps between Schwann cells are called nodes of Ranvier.</li>
+  <li><strong>Axon terminal (synaptic knob):</strong> Swollen end of the axon containing vesicles of neurotransmitter, mitochondria, and voltage-gated calcium channels.</li>
+</ul>
+
+<table>
+  <tr><th>Neurone Type</th><th>Function</th><th>Structure</th></tr>
+  <tr><td>Sensory</td><td>Carries impulses from receptors to CNS</td><td>Long dendron, short axon, cell body in dorsal root ganglion</td></tr>
+  <tr><td>Motor</td><td>Carries impulses from CNS to effectors</td><td>Short dendrites, long axon, cell body in CNS</td></tr>
+  <tr><td>Relay (interneurone)</td><td>Connects sensory and motor neurones in CNS</td><td>Short fibres, many connections</td></tr>
+</table>
+
+<h3>The Action Potential</h3>
+
+<p>At rest, a neurone has a resting potential of approximately &minus;70 mV (inside negative relative to outside), maintained by the sodium-potassium pump (3 Na<sup>+</sup> out, 2 K<sup>+</sup> in) and potassium leak channels.</p>
+
+<ol>
+  <li><strong>Depolarisation:</strong> A stimulus opens sodium voltage-gated channels. Na<sup>+</sup> ions rush in (down their electrochemical gradient), depolarising the membrane. If the threshold (&minus;55 mV) is reached, more Na<sup>+</sup> channels open (positive feedback), causing rapid depolarisation to approximately +40 mV.</li>
+  <li><strong>Repolarisation:</strong> Na<sup>+</sup> channels close (inactivate) and K<sup>+</sup> voltage-gated channels open. K<sup>+</sup> ions flow out, returning the membrane potential toward resting level.</li>
+  <li><strong>Hyperpolarisation:</strong> K<sup>+</sup> channels close slowly, so the membrane briefly overshoots to about &minus;80 mV.</li>
+  <li><strong>Recovery:</strong> The Na<sup>+</sup>/K<sup>+</sup> pump restores ion concentrations. During the refractory period, the neurone cannot fire again, ensuring unidirectional impulse propagation and limiting firing frequency.</li>
+</ol>
+
+<p>Action potentials are all-or-nothing: if threshold is reached, a full action potential fires; if not, nothing happens. Stimulus intensity is coded by the frequency of action potentials, not their size.</p>
+
+<h3>Saltatory Conduction</h3>
+
+<p>In myelinated neurones, the myelin sheath insulates the axon, preventing ion flow except at nodes of Ranvier. The action potential jumps from node to node (saltatory conduction), greatly increasing the speed of transmission (up to 120 m/s in large myelinated fibres vs 0.5 m/s in unmyelinated fibres). Speed is also increased by larger axon diameter (less internal resistance) and higher temperature (up to a point).</p>
+
+<!-- ============================================================ -->
+<h2>8.2 Synaptic Transmission</h2>
+<!-- ============================================================ -->
+
+<h3>Structure of a Synapse</h3>
+
+<div class="definition">
+  <strong>Synapse:</strong> A junction between two neurones (or a neurone and an effector cell) across which nerve impulses are transmitted chemically via neurotransmitters. The synaptic cleft is the narrow gap (~20 nm) between the presynaptic and postsynaptic membranes.
+</div>
+
+<h3>Mechanism of Synaptic Transmission</h3>
+
+<ol>
+  <li>An action potential arrives at the presynaptic terminal (synaptic knob).</li>
+  <li>Depolarisation opens voltage-gated Ca<sup>2+</sup> channels; Ca<sup>2+</sup> ions flow into the synaptic knob.</li>
+  <li>Ca<sup>2+</sup> causes synaptic vesicles (containing neurotransmitter, e.g., acetylcholine) to fuse with the presynaptic membrane and release their contents into the synaptic cleft by exocytosis.</li>
+  <li>Neurotransmitter diffuses across the cleft and binds to specific receptors on the postsynaptic membrane.</li>
+  <li>Receptor binding opens ligand-gated ion channels (e.g., Na<sup>+</sup> channels), causing depolarisation (excitatory postsynaptic potential, EPSP) or hyperpolarisation (inhibitory postsynaptic potential, IPSP) of the postsynaptic cell.</li>
+  <li>If enough EPSPs summate to reach threshold, an action potential is generated in the postsynaptic neurone.</li>
+  <li>Neurotransmitter is rapidly removed from the cleft by enzymatic breakdown (e.g., acetylcholinesterase breaks down acetylcholine), reuptake into the presynaptic terminal, or diffusion away. This prevents continuous stimulation.</li>
+</ol>
+
+<h3>Summation</h3>
+
+<p><strong>Spatial summation:</strong> Multiple presynaptic neurones release neurotransmitter simultaneously onto the same postsynaptic neurone, and their combined EPSPs reach threshold.</p>
+
+<p><strong>Temporal summation:</strong> A single presynaptic neurone fires repeatedly in rapid succession, and the EPSPs accumulate to reach threshold before they decay.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Synapses ensure unidirectional transmission (vesicles only in presynaptic terminal, receptors only on postsynaptic membrane). They also allow integration of information (summation), amplification (one vesicle contains thousands of neurotransmitter molecules), and can be modified (learning, drugs).
+</div>
+
+<!-- ============================================================ -->
+<h2>8.3 The Brain</h2>
+<!-- ============================================================ -->
+
+<h3>Brain Structure and Function</h3>
+
+<table>
+  <tr><th>Region</th><th>Function</th></tr>
+  <tr><td>Cerebrum (cerebral cortex)</td><td>Higher functions: conscious thought, reasoning, language, voluntary movement, sensory perception, memory, personality. Divided into two hemispheres with specialised lobes (frontal, parietal, temporal, occipital).</td></tr>
+  <tr><td>Cerebellum</td><td>Coordination of voluntary movement, balance, posture, motor learning. Receives input from proprioceptors, eyes, and ears.</td></tr>
+  <tr><td>Medulla oblongata</td><td>Autonomic functions: heart rate, breathing rate, blood pressure, swallowing, vomiting. Contains cardiovascular and respiratory centres.</td></tr>
+  <tr><td>Hypothalamus</td><td>Homeostasis: thermoregulation, osmoregulation, hunger/thirst, circadian rhythms. Links nervous and endocrine systems via the pituitary gland.</td></tr>
+  <tr><td>Thalamus</td><td>Relay station: processes and routes sensory information to appropriate cortical areas.</td></tr>
+  <tr><td>Hippocampus</td><td>Formation of new long-term memories; spatial navigation.</td></tr>
+</table>
+
+<h3>Methods of Studying the Brain</h3>
+
+<ul>
+  <li><strong>fMRI (functional magnetic resonance imaging):</strong> Detects changes in blood oxygenation to map active brain regions during tasks. Non-invasive, good spatial resolution, but temporal resolution is limited and it shows correlation not causation.</li>
+  <li><strong>CT/MRI scans:</strong> Structural imaging showing anatomy, tumours, damage. MRI provides better soft tissue contrast than CT.</li>
+  <li><strong>EEG (electroencephalography):</strong> Records electrical activity across the scalp. Good temporal resolution; used to study sleep, epilepsy. Poor spatial resolution.</li>
+  <li><strong>Studies of brain damage:</strong> Patients with specific lesions reveal function of damaged areas (e.g., Broca's area damage causes speech production problems).</li>
+  <li><strong>Electrical stimulation:</strong> Direct stimulation during surgery can map motor and sensory cortex.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>8.4 Vision</h2>
+<!-- ============================================================ -->
+
+<h3>Structure of the Eye</h3>
+
+<p>The human eye focuses light onto the retina, which contains photoreceptors that convert light into electrical signals. Key structures include the cornea (most refraction), iris (controls pupil size and light entry), lens (fine focusing by accommodation), vitreous humour (maintains eye shape), and retina (contains photoreceptors).</p>
+
+<h3>Photoreceptors</h3>
+
+<table>
+  <tr><th>Feature</th><th>Rod Cells</th><th>Cone Cells</th></tr>
+  <tr><td>Sensitivity</td><td>Very sensitive (work in dim light)</td><td>Less sensitive (need bright light)</td></tr>
+  <tr><td>Visual acuity</td><td>Low (many rods converge onto one bipolar cell &mdash; retinal convergence)</td><td>High (one cone per bipolar cell in fovea)</td></tr>
+  <tr><td>Colour vision</td><td>No (only contain rhodopsin; monochromatic)</td><td>Yes (three types with different opsins for red, green, blue)</td></tr>
+  <tr><td>Distribution</td><td>Mostly peripheral retina</td><td>Concentrated in fovea</td></tr>
+  <tr><td>Pigment</td><td>Rhodopsin (bleached by light; regenerated in dark)</td><td>Iodopsin (three types)</td></tr>
+</table>
+
+<p>When light hits rhodopsin in rod cells, it breaks down (bleaching), triggering a signal transduction cascade that hyperpolarises the cell and reduces neurotransmitter release. This change is detected by bipolar cells, which relay signals to ganglion cells whose axons form the optic nerve.</p>
+
+<h3>The Critical Period and Visual Development</h3>
+
+<p>There is a critical period in early development during which visual experience is essential for normal development of the visual cortex. Lack of stimulation during this period (e.g., due to cataracts or strabismus) can lead to permanent visual impairment (amblyopia) even if the physical defect is later corrected. This demonstrates neural plasticity during development &mdash; connections that are used are strengthened while unused connections are pruned.</p>
+
+<!-- ============================================================ -->
+<h2>8.5 Learning, Memory, and Habituation</h2>
+<!-- ============================================================ -->
+
+<h3>Types of Learning</h3>
+
+<div class="definition">
+  <strong>Learning:</strong> A relatively permanent change in behaviour as a result of experience. It involves changes in the structure and function of synapses (synaptic plasticity).
+</div>
+
+<ul>
+  <li><strong>Habituation:</strong> A reduction in response to a repeated, harmless stimulus. The organism learns to ignore irrelevant stimuli, conserving energy. Involves a decrease in neurotransmitter release at synapses in the reflex pathway (fewer Ca<sup>2+</sup> channels open, less vesicle fusion).</li>
+  <li><strong>Classical conditioning (Pavlovian):</strong> Associating a neutral stimulus with an unconditioned stimulus until the neutral stimulus alone produces the response (conditioned response). Example: Pavlov's dogs salivating at the sound of a bell.</li>
+  <li><strong>Operant conditioning:</strong> Learning through reinforcement (reward) or punishment. Behaviour followed by positive consequences is repeated; behaviour followed by negative consequences is reduced.</li>
+</ul>
+
+<h3>Memory</h3>
+
+<p><strong>Short-term memory (STM):</strong> Limited capacity (~7 items), short duration (seconds to minutes). Maintained by reverberating circuits &mdash; repeated firing of neurones in closed loops.</p>
+
+<p><strong>Long-term memory (LTM):</strong> Potentially unlimited capacity and duration. Requires consolidation &mdash; the transfer of information from STM to LTM. This involves structural changes at synapses (long-term potentiation, LTP): formation of new synaptic connections, increased receptor density, increased neurotransmitter release, and growth of new dendritic spines. The hippocampus is critical for forming new declarative (factual) memories.</p>
+
+<h3>Long-Term Potentiation (LTP)</h3>
+
+<p>LTP is a long-lasting increase in synaptic strength following high-frequency stimulation. It is considered the cellular basis of learning and memory. Repeated stimulation leads to increased neurotransmitter release, more postsynaptic receptors (especially NMDA and AMPA glutamate receptors), and structural changes that make the synapse more efficient. This is summarised as "neurones that fire together, wire together" (Hebb's rule).</p>
+
+<!-- ============================================================ -->
+<h2>8.6 Drugs and the Brain</h2>
+<!-- ============================================================ -->
+
+<h3>How Drugs Affect Synapses</h3>
+
+<p>Psychoactive drugs alter brain function by modifying synaptic transmission. They can act as:</p>
+<ul>
+  <li><strong>Agonists:</strong> Mimic the neurotransmitter and bind to receptors, producing the same effect (e.g., nicotine mimics acetylcholine).</li>
+  <li><strong>Antagonists:</strong> Block receptors, preventing the neurotransmitter from binding (e.g., curare blocks acetylcholine receptors at neuromuscular junctions).</li>
+  <li><strong>Reuptake inhibitors:</strong> Block reuptake of neurotransmitter, prolonging its effect in the synapse (e.g., SSRIs block serotonin reuptake; cocaine blocks dopamine reuptake).</li>
+  <li><strong>Enzyme inhibitors:</strong> Block enzymes that break down neurotransmitters, increasing their concentration (e.g., nerve gases inhibit acetylcholinesterase).</li>
+  <li><strong>Release stimulators:</strong> Increase neurotransmitter release from presynaptic terminals (e.g., amphetamines increase dopamine release).</li>
+</ul>
+
+<h3>Dopamine and Addiction</h3>
+
+<p>The brain's reward pathway (mesolimbic pathway) uses dopamine as a neurotransmitter. Activities that promote survival (eating, social bonding) naturally stimulate dopamine release, creating feelings of pleasure and reinforcing the behaviour. Addictive drugs hijack this system by flooding synapses with dopamine, producing intense pleasure and reinforcing drug-taking behaviour. Over time, the brain downregulates dopamine receptors (tolerance), requiring more of the drug for the same effect, and creating withdrawal symptoms when the drug is absent.</p>
+
+<!-- ============================================================ -->
+<h2>8.7 Neurodegenerative Diseases</h2>
+<!-- ============================================================ -->
+
+<h3>Parkinson's Disease</h3>
+
+<div class="definition">
+  <strong>Parkinson's disease:</strong> A progressive neurodegenerative disorder caused by the death of dopamine-producing neurones in the substantia nigra (a region of the midbrain). Loss of dopamine disrupts the basal ganglia circuits that control movement.
+</div>
+
+<p>Symptoms include tremor at rest, rigidity (stiff muscles), bradykinesia (slow movement), postural instability, and eventually cognitive decline. Treatment includes L-DOPA (a dopamine precursor that can cross the blood-brain barrier and be converted to dopamine in the brain), dopamine agonists, and deep brain stimulation. L-DOPA becomes less effective over time and can cause side effects.</p>
+
+<h3>Alzheimer's Disease</h3>
+
+<div class="definition">
+  <strong>Alzheimer's disease:</strong> A progressive neurodegenerative disease and the most common cause of dementia. Characterised by the formation of amyloid plaques (aggregates of beta-amyloid protein between neurones) and neurofibrillary tangles (twisted tau protein filaments inside neurones) that lead to neuronal death.
+</div>
+
+<p>The disease primarily affects the hippocampus and cerebral cortex. Early symptoms include memory loss (especially recent events), confusion, and difficulty with language. As the disease progresses, patients lose the ability to perform daily tasks, experience personality changes, and eventually lose recognition of family members. There is no cure; current treatments (acetylcholinesterase inhibitors such as donepezil) only temporarily slow symptom progression by increasing acetylcholine levels in the brain.</p>
+
+<p>Risk factors include age (strongest risk factor), genetics (APOE4 allele, familial mutations in APP, presenilin genes), head injuries, cardiovascular disease risk factors, and possibly environmental factors. Research into disease-modifying treatments (anti-amyloid antibodies, tau-targeting therapies) is ongoing.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When comparing Parkinson's and Alzheimer's, note the key differences: Parkinson's primarily affects movement (dopamine loss in substantia nigra), while Alzheimer's primarily affects memory and cognition (widespread cortical neurone loss with plaques and tangles). Both are progressive and currently incurable, but their mechanisms, symptoms, and treatments differ significantly.
+</div>
+
+</div>
+</body>
+</html>

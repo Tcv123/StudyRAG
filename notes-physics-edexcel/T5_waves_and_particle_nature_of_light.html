@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 5 — Waves and Particle Nature of Light</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #1e3a5f;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 4px solid #2563eb;
+            padding-left: 12px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #334155;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        .definition-box {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before {
+            content: "Exam Tip: ";
+            font-weight: 700;
+            color: #b45309;
+        }
+        .equation {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 1.1rem;
+            background: #f8fafc;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        strong {
+            color: #1e3a5f;
+        }
+        @media print {
+            body { padding: 20px; }
+            .exam-tip, .definition-box { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Topic 5 — Waves and Particle Nature of Light</h1>
+
+        <h2>5.1 Types of Waves</h2>
+        <div class="definition-box">
+            <p><strong>Transverse wave:</strong> The oscillations are perpendicular to the direction of energy transfer. Examples: light, all electromagnetic waves, water waves, waves on a string.</p>
+            <p><strong>Longitudinal wave:</strong> The oscillations are parallel to the direction of energy transfer. Examples: sound waves, ultrasound, pressure waves.</p>
+        </div>
+
+        <p>Longitudinal waves consist of <strong>compressions</strong> (regions of high pressure/density) and <strong>rarefactions</strong> (regions of low pressure/density).</p>
+
+        <h2>5.2 Wave Properties</h2>
+        <table>
+            <tr><th>Quantity</th><th>Definition</th><th>Unit</th></tr>
+            <tr><td><strong>Wavelength (&lambda;)</strong></td><td>Distance between two consecutive points in phase (e.g., crest to crest)</td><td>m</td></tr>
+            <tr><td><strong>Frequency (f)</strong></td><td>Number of complete oscillations per second</td><td>Hz (s<sup>-1</sup>)</td></tr>
+            <tr><td><strong>Period (T)</strong></td><td>Time for one complete oscillation</td><td>s</td></tr>
+            <tr><td><strong>Amplitude (A)</strong></td><td>Maximum displacement from the equilibrium position</td><td>m</td></tr>
+            <tr><td><strong>Wave speed (v)</strong></td><td>Distance travelled by the wave per unit time</td><td>m s<sup>-1</sup></td></tr>
+        </table>
+
+        <div class="equation">
+            v = f&lambda;
+        </div>
+        <div class="equation">
+            T = 1 / f
+        </div>
+
+        <h3>Phase Difference</h3>
+        <div class="definition-box">
+            <strong>Phase difference</strong> describes how much one wave is "ahead" or "behind" another. It is measured in degrees (0&deg; to 360&deg;) or radians (0 to 2&pi;).
+        </div>
+        <ul>
+            <li><strong>In phase:</strong> Phase difference = 0&deg; (or 360&deg;, or 2&pi;). The waves oscillate together.</li>
+            <li><strong>Antiphase (completely out of phase):</strong> Phase difference = 180&deg; (or &pi;). One wave is at a crest while the other is at a trough.</li>
+        </ul>
+        <div class="equation">
+            Phase difference = (&Delta;x / &lambda;) &times; 360&deg; &nbsp;&nbsp; or &nbsp;&nbsp; (&Delta;x / &lambda;) &times; 2&pi; rad
+        </div>
+        <p>where &Delta;x is the path difference (difference in distance from the two sources to the point).</p>
+
+        <h2>5.3 Superposition and Interference</h2>
+        <div class="definition-box">
+            <strong>Principle of superposition:</strong> When two or more waves overlap at a point, the resultant displacement equals the vector sum of the individual displacements.
+        </div>
+
+        <h3>Interference</h3>
+        <ul>
+            <li><strong>Constructive interference:</strong> Waves arrive in phase (path difference = n&lambda;). The resultant amplitude is maximised.</li>
+            <li><strong>Destructive interference:</strong> Waves arrive in antiphase (path difference = (n + &frac12;)&lambda;). The resultant amplitude is minimised (zero for equal amplitudes).</li>
+        </ul>
+
+        <h3>Conditions for Observable Interference</h3>
+        <ul>
+            <li>The sources must be <strong>coherent</strong> — they have a constant phase relationship (same frequency).</li>
+            <li>The waves must have similar amplitudes for complete cancellation.</li>
+            <li>For transverse waves, they must be polarised in the same plane (or unpolarised).</li>
+        </ul>
+
+        <h3>Young's Double Slit Experiment</h3>
+        <p>When coherent light passes through two narrow slits, an interference pattern of bright and dark fringes is observed on a screen.</p>
+        <div class="equation">
+            w = &lambda;D / d
+        </div>
+        <p>where w = fringe spacing, &lambda; = wavelength, D = distance from slits to screen, d = slit separation.</p>
+
+        <div class="exam-tip">
+            Young's double slit experiment provides evidence for the wave nature of light. It only works because both slits act as coherent sources (derived from the same wavefront).
+        </div>
+
+        <h2>5.4 Stationary (Standing) Waves</h2>
+        <div class="definition-box">
+            A <strong>stationary wave</strong> is formed by the superposition of two progressive waves of equal frequency and amplitude travelling in opposite directions. Energy is stored but not transferred along the wave.
+        </div>
+
+        <h3>Key Features</h3>
+        <ul>
+            <li><strong>Nodes:</strong> Points of zero displacement (destructive interference). They are always stationary.</li>
+            <li><strong>Antinodes:</strong> Points of maximum displacement (constructive interference). They oscillate with maximum amplitude.</li>
+            <li>The distance between adjacent nodes (or adjacent antinodes) = &lambda;/2.</li>
+            <li>All points between two nodes oscillate in phase with each other.</li>
+            <li>Points on opposite sides of a node are in antiphase (180&deg; out of phase).</li>
+        </ul>
+
+        <h3>Harmonics on a String</h3>
+        <table>
+            <tr><th>Harmonic</th><th>Pattern</th><th>Frequency</th><th>Wavelength</th></tr>
+            <tr><td>1st (fundamental)</td><td>1 antinode, 2 nodes (at ends)</td><td>f<sub>0</sub></td><td>&lambda; = 2L</td></tr>
+            <tr><td>2nd</td><td>2 antinodes, 3 nodes</td><td>2f<sub>0</sub></td><td>&lambda; = L</td></tr>
+            <tr><td>3rd</td><td>3 antinodes, 4 nodes</td><td>3f<sub>0</sub></td><td>&lambda; = 2L/3</td></tr>
+            <tr><td>nth</td><td>n antinodes, (n+1) nodes</td><td>nf<sub>0</sub></td><td>&lambda; = 2L/n</td></tr>
+        </table>
+
+        <h3>Stationary Waves in Pipes</h3>
+        <ul>
+            <li><strong>Closed pipe (one end closed):</strong> Node at closed end, antinode at open end. Only odd harmonics (1st, 3rd, 5th...). Fundamental: &lambda; = 4L.</li>
+            <li><strong>Open pipe (both ends open):</strong> Antinodes at both ends. All harmonics present. Fundamental: &lambda; = 2L.</li>
+        </ul>
+
+        <h2>5.5 Diffraction</h2>
+        <div class="definition-box">
+            <strong>Diffraction</strong> is the spreading of a wave as it passes through a gap or around an obstacle. It is most significant when the gap width is approximately equal to the wavelength.
+        </div>
+
+        <h3>Single Slit Diffraction</h3>
+        <p>A single slit produces a central maximum that is twice the width of the subsidiary maxima. The central maximum contains most of the energy. The minima occur when the path difference across the slit = n&lambda;.</p>
+
+        <h3>Diffraction Grating</h3>
+        <p>A diffraction grating has many equally spaced slits. It produces sharp, bright maxima at specific angles.</p>
+        <div class="equation">
+            d sin &theta; = n&lambda;
+        </div>
+        <p>where d = slit spacing (distance between centres of adjacent slits), &theta; = angle of the nth order maximum, n = order number (0, 1, 2, ...), &lambda; = wavelength.</p>
+        <p>The slit spacing is: d = 1 / N, where N is the number of slits per metre.</p>
+
+        <div class="exam-tip">
+            The maximum order observable is found by setting sin &theta; = 1 (i.e., &theta; = 90&deg;): n<sub>max</sub> = d / &lambda; (rounded down to the nearest integer). Remember d must be in metres.
+        </div>
+
+        <h2>5.6 Refraction</h2>
+        <div class="definition-box">
+            <strong>Refraction</strong> is the change in direction of a wave as it passes from one medium to another, caused by a change in wave speed. The frequency remains constant; the wavelength changes.
+        </div>
+
+        <h3>Snell's Law</h3>
+        <div class="equation">
+            n<sub>1</sub> sin &theta;<sub>1</sub> = n<sub>2</sub> sin &theta;<sub>2</sub>
+        </div>
+        <p>where n = refractive index of the medium, &theta; = angle measured from the normal.</p>
+        <div class="equation">
+            n = c / v
+        </div>
+        <p>where c = speed of light in a vacuum (3.00 &times; 10<sup>8</sup> m s<sup>-1</sup>) and v = speed of light in the medium.</p>
+
+        <h3>Total Internal Reflection</h3>
+        <div class="definition-box">
+            <strong>Total internal reflection (TIR)</strong> occurs when light travelling in a denser medium hits the boundary with a less dense medium at an angle greater than the critical angle. All light is reflected back into the denser medium.
+        </div>
+        <p>Conditions for TIR:</p>
+        <ul>
+            <li>Light must be travelling from a more optically dense medium to a less optically dense medium (n<sub>1</sub> &gt; n<sub>2</sub>).</li>
+            <li>The angle of incidence must be greater than the critical angle.</li>
+        </ul>
+        <div class="equation">
+            sin &theta;<sub>c</sub> = n<sub>2</sub> / n<sub>1</sub>
+        </div>
+        <p>For a material-to-air boundary (n<sub>2</sub> = 1): sin &theta;<sub>c</sub> = 1/n</p>
+
+        <h2>5.7 Lenses</h2>
+        <h3>Converging (Convex) Lens</h3>
+        <ul>
+            <li>Converges parallel rays to the <strong>principal focus (F)</strong> on the other side of the lens.</li>
+            <li>Focal length (f) is positive.</li>
+            <li>Can produce real or virtual images depending on object distance.</li>
+        </ul>
+
+        <h3>Diverging (Concave) Lens</h3>
+        <ul>
+            <li>Diverges parallel rays so they appear to come from the principal focus on the same side as the incoming light.</li>
+            <li>Focal length (f) is negative.</li>
+            <li>Always produces virtual, upright, diminished images.</li>
+        </ul>
+
+        <h3>The Lens Equation</h3>
+        <div class="equation">
+            1/f = 1/v + 1/u
+        </div>
+        <p>where f = focal length, v = image distance, u = object distance. Use the sign convention: real is positive, virtual is negative.</p>
+
+        <h3>Magnification</h3>
+        <div class="equation">
+            magnification = image height / object height = v / u
+        </div>
+
+        <h3>Power of a Lens</h3>
+        <div class="equation">
+            P = 1 / f
+        </div>
+        <p>where P is measured in dioptres (D) and f is in metres. Converging lenses have positive power; diverging lenses have negative power.</p>
+
+        <h2>5.8 Electromagnetic Spectrum</h2>
+        <p>All electromagnetic waves travel at the speed of light in a vacuum (c = 3.00 &times; 10<sup>8</sup> m s<sup>-1</sup>) and are transverse waves. They differ only in wavelength and frequency.</p>
+        <table>
+            <tr><th>Type</th><th>Wavelength Range</th><th>Typical Use</th></tr>
+            <tr><td>Radio waves</td><td>&gt; 0.1 m</td><td>Communications, broadcasting</td></tr>
+            <tr><td>Microwaves</td><td>0.1 m to 1 mm</td><td>Cooking, satellite communication</td></tr>
+            <tr><td>Infrared</td><td>1 mm to 700 nm</td><td>Heating, thermal imaging, remote controls</td></tr>
+            <tr><td>Visible light</td><td>700 nm to 400 nm</td><td>Vision, optical fibres</td></tr>
+            <tr><td>Ultraviolet</td><td>400 nm to 10 nm</td><td>Sterilisation, fluorescence</td></tr>
+            <tr><td>X-rays</td><td>10 nm to 0.01 nm</td><td>Medical imaging, security scanning</td></tr>
+            <tr><td>Gamma rays</td><td>&lt; 0.01 nm</td><td>Cancer treatment, sterilisation</td></tr>
+        </table>
+
+        <h2>5.9 Photoelectric Effect</h2>
+        <div class="definition-box">
+            The <strong>photoelectric effect</strong> is the emission of electrons from a metal surface when electromagnetic radiation of sufficiently high frequency is incident upon it. It provides evidence for the particle nature of light.
+        </div>
+
+        <h3>Key Observations</h3>
+        <ul>
+            <li>Emission occurs instantaneously (no time delay).</li>
+            <li>Below a certain <strong>threshold frequency (f<sub>0</sub>)</strong>, no electrons are emitted regardless of intensity.</li>
+            <li>Increasing intensity increases the number of electrons emitted (rate of emission), not their maximum kinetic energy.</li>
+            <li>Increasing frequency increases the maximum kinetic energy of the emitted electrons.</li>
+        </ul>
+
+        <h3>Einstein's Photoelectric Equation</h3>
+        <div class="equation">
+            hf = &phi; + E<sub>k(max)</sub>
+        </div>
+        <p>where h = Planck's constant (6.63 &times; 10<sup>-34</sup> J s), f = frequency of incident photon, &phi; = work function (minimum energy needed to release an electron), E<sub>k(max)</sub> = maximum kinetic energy of emitted photoelectron.</p>
+
+        <div class="equation">
+            &phi; = hf<sub>0</sub>
+        </div>
+        <p>where f<sub>0</sub> is the threshold frequency.</p>
+
+        <div class="exam-tip">
+            The photoelectric effect cannot be explained by the wave model. Waves would predict that any frequency could cause emission (given enough time and intensity), and that there would be a time delay. The photon model explains all observations.
+        </div>
+
+        <h2>5.10 Wave-Particle Duality</h2>
+        <div class="definition-box">
+            <strong>Wave-particle duality:</strong> All matter and radiation exhibit both wave and particle properties. Light can behave as a wave (diffraction, interference) and as a particle (photoelectric effect). Electrons can behave as particles (deflection by fields) and as waves (electron diffraction).
+        </div>
+
+        <h3>de Broglie Wavelength</h3>
+        <p>Every moving particle has an associated wavelength, called its <strong>de Broglie wavelength</strong>:</p>
+        <div class="equation">
+            &lambda; = h / mv = h / p
+        </div>
+        <p>where h = Planck's constant, m = mass, v = velocity, p = momentum.</p>
+        <p>The faster the particle, or the more massive it is, the shorter its de Broglie wavelength. Wave-like behaviour is only observable when the wavelength is comparable to the size of the obstacles/gaps (e.g., electrons diffracted by atomic spacing).</p>
+
+        <h2>5.11 Energy Levels and Photon Emission</h2>
+        <div class="definition-box">
+            Electrons in atoms exist in discrete <strong>energy levels</strong>. The ground state is the lowest energy level. When an electron transitions between energy levels, it emits or absorbs a photon of specific energy.
+        </div>
+
+        <h3>Photon Energy</h3>
+        <div class="equation">
+            E = hf = hc / &lambda;
+        </div>
+
+        <h3>Transitions Between Energy Levels</h3>
+        <div class="equation">
+            &Delta;E = E<sub>2</sub> - E<sub>1</sub> = hf
+        </div>
+        <p>where &Delta;E is the difference in energy between two levels.</p>
+
+        <ul>
+            <li><strong>Emission:</strong> An electron drops from a higher energy level to a lower one, emitting a photon with energy equal to the difference between the levels.</li>
+            <li><strong>Absorption:</strong> An electron absorbs a photon and moves from a lower energy level to a higher one. The photon energy must exactly match the energy gap.</li>
+            <li><strong>Line spectra:</strong> Because energy levels are discrete, only certain wavelengths of light are emitted or absorbed. This produces emission line spectra (bright lines on dark background) and absorption line spectra (dark lines on continuous spectrum).</li>
+        </ul>
+
+        <h3>The Electronvolt</h3>
+        <div class="definition-box">
+            The <strong>electronvolt (eV)</strong> is a unit of energy. It is the energy gained by one electron when it is accelerated through a potential difference of 1 volt.
+        </div>
+        <div class="equation">
+            1 eV = 1.60 &times; 10<sup>-19</sup> J
+        </div>
+
+        <div class="exam-tip">
+            Energy levels are often given in eV. Always convert to joules (multiply by 1.60 &times; 10<sup>-19</sup>) before using E = hf to calculate frequency or wavelength. Remember that energy levels are negative (bound states) and the ground state is the most negative.
+        </div>
+    </div>
+</body>
+</html>

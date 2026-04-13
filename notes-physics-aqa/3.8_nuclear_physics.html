@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.8 Nuclear Physics — AQA A-Level Physics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>3.8 Nuclear Physics</h1>
+
+<!-- RADIOACTIVITY -->
+<h2>1. Radioactive Radiation</h2>
+
+<div class="def-box"><strong>Radioactive decay:</strong> The spontaneous and random emission of radiation from an unstable nucleus. Spontaneous means it is not affected by external conditions (temperature, pressure, etc.). Random means it is impossible to predict which nucleus will decay next.</div>
+
+<h3>Types of Radiation</h3>
+<table>
+  <tr><th>Property</th><th>Alpha (&alpha;)</th><th>Beta-minus (&beta;<sup>-</sup>)</th><th>Gamma (&gamma;)</th></tr>
+  <tr><td>Nature</td><td>Helium nucleus (<sup>4</sup><sub>2</sub>He)</td><td>High-speed electron</td><td>Electromagnetic radiation (photon)</td></tr>
+  <tr><td>Charge</td><td>+2e</td><td>&minus;1e</td><td>0</td></tr>
+  <tr><td>Mass</td><td>4u (heaviest)</td><td>~1/1836 u</td><td>0 (massless)</td></tr>
+  <tr><td>Ionising ability</td><td>Strongest</td><td>Moderate</td><td>Weakest</td></tr>
+  <tr><td>Penetrating power</td><td>Weakest (stopped by paper / few cm of air)</td><td>Moderate (stopped by ~3 mm aluminium)</td><td>Strongest (reduced by thick lead / concrete)</td></tr>
+  <tr><td>Deflection in E/B fields</td><td>Deflected (toward &minus; plate / less curved)</td><td>Deflected (toward + plate / more curved)</td><td>Not deflected</td></tr>
+  <tr><td>Speed</td><td>~5% of c</td><td>Up to ~99% of c</td><td>c (speed of light)</td></tr>
+</table>
+
+<h3>Nuclear Equations</h3>
+<p><strong>Alpha decay:</strong></p>
+<div class="eq"><sup>A</sup><sub>Z</sub>X &rarr; <sup>A&minus;4</sup><sub>Z&minus;2</sub>Y + <sup>4</sup><sub>2</sub>&alpha;</div>
+
+<p><strong>Beta-minus decay:</strong></p>
+<div class="eq"><sup>A</sup><sub>Z</sub>X &rarr; <sup>A</sup><sub>Z+1</sub>Y + <sup>0</sup><sub>&minus;1</sub>&beta; + <span style="text-decoration:overline;">&nu;</span><sub>e</sub></div>
+
+<p><strong>Gamma emission:</strong> No change in A or Z. The nucleus loses energy by emitting a gamma photon. Often follows alpha or beta decay (the daughter nucleus is left in an excited state).</p>
+
+<p>In all nuclear equations: mass number (A) and atomic number (Z) are conserved on both sides.</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> The existence of the neutrino was proposed to explain the continuous energy spectrum of beta particles. If only two particles were produced, conservation of energy and momentum would require a fixed kinetic energy for the electron. The variable energy implies a third particle (the antineutrino) carries away the remaining energy.</div>
+
+<!-- RADIOACTIVE DECAY -->
+<h2>2. Radioactive Decay and Half-Life</h2>
+
+<div class="def-box"><strong>Activity (A):</strong> The rate of decay (number of disintegrations per second). A = &lambda;N. Units: Bq (becquerels). 1 Bq = 1 decay per second.</div>
+
+<div class="def-box"><strong>Decay constant (&lambda;):</strong> The probability of a given nucleus decaying per unit time. Units: s<sup>-1</sup>.</div>
+
+<div class="def-box"><strong>Half-life (t<sub>&frac12;</sub>):</strong> The time taken for the number of radioactive nuclei (or the activity) to halve.</div>
+
+<div class="eq">&lambda; = ln 2 / t<sub>&frac12;</sub> = 0.693 / t<sub>&frac12;</sub></div>
+
+<h3>Exponential Decay Equations</h3>
+<div class="eq">N = N<sub>0</sub>e<sup>&minus;&lambda;t</sup></div>
+<div class="eq">A = A<sub>0</sub>e<sup>&minus;&lambda;t</sup></div>
+<p>where N<sub>0</sub> = initial number of undecayed nuclei, A<sub>0</sub> = initial activity, t = time.</p>
+
+<h3>Graphical Methods</h3>
+<ul>
+  <li>A plot of N (or A) against t gives an exponential decay curve.</li>
+  <li>A plot of ln N against t gives a straight line with gradient &minus;&lambda; and y-intercept ln N<sub>0</sub>.</li>
+  <li>Half-life can be read from the decay curve: the time for the value to drop to half.</li>
+</ul>
+
+<div class="tip-box"><strong>Exam Tip:</strong> After n half-lives, the fraction remaining is (1/2)<sup>n</sup>. So after 3 half-lives, 1/8 of the original nuclei remain. You can use this for quick calculations without needing the exponential formula.</div>
+
+<!-- NUCLEAR RADIUS -->
+<h2>3. Nuclear Radius</h2>
+<p>Experiments (electron diffraction, alpha scattering) show that nuclear radius depends on mass number:</p>
+<div class="eq">r = r<sub>0</sub>A<sup>1/3</sup></div>
+<ul>
+  <li>r = nuclear radius (m)</li>
+  <li>r<sub>0</sub> = constant &approx; 1.2&ndash;1.4 fm (1 fm = 10<sup>-15</sup> m)</li>
+  <li>A = mass number (nucleon number)</li>
+</ul>
+
+<h3>Nuclear Density</h3>
+<p>Since mass = Au (where u = atomic mass unit) and volume = (4/3)&pi;r<sup>3</sup> = (4/3)&pi;r<sub>0</sub><sup>3</sup>A:</p>
+<div class="eq">&rho; = Au / [(4/3)&pi;r<sub>0</sub><sup>3</sup>A] = 3u / (4&pi;r<sub>0</sub><sup>3</sup>)</div>
+<p>The A cancels, meaning nuclear density is approximately constant for all nuclei: &rho; &approx; 10<sup>17</sup> kg m<sup>-3</sup>. This is evidence that nucleons are tightly packed with a fixed separation.</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Electron diffraction is used to measure nuclear radius because electrons are leptons (no strong force interaction with nucleons) and at high energies their de Broglie wavelength is comparable to nuclear size (~10<sup>-15</sup> m).</div>
+
+<!-- MASS-ENERGY -->
+<h2>4. Mass Defect and Binding Energy</h2>
+
+<div class="def-box"><strong>Mass defect (&Delta;m):</strong> The difference between the total mass of the individual (separated) nucleons and the actual mass of the nucleus. &Delta;m = [Zm<sub>p</sub> + (A&minus;Z)m<sub>n</sub>] &minus; m<sub>nucleus</sub></div>
+
+<div class="def-box"><strong>Binding energy:</strong> The energy required to completely separate all the nucleons in a nucleus. Equivalently, the energy released when individual nucleons come together to form the nucleus. Related to mass defect by E = &Delta;mc<sup>2</sup>.</div>
+
+<h3>Mass-Energy Equivalence</h3>
+<div class="eq">E = mc<sup>2</sup></div>
+<ul>
+  <li>E = energy (J)</li>
+  <li>m = mass (kg)</li>
+  <li>c = speed of light = 3.00 &times; 10<sup>8</sup> m s<sup>-1</sup></li>
+</ul>
+<p>1 u = 1.661 &times; 10<sup>-27</sup> kg = 931.5 MeV/c<sup>2</sup></p>
+
+<h3>Binding Energy per Nucleon</h3>
+<div class="eq">Binding energy per nucleon = total binding energy / A</div>
+
+<p>This is a measure of the stability of a nucleus. Higher binding energy per nucleon = more stable.</p>
+
+<h3>The Binding Energy Curve</h3>
+<p>Key features of the binding energy per nucleon vs mass number graph:</p>
+<ul>
+  <li>The peak is at <strong>iron-56</strong> (and nickel-62), with binding energy per nucleon &approx; 8.8 MeV. Iron-56 is the most stable nucleus.</li>
+  <li>Light nuclei (A < 56): binding energy per nucleon increases with A. These nuclei can release energy by <strong>fusion</strong> (combining to form heavier nuclei).</li>
+  <li>Heavy nuclei (A > 56): binding energy per nucleon decreases with A. These nuclei can release energy by <strong>fission</strong> (splitting into lighter nuclei).</li>
+  <li>Both fusion and fission move nuclei towards the peak (higher binding energy per nucleon), releasing energy equal to the increase in total binding energy.</li>
+</ul>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Energy released = change in total binding energy = (total BE of products) &minus; (total BE of reactants). If this is positive, energy is released. You can also calculate it from the mass defect: energy released = &Delta;m &times; c<sup>2</sup>.</div>
+
+<!-- FISSION -->
+<h2>5. Nuclear Fission</h2>
+<div class="def-box"><strong>Nuclear fission:</strong> The splitting of a heavy nucleus (e.g. uranium-235, plutonium-239) into two smaller daughter nuclei of roughly equal mass, accompanied by the release of neutrons and a large amount of energy.</div>
+
+<h3>Induced Fission</h3>
+<p>A thermal (slow) neutron is absorbed by a heavy nucleus (e.g. U-235), forming an unstable compound nucleus (U-236), which then splits:</p>
+<div class="eq"><sup>235</sup><sub>92</sub>U + <sup>1</sup><sub>0</sub>n &rarr; <sup>236</sup><sub>92</sub>U &rarr; <sup>141</sup><sub>56</sub>Ba + <sup>92</sup><sub>36</sub>Kr + 3<sup>1</sup><sub>0</sub>n + energy</div>
+<p>(This is just one possible fission pathway; many different product pairs are possible.)</p>
+
+<h3>Chain Reaction</h3>
+<p>Each fission event releases 2&ndash;3 neutrons. These can go on to cause further fission events, creating a chain reaction.</p>
+<ul>
+  <li><strong>Uncontrolled chain reaction:</strong> Every neutron causes further fission. Leads to an exponential increase in energy release (nuclear weapon).</li>
+  <li><strong>Controlled chain reaction:</strong> On average, exactly one neutron per fission goes on to cause another fission. Steady power output (nuclear reactor).</li>
+</ul>
+
+<h3>Nuclear Reactor Components</h3>
+<table>
+  <tr><th>Component</th><th>Function</th></tr>
+  <tr><td>Fuel rods</td><td>Contain fissile material (enriched uranium or plutonium)</td></tr>
+  <tr><td>Moderator</td><td>Slows down fast neutrons to thermal speeds (increases probability of absorption). Usually water or graphite.</td></tr>
+  <tr><td>Control rods</td><td>Absorb excess neutrons to control the rate of the chain reaction. Made of boron or cadmium. Inserted further to slow the reaction, withdrawn to speed it up.</td></tr>
+  <tr><td>Coolant</td><td>Transfers thermal energy from the reactor core to heat exchangers (to generate steam). Often water or CO<sub>2</sub>.</td></tr>
+  <tr><td>Shielding</td><td>Thick concrete and steel to absorb radiation and protect workers.</td></tr>
+</table>
+
+<!-- FUSION -->
+<h2>6. Nuclear Fusion</h2>
+<div class="def-box"><strong>Nuclear fusion:</strong> The joining (fusing) of two light nuclei to form a heavier nucleus, with a release of energy (because the products have higher binding energy per nucleon than the reactants).</div>
+
+<p>Example (deuterium-tritium fusion):</p>
+<div class="eq"><sup>2</sup><sub>1</sub>H + <sup>3</sup><sub>1</sub>H &rarr; <sup>4</sup><sub>2</sub>He + <sup>1</sup><sub>0</sub>n + 17.6 MeV</div>
+
+<h3>Conditions for Fusion</h3>
+<ul>
+  <li><strong>Extremely high temperature</strong> (~10<sup>7</sup>&ndash;10<sup>8</sup> K) is needed to give nuclei enough kinetic energy to overcome the electrostatic (Coulomb) repulsion between the positive charges.</li>
+  <li><strong>High density/pressure</strong> to increase the probability of collisions.</li>
+  <li><strong>Sufficient confinement time</strong> to keep the plasma contained long enough for fusion to occur.</li>
+</ul>
+<p>At these temperatures, matter exists as a <strong>plasma</strong> (a gas of fully ionised atoms). The main challenge for fusion power is confining this plasma (using magnetic confinement in a tokamak or inertial confinement using lasers).</p>
+
+<h3>Fusion in Stars</h3>
+<p>Stars are powered by nuclear fusion. In main sequence stars like the Sun, hydrogen nuclei fuse to form helium (the proton-proton chain). The enormous gravitational pressure in the core provides the necessary conditions. The star is in equilibrium: gravitational collapse is balanced by radiation pressure from fusion.</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Fusion releases more energy per kilogram of fuel than fission. However, achieving the conditions for controlled fusion on Earth remains an enormous engineering challenge. Both fission and fusion release energy because the products have a higher binding energy per nucleon than the reactants.</div>
+
+</div>
+</body>
+</html>

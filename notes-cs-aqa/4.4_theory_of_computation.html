@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.4 — Theory of Computation</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            padding: 40px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #1a1a2e;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+        }
+        .spec-code { font-size: 0.95rem; color: #555; margin-bottom: 30px; }
+        h2 {
+            font-size: 1.5rem;
+            color: #16213e;
+            margin-top: 40px;
+            margin-bottom: 12px;
+            border-left: 4px solid #0f3460;
+            padding-left: 12px;
+        }
+        h3 {
+            font-size: 1.15rem;
+            color: #0f3460;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        p { margin-bottom: 12px; }
+        ul, ol { margin-bottom: 12px; padding-left: 24px; }
+        li { margin-bottom: 4px; }
+        strong { color: #1a1a2e; }
+        .definition {
+            background: #e8f0fe;
+            border-left: 4px solid #1a73e8;
+            padding: 14px 18px;
+            border-radius: 4px;
+            margin: 14px 0;
+        }
+        .exam-tip {
+            background: #fff8e1;
+            border-left: 4px solid #f9a825;
+            padding: 14px 18px;
+            border-radius: 4px;
+            margin: 14px 0;
+        }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #e65100; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th { background: #f0f0f0; font-weight: 600; }
+        code {
+            font-family: 'Consolas', 'Courier New', monospace;
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.92em;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 14px 0;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .state-diagram {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 16px;
+            border-radius: 6px;
+            margin: 14px 0;
+            font-family: 'Consolas', 'Courier New', monospace;
+            text-align: center;
+            white-space: pre;
+            line-height: 1.4;
+        }
+        @media print {
+            body { padding: 20px; font-size: 11pt; }
+            h2 { page-break-after: avoid; }
+            .definition, .exam-tip { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Theory of Computation</h1>
+<p class="spec-code">AQA A-Level Computer Science (7517) &mdash; Section 4.4</p>
+
+<!-- ============================================================ -->
+<h2>4.4.1 Abstraction and Automation</h2>
+
+<h3>Abstraction</h3>
+<div class="definition">
+    <strong>Abstraction</strong> is the process of removing unnecessary detail so that only the relevant information needed to solve a problem remains. It allows complex real-world systems to be modelled computationally.
+</div>
+
+<p><strong>Representational abstraction</strong> removes unnecessary detail from a representation. For example, the London Underground map abstracts away accurate geographic distances and only shows the relative positions of stations and the connections between them.</p>
+
+<p><strong>Abstraction by generalisation / classification</strong> groups things by common characteristics, placing them into hierarchies. For example, in object-oriented programming, a <code>Vehicle</code> class generalises cars, bikes, and lorries under one umbrella. Specific attributes are inherited from more general categories.</p>
+
+<h3>Automation</h3>
+<div class="definition">
+    <strong>Automation</strong> is the process of putting an abstracted model into action. It involves creating algorithms that can be executed by a machine to solve problems without human intervention.
+</div>
+
+<p>Automation requires:</p>
+<ul>
+    <li>An <strong>abstract model</strong> of the problem (created via abstraction)</li>
+    <li>An <strong>algorithm</strong> to operate on that model</li>
+    <li>The implementation of that algorithm in <strong>code</strong> that a machine can execute</li>
+</ul>
+
+<div class="exam-tip">You may be asked to explain how abstraction and automation are used together. Abstraction simplifies the problem; automation uses algorithms to solve the simplified model.</div>
+
+<!-- ============================================================ -->
+<h2>4.4.2 Finite State Machines (FSMs)</h2>
+
+<div class="definition">
+    A <strong>Finite State Machine (FSM)</strong> is an abstract model of computation consisting of a finite number of states, transitions between those states triggered by inputs, a single start state, and one or more accepting (final) states.
+</div>
+
+<h3>Components of an FSM</h3>
+<ul>
+    <li><strong>States</strong> &mdash; a finite set, often labelled S0, S1, S2...</li>
+    <li><strong>Input alphabet</strong> &mdash; the set of symbols the machine can read</li>
+    <li><strong>Transition function</strong> &mdash; defines the next state for each (state, input) pair</li>
+    <li><strong>Start state</strong> &mdash; the state the machine begins in</li>
+    <li><strong>Accepting states</strong> &mdash; states that indicate the input has been accepted</li>
+</ul>
+
+<h3>State Transition Diagrams</h3>
+<p>A state transition diagram is a directed graph where:</p>
+<ul>
+    <li>Circles represent <strong>states</strong></li>
+    <li>Double circles represent <strong>accepting states</strong></li>
+    <li>Arrows represent <strong>transitions</strong>, labelled with the input that triggers them</li>
+    <li>An arrow from nowhere points to the <strong>start state</strong></li>
+</ul>
+
+<p>Example: An FSM that accepts binary strings ending in "01":</p>
+<div class="state-diagram">
+  --&gt; (S0) --0--&gt; (S1) --1--&gt; ((S2))
+       |  ^        |              |
+       1  |        0              0
+       |  |        |              |
+       v  |        v              v
+       S0 +------- S1             S1
+                                  |
+                                  1
+                                  |
+                                  v
+                                  S2
+</div>
+
+<h3>State Transition Tables</h3>
+<p>An equivalent way to represent an FSM using a table:</p>
+<table>
+    <tr><th>Current State</th><th>Input 0</th><th>Input 1</th></tr>
+    <tr><td><strong>S0</strong> (start)</td><td>S1</td><td>S0</td></tr>
+    <tr><td>S1</td><td>S1</td><td>S2</td></tr>
+    <tr><td>S2 (accept)</td><td>S1</td><td>S0</td></tr>
+</table>
+
+<h3>Deterministic vs Non-Deterministic FSMs</h3>
+<ul>
+    <li>A <strong>Deterministic Finite Automaton (DFA)</strong> has exactly one transition for each (state, input) pair.</li>
+    <li>A <strong>Non-Deterministic Finite Automaton (NFA)</strong> can have zero, one, or multiple transitions for a given (state, input) pair. It may also have epsilon (empty) transitions.</li>
+    <li>Every NFA can be converted to an equivalent DFA (they recognise the same set of languages).</li>
+</ul>
+
+<h3>Mealy and Moore Machines</h3>
+<p>These are FSMs <strong>with output</strong> (unlike basic FSMs which only accept or reject).</p>
+
+<table>
+    <tr><th>Feature</th><th>Moore Machine</th><th>Mealy Machine</th></tr>
+    <tr><td><strong>Output depends on</strong></td><td>Current state only</td><td>Current state AND current input</td></tr>
+    <tr><td><strong>Output labelled on</strong></td><td>States</td><td>Transitions</td></tr>
+    <tr><td><strong>Number of states</strong></td><td>Typically more</td><td>Typically fewer</td></tr>
+    <tr><td><strong>Output timing</strong></td><td>Changes with state change</td><td>Changes with input</td></tr>
+</table>
+
+<p><strong>Moore machine example:</strong> Each state has an associated output. A state labelled <code>S1/0</code> means state S1 outputs 0.</p>
+<p><strong>Mealy machine example:</strong> Transitions are labelled <code>input/output</code>. A transition labelled <code>1/0</code> means on input 1, output 0.</p>
+
+<div class="exam-tip">In the exam, Mealy machines typically require fewer states than equivalent Moore machines. Be prepared to convert between the two representations.</div>
+
+<!-- ============================================================ -->
+<h2>4.4.3 Sets</h2>
+
+<div class="definition">
+    A <strong>set</strong> is an unordered collection of distinct values (no duplicates). Sets are used in the formal definition of languages and machines in computer science.
+</div>
+
+<h3>Set Notation</h3>
+<table>
+    <tr><th>Notation</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td><code>{}</code> or <code>&emptyset;</code></td><td>Empty set</td><td><code>&emptyset; = {}</code></td></tr>
+    <tr><td><code>&isin;</code></td><td>Element of</td><td><code>3 &isin; {1, 2, 3}</code></td></tr>
+    <tr><td><code>&notin;</code></td><td>Not element of</td><td><code>4 &notin; {1, 2, 3}</code></td></tr>
+    <tr><td><code>&sub;</code></td><td>Proper subset</td><td><code>{1, 2} &sub; {1, 2, 3}</code></td></tr>
+    <tr><td><code>&sube;</code></td><td>Subset (or equal)</td><td><code>{1, 2, 3} &sube; {1, 2, 3}</code></td></tr>
+    <tr><td><code>|A|</code></td><td>Cardinality (size)</td><td><code>|{a, b, c}| = 3</code></td></tr>
+    <tr><td><code>&alefsym;</code><sub>0</sub></td><td>Countably infinite</td><td>The set of natural numbers</td></tr>
+</table>
+
+<h3>Set Operations</h3>
+<table>
+    <tr><th>Operation</th><th>Symbol</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td>Union</td><td><code>A &cup; B</code></td><td>All elements in A or B or both</td><td><code>{1,2} &cup; {2,3} = {1,2,3}</code></td></tr>
+    <tr><td>Intersection</td><td><code>A &cap; B</code></td><td>Elements in both A and B</td><td><code>{1,2} &cap; {2,3} = {2}</code></td></tr>
+    <tr><td>Difference</td><td><code>A \ B</code> or <code>A - B</code></td><td>Elements in A but not in B</td><td><code>{1,2,3} \ {2} = {1,3}</code></td></tr>
+    <tr><td>Complement</td><td><code>A'</code></td><td>All elements NOT in A (relative to universal set)</td><td>If U = {1,2,3}, A = {1}, then A' = {2,3}</td></tr>
+    <tr><td>Cartesian Product</td><td><code>A &times; B</code></td><td>Set of all ordered pairs (a, b)</td><td><code>{1,2} &times; {a,b} = {(1,a),(1,b),(2,a),(2,b)}</code></td></tr>
+</table>
+
+<h3>Subsets and Proper Subsets</h3>
+<ul>
+    <li>A is a <strong>subset</strong> of B (<code>A &sube; B</code>) if every element of A is also in B. A can equal B.</li>
+    <li>A is a <strong>proper subset</strong> of B (<code>A &sub; B</code>) if every element of A is in B, but A &ne; B (B has at least one extra element).</li>
+    <li>The empty set is a subset of every set: <code>&emptyset; &sube; A</code> for all A.</li>
+</ul>
+
+<h3>Cardinality</h3>
+<ul>
+    <li><strong>Finite set:</strong> cardinality is the number of elements, e.g. <code>|{a, b, c}| = 3</code>.</li>
+    <li><strong>Countably infinite set:</strong> elements can be put into a one-to-one correspondence with the natural numbers (e.g. the set of integers).</li>
+    <li><strong>Uncountably infinite set:</strong> cannot be put into correspondence with the naturals (e.g. the set of real numbers between 0 and 1).</li>
+</ul>
+
+<div class="exam-tip">Be comfortable reading set-builder notation like <code>{x | x &isin; Z, x &gt; 0}</code> which means "the set of all x such that x is a positive integer."</div>
+
+<!-- ============================================================ -->
+<h2>4.4.4 Regular Expressions</h2>
+
+<div class="definition">
+    A <strong>regular expression</strong> (regex) is a notation for defining patterns of strings. It precisely describes a <strong>regular language</strong> &mdash; the set of all strings that match the pattern.
+</div>
+
+<h3>Regex Syntax</h3>
+<table>
+    <tr><th>Symbol</th><th>Meaning</th><th>Example</th><th>Matches</th></tr>
+    <tr><td><code>a</code></td><td>Literal character a</td><td><code>abc</code></td><td>"abc"</td></tr>
+    <tr><td><code>|</code></td><td>Alternation (OR)</td><td><code>a|b</code></td><td>"a" or "b"</td></tr>
+    <tr><td><code>*</code></td><td>Kleene star &mdash; zero or more</td><td><code>a*</code></td><td>"", "a", "aa", "aaa", ...</td></tr>
+    <tr><td><code>+</code></td><td>One or more</td><td><code>a+</code></td><td>"a", "aa", "aaa", ...</td></tr>
+    <tr><td><code>?</code></td><td>Zero or one (optional)</td><td><code>a?</code></td><td>"" or "a"</td></tr>
+    <tr><td><code>()</code></td><td>Grouping</td><td><code>(ab)*</code></td><td>"", "ab", "abab", ...</td></tr>
+</table>
+
+<h3>Constructing Regular Expressions</h3>
+<p>Example patterns:</p>
+<ul>
+    <li><code>a(b|c)d</code> &mdash; matches "abd" or "acd"</li>
+    <li><code>ab*c</code> &mdash; matches "ac", "abc", "abbc", "abbbc", ...</li>
+    <li><code>(0|1)*</code> &mdash; matches any binary string (including empty)</li>
+    <li><code>a+b+</code> &mdash; matches one or more a's followed by one or more b's</li>
+    <li><code>(ab|cd)?ef</code> &mdash; matches "ef", "abef", or "cdef"</li>
+</ul>
+
+<div class="exam-tip">In the AQA exam, you may be asked to write a regular expression for a given language, or identify which strings a given regex matches. Practice reading them left to right and consider edge cases (especially the empty string).</div>
+
+<!-- ============================================================ -->
+<h2>4.4.5 Regular Languages</h2>
+
+<div class="definition">
+    A <strong>regular language</strong> is any language that can be recognised by a finite state machine, or equivalently, described by a regular expression.
+</div>
+
+<p>Key properties of regular languages:</p>
+<ul>
+    <li>Every regular expression defines a regular language.</li>
+    <li>Every FSM (DFA or NFA) recognises a regular language.</li>
+    <li>Regular languages are <strong>closed under</strong> union, intersection, complement, concatenation, and Kleene star &mdash; performing these operations on regular languages always produces another regular language.</li>
+    <li>Not all languages are regular. For example, the language <code>{a<sup>n</sup>b<sup>n</sup> | n &ge; 0}</code> (equal numbers of a's followed by b's) is NOT regular because an FSM has no memory (no stack or tape) to count.</li>
+</ul>
+
+<p>The <strong>Chomsky hierarchy</strong> classifies formal languages into four types:</p>
+<table>
+    <tr><th>Type</th><th>Language Class</th><th>Machine</th><th>Grammar</th></tr>
+    <tr><td>3</td><td>Regular</td><td>Finite State Machine</td><td>Regular grammar</td></tr>
+    <tr><td>2</td><td>Context-free</td><td>Pushdown Automaton</td><td>Context-free grammar</td></tr>
+    <tr><td>1</td><td>Context-sensitive</td><td>Linear Bounded Automaton</td><td>Context-sensitive grammar</td></tr>
+    <tr><td>0</td><td>Recursively enumerable</td><td>Turing Machine</td><td>Unrestricted grammar</td></tr>
+</table>
+
+<p>Each type is a proper subset of the one above it: Regular &sub; Context-free &sub; Context-sensitive &sub; Recursively enumerable.</p>
+
+<!-- ============================================================ -->
+<h2>4.4.6 Context-Free Languages, BNF and Syntax Diagrams</h2>
+
+<div class="definition">
+    A <strong>context-free language (CFL)</strong> is a language generated by a context-free grammar. It can be recognised by a <strong>pushdown automaton</strong> (an FSM with a stack). Most programming languages have a context-free syntax.
+</div>
+
+<h3>Context-Free Grammars (CFGs)</h3>
+<p>A CFG consists of:</p>
+<ul>
+    <li><strong>Terminal symbols</strong> &mdash; actual characters/tokens that appear in the final string (e.g., <code>+</code>, <code>0</code>, <code>if</code>)</li>
+    <li><strong>Non-terminal symbols</strong> &mdash; variables representing syntactic categories (e.g., &lt;expression&gt;, &lt;digit&gt;)</li>
+    <li><strong>Production rules</strong> &mdash; rules that define how non-terminals can be replaced</li>
+    <li><strong>Start symbol</strong> &mdash; the non-terminal from which derivations begin</li>
+</ul>
+
+<h3>Backus-Naur Form (BNF)</h3>
+<p>BNF is a notation for writing context-free grammars. The symbol <code>::=</code> means "is defined as", and <code>|</code> means "or".</p>
+
+<pre>
+&lt;digit&gt;      ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+&lt;letter&gt;     ::= a | b | c | ... | z
+&lt;identifier&gt; ::= &lt;letter&gt; | &lt;identifier&gt;&lt;letter&gt; | &lt;identifier&gt;&lt;digit&gt;
+&lt;integer&gt;    ::= &lt;digit&gt; | &lt;integer&gt;&lt;digit&gt;
+&lt;expression&gt; ::= &lt;term&gt; | &lt;expression&gt; + &lt;term&gt; | &lt;expression&gt; - &lt;term&gt;
+&lt;term&gt;       ::= &lt;factor&gt; | &lt;term&gt; * &lt;factor&gt; | &lt;term&gt; / &lt;factor&gt;
+&lt;factor&gt;     ::= &lt;integer&gt; | &lt;identifier&gt; | ( &lt;expression&gt; )
+</pre>
+
+<p>Note how <code>&lt;identifier&gt;</code> is defined recursively &mdash; this is very common in BNF. The recursive definition allows identifiers of any length, starting with a letter.</p>
+
+<h3>Syntax Diagrams (Railroad Diagrams)</h3>
+<p>Syntax diagrams are a visual alternative to BNF:</p>
+<ul>
+    <li><strong>Rounded boxes (ovals)</strong> represent terminal symbols</li>
+    <li><strong>Rectangular boxes</strong> represent non-terminal symbols</li>
+    <li><strong>Arrows</strong> show the flow and ordering of symbols</li>
+    <li><strong>Loops</strong> (arrows going backwards) represent repetition</li>
+    <li><strong>Branching paths</strong> represent alternatives (the <code>|</code> in BNF)</li>
+</ul>
+
+<div class="exam-tip">You may be asked to convert between BNF and syntax diagrams. Practice both directions. Remember that recursion in BNF corresponds to loops in syntax diagrams.</div>
+
+<!-- ============================================================ -->
+<h2>4.4.7 Turing Machines</h2>
+
+<div class="definition">
+    A <strong>Turing machine</strong> is a theoretical model of computation consisting of an infinite tape divided into cells, a read/write head, a state register, and a set of transition rules. It is the most powerful standard model of computation.
+</div>
+
+<h3>Components</h3>
+<ul>
+    <li><strong>Infinite tape</strong> &mdash; divided into cells, each holding one symbol from the tape alphabet. The tape extends infinitely in both directions (or one direction, depending on the definition).</li>
+    <li><strong>Read/write head</strong> &mdash; positioned over one cell at a time. It can read the current symbol, write a new symbol, and move left or right.</li>
+    <li><strong>State register</strong> &mdash; stores the current state of the machine from a finite set of states.</li>
+    <li><strong>Transition function</strong> &mdash; a set of rules of the form: given the current state and the symbol being read, write a new symbol, move the head (L or R), and transition to a new state.</li>
+    <li><strong>Start state</strong> and <strong>halting state(s)</strong>.</li>
+</ul>
+
+<h3>Transition Functions</h3>
+<p>A transition rule is typically written as:</p>
+<pre>
+(current_state, read_symbol) &rarr; (new_state, write_symbol, direction)
+</pre>
+<p>Example transition table for a Turing machine that inverts binary digits:</p>
+<table>
+    <tr><th>Current State</th><th>Read</th><th>Write</th><th>Move</th><th>New State</th></tr>
+    <tr><td>S0</td><td>0</td><td>1</td><td>R</td><td>S0</td></tr>
+    <tr><td>S0</td><td>1</td><td>0</td><td>R</td><td>S0</td></tr>
+    <tr><td>S0</td><td>&#9633; (blank)</td><td>&#9633;</td><td>&mdash;</td><td>HALT</td></tr>
+</table>
+<p>This machine reads each bit, writes the opposite, moves right, and halts when it reaches a blank cell.</p>
+
+<h3>The Universal Turing Machine (UTM)</h3>
+<div class="definition">
+    A <strong>Universal Turing Machine</strong> is a Turing machine that can simulate any other Turing machine. It takes as input on its tape: (1) a description/encoding of a Turing machine T, and (2) the input for T. It then simulates T running on that input.
+</div>
+
+<p>The UTM is significant because:</p>
+<ul>
+    <li>It demonstrates that a <strong>single machine</strong> can be programmed to perform any computation &mdash; this is the theoretical foundation for the <strong>stored-program computer</strong>.</li>
+    <li>It shows that programs and data are fundamentally the same thing (both are just symbols on a tape).</li>
+    <li>Modern general-purpose computers are practical implementations of the concept of a UTM.</li>
+</ul>
+
+<h3>The Halting Problem</h3>
+<div class="definition">
+    The <strong>halting problem</strong> asks: given a description of a Turing machine and an input, can we determine whether the machine will eventually halt or run forever? Alan Turing proved in 1936 that <strong>no algorithm can solve the halting problem</strong> for all possible inputs.
+</div>
+
+<p>The proof uses a <strong>proof by contradiction</strong>:</p>
+<ol>
+    <li>Assume a Turing machine H exists that can decide the halting problem. H(M, I) outputs "halts" if M halts on input I, and "loops" otherwise.</li>
+    <li>Construct a new machine D that takes a machine M as input:
+        <ul>
+            <li>If H(M, M) says "halts", then D loops forever.</li>
+            <li>If H(M, M) says "loops", then D halts.</li>
+        </ul>
+    </li>
+    <li>Run D on itself: D(D).
+        <ul>
+            <li>If H says D halts on D, then D loops &mdash; contradiction.</li>
+            <li>If H says D loops on D, then D halts &mdash; contradiction.</li>
+        </ul>
+    </li>
+    <li>Therefore H cannot exist. The halting problem is <strong>undecidable</strong>.</li>
+</ol>
+
+<p>Consequences of the halting problem:</p>
+<ul>
+    <li>There is no general algorithm that can check whether any given program will terminate.</li>
+    <li>Some problems are fundamentally <strong>non-computable</strong>.</li>
+    <li>It places limits on what computers can do, regardless of their speed or memory.</li>
+</ul>
+
+<div class="exam-tip">The halting problem is a favourite exam topic. Be able to explain the proof by contradiction clearly, step by step, and explain why it matters.</div>
+
+<!-- ============================================================ -->
+<h2>4.4.8 Classification of Algorithms</h2>
+
+<h3>Computable vs Non-Computable Problems</h3>
+<div class="definition">
+    A problem is <strong>computable</strong> (decidable) if there exists an algorithm (a Turing machine) that can solve every instance of it in a finite number of steps. A <strong>non-computable</strong> (undecidable) problem has no such algorithm.
+</div>
+
+<ul>
+    <li><strong>Computable:</strong> sorting a list, searching for an item, finding the shortest path in a graph.</li>
+    <li><strong>Non-computable:</strong> the halting problem, determining whether two programs are functionally equivalent for all inputs.</li>
+</ul>
+
+<h3>Tractable vs Intractable Problems</h3>
+<div class="definition">
+    A computable problem is <strong>tractable</strong> if it can be solved in <strong>polynomial time</strong> (O(n<sup>k</sup>) for some constant k). A problem is <strong>intractable</strong> if no polynomial-time algorithm is known, and the best known algorithms take exponential or worse time.
+</div>
+
+<table>
+    <tr><th>Category</th><th>Time Complexity</th><th>Example</th></tr>
+    <tr><td>Tractable</td><td>O(1), O(n), O(n log n), O(n<sup>2</sup>), O(n<sup>3</sup>)</td><td>Sorting, searching, shortest path</td></tr>
+    <tr><td>Intractable</td><td>O(2<sup>n</sup>), O(n!)</td><td>Travelling salesman (exact solution), satisfiability</td></tr>
+</table>
+
+<h3>Complexity Classes</h3>
+<ul>
+    <li><strong>P</strong> &mdash; the class of problems solvable in polynomial time by a deterministic Turing machine. These are tractable.</li>
+    <li><strong>NP</strong> &mdash; the class of problems whose solutions can be <strong>verified</strong> in polynomial time. (A solution can be checked quickly, even if finding one is hard.)</li>
+    <li><strong>NP-Complete</strong> &mdash; the hardest problems in NP. If any NP-complete problem can be solved in polynomial time, then every problem in NP can (this would prove P = NP).</li>
+    <li><strong>NP-Hard</strong> &mdash; at least as hard as NP-complete, but not necessarily in NP (their solutions may not even be verifiable in polynomial time).</li>
+</ul>
+
+<p>The <strong>P vs NP question</strong> asks whether every problem whose solution can be verified quickly (NP) can also be solved quickly (P). This is one of the great unsolved problems in computer science and mathematics.</p>
+
+<h3>Heuristics</h3>
+<p>For intractable problems, we often use <strong>heuristic</strong> approaches:</p>
+<ul>
+    <li>A heuristic is a practical technique that finds a <strong>good enough</strong> solution in reasonable time, without guaranteeing the optimal answer.</li>
+    <li>Example: the <strong>nearest neighbour algorithm</strong> for the travelling salesman problem &mdash; always visit the closest unvisited city. This runs in polynomial time but may not find the shortest route.</li>
+    <li>Heuristics trade <strong>optimality for speed</strong>.</li>
+</ul>
+
+<div class="exam-tip">Know the difference between non-computable (no algorithm exists at all) and intractable (an algorithm exists but takes impractically long). The halting problem is non-computable. The travelling salesman problem (optimal solution) is intractable but computable.</div>
+
+</div>
+</body>
+</html>

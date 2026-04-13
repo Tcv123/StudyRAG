@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S6 — Immunity, Infection and Forensics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>S6 — Immunity, Infection and Forensics</h1>
+
+<!-- ============================================================ -->
+<h2>6.1 Pathogens and Disease</h2>
+<!-- ============================================================ -->
+
+<h3>Types of Pathogen</h3>
+
+<div class="definition">
+  <strong>Pathogen:</strong> A microorganism that causes disease. Pathogens include bacteria, viruses, fungi, and protoctists (protists). They cause disease by damaging cells directly, producing toxins, or triggering excessive immune responses.
+</div>
+
+<table>
+  <tr><th>Pathogen Type</th><th>Characteristics</th><th>Examples</th></tr>
+  <tr><td>Bacteria</td><td>Prokaryotic; cell wall with peptidoglycan; reproduce by binary fission; some produce toxins (exotoxins or endotoxins)</td><td><em>Mycobacterium tuberculosis</em> (TB), <em>Vibrio cholerae</em> (cholera)</td></tr>
+  <tr><td>Viruses</td><td>Acellular; contain DNA or RNA within a protein coat (capsid); obligate intracellular parasites; hijack host cell machinery to replicate</td><td>HIV, influenza, SARS-CoV-2</td></tr>
+  <tr><td>Fungi</td><td>Eukaryotic; cell walls of chitin; may be unicellular (yeasts) or multicellular (moulds); reproduce by spores</td><td><em>Candida</em> (thrush), <em>Trichophyton</em> (athlete's foot)</td></tr>
+  <tr><td>Protoctists</td><td>Eukaryotic; diverse group; often transmitted by vectors</td><td><em>Plasmodium</em> (malaria), <em>Trypanosoma</em> (sleeping sickness)</td></tr>
+</table>
+
+<h3>Transmission of Disease</h3>
+
+<p>Pathogens can be transmitted through various routes:</p>
+<ul>
+  <li><strong>Direct contact:</strong> Physical touch, sexual contact, or exchange of body fluids (e.g., HIV, sexually transmitted infections).</li>
+  <li><strong>Airborne (droplet):</strong> Coughing, sneezing, or breathing releases pathogen-laden droplets (e.g., TB, influenza).</li>
+  <li><strong>Waterborne:</strong> Contaminated water supplies (e.g., cholera, typhoid).</li>
+  <li><strong>Foodborne:</strong> Contaminated food (e.g., <em>Salmonella</em>, <em>E. coli</em>).</li>
+  <li><strong>Vector-borne:</strong> An intermediate organism transmits the pathogen (e.g., <em>Anopheles</em> mosquito transmits <em>Plasmodium</em>).</li>
+  <li><strong>Fomites:</strong> Contaminated surfaces or objects.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>6.2 The Immune System</h2>
+<!-- ============================================================ -->
+
+<h3>Non-Specific (Innate) Immunity</h3>
+
+<p>Non-specific defences provide immediate, general protection against all pathogens. They include:</p>
+<ul>
+  <li><strong>Physical barriers:</strong> Skin (keratinised epithelium), mucous membranes, cilia in airways, stomach acid (pH 1-2 denatures proteins).</li>
+  <li><strong>Chemical barriers:</strong> Lysozyme in tears and saliva (breaks down bacterial cell walls), sebum on skin (lowers pH), antimicrobial peptides.</li>
+  <li><strong>Phagocytosis:</strong> Neutrophils and macrophages recognise, engulf, and destroy pathogens in phagosomes. Lysosomes fuse with the phagosome and release hydrolytic enzymes that digest the pathogen. Macrophages also act as antigen-presenting cells.</li>
+  <li><strong>Inflammation:</strong> Damaged cells release histamine, causing vasodilation and increased capillary permeability. This brings more white blood cells and plasma (containing antibodies and complement) to the infected area.</li>
+</ul>
+
+<h3>Specific (Adaptive) Immunity</h3>
+
+<div class="definition">
+  <strong>Antigen:</strong> A molecule (usually a protein or glycoprotein) on the surface of a cell that can be recognised by the immune system. Foreign antigens on pathogens trigger an immune response. Self-antigens on the body's own cells are normally tolerated.
+</div>
+
+<p>The specific immune response involves lymphocytes and is characterised by specificity (each lymphocyte responds to one specific antigen) and immunological memory.</p>
+
+<h3>Cell-Mediated Immunity (T Cells)</h3>
+
+<p>T lymphocytes mature in the thymus and respond to antigens presented on the surface of infected cells by antigen-presenting cells (APCs). Types of T cell include:</p>
+<ul>
+  <li><strong>T helper cells (T<sub>H</sub>):</strong> Recognise antigens on APCs and release cytokines that activate B cells, cytotoxic T cells, and macrophages. Essential for coordinating the immune response.</li>
+  <li><strong>Cytotoxic T cells (T<sub>C</sub> / killer T cells):</strong> Directly kill infected body cells by releasing perforin (creates pores in cell membrane) and granzymes (trigger apoptosis).</li>
+  <li><strong>Regulatory T cells (T<sub>reg</sub>):</strong> Suppress the immune response after infection is cleared, preventing autoimmune reactions.</li>
+  <li><strong>Memory T cells:</strong> Remain in the body long-term and enable a faster, stronger secondary response upon re-infection.</li>
+</ul>
+
+<h3>Humoral Immunity (B Cells)</h3>
+
+<p>B lymphocytes mature in the bone marrow and produce antibodies. When a B cell encounters its specific antigen and is activated by T helper cells, it undergoes clonal expansion (rapid mitotic division) and differentiates into:</p>
+<ul>
+  <li><strong>Plasma cells:</strong> Short-lived cells that secrete large quantities of antibodies (immunoglobulins) into the blood and tissue fluid. Each plasma cell produces one specific antibody.</li>
+  <li><strong>Memory B cells:</strong> Long-lived cells that persist after infection and enable a rapid secondary immune response (more antibodies produced more quickly upon re-exposure).</li>
+</ul>
+
+<h3>Antibody Structure and Function</h3>
+
+<p>Antibodies are Y-shaped glycoproteins with two heavy chains and two light chains held together by disulfide bonds. The variable regions at the tips of the Y are complementary in shape to a specific antigen (the antigen-binding site). The constant region determines the class of antibody and how it functions. Antibodies neutralise pathogens by:</p>
+<ul>
+  <li><strong>Neutralisation:</strong> Binding to toxins or viral attachment proteins, preventing them from interacting with host cells.</li>
+  <li><strong>Agglutination:</strong> Cross-linking pathogens together, making them easier for phagocytes to engulf.</li>
+  <li><strong>Opsonisation:</strong> Coating pathogens with antibodies, tagging them for phagocytosis.</li>
+  <li><strong>Complement activation:</strong> Triggering the complement system, which forms membrane attack complexes (pores) that lyse pathogen cells.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>6.3 Vaccination and Antibiotics</h2>
+<!-- ============================================================ -->
+
+<h3>Vaccination</h3>
+
+<div class="definition">
+  <strong>Vaccination:</strong> The administration of a weakened, killed, or subunit form of a pathogen (or its toxin) to stimulate an immune response and the production of memory cells, without causing the disease. This provides long-term protection against future infection.
+</div>
+
+<p>Types of vaccine include live attenuated (weakened pathogen), inactivated (killed pathogen), subunit (purified antigen), toxoid (inactivated toxin), and mRNA vaccines (instruct cells to produce a pathogen protein). Herd immunity occurs when a sufficient proportion of a population is immune (through vaccination or prior infection) that transmission is greatly reduced, protecting unvaccinated individuals indirectly.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Distinguish between active immunity (body produces its own antibodies and memory cells, either naturally through infection or artificially through vaccination &mdash; long-lasting) and passive immunity (antibodies received from an external source, either naturally via placenta/breast milk or artificially via injection &mdash; short-lived because no memory cells are formed).
+</div>
+
+<h3>Antibiotics</h3>
+
+<p>Antibiotics are substances that kill or inhibit the growth of bacteria. They work by targeting bacterial structures or processes that differ from human cells: cell wall synthesis (penicillin), protein synthesis (tetracycline), DNA replication (fluoroquinolones), or metabolic pathways (sulfonamides). Antibiotics are ineffective against viruses because viruses lack these bacterial targets and replicate using host cell machinery.</p>
+
+<h3>Antibiotic Resistance</h3>
+
+<p>Antibiotic resistance arises through natural selection. Random mutations in bacterial DNA may confer resistance (e.g., producing beta-lactamase enzymes that break down penicillin). In the presence of antibiotics, resistant bacteria survive and reproduce while susceptible bacteria are killed, increasing the frequency of resistance alleles. Resistance genes can spread between bacteria via horizontal gene transfer (conjugation, transformation, transduction). MRSA (methicillin-resistant <em>Staphylococcus aureus</em>) is a well-known example of a resistant pathogen.</p>
+
+<p>Measures to reduce antibiotic resistance include: completing prescribed courses, not prescribing antibiotics for viral infections, using narrow-spectrum antibiotics where possible, infection control in hospitals, restricting antibiotic use in agriculture, and research into new antibiotics and alternative treatments (e.g., bacteriophage therapy).</p>
+
+<!-- ============================================================ -->
+<h2>6.4 Forensic Biology</h2>
+<!-- ============================================================ -->
+
+<h3>Time of Death</h3>
+
+<p>Forensic scientists estimate time of death using multiple methods:</p>
+<ul>
+  <li><strong>Body temperature:</strong> After death, body temperature decreases toward ambient temperature (algor mortis). The rate depends on body mass, clothing, air temperature, and environmental conditions.</li>
+  <li><strong>Rigor mortis:</strong> Stiffening of muscles beginning 2-4 hours after death (actin-myosin cross-bridges cannot be broken without ATP) and fading after 36-48 hours as muscle proteins denature.</li>
+  <li><strong>Livor mortis:</strong> Pooling of blood in lowest parts of the body due to gravity, causing purple/red discolouration. Fixed after ~12 hours.</li>
+  <li><strong>Decomposition stages:</strong> Fresh, bloat, active decay, advanced decay, dry remains. Influenced by temperature, moisture, and oxygen availability.</li>
+  <li><strong>Forensic entomology:</strong> The succession of insect species colonising a body follows a predictable pattern. Blowflies are typically first to arrive. The life cycle stage of insects (egg, larva, pupa, adult) can indicate time since death.</li>
+</ul>
+
+<h3>DNA Profiling (Genetic Fingerprinting)</h3>
+
+<div class="definition">
+  <strong>DNA profiling:</strong> A technique that produces a pattern of DNA fragments unique to an individual (except identical twins), based on variations in short tandem repeats (STRs) &mdash; repetitive sequences of DNA that vary in number between individuals at specific loci.
+</div>
+
+<p>The process of DNA profiling:</p>
+<ol>
+  <li><strong>DNA extraction:</strong> DNA is isolated from a biological sample (blood, saliva, hair, semen, skin cells).</li>
+  <li><strong>PCR amplification:</strong> Specific STR loci are amplified using the polymerase chain reaction to produce millions of copies from a tiny sample.</li>
+  <li><strong>Electrophoresis:</strong> DNA fragments are separated by size using gel electrophoresis (smaller fragments travel further). Fragments may be visualised using fluorescent probes.</li>
+  <li><strong>Analysis:</strong> The resulting banding pattern is compared between samples. Multiple loci (typically 10-13) are analysed to give extremely high statistical confidence.</li>
+</ol>
+
+<p>Applications of DNA profiling include criminal investigations (matching suspects to crime scenes), paternity testing, identifying victims of disasters, immigration cases, and evolutionary/conservation studies. Ethical considerations include privacy, the national DNA database, potential for misuse, and the risk of contamination leading to false matches.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In questions about DNA profiling, explain each step clearly and emphasise why STRs (not coding regions) are used &mdash; they are highly variable between individuals. Remember that DNA profiling shows probability of a match, not certainty. Contamination and degradation of samples are key limitations.
+</div>
+
+<!-- ============================================================ -->
+<h2>6.5 Decomposition and Succession</h2>
+<!-- ============================================================ -->
+
+<h3>Decomposition</h3>
+
+<p>Decomposition is the breakdown of dead organic matter by microorganisms (bacteria and fungi) and detritivores (e.g., earthworms, woodlice). Decomposers secrete extracellular enzymes onto organic matter, digesting it externally (saprotrophic nutrition), then absorbing the soluble products. Decomposition recycles nutrients (carbon, nitrogen, phosphorus) back to the soil and atmosphere, making them available for new plant growth.</p>
+
+<p>Factors affecting the rate of decomposition include temperature (affects enzyme activity), oxygen availability (aerobic decomposition is faster), moisture (required for enzyme activity and microbial growth), pH, and the nature of the material (soft tissue decomposes faster than bone or lignin).</p>
+
+<h3>Ecological Succession</h3>
+
+<div class="definition">
+  <strong>Succession:</strong> The gradual and directional change in the species composition of a community over time, eventually leading to a stable climax community. Primary succession begins on bare, previously uncolonised substrate; secondary succession occurs after disturbance of an existing community.
+</div>
+
+<p>Pioneer species (e.g., lichens, mosses) are the first to colonise bare rock. They are adapted to harsh conditions and help create soil by weathering rock and adding organic matter when they die. As soil develops, more complex plant communities can establish, each seral stage modifying the environment to make it more suitable for the next stage. Eventually, a climax community is reached (determined by climate and soil type), which is relatively stable and self-sustaining.</p>
+
+</div>
+</body>
+</html>

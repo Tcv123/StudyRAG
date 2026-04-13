@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Breakdown</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EEF5FC;
+      --surface: #FFFFFF;
+      --surface2: #F4F9FE;
+      --surface3: #E6F1FA;
+      --border: #D2E5F3;
+      --border-hover: #93C4E2;
+      --text: #1B2D4F;
+      --muted: #6B87A8;
+      --muted2: #A0B8CE;
+      --accent: #5BADCF;
+      --accent-dark: #3D95BC;
+      --accent-dim: rgba(91,173,207,0.1);
+      --accent-glow: rgba(91,173,207,0.2);
+      --red: #DC2626; --red-bg: rgba(220,38,38,0.07); --red-border: rgba(220,38,38,0.18);
+      --amber: #D97706; --amber-bg: rgba(217,119,6,0.07); --amber-border: rgba(217,119,6,0.18);
+      --green: #16A34A; --green-bg: rgba(22,163,74,0.07); --green-border: rgba(22,163,74,0.18);
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    .app { display: flex; height: 100vh; overflow: hidden; }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: var(--sidebar-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      padding: 24px 0; flex-shrink: 0;
+      box-shadow: 2px 0 16px rgba(91,173,207,0.08);
+    }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted);
+      cursor: pointer; transition: all 0.15s; text-decoration: none;
+      border: none; background: none; width: 100%; text-align: left; font-family: var(--font-body);
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name  { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .user-email { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; flex-shrink: 0; }
+    .logout-btn:hover { color: #DC2626; }
+
+    /* ── MAIN ── */
+    .main { flex: 1; overflow-y: auto; padding: 36px 40px; }
+    .main::-webkit-scrollbar { width: 6px; }
+    .main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    .page-title { font-family: var(--font-display); font-size: 26px; letter-spacing: -0.01em; margin-bottom: 4px; }
+    .page-sub { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+
+    /* ── STAT CARDS ── */
+    .stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 28px; }
+    .stat-card {
+      background: var(--surface); border: 2px solid var(--border); border-radius: 14px;
+      padding: 18px 20px; transition: all 0.2s; box-shadow: 0 1px 4px rgba(91,173,207,0.07);
+      position: relative;
+    }
+    .stat-card:hover { border-color: var(--border-hover); box-shadow: 0 4px 14px rgba(91,173,207,0.12); }
+    .stat-card.active { border-color: var(--accent); box-shadow: 0 4px 14px rgba(91,173,207,0.18); background: var(--accent-dim); }
+    .stat-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .stat-value { font-family: var(--font-display); font-size: 28px; color: var(--text); letter-spacing: -0.02em; }
+    .stat-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* ── FILTER TABS ── */
+    .filter-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+    .filter-tab {
+      padding: 8px 18px; border-radius: 20px; font-size: 13px; font-weight: 500;
+      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+      cursor: pointer; transition: all 0.15s; font-family: var(--font-body);
+    }
+    .filter-tab:hover { border-color: var(--border-hover); color: var(--text); }
+    .filter-tab.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent-dark); font-weight: 600; }
+    .filter-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+    .filter-dot.green { background: var(--green); }
+    .filter-dot.amber { background: var(--amber); }
+    .filter-dot.red { background: var(--red); }
+
+    /* ── SUBJECT SECTION ── */
+    .subject-section { margin-bottom: 28px; }
+    .subject-header {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 16px; font-weight: 600;
+      padding: 14px 18px; border-radius: 12px;
+      background: var(--surface); border: 1px solid var(--border);
+      margin-bottom: 14px; cursor: pointer; transition: all 0.15s;
+    }
+    .subject-header:hover { border-color: var(--border-hover); box-shadow: 0 2px 8px rgba(91,173,207,0.1); }
+    .subject-emoji { font-size: 20px; }
+    .subject-summary { font-size: 12px; font-weight: 400; color: var(--muted); margin-left: auto; display: flex; align-items: center; gap: 10px; }
+    .subject-summary-pills { display: flex; gap: 6px; }
+    .subject-summary-pill { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+    .subject-summary-pill.green { background: var(--green-bg); color: var(--green); }
+    .subject-summary-pill.amber { background: var(--amber-bg); color: var(--amber); }
+    .subject-summary-pill.red { background: var(--red-bg); color: var(--red); }
+    .subject-summary-pill.pending { background: var(--surface2); color: var(--muted2); }
+    .subject-toggle {
+      width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--surface2); display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: var(--muted); transition: all 0.2s; margin-left: 8px; flex-shrink: 0;
+    }
+    .subject-header:hover .subject-toggle { border-color: var(--border-hover); color: var(--text); }
+    .subject-toggle.collapsed { transform: rotate(-90deg); }
+    .subject-topics { overflow: hidden; transition: max-height 0.3s ease; }
+    .subject-topics.collapsed { max-height: 0 !important; }
+
+    /* ── TOPIC CARDS ── */
+    .topic-card {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 18px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 12px;
+      margin-bottom: 8px; transition: all 0.15s;
+      text-decoration: none; color: var(--text); cursor: pointer;
+    }
+    .topic-card:hover { border-color: var(--border-hover); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(91,173,207,0.1); }
+
+    .topic-num {
+      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700;
+    }
+    .topic-num.green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+    .topic-num.amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+    .topic-num.red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+    .topic-num.pending { background: var(--surface2); color: var(--muted2); border: 1px solid var(--border); }
+
+    .topic-info { flex: 1; min-width: 0; }
+    .topic-name { font-size: 14px; font-weight: 500; }
+    .topic-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .topic-tip { font-size: 11.5px; margin-top: 4px; font-style: italic; line-height: 1.4; color: var(--muted2); display: flex; align-items: center; gap: 5px; }
+    .pro-tag { font-size: 9px; font-weight: 700; color: var(--amber); background: var(--amber-bg); border: 1px solid var(--amber-border); padding: 1px 6px; border-radius: 10px; font-style: normal; }
+
+    .topic-rag { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .topic-rag.green { background: var(--green); box-shadow: 0 0 6px rgba(22,163,74,0.4); }
+    .topic-rag.amber { background: var(--amber); box-shadow: 0 0 6px rgba(217,119,6,0.4); }
+    .topic-rag.red { background: var(--red); box-shadow: 0 0 6px rgba(239,68,68,0.4); }
+    .topic-rag.pending { background: var(--muted2); }
+
+    .topic-arrow { color: var(--muted2); font-size: 16px; flex-shrink: 0; }
+
+    .empty-msg { font-size: 14px; color: var(--muted); text-align: center; padding: 32px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+
+    /* ── SUBJECT CARDS ── */
+    .subjects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-bottom: 28px; }
+    .subj-card {
+      background: var(--surface); border: 2px solid var(--border);
+      border-radius: 18px; padding: 22px;
+      cursor: pointer; transition: all 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .subj-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      transition: opacity 0.15s;
+    }
+    .subj-card.rag-green::before { background: var(--green); opacity: 1; }
+    .subj-card.rag-amber::before { background: var(--amber); opacity: 1; }
+    .subj-card.rag-red::before { background: var(--red); opacity: 1; }
+    .subj-card.rag-pending::before { background: var(--muted2); opacity: 1; }
+    .subj-card:hover { border-color: var(--border-hover); box-shadow: 0 6px 24px rgba(91,173,207,0.14); transform: translateY(-2px); }
+    .subj-card.active { border-color: var(--accent); box-shadow: 0 6px 24px rgba(91,173,207,0.18); }
+    .subj-card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .subj-card-emoji {
+      width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
+      background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.2);
+      display: flex; align-items: center; justify-content: center; font-size: 22px;
+    }
+    .subj-card-info { flex: 1; min-width: 0; }
+    .subj-card-name { font-size: 16px; font-weight: 600; font-family: var(--font-display); }
+    .subj-card-board { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .subj-card-stats { display: flex; gap: 10px; flex-wrap: wrap; }
+    .subj-card-stat {
+      font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px;
+    }
+    .subj-card-stat.green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+    .subj-card-stat.amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+    .subj-card-stat.red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+    .subj-card-stat.pending { background: var(--surface2); color: var(--muted2); border: 1px solid var(--border); }
+    .subj-card-bar { display: flex; height: 6px; border-radius: 99px; overflow: hidden; background: var(--surface2); margin-top: 12px; }
+    .subj-card-seg { height: 100%; }
+    .subj-card-seg.green { background: var(--green); }
+    .subj-card-seg.amber { background: var(--amber); }
+    .subj-card-seg.red { background: var(--red); }
+    .subj-card-seg.pending { background: var(--muted2); }
+
+    .breakdown-detail { display: none; margin-bottom: 28px; }
+    .breakdown-detail.open { display: block; animation: dropIn 0.2s ease-out; }
+    @keyframes dropIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── SUMMARY BAR ── */
+    .summary-bar { display: flex; height: 10px; border-radius: 99px; overflow: hidden; margin-bottom: 28px; background: var(--surface2); border: 1px solid var(--border); }
+    .summary-seg { height: 100%; transition: width 0.4s ease; }
+    .summary-seg.green { background: var(--green); }
+    .summary-seg.amber { background: var(--amber); }
+    .summary-seg.red { background: var(--red); }
+    .summary-seg.pending { background: var(--muted2); }
+
+    @media (max-width: 768px) {
+      .sidebar { transform: translateX(-100%); position: fixed; z-index: 50; height: 100vh; }
+      .main { margin-left: 0; padding: 24px 20px; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item active" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials">–</div>
+        <div class="user-info">
+          <div class="user-name" id="sidebarName">Loading…</div>
+          <div class="user-email" id="sidebarEmail"></div>
+        </div>
+        <button class="logout-btn" onclick="logout()" title="Log out">⏻</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="page-title">Breakdown</div>
+    <div class="page-sub">See how you're doing across every topic. Each one is colour-coded — green means you're confident, amber means you're getting there, and red means it needs more work. Use this to decide what to revise next.</div>
+
+    <!-- Summary stats -->
+    <div style="font-family:var(--font-display);font-size:18px;margin-bottom:14px;">Summary</div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">Topics covered</div>
+        <div class="stat-value" id="statTotal">–</div>
+        <div class="stat-sub" id="statTotalSub">loading…</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Green topics</div>
+        <div class="stat-value" id="statGreen" style="color:var(--green);">–</div>
+        <div class="stat-sub">confident & ready</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Amber topics</div>
+        <div class="stat-value" id="statAmber" style="color:var(--amber);">–</div>
+        <div class="stat-sub">almost there</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Red topics</div>
+        <div class="stat-value" id="statRed" style="color:var(--red);">–</div>
+        <div class="stat-sub">need attention</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Not tested</div>
+        <div class="stat-value" id="statPending" style="color:var(--muted2);">–</div>
+        <div class="stat-sub">not yet diagnosed</div>
+      </div>
+    </div>
+
+    <!-- Summary bar -->
+    <div class="summary-bar" id="summaryBar"></div>
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="setFilter('all', this)">All topics</button>
+      <button class="filter-tab" onclick="setFilter('green', this)"><span class="filter-dot green"></span>Green</button>
+      <button class="filter-tab" onclick="setFilter('amber', this)"><span class="filter-dot amber"></span>Amber</button>
+      <button class="filter-tab" onclick="setFilter('red', this)"><span class="filter-dot red"></span>Red</button>
+      <button class="filter-tab" onclick="setFilter('pending', this)"><span class="filter-dot" style="background:var(--muted2);"></span>Not tested</button>
+    </div>
+
+    <!-- Topic list -->
+    <div id="topicList"></div>
+  </main>
+
+</div>
+
+<script>
+const DIAG_TOPICS = {
+  'Computer Science_OCR': {
+    label: 'Computer Science — OCR',
+    emoji: '💻',
+    page: 'diagnostics/cs-diagnostic.html',
+    topics: [
+      { id: '1.1', name: 'Systems Architecture', sub: 'CPU, fetch-execute, performance' },
+      { id: '1.2', name: 'Memory and Storage', sub: 'RAM, ROM, secondary storage' },
+      { id: '1.3', name: 'Networks, Connections & Protocols', sub: 'LAN, WAN, TCP/IP, HTTP' },
+      { id: '1.4', name: 'Network Security', sub: 'Threats, prevention, encryption' },
+      { id: '1.5', name: 'Systems Software', sub: 'OS, utilities, translators' },
+      { id: '1.6', name: 'Ethical, Legal, Cultural & Environmental', sub: 'Impacts of digital technology' },
+      { id: '2.1', name: 'Algorithms', sub: 'Sorting, searching, complexity' },
+      { id: '2.2', name: 'Programming Fundamentals', sub: 'Variables, loops, functions' },
+      { id: '2.3', name: 'Producing Robust Programs', sub: 'Validation, testing, maintainability' },
+      { id: '2.4', name: 'Boolean Logic', sub: 'Logic gates, truth tables' },
+      { id: '2.5', name: 'Languages and IDEs', sub: 'High/low level, compilers, IDEs' },
+    ]
+  },
+  'Computer Science_AQA': {
+    label: 'Computer Science — AQA',
+    emoji: '💻',
+    page: 'diagnostics/cs-aqa-diagnostic.html',
+    topics: [
+      { id: '4.1', name: 'Fundamentals of Programming', sub: 'Data types, OOP, recursion, exception handling' },
+      { id: '4.2', name: 'Fundamentals of Data Structures', sub: 'Stacks, queues, trees, graphs, hash tables' },
+      { id: '4.3', name: 'Fundamentals of Algorithms', sub: 'Sorting, searching, graph traversal, Big-O' },
+      { id: '4.4', name: 'Theory of Computation', sub: 'FSMs, regex, Turing machines, halting problem' },
+      { id: '4.5', name: 'Fundamentals of Data Representation', sub: 'Number systems, floating point, compression' },
+      { id: '4.6', name: 'Fundamentals of Computer Systems', sub: 'OS, Boolean algebra, logic gates, Karnaugh maps' },
+      { id: '4.7', name: 'Computer Organisation & Architecture', sub: 'Von Neumann, FDE cycle, CISC/RISC, pipelining' },
+      { id: '4.8', name: 'Consequences of Uses of Computing', sub: 'Ethics, legislation, environmental impact' },
+      { id: '4.9', name: 'Communication & Networking', sub: 'TCP/IP, topologies, encryption, protocols' },
+      { id: '4.10', name: 'Fundamentals of Databases', sub: 'SQL, normalisation, ER modelling, ACID' },
+      { id: '4.11', name: 'Big Data', sub: 'Machine learning, MapReduce, data mining' },
+      { id: '4.12', name: 'Fundamentals of Functional Programming', sub: 'Map, filter, fold, higher-order functions' },
+    ]
+  },
+  'Physics_Edexcel': {
+    label: 'Physics — Edexcel',
+    emoji: '⚡',
+    page: 'diagnostics/physics-edexcel-diagnostic.html',
+    topics: [
+      { id: 'T1', name: 'Working as a Physicist', sub: 'SI units, prefixes, uncertainties' },
+      { id: 'T2', name: 'Mechanics', sub: 'Vectors, SUVAT, Newton\'s laws, momentum, energy' },
+      { id: 'T3', name: 'Electric Circuits', sub: 'Current, PD, resistance, EMF, Kirchhoff\'s laws' },
+      { id: 'T4', name: 'Materials', sub: 'Density, Hooke\'s law, stress, strain, Young\'s modulus' },
+      { id: 'T5', name: 'Waves & Particle Nature of Light', sub: 'Superposition, diffraction, photoelectric effect' },
+      { id: 'T6', name: 'Further Mechanics', sub: 'Impulse, 2D momentum, circular motion' },
+      { id: 'T7', name: 'Electric & Magnetic Fields', sub: 'Coulomb\'s law, capacitors, EM induction' },
+      { id: 'T8', name: 'Nuclear & Particle Physics', sub: 'Quarks, leptons, Standard Model' },
+      { id: 'T9', name: 'Thermodynamics', sub: 'Specific heat, gas laws, kinetic theory' },
+      { id: 'T10', name: 'Space', sub: 'Stellar evolution, HR diagram, Hubble\'s law' },
+      { id: 'T11', name: 'Nuclear Radiation', sub: 'Half-life, decay, fission, fusion, E=mc²' },
+      { id: 'T12', name: 'Gravitational Fields', sub: 'Newton\'s gravitation, orbits, Kepler\'s laws' },
+      { id: 'T13', name: 'Oscillations', sub: 'SHM, damping, resonance' },
+    ]
+  },
+  'Physics_AQA': {
+    label: 'Physics — AQA',
+    emoji: '⚡',
+    page: 'diagnostics/physics-aqa-diagnostic.html',
+    topics: [
+      { id: '3.1', name: 'Measurements and Their Errors', sub: 'SI units, uncertainties, errors' },
+      { id: '3.2', name: 'Particles and Radiation', sub: 'Quarks, leptons, photoelectric effect, energy levels' },
+      { id: '3.3', name: 'Waves', sub: 'Progressive, stationary waves, refraction, diffraction' },
+      { id: '3.4', name: 'Mechanics and Materials', sub: 'Forces, energy, momentum, stress, strain' },
+      { id: '3.5', name: 'Electricity', sub: 'Current, PD, resistance, EMF, circuits' },
+      { id: '3.6', name: 'Further Mechanics and Thermal Physics', sub: 'Circular motion, SHM, gas laws, kinetic theory' },
+      { id: '3.7', name: 'Fields and Their Consequences', sub: 'Gravitational, electric, magnetic fields, capacitance' },
+      { id: '3.8', name: 'Nuclear Physics', sub: 'Radioactivity, nuclear energy, binding energy' },
+    ]
+  },
+  'Physics_OCR A': {
+    label: 'Physics — OCR A',
+    emoji: '⚡',
+    page: 'diagnostics/physics-ocr-a-diagnostic.html',
+    topics: [
+      { id: 'M1', name: 'Development of Practical Skills', sub: 'Planning, analysis, evaluation' },
+      { id: 'M2', name: 'Foundations of Physics', sub: 'Quantities, units, vectors, measurements' },
+      { id: 'M3', name: 'Forces and Motion', sub: 'Kinematics, Newton\'s laws, momentum, circular motion' },
+      { id: 'M4', name: 'Electrons, Waves and Photons', sub: 'Charge, circuits, waves, quantum physics' },
+      { id: 'M5', name: 'Newtonian World and Astrophysics', sub: 'Thermal physics, gravity, astrophysics, cosmology' },
+      { id: 'M6', name: 'Particles and Medical Physics', sub: 'Capacitors, EM fields, nuclear, particle, medical' },
+    ]
+  },
+  'Physics_OCR B': {
+    label: 'Physics — OCR B',
+    emoji: '⚡',
+    page: 'diagnostics/physics-ocr-b-diagnostic.html',
+    topics: [
+      { id: 'B1', name: 'Development of Practical Skills', sub: 'Planning, measurements, analysis, uncertainties' },
+      { id: 'B2', name: 'Fundamental Data Analysis', sub: 'SI units, quantities, estimation, graphs' },
+      { id: 'B3', name: 'Physics in Action', sub: 'Imaging, sensing, materials, signalling' },
+      { id: 'B4', name: 'Understanding Processes', sub: 'Waves, quantum behaviour, space & time' },
+      { id: 'B5', name: 'Rise and Fall of the Clockwork Universe', sub: 'Mechanics, energy, oscillations, thermal, gravity' },
+      { id: 'B6', name: 'Field and Particle Physics', sub: 'EM fields, capacitors, induction, particles, nuclear' },
+    ]
+  },
+  'Economics_AQA': {
+    label: 'Economics — AQA',
+    emoji: '📈',
+    page: 'diagnostics/economics-aqa-diagnostic.html',
+    topics: [
+      { id: '3.1.1', name: 'Economic Problem & Methodology', sub: 'Scarcity, opportunity cost, PPF, economic methodology' },
+      { id: '3.1.2', name: 'Price Determination', sub: 'Demand, supply, equilibrium, elasticity (PED, YED, XED, PES)' },
+      { id: '3.1.3', name: 'Production Costs & Revenue', sub: 'Short/long run costs, economies of scale, revenue curves' },
+      { id: '3.1.4', name: 'Competitive & Concentrated Markets', sub: 'Perfect competition, monopoly, oligopoly, monopolistic competition' },
+      { id: '3.1.5', name: 'Market Failure & Government Intervention', sub: 'Externalities, public goods, merit goods, government failure' },
+      { id: '3.2.1', name: 'Measurement of Macroeconomic Performance', sub: 'GDP, inflation (CPI/RPI), unemployment, balance of payments' },
+      { id: '3.2.2', name: 'How the Macroeconomy Works', sub: 'AD/AS model, circular flow, multiplier, consumption & investment' },
+      { id: '3.2.3', name: 'Economic Performance', sub: 'Economic growth, trade cycles, Phillips curve, conflicts' },
+      { id: '3.2.4', name: 'Financial Markets & Monetary Policy', sub: 'Money supply, interest rates, central banks, quantitative easing' },
+      { id: '3.2.5', name: 'Fiscal & Supply-Side Policies', sub: 'Taxation, government spending, supply-side reforms, laffer curve' },
+    ]
+  },
+  'Economics_Edexcel A': {
+    label: 'Economics — Edexcel A',
+    emoji: '📈',
+    page: 'diagnostics/economics-edexcel-a-diagnostic.html',
+    topics: [
+      { id: '1.1', name: 'Nature of Economics & Markets', sub: 'Scarcity, opportunity cost, demand/supply, price mechanism, elasticity' },
+      { id: '1.2', name: 'Market Failure & Government Intervention', sub: 'Externalities, public/merit goods, government failure, cost-benefit' },
+      { id: '2.1', name: 'Economic Performance & AD', sub: 'GDP, inflation, unemployment, balance of payments, aggregate demand' },
+      { id: '2.2', name: 'AS, National Income & Macro Policy', sub: 'AS curves, multiplier, fiscal/monetary/supply-side policies' },
+      { id: '3.1', name: 'Business Growth & Objectives', sub: 'Revenue, costs, economies of scale, profit maximisation, objectives' },
+      { id: '3.2', name: 'Market Structures & Labour', sub: 'Perfect competition, monopoly, oligopoly, labour market, wage determination' },
+      { id: '4.1', name: 'International Economics & Trade', sub: 'Comparative advantage, trade blocs, exchange rates, globalisation' },
+      { id: '4.2', name: 'Poverty, Inequality & Development', sub: 'Measures of development, inequality, strategies for development' },
+    ]
+  },
+  'Economics_OCR': {
+    label: 'Economics — OCR',
+    emoji: '📈',
+    page: 'diagnostics/economics-ocr-diagnostic.html',
+    topics: [
+      { id: '1.1', name: 'Economic Problem & Market Systems', sub: 'Scarcity, opportunity cost, demand/supply, price mechanism, elasticity' },
+      { id: '1.2', name: 'Market Failure & Government Intervention', sub: 'Externalities, public goods, information failure, government failure' },
+      { id: '1.3', name: 'Firm Objectives, Costs & Revenue', sub: 'Profit maximisation, revenue, short/long run costs, economies of scale' },
+      { id: '1.4', name: 'Market Structures', sub: 'Perfect competition, monopoly, oligopoly, contestable markets, efficiency' },
+      { id: '2.1', name: 'National & International Economy', sub: 'GDP, inflation, unemployment, balance of payments, economic cycle' },
+      { id: '2.2', name: 'AD/AS & Equilibrium', sub: 'Aggregate demand, aggregate supply, national income, multiplier' },
+      { id: '2.3', name: 'Economic Policy', sub: 'Fiscal, monetary, supply-side policies, policy conflicts & trade-offs' },
+      { id: '2.4', name: 'International Economics & Development', sub: 'Trade, exchange rates, globalisation, development, inequality' },
+    ]
+  },
+  'Economics_Edexcel B': {
+    label: 'Economics — Edexcel B',
+    emoji: '📈',
+    page: 'diagnostics/economics-edexcel-b-diagnostic.html',
+    topics: [
+      { id: '1.1', name: 'How Markets Work & Surplus', sub: 'Demand, supply, equilibrium, consumer/producer surplus, elasticity' },
+      { id: '1.2', name: 'Market Failure & Government Intervention', sub: 'Externalities, public goods, information gaps, government intervention' },
+      { id: '2.1', name: 'National Economic Performance', sub: 'GDP, inflation, unemployment, balance of payments, HDI' },
+      { id: '2.2', name: 'Macroeconomic Policy', sub: 'AD/AS model, fiscal/monetary/supply-side policies, multiplier' },
+      { id: '3.1', name: 'Business Economics', sub: 'Revenue, costs, profit, economies of scale, business objectives' },
+      { id: '3.2', name: 'Market Structures & Competition', sub: 'Perfect competition, monopoly, oligopoly, contestability, efficiency' },
+      { id: '4.1', name: 'International Economics & Globalisation', sub: 'Comparative advantage, trade, exchange rates, WTO, trading blocs' },
+      { id: '4.2', name: 'Development & Inequality', sub: 'Measures of development, causes of inequality, strategies, sustainability' },
+    ]
+  },
+  'Chemistry_AQA': {
+    label: 'Chemistry — AQA',
+    emoji: '🧪',
+    page: 'diagnostics/chemistry-aqa-diagnostic.html',
+    topics: [
+      { id: 'P1', name: 'Physical Chemistry I', sub: 'Atomic structure, bonding, energetics, amount of substance' },
+      { id: 'P2', name: 'Physical Chemistry II', sub: 'Kinetics, equilibria, thermodynamics, acids & bases, electrodes' },
+      { id: 'I1', name: 'Inorganic Chemistry I', sub: 'Periodicity, Group 2, Group 7' },
+      { id: 'I2', name: 'Inorganic Chemistry II', sub: 'Period 3, transition metals, ions in solution' },
+      { id: 'O1', name: 'Organic Chemistry I', sub: 'Alkanes, alkenes, halogenoalkanes, alcohols, analysis' },
+      { id: 'O2', name: 'Organic Chemistry II', sub: 'Carbonyls, aromatics, amines, polymers, NMR' },
+    ]
+  },
+  'Chemistry_Edexcel': {
+    label: 'Chemistry — Edexcel',
+    emoji: '🧪',
+    page: 'diagnostics/chemistry-edexcel-diagnostic.html',
+    topics: [
+      { id: 'T1', name: 'Atomic Structure, Bonding and Energetics', sub: 'Atomic models, bonding, intermolecular forces, enthalpy' },
+      { id: 'T2', name: 'Kinetics, Equilibrium and Redox', sub: 'Rates, Boltzmann, equilibrium, oxidation states' },
+      { id: 'T3', name: 'Inorganic Chemistry', sub: 'Periodicity, Groups 1/2/7, transition metals' },
+      { id: 'T4', name: 'Organic Chemistry I', sub: 'Alkanes, alkenes, halogenoalkanes, alcohols, mechanisms' },
+      { id: 'T5', name: 'Thermodynamics, Acids & Bases', sub: 'Born-Haber, entropy, free energy, pH, buffers' },
+      { id: 'T6', name: 'Advanced Organic & Analysis', sub: 'Aromatics, carbonyls, amines, polymers, NMR, IR' },
+    ]
+  },
+  'Chemistry_OCR A': {
+    label: 'Chemistry — OCR A',
+    emoji: '🧪',
+    page: 'diagnostics/chemistry-ocr-a-diagnostic.html',
+    topics: [
+      { id: 'M1', name: 'Development of Practical Skills', sub: 'Planning, analysis, evaluation, techniques' },
+      { id: 'M2', name: 'Foundations in Chemistry', sub: 'Atoms, moles, bonding, shapes, acid-base, redox' },
+      { id: 'M3', name: 'Periodic Table and Energy', sub: 'Periodicity, Groups 2 & 7, enthalpy, rates, equilibrium' },
+      { id: 'M4', name: 'Core Organic Chemistry', sub: 'Alkanes, alkenes, alcohols, haloalkanes, synthesis, IR/MS' },
+      { id: 'M5', name: 'Physical Chemistry & Transition Elements', sub: 'Rate equations, Kc/Kp, acids/bases, electrodes, transition metals' },
+      { id: 'M6', name: 'Organic Chemistry & Analysis', sub: 'Aromatics, carbonyls, amines, polymers, NMR' },
+    ]
+  },
+  'Chemistry_OCR B': {
+    label: 'Chemistry — OCR B',
+    emoji: '🧪',
+    page: 'diagnostics/chemistry-ocr-b-diagnostic.html',
+    topics: [
+      { id: 'S1', name: 'Foundations of Chemistry', sub: 'Atomic structure, moles, bonding, shapes' },
+      { id: 'S2', name: 'Energetics and Kinetics', sub: 'Enthalpy, Hess\'s law, entropy, rates, Arrhenius' },
+      { id: 'S3', name: 'Equilibrium and Acid-Base', sub: 'Kc, Kp, pH, Ka, buffers, titrations' },
+      { id: 'S4', name: 'Organic Chemistry', sub: 'Alkanes, alkenes, alcohols, halogenoalkanes, mechanisms' },
+      { id: 'S5', name: 'Redox & Transition Metals', sub: 'Electrode potentials, cells, complexes, catalysis' },
+      { id: 'S6', name: 'Advanced Organic & Analysis', sub: 'Aromatics, carbonyls, amines, polymers, NMR, IR, MS' },
+    ]
+  },
+  'Biology_AQA': {
+    label: 'Biology — AQA', emoji: '🧬', page: 'diagnostics/biology-aqa-diagnostic.html',
+    topics: [
+      { id: 'T1', name: 'Biological Molecules', sub: 'Water, carbs, lipids, proteins, enzymes, nucleic acids' },
+      { id: 'T2', name: 'Cells', sub: 'Cell structure, membranes, transport, immune system' },
+      { id: 'T3', name: 'Organisms Exchange Substances', sub: 'Gas exchange, digestion, mass transport' },
+      { id: 'T4', name: 'Genetic Information & Variation', sub: 'DNA, protein synthesis, meiosis, biodiversity' },
+      { id: 'T5', name: 'Energy Transfers', sub: 'Photosynthesis, respiration, ecosystems' },
+      { id: 'T6', name: 'Organisms Respond to Changes', sub: 'Nervous system, muscles, homeostasis' },
+      { id: 'T7', name: 'Genetics, Populations & Evolution', sub: 'Inheritance, populations, evolution, speciation' },
+      { id: 'T8', name: 'Control of Gene Expression', sub: 'Gene technology, epigenetics, biotechnology' },
+    ]
+  },
+  'Biology_Edexcel A': {
+    label: 'Biology — Edexcel A', emoji: '🧬', page: 'diagnostics/biology-edexcel-a-diagnostic.html',
+    topics: [
+      { id: 'T1', name: 'Molecules, Transport and Health', sub: 'Biological molecules, enzymes, membranes, cardiovascular' },
+      { id: 'T2', name: 'Cells, Development and Biodiversity', sub: 'Cell structure, division, stem cells, classification' },
+      { id: 'T3', name: 'Exchange, Transport and Reproduction', sub: 'Plant/animal transport, gas exchange, reproduction' },
+      { id: 'T4', name: 'Energy, Environment and Microbiology', sub: 'Photosynthesis, respiration, ecosystems, microbes' },
+      { id: 'T5', name: 'Genetics and Evolution', sub: 'DNA, protein synthesis, inheritance, evolution' },
+      { id: 'T6', name: 'Immunity, Infection and Forensics', sub: 'Immune system, pathogens, forensic biology' },
+      { id: 'T7', name: 'Homeostasis and Response', sub: 'Nervous system, hormones, muscles, homeostasis' },
+      { id: 'T8', name: 'Gene Expression and Biotechnology', sub: 'Gene technology, epigenetics, genomics' },
+    ]
+  },
+  'Biology_Edexcel B': {
+    label: 'Biology — Edexcel B', emoji: '🧬', page: 'diagnostics/biology-edexcel-b-diagnostic.html',
+    topics: [
+      { id: 'S1', name: 'Lifestyle, Health and Risk', sub: 'Cardiovascular disease, diet, lipids, water transport' },
+      { id: 'S2', name: 'Genes and Health', sub: 'DNA, protein synthesis, genetic disease, membranes' },
+      { id: 'S3', name: 'Voice of the Genome', sub: 'Cell division, development, stem cells, gene expression' },
+      { id: 'S4', name: 'Biodiversity and Natural Resources', sub: 'Classification, biodiversity, plant biology, sustainability' },
+      { id: 'S5', name: 'On the Wild Side', sub: 'Photosynthesis, climate change, ecosystems, evolution' },
+      { id: 'S6', name: 'Immunity, Infection and Forensics', sub: 'Immune system, pathogens, forensic biology' },
+      { id: 'S7', name: 'Run for Your Life', sub: 'Respiration, muscles, exercise, homeostasis' },
+      { id: 'S8', name: 'Grey Matter', sub: 'Nervous system, brain, vision, learning, drugs' },
+    ]
+  },
+  'Biology_OCR A': {
+    label: 'Biology — OCR A', emoji: '🧬', page: 'diagnostics/biology-ocr-a-diagnostic.html',
+    topics: [
+      { id: 'M1', name: 'Development of Practical Skills', sub: 'Planning, analysis, evaluation' },
+      { id: 'M2', name: 'Foundations in Biology', sub: 'Cell structure, molecules, enzymes, membranes' },
+      { id: 'M3', name: 'Exchange and Transport', sub: 'Gas exchange, circulatory system, plant transport' },
+      { id: 'M4', name: 'Biodiversity, Evolution and Disease', sub: 'Pathogens, immunity, classification, evolution' },
+      { id: 'M5', name: 'Communication, Homeostasis and Energy', sub: 'Nervous/hormonal, homeostasis, photosynthesis, respiration' },
+      { id: 'M6', name: 'Genetics, Evolution and Ecosystems', sub: 'Inheritance, gene technology, ecosystems' },
+    ]
+  },
+  'Biology_OCR B': {
+    label: 'Biology — OCR B', emoji: '🧬', page: 'diagnostics/biology-ocr-b-diagnostic.html',
+    topics: [
+      { id: 'B1', name: 'Development of Practical Skills', sub: 'Planning, analysis, evaluation' },
+      { id: 'B2', name: 'Cells, Chemicals and Transport', sub: 'Cell structure, molecules, enzymes, membranes' },
+      { id: 'B3', name: 'Cell Division, Development and Disease', sub: 'Mitosis, meiosis, stem cells, immunity' },
+      { id: 'B4', name: 'Energy, Reproduction and Populations', sub: 'Photosynthesis, respiration, ecosystems, evolution' },
+      { id: 'B5', name: 'Genetics, Control and Homeostasis', sub: 'DNA, inheritance, nervous/hormonal, homeostasis' },
+      { id: 'B6', name: 'Biotechnology, Ecosystems and Human Impact', sub: 'Gene tech, cloning, conservation, sustainability' },
+    ]
+  }
+};
+
+const TIPS = {
+  green: {
+    '1.1': 'Strong on architecture — keep practising past papers to stay sharp',
+    '1.2': 'Memory & storage locked in — try some 6-mark questions to push further',
+    '1.3': 'Networks looking good — revise protocols before the exam',
+    '1.4': 'Security knowledge solid — practise explaining prevention methods',
+    '1.5': 'Systems software confident — compare different OS types for depth',
+    '1.6': 'Ethics & law strong — make sure you can discuss both sides',
+    '2.1': 'Algorithms confident — try tracing more complex examples',
+    '2.2': 'Programming fundamentals solid — practise writing longer code answers',
+    '2.3': 'Testing knowledge strong — revise edge cases and boundary testing',
+    '2.4': 'Boolean logic locked in — try multi-gate simplification questions',
+    '2.5': 'Languages & IDEs confident — compare paradigms for higher marks',
+  },
+  amber: {
+    '1.1': 'Review CPU components and the fetch-execute cycle',
+    '1.2': 'Revisit storage types and memory hierarchy',
+    '1.3': 'Focus on protocols and network topologies',
+    '1.4': 'Brush up on threat types and prevention methods',
+    '1.5': 'Review OS functions and translator differences',
+    '1.6': 'Revisit legislation and ethical issues',
+    '2.1': 'Practice trace tables and sorting algorithms',
+    '2.2': 'Review data types, loops and array operations',
+    '2.3': 'Focus on testing types and validation techniques',
+    '2.4': 'Practice truth tables and Boolean simplification',
+    '2.5': 'Review compiler vs interpreter and IDE features',
+  },
+  red: {
+    '1.1': 'Start with the basics: CPU components, registers, and buses',
+    '1.2': 'Begin with RAM vs ROM, then move to storage comparisons',
+    '1.3': 'Start with LAN vs WAN and build up to protocols',
+    '1.4': 'Learn the main threat types first, then prevention',
+    '1.5': 'Focus on what an OS does before moving to translators',
+    '1.6': 'Start with the key laws: DPA, CMA, Copyright',
+    '2.1': 'Start with linear/binary search, then try sorting',
+    '2.2': 'Begin with variables and data types, then loops',
+    '2.3': 'Learn validation vs verification first',
+    '2.4': 'Start with AND, OR, NOT truth tables',
+    '2.5': 'Learn high vs low level languages first',
+  }
+};
+
+function toggleSection(idx) {
+  const topics = document.getElementById('topics' + idx);
+  const toggle = document.getElementById('toggle' + idx);
+  topics.classList.toggle('collapsed');
+  toggle.classList.toggle('collapsed');
+}
+
+let allTopicData = [];
+let allSubjectData = [];
+let activeFilter = 'all';
+let activeSubject = null;
+
+function selectSubject(key) {
+  const detail = document.getElementById('breakdownDetail');
+
+  if (activeSubject === key) {
+    // Toggle off
+    activeSubject = null;
+    detail.classList.remove('open');
+    document.querySelectorAll('.subj-card').forEach(c => c.classList.remove('active'));
+    return;
+  }
+
+  activeSubject = key;
+  document.querySelectorAll('.subj-card').forEach(c => c.classList.remove('active'));
+  const card = document.querySelector(`.subj-card[data-key="${key}"]`);
+  if (card) card.classList.add('active');
+
+  // Filter allTopicData to this subject
+  const subTopics = allTopicData.filter(t => `${t.subjectLabel}` === key);
+  const green = subTopics.filter(t => t.rag === 'green').length;
+  const amber = subTopics.filter(t => t.rag === 'amber').length;
+  const red = subTopics.filter(t => t.rag === 'red').length;
+  const pending = subTopics.filter(t => t.rag === 'pending').length;
+  const tested = green + amber + red;
+
+  document.getElementById('statTotal').textContent = tested;
+  document.getElementById('statTotalSub').textContent =
+    tested > 0 ? `${green} green · ${amber} amber · ${red} red` : 'no topics tested yet';
+  document.getElementById('statGreen').textContent = green;
+  document.getElementById('statAmber').textContent = amber;
+  document.getElementById('statRed').textContent = red;
+  document.getElementById('statPending').textContent = pending;
+
+  renderSummaryBar(green, amber, red, pending);
+  activeFilter = 'all';
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.filter-tab')[0].classList.add('active');
+  document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('active'));
+  renderTopics();
+
+  detail.classList.add('open');
+  detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function renderSubjectCards() {
+  const grid = document.getElementById('subjectsGrid');
+
+  if (!allSubjectData.length) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--muted);">
+      <div style="font-size:36px;margin-bottom:10px;">📊</div>
+      <div style="font-family:var(--font-display);font-size:18px;margin-bottom:6px;">No subjects yet</div>
+      <div style="font-size:13px;">Go to <a href="auth/setup.html" style="color:var(--accent-dark);">setup</a> to add your subjects.</div>
+    </div>`;
+    return;
+  }
+
+  grid.innerHTML = allSubjectData.map(s => {
+    const topics = allTopicData.filter(t => t.subjectLabel === s.label);
+    const green = topics.filter(t => t.rag === 'green').length;
+    const amber = topics.filter(t => t.rag === 'amber').length;
+    const red = topics.filter(t => t.rag === 'red').length;
+    const pending = topics.filter(t => t.rag === 'pending').length;
+    const total = topics.length;
+    const tested = green + amber + red;
+
+    let ragClass = 'rag-pending';
+    if (tested > 0) {
+      const gPct = green / tested;
+      const rPct = red / tested;
+      if (gPct >= 0.7) ragClass = 'rag-green';
+      else if (rPct >= 0.4) ragClass = 'rag-red';
+      else ragClass = 'rag-amber';
+    }
+
+    const barSegs = total ? [
+      `<div class="subj-card-seg green" style="width:${(green/total*100).toFixed(1)}%"></div>`,
+      `<div class="subj-card-seg amber" style="width:${(amber/total*100).toFixed(1)}%"></div>`,
+      `<div class="subj-card-seg red" style="width:${(red/total*100).toFixed(1)}%"></div>`,
+      `<div class="subj-card-seg pending" style="width:${(pending/total*100).toFixed(1)}%"></div>`,
+    ].join('') : '';
+
+    return `
+      <div class="subj-card ${ragClass}" data-key="${s.label}" onclick="selectSubject('${s.label}')">
+        <div class="subj-card-top">
+          <div class="subj-card-emoji">${s.emoji}</div>
+          <div class="subj-card-info">
+            <div class="subj-card-name">${s.subject}</div>
+            <div class="subj-card-board">${s.board} · ${tested}/${total} topics tested</div>
+          </div>
+        </div>
+        <div class="subj-card-stats">
+          ${green ? `<span class="subj-card-stat green">${green} green</span>` : ''}
+          ${amber ? `<span class="subj-card-stat amber">${amber} amber</span>` : ''}
+          ${red ? `<span class="subj-card-stat red">${red} red</span>` : ''}
+          ${pending ? `<span class="subj-card-stat pending">${pending} not tested</span>` : ''}
+        </div>
+        <div class="subj-card-bar">${barSegs}</div>
+      </div>`;
+  }).join('');
+}
+
+function setFilter(filter, tabEl) {
+  activeFilter = filter;
+
+  // Update filter tabs
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  if (tabEl) {
+    tabEl.classList.add('active');
+  } else {
+    const tabs = document.querySelectorAll('.filter-tab');
+    const idx = { all: 0, green: 1, amber: 2, red: 3, pending: 4 }[filter];
+    if (tabs[idx]) tabs[idx].classList.add('active');
+  }
+
+  // Update stat cards
+  document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('active'));
+  const cardIdx = { all: 0, green: 1, amber: 2, red: 3, pending: 4 }[filter];
+  const cards = document.querySelectorAll('.stat-card');
+  if (cardIdx !== undefined && cards[cardIdx]) cards[cardIdx].classList.add('active');
+
+  renderTopics();
+}
+
+function renderTopics() {
+  const list = document.getElementById('topicList');
+  let source = activeSubject
+    ? allTopicData.filter(t => t.subjectLabel === activeSubject)
+    : allTopicData;
+  const filtered = activeFilter === 'all'
+    ? source
+    : source.filter(t => t.rag === activeFilter);
+
+  if (!filtered.length) {
+    const msgs = {
+      all: 'No topics tested yet. Start a diagnostic to see your progress here.',
+      green: 'No green topics yet. Keep practising and they\'ll appear here.',
+      amber: 'No amber topics right now.',
+      red: 'No red topics — great work!',
+      pending: 'All topics have been tested!'
+    };
+    list.innerHTML = `<div class="empty-msg">${msgs[activeFilter]}</div>`;
+    return;
+  }
+
+  // Group by subject
+  const groups = {};
+  filtered.forEach(t => {
+    if (!groups[t.subjectLabel]) groups[t.subjectLabel] = { emoji: t.subjectEmoji, topics: [] };
+    groups[t.subjectLabel].topics.push(t);
+  });
+
+  let html = '';
+  let sIdx = 0;
+  for (const [label, group] of Object.entries(groups)) {
+    const g = group.topics.filter(t => t.rag === 'green').length;
+    const a = group.topics.filter(t => t.rag === 'amber').length;
+    const r = group.topics.filter(t => t.rag === 'red').length;
+    const p = group.topics.filter(t => t.rag === 'pending').length;
+
+    const pills = [
+      g ? `<span class="subject-summary-pill green">${g} green</span>` : '',
+      a ? `<span class="subject-summary-pill amber">${a} amber</span>` : '',
+      r ? `<span class="subject-summary-pill red">${r} red</span>` : '',
+      p ? `<span class="subject-summary-pill pending">${p} not tested</span>` : '',
+    ].filter(Boolean).join('');
+
+    html += `<div class="subject-section">
+      <div class="subject-header" onclick="toggleSection(${sIdx})">
+        <span class="subject-emoji">${group.emoji}</span> ${label}
+        <div class="subject-summary">
+          <div class="subject-summary-pills">${pills}</div>
+          <span class="subject-toggle collapsed" id="toggle${sIdx}">▼</span>
+        </div>
+      </div>
+      <div class="subject-topics collapsed" id="topics${sIdx}">`;
+
+    group.topics.forEach(t => {
+      const showTip = t.rag !== 'pending';
+      html += `
+        <a class="topic-card" href="${t.page}?topic=${t.id}">
+          <div class="topic-num ${t.rag}">${t.id}</div>
+          <div class="topic-info">
+            <div class="topic-name">${t.name}</div>
+            <div class="topic-sub">${t.sub}</div>
+            ${showTip ? `<div class="topic-tip">Personalised feedback available <span class="pro-tag">PRO</span></div>` : ''}
+          </div>
+          <div class="topic-rag ${t.rag}"></div>
+          <div class="topic-arrow">→</div>
+        </a>`;
+    });
+
+    html += `</div></div>`;
+    sIdx++;
+  }
+
+  list.innerHTML = html;
+}
+
+function renderSummaryBar(green, amber, red, pending) {
+  const total = green + amber + red + pending;
+  if (!total) { document.getElementById('summaryBar').innerHTML = ''; return; }
+  const pct = v => ((v / total) * 100).toFixed(1);
+  document.getElementById('summaryBar').innerHTML = `
+    <div class="summary-seg green" style="width:${pct(green)}%"></div>
+    <div class="summary-seg amber" style="width:${pct(amber)}%"></div>
+    <div class="summary-seg red" style="width:${pct(red)}%"></div>
+    <div class="summary-seg pending" style="width:${pct(pending)}%"></div>`;
+}
+
+async function load() {
+  const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
+  if (authErr || !user) { window.location = 'auth/login.html'; return; }
+
+  const [
+    { data: profile },
+    { data: subjects },
+    { data: topicProgress }
+  ] = await Promise.all([
+    supabaseClient.from('profiles').select('*').eq('id', user.id).single(),
+    supabaseClient.from('user_subjects').select('*').eq('user_id', user.id),
+    supabaseClient.from('topic_progress').select('subject, exam_board, topic, rag_status').eq('user_id', user.id)
+  ]);
+
+  // Sidebar user info
+  const firstName = profile?.first_name || '';
+  const lastName = profile?.last_name || '';
+  document.getElementById('sidebarName').textContent = `${firstName} ${lastName}`.trim() || 'Student';
+  document.getElementById('sidebarEmail').textContent = user.email;
+  document.getElementById('avatarInitials').textContent =
+    ((firstName[0] || '') + (lastName[0] || '')).toUpperCase() || '?';
+
+  // Build RAG map from topic_progress
+  const ragMap = {};
+  (topicProgress || []).forEach(t => {
+    ragMap[`${t.subject}_${t.exam_board}_${t.topic}`] = t.rag_status;
+  });
+
+  // Build full topic list and subject list
+  allTopicData = [];
+  allSubjectData = [];
+  (subjects || []).forEach(s => {
+    const key = `${s.subject}_${s.exam_board}`;
+    const diagData = DIAG_TOPICS[key];
+    if (!diagData) return;
+
+    allSubjectData.push({
+      label: diagData.label,
+      subject: s.subject,
+      board: s.exam_board,
+      emoji: diagData.emoji || s.emoji || '📚'
+    });
+
+    diagData.topics.forEach(t => {
+      const rag = ragMap[`${key}_${t.id}`] || 'pending';
+      allTopicData.push({
+        ...t,
+        rag,
+        subjectLabel: diagData.label,
+        subjectEmoji: diagData.emoji,
+        page: diagData.page
+      });
+    });
+  });
+
+  // Stats
+  const tested = allTopicData.filter(t => t.rag !== 'pending').length;
+  const green = allTopicData.filter(t => t.rag === 'green').length;
+  const amber = allTopicData.filter(t => t.rag === 'amber').length;
+  const red = allTopicData.filter(t => t.rag === 'red').length;
+  const pending = allTopicData.filter(t => t.rag === 'pending').length;
+
+  document.getElementById('statTotal').textContent = tested;
+  document.getElementById('statTotalSub').textContent =
+    tested > 0 ? `${green} green · ${amber} amber · ${red} red` : 'no topics tested yet';
+  document.getElementById('statGreen').textContent = green;
+  document.getElementById('statAmber').textContent = amber;
+  document.getElementById('statRed').textContent = red;
+  document.getElementById('statPending').textContent = pending;
+
+  renderSummaryBar(green, amber, red, pending);
+  renderTopics();
+}
+
+async function logout() {
+  await supabaseClient.auth.signOut();
+  window.location = 'auth/login.html';
+}
+
+load();
+</script>
+</body>
+</html>

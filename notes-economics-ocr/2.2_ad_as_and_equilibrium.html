@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AD/AS & Equilibrium — OCR A-Level Economics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .diagram-box { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
+  .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 8px; font-style: italic; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>2.2 AD/AS & National Income</h1>
+
+<h2>Aggregate Demand (AD)</h2>
+
+<div class="def-box">
+  <strong>Aggregate Demand:</strong> The total planned expenditure on goods and services produced in an economy at a given price level over a given time period. AD = C + I + G + (X - M)
+</div>
+
+<div class="eq">AD = C + I + G + (X - M)</div>
+
+<h3>Components of AD</h3>
+<table>
+  <tr><th>Component</th><th>Meaning</th><th>Approximate % of UK GDP</th></tr>
+  <tr><td>C — Consumption</td><td>Household spending on goods and services</td><td>~63%</td></tr>
+  <tr><td>I — Investment</td><td>Spending by firms on capital goods (also includes housing investment)</td><td>~17%</td></tr>
+  <tr><td>G — Government Spending</td><td>Government expenditure on goods/services (excludes transfer payments)</td><td>~20%</td></tr>
+  <tr><td>(X - M) — Net Exports</td><td>Exports minus imports</td><td>Usually negative for UK</td></tr>
+</table>
+
+<h3>Why AD Slopes Downward</h3>
+<ul>
+  <li><strong>Real balance (wealth) effect:</strong> Lower price level increases real value of wealth, encouraging spending</li>
+  <li><strong>Interest rate effect:</strong> Lower price level reduces demand for money, lowering interest rates, encouraging borrowing and spending</li>
+  <li><strong>International competitiveness effect:</strong> Lower price level makes exports cheaper and imports dearer, improving net exports</li>
+</ul>
+
+<h3>Factors Shifting AD</h3>
+<table>
+  <tr><th>Component</th><th>Increases AD (rightward shift)</th><th>Decreases AD (leftward shift)</th></tr>
+  <tr><td>Consumption</td><td>Lower interest rates, higher confidence, rising asset prices, tax cuts, credit availability</td><td>Higher interest rates, falling confidence, higher taxes, debt levels</td></tr>
+  <tr><td>Investment</td><td>Lower interest rates, higher confidence, technological advances, lower corporation tax</td><td>Higher interest rates, uncertainty, excess capacity</td></tr>
+  <tr><td>Government Spending</td><td>Expansionary fiscal policy</td><td>Austerity / contractionary fiscal policy</td></tr>
+  <tr><td>Net Exports</td><td>Depreciation, trading partner growth, improved competitiveness</td><td>Appreciation, recession abroad, higher domestic inflation</td></tr>
+</table>
+
+<h2>Aggregate Supply</h2>
+
+<h3>Short-Run Aggregate Supply (SRAS)</h3>
+
+<div class="def-box">
+  <strong>SRAS:</strong> The total output that all firms in the economy are willing and able to supply at each price level in the short run, when at least some factor prices (especially wages) are fixed. SRAS slopes upward — firms can increase output by using existing capacity more intensively.
+</div>
+
+<p><strong>Shifts in SRAS:</strong></p>
+<ul>
+  <li>Changes in costs of production (wages, raw materials, energy)</li>
+  <li>Exchange rate changes (import costs)</li>
+  <li>Indirect taxes / subsidies</li>
+  <li>Supply-side shocks (e.g., oil price spike)</li>
+</ul>
+
+<h3>Long-Run Aggregate Supply (LRAS)</h3>
+
+<div class="def-box">
+  <strong>LRAS:</strong> The total output the economy can produce when all resources are fully and efficiently employed — the economy is at its potential output (full capacity). In the classical model, LRAS is vertical at the full employment level of output.
+</div>
+
+<p><strong>Shifts in LRAS:</strong></p>
+<ul>
+  <li>Changes in quantity of factors of production (labour force growth, capital investment, new land/resources)</li>
+  <li>Changes in quality of factors (education, training, technology)</li>
+  <li>Institutional improvements (property rights, rule of law, deregulation)</li>
+</ul>
+
+<div class="diagram-box">
+  <svg viewBox="0 0 440 320" width="440" height="320" xmlns="http://www.w3.org/2000/svg">
+    <!-- Axes -->
+    <line x1="50" y1="270" x2="410" y2="270" stroke="#1a1a2e" stroke-width="2"/>
+    <line x1="50" y1="270" x2="50" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+    <text x="230" y="300" text-anchor="middle" font-size="12" fill="#1a1a2e">Real National Output (Y)</text>
+    <text x="18" y="150" text-anchor="middle" font-size="12" fill="#1a1a2e" transform="rotate(-90,18,150)">Price Level (PL)</text>
+    <!-- LRAS (vertical) -->
+    <line x1="280" y1="40" x2="280" y2="260" stroke="#9333ea" stroke-width="3"/>
+    <text x="290" y="45" font-size="12" fill="#9333ea" font-weight="bold">LRAS</text>
+    <!-- SRAS -->
+    <path d="M 70 220 Q 150 200, 220 170 Q 280 140, 340 80 Q 370 55, 390 40" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+    <text x="395" y="40" font-size="11" fill="#1a73e8" font-weight="bold">SRAS</text>
+    <!-- AD -->
+    <path d="M 80 60 Q 160 100, 240 160 Q 300 210, 380 250" fill="none" stroke="#ef4444" stroke-width="2.5"/>
+    <text x="385" y="255" font-size="11" fill="#ef4444" font-weight="bold">AD</text>
+    <!-- Equilibrium -->
+    <circle cx="260" cy="155" r="5" fill="#22c55e"/>
+    <line x1="50" y1="155" x2="260" y2="155" stroke="#666" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="260" y1="155" x2="260" y2="270" stroke="#666" stroke-width="1" stroke-dasharray="4,4"/>
+    <text x="40" y="159" font-size="10" text-anchor="end">PL₁</text>
+    <text x="260" y="285" font-size="10" text-anchor="middle">Y₁</text>
+    <text x="280" y="285" font-size="10" text-anchor="middle" fill="#9333ea">Yf</text>
+    <!-- Arrows -->
+    <polygon points="410,270 402,264 402,276" fill="#1a1a2e"/>
+    <polygon points="50,30 44,38 56,38" fill="#1a1a2e"/>
+  </svg>
+  <p class="diagram-caption">AD/AS model — SRAS upward sloping, LRAS vertical at full employment (Yf), macroeconomic equilibrium where AD = SRAS</p>
+</div>
+
+<h3>Keynesian LRAS</h3>
+<p>The Keynesian view differs from the Classical model:</p>
+<ul>
+  <li>At low output: LRAS is horizontal (spare capacity, output can increase without inflation)</li>
+  <li>At intermediate output: LRAS slopes upward (approaching capacity, some inflationary pressure)</li>
+  <li>At full capacity: LRAS is vertical (economy cannot produce more, all increase in AD is inflationary)</li>
+</ul>
+
+<div class="diagram-box">
+  <svg viewBox="0 0 440 300" width="440" height="300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Axes -->
+    <line x1="50" y1="260" x2="410" y2="260" stroke="#1a1a2e" stroke-width="2"/>
+    <line x1="50" y1="260" x2="50" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+    <text x="230" y="290" text-anchor="middle" font-size="12" fill="#1a1a2e">Real National Output (Y)</text>
+    <text x="18" y="140" text-anchor="middle" font-size="12" fill="#1a1a2e" transform="rotate(-90,18,140)">Price Level</text>
+    <!-- Keynesian LRAS (three sections) -->
+    <path d="M 70 200 L 200 200 Q 260 195, 310 150 Q 340 110, 350 60 L 350 30" fill="none" stroke="#9333ea" stroke-width="3"/>
+    <text x="360" y="35" font-size="12" fill="#9333ea" font-weight="bold">Keynesian LRAS</text>
+    <!-- Labels for sections -->
+    <text x="130" y="220" font-size="9" fill="#666" text-anchor="middle">Spare capacity</text>
+    <text x="130" y="232" font-size="9" fill="#666" text-anchor="middle">(horizontal)</text>
+    <text x="280" y="165" font-size="9" fill="#666" text-anchor="middle">Approaching</text>
+    <text x="280" y="177" font-size="9" fill="#666" text-anchor="middle">full capacity</text>
+    <text x="370" y="80" font-size="9" fill="#666">Full</text>
+    <text x="370" y="92" font-size="9" fill="#666">capacity</text>
+    <!-- Arrows -->
+    <polygon points="410,260 402,254 402,266" fill="#1a1a2e"/>
+    <polygon points="50,20 44,28 56,28" fill="#1a1a2e"/>
+  </svg>
+  <p class="diagram-caption">Keynesian LRAS — the economy can operate below full capacity for extended periods due to deficient demand</p>
+</div>
+
+<div class="tip-box">
+  <strong>Exam Tip:</strong> Know both Classical and Keynesian LRAS models and when to use each. Classical LRAS is better for analysing supply-side policies. Keynesian LRAS is better for explaining recessions and why demand management matters. State which model you are using in your answer.
+</div>
+
+<h2>Macroeconomic Equilibrium</h2>
+
+<p>Macroeconomic equilibrium occurs where AD intersects AS. Changes in AD or AS will shift the equilibrium, affecting real output, employment, and the price level.</p>
+
+<h3>Effects of AD Shifts</h3>
+<table>
+  <tr><th>Shift</th><th>Effect on Real Output</th><th>Effect on Price Level</th><th>Policy Implication</th></tr>
+  <tr><td>AD increases (rightward)</td><td>Increases (more if spare capacity)</td><td>Rises (more if near full capacity)</td><td>Growth and inflation trade-off</td></tr>
+  <tr><td>AD decreases (leftward)</td><td>Falls</td><td>Falls (or slower growth)</td><td>Recession, demand management needed</td></tr>
+</table>
+
+<h3>Effects of AS Shifts</h3>
+<table>
+  <tr><th>Shift</th><th>Effect on Real Output</th><th>Effect on Price Level</th></tr>
+  <tr><td>SRAS decreases (leftward)</td><td>Falls</td><td>Rises (stagflation)</td></tr>
+  <tr><td>SRAS increases (rightward)</td><td>Increases</td><td>Falls</td></tr>
+  <tr><td>LRAS increases (rightward)</td><td>Increases (potential output rises)</td><td>Falls (non-inflationary growth)</td></tr>
+</table>
+
+<h2>The Circular Flow of Income</h2>
+
+<div class="diagram-box">
+  <svg viewBox="0 0 440 300" width="440" height="300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Households box -->
+    <rect x="30" y="110" width="120" height="60" rx="10" fill="#e8f0fe" stroke="#1a73e8" stroke-width="2"/>
+    <text x="90" y="145" text-anchor="middle" font-size="13" fill="#1a1a2e" font-weight="bold">Households</text>
+    <!-- Firms box -->
+    <rect x="290" y="110" width="120" height="60" rx="10" fill="#e8f0fe" stroke="#1a73e8" stroke-width="2"/>
+    <text x="350" y="145" text-anchor="middle" font-size="13" fill="#1a1a2e" font-weight="bold">Firms</text>
+    <!-- Top flow (spending) -->
+    <path d="M 150 125 L 290 125" fill="none" stroke="#22c55e" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+    <text x="220" y="118" text-anchor="middle" font-size="10" fill="#22c55e" font-weight="bold">Spending on goods (C)</text>
+    <!-- Bottom flow (incomes) -->
+    <path d="M 290 155 L 150 155" fill="none" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+    <text x="220" y="172" text-anchor="middle" font-size="10" fill="#ef4444" font-weight="bold">Factor incomes (Y)</text>
+    <!-- Injections (top) -->
+    <text x="220" y="30" text-anchor="middle" font-size="12" fill="#1a73e8" font-weight="bold">INJECTIONS</text>
+    <text x="100" y="50" font-size="10" fill="#1a73e8">Investment (I)</text>
+    <text x="200" y="50" font-size="10" fill="#1a73e8">Gov Spending (G)</text>
+    <text x="330" y="50" font-size="10" fill="#1a73e8">Exports (X)</text>
+    <line x1="220" y1="55" x2="220" y2="110" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrow-blue)"/>
+    <!-- Withdrawals (bottom) -->
+    <text x="220" y="220" text-anchor="middle" font-size="12" fill="#9333ea" font-weight="bold">WITHDRAWALS (LEAKAGES)</text>
+    <text x="100" y="240" font-size="10" fill="#9333ea">Savings (S)</text>
+    <text x="210" y="240" font-size="10" fill="#9333ea">Taxation (T)</text>
+    <text x="330" y="240" font-size="10" fill="#9333ea">Imports (M)</text>
+    <line x1="220" y1="170" x2="220" y2="215" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+    <!-- Arrow markers -->
+    <defs>
+      <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#22c55e"/></marker>
+      <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#ef4444"/></marker>
+      <marker id="arrow-blue" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto"><polygon points="0 0, 8 0, 4 6" fill="#1a73e8"/></marker>
+      <marker id="arrow-purple" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto"><polygon points="0 0, 8 0, 4 6" fill="#9333ea"/></marker>
+    </defs>
+  </svg>
+  <p class="diagram-caption">Circular flow of income — injections (I, G, X) add to the flow; withdrawals (S, T, M) remove from it</p>
+</div>
+
+<p><strong>Equilibrium condition:</strong> National income is in equilibrium when total injections = total withdrawals.</p>
+<div class="eq">I + G + X = S + T + M</div>
+<ul>
+  <li>If injections > withdrawals → national income rises (expansion)</li>
+  <li>If withdrawals > injections → national income falls (contraction)</li>
+</ul>
+
+<h2>The Multiplier</h2>
+
+<div class="def-box">
+  <strong>Multiplier Effect:</strong> The process by which an initial change in spending leads to a larger final change in national income. An injection into the circular flow is re-spent multiple times, creating successive rounds of income and expenditure.
+</div>
+
+<div class="eq">Multiplier (k) = 1 / (1 - MPC) = 1 / MPW</div>
+
+<p>Where:</p>
+<ul>
+  <li><strong>MPC</strong> = Marginal Propensity to Consume (fraction of additional income spent domestically)</li>
+  <li><strong>MPW</strong> = Marginal Propensity to Withdraw = MPS + MPT + MPM</li>
+  <li><strong>MPS</strong> = Marginal Propensity to Save</li>
+  <li><strong>MPT</strong> = Marginal Propensity to Tax</li>
+  <li><strong>MPM</strong> = Marginal Propensity to Import</li>
+</ul>
+
+<div class="eq">Final change in Y = Initial injection x Multiplier</div>
+
+<p><strong>Example:</strong> If MPC = 0.8 → Multiplier = 1/(1-0.8) = 1/0.2 = 5. A £10m increase in government spending would lead to a £50m final increase in national income.</p>
+
+<div class="diagram-box">
+  <svg viewBox="0 0 440 250" width="440" height="250" xmlns="http://www.w3.org/2000/svg">
+    <!-- Axes -->
+    <line x1="50" y1="210" x2="410" y2="210" stroke="#1a1a2e" stroke-width="2"/>
+    <line x1="50" y1="210" x2="50" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+    <text x="230" y="240" text-anchor="middle" font-size="12" fill="#1a1a2e">Real Output (Y)</text>
+    <text x="18" y="115" text-anchor="middle" font-size="12" fill="#1a1a2e" transform="rotate(-90,18,115)">Price Level</text>
+    <!-- SRAS -->
+    <path d="M 70 180 Q 180 160, 280 120 Q 350 80, 400 40" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+    <text x="405" y="40" font-size="11" fill="#1a73e8" font-weight="bold">SRAS</text>
+    <!-- AD1 -->
+    <path d="M 80 50 Q 180 100, 280 160 Q 350 200, 400 210" fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="405" y="210" font-size="11" fill="#ef4444">AD₁</text>
+    <!-- AD2 (shifted right) -->
+    <path d="M 130 50 Q 230 100, 330 160 Q 380 190, 410 200" fill="none" stroke="#ef4444" stroke-width="2.5"/>
+    <text x="415" y="195" font-size="11" fill="#ef4444" font-weight="bold">AD₂</text>
+    <!-- Initial injection bracket -->
+    <line x1="200" y1="145" x2="200" y2="210" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="260" y1="135" x2="260" y2="210" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,4"/>
+    <!-- Labels -->
+    <text x="200" y="205" font-size="9" text-anchor="middle">Y₁</text>
+    <text x="260" y="205" font-size="9" text-anchor="middle">Y₂</text>
+    <!-- Arrow showing multiplied increase -->
+    <line x1="200" y1="198" x2="260" y2="198" stroke="#22c55e" stroke-width="2.5"/>
+    <polygon points="258,194 266,198 258,202" fill="#22c55e"/>
+    <text x="230" y="192" font-size="9" fill="#22c55e" text-anchor="middle" font-weight="bold">ΔY = k x ΔJ</text>
+    <!-- Arrows -->
+    <polygon points="410,210 402,204 402,216" fill="#1a1a2e"/>
+    <polygon points="50,20 44,28 56,28" fill="#1a1a2e"/>
+  </svg>
+  <p class="diagram-caption">The multiplier effect — an initial shift in AD leads to a larger final increase in national income (Y₁ to Y₂)</p>
+</div>
+
+<h3>Factors Affecting the Size of the Multiplier</h3>
+<table>
+  <tr><th>Larger Multiplier</th><th>Smaller Multiplier</th></tr>
+  <tr><td>High MPC (high consumer spending)</td><td>Low MPC (high savings rate)</td></tr>
+  <tr><td>Low tax rates</td><td>High tax rates (large MPT)</td></tr>
+  <tr><td>Low propensity to import</td><td>Open economy (high MPM)</td></tr>
+  <tr><td>Spare capacity in economy</td><td>Economy near full capacity (crowding out)</td></tr>
+</table>
+
+<div class="tip-box">
+  <strong>Exam Tip:</strong> The multiplier works in BOTH directions — a withdrawal has a negative multiplier effect. Also, in practice, the multiplier is smaller than theory suggests due to: time lags, confidence effects, spare capacity constraints, and the economy being open. Always evaluate the real-world size of the multiplier when discussing fiscal policy.
+</div>
+
+<h2>National Income Determination</h2>
+
+<h3>The Paradox of Thrift</h3>
+<p>If all households simultaneously increase their savings rate, total spending falls, causing national income to fall via the multiplier. The result may be lower total savings than before (as income falls, absolute savings may fall too). This illustrates the fallacy of composition — what is rational for an individual may be irrational for the economy as a whole.</p>
+
+<h3>Accelerator Effect</h3>
+<div class="def-box">
+  <strong>Accelerator:</strong> The theory that the level of investment depends on the rate of change of national income/output. When GDP growth accelerates, firms invest more to expand capacity. When growth slows (even if still positive), investment may fall sharply.
+</div>
+
+<p>The multiplier-accelerator interaction can amplify business cycle fluctuations — an initial increase in spending triggers the multiplier, which raises GDP growth, triggering the accelerator (more investment), which in turn raises AD further via the multiplier.</p>
+
+</div>
+</body>
+</html>

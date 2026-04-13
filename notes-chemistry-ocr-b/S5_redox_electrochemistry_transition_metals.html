@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S5 — Redox, Electrochemistry and Transition Metals</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>S5 — Redox, Electrochemistry and Transition Metals</h1>
+
+<!-- ============================================================ -->
+<h2>5.1 Oxidation States and Redox Reactions</h2>
+<!-- ============================================================ -->
+
+<h3>Oxidation States (Oxidation Numbers)</h3>
+
+<div class="definition">
+  <strong>Oxidation state:</strong> A number assigned to an atom in a compound that represents the number of electrons it has lost, gained, or shared unequally compared to the uncombined element. It is a bookkeeping device for tracking electron transfer.
+</div>
+
+<p>Rules for assigning oxidation states:</p>
+<ul>
+  <li>Uncombined elements have an oxidation state of 0.</li>
+  <li>In simple ions, the oxidation state equals the charge (e.g. Na<sup>+</sup> = +1, Cl<sup>&minus;</sup> = &minus;1).</li>
+  <li>Oxygen is &minus;2 (except in peroxides where it is &minus;1, and in OF<sub>2</sub> where it is +2).</li>
+  <li>Hydrogen is +1 (except in metal hydrides where it is &minus;1).</li>
+  <li>Fluorine is always &minus;1.</li>
+  <li>The sum of oxidation states in a neutral compound is 0; in a polyatomic ion it equals the ionic charge.</li>
+</ul>
+
+<h3>Redox Definitions</h3>
+
+<div class="definition">
+  <strong>Oxidation:</strong> Loss of electrons / increase in oxidation state.<br><br>
+  <strong>Reduction:</strong> Gain of electrons / decrease in oxidation state.<br><br>
+  <strong>Reducing agent:</strong> A substance that donates electrons (is itself oxidised).<br><br>
+  <strong>Oxidising agent:</strong> A substance that accepts electrons (is itself reduced).<br><br>
+  Remember: OIL RIG &mdash; Oxidation Is Loss, Reduction Is Gain (of electrons).
+</div>
+
+<h3>Half-Equations</h3>
+
+<p>A redox reaction can be split into two half-equations: one showing oxidation and one showing reduction. To write and balance half-equations:</p>
+<ol>
+  <li>Write the species being oxidised or reduced on each side.</li>
+  <li>Balance atoms other than O and H.</li>
+  <li>Balance oxygen by adding H<sub>2</sub>O.</li>
+  <li>Balance hydrogen by adding H<sup>+</sup>.</li>
+  <li>Balance charge by adding electrons (e<sup>&minus;</sup>).</li>
+</ol>
+
+<p>To combine half-equations, multiply each so the electrons cancel, then add the two equations together and simplify.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When balancing redox equations, always check that atoms and charges balance on both sides. A common mistake is forgetting to balance hydrogen atoms after adding water molecules. Also check that the electrons cancel completely when combining half-equations.
+</div>
+
+<!-- ============================================================ -->
+<h2>5.2 Electrochemical Cells</h2>
+<!-- ============================================================ -->
+
+<h3>Galvanic (Voltaic) Cells</h3>
+
+<div class="definition">
+  <strong>Electrochemical cell:</strong> A device that converts chemical energy into electrical energy (galvanic cell) or electrical energy into chemical energy (electrolytic cell). A galvanic cell consists of two half-cells connected by a salt bridge and an external wire.
+</div>
+
+<p>In a galvanic cell:</p>
+<ul>
+  <li>The more reactive metal (more negative electrode potential) is the anode (negative terminal) where oxidation occurs.</li>
+  <li>The less reactive metal (more positive electrode potential) is the cathode (positive terminal) where reduction occurs.</li>
+  <li>Electrons flow through the external circuit from the anode to the cathode.</li>
+  <li>The salt bridge completes the circuit by allowing ions to flow between the two half-cells, maintaining electrical neutrality.</li>
+</ul>
+
+<h3>Standard Electrode Potential</h3>
+
+<div class="definition">
+  <strong>Standard electrode potential (E&deg;):</strong> The EMF of a half-cell measured relative to the standard hydrogen electrode (SHE) under standard conditions (298 K, 100 kPa, 1.00 mol dm<sup>&minus;3</sup> solutions). The SHE is assigned a potential of 0.00 V by convention.
+</div>
+
+<p>The standard hydrogen electrode consists of hydrogen gas at 100 kPa bubbled over a platinum electrode coated in platinum black, in contact with a 1.00 mol dm<sup>&minus;3</sup> solution of H<sup>+</sup> ions at 298 K.</p>
+
+<h3>Standard Cell Potential</h3>
+
+<div class="equation">
+  E&deg;<sub>cell</sub> = E&deg;<sub>cathode</sub> &minus; E&deg;<sub>anode</sub>
+</div>
+
+<p>Alternatively: E&deg;<sub>cell</sub> = E&deg;<sub>most positive half-cell</sub> &minus; E&deg;<sub>most negative half-cell</sub>. The half-cell with the more positive E&deg; value undergoes reduction (is the cathode); the other undergoes oxidation (is the anode).</p>
+
+<h3>Feasibility of Reactions</h3>
+
+<p>A reaction is thermodynamically feasible if E&deg;<sub>cell</sub> &gt; 0. This corresponds to a negative &Delta;G. The relationship is:</p>
+
+<div class="equation">
+  &Delta;G&deg; = &minus;nFE&deg;<sub>cell</sub>
+</div>
+
+<p>where n is the number of moles of electrons transferred and F is the Faraday constant (96,485 C mol<sup>&minus;1</sup>).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A positive E&deg;<sub>cell</sub> means the reaction is thermodynamically feasible, but it does not guarantee the reaction will occur at an observable rate. Kinetic factors (high activation energy) may prevent a feasible reaction from proceeding. Also, non-standard conditions can shift the equilibrium position and change the actual cell EMF.
+</div>
+
+<h3>Electrolytic Cells</h3>
+
+<div class="definition">
+  <strong>Electrolysis:</strong> The use of an external electrical energy source to drive a non-spontaneous chemical reaction. The electrolyte (an ionic compound, molten or in aqueous solution) is decomposed at the electrodes.
+</div>
+
+<p>In electrolysis:</p>
+<ul>
+  <li>The anode is positive &mdash; attracted by anions, where oxidation occurs.</li>
+  <li>The cathode is negative &mdash; attracted by cations, where reduction occurs.</li>
+  <li>In molten electrolytes, the ions discharged are straightforward (e.g. molten NaCl gives Na at the cathode and Cl<sub>2</sub> at the anode).</li>
+  <li>In aqueous solutions, water may be preferentially discharged. At the cathode, H<sup>+</sup> is discharged if the metal cation has a very negative electrode potential. At the anode, OH<sup>&minus;</sup> is discharged in preference to most anions (except halide ions at moderate concentrations).</li>
+</ul>
+
+<h3>Fuel Cells</h3>
+
+<div class="definition">
+  <strong>Fuel cell:</strong> An electrochemical cell that produces electricity continuously as long as fuel (typically hydrogen) and an oxidant (oxygen) are supplied. Unlike batteries, fuel cells do not need recharging.
+</div>
+
+<p>In a hydrogen fuel cell:</p>
+<ul>
+  <li>Anode: H<sub>2</sub>(g) &rarr; 2H<sup>+</sup>(aq) + 2e<sup>&minus;</sup></li>
+  <li>Cathode: O<sub>2</sub>(g) + 4H<sup>+</sup>(aq) + 4e<sup>&minus;</sup> &rarr; 2H<sub>2</sub>O(l)</li>
+  <li>Overall: 2H<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2H<sub>2</sub>O(l)</li>
+</ul>
+
+<p>Advantages: the only by-product is water (zero direct emissions), high efficiency compared to combustion engines. Disadvantages: hydrogen is difficult and expensive to store and transport, production of hydrogen often uses fossil fuels (unless from electrolysis using renewable energy), platinum catalysts are expensive.</p>
+
+<!-- ============================================================ -->
+<h2>5.3 Transition Metals</h2>
+<!-- ============================================================ -->
+
+<h3>Definition and Electronic Configuration</h3>
+
+<div class="definition">
+  <strong>Transition metal:</strong> A d-block element that forms at least one stable ion with a partially filled d sub-shell. Scandium (Sc<sup>3+</sup> has an empty 3d sub-shell) and zinc (Zn<sup>2+</sup> has a full 3d sub-shell) are d-block elements but are not transition metals by this definition.
+</div>
+
+<p>The first row transition metals (Ti to Cu) have the general electron configuration [Ar] 3d<sup>n</sup> 4s<sup>2</sup> (with exceptions for Cr and Cu). When forming ions, the 4s electrons are lost before the 3d electrons.</p>
+
+<h3>Variable Oxidation States</h3>
+
+<p>Transition metals can form ions with different oxidation states because the 3d and 4s energy levels are close together, so different numbers of electrons can be lost. Common examples:</p>
+
+<table>
+  <tr><th>Element</th><th>Common Oxidation States</th><th>Example Compounds/Ions</th></tr>
+  <tr><td>Titanium (Ti)</td><td>+3, +4</td><td>TiCl<sub>3</sub>, TiO<sub>2</sub></td></tr>
+  <tr><td>Vanadium (V)</td><td>+2, +3, +4, +5</td><td>V<sup>2+</sup> (violet), V<sup>3+</sup> (green), VO<sup>2+</sup> (blue), VO<sub>2</sub><sup>+</sup> (yellow)</td></tr>
+  <tr><td>Manganese (Mn)</td><td>+2, +4, +7</td><td>Mn<sup>2+</sup>, MnO<sub>2</sub>, MnO<sub>4</sub><sup>&minus;</sup></td></tr>
+  <tr><td>Iron (Fe)</td><td>+2, +3</td><td>Fe<sup>2+</sup> (green), Fe<sup>3+</sup> (yellow/brown)</td></tr>
+  <tr><td>Copper (Cu)</td><td>+1, +2</td><td>Cu<sub>2</sub>O, CuSO<sub>4</sub></td></tr>
+</table>
+
+<h3>Coloured Ions</h3>
+
+<div class="definition">
+  <strong>Origin of colour:</strong> Transition metal ions in complexes are coloured because the d orbitals are split into two sets of different energies by the ligands. When visible light passes through the complex, photons of specific energy (wavelength) are absorbed to promote an electron from a lower d orbital to a higher one. The colour observed is the complementary colour of the light absorbed.
+</div>
+
+<p>Factors that affect the colour of a transition metal complex:</p>
+<ul>
+  <li>The identity of the metal ion and its oxidation state</li>
+  <li>The type of ligand (different ligands cause different degrees of d-orbital splitting)</li>
+  <li>The coordination number and geometry of the complex</li>
+</ul>
+
+<h3>Complex Ions</h3>
+
+<div class="definition">
+  <strong>Complex ion:</strong> A central metal ion surrounded by ligands. The ligands are bonded to the metal ion by dative (coordinate) bonds, donating a lone pair of electrons into empty orbitals on the metal ion.<br><br>
+  <strong>Ligand:</strong> A species with at least one lone pair of electrons that can form a dative bond to a central metal ion. Monodentate ligands donate one lone pair (e.g. H<sub>2</sub>O, NH<sub>3</sub>, Cl<sup>&minus;</sup>, CN<sup>&minus;</sup>). Bidentate ligands donate two lone pairs from two different atoms (e.g. ethane-1,2-diamine, ethanedioate C<sub>2</sub>O<sub>4</sub><sup>2&minus;</sup>). Polydentate ligands donate more (e.g. EDTA<sup>4&minus;</sup> is hexadentate).<br><br>
+  <strong>Coordination number:</strong> The total number of dative bonds from ligands to the central metal ion.
+</div>
+
+<h3>Shapes of Complexes</h3>
+
+<table>
+  <tr><th>Coordination Number</th><th>Shape</th><th>Bond Angle</th><th>Example</th></tr>
+  <tr><td>2</td><td>Linear</td><td>180&deg;</td><td>[Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup></td></tr>
+  <tr><td>4</td><td>Tetrahedral</td><td>109.5&deg;</td><td>[CoCl<sub>4</sub>]<sup>2&minus;</sup></td></tr>
+  <tr><td>4</td><td>Square planar</td><td>90&deg;</td><td>[Pt(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>] (cisplatin)</td></tr>
+  <tr><td>6</td><td>Octahedral</td><td>90&deg;</td><td>[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>, [Fe(CN)<sub>6</sub>]<sup>3&minus;</sup></td></tr>
+</table>
+
+<p>Six-coordinate complexes (coordination number 6) are typically octahedral. Four-coordinate complexes can be either tetrahedral or square planar depending on the metal and ligands. Tetrahedral is more common with larger ligands (e.g. Cl<sup>&minus;</sup>); square planar occurs especially with d<sup>8</sup> metals (e.g. Pt<sup>2+</sup>, Ni<sup>2+</sup> with strong-field ligands).</p>
+
+<h3>Ligand Substitution</h3>
+
+<p>Ligand substitution (ligand exchange) occurs when one ligand replaces another in a complex. This often causes a colour change because the new ligand splits the d orbitals differently.</p>
+
+<p>Common examples with copper(II):</p>
+<ul>
+  <li>[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> (pale blue) + excess NH<sub>3</sub> &rarr; [Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup> (deep blue) + 4H<sub>2</sub>O</li>
+  <li>[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> (pale blue) + 4Cl<sup>&minus;</sup> &rarr; [CuCl<sub>4</sub>]<sup>2&minus;</sup> (yellow/green) + 6H<sub>2</sub>O</li>
+</ul>
+
+<p>Note the change in coordination number from 6 (octahedral) to 4 (tetrahedral) when water is replaced by chloride ligands because Cl<sup>&minus;</sup> is a larger ligand.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When writing equations for ligand substitution, always balance the equation carefully. The overall charge of the complex must be correct. Remember that replacing neutral ligands (H<sub>2</sub>O, NH<sub>3</sub>) with charged ligands (Cl<sup>&minus;</sup>) changes the overall charge on the complex ion.
+</div>
+
+<h3>Catalytic Activity</h3>
+
+<p>Transition metals and their compounds are effective catalysts because:</p>
+<ul>
+  <li>They have variable oxidation states, allowing them to accept and donate electrons during catalytic cycles.</li>
+  <li>They can form complexes with reactant molecules, providing a surface (heterogeneous) or intermediate complex (homogeneous) that lowers the activation energy.</li>
+</ul>
+
+<p>Examples: Fe in the Haber process (N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub>), V<sub>2</sub>O<sub>5</sub> in the Contact process (2SO<sub>2</sub> + O<sub>2</sub> &rarr; 2SO<sub>3</sub>), MnO<sub>2</sub> in the decomposition of H<sub>2</sub>O<sub>2</sub>, Ni in hydrogenation of alkenes.</p>
+
+<h3>Precipitation Reactions</h3>
+
+<p>Adding sodium hydroxide or ammonia solution to aqueous transition metal ions produces coloured precipitates of metal hydroxides:</p>
+
+<table>
+  <tr><th>Ion</th><th>NaOH(aq) precipitate</th><th>Excess NaOH</th><th>NH<sub>3</sub>(aq) precipitate</th><th>Excess NH<sub>3</sub></th></tr>
+  <tr><td>Cu<sup>2+</sup></td><td>Blue, Cu(OH)<sub>2</sub></td><td>No change</td><td>Blue, Cu(OH)<sub>2</sub></td><td>Dissolves: deep blue [Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup></td></tr>
+  <tr><td>Fe<sup>2+</sup></td><td>Green, Fe(OH)<sub>2</sub></td><td>No change</td><td>Green, Fe(OH)<sub>2</sub></td><td>No change</td></tr>
+  <tr><td>Fe<sup>3+</sup></td><td>Brown, Fe(OH)<sub>3</sub></td><td>No change</td><td>Brown, Fe(OH)<sub>3</sub></td><td>No change</td></tr>
+  <tr><td>Cr<sup>3+</sup></td><td>Green, Cr(OH)<sub>3</sub></td><td>Dissolves: dark green [Cr(OH)<sub>6</sub>]<sup>3&minus;</sup></td><td>Green, Cr(OH)<sub>3</sub></td><td>Dissolves: purple [Cr(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup></td></tr>
+</table>
+
+<h3>Colorimetry</h3>
+
+<div class="definition">
+  <strong>Colorimetry:</strong> An analytical technique that measures the concentration of a coloured solution by measuring how much light of a specific wavelength it absorbs. The amount of light absorbed is proportional to the concentration of the coloured species (Beer-Lambert law).
+</div>
+
+<div class="equation">
+  A = &epsilon;cl
+</div>
+
+<p>where A is absorbance (no units), &epsilon; is the molar absorption coefficient (dm<sup>3</sup> mol<sup>&minus;1</sup> cm<sup>&minus;1</sup>), c is concentration (mol dm<sup>&minus;3</sup>), and l is the path length (cm).</p>
+
+<p>A calibration curve is prepared by measuring the absorbance of solutions of known concentration. The absorbance of the unknown solution is then read off the calibration curve to determine its concentration. The wavelength of light used should be the one at which the solution absorbs most strongly (the complementary colour).</p>
+
+</div>
+</body>
+</html>

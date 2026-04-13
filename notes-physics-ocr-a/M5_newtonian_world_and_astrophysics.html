@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 5 — Newtonian World and Astrophysics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Module 5 — Newtonian World and Astrophysics</h1>
+<p>This module covers thermal physics, circular motion, oscillations, gravitational fields, and astrophysics — the Year 2 core content.</p>
+
+<h2>5.1 Thermal Physics</h2>
+
+<h3>Internal Energy</h3>
+<div class="definition">
+  <strong>Internal energy:</strong> The sum of the randomly distributed kinetic energies and potential energies of all the molecules in a system. Internal energy increases when temperature rises or during a change of state.
+</div>
+<ul>
+  <li>Kinetic energy of molecules is related to temperature</li>
+  <li>Potential energy of molecules is related to the intermolecular forces (bonds)</li>
+  <li>During a change of state, temperature remains constant — all energy input goes into breaking or forming intermolecular bonds (changing potential energy, not kinetic)</li>
+</ul>
+
+<h3>Specific Heat Capacity</h3>
+<div class="definition">
+  <strong>Specific heat capacity (c):</strong> The energy required to raise the temperature of 1 kg of a substance by 1 K (or 1 &deg;C).
+</div>
+<div class="equation">Q = mc&Delta;&theta;</div>
+<p>Where Q = energy (J), m = mass (kg), c = specific heat capacity (J kg<sup>&minus;1</sup> K<sup>&minus;1</sup>), &Delta;&theta; = change in temperature (K or &deg;C).</p>
+
+<h3>Specific Latent Heat</h3>
+<div class="definition">
+  <strong>Specific latent heat (L):</strong> The energy required to change the state of 1 kg of a substance without changing its temperature.<br>
+  <strong>Specific latent heat of fusion (L<sub>f</sub>):</strong> For solid &harr; liquid transitions.<br>
+  <strong>Specific latent heat of vaporisation (L<sub>v</sub>):</strong> For liquid &harr; gas transitions.
+</div>
+<div class="equation">Q = mL</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In heating/cooling curve questions, the flat sections represent changes of state where Q = mL applies. The sloped sections represent temperature changes where Q = mc&Delta;&theta; applies. L<sub>v</sub> is always greater than L<sub>f</sub> for the same substance because more bonds are broken.
+</div>
+
+<h3>The Ideal Gas</h3>
+<div class="definition">
+  <strong>Ideal gas assumptions:</strong> (1) Molecules are point particles with negligible volume. (2) No intermolecular forces except during collisions. (3) Collisions are perfectly elastic. (4) Collision time is negligible compared to time between collisions. (5) Molecules move randomly with a range of speeds.
+</div>
+
+<h3>Gas Laws</h3>
+<table>
+  <tr><th>Law</th><th>Relationship</th><th>Condition</th></tr>
+  <tr><td>Boyle's Law</td><td>p &prop; 1/V &nbsp;(pV = constant)</td><td>Constant temperature and mass</td></tr>
+  <tr><td>Charles's Law</td><td>V &prop; T &nbsp;(V/T = constant)</td><td>Constant pressure and mass</td></tr>
+  <tr><td>Gay-Lussac's Law</td><td>p &prop; T &nbsp;(p/T = constant)</td><td>Constant volume and mass</td></tr>
+</table>
+<p>Temperature must always be in kelvin: T(K) = T(&deg;C) + 273.15</p>
+
+<h3>Ideal Gas Equation</h3>
+<div class="equation">pV = nRT = NkT</div>
+<p>Where p = pressure (Pa), V = volume (m<sup>3</sup>), n = number of moles, R = molar gas constant = 8.314 J mol<sup>&minus;1</sup> K<sup>&minus;1</sup>, N = number of molecules, k = Boltzmann constant = 1.38 &times; 10<sup>&minus;23</sup> J K<sup>&minus;1</sup>, T = absolute temperature (K).</p>
+<p>Note: R = N<sub>A</sub>k, where N<sub>A</sub> = Avogadro constant = 6.02 &times; 10<sup>23</sup> mol<sup>&minus;1</sup>.</p>
+
+<h3>Kinetic Theory and Molecular Kinetic Energy</h3>
+<div class="equation">pV = &frac13;Nm&lt;c<sup>2</sup>&gt;</div>
+<p>Where m = mass of one molecule, &lt;c<sup>2</sup>&gt; = mean square speed of the molecules.</p>
+
+<p>The mean kinetic energy of a molecule:</p>
+<div class="equation">&frac12;m&lt;c<sup>2</sup>&gt; = &frac32;kT</div>
+<ul>
+  <li>The average kinetic energy of a gas molecule is proportional to the absolute temperature</li>
+  <li>At a given temperature, all gas molecules have the same average kinetic energy (regardless of mass)</li>
+  <li>Heavier molecules move more slowly on average than lighter ones at the same temperature</li>
+  <li>The root mean square (rms) speed: c<sub>rms</sub> = &radic;&lt;c<sup>2</sup>&gt;</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Be careful with units. Pressure must be in Pa, volume in m<sup>3</sup>, and temperature in K. Remember: 1 litre = 10<sup>&minus;3</sup> m<sup>3</sup>, 1 cm<sup>3</sup> = 10<sup>&minus;6</sup> m<sup>3</sup>.
+</div>
+
+<h2>5.2 Circular Motion</h2>
+
+<div class="definition">
+  <strong>Angular velocity (&omega;):</strong> The rate of change of angle, measured in radians per second (rad s<sup>&minus;1</sup>).
+</div>
+<div class="equation">&omega; = 2&pi;f = 2&pi; / T</div>
+<p>Where f = frequency (Hz), T = period (s).</p>
+
+<p>Linear speed and angular velocity:</p>
+<div class="equation">v = &omega;r = 2&pi;r / T</div>
+
+<h3>Centripetal Acceleration and Force</h3>
+<p>An object moving in a circle at constant speed is accelerating because its velocity (direction) is continuously changing. The acceleration is directed towards the centre of the circle.</p>
+
+<div class="equation">a = v<sup>2</sup> / r = &omega;<sup>2</sup>r</div>
+<div class="equation">F = mv<sup>2</sup> / r = m&omega;<sup>2</sup>r</div>
+
+<ul>
+  <li>The centripetal force is not a new type of force — it is the resultant force directed towards the centre, provided by gravity, tension, friction, normal force, etc.</li>
+  <li>The centripetal force does no work because it is always perpendicular to the velocity (displacement)</li>
+  <li>If the centripetal force is removed, the object moves in a straight line tangent to the circle (Newton's First Law)</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Never say "centripetal force acts on the object" in isolation. Always state what provides the centripetal force (e.g., "gravity provides the centripetal force for orbital motion").
+</div>
+
+<h2>5.3 Simple Harmonic Motion (SHM)</h2>
+
+<div class="definition">
+  <strong>Simple harmonic motion:</strong> An oscillation in which the acceleration is proportional to the displacement and always directed towards the equilibrium position.
+</div>
+<div class="equation">a = &minus;&omega;<sup>2</sup>x</div>
+<p>Where a = acceleration (m s<sup>&minus;2</sup>), &omega; = angular frequency (rad s<sup>&minus;1</sup>), x = displacement from equilibrium (m). The minus sign indicates acceleration is always directed towards equilibrium (restoring force).</p>
+
+<h3>SHM Equations</h3>
+<div class="equation">x = A cos(&omega;t) &nbsp;&nbsp; or &nbsp;&nbsp; x = A sin(&omega;t)</div>
+<div class="equation">v = &minus;A&omega; sin(&omega;t) &nbsp;&nbsp; or &nbsp;&nbsp; v = A&omega; cos(&omega;t)</div>
+<div class="equation">v = &plusmn;&omega;&radic;(A<sup>2</sup> &minus; x<sup>2</sup>)</div>
+<p>Maximum speed: v<sub>max</sub> = A&omega; (at equilibrium, x = 0)</p>
+<p>Maximum acceleration: a<sub>max</sub> = A&omega;<sup>2</sup> (at extremes, x = &plusmn;A)</p>
+
+<h3>Period of Oscillation</h3>
+<p><strong>Mass-spring system:</strong></p>
+<div class="equation">T = 2&pi;&radic;(m / k)</div>
+<p>Where m = mass (kg), k = spring constant (N m<sup>&minus;1</sup>). Period is independent of amplitude.</p>
+
+<p><strong>Simple pendulum:</strong></p>
+<div class="equation">T = 2&pi;&radic;(L / g)</div>
+<p>Where L = length of pendulum (m), g = gravitational field strength (m s<sup>&minus;2</sup>). Valid for small angles (&lt; ~10&deg;). Period is independent of mass and amplitude.</p>
+
+<h3>Energy in SHM</h3>
+<ul>
+  <li>At equilibrium: KE is maximum, PE is zero (or minimum)</li>
+  <li>At extremes: KE is zero, PE is maximum</li>
+  <li>Total energy = KE + PE = constant (for undamped SHM)</li>
+  <li>E<sub>k</sub> = &frac12;m&omega;<sup>2</sup>(A<sup>2</sup> &minus; x<sup>2</sup>)</li>
+  <li>E<sub>total</sub> = &frac12;m&omega;<sup>2</sup>A<sup>2</sup></li>
+</ul>
+
+<h3>Damping</h3>
+<div class="definition">
+  <strong>Damping:</strong> The reduction in amplitude of an oscillation over time due to energy being transferred to the surroundings (e.g., by friction or air resistance).
+</div>
+<ul>
+  <li><strong>Light damping:</strong> Amplitude decreases gradually over many oscillations. Frequency is approximately unchanged.</li>
+  <li><strong>Heavy damping:</strong> Amplitude decreases rapidly. The system returns to equilibrium slowly without oscillating.</li>
+  <li><strong>Critical damping:</strong> The system returns to equilibrium in the shortest possible time without oscillating. Used in car suspension, door closers.</li>
+</ul>
+
+<h3>Forced Oscillations and Resonance</h3>
+<div class="definition">
+  <strong>Resonance:</strong> Occurs when the driving frequency matches the natural frequency of a system. The amplitude of oscillation reaches a maximum and energy transfer from driver to oscillator is most efficient.
+</div>
+<ul>
+  <li>At resonance, the amplitude is limited only by damping</li>
+  <li>Increased damping reduces the resonance peak, broadens it, and slightly lowers the resonant frequency</li>
+  <li>Examples: Tacoma Narrows bridge, tuning a radio, wine glass shattering, MRI machines</li>
+</ul>
+
+<h2>5.4 Gravitational Fields</h2>
+
+<div class="definition">
+  <strong>Gravitational field:</strong> A region of space in which a mass experiences a gravitational force. All objects with mass create a gravitational field.
+</div>
+
+<h3>Newton's Law of Gravitation</h3>
+<div class="equation">F = &minus;GMm / r<sup>2</sup></div>
+<p>Where G = gravitational constant = 6.67 &times; 10<sup>&minus;11</sup> N m<sup>2</sup> kg<sup>&minus;2</sup>, M and m are the two masses (kg), r = distance between their centres (m). The negative sign indicates an attractive force.</p>
+
+<h3>Gravitational Field Strength</h3>
+<div class="equation">g = F / m = GM / r<sup>2</sup></div>
+<p>Units: N kg<sup>&minus;1</sup> or m s<sup>&minus;2</sup>. g is the force per unit mass and equals the acceleration due to gravity.</p>
+<ul>
+  <li>On the surface of Earth: g &asymp; 9.81 N kg<sup>&minus;1</sup></li>
+  <li>g follows an inverse square law with distance from the centre of the planet</li>
+  <li>Inside a uniform sphere, g decreases linearly to zero at the centre</li>
+</ul>
+
+<h3>Gravitational Potential</h3>
+<div class="definition">
+  <strong>Gravitational potential (V<sub>g</sub>):</strong> The work done per unit mass in bringing a small test mass from infinity to that point.
+</div>
+<div class="equation">V<sub>g</sub> = &minus;GM / r</div>
+<p>Units: J kg<sup>&minus;1</sup>. Gravitational potential is always negative (since gravity is attractive). At infinity, V<sub>g</sub> = 0.</p>
+
+<p><strong>Gravitational potential energy:</strong></p>
+<div class="equation">E<sub>p</sub> = mV<sub>g</sub> = &minus;GMm / r</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The minus sign in V<sub>g</sub> = &minus;GM/r is crucial. It means you need to do work (add energy) to move a mass further from the gravitating body. Do not confuse this with mgh, which is only valid near Earth's surface.
+</div>
+
+<h3>Orbital Motion and Kepler's Laws</h3>
+
+<p><strong>Kepler's Three Laws:</strong></p>
+<ol>
+  <li><strong>First Law:</strong> Planets orbit in ellipses with the Sun at one focus</li>
+  <li><strong>Second Law:</strong> A line joining a planet to the Sun sweeps out equal areas in equal times (planets move faster when closer to the Sun)</li>
+  <li><strong>Third Law:</strong> T<sup>2</sup> &prop; r<sup>3</sup>. The square of the orbital period is proportional to the cube of the orbital radius.</li>
+</ol>
+
+<p>Deriving Kepler's Third Law: For a circular orbit, gravity provides the centripetal force:</p>
+<div class="equation">GMm / r<sup>2</sup> = mv<sup>2</sup> / r = m&omega;<sup>2</sup>r = m(2&pi;/T)<sup>2</sup>r</div>
+<div class="equation">T<sup>2</sup> = (4&pi;<sup>2</sup> / GM) r<sup>3</sup></div>
+
+<p>Orbital speed:</p>
+<div class="equation">v = &radic;(GM / r)</div>
+
+<h3>Geostationary Orbits</h3>
+<ul>
+  <li>Period = 24 hours (same as Earth's rotation)</li>
+  <li>Orbits above the equator</li>
+  <li>Same direction as Earth's rotation (west to east)</li>
+  <li>Appears stationary relative to a point on Earth's surface</li>
+  <li>Orbital radius &asymp; 42,200 km from Earth's centre (altitude ~35,800 km)</li>
+  <li>Used for: communication satellites, weather satellites, TV broadcasting</li>
+</ul>
+
+<h2>5.5 Astrophysics</h2>
+
+<h3>Stellar Evolution</h3>
+<table>
+  <tr><th>Stage</th><th>Low/Medium Mass Star (like our Sun)</th><th>High Mass Star</th></tr>
+  <tr><td>Birth</td><td colspan="2">Nebula &rarr; protostar (gravitational collapse, temperature rises)</td></tr>
+  <tr><td>Main sequence</td><td colspan="2">Hydrogen fusion in the core. Equilibrium between radiation pressure (outward) and gravity (inward). Lasts millions to billions of years.</td></tr>
+  <tr><td>After main sequence</td><td>Red giant (helium fusion begins, outer layers expand and cool)</td><td>Red supergiant (fuses heavier elements up to iron in shells)</td></tr>
+  <tr><td>Death</td><td>Planetary nebula &rarr; white dwarf (supported by electron degeneracy pressure)</td><td>Supernova explosion &rarr; neutron star (supported by neutron degeneracy) or black hole (if remnant &gt; ~3 solar masses)</td></tr>
+</table>
+
+<h3>Hertzsprung-Russell (HR) Diagram</h3>
+<ul>
+  <li>X-axis: temperature (decreasing left to right, or spectral class O B A F G K M)</li>
+  <li>Y-axis: luminosity (increasing upward, often logarithmic)</li>
+  <li><strong>Main sequence:</strong> Diagonal band from top-left (hot, luminous) to bottom-right (cool, dim). Most stars (~90%).</li>
+  <li><strong>Red giants / supergiants:</strong> Top-right (cool but very luminous due to large size)</li>
+  <li><strong>White dwarfs:</strong> Bottom-left (hot but dim due to small size)</li>
+</ul>
+
+<h3>Wien's Displacement Law</h3>
+<div class="equation">&lambda;<sub>max</sub> T = 2.898 &times; 10<sup>&minus;3</sup> m K</div>
+<p>Where &lambda;<sub>max</sub> = peak wavelength of the emission spectrum (m), T = surface temperature (K). Hotter stars peak at shorter wavelengths (bluer); cooler stars peak at longer wavelengths (redder).</p>
+
+<h3>Stefan-Boltzmann Law</h3>
+<div class="equation">L = 4&pi;r<sup>2</sup>&sigma;T<sup>4</sup></div>
+<p>Where L = luminosity (total power output, W), r = radius of the star (m), &sigma; = Stefan-Boltzmann constant = 5.67 &times; 10<sup>&minus;8</sup> W m<sup>&minus;2</sup> K<sup>&minus;4</sup>, T = surface temperature (K).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> To compare two stars, use ratios. For example: L<sub>1</sub>/L<sub>2</sub> = (r<sub>1</sub>/r<sub>2</sub>)<sup>2</sup> &times; (T<sub>1</sub>/T<sub>2</sub>)<sup>4</sup>. This avoids needing to know &sigma; or use very large numbers.
+</div>
+
+<h3>Hubble's Law and the Expanding Universe</h3>
+
+<div class="definition">
+  <strong>Cosmological redshift:</strong> The increase in wavelength (decrease in frequency) of light from distant galaxies due to the expansion of space. The galaxy is not moving through space — space itself is expanding.
+</div>
+<div class="equation">z = &Delta;&lambda; / &lambda; = v / c</div>
+<p>Where z = redshift, &Delta;&lambda; = change in wavelength, v = recession velocity.</p>
+
+<div class="equation">v = H<sub>0</sub>d</div>
+<p>Where v = recession velocity (km s<sup>&minus;1</sup> or m s<sup>&minus;1</sup>), H<sub>0</sub> = Hubble constant (&asymp; 67&ndash;73 km s<sup>&minus;1</sup> Mpc<sup>&minus;1</sup>), d = distance to the galaxy (Mpc or m).</p>
+
+<ul>
+  <li>Hubble's law shows that more distant galaxies are receding faster, supporting the Big Bang theory</li>
+  <li>The Hubble constant gives an estimate of the age of the universe: t &asymp; 1/H<sub>0</sub></li>
+</ul>
+
+<h3>Evidence for the Big Bang</h3>
+<ol>
+  <li><strong>Redshift of galaxies:</strong> All distant galaxies show redshift, indicating the universe is expanding. Extrapolating backwards implies all matter was once concentrated at a single point.</li>
+  <li><strong>Cosmic Microwave Background (CMB) radiation:</strong> Uniform microwave radiation detected from all directions, with a blackbody spectrum corresponding to ~2.7 K. This is the cooled remnant of the hot, dense early universe, predicted by the Big Bang model.</li>
+  <li><strong>Abundance of light elements:</strong> The observed ratios of hydrogen (~75%) and helium (~25%) match predictions from Big Bang nucleosynthesis.</li>
+</ol>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The CMB is not the same as starlight. It is thermal radiation from the early universe, now redshifted to microwave wavelengths due to the expansion of space. Its near-perfect uniformity and blackbody spectrum are strong evidence for the Big Bang.
+</div>
+
+</div>
+</body>
+</html>

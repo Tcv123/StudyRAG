@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.12 Fundamentals of Functional Programming — AQA A-Level Computer Science</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #ffffff;
+            padding: 40px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 12px;
+            margin-bottom: 8px;
+        }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 {
+            font-size: 1.45rem;
+            color: #1e3a5f;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        h3 {
+            font-size: 1.15rem;
+            color: #334155;
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+        p { margin-bottom: 14px; }
+        ul, ol { margin-bottom: 14px; padding-left: 24px; }
+        li { margin-bottom: 6px; }
+        strong { color: #1e3a5f; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 20px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background: #f0f4ff; font-weight: 600; color: #1e3a5f; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .definition strong { color: #1d4ed8; }
+        .exam-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code {
+            font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f3f4f6;
+            padding: 18px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 14px 0 18px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        pre code { background: none; padding: 0; }
+        @media print {
+            body { padding: 20px; font-size: 11pt; }
+            .exam-tip, .definition { break-inside: avoid; }
+            h2 { break-after: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>4.12 Fundamentals of Functional Programming</h1>
+<p class="spec-ref">AQA A-Level Computer Science (7517) &mdash; Paper 1</p>
+
+<!-- ============================================================ -->
+<h2>4.12.1 The Functional Programming Paradigm</h2>
+
+<div class="definition">
+    <strong>Functional programming</strong> is a programming paradigm in which computation is treated as the evaluation of mathematical functions. Programs are constructed by applying and composing functions, rather than by executing a sequence of statements that change the program's state.
+</div>
+
+<p>Key principles that distinguish functional programming from imperative programming:</p>
+<ul>
+    <li>Functions are <strong>first-class objects</strong> &mdash; they can be assigned to variables, passed as arguments and returned from other functions.</li>
+    <li>Programs avoid <strong>side effects</strong> &mdash; functions do not modify external state.</li>
+    <li>Data is <strong>immutable</strong> &mdash; once created, data cannot be changed.</li>
+    <li>Functions are <strong>pure</strong> &mdash; the same inputs always produce the same output.</li>
+    <li>Computation is achieved through <strong>function application and composition</strong> rather than through variable assignment and loops.</li>
+</ul>
+
+<h3>Functional vs Imperative Programming</h3>
+<table>
+    <tr><th>Aspect</th><th>Functional</th><th>Imperative (Procedural / OOP)</th></tr>
+    <tr><td>State</td><td>No mutable state; data is immutable</td><td>Mutable variables; state changes throughout execution</td></tr>
+    <tr><td>Control flow</td><td>Recursion and function composition</td><td>Loops (for, while), conditional branches, sequences of statements</td></tr>
+    <tr><td>Side effects</td><td>Avoided; functions are pure</td><td>Common (e.g., modifying global variables, I/O within functions)</td></tr>
+    <tr><td>Functions</td><td>First-class objects; higher-order functions are central</td><td>Functions exist but are not always first-class</td></tr>
+    <tr><td>How you think</td><td>"What to compute" (declarative)</td><td>"How to compute it step by step" (imperative)</td></tr>
+    <tr><td>Example languages</td><td>Haskell, Lisp, Erlang, ML</td><td>C, Java, Python (multi-paradigm), Pascal</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>4.12.2 First-Class Objects</h2>
+
+<div class="definition">
+    In functional programming, functions are <strong>first-class objects</strong> (also called first-class citizens). This means functions have the same status as any other data value. Specifically, a function can be:
+    <ul>
+        <li>Assigned to a variable or stored in a data structure.</li>
+        <li>Passed as an argument to another function.</li>
+        <li>Returned as the result of another function.</li>
+        <li>Created dynamically (at runtime).</li>
+    </ul>
+</div>
+
+<p>Example in Haskell-style notation:</p>
+<pre><code>-- Assign a function to a name
+double = \x -> x * 2
+
+-- Pass a function as an argument
+applyTwice f x = f (f x)
+applyTwice double 3    -- Result: 12  (double(double(3)) = double(6) = 12)
+
+-- Return a function from a function
+makeAdder n = \x -> x + n
+addFive = makeAdder 5
+addFive 10              -- Result: 15</code></pre>
+
+<!-- ============================================================ -->
+<h2>4.12.3 Higher-Order Functions</h2>
+
+<div class="definition">
+    A <strong>higher-order function</strong> is a function that either:
+    <ul>
+        <li>Takes one or more functions as arguments, or</li>
+        <li>Returns a function as its result.</li>
+    </ul>
+    Higher-order functions are only possible because functions are first-class objects.
+</div>
+
+<h3>map</h3>
+<p><code>map</code> applies a given function to every element of a list, returning a new list of results.</p>
+<pre><code>map f []     = []
+map f (x:xs) = f x : map f xs
+
+-- Examples:
+map (*2) [1, 2, 3, 4]       -- Result: [2, 4, 6, 8]
+map even [1, 2, 3, 4]       -- Result: [False, True, False, True]
+map toUpper "hello"          -- Result: "HELLO"</code></pre>
+
+<h3>filter</h3>
+<p><code>filter</code> takes a predicate (a function that returns True/False) and a list, returning a new list containing only the elements for which the predicate returns True.</p>
+<pre><code>filter p []     = []
+filter p (x:xs)
+    | p x       = x : filter p xs
+    | otherwise  = filter p xs
+
+-- Examples:
+filter even [1, 2, 3, 4, 5, 6]     -- Result: [2, 4, 6]
+filter (>3) [1, 2, 3, 4, 5]        -- Result: [4, 5]
+filter (/= ' ') "h e l l o"        -- Result: "hello"</code></pre>
+
+<h3>fold (reduce)</h3>
+<p><code>fold</code> (called <code>reduce</code> in some languages) combines all elements of a list into a single value by repeatedly applying a binary function. There are two variants:</p>
+
+<p><strong>foldl (fold left)</strong> &mdash; processes from left to right:</p>
+<pre><code>foldl f acc []     = acc
+foldl f acc (x:xs) = foldl f (f acc x) xs
+
+-- Example: sum a list
+foldl (+) 0 [1, 2, 3, 4]
+  = foldl (+) (0+1) [2, 3, 4]
+  = foldl (+) (1+2) [3, 4]
+  = foldl (+) (3+3) [4]
+  = foldl (+) (6+4) []
+  = 10</code></pre>
+
+<p><strong>foldr (fold right)</strong> &mdash; processes from right to left:</p>
+<pre><code>foldr f acc []     = acc
+foldr f acc (x:xs) = f x (foldr f acc xs)
+
+-- Example: concatenate strings
+foldr (++) "" ["Hello", " ", "World"]   -- Result: "Hello World"</code></pre>
+
+<div class="exam-tip">You must be able to trace through map, filter and fold with specific inputs. Practise step-by-step evaluation. In exam answers, show each step clearly. Remember: map transforms each element, filter selects elements, fold combines elements into a single value.</div>
+
+<!-- ============================================================ -->
+<h2>4.12.4 Function Application and Composition</h2>
+
+<h3>Function Application</h3>
+<div class="definition">
+    <strong>Function application</strong> is the process of applying a function to its arguments to produce a result. In Haskell notation, function application is written by juxtaposition (placing the function name next to its argument, separated by a space) rather than using parentheses.
+</div>
+<pre><code>-- Function application in Haskell:
+f x          -- apply f to x
+add 3 5      -- apply add to 3 and 5 (result: 8)
+
+-- Compared to mathematical notation:
+-- f(x)
+-- add(3, 5)</code></pre>
+
+<h3>Function Composition</h3>
+<div class="definition">
+    <strong>Function composition</strong> combines two functions to create a new function. The output of one function becomes the input of the next. In Haskell, the composition operator is <code>.</code> (dot). Mathematically: <code>(f . g)(x) = f(g(x))</code>.
+</div>
+<pre><code>-- Compose two functions: first negate, then double
+-- (Note: g is applied first, then f)
+doubleNeg = (*2) . negate
+doubleNeg 5    -- negate 5 = -5, then (*2) (-5) = -10
+
+-- More examples:
+notNull = not . null
+notNull []     -- null [] = True, not True = False
+notNull [1,2]  -- null [1,2] = False, not False = True
+
+-- Composition chains:
+process = filter even . map (*3)
+process [1, 2, 3, 4]
+  -- map (*3) [1,2,3,4] = [3, 6, 9, 12]
+  -- filter even [3, 6, 9, 12] = [6, 12]</code></pre>
+
+<p>Function composition allows complex operations to be built from simple, reusable functions, improving readability and modularity.</p>
+
+<!-- ============================================================ -->
+<h2>4.12.5 Partial Application and Currying</h2>
+
+<h3>Partial Application</h3>
+<div class="definition">
+    <strong>Partial application</strong> is the process of fixing some of a function's arguments, producing a new function that takes the remaining arguments. This allows general functions to be specialised.
+</div>
+<pre><code>-- add takes two arguments
+add x y = x + y
+
+-- Partially apply add by fixing the first argument to 5
+addFive = add 5
+
+addFive 3      -- Result: 8   (equivalent to add 5 3)
+addFive 10     -- Result: 15  (equivalent to add 5 10)
+
+-- More examples:
+multiply x y = x * y
+double = multiply 2
+triple = multiply 3
+
+double 7       -- Result: 14
+triple 7       -- Result: 21
+
+-- Using partial application with map:
+map (add 10) [1, 2, 3]    -- Result: [11, 12, 13]
+map (multiply 3) [1, 2, 3] -- Result: [3, 6, 9]</code></pre>
+
+<h3>Currying</h3>
+<div class="definition">
+    <strong>Currying</strong> is the technique of transforming a function that takes multiple arguments into a sequence of functions, each taking a single argument. In Haskell, <em>all functions are curried by default</em>.
+</div>
+<p>A function <code>add x y = x + y</code> is actually a function that takes <code>x</code> and returns a new function that takes <code>y</code>:</p>
+<pre><code>-- These are equivalent:
+add x y = x + y
+add = \x -> (\y -> x + y)
+
+-- Type signature shows currying clearly:
+add :: Int -> Int -> Int
+-- Read as: add takes an Int and returns a function (Int -> Int)
+
+-- Step-by-step:
+add 3 5
+  = (\x -> (\y -> x + y)) 3 5
+  = (\y -> 3 + y) 5
+  = 3 + 5
+  = 8</code></pre>
+
+<p>Currying is what makes partial application possible. Because <code>add</code> is really a chain of single-argument functions, providing just the first argument naturally produces a new function waiting for the second.</p>
+
+<div class="exam-tip">The distinction between currying and partial application: <strong>currying</strong> is the technique of decomposing a multi-argument function into a chain of single-argument functions. <strong>Partial application</strong> is the act of supplying fewer arguments than expected, producing a specialised function. Currying enables partial application.</div>
+
+<!-- ============================================================ -->
+<h2>4.12.6 Immutable Data and Referential Transparency</h2>
+
+<h3>Immutable Data Structures</h3>
+<div class="definition">
+    <strong>Immutability</strong> means that once a data value is created, it cannot be modified. Any "change" produces a completely new data structure, leaving the original unchanged.
+</div>
+<pre><code>-- In imperative programming:
+x = 5
+x = x + 1    -- x is mutated to 6
+
+-- In functional programming:
+-- x = 5 is a permanent binding. x is always 5.
+-- To get 6, you create a new value:
+y = x + 1    -- y = 6, but x is still 5</code></pre>
+
+<p><strong>Benefits of immutability:</strong></p>
+<ul>
+    <li>No unexpected changes to shared data &mdash; eliminates a large class of bugs.</li>
+    <li>Simplifies reasoning about programs &mdash; values never change, so you can understand each part in isolation.</li>
+    <li>Naturally thread-safe &mdash; since data cannot be modified, concurrent access requires no locks.</li>
+    <li>Easier testing and debugging &mdash; functions always return the same result for the same input.</li>
+</ul>
+
+<h3>Side Effects and Pure Functions</h3>
+<div class="definition">
+    A <strong>side effect</strong> is any observable change that a function makes to state outside its own scope: modifying a global variable, writing to a file, printing to screen, changing a mutable data structure, or sending a network request.<br><br>
+    A <strong>pure function</strong> has two properties:
+    <ul>
+        <li>It always returns the same output for the same input (deterministic).</li>
+        <li>It has no side effects.</li>
+    </ul>
+</div>
+<pre><code>-- Pure function:
+square x = x * x
+-- square 4 will ALWAYS return 16, no matter when or where it is called.
+
+-- Impure function (pseudocode, imperative style):
+counter = 0
+increment() = counter = counter + 1; return counter
+-- Returns different values each time it is called (1, 2, 3, ...)</code></pre>
+
+<h3>Referential Transparency</h3>
+<div class="definition">
+    An expression is <strong>referentially transparent</strong> if it can be replaced with its value without changing the behaviour of the program. This is a direct consequence of using pure functions and immutable data.
+</div>
+<pre><code>-- If double x = x * 2, then:
+-- double 5 can always be replaced with 10 anywhere in the program.
+
+-- This allows the compiler to:
+--   * Reorder computations safely
+--   * Cache results (memoisation)
+--   * Parallelise execution
+--   * Perform algebraic simplification</code></pre>
+
+<!-- ============================================================ -->
+<h2>4.12.7 Lists in Functional Programming</h2>
+
+<p>The <strong>list</strong> is the fundamental data structure in functional programming. In Haskell, a list is defined recursively as either an empty list or an element followed by another list.</p>
+
+<h3>Core List Operations</h3>
+<table>
+    <tr><th>Operation</th><th>Haskell Syntax</th><th>Description</th><th>Example</th></tr>
+    <tr><td><strong>Empty list</strong></td><td><code>[]</code></td><td>A list with no elements</td><td><code>[]</code></td></tr>
+    <tr><td><strong>head</strong></td><td><code>head xs</code></td><td>Returns the first element of the list</td><td><code>head [1,2,3] = 1</code></td></tr>
+    <tr><td><strong>tail</strong></td><td><code>tail xs</code></td><td>Returns everything except the first element</td><td><code>tail [1,2,3] = [2,3]</code></td></tr>
+    <tr><td><strong>Prepend (cons)</strong></td><td><code>x : xs</code></td><td>Adds an element to the front of a list</td><td><code>0 : [1,2,3] = [0,1,2,3]</code></td></tr>
+    <tr><td><strong>Append</strong></td><td><code>xs ++ ys</code></td><td>Concatenates two lists</td><td><code>[1,2] ++ [3,4] = [1,2,3,4]</code></td></tr>
+    <tr><td><strong>length</strong></td><td><code>length xs</code></td><td>Number of elements</td><td><code>length [1,2,3] = 3</code></td></tr>
+    <tr><td><strong>null</strong></td><td><code>null xs</code></td><td>True if the list is empty</td><td><code>null [] = True</code></td></tr>
+</table>
+
+<p>A list can be decomposed using <strong>pattern matching</strong> with the cons operator:</p>
+<pre><code>-- Any non-empty list [1, 2, 3] can be written as 1 : [2, 3]
+-- In general: (x:xs) where x is the head and xs is the tail
+
+-- Pattern matching in a function definition:
+myLength []     = 0
+myLength (x:xs) = 1 + myLength xs
+
+myLength [4, 7, 2]
+  = 1 + myLength [7, 2]
+  = 1 + 1 + myLength [2]
+  = 1 + 1 + 1 + myLength []
+  = 1 + 1 + 1 + 0
+  = 3</code></pre>
+
+<h3>List Operations and Recursion</h3>
+<p>In functional programming, <strong>recursion</strong> replaces iteration (loops). Processing a list typically involves a base case (empty list) and a recursive case (process the head, recurse on the tail).</p>
+<pre><code>-- Sum all elements
+mySum []     = 0
+mySum (x:xs) = x + mySum xs
+
+mySum [3, 5, 2]
+  = 3 + mySum [5, 2]
+  = 3 + 5 + mySum [2]
+  = 3 + 5 + 2 + mySum []
+  = 3 + 5 + 2 + 0
+  = 10
+
+-- Reverse a list
+myReverse []     = []
+myReverse (x:xs) = myReverse xs ++ [x]
+
+myReverse [1, 2, 3]
+  = myReverse [2, 3] ++ [1]
+  = (myReverse [3] ++ [2]) ++ [1]
+  = ((myReverse [] ++ [3]) ++ [2]) ++ [1]
+  = (([] ++ [3]) ++ [2]) ++ [1]
+  = [3, 2, 1]
+
+-- Check if an element is in a list
+myElem _ []     = False
+myElem e (x:xs)
+    | e == x    = True
+    | otherwise  = myElem e xs</code></pre>
+
+<div class="exam-tip">List recursion questions are very common. Always define the base case (usually the empty list <code>[]</code>) and the recursive case (process <code>x</code>, recurse on <code>xs</code>). Trace through each step carefully to show the examiner your working.</div>
+
+<!-- ============================================================ -->
+<h2>4.12.8 Haskell-Style Notation</h2>
+
+<p>AQA uses Haskell-style notation in the exam. Key syntax to know:</p>
+
+<table>
+    <tr><th>Syntax</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td><code>f x</code></td><td>Apply function <code>f</code> to argument <code>x</code></td><td><code>double 5</code> &rarr; <code>10</code></td></tr>
+    <tr><td><code>\x -> expr</code></td><td>Anonymous (lambda) function</td><td><code>\x -> x + 1</code></td></tr>
+    <tr><td><code>x : xs</code></td><td>Cons (prepend x to list xs)</td><td><code>1 : [2,3]</code> &rarr; <code>[1,2,3]</code></td></tr>
+    <tr><td><code>[]</code></td><td>Empty list</td><td></td></tr>
+    <tr><td><code>(x:xs)</code></td><td>Pattern match: x is head, xs is tail</td><td></td></tr>
+    <tr><td><code>f . g</code></td><td>Function composition</td><td><code>(not . even) 3</code> &rarr; <code>True</code></td></tr>
+    <tr><td><code>::</code></td><td>Type signature ("has type")</td><td><code>add :: Int -> Int -> Int</code></td></tr>
+    <tr><td><code>|</code> guards</td><td>Conditional cases</td><td><code>| x > 0 = "positive"</code></td></tr>
+    <tr><td><code>where</code></td><td>Local definitions</td><td><code>bmi w h = w / h^2 where ...</code></td></tr>
+</table>
+
+<p><strong>Type signatures:</strong></p>
+<pre><code>-- A function taking an Int and returning an Int:
+square :: Int -> Int
+square x = x * x
+
+-- A function taking two Ints and returning an Int:
+add :: Int -> Int -> Int
+add x y = x + y
+
+-- A polymorphic function (works on any type in a list):
+myLength :: [a] -> Int
+myLength [] = 0
+myLength (_:xs) = 1 + myLength xs
+
+-- Higher-order function type:
+map :: (a -> b) -> [a] -> [b]
+-- Takes a function (a -> b) and a list [a], returns a list [b]</code></pre>
+
+<!-- ============================================================ -->
+<h2>4.12.9 Advantages and Disadvantages</h2>
+
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Easier to reason about and prove correctness &mdash; pure functions have predictable behaviour.</td><td>Steeper learning curve for programmers used to imperative thinking.</td></tr>
+    <tr><td>Naturally suited to parallel and concurrent programming &mdash; no mutable shared state means no race conditions.</td><td>Can be less efficient for some problems (e.g., in-place array mutation is O(1) imperatively but O(n) with immutable structures).</td></tr>
+    <tr><td>More concise and expressive code &mdash; higher-order functions and composition reduce boilerplate.</td><td>Recursive solutions can use more stack space and may be harder to debug for beginners.</td></tr>
+    <tr><td>Easier to test &mdash; pure functions can be tested in isolation without setting up state.</td><td>I/O and real-world interaction (which inherently involve side effects) require special handling (e.g., monads in Haskell).</td></tr>
+    <tr><td>Referential transparency enables powerful compiler optimisations (memoisation, lazy evaluation, reordering).</td><td>Smaller ecosystem and fewer libraries compared to mainstream imperative languages for some domains.</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>4.12.10 Comparison of Programming Paradigms</h2>
+
+<table>
+    <tr><th>Feature</th><th>Procedural</th><th>Object-Oriented</th><th>Functional</th></tr>
+    <tr><td>Core concept</td><td>Procedures / subroutines that operate on data</td><td>Objects that encapsulate data and methods</td><td>Pure functions and function composition</td></tr>
+    <tr><td>State</td><td>Mutable variables, changed by statements</td><td>Mutable object attributes, changed via methods</td><td>Immutable data; no state change</td></tr>
+    <tr><td>Control flow</td><td>Sequence, selection, iteration (loops)</td><td>Method calls, message passing, polymorphism</td><td>Recursion, higher-order functions</td></tr>
+    <tr><td>Data + behaviour</td><td>Separate: data structures + procedures</td><td>Combined: objects contain both data and methods</td><td>Separate: data structures + functions</td></tr>
+    <tr><td>Reuse mechanism</td><td>Procedure libraries</td><td>Inheritance, polymorphism, composition</td><td>Higher-order functions, composition, currying</td></tr>
+    <tr><td>Side effects</td><td>Common and expected</td><td>Common (methods modify object state)</td><td>Avoided; functions are pure</td></tr>
+    <tr><td>Concurrency</td><td>Requires careful locking</td><td>Requires careful synchronisation</td><td>Naturally safe (immutable data, no shared state)</td></tr>
+    <tr><td>Example languages</td><td>C, Pascal, BASIC</td><td>Java, C#, Python</td><td>Haskell, Lisp, Erlang, ML</td></tr>
+</table>
+
+<div class="exam-tip">Comparison questions between paradigms are common. Focus on concrete differences: how state is handled, how code is structured, and what mechanisms are used for reuse and abstraction. Always give specific examples (e.g., "in functional programming, a loop is replaced by recursion or a higher-order function like map").</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.1 Measurements and Their Errors — AQA A-Level Physics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>3.1 Measurements and Their Errors</h1>
+
+<!-- SI UNITS -->
+<h2>1. SI Base Units</h2>
+<p>The International System of Units (SI) defines seven base quantities, each with a base unit:</p>
+<table>
+  <tr><th>Base Quantity</th><th>SI Base Unit</th><th>Symbol</th></tr>
+  <tr><td>Mass</td><td>kilogram</td><td>kg</td></tr>
+  <tr><td>Length</td><td>metre</td><td>m</td></tr>
+  <tr><td>Time</td><td>second</td><td>s</td></tr>
+  <tr><td>Electric current</td><td>ampere</td><td>A</td></tr>
+  <tr><td>Temperature</td><td>kelvin</td><td>K</td></tr>
+  <tr><td>Amount of substance</td><td>mole</td><td>mol</td></tr>
+  <tr><td>Luminous intensity</td><td>candela</td><td>cd</td></tr>
+</table>
+
+<h2>2. Derived Units</h2>
+<p>Derived units are combinations of base units. They can always be expressed in terms of kg, m, s, A, K, mol.</p>
+<table>
+  <tr><th>Quantity</th><th>Unit</th><th>Symbol</th><th>In Base Units</th></tr>
+  <tr><td>Force</td><td>newton</td><td>N</td><td>kg m s<sup>-2</sup></td></tr>
+  <tr><td>Energy</td><td>joule</td><td>J</td><td>kg m<sup>2</sup> s<sup>-2</sup></td></tr>
+  <tr><td>Power</td><td>watt</td><td>W</td><td>kg m<sup>2</sup> s<sup>-3</sup></td></tr>
+  <tr><td>Pressure</td><td>pascal</td><td>Pa</td><td>kg m<sup>-1</sup> s<sup>-2</sup></td></tr>
+  <tr><td>Charge</td><td>coulomb</td><td>C</td><td>A s</td></tr>
+  <tr><td>Potential difference</td><td>volt</td><td>V</td><td>kg m<sup>2</sup> s<sup>-3</sup> A<sup>-1</sup></td></tr>
+  <tr><td>Resistance</td><td>ohm</td><td>&Omega;</td><td>kg m<sup>2</sup> s<sup>-3</sup> A<sup>-2</sup></td></tr>
+  <tr><td>Frequency</td><td>hertz</td><td>Hz</td><td>s<sup>-1</sup></td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> To verify an equation is correct, check the units on both sides match. This technique is called homogeneity of units (dimensional analysis).</div>
+
+<h2>3. SI Prefixes</h2>
+<table>
+  <tr><th>Prefix</th><th>Symbol</th><th>Factor</th></tr>
+  <tr><td>tera</td><td>T</td><td>10<sup>12</sup></td></tr>
+  <tr><td>giga</td><td>G</td><td>10<sup>9</sup></td></tr>
+  <tr><td>mega</td><td>M</td><td>10<sup>6</sup></td></tr>
+  <tr><td>kilo</td><td>k</td><td>10<sup>3</sup></td></tr>
+  <tr><td>centi</td><td>c</td><td>10<sup>-2</sup></td></tr>
+  <tr><td>milli</td><td>m</td><td>10<sup>-3</sup></td></tr>
+  <tr><td>micro</td><td>&mu;</td><td>10<sup>-6</sup></td></tr>
+  <tr><td>nano</td><td>n</td><td>10<sup>-9</sup></td></tr>
+  <tr><td>pico</td><td>p</td><td>10<sup>-12</sup></td></tr>
+  <tr><td>femto</td><td>f</td><td>10<sup>-15</sup></td></tr>
+</table>
+
+<!-- ERRORS -->
+<h2>4. Random and Systematic Errors</h2>
+
+<div class="def-box"><strong>Random error:</strong> An unpredictable variation in measurements that causes readings to scatter about the true value. Each measurement is equally likely to be above or below the true value. Reduced by repeating measurements and averaging.</div>
+
+<div class="def-box"><strong>Systematic error:</strong> A consistent error in the same direction every time a measurement is taken. It shifts all readings by the same amount (or proportion) away from the true value. It is NOT reduced by averaging.</div>
+
+<p><strong>Examples of random errors:</strong> fluctuations in readings due to electrical noise, varying reaction times, slight differences in positioning instruments.</p>
+<p><strong>Examples of systematic errors:</strong> zero error on a balance or micrometer, consistently reading a meniscus from the wrong angle (parallax), a miscalibrated instrument.</p>
+
+<h2>5. Precision and Accuracy</h2>
+<div class="def-box"><strong>Precision:</strong> How close repeated measurements are to each other. High precision means low spread (small random error). Related to the resolution of the instrument.</div>
+<div class="def-box"><strong>Accuracy:</strong> How close a measurement is to the true value. High accuracy means low systematic error.</div>
+
+<p>A measurement can be precise but not accurate (e.g. consistently reading 10.3 when the true value is 10.0) or accurate but not precise (e.g. readings scattered around the true value with large spread).</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Repeating measurements improves precision (reduces the effect of random error) but does NOT improve accuracy. To improve accuracy, you must eliminate systematic errors (e.g. recalibrate the instrument).</div>
+
+<!-- UNCERTAINTIES -->
+<h2>6. Uncertainties</h2>
+
+<h3>6.1 Absolute Uncertainty</h3>
+<p>The absolute uncertainty is the margin of error in a measurement, expressed in the same units as the measurement.</p>
+<ul>
+  <li>For a <strong>single reading</strong> with an analogue scale: uncertainty = &plusmn; half the smallest division.</li>
+  <li>For a <strong>single reading</strong> with a digital instrument: uncertainty = &plusmn; the last digit.</li>
+  <li>For <strong>repeated readings</strong>: uncertainty = range / 2 (i.e. half the range of the data set).</li>
+</ul>
+
+<h3>6.2 Percentage (Fractional) Uncertainty</h3>
+<div class="eq">Percentage uncertainty = (absolute uncertainty / measured value) &times; 100%</div>
+
+<h3>6.3 Combining Uncertainties</h3>
+<table>
+  <tr><th>Operation</th><th>Rule</th></tr>
+  <tr><td><strong>Addition or Subtraction</strong><br>(e.g. y = a + b or y = a &minus; b)</td><td>Add the <em>absolute</em> uncertainties:<br>&Delta;y = &Delta;a + &Delta;b</td></tr>
+  <tr><td><strong>Multiplication or Division</strong><br>(e.g. y = ab or y = a/b)</td><td>Add the <em>percentage</em> uncertainties:<br>%&Delta;y = %&Delta;a + %&Delta;b</td></tr>
+  <tr><td><strong>Raising to a power</strong><br>(e.g. y = a<sup>n</sup>)</td><td>Multiply the percentage uncertainty by the power:<br>%&Delta;y = n &times; %&Delta;a</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> When subtracting two similar values (e.g. a temperature change), the percentage uncertainty can become very large. This is why it is better to measure a large change where possible.</div>
+
+<h3>6.4 Uncertainty in a Mean</h3>
+<p>When you calculate a mean from repeated measurements:</p>
+<div class="eq">Uncertainty in the mean = range / 2</div>
+<p>where range = maximum value &minus; minimum value.</p>
+
+<h3>6.5 Uncertainties from Graphs</h3>
+<p>When determining a gradient from a straight-line graph:</p>
+<ul>
+  <li>Draw the <strong>line of best fit</strong>.</li>
+  <li>Draw the <strong>steepest</strong> and <strong>shallowest</strong> lines that still pass through the error bars.</li>
+  <li>Uncertainty in gradient = (steepest gradient &minus; shallowest gradient) / 2.</li>
+  <li>The same approach applies to the y-intercept.</li>
+</ul>
+
+<!-- SIGNIFICANT FIGURES -->
+<h2>7. Significant Figures</h2>
+<p>The number of significant figures in a result reflects the precision of the measurement.</p>
+<ul>
+  <li>All non-zero digits are significant: 237 has 3 s.f.</li>
+  <li>Zeros between non-zero digits are significant: 1002 has 4 s.f.</li>
+  <li>Leading zeros are NOT significant: 0.0045 has 2 s.f.</li>
+  <li>Trailing zeros after a decimal point ARE significant: 2.30 has 3 s.f.</li>
+</ul>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Your final answer should be given to the same number of significant figures as the data with the fewest significant figures used in the calculation. Do NOT round intermediate steps.</div>
+
+<!-- ESTIMATION -->
+<h2>8. Orders of Magnitude and Estimation</h2>
+<div class="def-box"><strong>Order of magnitude:</strong> The power of ten closest to a quantity. Used for rough comparisons and sanity checks. For example, the mass of the Earth is of order 10<sup>25</sup> kg.</div>
+
+<p>Common orders of magnitude you should know:</p>
+<table>
+  <tr><th>Quantity</th><th>Approximate Value</th><th>Order of Magnitude</th></tr>
+  <tr><td>Diameter of an atom</td><td>1 &times; 10<sup>-10</sup> m</td><td>10<sup>-10</sup> m</td></tr>
+  <tr><td>Diameter of a nucleus</td><td>1 &times; 10<sup>-15</sup> m</td><td>10<sup>-15</sup> m</td></tr>
+  <tr><td>Width of a human hair</td><td>1 &times; 10<sup>-4</sup> m</td><td>10<sup>-4</sup> m</td></tr>
+  <tr><td>Height of a person</td><td>~2 m</td><td>10<sup>0</sup> m</td></tr>
+  <tr><td>Diameter of the Earth</td><td>~1.3 &times; 10<sup>7</sup> m</td><td>10<sup>7</sup> m</td></tr>
+  <tr><td>Mass of an electron</td><td>9.1 &times; 10<sup>-31</sup> kg</td><td>10<sup>-30</sup> kg</td></tr>
+  <tr><td>Mass of a proton</td><td>1.67 &times; 10<sup>-27</sup> kg</td><td>10<sup>-27</sup> kg</td></tr>
+  <tr><td>Speed of light</td><td>3 &times; 10<sup>8</sup> m s<sup>-1</sup></td><td>10<sup>8</sup> m s<sup>-1</sup></td></tr>
+  <tr><td>Speed of sound in air</td><td>~340 m s<sup>-1</sup></td><td>10<sup>2</sup> m s<sup>-1</sup></td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Estimation questions often appear on Paper 1. They expect you to use sensible approximations and give your answer to 1 significant figure or as an order of magnitude. Show your working clearly.</div>
+
+</div>
+</body>
+</html>
