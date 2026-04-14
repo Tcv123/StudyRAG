@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edexcel A-Level Physics — Core Practicals</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
+  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .toc { background: #f0f4ff; border: 1px solid #cbd5e1; border-radius: 10px; padding: 20px 28px; margin-bottom: 32px; }
+  .toc h2 { margin-top: 0; color: #1a73e8; }
+  .toc ol { margin: 8px 0 0 24px; }
+  .toc a { color: #1a73e8; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .prac-box { background: #f0f7ff; border: 2px solid #1a73e8; border-radius: 12px; padding: 24px; margin: 32px 0; }
+  .prac-box h2 { color: #1a73e8; margin-top: 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Edexcel A-Level Physics &mdash; Core Practicals</h1>
+
+<div class="toc">
+<h2>Table of Contents</h2>
+<ol>
+  <li><a href="#cp1">CP1: Acceleration of a Freely Falling Object</a></li>
+  <li><a href="#cp2">CP2: Frequency of Stationary Waves on a String</a></li>
+  <li><a href="#cp3">CP3: Young Modulus of a Wire</a></li>
+  <li><a href="#cp4">CP4: Resistivity of a Wire</a></li>
+  <li><a href="#cp5">CP5: EMF and Internal Resistance</a></li>
+  <li><a href="#cp6">CP6: Sonometer Investigation</a></li>
+  <li><a href="#cp7">CP7: Capacitor Charge and Discharge</a></li>
+  <li><a href="#cp8">CP8: Unknown Mass from Spring Oscillation Period</a></li>
+  <li><a href="#cp9">CP9: Absorption of Gamma Radiation by Lead</a></li>
+  <li><a href="#cp10">CP10: Specific Heat Capacity</a></li>
+  <li><a href="#cp11">CP11: Viscosity by Falling Ball (Stokes' Law)</a></li>
+  <li><a href="#cp12">CP12: Boyle's Law</a></li>
+  <li><a href="#cp13">CP13: Thermistor Calibration in Potential Divider</a></li>
+  <li><a href="#cp14">CP14: Pressure-Volume at Fixed Temperature</a></li>
+  <li><a href="#cp16">CP16: Specific Latent Heat</a></li>
+</ol>
+<p style="margin-top:8px;font-size:0.9em;color:#666;">Note: CP15 (capacitor charge/discharge) is combined with CP7 as they cover the same practical.</p>
+</div>
+
+<!-- CP1 -->
+<div class="prac-box" id="cp1">
+<h2>&#9879; CP1: Acceleration of a Freely Falling Object</h2>
+
+<svg viewBox="0 0 600 280" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Free-Fall Apparatus</text>
+  <rect x="250" y="40" width="100" height="30" rx="4" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="300" y="60" text-anchor="middle" fill="#fff" font-size="11">Electromagnet</text>
+  <circle cx="300" cy="85" r="10" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="300" y="89" text-anchor="middle" fill="#fff" font-size="9">Ball</text>
+  <line x1="300" y1="95" x2="300" y2="210" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="6,4"/>
+  <rect x="260" y="210" width="80" height="15" rx="3" fill="#16A34A" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="300" y="222" text-anchor="middle" fill="#fff" font-size="10">Trapdoor</text>
+  <rect x="180" y="50" width="50" height="30" rx="4" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="205" y="69" text-anchor="middle" fill="#fff" font-size="10">Timer</text>
+  <line x1="230" y1="55" x2="250" y2="55" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="230" y1="70" x2="260" y2="218" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="130" y1="70" x2="130" y2="210" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="126" y1="70" x2="134" y2="70" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="126" y1="210" x2="134" y2="210" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="120" y="145" text-anchor="end" fill="#16A34A" font-size="12">s (height)</text>
+  <rect x="380" y="120" width="130" height="60" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="445" y="140" text-anchor="middle" fill="#1a1a2e" font-size="11">s = &frac12;gt&sup2;</text>
+  <text x="445" y="160" text-anchor="middle" fill="#16A34A" font-size="11">gradient of s vs t&sup2; = g/2</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Electromagnet with release switch</li>
+  <li>Steel ball bearing</li>
+  <li>Trapdoor switch and electronic timer (or light gates)</li>
+  <li>Metre ruler / 2 m ruler</li>
+  <li>Clamp stand and boss</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Clamp the electromagnet at height s above the trapdoor.</li>
+  <li>When the switch is released, the timer starts; the ball falls and hits the trapdoor, stopping the timer.</li>
+  <li>Record time t. Repeat 3 times at each height and take the mean.</li>
+  <li>Vary s (at least 6 values, 0.2&ndash;1.0 m).</li>
+  <li>Plot s vs t&sup2;. Gradient = g/2.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Soft pad beneath trapdoor to catch ball</li>
+  <li>Stable clamp stand; keep feet clear</li>
+</ul>
+
+<h3>Analysis</h3>
+<p class="eq">s = &frac12;gt&sup2; &rArr; gradient of s vs t&sup2; = g/2</p>
+<p>Expected: g &asymp; 9.81 m s<sup>&minus;2</sup>.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Residual magnetism delays ball release</td><td>Systematic</td><td>Use a non-magnetic release mechanism or demagnetiser</td></tr>
+<tr><td>Air resistance on ball</td><td>Systematic</td><td>Use a small, dense ball</td></tr>
+<tr><td>Height measurement uncertainty</td><td>Random</td><td>Use a 2 m ruler; measure from bottom of ball to trapdoor</td></tr>
+<tr><td>Timer precision</td><td>Random</td><td>Use electronic timer; repeat and average</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> A non-zero y-intercept on the s vs t&sup2; graph suggests systematic error (e.g. timing delay from residual magnetism). Light gates can remove this source of error entirely.
+</div>
+</div>
+
+<!-- CP2 -->
+<div class="prac-box" id="cp2">
+<h2>&#9879; CP2: Frequency of Stationary Waves on a String</h2>
+
+<svg viewBox="0 0 600 200" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <rect x="30" y="90" width="60" height="40" rx="4" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="60" y="115" text-anchor="middle" fill="#fff" font-size="10">Signal Gen</text>
+  <rect x="100" y="95" width="30" height="30" rx="3" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="115" y="114" text-anchor="middle" fill="#fff" font-size="9">Vib</text>
+  <line x1="130" y1="110" x2="480" y2="110" stroke="#1a1a2e" stroke-width="2"/>
+  <path d="M130,110 Q175,70 220,110 Q265,150 310,110 Q355,70 400,110 Q445,150 480,110" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="6,3"/>
+  <rect x="480" y="85" width="20" height="50" rx="3" fill="#16A34A" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="490" y="114" text-anchor="middle" fill="#fff" font-size="9">B</text>
+  <line x1="490" y1="135" x2="490" y2="170" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="475" y="170" width="30" height="20" rx="3" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="490" y="184" text-anchor="middle" fill="#fff" font-size="9">Mass</text>
+  <text x="305" y="30" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Stationary Wave on a String</text>
+  <line x1="130" y1="140" x2="220" y2="140" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="130" y1="137" x2="130" y2="143" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="220" y1="137" x2="220" y2="143" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="175" y="155" text-anchor="middle" fill="#16A34A" font-size="11">&lambda;/2</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Signal generator and vibrator</li>
+  <li>String (nylon thread), pulley, bench clamp</li>
+  <li>Slotted masses and hanger (for tension)</li>
+  <li>Metre ruler</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Attach the string to the vibrator, pass it over a pulley, and hang masses to provide tension T = mg.</li>
+  <li>Adjust the frequency until the fundamental mode (1 loop) is observed.</li>
+  <li>Record the frequency and measure the vibrating length L.</li>
+  <li>Increase frequency to find 2nd, 3rd, etc. harmonics.</li>
+  <li>Vary tension by changing masses and repeat.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Safety screen in case string snaps</li>
+  <li>Soft pad beneath hanging masses</li>
+</ul>
+
+<h3>Analysis</h3>
+<p class="eq">f = (1/2L)&radic;(T/&mu;)</p>
+<p>Plot f vs 1/L (constant T): straight line through origin, gradient = (1/2)&radic;(T/&mu;).</p>
+<p>Plot f vs &radic;T (constant L): straight line through origin.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Judging resonance by eye</td><td>Random</td><td>Use a paper rider; resonance flicks it off</td></tr>
+<tr><td>String mass not negligible</td><td>Systematic</td><td>Include string mass when calculating &mu;</td></tr>
+<tr><td>Measuring vibrating length</td><td>Random</td><td>Use a mm ruler; measure node to node</td></tr>
+<tr><td>Mass hanger mass omitted</td><td>Systematic</td><td>Include hanger mass in tension</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> The vibrator is not quite at a node, so the measured L is slightly longer than the true resonant length. Measure between nodes rather than from the vibrator end for better accuracy.
+</div>
+</div>
+
+<!-- CP3 -->
+<div class="prac-box" id="cp3">
+<h2>&#9879; CP3: Young Modulus of a Wire</h2>
+
+<svg viewBox="0 0 600 200" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Young Modulus Apparatus</text>
+  <rect x="40" y="50" width="20" height="100" rx="3" fill="#1a1a2e"/>
+  <text x="50" y="45" text-anchor="middle" fill="#1a1a2e" font-size="10">Clamp</text>
+  <line x1="60" y1="80" x2="520" y2="80" stroke="#D97706" stroke-width="2"/>
+  <text x="290" y="73" text-anchor="middle" fill="#D97706" font-size="11">Test wire (~2 m)</text>
+  <rect x="480" y="82" width="40" height="16" rx="3" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="500" y="94" text-anchor="middle" fill="#fff" font-size="8">Travelling</text>
+  <text x="500" y="105" text-anchor="middle" fill="#1a73e8" font-size="8">microscope</text>
+  <rect x="505" y="100" width="8" height="25" rx="1" fill="#1a1a2e"/>
+  <line x1="509" y1="125" x2="509" y2="150" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="495" y="150" width="28" height="15" rx="3" fill="#D97706" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="509" y="162" text-anchor="middle" fill="#fff" font-size="8">Mass</text>
+  <rect x="230" y="95" width="60" height="16" rx="3" fill="#16A34A" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="260" y="107" text-anchor="middle" fill="#fff" font-size="9">Micrometer</text>
+  <line x1="60" y1="175" x2="520" y2="175" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="60" y1="171" x2="60" y2="179" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="520" y1="171" x2="520" y2="179" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="290" y="192" text-anchor="middle" fill="#16A34A" font-size="12">Original length L</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Long thin wire (copper, ~2 m)</li>
+  <li>Micrometer screw gauge</li>
+  <li>Travelling microscope or vernier scale (for extension)</li>
+  <li>Slotted masses and hanger</li>
+  <li>Tape measure, G-clamp, safety goggles</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure the wire diameter at several points using a micrometer. Calculate mean d and A = &pi;d&sup2;/4.</li>
+  <li>Measure original length L with tape measure.</li>
+  <li>Add masses in steps (e.g. 100 g). After each addition, measure extension with travelling microscope.</li>
+  <li>Record F = mg and &Delta;L at each step.</li>
+  <li>Unload to check elastic behaviour (wire returns to original length).</li>
+  <li>Plot stress vs strain. Gradient = Young modulus E.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Wear safety goggles &mdash; wire may snap</li>
+  <li>Cushion or sand tray beneath masses</li>
+  <li>Do not exceed the elastic limit</li>
+</ul>
+
+<h3>Analysis</h3>
+<p class="eq">E = stress / strain = (F/A) / (&Delta;L/L) = FL / (A&Delta;L)</p>
+<p>Plot stress (&sigma;) vs strain (&epsilon;). Gradient of linear region = E.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Wire diameter varies</td><td>Random</td><td>Multiple readings at different positions; use mean</td></tr>
+<tr><td>Kinks in wire</td><td>Systematic</td><td>Apply small initial load to straighten wire</td></tr>
+<tr><td>Thermal expansion</td><td>Systematic</td><td>Use a reference wire for compensation</td></tr>
+<tr><td>Small extensions hard to measure</td><td>Random</td><td>Use travelling microscope; use long, thin wire</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> The percentage uncertainty in diameter is the dominant source because d appears squared in the area formula. Always use a micrometer and take at least 6 readings at different positions and orientations.
+</div>
+</div>
+
+<!-- CP4 -->
+<div class="prac-box" id="cp4">
+<h2>&#9879; CP4: Resistivity of a Wire</h2>
+
+<svg viewBox="0 0 600 200" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Resistivity Circuit</text>
+  <rect x="50" y="55" width="55" height="30" rx="4" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="77" y="74" text-anchor="middle" fill="#fff" font-size="10">Cell</text>
+  <line x1="105" y1="70" x2="175" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="205" cy="70" r="18" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <text x="205" y="75" text-anchor="middle" fill="#DC2626" font-size="11" font-weight="600">A</text>
+  <line x1="223" y1="70" x2="300" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="300" y1="70" x2="500" y2="70" stroke="#D97706" stroke-width="2.5"/>
+  <text x="400" y="60" text-anchor="middle" fill="#D97706" font-size="11">Constantan wire</text>
+  <line x1="500" y1="70" x2="500" y2="145" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="500" y1="145" x2="50" y2="145" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="50" y1="145" x2="50" y2="85" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="400" cy="120" r="18" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <text x="400" y="125" text-anchor="middle" fill="#1a73e8" font-size="11" font-weight="600">V</text>
+  <line x1="300" y1="70" x2="300" y2="102" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="300" y1="102" x2="382" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="418" y1="120" x2="500" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="300" y="180" text-anchor="middle" fill="#16A34A" font-size="11">Measure L with ruler, d with micrometer</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Constantan wire (~1 m, taped to ruler)</li>
+  <li>Ammeter and voltmeter</li>
+  <li>Cell/power supply and switch</li>
+  <li>Micrometer screw gauge</li>
+  <li>Metre ruler, crocodile clips</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure wire diameter at several points using micrometer. Calculate A = &pi;d&sup2;/4.</li>
+  <li>Set up circuit: cell, switch, ammeter in series with wire; voltmeter across wire.</li>
+  <li>Use clips to select length L. Record V and I. Calculate R = V/I.</li>
+  <li>Repeat for 6+ lengths (0.1&ndash;1.0 m).</li>
+  <li>Plot R vs L. Gradient = &rho;/A, so &rho; = gradient &times; A.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Switch off between readings to prevent heating</li>
+  <li>Low voltage (&lt; 6 V); do not touch energised wire</li>
+</ul>
+
+<h3>Analysis</h3>
+<p class="eq">R = &rho;L/A &rArr; plot R vs L, gradient = &rho;/A</p>
+<p>Expected: &rho; (constantan) &asymp; 4.9 &times; 10<sup>&minus;7</sup> &Omega; m.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Wire heating changes R</td><td>Systematic</td><td>Switch off between readings; use low current</td></tr>
+<tr><td>Contact resistance at clips</td><td>Systematic</td><td>Clean contacts; ensure firm grip</td></tr>
+<tr><td>Diameter variation</td><td>Random</td><td>Multiple readings; take mean</td></tr>
+<tr><td>Length measurement at clips</td><td>Random</td><td>Tape wire to ruler; align clips carefully</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Constantan is chosen because its resistivity barely changes with temperature, unlike copper. The graph of R vs L should pass through the origin; a non-zero intercept suggests contact resistance.
+</div>
+</div>
+
+<!-- CP5 -->
+<div class="prac-box" id="cp5">
+<h2>&#9879; CP5: EMF and Internal Resistance</h2>
+
+<svg viewBox="0 0 600 200" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">EMF and Internal Resistance</text>
+  <rect x="60" y="55" width="70" height="35" rx="5" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="95" y="77" text-anchor="middle" fill="#fff" font-size="10">Cell (&epsilon;, r)</text>
+  <line x1="130" y1="72" x2="200" y2="72" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="225" cy="72" r="18" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <text x="225" y="77" text-anchor="middle" fill="#DC2626" font-size="11" font-weight="600">A</text>
+  <line x1="243" y1="72" x2="330" y2="72" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="330" y="58" width="80" height="28" rx="4" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="370" y="77" text-anchor="middle" fill="#fff" font-size="10">Variable R</text>
+  <line x1="410" y1="72" x2="490" y2="72" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="490" y1="72" x2="490" y2="145" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="490" y1="145" x2="60" y2="145" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="145" x2="60" y2="90" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="410" cy="125" r="18" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <text x="410" y="130" text-anchor="middle" fill="#1a73e8" font-size="11" font-weight="600">V</text>
+  <line x1="330" y1="86" x2="330" y2="125" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="330" y1="125" x2="392" y2="125" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="428" y1="125" x2="490" y2="125" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="300" y="180" text-anchor="middle" fill="#16A34A" font-size="11">V = &epsilon; &minus; Ir &rArr; y-intercept = &epsilon;, gradient = &minus;r</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Cell (1.5 V), variable resistor, ammeter, voltmeter</li>
+  <li>Switch, connecting wires</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Connect cell, ammeter, variable resistor in series. Voltmeter across cell terminals.</li>
+  <li>For each resistance setting, record V and I.</li>
+  <li>Repeat for 6+ settings. Switch off between readings.</li>
+  <li>Plot V vs I.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Do not short-circuit the cell</li>
+  <li>Switch off between readings to preserve cell</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>V = &epsilon; &minus; Ir. Plot V vs I: y-intercept = &epsilon;, gradient = &minus;r.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Cell runs down</td><td>Systematic</td><td>Switch off between readings; work quickly</td></tr>
+<tr><td>Ammeter resistance</td><td>Systematic</td><td>Use low-resistance digital ammeter</td></tr>
+<tr><td>Voltmeter draws current</td><td>Systematic</td><td>Use high-impedance digital voltmeter</td></tr>
+<tr><td>Fluctuating readings</td><td>Random</td><td>Wait for stable readings; take repeats</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> The x-intercept gives the short-circuit current &epsilon;/r. The gradient magnitude gives internal resistance. Typical r for a cell: 0.5&ndash;2 &Omega;.
+</div>
+</div>
+
+<!-- CP6 -->
+<div class="prac-box" id="cp6">
+<h2>&#9879; CP6: Sonometer Investigation</h2>
+
+<svg viewBox="0 0 600 200" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Sonometer</text>
+  <rect x="50" y="100" width="500" height="20" rx="4" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="300" y="115" text-anchor="middle" fill="#fff" font-size="10">Wooden sounding board</text>
+  <rect x="80" y="75" width="10" height="30" rx="2" fill="#1a1a2e"/>
+  <rect x="460" y="75" width="10" height="30" rx="2" fill="#1a1a2e"/>
+  <text x="85" y="70" text-anchor="middle" fill="#1a1a2e" font-size="10">Bridge</text>
+  <text x="465" y="70" text-anchor="middle" fill="#1a1a2e" font-size="10">Bridge</text>
+  <line x1="85" y1="80" x2="465" y2="80" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="275" y="72" text-anchor="middle" fill="#DC2626" font-size="11">Wire under tension</text>
+  <rect x="500" y="60" width="12" height="50" rx="2" fill="#16A34A" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="506" y1="110" x2="506" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="494" y="140" width="24" height="15" rx="3" fill="#D97706" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="506" y="152" text-anchor="middle" fill="#fff" font-size="8">Mass</text>
+  <line x1="85" y1="135" x2="465" y2="135" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="85" y1="131" x2="85" y2="139" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="465" y1="131" x2="465" y2="139" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="275" y="150" text-anchor="middle" fill="#16A34A" font-size="11">Vibrating length L</text>
+  <rect x="240" y="50" width="70" height="20" rx="3" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="275" y="64" text-anchor="middle" fill="#fff" font-size="9">Tuning fork</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Sonometer (wooden board with wire and movable bridges)</li>
+  <li>Set of tuning forks (known frequencies)</li>
+  <li>Slotted masses and hanger (tension)</li>
+  <li>Metre ruler, paper rider</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Set a known tension T by hanging masses from one end of the wire.</li>
+  <li>Strike a tuning fork and hold it near the wire. Move one bridge until the wire resonates (paper rider jumps off).</li>
+  <li>Measure the resonant length L between the bridges.</li>
+  <li>Repeat with different tuning forks (different frequencies) or different tensions.</li>
+  <li>Plot f vs 1/L (constant T) or f vs &radic;T (constant L).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Safety glasses in case wire snaps</li>
+  <li>Do not over-tension the wire</li>
+  <li>Secure masses so they cannot fall</li>
+</ul>
+
+<h3>Analysis</h3>
+<p class="eq">f = (1/2L)&radic;(T/&mu;)</p>
+<p>Plot f vs 1/L: straight line through origin. Gradient = (1/2)&radic;(T/&mu;).</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Difficulty judging exact resonance</td><td>Random</td><td>Use a paper rider to detect resonance clearly</td></tr>
+<tr><td>Bridge position measurement</td><td>Random</td><td>Use mm ruler; align carefully</td></tr>
+<tr><td>Wire may not vibrate in fundamental</td><td>Systematic</td><td>Pluck gently at centre; listen for pure tone</td></tr>
+<tr><td>Tuning fork frequency uncertainty</td><td>Systematic</td><td>Use calibrated, high-quality forks</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> A sonometer differs from the vibrator method (CP2) in that resonance is matched to external tuning forks rather than driven by a signal generator. Both investigate the same equation f = (1/2L)&radic;(T/&mu;).
+</div>
+</div>
+
+<!-- CP7 -->
+<div class="prac-box" id="cp7">
+<h2>&#9879; CP7/CP15: Capacitor Charge and Discharge</h2>
+
+<svg viewBox="0 0 600 200" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">RC Discharge Circuit</text>
+  <rect x="60" y="55" width="55" height="30" rx="4" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="87" y="74" text-anchor="middle" fill="#fff" font-size="10">DC</text>
+  <line x1="115" y1="70" x2="170" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="170" y="58" width="45" height="24" rx="4" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="192" y="74" text-anchor="middle" fill="#fff" font-size="9">Switch</text>
+  <line x1="215" y1="70" x2="270" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="270" y="58" width="45" height="24" rx="4" fill="#16A34A" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="292" y="74" text-anchor="middle" fill="#fff" font-size="10">R</text>
+  <line x1="315" y1="70" x2="380" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="375" y1="55" x2="375" y2="60" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="367" y1="60" x2="383" y2="60" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="370" y1="66" x2="380" y2="66" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="375" y1="66" x2="375" y2="70" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="395" y="65" fill="#1a1a2e" font-size="10">C</text>
+  <line x1="380" y1="70" x2="480" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="480" y1="70" x2="480" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="480" y1="140" x2="60" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="140" x2="60" y2="85" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="400" y="90" width="70" height="25" rx="4" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="435" y="107" text-anchor="middle" fill="#fff" font-size="9">Datalogger</text>
+  <text x="300" y="170" text-anchor="middle" fill="#16A34A" font-size="11">V = V&#x2080;e^(&minus;t/RC) &rArr; ln(V) vs t: gradient = &minus;1/RC</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Capacitor (e.g. 470&ndash;2200 &mu;F electrolytic)</li>
+  <li>Resistor (chosen so &tau; = RC is 10&ndash;30 s)</li>
+  <li>DC power supply, two-way switch</li>
+  <li>Voltmeter or datalogger, stopwatch</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Connect C and R in series with supply and two-way switch. Datalogger across C.</li>
+  <li>Charge: flip switch to supply side. Record V vs t as capacitor charges.</li>
+  <li>Discharge: flip switch to disconnect supply. Record V vs t during discharge.</li>
+  <li>Plot ln(V) vs t for discharge. Gradient = &minus;1/RC.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Correct polarity for electrolytic capacitors</li>
+  <li>Discharge capacitor before handling</li>
+  <li>Low voltage (&lt; 12 V)</li>
+</ul>
+
+<h3>Analysis</h3>
+<p class="eq">V = V<sub>0</sub>e<sup>&minus;t/RC</sup> &rArr; ln V = ln V<sub>0</sub> &minus; t/(RC)</p>
+<p>Plot ln(V) vs t: straight line, gradient = &minus;1/RC, y-intercept = ln V<sub>0</sub>.</p>
+<p>Time constant &tau; = RC is time for V to fall to 37% of V<sub>0</sub>.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Voltmeter draws current</td><td>Systematic</td><td>Use high-impedance voltmeter or datalogger</td></tr>
+<tr><td>Manual timing errors</td><td>Random</td><td>Use datalogger for continuous recording</td></tr>
+<tr><td>Capacitor leakage</td><td>Systematic</td><td>Use high-quality capacitor</td></tr>
+<tr><td>Temperature changes</td><td>Systematic</td><td>Conduct in stable temperature environment</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Choose R and C so the time constant &tau; = RC is convenient (10&ndash;30 s). After 5&tau;, the capacitor is effectively fully charged or discharged. The charge on the capacitor is Q = CV, so you can also plot ln(Q) vs t.
+</div>
+</div>
+
+<!-- CP8 -->
+<div class="prac-box" id="cp8">
+<h2>&#9879; CP8: Unknown Mass from Spring Oscillation Period</h2>
+
+<svg viewBox="0 0 600 230" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Mass-Spring Oscillations</text>
+  <rect x="140" y="40" width="60" height="6" rx="2" fill="#1a1a2e"/>
+  <line x1="170" y1="46" x2="170" y2="52" stroke="#1a1a2e" stroke-width="2"/>
+  <path d="M170,52 L175,62 L165,72 L175,82 L165,92 L175,102 L165,112 L170,120" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <rect x="150" y="120" width="40" height="30" rx="4" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="170" y="140" text-anchor="middle" fill="#fff" font-size="10">m</text>
+  <text x="170" y="170" text-anchor="middle" fill="#1a1a2e" font-size="11">Known masses</text>
+  <!-- Graph sketch -->
+  <rect x="300" y="45" width="230" height="150" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="415" y="65" text-anchor="middle" fill="#1a1a2e" font-size="11" font-weight="600">Calibration Graph</text>
+  <line x1="330" y1="80" x2="330" y2="175" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="330" y1="175" x2="510" y2="175" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="320" y="130" text-anchor="end" fill="#1a1a2e" font-size="10">T&sup2;</text>
+  <text x="420" y="192" text-anchor="middle" fill="#1a1a2e" font-size="10">m</text>
+  <line x1="340" y1="165" x2="500" y2="85" stroke="#1a73e8" stroke-width="2"/>
+  <line x1="400" y1="128" x2="400" y2="175" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="400" cy="128" r="3" fill="#DC2626"/>
+  <text x="410" y="160" fill="#DC2626" font-size="10">m&#x2093;</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Helical spring, clamp stand</li>
+  <li>Set of known slotted masses</li>
+  <li>Unknown mass</li>
+  <li>Stopwatch</li>
+  <li>Ruler (optional)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Hang a known mass from the spring. Pull down slightly and release.</li>
+  <li>Time 10 oscillations. Calculate T. Calculate T&sup2;.</li>
+  <li>Repeat for 6+ known masses.</li>
+  <li>Plot T&sup2; vs m (calibration graph). Should be a straight line through the origin.</li>
+  <li>Hang the unknown mass, measure T, calculate T&sup2;.</li>
+  <li>Read off the unknown mass from the calibration graph.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Secure clamp stand with G-clamp</li>
+  <li>Do not overload the spring beyond its elastic limit</li>
+  <li>Keep clear of oscillating masses</li>
+</ul>
+
+<h3>Analysis</h3>
+<p class="eq">T = 2&pi;&radic;(m/k) &rArr; T&sup2; = (4&pi;&sup2;/k)m</p>
+<p>Gradient of T&sup2; vs m = 4&pi;&sup2;/k. Read unknown mass from the graph using its T&sup2; value.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Miscounting oscillations</td><td>Random</td><td>Use fiducial marker; count from equilibrium</td></tr>
+<tr><td>Non-vertical oscillation</td><td>Random</td><td>Release carefully from rest; use guide tube</td></tr>
+<tr><td>Spring mass not negligible</td><td>Systematic</td><td>Add m<sub>eff</sub> = m<sub>spring</sub>/3 to the oscillating mass</td></tr>
+<tr><td>Reaction time</td><td>Random</td><td>Time 10+ oscillations</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> If the graph does not pass through the origin, the spring has an effective mass of its own (approximately 1/3 of the spring mass). The x-intercept gives this effective mass as a negative offset.
+</div>
+</div>
+
+<!-- CP9 -->
+<div class="prac-box" id="cp9">
+<h2>&#9879; CP9: Absorption of Gamma Radiation by Lead</h2>
+
+<svg viewBox="0 0 600 200" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Gamma Absorption by Lead</text>
+  <circle cx="80" cy="100" r="18" fill="#DC2626" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="80" y="105" text-anchor="middle" fill="#fff" font-size="10">&gamma;</text>
+  <text x="80" y="132" text-anchor="middle" fill="#DC2626" font-size="10">Source</text>
+  <line x1="98" y1="95" x2="210" y2="95" stroke="#D97706" stroke-width="1" stroke-dasharray="5,3" opacity="0.5"/>
+  <line x1="98" y1="100" x2="210" y2="100" stroke="#D97706" stroke-width="1" stroke-dasharray="5,3" opacity="0.5"/>
+  <line x1="98" y1="105" x2="210" y2="105" stroke="#D97706" stroke-width="1" stroke-dasharray="5,3" opacity="0.5"/>
+  <rect x="210" y="70" width="30" height="60" rx="3" fill="#1a1a2e" opacity="0.7" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="245" y="70" width="30" height="60" rx="3" fill="#1a1a2e" opacity="0.5" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="280" y="70" width="30" height="60" rx="3" fill="#1a1a2e" opacity="0.3" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="260" y="150" text-anchor="middle" fill="#1a1a2e" font-size="10">Lead sheets (variable thickness)</text>
+  <line x1="310" y1="95" x2="380" y2="95" stroke="#D97706" stroke-width="1" stroke-dasharray="5,3" opacity="0.3"/>
+  <line x1="310" y1="100" x2="380" y2="100" stroke="#D97706" stroke-width="1" stroke-dasharray="5,3" opacity="0.3"/>
+  <rect x="380" y="78" width="70" height="44" rx="6" fill="#1a73e8" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="415" y="99" text-anchor="middle" fill="#fff" font-size="10">GM Tube</text>
+  <text x="415" y="113" text-anchor="middle" fill="#fff" font-size="9">+ Counter</text>
+  <line x1="210" y1="160" x2="310" y2="160" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="260" y="175" text-anchor="middle" fill="#16A34A" font-size="10">thickness x</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Gamma source (e.g. cobalt-60, sealed)</li>
+  <li>GM tube and counter/ratemeter</li>
+  <li>Set of lead sheets (varying thickness)</li>
+  <li>Ruler or vernier callipers (to measure lead thickness)</li>
+  <li>Source holder and clamp</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure background count rate (no source, count for 60+ seconds).</li>
+  <li>Place source at fixed distance from GM tube. Record count rate with no absorber.</li>
+  <li>Insert lead sheets of known thickness between source and detector.</li>
+  <li>Record corrected count rate (subtract background) for each thickness.</li>
+  <li>Repeat for 6+ thicknesses.</li>
+  <li>Plot ln(corrected count rate) vs thickness x.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Handle source with tongs; never bare hands</li>
+  <li>Keep maximum distance; minimise exposure time</li>
+  <li>Store source in lead-lined container</li>
+  <li>Follow ALARA principle</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>Intensity follows: <span class="eq">I = I<sub>0</sub> e<sup>&minus;&mu;x</sup></span></p>
+<p>Plot <strong>ln(C) vs x</strong>: straight line with gradient = &minus;&mu; (linear attenuation coefficient).</p>
+<p>Half-value thickness: x<sub>&frac12;</sub> = ln 2 / &mu;.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Random nature of decay</td><td>Random</td><td>Count for long periods; take repeats</td></tr>
+<tr><td>Background radiation fluctuates</td><td>Random</td><td>Multiple background readings; long count time</td></tr>
+<tr><td>Lead sheets not uniform thickness</td><td>Systematic</td><td>Measure thickness at multiple points with callipers</td></tr>
+<tr><td>Scattered radiation reaching detector</td><td>Systematic</td><td>Collimate the beam; use narrow source-detector geometry</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> The half-value thickness is the absorber thickness needed to halve the intensity. For gamma radiation in lead, this is typically a few mm to a few cm depending on the energy of the gamma photons.
+</div>
+</div>
+
+<!-- CP10 -->
+<div class="prac-box" id="cp10">
+<h2>&#9879; CP10: Specific Heat Capacity</h2>
+
+<svg viewBox="0 0 600 230" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Specific Heat Capacity Apparatus</text>
+  <rect x="200" y="60" width="200" height="130" rx="8" fill="#D97706" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="300" y="85" text-anchor="middle" fill="#fff" font-size="12">Metal Block</text>
+  <rect x="240" y="100" width="15" height="70" rx="3" fill="#DC2626" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="247" y="180" text-anchor="middle" fill="#DC2626" font-size="9">Heater</text>
+  <rect x="340" y="100" width="10" height="70" rx="2" fill="#16A34A" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="345" y="180" text-anchor="middle" fill="#16A34A" font-size="9">Therm.</text>
+  <rect x="60" y="70" width="80" height="40" rx="5" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="100" y="88" text-anchor="middle" fill="#fff" font-size="10">Power</text>
+  <text x="100" y="102" text-anchor="middle" fill="#fff" font-size="10">Supply</text>
+  <line x1="140" y1="85" x2="200" y2="85" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="470" cy="95" r="20" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <text x="470" y="100" text-anchor="middle" fill="#DC2626" font-size="11" font-weight="600">A</text>
+  <circle cx="470" cy="145" r="20" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <text x="470" y="150" text-anchor="middle" fill="#1a73e8" font-size="11" font-weight="600">V</text>
+  <text x="300" y="215" text-anchor="middle" fill="#1a1a2e" font-size="11">E = mc&Delta;&theta; &rArr; c = VIt / (m&Delta;&theta;)</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Metal block (aluminium or copper) with holes for heater and thermometer</li>
+  <li>Immersion heater</li>
+  <li>Thermometer (or temperature probe)</li>
+  <li>Ammeter, voltmeter</li>
+  <li>Power supply, stopwatch</li>
+  <li>Balance (to measure block mass)</li>
+  <li>Insulation (lagging) for the block</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure the mass of the metal block using a balance.</li>
+  <li>Insert the heater and thermometer into the block. Add a drop of oil to ensure good thermal contact.</li>
+  <li>Record the initial temperature &theta;<sub>1</sub>.</li>
+  <li>Switch on the heater. Record V, I, and time t.</li>
+  <li>Heat for a set time (e.g. 10 minutes). Record final temperature &theta;<sub>2</sub>.</li>
+  <li>Calculate: c = VIt / (m&Delta;&theta;), where &Delta;&theta; = &theta;<sub>2</sub> &minus; &theta;<sub>1</sub>.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Metal block gets very hot &mdash; use tongs or heat-resistant gloves</li>
+  <li>Do not touch the heater element</li>
+  <li>Ensure heater is fully inserted to avoid overheating exposed parts</li>
+  <li>Place block on a heat-resistant mat</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>Energy supplied: E = VIt. Energy gained: E = mc&Delta;&theta;.</p>
+<p class="eq">c = VIt / (m&Delta;&theta;)</p>
+<p>Alternatively, plot &Delta;&theta; vs t. Gradient = VI/(mc), so c = VI/(m &times; gradient).</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Heat loss to surroundings</td><td>Systematic (c appears too high)</td><td>Insulate the block with lagging</td></tr>
+<tr><td>Thermometer not at thermal equilibrium with block</td><td>Systematic</td><td>Use oil in thermometer hole; wait for steady reading</td></tr>
+<tr><td>Energy lost heating heater itself</td><td>Systematic</td><td>Ensure heater is small relative to block</td></tr>
+<tr><td>Voltage/current fluctuations</td><td>Random</td><td>Monitor V and I throughout; use regulated supply</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Heat losses mean the measured c is always slightly higher than the true value, because some electrical energy is lost to the surroundings rather than heating the block. Insulation and a cooling correction can reduce this.
+</div>
+</div>
+
+<!-- CP11 -->
+<div class="prac-box" id="cp11">
+<h2>&#9879; CP11: Viscosity by Falling Ball (Stokes' Law)</h2>
+
+<svg viewBox="0 0 600 260" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Falling Ball Viscometer</text>
+  <rect x="230" y="40" width="80" height="200" rx="6" fill="#cce0ff" stroke="#1a73e8" stroke-width="2"/>
+  <text x="270" y="60" text-anchor="middle" fill="#1a73e8" font-size="10">Glycerol</text>
+  <text x="270" y="75" text-anchor="middle" fill="#1a73e8" font-size="10">(tall cylinder)</text>
+  <circle cx="270" cy="100" r="6" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="320" y="104" fill="#D97706" font-size="10">Ball bearing</text>
+  <line x1="270" y1="106" x2="270" y2="200" stroke="#D97706" stroke-width="1" stroke-dasharray="5,3"/>
+  <line x1="230" y1="120" x2="310" y2="120" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="215" y="124" text-anchor="end" fill="#DC2626" font-size="10">Mark A</text>
+  <line x1="230" y1="200" x2="310" y2="200" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="215" y="204" text-anchor="end" fill="#DC2626" font-size="10">Mark B</text>
+  <line x1="340" y1="120" x2="340" y2="200" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="336" y1="120" x2="344" y2="120" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="336" y1="200" x2="344" y2="200" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="355" y="165" fill="#16A34A" font-size="11">d</text>
+  <rect x="380" y="100" width="140" height="70" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="450" y="120" text-anchor="middle" fill="#1a1a2e" font-size="10" font-weight="600">At terminal velocity:</text>
+  <text x="450" y="138" text-anchor="middle" fill="#1a1a2e" font-size="10">6&pi;&eta;rv = (4/3)&pi;r&sup3;(&rho;&minus;&sigma;)g</text>
+  <text x="450" y="158" text-anchor="middle" fill="#16A34A" font-size="10">&eta; = 2r&sup2;(&rho;&minus;&sigma;)g / 9v</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Tall measuring cylinder filled with glycerol (or viscous oil)</li>
+  <li>Small steel ball bearings (various sizes)</li>
+  <li>Micrometer (to measure ball diameter)</li>
+  <li>Stopwatch</li>
+  <li>Ruler (for distance between timing marks)</li>
+  <li>Thermometer</li>
+  <li>Elastic bands (for timing marks on the cylinder)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure the diameter of the ball bearing using a micrometer. Calculate radius r.</li>
+  <li>Mark two reference lines on the cylinder (well below the surface so the ball reaches terminal velocity).</li>
+  <li>Gently drop the ball into the centre of the liquid surface.</li>
+  <li>Time how long the ball takes to travel between the two marks. Calculate terminal velocity v = d/t.</li>
+  <li>Repeat 3 times and take the mean.</li>
+  <li>Repeat with different ball sizes to investigate how &eta; depends on r.</li>
+  <li>Record the temperature of the liquid (viscosity is temperature-dependent).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Clean up spilled glycerol immediately (slipping hazard)</li>
+  <li>Retrieve balls with a magnet to avoid tipping the cylinder</li>
+  <li>Ensure the cylinder is stable and cannot topple</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>At terminal velocity, drag force = weight &minus; upthrust:</p>
+<p class="eq">6&pi;&eta;rv = (4/3)&pi;r&sup3;(&rho; &minus; &sigma;)g</p>
+<p class="eq">&eta; = 2r&sup2;(&rho; &minus; &sigma;)g / (9v)</p>
+<p>where &rho; = density of ball, &sigma; = density of fluid.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Ball not at terminal velocity between marks</td><td>Systematic</td><td>Place top mark well below the surface</td></tr>
+<tr><td>Ball not falling centrally (wall effects)</td><td>Systematic</td><td>Use a wide cylinder; drop ball in the centre</td></tr>
+<tr><td>Temperature changes affect viscosity</td><td>Systematic</td><td>Monitor temperature; work quickly</td></tr>
+<tr><td>Timing reaction time</td><td>Random</td><td>Use a longer distance between marks; video analysis</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Stokes' law only applies at low Reynolds numbers (laminar flow). Use small, slow-moving balls in viscous fluid. The ball must reach terminal velocity before timing begins, so place the top marker well below the liquid surface.
+</div>
+</div>
+
+<!-- CP12 -->
+<div class="prac-box" id="cp12">
+<h2>&#9879; CP12: Boyle's Law</h2>
+
+<svg viewBox="0 0 600 200" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Boyle's Law: P vs 1/V</text>
+  <rect x="100" y="60" width="200" height="50" rx="6" fill="#e8eef6" stroke="#1a73e8" stroke-width="2"/>
+  <rect x="110" y="70" width="120" height="30" rx="3" fill="#cce0ff" stroke="#1a73e8" stroke-width="1"/>
+  <text x="170" y="90" text-anchor="middle" fill="#1a73e8" font-size="11">Gas</text>
+  <rect x="230" y="72" width="50" height="26" rx="3" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="255" y="90" text-anchor="middle" fill="#fff" font-size="9">Piston</text>
+  <circle cx="400" cy="85" r="35" fill="#fff" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="400" y="82" text-anchor="middle" fill="#1a1a2e" font-size="9" font-weight="600">Pressure</text>
+  <text x="400" y="95" text-anchor="middle" fill="#1a1a2e" font-size="9">Gauge</text>
+  <line x1="300" y1="85" x2="365" y2="85" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="300" y="140" text-anchor="middle" fill="#16A34A" font-size="11">Plot P vs 1/V &rarr; straight line through origin</text>
+  <text x="300" y="158" text-anchor="middle" fill="#1a1a2e" font-size="11">PV = constant (at constant T)</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Sealed gas syringe or Boyle's law apparatus</li>
+  <li>Bourdon pressure gauge</li>
+  <li>Thermometer (to verify constant temperature)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Record initial volume V and pressure P.</li>
+  <li>Slowly change the volume by pushing/pulling the piston. Wait for temperature to equilibrate.</li>
+  <li>Record new V and P. Repeat for 6+ data points.</li>
+  <li>Plot P vs 1/V. Expect a straight line through the origin.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Do not over-pressurise</li>
+  <li>Use safety screen with pressurised apparatus</li>
+</ul>
+
+<h3>Analysis</h3>
+<p class="eq">PV = nRT = constant (at constant T)</p>
+<p>P vs 1/V: straight line through origin. Gradient = nRT.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Gas temperature changes on compression</td><td>Systematic</td><td>Compress slowly; wait for equilibrium</td></tr>
+<tr><td>Friction in piston</td><td>Systematic</td><td>Lubricate; tap gently</td></tr>
+<tr><td>Gas leaks</td><td>Systematic</td><td>Check seals with soap solution</td></tr>
+<tr><td>Parallax on pressure gauge</td><td>Random</td><td>Read at eye level; use digital gauge</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Plotting P vs 1/V gives a straight line that is easier to verify than plotting PV vs P (which should be a horizontal line). Ensure temperature stays constant; even small temperature changes will affect results.
+</div>
+</div>
+
+<!-- CP13 -->
+<div class="prac-box" id="cp13">
+<h2>&#9879; CP13: Thermistor Calibration in Potential Divider</h2>
+
+<svg viewBox="0 0 600 220" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Thermistor in Potential Divider</text>
+  <rect x="60" y="60" width="55" height="30" rx="4" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="87" y="79" text-anchor="middle" fill="#fff" font-size="10">V<sub>s</sub></text>
+  <line x1="115" y1="75" x2="200" y2="75" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="200" y="60" width="55" height="30" rx="4" fill="#16A34A" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="227" y="79" text-anchor="middle" fill="#fff" font-size="10">R<sub>1</sub></text>
+  <line x1="255" y1="75" x2="350" y2="75" stroke="#1a1a2e" stroke-width="1.5"/>
+  <ellipse cx="380" cy="75" rx="20" ry="15" fill="#DC2626" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="380" y="80" text-anchor="middle" fill="#fff" font-size="9">NTC</text>
+  <line x1="400" y1="75" x2="480" y2="75" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="480" y1="75" x2="480" y2="150" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="480" y1="150" x2="60" y2="150" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="150" x2="60" y2="90" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="430" cy="120" r="16" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <text x="430" y="125" text-anchor="middle" fill="#1a73e8" font-size="10" font-weight="600">V</text>
+  <line x1="350" y1="75" x2="350" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="350" y1="120" x2="414" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="446" y1="120" x2="480" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="350" y="85" width="50" height="20" rx="3" fill="#D97706" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="375" y="99" text-anchor="middle" fill="#fff" font-size="8">Water bath</text>
+  <text x="300" y="185" text-anchor="middle" fill="#16A34A" font-size="11">V&#x2092;&#x2075;&#x2074; varies with temperature</text>
+  <text x="300" y="205" text-anchor="middle" fill="#1a1a2e" font-size="11">Plot V&#x2092;&#x2075;&#x2074; vs &theta; for calibration</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>NTC thermistor</li>
+  <li>Fixed resistor R<sub>1</sub></li>
+  <li>DC power supply</li>
+  <li>Voltmeter (across thermistor)</li>
+  <li>Water bath, thermometer</li>
+  <li>Beaker, stirrer, heat source</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Set up the potential divider: supply &rarr; R<sub>1</sub> &rarr; thermistor &rarr; back to supply. Voltmeter across the thermistor.</li>
+  <li>Place the thermistor in a water bath at a known temperature.</li>
+  <li>Record the temperature &theta; and voltage V across the thermistor.</li>
+  <li>Heat the water bath slowly. Record V at regular temperature intervals (e.g. every 5 &deg;C).</li>
+  <li>Continue from room temperature to ~80 &deg;C.</li>
+  <li>Plot V vs &theta; to create a calibration curve.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Handle hot water carefully; do not overheat</li>
+  <li>Electrical components must be kept dry</li>
+  <li>Use a heat-resistant mat</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>For an NTC thermistor, resistance decreases as temperature rises. In the potential divider:</p>
+<p class="eq">V<sub>out</sub> = V<sub>s</sub> &times; R<sub>T</sub> / (R<sub>1</sub> + R<sub>T</sub>)</p>
+<p>As temperature rises, R<sub>T</sub> falls, so V<sub>out</sub> decreases. The calibration curve allows unknown temperatures to be determined from voltage readings.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Temperature not uniform in water bath</td><td>Systematic</td><td>Stir the water continuously</td></tr>
+<tr><td>Thermistor response time lag</td><td>Systematic</td><td>Heat slowly; allow time for equilibrium</td></tr>
+<tr><td>Self-heating of thermistor by current</td><td>Systematic</td><td>Use a small current (high R<sub>1</sub>)</td></tr>
+<tr><td>Thermometer reading uncertainty</td><td>Random</td><td>Use a digital thermometer with 0.1 &deg;C resolution</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> The sensitivity of the thermistor circuit depends on the choice of R<sub>1</sub>. Maximum sensitivity occurs when R<sub>1</sub> is similar in value to the thermistor resistance at the temperature of interest. NTC means "negative temperature coefficient."
+</div>
+</div>
+
+<!-- CP14 -->
+<div class="prac-box" id="cp14">
+<h2>&#9879; CP14: Pressure-Volume at Fixed Temperature</h2>
+
+<svg viewBox="0 0 600 200" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">P-V at Constant Temperature</text>
+  <rect x="130" y="55" width="200" height="50" rx="6" fill="#e8eef6" stroke="#1a73e8" stroke-width="2"/>
+  <rect x="140" y="65" width="120" height="30" rx="3" fill="#cce0ff"/>
+  <text x="200" y="85" text-anchor="middle" fill="#1a73e8" font-size="11">Trapped gas</text>
+  <rect x="260" y="67" width="50" height="26" rx="3" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="285" y="85" text-anchor="middle" fill="#fff" font-size="9">Piston</text>
+  <rect x="100" y="55" width="240" height="50" rx="0" fill="none" stroke="#16A34A" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="220" y="125" text-anchor="middle" fill="#16A34A" font-size="10">Water bath (constant T)</text>
+  <circle cx="430" cy="80" r="35" fill="#fff" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="430" y="78" text-anchor="middle" fill="#1a1a2e" font-size="9" font-weight="600">Pressure</text>
+  <text x="430" y="92" text-anchor="middle" fill="#1a1a2e" font-size="9">Gauge</text>
+  <line x1="330" y1="80" x2="395" y2="80" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="380" y="130" width="150" height="40" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="455" y="148" text-anchor="middle" fill="#1a1a2e" font-size="10">PV = constant (isothermal)</text>
+  <text x="455" y="163" text-anchor="middle" fill="#16A34A" font-size="10">Plot P vs 1/V &rarr; line through origin</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Gas syringe or Boyle's law apparatus immersed in water bath</li>
+  <li>Pressure gauge</li>
+  <li>Thermometer</li>
+  <li>Constant temperature water bath (thermostatically controlled if possible)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Immerse the gas apparatus in a constant-temperature water bath.</li>
+  <li>Allow sufficient time for thermal equilibrium.</li>
+  <li>Record V and P at this temperature.</li>
+  <li>Change V slowly. Wait for temperature to re-equilibrate. Record new P.</li>
+  <li>Repeat for 6+ volumes at the same temperature.</li>
+  <li>Optionally repeat at a different temperature for comparison.</li>
+  <li>Plot P vs 1/V.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Do not over-pressurise apparatus</li>
+  <li>Handle hot water carefully if using elevated temperatures</li>
+  <li>Safety screen near pressurised equipment</li>
+</ul>
+
+<h3>Analysis</h3>
+<p class="eq">PV = nRT = constant at fixed T</p>
+<p>P vs 1/V: straight line through origin. Gradient = nRT. Compare gradients at different temperatures.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Temperature not truly constant</td><td>Systematic</td><td>Use thermostatically controlled bath; allow equilibrium</td></tr>
+<tr><td>Friction in piston</td><td>Systematic</td><td>Lubricate; tap gently to free</td></tr>
+<tr><td>Gas leaks</td><td>Systematic</td><td>Check seals; use Vaseline</td></tr>
+<tr><td>Reading V and P simultaneously</td><td>Random</td><td>Wait for stable readings before recording</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> This practical is an extension of CP12 (Boyle's Law) with explicit temperature control. The gradient of P vs 1/V increases at higher temperatures because nRT is larger. This is consistent with the ideal gas equation.
+</div>
+</div>
+
+<!-- CP16 -->
+<div class="prac-box" id="cp16">
+<h2>&#9879; CP16: Specific Latent Heat</h2>
+
+<svg viewBox="0 0 600 230" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
+  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Specific Latent Heat Apparatus</text>
+  <!-- Beaker with ice -->
+  <rect x="180" y="70" width="120" height="100" rx="6" fill="#cce0ff" stroke="#1a73e8" stroke-width="2"/>
+  <text x="240" y="95" text-anchor="middle" fill="#1a73e8" font-size="11">Ice + Water</text>
+  <rect x="210" y="100" width="15" height="50" rx="3" fill="#DC2626" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="217" y="165" text-anchor="middle" fill="#DC2626" font-size="9">Heater</text>
+  <rect x="260" y="100" width="8" height="50" rx="2" fill="#16A34A" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="264" y="165" text-anchor="middle" fill="#16A34A" font-size="9">Therm.</text>
+  <!-- Balance -->
+  <rect x="150" y="180" width="180" height="25" rx="4" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="240" y="197" text-anchor="middle" fill="#fff" font-size="10">Balance</text>
+  <!-- Power supply -->
+  <rect x="50" y="80" width="70" height="35" rx="5" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="85" y="95" text-anchor="middle" fill="#fff" font-size="9">Power</text>
+  <text x="85" y="108" text-anchor="middle" fill="#fff" font-size="9">Supply</text>
+  <line x1="120" y1="95" x2="180" y2="95" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Ammeter/voltmeter -->
+  <circle cx="420" cy="90" r="18" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <text x="420" y="95" text-anchor="middle" fill="#DC2626" font-size="10" font-weight="600">A</text>
+  <circle cx="420" cy="140" r="18" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <text x="420" y="145" text-anchor="middle" fill="#1a73e8" font-size="10" font-weight="600">V</text>
+  <text x="300" y="222" text-anchor="middle" fill="#1a1a2e" font-size="11">E = VIt = mL &rArr; L = VIt/m</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Immersion heater</li>
+  <li>Beaker (insulated) with crushed ice or boiling water</li>
+  <li>Thermometer</li>
+  <li>Top-pan balance</li>
+  <li>Ammeter, voltmeter</li>
+  <li>Power supply, stopwatch</li>
+  <li>Measuring cylinder (to collect meltwater or condensate)</li>
+</ul>
+
+<h3>Method (Latent Heat of Fusion)</h3>
+<ol>
+  <li>Place crushed ice in a funnel over a beaker on a balance. Allow meltwater to drip.</li>
+  <li>First, measure the mass of ice that melts in a set time <em>without</em> the heater (control).</li>
+  <li>Repeat with the heater on. Record V, I, and time t.</li>
+  <li>The extra mass of ice melted due to the heater is &Delta;m = m<sub>heater</sub> &minus; m<sub>control</sub>.</li>
+  <li>Calculate L<sub>f</sub> = VIt / &Delta;m.</li>
+</ol>
+
+<h3>Method (Latent Heat of Vaporisation)</h3>
+<ol>
+  <li>Boil water in an insulated beaker on a balance. Record initial mass.</li>
+  <li>Record V, I, and heat for a set time t.</li>
+  <li>Record final mass. Mass of water evaporated: &Delta;m = m<sub>initial</sub> &minus; m<sub>final</sub>.</li>
+  <li>Calculate L<sub>v</sub> = VIt / &Delta;m.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Boiling water and steam can cause severe burns &mdash; handle with care</li>
+  <li>Use insulated beaker; keep heater submerged</li>
+  <li>Ensure electrical connections are dry</li>
+  <li>Use a heat-resistant mat</li>
+</ul>
+
+<h3>Analysis</h3>
+<p class="eq">E = VIt = &Delta;m &times; L</p>
+<p class="eq">L = VIt / &Delta;m</p>
+<p>Expected: L<sub>f</sub> (ice) &asymp; 334 kJ kg<sup>&minus;1</sup>; L<sub>v</sub> (water) &asymp; 2260 kJ kg<sup>&minus;1</sup>.</p>
+
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Heat loss to surroundings</td><td>Systematic</td><td>Insulate the beaker; use a control (no heater) for fusion</td></tr>
+<tr><td>Splashing during boiling</td><td>Systematic</td><td>Use a gentle heat; cover beaker loosely</td></tr>
+<tr><td>Heater not fully submerged</td><td>Systematic</td><td>Ensure heater stays immersed throughout</td></tr>
+<tr><td>Mass measurement while steam escapes</td><td>Random</td><td>Read balance quickly; use a lid with a small hole</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> The control experiment (melting without heater) is essential for latent heat of fusion. It accounts for heat absorbed from the surroundings. For vaporisation, energy is lost to heating the surroundings, so measured L<sub>v</sub> is typically slightly higher than the accepted value.
+</div>
+</div>
+
+</div>
+</body>
+</html>

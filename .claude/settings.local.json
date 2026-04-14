@@ -36,7 +36,16 @@
       "Bash(awk \"/'B1':/,/\\\\],\\\\s*\\\\}/\" questions/physics/physics-ocr-b-practice.js)",
       "Bash(awk \"/'B2':/,/\\\\],\\\\s*\\\\}/\" questions/physics/physics-ocr-b-practice.js)",
       "Bash(wc -l \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-physics-ocr-a/\"*.html)",
-      "Bash(wc -l /c/Users/tcvas/OneDrive/Desktop/Learning/notes-physics-ocr-b/B*.html)"
+      "Bash(wc -l /c/Users/tcvas/OneDrive/Desktop/Learning/notes-physics-ocr-b/B*.html)",
+      "Bash(ls -d notes-*/)",
+      "Bash(ls subject-notes/*.html)",
+      "Bash(ls notes-*/practicals*)",
+      "Bash(ls notes-*/*practical*)",
+      "Bash(find /c/Users/tcvas/OneDrive/Desktop/Learning/notes-chemistry-aqa -type f -exec ls -lh {} \\\\;)",
+      "Bash(awk '{print $9, \"\\(\" $5 \"\\)\"}')",
+      "Bash(ls -la notes-physics-aqa/required_practicals.html notes-physics-edexcel/core_practicals.html notes-physics-ocr-a/practical_activity_groups.html notes-physics-ocr-b/practical_activities.html)",
+      "Bash(ls -la notes-chemistry-aqa/required_practicals.html notes-chemistry-edexcel/core_practicals.html notes-chemistry-ocr-a/practical_activity_groups.html notes-chemistry-ocr-b/practical_activities.html)",
+      "Bash(ls -la notes-biology-aqa/required_practicals.html notes-biology-edexcel-a/core_practicals.html notes-biology-edexcel-b/core_practicals.html notes-biology-ocr-a/practical_activity_groups.html notes-biology-ocr-b/practical_activities.html)"
     ]
   },
   "hooks": {

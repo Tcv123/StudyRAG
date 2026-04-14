@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edexcel A-Level Chemistry — Core Practicals</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  .practical-card { background: #f0f7ff; border: 2px solid #1a73e8; border-radius: 12px; padding: 24px; margin: 32px 0; }
+  .practical-card h2 { color: #1a73e8; margin-top: 0; border-left: none; padding-left: 0; }
+  .toc { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px 24px; margin-bottom: 32px; }
+  .toc h2 { margin-top: 0; font-size: 1.3rem; }
+  .toc ol { margin-left: 20px; }
+  .toc a { color: #1a73e8; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  svg text { font-family: system-ui, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Edexcel A-Level Chemistry — Core Practicals</h1>
+
+<div class="toc">
+<h2>Table of Contents</h2>
+<ol>
+  <li><a href="#cp1">CP1: Molar Mass of a Volatile Liquid or Gas</a></li>
+  <li><a href="#cp2">CP2: Acid-Base Titration</a></li>
+  <li><a href="#cp3">CP3: Enthalpy of Neutralisation</a></li>
+  <li><a href="#cp4">CP4: Enthalpy of Combustion of an Alcohol</a></li>
+  <li><a href="#cp5">CP5: Rate of Reaction — Initial Rates (Iodine Clock)</a></li>
+  <li><a href="#cp6">CP6: Rate of Reaction — Continuous Monitoring</a></li>
+  <li><a href="#cp7">CP7: Qualitative Analysis</a></li>
+  <li><a href="#cp8">CP8: Electrolysis of Aqueous Solutions</a></li>
+  <li><a href="#cp9">CP9: Ksp of Calcium Hydroxide by Titration</a></li>
+  <li><a href="#cp10">CP10: Electrochemical Cells and EMF</a></li>
+  <li><a href="#cp11">CP11: Temperature and Rate (Thiosulfate + HCl)</a></li>
+  <li><a href="#cp12">CP12: Factors Affecting Kc</a></li>
+  <li><a href="#cp13">CP13: Prepare a Pure Organic Solid</a></li>
+  <li><a href="#cp14">CP14: Prepare a Pure Organic Liquid</a></li>
+  <li><a href="#cp15">CP15: Tests to Identify Functional Groups</a></li>
+  <li><a href="#cp16">CP16: pH Changes During Acid-Base Titrations</a></li>
+</ol>
+</div>
+
+<!-- CP1 -->
+<div class="practical-card" id="cp1">
+<h2>&#9879; CP1: Determine the Molar Mass of a Volatile Liquid or Gas</h2>
+
+<svg viewBox="0 0 450 320" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Gas syringe method -->
+  <rect x="150" y="60" width="200" height="30" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="4"/>
+  <rect x="340" y="64" width="50" height="22" fill="#ccc" stroke="#999" stroke-width="1" rx="2"/>
+  <text x="250" y="50" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Gas syringe (cm³)</text>
+  <!-- Scale -->
+  <line x1="170" y1="90" x2="170" y2="96" stroke="#1a1a2e" stroke-width="0.5"/>
+  <line x1="220" y1="90" x2="220" y2="96" stroke="#1a1a2e" stroke-width="0.5"/>
+  <line x1="270" y1="90" x2="270" y2="96" stroke="#1a1a2e" stroke-width="0.5"/>
+  <line x1="320" y1="90" x2="320" y2="96" stroke="#1a1a2e" stroke-width="0.5"/>
+  <!-- Self-sealing rubber septum -->
+  <rect x="140" y="62" width="14" height="26" fill="#D97706" fill-opacity="0.4" stroke="#D97706" stroke-width="1" rx="2"/>
+  <text x="100" y="78" font-size="9" fill="#D97706" font-family="system-ui">Septum</text>
+  <!-- Hypodermic syringe injecting -->
+  <rect x="80" y="55" width="60" height="8" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1"/>
+  <line x1="140" y1="59" x2="148" y2="75" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="60" y="50" font-size="9" fill="#1a73e8" font-family="system-ui">Inject liquid</text>
+
+  <!-- Oven/heater around syringe -->
+  <rect x="130" y="40" width="230" height="75" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5,3" rx="6"/>
+  <text x="370" y="55" font-size="10" fill="#DC2626" font-family="system-ui">Oven at known T</text>
+
+  <!-- Alternative: weighing method below -->
+  <text x="30" y="160" font-size="12" fill="#1a73e8" font-family="system-ui" font-weight="600">Alternative: Dumas method</text>
+  <!-- Round bottom flask -->
+  <circle cx="120" cy="240" r="35" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="114" y="195" width="12" height="15" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
+  <!-- Pin hole in foil -->
+  <rect x="112" y="192" width="16" height="5" fill="#ccc" stroke="#999" stroke-width="1"/>
+  <text x="135" y="196" font-size="8" fill="#1a1a2e" font-family="system-ui">Foil with pin hole</text>
+  <!-- Water bath -->
+  <path d="M60,220 L60,290 Q60,300 70,300 L170,300 Q180,300 180,290 L180,220" fill="#1a73e8" fill-opacity="0.08" stroke="#1a73e8" stroke-width="1"/>
+  <text x="120" y="310" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle">Boiling water bath</text>
+  <!-- Balance -->
+  <rect x="250" y="250" width="140" height="18" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <text x="320" y="263" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Balance: 0.156 g</text>
+  <text x="320" y="290" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Weigh flask before</text>
+  <text x="320" y="304" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">and after</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Gas syringe (100 cm³) in an oven at known temperature, OR round-bottomed flask with foil cap (Dumas method)</li>
+  <li>Hypodermic syringe for injecting volatile liquid</li>
+  <li>Self-sealing rubber septum</li>
+  <li>Balance (to 0.001 g)</li>
+  <li>Thermometer, barometer (to record T and P)</li>
+  <li>Boiling water bath (for Dumas method)</li>
+</ul>
+
+<h3>Method (Gas Syringe)</h3>
+<ol>
+  <li>Place the gas syringe in an oven at a known temperature above the boiling point of the liquid.</li>
+  <li>Record the temperature of the oven and the atmospheric pressure.</li>
+  <li>Weigh the hypodermic syringe containing a small volume of volatile liquid.</li>
+  <li>Inject the liquid through the septum into the hot gas syringe. It vaporises immediately.</li>
+  <li>Re-weigh the hypodermic syringe. Mass of liquid = difference.</li>
+  <li>Record the volume of gas in the gas syringe once it reaches thermal equilibrium.</li>
+  <li>Use the ideal gas equation: pV = nRT, so n = pV/(RT). Then M = mass/n.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Volatile liquids are flammable — no naked flames, use electric oven.</li>
+  <li>Handle hypodermic syringe with care — sharp needle.</li>
+  <li>Oven is hot — use heat-resistant gloves.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Calculate:</strong> n = pV/(RT), where p in Pa, V in m³, T in K, R = 8.314 J mol⁻¹ K⁻¹. Then M = mass/n.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Gas syringe friction (underreads volume)</td><td>Systematic</td><td>Tap syringe gently; use well-lubricated syringe</td></tr>
+  <tr><td>Temperature not uniform in oven</td><td>Systematic</td><td>Allow time for equilibrium; place thermometer near syringe</td></tr>
+  <tr><td>Liquid not fully vaporised</td><td>Systematic</td><td>Ensure oven temperature is well above boiling point</td></tr>
+  <tr><td>Vapour escaping around septum</td><td>Systematic</td><td>Check seal is airtight before injecting</td></tr>
+  <tr><td>Ideal gas assumption</td><td>Systematic</td><td>Acknowledged limitation; more valid at high T, low P</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Remember to convert all units: volume to m³ (1 cm³ = 1×10⁻⁶ m³), temperature to K, pressure to Pa. The ideal gas equation assumes no intermolecular forces, so results are approximate.</div>
+</div>
+
+<!-- CP2 -->
+<div class="practical-card" id="cp2">
+<h2>&#9879; CP2: Acid-Base Titration (Finding Concentration)</h2>
+
+<svg viewBox="0 0 400 340" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Burette -->
+  <rect x="180" y="20" width="14" height="180" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1.5" rx="2"/>
+  <rect x="184" y="200" width="6" height="25" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1"/>
+  <line x1="187" y1="225" x2="187" y2="240" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="177" y="198" width="20" height="7" fill="#1a73e8" rx="2"/>
+  <!-- Acid in burette -->
+  <rect x="181" y="45" width="12" height="153" fill="#DC2626" fill-opacity="0.2" rx="1"/>
+  <!-- Scale -->
+  <line x1="194" y1="30" x2="200" y2="30" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="203" y="34" font-size="8" fill="#1a1a2e" font-family="system-ui">0</text>
+  <line x1="194" y1="80" x2="200" y2="80" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="203" y="84" font-size="8" fill="#1a1a2e" font-family="system-ui">12.5</text>
+  <line x1="194" y1="130" x2="200" y2="130" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="203" y="134" font-size="8" fill="#1a1a2e" font-family="system-ui">25.0</text>
+  <!-- Clamp stand -->
+  <rect x="150" y="10" width="5" height="300" fill="#666" rx="1"/>
+  <rect x="115" y="300" width="80" height="7" fill="#666" rx="2"/>
+  <rect x="155" y="30" width="25" height="5" fill="#888" rx="1"/>
+  <!-- Conical flask -->
+  <polygon points="155,285 225,285 212,248 168,248" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="180" y="236" width="16" height="14" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
+  <polygon points="158,280 222,280 213,252 167,252" fill="#16A34A" fill-opacity="0.15"/>
+  <!-- White tile -->
+  <rect x="140" y="287" width="100" height="5" fill="#f0f0f0" stroke="#cbd5e1" stroke-width="1" rx="1"/>
+  <!-- Labels -->
+  <text x="230" y="120" font-size="11" fill="#1a73e8" font-family="system-ui" font-weight="600">Burette</text>
+  <text x="230" y="270" font-size="11" fill="#1a73e8" font-family="system-ui" font-weight="600">Conical flask</text>
+  <text x="230" y="285" font-size="10" fill="#16A34A" font-family="system-ui">(alkali + indicator)</text>
+  <text x="140" y="320" font-size="10" fill="#1a1a2e" font-family="system-ui">White tile</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>50 cm³ burette, clamp and stand</li>
+  <li>25.0 cm³ pipette and pipette filler</li>
+  <li>Conical flasks (250 cm³)</li>
+  <li>White tile</li>
+  <li>Suitable indicator (methyl orange or phenolphthalein)</li>
+  <li>Standard solution and unknown solution</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Rinse the burette with the acid to be used, then fill and record the initial reading to 0.05 cm³.</li>
+  <li>Rinse the pipette with the alkali solution. Pipette exactly 25.0 cm³ of alkali into a clean conical flask.</li>
+  <li>Add 2-3 drops of indicator.</li>
+  <li>Place the flask on a white tile under the burette.</li>
+  <li>Perform a rough titration — add acid fairly quickly until the indicator permanently changes colour. Record the final burette reading.</li>
+  <li>Repeat with accurate titrations: add acid drop-wise near the expected end point.</li>
+  <li>Obtain at least two concordant results (within 0.10 cm³).</li>
+  <li>Calculate the mean titre and use n = cV to find the unknown concentration.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Acids and alkalis are corrosive — wear goggles.</li>
+  <li>Use a pipette filler, never mouth-pipette.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Calculate:</strong> n(known) = c × V. Use stoichiometry to find n(unknown), then c(unknown) = n/V.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Overshooting end point</td><td>Systematic</td><td>Add drop-wise near end; use half-drops</td></tr>
+  <tr><td>Parallax error reading burette</td><td>Random</td><td>Read at eye level; read bottom of meniscus</td></tr>
+  <tr><td>Not rinsing burette with correct solution</td><td>Systematic</td><td>Rinse with the solution to be measured</td></tr>
+  <tr><td>Wet conical flask diluting alkali</td><td>Not an error</td><td>Doesn't affect moles of alkali — no improvement needed</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> A wet conical flask does NOT affect the result because it does not change the number of moles of alkali present. However, a wet pipette or wet burette WOULD cause errors because they dilute the solution and change the concentration.</div>
+</div>
+
+<!-- CP3 -->
+<div class="practical-card" id="cp3">
+<h2>&#9879; CP3: Enthalpy of Neutralisation (Calorimetry)</h2>
+
+<svg viewBox="0 0 400 300" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Polystyrene cup -->
+  <path d="M110,80 L100,240 L280,240 L270,80 Z" fill="#f5f5f0" stroke="#D97706" stroke-width="2"/>
+  <rect x="95" y="70" width="190" height="12" fill="#e0ddd0" stroke="#D97706" stroke-width="1.5" rx="3"/>
+  <!-- Solution -->
+  <path d="M108,120 L102,235 L278,235 L272,120 Z" fill="#1a73e8" fill-opacity="0.12"/>
+  <!-- Thermometer -->
+  <rect x="185" y="20" width="7" height="170" fill="#e0e7ef" stroke="#DC2626" stroke-width="1" rx="2"/>
+  <circle cx="188" cy="190" r="6" fill="#DC2626"/>
+  <rect x="186" y="80" width="4" height="110" fill="#DC2626" fill-opacity="0.5" rx="1"/>
+  <text x="200" y="40" font-size="11" fill="#DC2626" font-family="system-ui" font-weight="600">Thermometer</text>
+  <!-- Measuring cylinder pouring -->
+  <rect x="300" y="30" width="20" height="70" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="2"/>
+  <path d="M310,100 L265,75" fill="none" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="290" y="25" font-size="10" fill="#1a73e8" font-family="system-ui">Add acid</text>
+  <!-- Labels -->
+  <text x="290" y="160" font-size="11" fill="#D97706" font-family="system-ui" font-weight="600">Polystyrene</text>
+  <text x="290" y="175" font-size="11" fill="#D97706" font-family="system-ui" font-weight="600">cup</text>
+  <text x="155" y="185" font-size="10" fill="#1a73e8" font-family="system-ui">NaOH</text>
+  <!-- Formula -->
+  <text x="190" y="275" font-size="11" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">q = mcΔT, ΔH = -q/n</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Polystyrene cup with lid (calorimeter)</li>
+  <li>Thermometer (±0.1 °C) or temperature probe</li>
+  <li>Measuring cylinder (25 cm³ or 50 cm³)</li>
+  <li>1.0 mol dm⁻³ HCl and 1.0 mol dm⁻³ NaOH</li>
+  <li>Stopwatch</li>
+  <li>Stirring rod</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure 25 cm³ of 1.0 mol dm⁻³ NaOH into the polystyrene cup.</li>
+  <li>Record the temperature every minute for 3 minutes to get a baseline.</li>
+  <li>At minute 4, add 25 cm³ of 1.0 mol dm⁻³ HCl. Stir and replace lid.</li>
+  <li>Record temperature every minute for at least 6 more minutes.</li>
+  <li>Plot temperature vs. time. Extrapolate the cooling line back to the mixing time to find the true ΔT.</li>
+  <li>Calculate: q = mcΔT (m = total mass = 50 g if density ≈ 1 g cm⁻³, c = 4.18 J g⁻¹ K⁻¹).</li>
+  <li>Calculate moles of water formed: n = c × V for limiting reagent.</li>
+  <li>ΔH(neutralisation) = -q/n in kJ mol⁻¹.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>1 mol dm⁻³ acid and alkali are irritants — wear goggles.</li>
+  <li>Exothermic reaction — handle with care.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Plot:</strong> Temperature vs. time. Extrapolate to find ΔT. Expected ΔH(neutralisation) for strong acid + strong base ≈ -57.1 kJ mol⁻¹.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Heat loss to surroundings</td><td>Systematic</td><td>Use lid; extrapolation method; use vacuum flask</td></tr>
+  <tr><td>Assuming c = 4.18 and density = 1</td><td>Systematic</td><td>Acknowledged assumption for dilute solutions</td></tr>
+  <tr><td>Heat absorbed by cup and thermometer</td><td>Systematic</td><td>Determine calorimeter constant; use temperature probe</td></tr>
+  <tr><td>Inaccurate volume measurements</td><td>Random</td><td>Use a pipette for more precise volumes</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> The enthalpy of neutralisation for any strong acid + strong base is approximately the same (-57.1 kJ mol⁻¹) because the reaction is always H⁺ + OH⁻ → H₂O. Weak acids/bases give less exothermic values because energy is needed to ionise them.</div>
+</div>
+
+<!-- CP4 -->
+<div class="practical-card" id="cp4">
+<h2>&#9879; CP4: Determine the Enthalpy of Combustion of an Alcohol</h2>
+
+<svg viewBox="0 0 400 340" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Calorimeter (copper can) -->
+  <path d="M140,80 L140,180 Q140,195 155,195 L245,195 Q260,195 260,180 L260,80" fill="#D97706" fill-opacity="0.2" stroke="#D97706" stroke-width="2"/>
+  <text x="200" y="210" font-size="10" fill="#D97706" font-family="system-ui" text-anchor="middle" font-weight="600">Copper calorimeter</text>
+  <!-- Water in can -->
+  <rect x="141" y="100" width="118" height="90" fill="#1a73e8" fill-opacity="0.12"/>
+  <text x="200" y="150" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle">Water (100 cm³)</text>
+  <!-- Thermometer -->
+  <rect x="195" y="30" width="7" height="110" fill="#e0e7ef" stroke="#DC2626" stroke-width="1" rx="2"/>
+  <circle cx="198" cy="140" r="5" fill="#DC2626"/>
+  <text x="210" y="45" font-size="10" fill="#DC2626" font-family="system-ui">Thermometer</text>
+  <!-- Stirrer -->
+  <rect x="165" y="40" width="4" height="120" fill="#ccc" stroke="#999" stroke-width="1" rx="1"/>
+  <!-- Spirit burner below -->
+  <rect x="170" y="240" width="60" height="40" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1.5" rx="4"/>
+  <rect x="195" y="225" width="10" height="18" fill="#D97706" stroke="#b45309" stroke-width="1" rx="1"/>
+  <!-- Flame -->
+  <ellipse cx="200" cy="215" rx="10" ry="15" fill="#D97706" fill-opacity="0.5"/>
+  <ellipse cx="200" cy="218" rx="5" ry="8" fill="#DC2626" fill-opacity="0.5"/>
+  <!-- Wick -->
+  <line x1="200" y1="225" x2="200" y2="218" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="200" y="295" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Spirit burner</text>
+  <text x="200" y="310" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">(ethanol, propan-1-ol, etc.)</text>
+  <!-- Draft shield -->
+  <rect x="120" y="70" width="5" height="220" fill="#ccc" fill-opacity="0.5" stroke="#999" stroke-width="1"/>
+  <rect x="275" y="70" width="5" height="220" fill="#ccc" fill-opacity="0.5" stroke="#999" stroke-width="1"/>
+  <text x="310" y="180" font-size="9" fill="#1a1a2e" font-family="system-ui">Draught</text>
+  <text x="310" y="192" font-size="9" fill="#1a1a2e" font-family="system-ui">shield</text>
+  <!-- Balance label -->
+  <text x="200" y="335" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Weigh burner before and after</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Spirit burner containing alcohol (e.g., methanol, ethanol, propan-1-ol)</li>
+  <li>Copper calorimeter (or metal can)</li>
+  <li>Thermometer (±0.5 °C)</li>
+  <li>Measuring cylinder (100 cm³)</li>
+  <li>Balance (to 0.01 g)</li>
+  <li>Draught shield</li>
+  <li>Stirring rod, clamp stand</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure 100 cm³ of water into the copper calorimeter. Record initial temperature.</li>
+  <li>Weigh the spirit burner (with cap on) and record mass to 0.01 g.</li>
+  <li>Place the calorimeter above the spirit burner. Use a draught shield to minimise heat loss.</li>
+  <li>Light the spirit burner and heat the water, stirring gently.</li>
+  <li>When the temperature has risen by approximately 20 °C, extinguish the flame (replace cap).</li>
+  <li>Record the final temperature and re-weigh the spirit burner.</li>
+  <li>Calculate: q = mcΔT (m = 100 g, c = 4.18 J g⁻¹ K⁻¹). Mass of fuel burned = initial - final mass.</li>
+  <li>Moles of fuel = mass / Mᵣ. ΔH(combustion) = -q/n in kJ mol⁻¹.</li>
+  <li>Repeat for different alcohols and compare.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Alcohols are flammable — keep away from other sources of ignition.</li>
+  <li>Spirit burner flame can be hard to see — handle carefully.</li>
+  <li>Hot apparatus — use tongs/heatproof mat.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Plot:</strong> ΔH(combustion) vs. number of carbon atoms — should show a linear trend (each extra CH₂ adds approximately the same amount of energy).</p>
+<p><strong>Compare:</strong> Experimental values with data book values — typically much lower due to heat loss.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Heat loss to surroundings (dominant error)</td><td>Systematic</td><td>Better insulation; draught shield; use bomb calorimeter</td></tr>
+  <tr><td>Incomplete combustion (soot/CO formed)</td><td>Systematic</td><td>Ensure adequate air supply; clean wick</td></tr>
+  <tr><td>Evaporation of alcohol from wick</td><td>Systematic</td><td>Cap the burner promptly; weigh quickly</td></tr>
+  <tr><td>Heat absorbed by calorimeter/thermometer</td><td>Systematic</td><td>Use calorimeter constant; copper has low specific heat</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Experimental values are always less exothermic (smaller magnitude) than literature values. The main reason is heat loss to surroundings. Always explain that incomplete combustion also contributes. The trend across a homologous series is linear because each additional CH₂ group releases similar energy on combustion.</div>
+</div>
+
+<!-- CP5 -->
+<div class="practical-card" id="cp5">
+<h2>&#9879; CP5: Rate of Reaction — Initial Rates Method (Iodine Clock)</h2>
+
+<svg viewBox="0 0 460 260" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Series of beakers -->
+  <rect x="20" y="100" width="60" height="60" fill="#1a1a2e" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <text x="50" y="85" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Expt 1</text>
+  <text x="50" y="175" font-size="8" fill="#DC2626" font-family="system-ui" text-anchor="middle">t = 12s</text>
+
+  <rect x="110" y="100" width="60" height="60" fill="#1a1a2e" fill-opacity="0.35" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <text x="140" y="85" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Expt 2</text>
+  <text x="140" y="175" font-size="8" fill="#DC2626" font-family="system-ui" text-anchor="middle">t = 24s</text>
+
+  <rect x="200" y="100" width="60" height="60" fill="#1a1a2e" fill-opacity="0.2" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <text x="230" y="85" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Expt 3</text>
+  <text x="230" y="175" font-size="8" fill="#DC2626" font-family="system-ui" text-anchor="middle">t = 48s</text>
+
+  <rect x="290" y="100" width="60" height="60" fill="#1a1a2e" fill-opacity="0.1" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <text x="320" y="85" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Expt 4</text>
+  <text x="320" y="175" font-size="8" fill="#DC2626" font-family="system-ui" text-anchor="middle">t = 96s</text>
+
+  <!-- Arrow showing decreasing concentration -->
+  <line x1="50" y1="195" x2="320" y2="195" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <text x="185" y="215" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle">Decreasing [KIO₃] →</text>
+  <defs><marker id="arr2" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto"><polygon points="0 0,6 2,0 4" fill="#1a73e8"/></marker></defs>
+
+  <!-- Table preview -->
+  <rect x="370" y="60" width="80" height="130" fill="#fff8e1" stroke="#D97706" stroke-width="1" rx="4"/>
+  <text x="410" y="80" font-size="9" fill="#D97706" font-family="system-ui" text-anchor="middle" font-weight="600">Key data:</text>
+  <text x="410" y="100" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Vary [X]</text>
+  <text x="410" y="115" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Keep total V</text>
+  <text x="410" y="130" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">constant</text>
+  <text x="410" y="150" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Rate = 1/t</text>
+  <text x="410" y="170" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">+ starch</text>
+  <text x="410" y="185" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">indicator</text>
+
+  <text x="185" y="245" font-size="11" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Colour change: colourless → dark blue/black (starch + I₂)</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Beakers or conical flasks</li>
+  <li>Measuring cylinders (multiple)</li>
+  <li>Stopwatch</li>
+  <li>Potassium iodate (KIO₃) solution, sodium bisulfite (NaHSO₃) solution, starch indicator</li>
+  <li>Distilled water</li>
+  <li>White tile</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Prepare a table of volumes: vary concentration of one reactant (e.g., KIO₃) while keeping total volume constant by adding water.</li>
+  <li>Add starch indicator to the flask containing the NaHSO₃ solution.</li>
+  <li>Pour the KIO₃ into the bisulfite/starch mixture and start the stopwatch.</li>
+  <li>Swirl to mix. Record the time for the blue-black colour to appear.</li>
+  <li>Repeat for each set of volumes. Record all times.</li>
+  <li>Calculate rate = 1/t for each experiment.</li>
+  <li>Plot rate vs. [KIO₃] to determine the order with respect to that reactant.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Solutions are low hazard — wear goggles as standard.</li>
+  <li>Wash hands after use.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Plot:</strong> Rate (1/t) vs. concentration. Straight line through origin = first order. Curve of increasing gradient = second order.</p>
+<p><strong>Plot:</strong> Rate vs. [X]² — if straight line, second order confirmed.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Subjective colour change judgement</td><td>Random</td><td>Same observer; use colorimeter</td></tr>
+  <tr><td>Temperature variation between experiments</td><td>Systematic</td><td>Thermostatted water bath</td></tr>
+  <tr><td>Delay starting timer</td><td>Random</td><td>Practice; data logging</td></tr>
+  <tr><td>Inaccurate volume measurements</td><td>Random</td><td>Use burettes instead of measuring cylinders</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> The iodine clock measures the time for a fixed (tiny) amount of I₂ to form. Since the extent of reaction is very small, this approximates the initial rate. Always state why total volume must be constant: to ensure fair comparison of concentrations.</div>
+</div>
+
+<!-- CP6 -->
+<div class="practical-card" id="cp6">
+<h2>&#9879; CP6: Rate of Reaction — Continuous Monitoring (Gas Collection)</h2>
+
+<svg viewBox="0 0 460 280" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Conical flask -->
+  <polygon points="50,220 130,220 115,160 65,160" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="80" y="146" width="20" height="16" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
+  <polygon points="53,215 127,215 116,165 64,165" fill="#1a73e8" fill-opacity="0.12"/>
+  <text x="90" y="240" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle">HCl + CaCO₃</text>
+  <!-- Delivery tube -->
+  <path d="M100,150 L130,135 L220,135" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <!-- Gas syringe -->
+  <rect x="220" y="123" width="150" height="24" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <rect x="360" y="127" width="40" height="16" fill="#ccc" stroke="#999" stroke-width="1" rx="2"/>
+  <text x="295" y="115" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Gas syringe</text>
+  <!-- Graph sketch -->
+  <rect x="280" y="180" width="150" height="90" fill="white" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+  <text x="355" y="195" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle" font-weight="600">Expected graph</text>
+  <polyline points="295,260 310,240 330,225 350,215 370,210 390,208 410,208" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="287" y="220" font-size="7" fill="#1a1a2e" font-family="system-ui">V</text>
+  <text x="400" y="268" font-size="7" fill="#1a1a2e" font-family="system-ui">time</text>
+  <line x1="293" y1="265" x2="293" y2="200" stroke="#1a1a2e" stroke-width="0.5"/>
+  <line x1="293" y1="265" x2="415" y2="265" stroke="#1a1a2e" stroke-width="0.5"/>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Conical flask with bung and delivery tube</li>
+  <li>Gas syringe (100 cm³)</li>
+  <li>Stopwatch</li>
+  <li>Measuring cylinder</li>
+  <li>Calcium carbonate (marble chips) and dilute HCl (or suitable gas-producing reaction)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Set up the conical flask connected via delivery tube to the gas syringe.</li>
+  <li>Measure the acid volume using a measuring cylinder and pour into the flask.</li>
+  <li>Add the marble chips, insert the bung quickly, and start the timer.</li>
+  <li>Record the volume of CO₂ gas in the syringe every 15-30 seconds.</li>
+  <li>Continue until the reaction is complete (no more gas produced).</li>
+  <li>Repeat with different concentrations or particle sizes to investigate the effect on rate.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Dilute HCl is an irritant — wear goggles.</li>
+  <li>Gas syringe can be displaced by rapid gas production — clamp securely.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Plot:</strong> Volume of gas vs. time. Initial rate = gradient of tangent at t = 0.</p>
+<p><strong>Compare:</strong> Different curves for different conditions (concentration, temperature, surface area).</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Gas leaks around bung</td><td>Systematic</td><td>Check seal; use grease</td></tr>
+  <tr><td>Gas escaping before bung fitted</td><td>Systematic</td><td>Work quickly; invert flask method</td></tr>
+  <tr><td>Syringe sticking</td><td>Systematic</td><td>Lubricate; tap gently</td></tr>
+  <tr><td>CO₂ dissolving in water</td><td>Systematic</td><td>Acknowledged; less significant at higher gas volumes</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> When comparing curves, if the same mass of excess solid is used with different acid concentrations: all curves reach the same final volume (same moles of CaCO₃). Higher concentration gives steeper initial gradient (faster rate) but same end point.</div>
+</div>
+
+<!-- CP7 -->
+<div class="practical-card" id="cp7">
+<h2>&#9879; CP7: Qualitative Analysis (Flame Tests, Cation/Anion Tests)</h2>
+
+<svg viewBox="0 0 480 250" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Flame test colours -->
+  <text x="240" y="25" font-size="12" fill="#1a1a2e" font-family="system-ui" text-anchor="middle" font-weight="600">Flame Test Colours</text>
+  <!-- Li red -->
+  <ellipse cx="50" cy="70" rx="20" ry="30" fill="#DC2626" fill-opacity="0.5"/>
+  <text x="50" y="115" font-size="10" fill="#DC2626" font-family="system-ui" text-anchor="middle" font-weight="600">Li⁺ Red</text>
+  <!-- Na yellow -->
+  <ellipse cx="140" cy="70" rx="20" ry="30" fill="#D97706" fill-opacity="0.6"/>
+  <text x="140" y="115" font-size="10" fill="#D97706" font-family="system-ui" text-anchor="middle" font-weight="600">Na⁺ Yellow</text>
+  <!-- K lilac -->
+  <ellipse cx="230" cy="70" rx="20" ry="30" fill="#8B5CF6" fill-opacity="0.5"/>
+  <text x="230" y="115" font-size="10" fill="#8B5CF6" font-family="system-ui" text-anchor="middle" font-weight="600">K⁺ Lilac</text>
+  <!-- Ca orange-red -->
+  <ellipse cx="320" cy="70" rx="20" ry="30" fill="#DC2626" fill-opacity="0.35"/>
+  <text x="320" y="115" font-size="10" fill="#DC2626" font-family="system-ui" text-anchor="middle" font-weight="600">Ca²⁺ Brick</text>
+  <!-- Ba green -->
+  <ellipse cx="410" cy="70" rx="20" ry="30" fill="#16A34A" fill-opacity="0.5"/>
+  <text x="410" y="115" font-size="10" fill="#16A34A" font-family="system-ui" text-anchor="middle" font-weight="600">Ba²⁺ Green</text>
+
+  <!-- Precipitate tests summary -->
+  <rect x="20" y="135" width="440" height="100" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1" rx="6"/>
+  <text x="240" y="155" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Precipitate Tests with NaOH(aq)</text>
+  <text x="240" y="175" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Cu²⁺ → blue ppt | Fe²⁺ → green ppt | Fe³⁺ → brown ppt</text>
+  <text x="240" y="195" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Al³⁺ → white ppt (dissolves in excess NaOH)</text>
+  <text x="240" y="215" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Halides: AgNO₃ → Cl⁻ white, Br⁻ cream, I⁻ yellow</text>
+  <text x="240" y="230" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">SO₄²⁻: BaCl₂ → white ppt | CO₃²⁻: HCl → fizzing (CO₂)</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Nichrome wire loop, Bunsen burner</li>
+  <li>Test tubes, test tube rack</li>
+  <li>Dilute NaOH, dilute NH₃</li>
+  <li>AgNO₃(aq), BaCl₂(aq), dilute HNO₃, dilute HCl</li>
+  <li>Limewater</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li><strong>Flame tests:</strong> Clean nichrome wire in conc. HCl and flame until colourless. Dip in sample, hold in flame, record colour.</li>
+  <li><strong>NaOH test:</strong> Add NaOH to sample — observe precipitate colour. Add excess — does it dissolve?</li>
+  <li><strong>NH₃ test:</strong> Add NH₃ to sample — observe precipitate. Add excess — Cu(OH)₂ dissolves to deep blue.</li>
+  <li><strong>Halide test:</strong> Acidify with HNO₃, add AgNO₃. White = Cl⁻, cream = Br⁻, yellow = I⁻.</li>
+  <li><strong>Sulfate test:</strong> Acidify with HNO₃, add BaCl₂. White precipitate = SO₄²⁻.</li>
+  <li><strong>Carbonate test:</strong> Add dilute HCl. Fizzing → pass gas through limewater → milky = CO₃²⁻.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>AgNO₃ stains skin — gloves.</li>
+  <li>BaCl₂ is toxic — wash hands thoroughly.</li>
+  <li>Conc. HCl fumes — fume cupboard.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Record:</strong> Tabulate all observations systematically. Match to known results to identify ions.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Na contamination in flame test</td><td>Systematic</td><td>Use cobalt blue glass to filter yellow</td></tr>
+  <tr><td>Dirty wire</td><td>Systematic</td><td>Clean until no flame colour visible</td></tr>
+  <tr><td>Not acidifying before AgNO₃ test</td><td>Systematic</td><td>Always acidify with HNO₃ first</td></tr>
+  <tr><td>Colour judgement</td><td>Random</td><td>Compare with known standards side by side</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Acidify with nitric acid (not HCl) before the halide test with AgNO₃ — HCl would add Cl⁻ ions and give a false positive. Similarly, acidify with HNO₃ before the sulfate test to remove carbonates (which would also give a white precipitate with Ba²⁺).</div>
+</div>
+
+<!-- CP8 -->
+<div class="practical-card" id="cp8">
+<h2>&#9879; CP8: Electrolysis of Aqueous Solutions</h2>
+
+<svg viewBox="0 0 420 300" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Beaker -->
+  <path d="M80,80 L80,220 Q80,240 100,240 L300,240 Q320,240 320,220 L320,80" fill="#1a73e8" fill-opacity="0.08" stroke="#1a73e8" stroke-width="1.5"/>
+  <!-- Electrolyte -->
+  <rect x="81" y="110" width="238" height="125" fill="#1a73e8" fill-opacity="0.1"/>
+  <text x="200" y="255" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle">Electrolyte (e.g., CuSO₄(aq))</text>
+  <!-- Anode -->
+  <rect x="120" y="70" width="12" height="140" fill="#666" stroke="#1a1a2e" stroke-width="1.5" rx="1"/>
+  <text x="126" y="60" font-size="11" fill="#DC2626" font-family="system-ui" text-anchor="middle" font-weight="600">Anode (+)</text>
+  <!-- Bubbles at anode -->
+  <circle cx="115" cy="140" r="3" fill="none" stroke="#D97706" stroke-width="0.8"/>
+  <circle cx="118" cy="125" r="2" fill="none" stroke="#D97706" stroke-width="0.8"/>
+  <circle cx="113" cy="155" r="2.5" fill="none" stroke="#D97706" stroke-width="0.8"/>
+  <!-- Cathode -->
+  <rect x="268" y="70" width="12" height="140" fill="#D97706" stroke="#b45309" stroke-width="1.5" rx="1"/>
+  <text x="274" y="60" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Cathode (-)</text>
+  <!-- Copper depositing -->
+  <rect x="270" y="130" width="8" height="70" fill="#D97706" fill-opacity="0.3"/>
+  <!-- Power supply -->
+  <rect x="140" y="15" width="120" height="30" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1.5" rx="4"/>
+  <text x="200" y="35" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">DC Power Supply</text>
+  <!-- Wires -->
+  <line x1="126" y1="70" x2="126" y2="45" stroke="#DC2626" stroke-width="1.5"/>
+  <line x1="126" y1="45" x2="160" y2="45" stroke="#DC2626" stroke-width="1.5"/>
+  <line x1="274" y1="70" x2="274" y2="45" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="274" y1="45" x2="260" y2="45" stroke="#1a73e8" stroke-width="1.5"/>
+  <!-- Labels -->
+  <text x="105" y="180" font-size="9" fill="#D97706" font-family="system-ui">O₂ gas</text>
+  <text x="285" y="180" font-size="9" fill="#D97706" font-family="system-ui">Cu deposits</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Beaker (250 cm³)</li>
+  <li>Two carbon (graphite) electrodes or copper electrodes</li>
+  <li>DC power supply (6V) or battery</li>
+  <li>Connecting wires with crocodile clips</li>
+  <li>Ammeter (optional)</li>
+  <li>Various electrolyte solutions (CuSO₄, NaCl, H₂SO₄)</li>
+  <li>Test tubes for gas collection (inverted over electrodes)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Pour electrolyte solution into the beaker to a depth covering the electrodes.</li>
+  <li>Place two electrodes in the solution, held apart by a clamp or electrode holder.</li>
+  <li>Connect the electrodes to the DC power supply.</li>
+  <li>Switch on and observe what happens at each electrode for 5-10 minutes.</li>
+  <li>Test any gases produced: O₂ relights a glowing splint; H₂ gives a squeaky pop; Cl₂ bleaches damp litmus.</li>
+  <li>Record observations at both electrodes.</li>
+  <li>Repeat with different electrolytes and compare products.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Chlorine gas is toxic — work in fume cupboard when electrolyzing NaCl.</li>
+  <li>Do not touch electrodes while power is on.</li>
+  <li>CuSO₄ is harmful — avoid skin contact.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Record:</strong> Observations at cathode and anode for each electrolyte. Identify products using gas tests or visual observation (e.g., copper deposits at cathode from CuSO₄).</p>
+<p><strong>Explain:</strong> Use electrode potentials and selective discharge rules to explain why certain ions are discharged preferentially.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Gas dissolving before collection</td><td>Systematic</td><td>Use inverted test tube filled with solution over electrode</td></tr>
+  <tr><td>Electrode contamination</td><td>Systematic</td><td>Clean electrodes before use; use fresh graphite rods</td></tr>
+  <tr><td>Products reacting with each other</td><td>Systematic</td><td>Use a diaphragm to separate anode and cathode compartments</td></tr>
+  <tr><td>Variable current</td><td>Systematic</td><td>Use an ammeter and rheostat to maintain constant current</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> At the cathode (negative), cations are reduced — the least reactive metal ion or H⁺ is discharged first. At the anode (positive), anions are oxidised — halide ions are discharged in preference to OH⁻ (unless very dilute). With copper electrodes and CuSO₄, copper dissolves at the anode and deposits at the cathode — mass stays constant.</div>
+</div>
+
+<!-- CP9 -->
+<div class="practical-card" id="cp9">
+<h2>&#9879; CP9: Find the Ksp of Calcium Hydroxide by Titration</h2>
+
+<svg viewBox="0 0 450 320" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Step 1: Filter -->
+  <text x="100" y="25" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Step 1: Filter</text>
+  <!-- Funnel -->
+  <polygon points="60,50 140,50 115,120 85,120" fill="#e0e7ef" fill-opacity="0.3" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="100" y1="120" x2="100" y2="145" stroke="#1a73e8" stroke-width="1.5"/>
+  <!-- Filter paper -->
+  <polyline points="65,55 100,80 135,55" fill="none" stroke="#D97706" stroke-width="1.5"/>
+  <text x="145" y="70" font-size="9" fill="#D97706" font-family="system-ui">Filter paper</text>
+  <!-- Conical flask collecting -->
+  <polygon points="70,170 130,170 120,145 80,145" fill="#e0e7ef" fill-opacity="0.3" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="100" y="190" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle">Saturated</text>
+  <text x="100" y="202" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle">Ca(OH)₂(aq)</text>
+
+  <!-- Step 2: Titrate -->
+  <text x="320" y="25" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Step 2: Titrate</text>
+  <!-- Burette -->
+  <rect x="310" y="40" width="12" height="150" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1.5" rx="2"/>
+  <rect x="313" y="190" width="6" height="20" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1"/>
+  <rect x="308" y="188" width="16" height="6" fill="#1a73e8" rx="2"/>
+  <!-- HCl in burette -->
+  <rect x="311" y="55" width="10" height="133" fill="#DC2626" fill-opacity="0.2"/>
+  <text x="335" y="130" font-size="9" fill="#DC2626" font-family="system-ui">HCl</text>
+  <!-- Conical flask -->
+  <polygon points="275,275 345,275 332,240 288,240" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="301" y="228" width="16" height="14" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
+  <polygon points="278,270 342,270 333,244 287,244" fill="#16A34A" fill-opacity="0.15"/>
+  <text x="310" y="295" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle">Ca(OH)₂ + indicator</text>
+
+  <!-- Arrow from step 1 to step 2 -->
+  <path d="M140,160 Q200,160 270,240" fill="none" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#arr3)"/>
+  <defs><marker id="arr3" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto"><polygon points="0 0,6 2,0 4" fill="#1a1a2e"/></marker></defs>
+  <text x="200" y="155" font-size="9" fill="#1a1a2e" font-family="system-ui">Pipette 25.0 cm³</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Saturated calcium hydroxide solution (limewater — prepared in advance)</li>
+  <li>Filter funnel and filter paper</li>
+  <li>25.0 cm³ pipette and filler</li>
+  <li>Burette (50 cm³) filled with standardised HCl (known concentration)</li>
+  <li>Conical flask, white tile</li>
+  <li>Methyl orange indicator</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Prepare a saturated solution of Ca(OH)₂ by adding excess solid to distilled water, stirring, and leaving to reach equilibrium.</li>
+  <li>Filter the solution to remove undissolved Ca(OH)₂. The filtrate is a saturated solution.</li>
+  <li>Pipette 25.0 cm³ of the filtrate into a conical flask.</li>
+  <li>Add 2-3 drops of methyl orange indicator.</li>
+  <li>Titrate with standardised HCl from the burette until the indicator changes from yellow to orange/red.</li>
+  <li>Repeat for concordant results.</li>
+  <li>Calculate: Ca(OH)₂ + 2HCl → CaCl₂ + 2H₂O. Find [OH⁻], then [Ca²⁺] = [OH⁻]/2.</li>
+  <li>Ksp = [Ca²⁺][OH⁻]² — substitute values.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Ca(OH)₂ is irritant — wear goggles.</li>
+  <li>HCl is corrosive — handle with care.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Calculate:</strong> n(HCl) = c × V(titre). n(Ca(OH)₂) = n(HCl)/2. [Ca(OH)₂] = n/0.025. Then [Ca²⁺] = [Ca(OH)₂], [OH⁻] = 2[Ca(OH)₂]. Ksp = [Ca²⁺][OH⁻]².</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Solution not truly saturated</td><td>Systematic</td><td>Use excess solid; allow time for equilibrium; temperature control</td></tr>
+  <tr><td>Undissolved solid passing through filter</td><td>Systematic</td><td>Use fine filter paper; filter twice if needed</td></tr>
+  <tr><td>CO₂ absorbed from air (forming CaCO₃)</td><td>Systematic</td><td>Prepare fresh; keep stoppered; filter just before use</td></tr>
+  <tr><td>Temperature not at 25 °C (Ksp varies with T)</td><td>Systematic</td><td>Record temperature; use thermostatted water bath</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> The stoichiometry is crucial: 1 mol Ca(OH)₂ reacts with 2 mol HCl. Since Ca(OH)₂ → Ca²⁺ + 2OH⁻, the [OH⁻] is twice the [Ca(OH)₂]. Ksp = [Ca²⁺][OH⁻]² — don't forget to square the hydroxide concentration.</div>
+</div>
+
+<!-- CP10 -->
+<div class="practical-card" id="cp10">
+<h2>&#9879; CP10: Construct Electrochemical Cells and Measure EMF</h2>
+
+<svg viewBox="0 0 440 260" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Left half-cell -->
+  <path d="M30,100 L30,200 Q30,215 45,215 L135,215 Q150,215 150,200 L150,100" fill="#e0e7ef" fill-opacity="0.3" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="31" y="130" width="118" height="80" fill="#1a73e8" fill-opacity="0.1"/>
+  <rect x="75" y="80" width="10" height="110" fill="#ccc" stroke="#999" stroke-width="1.5" rx="1"/>
+  <text x="80" y="72" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle" font-weight="600">Zn</text>
+  <text x="90" y="230" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle">ZnSO₄(aq)</text>
+  <!-- Right half-cell -->
+  <path d="M270,100 L270,200 Q270,215 285,215 L375,215 Q390,215 390,200 L390,100" fill="#e0e7ef" fill-opacity="0.3" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="271" y="130" width="118" height="80" fill="#D97706" fill-opacity="0.1"/>
+  <rect x="320" y="80" width="10" height="110" fill="#D97706" stroke="#b45309" stroke-width="1.5" rx="1"/>
+  <text x="325" y="72" font-size="10" fill="#D97706" font-family="system-ui" text-anchor="middle" font-weight="600">Cu</text>
+  <text x="330" y="230" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle">CuSO₄(aq)</text>
+  <!-- Salt bridge -->
+  <path d="M120,115 Q120,80 210,80 Q300,80 300,115" fill="none" stroke="#16A34A" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="210" y="68" font-size="10" fill="#16A34A" font-family="system-ui" text-anchor="middle" font-weight="600">Salt bridge (KNO₃)</text>
+  <!-- Voltmeter -->
+  <circle cx="210" cy="30" r="18" fill="#f0f7ff" stroke="#DC2626" stroke-width="2"/>
+  <text x="210" y="34" font-size="11" fill="#DC2626" font-family="system-ui" text-anchor="middle" font-weight="700">V</text>
+  <line x1="80" y1="80" x2="80" y2="30" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="80" y1="30" x2="192" y2="30" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="325" y1="80" x2="325" y2="30" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="325" y1="30" x2="228" y2="30" stroke="#1a1a2e" stroke-width="1.5"/>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Two beakers, metal electrodes (e.g., Zn, Cu, Fe, Mg)</li>
+  <li>1.0 mol dm⁻³ metal salt solutions</li>
+  <li>Salt bridge (KNO₃)</li>
+  <li>High-resistance voltmeter, connecting wires, crocodile clips</li>
+  <li>Emery paper</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Clean electrodes with emery paper.</li>
+  <li>Set up two half-cells with metal electrodes in their respective ion solutions.</li>
+  <li>Connect with salt bridge and wires to voltmeter.</li>
+  <li>Record the EMF. Note which electrode is positive (cathode).</li>
+  <li>Repeat with different metal combinations.</li>
+  <li>Compare measured EMF with E°(cell) = E°(cathode) - E°(anode).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>CuSO₄ and other metal salts may be harmful — gloves and goggles.</li>
+  <li>Dispose of solutions appropriately.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Calculate:</strong> E°(cell) = E°(right) - E°(left). Plot measured vs. theoretical EMF — should be linear with gradient ≈ 1.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Oxide layer on electrodes</td><td>Systematic</td><td>Clean with emery paper just before use</td></tr>
+  <tr><td>Non-standard concentrations</td><td>Systematic</td><td>Prepare accurately using volumetric flask</td></tr>
+  <tr><td>Voltmeter drawing current</td><td>Systematic</td><td>Use high-resistance voltmeter</td></tr>
+  <tr><td>Salt bridge drying out</td><td>Systematic</td><td>Prepare fresh; ensure good contact</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> The salt bridge completes the circuit by allowing ion migration, maintaining electrical neutrality in both half-cells. Without it, the cell voltage drops immediately to zero. Use KNO₃ because K⁺ and NO₃⁻ have similar ionic mobilities and do not react with common cell components.</div>
+</div>
+
+<!-- CP11 -->
+<div class="practical-card" id="cp11">
+<h2>&#9879; CP11: Investigate How Temperature Affects Rate (Thiosulfate + HCl)</h2>
+
+<svg viewBox="0 0 450 290" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Water bath -->
+  <path d="M40,110 L40,230 Q40,245 55,245 L245,245 Q260,245 260,230 L260,110" fill="#1a73e8" fill-opacity="0.08" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="150" y="260" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle">Water bath</text>
+  <!-- Conical flask -->
+  <polygon points="110,215 190,215 178,165 122,165" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="140" y="152" width="20" height="15" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
+  <polygon points="113,210 187,210 179,170 121,170" fill="#D97706" fill-opacity="0.15"/>
+  <!-- Cross -->
+  <rect x="120" y="218" width="60" height="18" fill="white" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="150" y="232" font-size="14" fill="#1a1a2e" font-family="system-ui" text-anchor="middle" font-weight="bold">X</text>
+  <!-- Thermometer -->
+  <rect x="55" y="70" width="6" height="150" fill="#e0e7ef" stroke="#DC2626" stroke-width="1" rx="2"/>
+  <circle cx="58" cy="220" r="5" fill="#DC2626"/>
+  <text x="25" y="65" font-size="10" fill="#DC2626" font-family="system-ui">Therm.</text>
+  <!-- Timer -->
+  <circle cx="370" cy="170" r="35" fill="#f8fafc" stroke="#1a73e8" stroke-width="2"/>
+  <text x="370" y="168" font-size="12" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Timer</text>
+  <text x="370" y="184" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">record t</text>
+  <!-- Reaction equation -->
+  <text x="225" y="280" font-size="10" fill="#1a1a2e" font-family="system-ui">Na₂S₂O₃ + 2HCl → 2NaCl + H₂O + SO₂ + S↓</text>
+  <!-- Looking down arrow -->
+  <path d="M310,90 L310,120 L300,120 L315,140 L330,120 L320,120 L320,90 Z" fill="#16A34A" fill-opacity="0.4"/>
+  <text x="315" y="80" font-size="9" fill="#16A34A" font-family="system-ui" text-anchor="middle">Look down</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Conical flask, measuring cylinders</li>
+  <li>Sodium thiosulfate solution, dilute HCl</li>
+  <li>Paper with X mark</li>
+  <li>Stopwatch, thermometer</li>
+  <li>Water baths at different temperatures (20, 30, 40, 50, 60 °C)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure 25 cm³ Na₂S₂O₃ into a conical flask. Place in water bath to equilibrate to desired temperature.</li>
+  <li>Record the temperature. Place the flask on the cross.</li>
+  <li>Add 5 cm³ dilute HCl, start the timer.</li>
+  <li>Look down from above. Stop the timer when the cross disappears due to sulfur precipitate.</li>
+  <li>Repeat at different temperatures.</li>
+  <li>Calculate rate = 1/t for each temperature.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>SO₂ produced is toxic — well-ventilated room or fume cupboard.</li>
+  <li>HCl is irritant — goggles.</li>
+  <li>Hot water — care with higher temperature experiments.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Plot:</strong> 1/t vs. temperature (°C) — shows exponential increase. For Arrhenius analysis: plot ln(1/t) vs. 1/T (K) — straight line, gradient = -Eₐ/R.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Subjective end-point (cross disappearing)</td><td>Random</td><td>Same observer; use light sensor</td></tr>
+  <tr><td>Temperature changing during reaction</td><td>Systematic</td><td>Maintain temperature in water bath</td></tr>
+  <tr><td>Human reaction time</td><td>Random</td><td>Repeat and average; use data logging</td></tr>
+  <tr><td>Inaccurate temperature measurement</td><td>Random</td><td>Use digital thermometer; allow equilibrium time</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> This is a classic Arrhenius experiment. A 10 °C rise roughly doubles the rate. For the Arrhenius plot, use T in Kelvin and plot ln(rate) vs 1/T. The gradient = -Eₐ/R, so Eₐ = -gradient × R. Remember R = 8.314 J mol⁻¹ K⁻¹.</div>
+</div>
+
+<!-- CP12 -->
+<div class="practical-card" id="cp12">
+<h2>&#9879; CP12: Investigate Factors Affecting Kc</h2>
+
+<svg viewBox="0 0 460 250" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Test tubes with cobalt chloride at different conditions -->
+  <rect x="50" y="60" width="22" height="100" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="0 0 11 11"/>
+  <rect x="52" y="100" width="18" height="55" fill="#DC2626" fill-opacity="0.3" rx="0 0 9 9"/>
+  <text x="61" y="50" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle" font-weight="600">Hot</text>
+  <text x="61" y="185" font-size="9" fill="#DC2626" font-family="system-ui" text-anchor="middle">Pink</text>
+
+  <rect x="130" y="60" width="22" height="100" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="0 0 11 11"/>
+  <rect x="132" y="100" width="18" height="55" fill="#8B5CF6" fill-opacity="0.3" rx="0 0 9 9"/>
+  <text x="141" y="50" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle" font-weight="600">Room</text>
+  <text x="141" y="185" font-size="9" fill="#8B5CF6" font-family="system-ui" text-anchor="middle">Purple</text>
+
+  <rect x="210" y="60" width="22" height="100" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="0 0 11 11"/>
+  <rect x="212" y="100" width="18" height="55" fill="#1a73e8" fill-opacity="0.3" rx="0 0 9 9"/>
+  <text x="221" y="50" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle" font-weight="600">Cold</text>
+  <text x="221" y="185" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle">Blue</text>
+
+  <rect x="310" y="60" width="22" height="100" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="0 0 11 11"/>
+  <rect x="312" y="100" width="18" height="55" fill="#1a73e8" fill-opacity="0.4" rx="0 0 9 9"/>
+  <text x="321" y="50" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle" font-weight="600">+HCl</text>
+  <text x="321" y="185" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle">More blue</text>
+
+  <rect x="390" y="60" width="22" height="100" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="0 0 11 11"/>
+  <rect x="392" y="100" width="18" height="55" fill="#DC2626" fill-opacity="0.4" rx="0 0 9 9"/>
+  <text x="401" y="50" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle" font-weight="600">+H₂O</text>
+  <text x="401" y="185" font-size="9" fill="#DC2626" font-family="system-ui" text-anchor="middle">More pink</text>
+
+  <!-- Equilibrium -->
+  <rect x="40" y="205" width="390" height="30" fill="#fff8e1" stroke="#D97706" stroke-width="1" rx="6"/>
+  <text x="235" y="225" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">[Co(H₂O)₆]²⁺(pink) + 4Cl⁻ ⇌ [CoCl₄]²⁻(blue) + 6H₂O   ΔH = +ve</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Test tubes, test tube rack</li>
+  <li>Cobalt(II) chloride solution</li>
+  <li>Concentrated HCl, distilled water</li>
+  <li>Water baths (ice, hot water)</li>
+  <li>Teat pipettes</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Prepare cobalt chloride equilibrium mixture (purple at room temperature).</li>
+  <li><strong>Temperature effect:</strong> Place tubes in ice bath (shifts to pink — exothermic direction favoured) and hot water bath (shifts to blue — endothermic direction favoured). Only temperature changes Kc.</li>
+  <li><strong>Concentration effect (adding Cl⁻):</strong> Add conc. HCl — shifts to blue (but Kc unchanged, just Q adjusts to match Kc).</li>
+  <li><strong>Concentration effect (adding H₂O):</strong> Add water — shifts to pink (Q adjusts, Kc unchanged).</li>
+  <li>Record all colour changes and explain using Le Chatelier's principle.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>CoCl₂ is toxic and carcinogenic — wear gloves.</li>
+  <li>Conc. HCl — fume cupboard.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Key distinction:</strong> Changing temperature changes Kc (and shifts equilibrium). Changing concentration shifts the position of equilibrium but does NOT change Kc (at constant temperature).</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Subjective colour assessment</td><td>Random</td><td>Use colorimeter for quantitative measurement</td></tr>
+  <tr><td>Temperature not maintained</td><td>Systematic</td><td>Keep in water bath; check with thermometer</td></tr>
+  <tr><td>Equilibrium not re-established</td><td>Systematic</td><td>Allow sufficient time before recording</td></tr>
+  <tr><td>Uncontrolled volumes of reagent added</td><td>Systematic</td><td>Use measured volumes with a pipette</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> A common mistake is saying that adding HCl changes Kc. It does NOT — only temperature changes Kc. Adding HCl increases [Cl⁻], so Q < Kc temporarily, and the reaction shifts right until Q = Kc again. Heating an endothermic forward reaction increases Kc.</div>
+</div>
+
+<!-- CP13 -->
+<div class="practical-card" id="cp13">
+<h2>&#9879; CP13: Prepare a Pure Organic Solid and Test Its Purity</h2>
+
+<svg viewBox="0 0 500 300" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Step 1: Dissolve in hot solvent -->
+  <rect x="20" y="20" width="120" height="25" fill="#1a73e8" fill-opacity="0.1" stroke="#1a73e8" stroke-width="1" rx="4"/>
+  <text x="80" y="37" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">1. Dissolve</text>
+  <!-- Beaker with hot solvent -->
+  <path d="M40,60 L40,130 Q40,140 50,140 L110,140 Q120,140 120,130 L120,60" fill="#D97706" fill-opacity="0.1" stroke="#D97706" stroke-width="1.5"/>
+  <text x="80" y="105" font-size="8" fill="#D97706" font-family="system-ui" text-anchor="middle">Hot solvent</text>
+
+  <!-- Step 2: Filter hot -->
+  <rect x="160" y="20" width="120" height="25" fill="#1a73e8" fill-opacity="0.1" stroke="#1a73e8" stroke-width="1" rx="4"/>
+  <text x="220" y="37" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">2. Hot filter</text>
+  <polygon points="180,60 260,60 240,110 200,110" fill="#e0e7ef" fill-opacity="0.3" stroke="#1a73e8" stroke-width="1.5"/>
+  <polyline points="185,65 220,85 255,65" fill="none" stroke="#D97706" stroke-width="1"/>
+  <text x="220" y="130" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Remove insoluble</text>
+  <text x="220" y="142" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">impurities</text>
+
+  <!-- Step 3: Cool and crystallise -->
+  <rect x="300" y="20" width="120" height="25" fill="#1a73e8" fill-opacity="0.1" stroke="#1a73e8" stroke-width="1" rx="4"/>
+  <text x="360" y="37" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">3. Crystallise</text>
+  <path d="M320,60 L320,130 Q320,140 330,140 L390,140 Q400,140 400,130 L400,60" fill="#e0e7ef" fill-opacity="0.3" stroke="#1a73e8" stroke-width="1.5"/>
+  <!-- Crystals -->
+  <polygon points="340,120 345,110 350,120" fill="#16A34A" fill-opacity="0.3" stroke="#16A34A" stroke-width="0.5"/>
+  <polygon points="360,125 365,115 370,125" fill="#16A34A" fill-opacity="0.3" stroke="#16A34A" stroke-width="0.5"/>
+  <polygon points="375,118 380,108 385,118" fill="#16A34A" fill-opacity="0.3" stroke="#16A34A" stroke-width="0.5"/>
+  <text x="360" y="155" font-size="8" fill="#16A34A" font-family="system-ui" text-anchor="middle">Cool slowly</text>
+
+  <!-- Step 4: Buchner filter -->
+  <rect x="30" y="175" width="140" height="25" fill="#1a73e8" fill-opacity="0.1" stroke="#1a73e8" stroke-width="1" rx="4"/>
+  <text x="100" y="192" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">4. Buchner filtration</text>
+  <!-- Buchner funnel -->
+  <rect x="60" y="210" width="80" height="15" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1.5" rx="2"/>
+  <rect x="90" y="225" width="20" height="20" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1"/>
+  <text x="100" y="265" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Wash with cold</text>
+  <text x="100" y="277" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">solvent</text>
+
+  <!-- Step 5: Melting point -->
+  <rect x="220" y="175" width="140" height="25" fill="#1a73e8" fill-opacity="0.1" stroke="#1a73e8" stroke-width="1" rx="4"/>
+  <text x="290" y="192" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">5. Melting point test</text>
+  <!-- Mel-temp apparatus -->
+  <rect x="270" y="215" width="40" height="60" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <rect x="278" y="210" width="4" height="25" fill="#D97706" stroke="#b45309" stroke-width="0.5"/>
+  <text x="290" y="290" font-size="8" fill="#DC2626" font-family="system-ui" text-anchor="middle">Sharp mp = pure</text>
+  <!-- Thermometer -->
+  <rect x="298" y="210" width="4" height="50" fill="#DC2626" fill-opacity="0.5" stroke="#DC2626" stroke-width="0.5"/>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Beaker, hot plate or Bunsen burner</li>
+  <li>Suitable solvent (e.g., water, ethanol)</li>
+  <li>Filter funnel and paper (for hot filtration)</li>
+  <li>Buchner funnel, filter flask, vacuum pump</li>
+  <li>Melting point apparatus (Thiele tube or digital)</li>
+  <li>Capillary tubes, watch glass, spatula</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Dissolve the crude solid in the minimum volume of hot solvent.</li>
+  <li>If insoluble impurities are present, filter the hot solution through a pre-warmed funnel (hot filtration).</li>
+  <li>Allow the filtrate to cool slowly — crystals of the pure product form.</li>
+  <li>Collect the crystals by vacuum (Buchner) filtration. Wash with a small volume of cold solvent to remove soluble impurities.</li>
+  <li>Dry the crystals on filter paper or in a desiccator.</li>
+  <li>Weigh to determine yield.</li>
+  <li>Test purity by measuring the melting point. Pack crystals into a capillary tube and heat slowly.</li>
+  <li>A pure substance has a sharp melting point matching the literature value. Impurities broaden and lower the melting point.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Hot solvents — risk of burns; use water bath heating for flammable solvents.</li>
+  <li>Organic solvents are flammable — no naked flames.</li>
+  <li>Glass capillary tubes are sharp — handle carefully.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Record:</strong> Melting point range. A range of 1-2 °C indicates high purity. Compare with literature value.</p>
+<p><strong>Calculate:</strong> Percentage yield = (actual mass / theoretical mass) × 100.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Product lost during transfers</td><td>Systematic (low yield)</td><td>Minimise transfers; scrape crystals carefully</td></tr>
+  <tr><td>Crystals not fully dry (lowers melting point)</td><td>Systematic</td><td>Dry thoroughly in desiccator; press between filter papers</td></tr>
+  <tr><td>Heating too fast in melting point test</td><td>Systematic</td><td>Heat slowly (1 °C per minute) near expected mp</td></tr>
+  <tr><td>Too much solvent used (low yield)</td><td>Systematic</td><td>Use minimum volume to dissolve the solid</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Recrystallisation purifies by using the difference in solubility at different temperatures. The product must be more soluble in hot solvent and less soluble in cold. Washing with cold solvent removes soluble impurities without dissolving too much product. A sharp, correct melting point confirms purity.</div>
+</div>
+
+<!-- CP14 -->
+<div class="practical-card" id="cp14">
+<h2>&#9879; CP14: Prepare a Pure Organic Liquid (Distillation/Reflux)</h2>
+
+<svg viewBox="0 0 500 340" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Reflux setup (left) -->
+  <text x="110" y="25" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Reflux</text>
+  <!-- Round bottom flask -->
+  <circle cx="110" cy="240" r="35" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="103" y="195" width="14" height="15" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
+  <!-- Vertical condenser -->
+  <rect x="104" y="50" width="12" height="148" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="2"/>
+  <rect x="98" y="55" width="24" height="138" fill="#1a73e8" fill-opacity="0.05" stroke="#1a73e8" stroke-width="0.8" rx="3"/>
+  <text x="65" y="90" font-size="8" fill="#1a73e8" font-family="system-ui">Water out</text>
+  <text x="128" y="180" font-size="8" fill="#1a73e8" font-family="system-ui">Water in</text>
+  <!-- Heat -->
+  <rect x="75" y="280" width="70" height="8" fill="#D97706" rx="2"/>
+  <path d="M95,280 Q100,272 105,280" fill="#DC2626" fill-opacity="0.4"/>
+
+  <!-- Arrow -->
+  <text x="250" y="170" font-size="12" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">then</text>
+  <path d="M215,165 L280,165" fill="none" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr4)"/>
+  <defs><marker id="arr4" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto"><polygon points="0 0,6 2,0 4" fill="#1a1a2e"/></marker></defs>
+
+  <!-- Distillation setup (right) -->
+  <text x="380" y="25" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Distillation</text>
+  <!-- Flask -->
+  <circle cx="330" cy="240" r="30" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="324" y="200" width="12" height="15" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
+  <!-- Thermometer -->
+  <rect x="327" y="140" width="6" height="65" fill="#e0e7ef" stroke="#DC2626" stroke-width="1" rx="2"/>
+  <circle cx="330" cy="200" r="3" fill="#DC2626"/>
+  <!-- Side arm to condenser -->
+  <line x1="336" y1="180" x2="390" y2="210" stroke="#1a73e8" stroke-width="2"/>
+  <!-- Condenser (angled) -->
+  <rect x="385" y="203" width="80" height="16" fill="#e0e7ef" fill-opacity="0.3" stroke="#1a73e8" stroke-width="1.5" rx="2" transform="rotate(20, 425, 211)"/>
+  <!-- Collecting flask -->
+  <path d="M450,240 L450,280 Q450,290 458,290 L485,290 Q493,290 493,280 L493,240" fill="#e0e7ef" fill-opacity="0.3" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="470" y="305" font-size="8" fill="#1a73e8" font-family="system-ui" text-anchor="middle">Product</text>
+  <!-- Heat -->
+  <rect x="300" y="275" width="60" height="8" fill="#D97706" rx="2"/>
+
+  <text x="250" y="330" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Reflux to ensure complete reaction, then distil to purify product</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Round-bottomed flask, anti-bumping granules</li>
+  <li>Reflux condenser (vertical) for step 1</li>
+  <li>Distillation condenser (angled, Liebig) for step 2</li>
+  <li>Still head, thermometer adapter, thermometer</li>
+  <li>Collecting flask</li>
+  <li>Separating funnel (if liquid-liquid extraction needed)</li>
+  <li>Drying agent (anhydrous CaCl₂, Na₂SO₄, or MgSO₄)</li>
+  <li>Heat source</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li><strong>Reflux:</strong> Set up a vertical condenser on top of the round-bottomed flask. Heat the reaction mixture for the required time. Vapours condense and return to the flask — ensures complete reaction without losing volatile reagents.</li>
+  <li><strong>Distillation:</strong> Rearrange apparatus for distillation (angled condenser). Heat and collect the fraction at the correct boiling point.</li>
+  <li><strong>Purification:</strong> If the product is organic, use a separating funnel to wash with sodium carbonate (removes acid impurities), then with water.</li>
+  <li><strong>Drying:</strong> Add anhydrous drying agent (e.g., MgSO₄) to remove water. Filter off the drying agent.</li>
+  <li><strong>Redistillation:</strong> Distil again to obtain pure product at the expected boiling point.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Many organic reagents are flammable — use electric heating or water bath.</li>
+  <li>Never heat a sealed system.</li>
+  <li>Use a fume cupboard for volatile/toxic organic compounds.</li>
+  <li>When using a separating funnel, invert and open the tap to release pressure regularly.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Record:</strong> Boiling point of the collected fraction. A sharp boiling point indicates purity.</p>
+<p><strong>Calculate:</strong> Percentage yield = (actual yield / theoretical yield) × 100. Atom economy for the reaction.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Product lost during transfers</td><td>Systematic</td><td>Minimise apparatus transfers; rinse with small amounts</td></tr>
+  <tr><td>Incomplete reaction (not refluxed long enough)</td><td>Systematic</td><td>Reflux for adequate time; use excess of cheaper reagent</td></tr>
+  <tr><td>Water contamination</td><td>Systematic</td><td>Use adequate drying agent; dry apparatus</td></tr>
+  <tr><td>Wrong fraction collected</td><td>Systematic</td><td>Monitor thermometer carefully; discard fore-run</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Reflux and distillation use the same condenser in different orientations: vertical for reflux (returns liquid to flask), angled for distillation (collects distillate). The purpose of reflux is to allow prolonged heating without loss of volatile substances. Always explain why each purification step is done.</div>
+</div>
+
+<!-- CP15 -->
+<div class="practical-card" id="cp15">
+<h2>&#9879; CP15: Tests to Identify Functional Groups</h2>
+
+<svg viewBox="0 0 500 240" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Tollens' test tube -->
+  <rect x="30" y="50" width="22" height="90" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="0 0 11 11"/>
+  <rect x="32" y="95" width="18" height="40" fill="#c0c0c0" fill-opacity="0.3" rx="0 0 9 9"/>
+  <text x="41" y="40" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Tollens'</text>
+  <text x="41" y="160" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Ag mirror</text>
+  <text x="41" y="172" font-size="8" fill="#16A34A" font-family="system-ui" text-anchor="middle">= CHO</text>
+
+  <!-- Bromine water -->
+  <rect x="110" y="50" width="22" height="90" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="0 0 11 11"/>
+  <rect x="112" y="85" width="18" height="50" fill="#D97706" fill-opacity="0.3" rx="0 0 9 9"/>
+  <text x="121" y="35" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Br₂</text>
+  <text x="121" y="45" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">water</text>
+  <text x="121" y="160" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Decolourises</text>
+  <text x="121" y="172" font-size="8" fill="#16A34A" font-family="system-ui" text-anchor="middle">= C=C</text>
+
+  <!-- K2Cr2O7 -->
+  <rect x="190" y="50" width="22" height="90" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="0 0 11 11"/>
+  <rect x="192" y="85" width="18" height="50" fill="#16A34A" fill-opacity="0.3" rx="0 0 9 9"/>
+  <text x="201" y="35" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">K₂Cr₂O₇</text>
+  <text x="201" y="45" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">/H⁺</text>
+  <text x="201" y="160" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Orange→green</text>
+  <text x="201" y="172" font-size="8" fill="#16A34A" font-family="system-ui" text-anchor="middle">= 1°/2° OH</text>
+
+  <!-- 2,4-DNP -->
+  <rect x="270" y="50" width="22" height="90" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="0 0 11 11"/>
+  <rect x="272" y="85" width="18" height="50" fill="#D97706" fill-opacity="0.5" rx="0 0 9 9"/>
+  <text x="281" y="35" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">2,4-DNP</text>
+  <text x="281" y="160" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Orange ppt</text>
+  <text x="281" y="172" font-size="8" fill="#16A34A" font-family="system-ui" text-anchor="middle">= C=O</text>
+
+  <!-- Na2CO3 -->
+  <rect x="350" y="50" width="22" height="90" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="0 0 11 11"/>
+  <rect x="352" y="85" width="18" height="50" fill="#1a73e8" fill-opacity="0.1" rx="0 0 9 9"/>
+  <circle cx="358" cy="78" r="3" fill="none" stroke="#1a73e8" stroke-width="0.8"/>
+  <circle cx="364" cy="72" r="2" fill="none" stroke="#1a73e8" stroke-width="0.8"/>
+  <text x="361" y="35" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Na₂CO₃</text>
+  <text x="361" y="160" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Fizzing</text>
+  <text x="361" y="172" font-size="8" fill="#16A34A" font-family="system-ui" text-anchor="middle">= COOH</text>
+
+  <!-- Iodoform -->
+  <rect x="430" y="50" width="22" height="90" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="0 0 11 11"/>
+  <rect x="432" y="85" width="18" height="50" fill="#D97706" fill-opacity="0.2" rx="0 0 9 9"/>
+  <text x="441" y="35" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">I₂/NaOH</text>
+  <text x="441" y="160" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Yellow ppt</text>
+  <text x="441" y="172" font-size="8" fill="#16A34A" font-family="system-ui" text-anchor="middle">= CH₃CO-</text>
+
+  <!-- Summary bar -->
+  <rect x="20" y="195" width="460" height="35" fill="#fff8e1" stroke="#D97706" stroke-width="1" rx="6"/>
+  <text x="250" y="217" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Warm gently in water bath for Tollens'/Fehling's/K₂Cr₂O₇ tests</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Test tubes, water bath (60-70 °C)</li>
+  <li>Tollens' reagent (freshly prepared), Fehling's A+B</li>
+  <li>Bromine water, acidified K₂Cr₂O₇</li>
+  <li>2,4-dinitrophenylhydrazine (2,4-DNP) solution</li>
+  <li>Na₂CO₃ solution, iodine/NaOH solution</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li><strong>Alkene (C=C):</strong> Add bromine water — decolourises.</li>
+  <li><strong>Aldehyde:</strong> Tollens' (silver mirror) or Fehling's (brick-red ppt).</li>
+  <li><strong>Carbonyl (aldehyde or ketone):</strong> 2,4-DNP — orange precipitate.</li>
+  <li><strong>Primary/secondary alcohol:</strong> Acidified K₂Cr₂O₇ — orange to green.</li>
+  <li><strong>Carboxylic acid:</strong> Na₂CO₃ — effervescence (CO₂).</li>
+  <li><strong>Methyl ketone / secondary alcohol with CH₃ adjacent:</strong> Iodoform test (I₂/NaOH) — yellow precipitate of CHI₃.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>K₂Cr₂O₇ is carcinogenic — gloves, fume cupboard.</li>
+  <li>Tollens' forms explosive if stored — use immediately, wash away.</li>
+  <li>Bromine water is corrosive — fume cupboard, gloves.</li>
+  <li>2,4-DNP contains methanol — flammable, toxic.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Record:</strong> Positive/negative for each test. Use the pattern of results to identify the functional group.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Contaminated equipment</td><td>Systematic</td><td>Clean all glassware thoroughly</td></tr>
+  <tr><td>Wrong temperature for test</td><td>Systematic</td><td>Use appropriate water bath; don't overheat</td></tr>
+  <tr><td>Insufficient reagent</td><td>Systematic</td><td>Use excess test reagent relative to sample</td></tr>
+  <tr><td>Misidentifying subtle colour changes</td><td>Random</td><td>Compare with known positive and negative controls</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> 2,4-DNP tests for any C=O (aldehyde or ketone). To distinguish aldehyde from ketone, follow up with Tollens' (positive for aldehyde only). The iodoform test is positive for CH₃CO- groups (methyl ketones and ethanol/secondary alcohols with adjacent CH₃). The yellow precipitate is triiodomethane (CHI₃).</div>
+</div>
+
+<!-- CP16 -->
+<div class="practical-card" id="cp16">
+<h2>&#9879; CP16: Investigate pH Changes During Acid-Base Titrations</h2>
+
+<svg viewBox="0 0 480 320" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Burette -->
+  <rect x="200" y="20" width="12" height="150" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1.5" rx="2"/>
+  <rect x="203" y="170" width="6" height="20" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1"/>
+  <rect x="197" y="168" width="18" height="6" fill="#1a73e8" rx="2"/>
+  <line x1="206" y1="190" x2="206" y2="205" stroke="#1a73e8" stroke-width="1"/>
+  <rect x="201" y="35" width="10" height="133" fill="#1a73e8" fill-opacity="0.15"/>
+  <text x="222" y="100" font-size="10" fill="#1a73e8" font-family="system-ui" font-weight="600">NaOH</text>
+
+  <!-- Beaker with acid -->
+  <path d="M150,240 L150,290 Q150,300 160,300 L260,300 Q270,300 270,290 L270,240" fill="#e0e7ef" fill-opacity="0.3" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="151" y="255" width="118" height="40" fill="#DC2626" fill-opacity="0.08"/>
+  <text x="210" y="278" font-size="9" fill="#DC2626" font-family="system-ui" text-anchor="middle">Acid solution</text>
+
+  <!-- pH probe -->
+  <rect x="275" y="200" width="7" height="80" fill="#16A34A" stroke="#16A34A" stroke-width="1" rx="2"/>
+  <text x="290" y="240" font-size="10" fill="#16A34A" font-family="system-ui" font-weight="600">pH probe</text>
+
+  <!-- pH meter -->
+  <rect x="320" y="170" width="80" height="40" fill="#f0f7ff" stroke="#16A34A" stroke-width="2" rx="5"/>
+  <text x="360" y="190" font-size="12" fill="#16A34A" font-family="system-ui" text-anchor="middle" font-weight="700">pH 2.3</text>
+  <text x="360" y="205" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">pH meter</text>
+
+  <!-- Four curves sketched -->
+  <rect x="20" y="20" width="150" height="120" fill="white" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+  <text x="95" y="35" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle" font-weight="600">Titration curves</text>
+  <!-- Strong/strong -->
+  <polyline points="35,125 45,122 55,120 65,115 70,80 72,50 75,48 85,46 100,45 120,44" fill="none" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="125" y="47" font-size="7" fill="#1a73e8" font-family="system-ui">SA+SB</text>
+  <!-- Weak/strong -->
+  <polyline points="35,110 45,108 55,105 65,100 70,70 72,50 75,48 85,46 100,45 120,44" fill="none" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="125" y="55" font-size="7" fill="#DC2626" font-family="system-ui">WA+SB</text>
+
+  <!-- Axis labels -->
+  <text x="28" y="80" font-size="7" fill="#1a1a2e" font-family="system-ui">pH</text>
+  <text x="80" y="137" font-size="7" fill="#1a1a2e" font-family="system-ui">Vol base →</text>
+
+  <!-- Stirrer -->
+  <rect x="160" y="302" width="100" height="10" fill="#ddd" stroke="#999" stroke-width="1" rx="3"/>
+  <text x="210" y="325" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Magnetic stirrer</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Calibrated pH meter or pH probe with data logger</li>
+  <li>Burette (50 cm³) with strong base (NaOH)</li>
+  <li>Beaker with measured volume of acid (strong or weak)</li>
+  <li>Magnetic stirrer</li>
+  <li>Buffer solutions for calibration</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Calibrate the pH meter with buffer solutions (pH 4, 7, 10).</li>
+  <li>Pipette 25.0 cm³ of acid into the beaker. Place pH probe in solution.</li>
+  <li>Record the initial pH.</li>
+  <li>Add NaOH from burette in 1 cm³ increments (smaller increments of 0.2 cm³ near the equivalence point).</li>
+  <li>Stir, wait for stable reading, record pH and volume after each addition.</li>
+  <li>Continue until pH levels off at a high value.</li>
+  <li>Plot pH vs. volume of NaOH to produce the titration curve.</li>
+  <li>Repeat with different acid/base combinations (strong/strong, weak/strong, strong/weak, weak/weak) to compare curve shapes.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>NaOH and acids are corrosive/irritant — goggles and gloves.</li>
+  <li>pH probes are delicate — handle carefully.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Key curve features:</strong> Strong acid + strong base: equivalence at pH 7, steep curve. Weak acid + strong base: equivalence at pH > 7, buffer region visible, half-equivalence pH = pKₐ. Strong acid + weak base: equivalence at pH < 7.</p>
+<p><strong>Determine:</strong> Suitable indicator has its end point within the steep section of the curve.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>pH meter not calibrated</td><td>Systematic</td><td>Calibrate with two or three buffer standards</td></tr>
+  <tr><td>Large volume increments near equivalence</td><td>Systematic</td><td>Use 0.1-0.2 cm³ additions near the steep region</td></tr>
+  <tr><td>pH not equilibrated before reading</td><td>Random</td><td>Wait for stable reading; use stirrer</td></tr>
+  <tr><td>CO₂ from air affecting pH of NaOH</td><td>Systematic</td><td>Use freshly prepared NaOH; keep stoppered</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Choose the indicator whose colour change range falls within the steep part of the titration curve. Phenolphthalein (pH 8-10) is suitable for weak acid/strong base. Methyl orange (pH 3-4.4) is suitable for strong acid/weak base. For strong/strong, either works because the steep section spans a wide pH range.</div>
+</div>
+
+</div>
+</body>
+</html>
