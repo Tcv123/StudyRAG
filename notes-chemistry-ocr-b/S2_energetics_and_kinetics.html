@@ -62,6 +62,62 @@
   <strong>Exam Tip:</strong> The standard enthalpy of formation of any element in its standard state is zero by definition. This is essential for Hess's law calculations using formation enthalpies.
 </div>
 
+<!-- SVG: Enthalpy Profile Diagrams -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Enthalpy Profile Diagrams</text>
+  <!-- EXOTHERMIC (left) -->
+  <text x="135" y="42" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Exothermic (&Delta;H &lt; 0)</text>
+  <!-- Axes -->
+  <line x1="40" y1="55" x2="40" y2="270" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="40,55 36,65 44,65" fill="#1a1a2e"/>
+  <text x="25" y="165" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" transform="rotate(-90,25,165)">Enthalpy (H)</text>
+  <line x1="40" y1="270" x2="230" y2="270" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="135" y="288" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Progress of reaction</text>
+  <!-- Reactants level -->
+  <line x1="50" y1="100" x2="100" y2="100" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="75" y="92" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Reactants</text>
+  <!-- Activation energy hump -->
+  <path d="M 100 100 Q 135 60 170 100 Q 185 120 200 220" fill="none" stroke="#1a1a2e" stroke-width="2" stroke-dasharray="0"/>
+  <!-- Ea arrow -->
+  <line x1="108" y1="100" x2="108" y2="65" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrAmb2)"/>
+  <defs><marker id="arrAmb2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#D97706"/></marker></defs>
+  <text x="108" y="58" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">E&#7424;</text>
+  <!-- Products level -->
+  <line x1="200" y1="220" x2="225" y2="220" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="212" y="238" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Products</text>
+  <!-- Delta H arrow -->
+  <line x1="225" y1="100" x2="225" y2="220" stroke="#DC2626" stroke-width="2" marker-end="url(#arrRedS2)"/>
+  <defs><marker id="arrRedS2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#DC2626"/></marker></defs>
+  <text x="232" y="165" text-anchor="start" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">&Delta;H</text>
+  <text x="232" y="178" text-anchor="start" font-family="system-ui" font-size="9" fill="#DC2626">(&minus;ve)</text>
+
+  <!-- ENDOTHERMIC (right) -->
+  <text x="385" y="42" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Endothermic (&Delta;H &gt; 0)</text>
+  <!-- Axes -->
+  <line x1="280" y1="55" x2="280" y2="270" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="280,55 276,65 284,65" fill="#1a1a2e"/>
+  <line x1="280" y1="270" x2="475" y2="270" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="380" y="288" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Progress of reaction</text>
+  <!-- Reactants level (lower) -->
+  <line x1="290" y1="210" x2="340" y2="210" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="315" y="228" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Reactants</text>
+  <!-- Activation energy hump -->
+  <path d="M 340 210 Q 375 60 410 210 Q 420 170 445 110" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- Ea arrow -->
+  <line x1="348" y1="210" x2="348" y2="70" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrAmb2)"/>
+  <text x="348" y="63" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">E&#7424;</text>
+  <!-- Products level (higher) -->
+  <line x1="445" y1="110" x2="470" y2="110" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="457" y="128" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Products</text>
+  <!-- Delta H arrow -->
+  <line x1="470" y1="210" x2="470" y2="110" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrBluS2)"/>
+  <defs><marker id="arrBluS2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#1a73e8"/></marker></defs>
+  <text x="478" y="165" text-anchor="start" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">&Delta;H</text>
+  <text x="478" y="178" text-anchor="start" font-family="system-ui" font-size="9" fill="#1a73e8">(+ve)</text>
+</svg>
+</div>
+
 <h3>Calorimetry</h3>
 
 <p>Calorimetry measures enthalpy changes experimentally by measuring temperature changes of a known mass of water (or solution).</p>
@@ -92,6 +148,40 @@
 <p><strong>Using enthalpies of combustion:</strong></p>
 <div class="equation">
   &Delta;<sub>r</sub>H&deg; = &Sigma;&Delta;<sub>c</sub>H&deg;(reactants) &minus; &Sigma;&Delta;<sub>c</sub>H&deg;(products)
+</div>
+
+<!-- SVG: Hess's Law Cycle -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Hess's Law Enthalpy Cycle</text>
+  <text x="250" y="38" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94a3b8">The total enthalpy change is independent of the route taken</text>
+  <!-- Route 1: Direct (top) -->
+  <rect x="30" y="70" width="160" height="40" rx="8" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="110" y="95" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Reactants (A + B)</text>
+  <rect x="310" y="70" width="160" height="40" rx="8" fill="#dcfce7" stroke="#16A34A" stroke-width="2"/>
+  <text x="390" y="95" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Products (C + D)</text>
+  <!-- Direct arrow -->
+  <line x1="190" y1="90" x2="305" y2="90" stroke="#DC2626" stroke-width="2.5" marker-end="url(#arrRedH)"/>
+  <defs><marker id="arrRedH" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#DC2626"/></marker></defs>
+  <text x="248" y="82" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">&Delta;H&#176; (Route 1)</text>
+  <!-- Intermediate box -->
+  <rect x="150" y="190" width="200" height="40" rx="8" fill="#fef9c3" stroke="#D97706" stroke-width="2"/>
+  <text x="250" y="210" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#D97706">Elements / Intermediates</text>
+  <text x="250" y="225" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">(e.g. combustion products or elements)</text>
+  <!-- Route 2a: Reactants down to intermediate -->
+  <line x1="80" y1="110" x2="170" y2="190" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrBluH)"/>
+  <defs><marker id="arrBluH" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#1a73e8"/></marker></defs>
+  <text x="90" y="160" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">&Delta;H&#7424;</text>
+  <!-- Route 2b: Intermediate up to products -->
+  <line x1="330" y1="190" x2="420" y2="110" stroke="#16A34A" stroke-width="2" marker-end="url(#arrGrnH)"/>
+  <defs><marker id="arrGrnH" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#16A34A"/></marker></defs>
+  <text x="410" y="160" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">&Delta;H&#7495;</text>
+  <!-- Route 2 label -->
+  <text x="250" y="165" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">Route 2</text>
+  <!-- Equation -->
+  <rect x="80" y="248" width="340" height="25" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="250" y="265" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">&Delta;H&#176; = &Delta;H&#7424; + &Delta;H&#7495; (by Hess's law)</text>
+</svg>
 </div>
 
 <h3>Bond Enthalpies</h3>
@@ -136,6 +226,60 @@
 
 <div class="definition">
   <strong>Electron affinity:</strong> The enthalpy change when one mole of gaseous atoms gains one mole of electrons to form one mole of gaseous 1&minus; ions. The first electron affinity is usually exothermic (negative); the second is always endothermic (positive) because energy is needed to overcome the repulsion between the incoming electron and the already negative ion.
+</div>
+
+<!-- SVG: Born-Haber Cycle for NaCl -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 400" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="20" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Born-Haber Cycle for NaCl</text>
+  <!-- Energy levels (horizontal lines) -->
+  <!-- Level 1 (bottom): NaCl(s) -->
+  <line x1="30" y1="370" x2="170" y2="370" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="100" y="388" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">NaCl(s)</text>
+  <!-- Level 2: Na(s) + 1/2 Cl2(g) - elements -->
+  <line x1="30" y1="310" x2="170" y2="310" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="100" y="303" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Na(s) + &#189;Cl&#8322;(g)</text>
+  <!-- Level 3: Na(g) + 1/2 Cl2(g) -->
+  <line x1="200" y1="260" x2="350" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="275" y="253" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Na(g) + &#189;Cl&#8322;(g)</text>
+  <!-- Level 4: Na(g) + Cl(g) -->
+  <line x1="200" y1="210" x2="350" y2="210" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="275" y="203" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Na(g) + Cl(g)</text>
+  <!-- Level 5: Na+(g) + Cl(g) + e- -->
+  <line x1="300" y1="120" x2="470" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="385" y="113" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Na&#8314;(g) + Cl(g) + e&#8315;</text>
+  <!-- Level 6 (top): Na+(g) + Cl-(g) -->
+  <line x1="300" y1="70" x2="470" y2="70" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="385" y="63" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Na&#8314;(g) + Cl&#8315;(g)</text>
+  <!-- Arrows and labels -->
+  <!-- Delta_f H: elements -> NaCl(s) (down) -->
+  <line x1="45" y1="310" x2="45" y2="370" stroke="#16A34A" stroke-width="2" marker-end="url(#arrGBH)"/>
+  <defs><marker id="arrGBH" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#16A34A"/></marker></defs>
+  <text x="12" y="340" text-anchor="start" font-family="system-ui" font-size="8" fill="#16A34A">&Delta;&#7765;H&#176;</text>
+  <text x="12" y="350" text-anchor="start" font-family="system-ui" font-size="7" fill="#16A34A">(formation)</text>
+  <!-- Atomisation Na: elements -> Na(g) (up) -->
+  <line x1="185" y1="310" x2="210" y2="260" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrABH)"/>
+  <defs><marker id="arrABH" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#D97706"/></marker></defs>
+  <text x="175" y="285" text-anchor="start" font-family="system-ui" font-size="8" fill="#D97706">&Delta;&#7424;&#7511;H&#176;(Na)</text>
+  <!-- Atomisation Cl: Na(g)+1/2Cl2 -> Na(g)+Cl(g) (up) -->
+  <line x1="275" y1="260" x2="275" y2="210" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrABH)"/>
+  <text x="280" y="240" text-anchor="start" font-family="system-ui" font-size="8" fill="#D97706">&Delta;&#7424;&#7511;H&#176;(Cl)</text>
+  <!-- IE1 Na: Na(g)+Cl(g) -> Na+(g)+Cl(g)+e- (up) -->
+  <line x1="340" y1="210" x2="370" y2="120" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrRBH)"/>
+  <defs><marker id="arrRBH" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#DC2626"/></marker></defs>
+  <text x="345" y="170" text-anchor="start" font-family="system-ui" font-size="8" fill="#DC2626">IE&#8321;(Na)</text>
+  <!-- EA1 Cl: Na+(g)+Cl(g)+e- -> Na+(g)+Cl-(g) (down for EA1, usually exo) -->
+  <line x1="460" y1="120" x2="460" y2="70" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrBBH)"/>
+  <defs><marker id="arrBBH" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#1a73e8"/></marker></defs>
+  <text x="465" y="100" text-anchor="start" font-family="system-ui" font-size="8" fill="#1a73e8">EA&#8321;(Cl)</text>
+  <text x="465" y="110" text-anchor="start" font-family="system-ui" font-size="7" fill="#1a73e8">(exo, &#8593;)</text>
+  <!-- Lattice enthalpy: Na+(g)+Cl-(g) -> NaCl(s) (large downward) -->
+  <path d="M 385 70 L 385 340 Q 385 370 355 370 L 170 370" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrPBH)"/>
+  <defs><marker id="arrPBH" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#7c3aed"/></marker></defs>
+  <text x="390" y="230" text-anchor="start" font-family="system-ui" font-size="9" font-weight="bold" fill="#7c3aed">&Delta;&#7436;&#7497;H&#176;</text>
+  <text x="390" y="245" text-anchor="start" font-family="system-ui" font-size="8" fill="#7c3aed">(lattice enthalpy,</text>
+  <text x="390" y="257" text-anchor="start" font-family="system-ui" font-size="8" fill="#7c3aed"> exothermic)</text>
+</svg>
 </div>
 
 <h3>Enthalpies of Hydration and Solution</h3>
@@ -232,7 +376,86 @@
 
 <p>Increasing temperature shifts the distribution to the right and significantly increases the proportion of molecules exceeding E<sub>a</sub>. A catalyst lowers E<sub>a</sub>, so a greater proportion of molecules exceed the new, lower E<sub>a</sub> without changing the distribution itself.</p>
 
+<!-- SVG: Maxwell-Boltzmann Distribution -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 310" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Maxwell-Boltzmann Distribution</text>
+  <!-- Axes -->
+  <line x1="60" y1="250" x2="470" y2="250" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="250" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="60,40 56,50 64,50" fill="#1a1a2e"/>
+  <text x="30" y="145" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,30,145)">Number of molecules</text>
+  <text x="265" y="275" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Kinetic energy</text>
+  <!-- T1 curve (lower temp - blue, taller peak) -->
+  <path d="M 60 250 Q 80 248 110 200 Q 140 80 170 70 Q 200 80 240 150 Q 300 220 370 240 Q 420 248 470 250" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="180" y="60" text-anchor="start" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">T&#8321; (lower temp)</text>
+  <!-- T2 curve (higher temp - red, flatter, shifted right) -->
+  <path d="M 60 250 Q 90 248 130 225 Q 170 160 210 140 Q 240 135 260 140 Q 310 170 360 210 Q 420 240 470 248" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="270" y="128" text-anchor="start" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">T&#8322; (higher temp)</text>
+  <!-- Ea line -->
+  <line x1="340" y1="250" x2="340" y2="45" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="345" y="42" text-anchor="start" font-family="system-ui" font-size="11" font-weight="bold" fill="#D97706">E&#7424;</text>
+  <!-- Shaded area for T1 beyond Ea -->
+  <path d="M 340 240 Q 370 240 400 245 Q 435 248 470 250 L 470 250 L 340 250 Z" fill="#1a73e833" stroke="none"/>
+  <!-- Shaded area for T2 beyond Ea -->
+  <path d="M 340 218 Q 370 228 400 238 Q 435 245 470 248 L 470 250 L 340 250 Z" fill="#DC262633" stroke="none"/>
+  <!-- Catalyst Ea' line -->
+  <line x1="280" y1="250" x2="280" y2="120" stroke="#16A34A" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="260" y="118" text-anchor="end" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">E&#7424;'</text>
+  <text x="260" y="130" text-anchor="end" font-family="system-ui" font-size="8" fill="#16A34A">(with catalyst)</text>
+  <!-- Key -->
+  <rect x="70" y="282" width="420" height="22" rx="4" fill="#f1f5f9" stroke="none"/>
+  <text x="250" y="297" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Shaded areas = proportion of molecules with energy &#8805; E&#7424;. Higher T or lower E&#7424; = more molecules can react.</text>
+</svg>
+</div>
+
 <h3>Catalysts</h3>
+
+<!-- SVG: Activation Energy - Effect of a Catalyst -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Effect of a Catalyst on Activation Energy</text>
+  <!-- Axes -->
+  <line x1="60" y1="260" x2="460" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="260" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="60,40 56,50 64,50" fill="#1a1a2e"/>
+  <text x="30" y="150" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,30,150)">Enthalpy (H)</text>
+  <text x="260" y="285" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Progress of reaction</text>
+  <!-- Reactants level -->
+  <line x1="70" y1="170" x2="140" y2="170" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="105" y="163" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Reactants</text>
+  <!-- Products level -->
+  <line x1="380" y1="220" x2="450" y2="220" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="415" y="242" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Products</text>
+  <!-- Uncatalysed pathway (high hump) -->
+  <path d="M 140 170 Q 200 168 240 60 Q 280 168 320 190 Q 350 210 380 220" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="248" y="52" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Uncatalysed</text>
+  <!-- Catalysed pathway (lower hump) -->
+  <path d="M 140 170 Q 190 168 240 110 Q 290 168 340 200 Q 360 212 380 220" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <text x="248" y="103" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Catalysed</text>
+  <!-- Ea uncatalysed arrow -->
+  <line x1="155" y1="170" x2="155" y2="60" stroke="#DC2626" stroke-width="1.5" marker-start="url(#arrRUbott)" marker-end="url(#arrRUtop)"/>
+  <defs>
+    <marker id="arrRUtop" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#DC2626"/></marker>
+    <marker id="arrRUbott" markerWidth="7" markerHeight="5" refX="0" refY="2.5" orient="auto"><path d="M7,0 L0,2.5 L7,5" fill="#DC2626"/></marker>
+  </defs>
+  <text x="135" y="115" text-anchor="end" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">E&#7424;</text>
+  <!-- Ea catalysed arrow -->
+  <line x1="170" y1="170" x2="170" y2="110" stroke="#16A34A" stroke-width="1.5" marker-start="url(#arrGCbott)" marker-end="url(#arrGCtop)"/>
+  <defs>
+    <marker id="arrGCtop" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#16A34A"/></marker>
+    <marker id="arrGCbott" markerWidth="7" markerHeight="5" refX="0" refY="2.5" orient="auto"><path d="M7,0 L0,2.5 L7,5" fill="#16A34A"/></marker>
+  </defs>
+  <text x="178" y="143" text-anchor="start" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">E&#7424;'</text>
+  <!-- Delta H arrow -->
+  <line x1="445" y1="170" x2="445" y2="220" stroke="#D97706" stroke-width="2" marker-end="url(#arrDHcat)"/>
+  <defs><marker id="arrDHcat" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#D97706"/></marker></defs>
+  <line x1="440" y1="170" x2="450" y2="170" stroke="#D97706" stroke-width="1"/>
+  <text x="455" y="198" text-anchor="start" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">&Delta;H</text>
+  <!-- Key note -->
+  <text x="250" y="298" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">A catalyst lowers E&#7424; but does NOT change &Delta;H. Both pathways have the same overall enthalpy change.</text>
+</svg>
+</div>
 
 <div class="definition">
   <strong>Catalyst:</strong> A substance that increases the rate of a reaction by providing an alternative pathway with a lower activation energy, without being consumed in the overall reaction.<br><br>
