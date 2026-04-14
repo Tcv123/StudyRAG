@@ -50,6 +50,102 @@
     <li>Strands are antiparallel: one runs 5'&rarr;3', the other 3'&rarr;5'</li>
 </ul>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 350" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">DNA Double Helix Structure</text>
+
+  <!-- Sugar-phosphate backbone strands (antiparallel) -->
+  <!-- Left strand (5' to 3' going down) -->
+  <path d="M 160,50 Q 140,100 160,150 Q 180,200 160,250 Q 140,300 160,340" fill="none" stroke="#1a73e8" stroke-width="4" opacity="0.7"/>
+  <!-- Right strand (3' to 5' going down) -->
+  <path d="M 340,50 Q 360,100 340,150 Q 320,200 340,250 Q 360,300 340,340" fill="none" stroke="#DC2626" stroke-width="4" opacity="0.7"/>
+
+  <!-- Direction labels -->
+  <text x="145" y="45" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">5'</text>
+  <text x="145" y="340" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">3'</text>
+  <text x="355" y="45" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">3'</text>
+  <text x="355" y="340" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">5'</text>
+
+  <!-- Base pairs (rungs) -->
+  <!-- A-T pair -->
+  <line x1="162" y1="80" x2="230" y2="80" stroke="#16A34A" stroke-width="3"/>
+  <line x1="270" y1="80" x2="338" y2="80" stroke="#16A34A" stroke-width="3"/>
+  <line x1="230" y1="80" x2="270" y2="80" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="242" y1="80" x2="258" y2="80" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="218" y="68" width="24" height="24" rx="4" fill="#16A34A" opacity="0.15"/>
+  <text x="230" y="85" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">A</text>
+  <rect x="258" y="68" width="24" height="24" rx="4" fill="#16A34A" opacity="0.15"/>
+  <text x="270" y="85" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">T</text>
+
+  <!-- C-G pair -->
+  <line x1="150" y1="130" x2="220" y2="130" stroke="#D97706" stroke-width="3"/>
+  <line x1="280" y1="130" x2="352" y2="130" stroke="#D97706" stroke-width="3"/>
+  <line x1="220" y1="130" x2="280" y2="130" stroke="#D97706" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="237" y1="126" x2="263" y2="126" stroke="#D97706" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="237" y1="134" x2="263" y2="134" stroke="#D97706" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="208" y="118" width="24" height="24" rx="4" fill="#D97706" opacity="0.15"/>
+  <text x="220" y="135" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">C</text>
+  <rect x="268" y="118" width="24" height="24" rx="4" fill="#D97706" opacity="0.15"/>
+  <text x="280" y="135" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">G</text>
+
+  <!-- T-A pair -->
+  <line x1="165" y1="180" x2="225" y2="180" stroke="#16A34A" stroke-width="3"/>
+  <line x1="275" y1="180" x2="335" y2="180" stroke="#16A34A" stroke-width="3"/>
+  <line x1="225" y1="180" x2="275" y2="180" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="240" y1="180" x2="260" y2="180" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="213" y="168" width="24" height="24" rx="4" fill="#16A34A" opacity="0.15"/>
+  <text x="225" y="185" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">T</text>
+  <rect x="263" y="168" width="24" height="24" rx="4" fill="#16A34A" opacity="0.15"/>
+  <text x="275" y="185" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">A</text>
+
+  <!-- G-C pair -->
+  <line x1="172" y1="230" x2="230" y2="230" stroke="#D97706" stroke-width="3"/>
+  <line x1="270" y1="230" x2="328" y2="230" stroke="#D97706" stroke-width="3"/>
+  <line x1="230" y1="230" x2="270" y2="230" stroke="#D97706" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="240" y1="226" x2="260" y2="226" stroke="#D97706" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="240" y1="234" x2="260" y2="234" stroke="#D97706" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="218" y="218" width="24" height="24" rx="4" fill="#D97706" opacity="0.15"/>
+  <text x="230" y="235" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">G</text>
+  <rect x="258" y="218" width="24" height="24" rx="4" fill="#D97706" opacity="0.15"/>
+  <text x="270" y="235" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">C</text>
+
+  <!-- A-T pair -->
+  <line x1="158" y1="280" x2="225" y2="280" stroke="#16A34A" stroke-width="3"/>
+  <line x1="275" y1="280" x2="342" y2="280" stroke="#16A34A" stroke-width="3"/>
+  <line x1="225" y1="280" x2="275" y2="280" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="213" y="268" width="24" height="24" rx="4" fill="#16A34A" opacity="0.15"/>
+  <text x="225" y="285" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">A</text>
+  <rect x="263" y="268" width="24" height="24" rx="4" fill="#16A34A" opacity="0.15"/>
+  <text x="275" y="285" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">T</text>
+
+  <!-- Annotations on right -->
+  <line x1="365" y1="80" x2="420" y2="80" stroke="#16A34A" stroke-width="1"/>
+  <text x="425" y="78" text-anchor="start" class="small-label" fill="#16A34A" font-weight="bold">A-T: 2 H-bonds</text>
+
+  <line x1="365" y1="130" x2="420" y2="130" stroke="#D97706" stroke-width="1"/>
+  <text x="425" y="128" text-anchor="start" class="small-label" fill="#D97706" font-weight="bold">C-G: 3 H-bonds</text>
+
+  <!-- Backbone labels -->
+  <text x="425" y="195" text-anchor="start" class="small-label" fill="#1a73e8">Sugar-phosphate</text>
+  <text x="425" y="209" text-anchor="start" class="small-label" fill="#1a73e8">backbone</text>
+  <text x="425" y="223" text-anchor="start" class="small-label" fill="#1a73e8">(phosphodiester</text>
+  <text x="425" y="237" text-anchor="start" class="small-label" fill="#1a73e8">bonds)</text>
+
+  <text x="425" y="270" text-anchor="start" class="small-label" fill="#6b7280">Strands are</text>
+  <text x="425" y="284" text-anchor="start" class="small-label" fill="#6b7280" font-weight="bold">antiparallel</text>
+
+  <!-- Key -->
+  <text x="55" y="65" text-anchor="middle" class="small-label" fill="#16A34A">--- H-bonds</text>
+  <line x1="30" y1="72" x2="80" y2="72" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,3"/>
+</svg>
+</div>
+
 <h3>Semi-Conservative Replication</h3>
 <ol>
     <li><strong>Helicase</strong> unwinds the double helix and breaks hydrogen bonds between base pairs, separating the two strands</li>
@@ -59,6 +155,91 @@
     <li><strong>Leading strand</strong> is synthesised continuously; <strong>lagging strand</strong> is synthesised in short Okazaki fragments (joined by DNA ligase)</li>
     <li>Result: two identical DNA molecules, each with one original strand and one new strand (semi-conservative)</li>
 </ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">DNA Replication Fork</text>
+
+  <!-- Original double strand on left (coming in) -->
+  <line x1="30" y1="120" x2="200" y2="120" stroke="#1a73e8" stroke-width="4" opacity="0.7"/>
+  <line x1="30" y1="140" x2="200" y2="140" stroke="#DC2626" stroke-width="4" opacity="0.7"/>
+  <text x="30" y="115" text-anchor="start" class="small-label" fill="#1a73e8" font-weight="bold">3'</text>
+  <text x="30" y="155" text-anchor="start" class="small-label" fill="#DC2626" font-weight="bold">5'</text>
+
+  <!-- H-bonds between strands -->
+  <line x1="60" y1="124" x2="60" y2="136" stroke="#6b7280" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="90" y1="124" x2="90" y2="136" stroke="#6b7280" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="120" y1="124" x2="120" y2="136" stroke="#6b7280" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="150" y1="124" x2="150" y2="136" stroke="#6b7280" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Fork opening (Y shape) -->
+  <!-- Top template strand continues right and up -->
+  <path d="M 200,120 Q 240,115 280,80 L 530,80" fill="none" stroke="#1a73e8" stroke-width="4" opacity="0.7"/>
+  <!-- Bottom template strand continues right and down -->
+  <path d="M 200,140 Q 240,145 280,180 L 530,180" fill="none" stroke="#DC2626" stroke-width="4" opacity="0.7"/>
+
+  <!-- Direction labels on template strands -->
+  <text x="540" y="78" text-anchor="start" class="small-label" fill="#1a73e8" font-weight="bold">5'</text>
+  <text x="540" y="183" text-anchor="start" class="small-label" fill="#DC2626" font-weight="bold">3'</text>
+
+  <!-- New strand on top (leading strand - continuous) -->
+  <line x1="250" y1="95" x2="520" y2="95" stroke="#16A34A" stroke-width="3.5" opacity="0.7"/>
+  <polygon points="520,90 535,95 520,100" fill="#16A34A" opacity="0.7"/>
+  <text x="540" y="98" text-anchor="start" class="small-label" fill="#16A34A" font-weight="bold">3'</text>
+  <text x="250" y="108" text-anchor="start" class="small-label" fill="#16A34A" font-weight="bold">5'</text>
+
+  <!-- New strand on bottom (lagging strand - Okazaki fragments) -->
+  <line x1="420" y1="165" x2="520" y2="165" stroke="#16A34A" stroke-width="3.5" opacity="0.7"/>
+  <line x1="310" y1="165" x2="400" y2="165" stroke="#16A34A" stroke-width="3.5" opacity="0.7"/>
+  <line x1="265" y1="168" x2="295" y2="165" stroke="#16A34A" stroke-width="3.5" opacity="0.7"/>
+  <!-- Gaps between fragments -->
+  <text x="405" y="162" text-anchor="middle" class="small-label" fill="#6b7280">|</text>
+  <text x="303" y="162" text-anchor="middle" class="small-label" fill="#6b7280">|</text>
+  <text x="540" y="168" text-anchor="start" class="small-label" fill="#16A34A" font-weight="bold">5'</text>
+  <text x="430" y="160" text-anchor="start" class="small-label" fill="#16A34A" font-weight="bold">3'</text>
+
+  <!-- Helicase at fork -->
+  <circle cx="220" cy="130" r="18" fill="#D97706" opacity="0.2" stroke="#D97706" stroke-width="2"/>
+  <text x="220" y="134" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold" font-family="system-ui">Helicase</text>
+
+  <!-- DNA polymerase on leading strand -->
+  <rect x="485" y="82" width="35" height="18" rx="4" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="503" y="94" text-anchor="middle" font-size="8" fill="#16A34A" font-weight="bold" font-family="system-ui">Pol III</text>
+
+  <!-- DNA polymerase on lagging strand -->
+  <rect x="270" y="155" width="35" height="18" rx="4" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="288" y="167" text-anchor="middle" font-size="8" fill="#16A34A" font-weight="bold" font-family="system-ui">Pol III</text>
+
+  <!-- Labels -->
+  <rect x="350" y="50" width="120" height="22" rx="4" fill="#16A34A" opacity="0.1" stroke="#16A34A" stroke-width="1"/>
+  <text x="410" y="65" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">Leading strand</text>
+  <text x="410" y="45" text-anchor="middle" class="small-label" fill="#16A34A">(continuous, 5'→3')</text>
+
+  <rect x="340" y="195" width="140" height="22" rx="4" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="1"/>
+  <text x="410" y="210" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Lagging strand</text>
+  <text x="410" y="228" text-anchor="middle" class="small-label" fill="#D97706">(Okazaki fragments, 5'→3')</text>
+
+  <!-- Helicase description -->
+  <line x1="220" y1="148" x2="220" y2="170" stroke="#D97706" stroke-width="1"/>
+  <text x="155" y="180" text-anchor="middle" class="small-label" fill="#D97706">Helicase unwinds</text>
+  <text x="155" y="193" text-anchor="middle" class="small-label" fill="#D97706">and separates strands</text>
+
+  <!-- Key at bottom -->
+  <line x1="60" y1="250" x2="90" y2="250" stroke="#1a73e8" stroke-width="3.5" opacity="0.7"/>
+  <text x="95" y="254" text-anchor="start" class="small-label" fill="#1a73e8">Original template strand</text>
+  <line x1="60" y1="270" x2="90" y2="270" stroke="#16A34A" stroke-width="3.5" opacity="0.7"/>
+  <text x="95" y="274" text-anchor="start" class="small-label" fill="#16A34A">New complementary strand</text>
+
+  <text x="300" y="305" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Semi-conservative: each new DNA has one original + one new strand</text>
+  <text x="300" y="318" text-anchor="middle" class="small-label" fill="#6b7280">DNA ligase joins Okazaki fragments on the lagging strand</text>
+</svg>
+</div>
 
 <div class="exam-tip">The Meselson-Stahl experiment (using heavy nitrogen <sup>15</sup>N and density gradient centrifugation) provided evidence for semi-conservative replication. After one generation in <sup>14</sup>N, all DNA was intermediate density. After two generations, half was intermediate and half was light.</div>
 
@@ -86,6 +267,122 @@
     <li>Process repeats until a <strong>stop codon</strong> (UAA, UAG, UGA) is reached</li>
     <li>Polypeptide is released and folds into its functional protein shape</li>
 </ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 340" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">Protein Synthesis: Transcription and Translation</text>
+
+  <!-- TRANSCRIPTION (left half) -->
+  <rect x="15" y="38" width="270" height="145" rx="8" fill="#1a73e8" opacity="0.04" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="150" y="56" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">TRANSCRIPTION (Nucleus)</text>
+
+  <!-- DNA template strand -->
+  <text x="25" y="80" text-anchor="start" class="small-label" fill="#6b7280">DNA template 3'</text>
+  <line x1="25" y1="90" x2="270" y2="90" stroke="#1a73e8" stroke-width="3" opacity="0.6"/>
+  <!-- Bases on template -->
+  <text x="110" y="88" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold" font-family="system-ui">T A C G A T</text>
+
+  <!-- RNA polymerase -->
+  <ellipse cx="190" cy="110" rx="28" ry="14" fill="#D97706" opacity="0.2" stroke="#D97706" stroke-width="1.5"/>
+  <text x="190" y="114" text-anchor="middle" font-size="8" fill="#D97706" font-weight="bold" font-family="system-ui">RNA Pol</text>
+
+  <!-- mRNA being made -->
+  <line x1="80" y1="130" x2="270" y2="130" stroke="#DC2626" stroke-width="3" opacity="0.6"/>
+  <text x="110" y="128" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">A U G C U A</text>
+  <text x="25" y="134" text-anchor="start" class="small-label" fill="#DC2626">mRNA 5'</text>
+
+  <!-- Arrow showing direction -->
+  <polygon points="265,127 275,130 265,133" fill="#DC2626"/>
+
+  <!-- Splicing note -->
+  <text x="150" y="162" text-anchor="middle" class="small-label" fill="#6b7280">Pre-mRNA spliced (introns removed)</text>
+  <text x="150" y="176" text-anchor="middle" class="small-label" fill="#6b7280">mRNA exits nucleus via nuclear pores</text>
+
+  <!-- Arrow from transcription to translation -->
+  <line x1="285" y1="110" x2="315" y2="110" stroke="#D97706" stroke-width="2"/>
+  <polygon points="315,106 328,110 315,114" fill="#D97706"/>
+  <text x="300" y="100" text-anchor="middle" font-size="9" fill="#D97706" font-family="system-ui">mRNA</text>
+
+  <!-- TRANSLATION (right half) -->
+  <rect x="315" y="38" width="270" height="145" rx="8" fill="#16A34A" opacity="0.04" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="450" y="56" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">TRANSLATION (Ribosome)</text>
+
+  <!-- mRNA strand through ribosome -->
+  <line x1="330" y1="115" x2="575" y2="115" stroke="#DC2626" stroke-width="2.5" opacity="0.5"/>
+  <text x="385" y="113" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">A U G</text>
+  <text x="435" y="113" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">C U A</text>
+  <text x="485" y="113" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">G C C</text>
+
+  <!-- Ribosome -->
+  <ellipse cx="435" cy="105" rx="60" ry="30" fill="#16A34A" opacity="0.1" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="435" y="80" text-anchor="middle" class="small-label" fill="#16A34A">Ribosome</text>
+
+  <!-- tRNA molecules -->
+  <!-- tRNA 1 at P site -->
+  <path d="M 385,115 L 385,140 L 375,155 L 395,155 L 385,140" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="385" y="168" text-anchor="middle" font-size="9" fill="#1a73e8" font-weight="bold" font-family="system-ui">U A C</text>
+  <text x="385" y="180" text-anchor="middle" font-size="8" fill="#1a73e8" font-family="system-ui">anticodon</text>
+
+  <!-- tRNA 2 at A site -->
+  <path d="M 435,115 L 435,140 L 425,155 L 445,155 L 435,140" fill="none" stroke="#D97706" stroke-width="1.5"/>
+  <text x="435" y="168" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold" font-family="system-ui">G A U</text>
+
+  <!-- Amino acids on tRNAs -->
+  <circle cx="385" cy="95" r="10" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="385" y="99" text-anchor="middle" font-size="8" fill="#1a73e8" font-weight="bold" font-family="system-ui">Met</text>
+  <circle cx="435" cy="95" r="10" fill="#D97706" opacity="0.2" stroke="#D97706" stroke-width="1.5"/>
+  <text x="435" y="99" text-anchor="middle" font-size="8" fill="#D97706" font-weight="bold" font-family="system-ui">Leu</text>
+
+  <!-- Peptide bond -->
+  <line x1="395" y1="95" x2="425" y2="95" stroke="#DC2626" stroke-width="2"/>
+  <text x="410" y="88" text-anchor="middle" font-size="8" fill="#DC2626" font-family="system-ui">peptide bond</text>
+
+  <!-- Growing polypeptide -->
+  <circle cx="355" cy="80" r="8" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1"/>
+  <line x1="363" y1="80" x2="375" y2="90" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="340" y="72" text-anchor="middle" class="small-label" fill="#16A34A">Polypeptide</text>
+
+  <!-- Summary flow at bottom -->
+  <rect x="40" y="200" width="520" height="130" rx="8" fill="#1a1a2e" opacity="0.03" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="300" y="220" text-anchor="middle" class="label" fill="#1a1a2e" font-weight="bold">Summary of Information Flow</text>
+
+  <!-- DNA box -->
+  <rect x="60" y="240" width="70" height="30" rx="6" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="95" y="260" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">DNA</text>
+
+  <!-- Arrow -->
+  <line x1="130" y1="255" x2="175" y2="255" stroke="#D97706" stroke-width="2"/>
+  <polygon points="175,251 188,255 175,259" fill="#D97706"/>
+  <text x="158" y="248" text-anchor="middle" class="small-label" fill="#D97706">Transcription</text>
+
+  <!-- mRNA box -->
+  <rect x="190" y="240" width="70" height="30" rx="6" fill="#DC2626" opacity="0.12" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="225" y="260" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">mRNA</text>
+
+  <!-- Arrow -->
+  <line x1="260" y1="255" x2="305" y2="255" stroke="#D97706" stroke-width="2"/>
+  <polygon points="305,251 318,255 305,259" fill="#D97706"/>
+  <text x="290" y="248" text-anchor="middle" class="small-label" fill="#D97706">Translation</text>
+
+  <!-- Protein box -->
+  <rect x="320" y="240" width="80" height="30" rx="6" fill="#16A34A" opacity="0.12" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="360" y="260" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">Protein</text>
+
+  <!-- Location labels -->
+  <text x="95" y="285" text-anchor="middle" class="small-label" fill="#6b7280">Nucleus</text>
+  <text x="225" y="285" text-anchor="middle" class="small-label" fill="#6b7280">Nucleus → Cytoplasm</text>
+  <text x="360" y="285" text-anchor="middle" class="small-label" fill="#6b7280">Ribosomes</text>
+
+  <!-- Central dogma label -->
+  <text x="300" y="320" text-anchor="middle" class="small-label" fill="#1a1a2e" font-style="italic">Central dogma: DNA → RNA → Protein</text>
+</svg>
+</div>
 
 <div class="definition-box">
     <strong>The genetic code:</strong> A triplet code (three bases = one codon = one amino acid). It is degenerate (most amino acids coded by more than one codon), universal (same in almost all organisms) and non-overlapping.
@@ -133,6 +430,136 @@
 <h3>Dihybrid Inheritance</h3>
 <p>Involves two genes on different chromosomes (independently assorting). A cross between two double heterozygotes (AaBb &times; AaBb) gives a <strong>9:3:3:1 phenotypic ratio</strong>.</p>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 310" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">Punnett Squares: Monohybrid and Dihybrid Crosses</text>
+
+  <!-- MONOHYBRID (left) -->
+  <text x="145" y="48" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Monohybrid: Aa x Aa</text>
+
+  <!-- Grid -->
+  <rect x="55" y="62" width="55" height="30" rx="0" fill="#1a73e8" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="110" y="62" width="55" height="30" rx="0" fill="#1a73e8" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="165" y="62" width="55" height="30" rx="0" fill="#1a73e8" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
+
+  <rect x="55" y="92" width="55" height="30" rx="0" fill="#1a73e8" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="55" y="122" width="55" height="30" rx="0" fill="#1a73e8" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
+
+  <!-- Data cells -->
+  <rect x="110" y="92" width="55" height="30" rx="0" fill="#16A34A" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="165" y="92" width="55" height="30" rx="0" fill="#16A34A" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="110" y="122" width="55" height="30" rx="0" fill="#16A34A" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="165" y="122" width="55" height="30" rx="0" fill="#DC2626" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
+
+  <!-- Headers -->
+  <text x="83" y="82" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Gametes</text>
+  <text x="138" y="82" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">A</text>
+  <text x="193" y="82" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">a</text>
+  <text x="83" y="112" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">A</text>
+  <text x="83" y="142" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">a</text>
+
+  <!-- Offspring genotypes -->
+  <text x="138" y="112" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">AA</text>
+  <text x="193" y="112" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">Aa</text>
+  <text x="138" y="142" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">Aa</text>
+  <text x="193" y="142" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">aa</text>
+
+  <!-- Ratios -->
+  <text x="145" y="172" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Genotypic: 1 AA : 2 Aa : 1 aa</text>
+  <text x="145" y="188" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">Phenotypic: 3 dominant : 1 recessive</text>
+
+  <!-- DIHYBRID (right) -->
+  <text x="430" y="48" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Dihybrid: AaBb x AaBb</text>
+
+  <!-- Grid headers -->
+  <rect x="310" y="62" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="350" y="62" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="390" y="62" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="430" y="62" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="470" y="62" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
+
+  <text x="330" y="79" text-anchor="middle" font-size="10" fill="#1a1a2e" font-family="system-ui"></text>
+  <text x="370" y="79" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold" font-family="system-ui">AB</text>
+  <text x="410" y="79" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold" font-family="system-ui">Ab</text>
+  <text x="450" y="79" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold" font-family="system-ui">aB</text>
+  <text x="490" y="79" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold" font-family="system-ui">ab</text>
+
+  <!-- Row headers -->
+  <rect x="310" y="87" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="310" y="112" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="310" y="137" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="310" y="162" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
+
+  <text x="330" y="104" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">AB</text>
+  <text x="330" y="129" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">Ab</text>
+  <text x="330" y="154" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">aB</text>
+  <text x="330" y="179" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">ab</text>
+
+  <!-- 4x4 data grid - color coded by phenotype -->
+  <!-- Row 1: AB x -->
+  <rect x="350" y="87" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <rect x="390" y="87" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <rect x="430" y="87" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <rect x="470" y="87" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="370" y="104" text-anchor="middle" font-size="8" font-family="system-ui">AABB</text>
+  <text x="410" y="104" text-anchor="middle" font-size="8" font-family="system-ui">AABb</text>
+  <text x="450" y="104" text-anchor="middle" font-size="8" font-family="system-ui">AaBB</text>
+  <text x="490" y="104" text-anchor="middle" font-size="8" font-family="system-ui">AaBb</text>
+
+  <!-- Row 2: Ab x -->
+  <rect x="350" y="112" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <rect x="390" y="112" width="40" height="25" fill="#1a73e8" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <rect x="430" y="112" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <rect x="470" y="112" width="40" height="25" fill="#1a73e8" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="370" y="129" text-anchor="middle" font-size="8" font-family="system-ui">AABb</text>
+  <text x="410" y="129" text-anchor="middle" font-size="8" font-family="system-ui">AAbb</text>
+  <text x="450" y="129" text-anchor="middle" font-size="8" font-family="system-ui">AaBb</text>
+  <text x="490" y="129" text-anchor="middle" font-size="8" font-family="system-ui">Aabb</text>
+
+  <!-- Row 3: aB x -->
+  <rect x="350" y="137" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <rect x="390" y="137" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <rect x="430" y="137" width="40" height="25" fill="#D97706" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <rect x="470" y="137" width="40" height="25" fill="#D97706" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="370" y="154" text-anchor="middle" font-size="8" font-family="system-ui">AaBB</text>
+  <text x="410" y="154" text-anchor="middle" font-size="8" font-family="system-ui">AaBb</text>
+  <text x="450" y="154" text-anchor="middle" font-size="8" font-family="system-ui">aaBB</text>
+  <text x="490" y="154" text-anchor="middle" font-size="8" font-family="system-ui">aaBb</text>
+
+  <!-- Row 4: ab x -->
+  <rect x="350" y="162" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <rect x="390" y="162" width="40" height="25" fill="#1a73e8" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <rect x="430" y="162" width="40" height="25" fill="#D97706" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <rect x="470" y="162" width="40" height="25" fill="#DC2626" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="370" y="179" text-anchor="middle" font-size="8" font-family="system-ui">AaBb</text>
+  <text x="410" y="179" text-anchor="middle" font-size="8" font-family="system-ui">Aabb</text>
+  <text x="450" y="179" text-anchor="middle" font-size="8" font-family="system-ui">aaBb</text>
+  <text x="490" y="179" text-anchor="middle" font-size="8" font-family="system-ui">aabb</text>
+
+  <!-- Phenotype ratio -->
+  <text x="430" y="207" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Phenotypic ratio: 9 : 3 : 3 : 1</text>
+
+  <!-- Key for dihybrid -->
+  <rect x="335" y="220" width="12" height="12" fill="#16A34A" opacity="0.15"/>
+  <text x="352" y="231" font-size="9" fill="#16A34A" font-family="system-ui">9 A_B_ (both dominant)</text>
+  <rect x="335" y="237" width="12" height="12" fill="#1a73e8" opacity="0.15"/>
+  <text x="352" y="248" font-size="9" fill="#1a73e8" font-family="system-ui">3 A_bb (A dom, B rec)</text>
+  <rect x="335" y="254" width="12" height="12" fill="#D97706" opacity="0.15"/>
+  <text x="352" y="265" font-size="9" fill="#D97706" font-family="system-ui">3 aaB_ (A rec, B dom)</text>
+  <rect x="335" y="271" width="12" height="12" fill="#DC2626" opacity="0.15"/>
+  <text x="352" y="282" font-size="9" fill="#DC2626" font-family="system-ui">1 aabb (both recessive)</text>
+
+  <!-- Note -->
+  <text x="300" y="305" text-anchor="middle" class="small-label" fill="#6b7280" font-style="italic">Dihybrid 9:3:3:1 ratio only applies with independent assortment (genes on different chromosomes)</text>
+</svg>
+</div>
+
 <h3>Codominance</h3>
 <p>Both alleles are equally expressed in the heterozygote (neither is dominant). Example: ABO blood groups where I<sup>A</sup> and I<sup>B</sup> are codominant (I<sup>A</sup>I<sup>B</sup> gives blood group AB), while both are dominant over i (recessive, gives group O).</p>
 
@@ -174,6 +601,73 @@
     <li>No mutation</li>
     <li>No migration (gene flow)</li>
 </ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">Natural Selection -- Mechanism</text>
+
+  <!-- Step 1: Variation -->
+  <rect x="20" y="50" width="105" height="65" rx="10" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="2"/>
+  <text x="72" y="70" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">1. Variation</text>
+  <circle cx="45" cy="95" r="8" fill="#16A34A" opacity="0.5"/><circle cx="65" cy="95" r="8" fill="#1a73e8" opacity="0.5"/><circle cx="85" cy="95" r="8" fill="#D97706" opacity="0.5"/><circle cx="105" cy="95" r="8" fill="#DC2626" opacity="0.5"/>
+  <text x="72" y="130" text-anchor="middle" class="small-label" fill="#6b7280">Genetic variation</text>
+  <text x="72" y="142" text-anchor="middle" class="small-label" fill="#6b7280">in population</text>
+
+  <line x1="125" y1="82" x2="145" y2="82" stroke="#D97706" stroke-width="2"/>
+  <polygon points="145,78 155,82 145,86" fill="#D97706"/>
+
+  <!-- Step 2: Selection pressure -->
+  <rect x="155" y="50" width="105" height="65" rx="10" fill="#DC2626" opacity="0.1" stroke="#DC2626" stroke-width="2"/>
+  <text x="208" y="70" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">2. Selection</text>
+  <text x="208" y="83" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Pressure</text>
+  <text x="208" y="103" text-anchor="middle" class="small-label" fill="#DC2626">Competition,</text>
+  <text x="208" y="115" text-anchor="middle" class="small-label" fill="#DC2626">predation, disease</text>
+
+  <line x1="260" y1="82" x2="280" y2="82" stroke="#D97706" stroke-width="2"/>
+  <polygon points="280,78 290,82 280,86" fill="#D97706"/>
+
+  <!-- Step 3: Survival -->
+  <rect x="290" y="50" width="105" height="65" rx="10" fill="#16A34A" opacity="0.1" stroke="#16A34A" stroke-width="2"/>
+  <text x="342" y="70" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">3. Survival of</text>
+  <text x="342" y="83" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">the Fittest</text>
+  <circle cx="322" cy="100" r="7" fill="#16A34A" opacity="0.5"/><circle cx="342" cy="100" r="7" fill="#16A34A" opacity="0.5"/><circle cx="362" cy="100" r="7" fill="#16A34A" opacity="0.5"/>
+  <text x="342" y="130" text-anchor="middle" class="small-label" fill="#6b7280">Advantageous traits</text>
+  <text x="342" y="142" text-anchor="middle" class="small-label" fill="#6b7280">= higher survival</text>
+
+  <line x1="395" y1="82" x2="415" y2="82" stroke="#D97706" stroke-width="2"/>
+  <polygon points="415,78 425,82 415,86" fill="#D97706"/>
+
+  <!-- Step 4: Reproduction -->
+  <rect x="425" y="50" width="105" height="65" rx="10" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="2"/>
+  <text x="478" y="70" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">4. Reproduction</text>
+  <circle cx="450" cy="97" r="5" fill="#16A34A" opacity="0.5"/><circle cx="465" cy="97" r="5" fill="#16A34A" opacity="0.5"/><circle cx="480" cy="97" r="5" fill="#16A34A" opacity="0.5"/><circle cx="495" cy="97" r="5" fill="#16A34A" opacity="0.5"/><circle cx="508" cy="97" r="5" fill="#16A34A" opacity="0.5"/>
+  <text x="478" y="130" text-anchor="middle" class="small-label" fill="#6b7280">Alleles passed to</text>
+  <text x="478" y="142" text-anchor="middle" class="small-label" fill="#6b7280">next generation</text>
+
+  <!-- Curved arrow showing generations -->
+  <path d="M 530,82 Q 555,82 555,180 Q 555,230 300,230 Q 45,230 45,180 Q 45,155 72,155" fill="none" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="72,151 80,155 72,159" fill="#1a1a2e"/>
+  <text x="300" y="245" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Over many generations: allele frequency changes in population</text>
+
+  <!-- Three types of selection -->
+  <text x="300" y="270" text-anchor="middle" class="label" fill="#1a1a2e" font-weight="bold">Types of Selection:</text>
+  <rect x="40" y="280" width="150" height="30" rx="6" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1"/>
+  <text x="115" y="295" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Directional</text>
+  <text x="115" y="308" text-anchor="middle" font-size="9" fill="#DC2626" font-family="system-ui">Favours one extreme</text>
+  <rect x="210" y="280" width="150" height="30" rx="6" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1"/>
+  <text x="285" y="295" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">Stabilising</text>
+  <text x="285" y="308" text-anchor="middle" font-size="9" fill="#16A34A" font-family="system-ui">Favours average phenotype</text>
+  <rect x="380" y="280" width="150" height="30" rx="6" fill="#D97706" opacity="0.08" stroke="#D97706" stroke-width="1"/>
+  <text x="455" y="295" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Disruptive</text>
+  <text x="455" y="308" text-anchor="middle" font-size="9" fill="#D97706" font-family="system-ui">Favours both extremes</text>
+</svg>
+</div>
 
 <!-- ==================== EVOLUTION AND SPECIATION ==================== -->
 <h2>5.6 Evolution and Speciation</h2>

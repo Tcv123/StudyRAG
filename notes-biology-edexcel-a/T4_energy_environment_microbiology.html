@@ -59,6 +59,98 @@
 
 <p><strong>Products:</strong> ATP, reduced NADP (NADPH) and O<sub>2</sub> (waste product from photolysis)</p>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 340" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">Light-Dependent Reactions (Thylakoid Membrane)</text>
+
+  <!-- Thylakoid membrane bar -->
+  <rect x="30" y="165" width="540" height="20" rx="4" fill="#D97706" opacity="0.2" stroke="#D97706" stroke-width="1.5"/>
+  <text x="300" y="180" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold" font-family="system-ui">THYLAKOID MEMBRANE</text>
+  <text x="300" y="205" text-anchor="middle" class="small-label" fill="#6b7280">Thylakoid lumen (below)</text>
+  <text x="300" y="155" text-anchor="middle" class="small-label" fill="#6b7280">Stroma (above)</text>
+
+  <!-- PSII -->
+  <rect x="60" y="145" width="70" height="55" rx="8" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="2"/>
+  <text x="95" y="170" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">PSII</text>
+  <text x="95" y="185" text-anchor="middle" class="small-label" fill="#1a73e8">P680</text>
+
+  <!-- Light hitting PSII -->
+  <line x1="70" y1="110" x2="85" y2="145" stroke="#D97706" stroke-width="2"/>
+  <polygon points="82,143 88,147 80,148" fill="#D97706"/>
+  <text x="55" y="105" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Light</text>
+
+  <!-- Photolysis of water -->
+  <text x="95" y="230" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Photolysis:</text>
+  <text x="95" y="245" text-anchor="middle" class="small-label" fill="#1a73e8">2H₂O → 4H⁺</text>
+  <text x="95" y="258" text-anchor="middle" class="small-label" fill="#1a73e8">+ 4e⁻ + O₂</text>
+  <line x1="95" y1="215" x2="95" y2="200" stroke="#1a73e8" stroke-width="1.5"/>
+  <polygon points="91,203 95,195 99,203" fill="#1a73e8"/>
+
+  <!-- Electron transport chain -->
+  <line x1="130" y1="155" x2="190" y2="130" stroke="#16A34A" stroke-width="2"/>
+  <polygon points="187,133 195,128 190,137" fill="#16A34A"/>
+  <!-- ETC curve down -->
+  <path d="M 195,128 Q 220,100 250,120 Q 280,140 310,130" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <text x="250" y="98" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">Electron transport chain</text>
+  <text x="250" y="112" text-anchor="middle" class="small-label" fill="#16A34A">(energy released)</text>
+
+  <!-- H+ pumping -->
+  <line x1="250" y1="165" x2="250" y2="215" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="246,215 250,225 254,215" fill="#DC2626"/>
+  <text x="250" y="240" text-anchor="middle" class="small-label" fill="#DC2626">H⁺ pumped</text>
+  <text x="250" y="253" text-anchor="middle" class="small-label" fill="#DC2626">into lumen</text>
+
+  <!-- ATP synthase -->
+  <rect x="195" y="268" width="60" height="40" rx="6" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="225" y="285" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">ATP</text>
+  <text x="225" y="298" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">synthase</text>
+  <!-- H+ flowing back -->
+  <line x1="225" y1="268" x2="225" y2="250" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- ATP produced -->
+  <line x1="255" y1="288" x2="290" y2="288" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="315" y="285" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">ATP</text>
+  <text x="315" y="300" text-anchor="middle" class="small-label" fill="#DC2626">(chemiosmosis)</text>
+
+  <!-- PSI -->
+  <rect x="330" y="145" width="70" height="55" rx="8" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="2"/>
+  <text x="365" y="170" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">PSI</text>
+  <text x="365" y="185" text-anchor="middle" class="small-label" fill="#16A34A">P700</text>
+
+  <!-- Light hitting PSI -->
+  <line x1="345" y1="110" x2="355" y2="145" stroke="#D97706" stroke-width="2"/>
+  <polygon points="352,143 358,147 350,148" fill="#D97706"/>
+  <text x="330" y="105" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Light</text>
+
+  <!-- Electrons from ETC to PSI -->
+  <line x1="310" y1="135" x2="330" y2="150" stroke="#16A34A" stroke-width="2"/>
+  <polygon points="327,147 335,153 330,143" fill="#16A34A"/>
+
+  <!-- Electrons from PSI to NADP reductase -->
+  <line x1="400" y1="155" x2="460" y2="110" stroke="#16A34A" stroke-width="2"/>
+  <polygon points="457,113 465,107 460,117" fill="#16A34A"/>
+
+  <!-- NADP reduction -->
+  <rect x="460" y="70" width="110" height="60" rx="8" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="515" y="90" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">NADP⁺ + H⁺ + e⁻</text>
+  <text x="515" y="108" text-anchor="middle" class="small-label" fill="#1a73e8">↓</text>
+  <text x="515" y="124" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Reduced NADP</text>
+
+  <!-- O2 released -->
+  <circle cx="55" cy="280" r="18" fill="#16A34A" opacity="0.1" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="55" y="284" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">O₂</text>
+  <text x="55" y="310" text-anchor="middle" class="small-label" fill="#16A34A">(waste)</text>
+
+  <!-- Products summary -->
+  <text x="500" y="322" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Products: ATP + reduced NADP + O₂</text>
+</svg>
+</div>
+
 <h3>Cyclic vs Non-cyclic Photophosphorylation</h3>
 <table>
     <tr><th>Feature</th><th>Non-cyclic</th><th>Cyclic</th></tr>
@@ -75,6 +167,89 @@
     <li><strong>Regeneration of RuBP:</strong> Most TP (5 out of every 6 molecules) is used to regenerate RuBP using ATP</li>
     <li><strong>Product:</strong> 1 in 6 TP molecules exits the cycle to form glucose (and other organic molecules)</li>
 </ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 380" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">The Calvin Cycle (Light-Independent Reactions)</text>
+  <text x="300" y="40" text-anchor="middle" class="small-label" fill="#6b7280">Occurs in the stroma of chloroplasts</text>
+
+  <!-- Central cycle circle -->
+  <circle cx="280" cy="210" r="120" fill="none" stroke="#16A34A" stroke-width="2" opacity="0.3"/>
+
+  <!-- Clockwise arrows on circle -->
+  <path d="M 280,90 A 120,120 0 0,1 395,165" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+  <polygon points="393,160 402,168 390,170" fill="#16A34A"/>
+  <path d="M 395,165 A 120,120 0 0,1 345,322" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+  <polygon points="348,319 342,328 339,316" fill="#16A34A"/>
+  <path d="M 345,322 A 120,120 0 0,1 165,260" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+  <polygon points="169,256 162,265 159,253" fill="#16A34A"/>
+  <path d="M 165,260 A 120,120 0 0,1 280,90" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+  <polygon points="276,94 283,85 285,97" fill="#16A34A"/>
+
+  <!-- RuBP (top) -->
+  <rect x="230" y="62" width="100" height="35" rx="8" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="2"/>
+  <text x="280" y="78" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">RuBP (5C)</text>
+  <text x="280" y="92" text-anchor="middle" font-size="9" fill="#1a73e8" font-family="system-ui">Ribulose bisphosphate</text>
+
+  <!-- CO2 entering -->
+  <line x1="170" y1="55" x2="230" y2="72" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="228,68 236,74 226,76" fill="#DC2626"/>
+  <rect x="100" y="40" width="65" height="28" rx="6" fill="#DC2626" opacity="0.1" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="132" y="59" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">CO₂</text>
+
+  <!-- RuBisCO label -->
+  <rect x="180" y="95" width="65" height="22" rx="4" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1"/>
+  <text x="213" y="110" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">RuBisCO</text>
+
+  <!-- 1. Carbon fixation label -->
+  <text x="195" y="65" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">1. Fixation</text>
+
+  <!-- GP (right) -->
+  <rect x="370" y="148" width="95" height="35" rx="8" fill="#DC2626" opacity="0.12" stroke="#DC2626" stroke-width="2"/>
+  <text x="418" y="164" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">GP (3C)</text>
+  <text x="418" y="178" text-anchor="middle" font-size="9" fill="#DC2626" font-family="system-ui">Glycerate-3-phosphate</text>
+  <text x="418" y="195" text-anchor="middle" class="small-label" fill="#6b7280">x2 molecules</text>
+
+  <!-- 2. Reduction: ATP and NADPH used -->
+  <text x="430" y="240" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">2. Reduction</text>
+  <!-- ATP arrow in -->
+  <line x1="490" y1="240" x2="430" y2="260" stroke="#D97706" stroke-width="1.5"/>
+  <polygon points="433,257 427,264 437,262" fill="#D97706"/>
+  <text x="510" y="238" text-anchor="start" class="small-label" fill="#D97706" font-weight="bold">ATP</text>
+  <!-- Reduced NADP arrow in -->
+  <line x1="510" y1="265" x2="440" y2="278" stroke="#1a73e8" stroke-width="1.5"/>
+  <polygon points="443,275 437,282 447,280" fill="#1a73e8"/>
+  <text x="510" y="262" text-anchor="start" class="small-label" fill="#1a73e8" font-weight="bold">Reduced NADP</text>
+
+  <!-- TP (bottom) -->
+  <rect x="240" y="300" width="80" height="35" rx="8" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="2"/>
+  <text x="280" y="316" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">TP (3C)</text>
+  <text x="280" y="330" text-anchor="middle" font-size="9" fill="#16A34A" font-family="system-ui">Triose phosphate</text>
+
+  <!-- TP exit to glucose -->
+  <line x1="240" y1="320" x2="115" y2="340" stroke="#16A34A" stroke-width="2"/>
+  <polygon points="118,337 110,344 122,343" fill="#16A34A"/>
+  <rect x="30" y="330" width="85" height="35" rx="8" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="2"/>
+  <text x="72" y="346" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">Glucose &amp;</text>
+  <text x="72" y="360" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">other organics</text>
+  <text x="175" y="355" text-anchor="middle" class="small-label" fill="#16A34A">1/6 TP exits</text>
+
+  <!-- 3. Regeneration label -->
+  <text x="160" y="275" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">3. Regeneration</text>
+  <!-- ATP used for regeneration -->
+  <line x1="100" y1="250" x2="155" y2="250" stroke="#D97706" stroke-width="1.5"/>
+  <polygon points="155,247 162,250 155,253" fill="#D97706"/>
+  <text x="80" y="248" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">ATP</text>
+  <text x="160" y="295" text-anchor="middle" class="small-label" fill="#1a73e8">5/6 TP used to</text>
+  <text x="160" y="308" text-anchor="middle" class="small-label" fill="#1a73e8">regenerate RuBP</text>
+</svg>
+</div>
 
 <div class="equation">3CO<sub>2</sub> + 9ATP + 6NADPH &rarr; G3P + 9ADP + 8P<sub>i</sub> + 6NADP<sup>+</sup> (one turn produces one TP; six turns for one glucose)</div>
 
@@ -132,6 +307,81 @@
     <li>Oxygen is the <strong>final electron acceptor</strong>: combines with H<sup>+</sup> and electrons to form water</li>
 </ol>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 370" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">Aerobic Respiration Pathway Overview</text>
+
+  <!-- GLYCOLYSIS -->
+  <rect x="30" y="50" width="120" height="70" rx="10" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="2"/>
+  <text x="90" y="72" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Glycolysis</text>
+  <text x="90" y="88" text-anchor="middle" class="small-label" fill="#6b7280">(Cytoplasm)</text>
+  <text x="90" y="103" text-anchor="middle" class="small-label" fill="#6b7280">Glucose → 2 Pyruvate</text>
+  <!-- Yields -->
+  <text x="90" y="138" text-anchor="middle" class="small-label" fill="#1a73e8">Net: 2 ATP</text>
+  <text x="90" y="152" text-anchor="middle" class="small-label" fill="#1a73e8">2 reduced NAD</text>
+
+  <!-- Arrow to Link -->
+  <line x1="150" y1="85" x2="195" y2="85" stroke="#D97706" stroke-width="2"/>
+  <polygon points="195,80 208,85 195,90" fill="#D97706"/>
+
+  <!-- LINK REACTION -->
+  <rect x="210" y="50" width="120" height="70" rx="10" fill="#D97706" opacity="0.12" stroke="#D97706" stroke-width="2"/>
+  <text x="270" y="72" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">Link Reaction</text>
+  <text x="270" y="88" text-anchor="middle" class="small-label" fill="#6b7280">(Matrix)</text>
+  <text x="270" y="103" text-anchor="middle" class="small-label" fill="#6b7280">Pyruvate → Acetyl CoA</text>
+  <!-- Yields -->
+  <text x="270" y="138" text-anchor="middle" class="small-label" fill="#D97706">2 reduced NAD</text>
+  <text x="270" y="152" text-anchor="middle" class="small-label" fill="#D97706">2 CO₂ released</text>
+
+  <!-- Arrow to Krebs -->
+  <line x1="330" y1="85" x2="375" y2="85" stroke="#16A34A" stroke-width="2"/>
+  <polygon points="375,80 388,85 375,90" fill="#16A34A"/>
+
+  <!-- KREBS CYCLE -->
+  <rect x="390" y="50" width="120" height="70" rx="10" fill="#16A34A" opacity="0.12" stroke="#16A34A" stroke-width="2"/>
+  <text x="450" y="72" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">Krebs Cycle</text>
+  <text x="450" y="88" text-anchor="middle" class="small-label" fill="#6b7280">(Matrix)</text>
+  <text x="450" y="103" text-anchor="middle" class="small-label" fill="#6b7280">Acetyl CoA oxidised</text>
+  <!-- Yields -->
+  <text x="450" y="138" text-anchor="middle" class="small-label" fill="#16A34A">6 reduced NAD</text>
+  <text x="450" y="152" text-anchor="middle" class="small-label" fill="#16A34A">2 reduced FAD</text>
+  <text x="450" y="166" text-anchor="middle" class="small-label" fill="#16A34A">2 ATP, 4 CO₂</text>
+
+  <!-- Arrow down to Oxidative Phosphorylation -->
+  <line x1="300" y1="170" x2="300" y2="205" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="295,205 300,218 305,205" fill="#DC2626"/>
+  <text x="350" y="195" text-anchor="middle" class="small-label" fill="#DC2626">Reduced NAD &amp; FAD</text>
+  <text x="350" y="208" text-anchor="middle" class="small-label" fill="#DC2626">carry H to ETC →</text>
+
+  <!-- OXIDATIVE PHOSPHORYLATION -->
+  <rect x="120" y="220" width="360" height="80" rx="12" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="2"/>
+  <text x="300" y="245" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Oxidative Phosphorylation (Electron Transport Chain)</text>
+  <text x="300" y="262" text-anchor="middle" class="small-label" fill="#6b7280">(Inner mitochondrial membrane / cristae)</text>
+  <text x="300" y="280" text-anchor="middle" class="small-label" fill="#1a1a2e">Electrons pass along chain → H⁺ pumped → chemiosmosis → ATP synthase</text>
+  <text x="300" y="295" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">~26-28 ATP produced</text>
+
+  <!-- O2 as final electron acceptor -->
+  <rect x="500" y="250" width="80" height="35" rx="6" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="540" y="268" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">O₂ = final</text>
+  <text x="540" y="281" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">e⁻ acceptor</text>
+  <line x1="480" y1="268" x2="500" y2="268" stroke="#1a73e8" stroke-width="1.5"/>
+
+  <!-- Water produced -->
+  <text x="540" y="300" text-anchor="middle" class="small-label" fill="#1a73e8">→ H₂O</text>
+
+  <!-- Total ATP box -->
+  <rect x="150" y="320" width="300" height="38" rx="8" fill="#16A34A" opacity="0.1" stroke="#16A34A" stroke-width="2"/>
+  <text x="300" y="338" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">Total theoretical yield: ~30-32 ATP per glucose</text>
+  <text x="300" y="353" text-anchor="middle" class="small-label" fill="#6b7280">(2 glycolysis + 2 link/Krebs + ~26-28 ETC)</text>
+</svg>
+</div>
+
 <div class="equation">Theoretical maximum ATP yield per glucose: ~30&ndash;32 ATP (actual yield varies)</div>
 
 <div class="exam-tip">If oxygen is absent, the ETC stops, reduced NAD/FAD cannot be reoxidised, Krebs cycle stops, link reaction stops. Only glycolysis continues (using anaerobic pathways to regenerate NAD). In animals: pyruvate &rarr; lactate. In yeast: pyruvate &rarr; ethanol + CO<sub>2</sub>.</div>
@@ -163,6 +413,71 @@
 
 <div class="equation">Net primary productivity (NPP) = Gross primary productivity (GPP) &minus; Respiration (R)</div>
 <div class="equation">Efficiency of transfer = (energy at trophic level n+1 / energy at trophic level n) &times; 100%</div>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">Ecological Pyramid of Energy</text>
+
+  <!-- Tertiary consumers (top, smallest) -->
+  <polygon points="245,55 355,55 370,95 230,95" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="300" y="72" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Tertiary consumers</text>
+  <text x="300" y="86" text-anchor="middle" class="small-label" fill="#DC2626">(top predators)</text>
+  <text x="450" y="78" text-anchor="start" class="small-label" fill="#DC2626">~1 kJ</text>
+
+  <!-- Secondary consumers -->
+  <polygon points="215,100 385,100 405,140 195,140" fill="#D97706" opacity="0.2" stroke="#D97706" stroke-width="1.5"/>
+  <text x="300" y="118" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Secondary consumers</text>
+  <text x="300" y="132" text-anchor="middle" class="small-label" fill="#D97706">(carnivores)</text>
+  <text x="450" y="123" text-anchor="start" class="small-label" fill="#D97706">~10 kJ</text>
+
+  <!-- Primary consumers -->
+  <polygon points="175,145 425,145 450,185 150,185" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="300" y="163" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Primary consumers</text>
+  <text x="300" y="177" text-anchor="middle" class="small-label" fill="#1a73e8">(herbivores)</text>
+  <text x="450" y="168" text-anchor="start" class="small-label" fill="#1a73e8">~100 kJ</text>
+
+  <!-- Producers (bottom, largest) -->
+  <polygon points="130,190 470,190 500,230 100,230" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="300" y="208" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">Producers</text>
+  <text x="300" y="222" text-anchor="middle" class="small-label" fill="#16A34A">(plants / autotrophs)</text>
+  <text x="450" y="213" text-anchor="start" class="small-label" fill="#16A34A">~1000 kJ</text>
+
+  <!-- Energy loss arrows on right -->
+  <line x1="420" y1="80" x2="440" y2="75" stroke="#6b7280" stroke-width="1"/>
+  <line x1="420" y1="125" x2="440" y2="120" stroke="#6b7280" stroke-width="1"/>
+  <line x1="420" y1="170" x2="440" y2="165" stroke="#6b7280" stroke-width="1"/>
+  <line x1="420" y1="215" x2="440" y2="210" stroke="#6b7280" stroke-width="1"/>
+
+  <!-- Energy loss explanation -->
+  <text x="80" y="75" text-anchor="middle" class="small-label" fill="#6b7280">~10% energy</text>
+  <text x="80" y="87" text-anchor="middle" class="small-label" fill="#6b7280">transferred per</text>
+  <text x="80" y="99" text-anchor="middle" class="small-label" fill="#6b7280">trophic level</text>
+
+  <!-- Loss arrows -->
+  <line x1="510" y1="130" x2="555" y2="130" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="555,126 568,130 555,134" fill="#DC2626"/>
+  <text x="540" y="150" text-anchor="middle" class="small-label" fill="#DC2626">Energy lost:</text>
+  <text x="540" y="163" text-anchor="middle" class="small-label" fill="#DC2626">Respiration</text>
+  <text x="540" y="176" text-anchor="middle" class="small-label" fill="#DC2626">Excretion</text>
+  <text x="540" y="189" text-anchor="middle" class="small-label" fill="#DC2626">Not consumed</text>
+
+  <!-- Sun -->
+  <circle cx="50" cy="215" r="18" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1.5"/>
+  <text x="50" y="219" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Sun</text>
+  <line x1="68" y1="215" x2="100" y2="215" stroke="#D97706" stroke-width="1.5"/>
+  <polygon points="100,211 110,215 100,219" fill="#D97706"/>
+
+  <!-- Bottom note -->
+  <text x="300" y="258" text-anchor="middle" class="small-label" fill="#1a1a2e">Energy decreases at each trophic level; always pyramid-shaped for energy</text>
+  <text x="300" y="272" text-anchor="middle" class="small-label" fill="#6b7280">NPP = GPP - R (net primary productivity = gross - respiration)</text>
+</svg>
+</div>
 
 <h3>Nutrient Cycling</h3>
 <p>Unlike energy (which flows through ecosystems), nutrients are <strong>recycled</strong>. Key cycles include carbon and nitrogen cycles.</p>
@@ -203,6 +518,95 @@
 
 <!-- ==================== MICROBIOLOGY ==================== -->
 <h2>4.5 Microbiology Techniques</h2>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 340" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">Prokaryotic (Bacterial) Cell Structure</text>
+
+  <!-- Capsule (outermost) -->
+  <ellipse cx="280" cy="185" rx="200" ry="130" fill="#D97706" opacity="0.06" stroke="#D97706" stroke-width="2" stroke-dasharray="6,3"/>
+
+  <!-- Cell wall -->
+  <ellipse cx="280" cy="185" rx="175" ry="110" fill="#16A34A" opacity="0.06" stroke="#16A34A" stroke-width="2.5"/>
+
+  <!-- Cell membrane -->
+  <ellipse cx="280" cy="185" rx="160" ry="97" fill="#1a73e8" opacity="0.05" stroke="#1a73e8" stroke-width="1.5"/>
+
+  <!-- Cytoplasm fill -->
+  <ellipse cx="280" cy="185" rx="155" ry="92" fill="#1a73e8" opacity="0.03"/>
+
+  <!-- Circular DNA (nucleoid) -->
+  <ellipse cx="250" cy="180" rx="50" ry="35" fill="none" stroke="#DC2626" stroke-width="2.5" opacity="0.6"/>
+  <text x="250" y="185" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Circular DNA</text>
+  <text x="250" y="198" text-anchor="middle" class="small-label" fill="#DC2626">(nucleoid)</text>
+
+  <!-- Plasmid -->
+  <circle cx="360" cy="155" r="15" fill="none" stroke="#DC2626" stroke-width="2" opacity="0.5"/>
+  <text x="360" y="159" text-anchor="middle" font-size="9" fill="#DC2626" font-family="system-ui" font-weight="bold">Plasmid</text>
+
+  <!-- Ribosomes (70S) -->
+  <circle cx="310" cy="220" r="3" fill="#1a73e8" opacity="0.5"/>
+  <circle cx="320" cy="230" r="3" fill="#1a73e8" opacity="0.5"/>
+  <circle cx="335" cy="222" r="3" fill="#1a73e8" opacity="0.5"/>
+  <circle cx="345" cy="215" r="3" fill="#1a73e8" opacity="0.5"/>
+  <circle cx="325" cy="210" r="3" fill="#1a73e8" opacity="0.5"/>
+  <circle cx="195" cy="230" r="3" fill="#1a73e8" opacity="0.5"/>
+  <circle cx="210" cy="225" r="3" fill="#1a73e8" opacity="0.5"/>
+  <circle cx="180" cy="220" r="3" fill="#1a73e8" opacity="0.5"/>
+
+  <!-- Flagellum -->
+  <path d="M 80,185 Q 60,175 45,190 Q 30,205 15,195 Q 0,185 -10,195" fill="none" stroke="#1a1a2e" stroke-width="2.5"/>
+
+  <!-- Pili -->
+  <line x1="280" y1="88" x2="280" y2="60" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="310" y1="90" x2="315" y2="62" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="250" y1="90" x2="245" y2="62" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="340" y1="95" x2="350" y2="68" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="220" y1="95" x2="210" y2="68" stroke="#6b7280" stroke-width="1.5"/>
+
+  <!-- Mesosome -->
+  <path d="M 380,185 Q 395,175 390,195 Q 385,215 395,205" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="415" y="195" text-anchor="start" class="small-label" fill="#1a73e8">Mesosome</text>
+
+  <!-- Labels with leader lines -->
+  <!-- Capsule -->
+  <line x1="475" y1="100" x2="510" y2="80" stroke="#D97706" stroke-width="1"/>
+  <text x="515" y="78" text-anchor="start" class="small-label" fill="#D97706" font-weight="bold">Capsule/slime layer</text>
+  <text x="515" y="92" text-anchor="start" class="small-label" fill="#D97706">(protection)</text>
+
+  <!-- Cell wall -->
+  <line x1="453" y1="130" x2="510" y2="115" stroke="#16A34A" stroke-width="1"/>
+  <text x="515" y="113" text-anchor="start" class="small-label" fill="#16A34A" font-weight="bold">Cell wall</text>
+  <text x="515" y="127" text-anchor="start" class="small-label" fill="#16A34A">(peptidoglycan)</text>
+
+  <!-- Cell membrane -->
+  <line x1="438" y1="155" x2="510" y2="148" stroke="#1a73e8" stroke-width="1"/>
+  <text x="515" y="148" text-anchor="start" class="small-label" fill="#1a73e8" font-weight="bold">Cell membrane</text>
+
+  <!-- Flagellum label -->
+  <line x1="15" y1="195" x2="15" y2="145" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="15" y="140" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Flagellum</text>
+  <text x="15" y="130" text-anchor="middle" class="small-label" fill="#1a1a2e">(locomotion)</text>
+
+  <!-- Pili label -->
+  <text x="280" y="52" text-anchor="middle" class="small-label" fill="#6b7280" font-weight="bold">Pili (attachment/conjugation)</text>
+
+  <!-- Ribosomes label -->
+  <line x1="340" y1="230" x2="510" y2="250" stroke="#1a73e8" stroke-width="1"/>
+  <text x="515" y="248" text-anchor="start" class="small-label" fill="#1a73e8" font-weight="bold">70S Ribosomes</text>
+  <text x="515" y="262" text-anchor="start" class="small-label" fill="#1a73e8">(smaller than 80S)</text>
+
+  <!-- Key differences note -->
+  <rect x="100" y="305" width="400" height="25" rx="6" fill="#1a1a2e" opacity="0.04" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="300" y="322" text-anchor="middle" class="small-label" fill="#1a1a2e">No membrane-bound organelles, no nucleus, 70S ribosomes, circular DNA + plasmids</text>
+</svg>
+</div>
 
 <h3>Aseptic Technique</h3>
 <p>Essential to prevent contamination of cultures and protect the worker:</p>

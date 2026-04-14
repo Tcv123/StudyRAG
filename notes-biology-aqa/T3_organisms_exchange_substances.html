@@ -64,6 +64,61 @@ Rate of diffusion ∝ (Surface area × Concentration difference) / Thickness of 
 <li><strong>Moist lining:</strong> Gases dissolve before diffusing across membranes</li>
 </ul>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 320" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
+  <text x="260" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">Gas Exchange at the Alveolus</text>
+  <!-- Alveolus -->
+  <circle cx="200" cy="170" r="100" fill="#1a73e8" opacity="0.05" stroke="#1a73e8" stroke-width="2"/>
+  <text x="200" y="100" text-anchor="middle" font-size="12" fill="#1a73e8" font-weight="bold">Alveolus</text>
+  <text x="200" y="115" text-anchor="middle" font-size="9" fill="#1a73e8">(air space)</text>
+  <!-- Alveolar wall label -->
+  <line x1="280" y1="120" x2="320" y2="95" stroke="#1a73e8" stroke-width="1" stroke-dasharray="3"/>
+  <text x="325" y="90" font-size="9" fill="#1a73e8">Alveolar epithelium</text>
+  <text x="325" y="102" font-size="9" fill="#1a73e8">(one cell thick)</text>
+  <!-- Capillary -->
+  <path d="M 340,140 Q 310,170 310,200 Q 310,230 340,260" fill="none" stroke="#DC2626" stroke-width="8" opacity="0.15"/>
+  <path d="M 340,140 Q 310,170 310,200 Q 310,230 340,260" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <text x="370" y="145" font-size="10" fill="#DC2626" font-weight="bold">Capillary</text>
+  <!-- Capillary wall label -->
+  <line x1="320" y1="200" x2="365" y2="200" stroke="#DC2626" stroke-width="1" stroke-dasharray="3"/>
+  <text x="370" y="195" font-size="9" fill="#DC2626">Capillary endothelium</text>
+  <text x="370" y="207" font-size="9" fill="#DC2626">(one cell thick)</text>
+  <!-- Blood flow arrows -->
+  <line x1="355" y1="140" x2="355" y2="125" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowT3r)"/>
+  <defs>
+    <marker id="arrowT3r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/></marker>
+    <marker id="arrowT3b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8"/></marker>
+    <marker id="arrowT3g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker>
+  </defs>
+  <text x="380" y="130" font-size="9" fill="#DC2626">Deoxygenated</text>
+  <text x="380" y="142" font-size="9" fill="#DC2626">blood in</text>
+  <line x1="355" y1="260" x2="355" y2="275" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowT3r)"/>
+  <text x="380" y="272" font-size="9" fill="#DC2626">Oxygenated</text>
+  <text x="380" y="284" font-size="9" fill="#DC2626">blood out</text>
+  <!-- O2 diffusion (into blood) -->
+  <line x1="230" y1="155" x2="295" y2="170" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowT3b)"/>
+  <text x="240" y="148" font-size="11" fill="#1a73e8" font-weight="bold">O&#8322;</text>
+  <line x1="230" y1="175" x2="295" y2="185" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowT3b)"/>
+  <!-- CO2 diffusion (into alveolus) -->
+  <line x1="295" y1="210" x2="230" y2="200" stroke="#DC2626" stroke-width="2" marker-end="url(#arrowT3r2)"/>
+  <defs><marker id="arrowT3r2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/></marker></defs>
+  <text x="240" y="218" font-size="11" fill="#DC2626" font-weight="bold">CO&#8322;</text>
+  <line x1="295" y1="225" x2="230" y2="218" stroke="#DC2626" stroke-width="2" marker-end="url(#arrowT3r2)"/>
+  <!-- Diffusion distance -->
+  <line x1="295" y1="240" x2="310" y2="240" stroke="#D97706" stroke-width="1.5"/>
+  <line x1="295" y1="235" x2="295" y2="245" stroke="#D97706" stroke-width="1.5"/>
+  <line x1="310" y1="235" x2="310" y2="245" stroke="#D97706" stroke-width="1.5"/>
+  <text x="302" y="255" text-anchor="middle" font-size="8" fill="#D97706">~0.5 um</text>
+  <!-- Moist lining -->
+  <text x="200" y="250" text-anchor="middle" font-size="9" fill="#16A34A">Moist lining (gases dissolve)</text>
+  <!-- Key adaptations box -->
+  <rect x="20" y="270" width="240" height="42" rx="6" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1"/>
+  <text x="30" y="285" font-size="9" fill="#16A34A" font-weight="bold">Key adaptations:</text>
+  <text x="30" y="298" font-size="9" fill="#16A34A">Large SA | Thin walls | Rich blood supply | Ventilation</text>
+</svg>
+</div>
+
 <h3>Ventilation Mechanism</h3>
 <table>
 <tr><th>Stage</th><th>Inspiration</th><th>Expiration</th></tr>
@@ -78,6 +133,54 @@ Rate of diffusion ∝ (Surface area × Concentration difference) / Thickness of 
 <p>Fish use a countercurrent exchange system in their gills. Water flows over the gill lamellae in the opposite direction to blood flow. This maintains a concentration gradient along the entire length of the lamella, allowing up to 80% of dissolved oxygen to be extracted from the water.</p>
 
 <p>If blood and water flowed in the same direction (parallel flow), equilibrium would be reached halfway along, and only about 50% extraction would be possible.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 280" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
+  <text x="260" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">Countercurrent Exchange in Fish Gills</text>
+  <!-- Gill lamella background -->
+  <rect x="60" y="50" width="400" height="180" rx="8" fill="#1a73e8" opacity="0.03"/>
+  <text x="260" y="48" text-anchor="middle" font-size="10" fill="#1a1a2e" opacity="0.5">Gill lamella</text>
+  <!-- Water flow (top) - right to left -->
+  <rect x="80" y="65" width="360" height="50" rx="6" fill="#1a73e8" opacity="0.06" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="260" y="82" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a73e8">Water flow</text>
+  <line x1="420" y1="95" x2="100" y2="95" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowT3water)"/>
+  <defs><marker id="arrowT3water" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8"/></marker></defs>
+  <!-- O2 percentages in water -->
+  <text x="430" y="95" font-size="10" fill="#1a73e8" font-weight="bold">100%</text>
+  <text x="345" y="95" font-size="9" fill="#1a73e8">80%</text>
+  <text x="260" y="95" font-size="9" fill="#1a73e8">60%</text>
+  <text x="175" y="95" font-size="9" fill="#1a73e8">40%</text>
+  <text x="80" y="95" font-size="10" fill="#1a73e8" font-weight="bold">20%</text>
+  <!-- Diffusion arrows (O2 from water to blood) -->
+  <line x1="400" y1="118" x2="400" y2="140" stroke="#16A34A" stroke-width="1.5" marker-end="url(#arrowT3diff)"/>
+  <line x1="315" y1="118" x2="315" y2="140" stroke="#16A34A" stroke-width="1.5" marker-end="url(#arrowT3diff)"/>
+  <line x1="230" y1="118" x2="230" y2="140" stroke="#16A34A" stroke-width="1.5" marker-end="url(#arrowT3diff)"/>
+  <line x1="145" y1="118" x2="145" y2="140" stroke="#16A34A" stroke-width="1.5" marker-end="url(#arrowT3diff)"/>
+  <defs><marker id="arrowT3diff" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker></defs>
+  <text x="470" y="135" font-size="9" fill="#16A34A" font-weight="bold">O&#8322;</text>
+  <text x="470" y="147" font-size="9" fill="#16A34A">diffuses</text>
+  <!-- Exchange surface -->
+  <line x1="80" y1="120" x2="440" y2="120" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="80" y1="155" x2="440" y2="155" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4"/>
+  <text x="50" y="140" text-anchor="middle" font-size="8" fill="#1a1a2e" transform="rotate(-90,50,140)">Exchange surface</text>
+  <!-- Blood flow (bottom) - left to right -->
+  <rect x="80" y="160" width="360" height="50" rx="6" fill="#DC2626" opacity="0.06" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="260" y="177" text-anchor="middle" font-weight="bold" font-size="11" fill="#DC2626">Blood flow</text>
+  <line x1="100" y1="192" x2="420" y2="192" stroke="#DC2626" stroke-width="2" marker-end="url(#arrowT3blood)"/>
+  <defs><marker id="arrowT3blood" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/></marker></defs>
+  <!-- O2 percentages in blood -->
+  <text x="80" y="192" font-size="10" fill="#DC2626" font-weight="bold">0%</text>
+  <text x="170" y="192" font-size="9" fill="#DC2626">20%</text>
+  <text x="255" y="192" font-size="9" fill="#DC2626">40%</text>
+  <text x="340" y="192" font-size="9" fill="#DC2626">60%</text>
+  <text x="430" y="192" font-size="10" fill="#DC2626" font-weight="bold">80%</text>
+  <!-- Gradient maintained callout -->
+  <rect x="100" y="230" width="320" height="40" rx="6" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1"/>
+  <text x="260" y="248" text-anchor="middle" font-size="10" fill="#16A34A" font-weight="bold">Concentration gradient maintained along entire length</text>
+  <text x="260" y="262" text-anchor="middle" font-size="10" fill="#16A34A">Up to 80% O&#8322; extraction efficiency</text>
+</svg>
+</div>
 
 <h3>Gas Exchange in Insects (Tracheal System)</h3>
 <p>Insects have a system of air-filled tubes (tracheae) that branch into smaller tracheoles, delivering oxygen directly to respiring cells. Air enters through spiracles on the body surface. There is no oxygen-carrying blood — gas exchange occurs directly between tracheole fluid and cells by diffusion. Ventilation is assisted by body movements that compress and expand the thorax and abdomen.</p>
@@ -148,6 +251,69 @@ Hb + 4O<sub>2</sub> ⇌ HbO<sub>8</sub> (oxyhaemoglobin)<br>
 <tr><td>Coronary arteries</td><td>Supply heart muscle with oxygenated blood</td></tr>
 </table>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 480 420" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
+  <text x="240" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">Heart Cross-Section</text>
+  <!-- Heart outline -->
+  <path d="M 140,60 Q 80,60 80,130 L 80,250 Q 80,340 240,390 Q 400,340 400,250 L 400,130 Q 400,60 340,60 Z" fill="#DC2626" opacity="0.04" stroke="#DC2626" stroke-width="2.5"/>
+  <!-- Septum -->
+  <line x1="240" y1="80" x2="240" y2="370" stroke="#DC2626" stroke-width="3" opacity="0.3"/>
+  <text x="240" y="400" text-anchor="middle" font-size="9" fill="#DC2626">Septum</text>
+  <!-- Right atrium (viewer's left) -->
+  <rect x="100" y="80" width="130" height="90" rx="8" fill="#1a73e8" opacity="0.08" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="165" y="115" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a73e8">Right</text>
+  <text x="165" y="130" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a73e8">Atrium</text>
+  <text x="165" y="145" text-anchor="middle" font-size="9" fill="#1a73e8">(deoxygenated)</text>
+  <!-- Left atrium (viewer's right) -->
+  <rect x="250" y="80" width="130" height="90" rx="8" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="315" y="115" text-anchor="middle" font-weight="bold" font-size="11" fill="#DC2626">Left</text>
+  <text x="315" y="130" text-anchor="middle" font-weight="bold" font-size="11" fill="#DC2626">Atrium</text>
+  <text x="315" y="145" text-anchor="middle" font-size="9" fill="#DC2626">(oxygenated)</text>
+  <!-- AV valves -->
+  <path d="M 130,175 L 165,185 L 200,175" fill="none" stroke="#D97706" stroke-width="2"/>
+  <text x="165" y="200" text-anchor="middle" font-size="8" fill="#D97706">Tricuspid valve</text>
+  <path d="M 280,175 L 315,185 L 350,175" fill="none" stroke="#D97706" stroke-width="2"/>
+  <text x="315" y="200" text-anchor="middle" font-size="8" fill="#D97706">Bicuspid valve</text>
+  <!-- Right ventricle -->
+  <path d="M 100,210 L 100,310 Q 100,360 170,370 L 230,370 L 230,210 Z" fill="#1a73e8" opacity="0.06" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="165" y="275" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a73e8">Right</text>
+  <text x="165" y="290" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a73e8">Ventricle</text>
+  <text x="165" y="310" text-anchor="middle" font-size="8" fill="#1a73e8">(thinner wall)</text>
+  <!-- Left ventricle -->
+  <path d="M 250,210 L 250,370 L 310,370 Q 380,360 380,310 L 380,210 Z" fill="#DC2626" opacity="0.06" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="315" y="275" text-anchor="middle" font-weight="bold" font-size="11" fill="#DC2626">Left</text>
+  <text x="315" y="290" text-anchor="middle" font-weight="bold" font-size="11" fill="#DC2626">Ventricle</text>
+  <text x="315" y="310" text-anchor="middle" font-size="8" fill="#DC2626">(thicker wall)</text>
+  <!-- Thicker left wall indicator -->
+  <rect x="375" y="220" width="12" height="130" rx="3" fill="#DC2626" opacity="0.15"/>
+  <rect x="92" y="220" width="6" height="120" rx="2" fill="#1a73e8" opacity="0.15"/>
+  <!-- Vessels -->
+  <!-- Vena cava (into right atrium) -->
+  <path d="M 50,90 L 100,90 L 100,110" fill="none" stroke="#1a73e8" stroke-width="3" opacity="0.5"/>
+  <text x="40" y="80" font-size="9" fill="#1a73e8" font-weight="bold">Vena</text>
+  <text x="40" y="92" font-size="9" fill="#1a73e8" font-weight="bold">cava</text>
+  <!-- Pulmonary artery (from right ventricle) -->
+  <path d="M 140,210 L 140,60 L 100,40" fill="none" stroke="#1a73e8" stroke-width="3" opacity="0.5"/>
+  <text x="80" y="38" font-size="9" fill="#1a73e8" font-weight="bold">Pulmonary</text>
+  <text x="80" y="50" font-size="9" fill="#1a73e8" font-weight="bold">artery</text>
+  <!-- Semilunar valve -->
+  <path d="M 133,68 L 140,60 L 147,68" fill="none" stroke="#D97706" stroke-width="1.5"/>
+  <!-- Pulmonary vein (into left atrium) -->
+  <path d="M 430,90 L 380,90 L 380,110" fill="none" stroke="#DC2626" stroke-width="3" opacity="0.5"/>
+  <text x="435" y="80" font-size="9" fill="#DC2626" font-weight="bold">Pulmonary</text>
+  <text x="435" y="92" font-size="9" fill="#DC2626" font-weight="bold">vein</text>
+  <!-- Aorta (from left ventricle) -->
+  <path d="M 340,210 L 340,60 L 380,40" fill="none" stroke="#DC2626" stroke-width="4" opacity="0.5"/>
+  <text x="390" y="38" font-size="9" fill="#DC2626" font-weight="bold">Aorta</text>
+  <!-- Semilunar valve -->
+  <path d="M 333,68 L 340,60 L 347,68" fill="none" stroke="#D97706" stroke-width="1.5"/>
+  <!-- Coronary artery -->
+  <path d="M 340,80 Q 390,150 360,230" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4"/>
+  <text x="405" y="170" font-size="8" fill="#D97706">Coronary artery</text>
+</svg>
+</div>
+
 <h3>Cardiac Cycle</h3>
 <ol>
 <li><strong>Atrial systole:</strong> Atria contract, pushing blood through AV valves into ventricles.</li>
@@ -193,6 +359,66 @@ Hb + 4O<sub>2</sub> ⇌ HbO<sub>8</sub> (oxyhaemoglobin)<br>
 <li>Cohesion (hydrogen bonds between water molecules) and adhesion (attraction to xylem walls) maintain a continuous water column under tension.</li>
 <li>Tension is transmitted down to roots, pulling water from the soil.</li>
 </ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 400 450" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
+  <text x="200" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#16A34A">Transpiration Stream</text>
+  <!-- Atmosphere -->
+  <rect x="120" y="35" width="160" height="40" rx="8" fill="#1a73e8" opacity="0.06" stroke="#1a73e8" stroke-width="1"/>
+  <text x="200" y="55" text-anchor="middle" font-size="10" fill="#1a73e8">Atmosphere</text>
+  <text x="200" y="68" text-anchor="middle" font-size="9" fill="#1a73e8">(low water potential)</text>
+  <!-- Evaporation arrow -->
+  <line x1="200" y1="75" x2="200" y2="50" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrowTup)"/>
+  <defs><marker id="arrowTup" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8"/></marker></defs>
+  <text x="280" y="70" font-size="9" fill="#1a73e8">Water vapour</text>
+  <text x="280" y="82" font-size="9" fill="#1a73e8">through stomata</text>
+  <!-- Leaf -->
+  <path d="M 120,100 Q 200,80 280,100 Q 260,130 200,140 Q 140,130 120,100 Z" fill="#16A34A" opacity="0.12" stroke="#16A34A" stroke-width="2"/>
+  <text x="200" y="118" text-anchor="middle" font-weight="bold" font-size="11" fill="#16A34A">Leaf</text>
+  <!-- Stomata -->
+  <ellipse cx="170" cy="132" rx="8" ry="4" fill="none" stroke="#16A34A" stroke-width="1.5"/>
+  <ellipse cx="230" cy="132" rx="8" ry="4" fill="none" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="310" y="132" font-size="9" fill="#16A34A">Stomata</text>
+  <line x1="295" y1="132" x2="240" y2="132" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="3"/>
+  <!-- Mesophyll evaporation label -->
+  <text x="80" y="108" font-size="9" fill="#16A34A">Evaporation from</text>
+  <text x="80" y="120" font-size="9" fill="#16A34A">mesophyll cells</text>
+  <!-- Stem with xylem -->
+  <rect x="185" y="145" width="30" height="180" rx="4" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="1.5"/>
+  <text x="250" y="230" font-size="10" fill="#D97706" font-weight="bold">Stem</text>
+  <!-- Xylem vessel inside stem -->
+  <rect x="193" y="150" width="14" height="170" rx="2" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="255" y="245" font-size="9" fill="#1a73e8">Xylem vessel</text>
+  <line x1="248" y1="245" x2="210" y2="245" stroke="#1a73e8" stroke-width="0.8" stroke-dasharray="3"/>
+  <!-- Water column arrows going up -->
+  <line x1="200" y1="310" x2="200" y2="160" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowTup)"/>
+  <!-- Cohesion-tension labels -->
+  <rect x="270" y="260" width="115" height="55" rx="6" fill="#1a73e8" opacity="0.06" stroke="#1a73e8" stroke-width="1"/>
+  <text x="327" y="278" text-anchor="middle" font-size="9" fill="#1a73e8" font-weight="bold">Cohesion-tension:</text>
+  <text x="327" y="292" text-anchor="middle" font-size="9" fill="#1a73e8">H-bonds between</text>
+  <text x="327" y="305" text-anchor="middle" font-size="9" fill="#1a73e8">water molecules</text>
+  <!-- Root system -->
+  <path d="M 200,330 L 200,380 M 200,350 L 160,390 M 200,350 L 240,390 M 160,390 L 140,410 M 160,390 L 175,415 M 240,390 L 225,415 M 240,390 L 260,410" fill="none" stroke="#D97706" stroke-width="2.5" opacity="0.5"/>
+  <text x="200" y="440" text-anchor="middle" font-weight="bold" font-size="11" fill="#D97706">Roots</text>
+  <!-- Root hair cells -->
+  <line x1="140" y1="410" x2="115" y2="420" stroke="#D97706" stroke-width="1"/>
+  <line x1="140" y1="410" x2="120" y2="405" stroke="#D97706" stroke-width="1"/>
+  <line x1="260" y1="410" x2="280" y2="420" stroke="#D97706" stroke-width="1"/>
+  <line x1="260" y1="410" x2="275" y2="400" stroke="#D97706" stroke-width="1"/>
+  <text x="310" y="405" font-size="9" fill="#D97706">Root hair cells</text>
+  <!-- Water uptake from soil -->
+  <text x="80" y="390" font-size="9" fill="#1a73e8">Water enters by</text>
+  <text x="80" y="403" font-size="9" fill="#1a73e8">osmosis from soil</text>
+  <line x1="110" y1="410" x2="135" y2="410" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrowTright)"/>
+  <defs><marker id="arrowTright" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8"/></marker></defs>
+  <!-- Transpiration pull label -->
+  <rect x="15" y="200" width="120" height="55" rx="6" fill="#DC2626" opacity="0.06" stroke="#DC2626" stroke-width="1"/>
+  <text x="75" y="218" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="bold">Transpiration pull:</text>
+  <text x="75" y="232" text-anchor="middle" font-size="9" fill="#DC2626">Water loss creates</text>
+  <text x="75" y="246" text-anchor="middle" font-size="9" fill="#DC2626">tension, pulling water up</text>
+</svg>
+</div>
 
 <h3>Factors Affecting Transpiration Rate</h3>
 <table>

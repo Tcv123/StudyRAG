@@ -45,11 +45,161 @@
   6CO<sub>2</sub> + 6H<sub>2</sub>O &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>
 </div>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Photosynthesis Overview</text>
+  <defs>
+    <marker id="arrowP5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/>
+    </marker>
+    <marker id="arrowP5b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8"/>
+    </marker>
+  </defs>
+  <!-- Light-dependent reactions box -->
+  <rect x="30" y="45" width="250" height="200" rx="10" fill="#D97706" opacity="0.06" stroke="#D97706" stroke-width="1.5"/>
+  <text x="155" y="65" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#D97706">Light-Dependent Reactions</text>
+  <text x="155" y="78" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Thylakoid membranes</text>
+  <!-- Sunlight input -->
+  <g transform="translate(55,105)">
+    <circle r="16" fill="#D97706" opacity="0.25" stroke="#D97706" stroke-width="1"/>
+    <line x1="-22" y1="0" x2="-28" y2="0" stroke="#D97706" stroke-width="1.5"/>
+    <line x1="22" y1="0" x2="28" y2="0" stroke="#D97706" stroke-width="1.5"/>
+    <line x1="0" y1="-22" x2="0" y2="-28" stroke="#D97706" stroke-width="1.5"/>
+    <line x1="15" y1="-15" x2="20" y2="-20" stroke="#D97706" stroke-width="1.5"/>
+    <line x1="-15" y1="-15" x2="-20" y2="-20" stroke="#D97706" stroke-width="1.5"/>
+    <text y="4" text-anchor="middle" font-family="system-ui" font-size="8" font-weight="bold" fill="#D97706">Light</text>
+  </g>
+  <!-- Water input -->
+  <text x="55" y="150" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">H₂O</text>
+  <path d="M75,147 L100,140" fill="none" stroke="#1a73e8" stroke-width="1" marker-end="url(#arrowP5b)"/>
+  <!-- PSII and PSI -->
+  <rect x="105" y="95" width="55" height="35" rx="5" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1"/>
+  <text x="132" y="110" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">PSII</text>
+  <text x="132" y="122" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">Photolysis</text>
+  <path d="M160,112 L175,112" fill="none" stroke="#16A34A" stroke-width="1" marker-end="url(#arrowP5)"/>
+  <text x="170" y="105" font-family="system-ui" font-size="7" fill="#16A34A">ETC</text>
+  <rect x="180" y="95" width="55" height="35" rx="5" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1"/>
+  <text x="207" y="110" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">PSI</text>
+  <text x="207" y="122" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">NADP⁺ reduced</text>
+  <!-- Products of light reactions -->
+  <!-- O2 output -->
+  <text x="120" y="155" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">O₂</text>
+  <path d="M115,148 L115,135" fill="none" stroke="#DC2626" stroke-width="1"/>
+  <text x="120" y="167" font-family="system-ui" font-size="8" fill="#666">(waste)</text>
+  <!-- ATP -->
+  <rect x="165" y="145" width="40" height="20" rx="10" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="1"/>
+  <text x="185" y="159" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">ATP</text>
+  <!-- NADPH -->
+  <rect x="165" y="175" width="55" height="20" rx="10" fill="#7C3AED" opacity="0.15" stroke="#7C3AED" stroke-width="1"/>
+  <text x="192" y="189" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#7C3AED">NADPH</text>
+  <!-- Chemiosmosis label -->
+  <text x="100" y="210" font-family="system-ui" font-size="8" fill="#D97706">H⁺ gradient → ATP synthase</text>
+  <text x="100" y="222" font-family="system-ui" font-size="8" fill="#D97706">= Photophosphorylation</text>
+  <!-- Arrows to Calvin cycle -->
+  <path d="M220,155 L310,155" fill="none" stroke="#DC2626" stroke-width="1.2" marker-end="url(#arrowP5)"/>
+  <path d="M225,185 L310,175" fill="none" stroke="#7C3AED" stroke-width="1.2" marker-end="url(#arrowP5)"/>
+  <!-- Calvin cycle box -->
+  <rect x="310" y="45" width="260" height="200" rx="10" fill="#16A34A" opacity="0.06" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="440" y="65" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Calvin Cycle (Light-Independent)</text>
+  <text x="440" y="78" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Stroma of chloroplast</text>
+  <!-- CO2 input -->
+  <text x="340" y="98" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">CO₂</text>
+  <path d="M358,95 L385,105" fill="none" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowP5)"/>
+  <!-- Calvin cycle circle -->
+  <circle cx="440" cy="148" r="48" fill="none" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- RuBP -->
+  <text x="440" y="105" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">RuBP (5C)</text>
+  <!-- Carbon fixation -->
+  <text x="505" y="118" font-family="system-ui" font-size="8" fill="#1a1a2e">RuBisCO</text>
+  <!-- GP -->
+  <text x="500" y="148" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">GP (3C)</text>
+  <!-- G3P -->
+  <text x="440" y="195" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">G3P (3C)</text>
+  <!-- Reduction label -->
+  <text x="510" y="172" font-family="system-ui" font-size="7" fill="#7C3AED">ATP + NADPH</text>
+  <!-- Regeneration label -->
+  <text x="380" y="175" font-family="system-ui" font-size="7" fill="#16A34A">ATP</text>
+  <text x="375" y="130" font-family="system-ui" font-size="7" fill="#16A34A">Regeneration</text>
+  <!-- Arrows around cycle -->
+  <path d="M465,108 Q500,120 498,140" fill="none" stroke="#16A34A" stroke-width="1" marker-end="url(#arrowP5)"/>
+  <path d="M495,155 Q490,180 460,190" fill="none" stroke="#16A34A" stroke-width="1" marker-end="url(#arrowP5)"/>
+  <path d="M420,192 Q385,180 385,148 Q385,120 415,108" fill="none" stroke="#16A34A" stroke-width="1" marker-end="url(#arrowP5)"/>
+  <!-- Output: Glucose -->
+  <path d="M440,198 L440,218" fill="none" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrowP5)"/>
+  <rect x="400" y="220" width="80" height="22" rx="11" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="1"/>
+  <text x="440" y="235" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Glucose</text>
+  <text x="500" y="235" font-family="system-ui" font-size="8" fill="#666">(1/6 of G3P)</text>
+</svg>
+</div>
+
 <p>Photosynthesis occurs in two stages: the light-dependent reactions (in the thylakoid membranes) and the light-independent reactions (in the stroma of chloroplasts).</p>
 
 <h3>Chloroplast Structure</h3>
 
 <p>Chloroplasts are surrounded by a double membrane (envelope). Internally, they contain an extensive system of thylakoid membranes arranged in stacks called grana (singular: granum), connected by intergranal lamellae. The thylakoid membranes contain photosynthetic pigments (chlorophyll a, chlorophyll b, carotenoids), electron carriers, and ATP synthase enzymes. The stroma is the fluid-filled matrix surrounding the grana, containing enzymes for the Calvin cycle, DNA, ribosomes, starch grains, and lipid droplets.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Chloroplast Structure</text>
+  <!-- Outer membrane -->
+  <ellipse cx="300" cy="140" rx="250" ry="100" fill="#16A34A" opacity="0.06" stroke="#16A34A" stroke-width="2"/>
+  <!-- Inner membrane -->
+  <ellipse cx="300" cy="140" rx="240" ry="92" fill="#16A34A" opacity="0.04" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <!-- Stroma label -->
+  <text x="460" y="80" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Stroma</text>
+  <text x="460" y="93" font-family="system-ui" font-size="8" fill="#666">Calvin cycle enzymes</text>
+  <text x="460" y="104" font-family="system-ui" font-size="8" fill="#666">DNA, ribosomes</text>
+  <!-- Granum 1 (stack of thylakoids) -->
+  <g transform="translate(150,120)">
+    <rect x="-35" y="-30" width="70" height="10" rx="5" fill="#16A34A" opacity="0.4" stroke="#16A34A" stroke-width="0.8"/>
+    <rect x="-35" y="-18" width="70" height="10" rx="5" fill="#16A34A" opacity="0.45" stroke="#16A34A" stroke-width="0.8"/>
+    <rect x="-35" y="-6" width="70" height="10" rx="5" fill="#16A34A" opacity="0.5" stroke="#16A34A" stroke-width="0.8"/>
+    <rect x="-35" y="6" width="70" height="10" rx="5" fill="#16A34A" opacity="0.45" stroke="#16A34A" stroke-width="0.8"/>
+    <rect x="-35" y="18" width="70" height="10" rx="5" fill="#16A34A" opacity="0.4" stroke="#16A34A" stroke-width="0.8"/>
+    <text y="42" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Granum</text>
+    <text y="53" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">(stack of thylakoids)</text>
+  </g>
+  <!-- Granum 2 -->
+  <g transform="translate(330,135)">
+    <rect x="-30" y="-24" width="60" height="10" rx="5" fill="#16A34A" opacity="0.4" stroke="#16A34A" stroke-width="0.8"/>
+    <rect x="-30" y="-12" width="60" height="10" rx="5" fill="#16A34A" opacity="0.45" stroke="#16A34A" stroke-width="0.8"/>
+    <rect x="-30" y="0" width="60" height="10" rx="5" fill="#16A34A" opacity="0.5" stroke="#16A34A" stroke-width="0.8"/>
+    <rect x="-30" y="12" width="60" height="10" rx="5" fill="#16A34A" opacity="0.45" stroke="#16A34A" stroke-width="0.8"/>
+    <text y="35" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Granum</text>
+  </g>
+  <!-- Intergranal lamellae connecting grana -->
+  <path d="M185,108 Q240,95 300,111" fill="none" stroke="#16A34A" stroke-width="2" opacity="0.4"/>
+  <path d="M185,120 Q240,107 300,123" fill="none" stroke="#16A34A" stroke-width="2" opacity="0.4"/>
+  <!-- Starch grain -->
+  <ellipse cx="250" cy="185" rx="14" ry="10" fill="#D97706" opacity="0.2" stroke="#D97706" stroke-width="1"/>
+  <text x="250" y="188" text-anchor="middle" font-family="system-ui" font-size="7" fill="#D97706">Starch</text>
+  <!-- Lipid droplet -->
+  <circle cx="390" cy="185" r="8" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="0.8"/>
+  <text x="390" y="188" text-anchor="middle" font-family="system-ui" font-size="6" fill="#D97706">Lipid</text>
+  <!-- DNA -->
+  <path d="M200,195 Q205,190 210,195 Q215,200 220,195" fill="none" stroke="#7C3AED" stroke-width="1.5"/>
+  <text x="210" y="210" text-anchor="middle" font-family="system-ui" font-size="7" fill="#7C3AED">DNA</text>
+  <!-- 70S Ribosome dots -->
+  <circle cx="280" cy="200" r="2" fill="#1a1a2e" opacity="0.3"/>
+  <circle cx="290" cy="198" r="2" fill="#1a1a2e" opacity="0.3"/>
+  <circle cx="285" cy="205" r="2" fill="#1a1a2e" opacity="0.3"/>
+  <text x="285" y="218" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">70S ribosomes</text>
+  <!-- Annotations -->
+  <line x1="550" y1="140" x2="545" y2="140" stroke="#1a1a2e" stroke-width="0.6"/>
+  <line x1="545" y1="140" x2="570" y2="120" stroke="#1a1a2e" stroke-width="0.6"/>
+  <text x="555" y="116" font-family="system-ui" font-size="8" fill="#16A34A">Outer membrane</text>
+  <line x1="540" y1="142" x2="570" y2="150" stroke="#1a1a2e" stroke-width="0.6"/>
+  <text x="555" y="160" font-family="system-ui" font-size="8" fill="#16A34A">Inner membrane</text>
+  <!-- Intergranal lamellae label -->
+  <line x1="240" y1="100" x2="240" y2="72" stroke="#1a1a2e" stroke-width="0.6"/>
+  <text x="240" y="68" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">Intergranal lamellae</text>
+  <!-- Thylakoid space label -->
+  <line x1="155" y1="98" x2="100" y2="72" stroke="#1a1a2e" stroke-width="0.6"/>
+  <text x="100" y="65" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Thylakoid lumen</text>
+  <text x="100" y="75" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">(H⁺ accumulates here)</text>
+</svg>
+</div>
 
 <h3>Light-Dependent Reactions</h3>
 
@@ -98,6 +248,67 @@
   <li><strong>Death:</strong> Dead organisms and waste are broken down by decomposers (bacteria and fungi), releasing energy as heat.</li>
 </ul>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 230" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="20" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Energy Flow Through an Ecosystem</text>
+  <defs>
+    <marker id="arrowE5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <!-- Sun -->
+  <circle cx="40" cy="90" r="22" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1.5"/>
+  <text x="40" y="94" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">Sun</text>
+  <path d="M62,90 L85,90" fill="none" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrowE5)"/>
+  <!-- Producers bar -->
+  <rect x="90" y="50" width="90" height="80" rx="6" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="135" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Producers</text>
+  <text x="135" y="93" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Plants/algae</text>
+  <text x="135" y="105" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">100%</text>
+  <path d="M180,90 L205,90" fill="none" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrowE5)"/>
+  <text x="192" y="84" font-family="system-ui" font-size="7" fill="#D97706">~10%</text>
+  <!-- Primary consumers -->
+  <rect x="210" y="58" width="85" height="64" rx="6" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="252" y="82" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Primary</text>
+  <text x="252" y="94" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Consumers</text>
+  <text x="252" y="107" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Herbivores</text>
+  <path d="M295,90 L318,90" fill="none" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrowE5)"/>
+  <text x="306" y="84" font-family="system-ui" font-size="7" fill="#D97706">~10%</text>
+  <!-- Secondary consumers -->
+  <rect x="323" y="64" width="80" height="52" rx="6" fill="#DC2626" opacity="0.1" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="363" y="84" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Secondary</text>
+  <text x="363" y="96" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Consumers</text>
+  <text x="363" y="108" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Carnivores</text>
+  <path d="M403,90 L425,90" fill="none" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrowE5)"/>
+  <text x="414" y="84" font-family="system-ui" font-size="7" fill="#D97706">~10%</text>
+  <!-- Tertiary consumers -->
+  <rect x="430" y="70" width="72" height="40" rx="6" fill="#7C3AED" opacity="0.1" stroke="#7C3AED" stroke-width="1.5"/>
+  <text x="466" y="86" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#7C3AED">Tertiary</text>
+  <text x="466" y="98" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#7C3AED">Consumers</text>
+  <!-- Heat loss arrows going up from each level -->
+  <path d="M135,50 L135,38" fill="none" stroke="#DC2626" stroke-width="1" marker-end="url(#arrowE5)"/>
+  <path d="M252,58 L252,44" fill="none" stroke="#DC2626" stroke-width="1" marker-end="url(#arrowE5)"/>
+  <path d="M363,64 L363,50" fill="none" stroke="#DC2626" stroke-width="1" marker-end="url(#arrowE5)"/>
+  <path d="M466,70 L466,56" fill="none" stroke="#DC2626" stroke-width="1" marker-end="url(#arrowE5)"/>
+  <text x="300" y="42" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Heat lost through respiration at each trophic level</text>
+  <!-- Decomposers at bottom -->
+  <rect x="140" y="150" width="320" height="35" rx="6" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="1.2"/>
+  <text x="300" y="172" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Decomposers (bacteria, fungi)</text>
+  <!-- Arrows from each level to decomposers -->
+  <path d="M135,130 L200,150" fill="none" stroke="#D97706" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <path d="M252,122 L270,150" fill="none" stroke="#D97706" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <path d="M363,116 L350,150" fill="none" stroke="#D97706" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <path d="M466,110 L430,150" fill="none" stroke="#D97706" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="300" y="145" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">Dead organisms + waste (detritus)</text>
+  <!-- Nutrients recycled -->
+  <path d="M460,172 Q530,172 530,130 Q530,90 510,90" fill="none" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#arrowE5)"/>
+  <text x="548" y="130" font-family="system-ui" font-size="7" fill="#16A34A" transform="rotate(90,548,130)">Nutrients recycled</text>
+  <!-- Key point -->
+  <text x="300" y="205" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Energy <tspan fill="#DC2626" font-weight="bold">flows</tspan> through ecosystems (not recycled); nutrients are <tspan fill="#16A34A" font-weight="bold">recycled</tspan></text>
+  <text x="300" y="220" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">~90% of energy lost as heat at each trophic level, limiting food chain length</text>
+</svg>
+</div>
+
 <p>Typically only about 10% of energy is transferred from one trophic level to the next. This limits food chains to usually 4-5 trophic levels and explains why there is less biomass at higher trophic levels.</p>
 
 <div class="equation">
@@ -119,6 +330,77 @@
 <h3>The Greenhouse Effect</h3>
 
 <p>The greenhouse effect is a natural phenomenon that maintains Earth's temperature at a habitable level. Short-wave radiation from the Sun passes through the atmosphere and warms the Earth's surface. The surface re-emits longer-wave infrared radiation, some of which is absorbed by greenhouse gases (CO<sub>2</sub>, methane, water vapour, nitrous oxide) and re-radiated back to Earth, warming the atmosphere.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">The Carbon Cycle</text>
+  <defs>
+    <marker id="arrowCC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8"/>
+    </marker>
+    <marker id="arrowCCr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
+    </marker>
+  </defs>
+  <!-- Atmospheric CO2 -->
+  <rect x="200" y="38" width="200" height="36" rx="18" fill="#1a1a2e" opacity="0.08" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="300" y="61" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">CO₂ in Atmosphere</text>
+  <!-- Producers -->
+  <rect x="60" y="130" width="110" height="40" rx="8" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="1.2"/>
+  <text x="115" y="148" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Producers</text>
+  <text x="115" y="162" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">(plants, algae)</text>
+  <!-- Consumers -->
+  <rect x="245" y="130" width="110" height="40" rx="8" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="300" y="148" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Consumers</text>
+  <text x="300" y="162" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">(animals)</text>
+  <!-- Decomposers -->
+  <rect x="245" y="220" width="110" height="40" rx="8" fill="#D97706" opacity="0.12" stroke="#D97706" stroke-width="1.2"/>
+  <text x="300" y="238" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Decomposers</text>
+  <text x="300" y="252" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">(bacteria, fungi)</text>
+  <!-- Fossil fuels -->
+  <rect x="60" y="220" width="110" height="40" rx="8" fill="#1a1a2e" opacity="0.08" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="115" y="238" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">Fossil Fuels</text>
+  <text x="115" y="252" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">(coal, oil, gas)</text>
+  <!-- Combustion -->
+  <rect x="430" y="130" width="120" height="40" rx="8" fill="#DC2626" opacity="0.1" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="490" y="148" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Combustion</text>
+  <text x="490" y="162" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">(burning fuels)</text>
+  <!-- Photosynthesis arrow (CO2 down to producers) -->
+  <path d="M230,74 Q140,90 120,128" fill="none" stroke="#16A34A" stroke-width="2" marker-end="url(#arrowCC)"/>
+  <text x="140" y="95" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Photosynthesis</text>
+  <!-- Respiration arrows (back up to CO2) -->
+  <path d="M130,130 Q160,90 220,68" fill="none" stroke="#DC2626" stroke-width="1.2" marker-end="url(#arrowCCr)"/>
+  <text x="195" y="100" font-family="system-ui" font-size="8" fill="#DC2626">Respiration</text>
+  <path d="M340,130 Q370,90 380,70" fill="none" stroke="#DC2626" stroke-width="1.2" marker-end="url(#arrowCCr)"/>
+  <text x="380" y="98" font-family="system-ui" font-size="8" fill="#DC2626">Respiration</text>
+  <!-- Feeding arrow -->
+  <path d="M170,150 L243,150" fill="none" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrowCC)"/>
+  <text x="206" y="144" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Feeding</text>
+  <!-- Death/waste to decomposers -->
+  <path d="M300,170 L300,218" fill="none" stroke="#D97706" stroke-width="1" marker-end="url(#arrowCC)"/>
+  <text x="318" y="198" font-family="system-ui" font-size="7" fill="#D97706">Death/waste</text>
+  <path d="M150,170 Q160,200 243,235" fill="none" stroke="#D97706" stroke-width="1" marker-end="url(#arrowCC)"/>
+  <!-- Decomposer respiration -->
+  <path d="M320,220 Q400,180 395,74" fill="none" stroke="#DC2626" stroke-width="1" marker-end="url(#arrowCCr)"/>
+  <text x="392" y="160" font-family="system-ui" font-size="7" fill="#DC2626">Respiration</text>
+  <!-- Fossilisation -->
+  <path d="M115,170 L115,218" fill="none" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowCC)"/>
+  <text x="100" y="198" font-family="system-ui" font-size="7" fill="#1a1a2e" transform="rotate(-90,100,198)">Fossilisation</text>
+  <text x="86" y="198" font-family="system-ui" font-size="7" fill="#666" transform="rotate(-90,86,198)">(millions of years)</text>
+  <!-- Combustion arrow up -->
+  <path d="M490,130 Q490,80 400,65" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowCCr)"/>
+  <!-- Fossil fuel to combustion -->
+  <path d="M170,240 Q300,280 430,155" fill="none" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#arrowCC)"/>
+  <text x="330" y="280" font-family="system-ui" font-size="7" fill="#1a1a2e">Extraction + burning</text>
+  <!-- Legend -->
+  <line x1="60" y1="290" x2="80" y2="290" stroke="#16A34A" stroke-width="2"/>
+  <text x="85" y="293" font-family="system-ui" font-size="8" fill="#16A34A">CO₂ removal</text>
+  <line x1="170" y1="290" x2="190" y2="290" stroke="#DC2626" stroke-width="2"/>
+  <text x="195" y="293" font-family="system-ui" font-size="8" fill="#DC2626">CO₂ release</text>
+  <line x1="280" y1="290" x2="300" y2="290" stroke="#1a73e8" stroke-width="2"/>
+  <text x="305" y="293" font-family="system-ui" font-size="8" fill="#1a73e8">Carbon transfer</text>
+</svg>
+</div>
 
 <p>The enhanced greenhouse effect refers to the additional warming caused by increased concentrations of greenhouse gases due to human activities, primarily the burning of fossil fuels (releasing CO<sub>2</sub>), deforestation (reducing CO<sub>2</sub> absorption), agriculture (methane from livestock and rice paddies), and industrial processes.</p>
 
@@ -143,7 +425,103 @@
 </div>
 
 <!-- ============================================================ -->
-<h2>5.4 Evolution and Speciation</h2>
+<h2>5.4 Ecological Succession</h2>
+<!-- ============================================================ -->
+
+<h3>Succession</h3>
+
+<div class="definition">
+  <strong>Succession:</strong> The gradual and directional change in the species composition of a community over time, eventually leading to a stable climax community. Primary succession begins on bare, previously uncolonised substrate; secondary succession occurs after disturbance of an existing community.
+</div>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 220" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="20" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Ecological Succession Stages</text>
+  <defs>
+    <marker id="arrowSS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <!-- Ground base -->
+  <rect x="30" y="150" width="540" height="12" rx="3" fill="#D97706" opacity="0.2" stroke="#D97706" stroke-width="0.5"/>
+  <!-- Stage 1: Bare rock + pioneer -->
+  <g transform="translate(65,140)">
+    <rect x="-30" y="10" width="60" height="12" rx="2" fill="#D97706" opacity="0.3"/>
+    <circle cx="-15" cy="8" r="4" fill="#16A34A" opacity="0.3"/>
+    <circle cx="0" cy="6" r="3" fill="#16A34A" opacity="0.25"/>
+    <circle cx="12" cy="8" r="4" fill="#16A34A" opacity="0.3"/>
+    <text y="36" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">Pioneer</text>
+    <text y="47" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">Lichens, mosses</text>
+    <text y="57" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">Bare rock</text>
+  </g>
+  <path d="M100,130 L125,130" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowSS)"/>
+  <!-- Stage 2: Grasses/herbs -->
+  <g transform="translate(170,140)">
+    <rect x="-35" y="4" width="70" height="18" rx="3" fill="#D97706" opacity="0.25"/>
+    <line x1="-20" y1="4" x2="-20" y2="-14" stroke="#16A34A" stroke-width="1.5"/>
+    <line x1="-22" y1="-8" x2="-18" y2="-12" stroke="#16A34A" stroke-width="1"/>
+    <line x1="-10" y1="4" x2="-10" y2="-18" stroke="#16A34A" stroke-width="1.5"/>
+    <line x1="-12" y1="-10" x2="-8" y2="-16" stroke="#16A34A" stroke-width="1"/>
+    <line x1="0" y1="4" x2="0" y2="-12" stroke="#16A34A" stroke-width="1.5"/>
+    <line x1="10" y1="4" x2="10" y2="-16" stroke="#16A34A" stroke-width="1.5"/>
+    <line x1="8" y1="-8" x2="12" y2="-14" stroke="#16A34A" stroke-width="1"/>
+    <line x1="20" y1="4" x2="20" y2="-10" stroke="#16A34A" stroke-width="1.5"/>
+    <text y="36" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Grasses</text>
+    <text y="47" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">Herbs, small plants</text>
+    <text y="57" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">Thin soil forms</text>
+  </g>
+  <path d="M210,120 L235,120" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowSS)"/>
+  <!-- Stage 3: Shrubs -->
+  <g transform="translate(280,140)">
+    <rect x="-35" y="0" width="70" height="22" rx="3" fill="#D97706" opacity="0.2"/>
+    <line x1="-15" y1="0" x2="-15" y2="-20" stroke="#16A34A" stroke-width="2"/>
+    <ellipse cx="-15" cy="-28" rx="14" ry="12" fill="#16A34A" opacity="0.3"/>
+    <line x1="10" y1="0" x2="10" y2="-25" stroke="#16A34A" stroke-width="2"/>
+    <ellipse cx="10" cy="-34" rx="16" ry="13" fill="#16A34A" opacity="0.35"/>
+    <line x1="-28" y1="0" x2="-28" y2="-8" stroke="#16A34A" stroke-width="1"/>
+    <line x1="25" y1="0" x2="25" y2="-10" stroke="#16A34A" stroke-width="1"/>
+    <text y="36" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Shrubs</text>
+    <text y="47" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">Small woody plants</text>
+    <text y="57" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">Deeper soil</text>
+  </g>
+  <path d="M320,110 L345,110" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowSS)"/>
+  <!-- Stage 4: Young woodland -->
+  <g transform="translate(395,140)">
+    <rect x="-40" y="-4" width="80" height="26" rx="3" fill="#D97706" opacity="0.18"/>
+    <line x1="-20" y1="-4" x2="-20" y2="-40" stroke="#D97706" stroke-width="2.5" opacity="0.6"/>
+    <ellipse cx="-20" cy="-50" rx="18" ry="15" fill="#16A34A" opacity="0.35"/>
+    <line x1="10" y1="-4" x2="10" y2="-50" stroke="#D97706" stroke-width="3" opacity="0.6"/>
+    <ellipse cx="10" cy="-62" rx="22" ry="17" fill="#16A34A" opacity="0.3"/>
+    <line x1="28" y1="-4" x2="28" y2="-30" stroke="#D97706" stroke-width="2" opacity="0.5"/>
+    <ellipse cx="28" cy="-38" rx="14" ry="12" fill="#16A34A" opacity="0.35"/>
+    <text y="36" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Young Woodland</text>
+    <text y="47" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">Pioneer trees</text>
+    <text y="57" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">(birch, willow)</text>
+  </g>
+  <path d="M440,100 L465,100" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowSS)"/>
+  <!-- Stage 5: Climax community -->
+  <g transform="translate(520,140)">
+    <rect x="-42" y="-8" width="84" height="30" rx="3" fill="#D97706" opacity="0.15"/>
+    <line x1="-22" y1="-8" x2="-22" y2="-65" stroke="#D97706" stroke-width="3.5" opacity="0.6"/>
+    <ellipse cx="-22" cy="-78" rx="24" ry="18" fill="#16A34A" opacity="0.4"/>
+    <line x1="8" y1="-8" x2="8" y2="-72" stroke="#D97706" stroke-width="4" opacity="0.6"/>
+    <ellipse cx="8" cy="-86" rx="28" ry="20" fill="#16A34A" opacity="0.35"/>
+    <line x1="30" y1="-8" x2="30" y2="-55" stroke="#D97706" stroke-width="3" opacity="0.5"/>
+    <ellipse cx="30" cy="-66" rx="20" ry="15" fill="#16A34A" opacity="0.38"/>
+    <text y="36" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Climax</text>
+    <text y="47" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">Stable, self-sustaining</text>
+    <text y="57" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">(e.g., oak woodland)</text>
+  </g>
+  <!-- Time arrow -->
+  <path d="M50,210 L555,210" fill="none" stroke="#1a1a2e" stroke-width="0.8" marker-end="url(#arrowSS)"/>
+  <text x="300" y="208" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Time --> Increasing biodiversity, biomass, soil depth, and complexity</text>
+</svg>
+</div>
+
+<p>Pioneer species (e.g., lichens, mosses) are the first to colonise bare rock. They are adapted to harsh conditions and help create soil by weathering rock and adding organic matter when they die. As soil develops, more complex plant communities can establish, each seral stage modifying the environment to make it more suitable for the next stage. Eventually, a climax community is reached (determined by climate and soil type), which is relatively stable and self-sustaining.</p>
+
+<!-- ============================================================ -->
+<h2>5.5 Evolution and Speciation</h2>
 <!-- ============================================================ -->
 
 <h3>Natural Selection</h3>

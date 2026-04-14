@@ -52,6 +52,75 @@
     <li><strong>Response</strong> &mdash; counteracts the original change, returning to set point</li>
 </ol>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 290" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">Negative Feedback Loop</text>
+
+  <!-- Circular arrangement of boxes -->
+  <!-- Stimulus -->
+  <rect x="225" y="45" width="150" height="38" rx="8" fill="#DC2626" opacity="0.12" stroke="#DC2626" stroke-width="2"/>
+  <text x="300" y="60" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">STIMULUS</text>
+  <text x="300" y="75" text-anchor="middle" class="small-label" fill="#DC2626">Change from set point</text>
+
+  <!-- Arrow down-right to Receptor -->
+  <path d="M 375,65 Q 430,65 460,100" fill="none" stroke="#D97706" stroke-width="2"/>
+  <polygon points="456,98 464,105 461,94" fill="#D97706"/>
+
+  <!-- Receptor -->
+  <rect x="420" y="105" width="140" height="38" rx="8" fill="#D97706" opacity="0.12" stroke="#D97706" stroke-width="2"/>
+  <text x="490" y="120" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">RECEPTOR</text>
+  <text x="490" y="135" text-anchor="middle" class="small-label" fill="#D97706">Detects the change</text>
+
+  <!-- Arrow down to Control centre -->
+  <path d="M 490,143 Q 490,165 460,180" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <polygon points="463,177 456,184 466,183" fill="#1a73e8"/>
+
+  <!-- Control centre -->
+  <rect x="310" y="170" width="150" height="38" rx="8" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="2"/>
+  <text x="385" y="185" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">CONTROL CENTRE</text>
+  <text x="385" y="200" text-anchor="middle" class="small-label" fill="#1a73e8">Processes information</text>
+
+  <!-- Arrow down-left to Effector -->
+  <path d="M 310,192 Q 260,200 230,220" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <polygon points="233,217 226,224 236,222" fill="#16A34A"/>
+
+  <!-- Effector -->
+  <rect x="120" y="215" width="140" height="38" rx="8" fill="#16A34A" opacity="0.12" stroke="#16A34A" stroke-width="2"/>
+  <text x="190" y="230" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">EFFECTOR</text>
+  <text x="190" y="245" text-anchor="middle" class="small-label" fill="#16A34A">Muscle or gland acts</text>
+
+  <!-- Arrow up-left to Response -->
+  <path d="M 120,230 Q 80,220 60,190" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="63,193 56,186 57,196" fill="#DC2626"/>
+
+  <!-- Response -->
+  <rect x="15" y="145" width="130" height="45" rx="8" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="2"/>
+  <text x="80" y="162" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">RESPONSE</text>
+  <text x="80" y="177" text-anchor="middle" class="small-label" fill="#DC2626">Counteracts change;</text>
+  <text x="80" y="189" text-anchor="middle" class="small-label" fill="#DC2626">returns to set point</text>
+
+  <!-- Arrow back up to stimulus (negative feedback loop) -->
+  <path d="M 55,145 Q 40,110 80,80 Q 120,55 225,60" fill="none" stroke="#1a1a2e" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="222,56 230,57 224,64" fill="#1a1a2e"/>
+
+  <!-- Negative feedback label in centre -->
+  <text x="280" y="130" text-anchor="middle" class="label" fill="#1a1a2e" font-weight="bold">NEGATIVE</text>
+  <text x="280" y="147" text-anchor="middle" class="label" fill="#1a1a2e" font-weight="bold">FEEDBACK</text>
+  <!-- Circular arrow symbol -->
+  <path d="M 260,155 A 15,15 0 1,1 300,155" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="298,151 304,157 296,158" fill="#1a1a2e"/>
+
+  <!-- Bottom note -->
+  <text x="300" y="278" text-anchor="middle" class="small-label" fill="#6b7280" font-style="italic">The response opposes the original change, restoring the variable to its normal level (set point)</text>
+</svg>
+</div>
+
 <h3>Positive Feedback</h3>
 <p>A mechanism where the response <strong>amplifies</strong> the original change, moving further from the set point. Examples: oxytocin during childbirth (contractions stimulate more oxytocin release), blood clotting cascade, depolarisation during an action potential. Positive feedback is rare in homeostasis but important in specific biological events.</p>
 
@@ -70,6 +139,95 @@
     <tr><td>Relay (interneurone)</td><td>Connects sensory and motor neurones within CNS</td><td>Short; many connections</td></tr>
 </table>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">Motor Neurone and Synapse</text>
+
+  <!-- Cell body -->
+  <circle cx="120" cy="140" r="35" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="2"/>
+  <text x="120" y="137" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Cell body</text>
+  <!-- Nucleus in cell body -->
+  <circle cx="120" cy="150" r="12" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="1"/>
+  <text x="120" y="154" text-anchor="middle" font-size="8" fill="#1a73e8" font-family="system-ui">Nucleus</text>
+
+  <!-- Dendrites -->
+  <line x1="85" y1="120" x2="55" y2="95" stroke="#1a73e8" stroke-width="2"/>
+  <line x1="55" y1="95" x2="40" y2="80" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="55" y1="95" x2="35" y2="95" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="90" y1="110" x2="65" y2="80" stroke="#1a73e8" stroke-width="2"/>
+  <line x1="65" y1="80" x2="50" y2="65" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="65" y1="80" x2="55" y2="70" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="100" y1="107" x2="85" y2="75" stroke="#1a73e8" stroke-width="2"/>
+  <text x="55" y="58" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Dendrites</text>
+
+  <!-- Axon -->
+  <line x1="155" y1="140" x2="420" y2="140" stroke="#16A34A" stroke-width="4" opacity="0.6"/>
+
+  <!-- Myelin sheath segments -->
+  <rect x="170" y="127" width="45" height="26" rx="13" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
+  <rect x="230" y="127" width="45" height="26" rx="13" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
+  <rect x="290" y="127" width="45" height="26" rx="13" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
+  <rect x="350" y="127" width="45" height="26" rx="13" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
+
+  <!-- Nodes of Ranvier (gaps) -->
+  <text x="222" y="125" text-anchor="middle" font-size="8" fill="#DC2626" font-family="system-ui">Node</text>
+  <text x="282" y="125" text-anchor="middle" font-size="8" fill="#DC2626" font-family="system-ui">Node</text>
+  <text x="342" y="125" text-anchor="middle" font-size="8" fill="#DC2626" font-family="system-ui">Node</text>
+
+  <!-- Myelin label -->
+  <text x="250" y="175" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Myelin sheath (Schwann cells)</text>
+  <text x="250" y="188" text-anchor="middle" class="small-label" fill="#D97706">Saltatory conduction between nodes</text>
+
+  <!-- Axon label -->
+  <text x="300" y="143" text-anchor="middle" font-size="9" fill="#16A34A" font-weight="bold" font-family="system-ui">Axon</text>
+
+  <!-- Direction of impulse -->
+  <line x1="160" y1="108" x2="400" y2="108" stroke="#16A34A" stroke-width="1.5"/>
+  <polygon points="400,104 413,108 400,112" fill="#16A34A"/>
+  <text x="280" y="103" text-anchor="middle" class="small-label" fill="#16A34A">Direction of nerve impulse →</text>
+
+  <!-- Synaptic knob / terminal -->
+  <circle cx="440" cy="140" r="18" fill="#DC2626" opacity="0.12" stroke="#DC2626" stroke-width="2"/>
+  <text x="440" y="137" text-anchor="middle" font-size="8" fill="#DC2626" font-weight="bold" font-family="system-ui">Synaptic</text>
+  <text x="440" y="148" text-anchor="middle" font-size="8" fill="#DC2626" font-weight="bold" font-family="system-ui">knob</text>
+  <!-- Vesicles inside -->
+  <circle cx="432" cy="132" r="3" fill="#DC2626" opacity="0.3"/>
+  <circle cx="448" cy="132" r="3" fill="#DC2626" opacity="0.3"/>
+  <circle cx="440" cy="127" r="3" fill="#DC2626" opacity="0.3"/>
+
+  <!-- Synaptic cleft -->
+  <rect x="460" y="125" width="10" height="30" rx="0" fill="none" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="465" y="170" text-anchor="middle" font-size="8" fill="#6b7280" font-family="system-ui">Cleft</text>
+
+  <!-- Postsynaptic membrane -->
+  <line x1="475" y1="120" x2="475" y2="160" stroke="#1a73e8" stroke-width="3"/>
+  <!-- Receptors -->
+  <rect x="475" y="128" width="8" height="6" rx="2" fill="#1a73e8" opacity="0.4"/>
+  <rect x="475" y="140" width="8" height="6" rx="2" fill="#1a73e8" opacity="0.4"/>
+  <text x="505" y="138" text-anchor="start" class="small-label" fill="#1a73e8">Postsynaptic</text>
+  <text x="505" y="151" text-anchor="start" class="small-label" fill="#1a73e8">membrane</text>
+
+  <!-- Neurotransmitter dots in cleft -->
+  <circle cx="463" cy="133" r="2" fill="#D97706"/><circle cx="466" cy="140" r="2" fill="#D97706"/><circle cx="462" cy="147" r="2" fill="#D97706"/>
+  <text x="465" y="115" text-anchor="middle" class="small-label" fill="#D97706">ACh</text>
+
+  <!-- Synapse bracket label -->
+  <rect x="425" y="200" width="150" height="50" rx="6" fill="#DC2626" opacity="0.05" stroke="#DC2626" stroke-width="1"/>
+  <text x="500" y="218" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Cholinergic Synapse</text>
+  <text x="500" y="233" text-anchor="middle" class="small-label" fill="#DC2626">Ca²⁺ triggers vesicle</text>
+  <text x="500" y="246" text-anchor="middle" class="small-label" fill="#DC2626">release of ACh</text>
+
+  <!-- Bottom summary -->
+  <text x="250" y="265" text-anchor="middle" class="small-label" fill="#6b7280" font-style="italic">Myelination increases conduction speed via saltatory conduction</text>
+</svg>
+</div>
+
 <h3>Resting Potential</h3>
 <p>At rest, the neurone membrane is <strong>polarised</strong> at approximately &minus;70 mV (inside negative relative to outside). This is maintained by:</p>
 <ul>
@@ -86,6 +244,54 @@
     <li><strong>Hyperpolarisation:</strong> Slight overshoot below &minus;70 mV (refractory period)</li>
     <li><strong>Resting potential restored</strong> by Na<sup>+</sup>/K<sup>+</sup> pump</li>
 </ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; font-family: system-ui, sans-serif;">
+  <text x="300" y="28" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Action Potential</text>
+  <!-- Axes -->
+  <line x1="80" y1="40" x2="80" y2="310" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="80" y1="310" x2="560" y2="310" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="40" y="180" text-anchor="middle" font-size="11" fill="#1a1a2e" transform="rotate(-90,40,180)">Membrane Potential (mV)</text>
+  <text x="320" y="340" text-anchor="middle" font-size="11" fill="#1a1a2e">Time (ms)</text>
+  <!-- Y-axis labels -->
+  <text x="72" y="72" text-anchor="end" font-size="10" fill="#1a1a2e">+40</text>
+  <line x1="76" y1="68" x2="84" y2="68" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="72" y="152" text-anchor="end" font-size="10" fill="#1a1a2e">0</text>
+  <line x1="76" y1="148" x2="560" y2="148" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="4"/>
+  <text x="72" y="192" text-anchor="end" font-size="10" fill="#1a1a2e">-55</text>
+  <line x1="76" y1="188" x2="560" y2="188" stroke="#D97706" stroke-width="0.8" stroke-dasharray="4"/>
+  <text x="72" y="260" text-anchor="end" font-size="10" fill="#1a1a2e">-70</text>
+  <line x1="76" y1="256" x2="560" y2="256" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="4"/>
+  <!-- Threshold label -->
+  <text x="565" y="185" font-size="9" fill="#D97706">Threshold</text>
+  <!-- Resting potential label -->
+  <text x="565" y="253" font-size="9" fill="#666">Resting</text>
+  <!-- Action potential curve -->
+  <path d="M80,256 L160,256 L180,252 L200,240 L210,220 L220,188 L235,148 L250,100 L260,68 L270,68 L280,90 L295,148 L310,200 L325,256 L335,275 L340,280 L345,278 L355,270 L370,260 L400,256 L560,256" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- Phase labels -->
+  <text x="120" y="248" text-anchor="middle" font-size="10" fill="#16A34A" font-weight="bold">Resting</text>
+  <text x="120" y="260" text-anchor="middle" font-size="9" fill="#16A34A">-70mV</text>
+  <!-- Depolarisation arrow -->
+  <path d="M240,230 L240,90" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowRedT7)"/>
+  <text x="240" y="245" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold">Depolarisation</text>
+  <text x="262" y="62" font-size="10" fill="#DC2626" font-weight="bold">+40mV</text>
+  <!-- Repolarisation arrow -->
+  <path d="M300,100 L300,250" fill="none" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrowBlueT7)"/>
+  <text x="310" y="160" font-size="10" fill="#1a73e8" font-weight="bold">Repolarisation</text>
+  <!-- Hyperpolarisation -->
+  <text x="350" y="295" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="bold">Hyper-</text>
+  <text x="350" y="306" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="bold">polarisation</text>
+  <!-- Na+ and K+ labels -->
+  <rect x="440" y="50" width="100" height="50" rx="4" fill="white" stroke="#cbd5e1"/>
+  <text x="490" y="68" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold">Na+ in (depol.)</text>
+  <text x="490" y="88" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold">K+ out (repol.)</text>
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowRedT7" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#DC2626"/></marker>
+    <marker id="arrowBlueT7" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#1a73e8"/></marker>
+  </defs>
+</svg>
+</div>
 
 <h3>Transmission Speed</h3>
 <p>Factors increasing speed of transmission:</p>
@@ -156,6 +362,71 @@
     <strong>Blood glucose homeostasis:</strong> The maintenance of blood glucose concentration at approximately 4&ndash;6 mmol/L, primarily controlled by the hormones insulin and glucagon secreted by the islets of Langerhans in the pancreas.
 </div>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; font-family: system-ui, sans-serif;">
+  <text x="300" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Blood Glucose Regulation (Negative Feedback)</text>
+  <defs>
+    <marker id="bgArrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#1a73e8"/></marker>
+    <marker id="bgArrowR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#DC2626"/></marker>
+    <marker id="bgArrowG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#16A34A"/></marker>
+  </defs>
+  <!-- Normal set point -->
+  <rect x="210" y="45" width="180" height="35" rx="17" fill="#E0F2FE" stroke="#1a73e8" stroke-width="2"/>
+  <text x="300" y="67" text-anchor="middle" font-size="11" fill="#1a73e8" font-weight="bold">Normal: 4-6 mmol/L</text>
+  <!-- HIGH side (left) -->
+  <rect x="40" y="110" width="160" height="35" rx="6" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="120" y="132" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="bold">Blood glucose HIGH</text>
+  <text x="120" y="148" text-anchor="middle" font-size="9" fill="#DC2626">(after a meal)</text>
+  <!-- Arrow from normal to high -->
+  <path d="M255,80 Q200,95 150,108" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#bgArrowR)"/>
+  <!-- Beta cells detect -->
+  <rect x="40" y="175" width="160" height="35" rx="6" fill="#FFF7ED" stroke="#D97706" stroke-width="1.5"/>
+  <text x="120" y="192" text-anchor="middle" font-size="10" fill="#D97706" font-weight="bold">Beta cells detect rise</text>
+  <text x="120" y="204" text-anchor="middle" font-size="9" fill="#D97706">(islets of Langerhans)</text>
+  <line x1="120" y1="148" x2="120" y2="173" stroke="#DC2626" stroke-width="1.5" marker-end="url(#bgArrowR)"/>
+  <!-- Insulin secreted -->
+  <rect x="40" y="235" width="160" height="30" rx="6" fill="#DBEAFE" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="120" y="255" text-anchor="middle" font-size="11" fill="#1a73e8" font-weight="bold">Insulin secreted</text>
+  <line x1="120" y1="210" x2="120" y2="233" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#bgArrow)"/>
+  <!-- Effects of insulin -->
+  <rect x="20" y="290" width="200" height="55" rx="6" fill="white" stroke="#1a73e8" stroke-width="1"/>
+  <text x="120" y="306" text-anchor="middle" font-size="9" fill="#1a1a2e">Glycogenesis (glucose → glycogen)</text>
+  <text x="120" y="320" text-anchor="middle" font-size="9" fill="#1a1a2e">↑ glucose uptake (GLUT4)</text>
+  <text x="120" y="334" text-anchor="middle" font-size="9" fill="#1a1a2e">↑ cell respiration</text>
+  <line x1="120" y1="265" x2="120" y2="288" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#bgArrow)"/>
+  <!-- Arrow back to normal -->
+  <path d="M120,345 Q120,375 250,380 Q300,380 300,80" fill="none" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="5" marker-end="url(#bgArrowG)"/>
+  <text x="170" y="375" font-size="9" fill="#16A34A" font-weight="bold">Glucose falls → normal</text>
+  <!-- LOW side (right) -->
+  <rect x="400" y="110" width="160" height="35" rx="6" fill="#DBEAFE" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="480" y="132" text-anchor="middle" font-size="11" fill="#1a73e8" font-weight="bold">Blood glucose LOW</text>
+  <text x="480" y="148" text-anchor="middle" font-size="9" fill="#1a73e8">(between meals)</text>
+  <!-- Arrow from normal to low -->
+  <path d="M345,80 Q400,95 450,108" fill="none" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#bgArrow)"/>
+  <!-- Alpha cells detect -->
+  <rect x="400" y="175" width="160" height="35" rx="6" fill="#FFF7ED" stroke="#D97706" stroke-width="1.5"/>
+  <text x="480" y="192" text-anchor="middle" font-size="10" fill="#D97706" font-weight="bold">Alpha cells detect fall</text>
+  <text x="480" y="204" text-anchor="middle" font-size="9" fill="#D97706">(islets of Langerhans)</text>
+  <line x1="480" y1="148" x2="480" y2="173" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#bgArrow)"/>
+  <!-- Glucagon secreted -->
+  <rect x="400" y="235" width="160" height="30" rx="6" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="480" y="255" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="bold">Glucagon secreted</text>
+  <line x1="480" y1="210" x2="480" y2="233" stroke="#DC2626" stroke-width="1.5" marker-end="url(#bgArrowR)"/>
+  <!-- Effects of glucagon -->
+  <rect x="380" y="290" width="200" height="55" rx="6" fill="white" stroke="#DC2626" stroke-width="1"/>
+  <text x="480" y="306" text-anchor="middle" font-size="9" fill="#1a1a2e">Glycogenolysis (glycogen → glucose)</text>
+  <text x="480" y="320" text-anchor="middle" font-size="9" fill="#1a1a2e">Gluconeogenesis</text>
+  <text x="480" y="334" text-anchor="middle" font-size="9" fill="#1a1a2e">(amino acids/glycerol → glucose)</text>
+  <line x1="480" y1="265" x2="480" y2="288" stroke="#DC2626" stroke-width="1.5" marker-end="url(#bgArrowR)"/>
+  <!-- Arrow back to normal -->
+  <path d="M480,345 Q480,375 350,380 Q300,380 300,80" fill="none" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="5" marker-end="url(#bgArrowG)"/>
+  <text x="390" y="390" font-size="9" fill="#16A34A" font-weight="bold">Glucose rises → normal</text>
+  <!-- Pancreas label -->
+  <rect x="225" y="185" width="150" height="20" rx="10" fill="#FFF7ED" stroke="#D97706" stroke-width="1"/>
+  <text x="300" y="199" text-anchor="middle" font-size="10" fill="#D97706" font-weight="bold">PANCREAS</text>
+</svg>
+</div>
+
 <h3>After a Meal (High Blood Glucose)</h3>
 <ol>
     <li><strong>Beta cells</strong> of islets of Langerhans detect high blood glucose</li>
@@ -210,6 +481,76 @@
 
 <div class="definition-box">
     <strong>Osmoregulation:</strong> The control of water potential (and ion concentration) of the blood and body fluids. In mammals, this is primarily carried out by the kidneys under the control of ADH (antidiuretic hormone).
+</div>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; font-family: system-ui, sans-serif;">
+  <text x="300" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Nephron Structure</text>
+  <defs>
+    <marker id="nephArrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#1a73e8"/></marker>
+    <marker id="nephArrowRed" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#DC2626"/></marker>
+  </defs>
+  <!-- Bowman's capsule -->
+  <ellipse cx="130" cy="100" rx="60" ry="50" fill="#DBEAFE" stroke="#1a73e8" stroke-width="2"/>
+  <!-- Glomerulus -->
+  <circle cx="130" cy="100" r="28" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+  <path d="M115,85 Q125,95 115,105 M125,80 Q135,95 125,110 M135,85 Q145,95 135,105" fill="none" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="130" y="103" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="bold">Glomerulus</text>
+  <text x="130" y="58" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold">Bowman's Capsule</text>
+  <!-- Afferent/efferent -->
+  <line x1="70" y1="80" x2="102" y2="88" stroke="#DC2626" stroke-width="2.5" marker-end="url(#nephArrowRed)"/>
+  <text x="55" y="75" font-size="9" fill="#DC2626">Afferent</text>
+  <text x="55" y="85" font-size="9" fill="#DC2626">arteriole</text>
+  <line x1="102" y1="112" x2="70" y2="120" stroke="#DC2626" stroke-width="1.8"/>
+  <text x="35" y="130" font-size="9" fill="#DC2626">Efferent</text>
+  <text x="35" y="140" font-size="9" fill="#DC2626">arteriole</text>
+  <!-- PCT -->
+  <path d="M190,100 Q220,95 250,100 Q280,108 300,95 Q320,82 340,90" fill="none" stroke="#16A34A" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="270" y="75" text-anchor="middle" font-size="10" fill="#16A34A" font-weight="bold">PCT</text>
+  <text x="270" y="63" text-anchor="middle" font-size="8" fill="#16A34A">(Selective reabsorption)</text>
+  <!-- Descending loop of Henle -->
+  <path d="M340,90 L340,280" fill="none" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+  <text x="325" y="190" text-anchor="end" font-size="9" fill="#D97706" font-weight="bold">Descending</text>
+  <text x="325" y="202" text-anchor="end" font-size="9" fill="#D97706" font-weight="bold">limb</text>
+  <text x="325" y="216" text-anchor="end" font-size="8" fill="#D97706">(permeable</text>
+  <text x="325" y="226" text-anchor="end" font-size="8" fill="#D97706">to water)</text>
+  <!-- U-bend -->
+  <path d="M340,280 Q340,310 360,310 Q380,310 380,280" fill="none" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+  <text x="360" y="330" text-anchor="middle" font-size="10" fill="#D97706" font-weight="bold">Loop of Henle</text>
+  <!-- Ascending loop -->
+  <path d="M380,280 L380,120" fill="none" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+  <text x="395" y="190" font-size="9" fill="#D97706" font-weight="bold">Ascending</text>
+  <text x="395" y="202" font-size="9" fill="#D97706" font-weight="bold">limb</text>
+  <text x="395" y="216" font-size="8" fill="#D97706">(impermeable</text>
+  <text x="395" y="226" font-size="8" fill="#D97706">to water; pumps</text>
+  <text x="395" y="236" font-size="8" fill="#D97706">Na+/Cl- out)</text>
+  <!-- DCT -->
+  <path d="M380,120 Q400,100 430,110 Q460,120 480,105 Q500,90 520,100" fill="none" stroke="#7C3AED" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="460" y="85" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="bold">DCT</text>
+  <text x="460" y="73" text-anchor="middle" font-size="8" fill="#7C3AED">(Fine-tuning)</text>
+  <!-- Collecting duct -->
+  <path d="M520,100 L520,380" fill="none" stroke="#1a73e8" stroke-width="4" stroke-linecap="round"/>
+  <text x="540" y="240" font-size="10" fill="#1a73e8" font-weight="bold">Collecting</text>
+  <text x="540" y="254" font-size="10" fill="#1a73e8" font-weight="bold">Duct</text>
+  <text x="540" y="270" font-size="8" fill="#1a73e8">(ADH controls</text>
+  <text x="540" y="280" font-size="8" fill="#1a73e8">water reabsorption)</text>
+  <!-- Water arrows from descending limb -->
+  <path d="M335,170 L310,170" fill="none" stroke="#1a73e8" stroke-width="1" marker-end="url(#nephArrow)"/>
+  <text x="305" y="167" text-anchor="end" font-size="8" fill="#1a73e8">H₂O</text>
+  <path d="M335,240 L310,240" fill="none" stroke="#1a73e8" stroke-width="1" marker-end="url(#nephArrow)"/>
+  <text x="305" y="237" text-anchor="end" font-size="8" fill="#1a73e8">H₂O</text>
+  <!-- Na+/Cl- arrows from ascending limb -->
+  <path d="M385,170 L410,170" fill="none" stroke="#DC2626" stroke-width="1" marker-end="url(#nephArrowRed)"/>
+  <text x="415" y="167" font-size="8" fill="#DC2626">Na⁺Cl⁻</text>
+  <path d="M385,250 L410,250" fill="none" stroke="#DC2626" stroke-width="1" marker-end="url(#nephArrowRed)"/>
+  <text x="415" y="247" font-size="8" fill="#DC2626">Na⁺Cl⁻</text>
+  <!-- Medulla gradient shading -->
+  <rect x="280" y="340" width="260" height="25" rx="4" fill="#FFF7ED" stroke="#D97706" stroke-width="1"/>
+  <text x="410" y="357" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold">Hypertonic Medulla (high solute concentration)</text>
+  <!-- Urine output -->
+  <path d="M520,380 L520,400" fill="none" stroke="#1a73e8" stroke-width="2" marker-end="url(#nephArrow)"/>
+  <text x="520" y="415" text-anchor="middle" font-size="9" fill="#1a73e8" font-weight="bold">Urine</text>
+</svg>
 </div>
 
 <h3>Kidney Structure and Nephron Function</h3>
