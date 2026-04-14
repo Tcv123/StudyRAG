@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Water Cycle &amp; Water Insecurity</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .case-study { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .case-study strong { color: #15803d; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Topic 3: The Water Cycle &amp; Water Insecurity</h1>
+
+<h2>3.1 The Global Water Cycle</h2>
+
+<div class="definition">
+  <strong>Hydrological cycle:</strong> The continuous movement of water between the atmosphere, land surface, and subsurface. It is a closed system at the global scale (no water enters or leaves the Earth system), but an open system at the drainage basin scale.
+</div>
+
+<h3>Global Water Stores</h3>
+<table>
+  <tr><th>Store</th><th>% of Total Water</th><th>Type</th></tr>
+  <tr><td>Oceans</td><td>96.5%</td><td>Saltwater</td></tr>
+  <tr><td>Ice caps &amp; glaciers</td><td>1.7%</td><td>Freshwater (frozen)</td></tr>
+  <tr><td>Groundwater</td><td>1.7%</td><td>Freshwater (mostly saline deep groundwater)</td></tr>
+  <tr><td>Surface freshwater (lakes, rivers)</td><td>0.01%</td><td>Freshwater</td></tr>
+  <tr><td>Atmosphere</td><td>0.001%</td><td>Water vapour</td></tr>
+  <tr><td>Biosphere</td><td>Trace</td><td>Water in living organisms</td></tr>
+</table>
+
+<p>Only ~2.5% of Earth's water is freshwater, and only ~0.3% of that is readily accessible surface freshwater. The vast majority is locked in ice or deep groundwater.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 360" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">The Global Water Cycle</text>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1a73e8"/>
+    </marker>
+    <marker id="arrG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#16A34A"/>
+    </marker>
+  </defs>
+  <!-- Sky -->
+  <rect x="0" y="30" width="600" height="100" fill="#1a73e8" opacity="0.05"/>
+  <!-- Cloud -->
+  <circle cx="300" cy="70" r="25" fill="#cbd5e1"/>
+  <circle cx="275" cy="75" r="20" fill="#cbd5e1"/>
+  <circle cx="325" cy="75" r="22" fill="#cbd5e1"/>
+  <circle cx="290" cy="60" r="18" fill="#cbd5e1"/>
+  <circle cx="310" cy="58" r="20" fill="#cbd5e1"/>
+  <!-- Sun -->
+  <circle cx="80" cy="65" r="20" fill="#D97706" opacity="0.6"/>
+  <text x="80" y="70" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">Solar</text>
+  <!-- Mountain -->
+  <polygon points="450,180 500,130 550,180" fill="#8B7355" opacity="0.5"/>
+  <!-- Land surface -->
+  <rect x="200" y="180" width="400" height="30" fill="#16A34A" opacity="0.2"/>
+  <!-- Ocean -->
+  <rect x="0" y="180" width="200" height="130" fill="#1a73e8" opacity="0.2"/>
+  <text x="100" y="240" text-anchor="middle" font-size="12" fill="#1a73e8" font-weight="bold">Ocean</text>
+  <text x="100" y="255" text-anchor="middle" font-size="9" fill="#1a73e8">96.5% of all water</text>
+  <!-- Underground -->
+  <rect x="200" y="210" width="400" height="100" fill="#D97706" opacity="0.1"/>
+  <text x="400" y="280" text-anchor="middle" font-size="10" fill="#D97706">Groundwater store</text>
+  <!-- Water table -->
+  <line x1="200" y1="250" x2="570" y2="250" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="575" y="253" font-size="8" fill="#1a73e8">Water table</text>
+  <!-- River -->
+  <path d="M450,180 Q420,190 380,185 Q340,180 300,190 Q260,200 220,195 L200,200" fill="none" stroke="#1a73e8" stroke-width="3"/>
+  <text x="330" y="200" text-anchor="middle" font-size="9" fill="#1a73e8">River channel</text>
+  <!-- PROCESSES -->
+  <!-- Evaporation from ocean -->
+  <path d="M80,175 Q80,120 160,80" fill="none" stroke="#1a73e8" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="60" y="140" font-size="9" fill="#1a73e8" font-weight="bold">Evaporation</text>
+  <!-- Transpiration -->
+  <line x1="350" y1="175" x2="350" y2="100" stroke="#16A34A" stroke-width="2" marker-end="url(#arrG)"/>
+  <text x="370" y="140" font-size="9" fill="#16A34A" font-weight="bold">Transpiration</text>
+  <!-- Precipitation over land -->
+  <line x1="380" y1="90" x2="420" y2="170" stroke="#1a73e8" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="430" y="130" font-size="9" fill="#1a73e8" font-weight="bold">Precipitation</text>
+  <!-- Precipitation over ocean -->
+  <line x1="220" y1="85" x2="170" y2="170" stroke="#1a73e8" stroke-width="2" stroke-dasharray="4,3"/>
+  <!-- Infiltration -->
+  <line x1="450" y1="190" x2="450" y2="240" stroke="#D97706" stroke-width="2" marker-end="url(#arrD)"/>
+  <text x="470" y="225" font-size="9" fill="#D97706" font-weight="bold">Infiltration</text>
+  <!-- Percolation -->
+  <line x1="500" y1="220" x2="500" y2="270" stroke="#D97706" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="530" y="260" font-size="8" fill="#D97706">Percolation</text>
+  <!-- Surface runoff -->
+  <path d="M520,175 Q490,178 460,182" fill="none" stroke="#DC2626" stroke-width="2" marker-end="url(#arrR)"/>
+  <text x="530" y="170" font-size="9" fill="#DC2626" font-weight="bold">Surface runoff</text>
+  <!-- Throughflow -->
+  <path d="M480,230 Q440,232 400,228" fill="none" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrD)"/>
+  <text x="460" y="245" font-size="8" fill="#D97706">Throughflow</text>
+  <!-- Groundwater flow -->
+  <path d="M400,270 Q350,275 250,280" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="320" y="295" font-size="8" fill="#D97706">Groundwater flow</text>
+  <!-- Condensation label -->
+  <text x="300" y="50" text-anchor="middle" font-size="9" fill="#1a1a2e">Condensation</text>
+  <!-- Wind/advection -->
+  <line x1="160" y1="60" x2="260" y2="60" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrBk)"/>
+  <text x="210" y="55" text-anchor="middle" font-size="8" fill="#1a1a2e">Advection (wind)</text>
+  <defs>
+    <marker id="arrD" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#D97706"/>
+    </marker>
+    <marker id="arrR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#DC2626"/>
+    </marker>
+    <marker id="arrBk" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+</svg>
+</div>
+
+<h3>Key Processes (Fluxes)</h3>
+<table>
+  <tr><th>Process</th><th>Description</th></tr>
+  <tr><td>Evaporation</td><td>Liquid water converts to water vapour using solar energy; greatest over warm tropical oceans</td></tr>
+  <tr><td>Transpiration</td><td>Water vapour released from plant stomata during photosynthesis</td></tr>
+  <tr><td>Evapotranspiration</td><td>Combined total of evaporation and transpiration from a land surface</td></tr>
+  <tr><td>Condensation</td><td>Water vapour cools and changes to liquid droplets, forming clouds</td></tr>
+  <tr><td>Precipitation</td><td>Water falls from clouds as rain, snow, sleet, or hail</td></tr>
+  <tr><td>Infiltration</td><td>Water soaks into the soil surface</td></tr>
+  <tr><td>Percolation</td><td>Water moves deeper through soil and rock into groundwater stores</td></tr>
+  <tr><td>Throughflow</td><td>Lateral movement of water through the soil layer</td></tr>
+  <tr><td>Groundwater flow</td><td>Slow movement of water through permeable rock (aquifer)</td></tr>
+  <tr><td>Surface runoff (overland flow)</td><td>Water flows over the ground surface when soil is saturated or impermeable</td></tr>
+  <tr><td>Interception</td><td>Precipitation caught by vegetation before reaching the ground</td></tr>
+  <tr><td>Stemflow</td><td>Water running down plant stems/tree trunks to the ground</td></tr>
+</table>
+
+<h2>3.2 The Drainage Basin</h2>
+
+<div class="definition">
+  <strong>Drainage basin:</strong> The area of land drained by a river and its tributaries. It is an open system at the local scale, bounded by a watershed (ridge of high land). Water enters as precipitation and leaves via the river channel or evapotranspiration.
+</div>
+
+<h3>Water Balance Equation</h3>
+<div class="equation">
+  P = Q + E &plusmn; &Delta;S
+</div>
+<p>Where: P = precipitation, Q = discharge (river flow), E = evapotranspiration, &Delta;S = change in storage (soil moisture, groundwater, snow/ice)</p>
+
+<h3>Seasonal Water Balance</h3>
+<ul>
+  <li><strong>Winter (UK)</strong> &mdash; P &gt; E; soil moisture recharge; surplus water leads to high river flow and groundwater recharge</li>
+  <li><strong>Summer (UK)</strong> &mdash; E &gt; P; soil moisture utilisation then deficit; lower river levels; groundwater levels drop</li>
+  <li><strong>Autumn</strong> &mdash; soil moisture recharge begins as temperatures fall and evapotranspiration decreases</li>
+</ul>
+
+<h3>Factors Affecting the Drainage Basin Cycle</h3>
+<table>
+  <tr><th>Factor</th><th>Effect on Water Cycle</th></tr>
+  <tr><td>Rainfall intensity</td><td>Intense rainfall exceeds infiltration capacity, increasing surface runoff</td></tr>
+  <tr><td>Temperature</td><td>Higher temperatures increase evapotranspiration; snowmelt timing affects discharge</td></tr>
+  <tr><td>Vegetation</td><td>Intercepts rainfall, slows throughflow, increases transpiration; deforestation increases runoff</td></tr>
+  <tr><td>Soil type</td><td>Sandy soils = high infiltration; clay soils = low infiltration, more runoff</td></tr>
+  <tr><td>Rock type</td><td>Permeable rock (chalk, sandstone) = more percolation, less runoff; impermeable rock = more runoff</td></tr>
+  <tr><td>Slope</td><td>Steep slopes = faster runoff, less infiltration</td></tr>
+  <tr><td>Urbanisation</td><td>Impermeable surfaces and drains increase speed of runoff; reduce infiltration</td></tr>
+  <tr><td>Land use</td><td>Agriculture (compaction, removal of hedgerows) can increase runoff</td></tr>
+</table>
+
+<h2>3.3 The Storm Hydrograph</h2>
+
+<div class="definition">
+  <strong>Storm hydrograph:</strong> A graph showing how river discharge at a specific point changes over time in response to a rainfall event. It shows the speed and volume of runoff reaching the river.
+</div>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 340" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Storm Hydrograph</text>
+  <!-- Axes -->
+  <line x1="80" y1="50" x2="80" y2="290" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="80" y1="290" x2="550" y2="290" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Right Y axis for rainfall -->
+  <line x1="550" y1="50" x2="550" y2="290" stroke="#1a73e8" stroke-width="1"/>
+  <!-- Axis labels -->
+  <text x="30" y="170" text-anchor="middle" font-size="10" fill="#1a1a2e" transform="rotate(-90, 30, 170)">Discharge (cumecs)</text>
+  <text x="315" y="320" text-anchor="middle" font-size="10" fill="#1a1a2e">Time (hours)</text>
+  <text x="575" y="170" text-anchor="middle" font-size="9" fill="#1a73e8" transform="rotate(90, 575, 170)">Rainfall (mm)</text>
+  <!-- Rainfall bars -->
+  <rect x="160" y="55" width="25" height="30" fill="#1a73e8" opacity="0.6"/>
+  <rect x="185" y="50" width="25" height="50" fill="#1a73e8" opacity="0.6"/>
+  <rect x="210" y="60" width="25" height="25" fill="#1a73e8" opacity="0.6"/>
+  <text x="198" y="45" text-anchor="middle" font-size="9" fill="#1a73e8" font-weight="bold">Rainfall</text>
+  <!-- Baseflow line -->
+  <line x1="80" y1="260" x2="550" y2="260" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="555" y="257" font-size="9" fill="#16A34A">Baseflow</text>
+  <!-- Hydrograph curve -->
+  <path d="M80,260 L140,258 L180,255 L220,240 L260,180 L290,110 L310,100 L330,105 L360,130 L400,170 L440,210 L480,240 L520,255 L550,258" fill="none" stroke="#DC2626" stroke-width="3"/>
+  <!-- Peak discharge marker -->
+  <circle cx="310" cy="100" r="4" fill="#DC2626"/>
+  <line x1="310" y1="100" x2="310" y2="290" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="310" y="310" text-anchor="middle" font-size="8" fill="#DC2626">Peak discharge</text>
+  <!-- Lag time -->
+  <line x1="198" y1="80" x2="198" y2="85" stroke="#D97706" stroke-width="1.5"/>
+  <line x1="198" y1="82" x2="310" y2="82" stroke="#D97706" stroke-width="2"/>
+  <line x1="310" y1="80" x2="310" y2="85" stroke="#D97706" stroke-width="1.5"/>
+  <text x="254" y="78" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold">Lag time</text>
+  <!-- Rising limb label -->
+  <text x="240" y="170" text-anchor="middle" font-size="9" fill="#DC2626" transform="rotate(-50, 240, 170)">Rising limb</text>
+  <!-- Falling/recession limb -->
+  <text x="420" y="175" text-anchor="middle" font-size="9" fill="#DC2626" transform="rotate(30, 420, 175)">Recession limb</text>
+  <!-- Overland flow vs baseflow -->
+  <path d="M180,255 L260,230 L310,200 L360,220 L440,245 L520,255" fill="#DC2626" opacity="0.1"/>
+  <text x="350" y="245" text-anchor="middle" font-size="8" fill="#DC2626">Stormflow (quickflow)</text>
+</svg>
+</div>
+
+<h3>Key Hydrograph Features</h3>
+<ul>
+  <li><strong>Peak discharge</strong> &mdash; the maximum river flow recorded during the storm event</li>
+  <li><strong>Lag time</strong> &mdash; the delay between peak rainfall and peak discharge (shorter lag time = flashier response)</li>
+  <li><strong>Rising limb</strong> &mdash; the increase in discharge as stormwater reaches the river</li>
+  <li><strong>Recession (falling) limb</strong> &mdash; the decline in discharge as water drains from the basin</li>
+  <li><strong>Baseflow</strong> &mdash; the normal day-to-day discharge of the river, sustained by groundwater</li>
+  <li><strong>Stormflow</strong> &mdash; the additional discharge caused by the rainfall event (above baseflow)</li>
+</ul>
+
+<h3>Flashy vs Subdued Hydrographs</h3>
+<table>
+  <tr><th>Feature</th><th>Flashy (short lag, high peak)</th><th>Subdued (long lag, low peak)</th></tr>
+  <tr><td>Drainage basin</td><td>Small, circular, steep</td><td>Large, elongated, gentle slopes</td></tr>
+  <tr><td>Rock/soil</td><td>Impermeable clay/granite</td><td>Permeable chalk/sandstone</td></tr>
+  <tr><td>Land use</td><td>Urbanised, deforested</td><td>Forested, rural</td></tr>
+  <tr><td>Rainfall</td><td>Intense, short duration</td><td>Gentle, prolonged</td></tr>
+  <tr><td>Drainage density</td><td>High (many tributaries)</td><td>Low (few tributaries)</td></tr>
+  <tr><td>Flood risk</td><td>Higher</td><td>Lower</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When interpreting a hydrograph, always identify lag time, peak discharge, and steepness of limbs. Link each feature to physical and human causes. A short lag time suggests impermeable surfaces, steep slopes, or urbanisation. Show this understanding in your extended writing.
+</div>
+
+<h2>3.4 Climate Change and the Water Cycle</h2>
+
+<p>Climate change is altering the water cycle in several ways:</p>
+<ul>
+  <li><strong>Increased evaporation</strong> &mdash; warmer temperatures increase evaporation from oceans and land surfaces</li>
+  <li><strong>Changed precipitation patterns</strong> &mdash; some regions get wetter (higher latitudes), others drier (subtropics); more intense rainfall events</li>
+  <li><strong>Glacier and ice cap melting</strong> &mdash; transfers water from cryosphere to oceans; initially increases river flow, then reduces it as glaciers disappear</li>
+  <li><strong>Sea level rise</strong> &mdash; from thermal expansion and ice melt; saltwater intrusion into coastal aquifers</li>
+  <li><strong>Permafrost thaw</strong> &mdash; releases stored water and methane; changes drainage patterns in Arctic regions</li>
+  <li><strong>More extreme events</strong> &mdash; more frequent and intense droughts and floods</li>
+</ul>
+
+<h2>3.5 Water Insecurity</h2>
+
+<div class="definition">
+  <strong>Water security:</strong> The reliable availability of an acceptable quantity and quality of water for health, livelihoods, ecosystems, and production, coupled with an acceptable level of water-related risk (UN definition).
+</div>
+
+<div class="definition">
+  <strong>Water stress:</strong> When annual water supply per person falls below 1,700 m&sup3;. <strong>Water scarcity</strong> is below 1,000 m&sup3; per person per year.
+</div>
+
+<h3>Causes of Water Insecurity</h3>
+<table>
+  <tr><th>Physical Causes</th><th>Human Causes</th></tr>
+  <tr><td>Climate &mdash; arid/semi-arid regions receive low, unreliable rainfall</td><td>Population growth &mdash; more people, more demand</td></tr>
+  <tr><td>Seasonal variation &mdash; monsoon climates have long dry seasons</td><td>Economic development &mdash; industrialisation and agriculture increase demand</td></tr>
+  <tr><td>Drought &mdash; extended periods of below-average rainfall</td><td>Urbanisation &mdash; concentrates demand; water-intensive lifestyles</td></tr>
+  <tr><td>Limited aquifer recharge in arid areas</td><td>Pollution &mdash; contaminates available freshwater supplies</td></tr>
+  <tr><td>Climate change &mdash; altering rainfall and increasing evaporation</td><td>Poor governance &mdash; lack of infrastructure, corruption, mismanagement</td></tr>
+</table>
+
+<h3>Consequences of Water Insecurity</h3>
+<ul>
+  <li><strong>Health</strong> &mdash; waterborne diseases (cholera, typhoid); 2 billion people lack safe drinking water globally</li>
+  <li><strong>Food production</strong> &mdash; agriculture uses ~70% of global freshwater; water scarcity reduces crop yields</li>
+  <li><strong>Economic development</strong> &mdash; industry requires water; drought damages economies</li>
+  <li><strong>Conflict</strong> &mdash; transboundary water disputes (e.g. Nile, Jordan, Tigris-Euphrates); water as a weapon in conflicts</li>
+  <li><strong>Environmental</strong> &mdash; over-abstraction causes wetland loss, river drying, ecosystem collapse (e.g. Aral Sea)</li>
+  <li><strong>Gender inequality</strong> &mdash; women and girls disproportionately affected by water collection duties in LIDCs</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Global Water Use by Sector</text>
+  <!-- Pie chart approximation using arcs -->
+  <circle cx="200" cy="170" r="110" fill="#1a73e8" opacity="0.7"/>
+  <!-- Industry slice (~20%) -->
+  <path d="M200,170 L200,60 A110,110 0 0,1 303,120 Z" fill="#D97706" opacity="0.8"/>
+  <!-- Domestic slice (~10%) -->
+  <path d="M200,170 L303,120 A110,110 0 0,1 310,170 Z" fill="#DC2626" opacity="0.7"/>
+  <!-- Agriculture covers the rest (~70%) -->
+  <!-- Labels -->
+  <text x="165" y="230" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Agriculture</text>
+  <text x="165" y="248" text-anchor="middle" font-size="11" fill="#fff">70%</text>
+  <text x="260" y="95" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">Industry</text>
+  <text x="260" y="110" text-anchor="middle" font-size="11" fill="#fff">20%</text>
+  <text x="315" y="145" font-size="10" fill="#DC2626" font-weight="bold">Domestic</text>
+  <text x="315" y="158" font-size="10" fill="#DC2626">10%</text>
+  <!-- Key points -->
+  <rect x="370" y="70" width="15" height="15" fill="#1a73e8" opacity="0.7"/>
+  <text x="390" y="82" font-size="10" fill="#1a1a2e">Agriculture (irrigation, livestock)</text>
+  <rect x="370" y="100" width="15" height="15" fill="#D97706" opacity="0.8"/>
+  <text x="390" y="112" font-size="10" fill="#1a1a2e">Industry (cooling, manufacturing)</text>
+  <rect x="370" y="130" width="15" height="15" fill="#DC2626" opacity="0.7"/>
+  <text x="390" y="142" font-size="10" fill="#1a1a2e">Domestic (drinking, sanitation)</text>
+  <!-- Note -->
+  <text x="450" y="200" text-anchor="middle" font-size="9" fill="#1a1a2e">In LIDCs, agriculture can</text>
+  <text x="450" y="215" text-anchor="middle" font-size="9" fill="#1a1a2e">account for 80-90% of</text>
+  <text x="450" y="230" text-anchor="middle" font-size="9" fill="#1a1a2e">water use. In ACs, industry</text>
+  <text x="450" y="245" text-anchor="middle" font-size="9" fill="#1a1a2e">and domestic use are higher.</text>
+</svg>
+</div>
+
+<h2>3.6 Water Management Strategies</h2>
+
+<h3>Supply-Side Strategies (Increasing Supply)</h3>
+<table>
+  <tr><th>Strategy</th><th>Description</th><th>Advantages</th><th>Disadvantages</th></tr>
+  <tr><td>Dams &amp; reservoirs</td><td>Store water for regulated release; multipurpose (HEP, flood control, irrigation)</td><td>Reliable supply; HEP generation; flood control</td><td>Expensive; displaces communities; sediment trapping; ecosystem disruption</td></tr>
+  <tr><td>Desalination</td><td>Removing salt from seawater (reverse osmosis or distillation)</td><td>Unlimited raw material; reliable in arid coastal areas</td><td>Extremely energy-intensive; expensive; brine waste disposal; high carbon footprint</td></tr>
+  <tr><td>Water transfer schemes</td><td>Moving water from surplus to deficit areas via pipes/canals</td><td>Addresses spatial imbalance</td><td>Very expensive; environmental impacts; political disputes</td></tr>
+  <tr><td>Groundwater extraction</td><td>Pumping water from aquifers via boreholes</td><td>Large stores available; relatively cheap</td><td>Over-abstraction leads to depletion, subsidence; saltwater intrusion</td></tr>
+</table>
+
+<h3>Demand-Side Strategies (Reducing Demand)</h3>
+<ul>
+  <li><strong>Water metering</strong> &mdash; charging per unit of water used; reduces waste</li>
+  <li><strong>Water-efficient technology</strong> &mdash; low-flow toilets and showers, drip irrigation, grey water recycling</li>
+  <li><strong>Leakage reduction</strong> &mdash; fixing ageing pipe networks (UK loses ~20% of treated water to leakage)</li>
+  <li><strong>Education and awareness</strong> &mdash; campaigns to reduce consumption</li>
+  <li><strong>Agricultural efficiency</strong> &mdash; drip irrigation instead of flood irrigation; drought-resistant crops; mulching</li>
+  <li><strong>Pricing reform</strong> &mdash; removing subsidies that encourage wasteful irrigation</li>
+</ul>
+
+<div class="case-study">
+  <strong>Case Study: China's South-North Water Transfer Project</strong><br>
+  <strong>Context:</strong> Northern China has ~20% of China's water but 46% of its population and 64% of farmland. The project diverts water from the Yangtze River basin to the Yellow and Hai River basins.<br>
+  <strong>Scale:</strong> Three routes (Eastern, Central, Western) totalling ~4,350 km of canals; Central route operational since 2014, supplying Beijing.<br>
+  <strong>Benefits:</strong> Supplies 95 million people; reduces groundwater depletion; supports agriculture and industry in the north.<br>
+  <strong>Concerns:</strong> USD 62+ billion cost; environmental disruption to Yangtze ecosystems; displacement of 345,000+ people; pollution in transfer canals; does not address underlying demand issues.
+</div>
+
+<div class="case-study">
+  <strong>Case Study: The Aral Sea &mdash; Water Management Disaster</strong><br>
+  <strong>Context:</strong> Soviet-era diversion of the Amu Darya and Syr Darya rivers for cotton irrigation in Uzbekistan and Kazakhstan caused the Aral Sea to shrink by ~90% since the 1960s.<br>
+  <strong>Impacts:</strong> Exposed seabed created toxic dust storms (salt and pesticides); fishing industry collapsed; local climate became more extreme; health problems from contaminated water and air; biodiversity loss.<br>
+  <strong>Response:</strong> Kok-Aral Dam (World Bank funded, 2005) partially restored the North Aral Sea, increasing water levels and fish stocks. The South Aral Sea remains largely dry.
+</div>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Water Balance Through the Year (UK)</text>
+  <!-- Axes -->
+  <line x1="70" y1="50" x2="70" y2="240" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="70" y1="240" x2="560" y2="240" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="25" y="150" text-anchor="middle" font-size="9" fill="#1a1a2e" transform="rotate(-90, 25, 150)">mm per month</text>
+  <!-- Month labels -->
+  <text x="110" y="255" text-anchor="middle" font-size="8" fill="#1a1a2e">J</text>
+  <text x="150" y="255" text-anchor="middle" font-size="8" fill="#1a1a2e">F</text>
+  <text x="190" y="255" text-anchor="middle" font-size="8" fill="#1a1a2e">M</text>
+  <text x="230" y="255" text-anchor="middle" font-size="8" fill="#1a1a2e">A</text>
+  <text x="270" y="255" text-anchor="middle" font-size="8" fill="#1a1a2e">M</text>
+  <text x="310" y="255" text-anchor="middle" font-size="8" fill="#1a1a2e">J</text>
+  <text x="350" y="255" text-anchor="middle" font-size="8" fill="#1a1a2e">J</text>
+  <text x="390" y="255" text-anchor="middle" font-size="8" fill="#1a1a2e">A</text>
+  <text x="430" y="255" text-anchor="middle" font-size="8" fill="#1a1a2e">S</text>
+  <text x="470" y="255" text-anchor="middle" font-size="8" fill="#1a1a2e">O</text>
+  <text x="510" y="255" text-anchor="middle" font-size="8" fill="#1a1a2e">N</text>
+  <text x="550" y="255" text-anchor="middle" font-size="8" fill="#1a1a2e">D</text>
+  <!-- Precipitation line (relatively stable, higher winter) -->
+  <path d="M110,100 L150,110 L190,120 L230,130 L270,135 L310,140 L350,140 L390,135 L430,125 L470,110 L510,100 L550,95" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- Evapotranspiration line (low winter, high summer) -->
+  <path d="M110,200 L150,195 L190,180 L230,155 L270,120 L310,90 L350,80 L390,90 L430,130 L470,170 L510,195 L550,205" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <!-- Shaded surplus (winter: P > E) -->
+  <path d="M110,100 L150,110 L190,120 L190,180 L150,195 L110,200 Z" fill="#1a73e8" opacity="0.1"/>
+  <path d="M430,125 L470,110 L510,100 L550,95 L550,205 L510,195 L470,170 L430,130 Z" fill="#1a73e8" opacity="0.1"/>
+  <!-- Shaded deficit (summer: E > P) -->
+  <path d="M270,135 L310,140 L350,140 L390,135 L390,90 L350,80 L310,90 L270,120 Z" fill="#DC2626" opacity="0.1"/>
+  <!-- Labels -->
+  <rect x="380" y="45" width="12" height="3" fill="#1a73e8"/>
+  <text x="398" y="50" font-size="9" fill="#1a73e8">Precipitation (P)</text>
+  <rect x="380" y="58" width="12" height="3" fill="#DC2626"/>
+  <text x="398" y="63" font-size="9" fill="#DC2626">Evapotranspiration (E)</text>
+  <!-- Zone labels -->
+  <text x="140" y="160" text-anchor="middle" font-size="9" fill="#1a73e8" font-weight="bold">Surplus</text>
+  <text x="330" y="115" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="bold">Deficit</text>
+  <text x="500" y="155" text-anchor="middle" font-size="9" fill="#1a73e8" font-weight="bold">Recharge</text>
+</svg>
+</div>
+
+<h2>3.7 Sustainable Water Management</h2>
+
+<div class="definition">
+  <strong>Integrated Water Resources Management (IWRM):</strong> A process that promotes the coordinated development and management of water, land, and related resources to maximise economic and social welfare without compromising the sustainability of ecosystems.
+</div>
+
+<h3>Approaches to Sustainable Water Management</h3>
+<ul>
+  <li><strong>Rainwater harvesting</strong> &mdash; collecting and storing rainwater from rooftops for domestic use or irrigation; appropriate technology for LIDCs</li>
+  <li><strong>Wastewater recycling</strong> &mdash; treating and reusing greywater/sewage for non-potable uses (irrigation, industrial cooling); Singapore's NEWater produces 40% of demand</li>
+  <li><strong>Restoration of wetlands</strong> &mdash; natural water storage and filtration; reduces flood risk</li>
+  <li><strong>Community-based management</strong> &mdash; local ownership of water resources; e.g. WaterAid projects providing wells and boreholes in LIDCs</li>
+  <li><strong>Virtual water trade</strong> &mdash; importing water-intensive products from water-rich countries rather than growing them domestically</li>
+</ul>
+
+<div class="case-study">
+  <strong>Case Study: WaterAid in Ethiopia</strong><br>
+  <strong>Context:</strong> 57 million Ethiopians lacked access to clean water (2015). Rural communities relied on contaminated surface water.<br>
+  <strong>Approach:</strong> WaterAid works with local partners to install protected springs, hand-dug wells, and gravity-fed systems. Communities trained to maintain systems. Hygiene education (WASH programmes) reduces waterborne disease.<br>
+  <strong>Impact:</strong> Improved health outcomes; girls attend school instead of collecting water; economic productivity increases; community empowerment through local management committees.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For water management questions, always evaluate solutions by considering: sustainability (does it address root causes?), scale (local vs national), cost-effectiveness, environmental impact, and equity (who benefits?). Compare top-down engineering solutions (dams, desalination) with bottom-up approaches (rainwater harvesting, community wells). The best answers integrate both supply-side and demand-side strategies.
+</div>
+
+</div>
+</body>
+</html>
