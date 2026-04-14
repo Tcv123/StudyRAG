@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tectonic Processes &amp; Hazards</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .case-study { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .case-study strong { color: #15803d; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Topic 1: Tectonic Processes &amp; Hazards</h1>
+
+<h2>1.1 The Structure of the Earth</h2>
+
+<div class="definition">
+  <strong>Plate tectonics:</strong> The theory that the Earth's lithosphere is divided into large rigid plates that move relative to each other, driven by convection currents in the mantle.
+</div>
+
+<p>The Earth has a layered internal structure:</p>
+<ul>
+  <li><strong>Inner core</strong> &mdash; solid iron and nickel, ~5,500&deg;C, radius ~1,220 km</li>
+  <li><strong>Outer core</strong> &mdash; liquid iron and nickel, generates Earth's magnetic field, ~2,200 km thick</li>
+  <li><strong>Mantle</strong> &mdash; semi-molten silicate rock (asthenosphere is the upper, plastic layer), ~2,900 km thick</li>
+  <li><strong>Crust</strong> &mdash; thin outer shell; continental (30&ndash;70 km, granitic, less dense) and oceanic (6&ndash;10 km, basaltic, denser)</li>
+  <li><strong>Lithosphere</strong> &mdash; rigid outer layer (crust + upper mantle), broken into tectonic plates</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 350" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Earth's Internal Structure</text>
+  <!-- Full circle - inner core -->
+  <circle cx="300" cy="190" r="140" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Outer core -->
+  <circle cx="300" cy="190" r="105" fill="#DC2626" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Mantle -->
+  <circle cx="300" cy="190" r="70" fill="#f97316" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Inner core -->
+  <circle cx="300" cy="190" r="30" fill="#fbbf24" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Labels -->
+  <text x="300" y="195" text-anchor="middle" font-size="10" fill="#1a1a2e" font-weight="bold">Inner Core</text>
+  <text x="300" y="145" text-anchor="middle" font-size="10" fill="#1a1a2e" font-weight="bold">Outer Core</text>
+  <text x="300" y="105" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">Mantle</text>
+  <text x="300" y="62" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">Crust</text>
+  <!-- Annotations -->
+  <line x1="440" y1="190" x2="470" y2="140" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="475" y="130" font-size="10" fill="#1a1a2e">Mantle: 2,900 km</text>
+  <text x="475" y="145" font-size="10" fill="#1a1a2e">(semi-molten silicates)</text>
+  <line x1="410" y1="60" x2="470" y2="60" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="475" y="55" font-size="10" fill="#1a1a2e">Crust: 6-70 km</text>
+  <text x="475" y="70" font-size="10" fill="#1a1a2e">(oceanic/continental)</text>
+  <line x1="330" y1="190" x2="470" y2="210" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="475" y="205" font-size="10" fill="#1a1a2e">Inner core: 1,220 km</text>
+  <text x="475" y="220" font-size="10" fill="#1a1a2e">(solid Fe/Ni, 5,500&deg;C)</text>
+  <line x1="370" y1="190" x2="470" y2="170" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="475" y="170" font-size="10" fill="#1a1a2e">Outer core: 2,200 km</text>
+  <text x="475" y="185" font-size="10" fill="#1a1a2e">(liquid Fe/Ni)</text>
+</svg>
+</div>
+
+<h3>Evidence for Plate Tectonics</h3>
+<ul>
+  <li><strong>Continental fit</strong> &mdash; jigsaw-like fit of continents (e.g. South America and Africa)</li>
+  <li><strong>Geological evidence</strong> &mdash; matching rock types, mountain chains, and fossil distributions across continents (e.g. Glossopteris fern found on multiple southern continents)</li>
+  <li><strong>Palaeomagnetism</strong> &mdash; symmetrical patterns of magnetic striping on the ocean floor either side of mid-ocean ridges, showing periodic magnetic field reversals</li>
+  <li><strong>Sea-floor spreading</strong> &mdash; younger rocks near ridges, older rocks further away (Harry Hess, 1960s)</li>
+  <li><strong>GPS measurements</strong> &mdash; direct measurement of plate movement (typically 1&ndash;15 cm/year)</li>
+</ul>
+
+<h3>Driving Mechanisms of Plate Movement</h3>
+<ul>
+  <li><strong>Convection currents</strong> &mdash; heat from the core causes mantle material to rise, spread, cool, and sink, dragging plates along</li>
+  <li><strong>Slab pull</strong> &mdash; the weight of a subducting plate pulls the rest of the plate behind it (considered the dominant mechanism)</li>
+  <li><strong>Ridge push</strong> &mdash; elevated position of new crust at mid-ocean ridges causes it to slide downhill under gravity</li>
+  <li><strong>Mantle plumes</strong> &mdash; localised upwellings of hot mantle material creating hotspots (e.g. Hawaii)</li>
+</ul>
+
+<h2>1.2 Plate Boundaries</h2>
+
+<h3>Divergent (Constructive) Boundaries</h3>
+<div class="definition">
+  <strong>Divergent boundary:</strong> Where two tectonic plates move apart, allowing magma to rise and create new crust (e.g. Mid-Atlantic Ridge).
+</div>
+<ul>
+  <li>Magma rises through the gap as plates separate</li>
+  <li>Forms mid-ocean ridges (submarine mountain chains) and rift valleys (on land, e.g. East African Rift)</li>
+  <li>Volcanic activity &mdash; typically effusive eruptions with basaltic lava (low viscosity)</li>
+  <li>Shallow-focus earthquakes only (&lt;70 km depth)</li>
+  <li>Rate of spreading: slow (1 cm/yr, Mid-Atlantic Ridge) to fast (15 cm/yr, East Pacific Rise)</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Plate Boundary Types</text>
+  <!-- Divergent -->
+  <text x="110" y="55" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a73e8">Divergent</text>
+  <rect x="20" y="100" width="80" height="40" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="120" y="100" width="80" height="40" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="110,70 100,100 120,100" fill="#DC2626"/>
+  <text x="110" y="90" text-anchor="middle" font-size="9" fill="#fff">Magma</text>
+  <line x1="60" y1="80" x2="30" y2="80" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="160" y1="80" x2="190" y2="80" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="110" y="160" text-anchor="middle" font-size="9" fill="#1a1a2e">New crust formed</text>
+  <!-- Convergent -->
+  <text x="310" y="55" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a73e8">Convergent</text>
+  <rect x="220" y="100" width="90" height="30" fill="#16A34A" stroke="#1a1a2e" stroke-width="1.5"/>
+  <path d="M310,100 L310,130 L370,130 L370,100 L340,80 Z" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="370" y="90" width="30" height="40" fill="#D97706" stroke="#1a1a2e" stroke-width="0.5" opacity="0.4"/>
+  <line x1="250" y1="80" x2="280" y2="80" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="370" y1="80" x2="340" y2="80" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="265" y="120" text-anchor="middle" font-size="8" fill="#fff">Oceanic</text>
+  <text x="340" y="120" text-anchor="middle" font-size="8" fill="#fff">Continental</text>
+  <text x="310" y="160" text-anchor="middle" font-size="9" fill="#1a1a2e">Subduction zone</text>
+  <!-- Conservative -->
+  <text x="520" y="55" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a73e8">Conservative</text>
+  <rect x="460" y="90" width="40" height="50" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="510" y="90" width="40" height="50" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5" opacity="0.7"/>
+  <line x1="480" y1="80" x2="480" y2="70" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="530" y1="150" x2="530" y2="160" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="520" y="160" text-anchor="middle" font-size="9" fill="#1a1a2e">Plates slide past</text>
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Key features -->
+  <text x="110" y="200" text-anchor="middle" font-size="9" fill="#1a1a2e">Mid-ocean ridges</text>
+  <text x="110" y="215" text-anchor="middle" font-size="9" fill="#1a1a2e">Rift valleys</text>
+  <text x="310" y="200" text-anchor="middle" font-size="9" fill="#1a1a2e">Trenches, fold mountains</text>
+  <text x="310" y="215" text-anchor="middle" font-size="9" fill="#1a1a2e">Volcanic arcs</text>
+  <text x="520" y="200" text-anchor="middle" font-size="9" fill="#1a1a2e">No volcanic activity</text>
+  <text x="520" y="215" text-anchor="middle" font-size="9" fill="#1a1a2e">Powerful earthquakes</text>
+</svg>
+</div>
+
+<h3>Convergent (Destructive) Boundaries</h3>
+<p>Three sub-types depending on plate composition:</p>
+
+<table>
+  <tr><th>Type</th><th>Process</th><th>Features</th><th>Example</th></tr>
+  <tr><td>Oceanic-continental</td><td>Denser oceanic plate subducts beneath continental plate</td><td>Deep ocean trench, fold mountains, explosive volcanic arc, Benioff zone earthquakes</td><td>Nazca &amp; South American Plates (Andes)</td></tr>
+  <tr><td>Oceanic-oceanic</td><td>Denser/older oceanic plate subducts</td><td>Deep ocean trench, island arc volcanoes</td><td>Pacific &amp; Philippine Plates (Mariana Trench)</td></tr>
+  <tr><td>Continental-continental</td><td>Neither plate subducts; collision and compression</td><td>Fold mountains, no volcanism, powerful shallow earthquakes</td><td>Indian &amp; Eurasian Plates (Himalayas)</td></tr>
+</table>
+
+<h3>Conservative (Transform) Boundaries</h3>
+<div class="definition">
+  <strong>Conservative boundary:</strong> Where two plates slide laterally past each other. Crust is neither created nor destroyed, but friction generates powerful earthquakes.
+</div>
+<ul>
+  <li>No volcanic activity (no magma generation)</li>
+  <li>Shallow-focus, high-magnitude earthquakes when built-up stress is released</li>
+  <li>Example: San Andreas Fault (Pacific and North American Plates)</li>
+</ul>
+
+<h2>1.3 Volcanic Hazards</h2>
+
+<div class="definition">
+  <strong>Volcano:</strong> An opening in the Earth's crust through which magma, volcanic ash, and gases escape to the surface.
+</div>
+
+<h3>Types of Volcano</h3>
+<table>
+  <tr><th>Type</th><th>Shape</th><th>Eruption Style</th><th>Lava Type</th><th>Example</th></tr>
+  <tr><td>Shield</td><td>Broad, gentle slopes</td><td>Effusive (gentle)</td><td>Basaltic (low viscosity)</td><td>Mauna Loa, Hawaii</td></tr>
+  <tr><td>Composite (stratovolcano)</td><td>Steep, conical, layered</td><td>Explosive &amp; effusive</td><td>Andesitic (intermediate)</td><td>Mt Pinatubo, Philippines</td></tr>
+  <tr><td>Caldera</td><td>Collapsed crater</td><td>Supervolcanic (rare, catastrophic)</td><td>Rhyolitic (very viscous)</td><td>Yellowstone, USA</td></tr>
+</table>
+
+<h3>Volcanic Hazards</h3>
+<ul>
+  <li><strong>Lava flows</strong> &mdash; rivers of molten rock; destructive but usually slow enough to evacuate from</li>
+  <li><strong>Pyroclastic flows</strong> &mdash; superheated gas and rock fragments travelling at 100&ndash;700 km/h; the most deadly volcanic hazard</li>
+  <li><strong>Tephra and ash falls</strong> &mdash; airborne volcanic debris; collapses roofs, disrupts aviation, damages crops</li>
+  <li><strong>Lahars</strong> &mdash; volcanic mudflows (water + ash + debris); travel rapidly down valleys</li>
+  <li><strong>Toxic gases</strong> &mdash; SO<sub>2</sub>, CO<sub>2</sub>, H<sub>2</sub>S can be lethal near vents</li>
+  <li><strong>Volcanic tsunamis</strong> &mdash; caused by flank collapse or caldera formation displacing water</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Composite Volcano Structure</text>
+  <!-- Mountain shape -->
+  <polygon points="300,60 150,250 450,250" fill="#8B7355" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Layers -->
+  <path d="M220,200 Q300,180 380,200" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="4,3"/>
+  <path d="M200,220 Q300,200 400,220" fill="none" stroke="#D97706" stroke-width="2"/>
+  <path d="M240,170 Q300,150 360,170" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="4,3"/>
+  <!-- Crater -->
+  <ellipse cx="300" cy="65" rx="25" ry="8" fill="#555" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Eruption cloud -->
+  <circle cx="300" cy="40" r="15" fill="#999" opacity="0.6"/>
+  <circle cx="285" cy="30" r="12" fill="#aaa" opacity="0.5"/>
+  <circle cx="315" cy="28" r="14" fill="#aaa" opacity="0.5"/>
+  <circle cx="300" cy="18" r="10" fill="#bbb" opacity="0.4"/>
+  <!-- Magma chamber -->
+  <ellipse cx="300" cy="290" rx="80" ry="25" fill="#DC2626" opacity="0.7" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="300" y="295" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">Magma Chamber</text>
+  <!-- Vent -->
+  <rect x="295" y="65" width="10" height="185" fill="#DC2626" opacity="0.5"/>
+  <text x="265" y="150" text-anchor="end" font-size="9" fill="#fff" font-weight="bold">Main vent</text>
+  <!-- Labels -->
+  <line x1="380" y1="200" x2="470" y2="180" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="475" y="175" font-size="10" fill="#1a1a2e">Alternating layers of</text>
+  <text x="475" y="188" font-size="10" fill="#1a1a2e">lava and ash</text>
+  <line x1="310" y1="40" x2="470" y2="40" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="475" y="38" font-size="10" fill="#1a1a2e">Ash cloud</text>
+  <text x="475" y="51" font-size="10" fill="#1a1a2e">(tephra ejected)</text>
+  <!-- Pyroclastic flow -->
+  <path d="M380,180 Q430,200 480,230" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="490" y="235" font-size="9" fill="#DC2626" font-weight="bold">Pyroclastic flow</text>
+  <!-- Lava flow -->
+  <path d="M210,220 Q180,240 130,255" fill="none" stroke="#D97706" stroke-width="2.5"/>
+  <text x="70" y="260" font-size="9" fill="#D97706" font-weight="bold">Lava flow</text>
+</svg>
+</div>
+
+<div class="case-study">
+  <strong>Case Study: Mt Pinatubo, Philippines (1991) &mdash; Volcanic Hazard in an AC</strong><br>
+  <strong>Context:</strong> Composite volcano on Luzon island; convergent boundary (Philippine &amp; Eurasian Plates). VEI 6 eruption, the largest of the 20th century.<br>
+  <strong>Impacts:</strong> 847 deaths (mostly from lahars); 1.2 million people displaced; 8,000 homes destroyed; 20 million tonnes of SO<sub>2</sub> injected into stratosphere, lowering global temperatures by ~0.5&deg;C for 2 years; agricultural land buried under ash; US Clark Air Base destroyed.<br>
+  <strong>Response:</strong> PHIVOLCS monitoring and early warning led to evacuation of 58,000 people; international aid; long-term resettlement programmes.
+</div>
+
+<div class="case-study">
+  <strong>Case Study: Montserrat (1995&ndash;present) &mdash; Volcanic Hazard in a SIDS</strong><br>
+  <strong>Context:</strong> Soufriere Hills volcano, Caribbean island; destructive boundary. Dormant for 350 years before reactivating.<br>
+  <strong>Impacts:</strong> 19 deaths from pyroclastic flows (1997); capital Plymouth buried; southern 2/3 of island designated exclusion zone; population fell from 11,000 to &lt;5,000; economy devastated.<br>
+  <strong>Response:</strong> UK aid (GBP 400 million+); new capital built at Little Bay in the north; volcano observatory established; ongoing monitoring.
+</div>
+
+<h2>1.4 Seismic Hazards</h2>
+
+<div class="definition">
+  <strong>Earthquake:</strong> A sudden release of energy in the Earth's crust or upper mantle that produces seismic waves. The point of origin underground is the <strong>focus</strong> (hypocentre); the point directly above on the surface is the <strong>epicentre</strong>.
+</div>
+
+<h3>Earthquake Measurement</h3>
+<table>
+  <tr><th>Scale</th><th>What it Measures</th><th>Details</th></tr>
+  <tr><td>Moment Magnitude Scale (M<sub>w</sub>)</td><td>Energy released (magnitude)</td><td>Logarithmic; each whole number = ~32x more energy. Most scientifically accurate.</td></tr>
+  <tr><td>Modified Mercalli Intensity (MMI)</td><td>Effects/damage experienced</td><td>I&ndash;XII scale based on observed impacts. Varies with distance from epicentre.</td></tr>
+</table>
+
+<h3>Earthquake Hazards</h3>
+<ul>
+  <li><strong>Ground shaking</strong> &mdash; primary hazard; intensity depends on magnitude, depth, distance, and local geology</li>
+  <li><strong>Liquefaction</strong> &mdash; saturated, loose sediments behave like liquid during shaking (e.g. Christchurch 2011)</li>
+  <li><strong>Landslides</strong> &mdash; triggered by shaking on steep slopes</li>
+  <li><strong>Tsunamis</strong> &mdash; generated by submarine earthquakes displacing the seabed</li>
+  <li><strong>Secondary fires</strong> &mdash; caused by ruptured gas mains (e.g. San Francisco 1906)</li>
+</ul>
+
+<div class="case-study">
+  <strong>Case Study: Nepal Earthquake (2015) &mdash; Seismic Hazard in an EDC/LIDC</strong><br>
+  <strong>Context:</strong> M<sub>w</sub> 7.8, shallow focus (15 km), convergent boundary (Indian &amp; Eurasian Plates).<br>
+  <strong>Impacts:</strong> 8,900+ deaths; 22,000 injured; 600,000+ homes destroyed; historical temples in Kathmandu collapsed; landslides blocked roads; avalanche on Mt Everest killed 18; GDP loss ~50% of national budget.<br>
+  <strong>Response:</strong> Slow government response due to poor infrastructure; international aid ($4.1 billion pledged); problems reaching remote villages; long-term rebuilding still ongoing.
+</div>
+
+<div class="case-study">
+  <strong>Case Study: L'Aquila, Italy (2009) &mdash; Seismic Hazard in an AC</strong><br>
+  <strong>Context:</strong> M<sub>w</sub> 6.3, shallow focus (8.8 km), normal faulting related to the Apennine mountain belt.<br>
+  <strong>Impacts:</strong> 309 deaths; 1,500 injured; 67,000 homeless; historic medieval centre destroyed; university buildings collapsed; estimated EUR 10 billion in damage.<br>
+  <strong>Response:</strong> Rapid military/civil protection deployment; temporary housing provided; controversy over scientists convicted (later acquitted) for inadequate risk communication; C.A.S.E. project built new earthquake-resistant housing.
+</div>
+
+<h2>1.5 Tsunami Hazards</h2>
+
+<div class="definition">
+  <strong>Tsunami:</strong> A series of ocean waves caused by a large-scale displacement of water, typically triggered by submarine earthquakes, volcanic eruptions, or underwater landslides.
+</div>
+
+<p>Characteristics of tsunamis:</p>
+<ul>
+  <li>Travel at 500&ndash;950 km/h in deep ocean (speed of a jet aircraft)</li>
+  <li>Wavelength up to 200 km in open ocean; wave height &lt;1 m (barely noticeable)</li>
+  <li>As waves reach shallow coastal waters, they slow down and pile up to heights of 10&ndash;30+ metres</li>
+  <li>Multiple waves may arrive over several hours; the first wave is not always the largest</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 250" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Tsunami Generation &amp; Propagation</text>
+  <!-- Sea floor -->
+  <path d="M0,200 L150,200 L160,180 L180,200 L600,200" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1.5"/>
+  <rect x="0" y="200" width="600" height="50" fill="#D97706" opacity="0.2"/>
+  <!-- Water -->
+  <rect x="0" y="80" width="600" height="120" fill="#1a73e8" opacity="0.15"/>
+  <!-- Fault displacement -->
+  <line x1="160" y1="170" x2="160" y2="200" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="160" y="220" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="bold">Fault rupture</text>
+  <path d="M145,175 L160,160 L175,175" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <!-- Waves in deep water - small -->
+  <path d="M180,95 Q210,88 240,95 Q270,102 300,95" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <text x="240" y="78" text-anchor="middle" font-size="9" fill="#1a73e8">Deep ocean: &lt;1m high</text>
+  <text x="240" y="68" text-anchor="middle" font-size="9" fill="#1a73e8">500-950 km/h</text>
+  <!-- Waves approaching shore - growing -->
+  <path d="M400,90 Q420,75 440,90 Q455,100 470,85" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- Shore/shallow water -->
+  <path d="M480,200 L530,160 L560,140 L600,120" fill="#D97706" opacity="0.4" stroke="#D97706" stroke-width="1"/>
+  <!-- Big wave at shore -->
+  <path d="M500,85 Q520,40 540,55 Q545,58 540,60" fill="#1a73e8" opacity="0.4" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="540" y="35" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="bold">10-30m high</text>
+  <text x="540" y="115" text-anchor="middle" font-size="9" fill="#1a73e8">Waves slow</text>
+  <text x="540" y="128" text-anchor="middle" font-size="9" fill="#1a73e8">&amp; pile up</text>
+  <!-- Direction arrow -->
+  <line x1="250" y1="110" x2="450" y2="110" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <text x="350" y="125" text-anchor="middle" font-size="9" fill="#1a1a2e">Direction of propagation</text>
+  <defs>
+    <marker id="arrow2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+</svg>
+</div>
+
+<div class="case-study">
+  <strong>Case Study: Indian Ocean Tsunami (2004)</strong><br>
+  <strong>Context:</strong> Triggered by M<sub>w</sub> 9.1 earthquake off Sumatra (convergent: Indo-Australian &amp; Eurasian Plates). ~1,600 km of fault ruptured.<br>
+  <strong>Impacts:</strong> ~230,000 deaths across 14 countries; Indonesia, Sri Lanka, India, and Thailand worst affected; 1.7 million displaced; fishing communities devastated; USD 9.9 billion in damage; coral reefs and mangroves destroyed.<br>
+  <strong>Response:</strong> Massive international aid; Indian Ocean Tsunami Warning System (IOTWS) established 2006; DART buoys deployed; coastal early warning sirens installed; mangrove replanting programmes.
+</div>
+
+<h2>1.6 Hazard Management</h2>
+
+<h3>The Hazard Management Cycle</h3>
+<p>Four phases: <strong>Mitigation &rarr; Preparedness &rarr; Response &rarr; Recovery</strong></p>
+
+<h3>Prediction &amp; Forecasting</h3>
+<table>
+  <tr><th>Hazard</th><th>Can it be predicted?</th><th>Monitoring Methods</th></tr>
+  <tr><td>Volcanoes</td><td>Reasonably well (days to weeks warning)</td><td>Seismometers, gas monitoring (SO<sub>2</sub>), ground deformation (tiltmeters, GPS, InSAR), thermal imaging</td></tr>
+  <tr><td>Earthquakes</td><td>Cannot be reliably predicted</td><td>Seismic gap theory, historical recurrence intervals, foreshock patterns (unreliable)</td></tr>
+  <tr><td>Tsunamis</td><td>After earthquake detected, yes</td><td>DART buoys, tide gauges, seismometer networks, satellite monitoring</td></tr>
+</table>
+
+<h3>Protection &amp; Adaptation</h3>
+<ul>
+  <li><strong>Earthquake-resistant buildings</strong> &mdash; base isolation, cross-bracing, reinforced concrete, tuned mass dampers</li>
+  <li><strong>Land-use planning</strong> &mdash; hazard mapping and zoning to prevent development in high-risk areas</li>
+  <li><strong>Sea walls and tsunami barriers</strong> &mdash; Japan's coastal defences (e.g. Kamaishi breakwater, 63 m deep)</li>
+  <li><strong>Education and drills</strong> &mdash; Japan's annual Disaster Prevention Day; school tsunami drills</li>
+  <li><strong>Early warning systems</strong> &mdash; Pacific Tsunami Warning Centre; Japan Meteorological Agency earthquake alerts (seconds of warning)</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Hazard Management Cycle</text>
+  <!-- Circle -->
+  <circle cx="300" cy="170" r="100" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+  <!-- Quadrant arcs -->
+  <path d="M300,70 A100,100 0 0,1 400,170" fill="none" stroke="#1a73e8" stroke-width="6"/>
+  <path d="M400,170 A100,100 0 0,1 300,270" fill="none" stroke="#DC2626" stroke-width="6"/>
+  <path d="M300,270 A100,100 0 0,1 200,170" fill="none" stroke="#16A34A" stroke-width="6"/>
+  <path d="M200,170 A100,100 0 0,1 300,70" fill="none" stroke="#D97706" stroke-width="6"/>
+  <!-- Labels -->
+  <text x="370" y="110" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a73e8">Preparedness</text>
+  <text x="370" y="240" text-anchor="middle" font-size="12" font-weight="bold" fill="#DC2626">Response</text>
+  <text x="230" y="240" text-anchor="middle" font-size="12" font-weight="bold" fill="#16A34A">Recovery</text>
+  <text x="230" y="110" text-anchor="middle" font-size="12" font-weight="bold" fill="#D97706">Mitigation</text>
+  <!-- Central label -->
+  <text x="300" y="165" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a1a2e">HAZARD</text>
+  <text x="300" y="180" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a1a2e">EVENT</text>
+  <!-- Sub-labels -->
+  <text x="460" y="100" font-size="9" fill="#1a73e8">Drills, warning systems,</text>
+  <text x="460" y="112" font-size="9" fill="#1a73e8">evacuation plans, education</text>
+  <text x="460" y="230" font-size="9" fill="#DC2626">Emergency services,</text>
+  <text x="460" y="242" font-size="9" fill="#DC2626">search &amp; rescue, aid</text>
+  <text x="30" y="230" font-size="9" fill="#16A34A">Rebuilding, economic</text>
+  <text x="30" y="242" font-size="9" fill="#16A34A">recovery, rehabilitation</text>
+  <text x="30" y="100" font-size="9" fill="#D97706">Building codes, land-use</text>
+  <text x="30" y="112" font-size="9" fill="#D97706">planning, hazard mapping</text>
+  <!-- Arrows -->
+  <polygon points="345,73 355,73 350,65" fill="#1a73e8"/>
+  <polygon points="397,215 403,215 400,223" fill="#DC2626"/>
+  <polygon points="255,267 245,267 250,275" fill="#16A34A"/>
+  <polygon points="203,125 197,125 200,117" fill="#D97706"/>
+</svg>
+</div>
+
+<h3>Factors Affecting Disaster Impact</h3>
+<div class="definition">
+  <strong>Disaster Risk Equation:</strong> Risk = (Hazard &times; Vulnerability) / Capacity to Cope
+</div>
+<ul>
+  <li><strong>Level of development</strong> &mdash; ACs have better infrastructure, emergency services, building codes, insurance</li>
+  <li><strong>Governance</strong> &mdash; effective governments can enforce building codes, fund monitoring, coordinate responses</li>
+  <li><strong>Population density</strong> &mdash; higher density = more people exposed</li>
+  <li><strong>Urbanisation</strong> &mdash; poorly built informal settlements in LIDCs are especially vulnerable</li>
+  <li><strong>Time of day</strong> &mdash; affects whether people are in buildings, asleep, or able to receive warnings</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When comparing tectonic disasters in ACs vs LIDCs/EDCs, always consider the Pressure and Release (PAR) model: root causes (governance, economics) &rarr; dynamic pressures (urbanisation, deforestation) &rarr; unsafe conditions (poor buildings, dangerous locations) &rarr; disaster. Higher vulnerability does not mean higher hazard magnitude.
+</div>
+
+<h2>1.7 Theoretical Frameworks</h2>
+
+<h3>The Hazard Profile</h3>
+<p>A method of comparing hazards across multiple dimensions: magnitude, speed of onset, duration, areal extent, spatial predictability, and frequency. Useful for comparing different types of tectonic hazard.</p>
+
+<h3>The Park Model (Response Curve)</h3>
+<p>Shows how a community's quality of life changes before, during, and after a disaster event:</p>
+<ul>
+  <li><strong>Pre-disaster</strong> &mdash; normal quality of life</li>
+  <li><strong>Hazard event</strong> &mdash; sharp decline in quality of life</li>
+  <li><strong>Relief/rescue</strong> &mdash; stabilisation at lowest point</li>
+  <li><strong>Rehabilitation</strong> &mdash; gradual recovery begins</li>
+  <li><strong>Reconstruction</strong> &mdash; quality of life returns to or exceeds pre-disaster levels</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Park Model (Disaster Response Curve)</text>
+  <!-- Axes -->
+  <line x1="70" y1="50" x2="70" y2="240" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="70" y1="240" x2="560" y2="240" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="35" y="150" text-anchor="middle" font-size="10" fill="#1a1a2e" transform="rotate(-90, 35, 150)">Quality of Life</text>
+  <text x="315" y="265" text-anchor="middle" font-size="10" fill="#1a1a2e">Time</text>
+  <!-- Pre-disaster level -->
+  <line x1="70" y1="90" x2="560" y2="90" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="565" y="93" font-size="8" fill="#999">Pre-disaster level</text>
+  <!-- Curve -->
+  <path d="M70,90 L180,90 L200,85 L220,200 L260,210 L310,180 L380,140 L440,100 L500,80 L560,75" fill="none" stroke="#1a73e8" stroke-width="3"/>
+  <!-- Event marker -->
+  <line x1="210" y1="50" x2="210" y2="240" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <text x="210" y="45" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="bold">Hazard Event</text>
+  <!-- Phase labels -->
+  <text x="130" y="110" text-anchor="middle" font-size="9" fill="#16A34A">Normal</text>
+  <text x="245" y="225" text-anchor="middle" font-size="9" fill="#DC2626">Relief</text>
+  <text x="340" y="170" text-anchor="middle" font-size="9" fill="#D97706">Rehabilitation</text>
+  <text x="480" y="72" text-anchor="middle" font-size="9" fill="#1a73e8">Reconstruction</text>
+  <!-- Improvement above original -->
+  <text x="545" y="72" text-anchor="start" font-size="8" fill="#16A34A">Build back</text>
+  <text x="545" y="82" text-anchor="start" font-size="8" fill="#16A34A">better?</text>
+</svg>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Use the Park Model to compare disaster recovery in ACs vs LIDCs. ACs typically show a shallower dip and faster recovery (V-shaped curve), while LIDCs may show a deeper dip and slower, incomplete recovery (L-shaped curve). Always support with named examples.
+</div>
+
+<h3>Key Terminology Summary</h3>
+<table>
+  <tr><th>Term</th><th>Definition</th></tr>
+  <tr><td>Hazard</td><td>A natural event with the potential to cause harm to people or property</td></tr>
+  <tr><td>Vulnerability</td><td>The susceptibility of a community to the impacts of a hazard</td></tr>
+  <tr><td>Resilience</td><td>The ability of a community to recover from a hazard event</td></tr>
+  <tr><td>Risk</td><td>The probability that a hazard event will cause harmful consequences</td></tr>
+  <tr><td>Disaster</td><td>When a hazard event causes significant damage, destruction, or loss of life</td></tr>
+</table>
+
+</div>
+</body>
+</html>

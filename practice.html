@@ -28,6 +28,9 @@
   <script src="questions/biology/biology-edexcel-b-practice.js"></script>
   <script src="questions/biology/biology-ocr-a-practice.js"></script>
   <script src="questions/biology/biology-ocr-b-practice.js"></script>
+  <script src="questions/geography-aqa/geography-aqa-practice.js"></script>
+  <script src="questions/geography-edexcel/geography-edexcel-practice.js"></script>
+  <script src="questions/geography-ocr/geography-ocr-practice.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -528,6 +531,9 @@ const PRACTICE_MAP = {
   'Biology_Edexcel B': () => typeof BIOLOGY_EDEXCEL_B_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_B_PRACTICE : null,
   'Biology_OCR A': () => typeof BIOLOGY_OCR_A_PRACTICE !== 'undefined' ? BIOLOGY_OCR_A_PRACTICE : null,
   'Biology_OCR B': () => typeof BIOLOGY_OCR_B_PRACTICE !== 'undefined' ? BIOLOGY_OCR_B_PRACTICE : null,
+  'Geography_AQA': () => typeof GEOGRAPHY_AQA_PRACTICE !== 'undefined' ? GEOGRAPHY_AQA_PRACTICE : null,
+  'Geography_Edexcel': () => typeof GEOGRAPHY_EDEXCEL_PRACTICE !== 'undefined' ? GEOGRAPHY_EDEXCEL_PRACTICE : null,
+  'Geography_OCR': () => typeof GEOGRAPHY_OCR_PRACTICE !== 'undefined' ? GEOGRAPHY_OCR_PRACTICE : null,
 };
 
 function getPracticeData(topicKey) {
@@ -871,6 +877,56 @@ const SUBJECT_TOPICS = {
         { id: 'B4', name: 'Energy, Reproduction and Populations', sub: 'Photosynthesis, respiration, ecosystems, evolution' },
         { id: 'B5', name: 'Genetics, Control and Homeostasis', sub: 'DNA, inheritance, nervous/hormonal, homeostasis' },
         { id: 'B6', name: 'Biotechnology, Ecosystems and Human Impact', sub: 'Gene tech, cloning, conservation, sustainability' },
+      ]},
+    ]
+  },
+  'Geography_AQA': {
+    sections: [
+      { label: 'AQA — Physical Geography (Paper 1)', topics: [
+        { id: '1.1', name: 'Water & Carbon Cycles', sub: 'Global water cycle, carbon stores, drainage basins' },
+        { id: '1.2', name: 'Coastal Systems & Landscapes', sub: 'Waves, erosion, transport, landforms, management' },
+        { id: '1.3', name: 'Hazards', sub: 'Plate tectonics, volcanoes, earthquakes, tropical storms' },
+      ]},
+      { label: 'AQA — Human Geography (Paper 2)', topics: [
+        { id: '2.1', name: 'Changing Places', sub: 'Place meaning, identity, representation' },
+        { id: '2.2', name: 'Contemporary Urban Environments', sub: 'Urbanisation, urban forms, sustainability' },
+        { id: '2.3', name: 'Population & the Environment', sub: 'DTM, migration, resource management' },
+        { id: '2.4', name: 'Resource Security', sub: 'Energy, water, food security' },
+      ]},
+      { label: 'AQA — Fieldwork (Paper 3)', topics: [
+        { id: '3.1', name: 'Fieldwork & Investigation', sub: 'Methodology, sampling, data presentation' },
+      ]},
+    ]
+  },
+  'Geography_Edexcel': {
+    sections: [
+      { label: 'Edexcel — Physical Geography', topics: [
+        { id: 'T1', name: 'Tectonic Processes & Hazards', sub: 'Plate tectonics, volcanoes, earthquakes, management' },
+        { id: 'T2', name: 'Landscape Systems, Processes & Change', sub: 'Coastal landscapes, waves, erosion, landforms' },
+        { id: 'T3', name: 'The Water Cycle & Water Insecurity', sub: 'Global water cycle, water balance, management' },
+        { id: 'T4', name: 'The Carbon Cycle & Energy Security', sub: 'Carbon stores, energy mix, fossil fuels' },
+      ]},
+      { label: 'Edexcel — Human Geography', topics: [
+        { id: 'T5', name: 'Globalisation', sub: 'TNCs, global shift, development, cultural impacts' },
+        { id: 'T6', name: 'Diverse Places', sub: 'Demographics, identity, regeneration' },
+        { id: 'T7', name: 'Superpowers', sub: 'Characteristics, shifts in power, geopolitics' },
+        { id: 'T8', name: 'Health, Human Rights & Intervention', sub: 'Global health, development, intervention' },
+      ]},
+    ]
+  },
+  'Geography_OCR': {
+    sections: [
+      { label: 'OCR — Physical Geography', topics: [
+        { id: '1.1', name: 'Landscape Systems', sub: 'Coastal landscapes, waves, erosion, management' },
+        { id: '1.2', name: "Earth's Life Support Systems", sub: 'Water cycle, carbon cycle, climate change' },
+        { id: '1.3', name: 'Hazardous Earth', sub: 'Plate tectonics, volcanoes, tropical storms' },
+      ]},
+      { label: 'OCR — Human Geography', topics: [
+        { id: '2.1', name: 'Changing Spaces, Making Places', sub: 'Place profiles, identity, regeneration' },
+        { id: '2.2', name: 'Trade in the Contemporary World', sub: 'Global trade, WTO, trade blocs' },
+        { id: '2.3', name: 'Global Migration', sub: 'Migration theories, push/pull, impacts' },
+        { id: '2.4', name: 'Human Rights', sub: 'Development, health, gender, education' },
+        { id: '2.5', name: 'Power & Borders', sub: 'Sovereignty, superpowers, global governance' },
       ]},
     ]
   },
