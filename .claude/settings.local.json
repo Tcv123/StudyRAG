@@ -60,7 +60,9 @@
       "Bash(ls notes-geography-ocr/)",
       "Bash(ls questions/geography-aqa/geography-aqa-practice.js)",
       "Bash(ls questions/geography-edexcel/geography-edexcel-practice.js)",
-      "Bash(ls questions/geography-ocr/geography-ocr-practice.js)"
+      "Bash(ls questions/geography-ocr/geography-ocr-practice.js)",
+      "Bash(ls diagnostics/geography-*)",
+      "Bash(ls subject-notes/geography-*)"
     ]
   },
   "hooks": {
