@@ -724,26 +724,15 @@ async function saveResult(rag, results) {
   console.log('SAVE: starting', { rag, topic: topicKey, user: user.id });
 
   try {
-    const { data: existing, error: e1 } = await supabaseClient
+    const { error: e1 } = await supabaseClient
       .from('topic_progress')
-      .select('id')
-      .eq('user_id', user.id).eq('subject', 'Economics').eq('exam_board', 'AQA').eq('topic', topicKey)
-      .maybeSingle();
+      .upsert(
+        { user_id: user.id, subject: 'Economics', exam_board: 'AQA', topic: topicKey, rag_status: rag, updated_at: now },
+        { onConflict: 'user_id,subject,exam_board,topic' }
+      );
 
-    if (e1) console.error('SAVE: check existing failed', e1);
-
-    if (existing) {
-      const { error: e2 } = await supabaseClient.from('topic_progress')
-        .update({ rag_status: rag, updated_at: now })
-        .eq('id', existing.id);
-      if (e2) console.error('SAVE: update failed', e2);
-      else console.log('SAVE: updated existing row');
-    } else {
-      const { error: e3 } = await supabaseClient.from('topic_progress')
-        .insert({ user_id: user.id, subject: 'Economics', exam_board: 'AQA', topic: topicKey, rag_status: rag, updated_at: now });
-      if (e3) console.error('SAVE: insert failed', e3);
-      else console.log('SAVE: inserted new row');
-    }
+    if (e1) console.error('SAVE: upsert failed', e1);
+    else console.log('SAVE: upsert success');
 
     const { data: allTopics } = await supabaseClient
       .from('topic_progress').select('rag_status')
