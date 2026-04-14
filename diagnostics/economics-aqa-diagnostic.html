@@ -724,15 +724,18 @@ async function saveResult(rag, results) {
   console.log('SAVE: starting', { rag, topic: topicKey, user: user.id });
 
   try {
-    const { error: e1 } = await supabaseClient
-      .from('topic_progress')
-      .upsert(
-        { user_id: user.id, subject: 'Economics', exam_board: 'AQA', topic: topicKey, rag_status: rag, updated_at: now },
-        { onConflict: 'user_id,subject,exam_board,topic' }
-      );
+    // Delete existing row first
+    const { error: delErr } = await supabaseClient.from('topic_progress')
+      .delete()
+      .eq('user_id', user.id).eq('subject', 'Economics').eq('exam_board', 'AQA').eq('topic', topicKey);
+    if (delErr) console.warn('SAVE: delete old row', delErr);
 
-    if (e1) console.error('SAVE: upsert failed', e1);
-    else console.log('SAVE: upsert success');
+    // Insert fresh
+    const { error: e1 } = await supabaseClient.from('topic_progress')
+      .insert({ user_id: user.id, subject: 'Economics', exam_board: 'AQA', topic: topicKey, rag_status: rag, updated_at: now });
+
+    if (e1) console.error('SAVE: insert failed', e1);
+    else console.log('SAVE: insert success');
 
     const { data: allTopics } = await supabaseClient
       .from('topic_progress').select('rag_status')
