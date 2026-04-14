@@ -47,7 +47,9 @@
       "Bash(ls -la notes-chemistry-aqa/required_practicals.html notes-chemistry-edexcel/core_practicals.html notes-chemistry-ocr-a/practical_activity_groups.html notes-chemistry-ocr-b/practical_activities.html)",
       "Bash(ls -la notes-biology-aqa/required_practicals.html notes-biology-edexcel-a/core_practicals.html notes-biology-edexcel-b/core_practicals.html notes-biology-ocr-a/practical_activity_groups.html notes-biology-ocr-b/practical_activities.html)",
       "Bash(ls /c/Users/tcvas/OneDrive/Desktop/Learning/diagnostics/biology-ocr*)",
-      "Bash(node)"
+      "Bash(node)",
+      "Bash(wc -l \"/c/Users/tcvas/OneDrive/Desktop/Learning/notes-chemistry-aqa/\"*.html)",
+      "Bash(wc -l \"/c/Users/tcvas/OneDrive/Desktop/Learning/notes-chemistry-edexcel/\"*.html)"
     ]
   },
   "hooks": {

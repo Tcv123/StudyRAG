@@ -67,6 +67,78 @@
 
 <p>By Hess's law: &Delta;<sub>f</sub>H&deg; = &Delta;<sub>at</sub>H&deg;(Na) + &Delta;<sub>at</sub>H&deg;(Cl) + IE<sub>1</sub>(Na) + EA<sub>1</sub>(Cl) + &Delta;<sub>LE</sub>H&deg;</p>
 
+<!-- SVG: Born-Haber Cycle for NaCl (Lattice Enthalpy) -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 420" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Born-Haber Cycle for NaCl</text>
+  <defs>
+    <marker id="bh5ArrowB" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a73e8"/></marker>
+    <marker id="bh5ArrowR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#DC2626"/></marker>
+    <marker id="bh5ArrowG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#16A34A"/></marker>
+    <marker id="bh5ArrowA" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#D97706"/></marker>
+    <marker id="bh5ArrowK" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker>
+  </defs>
+
+  <!-- Level 1 (highest): Na+(g) + e- + Cl(g) -->
+  <line x1="160" y1="55" x2="430" y2="55" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="295" y="48" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na+(g) + e- + Cl(g)</text>
+
+  <!-- Level 2: Na+(g) + Cl-(g) -->
+  <line x1="320" y1="125" x2="490" y2="125" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="405" y="118" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na+(g) + Cl-(g)</text>
+
+  <!-- Level 3: Na(g) + Cl(g) -->
+  <line x1="30" y1="145" x2="155" y2="145" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="92" y="138" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(g) + Cl(g)</text>
+
+  <!-- Level 4: Na(g) + 1/2 Cl2(g) -->
+  <line x1="30" y1="215" x2="155" y2="215" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="92" y="208" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(g) + 1/2 Cl2(g)</text>
+
+  <!-- Level 5: Na(s) + 1/2 Cl2(g) (elements) -->
+  <line x1="30" y1="295" x2="190" y2="295" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="110" y="288" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(s) + 1/2 Cl2(g)</text>
+
+  <!-- Level 6 (lowest): NaCl(s) -->
+  <line x1="320" y1="380" x2="490" y2="380" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="405" y="398" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">NaCl(s)</text>
+
+  <!-- Arrow 1: Atomisation of Na -->
+  <line x1="70" y1="293" x2="70" y2="219" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#bh5ArrowB)"/>
+  <text x="25" y="260" font-family="system-ui" font-size="9" fill="#1a73e8">DatH(Na)</text>
+  <text x="25" y="272" font-family="system-ui" font-size="8" fill="#1a73e8">+108</text>
+
+  <!-- Arrow 2: Atomisation of Cl -->
+  <line x1="70" y1="213" x2="70" y2="149" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#bh5ArrowB)"/>
+  <text x="25" y="182" font-family="system-ui" font-size="9" fill="#1a73e8">DatH(Cl)</text>
+  <text x="25" y="194" font-family="system-ui" font-size="8" fill="#1a73e8">+121</text>
+
+  <!-- Arrow 3: IE1 of Na -->
+  <line x1="140" y1="143" x2="180" y2="59" stroke="#D97706" stroke-width="1.5" marker-end="url(#bh5ArrowA)"/>
+  <text x="130" y="100" font-family="system-ui" font-size="9" fill="#D97706">IE1(Na)</text>
+  <text x="130" y="112" font-family="system-ui" font-size="8" fill="#D97706">+496</text>
+
+  <!-- Arrow 4: EA1 of Cl (downward = exothermic) -->
+  <line x1="405" y1="57" x2="405" y2="121" stroke="#16A34A" stroke-width="1.5" marker-end="url(#bh5ArrowG)"/>
+  <text x="448" y="85" font-family="system-ui" font-size="9" fill="#16A34A">EA1(Cl)</text>
+  <text x="448" y="97" font-family="system-ui" font-size="8" fill="#16A34A">-349</text>
+
+  <!-- Arrow 5: Lattice enthalpy (large downward) -->
+  <line x1="405" y1="127" x2="405" y2="376" stroke="#DC2626" stroke-width="2" marker-end="url(#bh5ArrowR)"/>
+  <text x="470" y="250" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Lattice</text>
+  <text x="470" y="262" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">enthalpy</text>
+  <text x="470" y="274" font-family="system-ui" font-size="8" fill="#DC2626">-787</text>
+
+  <!-- Arrow 6: Formation enthalpy (dashed diagonal) -->
+  <path d="M190,297 Q260,340 320,380" fill="none" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#bh5ArrowK)"/>
+  <text x="225" y="350" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">DfH</text>
+  <text x="225" y="362" font-family="system-ui" font-size="8" fill="#1a1a2e">-411</text>
+
+  <!-- Note -->
+  <text x="260" y="414" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">All values in kJ mol-1 | Endothermic steps go UP | Exothermic steps go DOWN</text>
+</svg>
+</div>
+
 <h3>Factors Affecting Lattice Enthalpy</h3>
 
 <p>Lattice enthalpy becomes more exothermic (larger magnitude) with:</p>
@@ -89,6 +161,66 @@
 <p>(Using the exothermic lattice enthalpy convention, where &Delta;<sub>LE</sub>H&deg; is negative, so &minus;&Delta;<sub>LE</sub>H&deg; is positive — representing breaking the lattice.)</p>
 
 <p>A substance dissolves if the enthalpy of hydration of the ions is large enough to compensate for the energy needed to break the lattice. If &Delta;<sub>sol</sub>H is negative or only slightly positive, dissolving is energetically favourable or can be driven by entropy.</p>
+
+<!-- SVG: Hess's Law Cycle Diagram -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 250" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Hess's Law Enthalpy Cycles</text>
+  <defs>
+    <marker id="hlArrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker>
+  </defs>
+
+  <!-- Using Formation Enthalpies -->
+  <text x="140" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Using Formation Data</text>
+  <!-- Reactants -->
+  <rect x="20" y="60" width="100" height="30" rx="5" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="70" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Reactants</text>
+  <!-- Products -->
+  <rect x="160" y="60" width="100" height="30" rx="5" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="210" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Products</text>
+  <!-- Direct arrow -->
+  <line x1="120" y1="75" x2="156" y2="75" stroke="#1a1a2e" stroke-width="2" marker-end="url(#hlArrow)"/>
+  <text x="140" y="68" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">DrH</text>
+  <!-- Elements -->
+  <rect x="80" y="155" width="120" height="30" rx="5" fill="#fff8e1" stroke="#D97706" stroke-width="1.5"/>
+  <text x="140" y="175" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Elements</text>
+  <!-- Down arrow from elements to reactants (reverse of formation) -->
+  <line x1="95" y1="155" x2="70" y2="94" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#hlArrow)"/>
+  <text x="50" y="130" font-family="system-ui" font-size="8" fill="#1a73e8">-SDfH(R)</text>
+  <!-- Down arrow from elements to products -->
+  <line x1="185" y1="155" x2="210" y2="94" stroke="#16A34A" stroke-width="1.5" marker-end="url(#hlArrow)"/>
+  <text x="225" y="130" font-family="system-ui" font-size="8" fill="#16A34A">SDfH(P)</text>
+  <!-- Formula -->
+  <text x="140" y="208" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">DrH = SDfH(products) - SDfH(reactants)</text>
+
+  <!-- Using Combustion Enthalpies -->
+  <text x="400" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Using Combustion Data</text>
+  <!-- Reactants -->
+  <rect x="295" y="60" width="100" height="30" rx="5" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="345" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Reactants</text>
+  <!-- Products -->
+  <rect x="430" y="60" width="100" height="30" rx="5" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="480" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Products</text>
+  <!-- Direct arrow -->
+  <line x1="395" y1="75" x2="426" y2="75" stroke="#1a1a2e" stroke-width="2" marker-end="url(#hlArrow)"/>
+  <text x="412" y="68" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">DrH</text>
+  <!-- Combustion products -->
+  <rect x="340" y="155" width="140" height="30" rx="5" fill="#fee2e2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="410" y="175" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">CO2 + H2O</text>
+  <!-- Arrow from reactants down to combustion products -->
+  <line x1="345" y1="94" x2="370" y2="151" stroke="#DC2626" stroke-width="1.5" marker-end="url(#hlArrow)"/>
+  <text x="325" y="130" font-family="system-ui" font-size="8" fill="#DC2626">SDcH(R)</text>
+  <!-- Arrow from products down to combustion products -->
+  <line x1="480" y1="94" x2="455" y2="151" stroke="#DC2626" stroke-width="1.5" marker-end="url(#hlArrow)"/>
+  <text x="490" y="130" font-family="system-ui" font-size="8" fill="#DC2626">SDcH(P)</text>
+  <!-- Formula -->
+  <text x="410" y="208" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">DrH = SDcH(reactants) - SDcH(products)</text>
+
+  <!-- Note -->
+  <rect x="60" y="222" width="400" height="22" rx="4" fill="#fff8e1" stroke="#D97706" stroke-width="1"/>
+  <text x="260" y="237" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Note: formation data uses Products - Reactants; combustion data uses Reactants - Products</text>
+</svg>
+</div>
 
 <h2>5.3 Entropy</h2>
 
@@ -148,6 +280,80 @@
 
 <div class="exam-tip">
   <strong>Exam Tip:</strong> Thermodynamic feasibility (&Delta;G &lt; 0) does not guarantee a reaction will occur. Kinetic barriers (high activation energy) may prevent it. Always state this limitation when asked to discuss feasibility.
+</div>
+
+<!-- SVG: Entropy / Free Energy Relationship Diagram -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Gibbs Free Energy, Enthalpy and Entropy</text>
+  <text x="260" y="40" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">DG = DH - TDS</text>
+
+  <!-- Four quadrant table -->
+  <!-- Headers -->
+  <rect x="160" y="52" width="100" height="25" rx="3" fill="#1a73e8"/>
+  <text x="210" y="69" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">DS positive</text>
+  <rect x="265" y="52" width="100" height="25" rx="3" fill="#DC2626"/>
+  <text x="315" y="69" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">DS negative</text>
+
+  <rect x="40" y="80" width="115" height="40" rx="3" fill="#16A34A"/>
+  <text x="97" y="104" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">DH negative (exo)</text>
+  <rect x="40" y="125" width="115" height="40" rx="3" fill="#D97706"/>
+  <text x="97" y="149" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">DH positive (endo)</text>
+
+  <!-- Quadrant 1: DH- DS+ => Always feasible -->
+  <rect x="160" y="80" width="100" height="40" rx="0" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="210" y="97" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">ALWAYS</text>
+  <text x="210" y="110" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">feasible</text>
+
+  <!-- Quadrant 2: DH- DS- => Low temp -->
+  <rect x="265" y="80" width="100" height="40" rx="0" fill="#fff8e1" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="315" y="97" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">LOW temp</text>
+  <text x="315" y="110" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">feasible</text>
+
+  <!-- Quadrant 3: DH+ DS+ => High temp -->
+  <rect x="160" y="125" width="100" height="40" rx="0" fill="#fff8e1" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="210" y="142" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">HIGH temp</text>
+  <text x="210" y="155" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">feasible</text>
+
+  <!-- Quadrant 4: DH+ DS- => Never -->
+  <rect x="265" y="125" width="100" height="40" rx="0" fill="#fee2e2" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="315" y="142" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">NEVER</text>
+  <text x="315" y="155" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">feasible</text>
+
+  <!-- DG vs T graph -->
+  <text x="260" y="185" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">DG vs Temperature</text>
+  <!-- Axes -->
+  <line x1="80" y1="200" x2="80" y2="290" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="40" y1="255" x2="230" y2="255" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="60" y="210" font-family="system-ui" font-size="8" fill="#1a1a2e">+DG</text>
+  <text x="60" y="290" font-family="system-ui" font-size="8" fill="#1a1a2e">-DG</text>
+  <text x="220" y="250" font-family="system-ui" font-size="8" fill="#1a1a2e">T</text>
+  <text x="55" y="258" font-family="system-ui" font-size="7" fill="#1a1a2e">0</text>
+
+  <!-- DH- DS+ line (always below zero) -->
+  <line x1="85" y1="270" x2="220" y2="285" stroke="#16A34A" stroke-width="2"/>
+  <text x="225" y="288" font-family="system-ui" font-size="8" fill="#16A34A">DH- DS+</text>
+
+  <!-- DH- DS- line (starts below, crosses to above) -->
+  <line x1="85" y1="275" x2="220" y2="230" stroke="#D97706" stroke-width="2"/>
+  <text x="225" y="233" font-family="system-ui" font-size="8" fill="#D97706">DH- DS-</text>
+
+  <!-- DH+ DS+ line (starts above, crosses to below) -->
+  <line x1="85" y1="235" x2="220" y2="275" stroke="#1a73e8" stroke-width="2"/>
+  <text x="225" y="278" font-family="system-ui" font-size="8" fill="#1a73e8">DH+ DS+</text>
+
+  <!-- DH+ DS- line (always above zero) -->
+  <line x1="85" y1="225" x2="220" y2="210" stroke="#DC2626" stroke-width="2"/>
+  <text x="225" y="213" font-family="system-ui" font-size="8" fill="#DC2626">DH+ DS-</text>
+
+  <!-- Feasibility note (right side) -->
+  <rect x="290" y="195" width="210" height="85" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="395" y="212" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">Key relationships:</text>
+  <text x="395" y="228" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">DG &lt; 0: reaction is feasible</text>
+  <text x="395" y="243" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">DG = 0: at equilibrium</text>
+  <text x="395" y="258" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">T(feasible) = DH / DS</text>
+  <text x="395" y="273" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">(when DG changes sign)</text>
+</svg>
 </div>
 
 <h2>5.5 Acids and Bases — Bronsted-Lowry Theory</h2>
@@ -253,6 +459,64 @@
   <strong>Exam Tip:</strong> When preparing a buffer, you can mix a weak acid with its sodium salt, or you can partially neutralise a weak acid with a strong base. In the latter case, calculate the moles of HA remaining and moles of A<sup>&minus;</sup> formed.
 </div>
 
+<!-- SVG: Buffer Action Diagram -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 290" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Buffer Action: How Buffers Resist pH Change</text>
+  <text x="260" y="40" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Acidic buffer: weak acid (HA) + conjugate base (A-)</text>
+
+  <!-- Central equilibrium -->
+  <rect x="155" y="52" width="210" height="32" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="260" y="72" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">HA &#8652; H+ + A-</text>
+  <text x="260" y="100" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Large reservoir of both HA and A- present</text>
+
+  <!-- LEFT: Acid added -->
+  <rect x="15" y="120" width="230" height="155" rx="8" fill="#ffffff" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="130" y="140" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">When ACID (H+) is added:</text>
+
+  <!-- H+ added arrow -->
+  <rect x="35" y="152" width="55" height="25" rx="4" fill="#fee2e2" stroke="#DC2626" stroke-width="1"/>
+  <text x="62" y="169" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">H+</text>
+  <text x="100" y="169" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e">+</text>
+  <rect x="112" y="152" width="55" height="25" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="139" y="169" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">A-</text>
+
+  <!-- Arrow down -->
+  <line x1="130" y1="180" x2="130" y2="200" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#hlArrow)"/>
+
+  <!-- Product -->
+  <rect x="85" y="205" width="90" height="25" rx="4" fill="#fff8e1" stroke="#D97706" stroke-width="1"/>
+  <text x="130" y="222" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">HA</text>
+
+  <text x="130" y="250" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">A- removes added H+</text>
+  <text x="130" y="263" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">pH barely changes</text>
+
+  <!-- RIGHT: Base added -->
+  <rect x="265" y="120" width="240" height="155" rx="8" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="385" y="140" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">When BASE (OH-) is added:</text>
+
+  <!-- OH- added -->
+  <rect x="285" y="152" width="55" height="25" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="312" y="169" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">OH-</text>
+  <text x="350" y="169" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e">+</text>
+  <rect x="362" y="152" width="55" height="25" rx="4" fill="#fff8e1" stroke="#D97706" stroke-width="1"/>
+  <text x="389" y="169" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">HA</text>
+
+  <!-- Arrow down -->
+  <line x1="385" y1="180" x2="385" y2="200" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#hlArrow)"/>
+
+  <!-- Products -->
+  <rect x="340" y="205" width="90" height="25" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="385" y="222" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">A- + H2O</text>
+
+  <text x="385" y="250" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">HA neutralises added OH-</text>
+  <text x="385" y="263" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">pH barely changes</text>
+
+  <!-- Bottom note -->
+  <text x="260" y="285" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Buffer capacity depends on concentrations of HA and A- (higher = better buffering)</text>
+</svg>
+</div>
+
 <h2>5.9 Titration Curves</h2>
 
 <h3>Shapes of Titration Curves</h3>
@@ -264,6 +528,63 @@
   <tr><td>Weak acid + Strong base</td><td>Higher (~3)</td><td>&gt; 7 (basic)</td><td>Phenolphthalein</td></tr>
   <tr><td>Weak acid + Weak base</td><td>Higher (~3)</td><td>&asymp; 7</td><td>No suitable indicator (gradual change)</td></tr>
 </table>
+
+<!-- SVG: pH Titration Curves -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">pH Titration Curves (adding base to acid)</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="45" x2="60" y2="270" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="270" x2="490" y2="270" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="25" y="160" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" transform="rotate(-90,25,160)">pH</text>
+  <text x="280" y="290" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">Volume of base added (cm3)</text>
+
+  <!-- pH scale markers -->
+  <text x="50" y="268" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">0</text>
+  <text x="50" y="247" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">2</text>
+  <text x="50" y="225" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">4</text>
+  <text x="50" y="203" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">6</text>
+  <text x="50" y="181" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">8</text>
+  <text x="50" y="159" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">10</text>
+  <text x="50" y="137" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">12</text>
+  <text x="50" y="115" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">14</text>
+  <!-- Grid line at pH 7 -->
+  <line x1="60" y1="181" x2="490" y2="181" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="4,3"/>
+  <text x="495" y="184" font-family="system-ui" font-size="7" fill="#cbd5e1">pH 7</text>
+
+  <!-- Equivalence point vertical line -->
+  <line x1="270" y1="50" x2="270" y2="270" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="4,3"/>
+  <text x="270" y="46" text-anchor="middle" font-family="system-ui" font-size="7" fill="#cbd5e1">equivalence</text>
+
+  <!-- Curve 1: Strong acid + Strong base (steep jump at pH 7) -->
+  <path d="M65,260 Q100,258 150,255 Q200,250 240,248 Q255,245 262,230 Q266,200 270,181 Q274,140 278,130 Q290,118 320,115 Q380,112 490,110" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+
+  <!-- Curve 2: Weak acid + Strong base (starts higher, buffer region, eq point >7) -->
+  <path d="M65,235 Q100,220 140,210 Q180,200 220,195 Q240,192 255,185 Q262,170 268,155 Q272,135 278,125 Q290,118 320,115 Q380,112 490,110" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+
+  <!-- Curve 3: Strong acid + Weak base (eq point <7) -->
+  <path d="M65,260 Q100,258 150,255 Q200,250 240,248 Q255,245 262,235 Q266,215 270,200 Q274,185 278,180 Q290,175 320,175 Q380,172 490,170" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+
+  <!-- Equivalence point markers -->
+  <circle cx="270" cy="181" r="4" fill="#1a73e8"/>
+  <circle cx="270" cy="148" r="4" fill="#DC2626"/>
+  <circle cx="270" cy="200" r="4" fill="#16A34A"/>
+
+  <!-- Half-equivalence marker for weak acid curve -->
+  <line x1="165" y1="197" x2="165" y2="270" stroke="#DC2626" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <text x="165" y="283" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">half-eq</text>
+  <text x="165" y="192" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">pH=pKa</text>
+
+  <!-- Legend -->
+  <line x1="70" y1="305" x2="95" y2="305" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="100" y="309" font-family="system-ui" font-size="9" fill="#1a1a2e">Strong acid + Strong base (eq. pH=7)</text>
+  <line x1="295" y1="305" x2="320" y2="305" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="325" y="309" font-family="system-ui" font-size="9" fill="#1a1a2e">Weak acid + Strong base (eq. pH&gt;7)</text>
+  <line x1="180" y1="316" x2="205" y2="316" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="210" y="320" font-family="system-ui" font-size="9" fill="#1a1a2e">Strong acid + Weak base (eq. pH&lt;7)</text>
+</svg>
+</div>
 
 <h3>Key Features of a Weak Acid-Strong Base Curve</h3>
 

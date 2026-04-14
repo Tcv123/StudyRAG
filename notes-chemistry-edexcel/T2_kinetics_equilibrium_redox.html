@@ -81,6 +81,39 @@
   <strong>Exam Tip:</strong> When drawing Maxwell-Boltzmann curves, never let them touch the y-axis or cross the x-axis at high energy. The curve approaches but never reaches the x-axis. Always label axes (number of molecules vs. energy).
 </div>
 
+<!-- SVG: Maxwell-Boltzmann Distribution at Two Temperatures -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 310" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Maxwell-Boltzmann Distribution</text>
+  <!-- Axes -->
+  <line x1="60" y1="40" x2="60" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="260" x2="490" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="60,40 56,50 64,50" fill="#1a1a2e"/>
+  <polygon points="490,260 480,256 480,264" fill="#1a1a2e"/>
+  <text x="25" y="150" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" transform="rotate(-90,25,150)">Number of molecules</text>
+  <text x="280" y="282" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">Kinetic energy</text>
+  <!-- Lower temperature curve (T1, taller peak) -->
+  <path d="M60,260 Q80,258 110,200 Q130,120 155,75 Q170,58 185,75 Q220,130 260,180 Q310,220 370,245 Q430,255 490,258" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- Higher temperature curve (T2, flatter) -->
+  <path d="M60,260 Q90,256 130,230 Q170,180 200,145 Q220,128 240,140 Q280,170 320,200 Q370,230 430,248 Q470,254 490,256" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <!-- Ea line -->
+  <line x1="350" y1="50" x2="350" y2="260" stroke="#16A34A" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="350" y="45" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Ea</text>
+  <!-- Shading for T1 beyond Ea (small area) -->
+  <path d="M350,245 Q380,249 430,255 Q470,258 490,258 L490,260 L350,260 Z" fill="#1a73e8" opacity="0.12"/>
+  <!-- Shading for T2 beyond Ea (larger area) -->
+  <path d="M350,218 Q380,232 430,248 Q470,254 490,256 L490,260 L350,260 Z" fill="#DC2626" opacity="0.12"/>
+  <!-- Peak labels -->
+  <text x="155" y="62" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Emp (T1)</text>
+  <text x="220" y="120" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">Emp (T2)</text>
+  <!-- Legend -->
+  <line x1="100" y1="296" x2="130" y2="296" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="135" y="300" font-family="system-ui" font-size="10" fill="#1a1a2e">Lower temperature (T1)</text>
+  <line x1="300" y1="296" x2="330" y2="296" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="335" y="300" font-family="system-ui" font-size="10" fill="#1a1a2e">Higher temperature (T2)</text>
+</svg>
+</div>
+
 <h2>2.4 Rate Equations and Orders of Reaction</h2>
 
 <div class="definition">
@@ -101,6 +134,40 @@
 <h3>Determining Orders from Experimental Data</h3>
 
 <p>Using initial rates data: compare experiments where one reactant concentration changes while others are held constant. If doubling [A] doubles the rate, order with respect to A is 1. If doubling [A] quadruples the rate, order is 2. If doubling [A] has no effect, order is 0.</p>
+
+<!-- SVG: Rate-Concentration Graphs for Zero, First, Second Order -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 240" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Rate vs Concentration Graphs</text>
+
+  <!-- Zero Order -->
+  <text x="85" y="44" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Zero Order</text>
+  <line x1="30" y1="55" x2="30" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="30" y1="190" x2="155" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="12" y="125" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" transform="rotate(-90,12,125)">Rate</text>
+  <text x="92" y="204" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">[A]</text>
+  <line x1="35" y1="100" x2="145" y2="100" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="90" y="218" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Rate = k</text>
+
+  <!-- First Order -->
+  <text x="270" y="44" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">First Order</text>
+  <line x1="200" y1="55" x2="200" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="200" y1="190" x2="340" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="182" y="125" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" transform="rotate(-90,182,125)">Rate</text>
+  <text x="270" y="204" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">[A]</text>
+  <line x1="200" y1="185" x2="330" y2="70" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="270" y="218" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Rate = k[A]</text>
+
+  <!-- Second Order -->
+  <text x="440" y="44" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Second Order</text>
+  <line x1="370" y1="55" x2="370" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="370" y1="190" x2="505" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="352" y="125" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" transform="rotate(-90,352,125)">Rate</text>
+  <text x="440" y="204" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">[A]</text>
+  <path d="M370,188 Q410,180 440,155 Q470,115 500,60" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="440" y="218" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Rate = k[A]2</text>
+</svg>
+</div>
 
 <h3>The Rate Constant, k</h3>
 
@@ -172,6 +239,58 @@
   <strong>Exam Tip:</strong> Only temperature changes affect the value of K. Concentration, pressure, and catalyst changes alter the position of equilibrium but not K itself.
 </div>
 
+<!-- SVG: Le Chatelier's Principle - Equilibrium Position Shifts -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Le Chatelier's Principle: Equilibrium Shifts</text>
+  <text x="260" y="42" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">A(g) + B(g) &#8652; C(g) &nbsp; DH = -ve (exothermic forward)</text>
+  <defs>
+    <marker id="lcArrowR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#1a73e8"/></marker>
+    <marker id="lcArrowL" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto"><polygon points="8,0 0,3 8,6" fill="#DC2626"/></marker>
+  </defs>
+
+  <!-- Central equilibrium bar -->
+  <rect x="200" y="58" width="120" height="28" rx="4" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="260" y="76" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">EQUILIBRIUM</text>
+
+  <!-- Left side = Reactants -->
+  <text x="80" y="76" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Reactants</text>
+  <!-- Right side = Products -->
+  <text x="440" y="76" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Products</text>
+
+  <!-- Row 1: Increase [A] -->
+  <rect x="20" y="100" width="480" height="36" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.5"/>
+  <text x="130" y="122" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Increase [A]</text>
+  <line x1="260" y1="115" x2="380" y2="115" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#lcArrowR)"/>
+  <text x="440" y="122" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Shifts RIGHT</text>
+
+  <!-- Row 2: Decrease [C] -->
+  <rect x="20" y="140" width="480" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5"/>
+  <text x="130" y="162" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Remove product C</text>
+  <line x1="260" y1="155" x2="380" y2="155" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#lcArrowR)"/>
+  <text x="440" y="162" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Shifts RIGHT</text>
+
+  <!-- Row 3: Increase temperature (exo forward) -->
+  <rect x="20" y="180" width="480" height="36" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.5"/>
+  <text x="130" y="202" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Increase temperature</text>
+  <line x1="260" y1="195" x2="140" y2="195" stroke="#DC2626" stroke-width="2.5" marker-end="url(#lcArrowL)"/>
+  <text x="440" y="202" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Shifts LEFT</text>
+
+  <!-- Row 4: Increase pressure -->
+  <rect x="20" y="220" width="480" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5"/>
+  <text x="130" y="242" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Increase pressure</text>
+  <line x1="260" y1="235" x2="380" y2="235" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#lcArrowR)"/>
+  <text x="440" y="242" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Shifts RIGHT</text>
+  <text x="440" y="254" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">(fewer gas moles)</text>
+
+  <!-- Row 5: Catalyst -->
+  <rect x="20" y="260" width="480" height="36" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.5"/>
+  <text x="130" y="282" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Add catalyst</text>
+  <text x="310" y="282" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">NO SHIFT</text>
+  <text x="440" y="282" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">(reaches eqm faster)</text>
+</svg>
+</div>
+
 <h2>2.9 Equilibrium Constants: K<sub>c</sub> and K<sub>p</sub></h2>
 
 <h3>K<sub>c</sub> (Concentration Equilibrium Constant)</h3>
@@ -239,6 +358,60 @@
   <strong>Exam Tip:</strong> Always check that atoms and charges balance on both sides of the final equation. Electrons should not appear in the overall equation.
 </div>
 
+<!-- SVG: Oxidation State Change Diagram -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 260" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Oxidation State Changes in Redox</text>
+  <text x="260" y="40" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Example: Zn + CuSO4 &rarr; ZnSO4 + Cu</text>
+  <defs>
+    <marker id="osArrowUp" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#DC2626"/></marker>
+    <marker id="osArrowDn" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a73e8"/></marker>
+  </defs>
+
+  <!-- Oxidation state scale -->
+  <line x1="60" y1="70" x2="60" y2="220" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="60,68 56,78 64,78" fill="#1a1a2e"/>
+  <text x="30" y="148" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,30,148)">Oxidation state</text>
+  <!-- Scale labels -->
+  <text x="50" y="93" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">+2</text>
+  <line x1="55" y1="90" x2="65" y2="90" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="50" y="153" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">0</text>
+  <line x1="55" y1="150" x2="65" y2="150" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="50" y="213" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">-2</text>
+  <line x1="55" y1="210" x2="65" y2="210" stroke="#1a1a2e" stroke-width="1"/>
+
+  <!-- Zn: 0 -> +2 (OXIDATION) -->
+  <circle cx="160" cy="150" r="20" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="160" y="154" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Zn</text>
+  <text x="160" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">0</text>
+  <line x1="185" y1="145" x2="240" y2="95" stroke="#DC2626" stroke-width="2" marker-end="url(#osArrowUp)"/>
+  <circle cx="260" cy="90" r="20" fill="#fee2e2" stroke="#DC2626" stroke-width="2"/>
+  <text x="260" y="94" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Zn2+</text>
+  <text x="260" y="118" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">+2</text>
+  <!-- Label -->
+  <text x="210" y="108" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">OXIDATION</text>
+  <text x="210" y="120" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">(loses 2e-)</text>
+  <text x="210" y="132" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">OS increases</text>
+
+  <!-- Cu2+: +2 -> 0 (REDUCTION) -->
+  <circle cx="360" cy="90" r="20" fill="#fff8e1" stroke="#D97706" stroke-width="2"/>
+  <text x="360" y="94" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Cu2+</text>
+  <text x="360" y="72" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">+2</text>
+  <line x1="383" y1="100" x2="430" y2="140" stroke="#1a73e8" stroke-width="2" marker-end="url(#osArrowDn)"/>
+  <circle cx="450" cy="150" r="20" fill="#dcfce7" stroke="#16A34A" stroke-width="2"/>
+  <text x="450" y="154" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Cu</text>
+  <text x="450" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">0</text>
+  <!-- Label -->
+  <text x="420" y="108" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">REDUCTION</text>
+  <text x="420" y="120" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">(gains 2e-)</text>
+  <text x="420" y="132" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">OS decreases</text>
+
+  <!-- Summary -->
+  <rect x="100" y="225" width="320" height="28" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="260" y="243" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e"><tspan fill="#DC2626" font-weight="bold">OIL</tspan> (Oxidation Is Loss) &nbsp; <tspan fill="#1a73e8" font-weight="bold">RIG</tspan> (Reduction Is Gain)</text>
+</svg>
+</div>
+
 <h2>2.12 Electrochemical Cells</h2>
 
 <div class="definition">
@@ -261,6 +434,66 @@
 
 <div class="exam-tip">
   <strong>Exam Tip:</strong> When using electrode potential tables, remember: the species with the more positive E&deg; is reduced (gains electrons), and the species with the more negative E&deg; is oxidised (loses electrons). "More positive = stronger oxidising agent."
+</div>
+
+<!-- SVG: Electrochemical Cell Diagram -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 330" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Electrochemical Cell (Zn/Cu)</text>
+  <defs>
+    <marker id="ecArrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker>
+    <marker id="ecArrowBlue" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a73e8"/></marker>
+  </defs>
+
+  <!-- Voltmeter -->
+  <circle cx="260" cy="55" r="18" fill="#fff8e1" stroke="#D97706" stroke-width="2"/>
+  <text x="260" y="59" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">V</text>
+
+  <!-- Wire from left beaker to voltmeter -->
+  <line x1="120" y1="100" x2="120" y2="55" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="120" y1="55" x2="242" y2="55" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- Wire from voltmeter to right beaker -->
+  <line x1="278" y1="55" x2="400" y2="55" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="400" y1="55" x2="400" y2="100" stroke="#1a1a2e" stroke-width="2"/>
+
+  <!-- Electron flow arrow -->
+  <line x1="160" y1="42" x2="230" y2="42" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ecArrow)"/>
+  <text x="195" y="37" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">e- flow</text>
+
+  <!-- Left beaker (Zn) -->
+  <rect x="50" y="110" width="140" height="145" rx="6" fill="#e0ecff" stroke="#1a73e8" stroke-width="1.5"/>
+  <!-- Zn electrode -->
+  <rect x="112" y="80" width="16" height="140" rx="2" fill="#94a3b8" stroke="#64748b" stroke-width="1"/>
+  <text x="120" y="245" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Zn(s)</text>
+  <text x="120" y="265" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">ANODE (-)</text>
+  <text x="120" y="278" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Oxidation</text>
+  <!-- Solution label -->
+  <text x="120" y="195" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">ZnSO4(aq)</text>
+  <text x="120" y="207" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">1.0 mol/dm3</text>
+
+  <!-- Right beaker (Cu) -->
+  <rect x="330" y="110" width="140" height="145" rx="6" fill="#fde8e8" stroke="#DC2626" stroke-width="1.5"/>
+  <!-- Cu electrode -->
+  <rect x="392" y="80" width="16" height="140" rx="2" fill="#d97706" stroke="#b45309" stroke-width="1"/>
+  <text x="400" y="245" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Cu(s)</text>
+  <text x="400" y="265" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">CATHODE (+)</text>
+  <text x="400" y="278" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Reduction</text>
+  <!-- Solution label -->
+  <text x="400" y="195" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">CuSO4(aq)</text>
+  <text x="400" y="207" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">1.0 mol/dm3</text>
+
+  <!-- Salt bridge -->
+  <path d="M190,140 Q260,95 330,140" fill="none" stroke="#16A34A" stroke-width="4" stroke-linecap="round"/>
+  <text x="260" y="108" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Salt bridge</text>
+  <text x="260" y="120" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">(KNO3 or KCl in agar)</text>
+  <!-- Ion flow arrows in salt bridge -->
+  <text x="215" y="132" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">ions</text>
+
+  <!-- Half equations -->
+  <text x="120" y="300" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Zn &rarr; Zn2+ + 2e-</text>
+  <text x="400" y="300" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Cu2+ + 2e- &rarr; Cu</text>
+  <text x="260" y="320" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">E cell = +0.34 - (-0.76) = +1.10 V</text>
+</svg>
 </div>
 
 <h3>Predicting Feasibility</h3>
