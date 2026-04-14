@@ -869,8 +869,10 @@ function renderSubjectsProgress(subjects, topicRows) {
       else                   cardRag = 'amber';
     }
 
-    // Progress bar: % of total topics that are green
-    const barPct  = total ? Math.round((green / total) * 100) : 0;
+    // Progress bar: segmented by green/amber/red
+    const greenPct = total ? Math.round((green / total) * 100) : 0;
+    const amberPct = total ? Math.round((amber / total) * 100) : 0;
+    const redPct   = total ? Math.round((red / total) * 100) : 0;
     const metaStr = total
       ? `${tested}/${total} topics tested`
       : (cardRag === 'pending' ? 'Not yet diagnosed' : cardRag);
@@ -889,8 +891,10 @@ function renderSubjectsProgress(subjects, topicRows) {
         <span class="subj-board-tag" style="margin-bottom:0;">${s.exam_board}</span>
         ${gradeStr ? `<span style="font-size:11px;font-weight:600;color:var(--accent-dark);background:var(--accent-dim);padding:2px 8px;border-radius:20px;">${gradeStr}</span>` : ''}
       </div>
-      <div class="subj-progress">
-        <div class="subj-fill ${fillClass(cardRag)}" style="width:${barPct}%"></div>
+      <div class="subj-progress" style="display:flex;">
+        ${greenPct ? `<div class="subj-fill fill-green" style="width:${greenPct}%"></div>` : ''}
+        ${amberPct ? `<div class="subj-fill fill-amber" style="width:${amberPct}%"></div>` : ''}
+        ${redPct ? `<div class="subj-fill fill-red" style="width:${redPct}%"></div>` : ''}
       </div>
       <div class="subj-meta">
         <span>${metaStr}</span>
