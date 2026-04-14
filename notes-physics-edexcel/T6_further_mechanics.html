@@ -358,6 +358,138 @@
 
 <div class="exam-tip">In vertical circle problems, always draw a free-body diagram at the point of interest. Apply Newton's second law towards the centre: net inward force = mv²/r.</div>
 
+<!-- ============ CORE PRACTICAL 11 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 11: Determine the viscosity of a liquid by the falling-ball method</h2>
+
+<svg viewBox="0 0 420 560" style="max-width:500px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tall measuring cylinder -->
+  <rect x="130" y="40" width="100" height="420" rx="6" fill="#FEF3C7" stroke="#1a1a2e" stroke-width="2" opacity="0.5"/>
+  <rect x="130" y="40" width="100" height="420" rx="6" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- Liquid inside (glycerol) -->
+  <rect x="132" y="50" width="96" height="405" rx="4" fill="#FDE68A" opacity="0.4"/>
+  <text x="180" y="75" text-anchor="middle" font-family="system-ui" font-size="11" fill="#B45309" font-weight="bold">Glycerol</text>
+  <!-- Graduated markings on cylinder -->
+  <line x1="230" y1="80" x2="240" y2="80" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="230" y1="130" x2="240" y2="130" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="230" y1="180" x2="240" y2="180" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="230" y1="230" x2="240" y2="230" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="230" y1="280" x2="240" y2="280" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="230" y1="330" x2="240" y2="330" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="230" y1="380" x2="240" y2="380" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="230" y1="430" x2="240" y2="430" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Rubber band markers -->
+  <rect x="125" y="150" width="110" height="4" rx="1" fill="#DC2626" opacity="0.7"/>
+  <text x="260" y="155" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">Marker band A</text>
+  <rect x="125" y="350" width="110" height="4" rx="1" fill="#DC2626" opacity="0.7"/>
+  <text x="260" y="355" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">Marker band B</text>
+  <!-- Distance between markers -->
+  <line x1="100" y1="152" x2="100" y2="352" stroke="#D97706" stroke-width="2"/>
+  <polygon points="100,152 96,167 104,167" fill="#D97706"/>
+  <polygon points="100,352 96,337 104,337" fill="#D97706"/>
+  <text x="75" y="260" font-family="system-ui" font-size="12" fill="#D97706" font-weight="bold" text-anchor="middle" transform="rotate(-90,75,260)">Distance d</text>
+  <!-- Ball bearing at top (about to drop) -->
+  <circle cx="180" cy="55" r="6" fill="#888" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="200" y="48" font-family="system-ui" font-size="10" fill="#1a1a2e">Ball bearing</text>
+  <!-- Ball bearing falling (at terminal velocity between markers) -->
+  <circle cx="180" cy="250" r="6" fill="#888" stroke="#1a1a2e" stroke-width="1" opacity="0.4"/>
+  <!-- Downward arrow showing velocity -->
+  <line x1="180" y1="200" x2="180" y2="300" stroke="#1a73e8" stroke-width="2" stroke-dasharray="6,4"/>
+  <polygon points="180,300 175,285 185,285" fill="#1a73e8"/>
+  <text x="165" y="260" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold" text-anchor="end">v<tspan font-size="8" dy="2">t</tspan></text>
+  <!-- Force arrows on ball -->
+  <circle cx="340" cy="250" r="8" fill="#888" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Weight down -->
+  <line x1="340" y1="260" x2="340" y2="310" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="340,310 336,298 344,298" fill="#DC2626"/>
+  <text x="355" y="300" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">W</text>
+  <!-- Drag + upthrust up -->
+  <line x1="340" y1="240" x2="340" y2="190" stroke="#16A34A" stroke-width="2"/>
+  <polygon points="340,190 336,202 344,202" fill="#16A34A"/>
+  <text x="360" y="200" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="bold">F<tspan font-size="7" dy="2">drag</tspan><tspan dy="-2"> + U</tspan></text>
+  <text x="340" y="175" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">(At terminal velocity:</text>
+  <text x="340" y="187" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">W = F<tspan font-size="7" dy="1">drag</tspan><tspan dy="-1"> + U)</tspan></text>
+  <!-- Stopwatch callout -->
+  <rect x="20" y="380" width="80" height="50" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="60" y="400" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Stopwatch</text>
+  <text x="60" y="418" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Time ball</text>
+  <text x="60" y="428" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">A &rarr; B</text>
+  <!-- Micrometer callout -->
+  <rect x="280" y="380" width="100" height="50" rx="6" fill="#fff" stroke="#D97706" stroke-width="1.5"/>
+  <text x="330" y="400" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="bold">Micrometer</text>
+  <text x="330" y="418" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Measure ball</text>
+  <text x="330" y="428" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">diameter d</text>
+  <!-- Thermometer -->
+  <rect x="220" y="60" width="5" height="80" rx="2" fill="#DC2626" stroke="#1a1a2e" stroke-width="0.5"/>
+  <circle cx="222" cy="145" r="5" fill="#DC2626" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="250" y="110" font-family="system-ui" font-size="9" fill="#DC2626">Thermometer</text>
+  <!-- Title -->
+  <text x="210" y="500" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP11: Falling ball viscosity</text>
+  <text x="210" y="520" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">(Stokes' law method)</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Tall measuring cylinder (or tall glass tube) filled with viscous liquid (e.g. glycerol)</li>
+  <li>Small steel ball bearings of various diameters</li>
+  <li>Micrometer screw gauge (to measure ball diameter)</li>
+  <li>Rubber bands or tape as distance markers on the cylinder</li>
+  <li>Stopwatch (resolution &plusmn;0.01 s)</li>
+  <li>Metre ruler</li>
+  <li>Thermometer</li>
+  <li>Magnet (to retrieve ball bearings)</li>
+  <li>Balance (to determine liquid density if needed)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Fill the tall measuring cylinder with glycerol. Allow it to settle and reach a uniform temperature. Record the temperature (viscosity depends strongly on temperature).</li>
+  <li>Place two rubber band markers around the cylinder, well below the top (to allow the ball to reach terminal velocity before the first marker) and well above the base.</li>
+  <li>Measure the distance <em>d</em> between the two markers with a ruler.</li>
+  <li>Measure the diameter of the ball bearing using a <strong>micrometer</strong> (at least 3 readings, taking the mean). Calculate the radius <em>r</em>.</li>
+  <li>Gently release the ball bearing centrally at the surface of the liquid. <strong>Do not throw it.</strong></li>
+  <li>Start the stopwatch as the ball passes marker A. Stop it as the ball passes marker B. Record the time <em>t</em>.</li>
+  <li>Repeat at least 3 times with the same ball size and average the time.</li>
+  <li>Calculate terminal velocity: v<sub>t</sub> = d / t.</li>
+  <li>Repeat with ball bearings of different diameters.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Glycerol is slippery &mdash; wipe up any spills immediately to prevent slipping.</li>
+  <li>Wash hands after handling glycerol.</li>
+  <li>Use a tall, stable cylinder to prevent it toppling. Consider clamping it.</li>
+  <li>Use a magnet to retrieve steel ball bearings from the glycerol rather than reaching in.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>At terminal velocity, the forces on the ball are balanced:</p>
+<div class="equation">
+  Weight = Drag force + Upthrust
+</div>
+<div class="equation">
+  (4/3)&pi;r&sup3;&rho;<sub>s</sub>g = 6&pi;&eta;rv<sub>t</sub> + (4/3)&pi;r&sup3;&rho;<sub>l</sub>g
+</div>
+<p>Rearranging <strong>Stokes' law</strong>:</p>
+<div class="equation">
+  &eta; = 2r&sup2;(&rho;<sub>s</sub> &minus; &rho;<sub>l</sub>)g / (9v<sub>t</sub>)
+</div>
+<p>Where &eta; = viscosity, &rho;<sub>s</sub> = density of ball, &rho;<sub>l</sub> = density of liquid, r = radius of ball, v<sub>t</sub> = terminal velocity.</p>
+<p>Plot <strong>v<sub>t</sub></strong> against <strong>r&sup2;</strong> &mdash; this should give a straight line through the origin with gradient = 2(&rho;<sub>s</sub> &minus; &rho;<sub>l</sub>)g / (9&eta;).</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Ball may not have reached terminal velocity at marker A</td><td>Systematic</td><td>Place marker A well below the surface (at least 1/4 of cylinder height) to allow the ball to accelerate fully</td></tr>
+<tr><td>Temperature changes affect viscosity significantly</td><td>Systematic</td><td>Record and maintain a constant temperature; perform experiment in a temperature-controlled environment</td></tr>
+<tr><td>Ball may not fall centrally (wall effects / Faxen correction)</td><td>Systematic</td><td>Release the ball in the centre; use a wide cylinder (diameter &ge; 10&times; ball diameter)</td></tr>
+<tr><td>Reaction time when using stopwatch</td><td>Random</td><td>Repeat timings and take the mean; use a longer distance between markers; consider video analysis</td></tr>
+<tr><td>Ball not perfectly spherical</td><td>Random</td><td>Measure diameter in multiple orientations; reject any deformed balls</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Stokes' law (F = 6&pi;&eta;rv) only applies for <strong>laminar flow</strong> at low Reynolds numbers. If the ball is too large or falls too fast, turbulence occurs and the drag force is no longer given by Stokes' law. This is why small ball bearings in a very viscous liquid are used.</div>
+</div>
+
 </div>
 </body>
 </html>

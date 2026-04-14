@@ -488,6 +488,135 @@
     If the mass of products is less than reactants, the reaction releases energy (exothermic). If the mass of products is greater, the reaction requires energy input (endothermic).
 </div>
 
+<!-- ============ CORE PRACTICAL 9 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 9: Investigate the absorption of gamma radiation by lead</h2>
+
+<svg viewBox="0 0 560 380" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Source holder -->
+  <rect x="40" y="140" width="50" height="60" rx="4" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+  <text x="65" y="165" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">Gamma</text>
+  <text x="65" y="178" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">source</text>
+  <!-- Radiation symbol -->
+  <circle cx="65" cy="130" r="8" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+  <circle cx="65" cy="130" r="2" fill="#DC2626"/>
+  <!-- Gamma rays emanating -->
+  <line x1="90" y1="155" x2="160" y2="155" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <line x1="90" y1="165" x2="160" y2="165" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <line x1="90" y1="175" x2="160" y2="175" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <line x1="90" y1="185" x2="160" y2="185" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="125" y="145" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">&gamma; rays</text>
+  <!-- Lead sheets (absorbers) -->
+  <rect x="170" y="130" width="8" height="80" rx="1" fill="#6B7280" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="182" y="130" width="8" height="80" rx="1" fill="#6B7280" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="194" y="130" width="8" height="80" rx="1" fill="#6B7280" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="206" y="130" width="8" height="80" rx="1" fill="#6B7280" stroke="#1a1a2e" stroke-width="1" opacity="0.5"/>
+  <rect x="218" y="130" width="8" height="80" rx="1" fill="#6B7280" stroke="#1a1a2e" stroke-width="1" opacity="0.3"/>
+  <text x="196" y="122" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">Lead sheets</text>
+  <text x="196" y="225" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">(varying thickness x)</text>
+  <!-- Thickness arrow -->
+  <line x1="170" y1="240" x2="226" y2="240" stroke="#D97706" stroke-width="2"/>
+  <polygon points="170,240 183,236 183,244" fill="#D97706"/>
+  <polygon points="226,240 213,236 213,244" fill="#D97706"/>
+  <text x="198" y="258" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="bold">Thickness x</text>
+  <!-- Reduced rays after lead -->
+  <line x1="226" y1="160" x2="300" y2="160" stroke="#DC2626" stroke-width="1" stroke-dasharray="6,5" opacity="0.5"/>
+  <line x1="226" y1="175" x2="300" y2="175" stroke="#DC2626" stroke-width="1" stroke-dasharray="6,5" opacity="0.5"/>
+  <!-- GM tube -->
+  <rect x="310" y="140" width="80" height="60" rx="6" fill="#DBEAFE" stroke="#1a73e8" stroke-width="2"/>
+  <rect x="300" y="155" width="15" height="30" rx="3" fill="#93C5FD" stroke="#1a73e8" stroke-width="1"/>
+  <text x="350" y="168" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">GM tube</text>
+  <text x="350" y="183" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">(Geiger-M&uuml;ller)</text>
+  <!-- Counter / ratemeter -->
+  <rect x="420" y="140" width="100" height="60" rx="6" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="470" y="165" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Counter /</text>
+  <text x="470" y="180" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Ratemeter</text>
+  <!-- Wire from GM to counter -->
+  <line x1="390" y1="170" x2="420" y2="170" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Fixed distance d -->
+  <line x1="90" y1="100" x2="300" y2="100" stroke="#D97706" stroke-width="1.5"/>
+  <polygon points="90,100 105,96 105,104" fill="#D97706"/>
+  <polygon points="300,100 285,96 285,104" fill="#D97706"/>
+  <text x="195" y="95" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="bold">Fixed distance d</text>
+  <!-- GRAPH: ln(corrected count) vs thickness -->
+  <rect x="310" y="240" width="210" height="120" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="415" y="258" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">Expected Graph</text>
+  <line x1="345" y1="340" x2="500" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="345" y1="340" x2="345" y2="265" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="422" y="356" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">x / mm</text>
+  <text x="332" y="300" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" transform="rotate(-90,332,300)">ln(corrected count)</text>
+  <!-- Straight line negative gradient -->
+  <line x1="350" y1="275" x2="490" y2="335" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="440" y="295" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">gradient = &minus;&mu;</text>
+  <!-- Radioactive warning sign -->
+  <rect x="30" y="280" width="100" height="50" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="80" y="300" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="bold">&#9762; Handle source</text>
+  <text x="80" y="315" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="bold">with tongs only!</text>
+  <!-- Title -->
+  <text x="280" y="375" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP9: Absorption of gamma radiation by lead</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Sealed gamma source (e.g. cobalt-60 or caesium-137) in a source holder</li>
+  <li>Geiger-M&uuml;ller (GM) tube and counter/ratemeter</li>
+  <li>Lead sheets of known, equal thickness (e.g. 1 mm each)</li>
+  <li>Ruler (to maintain fixed source-to-detector distance)</li>
+  <li>Tongs (for handling the source)</li>
+  <li>Stopwatch</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>First, measure the <strong>background count rate</strong>: remove the source to a distant location, count for at least 60 seconds (preferably 300 s), and calculate the background count rate (counts per second or per minute).</li>
+  <li>Set up the gamma source at a <strong>fixed distance</strong> from the GM tube window. Place the lead sheets between source and detector.</li>
+  <li>With <strong>no lead</strong> in place, count for a set time (e.g. 60 s). Record the count and calculate the count rate.</li>
+  <li>Insert 1 lead sheet. Count for the same time. Record.</li>
+  <li>Add more lead sheets one at a time (2, 3, 4, 5, 6... sheets). Record the count rate each time.</li>
+  <li>For each reading, calculate the <strong>corrected count rate</strong> = measured count rate &minus; background count rate.</li>
+  <li>Plot <strong>ln(corrected count rate)</strong> (y-axis) against <strong>thickness x</strong> (x-axis).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li><strong>Handle the source with tongs at arm's length</strong> &mdash; never with bare hands.</li>
+  <li>Keep the source in its lead-lined box when not in use.</li>
+  <li>Minimise exposure time &mdash; work quickly and efficiently.</li>
+  <li>Maximise distance from the source when not taking readings.</li>
+  <li>Do not point the source at anyone.</li>
+  <li>Wash hands after the experiment.</li>
+  <li>A trained supervisor should handle the source and maintain a log of source usage.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>Gamma radiation is absorbed exponentially:</p>
+<div class="equation">
+  I = I<sub>0</sub> e<sup>&minus;&mu;x</sup>
+</div>
+<p>Taking natural logs:</p>
+<div class="equation">
+  ln(I) = ln(I<sub>0</sub>) &minus; &mu;x
+</div>
+<p>A graph of <strong>ln(corrected count rate) vs x</strong> gives a straight line with:</p>
+<ul>
+  <li><strong>Gradient</strong> = &minus;&mu; (the linear attenuation coefficient)</li>
+  <li><strong>y-intercept</strong> = ln(I<sub>0</sub>)</li>
+</ul>
+<p>The <strong>half-value thickness</strong> (HVT) can be found: x<sub>&frac12;</sub> = ln 2 / &mu; &approx; 0.693 / &mu;.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Random nature of radioactive decay (count rate fluctuates)</td><td>Random</td><td>Count for a longer time (e.g. 300 s); take repeat readings and average</td></tr>
+<tr><td>Background radiation not properly accounted for</td><td>Systematic</td><td>Measure background count over a long period; subtract from all readings</td></tr>
+<tr><td>Dead time of GM tube (misses counts at high rates)</td><td>Systematic</td><td>Keep count rates below ~400 counts/s; apply a dead-time correction if needed</td></tr>
+<tr><td>Lead sheets not uniform in thickness</td><td>Systematic</td><td>Measure each sheet with a micrometer; use sheets from the same batch</td></tr>
+<tr><td>Source-detector distance changes when adding sheets</td><td>Systematic</td><td>Add sheets from the source side (keep detector distance fixed); or account for the changing distance</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Always subtract the background count rate before plotting. The background is caused by cosmic rays, rocks, radon gas, and other environmental sources. If you forget to subtract it, the graph of ln(I) vs x will curve upward at large x, because the background dominates when the source signal is weak.</div>
+</div>
+
 </div>
 </body>
 </html>

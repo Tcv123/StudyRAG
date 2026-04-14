@@ -634,6 +634,221 @@
         <div class="exam-tip">
             Energy levels are often given in eV. Always convert to joules (multiply by 1.60 &times; 10<sup>-19</sup>) before using E = hf to calculate frequency or wavelength. Remember that energy levels are negative (bound states) and the ground state is the most negative.
         </div>
+
+<!-- ============ CORE PRACTICAL 2 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 2: Determine the frequency of stationary waves on a string</h2>
+
+<svg viewBox="0 0 580 300" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Signal generator -->
+  <rect x="20" y="80" width="80" height="50" rx="6" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="60" y="100" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Signal</text>
+  <text x="60" y="115" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Generator</text>
+  <text x="60" y="72" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">Frequency f</text>
+  <!-- Vibration generator -->
+  <rect x="120" y="85" width="40" height="40" rx="4" fill="#DBEAFE" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="140" y="108" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="bold">Vibrator</text>
+  <!-- Connection wire -->
+  <line x1="100" y1="105" x2="120" y2="105" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- String with standing wave pattern (3rd harmonic shown) -->
+  <path d="M160,105 Q200,50 240,105 Q280,160 320,105 Q360,50 400,105 Q440,160 480,105" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- Nodes marked -->
+  <circle cx="160" cy="105" r="4" fill="#DC2626"/>
+  <circle cx="240" cy="105" r="4" fill="#DC2626"/>
+  <circle cx="320" cy="105" r="4" fill="#DC2626"/>
+  <circle cx="400" cy="105" r="4" fill="#DC2626"/>
+  <circle cx="480" cy="105" r="4" fill="#DC2626"/>
+  <text x="160" y="140" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
+  <text x="240" y="140" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
+  <text x="320" y="140" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
+  <text x="400" y="140" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
+  <text x="480" y="140" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
+  <!-- Antinodes labeled -->
+  <text x="200" y="48" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">A</text>
+  <text x="360" y="48" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">A</text>
+  <text x="280" y="170" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">A</text>
+  <text x="440" y="170" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">A</text>
+  <!-- Pulley -->
+  <circle cx="490" cy="105" r="10" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="490" cy="105" r="2" fill="#1a1a2e"/>
+  <text x="510" y="90" font-family="system-ui" font-size="10" fill="#1a1a2e">Pulley</text>
+  <!-- String over pulley down to mass -->
+  <line x1="498" y1="112" x2="510" y2="200" stroke="#B45309" stroke-width="2"/>
+  <!-- Mass hanger -->
+  <rect x="498" y="200" width="24" height="10" rx="2" fill="#777" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="495" y="210" width="30" height="8" rx="1" fill="#666" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="495" y="218" width="30" height="8" rx="1" fill="#666" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="540" y="215" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">Masses</text>
+  <text x="540" y="230" font-family="system-ui" font-size="10" fill="#DC2626">(Tension T = mg)</text>
+  <!-- Wavelength arrow -->
+  <line x1="160" y1="185" x2="320" y2="185" stroke="#D97706" stroke-width="2"/>
+  <polygon points="160,185 175,181 175,189" fill="#D97706"/>
+  <polygon points="320,185 305,181 305,189" fill="#D97706"/>
+  <text x="240" y="202" text-anchor="middle" font-family="system-ui" font-size="12" fill="#D97706" font-weight="bold">&lambda; (one wavelength)</text>
+  <!-- Metre ruler underneath -->
+  <rect x="140" y="245" width="350" height="10" rx="2" fill="#FBBF24" stroke="#1a1a2e" stroke-width="1" opacity="0.7"/>
+  <text x="315" y="270" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">Metre ruler</text>
+  <!-- Title -->
+  <text x="290" y="292" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP2: Stationary waves on a string</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Signal generator</li>
+  <li>Mechanical vibration generator (vibrator/oscillator)</li>
+  <li>String (nylon or similar, known mass per unit length &mu;)</li>
+  <li>Pulley clamped to the bench edge</li>
+  <li>Mass hanger and slotted masses</li>
+  <li>Metre ruler</li>
+  <li>Balance (to measure mass per unit length of string if unknown)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Attach the string to the vibration generator. Pass the string over the pulley and hang a known mass to provide tension T = mg.</li>
+  <li>Set the signal generator to a low frequency and slowly increase it until the <strong>fundamental mode</strong> (1st harmonic) is observed &mdash; one antinode, two nodes at the ends.</li>
+  <li>Record the frequency <em>f</em> from the signal generator. Measure the vibrating length <em>L</em> (distance between nodes) with a metre ruler.</li>
+  <li>For the fundamental: &lambda; = 2L, so record &lambda;.</li>
+  <li>Continue increasing the frequency to find the 2nd, 3rd, and higher harmonics. At the <em>n</em>th harmonic, there are <em>n</em> antinodes and &lambda; = 2L/n.</li>
+  <li>Vary the tension (by changing the hanging mass) and repeat to investigate the effect of tension on frequency.</li>
+  <li>For each harmonic or tension, record f, L, &lambda;, and T.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Wear safety goggles &mdash; the string is under tension and could snap.</li>
+  <li>Place a cushion or box under the masses in case they fall.</li>
+  <li>Keep fingers away from the vibrating string.</li>
+  <li>Ensure the pulley is clamped securely.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>The wave equation for a string gives the fundamental frequency:</p>
+<div class="equation">
+  f = (1/2L) &radic;(T/&mu;)
+</div>
+<p>To verify: plot <strong>f</strong> against <strong>1/L</strong> (keeping T constant) &mdash; expect a straight line through the origin with gradient = (1/2)&radic;(T/&mu;).</p>
+<p>Alternatively, plot <strong>f&sup2;</strong> against <strong>T</strong> (keeping L constant) &mdash; expect a straight line through the origin with gradient = 1/(4L&sup2;&mu;).</p>
+<p>The speed of the wave: <strong>v = f&lambda;</strong>.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Difficult to judge exact node positions</td><td>Random</td><td>Use a paper rider &mdash; it falls off at a node (zero amplitude). Measure between nodes for more accuracy</td></tr>
+<tr><td>String may not vibrate in a single plane</td><td>Random</td><td>Ensure the vibrator is level and the string is horizontal</td></tr>
+<tr><td>Mass of string between pulley and vibrator affects tension</td><td>Systematic</td><td>Measure only the vibrating length between the nodes, not the total string length</td></tr>
+<tr><td>Frequency dial on signal generator may be inaccurate</td><td>Systematic</td><td>Use a digital frequency meter to measure the actual frequency</td></tr>
+<tr><td>Damping reduces amplitude and makes nodes hard to identify</td><td>Systematic</td><td>Adjust frequency slowly to find maximum amplitude (resonance)</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> At the fundamental (1st harmonic), &lambda; = 2L. For the nth harmonic, &lambda; = 2L/n and f<sub>n</sub> = nf<sub>1</sub>. Nodes are points of zero displacement; antinodes are points of maximum displacement. The number of antinodes equals the harmonic number.</div>
+</div>
+
+<!-- ============ CORE PRACTICAL 6 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 6: Investigate the effects of length and tension on the resonant frequencies of a sonometer wire</h2>
+
+<svg viewBox="0 0 580 320" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sonometer box -->
+  <rect x="40" y="100" width="440" height="60" rx="4" fill="#F5E6D3" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="260" y="145" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">Sonometer (hollow wooden box)</text>
+  <!-- Wire stretched across top -->
+  <line x1="50" y1="98" x2="470" y2="98" stroke="#B45309" stroke-width="2.5"/>
+  <!-- Fixed bridge left -->
+  <polygon points="80,98 74,85 86,85" fill="#555" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="80" y="78" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Bridge</text>
+  <!-- Movable bridge right -->
+  <polygon points="380,98 374,85 386,85" fill="#16A34A" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="380" y="78" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="bold">Movable bridge</text>
+  <!-- Vibrating length arrow -->
+  <line x1="80" y1="70" x2="380" y2="70" stroke="#D97706" stroke-width="2"/>
+  <polygon points="80,70 95,66 95,74" fill="#D97706"/>
+  <polygon points="380,70 365,66 365,74" fill="#D97706"/>
+  <text x="230" y="65" text-anchor="middle" font-family="system-ui" font-size="12" fill="#D97706" font-weight="bold">Vibrating length L</text>
+  <!-- Ruler along top -->
+  <rect x="70" y="88" width="320" height="6" rx="1" fill="#FBBF24" stroke="#1a1a2e" stroke-width="0.5" opacity="0.6"/>
+  <!-- Tuning fork -->
+  <rect x="200" y="20" width="6" height="45" rx="1" fill="#777" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="190" y="10" width="6" height="40" rx="1" fill="#777" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="214" y="10" width="6" height="40" rx="1" fill="#777" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="190" y="42" width="30" height="8" rx="2" fill="#777" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="250" y="35" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">Tuning fork</text>
+  <text x="250" y="50" font-family="system-ui" font-size="10" fill="#1a73e8">(known frequency)</text>
+  <!-- OR microphone -->
+  <text x="250" y="65" font-family="system-ui" font-size="9" fill="#777">or microphone + CRO</text>
+  <!-- Pulley at right end -->
+  <circle cx="475" cy="98" r="8" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1"/>
+  <circle cx="475" cy="98" r="2" fill="#1a1a2e"/>
+  <!-- Mass hanger hanging down -->
+  <line x1="482" y1="104" x2="490" y2="180" stroke="#B45309" stroke-width="2"/>
+  <rect x="478" y="180" width="24" height="10" rx="2" fill="#777" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="475" y="190" width="30" height="8" rx="1" fill="#666" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="475" y="198" width="30" height="8" rx="1" fill="#666" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="520" y="200" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">Masses</text>
+  <text x="520" y="215" font-family="system-ui" font-size="10" fill="#DC2626">(Tension T)</text>
+  <!-- Paper rider on wire -->
+  <rect x="225" y="90" width="12" height="7" rx="1" fill="#DC2626" stroke="#DC2626" stroke-width="0.5" opacity="0.7"/>
+  <text x="248" y="93" font-family="system-ui" font-size="9" fill="#DC2626">Paper rider</text>
+  <!-- Title -->
+  <text x="290" y="300" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP6: Sonometer investigation</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Sonometer (hollow wooden box with wire stretched across it)</li>
+  <li>Two movable bridges</li>
+  <li>Tuning fork(s) of known frequencies (or microphone + oscilloscope/CRO)</li>
+  <li>Mass hanger and slotted masses (to vary tension)</li>
+  <li>Metre ruler (to measure vibrating length L)</li>
+  <li>Paper rider (small piece of paper placed on the wire)</li>
+  <li>Balance (to determine &mu; if needed)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Set up the sonometer with a known mass hanging over the pulley to provide tension T = mg.</li>
+  <li>Place a small paper rider on the wire at the midpoint between the bridges.</li>
+  <li>Strike the tuning fork and press its base onto the sonometer box.</li>
+  <li>Adjust the movable bridge position until <strong>resonance</strong> occurs &mdash; the paper rider vibrates vigorously and is thrown off the wire.</li>
+  <li>Measure the <strong>vibrating length L</strong> between the bridges with a ruler.</li>
+  <li>At resonance (fundamental): f = (1/2L)&radic;(T/&mu;), and the tuning fork frequency equals the wire's natural frequency.</li>
+  <li>To investigate the effect of <strong>length</strong>: keep T constant, use different tuning forks, and find the resonant length for each. Plot f against 1/L.</li>
+  <li>To investigate the effect of <strong>tension</strong>: keep L constant, vary the hanging mass, and find resonance each time. Plot f&sup2; against T.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Wear safety goggles &mdash; the wire is under tension.</li>
+  <li>Place a cushion or box beneath the hanging masses.</li>
+  <li>Do not over-tighten the wire (risk of snapping).</li>
+  <li>Do not strike the tuning fork too hard &mdash; it may damage the fork or sonometer.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>The resonant frequency of a stretched wire is:</p>
+<div class="equation">
+  f = (1/2L) &radic;(T/&mu;)
+</div>
+<p>Where &mu; = mass per unit length of the wire.</p>
+<ul>
+  <li><strong>f vs 1/L</strong> (constant T): straight line through origin, gradient = (1/2)&radic;(T/&mu;)</li>
+  <li><strong>f&sup2; vs T</strong> (constant L): straight line through origin, gradient = 1/(4L&sup2;&mu;)</li>
+</ul>
+<p>From the gradient, &mu; can be calculated and compared with the measured value (mass of a known length of wire divided by its length).</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Judging exact point of resonance</td><td>Random</td><td>Use a paper rider &mdash; resonance is clear when the rider is ejected; also try a microphone and CRO for a more precise frequency match</td></tr>
+<tr><td>Wire may not vibrate in the fundamental mode</td><td>Systematic</td><td>Place the paper rider at the midpoint; if it stays put, the wire is vibrating in a higher harmonic</td></tr>
+<tr><td>Measuring vibrating length to the bridge edge</td><td>Random</td><td>Measure from the inner edge of each bridge; repeat and take mean</td></tr>
+<tr><td>Tension not exactly T = mg due to friction at pulley</td><td>Systematic</td><td>Use a low-friction pulley; ensure the wire runs smoothly over it</td></tr>
+<tr><td>Wire stretches over time under tension</td><td>Systematic</td><td>Allow the wire to settle before taking measurements; re-check after experiment</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> The paper rider method is a simple way to confirm resonance. At resonance, maximum energy transfer occurs from the tuning fork to the wire, causing the paper rider to be thrown off. If the wire is not at resonance, the rider remains still.</div>
+</div>
+
     </div>
 </body>
 </html>

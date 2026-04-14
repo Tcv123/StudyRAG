@@ -377,6 +377,132 @@
 
 <div class="tip-box"><strong>Exam Tip:</strong> Fusion releases more energy per kilogram of fuel than fission. However, achieving the conditions for controlled fusion on Earth remains an enormous engineering challenge. Both fission and fusion release energy because the products have a higher binding energy per nucleon than the reactants.</div>
 
+<!-- ============================================================ -->
+<!-- REQUIRED PRACTICAL 12 -->
+<!-- ============================================================ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 12: Investigation of the Inverse-Square Law for Gamma Radiation</h2>
+
+<svg viewBox="0 0 620 280" style="max-width:600px; display:block; margin:16px auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="rp12arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#D97706"/></marker>
+    <marker id="rp12arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
+  </defs>
+  <text x="310" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP12: Inverse-Square Law for Gamma Radiation</text>
+
+  <!-- Source holder -->
+  <rect x="80" y="100" width="30" height="60" rx="4" fill="#fde68a" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="95" y="90" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Source</text>
+  <text x="95" y="80" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">holder</text>
+
+  <!-- Radioactive source symbol -->
+  <circle cx="95" cy="130" r="10" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="95" y="134" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626" font-weight="700">&gamma;</text>
+  <text x="95" y="175" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">Gamma source</text>
+  <text x="95" y="187" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">(e.g. Co-60)</text>
+
+  <!-- Radiation arrows (diverging) -->
+  <line x1="110" y1="120" x2="320" y2="105" stroke="#DC2626" stroke-width="0.8" opacity="0.3" stroke-dasharray="5,3"/>
+  <line x1="110" y1="130" x2="320" y2="130" stroke="#DC2626" stroke-width="1.2" opacity="0.5" stroke-dasharray="5,3"/>
+  <line x1="110" y1="140" x2="320" y2="155" stroke="#DC2626" stroke-width="0.8" opacity="0.3" stroke-dasharray="5,3"/>
+
+  <!-- GM tube -->
+  <rect x="320" y="110" width="70" height="40" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <!-- Tube window -->
+  <rect x="315" y="120" width="8" height="20" rx="2" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="355" y="128" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">GM</text>
+  <text x="355" y="140" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Tube</text>
+
+  <!-- Wire from GM tube to counter -->
+  <line x1="390" y1="130" x2="430" y2="130" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <!-- Counter / ratemeter -->
+  <rect x="430" y="105" width="100" height="50" rx="8" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="480" y="128" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">Counter /</text>
+  <text x="480" y="141" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">Ratemeter</text>
+
+  <!-- Ruler between source and GM tube -->
+  <rect x="110" y="160" width="210" height="8" rx="2" fill="#fef3c7" stroke="#D97706" stroke-width="0.8"/>
+  <!-- Ruler markings -->
+  <line x1="130" y1="160" x2="130" y2="168" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="160" y1="160" x2="160" y2="168" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="190" y1="160" x2="190" y2="168" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="220" y1="160" x2="220" y2="168" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="250" y1="160" x2="250" y2="168" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="280" y1="160" x2="280" y2="168" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="310" y1="160" x2="310" y2="168" stroke="#D97706" stroke-width="0.5"/>
+  <text x="215" y="183" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Metre ruler</text>
+
+  <!-- Distance measurement arrow -->
+  <line x1="95" y1="200" x2="320" y2="200" stroke="#D97706" stroke-width="1.5" marker-start="url(#rp12arr)" marker-end="url(#rp12arr)"/>
+  <text x="210" y="218" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="600">d (source to GM tube)</text>
+
+  <!-- Graph area -->
+  <rect x="430" y="180" width="130" height="80" rx="4" fill="#fff" stroke="#1a73e8" stroke-width="1"/>
+  <text x="495" y="197" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">C vs 1/d&sup2;</text>
+  <!-- Axes -->
+  <line x1="450" y1="250" x2="450" y2="200" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="450" y1="250" x2="545" y2="250" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Line through origin -->
+  <line x1="450" y1="250" x2="540" y2="205" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="445" y="198" font-family="system-ui" font-size="7" fill="#1a1a2e">C</text>
+  <text x="548" y="255" font-family="system-ui" font-size="7" fill="#1a1a2e">1/d&sup2;</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Sealed gamma source (e.g. cobalt-60 or caesium-137) in a source holder</li>
+  <li>Geiger-M&uuml;ller (GM) tube and counter (or ratemeter)</li>
+  <li>Metre ruler or tape measure</li>
+  <li>Retort stand and clamp (to hold the source and/or GM tube)</li>
+  <li>Stopwatch (for timed counts)</li>
+  <li>Lead absorber set (to verify the source emits gamma)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li><strong>Background count:</strong> Before setting up the source, measure the background count rate. Run the counter for at least 3 minutes (or take 3 separate 1-minute counts) with no source present. Calculate the mean background count rate C<sub>bg</sub>.</li>
+  <li>Place the gamma source in its holder at one end of the ruler. Place the GM tube at a known distance d from the source. Align the tube window to face the source directly.</li>
+  <li>Count the number of counts N in a fixed time (e.g. 60 seconds). Calculate the count rate C = N/t.</li>
+  <li>Subtract the background: corrected count rate = C &minus; C<sub>bg</sub>.</li>
+  <li>Move the GM tube further away. Repeat for at least 6&ndash;8 different distances (e.g. from 5 cm to 50 cm in steps of 5 cm).</li>
+  <li>Plot corrected count rate (y-axis) against 1/d&sup2; (x-axis). A straight line through the origin confirms the inverse-square law.</li>
+  <li>Alternatively, plot log(C) vs log(d). The gradient should be &minus;2.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li><strong>Radioactive source safety is critical:</strong></li>
+  <li>Handle the source with long tongs &mdash; never with bare hands.</li>
+  <li>Keep the source in a lead-lined container when not in use.</li>
+  <li>Point the source away from people.</li>
+  <li>Maximise distance from the source (inverse-square law reduces exposure).</li>
+  <li>Minimise time of exposure &mdash; take readings efficiently.</li>
+  <li>Only a teacher or authorised person should handle the source.</li>
+  <li>Wash hands after the experiment.</li>
+  <li>Record the source in the school&rsquo;s radioactive materials register.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>For a point source emitting gamma radiation uniformly, the intensity (and hence count rate) follows the inverse-square law:</p>
+<p class="eq">I &prop; 1/d&sup2; &nbsp;&nbsp; &rArr; &nbsp;&nbsp; C = k/d&sup2;</p>
+<p>Plot corrected C vs 1/d&sup2;: a straight line through the origin confirms the inverse-square law, with gradient k related to the source activity and detector efficiency.</p>
+<p>If the line does not pass through the origin, the effective centre of the source may not be at the measured position &mdash; introduce a correction d<sub>0</sub> so that C = k/(d + d<sub>0</sub>)&sup2;.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Radioactive decay is random &mdash; count rates fluctuate</td><td>Random</td><td>Take long counting times (at least 60 s per reading); repeat and average; use at least 3 readings per distance</td></tr>
+<tr><td>Background radiation not properly accounted for</td><td>Systematic</td><td>Measure background count rate carefully and subtract from each reading</td></tr>
+<tr><td>Distance d measured to the wrong point on the GM tube (not the detector window)</td><td>Systematic</td><td>Measure from the source to the GM tube window; apply a correction factor d<sub>0</sub> for the unknown position inside the tube</td></tr>
+<tr><td>Source is not a true point source</td><td>Systematic</td><td>Use a small sealed source; work at distances much larger than the source diameter</td></tr>
+<tr><td>Dead time of the GM tube (misses counts at very high rates)</td><td>Systematic</td><td>Do not use very close distances where count rate is extremely high; apply dead-time correction if known</td></tr>
+<tr><td>Absorption of gamma rays by air at large distances</td><td>Systematic</td><td>Keep distances below ~50 cm; air absorption is minimal for gamma at short ranges</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Always subtract background count rate before plotting. The randomness of radioactive decay means count rates fluctuate &mdash; this is why you take long counting times and repeat measurements. If the graph of C vs 1/d&sup2; does not pass through the origin, this indicates a systematic error in d (the effective centre of the source is not at the point you measured from). You can find d<sub>0</sub> by plotting &radic;(1/C) vs d, which should be linear with an x-intercept of &minus;d<sub>0</sub>.</div>
+</div>
+
 </div>
 </body>
 </html>

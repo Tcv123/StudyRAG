@@ -24,7 +24,8 @@
       "Bash(grep -c \"svg\\\\|diagram\\\\|canvas\\\\|<img\\\\|figure\" notes-physics-edexcel/*.html)",
       "Bash(grep -c \"diagram: true\\\\|diagram:true\" questions/physics/physics-edexcel-written.js)",
       "Bash(grep -c \"diagram: true\\\\|diagram:true\" questions/physics/physics-aqa-practice.js)",
-      "Bash(grep -c \"diagram: true\\\\|diagram:true\" questions/physics/physics-edexcel-practice.js)"
+      "Bash(grep -c \"diagram: true\\\\|diagram:true\" questions/physics/physics-edexcel-practice.js)",
+      "Bash(grep -i \"required practical\\\\|practical 1\\\\|practical 2\\\\|practical 3\\\\|RP1\\\\|RP2\\\\|RP3\\\\|RP4\\\\|RP5\\\\|RP6\\\\|RP7\\\\|RP8\\\\|RP9\\\\|RP10\\\\|RP11\\\\|RP12\" \"/c/Users/tcvas/OneDrive/Desktop/Learning/notes-physics-aqa/\"*.html)"
     ]
   },
   "hooks": {

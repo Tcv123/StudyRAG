@@ -408,6 +408,437 @@
 
 <div class="exam-tip">The derivation of p = ⅓ρc̄² is a common 6-mark question. Learn the key steps and be clear about where the factor of ⅓ comes from (random motion equally distributed in 3 dimensions).</div>
 
+<!-- ============ CORE PRACTICAL 10 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 10: Determine the specific heat capacity of a material</h2>
+
+<svg viewBox="0 0 480 420" style="max-width:550px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Metal block -->
+  <rect x="140" y="150" width="140" height="140" rx="8" fill="#D1D5DB" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="210" y="230" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">Metal block</text>
+  <text x="210" y="250" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">(aluminium / copper)</text>
+  <!-- Heater hole -->
+  <rect x="165" y="155" width="16" height="100" rx="4" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="173" y="270" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Heater</text>
+  <!-- Heater element inside -->
+  <line x1="170" y1="165" x2="175" y2="175" stroke="#DC2626" stroke-width="1.5"/>
+  <line x1="175" y1="175" x2="170" y2="185" stroke="#DC2626" stroke-width="1.5"/>
+  <line x1="170" y1="185" x2="175" y2="195" stroke="#DC2626" stroke-width="1.5"/>
+  <line x1="175" y1="195" x2="170" y2="205" stroke="#DC2626" stroke-width="1.5"/>
+  <line x1="170" y1="205" x2="175" y2="215" stroke="#DC2626" stroke-width="1.5"/>
+  <line x1="175" y1="215" x2="170" y2="225" stroke="#DC2626" stroke-width="1.5"/>
+  <line x1="170" y1="225" x2="175" y2="240" stroke="#DC2626" stroke-width="1.5"/>
+  <!-- Thermometer hole -->
+  <rect x="240" y="155" width="12" height="90" rx="3" fill="#DBEAFE" stroke="#1a73e8" stroke-width="1"/>
+  <!-- Thermometer -->
+  <rect x="242" y="120" width="8" height="120" rx="3" fill="#DC2626" stroke="#1a1a2e" stroke-width="0.5"/>
+  <circle cx="246" cy="245" r="6" fill="#DC2626" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="270" y="140" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">Thermometer</text>
+  <!-- Insulation around block -->
+  <rect x="120" y="140" width="180" height="160" rx="12" fill="none" stroke="#16A34A" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="120" y="320" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="bold">Insulation (lagging)</text>
+  <!-- Power supply -->
+  <rect x="20" y="50" width="80" height="50" rx="6" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="60" y="72" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Power</text>
+  <text x="60" y="87" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Supply</text>
+  <!-- Ammeter -->
+  <circle cx="170" cy="75" r="16" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="170" y="80" text-anchor="middle" font-family="system-ui" font-size="13" fill="#DC2626" font-weight="bold">A</text>
+  <text x="170" y="55" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Ammeter</text>
+  <!-- Voltmeter -->
+  <circle cx="280" cy="75" r="16" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="280" y="80" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a73e8" font-weight="bold">V</text>
+  <text x="280" y="55" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Voltmeter</text>
+  <!-- OR joulemeter -->
+  <text x="230" y="45" text-anchor="middle" font-family="system-ui" font-size="9" fill="#777">(or joulemeter)</text>
+  <!-- Wiring -->
+  <line x1="100" y1="75" x2="154" y2="75" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="186" y1="75" x2="264" y2="75" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="173" y1="155" x2="173" y2="91" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Voltmeter parallel to heater -->
+  <line x1="296" y1="75" x2="320" y2="75" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="320" y1="75" x2="320" y2="155" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="173" y1="120" x2="264" y2="75" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Return wire -->
+  <line x1="320" y1="155" x2="320" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="320" y1="340" x2="30" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="30" y1="100" x2="30" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Balance underneath -->
+  <rect x="130" y="350" width="160" height="20" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="210" y="365" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Balance (mass m)</text>
+  <!-- Stopwatch callout -->
+  <rect x="370" y="180" width="80" height="40" rx="5" fill="#fff" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="410" y="198" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Stopwatch</text>
+  <text x="410" y="212" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Time t</text>
+  <!-- Title -->
+  <text x="240" y="400" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP10: Specific heat capacity</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Metal block (aluminium or copper) with holes for heater and thermometer</li>
+  <li>Immersion heater (12 V) that fits into the block</li>
+  <li>Thermometer or temperature sensor (resolution &plusmn;0.5 &deg;C)</li>
+  <li>Ammeter and voltmeter (or joulemeter)</li>
+  <li>DC power supply</li>
+  <li>Stopwatch</li>
+  <li>Balance (resolution &plusmn;0.1 g)</li>
+  <li>Insulation (lagging/cotton wool) to wrap the block</li>
+  <li>A little oil in the thermometer hole for good thermal contact</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure the mass <em>m</em> of the metal block on a balance.</li>
+  <li>Insert the heater and thermometer into the block. Add a drop of oil to the thermometer hole for good thermal contact.</li>
+  <li>Wrap the block in insulation to reduce heat losses.</li>
+  <li>Record the initial temperature &theta;<sub>1</sub>.</li>
+  <li>Switch on the heater. Record the ammeter reading <em>I</em> and voltmeter reading <em>V</em> (or use a joulemeter to read energy directly).</li>
+  <li>Heat for a measured time <em>t</em> (e.g. 5 minutes). Monitor I and V throughout (they should be approximately constant).</li>
+  <li>Switch off the heater. Stir the thermometer gently and record the <strong>maximum temperature</strong> &theta;<sub>2</sub> (the temperature may continue to rise briefly as heat spreads through the block).</li>
+  <li>Calculate: E = IVt (energy supplied), &Delta;&theta; = &theta;<sub>2</sub> &minus; &theta;<sub>1</sub>.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>The metal block will become hot &mdash; use tongs or insulated gloves to handle it.</li>
+  <li>Do not touch the heater element when in use.</li>
+  <li>Ensure the power supply is switched off before assembling or disassembling the circuit.</li>
+  <li>Keep water away from the electrical connections.</li>
+</ul>
+
+<h3>Analysis</h3>
+<div class="equation">
+  E = mc&Delta;&theta; &nbsp;&nbsp;&rArr;&nbsp;&nbsp; c = E / (m&Delta;&theta;) = IVt / (m&Delta;&theta;)
+</div>
+<p>Where c = specific heat capacity (J kg<sup>-1</sup> K<sup>-1</sup>), E = energy supplied, m = mass, &Delta;&theta; = temperature change.</p>
+<p>Compare the result with accepted values (e.g. aluminium: 897 J kg<sup>-1</sup> K<sup>-1</sup>, copper: 385 J kg<sup>-1</sup> K<sup>-1</sup>).</p>
+<p>For a more thorough analysis: heat for different times, plot <strong>&Delta;&theta;</strong> against <strong>t</strong> (expect a straight line), and use the gradient with E = IVt to find c.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Heat loss to surroundings</td><td>Systematic (gives c too large)</td><td>Insulate the block well; use a cooling correction</td></tr>
+<tr><td>Thermometer not in good thermal contact with block</td><td>Systematic</td><td>Add oil to the thermometer hole; wait for thermal equilibrium</td></tr>
+<tr><td>Heater not transferring all energy to block</td><td>Systematic</td><td>Ensure heater fits snugly; insulate the block</td></tr>
+<tr><td>V and I not constant during heating</td><td>Systematic</td><td>Monitor and record V and I throughout; use averages or a joulemeter</td></tr>
+<tr><td>Temperature continues to rise after heater is switched off</td><td>Systematic</td><td>Record the maximum temperature reached; allow time for equilibrium</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Heat losses always make the experimental value of c larger than the true value (because not all energy goes into raising the temperature of the block). This is a common evaluation point. To improve, use better insulation, a larger block, or apply a cooling correction.</div>
+</div>
+
+<!-- ============ CORE PRACTICAL 12 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 12: Investigate Boyle's law (pressure-volume relationship at constant temperature)</h2>
+
+<svg viewBox="0 0 480 400" style="max-width:550px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Syringe / gas column -->
+  <rect x="100" y="60" width="200" height="50" rx="6" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- Gas inside -->
+  <rect x="105" y="65" width="140" height="40" rx="4" fill="#DBEAFE" opacity="0.5"/>
+  <text x="175" y="90" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">Trapped gas</text>
+  <!-- Piston -->
+  <rect x="245" y="62" width="15" height="46" rx="2" fill="#888" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="252" y="55" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Piston</text>
+  <!-- Push arrow -->
+  <line x1="270" y1="85" x2="320" y2="85" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="270,85 285,80 285,90" fill="#DC2626"/>
+  <text x="330" y="82" font-family="system-ui" font-size="10" fill="#DC2626">Push/pull</text>
+  <text x="330" y="95" font-family="system-ui" font-size="10" fill="#DC2626">to vary V</text>
+  <!-- Volume scale on syringe -->
+  <rect x="105" y="112" width="140" height="8" rx="1" fill="#FBBF24" stroke="#1a1a2e" stroke-width="0.5" opacity="0.6"/>
+  <text x="175" y="135" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="bold">Volume scale (cm&sup3;)</text>
+  <!-- OR sealed tube with oil -->
+  <text x="200" y="155" text-anchor="middle" font-family="system-ui" font-size="9" fill="#777">(or sealed glass tube with oil column trapping gas)</text>
+  <!-- Pressure gauge connected -->
+  <line x1="100" y1="85" x2="60" y2="85" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="85" x2="60" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Bourdon gauge -->
+  <circle cx="60" cy="230" r="30" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="60" y="226" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Pressure</text>
+  <text x="60" y="240" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Gauge</text>
+  <text x="60" y="275" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">P / Pa</text>
+  <!-- Needle -->
+  <line x1="60" y1="230" x2="45" y2="210" stroke="#DC2626" stroke-width="1.5"/>
+  <!-- GRAPH: P vs 1/V -->
+  <rect x="250" y="180" width="200" height="170" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="350" y="200" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">Expected Graph</text>
+  <line x1="290" y1="330" x2="430" y2="330" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="290" y1="330" x2="290" y2="210" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="360" y="348" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">1/V</text>
+  <text x="278" y="270" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,278,270)">P / Pa</text>
+  <!-- Straight line through origin -->
+  <line x1="290" y1="330" x2="420" y2="215" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="370" y="255" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">P &prop; 1/V</text>
+  <text x="370" y="270" font-family="system-ui" font-size="9" fill="#1a73e8">(straight line through origin)</text>
+  <!-- Title -->
+  <text x="240" y="385" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP12: Boyle's law (P vs 1/V)</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Sealed syringe (gas syringe) or Boyle's law apparatus (sealed tube with oil column)</li>
+  <li>Bourdon gauge or digital pressure sensor</li>
+  <li>Volume scale (on syringe barrel, or ruler alongside gas column)</li>
+  <li>Pump or piston to vary volume</li>
+  <li>Thermometer (to check temperature remains constant)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Set up the apparatus with a fixed amount of trapped gas connected to the pressure gauge.</li>
+  <li>Record the initial volume <em>V</em> and pressure <em>P</em>.</li>
+  <li>Slowly change the volume (compress or expand the gas) and wait for the pressure to stabilise before reading.</li>
+  <li>Record at least 6 pairs of P and V readings across a wide range.</li>
+  <li>After each change, wait at least 30 seconds for the gas to return to room temperature (compression heats the gas temporarily).</li>
+  <li>Record the room temperature to confirm it stays approximately constant.</li>
+  <li>Plot <strong>P</strong> (y-axis) against <strong>1/V</strong> (x-axis).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Do not over-pressurise the syringe or apparatus &mdash; follow manufacturer guidelines.</li>
+  <li>If using a glass tube, handle carefully to avoid breakage.</li>
+  <li>Ensure all connections are secure to prevent gas leaks.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>Boyle's law states that at constant temperature:</p>
+<div class="equation">
+  PV = constant &nbsp;&nbsp;&rArr;&nbsp;&nbsp; P &prop; 1/V
+</div>
+<p>A graph of <strong>P vs 1/V</strong> should be a straight line through the origin. The gradient equals the constant (= nRT for an ideal gas).</p>
+<p>Alternatively, plot <strong>PV vs P</strong> &mdash; this should give a horizontal straight line if Boyle's law holds.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Gas temperature changes when compressed quickly</td><td>Systematic</td><td>Change volume slowly; wait for thermal equilibrium before reading</td></tr>
+<tr><td>Gas leaks from the syringe or connections</td><td>Systematic</td><td>Use well-sealed apparatus; check for leaks before starting</td></tr>
+<tr><td>Friction in the piston makes volume readings unreliable</td><td>Random</td><td>Lubricate the syringe; tap gently before reading</td></tr>
+<tr><td>Parallax error when reading scales</td><td>Random</td><td>Read at eye level; use digital sensors where possible</td></tr>
+<tr><td>Dead volume in connecting tubes not accounted for</td><td>Systematic</td><td>Minimise connecting tube length; add the dead volume to all readings</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> If the graph of P vs 1/V does not pass through the origin, this indicates a systematic error (e.g. an uncorrected dead volume). If the line is straight but offset, the relationship P &prop; 1/V still holds but V needs correcting for the dead space.</div>
+</div>
+
+<!-- ============ CORE PRACTICAL 14 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 14: Investigate the relationship between pressure and volume at fixed temperature</h2>
+
+<svg viewBox="0 0 500 380" style="max-width:550px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Water bath -->
+  <rect x="120" y="100" width="260" height="180" rx="8" fill="#E0F2FE" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="250" y="130" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">Constant temperature water bath</text>
+  <!-- Water lines -->
+  <line x1="135" y1="160" x2="365" y2="160" stroke="#93C5FD" stroke-width="1" opacity="0.4"/>
+  <line x1="135" y1="190" x2="365" y2="190" stroke="#93C5FD" stroke-width="1" opacity="0.4"/>
+  <line x1="135" y1="220" x2="365" y2="220" stroke="#93C5FD" stroke-width="1" opacity="0.4"/>
+  <line x1="135" y1="250" x2="365" y2="250" stroke="#93C5FD" stroke-width="1" opacity="0.4"/>
+  <!-- Sealed gas column inside water bath -->
+  <rect x="200" y="120" width="30" height="150" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="203" y="125" width="24" height="60" rx="2" fill="#DBEAFE" opacity="0.6"/>
+  <text x="215" y="155" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Gas</text>
+  <!-- Oil plug -->
+  <rect x="203" y="185" width="24" height="15" rx="2" fill="#B45309" opacity="0.7"/>
+  <text x="215" y="196" text-anchor="middle" font-family="system-ui" font-size="8" fill="white">Oil</text>
+  <!-- Volume scale alongside -->
+  <rect x="235" y="120" width="6" height="150" rx="1" fill="#FBBF24" stroke="#1a1a2e" stroke-width="0.5" opacity="0.7"/>
+  <text x="260" y="200" font-family="system-ui" font-size="10" fill="#D97706" font-weight="bold">Scale</text>
+  <!-- Thermometer in water -->
+  <rect x="320" y="110" width="5" height="100" rx="2" fill="#DC2626" stroke="#1a1a2e" stroke-width="0.5"/>
+  <circle cx="322" cy="215" r="5" fill="#DC2626" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="345" y="170" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">Thermometer</text>
+  <!-- Pressure gauge connected to top -->
+  <line x1="215" y1="120" x2="215" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="215" y1="60" x2="80" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="60" cy="60" r="22" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="60" y="58" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="bold">Pressure</text>
+  <text x="60" y="70" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="bold">Gauge</text>
+  <!-- Pump / pressure control -->
+  <rect x="400" y="50" width="70" height="35" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="435" y="65" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="bold">Foot pump /</text>
+  <text x="435" y="78" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="bold">pressure valve</text>
+  <line x1="215" y1="60" x2="400" y2="67" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Stirrer -->
+  <rect x="155" y="110" width="6" height="140" rx="2" fill="#777" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="140" y="108" text-anchor="end" font-family="system-ui" font-size="9" fill="#777">Stirrer</text>
+  <!-- Key difference label -->
+  <rect x="40" y="300" width="420" height="35" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+  <text x="250" y="322" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="bold">Key: CP14 emphasises maintaining constant temperature via the water bath</text>
+  <!-- Title -->
+  <text x="250" y="365" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP14: P-V relationship at fixed temperature</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Gas syringe or sealed gas column with oil plug</li>
+  <li>Bourdon gauge or digital pressure sensor</li>
+  <li>Constant-temperature water bath (or large beaker of water with heater and stirrer)</li>
+  <li>Thermometer</li>
+  <li>Ruler or volume scale</li>
+  <li>Foot pump or means to vary pressure</li>
+  <li>Stirrer</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Place the sealed gas column (or syringe) inside the water bath. Allow time for the gas to reach the bath temperature.</li>
+  <li>Record the temperature of the water bath using the thermometer. <strong>Keep this constant throughout.</strong></li>
+  <li>Record the initial pressure <em>P</em> and gas volume <em>V</em>.</li>
+  <li>Use the pump or valve to change the pressure. After each change, <strong>stir the water and wait</strong> for the gas to return to the bath temperature before reading.</li>
+  <li>Record at least 8 pairs of (P, V) readings.</li>
+  <li>Stir the water bath continuously to maintain a uniform temperature. If using a heater, monitor the thermometer closely.</li>
+  <li>Plot <strong>P</strong> vs <strong>1/V</strong> (expect straight line through origin) and/or <strong>PV</strong> vs <strong>P</strong> (expect horizontal line).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Do not over-pressurise the apparatus.</li>
+  <li>Handle hot water carefully if using a heated water bath.</li>
+  <li>If using glass apparatus, handle gently to avoid breakage.</li>
+  <li>Keep electrical equipment away from the water bath.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>This is the same relationship as CP12 (Boyle's law: PV = constant at constant T), but the emphasis here is on <strong>precisely controlling temperature</strong> using a water bath.</p>
+<div class="equation">
+  PV = nRT = constant (at fixed T)
+</div>
+<p>Plot <strong>P vs 1/V</strong>: straight line through origin confirms Boyle's law. The gradient = nRT.</p>
+<p>Plot <strong>PV vs P</strong>: a horizontal line confirms PV is constant.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Temperature of gas not equal to water bath temperature</td><td>Systematic</td><td>Wait longer between readings; stir the bath; use a thin-walled container for the gas</td></tr>
+<tr><td>Water bath temperature drifts during experiment</td><td>Systematic</td><td>Use a thermostatically controlled water bath; monitor with a thermometer</td></tr>
+<tr><td>Gas leaks</td><td>Systematic</td><td>Check all seals before starting; use grease on joints</td></tr>
+<tr><td>Friction in syringe piston</td><td>Random</td><td>Tap the syringe gently; lubricate the piston</td></tr>
+<tr><td>Adiabatic heating during rapid compression</td><td>Systematic</td><td>Change volume slowly; wait for isothermal equilibrium</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> CP12 and CP14 both investigate Boyle's law. The key difference is that CP14 explicitly uses a water bath to ensure constant temperature, making it a more controlled isothermal experiment. In CP12, you rely on slow volume changes and waiting for the gas to equilibrate with room temperature.</div>
+</div>
+
+<!-- ============ CORE PRACTICAL 16 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 16: Determine the specific latent heat of a phase change</h2>
+
+<svg viewBox="0 0 500 440" style="max-width:550px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- ===== LEFT SIDE: Latent heat of fusion ===== -->
+  <text x="140" y="25" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">Latent heat of fusion (ice)</text>
+  <!-- Funnel -->
+  <polygon points="80,50 200,50 180,90 100,90" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="130" y="90" width="20" height="30" rx="2" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Crushed ice in funnel -->
+  <ellipse cx="140" cy="65" rx="40" ry="12" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <text x="140" y="70" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Crushed ice</text>
+  <!-- Heater in ice -->
+  <rect x="125" y="55" width="30" height="8" rx="2" fill="#DC2626" stroke="#1a1a2e" stroke-width="1" opacity="0.8"/>
+  <text x="90" y="48" font-family="system-ui" font-size="9" fill="#DC2626">Heater</text>
+  <!-- Dripping water -->
+  <circle cx="140" cy="130" r="3" fill="#93C5FD"/>
+  <circle cx="140" cy="145" r="2" fill="#93C5FD"/>
+  <!-- Beaker below -->
+  <rect x="110" y="155" width="60" height="50" rx="4" fill="#E0F2FE" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="140" y="180" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Meltwater</text>
+  <!-- Balance underneath -->
+  <rect x="100" y="210" width="80" height="18" rx="3" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="140" y="223" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="bold">Balance (mass m)</text>
+  <!-- ===== RIGHT SIDE: Latent heat of vaporisation ===== -->
+  <text x="370" y="25" text-anchor="middle" font-family="system-ui" font-size="12" fill="#DC2626" font-weight="bold">Latent heat of vaporisation</text>
+  <!-- Beaker with water -->
+  <rect x="310" y="60" width="120" height="90" rx="6" fill="#E0F2FE" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="370" y="100" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Boiling water</text>
+  <!-- Steam bubbles -->
+  <circle cx="340" cy="85" r="4" fill="none" stroke="#93C5FD" stroke-width="1"/>
+  <circle cx="380" cy="90" r="3" fill="none" stroke="#93C5FD" stroke-width="1"/>
+  <circle cx="360" cy="75" r="5" fill="none" stroke="#93C5FD" stroke-width="1"/>
+  <!-- Heater in water -->
+  <rect x="335" y="120" width="70" height="10" rx="3" fill="#DC2626" stroke="#1a1a2e" stroke-width="1" opacity="0.8"/>
+  <text x="370" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Immersion heater</text>
+  <!-- Condensation tube -->
+  <rect x="440" y="50" width="15" height="80" rx="3" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="470" y="80" font-family="system-ui" font-size="9" fill="#777">Condenser</text>
+  <!-- Drip into collection -->
+  <circle cx="447" cy="140" r="2" fill="#93C5FD"/>
+  <!-- Collection beaker -->
+  <rect x="430" y="155" width="40" height="40" rx="3" fill="#E0F2FE" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="450" y="178" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Collected</text>
+  <!-- Balance underneath right -->
+  <rect x="420" y="200" width="60" height="18" rx="3" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="450" y="213" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e" font-weight="bold">Balance</text>
+  <!-- Power supply and joulemeter (shared) -->
+  <rect x="170" y="280" width="160" height="45" rx="6" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="250" y="300" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">Joulemeter / (A + V + stopwatch)</text>
+  <text x="250" y="318" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Energy E = IVt</text>
+  <!-- Wires to heaters -->
+  <line x1="200" y1="280" x2="140" y2="55" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="300" y1="280" x2="370" y2="145" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Key equation -->
+  <rect x="120" y="350" width="260" height="40" rx="6" fill="#fff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="250" y="368" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a73e8" font-weight="bold">L = E / m = IVt / &Delta;m</text>
+  <text x="250" y="384" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">where &Delta;m = mass melted or evaporated</text>
+  <!-- Title -->
+  <text x="250" y="425" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP16: Specific latent heat</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li><strong>For latent heat of fusion (ice):</strong> Crushed ice, funnel, beaker, immersion heater, joulemeter (or ammeter + voltmeter + stopwatch), balance, thermometer.</li>
+  <li><strong>For latent heat of vaporisation (water):</strong> Beaker of boiling water, immersion heater, condenser or collection vessel, balance, joulemeter (or ammeter + voltmeter + stopwatch), thermometer.</li>
+</ul>
+
+<h3>Method (Latent Heat of Fusion)</h3>
+<ol>
+  <li>Place crushed ice in a funnel above a pre-weighed beaker on a balance.</li>
+  <li>Allow the ice to drip for a few minutes <strong>without the heater</strong>. Measure the mass of water collected in a known time (this is the <strong>control</strong> &mdash; accounts for natural melting).</li>
+  <li>Empty the beaker and re-weigh. Insert the heater into the ice and switch it on.</li>
+  <li>Record the joulemeter reading (or ammeter, voltmeter, and time) to find the energy E supplied.</li>
+  <li>Collect the meltwater for the same time period. Weigh the beaker + water and find the mass <em>m</em> of ice melted.</li>
+  <li>Subtract the control mass (natural melting) to get the corrected mass &Delta;m melted by the heater.</li>
+  <li>Calculate: L<sub>f</sub> = E / &Delta;m.</li>
+</ol>
+
+<h3>Method (Latent Heat of Vaporisation)</h3>
+<ol>
+  <li>Bring water to a steady boil using the immersion heater. Record the initial mass on the balance.</li>
+  <li>Allow boiling for a measured time <em>t</em>, keeping the power constant. Record E = IVt.</li>
+  <li>Measure the final mass. The mass lost &Delta;m = mass of steam produced.</li>
+  <li>Calculate: L<sub>v</sub> = E / &Delta;m.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Boiling water and steam cause severe burns &mdash; handle with extreme care.</li>
+  <li>Use a heatproof mat and keep the beaker stable.</li>
+  <li>Do not let the heater run dry (always submerged in water or surrounded by ice).</li>
+  <li>Tie back hair; wear safety goggles if boiling vigorously.</li>
+</ul>
+
+<h3>Analysis</h3>
+<div class="equation">
+  L = E / &Delta;m = IVt / &Delta;m
+</div>
+<p>Expected values: L<sub>f</sub> (ice) &approx; 334 kJ kg<sup>-1</sup>; L<sub>v</sub> (water) &approx; 2260 kJ kg<sup>-1</sup>.</p>
+<p>For a graphical method: vary the heating time, plot <strong>&Delta;m</strong> against <strong>E</strong>. The gradient = 1/L, so L = 1/gradient.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Heat losses to surroundings</td><td>Systematic (gives L too large)</td><td>Insulate the apparatus; use a control experiment (no heater) to account for background melting/evaporation</td></tr>
+<tr><td>Not all heater energy goes into phase change (some heats water)</td><td>Systematic</td><td>Ensure the water is already at 100 &deg;C (for vaporisation) or ice is at 0 &deg;C (for fusion) before timing</td></tr>
+<tr><td>Steam escaping before being collected</td><td>Systematic</td><td>Use a condenser or well-fitting lid with collection tube; or measure mass loss on balance</td></tr>
+<tr><td>Natural melting of ice (without heater)</td><td>Systematic</td><td>Run a control with no heater for the same time; subtract the control mass</td></tr>
+<tr><td>Water splashing during boiling</td><td>Random</td><td>Boil gently; use a lid to contain splashes</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> During a phase change, temperature remains constant despite continuous energy input. This is because the energy goes into breaking intermolecular bonds (fusion) or overcoming intermolecular forces to escape the liquid (vaporisation), not into increasing kinetic energy. The control experiment (no heater) is essential for an accurate value of L<sub>f</sub>.</div>
+</div>
+
 </div>
 </body>
 </html>

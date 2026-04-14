@@ -383,6 +383,268 @@
 
 <div class="tip-box"><strong>Exam Tip:</strong> Longitudinal waves (e.g. sound) cannot be polarised because their oscillations are already in one direction (parallel to wave travel). Polarisation is exclusive proof of transverse wave nature.</div>
 
+<!-- ============================================================ -->
+<!-- REQUIRED PRACTICAL 1 -->
+<!-- ============================================================ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 1: Investigation into Stationary Waves on a String</h2>
+
+<svg viewBox="0 0 620 260" style="max-width:600px; display:block; margin:16px auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="rp1arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
+    <marker id="rp1arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#D97706"/></marker>
+  </defs>
+  <text x="310" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP1: Stationary Waves on a String</text>
+
+  <!-- Signal generator -->
+  <rect x="20" y="80" width="80" height="50" rx="6" fill="#e8f0fe" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="60" y="100" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Signal</text>
+  <text x="60" y="112" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Generator</text>
+  <!-- sine wave symbol on generator -->
+  <path d="M40,120 Q50,115 55,120 Q60,125 70,120" fill="none" stroke="#1a73e8" stroke-width="1"/>
+
+  <!-- Vibrator -->
+  <rect x="110" y="85" width="30" height="40" rx="4" fill="#d1d5db" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="125" y="105" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Vib.</text>
+
+  <!-- Wire from generator to vibrator -->
+  <line x1="100" y1="105" x2="110" y2="105" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <!-- String with standing wave pattern (2nd harmonic) -->
+  <path d="M140,105 Q200,60 260,105 Q320,150 380,105 Q440,60 500,105" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <!-- Nodes -->
+  <circle cx="140" cy="105" r="4" fill="#DC2626"/>
+  <circle cx="260" cy="105" r="4" fill="#DC2626"/>
+  <circle cx="380" cy="105" r="4" fill="#DC2626"/>
+  <circle cx="500" cy="105" r="4" fill="#DC2626"/>
+  <!-- Node labels -->
+  <text x="140" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
+  <text x="260" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
+  <text x="380" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
+  <text x="500" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
+  <!-- Antinode labels -->
+  <text x="200" y="55" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">A</text>
+  <text x="320" y="160" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">A</text>
+  <text x="440" y="55" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">A</text>
+
+  <!-- Pulley -->
+  <circle cx="510" cy="105" r="12" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="510" cy="105" r="2" fill="#1a1a2e"/>
+  <text x="510" y="85" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Pulley</text>
+
+  <!-- String over pulley going down -->
+  <line x1="522" y1="105" x2="530" y2="105" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="530" y1="105" x2="530" y2="180" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <!-- Hanging masses -->
+  <rect x="518" y="180" width="24" height="30" rx="3" fill="#fde68a" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="530" y="198" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">m</text>
+  <text x="530" y="228" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Masses</text>
+
+  <!-- Ruler underneath -->
+  <rect x="140" y="155" width="360" height="10" rx="2" fill="#fef3c7" stroke="#D97706" stroke-width="1"/>
+  <text x="320" y="180" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Metre ruler</text>
+  <!-- Ruler markings -->
+  <line x1="200" y1="155" x2="200" y2="165" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="260" y1="155" x2="260" y2="165" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="320" y1="155" x2="320" y2="165" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="380" y1="155" x2="380" y2="165" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="440" y1="155" x2="440" y2="165" stroke="#D97706" stroke-width="0.5"/>
+
+  <!-- Length measurement arrow -->
+  <line x1="140" y1="40" x2="500" y2="40" stroke="#D97706" stroke-width="1" marker-end="url(#rp1arrO)"/>
+  <line x1="500" y1="40" x2="140" y2="40" stroke="#D97706" stroke-width="1" marker-end="url(#rp1arrO)"/>
+  <text x="320" y="35" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">L (vibrating length)</text>
+
+  <!-- Labels -->
+  <text x="60" y="75" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Frequency control</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Signal generator and vibration generator (mechanical oscillator)</li>
+  <li>Thin string or elastic cord</li>
+  <li>Pulley and clamp</li>
+  <li>Slotted masses and hanger (to provide tension)</li>
+  <li>Metre ruler</li>
+  <li>Retort stand and bench clamp</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Clamp the vibration generator to the bench. Attach the string to the vibrator, pass it over the pulley at the far end of the bench, and hang a known mass from the free end to provide tension T = mg.</li>
+  <li>Connect the signal generator to the vibration generator. Set a low frequency and slowly increase it until the fundamental mode (one loop) is clearly visible. Record this resonant frequency f<sub>1</sub>.</li>
+  <li>Measure the vibrating length L (from the vibrator blade to the pulley contact point) with the metre ruler.</li>
+  <li>Continue increasing frequency to find the 2nd, 3rd, 4th harmonics etc. Record each resonant frequency and count the number of loops n.</li>
+  <li>To investigate f vs 1/L: keep mass (tension) constant. Change L by moving the pulley. For each L find the fundamental frequency. Plot f against 1/L &mdash; expect a straight line through the origin.</li>
+  <li>To investigate f vs tension: keep L constant. Change the hanging mass. For each mass find the fundamental frequency. Plot f against &radic;T.</li>
+  <li>Repeat each measurement at least 3 times and calculate a mean.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Wear safety goggles &mdash; the string may snap under tension.</li>
+  <li>Keep masses low to avoid the string breaking.</li>
+  <li>Place a cushion or box beneath the hanging masses to catch them if the string breaks.</li>
+  <li>Do not look directly at the vibrating string at eye level.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>For a vibrating string, the fundamental frequency is:</p>
+<p class="eq">f = (1 / 2L) &radic;(T / &mu;)</p>
+<p>Where &mu; = mass per unit length of the string. Rearranging: f = (1/2L)&radic;(T/&mu;), so plotting f vs 1/L should give a straight line through the origin with gradient = (1/2)&radic;(T/&mu;). Alternatively, plotting f vs &radic;T gives gradient = 1/(2L&radic;&mu;).</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Difficult to judge exact node positions by eye</td><td>Systematic</td><td>Use a strobe light synchronised to the frequency; use a paper rider that is thrown off at antinodes</td></tr>
+<tr><td>String may not vibrate in a perfect plane</td><td>Random</td><td>Ensure the string and vibrator are properly aligned</td></tr>
+<tr><td>Measuring L is imprecise at the vibrator end</td><td>Systematic</td><td>Use a fixed reference point; measure from node to node and count half-wavelengths</td></tr>
+<tr><td>Frequency reading on signal generator may be inaccurate</td><td>Systematic</td><td>Calibrate against a known frequency source or use a digital frequency meter</td></tr>
+<tr><td>Tension changes slightly as string forms loops (string stretches)</td><td>Systematic</td><td>Use a stiff, inextensible string to minimise this effect</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> At resonance, nodes are stationary and antinodes have maximum amplitude. The distance between adjacent nodes is &lambda;/2. A paper rider placed at an antinode will be thrown off, confirming its position.</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- REQUIRED PRACTICAL 2 -->
+<!-- ============================================================ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 2: Investigation of Interference Effects (Young's Double Slit &amp; Diffraction Grating)</h2>
+
+<svg viewBox="0 0 620 300" style="max-width:600px; display:block; margin:16px auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="rp2arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
+    <marker id="rp2arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#D97706"/></marker>
+  </defs>
+  <text x="310" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP2: Young's Double Slit Experiment</text>
+
+  <!-- Laser -->
+  <rect x="20" y="120" width="70" height="30" rx="5" fill="#fee2e2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="55" y="139" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">LASER</text>
+  <!-- Laser beam -->
+  <line x1="90" y1="135" x2="190" y2="135" stroke="#DC2626" stroke-width="2" stroke-dasharray="6,3"/>
+
+  <!-- Single slit (optional filter slit) -->
+  <rect x="190" y="100" width="4" height="70" rx="1" fill="#1a1a2e"/>
+  <rect x="190" y="132" width="4" height="6" fill="#f8fafc"/>
+  <text x="192" y="92" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Single slit</text>
+
+  <!-- Double slit -->
+  <rect x="260" y="100" width="4" height="70" rx="1" fill="#1a1a2e"/>
+  <rect x="260" y="125" width="4" height="5" fill="#f8fafc"/>
+  <rect x="260" y="140" width="4" height="5" fill="#f8fafc"/>
+  <text x="262" y="92" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Double slit</text>
+
+  <!-- Diverging beams from double slit -->
+  <line x1="264" y1="127" x2="520" y2="80" stroke="#DC2626" stroke-width="0.8" opacity="0.5"/>
+  <line x1="264" y1="127" x2="520" y2="135" stroke="#DC2626" stroke-width="0.8" opacity="0.5"/>
+  <line x1="264" y1="127" x2="520" y2="190" stroke="#DC2626" stroke-width="0.8" opacity="0.5"/>
+  <line x1="264" y1="143" x2="520" y2="80" stroke="#DC2626" stroke-width="0.8" opacity="0.5"/>
+  <line x1="264" y1="143" x2="520" y2="135" stroke="#DC2626" stroke-width="0.8" opacity="0.5"/>
+  <line x1="264" y1="143" x2="520" y2="190" stroke="#DC2626" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Screen -->
+  <rect x="520" y="60" width="8" height="150" rx="2" fill="#e2e8f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="550" y="135" text-anchor="start" font-family="system-ui" font-size="10" fill="#1a1a2e">Screen</text>
+
+  <!-- Fringe pattern on screen -->
+  <rect x="522" y="72" width="4" height="6" fill="#DC2626" opacity="0.3"/>
+  <rect x="522" y="84" width="4" height="6" fill="#DC2626" opacity="0.6"/>
+  <rect x="522" y="96" width="4" height="6" fill="#DC2626" opacity="0.9"/>
+  <rect x="522" y="108" width="4" height="6" fill="#DC2626"/>
+  <rect x="522" y="120" width="4" height="6" fill="#DC2626" opacity="0.9"/>
+  <rect x="522" y="132" width="4" height="6" fill="#DC2626"/>
+  <rect x="522" y="144" width="4" height="6" fill="#DC2626" opacity="0.9"/>
+  <rect x="522" y="156" width="4" height="6" fill="#DC2626" opacity="0.6"/>
+  <rect x="522" y="168" width="4" height="6" fill="#DC2626" opacity="0.3"/>
+  <!-- Dark fringes -->
+  <rect x="522" y="78" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
+  <rect x="522" y="90" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
+  <rect x="522" y="102" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
+  <rect x="522" y="114" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
+  <rect x="522" y="126" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
+  <rect x="522" y="138" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
+  <rect x="522" y="150" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
+  <rect x="522" y="162" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
+
+  <!-- Measurement labels -->
+  <!-- d (slit separation) -->
+  <line x1="275" y1="127" x2="275" y2="143" stroke="#D97706" stroke-width="1.5" marker-start="url(#rp2arrO)" marker-end="url(#rp2arrO)"/>
+  <text x="288" y="138" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">d</text>
+
+  <!-- D (slit-to-screen distance) -->
+  <line x1="264" y1="225" x2="520" y2="225" stroke="#D97706" stroke-width="1" marker-start="url(#rp2arrO)" marker-end="url(#rp2arrO)"/>
+  <text x="392" y="240" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">D (slit-to-screen distance)</text>
+
+  <!-- w (fringe spacing) -->
+  <line x1="545" y1="108" x2="545" y2="120" stroke="#16A34A" stroke-width="1.5" marker-start="url(#rp2arrO)" marker-end="url(#rp2arrO)"/>
+  <text x="560" y="117" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">w</text>
+  <text x="560" y="128" font-family="system-ui" font-size="8" fill="#16A34A">(fringe</text>
+  <text x="560" y="137" font-family="system-ui" font-size="8" fill="#16A34A">spacing)</text>
+
+  <!-- Formula -->
+  <text x="310" y="280" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="600">&lambda; = w d / D</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Laser (e.g. He-Ne or diode laser, known wavelength for verification)</li>
+  <li>Double slit (known slit separation d, typically 0.1&ndash;0.5 mm)</li>
+  <li>Diffraction grating (known number of lines per mm, e.g. 300 lines/mm)</li>
+  <li>White screen or translucent screen</li>
+  <li>Metre ruler and/or tape measure</li>
+  <li>Vernier callipers or travelling microscope (for measuring fringe spacing)</li>
+  <li>Darkened room</li>
+</ul>
+
+<h3>Method</h3>
+<p><strong>Part A &mdash; Young's Double Slit:</strong></p>
+<ol>
+  <li>Set up the laser so the beam passes through the double slit and an interference pattern of bright and dark fringes appears on the distant screen.</li>
+  <li>Measure the distance D from the double slit to the screen using a tape measure (D should be large, e.g. 1&ndash;2 m, for clear fringes).</li>
+  <li>Measure the fringe spacing w: measure across several fringes (e.g. 10 fringes) and divide by the number of fringe spacings to get an accurate mean w.</li>
+  <li>Record the slit separation d (printed on the slide or measured with a travelling microscope).</li>
+  <li>Calculate the wavelength: &lambda; = wd / D.</li>
+  <li>Repeat for different values of D to check consistency.</li>
+</ol>
+<p><strong>Part B &mdash; Diffraction Grating:</strong></p>
+<ol>
+  <li>Replace the double slit with a diffraction grating. Observe sharp, bright maxima on the screen.</li>
+  <li>Measure the angle &theta; to each order maximum (n = 1, 2, 3, ...) using a protractor or by measuring the distance from the central maximum to the nth order and using tan&theta; = x/D.</li>
+  <li>The grating equation: d sin&theta; = n&lambda;, where d = 1/(number of lines per metre).</li>
+  <li>Calculate &lambda; for each order and take a mean value.</li>
+  <li>Compare with the known wavelength of the laser to assess accuracy.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li><strong>Laser safety is critical:</strong> Never look directly into the laser beam or its reflections.</li>
+  <li>Display a laser safety warning sign on the door.</li>
+  <li>Turn off the laser when not taking measurements.</li>
+  <li>Remove reflective objects (watches, jewellery) from the vicinity.</li>
+  <li>Ensure the beam path is below or above eye level.</li>
+  <li>A Class 2 laser (max 1 mW) should be used for school experiments.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Double slit:</strong> &lambda; = wd / D. Measure across multiple fringes to reduce uncertainty in w. The percentage uncertainty in &lambda; combines the percentage uncertainties in w, d, and D.</p>
+<p><strong>Diffraction grating:</strong> d sin&theta; = n&lambda;. The grating produces sharper, brighter maxima than the double slit, giving a more accurate wavelength measurement. Higher orders (larger n) give larger angles and therefore smaller percentage uncertainty in &theta;.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Fringe spacing is small and hard to measure accurately</td><td>Random</td><td>Measure across many fringes (e.g. 10) and divide; use a travelling microscope</td></tr>
+<tr><td>D measurement may be inaccurate if screen is not perpendicular to beam</td><td>Systematic</td><td>Use a set square to ensure the screen is perpendicular; measure D carefully to the slit plane</td></tr>
+<tr><td>Central maximum may not be identified correctly</td><td>Systematic</td><td>Ensure the laser beam hits the centre of the slit; the central fringe is the brightest</td></tr>
+<tr><td>Slit separation d may be inaccurate</td><td>Systematic</td><td>Use the manufacturer's stated value or measure with a travelling microscope</td></tr>
+<tr><td>Diffraction effects widen fringes</td><td>Systematic</td><td>Use a grating with many slits for sharper maxima</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> The double slit produces broad, fuzzy fringes; the diffraction grating produces sharp, narrow, bright maxima because many slits contribute to constructive interference. The grating therefore gives a more precise wavelength measurement. Always state that you measure across several fringes to reduce percentage uncertainty in w.</div>
+</div>
+
 </div>
 </body>
 </html>

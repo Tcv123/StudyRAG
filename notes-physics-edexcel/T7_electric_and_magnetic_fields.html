@@ -465,6 +465,143 @@
     </tr>
 </table>
 
+<!-- ============ CORE PRACTICAL 7 & 15 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 7 / 15: Investigate capacitor charge and discharge</h2>
+
+<svg viewBox="0 0 560 400" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Power supply -->
+  <rect x="30" y="60" width="70" height="40" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="65" y="75" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">DC</text>
+  <text x="65" y="90" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Supply</text>
+  <text x="65" y="50" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">V<tspan font-size="8" dy="2">0</tspan></text>
+  <!-- Two-way switch -->
+  <rect x="150" y="55" width="50" height="30" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="175" y="74" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">S</text>
+  <text x="175" y="48" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="bold">Two-way switch</text>
+  <!-- Labels: charge/discharge -->
+  <text x="140" y="40" font-family="system-ui" font-size="9" fill="#1a73e8">Charge &larr;</text>
+  <text x="190" y="40" font-family="system-ui" font-size="9" fill="#DC2626">&rarr; Discharge</text>
+  <!-- Resistor R -->
+  <rect x="260" y="55" width="70" height="30" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="270" y1="70" x2="278" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="278" y1="60" x2="286" y2="80" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="286" y1="80" x2="294" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="294" y1="60" x2="302" y2="80" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="302" y1="80" x2="310" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="310" y1="60" x2="320" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="295" y="50" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">R (resistance)</text>
+  <!-- Capacitor C -->
+  <line x1="410" y1="55" x2="410" y2="85" stroke="#1a1a2e" stroke-width="3"/>
+  <line x1="425" y1="55" x2="425" y2="85" stroke="#1a1a2e" stroke-width="3"/>
+  <text x="417" y="48" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">C</text>
+  <text x="417" y="105" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8">Capacitor</text>
+  <!-- Voltmeter across capacitor -->
+  <circle cx="465" cy="70" r="18" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="465" y="76" text-anchor="middle" font-family="system-ui" font-size="14" fill="#1a73e8" font-weight="bold">V</text>
+  <text x="500" y="75" font-family="system-ui" font-size="10" fill="#1a73e8">Voltmeter</text>
+  <text x="500" y="88" font-family="system-ui" font-size="9" fill="#1a73e8">(or datalogger)</text>
+  <!-- Voltmeter connections -->
+  <line x1="410" y1="55" x2="410" y2="40" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="410" y1="40" x2="447" y2="55" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="425" y1="85" x2="425" y2="100" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="425" y1="100" x2="450" y2="88" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Wiring -->
+  <line x1="100" y1="70" x2="150" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="200" y1="70" x2="260" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="330" y1="70" x2="410" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Bottom wire back -->
+  <line x1="425" y1="85" x2="425" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="425" y1="140" x2="30" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="30" y1="100" x2="30" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- GRAPHS -->
+  <!-- Discharge graph -->
+  <rect x="30" y="180" width="230" height="180" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="145" y="200" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">Discharge curve</text>
+  <!-- Axes -->
+  <line x1="70" y1="340" x2="240" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="70" y1="340" x2="70" y2="210" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="155" y="358" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">t / s</text>
+  <text x="55" y="275" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,55,275)">V / V</text>
+  <!-- Exponential decay curve -->
+  <path d="M70,215 Q100,220 130,260 Q160,300 200,330 Q220,338 240,340" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="100" y="235" font-family="system-ui" font-size="9" fill="#DC2626">V = V&sub;0&sub;e^(-t/RC)</text>
+  <!-- Time constant marking -->
+  <line x1="130" y1="260" x2="130" y2="340" stroke="#D97706" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="135" y="350" font-family="system-ui" font-size="9" fill="#D97706">&tau; = RC</text>
+  <!-- ln(V) graph -->
+  <rect x="290" y="180" width="230" height="180" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="405" y="200" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">ln(V) vs t</text>
+  <line x1="330" y1="340" x2="500" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="330" y1="340" x2="330" y2="210" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="415" y="358" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">t / s</text>
+  <text x="315" y="275" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,315,275)">ln(V)</text>
+  <!-- Straight line with negative gradient -->
+  <line x1="340" y1="220" x2="490" y2="330" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="430" y="255" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">gradient = &minus;1/RC</text>
+  <text x="345" y="218" font-family="system-ui" font-size="9" fill="#16A34A">ln(V&sub;0&sub;)</text>
+  <!-- Title -->
+  <text x="280" y="390" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP7/15: Capacitor charge and discharge</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Capacitor (e.g. 470 &mu;F or 1000 &mu;F electrolytic)</li>
+  <li>Resistor (e.g. 10 k&Omega; or 100 k&Omega; &mdash; chosen to give RC &approx; 5&ndash;50 s)</li>
+  <li>DC power supply (e.g. 6 V)</li>
+  <li>Two-way switch (or two separate switches)</li>
+  <li>Voltmeter or datalogger with voltage sensor</li>
+  <li>Stopwatch (if recording manually)</li>
+  <li>Connecting wires</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Connect the circuit: power supply &rarr; two-way switch &rarr; resistor &rarr; capacitor. Connect the voltmeter (or datalogger) in parallel across the capacitor.</li>
+  <li><strong>Charging:</strong> Flip the switch to connect the power supply. Record the voltage across the capacitor at regular time intervals (e.g. every 5 or 10 s) until it reaches approximately V<sub>0</sub>.</li>
+  <li><strong>Discharging:</strong> Once fully charged, flip the switch to disconnect the supply and allow the capacitor to discharge through R only. Record V at regular time intervals until V is near zero.</li>
+  <li>For the discharge: record at least 10 pairs of (t, V) readings.</li>
+  <li>A datalogger is preferable for accuracy &mdash; it records V continuously and can take readings at precise intervals.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Use low voltages (&le; 12 V DC).</li>
+  <li>Ensure electrolytic capacitors are connected with correct polarity (positive to positive).</li>
+  <li>Discharge the capacitor fully before disassembling the circuit.</li>
+  <li>Do not use very large capacitors at high voltages &mdash; the stored energy could be dangerous.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Discharge:</strong> The voltage decays exponentially:</p>
+<div class="equation">
+  V = V<sub>0</sub> e<sup>&minus;t/RC</sup>
+</div>
+<p>Taking natural logs:</p>
+<div class="equation">
+  ln(V) = ln(V<sub>0</sub>) &minus; t/RC
+</div>
+<p>Plot <strong>ln(V)</strong> (y-axis) against <strong>t</strong> (x-axis). This gives a straight line with:</p>
+<ul>
+  <li><strong>Gradient</strong> = &minus;1/RC</li>
+  <li><strong>y-intercept</strong> = ln(V<sub>0</sub>)</li>
+</ul>
+<p>From the gradient, calculate RC (the time constant). If R is known, calculate C, and vice versa.</p>
+<p><strong>Charging:</strong> V = V<sub>0</sub>(1 &minus; e<sup>&minus;t/RC</sup>). Plot V against t to see the characteristic charging curve approaching V<sub>0</sub>.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Capacitor tolerance (actual C differs from marked value)</td><td>Systematic</td><td>Measure C independently or use the experiment to determine C from the graph</td></tr>
+<tr><td>Voltmeter draws current, affecting the discharge rate</td><td>Systematic</td><td>Use a high-impedance voltmeter or datalogger (input resistance &gt;&gt; R)</td></tr>
+<tr><td>Manual timing errors if reading V at intervals</td><td>Random</td><td>Use a datalogger for automated, precise time-stamped readings</td></tr>
+<tr><td>Capacitor leakage (charge leaks even without external circuit)</td><td>Systematic</td><td>Use a good-quality capacitor; perform experiment quickly</td></tr>
+<tr><td>Contact resistance in wires and switch</td><td>Systematic</td><td>Use short, thick connecting wires; ensure firm connections</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> The time constant &tau; = RC is the time taken for the voltage to fall to 1/e (&approx; 37%) of its initial value during discharge, or to rise to (1 &minus; 1/e) &approx; 63% during charging. After 5&tau;, the capacitor is considered fully charged or discharged (&gt;99%). Always use ln(V) vs t for a straight-line graph in discharge analysis.</div>
+</div>
+
 </div>
 </body>
 </html>

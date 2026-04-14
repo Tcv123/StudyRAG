@@ -308,6 +308,271 @@
 
 <div class="tip-box"><strong>Exam Tip:</strong> Choose the power formula based on what you know. If you know I and R but not V, use P = I<sup>2</sup>R. If you know V and R but not I, use P = V<sup>2</sup>/R. This avoids unnecessary intermediate calculations.</div>
 
+<!-- ============================================================ -->
+<!-- REQUIRED PRACTICAL 5 -->
+<!-- ============================================================ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 5: Determination of Resistivity of a Wire</h2>
+
+<svg viewBox="0 0 620 260" style="max-width:600px; display:block; margin:16px auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="rp5arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#D97706"/></marker>
+    <marker id="rp5arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
+  </defs>
+  <text x="310" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP5: Determination of Resistivity of a Wire</text>
+
+  <!-- Power supply -->
+  <rect x="20" y="60" width="60" height="40" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="50" y="78" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">DC Power</text>
+  <text x="50" y="89" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Supply</text>
+  <text x="30" y="55" font-family="system-ui" font-size="10" fill="#DC2626">+</text>
+  <text x="65" y="55" font-family="system-ui" font-size="10" fill="#1a73e8">&minus;</text>
+
+  <!-- Wire from + terminal -->
+  <line x1="35" y1="60" x2="35" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="35" y1="40" x2="130" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <!-- Ammeter -->
+  <circle cx="160" cy="40" r="18" fill="#fff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="160" y="45" text-anchor="middle" font-family="system-ui" font-size="14" fill="#1a73e8" font-weight="700">A</text>
+
+  <!-- Wire from ammeter to crocodile clip 1 -->
+  <line x1="178" y1="40" x2="220" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <!-- Crocodile clip 1 -->
+  <polygon points="220,33 240,37 240,43 220,47" fill="#16A34A" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="230" y="28" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">Clip</text>
+
+  <!-- Constantan wire along ruler -->
+  <line x1="240" y1="40" x2="500" y2="40" stroke="#D97706" stroke-width="2.5"/>
+
+  <!-- Ruler underneath wire -->
+  <rect x="240" y="48" width="260" height="10" rx="2" fill="#fef3c7" stroke="#D97706" stroke-width="0.8"/>
+  <!-- Ruler markings -->
+  <line x1="270" y1="48" x2="270" y2="58" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="300" y1="48" x2="300" y2="58" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="330" y1="48" x2="330" y2="58" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="360" y1="48" x2="360" y2="58" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="390" y1="48" x2="390" y2="58" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="420" y1="48" x2="420" y2="58" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="450" y1="48" x2="450" y2="58" stroke="#D97706" stroke-width="0.5"/>
+  <line x1="480" y1="48" x2="480" y2="58" stroke="#D97706" stroke-width="0.5"/>
+  <text x="370" y="75" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Metre ruler</text>
+
+  <!-- Crocodile clip 2 (moveable) -->
+  <polygon points="420,33 440,37 440,43 420,47" fill="#16A34A" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="430" y="28" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">Clip (move)</text>
+
+  <!-- Wire from clip 2 back to power supply -->
+  <line x1="440" y1="40" x2="500" y2="40" stroke="#D97706" stroke-width="2.5" opacity="0.3"/>
+  <line x1="430" y1="40" x2="430" y2="10" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="430" y1="10" x2="560" y2="10" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="560" y1="10" x2="560" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="560" y1="200" x2="65" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="65" y1="200" x2="65" y2="100" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <!-- Voltmeter across the wire section -->
+  <line x1="240" y1="40" x2="240" y2="140" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="240" y1="140" x2="300" y2="140" stroke="#1a1a2e" stroke-width="1"/>
+  <circle cx="330" cy="140" r="18" fill="#fff" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="330" y="145" text-anchor="middle" font-family="system-ui" font-size="14" fill="#DC2626" font-weight="700">V</text>
+  <line x1="348" y1="140" x2="430" y2="140" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="430" y1="140" x2="430" y2="40" stroke="#1a1a2e" stroke-width="1"/>
+
+  <!-- Length label -->
+  <line x1="240" y1="90" x2="430" y2="90" stroke="#D97706" stroke-width="1" marker-start="url(#rp5arr)" marker-end="url(#rp5arr)"/>
+  <text x="335" y="105" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="600">L (vary this)</text>
+
+  <!-- Wire label -->
+  <text x="370" y="38" font-family="system-ui" font-size="9" fill="#1a1a2e">Constantan wire</text>
+
+  <!-- Micrometer note -->
+  <rect x="20" y="130" width="90" height="35" rx="5" fill="#fef3c7" stroke="#D97706" stroke-width="1"/>
+  <text x="65" y="147" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Micrometer:</text>
+  <text x="65" y="158" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">measure d</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Constantan wire (SWG 28 or 32, taped to a metre ruler)</li>
+  <li>Crocodile clips (one fixed, one moveable along the wire)</li>
+  <li>DC power supply (low voltage, e.g. 1&ndash;2 V)</li>
+  <li>Ammeter (in series)</li>
+  <li>Voltmeter (in parallel across the wire section)</li>
+  <li>Metre ruler</li>
+  <li>Micrometer screw gauge (to measure wire diameter)</li>
+  <li>Switch (to prevent heating between readings)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Tape the constantan wire along a metre ruler. Connect crocodile clips at the ends of the section to be tested.</li>
+  <li>Connect the ammeter in series and the voltmeter in parallel across the wire between the clips.</li>
+  <li>Measure the wire diameter d with a micrometer at several points and orientations. Calculate the mean diameter and cross-sectional area A = &pi;(d/2)&sup2;.</li>
+  <li>Set the moveable clip to give a length L (e.g. start at 0.100 m).</li>
+  <li>Switch on, quickly read V and I, then switch off (to prevent heating). Calculate R = V/I.</li>
+  <li>Move the clip to increase L in steps (e.g. 0.100 m increments up to 1.000 m). Record V and I at each length.</li>
+  <li>Plot R (y-axis) against L (x-axis). This should be a straight line through the origin.</li>
+  <li>Gradient = &rho;/A, so resistivity &rho; = gradient &times; A.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Use a low voltage and switch off between readings to prevent the wire heating up (which would change its resistance).</li>
+  <li>Do not touch the wire while current is flowing &mdash; it may become hot.</li>
+  <li>Ensure all connections are secure to avoid sparking.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>From R = &rho;L/A, a graph of R vs L is a straight line through the origin with:</p>
+<p class="eq">gradient = &rho; / A</p>
+<p>Therefore &rho; = gradient &times; A. The accepted value for constantan is approximately 4.9 &times; 10<sup>-7</sup> &Omega; m.</p>
+<p>If the line does not pass through the origin, this suggests a systematic error (e.g. contact resistance at the clips).</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Wire heats up during measurement, changing resistance</td><td>Systematic</td><td>Use low current; switch off between readings; allow cooling time</td></tr>
+<tr><td>Wire diameter varies along its length</td><td>Random</td><td>Measure diameter at multiple points and orientations; take a mean</td></tr>
+<tr><td>Contact resistance at crocodile clips</td><td>Systematic (gives R vs L graph a y-intercept)</td><td>Ensure clips are clean and tightly attached; the y-intercept represents contact resistance</td></tr>
+<tr><td>Parallax error reading the ruler for L</td><td>Random</td><td>Read the ruler from directly above; use a set square</td></tr>
+<tr><td>Wire may not be perfectly straight</td><td>Systematic</td><td>Tape the wire firmly along the ruler; do not stretch it</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> The biggest uncertainty is usually in the diameter measurement. Since A = &pi;d&sup2;/4, the percentage uncertainty in A is twice the percentage uncertainty in d. Always state that you measure the diameter at multiple points and orientations and take a mean.</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- REQUIRED PRACTICAL 6 -->
+<!-- ============================================================ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 6: Investigation of EMF and Internal Resistance</h2>
+
+<svg viewBox="0 0 520 300" style="max-width:600px; display:block; margin:16px auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="rp6arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
+  </defs>
+  <text x="260" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP6: EMF and Internal Resistance of a Cell</text>
+
+  <!-- Cell (battery) -->
+  <rect x="40" y="80" width="60" height="100" rx="6" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="70" y="125" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">Cell</text>
+  <text x="70" y="140" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">&epsilon;, r</text>
+  <!-- Terminal markings -->
+  <text x="55" y="77" font-family="system-ui" font-size="12" fill="#DC2626" font-weight="700">+</text>
+  <text x="75" y="77" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="700">&minus;</text>
+
+  <!-- Top wire from cell + terminal -->
+  <line x1="55" y1="80" x2="55" y2="50" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="55" y1="50" x2="180" y2="50" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <!-- Switch -->
+  <circle cx="200" cy="50" r="3" fill="#1a1a2e"/>
+  <line x1="200" y1="50" x2="220" y2="40" stroke="#1a1a2e" stroke-width="2"/>
+  <circle cx="225" cy="50" r="3" fill="#1a1a2e"/>
+  <text x="212" y="35" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Switch</text>
+
+  <!-- Wire to ammeter -->
+  <line x1="225" y1="50" x2="290" y2="50" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <!-- Ammeter -->
+  <circle cx="310" cy="50" r="18" fill="#fff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="310" y="55" text-anchor="middle" font-family="system-ui" font-size="14" fill="#1a73e8" font-weight="700">A</text>
+
+  <!-- Wire from ammeter to variable resistor -->
+  <line x1="328" y1="50" x2="380" y2="50" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <!-- Variable resistor (rheostat) -->
+  <rect x="380" y="35" width="80" height="30" rx="5" fill="#e8f0fe" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Zigzag symbol -->
+  <polyline points="385,50 395,38 405,62 415,38 425,62 435,38 445,62 455,50" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Arrow for variable -->
+  <line x1="420" y1="30" x2="420" y2="70" stroke="#16A34A" stroke-width="1.5" marker-end="url(#rp6arr)"/>
+  <text x="420" y="82" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Variable R</text>
+
+  <!-- Wire from resistor down and back -->
+  <line x1="460" y1="50" x2="480" y2="50" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="480" y1="50" x2="480" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="480" y1="230" x2="55" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="55" y1="230" x2="55" y2="180" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <!-- Voltmeter across the cell -->
+  <line x1="55" y1="195" x2="55" y2="195" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="100" y1="130" x2="160" y2="130" stroke="#1a1a2e" stroke-width="1"/>
+  <circle cx="180" cy="130" r="18" fill="#fff" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="180" y="135" text-anchor="middle" font-family="system-ui" font-size="14" fill="#DC2626" font-weight="700">V</text>
+  <line x1="198" y1="130" x2="240" y2="130" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Connect voltmeter to top wire -->
+  <line x1="240" y1="130" x2="240" y2="50" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Connect voltmeter to bottom wire -->
+  <line x1="100" y1="130" x2="100" y2="230" stroke="#1a1a2e" stroke-width="1"/>
+
+  <text x="180" y="110" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Across cell terminals</text>
+
+  <!-- Graph hint -->
+  <rect x="300" y="170" width="160" height="80" rx="6" fill="#fff" stroke="#1a73e8" stroke-width="1"/>
+  <text x="380" y="190" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">Graph: V vs I</text>
+  <!-- Axes -->
+  <line x1="320" y1="240" x2="320" y2="200" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="320" y1="240" x2="440" y2="240" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Line with negative gradient -->
+  <line x1="325" y1="205" x2="435" y2="235" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="315" y="198" font-family="system-ui" font-size="8" fill="#1a73e8">&epsilon;</text>
+  <text x="445" y="243" font-family="system-ui" font-size="8" fill="#1a1a2e">I</text>
+  <text x="315" y="248" font-family="system-ui" font-size="8" fill="#1a1a2e">V</text>
+  <text x="370" y="218" font-family="system-ui" font-size="8" fill="#DC2626">gradient = &minus;r</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Cell or battery (e.g. 1.5 V AA cell)</li>
+  <li>Variable resistor (rheostat) or set of fixed resistors</li>
+  <li>Ammeter (in series)</li>
+  <li>Voltmeter (in parallel across the cell terminals)</li>
+  <li>Switch</li>
+  <li>Connecting leads</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Connect the cell in series with the switch, ammeter, and variable resistor. Connect the voltmeter across the cell terminals.</li>
+  <li>Close the switch and record the voltmeter reading (V, terminal p.d.) and ammeter reading (I).</li>
+  <li>Adjust the variable resistor to change the current. Record at least 6&ndash;8 pairs of V and I values across a wide range of currents.</li>
+  <li>Open the switch between readings to prevent the cell from running down and heating up.</li>
+  <li>Plot a graph of V (y-axis) against I (x-axis).</li>
+  <li>The y-intercept = EMF (&epsilon;). The gradient = &minus;r (negative of internal resistance).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Do not short-circuit the cell (i.e. do not set R = 0) &mdash; this draws very high current and may cause overheating.</li>
+  <li>Use a switch and open it between readings to prevent the cell from heating up.</li>
+  <li>Handle cells carefully; do not connect in reverse or puncture them.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>From &epsilon; = V + Ir, rearranging: V = &epsilon; &minus; Ir = &minus;rI + &epsilon;.</p>
+<p class="eq">V = &epsilon; &minus; Ir</p>
+<p>This has the form y = mx + c, so a graph of V vs I gives:</p>
+<ul>
+  <li><strong>y-intercept = &epsilon;</strong> (EMF of the cell)</li>
+  <li><strong>gradient = &minus;r</strong> (negative of internal resistance)</li>
+</ul>
+<p>Typical values: &epsilon; &asymp; 1.5 V for an AA cell, r &asymp; 0.5&ndash;1.5 &Omega;.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Cell runs down during experiment (EMF decreases)</td><td>Systematic</td><td>Take readings quickly; open the switch between readings; use a fresh cell</td></tr>
+<tr><td>Cell heats up at high currents, changing r</td><td>Systematic</td><td>Keep currents moderate; allow cooling between readings</td></tr>
+<tr><td>Voltmeter draws a small current (reads slightly less than true EMF)</td><td>Systematic</td><td>Use a high-resistance voltmeter (digital voltmeter preferred)</td></tr>
+<tr><td>Contact resistance in connections</td><td>Systematic</td><td>Use clean, tight connections; solder if possible</td></tr>
+<tr><td>Limited range of I values</td><td>Random</td><td>Use a wide range of resistor values to get a good spread of data points</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> The EMF is the y-intercept (not any single voltmeter reading). The internal resistance is the magnitude of the gradient. A steeper negative gradient means higher internal resistance. If asked how to find &epsilon; without drawing a graph, measure V when I = 0 (open circuit) &mdash; but in practice the voltmeter draws a tiny current, so graphical extrapolation is more accurate.</div>
+</div>
+
 </div>
 </body>
 </html>

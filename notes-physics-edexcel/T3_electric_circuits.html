@@ -371,6 +371,370 @@
         <div class="exam-tip">
             Use P = I&sup2;R when you know current and resistance. Use P = V&sup2;/R when you know voltage and resistance. Remember that the power dissipated in the internal resistance is "wasted" — it heats the battery.
         </div>
+
+<!-- ============ CORE PRACTICAL 4 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 4: Determine the resistivity of a wire</h2>
+
+<svg viewBox="0 0 560 340" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ruler / bench -->
+  <rect x="40" y="150" width="420" height="12" rx="2" fill="#FBBF24" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="250" y="145" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="bold">Metre ruler</text>
+  <!-- Ruler markings -->
+  <line x1="60" y1="150" x2="60" y2="162" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="60" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">0</text>
+  <line x1="160" y1="150" x2="160" y2="162" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="160" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">20</text>
+  <line x1="260" y1="150" x2="260" y2="162" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="260" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">50</text>
+  <line x1="360" y1="150" x2="360" y2="162" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="360" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">80</text>
+  <line x1="440" y1="150" x2="440" y2="162" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="440" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">100</text>
+  <!-- Constantan wire -->
+  <line x1="60" y1="148" x2="440" y2="148" stroke="#B45309" stroke-width="2.5"/>
+  <text x="250" y="132" text-anchor="middle" font-family="system-ui" font-size="12" fill="#B45309" font-weight="bold">Constantan wire</text>
+  <!-- Crocodile clip 1 (fixed) -->
+  <polygon points="55,140 75,140 80,148 75,156 55,156" fill="#777" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="50" y="138" text-anchor="end" font-family="system-ui" font-size="10" fill="#1a73e8">Croc clip (fixed)</text>
+  <!-- Crocodile clip 2 (sliding) -->
+  <polygon points="295,140 315,140 320,148 315,156 295,156" fill="#777" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="305" y="195" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Croc clip (sliding)</text>
+  <!-- Length arrow -->
+  <line x1="67" y1="210" x2="305" y2="210" stroke="#D97706" stroke-width="2"/>
+  <polygon points="67,210 82,206 82,214" fill="#D97706"/>
+  <polygon points="305,210 290,206 290,214" fill="#D97706"/>
+  <text x="186" y="228" text-anchor="middle" font-family="system-ui" font-size="13" fill="#D97706" font-weight="bold">Length L</text>
+  <!-- Battery -->
+  <rect x="40" y="40" width="60" height="30" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="55" y1="48" x2="55" y2="62" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="65" y1="51" x2="65" y2="59" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="75" y1="48" x2="75" y2="62" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="85" y1="51" x2="85" y2="59" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="70" y="35" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">Battery</text>
+  <!-- Switch -->
+  <rect x="130" y="45" width="40" height="20" rx="3" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="150" y="35" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Switch</text>
+  <!-- Ammeter -->
+  <circle cx="230" cy="55" r="18" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="230" y="60" text-anchor="middle" font-family="system-ui" font-size="14" fill="#DC2626" font-weight="bold">A</text>
+  <text x="230" y="30" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8">Ammeter (series)</text>
+  <!-- Voltmeter -->
+  <circle cx="420" cy="100" r="18" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="420" y="105" text-anchor="middle" font-family="system-ui" font-size="14" fill="#1a73e8" font-weight="bold">V</text>
+  <text x="470" y="105" font-family="system-ui" font-size="11" fill="#1a73e8">Voltmeter (parallel)</text>
+  <!-- Wiring: battery to switch -->
+  <line x1="100" y1="55" x2="130" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Switch to ammeter -->
+  <line x1="170" y1="55" x2="212" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Ammeter to wire start -->
+  <line x1="248" y1="55" x2="310" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="310" y1="55" x2="310" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Wire end back to battery -->
+  <line x1="60" y1="148" x2="40" y2="148" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="40" y1="70" x2="40" y2="148" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Voltmeter connections (parallel across wire section) -->
+  <line x1="67" y1="148" x2="67" y2="100" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="67" y1="100" x2="402" y2="100" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="305" y1="148" x2="305" y2="115" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="305" y1="115" x2="402" y2="115" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Micrometer callout -->
+  <rect x="380" y="240" width="120" height="50" rx="6" fill="#fff" stroke="#D97706" stroke-width="1.5"/>
+  <text x="440" y="260" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="bold">Micrometer</text>
+  <text x="440" y="278" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">Measure diameter d</text>
+  <line x1="380" y1="265" x2="310" y2="148" stroke="#D97706" stroke-width="1" stroke-dasharray="3,3"/>
+  <!-- Title -->
+  <text x="280" y="320" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP4: Resistivity of a wire</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Constantan wire (SWG 28 or 32, approx 1 m long)</li>
+  <li>Metre ruler (resolution &plusmn;1 mm)</li>
+  <li>Micrometer screw gauge (resolution &plusmn;0.01 mm)</li>
+  <li>Two crocodile clips</li>
+  <li>Ammeter (or milliammeter)</li>
+  <li>Voltmeter</li>
+  <li>Battery pack / power supply (low voltage, e.g. 1.5 V)</li>
+  <li>Switch</li>
+  <li>Connecting wires</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Use the micrometer to measure the diameter of the wire at <strong>at least 3 different positions</strong> along its length, rotating 90&deg; between readings. Calculate the mean diameter <em>d</em>.</li>
+  <li>Calculate the cross-sectional area: A = &pi;(d/2)&sup2;.</li>
+  <li>Tape the wire along the metre ruler. Attach one crocodile clip at the 0 cm mark (fixed).</li>
+  <li>Attach the second crocodile clip at a measured length <em>L</em> (e.g. 20 cm). Connect the ammeter in series and voltmeter in parallel across the wire section.</li>
+  <li>Close the switch <strong>briefly</strong>, read V and I, then open the switch to prevent heating.</li>
+  <li>Calculate R = V / I for this length.</li>
+  <li>Move the sliding clip to vary L (e.g. 20, 30, 40, 50, 60, 70, 80, 90, 100 cm). Record R for each L.</li>
+  <li>Plot a graph of <strong>R</strong> (y-axis) against <strong>L</strong> (x-axis).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Use a low voltage (&le; 1.5 V) to prevent the wire from overheating.</li>
+  <li>Switch off between readings to avoid the wire heating up (which would change its resistance).</li>
+  <li>Do not touch the wire while current flows &mdash; it may become hot.</li>
+  <li>Ensure the wire is securely taped down so it cannot spring off.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>Since R = &rho;L / A, a graph of <strong>R vs L</strong> gives a straight line through the origin with:</p>
+<div class="equation">
+  gradient = &rho; / A
+</div>
+<p>Therefore: <strong>&rho; = gradient &times; A</strong></p>
+<p>The accepted resistivity of constantan is approximately 4.9 &times; 10<sup>-7</sup> &Omega; m.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Wire heating up changes resistance</td><td>Systematic</td><td>Use low current; switch off between readings; allow cooling time</td></tr>
+<tr><td>Diameter of wire not uniform along its length</td><td>Random</td><td>Measure diameter at multiple points and orientations; take mean</td></tr>
+<tr><td>Zero error on micrometer</td><td>Systematic</td><td>Check and record the zero reading; subtract it from all measurements</td></tr>
+<tr><td>Contact resistance at crocodile clips</td><td>Systematic</td><td>Ensure clips make firm contact; use clean wire and clean clips</td></tr>
+<tr><td>Measuring wire length to clip contact point</td><td>Random</td><td>Measure to the inner jaw of the crocodile clip; use a set square</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> The biggest source of uncertainty is usually the diameter measurement because it is small and squared when calculating area. A 5% error in d becomes a ~10% error in A and hence &rho;. Always state this in evaluations.</div>
+</div>
+
+<!-- ============ CORE PRACTICAL 5 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 5: Determine the EMF and internal resistance of an electrical cell</h2>
+
+<svg viewBox="0 0 500 380" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cell / Battery -->
+  <rect x="40" y="100" width="60" height="40" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="55" y1="108" x2="55" y2="132" stroke="#1a1a2e" stroke-width="2.5"/>
+  <line x1="68" y1="113" x2="68" y2="127" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="80" y1="108" x2="80" y2="132" stroke="#1a1a2e" stroke-width="2.5"/>
+  <line x1="90" y1="113" x2="90" y2="127" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="70" y="90" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">Cell (EMF = &epsilon;)</text>
+  <!-- Internal resistance label -->
+  <rect x="40" y="148" width="60" height="22" rx="3" fill="none" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="70" y="164" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-style="italic">r (internal)</text>
+  <!-- Switch -->
+  <rect x="140" y="108" width="40" height="24" rx="3" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="160" y="124" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">S</text>
+  <text x="160" y="98" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Switch</text>
+  <!-- Ammeter -->
+  <circle cx="250" cy="120" r="20" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="250" y="126" text-anchor="middle" font-family="system-ui" font-size="16" fill="#DC2626" font-weight="bold">A</text>
+  <text x="250" y="90" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8">Ammeter (series)</text>
+  <!-- Variable resistor -->
+  <rect x="320" y="105" width="80" height="30" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="330" y1="120" x2="340" y2="110" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="340" y1="110" x2="350" y2="130" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="350" y1="130" x2="360" y2="110" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="360" y1="110" x2="370" y2="130" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="370" y1="130" x2="380" y2="110" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="380" y1="110" x2="390" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Arrow through variable resistor -->
+  <line x1="345" y1="140" x2="385" y2="100" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="385,100 378,108 382,112" fill="#1a1a2e"/>
+  <text x="360" y="155" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">Variable resistor R</text>
+  <!-- Voltmeter across terminals -->
+  <circle cx="250" cy="270" r="20" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="250" y="276" text-anchor="middle" font-family="system-ui" font-size="16" fill="#1a73e8" font-weight="bold">V</text>
+  <text x="300" y="275" font-family="system-ui" font-size="11" fill="#1a73e8">Voltmeter (across terminals)</text>
+  <!-- Wiring -->
+  <!-- Battery to switch -->
+  <line x1="100" y1="120" x2="140" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Switch to ammeter -->
+  <line x1="180" y1="120" x2="230" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Ammeter to variable resistor -->
+  <line x1="270" y1="120" x2="320" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Variable resistor back to battery (bottom wire) -->
+  <line x1="400" y1="120" x2="440" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="440" y1="120" x2="440" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="440" y1="200" x2="40" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="40" y1="140" x2="40" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Voltmeter connections -->
+  <line x1="100" y1="120" x2="100" y2="270" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="100" y1="270" x2="230" y2="270" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="400" y1="120" x2="400" y2="270" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="400" y1="270" x2="270" y2="270" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Graph inset -->
+  <rect x="310" y="220" width="150" height="120" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="385" y="240" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">Expected Graph</text>
+  <line x1="340" y1="320" x2="440" y2="320" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="340" y1="320" x2="340" y2="250" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="390" y="335" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">I / A</text>
+  <text x="328" y="285" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,328,285)">V / V</text>
+  <line x1="345" y1="260" x2="430" y2="310" stroke="#DC2626" stroke-width="2"/>
+  <text x="370" y="256" font-family="system-ui" font-size="9" fill="#DC2626">&epsilon; (intercept)</text>
+  <text x="410" y="305" font-family="system-ui" font-size="9" fill="#DC2626">gradient = &minus;r</text>
+  <!-- Title -->
+  <text x="250" y="368" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP5: EMF and internal resistance</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Cell (e.g. 1.5 V AA cell &mdash; <strong>not</strong> a rechargeable cell)</li>
+  <li>Variable resistor (rheostat, e.g. 0&ndash;10 &Omega;)</li>
+  <li>Ammeter (0&ndash;1 A)</li>
+  <li>Voltmeter (0&ndash;2 V, high resistance)</li>
+  <li>Switch</li>
+  <li>Connecting wires</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Connect the cell, switch, ammeter (in series), and variable resistor in a series loop.</li>
+  <li>Connect the voltmeter in parallel across the cell terminals (not just the EMF source &mdash; include internal resistance).</li>
+  <li>Close the switch and adjust the variable resistor to its maximum value. Record <em>V</em> and <em>I</em>.</li>
+  <li>Decrease the resistance of the variable resistor in steps, recording <em>V</em> and <em>I</em> each time (at least 6 pairs of readings).</li>
+  <li>Open the switch between readings to prevent the cell from running down and heating.</li>
+  <li>Plot a graph of <strong>V</strong> (y-axis) against <strong>I</strong> (x-axis).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Do not short-circuit the cell (never set variable resistor to zero).</li>
+  <li>Switch off between readings to prevent heating and cell drainage.</li>
+  <li>Handle cells carefully; do not attempt to recharge non-rechargeable cells.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>The terminal voltage equation is:</p>
+<div class="equation">
+  V = &epsilon; &minus; Ir
+</div>
+<p>This has the form <strong>y = mx + c</strong> where:</p>
+<ul>
+  <li><strong>y-intercept</strong> (at I = 0) = &epsilon; (the EMF of the cell)</li>
+  <li><strong>Gradient</strong> = &minus;r (the internal resistance)</li>
+</ul>
+<p>Draw a line of best fit. Read off the y-intercept for &epsilon; and calculate the gradient magnitude for r.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Cell runs down during experiment, changing &epsilon;</td><td>Systematic</td><td>Switch off between readings; take readings quickly; use a fresh cell</td></tr>
+<tr><td>Cell heating up changes internal resistance</td><td>Systematic</td><td>Allow cooling between readings; use low currents</td></tr>
+<tr><td>Ammeter has non-zero resistance</td><td>Systematic</td><td>Use a low-resistance ammeter; note its resistance and account for it</td></tr>
+<tr><td>Voltmeter draws a small current</td><td>Systematic</td><td>Use a high-resistance digital voltmeter to minimise current drawn</td></tr>
+<tr><td>Contact resistance in connections</td><td>Random</td><td>Ensure firm, clean connections throughout</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> If asked to determine EMF without drawing a graph, measure the voltmeter reading when no current flows (open circuit). In practice, a high-resistance voltmeter reading with the switch open gives a good approximation of &epsilon;. The graph method is more reliable because it uses multiple readings.</div>
+</div>
+
+<!-- ============ CORE PRACTICAL 13 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 13: Calibrate a thermistor in a potential divider circuit as a thermostat</h2>
+
+<svg viewBox="0 0 540 420" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Power supply -->
+  <rect x="30" y="60" width="70" height="40" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="65" y="75" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Power</text>
+  <text x="65" y="90" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Supply</text>
+  <text x="65" y="50" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">V<tspan font-size="8" dy="2">s</tspan></text>
+  <!-- Fixed resistor R1 -->
+  <rect x="160" y="65" width="70" height="30" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="195" y="85" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">R<tspan font-size="8" dy="2">1</tspan></text>
+  <text x="195" y="55" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8">Fixed resistor</text>
+  <!-- Thermistor (NTC) -->
+  <rect x="160" y="200" width="70" height="30" rx="4" fill="#DBEAFE" stroke="#1a73e8" stroke-width="2"/>
+  <text x="195" y="220" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">NTC</text>
+  <text x="260" y="220" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">Thermistor</text>
+  <!-- Water bath / beaker -->
+  <rect x="130" y="260" width="140" height="100" rx="6" fill="#E0F2FE" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="200" y="285" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8">Water bath</text>
+  <!-- Water lines -->
+  <line x1="145" y1="300" x2="255" y2="300" stroke="#93C5FD" stroke-width="1" opacity="0.5"/>
+  <line x1="145" y1="320" x2="255" y2="320" stroke="#93C5FD" stroke-width="1" opacity="0.5"/>
+  <line x1="145" y1="340" x2="255" y2="340" stroke="#93C5FD" stroke-width="1" opacity="0.5"/>
+  <!-- Thermometer in water -->
+  <rect x="220" y="240" width="6" height="80" rx="3" fill="#DC2626" stroke="#1a1a2e" stroke-width="1"/>
+  <circle cx="223" cy="325" r="6" fill="#DC2626" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="240" y="260" font-family="system-ui" font-size="10" fill="#DC2626">Thermometer</text>
+  <!-- Thermistor leads going into water -->
+  <line x1="175" y1="230" x2="175" y2="275" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="215" y1="230" x2="215" y2="275" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Voltmeter across thermistor -->
+  <circle cx="380" cy="215" r="20" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="380" y="221" text-anchor="middle" font-family="system-ui" font-size="16" fill="#1a73e8" font-weight="bold">V</text>
+  <text x="420" y="220" font-family="system-ui" font-size="11" fill="#1a73e8">Voltmeter</text>
+  <!-- Voltmeter connections -->
+  <line x1="230" y1="200" x2="360" y2="200" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="230" y1="230" x2="360" y2="230" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Wiring: power supply to R1 -->
+  <line x1="100" y1="72" x2="160" y2="72" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- R1 to junction -->
+  <line x1="230" y1="80" x2="250" y2="80" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="250" y1="80" x2="250" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="230" y1="215" x2="250" y2="215" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- R1 input to thermistor input -->
+  <line x1="160" y1="80" x2="140" y2="80" stroke="#1a1a2e" stroke-width="0"/>
+  <line x1="140" y1="80" x2="140" y2="215" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="140" y1="215" x2="160" y2="215" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Bottom wire back to power supply -->
+  <line x1="140" y1="215" x2="65" y2="215" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="65" y1="100" x2="65" y2="215" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Junction dot -->
+  <circle cx="250" cy="80" r="3" fill="#1a1a2e"/>
+  <circle cx="140" cy="215" r="3" fill="#1a1a2e"/>
+  <!-- Heater -->
+  <rect x="155" y="330" width="30" height="20" rx="3" fill="#DC2626" stroke="#1a1a2e" stroke-width="1" opacity="0.7"/>
+  <text x="170" y="368" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">Heater</text>
+  <!-- Title -->
+  <text x="270" y="405" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP13: Thermistor in a potential divider</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>NTC thermistor</li>
+  <li>Fixed resistor (value chosen to be similar to thermistor resistance at mid-range temperature)</li>
+  <li>DC power supply (e.g. 5 V)</li>
+  <li>Voltmeter (across the thermistor)</li>
+  <li>Thermometer (resolution &plusmn;0.5 &deg;C, range 0&ndash;100 &deg;C)</li>
+  <li>Beaker of water, Bunsen burner or electric heater, stirrer</li>
+  <li>Connecting wires</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Set up the potential divider: power supply in series with the fixed resistor R<sub>1</sub> and the NTC thermistor. Connect the voltmeter in parallel across the thermistor.</li>
+  <li>Place the thermistor (waterproofed or in a sealed tube) into the water bath along with the thermometer.</li>
+  <li>Record the temperature &theta; and the voltmeter reading V<sub>out</sub> at room temperature.</li>
+  <li>Heat the water slowly, stirring continuously. Record V<sub>out</sub> at regular temperature intervals (e.g. every 5 &deg;C from 20 &deg;C to 80 &deg;C).</li>
+  <li>Allow the thermistor time to reach thermal equilibrium at each temperature before reading.</li>
+  <li>Plot a <strong>calibration curve</strong>: V<sub>out</sub> (y-axis) against temperature &theta; (x-axis).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Take care with hot water &mdash; do not heat above 80 &deg;C to avoid scalding risks.</li>
+  <li>Ensure electrical connections are kept away from water.</li>
+  <li>If using a Bunsen burner, tie back hair and loose clothing.</li>
+  <li>Use a heatproof mat under the beaker.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>In a potential divider, the output voltage across the thermistor is:</p>
+<div class="equation">
+  V<sub>out</sub> = V<sub>s</sub> &times; R<sub>thermistor</sub> / (R<sub>1</sub> + R<sub>thermistor</sub>)
+</div>
+<p>As temperature increases, the NTC thermistor resistance <strong>decreases</strong>, so V<sub>out</sub> decreases. The calibration curve allows any measured V<sub>out</sub> to be converted to a temperature reading, making this a <strong>thermostat</strong> or electronic thermometer.</p>
+<p>For a thermostat application, a comparator or switching circuit can be set to trigger at a specific V<sub>out</sub> corresponding to the desired temperature.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Temperature not uniform in water bath</td><td>Random</td><td>Stir the water continuously; wait for equilibrium</td></tr>
+<tr><td>Thermistor not at same temperature as thermometer</td><td>Systematic</td><td>Place both sensors close together; allow time for thermal equilibrium</td></tr>
+<tr><td>Thermometer calibration error</td><td>Systematic</td><td>Use a calibrated digital thermometer</td></tr>
+<tr><td>Self-heating of thermistor by the current</td><td>Systematic</td><td>Use a low supply voltage to minimise current through the thermistor</td></tr>
+<tr><td>Evaporation of water changes bath level</td><td>Systematic</td><td>Top up the water; use a lid on the beaker</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> In a potential divider, when the thermistor resistance decreases (temperature rises), V<sub>out</sub> across it decreases. If the thermistor and fixed resistor swap positions, the relationship reverses. Be clear about which component V<sub>out</sub> is measured across.</div>
+</div>
+
     </div>
 </body>
 </html>

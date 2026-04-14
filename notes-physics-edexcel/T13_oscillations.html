@@ -548,6 +548,126 @@
     When describing resonance, always state three things: (1) the driving frequency equals the natural frequency, (2) maximum energy transfer occurs, and (3) the amplitude reaches a maximum. For full marks on "explain resonance" questions, include all three points.
 </div>
 
+<!-- ============ CORE PRACTICAL 8 ============ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 8: Determine the value of an unknown mass using the oscillation of a spring</h2>
+
+<svg viewBox="0 0 460 520" style="max-width:500px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Clamp stand -->
+  <rect x="60" y="20" width="12" height="400" rx="2" fill="#555" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="30" y="410" width="80" height="12" rx="2" fill="#555" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Clamp arm -->
+  <rect x="72" y="40" width="80" height="10" rx="2" fill="#777" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Clamp boss -->
+  <rect x="68" y="36" width="16" height="18" rx="2" fill="#666" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Spring (coil drawing) -->
+  <path d="M150,50 L160,60 L140,80 L160,100 L140,120 L160,140 L140,160 L160,180 L140,200 L160,220 L150,230" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="180" y="140" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">Spring (k)</text>
+  <!-- Mass hanger with known mass -->
+  <rect x="137" y="235" width="26" height="12" rx="2" fill="#777" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="133" y="247" width="34" height="15" rx="2" fill="#666" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="133" y="262" width="34" height="15" rx="2" fill="#666" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="133" y="277" width="34" height="15" rx="2" fill="#666" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="190" y="270" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">Known mass m</text>
+  <!-- Equilibrium line -->
+  <line x1="100" y1="260" x2="130" y2="260" stroke="#16A34A" stroke-width="2"/>
+  <text x="90" y="258" text-anchor="end" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="bold">Equilibrium</text>
+  <!-- Fiducial marker -->
+  <rect x="120" y="256" width="10" height="8" rx="1" fill="#16A34A" stroke="#16A34A" stroke-width="1"/>
+  <text x="90" y="272" text-anchor="end" font-family="system-ui" font-size="9" fill="#16A34A">(fiducial marker)</text>
+  <!-- Oscillation arrow (up and down) -->
+  <line x1="108" y1="230" x2="108" y2="300" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="108,230 104,245 112,245" fill="#DC2626"/>
+  <polygon points="108,300 104,285 112,285" fill="#DC2626"/>
+  <text x="95" y="310" text-anchor="end" font-family="system-ui" font-size="10" fill="#DC2626">Oscillation</text>
+  <!-- Ruler alongside -->
+  <rect x="170" y="40" width="8" height="260" fill="#FBBF24" stroke="#1a1a2e" stroke-width="0.5" opacity="0.6"/>
+  <text x="190" y="45" font-family="system-ui" font-size="10" fill="#D97706">Ruler</text>
+  <!-- Stopwatch -->
+  <rect x="280" y="200" width="80" height="50" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="320" y="222" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Stopwatch</text>
+  <text x="320" y="238" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Time 10T</text>
+  <!-- GRAPH: T² vs m -->
+  <rect x="240" y="310" width="190" height="160" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="335" y="330" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">Graph: T&sup2; vs m</text>
+  <line x1="280" y1="450" x2="410" y2="450" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="280" y1="450" x2="280" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="345" y="468" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">m / kg</text>
+  <text x="268" y="395" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,268,395)">T&sup2; / s&sup2;</text>
+  <!-- Straight line through origin -->
+  <line x1="280" y1="450" x2="400" y2="350" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="370" y="380" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">gradient = 4&pi;&sup2;/k</text>
+  <!-- Data points -->
+  <circle cx="300" cy="430" r="3" fill="#DC2626"/>
+  <circle cx="320" cy="415" r="3" fill="#DC2626"/>
+  <circle cx="340" cy="400" r="3" fill="#DC2626"/>
+  <circle cx="360" cy="385" r="3" fill="#DC2626"/>
+  <circle cx="380" cy="370" r="3" fill="#DC2626"/>
+  <!-- Unknown mass point marked -->
+  <circle cx="350" cy="392" r="5" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <text x="360" y="408" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="bold">&larr; Unknown mass</text>
+  <!-- Title -->
+  <text x="230" y="505" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP8: Finding unknown mass from spring oscillation</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Helical spring (with known or determinable spring constant <em>k</em>)</li>
+  <li>Clamp stand, boss, and clamp</li>
+  <li>Mass hanger and slotted masses (e.g. 50 g, 100 g, 150 g, 200 g, 250 g, 300 g)</li>
+  <li>Stopwatch (resolution &plusmn;0.01 s)</li>
+  <li>Fiducial marker (e.g. a card pointer at the equilibrium position)</li>
+  <li>Ruler (to measure amplitude)</li>
+  <li>Unknown mass (to be determined)</li>
+  <li>Balance (to check known masses)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Attach the spring to the clamp and hang the mass hanger from it.</li>
+  <li>Add a <strong>known mass</strong> (e.g. 100 g) to the hanger. Allow it to come to rest at the equilibrium position. Place a fiducial marker at this level.</li>
+  <li>Pull the mass down a small distance (1&ndash;2 cm &mdash; small amplitude for SHM) and release.</li>
+  <li>Time <strong>10 complete oscillations</strong> using the stopwatch and the fiducial marker. Start timing as the mass passes the fiducial marker moving in one direction, and count each time it passes the same way.</li>
+  <li>Repeat the timing 3 times and calculate the mean time for 10 oscillations. Divide by 10 to get the period <em>T</em>.</li>
+  <li>Repeat for at least 5 different known masses.</li>
+  <li>Plot <strong>T&sup2;</strong> (y-axis) against <strong>m</strong> (x-axis).</li>
+  <li>Now attach the <strong>unknown mass</strong>. Measure its period the same way. Read off the corresponding mass from the graph (or use the equation of the line).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Do not overload the spring beyond its elastic limit.</li>
+  <li>Place a cushion or box beneath the masses in case the spring breaks or the mass falls.</li>
+  <li>Ensure the clamp stand is stable (use a G-clamp on the base if needed).</li>
+  <li>Keep the oscillation amplitude small to prevent the spring from detaching.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>For a mass-spring system undergoing SHM:</p>
+<div class="equation">
+  T = 2&pi; &radic;(m/k) &nbsp;&nbsp;&rArr;&nbsp;&nbsp; T&sup2; = (4&pi;&sup2;/k) m
+</div>
+<p>A graph of <strong>T&sup2; vs m</strong> gives a straight line through the origin (if the spring has negligible mass) with:</p>
+<ul>
+  <li><strong>Gradient</strong> = 4&pi;&sup2; / k</li>
+</ul>
+<p>From the gradient, the spring constant <em>k</em> can be calculated: k = 4&pi;&sup2; / gradient.</p>
+<p>To find the <strong>unknown mass</strong>: measure its T, calculate T&sup2;, and read the mass from the graph. Alternatively, use: m<sub>unknown</sub> = T&sup2;k / (4&pi;&sup2;).</p>
+<p>If the graph does not pass through the origin, this suggests the effective mass of the spring contributes. The x-intercept gives the effective spring mass (typically about 1/3 of the spring's mass).</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Reaction time when starting/stopping the stopwatch</td><td>Random</td><td>Time 10 (or 20) oscillations and divide; use a fiducial marker for consistent timing point</td></tr>
+<tr><td>Amplitude too large &mdash; not true SHM</td><td>Systematic</td><td>Keep amplitude small (1&ndash;2 cm); spring must obey Hooke's law throughout</td></tr>
+<tr><td>Spring oscillates laterally (swinging) not just vertically</td><td>Systematic</td><td>Pull down and release carefully in the vertical direction only; use a guide tube if needed</td></tr>
+<tr><td>Mass of spring adds to the oscillating mass</td><td>Systematic</td><td>Use a light spring; or account for the effective spring mass (graph will have a non-zero x-intercept)</td></tr>
+<tr><td>Air resistance (damping) reduces amplitude over time</td><td>Systematic</td><td>Measure the period quickly (within first few oscillations); use a compact, streamlined mass</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> The period of a mass-spring oscillator depends <strong>only</strong> on mass and spring constant, <strong>not</strong> on amplitude (provided the amplitude is small enough for SHM). If a graph of T&sup2; vs m does not pass through the origin, include the effective mass of the spring: T&sup2; = (4&pi;&sup2;/k)(m + m<sub>eff</sub>). The x-intercept = &minus;m<sub>eff</sub>.</div>
+</div>
+
 </div>
 </body>
 </html>
