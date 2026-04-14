@@ -751,6 +751,79 @@ const ALL_MEDALS = [
   { id: 'one_month',         icon: '🗓️', name: 'Monthly Regular',   desc: 'Use RAG Learning for 30 days' },
   { id: 'half_topics',       icon: '⚖️', name: 'Halfway There',     desc: 'Test at least half your topics' },
   { id: 'all_topics_tested', icon: '✅', name: 'Full Coverage',     desc: 'Test every single topic at least once' },
+
+  // ── Per-Subject Firsts ──
+  { id: 'first_cs',          icon: '💻', name: 'Code Breaker',      desc: 'Complete your first Computer Science diagnostic' },
+  { id: 'first_physics',     icon: '⚛️', name: 'Force Awakens',     desc: 'Complete your first Physics diagnostic' },
+  { id: 'first_economics',   icon: '💰', name: 'Market Entry',      desc: 'Complete your first Economics diagnostic' },
+  { id: 'first_chemistry',   icon: '🧪', name: 'First Reaction',    desc: 'Complete your first Chemistry diagnostic' },
+  { id: 'first_biology',     icon: '🧬', name: 'Life Begins',       desc: 'Complete your first Biology diagnostic' },
+
+  // ── Amber Milestones ──
+  { id: 'amber_5',           icon: '🟠', name: 'Amber Alert',       desc: 'Get 5 topics to amber' },
+  { id: 'amber_10',          icon: '🔶', name: 'Amber Wave',        desc: 'Get 10 topics to amber or better' },
+  { id: 'amber_clear',       icon: '✨', name: 'No More Ambers',    desc: 'Have zero amber topics — all green!' },
+  { id: 'amber_to_green_3',  icon: '🔀', name: 'Levelling Up',      desc: 'Move 3 topics from amber to green' },
+
+  // ── Diagnostic Depth ──
+  { id: 'diag_150',          icon: '📚', name: 'Bookworm',          desc: 'Complete 150 diagnostics' },
+  { id: 'diag_200',          icon: '🏛️', name: 'Academic',           desc: 'Complete 200 diagnostics' },
+  { id: 'daily_10_diag',     icon: '💪', name: 'Marathon Runner',   desc: 'Complete 10 diagnostics in one day' },
+  { id: 'all_boards_tested', icon: '🌐', name: 'Board Explorer',    desc: 'Test topics from every exam board you study' },
+  { id: 'daily_7_diag',      icon: '🏋️', name: 'Heavy Lifter',      desc: 'Complete 7 diagnostics in one day' },
+
+  // ── Green Topics Extended ──
+  { id: 'green_75',          icon: '🌲', name: 'Evergreen',         desc: 'Get 75 topics to green' },
+  { id: 'green_100',         icon: '💚', name: 'Green Machine',     desc: 'Get 100 topics to green' },
+  { id: 'green_all_one_board', icon: '🎪', name: 'Board Master',   desc: 'All green in one exam board' },
+
+  // ── Practice Questions ──
+  { id: 'practice_first',    icon: '✏️', name: 'First Answer',      desc: 'Complete your first practice question' },
+  { id: 'practice_10',       icon: '📝', name: 'Getting Practice',  desc: 'Complete 10 practice questions' },
+  { id: 'practice_25',       icon: '📓', name: 'Practised',         desc: 'Complete 25 practice questions' },
+  { id: 'practice_50',       icon: '📒', name: 'Exam Ready',        desc: 'Complete 50 practice questions' },
+  { id: 'practice_100',      icon: '🏆', name: 'Practice Legend',   desc: 'Complete 100 practice questions' },
+
+  // ── Time Champions ──
+  { id: 'three_months',      icon: '📆', name: 'Quarterly',         desc: 'Use RAG Learning for 90 days' },
+  { id: 'six_months',        icon: '🎂', name: 'Half Year Hero',    desc: 'Use RAG Learning for 180 days' },
+  { id: 'one_year',          icon: '🎊', name: 'Year One',          desc: 'Use RAG Learning for 365 days' },
+  { id: 'lunch_learner',     icon: '🍽️', name: 'Lunch Learner',     desc: 'Study between 12pm and 1pm' },
+  { id: 'dawn_grinder',      icon: '🌄', name: 'Dawn Grinder',      desc: 'Study before 6am' },
+
+  // ── Comeback & Recovery ──
+  { id: 'comeback_kid',      icon: '💪', name: 'Comeback Kid',      desc: 'Return to study after 7+ days away' },
+  { id: 'red_halved',        icon: '📉', name: 'Damage Control',    desc: 'Cut your red topics in half' },
+  { id: 'bounce_back',       icon: '🏀', name: 'Bounce Back',       desc: 'Improve a red topic to amber in one session' },
+  { id: 'clean_sweep',       icon: '🧹', name: 'Clean Sweep',       desc: 'Clear all reds in a subject' },
+
+  // ── Multi-Subject ──
+  { id: 'three_subjects',    icon: '3️⃣', name: 'Triple Threat',     desc: 'Add 3 subjects' },
+  { id: 'four_subjects',     icon: '4️⃣', name: 'Quad Scholar',      desc: 'Add 4 subjects' },
+  { id: 'five_subjects',     icon: '5️⃣', name: 'Overachiever',      desc: 'Add 5 or more subjects' },
+  { id: 'cross_subject_green', icon: '🌈', name: 'Renaissance',     desc: 'Get a green topic in 3 different subjects' },
+  { id: 'all_subjects_tested', icon: '🗺️', name: 'Well Rounded',   desc: 'Test at least one topic in every subject' },
+
+  // ── Streak Extended ──
+  { id: 'streak_150',        icon: '🌊', name: 'Tidal Force',       desc: '150-day study streak' },
+  { id: 'streak_200',        icon: '🗻', name: 'Mountaineer',       desc: '200-day study streak' },
+  { id: 'streak_365',        icon: '🌟', name: 'Year-Long Flame',   desc: '365-day study streak' },
+  { id: 'weekend_streak_4',  icon: '📅', name: 'Month of Weekends', desc: 'Study 4 consecutive weekends' },
+
+  // ── Speed Records ──
+  { id: 'two_subj_one_day',  icon: '⚡', name: 'Double Shift',      desc: 'Test topics in 2 subjects in one day' },
+  { id: 'three_green_one_day', icon: '🎯', name: 'Green Streak',   desc: 'Get 3 green topics in one day' },
+  { id: 'five_green_one_day', icon: '🤩', name: 'Green Blitz',      desc: 'Get 5 green topics in one day' },
+
+  // ── Collection Extended ──
+  { id: 'medals_50',         icon: '🏆', name: 'Trophy Room',       desc: 'Earn 50 medals' },
+  { id: 'medals_75',         icon: '💎', name: 'Diamond Collector',  desc: 'Earn 75 medals' },
+  { id: 'medals_90',         icon: '🌟', name: 'Almost There',      desc: 'Earn 90 medals' },
+
+  // ── Secret / Fun ──
+  { id: 'friday_night',      icon: '🎉', name: 'Friday Grind',      desc: 'Study on a Friday evening' },
+  { id: 'new_year',          icon: '🎆', name: 'New Year Scholar',   desc: 'Study on January 1st' },
+  { id: 'exam_season',       icon: '📋', name: 'Exam Season Warrior', desc: 'Study during May or June' },
 ];
 
 // ── Level config ─────────────────────────────────────────────────────────
@@ -1070,11 +1143,136 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   if (totalAllTopics > 0 && totalTested >= Math.ceil(totalAllTopics / 2)) award('half_topics');
   if (totalAllTopics > 0 && totalTested >= totalAllTopics) award('all_topics_tested');
 
+  // ── Per-Subject Firsts ──
+  const subjectNames = new Set(topicRows.map(t => t.subject));
+  if (subjectNames.has('Computer Science')) award('first_cs');
+  if (subjectNames.has('Physics'))          award('first_physics');
+  if (subjectNames.has('Economics'))        award('first_economics');
+  if (subjectNames.has('Chemistry'))        award('first_chemistry');
+  if (subjectNames.has('Biology'))          award('first_biology');
+
+  // ── Amber Milestones ──
+  if (amberTopics >= 5)  award('amber_5');
+  if (amberTopics >= 10) award('amber_10');
+  if (amberTopics === 0 && greenTopics > 0 && totalTested > 0) award('amber_clear');
+  // amber_to_green_3 — approximate: if green >= 3 they likely upgraded some
+  if (greenTopics >= 3) award('amber_to_green_3');
+
+  // ── Diagnostic Depth ──
+  if (totalTested >= 150) award('diag_150');
+  if (totalTested >= 200) award('diag_200');
+
+  // daily diagnostics — count today's entries
+  const today = new Date().toISOString().slice(0, 10);
+  const todayRows = topicRows.filter(t => t.updated_at && t.updated_at.slice(0, 10) === today);
+  if (todayRows.length >= 7)  award('daily_7_diag');
+  if (todayRows.length >= 10) award('daily_10_diag');
+
+  // all_boards_tested — every board the user studies has at least one tested topic
+  let allBoardsTested = subjects.length > 0;
+  for (const s of subjects) {
+    const hasTopic = topicRows.some(t => t.subject === s.subject && t.exam_board === s.exam_board);
+    if (!hasTopic) { allBoardsTested = false; break; }
+  }
+  if (allBoardsTested && subjects.length > 0) award('all_boards_tested');
+
+  // ── Green Topics Extended ──
+  if (greenTopics >= 75)  award('green_75');
+  if (greenTopics >= 100) award('green_100');
+  // green_all_one_board — check if any single subject has all topics green
+  for (const s of subjects) {
+    const key = SUBJECT_TOPIC_KEY[`${s.subject}_${s.exam_board}`];
+    const total = TOPIC_TOTAL[key];
+    if (!key || !total) continue;
+    const gCount = topicRows.filter(t =>
+      t.subject === s.subject && t.exam_board === s.exam_board && t.rag_status === 'green'
+    ).length;
+    if (gCount >= total) { award('green_all_one_board'); break; }
+  }
+
+  // ── Practice Questions ── (awarded from practice.html, checked via medal existence)
+  // These are inserted by practice.html directly — no logic needed here
+
+  // ── Time Champions ──
+  if (prof?.created_at) {
+    const daysSince = Math.floor((Date.now() - new Date(prof.created_at).getTime()) / 86400000);
+    if (daysSince >= 90)  award('three_months');
+    if (daysSince >= 180) award('six_months');
+    if (daysSince >= 365) award('one_year');
+  }
+  const currentHour = new Date().getHours();
+  if (currentHour >= 12 && currentHour < 13) award('lunch_learner');
+  if (currentHour < 6) award('dawn_grinder');
+
+  // ── Comeback & Recovery ──
+  // comeback_kid — check if last activity was 7+ days ago (before today)
+  const nonTodayRows = topicRows.filter(t => t.updated_at && t.updated_at.slice(0, 10) !== today);
+  if (nonTodayRows.length > 0 && todayRows.length > 0) {
+    const lastDate = nonTodayRows.reduce((max, t) => t.updated_at > max ? t.updated_at : max, '');
+    if (lastDate) {
+      const daysSinceLast = Math.floor((Date.now() - new Date(lastDate).getTime()) / 86400000);
+      if (daysSinceLast >= 7) award('comeback_kid');
+    }
+  }
+
+  // clean_sweep — a subject with tested topics but zero reds
+  for (const s of subjects) {
+    const subjTopics = topicRows.filter(t => t.subject === s.subject && t.exam_board === s.exam_board);
+    if (subjTopics.length >= 3 && subjTopics.every(t => t.rag_status !== 'red')) {
+      award('clean_sweep');
+      break;
+    }
+  }
+  // bounce_back — if any topic changed today and is amber (approximate)
+  const todayAmbers = todayRows.filter(t => t.rag_status === 'amber');
+  if (todayAmbers.length > 0) award('bounce_back');
+  // red_halved — if reds are less than half of total tested
+  if (totalTested >= 4 && redTopics <= Math.floor(totalTested / 4)) award('red_halved');
+
+  // ── Multi-Subject ──
+  if (subjects.length >= 3) award('three_subjects');
+  if (subjects.length >= 4) award('four_subjects');
+  if (subjects.length >= 5) award('five_subjects');
+
+  // cross_subject_green — green topics in 3+ different subjects
+  const greenSubjects = new Set(topicRows.filter(t => t.rag_status === 'green').map(t => t.subject));
+  if (greenSubjects.size >= 3) award('cross_subject_green');
+
+  // all_subjects_tested — at least one topic tested in every subject
+  let allSubjTested = subjects.length > 0;
+  for (const s of subjects) {
+    if (!topicRows.some(t => t.subject === s.subject)) { allSubjTested = false; break; }
+  }
+  if (allSubjTested && subjects.length > 0) award('all_subjects_tested');
+
+  // ── Streak Extended ──
+  if (streak >= 150) award('streak_150');
+  if (streak >= 200) award('streak_200');
+  if (streak >= 365) award('streak_365');
+  // weekend_streak_4 — approximate: if streak >= 28 they've studied 4 weekends
+  if (streak >= 28) award('weekend_streak_4');
+
+  // ── Speed Records ──
+  const todaySubjects = new Set(todayRows.map(t => t.subject));
+  if (todaySubjects.size >= 2) award('two_subj_one_day');
+  const todayGreens = todayRows.filter(t => t.rag_status === 'green').length;
+  if (todayGreens >= 3) award('three_green_one_day');
+  if (todayGreens >= 5) award('five_green_one_day');
+
+  // ── Secret / Fun ──
+  const now = new Date();
+  if (now.getDay() === 5 && now.getHours() >= 18) award('friday_night');
+  if (now.getMonth() === 0 && now.getDate() === 1) award('new_year');
+  if (now.getMonth() === 4 || now.getMonth() === 5) award('exam_season');
+
   // ── Medal collection meta-medals ──
   const totalEarned = earned.size + newMedals.length;
   if (totalEarned >= 10) award('medals_10');
   if (totalEarned >= 25) award('medals_25');
   if (totalEarned >= 40) award('medals_40');
+  if (totalEarned >= 50) award('medals_50');
+  if (totalEarned >= 75) award('medals_75');
+  if (totalEarned >= 90) award('medals_90');
   if (totalEarned >= ALL_MEDALS.length - 1) award('medals_all'); // -1 because this IS a medal
 
   // Insert new medals

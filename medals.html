@@ -292,6 +292,79 @@ const ALL_MEDALS = [
   { id: 'one_month',         icon: '🗓️', name: 'Monthly Regular',   desc: 'Use RAG Learning for 30 days',              cat: 'Milestones' },
   { id: 'half_topics',       icon: '⚖️', name: 'Halfway There',     desc: 'Test at least half your topics',            cat: 'Milestones' },
   { id: 'all_topics_tested', icon: '✅', name: 'Full Coverage',     desc: 'Test every single topic at least once',     cat: 'Milestones' },
+
+  // ── Per-Subject Firsts ──
+  { id: 'first_cs',          icon: '💻', name: 'Code Breaker',      desc: 'Complete your first Computer Science diagnostic', cat: 'Subject Firsts' },
+  { id: 'first_physics',     icon: '⚛️', name: 'Force Awakens',     desc: 'Complete your first Physics diagnostic',    cat: 'Subject Firsts' },
+  { id: 'first_economics',   icon: '💰', name: 'Market Entry',      desc: 'Complete your first Economics diagnostic',  cat: 'Subject Firsts' },
+  { id: 'first_chemistry',   icon: '🧪', name: 'First Reaction',    desc: 'Complete your first Chemistry diagnostic',  cat: 'Subject Firsts' },
+  { id: 'first_biology',     icon: '🧬', name: 'Life Begins',       desc: 'Complete your first Biology diagnostic',    cat: 'Subject Firsts' },
+
+  // ── Amber Milestones ──
+  { id: 'amber_5',           icon: '🟠', name: 'Amber Alert',       desc: 'Get 5 topics to amber',                     cat: 'Amber Milestones' },
+  { id: 'amber_10',          icon: '🔶', name: 'Amber Wave',        desc: 'Get 10 topics to amber or better',          cat: 'Amber Milestones' },
+  { id: 'amber_clear',       icon: '✨', name: 'No More Ambers',    desc: 'Have zero amber topics — all green!',       cat: 'Amber Milestones' },
+  { id: 'amber_to_green_3',  icon: '🔀', name: 'Levelling Up',      desc: 'Move 3 topics from amber to green',         cat: 'Amber Milestones' },
+
+  // ── Diagnostic Depth ──
+  { id: 'diag_150',          icon: '📚', name: 'Bookworm',          desc: 'Complete 150 diagnostics',                  cat: 'Diagnostic Depth' },
+  { id: 'diag_200',          icon: '🏛️', name: 'Academic',           desc: 'Complete 200 diagnostics',                  cat: 'Diagnostic Depth' },
+  { id: 'daily_10_diag',     icon: '💪', name: 'Marathon Runner',   desc: 'Complete 10 diagnostics in one day',        cat: 'Diagnostic Depth' },
+  { id: 'all_boards_tested', icon: '🌐', name: 'Board Explorer',    desc: 'Test topics from every exam board you study', cat: 'Diagnostic Depth' },
+  { id: 'daily_7_diag',      icon: '🏋️', name: 'Heavy Lifter',      desc: 'Complete 7 diagnostics in one day',         cat: 'Diagnostic Depth' },
+
+  // ── Green Topics Extended ──
+  { id: 'green_75',          icon: '🌲', name: 'Evergreen',         desc: 'Get 75 topics to green',                    cat: 'Green Topics' },
+  { id: 'green_100',         icon: '💚', name: 'Green Machine',     desc: 'Get 100 topics to green',                   cat: 'Green Topics' },
+  { id: 'green_all_one_board', icon: '🎪', name: 'Board Master',   desc: 'All green in one exam board',               cat: 'Green Topics' },
+
+  // ── Practice Questions ──
+  { id: 'practice_first',    icon: '✏️', name: 'First Answer',      desc: 'Complete your first practice question',     cat: 'Practice Questions' },
+  { id: 'practice_10',       icon: '📝', name: 'Getting Practice',  desc: 'Complete 10 practice questions',            cat: 'Practice Questions' },
+  { id: 'practice_25',       icon: '📓', name: 'Practised',         desc: 'Complete 25 practice questions',            cat: 'Practice Questions' },
+  { id: 'practice_50',       icon: '📒', name: 'Exam Ready',        desc: 'Complete 50 practice questions',            cat: 'Practice Questions' },
+  { id: 'practice_100',      icon: '🏆', name: 'Practice Legend',   desc: 'Complete 100 practice questions',           cat: 'Practice Questions' },
+
+  // ── Time Champions ──
+  { id: 'three_months',      icon: '📆', name: 'Quarterly',         desc: 'Use RAG Learning for 90 days',              cat: 'Time Champions' },
+  { id: 'six_months',        icon: '🎂', name: 'Half Year Hero',    desc: 'Use RAG Learning for 180 days',             cat: 'Time Champions' },
+  { id: 'one_year',          icon: '🎊', name: 'Year One',          desc: 'Use RAG Learning for 365 days',             cat: 'Time Champions' },
+  { id: 'lunch_learner',     icon: '🍽️', name: 'Lunch Learner',     desc: 'Study between 12pm and 1pm',                cat: 'Time Champions' },
+  { id: 'dawn_grinder',      icon: '🌄', name: 'Dawn Grinder',      desc: 'Study before 6am',                          cat: 'Time Champions' },
+
+  // ── Comeback & Recovery ──
+  { id: 'comeback_kid',      icon: '💪', name: 'Comeback Kid',      desc: 'Return to study after 7+ days away',        cat: 'Comeback & Recovery' },
+  { id: 'red_halved',        icon: '📉', name: 'Damage Control',    desc: 'Cut your red topics in half',               cat: 'Comeback & Recovery' },
+  { id: 'bounce_back',       icon: '🏀', name: 'Bounce Back',       desc: 'Improve a red topic to amber in one session', cat: 'Comeback & Recovery' },
+  { id: 'clean_sweep',       icon: '🧹', name: 'Clean Sweep',       desc: 'Clear all reds in a subject',               cat: 'Comeback & Recovery' },
+
+  // ── Multi-Subject ──
+  { id: 'three_subjects',    icon: '3️⃣', name: 'Triple Threat',     desc: 'Add 3 subjects',                            cat: 'Multi-Subject' },
+  { id: 'four_subjects',     icon: '4️⃣', name: 'Quad Scholar',      desc: 'Add 4 subjects',                            cat: 'Multi-Subject' },
+  { id: 'five_subjects',     icon: '5️⃣', name: 'Overachiever',      desc: 'Add 5 or more subjects',                    cat: 'Multi-Subject' },
+  { id: 'cross_subject_green', icon: '🌈', name: 'Renaissance',     desc: 'Get a green topic in 3 different subjects',  cat: 'Multi-Subject' },
+  { id: 'all_subjects_tested', icon: '🗺️', name: 'Well Rounded',   desc: 'Test at least one topic in every subject',   cat: 'Multi-Subject' },
+
+  // ── Streak Extended ──
+  { id: 'streak_150',        icon: '🌊', name: 'Tidal Force',       desc: '150-day study streak',                      cat: 'Streaks' },
+  { id: 'streak_200',        icon: '🗻', name: 'Mountaineer',       desc: '200-day study streak',                      cat: 'Streaks' },
+  { id: 'streak_365',        icon: '🌟', name: 'Year-Long Flame',   desc: '365-day study streak',                      cat: 'Streaks' },
+  { id: 'weekend_streak_4',  icon: '📅', name: 'Month of Weekends', desc: 'Study 4 consecutive weekends',              cat: 'Streaks' },
+
+  // ── Speed Records ──
+  { id: 'two_subj_one_day',  icon: '⚡', name: 'Double Shift',      desc: 'Test topics in 2 subjects in one day',      cat: 'Speed Records' },
+  { id: 'three_green_one_day', icon: '🎯', name: 'Green Streak',   desc: 'Get 3 green topics in one day',             cat: 'Speed Records' },
+  { id: 'five_green_one_day', icon: '🤩', name: 'Green Blitz',      desc: 'Get 5 green topics in one day',             cat: 'Speed Records' },
+
+  // ── Collection Extended ──
+  { id: 'medals_50',         icon: '🏆', name: 'Trophy Room',       desc: 'Earn 50 medals',                            cat: 'Collection' },
+  { id: 'medals_75',         icon: '💎', name: 'Diamond Collector',  desc: 'Earn 75 medals',                            cat: 'Collection' },
+  { id: 'medals_90',         icon: '🌟', name: 'Almost There',      desc: 'Earn 90 medals',                            cat: 'Collection' },
+
+  // ── Secret / Fun ──
+  { id: 'friday_night',      icon: '🎉', name: 'Friday Grind',      desc: 'Study on a Friday evening',                 cat: 'Secret' },
+  { id: 'new_year',          icon: '🎆', name: 'New Year Scholar',   desc: 'Study on January 1st',                      cat: 'Secret' },
+  { id: 'exam_season',       icon: '📋', name: 'Exam Season Warrior', desc: 'Study during May or June',                cat: 'Secret' },
 ];
 
 // Group medals by category
