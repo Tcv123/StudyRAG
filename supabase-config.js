@@ -29,7 +29,20 @@
  *   ALTER TABLE user_subjects ENABLE ROW LEVEL SECURITY;
  *   CREATE POLICY "own subjects" ON user_subjects FOR ALL USING (auth.uid() = user_id);
  *
- *   -- 3. Medals table
+ *   -- 3. Topic progress table
+ *   CREATE TABLE IF NOT EXISTS topic_progress (
+ *     id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+ *     user_id    UUID REFERENCES profiles(id) ON DELETE CASCADE,
+ *     subject    TEXT NOT NULL,
+ *     exam_board TEXT NOT NULL,
+ *     topic      TEXT NOT NULL,
+ *     rag_status TEXT NOT NULL CHECK (rag_status IN ('green','amber','red')),
+ *     updated_at TIMESTAMPTZ DEFAULT NOW()
+ *   );
+ *   ALTER TABLE topic_progress ENABLE ROW LEVEL SECURITY;
+ *   CREATE POLICY "own progress" ON topic_progress FOR ALL USING (auth.uid() = user_id);
+ *
+ *   -- 4. Medals table
  *   CREATE TABLE IF NOT EXISTS user_medals (
  *     id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
  *     user_id    UUID REFERENCES profiles(id) ON DELETE CASCADE,
