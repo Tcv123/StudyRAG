@@ -110,6 +110,42 @@
 <p>Linear speed and angular velocity:</p>
 <div class="equation">v = &omega;r = 2&pi;r / T</div>
 
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 400 320" style="max-width:500px; width:100%; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>svg text{font-family:system-ui,sans-serif;fill:#1a1a2e}</style>
+  <text x="200" y="22" text-anchor="middle" font-size="14" font-weight="700">Circular Motion</text>
+  <!-- Circle path -->
+  <circle cx="200" cy="170" r="100" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6,4"/>
+  <!-- Centre -->
+  <circle cx="200" cy="170" r="3" fill="#1a1a2e"/>
+  <text x="200" y="185" text-anchor="middle" font-size="10">Centre</text>
+  <!-- Object at top -->
+  <circle cx="200" cy="70" r="8" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Velocity vector (tangential, to the right) -->
+  <line x1="208" y1="70" x2="270" y2="70" stroke="#16A34A" stroke-width="2.5"/>
+  <polygon points="270,70 262,65 262,75" fill="#16A34A"/>
+  <text x="275" y="66" font-size="11" font-weight="600" fill="#16A34A">v</text>
+  <!-- Centripetal force (towards centre) -->
+  <line x1="200" y1="78" x2="200" y2="140" stroke="#DC2626" stroke-width="2.5"/>
+  <polygon points="200,140 195,132 205,132" fill="#DC2626"/>
+  <text x="215" y="120" font-size="11" font-weight="600" fill="#DC2626">F</text>
+  <!-- Object on right -->
+  <circle cx="300" cy="170" r="8" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="300" y1="178" x2="300" y2="240" stroke="#16A34A" stroke-width="2.5"/>
+  <polygon points="300,240 295,232 305,232" fill="#16A34A"/>
+  <text x="312" y="225" font-size="11" font-weight="600" fill="#16A34A">v</text>
+  <line x1="292" y1="170" x2="230" y2="170" stroke="#DC2626" stroke-width="2.5"/>
+  <polygon points="230,170 238,165 238,175" fill="#DC2626"/>
+  <text x="250" y="163" font-size="11" font-weight="600" fill="#DC2626">F</text>
+  <!-- Radius label -->
+  <line x1="200" y1="170" x2="295" y2="170" stroke="#D97706" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="250" y="195" text-anchor="middle" font-size="10" fill="#D97706">r</text>
+  <!-- Key -->
+  <text x="200" y="300" text-anchor="middle" font-size="10" fill="#16A34A">v is always tangential to the circle</text>
+  <text x="200" y="314" text-anchor="middle" font-size="10" fill="#DC2626">F is always directed towards the centre</text>
+</svg>
+</div>
+
 <h3>Centripetal Acceleration and Force</h3>
 <p>An object moving in a circle at constant speed is accelerating because its velocity (direction) is continuously changing. The acceleration is directed towards the centre of the circle.</p>
 
@@ -133,6 +169,34 @@
 </div>
 <div class="equation">a = &minus;&omega;<sup>2</sup>x</div>
 <p>Where a = acceleration (m s<sup>&minus;2</sup>), &omega; = angular frequency (rad s<sup>&minus;1</sup>), x = displacement from equilibrium (m). The minus sign indicates acceleration is always directed towards equilibrium (restoring force).</p>
+
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 540 350" style="max-width:600px; width:100%; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>svg text{font-family:system-ui,sans-serif;fill:#1a1a2e}</style>
+  <text x="270" y="22" text-anchor="middle" font-size="14" font-weight="700">SHM — Displacement, Velocity and Acceleration</text>
+  <!-- Displacement graph -->
+  <text x="30" y="58" font-size="10" font-weight="600" fill="#1a73e8">x</text>
+  <line x1="40" y1="80" x2="510" y2="80" stroke="#ccc" stroke-width="0.5"/>
+  <path d="M 40,80 Q 100,35 160,80 Q 220,125 280,80 Q 340,35 400,80 Q 460,125 510,80" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="520" y="84" font-size="9">t</text>
+  <text x="100" y="45" text-anchor="middle" font-size="9" fill="#1a73e8">+A</text>
+  <text x="220" y="130" text-anchor="middle" font-size="9" fill="#1a73e8">-A</text>
+  <!-- Velocity graph -->
+  <text x="30" y="158" font-size="10" font-weight="600" fill="#16A34A">v</text>
+  <line x1="40" y1="180" x2="510" y2="180" stroke="#ccc" stroke-width="0.5"/>
+  <path d="M 40,148 Q 100,180 160,212 Q 220,180 280,148 Q 340,180 400,212 Q 460,180 510,148" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="520" y="184" font-size="9">t</text>
+  <text x="40" y="145" font-size="9" fill="#16A34A">+Aω</text>
+  <!-- Acceleration graph -->
+  <text x="30" y="258" font-size="10" font-weight="600" fill="#DC2626">a</text>
+  <line x1="40" y1="280" x2="510" y2="280" stroke="#ccc" stroke-width="0.5"/>
+  <path d="M 40,280 Q 100,325 160,280 Q 220,235 280,280 Q 340,325 400,280 Q 460,235 510,280" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="520" y="284" font-size="9">t</text>
+  <text x="220" y="232" text-anchor="middle" font-size="9" fill="#DC2626">+Aω²</text>
+  <!-- Notes -->
+  <text x="270" y="340" text-anchor="middle" font-size="10" fill="#555">Velocity leads displacement by π/2; acceleration is antiphase with displacement</text>
+</svg>
+</div>
 
 <h3>SHM Equations</h3>
 <div class="equation">x = A cos(&omega;t) &nbsp;&nbsp; or &nbsp;&nbsp; x = A sin(&omega;t)</div>
@@ -189,6 +253,53 @@
 <div class="equation">F = &minus;GMm / r<sup>2</sup></div>
 <p>Where G = gravitational constant = 6.67 &times; 10<sup>&minus;11</sup> N m<sup>2</sup> kg<sup>&minus;2</sup>, M and m are the two masses (kg), r = distance between their centres (m). The negative sign indicates an attractive force.</p>
 
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 520 260" style="max-width:600px; width:100%; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>svg text{font-family:system-ui,sans-serif;fill:#1a1a2e}</style>
+  <text x="260" y="22" text-anchor="middle" font-size="14" font-weight="700">Gravitational Field Lines</text>
+  <!-- LEFT: Radial field -->
+  <text x="130" y="48" text-anchor="middle" font-size="11" font-weight="600" fill="#1a73e8">Radial Field (planet)</text>
+  <circle cx="130" cy="140" r="25" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="130" y="144" text-anchor="middle" font-size="10" font-weight="600" fill="white">M</text>
+  <!-- Radial arrows pointing inward -->
+  <line x1="130" y1="55" x2="130" y2="115" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="130,115 126,107 134,107" fill="#DC2626"/>
+  <line x1="130" y1="225" x2="130" y2="165" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="130,165 126,173 134,173" fill="#DC2626"/>
+  <line x1="45" y1="140" x2="105" y2="140" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="105,140 97,136 97,144" fill="#DC2626"/>
+  <line x1="215" y1="140" x2="155" y2="140" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="155,140 163,136 163,144" fill="#DC2626"/>
+  <!-- Diagonal arrows -->
+  <line x1="70" y1="80" x2="112" y2="122" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="112,122 104,118 108,112" fill="#DC2626"/>
+  <line x1="190" y1="80" x2="148" y2="122" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="148,122 152,112 156,118" fill="#DC2626"/>
+  <line x1="70" y1="200" x2="112" y2="158" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="112,158 104,162 108,168" fill="#DC2626"/>
+  <line x1="190" y1="200" x2="148" y2="158" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="148,158 152,168 156,162" fill="#DC2626"/>
+  <text x="130" y="248" text-anchor="middle" font-size="9" fill="#555">g ∝ 1/r² (inverse square)</text>
+
+  <!-- RIGHT: Uniform field -->
+  <text x="390" y="48" text-anchor="middle" font-size="11" font-weight="600" fill="#1a73e8">Uniform Field (near surface)</text>
+  <rect x="300" y="210" width="180" height="20" fill="#e2e8f0" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="390" y="225" text-anchor="middle" font-size="9">Earth's surface</text>
+  <!-- Parallel arrows pointing down -->
+  <line x1="320" y1="70" x2="320" y2="200" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="320,200 316,192 324,192" fill="#DC2626"/>
+  <line x1="355" y1="70" x2="355" y2="200" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="355,200 351,192 359,192" fill="#DC2626"/>
+  <line x1="390" y1="70" x2="390" y2="200" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="390,200 386,192 394,192" fill="#DC2626"/>
+  <line x1="425" y1="70" x2="425" y2="200" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="425,200 421,192 429,192" fill="#DC2626"/>
+  <line x1="460" y1="70" x2="460" y2="200" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="460,200 456,192 464,192" fill="#DC2626"/>
+  <text x="390" y="248" text-anchor="middle" font-size="9" fill="#555">g ≈ constant (parallel, equal spacing)</text>
+</svg>
+</div>
+
 <h3>Gravitational Field Strength</h3>
 <div class="equation">g = F / m = GM / r<sup>2</sup></div>
 <p>Units: N kg<sup>&minus;1</sup> or m s<sup>&minus;2</sup>. g is the force per unit mass and equals the acceleration due to gravity.</p>
@@ -241,6 +352,79 @@
 <h2>5.5 Astrophysics</h2>
 
 <h3>Stellar Evolution</h3>
+
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 560 300" style="max-width:600px; width:100%; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>svg text{font-family:system-ui,sans-serif;fill:#1a1a2e}</style>
+  <text x="280" y="22" text-anchor="middle" font-size="14" font-weight="700">Stellar Lifecycle</text>
+  <!-- Nebula -->
+  <ellipse cx="60" cy="140" rx="35" ry="25" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="60" y="138" text-anchor="middle" font-size="9" font-weight="600" fill="#1a73e8">Nebula</text>
+  <text x="60" y="150" text-anchor="middle" font-size="8" fill="#1a73e8">(gas cloud)</text>
+  <!-- Arrow -->
+  <line x1="95" y1="140" x2="125" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="125,140 118,136 118,144" fill="#1a1a2e"/>
+  <!-- Protostar -->
+  <circle cx="150" cy="140" r="18" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="150" y="138" text-anchor="middle" font-size="8" font-weight="600" fill="#D97706">Proto</text>
+  <text x="150" y="148" text-anchor="middle" font-size="8" font-weight="600" fill="#D97706">star</text>
+  <!-- Arrow -->
+  <line x1="168" y1="140" x2="198" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="198,140 191,136 191,144" fill="#1a1a2e"/>
+  <!-- Main sequence -->
+  <circle cx="228" cy="140" r="22" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="228" y="137" text-anchor="middle" font-size="8" font-weight="600" fill="white">Main</text>
+  <text x="228" y="148" text-anchor="middle" font-size="8" font-weight="600" fill="white">Seq.</text>
+  <!-- BRANCH: Low mass (top) -->
+  <line x1="250" y1="130" x2="290" y2="80" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="290,80 282,82 286,90" fill="#1a1a2e"/>
+  <text x="270" y="95" font-size="8" fill="#555">Low mass</text>
+  <!-- Red giant -->
+  <circle cx="320" cy="70" r="25" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="320" y="68" text-anchor="middle" font-size="8" font-weight="600" fill="#DC2626">Red</text>
+  <text x="320" y="78" text-anchor="middle" font-size="8" font-weight="600" fill="#DC2626">Giant</text>
+  <line x1="345" y1="70" x2="375" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="375,70 368,66 368,74" fill="#1a1a2e"/>
+  <!-- Planetary nebula -->
+  <ellipse cx="410" cy="70" rx="28" ry="18" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="410" y="68" text-anchor="middle" font-size="7" font-weight="600" fill="#1a73e8">Planetary</text>
+  <text x="410" y="78" text-anchor="middle" font-size="7" fill="#1a73e8">Nebula</text>
+  <line x1="438" y1="70" x2="468" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="468,70 461,66 461,74" fill="#1a1a2e"/>
+  <!-- White dwarf -->
+  <circle cx="490" cy="70" r="14" fill="#f0f9ff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="490" y="67" text-anchor="middle" font-size="7" font-weight="600" fill="#1a73e8">White</text>
+  <text x="490" y="77" text-anchor="middle" font-size="7" fill="#1a73e8">Dwarf</text>
+
+  <!-- BRANCH: High mass (bottom) -->
+  <line x1="250" y1="155" x2="290" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="290,200 282,192 286,198" fill="#1a1a2e"/>
+  <text x="260" y="190" font-size="8" fill="#555">High mass</text>
+  <!-- Red supergiant -->
+  <circle cx="325" cy="210" r="30" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="325" y="207" text-anchor="middle" font-size="8" font-weight="600" fill="#DC2626">Red</text>
+  <text x="325" y="218" text-anchor="middle" font-size="8" font-weight="600" fill="#DC2626">Supergiant</text>
+  <line x1="355" y1="210" x2="385" y2="210" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="385,210 378,206 378,214" fill="#1a1a2e"/>
+  <!-- Supernova -->
+  <circle cx="410" cy="210" r="20" fill="#fef3c7" stroke="#D97706" stroke-width="2"/>
+  <text x="410" y="208" text-anchor="middle" font-size="8" font-weight="700" fill="#D97706">Super</text>
+  <text x="410" y="218" text-anchor="middle" font-size="8" font-weight="700" fill="#D97706">nova</text>
+  <!-- Branch to neutron star or black hole -->
+  <line x1="430" y1="200" x2="480" y2="175" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="480,175 472,175 475,183" fill="#1a1a2e"/>
+  <circle cx="500" cy="170" r="14" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="500" y="167" text-anchor="middle" font-size="7" font-weight="600" fill="white">Neutron</text>
+  <text x="500" y="177" text-anchor="middle" font-size="7" fill="white">Star</text>
+
+  <line x1="430" y1="220" x2="480" y2="250" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="480,250 472,244 475,252" fill="#1a1a2e"/>
+  <circle cx="500" cy="260" r="14" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="500" y="264" text-anchor="middle" font-size="7" font-weight="600" fill="white">Black Hole</text>
+  <text x="540" y="255" font-size="7" fill="#555">&gt;3 M☉</text>
+</svg>
+</div>
+
 <table>
   <tr><th>Stage</th><th>Low/Medium Mass Star (like our Sun)</th><th>High Mass Star</th></tr>
   <tr><td>Birth</td><td colspan="2">Nebula &rarr; protostar (gravitational collapse, temperature rises)</td></tr>
@@ -250,6 +434,42 @@
 </table>
 
 <h3>Hertzsprung-Russell (HR) Diagram</h3>
+
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 480 380" style="max-width:550px; width:100%; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>svg text{font-family:system-ui,sans-serif;fill:#1a1a2e}</style>
+  <text x="240" y="22" text-anchor="middle" font-size="14" font-weight="700">Hertzsprung-Russell Diagram</text>
+  <!-- Axes -->
+  <line x1="60" y1="340" x2="440" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="340" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="250" y="370" text-anchor="middle" font-size="11" font-weight="600">Temperature / K</text>
+  <text x="100" y="365" font-size="9" fill="#555">40000</text>
+  <text x="200" y="365" font-size="9" fill="#555">10000</text>
+  <text x="300" y="365" font-size="9" fill="#555">5000</text>
+  <text x="400" y="365" font-size="9" fill="#555">3000</text>
+  <text x="440" y="344" font-size="9">&larr; hotter</text>
+  <text x="25" y="190" text-anchor="middle" font-size="11" font-weight="600" transform="rotate(-90 25 190)">Luminosity / L☉</text>
+  <!-- Main sequence band -->
+  <path d="M 100,60 Q 200,150 300,250 Q 350,300 410,330" fill="none" stroke="#1a73e8" stroke-width="12" opacity="0.25" stroke-linecap="round"/>
+  <path d="M 100,60 Q 200,150 300,250 Q 350,300 410,330" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="330" y="280" font-size="11" font-weight="600" fill="#1a73e8" transform="rotate(-45 330 280)">Main Sequence</text>
+  <!-- Red giants region -->
+  <ellipse cx="360" cy="120" rx="55" ry="40" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="360" y="115" text-anchor="middle" font-size="10" font-weight="600" fill="#DC2626">Red</text>
+  <text x="360" y="128" text-anchor="middle" font-size="10" font-weight="600" fill="#DC2626">Giants</text>
+  <!-- Supergiants -->
+  <ellipse cx="300" cy="60" rx="90" ry="20" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
+  <text x="300" y="65" text-anchor="middle" font-size="10" font-weight="600" fill="#D97706">Supergiants</text>
+  <!-- White dwarfs -->
+  <ellipse cx="140" cy="310" rx="50" ry="20" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="140" y="308" text-anchor="middle" font-size="10" font-weight="600" fill="#16A34A">White</text>
+  <text x="140" y="321" text-anchor="middle" font-size="10" font-weight="600" fill="#16A34A">Dwarfs</text>
+  <!-- Sun marker -->
+  <circle cx="280" cy="240" r="5" fill="#D97706" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="292" y="237" font-size="9" fill="#D97706">Sun</text>
+</svg>
+</div>
+
 <ul>
   <li>X-axis: temperature (decreasing left to right, or spectral class O B A F G K M)</li>
   <li>Y-axis: luminosity (increasing upward, often logarithmic)</li>
@@ -295,6 +515,373 @@
 
 <div class="exam-tip">
   <strong>Exam Tip:</strong> The CMB is not the same as starlight. It is thermal radiation from the early universe, now redshifted to microwave wavelengths due to the expansion of space. Its near-perfect uniformity and blackbody spectrum are strong evidence for the Big Bang.
+</div>
+
+<!-- ==================== PAG PRACTICALS ==================== -->
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; PAG 8: Investigation of SHM</h2>
+
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 500 300" style="max-width:550px; width:100%; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>svg text{font-family:system-ui,sans-serif;fill:#1a1a2e}</style>
+  <text x="250" y="22" text-anchor="middle" font-size="13" font-weight="700">PAG 8 — SHM Apparatus</text>
+  <!-- LEFT: Mass-spring -->
+  <text x="130" y="48" text-anchor="middle" font-size="11" font-weight="600" fill="#1a73e8">Mass-Spring System</text>
+  <!-- Clamp stand -->
+  <rect x="60" y="60" width="6" height="200" fill="#888" stroke="#555" stroke-width="1"/>
+  <rect x="35" y="255" width="56" height="10" rx="2" fill="#888" stroke="#555" stroke-width="1"/>
+  <!-- Horizontal arm -->
+  <rect x="66" y="65" width="50" height="6" fill="#888" stroke="#555" stroke-width="1"/>
+  <!-- Spring -->
+  <path d="M 115,71 L 115,80 L 125,85 L 105,95 L 125,105 L 105,115 L 125,125 L 105,135 L 125,145 L 115,150" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <!-- Mass -->
+  <rect x="100" y="150" width="30" height="25" rx="3" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="115" y="167" text-anchor="middle" font-size="9" font-weight="600" fill="white">m</text>
+  <!-- Fiducial marker -->
+  <line x1="85" y1="162" x2="98" y2="162" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="75" y="166" text-anchor="end" font-size="8" fill="#DC2626">Fiducial</text>
+  <text x="75" y="176" text-anchor="end" font-size="8" fill="#DC2626">marker</text>
+  <!-- Arrow showing oscillation -->
+  <line x1="140" y1="130" x2="140" y2="195" stroke="#16A34A" stroke-width="1.5"/>
+  <polygon points="140,130 136,138 144,138" fill="#16A34A"/>
+  <polygon points="140,195 136,187 144,187" fill="#16A34A"/>
+  <text x="155" y="165" font-size="8" fill="#16A34A">oscillation</text>
+
+  <!-- RIGHT: Pendulum -->
+  <text x="370" y="48" text-anchor="middle" font-size="11" font-weight="600" fill="#1a73e8">Simple Pendulum</text>
+  <!-- Clamp stand -->
+  <rect x="340" y="60" width="6" height="200" fill="#888" stroke="#555" stroke-width="1"/>
+  <rect x="315" y="255" width="56" height="10" rx="2" fill="#888" stroke="#555" stroke-width="1"/>
+  <!-- Horizontal arm -->
+  <rect x="346" y="65" width="40" height="6" fill="#888" stroke="#555" stroke-width="1"/>
+  <!-- String -->
+  <line x1="385" y1="71" x2="385" y2="210" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Bob -->
+  <circle cx="385" cy="218" r="10" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Dashed swing path -->
+  <path d="M 355,218 A 140,140 0 0,1 415,218" fill="none" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- Length label -->
+  <line x1="395" y1="71" x2="395" y2="210" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="408" y="145" font-size="10" font-weight="600" fill="#DC2626">L</text>
+  <!-- Timer -->
+  <rect x="200" y="220" width="80" height="35" rx="5" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="240" y="238" text-anchor="middle" font-size="9" font-weight="600" fill="#1a73e8">Stopwatch</text>
+  <text x="240" y="250" text-anchor="middle" font-size="8" fill="#1a73e8">Time 10 osc.</text>
+  <!-- Note -->
+  <text x="250" y="290" text-anchor="middle" font-size="10" fill="#555">Plot T&#178; vs m (spring) or T&#178; vs L (pendulum)</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li><strong>Mass-spring:</strong> Helical spring, clamp stand, mass hanger + slotted masses, stopwatch, ruler, fiducial marker</li>
+  <li><strong>Pendulum:</strong> String, small dense bob, clamp stand, protractor, stopwatch, metre ruler</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li><strong>Mass-spring:</strong> Attach a known mass m to the spring. Displace and release. Time 10 complete oscillations and divide by 10 to get T. Repeat 3 times and find the mean T. Repeat for at least 6 different masses.</li>
+  <li><strong>Pendulum:</strong> Measure the length L from the pivot to the centre of the bob. Displace to a small angle (&lt;10 degrees) and release. Time 10 complete oscillations. Repeat for at least 6 different lengths.</li>
+  <li>For mass-spring: plot T&sup2; against m. Gradient = 4&pi;&sup2;/k, so k = 4&pi;&sup2;/gradient.</li>
+  <li>For pendulum: plot T&sup2; against L. Gradient = 4&pi;&sup2;/g, so g = 4&pi;&sup2;/gradient.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Use a retort stand with a heavy base to prevent toppling</li>
+  <li>Place a cushion below the mass-spring in case the spring detaches</li>
+  <li>Use small amplitudes to keep within the SHM approximation</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>Mass-spring: T = 2&pi;&radic;(m/k), so T&sup2; = (4&pi;&sup2;/k)m. Plot T&sup2; vs m for a straight line through the origin with gradient = 4&pi;&sup2;/k.</p>
+<p>Pendulum: T = 2&pi;&radic;(L/g), so T&sup2; = (4&pi;&sup2;/g)L. Plot T&sup2; vs L for a straight line through the origin with gradient = 4&pi;&sup2;/g.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Human reaction time in starting/stopping the stopwatch</td><td>Random</td><td>Time 10+ oscillations and divide; use a fiducial marker at the equilibrium position; use light gates</td></tr>
+  <tr><td>Pendulum swinging in a circle instead of a plane</td><td>Systematic</td><td>Release carefully; use a short initial displacement</td></tr>
+  <tr><td>Measuring L to centre of bob is imprecise</td><td>Random</td><td>Use vernier calipers to measure bob diameter; L = string length + radius</td></tr>
+  <tr><td>Damping reduces amplitude during timing</td><td>Systematic</td><td>SHM period is independent of amplitude (if small), so this only affects accuracy if amplitude becomes too large</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The period of a simple pendulum is independent of mass and amplitude (for small angles). The period of a mass-spring system is independent of amplitude. Always verify these by checking that T remains constant when you vary the irrelevant variable.
+</div>
+</div>
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; PAG 9: Specific Heat Capacity</h2>
+
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 420 280" style="max-width:500px; width:100%; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>svg text{font-family:system-ui,sans-serif;fill:#1a1a2e}</style>
+  <text x="210" y="22" text-anchor="middle" font-size="13" font-weight="700">PAG 9 — Specific Heat Capacity Apparatus</text>
+  <!-- Metal block -->
+  <rect x="130" y="100" width="120" height="100" rx="6" fill="#cbd5e1" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="190" y="155" text-anchor="middle" font-size="11" font-weight="600">Metal Block</text>
+  <text x="190" y="170" text-anchor="middle" font-size="10">(mass m)</text>
+  <!-- Heater hole -->
+  <rect x="150" y="105" width="12" height="60" rx="3" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1"/>
+  <text x="140" y="80" text-anchor="end" font-size="9" fill="#DC2626">Heater</text>
+  <line x1="140" y1="82" x2="156" y2="105" stroke="#DC2626" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <!-- Thermometer hole -->
+  <rect x="220" y="105" width="8" height="55" rx="3" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1"/>
+  <text x="260" y="80" font-size="9" fill="#1a73e8">Thermometer</text>
+  <line x1="256" y1="82" x2="224" y2="105" stroke="#1a73e8" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <!-- Joulemeter / power supply -->
+  <rect x="20" y="110" width="80" height="40" rx="5" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="60" y="128" text-anchor="middle" font-size="9" font-weight="600" fill="#1a73e8">Power Supply</text>
+  <text x="60" y="140" text-anchor="middle" font-size="8" fill="#1a73e8">+ Joulemeter</text>
+  <!-- Wires to heater -->
+  <line x1="100" y1="125" x2="150" y2="125" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="100" y1="135" x2="150" y2="135" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- Insulation -->
+  <rect x="120" y="90" width="140" height="120" rx="8" fill="none" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="190" y="230" text-anchor="middle" font-size="9" fill="#16A34A">Insulation (lagging)</text>
+  <!-- Formula -->
+  <text x="210" y="265" text-anchor="middle" font-size="11" font-weight="600" fill="#1a73e8">c = E / (m &times; ΔT)</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Metal block (aluminium or copper) with holes for heater and thermometer</li>
+  <li>Electric immersion heater</li>
+  <li>Thermometer (or temperature probe/datalogger)</li>
+  <li>Joulemeter (or ammeter + voltmeter + stopwatch to calculate E = IVt)</li>
+  <li>Power supply</li>
+  <li>Insulation (lagging) around the block</li>
+  <li>Digital balance to measure mass of block</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure and record the mass m of the metal block using a balance</li>
+  <li>Insert the heater and thermometer into the holes; add a drop of oil for good thermal contact</li>
+  <li>Wrap the block in insulation to reduce heat loss</li>
+  <li>Record the initial temperature &theta;<sub>1</sub></li>
+  <li>Turn on the heater and record the energy E supplied (from the joulemeter, or calculate E = IVt)</li>
+  <li>When the temperature has risen by ~10-20 K, switch off the heater and record the maximum temperature &theta;<sub>2</sub></li>
+  <li>Calculate c = E / (m &times; &Delta;&theta;) where &Delta;&theta; = &theta;<sub>2</sub> &minus; &theta;<sub>1</sub></li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>The metal block gets very hot — use a heatproof mat and handle with tongs/gloves</li>
+  <li>Ensure the heater is fully inserted into the block before switching on</li>
+  <li>Do not leave the apparatus unattended while heating</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>From Q = mc&Delta;&theta;, rearranging gives c = Q/(m&Delta;&theta;). If using a datalogger, plot &theta; against t and use the gradient with P = mc(d&theta;/dt) to find c. Alternatively, plot E against &Delta;&theta; — the gradient = mc, so c = gradient/m.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Heat loss to surroundings</td><td>Systematic (gives c too high)</td><td>Insulate the block well; heat and cool by the same amount above and below room temperature</td></tr>
+  <tr><td>Block temperature is not uniform</td><td>Systematic</td><td>Wait for thermal equilibrium; use a well-lagged block; stir (if liquid)</td></tr>
+  <tr><td>Energy lost in wires and connections</td><td>Systematic</td><td>Place voltmeter across heater (not power supply) to measure actual energy input</td></tr>
+  <tr><td>Temperature continues rising after heater switched off</td><td>Systematic</td><td>Record the maximum temperature reached after switching off (thermal lag)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The experimental value of c is usually higher than the accepted value because some energy is lost to the surroundings. Better insulation reduces this systematic error.
+</div>
+</div>
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; PAG 6: Capacitor Charge and Discharge</h2>
+
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 480 260" style="max-width:550px; width:100%; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>svg text{font-family:system-ui,sans-serif;fill:#1a1a2e}</style>
+  <text x="240" y="22" text-anchor="middle" font-size="13" font-weight="700">PAG 6 — Capacitor Discharge Circuit</text>
+  <!-- Battery -->
+  <rect x="30" y="55" width="40" height="25" rx="3" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="50" y="72" text-anchor="middle" font-size="9" font-weight="600" fill="#D97706">PSU</text>
+  <!-- Switch (2-way) -->
+  <circle cx="110" cy="67" r="3" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="70" y1="67" x2="107" y2="67" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="113" y1="67" x2="140" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="110" y="50" text-anchor="middle" font-size="8">Switch</text>
+  <!-- Capacitor -->
+  <line x1="140" y1="67" x2="175" y2="67" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="175" y1="50" x2="175" y2="84" stroke="#1a73e8" stroke-width="3"/>
+  <line x1="183" y1="50" x2="183" y2="84" stroke="#1a73e8" stroke-width="3"/>
+  <text x="179" y="95" text-anchor="middle" font-size="10" font-weight="600" fill="#1a73e8">C</text>
+  <!-- Resistor -->
+  <line x1="183" y1="67" x2="210" y2="67" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="210" y="57" width="50" height="20" rx="3" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="235" y="71" text-anchor="middle" font-size="9" font-weight="600" fill="#1a73e8">R</text>
+  <!-- Wire back -->
+  <line x1="260" y1="67" x2="330" y2="67" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="330" y1="67" x2="330" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="330" y1="160" x2="30" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="30" y1="160" x2="30" y2="80" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Voltmeter across capacitor -->
+  <line x1="175" y1="90" x2="175" y2="130" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="183" y1="90" x2="300" y2="90" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="300" y1="90" x2="300" y2="130" stroke="#1a1a2e" stroke-width="1"/>
+  <circle cx="240" cy="135" r="15" fill="#fff8e1" stroke="#D97706" stroke-width="1.5"/>
+  <text x="240" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#D97706">V</text>
+  <line x1="175" y1="135" x2="225" y2="135" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="255" y1="135" x2="300" y2="135" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="240" y="165" text-anchor="middle" font-size="8" fill="#555">(or datalogger)</text>
+  <!-- Discharge graph inset -->
+  <rect x="345" y="40" width="125" height="100" fill="#fff" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+  <line x1="360" y1="125" x2="455" y2="125" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="360" y1="125" x2="360" y2="50" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="460" y="130" font-size="8">t</text>
+  <text x="354" y="50" font-size="8">V</text>
+  <path d="M 362,55 Q 390,60 410,80 Q 440,110 455,122" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <text x="407" y="72" font-size="7" fill="#DC2626">V = V₀e⁻ᵗ/ᴿᶜ</text>
+  <!-- ln(V) graph -->
+  <rect x="345" y="155" width="125" height="85" fill="#fff" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+  <line x1="360" y1="225" x2="455" y2="225" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="360" y1="225" x2="360" y2="165" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="460" y="230" font-size="8">t</text>
+  <text x="348" y="165" font-size="7">ln V</text>
+  <line x1="365" y1="170" x2="450" y2="220" stroke="#1a73e8" stroke-width="2"/>
+  <text x="400" y="185" font-size="7" fill="#1a73e8">grad = -1/RC</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Capacitor (e.g. 470 &mu;F or 1000 &mu;F electrolytic)</li>
+  <li>Resistor (e.g. 10 k&Omega; or 100 k&Omega; — chosen so RC gives a reasonable time constant)</li>
+  <li>DC power supply or battery</li>
+  <li>Two-way switch (or two separate switches for charge/discharge)</li>
+  <li>Voltmeter or datalogger with voltage sensor across the capacitor</li>
+  <li>Stopwatch (if no datalogger)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Connect the circuit: power supply, switch, capacitor, and resistor. Voltmeter (or datalogger) across the capacitor.</li>
+  <li>Close the switch to charge the capacitor fully (wait for V to reach V<sub>0</sub>)</li>
+  <li>Switch to discharge through the resistor. Start the stopwatch/datalogger.</li>
+  <li>Record V at regular time intervals (e.g. every 10 s) until V is negligible</li>
+  <li>Plot V against t to show exponential decay</li>
+  <li>Plot ln(V) against t — this should give a straight line with gradient = &minus;1/RC</li>
+  <li>From the gradient, calculate C (if R is known) or RC (the time constant)</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Ensure correct polarity for electrolytic capacitors</li>
+  <li>Do not exceed the rated voltage of the capacitor</li>
+  <li>Discharge capacitors before handling</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>From V = V<sub>0</sub>e<sup>&minus;t/RC</sup>, taking natural logs: ln(V) = ln(V<sub>0</sub>) &minus; t/RC. Plotting ln(V) vs t gives a straight line with gradient = &minus;1/RC and y-intercept = ln(V<sub>0</sub>).</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Voltmeter has finite resistance, providing an additional discharge path</td><td>Systematic</td><td>Use a high-resistance voltmeter or datalogger with very high input impedance</td></tr>
+  <tr><td>Timing errors when reading V manually</td><td>Random</td><td>Use a datalogger for continuous automated recording</td></tr>
+  <tr><td>Capacitor value tolerance (e.g. &plusmn;20%)</td><td>Systematic</td><td>Use the experimental value from the graph rather than the labelled value</td></tr>
+  <tr><td>Temperature changes affecting R</td><td>Systematic</td><td>Use a high-stability resistor; perform experiment quickly</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The time constant &tau; = RC is the time for V to fall to V<sub>0</sub>/e (about 37%). On the ln(V) vs t graph, 1/&tau; is the magnitude of the gradient. Choose R and C so that &tau; is between 10 s and 100 s for practical data collection.
+</div>
+</div>
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; PAG 10: Force on a Current-Carrying Wire</h2>
+
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 460 260" style="max-width:500px; width:100%; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>svg text{font-family:system-ui,sans-serif;fill:#1a1a2e}</style>
+  <text x="230" y="22" text-anchor="middle" font-size="13" font-weight="700">PAG 10 — Force on a Current-Carrying Wire</text>
+  <!-- Top-pan balance -->
+  <rect x="130" y="180" width="160" height="15" rx="3" fill="#e2e8f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="210" y="212" text-anchor="middle" font-size="10" font-weight="600">Top-pan balance</text>
+  <!-- Magnets on balance -->
+  <rect x="160" y="135" width="30" height="45" rx="3" fill="#DC2626" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="175" y="160" text-anchor="middle" font-size="8" font-weight="600" fill="white">N</text>
+  <rect x="230" y="135" width="30" height="45" rx="3" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="245" y="160" text-anchor="middle" font-size="8" font-weight="600" fill="white">S</text>
+  <!-- Yoke connecting magnets -->
+  <rect x="155" y="130" width="110" height="8" rx="2" fill="#888" stroke="#555" stroke-width="1"/>
+  <!-- Wire passing through gap -->
+  <line x1="100" y1="158" x2="155" y2="158" stroke="#D97706" stroke-width="3"/>
+  <line x1="265" y1="158" x2="350" y2="158" stroke="#D97706" stroke-width="3"/>
+  <text x="210" y="163" text-anchor="middle" font-size="9" font-weight="600" fill="#D97706">Wire (in gap)</text>
+  <line x1="190" y1="158" x2="230" y2="158" stroke="#D97706" stroke-width="3"/>
+  <!-- B field arrows in gap -->
+  <line x1="195" y1="148" x2="225" y2="148" stroke="#16A34A" stroke-width="1.5"/>
+  <polygon points="225,148 219,144 219,152" fill="#16A34A"/>
+  <text x="210" y="143" text-anchor="middle" font-size="8" fill="#16A34A">B</text>
+  <!-- Clamp stand for wire -->
+  <rect x="80" y="80" width="6" height="100" fill="#888" stroke="#555" stroke-width="1"/>
+  <rect x="350" y="80" width="6" height="100" fill="#888" stroke="#555" stroke-width="1"/>
+  <!-- Ammeter and PSU -->
+  <rect x="20" y="60" width="50" height="30" rx="3" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="45" y="79" text-anchor="middle" font-size="8" font-weight="600" fill="#D97706">PSU</text>
+  <circle cx="400" cy="75" r="15" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="400" y="80" text-anchor="middle" font-size="10" font-weight="700" fill="#1a73e8">A</text>
+  <!-- Wire connections -->
+  <line x1="70" y1="75" x2="80" y2="75" stroke="#999" stroke-width="1.5"/>
+  <line x1="356" y1="75" x2="385" y2="75" stroke="#999" stroke-width="1.5"/>
+  <!-- Force arrow -->
+  <line x1="210" y1="175" x2="210" y2="225" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="210,225 205,217 215,217" fill="#DC2626"/>
+  <text x="225" y="230" font-size="9" font-weight="600" fill="#DC2626">F = BIL</text>
+  <!-- Note -->
+  <text x="230" y="250" text-anchor="middle" font-size="9" fill="#555">Balance reads apparent mass change: F = Δm × g</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Strong magnets (horseshoe or U-shaped) mounted on a yoke, placed on a top-pan balance</li>
+  <li>Rigid straight wire passing through the magnetic field gap, supported by clamp stands</li>
+  <li>Variable DC power supply and ammeter in series with the wire</li>
+  <li>Top-pan balance (resolution 0.01 g or better)</li>
+  <li>Ruler to measure length L of wire in the field</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Set up the magnets on the top-pan balance with the wire passing horizontally through the gap between the poles</li>
+  <li>Zero the balance with no current flowing</li>
+  <li>Turn on the current and record the ammeter reading I and the new balance reading</li>
+  <li>The change in mass reading &Delta;m gives the force: F = &Delta;m &times; g (by Newton's Third Law, the force on the wire equals the force on the magnets)</li>
+  <li>Vary the current in at least 6 steps and record F and I at each</li>
+  <li>Plot F (y-axis) against I (x-axis)</li>
+  <li>Gradient = BL, so B = gradient / L</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Keep strong magnets away from electronic devices and pacemakers</li>
+  <li>Do not exceed the current rating of the wire</li>
+  <li>Switch off between readings to prevent wire heating</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>From F = BIL, with B and L constant, F is proportional to I. The gradient of F vs I gives BL. Measure L with a ruler to calculate B = gradient/L.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Magnetic field is not perfectly uniform across the gap</td><td>Systematic</td><td>Use a narrower gap or shaped pole pieces for a more uniform field</td></tr>
+  <tr><td>Wire not perfectly perpendicular to the field</td><td>Systematic</td><td>Align carefully using a set square; ensure wire is horizontal</td></tr>
+  <tr><td>Balance fluctuates due to vibrations</td><td>Random</td><td>Place on an anti-vibration surface; take readings when steady</td></tr>
+  <tr><td>Difficulty measuring exact length of wire in the field</td><td>Random</td><td>Use sharp-edged pole pieces so the field boundary is well-defined</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> By Newton's Third Law, the force on the wire (upward) is equal and opposite to the force on the magnets (downward). The balance reads an increased mass when the force pushes the magnets down, and decreased mass when it pushes them up.
+</div>
 </div>
 
 </div>

@@ -148,6 +148,61 @@
 </div>
 
 <h3>Error Bars</h3>
+
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 520 340" style="max-width:600px; width:100%; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>svg text{font-family:system-ui,sans-serif;font-size:11px;fill:#1a1a2e}</style>
+  <!-- Axes -->
+  <line x1="70" y1="290" x2="490" y2="290" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="70" y1="290" x2="70" y2="30" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="490,290 482,286 482,294" fill="#1a1a2e"/>
+  <polygon points="70,30 66,38 74,38" fill="#1a1a2e"/>
+  <text x="280" y="320" text-anchor="middle" font-size="12" font-weight="600">x / units</text>
+  <text x="30" y="160" text-anchor="middle" font-size="12" font-weight="600" transform="rotate(-90 30 160)">y / units</text>
+  <!-- Data points with error bars -->
+  <line x1="120" y1="240" x2="120" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="115" y1="240" x2="125" y2="240" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="115" y1="260" x2="125" y2="260" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="120" y1="250" x2="122" y2="250" stroke="none"/><text x="120" y="254" text-anchor="middle" font-size="0">.</text>
+  <rect x="117" y="247" width="6" height="6" fill="#1a73e8" transform="rotate(45 120 250)"/>
+
+  <line x1="190" y1="208" x2="190" y2="232" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="185" y1="208" x2="195" y2="208" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="185" y1="232" x2="195" y2="232" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="187" y="217" width="6" height="6" fill="#1a73e8" transform="rotate(45 190 220)"/>
+
+  <line x1="260" y1="172" x2="260" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="255" y1="172" x2="265" y2="172" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="255" y1="200" x2="265" y2="200" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="257" y="183" width="6" height="6" fill="#1a73e8" transform="rotate(45 260 186)"/>
+
+  <line x1="330" y1="138" x2="330" y2="170" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="325" y1="138" x2="335" y2="138" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="325" y1="170" x2="335" y2="170" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="327" y="151" width="6" height="6" fill="#1a73e8" transform="rotate(45 330 154)"/>
+
+  <line x1="400" y1="100" x2="400" y2="136" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="395" y1="100" x2="405" y2="100" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="395" y1="136" x2="405" y2="136" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="397" y="115" width="6" height="6" fill="#1a73e8" transform="rotate(45 400 118)"/>
+
+  <line x1="460" y1="62" x2="460" y2="102" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="455" y1="62" x2="465" y2="62" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="455" y1="102" x2="465" y2="102" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="457" y="79" width="6" height="6" fill="#1a73e8" transform="rotate(45 460 82)"/>
+
+  <!-- Best fit line (green) -->
+  <line x1="90" y1="272" x2="475" y2="60" stroke="#16A34A" stroke-width="2"/>
+  <!-- Worst fit line (red dashed) -->
+  <line x1="90" y1="260" x2="475" y2="80" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="8,4"/>
+
+  <!-- Labels -->
+  <text x="380" y="50" fill="#16A34A" font-weight="600" font-size="11">Best-fit line</text>
+  <text x="380" y="105" fill="#DC2626" font-weight="600" font-size="11">Worst-fit line</text>
+  <text x="260" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a2e">Error Bars with Best-Fit and Worst-Fit Lines</text>
+</svg>
+</div>
+
 <ul>
   <li>Error bars show the uncertainty in each data point</li>
   <li>They are drawn as vertical (and sometimes horizontal) lines extending above and below (or either side of) each data point</li>
@@ -202,6 +257,45 @@
 </ul>
 
 <h2>1.5 Errors</h2>
+
+<h3>Systematic vs Random Errors — Target Board Analogy</h3>
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>svg text{font-family:system-ui,sans-serif;font-size:11px;fill:#1a1a2e}</style>
+  <!-- Target 1: High accuracy, high precision -->
+  <circle cx="100" cy="120" r="55" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="100" cy="120" r="37" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="100" cy="120" r="19" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="100" cy="120" r="4" fill="#DC2626"/>
+  <circle cx="98" cy="115" r="3" fill="#1a73e8"/><circle cx="103" cy="118" r="3" fill="#1a73e8"/>
+  <circle cx="99" cy="123" r="3" fill="#1a73e8"/><circle cx="102" cy="116" r="3" fill="#1a73e8"/>
+  <circle cx="97" cy="119" r="3" fill="#1a73e8"/>
+  <text x="100" y="195" text-anchor="middle" font-weight="600" fill="#16A34A">Accurate &amp; Precise</text>
+  <text x="100" y="210" text-anchor="middle" font-size="10" fill="#555">No systematic or random error</text>
+  <!-- Target 2: High accuracy, low precision -->
+  <circle cx="250" cy="120" r="55" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="250" cy="120" r="37" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="250" cy="120" r="19" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="250" cy="120" r="4" fill="#DC2626"/>
+  <circle cx="235" cy="100" r="3" fill="#1a73e8"/><circle cx="268" cy="138" r="3" fill="#1a73e8"/>
+  <circle cx="260" cy="98" r="3" fill="#1a73e8"/><circle cx="238" cy="140" r="3" fill="#1a73e8"/>
+  <circle cx="255" cy="125" r="3" fill="#1a73e8"/>
+  <text x="250" y="195" text-anchor="middle" font-weight="600" fill="#D97706">Accurate, Not Precise</text>
+  <text x="250" y="210" text-anchor="middle" font-size="10" fill="#555">Random errors only</text>
+  <!-- Target 3: Low accuracy, high precision (systematic) -->
+  <circle cx="400" cy="120" r="55" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="400" cy="120" r="37" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="400" cy="120" r="19" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="400" cy="120" r="4" fill="#DC2626"/>
+  <circle cx="420" cy="98" r="3" fill="#1a73e8"/><circle cx="425" cy="100" r="3" fill="#1a73e8"/>
+  <circle cx="422" cy="103" r="3" fill="#1a73e8"/><circle cx="418" cy="96" r="3" fill="#1a73e8"/>
+  <circle cx="423" cy="99" r="3" fill="#1a73e8"/>
+  <text x="400" y="195" text-anchor="middle" font-weight="600" fill="#D97706">Precise, Not Accurate</text>
+  <text x="400" y="210" text-anchor="middle" font-size="10" fill="#555">Systematic error present</text>
+  <!-- Title -->
+  <text x="250" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a2e">Systematic vs Random Errors — Target Board Analogy</text>
+</svg>
+</div>
 
 <h3>Random Errors</h3>
 <div class="definition">

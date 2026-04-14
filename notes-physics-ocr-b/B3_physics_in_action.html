@@ -212,6 +212,47 @@
   <tr><td>Polymeric</td><td>Can undergo very large strains. Often shows non-linear elastic behaviour with hysteresis.</td><td>Rubber, polyethylene</td></tr>
 </table>
 
+<!-- SVG: Stress-Strain Curves for Different Materials -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 520 320" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="260" y="22" text-anchor="middle" font-size="14" font-weight="bold">Stress-Strain Curves</text>
+  <!-- Axes -->
+  <line x1="60" y1="280" x2="490" y2="280" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="280" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="490,280 483,276 483,284" fill="#1a1a2e"/>
+  <polygon points="60,40 56,48 64,48" fill="#1a1a2e"/>
+  <text x="280" y="305" text-anchor="middle" font-size="12">Strain</text>
+  <text x="25" y="160" text-anchor="middle" font-size="12" transform="rotate(-90,25,160)">Stress / Pa</text>
+
+  <!-- Ductile (blue) — linear then curves, necking, breaks -->
+  <path d="M 60,280 L 150,140 C 170,100 200,75 250,65 C 290,58 340,62 370,70 C 390,76 400,90 410,110" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <circle cx="410" cy="110" r="4" fill="#1a73e8"/>
+  <text x="410" y="108" font-size="10" fill="#1a73e8" dx="8">X</text>
+  <text x="310" y="50" font-size="11" fill="#1a73e8" font-weight="bold">Ductile (e.g. copper)</text>
+  <!-- UTS label -->
+  <line x1="250" y1="58" x2="250" y2="280" stroke="#1a73e8" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <text x="255" y="54" font-size="9" fill="#1a73e8">UTS</text>
+
+  <!-- Brittle (red) — linear then snaps -->
+  <path d="M 60,280 L 170,90" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <circle cx="170" cy="90" r="4" fill="#DC2626"/>
+  <text x="178" y="88" font-size="10" fill="#DC2626">X</text>
+  <text x="140" y="78" font-size="11" fill="#DC2626" font-weight="bold">Brittle (e.g. glass)</text>
+
+  <!-- Polymeric (green) — very large strain, non-linear -->
+  <path d="M 60,280 C 80,250 90,230 100,220 C 130,195 200,185 280,180 C 350,176 400,170 440,155 C 460,146 470,130 480,105" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+  <circle cx="480" cy="105" r="4" fill="#16A34A"/>
+  <text x="480" y="100" font-size="10" fill="#16A34A" dx="4">X</text>
+  <text x="430" y="180" font-size="11" fill="#16A34A" font-weight="bold">Polymeric (e.g. rubber)</text>
+
+  <!-- Key features on ductile curve -->
+  <!-- Limit of proportionality -->
+  <circle cx="150" cy="140" r="3" fill="#D97706"/>
+  <text x="152" y="152" font-size="9" fill="#D97706">Limit of proportionality</text>
+</svg>
+</div>
+
 <h3>Elastic and Plastic Deformation</h3>
 
 <div class="definition">
@@ -251,6 +292,118 @@
   <tr><td>Piezoelectric crystal</td><td>Pressure / Vibration</td><td>Generates a voltage when mechanically stressed</td></tr>
 </table>
 
+<!-- SVG: V-I Characteristics -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 560 300" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="280" y="22" text-anchor="middle" font-size="14" font-weight="bold">V-I Characteristics</text>
+
+  <!-- LEFT: Ohmic conductor -->
+  <text x="100" y="48" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a73e8">Ohmic Conductor</text>
+  <line x1="30" y1="170" x2="170" y2="170" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="100" y1="250" x2="100" y2="60" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="165" y="185" font-size="10">V</text>
+  <text x="105" y="68" font-size="10">I</text>
+  <line x1="45" y1="235" x2="155" y2="105" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="100" y="275" text-anchor="middle" font-size="10" fill="#555">Straight line: constant R</text>
+
+  <!-- MIDDLE: Filament lamp -->
+  <text x="290" y="48" text-anchor="middle" font-size="11" font-weight="bold" fill="#D97706">Filament Lamp</text>
+  <line x1="220" y1="170" x2="360" y2="170" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="290" y1="250" x2="290" y2="60" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="355" y="185" font-size="10">V</text>
+  <text x="295" y="68" font-size="10">I</text>
+  <!-- S-shaped curve through origin -->
+  <path d="M 235,235 C 260,200 280,180 290,170 C 300,160 320,140 345,115" fill="none" stroke="#D97706" stroke-width="2.5"/>
+  <text x="290" y="275" text-anchor="middle" font-size="10" fill="#555">Curves: R increases with T</text>
+
+  <!-- RIGHT: Diode -->
+  <text x="470" y="48" text-anchor="middle" font-size="11" font-weight="bold" fill="#16A34A">Diode</text>
+  <line x1="400" y1="170" x2="540" y2="170" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="470" y1="250" x2="470" y2="60" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="535" y="185" font-size="10">V</text>
+  <text x="475" y="68" font-size="10">I</text>
+  <!-- Flat then exponential rise -->
+  <path d="M 410,172 L 490,172 C 495,170 505,160 510,140 C 515,115 517,90 518,75" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+  <!-- Threshold voltage marker -->
+  <line x1="490" y1="175" x2="490" y2="250" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="492" y="260" font-size="9" fill="#DC2626">~0.6V</text>
+  <text x="470" y="275" text-anchor="middle" font-size="10" fill="#555">Threshold voltage for conduction</text>
+</svg>
+</div>
+
+<!-- SVG: Series and Parallel Circuit Diagrams -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 560 280" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="280" y="22" text-anchor="middle" font-size="14" font-weight="bold">Series and Parallel Circuits</text>
+
+  <!-- LEFT: Series -->
+  <text x="145" y="48" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a73e8">Series</text>
+  <!-- Battery -->
+  <line x1="40" y1="90" x2="40" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="40" y1="90" x2="65" y2="90" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Cell symbol -->
+  <line x1="65" y1="78" x2="65" y2="102" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="72" y1="84" x2="72" y2="96" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="72" y1="90" x2="90" y2="90" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Top wire -->
+  <line x1="90" y1="90" x2="260" y2="90" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- R1 box -->
+  <rect x="110" y="78" width="40" height="24" fill="none" stroke="#1a73e8" stroke-width="2" rx="2"/>
+  <text x="130" y="95" text-anchor="middle" font-size="10" fill="#1a73e8">R1</text>
+  <!-- R2 box -->
+  <rect x="175" y="78" width="40" height="24" fill="none" stroke="#DC2626" stroke-width="2" rx="2"/>
+  <text x="195" y="95" text-anchor="middle" font-size="10" fill="#DC2626">R2</text>
+  <!-- Right wire down -->
+  <line x1="260" y1="90" x2="260" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Bottom wire -->
+  <line x1="40" y1="200" x2="260" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Current arrow -->
+  <polygon points="155,82 150,76 160,76" fill="#D97706"/>
+  <text x="155" y="72" text-anchor="middle" font-size="9" fill="#D97706">I (same)</text>
+  <!-- Formulas -->
+  <text x="145" y="228" text-anchor="middle" font-size="10" fill="#1a1a2e">R_total = R1 + R2</text>
+  <text x="145" y="244" text-anchor="middle" font-size="10" fill="#1a1a2e">Same current throughout</text>
+  <text x="145" y="260" text-anchor="middle" font-size="10" fill="#1a1a2e">V = V1 + V2</text>
+
+  <!-- RIGHT: Parallel -->
+  <text x="420" y="48" text-anchor="middle" font-size="12" font-weight="bold" fill="#16A34A">Parallel</text>
+  <!-- Battery -->
+  <line x1="310" y1="90" x2="310" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="310" y1="90" x2="335" y2="90" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Cell symbol -->
+  <line x1="335" y1="78" x2="335" y2="102" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="342" y1="84" x2="342" y2="96" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="342" y1="90" x2="365" y2="90" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Top wire to junction -->
+  <line x1="365" y1="90" x2="420" y2="90" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Branch up R1 -->
+  <line x1="420" y1="90" x2="420" y2="110" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="400" y="110" width="40" height="20" fill="none" stroke="#1a73e8" stroke-width="2" rx="2"/>
+  <text x="420" y="124" text-anchor="middle" font-size="10" fill="#1a73e8">R1</text>
+  <line x1="420" y1="130" x2="420" y2="148" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Branch down R2 -->
+  <line x1="490" y1="90" x2="490" y2="110" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="470" y="110" width="40" height="20" fill="none" stroke="#DC2626" stroke-width="2" rx="2"/>
+  <text x="490" y="124" text-anchor="middle" font-size="10" fill="#DC2626">R2</text>
+  <line x1="490" y1="130" x2="490" y2="148" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Connect branches -->
+  <line x1="420" y1="90" x2="490" y2="90" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="420" y1="148" x2="490" y2="148" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Right wire to bottom -->
+  <line x1="530" y1="90" x2="530" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="490" y1="90" x2="530" y2="90" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Bottom junction -->
+  <line x1="455" y1="148" x2="455" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="310" y1="200" x2="530" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Formulas -->
+  <text x="420" y="228" text-anchor="middle" font-size="10" fill="#1a1a2e">1/R_total = 1/R1 + 1/R2</text>
+  <text x="420" y="244" text-anchor="middle" font-size="10" fill="#1a1a2e">Same p.d. across each branch</text>
+  <text x="420" y="260" text-anchor="middle" font-size="10" fill="#1a1a2e">I = I1 + I2</text>
+</svg>
+</div>
+
 <h3>Signal Conditioning</h3>
 <p>Raw sensor signals often need processing before they can be used:</p>
 <ul>
@@ -265,6 +418,447 @@
 
 <h3>Calibration</h3>
 <p>Sensors must be calibrated against known standards to ensure their readings are accurate. Calibration involves comparing the sensor output with reference values and creating a calibration curve or lookup table. For example, a thermistor-based thermometer would be calibrated using ice-water (0 &deg;C) and boiling water (100 &deg;C) as reference points.</p>
+
+<!-- ==================== REQUIRED PRACTICALS ==================== -->
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">Practical Activity: Resistivity of a Wire</h2>
+
+<!-- SVG: Apparatus Diagram -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 520 220" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="260" y="20" text-anchor="middle" font-size="13" font-weight="bold">Resistivity of a Wire — Apparatus Setup</text>
+  <!-- Ruler -->
+  <rect x="60" y="120" width="400" height="14" fill="#f1f5f9" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="260" y="130" text-anchor="middle" font-size="9">metre ruler</text>
+  <!-- Ruler marks -->
+  <line x1="60" y1="134" x2="60" y2="140" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="60" y="150" text-anchor="middle" font-size="7">0</text>
+  <line x1="160" y1="134" x2="160" y2="140" stroke="#1a1a2e" stroke-width="0.5"/>
+  <line x1="260" y1="134" x2="260" y2="140" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="260" y="150" text-anchor="middle" font-size="7">50cm</text>
+  <line x1="360" y1="134" x2="360" y2="140" stroke="#1a1a2e" stroke-width="0.5"/>
+  <line x1="460" y1="134" x2="460" y2="140" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="460" y="150" text-anchor="middle" font-size="7">100cm</text>
+  <!-- Wire along ruler -->
+  <line x1="60" y1="115" x2="460" y2="115" stroke="#D97706" stroke-width="2"/>
+  <text x="260" y="110" text-anchor="middle" font-size="10" fill="#D97706">Constantan wire</text>
+  <!-- Crocodile clips -->
+  <polygon points="55,112 45,108 45,122 55,118" fill="#1a1a2e"/>
+  <text x="38" y="118" text-anchor="end" font-size="8">Clip</text>
+  <polygon points="350,112 360,108 360,122 350,118" fill="#1a1a2e"/>
+  <text x="365" y="108" font-size="8">Movable clip</text>
+  <!-- Ammeter -->
+  <circle cx="100" cy="60" r="18" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="100" y="64" text-anchor="middle" font-size="11" fill="#1a73e8" font-weight="bold">A</text>
+  <!-- Voltmeter -->
+  <circle cx="250" cy="60" r="18" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="250" y="64" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="bold">V</text>
+  <!-- Battery -->
+  <line x1="20" y1="55" x2="20" y2="65" stroke="#1a1a2e" stroke-width="3"/>
+  <line x1="30" y1="50" x2="30" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Wiring -->
+  <line x1="30" y1="60" x2="82" y2="60" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="118" y1="60" x2="140" y2="60" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="140" y1="60" x2="140" y2="115" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="45" y1="115" x2="60" y2="115" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="20" y1="60" x2="20" y2="115" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="20" y1="115" x2="45" y2="115" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Voltmeter connections -->
+  <line x1="232" y1="60" x2="180" y2="60" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="180" y1="60" x2="180" y2="115" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="268" y1="60" x2="320" y2="60" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="320" y1="60" x2="320" y2="115" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- Micrometer label -->
+  <text x="260" y="180" text-anchor="middle" font-size="10" fill="#555">Measure wire diameter with micrometer at 3+ points</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Constantan wire (approx 1 m), taped to a metre ruler</li>
+  <li>Crocodile clips (one fixed, one movable along the wire)</li>
+  <li>DC power supply or battery pack</li>
+  <li>Ammeter (in series) and voltmeter (in parallel across the wire section)</li>
+  <li>Micrometer screw gauge (to measure wire diameter)</li>
+  <li>Switch</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure the diameter of the wire at three different points along its length using the micrometer, rotating the wire 90 degrees each time. Calculate the mean diameter and hence the cross-sectional area: A = pi(d/2)^2.</li>
+  <li>Set up the circuit with the ammeter in series and the voltmeter in parallel across the section of wire being tested.</li>
+  <li>Fix one crocodile clip at the 0 cm mark. Connect the other clip at 10 cm to give a length L = 0.100 m.</li>
+  <li>Close the switch briefly, record the ammeter and voltmeter readings, then open the switch (to avoid heating the wire).</li>
+  <li>Calculate resistance: R = V / I.</li>
+  <li>Repeat for lengths of 20 cm, 30 cm, 40 cm, ..., up to 100 cm.</li>
+  <li>Plot a graph of R (y-axis) against L (x-axis). The gradient equals rho / A, so rho = gradient x A.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Keep the current low (below 1 A) and only switch on briefly to prevent the wire heating up (which changes its resistance)</li>
+  <li>Do not touch the wire while current is flowing as it may become hot</li>
+  <li>Ensure the wire is securely taped to the ruler so it does not spring off</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>Plot R against L. For a uniform wire, R = rhoL / A, so the graph should be a straight line through the origin with gradient = rho / A. Calculate rho = gradient x A. The accepted value for constantan is approximately 4.9 x 10^-7 ohm m.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95rem;">
+  <tr><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Source of Error</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Type</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Improvement</th></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Wire heats up during measurement, changing resistance</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Keep current low, switch on briefly, allow cooling between readings</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Difficulty measuring exact length to crocodile clip contact point</td><td style="border:1px solid #cbd5e1; padding:8px;">Random</td><td style="border:1px solid #cbd5e1; padding:8px;">Use large range of lengths; clip position uncertainty is small fraction of total</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Wire diameter not uniform</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Measure diameter at multiple points and orientations, use mean</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Zero error on micrometer</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Check zero reading before use and subtract any zero error</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The biggest source of uncertainty is usually the diameter measurement, since it is squared when calculating area. A small percentage error in d leads to double that percentage error in A, and hence in rho.
+</div>
+</div>
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">Practical Activity: V-I Characteristics</h2>
+
+<!-- SVG: Apparatus Diagram -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 480 200" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="240" y="20" text-anchor="middle" font-size="13" font-weight="bold">V-I Characteristics — Circuit Setup</text>
+  <!-- Battery -->
+  <line x1="30" y1="70" x2="30" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="30" y1="70" x2="50" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="50" y1="60" x2="50" y2="80" stroke="#1a1a2e" stroke-width="2.5"/>
+  <line x1="58" y1="64" x2="58" y2="76" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="58" y1="70" x2="80" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Variable resistor -->
+  <rect x="85" y="58" width="50" height="24" fill="none" stroke="#1a1a2e" stroke-width="1.5" rx="2"/>
+  <text x="110" y="74" text-anchor="middle" font-size="9">Var R</text>
+  <line x1="110" y1="50" x2="110" y2="58" stroke="#1a1a2e" stroke-width="1"/>
+  <polygon points="107,50 113,50 110,55" fill="#1a1a2e"/>
+  <line x1="135" y1="70" x2="160" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Ammeter -->
+  <circle cx="185" cy="70" r="16" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="185" y="74" text-anchor="middle" font-size="11" fill="#1a73e8" font-weight="bold">A</text>
+  <line x1="201" y1="70" x2="240" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Component (lamp or diode) -->
+  <circle cx="270" cy="70" r="16" fill="none" stroke="#D97706" stroke-width="1.5"/>
+  <text x="270" y="60" text-anchor="middle" font-size="8" fill="#D97706">Component</text>
+  <text x="270" y="75" text-anchor="middle" font-size="8" fill="#D97706">(lamp/diode)</text>
+  <line x1="286" y1="70" x2="350" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="350" y1="70" x2="350" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="30" y1="160" x2="350" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Voltmeter in parallel -->
+  <line x1="240" y1="70" x2="240" y2="130" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="300" y1="70" x2="300" y2="130" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <circle cx="270" cy="130" r="14" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="270" y="134" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="bold">V</text>
+  <line x1="240" y1="130" x2="256" y2="130" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="284" y1="130" x2="300" y2="130" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- Labels -->
+  <text x="240" y="185" text-anchor="middle" font-size="10" fill="#555">Vary the variable resistor to change V and I</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>DC power supply (or battery pack)</li>
+  <li>Variable resistor (rheostat) to vary the p.d. across the component</li>
+  <li>Ammeter (in series)</li>
+  <li>Voltmeter (in parallel with the component)</li>
+  <li>Component under test: filament lamp, diode, or fixed resistor</li>
+  <li>Switch and connecting leads</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Connect the circuit with the ammeter in series and the voltmeter in parallel across the component.</li>
+  <li>For the filament lamp: vary the variable resistor to obtain a range of voltages from 0 V up to the rated voltage. Record V and I at each setting. Reverse the battery connections and repeat to obtain negative V and I values.</li>
+  <li>For the diode: start with the diode in forward bias. Increase voltage gradually from 0 V. Note the threshold voltage (~0.6 V for silicon) where current begins to flow significantly. Reverse the connections (reverse bias) — current should be effectively zero.</li>
+  <li>Plot I (y-axis) against V (x-axis) for each component.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Do not exceed the rated voltage of the filament lamp</li>
+  <li>The filament lamp may become very hot — do not touch during or immediately after the experiment</li>
+  <li>Do not exceed the maximum reverse voltage for the diode (to avoid breakdown)</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>An ohmic conductor gives a straight line through the origin. The filament lamp curve shows increasing gradient (resistance increases with temperature). The diode shows negligible current below the threshold voltage, then a rapid exponential increase in forward bias, and near-zero current in reverse bias.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95rem;">
+  <tr><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Source of Error</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Type</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Improvement</th></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Lamp temperature changes during readings, affecting resistance</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Allow the lamp to reach thermal equilibrium at each voltage before recording</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Ammeter has internal resistance, affecting measured values</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Use a low-resistance ammeter; use a potential divider instead of variable resistor for finer control</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A potential divider circuit allows you to vary the voltage from 0 V to the supply voltage, whereas a simple variable resistor in series cannot reduce the voltage to zero. Use a potential divider for components (like diodes) where you need fine voltage control near zero.
+</div>
+</div>
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">Practical Activity: Determining the Young Modulus</h2>
+
+<!-- SVG: Apparatus Diagram -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 520 240" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="260" y="20" text-anchor="middle" font-size="13" font-weight="bold">Young Modulus — Searle's Apparatus</text>
+  <!-- Clamp at top -->
+  <rect x="40" y="40" width="80" height="20" fill="#888" stroke="#1a1a2e" stroke-width="1" rx="3"/>
+  <text x="80" y="54" text-anchor="middle" font-size="9" fill="white">G-clamp / support</text>
+  <!-- Wire -->
+  <line x1="80" y1="60" x2="80" y2="180" stroke="#D97706" stroke-width="2"/>
+  <text x="60" y="120" font-size="9" fill="#D97706" text-anchor="end">Long wire</text>
+  <text x="60" y="132" font-size="9" fill="#D97706" text-anchor="end">(~2 m)</text>
+  <!-- Ruler alongside -->
+  <rect x="90" y="60" width="8" height="120" fill="#f1f5f9" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="108" y="120" font-size="8">Ruler</text>
+  <!-- Marker on wire -->
+  <line x1="76" y1="170" x2="96" y2="170" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="108" y="174" font-size="8" fill="#DC2626">Marker</text>
+  <!-- Masses at bottom -->
+  <rect x="65" y="180" width="30" height="25" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1" rx="2"/>
+  <text x="80" y="196" text-anchor="middle" font-size="9" fill="white">Mass</text>
+  <!-- Travelling microscope -->
+  <rect x="200" y="100" width="80" height="40" fill="none" stroke="#16A34A" stroke-width="1.5" rx="3"/>
+  <text x="240" y="118" text-anchor="middle" font-size="9" fill="#16A34A">Travelling</text>
+  <text x="240" y="130" text-anchor="middle" font-size="9" fill="#16A34A">microscope</text>
+  <line x1="200" y1="120" x2="100" y2="170" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,2"/>
+  <!-- Micrometer label -->
+  <rect x="350" y="50" width="130" height="30" fill="none" stroke="#1a73e8" stroke-width="1" rx="3"/>
+  <text x="415" y="62" text-anchor="middle" font-size="9" fill="#1a73e8">Micrometer: measure</text>
+  <text x="415" y="74" text-anchor="middle" font-size="9" fill="#1a73e8">wire diameter d</text>
+  <!-- Formula -->
+  <text x="380" y="120" font-size="10" fill="#1a1a2e">E = stress / strain</text>
+  <text x="380" y="136" font-size="10" fill="#1a1a2e">E = (F/A) / (deltaL/L)</text>
+  <text x="380" y="152" font-size="10" fill="#1a1a2e">E = FL / (A x deltaL)</text>
+  <!-- Note -->
+  <text x="260" y="225" text-anchor="middle" font-size="10" fill="#555">Use a long wire to give measurable extensions</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Long thin copper or steel wire (~2 m), clamped securely at the top</li>
+  <li>Metre ruler or reference wire for measuring original length</li>
+  <li>Micrometer screw gauge (to measure wire diameter)</li>
+  <li>Slotted masses and hanger</li>
+  <li>Travelling microscope or Vernier scale (to measure small extensions)</li>
+  <li>Marker or tape on the wire to track extension</li>
+  <li>Safety goggles</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure the original length L of the wire from the clamp to the marker using a metre ruler.</li>
+  <li>Measure the diameter d of the wire at several points using the micrometer. Calculate mean d, then cross-sectional area A = pi(d/2)^2.</li>
+  <li>Attach the mass hanger. Start with a small initial load to straighten the wire (do not include this in data).</li>
+  <li>Add known masses (e.g., 100 g increments). For each mass, record the extension delta-L using the travelling microscope or Vernier scale.</li>
+  <li>Continue adding masses until you have at least 6 data points. Do not exceed the elastic limit.</li>
+  <li>Unload the masses to check the wire returns to its original length (confirming elastic behaviour).</li>
+  <li>Plot stress (F/A) against strain (delta-L / L). The gradient of the linear region is the Young modulus E.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Wear safety goggles — the wire is under tension and could snap</li>
+  <li>Place a cushion or sand tray beneath the masses in case they fall</li>
+  <li>Do not stand directly beneath the hanging masses</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>The gradient of the stress-strain graph in the linear (Hooke's law) region gives the Young modulus E directly. Alternatively, plot F against delta-L and use E = gradient x L / A.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95rem;">
+  <tr><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Source of Error</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Type</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Improvement</th></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Difficulty measuring small extensions accurately</td><td style="border:1px solid #cbd5e1; padding:8px;">Random</td><td style="border:1px solid #cbd5e1; padding:8px;">Use a long wire to increase extensions; use a travelling microscope for high precision</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Wire diameter not uniform</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Measure at multiple points and orientations, use the mean</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Wire slipping at the clamp</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Ensure clamp is tight; check by loading and unloading to confirm no slippage</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Thermal expansion from temperature changes</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Use a reference wire alongside (Searle's method) so thermal effects cancel</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The largest percentage uncertainty is almost always in the diameter measurement (it is squared). Using a long thin wire maximises the extension for a given stress, making measurements more accurate.
+</div>
+</div>
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">Practical Activity: EMF and Internal Resistance</h2>
+
+<!-- SVG: Apparatus Diagram -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 440 200" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="220" y="20" text-anchor="middle" font-size="13" font-weight="bold">EMF and Internal Resistance</text>
+  <!-- Cell with internal resistance -->
+  <rect x="30" y="55" width="60" height="30" fill="none" stroke="#D97706" stroke-width="1.5" rx="3" stroke-dasharray="4,2"/>
+  <line x1="48" y1="60" x2="48" y2="80" stroke="#1a1a2e" stroke-width="2.5"/>
+  <line x1="56" y1="64" x2="56" y2="76" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="60" y="50" font-size="9" fill="#D97706">EMF, r</text>
+  <!-- Top wire -->
+  <line x1="56" y1="70" x2="130" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Variable resistor -->
+  <rect x="130" y="58" width="60" height="24" fill="none" stroke="#1a1a2e" stroke-width="1.5" rx="2"/>
+  <text x="160" y="74" text-anchor="middle" font-size="9">Var R</text>
+  <line x1="160" y1="50" x2="160" y2="58" stroke="#1a1a2e" stroke-width="1"/>
+  <polygon points="157,50 163,50 160,55" fill="#1a1a2e"/>
+  <line x1="190" y1="70" x2="230" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Ammeter -->
+  <circle cx="255" cy="70" r="16" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="255" y="74" text-anchor="middle" font-size="11" fill="#1a73e8" font-weight="bold">A</text>
+  <line x1="271" y1="70" x2="380" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="380" y1="70" x2="380" y2="150" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="30" y1="85" x2="30" y2="150" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="30" y1="150" x2="380" y2="150" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Voltmeter across cell -->
+  <line x1="90" y1="70" x2="90" y2="120" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="310" y1="70" x2="310" y2="120" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <circle cx="200" cy="120" r="14" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="200" y="124" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="bold">V</text>
+  <line x1="90" y1="120" x2="186" y2="120" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="214" y1="120" x2="310" y2="120" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- Formula -->
+  <text x="220" y="182" text-anchor="middle" font-size="11" fill="#1a1a2e">V = EMF - Ir, so plot V vs I: gradient = -r, y-intercept = EMF</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Cell or battery (with non-negligible internal resistance)</li>
+  <li>Variable resistor (rheostat)</li>
+  <li>Ammeter (in series)</li>
+  <li>Voltmeter (in parallel across the cell)</li>
+  <li>Switch and connecting leads</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Set up the circuit with the variable resistor, ammeter in series, and voltmeter across the cell terminals.</li>
+  <li>Adjust the variable resistor to its maximum resistance. Close the switch, record V and I.</li>
+  <li>Gradually decrease the resistance, recording V and I at each setting (at least 6 pairs).</li>
+  <li>Open the switch between readings to minimise energy drain on the cell.</li>
+  <li>Plot V (y-axis) against I (x-axis).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Do not short-circuit the cell (resistance too low) as it will overheat and may leak</li>
+  <li>Switch off between readings to prolong cell life</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>From V = EMF - Ir, the graph of V against I is a straight line with y-intercept = EMF and gradient = -r. The internal resistance r is the magnitude of the gradient. The EMF is the open-circuit voltage (when I = 0).</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95rem;">
+  <tr><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Source of Error</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Type</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Improvement</th></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Cell EMF decreases over time as it runs down</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Take readings quickly; switch off between readings; use a fresh cell</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Contact resistance at connections</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Use clean, tight connections; use crocodile clips or solder</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The y-intercept gives the EMF because when I = 0 there is no voltage lost across the internal resistance. You cannot measure EMF directly with a voltmeter connected to a cell in a complete circuit because the voltmeter draws some current.
+</div>
+</div>
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">Practical Activity: Stationary Waves on a String</h2>
+
+<!-- SVG: Apparatus Diagram -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 520 200" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="260" y="20" text-anchor="middle" font-size="13" font-weight="bold">Stationary Waves on a String</text>
+  <!-- Signal generator -->
+  <rect x="20" y="60" width="60" height="35" fill="none" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <text x="50" y="76" text-anchor="middle" font-size="8" fill="#1a73e8">Signal</text>
+  <text x="50" y="86" text-anchor="middle" font-size="8" fill="#1a73e8">generator</text>
+  <!-- Vibration generator -->
+  <rect x="100" y="65" width="35" height="25" fill="#888" stroke="#1a1a2e" stroke-width="1" rx="2"/>
+  <text x="117" y="80" text-anchor="middle" font-size="7" fill="white">Vibrator</text>
+  <line x1="80" y1="78" x2="100" y2="78" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- String showing standing wave (2nd harmonic) -->
+  <path d="M 135,78 C 180,30 225,30 270,78 C 315,126 360,126 405,78" fill="none" stroke="#D97706" stroke-width="2"/>
+  <!-- Nodes -->
+  <circle cx="135" cy="78" r="3" fill="#DC2626"/>
+  <circle cx="270" cy="78" r="3" fill="#DC2626"/>
+  <circle cx="405" cy="78" r="3" fill="#DC2626"/>
+  <text x="135" y="108" text-anchor="middle" font-size="8" fill="#DC2626">N</text>
+  <text x="270" y="108" text-anchor="middle" font-size="8" fill="#DC2626">N</text>
+  <text x="405" y="108" text-anchor="middle" font-size="8" fill="#DC2626">N</text>
+  <!-- Antinodes -->
+  <text x="200" y="28" text-anchor="middle" font-size="8" fill="#16A34A">A</text>
+  <text x="340" y="130" text-anchor="middle" font-size="8" fill="#16A34A">A</text>
+  <!-- Pulley -->
+  <circle cx="420" cy="78" r="10" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="420" cy="78" r="2" fill="#1a1a2e"/>
+  <text x="420" y="62" text-anchor="middle" font-size="8">Pulley</text>
+  <!-- Hanging mass -->
+  <line x1="430" y1="78" x2="450" y2="78" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="450" y1="78" x2="450" y2="130" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="438" y="130" width="24" height="20" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1" rx="2"/>
+  <text x="450" y="144" text-anchor="middle" font-size="8" fill="white">Mass</text>
+  <!-- Length label -->
+  <line x1="135" y1="155" x2="405" y2="155" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="135" y1="150" x2="135" y2="160" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="405" y1="150" x2="405" y2="160" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="270" y="170" text-anchor="middle" font-size="10">L (measure between nodes)</text>
+  <!-- Note -->
+  <text x="260" y="192" text-anchor="middle" font-size="9" fill="#555">N = node (zero displacement), A = antinode (max displacement)</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Signal generator connected to a vibration generator (mechanical oscillator)</li>
+  <li>String (e.g., nylon), attached to the vibrator at one end</li>
+  <li>Pulley clamped at the other end of the bench</li>
+  <li>Slotted masses on a hanger (to provide tension in the string)</li>
+  <li>Metre ruler (to measure the length between nodes)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Set up the apparatus with the string passing over the pulley and the masses hanging from the end.</li>
+  <li>Set a fixed mass (tension) and slowly increase the frequency on the signal generator from a low value.</li>
+  <li>Observe the string for the first harmonic (fundamental): one antinode, two nodes at the ends. Record this frequency f1.</li>
+  <li>Continue increasing frequency to find the 2nd harmonic (two antinodes), 3rd harmonic, etc.</li>
+  <li>Measure the vibrating length L between the nodes at each end.</li>
+  <li>For the fundamental: wavelength = 2L, so wave speed v = f1 x 2L.</li>
+  <li>Investigate how changing the tension (by changing the mass) or the length affects the resonant frequency.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Place a cushion or sand tray under the hanging masses</li>
+  <li>Wear safety goggles in case the string snaps</li>
+  <li>Keep fingers away from the vibrating string</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>For a string of mass per unit length mu under tension T, the wave speed is v = sqrt(T/mu). The fundamental frequency is f1 = v/(2L) = (1/2L)sqrt(T/mu). Plotting f1 against 1/L (for constant T) should give a straight line through the origin. Or plot f1^2 against T to verify the relationship.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95rem;">
+  <tr><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Source of Error</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Type</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Improvement</th></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Difficulty judging exact position of nodes</td><td style="border:1px solid #cbd5e1; padding:8px;">Random</td><td style="border:1px solid #cbd5e1; padding:8px;">Use a card rider (small piece of paper) that stays still at nodes but is thrown off at antinodes</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Signal generator frequency not exact</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Calibrate with a known frequency source or use a digital frequency meter</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">String sags under its own weight</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Use a light string with sufficient tension to minimise sag</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> At the fundamental frequency, the wavelength is twice the string length (lambda = 2L). For the nth harmonic, lambda = 2L/n. The speed of the wave on the string depends on the tension and the mass per unit length, not on the frequency.
+</div>
+</div>
 
 </div>
 </body>

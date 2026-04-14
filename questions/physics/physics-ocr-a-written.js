@@ -103,7 +103,8 @@ const PHYSICS_OCR_A_WRITTEN = {
       {
         q: 'Describe how to resolve a single force F acting at angle θ to the horizontal into horizontal and vertical components. Include a diagram description.',
         marks: 3, tier: 'amber',
-        modelAnswer: `• The horizontal component is Fx = F cos θ (1)\n• The vertical component is Fy = F sin θ (1)\n• These components form a right-angled triangle with F as the hypotenuse, using trigonometry to decompose the vector (1)`
+        modelAnswer: `• The horizontal component is Fx = F cos θ (1)\n• The vertical component is Fy = F sin θ (1)\n• These components form a right-angled triangle with F as the hypotenuse, using trigonometry to decompose the vector (1)`,
+        diagram: true
       },
       {
         q: 'Explain why checking the homogeneity of an equation cannot prove that the equation is correct.',
@@ -230,7 +231,8 @@ const PHYSICS_OCR_A_WRITTEN = {
       {
         q: 'Describe the I-V characteristics of a filament lamp, a diode, and an ohmic conductor. Explain the shape of each graph.',
         marks: 4, tier: 'amber',
-        modelAnswer: `• Ohmic conductor: a straight line through the origin — current is directly proportional to PD, so resistance is constant (at constant temperature) (1)\n• Filament lamp: a curve through the origin that becomes less steep at higher V — as current increases, the filament heats up, increasing resistance (1)\n• Diode: virtually zero current in reverse bias; in forward bias, current increases rapidly once the threshold PD (~0.6 V for silicon) is exceeded (1)\n• The non-linear shapes of the lamp and diode show they are non-ohmic — their resistance depends on the PD/current/temperature (1)`
+        modelAnswer: `• Ohmic conductor: a straight line through the origin — current is directly proportional to PD, so resistance is constant (at constant temperature) (1)\n• Filament lamp: a curve through the origin that becomes less steep at higher V — as current increases, the filament heats up, increasing resistance (1)\n• Diode: virtually zero current in reverse bias; in forward bias, current increases rapidly once the threshold PD (~0.6 V for silicon) is exceeded (1)\n• The non-linear shapes of the lamp and diode show they are non-ohmic — their resistance depends on the PD/current/temperature (1)`,
+        diagram: true
       },
       {
         q: 'Explain how a diffraction grating produces an interference pattern and derive the grating equation d sin θ = nλ.',

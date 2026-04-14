@@ -25,7 +25,18 @@
       "Bash(grep -c \"diagram: true\\\\|diagram:true\" questions/physics/physics-edexcel-written.js)",
       "Bash(grep -c \"diagram: true\\\\|diagram:true\" questions/physics/physics-aqa-practice.js)",
       "Bash(grep -c \"diagram: true\\\\|diagram:true\" questions/physics/physics-edexcel-practice.js)",
-      "Bash(grep -i \"required practical\\\\|practical 1\\\\|practical 2\\\\|practical 3\\\\|RP1\\\\|RP2\\\\|RP3\\\\|RP4\\\\|RP5\\\\|RP6\\\\|RP7\\\\|RP8\\\\|RP9\\\\|RP10\\\\|RP11\\\\|RP12\" \"/c/Users/tcvas/OneDrive/Desktop/Learning/notes-physics-aqa/\"*.html)"
+      "Bash(grep -i \"required practical\\\\|practical 1\\\\|practical 2\\\\|practical 3\\\\|RP1\\\\|RP2\\\\|RP3\\\\|RP4\\\\|RP5\\\\|RP6\\\\|RP7\\\\|RP8\\\\|RP9\\\\|RP10\\\\|RP11\\\\|RP12\" \"/c/Users/tcvas/OneDrive/Desktop/Learning/notes-physics-aqa/\"*.html)",
+      "Bash(ls -lh /c/Users/tcvas/OneDrive/Desktop/Learning/questions/physics/physics-ocr-*.js)",
+      "Bash(awk '{print $3, $1}')",
+      "Bash(wc -l /c/Users/tcvas/OneDrive/Desktop/Learning/questions/physics/physics-ocr-*.js)",
+      "Bash(wc -l /c/Users/tcvas/OneDrive/Desktop/Learning/subject-notes/physics-ocr-*.html)",
+      "Bash(ls -lh /c/Users/tcvas/OneDrive/Desktop/Learning/questions/physics/physics-ocr-*.js /c/Users/tcvas/OneDrive/Desktop/Learning/notes-physics-ocr-*/)",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(awk \"/'M1':/,/\\\\],\\\\s*\\\\}/\" questions/physics/physics-ocr-a-practice.js)",
+      "Bash(awk \"/'B1':/,/\\\\],\\\\s*\\\\}/\" questions/physics/physics-ocr-b-practice.js)",
+      "Bash(awk \"/'B2':/,/\\\\],\\\\s*\\\\}/\" questions/physics/physics-ocr-b-practice.js)",
+      "Bash(wc -l \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-physics-ocr-a/\"*.html)",
+      "Bash(wc -l /c/Users/tcvas/OneDrive/Desktop/Learning/notes-physics-ocr-b/B*.html)"
     ]
   },
   "hooks": {

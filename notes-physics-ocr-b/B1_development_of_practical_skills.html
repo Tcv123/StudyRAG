@@ -95,6 +95,67 @@
 
 <p>Examples of random errors include slight variations in timing with a stopwatch, fluctuations in readings on a voltmeter, and small differences in the point at which you judge a marker to cross a line. Examples of systematic errors include a ruler that has been worn at the zero end, a balance that has not been tared, or a thermometer that consistently reads 0.5 degrees too high.</p>
 
+<!-- SVG: Systematic vs Random Errors — Target Board Analogy -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 560 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+  </style>
+  <!-- Title -->
+  <text x="280" y="24" text-anchor="middle" font-size="14" font-weight="bold">Systematic vs Random Errors: Target Board Analogy</text>
+
+  <!-- Target 1: Accurate & Precise (no errors) -->
+  <circle cx="80" cy="130" r="50" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="80" cy="130" r="35" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="80" cy="130" r="20" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="80" cy="130" r="5" fill="#1a73e8" stroke="none"/>
+  <!-- Dots clustered at centre -->
+  <circle cx="78" cy="128" r="3" fill="#DC2626"/><circle cx="82" cy="131" r="3" fill="#DC2626"/>
+  <circle cx="79" cy="133" r="3" fill="#DC2626"/><circle cx="83" cy="128" r="3" fill="#DC2626"/>
+  <circle cx="80" cy="126" r="3" fill="#DC2626"/>
+  <text x="80" y="200" text-anchor="middle" font-size="11" font-weight="bold" fill="#16A34A">Accurate &amp; Precise</text>
+  <text x="80" y="214" text-anchor="middle" font-size="10" fill="#555">No significant errors</text>
+
+  <!-- Target 2: Precise but not accurate (systematic error) -->
+  <circle cx="220" cy="130" r="50" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="220" cy="130" r="35" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="220" cy="130" r="20" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="220" cy="130" r="5" fill="#1a73e8" stroke="none"/>
+  <!-- Dots clustered but offset -->
+  <circle cx="240" cy="112" r="3" fill="#DC2626"/><circle cx="243" cy="116" r="3" fill="#DC2626"/>
+  <circle cx="238" cy="114" r="3" fill="#DC2626"/><circle cx="244" cy="110" r="3" fill="#DC2626"/>
+  <circle cx="241" cy="118" r="3" fill="#DC2626"/>
+  <text x="220" y="200" text-anchor="middle" font-size="11" font-weight="bold" fill="#D97706">Precise, Not Accurate</text>
+  <text x="220" y="214" text-anchor="middle" font-size="10" fill="#555">Systematic error</text>
+
+  <!-- Target 3: Accurate but not precise (random error) -->
+  <circle cx="360" cy="130" r="50" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="360" cy="130" r="35" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="360" cy="130" r="20" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="360" cy="130" r="5" fill="#1a73e8" stroke="none"/>
+  <!-- Dots scattered around centre -->
+  <circle cx="345" cy="115" r="3" fill="#DC2626"/><circle cx="375" cy="140" r="3" fill="#DC2626"/>
+  <circle cx="355" cy="150" r="3" fill="#DC2626"/><circle cx="370" cy="118" r="3" fill="#DC2626"/>
+  <circle cx="362" cy="128" r="3" fill="#DC2626"/>
+  <text x="360" y="200" text-anchor="middle" font-size="11" font-weight="bold" fill="#D97706">Accurate, Not Precise</text>
+  <text x="360" y="214" text-anchor="middle" font-size="10" fill="#555">Random error</text>
+
+  <!-- Target 4: Neither -->
+  <circle cx="490" cy="130" r="50" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="490" cy="130" r="35" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="490" cy="130" r="20" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="490" cy="130" r="5" fill="#1a73e8" stroke="none"/>
+  <!-- Dots scattered and offset -->
+  <circle cx="510" cy="105" r="3" fill="#DC2626"/><circle cx="520" cy="120" r="3" fill="#DC2626"/>
+  <circle cx="505" cy="112" r="3" fill="#DC2626"/><circle cx="515" cy="100" r="3" fill="#DC2626"/>
+  <circle cx="508" cy="118" r="3" fill="#DC2626"/>
+  <text x="490" y="200" text-anchor="middle" font-size="11" font-weight="bold" fill="#DC2626">Neither</text>
+  <text x="490" y="214" text-anchor="middle" font-size="10" fill="#555">Both error types</text>
+
+  <text x="280" y="245" text-anchor="middle" font-size="10" fill="#888">Blue dot = true value. Red dots = measurements.</text>
+</svg>
+</div>
+
 <div class="exam-tip">
   <strong>Exam Tip:</strong> A common exam question asks you to distinguish between accuracy and precision. Accuracy relates to systematic error (how close to the true value), while precision relates to random error (how closely repeated readings agree with each other).
 </div>
@@ -168,6 +229,77 @@
 
 <div class="equation">
   Uncertainty in gradient = (steepest gradient &minus; shallowest gradient) / 2
+</div>
+
+<!-- SVG: Error Bars with Best-Fit and Worst-Fit Lines -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 500 360" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+  </style>
+  <text x="250" y="24" text-anchor="middle" font-size="14" font-weight="bold">Error Bars with Best-Fit and Worst-Fit Lines</text>
+
+  <!-- Axes -->
+  <line x1="70" y1="300" x2="460" y2="300" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="70" y1="300" x2="70" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Arrowheads -->
+  <polygon points="460,300 452,296 452,304" fill="#1a1a2e"/>
+  <polygon points="70,40 66,48 74,48" fill="#1a1a2e"/>
+  <text x="270" y="330" text-anchor="middle" font-size="12">x / units</text>
+  <text x="30" y="170" text-anchor="middle" font-size="12" transform="rotate(-90,30,170)">y / units</text>
+
+  <!-- Data points with error bars -->
+  <!-- Point 1: (100,270) err ±15 -->
+  <line x1="100" y1="255" x2="100" y2="285" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="95" y1="255" x2="105" y2="255" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="95" y1="285" x2="105" y2="285" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="100" y1="270" x2="100" y2="270" stroke="#1a1a2e"/>
+  <circle cx="100" cy="270" r="3" fill="#1a73e8"/>
+
+  <!-- Point 2: (160,240) err ±18 -->
+  <line x1="160" y1="222" x2="160" y2="258" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="155" y1="222" x2="165" y2="222" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="155" y1="258" x2="165" y2="258" stroke="#1a1a2e" stroke-width="1"/>
+  <circle cx="160" cy="240" r="3" fill="#1a73e8"/>
+
+  <!-- Point 3: (220,200) err ±14 -->
+  <line x1="220" y1="186" x2="220" y2="214" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="215" y1="186" x2="225" y2="186" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="215" y1="214" x2="225" y2="214" stroke="#1a1a2e" stroke-width="1"/>
+  <circle cx="220" cy="200" r="3" fill="#1a73e8"/>
+
+  <!-- Point 4: (280,165) err ±16 -->
+  <line x1="280" y1="149" x2="280" y2="181" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="275" y1="149" x2="285" y2="149" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="275" y1="181" x2="285" y2="181" stroke="#1a1a2e" stroke-width="1"/>
+  <circle cx="280" cy="165" r="3" fill="#1a73e8"/>
+
+  <!-- Point 5: (340,120) err ±20 -->
+  <line x1="340" y1="100" x2="340" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="335" y1="100" x2="345" y2="100" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="335" y1="140" x2="345" y2="140" stroke="#1a1a2e" stroke-width="1"/>
+  <circle cx="340" cy="120" r="3" fill="#1a73e8"/>
+
+  <!-- Point 6: (400,80) err ±15 -->
+  <line x1="400" y1="65" x2="400" y2="95" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="395" y1="65" x2="405" y2="65" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="395" y1="95" x2="405" y2="95" stroke="#1a1a2e" stroke-width="1"/>
+  <circle cx="400" cy="80" r="3" fill="#1a73e8"/>
+
+  <!-- Best fit line (green) -->
+  <line x1="80" y1="290" x2="430" y2="55" stroke="#16A34A" stroke-width="2"/>
+  <text x="435" y="55" font-size="11" fill="#16A34A" font-weight="bold">Best fit</text>
+
+  <!-- Steepest line (red dashed) — through top of first, bottom of last error bar -->
+  <line x1="80" y1="278" x2="430" y2="42" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="435" y="42" font-size="10" fill="#DC2626">Steepest</text>
+
+  <!-- Shallowest line (amber dashed) -->
+  <line x1="80" y1="302" x2="430" y2="72" stroke="#D97706" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="435" y="75" font-size="10" fill="#D97706">Shallowest</text>
+
+  <text x="250" y="352" text-anchor="middle" font-size="10" fill="#888">Uncertainty in gradient = (steepest gradient - shallowest gradient) / 2</text>
+</svg>
 </div>
 
 <div class="exam-tip">

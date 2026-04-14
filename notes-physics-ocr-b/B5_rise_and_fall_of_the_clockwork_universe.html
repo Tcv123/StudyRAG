@@ -73,6 +73,49 @@
 </table>
 
 <h3>Projectile Motion</h3>
+
+<!-- SVG: Projectile Motion Path -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 500 280" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="250" y="22" text-anchor="middle" font-size="14" font-weight="bold">Projectile Motion — Velocity Components</text>
+  <!-- Ground -->
+  <line x1="30" y1="240" x2="480" y2="240" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Parabolic path -->
+  <path d="M 60,240 Q 260,10 460,240" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- Launch: velocity components -->
+  <line x1="60" y1="240" x2="115" y2="185" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="115,185 105,190 110,198" fill="#DC2626"/>
+  <text x="70" y="208" font-size="9" fill="#DC2626">v</text>
+  <line x1="60" y1="240" x2="115" y2="240" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <polygon points="115,240 109,236 109,244" fill="#16A34A"/>
+  <text x="88" y="256" text-anchor="middle" font-size="8" fill="#16A34A">vx = const</text>
+  <line x1="60" y1="240" x2="60" y2="185" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <polygon points="60,185 56,193 64,193" fill="#D97706"/>
+  <text x="42" y="212" font-size="8" fill="#D97706">vy</text>
+  <!-- At peak: only horizontal -->
+  <line x1="260" y1="50" x2="310" y2="50" stroke="#16A34A" stroke-width="2"/>
+  <polygon points="310,50 304,46 304,54" fill="#16A34A"/>
+  <text x="285" y="42" text-anchor="middle" font-size="9" fill="#16A34A">vx only</text>
+  <text x="285" y="70" text-anchor="middle" font-size="9" fill="#D97706">vy = 0</text>
+  <!-- Descent -->
+  <line x1="370" y1="145" x2="425" y2="200" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="425,200 417,196 420,204" fill="#DC2626"/>
+  <line x1="370" y1="145" x2="425" y2="145" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="425" y1="145" x2="425" y2="200" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <!-- g arrow -->
+  <line x1="470" y1="30" x2="470" y2="75" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="466,75 474,75 470,83" fill="#1a1a2e"/>
+  <text x="478" y="55" font-size="10">g</text>
+  <!-- Angle -->
+  <path d="M 90,240 A 30,30 0 0,0 80,222" fill="none" stroke="#D97706" stroke-width="1"/>
+  <text x="98" y="228" font-size="9" fill="#D97706">theta</text>
+  <!-- Range -->
+  <line x1="60" y1="250" x2="460" y2="250" stroke="#555" stroke-width="0.8"/>
+  <text x="260" y="268" text-anchor="middle" font-size="10" fill="#555">Horizontal: x = (v cos theta)t | Vertical: use SUVAT with a = -g</text>
+</svg>
+</div>
+
 <p>Projectiles experience only gravitational acceleration (ignoring air resistance). The horizontal and vertical components of motion are independent:</p>
 <ul>
   <li>Horizontally: constant velocity (a<sub>x</sub> = 0), so x = u cos&theta; &times; t</li>
@@ -118,6 +161,51 @@
 
 <div class="equation">p = mv</div>
 
+<!-- SVG: Momentum Conservation Diagram -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 520 220" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="260" y="22" text-anchor="middle" font-size="14" font-weight="bold">Conservation of Momentum</text>
+  <!-- BEFORE collision -->
+  <text x="130" y="50" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a73e8">Before</text>
+  <!-- Object A moving right -->
+  <rect x="60" y="70" width="50" height="40" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1" rx="4"/>
+  <text x="85" y="94" text-anchor="middle" font-size="11" fill="white">m1</text>
+  <line x1="110" y1="90" x2="150" y2="90" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="150,90 143,86 143,94" fill="#DC2626"/>
+  <text x="130" y="82" text-anchor="middle" font-size="9" fill="#DC2626">u1</text>
+  <!-- Object B stationary -->
+  <rect x="170" y="70" width="50" height="40" fill="#16A34A" stroke="#1a1a2e" stroke-width="1" rx="4"/>
+  <text x="195" y="94" text-anchor="middle" font-size="11" fill="white">m2</text>
+  <text x="195" y="125" text-anchor="middle" font-size="9" fill="#16A34A">u2 = 0</text>
+
+  <!-- Arrow: AFTER -->
+  <text x="310" y="50" text-anchor="middle" font-size="10" fill="#555">Collision</text>
+  <line x1="240" y1="90" x2="280" y2="90" stroke="#555" stroke-width="1.5"/>
+  <polygon points="280,90 274,86 274,94" fill="#555"/>
+
+  <!-- AFTER collision -->
+  <text x="410" y="50" text-anchor="middle" font-size="12" font-weight="bold" fill="#D97706">After</text>
+  <!-- Both objects moving -->
+  <rect x="310" y="70" width="50" height="40" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1" rx="4"/>
+  <text x="335" y="94" text-anchor="middle" font-size="11" fill="white">m1</text>
+  <line x1="360" y1="90" x2="385" y2="90" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="385,90 379,86 379,94" fill="#DC2626"/>
+  <text x="373" y="82" text-anchor="middle" font-size="9" fill="#DC2626">v1</text>
+
+  <rect x="400" y="70" width="50" height="40" fill="#16A34A" stroke="#1a1a2e" stroke-width="1" rx="4"/>
+  <text x="425" y="94" text-anchor="middle" font-size="11" fill="white">m2</text>
+  <line x1="450" y1="90" x2="490" y2="90" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="490,90 484,86 484,94" fill="#DC2626"/>
+  <text x="470" y="82" text-anchor="middle" font-size="9" fill="#DC2626">v2</text>
+
+  <!-- Equation -->
+  <text x="260" y="165" text-anchor="middle" font-size="12" fill="#1a1a2e" font-weight="bold">m1 u1 + m2 u2 = m1 v1 + m2 v2</text>
+  <text x="260" y="185" text-anchor="middle" font-size="10" fill="#555">Total momentum before = Total momentum after</text>
+  <text x="260" y="205" text-anchor="middle" font-size="10" fill="#DC2626">Momentum is ALWAYS conserved (no external forces)</text>
+</svg>
+</div>
+
 <h3>Types of Collision</h3>
 <table>
   <tr><th>Type</th><th>Momentum</th><th>Kinetic Energy</th><th>Example</th></tr>
@@ -149,6 +237,50 @@
 
 <p>The centripetal force is not a new type of force — it is the resultant of the forces acting towards the centre of the circle. It could be provided by gravity (orbits), tension (conical pendulum), friction (car on a bend), or the normal contact force (clothes in a washing machine drum).</p>
 
+<!-- SVG: Circular Motion with Vectors -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 400 280" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="200" y="22" text-anchor="middle" font-size="14" font-weight="bold">Circular Motion — Force and Velocity Vectors</text>
+  <!-- Circle -->
+  <circle cx="200" cy="150" r="90" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <!-- Centre -->
+  <circle cx="200" cy="150" r="3" fill="#1a1a2e"/>
+  <text x="200" y="165" text-anchor="middle" font-size="9">Centre</text>
+  <!-- Object at top -->
+  <circle cx="200" cy="60" r="8" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Velocity tangent (rightward at top) -->
+  <line x1="208" y1="60" x2="260" y2="60" stroke="#16A34A" stroke-width="2.5"/>
+  <polygon points="260,60 253,56 253,64" fill="#16A34A"/>
+  <text x="240" y="50" font-size="11" fill="#16A34A" font-weight="bold">v</text>
+  <!-- Centripetal force (downward toward centre) -->
+  <line x1="200" y1="68" x2="200" y2="120" stroke="#DC2626" stroke-width="2.5"/>
+  <polygon points="200,120 196,113 204,113" fill="#DC2626"/>
+  <text x="215" y="100" font-size="11" fill="#DC2626" font-weight="bold">F</text>
+  <!-- Object at right -->
+  <circle cx="290" cy="150" r="8" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Velocity tangent (downward at right) -->
+  <line x1="290" y1="158" x2="290" y2="210" stroke="#16A34A" stroke-width="2.5"/>
+  <polygon points="290,210 286,203 294,203" fill="#16A34A"/>
+  <text x="300" y="195" font-size="11" fill="#16A34A" font-weight="bold">v</text>
+  <!-- Centripetal force (leftward) -->
+  <line x1="282" y1="150" x2="235" y2="150" stroke="#DC2626" stroke-width="2.5"/>
+  <polygon points="235,150 242,146 242,154" fill="#DC2626"/>
+  <text x="255" y="143" font-size="11" fill="#DC2626" font-weight="bold">F</text>
+  <!-- Object at bottom -->
+  <circle cx="200" cy="240" r="8" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="192" y1="240" x2="140" y2="240" stroke="#16A34A" stroke-width="2.5"/>
+  <polygon points="140,240 147,236 147,244" fill="#16A34A"/>
+  <text x="155" y="232" font-size="11" fill="#16A34A" font-weight="bold">v</text>
+  <line x1="200" y1="232" x2="200" y2="185" stroke="#DC2626" stroke-width="2.5"/>
+  <polygon points="200,185 196,192 204,192" fill="#DC2626"/>
+  <text x="215" y="205" font-size="11" fill="#DC2626" font-weight="bold">F</text>
+  <!-- Labels -->
+  <text x="200" y="270" text-anchor="middle" font-size="10" fill="#16A34A">v is always tangential to the circle</text>
+  <text x="200" y="284" text-anchor="middle" font-size="10" fill="#DC2626">F (centripetal) always points to the centre</text>
+</svg>
+</div>
+
 <div class="exam-tip">
   <strong>Exam Tip:</strong> Never describe centripetal force as a separate force in a free body diagram. It is the net inward force. For example, for a car going over a hill, the centripetal force is the difference between the weight and the normal reaction: mg &minus; N = mv&sup2;/r.
 </div>
@@ -164,6 +296,46 @@
 <div class="equation">Velocity: v = &plusmn;&omega;&radic;(A&sup2; &minus; x&sup2;)</div>
 <div class="equation">Maximum velocity: v<sub>max</sub> = &omega;A</div>
 <div class="equation">Maximum acceleration: a<sub>max</sub> = &omega;&sup2;A</div>
+
+<!-- SVG: SHM Graphs — displacement, velocity, acceleration -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 520 360" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="260" y="22" text-anchor="middle" font-size="14" font-weight="bold">SHM: Displacement, Velocity, and Acceleration vs Time</text>
+
+  <!-- Displacement graph -->
+  <text x="40" y="60" font-size="10" fill="#1a73e8" font-weight="bold">x</text>
+  <line x1="50" y1="80" x2="500" y2="80" stroke="#ccc" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <path d="M 50,80 C 85,30 120,30 155,80 C 190,130 225,130 260,80 C 295,30 330,30 365,80 C 400,130 435,130 470,80" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <text x="105" y="42" text-anchor="middle" font-size="8" fill="#1a73e8">+A</text>
+  <text x="195" y="134" text-anchor="middle" font-size="8" fill="#1a73e8">-A</text>
+
+  <!-- Velocity graph -->
+  <text x="40" y="170" font-size="10" fill="#16A34A" font-weight="bold">v</text>
+  <line x1="50" y1="190" x2="500" y2="190" stroke="#ccc" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <path d="M 50,140 C 85,190 120,240 155,190 C 190,140 225,140 260,190 C 295,240 330,240 365,190 C 400,140 435,140 470,190" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <text x="510" y="175" font-size="8" fill="#16A34A">leads x</text>
+  <text x="510" y="185" font-size="8" fill="#16A34A">by pi/2</text>
+
+  <!-- Acceleration graph -->
+  <text x="40" y="280" font-size="10" fill="#DC2626" font-weight="bold">a</text>
+  <line x1="50" y1="300" x2="500" y2="300" stroke="#ccc" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <path d="M 50,300 C 85,350 120,350 155,300 C 190,250 225,250 260,300 C 295,350 330,350 365,300 C 400,250 435,250 470,300" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <text x="510" y="290" font-size="8" fill="#DC2626">antiphase</text>
+  <text x="510" y="300" font-size="8" fill="#DC2626">with x</text>
+
+  <!-- Time axis labels -->
+  <line x1="50" y1="335" x2="500" y2="335" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="275" y="352" text-anchor="middle" font-size="10">Time t</text>
+  <!-- Period markers -->
+  <line x1="50" y1="332" x2="50" y2="338" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="50" y="348" text-anchor="middle" font-size="8">0</text>
+  <line x1="260" y1="332" x2="260" y2="338" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="260" y="348" text-anchor="middle" font-size="8">T</text>
+  <line x1="470" y1="332" x2="470" y2="338" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="470" y="348" text-anchor="middle" font-size="8">2T</text>
+</svg>
+</div>
 
 <h3>SHM Systems</h3>
 
@@ -205,6 +377,35 @@
   <li>The resonant frequency shifts slightly below the natural frequency</li>
 </ul>
 
+<!-- SVG: Resonance Curve -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 460 280" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="230" y="22" text-anchor="middle" font-size="14" font-weight="bold">Resonance Curves (Amplitude vs Driving Frequency)</text>
+  <!-- Axes -->
+  <line x1="60" y1="240" x2="430" y2="240" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="240" x2="60" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="250" y="265" text-anchor="middle" font-size="11">Driving frequency f</text>
+  <text x="25" y="140" text-anchor="middle" font-size="11" transform="rotate(-90,25,140)">Amplitude</text>
+
+  <!-- Natural frequency line -->
+  <line x1="220" y1="240" x2="220" y2="45" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="220" y="258" text-anchor="middle" font-size="9" fill="#555">f0</text>
+
+  <!-- Light damping (tall sharp peak) -->
+  <path d="M 80,235 C 120,230 170,220 200,120 C 210,60 220,45 225,45 C 230,45 240,65 250,130 C 275,225 350,235 400,237" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="350" y="222" font-size="10" fill="#DC2626" font-weight="bold">Light damping</text>
+
+  <!-- Medium damping (lower broader peak) -->
+  <path d="M 80,232 C 120,225 160,210 195,160 C 210,130 220,115 228,115 C 236,115 250,140 270,175 C 310,225 360,232 400,234" fill="none" stroke="#D97706" stroke-width="2"/>
+  <text x="350" y="205" font-size="10" fill="#D97706" font-weight="bold">Medium damping</text>
+
+  <!-- Heavy damping (very low broad peak) -->
+  <path d="M 80,230 C 140,222 180,210 210,195 C 225,188 230,185 240,188 C 260,196 300,218 400,230" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <text x="350" y="188" font-size="10" fill="#1a73e8" font-weight="bold">Heavy damping</text>
+</svg>
+</div>
+
 <h2>5.7 Thermodynamics</h2>
 
 <h3>Thermal Energy and Temperature</h3>
@@ -245,6 +446,30 @@
 
 <p>where &lt;c&sup2;&gt; is the mean square speed and k is the Boltzmann constant. The root mean square speed is c<sub>rms</sub> = &radic;&lt;c&sup2;&gt;.</p>
 
+<!-- SVG: Maxwell-Boltzmann Distribution -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 480 280" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="240" y="22" text-anchor="middle" font-size="14" font-weight="bold">Maxwell-Boltzmann Distribution</text>
+  <!-- Axes -->
+  <line x1="50" y1="230" x2="450" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="50" y1="230" x2="50" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="250" y="258" text-anchor="middle" font-size="11">Molecular speed</text>
+  <text x="20" y="130" text-anchor="middle" font-size="11" transform="rotate(-90,20,130)">Number of molecules</text>
+
+  <!-- Lower temperature (blue, taller narrower peak) -->
+  <path d="M 50,230 C 70,228 90,200 120,100 C 135,55 145,48 155,48 C 170,48 190,80 220,160 C 260,225 310,229 340,230" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="160" y="40" font-size="10" fill="#1a73e8" font-weight="bold">Lower T</text>
+
+  <!-- Higher temperature (red, shorter broader peak) -->
+  <path d="M 50,230 C 80,226 110,215 160,155 C 190,115 210,100 230,98 C 260,96 290,120 320,165 C 360,215 400,226 430,228" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="310" y="88" font-size="10" fill="#DC2626" font-weight="bold">Higher T</text>
+
+  <!-- Key features -->
+  <text x="240" y="270" text-anchor="middle" font-size="9" fill="#555">Higher T: peak shifts right, distribution broader, area under curve stays the same</text>
+</svg>
+</div>
+
 <h3>The Boltzmann Factor</h3>
 <p>The Boltzmann factor describes the probability that a molecule has energy at least E at temperature T:</p>
 
@@ -263,6 +488,56 @@
 <div class="equation">g = GM / r&sup2;</div>
 
 <p>where G is the gravitational constant (6.67 &times; 10<sup>&minus;11</sup> N m&sup2; kg<sup>&minus;2</sup>), M is the mass creating the field, and r is the distance from the centre of the mass.</p>
+
+<!-- SVG: Gravitational Field Lines — Radial and Uniform -->
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 520 240" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="260" y="22" text-anchor="middle" font-size="14" font-weight="bold">Gravitational Field Lines</text>
+
+  <!-- LEFT: Radial field around a planet -->
+  <text x="130" y="48" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a73e8">Radial Field (planet)</text>
+  <circle cx="130" cy="140" r="25" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="130" y="144" text-anchor="middle" font-size="9" fill="white">M</text>
+  <!-- Field lines pointing inward -->
+  <line x1="130" y1="60" x2="130" y2="112" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="126,112 134,112 130,118" fill="#1a1a2e"/>
+  <line x1="130" y1="220" x2="130" y2="168" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="126,168 134,168 130,162" fill="#1a1a2e"/>
+  <line x1="50" y1="140" x2="102" y2="140" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="102,140 96,136 96,144" fill="#1a1a2e"/>
+  <line x1="210" y1="140" x2="158" y2="140" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="158,140 164,136 164,144" fill="#1a1a2e"/>
+  <!-- Diagonals -->
+  <line x1="73" y1="83" x2="112" y2="122" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="112,122 104,118 108,126" fill="#1a1a2e"/>
+  <line x1="187" y1="83" x2="148" y2="122" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="148,122 152,126 156,118" fill="#1a1a2e"/>
+  <line x1="73" y1="197" x2="112" y2="158" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="112,158 108,154 104,162" fill="#1a1a2e"/>
+  <line x1="187" y1="197" x2="148" y2="158" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="148,158 156,162 152,154" fill="#1a1a2e"/>
+  <text x="130" y="235" text-anchor="middle" font-size="9" fill="#555">g decreases with 1/r^2</text>
+
+  <!-- RIGHT: Uniform field near Earth's surface -->
+  <text x="390" y="48" text-anchor="middle" font-size="11" font-weight="bold" fill="#16A34A">Uniform Field (near surface)</text>
+  <!-- Parallel downward arrows -->
+  <line x1="300" y1="65" x2="300" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="296,190 304,190 300,198" fill="#1a1a2e"/>
+  <line x1="340" y1="65" x2="340" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="336,190 344,190 340,198" fill="#1a1a2e"/>
+  <line x1="380" y1="65" x2="380" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="376,190 384,190 380,198" fill="#1a1a2e"/>
+  <line x1="420" y1="65" x2="420" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="416,190 424,190 420,198" fill="#1a1a2e"/>
+  <line x1="460" y1="65" x2="460" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <polygon points="456,190 464,190 460,198" fill="#1a1a2e"/>
+  <!-- Earth's surface -->
+  <rect x="290" y="205" width="180" height="15" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1"/>
+  <text x="380" y="216" text-anchor="middle" font-size="8" fill="#16A34A">Earth's surface</text>
+  <text x="390" y="235" text-anchor="middle" font-size="9" fill="#555">g constant (9.81 m/s^2)</text>
+</svg>
+</div>
 
 <h3>Gravitational Potential</h3>
 
@@ -284,6 +559,340 @@
 
 <div class="exam-tip">
   <strong>Exam Tip:</strong> Remember that gravitational potential is always negative and increases (becomes less negative) as you move away from the mass. The gravitational potential at infinity is zero. Students often confuse gravitational potential (energy per unit mass) with gravitational potential energy (energy of the mass in the field).
+</div>
+
+<!-- ==================== REQUIRED PRACTICALS ==================== -->
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">Practical Activity: Investigating SHM (Mass-Spring and Pendulum)</h2>
+
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 500 220" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="250" y="20" text-anchor="middle" font-size="13" font-weight="bold">SHM Investigation — Two Systems</text>
+  <!-- LEFT: Mass-spring -->
+  <text x="125" y="45" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a73e8">Mass-Spring</text>
+  <line x1="100" y1="55" x2="150" y2="55" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- Spring (zigzag) -->
+  <polyline points="125,55 120,65 130,75 120,85 130,95 120,105 130,115 125,125" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Mass -->
+  <rect x="110" y="125" width="30" height="25" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1" rx="3"/>
+  <text x="125" y="141" text-anchor="middle" font-size="9" fill="white">m</text>
+  <!-- Double-headed arrow for oscillation -->
+  <line x1="155" y1="105" x2="155" y2="165" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="151,105 159,105 155,98" fill="#DC2626"/>
+  <polygon points="151,165 159,165 155,172" fill="#DC2626"/>
+  <text x="170" y="140" font-size="8" fill="#DC2626">Oscillation</text>
+  <!-- Formula -->
+  <text x="125" y="185" text-anchor="middle" font-size="10" fill="#1a73e8">T = 2pi sqrt(m/k)</text>
+  <text x="125" y="200" text-anchor="middle" font-size="9" fill="#555">Plot T^2 vs m</text>
+  <text x="125" y="213" text-anchor="middle" font-size="9" fill="#555">gradient = 4pi^2/k</text>
+
+  <!-- RIGHT: Pendulum -->
+  <text x="375" y="45" text-anchor="middle" font-size="11" font-weight="bold" fill="#16A34A">Simple Pendulum</text>
+  <!-- Pivot -->
+  <circle cx="375" cy="58" r="3" fill="#1a1a2e"/>
+  <line x1="350" y1="55" x2="400" y2="55" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- String -->
+  <line x1="375" y1="61" x2="375" y2="155" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Length L -->
+  <line x1="360" y1="61" x2="360" y2="155" stroke="#16A34A" stroke-width="1"/>
+  <text x="348" y="110" font-size="9" fill="#16A34A">L</text>
+  <!-- Bob -->
+  <circle cx="375" cy="162" r="9" fill="#16A34A" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Swing arc -->
+  <path d="M 340,155 A 35,35 0 0,1 410,155" fill="none" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,2"/>
+  <polygon points="340,155 346,148 348,157" fill="#DC2626"/>
+  <polygon points="410,155 404,148 402,157" fill="#DC2626"/>
+  <!-- Formula -->
+  <text x="375" y="195" text-anchor="middle" font-size="10" fill="#16A34A">T = 2pi sqrt(L/g)</text>
+  <text x="375" y="208" text-anchor="middle" font-size="9" fill="#555">Plot T^2 vs L</text>
+  <text x="375" y="220" text-anchor="middle" font-size="9" fill="#555">gradient = 4pi^2/g</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li><strong>Mass-spring:</strong> Retort stand, clamp, spring, slotted masses, ruler, stopwatch, fiducial marker</li>
+  <li><strong>Pendulum:</strong> Retort stand, clamp, string (~1 m), bob, protractor, ruler, stopwatch</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>For the <strong>mass-spring system</strong>: attach a known mass to the spring. Pull the mass down a small distance and release. Time 10 complete oscillations and divide by 10 to get the period T. Repeat 3 times and take the mean. Change the mass and repeat (at least 6 values).</li>
+  <li>For the <strong>simple pendulum</strong>: measure the length L from the pivot to the centre of the bob. Displace the bob by a small angle (less than 10 degrees). Time 10 complete oscillations and divide by 10 to get T. Repeat 3 times. Change L and repeat (at least 6 values).</li>
+  <li>Mass-spring: plot T^2 (y-axis) against m (x-axis). Gradient = 4pi^2 / k, giving k.</li>
+  <li>Pendulum: plot T^2 (y-axis) against L (x-axis). Gradient = 4pi^2 / g, giving g.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Ensure the retort stand is clamped to the bench or weighted at the base</li>
+  <li>Keep amplitude small to ensure SHM approximation is valid</li>
+  <li>Stand clear of the oscillating mass</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>Both relationships predict that T^2 is directly proportional to the relevant variable (m or L). A straight line through the origin confirms the SHM relationship. The gradient allows determination of k (spring constant) or g (acceleration due to gravity).</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95rem;">
+  <tr><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Source of Error</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Type</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Improvement</th></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Reaction time when starting/stopping stopwatch</td><td style="border:1px solid #cbd5e1; padding:8px;">Random</td><td style="border:1px solid #cbd5e1; padding:8px;">Time more oscillations (20+); use a fiducial marker at the equilibrium position</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Large amplitude pendulum (not true SHM)</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Keep angle below 10 degrees for the small angle approximation</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Measuring pendulum length to centre of bob</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Measure to the centre of the bob carefully; use L values that differ by large increments</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always time at least 10 oscillations to reduce the percentage uncertainty in the period measurement. Counting should start from zero (the first pass of the fiducial marker is "0", the second is "1", etc.).
+</div>
+</div>
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">Practical Activity: Specific Heat Capacity</h2>
+
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 400 220" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="200" y="20" text-anchor="middle" font-size="13" font-weight="bold">Specific Heat Capacity — Electrical Method</text>
+  <!-- Metal block -->
+  <rect x="120" y="80" width="100" height="80" fill="#cbd5e1" stroke="#1a1a2e" stroke-width="1.5" rx="5"/>
+  <text x="170" y="125" text-anchor="middle" font-size="10">Metal block</text>
+  <text x="170" y="140" text-anchor="middle" font-size="9">(mass m)</text>
+  <!-- Heater hole -->
+  <rect x="140" y="85" width="8" height="50" fill="#DC2626" stroke="#1a1a2e" stroke-width="0.5" rx="2"/>
+  <text x="130" y="75" font-size="8" fill="#DC2626">Heater</text>
+  <!-- Thermometer hole -->
+  <rect x="192" y="85" width="6" height="50" fill="#16A34A" stroke="#1a1a2e" stroke-width="0.5" rx="2"/>
+  <text x="210" y="75" font-size="8" fill="#16A34A">Thermometer</text>
+  <!-- Insulation -->
+  <rect x="105" y="70" width="130" height="100" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="5,3" rx="8"/>
+  <text x="170" y="185" text-anchor="middle" font-size="8" fill="#D97706">Insulating jacket</text>
+  <!-- Power supply -->
+  <rect x="20" y="90" width="60" height="30" fill="none" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <text x="50" y="108" text-anchor="middle" font-size="8" fill="#1a73e8">Power supply</text>
+  <line x1="80" y1="100" x2="140" y2="100" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Ammeter and Voltmeter -->
+  <circle cx="310" cy="100" r="14" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="310" y="104" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold">A</text>
+  <circle cx="310" cy="145" r="14" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="310" y="149" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold">V</text>
+  <!-- Formula -->
+  <text x="200" y="210" text-anchor="middle" font-size="10" fill="#1a1a2e">E = VIt = mc delta-T, so c = VIt / (m delta-T)</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Metal block (e.g., aluminium or copper) with holes for heater and thermometer</li>
+  <li>Immersion heater connected to a power supply</li>
+  <li>Thermometer (or temperature probe with datalogger)</li>
+  <li>Ammeter and voltmeter (to measure electrical energy input)</li>
+  <li>Stopwatch</li>
+  <li>Digital balance (to measure mass of block)</li>
+  <li>Insulating jacket or lagging</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure and record the mass m of the metal block.</li>
+  <li>Insert the heater and thermometer into the block. Add a drop of oil to the thermometer hole for good thermal contact.</li>
+  <li>Wrap the block in insulation to minimise heat loss.</li>
+  <li>Record the initial temperature T1.</li>
+  <li>Switch on the heater. Record the ammeter reading I and voltmeter reading V.</li>
+  <li>Heat for a measured time t (e.g., 5-10 minutes).</li>
+  <li>Switch off the heater. Record the maximum temperature T2 (it may continue rising briefly after the heater is off).</li>
+  <li>Calculate: c = VIt / (m x (T2 - T1)).</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>The metal block becomes very hot — handle with tongs or heat-proof gloves</li>
+  <li>Do not touch the heater element</li>
+  <li>Ensure the heater is fully inserted to avoid it overheating in air</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>Energy supplied = VIt. Energy absorbed by block = mc(T2 - T1). Equating these gives c = VIt / (m x delta-T). Compare your result with accepted values (aluminium: 900 J kg^-1 K^-1, copper: 385 J kg^-1 K^-1).</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95rem;">
+  <tr><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Source of Error</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Type</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Improvement</th></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Heat lost to surroundings</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic (c appears too large)</td><td style="border:1px solid #cbd5e1; padding:8px;">Use insulation; start below room temperature and finish above by the same amount</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Poor thermal contact between heater/thermometer and block</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Add a drop of oil to fill air gaps in the holes</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Thermometer lag (reading lags behind actual temperature)</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Wait for thermal equilibrium; read maximum temperature after heater is switched off</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The result for c is almost always an overestimate because some energy is lost to the surroundings. A cooling correction or starting the experiment a few degrees below room temperature can improve accuracy.
+</div>
+</div>
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">Practical Activity: Boyle's Law</h2>
+
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 380 220" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="190" y="20" text-anchor="middle" font-size="13" font-weight="bold">Boyle's Law — Apparatus</text>
+  <!-- Syringe/tube -->
+  <rect x="60" y="70" width="20" height="120" fill="#e0f0ff" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <text x="70" y="135" text-anchor="middle" font-size="8" fill="#1a73e8" transform="rotate(-90,70,135)">Gas column</text>
+  <!-- Sealed end -->
+  <rect x="58" y="68" width="24" height="5" fill="#1a1a2e"/>
+  <text x="50" y="65" text-anchor="end" font-size="8">Sealed</text>
+  <!-- Oil/mercury -->
+  <rect x="62" y="170" width="16" height="15" fill="#D97706" opacity="0.6"/>
+  <text x="95" y="180" font-size="8" fill="#D97706">Oil column</text>
+  <!-- Bourdon gauge / pressure gauge -->
+  <circle cx="70" cy="210" r="15" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="70" y="214" text-anchor="middle" font-size="8" fill="#DC2626">P</text>
+  <text x="100" y="213" font-size="8" fill="#DC2626">Pressure gauge</text>
+  <!-- Volume scale -->
+  <line x1="45" y1="73" x2="45" y2="185" stroke="#16A34A" stroke-width="1"/>
+  <text x="35" y="130" font-size="8" fill="#16A34A" text-anchor="middle" transform="rotate(-90,35,130)">Volume (V)</text>
+  <!-- Graph on right -->
+  <line x1="200" y1="180" x2="350" y2="180" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="200" y1="180" x2="200" y2="50" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="275" y="200" text-anchor="middle" font-size="10">1/V</text>
+  <text x="185" y="115" text-anchor="middle" font-size="10" transform="rotate(-90,185,115)">P</text>
+  <!-- Straight line through origin -->
+  <line x1="210" y1="165" x2="340" y2="60" stroke="#1a73e8" stroke-width="2"/>
+  <text x="310" y="85" font-size="10" fill="#1a73e8">P = k/V</text>
+  <text x="275" y="215" text-anchor="middle" font-size="9" fill="#555">Straight line confirms P proportional to 1/V</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Sealed syringe or Boyle's law apparatus (gas column tube with oil)</li>
+  <li>Bourdon gauge or digital pressure sensor</li>
+  <li>Ruler (to measure gas column length, proportional to volume)</li>
+  <li>Pump or piston to change pressure</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Record the initial pressure P and volume V of the trapped gas (volume can be read from the syringe scale or calculated from column length and cross-sectional area).</li>
+  <li>Change the pressure by pushing the syringe plunger or adding/removing weights on the piston.</li>
+  <li>Wait for the temperature to equilibrate (the gas warms when compressed) before recording the new P and V.</li>
+  <li>Repeat for at least 6 different pressures.</li>
+  <li>Plot P (y-axis) against 1/V (x-axis). A straight line through the origin confirms Boyle's law.</li>
+  <li>Alternatively, plot PV against P — the graph should be a horizontal line.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Do not over-pressurise the apparatus — follow manufacturer's guidelines</li>
+  <li>If using a glass tube, handle carefully to avoid breakage</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>Boyle's law states pV = constant at constant temperature. Plotting P vs 1/V gives a straight line through the origin with gradient = pV (the constant). Plotting PV vs P gives a horizontal line.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95rem;">
+  <tr><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Source of Error</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Type</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Improvement</th></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Temperature rises when gas is compressed</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Wait after each compression for temperature to return to room temperature</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Friction on the piston/syringe</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Lubricate the piston; tap the syringe gently to overcome static friction</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Air leaks from syringe</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Use sealed apparatus; check for leaks before starting</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The key assumption is constant temperature. If the gas heats up during compression, Boyle's law will not hold exactly. Always allow time for the gas to return to room temperature between readings.
+</div>
+</div>
+
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">Practical Activity: Capacitor Charge and Discharge</h2>
+
+<div style="margin:20px auto; text-align:center;">
+<svg viewBox="0 0 480 200" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui, sans-serif; fill: #1a1a2e; }</style>
+  <text x="240" y="20" text-anchor="middle" font-size="13" font-weight="bold">Capacitor Discharge — Circuit and Graph</text>
+  <!-- Circuit on left -->
+  <!-- Battery -->
+  <line x1="30" y1="60" x2="30" y2="150" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="30" y1="60" x2="55" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="55" y1="52" x2="55" y2="68" stroke="#1a1a2e" stroke-width="2.5"/>
+  <line x1="62" y1="56" x2="62" y2="64" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="62" y1="60" x2="80" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Switch -->
+  <line x1="80" y1="60" x2="95" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="95" y1="60" x2="115" y2="50" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="115" cy="60" r="2" fill="none" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="117" y1="60" x2="140" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Resistor -->
+  <rect x="140" y="50" width="35" height="20" fill="none" stroke="#DC2626" stroke-width="1.5" rx="2"/>
+  <text x="157" y="64" text-anchor="middle" font-size="9" fill="#DC2626">R</text>
+  <line x1="175" y1="60" x2="210" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Capacitor -->
+  <line x1="210" y1="48" x2="210" y2="72" stroke="#1a73e8" stroke-width="2"/>
+  <line x1="218" y1="48" x2="218" y2="72" stroke="#1a73e8" stroke-width="2"/>
+  <text x="214" y="44" text-anchor="middle" font-size="9" fill="#1a73e8">C</text>
+  <line x1="218" y1="60" x2="240" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="240" y1="60" x2="240" y2="150" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="30" y1="150" x2="240" y2="150" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Voltmeter across C -->
+  <circle cx="214" cy="110" r="12" fill="none" stroke="#16A34A" stroke-width="1.2"/>
+  <text x="214" y="114" text-anchor="middle" font-size="9" fill="#16A34A" font-weight="bold">V</text>
+  <text x="214" y="132" text-anchor="middle" font-size="7" fill="#16A34A">datalogger</text>
+
+  <!-- Graph on right -->
+  <line x1="280" y1="160" x2="460" y2="160" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="280" y1="160" x2="280" y2="40" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="370" y="178" text-anchor="middle" font-size="10">t</text>
+  <text x="268" y="100" text-anchor="middle" font-size="10" transform="rotate(-90,268,100)">ln V</text>
+  <!-- Straight line with negative gradient -->
+  <line x1="290" y1="50" x2="445" y2="148" stroke="#1a73e8" stroke-width="2"/>
+  <text x="400" y="90" font-size="9" fill="#1a73e8">gradient = -1/RC</text>
+  <text x="290" y="42" font-size="9" fill="#D97706">ln V0</text>
+  <circle cx="290" cy="50" r="3" fill="#D97706"/>
+  <text x="370" y="195" text-anchor="middle" font-size="9" fill="#555">Plot ln V vs t for straight line</text>
+</svg>
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Capacitor (e.g., 470 uF or 1000 uF electrolytic)</li>
+  <li>Resistor (chosen to give a time constant of a few seconds, e.g., 10 k-ohm with 470 uF gives tau ~ 4.7 s)</li>
+  <li>DC power supply or battery</li>
+  <li>Voltmeter or voltage sensor connected to a datalogger</li>
+  <li>Switch (two-way if possible, for charge/discharge)</li>
+  <li>Stopwatch (if not using datalogger)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Charge the capacitor fully by connecting it to the power supply through the resistor.</li>
+  <li>Once fully charged (V reaches V0), switch to discharge through the resistor.</li>
+  <li>Record voltage across the capacitor at regular time intervals (every 5 or 10 seconds) as it discharges. A datalogger is ideal.</li>
+  <li>Continue recording until V falls to near zero.</li>
+  <li>Plot ln(V) (y-axis) against t (x-axis). The gradient gives -1/RC.</li>
+  <li>The y-intercept gives ln(V0), and the time constant tau = RC can be read from the gradient.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Check capacitor polarity — electrolytic capacitors can burst if connected incorrectly</li>
+  <li>Use low voltages (below 12 V)</li>
+  <li>Discharge the capacitor before modifying the circuit</li>
+</ul>
+
+<h3>Analysis</h3>
+<p>V = V0 e^(-t/RC), so ln(V) = ln(V0) - t/RC. The plot of ln(V) vs t is a straight line with gradient = -1/RC and y-intercept = ln(V0). From the gradient, calculate RC and compare with the nominal values of R and C.</p>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95rem;">
+  <tr><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Source of Error</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Type</th><th style="border:1px solid #cbd5e1; padding:8px; background:#e8eef6;">Improvement</th></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Voltmeter draws current, affecting discharge rate</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Use a high-impedance voltmeter or datalogger</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Capacitor tolerance (actual C differs from labelled value)</td><td style="border:1px solid #cbd5e1; padding:8px;">Systematic</td><td style="border:1px solid #cbd5e1; padding:8px;">Measure RC experimentally from the graph rather than relying on labelled values</td></tr>
+  <tr><td style="border:1px solid #cbd5e1; padding:8px;">Timing errors if using stopwatch manually</td><td style="border:1px solid #cbd5e1; padding:8px;">Random</td><td style="border:1px solid #cbd5e1; padding:8px;">Use a datalogger for continuous automatic recording</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The time constant tau = RC is the time for the voltage to fall to 1/e (37%) of its initial value. After 5RC, the capacitor is effectively fully discharged. You can also find tau by reading the time at which V = 0.37V0 from the exponential decay curve.
+</div>
 </div>
 
 </div>
