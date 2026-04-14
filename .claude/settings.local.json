@@ -11,7 +11,20 @@
       "Bash(cp \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes/economics-aqa/\"* \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-aqa/\")",
       "Bash(cp \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes/economics-edexcel-a/\"* \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-edexcel-a/\")",
       "Bash(cp \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes/economics-ocr/\"* \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-ocr/\")",
-      "Bash(cp \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes/economics-edexcel-b/\"* \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-edexcel-b/\")"
+      "Bash(cp \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes/economics-edexcel-b/\"* \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-edexcel-b/\")",
+      "Bash(wc -l /c/Users/tcvas/OneDrive/Desktop/Learning/questions/cs/*.js)",
+      "Bash(du -h /c/Users/tcvas/OneDrive/Desktop/Learning/questions/cs/*.js)",
+      "Bash(ls -lh \"/c/Users/tcvas/OneDrive/Desktop/Learning/questions/physics/\"*.js \"/c/Users/tcvas/OneDrive/Desktop/Learning/diagnostics/\"physics-*-diagnostic.html \"/c/Users/tcvas/OneDrive/Desktop/Learning/subject-notes/\"physics-*-notes.html)",
+      "Bash(awk '{print $9, $5}')",
+      "Bash(node -e \"const f=require\\('fs'\\).readFileSync\\('questions/physics/physics-aqa-practice.js','utf8'\\); const m=f.match\\(/questions:\\\\s*\\\\[/g\\); console.log\\('Topic arrays found:', m?m.length:'none'\\); \")",
+      "Bash(node -e \"const f=require\\('fs'\\).readFileSync\\('questions/physics/physics-edexcel-practice.js','utf8'\\); const m=f.match\\(/questions:\\\\s*\\\\[/g\\); console.log\\('Topic arrays found:', m?m.length:'none'\\); \")",
+      "Bash(ls -la notes-physics-aqa/)",
+      "Bash(ls -la notes-physics-edexcel/)",
+      "Bash(grep -c \"svg\\\\|diagram\\\\|canvas\\\\|<img\\\\|figure\" notes-physics-aqa/*.html)",
+      "Bash(grep -c \"svg\\\\|diagram\\\\|canvas\\\\|<img\\\\|figure\" notes-physics-edexcel/*.html)",
+      "Bash(grep -c \"diagram: true\\\\|diagram:true\" questions/physics/physics-edexcel-written.js)",
+      "Bash(grep -c \"diagram: true\\\\|diagram:true\" questions/physics/physics-aqa-practice.js)",
+      "Bash(grep -c \"diagram: true\\\\|diagram:true\" questions/physics/physics-edexcel-practice.js)"
     ]
   },
   "hooks": {

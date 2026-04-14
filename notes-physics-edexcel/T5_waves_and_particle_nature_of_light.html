@@ -121,6 +121,91 @@
 
         <p>Longitudinal waves consist of <strong>compressions</strong> (regions of high pressure/density) and <strong>rarefactions</strong> (regions of low pressure/density).</p>
 
+        <!-- SVG: Transverse and Longitudinal Wave Diagrams -->
+        <div style="margin: 20px auto; text-align: center;">
+            <svg viewBox="0 0 520 300" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="w5a" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
+                    <marker id="w5b" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
+                </defs>
+                <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Transverse vs Longitudinal Waves</text>
+
+                <!-- Transverse wave -->
+                <text x="60" y="48" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="600">Transverse Wave</text>
+                <!-- Equilibrium line -->
+                <line x1="40" y1="100" x2="500" y2="100" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+                <!-- Wave -->
+                <path d="M 40,100 Q 75,40 110,100 Q 145,160 180,100 Q 215,40 250,100 Q 285,160 320,100 Q 355,40 390,100 Q 425,160 460,100" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+                <!-- Labels -->
+                <line x1="110" y1="40" x2="250" y2="40" stroke="#D97706" stroke-width="1.5" marker-end="url(#w5a)"/>
+                <line x1="250" y1="40" x2="110" y2="40" stroke="#D97706" stroke-width="1.5"/>
+                <text x="180" y="35" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="middle">λ (wavelength)</text>
+                <!-- Amplitude -->
+                <line x1="75" y1="100" x2="75" y2="55" stroke="#16A34A" stroke-width="1.5"/>
+                <text x="58" y="75" font-family="system-ui" font-size="9" fill="#16A34A">A</text>
+                <!-- Direction arrows -->
+                <line x1="420" y1="80" x2="480" y2="80" stroke="#DC2626" stroke-width="1.5" marker-end="url(#w5a)"/>
+                <text x="450" y="75" font-family="system-ui" font-size="9" fill="#DC2626" text-anchor="middle">Energy</text>
+                <!-- Oscillation direction -->
+                <line x1="30" y1="80" x2="30" y2="120" stroke="#1a73e8" stroke-width="1.5"/>
+                <text x="22" y="82" font-family="system-ui" font-size="8" fill="#1a73e8">↕</text>
+                <text x="460" y="120" font-family="system-ui" font-size="9" fill="#64748b">Oscillation ⊥ energy</text>
+
+                <!-- Longitudinal wave -->
+                <text x="60" y="175" font-family="system-ui" font-size="12" fill="#16A34A" font-weight="600">Longitudinal Wave</text>
+                <!-- Dots representing particles -->
+                <g fill="#16A34A">
+                    <!-- Compression region 1 -->
+                    <circle cx="50" cy="220" r="3"/>
+                    <circle cx="60" cy="220" r="3"/>
+                    <circle cx="69" cy="220" r="3"/>
+                    <circle cx="77" cy="220" r="3"/>
+                    <circle cx="84" cy="220" r="3"/>
+                    <!-- Rarefaction -->
+                    <circle cx="105" cy="220" r="3"/>
+                    <circle cx="125" cy="220" r="3"/>
+                    <circle cx="145" cy="220" r="3"/>
+                    <!-- Compression 2 -->
+                    <circle cx="165" cy="220" r="3"/>
+                    <circle cx="174" cy="220" r="3"/>
+                    <circle cx="182" cy="220" r="3"/>
+                    <circle cx="190" cy="220" r="3"/>
+                    <circle cx="197" cy="220" r="3"/>
+                    <!-- Rarefaction 2 -->
+                    <circle cx="218" cy="220" r="3"/>
+                    <circle cx="238" cy="220" r="3"/>
+                    <circle cx="258" cy="220" r="3"/>
+                    <!-- Compression 3 -->
+                    <circle cx="278" cy="220" r="3"/>
+                    <circle cx="287" cy="220" r="3"/>
+                    <circle cx="295" cy="220" r="3"/>
+                    <circle cx="303" cy="220" r="3"/>
+                    <circle cx="310" cy="220" r="3"/>
+                    <!-- Rarefaction 3 -->
+                    <circle cx="331" cy="220" r="3"/>
+                    <circle cx="351" cy="220" r="3"/>
+                    <circle cx="371" cy="220" r="3"/>
+                    <!-- Compression 4 -->
+                    <circle cx="391" cy="220" r="3"/>
+                    <circle cx="400" cy="220" r="3"/>
+                    <circle cx="408" cy="220" r="3"/>
+                    <circle cx="416" cy="220" r="3"/>
+                    <circle cx="423" cy="220" r="3"/>
+                </g>
+                <!-- Labels -->
+                <text x="75" y="245" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Compression</text>
+                <text x="125" y="245" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Rarefaction</text>
+                <text x="190" y="245" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Compression</text>
+                <!-- Wavelength bracket -->
+                <line x1="67" y1="260" x2="190" y2="260" stroke="#D97706" stroke-width="1.5"/>
+                <text x="128" y="275" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="middle">λ (wavelength)</text>
+                <!-- Direction arrows -->
+                <line x1="420" y1="210" x2="470" y2="210" stroke="#DC2626" stroke-width="1.5" marker-end="url(#w5a)"/>
+                <text x="445" y="205" font-family="system-ui" font-size="9" fill="#DC2626" text-anchor="middle">Energy</text>
+                <text x="450" y="230" font-family="system-ui" font-size="9" fill="#64748b">Oscillation ∥ energy</text>
+            </svg>
+        </div>
+
         <h2>5.2 Wave Properties</h2>
         <table>
             <tr><th>Quantity</th><th>Definition</th><th>Unit</th></tr>
@@ -176,6 +261,54 @@
         </div>
         <p>where w = fringe spacing, &lambda; = wavelength, D = distance from slits to screen, d = slit separation.</p>
 
+        <!-- SVG: Double Slit Interference -->
+        <div style="margin: 20px auto; text-align: center;">
+            <svg viewBox="0 0 500 240" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+                <text x="250" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Young's Double Slit Experiment</text>
+                <!-- Light source -->
+                <circle cx="40" cy="120" r="10" fill="#D97706" opacity="0.6"/>
+                <text x="40" y="145" font-family="system-ui" font-size="9" fill="#D97706" text-anchor="middle">Light</text>
+                <!-- Barrier with slits -->
+                <rect x="140" y="35" width="6" height="70" fill="#64748b"/>
+                <rect x="140" y="115" width="6" height="10" fill="#64748b"/>
+                <rect x="140" y="135" width="6" height="70" fill="#64748b"/>
+                <text x="143" y="28" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Barrier</text>
+                <!-- Slit labels -->
+                <text x="155" y="110" font-family="system-ui" font-size="9" fill="#1a73e8">S1</text>
+                <text x="155" y="140" font-family="system-ui" font-size="9" fill="#1a73e8">S2</text>
+                <!-- Slit separation d -->
+                <line x1="135" y1="110" x2="135" y2="132" stroke="#16A34A" stroke-width="1.5"/>
+                <text x="125" y="125" font-family="system-ui" font-size="9" fill="#16A34A">d</text>
+                <!-- Wavefronts from slits -->
+                <path d="M 146,110 Q 200,60 300,50" fill="none" stroke="#1a73e8" stroke-width="0.8" opacity="0.4"/>
+                <path d="M 146,110 Q 200,100 300,100" fill="none" stroke="#1a73e8" stroke-width="0.8" opacity="0.4"/>
+                <path d="M 146,110 Q 200,140 300,160" fill="none" stroke="#1a73e8" stroke-width="0.8" opacity="0.4"/>
+                <path d="M 146,132 Q 200,80 300,50" fill="none" stroke="#DC2626" stroke-width="0.8" opacity="0.4"/>
+                <path d="M 146,132 Q 200,120 300,100" fill="none" stroke="#DC2626" stroke-width="0.8" opacity="0.4"/>
+                <path d="M 146,132 Q 200,160 300,160" fill="none" stroke="#DC2626" stroke-width="0.8" opacity="0.4"/>
+                <!-- Screen -->
+                <rect x="380" y="35" width="6" height="175" fill="#e2e8f0" stroke="#64748b" stroke-width="1"/>
+                <!-- Interference pattern -->
+                <rect x="388" y="42" width="15" height="8" fill="#D97706" opacity="0.9"/>
+                <rect x="388" y="62" width="15" height="8" fill="#D97706" opacity="0.9"/>
+                <rect x="388" y="82" width="15" height="8" fill="#D97706" opacity="0.9"/>
+                <rect x="388" y="102" width="15" height="8" fill="#D97706" opacity="0.9"/>
+                <rect x="388" y="122" width="15" height="8" fill="#D97706" opacity="0.9"/>
+                <rect x="388" y="142" width="15" height="8" fill="#D97706" opacity="0.9"/>
+                <rect x="388" y="162" width="15" height="8" fill="#D97706" opacity="0.9"/>
+                <rect x="388" y="182" width="15" height="8" fill="#D97706" opacity="0.9"/>
+                <text x="420" y="108" font-family="system-ui" font-size="9" fill="#64748b">Screen</text>
+                <!-- Fringe spacing -->
+                <line x1="410" y1="86" x2="410" y2="106" stroke="#16A34A" stroke-width="1.5"/>
+                <text x="425" y="100" font-family="system-ui" font-size="9" fill="#16A34A">w</text>
+                <!-- D distance -->
+                <line x1="146" y1="220" x2="380" y2="220" stroke="#D97706" stroke-width="1.5"/>
+                <text x="260" y="235" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="middle">D (slit-to-screen distance)</text>
+                <!-- Formula -->
+                <text x="260" y="215" font-family="system-ui" font-size="11" fill="#1a1a2e" text-anchor="middle" font-weight="600">w = λD / d</text>
+            </svg>
+        </div>
+
         <div class="exam-tip">
             Young's double slit experiment provides evidence for the wave nature of light. It only works because both slits act as coherent sources (derived from the same wavefront).
         </div>
@@ -202,6 +335,47 @@
             <tr><td>3rd</td><td>3 antinodes, 4 nodes</td><td>3f<sub>0</sub></td><td>&lambda; = 2L/3</td></tr>
             <tr><td>nth</td><td>n antinodes, (n+1) nodes</td><td>nf<sub>0</sub></td><td>&lambda; = 2L/n</td></tr>
         </table>
+
+        <!-- SVG: Standing Waves on a String - Harmonics -->
+        <div style="margin: 20px auto; text-align: center;">
+            <svg viewBox="0 0 500 260" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+                <text x="250" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Standing Waves: Harmonics on a String</text>
+                <!-- 1st harmonic -->
+                <text x="50" y="60" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">1st</text>
+                <text x="50" y="72" font-family="system-ui" font-size="9" fill="#64748b">f₀</text>
+                <circle cx="80" cy="65" r="3" fill="#64748b"/>
+                <path d="M 80,65 Q 240,15 400,65" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+                <path d="M 80,65 Q 240,115 400,65" fill="none" stroke="#1a73e8" stroke-width="2.5" stroke-dasharray="5,3" opacity="0.4"/>
+                <circle cx="400" cy="65" r="3" fill="#64748b"/>
+                <text x="240" y="52" font-family="system-ui" font-size="9" fill="#16A34A" text-anchor="middle">A</text>
+                <text x="430" y="65" font-family="system-ui" font-size="9" fill="#D97706">λ = 2L</text>
+
+                <!-- 2nd harmonic -->
+                <text x="50" y="125" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">2nd</text>
+                <text x="50" y="137" font-family="system-ui" font-size="9" fill="#64748b">2f₀</text>
+                <circle cx="80" cy="130" r="3" fill="#64748b"/>
+                <path d="M 80,130 Q 160,85 240,130 Q 320,175 400,130" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+                <path d="M 80,130 Q 160,175 240,130 Q 320,85 400,130" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="5,3" opacity="0.4"/>
+                <circle cx="240" cy="130" r="3" fill="#64748b"/>
+                <circle cx="400" cy="130" r="3" fill="#64748b"/>
+                <text x="240" y="125" font-family="system-ui" font-size="9" fill="#64748b">N</text>
+                <text x="430" y="130" font-family="system-ui" font-size="9" fill="#D97706">λ = L</text>
+
+                <!-- 3rd harmonic -->
+                <text x="50" y="195" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">3rd</text>
+                <text x="50" y="207" font-family="system-ui" font-size="9" fill="#64748b">3f₀</text>
+                <circle cx="80" cy="200" r="3" fill="#64748b"/>
+                <path d="M 80,200 Q 133,165 187,200 Q 240,235 293,200 Q 347,165 400,200" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+                <path d="M 80,200 Q 133,235 187,200 Q 240,165 293,200 Q 347,235 400,200" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-dasharray="5,3" opacity="0.4"/>
+                <circle cx="187" cy="200" r="3" fill="#64748b"/>
+                <circle cx="293" cy="200" r="3" fill="#64748b"/>
+                <circle cx="400" cy="200" r="3" fill="#64748b"/>
+                <text x="430" y="200" font-family="system-ui" font-size="9" fill="#D97706">λ = 2L/3</text>
+
+                <!-- Legend -->
+                <text x="250" y="248" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">N = node (zero displacement) | A = antinode (max displacement)</text>
+            </svg>
+        </div>
 
         <h3>Stationary Waves in Pipes</h3>
         <ul>
@@ -316,6 +490,43 @@
             <li>Increasing frequency increases the maximum kinetic energy of the emitted electrons.</li>
         </ul>
 
+        <!-- SVG: Photoelectric Effect Diagram -->
+        <div style="margin: 20px auto; text-align: center;">
+            <svg viewBox="0 0 460 230" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="pe1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#D97706"/></marker>
+                    <marker id="pe2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
+                </defs>
+                <text x="230" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">The Photoelectric Effect</text>
+                <!-- Metal surface -->
+                <rect x="150" y="120" width="200" height="80" fill="#94a3b8" stroke="#64748b" stroke-width="1.5" rx="4"/>
+                <text x="250" y="165" font-family="system-ui" font-size="12" fill="#fff" text-anchor="middle" font-weight="600">Metal Surface</text>
+                <!-- Incoming photons -->
+                <line x1="50" y1="50" x2="170" y2="130" stroke="#D97706" stroke-width="2.5" marker-end="url(#pe1)"/>
+                <line x1="30" y1="70" x2="160" y2="140" stroke="#D97706" stroke-width="2" marker-end="url(#pe1)" opacity="0.6"/>
+                <line x1="70" y1="40" x2="185" y2="125" stroke="#D97706" stroke-width="2" marker-end="url(#pe1)" opacity="0.6"/>
+                <!-- Wavy photon lines -->
+                <path d="M 55,45 Q 60,42 65,45 Q 70,48 75,45" fill="none" stroke="#D97706" stroke-width="1.5"/>
+                <text x="40" y="38" font-family="system-ui" font-size="11" fill="#D97706" font-weight="600">Photons (hf)</text>
+                <!-- Ejected electrons -->
+                <circle cx="200" cy="115" r="5" fill="#DC2626" stroke="#DC2626" stroke-width="1"/>
+                <text x="195" y="118" font-family="system-ui" font-size="8" fill="#fff" text-anchor="middle">e⁻</text>
+                <line x1="200" y1="110" x2="200" y2="55" stroke="#DC2626" stroke-width="2" marker-end="url(#pe2)"/>
+
+                <circle cx="270" cy="118" r="5" fill="#DC2626" stroke="#DC2626" stroke-width="1"/>
+                <text x="265" y="121" font-family="system-ui" font-size="8" fill="#fff" text-anchor="middle">e⁻</text>
+                <line x1="270" y1="113" x2="290" y2="50" stroke="#DC2626" stroke-width="2" marker-end="url(#pe2)"/>
+
+                <circle cx="320" cy="116" r="5" fill="#DC2626" stroke="#DC2626" stroke-width="1"/>
+                <text x="315" y="119" font-family="system-ui" font-size="8" fill="#fff" text-anchor="middle">e⁻</text>
+                <line x1="320" y1="111" x2="350" y2="55" stroke="#DC2626" stroke-width="2" marker-end="url(#pe2)"/>
+
+                <text x="300" y="42" font-family="system-ui" font-size="11" fill="#DC2626" text-anchor="middle" font-weight="600">Photoelectrons</text>
+                <!-- Energy equation -->
+                <text x="250" y="215" font-family="system-ui" font-size="12" fill="#1a1a2e" text-anchor="middle" font-weight="600">hf = φ + Ek(max)</text>
+            </svg>
+        </div>
+
         <h3>Einstein's Photoelectric Equation</h3>
         <div class="equation">
             hf = &phi; + E<sub>k(max)</sub>
@@ -352,6 +563,52 @@
         <h3>Photon Energy</h3>
         <div class="equation">
             E = hf = hc / &lambda;
+        </div>
+
+        <!-- SVG: Energy Level Diagram -->
+        <div style="margin: 20px auto; text-align: center;">
+            <svg viewBox="0 0 420 260" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="el1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
+                    <marker id="el2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
+                </defs>
+                <text x="210" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Atomic Energy Levels and Transitions</text>
+                <!-- Energy levels -->
+                <line x1="80" y1="220" x2="260" y2="220" stroke="#1a1a2e" stroke-width="2.5"/>
+                <text x="68" y="224" font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="end">n=1</text>
+                <text x="270" y="224" font-family="system-ui" font-size="9" fill="#64748b">-13.6 eV (ground state)</text>
+
+                <line x1="80" y1="150" x2="260" y2="150" stroke="#1a1a2e" stroke-width="2"/>
+                <text x="68" y="154" font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="end">n=2</text>
+                <text x="270" y="154" font-family="system-ui" font-size="9" fill="#64748b">-3.4 eV</text>
+
+                <line x1="80" y1="105" x2="260" y2="105" stroke="#1a1a2e" stroke-width="2"/>
+                <text x="68" y="109" font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="end">n=3</text>
+                <text x="270" y="109" font-family="system-ui" font-size="9" fill="#64748b">-1.5 eV</text>
+
+                <line x1="80" y1="75" x2="260" y2="75" stroke="#1a1a2e" stroke-width="2"/>
+                <text x="68" y="79" font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="end">n=4</text>
+                <text x="270" y="79" font-family="system-ui" font-size="9" fill="#64748b">-0.85 eV</text>
+
+                <line x1="80" y1="45" x2="260" y2="45" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="5,3"/>
+                <text x="68" y="49" font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="end">n=∞</text>
+                <text x="270" y="49" font-family="system-ui" font-size="9" fill="#64748b">0 eV (ionisation)</text>
+
+                <!-- Emission transition (n=3 to n=1) -->
+                <line x1="130" y1="108" x2="130" y2="217" stroke="#DC2626" stroke-width="2" marker-end="url(#el1)"/>
+                <path d="M 133,140 Q 140,136 133,132 Q 126,128 133,124 Q 140,120 133,116" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+                <text x="148" y="170" font-family="system-ui" font-size="9" fill="#DC2626">Emission</text>
+                <text x="148" y="180" font-family="system-ui" font-size="9" fill="#DC2626">(photon out)</text>
+
+                <!-- Absorption transition (n=1 to n=2) -->
+                <line x1="200" y1="217" x2="200" y2="153" stroke="#1a73e8" stroke-width="2" marker-end="url(#el2)"/>
+                <path d="M 192,195 Q 185,191 192,187 Q 199,183 192,179" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
+                <text x="180" y="195" font-family="system-ui" font-size="9" fill="#1a73e8" text-anchor="end">Absorption</text>
+                <text x="180" y="205" font-family="system-ui" font-size="9" fill="#1a73e8" text-anchor="end">(photon in)</text>
+
+                <!-- Key -->
+                <text x="210" y="250" font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="middle">ΔE = hf = hc/λ</text>
+            </svg>
         </div>
 
         <h3>Transitions Between Energy Levels</h3>

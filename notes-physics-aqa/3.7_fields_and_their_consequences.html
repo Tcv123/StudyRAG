@@ -52,6 +52,46 @@
 
 <p><strong>Uniform field:</strong> Near the Earth's surface, g is approximately constant at 9.81 N kg<sup>-1</sup>. Field lines are parallel and equally spaced.</p>
 
+<!-- Gravitational Field Lines -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 220" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Gravitational Field Lines</text>
+  <defs>
+    <marker id="aGF" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
+  </defs>
+
+  <!-- Radial field (point mass) -->
+  <text x="135" y="42" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">Radial Field (point mass)</text>
+  <circle cx="135" cy="125" r="18" fill="#1a73e8"/>
+  <text x="135" y="130" text-anchor="middle" font-family="system-ui" font-size="10" fill="#fff" font-weight="600">M</text>
+  <!-- Field lines pointing inward -->
+  <line x1="135" y1="50" x2="135" y2="105" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <line x1="135" y1="200" x2="135" y2="145" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <line x1="50" y1="125" x2="115" y2="125" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <line x1="220" y1="125" x2="155" y2="125" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <!-- Diagonals -->
+  <line x1="75" y1="65" x2="123" y2="113" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <line x1="195" y1="65" x2="147" y2="113" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <line x1="75" y1="185" x2="123" y2="137" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <line x1="195" y1="185" x2="147" y2="137" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <text x="135" y="212" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">g = GM/r2 (inverse square law)</text>
+
+  <!-- Uniform field (near surface) -->
+  <text x="395" y="42" text-anchor="middle" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">Uniform Field (near surface)</text>
+  <!-- Ground surface -->
+  <rect x="305" y="190" width="180" height="15" fill="#e8eef6" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="395" y="200" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">Earth's surface</text>
+  <!-- Parallel field lines -->
+  <line x1="325" y1="55" x2="325" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <line x1="355" y1="55" x2="355" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <line x1="385" y1="55" x2="385" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <line x1="415" y1="55" x2="415" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <line x1="445" y1="55" x2="445" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <line x1="465" y1="55" x2="465" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aGF)"/>
+  <text x="395" y="212" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">g approx 9.81 N/kg (constant)</text>
+</svg>
+</div>
+
 <h3>Gravitational Potential</h3>
 <div class="def-box"><strong>Gravitational potential (V):</strong> The work done per unit mass in bringing a small test mass from infinity to that point. V is always negative (since gravity is attractive and V = 0 at infinity).</div>
 <div class="eq">V = &minus;GM / r</div>
@@ -102,6 +142,47 @@
 <div class="def-box"><strong>Electric potential (V):</strong> The work done per unit positive charge in bringing a small test charge from infinity to that point.</div>
 <div class="eq">V = kQ / r = Q / (4&pi;&epsilon;<sub>0</sub>r)</div>
 <p>V is positive for a positive charge and negative for a negative charge. E = &minus;dV/dr.</p>
+
+<!-- Electric Field Lines -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 220" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Electric Field Lines</text>
+  <defs>
+    <marker id="aEF" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#DC2626"/></marker>
+    <marker id="aEFb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
+  </defs>
+
+  <!-- Radial field (positive charge) -->
+  <text x="135" y="42" text-anchor="middle" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">Radial (+Q)</text>
+  <circle cx="135" cy="125" r="18" fill="#DC2626"/>
+  <text x="135" y="130" text-anchor="middle" font-family="system-ui" font-size="10" fill="#fff" font-weight="600">+Q</text>
+  <!-- Field lines pointing OUTWARD -->
+  <line x1="135" y1="105" x2="135" y2="50" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
+  <line x1="135" y1="145" x2="135" y2="200" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
+  <line x1="115" y1="125" x2="50" y2="125" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
+  <line x1="155" y1="125" x2="220" y2="125" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
+  <line x1="123" y1="113" x2="75" y2="65" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
+  <line x1="147" y1="113" x2="195" y2="65" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
+  <line x1="123" y1="137" x2="75" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
+  <line x1="147" y1="137" x2="195" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
+  <text x="135" y="212" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">Lines radiate outward from +</text>
+
+  <!-- Uniform field (parallel plates) -->
+  <text x="395" y="42" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">Uniform (parallel plates)</text>
+  <!-- Positive plate -->
+  <rect x="310" y="55" width="8" height="150" fill="#DC2626" opacity="0.7"/>
+  <text x="306" y="135" text-anchor="end" font-family="system-ui" font-size="12" fill="#DC2626" font-weight="600">+</text>
+  <!-- Negative plate -->
+  <rect x="472" y="55" width="8" height="150" fill="#1a73e8" opacity="0.7"/>
+  <text x="490" y="135" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="600">-</text>
+  <!-- Parallel field lines from + to - -->
+  <line x1="322" y1="80" x2="468" y2="80" stroke="#D97706" stroke-width="1.5" marker-end="url(#aEF)"/>
+  <line x1="322" y1="110" x2="468" y2="110" stroke="#D97706" stroke-width="1.5" marker-end="url(#aEF)"/>
+  <line x1="322" y1="140" x2="468" y2="140" stroke="#D97706" stroke-width="1.5" marker-end="url(#aEF)"/>
+  <line x1="322" y1="170" x2="468" y2="170" stroke="#D97706" stroke-width="1.5" marker-end="url(#aEF)"/>
+  <text x="395" y="212" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">E = V/d (uniform, constant)</text>
+</svg>
+</div>
 
 <h3>Comparison: Gravitational and Electric Fields</h3>
 <table>
@@ -177,6 +258,34 @@
 </ul>
 <p>Direction given by Fleming's left-hand rule (thuMb = Motion, First finger = Field, seCond finger = Current).</p>
 
+<!-- Magnetic Field Around Current-Carrying Wire -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 440 240" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="220" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Magnetic Field Around a Current-Carrying Wire</text>
+  <!-- Wire cross-section (current coming out of page) -->
+  <circle cx="180" cy="130" r="14" fill="#1a1a2e"/>
+  <circle cx="180" cy="130" r="4" fill="#16A34A"/>
+  <text x="180" y="108" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">I (out of page)</text>
+  <!-- Concentric circular field lines -->
+  <circle cx="180" cy="130" r="30" fill="none" stroke="#1a73e8" stroke-width="1.2"/>
+  <circle cx="180" cy="130" r="50" fill="none" stroke="#1a73e8" stroke-width="1"/>
+  <circle cx="180" cy="130" r="70" fill="none" stroke="#1a73e8" stroke-width="0.8"/>
+  <circle cx="180" cy="130" r="90" fill="none" stroke="#1a73e8" stroke-width="0.6"/>
+  <!-- Direction arrows on circles (anticlockwise for current out of page) -->
+  <polygon points="210,128 210,132 214,130" fill="#1a73e8"/>
+  <polygon points="230,128 230,132 234,130" fill="#1a73e8"/>
+  <polygon points="250,128 250,132 254,130" fill="#1a73e8"/>
+  <polygon points="270,128 270,132 274,130" fill="#1a73e8"/>
+  <!-- Right side: wire into page -->
+  <circle cx="370" cy="130" r="14" fill="#1a1a2e"/>
+  <line x1="363" y1="123" x2="377" y2="137" stroke="#DC2626" stroke-width="2"/>
+  <line x1="377" y1="123" x2="363" y2="137" stroke="#DC2626" stroke-width="2"/>
+  <text x="370" y="108" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">I (into page)</text>
+  <!-- Use right-hand grip rule label -->
+  <text x="220" y="228" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">Right-hand grip rule: thumb = current direction, fingers curl in field direction</text>
+</svg>
+</div>
+
 <h3>Force on a Moving Charge</h3>
 <div class="eq">F = BQv sin&theta;</div>
 <p>A charged particle moving perpendicular to a magnetic field follows a circular path (the magnetic force provides centripetal force):</p>
@@ -193,6 +302,42 @@
 &epsilon; = &minus;d(N&Phi;)/dt = &minus;N d&Phi;/dt</div>
 
 <div class="def-box"><strong>Lenz's Law:</strong> The direction of the induced EMF (and hence the induced current) is such that it opposes the change in flux that caused it. This is the reason for the negative sign in Faraday's Law. It is a consequence of conservation of energy.</div>
+
+<!-- Electromagnetic Induction Diagram -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 480 250" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="240" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Electromagnetic Induction</text>
+  <defs>
+    <marker id="aEM" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
+    <marker id="aEMr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#DC2626"/></marker>
+    <marker id="aEMg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#16A34A"/></marker>
+  </defs>
+  <!-- Magnetic field (into page - shown as X marks) -->
+  <g font-family="system-ui" font-size="14" fill="#1a73e8" opacity="0.4">
+    <text x="80" y="80">x</text><text x="120" y="80">x</text><text x="160" y="80">x</text><text x="200" y="80">x</text><text x="240" y="80">x</text><text x="280" y="80">x</text><text x="320" y="80">x</text><text x="360" y="80">x</text>
+    <text x="80" y="120">x</text><text x="120" y="120">x</text><text x="160" y="120">x</text><text x="200" y="120">x</text><text x="240" y="120">x</text><text x="280" y="120">x</text><text x="320" y="120">x</text><text x="360" y="120">x</text>
+    <text x="80" y="160">x</text><text x="120" y="160">x</text><text x="160" y="160">x</text><text x="200" y="160">x</text><text x="240" y="160">x</text><text x="280" y="160">x</text><text x="320" y="160">x</text><text x="360" y="160">x</text>
+    <text x="80" y="200">x</text><text x="120" y="200">x</text><text x="160" y="200">x</text><text x="200" y="200">x</text><text x="240" y="200">x</text><text x="280" y="200">x</text><text x="320" y="200">x</text><text x="360" y="200">x</text>
+  </g>
+  <text x="410" y="120" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">B field</text>
+  <text x="410" y="132" font-family="system-ui" font-size="10" fill="#1a73e8">(into page)</text>
+
+  <!-- Wire (vertical conductor) -->
+  <rect x="195" y="60" width="10" height="160" rx="2" fill="#D97706" opacity="0.8"/>
+  <text x="185" y="145" text-anchor="end" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">Wire</text>
+
+  <!-- Velocity arrow (wire moving right) -->
+  <line x1="210" y1="140" x2="260" y2="140" stroke="#DC2626" stroke-width="2.5" marker-end="url(#aEMr)"/>
+  <text x="240" y="135" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">v</text>
+
+  <!-- Induced current direction (upward in wire using Fleming's RH rule) -->
+  <line x1="200" y1="200" x2="200" y2="75" stroke="#16A34A" stroke-width="2" marker-end="url(#aEMg)"/>
+  <text x="200" y="65" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">Induced I</text>
+
+  <!-- Force on wire labels -->
+  <text x="240" y="238" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">EMF = BLv (wire of length L moving at speed v in field B)</text>
+</svg>
+</div>
 
 <h3>EMF in a Rotating Coil</h3>
 <p>A coil rotating in a uniform magnetic field generates a sinusoidal EMF:</p>

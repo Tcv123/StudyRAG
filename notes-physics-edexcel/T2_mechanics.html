@@ -138,6 +138,52 @@
         </div>
         <p>where &theta; is the angle between the vector and the horizontal.</p>
 
+        <!-- SVG: Free Body Force Diagram with Resolved Components -->
+        <div style="margin: 20px auto; text-align: center;">
+            <svg viewBox="0 0 480 320" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    .mech-label { font-family: system-ui; font-size: 12px; fill: #1a1a2e; }
+                    .mech-title { font-family: system-ui; font-size: 14px; fill: #1a1a2e; font-weight: 600; text-anchor: middle; }
+                </style>
+                <text x="240" y="22" class="mech-title">Free Body Diagram: Resolving a Force</text>
+                <defs>
+                    <marker id="ah2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1a73e8"/></marker>
+                    <marker id="ahr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#DC2626"/></marker>
+                    <marker id="ahg" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#16A34A"/></marker>
+                </defs>
+                <!-- Object -->
+                <rect x="170" y="140" width="60" height="60" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+                <text x="200" y="175" class="mech-label" text-anchor="middle" font-weight="600">m</text>
+                <!-- Force F at angle -->
+                <line x1="230" y1="170" x2="370" y2="90" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#ah2)"/>
+                <text x="310" y="115" class="mech-label" fill="#1a73e8" font-weight="600">F</text>
+                <!-- Horizontal component -->
+                <line x1="230" y1="170" x2="370" y2="170" stroke="#DC2626" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#ahr)"/>
+                <text x="310" y="190" class="mech-label" fill="#DC2626">F cos θ</text>
+                <!-- Vertical component -->
+                <line x1="370" y1="170" x2="370" y2="90" stroke="#16A34A" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#ahg)"/>
+                <text x="400" y="135" class="mech-label" fill="#16A34A">F sin θ</text>
+                <!-- Angle arc -->
+                <path d="M 270,170 A 40,40 0 0,0 257,145" fill="none" stroke="#D97706" stroke-width="1.5"/>
+                <text x="275" y="158" class="mech-label" fill="#D97706">θ</text>
+                <!-- Right angle marker -->
+                <rect x="360" y="160" width="10" height="10" fill="none" stroke="#64748b" stroke-width="1"/>
+                <!-- Weight -->
+                <line x1="200" y1="200" x2="200" y2="280" stroke="#1a1a2e" stroke-width="2.5" marker-end="url(#ah2)"/>
+                <text x="215" y="260" class="mech-label" fill="#1a1a2e" font-weight="600">mg</text>
+                <!-- Normal -->
+                <line x1="200" y1="140" x2="200" y2="60" stroke="#16A34A" stroke-width="2.5" marker-end="url(#ahg)"/>
+                <text x="215" y="80" class="mech-label" fill="#16A34A" font-weight="600">N</text>
+                <!-- Ground -->
+                <line x1="80" y1="200" x2="400" y2="200" stroke="#64748b" stroke-width="2"/>
+                <line x1="80" y1="200" x2="90" y2="212" stroke="#64748b" stroke-width="1"/>
+                <line x1="100" y1="200" x2="110" y2="212" stroke="#64748b" stroke-width="1"/>
+                <line x1="120" y1="200" x2="130" y2="212" stroke="#64748b" stroke-width="1"/>
+                <line x1="140" y1="200" x2="150" y2="212" stroke="#64748b" stroke-width="1"/>
+                <line x1="160" y1="200" x2="170" y2="212" stroke="#64748b" stroke-width="1"/>
+            </svg>
+        </div>
+
         <div class="exam-tip">
             When resolving forces on an inclined plane, resolve parallel and perpendicular to the slope — not horizontally and vertically. The component of weight along the slope is mg sin &theta; and perpendicular to the slope is mg cos &theta;.
         </div>
@@ -160,6 +206,39 @@
             <li>Straight line with positive gradient = constant acceleration</li>
             <li>Negative velocity = moving in the opposite direction</li>
         </ul>
+
+        <!-- SVG: Displacement-Time and Velocity-Time Graphs -->
+        <div style="margin: 20px auto; text-align: center;">
+            <svg viewBox="0 0 520 260" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+                <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Motion Graphs Comparison (constant acceleration)</text>
+                <!-- s-t graph -->
+                <text x="135" y="42" font-family="system-ui" font-size="12" fill="#1a73e8" text-anchor="middle" font-weight="600">Displacement-Time</text>
+                <line x1="50" y1="230" x2="240" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
+                <line x1="50" y1="230" x2="50" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
+                <text x="145" y="248" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">t</text>
+                <text x="38" y="140" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,38,140)">s</text>
+                <!-- Curved line (s = ut + 1/2at^2) -->
+                <path d="M 50,230 Q 100,210 140,160 Q 180,100 230,60" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+                <text x="180" y="85" font-family="system-ui" font-size="10" fill="#1a73e8">gradient = v</text>
+                <!-- Tangent line -->
+                <line x1="110" y1="210" x2="180" y2="130" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
+                <text x="165" y="185" font-family="system-ui" font-size="9" fill="#DC2626">tangent at</text>
+                <text x="165" y="195" font-family="system-ui" font-size="9" fill="#DC2626">a point = v</text>
+
+                <!-- v-t graph -->
+                <text x="395" y="42" font-family="system-ui" font-size="12" fill="#16A34A" text-anchor="middle" font-weight="600">Velocity-Time</text>
+                <line x1="300" y1="230" x2="490" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
+                <line x1="300" y1="230" x2="300" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
+                <text x="395" y="248" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">t</text>
+                <text x="288" y="140" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,288,140)">v</text>
+                <!-- Straight line (v = u + at) -->
+                <line x1="300" y1="210" x2="480" y2="70" stroke="#16A34A" stroke-width="2.5"/>
+                <text x="420" y="100" font-family="system-ui" font-size="10" fill="#16A34A">gradient = a</text>
+                <!-- Shaded area -->
+                <polygon points="300,230 300,210 480,70 480,230" fill="#16A34A" opacity="0.1"/>
+                <text x="390" y="200" font-family="system-ui" font-size="10" fill="#16A34A">area = displacement</text>
+            </svg>
+        </div>
 
         <h2>2.3 SUVAT Equations</h2>
         <div class="definition-box">
@@ -196,6 +275,50 @@
             <li>At the highest point, the vertical component of velocity = 0 (but horizontal velocity remains unchanged).</li>
             <li>Time of flight is determined entirely by the vertical motion.</li>
         </ul>
+
+        <!-- SVG: Projectile Motion Path -->
+        <div style="margin: 20px auto; text-align: center;">
+            <svg viewBox="0 0 500 280" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="pah" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
+                    <marker id="par" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
+                    <marker id="pag" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#16A34A"/></marker>
+                </defs>
+                <text x="250" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Projectile Motion with Velocity Vectors</text>
+                <!-- Axes -->
+                <line x1="40" y1="240" x2="470" y2="240" stroke="#64748b" stroke-width="1.5"/>
+                <!-- Parabolic path -->
+                <path d="M 60,240 Q 150,40 260,60 Q 370,80 450,240" fill="none" stroke="#1a73e8" stroke-width="2.5" stroke-dasharray="6,3"/>
+                <!-- Launch point -->
+                <circle cx="60" cy="240" r="4" fill="#1a73e8"/>
+                <!-- Velocity vectors at launch -->
+                <line x1="60" y1="240" x2="120" y2="180" stroke="#1a73e8" stroke-width="2" marker-end="url(#pah)"/>
+                <text x="105" y="195" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">v</text>
+                <line x1="60" y1="240" x2="120" y2="240" stroke="#DC2626" stroke-width="1.5" marker-end="url(#par)"/>
+                <text x="95" y="255" font-family="system-ui" font-size="10" fill="#DC2626">vx</text>
+                <line x1="60" y1="240" x2="60" y2="180" stroke="#16A34A" stroke-width="1.5" marker-end="url(#pag)"/>
+                <text x="42" y="210" font-family="system-ui" font-size="10" fill="#16A34A">vy</text>
+                <!-- At peak -->
+                <circle cx="260" cy="60" r="4" fill="#1a73e8"/>
+                <line x1="260" y1="60" x2="320" y2="60" stroke="#DC2626" stroke-width="2" marker-end="url(#par)"/>
+                <text x="295" y="52" font-family="system-ui" font-size="10" fill="#DC2626">vx (constant)</text>
+                <text x="260" y="48" font-family="system-ui" font-size="10" fill="#16A34A" text-anchor="middle">vy = 0</text>
+                <!-- At landing -->
+                <circle cx="450" cy="240" r="4" fill="#1a73e8"/>
+                <line x1="450" y1="240" x2="490" y2="280" stroke="#1a73e8" stroke-width="2"/>
+                <line x1="450" y1="240" x2="490" y2="240" stroke="#DC2626" stroke-width="1.5" marker-end="url(#par)"/>
+                <line x1="450" y1="240" x2="450" y2="280" stroke="#16A34A" stroke-width="1.5"/>
+                <!-- Labels -->
+                <text x="255" y="140" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Horizontal: constant velocity</text>
+                <text x="255" y="155" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Vertical: accelerates at g downward</text>
+                <!-- Angle -->
+                <path d="M 90,240 A 30,30 0 0,0 78,222" fill="none" stroke="#D97706" stroke-width="1.5"/>
+                <text x="100" y="230" font-family="system-ui" font-size="11" fill="#D97706">θ</text>
+                <!-- max height label -->
+                <line x1="260" y1="60" x2="260" y2="240" stroke="#64748b" stroke-width="0.8" stroke-dasharray="3,3"/>
+                <text x="270" y="150" font-family="system-ui" font-size="10" fill="#64748b" transform="rotate(90,270,150)">max height</text>
+            </svg>
+        </div>
 
         <h3>Projectile Launched at Angle &theta;</h3>
         <div class="equation">

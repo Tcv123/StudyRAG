@@ -144,6 +144,44 @@
     <li>Total x-momentum before = Total x-momentum after</li>
     <li>Total y-momentum before = Total y-momentum after</li>
 </ul>
+<!-- SVG: 2D Momentum Vector Diagram -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 440 220" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="mv1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
+            <marker id="mv2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
+            <marker id="mv3" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#16A34A"/></marker>
+        </defs>
+        <text x="220" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">2D Collision: Momentum Conservation</text>
+
+        <!-- Before collision -->
+        <text x="110" y="48" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle" font-weight="600">Before</text>
+        <circle cx="80" cy="110" r="14" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1.5"/>
+        <text x="80" y="114" font-family="system-ui" font-size="10" fill="#1a73e8" text-anchor="middle">m1</text>
+        <line x1="94" y1="110" x2="155" y2="110" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#mv1)"/>
+        <text x="130" y="103" font-family="system-ui" font-size="10" fill="#1a73e8" text-anchor="middle">p1</text>
+        <circle cx="170" cy="110" r="12" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="170" y="114" font-family="system-ui" font-size="10" fill="#DC2626" text-anchor="middle">m2</text>
+        <text x="170" y="135" font-family="system-ui" font-size="9" fill="#DC2626" text-anchor="middle">(at rest)</text>
+
+        <!-- After collision -->
+        <text x="330" y="48" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle" font-weight="600">After</text>
+        <circle cx="280" cy="110" r="4" fill="#64748b"/>
+        <!-- m1 goes at angle up -->
+        <line x1="280" y1="110" x2="360" y2="65" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#mv1)"/>
+        <text x="330" y="72" font-family="system-ui" font-size="10" fill="#1a73e8">p1'</text>
+        <circle cx="365" cy="62" r="10" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1.5"/>
+        <!-- m2 goes at angle down -->
+        <line x1="280" y1="110" x2="380" y2="155" stroke="#DC2626" stroke-width="2.5" marker-end="url(#mv2)"/>
+        <text x="345" y="148" font-family="system-ui" font-size="10" fill="#DC2626">p2'</text>
+        <circle cx="385" cy="158" r="10" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
+
+        <!-- Vector triangle -->
+        <text x="220" y="180" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">x-momentum: p1 = p1'cosθ1 + p2'cosθ2</text>
+        <text x="220" y="195" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">y-momentum: 0 = p1'sinθ1 - p2'sinθ2</text>
+    </svg>
+</div>
+
 <p>Vector diagrams can be drawn to show that the total momentum vectors form a closed triangle (or polygon) if momentum is conserved.</p>
 
 <h3>Elastic vs Inelastic Collisions</h3>
@@ -195,6 +233,50 @@
 
 <p>The relationship between linear speed v and angular velocity:</p>
 <div class="equation">v = ωr</div>
+
+<!-- SVG: Circular Motion Diagram -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 400 320" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="cm1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
+            <marker id="cm2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
+            <marker id="cm3" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#16A34A"/></marker>
+        </defs>
+        <text x="200" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Circular Motion: Forces and Vectors</text>
+        <!-- Circle path -->
+        <circle cx="200" cy="170" r="100" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6,4"/>
+        <!-- Centre -->
+        <circle cx="200" cy="170" r="3" fill="#64748b"/>
+        <text x="210" y="175" font-family="system-ui" font-size="10" fill="#64748b">Centre</text>
+        <!-- Object at top -->
+        <circle cx="200" cy="70" r="8" fill="#1a73e8"/>
+        <!-- Velocity (tangential) at top -->
+        <line x1="200" y1="70" x2="260" y2="70" stroke="#16A34A" stroke-width="2.5" marker-end="url(#cm3)"/>
+        <text x="240" y="62" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">v</text>
+        <!-- Centripetal acceleration at top -->
+        <line x1="200" y1="78" x2="200" y2="130" stroke="#DC2626" stroke-width="2.5" marker-end="url(#cm1)"/>
+        <text x="215" y="110" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">a</text>
+        <!-- Object at right -->
+        <circle cx="300" cy="170" r="8" fill="#1a73e8"/>
+        <line x1="300" y1="170" x2="300" y2="110" stroke="#16A34A" stroke-width="2.5" marker-end="url(#cm3)"/>
+        <text x="310" y="135" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">v</text>
+        <line x1="292" y1="170" x2="240" y2="170" stroke="#DC2626" stroke-width="2.5" marker-end="url(#cm1)"/>
+        <text x="265" y="185" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">a</text>
+        <!-- Object at bottom -->
+        <circle cx="200" cy="270" r="8" fill="#1a73e8"/>
+        <line x1="200" y1="270" x2="140" y2="270" stroke="#16A34A" stroke-width="2.5" marker-end="url(#cm3)"/>
+        <text x="155" y="282" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">v</text>
+        <line x1="200" y1="262" x2="200" y2="210" stroke="#DC2626" stroke-width="2.5" marker-end="url(#cm1)"/>
+        <!-- Radius -->
+        <line x1="200" y1="170" x2="200" y2="75" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="188" y="130" font-family="system-ui" font-size="10" fill="#D97706">r</text>
+        <!-- Labels -->
+        <text x="200" y="305" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">v is always tangential | a always points to centre</text>
+        <text x="50" y="55" font-family="system-ui" font-size="10" fill="#16A34A">v = ωr</text>
+        <text x="50" y="70" font-family="system-ui" font-size="10" fill="#DC2626">a = v²/r = ω²r</text>
+        <text x="50" y="85" font-family="system-ui" font-size="10" fill="#1a73e8">F = mv²/r</text>
+    </svg>
+</div>
 
 <h3>Centripetal Acceleration</h3>
 <p>An object in uniform circular motion has an acceleration directed towards the centre of the circle. This is the <strong>centripetal acceleration</strong>.</p>

@@ -141,6 +141,97 @@
     Nebula <span class="arrow">→</span> Protostar <span class="arrow">→</span> Main Sequence <span class="arrow">→</span> Red Supergiant <span class="arrow">→</span> Supernova <span class="arrow">→</span> Neutron Star or Black Hole
 </div>
 
+<!-- SVG: Stellar Lifecycle Diagram -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 520 250" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="sl1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#64748b"/></marker>
+        </defs>
+        <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Stellar Lifecycle</text>
+
+        <!-- Nebula -->
+        <circle cx="50" cy="120" r="25" fill="#94a3b8" opacity="0.3" stroke="#64748b" stroke-width="1.5"/>
+        <text x="50" y="118" font-family="system-ui" font-size="8" fill="#1a1a2e" text-anchor="middle">Nebula</text>
+        <text x="50" y="128" font-family="system-ui" font-size="7" fill="#64748b" text-anchor="middle">(gas+dust)</text>
+
+        <!-- Arrow to protostar -->
+        <line x1="75" y1="120" x2="100" y2="120" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+        <!-- Protostar -->
+        <circle cx="120" cy="120" r="18" fill="#D97706" opacity="0.4" stroke="#D97706" stroke-width="1.5"/>
+        <text x="120" y="123" font-family="system-ui" font-size="7" fill="#1a1a2e" text-anchor="middle">Protostar</text>
+
+        <!-- Arrow to main sequence -->
+        <line x1="138" y1="120" x2="165" y2="120" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+        <!-- Main sequence -->
+        <circle cx="190" cy="120" r="22" fill="#D97706" opacity="0.6" stroke="#D97706" stroke-width="2"/>
+        <text x="190" y="118" font-family="system-ui" font-size="7" fill="#1a1a2e" text-anchor="middle">Main</text>
+        <text x="190" y="128" font-family="system-ui" font-size="7" fill="#1a1a2e" text-anchor="middle">Sequence</text>
+
+        <!-- LOW MASS PATH (top) -->
+        <line x1="212" y1="110" x2="250" y2="75" stroke="#DC2626" stroke-width="1.5" marker-end="url(#sl1)"/>
+        <text x="215" y="80" font-family="system-ui" font-size="8" fill="#DC2626">Low mass</text>
+
+        <!-- Red giant -->
+        <circle cx="280" cy="65" r="24" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="280" y="63" font-family="system-ui" font-size="7" fill="#DC2626" text-anchor="middle">Red</text>
+        <text x="280" y="73" font-family="system-ui" font-size="7" fill="#DC2626" text-anchor="middle">Giant</text>
+
+        <!-- Arrow to planetary nebula -->
+        <line x1="304" y1="65" x2="340" y2="65" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+        <!-- Planetary nebula -->
+        <circle cx="370" cy="65" r="20" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="1.5"/>
+        <text x="370" y="62" font-family="system-ui" font-size="7" fill="#1a73e8" text-anchor="middle">Planetary</text>
+        <text x="370" y="72" font-family="system-ui" font-size="7" fill="#1a73e8" text-anchor="middle">Nebula</text>
+
+        <!-- Arrow to white dwarf -->
+        <line x1="390" y1="65" x2="425" y2="65" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+        <!-- White dwarf -->
+        <circle cx="450" cy="65" r="12" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+        <text x="450" y="62" font-family="system-ui" font-size="6" fill="#1a1a2e" text-anchor="middle">White</text>
+        <text x="450" y="70" font-family="system-ui" font-size="6" fill="#1a1a2e" text-anchor="middle">Dwarf</text>
+
+        <!-- HIGH MASS PATH (bottom) -->
+        <line x1="212" y1="130" x2="250" y2="170" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#sl1)"/>
+        <text x="215" y="165" font-family="system-ui" font-size="8" fill="#1a73e8">High mass</text>
+
+        <!-- Red supergiant -->
+        <circle cx="285" cy="175" r="28" fill="#DC2626" opacity="0.4" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="285" y="172" font-family="system-ui" font-size="7" fill="#DC2626" text-anchor="middle">Red Super-</text>
+        <text x="285" y="182" font-family="system-ui" font-size="7" fill="#DC2626" text-anchor="middle">giant</text>
+
+        <!-- Arrow to supernova -->
+        <line x1="313" y1="175" x2="348" y2="175" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+        <!-- Supernova -->
+        <circle cx="375" cy="175" r="18" fill="#D97706" opacity="0.5" stroke="#D97706" stroke-width="2"/>
+        <text x="375" y="172" font-family="system-ui" font-size="7" fill="#1a1a2e" text-anchor="middle">Super-</text>
+        <text x="375" y="182" font-family="system-ui" font-size="7" fill="#1a1a2e" text-anchor="middle">nova</text>
+
+        <!-- Arrow to neutron star -->
+        <line x1="393" y1="168" x2="425" y2="155" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
+        <!-- Arrow to black hole -->
+        <line x1="393" y1="182" x2="425" y2="200" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+        <!-- Neutron star -->
+        <circle cx="450" cy="150" r="10" fill="#64748b" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="450" y="148" font-family="system-ui" font-size="6" fill="#fff" text-anchor="middle">Neutron</text>
+        <text x="450" y="156" font-family="system-ui" font-size="6" fill="#fff" text-anchor="middle">Star</text>
+
+        <!-- Black hole -->
+        <circle cx="450" cy="205" r="12" fill="#1a1a2e"/>
+        <text x="450" y="203" font-family="system-ui" font-size="6" fill="#fff" text-anchor="middle">Black</text>
+        <text x="450" y="211" font-family="system-ui" font-size="6" fill="#fff" text-anchor="middle">Hole</text>
+
+        <!-- Mass labels -->
+        <text x="455" y="235" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">(M > 3M☉)</text>
+        <text x="455" y="170" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">(1.4-3M☉)</text>
+    </svg>
+</div>
+
 <div class="definition">
     <strong>Main sequence:</strong> The longest stable phase of a star's life, during which the inward gravitational force is balanced by the outward radiation pressure from hydrogen fusion in the core.
 </div>
@@ -164,6 +255,53 @@
 
 <div class="definition">
     <strong>Hertzsprung–Russell (HR) diagram:</strong> A plot of stellar luminosity (or absolute magnitude) against surface temperature (or spectral class). Temperature increases from right to left on the x-axis.
+</div>
+
+<!-- SVG: Hertzsprung-Russell Diagram -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 440 330" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="220" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Hertzsprung-Russell Diagram</text>
+        <!-- Axes -->
+        <line x1="70" y1="290" x2="410" y2="290" stroke="#1a1a2e" stroke-width="1.5"/>
+        <line x1="70" y1="290" x2="70" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="240" y="310" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Temperature (K) - decreasing →</text>
+        <text x="35" y="160" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,35,160)">Luminosity</text>
+        <!-- Temperature scale -->
+        <text x="90" y="305" font-family="system-ui" font-size="9" fill="#64748b">40000</text>
+        <text x="180" y="305" font-family="system-ui" font-size="9" fill="#64748b">10000</text>
+        <text x="280" y="305" font-family="system-ui" font-size="9" fill="#64748b">5000</text>
+        <text x="380" y="305" font-family="system-ui" font-size="9" fill="#64748b">3000</text>
+        <!-- Luminosity scale -->
+        <text x="55" y="55" font-family="system-ui" font-size="9" fill="#64748b">10⁶</text>
+        <text x="55" y="120" font-family="system-ui" font-size="9" fill="#64748b">10³</text>
+        <text x="55" y="190" font-family="system-ui" font-size="9" fill="#64748b">1</text>
+        <text x="55" y="255" font-family="system-ui" font-size="9" fill="#64748b">10⁻³</text>
+
+        <!-- Main sequence band -->
+        <path d="M 100,50 Q 140,80 200,140 Q 260,200 320,240 Q 360,265 390,275" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="2"/>
+        <path d="M 120,50 Q 160,80 220,140 Q 280,200 340,240 Q 370,260 400,270" fill="none" stroke="#1a73e8" stroke-width="0" />
+        <!-- Main sequence wider band -->
+        <path d="M 100,50 L 120,50 Q 160,80 220,140 Q 280,200 340,240 Q 370,260 400,270 L 390,275 Q 360,265 320,240 Q 260,200 200,140 Q 140,80 100,50 Z" fill="#1a73e8" opacity="0.12"/>
+        <text x="200" y="195" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600" transform="rotate(-42,200,195)">Main Sequence</text>
+
+        <!-- Red giants -->
+        <ellipse cx="340" cy="110" rx="50" ry="40" fill="#DC2626" opacity="0.12" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="340" y="105" font-family="system-ui" font-size="10" fill="#DC2626" text-anchor="middle" font-weight="600">Red</text>
+        <text x="340" y="118" font-family="system-ui" font-size="10" fill="#DC2626" text-anchor="middle" font-weight="600">Giants</text>
+
+        <!-- Red supergiants -->
+        <ellipse cx="380" cy="55" rx="30" ry="20" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="380" y="58" font-family="system-ui" font-size="8" fill="#DC2626" text-anchor="middle" font-weight="600">Supergiants</text>
+
+        <!-- White dwarfs -->
+        <ellipse cx="140" cy="260" rx="45" ry="20" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
+        <text x="140" y="258" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="middle" font-weight="600">White</text>
+        <text x="140" y="270" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="middle" font-weight="600">Dwarfs</text>
+
+        <!-- Sun marker -->
+        <circle cx="260" cy="190" r="5" fill="#D97706"/>
+        <text x="272" y="188" font-family="system-ui" font-size="9" fill="#D97706">Sun</text>
+    </svg>
 </div>
 
 <h3>Key Regions</h3>
@@ -308,6 +446,34 @@
     <li><strong>H₀</strong> = Hubble constant (approximately 67–73 km s⁻¹ Mpc⁻¹)</li>
     <li><strong>d</strong> = distance to the galaxy</li>
 </ul>
+
+<!-- SVG: Hubble's Law Graph -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 380 240" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="190" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Hubble's Law: v = H₀d</text>
+        <!-- Axes -->
+        <line x1="60" y1="200" x2="350" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+        <line x1="60" y1="200" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="205" y="222" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Distance (d) / Mpc</text>
+        <text x="25" y="120" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,25,120)">Recessional velocity (v)</text>
+        <!-- Line -->
+        <line x1="60" y1="200" x2="330" y2="55" stroke="#1a73e8" stroke-width="2.5"/>
+        <!-- Data points scatter -->
+        <circle cx="90" cy="185" r="3" fill="#DC2626"/>
+        <circle cx="110" cy="172" r="3" fill="#DC2626"/>
+        <circle cx="135" cy="160" r="3" fill="#DC2626"/>
+        <circle cx="150" cy="148" r="3" fill="#DC2626"/>
+        <circle cx="170" cy="142" r="3" fill="#DC2626"/>
+        <circle cx="195" cy="125" r="3" fill="#DC2626"/>
+        <circle cx="220" cy="110" r="3" fill="#DC2626"/>
+        <circle cx="250" cy="98" r="3" fill="#DC2626"/>
+        <circle cx="270" cy="82" r="3" fill="#DC2626"/>
+        <circle cx="300" cy="68" r="3" fill="#DC2626"/>
+        <!-- Gradient label -->
+        <text x="200" y="105" font-family="system-ui" font-size="10" fill="#1a73e8" transform="rotate(-28,200,105)">gradient = H₀</text>
+        <text x="190" y="235" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">Age of universe ≈ 1/H₀ ≈ 14 billion years</text>
+    </svg>
+</div>
 
 <p>Hubble's law implies that the universe is <strong>expanding</strong> — all distant galaxies are moving away from us, and the further away they are, the faster they recede.</p>
 

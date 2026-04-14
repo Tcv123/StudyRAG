@@ -127,6 +127,48 @@
 <div class="equation">E = V / d</div>
 <p>where V is the potential difference between the plates and d is the separation.</p>
 
+<!-- SVG: Electric Field Lines -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 520 240" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="ef1" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto"><polygon points="0 0, 6 2, 0 4" fill="#1a73e8"/></marker>
+        </defs>
+        <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Electric Field Patterns</text>
+
+        <!-- Parallel plates (uniform field) -->
+        <text x="130" y="45" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">Uniform Field (Parallel Plates)</text>
+        <!-- Plates -->
+        <rect x="50" y="60" width="160" height="6" fill="#DC2626" rx="2"/>
+        <text x="220" y="66" font-family="system-ui" font-size="9" fill="#DC2626">+</text>
+        <rect x="50" y="194" width="160" height="6" fill="#1a73e8" rx="2"/>
+        <text x="220" y="200" font-family="system-ui" font-size="9" fill="#1a73e8">-</text>
+        <!-- Field lines (parallel, equally spaced) -->
+        <line x1="80" y1="70" x2="80" y2="190" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
+        <line x1="110" y1="70" x2="110" y2="190" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
+        <line x1="140" y1="70" x2="140" y2="190" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
+        <line x1="170" y1="70" x2="170" y2="190" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
+        <text x="130" y="140" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">E = V/d</text>
+
+        <!-- Radial field (point charges) -->
+        <text x="390" y="45" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">Radial Field (Point Charge +Q)</text>
+        <circle cx="390" cy="130" r="14" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="2"/>
+        <text x="390" y="134" font-family="system-ui" font-size="11" fill="#DC2626" text-anchor="middle" font-weight="600">+Q</text>
+        <!-- Radial field lines -->
+        <line x1="404" y1="130" x2="460" y2="130" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
+        <line x1="376" y1="130" x2="320" y2="130" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
+        <line x1="390" y1="116" x2="390" y2="60" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
+        <line x1="390" y1="144" x2="390" y2="200" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
+        <line x1="400" y1="120" x2="440" y2="80" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
+        <line x1="380" y1="140" x2="340" y2="180" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
+        <line x1="400" y1="140" x2="440" y2="180" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
+        <line x1="380" y1="120" x2="340" y2="80" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
+        <!-- Equipotentials -->
+        <circle cx="390" cy="130" r="35" fill="none" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="3,3"/>
+        <circle cx="390" cy="130" r="55" fill="none" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="3,3"/>
+        <text x="390" y="220" font-family="system-ui" font-size="9" fill="#16A34A" text-anchor="middle">Equipotentials (dashed green)</text>
+    </svg>
+</div>
+
 <h3>Coulomb's Law</h3>
 <p>The force between two point charges is given by Coulomb's law:</p>
 
@@ -233,6 +275,40 @@
     Unit: tesla (T), where 1 T = 1 kg s⁻² A⁻¹
 </div>
 
+<!-- SVG: Magnetic Field Patterns -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 520 210" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Magnetic Field Patterns</text>
+
+        <!-- Bar magnet -->
+        <text x="130" y="45" font-family="system-ui" font-size="11" fill="#DC2626" text-anchor="middle" font-weight="600">Bar Magnet</text>
+        <rect x="90" y="95" width="40" height="30" fill="#DC2626" rx="2"/>
+        <text x="110" y="115" font-family="system-ui" font-size="11" fill="#fff" text-anchor="middle" font-weight="600">N</text>
+        <rect x="130" y="95" width="40" height="30" fill="#1a73e8" rx="2"/>
+        <text x="150" y="115" font-family="system-ui" font-size="11" fill="#fff" text-anchor="middle" font-weight="600">S</text>
+        <!-- Field lines -->
+        <path d="M 90,110 Q 50,110 50,60 Q 50,20 130,20 Q 210,20 210,60 Q 210,110 170,110" fill="none" stroke="#64748b" stroke-width="1.2"/>
+        <path d="M 90,110 Q 60,110 60,70 Q 60,40 130,40 Q 200,40 200,70 Q 200,110 170,110" fill="none" stroke="#64748b" stroke-width="1.2"/>
+        <path d="M 90,110 Q 50,110 50,160 Q 50,195 130,195 Q 210,195 210,160 Q 210,110 170,110" fill="none" stroke="#64748b" stroke-width="1.2"/>
+        <path d="M 90,110 Q 60,110 60,150 Q 60,180 130,180 Q 200,180 200,150 Q 200,110 170,110" fill="none" stroke="#64748b" stroke-width="1.2"/>
+
+        <!-- Current-carrying wire (into page) -->
+        <text x="390" y="45" font-family="system-ui" font-size="11" fill="#16A34A" text-anchor="middle" font-weight="600">Wire (current into page)</text>
+        <circle cx="390" cy="115" r="12" fill="#e2e8f0" stroke="#1a1a2e" stroke-width="2"/>
+        <!-- X for into page -->
+        <line x1="384" y1="109" x2="396" y2="121" stroke="#1a1a2e" stroke-width="2"/>
+        <line x1="396" y1="109" x2="384" y2="121" stroke="#1a1a2e" stroke-width="2"/>
+        <!-- Concentric circles -->
+        <circle cx="390" cy="115" r="30" fill="none" stroke="#16A34A" stroke-width="1.5"/>
+        <circle cx="390" cy="115" r="50" fill="none" stroke="#16A34A" stroke-width="1.2"/>
+        <circle cx="390" cy="115" r="70" fill="none" stroke="#16A34A" stroke-width="0.9"/>
+        <!-- Direction arrows on circles -->
+        <text x="418" y="90" font-family="system-ui" font-size="14" fill="#16A34A">↓</text>
+        <text x="358" y="145" font-family="system-ui" font-size="14" fill="#16A34A">↑</text>
+        <text x="390" y="175" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Clockwise (right-hand rule)</text>
+    </svg>
+</div>
+
 <h3>Force on a Current-Carrying Conductor</h3>
 <p>A straight conductor of length L carrying current I at angle θ to a uniform magnetic field B experiences a force:</p>
 
@@ -244,6 +320,34 @@
     <li>Second finger: Current (I, conventional)</li>
     <li>Thumb: Thrust (Force)</li>
 </ul>
+
+<!-- SVG: Force on current-carrying wire (F=BIL) -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 380 220" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="fl1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
+            <marker id="fl2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
+            <marker id="fl3" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#16A34A"/></marker>
+        </defs>
+        <text x="190" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Fleming's Left-Hand Rule: F = BIL</text>
+        <!-- Magnetic field (into page - X marks) -->
+        <g fill="#1a73e8" font-family="system-ui" font-size="16" text-anchor="middle">
+            <text x="80" y="70">x</text><text x="130" y="70">x</text><text x="180" y="70">x</text><text x="230" y="70">x</text><text x="280" y="70">x</text>
+            <text x="80" y="110">x</text><text x="130" y="110">x</text><text x="180" y="110">x</text><text x="230" y="110">x</text><text x="280" y="110">x</text>
+            <text x="80" y="150">x</text><text x="130" y="150">x</text><text x="180" y="150">x</text><text x="230" y="150">x</text><text x="280" y="150">x</text>
+        </g>
+        <text x="310" y="110" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">B (into page)</text>
+        <!-- Wire (current upward) -->
+        <line x1="180" y1="180" x2="180" y2="50" stroke="#D97706" stroke-width="4"/>
+        <line x1="180" y1="55" x2="180" y2="45" stroke="#D97706" stroke-width="2" marker-end="url(#fl1)"/>
+        <text x="195" y="180" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">I (current)</text>
+        <!-- Force (to the right) -->
+        <line x1="184" y1="110" x2="250" y2="110" stroke="#DC2626" stroke-width="3" marker-end="url(#fl1)"/>
+        <text x="225" y="100" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">F (force)</text>
+        <!-- Legend -->
+        <text x="190" y="205" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">First finger: Field | Second finger: Current | Thumb: Force</text>
+    </svg>
+</div>
 
 <h3>Force on a Moving Charge</h3>
 <p>A charged particle moving through a magnetic field experiences a force:</p>
@@ -276,6 +380,37 @@
 </div>
 
 <p>Lenz's law is a consequence of conservation of energy — the induced current creates a magnetic field that opposes the change causing it, so work must be done to maintain the change.</p>
+
+<!-- SVG: Electromagnetic Induction -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 420 200" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="ei1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
+            <marker id="ei2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
+        </defs>
+        <text x="210" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Electromagnetic Induction (Faraday's Law)</text>
+        <!-- Coil -->
+        <ellipse cx="250" cy="110" rx="50" ry="65" fill="none" stroke="#D97706" stroke-width="3"/>
+        <ellipse cx="260" cy="110" rx="50" ry="65" fill="none" stroke="#D97706" stroke-width="2.5" opacity="0.5"/>
+        <text x="255" y="185" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="middle" font-weight="600">Coil (N turns)</text>
+        <!-- Bar magnet moving towards coil -->
+        <rect x="80" y="95" width="35" height="25" fill="#DC2626" rx="2"/>
+        <text x="97" y="112" font-family="system-ui" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">N</text>
+        <rect x="115" y="95" width="35" height="25" fill="#1a73e8" rx="2"/>
+        <text x="132" y="112" font-family="system-ui" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">S</text>
+        <!-- Motion arrow -->
+        <line x1="155" y1="80" x2="195" y2="80" stroke="#DC2626" stroke-width="2.5" marker-end="url(#ei1)"/>
+        <text x="175" y="73" font-family="system-ui" font-size="10" fill="#DC2626" text-anchor="middle">Motion</text>
+        <!-- Flux lines -->
+        <path d="M 80,107 Q 60,107 60,70 Q 60,40 100,40 Q 140,40 180,50 Q 220,58 250,55" fill="none" stroke="#16A34A" stroke-width="1" opacity="0.5"/>
+        <path d="M 80,107 Q 60,107 60,145 Q 60,175 100,175 Q 140,175 180,165 Q 220,157 250,160" fill="none" stroke="#16A34A" stroke-width="1" opacity="0.5"/>
+        <!-- EMF indicator -->
+        <text x="330" y="95" font-family="system-ui" font-size="10" fill="#1a1a2e">Induced EMF:</text>
+        <text x="330" y="112" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">ε = -d(NΦ)/dt</text>
+        <text x="330" y="130" font-family="system-ui" font-size="9" fill="#64748b">Opposes change</text>
+        <text x="330" y="142" font-family="system-ui" font-size="9" fill="#64748b">(Lenz's law)</text>
+    </svg>
+</div>
 
 <p>Methods of inducing an EMF:</p>
 <ul>

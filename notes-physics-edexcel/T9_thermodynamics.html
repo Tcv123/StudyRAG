@@ -194,6 +194,38 @@
 </div>
 <div class="equation">p₁ / T₁ = p₂ / T₂</div>
 
+<!-- SVG: P-V Diagram for Gas Processes -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 420 280" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="210" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Gas Processes on a P-V Diagram</text>
+        <!-- Axes -->
+        <line x1="60" y1="250" x2="380" y2="250" stroke="#1a1a2e" stroke-width="1.5"/>
+        <line x1="60" y1="250" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="220" y="270" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle">Volume (V)</text>
+        <text x="25" y="145" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle" transform="rotate(-90,25,145)">Pressure (p)</text>
+
+        <!-- Isothermal (constant T) - hyperbola -->
+        <path d="M 90,80 Q 140,100 200,140 Q 280,180 360,200" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+        <text x="365" y="195" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">Isothermal</text>
+        <text x="365" y="207" font-family="system-ui" font-size="9" fill="#1a73e8">(constant T)</text>
+
+        <!-- Isobaric (constant P) - horizontal -->
+        <line x1="90" y1="120" x2="320" y2="120" stroke="#16A34A" stroke-width="2.5"/>
+        <text x="330" y="118" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">Isobaric</text>
+        <text x="330" y="130" font-family="system-ui" font-size="9" fill="#16A34A">(constant p)</text>
+
+        <!-- Isochoric (constant V) - vertical -->
+        <line x1="200" y1="80" x2="200" y2="230" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="210" y="75" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">Isochoric</text>
+        <text x="210" y="60" font-family="system-ui" font-size="9" fill="#DC2626">(constant V)</text>
+
+        <!-- Adiabatic -->
+        <path d="M 90,70 Q 130,100 180,155 Q 240,210 340,235" fill="none" stroke="#D97706" stroke-width="2.5"/>
+        <text x="345" y="232" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">Adiabatic</text>
+        <text x="345" y="244" font-family="system-ui" font-size="9" fill="#D97706">(no heat exchange)</text>
+    </svg>
+</div>
+
 <div class="exam-tip">All gas law calculations require temperature in kelvin. Convert from Celsius: T(K) = T(°C) + 273.15. A common error is forgetting to convert.</div>
 
 <h2>9.5 Ideal Gas Equation</h2>
@@ -305,6 +337,26 @@
 <div class="definition">
     <strong>Root mean square (rms) speed</strong> is the square root of the mean square speed of molecules in a gas:<br>
     <strong>c_rms = √(c̄²) = √(3kT/m) = √(3RT/M)</strong>
+</div>
+
+<!-- SVG: Maxwell-Boltzmann Distribution -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 440 250" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="220" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Maxwell-Boltzmann Speed Distribution</text>
+        <!-- Axes -->
+        <line x1="50" y1="210" x2="410" y2="210" stroke="#1a1a2e" stroke-width="1.5"/>
+        <line x1="50" y1="210" x2="50" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="230" y="235" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Molecular speed (c)</text>
+        <text x="20" y="120" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,20,120)">Number of molecules</text>
+        <!-- Low temperature curve (taller, narrower) -->
+        <path d="M 50,210 Q 70,210 100,160 Q 130,60 155,50 Q 180,60 210,120 Q 250,190 300,205 Q 340,210 400,210" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+        <text x="165" y="42" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">Lower T</text>
+        <!-- High temperature curve (shorter, wider) -->
+        <path d="M 50,210 Q 80,208 120,190 Q 170,140 210,120 Q 240,108 260,110 Q 300,120 340,160 Q 380,195 410,208" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="320" y="148" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">Higher T</text>
+        <!-- Notes -->
+        <text x="220" y="245" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Higher T: peak shifts right, curve broadens. Total area (number of molecules) stays the same.</text>
+    </svg>
 </div>
 
 <p>Note: The rms speed is not the same as the mean speed. For a Maxwell-Boltzmann distribution, c_rms > c_mean > c_most probable.</p>

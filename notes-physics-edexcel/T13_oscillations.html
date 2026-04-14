@@ -177,6 +177,45 @@
     The choice of cos or sin depends on the initial conditions. If the object starts at maximum displacement (x = A at t = 0), use x = A cos(ωt). If it starts at equilibrium moving in the positive direction, use x = A sin(ωt). Always state your assumption clearly.
 </div>
 
+<!-- SVG: SHM Displacement, Velocity, Acceleration Graphs -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 480 340" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="240" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">SHM: x, v, a vs Time</text>
+
+        <!-- Displacement graph -->
+        <text x="40" y="55" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">x</text>
+        <line x1="50" y1="75" x2="460" y2="75" stroke="#cbd5e1" stroke-width="0.8"/>
+        <path d="M 50,45 Q 100,45 100,75 Q 100,105 150,105 Q 200,105 200,75 Q 200,45 250,45 Q 300,45 300,75 Q 300,105 350,105 Q 400,105 400,75 Q 400,45 450,45" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+        <text x="465" y="78" font-family="system-ui" font-size="9" fill="#1a73e8">x = A cos(ωt)</text>
+        <text x="45" y="48" font-family="system-ui" font-size="8" fill="#64748b">+A</text>
+        <text x="45" y="110" font-family="system-ui" font-size="8" fill="#64748b">-A</text>
+
+        <!-- Velocity graph -->
+        <text x="40" y="145" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">v</text>
+        <line x1="50" y1="175" x2="460" y2="175" stroke="#cbd5e1" stroke-width="0.8"/>
+        <path d="M 50,175 Q 50,145 100,145 Q 150,145 150,175 Q 150,205 200,205 Q 250,205 250,175 Q 250,145 300,145 Q 350,145 350,175 Q 350,205 400,205 Q 450,205 450,175" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+        <text x="465" y="178" font-family="system-ui" font-size="9" fill="#16A34A">v = -Aω sin(ωt)</text>
+        <text x="465" y="190" font-family="system-ui" font-size="8" fill="#16A34A">leads x by π/2</text>
+
+        <!-- Acceleration graph -->
+        <text x="40" y="240" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">a</text>
+        <line x1="50" y1="275" x2="460" y2="275" stroke="#cbd5e1" stroke-width="0.8"/>
+        <path d="M 50,305 Q 100,305 100,275 Q 100,245 150,245 Q 200,245 200,275 Q 200,305 250,305 Q 300,305 300,275 Q 300,245 350,245 Q 400,245 400,275 Q 400,305 450,305" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="465" y="278" font-family="system-ui" font-size="9" fill="#DC2626">a = -Aω²cos(ωt)</text>
+        <text x="465" y="290" font-family="system-ui" font-size="8" fill="#DC2626">antiphase to x</text>
+
+        <!-- Time markers -->
+        <line x1="100" y1="40" x2="100" y2="315" stroke="#64748b" stroke-width="0.5" stroke-dasharray="2,4"/>
+        <line x1="200" y1="40" x2="200" y2="315" stroke="#64748b" stroke-width="0.5" stroke-dasharray="2,4"/>
+        <line x1="300" y1="40" x2="300" y2="315" stroke="#64748b" stroke-width="0.5" stroke-dasharray="2,4"/>
+        <line x1="400" y1="40" x2="400" y2="315" stroke="#64748b" stroke-width="0.5" stroke-dasharray="2,4"/>
+        <text x="100" y="335" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">T/4</text>
+        <text x="200" y="335" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">T/2</text>
+        <text x="300" y="335" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">3T/4</text>
+        <text x="400" y="335" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">T</text>
+    </svg>
+</div>
+
 <h2>13.3 Phase Relationships</h2>
 
 <table>
@@ -280,6 +319,33 @@
     </tr>
 </table>
 
+<!-- SVG: Energy in SHM -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 420 240" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="210" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Energy vs Displacement in SHM</text>
+        <!-- Axes -->
+        <line x1="60" y1="200" x2="380" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+        <line x1="210" y1="210" x2="210" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="210" y="222" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">x (displacement)</text>
+        <text x="45" y="120" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle" transform="rotate(-90,45,120)">Energy</text>
+        <text x="80" y="212" font-family="system-ui" font-size="9" fill="#64748b">-A</text>
+        <text x="335" y="212" font-family="system-ui" font-size="9" fill="#64748b">+A</text>
+        <text x="210" y="212" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">0</text>
+        <!-- Total energy (horizontal line) -->
+        <line x1="80" y1="60" x2="340" y2="60" stroke="#D97706" stroke-width="2.5"/>
+        <text x="350" y="64" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">E total</text>
+        <!-- KE (inverted parabola) -->
+        <path d="M 80,200 Q 130,180 170,100 Q 200,50 210,45 Q 220,50 250,100 Q 290,180 340,200" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+        <text x="350" y="180" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">KE</text>
+        <!-- PE (upward parabola) -->
+        <path d="M 80,60 Q 130,80 170,160 Q 200,210 210,215 Q 220,210 250,160 Q 290,80 340,60" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="350" y="100" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">PE</text>
+        <!-- Annotations -->
+        <text x="210" y="38" font-family="system-ui" font-size="8" fill="#1a73e8" text-anchor="middle">KE max</text>
+        <text x="85" y="55" font-family="system-ui" font-size="8" fill="#DC2626">PE max</text>
+    </svg>
+</div>
+
 <p>On a graph of energy against displacement:</p>
 <ul>
     <li>KE is an inverted parabola (maximum at x = 0, zero at x = ±A).</li>
@@ -310,6 +376,33 @@
 
 <div class="definition">
     <strong>Forced oscillation:</strong> An oscillation maintained by a periodic external driving force. The system oscillates at the frequency of the driving force (the driving frequency, f<sub>d</sub>).
+</div>
+
+<!-- SVG: Free vs Forced Oscillations and Damping Types -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 480 230" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="240" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Damping Types: Displacement vs Time</text>
+        <!-- Axes -->
+        <line x1="40" y1="120" x2="460" y2="120" stroke="#cbd5e1" stroke-width="1"/>
+        <line x1="40" y1="200" x2="40" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="250" y="218" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Time</text>
+        <text x="30" y="80" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle" transform="rotate(-90,30,80)">x</text>
+
+        <!-- Light (under) damping - oscillates with decreasing amplitude -->
+        <path d="M 45,55 Q 65,55 70,120 Q 75,175 90,175 Q 105,175 110,120 Q 115,72 130,72 Q 145,72 150,120 Q 155,162 170,162 Q 185,162 190,120 Q 195,82 210,82 Q 225,82 230,120 Q 235,152 250,152 Q 265,152 270,120 Q 275,92 290,92 Q 305,92 310,120 Q 315,143 330,143 Q 345,143 350,120 Q 355,100 370,100 Q 385,100 390,120" fill="none" stroke="#1a73e8" stroke-width="2"/>
+        <!-- Envelope -->
+        <path d="M 45,55 Q 200,68 400,118" fill="none" stroke="#1a73e8" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <path d="M 45,185 Q 200,172 400,122" fill="none" stroke="#1a73e8" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <text x="400" y="110" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">Light (under)</text>
+
+        <!-- Critical damping -->
+        <path d="M 45,55 Q 90,100 150,118 Q 200,120 460,120" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="200" y="105" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">Critical (fastest, no oscillation)</text>
+
+        <!-- Heavy (over) damping -->
+        <path d="M 45,55 Q 120,75 200,100 Q 300,115 460,119" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+        <text x="300" y="98" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Heavy (over) - very slow return</text>
+    </svg>
 </div>
 
 <h2>13.7 Damping</h2>
@@ -350,6 +443,33 @@
 
 <div class="definition">
     <strong>Resonance:</strong> The phenomenon that occurs when the driving frequency equals the natural frequency of the system (f<sub>d</sub> = f₀), resulting in a maximum transfer of energy to the system and hence maximum amplitude of oscillation.
+</div>
+
+<!-- SVG: Resonance Curve -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 440 260" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="220" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Resonance: Amplitude vs Driving Frequency</text>
+        <!-- Axes -->
+        <line x1="60" y1="220" x2="400" y2="220" stroke="#1a1a2e" stroke-width="1.5"/>
+        <line x1="60" y1="220" x2="60" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="230" y="245" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Driving frequency (fd)</text>
+        <text x="25" y="130" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,25,130)">Amplitude</text>
+        <!-- Natural frequency marker -->
+        <line x1="200" y1="215" x2="200" y2="225" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="200" y="238" font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="middle" font-weight="600">f₀</text>
+
+        <!-- Light damping (tall, sharp peak) -->
+        <path d="M 70,215 Q 100,213 140,200 Q 170,160 190,80 Q 200,45 210,80 Q 230,160 260,200 Q 300,213 380,217" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="230" y="52" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">Light damping</text>
+
+        <!-- Medium damping -->
+        <path d="M 70,214 Q 110,210 150,195 Q 180,170 195,130 Q 200,115 205,130 Q 220,170 250,195 Q 290,210 380,216" fill="none" stroke="#D97706" stroke-width="2.5"/>
+        <text x="330" y="150" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">Medium</text>
+
+        <!-- Heavy damping (broad, flat) -->
+        <path d="M 70,212 Q 120,208 170,195 Q 190,188 200,184 Q 210,188 230,195 Q 280,208 380,214" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+        <text x="330" y="190" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">Heavy damping</text>
+    </svg>
 </div>
 
 <h3>The Resonance Curve</h3>

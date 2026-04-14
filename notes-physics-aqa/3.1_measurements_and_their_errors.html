@@ -90,6 +90,70 @@
 
 <p>A measurement can be precise but not accurate (e.g. consistently reading 10.3 when the true value is 10.0) or accurate but not precise (e.g. readings scattered around the true value with large spread).</p>
 
+<!-- Precision vs Accuracy Target Diagram -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 680 180" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <!-- Target 1: High Accuracy, High Precision -->
+  <g transform="translate(85,90)">
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="0" cy="0" r="27" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="0" cy="0" r="3" fill="#DC2626"/>
+    <circle cx="2" cy="-3" r="3" fill="#1a73e8"/>
+    <circle cx="-2" cy="2" r="3" fill="#1a73e8"/>
+    <circle cx="1" cy="3" r="3" fill="#1a73e8"/>
+    <circle cx="-3" cy="-1" r="3" fill="#1a73e8"/>
+    <circle cx="3" cy="1" r="3" fill="#1a73e8"/>
+    <text x="0" y="58" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">High Accuracy</text>
+    <text x="0" y="72" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">High Precision</text>
+  </g>
+  <!-- Target 2: High Accuracy, Low Precision -->
+  <g transform="translate(255,90)">
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="0" cy="0" r="27" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="0" cy="0" r="3" fill="#DC2626"/>
+    <circle cx="15" cy="-20" r="3" fill="#1a73e8"/>
+    <circle cx="-18" cy="12" r="3" fill="#1a73e8"/>
+    <circle cx="8" cy="22" r="3" fill="#1a73e8"/>
+    <circle cx="-12" cy="-18" r="3" fill="#1a73e8"/>
+    <circle cx="20" cy="10" r="3" fill="#1a73e8"/>
+    <text x="0" y="58" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">High Accuracy</text>
+    <text x="0" y="72" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">Low Precision</text>
+  </g>
+  <!-- Target 3: Low Accuracy, High Precision -->
+  <g transform="translate(425,90)">
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="0" cy="0" r="27" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="0" cy="0" r="3" fill="#DC2626"/>
+    <circle cx="-22" cy="-20" r="3" fill="#1a73e8"/>
+    <circle cx="-20" cy="-23" r="3" fill="#1a73e8"/>
+    <circle cx="-25" cy="-18" r="3" fill="#1a73e8"/>
+    <circle cx="-19" cy="-17" r="3" fill="#1a73e8"/>
+    <circle cx="-23" cy="-22" r="3" fill="#1a73e8"/>
+    <text x="0" y="58" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">Low Accuracy</text>
+    <text x="0" y="72" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">High Precision</text>
+  </g>
+  <!-- Target 4: Low Accuracy, Low Precision -->
+  <g transform="translate(595,90)">
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="0" cy="0" r="27" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="0" cy="0" r="3" fill="#DC2626"/>
+    <circle cx="25" cy="-15" r="3" fill="#1a73e8"/>
+    <circle cx="-30" cy="20" r="3" fill="#1a73e8"/>
+    <circle cx="18" cy="30" r="3" fill="#1a73e8"/>
+    <circle cx="-10" cy="-32" r="3" fill="#1a73e8"/>
+    <circle cx="32" cy="8" r="3" fill="#1a73e8"/>
+    <text x="0" y="58" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">Low Accuracy</text>
+    <text x="0" y="72" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">Low Precision</text>
+  </g>
+  <text x="340" y="16" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Precision vs Accuracy</text>
+  <text x="340" y="170" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">Red dot = true value, Blue dots = measurements</text>
+</svg>
+</div>
+
 <div class="tip-box"><strong>Exam Tip:</strong> Repeating measurements improves precision (reduces the effect of random error) but does NOT improve accuracy. To improve accuracy, you must eliminate systematic errors (e.g. recalibrate the instrument).</div>
 
 <!-- UNCERTAINTIES -->
@@ -129,6 +193,51 @@
   <li>Uncertainty in gradient = (steepest gradient &minus; shallowest gradient) / 2.</li>
   <li>The same approach applies to the y-intercept.</li>
 </ul>
+
+<!-- Error Bars and Uncertainty on a Graph -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 480 320" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="240" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Error Bars and Lines of Best Fit</text>
+  <!-- Axes -->
+  <line x1="60" y1="280" x2="450" y2="280" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="280" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="255" y="305" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e">x</text>
+  <text x="40" y="160" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" transform="rotate(-90,40,160)">y</text>
+  <!-- Data points with error bars -->
+  <g stroke="#1a73e8" stroke-width="1.5">
+    <!-- Point 1 -->
+    <line x1="110" y1="230" x2="110" y2="250"/><line x1="105" y1="230" x2="115" y2="230"/><line x1="105" y1="250" x2="115" y2="250"/>
+    <!-- Point 2 -->
+    <line x1="170" y1="195" x2="170" y2="215"/><line x1="165" y1="195" x2="175" y2="195"/><line x1="165" y1="215" x2="175" y2="215"/>
+    <!-- Point 3 -->
+    <line x1="230" y1="158" x2="230" y2="182"/><line x1="225" y1="158" x2="235" y2="158"/><line x1="225" y1="182" x2="235" y2="182"/>
+    <!-- Point 4 -->
+    <line x1="290" y1="120" x2="290" y2="148"/><line x1="285" y1="120" x2="295" y2="120"/><line x1="285" y1="148" x2="295" y2="148"/>
+    <!-- Point 5 -->
+    <line x1="350" y1="85" x2="350" y2="115"/><line x1="345" y1="85" x2="355" y2="85"/><line x1="345" y1="115" x2="355" y2="115"/>
+    <!-- Point 6 -->
+    <line x1="410" y1="50" x2="410" y2="82"/><line x1="405" y1="50" x2="415" y2="50"/><line x1="405" y1="82" x2="415" y2="82"/>
+  </g>
+  <!-- Data point dots -->
+  <g fill="#1a73e8">
+    <circle cx="110" cy="240" r="3.5"/><circle cx="170" cy="205" r="3.5"/><circle cx="230" cy="170" r="3.5"/>
+    <circle cx="290" cy="134" r="3.5"/><circle cx="350" cy="100" r="3.5"/><circle cx="410" cy="66" r="3.5"/>
+  </g>
+  <!-- Best fit line -->
+  <line x1="80" y1="262" x2="430" y2="48" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- Steepest line -->
+  <line x1="80" y1="255" x2="430" y2="35" stroke="#DC2626" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <!-- Shallowest line -->
+  <line x1="80" y1="270" x2="430" y2="62" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <!-- Legend -->
+  <line x1="90" y1="42" x2="115" y2="42" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="120" y="46" font-family="system-ui" font-size="10" fill="#1a1a2e">Best fit</text>
+  <line x1="180" y1="42" x2="205" y2="42" stroke="#DC2626" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <text x="210" y="46" font-family="system-ui" font-size="10" fill="#DC2626">Steepest</text>
+  <line x1="270" y1="42" x2="295" y2="42" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <text x="300" y="46" font-family="system-ui" font-size="10" fill="#16A34A">Shallowest</text>
+</svg>
+</div>
 
 <!-- SIGNIFICANT FIGURES -->
 <h2>7. Significant Figures</h2>
