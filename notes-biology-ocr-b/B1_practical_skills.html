@@ -137,6 +137,55 @@
   <li><strong>Scatter graphs:</strong> Used to show correlation between two continuous variables.</li>
 </ul>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Error Bars and Line of Best Fit</text>
+  <!-- Axes -->
+  <line x1="70" y1="275" x2="490" y2="275" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="70" y1="275" x2="70" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Axis labels -->
+  <text x="280" y="300" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">Independent Variable / units</text>
+  <text x="20" y="160" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" transform="rotate(-90,20,160)">Dependent Variable / units</text>
+  <!-- Grid lines -->
+  <line x1="70" y1="225" x2="490" y2="225" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="70" y1="175" x2="490" y2="175" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="70" y1="125" x2="490" y2="125" stroke="#e2e8f0" stroke-width="0.5"/>
+  <line x1="70" y1="75" x2="490" y2="75" stroke="#e2e8f0" stroke-width="0.5"/>
+  <!-- Error bars + points -->
+  <line x1="130" y1="230" x2="130" y2="250" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="124" y1="230" x2="136" y2="230" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="124" y1="250" x2="136" y2="250" stroke="#1a73e8" stroke-width="1.5"/>
+  <circle cx="130" cy="240" r="4" fill="#1a73e8"/>
+
+  <line x1="200" y1="195" x2="200" y2="225" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="194" y1="195" x2="206" y2="195" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="194" y1="225" x2="206" y2="225" stroke="#1a73e8" stroke-width="1.5"/>
+  <circle cx="200" cy="210" r="4" fill="#1a73e8"/>
+
+  <line x1="270" y1="145" x2="270" y2="185" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="264" y1="145" x2="276" y2="145" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="264" y1="185" x2="276" y2="185" stroke="#1a73e8" stroke-width="1.5"/>
+  <circle cx="270" cy="165" r="4" fill="#1a73e8"/>
+
+  <line x1="340" y1="100" x2="340" y2="140" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="334" y1="100" x2="346" y2="100" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="334" y1="140" x2="346" y2="140" stroke="#1a73e8" stroke-width="1.5"/>
+  <circle cx="340" cy="120" r="4" fill="#1a73e8"/>
+
+  <line x1="410" y1="68" x2="410" y2="108" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="404" y1="68" x2="416" y2="68" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="404" y1="108" x2="416" y2="108" stroke="#1a73e8" stroke-width="1.5"/>
+  <circle cx="410" cy="88" r="4" fill="#1a73e8"/>
+
+  <!-- Line of best fit -->
+  <path d="M100,255 Q250,170 460,65" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="none"/>
+  <!-- Labels -->
+  <text x="460" y="55" font-family="system-ui" font-size="11" fill="#DC2626">Line of best fit</text>
+  <text x="445" y="120" font-family="system-ui" font-size="10" fill="#1a73e8">Error bars show</text>
+  <text x="445" y="132" font-family="system-ui" font-size="10" fill="#1a73e8">spread of data</text>
+</svg>
+</div>
+
 <div class="exam-tip">
   <strong>Exam Tip:</strong> Always label axes fully (quantity and unit), use a sensible scale that fills at least half the graph paper, plot points accurately with small crosses, and draw a smooth line of best fit rather than dot-to-dot connections.
 </div>
@@ -164,6 +213,52 @@
 </div>
 
 <p>It is possible for results to be precise but inaccurate (consistent but systematically wrong), or accurate on average but imprecise (scattered around the true value). The ideal is both high accuracy and high precision.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 580 200" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <!-- Systematic Error Target -->
+  <circle cx="110" cy="100" r="65" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="110" cy="100" r="45" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="110" cy="100" r="25" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="110" cy="100" r="5" fill="#1a73e8"/>
+  <!-- Shots clustered away from centre (precise but inaccurate) -->
+  <circle cx="140" cy="68" r="4" fill="#DC2626"/>
+  <circle cx="145" cy="75" r="4" fill="#DC2626"/>
+  <circle cx="138" cy="72" r="4" fill="#DC2626"/>
+  <circle cx="143" cy="65" r="4" fill="#DC2626"/>
+  <circle cx="136" cy="70" r="4" fill="#DC2626"/>
+  <text x="110" y="185" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">Systematic Error</text>
+  <text x="110" y="197" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">(precise but inaccurate)</text>
+
+  <!-- Random Error Target -->
+  <circle cx="290" cy="100" r="65" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="290" cy="100" r="45" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="290" cy="100" r="25" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="290" cy="100" r="5" fill="#1a73e8"/>
+  <!-- Shots scattered around centre (accurate but imprecise) -->
+  <circle cx="275" cy="80" r="4" fill="#D97706"/>
+  <circle cx="310" cy="115" r="4" fill="#D97706"/>
+  <circle cx="280" cy="120" r="4" fill="#D97706"/>
+  <circle cx="305" cy="78" r="4" fill="#D97706"/>
+  <circle cx="270" cy="105" r="4" fill="#D97706"/>
+  <text x="290" y="185" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">Random Error</text>
+  <text x="290" y="197" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">(accurate but imprecise)</text>
+
+  <!-- Ideal Target -->
+  <circle cx="470" cy="100" r="65" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="470" cy="100" r="45" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="470" cy="100" r="25" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="470" cy="100" r="5" fill="#1a73e8"/>
+  <!-- Shots clustered at centre (precise and accurate) -->
+  <circle cx="468" cy="98" r="4" fill="#16A34A"/>
+  <circle cx="473" cy="102" r="4" fill="#16A34A"/>
+  <circle cx="467" cy="103" r="4" fill="#16A34A"/>
+  <circle cx="472" cy="97" r="4" fill="#16A34A"/>
+  <circle cx="470" cy="100" r="4" fill="#16A34A"/>
+  <text x="470" y="185" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">Ideal Result</text>
+  <text x="470" y="197" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A">(precise and accurate)</text>
+</svg>
+</div>
 
 <h3>Identifying Sources of Error</h3>
 <p>Errors in biological experiments can be categorised as:</p>

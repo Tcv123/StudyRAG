@@ -53,6 +53,78 @@
   <li>The leading strand is synthesised continuously; the lagging strand is synthesised in short Okazaki fragments which are joined by DNA ligase</li>
 </ol>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">DNA Replication Fork</text>
+  <defs>
+    <marker id="arrowDNA" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker>
+    <marker id="arrowDNAb" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a73e8"/></marker>
+  </defs>
+
+  <!-- Original double strand (left side) -->
+  <line x1="40" y1="100" x2="180" y2="100" stroke="#1a73e8" stroke-width="4"/>
+  <line x1="40" y1="115" x2="180" y2="115" stroke="#DC2626" stroke-width="4"/>
+  <!-- Base pair dashes -->
+  <line x1="60" y1="104" x2="60" y2="111" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="2,1"/>
+  <line x1="80" y1="104" x2="80" y2="111" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="2,1"/>
+  <line x1="100" y1="104" x2="100" y2="111" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="2,1"/>
+  <line x1="120" y1="104" x2="120" y2="111" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="2,1"/>
+  <line x1="140" y1="104" x2="140" y2="111" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="2,1"/>
+  <line x1="160" y1="104" x2="160" y2="111" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="2,1"/>
+  <text x="40" y="93" font-family="system-ui" font-size="9" fill="#1a73e8">3'</text>
+  <text x="40" y="130" font-family="system-ui" font-size="9" fill="#DC2626">5'</text>
+
+  <!-- Helicase at fork -->
+  <ellipse cx="200" cy="107" rx="18" ry="22" fill="#fef3c7" stroke="#D97706" stroke-width="2"/>
+  <text x="200" y="110" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706" font-weight="600">Helicase</text>
+
+  <!-- Fork opening -->
+  <!-- Leading strand template (top, going right) 3' to 5' -->
+  <path d="M218,95 Q240,80 260,65 L420,65" stroke="#1a73e8" stroke-width="4" fill="none"/>
+  <text x="425" y="68" font-family="system-ui" font-size="9" fill="#1a73e8">5'</text>
+  <!-- New leading strand (continuous) -->
+  <path d="M230,80 Q245,72 260,58 L380,58" stroke="#16A34A" stroke-width="3" fill="none"/>
+  <text x="385" y="55" font-family="system-ui" font-size="9" fill="#16A34A">3' (new)</text>
+  <!-- DNA polymerase on leading strand -->
+  <ellipse cx="375" cy="62" rx="22" ry="10" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="375" y="65" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">Pol III</text>
+  <!-- Arrow showing direction -->
+  <path d="M400,50 L420,45" stroke="#16A34A" stroke-width="1.5" marker-end="url(#arrowDNA)"/>
+  <text x="340" y="42" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Leading strand</text>
+  <text x="340" y="32" font-family="system-ui" font-size="8" fill="#16A34A">(continuous, 5' to 3')</text>
+
+  <!-- Lagging strand template (bottom, going right) 5' to 3' -->
+  <path d="M218,120 Q240,135 260,150 L420,150" stroke="#DC2626" stroke-width="4" fill="none"/>
+  <text x="425" y="153" font-family="system-ui" font-size="9" fill="#DC2626">3'</text>
+
+  <!-- Okazaki fragments on lagging strand -->
+  <line x1="240" y1="157" x2="290" y2="157" stroke="#D97706" stroke-width="3"/>
+  <line x1="300" y1="157" x2="345" y2="157" stroke="#D97706" stroke-width="3"/>
+  <line x1="355" y1="157" x2="390" y2="157" stroke="#D97706" stroke-width="3"/>
+  <text x="395" y="163" font-family="system-ui" font-size="9" fill="#D97706">5' (new)</text>
+
+  <!-- Gaps between fragments -->
+  <text x="295" y="172" font-family="system-ui" font-size="7" fill="#D97706">gap</text>
+  <text x="350" y="172" font-family="system-ui" font-size="7" fill="#D97706">gap</text>
+
+  <text x="340" y="190" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">Lagging strand</text>
+  <text x="340" y="202" font-family="system-ui" font-size="8" fill="#D97706">(Okazaki fragments, joined by DNA ligase)</text>
+
+  <!-- Direction of fork movement -->
+  <path d="M200,145 L240,145" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowDNA)"/>
+  <text x="220" y="140" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Fork direction</text>
+
+  <!-- Key labels -->
+  <text x="60" y="230" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="600">Semi-conservative replication:</text>
+  <line x1="60" y1="245" x2="80" y2="245" stroke="#1a73e8" stroke-width="4"/>
+  <line x1="85" y1="245" x2="105" y2="245" stroke="#DC2626" stroke-width="4"/>
+  <text x="115" y="249" font-family="system-ui" font-size="9" fill="#1a1a2e">= Original strands (template)</text>
+  <line x1="60" y1="262" x2="80" y2="262" stroke="#16A34A" stroke-width="3"/>
+  <line x1="85" y1="262" x2="105" y2="262" stroke="#D97706" stroke-width="3"/>
+  <text x="115" y="266" font-family="system-ui" font-size="9" fill="#1a1a2e">= Newly synthesised strands</text>
+</svg>
+</div>
+
 <h3>Protein Synthesis — Transcription</h3>
 <p>Transcription occurs in the nucleus and produces a messenger RNA (mRNA) copy of a gene:</p>
 <ol>
@@ -72,6 +144,112 @@
   <li>The ribosome moves along the mRNA (one codon at a time), and the process repeats</li>
   <li>Translation stops when a stop codon (UAA, UAG, or UGA) is reached; no tRNA has a complementary anticodon for these</li>
 </ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 580 310" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="290" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Protein Synthesis: Transcription and Translation</text>
+  <defs><marker id="arrowProt" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker></defs>
+
+  <!-- NUCLEUS -->
+  <rect x="20" y="40" width="250" height="160" rx="15" fill="#dbeafe" stroke="#1a73e8" stroke-width="2" opacity="0.3"/>
+  <text x="145" y="58" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">NUCLEUS - Transcription</text>
+
+  <!-- DNA template strand -->
+  <text x="35" y="85" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="600">DNA template:</text>
+  <text x="35" y="100" font-family="system-ui" font-size="9" fill="#1a73e8">3'</text>
+  <rect x="50" y="88" width="25" height="18" rx="3" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="62" y="101" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">T</text>
+  <rect x="78" y="88" width="25" height="18" rx="3" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="90" y="101" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">A</text>
+  <rect x="106" y="88" width="25" height="18" rx="3" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="118" y="101" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">C</text>
+  <rect x="134" y="88" width="25" height="18" rx="3" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="146" y="101" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">G</text>
+  <rect x="162" y="88" width="25" height="18" rx="3" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="174" y="101" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">C</text>
+  <rect x="190" y="88" width="25" height="18" rx="3" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="202" y="101" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">A</text>
+  <text x="220" y="100" font-family="system-ui" font-size="9" fill="#1a73e8">5'</text>
+
+  <!-- RNA polymerase -->
+  <ellipse cx="145" cy="125" rx="35" ry="12" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="145" y="128" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706" font-weight="600">RNA Polymerase</text>
+
+  <!-- mRNA being formed -->
+  <text x="35" y="155" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="600">mRNA:</text>
+  <text x="35" y="168" font-family="system-ui" font-size="9" fill="#DC2626">5'</text>
+  <rect x="50" y="155" width="25" height="18" rx="3" fill="#fecaca" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="62" y="168" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">A</text>
+  <rect x="78" y="155" width="25" height="18" rx="3" fill="#fecaca" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="90" y="168" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">U</text>
+  <rect x="106" y="155" width="25" height="18" rx="3" fill="#fecaca" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="118" y="168" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">G</text>
+  <rect x="134" y="155" width="25" height="18" rx="3" fill="#fecaca" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="146" y="168" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">C</text>
+  <rect x="162" y="155" width="25" height="18" rx="3" fill="#fecaca" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="174" y="168" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">G</text>
+  <rect x="190" y="155" width="25" height="18" rx="3" fill="#fecaca" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="202" y="168" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">U</text>
+  <text x="220" y="168" font-family="system-ui" font-size="9" fill="#DC2626">3'</text>
+  <text x="145" y="190" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">U pairs with A (not T)</text>
+
+  <!-- Arrow through nuclear pore -->
+  <path d="M250,165 L310,165" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowProt)"/>
+  <text x="280" y="155" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Nuclear</text>
+  <text x="280" y="145" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">pore</text>
+
+  <!-- CYTOPLASM - TRANSLATION -->
+  <rect x="300" y="40" width="265" height="250" rx="15" fill="#dcfce7" stroke="#16A34A" stroke-width="2" opacity="0.2"/>
+  <text x="432" y="58" text-anchor="middle" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">CYTOPLASM - Translation</text>
+
+  <!-- Ribosome -->
+  <ellipse cx="420" cy="145" rx="55" ry="25" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="2"/>
+  <text x="420" y="133" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">Ribosome</text>
+
+  <!-- mRNA through ribosome -->
+  <line x1="320" y1="150" x2="520" y2="150" stroke="#DC2626" stroke-width="3"/>
+  <text x="330" y="145" font-family="system-ui" font-size="8" fill="#DC2626">mRNA</text>
+
+  <!-- Codons labeled -->
+  <rect x="380" y="155" width="28" height="14" rx="2" fill="#fecaca" stroke="#DC2626" stroke-width="0.8"/>
+  <text x="394" y="165" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">AUG</text>
+  <rect x="412" y="155" width="28" height="14" rx="2" fill="#fecaca" stroke="#DC2626" stroke-width="0.8"/>
+  <text x="426" y="165" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">CGU</text>
+
+  <!-- tRNA molecules -->
+  <path d="M394,110 L394,125 L385,135 L394,145" stroke="#16A34A" stroke-width="2" fill="none"/>
+  <path d="M394,110 L394,125 L403,135 L394,145" stroke="#16A34A" stroke-width="2" fill="none"/>
+  <text x="394" y="105" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">tRNA</text>
+  <circle cx="394" y="95" r="8" fill="#dcfce7" stroke="#16A34A" stroke-width="1"/>
+  <text x="394" y="98" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">aa1</text>
+
+  <path d="M426,110 L426,125 L417,135 L426,145" stroke="#1a73e8" stroke-width="2" fill="none"/>
+  <path d="M426,110 L426,125 L435,135 L426,145" stroke="#1a73e8" stroke-width="2" fill="none"/>
+  <circle cx="426" cy="95" r="8" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="426" y="98" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">aa2</text>
+
+  <!-- Anticodon labels -->
+  <text x="394" y="180" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">Anticodon: UAC</text>
+  <text x="426" y="190" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">Anticodon: GCA</text>
+
+  <!-- Polypeptide chain -->
+  <path d="M360,90 Q340,85 335,75 Q330,65 345,65 Q360,65 355,75" stroke="#D97706" stroke-width="2" fill="none"/>
+  <circle cx="350" cy="80" r="5" fill="#fef3c7" stroke="#D97706" stroke-width="1"/>
+  <circle cx="340" cy="70" r="5" fill="#fef3c7" stroke="#D97706" stroke-width="1"/>
+  <circle cx="350" cy="65" r="5" fill="#fef3c7" stroke="#D97706" stroke-width="1"/>
+  <text x="330" y="58" font-family="system-ui" font-size="8" fill="#D97706" font-weight="600">Polypeptide</text>
+
+  <!-- Peptide bond label -->
+  <text x="420" y="82" font-family="system-ui" font-size="8" fill="#DC2626">Peptide bonds</text>
+  <text x="420" y="72" font-family="system-ui" font-size="8" fill="#DC2626">form between</text>
+  <text x="420" y="62" font-family="system-ui" font-size="8" fill="#DC2626">amino acids</text>
+
+  <!-- Summary -->
+  <text x="430" y="225" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Ribosome reads mRNA codons</text>
+  <text x="430" y="238" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">tRNA brings matching amino acids</text>
+  <text x="430" y="251" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Stops at stop codon (UAA/UAG/UGA)</text>
+</svg>
+</div>
 
 <div class="definition">
   <strong>Codon:</strong> A sequence of three mRNA bases that codes for one amino acid (or a stop signal).<br>
@@ -93,6 +271,67 @@
 <p>Monohybrid crosses involve a single gene with two alleles. If the alleles are different (heterozygous), the dominant allele is expressed in the phenotype. The recessive allele is only expressed when homozygous.</p>
 
 <p>A cross between two heterozygous individuals (Aa x Aa) produces a 3:1 phenotypic ratio in the offspring (3 dominant : 1 recessive) and a 1:2:1 genotypic ratio (1 AA : 2 Aa : 1 aa).</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" style="max-width: 500px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="210" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Punnett Square: Monohybrid Cross (Aa x Aa)</text>
+
+  <!-- Parents -->
+  <text x="210" y="48" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Parents: Heterozygous x Heterozygous</text>
+  <text x="130" y="68" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">Father: Aa</text>
+  <text x="300" y="68" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">Mother: Aa</text>
+
+  <!-- Gametes -->
+  <text x="60" y="88" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="600">Gametes:</text>
+  <text x="130" y="88" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">A or a</text>
+  <text x="300" y="88" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">A or a</text>
+
+  <!-- Punnett square grid -->
+  <!-- Header row -->
+  <rect x="130" y="100" width="70" height="35" fill="#e8eef6" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="165" y="123" text-anchor="middle" font-family="system-ui" font-size="13" fill="#DC2626" font-weight="700">A</text>
+  <rect x="200" y="100" width="70" height="35" fill="#e8eef6" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="235" y="123" text-anchor="middle" font-family="system-ui" font-size="13" fill="#DC2626" font-weight="700">a</text>
+  <!-- Mother label -->
+  <text x="200" y="96" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Mother's gametes</text>
+
+  <!-- Left column headers -->
+  <rect x="60" y="135" width="70" height="55" fill="#e8eef6" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="95" y="168" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a73e8" font-weight="700">A</text>
+  <rect x="60" y="190" width="70" height="55" fill="#e8eef6" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="95" y="223" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a73e8" font-weight="700">a</text>
+  <!-- Father label -->
+  <text x="50" y="175" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" transform="rotate(-90,50,175)">Father's gametes</text>
+
+  <!-- Grid cells -->
+  <!-- AA -->
+  <rect x="130" y="135" width="70" height="55" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="165" y="163" text-anchor="middle" font-family="system-ui" font-size="14" fill="#16A34A" font-weight="700">AA</text>
+  <text x="165" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Homozygous</text>
+  <!-- Aa -->
+  <rect x="200" y="135" width="70" height="55" fill="#dbeafe" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="235" y="163" text-anchor="middle" font-family="system-ui" font-size="14" fill="#1a73e8" font-weight="700">Aa</text>
+  <text x="235" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Heterozygous</text>
+  <!-- Aa -->
+  <rect x="130" y="190" width="70" height="55" fill="#dbeafe" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="165" y="218" text-anchor="middle" font-family="system-ui" font-size="14" fill="#1a73e8" font-weight="700">Aa</text>
+  <text x="165" y="233" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Heterozygous</text>
+  <!-- aa -->
+  <rect x="200" y="190" width="70" height="55" fill="#fecaca" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="235" y="218" text-anchor="middle" font-family="system-ui" font-size="14" fill="#DC2626" font-weight="700">aa</text>
+  <text x="235" y="233" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Homozygous</text>
+
+  <!-- Ratios -->
+  <text x="210" y="268" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">Genotypic ratio: 1 AA : 2 Aa : 1 aa</text>
+  <text x="210" y="288" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">Phenotypic ratio: 3 dominant : 1 recessive</text>
+  <rect x="300" y="140" width="100" height="50" rx="6" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1"/>
+  <text x="350" y="158" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Dominant</text>
+  <text x="350" y="172" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">phenotype: 75%</text>
+  <rect x="300" y="200" width="100" height="40" rx="6" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1"/>
+  <text x="350" y="218" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">Recessive</text>
+  <text x="350" y="232" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">phenotype: 25%</text>
+</svg>
+</div>
 
 <h3>Dihybrid Inheritance</h3>
 <p>Dihybrid crosses involve two genes on different chromosomes (unlinked genes). A cross between two double heterozygotes (AaBb x AaBb) produces a 9:3:3:1 phenotypic ratio, assuming complete dominance and independent assortment.</p>
@@ -136,6 +375,96 @@
   <strong>Refractory period:</strong> The brief period after an action potential during which the neurone cannot fire again. This ensures impulses travel in one direction and limits the maximum frequency of impulses.
 </div>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 580 300" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="290" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Motor Neurone Structure and Action Potential</text>
+
+  <!-- NEURONE STRUCTURE -->
+  <!-- Cell body -->
+  <circle cx="110" cy="80" r="30" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <circle cx="110" cy="75" r="12" fill="#93c5fd" stroke="#1a73e8" stroke-width="1"/>
+  <text x="110" y="78" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">Nucleus</text>
+  <text x="110" y="118" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">Cell body</text>
+
+  <!-- Dendrites -->
+  <line x1="80" y1="72" x2="50" y2="55" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="50" y1="55" x2="35" y2="45" stroke="#1a73e8" stroke-width="1"/>
+  <line x1="50" y1="55" x2="40" y2="60" stroke="#1a73e8" stroke-width="1"/>
+  <line x1="82" y1="62" x2="55" y2="40" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="85" y1="55" x2="65" y2="35" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="55" y="32" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Dendrites</text>
+
+  <!-- Axon with myelin sheath -->
+  <line x1="140" y1="80" x2="490" y2="80" stroke="#D97706" stroke-width="2"/>
+  <!-- Myelin segments -->
+  <rect x="160" y="68" width="50" height="24" rx="10" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <rect x="225" y="68" width="50" height="24" rx="10" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <rect x="290" y="68" width="50" height="24" rx="10" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <rect x="355" y="68" width="50" height="24" rx="10" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <rect x="420" y="68" width="50" height="24" rx="10" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+
+  <!-- Nodes of Ranvier labels -->
+  <text x="218" y="63" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">Node of</text>
+  <text x="218" y="100" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">Ranvier</text>
+
+  <!-- Myelin label -->
+  <text x="315" y="55" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706" font-weight="600">Myelin sheath (Schwann cells)</text>
+
+  <!-- Axon terminal -->
+  <circle cx="500" cy="75" r="8" fill="#fecaca" stroke="#DC2626" stroke-width="1.5"/>
+  <circle cx="510" cy="82" r="8" fill="#fecaca" stroke="#DC2626" stroke-width="1.5"/>
+  <circle cx="498" cy="88" r="8" fill="#fecaca" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="505" y="108" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Synaptic</text>
+  <text x="505" y="117" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">terminals</text>
+
+  <text x="315" y="110" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Axon</text>
+
+  <!-- ACTION POTENTIAL GRAPH -->
+  <text x="290" y="145" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">Action Potential</text>
+  <!-- Axes -->
+  <line x1="80" y1="275" x2="500" y2="275" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="80" y1="275" x2="80" y2="155" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="290" y="295" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Time (ms)</text>
+  <text x="40" y="215" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" transform="rotate(-90,40,215)">Membrane potential (mV)</text>
+
+  <!-- Scale markers -->
+  <text x="72" y="180" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">+40</text>
+  <line x1="76" y1="177" x2="80" y2="177" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="72" y="245" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">-70</text>
+  <line x1="76" y1="242" x2="80" y2="242" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="72" y="265" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">-90</text>
+  <line x1="76" y1="262" x2="80" y2="262" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- 0 line -->
+  <line x1="80" y1="218" x2="500" y2="218" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="4,3"/>
+  <text x="72" y="221" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">0</text>
+
+  <!-- Resting potential line -->
+  <line x1="80" y1="242" x2="500" y2="242" stroke="#16A34A" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Action potential trace -->
+  <path d="M80,242 L150,242 L170,240 L185,177 L210,262 L250,242 L500,242" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+
+  <!-- Phase labels -->
+  <text x="155" y="170" font-family="system-ui" font-size="8" fill="#DC2626" font-weight="600">Depolarisation</text>
+  <text x="155" y="180" font-family="system-ui" font-size="7" fill="#DC2626">Na+ rushes in</text>
+  <path d="M175,183 L180,190" stroke="#DC2626" stroke-width="1"/>
+
+  <text x="205" y="170" font-family="system-ui" font-size="8" fill="#1a73e8" font-weight="600">Repolarisation</text>
+  <text x="205" y="180" font-family="system-ui" font-size="7" fill="#1a73e8">K+ flows out</text>
+
+  <text x="230" y="268" font-family="system-ui" font-size="8" fill="#D97706" font-weight="600">Hyperpolarisation</text>
+
+  <text x="115" y="238" font-family="system-ui" font-size="8" fill="#16A34A">Resting</text>
+  <text x="115" y="248" font-family="system-ui" font-size="8" fill="#16A34A">(-70mV)</text>
+
+  <!-- Threshold -->
+  <line x1="140" y1="235" x2="200" y2="235" stroke="#DC2626" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="140" y="232" font-family="system-ui" font-size="7" fill="#DC2626">Threshold</text>
+
+  <text x="400" y="238" font-family="system-ui" font-size="8" fill="#16A34A">Resting potential restored</text>
+</svg>
+</div>
+
 <h3>Saltatory Conduction</h3>
 <p>In myelinated neurones, the myelin sheath (formed by Schwann cells) insulates the axon. Action potentials can only occur at the nodes of Ranvier (gaps in the myelin). The impulse effectively jumps between nodes, greatly increasing conduction speed (up to 120 m/s compared to 1 m/s in unmyelinated neurones).</p>
 
@@ -150,6 +479,89 @@
   <li>If threshold is reached, a new action potential is generated</li>
   <li>Neurotransmitter is broken down by enzymes (e.g., acetylcholinesterase) and recycled</li>
 </ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 580 280" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="290" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Synaptic Transmission</text>
+  <defs><marker id="arrowSyn" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker></defs>
+
+  <!-- Presynaptic neurone -->
+  <rect x="20" y="50" width="220" height="180" rx="12" fill="#dbeafe" stroke="#1a73e8" stroke-width="2" opacity="0.4"/>
+  <text x="130" y="45" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">Presynaptic neurone</text>
+
+  <!-- Presynaptic membrane -->
+  <line x1="240" y1="50" x2="240" y2="230" stroke="#1a73e8" stroke-width="3"/>
+  <text x="232" y="245" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a73e8">Presynaptic membrane</text>
+
+  <!-- Synaptic vesicles -->
+  <circle cx="190" cy="90" r="12" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <circle cx="188" cy="87" r="2" fill="#D97706"/><circle cx="193" cy="90" r="2" fill="#D97706"/><circle cx="186" cy="93" r="2" fill="#D97706"/>
+  <circle cx="160" cy="110" r="12" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <circle cx="158" cy="107" r="2" fill="#D97706"/><circle cx="163" cy="110" r="2" fill="#D97706"/><circle cx="156" cy="113" r="2" fill="#D97706"/>
+  <circle cx="200" cy="130" r="12" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <circle cx="198" cy="127" r="2" fill="#D97706"/><circle cx="203" cy="130" r="2" fill="#D97706"/><circle cx="196" cy="133" r="2" fill="#D97706"/>
+  <text x="130" y="80" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">Synaptic vesicles</text>
+  <text x="130" y="92" font-family="system-ui" font-size="8" fill="#D97706">(contain neurotransmitter</text>
+  <text x="130" y="102" font-family="system-ui" font-size="8" fill="#D97706">e.g. acetylcholine)</text>
+
+  <!-- Vesicle fusing with membrane -->
+  <path d="M225,165 Q235,160 240,165 Q245,170 235,175 Q225,170 225,165Z" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <circle cx="230" cy="168" r="2" fill="#D97706"/>
+  <text x="180" y="175" font-family="system-ui" font-size="8" fill="#D97706">Vesicle fuses</text>
+  <text x="180" y="185" font-family="system-ui" font-size="8" fill="#D97706">(exocytosis)</text>
+
+  <!-- Ca2+ channels -->
+  <text x="60" y="140" font-family="system-ui" font-size="8" fill="#DC2626" font-weight="600">Ca2+ enters</text>
+  <path d="M55,145 L55,165" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowSyn)"/>
+  <text x="55" y="180" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">triggers vesicle</text>
+  <text x="55" y="190" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">fusion</text>
+
+  <!-- Action potential arriving -->
+  <path d="M30,70 L60,70" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowSyn)"/>
+  <text x="45" y="65" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Action</text>
+  <text x="45" y="55" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">potential</text>
+
+  <!-- SYNAPTIC CLEFT -->
+  <rect x="243" y="50" width="60" height="180" fill="#f8fafc" stroke="none"/>
+  <text x="273" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="600" transform="rotate(90,273,145)">Synaptic cleft</text>
+  <!-- Neurotransmitter molecules diffusing -->
+  <circle cx="255" cy="170" r="3" fill="#D97706"/>
+  <circle cx="265" cy="178" r="3" fill="#D97706"/>
+  <circle cx="275" cy="172" r="3" fill="#D97706"/>
+  <circle cx="260" cy="185" r="3" fill="#D97706"/>
+  <circle cx="280" cy="180" r="3" fill="#D97706"/>
+  <circle cx="290" cy="175" r="3" fill="#D97706"/>
+
+  <!-- Postsynaptic neurone -->
+  <rect x="303" y="50" width="255" height="180" rx="12" fill="#dcfce7" stroke="#16A34A" stroke-width="2" opacity="0.3"/>
+  <text x="430" y="45" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">Postsynaptic neurone</text>
+
+  <!-- Postsynaptic membrane -->
+  <line x1="303" y1="50" x2="303" y2="230" stroke="#16A34A" stroke-width="3"/>
+  <text x="310" y="245" font-family="system-ui" font-size="8" fill="#16A34A">Postsynaptic membrane</text>
+
+  <!-- Receptors on postsynaptic membrane -->
+  <path d="M303,100 L310,95 L310,105Z" fill="#16A34A"/>
+  <path d="M303,130 L310,125 L310,135Z" fill="#16A34A"/>
+  <path d="M303,160 L310,155 L310,165Z" fill="#16A34A"/>
+  <path d="M303,190 L310,185 L310,195Z" fill="#16A34A"/>
+  <text x="340" y="100" font-family="system-ui" font-size="8" fill="#16A34A" font-weight="600">Specific receptors</text>
+  <text x="340" y="112" font-family="system-ui" font-size="8" fill="#16A34A">complementary to</text>
+  <text x="340" y="124" font-family="system-ui" font-size="8" fill="#16A34A">neurotransmitter</text>
+
+  <!-- Na+ channels opening -->
+  <text x="370" y="160" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">Na+ channels open</text>
+  <path d="M315,165 L335,165" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowSyn)"/>
+  <text x="370" y="175" font-family="system-ui" font-size="8" fill="#1a1a2e">Na+ enters = depolarisation</text>
+
+  <!-- New action potential -->
+  <text x="430" y="200" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">If threshold reached:</text>
+  <text x="430" y="215" font-family="system-ui" font-size="9" fill="#16A34A">New action potential</text>
+
+  <!-- Enzyme breakdown -->
+  <text x="290" y="260" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Acetylcholinesterase breaks down neurotransmitter in cleft (recycled)</text>
+</svg>
+</div>
 
 <h2>5.4 Hormonal Coordination</h2>
 
@@ -180,6 +592,71 @@
 
 <p>This is an example of negative feedback: a deviation from the set point triggers a response that returns the variable to normal.</p>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Negative Feedback: Blood Glucose Regulation</text>
+  <defs>
+    <marker id="arrowNF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#1a1a2e"/></marker>
+    <marker id="arrowNFr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#DC2626"/></marker>
+    <marker id="arrowNFb" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#1a73e8"/></marker>
+  </defs>
+
+  <!-- Normal level in centre -->
+  <rect x="190" y="150" width="140" height="40" rx="8" fill="#dcfce7" stroke="#16A34A" stroke-width="2"/>
+  <text x="260" y="175" text-anchor="middle" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">Normal blood glucose</text>
+  <text x="260" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">(~4-6 mmol/L)</text>
+
+  <!-- HIGH BLOOD GLUCOSE (top path) -->
+  <path d="M260,150 L260,95" stroke="#DC2626" stroke-width="2" marker-end="url(#arrowNFr)"/>
+  <rect x="175" y="55" width="170" height="35" rx="8" fill="#fecaca" stroke="#DC2626" stroke-width="2"/>
+  <text x="260" y="72" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">Blood glucose TOO HIGH</text>
+  <text x="260" y="82" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">(e.g. after eating)</text>
+
+  <!-- Beta cells detect -->
+  <path d="M345,72 L410,72" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowNFr)"/>
+  <rect x="410" y="52" width="95" height="40" rx="6" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="457" y="69" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">Beta cells</text>
+  <text x="457" y="82" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">secrete INSULIN</text>
+
+  <!-- Insulin effects -->
+  <path d="M457,92 L457,120" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowNFr)"/>
+  <rect x="370" y="120" width="175" height="50" rx="6" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1"/>
+  <text x="457" y="137" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Glucose uptake (GLUT4)</text>
+  <text x="457" y="149" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Glycogenesis (glucose to glycogen)</text>
+  <text x="457" y="161" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Increased respiration</text>
+
+  <!-- Returns to normal -->
+  <path d="M400,170 Q350,185 330,170" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowNFr)"/>
+  <text x="380" y="188" font-family="system-ui" font-size="8" fill="#DC2626">Blood glucose falls</text>
+
+  <!-- LOW BLOOD GLUCOSE (bottom path) -->
+  <path d="M260,190 L260,240" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowNFb)"/>
+  <rect x="175" y="245" width="170" height="35" rx="8" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="260" y="262" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">Blood glucose TOO LOW</text>
+  <text x="260" y="272" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">(e.g. between meals)</text>
+
+  <!-- Alpha cells detect -->
+  <path d="M175,262 L110,262" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrowNFb)"/>
+  <rect x="15" y="242" width="95" height="40" rx="6" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="62" y="259" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">Alpha cells</text>
+  <text x="62" y="272" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">secrete GLUCAGON</text>
+
+  <!-- Glucagon effects -->
+  <path d="M62,242 L62,220" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrowNFb)"/>
+  <rect x="0" y="170" width="145" height="50" rx="6" fill="#1a73e8" opacity="0.08" stroke="#1a73e8" stroke-width="1"/>
+  <text x="72" y="187" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Glycogenolysis</text>
+  <text x="72" y="199" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">(glycogen to glucose)</text>
+  <text x="72" y="211" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Gluconeogenesis</text>
+
+  <!-- Returns to normal -->
+  <path d="M120,170 Q160,155 190,170" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrowNFb)"/>
+  <text x="140" y="152" font-family="system-ui" font-size="8" fill="#1a73e8">Blood glucose rises</text>
+
+  <!-- Negative feedback label -->
+  <text x="260" y="320" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="600">Negative feedback: deviation from set point triggers corrective response</text>
+</svg>
+</div>
+
 <h3>Thermoregulation</h3>
 <p>Core body temperature is maintained at approximately 37 degrees C by the thermoregulatory centre in the hypothalamus, which monitors blood temperature and receives input from peripheral thermoreceptors in the skin.</p>
 
@@ -196,6 +673,101 @@
   <li><strong>Loop of Henle:</strong> Creates a concentration gradient in the medulla (countercurrent multiplier) that allows water reabsorption from the collecting duct.</li>
   <li><strong>Collecting duct:</strong> Permeability to water is regulated by ADH (antidiuretic hormone). When blood water potential is low, more ADH is released, more aquaporins are inserted into the collecting duct walls, more water is reabsorbed, and a small volume of concentrated urine is produced.</li>
 </ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Kidney Nephron Structure</text>
+  <defs>
+    <marker id="arrowNeph" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a73e8"/></marker>
+  </defs>
+
+  <!-- Bowman's capsule -->
+  <circle cx="130" cy="85" r="40" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <!-- Glomerulus inside -->
+  <path d="M115,75 Q120,65 130,70 Q140,65 135,75 Q145,80 135,85 Q140,95 130,90 Q120,95 125,85 Q115,80 115,75Z" fill="#fecaca" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="130" y="82" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626" font-weight="600">Glomerulus</text>
+  <text x="130" y="135" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">Bowman's capsule</text>
+
+  <!-- Afferent arteriole -->
+  <path d="M80,60 L105,70" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="60" y="55" font-family="system-ui" font-size="8" fill="#DC2626">Afferent</text>
+  <text x="60" y="65" font-family="system-ui" font-size="8" fill="#DC2626">arteriole</text>
+  <!-- Efferent arteriole -->
+  <path d="M105,95 L80,108" stroke="#DC2626" stroke-width="1.8"/>
+  <text x="55" y="115" font-family="system-ui" font-size="8" fill="#DC2626">Efferent</text>
+  <text x="55" y="125" font-family="system-ui" font-size="8" fill="#DC2626">arteriole</text>
+
+  <!-- Ultrafiltration label -->
+  <rect x="185" y="55" width="120" height="30" rx="5" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1"/>
+  <text x="245" y="68" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626" font-weight="600">ULTRAFILTRATION</text>
+  <text x="245" y="80" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">High pressure forces small</text>
+  <text x="245" y="88" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">molecules into capsule</text>
+
+  <!-- PCT (Proximal Convoluted Tubule) -->
+  <path d="M170,85 Q200,85 220,100 Q250,120 230,145 Q210,165 190,155 Q170,145 185,170" fill="none" stroke="#16A34A" stroke-width="4" stroke-linecap="round"/>
+  <text x="260" y="130" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">PCT</text>
+  <text x="260" y="142" font-family="system-ui" font-size="7" fill="#16A34A">Selective reabsorption:</text>
+  <text x="260" y="152" font-family="system-ui" font-size="7" fill="#16A34A">all glucose, amino acids</text>
+  <text x="260" y="162" font-family="system-ui" font-size="7" fill="#16A34A">most water, Na+</text>
+
+  <!-- Loop of Henle - descending -->
+  <path d="M185,170 L185,300" fill="none" stroke="#D97706" stroke-width="4" stroke-linecap="round"/>
+  <!-- Loop of Henle - bottom curve -->
+  <path d="M185,300 Q185,330 210,330 Q235,330 235,300" fill="none" stroke="#D97706" stroke-width="4" stroke-linecap="round"/>
+  <!-- Loop of Henle - ascending -->
+  <path d="M235,300 L235,200" fill="none" stroke="#D97706" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Labels for Loop -->
+  <text x="155" y="240" text-anchor="end" font-family="system-ui" font-size="8" fill="#D97706" font-weight="600">Descending</text>
+  <text x="155" y="250" text-anchor="end" font-family="system-ui" font-size="7" fill="#D97706">Permeable to</text>
+  <text x="155" y="260" text-anchor="end" font-family="system-ui" font-size="7" fill="#D97706">water (leaves)</text>
+
+  <text x="275" y="250" font-family="system-ui" font-size="8" fill="#D97706" font-weight="600">Ascending</text>
+  <text x="275" y="260" font-family="system-ui" font-size="7" fill="#D97706">Impermeable to water</text>
+  <text x="275" y="270" font-family="system-ui" font-size="7" fill="#D97706">Na+/Cl- pumped out</text>
+
+  <text x="210" y="360" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">Loop of Henle</text>
+  <text x="210" y="372" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">(Countercurrent multiplier)</text>
+
+  <!-- Water arrows from descending limb -->
+  <path d="M180,230 L165,230" stroke="#1a73e8" stroke-width="1" marker-end="url(#arrowNeph)"/>
+  <path d="M180,260 L165,260" stroke="#1a73e8" stroke-width="1" marker-end="url(#arrowNeph)"/>
+  <text x="148" y="245" text-anchor="end" font-family="system-ui" font-size="7" fill="#1a73e8">H2O</text>
+
+  <!-- Na+ arrows from ascending limb -->
+  <path d="M240,240 L260,240" stroke="#DC2626" stroke-width="1"/>
+  <path d="M240,270 L260,270" stroke="#DC2626" stroke-width="1"/>
+  <text x="262" y="285" font-family="system-ui" font-size="7" fill="#DC2626">Na+/Cl-</text>
+
+  <!-- DCT (Distal Convoluted Tubule) -->
+  <path d="M235,200 Q240,185 260,185 Q290,185 310,195 Q330,210 320,230 Q310,245 330,245" fill="none" stroke="#9333ea" stroke-width="4" stroke-linecap="round"/>
+  <text x="350" y="195" font-family="system-ui" font-size="9" fill="#9333ea" font-weight="600">DCT</text>
+  <text x="350" y="207" font-family="system-ui" font-size="7" fill="#9333ea">Fine-tuning of</text>
+  <text x="350" y="217" font-family="system-ui" font-size="7" fill="#9333ea">ion balance</text>
+
+  <!-- Collecting duct -->
+  <path d="M330,245 L330,380" fill="none" stroke="#1a1a2e" stroke-width="5" stroke-linecap="round"/>
+  <text x="370" y="300" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="600">Collecting Duct</text>
+  <text x="370" y="315" font-family="system-ui" font-size="8" fill="#1a73e8">ADH controls water</text>
+  <text x="370" y="327" font-family="system-ui" font-size="8" fill="#1a73e8">reabsorption here</text>
+  <text x="370" y="342" font-family="system-ui" font-size="7" fill="#1a73e8">More ADH = more</text>
+  <text x="370" y="352" font-family="system-ui" font-size="7" fill="#1a73e8">aquaporins = more</text>
+  <text x="370" y="362" font-family="system-ui" font-size="7" fill="#1a73e8">water reabsorbed</text>
+
+  <!-- Water arrows from collecting duct -->
+  <path d="M325,300 L310,300" stroke="#1a73e8" stroke-width="1" marker-end="url(#arrowNeph)"/>
+  <path d="M325,330 L310,330" stroke="#1a73e8" stroke-width="1" marker-end="url(#arrowNeph)"/>
+  <text x="298" y="315" text-anchor="end" font-family="system-ui" font-size="7" fill="#1a73e8">H2O (osmosis)</text>
+
+  <!-- Urine output -->
+  <text x="330" y="400" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="600">Urine to ureter</text>
+
+  <!-- Cortex / Medulla boundary -->
+  <line x1="10" y1="170" x2="510" y2="170" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="470" y="165" font-family="system-ui" font-size="9" fill="#1a1a2e">CORTEX</text>
+  <text x="470" y="185" font-family="system-ui" font-size="9" fill="#1a1a2e">MEDULLA</text>
+</svg>
+</div>
 
 <div class="exam-tip">
   <strong>Exam Tip:</strong> ADH does not add water to the blood. It increases the permeability of the collecting duct to water, allowing more water to be reabsorbed by osmosis down the concentration gradient created by the loop of Henle. Always mention osmosis as the mechanism of water movement.

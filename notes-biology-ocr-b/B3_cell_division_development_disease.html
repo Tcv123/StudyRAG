@@ -48,6 +48,48 @@
   <strong>Checkpoints:</strong> Control points in the cell cycle where the cell assesses whether conditions are suitable to proceed. Key checkpoints exist at G1/S boundary, G2/M boundary, and during mitosis.
 </div>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="max-width: 500px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="200" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">The Cell Cycle</text>
+  <!-- Outer circle -->
+  <circle cx="200" cy="210" r="150" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+  <!-- G1 arc (largest ~40%) -->
+  <path d="M200,60 A150,150 0 0,1 345,260" fill="none" stroke="#1a73e8" stroke-width="18" opacity="0.7"/>
+  <!-- S arc (~30%) -->
+  <path d="M345,260 A150,150 0 0,1 200,360" fill="none" stroke="#16A34A" stroke-width="18" opacity="0.7"/>
+  <!-- G2 arc (~15%) -->
+  <path d="M200,360 A150,150 0 0,1 95,305" fill="none" stroke="#D97706" stroke-width="18" opacity="0.7"/>
+  <!-- M arc (~15%) -->
+  <path d="M95,305 A150,150 0 0,1 200,60" fill="none" stroke="#DC2626" stroke-width="18" opacity="0.7"/>
+  <!-- Centre label -->
+  <text x="200" y="195" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="600">INTERPHASE</text>
+  <text x="200" y="215" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">(~90% of cycle)</text>
+  <!-- Phase labels -->
+  <text x="290" y="160" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a73e8" font-weight="700">G1</text>
+  <text x="290" y="175" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Cell growth</text>
+  <text x="290" y="187" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Protein synthesis</text>
+
+  <text x="290" y="310" text-anchor="middle" font-family="system-ui" font-size="13" fill="#16A34A" font-weight="700">S</text>
+  <text x="290" y="325" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">DNA replication</text>
+
+  <text x="135" y="345" text-anchor="middle" font-family="system-ui" font-size="13" fill="#D97706" font-weight="700">G2</text>
+  <text x="135" y="360" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Growth, checks</text>
+
+  <text x="115" y="160" text-anchor="middle" font-family="system-ui" font-size="13" fill="#DC2626" font-weight="700">M</text>
+  <text x="115" y="175" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Mitosis +</text>
+  <text x="115" y="187" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Cytokinesis</text>
+
+  <!-- Checkpoint markers -->
+  <circle cx="310" y="230" r="8" fill="white" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="310" y="234" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">G1/S</text>
+  <circle cx="145" cy="340" r="8" fill="white" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="145" y="344" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">G2/M</text>
+  <!-- Direction arrow -->
+  <path d="M335,100 Q365,130 348,165" stroke="#1a1a2e" stroke-width="1.5" fill="none" marker-end="url(#arrowCC)"/>
+  <defs><marker id="arrowCC" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker></defs>
+</svg>
+</div>
+
 <h3>Mitosis</h3>
 <p>Mitosis produces two genetically identical daughter cells from one parent cell. It is used for growth, repair, and asexual reproduction. Mitosis consists of four continuous stages:</p>
 
@@ -57,6 +99,84 @@
   <li><strong>Anaphase:</strong> Centromeres divide and sister chromatids are pulled to opposite poles by shortening of spindle fibres. The cell elongates.</li>
   <li><strong>Telophase:</strong> Chromatids arrive at opposite poles and decondense back into chromatin. Nuclear envelopes reform around each set of chromosomes. Nucleoli reappear.</li>
 </ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 580 280" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="290" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Stages of Mitosis</text>
+  <defs><marker id="arrowMit" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#1a1a2e"/></marker></defs>
+
+  <!-- PROPHASE -->
+  <circle cx="70" cy="130" r="55" fill="#e8f0fe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="70" y="55" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">Prophase</text>
+  <!-- Condensing chromosomes (X shapes) -->
+  <text x="55" y="120" font-family="system-ui" font-size="18" fill="#DC2626" font-weight="bold">X</text>
+  <text x="75" y="135" font-family="system-ui" font-size="18" fill="#1a73e8" font-weight="bold">X</text>
+  <text x="60" y="150" font-family="system-ui" font-size="14" fill="#DC2626" font-weight="bold">X</text>
+  <text x="82" y="115" font-family="system-ui" font-size="14" fill="#1a73e8" font-weight="bold">X</text>
+  <!-- Centrioles at poles -->
+  <circle cx="70" cy="80" r="3" fill="#1a1a2e"/>
+  <circle cx="70" cy="180" r="3" fill="#1a1a2e"/>
+  <text x="70" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Chromosomes condense</text>
+  <text x="70" y="210" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Nuclear envelope breaks down</text>
+
+  <!-- Arrow -->
+  <path d="M130,130 L150,130" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowMit)"/>
+
+  <!-- METAPHASE -->
+  <circle cx="205" cy="130" r="55" fill="#e8f0fe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="205" y="55" text-anchor="middle" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">Metaphase</text>
+  <!-- Chromosomes at equator -->
+  <line x1="185" y1="115" x2="225" y2="115" stroke="#1a1a2e" stroke-width="0.5" stroke-dasharray="2,2"/>
+  <line x1="185" y1="145" x2="225" y2="145" stroke="#1a1a2e" stroke-width="0.5" stroke-dasharray="2,2"/>
+  <text x="190" y="128" font-family="system-ui" font-size="14" fill="#DC2626" font-weight="bold">X</text>
+  <text x="205" y="128" font-family="system-ui" font-size="14" fill="#1a73e8" font-weight="bold">X</text>
+  <text x="197" y="143" font-family="system-ui" font-size="12" fill="#DC2626" font-weight="bold">X</text>
+  <text x="212" y="143" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">X</text>
+  <!-- Spindle fibres -->
+  <line x1="205" y1="78" x2="195" y2="120" stroke="#D97706" stroke-width="0.8"/>
+  <line x1="205" y1="78" x2="215" y2="120" stroke="#D97706" stroke-width="0.8"/>
+  <line x1="205" y1="182" x2="195" y2="140" stroke="#D97706" stroke-width="0.8"/>
+  <line x1="205" y1="182" x2="215" y2="140" stroke="#D97706" stroke-width="0.8"/>
+  <text x="205" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Chromosomes line up</text>
+  <text x="205" y="210" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">at cell equator</text>
+
+  <!-- Arrow -->
+  <path d="M265,130 L285,130" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowMit)"/>
+
+  <!-- ANAPHASE -->
+  <ellipse cx="345" cy="130" rx="55" ry="55" fill="#e8f0fe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="345" y="55" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="600">Anaphase</text>
+  <!-- Chromatids pulled apart -->
+  <text x="320" y="100" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">V V</text>
+  <text x="355" y="165" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">V V</text>
+  <!-- Spindle fibres pulling -->
+  <line x1="345" y1="78" x2="328" y2="100" stroke="#D97706" stroke-width="0.8"/>
+  <line x1="345" y1="78" x2="340" y2="100" stroke="#D97706" stroke-width="0.8"/>
+  <line x1="345" y1="182" x2="360" y2="158" stroke="#D97706" stroke-width="0.8"/>
+  <line x1="345" y1="182" x2="372" y2="158" stroke="#D97706" stroke-width="0.8"/>
+  <text x="345" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Centromeres divide</text>
+  <text x="345" y="210" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Chromatids pulled to poles</text>
+
+  <!-- Arrow -->
+  <path d="M405,130 L425,130" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowMit)"/>
+
+  <!-- TELOPHASE -->
+  <ellipse cx="490" cy="130" rx="55" ry="55" fill="#e8f0fe" stroke="#1a73e8" stroke-width="2"/>
+  <!-- Cleavage furrow -->
+  <path d="M438,130 Q465,120 490,130 Q515,140 542,130" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="490" y="55" text-anchor="middle" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">Telophase</text>
+  <!-- Two sets of chromatids -->
+  <circle cx="490" cy="98" r="18" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="490" y="102" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">2n</text>
+  <circle cx="490" cy="162" r="18" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="490" y="166" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">2n</text>
+  <text x="490" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Nuclear envelopes reform</text>
+  <text x="490" y="210" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Chromosomes decondense</text>
+
+  <!-- Result -->
+  <text x="290" y="250" text-anchor="middle" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">Result: 2 genetically identical diploid (2n) daughter cells</text>
+</svg>
+</div>
 
 <p><strong>Cytokinesis</strong> then divides the cytoplasm. In animal cells, a cleavage furrow forms and pinches the cell in two. In plant cells, a cell plate forms from vesicles along the equator, which develops into a new cell wall.</p>
 
@@ -86,6 +206,84 @@
   <li><strong>Random fertilisation:</strong> Any male gamete can fuse with any female gamete, further increasing variation</li>
 </ul>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 580 380" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="290" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Meiosis Overview</text>
+  <defs><marker id="arrowMei" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker></defs>
+
+  <!-- Parent cell 2n -->
+  <circle cx="290" cy="60" r="30" fill="#e8f0fe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="275" y="58" font-family="system-ui" font-size="12" fill="#DC2626" font-weight="bold">X</text>
+  <text x="295" y="58" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">X</text>
+  <text x="280" y="73" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">I</text>
+  <text x="298" y="73" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">I</text>
+  <text x="290" y="42" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="600">Diploid cell (2n)</text>
+
+  <!-- MEIOSIS I label -->
+  <rect x="195" y="100" width="190" height="20" rx="4" fill="#1a73e8" opacity="0.1"/>
+  <text x="290" y="114" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">MEIOSIS I - Reduction Division</text>
+
+  <!-- Crossing over illustration -->
+  <path d="M290,90 L290,100" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowMei)"/>
+
+  <!-- Prophase I - crossing over -->
+  <circle cx="200" cy="155" r="28" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <!-- Homologous pair with crossing over -->
+  <line x1="188" y1="145" x2="188" y2="165" stroke="#DC2626" stroke-width="3"/>
+  <line x1="195" y1="145" x2="195" y2="155" stroke="#1a73e8" stroke-width="3"/>
+  <line x1="195" y1="155" x2="188" y2="165" stroke="#1a73e8" stroke-width="2" stroke-dasharray="2,1"/>
+  <line x1="188" y1="155" x2="195" y2="165" stroke="#DC2626" stroke-width="2" stroke-dasharray="2,1"/>
+  <text x="200" y="192" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Crossing over</text>
+  <text x="200" y="202" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">(Prophase I)</text>
+
+  <!-- Independent assortment -->
+  <circle cx="380" cy="155" r="28" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="368" y="152" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">X</text>
+  <text x="383" y="152" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">X</text>
+  <text x="375" y="168" font-family="system-ui" font-size="9" fill="#1a1a2e">?</text>
+  <text x="380" y="192" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Independent</text>
+  <text x="380" y="202" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">assortment (Metaphase I)</text>
+
+  <!-- After Meiosis I: two haploid cells -->
+  <path d="M290,125 L230,210" stroke="#1a1a2e" stroke-width="1.5"/>
+  <path d="M290,125 L350,210" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <circle cx="210" cy="235" r="25" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="200" y="238" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">X</text>
+  <text x="215" y="238" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="bold">I</text>
+  <text x="210" y="218" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">n</text>
+
+  <circle cx="370" cy="235" r="25" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="360" y="238" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">X</text>
+  <text x="375" y="238" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="bold">I</text>
+  <text x="370" y="218" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">n</text>
+
+  <!-- MEIOSIS II label -->
+  <rect x="195" y="267" width="190" height="20" rx="4" fill="#DC2626" opacity="0.1"/>
+  <text x="290" y="281" text-anchor="middle" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">MEIOSIS II - Separates Chromatids</text>
+
+  <!-- After Meiosis II: four haploid cells -->
+  <path d="M210,260 L150,310" stroke="#1a1a2e" stroke-width="1"/>
+  <path d="M210,260 L250,310" stroke="#1a1a2e" stroke-width="1"/>
+  <path d="M370,260 L330,310" stroke="#1a1a2e" stroke-width="1"/>
+  <path d="M370,260 L430,310" stroke="#1a1a2e" stroke-width="1"/>
+
+  <circle cx="130" cy="335" r="22" fill="#fecaca" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="130" y="339" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">n</text>
+
+  <circle cx="240" cy="335" r="22" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="240" y="339" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">n</text>
+
+  <circle cx="340" cy="335" r="22" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="340" y="339" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">n</text>
+
+  <circle cx="450" cy="335" r="22" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="450" y="339" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">n</text>
+
+  <text x="290" y="375" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">4 genetically different haploid (n) daughter cells</text>
+</svg>
+</div>
+
 <div class="definition">
   <strong>Haploid (n):</strong> A cell containing one set of chromosomes (e.g., human gametes have 23 chromosomes).<br>
   <strong>Diploid (2n):</strong> A cell containing two sets of chromosomes, one from each parent (e.g., human body cells have 46 chromosomes).
@@ -106,6 +304,76 @@
 <p>Differentiation is the process by which a cell becomes specialised for a particular function. It involves the selective expression of certain genes while others are switched off. All cells contain the same DNA, but different genes are expressed in different cell types, producing different proteins and therefore different structures and functions.</p>
 
 <p>Gene expression is regulated by transcription factors, epigenetic modifications (e.g., DNA methylation, histone modification), and signalling molecules from neighbouring cells during development.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 580 260" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="290" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Stem Cell Differentiation</text>
+  <defs><marker id="arrowSC" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker></defs>
+
+  <!-- Totipotent -->
+  <circle cx="70" cy="70" r="28" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="2"/>
+  <text x="70" y="67" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">Totipotent</text>
+  <text x="70" y="78" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">(Zygote)</text>
+  <text x="70" y="110" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Any cell type</text>
+  <text x="70" y="120" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">+ placenta</text>
+
+  <path d="M98,70 L138,70" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowSC)"/>
+
+  <!-- Pluripotent -->
+  <circle cx="175" cy="70" r="28" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="2"/>
+  <text x="175" y="67" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">Pluripotent</text>
+  <text x="175" y="78" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">(Embryonic)</text>
+  <text x="175" y="110" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Any body</text>
+  <text x="175" y="120" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">cell type</text>
+
+  <path d="M203,70 L243,70" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowSC)"/>
+
+  <!-- Multipotent -->
+  <circle cx="280" cy="70" r="28" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="2"/>
+  <text x="280" y="67" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">Multipotent</text>
+  <text x="280" y="78" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">(Adult)</text>
+  <text x="280" y="110" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Limited range</text>
+  <text x="280" y="120" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">of cell types</text>
+
+  <!-- Arrows to differentiated cells -->
+  <path d="M280,98 L170,170" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowSC)"/>
+  <path d="M280,98 L280,170" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowSC)"/>
+  <path d="M280,98 L390,170" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowSC)"/>
+
+  <!-- Decreasing potency arrow -->
+  <path d="M70,38 L280,38" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowSC)"/>
+  <text x="175" y="35" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Decreasing potency</text>
+
+  <!-- Differentiated cells -->
+  <!-- Neurone -->
+  <ellipse cx="150" cy="195" rx="28" ry="15" fill="#fecaca" stroke="#DC2626" stroke-width="1.5"/>
+  <line x1="178" y1="195" x2="210" y2="195" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="150" y="199" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Neurone</text>
+  <text x="170" y="225" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Nerve impulses</text>
+
+  <!-- Red blood cell -->
+  <ellipse cx="280" cy="195" rx="22" ry="12" fill="#fecaca" stroke="#DC2626" stroke-width="1.5"/>
+  <ellipse cx="280" cy="195" rx="8" ry="4" fill="#f8fafc" stroke="#DC2626" stroke-width="0.8"/>
+  <text x="280" y="220" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Red blood cell</text>
+  <text x="280" y="230" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">O2 transport</text>
+
+  <!-- Muscle cell -->
+  <rect x="365" y="185" width="55" height="18" rx="4" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="370" y1="190" x2="370" y2="198" stroke="#16A34A" stroke-width="0.8"/>
+  <line x1="380" y1="190" x2="380" y2="198" stroke="#16A34A" stroke-width="0.8"/>
+  <line x1="390" y1="190" x2="390" y2="198" stroke="#16A34A" stroke-width="0.8"/>
+  <line x1="400" y1="190" x2="400" y2="198" stroke="#16A34A" stroke-width="0.8"/>
+  <line x1="410" y1="190" x2="410" y2="198" stroke="#16A34A" stroke-width="0.8"/>
+  <text x="393" y="220" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Muscle cell</text>
+  <text x="393" y="230" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Contraction</text>
+
+  <!-- Key concept -->
+  <text x="460" y="80" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="600">Same DNA in all cells</text>
+  <text x="460" y="93" font-family="system-ui" font-size="9" fill="#1a73e8">Different genes</text>
+  <text x="460" y="106" font-family="system-ui" font-size="9" fill="#1a73e8">expressed = different</text>
+  <text x="460" y="119" font-family="system-ui" font-size="9" fill="#1a73e8">proteins and functions</text>
+</svg>
+</div>
 
 <h3>Medical Applications of Stem Cells</h3>
 <p>Stem cells have potential therapeutic applications including treatment of leukaemia (bone marrow transplants), repair of damaged tissues (e.g., cardiac muscle after heart attack), and potentially treating neurodegenerative diseases. Ethical concerns include the destruction of embryos to obtain embryonic stem cells, though induced pluripotent stem cells (iPSCs) made by reprogramming adult cells offer an alternative.</p>
@@ -178,6 +446,77 @@
 
 <h3>Transmission</h3>
 <p>Communicable diseases can be transmitted by direct contact, airborne droplets, contaminated water or food, vectors (organisms that carry pathogens between hosts, e.g., mosquitoes for malaria), or bodily fluids.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 580 230" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="290" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Tumour Development: Benign vs Malignant</text>
+  <defs><marker id="arrowTum" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker></defs>
+
+  <!-- Normal cells -->
+  <text x="80" y="52" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">Normal Cells</text>
+  <rect x="40" y="60" width="80" height="55" rx="6" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <circle cx="60" cy="78" r="8" fill="#bbf7d0" stroke="#16A34A" stroke-width="1"/>
+  <circle cx="80" cy="78" r="8" fill="#bbf7d0" stroke="#16A34A" stroke-width="1"/>
+  <circle cx="100" cy="78" r="8" fill="#bbf7d0" stroke="#16A34A" stroke-width="1"/>
+  <circle cx="60" cy="97" r="8" fill="#bbf7d0" stroke="#16A34A" stroke-width="1"/>
+  <circle cx="80" cy="97" r="8" fill="#bbf7d0" stroke="#16A34A" stroke-width="1"/>
+  <circle cx="100" cy="97" r="8" fill="#bbf7d0" stroke="#16A34A" stroke-width="1"/>
+  <text x="80" y="132" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">Controlled division</text>
+
+  <!-- Arrow: mutation -->
+  <path d="M125,87 L165,87" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowTum)"/>
+  <text x="145" y="80" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Mutations in</text>
+  <text x="145" y="70" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">proto-oncogenes /</text>
+  <text x="145" y="60" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">tumour suppressors</text>
+
+  <!-- Uncontrolled division -->
+  <text x="225" y="52" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">Uncontrolled Division</text>
+  <rect x="175" y="60" width="100" height="55" rx="6" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <circle cx="197" cy="76" r="7" fill="#fde68a" stroke="#D97706" stroke-width="1"/>
+  <circle cx="215" cy="73" r="9" fill="#fde68a" stroke="#D97706" stroke-width="1"/>
+  <circle cx="235" cy="78" r="6" fill="#fde68a" stroke="#D97706" stroke-width="1"/>
+  <circle cx="250" cy="75" r="8" fill="#fde68a" stroke="#D97706" stroke-width="1"/>
+  <circle cx="200" cy="95" r="8" fill="#fde68a" stroke="#D97706" stroke-width="1"/>
+  <circle cx="222" cy="97" r="10" fill="#fde68a" stroke="#D97706" stroke-width="1"/>
+  <circle cx="248" cy="95" r="7" fill="#fde68a" stroke="#D97706" stroke-width="1"/>
+
+  <!-- Branch to benign -->
+  <path d="M275,75 L340,60" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowTum)"/>
+  <!-- Branch to malignant -->
+  <path d="M275,100 L340,130" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowTum)"/>
+
+  <!-- BENIGN TUMOUR -->
+  <text x="440" y="42" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="600">Benign Tumour</text>
+  <!-- Encapsulated mass -->
+  <ellipse cx="440" cy="78" rx="50" ry="32" fill="none" stroke="#D97706" stroke-width="2.5"/>
+  <circle cx="425" cy="72" r="8" fill="#fde68a" stroke="#D97706" stroke-width="1"/>
+  <circle cx="445" cy="68" r="9" fill="#fde68a" stroke="#D97706" stroke-width="1"/>
+  <circle cx="455" cy="82" r="7" fill="#fde68a" stroke="#D97706" stroke-width="1"/>
+  <circle cx="430" cy="88" r="8" fill="#fde68a" stroke="#D97706" stroke-width="1"/>
+  <circle cx="450" cy="92" r="6" fill="#fde68a" stroke="#D97706" stroke-width="1"/>
+  <!-- Benign characteristics -->
+  <text x="440" y="122" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Enclosed in capsule</text>
+  <text x="440" y="132" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Does not invade other tissues</text>
+  <text x="440" y="142" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Does not metastasise</text>
+  <text x="440" y="152" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Slow growing</text>
+
+  <!-- MALIGNANT TUMOUR -->
+  <text x="440" y="172" text-anchor="middle" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">Malignant Tumour</text>
+  <!-- Irregular mass with spread -->
+  <path d="M410,200 Q425,178 450,185 Q475,178 470,200 Q480,215 455,218 Q440,225 420,215 Q405,210 410,200Z" fill="#fecaca" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="430" cy="198" r="6" fill="#fca5a5" stroke="#DC2626" stroke-width="0.8"/>
+  <circle cx="448" cy="202" r="7" fill="#fca5a5" stroke="#DC2626" stroke-width="0.8"/>
+  <circle cx="440" cy="192" r="5" fill="#fca5a5" stroke="#DC2626" stroke-width="0.8"/>
+  <!-- Metastasis arrows -->
+  <path d="M475,195 Q500,185 520,175" stroke="#DC2626" stroke-width="1.2" stroke-dasharray="3,2" marker-end="url(#arrowTumR)"/>
+  <path d="M475,210 Q505,215 525,210" stroke="#DC2626" stroke-width="1.2" stroke-dasharray="3,2" marker-end="url(#arrowTumR)"/>
+  <defs><marker id="arrowTumR" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto"><polygon points="0,0 6,2 0,4" fill="#DC2626"/></marker></defs>
+  <circle cx="530" cy="172" r="5" fill="#fca5a5" stroke="#DC2626" stroke-width="1"/>
+  <circle cx="535" cy="208" r="5" fill="#fca5a5" stroke="#DC2626" stroke-width="1"/>
+  <text x="545" y="190" font-family="system-ui" font-size="7" fill="#DC2626">Secondary</text>
+  <text x="545" y="199" font-family="system-ui" font-size="7" fill="#DC2626">tumours</text>
+</svg>
+</div>
 
 <h3>Antibiotics and Resistance</h3>
 <p>Antibiotics kill or inhibit bacteria (e.g., penicillin inhibits cell wall synthesis). They are ineffective against viruses. Antibiotic resistance arises through natural selection: random mutations may confer resistance; in the presence of antibiotics, resistant bacteria survive and reproduce, passing on resistance genes. Overuse and misuse of antibiotics accelerates this process.</p>

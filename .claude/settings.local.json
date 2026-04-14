@@ -45,7 +45,9 @@
       "Bash(awk '{print $9, \"\\(\" $5 \"\\)\"}')",
       "Bash(ls -la notes-physics-aqa/required_practicals.html notes-physics-edexcel/core_practicals.html notes-physics-ocr-a/practical_activity_groups.html notes-physics-ocr-b/practical_activities.html)",
       "Bash(ls -la notes-chemistry-aqa/required_practicals.html notes-chemistry-edexcel/core_practicals.html notes-chemistry-ocr-a/practical_activity_groups.html notes-chemistry-ocr-b/practical_activities.html)",
-      "Bash(ls -la notes-biology-aqa/required_practicals.html notes-biology-edexcel-a/core_practicals.html notes-biology-edexcel-b/core_practicals.html notes-biology-ocr-a/practical_activity_groups.html notes-biology-ocr-b/practical_activities.html)"
+      "Bash(ls -la notes-biology-aqa/required_practicals.html notes-biology-edexcel-a/core_practicals.html notes-biology-edexcel-b/core_practicals.html notes-biology-ocr-a/practical_activity_groups.html notes-biology-ocr-b/practical_activities.html)",
+      "Bash(ls /c/Users/tcvas/OneDrive/Desktop/Learning/diagnostics/biology-ocr*)",
+      "Bash(node)"
     ]
   },
   "hooks": {

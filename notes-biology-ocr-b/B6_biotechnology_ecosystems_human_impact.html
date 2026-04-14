@@ -55,6 +55,162 @@
   <strong>DNA ligase:</strong> An enzyme that joins DNA fragments by forming phosphodiester bonds between adjacent nucleotides. Used to seal recombinant DNA molecules.
 </div>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 580 320" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="290" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">PCR Cycle (Polymerase Chain Reaction)</text>
+  <defs><marker id="arrowPCR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker></defs>
+
+  <!-- STEP 1: Denaturation -->
+  <rect x="20" y="50" width="160" height="230" rx="10" fill="#fecaca" stroke="#DC2626" stroke-width="2" opacity="0.2"/>
+  <text x="100" y="72" text-anchor="middle" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">1. Denaturation</text>
+  <text x="100" y="88" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">94-98 C</text>
+
+  <!-- Double stranded DNA -->
+  <line x1="55" y1="110" x2="55" y2="200" stroke="#1a73e8" stroke-width="4"/>
+  <line x1="75" y1="110" x2="75" y2="200" stroke="#DC2626" stroke-width="4"/>
+  <!-- H-bonds breaking -->
+  <line x1="59" y1="120" x2="71" y2="120" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="59" y1="140" x2="71" y2="140" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="59" y1="160" x2="71" y2="160" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="59" y1="180" x2="71" y2="180" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Arrow -->
+  <path d="M90,155 L115,155" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowPCR)"/>
+
+  <!-- Separated strands -->
+  <line x1="120" y1="110" x2="120" y2="200" stroke="#1a73e8" stroke-width="4"/>
+  <line x1="155" y1="110" x2="155" y2="200" stroke="#DC2626" stroke-width="4"/>
+
+  <text x="100" y="225" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Heat breaks H-bonds</text>
+  <text x="100" y="237" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Strands separate</text>
+
+  <!-- STEP 2: Annealing -->
+  <rect x="200" y="50" width="160" height="230" rx="10" fill="#fef3c7" stroke="#D97706" stroke-width="2" opacity="0.2"/>
+  <text x="280" y="72" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="600">2. Annealing</text>
+  <text x="280" y="88" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">50-65 C</text>
+
+  <!-- Single strand with primer binding -->
+  <line x1="240" y1="110" x2="240" y2="200" stroke="#1a73e8" stroke-width="4"/>
+  <!-- Primer -->
+  <line x1="248" y1="185" x2="248" y2="200" stroke="#16A34A" stroke-width="4"/>
+  <text x="260" y="200" font-family="system-ui" font-size="8" fill="#16A34A" font-weight="600">Primer</text>
+
+  <line x1="310" y1="110" x2="310" y2="200" stroke="#DC2626" stroke-width="4"/>
+  <!-- Primer -->
+  <line x1="302" y1="110" x2="302" y2="125" stroke="#16A34A" stroke-width="4"/>
+  <text x="290" y="115" text-anchor="end" font-family="system-ui" font-size="8" fill="#16A34A" font-weight="600">Primer</text>
+
+  <text x="280" y="225" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Temperature lowered</text>
+  <text x="280" y="237" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Primers bind to</text>
+  <text x="280" y="249" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">complementary sequences</text>
+
+  <!-- STEP 3: Extension -->
+  <rect x="380" y="50" width="185" height="230" rx="10" fill="#dcfce7" stroke="#16A34A" stroke-width="2" opacity="0.2"/>
+  <text x="472" y="72" text-anchor="middle" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">3. Extension</text>
+  <text x="472" y="88" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A">72 C</text>
+
+  <!-- Strand being copied -->
+  <line x1="420" y1="110" x2="420" y2="200" stroke="#1a73e8" stroke-width="4"/>
+  <line x1="428" y1="175" x2="428" y2="200" stroke="#16A34A" stroke-width="3"/>
+  <line x1="428" y1="130" x2="428" y2="175" stroke="#D97706" stroke-width="3" stroke-dasharray="4,2"/>
+  <!-- Taq polymerase -->
+  <ellipse cx="440" cy="140" rx="18" ry="10" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="440" y="143" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A" font-weight="600">Taq</text>
+
+  <line x1="510" y1="110" x2="510" y2="200" stroke="#DC2626" stroke-width="4"/>
+  <line x1="502" y1="110" x2="502" y2="125" stroke="#16A34A" stroke-width="3"/>
+  <line x1="502" y1="125" x2="502" y2="170" stroke="#D97706" stroke-width="3" stroke-dasharray="4,2"/>
+  <!-- Taq polymerase -->
+  <ellipse cx="490" cy="160" rx="18" ry="10" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="490" y="163" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A" font-weight="600">Taq</text>
+
+  <text x="472" y="225" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">Taq polymerase adds</text>
+  <text x="472" y="237" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">complementary nucleotides</text>
+  <text x="472" y="249" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">from primers (5' to 3')</text>
+
+  <!-- Cycle repeat arrow -->
+  <path d="M520,280 Q540,295 520,310 Q400,310 290,310 Q180,310 60,310 Q40,295 60,280" stroke="#1a1a2e" stroke-width="1.5" fill="none" marker-end="url(#arrowPCR)"/>
+  <text x="290" y="305" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="600">Repeat cycle 25-30 times = 2^n copies (billions from one molecule)</text>
+</svg>
+</div>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Gel Electrophoresis</text>
+
+  <!-- Power supply -->
+  <rect x="10" y="45" width="60" height="30" rx="4" fill="#f1f5f9" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="40" y="64" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Power supply</text>
+  <line x1="20" y1="75" x2="20" y2="95" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="15" y="92" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">-</text>
+  <line x1="60" y1="75" x2="60" y2="95" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="65" y="92" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">+</text>
+
+  <!-- Gel tank -->
+  <rect x="80" y="50" width="250" height="170" rx="8" fill="#dbeafe" stroke="#1a73e8" stroke-width="2" opacity="0.3"/>
+
+  <!-- Cathode (negative) -->
+  <line x1="85" y1="65" x2="85" y2="210" stroke="#DC2626" stroke-width="3"/>
+  <text x="85" y="225" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">- (cathode)</text>
+
+  <!-- Anode (positive) -->
+  <line x1="325" y1="65" x2="325" y2="210" stroke="#1a73e8" stroke-width="3"/>
+  <text x="325" y="225" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">+ (anode)</text>
+
+  <!-- Wells at top -->
+  <rect x="100" y="65" width="15" height="10" fill="#1a1a2e" rx="2"/>
+  <rect x="125" y="65" width="15" height="10" fill="#1a1a2e" rx="2"/>
+  <rect x="150" y="65" width="15" height="10" fill="#1a1a2e" rx="2"/>
+  <rect x="175" y="65" width="15" height="10" fill="#1a1a2e" rx="2"/>
+  <text x="150" y="58" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Wells (DNA loaded here)</text>
+
+  <!-- DNA bands - Sample 1 -->
+  <rect x="100" y="95" width="15" height="4" fill="#1a73e8" rx="1"/>
+  <rect x="100" y="120" width="15" height="4" fill="#1a73e8" rx="1"/>
+  <rect x="100" y="155" width="15" height="4" fill="#1a73e8" rx="1"/>
+  <rect x="100" y="185" width="15" height="4" fill="#1a73e8" rx="1"/>
+
+  <!-- DNA bands - Sample 2 -->
+  <rect x="125" y="105" width="15" height="4" fill="#1a73e8" rx="1"/>
+  <rect x="125" y="140" width="15" height="4" fill="#1a73e8" rx="1"/>
+  <rect x="125" y="175" width="15" height="4" fill="#1a73e8" rx="1"/>
+
+  <!-- DNA bands - Sample 3 -->
+  <rect x="150" y="95" width="15" height="4" fill="#1a73e8" rx="1"/>
+  <rect x="150" y="130" width="15" height="4" fill="#1a73e8" rx="1"/>
+  <rect x="150" y="155" width="15" height="4" fill="#1a73e8" rx="1"/>
+  <rect x="150" y="190" width="15" height="4" fill="#1a73e8" rx="1"/>
+
+  <!-- DNA ladder (marker) -->
+  <rect x="175" y="88" width="15" height="3" fill="#D97706" rx="1"/>
+  <rect x="175" y="108" width="15" height="3" fill="#D97706" rx="1"/>
+  <rect x="175" y="128" width="15" height="3" fill="#D97706" rx="1"/>
+  <rect x="175" y="148" width="15" height="3" fill="#D97706" rx="1"/>
+  <rect x="175" y="168" width="15" height="3" fill="#D97706" rx="1"/>
+  <rect x="175" y="188" width="15" height="3" fill="#D97706" rx="1"/>
+  <text x="200" y="92" font-family="system-ui" font-size="7" fill="#D97706">Large</text>
+  <text x="200" y="192" font-family="system-ui" font-size="7" fill="#D97706">Small</text>
+
+  <!-- Direction arrow -->
+  <path d="M210,100 L210,190" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowPCR)"/>
+  <text x="225" y="150" font-family="system-ui" font-size="8" fill="#1a1a2e">Direction of</text>
+  <text x="225" y="160" font-family="system-ui" font-size="8" fill="#1a1a2e">migration</text>
+
+  <!-- Explanation panel -->
+  <rect x="345" y="55" width="165" height="155" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="427" y="75" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" font-weight="600">How it works:</text>
+  <text x="355" y="95" font-family="system-ui" font-size="8" fill="#1a1a2e">DNA is negatively charged</text>
+  <text x="355" y="108" font-family="system-ui" font-size="8" fill="#1a1a2e">(phosphate groups)</text>
+  <text x="355" y="128" font-family="system-ui" font-size="8" fill="#1a73e8">Migrates towards + anode</text>
+  <text x="355" y="148" font-family="system-ui" font-size="8" fill="#DC2626" font-weight="600">Smaller fragments move</text>
+  <text x="355" y="161" font-family="system-ui" font-size="8" fill="#DC2626" font-weight="600">faster and further</text>
+  <text x="355" y="181" font-family="system-ui" font-size="8" fill="#1a1a2e">Visualised with UV +</text>
+  <text x="355" y="194" font-family="system-ui" font-size="8" fill="#1a1a2e">ethidium bromide stain</text>
+
+  <text x="260" y="250" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">DNA ladder (marker) used to estimate fragment sizes</text>
+</svg>
+</div>
+
 <h3>Genetic Engineering (Recombinant DNA Technology)</h3>
 <p>Genetic engineering involves transferring a gene from one organism to another (often a different species) to produce a desired protein or trait. The key steps are:</p>
 <ol>
@@ -66,6 +222,97 @@
 </ol>
 
 <p>Applications include production of human insulin by genetically modified bacteria, golden rice (containing beta-carotene), Bt crops (containing insecticidal protein from Bacillus thuringiensis), and production of factor VIII for haemophilia treatment.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 580 330" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="290" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Gene Cloning with Restriction Enzymes and Plasmid Vector</text>
+  <defs>
+    <marker id="arrowGC" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker>
+  </defs>
+
+  <!-- Step 1: Gene of interest cut from DNA -->
+  <text x="90" y="52" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">1. Cut gene from DNA</text>
+  <!-- DNA strand -->
+  <line x1="30" y1="75" x2="150" y2="75" stroke="#1a73e8" stroke-width="3"/>
+  <line x1="30" y1="85" x2="150" y2="85" stroke="#1a73e8" stroke-width="3"/>
+  <!-- Gene highlighted -->
+  <rect x="65" y="70" width="50" height="20" rx="3" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="90" y="84" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626" font-weight="600">Gene</text>
+  <!-- Scissors (restriction enzyme) -->
+  <text x="60" y="66" font-family="system-ui" font-size="10" fill="#D97706">&#9986;</text>
+  <text x="110" y="66" font-family="system-ui" font-size="10" fill="#D97706">&#9986;</text>
+  <text x="90" y="110" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Same restriction enzyme</text>
+  <text x="90" y="120" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">creates sticky ends</text>
+
+  <!-- Arrow down -->
+  <path d="M90,125 L90,145" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowGC)"/>
+
+  <!-- Cut gene with sticky ends -->
+  <line x1="55" y1="155" x2="65" y2="155" stroke="#DC2626" stroke-width="2"/>
+  <rect x="65" y="150" width="50" height="14" rx="3" fill="#fecaca" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="90" y="160" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626" font-weight="600">Gene</text>
+  <line x1="115" y1="159" x2="125" y2="159" stroke="#DC2626" stroke-width="2"/>
+  <text x="55" y="148" font-family="system-ui" font-size="7" fill="#DC2626">Sticky</text>
+  <text x="120" y="148" font-family="system-ui" font-size="7" fill="#DC2626">Sticky</text>
+
+  <!-- Step 2: Cut plasmid with same enzyme -->
+  <text x="290" y="52" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">2. Cut plasmid</text>
+  <!-- Plasmid circle -->
+  <circle cx="290" cy="90" r="30" fill="#dcfce7" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="290" y="88" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">Plasmid</text>
+  <text x="290" y="98" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">(vector)</text>
+  <!-- Cut mark -->
+  <text x="310" y="68" font-family="system-ui" font-size="10" fill="#D97706">&#9986;</text>
+  <text x="290" y="130" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Same restriction enzyme</text>
+
+  <!-- Arrow down -->
+  <path d="M290,135 L290,148" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowGC)"/>
+
+  <!-- Open plasmid with sticky ends -->
+  <path d="M255,165 Q260,155 275,155 L305,155 Q320,155 325,165 Q330,180 320,190 Q310,198 290,200 Q270,198 260,190 Q250,180 255,165Z" fill="#dcfce7" stroke="#16A34A" stroke-width="2" stroke-dasharray="0"/>
+  <!-- Gap at top showing sticky ends -->
+  <line x1="268" y1="157" x2="258" y2="157" stroke="#16A34A" stroke-width="2"/>
+  <line x1="312" y1="160" x2="322" y2="160" stroke="#16A34A" stroke-width="2"/>
+
+  <!-- Step 3: Ligation -->
+  <text x="480" y="52" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">3. Ligation</text>
+  <!-- Arrow showing gene + plasmid combining -->
+  <path d="M130,157 Q180,170 250,170" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowGC)"/>
+
+  <!-- Recombinant plasmid -->
+  <circle cx="480" cy="120" r="40" fill="#dcfce7" stroke="#16A34A" stroke-width="2.5"/>
+  <!-- Gene inserted -->
+  <path d="M455,95 A40,40 0 0,1 505,95" fill="none" stroke="#DC2626" stroke-width="4"/>
+  <text x="480" y="92" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626" font-weight="600">Gene</text>
+  <text x="480" y="118" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">Recombinant</text>
+  <text x="480" y="128" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">plasmid</text>
+  <text x="480" y="170" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">DNA ligase seals joins</text>
+
+  <!-- Step 4: Transformation -->
+  <path d="M480,170 L480,195" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowGC)"/>
+  <text x="480" y="210" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">4. Transformation</text>
+
+  <!-- Bacterium -->
+  <ellipse cx="480" cy="250" rx="45" ry="25" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <!-- Plasmid inside -->
+  <circle cx="480" cy="250" r="10" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <path d="M475,243 A10,10 0 0,1 485,243" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <text x="480" y="285" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Host bacterium</text>
+  <text x="480" y="297" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">(e.g. E. coli)</text>
+
+  <!-- Step 5: Selection & growth -->
+  <text x="290" y="230" text-anchor="middle" font-family="system-ui" font-size="10" fill="#9333ea" font-weight="600">5. Selection + Growth</text>
+  <text x="290" y="248" text-anchor="middle" font-family="system-ui" font-size="8" fill="#9333ea">Marker genes (e.g. antibiotic</text>
+  <text x="290" y="260" text-anchor="middle" font-family="system-ui" font-size="8" fill="#9333ea">resistance) identify successful</text>
+  <text x="290" y="272" text-anchor="middle" font-family="system-ui" font-size="8" fill="#9333ea">transformants</text>
+
+  <!-- Multiple bacteria (clones) -->
+  <ellipse cx="290" cy="305" rx="20" ry="11" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
+  <ellipse cx="320" cy="300" rx="20" ry="11" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
+  <ellipse cx="260" cy="300" rx="20" ry="11" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="290" y="325" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Large-scale culture produces desired protein</text>
+</svg>
+</div>
 
 <h3>Gene Therapy</h3>
 <p>Gene therapy involves inserting a functional copy of a gene into the cells of a patient who has a defective or missing gene, to treat or cure a genetic disorder. It can be:</p>
@@ -128,6 +375,90 @@
 
 <p><strong>The Carbon Cycle:</strong> Carbon enters living systems through photosynthesis (CO2 fixed into organic molecules). It passes through food chains and is returned to the atmosphere by respiration, decomposition, and combustion of fossil fuels. Carbon is stored in biomass, fossil fuels, oceans (dissolved CO2 and carbonates), and sedimentary rocks.</p>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">The Carbon Cycle</text>
+  <defs>
+    <marker id="arrowCarb" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#16A34A"/></marker>
+    <marker id="arrowCarbR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#DC2626"/></marker>
+    <marker id="arrowCarbD" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker>
+    <marker id="arrowCarbB" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#D97706"/></marker>
+  </defs>
+
+  <!-- CO2 in atmosphere -->
+  <rect x="180" y="40" width="160" height="35" rx="8" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="260" y="63" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">CO2 in Atmosphere</text>
+
+  <!-- Producers (plants) -->
+  <rect x="40" y="140" width="110" height="45" rx="8" fill="#dcfce7" stroke="#16A34A" stroke-width="2"/>
+  <text x="95" y="160" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">Producers</text>
+  <text x="95" y="175" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">(Plants)</text>
+
+  <!-- Consumers (animals) -->
+  <rect x="210" y="140" width="110" height="45" rx="8" fill="#fef3c7" stroke="#D97706" stroke-width="2"/>
+  <text x="265" y="160" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">Consumers</text>
+  <text x="265" y="175" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">(Animals)</text>
+
+  <!-- Decomposers -->
+  <rect x="125" y="240" width="130" height="40" rx="8" fill="#fecaca" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="190" y="258" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">Decomposers</text>
+  <text x="190" y="272" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">(Bacteria, fungi)</text>
+
+  <!-- Fossil fuels -->
+  <rect x="340" y="240" width="120" height="40" rx="8" fill="#1a1a2e" opacity="0.1" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="400" y="258" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="600">Fossil Fuels</text>
+  <text x="400" y="272" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">(Coal, oil, gas)</text>
+
+  <!-- PHOTOSYNTHESIS: CO2 -> Producers -->
+  <path d="M210,75 Q120,90 95,135" stroke="#16A34A" stroke-width="2.5" fill="none" marker-end="url(#arrowCarb)"/>
+  <text x="115" y="100" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Photosynthesis</text>
+
+  <!-- FEEDING: Producers -> Consumers -->
+  <path d="M150,162 L205,162" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowCarbD)"/>
+  <text x="178" y="155" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Feeding</text>
+
+  <!-- RESPIRATION: Producers -> CO2 -->
+  <path d="M60,140 Q40,100 180,57" stroke="#DC2626" stroke-width="1.5" fill="none" marker-end="url(#arrowCarbR)"/>
+  <text x="50" y="118" font-family="system-ui" font-size="8" fill="#DC2626">Respiration</text>
+
+  <!-- RESPIRATION: Consumers -> CO2 -->
+  <path d="M300,140 Q340,100 340,57" stroke="#DC2626" stroke-width="1.5" fill="none" marker-end="url(#arrowCarbR)"/>
+  <text x="345" y="110" font-family="system-ui" font-size="8" fill="#DC2626">Respiration</text>
+
+  <!-- DEATH/WASTE: to Decomposers -->
+  <path d="M95,185 Q95,220 140,240" stroke="#1a1a2e" stroke-width="1.5" fill="none" marker-end="url(#arrowCarbD)"/>
+  <path d="M265,185 Q265,220 230,240" stroke="#1a1a2e" stroke-width="1.5" fill="none" marker-end="url(#arrowCarbD)"/>
+  <text x="95" y="220" font-family="system-ui" font-size="7" fill="#1a1a2e">Death/waste</text>
+
+  <!-- DECOMPOSITION RESPIRATION: Decomposers -> CO2 -->
+  <path d="M150,240 Q100,200 100,100 Q100,80 180,60" stroke="#DC2626" stroke-width="1.5" fill="none" stroke-dasharray="4,2" marker-end="url(#arrowCarbR)"/>
+
+  <!-- FOSSILISATION: to Fossil fuels -->
+  <path d="M255,260 L335,260" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowCarbD)"/>
+  <text x="295" y="253" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">Fossilisation</text>
+  <text x="295" y="263" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">(millions of years)</text>
+
+  <!-- COMBUSTION: Fossil fuels -> CO2 -->
+  <path d="M430,240 Q470,180 470,100 Q470,70 340,57" stroke="#D97706" stroke-width="2.5" fill="none" marker-end="url(#arrowCarbB)"/>
+  <text x="475" y="160" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">Combustion</text>
+
+  <!-- Oceans -->
+  <rect x="380" y="140" width="100" height="40" rx="8" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="430" y="157" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">Oceans</text>
+  <text x="430" y="170" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">(dissolved CO2)</text>
+  <path d="M340,60 Q420,80 430,135" stroke="#1a73e8" stroke-width="1" fill="none" stroke-dasharray="3,2"/>
+  <path d="M420,135 Q400,80 335,65" stroke="#1a73e8" stroke-width="1" fill="none" stroke-dasharray="3,2"/>
+
+  <!-- Legend -->
+  <line x1="60" y1="310" x2="80" y2="310" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="85" y="314" font-family="system-ui" font-size="8" fill="#16A34A">Photosynthesis (CO2 removed)</text>
+  <line x1="260" y1="310" x2="280" y2="310" stroke="#DC2626" stroke-width="2"/>
+  <text x="285" y="314" font-family="system-ui" font-size="8" fill="#DC2626">Respiration (CO2 released)</text>
+  <line x1="410" y1="310" x2="430" y2="310" stroke="#D97706" stroke-width="2.5"/>
+  <text x="435" y="314" font-family="system-ui" font-size="8" fill="#D97706">Combustion</text>
+</svg>
+</div>
+
 <p><strong>The Nitrogen Cycle:</strong> Nitrogen is essential for amino acids and nucleic acids but atmospheric N2 is unreactive. Key processes include:</p>
 <ul>
   <li><strong>Nitrogen fixation:</strong> Conversion of N2 to NH4+ by Rhizobium bacteria (in root nodules of legumes) or free-living Azotobacter, or industrially by the Haber process</li>
@@ -137,11 +468,169 @@
   <li><strong>Denitrification:</strong> Anaerobic bacteria (e.g., Pseudomonas) convert NO3- back to N2 gas, returning it to the atmosphere. Occurs in waterlogged, anaerobic soils</li>
 </ul>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">The Nitrogen Cycle</text>
+  <defs>
+    <marker id="arrowNit" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a73e8"/></marker>
+    <marker id="arrowNitG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#16A34A"/></marker>
+    <marker id="arrowNitR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#DC2626"/></marker>
+    <marker id="arrowNitA" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#D97706"/></marker>
+  </defs>
+
+  <!-- N2 in atmosphere -->
+  <rect x="190" y="40" width="140" height="35" rx="8" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="260" y="63" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">N2 in Atmosphere</text>
+
+  <!-- NH4+ (Ammonium) -->
+  <rect x="30" y="170" width="100" height="35" rx="8" fill="#fef3c7" stroke="#D97706" stroke-width="2"/>
+  <text x="80" y="192" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">NH4+</text>
+  <text x="80" y="202" text-anchor="middle" font-family="system-ui" font-size="7" fill="#D97706">(Ammonium)</text>
+
+  <!-- NO2- (Nitrite) -->
+  <rect x="190" y="230" width="100" height="35" rx="8" fill="#fecaca" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="240" y="252" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">NO2-</text>
+  <text x="240" y="262" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">(Nitrite)</text>
+
+  <!-- NO3- (Nitrate) -->
+  <rect x="370" y="170" width="100" height="35" rx="8" fill="#dcfce7" stroke="#16A34A" stroke-width="2"/>
+  <text x="420" y="192" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">NO3-</text>
+  <text x="420" y="202" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">(Nitrate)</text>
+
+  <!-- Plants -->
+  <rect x="370" y="90" width="100" height="35" rx="8" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="420" y="112" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">Plants</text>
+
+  <!-- Animals / Dead organic matter -->
+  <rect x="180" y="120" width="130" height="35" rx="8" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="245" y="137" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">Animals / Dead matter</text>
+  <text x="245" y="150" text-anchor="middle" font-family="system-ui" font-size="7" fill="#D97706">(organic N)</text>
+
+  <!-- NITROGEN FIXATION: N2 -> NH4+ -->
+  <path d="M190,60 Q100,80 80,165" stroke="#1a73e8" stroke-width="2" fill="none" marker-end="url(#arrowNit)"/>
+  <text x="95" y="100" font-family="system-ui" font-size="8" fill="#1a73e8" font-weight="600">Nitrogen fixation</text>
+  <text x="95" y="112" font-family="system-ui" font-size="7" fill="#1a73e8">Rhizobium (root nodules)</text>
+  <text x="95" y="122" font-family="system-ui" font-size="7" fill="#1a73e8">Azotobacter (free-living)</text>
+
+  <!-- NITRIFICATION: NH4+ -> NO2- -->
+  <path d="M110,205 Q150,235 185,245" stroke="#DC2626" stroke-width="2" fill="none" marker-end="url(#arrowNitR)"/>
+  <text x="120" y="240" font-family="system-ui" font-size="8" fill="#DC2626" font-weight="600">Nitrosomonas</text>
+
+  <!-- NITRIFICATION: NO2- -> NO3- -->
+  <path d="M290,248 Q340,230 370,200" stroke="#DC2626" stroke-width="2" fill="none" marker-end="url(#arrowNitR)"/>
+  <text x="350" y="240" font-family="system-ui" font-size="8" fill="#DC2626" font-weight="600">Nitrobacter</text>
+
+  <!-- Nitrification label -->
+  <text x="240" y="290" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">NITRIFICATION (aerobic)</text>
+
+  <!-- ASSIMILATION: NO3- -> Plants -->
+  <path d="M420,170 L420,130" stroke="#16A34A" stroke-width="2" marker-end="url(#arrowNitG)"/>
+  <text x="455" y="155" font-family="system-ui" font-size="8" fill="#16A34A" font-weight="600">Assimilation</text>
+
+  <!-- Feeding: Plants -> Animals -->
+  <path d="M370,107 L315,120" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowNit)"/>
+  <text x="340" y="105" font-family="system-ui" font-size="7" fill="#1a1a2e">Feeding</text>
+
+  <!-- AMMONIFICATION: Dead matter -> NH4+ -->
+  <path d="M180,145 Q120,160 100,170" stroke="#D97706" stroke-width="2" fill="none" marker-end="url(#arrowNitA)"/>
+  <text x="110" y="157" font-family="system-ui" font-size="8" fill="#D97706" font-weight="600">Ammonification</text>
+  <text x="110" y="145" font-family="system-ui" font-size="7" fill="#D97706">(decomposers)</text>
+
+  <!-- DENITRIFICATION: NO3- -> N2 -->
+  <path d="M430,170 Q460,120 400,80 Q360,60 330,57" stroke="#9333ea" stroke-width="2" fill="none" stroke-dasharray="4,2" marker-end="url(#arrowNit)"/>
+  <text x="470" y="120" font-family="system-ui" font-size="8" fill="#9333ea" font-weight="600">Denitrification</text>
+  <text x="470" y="132" font-family="system-ui" font-size="7" fill="#9333ea">Pseudomonas</text>
+  <text x="470" y="142" font-family="system-ui" font-size="7" fill="#9333ea">(anaerobic soils)</text>
+
+  <!-- Legend -->
+  <text x="100" y="320" font-family="system-ui" font-size="8" fill="#1a73e8">Fixation: N2 to NH4+</text>
+  <text x="230" y="320" font-family="system-ui" font-size="8" fill="#DC2626">Nitrification: NH4+ to NO3-</text>
+  <text x="400" y="320" font-family="system-ui" font-size="8" fill="#9333ea">Denitrification: NO3- to N2</text>
+</svg>
+</div>
+
 <h3>Succession</h3>
 
 <div class="definition">
   <strong>Succession:</strong> The directional change in community composition over time, from colonisation of bare ground (primary succession) or after disturbance (secondary succession) towards a stable climax community.<br>
   <strong>Climax community:</strong> The final, stable community in a succession that is in dynamic equilibrium with the prevailing environmental conditions.
+</div>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 580 280" xmlns="http://www.w3.org/2000/svg" style="max-width: 600px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+  <text x="290" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="600">Ecological Succession: Pioneer to Climax Community</text>
+  <defs><marker id="arrowSuc" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker></defs>
+
+  <!-- Ground line -->
+  <line x1="20" y1="210" x2="560" y2="210" stroke="#D97706" stroke-width="2"/>
+
+  <!-- Stage 1: Bare rock / Pioneer -->
+  <rect x="20" y="170" width="90" height="40" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" rx="3"/>
+  <text x="65" y="188" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Bare rock</text>
+  <text x="65" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">/ ground</text>
+  <!-- Lichens -->
+  <circle cx="40" cy="168" r="5" fill="#D97706" opacity="0.5"/>
+  <circle cx="60" cy="165" r="4" fill="#D97706" opacity="0.5"/>
+  <circle cx="80" cy="168" r="5" fill="#D97706" opacity="0.5"/>
+  <text x="65" y="148" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">Pioneer species</text>
+  <text x="65" y="158" text-anchor="middle" font-family="system-ui" font-size="7" fill="#D97706">(lichens, mosses)</text>
+
+  <!-- Arrow -->
+  <path d="M115,185 L135,185" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowSuc)"/>
+
+  <!-- Stage 2: Grasses / herbaceous -->
+  <rect x="140" y="155" width="90" height="55" fill="#fef3c7" stroke="#D97706" stroke-width="1" rx="3"/>
+  <!-- Grass tufts -->
+  <line x1="160" y1="155" x2="158" y2="138" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="160" y1="155" x2="163" y2="136" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="175" y1="155" x2="172" y2="135" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="175" y1="155" x2="178" y2="133" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="200" y1="155" x2="197" y2="137" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="200" y1="155" x2="203" y2="135" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="185" y="180" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Grasses &</text>
+  <text x="185" y="192" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">herbs</text>
+  <text x="185" y="125" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">Soil develops</text>
+
+  <!-- Arrow -->
+  <path d="M235,175 L255,175" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowSuc)"/>
+
+  <!-- Stage 3: Shrubs -->
+  <rect x="260" y="130" width="90" height="80" fill="#dcfce7" stroke="#16A34A" stroke-width="1" rx="3"/>
+  <!-- Small shrubs -->
+  <ellipse cx="285" cy="125" rx="15" ry="12" fill="#4ade80" opacity="0.6"/>
+  <line x1="285" y1="137" x2="285" y2="145" stroke="#D97706" stroke-width="2"/>
+  <ellipse cx="320" cy="120" rx="18" ry="14" fill="#4ade80" opacity="0.6"/>
+  <line x1="320" y1="134" x2="320" y2="145" stroke="#D97706" stroke-width="2"/>
+  <text x="305" y="170" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">Shrubs &</text>
+  <text x="305" y="182" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">small trees</text>
+  <text x="305" y="105" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">Deeper soil, more nutrients</text>
+
+  <!-- Arrow -->
+  <path d="M355,165 L375,165" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowSuc)"/>
+
+  <!-- Stage 4: Climax community (woodland/forest) -->
+  <rect x="380" y="95" width="175" height="115" fill="#dcfce7" stroke="#16A34A" stroke-width="2" rx="3"/>
+  <!-- Large trees -->
+  <ellipse cx="420" cy="75" rx="25" ry="22" fill="#16A34A" opacity="0.5"/>
+  <line x1="420" y1="97" x2="420" y2="130" stroke="#D97706" stroke-width="3"/>
+  <ellipse cx="470" cy="65" rx="30" ry="25" fill="#16A34A" opacity="0.5"/>
+  <line x1="470" y1="90" x2="470" y2="125" stroke="#D97706" stroke-width="3"/>
+  <ellipse cx="520" cy="72" rx="25" ry="20" fill="#16A34A" opacity="0.5"/>
+  <line x1="520" y1="92" x2="520" y2="128" stroke="#D97706" stroke-width="3"/>
+  <!-- Understory -->
+  <ellipse cx="440" cy="140" rx="12" ry="8" fill="#4ade80" opacity="0.4"/>
+  <ellipse cx="500" cy="142" rx="10" ry="7" fill="#4ade80" opacity="0.4"/>
+  <text x="467" y="170" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">Climax</text>
+  <text x="467" y="183" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">Community</text>
+  <text x="467" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">(e.g. oak woodland)</text>
+
+  <!-- Time arrow -->
+  <path d="M20,235 L560,235" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrowSuc)"/>
+  <text x="290" y="250" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="600">Time</text>
+
+  <!-- Increasing trends -->
+  <text x="290" y="270" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Species diversity, soil depth, biomass, food web complexity all INCREASE</text>
+</svg>
 </div>
 
 <p>During succession, species diversity generally increases, soil depth and nutrient content increase, food webs become more complex, and biomass accumulates. Pioneer species (first colonisers) are adapted to harsh conditions and modify the environment, making it suitable for later species that outcompete them.</p>
