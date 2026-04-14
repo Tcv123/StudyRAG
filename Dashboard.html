@@ -758,6 +758,7 @@ const ALL_MEDALS = [
   { id: 'first_economics',   icon: '💰', name: 'Market Entry',      desc: 'Complete your first Economics diagnostic' },
   { id: 'first_chemistry',   icon: '🧪', name: 'First Reaction',    desc: 'Complete your first Chemistry diagnostic' },
   { id: 'first_biology',     icon: '🧬', name: 'Life Begins',       desc: 'Complete your first Biology diagnostic' },
+  { id: 'first_geography',   icon: '🌍', name: 'Explorer',          desc: 'Complete your first Geography diagnostic' },
 
   // ── Amber Milestones ──
   { id: 'amber_5',           icon: '🟠', name: 'Amber Alert',       desc: 'Get 5 topics to amber' },
@@ -1008,8 +1009,11 @@ const SUBJECT_TOPIC_KEY = {
   'Biology_Edexcel B': 'biology-edexcel-b',
   'Biology_OCR A': 'biology-ocr-a',
   'Biology_OCR B': 'biology-ocr-b',
+  'Geography_AQA': 'geography-aqa',
+  'Geography_Edexcel': 'geography-edexcel',
+  'Geography_OCR': 'geography-ocr',
 };
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8 };
 const SUBJECT_NOTES_PAGE = {
   'Computer Science_OCR': 'subject-notes/cs-notes.html',
   'Computer Science_AQA': 'subject-notes/cs-aqa-notes.html',
@@ -1030,6 +1034,9 @@ const SUBJECT_NOTES_PAGE = {
   'Biology_Edexcel B': 'subject-notes/biology-edexcel-b-notes.html',
   'Biology_OCR A': 'subject-notes/biology-ocr-a-notes.html',
   'Biology_OCR B': 'subject-notes/biology-ocr-b-notes.html',
+  'Geography_AQA': 'subject-notes/geography-aqa-notes.html',
+  'Geography_Edexcel': 'subject-notes/geography-edexcel-notes.html',
+  'Geography_OCR': 'subject-notes/geography-ocr-notes.html',
 };
 
 // ── Medal checking ───────────────────────────────────────────────────────
@@ -1150,6 +1157,7 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   if (subjectNames.has('Economics'))        award('first_economics');
   if (subjectNames.has('Chemistry'))        award('first_chemistry');
   if (subjectNames.has('Biology'))          award('first_biology');
+  if (subjectNames.has('Geography'))        award('first_geography');
 
   // ── Amber Milestones ──
   if (amberTopics >= 5)  award('amber_5');
