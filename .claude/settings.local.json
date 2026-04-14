@@ -54,7 +54,12 @@
       "Bash(node -e \"const f=require\\('fs'\\); const c=f.readFileSync\\('questions/chemistry/chemistry-ocr-a-practice.js','utf8'\\); const m=c.match\\(/{ q:/g\\); console.log\\('OCR A practice:', m?m.length:0\\);\")",
       "Bash(node -e \"const f=require\\('fs'\\); const c=f.readFileSync\\('questions/chemistry/chemistry-ocr-b-practice.js','utf8'\\); const m=c.match\\(/{ q:/g\\); console.log\\('OCR B practice:', m?m.length:0\\);\")",
       "Bash(ls subject-notes/)",
-      "Bash(ls questions/)"
+      "Bash(ls questions/)",
+      "Bash(ls notes-geography-aqa/)",
+      "Bash(ls notes-geography-edexcel/)",
+      "Bash(ls notes-geography-ocr/)",
+      "Bash(ls questions/geography-aqa/geography-aqa-practice.js)",
+      "Bash(ls questions/geography-edexcel/geography-edexcel-practice.js)"
     ]
   },
   "hooks": {
