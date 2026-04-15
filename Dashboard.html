@@ -879,6 +879,15 @@ const EXAM_DATES = {
   ],
 };
 
+function toggleExamDates() {
+  const ex = document.getElementById('examExtra');
+  const tog = document.getElementById('examToggle');
+  if (!ex || !tog) return;
+  const vis = ex.style.display === 'none';
+  ex.style.display = vis ? 'block' : 'none';
+  tog.textContent = vis ? 'Show less ▴' : tog.getAttribute('data-more');
+}
+
 function renderExamDates(subjects) {
   const grid = document.getElementById('examDatesGrid');
   const row = document.getElementById('examDatesRow');
@@ -935,13 +944,20 @@ function renderExamDates(subjects) {
     </div>`;
   }
 
-  grid.innerHTML = `<div style="border:1px solid var(--border);border-radius:10px;background:var(--surface);overflow:hidden;">
-    <div style="padding:4px 12px;">${show.map(renderSubjRow).join('<div style="border-top:1px solid var(--border);"></div>')}</div>
-    ${rest.length > 0 ? `<div id="examExtra" style="display:none;padding:0 12px 4px;border-top:1px solid var(--border);">${rest.map(renderSubjRow).join('<div style="border-top:1px solid var(--border);"></div>')}</div>
-    <div style="border-top:1px solid var(--border);text-align:center;padding:4px;">
-      <span id="examToggle" onclick="const ex=document.getElementById('examExtra');const vis=ex.style.display==='none';ex.style.display=vis?'block':'none';this.textContent=vis?'Show less ▴':'+ ${rest.length} more subjects ▾';" style="font-size:11px;color:var(--accent-dark);font-weight:600;cursor:pointer;">+ ${rest.length} more subjects ▾</span>
-    </div>` : ''}
-  </div>`;
+  const restCount = rest.length;
+  const showHtml = show.map(renderSubjRow).join('<div style="border-top:1px solid var(--border);"></div>');
+  const restHtml = rest.map(renderSubjRow).join('<div style="border-top:1px solid var(--border);"></div>');
+
+  let html = '<div style="border:1px solid var(--border);border-radius:10px;background:var(--surface);overflow:hidden;">';
+  html += '<div style="padding:4px 12px;">' + showHtml + '</div>';
+  if (restCount > 0) {
+    html += '<div id="examExtra" style="display:none;padding:0 12px 4px;border-top:1px solid var(--border);">' + restHtml + '</div>';
+    html += '<div style="border-top:1px solid var(--border);text-align:center;padding:4px;">';
+    html += '<span id="examToggle" data-more="+ ' + restCount + ' more subjects ▾" onclick="toggleExamDates()" style="font-size:11px;color:var(--accent-dark);font-weight:600;cursor:pointer;">+ ' + restCount + ' more subjects ▾</span>';
+    html += '</div>';
+  }
+  html += '</div>';
+  grid.innerHTML = html;
 }
 // ── Medal definitions ────────────────────────────────────────────────────
 const ALL_MEDALS = [
