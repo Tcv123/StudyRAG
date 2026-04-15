@@ -5,120 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topic 10 — Space | Edexcel A-Level Physics</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: #1a1a2e;
-            background: #ffffff;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 2rem;
-            color: #1a1a2e;
-            border-bottom: 3px solid #3b82f6;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #1e3a5f;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            border-left: 4px solid #3b82f6;
-            padding-left: 12px;
-        }
-        h3 {
-            font-size: 1.2rem;
-            color: #2d4a7a;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 12px;
-        }
-        .definition {
-            background: #eff6ff;
-            border-left: 4px solid #3b82f6;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip {
-            background: #fffbeb;
-            border-left: 4px solid #f59e0b;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip::before {
-            content: "Exam Tip: ";
-            font-weight: 700;
-            color: #b45309;
-        }
-        .equation {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 12px 20px;
-            margin: 12px 0;
-            border-radius: 6px;
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 0.95rem;
-        }
-        th, td {
-            border: 1px solid #e2e8f0;
-            padding: 10px 14px;
-            text-align: left;
-        }
-        th {
-            background: #f1f5f9;
-            font-weight: 600;
-            color: #1e3a5f;
-        }
-        tr:nth-child(even) {
-            background: #f8fafc;
-        }
-        ul, ol {
-            margin: 10px 0 15px 25px;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        strong {
-            color: #1e3a5f;
-        }
-        .flow-diagram {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            margin: 15px 0;
-            font-size: 0.95rem;
-        }
-        .flow-diagram .arrow {
-            color: #3b82f6;
-            font-weight: bold;
-        }
-        @media print {
-            body { padding: 20px; }
-            .exam-tip, .definition { break-inside: avoid; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #3b82f6; padding-bottom: 10px; margin-bottom: 30px; }
+        h2 { font-size: 1.5rem; color: #1e3a5f; margin-top: 35px; margin-bottom: 15px; border-left: 4px solid #3b82f6; padding-left: 12px; }
+        h3 { font-size: 1.2rem; color: #2d4a7a; margin-top: 20px; margin-bottom: 10px; }
+        p { margin-bottom: 12px; }
+        .definition { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #16a34a; }
+        .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .real-world::before { content: "Real-World Application: "; font-weight: 700; color: #7c3aed; }
+        .equation { background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 20px; margin: 12px 0; border-radius: 6px; font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 1.1rem; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+        th, td { border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left; }
+        th { background: #f1f5f9; font-weight: 600; color: #1e3a5f; }
+        tr:nth-child(even) { background: #f8fafc; }
+        ul, ol { margin: 10px 0 15px 25px; }
+        li { margin-bottom: 6px; }
+        strong { color: #1e3a5f; }
+        .flow-diagram { background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; text-align: center; margin: 15px 0; font-size: 0.95rem; }
+        .flow-diagram .arrow { color: #3b82f6; font-weight: bold; }
+        @media print { body { padding: 20px; } .exam-tip, .definition, .worked-example, .real-world { break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -129,175 +40,132 @@
 <h2>10.1 Stellar Evolution</h2>
 
 <h3>Life Cycle of Stars</h3>
-<p>All stars begin in the same way but their ultimate fate depends on their <strong>mass</strong>.</p>
+<p>All stars begin in the same way but their ultimate fate depends on their <strong>mass</strong>. More massive stars live shorter, more dramatic lives.</p>
 
 <div class="flow-diagram">
-    <strong>Low-mass star (M &lt; 8M☉):</strong><br>
-    Nebula <span class="arrow">→</span> Protostar <span class="arrow">→</span> Main Sequence <span class="arrow">→</span> Red Giant <span class="arrow">→</span> Planetary Nebula <span class="arrow">→</span> White Dwarf
+    <strong>Low-mass star (M &lt; 8M&#9737;):</strong><br>
+    Nebula <span class="arrow">&#8594;</span> Protostar <span class="arrow">&#8594;</span> Main Sequence <span class="arrow">&#8594;</span> Red Giant <span class="arrow">&#8594;</span> Planetary Nebula <span class="arrow">&#8594;</span> White Dwarf
 </div>
 
 <div class="flow-diagram">
-    <strong>High-mass star (M &gt; 8M☉):</strong><br>
-    Nebula <span class="arrow">→</span> Protostar <span class="arrow">→</span> Main Sequence <span class="arrow">→</span> Red Supergiant <span class="arrow">→</span> Supernova <span class="arrow">→</span> Neutron Star or Black Hole
+    <strong>High-mass star (M &gt; 8M&#9737;):</strong><br>
+    Nebula <span class="arrow">&#8594;</span> Protostar <span class="arrow">&#8594;</span> Main Sequence <span class="arrow">&#8594;</span> Red Supergiant <span class="arrow">&#8594;</span> Supernova <span class="arrow">&#8594;</span> Neutron Star or Black Hole
 </div>
 
 <!-- SVG: Stellar Lifecycle Diagram -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 520 250" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <marker id="sl1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#64748b"/></marker>
-        </defs>
+        <defs><marker id="sl1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#64748b"/></marker></defs>
         <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Stellar Lifecycle</text>
-
-        <!-- Nebula -->
         <circle cx="50" cy="120" r="25" fill="#94a3b8" opacity="0.3" stroke="#64748b" stroke-width="1.5"/>
         <text x="50" y="118" font-family="system-ui" font-size="8" fill="#1a1a2e" text-anchor="middle">Nebula</text>
         <text x="50" y="128" font-family="system-ui" font-size="7" fill="#64748b" text-anchor="middle">(gas+dust)</text>
-
-        <!-- Arrow to protostar -->
         <line x1="75" y1="120" x2="100" y2="120" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
-
-        <!-- Protostar -->
         <circle cx="120" cy="120" r="18" fill="#D97706" opacity="0.4" stroke="#D97706" stroke-width="1.5"/>
         <text x="120" y="123" font-family="system-ui" font-size="7" fill="#1a1a2e" text-anchor="middle">Protostar</text>
-
-        <!-- Arrow to main sequence -->
         <line x1="138" y1="120" x2="165" y2="120" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
-
-        <!-- Main sequence -->
         <circle cx="190" cy="120" r="22" fill="#D97706" opacity="0.6" stroke="#D97706" stroke-width="2"/>
         <text x="190" y="118" font-family="system-ui" font-size="7" fill="#1a1a2e" text-anchor="middle">Main</text>
         <text x="190" y="128" font-family="system-ui" font-size="7" fill="#1a1a2e" text-anchor="middle">Sequence</text>
-
-        <!-- LOW MASS PATH (top) -->
+        <!-- LOW MASS PATH -->
         <line x1="212" y1="110" x2="250" y2="75" stroke="#DC2626" stroke-width="1.5" marker-end="url(#sl1)"/>
         <text x="215" y="80" font-family="system-ui" font-size="8" fill="#DC2626">Low mass</text>
-
-        <!-- Red giant -->
         <circle cx="280" cy="65" r="24" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1.5"/>
         <text x="280" y="63" font-family="system-ui" font-size="7" fill="#DC2626" text-anchor="middle">Red</text>
         <text x="280" y="73" font-family="system-ui" font-size="7" fill="#DC2626" text-anchor="middle">Giant</text>
-
-        <!-- Arrow to planetary nebula -->
         <line x1="304" y1="65" x2="340" y2="65" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
-
-        <!-- Planetary nebula -->
         <circle cx="370" cy="65" r="20" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="1.5"/>
         <text x="370" y="62" font-family="system-ui" font-size="7" fill="#1a73e8" text-anchor="middle">Planetary</text>
         <text x="370" y="72" font-family="system-ui" font-size="7" fill="#1a73e8" text-anchor="middle">Nebula</text>
-
-        <!-- Arrow to white dwarf -->
         <line x1="390" y1="65" x2="425" y2="65" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
-
-        <!-- White dwarf -->
         <circle cx="450" cy="65" r="12" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
         <text x="450" y="62" font-family="system-ui" font-size="6" fill="#1a1a2e" text-anchor="middle">White</text>
         <text x="450" y="70" font-family="system-ui" font-size="6" fill="#1a1a2e" text-anchor="middle">Dwarf</text>
-
-        <!-- HIGH MASS PATH (bottom) -->
+        <!-- HIGH MASS PATH -->
         <line x1="212" y1="130" x2="250" y2="170" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#sl1)"/>
         <text x="215" y="165" font-family="system-ui" font-size="8" fill="#1a73e8">High mass</text>
-
-        <!-- Red supergiant -->
         <circle cx="285" cy="175" r="28" fill="#DC2626" opacity="0.4" stroke="#DC2626" stroke-width="1.5"/>
         <text x="285" y="172" font-family="system-ui" font-size="7" fill="#DC2626" text-anchor="middle">Red Super-</text>
         <text x="285" y="182" font-family="system-ui" font-size="7" fill="#DC2626" text-anchor="middle">giant</text>
-
-        <!-- Arrow to supernova -->
         <line x1="313" y1="175" x2="348" y2="175" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
-
-        <!-- Supernova -->
         <circle cx="375" cy="175" r="18" fill="#D97706" opacity="0.5" stroke="#D97706" stroke-width="2"/>
         <text x="375" y="172" font-family="system-ui" font-size="7" fill="#1a1a2e" text-anchor="middle">Super-</text>
         <text x="375" y="182" font-family="system-ui" font-size="7" fill="#1a1a2e" text-anchor="middle">nova</text>
-
-        <!-- Arrow to neutron star -->
         <line x1="393" y1="168" x2="425" y2="155" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
-        <!-- Arrow to black hole -->
         <line x1="393" y1="182" x2="425" y2="200" stroke="#64748b" stroke-width="1.5" marker-end="url(#sl1)"/>
-
-        <!-- Neutron star -->
         <circle cx="450" cy="150" r="10" fill="#64748b" stroke="#1a1a2e" stroke-width="1.5"/>
         <text x="450" y="148" font-family="system-ui" font-size="6" fill="#fff" text-anchor="middle">Neutron</text>
         <text x="450" y="156" font-family="system-ui" font-size="6" fill="#fff" text-anchor="middle">Star</text>
-
-        <!-- Black hole -->
         <circle cx="450" cy="205" r="12" fill="#1a1a2e"/>
         <text x="450" y="203" font-family="system-ui" font-size="6" fill="#fff" text-anchor="middle">Black</text>
         <text x="450" y="211" font-family="system-ui" font-size="6" fill="#fff" text-anchor="middle">Hole</text>
-
-        <!-- Mass labels -->
-        <text x="455" y="235" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">(M > 3M☉)</text>
-        <text x="455" y="170" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">(1.4-3M☉)</text>
+        <text x="455" y="235" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">(M &gt; 3M&#9737;)</text>
+        <text x="455" y="170" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">(1.4-3M&#9737;)</text>
     </svg>
 </div>
 
 <div class="definition">
-    <strong>Main sequence:</strong> The longest stable phase of a star's life, during which the inward gravitational force is balanced by the outward radiation pressure from hydrogen fusion in the core.
+    <strong>Main sequence:</strong> The longest stable phase of a star's life, during which the inward gravitational force is balanced by the outward radiation pressure from hydrogen fusion in the core. This equilibrium is called <strong>hydrostatic equilibrium</strong>.
 </div>
 
 <h3>Stages Explained</h3>
 <ul>
-    <li><strong>Nebula:</strong> A large cloud of gas (mainly hydrogen) and dust. Gravity causes regions to collapse.</li>
-    <li><strong>Protostar:</strong> A collapsing region that heats up due to gravitational potential energy being converted to kinetic (thermal) energy. Not yet hot enough for fusion.</li>
-    <li><strong>Main Sequence:</strong> Core temperature reaches ~10⁷ K, hydrogen fusion begins. Hydrostatic equilibrium is established.</li>
-    <li><strong>Red Giant / Supergiant:</strong> Hydrogen fuel in the core is exhausted. The core contracts and heats up, outer layers expand and cool (hence red colour). Helium (and heavier elements in massive stars) fuse in the core.</li>
-    <li><strong>White Dwarf:</strong> The remnant core of a low-mass star. No fusion occurs; supported by electron degeneracy pressure. Gradually cools over billions of years.</li>
-    <li><strong>Neutron Star:</strong> The ultra-dense remnant after a supernova of a high-mass star (core mass 1.4–3 M☉). Supported by neutron degeneracy pressure.</li>
-    <li><strong>Black Hole:</strong> Forms if the remnant core mass exceeds ~3 M☉ (Tolman–Oppenheimer–Volkoff limit). Gravity is so strong that not even light can escape.</li>
+    <li><strong>Nebula:</strong> A large cloud of gas (mainly hydrogen) and dust. Gravity causes regions to collapse, triggered by events such as nearby supernova shockwaves.</li>
+    <li><strong>Protostar:</strong> A collapsing region that heats up due to gravitational potential energy being converted to kinetic (thermal) energy. Not yet hot enough for nuclear fusion. The protostar contracts over millions of years.</li>
+    <li><strong>Main Sequence:</strong> Core temperature reaches ~10&#8311; K, hydrogen fusion begins (pp chain or CNO cycle). Hydrostatic equilibrium is established. The Sun has been on the main sequence for ~4.6 billion years and will remain for another ~5 billion.</li>
+    <li><strong>Red Giant / Supergiant:</strong> Hydrogen fuel in the core is exhausted. The core contracts and heats up, outer layers expand and cool (hence red colour). Helium fusion begins in the core (triple-alpha process). In massive stars, successive heavier elements fuse up to iron-56.</li>
+    <li><strong>Planetary Nebula:</strong> The outer layers of a low-mass star are gently ejected, forming a beautiful expanding shell of gas illuminated by the hot core. Despite the name, planetary nebulae have nothing to do with planets.</li>
+    <li><strong>White Dwarf:</strong> The remnant core of a low-mass star. No fusion occurs; supported by <strong>electron degeneracy pressure</strong>. Mass limit: 1.4 M&#9737; (Chandrasekhar limit). Gradually cools over billions of years to become a black dwarf.</li>
+    <li><strong>Supernova:</strong> The catastrophic explosion of a massive star when iron accumulates in the core. Iron fusion is endothermic, so the core collapses in milliseconds, releasing ~10&#8308;&#8308; J. Elements heavier than iron are created in the supernova.</li>
+    <li><strong>Neutron Star:</strong> The ultra-dense remnant after a supernova (core mass 1.4&#8211;3 M&#9737;). Supported by <strong>neutron degeneracy pressure</strong>. Density ~10&#185;&#8311; kg m&#8315;&#179;. Pulsars are rotating neutron stars emitting beams of radiation.</li>
+    <li><strong>Black Hole:</strong> Forms if the remnant core mass exceeds ~3 M&#9737; (Tolman&#8211;Oppenheimer&#8211;Volkoff limit). Gravity is so strong that not even light can escape from within the event horizon.</li>
 </ul>
 
 <div class="exam-tip">
-    Remember that a star spends about 90% of its life on the main sequence. The more massive the star, the shorter its main-sequence lifetime because it burns fuel much faster.
+    A star spends about 90% of its life on the main sequence. The more massive the star, the shorter its main-sequence lifetime because it burns fuel much faster. A star of 10 M&#9737; lives only ~20 million years, compared to ~10 billion years for the Sun.
 </div>
 
-<h2>10.2 The Hertzsprung–Russell Diagram</h2>
+<div class="real-world">
+Every atom in your body heavier than hydrogen and helium was created inside a star or during a supernova explosion. The carbon in your cells, the calcium in your bones, the iron in your blood &#8212; all were forged by nuclear fusion in massive stars that exploded billions of years ago. As Carl Sagan said, we are made of star stuff.
+</div>
+
+<h2>10.2 The Hertzsprung&#8211;Russell Diagram</h2>
 
 <div class="definition">
-    <strong>Hertzsprung–Russell (HR) diagram:</strong> A plot of stellar luminosity (or absolute magnitude) against surface temperature (or spectral class). Temperature increases from right to left on the x-axis.
+    <strong>Hertzsprung&#8211;Russell (HR) diagram:</strong> A plot of stellar luminosity (or absolute magnitude) against surface temperature (or spectral class). Temperature increases from right to left on the x-axis (an unusual convention).
 </div>
 
 <!-- SVG: Hertzsprung-Russell Diagram -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 440 330" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
         <text x="220" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Hertzsprung-Russell Diagram</text>
-        <!-- Axes -->
         <line x1="70" y1="290" x2="410" y2="290" stroke="#1a1a2e" stroke-width="1.5"/>
         <line x1="70" y1="290" x2="70" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
-        <text x="240" y="310" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Temperature (K) - decreasing →</text>
+        <text x="240" y="310" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Temperature (K) &#8592; decreasing</text>
         <text x="35" y="160" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,35,160)">Luminosity</text>
-        <!-- Temperature scale -->
         <text x="90" y="305" font-family="system-ui" font-size="9" fill="#64748b">40000</text>
         <text x="180" y="305" font-family="system-ui" font-size="9" fill="#64748b">10000</text>
         <text x="280" y="305" font-family="system-ui" font-size="9" fill="#64748b">5000</text>
         <text x="380" y="305" font-family="system-ui" font-size="9" fill="#64748b">3000</text>
-        <!-- Luminosity scale -->
-        <text x="55" y="55" font-family="system-ui" font-size="9" fill="#64748b">10⁶</text>
-        <text x="55" y="120" font-family="system-ui" font-size="9" fill="#64748b">10³</text>
+        <text x="55" y="55" font-family="system-ui" font-size="9" fill="#64748b">10&#8310;</text>
+        <text x="55" y="120" font-family="system-ui" font-size="9" fill="#64748b">10&#179;</text>
         <text x="55" y="190" font-family="system-ui" font-size="9" fill="#64748b">1</text>
-        <text x="55" y="255" font-family="system-ui" font-size="9" fill="#64748b">10⁻³</text>
-
+        <text x="55" y="255" font-family="system-ui" font-size="9" fill="#64748b">10&#8315;&#179;</text>
         <!-- Main sequence band -->
-        <path d="M 100,50 Q 140,80 200,140 Q 260,200 320,240 Q 360,265 390,275" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="2"/>
-        <path d="M 120,50 Q 160,80 220,140 Q 280,200 340,240 Q 370,260 400,270" fill="none" stroke="#1a73e8" stroke-width="0" />
-        <!-- Main sequence wider band -->
         <path d="M 100,50 L 120,50 Q 160,80 220,140 Q 280,200 340,240 Q 370,260 400,270 L 390,275 Q 360,265 320,240 Q 260,200 200,140 Q 140,80 100,50 Z" fill="#1a73e8" opacity="0.12"/>
+        <path d="M 100,50 Q 140,80 200,140 Q 260,200 320,240 Q 360,265 390,275" fill="none" stroke="#1a73e8" stroke-width="2"/>
         <text x="200" y="195" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600" transform="rotate(-42,200,195)">Main Sequence</text>
-
         <!-- Red giants -->
         <ellipse cx="340" cy="110" rx="50" ry="40" fill="#DC2626" opacity="0.12" stroke="#DC2626" stroke-width="1.5"/>
         <text x="340" y="105" font-family="system-ui" font-size="10" fill="#DC2626" text-anchor="middle" font-weight="600">Red</text>
         <text x="340" y="118" font-family="system-ui" font-size="10" fill="#DC2626" text-anchor="middle" font-weight="600">Giants</text>
-
         <!-- Red supergiants -->
         <ellipse cx="380" cy="55" rx="30" ry="20" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
         <text x="380" y="58" font-family="system-ui" font-size="8" fill="#DC2626" text-anchor="middle" font-weight="600">Supergiants</text>
-
         <!-- White dwarfs -->
         <ellipse cx="140" cy="260" rx="45" ry="20" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
         <text x="140" y="258" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="middle" font-weight="600">White</text>
         <text x="140" y="270" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="middle" font-weight="600">Dwarfs</text>
-
         <!-- Sun marker -->
         <circle cx="260" cy="190" r="5" fill="#D97706"/>
         <text x="272" y="188" font-family="system-ui" font-size="9" fill="#D97706">Sun</text>
@@ -306,52 +174,37 @@
 
 <h3>Key Regions</h3>
 <table>
-    <tr>
-        <th>Region</th>
-        <th>Position on HR Diagram</th>
-        <th>Characteristics</th>
-    </tr>
-    <tr>
-        <td>Main Sequence</td>
-        <td>Diagonal band from top-left to bottom-right</td>
-        <td>Hot, luminous blue stars at top; cool, dim red stars at bottom. Hydrogen fusion in core.</td>
-    </tr>
-    <tr>
-        <td>Red Giants</td>
-        <td>Upper right</td>
-        <td>Cool (3000–5000 K) but very luminous due to large radius.</td>
-    </tr>
-    <tr>
-        <td>Red Supergiants</td>
-        <td>Top right</td>
-        <td>Even larger and more luminous than red giants.</td>
-    </tr>
-    <tr>
-        <td>White Dwarfs</td>
-        <td>Bottom left</td>
-        <td>Hot (10,000–30,000 K) but very low luminosity due to tiny radius.</td>
-    </tr>
+    <tr><th>Region</th><th>Position on HR Diagram</th><th>Characteristics</th></tr>
+    <tr><td>Main Sequence</td><td>Diagonal band from top-left to bottom-right</td><td>Hot, luminous blue stars at top; cool, dim red stars at bottom. Hydrogen fusion in core.</td></tr>
+    <tr><td>Red Giants</td><td>Upper right</td><td>Cool (3000&#8211;5000 K) but very luminous due to large radius. Helium fusion.</td></tr>
+    <tr><td>Red Supergiants</td><td>Top right</td><td>Even larger and more luminous. Fuse elements up to iron.</td></tr>
+    <tr><td>White Dwarfs</td><td>Bottom left</td><td>Hot (10,000&#8211;30,000 K) but very low luminosity due to tiny radius (~Earth-sized).</td></tr>
 </table>
 
 <div class="exam-tip">
-    The x-axis of the HR diagram has temperature <em>decreasing</em> from left to right (opposite to what you might expect). Always check the axis labels in exam questions.
+    The x-axis of the HR diagram has temperature <em>decreasing</em> from left to right (opposite to what you might expect). Always check the axis labels in exam questions. Also, both axes are usually logarithmic.
 </div>
 
 <h2>10.3 Luminosity and Brightness</h2>
 
 <div class="definition">
-    <strong>Luminosity (L):</strong> The total power output of a star — the total energy radiated per second, measured in watts (W).
+    <strong>Luminosity (L):</strong> The total power output of a star &#8212; the total energy radiated per second, measured in watts (W). The Sun's luminosity is L&#9737; = 3.85 &#215; 10&#178;&#8310; W.
 </div>
 
 <div class="definition">
-    <strong>Apparent brightness (b):</strong> The intensity of light received at Earth from a star — the power per unit area at the observer, measured in W m⁻².
+    <strong>Apparent brightness (b):</strong> The intensity of light received at Earth from a star &#8212; the power per unit area at the observer, measured in W m&#8315;&#178;. This is what we actually measure with a telescope.
 </div>
 
-<p>Apparent brightness depends on both the luminosity and the distance to the star:</p>
-<div class="equation">
-    b = L / (4πd²)
+<p>Apparent brightness depends on both the luminosity and the distance to the star (inverse square law):</p>
+<div class="equation">b = L / (4&#960;d&#178;)</div>
+<p>where <strong>d</strong> is the distance from the star to the observer. The factor 4&#960;d&#178; is the surface area of the sphere over which the star's light is spread.</p>
+
+<div class="worked-example">
+The Sun has luminosity 3.85 &#215; 10&#178;&#8310; W. Calculate its apparent brightness at Earth (d = 1.50 &#215; 10&#185;&#185; m).<br><br>
+b = L / (4&#960;d&#178;) = 3.85 &#215; 10&#178;&#8310; / (4&#960; &#215; (1.50 &#215; 10&#185;&#185;)&#178;)<br>
+b = 3.85 &#215; 10&#178;&#8310; / (2.83 &#215; 10&#178;&#179;) = <strong>1360 W m&#8315;&#178;</strong><br><br>
+This is the solar constant &#8212; the power per square metre received at Earth's orbital distance.
 </div>
-<p>where <strong>d</strong> is the distance from the star to the observer.</p>
 
 <h2>10.4 Wien's Displacement Law</h2>
 
@@ -359,45 +212,64 @@
     <strong>Wien's displacement law:</strong> The peak wavelength of the radiation emitted by a black body is inversely proportional to its absolute (surface) temperature.
 </div>
 
-<div class="equation">
-    λ<sub>max</sub> T = 2.898 × 10⁻³ m K
-</div>
+<div class="equation">&#955;<sub>max</sub> T = 2.898 &#215; 10&#8315;&#179; m K</div>
 
 <p>This means hotter stars emit radiation with a shorter peak wavelength (appearing bluer), while cooler stars have a longer peak wavelength (appearing redder).</p>
 
-<h2>10.5 Stefan–Boltzmann Law</h2>
+<div class="worked-example">
+A star has a surface temperature of 25 000 K. What is its peak wavelength and what colour does it appear?<br><br>
+&#955;<sub>max</sub> = 2.898 &#215; 10&#8315;&#179; / 25 000 = 1.16 &#215; 10&#8315;&#8311; m = <strong>116 nm</strong><br><br>
+This is in the ultraviolet. The star would appear <strong>blue-white</strong> because although the peak is in the UV, it still emits plenty of visible light at the blue end of the spectrum.
+</div>
+
+<h2>10.5 Stefan&#8211;Boltzmann Law</h2>
 
 <div class="definition">
-    <strong>Stefan–Boltzmann law:</strong> The total luminosity of a star (modelled as a black body) is proportional to the fourth power of its surface temperature and to its surface area.
+    <strong>Stefan&#8211;Boltzmann law:</strong> The total luminosity of a star (modelled as a black body) is proportional to the fourth power of its surface temperature and to its surface area.
 </div>
 
-<div class="equation">
-    L = 4πr²σT⁴
-</div>
+<div class="equation">L = 4&#960;r&#178;&#963;T&#8308;</div>
 
 <p>where:</p>
 <ul>
     <li><strong>L</strong> = luminosity (W)</li>
     <li><strong>r</strong> = radius of the star (m)</li>
-    <li><strong>σ</strong> = Stefan–Boltzmann constant = 5.67 × 10⁻⁸ W m⁻² K⁻⁴</li>
+    <li><strong>&#963;</strong> = Stefan&#8211;Boltzmann constant = 5.67 &#215; 10&#8315;&#8312; W m&#8315;&#178; K&#8315;&#8308;</li>
     <li><strong>T</strong> = surface temperature (K)</li>
 </ul>
 
+<p>The T&#8308; dependence means that a small increase in temperature leads to a dramatic increase in luminosity. Doubling the temperature increases the luminosity by a factor of 2&#8308; = 16.</p>
+
+<div class="worked-example">
+A red giant has surface temperature 3500 K and luminosity 400 L&#9737;. Estimate its radius in terms of solar radii. (Sun: T = 5800 K, R&#9737; = 6.96 &#215; 10&#8312; m)<br><br>
+Using L = 4&#960;r&#178;&#963;T&#8308;, the ratio of luminosities gives:<br>
+L<sub>giant</sub>/L&#9737; = (r<sub>giant</sub>/R&#9737;)&#178; &#215; (T<sub>giant</sub>/T&#9737;)&#8308;<br>
+400 = (r<sub>giant</sub>/R&#9737;)&#178; &#215; (3500/5800)&#8308;<br>
+400 = (r<sub>giant</sub>/R&#9737;)&#178; &#215; 0.1327<br>
+(r<sub>giant</sub>/R&#9737;)&#178; = 400/0.1327 = 3014<br>
+r<sub>giant</sub>/R&#9737; = &#8730;3014 = <strong>55 R&#9737;</strong><br><br>
+The red giant is 55 times larger than the Sun, which explains why it appears in the upper right of the HR diagram (cool but very luminous due to its large surface area).
+</div>
+
 <div class="exam-tip">
-    You can combine Wien's law and Stefan–Boltzmann law to determine both the temperature and radius of a star from its spectrum and luminosity.
+    You can combine Wien's law and Stefan&#8211;Boltzmann law to determine both the temperature and radius of a star from its spectrum and luminosity. First use Wien's law with the peak wavelength to find T, then use Stefan-Boltzmann to find r.
 </div>
 
 <h2>10.6 Standard Candles</h2>
 
 <div class="definition">
-    <strong>Standard candle:</strong> An astronomical object whose absolute luminosity is known (or can be determined independently), allowing its distance to be calculated from its observed apparent brightness.
+    <strong>Standard candle:</strong> An astronomical object whose absolute luminosity is known (or can be determined independently), allowing its distance to be calculated from its observed apparent brightness using b = L/(4&#960;d&#178;).
 </div>
 
 <h3>Cepheid Variable Stars</h3>
-<p><strong>Cepheid variables</strong> are pulsating stars whose luminosity varies periodically. There is a well-established relationship between their <strong>period of pulsation</strong> and their <strong>absolute luminosity</strong>. By measuring the period, we determine the luminosity, and then using the apparent brightness, we can calculate the distance.</p>
+<p><strong>Cepheid variables</strong> are pulsating stars whose luminosity varies periodically. There is a well-established <strong>period-luminosity relationship</strong>: brighter Cepheids pulsate with longer periods. By measuring the period, we determine the luminosity, and then using the apparent brightness, we can calculate the distance.</p>
+
+<p>Cepheids are crucial because they allowed Edwin Hubble to prove that other galaxies exist beyond the Milky Way (1924) and to establish the distance scale of the universe.</p>
 
 <h3>Type Ia Supernovae</h3>
-<p><strong>Type Ia supernovae</strong> occur in binary star systems when a white dwarf accretes matter from a companion until it reaches the <strong>Chandrasekhar limit</strong> (~1.4 M☉) and explodes. Since they all explode at approximately the same mass, they have very similar peak luminosities, making them excellent standard candles for measuring very large (cosmological) distances.</p>
+<p><strong>Type Ia supernovae</strong> occur in binary star systems when a white dwarf accretes matter from a companion until it reaches the <strong>Chandrasekhar limit</strong> (~1.4 M&#9737;) and explodes. Since they all explode at approximately the same mass, they have very similar peak luminosities, making them excellent standard candles for measuring very large (cosmological) distances.</p>
+
+<p>Type Ia supernovae can be seen across billions of light-years. They were used in 1998 to discover that the expansion of the universe is <strong>accelerating</strong>, leading to the concept of dark energy (Nobel Prize 2011 to Perlmutter, Schmidt, and Riess).</p>
 
 <h2>10.7 The Doppler Effect</h2>
 
@@ -406,29 +278,25 @@
 </div>
 
 <p>For electromagnetic radiation (when v &lt;&lt; c):</p>
-<div class="equation">
-    Δλ / λ = Δf / f ≈ v / c
-</div>
+<div class="equation">&#916;&#955; / &#955; = &#916;f / f &#8776; v / c</div>
 
-<p>where:</p>
-<ul>
-    <li><strong>Δλ</strong> = change in wavelength (observed − emitted)</li>
-    <li><strong>λ</strong> = emitted wavelength</li>
-    <li><strong>v</strong> = speed of the source relative to the observer</li>
-    <li><strong>c</strong> = speed of light</li>
-</ul>
+<p>where &#916;&#955; = change in wavelength (observed &#8722; emitted), &#955; = emitted wavelength, v = speed of the source relative to the observer, c = speed of light.</p>
 
 <h3>Redshift and Blueshift</h3>
 <ul>
-    <li><strong>Redshift (z &gt; 0):</strong> Source is moving away — observed wavelength is longer (shifted towards the red end).</li>
-    <li><strong>Blueshift (z &lt; 0):</strong> Source is moving towards observer — observed wavelength is shorter (shifted towards the blue end).</li>
+    <li><strong>Redshift (z &gt; 0):</strong> Source is moving away &#8212; observed wavelength is longer (shifted towards the red end). All distant galaxies are redshifted.</li>
+    <li><strong>Blueshift (z &lt; 0):</strong> Source is moving towards observer &#8212; observed wavelength is shorter (shifted towards the blue end). The Andromeda galaxy is blueshifted.</li>
 </ul>
 
-<div class="equation">
-    z = Δλ / λ = v / c
-</div>
+<div class="equation">z = &#916;&#955; / &#955; = v / c</div>
 
-<p>where <strong>z</strong> is the redshift parameter.</p>
+<div class="worked-example">
+A hydrogen spectral line (rest wavelength 656.3 nm) from a distant galaxy is observed at 670.4 nm. Calculate the galaxy's recessional velocity.<br><br>
+&#916;&#955; = 670.4 &#8722; 656.3 = 14.1 nm<br>
+z = &#916;&#955;/&#955; = 14.1/656.3 = 0.0215<br>
+v = zc = 0.0215 &#215; 3.00 &#215; 10&#8312; = <strong>6.44 &#215; 10&#8310; m s&#8315;&#185;</strong> &#8776; 6400 km s&#8315;&#185;<br><br>
+The galaxy is moving away at about 2% of the speed of light.
+</div>
 
 <h2>10.8 Hubble's Law</h2>
 
@@ -436,29 +304,19 @@
     <strong>Hubble's law:</strong> The recessional velocity of a distant galaxy is directly proportional to its distance from us.
 </div>
 
-<div class="equation">
-    v = H₀ d
-</div>
+<div class="equation">v = H&#8320; d</div>
 
-<p>where:</p>
-<ul>
-    <li><strong>v</strong> = recessional velocity (km s⁻¹ or m s⁻¹)</li>
-    <li><strong>H₀</strong> = Hubble constant (approximately 67–73 km s⁻¹ Mpc⁻¹)</li>
-    <li><strong>d</strong> = distance to the galaxy</li>
-</ul>
+<p>where v = recessional velocity (km s&#8315;&#185; or m s&#8315;&#185;), H&#8320; = Hubble constant (approximately 67&#8211;73 km s&#8315;&#185; Mpc&#8315;&#185;), d = distance to the galaxy.</p>
 
 <!-- SVG: Hubble's Law Graph -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 380 240" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-        <text x="190" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Hubble's Law: v = H₀d</text>
-        <!-- Axes -->
+        <text x="190" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Hubble's Law: v = H&#8320;d</text>
         <line x1="60" y1="200" x2="350" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
         <line x1="60" y1="200" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
         <text x="205" y="222" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Distance (d) / Mpc</text>
         <text x="25" y="120" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,25,120)">Recessional velocity (v)</text>
-        <!-- Line -->
         <line x1="60" y1="200" x2="330" y2="55" stroke="#1a73e8" stroke-width="2.5"/>
-        <!-- Data points scatter -->
         <circle cx="90" cy="185" r="3" fill="#DC2626"/>
         <circle cx="110" cy="172" r="3" fill="#DC2626"/>
         <circle cx="135" cy="160" r="3" fill="#DC2626"/>
@@ -469,52 +327,65 @@
         <circle cx="250" cy="98" r="3" fill="#DC2626"/>
         <circle cx="270" cy="82" r="3" fill="#DC2626"/>
         <circle cx="300" cy="68" r="3" fill="#DC2626"/>
-        <!-- Gradient label -->
-        <text x="200" y="105" font-family="system-ui" font-size="10" fill="#1a73e8" transform="rotate(-28,200,105)">gradient = H₀</text>
-        <text x="190" y="235" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">Age of universe ≈ 1/H₀ ≈ 14 billion years</text>
+        <text x="200" y="105" font-family="system-ui" font-size="10" fill="#1a73e8" transform="rotate(-28,200,105)">gradient = H&#8320;</text>
+        <text x="190" y="235" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">Age of universe &#8776; 1/H&#8320; &#8776; 14 billion years</text>
     </svg>
 </div>
 
-<p>Hubble's law implies that the universe is <strong>expanding</strong> — all distant galaxies are moving away from us, and the further away they are, the faster they recede.</p>
+<p>Hubble's law implies that the universe is <strong>expanding</strong> &#8212; all distant galaxies are moving away from us, and the further away they are, the faster they recede. This does not mean we are at the centre; every point in the universe sees the same pattern (like dots on an inflating balloon).</p>
 
 <h3>Age of the Universe</h3>
 <p>If the expansion rate has been approximately constant, the age of the universe can be estimated as:</p>
-<div class="equation">
-    t ≈ 1 / H₀
+<div class="equation">t &#8776; 1 / H&#8320;</div>
+
+<div class="worked-example">
+Estimate the age of the universe using H&#8320; = 70 km s&#8315;&#185; Mpc&#8315;&#185;.<br><br>
+First convert H&#8320; to SI units (s&#8315;&#185;):<br>
+1 Mpc = 3.09 &#215; 10&#178;&#178; m, and 1 km = 10&#179; m<br>
+H&#8320; = 70 &#215; 10&#179; / (3.09 &#215; 10&#178;&#178;) = 2.27 &#215; 10&#8315;&#185;&#8312; s&#8315;&#185;<br><br>
+t = 1/H&#8320; = 1 / (2.27 &#215; 10&#8315;&#185;&#8312;) = 4.41 &#215; 10&#185;&#8311; s<br><br>
+Converting to years: 4.41 &#215; 10&#185;&#8311; / (3.15 &#215; 10&#8311;) = <strong>1.4 &#215; 10&#185;&#8304; years &#8776; 14 billion years</strong>
 </div>
-<p>Using H₀ ≈ 70 km s⁻¹ Mpc⁻¹, this gives an age of approximately <strong>14 billion years</strong>.</p>
 
 <div class="exam-tip">
-    Be careful with units when calculating the age. Convert H₀ to s⁻¹ by converting Mpc to metres (1 Mpc = 3.09 × 10²² m) and km to m.
+    Be careful with units when calculating the age. Convert H&#8320; to s&#8315;&#185; by converting Mpc to metres (1 Mpc = 3.09 &#215; 10&#178;&#178; m) and km to m. This unit conversion is commonly tested and frequently causes errors.
 </div>
 
 <h2>10.9 Evidence for the Big Bang</h2>
 
-<p>The <strong>Big Bang theory</strong> states that the universe began from an extremely hot, dense singularity approximately 13.8 billion years ago and has been expanding ever since.</p>
+<p>The <strong>Big Bang theory</strong> states that the universe began from an extremely hot, dense singularity approximately 13.8 billion years ago and has been expanding and cooling ever since.</p>
 
 <h3>Key Evidence</h3>
 
 <table>
-    <tr>
-        <th>Evidence</th>
-        <th>Explanation</th>
-    </tr>
+    <tr><th>Evidence</th><th>Explanation</th></tr>
     <tr>
         <td><strong>Cosmic Microwave Background (CMB) Radiation</strong></td>
-        <td>Uniform microwave radiation (peak wavelength ~1 mm, T ≈ 2.7 K) detected in all directions. This is the cooled remnant of the radiation from ~380,000 years after the Big Bang when the universe became transparent.</td>
+        <td>Uniform microwave radiation (peak wavelength ~1 mm, T &#8776; 2.7 K) detected in all directions. This is the cooled remnant of the radiation from ~380,000 years after the Big Bang when the universe became transparent (recombination epoch). Predicted by Gamow (1948), discovered by Penzias and Wilson (1965, Nobel Prize).</td>
     </tr>
     <tr>
         <td><strong>Expansion of the Universe</strong></td>
-        <td>Hubble's observations show all distant galaxies are receding, implying the universe is expanding — consistent with expansion from an initial singularity.</td>
+        <td>Hubble's observations show all distant galaxies are receding (redshifted), implying the universe is expanding &#8212; consistent with expansion from an initial singularity. Running the expansion backwards leads to a single point in space-time.</td>
     </tr>
     <tr>
         <td><strong>Hydrogen/Helium Abundance</strong></td>
-        <td>The observed ratio (~75% hydrogen, ~25% helium by mass) matches predictions of Big Bang nucleosynthesis — the formation of light elements in the first few minutes after the Big Bang.</td>
+        <td>The observed ratio (~75% hydrogen, ~25% helium by mass) matches predictions of Big Bang nucleosynthesis &#8212; the formation of light elements in the first few minutes after the Big Bang when the temperature was ~10&#8313; K.</td>
     </tr>
 </table>
 
 <div class="exam-tip">
-    The CMB was predicted by Gamow in 1948 and discovered accidentally by Penzias and Wilson in 1965. It is the strongest single piece of evidence for the Big Bang. Its near-perfect black-body spectrum at 2.7 K is exactly what is predicted by the model.
+    The CMB is the strongest single piece of evidence for the Big Bang. Its near-perfect black-body spectrum at 2.7 K is exactly what the model predicts for radiation that has been cooling for 13.8 billion years. Tiny fluctuations (~1 part in 100,000) in the CMB correspond to the density variations that seeded the formation of galaxies.
+</div>
+
+<h3>Dark Matter and Dark Energy</h3>
+<p>Observations suggest that ordinary (baryonic) matter makes up only about 5% of the total energy content of the universe:</p>
+<ul>
+    <li><strong>Dark matter (~27%):</strong> Invisible matter detected through its gravitational effects on galaxy rotation curves and gravitational lensing. Galaxies rotate too fast to be held together by visible matter alone.</li>
+    <li><strong>Dark energy (~68%):</strong> A mysterious form of energy causing the expansion of the universe to accelerate. Discovered in 1998 through observations of Type Ia supernovae at great distances.</li>
+</ul>
+
+<div class="real-world">
+The COBE (1992), WMAP (2001-2010), and Planck (2009-2013) satellites mapped the CMB with increasing precision, revealing the tiny temperature fluctuations that grew into the galaxies and galaxy clusters we see today. The Planck satellite measured the age of the universe as 13.80 billion years, the Hubble constant as 67.4 km s&#8315;&#185; Mpc&#8315;&#185;, and confirmed that the universe is geometrically flat to within 0.4%.
 </div>
 
 </div>

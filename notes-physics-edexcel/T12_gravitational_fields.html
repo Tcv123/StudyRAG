@@ -5,107 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topic 12 — Gravitational Fields | Edexcel A-Level Physics</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: #1a1a2e;
-            background: #ffffff;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 2rem;
-            color: #1a1a2e;
-            border-bottom: 3px solid #3b82f6;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #1e3a5f;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            border-left: 4px solid #3b82f6;
-            padding-left: 12px;
-        }
-        h3 {
-            font-size: 1.2rem;
-            color: #2d4a7a;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 12px;
-        }
-        .definition {
-            background: #eff6ff;
-            border-left: 4px solid #3b82f6;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip {
-            background: #fffbeb;
-            border-left: 4px solid #f59e0b;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip::before {
-            content: "Exam Tip: ";
-            font-weight: 700;
-            color: #b45309;
-        }
-        .equation {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 12px 20px;
-            margin: 12px 0;
-            border-radius: 6px;
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 0.95rem;
-        }
-        th, td {
-            border: 1px solid #e2e8f0;
-            padding: 10px 14px;
-            text-align: left;
-        }
-        th {
-            background: #f1f5f9;
-            font-weight: 600;
-            color: #1e3a5f;
-        }
-        tr:nth-child(even) {
-            background: #f8fafc;
-        }
-        ul, ol {
-            margin: 10px 0 15px 25px;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        strong {
-            color: #1e3a5f;
-        }
-        @media print {
-            body { padding: 20px; }
-            .exam-tip, .definition { break-inside: avoid; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #3b82f6; padding-bottom: 10px; margin-bottom: 30px; }
+        h2 { font-size: 1.5rem; color: #1e3a5f; margin-top: 35px; margin-bottom: 15px; border-left: 4px solid #3b82f6; padding-left: 12px; }
+        h3 { font-size: 1.2rem; color: #2d4a7a; margin-top: 20px; margin-bottom: 10px; }
+        p { margin-bottom: 12px; }
+        .definition { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #16a34a; }
+        .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .real-world::before { content: "Real-World Application: "; font-weight: 700; color: #7c3aed; }
+        .equation { background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 20px; margin: 12px 0; border-radius: 6px; font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 1.1rem; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+        th, td { border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left; }
+        th { background: #f1f5f9; font-weight: 600; color: #1e3a5f; }
+        tr:nth-child(even) { background: #f8fafc; }
+        ul, ol { margin: 10px 0 15px 25px; }
+        li { margin-bottom: 6px; }
+        strong { color: #1e3a5f; }
+        @media print { body { padding: 20px; } .exam-tip, .definition, .worked-example, .real-world { break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -119,22 +41,27 @@
     <strong>Newton's law of universal gravitation:</strong> Every particle in the universe attracts every other particle with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between their centres.
 </div>
 
-<div class="equation">
-    F = −GMm / r²
-</div>
+<div class="equation">F = GMm / r&#178;</div>
 
 <p>where:</p>
 <ul>
-    <li><strong>F</strong> = gravitational force (N) — always attractive</li>
-    <li><strong>G</strong> = universal gravitational constant = 6.674 × 10⁻¹¹ N m² kg⁻²</li>
+    <li><strong>F</strong> = gravitational force (N) &#8212; always attractive</li>
+    <li><strong>G</strong> = universal gravitational constant = 6.674 &#215; 10&#8315;&#185;&#185; N m&#178; kg&#8315;&#178;</li>
     <li><strong>M, m</strong> = masses of the two objects (kg)</li>
     <li><strong>r</strong> = distance between the centres of the masses (m)</li>
 </ul>
 
-<p>The negative sign indicates the force is <strong>attractive</strong> (directed towards the other mass).</p>
+<p>The negative sign is sometimes included (F = &#8722;GMm/r&#178;) to indicate the force is <strong>attractive</strong> (directed towards the other mass). Gravity is always attractive &#8212; there is no gravitational repulsion.</p>
 
 <div class="exam-tip">
-    The distance r is measured between the centres of the objects, not their surfaces. If given the radius of the Earth and the altitude of a satellite, you must add them: r = R_E + h.
+    The distance r is measured between the <strong>centres</strong> of the objects, not their surfaces. If given the radius of the Earth and the altitude of a satellite, you must add them: r = R<sub>E</sub> + h. This is one of the most common errors in gravitational field calculations.
+</div>
+
+<div class="worked-example">
+Calculate the gravitational force between the Earth (M = 5.97 &#215; 10&#178;&#8308; kg) and a 70 kg person standing on its surface (R<sub>E</sub> = 6.37 &#215; 10&#8310; m).<br><br>
+F = GMm/r&#178; = (6.674 &#215; 10&#8315;&#185;&#185; &#215; 5.97 &#215; 10&#178;&#8308; &#215; 70) / (6.37 &#215; 10&#8310;)&#178;<br>
+F = (2.789 &#215; 10&#185;&#8310;) / (4.058 &#215; 10&#185;&#179;) = <strong>687 N</strong><br><br>
+This equals the person's weight: W = mg = 70 &#215; 9.81 = 687 N &#10003;
 </div>
 
 <h2>12.2 Gravitational Field Strength</h2>
@@ -143,35 +70,44 @@
     <strong>Gravitational field strength (g):</strong> The gravitational force per unit mass experienced by a small test mass placed at that point in the field. It is a vector quantity pointing towards the mass creating the field.
 </div>
 
-<div class="equation">
-    g = F / m
-</div>
+<div class="equation">g = F / m</div>
 
 <p>For a point mass or uniform sphere (outside the surface):</p>
 
-<div class="equation">
-    g = GM / r²
+<div class="equation">g = GM / r&#178;</div>
+
+<p>Units: N kg&#8315;&#185; (equivalent to m s&#8315;&#178;). At the Earth's surface: g &#8776; 9.81 N kg&#8315;&#185;.</p>
+
+<p>Key features of g:</p>
+<ul>
+    <li>g decreases with distance from the mass according to an inverse-square law</li>
+    <li>g at the surface of a planet depends on both the planet's mass and radius: g = GM/R&#178;</li>
+    <li>Inside a uniform sphere, g decreases linearly with distance from the centre (g = 0 at the centre)</li>
+    <li>g is independent of the test mass &#8212; all objects experience the same gravitational field strength</li>
+</ul>
+
+<div class="worked-example">
+Calculate the gravitational field strength on the surface of Mars (M = 6.42 &#215; 10&#178;&#179; kg, R = 3.39 &#215; 10&#8310; m).<br><br>
+g = GM/R&#178; = (6.674 &#215; 10&#8315;&#185;&#185; &#215; 6.42 &#215; 10&#178;&#179;) / (3.39 &#215; 10&#8310;)&#178;<br>
+g = (4.285 &#215; 10&#185;&#179;) / (1.150 &#215; 10&#185;&#179;) = <strong>3.73 N kg&#8315;&#185;</strong><br><br>
+This is about 38% of Earth's surface gravity. A 70 kg astronaut would weigh 70 &#215; 3.73 = 261 N on Mars, compared to 687 N on Earth.
 </div>
-
-<p>Units: N kg⁻¹ (equivalent to m s⁻²).</p>
-
-<p>At the Earth's surface: g ≈ 9.81 N kg⁻¹.</p>
 
 <h2>12.3 Gravitational Field Patterns</h2>
 
 <h3>Radial Fields</h3>
 <ul>
-    <li>Field lines point <strong>radially inward</strong> towards the centre of the mass.</li>
-    <li>Field strength decreases with distance (inverse square law).</li>
-    <li>Produced by a point mass or a spherical mass (outside the sphere).</li>
-    <li>Field lines are not parallel — they converge at the centre.</li>
+    <li>Field lines point <strong>radially inward</strong> towards the centre of the mass</li>
+    <li>Field strength decreases with distance (inverse square law)</li>
+    <li>Produced by a point mass or a spherical mass (outside the sphere)</li>
+    <li>Field lines are not parallel &#8212; they converge at the centre</li>
 </ul>
 
 <h3>Uniform Fields</h3>
 <ul>
-    <li>Field lines are <strong>parallel and equally spaced</strong>.</li>
-    <li>Field strength is constant at all points.</li>
-    <li>A good approximation for the gravitational field near the Earth's surface over small regions (where the curvature is negligible).</li>
+    <li>Field lines are <strong>parallel and equally spaced</strong></li>
+    <li>Field strength is constant at all points</li>
+    <li>A good approximation for the gravitational field near the Earth's surface over small regions (where the curvature is negligible)</li>
 </ul>
 
 <!-- SVG: Gravitational Field Lines -->
@@ -182,12 +118,10 @@
             <marker id="gf2" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto"><polygon points="0 0, 6 2, 0 4" fill="#1a73e8"/></marker>
         </defs>
         <text x="240" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Gravitational Field Patterns</text>
-
         <!-- Radial field -->
         <text x="130" y="45" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">Radial Field (around Earth)</text>
         <circle cx="130" cy="125" r="28" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="2"/>
         <text x="130" y="129" font-family="system-ui" font-size="10" fill="#1a73e8" text-anchor="middle" font-weight="600">M</text>
-        <!-- Field lines pointing inward -->
         <line x1="130" y1="55" x2="130" y2="95" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#gf2)"/>
         <line x1="130" y1="195" x2="130" y2="155" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#gf2)"/>
         <line x1="60" y1="125" x2="100" y2="125" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#gf2)"/>
@@ -196,37 +130,32 @@
         <line x1="180" y1="178" x2="150" y2="148" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#gf2)"/>
         <line x1="180" y1="72" x2="150" y2="102" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#gf2)"/>
         <line x1="80" y1="178" x2="110" y2="148" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#gf2)"/>
-        <!-- Equipotentials -->
         <circle cx="130" cy="125" r="50" fill="none" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="3,3"/>
         <circle cx="130" cy="125" r="70" fill="none" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="3,3"/>
         <text x="130" y="210" font-family="system-ui" font-size="9" fill="#16A34A" text-anchor="middle">Equipotentials (concentric circles)</text>
-
         <!-- Uniform field -->
         <text x="370" y="45" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">Uniform Field (near surface)</text>
-        <!-- Ground -->
         <rect x="290" y="185" width="160" height="15" fill="#94a3b8" opacity="0.3" stroke="#64748b" stroke-width="1"/>
         <text x="370" y="196" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Surface</text>
-        <!-- Parallel field lines -->
         <line x1="310" y1="60" x2="310" y2="180" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#gf2)"/>
         <line x1="340" y1="60" x2="340" y2="180" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#gf2)"/>
         <line x1="370" y1="60" x2="370" y2="180" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#gf2)"/>
         <line x1="400" y1="60" x2="400" y2="180" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#gf2)"/>
         <line x1="430" y1="60" x2="430" y2="180" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#gf2)"/>
-        <!-- Equipotentials (horizontal) -->
         <line x1="295" y1="90" x2="445" y2="90" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="3,3"/>
         <line x1="295" y1="130" x2="445" y2="130" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="3,3"/>
         <line x1="295" y1="170" x2="445" y2="170" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="3,3"/>
-        <text x="370" y="210" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">g ≈ constant near surface</text>
+        <text x="370" y="210" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">g &#8776; constant near surface</text>
     </svg>
 </div>
 
 <h3>Equipotentials</h3>
 <ul>
-    <li><strong>Equipotential lines</strong> (or surfaces) join points of equal gravitational potential.</li>
-    <li>Equipotentials are always <strong>perpendicular</strong> to field lines.</li>
-    <li>No work is done moving a mass along an equipotential surface.</li>
-    <li>For a radial field, equipotentials are concentric circles (spheres in 3D) centred on the mass.</li>
-    <li>For a uniform field, equipotentials are equally spaced horizontal lines.</li>
+    <li><strong>Equipotential lines</strong> (or surfaces) join points of equal gravitational potential</li>
+    <li>Equipotentials are always <strong>perpendicular</strong> to field lines</li>
+    <li>No work is done moving a mass along an equipotential surface</li>
+    <li>For a radial field, equipotentials are concentric circles (spheres in 3D) centred on the mass &#8212; they are closer together near the mass where the field is stronger</li>
+    <li>For a uniform field, equipotentials are equally spaced horizontal lines</li>
 </ul>
 
 <h2>12.4 Gravitational Potential</h2>
@@ -235,106 +164,109 @@
     <strong>Gravitational potential (V):</strong> The work done per unit mass in bringing a small test mass from infinity to that point in the field. It is a scalar quantity and is always negative (since gravity is attractive and we define V = 0 at infinity).
 </div>
 
-<div class="equation">
-    V = −GM / r
-</div>
+<div class="equation">V = &#8722;GM / r</div>
 
-<p>Units: J kg⁻¹</p>
+<p>Units: J kg&#8315;&#185;</p>
 
 <p>Key points:</p>
 <ul>
-    <li>V is always <strong>negative</strong> (or zero at infinity).</li>
-    <li>V becomes more negative as you approach the mass.</li>
-    <li>The potential at infinity is defined as zero.</li>
+    <li>V is always <strong>negative</strong> (or zero at infinity)</li>
+    <li>V becomes more negative as you approach the mass (you go deeper into the "gravitational well")</li>
+    <li>The potential at infinity is defined as zero</li>
+    <li>V follows a 1/r relationship (not 1/r&#178; like field strength)</li>
 </ul>
 
-<!-- SVG: Gravitational Potential Graph (V vs r) -->
+<!-- SVG: Gravitational Potential Graph -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 420 260" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
         <text x="210" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Gravitational Potential vs Distance</text>
-        <!-- Axes -->
         <line x1="80" y1="40" x2="80" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
         <line x1="40" y1="40" x2="400" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
         <text x="240" y="30" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">r (distance from centre)</text>
         <text x="55" y="140" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,55,140)">V (J/kg)</text>
-        <!-- Zero line -->
         <text x="70" y="44" font-family="system-ui" font-size="9" fill="#64748b">0</text>
-        <!-- Surface marker -->
         <line x1="120" y1="35" x2="120" y2="230" stroke="#D97706" stroke-width="1" stroke-dasharray="4,3"/>
         <text x="120" y="242" font-family="system-ui" font-size="9" fill="#D97706" text-anchor="middle">R</text>
         <text x="120" y="252" font-family="system-ui" font-size="8" fill="#D97706" text-anchor="middle">(surface)</text>
-        <!-- -1/r curve from surface outward -->
         <path d="M 120,210 Q 160,150 200,115 Q 260,80 320,62 Q 370,52 400,46" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
-        <!-- Inside surface (linear from centre to surface) -->
         <path d="M 80,190 L 120,210" fill="none" stroke="#1a73e8" stroke-width="2" stroke-dasharray="5,3"/>
-        <!-- Labels -->
-        <text x="135" y="215" font-family="system-ui" font-size="9" fill="#DC2626">V = -GM/R</text>
-        <text x="350" y="70" font-family="system-ui" font-size="10" fill="#1a73e8">V = -GM/r</text>
-        <text x="300" y="100" font-family="system-ui" font-size="9" fill="#64748b">approaches 0 as r → ∞</text>
-        <!-- Gradient annotation -->
+        <text x="135" y="215" font-family="system-ui" font-size="9" fill="#DC2626">V = &#8722;GM/R</text>
+        <text x="350" y="70" font-family="system-ui" font-size="10" fill="#1a73e8">V = &#8722;GM/r</text>
+        <text x="300" y="100" font-family="system-ui" font-size="9" fill="#64748b">approaches 0 as r &#8594; &#8734;</text>
         <line x1="150" y1="180" x2="200" y2="120" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,3"/>
-        <text x="210" y="148" font-family="system-ui" font-size="9" fill="#DC2626">gradient = -g</text>
+        <text x="210" y="148" font-family="system-ui" font-size="9" fill="#DC2626">gradient = &#8722;g</text>
         <text x="210" y="160" font-family="system-ui" font-size="9" fill="#DC2626">(steeper = stronger field)</text>
-        <!-- Always negative label -->
-        <text x="60" y="215" font-family="system-ui" font-size="9" fill="#1a73e8" text-anchor="end">-ve</text>
+        <text x="60" y="215" font-family="system-ui" font-size="9" fill="#1a73e8" text-anchor="end">&#8722;ve</text>
     </svg>
 </div>
 
 <h3>Relationship Between g and V</h3>
 
-<div class="equation">
-    g = −dV/dr
-</div>
+<div class="equation">g = &#8722;dV/dr</div>
 
-<p>The gravitational field strength equals the negative gradient of the potential. On a V–r graph, g is the magnitude of the gradient at any point. The negative sign means g points in the direction of decreasing potential (towards the mass).</p>
+<p>The gravitational field strength equals the negative gradient of the potential. On a V&#8211;r graph, g is the magnitude of the gradient at any point. The negative sign means g points in the direction of decreasing potential (towards the mass).</p>
 
 <div class="exam-tip">
-    On a graph of V against r, the gradient gives g. A steeper gradient means a stronger field. At the surface of a planet, the gradient is steepest.
+    On a graph of V against r, the gradient gives &#8722;g. A steeper gradient means a stronger field. At the surface of a planet, the gradient is steepest. Compare with the electric field: E = &#8722;dV/dr. The mathematics is identical.
 </div>
 
 <h2>12.5 Gravitational Potential Energy</h2>
 
 <div class="definition">
-    <strong>Gravitational potential energy (E_p):</strong> The work done in bringing a mass from infinity to that point in the field.
+    <strong>Gravitational potential energy (E<sub>p</sub>):</strong> The work done in bringing a mass m from infinity to that point in the gravitational field of mass M.
 </div>
 
-<div class="equation">
-    E_p = −GMm / r
-</div>
+<div class="equation">E<sub>p</sub> = &#8722;GMm / r</div>
 
-<p>Note: E_p = mV. The GPE is negative because work must be done against gravity to move an object from that point to infinity (i.e., the object is bound to the gravitational field).</p>
+<p>Note: E<sub>p</sub> = mV. The GPE is negative because work must be done <em>against</em> gravity to move an object from that point to infinity (i.e., the object is bound to the gravitational field).</p>
 
 <p>The <strong>change</strong> in GPE when moving between two points:</p>
-<div class="equation">
-    ΔE_p = −GMm(1/r₁ − 1/r₂)
-</div>
+<div class="equation">&#916;E<sub>p</sub> = GMm(1/r&#8321; &#8722; 1/r&#8322;)</div>
+<p>where r&#8322; > r&#8321; (moving away from the mass).</p>
 
 <div class="exam-tip">
-    Do not confuse E_p = mgh (valid only for uniform fields near the surface) with E_p = −GMm/r (the general expression for any distance). Use the general form for orbital and escape velocity problems.
+    Do not confuse E<sub>p</sub> = mgh (valid only for uniform fields near the surface, where h &lt;&lt; R) with E<sub>p</sub> = &#8722;GMm/r (the general expression valid at any distance). Use the general form for orbital and escape velocity problems.
+</div>
+
+<div class="worked-example">
+Calculate the energy needed to move a 500 kg satellite from an orbit of radius 7000 km to an orbit of radius 10 000 km around the Earth (M = 5.97 &#215; 10&#178;&#8308; kg).<br><br>
+&#916;E<sub>p</sub> = GMm(1/r&#8321; &#8722; 1/r&#8322;)<br>
+= 6.674 &#215; 10&#8315;&#185;&#185; &#215; 5.97 &#215; 10&#178;&#8308; &#215; 500 &#215; (1/7.0&#215;10&#8310; &#8722; 1/1.0&#215;10&#8311;)<br>
+= 1.991 &#215; 10&#185;&#8310; &#215; (1.429&#215;10&#8315;&#8311; &#8722; 1.000&#215;10&#8315;&#8311;)<br>
+= 1.991 &#215; 10&#185;&#8310; &#215; 4.29 &#215; 10&#8315;&#8312;<br>
+= <strong>8.54 &#215; 10&#8312; J &#8776; 854 MJ</strong><br><br>
+Note: This is just the change in PE. The total energy change for the orbital transfer also involves a change in kinetic energy.
 </div>
 
 <h2>12.6 Escape Velocity</h2>
 
 <div class="definition">
-    <strong>Escape velocity:</strong> The minimum speed an object must have at the surface to escape to infinity without any further energy input (i.e., to reach infinity with zero kinetic energy).
+    <strong>Escape velocity:</strong> The minimum speed an object must have at the surface to escape to infinity without any further energy input (i.e., to reach infinity with zero kinetic energy and zero potential energy).
 </div>
 
-<p>Setting KE + PE = 0 at infinity:</p>
-<div class="equation">
-    ½mv² + (−GMm/r) = 0
-</div>
-<div class="equation">
-    v<sub>escape</sub> = √(2GM / r)
-</div>
+<p>Setting total energy at surface = total energy at infinity (= 0):</p>
+<div class="equation">&#189;mv&#178; + (&#8722;GMm/r) = 0</div>
+<div class="equation">v<sub>escape</sub> = &#8730;(2GM / r)</div>
 
-<p>Note: Escape velocity does not depend on the mass of the escaping object — only on M and r of the body being escaped from.</p>
+<p>Key points:</p>
+<ul>
+    <li>Escape velocity does <strong>not</strong> depend on the mass of the escaping object &#8212; only on M and r of the body being escaped from</li>
+    <li>Escape velocity = &#8730;2 &#215; orbital velocity at that radius</li>
+    <li>For Earth: v<sub>escape</sub> &#8776; 11.2 km s&#8315;&#185;</li>
+    <li>If an object has speed less than v<sub>escape</sub>, it will return (or go into orbit if launched tangentially)</li>
+</ul>
+
+<div class="worked-example">
+Calculate the escape velocity from the Moon's surface (M = 7.35 &#215; 10&#178;&#178; kg, R = 1.74 &#215; 10&#8310; m).<br><br>
+v<sub>escape</sub> = &#8730;(2GM/R) = &#8730;(2 &#215; 6.674&#215;10&#8315;&#185;&#185; &#215; 7.35&#215;10&#178;&#178; / 1.74&#215;10&#8310;)<br>
+= &#8730;(5.63&#215;10&#8310;) = <strong>2370 m s&#8315;&#185; &#8776; 2.4 km s&#8315;&#185;</strong><br><br>
+This is much less than Earth's 11.2 km s&#8315;&#185;, which is why the Moon has essentially no atmosphere &#8212; gas molecules easily reach escape velocity due to thermal motion.
+</div>
 
 <h2>12.7 Orbital Motion</h2>
 
 <p>For a satellite in a circular orbit, gravitational force provides the centripetal force:</p>
-<div class="equation">
-    GMm / r² = mv² / r
-</div>
+<div class="equation">GMm / r&#178; = mv&#178; / r</div>
 
 <!-- SVG: Orbital Mechanics -->
 <div style="margin: 20px auto; text-align: center;">
@@ -344,131 +276,106 @@
             <marker id="ob2" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto"><polygon points="0 0, 6 2, 0 4" fill="#DC2626"/></marker>
         </defs>
         <text x="190" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Satellite Orbital Mechanics</text>
-        <!-- Earth -->
         <circle cx="190" cy="150" r="40" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="2"/>
         <text x="190" y="154" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">M</text>
-        <!-- LEO orbit -->
         <circle cx="190" cy="150" r="70" fill="none" stroke="#16A34A" stroke-width="2" stroke-dasharray="6,3"/>
         <circle cx="260" cy="150" r="6" fill="#16A34A"/>
         <text x="275" y="148" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">LEO</text>
-        <!-- LEO velocity (tangential) -->
         <line x1="260" y1="144" x2="260" y2="100" stroke="#16A34A" stroke-width="2" marker-end="url(#ob1)"/>
         <text x="268" y="115" font-family="system-ui" font-size="9" fill="#16A34A">v</text>
-        <!-- Gravity towards centre -->
         <line x1="254" y1="150" x2="230" y2="150" stroke="#DC2626" stroke-width="2" marker-end="url(#ob2)"/>
-        <text x="238" y="165" font-family="system-ui" font-size="9" fill="#DC2626">F=GMm/r²</text>
-        <!-- Geostationary orbit -->
+        <text x="238" y="165" font-family="system-ui" font-size="9" fill="#DC2626">F=GMm/r&#178;</text>
         <circle cx="190" cy="150" r="115" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="8,4"/>
         <circle cx="305" cy="150" r="6" fill="#D97706"/>
         <text x="320" y="148" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">GEO</text>
-        <!-- Radius labels -->
         <line x1="190" y1="150" x2="260" y2="150" stroke="#16A34A" stroke-width="0.8"/>
-        <text x="225" y="145" font-family="system-ui" font-size="8" fill="#16A34A" text-anchor="middle">r₁</text>
+        <text x="225" y="145" font-family="system-ui" font-size="8" fill="#16A34A" text-anchor="middle">r&#8321;</text>
         <line x1="190" y1="160" x2="305" y2="160" stroke="#D97706" stroke-width="0.8"/>
-        <text x="250" y="172" font-family="system-ui" font-size="8" fill="#D97706" text-anchor="middle">r₂</text>
-        <!-- Key -->
-        <text x="190" y="272" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">Higher orbit → slower speed, longer period (T² ∝ r³)</text>
+        <text x="250" y="172" font-family="system-ui" font-size="8" fill="#D97706" text-anchor="middle">r&#8322;</text>
+        <text x="190" y="272" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">Higher orbit &#8594; slower speed, longer period (T&#178; &#8733; r&#179;)</text>
     </svg>
 </div>
 
 <h3>Orbital Speed</h3>
-<div class="equation">
-    v = √(GM / r)
-</div>
-<p>Orbital speed depends only on the mass of the central body and the orbital radius — not on the satellite's mass.</p>
+<div class="equation">v = &#8730;(GM / r)</div>
+<p>Orbital speed depends only on the mass of the central body and the orbital radius &#8212; not on the satellite's mass. A higher orbit means a <strong>slower</strong> orbital speed.</p>
 
 <h3>Orbital Period</h3>
-<p>Since v = 2πr / T:</p>
-<div class="equation">
-    T = 2πr / v = 2π √(r³ / GM)
-</div>
+<p>Since v = 2&#960;r / T:</p>
+<div class="equation">T = 2&#960;r / v = 2&#960; &#8730;(r&#179; / GM)</div>
 <p>Squaring:</p>
-<div class="equation">
-    T² = (4π² / GM) r³
+<div class="equation">T&#178; = (4&#960;&#178; / GM) r&#179;</div>
+<p>This is <strong>Kepler's third law</strong>: T&#178; is proportional to r&#179;. A graph of T&#178; vs r&#179; is a straight line through the origin with gradient 4&#960;&#178;/(GM).</p>
+
+<div class="worked-example">
+Calculate the orbital radius and speed of a geostationary satellite (T = 24 hours = 86 400 s, M<sub>Earth</sub> = 5.97 &#215; 10&#178;&#8308; kg).<br><br>
+From T&#178; = (4&#960;&#178;/GM)r&#179;:<br>
+r&#179; = GMT&#178;/(4&#960;&#178;) = (6.674&#215;10&#8315;&#185;&#185; &#215; 5.97&#215;10&#178;&#8308; &#215; (86400)&#178;) / (4&#960;&#178;)<br>
+r&#179; = (2.975&#215;10&#178;&#8308;) / 39.48 = 7.534 &#215; 10&#178;&#178;<br>
+r = (7.534 &#215; 10&#178;&#178;)&#185;/&#179; = <strong>4.22 &#215; 10&#8311; m &#8776; 42 200 km</strong> from Earth's centre<br><br>
+Altitude above surface = 42 200 &#8722; 6370 = <strong>35 800 km</strong><br><br>
+Speed: v = 2&#960;r/T = 2&#960; &#215; 4.22&#215;10&#8311; / 86400 = <strong>3070 m s&#8315;&#185; &#8776; 3.1 km s&#8315;&#185;</strong>
 </div>
-<p>This is <strong>Kepler's third law</strong>: T² is proportional to r³.</p>
 
 <h2>12.8 Kepler's Laws</h2>
 
 <table>
-    <tr>
-        <th>Law</th>
-        <th>Statement</th>
-    </tr>
-    <tr>
-        <td><strong>First Law</strong></td>
-        <td>All planets orbit the Sun in ellipses with the Sun at one focus.</td>
-    </tr>
-    <tr>
-        <td><strong>Second Law</strong></td>
-        <td>A line joining a planet to the Sun sweeps out equal areas in equal time intervals. (The planet moves faster when closer to the Sun.)</td>
-    </tr>
-    <tr>
-        <td><strong>Third Law</strong></td>
-        <td>The square of the orbital period is proportional to the cube of the semi-major axis (mean orbital radius): T² ∝ r³.</td>
-    </tr>
+    <tr><th>Law</th><th>Statement</th></tr>
+    <tr><td><strong>First Law</strong></td><td>All planets orbit the Sun in <strong>ellipses</strong> with the Sun at one focus.</td></tr>
+    <tr><td><strong>Second Law</strong></td><td>A line joining a planet to the Sun sweeps out <strong>equal areas in equal time intervals</strong>. (The planet moves faster when closer to the Sun.)</td></tr>
+    <tr><td><strong>Third Law</strong></td><td>The square of the orbital period is proportional to the cube of the semi-major axis (mean orbital radius): <strong>T&#178; &#8733; r&#179;</strong>.</td></tr>
 </table>
 
 <div class="exam-tip">
-    Kepler's third law can be verified experimentally by plotting T² against r³ — the result is a straight line through the origin with gradient 4π²/(GM).
+    Kepler's third law can be verified experimentally by plotting T&#178; against r&#179; &#8212; the result is a straight line through the origin with gradient 4&#960;&#178;/(GM). This allows the mass M of the central body to be determined. This technique is used to measure the mass of planets (from their moons' orbits), stars (from orbiting planets), and even black holes.
 </div>
 
 <h2>12.9 Types of Orbit</h2>
 
 <h3>Geostationary Orbit</h3>
 <ul>
-    <li>Orbital period = 24 hours (same as Earth's rotation).</li>
-    <li>Orbits directly above the <strong>equator</strong>.</li>
-    <li>Same direction as Earth's rotation (west to east).</li>
-    <li>Appears stationary relative to a point on the Earth's surface.</li>
-    <li>Altitude ≈ 35,800 km above the surface (r ≈ 42,200 km from centre).</li>
-    <li><strong>Uses:</strong> Communications satellites, TV broadcasting, weather monitoring.</li>
+    <li>Orbital period = <strong>24 hours</strong> (same as Earth's rotation)</li>
+    <li>Orbits directly above the <strong>equator</strong> (inclination = 0&#176;)</li>
+    <li>Same direction as Earth's rotation (west to east)</li>
+    <li>Appears <strong>stationary</strong> relative to a point on the Earth's surface</li>
+    <li>Altitude &#8776; 35 800 km above the surface (r &#8776; 42 200 km from centre)</li>
+    <li><strong>Uses:</strong> Communications satellites, TV broadcasting, weather monitoring</li>
 </ul>
 
 <h3>Low Earth Orbit (LEO)</h3>
 <ul>
-    <li>Altitude: typically 200–2000 km above the surface.</li>
-    <li>Orbital period: ~90 minutes to 2 hours.</li>
-    <li>Can be at any inclination (including polar orbits).</li>
-    <li>Satellites move relative to the Earth's surface.</li>
-    <li><strong>Uses:</strong> Earth observation, scientific research, GPS constellation, International Space Station, imaging/reconnaissance.</li>
+    <li>Altitude: typically 200&#8211;2000 km above the surface</li>
+    <li>Orbital period: ~90 minutes to 2 hours</li>
+    <li>Can be at any inclination (including polar orbits at ~90&#176;)</li>
+    <li>Satellites move relative to the Earth's surface</li>
+    <li><strong>Uses:</strong> Earth observation, scientific research, International Space Station, imaging/reconnaissance, Starlink internet constellation</li>
 </ul>
 
 <table>
-    <tr>
-        <th>Property</th>
-        <th>Geostationary</th>
-        <th>Low Earth Orbit</th>
-    </tr>
-    <tr>
-        <td>Altitude</td>
-        <td>~35,800 km</td>
-        <td>200–2000 km</td>
-    </tr>
-    <tr>
-        <td>Period</td>
-        <td>24 hours</td>
-        <td>~90 min – 2 hours</td>
-    </tr>
-    <tr>
-        <td>Orbital speed</td>
-        <td>~3.1 km/s</td>
-        <td>~7.5–8 km/s</td>
-    </tr>
-    <tr>
-        <td>Inclination</td>
-        <td>0° (equatorial)</td>
-        <td>Any (including polar)</td>
-    </tr>
-    <tr>
-        <td>Position relative to surface</td>
-        <td>Stationary</td>
-        <td>Moves across the sky</td>
-    </tr>
+    <tr><th>Property</th><th>Geostationary</th><th>Low Earth Orbit</th></tr>
+    <tr><td>Altitude</td><td>~35 800 km</td><td>200&#8211;2000 km</td></tr>
+    <tr><td>Period</td><td>24 hours</td><td>~90 min &#8211; 2 hours</td></tr>
+    <tr><td>Orbital speed</td><td>~3.1 km/s</td><td>~7.5&#8211;8 km/s</td></tr>
+    <tr><td>Inclination</td><td>0&#176; (equatorial)</td><td>Any (including polar)</td></tr>
+    <tr><td>Position relative to surface</td><td>Stationary</td><td>Moves across the sky</td></tr>
+    <tr><td>Coverage</td><td>Sees 1/3 of Earth (3 satellites cover globe)</td><td>Sees small area (needs many satellites)</td></tr>
 </table>
 
 <div class="exam-tip">
-    A higher orbit means a lower orbital speed but a longer orbital period. Do not confuse the two — students often incorrectly think faster orbit means shorter period at all radii. Use v = √(GM/r) and T = 2π√(r³/GM) to check.
+    A higher orbit means a lower orbital speed but a longer orbital period. Do not confuse the two &#8212; students often incorrectly think faster orbit means shorter period at all radii. Use v = &#8730;(GM/r) to confirm that v decreases as r increases, and T = 2&#960;&#8730;(r&#179;/GM) to confirm that T increases as r increases.
+</div>
+
+<h3>Total Energy of a Satellite</h3>
+<p>For a satellite in a circular orbit:</p>
+<ul>
+    <li>Kinetic energy: E<sub>k</sub> = &#189;mv&#178; = GMm/(2r)</li>
+    <li>Potential energy: E<sub>p</sub> = &#8722;GMm/r</li>
+    <li>Total energy: E<sub>total</sub> = E<sub>k</sub> + E<sub>p</sub> = &#8722;GMm/(2r)</li>
+</ul>
+<p>The total energy is <strong>negative</strong> (the satellite is bound). Moving to a higher orbit increases E<sub>total</sub> (makes it less negative), which requires energy input. The kinetic energy decreases (slower speed) but the potential energy increases by twice as much.</p>
+
+<div class="real-world">
+GPS (Global Positioning System) satellites orbit at an altitude of about 20 200 km (medium Earth orbit) with a period of 12 hours. There are 24-32 active satellites, and your phone needs signals from at least 4 to determine your position. The satellites carry atomic clocks accurate to nanoseconds &#8212; and their clocks must be corrected for both special relativistic time dilation (they run slightly slow due to their speed) and general relativistic effects (they run slightly fast due to weaker gravity). Without these corrections, GPS positions would drift by about 10 km per day.
 </div>
 
 </div>

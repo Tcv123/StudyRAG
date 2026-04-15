@@ -24,27 +24,31 @@
   .exam-tip strong { color: #b45309; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .application { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .application strong { color: #15803d; }
+  .worked-example { background: #fdf2f8; border-left: 4px solid #db2777; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .worked-example strong { color: #be185d; }
 </style>
 </head>
 <body>
 <div class="container">
 
-<h1>Module 3 — Periodic Table and Energy</h1>
+<h1>Module 3 &mdash; Periodic Table and Energy</h1>
 
 <h2>3.1 Periodicity</h2>
 
 <div class="definition">
-  <strong>Periodicity:</strong> The repeating pattern of physical and chemical properties of elements across each period of the periodic table, caused by the repeating pattern of electron configurations.
+  <strong>Periodicity:</strong> The repeating pattern of physical and chemical properties of elements across each period of the periodic table, caused by the repeating pattern of electron configurations. As each new period begins, a new principal energy level starts to fill, and the pattern of properties repeats.
 </div>
 
 <h3>Trends Across Period 3 (Na to Ar)</h3>
 
 <table>
   <tr><th>Property</th><th>Trend Across Period 3</th><th>Explanation</th></tr>
-  <tr><td>Atomic radius</td><td>Decreases Na &rarr; Ar</td><td>Increasing nuclear charge pulls electrons closer; same shielding (same number of inner shells)</td></tr>
-  <tr><td>First ionisation energy</td><td>Generally increases</td><td>Increasing nuclear charge with same shielding means more energy needed to remove an electron</td></tr>
-  <tr><td>Melting point</td><td>Increases Na&rarr;Al, then Si very high, then drops sharply for P, S, Cl, Ar</td><td>Na, Mg, Al: metallic bonding strengthens (more delocalised electrons, smaller ionic radius). Si: giant covalent (very strong). P<sub>4</sub>, S<sub>8</sub>, Cl<sub>2</sub>, Ar: simple molecular (weak London forces)</td></tr>
-  <tr><td>Electronegativity</td><td>Increases Na &rarr; Cl</td><td>Greater nuclear charge attracts bonding electrons more strongly</td></tr>
+  <tr><td>Atomic radius</td><td>Decreases Na &rarr; Ar</td><td>Increasing nuclear charge pulls electrons closer to the nucleus; shielding remains approximately constant (same number of inner shells), so the effective nuclear charge experienced by outer electrons increases.</td></tr>
+  <tr><td>First ionisation energy</td><td>Generally increases (with two anomalies)</td><td>Increasing nuclear charge with constant shielding means more energy is needed to remove an outer electron. Anomalies occur at Al (3p easier to remove than 3s) and S (paired 3p electron repulsion).</td></tr>
+  <tr><td>Melting point</td><td>Increases Na&rarr;Al, then Si very high, then drops sharply for P, S, Cl, Ar</td><td>Na, Mg, Al: metallic bonding strengthens (more delocalised electrons per atom and smaller ionic radius give stronger attraction). Si: giant covalent structure (very strong covalent bonds throughout). P<sub>4</sub>, S<sub>8</sub>, Cl<sub>2</sub>, Ar: simple molecular structures (weak London forces between molecules; strength depends on M<sub>r</sub>).</td></tr>
+  <tr><td>Electronegativity</td><td>Increases Na &rarr; Cl (Ar has no value as it does not form bonds)</td><td>Greater nuclear charge attracts bonding electrons more strongly. Same shielding across the period.</td></tr>
 </table>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -64,97 +68,104 @@
   <line x1="67" y1="167" x2="73" y2="167" stroke="#64748b" stroke-width="0.5"/>
   <text x="60" y="127" text-anchor="end" font-family="system-ui" font-size="8" fill="#64748b">1500</text>
   <line x1="67" y1="124" x2="73" y2="124" stroke="#64748b" stroke-width="0.5"/>
-  <!-- Data points: Na=496, Mg=738, Al=578, Si=789, P=1012, S=1000, Cl=1251, Ar=1521 -->
-  <!-- Scale: 0 at y=250, 1600 at y=40 => y = 250 - (value/1600)*210 -->
-  <!-- Na: 496 => y=250-65=185 -->
+  <!-- Data points -->
   <circle cx="120" cy="185" r="5" fill="#1a73e8"/>
   <text x="120" y="200" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">Na</text>
   <text x="120" y="178" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">496</text>
-  <!-- Mg: 738 => y=250-97=153 -->
   <circle cx="170" cy="153" r="5" fill="#1a73e8"/>
   <text x="170" y="200" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">Mg</text>
   <text x="170" y="146" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">738</text>
-  <!-- Al: 578 => y=250-76=174 (DROP) -->
   <circle cx="220" cy="174" r="5" fill="#DC2626"/>
   <text x="220" y="200" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Al</text>
   <text x="220" y="167" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">578</text>
-  <!-- Si: 789 => y=250-103=147 -->
   <circle cx="270" cy="147" r="5" fill="#1a73e8"/>
   <text x="270" y="200" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">Si</text>
   <text x="270" y="140" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">789</text>
-  <!-- P: 1012 => y=250-133=117 -->
   <circle cx="320" cy="117" r="5" fill="#1a73e8"/>
   <text x="320" y="200" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">P</text>
   <text x="320" y="110" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">1012</text>
-  <!-- S: 1000 => y=250-131=119 (DROP) -->
   <circle cx="370" cy="119" r="5" fill="#DC2626"/>
   <text x="370" y="200" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">S</text>
   <text x="370" y="112" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">1000</text>
-  <!-- Cl: 1251 => y=250-164=86 -->
   <circle cx="420" cy="86" r="5" fill="#1a73e8"/>
   <text x="420" y="200" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">Cl</text>
   <text x="420" y="79" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">1251</text>
   <!-- Connecting line -->
   <polyline points="120,185 170,153 220,174 270,147 320,117 370,119 420,86" fill="none" stroke="#1a73e8" stroke-width="1.5" stroke-linejoin="round"/>
   <!-- Anomaly annotations -->
-  <!-- Mg->Al drop -->
   <line x1="195" y1="155" x2="195" y2="60" stroke="#DC2626" stroke-width="0.7" stroke-dasharray="3,2"/>
   <rect x="130" y="42" width="130" height="28" rx="4" fill="#fef2f2" stroke="#DC2626" stroke-width="0.6"/>
-  <text x="195" y="54" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Mg&#8594;Al: 3p electron is</text>
+  <text x="195" y="54" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Mg&rarr;Al: 3p electron is</text>
   <text x="195" y="65" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">easier to remove (shielded by 3s)</text>
-  <!-- P->S drop -->
   <line x1="345" y1="117" x2="345" y2="56" stroke="#DC2626" stroke-width="0.7" stroke-dasharray="3,2"/>
   <rect x="310" y="42" width="130" height="28" rx="4" fill="#fef2f2" stroke="#DC2626" stroke-width="0.6"/>
-  <text x="375" y="54" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">P&#8594;S: paired 3p electron</text>
+  <text x="375" y="54" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">P&rarr;S: paired 3p electron</text>
   <text x="375" y="65" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">repulsion makes removal easier</text>
 </svg>
 </div>
 
-<h3>First Ionisation Energy Anomalies</h3>
+<h3>First Ionisation Energy &mdash; Definition and Anomalies</h3>
 
 <div class="definition">
-  <strong>First ionisation energy:</strong> The energy required to remove one electron from each atom in one mole of gaseous atoms to form one mole of gaseous 1+ ions.
+  <strong>First ionisation energy:</strong> The energy required to remove one electron from each atom in one mole of gaseous atoms to form one mole of gaseous 1+ ions. This must be learned as a precise definition for exam questions.
 </div>
 
 <div class="equation">
   X(g) &rarr; X<sup>+</sup>(g) + e<sup>&minus;</sup>
 </div>
 
+<p><strong>Factors affecting ionisation energy:</strong></p>
+<ul>
+  <li><strong>Nuclear charge:</strong> More protons &rarr; stronger attraction &rarr; higher IE</li>
+  <li><strong>Electron shielding:</strong> More inner shells &rarr; outer electrons experience less nuclear charge &rarr; lower IE</li>
+  <li><strong>Distance from nucleus:</strong> Electrons further from nucleus are held less tightly &rarr; lower IE</li>
+  <li><strong>Sub-shell and pairing:</strong> Electrons in higher-energy sub-shells or paired electrons are easier to remove</li>
+</ul>
+
 <p>Two anomalies occur across Period 3:</p>
 <ul>
-  <li><strong>Mg &rarr; Al drop:</strong> Al has its outer electron in a 3p orbital, which is higher in energy and further from the nucleus than the 3s orbital of Mg. The 3p electron is also partially shielded by the 3s<sup>2</sup> electrons. Less energy is needed to remove it.</li>
-  <li><strong>P &rarr; S drop:</strong> Sulfur has a paired electron in one of its 3p orbitals (3p<sup>4</sup>). The repulsion between the two paired electrons makes it easier to remove one compared to removing an unpaired electron from phosphorus (3p<sup>3</sup>, which has a stable half-filled arrangement).</li>
+  <li><strong>Mg &rarr; Al drop:</strong> Al (1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>1</sup>) has its outer electron in a 3p orbital, which is higher in energy and further from the nucleus than the 3s orbital of Mg. The 3p electron is also partially shielded by the 3s<sup>2</sup> electrons. Therefore less energy is needed to remove it.</li>
+  <li><strong>P &rarr; S drop:</strong> Sulfur (3p<sup>4</sup>) has one pair of electrons in one of its 3p orbitals. The repulsion between the two paired electrons in the same orbital makes it easier to remove one compared to removing an unpaired electron from phosphorus (3p<sup>3</sup>, which has a stable half-filled arrangement with all electrons unpaired).</li>
 </ul>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> When explaining ionisation energy anomalies, always mention the specific sub-shell involved, and explain the factor (shielding by a sub-shell or electron pairing repulsion) that makes removal easier.
+  <strong>Exam Tip:</strong> When explaining ionisation energy anomalies, you <em>must</em> mention: (1) the specific sub-shell involved (e.g. "3p" not just "outer shell"), (2) the specific factor making removal easier (shielding by 3s<sup>2</sup> for Al, or electron pairing repulsion for S), and (3) compare to the previous element explicitly. Generic answers about "more protons" will not score marks for anomaly questions.
 </div>
 
-<h2>3.2 Group 2 — The Alkaline Earth Metals</h2>
+<h3>Successive Ionisation Energies</h3>
+<p>Successive ionisation energies always increase because each electron is removed from an increasingly positive ion (greater attraction). A large jump in IE occurs when an electron is removed from a shell closer to the nucleus (an inner shell), because these electrons experience much less shielding and are much closer to the nucleus. The pattern of jumps in successive IEs can be used to determine the group of an element.</p>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Using Successive IEs:</strong><br><br>
+  An element has successive IEs (kJ mol<sup>&minus;1</sup>): 578, 1817, 2745, 11578, 14831...<br><br>
+  There is a large jump between the 3rd and 4th IEs. This means removing the 4th electron requires much more energy &mdash; it comes from a new, inner shell with much less shielding. The element has 3 electrons in its outer shell, so it is in <strong>Group 3</strong>. (The element is aluminium.)
+</div>
+
+<h2>3.2 Group 2 &mdash; The Alkaline Earth Metals</h2>
 
 <h3>Trends Down Group 2</h3>
 <table>
   <tr><th>Property</th><th>Trend</th><th>Explanation</th></tr>
-  <tr><td>Atomic radius</td><td>Increases</td><td>Additional electron shells</td></tr>
-  <tr><td>First ionisation energy</td><td>Decreases</td><td>Outer electrons are further from the nucleus with more shielding, despite increasing nuclear charge</td></tr>
-  <tr><td>Reactivity</td><td>Increases</td><td>Outer electrons are lost more easily (lower ionisation energy)</td></tr>
-  <tr><td>Melting point</td><td>Generally decreases (with some anomalies)</td><td>Metallic bond weakens as ionic radius increases and charge density decreases</td></tr>
+  <tr><td>Atomic radius</td><td>Increases</td><td>Additional electron shells increase the distance of outer electrons from the nucleus</td></tr>
+  <tr><td>First ionisation energy</td><td>Decreases</td><td>Outer electrons are further from the nucleus with more shielding from inner shells, despite increasing nuclear charge. The shielding and distance effects outweigh the extra protons.</td></tr>
+  <tr><td>Reactivity</td><td>Increases</td><td>Outer electrons are lost more easily (lower ionisation energy), so the metals are oxidised more readily</td></tr>
+  <tr><td>Melting point</td><td>Generally decreases (with anomalies due to crystal structure changes)</td><td>Metallic bond weakens as ionic radius increases and charge density decreases, so the attraction between cations and the delocalised electron sea is weaker</td></tr>
 </table>
 
 <h3>Reactions of Group 2 Elements</h3>
 
-<p><strong>With water:</strong> Group 2 metals react with water to form a metal hydroxide and hydrogen gas. Reactivity increases down the group.</p>
+<p><strong>With water:</strong> Group 2 metals react with water to form a metal hydroxide and hydrogen gas. Reactivity increases down the group because ionisation energy decreases.</p>
 <div class="equation">
-  Mg(s) + 2H<sub>2</sub>O(l) &rarr; Mg(OH)<sub>2</sub>(aq) + H<sub>2</sub>(g) &nbsp;&nbsp;(very slow with cold water)
+  Mg(s) + 2H<sub>2</sub>O(l) &rarr; Mg(OH)<sub>2</sub>(aq) + H<sub>2</sub>(g) &nbsp;&nbsp;(very slow with cold water; reacts vigorously with steam)
 </div>
 <div class="equation">
-  Ca(s) + 2H<sub>2</sub>O(l) &rarr; Ca(OH)<sub>2</sub>(aq) + H<sub>2</sub>(g) &nbsp;&nbsp;(steady reaction)
+  Ca(s) + 2H<sub>2</sub>O(l) &rarr; Ca(OH)<sub>2</sub>(aq) + H<sub>2</sub>(g) &nbsp;&nbsp;(steady reaction; fizzing observed)
 </div>
 <div class="equation">
-  Ba(s) + 2H<sub>2</sub>O(l) &rarr; Ba(OH)<sub>2</sub>(aq) + H<sub>2</sub>(g) &nbsp;&nbsp;(vigorous)
+  Ba(s) + 2H<sub>2</sub>O(l) &rarr; Ba(OH)<sub>2</sub>(aq) + H<sub>2</sub>(g) &nbsp;&nbsp;(vigorous; strongly exothermic)
 </div>
 
-<p><strong>With dilute acid:</strong> All Group 2 metals react vigorously with acids.</p>
+<p><strong>With dilute acid:</strong> All Group 2 metals react vigorously with acids to produce a salt and hydrogen.</p>
 <div class="equation">
   Mg(s) + 2HCl(aq) &rarr; MgCl<sub>2</sub>(aq) + H<sub>2</sub>(g)
 </div>
@@ -164,65 +175,90 @@
 <div class="equation">
   CaCO<sub>3</sub>(s) &rarr; CaO(s) + CO<sub>2</sub>(g)
 </div>
-<p>The temperature required for decomposition increases down the group. This is because larger cations polarise the carbonate ion less, making it harder to decompose. MgCO<sub>3</sub> decomposes at a relatively low temperature, while BaCO<sub>3</sub> requires a very high temperature.</p>
+<p>The temperature required for decomposition <strong>increases</strong> down the group. This is because larger cations have a lower charge density and therefore polarise the carbonate ion less. The less the carbonate ion is distorted, the harder it is to break the C&ndash;O bond and release CO<sub>2</sub>. MgCO<sub>3</sub> decomposes at a relatively low temperature (~540 &deg;C), while BaCO<sub>3</sub> requires a very high temperature (~1360 &deg;C).</p>
+
+<p>The same trend applies to Group 2 nitrates (decomposition temperature increases down the group), but nitrates decompose to give the metal oxide, nitrogen dioxide, and oxygen:</p>
+<div class="equation">
+  2Ca(NO<sub>3</sub>)<sub>2</sub>(s) &rarr; 2CaO(s) + 4NO<sub>2</sub>(g) + O<sub>2</sub>(g)
+</div>
+
+<div class="application">
+  <strong>Real-World Application:</strong> The thermal decomposition of CaCO<sub>3</sub> (limestone) is a key industrial process. It produces quicklime (CaO), which is used to make cement, neutralise acidic soils, and treat acidic waste gases in power station flue gas desulfurisation. Annually, billions of tonnes of limestone are processed worldwide for construction materials.
+</div>
 
 <h3>Flame Tests for Group 2</h3>
 <table>
-  <tr><th>Element</th><th>Flame Colour</th></tr>
-  <tr><td>Calcium</td><td>Brick red / orange-red</td></tr>
+  <tr><th>Element</th><th>Flame Colour</th><th>Explanation</th></tr>
+  <tr><td>Calcium</td><td>Brick red / orange-red</td><td rowspan="3">The heat of the flame excites electrons to higher energy levels. When they fall back to their ground state, they emit light of a characteristic wavelength (colour). Each element has unique energy level spacings, producing a unique flame colour.</td></tr>
   <tr><td>Strontium</td><td>Crimson red</td></tr>
   <tr><td>Barium</td><td>Green</td></tr>
 </table>
 
-<h3>Solubility Trends</h3>
-<p><strong>Hydroxides:</strong> Solubility increases down Group 2 (Mg(OH)<sub>2</sub> is sparingly soluble; Ba(OH)<sub>2</sub> is soluble). <strong>Sulfates:</strong> Solubility decreases down Group 2 (MgSO<sub>4</sub> is soluble; BaSO<sub>4</sub> is insoluble).</p>
+<div class="application">
+  <strong>Real-World Application:</strong> Flame colours from Group 2 metals are exploited in fireworks and flares. Strontium compounds produce vivid red fireworks, while barium compounds produce green. Magnesium powder burns with an intense white light and is used in flares and sparklers. Calcium compounds produce orange effects.
+</div>
 
-<h2>3.3 Group 7 — The Halogens</h2>
+<h3>Solubility Trends</h3>
+<p><strong>Hydroxides:</strong> Solubility <strong>increases</strong> down Group 2. Mg(OH)<sub>2</sub> is sparingly soluble (used as "milk of magnesia" antacid); Ca(OH)<sub>2</sub> is slightly soluble ("limewater"); Ba(OH)<sub>2</sub> is soluble.</p>
+<p><strong>Sulfates:</strong> Solubility <strong>decreases</strong> down Group 2. MgSO<sub>4</sub> is soluble (Epsom salts); CaSO<sub>4</sub> is sparingly soluble (gypsum); BaSO<sub>4</sub> is insoluble (used in "barium meals" for X-ray imaging of the gut because it is opaque to X-rays and is non-toxic due to its extreme insolubility).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Remember the solubility trends as opposites: hydroxides get MORE soluble going down, sulfates get LESS soluble going down. The insolubility of BaSO<sub>4</sub> is the basis of the test for sulfate ions.
+</div>
+
+<h2>3.3 Group 7 &mdash; The Halogens</h2>
 
 <h3>Trends Down Group 7</h3>
 <table>
   <tr><th>Property</th><th>Trend</th><th>Explanation</th></tr>
-  <tr><td>Boiling point</td><td>Increases (F<sub>2</sub> and Cl<sub>2</sub> gases, Br<sub>2</sub> liquid, I<sub>2</sub> solid)</td><td>More electrons means stronger London dispersion forces</td></tr>
-  <tr><td>Electronegativity</td><td>Decreases</td><td>Bonding pair is further from the nucleus with more shielding</td></tr>
-  <tr><td>Reactivity (as oxidising agents)</td><td>Decreases</td><td>Larger atoms gain electrons less readily; the incoming electron is further from the nucleus</td></tr>
+  <tr><td>Physical state at RTP</td><td>F<sub>2</sub> and Cl<sub>2</sub> are gases, Br<sub>2</sub> is a liquid, I<sub>2</sub> is a solid</td><td>More electrons means stronger London dispersion forces between molecules, requiring more energy to overcome</td></tr>
+  <tr><td>Colour</td><td>F<sub>2</sub> pale yellow, Cl<sub>2</sub> yellow-green, Br<sub>2</sub> red-brown, I<sub>2</sub> purple/grey</td><td>Colour deepens down the group</td></tr>
+  <tr><td>Electronegativity</td><td>Decreases</td><td>Bonding pair is further from the nucleus with more shielding in larger atoms</td></tr>
+  <tr><td>Reactivity (as oxidising agents)</td><td>Decreases</td><td>Larger atoms gain electrons less readily because the incoming electron is further from the nucleus and more shielded by inner electrons, resulting in a weaker attraction</td></tr>
 </table>
 
 <h3>Displacement Reactions</h3>
-<p>A more reactive halogen will displace a less reactive halide ion from solution. This demonstrates the trend in oxidising ability.</p>
+<p>A more reactive halogen will displace (oxidise) a less reactive halide ion from solution. This demonstrates the trend in oxidising ability: Cl<sub>2</sub> &gt; Br<sub>2</sub> &gt; I<sub>2</sub>.</p>
 <table>
   <tr><th></th><th>KCl(aq)</th><th>KBr(aq)</th><th>KI(aq)</th></tr>
-  <tr><td>Cl<sub>2</sub>(aq)</td><td>No reaction</td><td>Cl<sub>2</sub> displaces Br<sup>&minus;</sup> (orange)</td><td>Cl<sub>2</sub> displaces I<sup>&minus;</sup> (brown)</td></tr>
-  <tr><td>Br<sub>2</sub>(aq)</td><td>No reaction</td><td>No reaction</td><td>Br<sub>2</sub> displaces I<sup>&minus;</sup> (brown)</td></tr>
-  <tr><td>I<sub>2</sub>(aq)</td><td>No reaction</td><td>No reaction</td><td>No reaction</td></tr>
+  <tr><td><strong>Cl<sub>2</sub>(aq)</strong></td><td>No reaction</td><td>Cl<sub>2</sub> displaces Br<sup>&minus;</sup>; solution turns orange</td><td>Cl<sub>2</sub> displaces I<sup>&minus;</sup>; solution turns brown</td></tr>
+  <tr><td><strong>Br<sub>2</sub>(aq)</strong></td><td>No reaction</td><td>No reaction</td><td>Br<sub>2</sub> displaces I<sup>&minus;</sup>; solution turns brown</td></tr>
+  <tr><td><strong>I<sub>2</sub>(aq)</strong></td><td>No reaction</td><td>No reaction</td><td>No reaction</td></tr>
 </table>
 
 <div class="equation">
   Cl<sub>2</sub>(aq) + 2KBr(aq) &rarr; 2KCl(aq) + Br<sub>2</sub>(aq)
 </div>
+<p>Ionic equation: Cl<sub>2</sub>(aq) + 2Br<sup>&minus;</sup>(aq) &rarr; 2Cl<sup>&minus;</sup>(aq) + Br<sub>2</sub>(aq)</p>
+<p>Chlorine is the oxidising agent (it is reduced from 0 to &minus;1); bromide is the reducing agent (it is oxidised from &minus;1 to 0).</p>
 
 <h3>Disproportionation</h3>
 
 <div class="definition">
-  <strong>Disproportionation:</strong> A reaction in which the same element is simultaneously oxidised and reduced.
+  <strong>Disproportionation:</strong> A reaction in which the same element is simultaneously oxidised and reduced &mdash; the element starts in one oxidation state and ends up in two different oxidation states.
 </div>
 
 <p>Chlorine reacts with cold dilute sodium hydroxide in a disproportionation reaction:</p>
 <div class="equation">
   Cl<sub>2</sub>(aq) + 2NaOH(aq) &rarr; NaCl(aq) + NaClO(aq) + H<sub>2</sub>O(l)
 </div>
-<p>Chlorine starts at oxidation state 0. In NaCl it is &minus;1 (reduced) and in NaClO it is +1 (oxidised). Sodium hypochlorite (NaClO) is the active ingredient in bleach and is used in water treatment to kill bacteria.</p>
+<p>Chlorine starts at oxidation state <strong>0</strong>. In NaCl it is <strong>&minus;1</strong> (reduced) and in NaClO it is <strong>+1</strong> (oxidised). This is disproportionation because the same element (Cl) is both oxidised and reduced.</p>
+
+<div class="application">
+  <strong>Real-World Application:</strong> This reaction is the basis of household bleach production. Sodium hypochlorite (NaClO) is the active disinfecting agent in bleach. Chlorine is also added to water supplies in very small quantities (water chlorination) to kill pathogenic bacteria, making tap water safe to drink. This practice has prevented millions of deaths from waterborne diseases like cholera and typhoid. The benefits of water chlorination in preventing disease far outweigh the risks of toxic chlorine by-products (such as chlorinated hydrocarbons) at the very low concentrations used.
+</div>
 
 <h3>Tests for Halide Ions</h3>
-<p>Add dilute nitric acid (to remove interfering ions such as carbonate) then silver nitrate solution:</p>
+<p>Add dilute nitric acid first (to remove interfering ions such as carbonate and sulfite that might form precipitates with silver), then add silver nitrate solution (AgNO<sub>3</sub>):</p>
 <table>
-  <tr><th>Halide Ion</th><th>Precipitate Colour</th><th>Precipitate Formula</th><th>Solubility in NH<sub>3</sub></th></tr>
-  <tr><td>Cl<sup>&minus;</sup></td><td>White</td><td>AgCl</td><td>Dissolves in dilute NH<sub>3</sub></td></tr>
-  <tr><td>Br<sup>&minus;</sup></td><td>Cream</td><td>AgBr</td><td>Dissolves in concentrated NH<sub>3</sub></td></tr>
-  <tr><td>I<sup>&minus;</sup></td><td>Yellow</td><td>AgI</td><td>Insoluble in NH<sub>3</sub></td></tr>
+  <tr><th>Halide Ion</th><th>Precipitate Colour</th><th>Precipitate Formula</th><th>Solubility in Ammonia (NH<sub>3</sub>)</th></tr>
+  <tr><td>Cl<sup>&minus;</sup></td><td>White</td><td>AgCl</td><td>Dissolves in <strong>dilute</strong> NH<sub>3</sub></td></tr>
+  <tr><td>Br<sup>&minus;</sup></td><td>Cream</td><td>AgBr</td><td>Dissolves in <strong>concentrated</strong> NH<sub>3</sub> only</td></tr>
+  <tr><td>I<sup>&minus;</sup></td><td>Yellow</td><td>AgI</td><td><strong>Insoluble</strong> in NH<sub>3</sub> (does not dissolve)</td></tr>
 </table>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> Always state that dilute nitric acid is added first when describing the silver nitrate test. This prevents false positives from carbonate or sulfate ions.
+  <strong>Exam Tip:</strong> Always state that <strong>dilute nitric acid</strong> is added first when describing the silver nitrate test. This prevents false positives from carbonate or sulfite ions (which would also form white precipitates with silver). If the precipitate colours are too similar to distinguish (white vs cream), use the ammonia solubility test to confirm.
 </div>
 
 <h2>3.4 Qualitative Analysis</h2>
@@ -230,80 +266,71 @@
 <h3>Tests for Ions</h3>
 <table>
   <tr><th>Test For</th><th>Reagent / Method</th><th>Positive Result</th></tr>
-  <tr><td>Carbonate (CO<sub>3</sub><sup>2&minus;</sup>)</td><td>Add dilute acid</td><td>Effervescence; gas turns limewater milky (CO<sub>2</sub>)</td></tr>
-  <tr><td>Sulfate (SO<sub>4</sub><sup>2&minus;</sup>)</td><td>Add dilute HCl then BaCl<sub>2</sub>(aq)</td><td>White precipitate of BaSO<sub>4</sub></td></tr>
-  <tr><td>Ammonium (NH<sub>4</sub><sup>+</sup>)</td><td>Add NaOH(aq) and warm</td><td>Pungent gas turns damp red litmus blue (NH<sub>3</sub>)</td></tr>
+  <tr><td>Carbonate (CO<sub>3</sub><sup>2&minus;</sup>)</td><td>Add dilute acid</td><td>Effervescence; gas turns limewater milky (CO<sub>2</sub> reacts with Ca(OH)<sub>2</sub> to form CaCO<sub>3</sub> precipitate)</td></tr>
+  <tr><td>Sulfate (SO<sub>4</sub><sup>2&minus;</sup>)</td><td>Add dilute HCl then BaCl<sub>2</sub>(aq)</td><td>White precipitate of BaSO<sub>4</sub> (insoluble)</td></tr>
+  <tr><td>Ammonium (NH<sub>4</sub><sup>+</sup>)</td><td>Add NaOH(aq) and warm gently</td><td>Pungent gas produced; turns damp red litmus paper blue (NH<sub>3</sub>)</td></tr>
 </table>
 
 <h2>3.5 Enthalpy Changes</h2>
 
 <div class="definition">
-  <strong>Enthalpy change (&Delta;H):</strong> The heat energy change at constant pressure during a chemical reaction. Exothermic reactions have negative &Delta;H (heat released); endothermic reactions have positive &Delta;H (heat absorbed).
+  <strong>Enthalpy change (&Delta;H):</strong> The heat energy transferred at constant pressure during a chemical reaction. Measured in kJ mol<sup>&minus;1</sup>. <strong>Exothermic</strong> reactions have negative &Delta;H (heat released to surroundings; temperature of surroundings rises). <strong>Endothermic</strong> reactions have positive &Delta;H (heat absorbed from surroundings; temperature of surroundings falls).
 </div>
 
 <h3>Standard Enthalpy Definitions</h3>
+<p>Standard conditions: 100 kPa pressure, stated temperature (usually 298 K), substances in their standard states. The symbol &deg; indicates standard conditions.</p>
 <table>
-  <tr><th>Term</th><th>Symbol</th><th>Definition</th></tr>
-  <tr><td>Standard enthalpy of combustion</td><td>&Delta;<sub>c</sub>H&deg;</td><td>Enthalpy change when one mole of a substance undergoes complete combustion under standard conditions (298 K, 100 kPa), all reactants and products in standard states</td></tr>
-  <tr><td>Standard enthalpy of formation</td><td>&Delta;<sub>f</sub>H&deg;</td><td>Enthalpy change when one mole of a compound is formed from its elements in their standard states under standard conditions</td></tr>
-  <tr><td>Standard enthalpy of neutralisation</td><td>&Delta;<sub>neut</sub>H&deg;</td><td>Enthalpy change when an acid and a base react to form one mole of water under standard conditions</td></tr>
+  <tr><th>Term</th><th>Symbol</th><th>Definition (learn precisely)</th></tr>
+  <tr><td>Standard enthalpy of combustion</td><td>&Delta;<sub>c</sub>H&deg;</td><td>The enthalpy change when <strong>one mole</strong> of a substance undergoes <strong>complete combustion</strong> under standard conditions, with all reactants and products in standard states</td></tr>
+  <tr><td>Standard enthalpy of formation</td><td>&Delta;<sub>f</sub>H&deg;</td><td>The enthalpy change when <strong>one mole</strong> of a compound is formed from its <strong>elements in their standard states</strong> under standard conditions</td></tr>
+  <tr><td>Standard enthalpy of neutralisation</td><td>&Delta;<sub>neut</sub>H&deg;</td><td>The enthalpy change when an acid and a base react to form <strong>one mole of water</strong> under standard conditions</td></tr>
+  <tr><td>Standard enthalpy of atomisation</td><td>&Delta;<sub>at</sub>H&deg;</td><td>The enthalpy change when <strong>one mole of gaseous atoms</strong> is formed from the element in its standard state</td></tr>
 </table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> These definitions <em>must</em> be learned precisely. Common errors: forgetting "one mole," forgetting "standard states," forgetting "gaseous atoms" for atomisation. The standard enthalpy of formation of any element in its standard state is zero by definition. &Delta;<sub>c</sub>H is always negative (exothermic). &Delta;<sub>at</sub>H is always positive (endothermic &mdash; bonds must be broken).
+</div>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 500 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Enthalpy Profile Diagrams</text>
   <!-- EXOTHERMIC (left side) -->
-  <text x="140" y="45" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Exothermic (&#916;H &lt; 0)</text>
-  <!-- Axes -->
+  <text x="140" y="45" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Exothermic (&Delta;H &lt; 0)</text>
   <line x1="40" y1="265" x2="250" y2="265" stroke="#1a1a2e" stroke-width="1"/>
   <line x1="40" y1="265" x2="40" y2="55" stroke="#1a1a2e" stroke-width="1"/>
   <text x="25" y="160" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e" transform="rotate(-90,25,160)">Enthalpy (H)</text>
   <text x="145" y="280" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Progress of reaction</text>
-  <!-- Reactants level -->
   <line x1="50" y1="110" x2="110" y2="110" stroke="#1a73e8" stroke-width="2"/>
   <text x="80" y="103" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Reactants</text>
-  <!-- Products level (lower) -->
   <line x1="170" y1="210" x2="240" y2="210" stroke="#16A34A" stroke-width="2"/>
   <text x="205" y="225" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Products</text>
-  <!-- Curve over the top (activation energy hump) -->
   <path d="M110,110 Q130,105 145,70 Q160,105 170,210" fill="none" stroke="#D97706" stroke-width="1.5"/>
-  <!-- Ea arrow -->
-  <line x1="145" y1="110" x2="145" y2="70" stroke="#D97706" stroke-width="1" stroke-dasharray="3,2"/>
-  <text x="160" y="85" font-family="system-ui" font-size="8" fill="#D97706">E&#8336;</text>
   <line x1="148" y1="108" x2="148" y2="73" stroke="#D97706" stroke-width="0.8" marker-start="url(#arrSt)" marker-end="url(#arrEn)"/>
+  <text x="160" y="85" font-family="system-ui" font-size="8" fill="#D97706">E&#8336;</text>
   <defs>
     <marker id="arrSt" markerWidth="5" markerHeight="4" refX="2.5" refY="2" orient="auto"><polygon points="5 0, 0 2, 5 4" fill="#D97706"/></marker>
     <marker id="arrEn" markerWidth="5" markerHeight="4" refX="2.5" refY="2" orient="auto"><polygon points="0 0, 5 2, 0 4" fill="#D97706"/></marker>
   </defs>
-  <!-- Delta H arrow (down) -->
   <line x1="250" y1="110" x2="250" y2="210" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrRedDn)"/>
   <defs><marker id="arrRedDn" markerWidth="6" markerHeight="4" refX="3" refY="2" orient="auto"><polygon points="0 0, 6 2, 0 4" fill="#DC2626"/></marker></defs>
-  <text x="265" y="165" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">&#916;H</text>
+  <text x="265" y="165" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">&Delta;H</text>
   <text x="265" y="177" font-family="system-ui" font-size="8" fill="#DC2626">(&minus;ve)</text>
   <!-- ENDOTHERMIC (right side) -->
-  <text x="385" y="45" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Endothermic (&#916;H &gt; 0)</text>
-  <!-- Axes -->
+  <text x="385" y="45" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Endothermic (&Delta;H &gt; 0)</text>
   <line x1="275" y1="265" x2="485" y2="265" stroke="#1a1a2e" stroke-width="1"/>
   <line x1="275" y1="265" x2="275" y2="55" stroke="#1a1a2e" stroke-width="1"/>
   <text x="260" y="160" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e" transform="rotate(-90,260,160)">Enthalpy (H)</text>
   <text x="380" y="280" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Progress of reaction</text>
-  <!-- Reactants level (lower) -->
   <line x1="285" y1="210" x2="345" y2="210" stroke="#1a73e8" stroke-width="2"/>
   <text x="315" y="225" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Reactants</text>
-  <!-- Products level (higher) -->
   <line x1="405" y1="110" x2="475" y2="110" stroke="#16A34A" stroke-width="2"/>
   <text x="440" y="103" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Products</text>
-  <!-- Curve over the top -->
   <path d="M345,210 Q365,205 380,70 Q395,105 405,110" fill="none" stroke="#D97706" stroke-width="1.5"/>
-  <!-- Ea arrow -->
-  <line x1="380" y1="210" x2="380" y2="70" stroke="#D97706" stroke-width="0.8" stroke-dasharray="3,2"/>
   <text x="393" y="130" font-family="system-ui" font-size="8" fill="#D97706">E&#8336;</text>
-  <!-- Delta H arrow (up) -->
   <line x1="485" y1="210" x2="485" y2="110" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrBluUp)"/>
   <defs><marker id="arrBluUp" markerWidth="6" markerHeight="4" refX="3" refY="2" orient="auto"><polygon points="0 0, 6 2, 0 4" fill="#1a73e8"/></marker></defs>
-  <text x="497" y="165" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">&#916;H</text>
+  <text x="497" y="165" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">&Delta;H</text>
   <text x="497" y="177" font-family="system-ui" font-size="8" fill="#1a73e8">(+ve)</text>
-  <!-- Dashed level lines -->
   <line x1="345" y1="210" x2="490" y2="210" stroke="#64748b" stroke-width="0.5" stroke-dasharray="3,3"/>
   <line x1="110" y1="110" x2="255" y2="110" stroke="#64748b" stroke-width="0.5" stroke-dasharray="3,3"/>
 </svg>
@@ -314,19 +341,29 @@
 <div class="equation">
   q = mc&Delta;T
 </div>
-<p>Where q = heat energy (J), m = mass of solution (g), c = specific heat capacity (4.18 J g<sup>&minus;1</sup> K<sup>&minus;1</sup> for water), &Delta;T = temperature change (K or &deg;C). To find the enthalpy change per mole, divide q by the number of moles of the limiting reagent.</p>
+<p>Where q = heat energy transferred (J), m = mass of solution being heated (g), c = specific heat capacity (4.18 J g<sup>&minus;1</sup> K<sup>&minus;1</sup> for water), &Delta;T = temperature change (K or &deg;C &mdash; the magnitude is the same). To find the enthalpy change per mole, divide q by the number of moles of the limiting reagent and express with the correct sign.</p>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Calorimetry Calculation:</strong><br><br>
+  50.0 cm&sup3; of 1.00 mol dm<sup>&minus;3</sup> HCl is mixed with 50.0 cm&sup3; of 1.00 mol dm<sup>&minus;3</sup> NaOH. The temperature rises by 6.8 &deg;C. Calculate &Delta;<sub>neut</sub>H.<br><br>
+  <strong>Step 1:</strong> Total volume = 100.0 cm&sup3;, so mass = 100.0 g (assuming density = 1.00 g cm<sup>&minus;3</sup>)<br>
+  <strong>Step 2:</strong> q = mc&Delta;T = 100.0 &times; 4.18 &times; 6.8 = 2842 J = 2.84 kJ<br>
+  <strong>Step 3:</strong> Moles of HCl = 1.00 &times; 50.0/1000 = 0.0500 mol (this equals moles of water formed)<br>
+  <strong>Step 4:</strong> &Delta;<sub>neut</sub>H = &minus;2.84 / 0.0500 = <strong>&minus;56.8 kJ mol<sup>&minus;1</sup></strong><br>
+  (Negative because exothermic &mdash; temperature rose.)
+</div>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> In calorimetry calculations, assume the density of the solution is 1.00 g cm<sup>&minus;3</sup> and the specific heat capacity is 4.18 J g<sup>&minus;1</sup> K<sup>&minus;1</sup> (same as water) unless told otherwise. Remember that calorimetry gives inaccurate results because of heat loss to the surroundings.
+  <strong>Exam Tip:</strong> In calorimetry calculations, always assume the density of the solution is 1.00 g cm<sup>&minus;3</sup> and the specific heat capacity is 4.18 J g<sup>&minus;1</sup> K<sup>&minus;1</sup> (same as water) unless told otherwise. Use the <em>total</em> volume of solution (both reactants combined) when calculating mass. Calorimetry typically gives inaccurate results because of heat loss to the surroundings &mdash; the experimental value is always less exothermic than the true value.
 </div>
 
 <h3>Hess's Law</h3>
 
 <div class="definition">
-  <strong>Hess's Law:</strong> The total enthalpy change for a reaction is independent of the route taken, provided the initial and final conditions are the same.
+  <strong>Hess's Law:</strong> The total enthalpy change for a reaction is independent of the route taken, provided the initial and final conditions are the same. This is a consequence of the law of conservation of energy.
 </div>
 
-<p>Using enthalpies of formation:</p>
+<p><strong>Using enthalpies of formation:</strong></p>
 <div class="equation">
   &Delta;<sub>r</sub>H&deg; = &Sigma;&Delta;<sub>f</sub>H&deg;(products) &minus; &Sigma;&Delta;<sub>f</sub>H&deg;(reactants)
 </div>
@@ -334,188 +371,199 @@
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 500 260" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Hess's Law Cycle (Using Enthalpies of Formation)</text>
-  <!-- Top: Reactants -> Products (direct route) -->
   <rect x="30" y="55" width="160" height="32" rx="6" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.2"/>
   <text x="110" y="75" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Reactants</text>
   <rect x="310" y="55" width="160" height="32" rx="6" fill="#dcfce7" stroke="#16A34A" stroke-width="1.2"/>
   <text x="390" y="75" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Products</text>
-  <!-- Direct route arrow -->
   <line x1="190" y1="71" x2="305" y2="71" stroke="#D97706" stroke-width="2" marker-end="url(#arrHess1)"/>
   <defs><marker id="arrHess1" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#D97706"/></marker></defs>
-  <text x="248" y="63" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">&#916;&#7523;H&#176;</text>
+  <text x="248" y="63" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">&Delta;&#7523;H&deg;</text>
   <text x="248" y="50" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Route 1 (direct)</text>
-  <!-- Bottom: Elements in standard states -->
   <rect x="150" y="175" width="200" height="32" rx="6" fill="#fef3c7" stroke="#D97706" stroke-width="1.2"/>
   <text x="250" y="195" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#D97706">Elements (standard states)</text>
-  <!-- Route 2 arrows -->
-  <!-- Down from Reactants to Elements -->
   <line x1="90" y1="87" x2="180" y2="172" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrHess2)"/>
   <defs><marker id="arrHess2" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker></defs>
-  <text x="100" y="140" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">&#8722;&#931;&#916;&#7584;H&#176;</text>
+  <text x="100" y="140" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">&minus;&Sigma;&Delta;&#7584;H&deg;</text>
   <text x="100" y="152" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">(reactants)</text>
-  <!-- Up from Elements to Products -->
   <line x1="320" y1="172" x2="410" y2="87" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrHess3)"/>
   <defs><marker id="arrHess3" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker></defs>
-  <text x="400" y="140" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">+&#931;&#916;&#7584;H&#176;</text>
+  <text x="400" y="140" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">+&Sigma;&Delta;&#7584;H&deg;</text>
   <text x="400" y="152" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">(products)</text>
-  <!-- Route 2 label -->
   <text x="250" y="130" text-anchor="middle" font-family="system-ui" font-size="8" fill="#64748b">Route 2 (indirect via elements)</text>
-  <!-- Formula box -->
   <rect x="100" y="220" width="300" height="30" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="0.8"/>
-  <text x="250" y="240" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">&#916;&#7523;H&#176; = &#931;&#916;&#7584;H&#176;(products) &#8722; &#931;&#916;&#7584;H&#176;(reactants)</text>
+  <text x="250" y="240" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">&Delta;&#7523;H&deg; = &Sigma;&Delta;&#7584;H&deg;(products) &minus; &Sigma;&Delta;&#7584;H&deg;(reactants)</text>
 </svg>
 </div>
 
-<p>Using enthalpies of combustion:</p>
+<p><strong>Using enthalpies of combustion:</strong></p>
 <div class="equation">
   &Delta;<sub>r</sub>H&deg; = &Sigma;&Delta;<sub>c</sub>H&deg;(reactants) &minus; &Sigma;&Delta;<sub>c</sub>H&deg;(products)
+</div>
+<p>Note the reversal: for combustion, it is reactants minus products (the opposite of the formation equation).</p>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Hess's Law with Formation Enthalpies:</strong><br><br>
+  Calculate &Delta;<sub>r</sub>H&deg; for: CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) + 2H<sub>2</sub>O(l)<br><br>
+  Given: &Delta;<sub>f</sub>H&deg;(CH<sub>4</sub>) = &minus;74.8 kJ mol<sup>&minus;1</sup>, &Delta;<sub>f</sub>H&deg;(CO<sub>2</sub>) = &minus;393.5 kJ mol<sup>&minus;1</sup>, &Delta;<sub>f</sub>H&deg;(H<sub>2</sub>O) = &minus;285.8 kJ mol<sup>&minus;1</sup>, &Delta;<sub>f</sub>H&deg;(O<sub>2</sub>) = 0 (element)<br><br>
+  &Delta;<sub>r</sub>H&deg; = [(&minus;393.5) + 2(&minus;285.8)] &minus; [(&minus;74.8) + 2(0)]<br>
+  = [&minus;393.5 &minus; 571.6] &minus; [&minus;74.8]<br>
+  = &minus;965.1 + 74.8 = <strong>&minus;890.3 kJ mol<sup>&minus;1</sup></strong>
 </div>
 
 <h3>Bond Enthalpies</h3>
 
 <div class="definition">
-  <strong>Mean bond enthalpy:</strong> The average energy needed to break one mole of a specific type of bond in gaseous molecules, averaged across a range of different compounds.
+  <strong>Mean bond enthalpy:</strong> The average energy needed to break one mole of a specific type of bond in gaseous molecules, averaged across a range of different compounds. It is always positive (energy is required to break bonds).
 </div>
 
 <div class="equation">
-  &Delta;<sub>r</sub>H&deg; &asymp; &Sigma;(bond enthalpies broken) &minus; &Sigma;(bond enthalpies formed)
+  &Delta;<sub>r</sub>H &asymp; &Sigma;(bond enthalpies of bonds broken) &minus; &Sigma;(bond enthalpies of bonds formed)
 </div>
 
-<p>Bond enthalpy calculations are only approximate because mean bond enthalpies are averages and the exact energy depends on the molecular environment.</p>
+<p>Bond enthalpy calculations give only <strong>approximate</strong> values because mean bond enthalpies are averages &mdash; the exact energy of a bond depends on the molecular environment (what other atoms are bonded nearby). The sign convention: breaking bonds is endothermic (+), forming bonds is exothermic (&minus;).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Remember: "energy in minus energy out" or "bonds broken minus bonds formed." If the total energy to break bonds exceeds the energy released in forming bonds, the reaction is endothermic. Bond enthalpy calculations only apply to reactions where all species are in the gaseous state. This is why Hess's law with formation or combustion enthalpies gives more accurate results.
+</div>
 
 <h2>3.6 Reaction Rates</h2>
 
 <div class="definition">
-  <strong>Rate of reaction:</strong> The change in concentration of a reactant or product per unit time.
+  <strong>Rate of reaction:</strong> The change in concentration of a reactant or product per unit time, typically measured in mol dm<sup>&minus;3</sup> s<sup>&minus;1</sup>.
 </div>
 
 <h3>Collision Theory</h3>
-<p>For a reaction to occur, particles must collide with sufficient energy (greater than or equal to the activation energy, E<sub>a</sub>) and with the correct orientation. Factors that increase rate:</p>
+<p>For a reaction to occur, particles must: (1) <strong>collide</strong> with each other, (2) with <strong>sufficient energy</strong> (greater than or equal to the activation energy, E<sub>a</sub>), and (3) with the <strong>correct orientation</strong> so that reactive parts of the molecules come into contact. Factors that increase rate:</p>
 <ul>
-  <li><strong>Increasing concentration:</strong> More particles per unit volume means more frequent collisions.</li>
-  <li><strong>Increasing temperature:</strong> Particles have greater kinetic energy, so more collisions exceed E<sub>a</sub>; collision frequency also increases slightly.</li>
-  <li><strong>Increasing surface area:</strong> More particles are exposed for collision (applies to solids).</li>
-  <li><strong>Using a catalyst:</strong> Provides an alternative reaction pathway with a lower E<sub>a</sub>.</li>
+  <li><strong>Increasing concentration</strong> (or pressure for gases): More particles per unit volume means more frequent collisions per second, so more successful collisions per second.</li>
+  <li><strong>Increasing temperature:</strong> Particles have greater kinetic energy, so a significantly greater proportion of collisions exceed E<sub>a</sub>. Collision frequency also increases slightly, but the main effect is the increase in the proportion of molecules with energy &ge; E<sub>a</sub>.</li>
+  <li><strong>Increasing surface area:</strong> More particles of a solid are exposed for collision (e.g. powder reacts faster than a lump of the same mass).</li>
+  <li><strong>Using a catalyst:</strong> Provides an alternative reaction pathway with a lower E<sub>a</sub>. More particles have sufficient energy to react via this new pathway.</li>
 </ul>
 
-<h3>Boltzmann Distribution</h3>
-<p>The Boltzmann distribution shows the spread of molecular energies at a given temperature. Key features: starts at the origin, rises steeply to a peak (the most probable energy), then tails off asymptotically at high energies (never touches the x-axis). At higher temperatures, the curve shifts right, flattens, and broadens. The area under the curve (total number of molecules) remains constant. More molecules have energy greater than or equal to E<sub>a</sub>, so the rate increases.</p>
+<h3>Maxwell-Boltzmann Distribution</h3>
+<p>The Maxwell-Boltzmann distribution shows the spread of molecular kinetic energies at a given temperature. Key features that <em>must</em> be shown correctly on a diagram:</p>
+<ul>
+  <li>Starts at the origin (0,0) &mdash; no molecules have zero energy</li>
+  <li>Rises steeply to a peak (the most probable energy)</li>
+  <li>Tails off asymptotically at high energies (approaches but never touches the x-axis)</li>
+  <li>The area under the curve represents the total number of molecules and is <strong>constant</strong></li>
+</ul>
+<p>At a <strong>higher temperature</strong>: the peak shifts right and down, the curve broadens and flattens, but the total area stays the same. Crucially, a much larger proportion of molecules have energy &ge; E<sub>a</sub>, which is why even a small temperature increase causes a significant rate increase (roughly doubling the rate for every 10 K rise).</p>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 500 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Maxwell-Boltzmann Distribution</text>
-  <!-- Axes -->
   <line x1="60" y1="250" x2="470" y2="250" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="60" y1="250" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
   <polygon points="57,42 60,30 63,42" fill="#1a1a2e"/>
   <text x="30" y="145" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,30,145)">Number of molecules</text>
   <text x="270" y="275" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Kinetic energy</text>
-  <!-- Lower temperature curve (T1) - taller, narrower -->
+  <!-- T1 curve -->
   <path d="M60,250 C80,250 100,240 130,150 C145,100 155,70 170,65 C185,60 200,75 220,110 C250,165 290,220 340,238 C380,245 420,248 470,249" fill="none" stroke="#1a73e8" stroke-width="2"/>
-  <!-- Shaded area above Ea for T1 -->
   <path d="M340,238 C380,245 420,248 470,249 L470,250 L340,250 Z" fill="#1a73e8" opacity="0.12"/>
   <text x="175" y="52" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">T&#8321; (lower)</text>
-  <!-- Higher temperature curve (T2) - shorter, broader, shifted right -->
+  <!-- T2 curve -->
   <path d="M60,250 C80,249 110,242 150,195 C170,165 190,140 210,130 C230,120 250,128 270,148 C300,180 330,210 370,228 C410,240 440,245 470,247" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="6,3"/>
-  <!-- Shaded area above Ea for T2 -->
   <path d="M340,220 C360,228 380,234 400,238 C430,243 450,246 470,247 L470,250 L340,250 Z" fill="#DC2626" opacity="0.12"/>
   <text x="260" y="118" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">T&#8322; (higher)</text>
   <!-- Ea line -->
   <line x1="340" y1="250" x2="340" y2="45" stroke="#D97706" stroke-width="1.5" stroke-dasharray="5,3"/>
   <text x="340" y="40" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">E&#8336;</text>
-  <!-- Annotation: shaded area -->
   <line x1="400" y1="230" x2="430" y2="200" stroke="#64748b" stroke-width="0.7"/>
   <text x="410" y="195" font-family="system-ui" font-size="8" fill="#64748b">molecules with</text>
-  <text x="410" y="205" font-family="system-ui" font-size="8" fill="#64748b">energy &#8805; E&#8336;</text>
+  <text x="410" y="205" font-family="system-ui" font-size="8" fill="#64748b">energy &ge; E&#8336;</text>
   <!-- Key points box -->
   <rect x="70" y="80" width="175" height="72" rx="6" fill="#fff8e1" stroke="#D97706" stroke-width="0.8"/>
   <text x="157" y="95" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#b45309">At higher temperature:</text>
   <text x="80" y="110" font-family="system-ui" font-size="8" fill="#1a1a2e">- Peak shifts right and down</text>
   <text x="80" y="122" font-family="system-ui" font-size="8" fill="#1a1a2e">- Curve is broader and flatter</text>
   <text x="80" y="134" font-family="system-ui" font-size="8" fill="#1a1a2e">- Area under curve stays same</text>
-  <text x="80" y="146" font-family="system-ui" font-size="8" fill="#DC2626">- More molecules &#8805; E&#8336; &#8594; faster rate</text>
+  <text x="80" y="146" font-family="system-ui" font-size="8" fill="#DC2626">- More molecules &ge; E&#8336; &rarr; faster rate</text>
 </svg>
 </div>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> When drawing Boltzmann distributions, ensure the curve starts at the origin, the peak shifts right and down at higher temperature, and the area under both curves is equal. Label E<sub>a</sub> on the x-axis and shade the area to the right of it.
+  <strong>Exam Tip:</strong> When drawing Boltzmann distributions: (1) start at the origin, (2) the peak shifts right and down at higher temperature, (3) the area under both curves must be equal (same number of molecules), (4) the curve never touches the x-axis on the right. Label E<sub>a</sub> on the x-axis and shade the area to the right of it. When explaining the effect of temperature, state that "a significantly greater proportion of molecules have energy greater than or equal to E<sub>a</sub>, so there are more successful collisions per unit time."
 </div>
 
 <h3>Catalysts</h3>
 
 <div class="definition">
-  <strong>Catalyst:</strong> A substance that increases the rate of a reaction by providing an alternative reaction pathway with a lower activation energy, without being consumed in the reaction.
+  <strong>Catalyst:</strong> A substance that increases the rate of a reaction by providing an <strong>alternative reaction pathway with a lower activation energy</strong>, without being consumed in the overall reaction. It is regenerated at the end.
 </div>
 
-<p>On a Boltzmann distribution, a catalyst is shown by a new, lower E<sub>a</sub> line. More molecules now have energy exceeding this lower activation energy, so the rate increases. The distribution curve itself does not change.</p>
+<p>On a Boltzmann distribution, a catalyst is shown by a new, lower E<sub>a</sub> line to the left of the original. The distribution curve itself does <em>not</em> change. More molecules now have energy exceeding this lower activation energy, so the rate increases. On an enthalpy profile diagram, the catalyst produces a lower "hump" (activation energy) but the overall &Delta;H remains unchanged.</p>
+
+<p>Catalysts can be <strong>homogeneous</strong> (same phase as reactants, e.g. H<sup>+</sup> in esterification) or <strong>heterogeneous</strong> (different phase, e.g. iron in the Haber process, vanadium(V) oxide in the Contact process). Heterogeneous catalysts work by adsorbing reactant molecules onto their surface, weakening bonds and holding molecules in the correct orientation.</p>
+
+<div class="application">
+  <strong>Real-World Application:</strong> Catalysts are essential in industrial chemistry. The Haber process uses an iron catalyst at 450 &deg;C to produce ammonia for fertilisers. The Contact process uses V<sub>2</sub>O<sub>5</sub> to make sulfuric acid. Catalytic converters in cars use platinum, palladium and rhodium to convert toxic CO and NO<sub>x</sub> into harmless CO<sub>2</sub> and N<sub>2</sub>. Enzymes are biological catalysts that enable life processes at body temperature. Without catalysts, industrial chemical production would require impossibly high temperatures and be economically unviable.
+</div>
 
 <h2>3.7 Chemical Equilibrium</h2>
 
 <div class="definition">
-  <strong>Dynamic equilibrium:</strong> A state reached in a closed system when the rate of the forward reaction equals the rate of the reverse reaction. The concentrations of reactants and products remain constant but are not necessarily equal. Both reactions continue to occur.
+  <strong>Dynamic equilibrium:</strong> A state reached in a <strong>closed system</strong> when the rate of the forward reaction equals the rate of the reverse reaction. The concentrations of reactants and products remain constant (but are not necessarily equal). Both reactions continue to occur &mdash; it is "dynamic" not static.
 </div>
+
+<p>Conditions for dynamic equilibrium: (1) the system must be <strong>closed</strong> (no substances can enter or leave), (2) temperature must be <strong>constant</strong>, (3) both forward and reverse reactions are occurring at <strong>equal rates</strong>.</p>
 
 <h3>Le Chatelier's Principle</h3>
 
 <div class="definition">
-  <strong>Le Chatelier's Principle:</strong> If a system at equilibrium is subjected to a change in conditions (concentration, pressure, or temperature), the position of equilibrium shifts to counteract the change and partially restore the original conditions.
+  <strong>Le Chatelier's Principle:</strong> If a system at equilibrium is subjected to a change in conditions (concentration, pressure, or temperature), the position of equilibrium shifts in the direction that tends to counteract the change and partially restore the original conditions.
 </div>
 
 <table>
-  <tr><th>Change</th><th>Effect on Equilibrium</th><th>Effect on K<sub>c</sub></th></tr>
-  <tr><td>Increase concentration of reactant</td><td>Shifts to the right (towards products)</td><td>No change</td></tr>
-  <tr><td>Increase pressure (gaseous equilibrium)</td><td>Shifts to the side with fewer moles of gas</td><td>No change</td></tr>
-  <tr><td>Increase temperature (exothermic forward)</td><td>Shifts to the left (endothermic direction)</td><td>K<sub>c</sub> decreases</td></tr>
-  <tr><td>Increase temperature (endothermic forward)</td><td>Shifts to the right</td><td>K<sub>c</sub> increases</td></tr>
-  <tr><td>Add a catalyst</td><td>No change in position</td><td>No change</td></tr>
+  <tr><th>Change</th><th>Effect on Position of Equilibrium</th><th>Effect on K<sub>c</sub></th></tr>
+  <tr><td>Increase concentration of a reactant</td><td>Shifts right (towards products) to use up the added reactant</td><td>No change</td></tr>
+  <tr><td>Decrease concentration of a product</td><td>Shifts right (to replace removed product)</td><td>No change</td></tr>
+  <tr><td>Increase pressure (gaseous equilibrium)</td><td>Shifts to the side with <strong>fewer moles of gas</strong></td><td>No change</td></tr>
+  <tr><td>Increase temperature (exothermic forward)</td><td>Shifts left (endothermic direction) to absorb excess heat</td><td>K<sub>c</sub> <strong>decreases</strong></td></tr>
+  <tr><td>Increase temperature (endothermic forward)</td><td>Shifts right (endothermic direction) to absorb excess heat</td><td>K<sub>c</sub> <strong>increases</strong></td></tr>
+  <tr><td>Add a catalyst</td><td><strong>No change</strong> in position &mdash; reaches equilibrium faster</td><td>No change</td></tr>
 </table>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 500 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Le Chatelier's Principle: Equilibrium Shifts</text>
-  <!-- Central equilibrium box -->
   <rect x="165" y="50" width="170" height="35" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.2"/>
-  <text x="250" y="72" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">A(g) + B(g) &#8652; C(g) &#916;H = &#8722;ve</text>
-  <!-- Left shift arrow -->
+  <text x="250" y="72" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">A(g) + B(g) &#8652; C(g) &Delta;H = &minus;ve</text>
   <line x1="160" y1="67" x2="60" y2="67" stroke="#DC2626" stroke-width="2.5" marker-end="url(#arrLCL)"/>
   <defs><marker id="arrLCL" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#DC2626"/></marker></defs>
   <text x="110" y="58" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">shifts LEFT</text>
   <text x="110" y="82" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">(favours reactants)</text>
-  <!-- Right shift arrow -->
   <line x1="340" y1="67" x2="440" y2="67" stroke="#16A34A" stroke-width="2.5" marker-end="url(#arrLCR)"/>
   <defs><marker id="arrLCR" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#16A34A"/></marker></defs>
   <text x="390" y="58" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">shifts RIGHT</text>
   <text x="390" y="82" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">(favours products)</text>
-  <!-- Change scenarios -->
-  <!-- Increase [A] -->
+  <!-- Scenarios -->
   <rect x="30" y="108" width="200" height="25" rx="5" fill="#dcfce7" stroke="#16A34A" stroke-width="0.8"/>
-  <text x="130" y="124" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Increase [A] &#8594; shifts RIGHT</text>
-  <!-- Increase [C] -->
+  <text x="130" y="124" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Increase [A] &rarr; shifts RIGHT</text>
   <rect x="270" y="108" width="200" height="25" rx="5" fill="#fef2f2" stroke="#DC2626" stroke-width="0.8"/>
-  <text x="370" y="124" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Increase [C] &#8594; shifts LEFT</text>
-  <!-- Increase pressure -->
+  <text x="370" y="124" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Increase [C] &rarr; shifts LEFT</text>
   <rect x="30" y="142" width="200" height="25" rx="5" fill="#dcfce7" stroke="#16A34A" stroke-width="0.8"/>
-  <text x="130" y="158" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Increase pressure &#8594; RIGHT</text>
+  <text x="130" y="158" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Increase pressure &rarr; RIGHT</text>
   <text x="130" y="173" text-anchor="middle" font-family="system-ui" font-size="7" fill="#64748b">(fewer moles of gas on right: 1 vs 2)</text>
-  <!-- Decrease pressure -->
   <rect x="270" y="142" width="200" height="25" rx="5" fill="#fef2f2" stroke="#DC2626" stroke-width="0.8"/>
-  <text x="370" y="158" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Decrease pressure &#8594; LEFT</text>
+  <text x="370" y="158" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Decrease pressure &rarr; LEFT</text>
   <text x="370" y="173" text-anchor="middle" font-family="system-ui" font-size="7" fill="#64748b">(more moles of gas on left)</text>
-  <!-- Increase temperature -->
   <rect x="30" y="185" width="200" height="25" rx="5" fill="#fef2f2" stroke="#DC2626" stroke-width="0.8"/>
-  <text x="130" y="201" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Increase temp &#8594; LEFT</text>
-  <text x="130" y="216" text-anchor="middle" font-family="system-ui" font-size="7" fill="#64748b">(endothermic direction; Kc decreases)</text>
-  <!-- Decrease temperature -->
+  <text x="130" y="201" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Increase temp &rarr; LEFT</text>
+  <text x="130" y="216" text-anchor="middle" font-family="system-ui" font-size="7" fill="#64748b">(endothermic direction; K<tspan baseline-shift="sub" font-size="6">c</tspan> decreases)</text>
   <rect x="270" y="185" width="200" height="25" rx="5" fill="#dcfce7" stroke="#16A34A" stroke-width="0.8"/>
-  <text x="370" y="201" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Decrease temp &#8594; RIGHT</text>
-  <text x="370" y="216" text-anchor="middle" font-family="system-ui" font-size="7" fill="#64748b">(exothermic direction; Kc increases)</text>
-  <!-- Catalyst -->
+  <text x="370" y="201" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Decrease temp &rarr; RIGHT</text>
+  <text x="370" y="216" text-anchor="middle" font-family="system-ui" font-size="7" fill="#64748b">(exothermic direction; K<tspan baseline-shift="sub" font-size="6">c</tspan> increases)</text>
   <rect x="130" y="232" width="240" height="25" rx="5" fill="#f1f5f9" stroke="#94a3b8" stroke-width="0.8"/>
-  <text x="250" y="248" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">Add catalyst &#8594; NO shift (reaches equilibrium faster)</text>
-  <!-- Key note -->
+  <text x="250" y="248" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">Add catalyst &rarr; NO shift (reaches equilibrium faster)</text>
   <rect x="100" y="266" width="300" height="25" rx="5" fill="#fff8e1" stroke="#D97706" stroke-width="0.8"/>
-  <text x="250" y="282" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#b45309">Only temperature changes the value of Kc</text>
+  <text x="250" y="282" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#b45309">Only temperature changes the value of K<tspan baseline-shift="sub" font-size="7">c</tspan></text>
 </svg>
+</div>
+
+<div class="application">
+  <strong>Real-World Application &mdash; The Haber Process:</strong> N<sub>2</sub>(g) + 3H<sub>2</sub>(g) &#8652; 2NH<sub>3</sub>(g) &Delta;H = &minus;92 kJ mol<sup>&minus;1</sup>. Applying Le Chatelier's principle: high pressure favours products (fewer moles of gas on the right: 2 vs 4), so 200 atm is used. Low temperature would favour the exothermic forward reaction, but the rate would be too slow, so a <strong>compromise temperature</strong> of 450 &deg;C is used with an iron catalyst. The catalyst does not change the yield but helps the system reach equilibrium faster. This is a classic example of balancing equilibrium position, rate, and economic considerations.
 </div>
 
 <h3>Equilibrium Constant K<sub>c</sub></h3>
@@ -525,10 +573,17 @@
   K<sub>c</sub> = [C]<sup>c</sup>[D]<sup>d</sup> / [A]<sup>a</sup>[B]<sup>b</sup>
 </div>
 
-<p>K<sub>c</sub> is only affected by temperature. A large K<sub>c</sub> means the equilibrium lies to the right (products favoured). A small K<sub>c</sub> means the equilibrium lies to the left (reactants favoured). Changes in concentration, pressure, or adding a catalyst do not change K<sub>c</sub>.</p>
+<p>K<sub>c</sub> is <strong>only affected by temperature</strong>. A large K<sub>c</sub> (&gt;&gt;1) means the equilibrium lies to the right (products favoured). A small K<sub>c</sub> (&lt;&lt;1) means the equilibrium lies to the left (reactants favoured). Changes in concentration, pressure, or adding a catalyst do <em>not</em> change K<sub>c</sub>.</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> When calculating K<sub>c</sub>, always use equilibrium concentrations (not initial). Set up an ICE table (Initial, Change, Equilibrium) to find equilibrium concentrations. Include the units of K<sub>c</sub>, which depend on the overall change in moles.
+  <strong>Exam Tip:</strong> When calculating K<sub>c</sub>, always use <strong>equilibrium concentrations</strong> (not initial concentrations). Set up an ICE table (Initial, Change, Equilibrium) to find equilibrium concentrations if they are not given directly. Always include the <strong>units</strong> of K<sub>c</sub>, which depend on the overall change in moles. Only pure liquids and solids are excluded from the K<sub>c</sub> expression.
+</div>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Calculating K<sub>c</sub>:</strong><br><br>
+  For H<sub>2</sub>(g) + I<sub>2</sub>(g) &#8652; 2HI(g), equilibrium concentrations at 700 K are: [H<sub>2</sub>] = 0.0200 mol dm<sup>&minus;3</sup>, [I<sub>2</sub>] = 0.0200 mol dm<sup>&minus;3</sup>, [HI] = 0.160 mol dm<sup>&minus;3</sup>.<br><br>
+  K<sub>c</sub> = [HI]<sup>2</sup> / ([H<sub>2</sub>][I<sub>2</sub>]) = (0.160)<sup>2</sup> / (0.0200 &times; 0.0200) = 0.0256 / 0.000400 = <strong>64.0</strong> (no units, as moles cancel)<br><br>
+  K<sub>c</sub> is large, confirming that at 700 K the equilibrium lies well to the right (products favoured).
 </div>
 
 </div>

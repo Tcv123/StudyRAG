@@ -24,6 +24,10 @@
   .exam-tip strong { color: #b45309; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .worked-example strong { color: #16a34a; }
+  .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #7c3aed; }
 </style>
 </head>
 <body>
@@ -369,6 +373,27 @@
   % difference = |(experimental &minus; theoretical) / theoretical| &times; 100%
 </div>
 <p>If the percentage difference is within the percentage uncertainty of the experiment, the result is consistent with the theoretical value.</p>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A student measures g = 9.52 m s<sup>&minus;2</sup> with an uncertainty of &plusmn;5%. The accepted value is 9.81 m s<sup>&minus;2</sup>. Does the result agree?<br><br>
+% difference = |9.52 &minus; 9.81| / 9.81 &times; 100% = 0.29/9.81 &times; 100% = <strong>3.0%</strong><br><br>
+Since 3.0% is within the experimental uncertainty of 5%, the result is <strong>consistent</strong> with the accepted value. If the percentage difference were larger than the uncertainty, there would be evidence of unaccounted systematic error.
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Combining uncertainties. A cylinder has diameter d = 12.4 &plusmn; 0.1 mm and length L = 50.0 &plusmn; 0.5 mm. Calculate the volume and its percentage uncertainty.<br><br>
+V = &pi;d&sup2;L/4 = &pi;(12.4 &times; 10<sup>&minus;3</sup>)&sup2;(50.0 &times; 10<sup>&minus;3</sup>)/4 = <strong>6.04 &times; 10<sup>&minus;6</sup> m&sup3;</strong><br><br>
+%unc in d = (0.1/12.4) &times; 100% = 0.81%<br>
+%unc in d&sup2; = 2 &times; 0.81% = 1.61% (power rule)<br>
+%unc in L = (0.5/50.0) &times; 100% = 1.00%<br>
+Total %unc in V = 1.61% + 1.00% = <strong>2.6%</strong><br>
+Absolute uncertainty = 0.026 &times; 6.04 &times; 10<sup>&minus;6</sup> = 0.16 &times; 10<sup>&minus;6</sup> m&sup3;<br>
+V = (6.0 &plusmn; 0.2) &times; 10<sup>&minus;6</sup> m&sup3;
+</div>
+
+<div class="real-world">
+<strong>Real-World Application:</strong> Uncertainty analysis is critical in forensic science, pharmaceutical manufacturing, and engineering safety. In bridge construction, load-bearing calculations must include safety factors that account for uncertainties in material properties and loading conditions. Medical diagnostic equipment must be calibrated regularly with traceable standards, and measurement uncertainties are reported alongside patient results to avoid misdiagnosis.
+</div>
 
 </div>
 </body>

@@ -24,6 +24,10 @@
   .exam-tip strong { color: #b45309; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .worked-example strong { color: #16a34a; }
+  .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #7c3aed; }
 </style>
 </head>
 <body>
@@ -893,6 +897,30 @@
 <div class="exam-tip">
   <strong>Exam Tip:</strong> The time constant tau = RC is the time for the voltage to fall to 1/e (37%) of its initial value. After 5RC, the capacitor is effectively fully discharged. You can also find tau by reading the time at which V = 0.37V0 from the exponential decay curve.
 </div>
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A 2.0 kg trolley moving at 3.0 m s<sup>&minus;1</sup> collides with a stationary 1.0 kg trolley. They stick together. Calculate the velocity after collision and the kinetic energy lost.<br><br>
+By conservation of momentum: m<sub>1</sub>u<sub>1</sub> + m<sub>2</sub>u<sub>2</sub> = (m<sub>1</sub> + m<sub>2</sub>)v<br>
+(2.0)(3.0) + (1.0)(0) = (2.0 + 1.0)v<br>
+6.0 = 3.0v, so v = <strong>2.0 m s<sup>&minus;1</sup></strong><br><br>
+KE before = &frac12;(2.0)(3.0)&sup2; = 9.0 J<br>
+KE after = &frac12;(3.0)(2.0)&sup2; = 6.0 J<br>
+KE lost = 9.0 &minus; 6.0 = <strong>3.0 J</strong> (converted to heat, sound, and deformation)<br><br>
+This is a perfectly inelastic collision (objects stick together), so KE is not conserved. Momentum is always conserved.
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A ball is launched horizontally at 5.0 m s<sup>&minus;1</sup> from a table 1.2 m high. Calculate the time to hit the ground and the horizontal distance travelled.<br><br>
+Vertical: s = &frac12;gt&sup2; (u<sub>y</sub> = 0, taking downward as positive)<br>
+1.2 = &frac12;(9.81)t&sup2;<br>
+t = &radic;(2 &times; 1.2 / 9.81) = <strong>0.495 s</strong><br><br>
+Horizontal: x = v<sub>x</sub>t = 5.0 &times; 0.495 = <strong>2.5 m</strong><br><br>
+The horizontal and vertical motions are independent. The ball takes the same time to fall whether or not it has horizontal velocity.
+</div>
+
+<div class="real-world">
+<strong>Real-World Application:</strong> The exponential decay mathematics of capacitor discharge is identical to that of radioactive decay, Newton's law of cooling, and the discharge of a pressurised gas through a small hole. This universality of exponential processes is one of the most powerful ideas in physics. In electronics, RC circuits are used as timing circuits in everything from camera flashes to cardiac pacemakers, and as filters that separate signals of different frequencies in audio equipment and radio receivers.
 </div>
 
 </div>

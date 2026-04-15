@@ -24,6 +24,10 @@
   .exam-tip strong { color: #b45309; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .worked-example strong { color: #16a34a; }
+  .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #7c3aed; }
 </style>
 </head>
 <body>
@@ -945,6 +949,36 @@
 <div class="exam-tip">
   <strong>Exam Tip:</strong> The half-value thickness is the thickness of absorber that reduces the count rate to half. It is related to the absorption coefficient by x_half = ln(2) / mu. This is analogous to radioactive half-life but for attenuation of radiation through matter.
 </div>
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Two point charges of +3.0 &mu;C and &minus;5.0 &mu;C are separated by 0.20 m. Calculate the force between them and state whether it is attractive or repulsive.<br><br>
+F = kQ<sub>1</sub>Q<sub>2</sub>/r&sup2; = (8.99 &times; 10<sup>9</sup>) &times; (3.0 &times; 10<sup>&minus;6</sup>) &times; (5.0 &times; 10<sup>&minus;6</sup>) / (0.20)&sup2;<br>
+F = (8.99 &times; 10<sup>9</sup> &times; 1.5 &times; 10<sup>&minus;11</sup>) / 0.04<br>
+F = 0.1349 / 0.04 = <strong>3.4 N</strong><br><br>
+The charges are opposite in sign, so the force is <strong>attractive</strong>.
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A proton (m = 1.67 &times; 10<sup>&minus;27</sup> kg, Q = 1.60 &times; 10<sup>&minus;19</sup> C) moves at 4.0 &times; 10<sup>6</sup> m s<sup>&minus;1</sup> perpendicular to a magnetic field of 0.80 T. Calculate the radius of its circular path.<br><br>
+r = mv/(BQ) = (1.67 &times; 10<sup>&minus;27</sup> &times; 4.0 &times; 10<sup>6</sup>) / (0.80 &times; 1.60 &times; 10<sup>&minus;19</sup>)<br>
+r = 6.68 &times; 10<sup>&minus;21</sup> / 1.28 &times; 10<sup>&minus;19</sup> = <strong>0.052 m = 5.2 cm</strong><br><br>
+A heavier particle (e.g. an alpha particle with 4 times the mass and 2 times the charge) would have a larger radius: r<sub>&alpha;</sub> = (4m)(v) / (B &times; 2Q) = 2r<sub>p</sub>. This is how mass spectrometers separate ions by mass-to-charge ratio.
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A radioactive source has an activity of 6400 Bq. After 3 hours, the activity is 800 Bq. Calculate the half-life.<br><br>
+A = A<sub>0</sub>(1/2)<sup>n</sup>, where n is the number of half-lives<br>
+800 = 6400 &times; (1/2)<sup>n</sup><br>
+(1/2)<sup>n</sup> = 800/6400 = 1/8 = (1/2)<sup>3</sup><br>
+So n = 3 half-lives in 3 hours<br>
+t<sub>&frac12;</sub> = 3 hours / 3 = <strong>1.0 hour = 3600 s</strong><br><br>
+Check: &lambda; = ln2/t<sub>&frac12;</sub> = 0.693/3600 = 1.93 &times; 10<sup>&minus;4</sup> s<sup>&minus;1</sup><br>
+A = 6400 &times; e<sup>&minus;(1.93 &times; 10&minus;4)(10800)</sup> = 6400 &times; e<sup>&minus;2.079</sup> = 6400 &times; 0.125 = 800 Bq &check;
+</div>
+
+<div class="real-world">
+<strong>Real-World Application:</strong> The physics of electric and magnetic fields underpins virtually all modern technology. Electric fields accelerate electrons in cathode ray tubes and particle accelerators. Magnetic fields are used in MRI scanners (superconducting magnets producing fields of 1.5&ndash;7 T), data storage (hard drives use magnetic domains), electric motors and generators, and maglev trains. The Large Hadron Collider at CERN uses 1232 superconducting dipole magnets producing 8.3 T fields to bend protons around a 27 km ring, reaching energies of 6.5 TeV per beam.
 </div>
 
 </div>

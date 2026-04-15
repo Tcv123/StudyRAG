@@ -5,107 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topic 13 — Oscillations | Edexcel A-Level Physics</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: #1a1a2e;
-            background: #ffffff;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 2rem;
-            color: #1a1a2e;
-            border-bottom: 3px solid #3b82f6;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #1e3a5f;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            border-left: 4px solid #3b82f6;
-            padding-left: 12px;
-        }
-        h3 {
-            font-size: 1.2rem;
-            color: #2d4a7a;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 12px;
-        }
-        .definition {
-            background: #eff6ff;
-            border-left: 4px solid #3b82f6;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip {
-            background: #fffbeb;
-            border-left: 4px solid #f59e0b;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip::before {
-            content: "Exam Tip: ";
-            font-weight: 700;
-            color: #b45309;
-        }
-        .equation {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 12px 20px;
-            margin: 12px 0;
-            border-radius: 6px;
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 0.95rem;
-        }
-        th, td {
-            border: 1px solid #e2e8f0;
-            padding: 10px 14px;
-            text-align: left;
-        }
-        th {
-            background: #f1f5f9;
-            font-weight: 600;
-            color: #1e3a5f;
-        }
-        tr:nth-child(even) {
-            background: #f8fafc;
-        }
-        ul, ol {
-            margin: 10px 0 15px 25px;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        strong {
-            color: #1e3a5f;
-        }
-        @media print {
-            body { padding: 20px; }
-            .exam-tip, .definition { break-inside: avoid; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #3b82f6; padding-bottom: 10px; margin-bottom: 30px; }
+        h2 { font-size: 1.5rem; color: #1e3a5f; margin-top: 35px; margin-bottom: 15px; border-left: 4px solid #3b82f6; padding-left: 12px; }
+        h3 { font-size: 1.2rem; color: #2d4a7a; margin-top: 20px; margin-bottom: 10px; }
+        p { margin-bottom: 12px; }
+        .definition { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #16a34a; }
+        .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .real-world::before { content: "Real-World Application: "; font-weight: 700; color: #7c3aed; }
+        .equation { background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 20px; margin: 12px 0; border-radius: 6px; font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 1.1rem; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+        th, td { border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left; }
+        th { background: #f1f5f9; font-weight: 600; color: #1e3a5f; }
+        tr:nth-child(even) { background: #f8fafc; }
+        ul, ol { margin: 10px 0 15px 25px; }
+        li { margin-bottom: 6px; }
+        strong { color: #1e3a5f; }
+        @media print { body { padding: 20px; } .exam-tip, .definition, .worked-example, .real-world { break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -116,94 +38,78 @@
 <h2>13.1 Simple Harmonic Motion (SHM)</h2>
 
 <div class="definition">
-    <strong>Simple harmonic motion:</strong> An oscillation in which the acceleration of the object is directly proportional to its displacement from the equilibrium position and is always directed towards that equilibrium position.
+    <strong>Simple harmonic motion:</strong> An oscillation in which the acceleration of the object is directly proportional to its displacement from the equilibrium position and is always directed towards that equilibrium position. The key feature is the linear restoring force.
 </div>
 
 <p>The defining equation of SHM:</p>
-<div class="equation">
-    a = −ω²x
-</div>
+<div class="equation">a = &#8722;&#969;&#178;x</div>
 
 <p>where:</p>
 <ul>
-    <li><strong>a</strong> = acceleration (m s⁻²)</li>
-    <li><strong>ω</strong> = angular frequency (rad s⁻¹)</li>
+    <li><strong>a</strong> = acceleration (m s&#8315;&#178;)</li>
+    <li><strong>&#969;</strong> = angular frequency (rad s&#8315;&#185;)</li>
     <li><strong>x</strong> = displacement from equilibrium (m)</li>
 </ul>
 
-<p>The negative sign indicates the acceleration is always in the <strong>opposite direction</strong> to the displacement — it always acts as a restoring force back towards equilibrium.</p>
+<p>The negative sign indicates the acceleration is always in the <strong>opposite direction</strong> to the displacement &#8212; it always acts as a restoring force back towards equilibrium. This is the defining condition for SHM: no negative sign means it is not SHM.</p>
+
+<p>To verify that a system undergoes SHM, you need to show that: (1) acceleration is proportional to displacement, and (2) acceleration is directed towards the equilibrium position (opposite to displacement).</p>
 
 <h2>13.2 Equations of SHM</h2>
 
 <h3>Angular Frequency</h3>
-<div class="equation">
-    ω = 2π / T = 2πf
-</div>
-<p>where T is the period (s) and f is the frequency (Hz).</p>
+<div class="equation">&#969; = 2&#960; / T = 2&#960;f</div>
+<p>where T is the period (s) and f is the frequency (Hz). Angular frequency is measured in rad s&#8315;&#185;.</p>
 
 <h3>Displacement</h3>
-<div class="equation">
-    x = A cos(ωt)
-</div>
-<p>(assuming maximum displacement at t = 0; use x = A sin(ωt) if starting from equilibrium)</p>
+<div class="equation">x = A cos(&#969;t) &nbsp;&nbsp; or &nbsp;&nbsp; x = A sin(&#969;t)</div>
+<p>Use cos if starting at maximum displacement (x = A at t = 0). Use sin if starting from equilibrium moving in the positive direction (x = 0 at t = 0).</p>
 
 <h3>Velocity</h3>
-<div class="equation">
-    v = −Aω sin(ωt)
-</div>
+<div class="equation">v = &#8722;A&#969; sin(&#969;t) &nbsp;&nbsp; (if x = A cos(&#969;t))</div>
 <p>The velocity can also be expressed in terms of displacement:</p>
-<div class="equation">
-    v = ±ω√(A² − x²)
-</div>
+<div class="equation">v = &#177;&#969;&#8730;(A&#178; &#8722; x&#178;)</div>
 
-<h3>Maximum Velocity</h3>
-<div class="equation">
-    v<sub>max</sub> = Aω
-</div>
-<p>This occurs at the <strong>equilibrium position</strong> (x = 0).</p>
+<h3>Maximum Values</h3>
+<div class="equation">v<sub>max</sub> = A&#969; &nbsp;&nbsp; (at equilibrium, x = 0)</div>
+<div class="equation">a<sub>max</sub> = A&#969;&#178; &nbsp;&nbsp; (at maximum displacement, x = &#177;A)</div>
 
-<h3>Acceleration</h3>
-<div class="equation">
-    a = −Aω² cos(ωt) = −ω²x
+<div class="worked-example">
+A mass on a spring oscillates with amplitude 0.08 m and period 0.50 s. Calculate: (a) the angular frequency, (b) the maximum speed, (c) the maximum acceleration, (d) the speed when displacement is 0.05 m.<br><br>
+(a) &#969; = 2&#960;/T = 2&#960;/0.50 = <strong>12.6 rad s&#8315;&#185;</strong><br><br>
+(b) v<sub>max</sub> = A&#969; = 0.08 &#215; 12.6 = <strong>1.0 m s&#8315;&#185;</strong><br><br>
+(c) a<sub>max</sub> = A&#969;&#178; = 0.08 &#215; (12.6)&#178; = <strong>12.7 m s&#8315;&#178;</strong><br><br>
+(d) v = &#969;&#8730;(A&#178; &#8722; x&#178;) = 12.6 &#215; &#8730;(0.08&#178; &#8722; 0.05&#178;) = 12.6 &#215; &#8730;(0.0064 &#8722; 0.0025)<br>
+= 12.6 &#215; &#8730;(0.0039) = 12.6 &#215; 0.0625 = <strong>0.79 m s&#8315;&#185;</strong>
 </div>
-
-<h3>Maximum Acceleration</h3>
-<div class="equation">
-    a<sub>max</sub> = Aω²
-</div>
-<p>This occurs at the <strong>maximum displacement</strong> (x = ±A).</p>
 
 <div class="exam-tip">
-    The choice of cos or sin depends on the initial conditions. If the object starts at maximum displacement (x = A at t = 0), use x = A cos(ωt). If it starts at equilibrium moving in the positive direction, use x = A sin(ωt). Always state your assumption clearly.
+    The choice of cos or sin depends on the initial conditions. If the object starts at maximum displacement (x = A at t = 0), use x = A cos(&#969;t). If it starts at equilibrium moving in the positive direction, use x = A sin(&#969;t). Always state your assumption clearly in exam answers.
 </div>
 
 <!-- SVG: SHM Displacement, Velocity, Acceleration Graphs -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 480 340" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
         <text x="240" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">SHM: x, v, a vs Time</text>
-
         <!-- Displacement graph -->
         <text x="40" y="55" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">x</text>
         <line x1="50" y1="75" x2="460" y2="75" stroke="#cbd5e1" stroke-width="0.8"/>
         <path d="M 50,45 Q 100,45 100,75 Q 100,105 150,105 Q 200,105 200,75 Q 200,45 250,45 Q 300,45 300,75 Q 300,105 350,105 Q 400,105 400,75 Q 400,45 450,45" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
-        <text x="465" y="78" font-family="system-ui" font-size="9" fill="#1a73e8">x = A cos(ωt)</text>
+        <text x="465" y="78" font-family="system-ui" font-size="9" fill="#1a73e8">x = A cos(&#969;t)</text>
         <text x="45" y="48" font-family="system-ui" font-size="8" fill="#64748b">+A</text>
         <text x="45" y="110" font-family="system-ui" font-size="8" fill="#64748b">-A</text>
-
         <!-- Velocity graph -->
         <text x="40" y="145" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">v</text>
         <line x1="50" y1="175" x2="460" y2="175" stroke="#cbd5e1" stroke-width="0.8"/>
         <path d="M 50,175 Q 50,145 100,145 Q 150,145 150,175 Q 150,205 200,205 Q 250,205 250,175 Q 250,145 300,145 Q 350,145 350,175 Q 350,205 400,205 Q 450,205 450,175" fill="none" stroke="#16A34A" stroke-width="2.5"/>
-        <text x="465" y="178" font-family="system-ui" font-size="9" fill="#16A34A">v = -Aω sin(ωt)</text>
-        <text x="465" y="190" font-family="system-ui" font-size="8" fill="#16A34A">leads x by π/2</text>
-
+        <text x="465" y="178" font-family="system-ui" font-size="9" fill="#16A34A">v = &#8722;A&#969; sin(&#969;t)</text>
+        <text x="465" y="190" font-family="system-ui" font-size="8" fill="#16A34A">leads x by &#960;/2</text>
         <!-- Acceleration graph -->
         <text x="40" y="240" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">a</text>
         <line x1="50" y1="275" x2="460" y2="275" stroke="#cbd5e1" stroke-width="0.8"/>
         <path d="M 50,305 Q 100,305 100,275 Q 100,245 150,245 Q 200,245 200,275 Q 200,305 250,305 Q 300,305 300,275 Q 300,245 350,245 Q 400,245 400,275 Q 400,305 450,305" fill="none" stroke="#DC2626" stroke-width="2.5"/>
-        <text x="465" y="278" font-family="system-ui" font-size="9" fill="#DC2626">a = -Aω²cos(ωt)</text>
+        <text x="465" y="278" font-family="system-ui" font-size="9" fill="#DC2626">a = &#8722;A&#969;&#178;cos(&#969;t)</text>
         <text x="465" y="290" font-family="system-ui" font-size="8" fill="#DC2626">antiphase to x</text>
-
         <!-- Time markers -->
         <line x1="100" y1="40" x2="100" y2="315" stroke="#64748b" stroke-width="0.5" stroke-dasharray="2,4"/>
         <line x1="200" y1="40" x2="200" y2="315" stroke="#64748b" stroke-width="0.5" stroke-dasharray="2,4"/>
@@ -219,453 +125,314 @@
 <h2>13.3 Phase Relationships</h2>
 
 <table>
-    <tr>
-        <th>Quantity</th>
-        <th>Equation (starting at x = A)</th>
-        <th>Phase relationship</th>
-    </tr>
-    <tr>
-        <td>Displacement (x)</td>
-        <td>A cos(ωt)</td>
-        <td>Reference</td>
-    </tr>
-    <tr>
-        <td>Velocity (v)</td>
-        <td>−Aω sin(ωt)</td>
-        <td>Leads displacement by π/2 (90°)</td>
-    </tr>
-    <tr>
-        <td>Acceleration (a)</td>
-        <td>−Aω² cos(ωt)</td>
-        <td>Leads displacement by π (180°) — i.e., in antiphase</td>
-    </tr>
+    <tr><th>Quantity</th><th>Equation (starting at x = A)</th><th>Phase relationship</th></tr>
+    <tr><td>Displacement (x)</td><td>A cos(&#969;t)</td><td>Reference</td></tr>
+    <tr><td>Velocity (v)</td><td>&#8722;A&#969; sin(&#969;t)</td><td>Leads displacement by &#960;/2 (90&#176;)</td></tr>
+    <tr><td>Acceleration (a)</td><td>&#8722;A&#969;&#178; cos(&#969;t)</td><td>Leads displacement by &#960; (180&#176;) &#8212; in antiphase</td></tr>
 </table>
 
-<p>Key points:</p>
+<p>Key relationships to remember:</p>
 <ul>
-    <li>Velocity is maximum when displacement is zero, and zero when displacement is maximum.</li>
-    <li>Acceleration is maximum (in magnitude) when displacement is maximum, and zero when displacement is zero.</li>
-    <li>Acceleration and displacement are always in <strong>antiphase</strong> (180° out of phase).</li>
-    <li>Velocity leads displacement by a quarter cycle (π/2 radians).</li>
+    <li>Velocity is <strong>maximum</strong> when displacement is <strong>zero</strong>, and <strong>zero</strong> when displacement is <strong>maximum</strong></li>
+    <li>Acceleration is <strong>maximum</strong> (in magnitude) when displacement is <strong>maximum</strong>, and <strong>zero</strong> when displacement is <strong>zero</strong></li>
+    <li>Acceleration and displacement are always in <strong>antiphase</strong> (180&#176; out of phase)</li>
+    <li>Velocity leads displacement by a quarter cycle (&#960;/2 radians = 90&#176;)</li>
+    <li>A graph of a vs x is a straight line through the origin with gradient &#8722;&#969;&#178; (this is the defining condition for SHM)</li>
 </ul>
 
 <h2>13.4 SHM Systems</h2>
 
 <h3>Simple Pendulum</h3>
-<p>For small angular displacements (less than ~10°):</p>
-<div class="equation">
-    T = 2π √(L / g)
-</div>
-<p>where:</p>
-<ul>
-    <li><strong>L</strong> = length of the pendulum (from pivot to centre of mass of bob) (m)</li>
-    <li><strong>g</strong> = gravitational field strength (m s⁻²)</li>
-</ul>
-<p>Note: The period does <strong>not</strong> depend on the mass of the bob or the amplitude (for small oscillations).</p>
+<p>For small angular displacements (less than ~10&#176;):</p>
+<div class="equation">T = 2&#960; &#8730;(L / g)</div>
+<p>where L = length of the pendulum (from pivot to centre of mass of bob) and g = gravitational field strength.</p>
+<p>The period does <strong>not</strong> depend on the mass of the bob or the amplitude (for small oscillations). This is called <strong>isochronicity</strong> and was discovered by Galileo.</p>
 
-<h3>Mass–Spring System</h3>
-<div class="equation">
-    T = 2π √(m / k)
+<h3>Mass&#8211;Spring System</h3>
+<div class="equation">T = 2&#960; &#8730;(m / k)</div>
+<p>where m = mass of the oscillating object (kg) and k = spring constant (N m&#8315;&#185;).</p>
+<p>The period does <strong>not</strong> depend on the amplitude or on g. This formula applies for both horizontal and vertical mass&#8211;spring systems.</p>
+
+<div class="worked-example">
+A pendulum has a period of 2.00 s on Earth. What would its period be on the Moon (g<sub>Moon</sub> = 1.62 m s&#8315;&#178;)?<br><br>
+On Earth: T<sub>E</sub> = 2&#960;&#8730;(L/g<sub>E</sub>) = 2.00 s<br>
+On Moon: T<sub>M</sub> = 2&#960;&#8730;(L/g<sub>M</sub>)<br><br>
+Taking the ratio: T<sub>M</sub>/T<sub>E</sub> = &#8730;(g<sub>E</sub>/g<sub>M</sub>) = &#8730;(9.81/1.62) = &#8730;6.056 = 2.461<br>
+T<sub>M</sub> = 2.00 &#215; 2.461 = <strong>4.92 s</strong><br><br>
+The pendulum swings much more slowly on the Moon because the restoring force (gravity) is weaker.
 </div>
-<p>where:</p>
-<ul>
-    <li><strong>m</strong> = mass of the oscillating object (kg)</li>
-    <li><strong>k</strong> = spring constant (N m⁻¹)</li>
-</ul>
-<p>Note: The period does <strong>not</strong> depend on the amplitude or on g. This formula applies for both horizontal and vertical mass–spring systems.</p>
 
 <div class="exam-tip">
-    For a pendulum: T depends on L and g (not mass). For a mass–spring: T depends on m and k (not g or amplitude). These are very common exam questions — make sure you know which factors affect the period and which do not.
+    For a pendulum: T depends on L and g (not mass or amplitude). For a mass&#8211;spring: T depends on m and k (not g or amplitude). These distinctions are very commonly tested. If asked what happens when you take a mass-spring system to the Moon, the answer is: nothing changes (T is independent of g).
 </div>
 
 <h2>13.5 Energy in SHM</h2>
 
 <p>In simple harmonic motion, energy is continuously exchanged between kinetic energy and potential energy. The total mechanical energy remains constant (in the absence of damping).</p>
 
-<h3>Kinetic Energy</h3>
-<div class="equation">
-    E<sub>k</sub> = ½mv² = ½mω²(A² − x²)
-</div>
+<h3>Energy Equations</h3>
+<div class="equation">E<sub>k</sub> = &#189;m&#969;&#178;(A&#178; &#8722; x&#178;)</div>
+<div class="equation">E<sub>p</sub> = &#189;m&#969;&#178;x&#178;</div>
+<div class="equation">E<sub>total</sub> = &#189;m&#969;&#178;A&#178; = constant</div>
 
-<h3>Potential Energy</h3>
-<div class="equation">
-    E<sub>p</sub> = ½mω²x²
-</div>
-
-<h3>Total Energy</h3>
-<div class="equation">
-    E<sub>total</sub> = ½mω²A² = constant
-</div>
-
-<h3>Energy Variation</h3>
 <table>
-    <tr>
-        <th>Position</th>
-        <th>Displacement</th>
-        <th>KE</th>
-        <th>PE</th>
-    </tr>
-    <tr>
-        <td>Equilibrium</td>
-        <td>x = 0</td>
-        <td>Maximum (½mω²A²)</td>
-        <td>Zero</td>
-    </tr>
-    <tr>
-        <td>Maximum displacement</td>
-        <td>x = ±A</td>
-        <td>Zero</td>
-        <td>Maximum (½mω²A²)</td>
-    </tr>
+    <tr><th>Position</th><th>Displacement</th><th>KE</th><th>PE</th><th>Speed</th></tr>
+    <tr><td>Equilibrium</td><td>x = 0</td><td>Maximum (&#189;m&#969;&#178;A&#178;)</td><td>Zero</td><td>Maximum</td></tr>
+    <tr><td>Maximum displacement</td><td>x = &#177;A</td><td>Zero</td><td>Maximum (&#189;m&#969;&#178;A&#178;)</td><td>Zero</td></tr>
+    <tr><td>Midway (x = A/&#8730;2)</td><td>x = &#177;A/&#8730;2</td><td>&#189; of max</td><td>&#189; of max</td><td>v<sub>max</sub>/&#8730;2</td></tr>
 </table>
 
 <!-- SVG: Energy in SHM -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 420 240" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
         <text x="210" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Energy vs Displacement in SHM</text>
-        <!-- Axes -->
         <line x1="60" y1="200" x2="380" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
         <line x1="210" y1="210" x2="210" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
         <text x="210" y="222" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">x (displacement)</text>
         <text x="45" y="120" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle" transform="rotate(-90,45,120)">Energy</text>
-        <text x="80" y="212" font-family="system-ui" font-size="9" fill="#64748b">-A</text>
+        <text x="80" y="212" font-family="system-ui" font-size="9" fill="#64748b">&#8722;A</text>
         <text x="335" y="212" font-family="system-ui" font-size="9" fill="#64748b">+A</text>
         <text x="210" y="212" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">0</text>
-        <!-- Total energy (horizontal line) -->
+        <!-- Total energy -->
         <line x1="80" y1="60" x2="340" y2="60" stroke="#D97706" stroke-width="2.5"/>
         <text x="350" y="64" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">E total</text>
-        <!-- KE (inverted parabola) -->
+        <!-- KE -->
         <path d="M 80,200 Q 130,180 170,100 Q 200,50 210,45 Q 220,50 250,100 Q 290,180 340,200" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
         <text x="350" y="180" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">KE</text>
-        <!-- PE (upward parabola) -->
+        <!-- PE -->
         <path d="M 80,60 Q 130,80 170,160 Q 200,210 210,215 Q 220,210 250,160 Q 290,80 340,60" fill="none" stroke="#DC2626" stroke-width="2.5"/>
         <text x="350" y="100" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">PE</text>
-        <!-- Annotations -->
         <text x="210" y="38" font-family="system-ui" font-size="8" fill="#1a73e8" text-anchor="middle">KE max</text>
         <text x="85" y="55" font-family="system-ui" font-size="8" fill="#DC2626">PE max</text>
     </svg>
 </div>
 
-<p>On a graph of energy against displacement:</p>
+<p>On a graph of energy against <strong>time</strong>:</p>
 <ul>
-    <li>KE is an inverted parabola (maximum at x = 0, zero at x = ±A).</li>
-    <li>PE is an upward parabola (zero at x = 0, maximum at x = ±A).</li>
-    <li>Total energy is a horizontal line (constant).</li>
-</ul>
-
-<p>On a graph of energy against time:</p>
-<ul>
-    <li>Both KE and PE oscillate sinusoidally at <strong>twice the frequency</strong> of the oscillation (2f).</li>
-    <li>KE and PE are in antiphase with each other.</li>
-    <li>Total energy remains constant.</li>
+    <li>Both KE and PE oscillate sinusoidally at <strong>twice the frequency</strong> of the oscillation (2f), because energy depends on x&#178; or v&#178;</li>
+    <li>KE and PE are in antiphase with each other</li>
+    <li>Total energy remains constant (horizontal line)</li>
 </ul>
 
 <div class="exam-tip">
-    The total energy of the oscillation is proportional to the square of the amplitude: E ∝ A². Doubling the amplitude quadruples the total energy.
+    The total energy of the oscillation is proportional to the <strong>square of the amplitude</strong>: E &#8733; A&#178;. Doubling the amplitude quadruples the total energy. This is important when considering damping &#8212; as amplitude decreases, energy is lost proportionally to A&#178;.
+</div>
+
+<div class="worked-example">
+A 0.30 kg mass oscillates on a spring with amplitude 0.10 m and frequency 2.0 Hz. Calculate the total energy and the speed when displacement is 0.06 m.<br><br>
+&#969; = 2&#960;f = 2&#960;(2.0) = 12.57 rad s&#8315;&#185;<br>
+E<sub>total</sub> = &#189;m&#969;&#178;A&#178; = &#189;(0.30)(12.57)&#178;(0.10)&#178; = &#189;(0.30)(158.0)(0.01) = <strong>0.237 J</strong><br><br>
+At x = 0.06 m:<br>
+E<sub>k</sub> = E<sub>total</sub> &#8722; E<sub>p</sub> = &#189;m&#969;&#178;(A&#178; &#8722; x&#178;) = &#189;(0.30)(158.0)(0.01 &#8722; 0.0036) = 0.152 J<br>
+&#189;mv&#178; = 0.152, so v = &#8730;(2 &#215; 0.152 / 0.30) = <strong>1.01 m s&#8315;&#185;</strong>
 </div>
 
 <h2>13.6 Free and Forced Oscillations</h2>
 
 <div class="definition">
-    <strong>Free oscillation:</strong> An oscillation where no external driving force acts on the system after the initial displacement. The system oscillates at its natural frequency (f₀).
+    <strong>Free oscillation:</strong> An oscillation where no external driving force acts on the system after the initial displacement. The system oscillates at its <strong>natural frequency (f&#8320;)</strong>, which is determined by the physical properties of the system (e.g., mass and spring constant, or length and gravity).
 </div>
 
 <div class="definition">
-    <strong>Natural frequency (f₀):</strong> The frequency at which a system oscillates freely when displaced from equilibrium and released. Determined by the physical properties of the system.
-</div>
-
-<div class="definition">
-    <strong>Forced oscillation:</strong> An oscillation maintained by a periodic external driving force. The system oscillates at the frequency of the driving force (the driving frequency, f<sub>d</sub>).
-</div>
-
-<!-- SVG: Free vs Forced Oscillations and Damping Types -->
-<div style="margin: 20px auto; text-align: center;">
-    <svg viewBox="0 0 480 230" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-        <text x="240" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Damping Types: Displacement vs Time</text>
-        <!-- Axes -->
-        <line x1="40" y1="120" x2="460" y2="120" stroke="#cbd5e1" stroke-width="1"/>
-        <line x1="40" y1="200" x2="40" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
-        <text x="250" y="218" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Time</text>
-        <text x="30" y="80" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle" transform="rotate(-90,30,80)">x</text>
-
-        <!-- Light (under) damping - oscillates with decreasing amplitude -->
-        <path d="M 45,55 Q 65,55 70,120 Q 75,175 90,175 Q 105,175 110,120 Q 115,72 130,72 Q 145,72 150,120 Q 155,162 170,162 Q 185,162 190,120 Q 195,82 210,82 Q 225,82 230,120 Q 235,152 250,152 Q 265,152 270,120 Q 275,92 290,92 Q 305,92 310,120 Q 315,143 330,143 Q 345,143 350,120 Q 355,100 370,100 Q 385,100 390,120" fill="none" stroke="#1a73e8" stroke-width="2"/>
-        <!-- Envelope -->
-        <path d="M 45,55 Q 200,68 400,118" fill="none" stroke="#1a73e8" stroke-width="0.8" stroke-dasharray="4,3"/>
-        <path d="M 45,185 Q 200,172 400,122" fill="none" stroke="#1a73e8" stroke-width="0.8" stroke-dasharray="4,3"/>
-        <text x="400" y="110" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">Light (under)</text>
-
-        <!-- Critical damping -->
-        <path d="M 45,55 Q 90,100 150,118 Q 200,120 460,120" fill="none" stroke="#DC2626" stroke-width="2.5"/>
-        <text x="200" y="105" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">Critical (fastest, no oscillation)</text>
-
-        <!-- Heavy (over) damping -->
-        <path d="M 45,55 Q 120,75 200,100 Q 300,115 460,119" fill="none" stroke="#16A34A" stroke-width="2.5"/>
-        <text x="300" y="98" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Heavy (over) - very slow return</text>
-    </svg>
+    <strong>Forced oscillation:</strong> An oscillation maintained by a periodic external driving force. The system oscillates at the <strong>driving frequency (f<sub>d</sub>)</strong>, not its natural frequency (unless they happen to be equal).
 </div>
 
 <h2>13.7 Damping</h2>
 
 <div class="definition">
-    <strong>Damping:</strong> The reduction in amplitude (and energy) of an oscillation caused by dissipative forces (such as friction or air resistance) acting on the system.
+    <strong>Damping:</strong> The reduction in amplitude (and energy) of an oscillation caused by dissipative forces (such as friction or air resistance) acting on the system. Energy is transferred from the oscillation to the surroundings as heat.
 </div>
 
 <h3>Types of Damping</h3>
 <table>
-    <tr>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Amplitude behaviour</th>
-    </tr>
-    <tr>
-        <td><strong>Light (under) damping</strong></td>
-        <td>Small resistive forces. System oscillates with gradually decreasing amplitude over many cycles.</td>
-        <td>Exponential decrease; many oscillations visible</td>
-    </tr>
-    <tr>
-        <td><strong>Heavy (over) damping</strong></td>
-        <td>Large resistive forces. System returns very slowly to equilibrium without oscillating.</td>
-        <td>No oscillations; very slow return</td>
-    </tr>
-    <tr>
-        <td><strong>Critical damping</strong></td>
-        <td>The system returns to equilibrium in the shortest possible time without oscillating.</td>
-        <td>No oscillations; fastest return to zero</td>
-    </tr>
+    <tr><th>Type</th><th>Description</th><th>Amplitude behaviour</th><th>Example</th></tr>
+    <tr><td><strong>Light (under) damping</strong></td><td>Small resistive forces. System oscillates with gradually decreasing amplitude over many cycles.</td><td>Exponential decrease in amplitude</td><td>Pendulum in air; guitar string</td></tr>
+    <tr><td><strong>Heavy (over) damping</strong></td><td>Large resistive forces. System returns very slowly to equilibrium without oscillating.</td><td>No oscillations; very slow return</td><td>Door closer with too much friction</td></tr>
+    <tr><td><strong>Critical damping</strong></td><td>The system returns to equilibrium in the shortest possible time without oscillating.</td><td>No oscillations; fastest return to zero</td><td>Car shock absorbers; galvanometer needle</td></tr>
 </table>
 
+<!-- SVG: Damping Types -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 480 230" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="240" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Damping Types: Displacement vs Time</text>
+        <line x1="40" y1="120" x2="460" y2="120" stroke="#cbd5e1" stroke-width="1"/>
+        <line x1="40" y1="200" x2="40" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="250" y="218" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Time</text>
+        <text x="30" y="80" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle" transform="rotate(-90,30,80)">x</text>
+        <!-- Light damping -->
+        <path d="M 45,55 Q 65,55 70,120 Q 75,175 90,175 Q 105,175 110,120 Q 115,72 130,72 Q 145,72 150,120 Q 155,162 170,162 Q 185,162 190,120 Q 195,82 210,82 Q 225,82 230,120 Q 235,152 250,152 Q 265,152 270,120 Q 275,92 290,92 Q 305,92 310,120 Q 315,143 330,143 Q 345,143 350,120 Q 355,100 370,100 Q 385,100 390,120" fill="none" stroke="#1a73e8" stroke-width="2"/>
+        <path d="M 45,55 Q 200,68 400,118" fill="none" stroke="#1a73e8" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <path d="M 45,185 Q 200,172 400,122" fill="none" stroke="#1a73e8" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <text x="400" y="110" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">Light (under)</text>
+        <!-- Critical damping -->
+        <path d="M 45,55 Q 90,100 150,118 Q 200,120 460,120" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="200" y="105" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">Critical (fastest, no oscillation)</text>
+        <!-- Heavy damping -->
+        <path d="M 45,55 Q 120,75 200,100 Q 300,115 460,119" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+        <text x="300" y="98" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Heavy (over) &#8212; very slow return</text>
+    </svg>
+</div>
+
 <div class="exam-tip">
-    Critical damping is used in car shock absorbers and door closing mechanisms — the system must return to equilibrium quickly without bouncing. In exams, you should be able to sketch all three types of damping on the same displacement–time graph.
+    Critical damping is used in car shock absorbers and door closing mechanisms &#8212; the system must return to equilibrium quickly without bouncing. In exams, you should be able to sketch all three types of damping on the same displacement&#8211;time graph, showing that light damping oscillates with decreasing envelope, critical damping returns fastest without oscillating, and heavy damping returns very slowly.
 </div>
 
 <h2>13.8 Resonance</h2>
 
 <div class="definition">
-    <strong>Resonance:</strong> The phenomenon that occurs when the driving frequency equals the natural frequency of the system (f<sub>d</sub> = f₀), resulting in a maximum transfer of energy to the system and hence maximum amplitude of oscillation.
+    <strong>Resonance:</strong> The phenomenon that occurs when the driving frequency equals the natural frequency of the system (f<sub>d</sub> = f&#8320;), resulting in a maximum transfer of energy to the system and hence maximum amplitude of oscillation.
 </div>
 
 <!-- SVG: Resonance Curve -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 440 260" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
         <text x="220" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Resonance: Amplitude vs Driving Frequency</text>
-        <!-- Axes -->
         <line x1="60" y1="220" x2="400" y2="220" stroke="#1a1a2e" stroke-width="1.5"/>
         <line x1="60" y1="220" x2="60" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
-        <text x="230" y="245" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Driving frequency (fd)</text>
+        <text x="230" y="245" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Driving frequency (f<tspan font-size="8" dy="2">d</tspan>)</text>
         <text x="25" y="130" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,25,130)">Amplitude</text>
-        <!-- Natural frequency marker -->
         <line x1="200" y1="215" x2="200" y2="225" stroke="#1a1a2e" stroke-width="1.5"/>
-        <text x="200" y="238" font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="middle" font-weight="600">f₀</text>
-
-        <!-- Light damping (tall, sharp peak) -->
+        <text x="200" y="238" font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="middle" font-weight="600">f&#8320;</text>
+        <!-- Light damping -->
         <path d="M 70,215 Q 100,213 140,200 Q 170,160 190,80 Q 200,45 210,80 Q 230,160 260,200 Q 300,213 380,217" fill="none" stroke="#DC2626" stroke-width="2.5"/>
         <text x="230" y="52" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">Light damping</text>
-
         <!-- Medium damping -->
         <path d="M 70,214 Q 110,210 150,195 Q 180,170 195,130 Q 200,115 205,130 Q 220,170 250,195 Q 290,210 380,216" fill="none" stroke="#D97706" stroke-width="2.5"/>
         <text x="330" y="150" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">Medium</text>
-
-        <!-- Heavy damping (broad, flat) -->
+        <!-- Heavy damping -->
         <path d="M 70,212 Q 120,208 170,195 Q 190,188 200,184 Q 210,188 230,195 Q 280,208 380,214" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
         <text x="330" y="190" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">Heavy damping</text>
     </svg>
 </div>
 
-<h3>The Resonance Curve</h3>
-<p>A graph of amplitude against driving frequency shows:</p>
-<ul>
-    <li>A peak at the natural frequency f₀.</li>
-    <li>The amplitude is maximum at resonance.</li>
-    <li>At driving frequencies much lower or much higher than f₀, the amplitude is small.</li>
-</ul>
-
 <h3>Effect of Damping on Resonance</h3>
 <ul>
-    <li>Increasing damping <strong>reduces the peak amplitude</strong> at resonance.</li>
-    <li>Increasing damping <strong>broadens the resonance curve</strong> (the peak becomes flatter and wider).</li>
-    <li>Increasing damping causes the resonant frequency to shift <strong>slightly below</strong> f₀ (though for light damping this shift is negligible).</li>
-    <li>With very heavy damping, the resonance peak virtually disappears.</li>
+    <li>Increasing damping <strong>reduces the peak amplitude</strong> at resonance</li>
+    <li>Increasing damping <strong>broadens the resonance curve</strong> (the peak becomes flatter and wider)</li>
+    <li>Increasing damping causes the resonant frequency to shift <strong>slightly below</strong> f&#8320; (though for light damping this shift is negligible)</li>
+    <li>With very heavy damping, the resonance peak virtually disappears</li>
+    <li>At f<sub>d</sub> much less than f&#8320;, amplitude is small but non-zero (equal to the static displacement)</li>
+    <li>At f<sub>d</sub> much greater than f&#8320;, amplitude tends to zero</li>
 </ul>
-
-<table>
-    <tr>
-        <th>Damping level</th>
-        <th>Peak amplitude</th>
-        <th>Curve width</th>
-        <th>Resonant frequency</th>
-    </tr>
-    <tr>
-        <td>No damping</td>
-        <td>Infinite (theoretically)</td>
-        <td>Infinitely narrow</td>
-        <td>Exactly f₀</td>
-    </tr>
-    <tr>
-        <td>Light damping</td>
-        <td>Large</td>
-        <td>Narrow (sharp peak)</td>
-        <td>Very close to f₀</td>
-    </tr>
-    <tr>
-        <td>Heavy damping</td>
-        <td>Small</td>
-        <td>Wide (broad peak)</td>
-        <td>Slightly below f₀</td>
-    </tr>
-</table>
 
 <h3>Applications and Examples of Resonance</h3>
 
 <table>
-    <tr>
-        <th>Application</th>
-        <th>Explanation</th>
-    </tr>
-    <tr>
-        <td><strong>Shock absorbers (car suspension)</strong></td>
-        <td>Critical damping prevents resonance of the car body on springs when driving over bumps. Without damping, the car would bounce violently at certain speeds.</td>
-    </tr>
-    <tr>
-        <td><strong>Tuning circuits (radio)</strong></td>
-        <td>An LC circuit resonates at a specific frequency determined by L and C. By adjusting these, the circuit selects (amplifies) the desired radio frequency from all the signals received by the antenna.</td>
-    </tr>
-    <tr>
-        <td><strong>Musical instruments</strong></td>
-        <td>The body of a guitar or violin resonates with the vibrating strings, amplifying the sound.</td>
-    </tr>
-    <tr>
-        <td><strong>MRI scanners</strong></td>
-        <td>Hydrogen nuclei resonate at specific radio frequencies in a magnetic field, allowing imaging of body tissues.</td>
-    </tr>
-    <tr>
-        <td><strong>Bridges and buildings</strong></td>
-        <td>If wind or pedestrians drive a bridge at its natural frequency, dangerous resonance can occur (e.g., Tacoma Narrows Bridge, 1940). Dampers are installed to prevent this.</td>
-    </tr>
+    <tr><th>Application</th><th>Explanation</th></tr>
+    <tr><td><strong>Shock absorbers</strong></td><td>Critical damping prevents resonance of the car body on springs when driving over bumps.</td></tr>
+    <tr><td><strong>Tuning circuits (radio)</strong></td><td>An LC circuit resonates at f = 1/(2&#960;&#8730;LC). Adjusting L or C selects the desired radio frequency.</td></tr>
+    <tr><td><strong>Musical instruments</strong></td><td>The body of a guitar or violin resonates with the vibrating strings, amplifying the sound.</td></tr>
+    <tr><td><strong>MRI scanners</strong></td><td>Hydrogen nuclei resonate at specific radio frequencies in a magnetic field, allowing imaging of body tissues.</td></tr>
+    <tr><td><strong>Bridges</strong></td><td>Wind or pedestrians can drive a bridge at its natural frequency, causing dangerous resonance. Dampers are installed to prevent this (e.g., Millennium Bridge, London, 2000).</td></tr>
+    <tr><td><strong>Microwave ovens</strong></td><td>The frequency of microwaves (~2.45 GHz) is close to the natural frequency of water molecule vibration, causing resonant energy absorption and heating.</td></tr>
 </table>
 
 <div class="exam-tip">
-    When describing resonance, always state three things: (1) the driving frequency equals the natural frequency, (2) maximum energy transfer occurs, and (3) the amplitude reaches a maximum. For full marks on "explain resonance" questions, include all three points.
+    When describing resonance in an exam, always state three things: (1) the driving frequency equals the natural frequency, (2) maximum energy transfer occurs from driver to oscillator, and (3) the amplitude reaches a maximum. For full marks, include all three points. Also note that at resonance, the driver and oscillator are &#960;/2 (90&#176;) out of phase.
+</div>
+
+<div class="real-world">
+The Tacoma Narrows Bridge collapse (1940) is often cited as a resonance example, though the actual mechanism was aeroelastic flutter rather than simple resonance. A genuine resonance disaster occurred in 1831 when soldiers marching in step caused Broughton Suspension Bridge near Manchester to collapse. Since then, soldiers break step when crossing bridges. The Millennium Bridge in London (2000) experienced lateral resonance from synchronized pedestrian footsteps, requiring the installation of dampers at a cost of over five million pounds.
 </div>
 
 <!-- ============ CORE PRACTICAL 8 ============ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 8: Determine the value of an unknown mass using the oscillation of a spring</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Core Practical 8: Determine the value of an unknown mass using the oscillation of a spring</h2>
 
 <svg viewBox="0 0 460 520" style="max-width:500px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
-  <!-- Clamp stand -->
   <rect x="60" y="20" width="12" height="400" rx="2" fill="#555" stroke="#1a1a2e" stroke-width="1.5"/>
   <rect x="30" y="410" width="80" height="12" rx="2" fill="#555" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Clamp arm -->
   <rect x="72" y="40" width="80" height="10" rx="2" fill="#777" stroke="#1a1a2e" stroke-width="1"/>
-  <!-- Clamp boss -->
   <rect x="68" y="36" width="16" height="18" rx="2" fill="#666" stroke="#1a1a2e" stroke-width="1"/>
-  <!-- Spring (coil drawing) -->
   <path d="M150,50 L160,60 L140,80 L160,100 L140,120 L160,140 L140,160 L160,180 L140,200 L160,220 L150,230" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
   <text x="180" y="140" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">Spring (k)</text>
-  <!-- Mass hanger with known mass -->
   <rect x="137" y="235" width="26" height="12" rx="2" fill="#777" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="133" y="247" width="34" height="15" rx="2" fill="#666" stroke="#1a1a2e" stroke-width="1.5"/>
   <rect x="133" y="262" width="34" height="15" rx="2" fill="#666" stroke="#1a1a2e" stroke-width="1.5"/>
   <rect x="133" y="277" width="34" height="15" rx="2" fill="#666" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="190" y="270" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">Known mass m</text>
-  <!-- Equilibrium line -->
   <line x1="100" y1="260" x2="130" y2="260" stroke="#16A34A" stroke-width="2"/>
   <text x="90" y="258" text-anchor="end" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="bold">Equilibrium</text>
-  <!-- Fiducial marker -->
   <rect x="120" y="256" width="10" height="8" rx="1" fill="#16A34A" stroke="#16A34A" stroke-width="1"/>
   <text x="90" y="272" text-anchor="end" font-family="system-ui" font-size="9" fill="#16A34A">(fiducial marker)</text>
-  <!-- Oscillation arrow (up and down) -->
   <line x1="108" y1="230" x2="108" y2="300" stroke="#DC2626" stroke-width="2"/>
   <polygon points="108,230 104,245 112,245" fill="#DC2626"/>
   <polygon points="108,300 104,285 112,285" fill="#DC2626"/>
   <text x="95" y="310" text-anchor="end" font-family="system-ui" font-size="10" fill="#DC2626">Oscillation</text>
-  <!-- Ruler alongside -->
   <rect x="170" y="40" width="8" height="260" fill="#FBBF24" stroke="#1a1a2e" stroke-width="0.5" opacity="0.6"/>
   <text x="190" y="45" font-family="system-ui" font-size="10" fill="#D97706">Ruler</text>
-  <!-- Stopwatch -->
   <rect x="280" y="200" width="80" height="50" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="320" y="222" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Stopwatch</text>
   <text x="320" y="238" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Time 10T</text>
-  <!-- GRAPH: T² vs m -->
+  <!-- Graph -->
   <rect x="240" y="310" width="190" height="160" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="335" y="330" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">Graph: T&sup2; vs m</text>
+  <text x="335" y="330" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">Graph: T&#178; vs m</text>
   <line x1="280" y1="450" x2="410" y2="450" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="280" y1="450" x2="280" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="345" y="468" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">m / kg</text>
-  <text x="268" y="395" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,268,395)">T&sup2; / s&sup2;</text>
-  <!-- Straight line through origin -->
+  <text x="268" y="395" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,268,395)">T&#178; / s&#178;</text>
   <line x1="280" y1="450" x2="400" y2="350" stroke="#1a73e8" stroke-width="2.5"/>
-  <text x="370" y="380" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">gradient = 4&pi;&sup2;/k</text>
-  <!-- Data points -->
+  <text x="370" y="380" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">gradient = 4&#960;&#178;/k</text>
   <circle cx="300" cy="430" r="3" fill="#DC2626"/>
   <circle cx="320" cy="415" r="3" fill="#DC2626"/>
   <circle cx="340" cy="400" r="3" fill="#DC2626"/>
   <circle cx="360" cy="385" r="3" fill="#DC2626"/>
   <circle cx="380" cy="370" r="3" fill="#DC2626"/>
-  <!-- Unknown mass point marked -->
   <circle cx="350" cy="392" r="5" fill="none" stroke="#16A34A" stroke-width="2"/>
-  <text x="360" y="408" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="bold">&larr; Unknown mass</text>
-  <!-- Title -->
+  <text x="360" y="408" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="bold">&#8592; Unknown mass</text>
   <text x="230" y="505" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP8: Finding unknown mass from spring oscillation</text>
 </svg>
 
 <h3>Apparatus</h3>
 <ul>
-  <li>Helical spring (with known or determinable spring constant <em>k</em>)</li>
+  <li>Helical spring (with known or determinable spring constant k)</li>
   <li>Clamp stand, boss, and clamp</li>
   <li>Mass hanger and slotted masses (e.g. 50 g, 100 g, 150 g, 200 g, 250 g, 300 g)</li>
-  <li>Stopwatch (resolution &plusmn;0.01 s)</li>
+  <li>Stopwatch (resolution &#177;0.01 s)</li>
   <li>Fiducial marker (e.g. a card pointer at the equilibrium position)</li>
   <li>Ruler (to measure amplitude)</li>
   <li>Unknown mass (to be determined)</li>
-  <li>Balance (to check known masses)</li>
+  <li>Balance (to verify known masses)</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
   <li>Attach the spring to the clamp and hang the mass hanger from it.</li>
   <li>Add a <strong>known mass</strong> (e.g. 100 g) to the hanger. Allow it to come to rest at the equilibrium position. Place a fiducial marker at this level.</li>
-  <li>Pull the mass down a small distance (1&ndash;2 cm &mdash; small amplitude for SHM) and release.</li>
-  <li>Time <strong>10 complete oscillations</strong> using the stopwatch and the fiducial marker. Start timing as the mass passes the fiducial marker moving in one direction, and count each time it passes the same way.</li>
-  <li>Repeat the timing 3 times and calculate the mean time for 10 oscillations. Divide by 10 to get the period <em>T</em>.</li>
+  <li>Pull the mass down a small distance (1&#8211;2 cm &#8212; small amplitude for SHM) and release.</li>
+  <li>Time <strong>10 complete oscillations</strong> using the stopwatch and the fiducial marker. Start timing as the mass passes the marker moving in one direction, and count each time it passes the same way.</li>
+  <li>Repeat the timing 3 times and calculate the mean time for 10 oscillations. Divide by 10 to get the period T.</li>
   <li>Repeat for at least 5 different known masses.</li>
-  <li>Plot <strong>T&sup2;</strong> (y-axis) against <strong>m</strong> (x-axis).</li>
+  <li>Plot <strong>T&#178;</strong> (y-axis) against <strong>m</strong> (x-axis).</li>
   <li>Now attach the <strong>unknown mass</strong>. Measure its period the same way. Read off the corresponding mass from the graph (or use the equation of the line).</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-  <li>Do not overload the spring beyond its elastic limit.</li>
-  <li>Place a cushion or box beneath the masses in case the spring breaks or the mass falls.</li>
-  <li>Ensure the clamp stand is stable (use a G-clamp on the base if needed).</li>
-  <li>Keep the oscillation amplitude small to prevent the spring from detaching.</li>
+  <li>Do not overload the spring beyond its elastic limit</li>
+  <li>Place a cushion or box beneath the masses in case the spring breaks or the mass falls</li>
+  <li>Ensure the clamp stand is stable (use a G-clamp on the base if needed)</li>
+  <li>Keep the oscillation amplitude small to prevent the spring from detaching</li>
 </ul>
 
 <h3>Analysis</h3>
-<p>For a mass-spring system undergoing SHM:</p>
-<div class="equation">
-  T = 2&pi; &radic;(m/k) &nbsp;&nbsp;&rArr;&nbsp;&nbsp; T&sup2; = (4&pi;&sup2;/k) m
-</div>
-<p>A graph of <strong>T&sup2; vs m</strong> gives a straight line through the origin (if the spring has negligible mass) with:</p>
-<ul>
-  <li><strong>Gradient</strong> = 4&pi;&sup2; / k</li>
-</ul>
-<p>From the gradient, the spring constant <em>k</em> can be calculated: k = 4&pi;&sup2; / gradient.</p>
-<p>To find the <strong>unknown mass</strong>: measure its T, calculate T&sup2;, and read the mass from the graph. Alternatively, use: m<sub>unknown</sub> = T&sup2;k / (4&pi;&sup2;).</p>
-<p>If the graph does not pass through the origin, this suggests the effective mass of the spring contributes. The x-intercept gives the effective spring mass (typically about 1/3 of the spring's mass).</p>
+<p>For a mass-spring system: T = 2&#960;&#8730;(m/k), so T&#178; = (4&#960;&#178;/k)m</p>
+<p>A graph of <strong>T&#178; vs m</strong> gives a straight line through the origin with <strong>gradient = 4&#960;&#178;/k</strong>.</p>
+<p>From the gradient, k can be calculated: k = 4&#960;&#178; / gradient.</p>
+<p>For the unknown mass: measure T, calculate T&#178;, and read the mass from the graph or use m = T&#178;k/(4&#960;&#178;).</p>
+<p>If the graph does not pass through the origin, this suggests the effective mass of the spring contributes: T&#178; = (4&#960;&#178;/k)(m + m<sub>eff</sub>), where m<sub>eff</sub> &#8776; &#8531; of the spring's mass. The x-intercept gives &#8722;m<sub>eff</sub>.</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Reaction time when starting/stopping the stopwatch</td><td>Random</td><td>Time 10 (or 20) oscillations and divide; use a fiducial marker for consistent timing point</td></tr>
-<tr><td>Amplitude too large &mdash; not true SHM</td><td>Systematic</td><td>Keep amplitude small (1&ndash;2 cm); spring must obey Hooke's law throughout</td></tr>
-<tr><td>Spring oscillates laterally (swinging) not just vertically</td><td>Systematic</td><td>Pull down and release carefully in the vertical direction only; use a guide tube if needed</td></tr>
-<tr><td>Mass of spring adds to the oscillating mass</td><td>Systematic</td><td>Use a light spring; or account for the effective spring mass (graph will have a non-zero x-intercept)</td></tr>
-<tr><td>Air resistance (damping) reduces amplitude over time</td><td>Systematic</td><td>Measure the period quickly (within first few oscillations); use a compact, streamlined mass</td></tr>
+<tr><td>Reaction time when starting/stopping the stopwatch (~0.2 s)</td><td>Random</td><td>Time 10 (or 20) oscillations and divide; use a fiducial marker for consistent timing</td></tr>
+<tr><td>Amplitude too large &#8212; not true SHM</td><td>Systematic</td><td>Keep amplitude small (1&#8211;2 cm); spring must obey Hooke's law throughout</td></tr>
+<tr><td>Spring oscillates laterally (swinging) not just vertically</td><td>Systematic</td><td>Pull down and release carefully in the vertical direction only</td></tr>
+<tr><td>Mass of spring adds to the oscillating mass</td><td>Systematic</td><td>Use a light spring; or account for m<sub>eff</sub> from the graph's x-intercept</td></tr>
+<tr><td>Air resistance (damping) reduces amplitude over time</td><td>Systematic</td><td>Measure the period quickly; use a compact mass to reduce drag</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> The period of a mass-spring oscillator depends <strong>only</strong> on mass and spring constant, <strong>not</strong> on amplitude (provided the amplitude is small enough for SHM). If a graph of T&sup2; vs m does not pass through the origin, include the effective mass of the spring: T&sup2; = (4&pi;&sup2;/k)(m + m<sub>eff</sub>). The x-intercept = &minus;m<sub>eff</sub>.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> The period of a mass-spring oscillator depends <strong>only</strong> on mass and spring constant, <strong>not</strong> on amplitude (provided the amplitude is small enough for SHM). If a graph of T&#178; vs m does not pass through the origin, include the effective mass of the spring. The period is also independent of g, so this experiment would give the same result on the Moon.</div>
 </div>
 
 </div>

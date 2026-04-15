@@ -24,6 +24,10 @@
   .exam-tip strong { color: #b45309; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .worked-example strong { color: #16a34a; }
+  .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #7c3aed; }
 </style>
 </head>
 <body>
@@ -361,6 +365,31 @@
 
 <div class="definition">
   <strong>Natural logarithm (ln):</strong> The logarithm to base e (where e &approx; 2.718). If y = e<sup>x</sup>, then x = ln y. Used frequently in exponential decay and growth problems in physics.
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> An experiment gives the relationship T = kL<sup>n</sup>. Data: when L = 0.50 m, T = 1.42 s; when L = 2.00 m, T = 2.84 s. Find n and k.<br><br>
+Taking logs: log T = n log L + log k<br><br>
+Point 1: log(1.42) = n log(0.50) + log k &rArr; 0.152 = &minus;0.301n + log k<br>
+Point 2: log(2.84) = n log(2.00) + log k &rArr; 0.453 = 0.301n + log k<br><br>
+Subtracting: 0.453 &minus; 0.152 = 0.301n &minus; (&minus;0.301n) = 0.602n<br>
+0.301 = 0.602n, so n = <strong>0.50</strong> (i.e., T &prop; &radic;L, consistent with a pendulum: T = 2&pi;&radic;(L/g))<br><br>
+log k = 0.152 + 0.301(0.50) = 0.303, so k = 10<sup>0.303</sup> = <strong>2.01</strong><br>
+This gives k = 2&pi;/&radic;g = 2&pi;/&radic;9.81 = 2.01 &check;
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Estimate the number of tennis balls that would fill a classroom.<br><br>
+Classroom dimensions: approximately 10 m &times; 8 m &times; 3 m = 240 m&sup3;<br>
+Tennis ball diameter: approximately 6.5 cm = 0.065 m<br>
+Volume of one ball: (4/3)&pi;r&sup3; = (4/3)&pi;(0.0325)&sup3; = 1.44 &times; 10<sup>&minus;4</sup> m&sup3;<br>
+Packing efficiency (random packing): approximately 64%<br>
+Number of balls = 0.64 &times; 240 / 1.44 &times; 10<sup>&minus;4</sup> &asymp; <strong>1.1 &times; 10<sup>6</sup></strong> &asymp; 1 million balls<br><br>
+Order of magnitude: <strong>10<sup>6</sup></strong>. The key is showing clear working and stating assumptions.
+</div>
+
+<div class="real-world">
+<strong>Real-World Application:</strong> Log-log and log-linear plots are used extensively in science and engineering. In seismology, the Richter scale is logarithmic (each whole number increase represents a tenfold increase in amplitude). In acoustics, the decibel scale is logarithmic. In biology, population growth and drug metabolism follow exponential laws analysed with ln plots. In astronomy, the magnitude scale for star brightness is logarithmic. The ability to linearise data and extract physical constants from gradients is one of the most transferable skills from A-Level physics.
 </div>
 
 </div>
