@@ -18,6 +18,8 @@
   .definition strong { color: #1e3a5f; }
   .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
   .exam-tip strong { color: #b45309; }
+  .real-world { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #166534; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
@@ -28,299 +30,277 @@
 <h2>7.1 Inheritance</h2>
 
 <div class="definition">
-<strong>Allele:</strong> An alternative form of a gene occupying the same locus on homologous chromosomes. An organism's genotype is the combination of alleles it carries; the phenotype is the observable characteristic resulting from the genotype and environmental influences.
+<strong>Allele:</strong> An alternative form of a gene, occupying the same locus on homologous chromosomes. Alleles differ in their DNA base sequence and may code for different versions of the same polypeptide.<br>
+<strong>Genotype:</strong> The combination of alleles an organism carries for a particular gene (or genes).<br>
+<strong>Phenotype:</strong> The observable characteristics of an organism, resulting from the interaction between its genotype and environmental influences.
 </div>
 
-<h3>Monohybrid Inheritance</h3>
-<p>Monohybrid crosses involve a single gene with two alleles. Key terms:</p>
-<ul>
-<li><strong>Homozygous:</strong> Two identical alleles (AA or aa)</li>
-<li><strong>Heterozygous:</strong> Two different alleles (Aa)</li>
-<li><strong>Dominant:</strong> Allele expressed in both homozygous and heterozygous genotype</li>
-<li><strong>Recessive:</strong> Allele only expressed in homozygous recessive genotype</li>
-</ul>
+<h3>Key Genetic Terms</h3>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td><strong>Homozygous</strong></td><td>Two identical alleles at a locus (e.g. AA or aa)</td></tr>
+<tr><td><strong>Heterozygous</strong></td><td>Two different alleles at a locus (e.g. Aa)</td></tr>
+<tr><td><strong>Dominant</strong></td><td>Allele expressed in both homozygous (AA) and heterozygous (Aa) genotype. Only one copy needed for expression.</td></tr>
+<tr><td><strong>Recessive</strong></td><td>Allele only expressed in the homozygous state (aa). Masked by the dominant allele in heterozygotes.</td></tr>
+<tr><td><strong>Carrier</strong></td><td>A heterozygous individual for a recessive condition — phenotypically unaffected but can pass the recessive allele to offspring.</td></tr>
+<tr><td><strong>Test cross</strong></td><td>Crossing an individual of dominant phenotype with a homozygous recessive (aa) to determine if the unknown genotype is AA or Aa.</td></tr>
+</table>
 
-<p>Example cross: Aa × Aa</p>
+<h3>Monohybrid Inheritance</h3>
+<p>Monohybrid crosses involve a single gene with two alleles. The classic cross between two heterozygotes:</p>
+
+<p><strong>Example:</strong> Aa x Aa (e.g. tongue rolling ability)</p>
 <table>
 <tr><th></th><th>A</th><th>a</th></tr>
 <tr><td><strong>A</strong></td><td>AA</td><td>Aa</td></tr>
 <tr><td><strong>a</strong></td><td>Aa</td><td>aa</td></tr>
 </table>
-<p>Phenotypic ratio: 3 dominant : 1 recessive</p>
+<p><strong>Genotypic ratio:</strong> 1 AA : 2 Aa : 1 aa<br>
+<strong>Phenotypic ratio:</strong> 3 dominant : 1 recessive</p>
 
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 380 300" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
-  <text x="190" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">Monohybrid Cross Punnett Square (Aa x Aa)</text>
-  <!-- Parents -->
-  <text x="100" y="50" text-anchor="middle" font-size="11" fill="#1a73e8" font-weight="bold">Parent 1: Aa</text>
-  <text x="280" y="50" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="bold">Parent 2: Aa</text>
-  <!-- Gametes -->
-  <text x="100" y="70" text-anchor="middle" font-size="10" fill="#1a73e8">Gametes: A or a</text>
-  <text x="280" y="70" text-anchor="middle" font-size="10" fill="#DC2626">Gametes: A or a</text>
-  <!-- Punnett square grid -->
-  <!-- Header row -->
-  <rect x="100" y="85" width="70" height="35" fill="#e8eef6" stroke="#cbd5e1" stroke-width="1.5"/>
-  <rect x="170" y="85" width="70" height="35" fill="#1a73e8" opacity="0.1" stroke="#cbd5e1" stroke-width="1.5"/>
-  <rect x="240" y="85" width="70" height="35" fill="#1a73e8" opacity="0.1" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text x="135" y="107" text-anchor="middle" font-size="11" fill="#1a1a2e" opacity="0.4"></text>
-  <text x="205" y="107" text-anchor="middle" font-weight="bold" font-size="13" fill="#DC2626">A</text>
-  <text x="275" y="107" text-anchor="middle" font-weight="bold" font-size="13" fill="#DC2626">a</text>
-  <!-- Row 1 -->
-  <rect x="100" y="120" width="70" height="55" fill="#1a73e8" opacity="0.1" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text x="135" y="152" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">A</text>
-  <rect x="170" y="120" width="70" height="55" fill="#16A34A" opacity="0.08" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text x="205" y="145" text-anchor="middle" font-weight="bold" font-size="14" fill="#16A34A">AA</text>
-  <text x="205" y="163" text-anchor="middle" font-size="9" fill="#16A34A">Homozygous</text>
-  <text x="205" y="173" text-anchor="middle" font-size="9" fill="#16A34A">dominant</text>
-  <rect x="240" y="120" width="70" height="55" fill="#16A34A" opacity="0.05" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text x="275" y="145" text-anchor="middle" font-weight="bold" font-size="14" fill="#16A34A">Aa</text>
-  <text x="275" y="163" text-anchor="middle" font-size="9" fill="#16A34A">Heterozygous</text>
-  <!-- Row 2 -->
-  <rect x="100" y="175" width="70" height="55" fill="#1a73e8" opacity="0.1" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text x="135" y="207" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">a</text>
-  <rect x="170" y="175" width="70" height="55" fill="#16A34A" opacity="0.05" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text x="205" y="200" text-anchor="middle" font-weight="bold" font-size="14" fill="#16A34A">Aa</text>
-  <text x="205" y="218" text-anchor="middle" font-size="9" fill="#16A34A">Heterozygous</text>
-  <rect x="240" y="175" width="70" height="55" fill="#DC2626" opacity="0.08" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text x="275" y="200" text-anchor="middle" font-weight="bold" font-size="14" fill="#DC2626">aa</text>
-  <text x="275" y="218" text-anchor="middle" font-size="9" fill="#DC2626">Homozygous</text>
-  <text x="275" y="228" text-anchor="middle" font-size="9" fill="#DC2626">recessive</text>
-  <!-- Ratios -->
-  <rect x="80" y="245" width="220" height="45" rx="6" fill="#D97706" opacity="0.08" stroke="#D97706" stroke-width="1.5"/>
-  <text x="190" y="262" text-anchor="middle" font-weight="bold" font-size="11" fill="#D97706">Genotypic ratio: 1 AA : 2 Aa : 1 aa</text>
-  <text x="190" y="280" text-anchor="middle" font-weight="bold" font-size="11" fill="#D97706">Phenotypic ratio: 3 dominant : 1 recessive</text>
-</svg>
+<div class="exam-tip">
+<strong>Exam Tip:</strong> When writing genetic crosses in exams, always include: (1) a key defining the alleles (e.g. A = dominant allele for..., a = recessive allele for...); (2) parental phenotypes and genotypes; (3) gametes produced; (4) a Punnett square; (5) offspring genotypic and phenotypic ratios. Show your working clearly — marks are given for method, not just the answer.
 </div>
 
 <h3>Dihybrid Inheritance</h3>
-<p>Dihybrid crosses involve two genes on different chromosomes (independently assorted). A cross between two double heterozygotes (AaBb × AaBb) gives a 9:3:3:1 phenotypic ratio.</p>
+<p>Dihybrid crosses involve two genes on <strong>different chromosomes</strong> (so they are independently assorted during meiosis). A cross between two double heterozygotes (AaBb x AaBb) produces a <strong>9:3:3:1</strong> phenotypic ratio:</p>
+<ul>
+<li>9 = both dominant (A_B_)</li>
+<li>3 = first dominant, second recessive (A_bb)</li>
+<li>3 = first recessive, second dominant (aaB_)</li>
+<li>1 = both recessive (aabb)</li>
+</ul>
+
+<p>If two genes are on the same chromosome, they are <strong>linked</strong> and tend to be inherited together (they do not assort independently). Linkage produces ratios that deviate from the expected 9:3:3:1. Crossing over during meiosis can break linkage, producing recombinant phenotypes at a lower frequency.</p>
 
 <h3>Codominance</h3>
 <div class="definition">
-<strong>Codominance:</strong> A pattern of inheritance where both alleles are expressed equally in the heterozygote. Neither allele is dominant over the other. Example: ABO blood groups where I<sup>A</sup> and I<sup>B</sup> are codominant (I<sup>A</sup>I<sup>B</sup> gives blood group AB).
+<strong>Codominance:</strong> A pattern of inheritance where both alleles are expressed simultaneously in the heterozygote — neither is dominant over the other. The heterozygote shows a phenotype distinct from both homozygotes but displaying features of both.<br>
+Convention: codominant alleles are written as superscripts, e.g. C<sup>R</sup>C<sup>W</sup>.
 </div>
 
+<p><strong>Example — Sickle cell trait:</strong> Individuals with genotype Hb<sup>A</sup>Hb<sup>S</sup> produce both normal and sickle haemoglobin. They have mild sickle cell trait but also resistance to malaria (heterozygote advantage).</p>
+
 <h3>Multiple Alleles</h3>
-<p>Some genes have more than two alleles in a population (though an individual still only carries two). ABO blood groups: three alleles I<sup>A</sup>, I<sup>B</sup>, and I<sup>O</sup>. I<sup>A</sup> and I<sup>B</sup> are codominant; both are dominant over I<sup>O</sup>.</p>
+<p>Some genes have more than two alleles in a population (though an individual still carries only two). The classic example is the <strong>ABO blood group system</strong>: three alleles I<sup>A</sup>, I<sup>B</sup>, and I<sup>O</sup>.</p>
+<ul>
+<li>I<sup>A</sup> and I<sup>B</sup> are <strong>codominant</strong> with each other (both expressed in I<sup>A</sup>I<sup>B</sup> = blood group AB)</li>
+<li>Both I<sup>A</sup> and I<sup>B</sup> are <strong>dominant</strong> over I<sup>O</sup></li>
+<li>I<sup>O</sup> is <strong>recessive</strong></li>
+</ul>
 
 <table>
-<tr><th>Blood Group</th><th>Possible Genotypes</th><th>Antigens</th><th>Antibodies</th></tr>
-<tr><td>A</td><td>I<sup>A</sup>I<sup>A</sup> or I<sup>A</sup>I<sup>O</sup></td><td>A</td><td>Anti-B</td></tr>
-<tr><td>B</td><td>I<sup>B</sup>I<sup>B</sup> or I<sup>B</sup>I<sup>O</sup></td><td>B</td><td>Anti-A</td></tr>
-<tr><td>AB</td><td>I<sup>A</sup>I<sup>B</sup></td><td>A and B</td><td>Neither</td></tr>
-<tr><td>O</td><td>I<sup>O</sup>I<sup>O</sup></td><td>Neither</td><td>Anti-A and Anti-B</td></tr>
+<tr><th>Blood Group</th><th>Possible Genotypes</th><th>Antigens on RBC Surface</th><th>Antibodies in Plasma</th></tr>
+<tr><td>A</td><td>I<sup>A</sup>I<sup>A</sup> or I<sup>A</sup>I<sup>O</sup></td><td>A antigen</td><td>Anti-B</td></tr>
+<tr><td>B</td><td>I<sup>B</sup>I<sup>B</sup> or I<sup>B</sup>I<sup>O</sup></td><td>B antigen</td><td>Anti-A</td></tr>
+<tr><td>AB</td><td>I<sup>A</sup>I<sup>B</sup></td><td>A and B antigens</td><td>Neither (universal recipient)</td></tr>
+<tr><td>O</td><td>I<sup>O</sup>I<sup>O</sup></td><td>Neither antigen</td><td>Anti-A and Anti-B (universal donor)</td></tr>
 </table>
+
+<div class="real-world">
+<strong>Real-World Link:</strong> Blood group compatibility is critical in transfusions. If a patient receives blood with antigens their plasma antibodies recognise, the donated red blood cells will agglutinate (clump), potentially blocking capillaries and causing a fatal transfusion reaction. Group O blood (no A or B antigens) can be given to any patient in an emergency. ABO blood groups are also used in paternity testing, though DNA profiling is far more definitive.
+</div>
 
 <h3>Sex Linkage</h3>
 <div class="definition">
-<strong>Sex-linked gene:</strong> A gene located on the X chromosome (X-linked). Males (XY) have only one copy of X-linked genes, so a single recessive allele will be expressed (hemizygous). This makes males more likely to show X-linked recessive conditions (e.g. haemophilia, red-green colour blindness).
+<strong>Sex-linked gene:</strong> A gene located on the sex chromosomes, usually the <strong>X chromosome</strong> (X-linked). Since males have only one X chromosome (XY), they are <strong>hemizygous</strong> for X-linked genes — a single recessive allele will be expressed because there is no second X to carry a dominant allele. This is why X-linked recessive conditions are much more common in males.
 </div>
 
-<p>In a cross between a carrier female (X<sup>H</sup>X<sup>h</sup>) and a normal male (X<sup>H</sup>Y): 50% of sons will be affected, 50% of daughters will be carriers.</p>
+<p><strong>Examples of X-linked recessive conditions:</strong></p>
+<ul>
+<li><strong>Haemophilia A:</strong> Deficiency of clotting factor VIII. Affected males (X<sup>h</sup>Y) bleed excessively. Females can be carriers (X<sup>H</sup>X<sup>h</sup>) or affected (X<sup>h</sup>X<sup>h</sup>, very rare).</li>
+<li><strong>Red-green colour blindness:</strong> Defective cone pigment genes on the X chromosome. ~8% of males affected vs ~0.5% of females.</li>
+<li><strong>Duchenne muscular dystrophy:</strong> Defective dystrophin gene on X chromosome.</li>
+</ul>
+
+<p><strong>Cross example:</strong> Carrier female (X<sup>H</sup>X<sup>h</sup>) x Normal male (X<sup>H</sup>Y):</p>
+<table>
+<tr><th></th><th>X<sup>H</sup></th><th>Y</th></tr>
+<tr><td><strong>X<sup>H</sup></strong></td><td>X<sup>H</sup>X<sup>H</sup> (normal female)</td><td>X<sup>H</sup>Y (normal male)</td></tr>
+<tr><td><strong>X<sup>h</sup></strong></td><td>X<sup>H</sup>X<sup>h</sup> (carrier female)</td><td>X<sup>h</sup>Y (affected male)</td></tr>
+</table>
+<p>Result: 50% of sons affected; 50% of daughters are carriers. No daughters show the condition. No sons are carriers (they either have or do not have the condition).</p>
+
+<h3>Autosomal Linkage</h3>
+<p>When two genes are located on the <strong>same autosome</strong> (non-sex chromosome), they are physically linked and tend to be inherited together. This produces offspring ratios that deviate from the expected independent assortment ratios. The closer together two genes are on a chromosome, the less likely they are to be separated by crossing over, and the fewer recombinant offspring are produced.</p>
 
 <h3>Epistasis</h3>
 <div class="definition">
-<strong>Epistasis:</strong> The interaction between genes where one gene masks or modifies the expression of another gene at a different locus. The gene doing the masking is the epistatic gene; the gene being masked is the hypostatic gene.
+<strong>Epistasis:</strong> The interaction between genes at different loci, where one gene masks or modifies the expression of another gene. The masking gene is the <strong>epistatic gene</strong>; the masked gene is the <strong>hypostatic gene</strong>. This produces modified dihybrid ratios.
 </div>
 
-<p>Modified dihybrid ratios due to epistasis:</p>
 <table>
-<tr><th>Type</th><th>Ratio</th><th>Example</th></tr>
-<tr><td>Recessive epistasis</td><td>9:3:4</td><td>Coat colour in Labrador retrievers (ee genotype masks B/b gene)</td></tr>
-<tr><td>Dominant epistasis</td><td>12:3:1</td><td>Squash fruit colour (dominant W masks Y/y gene)</td></tr>
-<tr><td>Complementary genes</td><td>9:7</td><td>Flower colour requiring functional alleles at both loci</td></tr>
+<tr><th>Type</th><th>Modified Ratio (from 9:3:3:1)</th><th>Explanation</th><th>Example</th></tr>
+<tr><td><strong>Recessive epistasis</strong></td><td>9:3:4</td><td>Homozygous recessive genotype at one locus masks expression of the other gene entirely</td><td>Labrador coat colour: ee genotype = yellow, regardless of B/b genotype. EE/Ee + BB/Bb = black; EE/Ee + bb = chocolate</td></tr>
+<tr><td><strong>Dominant epistasis</strong></td><td>12:3:1</td><td>A dominant allele at one locus masks expression of the other gene</td><td>Squash fruit colour: W_ = white (masks Y/y gene). wwY_ = yellow; wwyy = green</td></tr>
+<tr><td><strong>Complementary genes</strong></td><td>9:7</td><td>Both genes must have at least one dominant allele for the final phenotype to appear</td><td>Flower colour: functional enzyme needed from each gene (A and B). Only A_B_ = coloured; all others = white</td></tr>
 </table>
 
-<h3>The Chi-Squared Test</h3>
+<div class="exam-tip">
+<strong>Exam Tip:</strong> When you see unexpected ratios in a dihybrid cross (anything other than 9:3:3:1), consider epistasis. The modified ratios still add up to 16 (the total number of possible genotype combinations from a dihybrid cross). Identify which categories have been merged and this tells you which type of epistasis is occurring.
+</div>
+
+<h3>The Chi-Squared (&#967;<sup>2</sup>) Test</h3>
 <div class="definition">
-<strong>Chi-squared (χ²) test:</strong> A statistical test used to determine whether observed results differ significantly from expected results predicted by a genetic hypothesis. It tests the null hypothesis that there is no significant difference between observed and expected ratios.
+<strong>Chi-squared test:</strong> A statistical test used to determine whether there is a significant difference between observed and expected results. It tests the <strong>null hypothesis</strong> (H<sub>0</sub>): there is no significant difference between observed and expected frequencies — any difference is due to chance.
 </div>
 
 <div class="equation">
-χ² = Σ (O - E)² / E
+&#967;<sup>2</sup> = &Sigma; (O - E)<sup>2</sup> / E
 </div>
 
-<p>Where O = observed frequency, E = expected frequency. Steps:</p>
+<p>Where O = observed frequency, E = expected frequency for each category.</p>
+
+<h3>Steps for the Chi-Squared Test</h3>
 <ol>
-<li>State the null hypothesis (no significant difference between observed and expected).</li>
-<li>Calculate expected values from the predicted ratio.</li>
-<li>Calculate χ² using the formula.</li>
-<li>Determine degrees of freedom (df = number of categories - 1).</li>
-<li>Compare calculated χ² with the critical value at p = 0.05.</li>
-<li>If χ² < critical value: accept null hypothesis (results fit expected ratio — difference is due to chance).</li>
-<li>If χ² > critical value: reject null hypothesis (significant difference — results do not fit).</li>
+<li><strong>State the null hypothesis:</strong> "There is no significant difference between the observed and expected ratios."</li>
+<li><strong>Calculate expected values</strong> from the predicted genetic ratio (e.g. 3:1 predicts 75% and 25% of total).</li>
+<li><strong>Calculate &#967;<sup>2</sup></strong> using the formula for each category, then sum.</li>
+<li><strong>Determine degrees of freedom:</strong> df = number of phenotypic categories - 1.</li>
+<li><strong>Compare the calculated &#967;<sup>2</sup> with the critical value</strong> from a table at <strong>p = 0.05</strong> (5% significance level).</li>
+<li>If &#967;<sup>2</sup> <strong>&lt;</strong> critical value: <strong>accept H<sub>0</sub></strong> — the difference is not significant; results are consistent with the expected ratio (any difference is likely due to chance).</li>
+<li>If &#967;<sup>2</sup> <strong>&gt;</strong> critical value: <strong>reject H<sub>0</sub></strong> — the difference IS significant; results do not fit the expected ratio (some other factor is affecting the results).</li>
 </ol>
 
 <div class="exam-tip">
-<strong>Exam Tip:</strong> Always state the null hypothesis clearly. The critical value at p = 0.05 means there is a 5% probability that the difference is due to chance. If your calculated value exceeds this, you reject the null hypothesis and conclude the difference is significant.
+<strong>Exam Tip:</strong> The p = 0.05 threshold means there is a 5% probability (1 in 20 chance) that the difference between observed and expected is due to chance alone. If your calculated &#967;<sup>2</sup> exceeds the critical value, there is less than a 5% chance the difference is due to chance, so you conclude it is significant. Always state both the null hypothesis AND your conclusion clearly. The chi-squared test requires raw count data (not percentages) and expected values of at least 5 in each category.
 </div>
+
+<h3>Worked Example</h3>
+<p>In a monohybrid cross (Aa x Aa), you expect a 3:1 ratio. From 120 offspring, you observe 82 dominant and 38 recessive.</p>
+<ul>
+<li>Expected: 90 dominant (120 x 3/4) and 30 recessive (120 x 1/4)</li>
+<li>&#967;<sup>2</sup> = (82-90)<sup>2</sup>/90 + (38-30)<sup>2</sup>/30 = 64/90 + 64/30 = 0.711 + 2.133 = 2.844</li>
+<li>df = 2 - 1 = 1. Critical value at p=0.05, df=1 is 3.841</li>
+<li>2.844 &lt; 3.841, so accept H<sub>0</sub>. The results are consistent with a 3:1 ratio.</li>
+</ul>
 
 <h2>7.2 Populations</h2>
 
 <h3>Hardy-Weinberg Principle</h3>
 <div class="definition">
-<strong>Hardy-Weinberg Principle:</strong> In a large, randomly mating population with no selection, mutation, migration, or genetic drift, allele and genotype frequencies remain constant from generation to generation.
+<strong>Hardy-Weinberg Principle:</strong> In a large, randomly mating population with no selection, mutation, migration, or genetic drift, allele and genotype frequencies remain constant from generation to generation (the population is in <strong>genetic equilibrium</strong>).
 </div>
 
 <div class="equation">
-p + q = 1 (allele frequencies, where p = dominant allele, q = recessive allele)<br>
-p² + 2pq + q² = 1 (genotype frequencies: p² = homozygous dominant, 2pq = heterozygous, q² = homozygous recessive)
+p + q = 1 &nbsp;&nbsp; (allele frequencies: p = dominant allele frequency, q = recessive allele frequency)<br><br>
+p<sup>2</sup> + 2pq + q<sup>2</sup> = 1 &nbsp;&nbsp; (genotype frequencies: p<sup>2</sup> = homozygous dominant, 2pq = heterozygous, q<sup>2</sup> = homozygous recessive)
 </div>
 
 <div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 480 280" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 480 200" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
-  <text x="240" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">Hardy-Weinberg Principle</text>
-  <!-- Main equations -->
-  <rect x="100" y="35" width="280" height="70" rx="10" fill="#1a73e8" opacity="0.06" stroke="#1a73e8" stroke-width="2"/>
-  <text x="240" y="58" text-anchor="middle" font-weight="bold" font-size="14" fill="#1a73e8">p + q = 1</text>
-  <text x="240" y="78" text-anchor="middle" font-size="10" fill="#1a73e8">(allele frequencies)</text>
-  <text x="240" y="98" text-anchor="middle" font-weight="bold" font-size="14" fill="#DC2626">p&#178; + 2pq + q&#178; = 1</text>
-  <text x="240" y="115" text-anchor="middle" font-size="10" fill="#DC2626">(genotype frequencies)</text>
-  <!-- Breakdown of terms -->
-  <!-- p² -->
-  <rect x="40" y="135" width="110" height="55" rx="8" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="95" y="155" text-anchor="middle" font-weight="bold" font-size="13" fill="#16A34A">p&#178;</text>
-  <text x="95" y="170" text-anchor="middle" font-size="9" fill="#16A34A">Homozygous</text>
-  <text x="95" y="182" text-anchor="middle" font-size="9" fill="#16A34A">dominant (AA)</text>
-  <!-- 2pq -->
-  <rect x="170" y="135" width="110" height="55" rx="8" fill="#D97706" opacity="0.08" stroke="#D97706" stroke-width="1.5"/>
-  <text x="225" y="155" text-anchor="middle" font-weight="bold" font-size="13" fill="#D97706">2pq</text>
-  <text x="225" y="170" text-anchor="middle" font-size="9" fill="#D97706">Heterozygous</text>
-  <text x="225" y="182" text-anchor="middle" font-size="9" fill="#D97706">(Aa) — carriers</text>
-  <!-- q² -->
-  <rect x="300" y="135" width="110" height="55" rx="8" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="355" y="155" text-anchor="middle" font-weight="bold" font-size="13" fill="#DC2626">q&#178;</text>
-  <text x="355" y="170" text-anchor="middle" font-size="9" fill="#DC2626">Homozygous</text>
-  <text x="355" y="182" text-anchor="middle" font-size="9" fill="#DC2626">recessive (aa)</text>
-  <!-- Calculation steps -->
-  <rect x="60" y="205" width="360" height="65" rx="8" fill="white" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="240" y="222" text-anchor="middle" font-weight="bold" font-size="10" fill="#1a1a2e">How to solve:</text>
-  <text x="240" y="238" text-anchor="middle" font-size="10" fill="#DC2626">1. Identify q&#178; from homozygous recessive frequency</text>
-  <text x="240" y="252" text-anchor="middle" font-size="10" fill="#1a73e8">2. q = &#8730;q&#178;   then   p = 1 - q</text>
-  <text x="240" y="266" text-anchor="middle" font-size="10" fill="#D97706">3. Carrier frequency = 2pq</text>
+  <text x="240" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">Hardy-Weinberg: How to Solve Problems</text>
+  <!-- Step 1 -->
+  <rect x="20" y="40" width="130" height="60" rx="8" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="85" y="58" text-anchor="middle" font-weight="bold" font-size="11" fill="#DC2626">Step 1</text>
+  <text x="85" y="73" text-anchor="middle" font-size="9" fill="#DC2626">Identify q<tspan baseline-shift="super" font-size="7">2</tspan></text>
+  <text x="85" y="88" text-anchor="middle" font-size="9" fill="#DC2626">= frequency of</text>
+  <text x="85" y="98" text-anchor="middle" font-size="9" fill="#DC2626">recessive phenotype</text>
+  <!-- Arrow -->
+  <line x1="150" y1="70" x2="170" y2="70" stroke="#D97706" stroke-width="2" marker-end="url(#arrowHW)"/>
+  <defs><marker id="arrowHW" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker></defs>
+  <!-- Step 2 -->
+  <rect x="175" y="40" width="130" height="60" rx="8" fill="#1a73e8" opacity="0.08" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="240" y="58" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a73e8">Step 2</text>
+  <text x="240" y="73" text-anchor="middle" font-size="9" fill="#1a73e8">q = &radic;q<tspan baseline-shift="super" font-size="7">2</tspan></text>
+  <text x="240" y="88" text-anchor="middle" font-size="9" fill="#1a73e8">p = 1 - q</text>
+  <!-- Arrow -->
+  <line x1="305" y1="70" x2="325" y2="70" stroke="#D97706" stroke-width="2" marker-end="url(#arrowHW)"/>
+  <!-- Step 3 -->
+  <rect x="330" y="40" width="130" height="60" rx="8" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="395" y="58" text-anchor="middle" font-weight="bold" font-size="11" fill="#16A34A">Step 3</text>
+  <text x="395" y="73" text-anchor="middle" font-size="9" fill="#16A34A">Carrier frequency</text>
+  <text x="395" y="88" text-anchor="middle" font-size="9" fill="#16A34A">= 2pq</text>
+  <!-- Worked example -->
+  <rect x="40" y="120" width="400" height="65" rx="8" fill="#D97706" opacity="0.06" stroke="#D97706" stroke-width="1"/>
+  <text x="240" y="138" text-anchor="middle" font-weight="bold" font-size="10" fill="#D97706">Example: Cystic fibrosis affects 1 in 2500 people</text>
+  <text x="240" y="155" text-anchor="middle" font-size="10" fill="#D97706">q<tspan baseline-shift="super" font-size="7">2</tspan> = 1/2500 = 0.0004 &rarr; q = 0.02 &rarr; p = 0.98</text>
+  <text x="240" y="172" text-anchor="middle" font-size="10" fill="#D97706">Carrier frequency = 2pq = 2 x 0.98 x 0.02 = 0.0392 &asymp; 1 in 25 people</text>
 </svg>
 </div>
 
-<p>To use Hardy-Weinberg in calculations:</p>
-<ol>
-<li>Identify the frequency of the homozygous recessive phenotype in the population = q²</li>
-<li>Take the square root to find q</li>
-<li>Calculate p = 1 - q</li>
-<li>Calculate carrier frequency (heterozygotes) = 2pq</li>
-</ol>
-
-<p>Conditions for Hardy-Weinberg equilibrium (rarely met in nature):</p>
+<h3>Conditions for Hardy-Weinberg Equilibrium</h3>
+<p>These conditions are rarely met perfectly in nature, but the model provides a useful baseline for detecting when evolution IS occurring:</p>
 <ul>
-<li>Large population size (no genetic drift)</li>
-<li>Random mating</li>
-<li>No natural selection</li>
-<li>No mutation</li>
-<li>No migration (no gene flow in or out)</li>
+<li><strong>Large population size</strong> (no genetic drift — random fluctuations in small populations)</li>
+<li><strong>Random mating</strong> (no mate selection based on genotype/phenotype)</li>
+<li><strong>No natural selection</strong> (all genotypes are equally fit)</li>
+<li><strong>No mutation</strong> (no new alleles being created)</li>
+<li><strong>No migration</strong> (no gene flow in or out of the population)</li>
 </ul>
+
+<p>If allele frequencies in a population change over time (deviating from Hardy-Weinberg predictions), this indicates that <strong>evolution is occurring</strong> — one or more of the conditions is being violated.</p>
 
 <h2>7.3 Evolution and Natural Selection</h2>
 
 <div class="definition">
-<strong>Evolution:</strong> A change in allele frequency in a population over successive generations, driven by natural selection, genetic drift, mutation, and gene flow.
+<strong>Evolution:</strong> A change in allele frequency in a population over successive generations. It is driven by natural selection, genetic drift, mutation, and gene flow.
 </div>
 
-<h3>Natural Selection</h3>
+<h3>Darwin's Theory of Natural Selection</h3>
 <ol>
-<li>Within a population there is genetic variation (caused by mutation, meiosis, sexual reproduction).</li>
-<li>Organisms produce more offspring than the environment can support (overproduction).</li>
-<li>There is competition for resources (intraspecific competition).</li>
-<li>Individuals with alleles conferring advantageous phenotypes are more likely to survive and reproduce (selection pressure).</li>
-<li>These alleles are passed to offspring at a higher frequency.</li>
-<li>Over many generations, the allele frequency changes — the population evolves.</li>
+<li><strong>Variation exists</strong> within a population due to genetic differences (caused by mutation, meiosis, and sexual reproduction).</li>
+<li><strong>Overproduction:</strong> Organisms produce more offspring than the environment can support.</li>
+<li><strong>Struggle for existence:</strong> There is competition for limited resources (food, territory, mates) — <strong>intraspecific competition</strong>.</li>
+<li><strong>Differential survival:</strong> Individuals with alleles conferring advantageous phenotypes for the current environment are more likely to survive (they have greater <strong>fitness</strong>).</li>
+<li><strong>Differential reproduction:</strong> Survivors reproduce and pass on their advantageous alleles to offspring at a higher frequency.</li>
+<li><strong>Cumulative change:</strong> Over many generations, the frequency of advantageous alleles increases in the population — the population <strong>evolves</strong>.</li>
 </ol>
 
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 500 300" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
-  <text x="250" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">Natural Selection</text>
-  <!-- Step boxes flowing down -->
-  <!-- Step 1: Variation -->
-  <rect x="30" y="40" width="130" height="50" rx="8" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="2"/>
-  <text x="95" y="60" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a73e8">1. Variation</text>
-  <text x="95" y="76" text-anchor="middle" font-size="9" fill="#1a73e8">Genetic variation exists</text>
-  <text x="95" y="88" text-anchor="middle" font-size="8" fill="#1a73e8">(mutation, meiosis, reproduction)</text>
-  <!-- Arrow -->
-  <line x1="160" y1="65" x2="185" y2="65" stroke="#D97706" stroke-width="2" marker-end="url(#arrowNS)"/>
-  <defs><marker id="arrowNS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker></defs>
-  <!-- Step 2: Selection pressure -->
-  <rect x="190" y="40" width="130" height="50" rx="8" fill="#DC2626" opacity="0.1" stroke="#DC2626" stroke-width="2"/>
-  <text x="255" y="56" text-anchor="middle" font-weight="bold" font-size="11" fill="#DC2626">2. Selection</text>
-  <text x="255" y="70" text-anchor="middle" font-weight="bold" font-size="11" fill="#DC2626">Pressure</text>
-  <text x="255" y="85" text-anchor="middle" font-size="8" fill="#DC2626">(predation, disease, competition)</text>
-  <!-- Arrow -->
-  <line x1="320" y1="65" x2="345" y2="65" stroke="#D97706" stroke-width="2" marker-end="url(#arrowNS)"/>
-  <!-- Step 3: Survival -->
-  <rect x="350" y="40" width="130" height="50" rx="8" fill="#16A34A" opacity="0.1" stroke="#16A34A" stroke-width="2"/>
-  <text x="415" y="58" text-anchor="middle" font-weight="bold" font-size="11" fill="#16A34A">3. Survival</text>
-  <text x="415" y="74" text-anchor="middle" font-size="9" fill="#16A34A">Advantageous alleles</text>
-  <text x="415" y="86" text-anchor="middle" font-size="9" fill="#16A34A">= better survival</text>
-  <!-- Arrow down -->
-  <line x1="415" y1="90" x2="415" y2="115" stroke="#D97706" stroke-width="2" marker-end="url(#arrowNS)"/>
-  <!-- Step 4: Reproduction -->
-  <rect x="350" y="120" width="130" height="50" rx="8" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="2"/>
-  <text x="415" y="140" text-anchor="middle" font-weight="bold" font-size="11" fill="#D97706">4. Reproduction</text>
-  <text x="415" y="155" text-anchor="middle" font-size="9" fill="#D97706">Survivors pass alleles</text>
-  <text x="415" y="167" text-anchor="middle" font-size="9" fill="#D97706">to offspring</text>
-  <!-- Arrow left -->
-  <line x1="350" y1="145" x2="175" y2="145" stroke="#D97706" stroke-width="2" marker-end="url(#arrowNS2)"/>
-  <defs><marker id="arrowNS2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker></defs>
-  <!-- Step 5: Evolution -->
-  <rect x="30" y="120" width="140" height="50" rx="8" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="2"/>
-  <text x="100" y="140" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a73e8">5. Evolution</text>
-  <text x="100" y="155" text-anchor="middle" font-size="9" fill="#1a73e8">Allele frequency changes</text>
-  <text x="100" y="167" text-anchor="middle" font-size="9" fill="#1a73e8">over generations</text>
-  <!-- Visual population shift illustration -->
-  <text x="250" y="200" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a1a2e">Population over time:</text>
-  <!-- Generation 1 - mixed -->
-  <text x="100" y="220" text-anchor="middle" font-size="9" fill="#1a1a2e">Generation 1</text>
-  <circle cx="60" cy="240" r="8" fill="#1a73e8" opacity="0.3"/><circle cx="80" cy="240" r="8" fill="#DC2626" opacity="0.3"/>
-  <circle cx="100" cy="240" r="8" fill="#1a73e8" opacity="0.3"/><circle cx="120" cy="240" r="8" fill="#1a73e8" opacity="0.3"/>
-  <circle cx="140" cy="240" r="8" fill="#DC2626" opacity="0.3"/>
-  <circle cx="70" cy="260" r="8" fill="#DC2626" opacity="0.3"/><circle cx="90" cy="260" r="8" fill="#1a73e8" opacity="0.3"/>
-  <circle cx="110" cy="260" r="8" fill="#DC2626" opacity="0.3"/><circle cx="130" cy="260" r="8" fill="#1a73e8" opacity="0.3"/>
-  <!-- Arrow -->
-  <line x1="160" y1="250" x2="195" y2="250" stroke="#D97706" stroke-width="2" marker-end="url(#arrowNS)"/>
-  <!-- Generation N - mostly blue (selected) -->
-  <text x="310" y="220" text-anchor="middle" font-size="9" fill="#1a1a2e">After many generations</text>
-  <circle cx="240" cy="240" r="8" fill="#1a73e8" opacity="0.3"/><circle cx="260" cy="240" r="8" fill="#1a73e8" opacity="0.3"/>
-  <circle cx="280" cy="240" r="8" fill="#1a73e8" opacity="0.3"/><circle cx="300" cy="240" r="8" fill="#1a73e8" opacity="0.3"/>
-  <circle cx="320" cy="240" r="8" fill="#DC2626" opacity="0.3"/>
-  <circle cx="250" cy="260" r="8" fill="#1a73e8" opacity="0.3"/><circle cx="270" cy="260" r="8" fill="#1a73e8" opacity="0.3"/>
-  <circle cx="290" cy="260" r="8" fill="#1a73e8" opacity="0.3"/><circle cx="310" cy="260" r="8" fill="#1a73e8" opacity="0.3"/>
-  <!-- Legend -->
-  <circle cx="370" cy="240" r="8" fill="#1a73e8" opacity="0.3"/>
-  <text x="385" y="244" font-size="9">Advantageous allele</text>
-  <circle cx="370" cy="260" r="8" fill="#DC2626" opacity="0.3"/>
-  <text x="385" y="264" font-size="9">Less fit allele</text>
-  <text x="250" y="293" text-anchor="middle" font-size="9" fill="#1a73e8" font-weight="bold">Frequency of advantageous allele increases over time</text>
-</svg>
+<div class="exam-tip">
+<strong>Exam Tip:</strong> When describing natural selection in exam answers: (1) start with variation existing within a population due to mutation; (2) mention a specific selection pressure; (3) explain which phenotype has a survival/reproductive advantage; (4) state that advantageous alleles are passed to offspring; (5) conclude that allele frequency changes over generations. Never say organisms "choose" to evolve or "try" to adapt — evolution is not directed or intentional.
 </div>
 
 <h3>Types of Selection</h3>
 <table>
-<tr><th>Type</th><th>Description</th><th>Effect on Variation</th></tr>
-<tr><td>Directional</td><td>Individuals at one extreme of phenotype range have higher fitness; mean shifts</td><td>Reduces variation; shifts allele frequency in one direction</td></tr>
-<tr><td>Stabilising</td><td>Individuals with intermediate phenotype are favoured; extremes selected against</td><td>Reduces variation; maintains the mean</td></tr>
-<tr><td>Disruptive</td><td>Individuals at both extremes are favoured over intermediates</td><td>Increases variation; can lead to speciation</td></tr>
+<tr><th>Type</th><th>Description</th><th>Effect on Variation</th><th>Example</th></tr>
+<tr><td><strong>Directional</strong></td><td>Individuals at one extreme of the phenotype range have higher fitness; the mean phenotype shifts in one direction</td><td>Reduces variation; shifts allele frequency toward the favoured extreme</td><td>Antibiotic resistance in bacteria — resistant individuals survive and increase in frequency; industrial melanism in peppered moths</td></tr>
+<tr><td><strong>Stabilising</strong></td><td>Individuals with the intermediate (average) phenotype are favoured; both extremes are selected against</td><td>Reduces variation; maintains the mean; narrows the distribution</td><td>Human birth weight — very low or very high birth weights have higher mortality; clutch size in birds</td></tr>
+<tr><td><strong>Disruptive</strong></td><td>Individuals at both extremes of the range are favoured over intermediates</td><td>Increases variation; can produce a bimodal distribution; may lead to speciation</td><td>Beak size in seed-cracking finches — large beaks for large seeds, small beaks for small seeds; intermediate beaks are less efficient at either</td></tr>
 </table>
+
+<div class="real-world">
+<strong>Real-World Link:</strong> Antibiotic resistance is one of the most urgent examples of directional selection. When bacteria are exposed to an antibiotic, most are killed — but any individual carrying a resistance allele (from random mutation) survives and reproduces rapidly (no competition). Within days, the resistant strain dominates the population. Overuse and misuse of antibiotics (e.g. not completing courses, using antibiotics for viral infections, agricultural use in livestock) accelerates this process. MRSA (methicillin-resistant Staphylococcus aureus) is a major healthcare challenge. This is why new antibiotics must continuously be developed.
+</div>
 
 <h3>Speciation</h3>
 <div class="definition">
-<strong>Species:</strong> A group of organisms that can interbreed to produce fertile offspring and are reproductively isolated from other species.
+<strong>Species:</strong> A group of organisms that can interbreed to produce fertile offspring and are reproductively isolated from other species. (Note: this biological species concept has limitations — it cannot apply to asexual organisms, fossils, or organisms that hybridise.)<br>
+<strong>Speciation:</strong> The formation of new species from an existing species, when populations become reproductively isolated and diverge genetically to the point where they can no longer interbreed to produce fertile offspring.
 </div>
 
-<p><strong>Allopatric speciation:</strong> Geographic isolation (physical barrier) separates a population. Different selection pressures and genetic drift in each sub-population lead to divergence. Eventually, reproductive isolation develops and they can no longer interbreed — two new species.</p>
+<h3>Allopatric Speciation</h3>
+<ol>
+<li>A population is geographically separated by a physical barrier (mountain range, river, ocean, glacier, human development).</li>
+<li>The two sub-populations experience <strong>different selection pressures</strong> and <strong>different mutations</strong> occur randomly in each.</li>
+<li><strong>Genetic drift</strong> (especially if populations are small) further increases divergence.</li>
+<li>No gene flow between the populations (they cannot interbreed because of the barrier).</li>
+<li>Over many generations, the allele frequencies diverge so much that the populations develop <strong>reproductive isolation</strong> — they can no longer interbreed successfully even if the barrier is removed.</li>
+<li>Two new species have formed.</li>
+</ol>
 
-<p><strong>Sympatric speciation:</strong> Speciation without geographic isolation. Can occur through polyploidy (especially in plants), ecological niche differentiation, or temporal reproductive isolation.</p>
+<p><strong>Example:</strong> Darwin's finches on the Galapagos Islands — ancestral finch population colonised different islands, each with different food sources. Different beak shapes evolved through natural selection on each island, eventually producing ~18 different species.</p>
+
+<h3>Sympatric Speciation</h3>
+<p>Speciation without geographic isolation. This can occur through:</p>
+<ul>
+<li><strong>Polyploidy</strong> (especially in plants): A mutation error during cell division produces offspring with extra sets of chromosomes (e.g. 4n instead of 2n). These cannot breed with the original 2n population (meiosis fails to produce viable gametes when crossed). Common in plants — up to 70% of flowering plant species are polyploid. Many crop species are polyploid (wheat is 6n, strawberry is 8n).</li>
+<li><strong>Ecological niche differentiation:</strong> Populations exploit different food sources or habitats within the same area, reducing gene flow between them.</li>
+<li><strong>Temporal reproductive isolation:</strong> Populations breed at different times (different seasons, different times of day).</li>
+<li><strong>Behavioural isolation:</strong> Different courtship behaviours prevent interbreeding.</li>
+</ul>
 
 <h2>7.4 Ecosystems</h2>
+
+<div class="definition">
+<strong>Ecosystem:</strong> A community of living organisms (biotic) interacting with each other and with the non-living (abiotic) components of their environment in a defined area.<br>
+<strong>Population:</strong> All the organisms of one species in a habitat at a given time.<br>
+<strong>Community:</strong> All the populations of different species living and interacting in a particular area at a given time.<br>
+<strong>Niche:</strong> The role of a species within its ecosystem — including its habitat, diet, behaviour, and all its biotic and abiotic interactions. No two species can occupy exactly the same niche in the same habitat (competitive exclusion principle).
+</div>
+
+<h3>Energy Flow Through Food Chains</h3>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 300" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -335,7 +315,7 @@ p² + 2pq + q² = 1 (genotype frequencies: p² = homozygous dominant, 2pq = hete
   <rect x="80" y="70" width="90" height="60" rx="8" fill="#16A34A" opacity="0.12" stroke="#16A34A" stroke-width="2"/>
   <text x="125" y="95" text-anchor="middle" font-weight="bold" font-size="11" fill="#16A34A">Producers</text>
   <text x="125" y="112" text-anchor="middle" font-size="9" fill="#16A34A">(plants)</text>
-  <text x="125" y="145" text-anchor="middle" font-size="9" fill="#16A34A">GPP</text>
+  <text x="125" y="145" text-anchor="middle" font-size="9" fill="#16A34A">GPP &rarr; NPP</text>
   <!-- Arrow -->
   <line x1="170" y1="100" x2="200" y2="100" stroke="#D97706" stroke-width="2" marker-end="url(#arrowEF)"/>
   <text x="185" y="92" text-anchor="middle" font-size="8" fill="#D97706">~10%</text>
@@ -354,28 +334,23 @@ p² + 2pq + q² = 1 (genotype frequencies: p² = homozygous dominant, 2pq = hete
   <text x="375" y="120" text-anchor="middle" font-size="9" fill="#DC2626">(carnivores)</text>
   <!-- Arrow -->
   <line x1="420" y1="100" x2="445" y2="100" stroke="#D97706" stroke-width="2" marker-end="url(#arrowEF)"/>
-  <text x="432" y="92" text-anchor="middle" font-size="8" fill="#D97706">~10%</text>
   <!-- Tertiary consumers -->
   <rect x="450" y="70" width="60" height="60" rx="8" fill="#1a1a2e" opacity="0.08" stroke="#1a1a2e" stroke-width="2"/>
   <text x="480" y="95" text-anchor="middle" font-weight="bold" font-size="10">Tertiary</text>
   <text x="480" y="110" text-anchor="middle" font-weight="bold" font-size="10">Consumers</text>
-  <!-- Energy losses - arrows going down from each level -->
-  <!-- Producer losses -->
+  <!-- Energy losses -->
   <line x1="125" y1="130" x2="125" y2="175" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowEFr)"/>
   <defs><marker id="arrowEFr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/></marker></defs>
   <text x="125" y="190" text-anchor="middle" font-size="8" fill="#DC2626">Respiration</text>
-  <!-- Consumer losses -->
   <line x1="250" y1="130" x2="250" y2="175" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowEFr)"/>
   <text x="250" y="190" text-anchor="middle" font-size="8" fill="#DC2626">Respiration</text>
-  <text x="250" y="202" text-anchor="middle" font-size="8" fill="#DC2626">Faeces</text>
-  <text x="250" y="214" text-anchor="middle" font-size="8" fill="#DC2626">Urine</text>
+  <text x="250" y="202" text-anchor="middle" font-size="8" fill="#DC2626">Faeces, Urine</text>
   <line x1="375" y1="130" x2="375" y2="175" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowEFr)"/>
   <text x="375" y="190" text-anchor="middle" font-size="8" fill="#DC2626">Respiration</text>
   <text x="375" y="202" text-anchor="middle" font-size="8" fill="#DC2626">Faeces, Urine</text>
   <!-- Decomposers -->
   <rect x="140" y="230" width="240" height="35" rx="8" fill="#D97706" opacity="0.08" stroke="#D97706" stroke-width="1.5"/>
-  <text x="260" y="252" text-anchor="middle" font-weight="bold" font-size="10" fill="#D97706">Decomposers (bacteria, fungi)</text>
-  <!-- Arrows from losses to decomposers -->
+  <text x="260" y="252" text-anchor="middle" font-weight="bold" font-size="10" fill="#D97706">Decomposers (saprobiotic bacteria and fungi)</text>
   <line x1="200" y1="214" x2="220" y2="230" stroke="#D97706" stroke-width="1" stroke-dasharray="3"/>
   <line x1="340" y1="202" x2="330" y2="230" stroke="#D97706" stroke-width="1" stroke-dasharray="3"/>
   <!-- Key note -->
@@ -384,39 +359,62 @@ p² + 2pq + q² = 1 (genotype frequencies: p² = homozygous dominant, 2pq = hete
 </svg>
 </div>
 
-<h3>Succession</h3>
+<h3>Ecological Succession</h3>
 <div class="definition">
-<strong>Succession:</strong> The progressive change in species composition of a community over time. Primary succession begins on bare substrate (e.g. bare rock, new volcanic island). Secondary succession occurs where soil already exists but vegetation has been removed (e.g. after fire).
+<strong>Succession:</strong> The progressive, directional change in the species composition of a community over time, leading towards a stable <strong>climax community</strong>.
 </div>
 
-<p>Stages of succession:</p>
+<table>
+<tr><th>Type</th><th>Starting Point</th><th>Example</th></tr>
+<tr><td><strong>Primary succession</strong></td><td>Bare, previously uncolonised substrate with no soil (bare rock, new volcanic island, sand dune, glacial retreat)</td><td>Lichens colonise bare rock &rarr; mosses &rarr; grasses &rarr; shrubs &rarr; trees (deciduous woodland)</td></tr>
+<tr><td><strong>Secondary succession</strong></td><td>Previously colonised substrate where soil already exists but vegetation has been removed (after fire, flooding, deforestation, farming)</td><td>Faster than primary because soil nutrients and seed bank already exist</td></tr>
+</table>
+
+<h3>Stages of Succession</h3>
 <ol>
-<li><strong>Pioneer community:</strong> Pioneer species (e.g. lichens, mosses) colonise bare substrate. They are tolerant of harsh conditions and modify the environment (e.g. weathering rock, adding organic matter).</li>
-<li><strong>Intermediate (seral) stages:</strong> New species outcompete pioneers as conditions improve. Soil depth increases, nutrient availability improves, microclimate changes.</li>
-<li><strong>Climax community:</strong> Stable, self-sustaining community in equilibrium with the environment (e.g. temperate deciduous woodland in the UK). Biodiversity is typically highest at this stage.</li>
+<li><strong>Pioneer community:</strong> Pioneer species (e.g. lichens, mosses, marram grass on sand dunes) colonise the bare substrate. They are adapted to harsh conditions (drought-tolerant, low nutrient requirements, rapid reproduction). They modify the environment: weathering rock, trapping organic matter, beginning soil formation, providing shade and shelter.</li>
+<li><strong>Intermediate (seral) stages:</strong> As soil develops and conditions improve, new species arrive that outcompete the pioneers. Each seral community modifies the environment further (deeper soil, more nutrients, different microclimate), facilitating the next stage.</li>
+<li><strong>Climax community:</strong> A stable, self-sustaining community in equilibrium with the prevailing climate and environment. In the UK, the climatic climax is typically <strong>temperate deciduous woodland</strong> (dominated by oak, ash, beech). Species diversity is typically highest at climax. The community remains stable as long as conditions do not change.</li>
 </ol>
 
-<p>Changes during succession: increasing biomass, increasing biodiversity, more complex food webs, more stratification, soil becomes deeper and more nutrient-rich, abiotic conditions become less extreme.</p>
-
-<h3>Conservation and Management</h3>
-<p>Conservation may involve managing succession to maintain a particular seral stage (e.g. heathland, grassland) that supports specific species. Methods include:</p>
+<p><strong>Changes during succession:</strong></p>
 <ul>
-<li>Grazing — prevents succession to woodland</li>
-<li>Mowing / cutting</li>
-<li>Controlled burning</li>
-<li>Coppicing — maintains woodland diversity</li>
+<li>Increasing <strong>biomass</strong> and <strong>productivity</strong></li>
+<li>Increasing <strong>species diversity</strong> and more complex food webs</li>
+<li>Soil becomes <strong>deeper</strong>, more nutrient-rich, with greater water retention</li>
+<li>More <strong>stratification</strong> (vertical layers in the community — ground, field, shrub, canopy layers)</li>
+<li>Abiotic conditions become <strong>less extreme</strong> (more sheltered, more humid, less wind)</li>
+<li><strong>Nutrient cycling</strong> becomes more efficient (closed cycling in climax vs open in pioneer)</li>
 </ul>
 
-<p>Reasons for conservation:</p>
+<h3>Conservation and Management of Succession</h3>
+<p>Sometimes conservation goals require maintaining a particular <strong>seral stage</strong> (plagioclimax) rather than allowing succession to climax. For example, heathland, grassland, and coppiced woodland support specific species that would be lost if succession proceeded to dense woodland.</p>
+
+<p>Management techniques:</p>
 <ul>
-<li><strong>Ethical:</strong> All species have intrinsic value and a right to exist</li>
-<li><strong>Ecological:</strong> Maintaining ecosystem stability and function; maintaining food webs</li>
-<li><strong>Economic:</strong> Genetic resources for agriculture/medicine; tourism; ecosystem services (pollination, water purification, flood prevention)</li>
-<li><strong>Aesthetic:</strong> Natural beauty and cultural value</li>
+<li><strong>Grazing</strong> — livestock prevent succession to woodland by eating tree seedlings</li>
+<li><strong>Mowing / cutting</strong> — maintains grassland</li>
+<li><strong>Controlled burning</strong> — removes woody plants, promotes grass and heather regeneration</li>
+<li><strong>Coppicing</strong> — cutting trees at base to encourage regrowth from stumps; creates varied age structure and light levels, supporting diverse species</li>
+</ul>
+
+<h3>Reasons for Conservation</h3>
+<table>
+<tr><th>Category</th><th>Arguments</th></tr>
+<tr><td><strong>Ethical</strong></td><td>All species have intrinsic value and a right to exist, regardless of human use. We have a moral responsibility not to cause extinction.</td></tr>
+<tr><td><strong>Ecological</strong></td><td>Maintaining ecosystem stability, resilience, and function. Maintaining food webs and nutrient cycling. Keystone species removal can cause ecosystem collapse.</td></tr>
+<tr><td><strong>Economic</strong></td><td>Genetic resources for agriculture, medicine, and industry (e.g. plant-derived drugs). Tourism and recreation (ecotourism). Ecosystem services (pollination, water purification, flood prevention, carbon sequestration).</td></tr>
+<tr><td><strong>Aesthetic</strong></td><td>Natural beauty, cultural heritage, spiritual value. Mental health benefits of natural environments.</td></tr>
+</table>
+
+<p><strong>Conservation methods:</strong></p>
+<ul>
+<li><strong>In situ conservation:</strong> Protecting species in their natural habitat — nature reserves, national parks, SSSIs (Sites of Special Scientific Interest), marine protected areas, wildlife corridors</li>
+<li><strong>Ex situ conservation:</strong> Protecting species outside their natural habitat — zoos, botanical gardens, seed banks (e.g. Svalbard Global Seed Vault), captive breeding programmes, cryopreservation of gametes</li>
 </ul>
 
 <div class="exam-tip">
-<strong>Exam Tip:</strong> In extended response questions on conservation, always include specific examples and link arguments to economic, ethical, and ecological reasons. Discuss both in situ (nature reserves, SSSIs) and ex situ (seed banks, zoos, captive breeding) conservation methods.
+<strong>Exam Tip:</strong> In extended response questions on conservation, always include specific examples and link arguments to economic, ethical, and ecological reasons. Discuss both in situ and ex situ methods, their advantages and limitations. For example, captive breeding programmes (e.g. Arabian oryx, California condor) can save species from extinction but face challenges: inbreeding depression (reduced genetic diversity), loss of natural behaviours, difficulty reintroducing to the wild, and high cost. Seed banks preserve genetic diversity cheaply but cannot conserve animal species or complex ecological relationships.
 </div>
 
 </div></body></html>

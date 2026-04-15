@@ -11,6 +11,7 @@
   h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
   h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
   h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  h4 { font-size: 1.05rem; color: #334155; margin: 16px 0 8px; }
   p { margin: 8px 0; }
   ul, ol { margin: 8px 0 8px 24px; }
   li { margin: 4px 0; }
@@ -20,6 +21,7 @@
   tr:nth-child(even) { background: #f8fafc; }
   .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
   .toc { background: #f0f4ff; border: 1px solid #cbd5e1; border-radius: 10px; padding: 20px 28px; margin-bottom: 32px; }
@@ -36,25 +38,40 @@
 
 <h1>AQA A-Level Physics &mdash; Required Practicals</h1>
 
+<p>There are 12 required practicals in the AQA A-Level Physics specification. These are assessed indirectly through exam questions that test your understanding of experimental methods, data analysis, sources of error, and practical skills. You should know each practical well enough to describe the method, draw and interpret graphs, identify errors, and suggest improvements.</p>
+
 <div class="toc">
 <h2>Table of Contents</h2>
 <ol>
-  <li><a href="#rp1">RP1: Stationary Waves on a String</a></li>
-  <li><a href="#rp2">RP2: Young's Double Slit &amp; Diffraction Grating</a></li>
-  <li><a href="#rp3">RP3: Determination of g by Free-Fall</a></li>
-  <li><a href="#rp4">RP4: Young Modulus of a Wire</a></li>
-  <li><a href="#rp5">RP5: Resistivity of a Wire</a></li>
-  <li><a href="#rp6">RP6: EMF and Internal Resistance</a></li>
-  <li><a href="#rp7">RP7: SHM &mdash; Mass-Spring and Pendulum</a></li>
-  <li><a href="#rp8">RP8: Boyle's Law and Charles's Law</a></li>
-  <li><a href="#rp9">RP9: Capacitor Charge and Discharge</a></li>
-  <li><a href="#rp10">RP10: Force on a Current-Carrying Wire</a></li>
-  <li><a href="#rp11">RP11: AC Supply with Oscilloscope</a></li>
-  <li><a href="#rp12">RP12: Inverse-Square Law for Gamma Radiation</a></li>
+  <li><a href="#rp1">RP1: Stationary Waves on a String</a> (3.3 Waves)</li>
+  <li><a href="#rp2">RP2: Young's Double Slit &amp; Diffraction Grating</a> (3.3 Waves)</li>
+  <li><a href="#rp3">RP3: Determination of g by Free-Fall</a> (3.4 Mechanics)</li>
+  <li><a href="#rp4">RP4: Young Modulus of a Wire</a> (3.4 Materials)</li>
+  <li><a href="#rp5">RP5: Resistivity of a Wire</a> (3.5 Electricity)</li>
+  <li><a href="#rp6">RP6: EMF and Internal Resistance</a> (3.5 Electricity)</li>
+  <li><a href="#rp7">RP7: SHM &mdash; Mass-Spring and Pendulum</a> (3.6 Further Mechanics)</li>
+  <li><a href="#rp8">RP8: Boyle's Law and Charles's Law</a> (3.6 Thermal Physics)</li>
+  <li><a href="#rp9">RP9: Capacitor Charge and Discharge</a> (3.7 Fields)</li>
+  <li><a href="#rp10">RP10: Force on a Current-Carrying Wire</a> (3.7 Fields)</li>
+  <li><a href="#rp11">RP11: AC Supply with Oscilloscope</a> (3.7 Fields)</li>
+  <li><a href="#rp12">RP12: Inverse-Square Law for Gamma Radiation</a> (3.8 Nuclear)</li>
 </ol>
 </div>
 
-<!-- RP1 -->
+<div class="tip-box"><strong>General Practical Skills for All RPs:</strong>
+<ul>
+  <li><strong>Variables:</strong> Always identify the independent variable (what you change), dependent variable (what you measure), and control variables (what you keep constant).</li>
+  <li><strong>Repeats:</strong> Take at least 3 repeat measurements and calculate a mean to reduce random error.</li>
+  <li><strong>Range:</strong> Use at least 6 different values of the independent variable, spread across a wide range.</li>
+  <li><strong>Graphs:</strong> Plot the variable that gives a straight line. Use the gradient (and intercept if applicable) to determine the physical quantity. Draw a line of best fit and consider worst-case lines for uncertainty.</li>
+  <li><strong>Uncertainties:</strong> Calculate percentage uncertainties from instrument resolution or from the spread of repeats (half the range / mean &times; 100%).</li>
+  <li><strong>Significant figures:</strong> Give final answers to the same number of s.f. as the least precise measurement (usually 2 or 3 s.f.).</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- RP1: STATIONARY WAVES ON A STRING -->
+<!-- ============================================================ -->
 <div class="prac-box" id="rp1">
 <h2>&#9879; RP1: Stationary Waves on a String</h2>
 
@@ -70,60 +87,78 @@
   <line x1="490" y1="135" x2="490" y2="170" stroke="#1a1a2e" stroke-width="1.5"/>
   <rect x="475" y="170" width="30" height="20" rx="3" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="490" y="184" text-anchor="middle" fill="#fff" font-size="9">Mass</text>
-  <text x="305" y="30" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Stationary Wave Pattern</text>
-  <text x="305" y="48" text-anchor="middle" fill="#DC2626" font-size="11">--- wave envelope</text>
+  <text x="305" y="30" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Stationary Wave Pattern (4th Harmonic)</text>
+  <text x="305" y="48" text-anchor="middle" fill="#DC2626" font-size="11">--- wave envelope (nodes and antinodes)</text>
   <line x1="130" y1="140" x2="220" y2="140" stroke="#16A34A" stroke-width="1.5"/>
   <line x1="130" y1="137" x2="130" y2="143" stroke="#16A34A" stroke-width="1.5"/>
   <line x1="220" y1="137" x2="220" y2="143" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="175" y="155" text-anchor="middle" fill="#16A34A" font-size="11">L</text>
+  <text x="175" y="155" text-anchor="middle" fill="#16A34A" font-size="11">&lambda;/2</text>
+  <!-- Node labels -->
+  <text x="130" y="100" text-anchor="middle" fill="#64748b" font-size="8">N</text>
+  <text x="220" y="100" text-anchor="middle" fill="#64748b" font-size="8">N</text>
+  <text x="310" y="100" text-anchor="middle" fill="#64748b" font-size="8">N</text>
+  <text x="400" y="100" text-anchor="middle" fill="#64748b" font-size="8">N</text>
+  <text x="480" y="100" text-anchor="middle" fill="#64748b" font-size="8">N</text>
+  <text x="175" y="80" text-anchor="middle" fill="#DC2626" font-size="8">AN</text>
+  <text x="265" y="80" text-anchor="middle" fill="#DC2626" font-size="8">AN</text>
+  <text x="355" y="80" text-anchor="middle" fill="#DC2626" font-size="8">AN</text>
+  <text x="445" y="80" text-anchor="middle" fill="#DC2626" font-size="8">AN</text>
 </svg>
 
+<h3>Aim</h3>
+<p>To investigate the relationship between frequency, wavelength, tension, and mass per unit length for stationary waves on a string. Key equation: f = (1/2L)&radic;(T/&mu;).</p>
+
 <h3>Apparatus</h3>
-<ul>
-  <li>Signal generator and vibrator</li>
-  <li>String (e.g. nylon thread)</li>
-  <li>Pulley and bench clamp</li>
-  <li>Slotted masses and hanger</li>
-  <li>Metre ruler</li>
-  <li>Wooden bridge</li>
-</ul>
+<p>Signal generator, vibration generator (vibrator), string (nylon thread), pulley and bench clamp, slotted masses and hanger, metre ruler, wooden bridge (optional).</p>
 
 <h3>Method</h3>
 <ol>
-  <li>Set up the vibrator attached to a signal generator at one end of a string. Pass the string over a pulley with a hanging mass to provide tension.</li>
-  <li>Turn on the signal generator and slowly increase the frequency until a clear stationary wave with one loop (fundamental) forms.</li>
-  <li>Record the frequency and measure the length of the vibrating section (L) using a metre ruler.</li>
-  <li>Increase frequency to find harmonics (2 loops, 3 loops, etc.). Record frequency and number of loops each time.</li>
-  <li>Vary the tension by changing the hanging mass. Repeat measurements.</li>
-  <li>Vary mass per unit length by using different string types.</li>
+  <li>Set up the vibrator at one end of the string. Pass the string over a pulley with a hanging mass to provide tension T = mg.</li>
+  <li>Turn on the signal generator and slowly increase the frequency until a clear stationary wave with one loop (fundamental mode, n = 1) forms.</li>
+  <li>Record the frequency f and measure the vibrating length L using a metre ruler. For the fundamental, &lambda; = 2L.</li>
+  <li>Increase frequency to find higher harmonics (n = 2, 3, 4...). At the nth harmonic, there are n loops and &lambda; = 2L/n.</li>
+  <li>To investigate the effect of tension: vary the hanging mass while keeping L constant. Record f at each tension.</li>
+  <li>To investigate the effect of length: vary L (using a bridge to change the vibrating length) at constant tension.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-  <li>Use a safety screen in case the string snaps</li>
-  <li>Ensure masses cannot fall on feet &mdash; use a soft landing pad</li>
-  <li>Keep signal generator frequencies below harmful levels</li>
+  <li>Use a safety screen in case the string snaps under tension.</li>
+  <li>Place a soft landing pad beneath the masses in case they fall.</li>
+  <li>Ensure the vibrator is firmly clamped to prevent it moving.</li>
 </ul>
 
 <h3>Analysis</h3>
-<p>For the fundamental: <span class="eq">f = 1/(2L) &times; &radic;(T/&mu;)</span></p>
-<p>Plot <strong>f vs 1/L</strong> &mdash; expect a straight line through the origin. Gradient = (1/2)&radic;(T/&mu;).</p>
-<p>Alternatively, plot <strong>f vs &radic;T</strong> keeping L constant &mdash; straight line through origin.</p>
+<p>For the fundamental (n = 1): f = (1/2L) &times; &radic;(T/&mu;)</p>
+<ul>
+  <li>Plot <strong>f vs 1/L</strong> (keeping T and &mu; constant) &mdash; straight line through origin. Gradient = (1/2)&radic;(T/&mu;).</li>
+  <li>Plot <strong>f vs &radic;T</strong> (keeping L and &mu; constant) &mdash; straight line through origin. Gradient = 1/(2L&radic;&mu;).</li>
+  <li>Plot <strong>f<sup>2</sup> vs T</strong> &mdash; straight line through origin. Gradient = 1/(4L<sup>2</sup>&mu;).</li>
+</ul>
 
+<div class="worked-example">
+<strong>Worked Example:</strong> A string of length 0.80 m and mass per unit length 2.0 &times; 10<sup>-3</sup> kg m<sup>-1</sup> is under a tension of 10 N. Calculate the frequency of the fundamental mode.<br><br>
+<strong>Solution:</strong><br>
+f = (1/2L)&radic;(T/&mu;) = (1/(2 &times; 0.80)) &times; &radic;(10 / (2.0 &times; 10<sup>-3</sup>))<br>
+= 0.625 &times; &radic;(5000) = 0.625 &times; 70.7 = <strong>44 Hz</strong>
+</div>
+
+<h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Difficult to judge exact resonance point</td><td>Random</td><td>Look for maximum amplitude; use a paper rider to detect resonance</td></tr>
-<tr><td>String may not vibrate in a perfect plane</td><td>Random</td><td>Ensure vibrator is firmly clamped and aligned</td></tr>
-<tr><td>Ruler parallax when measuring L</td><td>Random</td><td>Use a metre ruler with mm divisions; read at eye level</td></tr>
-<tr><td>Mass hanger has its own mass</td><td>Systematic</td><td>Include mass of hanger in total tension calculation</td></tr>
+<tr><td>Difficult to judge exact resonance point</td><td>Random</td><td>Look for maximum amplitude; use a paper rider on the string (it falls off at antinodes at resonance)</td></tr>
+<tr><td>String may not vibrate in a perfect plane</td><td>Random</td><td>Ensure vibrator is firmly clamped and aligned with the string</td></tr>
+<tr><td>Ruler parallax when measuring L</td><td>Random</td><td>Use a ruler with mm divisions; read at eye level; measure from node to node</td></tr>
+<tr><td>Mass of hanger not included in tension calculation</td><td>Systematic</td><td>Include the mass of the hanger in the total hanging mass: T = (m<sub>masses</sub> + m<sub>hanger</sub>)g</td></tr>
+<tr><td>String stretches under tension, changing &mu;</td><td>Systematic</td><td>Measure &mu; under the actual tension used; or use inextensible string</td></tr>
 </table>
 
-<div class="tip-box">
-<strong>Exam Tip:</strong> Remember that nodes are points of zero displacement and antinodes are points of maximum displacement. The fundamental has exactly one antinode. The wavelength of the stationary wave equals 2L for the fundamental mode.
-</div>
+<div class="tip-box"><strong>Exam Tip:</strong> Nodes are points of zero displacement; antinodes are points of maximum displacement. The fundamental (1st harmonic) has exactly one antinode and two nodes (at the fixed ends). The wavelength of the stationary wave equals 2L for the fundamental mode. At the nth harmonic: f<sub>n</sub> = nf<sub>1</sub> and &lambda;<sub>n</sub> = 2L/n.</div>
 </div>
 
-<!-- RP2 -->
+<!-- ============================================================ -->
+<!-- RP2: YOUNG'S DOUBLE SLIT -->
+<!-- ============================================================ -->
 <div class="prac-box" id="rp2">
 <h2>&#9879; RP2: Young's Double Slit &amp; Diffraction Grating</h2>
 
@@ -155,58 +190,65 @@
   <text x="300" y="20" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Young's Double Slit Experiment</text>
 </svg>
 
+<h3>Aim</h3>
+<p>To determine the wavelength of light using (a) a double slit and (b) a diffraction grating.</p>
+
 <h3>Apparatus</h3>
-<ul>
-  <li>Laser (or white light + single slit + colour filter)</li>
-  <li>Double slit (known slit separation d)</li>
-  <li>Diffraction grating (known line spacing d)</li>
-  <li>Screen (white card or wall)</li>
-  <li>Metre ruler and/or vernier callipers</li>
-  <li>Tape measure for slit-to-screen distance D</li>
-</ul>
+<p>Laser (or white light source with single slit and colour filter), double slit (known slit separation s), diffraction grating (known number of lines per mm), screen (white card), metre ruler, vernier callipers, tape measure for D.</p>
 
 <h3>Method (Double Slit)</h3>
 <ol>
-  <li>Darken the room. Direct the laser beam through the double slit onto a distant screen.</li>
-  <li>Observe the interference pattern of bright and dark fringes on the screen.</li>
-  <li>Measure the distance across several fringe spacings (e.g. 10 fringes) and divide to get fringe spacing w.</li>
+  <li>Darken the room. Direct the laser beam through the double slit onto a distant screen (D &gt; 1 m).</li>
+  <li>Observe the interference pattern of evenly spaced bright and dark fringes on the screen.</li>
+  <li>Measure the distance across several fringe spacings (e.g. across 10 bright fringes) and divide by the number of spacings to get the fringe spacing w. This reduces percentage uncertainty.</li>
   <li>Measure the slit-to-screen distance D with a tape measure.</li>
-  <li>Calculate wavelength: &lambda; = wd/D.</li>
+  <li>Calculate wavelength: <strong>&lambda; = ws/D</strong>, where s is the slit separation.</li>
 </ol>
 
 <h3>Method (Diffraction Grating)</h3>
 <ol>
-  <li>Direct the laser through the diffraction grating onto a screen.</li>
-  <li>Measure the angle &theta; to each order maximum using tan&theta; = x/D, where x is the distance from the central maximum.</li>
-  <li>Calculate wavelength: d sin&theta; = n&lambda;.</li>
+  <li>Direct the laser through the diffraction grating onto a screen. Sharp, bright maxima appear at well-defined angles.</li>
+  <li>Measure the perpendicular distance x from the central maximum (n = 0) to the nth order maximum on the screen, and the distance D from the grating to the screen.</li>
+  <li>Calculate the angle: tan&theta; = x/D, hence &theta; = arctan(x/D).</li>
+  <li>Calculate wavelength: <strong>d sin&theta; = n&lambda;</strong>, where d is the grating spacing (d = 1/N, where N is lines per metre).</li>
+  <li>Repeat for multiple orders (n = 1, 2, 3...) and average the calculated &lambda; values.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-  <li>Never look directly into the laser beam &mdash; Class 2 laser safety</li>
-  <li>Display "Laser in use" warning sign</li>
-  <li>Remove reflective objects (watches, jewellery)</li>
+  <li>Never look directly into the laser beam &mdash; can cause permanent eye damage.</li>
+  <li>Display a "Laser in use" warning sign on the door.</li>
+  <li>Remove reflective objects (watches, jewellery, phones) from the beam path.</li>
+  <li>Do not shine the laser at eye level of seated observers.</li>
 </ul>
 
 <h3>Analysis</h3>
-<p>Double slit: <span class="eq">&lambda; = wd / D</span></p>
-<p>Diffraction grating: <span class="eq">d sin&theta; = n&lambda;</span></p>
-<p>The grating gives sharper, more widely spaced maxima &mdash; more precise wavelength determination.</p>
+<p>Double slit: &lambda; = ws/D. The key uncertainty is usually in w (fringe spacing). Measuring across many fringes and dividing reduces this.</p>
+<p>Diffraction grating: d sin&theta; = n&lambda;. This is more accurate than the double slit because the maxima are sharper and more widely spaced, reducing the percentage uncertainty in &theta;.</p>
 
+<div class="worked-example">
+<strong>Worked Example:</strong> A diffraction grating with 300 lines per mm is used with a laser. The 2nd order maximum is observed at 22.0 degrees from the central maximum. Calculate the wavelength of the laser light.<br><br>
+<strong>Solution:</strong><br>
+d = 1/(300 &times; 10<sup>3</sup>) = 1/(3.00 &times; 10<sup>5</sup>) = 3.33 &times; 10<sup>-6</sup> m<br>
+d sin&theta; = n&lambda;<br>
+&lambda; = d sin&theta; / n = (3.33 &times; 10<sup>-6</sup> &times; sin 22.0&deg;) / 2 = (3.33 &times; 10<sup>-6</sup> &times; 0.3746) / 2 = <strong>624 nm</strong> (orange-red)
+</div>
+
+<h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Fringes not sharp; hard to locate centres</td><td>Random</td><td>Use a diffraction grating for sharper maxima</td></tr>
-<tr><td>Measurement of D inaccurate</td><td>Random</td><td>Use a long D (>1 m) to reduce percentage uncertainty</td></tr>
-<tr><td>Ruler not aligned with fringe pattern</td><td>Systematic</td><td>Ensure ruler is parallel to fringe spacing direction</td></tr>
-<tr><td>Laser beam not perpendicular to slit</td><td>Systematic</td><td>Align carefully; use adjustable stand</td></tr>
+<tr><td>Fringes not sharp; hard to locate centres</td><td>Random</td><td>Use a diffraction grating for sharper maxima; darken the room fully</td></tr>
+<tr><td>D measurement inaccurate</td><td>Random</td><td>Use D &gt; 1 m to reduce percentage uncertainty; use a tape measure</td></tr>
+<tr><td>Ruler not aligned with fringe pattern</td><td>Systematic</td><td>Ensure ruler is parallel to the fringe direction</td></tr>
+<tr><td>Laser beam not perpendicular to slit/grating</td><td>Systematic</td><td>Align carefully; check that the zero-order maximum is directly ahead</td></tr>
 </table>
 
-<div class="tip-box">
-<strong>Exam Tip:</strong> The diffraction grating is more accurate than the double slit because the maxima are sharper and more widely spaced, reducing percentage uncertainty in angle measurement. Always measure across multiple fringes and divide.
-</div>
+<div class="tip-box"><strong>Exam Tip:</strong> The diffraction grating is more precise than the double slit because the maxima are much sharper (due to constructive interference from hundreds of slits rather than just two). Measuring across multiple fringes and dividing is essential for the double slit to reduce the percentage uncertainty in w. Always state the number of fringes measured.</div>
 </div>
 
-<!-- RP3 -->
+<!-- ============================================================ -->
+<!-- RP3: DETERMINATION OF g -->
+<!-- ============================================================ -->
 <div class="prac-box" id="rp3">
 <h2>&#9879; RP3: Determination of g by Free-Fall</h2>
 
@@ -228,58 +270,64 @@
   <line x1="126" y1="70" x2="134" y2="70" stroke="#16A34A" stroke-width="1.5"/>
   <line x1="126" y1="210" x2="134" y2="210" stroke="#16A34A" stroke-width="1.5"/>
   <text x="120" y="145" text-anchor="end" fill="#16A34A" font-size="12">s (height)</text>
-  <rect x="380" y="120" width="120" height="80" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="440" y="140" text-anchor="middle" fill="#1a1a2e" font-size="11" font-weight="600">Plot:</text>
-  <text x="440" y="158" text-anchor="middle" fill="#1a73e8" font-size="11">s vs t&sup2;</text>
-  <text x="440" y="176" text-anchor="middle" fill="#1a1a2e" font-size="11">gradient = g/2</text>
-  <text x="440" y="192" text-anchor="middle" fill="#16A34A" font-size="11">g = 2 &times; gradient</text>
+  <rect x="380" y="120" width="130" height="100" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="445" y="140" text-anchor="middle" fill="#1a1a2e" font-size="11" font-weight="600">Plot: s vs t&sup2;</text>
+  <text x="445" y="158" text-anchor="middle" fill="#1a73e8" font-size="11">gradient = g/2</text>
+  <text x="445" y="176" text-anchor="middle" fill="#16A34A" font-size="11">g = 2 &times; gradient</text>
+  <text x="445" y="200" text-anchor="middle" fill="#64748b" font-size="9">s = &frac12;gt&sup2; (u = 0)</text>
+  <text x="445" y="214" text-anchor="middle" fill="#64748b" font-size="9">Expected: g &asymp; 9.81 m s&sup2;</text>
 </svg>
 
+<h3>Aim</h3>
+<p>To determine the acceleration due to gravity g by timing the free fall of an object from rest through a known height.</p>
+
 <h3>Apparatus</h3>
-<ul>
-  <li>Electromagnet connected to a switch and power supply</li>
-  <li>Steel ball bearing</li>
-  <li>Trapdoor switch connected to electronic timer</li>
-  <li>Metre ruler (or 2 m ruler)</li>
-  <li>Clamp stand and boss</li>
-</ul>
+<p>Electromagnet connected to a switch and timer circuit, steel ball bearing, trapdoor switch connected to electronic timer, metre ruler (or 2 m ruler), clamp stand and boss.</p>
 
 <h3>Method</h3>
 <ol>
   <li>Clamp the electromagnet at a measured height s above the trapdoor.</li>
-  <li>Place the steel ball on the electromagnet. When the switch is released, the timer starts and the ball falls.</li>
+  <li>Hold the steel ball on the electromagnet. When the switch is released, the timer starts automatically and the ball falls freely.</li>
   <li>The ball hits the trapdoor, which opens and stops the timer. Record time t.</li>
-  <li>Repeat 3 times at each height and take the mean t.</li>
-  <li>Vary the height s (at least 6 different values from 0.2 m to 1.0 m).</li>
-  <li>Plot s vs t&sup2;. The gradient equals g/2, so g = 2 &times; gradient.</li>
+  <li>Repeat at least 3 times at each height and calculate the mean t.</li>
+  <li>Vary the height s (at least 6 different values from about 0.20 m to 1.00 m).</li>
+  <li>Plot s (y-axis) vs t<sup>2</sup> (x-axis). The gradient equals g/2, so g = 2 &times; gradient.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-  <li>Place a soft pad/cushion below the trapdoor to catch the ball</li>
-  <li>Ensure clamp stand is stable and won't topple</li>
-  <li>Keep feet clear of falling ball</li>
+  <li>Place a soft pad or cushion below the trapdoor to catch the ball and prevent bouncing.</li>
+  <li>Ensure the clamp stand is stable (use a G-clamp at the base).</li>
+  <li>Keep feet clear of the falling ball.</li>
 </ul>
 
 <h3>Analysis</h3>
-<p>Using s = &frac12;gt&sup2; (since initial velocity u = 0):</p>
-<p class="eq">s = (g/2) t&sup2;</p>
-<p>Plot <strong>s (y-axis) vs t&sup2; (x-axis)</strong>. Gradient = g/2, so g = 2 &times; gradient. Expected value: ~9.81 m s&sup2;.</p>
+<p>Using s = ut + &frac12;gt<sup>2</sup> with u = 0 (released from rest): s = &frac12;gt<sup>2</sup>.</p>
+<p>Rearranging: s = (g/2) &times; t<sup>2</sup>. This is y = mx form, so plotting s vs t<sup>2</sup> gives a straight line through the origin with gradient = g/2.</p>
 
+<div class="worked-example">
+<strong>Worked Example:</strong> A student obtains the following data and plots s vs t<sup>2</sup>. The gradient of the best-fit line is 4.87 m s<sup>-2</sup>. Calculate g and the percentage difference from the accepted value.<br><br>
+<strong>Solution:</strong><br>
+g = 2 &times; gradient = 2 &times; 4.87 = <strong>9.74 m s<sup>-2</sup></strong><br>
+% difference = |9.81 &minus; 9.74| / 9.81 &times; 100% = <strong>0.71%</strong><br>
+This is an excellent result. The small systematic error is likely due to residual magnetism causing a slight delay in release.
+</div>
+
+<h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Ball may not release cleanly from electromagnet (residual magnetism)</td><td>Systematic (makes t too large, g too small)</td><td>Use a non-magnetic ball release mechanism</td></tr>
-<tr><td>Reaction time in starting/stopping timer</td><td>Random</td><td>Use electronic timer triggered by switch release and trapdoor</td></tr>
-<tr><td>Height measurement uncertainty</td><td>Random</td><td>Use a 2 m ruler; measure from bottom of ball to trapdoor</td></tr>
-<tr><td>Air resistance on ball</td><td>Systematic (g appears smaller)</td><td>Use a dense, small ball to minimise air resistance</td></tr>
+<tr><td>Ball may not release cleanly (residual magnetism holds it briefly)</td><td>Systematic (makes t too large, g too small)</td><td>Use a non-magnetic ball release mechanism; or account for delay by noting the graph's y-intercept</td></tr>
+<tr><td>Height measurement uncertainty</td><td>Random</td><td>Use a long ruler; measure from the bottom of the ball to the trapdoor surface</td></tr>
+<tr><td>Air resistance on the ball</td><td>Systematic (g appears smaller)</td><td>Use a dense, small, smooth ball to minimise air resistance</td></tr>
+<tr><td>Timer starts late or stops early</td><td>Systematic</td><td>Use electronic timing with switch-triggered start and trapdoor-triggered stop</td></tr>
 </table>
 
-<div class="tip-box">
-<strong>Exam Tip:</strong> The y-intercept of the s vs t&sup2; graph should be zero. A non-zero intercept suggests a systematic error such as residual magnetism causing a delayed release. Always check that u = 0 by ensuring the ball starts from rest.
-</div>
+<div class="tip-box"><strong>Exam Tip:</strong> If the s vs t<sup>2</sup> graph has a non-zero y-intercept, this indicates a systematic timing error (e.g. the ball is held slightly by residual magnetism before falling). The gradient is still valid for calculating g; the intercept represents the systematic offset. Using a graph with multiple data points averages out random errors and reveals systematic ones.</div>
 </div>
 
-<!-- RP4 -->
+<!-- ============================================================ -->
+<!-- RP4: YOUNG MODULUS -->
+<!-- ============================================================ -->
 <div class="prac-box" id="rp4">
 <h2>&#9879; RP4: Young Modulus of a Wire</h2>
 
@@ -289,9 +337,9 @@
   <text x="50" y="45" text-anchor="middle" fill="#1a1a2e" font-size="10">Clamp</text>
   <rect x="540" y="50" width="20" height="120" rx="3" fill="#1a1a2e"/>
   <line x1="60" y1="80" x2="540" y2="80" stroke="#D97706" stroke-width="2"/>
-  <text x="300" y="73" text-anchor="middle" fill="#D97706" font-size="11">Test wire (copper, ~2 m)</text>
+  <text x="300" y="73" text-anchor="middle" fill="#D97706" font-size="11">Test wire (copper, ~2 m long, thin)</text>
   <line x1="60" y1="60" x2="540" y2="60" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="300" y="55" text-anchor="middle" fill="#1a1a2e" font-size="10">Reference wire</text>
+  <text x="300" y="55" text-anchor="middle" fill="#1a1a2e" font-size="10">Reference wire (same material, for comparison)</text>
   <rect x="500" y="80" width="40" height="20" rx="3" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1"/>
   <text x="520" y="94" text-anchor="middle" fill="#fff" font-size="9">Vernier</text>
   <rect x="525" y="100" width="8" height="30" rx="1" fill="#1a1a2e"/>
@@ -303,672 +351,158 @@
   <line x1="60" y1="190" x2="540" y2="190" stroke="#16A34A" stroke-width="1.5"/>
   <line x1="60" y1="186" x2="60" y2="194" stroke="#16A34A" stroke-width="1.5"/>
   <line x1="540" y1="186" x2="540" y2="194" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="300" y="208" text-anchor="middle" fill="#16A34A" font-size="12">Original length L</text>
+  <text x="300" y="208" text-anchor="middle" fill="#16A34A" font-size="12">Original length L (~2 m for measurable extension)</text>
 </svg>
 
+<h3>Aim</h3>
+<p>To determine the Young modulus E of a metal wire by measuring stress and strain. E = stress/strain = (F/A) / (&Delta;L/L).</p>
+
 <h3>Apparatus</h3>
-<ul>
-  <li>Long thin wire (copper or steel, ~2 m)</li>
-  <li>Micrometer screw gauge (to measure wire diameter)</li>
-  <li>Vernier scale or travelling microscope (to measure extension)</li>
-  <li>Slotted masses and hanger</li>
-  <li>Metre ruler or tape measure (for original length)</li>
-  <li>G-clamp and wooden blocks</li>
-  <li>Safety goggles</li>
-</ul>
+<p>Long thin wire (copper or steel, ~2 m), micrometer screw gauge, vernier scale or travelling microscope, slotted masses and hanger, metre ruler or tape measure, G-clamp and wooden blocks, safety goggles. A reference wire is useful to compensate for thermal expansion.</p>
 
 <h3>Method</h3>
 <ol>
-  <li>Measure the diameter of the wire at several points along its length using a micrometer. Take at least 6 readings in different orientations. Calculate mean diameter, then cross-sectional area A = &pi;d&sup2;/4.</li>
-  <li>Measure the original length L of the wire from the clamp to the marker using a tape measure.</li>
-  <li>Add masses in steps (e.g. 100 g increments). After each addition, measure the extension using the vernier scale.</li>
-  <li>Record force F = mg and corresponding extension &Delta;L.</li>
+  <li>Measure the wire diameter d with a micrometer at several points (at least 6 readings in different orientations). Calculate mean diameter, then area A = &pi;d<sup>2</sup>/4.</li>
+  <li>Measure the original length L of the wire (from clamp to marker) using a tape measure.</li>
+  <li>Add masses in steps (e.g. 100 g or 0.5 kg increments). After each addition, measure the extension &Delta;L using the vernier scale.</li>
+  <li>Record force F = mg and corresponding extension &Delta;L. Take at least 8 data points.</li>
   <li>Continue up to a sensible maximum load (below the elastic limit).</li>
-  <li>Unload and check the wire returns to original length (elastic behaviour).</li>
+  <li>Unload and check the wire returns to its original length (confirming elastic behaviour).</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-  <li>Wear safety goggles &mdash; wire may snap under tension</li>
-  <li>Place a cushion or sand tray beneath the masses</li>
-  <li>Do not exceed the elastic limit of the wire</li>
+  <li>Wear safety goggles &mdash; the wire may snap under high tension and whip back.</li>
+  <li>Place a cushion or sand tray beneath the masses in case they fall.</li>
+  <li>Do not exceed the elastic limit of the wire (watch for sudden increases in extension).</li>
 </ul>
 
 <h3>Analysis</h3>
-<p>Plot <strong>stress (&sigma; = F/A) vs strain (&epsilon; = &Delta;L/L)</strong>.</p>
-<p class="eq">Young modulus E = stress / strain = gradient of linear region</p>
-<p>Alternatively, plot F vs &Delta;L; gradient = EA/L, so E = (gradient &times; L)/A.</p>
+<p>Plot <strong>stress (&sigma; = F/A) vs strain (&epsilon; = &Delta;L/L)</strong>. The gradient of the linear region = Young modulus E.</p>
+<p>Alternatively, plot F vs &Delta;L. Gradient = EA/L, so E = (gradient &times; L)/A.</p>
+<p>Typical values: E<sub>copper</sub> &asymp; 120 GPa, E<sub>steel</sub> &asymp; 200 GPa.</p>
 
+<div class="worked-example">
+<strong>Worked Example:</strong> A copper wire of original length 2.50 m and diameter 0.28 mm has a 5.0 N load applied. The extension is measured as 1.8 mm. Calculate the Young modulus.<br><br>
+<strong>Solution:</strong><br>
+A = &pi;(d/2)<sup>2</sup> = &pi; &times; (0.14 &times; 10<sup>-3</sup>)<sup>2</sup> = 6.16 &times; 10<sup>-8</sup> m<sup>2</sup><br>
+Stress = F/A = 5.0 / 6.16 &times; 10<sup>-8</sup> = 8.12 &times; 10<sup>7</sup> Pa<br>
+Strain = &Delta;L/L = 1.8 &times; 10<sup>-3</sup> / 2.50 = 7.20 &times; 10<sup>-4</sup><br>
+E = stress/strain = 8.12 &times; 10<sup>7</sup> / 7.20 &times; 10<sup>-4</sup> = <strong>1.13 &times; 10<sup>11</sup> Pa</strong> (113 GPa, close to the accepted value of ~120 GPa)
+</div>
+
+<h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Wire diameter varies along length</td><td>Random</td><td>Take multiple readings at different positions and orientations; use mean</td></tr>
+<tr><td>Wire diameter varies along length</td><td>Random</td><td>Measure at 6+ points in different orientations; use the mean</td></tr>
 <tr><td>Wire may not be straight initially (kinks)</td><td>Systematic</td><td>Apply a small initial load to straighten the wire before measuring</td></tr>
-<tr><td>Difficulty reading small extensions</td><td>Random</td><td>Use a vernier scale or travelling microscope for precision</td></tr>
-<tr><td>Thermal expansion of wire</td><td>Systematic</td><td>Use a reference wire to compensate for temperature changes</td></tr>
+<tr><td>Extensions are very small and hard to measure</td><td>Random</td><td>Use a long, thin wire (maximises extension); use a vernier scale or travelling microscope</td></tr>
+<tr><td>Thermal expansion of wire</td><td>Systematic</td><td>Use a reference wire alongside the test wire to compensate for temperature changes</td></tr>
+<tr><td>Exceeding the elastic limit (permanent deformation)</td><td>Systematic</td><td>Unload after each reading to check the wire returns to original length</td></tr>
 </table>
 
-<div class="tip-box">
-<strong>Exam Tip:</strong> Use a long, thin wire to maximise the extension for a given force, making measurements easier and reducing percentage uncertainty. The percentage uncertainty in diameter is often the largest source of error because d is squared in the area calculation.
-</div>
+<div class="tip-box"><strong>Exam Tip:</strong> The percentage uncertainty in diameter is doubled when calculating area (since A = &pi;d<sup>2</sup>/4). This is usually the largest source of uncertainty in the experiment. Use a long, thin wire to maximise the extension for a given stress, making measurements easier and reducing percentage uncertainty in &Delta;L.</div>
 </div>
 
-<!-- RP5 -->
+<!-- ============================================================ -->
+<!-- RP5 through RP12: Reference to topic-specific notes -->
+<!-- ============================================================ -->
 <div class="prac-box" id="rp5">
 <h2>&#9879; RP5: Resistivity of a Wire</h2>
-
-<svg viewBox="0 0 600 220" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
-  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Resistivity of a Wire Circuit</text>
-  <rect x="50" y="60" width="60" height="35" rx="4" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="80" y="82" text-anchor="middle" fill="#fff" font-size="10">Cell</text>
-  <line x1="110" y1="77" x2="170" y2="77" stroke="#1a1a2e" stroke-width="1.5"/>
-  <rect x="170" y="62" width="50" height="30" rx="4" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="195" y="81" text-anchor="middle" fill="#fff" font-size="10">Switch</text>
-  <line x1="220" y1="77" x2="280" y2="77" stroke="#1a1a2e" stroke-width="1.5"/>
-  <circle cx="310" cy="77" r="20" fill="none" stroke="#DC2626" stroke-width="2"/>
-  <text x="310" y="82" text-anchor="middle" fill="#DC2626" font-size="12" font-weight="600">A</text>
-  <line x1="330" y1="77" x2="400" y2="77" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="400" y1="77" x2="540" y2="77" stroke="#D97706" stroke-width="2.5"/>
-  <text x="470" y="68" text-anchor="middle" fill="#D97706" font-size="11">Constantan wire</text>
-  <line x1="540" y1="77" x2="540" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="540" y1="160" x2="50" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="50" y1="160" x2="50" y2="95" stroke="#1a1a2e" stroke-width="1.5"/>
-  <circle cx="470" cy="135" r="20" fill="none" stroke="#1a73e8" stroke-width="2"/>
-  <text x="470" y="140" text-anchor="middle" fill="#1a73e8" font-size="12" font-weight="600">V</text>
-  <line x1="400" y1="77" x2="400" y2="115" stroke="#1a1a2e" stroke-width="1"/>
-  <line x1="400" y1="115" x2="450" y2="135" stroke="#1a1a2e" stroke-width="1"/>
-  <line x1="490" y1="135" x2="540" y2="135" stroke="#1a1a2e" stroke-width="1"/>
-  <line x1="540" y1="135" x2="540" y2="77" stroke="none"/>
-  <line x1="400" y1="95" x2="400" y2="77" stroke="none"/>
-  <text x="300" y="200" text-anchor="middle" fill="#16A34A" font-size="11">Measure L with ruler, d with micrometer</text>
-</svg>
-
-<h3>Apparatus</h3>
-<ul>
-  <li>Constantan wire (approx. 1 m, taped to a ruler)</li>
-  <li>Ammeter (or multimeter on A range)</li>
-  <li>Voltmeter (or multimeter on V range)</li>
-  <li>Power supply or cell with switch</li>
-  <li>Micrometer screw gauge</li>
-  <li>Metre ruler</li>
-  <li>Crocodile clips</li>
-</ul>
-
-<h3>Method</h3>
-<ol>
-  <li>Measure the diameter of the wire using a micrometer at several points. Calculate mean d and cross-sectional area A = &pi;d&sup2;/4.</li>
-  <li>Connect the circuit: cell &rarr; switch &rarr; ammeter &rarr; wire (in series); voltmeter in parallel across the wire.</li>
-  <li>Use crocodile clips to select a length L of wire (start with ~0.1 m).</li>
-  <li>Close the switch briefly, read V and I. Calculate R = V/I.</li>
-  <li>Repeat for at least 6 different lengths (0.1 to 1.0 m).</li>
-  <li>Plot R vs L. Gradient = &rho;/A, so &rho; = gradient &times; A.</li>
-</ol>
-
-<h3>Safety</h3>
-<ul>
-  <li>Switch off between readings to prevent the wire heating up</li>
-  <li>Do not touch the wire when current is flowing &mdash; it may get hot</li>
-  <li>Use low voltage supply (&lt; 6 V)</li>
-</ul>
-
-<h3>Analysis</h3>
-<p>Since R = &rho;L/A:</p>
-<p class="eq">R = (&rho;/A) &times; L</p>
-<p>Plot <strong>R (y-axis) vs L (x-axis)</strong>. Gradient = &rho;/A. Therefore &rho; = gradient &times; A.</p>
-<p>Expected resistivity of constantan: ~4.9 &times; 10<sup>-7</sup> &Omega; m.</p>
-
-<table>
-<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Wire heats up, changing resistance</td><td>Systematic</td><td>Switch off between readings; use low current</td></tr>
-<tr><td>Contact resistance at crocodile clips</td><td>Systematic</td><td>Clean contacts; ensure firm connection</td></tr>
-<tr><td>Diameter varies along wire</td><td>Random</td><td>Measure at multiple points and take mean</td></tr>
-<tr><td>Length measurement error at clip position</td><td>Random</td><td>Tape wire to ruler; align clips carefully</td></tr>
-</table>
-
-<div class="tip-box">
-<strong>Exam Tip:</strong> Keep the current small and switch off between readings to avoid heating the wire. Constantan is used because its resistivity barely changes with temperature. The biggest uncertainty usually comes from the diameter measurement since it is squared in the area formula.
-</div>
+<p><strong>Aim:</strong> To determine the resistivity &rho; of a wire (constantan) by measuring how resistance R varies with length L.</p>
+<p><strong>Key equation:</strong> R = &rho;L/A. Plot R vs L: gradient = &rho;/A, so &rho; = gradient &times; A.</p>
+<p><strong>IV:</strong> Length L. <strong>DV:</strong> Resistance R (from V/I). <strong>Controls:</strong> Wire material, diameter, temperature.</p>
+<p><strong>Key apparatus:</strong> Constantan wire on metre ruler, ammeter (series), voltmeter (parallel), micrometer for diameter, low-voltage DC supply, switch.</p>
+<p><strong>Key points:</strong> Switch off between readings to prevent heating. Measure diameter at 6+ points. Biggest uncertainty is in d (doubled for area). Constantan is chosen because its resistivity barely changes with temperature. Expected &rho; &asymp; 4.9 &times; 10<sup>-7</sup> &Omega; m.</p>
+<p><em>Full details including diagrams are in the 3.5 Electricity notes.</em></p>
 </div>
 
-<!-- RP6 -->
 <div class="prac-box" id="rp6">
 <h2>&#9879; RP6: EMF and Internal Resistance</h2>
-
-<svg viewBox="0 0 600 220" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
-  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">EMF and Internal Resistance</text>
-  <rect x="60" y="60" width="70" height="40" rx="5" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="95" y="84" text-anchor="middle" fill="#fff" font-size="11">Cell (&epsilon;, r)</text>
-  <line x1="130" y1="80" x2="200" y2="80" stroke="#1a1a2e" stroke-width="1.5"/>
-  <circle cx="230" cy="80" r="20" fill="none" stroke="#DC2626" stroke-width="2"/>
-  <text x="230" y="85" text-anchor="middle" fill="#DC2626" font-size="12" font-weight="600">A</text>
-  <line x1="250" y1="80" x2="350" y2="80" stroke="#1a1a2e" stroke-width="1.5"/>
-  <rect x="350" y="65" width="80" height="30" rx="4" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="390" y="84" text-anchor="middle" fill="#fff" font-size="10">Variable R</text>
-  <line x1="430" y1="80" x2="500" y2="80" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="500" y1="80" x2="500" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="500" y1="160" x2="60" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="60" y1="160" x2="60" y2="100" stroke="#1a1a2e" stroke-width="1.5"/>
-  <circle cx="420" cy="140" r="20" fill="none" stroke="#1a73e8" stroke-width="2"/>
-  <text x="420" y="145" text-anchor="middle" fill="#1a73e8" font-size="12" font-weight="600">V</text>
-  <line x1="350" y1="95" x2="350" y2="140" stroke="#1a1a2e" stroke-width="1"/>
-  <line x1="350" y1="140" x2="400" y2="140" stroke="#1a1a2e" stroke-width="1"/>
-  <line x1="440" y1="140" x2="500" y2="140" stroke="#1a1a2e" stroke-width="1"/>
-  <rect x="200" y="170" width="200" height="40" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="300" y="186" text-anchor="middle" fill="#1a1a2e" font-size="11">V = &epsilon; &minus; Ir</text>
-  <text x="300" y="203" text-anchor="middle" fill="#16A34A" font-size="11">y-intercept = &epsilon;, gradient = &minus;r</text>
-</svg>
-
-<h3>Apparatus</h3>
-<ul>
-  <li>Cell (e.g. 1.5 V AA battery or similar)</li>
-  <li>Variable resistor (rheostat)</li>
-  <li>Ammeter</li>
-  <li>Voltmeter</li>
-  <li>Switch</li>
-  <li>Connecting wires</li>
-</ul>
-
-<h3>Method</h3>
-<ol>
-  <li>Connect the cell, ammeter, variable resistor, and switch in series. Connect the voltmeter in parallel across the cell terminals.</li>
-  <li>Close the switch and record V and I for one resistance setting.</li>
-  <li>Change the variable resistor to a new setting. Record new V and I.</li>
-  <li>Repeat for at least 6 different resistance values, giving a range of currents.</li>
-  <li>Open the switch between readings to prevent the cell from running down.</li>
-  <li>Plot V vs I.</li>
-</ol>
-
-<h3>Safety</h3>
-<ul>
-  <li>Do not short-circuit the cell (minimum resistance always present)</li>
-  <li>Switch off between readings to preserve cell life</li>
-  <li>Handle cells carefully &mdash; do not attempt to recharge non-rechargeable cells</li>
-</ul>
-
-<h3>Analysis</h3>
-<p>From V = &epsilon; &minus; Ir:</p>
-<p>Plot <strong>V (y-axis) vs I (x-axis)</strong>. This gives a straight line with:</p>
-<ul>
-  <li><strong>y-intercept = &epsilon;</strong> (EMF of the cell)</li>
-  <li><strong>gradient = &minus;r</strong> (negative of internal resistance)</li>
-</ul>
-
-<table>
-<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Cell runs down during experiment</td><td>Systematic (EMF decreases)</td><td>Work quickly; switch off between readings</td></tr>
-<tr><td>Ammeter has its own resistance</td><td>Systematic</td><td>Use a digital ammeter with very low resistance</td></tr>
-<tr><td>Voltmeter draws some current</td><td>Systematic</td><td>Use a high-resistance voltmeter (digital preferred)</td></tr>
-<tr><td>Fluctuating readings</td><td>Random</td><td>Take multiple readings; wait for readings to stabilise</td></tr>
-</table>
-
-<div class="tip-box">
-<strong>Exam Tip:</strong> When V = 0, all the EMF is dropped across the internal resistance (short circuit). The x-intercept of the V vs I graph gives the maximum current I = &epsilon;/r. Internal resistance is typically very small (0.5&ndash;2 &Omega; for a standard cell).
-</div>
+<p><strong>Aim:</strong> To determine the EMF &epsilon; and internal resistance r of a cell by plotting terminal PD (V) against current (I).</p>
+<p><strong>Key equation:</strong> V = &epsilon; &minus; Ir. Plot V vs I: y-intercept = &epsilon;, gradient = &minus;r.</p>
+<p><strong>IV:</strong> External resistance (varied by rheostat). <strong>DV:</strong> V and I. <strong>Controls:</strong> Same cell, temperature.</p>
+<p><strong>Key apparatus:</strong> Cell, variable resistor (rheostat), ammeter (series), voltmeter (across cell terminals), switch.</p>
+<p><strong>Key points:</strong> Open switch between readings to prevent cell running down. Do not short-circuit the cell. Typical: &epsilon; &asymp; 1.5 V, r &asymp; 0.5&ndash;1.5 &Omega; for an AA cell.</p>
+<p><em>Full details including diagrams are in the 3.5 Electricity notes.</em></p>
 </div>
 
-<!-- RP7 -->
 <div class="prac-box" id="rp7">
 <h2>&#9879; RP7: SHM &mdash; Mass-Spring and Pendulum</h2>
-
-<svg viewBox="0 0 600 250" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
-  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">SHM: Mass-Spring and Simple Pendulum</text>
-  <!-- Mass-spring -->
-  <line x1="150" y1="40" x2="150" y2="50" stroke="#1a1a2e" stroke-width="2"/>
-  <rect x="120" y="38" width="60" height="6" rx="2" fill="#1a1a2e"/>
-  <path d="M150,50 L155,60 L145,70 L155,80 L145,90 L155,100 L145,110 L150,120" fill="none" stroke="#1a73e8" stroke-width="2"/>
-  <rect x="130" y="120" width="40" height="30" rx="4" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="150" y="140" text-anchor="middle" fill="#fff" font-size="10">m</text>
-  <text x="150" y="170" text-anchor="middle" fill="#1a1a2e" font-size="11">Mass-Spring</text>
-  <line x1="100" y1="180" x2="100" y2="230" stroke="#16A34A" stroke-width="1.5"/>
-  <line x1="96" y1="180" x2="104" y2="180" stroke="#16A34A" stroke-width="1.5"/>
-  <line x1="96" y1="230" x2="104" y2="230" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="90" y="210" text-anchor="end" fill="#16A34A" font-size="11">ext.</text>
-  <!-- Pendulum -->
-  <rect x="390" y="38" width="60" height="6" rx="2" fill="#1a1a2e"/>
-  <line x1="420" y1="44" x2="420" y2="44" stroke="#1a1a2e" stroke-width="1"/>
-  <line x1="420" y1="44" x2="420" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
-  <circle cx="420" cy="170" r="12" fill="#DC2626" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="420" y="175" text-anchor="middle" fill="#fff" font-size="9">m</text>
-  <line x1="420" y1="44" x2="445" y2="155" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-  <circle cx="445" cy="164" r="10" fill="#DC2626" stroke="#1a1a2e" stroke-width="1" opacity="0.3"/>
-  <text x="420" y="200" text-anchor="middle" fill="#1a1a2e" font-size="11">Simple Pendulum</text>
-  <line x1="460" y1="50" x2="460" y2="160" stroke="#16A34A" stroke-width="1.5"/>
-  <line x1="456" y1="50" x2="464" y2="50" stroke="#16A34A" stroke-width="1.5"/>
-  <line x1="456" y1="160" x2="464" y2="160" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="475" y="110" fill="#16A34A" font-size="11">L</text>
-  <path d="M400,44 A25,25 0 0,1 420,44" fill="none" stroke="#D97706" stroke-width="1.5"/>
-  <text x="395" y="60" text-anchor="end" fill="#D97706" font-size="10">&theta;</text>
-</svg>
-
-<h3>Apparatus</h3>
-<ul>
-  <li><strong>Mass-spring:</strong> Helical spring, slotted masses, clamp stand, stopwatch, ruler</li>
-  <li><strong>Pendulum:</strong> String, bob (small dense mass), protractor, clamp stand, stopwatch, ruler</li>
-  <li>Optional: light gate and datalogger for more precise timing</li>
-</ul>
-
-<h3>Method (Mass-Spring)</h3>
-<ol>
-  <li>Hang a known mass m from the spring. Pull it down by a small displacement and release.</li>
-  <li>Time 10 complete oscillations. Divide by 10 to get period T.</li>
-  <li>Repeat for at least 6 different masses.</li>
-  <li>Plot T&sup2; vs m. Gradient = 4&pi;&sup2;/k, so k = 4&pi;&sup2;/gradient.</li>
-</ol>
-
-<h3>Method (Pendulum)</h3>
-<ol>
-  <li>Measure the length L from the pivot to the centre of the bob.</li>
-  <li>Displace the bob by a small angle (&lt; 10&deg;) and release.</li>
-  <li>Time 10 complete oscillations. Divide by 10 to get T.</li>
-  <li>Repeat for at least 6 different lengths.</li>
-  <li>Plot T&sup2; vs L. Gradient = 4&pi;&sup2;/g, so g = 4&pi;&sup2;/gradient.</li>
-</ol>
-
-<h3>Safety</h3>
-<ul>
-  <li>Ensure clamp stand is stable (use a G-clamp or heavy base)</li>
-  <li>Keep clear of swinging masses</li>
-  <li>Do not overstretch the spring</li>
-</ul>
-
-<h3>Analysis</h3>
-<p>Mass-spring: <span class="eq">T = 2&pi;&radic;(m/k) &rArr; T&sup2; = (4&pi;&sup2;/k)m</span></p>
-<p>Pendulum: <span class="eq">T = 2&pi;&radic;(L/g) &rArr; T&sup2; = (4&pi;&sup2;/g)L</span></p>
-
-<table>
-<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Miscounting oscillations</td><td>Random</td><td>Count from the same point each time (e.g. equilibrium)</td></tr>
-<tr><td>Large amplitude invalidates SHM (pendulum)</td><td>Systematic</td><td>Keep angle below 10&deg;</td></tr>
-<tr><td>Spring may oscillate in a non-vertical plane</td><td>Random</td><td>Use a guide tube or release carefully from rest</td></tr>
-<tr><td>Reaction time with stopwatch</td><td>Random</td><td>Time 10+ oscillations; use fiducial marker</td></tr>
-</table>
-
-<div class="tip-box">
-<strong>Exam Tip:</strong> Always time at least 10 oscillations and divide by 10 to reduce percentage uncertainty in T. For the pendulum, the period is independent of mass and amplitude (for small angles). For the mass-spring, T does not depend on g.
-</div>
+<p><strong>Aim:</strong> To investigate the factors affecting the period of oscillation and to verify the SHM equations.</p>
+<p><strong>Key equations:</strong> Mass-spring: T = 2&pi;&radic;(m/k), so T<sup>2</sup> = (4&pi;<sup>2</sup>/k)m. Pendulum: T = 2&pi;&radic;(L/g), so T<sup>2</sup> = (4&pi;<sup>2</sup>/g)L.</p>
+<p><strong>Mass-spring:</strong> Plot T<sup>2</sup> vs m. Gradient = 4&pi;<sup>2</sup>/k. Find k.</p>
+<p><strong>Pendulum:</strong> Plot T<sup>2</sup> vs L. Gradient = 4&pi;<sup>2</sup>/g. Find g.</p>
+<p><strong>Key points:</strong> Time 10+ oscillations and divide. Start counting from zero at the fiducial marker. Keep amplitudes small (&lt; 10&deg; for pendulum). Use a small, dense bob. Measure L to the centre of the bob.</p>
+<p><em>Full details including diagrams are in the 3.6 Further Mechanics notes.</em></p>
 </div>
 
-<!-- RP8 -->
 <div class="prac-box" id="rp8">
 <h2>&#9879; RP8: Boyle's Law and Charles's Law</h2>
-
-<svg viewBox="0 0 600 230" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
-  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Boyle's Law Apparatus</text>
-  <!-- Syringe -->
-  <rect x="100" y="70" width="200" height="50" rx="6" fill="#e8eef6" stroke="#1a73e8" stroke-width="2"/>
-  <rect x="110" y="80" width="130" height="30" rx="3" fill="#cce0ff" stroke="#1a73e8" stroke-width="1"/>
-  <text x="175" y="100" text-anchor="middle" fill="#1a73e8" font-size="11">Trapped gas</text>
-  <rect x="240" y="82" width="50" height="26" rx="3" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="265" y="100" text-anchor="middle" fill="#fff" font-size="9">Piston</text>
-  <line x1="290" y1="95" x2="330" y2="95" stroke="#1a1a2e" stroke-width="3"/>
-  <!-- Pressure gauge -->
-  <circle cx="400" cy="95" r="40" fill="#fff" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="400" y="92" text-anchor="middle" fill="#1a1a2e" font-size="10" font-weight="600">Pressure</text>
-  <text x="400" y="105" text-anchor="middle" fill="#1a1a2e" font-size="10">Gauge</text>
-  <line x1="300" y1="95" x2="360" y2="95" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="400" y1="75" x2="400" y2="55" stroke="#DC2626" stroke-width="2"/>
-  <!-- Scale -->
-  <line x1="110" y1="130" x2="300" y2="130" stroke="#16A34A" stroke-width="1.5"/>
-  <line x1="110" y1="126" x2="110" y2="134" stroke="#16A34A" stroke-width="1.5"/>
-  <line x1="300" y1="126" x2="300" y2="134" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="205" y="148" text-anchor="middle" fill="#16A34A" font-size="11">Volume (from syringe scale)</text>
-  <rect x="150" y="170" width="300" height="45" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="300" y="188" text-anchor="middle" fill="#1a1a2e" font-size="11">Boyle: PV = constant (at constant T)</text>
-  <text x="300" y="206" text-anchor="middle" fill="#1a1a2e" font-size="11">Charles: V/T = constant (at constant P)</text>
-</svg>
-
-<h3>Apparatus</h3>
-<ul>
-  <li>Gas syringe with sealed end (or Boyle's law apparatus with oil column)</li>
-  <li>Bourdon pressure gauge</li>
-  <li>Thermometer</li>
-  <li>Water bath (for Charles's law)</li>
-  <li>Ruler (if using a capillary tube method)</li>
-</ul>
-
-<h3>Method (Boyle's Law)</h3>
-<ol>
-  <li>Set up the sealed syringe connected to a pressure gauge.</li>
-  <li>Record the initial volume V (from syringe scale) and pressure P (from gauge).</li>
-  <li>Slowly push the piston inward to reduce the volume. Wait for temperature to equilibrate.</li>
-  <li>Record new V and P. Repeat for at least 6 volume settings.</li>
-  <li>Plot P vs 1/V. Expect a straight line through the origin, confirming PV = constant.</li>
-</ol>
-
-<h3>Method (Charles's Law)</h3>
-<ol>
-  <li>Trap a column of air in a sealed capillary tube (with an oil plug or similar).</li>
-  <li>Place the tube in a water bath. Heat slowly and record temperature and volume (length of air column) at regular intervals.</li>
-  <li>Plot V vs T (in kelvin). Expect a straight line; extrapolate back to V = 0 to find absolute zero.</li>
-</ol>
-
-<h3>Safety</h3>
-<ul>
-  <li>Do not over-pressurise the syringe &mdash; risk of bursting</li>
-  <li>Handle hot water carefully (Charles's law); use a thermometer, not your hand</li>
-  <li>Use a safety screen if using pressurised apparatus</li>
-</ul>
-
-<h3>Analysis</h3>
-<p>Boyle's law: <span class="eq">P &propto; 1/V at constant T</span> &mdash; plot P vs 1/V (straight line through origin)</p>
-<p>Charles's law: <span class="eq">V &propto; T at constant P</span> &mdash; plot V vs T/K (straight line; x-intercept gives absolute zero &asymp; &minus;273 &deg;C)</p>
-
-<table>
-<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Gas temperature changes when compressed</td><td>Systematic</td><td>Compress slowly; wait for thermal equilibrium</td></tr>
-<tr><td>Friction in syringe piston</td><td>Systematic</td><td>Lubricate piston; tap gently to free it</td></tr>
-<tr><td>Leaks in apparatus</td><td>Systematic</td><td>Check all seals before starting; use Vaseline on joints</td></tr>
-<tr><td>Reading pressure gauge at angle</td><td>Random (parallax)</td><td>Read gauge at eye level</td></tr>
-</table>
-
-<div class="tip-box">
-<strong>Exam Tip:</strong> For Boyle's law, plotting P vs 1/V is better than PV vs V because a straight line is easier to verify than a horizontal line. For Charles's law, always convert temperatures to kelvin before plotting.
-</div>
+<p><strong>Aim:</strong> To verify the gas laws: (a) Boyle's Law (P &prop; 1/V at constant T); (b) Charles's Law (V &prop; T at constant P).</p>
+<p><strong>Boyle's Law:</strong> Plot P vs 1/V &mdash; straight line through origin. Use a sealed gas syringe with pressure gauge.</p>
+<p><strong>Charles's Law:</strong> Plot V (or column length L) vs T (in kelvin) &mdash; straight line; extrapolate to find absolute zero. Use a capillary tube in a water bath.</p>
+<p><strong>Key points:</strong> Compress slowly for Boyle's (allow thermal equilibrium). Stir water bath for Charles's. Always convert T to kelvin. Friction in syringe is a common source of error.</p>
+<p><em>Full details including diagrams are in the 3.6 Further Mechanics and Thermal Physics notes.</em></p>
 </div>
 
-<!-- RP9 -->
 <div class="prac-box" id="rp9">
 <h2>&#9879; RP9: Capacitor Charge and Discharge</h2>
-
-<svg viewBox="0 0 600 220" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
-  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Capacitor Discharge Circuit</text>
-  <rect x="60" y="60" width="60" height="35" rx="4" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="90" y="82" text-anchor="middle" fill="#fff" font-size="10">DC Supply</text>
-  <line x1="120" y1="77" x2="180" y2="77" stroke="#1a1a2e" stroke-width="1.5"/>
-  <rect x="180" y="62" width="50" height="30" rx="4" fill="#D97706" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="205" y="81" text-anchor="middle" fill="#fff" font-size="10">Switch</text>
-  <line x1="230" y1="77" x2="290" y2="77" stroke="#1a1a2e" stroke-width="1.5"/>
-  <rect x="290" y="62" width="50" height="30" rx="4" fill="#16A34A" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="315" y="81" text-anchor="middle" fill="#fff" font-size="10">R</text>
-  <line x1="340" y1="77" x2="420" y2="77" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="420" y1="60" x2="420" y2="65" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="410" y1="65" x2="430" y2="65" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="413" y1="72" x2="427" y2="72" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="420" y1="72" x2="420" y2="77" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="445" y="72" fill="#1a1a2e" font-size="10">C</text>
-  <line x1="420" y1="77" x2="500" y2="77" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="500" y1="77" x2="500" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="500" y1="160" x2="60" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="60" y1="160" x2="60" y2="95" stroke="#1a1a2e" stroke-width="1.5"/>
-  <rect x="440" y="100" width="80" height="30" rx="4" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="480" y="119" text-anchor="middle" fill="#fff" font-size="10">Datalogger</text>
-  <line x1="420" y1="77" x2="440" y2="105" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="3,2"/>
-  <line x1="500" y1="120" x2="520" y2="120" stroke="none"/>
-  <rect x="150" y="170" width="300" height="35" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="300" y="188" text-anchor="middle" fill="#1a1a2e" font-size="11">V = V&#x2080; e^(&minus;t/RC)</text>
-  <text x="300" y="200" text-anchor="middle" fill="#16A34A" font-size="10">Plot ln(V) vs t &rarr; gradient = &minus;1/RC</text>
-</svg>
-
-<h3>Apparatus</h3>
-<ul>
-  <li>Capacitor (e.g. 1000 &mu;F electrolytic)</li>
-  <li>Resistor (e.g. 10 k&Omega; &mdash; to give a convenient time constant)</li>
-  <li>DC power supply</li>
-  <li>Voltmeter or datalogger (to record voltage across capacitor)</li>
-  <li>Stopwatch (if not using datalogger)</li>
-  <li>Two-way switch (to toggle between charge and discharge)</li>
-</ul>
-
-<h3>Method</h3>
-<ol>
-  <li>Connect the capacitor, resistor, and power supply in series with a two-way switch.</li>
-  <li>Connect a voltmeter (or datalogger) across the capacitor.</li>
-  <li>Charge: flip the switch to connect the supply. Record V vs t as the capacitor charges.</li>
-  <li>Discharge: flip the switch to disconnect the supply and connect the capacitor to discharge through R. Record V vs t.</li>
-  <li>Take readings every 5&ndash;10 seconds (or use a datalogger for continuous recording).</li>
-  <li>Plot ln(V) vs t for the discharge curve.</li>
-</ol>
-
-<h3>Safety</h3>
-<ul>
-  <li>Ensure the capacitor is connected with correct polarity (electrolytic capacitors)</li>
-  <li>Discharge the capacitor fully before handling the circuit</li>
-  <li>Use low voltages (&lt; 12 V)</li>
-</ul>
-
-<h3>Analysis</h3>
-<p>During discharge: <span class="eq">V = V<sub>0</sub> e<sup>&minus;t/RC</sup></span></p>
-<p>Taking natural log: <span class="eq">ln V = ln V<sub>0</sub> &minus; t/RC</span></p>
-<p>Plot <strong>ln(V) vs t</strong>. Gradient = &minus;1/RC. The time constant &tau; = RC is the time for V to fall to V<sub>0</sub>/e (&asymp; 37% of initial).</p>
-
-<table>
-<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Voltmeter draws current, affecting discharge</td><td>Systematic</td><td>Use a high-impedance voltmeter or datalogger</td></tr>
-<tr><td>Timing errors with manual stopwatch</td><td>Random</td><td>Use a datalogger for continuous, automatic recording</td></tr>
-<tr><td>Capacitor may have leakage current</td><td>Systematic</td><td>Use a high-quality capacitor; check for self-discharge</td></tr>
-<tr><td>Temperature changes affect resistance</td><td>Systematic</td><td>Conduct experiment in stable temperature environment</td></tr>
-</table>
-
-<div class="tip-box">
-<strong>Exam Tip:</strong> The time constant &tau; = RC. After 1&tau;, V drops to 37% of V<sub>0</sub>. After 5&tau;, the capacitor is considered fully discharged (&lt; 1% of V<sub>0</sub>). Choose R and C so that &tau; is a convenient value (e.g. 10&ndash;30 seconds) for easy measurement.
-</div>
+<p><strong>Aim:</strong> To investigate the charge and discharge of a capacitor through a resistor and determine the time constant &tau; = RC.</p>
+<p><strong>Key equation:</strong> V = V<sub>0</sub>e<sup>&minus;t/RC</sup>. Plot ln(V) vs t: gradient = &minus;1/RC.</p>
+<p><strong>Key apparatus:</strong> Capacitor (e.g. 1000 &mu;F), resistor (e.g. 10&ndash;100 k&Omega;), DC supply, two-way switch, voltmeter or datalogger.</p>
+<p><strong>Key points:</strong> Choose R and C so &tau; is 10&ndash;60 s. Correct polarity for electrolytic capacitors. Use a datalogger for best results. After 5&tau;, the capacitor is effectively fully discharged.</p>
+<p><em>Full details including diagrams are in the 3.7 Fields notes.</em></p>
 </div>
 
-<!-- RP10 -->
 <div class="prac-box" id="rp10">
 <h2>&#9879; RP10: Force on a Current-Carrying Wire</h2>
-
-<svg viewBox="0 0 600 240" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
-  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Force on a Current-Carrying Wire</text>
-  <!-- Magnets -->
-  <rect x="200" y="80" width="40" height="80" rx="4" fill="#DC2626" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="220" y="125" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">N</text>
-  <rect x="360" y="80" width="40" height="80" rx="4" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="380" y="125" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">S</text>
-  <!-- Wire -->
-  <line x1="300" y1="50" x2="300" y2="70" stroke="#D97706" stroke-width="3"/>
-  <line x1="300" y1="70" x2="300" y2="170" stroke="#D97706" stroke-width="3"/>
-  <line x1="300" y1="170" x2="300" y2="190" stroke="#D97706" stroke-width="3"/>
-  <text x="315" y="60" fill="#D97706" font-size="11">Wire (carrying I)</text>
-  <!-- Yoke -->
-  <rect x="190" y="165" width="220" height="15" rx="3" fill="#1a1a2e"/>
-  <text x="300" y="200" text-anchor="middle" fill="#1a1a2e" font-size="11">Iron yoke (U-shaped)</text>
-  <!-- Balance -->
-  <rect x="130" y="210" width="340" height="25" rx="4" fill="#16A34A" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="300" y="227" text-anchor="middle" fill="#fff" font-size="11">Top-pan balance</text>
-  <text x="510" y="120" fill="#1a1a2e" font-size="11">F = BIL</text>
-</svg>
-
-<h3>Apparatus</h3>
-<ul>
-  <li>U-shaped magnet (or horseshoe magnet on iron yoke)</li>
-  <li>Stiff copper wire shaped into a rectangular "cradle"</li>
-  <li>Top-pan balance (reading to 0.01 g)</li>
-  <li>DC power supply (variable current)</li>
-  <li>Ammeter</li>
-  <li>Connecting wires and crocodile clips</li>
-  <li>Ruler (to measure length of wire in the field)</li>
-</ul>
-
-<h3>Method</h3>
-<ol>
-  <li>Place the magnet assembly on the top-pan balance. Zero the balance.</li>
-  <li>Position the wire "cradle" so the horizontal section sits in the magnetic field between the poles.</li>
-  <li>Connect the wire to the DC supply and ammeter in series.</li>
-  <li>Switch on the supply at a low current. Record the current I and the apparent mass change &Delta;m on the balance.</li>
-  <li>Calculate force: F = &Delta;m &times; g.</li>
-  <li>Repeat for at least 6 different currents.</li>
-  <li>Measure the length L of wire in the field with a ruler.</li>
-  <li>Plot F vs I.</li>
-</ol>
-
-<h3>Safety</h3>
-<ul>
-  <li>Keep current low to avoid overheating the wire</li>
-  <li>Do not leave the current on for long periods</li>
-  <li>Handle magnets carefully near electronic equipment</li>
-</ul>
-
-<h3>Analysis</h3>
-<p>From F = BIL:</p>
-<p>Plot <strong>F (y-axis) vs I (x-axis)</strong>. Gradient = BL, so B = gradient / L.</p>
-<p>Expect a straight line through the origin.</p>
-
-<table>
-<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Balance is sensitive to vibrations and draughts</td><td>Random</td><td>Use a draught shield; place balance on a stable surface</td></tr>
-<tr><td>Magnetic field not uniform across wire length</td><td>Systematic</td><td>Use strong, flat-faced magnets; keep wire in centre of field</td></tr>
-<tr><td>Wire not perpendicular to field</td><td>Systematic</td><td>Align wire carefully; use a set square</td></tr>
-<tr><td>Wire heats up at high currents</td><td>Systematic</td><td>Use short bursts of current; allow cooling between readings</td></tr>
-</table>
-
-<div class="tip-box">
-<strong>Exam Tip:</strong> The force on the wire is equal and opposite to the force on the magnet (Newton's third law). This is why the balance reading changes. By convention, F = BIL applies when the wire, field, and force are mutually perpendicular (use Fleming's left-hand rule).
-</div>
+<p><strong>Aim:</strong> To investigate F = BIL by measuring the force on a current-carrying wire in a magnetic field.</p>
+<p><strong>Key equation:</strong> F = BIL. Plot F vs I: gradient = BL, so B = gradient/L.</p>
+<p><strong>Key apparatus:</strong> Horseshoe magnet on a top-pan balance, stiff copper wire cradle clamped above, ammeter, variable DC supply.</p>
+<p><strong>Key points:</strong> The balance detects the reaction force (Newton's third law). Tare the balance before switching on current. Wire must be perpendicular to B for maximum force. F = &Delta;m &times; g.</p>
+<p><em>Full details including diagrams are in the 3.7 Fields notes.</em></p>
 </div>
 
-<!-- RP11 -->
 <div class="prac-box" id="rp11">
 <h2>&#9879; RP11: AC Supply with Oscilloscope</h2>
-
-<svg viewBox="0 0 600 230" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
-  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">AC Supply with Oscilloscope</text>
-  <!-- Signal generator -->
-  <rect x="50" y="80" width="80" height="45" rx="5" fill="#1a73e8" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="90" y="100" text-anchor="middle" fill="#fff" font-size="10">Signal</text>
-  <text x="90" y="115" text-anchor="middle" fill="#fff" font-size="10">Generator</text>
-  <line x1="130" y1="102" x2="200" y2="102" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- CRO -->
-  <rect x="200" y="50" width="200" height="150" rx="8" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
-  <rect x="215" y="62" width="170" height="110" rx="4" fill="#0a2a0a"/>
-  <!-- Grid -->
-  <line x1="215" y1="117" x2="385" y2="117" stroke="#16A34A" stroke-width="0.5" opacity="0.5"/>
-  <line x1="300" y1="62" x2="300" y2="172" stroke="#16A34A" stroke-width="0.5" opacity="0.5"/>
-  <!-- Sine wave -->
-  <path d="M225,117 Q247,72 270,117 Q293,162 315,117 Q337,72 360,117 Q375,147 385,117" fill="none" stroke="#16A34A" stroke-width="2.5"/>
-  <text x="300" y="192" text-anchor="middle" fill="#fff" font-size="10">Oscilloscope (CRO)</text>
-  <!-- Labels -->
-  <line x1="270" y1="72" x2="270" y2="162" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
-  <line x1="315" y1="72" x2="315" y2="162" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
-  <line x1="270" y1="185" x2="315" y2="185" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="292" y="198" text-anchor="middle" fill="#DC2626" font-size="10">T (period)</text>
-  <line x1="420" y1="72" x2="420" y2="117" stroke="#D97706" stroke-width="1.5"/>
-  <line x1="416" y1="72" x2="424" y2="72" stroke="#D97706" stroke-width="1.5"/>
-  <line x1="416" y1="117" x2="424" y2="117" stroke="#D97706" stroke-width="1.5"/>
-  <text x="450" y="98" fill="#D97706" font-size="10">V&#x2080;</text>
-  <rect x="430" y="120" width="150" height="55" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="505" y="138" text-anchor="middle" fill="#1a1a2e" font-size="10">f = 1/T</text>
-  <text x="505" y="155" text-anchor="middle" fill="#1a1a2e" font-size="10">V&#x2099;&#x2098;&#x2093; = V&#x2080;/&radic;2</text>
-  <text x="505" y="170" text-anchor="middle" fill="#16A34A" font-size="10">V&#x2099;&#x2098;&#x2093; &asymp; 0.707 V&#x2080;</text>
-</svg>
-
-<h3>Apparatus</h3>
-<ul>
-  <li>Signal generator (AC supply)</li>
-  <li>Cathode ray oscilloscope (CRO) or digital oscilloscope</li>
-  <li>Connecting leads (BNC cables if needed)</li>
-</ul>
-
-<h3>Method</h3>
-<ol>
-  <li>Connect the signal generator output to the Y-input of the oscilloscope.</li>
-  <li>Adjust the time-base and Y-gain (volts/div) to display a clear, stable waveform.</li>
-  <li>Measure the peak voltage V<sub>0</sub>: count the number of divisions from the centre line to the peak and multiply by the Y-gain setting (volts/div).</li>
-  <li>Measure the period T: count the number of divisions for one complete cycle and multiply by the time-base setting (time/div).</li>
-  <li>Calculate frequency: f = 1/T.</li>
-  <li>Calculate V<sub>rms</sub> = V<sub>0</sub> / &radic;2.</li>
-  <li>Vary the signal generator frequency and repeat measurements to verify.</li>
-</ol>
-
-<h3>Safety</h3>
-<ul>
-  <li>Use low voltage signals (&lt; 12 V)</li>
-  <li>Ensure oscilloscope is properly grounded</li>
-  <li>Do not connect oscilloscope to mains voltage directly</li>
-</ul>
-
-<h3>Analysis</h3>
-<p>From the oscilloscope trace:</p>
-<p class="eq">V<sub>0</sub> = (number of div from centre to peak) &times; (volts/div setting)</p>
-<p class="eq">T = (number of div for one cycle) &times; (time/div setting)</p>
-<p class="eq">f = 1/T &nbsp;&nbsp;&nbsp; V<sub>rms</sub> = V<sub>0</sub>/&radic;2 &asymp; 0.707 V<sub>0</sub></p>
-
-<table>
-<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Difficulty reading exact peak position</td><td>Random</td><td>Adjust Y-gain so waveform fills most of the screen</td></tr>
-<tr><td>Time-base calibration inaccuracy</td><td>Systematic</td><td>Calibrate with a known frequency source</td></tr>
-<tr><td>Trace thickness makes precise reading hard</td><td>Random</td><td>Use a digital oscilloscope with cursor measurement</td></tr>
-<tr><td>AC frequency drift from signal generator</td><td>Random</td><td>Use a stable, high-quality signal generator</td></tr>
-</table>
-
-<div class="tip-box">
-<strong>Exam Tip:</strong> The V<sub>rms</sub> is the DC equivalent voltage that would deliver the same power. Mains electricity in the UK is quoted as 230 V rms, meaning V<sub>0</sub> = 230&radic;2 &asymp; 325 V. Always check which value (peak or rms) a question is asking for.
-</div>
+<p><strong>Aim:</strong> To use an oscilloscope to measure the peak voltage V<sub>0</sub>, frequency f, and period T of an AC supply.</p>
+<p><strong>Key equations:</strong> V<sub>0</sub> = divisions &times; V/div. T = divisions &times; time/div. f = 1/T. V<sub>rms</sub> = V<sub>0</sub>/&radic;2.</p>
+<p><strong>Key apparatus:</strong> Oscilloscope, signal generator (or low-voltage AC supply), connecting leads.</p>
+<p><strong>Key points:</strong> Adjust Y-gain and time base for a clear display. V<sub>rms</sub> is the DC equivalent that delivers the same power. UK mains: V<sub>rms</sub> = 230 V, f = 50 Hz.</p>
+<p><em>Full details including diagrams are in the 3.7 Fields notes.</em></p>
 </div>
 
-<!-- RP12 -->
 <div class="prac-box" id="rp12">
 <h2>&#9879; RP12: Inverse-Square Law for Gamma Radiation</h2>
+<p><strong>Aim:</strong> To verify the inverse-square law (I &prop; 1/d<sup>2</sup>) for gamma radiation from a point source.</p>
+<p><strong>Key equation:</strong> Corrected count rate C &prop; 1/d<sup>2</sup>. Plot C vs 1/d<sup>2</sup>: straight line through origin.</p>
+<p><strong>Key apparatus:</strong> Sealed gamma source (e.g. Co-60), GM tube and counter, metre ruler, stopwatch.</p>
+<p><strong>Key points:</strong> ALWAYS measure and subtract background count rate first. Use long counting times (&ge; 60 s) because radioactive decay is random. Handle the source with tongs, never bare hands. Maximise distance, minimise exposure time. If the graph doesn't pass through the origin, there is a systematic error in d (correct with d<sub>0</sub>).</p>
+<p><em>Full details including diagrams are in the 3.8 Nuclear Physics notes.</em></p>
+</div>
 
-<svg viewBox="0 0 600 210" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px;margin:12px 0;">
-  <text x="300" y="22" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">Inverse-Square Law for Gamma Radiation</text>
-  <!-- Source -->
-  <circle cx="100" cy="110" r="20" fill="#DC2626" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="100" y="115" text-anchor="middle" fill="#fff" font-size="10">&gamma;</text>
-  <text x="100" y="145" text-anchor="middle" fill="#DC2626" font-size="10">Source</text>
-  <!-- Radiation lines -->
-  <line x1="120" y1="100" x2="350" y2="80" stroke="#D97706" stroke-width="1" stroke-dasharray="5,3" opacity="0.5"/>
-  <line x1="120" y1="110" x2="350" y2="110" stroke="#D97706" stroke-width="1" stroke-dasharray="5,3" opacity="0.5"/>
-  <line x1="120" y1="120" x2="350" y2="140" stroke="#D97706" stroke-width="1" stroke-dasharray="5,3" opacity="0.5"/>
-  <!-- GM tube -->
-  <rect x="350" y="85" width="80" height="50" rx="6" fill="#1a73e8" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="390" y="107" text-anchor="middle" fill="#fff" font-size="10">GM Tube</text>
-  <text x="390" y="122" text-anchor="middle" fill="#fff" font-size="9">(detector)</text>
-  <!-- Counter -->
-  <rect x="450" y="90" width="70" height="40" rx="4" fill="#16A34A" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="485" y="114" text-anchor="middle" fill="#fff" font-size="10">Counter</text>
-  <line x1="430" y1="110" x2="450" y2="110" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Distance -->
-  <line x1="100" y1="170" x2="350" y2="170" stroke="#16A34A" stroke-width="1.5"/>
-  <line x1="100" y1="166" x2="100" y2="174" stroke="#16A34A" stroke-width="1.5"/>
-  <line x1="350" y1="166" x2="350" y2="174" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="225" y="188" text-anchor="middle" fill="#16A34A" font-size="12">d (source to detector)</text>
-</svg>
-
-<h3>Apparatus</h3>
-<ul>
-  <li>Gamma source (e.g. cobalt-60 or caesium-137, sealed)</li>
-  <li>Geiger-M&uuml;ller (GM) tube and counter/ratemeter</li>
-  <li>Metre ruler</li>
-  <li>Source holder and clamp</li>
-  <li>Lead absorbers (optional, for background shielding)</li>
-</ul>
-
-<h3>Method</h3>
-<ol>
-  <li>First, measure the background count rate (no source present). Count for at least 60 seconds and calculate counts per second.</li>
-  <li>Place the gamma source at a measured distance d from the GM tube window.</li>
-  <li>Record the count rate over a fixed time (e.g. 60 s). Subtract background count rate to get corrected count rate C.</li>
-  <li>Repeat for at least 6 different distances (e.g. 5 cm to 50 cm).</li>
-  <li>At each distance, take at least 3 readings and use the mean.</li>
-  <li>Plot corrected count rate C vs 1/d&sup2;.</li>
-</ol>
-
-<h3>Safety</h3>
-<ul>
-  <li>Handle the source with long tongs &mdash; never with bare hands</li>
-  <li>Keep maximum distance from the source when not measuring</li>
-  <li>Point the source away from people</li>
-  <li>Minimise exposure time; store the source in a lead-lined container</li>
-  <li>Follow ALARA principle (As Low As Reasonably Achievable)</li>
-</ul>
-
-<h3>Analysis</h3>
-<p>Intensity follows the inverse-square law: <span class="eq">I &propto; 1/d&sup2;</span></p>
-<p>Plot <strong>corrected count rate C vs 1/d&sup2;</strong>. Expect a straight line through the origin.</p>
-<p>Alternatively, plot <strong>ln(C) vs ln(d)</strong>. Gradient should be &minus;2 (confirming inverse-square relationship).</p>
-
+<!-- ============================================================ -->
+<!-- SUMMARY TABLE -->
+<!-- ============================================================ -->
+<h2>Summary: All 12 Required Practicals at a Glance</h2>
 <table>
-<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Background radiation fluctuates</td><td>Random</td><td>Measure background multiple times; count for longer periods</td></tr>
-<tr><td>Radioactive decay is random</td><td>Random</td><td>Count for longer periods (60+ seconds); take repeats</td></tr>
-<tr><td>Distance measured to wrong part of GM tube</td><td>Systematic</td><td>Measure to the centre of the GM tube window</td></tr>
-<tr><td>Source not a point source</td><td>Systematic</td><td>Use larger distances (d &gt;&gt; source size) where point-source approximation is better</td></tr>
+  <tr><th>RP</th><th>Topic</th><th>What to Plot</th><th>What Gradient Gives</th></tr>
+  <tr><td>1</td><td>Stationary waves</td><td>f vs 1/L &nbsp; or &nbsp; f vs &radic;T</td><td>(1/2)&radic;(T/&mu;) &nbsp; or &nbsp; 1/(2L&radic;&mu;)</td></tr>
+  <tr><td>2</td><td>Double slit / grating</td><td>Measure w, D &rarr; &lambda; = ws/D; &nbsp; or d sin&theta; = n&lambda;</td><td>&mdash; (direct calculation)</td></tr>
+  <tr><td>3</td><td>Free-fall (g)</td><td>s vs t<sup>2</sup></td><td>g/2</td></tr>
+  <tr><td>4</td><td>Young modulus</td><td>Stress vs strain &nbsp; or &nbsp; F vs &Delta;L</td><td>E &nbsp; or &nbsp; EA/L</td></tr>
+  <tr><td>5</td><td>Resistivity</td><td>R vs L</td><td>&rho;/A</td></tr>
+  <tr><td>6</td><td>EMF &amp; int. resistance</td><td>V vs I</td><td>&minus;r (y-intercept = &epsilon;)</td></tr>
+  <tr><td>7</td><td>SHM (spring/pendulum)</td><td>T<sup>2</sup> vs m &nbsp; or &nbsp; T<sup>2</sup> vs L</td><td>4&pi;<sup>2</sup>/k &nbsp; or &nbsp; 4&pi;<sup>2</sup>/g</td></tr>
+  <tr><td>8</td><td>Gas laws</td><td>P vs 1/V &nbsp; or &nbsp; V vs T(K)</td><td>nRT &nbsp; or &nbsp; nR/P</td></tr>
+  <tr><td>9</td><td>Capacitor discharge</td><td>ln(V) vs t</td><td>&minus;1/RC</td></tr>
+  <tr><td>10</td><td>Force on wire</td><td>F vs I</td><td>BL</td></tr>
+  <tr><td>11</td><td>AC with oscilloscope</td><td>Read V<sub>0</sub> and T from screen</td><td>&mdash; (direct reading)</td></tr>
+  <tr><td>12</td><td>Inverse-square law</td><td>C vs 1/d<sup>2</sup></td><td>Proportionality constant</td></tr>
 </table>
 
-<div class="tip-box">
-<strong>Exam Tip:</strong> Always subtract the background count rate before plotting. The inverse-square law applies to point sources in a vacuum with no absorption. In practice, air absorption is negligible for gamma radiation over lab distances. The corrected count rate is proportional to intensity, not equal to it.
-</div>
-</div>
+<div class="tip-box"><strong>Final Exam Tip:</strong> In practical questions, marks are given for: (1) correct identification of variables, (2) description of a clear method, (3) specific mention of apparatus and how measurements are taken, (4) stating what to plot and how to analyse the graph, (5) identifying and explaining sources of error, (6) suggesting specific improvements (not just "be more careful"). Always think about what limits the precision of your measurement and how you could reduce that uncertainty.</div>
 
 </div>
 </body>

@@ -18,6 +18,8 @@
   .definition strong { color: #1e3a5f; }
   .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
   .exam-tip strong { color: #b45309; }
+  .real-world { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #166534; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
   .practical-card { background: #f0f7ff; border: 2px solid #1a73e8; border-radius: 12px; padding: 24px; margin: 32px 0; }
@@ -32,18 +34,24 @@
 
 <h1>AQA A-Level Biology — Required Practicals</h1>
 
+<p>There are <strong>12 required practicals</strong> across the AQA A-Level Biology course. You will be tested on these in exams through questions about methods, apparatus, variables, analysis, evaluation, and the underlying biology. You do not need to have personally performed every practical, but you must understand them thoroughly.</p>
+
+<div class="definition">
+<strong>Key practical skills tested:</strong> Independent, dependent and control variables; reliability (repeats, means); validity (controlling variables); accuracy and precision of measurements; sources of error and improvements; selecting appropriate apparatus; presenting data (tables, graphs); statistical analysis (chi-squared, t-test, Spearman rank correlation, standard deviation); drawing conclusions from data.
+</div>
+
 <div class="toc">
 <h2>Table of Contents</h2>
 <ol>
 <li><a href="#rp1">RP1: Effect of a Variable on Enzyme-Controlled Reaction Rate</a></li>
 <li><a href="#rp2">RP2: Stained Squashes of Root Tip Cells (Mitosis)</a></li>
-<li><a href="#rp3">RP3: Dilution Series and Calibration Curve</a></li>
-<li><a href="#rp4">RP4: Effect of a Variable on Membrane Permeability</a></li>
+<li><a href="#rp3">RP3: Dilution Series and Calibration Curve (Colorimetry)</a></li>
+<li><a href="#rp4">RP4: Effect of a Variable on Membrane Permeability (Beetroot)</a></li>
 <li><a href="#rp5">RP5: Dissection of Gas Exchange / Mass Transport System</a></li>
 <li><a href="#rp6">RP6: Aseptic Technique &amp; Antimicrobial Substances</a></li>
 <li><a href="#rp7">RP7: Chromatography of Leaf Pigments</a></li>
-<li><a href="#rp8">RP8: Effect of a Variable on Respiration Rate</a></li>
-<li><a href="#rp9">RP9: Choice Chamber (Animal Movement)</a></li>
+<li><a href="#rp8">RP8: Effect of a Variable on Respiration Rate (Respirometer)</a></li>
+<li><a href="#rp9">RP9: Choice Chamber (Animal Responses)</a></li>
 <li><a href="#rp10">RP10: Distribution of Organisms (Quadrats &amp; Transects)</a></li>
 <li><a href="#rp11">RP11: Effect of a Variable on Organism Development</a></li>
 <li><a href="#rp12">RP12: Immobilised Enzyme Investigation</a></li>
@@ -52,986 +60,738 @@
 
 <!-- RP1 -->
 <div class="practical-card" id="rp1">
-<h2>&#9879;&#65039; RP1: Effect of a Variable on Enzyme-Controlled Reaction Rate</h2>
+<h2>RP1: Effect of a Variable on Enzyme-Controlled Reaction Rate</h2>
 
-<div class="svg-container">
-<svg viewBox="0 0 500 320" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px">
-  <!-- Water bath -->
-  <rect x="50" y="140" width="180" height="120" rx="6" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="140" y="280" text-anchor="middle" fill="#1a73e8" font-size="11">Water bath</text>
-  <!-- Test tube in bath -->
-  <rect x="110" y="120" width="30" height="110" rx="4" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
-  <text x="125" y="115" text-anchor="middle" fill="#D97706" font-size="10">H&#8322;O&#8322;</text>
-  <rect x="155" y="120" width="30" height="110" rx="4" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="170" y="115" text-anchor="middle" fill="#16A34A" font-size="10">Catalase</text>
-  <!-- Delivery tube to collection -->
-  <line x1="170" y1="120" x2="300" y2="80" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="300" y1="80" x2="300" y2="160" stroke="#1a1a2e" stroke-width="2"/>
-  <!-- Gas syringe -->
-  <rect x="310" y="60" width="140" height="35" rx="4" fill="#f1f5f9" stroke="#1a73e8" stroke-width="2"/>
-  <rect x="310" y="65" width="80" height="25" rx="2" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
-  <text x="380" y="82" text-anchor="middle" fill="#1a73e8" font-size="11">Gas syringe</text>
-  <!-- Thermometer -->
-  <rect x="70" y="130" width="8" height="100" rx="4" fill="#fecaca" stroke="#DC2626" stroke-width="1"/>
-  <circle cx="74" cy="240" r="8" fill="#DC2626"/>
-  <text x="74" y="290" text-anchor="middle" fill="#DC2626" font-size="10">Thermometer</text>
-  <!-- Stopwatch -->
-  <circle cx="420" cy="200" r="28" fill="#f1f5f9" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="420" y1="200" x2="420" y2="180" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="420" y1="200" x2="432" y2="195" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="420" y="245" text-anchor="middle" fill="#1a1a2e" font-size="10">Stopwatch</text>
-</svg>
-</div>
+<p><strong>Aim:</strong> Investigate the effect of temperature (or pH, or substrate/enzyme concentration) on the rate of an enzyme-controlled reaction.</p>
+
+<p><strong>Biology link:</strong> Enzymes are biological catalysts (Topic 1). Their rate of reaction is affected by temperature (kinetic energy and denaturation), pH (ionisation of R groups in active site), and substrate concentration (collision frequency and saturation).</p>
 
 <h3>Apparatus</h3>
 <ul>
-<li>Test tubes and rack</li>
-<li>Catalase (potato extract) and hydrogen peroxide (H&#8322;O&#8322;) solution</li>
-<li>Gas syringe or inverted measuring cylinder</li>
-<li>Delivery tube with bung</li>
-<li>Water bath (for temperature control)</li>
-<li>Buffer solutions (for pH investigation)</li>
-<li>Thermometer, stopwatch, ruler</li>
+<li>Test tubes and rack, boiling tubes</li>
+<li>Catalase source (potato extract or liver homogenate) and hydrogen peroxide (H<sub>2</sub>O<sub>2</sub>) solution (typically 3-10 volume)</li>
+<li>Gas syringe (most accurate) or inverted measuring cylinder over water</li>
+<li>Delivery tube with bung (tight-fitting to prevent gas escape)</li>
+<li>Water baths at range of temperatures (e.g. 20, 30, 40, 50, 60&#176;C) or buffer solutions for pH investigation</li>
+<li>Thermometer, stopwatch, graduated syringes or pipettes for measuring volumes</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
-<li>Set up water bath at required temperature (e.g. 20, 30, 40, 50, 60 &#176;C). Equilibrate enzyme and substrate for 5 minutes.</li>
-<li>Add catalase to H&#8322;O&#8322; solution, immediately fit bung and delivery tube connected to gas syringe.</li>
-<li>Record volume of O&#8322; gas collected every 30 seconds for 5 minutes.</li>
-<li>Repeat at each temperature (or pH/concentration). At least 3 repeats per condition.</li>
-<li>Calculate initial rate of reaction from the steepest part of the curve (first 60 s).</li>
+<li>Set up water bath at the required temperature. Place both enzyme and substrate solutions in separate test tubes in the water bath for <strong>5 minutes</strong> to equilibrate to the target temperature (this is a key step often missed).</li>
+<li>Measure a fixed volume of enzyme and a fixed volume of H<sub>2</sub>O<sub>2</sub> using graduated syringes.</li>
+<li>Add the enzyme to the H<sub>2</sub>O<sub>2</sub>, immediately fit the bung and delivery tube connected to the gas syringe (or inverted measuring cylinder).</li>
+<li>Record the volume of O<sub>2</sub> gas collected every 30 seconds for 5 minutes.</li>
+<li>Repeat at each temperature (or pH/concentration). Perform <strong>at least 3 repeats</strong> per condition and calculate mean values.</li>
+<li>Calculate the <strong>initial rate of reaction</strong> from the steepest (linear) part of the volume-time curve (typically the first 30-60 seconds).</li>
 </ol>
+
+<p><strong>Alternative method (for amylase):</strong> Amylase breaks down starch. Mix amylase with starch solution at different temperatures. At regular intervals, take a sample and add to iodine solution. Time how long until iodine no longer turns blue-black (starch fully digested). Rate = 1/time.</p>
+
+<h3>Variables</h3>
+<table>
+<tr><th>Independent</th><th>Dependent</th><th>Control Variables</th></tr>
+<tr><td>Temperature (or pH, or concentration)</td><td>Volume of O<sub>2</sub> produced per unit time (rate of reaction)</td><td>Volume and concentration of enzyme, volume and concentration of substrate, same enzyme batch, same total volume, equilibration time</td></tr>
+</table>
 
 <h3>Safety</h3>
 <ul>
-<li>H&#8322;O&#8322; is an irritant at higher concentrations &#8212; wear eye protection and gloves.</li>
-<li>Care with hot water baths &#8212; do not exceed 60 &#176;C.</li>
-<li>O&#8322; is released &#8212; ensure good ventilation.</li>
+<li>H<sub>2</sub>O<sub>2</sub> is an irritant at higher concentrations — wear eye protection and gloves.</li>
+<li>Care with hot water baths — do not exceed 60&#176;C; handle tubes with tongs.</li>
+<li>O<sub>2</sub> is released — ensure good ventilation. Do not approach with naked flames.</li>
+<li>If using buffer solutions, some are irritant — check MSDS.</li>
 </ul>
 
 <h3>Analysis</h3>
 <ul>
-<li>Plot volume of O&#8322; (y-axis) against time (x-axis) for each condition.</li>
-<li>Calculate initial rate = volume / time from the linear portion of each curve.</li>
-<li>Plot rate (y-axis) against temperature/pH/concentration (x-axis).</li>
-<li>Optimum temperature or pH is the peak of the curve.</li>
+<li>Plot volume of O<sub>2</sub> (y-axis) against time (x-axis) for each condition — gives a product-time curve.</li>
+<li>Calculate <strong>initial rate</strong> = gradient of the tangent at time = 0 (or from the linear portion). Rate = &Delta;volume / &Delta;time (cm<sup>3</sup> s<sup>-1</sup> or cm<sup>3</sup> min<sup>-1</sup>).</li>
+<li>Plot initial rate (y-axis) against temperature or pH (x-axis) to find the <strong>optimum</strong>.</li>
+<li>For temperature: rate increases with temperature (more kinetic energy, more enzyme-substrate collisions) up to an optimum, then decreases sharply as the enzyme denatures (tertiary structure disrupted, active site shape changed permanently).</li>
+<li>For pH: bell-shaped curve with a peak at the optimum pH. Extreme pH values disrupt ionic bonds and hydrogen bonds in the enzyme, altering the active site shape.</li>
 </ul>
 
-<h3>Sources of Error</h3>
+<h3>Sources of Error and Improvements</h3>
 <table>
 <tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
-<tr><td>Delay fitting bung</td><td>Gas escapes, rate appears lower</td><td>Practise technique; use side-arm flask</td></tr>
-<tr><td>Temperature fluctuation</td><td>Rate varies inconsistently</td><td>Use thermostatically controlled water bath</td></tr>
-<tr><td>Enzyme concentration varies</td><td>Unreliable comparisons</td><td>Use same batch of enzyme throughout</td></tr>
-<tr><td>Bubbles in delivery tube</td><td>Volume readings inaccurate</td><td>Ensure tube is filled with water before start</td></tr>
+<tr><td>Delay fitting bung after mixing</td><td>Gas escapes before collection begins; rate appears lower</td><td>Practise technique; use a side-arm flask with a rubber bung already in place</td></tr>
+<tr><td>Temperature fluctuation during reaction</td><td>Rate varies inconsistently; enzyme may partially denature</td><td>Use a thermostatically controlled water bath; check temperature with thermometer</td></tr>
+<tr><td>Enzyme concentration varies between batches</td><td>Unreliable comparisons between conditions</td><td>Use the same batch of enzyme preparation throughout; make one large batch and divide</td></tr>
+<tr><td>Bubbles in delivery tube or syringe</td><td>Volume readings are inaccurate (artificially inflated)</td><td>Ensure delivery tube is filled with water before starting; check for leaks</td></tr>
+<tr><td>Not equilibrating enzyme and substrate at target temperature</td><td>Reaction starts at wrong temperature; results invalid</td><td>Allow 5 minutes for both solutions to reach target temperature before mixing</td></tr>
+<tr><td>Substrate depletion at end of reaction</td><td>Rate slows as substrate runs out, not due to variable being tested</td><td>Use initial rate (first 30-60 s) when substrate is in excess</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> Always state that you would calculate the <em>initial rate</em> of reaction. The rate at time = 0 avoids issues with substrate depletion and product inhibition.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> Always state that you would calculate the <em>initial rate</em> of reaction (not just "rate"). The rate at time = 0 avoids issues with substrate depletion, product inhibition, and enzyme inactivation. To calculate it: draw a tangent to the curve at t = 0 (or use the first linear portion) and measure its gradient. Also: when discussing temperature, distinguish between increased kinetic energy (reversible) and denaturation (irreversible — bonds broken, active site permanently changed).</div>
+
+<div class="real-world"><strong>Real-World Link:</strong> Understanding enzyme kinetics is essential in medicine (designing drugs that inhibit specific enzymes, e.g. ACE inhibitors for hypertension, protease inhibitors for HIV) and in industry (optimising conditions for enzyme-catalysed manufacturing processes, such as using proteases in biological washing powder at 40&#176;C).</div>
 </div>
 
 <!-- RP2 -->
 <div class="practical-card" id="rp2">
-<h2>&#9879;&#65039; RP2: Stained Squashes of Root Tip Cells (Mitosis)</h2>
+<h2>RP2: Stained Squashes of Root Tip Cells (Mitosis)</h2>
 
-<div class="svg-container">
-<svg viewBox="0 0 500 300" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px">
-  <!-- Root tip cutting -->
-  <rect x="30" y="50" width="100" height="80" rx="4" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="80" y="45" text-anchor="middle" fill="#16A34A" font-size="11">1. Cut root tip</text>
-  <line x1="60" y1="70" x2="60" y2="120" stroke="#16A34A" stroke-width="3"/>
-  <line x1="55" y1="115" x2="65" y2="115" stroke="#DC2626" stroke-width="2"/>
-  <text x="80" y="100" fill="#1a1a2e" font-size="10">~2 mm</text>
-  <!-- Stain -->
-  <rect x="160" y="50" width="100" height="80" rx="4" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
-  <text x="210" y="45" text-anchor="middle" fill="#D97706" font-size="11">2. Add stain</text>
-  <ellipse cx="210" cy="95" rx="20" ry="12" fill="#DC2626" opacity="0.4"/>
-  <text x="210" y="99" text-anchor="middle" fill="#DC2626" font-size="9">Acetic orcein</text>
-  <!-- Squash -->
-  <rect x="290" y="50" width="100" height="80" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="340" y="45" text-anchor="middle" fill="#1a73e8" font-size="11">3. Squash</text>
-  <rect x="310" y="70" width="60" height="6" rx="2" fill="#cbd5e1" stroke="#1a1a2e" stroke-width="1"/>
-  <rect x="310" y="90" width="60" height="6" rx="2" fill="#cbd5e1" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="340" y="115" text-anchor="middle" fill="#1a1a2e" font-size="9">Press with pencil</text>
-  <!-- Microscope -->
-  <rect x="200" y="170" width="120" height="110" rx="6" fill="#f1f5f9" stroke="#1a73e8" stroke-width="2"/>
-  <rect x="240" y="155" width="40" height="25" rx="3" fill="#1a73e8"/>
-  <text x="260" y="172" text-anchor="middle" fill="white" font-size="9">Eyepiece</text>
-  <rect x="230" y="240" width="60" height="10" rx="2" fill="#cbd5e1" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="260" y="300" text-anchor="middle" fill="#1a73e8" font-size="11">4. Observe under microscope</text>
-  <!-- Mitosis stages -->
-  <circle cx="420" cy="190" r="15" fill="none" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="420" y="194" text-anchor="middle" fill="#DC2626" font-size="8">P</text>
-  <circle cx="460" cy="190" r="15" fill="none" stroke="#D97706" stroke-width="1.5"/>
-  <text x="460" y="194" text-anchor="middle" fill="#D97706" font-size="8">M</text>
-  <circle cx="420" cy="230" r="15" fill="none" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="420" y="234" text-anchor="middle" fill="#16A34A" font-size="8">A</text>
-  <circle cx="460" cy="230" r="15" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="460" y="234" text-anchor="middle" fill="#1a73e8" font-size="8">T</text>
-  <text x="440" y="270" text-anchor="middle" fill="#1a1a2e" font-size="10">Stages</text>
-</svg>
-</div>
+<p><strong>Aim:</strong> Observe mitosis in root tip cells and calculate the mitotic index.</p>
+
+<p><strong>Biology link:</strong> The root tip meristem contains actively dividing cells (Topic 2). The mitotic index can indicate how rapidly a tissue is growing and has clinical relevance — a high mitotic index in tumour tissue indicates aggressive cancer.</p>
 
 <h3>Apparatus</h3>
 <ul>
-<li>Garlic or onion root tips (grown in water for 3&#8211;5 days)</li>
-<li>Acetic orcein or toluidine blue stain</li>
-<li>1 M hydrochloric acid, watch glass, Bunsen burner</li>
-<li>Microscope slides and coverslips</li>
-<li>Optical microscope, mounted needle, pencil eraser</li>
+<li>Garlic or onion root tips (grown in water for 3-5 days; garlic is often preferred as it has large chromosomes and a fast growth rate)</li>
+<li>Acetic orcein stain (or toluidine blue / Feulgen stain) — stains chromosomes dark red/purple</li>
+<li>1 M hydrochloric acid, watch glass, water bath (or Bunsen burner with care)</li>
+<li>Microscope slides, coverslips, filter paper</li>
+<li>Optical microscope (x100 and x400 magnification), mounted needle, pencil eraser or thumb</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
-<li>Cut approximately 2 mm of the growing root tip and place on a watch glass.</li>
-<li>Add 1 M HCl and warm gently at ~60 &#176;C for 5 minutes to soften tissue and separate cells.</li>
-<li>Blot dry, then add a few drops of acetic orcein stain. Leave for 10 minutes.</li>
-<li>Transfer to a slide, add a coverslip, and squash firmly with a pencil eraser (blot excess).</li>
-<li>View under microscope, starting with low power (x100), then high power (x400).</li>
-<li>Identify and count cells in each stage of mitosis. Calculate the mitotic index.</li>
+<li>Cut approximately 2 mm of the <strong>growing root tip</strong> (the meristematic region where cells are actively dividing) and place on a watch glass.</li>
+<li>Add a few drops of 1 M HCl and warm gently at ~60&#176;C for 5 minutes in a water bath. This <strong>hydrolyses the middle lamella</strong> (breaks down pectin between cell walls), softening the tissue and separating cells so they form a single layer when squashed.</li>
+<li>Carefully blot dry with filter paper, then add a few drops of <strong>acetic orcein stain</strong>. Leave for <strong>10-15 minutes</strong>. The stain binds to DNA, making chromosomes visible (darkly stained).</li>
+<li>Transfer to a clean microscope slide. Add a coverslip. Place filter paper over the coverslip and <strong>squash firmly</strong> with a pencil eraser (press vertically, do not twist — this would smear cells). This spreads cells into a single layer.</li>
+<li>View under microscope: start at <strong>low power (x100)</strong> to locate a good region of well-spread cells, then switch to <strong>high power (x400)</strong> to identify individual cells.</li>
+<li>Identify and count cells in each stage of mitosis (prophase, metaphase, anaphase, telophase) and those in interphase. Count at least <strong>200 cells</strong> from multiple fields of view for reliability.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-<li>HCl is corrosive &#8212; wear gloves and eye protection.</li>
-<li>Acetic orcein stains skin and clothing; handle carefully.</li>
-<li>Care with Bunsen burner; use water bath instead if possible.</li>
+<li>HCl is corrosive — wear gloves and eye protection. Handle hot HCl with extra care.</li>
+<li>Acetic orcein stains skin and clothing permanently — handle carefully, wear gloves and lab coat.</li>
+<li>Care with hot water or Bunsen burner. Water bath is safer than direct heating.</li>
+<li>Sharp instruments (scalpels, needles) — cut away from body on a tile.</li>
 </ul>
 
 <h3>Analysis</h3>
+<div class="equation">
+Mitotic index = number of cells undergoing mitosis / total number of cells observed
+</div>
 <ul>
-<li>Mitotic index = number of cells in mitosis / total number of cells observed.</li>
-<li>Record the number of cells at each stage: prophase, metaphase, anaphase, telophase.</li>
-<li>The proportion of cells at each stage reflects the relative duration of that phase.</li>
+<li>Record the number of cells at each stage: interphase, prophase, metaphase, anaphase, telophase.</li>
+<li>The <strong>proportion of cells at each stage reflects the relative duration of that phase</strong>. Prophase is the longest phase of mitosis, so most dividing cells will be in prophase. Anaphase is the shortest, so fewest cells will be seen in this stage.</li>
+<li>A higher mitotic index indicates faster cell division (more cells in mitosis at any one time).</li>
+<li>Clinically, mitotic index is used to assess <strong>tumour aggressiveness</strong> — higher values indicate faster growth.</li>
 </ul>
 
-<h3>Sources of Error</h3>
+<h3>Sources of Error and Improvements</h3>
 <table>
 <tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
-<tr><td>Cells overlap after squash</td><td>Difficult to identify stages</td><td>Squash more firmly; use thinner section</td></tr>
-<tr><td>Insufficient staining</td><td>Chromosomes not visible</td><td>Leave stain longer; ensure fresh stain used</td></tr>
-<tr><td>Counting non-root-tip cells</td><td>Lower mitotic index</td><td>Only cut the very tip (meristematic region)</td></tr>
-<tr><td>Small sample size</td><td>Unreliable mitotic index</td><td>Count at least 200 cells from multiple fields</td></tr>
+<tr><td>Cells overlapping after squash</td><td>Difficult to identify individual cells and stages</td><td>Squash more firmly (but do not twist); use thinner tip sections; ensure adequate HCl treatment</td></tr>
+<tr><td>Insufficient staining time</td><td>Chromosomes not visible; difficult to identify stages</td><td>Leave stain for at least 10-15 minutes; ensure fresh stain is used</td></tr>
+<tr><td>Counting non-meristematic cells</td><td>Lower mitotic index (mature cells do not divide)</td><td>Only cut and use the very tip (2 mm) where the meristem is located</td></tr>
+<tr><td>Small sample size</td><td>Unreliable and unrepresentative mitotic index</td><td>Count at least 200 cells from multiple fields of view across the slide</td></tr>
+<tr><td>Difficulty distinguishing phases</td><td>Misidentification of stages</td><td>Use reference images; practise identification; use higher magnification</td></tr>
+<tr><td>Air bubbles under coverslip</td><td>Distort image; obscure cells</td><td>Lower coverslip at an angle; add more stain if needed</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> Prophase takes the longest so will have the most cells. Anaphase is the shortest. Always state <em>mitotic index = cells in mitosis / total cells</em>.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> Prophase typically has the most cells (longest phase), anaphase the fewest (shortest). Always state the formula: <em>mitotic index = cells in mitosis / total cells observed</em>. If asked to identify stages from a photograph: prophase = chromosomes visible but scattered; metaphase = chromosomes aligned at equator; anaphase = chromosomes being pulled apart to poles (V-shaped); telophase = two groups of chromosomes at poles, cell beginning to divide. Interphase cells show a dark nucleus with no visible individual chromosomes.</div>
 </div>
 
 <!-- RP3 -->
 <div class="practical-card" id="rp3">
-<h2>&#9879;&#65039; RP3: Dilution Series &amp; Calibration Curve</h2>
+<h2>RP3: Dilution Series &amp; Calibration Curve (Colorimetry)</h2>
 
-<div class="svg-container">
-<svg viewBox="0 0 500 280" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px">
-  <!-- Serial dilution tubes -->
-  <rect x="30" y="80" width="35" height="90" rx="4" fill="#1a73e8" opacity="0.9" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="47" y="190" text-anchor="middle" fill="#1a1a2e" font-size="9">100%</text>
-  <rect x="90" y="80" width="35" height="90" rx="4" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="107" y="190" text-anchor="middle" fill="#1a1a2e" font-size="9">50%</text>
-  <rect x="150" y="80" width="35" height="90" rx="4" fill="#1a73e8" opacity="0.5" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="167" y="190" text-anchor="middle" fill="#1a1a2e" font-size="9">25%</text>
-  <rect x="210" y="80" width="35" height="90" rx="4" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="227" y="190" text-anchor="middle" fill="#1a1a2e" font-size="9">12.5%</text>
-  <rect x="270" y="80" width="35" height="90" rx="4" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="287" y="190" text-anchor="middle" fill="#1a1a2e" font-size="9">6.25%</text>
-  <!-- Arrows -->
-  <path d="M70,100 Q80,70 90,100" fill="none" stroke="#D97706" stroke-width="1.5" marker-end="url(#arr)"/>
-  <path d="M130,100 Q140,70 150,100" fill="none" stroke="#D97706" stroke-width="1.5"/>
-  <path d="M190,100 Q200,70 210,100" fill="none" stroke="#D97706" stroke-width="1.5"/>
-  <path d="M250,100 Q260,70 270,100" fill="none" stroke="#D97706" stroke-width="1.5"/>
-  <text x="170" y="65" text-anchor="middle" fill="#D97706" font-size="11">Serial dilution (1 in 2)</text>
-  <!-- Colorimeter -->
-  <rect x="340" y="80" width="130" height="90" rx="8" fill="#f1f5f9" stroke="#1a73e8" stroke-width="2"/>
-  <rect x="370" y="105" width="15" height="45" rx="2" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
-  <text x="405" y="135" text-anchor="middle" fill="#1a73e8" font-size="13">COLORIMETER</text>
-  <text x="405" y="115" text-anchor="middle" fill="#1a1a2e" font-size="10">Abs: 0.45</text>
-  <!-- Graph -->
-  <line x1="340" y1="260" x2="480" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="340" y1="260" x2="340" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
-  <polyline points="350,255 380,240 410,225 440,210 470,205" fill="none" stroke="#DC2626" stroke-width="2"/>
-  <text x="410" y="275" text-anchor="middle" fill="#1a1a2e" font-size="10">Concentration</text>
-  <text x="330" y="230" text-anchor="middle" fill="#1a1a2e" font-size="10" transform="rotate(-90,330,230)">Absorbance</text>
-</svg>
-</div>
+<p><strong>Aim:</strong> Produce a calibration curve using a serial dilution and colorimetry, then use it to determine the concentration of an unknown solution.</p>
+
+<p><strong>Biology link:</strong> Quantitative analysis of biological molecules (Topic 1). Colorimetry is used to measure concentrations of coloured solutions — applicable to enzyme assays, glucose testing (Benedict's), protein quantification (biuret), and many medical diagnostic tests.</p>
 
 <h3>Apparatus</h3>
 <ul>
-<li>Stock solution of known concentration (e.g. glucose or food dye)</li>
-<li>Distilled water, graduated pipettes or syringes</li>
-<li>Test tubes and rack, colorimeter and cuvettes</li>
-<li>Appropriate colour filter for colorimeter</li>
+<li>Stock solution of known concentration (e.g. glucose solution, food dye, or bovine serum albumin)</li>
+<li>Distilled water, graduated pipettes or syringes (accurate to 0.1 cm<sup>3</sup>)</li>
+<li>Test tubes and rack (at least 6 — for serial dilution + blank + unknown)</li>
+<li>Colorimeter (or spectrophotometer) and clean cuvettes</li>
+<li>Appropriate colour filter for the colorimeter (use the <strong>complementary colour</strong> to the solution — e.g. blue/green filter for a red/orange solution like Benedict's)</li>
+<li>Reagent for colour development if needed (e.g. Benedict's reagent for reducing sugars, biuret reagent for protein)</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
-<li>Prepare a serial dilution: transfer a fixed volume of stock to the first tube, add equal volume of distilled water, mix, transfer to next tube, and repeat (e.g. five 1-in-2 dilutions).</li>
-<li>Add appropriate reagent if needed (e.g. Benedict&#8217;s or biuret) and develop colour.</li>
-<li>Zero the colorimeter using a blank (distilled water + reagent).</li>
-<li>Measure the absorbance of each known concentration.</li>
-<li>Plot absorbance (y-axis) against concentration (x-axis) to produce a calibration curve.</li>
-<li>Measure the absorbance of the unknown solution and read off its concentration from the curve.</li>
+<li><strong>Prepare a serial dilution:</strong> Transfer a fixed volume (e.g. 5 cm<sup>3</sup>) of stock solution to the first tube. Add an equal volume (5 cm<sup>3</sup>) of distilled water and mix thoroughly. Transfer 5 cm<sup>3</sup> from this to the next tube. Add 5 cm<sup>3</sup> distilled water. Repeat for 5-6 tubes total. This gives a doubling dilution series (100%, 50%, 25%, 12.5%, 6.25%, 3.125%).</li>
+<li>If a colour-development reagent is needed, add the same volume to each tube (including a blank of distilled water + reagent). Allow colour to develop fully (e.g. heat Benedict's in a water bath at 80&#176;C for 5 minutes).</li>
+<li><strong>Zero/calibrate the colorimeter</strong> using the blank (distilled water + reagent, no analyte).</li>
+<li>Measure the <strong>absorbance</strong> (or % transmission) of each known concentration solution in the colorimeter. Use clean, fingerprint-free cuvettes oriented consistently.</li>
+<li>Plot <strong>absorbance (y-axis) against concentration (x-axis)</strong> to produce a <strong>calibration curve</strong>.</li>
+<li>Measure the absorbance of the <strong>unknown solution</strong> (treated identically) and read off its concentration from the calibration curve.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-<li>Benedict&#8217;s reagent contains copper sulfate &#8212; irritant. Wear eye protection.</li>
-<li>Biuret reagent contains NaOH &#8212; corrosive. Handle with care.</li>
+<li>Benedict's reagent contains copper sulfate — irritant. Wear eye protection.</li>
+<li>Biuret reagent contains NaOH — corrosive. Handle with care, wear gloves.</li>
+<li>Hot water baths — use tongs; do not overfill tubes.</li>
 </ul>
 
 <h3>Analysis</h3>
 <ul>
-<li>Draw a line of best fit through the calibration points.</li>
-<li>Read unknown concentration by drawing a horizontal line from its absorbance to the curve, then vertically down to the x-axis.</li>
-<li>The calibration curve should be linear at low concentrations.</li>
+<li>Draw a <strong>line of best fit</strong> through the calibration points (should be approximately linear at lower concentrations — Beer-Lambert law region).</li>
+<li>Read the unknown concentration: draw a <strong>horizontal line from its absorbance value to the calibration curve</strong>, then a <strong>vertical line down to the x-axis</strong>. Read the concentration.</li>
+<li>If the unknown's absorbance falls outside the calibration range, it must be diluted and re-measured (then multiply by the dilution factor).</li>
+<li>At high concentrations, the calibration curve may plateau (deviates from linearity) — only interpolate within the linear range.</li>
 </ul>
 
-<h3>Sources of Error</h3>
+<h3>Sources of Error and Improvements</h3>
 <table>
 <tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
-<tr><td>Air bubbles in cuvette</td><td>Incorrect absorbance reading</td><td>Tap cuvette gently; wipe with tissue</td></tr>
-<tr><td>Inaccurate pipetting</td><td>Dilution concentrations wrong</td><td>Use calibrated pipettes; practise technique</td></tr>
-<tr><td>Fingerprints on cuvette</td><td>Light absorbed/scattered by grease</td><td>Handle by top; wipe with lens tissue</td></tr>
-<tr><td>Wrong filter selected</td><td>Low sensitivity of readings</td><td>Use complementary colour filter</td></tr>
+<tr><td>Air bubbles in cuvette</td><td>Scatter light; give incorrectly high absorbance readings</td><td>Tap cuvette gently to dislodge bubbles; wipe with lens tissue</td></tr>
+<tr><td>Inaccurate pipetting during dilution</td><td>Dilution concentrations wrong; calibration curve unreliable</td><td>Use calibrated graduated pipettes; pipette at eye level; practise technique</td></tr>
+<tr><td>Fingerprints or scratches on cuvette</td><td>Light absorbed/scattered by contaminants</td><td>Handle cuvettes by the top edges only; wipe clear sides with lens tissue; always orient cuvette the same way</td></tr>
+<tr><td>Wrong colour filter selected</td><td>Low sensitivity — small differences between concentrations not detected</td><td>Use the <strong>complementary colour</strong> filter (the colour that the solution absorbs most — i.e. the opposite colour on the colour wheel)</td></tr>
+<tr><td>Not mixing dilutions thoroughly</td><td>Concentration gradient within tube; inaccurate readings</td><td>Invert tube 3-4 times or vortex after each dilution step</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> A serial dilution gives a wide range of concentrations in equal ratio steps. Each dilution halves the concentration (if 1 in 2). Always use the <em>same volume</em> transferred at each step.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> A serial dilution gives a wide range of concentrations in equal ratio steps. Each 1-in-2 dilution halves the concentration. Always use the <em>same volume</em> transferred at each step and the <em>same volume of diluent</em>. The colorimeter measures absorbance (how much light is absorbed by the solution) — higher concentration = darker colour = higher absorbance. Make sure you understand when to use absorbance vs % transmission (absorbance is proportional to concentration; % transmission is inversely related).</div>
 </div>
 
 <!-- RP4 -->
 <div class="practical-card" id="rp4">
-<h2>&#9879;&#65039; RP4: Effect of a Variable on Membrane Permeability</h2>
+<h2>RP4: Effect of a Variable on Membrane Permeability (Beetroot)</h2>
 
-<div class="svg-container">
-<svg viewBox="0 0 500 280" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px">
-  <!-- Beetroot discs -->
-  <circle cx="60" cy="60" r="20" fill="#DC2626" opacity="0.8" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="60" y="64" text-anchor="middle" fill="white" font-size="9">Beetroot</text>
-  <text x="60" y="100" text-anchor="middle" fill="#1a1a2e" font-size="10">Cut discs</text>
-  <!-- Water baths at different temps -->
-  <rect x="120" y="120" width="70" height="70" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="155" y="210" text-anchor="middle" fill="#1a73e8" font-size="10">20&#176;C</text>
-  <rect x="120" y="140" width="20" height="40" rx="3" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1"/>
+<p><strong>Aim:</strong> Investigate the effect of temperature (or alcohol concentration, or pH) on cell membrane permeability, using beetroot as a model system.</p>
 
-  <rect x="210" y="120" width="70" height="70" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="245" y="210" text-anchor="middle" fill="#1a73e8" font-size="10">40&#176;C</text>
-  <rect x="210" y="140" width="20" height="40" rx="3" fill="#DC2626" opacity="0.5" stroke="#DC2626" stroke-width="1"/>
-
-  <rect x="300" y="120" width="70" height="70" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="335" y="210" text-anchor="middle" fill="#1a73e8" font-size="10">60&#176;C</text>
-  <rect x="300" y="140" width="20" height="40" rx="3" fill="#DC2626" opacity="0.85" stroke="#DC2626" stroke-width="1"/>
-
-  <!-- Arrow to colorimeter -->
-  <line x1="370" y1="155" x2="400" y2="155" stroke="#D97706" stroke-width="2" marker-end="url(#arr2)"/>
-
-  <!-- Colorimeter -->
-  <rect x="400" y="120" width="80" height="70" rx="6" fill="#f1f5f9" stroke="#1a73e8" stroke-width="2"/>
-  <text x="440" y="160" text-anchor="middle" fill="#1a73e8" font-size="11">Colorimeter</text>
-
-  <text x="250" y="250" text-anchor="middle" fill="#1a1a2e" font-size="11">Increasing temperature &#8594; more anthocyanin leakage</text>
-</svg>
-</div>
+<p><strong>Biology link:</strong> Cell membrane structure (Topic 2). Beetroot cells contain the red-purple pigment <strong>anthocyanin</strong> in their vacuoles. The tonoplast (vacuolar membrane) and cell surface membrane normally retain this pigment inside the cell. When membranes are disrupted, anthocyanin leaks out into the surrounding solution. The amount of leakage (measured by colorimetry) indicates the degree of membrane damage.</p>
 
 <h3>Apparatus</h3>
 <ul>
-<li>Fresh beetroot, cork borer, white tile, scalpel</li>
-<li>Test tubes and rack, distilled water</li>
-<li>Water baths at range of temperatures (e.g. 20, 30, 40, 50, 60, 70 &#176;C)</li>
-<li>Colorimeter and cuvettes, thermometer</li>
+<li>Fresh beetroot, cork borer (standardised size), white tile, sharp knife/scalpel</li>
+<li>Test tubes and rack, distilled water (measured volumes, e.g. 5 cm<sup>3</sup>)</li>
+<li>Water baths at range of temperatures (e.g. 20, 30, 40, 50, 60, 70&#176;C)</li>
+<li>Colorimeter and cuvettes (using green or blue filter — complementary to red pigment)</li>
+<li>Thermometer, stopwatch, paper towels</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
-<li>Use cork borer to cut equal-sized beetroot discs. Rinse thoroughly in cold distilled water to remove surface pigment.</li>
-<li>Place one disc in each test tube with 5 cm&#179; distilled water.</li>
-<li>Place tubes in water baths at each temperature for 20 minutes.</li>
-<li>Remove beetroot discs. Agitate solution gently.</li>
-<li>Measure absorbance of each solution using a colorimeter (green/blue filter).</li>
-<li>Repeat 3 times at each temperature and calculate mean absorbance.</li>
+<li>Use a cork borer to cut equal-sized beetroot cylinders (or use a ruler and knife to cut uniform discs of equal diameter and thickness). This standardises the <strong>surface area</strong> exposed.</li>
+<li><strong>Rinse thoroughly</strong> in cold distilled water until the water runs clear. This removes any anthocyanin released during cutting from damaged surface cells. This is critical — without adequate rinsing, all samples will appear to have high leakage.</li>
+<li>Place one disc in each labelled test tube containing <strong>5 cm<sup>3</sup> distilled water</strong> (measured precisely).</li>
+<li>Place each tube in the appropriate water bath for a <strong>standardised time</strong> (e.g. exactly 20 minutes).</li>
+<li>After exactly 20 minutes, remove the beetroot discs. Gently agitate each solution to distribute the pigment evenly.</li>
+<li>Measure the <strong>absorbance</strong> of each solution using the colorimeter with a green/blue filter (zeroed with distilled water blank).</li>
+<li>Repeat <strong>3 times at each temperature</strong> and calculate the mean absorbance.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-<li>Sharp instruments (scalpel, cork borer) &#8212; cut away from body on white tile.</li>
-<li>Hot water baths &#8212; handle with care; use tongs for tubes.</li>
-<li>Beetroot stains clothing &#8212; wear lab coat.</li>
+<li>Sharp instruments (scalpel, cork borer) — cut on a white tile, away from the body.</li>
+<li>Hot water baths — handle tubes with tongs; take care with boiling water.</li>
+<li>Beetroot stains clothing and skin — wear lab coat and gloves if concerned.</li>
 </ul>
 
-<h3>Analysis</h3>
+<h3>Expected Results and Explanation</h3>
 <ul>
-<li>Plot mean absorbance (y-axis) against temperature (x-axis).</li>
-<li>Higher absorbance = more anthocyanin leakage = greater membrane disruption.</li>
-<li>Above ~40 &#176;C, proteins denature and phospholipids become more fluid, increasing permeability sharply.</li>
+<li>At <strong>low temperatures (20-30&#176;C)</strong>: low absorbance — membranes are intact, little pigment leaks out.</li>
+<li>At <strong>moderate temperatures (30-40&#176;C)</strong>: slight increase — phospholipid bilayer becomes slightly more fluid, minor increase in permeability.</li>
+<li>At <strong>high temperatures (above ~40&#176;C)</strong>: sharp increase in absorbance — membrane proteins <strong>denature</strong> (tertiary structure disrupted, proteins unfold and leave gaps in the membrane) AND phospholipids become much more fluid, increasing membrane permeability dramatically. Anthocyanin leaks freely.</li>
+<li>At very high temperatures (60-70&#176;C): maximum leakage — membranes essentially destroyed.</li>
 </ul>
 
-<h3>Sources of Error</h3>
+<h3>Sources of Error and Improvements</h3>
 <table>
 <tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
-<tr><td>Unequal disc sizes</td><td>Variable surface area affects leakage</td><td>Use same cork borer; cut to uniform thickness</td></tr>
-<tr><td>Insufficient rinsing</td><td>Surface pigment inflates readings</td><td>Rinse until water runs clear</td></tr>
-<tr><td>Different time in water bath</td><td>Inconsistent results</td><td>Use a stopwatch; start at timed intervals</td></tr>
-<tr><td>Damaged cells from cutting</td><td>Extra pigment released</td><td>Discard end pieces; use middle sections</td></tr>
+<tr><td>Unequal disc sizes</td><td>Variable surface area affects amount of pigment released</td><td>Use same cork borer; cut all discs to uniform thickness with a ruler</td></tr>
+<tr><td>Insufficient rinsing of cut surfaces</td><td>Surface pigment from damaged cells inflates all readings</td><td>Rinse until water runs completely clear before starting</td></tr>
+<tr><td>Different time in water bath</td><td>Longer exposure = more leakage regardless of temperature</td><td>Use a stopwatch; stagger start times at 1-minute intervals; time precisely to 20 minutes each</td></tr>
+<tr><td>Cells damaged during cutting</td><td>Extra pigment released from damaged cells (not due to temperature)</td><td>Discard end pieces; use only middle sections; handle gently; use a sharp borer</td></tr>
+<tr><td>Pigment settling in tube</td><td>Uneven colour distribution; inconsistent readings</td><td>Agitate solution gently before transferring to cuvette</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> Link to membrane structure: at high temperatures, phospholipids become more fluid and membrane proteins denature, creating gaps in the membrane through which anthocyanin leaks.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> Link results directly to membrane structure. At high temperatures: (1) <strong>phospholipids gain kinetic energy</strong> and move more, increasing membrane fluidity and creating gaps; (2) <strong>membrane proteins denature</strong> — hydrogen bonds and ionic bonds within the protein's tertiary structure are broken, the protein unfolds and can no longer maintain the membrane's barrier function. Mention both protein denaturation AND phospholipid fluidity for full marks. If asked about alcohol: ethanol dissolves phospholipids (it is a solvent for lipids), disrupting the bilayer structure and increasing permeability.</div>
 </div>
 
 <!-- RP5 -->
 <div class="practical-card" id="rp5">
-<h2>&#9879;&#65039; RP5: Dissection of Gas Exchange / Mass Transport System</h2>
+<h2>RP5: Dissection of Gas Exchange / Mass Transport System</h2>
 
-<div class="svg-container">
-<svg viewBox="0 0 500 300" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px">
-  <!-- Fish head / gill arch -->
-  <ellipse cx="150" cy="140" rx="80" ry="60" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="150" y="115" text-anchor="middle" fill="#1a73e8" font-size="12">Fish head</text>
-  <!-- Gill arches -->
-  <path d="M180,120 Q210,140 180,160" fill="none" stroke="#DC2626" stroke-width="2"/>
-  <path d="M195,115 Q225,140 195,165" fill="none" stroke="#DC2626" stroke-width="2"/>
-  <path d="M210,112 Q240,140 210,168" fill="none" stroke="#DC2626" stroke-width="2"/>
-  <text x="230" y="180" fill="#DC2626" font-size="10">Gill arches</text>
-  <!-- Zoomed gill filament -->
-  <rect x="300" y="60" width="170" height="130" rx="6" fill="#f1f5f9" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="385" y="80" text-anchor="middle" fill="#1a73e8" font-size="11">Gill filaments (zoomed)</text>
-  <!-- Lamellae -->
-  <line x1="340" y1="100" x2="340" y2="170" stroke="#DC2626" stroke-width="2"/>
-  <line x1="330" y1="110" x2="350" y2="110" stroke="#DC2626" stroke-width="1.5"/>
-  <line x1="328" y1="125" x2="352" y2="125" stroke="#DC2626" stroke-width="1.5"/>
-  <line x1="326" y1="140" x2="354" y2="140" stroke="#DC2626" stroke-width="1.5"/>
-  <line x1="328" y1="155" x2="352" y2="155" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="380" y="145" fill="#1a1a2e" font-size="10">Lamellae</text>
-  <!-- Arrows showing water flow -->
-  <path d="M400,100 L430,100 L430,170 L400,170" fill="none" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arr3)"/>
-  <text x="445" y="140" fill="#1a73e8" font-size="9">Water flow</text>
-  <!-- Dissection tools -->
-  <text x="150" y="240" text-anchor="middle" fill="#1a1a2e" font-size="11">Tools: scissors, forceps, pins, board</text>
-  <line x1="80" y1="260" x2="120" y2="260" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="118" y1="255" x2="125" y2="260" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="118" y1="265" x2="125" y2="260" stroke="#1a1a2e" stroke-width="2"/>
-</svg>
-</div>
+<p><strong>Aim:</strong> Dissect an organism or organ to examine adaptations for gas exchange or mass transport (e.g. fish head/gills, heart, lungs, leaf).</p>
+
+<p><strong>Biology link:</strong> Gas exchange surfaces (Topic 3). Organisms have evolved specialised surfaces with features that maximise the rate of diffusion: large surface area, thin barrier (short diffusion distance), maintained concentration gradient (ventilation, blood supply).</p>
 
 <h3>Apparatus</h3>
 <ul>
-<li>Fresh fish head (from fishmonger) or preserved specimen</li>
-<li>Dissecting board, pins, scissors, forceps, scalpel</li>
+<li>Fresh fish head (from fishmonger — not preserved), OR heart (lamb/pig), OR lungs</li>
+<li>Dissecting board, pins, scissors, forceps, scalpel, mounted needle</li>
 <li>Magnifying glass or dissecting microscope</li>
-<li>Paper towels, gloves, eye protection</li>
+<li>Paper towels, gloves, eye protection, lab coat</li>
 </ul>
 
-<h3>Method</h3>
+<h3>Method (Fish Gills)</h3>
 <ol>
-<li>Place fish head on dissecting board. Lift the operculum (gill cover) to expose the gills.</li>
-<li>Use scissors to carefully cut away the operculum.</li>
-<li>Identify the gill arches (4 on each side), gill filaments, and gill rakers.</li>
-<li>Remove one gill arch and place in water on a white tile. Use a magnifying glass to observe the lamellae (secondary filaments).</li>
-<li>Draw and label the structures observed. Note adaptations for gas exchange.</li>
+<li>Place the fish head on the dissecting board. Lift the <strong>operculum</strong> (gill cover) to expose the gills beneath.</li>
+<li>Use scissors to carefully cut away the operculum, exposing the gill arches.</li>
+<li>Identify the <strong>4 gill arches</strong> on each side, the <strong>gill filaments</strong> (primary lamellae — feathery pink structures), and the <strong>gill rakers</strong> (bony projections that filter food particles from water).</li>
+<li>Remove one gill arch and place it in a dish of water on a white tile. Use a magnifying glass or dissecting microscope to observe the <strong>secondary lamellae</strong> (thin plate-like projections from each filament — the actual gas exchange surfaces).</li>
+<li>Produce a <strong>labelled biological drawing</strong>: use clear, continuous lines; no shading; labels with ruled lines; include a title, magnification, and scale.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-<li>Wear gloves when handling biological specimens.</li>
-<li>Sharp instruments &#8212; cut away from body, use a dissecting board.</li>
-<li>Wash hands thoroughly after handling.</li>
-<li>Dispose of biological material in designated bins.</li>
+<li>Wear gloves when handling biological specimens (bacterial contamination risk).</li>
+<li>Sharp instruments — always cut away from the body on a dissecting board.</li>
+<li>Wash hands thoroughly with antibacterial soap after the practical.</li>
+<li>Dispose of biological material in designated biological waste bins (not regular bins).</li>
 </ul>
 
-<h3>Analysis</h3>
-<ul>
-<li>Identify adaptations: large surface area (many lamellae), thin walls (short diffusion distance), rich blood supply (counter-current system).</li>
-<li>Produce a labelled biological drawing with clear lines, no shading.</li>
-<li>Relate structure to function for gas exchange efficiency.</li>
-</ul>
-
-<h3>Sources of Error</h3>
+<h3>Analysis — Structure-Function Relationships</h3>
 <table>
-<tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
-<tr><td>Damaged structures during cutting</td><td>Difficult to identify features</td><td>Use fine scissors and forceps; cut carefully</td></tr>
-<tr><td>Dried-out tissue</td><td>Structures shrink and distort</td><td>Keep specimen moist with water</td></tr>
-<tr><td>Difficulty identifying lamellae</td><td>Incomplete observations</td><td>Use dissecting microscope; place in water</td></tr>
+<tr><th>Adaptation</th><th>How It Maximises Gas Exchange</th></tr>
+<tr><td>Many gill filaments and lamellae</td><td>Provides a very <strong>large surface area</strong> for diffusion of O<sub>2</sub> and CO<sub>2</sub></td></tr>
+<tr><td>Lamellae are very thin (one cell thick epithelium)</td><td><strong>Short diffusion distance</strong> — gases cross quickly by diffusion</td></tr>
+<tr><td>Dense network of capillaries in each lamella</td><td>Rich blood supply maintains a steep <strong>concentration gradient</strong>; carries O<sub>2</sub> away and brings CO<sub>2</sub></td></tr>
+<tr><td>Countercurrent flow (water and blood flow in opposite directions)</td><td>Maintains a concentration gradient along the <strong>entire length</strong> of the lamella — achieving ~80% O<sub>2</sub> extraction (much more efficient than parallel flow)</td></tr>
+<tr><td>Ventilation mechanism (buccal pumping)</td><td>Continuous flow of fresh water over gills maintains the concentration gradient</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> In dissection questions, always link structure to function. For gills: many lamellae = large surface area; thin epithelium = short diffusion distance; counter-current flow = maintains concentration gradient.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> In dissection questions, always link <strong>structure to function</strong>. For any gas exchange surface, mention: (1) large surface area, (2) thin barrier/short diffusion distance, (3) mechanism to maintain concentration gradient (ventilation + blood supply). For fish specifically, explain <strong>countercurrent flow</strong>: because blood flows in the opposite direction to water, there is always a diffusion gradient at every point along the lamella — this is far more efficient than if they flowed in the same direction (parallel flow), where equilibrium would be reached partway along.</div>
 </div>
 
 <!-- RP6 -->
 <div class="practical-card" id="rp6">
-<h2>&#9879;&#65039; RP6: Aseptic Technique &amp; Antimicrobial Substances</h2>
+<h2>RP6: Aseptic Technique &amp; Antimicrobial Substances</h2>
 
-<div class="svg-container">
-<svg viewBox="0 0 500 300" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px">
-  <!-- Agar plate -->
-  <ellipse cx="250" cy="160" rx="100" ry="80" fill="#fef3c7" stroke="#D97706" stroke-width="2"/>
-  <text x="250" y="260" text-anchor="middle" fill="#D97706" font-size="11">Agar plate with bacteria</text>
-  <!-- Antibiotic discs -->
-  <circle cx="210" cy="130" r="12" fill="white" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="210" y="134" text-anchor="middle" fill="#1a73e8" font-size="8">A</text>
-  <circle cx="280" cy="130" r="12" fill="white" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="280" y="134" text-anchor="middle" fill="#DC2626" font-size="8">B</text>
-  <circle cx="250" cy="180" r="12" fill="white" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="250" y="184" text-anchor="middle" fill="#16A34A" font-size="8">C</text>
-  <!-- Zones of inhibition -->
-  <circle cx="210" cy="130" r="28" fill="none" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
-  <circle cx="280" cy="130" r="18" fill="none" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
-  <circle cx="250" cy="180" r="35" fill="none" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- Labels -->
-  <text x="140" y="105" fill="#1a73e8" font-size="10">Zone of</text>
-  <text x="140" y="117" fill="#1a73e8" font-size="10">inhibition</text>
-  <!-- Bunsen burner -->
-  <rect x="30" y="180" width="20" height="60" rx="2" fill="#cbd5e1" stroke="#1a1a2e" stroke-width="1"/>
-  <path d="M25,180 Q40,155 55,180" fill="#D97706" opacity="0.6"/>
-  <text x="40" y="260" text-anchor="middle" fill="#1a1a2e" font-size="10">Bunsen</text>
-  <!-- Tape -->
-  <line x1="170" y1="85" x2="330" y2="230" stroke="#16A34A" stroke-width="2" opacity="0.5"/>
-  <line x1="330" y1="85" x2="170" y2="230" stroke="#16A34A" stroke-width="2" opacity="0.5"/>
-  <text x="410" y="140" fill="#16A34A" font-size="10">Tape (not</text>
-  <text x="410" y="153" fill="#16A34A" font-size="10">sealed fully)</text>
-</svg>
-</div>
+<p><strong>Aim:</strong> Use aseptic technique to investigate the effect of antimicrobial substances (antibiotics or plant extracts) on bacterial growth.</p>
+
+<p><strong>Biology link:</strong> Infectious disease and antibiotics (Topic 3/6). Antibiotic resistance is a major global health concern. This practical demonstrates how antibiotics inhibit bacterial growth and how their effectiveness can be compared quantitatively.</p>
 
 <h3>Apparatus</h3>
 <ul>
-<li>Nutrient agar plates (pre-poured and sterilised)</li>
-<li>Broth culture of bacteria (e.g. <em>E. coli</em>, non-pathogenic strain)</li>
-<li>Antibiotic discs / plant extracts (e.g. garlic, mint)</li>
-<li>Sterile spreader or inoculating loop, Bunsen burner</li>
-<li>Forceps (flamed), marker pen, adhesive tape, ruler</li>
+<li>Nutrient agar plates (pre-poured and sterilised by autoclaving)</li>
+<li>Broth culture of bacteria (e.g. non-pathogenic <em>Escherichia coli</em> or <em>Micrococcus luteus</em>)</li>
+<li>Antibiotic discs (multidiscs or individual, e.g. penicillin, streptomycin, tetracycline) and/or plant extract soaked filter paper discs (e.g. garlic, mint, tea tree oil)</li>
+<li>Sterile inoculating loop or sterile spreader, Bunsen burner</li>
+<li>Forceps (to be flamed), marker pen (for labelling base of plate), adhesive tape, ruler, calculator</li>
+</ul>
+
+<h3>Aseptic Technique — Key Steps</h3>
+<ul>
+<li>Work near a <strong>lit Bunsen burner</strong> — the updraft creates a convection current that carries airborne microorganisms upward, away from the work area (creating an <strong>aseptic zone</strong>).</li>
+<li><strong>Flame the inoculating loop</strong> until red hot before and after use — this sterilises it by killing all microorganisms.</li>
+<li><strong>Flame the neck of culture bottles</strong> briefly after opening and before closing — kills microorganisms at the rim.</li>
+<li><strong>Do not breathe on</strong> or cough over open plates or cultures.</li>
+<li>Keep lids on plates as much as possible; only open when necessary.</li>
+<li>Wipe down the bench with disinfectant before and after the practical.</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
-<li>Work near a lit Bunsen burner to create an updraft (aseptic zone).</li>
-<li>Flame the inoculating loop, dip into bacterial broth, and spread evenly across the agar plate using a zigzag pattern (or use a sterile spreader).</li>
-<li>Using flamed forceps, place antibiotic discs at equal distances on the agar surface.</li>
-<li>Seal the plate with two strips of tape (do not seal completely &#8212; anaerobic pathogens risk). Label the base.</li>
-<li>Incubate upside down at a maximum of 25 &#176;C for 24&#8211;48 hours.</li>
-<li>Measure the diameter of each zone of inhibition with a ruler.</li>
+<li>Flame the inoculating loop, allow to cool briefly, dip into bacterial broth culture, and <strong>spread evenly</strong> across the agar plate surface using a zigzag pattern (streak plate method) or use a sterile glass spreader.</li>
+<li>Using <strong>flamed forceps</strong>, place antibiotic discs (or plant extract discs) at equal distances on the agar surface. Press gently to ensure contact with the agar.</li>
+<li><strong>Seal the plate</strong> with two strips of adhesive tape in a cross pattern (do NOT seal completely around the edge — this could create <strong>anaerobic conditions</strong> inside the plate, promoting the growth of dangerous anaerobic pathogens).</li>
+<li>Label the <strong>base</strong> of the plate (not the lid — lids can be accidentally swapped) with name, date, and disc identities.</li>
+<li>Incubate the plate <strong>upside down</strong> (prevents condensation dripping onto colonies, which could spread bacteria and blur zones) at a <strong>maximum of 25&#176;C</strong> for 24-48 hours.</li>
+<li>After incubation, measure the <strong>diameter of each clear zone of inhibition</strong> (the area around each disc where bacteria have not grown) using a ruler. Do <strong>NOT open the plate</strong>.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-<li>Incubate at &#8804;25 &#176;C in schools (to reduce growth of human pathogens).</li>
-<li>Do not open plates after incubation.</li>
-<li>Autoclave all plates before disposal.</li>
-<li>Aseptic technique throughout to prevent contamination.</li>
+<li>Incubate at <strong>&le;25&#176;C in school laboratories</strong> (not at 37&#176;C — human body temperature would encourage growth of human pathogens that may have contaminated the plate).</li>
+<li><strong>Do not open plates after incubation</strong> — unknown organisms may have grown.</li>
+<li><strong>Autoclave all plates</strong> (121&#176;C, 15 min) before disposal to kill all microorganisms.</li>
+<li>Maintain strict aseptic technique throughout to prevent contamination of the plate AND to prevent release of microorganisms into the laboratory.</li>
+<li>Wash hands with antibacterial soap before and after the practical.</li>
 </ul>
 
 <h3>Analysis</h3>
 <ul>
-<li>Measure diameter of each zone and calculate the area: A = &#960;r&#178;.</li>
-<li>Larger zone = more effective antimicrobial substance.</li>
-<li>Compare areas (not diameters) for a valid comparison of effectiveness.</li>
+<li>Measure the <strong>diameter</strong> of each zone of inhibition (in mm). Take two measurements at right angles and average.</li>
+<li>Calculate the <strong>area</strong> of each zone: A = &pi;r<sup>2</sup> (where r = diameter / 2). <strong>Always use area, not diameter, for comparison</strong> — area is proportional to the amount of antibiotic that has diffused, while diameter is not (area increases with the square of the radius).</li>
+<li>Larger zone of inhibition = more effective antimicrobial substance (inhibits bacterial growth over a wider area).</li>
+<li>Subtract the area of the disc itself from the total zone area for a more accurate comparison.</li>
 </ul>
 
-<h3>Sources of Error</h3>
+<h3>Sources of Error and Improvements</h3>
 <table>
 <tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
-<tr><td>Contamination from air</td><td>Unwanted colonies grow</td><td>Work near Bunsen; flame equipment</td></tr>
-<tr><td>Uneven bacterial spread</td><td>Inconsistent zones</td><td>Use sterile spreader; rotate plate</td></tr>
-<tr><td>Discs placed too close together</td><td>Overlapping zones</td><td>Space discs evenly; use template</td></tr>
-<tr><td>Measuring diameter not area</td><td>Underestimates differences</td><td>Calculate &#960;r&#178; for each zone</td></tr>
+<tr><td>Contamination from air</td><td>Unwanted colonies of environmental microorganisms grow on the plate</td><td>Work near a Bunsen burner; flame all equipment; minimise time plate lid is off</td></tr>
+<tr><td>Uneven bacterial spread</td><td>Zones of inhibition are irregular or misleading</td><td>Use a sterile spreader with a turntable; rotate plate 90&#176; between streaks</td></tr>
+<tr><td>Discs placed too close together</td><td>Overlapping zones; cannot measure accurately</td><td>Space discs evenly (at least 2 cm apart); use a template or multipoint inoculator</td></tr>
+<tr><td>Comparing diameters instead of areas</td><td>Underestimates differences in effectiveness (area scales with r<sup>2</sup>)</td><td>Always calculate &pi;r<sup>2</sup> for valid quantitative comparison</td></tr>
+<tr><td>Inconsistent disc contact with agar</td><td>Poor diffusion; smaller zones than expected</td><td>Gently press each disc onto agar surface with sterile forceps to ensure good contact</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> Always calculate the <em>area</em> of the zone of inhibition (&#960;r&#178;) not just the diameter. This is because area is proportional to the amount of antibiotic that has diffused. State why plates are incubated at &#8804;25 &#176;C in school labs.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> Two key points examiners look for: (1) Always calculate the <strong>area</strong> of the zone of inhibition (&pi;r<sup>2</sup>), not just the diameter — marks are specifically allocated for this. (2) Know <strong>why</strong> plates are incubated at &le;25&#176;C in schools — to reduce the risk of growing human pathogens (which thrive at 37&#176;C). In industrial/hospital labs, plates ARE incubated at 37&#176;C because facilities are appropriate for handling pathogens safely.</div>
 </div>
 
 <!-- RP7 -->
 <div class="practical-card" id="rp7">
-<h2>&#9879;&#65039; RP7: Chromatography of Leaf Pigments</h2>
+<h2>RP7: Chromatography of Leaf Pigments</h2>
 
-<div class="svg-container">
-<svg viewBox="0 0 500 320" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px">
-  <!-- Chromatography jar -->
-  <rect x="150" y="40" width="200" height="230" rx="6" fill="none" stroke="#1a73e8" stroke-width="2"/>
-  <rect x="155" y="240" width="190" height="25" rx="2" fill="#dbeafe" opacity="0.5"/>
-  <text x="250" y="258" text-anchor="middle" fill="#1a73e8" font-size="10">Solvent (propanone)</text>
-  <!-- Chromatography paper -->
-  <rect x="210" y="55" width="80" height="210" rx="2" fill="#fffbeb" stroke="#D97706" stroke-width="1"/>
-  <!-- Origin line -->
-  <line x1="215" y1="235" x2="285" y2="235" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4,2"/>
-  <text x="300" y="238" fill="#1a1a2e" font-size="9">Origin line</text>
-  <!-- Pigment spots -->
-  <circle cx="250" cy="235" r="4" fill="#16A34A"/>
-  <!-- Separated pigments -->
-  <ellipse cx="250" cy="90" rx="15" ry="5" fill="#D97706" opacity="0.8"/>
-  <text x="310" y="94" fill="#D97706" font-size="9">Carotene (yellow)</text>
-  <ellipse cx="250" cy="120" rx="15" ry="5" fill="#fbbf24" opacity="0.8"/>
-  <text x="310" y="124" fill="#D97706" font-size="9">Xanthophyll</text>
-  <ellipse cx="250" cy="155" rx="15" ry="5" fill="#16A34A" opacity="0.9"/>
-  <text x="310" y="159" fill="#16A34A" font-size="9">Chlorophyll a</text>
-  <ellipse cx="250" cy="185" rx="15" ry="5" fill="#16A34A" opacity="0.5"/>
-  <text x="310" y="189" fill="#16A34A" font-size="9">Chlorophyll b</text>
-  <!-- Solvent front -->
-  <line x1="215" y1="65" x2="285" y2="65" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,2"/>
-  <text x="300" y="68" fill="#DC2626" font-size="9">Solvent front</text>
-  <!-- Rf formula -->
-  <text x="80" y="160" text-anchor="middle" fill="#1a1a2e" font-size="11">Rf = distance moved by pigment</text>
-  <line x1="20" y1="165" x2="140" y2="165" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="80" y="180" text-anchor="middle" fill="#1a1a2e" font-size="11">distance moved by solvent</text>
-</svg>
-</div>
+<p><strong>Aim:</strong> Separate and identify photosynthetic pigments from a leaf extract using thin-layer or paper chromatography.</p>
+
+<p><strong>Biology link:</strong> Photosynthesis (Topic 5). Chloroplasts contain multiple pigments that absorb different wavelengths of light — this broadens the range of light energy that can be captured. Separating them demonstrates that leaves contain a mixture of pigments, not just chlorophyll.</p>
 
 <h3>Apparatus</h3>
 <ul>
-<li>Fresh leaves (spinach or nettle), pestle and mortar, sand</li>
-<li>Propanone (acetone) or petroleum ether/acetone mix as solvent</li>
-<li>Chromatography paper or TLC plate, pencil, ruler</li>
-<li>Boiling tube or chromatography jar with lid, capillary tube</li>
+<li>Fresh green leaves (spinach, nettle, or grass), pestle and mortar, clean sand (abrasive), small volume of propanone (acetone)</li>
+<li>Chromatography paper (or TLC plate with silica gel), pencil (NOT pen), ruler</li>
+<li>Boiling tube or chromatography jar with tight-fitting lid, capillary tube or micropipette</li>
+<li>Running solvent: propanone (acetone) or petroleum ether : acetone (9:1) mix</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
-<li>Grind leaves with a small amount of sand and propanone in a mortar. Filter the extract.</li>
-<li>Draw a pencil line 2 cm from the bottom of the chromatography paper.</li>
-<li>Apply leaf extract using a capillary tube in small, repeated spots on the origin line. Allow to dry between applications.</li>
-<li>Place paper in the jar with solvent level below the origin line. Seal with a lid.</li>
-<li>Allow solvent to rise until it nears the top. Mark the solvent front immediately.</li>
-<li>Remove paper, dry it, and measure distances from origin to centre of each pigment spot.</li>
+<li>Grind leaves with a small amount of clean sand (to break open cells and chloroplasts) and a few cm<sup>3</sup> of propanone in a mortar. The sand acts as an abrasive. Filter the deep green extract through muslin or filter paper.</li>
+<li>Draw a <strong>pencil line</strong> (origin line) 2 cm from the bottom of the chromatography paper. Use pencil because ink would dissolve in the solvent and interfere with results.</li>
+<li>Apply leaf extract to the origin line using a capillary tube — build up a <strong>concentrated spot</strong> by applying small amounts repeatedly, allowing to dry between applications (5-10 applications).</li>
+<li>Place the paper in the jar with the solvent level <strong>below the origin line</strong> (so the spot is above the solvent — otherwise pigments would dissolve directly into the solvent pool rather than being carried up by capillary action). Seal the jar with a lid to prevent solvent evaporation.</li>
+<li>Allow the solvent to rise by capillary action until it is approximately 1-2 cm from the top. <strong>Mark the solvent front</strong> immediately with pencil before it evaporates.</li>
+<li>Remove the paper and allow it to dry. Measure the distance from the origin line to the centre of each pigment spot, and the distance from the origin to the solvent front.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-<li>Propanone is highly flammable and produces fumes &#8212; no flames; use in well-ventilated area or fume cupboard.</li>
-<li>Avoid skin contact with solvents &#8212; wear gloves.</li>
+<li>Propanone (acetone) is <strong>highly flammable</strong> and produces irritating fumes — NO naked flames near the experiment; work in a well-ventilated area or fume cupboard.</li>
+<li>Petroleum ether is extremely flammable — same precautions.</li>
+<li>Avoid prolonged skin contact with solvents — wear nitrile gloves.</li>
 </ul>
 
 <h3>Analysis</h3>
+<div class="equation">
+R<sub>f</sub> = distance moved by pigment from origin / distance moved by solvent front from origin
+</div>
 <ul>
-<li>Calculate Rf value for each pigment: Rf = distance moved by pigment / distance moved by solvent front.</li>
-<li>Compare Rf values to reference values to identify each pigment.</li>
-<li>Typical order (highest Rf first): carotene, xanthophyll, chlorophyll a, chlorophyll b.</li>
+<li>Calculate R<sub>f</sub> value for each separated pigment. Compare to reference/published R<sub>f</sub> values to <strong>identify each pigment</strong>.</li>
+<li>Typical order of separation (highest R<sub>f</sub> = most soluble in the non-polar solvent, travels furthest):</li>
 </ul>
-
-<h3>Sources of Error</h3>
 <table>
-<tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
-<tr><td>Origin line below solvent</td><td>Pigments dissolve into solvent</td><td>Ensure solvent level is below the origin</td></tr>
-<tr><td>Lid not sealed</td><td>Solvent evaporates, uneven front</td><td>Use well-sealed container</td></tr>
-<tr><td>Too much extract applied</td><td>Spots smear and overlap</td><td>Apply small amounts; dry between applications</td></tr>
-<tr><td>Using pen instead of pencil</td><td>Ink runs with solvent</td><td>Always use pencil for origin line</td></tr>
+<tr><th>Pigment</th><th>Colour</th><th>Approximate R<sub>f</sub></th><th>Solubility</th></tr>
+<tr><td>Carotene</td><td>Orange-yellow</td><td>~0.95</td><td>Most soluble (non-polar, dissolves readily in non-polar solvent)</td></tr>
+<tr><td>Xanthophyll</td><td>Yellow</td><td>~0.7</td><td>Moderately soluble</td></tr>
+<tr><td>Chlorophyll a</td><td>Blue-green</td><td>~0.5</td><td>Less soluble</td></tr>
+<tr><td>Chlorophyll b</td><td>Yellow-green</td><td>~0.4</td><td>Least soluble (more polar; held more strongly by the stationary phase)</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> Use a pencil (not pen) for the origin line because ink would dissolve in the solvent. Carotene has the highest Rf because it is the most soluble in the non-polar solvent (it is non-polar itself).</div>
+<h3>Sources of Error and Improvements</h3>
+<table>
+<tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
+<tr><td>Origin line below solvent level</td><td>Pigments dissolve directly into solvent and are washed away</td><td>Ensure the solvent level is 1 cm below the origin line</td></tr>
+<tr><td>Jar lid not sealed properly</td><td>Solvent evaporates; uneven solvent front; inconsistent R<sub>f</sub> values</td><td>Use a tight-fitting lid or cover with cling film; line jar with filter paper soaked in solvent to saturate the atmosphere</td></tr>
+<tr><td>Extract not concentrated enough</td><td>Spots too faint to see or measure</td><td>Apply many small applications, drying between each; use a concentrated extract</td></tr>
+<tr><td>Using pen instead of pencil for origin</td><td>Pen ink dissolves in solvent and runs up the paper, contaminating results</td><td>Always use a pencil line</td></tr>
+<tr><td>Not marking solvent front immediately</td><td>Solvent evaporates; R<sub>f</sub> values cannot be calculated accurately</td><td>Mark the solvent front with pencil the instant you remove the paper</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Carotene has the highest R<sub>f</sub> because it is the most non-polar pigment and therefore most soluble in the non-polar organic solvent. Chlorophyll b has the lowest R<sub>f</sub> because it is the most polar (it has more polar -CHO groups compared to chlorophyll a's -CH<sub>3</sub> group) and is more attracted to the polar stationary phase (paper/silica). R<sub>f</sub> values are specific to a given solvent system and temperature — always state the solvent used.</div>
 </div>
 
 <!-- RP8 -->
 <div class="practical-card" id="rp8">
-<h2>&#9879;&#65039; RP8: Effect of a Variable on Respiration Rate</h2>
+<h2>RP8: Effect of a Variable on Respiration Rate (Respirometer)</h2>
 
-<div class="svg-container">
-<svg viewBox="0 0 500 280" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px">
-  <!-- Respirometer tube -->
-  <rect x="60" y="80" width="60" height="100" rx="6" fill="#f1f5f9" stroke="#1a73e8" stroke-width="2"/>
-  <text x="90" y="140" text-anchor="middle" fill="#1a1a2e" font-size="9">Organisms</text>
-  <text x="90" y="155" text-anchor="middle" fill="#1a1a2e" font-size="9">(yeast/</text>
-  <text x="90" y="168" text-anchor="middle" fill="#1a1a2e" font-size="9">woodlice)</text>
-  <!-- Soda lime / KOH -->
-  <rect x="70" y="160" width="40" height="15" rx="2" fill="#16A34A" opacity="0.4" stroke="#16A34A" stroke-width="1"/>
-  <text x="90" y="198" text-anchor="middle" fill="#16A34A" font-size="9">Soda lime (absorbs CO&#8322;)</text>
-  <!-- Connecting tube -->
-  <line x1="120" y1="130" x2="230" y2="130" stroke="#1a1a2e" stroke-width="2"/>
-  <!-- Manometer / capillary tube -->
-  <rect x="230" y="120" width="200" height="20" rx="4" fill="#f1f5f9" stroke="#1a73e8" stroke-width="1.5"/>
-  <!-- Fluid drop -->
-  <circle cx="340" cy="130" r="6" fill="#1a73e8"/>
-  <text x="340" y="115" text-anchor="middle" fill="#1a73e8" font-size="10">Fluid drop</text>
-  <!-- Scale -->
-  <line x1="240" y1="150" x2="420" y2="150" stroke="#1a1a2e" stroke-width="1"/>
-  <line x1="260" y1="148" x2="260" y2="155" stroke="#1a1a2e" stroke-width="1"/>
-  <line x1="300" y1="148" x2="300" y2="155" stroke="#1a1a2e" stroke-width="1"/>
-  <line x1="340" y1="148" x2="340" y2="155" stroke="#1a1a2e" stroke-width="1"/>
-  <line x1="380" y1="148" x2="380" y2="155" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="330" y="168" text-anchor="middle" fill="#1a1a2e" font-size="10">Scale (mm)</text>
-  <!-- Arrow showing movement -->
-  <path d="M340,130 L290,130" fill="none" stroke="#DC2626" stroke-width="2" marker-end="url(#arr4)"/>
-  <text x="315" y="100" text-anchor="middle" fill="#DC2626" font-size="10">Drop moves as O&#8322; consumed</text>
-  <!-- Water bath -->
-  <rect x="40" y="210" width="180" height="40" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
-  <text x="130" y="235" text-anchor="middle" fill="#1a73e8" font-size="11">Water bath (temperature control)</text>
-</svg>
-</div>
+<p><strong>Aim:</strong> Investigate the effect of a variable (temperature, type of substrate, or organism) on the rate of aerobic respiration, using a respirometer to measure O<sub>2</sub> consumption.</p>
+
+<p><strong>Biology link:</strong> Respiration (Topic 5). All living organisms respire continuously. The rate of O<sub>2</sub> consumption is a direct measure of aerobic respiration rate. Temperature affects enzyme activity (respiratory enzymes in glycolysis, Krebs cycle, and ETC).</p>
 
 <h3>Apparatus</h3>
 <ul>
-<li>Respirometer (two-tube type) or simple manometer</li>
-<li>Organisms: germinating seeds, woodlice, or yeast suspension</li>
-<li>Soda lime or potassium hydroxide (to absorb CO&#8322;)</li>
-<li>Capillary tube with scale, coloured fluid drop</li>
-<li>Water bath, thermometer, stopwatch</li>
+<li>Simple respirometer (two tubes connected to a capillary tube/manometer with a scale)</li>
+<li>Organisms: germinating seeds (e.g. peas, mung beans), small invertebrates (e.g. woodlice, blowfly larvae), or yeast suspension</li>
+<li>Soda lime or potassium hydroxide pellets (to absorb CO<sub>2</sub> produced by respiration)</li>
+<li>Capillary tube with graduated scale, coloured oil or fluid drop (indicator of gas volume change)</li>
+<li>Water bath (for temperature control), thermometer, stopwatch</li>
+<li>Glass beads (for the control tube — same volume as organisms, non-living)</li>
 </ul>
+
+<h3>How the Respirometer Works</h3>
+<p>The key principle: soda lime (or KOH) <strong>absorbs all CO<sub>2</sub></strong> produced by the organisms. Therefore, the only gas change is the <strong>consumption of O<sub>2</sub></strong>. As O<sub>2</sub> is used up, the gas volume in the sealed tube decreases, and the <strong>coloured fluid drop moves towards the organisms</strong>. The distance moved per unit time = rate of O<sub>2</sub> uptake = rate of aerobic respiration.</p>
+
+<p>The <strong>control tube</strong> (containing glass beads + soda lime, but no living organisms) accounts for any changes in gas volume due to temperature or atmospheric pressure changes that are NOT due to respiration.</p>
 
 <h3>Method</h3>
 <ol>
-<li>Set up the respirometer: place organisms in one tube with soda lime at the base. Set up a control tube with glass beads (equal volume) and soda lime.</li>
-<li>Seal both tubes and connect to the manometer/capillary tube.</li>
-<li>Place in water bath at desired temperature. Allow to equilibrate for 5 minutes.</li>
-<li>Introduce a coloured fluid drop into the capillary tube.</li>
-<li>Record the distance the fluid drop moves towards the organisms every minute for 10 minutes.</li>
-<li>Repeat at different temperatures. Calculate rate of O&#8322; uptake per minute.</li>
+<li>Set up the respirometer: place organisms (e.g. germinating seeds) in one tube with a layer of soda lime at the base (separated from organisms by cotton wool to prevent direct contact). Set up a <strong>control tube</strong> with glass beads of equal volume and soda lime.</li>
+<li>Seal both tubes and connect them to the manometer/capillary tube via airtight connections (use Vaseline on joints to prevent leaks).</li>
+<li>Place in a water bath at the desired temperature. Allow <strong>5 minutes to equilibrate</strong> (temperature stabilisation and organisms to settle).</li>
+<li>Introduce a coloured fluid drop (or oil droplet) into the capillary tube using a syringe.</li>
+<li>Record the <strong>distance the fluid drop moves</strong> towards the organisms every minute for 10-15 minutes.</li>
+<li>Repeat at different temperatures (e.g. 15, 20, 25, 30, 35, 40&#176;C). Calculate rate of O<sub>2</sub> uptake (mm min<sup>-1</sup> or mm<sup>3</sup> min<sup>-1</sup> if capillary tube cross-section is known).</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-<li>Soda lime and KOH are corrosive &#8212; wear gloves and eye protection.</li>
-<li>Handle organisms ethically &#8212; return woodlice to habitat afterwards.</li>
-<li>Do not heat organisms directly.</li>
+<li>Soda lime and KOH are <strong>corrosive</strong> — wear gloves and eye protection. Avoid direct contact with organisms.</li>
+<li>Handle organisms <strong>ethically</strong> — return woodlice to their habitat after the experiment; do not expose to extreme temperatures.</li>
+<li>Do not heat organisms above 40&#176;C or below 5&#176;C.</li>
 </ul>
 
 <h3>Analysis</h3>
 <ul>
-<li>Rate of O&#8322; consumption = distance moved by fluid / time.</li>
-<li>Plot rate of O&#8322; uptake (y-axis) against temperature (x-axis).</li>
-<li>The control tube corrects for changes in atmospheric pressure and temperature.</li>
+<li><strong>Rate of O<sub>2</sub> consumption</strong> = distance moved by fluid drop / time (mm min<sup>-1</sup>).</li>
+<li>Plot rate of O<sub>2</sub> uptake (y-axis) against temperature (x-axis). Expect a general increase with temperature (Q<sub>10</sub> effect on enzyme activity) up to an optimum, then a decrease at high temperatures (enzyme denaturation).</li>
+<li>The <strong>control tube</strong> corrects for any volume changes due to atmospheric pressure and temperature fluctuations. If the control drop moves, subtract this from the experimental reading.</li>
 </ul>
 
-<h3>Sources of Error</h3>
+<h3>Sources of Error and Improvements</h3>
 <table>
 <tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
-<tr><td>Leaks in apparatus</td><td>Drop does not move correctly</td><td>Check all seals; use Vaseline on joints</td></tr>
-<tr><td>Soda lime exhausted</td><td>CO&#8322; not absorbed, drop doesn&#8217;t move</td><td>Use fresh soda lime for each experiment</td></tr>
-<tr><td>Temperature fluctuation</td><td>Affects gas volumes regardless of respiration</td><td>Use thermostatically controlled water bath</td></tr>
-<tr><td>Organisms stressed</td><td>Abnormal respiration rate</td><td>Allow equilibration period; handle gently</td></tr>
+<tr><td>Leaks in apparatus</td><td>Air enters; fluid drop does not move correctly (or moves the wrong way)</td><td>Check all connections; apply Vaseline to all joints; test for leaks before starting</td></tr>
+<tr><td>Soda lime exhausted or insufficient</td><td>CO<sub>2</sub> not fully absorbed; gas volume change is less than expected (CO<sub>2</sub> partially replaces O<sub>2</sub>)</td><td>Use fresh, excess soda lime for each experiment</td></tr>
+<tr><td>Temperature fluctuation in water bath</td><td>Affects gas expansion/contraction independently of respiration</td><td>Use a thermostatically controlled water bath; allow adequate equilibration time</td></tr>
+<tr><td>Organisms stressed by handling</td><td>Abnormally high or low respiration rate initially</td><td>Allow a 5-minute equilibration period after setup before starting measurements</td></tr>
+<tr><td>Dead organisms in sample</td><td>Lower apparent respiration rate</td><td>Use freshly germinated seeds or active organisms; check for viability</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> The soda lime absorbs CO&#8322;, so only O&#8322; consumption causes the volume change. The control tube accounts for any changes in pressure or temperature that are not due to respiration. Always include a control.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> The soda lime absorbs CO<sub>2</sub>, so <strong>only O<sub>2</sub> consumption</strong> causes the gas volume change. Without soda lime, the CO<sub>2</sub> produced would partially replace the O<sub>2</sub> consumed, and the volume change would be much smaller (depending on the RQ of the substrate). The control tube is essential — always explain its purpose: it accounts for any volume changes due to factors other than respiration (atmospheric pressure changes, temperature fluctuations). To measure anaerobic respiration, you would remove the soda lime and measure CO<sub>2</sub> production instead.</div>
 </div>
 
 <!-- RP9 -->
 <div class="practical-card" id="rp9">
-<h2>&#9879;&#65039; RP9: Choice Chamber (Animal Movement)</h2>
+<h2>RP9: Choice Chamber (Animal Responses to Stimuli)</h2>
 
-<div class="svg-container">
-<svg viewBox="0 0 500 280" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px">
-  <!-- Choice chamber -->
-  <rect x="100" y="60" width="300" height="150" rx="10" fill="#f1f5f9" stroke="#1a73e8" stroke-width="2"/>
-  <!-- Divider with holes -->
-  <line x1="250" y1="60" x2="250" y2="210" stroke="#1a73e8" stroke-width="2" stroke-dasharray="8,6"/>
-  <text x="250" y="50" text-anchor="middle" fill="#1a1a2e" font-size="11">Perforated divider</text>
-  <!-- Side A - dark/humid -->
-  <rect x="105" y="65" width="140" height="140" rx="6" fill="#1a1a2e" opacity="0.15"/>
-  <text x="175" y="105" text-anchor="middle" fill="#1a1a2e" font-size="12" font-weight="bold">DARK</text>
-  <text x="175" y="125" text-anchor="middle" fill="#1a1a2e" font-size="10">Damp cotton wool</text>
-  <!-- Side B - light/dry -->
-  <rect x="255" y="65" width="140" height="140" rx="6" fill="#fef3c7" opacity="0.5"/>
-  <text x="325" y="105" text-anchor="middle" fill="#D97706" font-size="12" font-weight="bold">LIGHT</text>
-  <text x="325" y="125" text-anchor="middle" fill="#D97706" font-size="10">Dry silica gel</text>
-  <!-- Woodlice -->
-  <ellipse cx="170" cy="160" rx="8" ry="5" fill="#1a1a2e"/>
-  <ellipse cx="150" cy="170" rx="8" ry="5" fill="#1a1a2e"/>
-  <ellipse cx="190" cy="175" rx="8" ry="5" fill="#1a1a2e"/>
-  <ellipse cx="160" cy="150" rx="8" ry="5" fill="#1a1a2e"/>
-  <ellipse cx="310" cy="165" rx="8" ry="5" fill="#1a1a2e"/>
-  <!-- Count labels -->
-  <text x="175" y="200" text-anchor="middle" fill="#16A34A" font-size="11">7 woodlice</text>
-  <text x="325" y="200" text-anchor="middle" fill="#DC2626" font-size="11">3 woodlice</text>
-  <!-- Timer -->
-  <text x="250" y="250" text-anchor="middle" fill="#1a1a2e" font-size="11">Count every 2 minutes for 20 min</text>
-</svg>
-</div>
+<p><strong>Aim:</strong> Investigate the effect of an environmental factor (light/dark, humidity) on the distribution and movement of small invertebrates (e.g. woodlice, maggots).</p>
+
+<p><strong>Biology link:</strong> Organisms respond to stimuli (Topic 6). Woodlice show <strong>kinesis</strong> (non-directional response — they change their speed or rate of turning in response to stimulus intensity) rather than taxis (directional movement towards or away from a stimulus). They tend to move slower and turn less in favourable conditions (dark, humid), accumulating there over time.</p>
 
 <h3>Apparatus</h3>
 <ul>
-<li>Choice chamber (two-sided with perforated divider and clear lid)</li>
-<li>10&#8211;20 woodlice (collected humanely)</li>
-<li>Damp cotton wool, dry silica gel (desiccant)</li>
-<li>Black card or aluminium foil (for dark conditions)</li>
-<li>Stopwatch, lamp</li>
+<li>Choice chamber (circular or rectangular, divided into 2-4 compartments with a perforated divider and clear lid)</li>
+<li>10-20 woodlice (collected humanely from under logs, stones, or leaf litter)</li>
+<li>Damp cotton wool (for humid conditions) and dry silica gel / anhydrous calcium chloride (desiccant, for dry conditions)</li>
+<li>Black card or aluminium foil (for dark conditions), lamp (for light conditions)</li>
+<li>Stopwatch, data recording sheet</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
-<li>Set up two contrasting environments in the choice chamber (e.g. one side dark and humid, the other light and dry).</li>
-<li>Place 10 woodlice in the centre of the chamber (on the divider).</li>
-<li>Replace the lid and start the timer.</li>
-<li>Count the number of woodlice on each side every 2 minutes for 20 minutes.</li>
-<li>Record results in a table. Repeat 3 times. Calculate means.</li>
-<li>Test only one variable at a time (e.g. humidity OR light, not both).</li>
+<li>Set up <strong>two contrasting environments</strong> in the choice chamber. Test <strong>only one variable at a time</strong>:
+  <ul>
+    <li>For humidity: one side has damp cotton wool (humid), the other has dry silica gel (dry) — both kept at the same light level</li>
+    <li>For light: one side is covered with black card (dark), the other is exposed to a lamp (light) — both kept at the same humidity</li>
+  </ul>
+</li>
+<li>Place 10 woodlice in the <strong>centre</strong> of the chamber (on the divider), ensuring they have equal access to both sides.</li>
+<li>Replace the lid and start the timer immediately.</li>
+<li>Count the number of woodlice on each side <strong>every 2 minutes for 20-30 minutes</strong>. Record in a table.</li>
+<li>Repeat the entire experiment <strong>at least 3 times</strong> with different woodlice. Calculate mean number on each side at each time interval.</li>
 </ol>
 
-<h3>Safety</h3>
+<h3>Safety and Ethics</h3>
 <ul>
-<li>Handle woodlice gently &#8212; ethical treatment of organisms.</li>
-<li>Return to habitat after the experiment.</li>
-<li>Wash hands after handling.</li>
+<li>Handle woodlice <strong>gently</strong> — they are living organisms deserving ethical treatment.</li>
+<li><strong>Return all woodlice</strong> to their original habitat after the experiment.</li>
+<li>Do not expose to extreme conditions (very hot, direct strong light) for extended periods.</li>
+<li>Wash hands after handling. Silica gel can be irritating — avoid direct skin contact.</li>
 </ul>
 
 <h3>Analysis</h3>
 <ul>
-<li>Calculate mean number on each side at each time interval.</li>
-<li>Woodlice show a kinesis (non-directional change in speed): they move more slowly in preferred conditions (dark, humid), so accumulate there.</li>
-<li>Use a chi-squared test to determine if the distribution is significantly different from chance.</li>
+<li>Calculate the <strong>mean number</strong> of woodlice on each side at each time interval across all repeats.</li>
+<li>Woodlice show <strong>kinesis</strong>: they move more slowly and turn less in preferred conditions (dark, humid), so they <strong>accumulate</strong> in the dark/humid side over time — not because they are attracted to it, but because they spend more time there once they arrive.</li>
+<li>Use a <strong>chi-squared test</strong> to determine if the final distribution is significantly different from the 50:50 distribution expected if woodlice showed no preference (null hypothesis: no significant difference from a 1:1 distribution).</li>
 </ul>
 
-<h3>Sources of Error</h3>
+<h3>Sources of Error and Improvements</h3>
 <table>
 <tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
-<tr><td>Woodlice on divider</td><td>Difficult to assign to a side</td><td>Decide rule beforehand (e.g. head position)</td></tr>
-<tr><td>Two variables changed at once</td><td>Cannot determine which causes preference</td><td>Only vary one factor per experiment</td></tr>
-<tr><td>Small sample size</td><td>Results not statistically valid</td><td>Use at least 10 woodlice; repeat 3 times</td></tr>
-<tr><td>Temperature differences between sides</td><td>Confounding variable</td><td>Keep both sides at same temperature</td></tr>
+<tr><td>Woodlice on the divider/boundary</td><td>Difficult to assign to one side</td><td>Decide a consistent rule beforehand (e.g. assign by head position); exclude borderline individuals from count</td></tr>
+<tr><td>Two variables changed at once (e.g. dark AND humid on same side)</td><td>Cannot determine which factor causes the preference</td><td>Only vary ONE factor per experiment; keep all other conditions identical</td></tr>
+<tr><td>Small sample size / few repeats</td><td>Results may not be statistically significant or representative</td><td>Use at least 10 woodlice per trial; repeat at least 3 times; pool data from class</td></tr>
+<tr><td>Temperature differences between sides</td><td>Confounding variable — woodlice may respond to temperature, not the intended variable</td><td>Ensure both sides are at the same temperature (no lamp heat on one side only — use a distant lamp or LED)</td></tr>
+<tr><td>Organisms stressed by handling</td><td>Erratic initial behaviour unrelated to the variable</td><td>Allow a 2-minute settling period before starting to count</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> Woodlice show <em>kinesis</em>, not taxis. Kinesis is a non-directional response where the organism changes its speed or rate of turning. They slow down in favourable conditions and speed up in unfavourable ones, leading to accumulation in the preferred area.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> Woodlice show <strong>kinesis, not taxis</strong>. Kinesis is a <strong>non-directional</strong> response where the organism changes its <strong>speed of movement</strong> or <strong>rate of turning</strong> depending on stimulus intensity. In unfavourable conditions (light, dry), they move faster and turn more frequently (increasing the chance of finding better conditions). In favourable conditions (dark, humid), they slow down and turn less — so they accumulate there. This is different from taxis, which is a directional movement towards or away from a stimulus (e.g. positive phototaxis in Euglena).</div>
 </div>
 
 <!-- RP10 -->
 <div class="practical-card" id="rp10">
-<h2>&#9879;&#65039; RP10: Distribution of Organisms (Quadrats &amp; Transects)</h2>
+<h2>RP10: Distribution of Organisms (Quadrats &amp; Transects)</h2>
 
-<div class="svg-container">
-<svg viewBox="0 0 500 300" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px">
-  <!-- Field area -->
-  <rect x="30" y="30" width="250" height="200" rx="4" fill="#dcfce7" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
-  <text x="155" y="25" text-anchor="middle" fill="#16A34A" font-size="11">Field / habitat</text>
-  <!-- Transect line -->
-  <line x1="40" y1="130" x2="270" y2="130" stroke="#DC2626" stroke-width="2"/>
-  <text x="155" y="122" text-anchor="middle" fill="#DC2626" font-size="10">Belt transect</text>
-  <!-- Quadrats along transect -->
-  <rect x="50" y="132" width="30" height="30" fill="none" stroke="#D97706" stroke-width="2"/>
-  <rect x="110" y="132" width="30" height="30" fill="none" stroke="#D97706" stroke-width="2"/>
-  <rect x="170" y="132" width="30" height="30" fill="none" stroke="#D97706" stroke-width="2"/>
-  <rect x="230" y="132" width="30" height="30" fill="none" stroke="#D97706" stroke-width="2"/>
-  <text x="155" y="180" text-anchor="middle" fill="#D97706" font-size="10">Quadrats (0.5m x 0.5m)</text>
-  <!-- Random quadrats -->
-  <rect x="60" y="50" width="30" height="30" fill="none" stroke="#1a73e8" stroke-width="2"/>
-  <rect x="180" y="70" width="30" height="30" fill="none" stroke="#1a73e8" stroke-width="2"/>
-  <rect x="120" y="190" width="30" height="30" fill="none" stroke="#1a73e8" stroke-width="2"/>
-  <text x="155" y="245" text-anchor="middle" fill="#1a73e8" font-size="10">Random quadrats (coordinates)</text>
-  <!-- Data recording -->
-  <rect x="310" y="30" width="170" height="200" rx="6" fill="#f1f5f9" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="395" y="55" text-anchor="middle" fill="#1a73e8" font-size="12" font-weight="bold">Data Recorded</text>
-  <text x="320" y="80" fill="#1a1a2e" font-size="10">&#8226; Species count</text>
-  <text x="320" y="100" fill="#1a1a2e" font-size="10">&#8226; % cover</text>
-  <text x="320" y="120" fill="#1a1a2e" font-size="10">&#8226; Abundance (ACFOR)</text>
-  <text x="320" y="140" fill="#1a1a2e" font-size="10">&#8226; Abiotic factors:</text>
-  <text x="330" y="158" fill="#1a1a2e" font-size="10">- Light intensity</text>
-  <text x="330" y="174" fill="#1a1a2e" font-size="10">- Soil pH</text>
-  <text x="330" y="190" fill="#1a1a2e" font-size="10">- Soil moisture</text>
-  <text x="330" y="206" fill="#1a1a2e" font-size="10">- Temperature</text>
-  <!-- Stats -->
-  <text x="250" y="280" text-anchor="middle" fill="#1a1a2e" font-size="11">Statistical tests: Spearman rank / chi-squared</text>
-</svg>
-</div>
+<p><strong>Aim:</strong> Investigate the distribution of organisms in a habitat and the effect of an abiotic factor on their distribution, using appropriate sampling techniques.</p>
+
+<p><strong>Biology link:</strong> Ecology and biodiversity (Topics 4 and 7). The distribution of organisms is influenced by both abiotic factors (light, temperature, soil pH, moisture, exposure) and biotic factors (competition, predation). Sampling must be done appropriately to give a representative picture of the community.</p>
 
 <h3>Apparatus</h3>
 <ul>
-<li>Quadrats (e.g. 0.5 m x 0.5 m frame)</li>
-<li>Tape measure (30 m) for transect line</li>
-<li>Random number generator or table</li>
-<li>Identification keys, recording sheets</li>
-<li>Abiotic measurement tools: light meter, soil pH probe, moisture meter, thermometer</li>
+<li>Quadrats (e.g. 0.5 m x 0.5 m frame, possibly subdivided into 25 smaller squares for % cover estimation)</li>
+<li>Tape measure (30 m or longer) for transect line</li>
+<li>Random number generator or random number table (for random quadrat placement)</li>
+<li>Species identification keys, recording sheets, pencil</li>
+<li>Abiotic measurement tools: light meter, soil pH probe/meter or BDH soil test kit, soil moisture meter, thermometer, anemometer (wind speed)</li>
 </ul>
 
-<h3>Method</h3>
+<h3>Two Sampling Approaches</h3>
+<table>
+<tr><th>Method</th><th>When to Use</th><th>How</th></tr>
+<tr><td><strong>Random quadrat sampling</strong></td><td>Estimating the abundance/density of species in a <strong>uniform habitat</strong> (e.g. a field)</td><td>Use random number pairs as x,y coordinates to position each quadrat. This avoids sampling bias. Count organisms or estimate % cover in each quadrat. Repeat many times (at least 10-20).</td></tr>
+<tr><td><strong>Systematic sampling along a transect</strong></td><td>Studying <strong>changes in species distribution along an environmental gradient</strong> (e.g. from seashore to cliff top, from woodland edge to interior, from path to field centre)</td><td>Lay a tape measure along the gradient. Place quadrats at regular intervals (e.g. every 2 metres). Record species and abundance + abiotic factors at each position.</td></tr>
+</table>
+
+<h3>Method (Belt Transect Example)</h3>
 <ol>
-<li><strong>Random sampling:</strong> Use random number pairs as coordinates to place quadrats. Count or estimate % cover of target species in each quadrat.</li>
-<li><strong>Systematic sampling (transect):</strong> Lay a tape measure across a habitat (e.g. from shore to inland). Place quadrats at regular intervals along the transect.</li>
-<li>At each quadrat, record species present and abundance. Measure abiotic factors at the same point.</li>
-<li>Repeat to ensure reliability. Calculate mean species density or % cover.</li>
+<li>Lay a tape measure in a straight line across the habitat, along the environmental gradient of interest (e.g. from the high water mark up a rocky shore).</li>
+<li>Place a quadrat at regular intervals along the transect (e.g. every 2 metres, or every 5 metres for longer transects).</li>
+<li>At each quadrat position:
+  <ul>
+    <li>Identify and record all species present (use identification keys)</li>
+    <li>Estimate % cover for each plant species (or count individuals for animals)</li>
+    <li>Measure relevant abiotic factors at the same point (light intensity, soil pH, soil moisture, temperature, wind speed)</li>
+  </ul>
+</li>
+<li>Record all data in a prepared table. Repeat the transect in parallel (if possible) for reliability.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-<li>Risk assessment for fieldwork (terrain, weather, lone working).</li>
-<li>Wash hands after handling soil.</li>
-<li>Be aware of hazardous plants (nettles, thorns) and animals.</li>
+<li>Conduct a <strong>risk assessment</strong> for fieldwork: assess terrain (uneven ground, cliffs, slippery rocks), weather conditions, tidal risks (on a seashore), and lone working policy.</li>
+<li>Work in pairs or groups. Carry a mobile phone. Inform someone of your location and expected return time.</li>
+<li>Wash hands after handling soil (may contain tetanus bacteria, Weil's disease from rat urine).</li>
+<li>Be aware of hazardous plants (stinging nettles, thorns, giant hogweed) and animals (ticks, adders).</li>
+<li>Wear appropriate clothing and footwear for the habitat.</li>
 </ul>
 
 <h3>Analysis</h3>
 <ul>
-<li>Calculate species density = mean count per quadrat / quadrat area.</li>
-<li>Use Spearman&#8217;s rank correlation to test for association between distribution and an abiotic factor.</li>
-<li>Use a kite diagram or bar chart to display distribution along a transect.</li>
-<li>Simpson&#8217;s Diversity Index: D = 1 &#8722; &#931;(n/N)&#178;</li>
+<li>Calculate <strong>species density</strong> = mean count per quadrat / quadrat area (number per m<sup>2</sup>).</li>
+<li>Calculate <strong>% frequency</strong> = (number of quadrats containing the species / total number of quadrats) x 100.</li>
+<li>Use a <strong>kite diagram</strong> or bar chart to display species distribution along a transect.</li>
+<li>Calculate <strong>Simpson's Diversity Index</strong>: D = 1 - &Sigma;(n/N)<sup>2</sup>.</li>
+<li>Use <strong>Spearman's rank correlation</strong> to test for a significant correlation between species abundance and an abiotic factor (e.g. "Is there a significant correlation between % cover of a plant species and light intensity?").</li>
+<li>Spearman's r<sub>s</sub> ranges from -1 (perfect negative correlation) through 0 (no correlation) to +1 (perfect positive correlation). Compare r<sub>s</sub> to the critical value for your sample size at p = 0.05.</li>
 </ul>
 
-<h3>Sources of Error</h3>
+<h3>Sources of Error and Improvements</h3>
 <table>
 <tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
-<tr><td>Non-random placement</td><td>Sampling bias</td><td>Use random number table for coordinates</td></tr>
-<tr><td>Too few quadrats</td><td>Unrepresentative data</td><td>Use at least 10 quadrats per area</td></tr>
-<tr><td>Misidentification of species</td><td>Inaccurate data</td><td>Use identification keys; take photos</td></tr>
-<tr><td>Seasonal variation</td><td>Results not comparable</td><td>Sample at the same time of year</td></tr>
+<tr><td>Non-random placement of quadrats (e.g. choosing "interesting" spots)</td><td>Sampling bias — results not representative of the whole habitat</td><td>Use a random number table/generator for coordinates; place quadrats without looking</td></tr>
+<tr><td>Too few quadrats</td><td>Unrepresentative data; poor statistical power</td><td>Use at least 10-20 quadrats per area; pool class data</td></tr>
+<tr><td>Misidentification of species</td><td>Inaccurate species count and diversity calculation</td><td>Use reliable identification keys; take photographs for verification; have an expert check</td></tr>
+<tr><td>Seasonal/time-of-day variation</td><td>Different results at different times</td><td>Sample at the same time of day and same season for valid comparisons</td></tr>
+<tr><td>Trampling or disturbing the habitat</td><td>Alters the community being studied</td><td>Approach carefully; use a random walk pattern; minimise time in each area</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> Random sampling avoids bias. Use coordinates from a random number table. For transects, explain why systematic sampling is appropriate (to study changes along an environmental gradient). Always state how you would measure one abiotic factor.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> <strong>Random sampling</strong> avoids bias — always explain how you would achieve randomness (random number coordinates from a baseline and side-line). For <strong>transects</strong>, explain why systematic sampling is appropriate: you want to detect changes in distribution along a gradient, which random sampling might miss. Know when to use each statistical test: <strong>chi-squared</strong> for comparing observed vs expected frequencies (categories); <strong>Spearman's rank correlation</strong> for testing the relationship between two continuous variables (e.g. species abundance vs distance along transect); <strong>Student's t-test</strong> for comparing means of two groups.</div>
 </div>
 
 <!-- RP11 -->
 <div class="practical-card" id="rp11">
-<h2>&#9879;&#65039; RP11: Effect of a Variable on Organism Development</h2>
+<h2>RP11: Effect of a Variable on Organism Development</h2>
 
-<div class="svg-container">
-<svg viewBox="0 0 500 260" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px">
-  <!-- Seed trays -->
-  <rect x="30" y="80" width="90" height="60" rx="4" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
-  <text x="75" y="160" text-anchor="middle" fill="#D97706" font-size="10">Dark</text>
-  <circle cx="50" cy="105" r="5" fill="#16A34A"/><circle cx="70" cy="100" r="5" fill="#16A34A"/><circle cx="90" cy="108" r="5" fill="#16A34A"/>
+<p><strong>Aim:</strong> Investigate the effect of an environmental variable (light intensity, temperature, water availability, mineral ions) on the growth and development of plants (seed germination and seedling growth).</p>
 
-  <rect x="145" y="80" width="90" height="60" rx="4" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
-  <text x="190" y="160" text-anchor="middle" fill="#D97706" font-size="10">Low light</text>
-  <line x1="165" y1="105" x2="165" y2="80" stroke="#16A34A" stroke-width="2"/>
-  <line x1="185" y1="100" x2="185" y2="75" stroke="#16A34A" stroke-width="2"/>
-  <line x1="205" y1="108" x2="205" y2="83" stroke="#16A34A" stroke-width="2"/>
-
-  <rect x="260" y="80" width="90" height="60" rx="4" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
-  <text x="305" y="160" text-anchor="middle" fill="#D97706" font-size="10">High light</text>
-  <line x1="280" y1="105" x2="280" y2="65" stroke="#16A34A" stroke-width="3"/>
-  <ellipse cx="280" cy="62" rx="6" ry="3" fill="#16A34A"/>
-  <line x1="305" y1="100" x2="305" y2="60" stroke="#16A34A" stroke-width="3"/>
-  <ellipse cx="305" cy="57" rx="6" ry="3" fill="#16A34A"/>
-  <line x1="325" y1="108" x2="325" y2="68" stroke="#16A34A" stroke-width="3"/>
-  <ellipse cx="325" cy="65" rx="6" ry="3" fill="#16A34A"/>
-
-  <!-- Control label -->
-  <rect x="375" y="80" width="100" height="60" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="425" y="115" text-anchor="middle" fill="#1a73e8" font-size="10">Control</text>
-  <text x="425" y="160" text-anchor="middle" fill="#1a73e8" font-size="10">Standard light</text>
-
-  <!-- Measurements -->
-  <text x="250" y="200" text-anchor="middle" fill="#1a1a2e" font-size="11">Measure: germination %, shoot height, number of leaves</text>
-  <text x="250" y="220" text-anchor="middle" fill="#1a1a2e" font-size="11">Record over 10&#8211;14 days</text>
-</svg>
-</div>
+<p><strong>Biology link:</strong> Plant responses and growth (Topics 5/6). Light, temperature, water, and mineral ions all affect plant growth. This practical also tests understanding of experimental design, control of variables, and statistical analysis.</p>
 
 <h3>Apparatus</h3>
 <ul>
-<li>Seeds (e.g. cress, mustard, or bean seeds), Petri dishes or seed trays</li>
-<li>Cotton wool or vermiculite, distilled water</li>
-<li>Light source or dark cupboard</li>
-<li>Ruler, thermometer, labels</li>
+<li>Seeds (e.g. cress, mustard, or mung bean — fast-growing species are best)</li>
+<li>Petri dishes or seed trays, cotton wool or vermiculite, distilled water</li>
+<li>Light source (lamp at different distances or different wattages), or dark cupboard, or coloured filters</li>
+<li>Ruler (mm), labels, marker pen, thermometer</li>
+<li>Incubator or windowsill locations at different temperatures (if investigating temperature)</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
-<li>Place equal numbers of seeds (e.g. 10) on damp cotton wool in labelled Petri dishes.</li>
-<li>Set up different conditions: vary one factor (e.g. light intensity, temperature, or water availability).</li>
-<li>Keep all other variables constant (same number of seeds, same volume of water, same temperature where possible).</li>
-<li>Record germination percentage and seedling growth (shoot height) daily for 10&#8211;14 days.</li>
-<li>Repeat each condition at least 3 times. Calculate means.</li>
+<li>Place equal numbers of seeds (e.g. 10-20) on damp cotton wool in each labelled Petri dish.</li>
+<li>Set up different conditions for the independent variable being tested (e.g. different light intensities by varying distance from lamp, or different temperatures, or different concentrations of mineral solution).</li>
+<li>Keep <strong>all other variables constant</strong>: same number of seeds per dish, same volume of water added, same temperature (if not the variable), same seed batch, same type of cotton wool.</li>
+<li>Record observations daily for 10-14 days:
+  <ul>
+    <li><strong>Germination percentage</strong> = (number germinated / total seeds) x 100</li>
+    <li><strong>Shoot height</strong> (mm) — measure from base to tip of tallest shoot</li>
+    <li>Number of leaves, root length, fresh/dry mass (if appropriate)</li>
+  </ul>
+</li>
+<li>Set up <strong>at least 3 replicates</strong> for each condition and calculate mean values.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-<li>Seeds may be treated with fungicide &#8212; wash hands after handling.</li>
-<li>Some seeds are toxic &#8212; do not consume. Avoid inhalation of vermiculite dust.</li>
+<li>Some seeds may be treated with fungicide — wash hands after handling.</li>
+<li>Some seeds are toxic if ingested — do not eat any experimental material.</li>
+<li>Avoid inhalation of vermiculite dust if used as a growing medium.</li>
+<li>Mould may grow on damp cotton wool — dispose of mouldy dishes appropriately.</li>
 </ul>
 
 <h3>Analysis</h3>
 <ul>
-<li>Calculate germination percentage at each time point.</li>
-<li>Plot mean shoot height (y-axis) against time (x-axis) for each condition.</li>
-<li>Use statistical tests (t-test or Mann-Whitney U) to compare conditions.</li>
+<li>Calculate <strong>germination percentage</strong> at each time point for each condition.</li>
+<li>Plot <strong>mean shoot height</strong> (y-axis) against <strong>time</strong> (x-axis) for each condition on the same axes for comparison.</li>
+<li>Calculate <strong>mean and standard deviation</strong> for each condition — standard deviation indicates the spread/variability of the data. Plot error bars on graphs.</li>
+<li>Use a <strong>Student's t-test</strong> (for two conditions) or <strong>one-way ANOVA</strong> (for multiple conditions) to determine if differences in mean shoot height between conditions are statistically significant.</li>
+<li>Alternatively, use the <strong>Mann-Whitney U test</strong> if data are not normally distributed.</li>
 </ul>
 
-<h3>Sources of Error</h3>
+<h3>Sources of Error and Improvements</h3>
 <table>
 <tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
-<tr><td>Variable seed viability</td><td>Some seeds may not germinate regardless</td><td>Use seeds from same batch; test viability first</td></tr>
-<tr><td>Unequal watering</td><td>Confounding variable</td><td>Measure exact volume of water added</td></tr>
-<tr><td>Temperature differences</td><td>Affects growth rate independently</td><td>Keep all dishes at same temperature</td></tr>
-<tr><td>Fungal contamination</td><td>Seeds/seedlings may die</td><td>Use sterile cotton wool; handle aseptically</td></tr>
+<tr><td>Variable seed viability</td><td>Some seeds may not germinate regardless of conditions</td><td>Use seeds from the same packet/batch; pre-test a sample for viability</td></tr>
+<tr><td>Unequal watering</td><td>Confounding variable — water availability affects growth independently</td><td>Measure exact volume of water added to each dish using a graduated syringe</td></tr>
+<tr><td>Temperature differences between locations</td><td>Confounding variable if temperature is not the independent variable</td><td>Keep all dishes at the same temperature (e.g. same incubator or room); monitor with thermometer</td></tr>
+<tr><td>Fungal contamination</td><td>Seeds or seedlings may die; reduces sample size</td><td>Use clean equipment; sterilise cotton wool if possible; replace contaminated dishes</td></tr>
+<tr><td>Uneven light exposure within a dish</td><td>Seedlings on the edge may receive different light from those in the centre</td><td>Rotate dishes daily; use diffused light source</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> Always identify the independent variable, dependent variable, and control variables. A large sample size (many seeds per dish) improves reliability. State a statistical test you could use to analyse the results.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> Always clearly identify the <strong>independent variable</strong> (what you are changing), <strong>dependent variable</strong> (what you are measuring), and <strong>control variables</strong> (what you keep constant). Use a large sample size (many seeds per dish, many replicates) to improve reliability. State a specific <strong>statistical test</strong> you could use to analyse the results and explain what it tests (e.g. "I would use a Student's t-test to determine if there is a significant difference in mean shoot height between the two light conditions").</div>
 </div>
 
 <!-- RP12 -->
 <div class="practical-card" id="rp12">
-<h2>&#9879;&#65039; RP12: Immobilised Enzyme Investigation</h2>
+<h2>RP12: Immobilised Enzyme Investigation</h2>
 
-<div class="svg-container">
-<svg viewBox="0 0 500 300" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-family:system-ui,sans-serif;font-size:12px">
-  <!-- Making beads -->
-  <rect x="20" y="30" width="130" height="120" rx="6" fill="#f1f5f9" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="85" y="50" text-anchor="middle" fill="#1a73e8" font-size="11" font-weight="bold">1. Make beads</text>
-  <!-- Syringe dropping into CaCl2 -->
-  <rect x="45" y="60" width="15" height="50" rx="2" fill="#cbd5e1" stroke="#1a1a2e" stroke-width="1"/>
-  <circle cx="52" cy="118" r="4" fill="#D97706"/>
-  <circle cx="60" cy="125" r="4" fill="#D97706"/>
-  <circle cx="48" cy="130" r="4" fill="#D97706"/>
-  <rect x="35" y="115" width="50" height="30" rx="3" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
-  <text x="85" y="85" fill="#1a1a2e" font-size="9">Syringe with</text>
-  <text x="85" y="96" fill="#1a1a2e" font-size="9">alginate +</text>
-  <text x="85" y="107" fill="#1a1a2e" font-size="9">enzyme mix</text>
-  <text x="60" y="160" text-anchor="middle" fill="#1a73e8" font-size="9">CaCl&#8322; solution</text>
+<p><strong>Aim:</strong> Investigate the use of immobilised enzymes (e.g. lactase immobilised in alginate beads) and compare their effectiveness to free enzymes.</p>
 
-  <!-- Column setup -->
-  <rect x="190" y="30" width="130" height="170" rx="6" fill="#f1f5f9" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="255" y="50" text-anchor="middle" fill="#1a73e8" font-size="11" font-weight="bold">2. Column</text>
-  <!-- Syringe barrel column -->
-  <rect x="230" y="60" width="30" height="110" rx="2" fill="#fffbeb" stroke="#D97706" stroke-width="1.5"/>
-  <!-- Beads in column -->
-  <circle cx="240" cy="130" r="5" fill="#D97706" opacity="0.7"/>
-  <circle cx="250" cy="120" r="5" fill="#D97706" opacity="0.7"/>
-  <circle cx="245" cy="140" r="5" fill="#D97706" opacity="0.7"/>
-  <circle cx="238" cy="110" r="5" fill="#D97706" opacity="0.7"/>
-  <circle cx="252" cy="105" r="5" fill="#D97706" opacity="0.7"/>
-  <!-- Substrate in -->
-  <text x="255" y="75" text-anchor="middle" fill="#16A34A" font-size="9">Substrate in</text>
-  <path d="M245,60 L245,50" stroke="#16A34A" stroke-width="1.5" marker-start="url(#arr5)"/>
-  <!-- Product out -->
-  <text x="255" y="190" text-anchor="middle" fill="#DC2626" font-size="9">Product out</text>
-  <line x1="245" y1="170" x2="245" y2="185" stroke="#DC2626" stroke-width="1.5"/>
-
-  <!-- Comparison -->
-  <rect x="350" y="30" width="130" height="170" rx="6" fill="#f1f5f9" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="415" y="50" text-anchor="middle" fill="#1a73e8" font-size="11" font-weight="bold">3. Compare</text>
-  <text x="415" y="80" text-anchor="middle" fill="#16A34A" font-size="10">Free enzyme</text>
-  <text x="415" y="95" text-anchor="middle" fill="#1a1a2e" font-size="9">vs</text>
-  <text x="415" y="110" text-anchor="middle" fill="#D97706" font-size="10">Immobilised</text>
-  <text x="415" y="140" text-anchor="middle" fill="#1a1a2e" font-size="9">Test product</text>
-  <text x="415" y="155" text-anchor="middle" fill="#1a1a2e" font-size="9">with glucose</text>
-  <text x="415" y="170" text-anchor="middle" fill="#1a1a2e" font-size="9">test strips</text>
-
-  <!-- Bottom note -->
-  <text x="250" y="240" text-anchor="middle" fill="#1a1a2e" font-size="11">Lactase in alginate beads: milk &#8594; glucose + galactose</text>
-  <text x="250" y="260" text-anchor="middle" fill="#1a1a2e" font-size="10">Advantage: enzyme can be reused; product is enzyme-free</text>
-</svg>
-</div>
+<p><strong>Biology link:</strong> Enzyme technology and biotechnology (Topic 8). Immobilised enzymes are widely used in industry because they can be reused, are more stable, and do not contaminate the product. This practical demonstrates enzyme immobilisation by entrapment in alginate beads and its application in producing lactose-free milk.</p>
 
 <h3>Apparatus</h3>
 <ul>
-<li>Sodium alginate solution, calcium chloride solution (1&#8211;2%)</li>
-<li>Enzyme (e.g. lactase), syringe (without needle), beaker</li>
-<li>Syringe barrel or small column, glass wool plug</li>
-<li>Substrate solution (e.g. milk for lactase)</li>
-<li>Glucose test strips or Benedict&#8217;s reagent for testing product</li>
+<li>Sodium alginate solution (2-3%), calcium chloride solution (1-2%)</li>
+<li>Enzyme: lactase solution (or other enzyme e.g. catalase, amylase)</li>
+<li>Syringe (10 cm<sup>3</sup>, without needle) or pipette for forming beads</li>
+<li>Beakers, sieve or tea strainer, glass wool</li>
+<li>Syringe barrel (10-20 cm<sup>3</sup>) as a column, clamp stand</li>
+<li>Substrate: full-fat or semi-skimmed milk (contains lactose)</li>
+<li>Glucose test strips (clinistix) or glucose oxidase strips for quantitative measurement; or Benedict's reagent + colorimeter</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
-<li>Mix enzyme solution with sodium alginate solution.</li>
-<li>Using a syringe, drip the mixture into calcium chloride solution to form beads. Leave for a few minutes to harden.</li>
-<li>Rinse beads with distilled water. Pack into a syringe barrel (column) with glass wool at the bottom.</li>
-<li>Pour substrate (milk) through the column and collect the product.</li>
-<li>Test the product for glucose using test strips or Benedict&#8217;s reagent.</li>
-<li>Compare the rate and efficiency of immobilised enzyme vs free enzyme at different temperatures.</li>
+<li><strong>Making the beads:</strong> Mix equal volumes of enzyme solution and sodium alginate solution thoroughly (the enzyme is trapped within the alginate matrix).</li>
+<li>Draw the mixture into a syringe. Slowly drip the mixture from the syringe into a beaker of <strong>calcium chloride solution</strong>. The alginate reacts with Ca<sup>2+</sup> ions to form insoluble calcium alginate — creating firm, spherical beads with enzyme trapped inside.</li>
+<li>Leave the beads in CaCl<sub>2</sub> for <strong>5-10 minutes to harden</strong> fully. Rinse with distilled water.</li>
+<li><strong>Setting up the column:</strong> Place a small piece of glass wool at the bottom of a syringe barrel (to retain the beads). Pack the beads into the column. Clamp the column vertically.</li>
+<li><strong>Running the experiment:</strong> Pour milk (substrate) slowly through the column. Collect the liquid emerging from the bottom (the product).</li>
+<li>Test the collected product for <strong>glucose</strong> using glucose test strips or quantitative Benedict's test (glucose is a product of lactose hydrolysis: lactose &rarr; glucose + galactose).</li>
+<li><strong>Compare</strong> the product from immobilised enzyme with a control using free (dissolved) lactase mixed directly with milk for the same duration.</li>
+<li>Investigate <strong>reusability</strong>: pass fresh milk through the column multiple times and test the product each time. Compare glucose concentration across successive runs.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-<li>Calcium chloride is an irritant &#8212; wear eye protection.</li>
+<li>Calcium chloride is an irritant — wear eye protection and avoid skin contact.</li>
 <li>Wash hands after handling enzymes and chemicals.</li>
-<li>Do not consume any products.</li>
+<li>Do not consume any products — they are not food-safe laboratory preparations.</li>
 </ul>
 
 <h3>Analysis</h3>
 <ul>
-<li>Compare glucose concentration in product from immobilised vs free enzyme.</li>
-<li>Test reusability: pass substrate through the column multiple times and compare product each time.</li>
-<li>Immobilised enzymes can be reused, tolerate higher temperatures, and do not contaminate the product.</li>
+<li>Compare <strong>glucose concentration</strong> in the product from immobilised vs free enzyme — both should convert lactose to glucose, but the immobilised enzyme may give a lower initial conversion rate (substrate must diffuse through the alginate to reach the enzyme).</li>
+<li>Test <strong>reusability</strong>: pass substrate through the column 5+ times. The immobilised enzyme should still be active after multiple uses, while a new batch of free enzyme would be needed each time.</li>
+<li>Investigate the effect of <strong>temperature</strong> on immobilised vs free enzyme: immobilised enzymes are often more thermally stable because the alginate matrix restricts molecular movement, reducing the chance of denaturation.</li>
 </ul>
 
-<h3>Sources of Error</h3>
+<h3>Advantages of Immobilised Enzymes (Key Exam Content)</h3>
 <table>
-<tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
-<tr><td>Beads of uneven size</td><td>Variable surface area and reaction rate</td><td>Keep syringe height constant; practise technique</td></tr>
-<tr><td>Substrate flows too fast</td><td>Insufficient contact time with enzyme</td><td>Reduce flow rate; use smaller column</td></tr>
-<tr><td>Air gaps in column</td><td>Substrate bypasses beads</td><td>Pack column carefully; tap to remove air</td></tr>
-<tr><td>Enzyme leaching from beads</td><td>Rate decreases over reuse</td><td>Ensure beads are well-hardened in CaCl&#8322;</td></tr>
+<tr><th>Advantage</th><th>Explanation</th></tr>
+<tr><td><strong>Reusable</strong></td><td>Enzyme stays in the column and can process many batches of substrate — dramatically reduces cost in industrial processes</td></tr>
+<tr><td><strong>Product not contaminated</strong></td><td>Enzyme stays in the beads/column; product collected separately — no need for costly enzyme removal/purification steps</td></tr>
+<tr><td><strong>Greater stability</strong></td><td>Alginate matrix may protect enzyme from temperature and pH changes; enzyme is more resistant to denaturation</td></tr>
+<tr><td><strong>Continuous processing</strong></td><td>Substrate can be passed continuously through a column — ideal for industrial-scale production (no need for batch processing)</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> State the advantages of immobilised enzymes: they can be <em>reused</em>, the product is not contaminated with enzyme, they are more tolerant of temperature and pH changes. These advantages reduce costs in industrial processes.</div>
+<h3>Sources of Error and Improvements</h3>
+<table>
+<tr><th>Error</th><th>Effect</th><th>Improvement</th></tr>
+<tr><td>Beads of uneven size</td><td>Variable surface area; inconsistent substrate contact; uneven reaction rates</td><td>Keep syringe at a constant height above the CaCl<sub>2</sub>; drip at a steady rate; practise technique</td></tr>
+<tr><td>Substrate flows through column too quickly</td><td>Insufficient contact time between substrate and enzyme; low product yield</td><td>Reduce flow rate (partially clamp outlet tubing); use a longer column with more beads</td></tr>
+<tr><td>Air gaps in column between beads</td><td>Substrate bypasses beads through air channels</td><td>Pack column carefully; tap gently to settle beads; add beads under water to avoid trapping air</td></tr>
+<tr><td>Enzyme leaching out of beads over time</td><td>Decreasing activity with each successive run</td><td>Ensure beads are well-hardened (leave in CaCl<sub>2</sub> long enough); increase alginate concentration for firmer beads</td></tr>
+<tr><td>Comparing free and immobilised enzyme without standardising enzyme concentration</td><td>Unfair comparison</td><td>Use the same total amount of enzyme in both; same substrate volume and concentration</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Be able to state the advantages of immobilised enzymes over free enzymes: (1) they can be <strong>reused</strong>, reducing costs; (2) the product is <strong>not contaminated</strong> with enzyme; (3) they are often <strong>more thermally stable</strong>; (4) they allow <strong>continuous-flow processing</strong>. The most common industrial example is <strong>immobilised lactase</strong> used to produce lactose-free dairy products for people with lactose intolerance. Other examples: immobilised glucose isomerase (converts glucose to fructose for "high-fructose corn syrup"), immobilised penicillin acylase (modifies penicillin to produce semi-synthetic antibiotics).</div>
+
+<div class="real-world"><strong>Real-World Link:</strong> Lactose intolerance affects approximately 65-70% of the global population (particularly common in East Asian, African, and Middle Eastern populations). These individuals lack sufficient lactase enzyme in their small intestine to digest lactose (the sugar in milk). Consuming dairy products causes symptoms including bloating, cramps, and diarrhoea. Immobilised lactase technology allows dairy manufacturers to produce lactose-free milk and other products — the milk is simply passed through a column of immobilised lactase beads before packaging, breaking down lactose into glucose and galactose (which taste slightly sweeter). This is a multi-billion dollar industry.</div>
 </div>
 
 </div></body></html>

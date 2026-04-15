@@ -11,6 +11,7 @@
   h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
   h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
   h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  h4 { font-size: 1.05rem; color: #1e3a5f; margin: 15px 0 8px 0; }
   p { margin-bottom: 12px; }
   ul, ol { margin: 10px 0 15px 25px; }
   li { margin-bottom: 6px; }
@@ -22,8 +23,11 @@
   .definition strong { color: #1e3a5f; }
   .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
   .exam-tip strong { color: #b45309; }
+  .real-world { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #15803d; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  svg text { font-family: system-ui, sans-serif; }
 </style>
 </head>
 <body>
@@ -33,58 +37,84 @@
 
 <h2>1.1 Atomic Models and Fundamental Particles</h2>
 
-<p>The atom consists of a dense, positively charged nucleus containing protons and neutrons, surrounded by electrons in energy levels (shells and sub-shells). The development of atomic models progressed from Dalton's solid sphere, through Thomson's plum pudding model, to Rutherford's nuclear model, and finally Bohr's model with quantised energy levels.</p>
+<p>The atom consists of a dense, positively charged nucleus containing protons and neutrons, surrounded by electrons in quantised energy levels (shells and sub-shells). Understanding of atomic structure evolved through several models:</p>
+
+<ul>
+  <li><strong>Dalton (1803):</strong> Atoms are indivisible solid spheres. Different elements have different atoms.</li>
+  <li><strong>Thomson (1897):</strong> Discovered the electron. Proposed the "plum pudding" model &mdash; electrons embedded in a sphere of positive charge.</li>
+  <li><strong>Rutherford (1911):</strong> Alpha particle scattering experiment showed most of the atom is empty space, with a tiny dense positive nucleus. Most alpha particles passed straight through gold foil; a few were deflected at large angles; very few bounced back.</li>
+  <li><strong>Bohr (1913):</strong> Electrons orbit the nucleus in fixed energy levels (shells). Electrons can jump between levels by absorbing or emitting photons of specific energy. This explained atomic emission spectra.</li>
+  <li><strong>Modern quantum model:</strong> Electrons occupy orbitals (regions of space where there is a high probability of finding an electron), not fixed orbits. Orbitals have characteristic shapes and energies.</li>
+</ul>
 
 <div class="definition">
-  <strong>Mass number (A):</strong> The total number of protons and neutrons in the nucleus of an atom.<br>
-  <strong>Atomic number (Z):</strong> The number of protons in the nucleus, which defines the element.<br>
-  <strong>Isotopes:</strong> Atoms of the same element with the same number of protons but different numbers of neutrons.
+  <strong>Mass number (A):</strong> The total number of protons and neutrons in the nucleus.<br>
+  <strong>Atomic number (Z):</strong> The number of protons in the nucleus (defines the element).<br>
+  <strong>Isotopes:</strong> Atoms of the same element with the same number of protons but different numbers of neutrons. They have identical chemical properties (same electron configuration) but different physical properties (different mass).
 </div>
 
 <table>
   <tr><th>Particle</th><th>Relative Mass</th><th>Relative Charge</th><th>Location</th></tr>
   <tr><td>Proton</td><td>1</td><td>+1</td><td>Nucleus</td></tr>
   <tr><td>Neutron</td><td>1</td><td>0</td><td>Nucleus</td></tr>
-  <tr><td>Electron</td><td>1/1836</td><td>-1</td><td>Shells / orbitals</td></tr>
+  <tr><td>Electron</td><td>1/1836 (&asymp; 0.0005)</td><td>-1</td><td>Orbitals around the nucleus</td></tr>
 </table>
 
-<h3>Relative Atomic Mass and Isotopic Abundance</h3>
+<h3>Relative Atomic Mass and Mass Spectrometry</h3>
 
 <div class="definition">
-  <strong>Relative atomic mass (A<sub>r</sub>):</strong> The weighted mean mass of an atom of an element relative to 1/12th the mass of a carbon-12 atom.
+  <strong>Relative atomic mass (A<sub>r</sub>):</strong> The weighted mean mass of an atom of an element, relative to 1/12th the mass of a carbon-12 atom. It is dimensionless (no units).<br><br>
+  <strong>Relative isotopic mass:</strong> The mass of one atom of an isotope relative to 1/12th the mass of a carbon-12 atom.<br><br>
+  <strong>Relative molecular mass (M<sub>r</sub>):</strong> The sum of the relative atomic masses of all atoms in a molecular formula.
 </div>
 
 <div class="equation">
   A<sub>r</sub> = &Sigma;(isotopic mass &times; percentage abundance) / 100
 </div>
 
-<p>Mass spectrometry is used to determine isotopic masses and their relative abundances. A mass spectrum shows peaks corresponding to each isotope, with the height of each peak proportional to its abundance. From these data, you can calculate A<sub>r</sub>.</p>
+<p><strong>Mass spectrometry</strong> is used to determine isotopic masses and their relative abundances. The key stages of a time-of-flight (TOF) mass spectrometer are:</p>
+<ol>
+  <li><strong>Ionisation:</strong> The sample is vaporised and ionised by electron bombardment (electron impact) or by electrospray ionisation (ESI). Electron impact: M(g) &rarr; M<sup>+</sup>(g) + e<sup>-</sup>. Electrospray: the sample is dissolved in a volatile solvent and sprayed through a charged needle, gaining a proton: M + H<sup>+</sup> &rarr; MH<sup>+</sup>.</li>
+  <li><strong>Acceleration:</strong> Ions are accelerated by an electric field. All ions gain the same kinetic energy (KE = &frac12;mv<sup>2</sup>), so lighter ions travel faster.</li>
+  <li><strong>Drift (flight tube):</strong> Ions separate in a field-free region based on their mass-to-charge ratio (m/z). Lighter ions reach the detector first.</li>
+  <li><strong>Detection:</strong> Ions hit the detector, generating a current proportional to their abundance.</li>
+</ol>
+
+<p>The mass spectrum shows peaks at each m/z value, with peak height proportional to abundance. For elements, this allows calculation of A<sub>r</sub>. For molecules, the molecular ion peak (M<sup>+</sup>) gives the relative molecular mass.</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> When calculating A<sub>r</sub> from a mass spectrum, always check whether abundances are given as percentages or as raw peak heights. If raw heights, divide each by the total of all heights first.
+  <strong>Exam Tip:</strong> When calculating A<sub>r</sub> from a mass spectrum, check whether abundances are given as percentages or as raw peak heights. If raw heights, convert to percentages first by dividing each by the total sum. Example: Boron has two isotopes: <sup>10</sup>B (20%) and <sup>11</sup>B (80%). A<sub>r</sub> = (10 &times; 20 + 11 &times; 80) / 100 = 10.8. Always give your answer to 1 decimal place unless told otherwise.
+</div>
+
+<div class="real-world">
+  <strong>Real-World Application:</strong> Mass spectrometry is used in forensic science (drug detection, toxicology), space exploration (Mars rovers carry miniature mass spectrometers to analyse soil), clinical medicine (newborn screening for metabolic disorders), environmental monitoring (detecting trace pollutants in water), and archaeological dating (measuring isotope ratios of <sup>14</sup>C for radiocarbon dating).
 </div>
 
 <h2>1.2 Electron Configuration</h2>
 
-<p>Electrons occupy atomic orbitals, which are regions of space where there is a high probability of finding an electron. Each orbital can hold a maximum of two electrons with opposite spins (Pauli exclusion principle).</p>
+<p>Electrons occupy atomic orbitals &mdash; regions of space where there is a high probability of finding an electron. Each orbital can hold a maximum of two electrons with opposite spins (the <strong>Pauli exclusion principle</strong>).</p>
 
 <h3>Sub-shells and Orbitals</h3>
 
 <table>
-  <tr><th>Sub-shell</th><th>Number of Orbitals</th><th>Max Electrons</th><th>Shape</th></tr>
+  <tr><th>Sub-shell</th><th>Number of Orbitals</th><th>Maximum Electrons</th><th>Shape</th></tr>
   <tr><td>s</td><td>1</td><td>2</td><td>Spherical</td></tr>
-  <tr><td>p</td><td>3</td><td>6</td><td>Dumbbell</td></tr>
-  <tr><td>d</td><td>5</td><td>10</td><td>Cloverleaf (various)</td></tr>
-  <tr><td>f</td><td>7</td><td>14</td><td>Complex</td></tr>
+  <tr><td>p</td><td>3</td><td>6</td><td>Dumbbell (three orientations: p<sub>x</sub>, p<sub>y</sub>, p<sub>z</sub>)</td></tr>
+  <tr><td>d</td><td>5</td><td>10</td><td>Cloverleaf (various orientations)</td></tr>
+  <tr><td>f</td><td>7</td><td>14</td><td>Complex shapes</td></tr>
 </table>
 
-<p>The order of filling follows the Aufbau principle: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f, 5d, 6p... Electrons fill the lowest energy sub-shell first.</p>
+<p><strong>Three rules govern how electrons fill orbitals:</strong></p>
+<ol>
+  <li><strong>Aufbau principle:</strong> Electrons fill the lowest energy sub-shell available first. The filling order is: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f, 5d, 6p...</li>
+  <li><strong>Pauli exclusion principle:</strong> Each orbital holds a maximum of two electrons, which must have opposite spins (represented by &uarr;&darr;).</li>
+  <li><strong>Hund's rule:</strong> Electrons occupy orbitals of the same sub-shell singly (with parallel spins) before pairing up. This minimises electron-electron repulsion.</li>
+</ol>
 
-<!-- SVG: Electron Configuration / Orbital Energy Levels -->
+<!-- SVG: Orbital Energy Level Diagram -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 370" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="28" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Orbital Energy Level Diagram</text>
-  <!-- Energy axis -->
   <line x1="40" y1="50" x2="40" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
   <polygon points="40,48 36,58 44,58" fill="#1a1a2e"/>
   <text x="18" y="195" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" transform="rotate(-90,18,195)">Energy</text>
@@ -129,265 +159,263 @@
   <text x="435" y="329" font-family="system-ui" font-size="10" fill="#1a1a2e">p orbitals</text>
   <line x1="400" y1="340" x2="430" y2="340" stroke="#16A34A" stroke-width="2.5"/>
   <text x="435" y="344" font-family="system-ui" font-size="10" fill="#1a1a2e">d orbitals</text>
-  <!-- Filling order arrows -->
-  <text x="460" y="70" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">Filling order</text>
-  <path d="M460,78 L460,340" stroke="#D97706" stroke-width="1" stroke-dasharray="4,3"/>
-  <polygon points="460,340 456,330 464,330" fill="#D97706"/>
+  <text x="460" y="70" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">Note: 4s fills</text>
+  <text x="460" y="82" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">before 3d</text>
 </svg>
-</div>
-
-<p>Hund's rule states that electrons occupy orbitals of the same sub-shell singly before pairing. Each singly occupied orbital has electrons with parallel spin.</p>
-
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> Remember the exceptions for chromium (Cr: [Ar] 3d<sup>5</sup> 4s<sup>1</sup>) and copper (Cu: [Ar] 3d<sup>10</sup> 4s<sup>1</sup>). Half-filled and fully-filled d sub-shells provide extra stability.
 </div>
 
 <h3>Electron Configuration Notation</h3>
 
-<p>Full notation writes out every sub-shell, e.g. iron: 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>6</sup> 3d<sup>6</sup> 4s<sup>2</sup>. Shorthand uses the previous noble gas core, e.g. [Ar] 3d<sup>6</sup> 4s<sup>2</sup>.</p>
+<p><strong>Full notation</strong> writes out every sub-shell, e.g. iron (Z=26): 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>6</sup> 3d<sup>6</sup> 4s<sup>2</sup>.</p>
+<p><strong>Shorthand notation</strong> uses the previous noble gas core: [Ar] 3d<sup>6</sup> 4s<sup>2</sup>.</p>
 
-<p>When transition metals form ions, electrons are removed from the 4s sub-shell before the 3d. For example, Fe<sup>2+</sup> is [Ar] 3d<sup>6</sup>, not [Ar] 3d<sup>4</sup> 4s<sup>2</sup>.</p>
+<p><strong>Key anomalous configurations:</strong></p>
+<ul>
+  <li><strong>Chromium:</strong> [Ar] 3d<sup>5</sup> 4s<sup>1</sup> (NOT 3d<sup>4</sup> 4s<sup>2</sup>) &mdash; a half-filled 3d sub-shell provides extra stability due to exchange energy (electrons with parallel spins in different orbitals have lower repulsion).</li>
+  <li><strong>Copper:</strong> [Ar] 3d<sup>10</sup> 4s<sup>1</sup> (NOT 3d<sup>9</sup> 4s<sup>2</sup>) &mdash; a fully filled 3d sub-shell is more stable.</li>
+</ul>
+
+<p><strong>Ions of transition metals:</strong> When forming ions, electrons are removed from the 4s sub-shell first (not 3d), because in the presence of d electrons, 4s is actually at a higher energy than 3d. Examples:</p>
+<ul>
+  <li>Fe<sup>2+</sup>: [Ar] 3d<sup>6</sup> (both 4s electrons removed)</li>
+  <li>Fe<sup>3+</sup>: [Ar] 3d<sup>5</sup> (both 4s electrons and one 3d electron removed)</li>
+  <li>Cu<sup>2+</sup>: [Ar] 3d<sup>9</sup></li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The anomalous configurations of Cr and Cu are very commonly examined. Always remove 4s electrons first when writing ion configurations. A common mistake is writing Fe<sup>2+</sup> as [Ar] 3d<sup>4</sup> 4s<sup>2</sup> &mdash; this is wrong. The correct answer is [Ar] 3d<sup>6</sup>.
+</div>
 
 <h2>1.3 Ionisation Energies</h2>
 
 <div class="definition">
-  <strong>First ionisation energy:</strong> The energy required to remove one mole of electrons from one mole of gaseous atoms to form one mole of gaseous 1+ ions.<br>
-  <strong>M(g) &rarr; M<sup>+</sup>(g) + e<sup>&minus;</sup></strong>
+  <strong>First ionisation energy (IE<sub>1</sub>):</strong> The energy required to remove one mole of the most loosely held electrons from one mole of gaseous atoms to form one mole of gaseous 1+ ions.<br>
+  M(g) &rarr; M<sup>+</sup>(g) + e<sup>-</sup> &nbsp;&nbsp;&nbsp; [always endothermic]<br><br>
+  <strong>Second ionisation energy (IE<sub>2</sub>):</strong> The energy to remove a second electron from the gaseous 1+ ion:<br>
+  M<sup>+</sup>(g) &rarr; M<sup>2+</sup>(g) + e<sup>-</sup>
 </div>
 
 <h3>Factors Affecting Ionisation Energy</h3>
-
 <ul>
-  <li><strong>Nuclear charge:</strong> More protons = stronger attraction = higher IE</li>
-  <li><strong>Atomic radius:</strong> Greater distance from nucleus = weaker attraction = lower IE</li>
-  <li><strong>Shielding:</strong> More inner electron shells = greater shielding = lower IE</li>
-  <li><strong>Sub-shell structure:</strong> Paired electrons in the same orbital repel, making them easier to remove</li>
+  <li><strong>Nuclear charge (Z):</strong> More protons = stronger attraction on outer electrons = higher IE</li>
+  <li><strong>Atomic radius/distance:</strong> Greater distance from nucleus = weaker electrostatic attraction = lower IE</li>
+  <li><strong>Electron shielding:</strong> More complete inner shells between the nucleus and the outer electron = reduced effective nuclear charge = lower IE</li>
+  <li><strong>Sub-shell structure:</strong> Electrons in p orbitals are slightly higher in energy (easier to remove) than electrons in s orbitals of the same shell. Paired electrons experience extra repulsion, making them easier to remove than unpaired electrons.</li>
 </ul>
 
-<h3>Trends in Ionisation Energy</h3>
+<h3>Trends in First Ionisation Energy</h3>
 
-<p><strong>Across a period:</strong> General increase due to increasing nuclear charge with the same shielding. Two notable drops occur: between Group 2 and Group 3 (the Group 3 element loses a p-electron, which is higher in energy than the s-electron of Group 2), and between Group 5 and Group 6 (Group 6 has a paired p-electron, easier to remove due to electron-electron repulsion).</p>
+<p><strong>Across a period (e.g. Na to Ar):</strong> General increase due to increasing nuclear charge with the same number of inner shielding electrons. However, two notable decreases occur:</p>
+<ol>
+  <li><strong>Group 2 &rarr; Group 3 (Mg &rarr; Al):</strong> Al (1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>1</sup>) loses a 3p electron, which is higher in energy and further from the nucleus than the 3s electron lost by Mg. The 3p electron is also shielded by the 3s<sup>2</sup> pair.</li>
+  <li><strong>Group 5 &rarr; Group 6 (N &rarr; O / P &rarr; S):</strong> In Group 6, the fourth electron in the 3p sub-shell must pair up with an existing electron. The electron-electron repulsion in this pair makes the paired electron easier to remove.</li>
+</ol>
 
-<p><strong>Down a group:</strong> Decrease because atomic radius increases and shielding increases, outweighing the increase in nuclear charge.</p>
+<p><strong>Down a group:</strong> Ionisation energy decreases because: (1) atomic radius increases (more shells), (2) shielding by inner electrons increases. Both effects outweigh the increase in nuclear charge.</p>
 
 <h3>Successive Ionisation Energies</h3>
 
-<p>Successive ionisation energies always increase because each subsequent electron is removed from an increasingly positive ion. A large jump occurs when an electron is removed from a new inner shell (closer to nucleus, less shielding), which reveals the number of outer-shell electrons and hence the group of the element.</p>
+<p>Each successive ionisation energy is always higher than the previous one because: (1) the ion becomes more positive, so there is greater electrostatic attraction on the remaining electrons, and (2) there are fewer electrons repelling each other, so each remaining electron is held more tightly.</p>
+
+<p>A <strong>large jump</strong> between consecutive ionisation energies indicates that an electron has been removed from a new, inner shell (which is closer to the nucleus and has less shielding). The position of this jump reveals the group number of the element.</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> If asked to deduce the group of an element from successive IE data, look for the biggest jump between consecutive IEs. If the big jump is between the 3rd and 4th IE, the element is in Group 3.
+  <strong>Exam Tip:</strong> If asked to deduce the group of an unknown element from successive IE data, look for the biggest jump between consecutive IEs. If the big jump is between the 2nd and 3rd IE, the element is in Group 2. If between the 3rd and 4th, it is in Group 3. The number of electrons removed before the big jump equals the number of outer-shell electrons.
 </div>
 
 <h2>1.4 Ionic Bonding</h2>
 
 <div class="definition">
-  <strong>Ionic bonding:</strong> The electrostatic attraction between oppositely charged ions, formed by the transfer of electrons from a metal to a non-metal.
+  <strong>Ionic bonding:</strong> The strong electrostatic attraction between oppositely charged ions. Ionic bonds form when electrons are transferred from a metal atom (forming a cation, M<sup>n+</sup>) to a non-metal atom (forming an anion, X<sup>n-</sup>).
 </div>
 
-<p>Ionic compounds form giant ionic lattices. Each ion is surrounded by ions of the opposite charge. The lattice structure gives ionic compounds high melting points, as a large amount of energy is needed to overcome the strong electrostatic attractions throughout the lattice.</p>
+<p>Ionic compounds form <strong>giant ionic lattices</strong> &mdash; three-dimensional structures where each ion is surrounded by ions of the opposite charge in a regular repeating pattern. The compound has no overall charge because the total positive charge equals the total negative charge.</p>
 
-<!-- SVG: Ionic Bonding - Electron Transfer Diagram (Na + Cl) -->
+<!-- SVG: Ionic Bonding - Electron Transfer (Na + Cl) -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 220" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Ionic Bonding: Electron Transfer (Na + Cl)</text>
-  <!-- Na atom -->
   <circle cx="110" cy="115" r="50" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
   <circle cx="110" cy="115" r="32" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
   <circle cx="110" cy="115" r="16" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="110" y="119" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a73e8">Na</text>
-  <!-- Na electrons: 2 in inner, 8 in middle, 1 in outer -->
   <circle cx="104" cy="100" r="3" fill="#1a73e8"/><circle cx="116" cy="100" r="3" fill="#1a73e8"/>
   <circle cx="110" cy="83" r="3" fill="#1a73e8"/><circle cx="110" cy="147" r="3" fill="#1a73e8"/>
   <circle cx="78" cy="115" r="3" fill="#1a73e8"/><circle cx="142" cy="115" r="3" fill="#1a73e8"/>
   <circle cx="86" cy="95" r="3" fill="#1a73e8"/><circle cx="134" cy="95" r="3" fill="#1a73e8"/>
   <circle cx="86" cy="135" r="3" fill="#1a73e8"/><circle cx="134" cy="135" r="3" fill="#1a73e8"/>
-  <!-- outer electron (the one transferred) -->
   <circle cx="110" cy="65" r="3.5" fill="#DC2626"/>
-  <text x="110" y="55" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">e-</text>
-  <!-- Arrow showing transfer -->
+  <text x="110" y="55" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">e<sup>-</sup></text>
   <path d="M125,62 C180,35 240,35 295,62" fill="none" stroke="#DC2626" stroke-width="2" marker-end="url(#arrowRed1)"/>
   <defs><marker id="arrowRed1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#DC2626"/></marker></defs>
   <text x="210" y="38" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">electron transfer</text>
-  <!-- Cl atom -->
   <circle cx="330" cy="115" r="55" fill="none" stroke="#16A34A" stroke-width="1.5"/>
   <circle cx="330" cy="115" r="38" fill="none" stroke="#16A34A" stroke-width="1.5"/>
   <circle cx="330" cy="115" r="18" fill="none" stroke="#16A34A" stroke-width="1.5"/>
   <text x="330" y="119" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#16A34A">Cl</text>
-  <!-- Cl inner 2 -->
   <circle cx="324" cy="98" r="3" fill="#16A34A"/><circle cx="336" cy="98" r="3" fill="#16A34A"/>
-  <!-- Cl middle 8 -->
   <circle cx="330" cy="77" r="3" fill="#16A34A"/><circle cx="330" cy="153" r="3" fill="#16A34A"/>
   <circle cx="292" cy="115" r="3" fill="#16A34A"/><circle cx="368" cy="115" r="3" fill="#16A34A"/>
   <circle cx="302" cy="92" r="3" fill="#16A34A"/><circle cx="358" cy="92" r="3" fill="#16A34A"/>
   <circle cx="302" cy="138" r="3" fill="#16A34A"/><circle cx="358" cy="138" r="3" fill="#16A34A"/>
-  <!-- Cl outer 7 -->
   <circle cx="330" cy="60" r="3" fill="#16A34A"/><circle cx="330" cy="170" r="3" fill="#16A34A"/>
   <circle cx="275" cy="115" r="3" fill="#16A34A"/><circle cx="385" cy="115" r="3" fill="#16A34A"/>
   <circle cx="282" cy="90" r="3" fill="#16A34A"/><circle cx="378" cy="90" r="3" fill="#16A34A"/>
   <circle cx="282" cy="140" r="3" fill="#16A34A"/>
-  <!-- Labels below -->
   <text x="110" y="185" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8">2, 8, 1</text>
   <text x="330" y="195" text-anchor="middle" font-family="system-ui" font-size="11" fill="#16A34A">2, 8, 7</text>
-  <!-- Result labels -->
-  <text x="110" y="205" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Na+</text>
-  <text x="330" y="212" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Cl-</text>
-  <!-- Charge annotations -->
-  <text x="460" y="100" font-family="system-ui" font-size="10" fill="#1a1a2e">Na loses 1e-</text>
-  <text x="460" y="115" font-family="system-ui" font-size="10" fill="#1a1a2e">Cl gains 1e-</text>
-  <text x="460" y="135" font-family="system-ui" font-size="10" fill="#D97706">Electrostatic</text>
-  <text x="460" y="148" font-family="system-ui" font-size="10" fill="#D97706">attraction</text>
+  <text x="110" y="205" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Na<sup>+</sup> [2,8]</text>
+  <text x="330" y="212" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Cl<sup>-</sup> [2,8,8]</text>
+  <text x="460" y="100" font-family="system-ui" font-size="10" fill="#1a1a2e">Na loses 1e<sup>-</sup></text>
+  <text x="460" y="115" font-family="system-ui" font-size="10" fill="#1a1a2e">Cl gains 1e<sup>-</sup></text>
+  <text x="460" y="135" font-family="system-ui" font-size="10" fill="#D97706">Strong electrostatic</text>
+  <text x="460" y="148" font-family="system-ui" font-size="10" fill="#D97706">attraction between</text>
+  <text x="460" y="161" font-family="system-ui" font-size="10" fill="#D97706">Na<sup>+</sup> and Cl<sup>-</sup></text>
 </svg>
 </div>
 
 <h3>Properties of Ionic Compounds</h3>
+<table>
+  <tr><th>Property</th><th>Explanation</th></tr>
+  <tr><td>High melting and boiling points</td><td>Large amounts of energy needed to overcome the strong electrostatic attractions between many ions throughout the giant lattice</td></tr>
+  <tr><td>Conduct electricity when molten or dissolved in water</td><td>Ions are free to move and carry charge</td></tr>
+  <tr><td>Do not conduct electricity when solid</td><td>Ions are held in fixed positions in the lattice and cannot move</td></tr>
+  <tr><td>Often soluble in water</td><td>Polar water molecules can surround and stabilise individual ions (hydration), releasing enough energy to overcome lattice energy</td></tr>
+  <tr><td>Brittle</td><td>A small displacement causes layers of like-charged ions to align, creating strong repulsion that shatters the crystal</td></tr>
+</table>
 
+<p><strong>Factors affecting lattice energy (strength of ionic bonding):</strong></p>
 <ul>
-  <li>High melting and boiling points (strong electrostatic forces)</li>
-  <li>Conduct electricity when molten or dissolved (ions are free to move)</li>
-  <li>Do not conduct when solid (ions are fixed in position)</li>
-  <li>Often soluble in water (polar water molecules can surround and stabilise ions)</li>
-  <li>Brittle (displacement of layers causes like charges to align, causing repulsion)</li>
+  <li><strong>Ionic charge:</strong> Higher charges produce stronger attraction (e.g. MgO has a much higher melting point than NaCl because Mg<sup>2+</sup>/O<sup>2-</sup> have double the charges of Na<sup>+</sup>/Cl<sup>-</sup>)</li>
+  <li><strong>Ionic radius:</strong> Smaller ions bring charges closer together, increasing electrostatic attraction (e.g. LiF has a higher lattice energy than NaCl)</li>
 </ul>
 
 <h2>1.5 Covalent Bonding</h2>
 
 <div class="definition">
-  <strong>Covalent bond:</strong> A shared pair of electrons between two atoms, where the electrostatic attraction between the shared electrons and the nuclei of both atoms holds the atoms together.
+  <strong>Covalent bond:</strong> A shared pair of electrons between two atoms. The electrostatic attraction between the shared pair of electrons and the nuclei of both atoms holds the atoms together. Covalent bonds form between non-metal atoms.
 </div>
 
 <h3>Types of Covalent Bond</h3>
-
 <ul>
-  <li><strong>Single bond:</strong> One shared pair of electrons (sigma bond, &sigma;)</li>
-  <li><strong>Double bond:</strong> Two shared pairs (one &sigma; + one &pi;)</li>
-  <li><strong>Triple bond:</strong> Three shared pairs (one &sigma; + two &pi;)</li>
-  <li><strong>Dative (coordinate) bond:</strong> Both electrons in the shared pair come from one atom. Shown by an arrow from donor to acceptor. Example: NH<sub>4</sub><sup>+</sup>, where NH<sub>3</sub> donates a lone pair to H<sup>+</sup>.</li>
+  <li><strong>Single bond (&sigma;):</strong> One shared pair of electrons. Formed by head-on overlap of atomic orbitals.</li>
+  <li><strong>Double bond (&sigma; + &pi;):</strong> Two shared pairs. The &sigma; bond is from head-on overlap; the &pi; bond is from sideways overlap of p orbitals.</li>
+  <li><strong>Triple bond (&sigma; + 2&pi;):</strong> Three shared pairs (e.g. N&#8801;N in N<sub>2</sub>).</li>
+  <li><strong>Dative (coordinate) covalent bond:</strong> Both electrons in the shared pair come from one atom. The donor atom must have a lone pair; the acceptor atom must have an empty orbital. Example: NH<sub>4</sub><sup>+</sup> (NH<sub>3</sub> donates a lone pair to H<sup>+</sup>), CO (carbon monoxide has a dative bond from O to C), [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup>.</li>
 </ul>
 
-<!-- SVG: Covalent Bonding - Dot and Cross Diagrams for H2O and NH3 -->
+<p><strong>Bond strength and length:</strong> Triple bonds are stronger and shorter than double bonds, which are stronger and shorter than single bonds. For example: C-C = 346 kJ/mol (0.154 nm), C=C = 614 kJ/mol (0.134 nm), C&#8801;C = 839 kJ/mol (0.120 nm).</p>
+
+<!-- SVG: Dot-and-Cross Diagrams -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Dot-and-Cross Diagrams: Covalent Bonding</text>
-  <!-- H2O Section -->
-  <text x="140" y="50" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a73e8">H2O (Water)</text>
-  <!-- Oxygen outer shell circle -->
+  <!-- H2O -->
+  <text x="140" y="50" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a73e8">H<tspan font-size="8" dy="3">2</tspan><tspan dy="-3">O (Water)</tspan></text>
   <ellipse cx="140" cy="140" rx="55" ry="55" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="140" y="144" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#1a73e8">O</text>
-  <!-- O lone pairs (dots) - top -->
   <circle cx="130" cy="92" r="3" fill="#1a73e8"/><circle cx="150" cy="92" r="3" fill="#1a73e8"/>
-  <!-- O lone pairs (dots) - bottom -->
   <circle cx="130" cy="188" r="3" fill="#1a73e8"/><circle cx="150" cy="188" r="3" fill="#1a73e8"/>
-  <!-- Shared pair left (O dot + H cross) -->
   <circle cx="90" cy="132" r="3" fill="#1a73e8"/>
   <text x="90" y="148" text-anchor="middle" font-family="system-ui" font-size="14" fill="#DC2626">x</text>
-  <!-- Shared pair right (O dot + H cross) -->
   <circle cx="190" cy="132" r="3" fill="#1a73e8"/>
   <text x="190" y="148" text-anchor="middle" font-family="system-ui" font-size="14" fill="#DC2626">x</text>
-  <!-- H atoms -->
   <text x="55" y="144" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#DC2626">H</text>
   <text x="225" y="144" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#DC2626">H</text>
-  <!-- Bond angle -->
   <path d="M85,155 Q140,175 195,155" fill="none" stroke="#D97706" stroke-width="1" stroke-dasharray="3,2"/>
-  <text x="140" y="175" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">104.5 degrees</text>
-  <!-- Labels -->
+  <text x="140" y="175" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">104.5&deg;</text>
   <text x="140" y="220" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">2 bonding pairs + 2 lone pairs</text>
-  <text x="140" y="234" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Bent shape</text>
-  <!-- Legend -->
-  <circle cx="80" cy="258" r="3" fill="#1a73e8"/>
-  <text x="88" y="262" font-family="system-ui" font-size="10" fill="#1a1a2e">= O electron (dot)</text>
-  <text x="170" y="262" font-family="system-ui" font-size="14" fill="#DC2626">x</text>
-  <text x="182" y="262" font-family="system-ui" font-size="10" fill="#1a1a2e">= H electron (cross)</text>
-
-  <!-- NH3 Section -->
-  <text x="390" y="50" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#16A34A">NH3 (Ammonia)</text>
-  <!-- Nitrogen outer shell circle -->
+  <text x="140" y="234" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Bent / V-shape</text>
+  <!-- NH3 -->
+  <text x="390" y="50" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#16A34A">NH<tspan font-size="8" dy="3">3</tspan><tspan dy="-3"> (Ammonia)</tspan></text>
   <ellipse cx="390" cy="135" rx="55" ry="55" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="390" y="139" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#16A34A">N</text>
-  <!-- N lone pair (dots) - top -->
   <circle cx="380" cy="87" r="3" fill="#16A34A"/><circle cx="400" cy="87" r="3" fill="#16A34A"/>
-  <!-- Shared pair left (N dot + H cross) -->
   <circle cx="340" cy="127" r="3" fill="#16A34A"/>
   <text x="340" y="143" text-anchor="middle" font-family="system-ui" font-size="14" fill="#DC2626">x</text>
-  <!-- Shared pair right (N dot + H cross) -->
   <circle cx="440" cy="127" r="3" fill="#16A34A"/>
   <text x="440" y="143" text-anchor="middle" font-family="system-ui" font-size="14" fill="#DC2626">x</text>
-  <!-- Shared pair bottom (N dot + H cross) -->
   <circle cx="383" cy="183" r="3" fill="#16A34A"/>
   <text x="397" y="187" text-anchor="middle" font-family="system-ui" font-size="14" fill="#DC2626">x</text>
-  <!-- H atoms -->
   <text x="305" y="139" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#DC2626">H</text>
   <text x="475" y="139" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#DC2626">H</text>
   <text x="390" y="210" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#DC2626">H</text>
-  <!-- Labels -->
   <text x="390" y="230" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">3 bonding pairs + 1 lone pair</text>
-  <text x="390" y="244" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Trigonal pyramidal (107 degrees)</text>
+  <text x="390" y="244" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Trigonal pyramidal (107&deg;)</text>
+  <circle cx="80" cy="258" r="3" fill="#1a73e8"/>
+  <text x="88" y="262" font-family="system-ui" font-size="10" fill="#1a1a2e">= O/N electron (dot)</text>
+  <text x="220" y="262" font-family="system-ui" font-size="14" fill="#DC2626">x</text>
+  <text x="232" y="262" font-family="system-ui" font-size="10" fill="#1a1a2e">= H electron (cross)</text>
 </svg>
 </div>
 
-<h3>Shapes of Molecules — VSEPR Theory</h3>
+<h3>Shapes of Molecules &mdash; VSEPR Theory</h3>
 
 <div class="definition">
-  <strong>VSEPR (Valence Shell Electron Pair Repulsion):</strong> Electron pairs around a central atom arrange themselves as far apart as possible to minimise repulsion. Lone pairs repel more than bonding pairs.
+  <strong>VSEPR (Valence Shell Electron Pair Repulsion) theory:</strong> Electron pairs (both bonding and lone pairs) around a central atom arrange themselves as far apart as possible to minimise electrostatic repulsion between them. The arrangement determines the shape and bond angles of the molecule.
 </div>
 
+<p><strong>Repulsion strength order:</strong> lone pair-lone pair > lone pair-bonding pair > bonding pair-bonding pair. This is because lone pairs are held closer to the central atom (not shared with another nucleus) and occupy more space.</p>
+
 <table>
-  <tr><th>Electron Pairs</th><th>Bonding Pairs</th><th>Lone Pairs</th><th>Shape</th><th>Bond Angle</th><th>Example</th></tr>
-  <tr><td>2</td><td>2</td><td>0</td><td>Linear</td><td>180&deg;</td><td>CO<sub>2</sub>, BeCl<sub>2</sub></td></tr>
-  <tr><td>3</td><td>3</td><td>0</td><td>Trigonal planar</td><td>120&deg;</td><td>BF<sub>3</sub>, AlCl<sub>3</sub></td></tr>
-  <tr><td>3</td><td>2</td><td>1</td><td>Bent (V-shape)</td><td>~117&deg;</td><td>SO<sub>2</sub></td></tr>
-  <tr><td>4</td><td>4</td><td>0</td><td>Tetrahedral</td><td>109.5&deg;</td><td>CH<sub>4</sub>, NH<sub>4</sub><sup>+</sup></td></tr>
-  <tr><td>4</td><td>3</td><td>1</td><td>Trigonal pyramidal</td><td>107&deg;</td><td>NH<sub>3</sub>, PCl<sub>3</sub></td></tr>
-  <tr><td>4</td><td>2</td><td>2</td><td>Bent (V-shape)</td><td>104.5&deg;</td><td>H<sub>2</sub>O</td></tr>
-  <tr><td>5</td><td>5</td><td>0</td><td>Trigonal bipyramidal</td><td>90&deg;/120&deg;</td><td>PCl<sub>5</sub></td></tr>
-  <tr><td>6</td><td>6</td><td>0</td><td>Octahedral</td><td>90&deg;</td><td>SF<sub>6</sub></td></tr>
+  <tr><th>Total Electron Pairs</th><th>Bonding Pairs</th><th>Lone Pairs</th><th>Shape</th><th>Bond Angle</th><th>Example</th></tr>
+  <tr><td>2</td><td>2</td><td>0</td><td>Linear</td><td>180&deg;</td><td>CO<sub>2</sub>, BeCl<sub>2</sub>, HCN</td></tr>
+  <tr><td>3</td><td>3</td><td>0</td><td>Trigonal planar</td><td>120&deg;</td><td>BF<sub>3</sub>, AlCl<sub>3</sub>, NO<sub>3</sub><sup>-</sup></td></tr>
+  <tr><td>3</td><td>2</td><td>1</td><td>Bent / V-shape</td><td>~117-118&deg;</td><td>SO<sub>2</sub>, NO<sub>2</sub><sup>-</sup></td></tr>
+  <tr><td>4</td><td>4</td><td>0</td><td>Tetrahedral</td><td>109.5&deg;</td><td>CH<sub>4</sub>, NH<sub>4</sub><sup>+</sup>, SiCl<sub>4</sub></td></tr>
+  <tr><td>4</td><td>3</td><td>1</td><td>Trigonal pyramidal</td><td>107&deg;</td><td>NH<sub>3</sub>, PCl<sub>3</sub>, H<sub>3</sub>O<sup>+</sup></td></tr>
+  <tr><td>4</td><td>2</td><td>2</td><td>Bent / V-shape</td><td>104.5&deg;</td><td>H<sub>2</sub>O, H<sub>2</sub>S</td></tr>
+  <tr><td>5</td><td>5</td><td>0</td><td>Trigonal bipyramidal</td><td>90&deg; and 120&deg;</td><td>PCl<sub>5</sub>, PF<sub>5</sub></td></tr>
+  <tr><td>6</td><td>6</td><td>0</td><td>Octahedral</td><td>90&deg;</td><td>SF<sub>6</sub>, [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup></td></tr>
 </table>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> The order of repulsion strength is: lone pair-lone pair > lone pair-bonding pair > bonding pair-bonding pair. This is why bond angles decrease as lone pairs replace bonding pairs.
+  <strong>Exam Tip:</strong> When predicting shapes: (1) Draw the Lewis structure. (2) Count all electron pairs around the central atom (bonding + lone). (3) Determine the electron pair geometry. (4) Name the molecular shape based on the positions of atoms only (not lone pairs). The bond angle decreases by ~2.5&deg; for each lone pair replacing a bonding pair (109.5&deg; &rarr; 107&deg; &rarr; 104.5&deg;).
 </div>
 
 <h2>1.6 Metallic Bonding</h2>
 
 <div class="definition">
-  <strong>Metallic bonding:</strong> The electrostatic attraction between a lattice of positive metal ions (cations) and a sea of delocalised electrons.
+  <strong>Metallic bonding:</strong> The strong electrostatic attraction between a lattice of positive metal ions (cations) and a "sea" of delocalised electrons. The outer-shell electrons become detached from individual atoms and are free to move throughout the structure.
 </div>
 
-<p>Metallic bond strength increases with: (1) greater number of delocalised electrons per atom, and (2) smaller ionic radius. This explains why melting points increase from Na to Mg to Al across Period 3.</p>
+<p><strong>Strength of metallic bonding</strong> depends on:</p>
+<ul>
+  <li><strong>Number of delocalised electrons per atom:</strong> Na (1), Mg (2), Al (3). More delocalised electrons = stronger metallic bond = higher melting point.</li>
+  <li><strong>Ionic radius:</strong> Smaller ions bring the electrons closer to the positive centres, strengthening the attraction.</li>
+</ul>
+<p>This explains why melting points increase from Na (98&deg;C) to Mg (649&deg;C) to Al (660&deg;C) across Period 3.</p>
 
-<!-- SVG: Metallic Bonding - Delocalised Electrons -->
+<!-- SVG: Metallic Bonding -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 260" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Metallic Bonding: Sea of Delocalised Electrons</text>
-  <!-- Background shading for electron sea -->
   <rect x="40" y="40" width="440" height="190" rx="10" fill="#e0ecff" opacity="0.4" stroke="#1a73e8" stroke-width="1" stroke-dasharray="5,3"/>
-  <!-- Row 1 of metal cations -->
   <circle cx="100" cy="80" r="24" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="100" y="84" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M+</text>
+  <text x="100" y="84" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M<sup>+</sup></text>
   <circle cx="200" cy="80" r="24" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="200" y="84" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M+</text>
+  <text x="200" y="84" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M<sup>+</sup></text>
   <circle cx="300" cy="80" r="24" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="300" y="84" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M+</text>
+  <text x="300" y="84" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M<sup>+</sup></text>
   <circle cx="400" cy="80" r="24" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="400" y="84" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M+</text>
-  <!-- Row 2 offset -->
+  <text x="400" y="84" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M<sup>+</sup></text>
   <circle cx="150" cy="145" r="24" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="150" y="149" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M+</text>
+  <text x="150" y="149" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M<sup>+</sup></text>
   <circle cx="250" cy="145" r="24" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="250" y="149" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M+</text>
+  <text x="250" y="149" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M<sup>+</sup></text>
   <circle cx="350" cy="145" r="24" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="350" y="149" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M+</text>
+  <text x="350" y="149" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M<sup>+</sup></text>
   <circle cx="450" cy="145" r="24" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="450" y="149" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M+</text>
-  <!-- Row 3 -->
+  <text x="450" y="149" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M<sup>+</sup></text>
   <circle cx="100" cy="195" r="24" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="100" y="199" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M+</text>
+  <text x="100" y="199" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M<sup>+</sup></text>
   <circle cx="200" cy="195" r="24" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="200" y="199" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M+</text>
+  <text x="200" y="199" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M<sup>+</sup></text>
   <circle cx="300" cy="195" r="24" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="300" y="199" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M+</text>
+  <text x="300" y="199" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M<sup>+</sup></text>
   <circle cx="400" cy="195" r="24" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="400" y="199" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M+</text>
-  <!-- Delocalised electrons (small dots scattered) -->
+  <text x="400" y="199" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">M<sup>+</sup></text>
+  <!-- Delocalised electrons -->
   <circle cx="145" cy="65" r="3" fill="#DC2626"/><circle cx="160" cy="108" r="3" fill="#DC2626"/>
   <circle cx="240" cy="72" r="3" fill="#DC2626"/><circle cx="340" cy="60" r="3" fill="#DC2626"/>
   <circle cx="80" cy="130" r="3" fill="#DC2626"/><circle cx="210" cy="115" r="3" fill="#DC2626"/>
@@ -397,256 +425,239 @@
   <circle cx="55" cy="90" r="3" fill="#DC2626"/><circle cx="60" cy="185" r="3" fill="#DC2626"/>
   <circle cx="175" cy="205" r="3" fill="#DC2626"/><circle cx="350" cy="210" r="3" fill="#DC2626"/>
   <circle cx="450" cy="195" r="3" fill="#DC2626"/><circle cx="440" cy="55" r="3" fill="#DC2626"/>
-  <!-- Label -->
   <text x="260" y="248" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">
-    <tspan fill="#1a73e8" font-weight="bold">Blue circles</tspan> = metal cations (M+) &nbsp;
-    <tspan fill="#DC2626" font-weight="bold">Red dots</tspan> = delocalised electrons (e-)
+    <tspan fill="#1a73e8" font-weight="bold">Blue circles</tspan> = metal cations &nbsp;
+    <tspan fill="#DC2626" font-weight="bold">Red dots</tspan> = delocalised electrons
   </text>
 </svg>
 </div>
 
 <h3>Properties of Metals</h3>
-
-<ul>
-  <li><strong>Electrical conductivity:</strong> Delocalised electrons can flow through the structure when a potential difference is applied</li>
-  <li><strong>Thermal conductivity:</strong> Delocalised electrons transfer kinetic energy rapidly through the lattice</li>
-  <li><strong>Malleability/ductility:</strong> Layers of ions can slide over each other without breaking bonds, as the sea of electrons adjusts</li>
-  <li><strong>High melting points:</strong> Strong electrostatic attraction throughout the lattice (varies with charge and size of ions)</li>
-</ul>
+<table>
+  <tr><th>Property</th><th>Explanation</th></tr>
+  <tr><td>Good electrical conductivity</td><td>Delocalised electrons flow through the lattice when a potential difference is applied</td></tr>
+  <tr><td>Good thermal conductivity</td><td>Delocalised electrons transfer kinetic energy rapidly; lattice vibrations also contribute</td></tr>
+  <tr><td>Malleable and ductile</td><td>Layers of ions can slide past each other without breaking bonds &mdash; the electron sea adjusts and maintains bonding</td></tr>
+  <tr><td>High melting points (generally)</td><td>Strong electrostatic attraction between cations and delocalised electrons throughout the lattice</td></tr>
+  <tr><td>Shiny/lustrous</td><td>Delocalised electrons absorb and re-emit light at all visible wavelengths</td></tr>
+</table>
 
 <h2>1.7 Intermolecular Forces</h2>
 
-<p>Intermolecular forces are the weak attractions between molecules. They determine physical properties such as boiling point, solubility, and viscosity.</p>
+<p>Intermolecular forces are weak attractions <strong>between molecules</strong> (not within molecules). They determine physical properties such as boiling point, solubility, and viscosity. There are three types, in order of increasing strength:</p>
 
-<h3>London (Dispersion) Forces</h3>
+<h3>1. London (Dispersion) Forces</h3>
+<p>Present in ALL molecules and atoms. They arise from temporary, instantaneous dipoles caused by random fluctuations in electron distribution. A temporary dipole in one molecule <strong>induces</strong> a dipole in a neighbouring molecule, creating a weak electrostatic attraction.</p>
+<p><strong>Strength increases with:</strong></p>
+<ul>
+  <li>Number of electrons (larger molecules with greater M<sub>r</sub> have more electrons that can be polarised)</li>
+  <li>Greater surface area of contact (unbranched chains have greater contact area than branched isomers, giving higher boiling points)</li>
+</ul>
 
-<p>Present in all molecules. Caused by temporary, instantaneous dipoles arising from random fluctuations in electron distribution. A temporary dipole induces a dipole in a neighbouring molecule. Strength increases with number of electrons (larger molecules/greater M<sub>r</sub>) and with greater surface area of contact.</p>
+<h3>2. Permanent Dipole-Dipole Forces</h3>
+<p>Occur between <strong>polar molecules</strong>. The &delta;+ end of one molecule is attracted to the &delta;- end of another molecule. These forces are in addition to London forces and are stronger for molecules of similar size.</p>
 
-<h3>Permanent Dipole-Dipole Forces</h3>
-
-<p>Occur between polar molecules. The &delta;+ end of one molecule attracts the &delta;&minus; end of another. Stronger than London forces alone for molecules of similar size.</p>
-
-<h3>Hydrogen Bonding</h3>
+<h3>3. Hydrogen Bonding</h3>
 
 <div class="definition">
-  <strong>Hydrogen bond:</strong> A strong intermolecular force between a hydrogen atom bonded to a highly electronegative atom (N, O, or F) and a lone pair on another N, O, or F atom on a neighbouring molecule.
+  <strong>Hydrogen bond:</strong> A strong type of permanent dipole-dipole interaction that occurs when a hydrogen atom is bonded to a <strong>highly electronegative atom with a lone pair</strong> (N, O, or F). The hydrogen (&delta;+) is attracted to a lone pair on an N, O, or F atom of a neighbouring molecule. Hydrogen bonds are typically about 1/10th the strength of a covalent bond.
 </div>
 
-<p>Hydrogen bonding explains the anomalously high boiling points of NH<sub>3</sub>, H<sub>2</sub>O, and HF compared to other hydrides in their groups. It also explains the relatively low density of ice (hydrogen bonds hold water molecules in an open lattice structure).</p>
+<p><strong>Requirements for hydrogen bonding:</strong></p>
+<ol>
+  <li>A hydrogen atom bonded directly to N, O, or F (these atoms are small and very electronegative, making H very &delta;+)</li>
+  <li>A lone pair on an N, O, or F atom on the neighbouring molecule (to attract the &delta;+ hydrogen)</li>
+</ol>
+
+<p><strong>Consequences of hydrogen bonding:</strong></p>
+<ul>
+  <li>Water (H<sub>2</sub>O), ammonia (NH<sub>3</sub>), and hydrogen fluoride (HF) have anomalously high boiling points compared to other hydrides in their groups.</li>
+  <li>Ice is less dense than liquid water &mdash; hydrogen bonds hold molecules in an open, hexagonal lattice with large gaps, so ice floats (crucial for aquatic life).</li>
+  <li>Water has a high specific heat capacity (important for climate regulation and biological systems).</li>
+  <li>Ethanol is miscible with water (hydrogen bonds between ethanol and water molecules).</li>
+  <li>Hydrogen bonding affects protein and DNA structure (the double helix is held together by hydrogen bonds between base pairs).</li>
+</ul>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> When explaining boiling point trends, always name the specific intermolecular force, explain how it arises, and relate it to the energy needed to overcome those forces.
+  <strong>Exam Tip:</strong> When explaining boiling points, always: (1) Name the specific intermolecular force. (2) Explain how it arises. (3) Relate it to the energy needed to overcome those forces (not to break covalent bonds &mdash; covalent bonds do NOT break during boiling). When comparing boiling points of different molecules, consider the dominant intermolecular force and molecular size/surface area.
+</div>
+
+<div class="real-world">
+  <strong>Real-World Application:</strong> Hydrogen bonding is crucial in biology. DNA base pairs are held together by specific hydrogen bonds (A-T has 2, G-C has 3), which allows the double helix to be "unzipped" for replication while being stable enough to maintain the structure. Protein secondary structure (&alpha;-helices and &beta;-sheets) is maintained by hydrogen bonds between C=O and N-H groups along the polypeptide backbone.
 </div>
 
 <h2>1.8 Electronegativity and Bond Polarity</h2>
 
 <div class="definition">
-  <strong>Electronegativity:</strong> The ability of an atom to attract the bonding pair of electrons in a covalent bond towards itself.
+  <strong>Electronegativity:</strong> The ability of an atom to attract the bonding pair of electrons in a covalent bond towards itself. Measured on the Pauling scale (F = 4.0, most electronegative).
 </div>
 
-<p>Electronegativity increases across a period (greater nuclear charge, same shielding) and decreases down a group (greater atomic radius, more shielding). Fluorine is the most electronegative element.</p>
+<p><strong>Trends in electronegativity:</strong></p>
+<ul>
+  <li><strong>Increases across a period:</strong> Greater nuclear charge with the same shielding pulls bonding electrons more strongly.</li>
+  <li><strong>Decreases down a group:</strong> Greater atomic radius and more shielding reduce the attraction on bonding electrons.</li>
+  <li>Fluorine is the most electronegative element (4.0), followed by oxygen (3.5), nitrogen/chlorine (3.0).</li>
+</ul>
 
-<p>A polar bond has an uneven distribution of electron density. If the molecule is symmetrical, individual bond dipoles may cancel, making the molecule non-polar overall (e.g. CO<sub>2</sub>, CCl<sub>4</sub>). If asymmetrical, the molecule has a net dipole moment (e.g. H<sub>2</sub>O, CHCl<sub>3</sub>).</p>
+<p><strong>Bond polarity:</strong> When two atoms with different electronegativities form a covalent bond, the bonding electrons are unequally shared, creating a polar bond with partial charges (&delta;+ on the less electronegative atom, &delta;- on the more electronegative atom). The greater the electronegativity difference, the more polar the bond.</p>
 
-<h2>1.9 Enthalpy Changes</h2>
+<p><strong>Molecular polarity:</strong> A molecule is polar overall if it has polar bonds arranged asymmetrically (so dipoles do not cancel). Examples:</p>
+<ul>
+  <li><strong>Polar molecules:</strong> H<sub>2</sub>O (bent, dipoles do not cancel), NH<sub>3</sub> (pyramidal), HCl, CHCl<sub>3</sub></li>
+  <li><strong>Non-polar molecules with polar bonds:</strong> CO<sub>2</sub> (linear, dipoles cancel), BF<sub>3</sub> (trigonal planar, dipoles cancel), CCl<sub>4</sub> (tetrahedral, dipoles cancel)</li>
+</ul>
+
+<h2>1.9 Enthalpy Changes and Calorimetry</h2>
 
 <div class="definition">
-  <strong>Enthalpy change (&Delta;H):</strong> The heat energy change measured at constant pressure. Exothermic reactions have &Delta;H &lt; 0 (heat released). Endothermic reactions have &Delta;H &gt; 0 (heat absorbed).
+  <strong>Enthalpy change (&Delta;H):</strong> The heat energy transferred in a reaction at constant pressure. Measured in kJ mol<sup>-1</sup>.<br>
+  <strong>Exothermic:</strong> &Delta;H < 0 (heat released to surroundings, temperature of surroundings rises).<br>
+  <strong>Endothermic:</strong> &Delta;H > 0 (heat absorbed from surroundings, temperature of surroundings falls).
 </div>
 
 <h3>Standard Enthalpy Changes</h3>
+<p>Standard conditions: 298 K (25&deg;C), 100 kPa pressure, all substances in their standard states, solutions at 1.00 mol dm<sup>-3</sup>.</p>
 
 <table>
-  <tr><th>Enthalpy Change</th><th>Definition (per mole, standard conditions: 298 K, 100 kPa)</th></tr>
-  <tr><td>&Delta;<sub>c</sub>H&deg; (combustion)</td><td>Complete combustion of one mole of a substance in excess oxygen</td></tr>
-  <tr><td>&Delta;<sub>f</sub>H&deg; (formation)</td><td>Formation of one mole of a compound from its elements in their standard states</td></tr>
-  <tr><td>&Delta;<sub>neut</sub>H&deg; (neutralisation)</td><td>Reaction of an acid and base to form one mole of water</td></tr>
-  <tr><td>&Delta;<sub>at</sub>H&deg; (atomisation)</td><td>Formation of one mole of gaseous atoms from the element in its standard state</td></tr>
+  <tr><th>Symbol</th><th>Name</th><th>Definition (per mole, standard conditions)</th></tr>
+  <tr><td>&Delta;<sub>c</sub>H&deg;</td><td>Combustion</td><td>Complete combustion of one mole of a substance in excess oxygen</td></tr>
+  <tr><td>&Delta;<sub>f</sub>H&deg;</td><td>Formation</td><td>Formation of one mole of a compound from its elements in their standard states</td></tr>
+  <tr><td>&Delta;<sub>neut</sub>H&deg;</td><td>Neutralisation</td><td>Reaction of acid and base to form one mole of water</td></tr>
+  <tr><td>&Delta;<sub>at</sub>H&deg;</td><td>Atomisation</td><td>Formation of one mole of gaseous atoms from the element in its standard state</td></tr>
+  <tr><td>&Delta;<sub>r</sub>H&deg;</td><td>Reaction</td><td>Enthalpy change for the molar quantities shown in the equation</td></tr>
 </table>
+
+<p><strong>Note:</strong> &Delta;<sub>f</sub>H&deg; of any element in its standard state is zero by definition.</p>
 
 <h3>Calorimetry</h3>
 
-<p>In calorimetry experiments, the heat change is calculated using:</p>
-
+<p>Heat energy changes are measured experimentally using calorimetry:</p>
 <div class="equation">
   q = mc&Delta;T
 </div>
-
-<p>where q = heat energy (J), m = mass of solution (g), c = specific heat capacity (4.18 J g<sup>&minus;1</sup> K<sup>&minus;1</sup> for water), and &Delta;T = temperature change (K or &deg;C).</p>
-
-<p>To find the enthalpy change per mole, divide q by the number of moles of the limiting reagent:</p>
+<p>where q = heat energy transferred (J), m = mass of solution heated (g), c = specific heat capacity of solution (4.18 J g<sup>-1</sup> K<sup>-1</sup> for dilute aqueous solutions), &Delta;T = temperature change (K or &deg;C).</p>
 
 <div class="equation">
-  &Delta;H = &minus;q / n
+  &Delta;H = &minus;q / n &nbsp;&nbsp; (kJ mol<sup>-1</sup>)
 </div>
+<p>The negative sign accounts for the sign convention: if the solution warms up (q positive), the reaction is exothermic (&Delta;H negative).</p>
 
-<p>The negative sign is included because if the solution temperature increases (exothermic), the enthalpy change of the reaction is negative.</p>
+<p><strong>Sample calculation:</strong> 50.0 cm<sup>3</sup> of 1.00 mol dm<sup>-3</sup> HCl is mixed with 50.0 cm<sup>3</sup> of 1.00 mol dm<sup>-3</sup> NaOH. Temperature rises by 6.8&deg;C.</p>
+<ul>
+  <li>q = 100 &times; 4.18 &times; 6.8 = 2842 J = 2.842 kJ</li>
+  <li>Moles of water formed = 0.0500 mol (limiting reagent)</li>
+  <li>&Delta;<sub>neut</sub>H = -2.842 / 0.0500 = -56.8 kJ mol<sup>-1</sup></li>
+</ul>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> Common sources of error in calorimetry: heat loss to surroundings, incomplete combustion, assuming the specific heat capacity of the solution equals that of water, and assuming the density of the solution is 1 g cm<sup>&minus;3</sup>.
+  <strong>Exam Tip:</strong> Common sources of error in calorimetry: (1) heat loss to surroundings (the biggest source &mdash; makes measured &Delta;H less exothermic than literature value), (2) incomplete combustion, (3) assuming c = 4.18 and density = 1.00 g cm<sup>-3</sup>, (4) heat absorbed by the calorimeter (not the solution). To improve accuracy, use insulated (polystyrene) cups, a lid, and plot a cooling curve to extrapolate the maximum temperature.
 </div>
 
-<!-- SVG: Enthalpy Profile Diagrams - Exothermic and Endothermic -->
+<h3>Hess's Law</h3>
+
+<div class="definition">
+  <strong>Hess's Law:</strong> The total enthalpy change for a reaction is independent of the route taken, provided the initial and final conditions are the same. This is a consequence of the law of conservation of energy.
+</div>
+
+<p>Hess's law allows us to calculate enthalpy changes that cannot be measured directly by constructing enthalpy cycles:</p>
+
+<div class="equation">
+  &Delta;<sub>r</sub>H&deg; = &Sigma;&Delta;<sub>f</sub>H&deg;(products) - &Sigma;&Delta;<sub>f</sub>H&deg;(reactants)
+</div>
+<div class="equation">
+  &Delta;<sub>r</sub>H&deg; = &Sigma;&Delta;<sub>c</sub>H&deg;(reactants) - &Sigma;&Delta;<sub>c</sub>H&deg;(products)
+</div>
+
+<p><strong>Note the reversal of sign:</strong> For formation data, it is products minus reactants. For combustion data, it is reactants minus products. This is because in a Hess cycle, the arrows for combustion go downwards from both reactants and products to the combustion products (CO<sub>2</sub> and H<sub>2</sub>O).</p>
+
+<!-- SVG: Enthalpy Profile Diagrams -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 310" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Enthalpy Profile Diagrams</text>
-
-  <!-- EXOTHERMIC (left) -->
-  <text x="130" y="46" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a73e8">Exothermic</text>
-  <!-- Axes -->
+  <!-- EXOTHERMIC -->
+  <text x="130" y="46" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a73e8">Exothermic (&Delta;H &lt; 0)</text>
   <line x1="30" y1="60" x2="30" y2="280" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="30" y1="280" x2="245" y2="280" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="15" y="170" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,15,170)">Enthalpy (H)</text>
-  <text x="137" y="298" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Progress of reaction</text>
-  <!-- Reactants level -->
-  <line x1="40" y1="120" x2="90" y2="120" stroke="#1a73e8" stroke-width="2"/>
-  <text x="65" y="113" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Reactants</text>
-  <!-- Products level -->
-  <line x1="175" y1="230" x2="235" y2="230" stroke="#1a73e8" stroke-width="2"/>
-  <text x="205" y="248" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Products</text>
-  <!-- Energy profile curve -->
-  <path d="M90,120 Q110,118 125,80 Q140,55 155,80 Q170,118 175,230" fill="none" stroke="#1a73e8" stroke-width="2"/>
-  <!-- Ea arrow -->
-  <line x1="95" y1="120" x2="95" y2="55" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,2"/>
-  <polygon points="95,55 91,63 99,63" fill="#DC2626"/>
-  <text x="80" y="85" text-anchor="end" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Ea</text>
-  <!-- Delta H arrow -->
-  <line x1="230" y1="120" x2="230" y2="230" stroke="#16A34A" stroke-width="1.5"/>
-  <polygon points="230,230 226,222 234,222" fill="#16A34A"/>
-  <polygon points="230,120 226,128 234,128" fill="#16A34A"/>
-  <text x="222" y="178" text-anchor="end" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">-DH</text>
+  <text x="138" y="295" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Progress of reaction</text>
+  <!-- Reactant level -->
+  <line x1="40" y1="100" x2="100" y2="100" stroke="#1a73e8" stroke-width="2"/>
+  <text x="70" y="92" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Reactants</text>
+  <!-- Activation energy hump -->
+  <path d="M100,100 Q140,55 180,100" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="140" y="50" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">E<tspan font-size="7" dy="2">a</tspan></text>
+  <!-- Product level -->
+  <line x1="140" y1="220" x2="230" y2="220" stroke="#16A34A" stroke-width="2"/>
+  <text x="185" y="212" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A">Products</text>
+  <!-- Reaction path curve -->
+  <path d="M100,100 Q120,60 160,60 Q200,60 220,220" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- DeltaH arrow -->
+  <line x1="235" y1="100" x2="235" y2="220" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="235,220 231,210 239,210" fill="#DC2626"/>
+  <text x="243" y="165" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">&Delta;H</text>
+  <text x="243" y="178" font-family="system-ui" font-size="9" fill="#DC2626">(&lt; 0)</text>
 
-  <!-- ENDOTHERMIC (right) -->
-  <text x="395" y="46" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">Endothermic</text>
-  <!-- Axes -->
+  <!-- ENDOTHERMIC -->
+  <text x="390" y="46" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">Endothermic (&Delta;H &gt; 0)</text>
   <line x1="280" y1="60" x2="280" y2="280" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="280" y1="280" x2="500" y2="280" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="268" y="170" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,268,170)">Enthalpy (H)</text>
-  <text x="390" y="298" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Progress of reaction</text>
-  <!-- Reactants level -->
-  <line x1="290" y1="220" x2="345" y2="220" stroke="#DC2626" stroke-width="2"/>
-  <text x="317" y="238" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">Reactants</text>
-  <!-- Products level -->
-  <line x1="430" y1="130" x2="490" y2="130" stroke="#DC2626" stroke-width="2"/>
-  <text x="460" y="123" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">Products</text>
-  <!-- Energy profile curve -->
-  <path d="M345,220 Q365,218 380,90 Q390,60 400,90 Q415,160 430,130" fill="none" stroke="#DC2626" stroke-width="2"/>
-  <!-- Ea arrow -->
-  <line x1="350" y1="220" x2="350" y2="60" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,2"/>
-  <polygon points="350,60 346,68 354,68" fill="#D97706"/>
-  <text x="338" y="135" text-anchor="end" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Ea</text>
-  <!-- Delta H arrow -->
-  <line x1="485" y1="220" x2="485" y2="130" stroke="#16A34A" stroke-width="1.5"/>
-  <polygon points="485,130 481,138 489,138" fill="#16A34A"/>
-  <polygon points="485,220 481,212 489,212" fill="#16A34A"/>
-  <text x="478" y="178" text-anchor="end" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">+DH</text>
+  <text x="265" y="170" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,265,170)">Enthalpy (H)</text>
+  <text x="390" y="295" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Progress of reaction</text>
+  <!-- Reactant level -->
+  <line x1="290" y1="220" x2="350" y2="220" stroke="#1a73e8" stroke-width="2"/>
+  <text x="320" y="212" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Reactants</text>
+  <!-- Activation energy hump -->
+  <path d="M350,220 Q390,55 430,100" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="380" y="55" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">E<tspan font-size="7" dy="2">a</tspan></text>
+  <!-- Product level -->
+  <line x1="400" y1="100" x2="490" y2="100" stroke="#16A34A" stroke-width="2"/>
+  <text x="445" y="92" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A">Products</text>
+  <!-- Reaction path curve -->
+  <path d="M350,220 Q370,60 410,60 Q450,60 470,100" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- DeltaH arrow -->
+  <line x1="495" y1="220" x2="495" y2="100" stroke="#DC2626" stroke-width="2"/>
+  <polygon points="495,100 491,110 499,110" fill="#DC2626"/>
+  <text x="503" y="165" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">&Delta;H</text>
+  <text x="503" y="178" font-family="system-ui" font-size="9" fill="#DC2626">(&gt; 0)</text>
 </svg>
 </div>
 
-<h2>1.10 Hess's Law</h2>
+<h3>Bond Enthalpies</h3>
 
 <div class="definition">
-  <strong>Hess's Law:</strong> The total enthalpy change of a reaction is independent of the route taken, provided the initial and final conditions are the same. This is a consequence of the law of conservation of energy.
+  <strong>Mean bond enthalpy:</strong> The average energy required to break one mole of a particular type of bond in the gaseous state, averaged across a range of different molecules containing that bond. All species must be in the gaseous state.
 </div>
 
-<h3>Using Formation Enthalpies</h3>
+<p>Bond enthalpy calculations give approximate values for &Delta;H because mean bond enthalpies are averages &mdash; the actual bond energy depends on the molecular environment. The calculation is:</p>
 
 <div class="equation">
-  &Delta;<sub>r</sub>H&deg; = &Sigma;&Delta;<sub>f</sub>H&deg;(products) &minus; &Sigma;&Delta;<sub>f</sub>H&deg;(reactants)
+  &Delta;H = &Sigma;(bond enthalpies broken) - &Sigma;(bond enthalpies formed)
 </div>
 
-<h3>Using Combustion Enthalpies</h3>
+<p>"Energy in minus energy out" &mdash; breaking bonds is endothermic (+), forming bonds is exothermic (-). If more energy is released in forming bonds than is needed to break bonds, the reaction is exothermic overall.</p>
 
-<div class="equation">
-  &Delta;<sub>r</sub>H&deg; = &Sigma;&Delta;<sub>c</sub>H&deg;(reactants) &minus; &Sigma;&Delta;<sub>c</sub>H&deg;(products)
-</div>
-
-<p>Note the reversal: for combustion data, reactants minus products (the opposite of formation data). This is because combustion enthalpies provide a route down from reactants and products to a common set of combustion products (CO<sub>2</sub> and H<sub>2</sub>O).</p>
+<table>
+  <tr><th>Bond</th><th>Mean Bond Enthalpy / kJ mol<sup>-1</sup></th></tr>
+  <tr><td>C-H</td><td>413</td></tr>
+  <tr><td>C-C</td><td>346</td></tr>
+  <tr><td>C=C</td><td>614</td></tr>
+  <tr><td>C-O</td><td>358</td></tr>
+  <tr><td>C=O</td><td>805 (in CO<sub>2</sub>)</td></tr>
+  <tr><td>O-H</td><td>464</td></tr>
+  <tr><td>O=O</td><td>498</td></tr>
+  <tr><td>N-H</td><td>391</td></tr>
+  <tr><td>N&#8801;N</td><td>945</td></tr>
+  <tr><td>H-H</td><td>436</td></tr>
+  <tr><td>C-Cl</td><td>338</td></tr>
+  <tr><td>H-Cl</td><td>432</td></tr>
+</table>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> When drawing Hess's law cycles, always include state symbols and ensure arrows point in the correct direction. If you need to reverse a reaction, change the sign of &Delta;H.
+  <strong>Exam Tip:</strong> Bond enthalpy calculations only give approximate &Delta;H values because: (1) mean bond enthalpies are averages over many different compounds, (2) the calculation assumes all species are gaseous (but reactants/products may be liquids or solids). Hess's law calculations using &Delta;<sub>f</sub>H&deg; or &Delta;<sub>c</sub>H&deg; data give more accurate results because these values are specific to the compounds involved.
 </div>
 
-<!-- SVG: Born-Haber Cycle for NaCl -->
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 420" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Born-Haber Cycle for NaCl</text>
-  <defs>
-    <marker id="bhArrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker>
-    <marker id="bhArrowBlue" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a73e8"/></marker>
-    <marker id="bhArrowRed" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#DC2626"/></marker>
-    <marker id="bhArrowGreen" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#16A34A"/></marker>
-  </defs>
-  <!-- Level 1 (top): Na+(g) + e- + Cl(g) -->
-  <line x1="180" y1="55" x2="440" y2="55" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="310" y="48" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na+(g) + e- + Cl(g)</text>
-
-  <!-- Level 2: Na+(g) + Cl-(g) -->
-  <line x1="340" y1="130" x2="500" y2="130" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="420" y="123" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na+(g) + Cl-(g)</text>
-
-  <!-- Level 3: Na(g) + Cl(g) -->
-  <line x1="30" y1="140" x2="175" y2="140" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="102" y="133" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(g) + Cl(g)</text>
-
-  <!-- Level 4: Na(g) + 1/2 Cl2(g) -->
-  <line x1="30" y1="210" x2="175" y2="210" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="102" y="203" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(g) + 1/2 Cl2(g)</text>
-
-  <!-- Level 5 (bottom-left): Na(s) + 1/2 Cl2(g) -->
-  <line x1="30" y1="295" x2="200" y2="295" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="115" y="288" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(s) + 1/2 Cl2(g)</text>
-
-  <!-- Level 6 (bottom-right): NaCl(s) -->
-  <line x1="340" y1="380" x2="500" y2="380" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="420" y="398" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">NaCl(s)</text>
-
-  <!-- Arrow: Atomisation of Na (Level 5 -> Level 4) -->
-  <line x1="80" y1="293" x2="80" y2="214" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#bhArrowBlue)"/>
-  <text x="32" y="258" font-family="system-ui" font-size="9" fill="#1a73e8">Dat H(Na)</text>
-
-  <!-- Arrow: Atomisation of Cl (Level 4 -> Level 3) -->
-  <line x1="80" y1="208" x2="80" y2="144" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#bhArrowBlue)"/>
-  <text x="32" y="178" font-family="system-ui" font-size="9" fill="#1a73e8">Dat H(Cl)</text>
-
-  <!-- Arrow: IE of Na (Level 3 -> top) -->
-  <line x1="150" y1="138" x2="200" y2="59" stroke="#D97706" stroke-width="1.5" marker-end="url(#bhArrow)"/>
-  <text x="140" y="95" font-family="system-ui" font-size="9" fill="#D97706">IE1(Na)</text>
-
-  <!-- Arrow: EA of Cl (top -> Level 2) -->
-  <line x1="420" y1="57" x2="420" y2="126" stroke="#16A34A" stroke-width="1.5" marker-end="url(#bhArrowGreen)"/>
-  <text x="455" y="95" font-family="system-ui" font-size="9" fill="#16A34A">EA1(Cl)</text>
-
-  <!-- Arrow: Lattice enthalpy (Level 2 -> NaCl) -->
-  <line x1="420" y1="132" x2="420" y2="376" stroke="#DC2626" stroke-width="1.5" marker-end="url(#bhArrowRed)"/>
-  <text x="475" y="260" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Lattice</text>
-  <text x="475" y="272" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">enthalpy</text>
-
-  <!-- Arrow: Formation enthalpy (elements -> NaCl) -->
-  <path d="M200,297 Q270,340 340,380" fill="none" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#bhArrow)"/>
-  <text x="240" y="355" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">Df H (NaCl)</text>
-
-  <!-- Legend indicators -->
-  <text x="260" y="412" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Endothermic steps go UP | Exothermic steps go DOWN</text>
-</svg>
-</div>
-
-<h2>1.11 Bond Enthalpies</h2>
-
-<div class="definition">
-  <strong>Mean bond enthalpy:</strong> The average energy required to break one mole of a particular type of bond in the gaseous state, measured over a range of different compounds containing that bond.
-</div>
-
-<div class="equation">
-  &Delta;<sub>r</sub>H = &Sigma;(bond enthalpies broken) &minus; &Sigma;(bond enthalpies formed)
-</div>
-
-<p>Bond enthalpy calculations give approximate values because mean bond enthalpies are averages. The actual energy of a specific bond depends on the molecular environment. For example, the O-H bond in water has a different exact bond enthalpy from the O-H bond in ethanol.</p>
-
-<p>Breaking bonds is endothermic (energy input required). Forming bonds is exothermic (energy released). If more energy is released forming new bonds than is required to break old bonds, the reaction is exothermic overall.</p>
-
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> Bond enthalpy calculations only apply to reactions where all species are in the gaseous state. If a question gives you a liquid product, you need additional data (enthalpy of vaporisation) for an accurate answer.
+<div class="real-world">
+  <strong>Real-World Application:</strong> Enthalpy changes are fundamental to energy engineering. Fuels are chosen based on their enthalpy of combustion per gram (energy density). Hydrogen has the highest energy density by mass (142 kJ/g) but the lowest by volume. Rocket fuels like liquid hydrogen/oxygen exploit the highly exothermic reaction 2H<sub>2</sub> + O<sub>2</sub> &rarr; 2H<sub>2</sub>O (&Delta;H = -572 kJ/mol). Hand warmers use exothermic reactions (iron oxidation or sodium acetate crystallisation), while cold packs use endothermic dissolution of ammonium nitrate.
 </div>
 
 </div>

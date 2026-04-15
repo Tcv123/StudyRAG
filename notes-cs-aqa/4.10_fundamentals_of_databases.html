@@ -6,91 +6,28 @@
     <title>4.10 Fundamentals of Databases — AQA A-Level Computer Science</title>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: #1a1a2e;
-            background: #ffffff;
-            padding: 40px;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px; }
         .container { max-width: 800px; margin: 0 auto; }
-        h1 {
-            font-size: 2rem;
-            color: #1a1a2e;
-            border-bottom: 3px solid #2563eb;
-            padding-bottom: 12px;
-            margin-bottom: 8px;
-        }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
         .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
-        h2 {
-            font-size: 1.45rem;
-            color: #1e3a5f;
-            margin-top: 40px;
-            margin-bottom: 16px;
-            padding-bottom: 6px;
-            border-bottom: 2px solid #e5e7eb;
-        }
-        h3 {
-            font-size: 1.15rem;
-            color: #334155;
-            margin-top: 28px;
-            margin-bottom: 10px;
-        }
+        h2 { font-size: 1.45rem; color: #1e3a5f; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #e5e7eb; }
+        h3 { font-size: 1.15rem; color: #334155; margin-top: 28px; margin-bottom: 10px; }
         p { margin-bottom: 14px; }
         ul, ol { margin-bottom: 14px; padding-left: 24px; }
         li { margin-bottom: 6px; }
         strong { color: #1e3a5f; }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 16px 0 20px 0;
-            font-size: 0.95rem;
-        }
-        th, td {
-            border: 1px solid #d1d5db;
-            padding: 10px 14px;
-            text-align: left;
-        }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0 20px 0; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
         th { background: #f0f4ff; font-weight: 600; color: #1e3a5f; }
         tr:nth-child(even) { background: #f9fafb; }
-        .definition {
-            background: #eff6ff;
-            border-left: 4px solid #2563eb;
-            padding: 16px 20px;
-            margin: 16px 0;
-            border-radius: 0 8px 8px 0;
-        }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
         .definition strong { color: #1d4ed8; }
-        .exam-tip {
-            background: #fffbeb;
-            border-left: 4px solid #f59e0b;
-            padding: 16px 20px;
-            margin: 16px 0;
-            border-radius: 0 8px 8px 0;
-        }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
-        code {
-            font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
-            background: #f3f4f6;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-        pre {
-            background: #f3f4f6;
-            padding: 18px 20px;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin: 14px 0 18px 0;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
+        code { font-family: 'Consolas', 'Fira Code', 'Courier New', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 18px 20px; border-radius: 8px; overflow-x: auto; margin: 14px 0 18px 0; font-size: 0.9rem; line-height: 1.6; }
         pre code { background: none; padding: 0; }
-        @media print {
-            body { padding: 20px; font-size: 11pt; }
-            .exam-tip, .definition { break-inside: avoid; }
-            h2 { break-after: avoid; }
-        }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
     </style>
 </head>
 <body>
@@ -105,108 +42,129 @@
 <h3>Flat File Databases</h3>
 <p>A <strong>flat file database</strong> stores all data in a single table (a single file, such as a CSV or spreadsheet). Every record occupies one row; every field occupies one column.</p>
 <ul>
-    <li>Simple to set up and suitable for very small datasets.</li>
-    <li>Prone to <strong>data redundancy</strong> &mdash; the same data is repeated in multiple rows.</li>
-    <li>Prone to <strong>data inconsistency</strong> &mdash; if redundant data is updated in one place but not another, the database becomes inconsistent.</li>
-    <li>No mechanism for enforcing relationships or integrity constraints.</li>
+    <li>Simple to set up and suitable for very small datasets with few entities.</li>
+    <li>Prone to <strong>data redundancy</strong> &mdash; the same data is repeated in multiple rows (e.g., a customer's address appears in every order row).</li>
+    <li>Prone to <strong>data inconsistency</strong> &mdash; if redundant data is updated in one place but not another, different rows contradict each other.</li>
+    <li>No mechanism for enforcing relationships, referential integrity, or complex constraints.</li>
+    <li>Difficult to query complex questions spanning multiple entity types.</li>
 </ul>
 
 <h3>Relational Databases</h3>
 <p>A <strong>relational database</strong> organises data into multiple related <strong>tables</strong> (also called <strong>relations</strong>). Each table stores data about one <strong>entity</strong>. Relationships between tables are maintained through <strong>foreign keys</strong>.</p>
 <ul>
-    <li>Reduces data redundancy by splitting data across tables.</li>
-    <li>Maintains data consistency through normalisation and referential integrity.</li>
-    <li>Supports complex queries via SQL.</li>
-    <li>Based on <strong>Codd's relational model</strong> (1970).</li>
+    <li>Reduces data redundancy by splitting data across normalised tables.</li>
+    <li>Maintains data consistency through normalisation and referential integrity constraints.</li>
+    <li>Supports complex queries via SQL (Structured Query Language).</li>
+    <li>Based on <strong>Codd's relational model</strong> (1970) &mdash; Edgar F. Codd defined the mathematical foundations.</li>
+    <li>Managed by a <strong>DBMS</strong> (Database Management System) such as MySQL, PostgreSQL, Oracle, or SQL Server.</li>
 </ul>
 
 <table>
     <tr><th>Feature</th><th>Flat File</th><th>Relational</th></tr>
     <tr><td>Structure</td><td>Single table</td><td>Multiple linked tables</td></tr>
     <tr><td>Redundancy</td><td>High</td><td>Low (after normalisation)</td></tr>
-    <tr><td>Consistency</td><td>Hard to maintain</td><td>Enforced via constraints</td></tr>
-    <tr><td>Query language</td><td>Limited / manual</td><td>SQL</td></tr>
-    <tr><td>Scalability</td><td>Poor</td><td>Good</td></tr>
+    <tr><td>Consistency</td><td>Hard to maintain</td><td>Enforced via constraints and referential integrity</td></tr>
+    <tr><td>Query language</td><td>Limited / manual filtering</td><td>SQL (powerful, standardised)</td></tr>
+    <tr><td>Scalability</td><td>Poor (data grows, redundancy multiplies)</td><td>Good (structured, indexed, optimisable)</td></tr>
+    <tr><td>Concurrent access</td><td>Problematic (file locking)</td><td>Supported (DBMS handles transactions and locking)</td></tr>
 </table>
 
 <h3>Entities, Attributes and Relationships</h3>
 <div class="definition">
-    <strong>Entity</strong> &mdash; a category of object, person, event or concept about which data is stored (e.g., Student, Course, Order).<br>
-    <strong>Attribute</strong> &mdash; a property or characteristic of an entity (e.g., StudentName, DateOfBirth).<br>
-    <strong>Relationship</strong> &mdash; an association between two entities (e.g., a Student <em>enrols on</em> a Course).
+    <strong>Entity</strong> &mdash; a category of object, person, event, or concept about which data is stored. Each entity becomes a <strong>table</strong>. Examples: Student, Course, Order, Product, Employee.<br>
+    <strong>Attribute</strong> &mdash; a property or characteristic of an entity. Each attribute becomes a <strong>column</strong> (field). Examples: StudentName, DateOfBirth, Price, Email.<br>
+    <strong>Relationship</strong> &mdash; an association between two entities. Examples: a Student <em>enrols on</em> a Course; a Customer <em>places</em> an Order.<br>
+    <strong>Instance/Record</strong> &mdash; a specific occurrence of an entity. Each instance becomes a <strong>row</strong> (record). Example: "Alice Smith, DOB 15/09/2006" is one Student record.
 </div>
-<p>In a relational database, each entity becomes a <strong>table</strong>, each attribute becomes a <strong>column</strong> (field), and each instance becomes a <strong>row</strong> (record).</p>
 
 <h3>Entity-Relationship (ER) Diagrams</h3>
-<p>ER diagrams visually represent entities (rectangles), attributes (ovals), and relationships (diamonds or lines with labels).</p>
+<p>ER diagrams visually represent entities (rectangles), attributes (ovals, or listed within the rectangle), and relationships (lines connecting entities, labelled with the relationship name and cardinality).</p>
 
 <p><strong>Degree of relationships:</strong></p>
 <table>
-    <tr><th>Type</th><th>Notation</th><th>Example</th></tr>
-    <tr><td><strong>One-to-One (1:1)</strong></td><td>1 &mdash;&mdash; 1</td><td>Employee &mdash; Company Car (each employee has at most one car)</td></tr>
-    <tr><td><strong>One-to-Many (1:M)</strong></td><td>1 &mdash;&mdash; *</td><td>Customer &mdash; Order (one customer places many orders)</td></tr>
-    <tr><td><strong>Many-to-Many (M:M)</strong></td><td>* &mdash;&mdash; *</td><td>Student &mdash; Module (students take many modules; modules have many students)</td></tr>
+    <tr><th>Type</th><th>Notation</th><th>Example</th><th>Implementation</th></tr>
+    <tr><td><strong>One-to-One (1:1)</strong></td><td>1 &mdash;&mdash; 1</td><td>Employee &mdash; Company Car (each employee has at most one car; each car is assigned to at most one employee)</td><td>FK in either table, or merge into one table</td></tr>
+    <tr><td><strong>One-to-Many (1:M)</strong></td><td>1 &mdash;&mdash; *</td><td>Customer &mdash; Order (one customer places many orders; each order belongs to one customer)</td><td>FK in the "many" side table (Order has CustomerID FK)</td></tr>
+    <tr><td><strong>Many-to-Many (M:M)</strong></td><td>* &mdash;&mdash; *</td><td>Student &mdash; Module (students take many modules; modules have many students)</td><td>Cannot be implemented directly &mdash; must use a junction table</td></tr>
 </table>
 
 <h3>Resolving Many-to-Many Relationships</h3>
-<p>A relational database cannot directly implement a many-to-many relationship. Instead, a <strong>junction table</strong> (also called a link table or associative entity) is introduced. The junction table has two foreign keys, one referencing each of the original entities, and the M:M relationship is replaced by two 1:M relationships.</p>
-<pre><code>Student (StudentID PK, Name, Email)
-Module  (ModuleID PK, Title, Credits)
-Enrolment (StudentID FK, ModuleID FK, EnrolmentDate)
-  -- composite primary key: (StudentID, ModuleID)</code></pre>
+<p>A relational database <strong>cannot directly implement</strong> a many-to-many relationship. Instead, a <strong>junction table</strong> (also called a link table, bridge table, or associative entity) is introduced. The junction table has two foreign keys (one referencing each of the original entities), and the M:M relationship is replaced by two 1:M relationships.</p>
+<pre><code>-- Original M:M relationship: Student &lt;--&gt; Module
+-- Resolution using a junction table:
 
-<div class="exam-tip">When drawing ER diagrams, always resolve M:M relationships into two 1:M relationships via a junction table. Label both sides of every relationship line.</div>
+Student (StudentID PK, Name, Email)
+Module  (ModuleID PK, Title, Credits)
+Enrolment (StudentID FK, ModuleID FK, EnrolmentDate, Grade)
+  -- Composite primary key: (StudentID, ModuleID)
+
+-- Now: Student 1---* Enrolment *---1 Module</code></pre>
+
+<p>The junction table can also hold attributes that belong to the relationship itself (e.g., EnrolmentDate, Grade &mdash; these are properties of the <em>enrolment</em>, not of the student or module individually).</p>
+
+<div class="exam-tip">When drawing ER diagrams, always resolve M:M relationships into two 1:M relationships via a junction table. Label both sides of every relationship line with the cardinality (1 or *). Name the junction table with a meaningful name that describes the relationship (e.g., "Enrolment", "OrderItem", "Booking").</div>
 
 <!-- ============================================================ -->
 <h2>4.10.2 Keys</h2>
 
 <table>
-    <tr><th>Key Type</th><th>Definition</th></tr>
-    <tr><td><strong>Primary Key (PK)</strong></td><td>A unique identifier for each record in a table. Cannot be NULL. Each table has exactly one PK.</td></tr>
-    <tr><td><strong>Foreign Key (FK)</strong></td><td>An attribute in one table that references the primary key of another table, creating a link between the two tables.</td></tr>
-    <tr><td><strong>Composite Key</strong></td><td>A primary key made up of two or more attributes together (e.g., StudentID + ModuleID in a junction table).</td></tr>
-    <tr><td><strong>Candidate Key</strong></td><td>Any attribute (or minimal set of attributes) that <em>could</em> serve as a primary key &mdash; it uniquely identifies every record. The chosen candidate key becomes the PK; the rest are <strong>alternate keys</strong>.</td></tr>
+    <tr><th>Key Type</th><th>Definition</th><th>Example</th></tr>
+    <tr><td><strong>Primary Key (PK)</strong></td><td>A unique identifier for each record in a table. Cannot be NULL. Each table has exactly one PK. Must be unique for every row.</td><td><code>StudentID</code> in the Student table; <code>OrderID</code> in the Order table. Often an auto-incrementing integer or UUID.</td></tr>
+    <tr><td><strong>Foreign Key (FK)</strong></td><td>An attribute in one table that references the primary key of another table, creating a link between them. Must match an existing PK value (or be NULL if allowed).</td><td><code>CustomerID</code> in the Order table referencing <code>CustomerID</code> PK in the Customer table.</td></tr>
+    <tr><td><strong>Composite Key</strong></td><td>A primary key made up of two or more attributes together. No single attribute is unique, but the combination is.</td><td><code>(StudentID, ModuleID)</code> in an Enrolment junction table &mdash; neither alone is unique, but the pair is.</td></tr>
+    <tr><td><strong>Candidate Key</strong></td><td>Any attribute (or minimal set of attributes) that <em>could</em> serve as a primary key &mdash; it uniquely identifies every record. There may be multiple candidate keys.</td><td>In a Person table, both <code>NationalInsuranceNo</code> and <code>PassportNo</code> could uniquely identify a person.</td></tr>
+    <tr><td><strong>Alternate Key</strong></td><td>A candidate key that was not chosen as the primary key.</td><td>If <code>NationalInsuranceNo</code> is chosen as PK, then <code>PassportNo</code> is an alternate key.</td></tr>
 </table>
 
 <div class="definition">
-    <strong>Referential Integrity</strong> &mdash; a constraint ensuring that every foreign key value in one table matches an existing primary key value in the referenced table (or is NULL, if allowed). This prevents <strong>orphan records</strong> &mdash; rows that reference non-existent data.
+    <strong>Referential Integrity</strong> &mdash; a constraint ensuring that every foreign key value in one table matches an existing primary key value in the referenced table (or is NULL, if allowed). This prevents <strong>orphan records</strong> &mdash; rows that reference non-existent data.<br><br>
+    <strong>Consequences:</strong> You cannot insert an Order with a CustomerID that does not exist in the Customer table. You cannot delete a Customer who still has associated Orders (unless you cascade the delete or set the FK to NULL).
 </div>
-<p>For example, if an Order table has a foreign key <code>CustomerID</code> referencing the Customer table, you cannot insert an order with a CustomerID that does not exist in Customer, and you cannot delete a Customer who still has orders unless you cascade the delete or set the FK to NULL.</p>
+
+<p><strong>Cascade actions</strong> define what happens when a referenced PK is deleted or updated:</p>
+<ul>
+    <li><code>ON DELETE CASCADE</code> &mdash; automatically delete all related records (e.g., deleting a Customer deletes all their Orders)</li>
+    <li><code>ON DELETE SET NULL</code> &mdash; set the FK to NULL (the Order remains but has no Customer)</li>
+    <li><code>ON DELETE RESTRICT</code> &mdash; prevent deletion if related records exist (default behaviour)</li>
+</ul>
 
 <!-- ============================================================ -->
 <h2>4.10.3 Normalisation</h2>
 
-<p><strong>Normalisation</strong> is the process of organising a relational database to reduce data redundancy and improve data integrity. It involves progressively decomposing tables through a series of <strong>normal forms</strong>.</p>
+<p><strong>Normalisation</strong> is the systematic process of organising a relational database to reduce data redundancy and improve data integrity. It involves progressively decomposing tables through a series of <strong>normal forms</strong>.</p>
 
-<h3>Why normalise?</h3>
+<h3>Why Normalise?</h3>
+<p>Normalisation eliminates <strong>anomalies</strong> &mdash; problems that arise from poorly structured data:</p>
 <ul>
-    <li>Eliminate <strong>data redundancy</strong> (repeated data).</li>
-    <li>Eliminate <strong>update anomalies</strong> (changing data in one place but not another).</li>
-    <li>Eliminate <strong>insertion anomalies</strong> (unable to add data without other unrelated data).</li>
-    <li>Eliminate <strong>deletion anomalies</strong> (deleting a record accidentally removes other needed data).</li>
+    <li><strong>Update anomaly:</strong> Changing data in one place but not in all redundant copies (e.g., a customer changes address but it is only updated in 3 of 5 order rows).</li>
+    <li><strong>Insertion anomaly:</strong> Unable to add data without other unrelated data (e.g., cannot add a new module to the database until at least one student enrols on it).</li>
+    <li><strong>Deletion anomaly:</strong> Deleting a record accidentally removes other needed data (e.g., deleting the last student on a module removes all information about that module).</li>
 </ul>
 
 <h3>Unnormalised Form (UNF)</h3>
-<p>Data as it comes in, potentially with repeating groups and no primary key. May have multiple values in a single cell.</p>
+<p>Data as it comes in &mdash; potentially with repeating groups, multi-valued attributes, and no primary key.</p>
 <pre><code>OrderID | Customer | Items
 1001    | Smith    | Pen, Notebook, Ruler
-1002    | Jones    | Pen</code></pre>
+1002    | Jones    | Pen
+-- Items column contains multiple values (repeating group)</code></pre>
 
 <h3>First Normal Form (1NF)</h3>
 <div class="definition">
     A table is in <strong>1NF</strong> if:
     <ul>
-        <li>All values are <strong>atomic</strong> (no repeating groups or multi-valued attributes).</li>
+        <li>All values are <strong>atomic</strong> (each cell contains a single value &mdash; no repeating groups, no lists, no nested tables).</li>
         <li>Each row is uniquely identifiable (a primary key exists).</li>
+        <li>Each column contains values of a single data type.</li>
     </ul>
 </div>
-<p>Remove repeating groups by creating separate rows:</p>
+<p>Fix: remove repeating groups by creating separate rows for each value:</p>
 <pre><code>OrderID | Customer | Item
 1001    | Smith    | Pen
 1001    | Smith    | Notebook
 1001    | Smith    | Ruler
 1002    | Jones    | Pen
--- Composite PK: (OrderID, Item)</code></pre>
+-- Composite PK: (OrderID, Item)
+-- Now every cell contains exactly one value</code></pre>
 
 <h3>Second Normal Form (2NF)</h3>
 <div class="definition">
@@ -216,103 +174,114 @@ Enrolment (StudentID FK, ModuleID FK, EnrolmentDate)
         <li>Every non-key attribute is <strong>fully functionally dependent</strong> on the <em>whole</em> primary key (no <strong>partial dependencies</strong>).</li>
     </ul>
 </div>
-<p>Partial dependency: an attribute depends on only <em>part</em> of a composite key. In the table above, <code>Customer</code> depends only on <code>OrderID</code>, not on <code>(OrderID, Item)</code>.</p>
-<p>Fix: decompose into separate tables.</p>
-<pre><code>Order (OrderID PK, Customer)
-OrderItem (OrderID FK, Item)  -- composite PK: (OrderID, Item)</code></pre>
+<p><strong>Partial dependency:</strong> An attribute depends on only <em>part</em> of a composite key. In the table above, <code>Customer</code> depends only on <code>OrderID</code> (not on <code>Item</code>), so it is partially dependent on the composite key (OrderID, Item).</p>
+<p>Fix: decompose into separate tables, moving partially dependent attributes to their own table:</p>
+<pre><code>Order     (OrderID PK, Customer)
+OrderItem (OrderID FK, Item)   -- Composite PK: (OrderID, Item)
 
-<div class="exam-tip">2NF only applies when the primary key is composite. If a table has a single-column PK, it is automatically in 2NF (assuming 1NF).</div>
+-- Customer now stored once per order, not repeated per item</code></pre>
+
+<div class="exam-tip">2NF only applies when the primary key is composite (made of multiple columns). If a table has a single-column PK, it is automatically in 2NF (assuming it is already in 1NF), because partial dependency on part of the key is impossible when the key is only one column.</div>
 
 <h3>Third Normal Form (3NF)</h3>
 <div class="definition">
     A table is in <strong>3NF</strong> if:
     <ul>
         <li>It is in 2NF.</li>
-        <li>There are no <strong>transitive dependencies</strong> &mdash; no non-key attribute depends on another non-key attribute.</li>
+        <li>There are no <strong>transitive dependencies</strong> &mdash; no non-key attribute depends on another non-key attribute. Every non-key attribute must depend <em>directly</em> on the primary key and nothing else.</li>
     </ul>
 </div>
-<p>Transitive dependency example:</p>
-<pre><code>Student (StudentID PK, Name, TutorID, TutorName)
--- TutorName depends on TutorID, not on StudentID directly.</code></pre>
-<p>Fix: move the transitively dependent attribute to its own table.</p>
+<p><strong>Transitive dependency example:</strong></p>
+<pre><code>Student (StudentID PK, Name, TutorID, TutorName, TutorEmail)
+-- TutorName and TutorEmail depend on TutorID, NOT directly on StudentID.
+-- StudentID &rarr; TutorID &rarr; TutorName  (transitive chain)</code></pre>
+<p>Fix: move the transitively dependent attributes to their own table:</p>
 <pre><code>Student (StudentID PK, Name, TutorID FK)
-Tutor   (TutorID PK, TutorName)</code></pre>
+Tutor   (TutorID PK, TutorName, TutorEmail)
+
+-- Now TutorName depends directly on TutorID (its own PK)
+-- No transitive dependencies remain</code></pre>
+
+<p><strong>Informal rule for 3NF:</strong> "Every non-key attribute must depend on the key, the whole key, and nothing but the key" (attributed to Bill Kent).</p>
 
 <h3>Full Worked Example</h3>
 <p><strong>UNF &mdash; Library Loans:</strong></p>
-<pre><code>MemberID | MemberName | Books Borrowed
-M01      | Alice      | {(B1, "Databases", 2020), (B2, "Networks", 2019)}
-M02      | Bob        | {(B1, "Databases", 2020)}</code></pre>
+<pre><code>MemberID | MemberName | Phone     | Books Borrowed
+M01      | Alice      | 07700123  | {(B1, "Databases", "Connolly", 2020), (B2, "Networks", "Kurose", 2019)}
+M02      | Bob        | 07700456  | {(B1, "Databases", "Connolly", 2020)}</code></pre>
 
-<p><strong>1NF</strong> &mdash; remove repeating group:</p>
-<pre><code>MemberID | MemberName | BookID | BookTitle  | Year
-M01      | Alice      | B1     | Databases  | 2020
-M01      | Alice      | B2     | Networks   | 2019
-M02      | Bob        | B1     | Databases  | 2020
+<p><strong>1NF</strong> &mdash; remove repeating group, make all values atomic:</p>
+<pre><code>MemberID | MemberName | Phone    | BookID | BookTitle  | Author   | Year
+M01      | Alice      | 07700123 | B1     | Databases  | Connolly | 2020
+M01      | Alice      | 07700123 | B2     | Networks   | Kurose   | 2019
+M02      | Bob        | 07700456 | B1     | Databases  | Connolly | 2020
 -- PK: (MemberID, BookID)</code></pre>
 
-<p><strong>2NF</strong> &mdash; remove partial dependencies:</p>
-<pre><code>Member (MemberID PK, MemberName)
-   -- MemberName depends only on MemberID
+<p><strong>2NF</strong> &mdash; remove partial dependencies (attributes depending on only part of the composite key):</p>
+<pre><code>Member (MemberID PK, MemberName, Phone)
+   -- MemberName and Phone depend only on MemberID (partial dep. removed)
 
-Book (BookID PK, BookTitle, Year)
-   -- BookTitle and Year depend only on BookID
+Book (BookID PK, BookTitle, Author, Year)
+   -- BookTitle, Author, Year depend only on BookID (partial dep. removed)
 
-Loan (MemberID FK, BookID FK)
-   -- composite PK: (MemberID, BookID)</code></pre>
+Loan (MemberID FK, BookID FK, LoanDate)
+   -- Composite PK: (MemberID, BookID)
+   -- LoanDate depends on the whole key (which member borrowed which book)</code></pre>
 
-<p><strong>3NF</strong> &mdash; already achieved (no transitive dependencies in any table).</p>
+<p><strong>3NF</strong> &mdash; check for transitive dependencies. None remain in any table (all non-key attributes depend directly on their table's PK). Already in 3NF.</p>
 
 <!-- ============================================================ -->
 <h2>4.10.4 SQL (Structured Query Language)</h2>
 
-<p><strong>SQL</strong> is the standard language for querying and manipulating relational databases. It is declarative &mdash; you describe <em>what</em> data you want, not <em>how</em> to get it.</p>
+<p><strong>SQL</strong> is the standard language for querying and manipulating relational databases. It is <strong>declarative</strong> &mdash; you describe <em>what</em> data you want, not <em>how</em> to get it. The DBMS optimises the execution. SQL is divided into DDL (defining structure) and DML (manipulating data).</p>
 
 <h3>Data Definition Language (DDL)</h3>
-<pre><code>-- Create a table
+<pre><code>-- Create a table with constraints
 CREATE TABLE Student (
     StudentID   INTEGER     PRIMARY KEY,
     FirstName   VARCHAR(50) NOT NULL,
     LastName    VARCHAR(50) NOT NULL,
     DOB         DATE,
-    Email       VARCHAR(100),
+    Email       VARCHAR(100) UNIQUE,
     TutorID     INTEGER,
     FOREIGN KEY (TutorID) REFERENCES Tutor(TutorID)
 );
+
+-- Common data types:
+-- INTEGER, REAL/FLOAT, VARCHAR(n), CHAR(n), DATE, BOOLEAN, TEXT
 
 -- Modify a table structure
 ALTER TABLE Student ADD Phone VARCHAR(20);
 ALTER TABLE Student DROP COLUMN Phone;
 
--- Delete a table entirely
+-- Delete a table entirely (irreversible!)
 DROP TABLE Student;</code></pre>
 
 <h3>Data Manipulation Language (DML)</h3>
+<pre><code>-- INSERT: add a new record
+INSERT INTO Student (StudentID, FirstName, LastName, DOB, Email, TutorID)
+VALUES (1, 'Alice', 'Smith', '2006-09-15', 'alice@school.uk', 101);
 
-<p><strong>INSERT</strong> &mdash; add a new record:</p>
-<pre><code>INSERT INTO Student (StudentID, FirstName, LastName, DOB, Email, TutorID)
-VALUES (1, 'Alice', 'Smith', '2006-09-15', 'alice@school.uk', 101);</code></pre>
-
-<p><strong>UPDATE</strong> &mdash; modify existing records:</p>
-<pre><code>UPDATE Student
+-- UPDATE: modify existing records (always use WHERE to avoid updating ALL rows!)
+UPDATE Student
 SET Email = 'alice.smith@school.uk'
-WHERE StudentID = 1;</code></pre>
+WHERE StudentID = 1;
 
-<p><strong>DELETE</strong> &mdash; remove records:</p>
-<pre><code>DELETE FROM Student
+-- DELETE: remove records (always use WHERE!)
+DELETE FROM Student
 WHERE StudentID = 1;</code></pre>
 
 <h3>SELECT Queries</h3>
-<pre><code>-- Basic select
+<pre><code>-- Select specific columns
 SELECT FirstName, LastName FROM Student;
 
 -- Select all columns
 SELECT * FROM Student;
 
--- With condition
+-- With a condition (WHERE clause)
 SELECT * FROM Student WHERE LastName = 'Smith';
 
--- Multiple conditions
+-- Multiple conditions with AND / OR / NOT
 SELECT * FROM Student
 WHERE LastName = 'Smith' AND DOB > '2005-01-01';
 
@@ -320,158 +289,181 @@ SELECT * FROM Student
 WHERE LastName = 'Smith' OR LastName = 'Jones';
 
 SELECT * FROM Student
-WHERE NOT LastName = 'Smith';</code></pre>
+WHERE NOT LastName = 'Smith';
 
-<h3>WHERE Clause Operators</h3>
-<table>
-    <tr><th>Operator</th><th>Purpose</th><th>Example</th></tr>
-    <tr><td><code>=</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></td><td>Comparison</td><td><code>WHERE Age >= 18</code></td></tr>
-    <tr><td><code>AND</code>, <code>OR</code>, <code>NOT</code></td><td>Logical operators</td><td><code>WHERE Age >= 18 AND City = 'London'</code></td></tr>
-    <tr><td><code>LIKE</code></td><td>Pattern matching (<code>%</code> = any chars, <code>_</code> = one char)</td><td><code>WHERE Name LIKE 'A%'</code></td></tr>
-    <tr><td><code>IN</code></td><td>Match against a list</td><td><code>WHERE City IN ('London', 'York')</code></td></tr>
-    <tr><td><code>BETWEEN</code></td><td>Range (inclusive)</td><td><code>WHERE Age BETWEEN 16 AND 18</code></td></tr>
-</table>
+-- Wildcard matching with LIKE
+SELECT * FROM Student WHERE Email LIKE '%@school.uk';  -- ends with @school.uk
+SELECT * FROM Student WHERE FirstName LIKE 'A%';       -- starts with A
+SELECT * FROM Student WHERE LastName LIKE '_ones';      -- 5 chars ending in 'ones'
 
-<h3>Ordering and Grouping</h3>
+-- IN: match against a list
+SELECT * FROM Student WHERE LastName IN ('Smith', 'Jones', 'Williams');
+
+-- BETWEEN: inclusive range
+SELECT * FROM Student WHERE DOB BETWEEN '2005-01-01' AND '2006-12-31';</code></pre>
+
+<h3>Ordering, Grouping and Aggregation</h3>
 <pre><code>-- Sort results
-SELECT * FROM Student ORDER BY LastName ASC;
-SELECT * FROM Student ORDER BY DOB DESC;
+SELECT * FROM Student ORDER BY LastName ASC;        -- A-Z (ascending)
+SELECT * FROM Student ORDER BY DOB DESC;            -- newest first (descending)
+SELECT * FROM Student ORDER BY LastName ASC, FirstName ASC;  -- multi-column sort
 
--- Group and aggregate
+-- Aggregate functions: COUNT, SUM, AVG, MIN, MAX
+SELECT COUNT(*) FROM Student;                       -- total number of students
+SELECT AVG(Mark) FROM Result WHERE ModuleID = 'CS1';
+SELECT MAX(Mark) AS TopMark FROM Result;            -- AS creates a column alias
+SELECT MIN(DOB) AS OldestStudent FROM Student;
+
+-- GROUP BY: group rows by a column, then aggregate within each group
 SELECT TutorID, COUNT(*) AS NumStudents
 FROM Student
 GROUP BY TutorID;
 
--- Filter groups (HAVING filters after grouping; WHERE filters before)
+-- HAVING: filter groups AFTER aggregation (WHERE filters BEFORE grouping)
 SELECT TutorID, COUNT(*) AS NumStudents
 FROM Student
 GROUP BY TutorID
-HAVING COUNT(*) > 5;</code></pre>
+HAVING COUNT(*) > 5;
 
-<div class="exam-tip"><code>WHERE</code> filters individual rows <em>before</em> grouping. <code>HAVING</code> filters groups <em>after</em> aggregation. A common exam question is asking you to use both in the same query.</div>
+-- Combined example: average mark per module, only modules with avg > 60, sorted
+SELECT ModuleID, AVG(Mark) AS AvgMark, COUNT(*) AS NumStudents
+FROM Result
+WHERE Mark IS NOT NULL
+GROUP BY ModuleID
+HAVING AVG(Mark) > 60
+ORDER BY AvgMark DESC;</code></pre>
 
-<h3>Aggregate Functions</h3>
-<table>
-    <tr><th>Function</th><th>Description</th><th>Example</th></tr>
-    <tr><td><code>COUNT(*)</code></td><td>Number of rows</td><td><code>SELECT COUNT(*) FROM Student;</code></td></tr>
-    <tr><td><code>SUM(col)</code></td><td>Total of a numeric column</td><td><code>SELECT SUM(Price) FROM OrderItem;</code></td></tr>
-    <tr><td><code>AVG(col)</code></td><td>Mean average</td><td><code>SELECT AVG(Mark) FROM Result;</code></td></tr>
-    <tr><td><code>MIN(col)</code></td><td>Smallest value</td><td><code>SELECT MIN(DOB) FROM Student;</code></td></tr>
-    <tr><td><code>MAX(col)</code></td><td>Largest value</td><td><code>SELECT MAX(Mark) FROM Result;</code></td></tr>
-</table>
+<div class="exam-tip"><code>WHERE</code> filters individual rows <em>before</em> grouping. <code>HAVING</code> filters groups <em>after</em> aggregation. A common exam question requires both in the same query. The execution order is: FROM &rarr; WHERE &rarr; GROUP BY &rarr; HAVING &rarr; SELECT &rarr; ORDER BY.</div>
 
 <h3>JOIN Operations</h3>
-<p>Joins combine rows from two or more tables based on a related column.</p>
+<p>Joins combine rows from two or more tables based on a related column (typically a foreign key matching a primary key).</p>
 
-<p><strong>INNER JOIN</strong> &mdash; returns only rows that have matching values in both tables:</p>
-<pre><code>SELECT Student.FirstName, Tutor.TutorName
+<pre><code>-- INNER JOIN: returns only rows that have matching values in BOTH tables
+SELECT Student.FirstName, Student.LastName, Tutor.TutorName
 FROM Student
-INNER JOIN Tutor ON Student.TutorID = Tutor.TutorID;</code></pre>
+INNER JOIN Tutor ON Student.TutorID = Tutor.TutorID;
+-- Students without a tutor are EXCLUDED; tutors without students are EXCLUDED
 
-<p><strong>LEFT JOIN (LEFT OUTER JOIN)</strong> &mdash; returns all rows from the left table and matching rows from the right table. Non-matching right-side columns are NULL:</p>
-<pre><code>SELECT Student.FirstName, Tutor.TutorName
+-- LEFT JOIN: ALL rows from left table + matching rows from right (NULLs where no match)
+SELECT Student.FirstName, Tutor.TutorName
 FROM Student
 LEFT JOIN Tutor ON Student.TutorID = Tutor.TutorID;
--- Includes students even if they have no tutor assigned</code></pre>
+-- ALL students are included, even those without a tutor (TutorName = NULL)
 
-<p><strong>RIGHT JOIN (RIGHT OUTER JOIN)</strong> &mdash; returns all rows from the right table and matching rows from the left table:</p>
-<pre><code>SELECT Student.FirstName, Tutor.TutorName
+-- RIGHT JOIN: ALL rows from right table + matching rows from left
+SELECT Student.FirstName, Tutor.TutorName
 FROM Student
 RIGHT JOIN Tutor ON Student.TutorID = Tutor.TutorID;
--- Includes tutors even if they have no students assigned</code></pre>
+-- ALL tutors included, even those with no students (FirstName = NULL)
+
+-- Multi-table join example: student names with their module titles
+SELECT s.FirstName, s.LastName, m.Title
+FROM Student s
+INNER JOIN Enrolment e ON s.StudentID = e.StudentID
+INNER JOIN Module m ON e.ModuleID = m.ModuleID
+WHERE m.Credits >= 20
+ORDER BY s.LastName;</code></pre>
 
 <table>
-    <tr><th>Join Type</th><th>Returns</th></tr>
-    <tr><td>INNER JOIN</td><td>Only matching rows from both tables</td></tr>
-    <tr><td>LEFT JOIN</td><td>All rows from left table + matching from right (NULLs for no match)</td></tr>
-    <tr><td>RIGHT JOIN</td><td>All rows from right table + matching from left (NULLs for no match)</td></tr>
+    <tr><th>Join Type</th><th>Returns</th><th>Use When</th></tr>
+    <tr><td>INNER JOIN</td><td>Only matching rows from both tables</td><td>You only want records that have related data in both tables</td></tr>
+    <tr><td>LEFT JOIN</td><td>All rows from left + matching from right (NULLs for no match)</td><td>You want all records from the left table regardless of whether they have a match</td></tr>
+    <tr><td>RIGHT JOIN</td><td>All rows from right + matching from left (NULLs for no match)</td><td>You want all records from the right table regardless</td></tr>
 </table>
 
-<div class="exam-tip">In the exam, you may need to write multi-table queries combining JOINs, WHERE, GROUP BY, HAVING and ORDER BY. Practise writing these from scratch without a reference.</div>
+<div class="exam-tip">In the exam, you may need to write multi-table queries combining JOINs, WHERE, GROUP BY, HAVING, and ORDER BY. Practice writing these from scratch. Common mistakes: forgetting the ON clause in a JOIN; using WHERE instead of HAVING for aggregate conditions; omitting the table name prefix when column names are ambiguous.</div>
 
 <!-- ============================================================ -->
 <h2>4.10.5 Transaction Processing</h2>
 
 <h3>What is a Transaction?</h3>
-<p>A <strong>transaction</strong> is a sequence of one or more database operations (reads/writes) that are treated as a single logical unit of work. Either <em>all</em> operations succeed, or <em>none</em> of them are applied.</p>
+<p>A <strong>transaction</strong> is a sequence of one or more database operations (reads and writes) that are treated as a <strong>single logical unit of work</strong>. Either <em>all</em> operations succeed (<strong>commit</strong>), or <em>none</em> of them are applied (<strong>rollback</strong>). The classic example is a bank transfer: debit account A AND credit account B must both succeed or both fail.</p>
+
+<pre><code>-- Example transaction: transfer &pound;100 from account A to account B
+BEGIN TRANSACTION;
+    UPDATE Account SET Balance = Balance - 100 WHERE AccountID = 'A';
+    UPDATE Account SET Balance = Balance + 100 WHERE AccountID = 'B';
+COMMIT;
+-- If any statement fails, ROLLBACK undoes both updates</code></pre>
 
 <h3>ACID Properties</h3>
 <div class="definition">
     <strong>ACID</strong> is the set of four properties that guarantee reliable transaction processing:
 </div>
 <table>
-    <tr><th>Property</th><th>Meaning</th></tr>
-    <tr><td><strong>Atomicity</strong></td><td>A transaction is "all or nothing." If any part fails, the entire transaction is rolled back to its previous state. No partial updates are applied.</td></tr>
-    <tr><td><strong>Consistency</strong></td><td>A transaction moves the database from one valid state to another. All integrity constraints (e.g., referential integrity, data types) are maintained.</td></tr>
-    <tr><td><strong>Isolation</strong></td><td>Concurrent transactions do not interfere with each other. The result is the same as if they had executed sequentially.</td></tr>
-    <tr><td><strong>Durability</strong></td><td>Once a transaction is committed, its changes are permanent and survive system failures (e.g., power loss), typically by writing to disk or a transaction log.</td></tr>
+    <tr><th>Property</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td><strong>Atomicity</strong></td><td>"All or nothing." If any part of the transaction fails, the entire transaction is rolled back to its previous state. No partial updates are applied.</td><td>In a bank transfer, if the credit fails after the debit succeeds, the debit is also reversed.</td></tr>
+    <tr><td><strong>Consistency</strong></td><td>A transaction moves the database from one valid state to another. All integrity constraints (referential integrity, data types, check constraints) are maintained throughout.</td><td>After a transfer, the total balance across all accounts remains the same.</td></tr>
+    <tr><td><strong>Isolation</strong></td><td>Concurrent transactions do not interfere with each other. The result is the same as if they had executed sequentially (one at a time).</td><td>Two simultaneous transfers from the same account do not result in an incorrect balance.</td></tr>
+    <tr><td><strong>Durability</strong></td><td>Once a transaction is committed, its changes are permanent and survive system failures (power loss, crashes). Typically achieved by writing to a transaction log on disk before acknowledging the commit.</td><td>If the server crashes after a committed transfer, the transfer is not lost when the server restarts.</td></tr>
 </table>
 
 <h3>Record Locking</h3>
-<p>When multiple users access the same database concurrently, <strong>record locking</strong> prevents conflicts. When a transaction reads or writes a record, it acquires a lock, preventing other transactions from modifying that record until the lock is released.</p>
+<p>When multiple users access the same database concurrently, <strong>record locking</strong> prevents conflicts by controlling access to shared data:</p>
 <ul>
-    <li><strong>Shared lock (read lock)</strong> &mdash; multiple transactions can read the same record simultaneously, but none can write.</li>
-    <li><strong>Exclusive lock (write lock)</strong> &mdash; only one transaction can access the record (no other reads or writes).</li>
+    <li><strong>Shared lock (read lock)</strong> &mdash; multiple transactions can read the same record simultaneously, but none can write to it until all shared locks are released.</li>
+    <li><strong>Exclusive lock (write lock)</strong> &mdash; only one transaction can access the record. No other reads or writes are allowed until the lock is released.</li>
 </ul>
+<p>Locks are acquired automatically by the DBMS when a transaction reads or writes data, and released when the transaction commits or rolls back.</p>
 
 <h3>Deadlock</h3>
 <div class="definition">
-    <strong>Deadlock</strong> occurs when two or more transactions are each waiting for the other to release a lock, resulting in a circular dependency where none can proceed.
+    <strong>Deadlock</strong> occurs when two or more transactions are each waiting for the other to release a lock, creating a circular dependency where none can proceed.
 </div>
-<p><strong>Example:</strong></p>
-<ul>
-    <li>Transaction A locks Record 1 and requests Record 2.</li>
-    <li>Transaction B locks Record 2 and requests Record 1.</li>
-    <li>Neither can proceed &mdash; deadlock.</li>
-</ul>
+<pre><code>-- Deadlock scenario:
+-- Transaction A locks Record 1, then requests Record 2
+-- Transaction B locks Record 2, then requests Record 1
+-- Both are blocked waiting for the other &mdash; deadlock!
+
+-- Timeline:
+-- T1: Transaction A: LOCK Record 1  (success)
+-- T2: Transaction B: LOCK Record 2  (success)
+-- T3: Transaction A: LOCK Record 2  (BLOCKED &mdash; B holds it)
+-- T4: Transaction B: LOCK Record 1  (BLOCKED &mdash; A holds it)
+-- Neither can proceed &rarr; DEADLOCK</code></pre>
+
 <p><strong>Solutions to deadlock:</strong></p>
 <ul>
-    <li><strong>Timeout</strong> &mdash; if a transaction waits too long for a lock, it is rolled back and restarted.</li>
-    <li><strong>Deadlock detection</strong> &mdash; the DBMS periodically checks for circular dependencies and rolls back one transaction (the "victim").</li>
-    <li><strong>Lock ordering</strong> &mdash; require all transactions to acquire locks in the same predefined order.</li>
-    <li><strong>Serialisation</strong> &mdash; force transactions to execute one at a time (reduces concurrency).</li>
+    <li><strong>Timeout</strong> &mdash; if a transaction waits too long for a lock, it is automatically rolled back and restarted. Simple but may cause unnecessary rollbacks.</li>
+    <li><strong>Deadlock detection</strong> &mdash; the DBMS periodically checks for circular dependencies in the wait graph. If found, one transaction is chosen as the "victim", rolled back, and restarted.</li>
+    <li><strong>Lock ordering</strong> &mdash; require all transactions to acquire locks in the same predefined order. If both A and B always lock Record 1 before Record 2, circular waits cannot occur.</li>
+    <li><strong>Timestamp ordering</strong> &mdash; transactions are ordered by timestamp; older transactions get priority.</li>
 </ul>
 
 <!-- ============================================================ -->
 <h2>4.10.6 Data Redundancy and Inconsistency</h2>
 
 <div class="definition">
-    <strong>Data redundancy</strong> &mdash; unnecessary duplication of data across the database (e.g., a customer's address stored in every order row).<br><br>
-    <strong>Data inconsistency</strong> &mdash; contradictory copies of the same data (e.g., a customer's address updated in one row but not in others).
+    <strong>Data redundancy</strong> &mdash; unnecessary duplication of data across the database (e.g., a customer's address stored in every order row instead of once in a Customer table).<br><br>
+    <strong>Data inconsistency</strong> &mdash; contradictory copies of the same data (e.g., a customer's address updated in one order row but not in others, leading to different versions of the "truth").
 </div>
 
-<p>Redundancy leads to:</p>
-<ul>
-    <li>Wasted storage space.</li>
-    <li>Increased risk of inconsistency.</li>
-    <li>Update anomalies, insertion anomalies and deletion anomalies.</li>
-</ul>
-<p>These problems are minimised through <strong>normalisation</strong> and the use of <strong>foreign keys</strong> to reference shared data rather than duplicating it.</p>
+<p>Redundancy leads to: wasted storage space; increased risk of inconsistency; update, insertion, and deletion anomalies. These problems are minimised through <strong>normalisation</strong> (to at least 3NF) and the use of <strong>foreign keys</strong> to reference shared data rather than duplicating it.</p>
 
 <!-- ============================================================ -->
 <h2>4.10.7 Client-Server Databases</h2>
 
-<p>In a <strong>client-server database</strong> architecture, the database resides on a central <strong>server</strong>, and multiple <strong>clients</strong> send requests (queries) to the server over a network. The server processes the queries and returns results.</p>
+<p>In a <strong>client-server database</strong> architecture, the database resides on a central <strong>server</strong>, and multiple <strong>clients</strong> send SQL queries to the server over a network. The server processes the queries using its DBMS and returns only the results.</p>
 
 <table>
     <tr><th>Aspect</th><th>Detail</th></tr>
-    <tr><td>Central storage</td><td>One authoritative copy of the database on the server avoids synchronisation issues.</td></tr>
-    <tr><td>Concurrent access</td><td>Multiple users can access the database simultaneously; the DBMS handles locking and transactions.</td></tr>
-    <tr><td>Security</td><td>Access control is managed centrally on the server (user accounts, permissions).</td></tr>
-    <tr><td>Backup</td><td>Only the server needs to be backed up, simplifying disaster recovery.</td></tr>
-    <tr><td>Processing</td><td>Query processing happens on the server, reducing load on client machines. Only results are sent across the network.</td></tr>
+    <tr><td>Central storage</td><td>One authoritative copy of the database on the server &mdash; avoids synchronisation issues and conflicting copies.</td></tr>
+    <tr><td>Concurrent access</td><td>Multiple users can query and update the database simultaneously. The DBMS handles locking, transactions, and ACID compliance.</td></tr>
+    <tr><td>Security</td><td>Access control managed centrally: user accounts, role-based permissions (GRANT/REVOKE), encryption at rest and in transit.</td></tr>
+    <tr><td>Backup</td><td>Only the server needs to be backed up, simplifying disaster recovery. Automated backup schedules, point-in-time recovery.</td></tr>
+    <tr><td>Processing</td><td>Query processing and optimisation happen on the server (which has powerful hardware). Only results are sent across the network, minimising traffic.</td></tr>
     <tr><td>Network dependency</td><td>Clients cannot access the database without a network connection to the server.</td></tr>
 </table>
 
 <p><strong>Key components:</strong></p>
 <ul>
-    <li><strong>DBMS (Database Management System)</strong> &mdash; software on the server that manages the database (e.g., MySQL, PostgreSQL, Oracle). Handles storage, querying, security, concurrency and backup.</li>
-    <li><strong>Query processor</strong> &mdash; parses and optimises SQL queries.</li>
-    <li><strong>Transaction manager</strong> &mdash; ensures ACID properties are maintained.</li>
-    <li><strong>Client application</strong> &mdash; the front-end interface used to submit queries (e.g., a web application, desktop app, or command-line tool).</li>
+    <li><strong>DBMS (Database Management System)</strong> &mdash; software on the server that manages all aspects of the database: storage engine, query processor, transaction manager, security, backup/recovery. Examples: MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server, SQLite (embedded).</li>
+    <li><strong>Query processor / optimiser</strong> &mdash; parses SQL queries, checks syntax and semantics, generates an optimal execution plan (choosing the best indexes, join strategies, etc.).</li>
+    <li><strong>Transaction manager</strong> &mdash; ensures ACID properties are maintained for all transactions.</li>
+    <li><strong>Client application</strong> &mdash; the front-end interface: a web application (PHP/Python connecting to MySQL), a desktop app, a mobile app, or a command-line SQL client.</li>
 </ul>
 
-<div class="exam-tip">Be ready to compare client-server databases with flat file approaches and to explain how the DBMS manages concurrent access using record locking and transactions. Questions often combine these concepts together.</div>
+<div class="exam-tip">Be ready to compare client-server databases with flat file approaches, explain how the DBMS manages concurrent access (using record locking and transactions), and describe the ACID properties. A common exam scenario: "Two users try to book the same seat on a flight simultaneously. Explain how the DBMS prevents double-booking." Answer: use exclusive locking on the seat record, wrapped in a transaction with atomicity.</div>
 
 </div>
 </body>

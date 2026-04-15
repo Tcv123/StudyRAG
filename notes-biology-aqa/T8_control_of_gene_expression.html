@@ -18,6 +18,8 @@
   .definition strong { color: #1e3a5f; }
   .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
   .exam-tip strong { color: #b45309; }
+  .real-world { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #166534; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
@@ -28,21 +30,35 @@
 <h2>8.1 Gene Expression and Regulation</h2>
 
 <div class="definition">
-<strong>Gene expression:</strong> The process by which genetic information in DNA is used to produce a functional product (usually a protein). Not all genes are expressed in all cells at all times — differential gene expression determines cell specialisation and development.
+<strong>Gene expression:</strong> The process by which the genetic information encoded in DNA is used to produce a functional product (usually a protein via transcription and translation). <strong>Not all genes are expressed in all cells at all times</strong> — differential gene expression determines cell specialisation, development, and responses to environmental signals. Every cell in an organism contains the same genome, but different cells express different subsets of genes, producing different proteomes.
 </div>
 
-<p>Gene expression can be controlled at several levels:</p>
-<ul>
-<li><strong>Transcriptional level:</strong> Whether or not a gene is transcribed into mRNA (the most common control point)</li>
-<li><strong>Post-transcriptional level:</strong> mRNA processing (alternative splicing, mRNA stability/degradation)</li>
-<li><strong>Translational level:</strong> Whether mRNA is translated (e.g. RNA interference)</li>
-<li><strong>Post-translational level:</strong> Protein modification, activation, or degradation</li>
-</ul>
+<h3>Levels of Gene Expression Control</h3>
+<p>Gene expression can be regulated at multiple points in the pathway from DNA to functional protein:</p>
+<table>
+<tr><th>Level</th><th>Mechanism</th><th>Examples</th></tr>
+<tr><td><strong>Transcriptional</strong> (most common and important control point)</td><td>Whether or not a gene is transcribed into mRNA — controlled by transcription factors, epigenetic modifications</td><td>Transcription factors, promoter methylation, histone modification, the lac operon</td></tr>
+<tr><td><strong>Post-transcriptional</strong></td><td>mRNA processing, stability, and transport — controls which mRNAs survive and reach ribosomes</td><td>Alternative splicing (different exon combinations), mRNA degradation rate, RNA interference (RNAi)</td></tr>
+<tr><td><strong>Translational</strong></td><td>Whether mRNA is translated into protein — controls rate and timing of translation</td><td>RNA interference (siRNA/miRNA blocking ribosome binding), initiation factor availability</td></tr>
+<tr><td><strong>Post-translational</strong></td><td>Protein modification, activation, targeting, or degradation after synthesis</td><td>Phosphorylation, glycosylation, proteolytic cleavage (e.g. proinsulin to insulin), ubiquitin-mediated degradation</td></tr>
+</table>
 
 <h3>Transcription Factors</h3>
 <div class="definition">
-<strong>Transcription factor:</strong> A protein that binds to specific DNA sequences (promoter or enhancer regions) and controls the rate of transcription. Activators increase transcription; repressors decrease or prevent transcription.
+<strong>Transcription factor:</strong> A protein that binds to specific DNA sequences (regulatory regions) and controls the rate of transcription of a target gene. <strong>Activators</strong> increase transcription; <strong>repressors</strong> decrease or prevent transcription. Transcription factors are essential for differential gene expression — different cell types express different transcription factors, which switch on cell-type-specific genes.
 </div>
+
+<p>How transcription factors work:</p>
+<ul>
+<li><strong>Activators</strong> bind to <strong>enhancer</strong> regions (which may be thousands of base pairs from the promoter). They interact with mediator proteins to help RNA polymerase bind to the promoter, increasing transcription rate. DNA looping brings enhancer-bound activators close to the promoter.</li>
+<li><strong>Repressors</strong> bind to <strong>silencer</strong> regions or directly to the promoter/operator, physically blocking RNA polymerase binding and preventing transcription.</li>
+<li>Some transcription factors are activated by <strong>signalling molecules</strong>:
+  <ul>
+    <li><strong>Steroid hormones</strong> (e.g. oestrogen, testosterone) are lipid-soluble, so they cross the cell membrane and bind to <strong>intracellular receptors</strong> in the cytoplasm or nucleus. The hormone-receptor complex acts directly as a transcription factor, entering the nucleus and binding to specific DNA response elements to activate target genes. Example: oestrogen activates genes involved in female sexual development and the menstrual cycle.</li>
+    <li><strong>Non-steroid hormones</strong> (e.g. insulin, glucagon) are water-soluble and cannot cross the membrane, so they use second messenger systems (e.g. cAMP) that ultimately activate transcription factors inside the cell.</li>
+  </ul>
+</li>
+</ul>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 320" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -50,18 +66,18 @@
   <text x="260" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">Gene Expression Regulation</text>
   <!-- DNA strand -->
   <line x1="30" y1="80" x2="490" y2="80" stroke="#1a1a2e" stroke-width="3" opacity="0.3"/>
-  <text x="20" y="75" font-size="9" fill="#1a1a2e">5'</text>
-  <text x="495" y="75" font-size="9" fill="#1a1a2e">3'</text>
-  <!-- Enhancer region -->
+  <text x="20" y="75" font-size="9">5'</text>
+  <text x="495" y="75" font-size="9">3'</text>
+  <!-- Enhancer -->
   <rect x="40" y="68" width="70" height="24" rx="4" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="1.5"/>
   <text x="75" y="84" text-anchor="middle" font-size="9" fill="#16A34A" font-weight="bold">Enhancer</text>
-  <!-- Silencer region -->
+  <!-- Silencer -->
   <rect x="130" y="68" width="60" height="24" rx="4" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="1.5"/>
   <text x="160" y="84" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="bold">Silencer</text>
-  <!-- Promoter region -->
+  <!-- Promoter -->
   <rect x="220" y="68" width="70" height="24" rx="4" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
   <text x="255" y="84" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold">Promoter</text>
-  <!-- Gene (structural) -->
+  <!-- Gene -->
   <rect x="310" y="68" width="160" height="24" rx="4" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="390" y="84" text-anchor="middle" font-size="9" fill="#1a73e8" font-weight="bold">Gene (coding region)</text>
   <!-- Activator TF -->
@@ -76,387 +92,392 @@
   <line x1="160" y1="55" x2="160" y2="68" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowGEr)"/>
   <defs><marker id="arrowGEr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/></marker></defs>
   <text x="160" y="30" text-anchor="middle" font-size="8" fill="#DC2626">Blocks transcription</text>
-  <!-- RNA Polymerase at promoter -->
+  <!-- RNA Polymerase -->
   <ellipse cx="255" cy="45" rx="35" ry="14" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
   <text x="255" y="49" text-anchor="middle" font-size="8" fill="#D97706" font-weight="bold">RNA Polymerase</text>
   <line x1="255" y1="59" x2="255" y2="68" stroke="#D97706" stroke-width="1.5"/>
   <text x="255" y="28" text-anchor="middle" font-size="8" fill="#D97706">Binds to promoter</text>
-  <!-- Lac Operon section below -->
-  <text x="260" y="120" text-anchor="middle" font-weight="bold" font-size="12" fill="#DC2626">Lac Operon (E. coli) — Inducible Gene</text>
+  <!-- Lac Operon section -->
+  <text x="260" y="120" text-anchor="middle" font-weight="bold" font-size="12" fill="#DC2626">Lac Operon (E. coli) — Inducible Gene System</text>
   <!-- Lac operon DNA -->
   <line x1="30" y1="155" x2="490" y2="155" stroke="#1a1a2e" stroke-width="3" opacity="0.3"/>
-  <!-- Regulatory gene -->
   <rect x="30" y="143" width="60" height="24" rx="4" fill="#1a1a2e" opacity="0.1" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="60" y="159" text-anchor="middle" font-size="8" font-weight="bold">Reg. gene</text>
-  <text x="60" y="183" text-anchor="middle" font-size="8">Makes repressor</text>
-  <!-- Promoter -->
+  <text x="60" y="183" text-anchor="middle" font-size="8">Makes repressor protein</text>
   <rect x="110" y="143" width="50" height="24" rx="4" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
   <text x="135" y="159" text-anchor="middle" font-size="8" fill="#D97706" font-weight="bold">Promoter</text>
-  <!-- Operator -->
   <rect x="170" y="143" width="50" height="24" rx="4" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="1.5"/>
   <text x="195" y="159" text-anchor="middle" font-size="8" fill="#DC2626" font-weight="bold">Operator</text>
-  <!-- Structural genes -->
   <rect x="240" y="143" width="55" height="24" rx="4" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="267" y="159" text-anchor="middle" font-size="8" fill="#1a73e8" font-weight="bold">lacZ</text>
   <rect x="305" y="143" width="55" height="24" rx="4" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="332" y="159" text-anchor="middle" font-size="8" fill="#1a73e8" font-weight="bold">lacY</text>
   <rect x="370" y="143" width="55" height="24" rx="4" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="397" y="159" text-anchor="middle" font-size="8" fill="#1a73e8" font-weight="bold">lacA</text>
-  <text x="330" y="183" text-anchor="middle" font-size="8" fill="#1a73e8">Structural genes (encode enzymes for lactose metabolism)</text>
-  <!-- NO LACTOSE state -->
-  <rect x="30" y="200" width="220" height="95" rx="8" fill="#DC2626" opacity="0.05" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="330" y="183" text-anchor="middle" font-size="8" fill="#1a73e8">Structural genes (encode beta-galactosidase, permease, transacetylase)</text>
+  <!-- NO LACTOSE -->
+  <rect x="30" y="200" width="220" height="100" rx="8" fill="#DC2626" opacity="0.05" stroke="#DC2626" stroke-width="1.5"/>
   <text x="140" y="218" text-anchor="middle" font-weight="bold" font-size="10" fill="#DC2626">No Lactose Present</text>
-  <ellipse cx="100" cy="245" rx="25" ry="12" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="100" y="249" text-anchor="middle" font-size="8" fill="#DC2626" font-weight="bold">Repressor</text>
-  <line x1="125" y1="245" x2="155" y2="245" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowGEr)"/>
-  <rect x="158" y="237" width="40" height="16" rx="3" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="1"/>
-  <text x="178" y="249" text-anchor="middle" font-size="7" fill="#DC2626">Operator</text>
-  <text x="140" y="278" text-anchor="middle" font-size="9" fill="#DC2626">Repressor binds operator</text>
-  <text x="140" y="290" text-anchor="middle" font-size="9" fill="#DC2626">= genes OFF (no transcription)</text>
-  <!-- LACTOSE PRESENT state -->
-  <rect x="270" y="200" width="220" height="95" rx="8" fill="#16A34A" opacity="0.05" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="380" y="218" text-anchor="middle" font-weight="bold" font-size="10" fill="#16A34A">Lactose Present</text>
-  <ellipse cx="310" cy="245" rx="25" ry="12" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="310" y="249" text-anchor="middle" font-size="8" fill="#16A34A" font-weight="bold">Repressor</text>
-  <text x="345" y="240" font-size="8" fill="#D97706">+ Lactose</text>
-  <circle cx="360" cy="250" r="6" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1"/>
-  <text x="380" y="250" font-size="8" fill="#16A34A">= changed shape</text>
-  <text x="380" y="278" text-anchor="middle" font-size="9" fill="#16A34A">Repressor cannot bind operator</text>
-  <text x="380" y="290" text-anchor="middle" font-size="9" fill="#16A34A">= genes ON (transcription occurs)</text>
+  <ellipse cx="100" cy="250" rx="28" ry="14" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="100" y="254" text-anchor="middle" font-size="8" fill="#DC2626" font-weight="bold">Repressor</text>
+  <line x1="128" y1="250" x2="155" y2="250" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowGEr)"/>
+  <rect x="158" y="242" width="40" height="16" rx="3" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="1"/>
+  <text x="178" y="254" text-anchor="middle" font-size="7" fill="#DC2626">Operator</text>
+  <text x="140" y="283" text-anchor="middle" font-size="9" fill="#DC2626">Repressor binds to operator</text>
+  <text x="140" y="295" text-anchor="middle" font-size="9" fill="#DC2626">= genes OFF (transcription blocked)</text>
+  <!-- LACTOSE PRESENT -->
+  <rect x="270" y="200" width="220" height="100" rx="8" fill="#16A34A" opacity="0.05" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="380" y="218" text-anchor="middle" font-weight="bold" font-size="10" fill="#16A34A">Lactose Present (Inducer)</text>
+  <ellipse cx="310" cy="250" rx="28" ry="14" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="310" y="254" text-anchor="middle" font-size="8" fill="#16A34A" font-weight="bold">Repressor</text>
+  <text x="348" y="244" font-size="8" fill="#D97706">+ Lactose</text>
+  <circle cx="365" cy="254" r="6" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1"/>
+  <text x="400" y="254" font-size="8" fill="#16A34A">= shape changed</text>
+  <text x="380" y="283" text-anchor="middle" font-size="9" fill="#16A34A">Repressor CANNOT bind to operator</text>
+  <text x="380" y="295" text-anchor="middle" font-size="9" fill="#16A34A">= genes ON (transcription proceeds)</text>
 </svg>
 </div>
 
-<p>How transcription factors work:</p>
+<h3>The Lac Operon — Gene Regulation in Prokaryotes</h3>
+<p>The lac operon in <em>E. coli</em> is a classic example of an <strong>inducible gene system</strong> — the structural genes are normally switched OFF and only switched ON when their product is needed (i.e. when lactose is present as a food source).</p>
+
+<p><strong>Components of the lac operon:</strong></p>
 <ul>
-<li>Activators bind to enhancer regions and help RNA polymerase bind to the promoter, increasing transcription rate.</li>
-<li>Repressors bind to silencer regions or directly to the promoter, blocking RNA polymerase and preventing transcription.</li>
-<li>Some transcription factors are activated by signalling molecules (e.g. steroid hormones cross the membrane and bind to intracellular receptors that act as transcription factors — oestrogen activates genes involved in female sexual development).</li>
+<li><strong>Regulatory gene (lacI):</strong> Constitutively expressed; codes for the <strong>repressor protein</strong></li>
+<li><strong>Promoter:</strong> Where RNA polymerase binds to begin transcription</li>
+<li><strong>Operator:</strong> A short DNA sequence between the promoter and structural genes. The repressor protein binds here to block transcription.</li>
+<li><strong>Structural genes (lacZ, lacY, lacA):</strong> Code for enzymes needed to metabolise lactose:
+  <ul>
+    <li>lacZ = beta-galactosidase (hydrolyses lactose into glucose + galactose)</li>
+    <li>lacY = permease (transports lactose into the cell)</li>
+    <li>lacA = transacetylase</li>
+  </ul>
+</li>
 </ul>
 
-<h3>Epigenetics</h3>
-<div class="definition">
-<strong>Epigenetics:</strong> Heritable changes in gene expression that do not involve changes to the DNA base sequence. These modifications affect whether genes are "switched on" or "switched off" and can be influenced by environmental factors.
-</div>
-
-<p>Two main epigenetic mechanisms:</p>
-
-<p><strong>1. DNA Methylation:</strong></p>
+<p><strong>Mechanism:</strong></p>
 <ul>
-<li>Methyl groups (-CH<sub>3</sub>) are added to cytosine bases (usually in CpG islands near promoters).</li>
-<li>Methylation typically silences (switches off) gene expression by preventing transcription factors from binding.</li>
-<li>Hypermethylation of tumour suppressor genes can contribute to cancer development.</li>
-<li>Patterns can be inherited through cell division and sometimes across generations.</li>
-</ul>
-
-<p><strong>2. Histone Modification:</strong></p>
-<ul>
-<li>Histones can be acetylated, methylated, or phosphorylated, changing how tightly DNA is wrapped around them.</li>
-<li><strong>Histone acetylation:</strong> Reduces positive charge on histones → DNA wraps less tightly → chromatin is more open (euchromatin) → transcription is promoted.</li>
-<li><strong>Histone deacetylation:</strong> Tighter wrapping → condensed chromatin (heterochromatin) → genes silenced.</li>
-</ul>
-
-<p>Environmental factors that can cause epigenetic changes include: diet, stress, smoking, toxins, and ageing. These changes may explain why identical twins can develop different phenotypes over time despite having the same DNA sequence.</p>
-
-<h3>RNA Interference (RNAi)</h3>
-<div class="definition">
-<strong>RNA interference:</strong> A mechanism of post-transcriptional gene silencing in which small double-stranded RNA molecules (siRNA or miRNA) cause degradation or translational inhibition of complementary mRNA, preventing protein synthesis.
-</div>
-
-<p>Mechanism of RNAi:</p>
-<ol>
-<li>Double-stranded RNA (dsRNA) is processed by the enzyme Dicer into short interfering RNA (siRNA) fragments (~21 nucleotides).</li>
-<li>siRNA is incorporated into RISC (RNA-Induced Silencing Complex).</li>
-<li>One strand of the siRNA guides RISC to the complementary mRNA target.</li>
-<li>RISC either cleaves (cuts) the mRNA (leading to its degradation) or blocks translation by preventing ribosome binding.</li>
-<li>The target gene is effectively silenced — no protein is produced.</li>
-</ol>
-
-<p>Significance of RNAi:</p>
-<ul>
-<li>Defence against viral RNA (many viruses have dsRNA genomes)</li>
-<li>Regulation of gene expression during development</li>
-<li>Potential therapeutic applications — silencing disease-causing genes (e.g. oncogenes, viral genes)</li>
-<li>Research tool for studying gene function (gene knockdown experiments)</li>
+<li><strong>No lactose:</strong> The repressor protein (from lacI gene) has a shape complementary to the operator. It binds tightly to the operator, physically blocking RNA polymerase from transcribing the structural genes. Genes are OFF.</li>
+<li><strong>Lactose present:</strong> Lactose (the <strong>inducer</strong>) binds to an allosteric site on the repressor protein, changing its shape (allosteric inhibition). The repressor can no longer bind to the operator. RNA polymerase can now access the structural genes and transcription proceeds. Genes are ON. The enzymes are produced, lactose is metabolised, and when lactose runs out, the repressor returns to its original shape and re-binds the operator — genes switch OFF again.</li>
 </ul>
 
 <div class="exam-tip">
-<strong>Exam Tip:</strong> Epigenetics is a common topic for extended response questions. Always emphasise that epigenetic changes are heritable but reversible, do not alter the DNA sequence itself, and can be influenced by environmental factors. Link to examples like cancer or twin studies.
+<strong>Exam Tip:</strong> The lac operon is a negative control system — the default is OFF (repressor blocks transcription) and the inducer (lactose) removes the repression. This is efficient because the cell only produces lactose-metabolising enzymes when lactose is available — saving energy and resources. Be able to explain each component's role and what happens when each component is mutated (e.g. a mutant repressor that cannot bind lactose = genes permanently OFF even when lactose is present).
+</div>
+
+<h3>Epigenetics</h3>
+<div class="definition">
+<strong>Epigenetics:</strong> Heritable changes in gene expression that do <strong>not</strong> involve changes to the DNA base sequence itself. These modifications affect the accessibility of DNA to transcription machinery, effectively switching genes "on" or "off." Epigenetic modifications can be influenced by environmental factors and may be passed to daughter cells during mitosis and sometimes to offspring across generations.
+</div>
+
+<h3>1. DNA Methylation</h3>
+<ul>
+<li>Methyl groups (-CH<sub>3</sub>) are added to <strong>cytosine bases</strong>, usually in <strong>CpG islands</strong> (regions rich in CG dinucleotides, often near gene promoters). Catalysed by DNA methyltransferases.</li>
+<li>Methylation typically <strong>silences (switches off) gene expression</strong> by: (1) directly preventing transcription factor binding; (2) attracting methyl-CpG-binding proteins that recruit histone deacetylases, leading to chromatin condensation.</li>
+<li><strong>Hypermethylation</strong> of tumour suppressor gene promoters can silence them, contributing to cancer development (cell division is no longer properly controlled).</li>
+<li><strong>Hypomethylation</strong> of oncogene promoters can activate them, also contributing to cancer.</li>
+<li>Methylation patterns are copied during DNA replication (maintenance methyltransferases), so they are heritable through cell division.</li>
+<li>Patterns can sometimes be inherited across generations (transgenerational epigenetic inheritance), though this is more clearly demonstrated in plants than in mammals.</li>
+</ul>
+
+<h3>2. Histone Modification</h3>
+<ul>
+<li>Histones can be chemically modified by the addition or removal of acetyl, methyl, or phosphate groups to their "tails" (N-terminal amino acid chains).</li>
+<li><strong>Histone acetylation</strong> (adding acetyl groups, catalysed by histone acetyltransferases, HATs):
+  <ul>
+    <li>Reduces the positive charge on histone tails (neutralises lysine residues)</li>
+    <li>Weakens the electrostatic attraction between positively charged histones and negatively charged DNA (phosphate backbone)</li>
+    <li>DNA wraps less tightly around histones &rarr; chromatin is more open (<strong>euchromatin</strong>)</li>
+    <li>Transcription factors and RNA polymerase can access DNA &rarr; <strong>transcription is promoted</strong></li>
+  </ul>
+</li>
+<li><strong>Histone deacetylation</strong> (removing acetyl groups, catalysed by histone deacetylases, HDACs):
+  <ul>
+    <li>Restores positive charge &rarr; tighter DNA-histone binding</li>
+    <li>Condensed chromatin (<strong>heterochromatin</strong>) &rarr; genes are <strong>silenced</strong></li>
+  </ul>
+</li>
+<li>Histone methylation can either activate or silence genes depending on which amino acid is methylated and how many methyl groups are added.</li>
+</ul>
+
+<p><strong>Environmental factors</strong> that can cause epigenetic changes include: diet (e.g. folate, methyl donors), stress, smoking, toxins (e.g. BPA), exercise, and ageing. These changes may explain why <strong>identical twins</strong> (monozygotic — same DNA) can develop different phenotypes, disease susceptibilities, and even different appearances as they age, despite having the same base sequence.</p>
+
+<div class="real-world">
+<strong>Real-World Link:</strong> The Dutch Hunger Winter (1944-1945) provided striking evidence for transgenerational epigenetics. Children conceived during the famine showed altered DNA methylation patterns and higher rates of obesity, cardiovascular disease, and metabolic disorders in adulthood — 60+ years later. Even more remarkably, some of these epigenetic effects appeared in the next generation (grandchildren), suggesting epigenetic marks can be transmitted across generations.
+</div>
+
+<h3>RNA Interference (RNAi)</h3>
+<div class="definition">
+<strong>RNA interference:</strong> A mechanism of <strong>post-transcriptional gene silencing</strong> in which small double-stranded RNA molecules (siRNA or miRNA) cause degradation or translational inhibition of complementary mRNA, preventing protein synthesis from that mRNA.
+</div>
+
+<p><strong>Mechanism of RNAi:</strong></p>
+<ol>
+<li>Double-stranded RNA (dsRNA) — either from a virus, transposon, or artificially introduced — is processed by the enzyme <strong>Dicer</strong> into short fragments of ~21-23 nucleotides called <strong>small interfering RNA (siRNA)</strong>.</li>
+<li>The siRNA double strand is separated; one strand (the guide strand) is incorporated into the <strong>RISC</strong> (RNA-Induced Silencing Complex) protein complex.</li>
+<li>The guide strand in RISC <strong>base-pairs with complementary mRNA</strong> by complementary base pairing.</li>
+<li>RISC either: (a) <strong>cleaves (cuts) the mRNA</strong> using an Argonaute protein (leading to mRNA degradation by cellular nucleases); or (b) <strong>blocks translation</strong> by preventing ribosome binding/progression.</li>
+<li>The target gene is effectively <strong>silenced</strong> — its mRNA is destroyed or blocked, so no protein is produced from it.</li>
+</ol>
+
+<p><strong>Significance of RNAi:</strong></p>
+<ul>
+<li><strong>Natural defence against viruses:</strong> Many viruses produce dsRNA during replication; RNAi destroys it</li>
+<li><strong>Regulation of development:</strong> miRNAs (microRNAs, encoded by the organism's own genome) regulate gene expression during normal development and cell differentiation</li>
+<li><strong>Transposon silencing:</strong> Prevents "jumping genes" from inserting into essential genes</li>
+<li><strong>Therapeutic potential:</strong> siRNA can be designed to silence specific disease-causing genes (e.g. oncogenes in cancer, viral genes in infection, mutant huntingtin in Huntington disease). FDA-approved RNAi drugs include patisiran (for hereditary transthyretin amyloidosis).</li>
+<li><strong>Research tool:</strong> Gene knockdown experiments — scientists synthesise siRNA complementary to a gene of interest, introduce it into cells, and observe the effect of silencing that gene to determine its function.</li>
+</ul>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Epigenetics is a common topic for extended response questions. Always emphasise these key points: (1) epigenetic changes are <strong>heritable but reversible</strong>; (2) they do <strong>not alter the DNA base sequence</strong> itself; (3) they can be influenced by <strong>environmental factors</strong>; (4) they involve <strong>DNA methylation</strong> and <strong>histone modification</strong>; (5) they explain how genetically identical cells become different cell types, and why identical twins can develop different phenotypes. Link to real examples like cancer (tumour suppressor gene silencing) and twin studies.
 </div>
 
 <h2>8.2 Gene Technology</h2>
 
 <h3>Restriction Enzymes (Restriction Endonucleases)</h3>
 <div class="definition">
-<strong>Restriction enzyme:</strong> An enzyme that cuts DNA at specific recognition sequences (restriction sites), typically 4-8 base pairs long. Some produce "sticky ends" (short single-stranded overhangs) and others produce "blunt ends."
+<strong>Restriction enzyme:</strong> An enzyme (originally from bacteria, where they defend against bacteriophage DNA) that cuts DNA at specific palindromic recognition sequences (restriction sites), typically 4-8 base pairs long. Some produce <strong>sticky ends</strong> (short single-stranded overhangs) and others produce <strong>blunt ends</strong>.
 </div>
 
-<p>Sticky ends are useful in genetic engineering because they allow complementary base pairing with other DNA fragments cut by the same enzyme, facilitating recombination.</p>
+<p><strong>Sticky ends</strong> are preferable in genetic engineering because:</p>
+<ul>
+<li>They have short, unpaired base sequences that can form complementary base pairs with other sticky ends produced by the same restriction enzyme</li>
+<li>This allows DNA fragments from different sources to anneal (join) by hydrogen bonding</li>
+<li>DNA ligase then seals the sugar-phosphate backbone, forming phosphodiester bonds to create a stable <strong>recombinant DNA</strong> molecule</li>
+</ul>
+
+<p><strong>Example:</strong> EcoRI recognises GAATTC and cuts between G and A on each strand, producing sticky ends with 4-base overhangs (AATT).</p>
 
 <h3>PCR (Polymerase Chain Reaction)</h3>
 <div class="definition">
-<strong>PCR:</strong> A technique for amplifying (making millions of copies of) a specific DNA sequence in vitro. It uses thermal cycling with a heat-stable DNA polymerase (Taq polymerase from Thermus aquaticus).
+<strong>PCR:</strong> A technique for rapidly amplifying (making millions of copies of) a specific DNA sequence in vitro. It uses thermal cycling with a heat-stable DNA polymerase (<strong>Taq polymerase</strong> from <em>Thermus aquaticus</em>, a thermophilic bacterium found in hot springs).
 </div>
 
-<p>Steps in each PCR cycle (repeated 25-30 times):</p>
+<p><strong>Requirements:</strong> Template DNA, Taq polymerase, two specific DNA primers (short single-stranded sequences complementary to regions flanking the target), free deoxyribonucleotide triphosphates (dNTPs: dATP, dTTP, dCTP, dGTP), buffer solution with Mg<sup>2+</sup> ions (cofactor for Taq).</p>
+
+<h3>Steps in Each PCR Cycle (repeated 25-30 times)</h3>
 <ol>
-<li><strong>Denaturation (94-96°C):</strong> Heat breaks hydrogen bonds between complementary strands, separating double-stranded DNA into single strands.</li>
-<li><strong>Annealing (50-65°C):</strong> Temperature is lowered so that short DNA primers bind (anneal) to complementary sequences flanking the target region.</li>
-<li><strong>Extension/Elongation (72°C):</strong> Taq polymerase extends the primers, synthesising new complementary strands using free nucleotides (dNTPs). Works at 72°C (optimum for Taq).</li>
+<li><strong>Denaturation (94-96&deg;C, ~1 min):</strong> High temperature breaks hydrogen bonds between complementary strands, separating double-stranded DNA into two single strands. (Taq polymerase is not denatured at this temperature because it evolved in a thermophilic organism.)</li>
+<li><strong>Annealing (50-65&deg;C, ~1 min):</strong> Temperature is lowered to allow short DNA <strong>primers</strong> to bind (anneal) to their complementary sequences flanking the target region on each strand. The lower temperature favours primer-template binding. Two different primers are used — one for each strand.</li>
+<li><strong>Extension/Elongation (72&deg;C, ~1-2 min):</strong> Taq polymerase extends the primers by adding free nucleotides complementary to the template strand, working in the 5' to 3' direction. 72&deg;C is the optimum temperature for Taq polymerase activity.</li>
 </ol>
 
 <div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 460 380" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 460 300" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
-  <text x="230" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">PCR Cycle (Polymerase Chain Reaction)</text>
-  <!-- Circular arrow path to show cycling -->
-  <path d="M 230,50 Q 420,50 420,190 Q 420,330 230,330 Q 40,330 40,190 Q 40,50 230,50" fill="none" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="6" opacity="0.15"/>
+  <text x="230" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">PCR Cycle</text>
+  <!-- Circular arrows -->
+  <path d="M 230,50 Q 400,50 400,155 Q 400,260 230,260 Q 60,260 60,155 Q 60,50 230,50" fill="none" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="6" opacity="0.15"/>
   <!-- Step 1: Denaturation -->
-  <rect x="130" y="40" width="200" height="85" rx="10" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="2"/>
-  <text x="230" y="60" text-anchor="middle" font-weight="bold" font-size="12" fill="#DC2626">1. Denaturation</text>
-  <text x="230" y="78" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="bold">94-96 C</text>
-  <!-- Double strand splitting -->
-  <line x1="170" y1="92" x2="195" y2="92" stroke="#1a73e8" stroke-width="3"/>
-  <line x1="170" y1="100" x2="195" y2="100" stroke="#DC2626" stroke-width="3"/>
-  <!-- Arrow to separated -->
-  <line x1="200" y1="96" x2="215" y2="96" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrowPCR)"/>
+  <rect x="130" y="40" width="200" height="60" rx="10" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="2"/>
+  <text x="230" y="58" text-anchor="middle" font-weight="bold" font-size="12" fill="#DC2626">1. Denaturation</text>
+  <text x="230" y="75" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="bold">94-96&deg;C</text>
+  <text x="230" y="92" text-anchor="middle" font-size="9" fill="#DC2626">H-bonds break; strands separate</text>
+  <!-- Arrow -->
+  <path d="M 330,80 Q 390,100 390,140" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#arrowPCR)"/>
   <defs><marker id="arrowPCR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker></defs>
-  <!-- Separated strands -->
-  <line x1="220" y1="88" x2="260" y2="88" stroke="#1a73e8" stroke-width="3"/>
-  <line x1="220" y1="105" x2="260" y2="105" stroke="#DC2626" stroke-width="3"/>
-  <text x="280" y="92" font-size="8" fill="#1a73e8">Single strands</text>
-  <text x="280" y="108" font-size="8" fill="#DC2626">(H-bonds broken)</text>
-  <!-- Curved arrow from step 1 to step 2 -->
-  <path d="M 330,100 Q 400,120 400,170" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#arrowPCR)"/>
   <!-- Step 2: Annealing -->
-  <rect x="270" y="155" width="180" height="85" rx="10" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="2"/>
-  <text x="360" y="175" text-anchor="middle" font-weight="bold" font-size="12" fill="#16A34A">2. Annealing</text>
-  <text x="360" y="193" text-anchor="middle" font-size="11" fill="#16A34A" font-weight="bold">50-65 C</text>
-  <!-- Single strand with primer binding -->
-  <line x1="290" y1="210" x2="340" y2="210" stroke="#1a73e8" stroke-width="3"/>
-  <rect x="290" y="215" width="25" height="8" rx="2" fill="#D97706" opacity="0.5" stroke="#D97706" stroke-width="1"/>
-  <text x="302" y="222" text-anchor="middle" font-size="6" fill="#D97706" font-weight="bold">Primer</text>
-  <line x1="360" y1="210" x2="410" y2="210" stroke="#DC2626" stroke-width="3"/>
-  <rect x="390" y="215" width="25" height="8" rx="2" fill="#D97706" opacity="0.5" stroke="#D97706" stroke-width="1"/>
-  <text x="402" y="222" text-anchor="middle" font-size="6" fill="#D97706" font-weight="bold">Primer</text>
-  <text x="360" y="237" text-anchor="middle" font-size="9" fill="#16A34A">Primers bind to</text>
-  <text x="360" y="248" text-anchor="middle" font-size="9" fill="#16A34A">complementary sequences</text>
-  <!-- Curved arrow from step 2 to step 3 -->
-  <path d="M 330,240 Q 380,290 300,310" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#arrowPCR)"/>
+  <rect x="270" y="130" width="180" height="60" rx="10" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="2"/>
+  <text x="360" y="148" text-anchor="middle" font-weight="bold" font-size="12" fill="#16A34A">2. Annealing</text>
+  <text x="360" y="165" text-anchor="middle" font-size="11" fill="#16A34A" font-weight="bold">50-65&deg;C</text>
+  <text x="360" y="182" text-anchor="middle" font-size="9" fill="#16A34A">Primers bind to complementary sequences</text>
+  <!-- Arrow -->
+  <path d="M 330,190 Q 370,230 290,250" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#arrowPCR)"/>
   <!-- Step 3: Extension -->
-  <rect x="50" y="270" width="250" height="95" rx="10" fill="#1a73e8" opacity="0.08" stroke="#1a73e8" stroke-width="2"/>
-  <text x="175" y="290" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a73e8">3. Extension</text>
-  <text x="175" y="308" text-anchor="middle" font-size="11" fill="#1a73e8" font-weight="bold">72 C (Taq polymerase optimum)</text>
-  <!-- Strand being extended -->
-  <line x1="70" y1="325" x2="140" y2="325" stroke="#1a73e8" stroke-width="3"/>
-  <rect x="70" y="330" width="18" height="7" rx="2" fill="#D97706" opacity="0.5" stroke="#D97706" stroke-width="1"/>
-  <line x1="88" y1="333" x2="140" y2="333" stroke="#16A34A" stroke-width="2.5" stroke-dasharray="3"/>
-  <!-- Taq polymerase -->
-  <ellipse cx="140" cy="333" rx="14" ry="9" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="140" y="336" text-anchor="middle" font-size="6" fill="#16A34A" font-weight="bold">Taq</text>
-  <line x1="155" y1="333" x2="165" y2="333" stroke="#16A34A" stroke-width="1.5" marker-end="url(#arrowPCRg)"/>
-  <defs><marker id="arrowPCRg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker></defs>
-  <text x="200" y="328" font-size="9" fill="#1a73e8">New complementary</text>
-  <text x="200" y="340" font-size="9" fill="#1a73e8">strand synthesised</text>
-  <text x="175" y="360" text-anchor="middle" font-size="9" fill="#1a73e8">Taq polymerase adds nucleotides 5'&#8594;3'</text>
-  <!-- Curved arrow back to step 1 -->
-  <path d="M 80,270 Q 40,250 40,180 Q 40,110 130,80" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#arrowPCR)"/>
-  <text x="25" y="190" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold" transform="rotate(-90,25,190)">Repeat 25-30x</text>
-  <!-- Result note -->
-  <rect x="50" y="175" width="170" height="40" rx="6" fill="#D97706" opacity="0.08" stroke="#D97706" stroke-width="1"/>
-  <text x="135" y="192" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold">After n cycles: 2&#8319; copies</text>
-  <text x="135" y="206" text-anchor="middle" font-size="9" fill="#D97706">Exponential amplification</text>
+  <rect x="50" y="220" width="240" height="60" rx="10" fill="#1a73e8" opacity="0.08" stroke="#1a73e8" stroke-width="2"/>
+  <text x="170" y="238" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a73e8">3. Extension</text>
+  <text x="170" y="255" text-anchor="middle" font-size="11" fill="#1a73e8" font-weight="bold">72&deg;C (Taq optimum)</text>
+  <text x="170" y="272" text-anchor="middle" font-size="9" fill="#1a73e8">Taq polymerase synthesises new strands (5' to 3')</text>
+  <!-- Arrow back to step 1 -->
+  <path d="M 70,220 Q 40,180 40,140 Q 40,100 130,70" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#arrowPCR)"/>
+  <text x="25" y="155" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold" transform="rotate(-90,25,155)">Repeat 25-30x</text>
+  <!-- Result -->
+  <rect x="90" y="130" width="150" height="30" rx="6" fill="#D97706" opacity="0.08" stroke="#D97706" stroke-width="1"/>
+  <text x="165" y="149" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold">After n cycles: 2&#x207F; copies</text>
 </svg>
 </div>
 
 <div class="equation">
-Number of copies after n cycles = 2<sup>n</sup> (exponential amplification)
+Number of DNA copies after n cycles = 2<sup>n</sup> (exponential amplification)<br>
+After 30 cycles: 2<sup>30</sup> &asymp; 1 billion copies from a single template molecule
 </div>
 
-<p>Applications of PCR: forensic DNA profiling, genetic testing for hereditary diseases, ancient DNA analysis, detection of pathogens, research cloning.</p>
+<p><strong>Applications of PCR:</strong> forensic DNA profiling (amplifying tiny samples from crime scenes), genetic testing for hereditary diseases, prenatal diagnosis, paternity testing, ancient DNA analysis (e.g. Neanderthal genome), detection of pathogens (diagnostic PCR for HIV, COVID-19), research cloning of genes.</p>
 
 <h3>Gel Electrophoresis</h3>
 <div class="definition">
-<strong>Gel electrophoresis:</strong> A technique for separating DNA (or protein) fragments by size and charge. Fragments are placed in wells in an agarose gel and an electric field is applied. DNA fragments (negatively charged due to phosphate groups) migrate towards the positive electrode.
+<strong>Gel electrophoresis:</strong> A technique for separating DNA (or protein) fragments by <strong>size</strong>. Fragments are loaded into wells in an agarose or polyacrylamide gel, and an electric field is applied. DNA fragments are <strong>negatively charged</strong> (due to phosphate groups) and migrate towards the <strong>positive electrode (anode)</strong>.
 </div>
 
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 420 340" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
-  <text x="210" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">Gel Electrophoresis</text>
-  <!-- Gel rectangle -->
-  <rect x="60" y="40" width="300" height="250" rx="6" fill="#1a73e8" opacity="0.04" stroke="#1a73e8" stroke-width="2"/>
-  <!-- Negative electrode (top) -->
-  <rect x="60" y="35" width="300" height="8" rx="2" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="380" y="43" font-size="10" fill="#DC2626" font-weight="bold">- (negative)</text>
-  <!-- Positive electrode (bottom) -->
-  <rect x="60" y="287" width="300" height="8" rx="2" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="380" y="295" font-size="10" fill="#1a73e8" font-weight="bold">+ (positive)</text>
-  <!-- Wells at top -->
-  <rect x="85" y="48" width="20" height="10" rx="2" fill="#1a1a2e" opacity="0.3" stroke="#1a1a2e" stroke-width="1"/>
-  <rect x="135" y="48" width="20" height="10" rx="2" fill="#1a1a2e" opacity="0.3" stroke="#1a1a2e" stroke-width="1"/>
-  <rect x="185" y="48" width="20" height="10" rx="2" fill="#1a1a2e" opacity="0.3" stroke="#1a1a2e" stroke-width="1"/>
-  <rect x="235" y="48" width="20" height="10" rx="2" fill="#1a1a2e" opacity="0.3" stroke="#1a1a2e" stroke-width="1"/>
-  <rect x="285" y="48" width="20" height="10" rx="2" fill="#1a1a2e" opacity="0.3" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="95" y="45" text-anchor="middle" font-size="8">Wells</text>
-  <!-- Labels -->
-  <text x="95" y="72" text-anchor="middle" font-size="8" fill="#D97706" font-weight="bold">Ladder</text>
-  <text x="145" y="72" text-anchor="middle" font-size="8">S1</text>
-  <text x="195" y="72" text-anchor="middle" font-size="8">S2</text>
-  <text x="245" y="72" text-anchor="middle" font-size="8">S3</text>
-  <text x="295" y="72" text-anchor="middle" font-size="8">S4</text>
-  <!-- DNA ladder bands -->
-  <rect x="85" y="90" width="20" height="4" rx="1" fill="#D97706" opacity="0.6"/>
-  <rect x="85" y="120" width="20" height="4" rx="1" fill="#D97706" opacity="0.6"/>
-  <rect x="85" y="155" width="20" height="4" rx="1" fill="#D97706" opacity="0.6"/>
-  <rect x="85" y="195" width="20" height="4" rx="1" fill="#D97706" opacity="0.6"/>
-  <rect x="85" y="240" width="20" height="4" rx="1" fill="#D97706" opacity="0.6"/>
-  <!-- Size labels for ladder -->
-  <text x="75" y="94" text-anchor="end" font-size="8" fill="#D97706">10kb</text>
-  <text x="75" y="124" text-anchor="end" font-size="8" fill="#D97706">5kb</text>
-  <text x="75" y="159" text-anchor="end" font-size="8" fill="#D97706">2kb</text>
-  <text x="75" y="199" text-anchor="end" font-size="8" fill="#D97706">1kb</text>
-  <text x="75" y="244" text-anchor="end" font-size="8" fill="#D97706">0.5kb</text>
-  <!-- Sample 1 bands -->
-  <rect x="135" y="95" width="20" height="4" rx="1" fill="#1a73e8" opacity="0.7"/>
-  <rect x="135" y="160" width="20" height="4" rx="1" fill="#1a73e8" opacity="0.7"/>
-  <rect x="135" y="235" width="20" height="4" rx="1" fill="#1a73e8" opacity="0.7"/>
-  <!-- Sample 2 bands -->
-  <rect x="185" y="120" width="20" height="4" rx="1" fill="#16A34A" opacity="0.7"/>
-  <rect x="185" y="200" width="20" height="4" rx="1" fill="#16A34A" opacity="0.7"/>
-  <!-- Sample 3 bands -->
-  <rect x="235" y="95" width="20" height="4" rx="1" fill="#DC2626" opacity="0.7"/>
-  <rect x="235" y="160" width="20" height="4" rx="1" fill="#DC2626" opacity="0.7"/>
-  <rect x="235" y="235" width="20" height="4" rx="1" fill="#DC2626" opacity="0.7"/>
-  <!-- Sample 4 bands -->
-  <rect x="285" y="155" width="20" height="4" rx="1" fill="#1a1a2e" opacity="0.5"/>
-  <rect x="285" y="240" width="20" height="4" rx="1" fill="#1a1a2e" opacity="0.5"/>
-  <!-- Direction arrow -->
-  <line x1="40" y1="80" x2="40" y2="270" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowGel)"/>
-  <defs><marker id="arrowGel" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8"/></marker></defs>
-  <text x="30" y="175" text-anchor="middle" font-size="9" fill="#1a73e8" transform="rotate(-90,30,175)">DNA migration</text>
-  <!-- Size labels -->
-  <text x="400" y="95" font-size="9" fill="#1a1a2e">Large</text>
-  <text x="400" y="108" font-size="9" fill="#1a1a2e">fragments</text>
-  <text x="400" y="118" font-size="9" fill="#1a1a2e">(travel less)</text>
-  <text x="400" y="230" font-size="9" fill="#1a1a2e">Small</text>
-  <text x="400" y="243" font-size="9" fill="#1a1a2e">fragments</text>
-  <text x="400" y="253" font-size="9" fill="#1a1a2e">(travel more)</text>
-  <!-- Note -->
-  <text x="210" y="310" text-anchor="middle" font-size="9" fill="#1a73e8">DNA is negatively charged (phosphate groups) — migrates to + electrode</text>
-  <text x="210" y="325" text-anchor="middle" font-size="9" fill="#1a73e8">S1 and S3 match = same individual or identical pattern</text>
-</svg>
-</div>
+<p>Key principles:</p>
+<ul>
+<li><strong>Smaller fragments travel faster and further</strong> through the gel matrix (less resistance)</li>
+<li><strong>Larger fragments travel shorter distances</strong></li>
+<li>Fragments are visualised using UV fluorescence after staining (ethidium bromide or SYBR Safe) or by autoradiography with radioactive/fluorescent probes</li>
+<li>A <strong>DNA ladder</strong> (known fragment sizes) is run alongside samples to determine fragment sizes</li>
+</ul>
 
-<p>Smaller fragments move faster and further through the gel matrix. Fragments are visualised using UV fluorescence (after staining with ethidium bromide or SYBR Safe) or autoradiography with radioactive probes.</p>
-
-<p>Applications: DNA fingerprinting/profiling (comparing VNTR or STR patterns), checking PCR products, restriction mapping, Southern blotting.</p>
+<p><strong>Applications:</strong> DNA fingerprinting/profiling (comparing STR or VNTR patterns), checking PCR products, restriction mapping, diagnosing genetic diseases, forensic identification, paternity testing.</p>
 
 <h3>Genetic Engineering (Recombinant DNA Technology)</h3>
-<p>Genetic engineering involves isolating a gene from one organism and inserting it into another organism's DNA so that the gene is expressed.</p>
+<p>Genetic engineering involves isolating a gene from one organism and inserting it into another organism's DNA so that the gene is expressed in the host organism, producing the desired protein.</p>
 
-<p>General steps:</p>
+<h3>Steps in Genetic Engineering</h3>
 <ol>
-<li><strong>Isolation of the desired gene:</strong> Using restriction enzymes (cut from genomic DNA), reverse transcriptase (mRNA → cDNA), or chemical synthesis (from known amino acid sequence).</li>
-<li><strong>Insertion into a vector:</strong> The gene is ligated (DNA ligase) into a plasmid or viral vector cut with the same restriction enzyme (complementary sticky ends). A promoter sequence is included to drive expression.</li>
-<li><strong>Transformation:</strong> The recombinant vector is introduced into host cells (e.g. bacteria). Methods include heat shock, electroporation, or using CaCl<sub>2</sub> to make cells competent.</li>
-<li><strong>Identification of transformed cells:</strong> Using selectable markers (antibiotic resistance genes, fluorescent markers) or replica plating to identify cells that have taken up the recombinant plasmid.</li>
-<li><strong>Growth and expression:</strong> Transformed cells are cultured; the inserted gene is expressed, producing the desired protein (e.g. human insulin in E. coli).</li>
+<li><strong>Isolation of the desired gene:</strong> Three main methods:
+  <ul>
+    <li><strong>Restriction enzymes:</strong> Cut the gene from genomic DNA (includes introns)</li>
+    <li><strong>Reverse transcriptase:</strong> Uses mature mRNA as a template to produce <strong>complementary DNA (cDNA)</strong> — this contains only exons (no introns), making it suitable for expression in prokaryotes (which cannot splice introns). DNA polymerase then makes the cDNA double-stranded.</li>
+    <li><strong>Chemical synthesis (gene machine):</strong> Automated synthesis based on known amino acid sequence — the base sequence is worked out from the genetic code</li>
+  </ul>
+</li>
+<li><strong>Insertion into a vector:</strong> The gene is ligated (using <strong>DNA ligase</strong>) into a <strong>vector</strong> (a carrier of DNA into a host cell). Common vectors: bacterial plasmids, bacteriophages, yeast artificial chromosomes (YACs). The vector is cut with the <strong>same restriction enzyme</strong> as the gene, producing complementary sticky ends. A <strong>promoter sequence</strong> (recognised by the host's RNA polymerase) must be included upstream of the gene to ensure expression.</li>
+<li><strong>Transformation:</strong> The recombinant vector is introduced into the host cell. Methods:
+  <ul>
+    <li><strong>Heat shock</strong> (42&deg;C for 30-90 seconds makes E. coli membranes temporarily permeable)</li>
+    <li><strong>Electroporation</strong> (brief high-voltage pulse creates temporary pores)</li>
+    <li><strong>CaCl<sub>2</sub></strong> treatment (Ca<sup>2+</sup> neutralises charge repulsion between DNA and membrane)</li>
+    <li><strong>Viral vectors</strong> (for eukaryotic cells)</li>
+    <li><strong>Gene gun / biolistics</strong> (for plant cells — DNA-coated gold particles shot into cells)</li>
+  </ul>
+</li>
+<li><strong>Identification of transformed cells:</strong> Not all host cells take up the vector, and not all vectors contain the inserted gene. Selection methods:
+  <ul>
+    <li><strong>Antibiotic resistance genes:</strong> The vector contains one or two antibiotic resistance genes. Cells grown on antibiotic-containing medium — only transformed cells survive.</li>
+    <li><strong>Fluorescent markers:</strong> GFP (green fluorescent protein) gene on the vector — transformed cells glow under UV</li>
+    <li><strong>Blue-white screening:</strong> If the gene is inserted into the lacZ gene on the plasmid, lacZ is disrupted. On X-gal medium: cells with intact lacZ produce blue colonies (no insert); cells with disrupted lacZ produce white colonies (gene successfully inserted).</li>
+  </ul>
+</li>
+<li><strong>Growth and expression:</strong> Confirmed transformed cells are cultured on a large scale (in fermenters); the inserted gene is transcribed and translated, producing the desired protein, which is then extracted and purified.</li>
 </ol>
+
+<div class="real-world">
+<strong>Real-World Link:</strong> Key products of genetic engineering include: <strong>human insulin</strong> (from GM E. coli or yeast — replaced animal insulin for diabetics), <strong>human growth hormone</strong> (for pituitary dwarfism), <strong>factor VIII</strong> (for haemophilia A), <strong>Bt crops</strong> (contain a gene from Bacillus thuringiensis encoding an insecticidal protein — reduces pesticide use), <strong>Golden Rice</strong> (contains genes for beta-carotene synthesis — addresses vitamin A deficiency in developing countries), and <strong>herbicide-resistant crops</strong> (e.g. Roundup Ready soya).
+</div>
 
 <h3>Gene Therapy</h3>
 <div class="definition">
-<strong>Gene therapy:</strong> The introduction of a normal/functional copy of a gene into cells to treat a genetic disorder caused by a faulty/absent gene. It does not alter the defective gene itself but provides a working copy.
+<strong>Gene therapy:</strong> The introduction of a normal/functional copy of a gene into cells to treat a genetic disorder caused by a faulty or absent gene. It provides a working copy — it does not correct the defective gene itself (though gene editing with CRISPR is changing this).
 </div>
 
 <table>
-<tr><th>Type</th><th>Target Cells</th><th>Inheritance</th><th>Ethics</th></tr>
-<tr><td>Somatic cell gene therapy</td><td>Body cells (e.g. lung epithelial cells in CF)</td><td>NOT inherited by offspring</td><td>Generally accepted</td></tr>
-<tr><td>Germ line gene therapy</td><td>Gametes or early embryo</td><td>IS inherited by offspring</td><td>Controversial and currently illegal in most countries</td></tr>
+<tr><th>Feature</th><th>Somatic Cell Gene Therapy</th><th>Germ Line Gene Therapy</th></tr>
+<tr><td>Target cells</td><td>Body (somatic) cells — e.g. lung epithelial cells in CF, bone marrow stem cells</td><td>Gametes (eggs/sperm) or early embryo cells</td></tr>
+<tr><td>Inherited?</td><td><strong>NOT inherited</strong> by offspring — only affects the treated individual</td><td><strong>IS inherited</strong> by all future generations</td></tr>
+<tr><td>Ethical status</td><td>Generally accepted — similar to conventional medicine</td><td>Highly controversial and <strong>currently illegal</strong> in most countries (UK, EU)</td></tr>
+<tr><td>Challenges</td><td>Gene may not be expressed long-term; immune response to vector; may need repeated treatment</td><td>Risk of unintended changes passed to future generations; "designer baby" concerns; unpredictable effects</td></tr>
 </table>
 
-<p>Vectors for gene therapy:</p>
+<p><strong>Vectors for gene therapy:</strong></p>
 <ul>
-<li><strong>Viral vectors:</strong> Adenoviruses or retroviruses with pathogenic genes removed. Efficient at entering cells but may trigger immune responses or insert randomly (risk of oncogene activation).</li>
-<li><strong>Liposomes:</strong> Lipid vesicles carrying DNA. Safer but less efficient at delivering DNA into cells.</li>
+<li><strong>Viral vectors (adenoviruses, retroviruses, lentiviruses, AAV):</strong> Pathogenic genes removed and replaced with therapeutic gene. Efficient at entering cells and delivering DNA. Risks: immune response to viral proteins, random insertion into genome (may disrupt tumour suppressor genes or activate oncogenes — this occurred in early X-SCID gene therapy trials where some patients developed leukaemia).</li>
+<li><strong>Liposomes:</strong> Artificial lipid vesicles encapsulating DNA. Fuse with cell membranes to deliver DNA. Safer (no immune response) but much less efficient — DNA does not integrate into chromosomes well, so expression is often transient.</li>
 </ul>
 
-<p>Example: Cystic fibrosis — attempts to deliver a functional CFTR gene to lung epithelial cells via adenoviral vectors or liposomes inhaled as an aerosol. Challenges include: immune response destroying vectors, temporary expression, difficulty reaching enough cells.</p>
+<p><strong>Example — Cystic Fibrosis:</strong> Attempts to deliver a functional CFTR gene (which codes for a chloride ion channel protein) to lung epithelial cells via adenoviral vectors or liposomes inhaled as an aerosol. Challenges: immune response destroys viral vectors on repeat administration; thick mucus in CF lungs reduces vector access to cells; expression is temporary (lung epithelial cells are replaced every few weeks); only a small proportion of cells are successfully transfected.</p>
 
 <div class="exam-tip">
-<strong>Exam Tip:</strong> Gene therapy currently works best for monogenic recessive disorders (one gene, need to add a working copy). It is much harder for dominant conditions (need to silence the faulty allele) or polygenic conditions (multiple genes involved).
+<strong>Exam Tip:</strong> Gene therapy currently works best for <strong>monogenic recessive disorders</strong> (caused by a single gene, need to add one working copy — e.g. CF, SCID, haemophilia). It is much harder for <strong>dominant conditions</strong> (need to silence the faulty allele, not just add a normal one) or <strong>polygenic conditions</strong> (multiple genes involved — e.g. heart disease, diabetes). The recent development of <strong>CRISPR-Cas9 gene editing</strong> offers the possibility of actually correcting mutations rather than just adding extra copies, which could address dominant conditions too.
 </div>
 
 <h2>8.3 Biotechnology</h2>
 
 <h3>Using Microorganisms in Industry</h3>
-<p>Microorganisms are used in industrial biotechnology because they:</p>
+<p>Microorganisms are widely used in industrial biotechnology because they offer many advantages:</p>
 <ul>
-<li>Grow rapidly with short generation times</li>
-<li>Can be genetically modified to produce specific products</li>
-<li>Can use cheap substrates (waste materials)</li>
-<li>Can be grown in fermenters under controlled conditions year-round</li>
-<li>Produce no ethical concerns (unlike animal farming)</li>
+<li><strong>Rapid growth</strong> with short generation times (E. coli divides every ~20 minutes)</li>
+<li>Can be <strong>genetically modified</strong> to produce specific human proteins</li>
+<li>Can use <strong>cheap substrates</strong> (agricultural waste, molasses, whey)</li>
+<li>Can be grown in <strong>fermenters</strong> under controlled conditions year-round, independent of climate</li>
+<li>Relatively simple biochemistry; proteins can be secreted into the medium for easy extraction</li>
+<li>Produce <strong>no ethical concerns</strong> compared to animal farming</li>
 </ul>
 
-<p>Industrial applications:</p>
 <table>
-<tr><th>Product</th><th>Organism</th><th>Method</th></tr>
-<tr><td>Insulin</td><td>Genetically modified E. coli or yeast</td><td>Recombinant DNA technology; human insulin gene expressed in bacteria</td></tr>
-<tr><td>Antibiotics (e.g. penicillin)</td><td>Penicillium chrysogenum</td><td>Batch fermentation</td></tr>
-<tr><td>Mycoprotein (Quorn)</td><td>Fusarium venenatum</td><td>Continuous fermentation in aerobic conditions with glucose syrup</td></tr>
-<tr><td>Enzymes (e.g. proteases, lipases)</td><td>Bacillus species, Aspergillus</td><td>Secreted into culture medium; purified for use in detergents, food processing</td></tr>
-<tr><td>Bioethanol</td><td>Saccharomyces cerevisiae (yeast)</td><td>Anaerobic fermentation of sugars from crops</td></tr>
+<tr><th>Product</th><th>Organism</th><th>Method / Notes</th></tr>
+<tr><td>Human insulin</td><td>GM <em>E. coli</em> or yeast (<em>Saccharomyces cerevisiae</em>)</td><td>Recombinant DNA technology; human insulin gene expressed; yeast used when post-translational modifications needed</td></tr>
+<tr><td>Antibiotics (e.g. penicillin)</td><td><em>Penicillium chrysogenum</em></td><td>Batch fermentation; antibiotic is a secondary metabolite</td></tr>
+<tr><td>Mycoprotein (Quorn&trade;)</td><td><em>Fusarium venenatum</em></td><td>Continuous fermentation in aerobic conditions using glucose syrup substrate; high-protein, low-fat meat alternative</td></tr>
+<tr><td>Enzymes (proteases, lipases, amylases)</td><td><em>Bacillus</em>, <em>Aspergillus</em> species</td><td>Secreted into medium; used in biological washing powders, food processing, brewing</td></tr>
+<tr><td>Bioethanol</td><td><em>Saccharomyces cerevisiae</em> (yeast)</td><td>Anaerobic fermentation of sugars from crops (maize, sugar cane); biofuel</td></tr>
+<tr><td>Biogas (methane)</td><td>Methanogenic archaea</td><td>Anaerobic digestion of waste biomass; renewable energy</td></tr>
 </table>
 
 <h3>Fermenters (Bioreactors)</h3>
-<p>Conditions controlled in industrial fermenters:</p>
+<p>Industrial fermenters are large vessels (up to hundreds of thousands of litres) in which microorganisms are cultured under carefully controlled conditions:</p>
+<table>
+<tr><th>Condition</th><th>How Controlled</th><th>Why Important</th></tr>
+<tr><td>Temperature</td><td>Water cooling jacket; heat exchangers</td><td>Optimum for enzymes; microbial metabolism generates heat that must be removed to prevent overheating and enzyme denaturation</td></tr>
+<tr><td>pH</td><td>Buffers; automatic acid/alkali additions; pH probes</td><td>Enzymes have narrow pH optima; metabolic by-products can change pH</td></tr>
+<tr><td>Oxygen supply</td><td>Air sparger (bubbles sterile air); impeller/stirrer distributes O<sub>2</sub></td><td>Essential for aerobic organisms; stirring also distributes nutrients evenly and prevents settling</td></tr>
+<tr><td>Nutrients</td><td>Continuous or batch addition of carbon source, nitrogen source, minerals, vitamins</td><td>Fuel growth and product formation</td></tr>
+<tr><td>Aseptic conditions</td><td>Steam sterilisation of vessel and medium before use; filtered air input; sealed system; antimicrobial agents</td><td>Prevents contamination by unwanted microorganisms that would compete for nutrients, produce toxins, or destroy product</td></tr>
+</table>
+
+<h3>Batch vs Continuous Fermentation</h3>
+<table>
+<tr><th>Feature</th><th>Batch</th><th>Continuous</th></tr>
+<tr><td>Process</td><td>Microorganisms and medium added at start; nothing added or removed until end</td><td>Fresh medium continuously added; product continuously removed</td></tr>
+<tr><td>Growth pattern</td><td>Follows sigmoid growth curve (lag, log, stationary, decline)</td><td>Maintained in log phase indefinitely</td></tr>
+<tr><td>Products</td><td>Secondary metabolites (e.g. penicillin — produced in stationary phase)</td><td>Primary metabolites and biomass (e.g. mycoprotein)</td></tr>
+<tr><td>Contamination risk</td><td>Lower (closed system, short run)</td><td>Higher (long run, open system)</td></tr>
+</table>
+
+<h3>Immobilised Enzymes</h3>
+<p>Enzymes can be immobilised (attached to or trapped within an insoluble support) for industrial use:</p>
 <ul>
-<li><strong>Temperature:</strong> Optimum for enzymes; cooling jacket removes metabolic heat</li>
-<li><strong>pH:</strong> Buffers or acid/alkali additions maintain optimum</li>
-<li><strong>Oxygen:</strong> Air sparger and impeller/stirrer for aerobic organisms</li>
-<li><strong>Nutrients:</strong> Continuous or batch addition of carbon source, nitrogen, minerals</li>
-<li><strong>Aseptic conditions:</strong> Sterilisation of vessel and medium; filtered air; prevents contamination by unwanted microorganisms</li>
+<li><strong>Methods:</strong> Adsorption onto a surface (e.g. glass beads), covalent bonding to a support, entrapment in a gel matrix (e.g. alginate beads), encapsulation in a membrane</li>
+<li><strong>Advantages:</strong> Enzymes can be reused (reducing cost); product is not contaminated with enzyme; enzyme is more stable (less susceptible to temperature/pH changes due to restricted movement); continuous-flow processing is possible (substrate flows over immobilised enzyme column)</li>
+<li><strong>Disadvantages:</strong> Immobilisation may reduce enzyme activity (active site may be partially blocked); diffusion of substrate to active site is slower</li>
+<li><strong>Example:</strong> Immobilised lactase (used to produce lactose-free milk by passing milk over a column of lactase trapped in alginate beads)</li>
 </ul>
 
-<h3>Gene Sequencing and Bioinformatics</h3>
+<h3>DNA Sequencing and Bioinformatics</h3>
 
 <div class="definition">
-<strong>DNA sequencing:</strong> Determining the precise order of nucleotide bases in a DNA molecule. Modern next-generation sequencing (NGS) technologies can sequence entire genomes rapidly and cheaply.
+<strong>DNA sequencing:</strong> Determining the precise order of nucleotide bases (A, T, C, G) in a DNA molecule. Modern <strong>next-generation sequencing (NGS)</strong> technologies can sequence entire genomes rapidly and cheaply (a human genome can now be sequenced in hours for ~$200).
 </div>
 
-<p>Applications of genome sequencing:</p>
+<p><strong>Applications of genome sequencing:</strong></p>
 <ul>
-<li>Identifying genes associated with genetic diseases (e.g. BRCA1 and breast cancer)</li>
-<li>Pharmacogenomics — personalised medicine based on individual genetic variation</li>
-<li>Comparative genomics — understanding evolutionary relationships</li>
-<li>Identifying antibiotic resistance genes in pathogens</li>
-<li>Forensic identification (DNA profiling)</li>
+<li>Identifying genes associated with genetic diseases (e.g. BRCA1/BRCA2 and breast/ovarian cancer risk)</li>
+<li><strong>Pharmacogenomics</strong> — personalised medicine tailored to individual genetic variation (e.g. choosing cancer drugs based on tumour mutations)</li>
+<li>Comparative genomics — understanding evolutionary relationships; constructing phylogenetic trees</li>
+<li>Identifying antibiotic resistance genes in pathogenic bacteria (guiding treatment choices)</li>
+<li>Forensic identification (DNA profiling using STR analysis)</li>
+<li>Ancient DNA analysis (Neanderthal and Denisovan genomes)</li>
 </ul>
 
 <div class="definition">
-<strong>Bioinformatics:</strong> The use of computers and statistical analysis to store, retrieve, and analyse large biological datasets, particularly DNA and protein sequences. Databases allow comparison of sequences between species to identify conserved regions (functional importance) and determine evolutionary relationships.
+<strong>Bioinformatics:</strong> The use of computers, databases, and statistical algorithms to store, retrieve, and analyse large biological datasets — particularly DNA, RNA, and protein sequences. It is essential for making sense of the vast amounts of data generated by genome sequencing.
 </div>
 
-<p>Key bioinformatics tools and databases:</p>
+<p><strong>Key bioinformatics tools:</strong></p>
 <ul>
-<li>BLAST (Basic Local Alignment Search Tool) — compares a query sequence against databases to find similar sequences</li>
-<li>GenBank / EMBL / UniProt — public repositories of DNA and protein sequence data</li>
-<li>Phylogenetic tree construction from sequence alignment data</li>
-<li>Protein structure prediction from amino acid sequences</li>
+<li><strong>BLAST</strong> (Basic Local Alignment Search Tool) — compares a query DNA or protein sequence against databases to find similar sequences in other organisms</li>
+<li><strong>GenBank / EMBL / UniProt</strong> — public repositories of sequence data, freely accessible to researchers worldwide</li>
+<li>Phylogenetic tree construction from multiple sequence alignment data</li>
+<li>Protein structure prediction from amino acid sequences (e.g. AlphaFold)</li>
+<li>Identifying conserved sequences (regions unchanged across species — indicating critical function preserved by natural selection)</li>
 </ul>
 
-<h3>Ethical, Social, and Legal Issues</h3>
-<p>Gene technology raises important considerations:</p>
-<ul>
-<li><strong>Genetic testing:</strong> Right to know vs. right not to know; insurance/employment discrimination; psychological impact of learning carrier status</li>
-<li><strong>Genetic engineering:</strong> Environmental concerns (GM organisms escaping, gene transfer to wild populations); labelling of GM foods; potential allergenicity of novel proteins</li>
-<li><strong>Gene therapy:</strong> Somatic is generally accepted; germ line raises concerns about "designer babies" and unforeseen effects on future generations</li>
-<li><strong>Cloning:</strong> Reproductive cloning banned in humans; therapeutic cloning (stem cells) is more accepted but still debated</li>
-<li><strong>Ownership:</strong> Gene patents; should natural sequences be owned? Access to genetic technologies in developing countries</li>
-</ul>
+<h3>Ethical, Social, and Legal Issues in Gene Technology</h3>
+<table>
+<tr><th>Issue</th><th>Arguments For</th><th>Arguments Against / Concerns</th></tr>
+<tr><td><strong>Genetic testing</strong></td><td>Early diagnosis allows preventive treatment; informed reproductive choices; pharmacogenomic drug selection</td><td>Insurance/employment discrimination based on genetic risk; psychological harm from learning carrier status; right not to know; reliability of risk predictions</td></tr>
+<tr><td><strong>GM organisms</strong></td><td>Increased crop yields; pest resistance reduces pesticide use; nutritional enhancement (Golden Rice); drought tolerance for food security</td><td>Environmental risks (gene transfer to wild populations, loss of biodiversity, superweeds); allergenicity of novel proteins; corporate control of food supply; consumer choice and labelling</td></tr>
+<tr><td><strong>Gene therapy</strong></td><td>Treats otherwise incurable genetic diseases; somatic therapy comparable to conventional medicine</td><td>Germ line therapy raises "designer baby" concerns; unknown long-term effects; safety risks (leukaemia in early trials); equity of access (expensive treatments)</td></tr>
+<tr><td><strong>Cloning</strong></td><td>Therapeutic cloning provides stem cells for disease treatment; preserves genetic resources of endangered species</td><td>Reproductive cloning of humans is banned; low success rates; health problems in cloned animals; ethical concerns about "creating life"</td></tr>
+<tr><td><strong>Gene patents</strong></td><td>Incentivise research and development investment</td><td>Should natural sequences be owned? May restrict access to diagnostic tests; impact on developing countries</td></tr>
+</table>
 
 <div class="exam-tip">
-<strong>Exam Tip:</strong> For essay questions on gene technology, always present a balanced view. Discuss benefits (treating disease, improving agriculture) alongside risks and ethical concerns. Use specific named examples (e.g. Bt cotton for pest resistance, golden rice for vitamin A deficiency, CRISPR for gene editing).
+<strong>Exam Tip:</strong> For essay questions on gene technology, always present a <strong>balanced view</strong> — discuss benefits alongside risks and ethical concerns. Use <strong>specific named examples</strong>: Bt cotton for pest resistance, Golden Rice for vitamin A deficiency, CRISPR-Cas9 for gene editing, recombinant human insulin. Address multiple perspectives: scientific, ethical, social, economic, and environmental. Conclude with a reasoned personal judgement where appropriate.
+</div>
+
+<div class="real-world">
+<strong>Real-World Link:</strong> <strong>CRISPR-Cas9</strong> is a revolutionary gene editing tool (developed from a bacterial immune defence system) that allows scientists to cut DNA at precise locations and either delete, replace, or insert sequences. Unlike traditional genetic engineering (which adds an extra copy of a gene), CRISPR can actually <strong>correct mutations</strong> in situ. Clinical trials are underway for sickle cell disease (editing haematopoietic stem cells to reactivate foetal haemoglobin production), some cancers (editing T cells to better recognise tumour cells), and inherited blindness (Leber congenital amaurosis). The technology is powerful but raises profound ethical questions, particularly regarding heritable germ line editing — the case of He Jiankui in 2018 (who created CRISPR-edited human embryos) sparked global condemnation and calls for regulation.
 </div>
 
 </div></body></html>
