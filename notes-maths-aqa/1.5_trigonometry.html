@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trigonometry - AQA A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>1.5 Trigonometry</h1>
+
+<!-- ============================================ -->
+<h2>Trigonometric Ratios</h2>
+
+<div class="definition">
+For a right-angled triangle with angle \(\theta\), opposite side \(O\), adjacent side \(A\), and hypotenuse \(H\):
+<div class="equation">$$\sin\theta = \frac{O}{H}, \quad \cos\theta = \frac{A}{H}, \quad \tan\theta = \frac{O}{A} = \frac{\sin\theta}{\cos\theta}$$</div>
+</div>
+
+<h3>Exact Trigonometric Values</h3>
+
+<table>
+<tr><th>\(\theta\)</th><th>\(0^\circ\)</th><th>\(30^\circ\)</th><th>\(45^\circ\)</th><th>\(60^\circ\)</th><th>\(90^\circ\)</th></tr>
+<tr><td>\(\sin\theta\)</td><td>\(0\)</td><td>\(\dfrac{1}{2}\)</td><td>\(\dfrac{\sqrt{2}}{2}\)</td><td>\(\dfrac{\sqrt{3}}{2}\)</td><td>\(1\)</td></tr>
+<tr><td>\(\cos\theta\)</td><td>\(1\)</td><td>\(\dfrac{\sqrt{3}}{2}\)</td><td>\(\dfrac{\sqrt{2}}{2}\)</td><td>\(\dfrac{1}{2}\)</td><td>\(0\)</td></tr>
+<tr><td>\(\tan\theta\)</td><td>\(0\)</td><td>\(\dfrac{1}{\sqrt{3}}\)</td><td>\(1\)</td><td>\(\sqrt{3}\)</td><td>undef.</td></tr>
+</table>
+
+<table>
+<tr><th>\(\theta\) (radians)</th><th>\(0\)</th><th>\(\dfrac{\pi}{6}\)</th><th>\(\dfrac{\pi}{4}\)</th><th>\(\dfrac{\pi}{3}\)</th><th>\(\dfrac{\pi}{2}\)</th></tr>
+<tr><td>\(\sin\theta\)</td><td>\(0\)</td><td>\(\dfrac{1}{2}\)</td><td>\(\dfrac{\sqrt{2}}{2}\)</td><td>\(\dfrac{\sqrt{3}}{2}\)</td><td>\(1\)</td></tr>
+<tr><td>\(\cos\theta\)</td><td>\(1\)</td><td>\(\dfrac{\sqrt{3}}{2}\)</td><td>\(\dfrac{\sqrt{2}}{2}\)</td><td>\(\dfrac{1}{2}\)</td><td>\(0\)</td></tr>
+<tr><td>\(\tan\theta\)</td><td>\(0\)</td><td>\(\dfrac{1}{\sqrt{3}}\)</td><td>\(1\)</td><td>\(\sqrt{3}\)</td><td>undef.</td></tr>
+</table>
+
+<!-- SVG: Unit Circle -->
+<h3>The Unit Circle</h3>
+<svg viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:440px;display:block;margin:20px auto;">
+  <!-- Axes -->
+  <line x1="20" y1="220" x2="420" y2="220" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="220" y1="20" x2="220" y2="420" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="415" y="212" fill="#64748b" font-size="13">x</text>
+  <text x="225" y="30" fill="#64748b" font-size="13">y</text>
+
+  <!-- Circle -->
+  <circle cx="220" cy="220" r="170" fill="none" stroke="#2563eb" stroke-width="2"/>
+
+  <!-- Key points on circle -->
+  <!-- (1,0) -->
+  <circle cx="390" cy="220" r="4" fill="#dc2626"/>
+  <text x="395" y="238" fill="#dc2626" font-size="11">(1, 0)</text>
+
+  <!-- (0,1) -->
+  <circle cx="220" cy="50" r="4" fill="#dc2626"/>
+  <text x="230" y="48" fill="#dc2626" font-size="11">(0, 1)</text>
+
+  <!-- (-1,0) -->
+  <circle cx="50" cy="220" r="4" fill="#dc2626"/>
+  <text x="10" y="238" fill="#dc2626" font-size="11">(-1, 0)</text>
+
+  <!-- (0,-1) -->
+  <circle cx="220" cy="390" r="4" fill="#dc2626"/>
+  <text x="230" y="405" fill="#dc2626" font-size="11">(0, -1)</text>
+
+  <!-- Angle theta -->
+  <line x1="220" y1="220" x2="367" y2="122" stroke="#16a34a" stroke-width="2"/>
+  <circle cx="367" cy="122" r="4" fill="#16a34a"/>
+  <text x="372" y="115" fill="#16a34a" font-size="12" font-weight="600">(cos θ, sin θ)</text>
+
+  <!-- Angle arc -->
+  <path d="M 260 220 A 40 40 0 0 0 248 192" fill="none" stroke="#f59e0b" stroke-width="2"/>
+  <text x="268" y="205" fill="#f59e0b" font-size="13" font-weight="600">θ</text>
+
+  <!-- Dashed projections -->
+  <line x1="367" y1="122" x2="367" y2="220" stroke="#16a34a" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="367" y1="122" x2="220" y2="122" stroke="#16a34a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <text x="370" y="175" fill="#16a34a" font-size="11">sin θ</text>
+  <text x="280" y="115" fill="#16a34a" font-size="11">cos θ</text>
+
+  <!-- Quadrant labels -->
+  <text x="310" y="100" fill="#64748b" font-size="12" font-weight="600">Q1: All +</text>
+  <text x="80" y="100" fill="#64748b" font-size="12" font-weight="600">Q2: Sin +</text>
+  <text x="75" y="350" fill="#64748b" font-size="12" font-weight="600">Q3: Tan +</text>
+  <text x="305" y="350" fill="#64748b" font-size="12" font-weight="600">Q4: Cos +</text>
+</svg>
+
+<!-- SVG: CAST Diagram -->
+<h3>CAST Diagram</h3>
+<svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px;display:block;margin:20px auto;">
+  <!-- Cross -->
+  <line x1="200" y1="30" x2="200" y2="300" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="40" y1="165" x2="360" y2="165" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Quadrant colours -->
+  <rect x="200" y="30" width="160" height="135" fill="#d1fae5" opacity="0.5" rx="8"/>
+  <rect x="40" y="30" width="160" height="135" fill="#dbeafe" opacity="0.5" rx="8"/>
+  <rect x="40" y="165" width="160" height="135" fill="#fefce8" opacity="0.5" rx="8"/>
+  <rect x="200" y="165" width="160" height="135" fill="#fef2f2" opacity="0.5" rx="8"/>
+
+  <!-- Labels -->
+  <text x="280" y="100" text-anchor="middle" fill="#16a34a" font-size="28" font-weight="800">A</text>
+  <text x="280" y="122" text-anchor="middle" fill="#16a34a" font-size="12">All positive</text>
+
+  <text x="120" y="100" text-anchor="middle" fill="#2563eb" font-size="28" font-weight="800">S</text>
+  <text x="120" y="122" text-anchor="middle" fill="#2563eb" font-size="12">Sin positive</text>
+
+  <text x="120" y="230" text-anchor="middle" fill="#b45309" font-size="28" font-weight="800">T</text>
+  <text x="120" y="252" text-anchor="middle" fill="#b45309" font-size="12">Tan positive</text>
+
+  <text x="280" y="230" text-anchor="middle" fill="#dc2626" font-size="28" font-weight="800">C</text>
+  <text x="280" y="252" text-anchor="middle" fill="#dc2626" font-size="12">Cos positive</text>
+
+  <!-- Angle direction -->
+  <path d="M 250 165 A 50 50 0 0 0 200 115" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <text x="215" y="127" fill="#334155" font-size="10">+ve direction</text>
+
+  <text x="200" y="340" text-anchor="middle" fill="#1e3a5f" font-size="13" font-weight="600">Remember: All Students Take Calculus</text>
+</svg>
+
+<!-- ============================================ -->
+<h2>Graphs of Trigonometric Functions</h2>
+
+<!-- SVG: Trig graphs -->
+<svg viewBox="0 0 700 550" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;margin:20px auto;">
+  <!-- === sin x graph === -->
+  <g transform="translate(0,0)">
+    <text x="350" y="18" text-anchor="middle" fill="#2563eb" font-size="14" font-weight="700">y = sin x</text>
+    <!-- Axes -->
+    <line x1="50" y1="95" x2="660" y2="95" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="50" y1="30" x2="50" y2="160" stroke="#94a3b8" stroke-width="1"/>
+    <!-- x-axis labels -->
+    <text x="50" y="175" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+    <text x="200" y="175" text-anchor="middle" fill="#64748b" font-size="10">π</text>
+    <text x="350" y="175" text-anchor="middle" fill="#64748b" font-size="10">2π</text>
+    <text x="500" y="175" text-anchor="middle" fill="#64748b" font-size="10">3π</text>
+    <text x="650" y="175" text-anchor="middle" fill="#64748b" font-size="10">4π</text>
+    <!-- y labels -->
+    <text x="38" y="40" text-anchor="end" fill="#64748b" font-size="10">1</text>
+    <text x="38" y="160" text-anchor="end" fill="#64748b" font-size="10">-1</text>
+    <!-- Sine curve -->
+    <path d="M 50 95 Q 125 30 200 95 Q 275 160 350 95 Q 425 30 500 95 Q 575 160 650 95" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  </g>
+
+  <!-- === cos x graph === -->
+  <g transform="translate(0,185)">
+    <text x="350" y="18" text-anchor="middle" fill="#16a34a" font-size="14" font-weight="700">y = cos x</text>
+    <line x1="50" y1="95" x2="660" y2="95" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="50" y1="30" x2="50" y2="160" stroke="#94a3b8" stroke-width="1"/>
+    <text x="50" y="175" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+    <text x="200" y="175" text-anchor="middle" fill="#64748b" font-size="10">π</text>
+    <text x="350" y="175" text-anchor="middle" fill="#64748b" font-size="10">2π</text>
+    <text x="500" y="175" text-anchor="middle" fill="#64748b" font-size="10">3π</text>
+    <text x="650" y="175" text-anchor="middle" fill="#64748b" font-size="10">4π</text>
+    <text x="38" y="40" text-anchor="end" fill="#64748b" font-size="10">1</text>
+    <text x="38" y="160" text-anchor="end" fill="#64748b" font-size="10">-1</text>
+    <!-- Cosine curve (starts at max) -->
+    <path d="M 50 30 Q 125 95 200 160 Q 275 95 350 30 Q 425 95 500 160 Q 575 95 650 30" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+  </g>
+
+  <!-- === tan x graph === -->
+  <g transform="translate(0,370)">
+    <text x="350" y="18" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">y = tan x</text>
+    <line x1="50" y1="95" x2="660" y2="95" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="50" y1="30" x2="50" y2="160" stroke="#94a3b8" stroke-width="1"/>
+    <text x="50" y="175" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+    <text x="125" y="175" text-anchor="middle" fill="#64748b" font-size="10">π/2</text>
+    <text x="200" y="175" text-anchor="middle" fill="#64748b" font-size="10">π</text>
+    <text x="275" y="175" text-anchor="middle" fill="#64748b" font-size="10">3π/2</text>
+    <text x="350" y="175" text-anchor="middle" fill="#64748b" font-size="10">2π</text>
+    <!-- Asymptotes -->
+    <line x1="125" y1="30" x2="125" y2="160" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="275" y1="30" x2="275" y2="160" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="425" y1="30" x2="425" y2="160" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="575" y1="30" x2="575" y2="160" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3"/>
+    <!-- Tan curves -->
+    <path d="M 50 95 Q 90 70 120 30" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+    <path d="M 130 160 Q 165 115 200 95 Q 235 75 270 30" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+    <path d="M 280 160 Q 315 115 350 95 Q 385 75 420 30" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+    <path d="M 430 160 Q 465 115 500 95 Q 535 75 570 30" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+    <path d="M 580 160 Q 615 115 650 95" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+  </g>
+</svg>
+
+<table>
+<tr><th>Function</th><th>Period</th><th>Range</th><th>Key Properties</th></tr>
+<tr><td>\(\sin x\)</td><td>\(2\pi\) (360 deg)</td><td>\([-1, 1]\)</td><td>Odd function: \(\sin(-x) = -\sin x\)</td></tr>
+<tr><td>\(\cos x\)</td><td>\(2\pi\) (360 deg)</td><td>\([-1, 1]\)</td><td>Even function: \(\cos(-x) = \cos x\)</td></tr>
+<tr><td>\(\tan x\)</td><td>\(\pi\) (180 deg)</td><td>\((-\infty, \infty)\)</td><td>Odd function, asymptotes at \(x = \frac{\pi}{2} + n\pi\)</td></tr>
+</table>
+
+<!-- ============================================ -->
+<h2>Reciprocal Trigonometric Functions</h2>
+
+<div class="definition">
+<div class="equation">$$\sec\theta = \frac{1}{\cos\theta}, \quad \csc\theta = \frac{1}{\sin\theta}, \quad \cot\theta = \frac{1}{\tan\theta} = \frac{\cos\theta}{\sin\theta}$$</div>
+</div>
+
+<!-- ============================================ -->
+<h2>Trigonometric Identities</h2>
+
+<h3>Pythagorean Identities</h3>
+<div class="equation">$$\sin^2\theta + \cos^2\theta = 1$$</div>
+<div class="equation">$$1 + \tan^2\theta = \sec^2\theta$$</div>
+<div class="equation">$$1 + \cot^2\theta = \csc^2\theta$$</div>
+
+<h3>Addition Formulae</h3>
+<div class="equation">$$\sin(A \pm B) = \sin A \cos B \pm \cos A \sin B$$</div>
+<div class="equation">$$\cos(A \pm B) = \cos A \cos B \mp \sin A \sin B$$</div>
+<div class="equation">$$\tan(A \pm B) = \frac{\tan A \pm \tan B}{1 \mp \tan A \tan B}$$</div>
+
+<h3>Double Angle Formulae</h3>
+<div class="equation">$$\sin 2A = 2\sin A \cos A$$</div>
+<div class="equation">$$\cos 2A = \cos^2 A - \sin^2 A = 2\cos^2 A - 1 = 1 - 2\sin^2 A$$</div>
+<div class="equation">$$\tan 2A = \frac{2\tan A}{1 - \tan^2 A}$$</div>
+
+<h3>Identity Summary Table</h3>
+<table>
+<tr><th>Identity</th><th>Formula</th></tr>
+<tr><td>Quotient</td><td>\(\tan\theta = \dfrac{\sin\theta}{\cos\theta}\)</td></tr>
+<tr><td>Pythagorean 1</td><td>\(\sin^2\theta + \cos^2\theta = 1\)</td></tr>
+<tr><td>Pythagorean 2</td><td>\(1 + \tan^2\theta = \sec^2\theta\)</td></tr>
+<tr><td>Pythagorean 3</td><td>\(1 + \cot^2\theta = \csc^2\theta\)</td></tr>
+<tr><td>Double angle (sin)</td><td>\(\sin 2A = 2\sin A\cos A\)</td></tr>
+<tr><td>Double angle (cos)</td><td>\(\cos 2A = \cos^2 A - \sin^2 A\)</td></tr>
+<tr><td>Double angle (tan)</td><td>\(\tan 2A = \dfrac{2\tan A}{1 - \tan^2 A}\)</td></tr>
+<tr><td>Half-angle from cos 2A</td><td>\(\cos^2 A = \dfrac{1 + \cos 2A}{2}\), \(\sin^2 A = \dfrac{1 - \cos 2A}{2}\)</td></tr>
+</table>
+
+<div class="example">
+<h3>Example: Prove that \(\dfrac{\sin 2\theta}{1 + \cos 2\theta} = \tan\theta\).</h3>
+<p>LHS: \(\dfrac{2\sin\theta\cos\theta}{1 + 2\cos^2\theta - 1} = \dfrac{2\sin\theta\cos\theta}{2\cos^2\theta} = \dfrac{\sin\theta}{\cos\theta} = \tan\theta\) = RHS. \(\square\)</p>
+</div>
+
+<!-- ============================================ -->
+<h2>The \(R\sin(x + \alpha)\) and \(R\cos(x + \alpha)\) Form</h2>
+
+<div class="definition">
+Any expression \(a\sin x + b\cos x\) can be written as:
+<div class="equation">$$a\sin x + b\cos x = R\sin(x + \alpha)$$</div>
+where \(R = \sqrt{a^2 + b^2}\) and \(\tan\alpha = \dfrac{b}{a}\).
+<br>Similarly, \(a\cos x + b\sin x = R\cos(x - \alpha)\) where \(\tan\alpha = \dfrac{b}{a}\).
+</div>
+
+<div class="example">
+<h3>Example: Write \(3\sin x + 4\cos x\) in the form \(R\sin(x + \alpha)\).</h3>
+<p>\(R = \sqrt{3^2 + 4^2} = \sqrt{25} = 5\)</p>
+<p>\(\tan\alpha = \dfrac{4}{3} \Rightarrow \alpha = \arctan\left(\dfrac{4}{3}\right) \approx 53.13^\circ\)</p>
+<p>\(3\sin x + 4\cos x = 5\sin(x + 53.13^\circ)\)</p>
+<p>Maximum value is \(5\) (when \(\sin(x + 53.13^\circ) = 1\)).</p>
+<p>Minimum value is \(-5\) (when \(\sin(x + 53.13^\circ) = -1\)).</p>
+</div>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> The \(R\sin(x + \alpha)\) form is used to find the maximum/minimum of a trig expression and to solve equations of the form \(a\sin x + b\cos x = c\). The max value is always \(R\) and the min is \(-R\).
+</div>
+
+<!-- ============================================ -->
+<h2>Small Angle Approximations</h2>
+
+<div class="definition">
+When \(\theta\) is small and measured in <strong>radians</strong>:
+<div class="equation">$$\sin\theta \approx \theta, \quad \cos\theta \approx 1 - \frac{\theta^2}{2}, \quad \tan\theta \approx \theta$$</div>
+</div>
+
+<div class="example">
+<h3>Example: Find an approximation for \(\dfrac{1 - \cos 2\theta}{\theta\sin\theta}\) when \(\theta\) is small.</h3>
+<p>Using small angle approximations:</p>
+<p>Numerator: \(1 - \cos 2\theta \approx 1 - \left(1 - \dfrac{(2\theta)^2}{2}\right) = 2\theta^2\)</p>
+<p>Denominator: \(\theta\sin\theta \approx \theta \cdot \theta = \theta^2\)</p>
+<p>\(\dfrac{1 - \cos 2\theta}{\theta\sin\theta} \approx \dfrac{2\theta^2}{\theta^2} = 2\)</p>
+</div>
+
+<!-- ============================================ -->
+<h2>Inverse Trigonometric Functions</h2>
+
+<div class="definition">
+<ul>
+  <li>\(\arcsin x\) (or \(\sin^{-1}x\)): domain \([-1, 1]\), range \(\left[-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right]\)</li>
+  <li>\(\arccos x\) (or \(\cos^{-1}x\)): domain \([-1, 1]\), range \([0, \pi]\)</li>
+  <li>\(\arctan x\) (or \(\tan^{-1}x\)): domain \((-\infty, \infty)\), range \(\left(-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right)\)</li>
+</ul>
+</div>
+
+<!-- ============================================ -->
+<h2>Solving Trigonometric Equations</h2>
+
+<h3>General Strategy</h3>
+<ol>
+  <li>Rearrange to isolate a single trig function if possible.</li>
+  <li>Find the <strong>principal value</strong> using inverse trig functions.</li>
+  <li>Use the CAST diagram or symmetry to find <strong>all solutions</strong> in the given range.</li>
+  <li>If the equation involves \(2\theta\) or \(3\theta\), adjust the range accordingly before finding solutions, then divide at the end.</li>
+</ol>
+
+<div class="example">
+<h3>Example: Solve \(2\sin^2 x + \sin x - 1 = 0\) for \(0 \leq x < 2\pi\).</h3>
+<p>This is a quadratic in \(\sin x\). Let \(u = \sin x\):</p>
+<p>\(2u^2 + u - 1 = 0 \Rightarrow (2u - 1)(u + 1) = 0\)</p>
+<p>\(u = \frac{1}{2}\) or \(u = -1\).</p>
+<p><strong>Case 1:</strong> \(\sin x = \frac{1}{2} \Rightarrow x = \frac{\pi}{6}\) or \(x = \pi - \frac{\pi}{6} = \frac{5\pi}{6}\).</p>
+<p><strong>Case 2:</strong> \(\sin x = -1 \Rightarrow x = \frac{3\pi}{2}\).</p>
+<p>Solutions: \(x = \dfrac{\pi}{6},\ \dfrac{5\pi}{6},\ \dfrac{3\pi}{2}\).</p>
+</div>
+
+<div class="example">
+<h3>Example: Solve \(\cos 2\theta = 0.5\) for \(0^\circ \leq \theta \leq 360^\circ\).</h3>
+<p>Since we have \(2\theta\), adjust range: \(0^\circ \leq 2\theta \leq 720^\circ\).</p>
+<p>\(\cos 2\theta = 0.5\): principal value \(2\theta = 60^\circ\).</p>
+<p>From the CAST diagram / cosine graph, solutions for \(2\theta\):</p>
+<p>\(2\theta = 60^\circ, 300^\circ, 420^\circ, 660^\circ\)</p>
+<p>Divide by 2: \(\theta = 30^\circ, 150^\circ, 210^\circ, 330^\circ\).</p>
+</div>
+
+<div class="example">
+<h3>Example: Solve \(3\sin x = 2\cos x\) for \(0^\circ \leq x < 360^\circ\).</h3>
+<p>Divide both sides by \(\cos x\): \(3\tan x = 2 \Rightarrow \tan x = \frac{2}{3}\).</p>
+<p>Principal value: \(x = \arctan\left(\frac{2}{3}\right) = 33.69^\circ\).</p>
+<p>Tan is positive in Q1 and Q3: \(x = 33.69^\circ\) or \(x = 180^\circ + 33.69^\circ = 213.69^\circ\).</p>
+</div>
+
+<!-- SVG: Solving trig equations visual summary -->
+<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;display:block;margin:20px auto;">
+  <rect x="10" y="10" width="580" height="180" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="300" y="38" text-anchor="middle" fill="#1e3a5f" font-size="15" font-weight="700">Solving Trig Equations Checklist</text>
+
+  <rect x="30" y="55" width="160" height="45" rx="8" fill="#e8f0fe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="110" y="72" text-anchor="middle" fill="#1e3a5f" font-size="11" font-weight="600">1. Isolate trig fn</text>
+  <text x="110" y="88" text-anchor="middle" fill="#64748b" font-size="10">Factor / rearrange</text>
+
+  <rect x="220" y="55" width="160" height="45" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="300" y="72" text-anchor="middle" fill="#16a34a" font-size="11" font-weight="600">2. Principal value</text>
+  <text x="300" y="88" text-anchor="middle" fill="#64748b" font-size="10">Use inverse trig</text>
+
+  <rect x="410" y="55" width="160" height="45" rx="8" fill="#fefce8" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="490" y="72" text-anchor="middle" fill="#b45309" font-size="11" font-weight="600">3. CAST diagram</text>
+  <text x="490" y="88" text-anchor="middle" fill="#64748b" font-size="10">Find all in range</text>
+
+  <rect x="120" y="120" width="170" height="50" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="205" y="140" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="600">For k*theta equations</text>
+  <text x="205" y="156" text-anchor="middle" fill="#64748b" font-size="10">Multiply range by k first</text>
+
+  <rect x="320" y="120" width="170" height="50" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="405" y="140" text-anchor="middle" fill="#2563eb" font-size="11" font-weight="600">Check your answers</text>
+  <text x="405" y="156" text-anchor="middle" fill="#64748b" font-size="10">Substitute back in</text>
+</svg>
+
+<div class="exam-tip">
+<strong>Key exam strategies for trigonometry:</strong>
+<ul>
+  <li>Memorise the exact values table -- these come up constantly.</li>
+  <li>For identities, always work from the more complicated side towards the simpler one.</li>
+  <li>When you see \(\sin^2\) or \(\cos^2\), think about the Pythagorean identity.</li>
+  <li>For equations with mixed trig functions, try to express everything in terms of one function.</li>
+  <li>Always check the required range and units (degrees vs radians).</li>
+  <li>For \(R\sin(x + \alpha)\) questions, expand using the addition formula and compare coefficients to find \(R\) and \(\alpha\).</li>
+  <li>Small angle approximations only work in <strong>radians</strong>.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

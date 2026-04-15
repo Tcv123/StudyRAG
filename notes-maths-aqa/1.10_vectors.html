@@ -178,18 +178,12 @@
 <div class="equation">$$\vec{OP} = \frac{n\mathbf{a} + m\mathbf{b}}{m + n}$$</div>
 
 <div class="example">
-  <h3>Worked Example: Proving Perpendicularity</h3>
-  <p>Points \(A(1, 2, 3)\), \(B(3, 0, 1)\), and \(C(5, 4, 3)\). Show that angle \(ABC = 90°\).</p>
+  <h3>Worked Example: Proving Perpendicularity (with coordinates)</h3>
+  <p>Points \(A(1, 2, 3)\), \(B(3, 0, 1)\), and \(C(4, 2, 0)\). Show that angle \(ABC = 90°\).</p>
   <p><strong>Solution:</strong> Find vectors from \(B\):</p>
-  <div class="equation">$$\vec{BA} = \begin{pmatrix} 1-3 \\ 2-0 \\ 3-1 \end{pmatrix} = \begin{pmatrix} -2 \\ 2 \\ 2 \end{pmatrix}, \quad \vec{BC} = \begin{pmatrix} 5-3 \\ 4-0 \\ 3-1 \end{pmatrix} = \begin{pmatrix} 2 \\ 4 \\ 2 \end{pmatrix}$$</div>
-  <div class="equation">$$\vec{BA} \cdot \vec{BC} = (-2)(2) + (2)(4) + (2)(2) = -4 + 8 + 4 = 8$$</div>
-  <p>Wait -- this is not zero. Let me recheck. Actually \(\vec{BA} \cdot \vec{BC} = -4 + 8 + 4 = 8 \neq 0\), so these are not perpendicular. Let me choose correct points.</p>
-  <p>Take \(A(1, 3, 2)\), \(B(3, 1, 0)\), \(C(5, 3, 2)\):</p>
-  <div class="equation">$$\vec{BA} = \begin{pmatrix} -2 \\ 2 \\ 2 \end{pmatrix}, \quad \vec{BC} = \begin{pmatrix} 2 \\ 2 \\ 2 \end{pmatrix}$$</div>
-  <div class="equation">$$\vec{BA} \cdot \vec{BC} = -4 + 4 + 4 = 4 \neq 0$$</div>
-  <p>Instead, consider \(A(2, 5, 1)\), \(B(3, 2, -1)\), \(C(5, 3, 1)\):</p>
-  <div class="equation">$$\vec{BA} = \begin{pmatrix} -1 \\ 3 \\ 2 \end{pmatrix}, \quad \vec{BC} = \begin{pmatrix} 2 \\ 1 \\ 2 \end{pmatrix}$$</div>
-  <div class="equation">$$\vec{BA} \cdot \vec{BC} = -2 + 3 + 4 = 5 \neq 0$$</div>
+  <div class="equation">$$\vec{BA} = \begin{pmatrix} 1-3 \\ 2-0 \\ 3-1 \end{pmatrix} = \begin{pmatrix} -2 \\ 2 \\ 2 \end{pmatrix}, \quad \vec{BC} = \begin{pmatrix} 4-3 \\ 2-0 \\ 0-1 \end{pmatrix} = \begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix}$$</div>
+  <div class="equation">$$\vec{BA} \cdot \vec{BC} = (-2)(1) + (2)(2) + (2)(-1) = -2 + 4 - 2 = 0$$</div>
+  <p>Since \(\vec{BA} \cdot \vec{BC} = 0\), the vectors are perpendicular, so angle \(ABC = 90°\).</p>
 </div>
 
 <div class="example">

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mechanics</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Mechanics</h1>
+
+<!-- ================= SI UNITS ================= -->
+<h2>SI Units and Quantities</h2>
+
+<table>
+  <tr><th>Quantity</th><th>SI Unit</th><th>Symbol</th></tr>
+  <tr><td>Distance / Displacement</td><td>metre</td><td>m</td></tr>
+  <tr><td>Time</td><td>second</td><td>s</td></tr>
+  <tr><td>Mass</td><td>kilogram</td><td>kg</td></tr>
+  <tr><td>Velocity / Speed</td><td>metres per second</td><td>m s\(^{-1}\)</td></tr>
+  <tr><td>Acceleration</td><td>metres per second squared</td><td>m s\(^{-2}\)</td></tr>
+  <tr><td>Force</td><td>newton</td><td>N = kg m s\(^{-2}\)</td></tr>
+</table>
+
+<div class="definition">
+  <strong>Scalars vs Vectors:</strong>
+  <ul>
+    <li><strong>Scalars:</strong> distance, speed, mass, time, energy</li>
+    <li><strong>Vectors:</strong> displacement, velocity, acceleration, force, momentum</li>
+  </ul>
+</div>
+
+<!-- ================= KINEMATICS ================= -->
+<h2>Kinematics (Constant Acceleration)</h2>
+
+<h3>SUVAT Equations</h3>
+
+<div class="definition">
+  <strong>Variables:</strong> \(s\) = displacement, \(u\) = initial velocity, \(v\) = final velocity, \(a\) = acceleration, \(t\) = time.
+</div>
+
+<table>
+  <tr><th>Equation</th><th>Missing Variable</th></tr>
+  <tr><td>\(v = u + at\)</td><td>\(s\)</td></tr>
+  <tr><td>\(s = ut + \frac{1}{2}at^2\)</td><td>\(v\)</td></tr>
+  <tr><td>\(s = vt - \frac{1}{2}at^2\)</td><td>\(u\)</td></tr>
+  <tr><td>\(v^2 = u^2 + 2as\)</td><td>\(t\)</td></tr>
+  <tr><td>\(s = \frac{1}{2}(u + v)t\)</td><td>\(a\)</td></tr>
+</table>
+
+<div class="example">
+  <h3>Worked Example: SUVAT</h3>
+  <p>A car accelerates from rest at \(3 \text{ m s}^{-2}\) for 8 seconds. Find the distance travelled.</p>
+  <p><strong>Solution:</strong> \(u = 0\), \(a = 3\), \(t = 8\), find \(s\).</p>
+  <div class="equation">$$s = ut + \frac{1}{2}at^2 = 0 + \frac{1}{2}(3)(64) = 96 \text{ m}$$</div>
+</div>
+
+<h3>Velocity-Time Graphs</h3>
+
+<!-- SVG: v-t graph -->
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:20px auto;">
+  <defs>
+    <marker id="marr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#1a1a2e"/></marker>
+  </defs>
+  <!-- axes -->
+  <line x1="60" y1="240" x2="470" y2="240" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#marr)"/>
+  <line x1="60" y1="270" x2="60" y2="20" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#marr)"/>
+  <text x="475" y="245" font-size="14" fill="#1a1a2e">t (s)</text>
+  <text x="10" y="25" font-size="14" fill="#1a1a2e">v (m/s)</text>
+  <!-- acceleration phase -->
+  <line x1="60" y1="240" x2="180" y2="100" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- constant velocity -->
+  <line x1="180" y1="100" x2="320" y2="100" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- deceleration -->
+  <line x1="320" y1="100" x2="420" y2="240" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- shaded area -->
+  <polygon points="60,240 180,100 320,100 420,240" fill="#bfdbfe" fill-opacity="0.3"/>
+  <!-- labels -->
+  <text x="90" y="180" font-size="12" fill="#16a34a" font-weight="600" transform="rotate(-50,90,180)">acceleration</text>
+  <text x="220" y="90" font-size="12" fill="#16a34a" font-weight="600">constant velocity</text>
+  <text x="345" y="180" font-size="12" fill="#dc2626" font-weight="600" transform="rotate(54,345,180)">deceleration</text>
+  <text x="200" y="200" font-size="13" fill="#1e3a5f" font-weight="600">Area = distance</text>
+  <!-- annotations -->
+  <text x="100" y="145" font-size="11" fill="#666">gradient = a</text>
+</svg>
+
+<p>Key facts about v-t graphs:</p>
+<ul>
+  <li><strong>Gradient</strong> = acceleration</li>
+  <li><strong>Area under graph</strong> = displacement</li>
+  <li>Horizontal line = constant velocity (zero acceleration)</li>
+</ul>
+
+<h3>Variable Acceleration</h3>
+<p>When acceleration is not constant, use calculus:</p>
+<ul>
+  <li>\(v = \dfrac{ds}{dt}\) (velocity is the derivative of displacement)</li>
+  <li>\(a = \dfrac{dv}{dt} = \dfrac{d^2s}{dt^2}\) (acceleration is the derivative of velocity)</li>
+  <li>\(s = \int v\,dt\) and \(v = \int a\,dt\)</li>
+</ul>
+
+<div class="example">
+  <h3>Worked Example: Variable Acceleration</h3>
+  <p>A particle moves such that \(v = 3t^2 - 6t + 2\) m/s. Find the acceleration and displacement at \(t = 3\).</p>
+  <p><strong>Solution:</strong></p>
+  <div class="equation">$$a = \frac{dv}{dt} = 6t - 6$$</div>
+  <p>At \(t = 3\): \(a = 18 - 6 = 12 \text{ m s}^{-2}\).</p>
+  <div class="equation">$$s = \int_0^3 (3t^2 - 6t + 2)\,dt = \left[t^3 - 3t^2 + 2t\right]_0^3 = 27 - 27 + 6 = 6 \text{ m}$$</div>
+</div>
+
+<!-- ================= FORCES ================= -->
+<h2>Forces</h2>
+
+<div class="definition">
+  <strong>Common Forces:</strong>
+  <ul>
+    <li><strong>Weight:</strong> \(W = mg\), where \(g = 9.8 \text{ m s}^{-2}\), acts downward</li>
+    <li><strong>Normal reaction (R or N):</strong> perpendicular to the surface of contact</li>
+    <li><strong>Friction (F):</strong> opposes motion, \(F \leq \mu R\). At the point of sliding, \(F = \mu R\)</li>
+    <li><strong>Tension (T):</strong> in strings and ropes, acts along the string</li>
+    <li><strong>Thrust/Compression:</strong> in rods, can push as well as pull</li>
+  </ul>
+</div>
+
+<!-- ================= NEWTON'S LAWS ================= -->
+<h2>Newton's Laws</h2>
+
+<div class="definition">
+  <strong>Newton's Laws:</strong>
+  <ol>
+    <li>A body remains at rest or in uniform motion unless acted upon by a resultant force.</li>
+    <li>\(F = ma\) — the resultant force equals mass times acceleration.</li>
+    <li>For every action, there is an equal and opposite reaction.</li>
+  </ol>
+</div>
+
+<!-- SVG: Force Diagram on Inclined Plane -->
+<svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:20px auto;">
+  <!-- inclined plane -->
+  <polygon points="60,300 420,300 420,120" fill="#e2e8f0" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- angle -->
+  <path d="M380,300 Q380,280 395,268" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="360" y="290" font-size="14" fill="#1a1a2e">&theta;</text>
+  <!-- block -->
+  <rect x="270" y="165" width="50" height="40" fill="#bfdbfe" stroke="#2563eb" stroke-width="2" transform="rotate(-26.5,295,185)"/>
+  <!-- weight arrow (down) -->
+  <line x1="295" y1="200" x2="295" y2="280" stroke="#dc2626" stroke-width="2.5"/>
+  <polygon points="295,285 289,272 301,272" fill="#dc2626"/>
+  <text x="302" y="270" font-size="13" fill="#dc2626" font-weight="600">mg</text>
+  <!-- normal reaction (perpendicular to surface) -->
+  <line x1="290" y1="178" x2="260" y2="110" stroke="#16a34a" stroke-width="2.5"/>
+  <polygon points="258,105 253,120 266,116" fill="#16a34a"/>
+  <text x="240" y="100" font-size="13" fill="#16a34a" font-weight="600">R</text>
+  <!-- friction (along surface, up the slope) -->
+  <line x1="275" y1="195" x2="210" y2="228" stroke="#f59e0b" stroke-width="2.5"/>
+  <polygon points="206,230 220,234 218,222" fill="#f59e0b"/>
+  <text x="195" y="250" font-size="13" fill="#f59e0b" font-weight="600">F</text>
+  <!-- component arrows on block -->
+  <text x="310" y="240" font-size="11" fill="#666">mg sin&theta;</text>
+  <text x="240" y="145" font-size="11" fill="#666">mg cos&theta;</text>
+  <text x="120" y="40" font-size="14" fill="#1e3a5f" font-weight="600">Forces on an Inclined Plane</text>
+</svg>
+
+<p>On an inclined plane at angle \(\theta\) to the horizontal:</p>
+<ul>
+  <li>Component of weight parallel to slope: \(mg\sin\theta\)</li>
+  <li>Component of weight perpendicular to slope: \(mg\cos\theta\)</li>
+  <li>Normal reaction: \(R = mg\cos\theta\) (when no other perpendicular forces)</li>
+</ul>
+
+<div class="example">
+  <h3>Worked Example: Inclined Plane</h3>
+  <p>A 5 kg block slides down a rough plane inclined at 30 degrees. The coefficient of friction is \(\mu = 0.3\). Find the acceleration.</p>
+  <p><strong>Solution:</strong> Resolve perpendicular to the slope:</p>
+  <div class="equation">$$R = mg\cos 30° = 5 \times 9.8 \times \frac{\sqrt{3}}{2} = 42.43 \text{ N}$$</div>
+  <p>Friction: \(F = \mu R = 0.3 \times 42.43 = 12.73\) N (acts up the slope).</p>
+  <p>Resolve parallel to the slope (Newton's second law):</p>
+  <div class="equation">$$ma = mg\sin 30° - F$$</div>
+  <div class="equation">$$5a = 5 \times 9.8 \times 0.5 - 12.73 = 24.5 - 12.73 = 11.77$$</div>
+  <div class="equation">$$a = 2.35 \text{ m s}^{-2}$$</div>
+</div>
+
+<!-- ================= CONNECTED PARTICLES ================= -->
+<h2>Connected Particles and Pulleys</h2>
+
+<!-- SVG: Pulley System -->
+<svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px;display:block;margin:20px auto;">
+  <!-- support -->
+  <line x1="140" y1="20" x2="260" y2="20" stroke="#1a1a2e" stroke-width="3"/>
+  <line x1="140" y1="15" x2="140" y2="25" stroke="#1a1a2e" stroke-width="3"/>
+  <line x1="260" y1="15" x2="260" y2="25" stroke="#1a1a2e" stroke-width="3"/>
+  <!-- pulley -->
+  <circle cx="200" cy="50" r="20" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <circle cx="200" cy="50" r="3" fill="#1a1a2e"/>
+  <!-- left string -->
+  <line x1="180" y1="50" x2="180" y2="180" stroke="#666" stroke-width="2"/>
+  <!-- right string -->
+  <line x1="220" y1="50" x2="220" y2="220" stroke="#666" stroke-width="2"/>
+  <!-- left mass -->
+  <rect x="160" y="180" width="40" height="35" fill="#bfdbfe" stroke="#2563eb" stroke-width="2" rx="4"/>
+  <text x="170" y="203" font-size="14" fill="#2563eb" font-weight="600">m₁</text>
+  <!-- right mass -->
+  <rect x="200" y="220" width="40" height="45" fill="#fecaca" stroke="#dc2626" stroke-width="2" rx="4"/>
+  <text x="208" y="248" font-size="14" fill="#dc2626" font-weight="600">m₂</text>
+  <!-- tension labels -->
+  <text x="155" y="120" font-size="13" fill="#16a34a" font-weight="600">T</text>
+  <text x="230" y="140" font-size="13" fill="#16a34a" font-weight="600">T</text>
+  <!-- arrows for weight -->
+  <line x1="180" y1="220" x2="180" y2="260" stroke="#dc2626" stroke-width="1.5"/>
+  <polygon points="180,265 175,255 185,255" fill="#dc2626"/>
+  <text x="160" y="280" font-size="11" fill="#dc2626">m₁g</text>
+  <line x1="220" y1="270" x2="220" y2="300" stroke="#dc2626" stroke-width="1.5"/>
+  <polygon points="220,305 215,295 225,295" fill="#dc2626"/>
+  <text x="230" y="302" font-size="11" fill="#dc2626">m₂g</text>
+  <!-- acceleration arrows -->
+  <text x="135" y="165" font-size="12" fill="#f59e0b">a &uarr;</text>
+  <text x="245" y="210" font-size="12" fill="#f59e0b">a &darr;</text>
+  <text x="105" y="40" font-size="14" fill="#1e3a5f" font-weight="600">Atwood's Pulley</text>
+</svg>
+
+<div class="definition">
+  <strong>Assumptions for pulley problems:</strong>
+  <ul>
+    <li>The string is light (massless) and inextensible</li>
+    <li>The pulley is smooth (frictionless) and light</li>
+    <li>Tension is the same throughout the string</li>
+    <li>Both particles have the same magnitude of acceleration</li>
+  </ul>
+</div>
+
+<div class="example">
+  <h3>Worked Example: Atwood's Machine</h3>
+  <p>Two particles of mass 3 kg and 5 kg are connected by a light inextensible string over a smooth pulley. Find the acceleration and tension.</p>
+  <p><strong>Solution:</strong> The heavier mass (5 kg) accelerates downward.</p>
+  <p>For the 5 kg mass (downward positive): \(5g - T = 5a\)</p>
+  <p>For the 3 kg mass (upward positive): \(T - 3g = 3a\)</p>
+  <p>Adding the equations:</p>
+  <div class="equation">$$5g - 3g = 8a \implies 2g = 8a \implies a = \frac{g}{4} = 2.45 \text{ m s}^{-2}$$</div>
+  <p>Substituting back: \(T = 3g + 3a = 3(9.8) + 3(2.45) = 29.4 + 7.35 = 36.75\) N.</p>
+</div>
+
+<!-- ================= PROJECTILES ================= -->
+<h2>Projectiles</h2>
+
+<div class="definition">
+  <strong>Projectile Motion:</strong> An object launched with initial speed \(u\) at angle \(\theta\) to the horizontal (neglecting air resistance):
+  <ul>
+    <li>Horizontal: \(x = ut\cos\theta\) (constant velocity)</li>
+    <li>Vertical: \(y = ut\sin\theta - \frac{1}{2}gt^2\) (acceleration \(-g\))</li>
+  </ul>
+</div>
+
+<!-- SVG: Projectile Motion -->
+<svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:20px auto;">
+  <defs>
+    <marker id="pjarr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#1a1a2e"/></marker>
+  </defs>
+  <!-- ground -->
+  <line x1="30" y1="240" x2="480" y2="240" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- parabolic path -->
+  <path d="M60,240 Q160,20 380,60 Q430,80 460,240" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- initial velocity arrow -->
+  <line x1="60" y1="240" x2="130" y2="160" stroke="#dc2626" stroke-width="2.5" marker-end="url(#pjarr)"/>
+  <text x="75" y="190" font-size="13" fill="#dc2626" font-weight="600">u</text>
+  <!-- angle -->
+  <path d="M100,240 Q95,228 105,220" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="107" y="235" font-size="13" fill="#1a1a2e">&theta;</text>
+  <!-- highest point -->
+  <circle cx="230" cy="45" r="4" fill="#16a34a"/>
+  <text x="215" y="35" font-size="12" fill="#16a34a" font-weight="600">Highest point</text>
+  <text x="215" y="70" font-size="11" fill="#666">v_y = 0</text>
+  <!-- horizontal range -->
+  <line x1="60" y1="255" x2="460" y2="255" stroke="#f59e0b" stroke-width="1.5"/>
+  <line x1="60" y1="250" x2="60" y2="260" stroke="#f59e0b" stroke-width="1.5"/>
+  <line x1="460" y1="250" x2="460" y2="260" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="230" y="270" font-size="13" fill="#f59e0b" font-weight="600">Range R</text>
+  <!-- component arrows at start -->
+  <line x1="60" y1="240" x2="140" y2="240" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="85" y="258" font-size="11" fill="#16a34a">u cos&theta;</text>
+  <line x1="60" y1="240" x2="60" y2="165" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="20" y="205" font-size="11" fill="#7c3aed">u sin&theta;</text>
+</svg>
+
+<p>Key projectile formulae (launched from ground level):</p>
+<ul>
+  <li>Time of flight: \(T = \dfrac{2u\sin\theta}{g}\)</li>
+  <li>Maximum height: \(H = \dfrac{u^2\sin^2\theta}{2g}\)</li>
+  <li>Range: \(R = \dfrac{u^2\sin 2\theta}{g}\)</li>
+</ul>
+
+<div class="example">
+  <h3>Worked Example: Projectile</h3>
+  <p>A ball is kicked from ground level at \(20 \text{ m s}^{-1}\) at \(30°\) above the horizontal. Find: (a) time of flight, (b) maximum height, (c) range.</p>
+  <p><strong>Solution:</strong></p>
+  <p>(a) \(T = \dfrac{2 \times 20 \times \sin 30°}{9.8} = \dfrac{20}{9.8} = 2.04\) s</p>
+  <p>(b) \(H = \dfrac{20^2 \times \sin^2 30°}{2 \times 9.8} = \dfrac{400 \times 0.25}{19.6} = 5.10\) m</p>
+  <p>(c) \(R = \dfrac{20^2 \times \sin 60°}{9.8} = \dfrac{400 \times 0.866}{9.8} = 35.3\) m</p>
+</div>
+
+<!-- ================= MOMENTS ================= -->
+<h2>Moments</h2>
+
+<div class="definition">
+  <strong>Moment of a Force:</strong> The moment of a force about a point is:
+  $$\text{Moment} = F \times d$$
+  where \(d\) is the perpendicular distance from the point to the line of action of the force. Measured in N m.
+</div>
+
+<p>For equilibrium:</p>
+<ul>
+  <li>The resultant force is zero (translational equilibrium)</li>
+  <li>The sum of clockwise moments equals the sum of anticlockwise moments about any point (rotational equilibrium)</li>
+</ul>
+
+<div class="example">
+  <h3>Worked Example: Moments</h3>
+  <p>A uniform beam of length 6 m and weight 200 N is supported at points A and B, where A is at one end and B is 4 m from A. A load of 300 N hangs from the other end. Find the reactions at A and B.</p>
+  <p><strong>Solution:</strong> Take moments about A (eliminates \(R_A\)):</p>
+  <div class="equation">$$R_B \times 4 = 200 \times 3 + 300 \times 6$$</div>
+  <div class="equation">$$4R_B = 600 + 1800 = 2400 \implies R_B = 600 \text{ N}$$</div>
+  <p>Resolve vertically: \(R_A + R_B = 200 + 300 = 500\), so \(R_A = 500 - 600 = -100\) N.</p>
+  <p>The negative sign means \(R_A\) acts downward (the beam would lift at A without a support holding it down).</p>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When solving moments problems, take moments about a point where an unknown force acts to eliminate it from the equation. For a uniform beam, the weight acts at the midpoint. Always draw a clear diagram labelling all forces and distances.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In mechanics problems, always state the positive direction clearly and use consistent signs throughout. Draw a force diagram before writing equations -- this helps avoid sign errors and missing forces.
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>
