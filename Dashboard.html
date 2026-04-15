@@ -570,7 +570,7 @@
         <div class="gs-goal">The goal is to get every topic green and feel confident heading into your exams.</div>
       </div>
 
-      <!-- ROW 2 — Subjects & boards (simple list) -->
+      <!-- ROW 2 — Subjects & boards + exam dates -->
       <div class="subjects-row-wrap">
         <div class="section-hd">
           <div class="section-title">📚 Your subjects &amp; exam boards</div>
@@ -580,6 +580,10 @@
           <div class="shimmer" style="width:130px;flex-shrink:0;"></div>
           <div class="shimmer" style="width:130px;flex-shrink:0;"></div>
           <div class="shimmer" style="width:130px;flex-shrink:0;"></div>
+        </div>
+        <div id="examDatesRow" style="margin-top:14px;">
+          <div style="font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">📅 Upcoming exams</div>
+          <div id="examDatesGrid" style="display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;"></div>
         </div>
       </div>
 
@@ -698,15 +702,6 @@
       </div>
     </div>
 
-    <!-- ══ EXAM DATES SECTION ═══════════════════════════════════════════ -->
-    <div class="view active" id="viewExamDates" style="margin-top:30px;">
-      <div class="section-hd" style="margin-bottom:16px;">
-        <div class="section-title">📅 Your Exam Dates</div>
-      </div>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.5;">Showing only exams for your current subjects. Dates are for the May/June 2026 series. Always confirm with your school.</p>
-      <div id="examDatesGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;"></div>
-      <p style="font-size:11px;color:var(--muted2);margin-top:14px;">Results day: <strong>Thursday 13 August 2026</strong>. National contingency day: 24 June 2026.</p>
-    </div>
 
   </main>
 </div>
@@ -831,6 +826,7 @@ const EXAM_DATES = {
 
 function renderExamDates(subjects) {
   const grid = document.getElementById('examDatesGrid');
+  const row = document.getElementById('examDatesRow');
   if (!grid) return;
 
   const now = new Date();
@@ -851,38 +847,35 @@ function renderExamDates(subjects) {
     });
   });
 
-  exams.sort((a, b) => a.examDate - b.examDate);
+  // Only show future + today exams, sorted by date
+  const upcoming = exams.filter(e => e.diffDays >= 0).sort((a, b) => a.examDate - b.examDate);
 
-  if (!exams.length) {
-    grid.innerHTML = '<p style="grid-column:1/-1;font-size:14px;color:var(--muted);">No exam dates found for your current subjects.</p>';
+  if (!upcoming.length) {
+    if (row) row.style.display = 'none';
     return;
   }
 
-  grid.innerHTML = exams.map(e => {
-    const dateStr = e.examDate.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
-    const isPast = e.diffDays < 0;
-    const isClose = e.diffDays >= 0 && e.diffDays <= 14;
-    const borderColor = isPast ? 'var(--muted2)' : isClose ? 'var(--red)' : 'var(--border)';
-    const bgColor = isPast ? 'var(--surface2)' : isClose ? 'var(--red-bg)' : 'var(--surface)';
-    const countdownText = isPast ? '<span style="color:var(--muted);">Completed</span>' :
-      e.diffDays === 0 ? '<span style="color:var(--red);font-weight:700;">TODAY</span>' :
-      e.diffDays === 1 ? '<span style="color:var(--red);font-weight:700;">TOMORROW</span>' :
-      `<span style="color:${isClose ? 'var(--red)' : 'var(--accent-dark)'};font-weight:600;">${e.diffDays} days</span>`;
+  grid.innerHTML = upcoming.map(e => {
+    const dateStr = e.examDate.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+    const isClose = e.diffDays <= 14;
+    const isVeryClose = e.diffDays <= 3;
+    const borderColor = isVeryClose ? 'var(--red-border)' : isClose ? 'var(--amber-border)' : 'var(--border)';
+    const bgColor = isVeryClose ? 'var(--red-bg)' : isClose ? 'var(--amber-bg)' : 'var(--surface)';
+    const countdownText = e.diffDays === 0 ? '<span style="color:var(--red);font-weight:700;">TODAY</span>' :
+      e.diffDays === 1 ? '<span style="color:var(--red);font-weight:700;">Tomorrow</span>' :
+      `<span style="color:${isClose ? 'var(--amber)' : 'var(--accent-dark)'};font-weight:600;">${e.diffDays}d</span>`;
 
-    return `<div style="background:${bgColor};border:1px solid ${borderColor};border-radius:14px;padding:18px 20px;${isPast ? 'opacity:0.5;' : ''}">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-        <span style="font-size:20px;">${e.emoji}</span>
-        <div>
-          <div style="font-weight:600;font-size:14px;">${e.subject}</div>
-          <div style="font-size:11px;color:var(--muted);">${e.board}</div>
-        </div>
-        <div style="margin-left:auto;text-align:right;">${countdownText}</div>
+    return `<div style="min-width:200px;flex-shrink:0;background:${bgColor};border:1px solid ${borderColor};border-radius:12px;padding:14px 16px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span style="font-size:16px;">${e.emoji}</span>
+        <span style="font-weight:600;font-size:13px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${e.subject}</span>
+        ${countdownText}
       </div>
-      <div style="font-size:13px;font-weight:500;margin-bottom:4px;">${e.paper}</div>
-      <div style="font-size:12px;color:var(--muted);display:flex;gap:12px;">
-        <span>📅 ${dateStr}</span>
-        <span>🕐 ${e.time === 'AM' ? '9:00 AM' : '1:30 PM'}</span>
-        <span>⏱ ${e.duration}</span>
+      <div style="font-size:12px;color:var(--text);font-weight:500;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${e.paper}</div>
+      <div style="font-size:11px;color:var(--muted);display:flex;gap:8px;">
+        <span>${dateStr}</span>
+        <span>${e.time === 'AM' ? '9:00 AM' : '1:30 PM'}</span>
+        <span>${e.duration}</span>
       </div>
     </div>`;
   }).join('');
