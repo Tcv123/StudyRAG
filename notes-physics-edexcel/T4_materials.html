@@ -1,455 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topic 4 — Materials</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: #1a1a2e;
-            background: #ffffff;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 2rem;
-            color: #1a1a2e;
-            border-bottom: 3px solid #2563eb;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #1e3a5f;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            border-left: 4px solid #2563eb;
-            padding-left: 12px;
-        }
-        h3 {
-            font-size: 1.2rem;
-            color: #334155;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 12px;
-        }
-        ul, ol {
-            margin-left: 25px;
-            margin-bottom: 15px;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 0.95rem;
-        }
-        th, td {
-            border: 1px solid #d1d5db;
-            padding: 10px 14px;
-            text-align: left;
-        }
-        th {
-            background: #f1f5f9;
-            font-weight: 600;
-            color: #1e3a5f;
-        }
-        tr:nth-child(even) {
-            background: #f8fafc;
-        }
-        .definition-box {
-            background: #eff6ff;
-            border-left: 4px solid #2563eb;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip {
-            background: #fffbeb;
-            border-left: 4px solid #f59e0b;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip::before {
-            content: "Exam Tip: ";
-            font-weight: 700;
-            color: #b45309;
-        }
-        .equation {
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-            font-size: 1.1rem;
-            background: #f8fafc;
-            padding: 10px 20px;
-            margin: 10px 0;
-            border-radius: 6px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-        }
-        strong {
-            color: #1e3a5f;
-        }
-        @media print {
-            body { padding: 20px; }
-            .exam-tip, .definition-box { break-inside: avoid; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 4 — Materials</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin-top: 35px; margin-bottom: 15px; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #334155; margin-top: 20px; margin-bottom: 10px; }
+  h4 { font-size: 1.05rem; color: #475569; margin-top: 16px; margin-bottom: 8px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin-left: 25px; margin-bottom: 15px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
+  th { background: #f1f5f9; font-weight: 600; color: #1e3a5f; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition-box { background: #eff6ff; border-left: 4px solid #2563eb; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .equation { font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 1.1rem; background: #f8fafc; padding: 10px 20px; margin: 10px 0; border-radius: 6px; text-align: center; border: 1px solid #e2e8f0; }
+  strong { color: #1e3a5f; }
+  @media print { body { padding: 20px; } .exam-tip, .definition-box { break-inside: avoid; } }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Topic 4 — Materials</h1>
+<div class="container">
 
-        <h2>4.1 Density</h2>
-        <div class="definition-box">
-            <strong>Density (&rho;)</strong> is the mass per unit volume of a material. It is a scalar quantity measured in kg m<sup>-3</sup>.
-        </div>
-        <div class="equation">
-            &rho; = m / V
-        </div>
-        <p>where m = mass (kg) and V = volume (m&sup3;).</p>
+<h1>Topic 4 — Materials</h1>
 
-        <h3>Measuring Density</h3>
-        <ul>
-            <li><strong>Regular solids:</strong> Measure mass with a balance; calculate volume from dimensions (e.g., V = length &times; width &times; height for a cuboid, V = &pi;r&sup2;h for a cylinder).</li>
-            <li><strong>Irregular solids:</strong> Use a displacement method — submerge in water and measure the volume of water displaced.</li>
-            <li><strong>Liquids:</strong> Measure mass of a known volume using a measuring cylinder and balance.</li>
-        </ul>
+<!-- ============================================================ -->
+<!-- 4.1 DENSITY -->
+<!-- ============================================================ -->
+<h2>4.1 Density</h2>
+<div class="definition-box">
+  <strong>Density (&rho;):</strong> The mass per unit volume of a material. It is a scalar property of the material itself (not the object). Units: kg m<sup>-3</sup>.
+</div>
+<div class="equation">&rho; = m / V</div>
 
-        <h2>4.2 Hooke's Law</h2>
-        <div class="definition-box">
-            <strong>Hooke's Law:</strong> The extension of a spring is directly proportional to the applied force, provided the limit of proportionality is not exceeded.
-        </div>
-        <div class="equation">
-            F = kx
-        </div>
-        <p>where F = force applied (N), k = spring constant (N m<sup>-1</sup>), x = extension (m).</p>
+<h3>Measuring Density</h3>
+<ul>
+  <li><strong>Regular solids:</strong> Measure mass with a balance. Calculate volume from dimensions (cuboid: V = l &times; w &times; h; cylinder: V = &pi;r<sup>2</sup>h; sphere: V = (4/3)&pi;r<sup>3</sup>).</li>
+  <li><strong>Irregular solids:</strong> Measure mass. Find volume by the displacement method: submerge the object in water in a measuring cylinder and record the rise in water level (V = V<sub>final</sub> &minus; V<sub>initial</sub>). Alternatively use a eureka can (displacement can).</li>
+  <li><strong>Liquids:</strong> Measure the mass of a known volume using a measuring cylinder and balance. Subtract the mass of the empty cylinder.</li>
+</ul>
 
-        <p>The <strong>spring constant (k)</strong> is the force per unit extension. A stiffer spring has a larger value of k. The spring constant is equal to the gradient of the linear section of a force-extension graph.</p>
+<table>
+  <tr><th>Material</th><th>Density (kg m<sup>-3</sup>)</th></tr>
+  <tr><td>Air (at STP)</td><td>1.2</td></tr>
+  <tr><td>Water</td><td>1000</td></tr>
+  <tr><td>Aluminium</td><td>2700</td></tr>
+  <tr><td>Iron/Steel</td><td>7800</td></tr>
+  <tr><td>Copper</td><td>8900</td></tr>
+  <tr><td>Lead</td><td>11300</td></tr>
+  <tr><td>Gold</td><td>19300</td></tr>
+</table>
 
-        <!-- SVG: Force-Extension Graph (Hooke's Law) -->
-        <div style="margin: 20px auto; text-align: center;">
-            <svg viewBox="0 0 440 300" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-                <text x="220" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Force-Extension Graph for a Spring</text>
-                <!-- Axes -->
-                <line x1="60" y1="260" x2="400" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
-                <line x1="60" y1="260" x2="60" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
-                <text x="230" y="280" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle">Extension (x)</text>
-                <text x="25" y="150" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle" transform="rotate(-90,25,150)">Force (F)</text>
-                <!-- Linear region -->
-                <line x1="60" y1="260" x2="220" y2="100" stroke="#1a73e8" stroke-width="2.5"/>
-                <!-- Beyond limit of proportionality -->
-                <path d="M 220,100 Q 260,70 300,55 Q 340,48 380,50" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
-                <!-- Limit of proportionality -->
-                <circle cx="220" cy="100" r="4" fill="#DC2626"/>
-                <line x1="220" y1="100" x2="220" y2="260" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
-                <text x="230" y="90" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">P (Limit of proportionality)</text>
-                <!-- Elastic limit -->
-                <circle cx="250" cy="80" r="4" fill="#D97706"/>
-                <text x="260" y="72" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">E (Elastic limit)</text>
-                <!-- Gradient label -->
-                <text x="120" y="165" font-family="system-ui" font-size="11" fill="#1a73e8" transform="rotate(-46,120,165)">gradient = k</text>
-                <!-- Shaded area -->
-                <polygon points="60,260 220,100 220,260" fill="#1a73e8" opacity="0.08"/>
-                <text x="140" y="230" font-family="system-ui" font-size="10" fill="#1a73e8">Area = energy</text>
-                <text x="140" y="242" font-family="system-ui" font-size="10" fill="#1a73e8">stored = ½kx²</text>
-            </svg>
-        </div>
+<div class="worked-example">
+<strong>Worked Example:</strong> A metal cylinder has diameter 2.4 cm, height 5.0 cm, and mass 180 g. Calculate its density and identify the likely metal.<br><br>
+<strong>Solution:</strong><br>
+r = 1.2 cm = 0.012 m; h = 0.050 m; m = 0.180 kg<br>
+V = &pi;r<sup>2</sup>h = &pi; &times; (0.012)<sup>2</sup> &times; 0.050 = &pi; &times; 7.2 &times; 10<sup>-6</sup> = 2.262 &times; 10<sup>-5</sup> m<sup>3</sup><br>
+&rho; = m/V = 0.180 / 2.262 &times; 10<sup>-5</sup> = <strong>7960 kg m<sup>-3</sup></strong><br>
+This is close to the density of steel (7800 kg m<sup>-3</sup>) or iron (7870 kg m<sup>-3</sup>).
+</div>
 
-        <h3>Limit of Proportionality and Elastic Limit</h3>
-        <ul>
-            <li><strong>Limit of proportionality:</strong> The point beyond which force is no longer proportional to extension (Hooke's law no longer applies). The graph is no longer linear.</li>
-            <li><strong>Elastic limit:</strong> The point beyond which the material will not return to its original length when the force is removed. Permanent (plastic) deformation occurs beyond this point.</li>
-        </ul>
+<div class="exam-tip">
+An object floats in a fluid if its average density is less than the fluid's density. An object sinks if its average density is greater. This is why steel ships float &mdash; the hull encloses a large volume of air, so the average density of the ship is less than water.
+</div>
 
-        <h3>Springs in Series and Parallel</h3>
-        <table>
-            <tr><th>Arrangement</th><th>Combined Spring Constant</th></tr>
-            <tr><td>Springs in <strong>series</strong> (end to end)</td><td>1/k<sub>total</sub> = 1/k<sub>1</sub> + 1/k<sub>2</sub></td></tr>
-            <tr><td>Springs in <strong>parallel</strong> (side by side)</td><td>k<sub>total</sub> = k<sub>1</sub> + k<sub>2</sub></td></tr>
-        </table>
+<!-- ============================================================ -->
+<!-- 4.2 HOOKE'S LAW -->
+<!-- ============================================================ -->
+<h2>4.2 Hooke's Law</h2>
+<div class="definition-box">
+  <strong>Hooke's Law:</strong> The extension of a spring (or other elastic object) is directly proportional to the applied force, provided the limit of proportionality is not exceeded.
+</div>
+<div class="equation">F = kx</div>
+<p>where F = applied force (N), k = spring constant (N m<sup>-1</sup>), x = extension (m).</p>
+<p>The <strong>spring constant (k)</strong> is the force per unit extension &mdash; a measure of stiffness. A stiffer spring has a larger k. It equals the gradient of the linear section of a force-extension graph.</p>
 
-        <div class="exam-tip">
-            Springs in series are like resistors in parallel — the total spring constant is LESS than either individual constant. Springs in parallel are like resistors in series — the total is the sum. Think of it as: in parallel, the load is shared so it is harder to extend.
-        </div>
+<!-- SVG: Force-Extension Graph -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 440 300" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="220" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Force-Extension Graph for a Spring</text>
+  <line x1="60" y1="260" x2="400" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="260" x2="60" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="230" y="280" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle">Extension (x) / m</text>
+  <text x="25" y="150" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle" transform="rotate(-90,25,150)">Force (F) / N</text>
+  <!-- Linear region -->
+  <line x1="60" y1="260" x2="220" y2="100" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- Beyond limit of proportionality -->
+  <path d="M 220,100 Q 260,70 300,55 Q 340,48 380,50" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- Limit of proportionality -->
+  <circle cx="220" cy="100" r="4" fill="#DC2626"/>
+  <line x1="220" y1="100" x2="220" y2="260" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="230" y="90" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">P (Limit of proportionality)</text>
+  <!-- Elastic limit -->
+  <circle cx="250" cy="80" r="4" fill="#D97706"/>
+  <text x="260" y="72" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">E (Elastic limit)</text>
+  <!-- Gradient label -->
+  <text x="120" y="165" font-family="system-ui" font-size="11" fill="#1a73e8" transform="rotate(-46,120,165)">gradient = k</text>
+  <!-- Shaded area -->
+  <polygon points="60,260 220,100 220,260" fill="#1a73e8" opacity="0.08"/>
+  <text x="140" y="230" font-family="system-ui" font-size="10" fill="#1a73e8">Area = energy stored</text>
+  <text x="140" y="242" font-family="system-ui" font-size="10" fill="#1a73e8">= &frac12;Fx = &frac12;kx&sup2;</text>
+</svg>
+</div>
 
-        <h2>4.3 Elastic Potential Energy</h2>
-        <div class="definition-box">
-            <strong>Elastic potential energy (E<sub>e</sub>)</strong> is the energy stored in a stretched or compressed spring. It equals the work done in stretching the spring (the area under the force-extension graph in the linear region).
-        </div>
-        <div class="equation">
-            E<sub>e</sub> = &frac12;Fx = &frac12;kx&sup2;
-        </div>
-        <p>This equation only applies when Hooke's law is obeyed (i.e., within the limit of proportionality).</p>
-        <p>For a non-linear force-extension graph, the energy stored is still the area under the graph, but must be estimated (e.g., by counting squares).</p>
+<h3>Key Points on the Force-Extension Graph</h3>
+<ul>
+  <li><strong>Limit of proportionality (P):</strong> Up to this point, F &prop; x (Hooke's law holds). Beyond P, the graph is no longer linear, but the material may still return to its original length.</li>
+  <li><strong>Elastic limit (E):</strong> Up to this point, the material returns to its original length when the force is removed (elastic behaviour). Beyond E, permanent (plastic) deformation occurs. E is at or slightly beyond P.</li>
+  <li><strong>Yield point:</strong> The point where the material begins to deform plastically with little or no increase in force (the material "gives" or "flows").</li>
+</ul>
 
-        <h2>4.4 Stress, Strain, and Young's Modulus</h2>
-        <div class="definition-box">
-            <p><strong>Tensile stress (&sigma;)</strong> is the force per unit cross-sectional area. Measured in pascals (Pa) or N m<sup>-2</sup>.</p>
-            <p><strong>Tensile strain (&epsilon;)</strong> is the fractional change in length. It is dimensionless (no units).</p>
-            <p><strong>Young's modulus (E)</strong> is the ratio of stress to strain in the linear (elastic) region. It is a measure of the stiffness of a material. Measured in Pa.</p>
-        </div>
-        <div class="equation">
-            Stress: &sigma; = F / A
-        </div>
-        <div class="equation">
-            Strain: &epsilon; = &Delta;L / L
-        </div>
-        <div class="equation">
-            Young's modulus: E = &sigma; / &epsilon; = (FL) / (A&Delta;L)
-        </div>
+<h3>Springs in Series and Parallel</h3>
+<table>
+  <tr><th>Arrangement</th><th>Combined Spring Constant</th><th>Effect</th></tr>
+  <tr><td>Series (end to end)</td><td>1/k<sub>total</sub> = 1/k<sub>1</sub> + 1/k<sub>2</sub></td><td>k<sub>total</sub> is LESS than either individual k (softer overall)</td></tr>
+  <tr><td>Parallel (side by side)</td><td>k<sub>total</sub> = k<sub>1</sub> + k<sub>2</sub></td><td>k<sub>total</sub> is MORE than either individual k (stiffer overall)</td></tr>
+</table>
 
-        <h3>Measuring Young's Modulus</h3>
-        <p>A common experiment uses a long, thin wire:</p>
-        <ul>
-            <li>Measure original length (L) with a metre ruler.</li>
-            <li>Measure diameter with a micrometer (take several readings at different points and calculate mean). Calculate area: A = &pi;(d/2)&sup2;.</li>
-            <li>Gradually add known masses and measure extension using a marker and ruler (or a travelling microscope for greater precision).</li>
-            <li>Plot a stress-strain graph; the gradient of the linear section = Young's modulus.</li>
-        </ul>
+<div class="worked-example">
+<strong>Worked Example:</strong> Two springs each have k = 40 N m<sup>-1</sup>. Find the combined spring constant when they are arranged (a) in parallel, (b) in series. A 2.0 N force is applied. Find the extension in each case.<br><br>
+<strong>Solution:</strong><br>
+(a) Parallel: k<sub>total</sub> = 40 + 40 = <strong>80 N m<sup>-1</sup></strong>. Extension x = F/k = 2.0/80 = <strong>0.025 m</strong> (25 mm)<br>
+(b) Series: 1/k<sub>total</sub> = 1/40 + 1/40 = 2/40 = 1/20, so k<sub>total</sub> = <strong>20 N m<sup>-1</sup></strong>. Extension x = 2.0/20 = <strong>0.10 m</strong> (100 mm)<br>
+The series arrangement extends four times more than the parallel arrangement for the same force.
+</div>
 
-        <!-- SVG: Young's Modulus Experimental Setup -->
-        <div style="margin: 20px auto; text-align: center;">
-            <svg viewBox="0 0 480 200" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-                <text x="240" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Young's Modulus: Wire Experiment Setup</text>
-                <!-- Clamp -->
-                <rect x="30" y="45" width="25" height="40" fill="#94a3b8" stroke="#64748b" stroke-width="1.5" rx="2"/>
-                <text x="42" y="70" font-family="system-ui" font-size="9" fill="#fff" text-anchor="middle">Clamp</text>
-                <!-- Support beam -->
-                <rect x="30" y="40" width="420" height="8" fill="#64748b" rx="2"/>
-                <!-- Wire -->
-                <line x1="55" y1="60" x2="400" y2="60" stroke="#1a73e8" stroke-width="2"/>
-                <!-- Marker/tape -->
-                <rect x="380" y="55" width="3" height="10" fill="#DC2626"/>
-                <text x="390" y="55" font-family="system-ui" font-size="9" fill="#DC2626">Marker</text>
-                <!-- Ruler -->
-                <rect x="360" y="72" width="12" height="100" fill="#fef3c7" stroke="#D97706" stroke-width="1" rx="1"/>
-                <text x="366" y="85" font-family="system-ui" font-size="7" fill="#D97706">0</text>
-                <text x="366" y="105" font-family="system-ui" font-size="7" fill="#D97706">5</text>
-                <text x="366" y="125" font-family="system-ui" font-size="7" fill="#D97706">10</text>
-                <text x="395" y="120" font-family="system-ui" font-size="9" fill="#D97706">Ruler</text>
-                <!-- Pulley -->
-                <circle cx="410" cy="60" r="10" fill="none" stroke="#64748b" stroke-width="2"/>
-                <circle cx="410" cy="60" r="2" fill="#64748b"/>
-                <!-- Hanging wire -->
-                <line x1="420" y1="60" x2="420" y2="140" stroke="#1a73e8" stroke-width="2"/>
-                <!-- Mass hanger -->
-                <rect x="408" y="140" width="24" height="15" fill="#94a3b8" stroke="#64748b" stroke-width="1.5" rx="2"/>
-                <text x="420" y="152" font-family="system-ui" font-size="8" fill="#fff" text-anchor="middle">m</text>
-                <!-- Slotted masses -->
-                <rect x="410" y="155" width="20" height="8" fill="#64748b" rx="1"/>
-                <rect x="410" y="163" width="20" height="8" fill="#64748b" rx="1"/>
-                <text x="440" y="166" font-family="system-ui" font-size="9" fill="#64748b">Masses</text>
-                <!-- Labels -->
-                <line x1="55" y1="80" x2="400" y2="80" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,3"/>
-                <text x="220" y="95" font-family="system-ui" font-size="10" fill="#16A34A" text-anchor="middle">L (original length)</text>
-                <!-- Micrometer -->
-                <text x="120" y="110" font-family="system-ui" font-size="10" fill="#1a73e8" text-anchor="middle">Micrometer measures</text>
-                <text x="120" y="122" font-family="system-ui" font-size="10" fill="#1a73e8" text-anchor="middle">wire diameter</text>
-                <!-- Formula reminder -->
-                <text x="240" y="185" font-family="system-ui" font-size="11" fill="#1a1a2e" text-anchor="middle" font-weight="600">E = stress / strain = (F/A) / (ΔL/L)</text>
-            </svg>
-        </div>
+<div class="exam-tip">
+Springs in series combine like resistors in parallel (reciprocal rule &mdash; total k decreases). Springs in parallel combine like resistors in series (add directly &mdash; total k increases). The physical intuition: in parallel, the load is shared between the springs, so each extends less; in series, each spring carries the full load.
+</div>
 
-        <h2>4.5 Stress-Strain Graphs</h2>
-        <h3>Key Points on a Stress-Strain Graph</h3>
-        <ul>
-            <li><strong>Limit of proportionality (P):</strong> End of the linear region; beyond this, stress is no longer proportional to strain.</li>
-            <li><strong>Elastic limit (E):</strong> Beyond this, the material undergoes permanent plastic deformation.</li>
-            <li><strong>Yield point (Y):</strong> The point at which a large increase in strain occurs with little or no increase in stress. The material begins to "flow."</li>
-            <li><strong>Ultimate tensile stress (UTS):</strong> The maximum stress the material can withstand before necking begins.</li>
-            <li><strong>Fracture point (F):</strong> The stress at which the material breaks.</li>
-        </ul>
+<!-- ============================================================ -->
+<!-- 4.3 ELASTIC POTENTIAL ENERGY -->
+<!-- ============================================================ -->
+<h2>4.3 Elastic Potential Energy</h2>
+<div class="definition-box">
+  <strong>Elastic potential energy (E<sub>e</sub>):</strong> The energy stored in a stretched or compressed elastic object. It equals the work done in deforming the object (the area under the force-extension graph in the linear region).
+</div>
+<div class="equation">E<sub>e</sub> = &frac12;Fx = &frac12;kx<sup>2</sup></div>
+<p>This equation only applies within the limit of proportionality (where F = kx). The factor of &frac12; arises because the force increases linearly from zero to F as the spring is stretched, so the average force is F/2.</p>
+<p>For a non-linear force-extension graph, the energy stored equals the area under the curve, which must be estimated (e.g. by counting squares or using the trapezium rule).</p>
 
-        <!-- SVG: Stress-Strain Curves Comparison -->
-        <div style="margin: 20px auto; text-align: center;">
-            <svg viewBox="0 0 480 300" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-                <text x="240" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Stress-Strain Curves for Different Materials</text>
-                <!-- Axes -->
-                <line x1="60" y1="260" x2="440" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
-                <line x1="60" y1="260" x2="60" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
-                <text x="250" y="280" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle">Strain</text>
-                <text x="25" y="150" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle" transform="rotate(-90,25,150)">Stress</text>
-                <!-- Ductile (copper/steel) -->
-                <path d="M 60,260 L 120,130 Q 130,115 140,112 Q 160,108 200,100 Q 260,85 300,80 Q 320,82 340,95 L 350,110" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
-                <circle cx="350" cy="110" r="3" fill="#1a73e8"/>
-                <text x="355" y="105" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">Fracture</text>
-                <text x="280" y="68" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">Ductile (e.g. copper)</text>
-                <!-- Key points on ductile -->
-                <circle cx="120" cy="130" r="3" fill="#1a73e8"/>
-                <text x="105" y="122" font-family="system-ui" font-size="9" fill="#1a73e8">P</text>
-                <circle cx="140" cy="112" r="3" fill="#1a73e8"/>
-                <text x="145" y="102" font-family="system-ui" font-size="9" fill="#1a73e8">Y</text>
-                <circle cx="300" cy="80" r="3" fill="#1a73e8"/>
-                <text x="300" y="72" font-family="system-ui" font-size="9" fill="#1a73e8">UTS</text>
-                <!-- Brittle (glass) -->
-                <line x1="60" y1="260" x2="140" y2="90" stroke="#DC2626" stroke-width="2.5"/>
-                <circle cx="140" cy="90" r="3" fill="#DC2626"/>
-                <text x="98" y="140" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600" transform="rotate(-50,98,140)">Brittle (glass)</text>
-                <text x="150" y="85" font-family="system-ui" font-size="10" fill="#DC2626">Snaps!</text>
-                <!-- Polymeric (rubber) -->
-                <path d="M 60,260 Q 80,250 100,230 Q 140,200 250,180 Q 340,165 400,155" fill="none" stroke="#16A34A" stroke-width="2.5"/>
-                <text x="350" y="148" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">Polymer (rubber)</text>
-            </svg>
-        </div>
+<div class="worked-example">
+<strong>Worked Example:</strong> A spring with k = 50 N m<sup>-1</sup> is compressed by 0.080 m. Calculate the elastic PE stored. If the spring launches a 0.020 kg ball vertically, find the maximum height reached (assuming no energy losses).<br><br>
+<strong>Solution:</strong><br>
+E<sub>e</sub> = &frac12;kx<sup>2</sup> = &frac12; &times; 50 &times; (0.080)<sup>2</sup> = &frac12; &times; 50 &times; 0.0064 = <strong>0.16 J</strong><br>
+At max height: E<sub>e</sub> = mgh<br>
+0.16 = 0.020 &times; 9.81 &times; h<br>
+h = 0.16 / (0.020 &times; 9.81) = <strong>0.82 m</strong>
+</div>
 
-        <h2>4.6 Material Properties</h2>
-        <table>
-            <tr><th>Property</th><th>Description</th><th>Example</th></tr>
-            <tr><td><strong>Ductile</strong></td><td>Can be drawn into wires; undergoes large plastic deformation before fracture</td><td>Copper, mild steel</td></tr>
-            <tr><td><strong>Brittle</strong></td><td>Fractures with little or no plastic deformation; snaps suddenly</td><td>Glass, ceramics, cast iron</td></tr>
-            <tr><td><strong>Polymeric</strong></td><td>Can stretch significantly; behaviour depends on type (rubber returns, polythene does not)</td><td>Rubber, polythene</td></tr>
-            <tr><td><strong>Stiff</strong></td><td>High Young's modulus; resists deformation</td><td>Steel, diamond</td></tr>
-            <tr><td><strong>Strong</strong></td><td>High ultimate tensile stress; withstands large forces before breaking</td><td>Steel, kevlar</td></tr>
-            <tr><td><strong>Hard</strong></td><td>Resistant to scratching or indentation</td><td>Diamond</td></tr>
-        </table>
+<!-- ============================================================ -->
+<!-- 4.4 STRESS, STRAIN, YOUNG'S MODULUS -->
+<!-- ============================================================ -->
+<h2>4.4 Stress, Strain, and Young's Modulus</h2>
+<div class="definition-box">
+  <strong>Tensile stress (&sigma;):</strong> The force per unit cross-sectional area acting on a material. Units: Pa (N m<sup>-2</sup>).<br>
+  <strong>Tensile strain (&epsilon;):</strong> The fractional change in length. It is dimensionless (no units).<br>
+  <strong>Young's modulus (E):</strong> The ratio of stress to strain in the linear elastic region. It measures the <em>stiffness</em> of a material. Units: Pa.
+</div>
+<div class="equation">Stress: &sigma; = F / A</div>
+<div class="equation">Strain: &epsilon; = &Delta;L / L</div>
+<div class="equation">Young's modulus: E = &sigma; / &epsilon; = FL / (A&Delta;L)</div>
 
-        <h3>Comparing Stress-Strain Curves</h3>
-        <ul>
-            <li><strong>Ductile material (e.g., copper):</strong> Long curve with significant plastic region before fracture. Shows clear yield point and necking.</li>
-            <li><strong>Brittle material (e.g., glass):</strong> Straight line (linear elastic) up to fracture point. Very little strain at fracture. No plastic region.</li>
-            <li><strong>Rubber:</strong> Large strain for relatively small stress. The loading and unloading curves differ (hysteresis). Returns to original length but does not obey Hooke's law.</li>
-            <li><strong>Polythene:</strong> Low initial stiffness, then "gives" easily with large extension. Does not return to original length — permanent deformation.</li>
-        </ul>
+<p>Why use stress and strain instead of force and extension? Because stress and strain are <strong>material properties</strong> &mdash; they allow us to compare different materials regardless of the sample's dimensions. A short thick wire and a long thin wire of the same material have the same Young's modulus, even though they have very different force-extension characteristics.</p>
 
-        <h2>4.7 Elastic and Plastic Deformation</h2>
-        <div class="definition-box">
-            <p><strong>Elastic deformation:</strong> The material returns to its original shape and size when the force is removed. No permanent change. Energy is fully recoverable.</p>
-            <p><strong>Plastic deformation:</strong> The material is permanently deformed when the force is removed. It does not return to its original dimensions. Energy is dissipated (not recoverable).</p>
-        </div>
+<table>
+  <tr><th>Material</th><th>Young's Modulus (GPa)</th><th>UTS (MPa)</th></tr>
+  <tr><td>Rubber</td><td>~0.01&ndash;0.1</td><td>~15</td></tr>
+  <tr><td>Bone</td><td>~15</td><td>~130</td></tr>
+  <tr><td>Copper</td><td>~120</td><td>~220</td></tr>
+  <tr><td>Steel</td><td>~200</td><td>~400&ndash;800</td></tr>
+  <tr><td>Diamond</td><td>~1200</td><td>&mdash;</td></tr>
+</table>
 
-        <h3>Hysteresis</h3>
-        <p>When rubber is loaded and then unloaded, the unloading curve lies below the loading curve. The area between the two curves represents the energy dissipated as thermal energy during one loading-unloading cycle. This is called <strong>hysteresis</strong>.</p>
+<div class="worked-example">
+<strong>Worked Example:</strong> A steel cable of diameter 5.0 mm and length 20 m supports a mass of 500 kg. Calculate (a) the stress in the cable, (b) the strain, (c) the extension. (E<sub>steel</sub> = 200 GPa)<br><br>
+<strong>Solution:</strong><br>
+A = &pi;(d/2)<sup>2</sup> = &pi; &times; (2.5 &times; 10<sup>-3</sup>)<sup>2</sup> = 1.963 &times; 10<sup>-5</sup> m<sup>2</sup><br>
+F = mg = 500 &times; 9.81 = 4905 N<br>
+(a) &sigma; = F/A = 4905 / 1.963 &times; 10<sup>-5</sup> = <strong>2.50 &times; 10<sup>8</sup> Pa</strong> = 250 MPa<br>
+(b) &epsilon; = &sigma;/E = 2.50 &times; 10<sup>8</sup> / 200 &times; 10<sup>9</sup> = <strong>1.25 &times; 10<sup>-3</sup></strong> (0.125%)<br>
+(c) &Delta;L = &epsilon; &times; L = 1.25 &times; 10<sup>-3</sup> &times; 20 = <strong>0.025 m</strong> (25 mm)
+</div>
 
-        <h2>4.8 Energy Stored</h2>
-        <p>The <strong>energy stored</strong> in a deformed material equals the area under the force-extension graph.</p>
-        <ul>
-            <li>For a material obeying Hooke's law (linear graph): Energy = &frac12;Fx = &frac12;kx&sup2;</li>
-            <li>For a non-linear graph: estimate the area by counting squares or using the trapezium rule.</li>
-            <li>If the loading and unloading curves differ (hysteresis), the energy returned on unloading is the area under the unloading curve. The difference (area enclosed) is energy lost as heat.</li>
-        </ul>
+<!-- ============================================================ -->
+<!-- 4.5 STRESS-STRAIN GRAPHS -->
+<!-- ============================================================ -->
+<h2>4.5 Stress-Strain Graphs</h2>
 
-        <div class="exam-tip">
-            The area under a <strong>force-extension</strong> graph = energy stored (in joules). The area under a <strong>stress-strain</strong> graph = energy stored per unit volume (in J m<sup>-3</sup>). Do not confuse the two.
-        </div>
+<h3>Key Points on a Stress-Strain Graph (Ductile Material)</h3>
+<ul>
+  <li><strong>P (Limit of proportionality):</strong> End of the linear region; beyond this, stress is no longer proportional to strain.</li>
+  <li><strong>E (Elastic limit):</strong> Beyond this, permanent plastic deformation occurs. The material will not return to its original length.</li>
+  <li><strong>Y (Yield point):</strong> A large increase in strain occurs with little increase in stress. The material begins to "flow."</li>
+  <li><strong>UTS (Ultimate tensile stress):</strong> The maximum stress the material can withstand. Beyond this, the material "necks" (cross-section decreases locally).</li>
+  <li><strong>F (Fracture point):</strong> The material breaks.</li>
+</ul>
 
-<!-- ============ CORE PRACTICAL 3 ============ -->
+<!-- SVG: Stress-Strain Curves -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 480 300" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="240" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Stress-Strain Curves for Different Materials</text>
+  <line x1="60" y1="260" x2="440" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="260" x2="60" y2="35" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="250" y="280" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle">Strain</text>
+  <text x="25" y="150" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle" transform="rotate(-90,25,150)">Stress / Pa</text>
+  <!-- Ductile (copper/steel) -->
+  <path d="M 60,260 L 120,130 Q 130,115 140,112 Q 160,108 200,100 Q 260,85 300,80 Q 320,82 340,95 L 350,110" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <circle cx="350" cy="110" r="3" fill="#1a73e8"/>
+  <text x="355" y="105" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">Fracture</text>
+  <text x="280" y="68" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">Ductile (e.g. copper)</text>
+  <circle cx="120" cy="130" r="3" fill="#1a73e8"/>
+  <text x="105" y="122" font-family="system-ui" font-size="9" fill="#1a73e8">P</text>
+  <circle cx="140" cy="112" r="3" fill="#1a73e8"/>
+  <text x="145" y="102" font-family="system-ui" font-size="9" fill="#1a73e8">Y</text>
+  <circle cx="300" cy="80" r="3" fill="#1a73e8"/>
+  <text x="300" y="72" font-family="system-ui" font-size="9" fill="#1a73e8">UTS</text>
+  <!-- Brittle (glass) -->
+  <line x1="60" y1="260" x2="140" y2="90" stroke="#DC2626" stroke-width="2.5"/>
+  <circle cx="140" cy="90" r="3" fill="#DC2626"/>
+  <text x="98" y="140" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600" transform="rotate(-50,98,140)">Brittle (glass)</text>
+  <text x="150" y="85" font-family="system-ui" font-size="10" fill="#DC2626">Snaps!</text>
+  <!-- Polymeric (rubber) -->
+  <path d="M 60,260 Q 80,250 100,230 Q 140,200 250,180 Q 340,165 400,155" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="350" y="148" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">Polymer (rubber)</text>
+</svg>
+</div>
+
+<!-- ============================================================ -->
+<!-- 4.6 MATERIAL PROPERTIES -->
+<!-- ============================================================ -->
+<h2>4.6 Material Properties</h2>
+<table>
+  <tr><th>Property</th><th>Definition</th><th>Examples</th></tr>
+  <tr><td><strong>Stiff</strong></td><td>High Young's modulus; resists elastic deformation (steep initial gradient on stress-strain graph)</td><td>Steel, diamond, bone</td></tr>
+  <tr><td><strong>Strong</strong></td><td>High UTS; withstands large stresses before breaking</td><td>Steel, kevlar, carbon fibre</td></tr>
+  <tr><td><strong>Tough</strong></td><td>Absorbs a lot of energy before fracturing (large area under stress-strain curve)</td><td>Mild steel, rubber</td></tr>
+  <tr><td><strong>Ductile</strong></td><td>Can be drawn into wires; large plastic deformation before fracture</td><td>Copper, gold, mild steel</td></tr>
+  <tr><td><strong>Brittle</strong></td><td>Fractures with little or no plastic deformation; snaps suddenly</td><td>Glass, ceramics, cast iron</td></tr>
+  <tr><td><strong>Hard</strong></td><td>Resistant to scratching or surface indentation</td><td>Diamond, tungsten carbide</td></tr>
+  <tr><td><strong>Malleable</strong></td><td>Can be hammered or pressed into shape</td><td>Gold, aluminium, copper</td></tr>
+</table>
+
+<div class="exam-tip">
+Do not confuse stiff with strong. A material can be stiff but weak (e.g. glass &mdash; high Young's modulus but low UTS), or flexible but strong (e.g. nylon rope). "Stiff" = resists deformation (high E). "Strong" = resists breaking (high UTS). "Tough" = absorbs energy before breaking (large area under the graph).
+</div>
+
+<!-- ============================================================ -->
+<!-- 4.7 ELASTIC AND PLASTIC DEFORMATION -->
+<!-- ============================================================ -->
+<h2>4.7 Elastic and Plastic Deformation</h2>
+<div class="definition-box">
+  <strong>Elastic deformation:</strong> The material returns to its original shape and size when the force is removed. No permanent change. Energy is fully recoverable. Occurs below the elastic limit.<br><br>
+  <strong>Plastic deformation:</strong> The material is permanently deformed and does not return to its original dimensions when the force is removed. The energy used to cause plastic deformation is dissipated as heat (not recoverable).
+</div>
+
+<h3>Hysteresis</h3>
+<p>When rubber is loaded and then unloaded, the unloading curve lies below the loading curve on a force-extension graph. The area enclosed between the two curves represents the <strong>energy dissipated as thermal energy</strong> during one loading-unloading cycle. This is called <strong>hysteresis</strong>.</p>
+<p>Rubber returns to its original length (elastic), but the energy "lost" to hysteresis heats the rubber. This is why repeatedly stretching a rubber band makes it warm.</p>
+
+<div class="real-world"><strong>Real-World Application:</strong> Car tyres are made from rubber with low hysteresis to minimise energy loss (and fuel consumption). Conversely, rubber with high hysteresis is used in vibration dampers and shoe soles, where energy dissipation is desirable for shock absorption.</div>
+
+<!-- ============================================================ -->
+<!-- 4.8 ENERGY STORED -->
+<!-- ============================================================ -->
+<h2>4.8 Energy Stored in Deformation</h2>
+<ul>
+  <li>The <strong>area under a force-extension graph</strong> = energy stored (in joules).</li>
+  <li>The <strong>area under a stress-strain graph</strong> = energy stored per unit volume (in J m<sup>-3</sup>).</li>
+  <li>For a material obeying Hooke's law: Energy = &frac12;Fx = &frac12;kx<sup>2</sup> = F<sup>2</sup>/(2k).</li>
+  <li>If loading and unloading curves differ (hysteresis), the energy returned on unloading = area under the unloading curve. The energy dissipated = area between the curves.</li>
+</ul>
+
+<div class="exam-tip">
+Do not confuse force-extension graphs (energy in J) with stress-strain graphs (energy per unit volume in J m<sup>-3</sup>). The area under a stress-strain curve gives energy per unit volume. To get total energy, multiply by the volume of the sample.
+</div>
+
+<h3>Summary of Key Equations</h3>
+<table>
+  <tr><th>Quantity</th><th>Equation</th><th>Units</th></tr>
+  <tr><td>Density</td><td>&rho; = m/V</td><td>kg m<sup>-3</sup></td></tr>
+  <tr><td>Hooke's Law</td><td>F = kx</td><td>N, N m<sup>-1</sup>, m</td></tr>
+  <tr><td>Elastic PE</td><td>E = &frac12;kx<sup>2</sup> = &frac12;Fx</td><td>J</td></tr>
+  <tr><td>Stress</td><td>&sigma; = F/A</td><td>Pa (N m<sup>-2</sup>)</td></tr>
+  <tr><td>Strain</td><td>&epsilon; = &Delta;L/L</td><td>dimensionless</td></tr>
+  <tr><td>Young's modulus</td><td>E = &sigma;/&epsilon; = FL/(A&Delta;L)</td><td>Pa</td></tr>
+  <tr><td>Springs in series</td><td>1/k<sub>T</sub> = 1/k<sub>1</sub> + 1/k<sub>2</sub></td><td>N m<sup>-1</sup></td></tr>
+  <tr><td>Springs in parallel</td><td>k<sub>T</sub> = k<sub>1</sub> + k<sub>2</sub></td><td>N m<sup>-1</sup></td></tr>
+</table>
+
+<!-- ============================================================ -->
+<!-- CORE PRACTICAL 3 -->
+<!-- ============================================================ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 3: Determine the Young modulus of a material</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Core Practical 3: Determine the Young modulus of a material</h2>
 
-<svg viewBox="0 0 400 600" style="max-width:500px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
-  <!-- Ceiling / clamp bar -->
-  <rect x="80" y="20" width="240" height="15" rx="2" fill="#888" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="200" y="16" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">Ceiling clamp / beam</text>
-  <!-- G-clamps -->
-  <rect x="100" y="20" width="10" height="25" fill="#555" stroke="#1a1a2e" stroke-width="1"/>
-  <rect x="280" y="20" width="10" height="25" fill="#555" stroke="#1a1a2e" stroke-width="1"/>
-  <!-- Reference wire (left) -->
-  <line x1="140" y1="35" x2="140" y2="480" stroke="#999" stroke-width="2"/>
-  <text x="110" y="260" font-family="system-ui" font-size="11" fill="#777" text-anchor="middle" transform="rotate(-90,110,260)">Reference wire</text>
-  <!-- Test wire (right) -->
-  <line x1="250" y1="35" x2="250" y2="480" stroke="#B45309" stroke-width="2"/>
-  <text x="280" y="260" font-family="system-ui" font-size="11" fill="#B45309" text-anchor="middle" transform="rotate(-90,280,260)">Test wire (copper/steel)</text>
-  <!-- Original length arrow -->
-  <line x1="310" y1="35" x2="310" y2="480" stroke="#D97706" stroke-width="1.5"/>
-  <polygon points="310,35 306,50 314,50" fill="#D97706"/>
-  <polygon points="310,480 306,465 314,465" fill="#D97706"/>
-  <text x="340" y="260" font-family="system-ui" font-size="12" fill="#D97706" font-weight="bold" text-anchor="middle" transform="rotate(-90,340,260)">Original length L</text>
-  <!-- Vernier scale / travelling microscope at bottom -->
-  <rect x="115" y="470" width="160" height="30" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="195" y="490" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Vernier scale / spirit level</text>
-  <!-- Marker on reference wire -->
-  <rect x="130" y="475" width="20" height="6" rx="1" fill="#16A34A" stroke="#1a1a2e" stroke-width="0.5"/>
-  <!-- Marker on test wire -->
-  <rect x="240" y="478" width="20" height="6" rx="1" fill="#DC2626" stroke="#1a1a2e" stroke-width="0.5"/>
-  <!-- Mass hanger on test wire -->
-  <rect x="238" y="500" width="24" height="10" rx="2" fill="#777" stroke="#1a1a2e" stroke-width="1"/>
-  <rect x="235" y="510" width="30" height="8" rx="1" fill="#666" stroke="#1a1a2e" stroke-width="1"/>
-  <rect x="235" y="518" width="30" height="8" rx="1" fill="#666" stroke="#1a1a2e" stroke-width="1"/>
-  <rect x="235" y="526" width="30" height="8" rx="1" fill="#666" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="230" y="545" text-anchor="end" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">Masses (F = mg)</text>
-  <!-- Small mass on reference to keep it taut -->
-  <rect x="133" y="485" width="14" height="12" rx="2" fill="#999" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="120" y="505" text-anchor="end" font-family="system-ui" font-size="9" fill="#777">Small keepmass</text>
-  <!-- Extension arrow -->
-  <line x1="70" y1="480" x2="70" y2="530" stroke="#DC2626" stroke-width="2"/>
-  <polygon points="70,530 66,518 74,518" fill="#DC2626"/>
-  <text x="55" y="510" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold" text-anchor="end">&Delta;L</text>
-  <!-- Micrometer callout -->
-  <rect x="20" y="55" width="90" height="40" rx="5" fill="#fff" stroke="#D97706" stroke-width="1.5"/>
-  <text x="65" y="72" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="bold">Micrometer</text>
-  <text x="65" y="86" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Measure d of wire</text>
-  <line x1="110" y1="75" x2="250" y2="100" stroke="#D97706" stroke-width="1" stroke-dasharray="3,3"/>
-  <!-- Title -->
-  <text x="200" y="580" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP3: Determining the Young modulus</text>
+<svg viewBox="0 0 480 200" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="240" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Young's Modulus: Wire Experiment Setup</text>
+  <rect x="30" y="45" width="25" height="40" fill="#94a3b8" stroke="#64748b" stroke-width="1.5" rx="2"/>
+  <text x="42" y="70" font-family="system-ui" font-size="9" fill="#fff" text-anchor="middle">Clamp</text>
+  <rect x="30" y="40" width="420" height="8" fill="#64748b" rx="2"/>
+  <line x1="55" y1="60" x2="400" y2="60" stroke="#1a73e8" stroke-width="2"/>
+  <text x="220" y="55" font-family="system-ui" font-size="10" fill="#1a73e8" text-anchor="middle">Test wire (~2 m, copper or steel)</text>
+  <line x1="55" y1="48" x2="400" y2="48" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="220" y="42" font-family="system-ui" font-size="9" fill="#999" text-anchor="middle">Reference wire</text>
+  <rect x="380" y="55" width="3" height="10" fill="#DC2626"/>
+  <text x="390" y="55" font-family="system-ui" font-size="9" fill="#DC2626">Marker</text>
+  <rect x="360" y="72" width="12" height="100" fill="#fef3c7" stroke="#D97706" stroke-width="1" rx="1"/>
+  <text x="395" y="120" font-family="system-ui" font-size="9" fill="#D97706">Ruler/Vernier</text>
+  <circle cx="410" cy="60" r="10" fill="none" stroke="#64748b" stroke-width="2"/>
+  <line x1="420" y1="60" x2="420" y2="140" stroke="#1a73e8" stroke-width="2"/>
+  <rect x="408" y="140" width="24" height="15" fill="#94a3b8" stroke="#64748b" stroke-width="1.5" rx="2"/>
+  <text x="420" y="152" font-family="system-ui" font-size="8" fill="#fff" text-anchor="middle">m</text>
+  <rect x="410" y="155" width="20" height="8" fill="#64748b" rx="1"/>
+  <rect x="410" y="163" width="20" height="8" fill="#64748b" rx="1"/>
+  <text x="440" y="166" font-family="system-ui" font-size="9" fill="#64748b">Masses</text>
+  <line x1="55" y1="80" x2="400" y2="80" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="220" y="95" font-family="system-ui" font-size="10" fill="#16A34A" text-anchor="middle">L (original length)</text>
+  <text x="120" y="115" font-family="system-ui" font-size="10" fill="#1a73e8" text-anchor="middle">Micrometer: measure d</text>
+  <text x="240" y="192" font-family="system-ui" font-size="11" fill="#1a1a2e" text-anchor="middle" font-weight="600">E = stress / strain = gradient of stress-strain graph</text>
 </svg>
 
+<h3>Aim</h3>
+<p>To determine the Young modulus of a metal wire by measuring stress and strain.</p>
+
 <h3>Apparatus</h3>
-<ul>
-  <li>Long thin wire (copper or steel, ~2&ndash;3 m), clamped at the top</li>
-  <li>Reference wire of the same material, clamped alongside</li>
-  <li>Micrometer screw gauge (resolution &plusmn;0.01 mm)</li>
-  <li>Metre ruler or tape measure (to measure original length L)</li>
-  <li>Vernier scale or travelling microscope (to measure small extensions)</li>
-  <li>Mass hanger and slotted masses (e.g. 100 g increments)</li>
-  <li>Safety goggles</li>
-  <li>G-clamp and wooden blocks for securing to beam</li>
-</ul>
+<p>Long thin wire (~2 m, copper or steel), reference wire, micrometer (0.01 mm), metre ruler or tape, vernier scale or travelling microscope, mass hanger and slotted masses, safety goggles, G-clamp.</p>
 
 <h3>Method</h3>
 <ol>
-  <li>Clamp both wires to a rigid beam at the ceiling. Attach a small fixed mass to the reference wire to keep it taut.</li>
-  <li>Measure the <strong>original length L</strong> of the test wire from the clamp to the marker (use a tape measure).</li>
-  <li>Use the <strong>micrometer</strong> to measure the wire diameter <em>d</em> at least 3 positions along the wire and at different orientations. Calculate the mean diameter and cross-sectional area A = &pi;(d/2)&sup2;.</li>
-  <li>Attach the mass hanger to the test wire. Zero the vernier scale against the reference wire marker.</li>
-  <li>Add masses in steps (e.g. 100 g = 0.98 N each). After each addition, wait for the wire to stop oscillating, then read the extension &Delta;L from the vernier scale.</li>
-  <li>Record at least 6 different loads. <strong>Do not exceed the elastic limit</strong> &mdash; check by removing the final mass to see if the wire returns to its original length.</li>
-  <li>Calculate <strong>stress</strong> = F/A and <strong>strain</strong> = &Delta;L/L for each reading.</li>
-  <li>Plot <strong>stress</strong> (y-axis) against <strong>strain</strong> (x-axis).</li>
+  <li>Clamp both wires to a rigid beam. Attach a small mass to the reference wire to keep it taut.</li>
+  <li>Measure the original length L of the test wire with a tape measure.</li>
+  <li>Measure the wire diameter d with a micrometer at 3+ positions and orientations. Calculate mean d and area A = &pi;(d/2)<sup>2</sup>.</li>
+  <li>Zero the vernier scale. Add masses in steps (e.g. 100 g increments). Read the extension &Delta;L after each addition.</li>
+  <li>Record at least 6 loads. Do not exceed the elastic limit (check by removing the final mass).</li>
+  <li>Calculate stress = F/A and strain = &Delta;L/L for each reading.</li>
+  <li>Plot stress vs strain. Gradient of the linear region = Young's modulus E.</li>
 </ol>
 
 <h3>Safety</h3>
-<ul>
-  <li><strong>Wear safety goggles</strong> &mdash; the wire is under tension and could snap.</li>
-  <li>Place a cushion or box beneath the masses in case they fall.</li>
-  <li>Do not stand directly beneath the loaded wire.</li>
-  <li>Do not exceed the breaking stress of the wire.</li>
-</ul>
-
-<h3>Analysis</h3>
-<p>Young modulus is defined as:</p>
-<div class="equation">
-  E = stress / strain = (F/A) / (&Delta;L/L) = FL / (A &Delta;L)
-</div>
-<p>The gradient of the <strong>stress-strain graph</strong> in the linear (elastic) region gives the <strong>Young modulus E</strong>.</p>
-<p>Alternatively, plot F (y-axis) against &Delta;L (x-axis). The gradient = EA/L, so E = (gradient &times; L) / A.</p>
+<p>Wear safety goggles (wire may snap). Place a cushion beneath masses. Do not stand below the loaded wire.</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Diameter measurement &mdash; wire may not be perfectly circular</td><td>Random</td><td>Measure at multiple positions and orientations; take the mean</td></tr>
-<tr><td>Wire may not be straight / may have kinks</td><td>Systematic</td><td>Add a small initial load to straighten the wire before zeroing</td></tr>
-<tr><td>Difficulty reading small extensions</td><td>Random</td><td>Use a travelling microscope or Vernier scale for better resolution</td></tr>
-<tr><td>Wire creeps under load (plastic deformation begins)</td><td>Systematic</td><td>Do not exceed the elastic limit; check by unloading periodically</td></tr>
-<tr><td>Temperature changes affect wire length</td><td>Systematic</td><td>Use a reference wire &mdash; both expand equally, so the vernier reading is unaffected</td></tr>
+<tr><td>Wire diameter varies (not perfectly circular)</td><td>Random</td><td>Measure at 6+ positions and orientations; use mean</td></tr>
+<tr><td>Wire has kinks (not straight)</td><td>Systematic</td><td>Apply a small initial load to straighten before zeroing</td></tr>
+<tr><td>Small extensions hard to measure</td><td>Random</td><td>Use a long, thin wire to maximise extension; use travelling microscope</td></tr>
+<tr><td>Thermal expansion changes length</td><td>Systematic</td><td>Use a reference wire &mdash; both expand equally, so the vernier reading is unaffected</td></tr>
+<tr><td>Wire creeps under load</td><td>Systematic</td><td>Do not exceed elastic limit; check by unloading periodically</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> The reference wire compensates for thermal expansion. Any temperature change affects both wires equally, so the vernier reading (which measures the difference) is unaffected. Always state this when explaining why a reference wire is used.</div>
+<div class="exam-tip">The reference wire compensates for thermal expansion. Both wires expand equally with temperature, so the vernier reading (measuring the difference in extension) is unaffected. This is the key reason for using a reference wire &mdash; always state this in your answer. The biggest uncertainty is usually in the diameter measurement (squared in the area formula, so uncertainty is doubled).</div>
 </div>
 
-    </div>
+</div>
 </body>
 </html>

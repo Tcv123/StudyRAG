@@ -25,7 +25,9 @@
         .equation { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; font-family: 'Consolas', monospace; }
         .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
-        @media print { body { padding: 20px; } h2 { break-before: auto; } .definition-box, .exam-tip, .equation { break-inside: avoid; } }
+        .real-world { background: #f0fdf4; border-left: 4px solid #059669; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
+        .real-world::before { content: "Real-World Example: "; font-weight: 700; color: #059669; }
+        @media print { body { padding: 20px; } h2 { break-before: auto; } .definition-box, .exam-tip, .equation, .real-world { break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -39,26 +41,45 @@
 <h2>3.1 Gas Exchange Surfaces</h2>
 
 <div class="definition-box">
-    <strong>Surface area to volume ratio (SA:V):</strong> As organisms increase in size, their SA:V ratio decreases, meaning simple diffusion across the body surface is insufficient. Larger organisms require specialised gas exchange surfaces and transport systems.
+    <strong>Surface area to volume ratio (SA:V):</strong> As organisms increase in size, their SA:V ratio decreases, meaning simple diffusion across the body surface is insufficient. Larger organisms require specialised gas exchange surfaces and transport systems. A cube of side length 1 cm has a SA:V of 6:1, but a cube of side 6 cm has a SA:V of only 1:1.
 </div>
 
+<p>All gas exchange surfaces share common features that maximise the rate of diffusion according to <strong>Fick's law</strong>:</p>
+
+<div class="equation">Rate of diffusion &prop; (surface area &times; concentration difference) / thickness of exchange surface</div>
+
+<p>These features are:</p>
+<ul>
+    <li><strong>Large surface area</strong> &mdash; increases the area over which diffusion can occur</li>
+    <li><strong>Thin barrier</strong> (short diffusion distance) &mdash; often just one or two cells thick</li>
+    <li><strong>Good blood supply / ventilation</strong> &mdash; maintains a steep concentration gradient</li>
+    <li><strong>Moist surface</strong> &mdash; gases dissolve before diffusing across respiratory surfaces</li>
+</ul>
+
+<h3>Gas Exchange in Single-Celled Organisms</h3>
+<p>Organisms such as <em>Amoeba</em> have a sufficiently large SA:V ratio that gases (O<sub>2</sub> and CO<sub>2</sub>) can diffuse directly across the cell surface membrane. No specialised structures are needed. The short diffusion distance means the entire cell can be supplied by diffusion alone.</p>
+
 <h3>Gas Exchange in Insects</h3>
-<p>Insects use a <strong>tracheal system</strong>. Air enters through <strong>spiracles</strong> (openings on the body surface that can open and close to reduce water loss) and passes through a network of <strong>tracheae</strong> (reinforced with chitin rings). These branch into smaller <strong>tracheoles</strong> that penetrate tissues directly, delivering O<sub>2</sub> to respiring cells by diffusion.</p>
+<p>Insects use a <strong>tracheal system</strong>. Air enters through <strong>spiracles</strong> (openings on the body surface that can open and close to reduce water loss) and passes through a network of <strong>tracheae</strong> (reinforced with chitin rings to prevent collapse). These branch into smaller <strong>tracheoles</strong> that penetrate tissues directly, delivering O<sub>2</sub> to respiring cells by diffusion.</p>
 <ul>
     <li>No respiratory pigment needed &mdash; gas delivered directly to cells</li>
-    <li>Ventilation by abdominal pumping and flight muscle contraction</li>
-    <li>Water at ends of tracheoles is drawn back during exercise, increasing gas exchange surface</li>
+    <li>Ventilation by abdominal pumping (muscular contractions of the abdomen) and flight muscle contraction</li>
+    <li>Water at ends of tracheoles is drawn back into cells during exercise (due to increased osmotic pressure from lactate accumulation), increasing the gas exchange surface area in direct contact with cells</li>
+    <li>Spiracles can close via valve-like structures to reduce water loss &mdash; a critical adaptation for terrestrial life</li>
 </ul>
+
+<div class="real-world">Insects like locusts and beetles can be observed pumping their abdomens rhythmically to ventilate the tracheal system, especially during flight when metabolic demand is high. Some large beetles even have air sacs that act as bellows.</div>
 
 <h3>Gas Exchange in Fish</h3>
-<p>Fish use <strong>gills</strong> with a <strong>countercurrent flow</strong> mechanism. Water flows over the gill lamellae in the opposite direction to blood flow. This maintains a concentration gradient along the entire length of the lamella, achieving approximately 80% oxygen extraction (far more efficient than parallel flow).</p>
+<p>Fish use <strong>gills</strong> with a <strong>countercurrent flow</strong> mechanism. Water flows over the gill lamellae in the opposite direction to blood flow. This maintains a concentration gradient along the entire length of the lamella, achieving approximately 80% oxygen extraction (far more efficient than parallel flow, which would only achieve ~50%).</p>
 <ul>
     <li>Each gill arch has many <strong>gill filaments</strong> (primary lamellae)</li>
-    <li>Each filament has many <strong>secondary lamellae</strong> with thin epithelium (one cell thick) and dense capillary network</li>
-    <li>Water enters through mouth, passes over gills, exits through operculum</li>
+    <li>Each filament has many <strong>secondary lamellae</strong> with thin epithelium (one cell thick, ~2&ndash;5 &mu;m) and dense capillary network</li>
+    <li>Water enters through mouth, passes over gills, exits through operculum (bony fish) &mdash; this is a <strong>unidirectional ventilation</strong> mechanism</li>
+    <li>The operculum creates a <strong>buccal-opercular pump</strong>: lowering the floor of the mouth draws water in; closing the mouth and raising the floor forces water over gills; the operculum movement creates a pressure differential for continuous flow</li>
 </ul>
 
-<div class="exam-tip">In countercurrent flow diagrams, always show that a diffusion gradient is maintained at EVERY point along the lamella. In parallel flow, equilibrium would be reached halfway along, and no further exchange would occur.</div>
+<div class="exam-tip">In countercurrent flow diagrams, always show that a diffusion gradient is maintained at EVERY point along the lamella. In parallel flow, equilibrium would be reached halfway along, and no further exchange would occur. Label blood and water flow directions with arrows and show partial pressure values at each end.</div>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +104,6 @@
   <!-- Capillary -->
   <path d="M 340,70 Q 325,100 320,130 Q 315,170 320,210 Q 325,240 340,265" fill="none" stroke="#DC2626" stroke-width="8" opacity="0.3"/>
   <path d="M 340,70 Q 325,100 320,130 Q 315,170 320,210 Q 325,240 340,265" fill="none" stroke="#DC2626" stroke-width="2"/>
-  <!-- Capillary wall label -->
   <text x="365" y="130" text-anchor="start" class="small-label" fill="#DC2626">Capillary wall</text>
   <text x="365" y="143" text-anchor="start" class="small-label" fill="#DC2626">(1 cell thick)</text>
 
@@ -98,19 +118,19 @@
   <text x="380" y="290" text-anchor="start" class="small-label" fill="#DC2626">Oxygenated</text>
   <text x="380" y="302" text-anchor="start" class="small-label" fill="#DC2626">blood out</text>
 
-  <!-- O2 arrow (from alveolus to capillary) -->
+  <!-- O2 arrow -->
   <line x1="240" y1="160" x2="305" y2="160" stroke="#16A34A" stroke-width="2.5"/>
   <polygon points="305,155 318,160 305,165" fill="#16A34A"/>
-  <text x="270" y="153" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">O₂</text>
+  <text x="270" y="153" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">O&#8322;</text>
 
-  <!-- CO2 arrow (from capillary to alveolus) -->
+  <!-- CO2 arrow -->
   <line x1="305" y1="195" x2="240" y2="195" stroke="#D97706" stroke-width="2.5"/>
   <polygon points="240,190 227,195 240,200" fill="#D97706"/>
-  <text x="270" y="213" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">CO₂</text>
+  <text x="270" y="213" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">CO&#8322;</text>
 
   <!-- Diffusion labels -->
-  <text x="270" y="175" text-anchor="middle" class="small-label" fill="#16A34A">diffusion →</text>
-  <text x="270" y="230" text-anchor="middle" class="small-label" fill="#D97706">← diffusion</text>
+  <text x="270" y="175" text-anchor="middle" class="small-label" fill="#16A34A">diffusion &#8594;</text>
+  <text x="270" y="230" text-anchor="middle" class="small-label" fill="#D97706">&#8592; diffusion</text>
 
   <!-- Short diffusion distance annotation -->
   <line x1="298" y1="245" x2="318" y2="245" stroke="#1a1a2e" stroke-width="1"/>
@@ -137,22 +157,62 @@
 </div>
 
 <h3>Gas Exchange in the Mammalian Lung</h3>
-<p>The lungs provide a large surface area (~70 m<sup>2</sup>) through millions of alveoli. Each alveolus has walls one cell thick (squamous epithelium), surrounded by a dense capillary network. Ventilation maintains a steep concentration gradient for O<sub>2</sub> and CO<sub>2</sub>.</p>
+<p>The lungs provide a large surface area (~70 m<sup>2</sup> &mdash; roughly half a tennis court) through approximately 480 million alveoli. Each alveolus has walls one cell thick (squamous epithelium), surrounded by a dense capillary network. Ventilation (breathing) maintains a steep concentration gradient for O<sub>2</sub> and CO<sub>2</sub>.</p>
+
+<h3>Ventilation Mechanism</h3>
+<p>Breathing involves two phases controlled by the <strong>diaphragm</strong> and <strong>intercostal muscles</strong>:</p>
+<table>
+    <tr><th>Feature</th><th>Inspiration (Breathing In)</th><th>Expiration (Breathing Out)</th></tr>
+    <tr><td>Diaphragm</td><td>Contracts and flattens</td><td>Relaxes and curves upwards</td></tr>
+    <tr><td>External intercostals</td><td>Contract &mdash; ribs move up and out</td><td>Relax &mdash; ribs move down and in</td></tr>
+    <tr><td>Internal intercostals</td><td>Relaxed</td><td>Contract during forced expiration</td></tr>
+    <tr><td>Thorax volume</td><td>Increases</td><td>Decreases</td></tr>
+    <tr><td>Intrapulmonary pressure</td><td>Decreases (below atmospheric)</td><td>Increases (above atmospheric)</td></tr>
+    <tr><td>Air movement</td><td>Air rushes into lungs</td><td>Air is pushed out of lungs</td></tr>
+    <tr><td>Process type</td><td>Active (requires ATP)</td><td>Passive at rest; active during exercise</td></tr>
+</table>
+
+<h3>Adaptations of the Alveoli</h3>
+<ul>
+    <li><strong>Enormous total surface area</strong> (~70 m<sup>2</sup>) due to huge number of alveoli</li>
+    <li><strong>Very thin walls</strong> &mdash; squamous epithelium of alveolus + capillary endothelium = total diffusion distance of only ~0.5 &mu;m</li>
+    <li><strong>Dense capillary network</strong> around each alveolus &mdash; maintains steep concentration gradient as blood is constantly flowing</li>
+    <li><strong>Surfactant</strong> &mdash; secreted by type II pneumocytes, reduces surface tension and prevents alveoli from collapsing during expiration</li>
+    <li><strong>Elastic fibres</strong> in alveolar walls &mdash; allow stretch during inspiration and recoil during expiration (passive process)</li>
+    <li><strong>Ventilation</strong> &mdash; continuous supply of fresh air maintains a steep O<sub>2</sub> gradient (high in alveolus, low in blood) and CO<sub>2</sub> gradient (high in blood, low in alveolus)</li>
+</ul>
+
+<div class="real-world">Premature babies may lack sufficient surfactant, leading to <strong>respiratory distress syndrome (RDS)</strong>. Without surfactant, surface tension causes alveoli to collapse with each breath, making breathing extremely difficult. Treatment involves administering artificial surfactant and respiratory support. Emphysema (often caused by smoking) destroys alveolar walls, dramatically reducing the surface area for gas exchange and causing breathlessness.</div>
+
+<div class="exam-tip">When explaining why the lungs are efficient at gas exchange, always refer to Fick's law and explain each adaptation in terms of which factor it optimises: large SA (increases area), thin barrier (decreases distance), ventilation and blood flow (maintains concentration gradient).</div>
 
 <!-- ==================== PLANT TRANSPORT ==================== -->
 <h2>3.2 Transport in Plants</h2>
 
 <h3>Xylem &mdash; Water Transport</h3>
 <div class="definition-box">
-    <strong>Transpiration:</strong> The loss of water vapour from the aerial parts of a plant, primarily through stomata on leaf surfaces. This creates a transpiration pull that draws water up through the xylem.
+    <strong>Transpiration:</strong> The loss of water vapour from the aerial parts of a plant, primarily through stomata on leaf surfaces. This creates a transpiration pull (tension) that draws water up through the xylem. Transpiration is an inevitable consequence of gas exchange &mdash; stomata must open for CO<sub>2</sub> uptake in photosynthesis, but water vapour is also lost.
 </div>
 
 <p>Water movement from roots to leaves involves:</p>
 <ol>
-    <li><strong>Root uptake:</strong> Water enters root hair cells by osmosis (soil water has higher &Psi; than root cells)</li>
-    <li><strong>Movement across root:</strong> Apoplast pathway (through cell walls), symplast pathway (through cytoplasm via plasmodesmata), or vacuolar pathway</li>
-    <li><strong>Casparian strip:</strong> Endodermis forces water into the symplast pathway; minerals actively transported into xylem (lowers &Psi;, drawing water in by osmosis)</li>
-    <li><strong>Cohesion-tension theory:</strong> Transpiration creates negative pressure (tension) at the top; cohesion between water molecules (hydrogen bonds) pulls a continuous column of water upward; adhesion to xylem walls prevents column breaking</li>
+    <li><strong>Root uptake:</strong> Water enters root hair cells by osmosis (soil water has higher &Psi; than root cells). Root hair cells have a large surface area due to their extensions into the soil.</li>
+    <li><strong>Movement across root:</strong>
+        <ul>
+            <li><strong>Apoplast pathway</strong> &mdash; water moves through cell walls and intercellular spaces (no membranes crossed, fastest route, accounts for most water movement)</li>
+            <li><strong>Symplast pathway</strong> &mdash; water moves through cytoplasm via plasmodesmata (crosses membranes, slower)</li>
+            <li><strong>Vacuolar pathway</strong> &mdash; water moves from vacuole to vacuole by osmosis (slowest)</li>
+        </ul>
+    </li>
+    <li><strong>Casparian strip:</strong> A waterproof band of suberin in the endodermis cell walls blocks the apoplast pathway, forcing water into the symplast. This gives the plant control over which minerals enter the xylem. Endodermis cells actively transport mineral ions into the xylem, lowering &Psi; and drawing water in by osmosis.</li>
+    <li><strong>Cohesion-tension theory:</strong>
+        <ul>
+            <li>Transpiration creates negative pressure (tension) at the top of the plant</li>
+            <li>Cohesion between water molecules (hydrogen bonds) pulls a continuous column of water upward through the xylem</li>
+            <li>Adhesion of water molecules to lignified xylem walls helps prevent the column from breaking</li>
+            <li>This generates a <strong>transpiration stream</strong> from roots to leaves</li>
+        </ul>
+    </li>
 </ol>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -166,7 +226,6 @@
   <text x="300" y="22" text-anchor="middle" class="title">Xylem and Phloem Transport</text>
 
   <!-- Plant outline -->
-  <!-- Leaves -->
   <ellipse cx="220" cy="65" rx="55" ry="20" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="1.5" transform="rotate(-25,220,65)"/>
   <ellipse cx="340" cy="70" rx="50" ry="18" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="1.5" transform="rotate(20,340,70)"/>
   <text x="190" y="52" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">Leaf (source)</text>
@@ -181,37 +240,35 @@
   <text x="295" y="378" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Roots (sink)</text>
 
   <!-- Root hairs -->
-  <line x1="225" y1="355" x2="210" y2="350" stroke="#D97706" stroke-width="1"/><line x1="228" y1="348" x2="213" y2="343" stroke="#D97706" stroke-width="1"/>
-  <line x1="362" y1="355" x2="377" y2="350" stroke="#D97706" stroke-width="1"/><line x1="358" y1="348" x2="373" y2="343" stroke="#D97706" stroke-width="1"/>
+  <line x1="225" y1="355" x2="210" y2="350" stroke="#D97706" stroke-width="1"/>
+  <line x1="228" y1="348" x2="213" y2="343" stroke="#D97706" stroke-width="1"/>
+  <line x1="362" y1="355" x2="377" y2="350" stroke="#D97706" stroke-width="1"/>
+  <line x1="358" y1="348" x2="373" y2="343" stroke="#D97706" stroke-width="1"/>
 
-  <!-- XYLEM (left side of stem) -->
+  <!-- XYLEM -->
   <rect x="278" y="90" width="16" height="200" rx="2" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1.5"/>
-  <!-- Water arrows going UP -->
   <line x1="286" y1="280" x2="286" y2="100" stroke="#1a73e8" stroke-width="2"/>
   <polygon points="281,100 286,85 291,100" fill="#1a73e8"/>
-  <!-- Xylem label -->
   <text x="286" y="200" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold" transform="rotate(-90,286,200)">XYLEM</text>
 
-  <!-- PHLOEM (right side of stem) -->
+  <!-- PHLOEM -->
   <rect x="298" y="90" width="16" height="200" rx="2" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="1.5"/>
-  <!-- Sucrose arrows going DOWN (and up) -->
   <line x1="306" y1="100" x2="306" y2="280" stroke="#DC2626" stroke-width="2"/>
   <polygon points="301,280 306,295 311,280" fill="#DC2626"/>
-  <!-- Phloem label -->
   <text x="306" y="200" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold" transform="rotate(-90,306,200)">PHLOEM</text>
 
   <!-- Transpiration at top -->
   <path d="M 260,80 Q 240,50 220,30" fill="none" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="175" y="32" text-anchor="middle" class="small-label" fill="#1a73e8">H₂O lost</text>
+  <text x="175" y="32" text-anchor="middle" class="small-label" fill="#1a73e8">H&#8322;O lost</text>
   <text x="175" y="44" text-anchor="middle" class="small-label" fill="#1a73e8">(transpiration)</text>
 
   <!-- Water uptake at bottom -->
   <path d="M 250,340 Q 265,320 278,300" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
   <polygon points="276,304 280,296 272,298" fill="#1a73e8"/>
-  <text x="210" y="340" text-anchor="middle" class="small-label" fill="#1a73e8">H₂O absorbed</text>
+  <text x="210" y="340" text-anchor="middle" class="small-label" fill="#1a73e8">H&#8322;O absorbed</text>
   <text x="210" y="352" text-anchor="middle" class="small-label" fill="#1a73e8">by osmosis</text>
 
-  <!-- Left side annotations: XYLEM details -->
+  <!-- Left side: XYLEM details -->
   <rect x="30" y="100" width="200" height="115" rx="6" fill="#1a73e8" opacity="0.05" stroke="#1a73e8" stroke-width="1"/>
   <text x="130" y="118" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Xylem (Water Transport)</text>
   <text x="130" y="136" text-anchor="middle" class="small-label" fill="#1a1a2e">Dead, hollow vessels</text>
@@ -219,49 +276,73 @@
   <text x="130" y="164" text-anchor="middle" class="small-label" fill="#1a1a2e">No end walls or cytoplasm</text>
   <text x="130" y="178" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Cohesion-tension theory:</text>
   <text x="130" y="192" text-anchor="middle" class="small-label" fill="#1a1a2e">Transpiration pull + cohesion</text>
-  <text x="130" y="206" text-anchor="middle" class="small-label" fill="#1a1a2e">between H₂O molecules</text>
+  <text x="130" y="206" text-anchor="middle" class="small-label" fill="#1a1a2e">between H&#8322;O molecules</text>
   <line x1="230" y1="155" x2="278" y2="175" stroke="#1a73e8" stroke-width="1" stroke-dasharray="3,2"/>
 
-  <!-- Right side annotations: PHLOEM details -->
+  <!-- Right side: PHLOEM details -->
   <rect x="365" y="100" width="210" height="115" rx="6" fill="#DC2626" opacity="0.05" stroke="#DC2626" stroke-width="1"/>
   <text x="470" y="118" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Phloem (Translocation)</text>
   <text x="470" y="136" text-anchor="middle" class="small-label" fill="#1a1a2e">Living sieve tube elements</text>
   <text x="470" y="150" text-anchor="middle" class="small-label" fill="#1a1a2e">Sieve plates (perforated ends)</text>
   <text x="470" y="164" text-anchor="middle" class="small-label" fill="#1a1a2e">Companion cells (ATP for loading)</text>
   <text x="470" y="178" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Mass flow hypothesis:</text>
-  <text x="470" y="192" text-anchor="middle" class="small-label" fill="#1a1a2e">Sucrose loaded at source →</text>
+  <text x="470" y="192" text-anchor="middle" class="small-label" fill="#1a1a2e">Sucrose loaded at source &#8594;</text>
   <text x="470" y="206" text-anchor="middle" class="small-label" fill="#1a1a2e">pressure drives flow to sink</text>
   <line x1="365" y1="155" x2="314" y2="175" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
 </svg>
 </div>
 
 <h3>Xylem Structure</h3>
-<p>Xylem vessels are dead, hollow tubes with lignified walls. They have no end walls (continuous lumen), no cytoplasm (no resistance to flow) and lignin provides strength and waterproofing. Bordered pits allow lateral water movement between vessels.</p>
+<p>Xylem vessels are dead, hollow tubes with lignified walls. They have no end walls (continuous lumen), no cytoplasm (no resistance to flow) and lignin provides strength, waterproofing, and prevents the vessel from collapsing under tension. Bordered pits allow lateral water movement between adjacent vessels. Xylem also provides <strong>structural support</strong> to the plant &mdash; wood is largely composed of secondary xylem.</p>
+
+<h3>Stomata and Guard Cells</h3>
+<p>Stomata (singular: stoma) are pores in the leaf epidermis, mainly on the lower surface (reduces water loss from direct sunlight). Each stoma is flanked by two <strong>guard cells</strong> that control opening and closing:</p>
+<ul>
+    <li><strong>Opening:</strong> In light, guard cells photosynthesise and actively pump K<sup>+</sup> ions in &rarr; water potential decreases &rarr; water enters by osmosis &rarr; guard cells become turgid &rarr; because of uneven thickening (inner wall thicker), they curve apart, opening the pore</li>
+    <li><strong>Closing:</strong> In darkness or when water-stressed, K<sup>+</sup> ions leave &rarr; water follows by osmosis &rarr; guard cells become flaccid &rarr; pore closes</li>
+    <li><strong>Abscisic acid (ABA)</strong> &mdash; produced during water stress, causes rapid stomatal closure by promoting K<sup>+</sup> efflux from guard cells</li>
+</ul>
 
 <h3>Factors Affecting Transpiration Rate</h3>
 <table>
     <tr><th>Factor</th><th>Effect</th><th>Explanation</th></tr>
-    <tr><td>Temperature</td><td>Increases rate</td><td>More kinetic energy; water evaporates faster; increases water potential gradient</td></tr>
-    <tr><td>Humidity</td><td>Decreases rate</td><td>Reduces water potential gradient between leaf air spaces and external air</td></tr>
-    <tr><td>Wind speed</td><td>Increases rate</td><td>Removes water vapour from leaf surface; maintains steep gradient</td></tr>
-    <tr><td>Light intensity</td><td>Increases rate</td><td>Stomata open for photosynthesis; more exit routes for water vapour</td></tr>
+    <tr><td>Temperature</td><td>Increases rate</td><td>More kinetic energy; water evaporates faster from mesophyll cell surfaces; increases water potential gradient between leaf air spaces and atmosphere</td></tr>
+    <tr><td>Humidity</td><td>Decreases rate</td><td>Reduces water potential gradient between leaf air spaces and external air; less driving force for diffusion</td></tr>
+    <tr><td>Wind speed</td><td>Increases rate</td><td>Removes saturated air from leaf surface (the boundary layer of still, humid air); maintains steep concentration gradient</td></tr>
+    <tr><td>Light intensity</td><td>Increases rate</td><td>Stomata open wider for photosynthesis (CO<sub>2</sub> uptake); more exit routes for water vapour</td></tr>
+    <tr><td>Soil water availability</td><td>If low, decreases rate</td><td>Less water to replace what is lost; ABA triggers stomatal closure</td></tr>
 </table>
 
-<p>A <strong>potometer</strong> measures the rate of water uptake by a cut shoot (approximation of transpiration rate). A <strong>bubble potometer</strong> tracks movement of an air-water meniscus.</p>
+<h3>Xerophyte Adaptations</h3>
+<p>Plants adapted to dry environments (xerophytes) have evolved features to reduce transpiration:</p>
+<ul>
+    <li><strong>Thick waxy cuticle</strong> &mdash; reduces evaporation from the leaf surface</li>
+    <li><strong>Sunken stomata</strong> &mdash; creates a pocket of humid air, reducing the water potential gradient (e.g., marram grass)</li>
+    <li><strong>Rolled leaves</strong> &mdash; traps moist air inside, reducing water loss from the inner surface</li>
+    <li><strong>Reduced leaf surface area</strong> &mdash; needles (conifers) or spines (cacti) reduce the area for transpiration</li>
+    <li><strong>Dense hairs (trichomes)</strong> &mdash; trap a layer of still, moist air near the leaf surface</li>
+    <li><strong>CAM metabolism</strong> &mdash; stomata open at night when it is cooler and more humid (e.g., cacti, pineapple)</li>
+</ul>
+
+<div class="real-world">Marram grass (<em>Ammophila arenaria</em>) is commonly found on sand dunes where water is scarce and wind is strong. Its leaves can roll into a tube shape, trapping moist air around sunken stomata. This dramatically reduces the water potential gradient and hence transpiration rate.</div>
+
+<p>A <strong>potometer</strong> measures the rate of water uptake by a cut shoot (approximation of transpiration rate, since ~99% of water absorbed is lost through transpiration). A <strong>bubble potometer</strong> tracks movement of an air-water meniscus along a calibrated capillary tube.</p>
+
+<div class="exam-tip">A potometer measures water uptake, NOT transpiration directly. A small amount of water taken up is used in photosynthesis and to keep cells turgid, but this is negligible. Always state this caveat in exam answers. When setting up, ensure the shoot is cut underwater to prevent air locks in the xylem.</div>
 
 <h3>Phloem &mdash; Translocation</h3>
 <div class="definition-box">
-    <strong>Translocation:</strong> The transport of dissolved organic solutes (mainly sucrose and amino acids) through phloem sieve tubes from sources (where produced, e.g., photosynthesising leaves) to sinks (where used or stored, e.g., roots, growing points, fruits).
+    <strong>Translocation:</strong> The transport of dissolved organic solutes (mainly sucrose and amino acids) through phloem sieve tubes from sources (where produced, e.g., photosynthesising leaves, germinating seeds, storage organs releasing stores) to sinks (where used or stored, e.g., roots, growing points, developing fruits, storage organs receiving stores). Note that the same organ can be a source or sink at different times &mdash; a potato tuber is a sink when growing but a source when sprouting.
 </div>
 
 <h3>Mass Flow Hypothesis (Munch)</h3>
 <ol>
-    <li>At the <strong>source</strong>, sucrose is actively loaded into sieve tube elements (companion cells use ATP to pump H<sup>+</sup> out; sucrose co-transported in via cotransporters)</li>
-    <li>This lowers water potential in the sieve tube; water enters by osmosis from nearby xylem</li>
+    <li>At the <strong>source</strong>, sucrose is actively loaded into sieve tube elements via companion cells. Companion cells use ATP to pump H<sup>+</sup> out by active transport, creating a proton gradient. Sucrose is then co-transported into the companion cell (and then into sieve tube via plasmodesmata) using this proton gradient.</li>
+    <li>This lowers water potential (&Psi;) in the sieve tube; water enters by osmosis from nearby xylem</li>
     <li>Hydrostatic pressure increases at the source end</li>
-    <li>At the <strong>sink</strong>, sucrose is actively removed from sieve tubes (used in respiration, converted to starch, etc.)</li>
-    <li>Water potential rises in sieve tube at sink; water leaves by osmosis</li>
-    <li>Pressure difference between source and sink drives mass flow of phloem sap</li>
+    <li>At the <strong>sink</strong>, sucrose is actively removed from sieve tubes (used in respiration, converted to starch for storage, used for cellulose synthesis in growing cells, etc.)</li>
+    <li>Water potential rises in sieve tube at sink; water leaves by osmosis (often returning to xylem)</li>
+    <li>Pressure difference between source (high pressure) and sink (low pressure) drives mass flow of phloem sap along the pressure gradient</li>
 </ol>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -274,102 +355,120 @@
   </style>
   <text x="300" y="22" text-anchor="middle" class="title">Mass Flow Hypothesis (Translocation in Phloem)</text>
 
-  <!-- SOURCE (left) -->
+  <!-- SOURCE -->
   <rect x="30" y="55" width="140" height="200" rx="10" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="2"/>
   <text x="100" y="75" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">SOURCE</text>
   <text x="100" y="90" text-anchor="middle" class="small-label" fill="#16A34A">(e.g. leaf)</text>
 
-  <!-- Companion cell at source -->
   <rect x="45" y="105" width="50" height="45" rx="5" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
   <text x="70" y="123" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Companion</text>
   <text x="70" y="135" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">cell</text>
   <text x="70" y="148" text-anchor="middle" font-size="9" fill="#D97706" font-family="system-ui">(uses ATP)</text>
 
-  <!-- Sieve tube at source -->
   <rect x="105" y="100" width="50" height="140" rx="5" fill="#DC2626" opacity="0.1" stroke="#DC2626" stroke-width="1.5"/>
   <text x="130" y="125" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Sieve</text>
   <text x="130" y="138" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">tube</text>
 
-  <!-- Sucrose loading arrow -->
   <line x1="95" y1="125" x2="105" y2="125" stroke="#D97706" stroke-width="2"/>
   <polygon points="105,122 112,125 105,128" fill="#D97706"/>
   <text x="100" y="165" text-anchor="middle" class="small-label" fill="#D97706">Sucrose</text>
   <text x="100" y="177" text-anchor="middle" class="small-label" fill="#D97706">loaded in</text>
 
-  <!-- Water enters by osmosis at source -->
-  <text x="100" y="200" text-anchor="middle" class="small-label" fill="#1a73e8">H₂O enters</text>
+  <text x="100" y="200" text-anchor="middle" class="small-label" fill="#1a73e8">H&#8322;O enters</text>
   <text x="100" y="212" text-anchor="middle" class="small-label" fill="#1a73e8">(osmosis)</text>
   <line x1="100" y1="220" x2="130" y2="220" stroke="#1a73e8" stroke-width="1.5"/>
   <polygon points="130,217 137,220 130,223" fill="#1a73e8"/>
   <text x="100" y="240" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">High</text>
   <text x="100" y="252" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">hydrostatic</text>
 
-  <!-- SIEVE TUBE (middle, connecting source to sink) -->
+  <!-- SIEVE TUBE connecting -->
   <rect x="170" y="140" width="260" height="40" rx="6" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1.5"/>
-  <!-- Sieve plates -->
   <line x1="240" y1="140" x2="240" y2="180" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="310" y1="140" x2="310" y2="180" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="370" y1="140" x2="370" y2="180" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- Flow arrow -->
   <line x1="185" y1="160" x2="415" y2="160" stroke="#DC2626" stroke-width="2.5"/>
   <polygon points="415,155 430,160 415,165" fill="#DC2626"/>
-  <text x="300" y="155" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Mass flow of sucrose solution →</text>
+  <text x="300" y="155" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Mass flow of sucrose solution &#8594;</text>
   <text x="300" y="195" text-anchor="middle" class="small-label" fill="#6b7280">Sieve plates (perforated end walls)</text>
 
-  <!-- SINK (right) -->
+  <!-- SINK -->
   <rect x="430" y="55" width="140" height="200" rx="10" fill="#D97706" opacity="0.08" stroke="#D97706" stroke-width="2"/>
   <text x="500" y="75" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">SINK</text>
   <text x="500" y="90" text-anchor="middle" class="small-label" fill="#D97706">(e.g. root, fruit)</text>
 
-  <!-- Sieve tube at sink -->
   <rect x="445" y="100" width="50" height="140" rx="5" fill="#DC2626" opacity="0.1" stroke="#DC2626" stroke-width="1.5"/>
   <text x="470" y="125" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Sieve</text>
   <text x="470" y="138" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">tube</text>
 
-  <!-- Companion cell at sink -->
   <rect x="505" y="105" width="50" height="45" rx="5" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
   <text x="530" y="123" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Companion</text>
   <text x="530" y="135" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">cell</text>
 
-  <!-- Sucrose unloading -->
   <line x1="495" y1="125" x2="505" y2="125" stroke="#D97706" stroke-width="2"/>
   <polygon points="505,122 512,125 505,128" fill="#D97706"/>
   <text x="500" y="165" text-anchor="middle" class="small-label" fill="#D97706">Sucrose</text>
   <text x="500" y="177" text-anchor="middle" class="small-label" fill="#D97706">removed</text>
 
-  <!-- Water leaves by osmosis at sink -->
-  <text x="500" y="200" text-anchor="middle" class="small-label" fill="#1a73e8">H₂O leaves</text>
+  <text x="500" y="200" text-anchor="middle" class="small-label" fill="#1a73e8">H&#8322;O leaves</text>
   <text x="500" y="212" text-anchor="middle" class="small-label" fill="#1a73e8">(osmosis)</text>
   <line x1="470" y1="220" x2="440" y2="220" stroke="#1a73e8" stroke-width="1.5"/>
   <polygon points="440,217 433,220 440,223" fill="#1a73e8"/>
   <text x="500" y="240" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Low</text>
   <text x="500" y="252" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">hydrostatic</text>
 
-  <!-- Pressure difference label -->
   <rect x="170" y="270" width="260" height="30" rx="6" fill="#1a1a2e" opacity="0.05" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="300" y="290" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Pressure gradient drives mass flow from source → sink</text>
+  <text x="300" y="290" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Pressure gradient drives mass flow from source &#8594; sink</text>
 </svg>
 </div>
 
 <h3>Phloem Structure</h3>
-<p><strong>Sieve tube elements</strong> are living cells with no nucleus, very little cytoplasm, and sieve plates (perforated end walls) to allow flow. <strong>Companion cells</strong> are metabolically active with many mitochondria; they load sucrose into sieve tubes and support their function.</p>
+<p><strong>Sieve tube elements</strong> are living cells with no nucleus, very little cytoplasm (reduced organelles to minimise resistance to flow), and sieve plates (perforated end walls) to allow flow of phloem sap. <strong>Companion cells</strong> are metabolically active with many mitochondria, a dense cytoplasm, and a nucleus; they load sucrose into sieve tubes via the proton co-transport mechanism and support sieve tube function through plasmodesmata connections.</p>
 
-<div class="exam-tip">Evidence for mass flow: aphid stylet experiments show sieve tubes are under pressure; radioactive tracers show bidirectional movement in different sieve tubes; ringing experiments (removing phloem) cause sugar accumulation above the ring.</div>
+<h3>Evidence For and Against Mass Flow</h3>
+<table>
+    <tr><th>Evidence Supporting</th><th>Evidence Against / Limitations</th></tr>
+    <tr><td>Aphid stylet experiments: cutting an aphid stylet while it feeds on phloem shows sap exudes under pressure, confirming positive hydrostatic pressure</td><td>Sieve plates should impede flow, yet they exist &mdash; this is not fully explained</td></tr>
+    <tr><td>Radioactive tracers (e.g., <sup>14</sup>C-labelled CO<sub>2</sub>) show labelled sugars appear in phloem and move to sinks</td><td>Different solutes can move in different directions in adjacent sieve tubes, which a simple mass flow model struggles to explain</td></tr>
+    <tr><td>Ringing experiments: removing a ring of phloem bark causes sugar accumulation above the ring (on the source side)</td><td>The mechanism requires energy (active loading), yet mass flow itself is passive &mdash; the model does not fully explain all observations</td></tr>
+    <tr><td>Companion cells have many mitochondria, consistent with active loading</td><td>Phloem transport is sensitive to metabolic inhibitors, suggesting active processes beyond simple loading</td></tr>
+</table>
+
+<div class="exam-tip">Evidence for mass flow: aphid stylet experiments show sieve tubes are under pressure; radioactive tracers show directional movement; ringing experiments cause sugar accumulation above the ring. Always explain the evidence, not just list it.</div>
 
 <!-- ==================== ANIMAL TRANSPORT ==================== -->
 <h2>3.3 Transport in Animals</h2>
 
+<h3>Why Do Mammals Need a Transport System?</h3>
+<p>Mammals are large, active organisms with a high metabolic rate. Their small SA:V ratio means diffusion alone is insufficient to supply all cells with oxygen and nutrients or remove waste products quickly enough. A closed circulatory system with a pump (heart) and blood vessels provides rapid bulk transport to all tissues.</p>
+
 <h3>Double Circulatory System</h3>
-<p>Mammals have a <strong>double circulatory system</strong>: blood passes through the heart twice per circuit (pulmonary circulation: heart &rarr; lungs &rarr; heart; systemic circulation: heart &rarr; body &rarr; heart). This maintains high blood pressure in the systemic circuit, ensuring efficient delivery of oxygen and nutrients.</p>
+<p>Mammals have a <strong>double circulatory system</strong>: blood passes through the heart twice per circuit:</p>
+<ul>
+    <li><strong>Pulmonary circulation:</strong> heart &rarr; lungs &rarr; heart (deoxygenated blood is oxygenated)</li>
+    <li><strong>Systemic circulation:</strong> heart &rarr; body &rarr; heart (oxygenated blood delivers O<sub>2</sub> to tissues)</li>
+</ul>
+<p>This maintains high blood pressure in the systemic circuit (blood pressure drops as blood passes through the lung capillaries, so returning it to the heart for a second pump ensures adequate pressure for efficient delivery of oxygen and nutrients to body tissues). It also allows pulmonary and systemic pressures to be maintained independently.</p>
+
+<h3>Blood Vessels</h3>
+<table>
+    <tr><th>Feature</th><th>Arteries</th><th>Capillaries</th><th>Veins</th></tr>
+    <tr><td>Wall thickness</td><td>Thick (withstands high pressure)</td><td>One cell thick (short diffusion distance)</td><td>Thin (low pressure)</td></tr>
+    <tr><td>Lumen diameter</td><td>Narrow (maintains high pressure)</td><td>Very narrow (~8 &mu;m; RBCs pass single file)</td><td>Wide (reduces resistance)</td></tr>
+    <tr><td>Elastic tissue</td><td>Much (stretches and recoils to smooth pulsatile flow)</td><td>None</td><td>Little</td></tr>
+    <tr><td>Smooth muscle</td><td>Much (vasoconstriction/vasodilation)</td><td>None</td><td>Little</td></tr>
+    <tr><td>Valves</td><td>No (except at heart exit)</td><td>No</td><td>Yes (prevent backflow)</td></tr>
+    <tr><td>Blood pressure</td><td>High, pulsatile</td><td>Low, steady</td><td>Very low, steady</td></tr>
+    <tr><td>Blood flow speed</td><td>Fast</td><td>Slow (maximises exchange time)</td><td>Moderate</td></tr>
+</table>
 
 <h3>Heart Structure and Function</h3>
 <p>The heart has four chambers: right and left atria (receive blood) and right and left ventricles (pump blood out). Key features:</p>
 <ul>
-    <li><strong>Septum</strong> separates oxygenated and deoxygenated blood</li>
-    <li><strong>Atrioventricular valves</strong> (tricuspid right, bicuspid/mitral left) prevent backflow from ventricles to atria</li>
-    <li><strong>Semilunar valves</strong> in aorta and pulmonary artery prevent backflow into ventricles</li>
-    <li><strong>Left ventricle wall</strong> is thicker (generates higher pressure for systemic circulation)</li>
-    <li><strong>Coronary arteries</strong> supply heart muscle with oxygenated blood</li>
+    <li><strong>Septum</strong> separates oxygenated and deoxygenated blood, preventing mixing</li>
+    <li><strong>Atrioventricular valves</strong> (tricuspid on right, bicuspid/mitral on left) prevent backflow from ventricles to atria &mdash; they are anchored by chordae tendinae ("heart strings") to prevent them inverting</li>
+    <li><strong>Semilunar valves</strong> in the aorta and pulmonary artery prevent backflow into ventricles during diastole</li>
+    <li><strong>Left ventricle wall</strong> is 2&ndash;3 times thicker than right ventricle wall (generates higher pressure for systemic circulation to the entire body; right ventricle only pumps to the nearby lungs)</li>
+    <li><strong>Coronary arteries</strong> branch from the aorta and supply heart muscle (myocardium) with oxygenated blood &mdash; blockage causes myocardial infarction (heart attack)</li>
 </ul>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -383,81 +482,61 @@
   <text x="300" y="22" text-anchor="middle" class="title">Heart Cross-Section (Front View)</text>
   <text x="300" y="40" text-anchor="middle" class="small-label" fill="#6b7280">(Note: left/right are the patient's left/right, reversed in diagram)</text>
 
-  <!-- Outer heart shape -->
   <path d="M 300,380 Q 140,320 120,220 Q 100,130 180,80 Q 230,50 280,80 L 300,60 L 320,80 Q 370,50 420,80 Q 500,130 480,220 Q 460,320 300,380 Z" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="2.5"/>
 
-  <!-- Septum (vertical line in middle) -->
   <line x1="300" y1="90" x2="300" y2="360" stroke="#1a1a2e" stroke-width="3"/>
-  <!-- Horizontal line separating atria and ventricles -->
   <line x1="150" y1="195" x2="450" y2="195" stroke="#1a1a2e" stroke-width="2"/>
 
-  <!-- RIGHT ATRIUM (viewer's left) -->
   <rect x="160" y="100" width="130" height="85" rx="8" fill="#1a73e8" opacity="0.12"/>
   <text x="225" y="145" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Right</text>
   <text x="225" y="160" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Atrium</text>
 
-  <!-- LEFT ATRIUM (viewer's right) -->
   <rect x="310" y="100" width="130" height="85" rx="8" fill="#DC2626" opacity="0.12"/>
   <text x="375" y="145" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Left</text>
   <text x="375" y="160" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Atrium</text>
 
-  <!-- RIGHT VENTRICLE (viewer's left, thinner wall) -->
   <path d="M 155,205 L 155,330 Q 200,370 290,355 L 290,205 Z" fill="#1a73e8" opacity="0.08" stroke="#1a73e8" stroke-width="1"/>
   <text x="222" y="270" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Right</text>
   <text x="222" y="286" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Ventricle</text>
-  <!-- Thin wall indication -->
   <line x1="148" y1="220" x2="148" y2="310" stroke="#1a73e8" stroke-width="5" opacity="0.3"/>
 
-  <!-- LEFT VENTRICLE (viewer's right, thicker wall) -->
   <path d="M 310,205 L 310,355 Q 400,370 445,330 L 445,205 Z" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1"/>
   <text x="378" y="270" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Left</text>
   <text x="378" y="286" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Ventricle</text>
-  <!-- Thick wall indication -->
   <line x1="452" y1="220" x2="452" y2="310" stroke="#DC2626" stroke-width="12" opacity="0.2"/>
   <text x="490" y="268" text-anchor="start" class="small-label" fill="#DC2626">Thicker</text>
   <text x="490" y="281" text-anchor="start" class="small-label" fill="#DC2626">wall</text>
 
-  <!-- AV valves -->
   <path d="M 210,190 L 225,205 L 240,190" fill="none" stroke="#D97706" stroke-width="2.5"/>
   <text x="225" y="225" text-anchor="middle" class="small-label" fill="#D97706">Tricuspid</text>
   <path d="M 360,190 L 375,205 L 390,190" fill="none" stroke="#D97706" stroke-width="2.5"/>
   <text x="375" y="225" text-anchor="middle" class="small-label" fill="#D97706">Bicuspid</text>
 
-  <!-- Vessels at top -->
-  <!-- Vena cava (to right atrium) -->
   <rect x="155" y="55" width="30" height="50" rx="4" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="100" y="73" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Vena</text>
   <text x="100" y="86" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">cava</text>
   <line x1="130" y1="80" x2="155" y2="80" stroke="#1a73e8" stroke-width="1"/>
-  <!-- Arrow down into atrium -->
   <polygon points="165,100 170,90 175,100" fill="#1a73e8"/>
 
-  <!-- Pulmonary artery (from right ventricle) -->
   <rect x="225" y="55" width="30" height="50" rx="4" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1.5"/>
   <polygon points="235,60 240,50 245,60" fill="#1a73e8"/>
   <text x="240" y="48" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Pulmonary</text>
   <text x="240" y="38" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">artery</text>
-  <!-- Semilunar valve -->
   <path d="M 230,95 L 240,85 L 250,95" fill="none" stroke="#D97706" stroke-width="2"/>
 
-  <!-- Pulmonary veins (to left atrium) -->
   <rect x="345" y="55" width="30" height="50" rx="4" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
   <polygon points="355,100 360,90 365,100" fill="#DC2626"/>
   <text x="360" y="48" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Pulmonary</text>
   <text x="360" y="38" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">veins</text>
 
-  <!-- Aorta (from left ventricle) -->
   <rect x="415" y="55" width="35" height="50" rx="4" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
   <polygon points="425,60 432,50 440,60" fill="#DC2626"/>
   <text x="490" y="73" text-anchor="start" class="small-label" fill="#DC2626" font-weight="bold">Aorta</text>
   <line x1="450" y1="75" x2="488" y2="75" stroke="#DC2626" stroke-width="1"/>
-  <!-- Semilunar valve -->
   <path d="M 420,95 L 432,85 L 445,95" fill="none" stroke="#D97706" stroke-width="2"/>
 
-  <!-- Septum label -->
   <text x="300" y="345" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Septum</text>
 
-  <!-- Key -->
   <rect x="150" y="388" width="12" height="12" rx="2" fill="#1a73e8" opacity="0.3"/>
   <text x="168" y="399" class="small-label" fill="#1a73e8">Deoxygenated blood</text>
   <rect x="310" y="388" width="12" height="12" rx="2" fill="#DC2626" opacity="0.3"/>
@@ -467,69 +546,127 @@
 </svg>
 </div>
 
-<h3>Cardiac Conduction System</h3>
-<p>The heart is <strong>myogenic</strong> (contracts without external nervous stimulation):</p>
+<h3>The Cardiac Cycle</h3>
+<p>The cardiac cycle describes the events of one complete heartbeat, lasting approximately 0.8 seconds at rest (75 bpm). It has three phases:</p>
 <ol>
-    <li><strong>SAN</strong> (sinoatrial node) in right atrium wall initiates impulse (pacemaker)</li>
-    <li>Wave of depolarisation spreads across both atria &rarr; atrial systole</li>
-    <li><strong>AVN</strong> (atrioventricular node) delays impulse (~0.1 s) allowing atria to empty before ventricles contract</li>
-    <li>Impulse passes down <strong>bundle of His</strong> in septum</li>
-    <li><strong>Purkyne fibres</strong> spread impulse from apex upward through ventricular walls &rarr; ventricular systole (from bottom up)</li>
+    <li><strong>Atrial systole (~0.1 s):</strong> Atria contract, pushing remaining blood into ventricles (ventricles are already ~80% filled passively). Atrioventricular (AV) valves are open; semilunar valves are closed.</li>
+    <li><strong>Ventricular systole (~0.3 s):</strong> Ventricles contract from the apex upward. Pressure in ventricles rises above pressure in atria &rarr; AV valves snap shut (first heart sound, "lub"). Pressure rises above pressure in arteries &rarr; semilunar valves open &rarr; blood ejected into pulmonary artery and aorta.</li>
+    <li><strong>Diastole (~0.4 s):</strong> All chambers relax. Ventricular pressure drops below arterial pressure &rarr; semilunar valves close (second heart sound, "dub"). Blood flows from veins into atria passively. Ventricles fill passively through open AV valves.</li>
 </ol>
+
+<h3>Cardiac Conduction System</h3>
+<p>The heart is <strong>myogenic</strong> (generates its own rhythmic contractions without external nervous stimulation):</p>
+<ol>
+    <li><strong>SAN</strong> (sinoatrial node) in the right atrium wall initiates the impulse &mdash; this is the natural <strong>pacemaker</strong>, setting the heart rate at ~60&ndash;100 bpm</li>
+    <li>Wave of depolarisation (electrical impulse) spreads across both atria via gap junctions in the intercalated discs &rarr; atrial systole</li>
+    <li><strong>AVN</strong> (atrioventricular node) at the junction of atria and ventricles delays the impulse for ~0.1 s, allowing atria to fully empty before ventricles contract</li>
+    <li>Impulse passes down the <strong>bundle of His</strong> (atrioventricular bundle) in the interventricular septum</li>
+    <li><strong>Purkyne fibres</strong> (Purkinje fibres) spread the impulse from the apex upward through the ventricular walls &rarr; ventricular systole (contraction from bottom up ensures blood is squeezed upward into the arteries)</li>
+</ol>
+
+<div class="real-world">Artificial pacemakers are implanted in patients whose SAN is faulty, delivering electrical impulses to maintain a regular heartbeat. Electrocardiograms (ECGs) trace the electrical activity of the heart: the P wave represents atrial depolarisation, the QRS complex represents ventricular depolarisation, and the T wave represents ventricular repolarisation.</div>
 
 <h3>Haemoglobin and Oxygen Transport</h3>
 <div class="definition-box">
-    <strong>Haemoglobin:</strong> A quaternary protein with four polypeptide subunits, each containing a haem group with an iron (Fe<sup>2+</sup>) ion that reversibly binds one molecule of oxygen. Each haemoglobin can carry up to four O<sub>2</sub> molecules.
+    <strong>Haemoglobin:</strong> A quaternary protein (globular, conjugated) with four polypeptide subunits (2 alpha, 2 beta chains), each containing a prosthetic <strong>haem group</strong> with an iron (Fe<sup>2+</sup>) ion that reversibly binds one molecule of oxygen. Each haemoglobin can carry up to four O<sub>2</sub> molecules, forming <strong>oxyhaemoglobin</strong>: Hb + 4O<sub>2</sub> &harr; HbO<sub>8</sub> (Hb(O<sub>2</sub>)<sub>4</sub>).
 </div>
 
-<p>The <strong>oxygen dissociation curve</strong> is sigmoid (S-shaped) due to <strong>cooperative binding</strong>: when one O<sub>2</sub> binds, the haemoglobin changes shape making it easier for subsequent O<sub>2</sub> molecules to bind (positive cooperativity).</p>
+<p>The <strong>oxygen dissociation curve</strong> is sigmoid (S-shaped) due to <strong>cooperative binding</strong>: when the first O<sub>2</sub> binds, it causes a conformational change in the haemoglobin that makes it easier for subsequent O<sub>2</sub> molecules to bind (positive cooperativity). Conversely, when one O<sub>2</sub> is released, the others are released more readily. This produces a very efficient loading and unloading pattern:</p>
+<ul>
+    <li>At the lungs (high pO<sub>2</sub>, ~13 kPa): haemoglobin is ~98% saturated (plateau region)</li>
+    <li>At resting tissues (lower pO<sub>2</sub>, ~5 kPa): haemoglobin is ~75% saturated &mdash; releases ~25% of its O<sub>2</sub></li>
+    <li>At active tissues (very low pO<sub>2</sub>, ~2 kPa): haemoglobin may be only ~25% saturated &mdash; releases ~75% of its O<sub>2</sub></li>
+</ul>
 
 <h3>The Bohr Effect</h3>
-<p>In actively respiring tissues, CO<sub>2</sub> concentration is high. CO<sub>2</sub> lowers blood pH (combines with water to form carbonic acid). Lower pH causes haemoglobin to have a <strong>lower affinity</strong> for oxygen, so it releases O<sub>2</sub> more readily to respiring tissues. This shifts the dissociation curve to the <strong>right</strong>.</p>
+<p>In actively respiring tissues, CO<sub>2</sub> concentration is high. CO<sub>2</sub> lowers blood pH (combines with water to form carbonic acid, catalysed by <strong>carbonic anhydrase</strong> in red blood cells). Lower pH (higher H<sup>+</sup> concentration) causes haemoglobin to have a <strong>lower affinity</strong> for oxygen, so it releases O<sub>2</sub> more readily to the respiring tissues that need it most. This shifts the dissociation curve to the <strong>right</strong> &mdash; the Bohr shift.</p>
 
-<div class="equation">CO<sub>2</sub> + H<sub>2</sub>O &harr; H<sub>2</sub>CO<sub>3</sub> &harr; H<sup>+</sup> + HCO<sub>3</sub><sup>&minus;</sup> (carbonic anhydrase in RBCs)</div>
+<div class="equation">CO<sub>2</sub> + H<sub>2</sub>O &harr; H<sub>2</sub>CO<sub>3</sub> &harr; H<sup>+</sup> + HCO<sub>3</sub><sup>&minus;</sup> (carbonic anhydrase in RBCs catalyses the first step)</div>
+
+<p>The bicarbonate ions (HCO<sub>3</sub><sup>&minus;</sup>) diffuse out of the red blood cell into the plasma (the main way CO<sub>2</sub> is transported in blood, ~85%). Chloride ions (Cl<sup>&minus;</sup>) move into the RBC to maintain electrical neutrality &mdash; this is the <strong>chloride shift</strong>.</p>
 
 <h3>Fetal Haemoglobin</h3>
-<p>Fetal haemoglobin (HbF) has a <strong>higher affinity</strong> for oxygen than adult haemoglobin (HbA). Its dissociation curve is to the <strong>left</strong> of adult haemoglobin. This ensures oxygen transfers from maternal blood to fetal blood across the placenta.</p>
+<p>Fetal haemoglobin (HbF) has a <strong>higher affinity</strong> for oxygen than adult haemoglobin (HbA) because it has a different quaternary structure (two gamma chains instead of two beta chains). Its dissociation curve is to the <strong>left</strong> of adult haemoglobin. This ensures oxygen transfers from maternal blood to fetal blood across the placenta, where the partial pressure of O<sub>2</sub> is relatively low. At any given pO<sub>2</sub>, fetal Hb will be more saturated than maternal Hb, enabling O<sub>2</sub> to pass from mother to fetus.</p>
 
-<div class="exam-tip">When interpreting dissociation curves: a shift LEFT means higher affinity (picks up O<sub>2</sub> more easily); a shift RIGHT means lower affinity (releases O<sub>2</sub> more easily). The Bohr effect shifts the curve RIGHT in active tissues.</div>
+<h3>Other Respiratory Pigments</h3>
+<ul>
+    <li><strong>Myoglobin</strong> &mdash; found in muscle tissue; has a very high affinity for O<sub>2</sub> (curve far to the left); acts as an oxygen store, only releasing O<sub>2</sub> when muscle pO<sub>2</sub> drops very low during intense exercise. Gives red meat its colour.</li>
+    <li><strong>Haemoglobin in organisms at high altitude</strong> (e.g., llamas) or in low-O<sub>2</sub> environments has a higher O<sub>2</sub> affinity (curve shifted left), enabling efficient O<sub>2</sub> loading despite lower atmospheric pO<sub>2</sub>.</li>
+</ul>
+
+<div class="exam-tip">When interpreting dissociation curves: a shift LEFT means higher affinity (picks up O<sub>2</sub> more easily, e.g., fetal Hb, myoglobin, high altitude species). A shift RIGHT means lower affinity (releases O<sub>2</sub> more easily, e.g., Bohr effect in active tissues). Always label your axes correctly: x-axis = partial pressure of O<sub>2</sub> (pO<sub>2</sub>), y-axis = percentage saturation of haemoglobin.</div>
+
+<h3>Tissue Fluid Formation and Return</h3>
+<p>Tissue fluid is formed at the arterial end of capillary beds and returned at the venous end:</p>
+<ol>
+    <li><strong>Arterial end:</strong> Hydrostatic pressure of blood (from ventricular contraction) forces water, dissolved gases, glucose, amino acids, and ions out through gaps between capillary endothelial cells. Plasma proteins and blood cells are too large to pass through &mdash; this is <strong>ultrafiltration</strong>.</li>
+    <li><strong>Tissue fluid</strong> bathes the cells, supplying nutrients and removing waste by diffusion.</li>
+    <li><strong>Venous end:</strong> Hydrostatic pressure has dropped. The osmotic effect of plasma proteins (oncotic pressure) draws water back into the capillary by osmosis. Most tissue fluid is reabsorbed this way.</li>
+    <li><strong>Lymphatic system:</strong> Excess tissue fluid (~10%) drains into blind-ended lymph capillaries, becoming <strong>lymph</strong>. Lymph vessels have valves and rely on skeletal muscle contraction for flow. Lymph is returned to the blood via the thoracic duct into the subclavian vein. Lymph nodes filter the lymph and contain immune cells.</li>
+</ol>
+
+<div class="real-world">Oedema (swelling) occurs when excess tissue fluid accumulates in tissues. This can be caused by high blood pressure (more fluid forced out), low plasma protein concentration (e.g., kwashiorkor/malnutrition &mdash; less oncotic pressure to draw fluid back), blocked lymph vessels (e.g., elephantiasis caused by parasitic worms blocking lymph drainage), or increased capillary permeability during inflammation.</div>
 
 <!-- ==================== REPRODUCTION ==================== -->
 <h2>3.4 Sexual and Asexual Reproduction</h2>
 
 <h3>Sexual Reproduction</h3>
 <div class="definition-box">
-    <strong>Sexual reproduction:</strong> The fusion of two haploid gametes (fertilisation) to produce a diploid zygote. It involves meiosis and results in genetically variable offspring.
+    <strong>Sexual reproduction:</strong> The fusion of two haploid gametes (fertilisation) to produce a diploid zygote. It involves meiosis (to produce gametes) and results in genetically variable offspring due to independent assortment, crossing over, and random fertilisation.
 </div>
 
-<p>Advantages: genetic variation (adaptation to changing environments, resistance to disease). Disadvantages: requires two parents, slower, energy cost of finding mate.</p>
+<p>Advantages: genetic variation provides raw material for natural selection, enabling adaptation to changing environments, resistance to new diseases, and avoiding accumulation of harmful mutations. Disadvantages: requires two parents, slower than asexual reproduction, energy cost of finding a mate and producing gametes, only 50% of genes passed to each offspring.</p>
 
 <h3>Asexual Reproduction</h3>
 <div class="definition-box">
-    <strong>Asexual reproduction:</strong> Production of new organisms from a single parent without fusion of gametes, involving only mitosis. Offspring are genetically identical clones of the parent.
+    <strong>Asexual reproduction:</strong> Production of new organisms from a single parent without fusion of gametes, involving only mitosis. Offspring are genetically identical clones of the parent (barring rare mutations).
 </div>
 
-<p>Advantages: rapid, no mate needed, successful genotype preserved. Disadvantages: no genetic variation, population vulnerable to environmental change or disease.</p>
+<p>Advantages: rapid population growth, no mate needed (advantageous in isolated or stable environments), successful genotype preserved and all genes passed to offspring (100% genetic contribution). Disadvantages: no genetic variation, population vulnerable to environmental change or new diseases (all individuals equally susceptible), accumulation of harmful mutations over time (Muller's ratchet).</p>
 
 <h3>Reproductive Strategies in Plants</h3>
 <ul>
-    <li><strong>Sexual</strong> &mdash; pollination (wind or insect), fertilisation in ovule, seed dispersal</li>
-    <li><strong>Asexual (vegetative propagation)</strong> &mdash; runners (strawberry), bulbs (daffodil), rhizomes (iris), tubers (potato)</li>
+    <li><strong>Sexual</strong> &mdash; pollination (wind-pollinated flowers: small petals, no scent, large feathery stigma, copious lightweight pollen; insect-pollinated: large colourful petals, nectar, scent, sticky pollen), fertilisation in ovule, seed and fruit dispersal (wind, animal, water, explosion)</li>
+    <li><strong>Asexual (vegetative propagation)</strong> &mdash; runners (strawberry), bulbs (daffodil), rhizomes (iris), tubers (potato). These allow rapid colonisation of suitable habitats. Many plants can reproduce both sexually and asexually depending on conditions.</li>
+</ul>
+
+<h3>Meiosis &mdash; Producing Gametes</h3>
+<p>Meiosis is a two-division process that produces four haploid cells from one diploid cell. It is essential for sexual reproduction and introduces genetic variation through:</p>
+<ul>
+    <li><strong>Crossing over</strong> (prophase I) &mdash; homologous chromosomes pair up (bivalents) and exchange segments of DNA at chiasmata, creating new combinations of alleles on each chromatid</li>
+    <li><strong>Independent assortment</strong> (metaphase I) &mdash; the orientation of each bivalent at the equator is random, so maternal and paternal chromosomes are distributed randomly into daughter cells. With 23 pairs, there are 2<sup>23</sup> (~8.4 million) possible combinations</li>
+    <li><strong>Random fertilisation</strong> &mdash; any sperm can fuse with any egg, further increasing variation</li>
 </ul>
 
 <h3>Gametogenesis</h3>
-<p><strong>Spermatogenesis</strong> produces four small, motile sperm from each primary spermatocyte (continuous from puberty). <strong>Oogenesis</strong> produces one large ovum (and polar bodies) from each primary oocyte (limited supply, cyclical release).</p>
+<p><strong>Spermatogenesis</strong> (in testes) produces four small, motile sperm from each primary spermatocyte. It is continuous from puberty, producing millions of sperm daily. Sperm have: a head with an acrosome (enzymes for zona pellucida digestion) and a haploid nucleus, a midpiece packed with mitochondria (ATP for swimming), and a tail (flagellum) for locomotion.</p>
+<p><strong>Oogenesis</strong> (in ovaries) produces one large ovum and two or three small polar bodies from each primary oocyte. The ovum retains most of the cytoplasm (nutrient reserves for early embryo development). Oogenesis begins before birth, but primary oocytes arrest in prophase I until puberty. One oocyte is typically released per menstrual cycle (ovulation).</p>
 
 <h3>Fertilisation in Mammals</h3>
 <ol>
-    <li>Sperm undergoes capacitation in female reproductive tract</li>
-    <li>Acrosome reaction: enzymes digest zona pellucida of egg</li>
-    <li>Sperm membrane fuses with egg membrane</li>
-    <li>Cortical reaction: cortical granules released, zona pellucida hardens (prevents polyspermy)</li>
-    <li>Nuclei of sperm and egg fuse, restoring diploid number</li>
+    <li>Sperm undergoes <strong>capacitation</strong> in the female reproductive tract &mdash; removal of cholesterol from the sperm membrane, enabling the acrosome reaction. This takes several hours and ensures sperm are ready to fertilise at the right time and place.</li>
+    <li><strong>Acrosome reaction:</strong> On contact with the zona pellucida (glycoprotein layer around the egg), the acrosome releases digestive enzymes (e.g., acrosin) that break down the zona, allowing the sperm to reach the egg membrane</li>
+    <li>Sperm membrane fuses with egg membrane &mdash; the sperm nucleus, centriole, and mitochondria enter the egg cytoplasm</li>
+    <li><strong>Cortical reaction:</strong> Cortical granules in the egg release their contents by exocytosis, causing the zona pellucida to harden and change structure. This is the <strong>block to polyspermy</strong> &mdash; prevents more than one sperm from fertilising the egg (which would create a non-viable polyploid zygote)</li>
+    <li>Nuclei of sperm and egg fuse (<strong>karyogamy</strong>), restoring the diploid number (2n = 46 in humans) and forming a <strong>zygote</strong></li>
 </ol>
 
-<div class="exam-tip">Remember the distinction: sexual reproduction introduces genetic variation through meiosis (crossing over + independent assortment) and random fertilisation. Asexual reproduction produces clones (only source of variation is mutation).</div>
+<div class="real-world">In vitro fertilisation (IVF) bypasses many of these natural steps. Eggs are harvested from the ovaries after hormonal stimulation, sperm are prepared in the lab, and fertilisation occurs in a culture dish. Intracytoplasmic sperm injection (ICSI) involves injecting a single sperm directly into the egg, bypassing the acrosome reaction entirely. The resulting embryo is then transferred to the uterus.</div>
+
+<div class="exam-tip">Remember the distinction: sexual reproduction introduces genetic variation through meiosis (crossing over + independent assortment) and random fertilisation. Asexual reproduction produces clones (only source of variation is mutation). In exam answers about the advantages of sexual reproduction, always link genetic variation to natural selection and adaptation to changing environments.</div>
+
+<h3>Comparing Sexual and Asexual Reproduction</h3>
+<table>
+    <tr><th>Feature</th><th>Sexual</th><th>Asexual</th></tr>
+    <tr><td>Number of parents</td><td>Two</td><td>One</td></tr>
+    <tr><td>Cell division</td><td>Meiosis (+ mitosis for growth)</td><td>Mitosis only</td></tr>
+    <tr><td>Gametes</td><td>Yes &mdash; fusion occurs</td><td>No gametes or fusion</td></tr>
+    <tr><td>Genetic variation</td><td>High (crossing over, independent assortment, random fertilisation)</td><td>None (unless mutation occurs)</td></tr>
+    <tr><td>Offspring</td><td>Genetically unique</td><td>Clones of parent</td></tr>
+    <tr><td>Speed</td><td>Slow</td><td>Fast</td></tr>
+    <tr><td>Advantage</td><td>Adaptation to changing environments</td><td>Rapid colonisation of stable environments</td></tr>
+    <tr><td>Examples</td><td>Most animals, flowering plants</td><td>Bacteria (binary fission), budding (Hydra, yeast), vegetative propagation (strawberry runners)</td></tr>
+</table>
 
 </div>
 </body>

@@ -1,740 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topic 3 — Electric Circuits</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: #1a1a2e;
-            background: #ffffff;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 2rem;
-            color: #1a1a2e;
-            border-bottom: 3px solid #2563eb;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #1e3a5f;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            border-left: 4px solid #2563eb;
-            padding-left: 12px;
-        }
-        h3 {
-            font-size: 1.2rem;
-            color: #334155;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 12px;
-        }
-        ul, ol {
-            margin-left: 25px;
-            margin-bottom: 15px;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 0.95rem;
-        }
-        th, td {
-            border: 1px solid #d1d5db;
-            padding: 10px 14px;
-            text-align: left;
-        }
-        th {
-            background: #f1f5f9;
-            font-weight: 600;
-            color: #1e3a5f;
-        }
-        tr:nth-child(even) {
-            background: #f8fafc;
-        }
-        .definition-box {
-            background: #eff6ff;
-            border-left: 4px solid #2563eb;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip {
-            background: #fffbeb;
-            border-left: 4px solid #f59e0b;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip::before {
-            content: "Exam Tip: ";
-            font-weight: 700;
-            color: #b45309;
-        }
-        .equation {
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-            font-size: 1.1rem;
-            background: #f8fafc;
-            padding: 10px 20px;
-            margin: 10px 0;
-            border-radius: 6px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-        }
-        strong {
-            color: #1e3a5f;
-        }
-        @media print {
-            body { padding: 20px; }
-            .exam-tip, .definition-box { break-inside: avoid; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 3 — Electric Circuits</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin-top: 35px; margin-bottom: 15px; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #334155; margin-top: 20px; margin-bottom: 10px; }
+  h4 { font-size: 1.05rem; color: #475569; margin-top: 16px; margin-bottom: 8px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin-left: 25px; margin-bottom: 15px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
+  th { background: #f1f5f9; font-weight: 600; color: #1e3a5f; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition-box { background: #eff6ff; border-left: 4px solid #2563eb; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .equation { font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 1.1rem; background: #f8fafc; padding: 10px 20px; margin: 10px 0; border-radius: 6px; text-align: center; border: 1px solid #e2e8f0; }
+  strong { color: #1e3a5f; }
+  @media print { body { padding: 20px; } .exam-tip, .definition-box { break-inside: avoid; } }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Topic 3 — Electric Circuits</h1>
+<div class="container">
 
-        <h2>3.1 Charge, Current, and Potential Difference</h2>
-        <div class="definition-box">
-            <p><strong>Electric current (I)</strong> is the rate of flow of charge. Measured in amperes (A).</p>
-            <p><strong>Charge (Q)</strong> is measured in coulombs (C). One coulomb is the charge that flows when a current of 1 A passes for 1 second.</p>
-            <p><strong>Potential difference (V)</strong> is the energy transferred per unit charge between two points. Measured in volts (V), where 1 V = 1 J C<sup>-1</sup>.</p>
-        </div>
+<h1>Topic 3 — Electric Circuits</h1>
 
-        <div class="equation">
-            Q = It
-        </div>
-        <div class="equation">
-            V = W / Q
-        </div>
+<!-- ============================================================ -->
+<!-- 3.1 CHARGE, CURRENT, PD -->
+<!-- ============================================================ -->
+<h2>3.1 Charge, Current, and Potential Difference</h2>
+<div class="definition-box">
+  <strong>Electric current (I):</strong> The rate of flow of charge past a point in a circuit. Units: A (amperes).<br>
+  <strong>Charge (Q):</strong> Measured in coulombs (C). One coulomb = the charge flowing when 1 A passes for 1 s.<br>
+  <strong>Potential difference (V):</strong> The energy transferred per unit charge between two points. Units: V (volts). 1 V = 1 J C<sup>-1</sup>.
+</div>
 
-        <p><strong>Conventional current</strong> flows from positive to negative (opposite to electron flow). In metals, charge is carried by free electrons (delocalised electrons).</p>
+<div class="equation">Q = It</div>
+<div class="equation">V = W / Q</div>
 
-        <h2>3.2 Resistance and Ohm's Law</h2>
-        <div class="definition-box">
-            <strong>Resistance (R)</strong> is a measure of the opposition to current flow. It is defined as the ratio of potential difference to current. Measured in ohms (&Omega;).
-        </div>
-        <div class="equation">
-            V = IR &nbsp;&nbsp; (or equivalently R = V / I)
-        </div>
+<p><strong>Conventional current</strong> flows from positive to negative (the direction positive charges would move). In metals, the actual charge carriers are free (delocalised) electrons moving from negative to positive. In electrolytes, both positive and negative ions carry charge.</p>
 
-        <div class="definition-box">
-            <strong>Ohm's Law:</strong> For a conductor at constant temperature, the current through it is directly proportional to the potential difference across it. A component that obeys Ohm's law is called an <strong>ohmic conductor</strong>.
-        </div>
+<h3>The Drift Velocity Equation</h3>
+<p>The current in a conductor depends on the number density of charge carriers (n), their charge (q), the cross-sectional area (A), and their mean drift velocity (v):</p>
+<div class="equation">I = nAqv</div>
+<ul>
+  <li>n = number density of charge carriers (m<sup>-3</sup>) &mdash; very high for metals (~10<sup>28</sup>), much lower for semiconductors</li>
+  <li>A = cross-sectional area (m<sup>2</sup>)</li>
+  <li>q = charge on each carrier (C) &mdash; for electrons, q = e = 1.60 &times; 10<sup>-19</sup> C</li>
+  <li>v = mean drift velocity (m s<sup>-1</sup>) &mdash; typically very small (~10<sup>-4</sup> m s<sup>-1</sup> in metals)</li>
+</ul>
 
-        <h3>I-V Characteristics</h3>
-        <table>
-            <tr><th>Component</th><th>I-V Graph Shape</th><th>Key Features</th></tr>
-            <tr><td><strong>Ohmic conductor</strong> (e.g., wire at constant temp)</td><td>Straight line through origin</td><td>Resistance is constant; I is proportional to V</td></tr>
-            <tr><td><strong>Filament lamp</strong></td><td>Curve — less steep at higher V</td><td>Resistance increases as temperature rises (more lattice vibrations impede electrons)</td></tr>
-            <tr><td><strong>Diode</strong></td><td>Flat for negative V, then steep rise above ~0.6 V</td><td>Very high resistance in reverse bias; low resistance above threshold voltage in forward bias</td></tr>
-            <tr><td><strong>Thermistor</strong> (NTC)</td><td>Not usually plotted as I-V</td><td>Resistance decreases as temperature increases (more charge carriers freed)</td></tr>
-            <tr><td><strong>LDR</strong></td><td>Not usually plotted as I-V</td><td>Resistance decreases as light intensity increases (photons free more charge carriers)</td></tr>
-        </table>
+<div class="worked-example">
+<strong>Worked Example:</strong> A copper wire of cross-sectional area 2.0 &times; 10<sup>-6</sup> m<sup>2</sup> carries a current of 5.0 A. Copper has n = 8.5 &times; 10<sup>28</sup> m<sup>-3</sup>. Calculate the drift velocity.<br><br>
+<strong>Solution:</strong><br>
+v = I/(nAq) = 5.0 / (8.5 &times; 10<sup>28</sup> &times; 2.0 &times; 10<sup>-6</sup> &times; 1.60 &times; 10<sup>-19</sup>)<br>
+= 5.0 / (2.72 &times; 10<sup>4</sup>) = <strong>1.84 &times; 10<sup>-4</sup> m s<sup>-1</sup></strong> (about 0.18 mm/s)
+</div>
 
-        <!-- SVG: V-I Characteristic Graphs -->
-        <div style="margin: 20px auto; text-align: center;">
-            <svg viewBox="0 0 520 240" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-                <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">I-V Characteristic Curves</text>
-                <!-- Ohmic conductor -->
-                <g transform="translate(10,0)">
-                    <text x="90" y="42" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">Ohmic Conductor</text>
-                    <line x1="30" y1="200" x2="155" y2="200" stroke="#1a1a2e" stroke-width="1"/>
-                    <line x1="90" y1="220" x2="90" y2="55" stroke="#1a1a2e" stroke-width="1"/>
-                    <text x="155" y="215" font-family="system-ui" font-size="10" fill="#64748b">V</text>
-                    <text x="80" y="62" font-family="system-ui" font-size="10" fill="#64748b">I</text>
-                    <line x1="40" y1="195" x2="145" y2="65" stroke="#1a73e8" stroke-width="2.5"/>
-                </g>
-                <!-- Filament lamp -->
-                <g transform="translate(175,0)">
-                    <text x="90" y="42" font-family="system-ui" font-size="11" fill="#D97706" text-anchor="middle" font-weight="600">Filament Lamp</text>
-                    <line x1="30" y1="200" x2="155" y2="200" stroke="#1a1a2e" stroke-width="1"/>
-                    <line x1="90" y1="220" x2="90" y2="55" stroke="#1a1a2e" stroke-width="1"/>
-                    <text x="155" y="215" font-family="system-ui" font-size="10" fill="#64748b">V</text>
-                    <text x="80" y="62" font-family="system-ui" font-size="10" fill="#64748b">I</text>
-                    <path d="M 40,195 Q 90,180 105,150 Q 120,120 130,105 Q 140,95 148,90" fill="none" stroke="#D97706" stroke-width="2.5"/>
-                    <path d="M 140,205 Q 90,220 75,170 Q 60,140 50,120 Q 42,110 35,105" fill="none" stroke="#D97706" stroke-width="2.5"/>
-                </g>
-                <!-- Diode -->
-                <g transform="translate(345,0)">
-                    <text x="90" y="42" font-family="system-ui" font-size="11" fill="#16A34A" text-anchor="middle" font-weight="600">Diode</text>
-                    <line x1="30" y1="200" x2="155" y2="200" stroke="#1a1a2e" stroke-width="1"/>
-                    <line x1="90" y1="220" x2="90" y2="55" stroke="#1a1a2e" stroke-width="1"/>
-                    <text x="155" y="215" font-family="system-ui" font-size="10" fill="#64748b">V</text>
-                    <text x="80" y="62" font-family="system-ui" font-size="10" fill="#64748b">I</text>
-                    <line x1="35" y1="200" x2="115" y2="200" stroke="#16A34A" stroke-width="2.5"/>
-                    <path d="M 115,200 Q 120,198 125,185 Q 132,150 138,80" fill="none" stroke="#16A34A" stroke-width="2.5"/>
-                    <text x="120" y="215" font-family="system-ui" font-size="9" fill="#64748b">~0.6V</text>
-                    <line x1="115" y1="197" x2="115" y2="203" stroke="#64748b" stroke-width="0.8"/>
-                </g>
-            </svg>
-        </div>
+<div class="exam-tip">
+The drift velocity is extremely slow, but the electric signal travels at close to the speed of light. This is because the electric field propagates almost instantaneously through the wire, causing all electrons to start drifting at the same time &mdash; like a pipe full of water where pushing one end causes water to flow out the other end immediately.
+</div>
 
-        <div class="exam-tip">
-            For I-V characteristics, the gradient of the graph is NOT the resistance (unless it is linear through the origin). Resistance at any point = V/I, not the gradient.
-        </div>
+<!-- ============================================================ -->
+<!-- 3.2 RESISTANCE AND OHM'S LAW -->
+<!-- ============================================================ -->
+<h2>3.2 Resistance and Ohm's Law</h2>
+<div class="definition-box">
+  <strong>Resistance (R):</strong> The opposition to current flow through a component. R = V/I. Units: &Omega; (ohms). 1 &Omega; = 1 V A<sup>-1</sup>.
+</div>
+<div class="equation">V = IR &nbsp;&nbsp; (or equivalently R = V / I)</div>
 
-        <h2>3.3 Resistivity</h2>
-        <div class="definition-box">
-            <strong>Resistivity (&rho;)</strong> is a property of the material itself, independent of the dimensions of the sample. It is defined as the resistance of a 1 m length with a 1 m&sup2; cross-sectional area. Measured in &Omega; m.
-        </div>
-        <div class="equation">
-            &rho; = RA / L
-        </div>
-        <p>where R = resistance (&Omega;), A = cross-sectional area (m&sup2;), L = length (m).</p>
+<div class="definition-box">
+  <strong>Ohm's Law:</strong> For a conductor at constant temperature, the current through it is directly proportional to the potential difference across it. Such a component is called an <strong>ohmic conductor</strong> and has constant resistance.
+</div>
 
-        <h3>Factors Affecting Resistance</h3>
-        <ul>
-            <li>Resistance is proportional to length (R &prop; L)</li>
-            <li>Resistance is inversely proportional to cross-sectional area (R &prop; 1/A)</li>
-            <li>Resistance depends on the material (resistivity &rho;)</li>
-            <li>Resistance depends on temperature (for metals, R increases with T)</li>
-        </ul>
+<h3>I-V Characteristics</h3>
+<table>
+  <tr><th>Component</th><th>I-V Graph Shape</th><th>Key Features</th></tr>
+  <tr><td><strong>Ohmic conductor</strong> (wire at constant T)</td><td>Straight line through origin</td><td>Resistance is constant; I is proportional to V. Gradient = 1/R.</td></tr>
+  <tr><td><strong>Filament lamp</strong></td><td>S-shaped curve through origin (less steep at higher V)</td><td>Resistance increases as temperature rises; higher current heats the filament, increasing lattice vibrations and thus resistance.</td></tr>
+  <tr><td><strong>Diode</strong></td><td>Flat for reverse bias; steep exponential rise above ~0.6 V forward</td><td>Very high resistance in reverse. Low resistance above threshold voltage (~0.6 V for silicon).</td></tr>
+  <tr><td><strong>NTC Thermistor</strong></td><td>(R decreases as T increases)</td><td>At higher temperatures, more charge carriers are freed from atoms, increasing n. The decrease in resistance due to increased n outweighs the increase due to more collisions.</td></tr>
+  <tr><td><strong>LDR</strong></td><td>(R decreases as light increases)</td><td>Photons free more charge carriers from the semiconductor material, increasing n and reducing resistance.</td></tr>
+</table>
 
-        <div class="exam-tip">
-            Remember to convert diameter to radius, then use A = &pi;r&sup2; to find cross-sectional area. Also ensure length is in metres and area in m&sup2; before substituting into &rho; = RA/L.
-        </div>
+<!-- SVG: I-V Characteristics -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 240" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">I-V Characteristic Curves</text>
+  <!-- Ohmic conductor -->
+  <g transform="translate(10,0)">
+    <text x="90" y="42" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">Ohmic Conductor</text>
+    <line x1="30" y1="200" x2="155" y2="200" stroke="#1a1a2e" stroke-width="1"/>
+    <line x1="90" y1="220" x2="90" y2="55" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="155" y="215" font-family="system-ui" font-size="10" fill="#64748b">V</text>
+    <text x="80" y="62" font-family="system-ui" font-size="10" fill="#64748b">I</text>
+    <line x1="40" y1="195" x2="145" y2="65" stroke="#1a73e8" stroke-width="2.5"/>
+  </g>
+  <!-- Filament lamp -->
+  <g transform="translate(175,0)">
+    <text x="90" y="42" font-family="system-ui" font-size="11" fill="#D97706" text-anchor="middle" font-weight="600">Filament Lamp</text>
+    <line x1="30" y1="200" x2="155" y2="200" stroke="#1a1a2e" stroke-width="1"/>
+    <line x1="90" y1="220" x2="90" y2="55" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="155" y="215" font-family="system-ui" font-size="10" fill="#64748b">V</text>
+    <text x="80" y="62" font-family="system-ui" font-size="10" fill="#64748b">I</text>
+    <path d="M 40,195 Q 90,180 105,150 Q 120,120 130,105 Q 140,95 148,90" fill="none" stroke="#D97706" stroke-width="2.5"/>
+    <path d="M 140,205 Q 90,220 75,170 Q 60,140 50,120 Q 42,110 35,105" fill="none" stroke="#D97706" stroke-width="2.5"/>
+  </g>
+  <!-- Diode -->
+  <g transform="translate(345,0)">
+    <text x="90" y="42" font-family="system-ui" font-size="11" fill="#16A34A" text-anchor="middle" font-weight="600">Diode</text>
+    <line x1="30" y1="200" x2="155" y2="200" stroke="#1a1a2e" stroke-width="1"/>
+    <line x1="90" y1="220" x2="90" y2="55" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="155" y="215" font-family="system-ui" font-size="10" fill="#64748b">V</text>
+    <text x="80" y="62" font-family="system-ui" font-size="10" fill="#64748b">I</text>
+    <line x1="35" y1="200" x2="115" y2="200" stroke="#16A34A" stroke-width="2.5"/>
+    <path d="M 115,200 Q 120,198 125,185 Q 132,150 138,80" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+    <text x="120" y="215" font-family="system-ui" font-size="9" fill="#64748b">~0.6V</text>
+    <line x1="115" y1="197" x2="115" y2="203" stroke="#64748b" stroke-width="0.8"/>
+  </g>
+</svg>
+</div>
 
-        <h2>3.4 EMF and Internal Resistance</h2>
-        <div class="definition-box">
-            <p><strong>Electromotive force (EMF, &epsilon;)</strong> is the total energy transferred per unit charge by the power supply. It is the p.d. across the terminals when no current flows.</p>
-            <p><strong>Internal resistance (r)</strong> is the resistance within the power supply itself, which causes energy to be dissipated inside the battery.</p>
-        </div>
-        <div class="equation">
-            &epsilon; = I(R + r)
-        </div>
-        <div class="equation">
-            &epsilon; = V + Ir &nbsp;&nbsp; (where V = IR is the terminal p.d.)
-        </div>
-        <p>Rearranging: <strong>V = &epsilon; - Ir</strong></p>
-        <p>This shows that the terminal p.d. (V) decreases as current increases. Plotting V against I gives a straight line with gradient = -r and y-intercept = &epsilon;.</p>
+<div class="exam-tip">
+For I-V characteristics, the gradient of the graph is NOT resistance (unless it passes through the origin as a straight line). Resistance at any point = V/I (the ratio), not &Delta;V/&Delta;I (the gradient). For a filament lamp, the resistance at any point is found by drawing a line from the origin to that point and calculating V/I.
+</div>
 
-        <h3>Lost Volts</h3>
-        <p>The <strong>lost volts</strong> (v = Ir) is the potential difference dropped across the internal resistance. It represents the energy per coulomb dissipated inside the battery.</p>
+<!-- ============================================================ -->
+<!-- 3.3 RESISTIVITY -->
+<!-- ============================================================ -->
+<h2>3.3 Resistivity</h2>
+<div class="definition-box">
+  <strong>Resistivity (&rho;):</strong> A material property that measures how strongly a material opposes current flow, independent of the sample's dimensions. Units: &Omega; m.
+</div>
+<div class="equation">&rho; = RA / L</div>
+<p>Rearranging: R = &rho;L/A. This shows that resistance is proportional to length and inversely proportional to cross-sectional area.</p>
 
-        <h2>3.5 Kirchhoff's Laws</h2>
-        <div class="definition-box">
-            <p><strong>Kirchhoff's First Law (Junction Rule):</strong> The sum of currents entering a junction equals the sum of currents leaving the junction. This is based on conservation of charge.</p>
-            <p><strong>Kirchhoff's Second Law (Loop Rule):</strong> The sum of EMFs around any closed loop equals the sum of potential differences around that loop. This is based on conservation of energy.</p>
-        </div>
-        <div class="equation">
-            &Sigma;I<sub>in</sub> = &Sigma;I<sub>out</sub> &nbsp;&nbsp; (First Law)
-        </div>
-        <div class="equation">
-            &Sigma;&epsilon; = &Sigma;IR &nbsp;&nbsp; (Second Law)
-        </div>
+<h3>Factors Affecting Resistance</h3>
+<ul>
+  <li>R increases with length (R &prop; L) &mdash; more material for electrons to pass through</li>
+  <li>R decreases with cross-sectional area (R &prop; 1/A) &mdash; more paths available for current</li>
+  <li>R depends on the material (through &rho;) &mdash; copper has low &rho;, rubber has high &rho;</li>
+  <li>For metals, R increases with temperature &mdash; more lattice vibrations impede electron flow</li>
+  <li>For semiconductors (NTC thermistors), R decreases with temperature &mdash; more charge carriers freed</li>
+</ul>
 
-        <h2>3.6 Series and Parallel Circuits</h2>
-        <h3>Series Circuits</h3>
-        <ul>
-            <li>Current is the same through all components: I<sub>total</sub> = I<sub>1</sub> = I<sub>2</sub> = I<sub>3</sub></li>
-            <li>Total p.d. is shared between components: V<sub>total</sub> = V<sub>1</sub> + V<sub>2</sub> + V<sub>3</sub></li>
-            <li>Total resistance: R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub></li>
-        </ul>
+<div class="worked-example">
+<strong>Worked Example:</strong> A constantan wire has a diameter of 0.36 mm and a length of 0.80 m. Its resistance is measured as 5.4 &Omega;. Calculate the resistivity of constantan.<br><br>
+<strong>Solution:</strong><br>
+d = 0.36 &times; 10<sup>-3</sup> m, so r = 0.18 &times; 10<sup>-3</sup> m<br>
+A = &pi;r<sup>2</sup> = &pi; &times; (0.18 &times; 10<sup>-3</sup>)<sup>2</sup> = 1.018 &times; 10<sup>-7</sup> m<sup>2</sup><br>
+&rho; = RA/L = (5.4 &times; 1.018 &times; 10<sup>-7</sup>) / 0.80 = <strong>6.9 &times; 10<sup>-7</sup> &Omega; m</strong><br>
+(The accepted value is ~4.9 &times; 10<sup>-7</sup> &Omega; m; the discrepancy could be due to contact resistance or diameter measurement error.)
+</div>
 
-        <h3>Parallel Circuits</h3>
-        <ul>
-            <li>P.d. is the same across each branch: V<sub>total</sub> = V<sub>1</sub> = V<sub>2</sub> = V<sub>3</sub></li>
-            <li>Total current is shared between branches: I<sub>total</sub> = I<sub>1</sub> + I<sub>2</sub> + I<sub>3</sub></li>
-            <li>Combined resistance:</li>
-        </ul>
-        <div class="equation">
-            1/R<sub>total</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + 1/R<sub>3</sub>
-        </div>
-        <p>For two resistors in parallel:</p>
-        <div class="equation">
-            R<sub>total</sub> = (R<sub>1</sub> &times; R<sub>2</sub>) / (R<sub>1</sub> + R<sub>2</sub>)
-        </div>
+<div class="exam-tip">
+Remember to convert diameter to metres, then find radius, then use A = &pi;r<sup>2</sup>. A very common error is forgetting to halve the diameter to get the radius. Also: the percentage uncertainty in area is <strong>twice</strong> the percentage uncertainty in diameter, because A = &pi;(d/2)<sup>2</sup> means A &prop; d<sup>2</sup>.
+</div>
 
-        <!-- SVG: Series and Parallel Circuit Diagrams -->
-        <div style="margin: 20px auto; text-align: center;">
-            <svg viewBox="0 0 520 280" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-                <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Series and Parallel Circuits</text>
-                <!-- Series circuit -->
-                <text x="145" y="48" font-family="system-ui" font-size="12" fill="#1a73e8" text-anchor="middle" font-weight="600">Series</text>
-                <!-- Battery -->
-                <line x1="40" y1="80" x2="40" y2="170" stroke="#1a1a2e" stroke-width="2"/>
-                <line x1="30" y1="110" x2="50" y2="110" stroke="#1a1a2e" stroke-width="3"/>
-                <line x1="35" y1="120" x2="45" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
-                <line x1="30" y1="130" x2="50" y2="130" stroke="#1a1a2e" stroke-width="3"/>
-                <line x1="35" y1="140" x2="45" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
-                <!-- Wires and resistors -->
-                <line x1="40" y1="80" x2="100" y2="80" stroke="#1a1a2e" stroke-width="2"/>
-                <rect x="100" y="70" width="50" height="20" fill="none" stroke="#1a73e8" stroke-width="2" rx="2"/>
-                <text x="125" y="84" font-family="system-ui" font-size="10" fill="#1a73e8" text-anchor="middle">R1</text>
-                <line x1="150" y1="80" x2="190" y2="80" stroke="#1a1a2e" stroke-width="2"/>
-                <rect x="190" y="70" width="50" height="20" fill="none" stroke="#1a73e8" stroke-width="2" rx="2"/>
-                <text x="215" y="84" font-family="system-ui" font-size="10" fill="#1a73e8" text-anchor="middle">R2</text>
-                <line x1="240" y1="80" x2="260" y2="80" stroke="#1a1a2e" stroke-width="2"/>
-                <line x1="260" y1="80" x2="260" y2="170" stroke="#1a1a2e" stroke-width="2"/>
-                <line x1="40" y1="170" x2="260" y2="170" stroke="#1a1a2e" stroke-width="2"/>
-                <!-- Current arrow -->
-                <text x="150" y="65" font-family="system-ui" font-size="10" fill="#DC2626" text-anchor="middle">I (same throughout)</text>
-                <!-- Labels -->
-                <text x="145" y="198" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">R_total = R1 + R2</text>
+<h3>Superconductors</h3>
+<div class="definition-box">
+  <strong>Superconductor:</strong> A material whose resistance drops to exactly zero below a critical temperature (transition temperature). Current flows indefinitely without energy loss.
+</div>
+<p>Applications: MRI scanners, particle accelerators (e.g. LHC), maglev trains, lossless power transmission. The main limitation is the requirement for very low temperatures (often requiring expensive liquid helium cooling at ~4 K).</p>
 
-                <!-- Parallel circuit -->
-                <text x="395" y="48" font-family="system-ui" font-size="12" fill="#16A34A" text-anchor="middle" font-weight="600">Parallel</text>
-                <!-- Battery -->
-                <line x1="300" y1="70" x2="300" y2="190" stroke="#1a1a2e" stroke-width="2"/>
-                <line x1="290" y1="115" x2="310" y2="115" stroke="#1a1a2e" stroke-width="3"/>
-                <line x1="295" y1="125" x2="305" y2="125" stroke="#1a1a2e" stroke-width="1.5"/>
-                <line x1="290" y1="135" x2="310" y2="135" stroke="#1a1a2e" stroke-width="3"/>
-                <line x1="295" y1="145" x2="305" y2="145" stroke="#1a1a2e" stroke-width="1.5"/>
-                <!-- Top wire -->
-                <line x1="300" y1="70" x2="490" y2="70" stroke="#1a1a2e" stroke-width="2"/>
-                <line x1="490" y1="70" x2="490" y2="190" stroke="#1a1a2e" stroke-width="2"/>
-                <line x1="300" y1="190" x2="490" y2="190" stroke="#1a1a2e" stroke-width="2"/>
-                <!-- Branch split -->
-                <line x1="370" y1="70" x2="370" y2="100" stroke="#1a1a2e" stroke-width="2"/>
-                <line x1="420" y1="70" x2="420" y2="100" stroke="#1a1a2e" stroke-width="2"/>
-                <!-- Resistors -->
-                <rect x="345" y="100" width="50" height="20" fill="none" stroke="#16A34A" stroke-width="2" rx="2"/>
-                <text x="370" y="114" font-family="system-ui" font-size="10" fill="#16A34A" text-anchor="middle">R1</text>
-                <rect x="395" y="100" width="50" height="20" fill="none" stroke="#16A34A" stroke-width="2" rx="2"/>
-                <text x="420" y="114" font-family="system-ui" font-size="10" fill="#16A34A" text-anchor="middle">R2</text>
-                <!-- Branch rejoin -->
-                <line x1="370" y1="120" x2="370" y2="190" stroke="#1a1a2e" stroke-width="2"/>
-                <line x1="420" y1="120" x2="420" y2="190" stroke="#1a1a2e" stroke-width="2"/>
-                <!-- Labels -->
-                <text x="395" y="160" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Same V across each</text>
-                <text x="395" y="218" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">1/R_total = 1/R1 + 1/R2</text>
+<!-- ============================================================ -->
+<!-- 3.4 EMF AND INTERNAL RESISTANCE -->
+<!-- ============================================================ -->
+<h2>3.4 EMF and Internal Resistance</h2>
+<div class="definition-box">
+  <strong>Electromotive force (EMF, &epsilon;):</strong> The total energy transferred per unit charge by the power supply. It is the PD across the terminals when no current flows (open circuit). Units: V. EMF is not a force.<br><br>
+  <strong>Internal resistance (r):</strong> The resistance within the power supply itself. Energy is dissipated inside the source as thermal energy, reducing the terminal PD.
+</div>
+<div class="equation">&epsilon; = I(R + r) = V + Ir</div>
+<p>Rearranging: <strong>V = &epsilon; &minus; Ir</strong>. The terminal PD (V) decreases linearly as current (I) increases.</p>
 
-                <!-- Potential divider -->
-                <text x="260" y="240" font-family="system-ui" font-size="12" fill="#D97706" text-anchor="middle" font-weight="600">Potential Divider: Vout = Vin x R2 / (R1 + R2)</text>
-                <text x="260" y="258" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">Output voltage taken across R2 in a series arrangement</text>
-            </svg>
-        </div>
+<h3>Lost Volts</h3>
+<p>The <strong>lost volts</strong> (v<sub>lost</sub> = Ir) is the potential difference across the internal resistance. It represents the energy per coulomb wasted as heat inside the battery. As current increases, more energy is wasted internally and less is available to the external circuit.</p>
 
-        <div class="exam-tip">
-            The combined resistance of parallel resistors is always LESS than the smallest individual resistor. Adding more resistors in parallel always decreases total resistance.
-        </div>
+<div class="worked-example">
+<strong>Worked Example:</strong> A cell has an EMF of 1.50 V and internal resistance 0.80 &Omega;. It is connected to a 4.0 &Omega; external resistor. Calculate (a) the current, (b) the terminal PD, (c) the lost volts, (d) the power dissipated internally.<br><br>
+<strong>Solution:</strong><br>
+(a) I = &epsilon;/(R + r) = 1.50/(4.0 + 0.80) = 1.50/4.80 = <strong>0.3125 A</strong><br>
+(b) V = IR = 0.3125 &times; 4.0 = <strong>1.25 V</strong><br>
+(c) Lost volts = Ir = 0.3125 &times; 0.80 = <strong>0.25 V</strong>. Check: V + Ir = 1.25 + 0.25 = 1.50 V = &epsilon;. Correct.<br>
+(d) P<sub>internal</sub> = I<sup>2</sup>r = (0.3125)<sup>2</sup> &times; 0.80 = <strong>0.078 W</strong>
+</div>
 
-        <h2>3.7 Potential Dividers</h2>
-        <div class="definition-box">
-            A <strong>potential divider</strong> is a circuit with two (or more) resistors in series, used to produce an output voltage that is a fraction of the input voltage.
-        </div>
-        <div class="equation">
-            V<sub>out</sub> = V<sub>in</sub> &times; R<sub>2</sub> / (R<sub>1</sub> + R<sub>2</sub>)
-        </div>
-        <p>where V<sub>out</sub> is measured across R<sub>2</sub>.</p>
+<h3>Graphical Determination of &epsilon; and r</h3>
+<p>Plot V (y-axis) vs I (x-axis). From V = &epsilon; &minus; Ir:</p>
+<ul>
+  <li>Y-intercept = &epsilon; (EMF)</li>
+  <li>Gradient = &minus;r (so r = magnitude of gradient)</li>
+  <li>X-intercept = &epsilon;/r (short-circuit current)</li>
+</ul>
 
-        <h3>Potential Dividers with Sensors</h3>
-        <ul>
-            <li><strong>Thermistor in a potential divider:</strong> As temperature rises, thermistor resistance falls, so the share of voltage across it decreases (and the share across the other resistor increases).</li>
-            <li><strong>LDR in a potential divider:</strong> As light intensity increases, LDR resistance falls, so voltage across it decreases.</li>
-        </ul>
-        <p>This allows the output voltage to vary automatically with environmental conditions, which can be used to trigger switches or circuits.</p>
+<div class="real-world"><strong>Real-World Application:</strong> Car batteries have very low internal resistance (~0.01 &Omega;) so they can deliver the huge currents needed by starter motors (~200 A) without the terminal voltage dropping too much. As batteries age, their internal resistance increases, which is why old batteries struggle to start engines in cold weather (when the chemical reactions are also slower).</div>
 
-        <h2>3.8 Energy and Power in Circuits</h2>
-        <div class="definition-box">
-            <strong>Electrical power</strong> is the rate at which electrical energy is transferred by a component. Measured in watts (W).
-        </div>
-        <div class="equation">
-            P = IV
-        </div>
-        <p>Substituting V = IR and I = V/R gives two alternative forms:</p>
-        <div class="equation">
-            P = I&sup2;R
-        </div>
-        <div class="equation">
-            P = V&sup2; / R
-        </div>
+<!-- ============================================================ -->
+<!-- 3.5 KIRCHHOFF'S LAWS -->
+<!-- ============================================================ -->
+<h2>3.5 Kirchhoff's Laws</h2>
+<div class="definition-box">
+  <strong>Kirchhoff's First Law (Junction Rule):</strong> The sum of currents entering a junction equals the sum leaving. Based on conservation of charge.<br>
+  &Sigma;I<sub>in</sub> = &Sigma;I<sub>out</sub><br><br>
+  <strong>Kirchhoff's Second Law (Loop Rule):</strong> The sum of EMFs around any closed loop equals the sum of PDs around that loop. Based on conservation of energy.<br>
+  &Sigma;&epsilon; = &Sigma;IR
+</div>
 
-        <h3>Energy Transferred</h3>
-        <div class="equation">
-            E = IVt = I&sup2;Rt = V&sup2;t / R
-        </div>
-        <p>where t is the time in seconds. Energy is measured in joules (J).</p>
+<div class="worked-example">
+<strong>Worked Example:</strong> At a junction, three wires meet. Wire 1 carries 2.0 A into the junction. Wire 2 carries 0.5 A out. What is the current in wire 3, and in which direction?<br><br>
+<strong>Solution:</strong><br>
+By K1L: I<sub>in</sub> = I<sub>out</sub><br>
+2.0 = 0.5 + I<sub>3</sub><br>
+I<sub>3</sub> = <strong>1.5 A out of the junction</strong>
+</div>
 
-        <p>In a resistor, electrical energy is transferred to thermal energy (heating). In a motor, it is transferred to kinetic energy. In a lamp, it is transferred to light and thermal energy.</p>
+<!-- ============================================================ -->
+<!-- 3.6 SERIES AND PARALLEL -->
+<!-- ============================================================ -->
+<h2>3.6 Series and Parallel Circuits</h2>
 
-        <div class="exam-tip">
-            Use P = I&sup2;R when you know current and resistance. Use P = V&sup2;/R when you know voltage and resistance. Remember that the power dissipated in the internal resistance is "wasted" — it heats the battery.
-        </div>
+<h3>Series Circuits</h3>
+<ul>
+  <li>Current is the same through all components: I<sub>total</sub> = I<sub>1</sub> = I<sub>2</sub> = I<sub>3</sub></li>
+  <li>Total PD is shared: V<sub>total</sub> = V<sub>1</sub> + V<sub>2</sub> + V<sub>3</sub></li>
+  <li>Total resistance: R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub> (always larger than the biggest R)</li>
+</ul>
 
-<!-- ============ CORE PRACTICAL 4 ============ -->
+<h3>Parallel Circuits</h3>
+<ul>
+  <li>PD is the same across each branch: V<sub>total</sub> = V<sub>1</sub> = V<sub>2</sub> = V<sub>3</sub></li>
+  <li>Total current splits between branches: I<sub>total</sub> = I<sub>1</sub> + I<sub>2</sub> + I<sub>3</sub></li>
+  <li>Combined resistance: 1/R<sub>total</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + 1/R<sub>3</sub> (always smaller than the smallest R)</li>
+</ul>
+
+<h4>Shortcut for Two Resistors in Parallel</h4>
+<div class="equation">R<sub>total</sub> = (R<sub>1</sub> &times; R<sub>2</sub>) / (R<sub>1</sub> + R<sub>2</sub>)</div>
+
+<!-- SVG: Circuit Diagrams -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 280" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Series and Parallel Circuits</text>
+  <!-- Series -->
+  <text x="145" y="48" font-family="system-ui" font-size="12" fill="#1a73e8" text-anchor="middle" font-weight="600">Series</text>
+  <line x1="40" y1="80" x2="40" y2="170" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="30" y1="110" x2="50" y2="110" stroke="#1a1a2e" stroke-width="3"/>
+  <line x1="35" y1="120" x2="45" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="40" y1="80" x2="100" y2="80" stroke="#1a1a2e" stroke-width="2"/>
+  <rect x="100" y="70" width="50" height="20" fill="none" stroke="#1a73e8" stroke-width="2" rx="2"/>
+  <text x="125" y="84" font-family="system-ui" font-size="10" fill="#1a73e8" text-anchor="middle">R1</text>
+  <line x1="150" y1="80" x2="190" y2="80" stroke="#1a1a2e" stroke-width="2"/>
+  <rect x="190" y="70" width="50" height="20" fill="none" stroke="#1a73e8" stroke-width="2" rx="2"/>
+  <text x="215" y="84" font-family="system-ui" font-size="10" fill="#1a73e8" text-anchor="middle">R2</text>
+  <line x1="240" y1="80" x2="260" y2="80" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="260" y1="80" x2="260" y2="170" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="40" y1="170" x2="260" y2="170" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="150" y="65" font-family="system-ui" font-size="10" fill="#DC2626" text-anchor="middle">I same throughout</text>
+  <text x="145" y="198" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">R = R1 + R2</text>
+  <!-- Parallel -->
+  <text x="395" y="48" font-family="system-ui" font-size="12" fill="#16A34A" text-anchor="middle" font-weight="600">Parallel</text>
+  <line x1="300" y1="70" x2="300" y2="190" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="290" y1="115" x2="310" y2="115" stroke="#1a1a2e" stroke-width="3"/>
+  <line x1="295" y1="125" x2="305" y2="125" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="300" y1="70" x2="490" y2="70" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="490" y1="70" x2="490" y2="190" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="300" y1="190" x2="490" y2="190" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="370" y1="70" x2="370" y2="100" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="420" y1="70" x2="420" y2="100" stroke="#1a1a2e" stroke-width="2"/>
+  <rect x="345" y="100" width="50" height="20" fill="none" stroke="#16A34A" stroke-width="2" rx="2"/>
+  <text x="370" y="114" font-family="system-ui" font-size="10" fill="#16A34A" text-anchor="middle">R1</text>
+  <rect x="395" y="100" width="50" height="20" fill="none" stroke="#16A34A" stroke-width="2" rx="2"/>
+  <text x="420" y="114" font-family="system-ui" font-size="10" fill="#16A34A" text-anchor="middle">R2</text>
+  <line x1="370" y1="120" x2="370" y2="190" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="420" y1="120" x2="420" y2="190" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="395" y="160" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Same V across each</text>
+  <text x="395" y="218" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">1/R = 1/R1 + 1/R2</text>
+</svg>
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A 12 &Omega; and a 6.0 &Omega; resistor are connected in parallel. This combination is in series with a 4.0 &Omega; resistor and a 6.0 V battery of negligible internal resistance. Find (a) the total resistance, (b) the current from the battery, (c) the PD across the parallel combination.<br><br>
+<strong>Solution:</strong><br>
+(a) Parallel: R<sub>p</sub> = (12 &times; 6)/(12 + 6) = 72/18 = 4.0 &Omega;<br>
+Total: R<sub>T</sub> = 4.0 + 4.0 = <strong>8.0 &Omega;</strong><br>
+(b) I = V/R = 6.0/8.0 = <strong>0.75 A</strong><br>
+(c) V<sub>parallel</sub> = IR<sub>p</sub> = 0.75 &times; 4.0 = <strong>3.0 V</strong>
+</div>
+
+<div class="exam-tip">
+The combined resistance of parallel resistors is always LESS than the smallest individual resistor. A quick check: if you get a parallel resistance larger than the smallest resistor, you have made an error.
+</div>
+
+<!-- ============================================================ -->
+<!-- 3.7 POTENTIAL DIVIDERS -->
+<!-- ============================================================ -->
+<h2>3.7 Potential Dividers</h2>
+<div class="definition-box">
+  A <strong>potential divider</strong> is two (or more) resistors in series across a supply voltage, producing an output voltage that is a fraction of the input.
+</div>
+<div class="equation">V<sub>out</sub> = V<sub>in</sub> &times; R<sub>2</sub> / (R<sub>1</sub> + R<sub>2</sub>)</div>
+<p>where V<sub>out</sub> is measured across R<sub>2</sub>. The output voltage is proportional to R<sub>2</sub>'s share of the total resistance.</p>
+
+<h3>Sensor Circuits Using Potential Dividers</h3>
+<table>
+  <tr><th>Sensor</th><th>Condition Change</th><th>V<sub>out</sub> across sensor</th><th>V<sub>out</sub> across fixed R</th></tr>
+  <tr><td>NTC Thermistor</td><td>Temperature rises</td><td>Decreases</td><td>Increases</td></tr>
+  <tr><td>LDR</td><td>Light increases</td><td>Decreases</td><td>Increases</td></tr>
+</table>
+
+<p>By choosing which resistor V<sub>out</sub> is taken across, you can make the output voltage increase or decrease with temperature/light as needed for a particular application.</p>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A thermistor (R = 2.0 k&Omega; at 20&deg;C, R = 0.50 k&Omega; at 80&deg;C) is in series with a 1.0 k&Omega; fixed resistor across a 5.0 V supply. V<sub>out</sub> is taken across the fixed resistor. Find V<sub>out</sub> at 20&deg;C and 80&deg;C.<br><br>
+<strong>Solution:</strong><br>
+At 20&deg;C: V<sub>out</sub> = 5.0 &times; 1.0/(2.0 + 1.0) = 5.0/3.0 = <strong>1.67 V</strong><br>
+At 80&deg;C: V<sub>out</sub> = 5.0 &times; 1.0/(0.50 + 1.0) = 5.0/1.5 = <strong>3.33 V</strong><br>
+V<sub>out</sub> increases with temperature (across the fixed resistor), which could trigger a fan or alarm at a set threshold.
+</div>
+
+<div class="exam-tip">
+The potential divider equation only applies when no current is drawn from the output (unloaded). If a component is connected across V<sub>out</sub>, it effectively acts in parallel with R<sub>2</sub>, reducing the effective resistance and lowering V<sub>out</sub>. This is called the <strong>loading effect</strong>.
+</div>
+
+<!-- ============================================================ -->
+<!-- 3.8 POWER AND ENERGY -->
+<!-- ============================================================ -->
+<h2>3.8 Energy and Power in Circuits</h2>
+<div class="definition-box">
+  <strong>Electrical power (P):</strong> The rate of electrical energy transfer. Units: W (watts).
+</div>
+<div class="equation">P = IV = I<sup>2</sup>R = V<sup>2</sup>/R</div>
+
+<h3>Energy Transferred</h3>
+<div class="equation">E = IVt = I<sup>2</sup>Rt = V<sup>2</sup>t/R</div>
+<p>In a resistor, electrical energy is converted to thermal energy (heating). 1 kWh = 3.6 &times; 10<sup>6</sup> J.</p>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> An electric heater has a resistance of 20 &Omega; and is connected to a 230 V mains supply. Calculate (a) the current, (b) the power, (c) the cost of running it for 3 hours at 15p per kWh.<br><br>
+<strong>Solution:</strong><br>
+(a) I = V/R = 230/20 = <strong>11.5 A</strong><br>
+(b) P = V<sup>2</sup>/R = 230<sup>2</sup>/20 = 52900/20 = <strong>2645 W</strong> &asymp; 2.65 kW<br>
+(c) Energy = 2.645 kW &times; 3 h = 7.935 kWh. Cost = 7.935 &times; 15p = <strong>119p</strong> &asymp; &pound;1.19
+</div>
+
+<div class="exam-tip">
+Use P = I<sup>2</sup>R when you know I and R. Use P = V<sup>2</sup>/R when you know V and R. Power dissipated in internal resistance is "wasted" &mdash; it heats the battery. For maximum power transfer to the load, set R = r (load matches internal resistance).
+</div>
+
+<div class="real-world"><strong>Real-World Application:</strong> The National Grid transmits electricity at very high voltages (up to 400 kV) to minimise power losses. Since P<sub>loss</sub> = I<sup>2</sup>R<sub>cable</sub>, stepping up the voltage reduces the current (for the same transmitted power P = IV), which dramatically reduces I<sup>2</sup>R heating losses in the cables. Step-down transformers then reduce the voltage to 230 V for safe domestic use.</div>
+
+<h3>Summary of Key Equations</h3>
+<table>
+  <tr><th>Quantity</th><th>Equation</th></tr>
+  <tr><td>Charge and current</td><td>Q = It; &nbsp; I = nAqv</td></tr>
+  <tr><td>Resistance</td><td>R = V/I; &nbsp; &rho; = RA/L</td></tr>
+  <tr><td>EMF and internal resistance</td><td>&epsilon; = V + Ir = I(R + r)</td></tr>
+  <tr><td>Series resistors</td><td>R<sub>T</sub> = R<sub>1</sub> + R<sub>2</sub> + ...</td></tr>
+  <tr><td>Parallel resistors</td><td>1/R<sub>T</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + ...</td></tr>
+  <tr><td>Potential divider</td><td>V<sub>out</sub> = V<sub>in</sub> R<sub>2</sub>/(R<sub>1</sub> + R<sub>2</sub>)</td></tr>
+  <tr><td>Power</td><td>P = IV = I<sup>2</sup>R = V<sup>2</sup>/R</td></tr>
+  <tr><td>Energy</td><td>E = IVt = Pt</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<!-- CORE PRACTICAL 4 -->
+<!-- ============================================================ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 4: Determine the resistivity of a wire</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Core Practical 4: Determine the resistivity of a wire</h2>
 
-<svg viewBox="0 0 560 340" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
-  <!-- Ruler / bench -->
+<svg viewBox="0 0 560 260" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
   <rect x="40" y="150" width="420" height="12" rx="2" fill="#FBBF24" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="250" y="145" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="bold">Metre ruler</text>
-  <!-- Ruler markings -->
-  <line x1="60" y1="150" x2="60" y2="162" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="60" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">0</text>
-  <line x1="160" y1="150" x2="160" y2="162" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="160" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">20</text>
-  <line x1="260" y1="150" x2="260" y2="162" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="260" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">50</text>
-  <line x1="360" y1="150" x2="360" y2="162" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="360" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">80</text>
-  <line x1="440" y1="150" x2="440" y2="162" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="440" y="178" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">100</text>
-  <!-- Constantan wire -->
   <line x1="60" y1="148" x2="440" y2="148" stroke="#B45309" stroke-width="2.5"/>
   <text x="250" y="132" text-anchor="middle" font-family="system-ui" font-size="12" fill="#B45309" font-weight="bold">Constantan wire</text>
-  <!-- Crocodile clip 1 (fixed) -->
   <polygon points="55,140 75,140 80,148 75,156 55,156" fill="#777" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="50" y="138" text-anchor="end" font-family="system-ui" font-size="10" fill="#1a73e8">Croc clip (fixed)</text>
-  <!-- Crocodile clip 2 (sliding) -->
+  <text x="50" y="138" text-anchor="end" font-family="system-ui" font-size="10" fill="#1a73e8">Fixed clip</text>
   <polygon points="295,140 315,140 320,148 315,156 295,156" fill="#777" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="305" y="195" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Croc clip (sliding)</text>
-  <!-- Length arrow -->
+  <text x="305" y="195" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Sliding clip</text>
   <line x1="67" y1="210" x2="305" y2="210" stroke="#D97706" stroke-width="2"/>
-  <polygon points="67,210 82,206 82,214" fill="#D97706"/>
-  <polygon points="305,210 290,206 290,214" fill="#D97706"/>
-  <text x="186" y="228" text-anchor="middle" font-family="system-ui" font-size="13" fill="#D97706" font-weight="bold">Length L</text>
-  <!-- Battery -->
+  <text x="186" y="228" text-anchor="middle" font-family="system-ui" font-size="13" fill="#D97706" font-weight="bold">Length L (vary)</text>
   <rect x="40" y="40" width="60" height="30" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="55" y1="48" x2="55" y2="62" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="65" y1="51" x2="65" y2="59" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="75" y1="48" x2="75" y2="62" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="85" y1="51" x2="85" y2="59" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="70" y="35" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">Battery</text>
-  <!-- Switch -->
-  <rect x="130" y="45" width="40" height="20" rx="3" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="150" y="35" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Switch</text>
-  <!-- Ammeter -->
+  <text x="70" y="60" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Battery</text>
   <circle cx="230" cy="55" r="18" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="230" y="60" text-anchor="middle" font-family="system-ui" font-size="14" fill="#DC2626" font-weight="bold">A</text>
-  <text x="230" y="30" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8">Ammeter (series)</text>
-  <!-- Voltmeter -->
   <circle cx="420" cy="100" r="18" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="420" y="105" text-anchor="middle" font-family="system-ui" font-size="14" fill="#1a73e8" font-weight="bold">V</text>
-  <text x="470" y="105" font-family="system-ui" font-size="11" fill="#1a73e8">Voltmeter (parallel)</text>
-  <!-- Wiring: battery to switch -->
-  <line x1="100" y1="55" x2="130" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Switch to ammeter -->
-  <line x1="170" y1="55" x2="212" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Ammeter to wire start -->
+  <line x1="100" y1="55" x2="212" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="248" y1="55" x2="310" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="310" y1="55" x2="310" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Wire end back to battery -->
   <line x1="60" y1="148" x2="40" y2="148" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="40" y1="70" x2="40" y2="148" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Voltmeter connections (parallel across wire section) -->
-  <line x1="67" y1="148" x2="67" y2="100" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="67" y1="100" x2="402" y2="100" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="305" y1="148" x2="305" y2="115" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="305" y1="115" x2="402" y2="115" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- Micrometer callout -->
-  <rect x="380" y="240" width="120" height="50" rx="6" fill="#fff" stroke="#D97706" stroke-width="1.5"/>
-  <text x="440" y="260" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="bold">Micrometer</text>
-  <text x="440" y="278" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">Measure diameter d</text>
-  <line x1="380" y1="265" x2="310" y2="148" stroke="#D97706" stroke-width="1" stroke-dasharray="3,3"/>
-  <!-- Title -->
-  <text x="280" y="320" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP4: Resistivity of a wire</text>
+  <text x="280" y="248" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP4: Resistivity of a wire</text>
 </svg>
 
+<h3>Aim</h3>
+<p>To determine the resistivity &rho; of constantan wire by measuring how R varies with L.</p>
+
 <h3>Apparatus</h3>
-<ul>
-  <li>Constantan wire (SWG 28 or 32, approx 1 m long)</li>
-  <li>Metre ruler (resolution &plusmn;1 mm)</li>
-  <li>Micrometer screw gauge (resolution &plusmn;0.01 mm)</li>
-  <li>Two crocodile clips</li>
-  <li>Ammeter (or milliammeter)</li>
-  <li>Voltmeter</li>
-  <li>Battery pack / power supply (low voltage, e.g. 1.5 V)</li>
-  <li>Switch</li>
-  <li>Connecting wires</li>
-</ul>
+<p>Constantan wire (SWG 28 or 32, ~1 m), metre ruler, micrometer screw gauge (0.01 mm), two crocodile clips, ammeter, voltmeter, battery/power supply (low voltage ~1.5 V), switch, connecting wires.</p>
 
 <h3>Method</h3>
 <ol>
-  <li>Use the micrometer to measure the diameter of the wire at <strong>at least 3 different positions</strong> along its length, rotating 90&deg; between readings. Calculate the mean diameter <em>d</em>.</li>
-  <li>Calculate the cross-sectional area: A = &pi;(d/2)&sup2;.</li>
-  <li>Tape the wire along the metre ruler. Attach one crocodile clip at the 0 cm mark (fixed).</li>
-  <li>Attach the second crocodile clip at a measured length <em>L</em> (e.g. 20 cm). Connect the ammeter in series and voltmeter in parallel across the wire section.</li>
-  <li>Close the switch <strong>briefly</strong>, read V and I, then open the switch to prevent heating.</li>
-  <li>Calculate R = V / I for this length.</li>
-  <li>Move the sliding clip to vary L (e.g. 20, 30, 40, 50, 60, 70, 80, 90, 100 cm). Record R for each L.</li>
-  <li>Plot a graph of <strong>R</strong> (y-axis) against <strong>L</strong> (x-axis).</li>
+  <li>Measure the wire diameter d with the micrometer at 3+ positions, rotating 90 degrees between readings. Calculate mean d and area A = &pi;(d/2)<sup>2</sup>.</li>
+  <li>Tape the wire along the ruler. Fix one clip at 0 cm. Connect ammeter in series, voltmeter in parallel across the wire section.</li>
+  <li>Set the sliding clip to L = 20 cm. Close the switch briefly, read V and I, switch off. Calculate R = V/I.</li>
+  <li>Repeat for L = 30, 40, 50, 60, 70, 80, 90, 100 cm.</li>
+  <li>Plot R vs L. Gradient = &rho;/A. Therefore &rho; = gradient &times; A.</li>
 </ol>
 
 <h3>Safety</h3>
-<ul>
-  <li>Use a low voltage (&le; 1.5 V) to prevent the wire from overheating.</li>
-  <li>Switch off between readings to avoid the wire heating up (which would change its resistance).</li>
-  <li>Do not touch the wire while current flows &mdash; it may become hot.</li>
-  <li>Ensure the wire is securely taped down so it cannot spring off.</li>
-</ul>
-
-<h3>Analysis</h3>
-<p>Since R = &rho;L / A, a graph of <strong>R vs L</strong> gives a straight line through the origin with:</p>
-<div class="equation">
-  gradient = &rho; / A
-</div>
-<p>Therefore: <strong>&rho; = gradient &times; A</strong></p>
-<p>The accepted resistivity of constantan is approximately 4.9 &times; 10<sup>-7</sup> &Omega; m.</p>
+<p>Use low voltage (&le; 1.5 V). Switch off between readings to prevent heating. Do not touch wire while current flows.</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Wire heating up changes resistance</td><td>Systematic</td><td>Use low current; switch off between readings; allow cooling time</td></tr>
-<tr><td>Diameter of wire not uniform along its length</td><td>Random</td><td>Measure diameter at multiple points and orientations; take mean</td></tr>
-<tr><td>Zero error on micrometer</td><td>Systematic</td><td>Check and record the zero reading; subtract it from all measurements</td></tr>
-<tr><td>Contact resistance at crocodile clips</td><td>Systematic</td><td>Ensure clips make firm contact; use clean wire and clean clips</td></tr>
-<tr><td>Measuring wire length to clip contact point</td><td>Random</td><td>Measure to the inner jaw of the crocodile clip; use a set square</td></tr>
+<tr><td>Wire heats up, changing resistance</td><td>Systematic</td><td>Low current; switch off between readings</td></tr>
+<tr><td>Diameter varies along wire</td><td>Random</td><td>Measure at 6+ points and orientations; use mean</td></tr>
+<tr><td>Zero error on micrometer</td><td>Systematic</td><td>Check zero reading; subtract from all measurements</td></tr>
+<tr><td>Contact resistance at clips</td><td>Systematic</td><td>Clean clips; firm contact; y-intercept on graph shows this</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> The biggest source of uncertainty is usually the diameter measurement because it is small and squared when calculating area. A 5% error in d becomes a ~10% error in A and hence &rho;. Always state this in evaluations.</div>
+<div class="exam-tip">The biggest uncertainty is usually in the diameter because it is squared in the area calculation. A 5% error in d gives ~10% error in A and hence &rho;. Constantan is used because its resistivity barely changes with temperature.</div>
 </div>
 
-<!-- ============ CORE PRACTICAL 5 ============ -->
+<!-- ============================================================ -->
+<!-- CORE PRACTICAL 5 -->
+<!-- ============================================================ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 5: Determine the EMF and internal resistance of an electrical cell</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Core Practical 5: Determine EMF and internal resistance of a cell</h2>
 
-<svg viewBox="0 0 500 380" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
-  <!-- Cell / Battery -->
-  <rect x="40" y="100" width="60" height="40" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="55" y1="108" x2="55" y2="132" stroke="#1a1a2e" stroke-width="2.5"/>
-  <line x1="68" y1="113" x2="68" y2="127" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="80" y1="108" x2="80" y2="132" stroke="#1a1a2e" stroke-width="2.5"/>
-  <line x1="90" y1="113" x2="90" y2="127" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="70" y="90" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">Cell (EMF = &epsilon;)</text>
-  <!-- Internal resistance label -->
-  <rect x="40" y="148" width="60" height="22" rx="3" fill="none" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,2"/>
-  <text x="70" y="164" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-style="italic">r (internal)</text>
-  <!-- Switch -->
-  <rect x="140" y="108" width="40" height="24" rx="3" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="160" y="124" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">S</text>
-  <text x="160" y="98" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Switch</text>
-  <!-- Ammeter -->
-  <circle cx="250" cy="120" r="20" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="250" y="126" text-anchor="middle" font-family="system-ui" font-size="16" fill="#DC2626" font-weight="bold">A</text>
-  <text x="250" y="90" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8">Ammeter (series)</text>
-  <!-- Variable resistor -->
-  <rect x="320" y="105" width="80" height="30" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="330" y1="120" x2="340" y2="110" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="340" y1="110" x2="350" y2="130" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="350" y1="130" x2="360" y2="110" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="360" y1="110" x2="370" y2="130" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="370" y1="130" x2="380" y2="110" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="380" y1="110" x2="390" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Arrow through variable resistor -->
-  <line x1="345" y1="140" x2="385" y2="100" stroke="#1a1a2e" stroke-width="1.5"/>
-  <polygon points="385,100 378,108 382,112" fill="#1a1a2e"/>
-  <text x="360" y="155" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">Variable resistor R</text>
-  <!-- Voltmeter across terminals -->
-  <circle cx="250" cy="270" r="20" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="250" y="276" text-anchor="middle" font-family="system-ui" font-size="16" fill="#1a73e8" font-weight="bold">V</text>
-  <text x="300" y="275" font-family="system-ui" font-size="11" fill="#1a73e8">Voltmeter (across terminals)</text>
-  <!-- Wiring -->
-  <!-- Battery to switch -->
-  <line x1="100" y1="120" x2="140" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Switch to ammeter -->
-  <line x1="180" y1="120" x2="230" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Ammeter to variable resistor -->
-  <line x1="270" y1="120" x2="320" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Variable resistor back to battery (bottom wire) -->
-  <line x1="400" y1="120" x2="440" y2="120" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="440" y1="120" x2="440" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="440" y1="200" x2="40" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="40" y1="140" x2="40" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Voltmeter connections -->
-  <line x1="100" y1="120" x2="100" y2="270" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="100" y1="270" x2="230" y2="270" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="400" y1="120" x2="400" y2="270" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="400" y1="270" x2="270" y2="270" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- Graph inset -->
-  <rect x="310" y="220" width="150" height="120" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="385" y="240" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">Expected Graph</text>
-  <line x1="340" y1="320" x2="440" y2="320" stroke="#1a1a2e" stroke-width="1"/>
-  <line x1="340" y1="320" x2="340" y2="250" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="390" y="335" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">I / A</text>
-  <text x="328" y="285" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,328,285)">V / V</text>
-  <line x1="345" y1="260" x2="430" y2="310" stroke="#DC2626" stroke-width="2"/>
-  <text x="370" y="256" font-family="system-ui" font-size="9" fill="#DC2626">&epsilon; (intercept)</text>
-  <text x="410" y="305" font-family="system-ui" font-size="9" fill="#DC2626">gradient = &minus;r</text>
-  <!-- Title -->
-  <text x="250" y="368" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP5: EMF and internal resistance</text>
-</svg>
+<h3>Aim</h3>
+<p>To determine the EMF (&epsilon;) and internal resistance (r) of a cell by plotting terminal PD against current.</p>
 
 <h3>Apparatus</h3>
-<ul>
-  <li>Cell (e.g. 1.5 V AA cell &mdash; <strong>not</strong> a rechargeable cell)</li>
-  <li>Variable resistor (rheostat, e.g. 0&ndash;10 &Omega;)</li>
-  <li>Ammeter (0&ndash;1 A)</li>
-  <li>Voltmeter (0&ndash;2 V, high resistance)</li>
-  <li>Switch</li>
-  <li>Connecting wires</li>
-</ul>
+<p>Cell (1.5 V AA), variable resistor (rheostat, 0-10 &Omega;), ammeter (0-1 A), voltmeter (high resistance, 0-2 V), switch, connecting wires.</p>
 
 <h3>Method</h3>
 <ol>
-  <li>Connect the cell, switch, ammeter (in series), and variable resistor in a series loop.</li>
-  <li>Connect the voltmeter in parallel across the cell terminals (not just the EMF source &mdash; include internal resistance).</li>
-  <li>Close the switch and adjust the variable resistor to its maximum value. Record <em>V</em> and <em>I</em>.</li>
-  <li>Decrease the resistance of the variable resistor in steps, recording <em>V</em> and <em>I</em> each time (at least 6 pairs of readings).</li>
-  <li>Open the switch between readings to prevent the cell from running down and heating.</li>
-  <li>Plot a graph of <strong>V</strong> (y-axis) against <strong>I</strong> (x-axis).</li>
+  <li>Connect cell, switch, ammeter, and variable resistor in series. Voltmeter in parallel across the cell terminals.</li>
+  <li>Close switch, adjust rheostat to maximum R. Record V and I.</li>
+  <li>Decrease R in steps, recording V and I each time (at least 6 pairs).</li>
+  <li>Open switch between readings to prevent cell running down.</li>
+  <li>Plot V vs I. Y-intercept = &epsilon;. Gradient = &minus;r.</li>
 </ol>
 
 <h3>Safety</h3>
-<ul>
-  <li>Do not short-circuit the cell (never set variable resistor to zero).</li>
-  <li>Switch off between readings to prevent heating and cell drainage.</li>
-  <li>Handle cells carefully; do not attempt to recharge non-rechargeable cells.</li>
-</ul>
-
-<h3>Analysis</h3>
-<p>The terminal voltage equation is:</p>
-<div class="equation">
-  V = &epsilon; &minus; Ir
-</div>
-<p>This has the form <strong>y = mx + c</strong> where:</p>
-<ul>
-  <li><strong>y-intercept</strong> (at I = 0) = &epsilon; (the EMF of the cell)</li>
-  <li><strong>Gradient</strong> = &minus;r (the internal resistance)</li>
-</ul>
-<p>Draw a line of best fit. Read off the y-intercept for &epsilon; and calculate the gradient magnitude for r.</p>
+<p>Never short-circuit the cell (R = 0). Switch off between readings. Handle cells carefully.</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Cell runs down during experiment, changing &epsilon;</td><td>Systematic</td><td>Switch off between readings; take readings quickly; use a fresh cell</td></tr>
-<tr><td>Cell heating up changes internal resistance</td><td>Systematic</td><td>Allow cooling between readings; use low currents</td></tr>
-<tr><td>Ammeter has non-zero resistance</td><td>Systematic</td><td>Use a low-resistance ammeter; note its resistance and account for it</td></tr>
-<tr><td>Voltmeter draws a small current</td><td>Systematic</td><td>Use a high-resistance digital voltmeter to minimise current drawn</td></tr>
-<tr><td>Contact resistance in connections</td><td>Random</td><td>Ensure firm, clean connections throughout</td></tr>
+<tr><td>Cell runs down during experiment</td><td>Systematic</td><td>Switch off between readings; use fresh cell; take readings quickly</td></tr>
+<tr><td>Cell heats up, changing r</td><td>Systematic</td><td>Allow cooling; use moderate currents</td></tr>
+<tr><td>Voltmeter draws small current</td><td>Systematic</td><td>Use high-resistance digital voltmeter</td></tr>
+<tr><td>Contact resistance</td><td>Random</td><td>Firm, clean connections</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> If asked to determine EMF without drawing a graph, measure the voltmeter reading when no current flows (open circuit). In practice, a high-resistance voltmeter reading with the switch open gives a good approximation of &epsilon;. The graph method is more reliable because it uses multiple readings.</div>
+<div class="exam-tip">The y-intercept gives &epsilon; more accurately than a single open-circuit reading because it uses all data points. The magnitude of the gradient gives r. A steeper negative slope means higher internal resistance.</div>
 </div>
 
-<!-- ============ CORE PRACTICAL 13 ============ -->
+<!-- ============================================================ -->
+<!-- CORE PRACTICAL 13 -->
+<!-- ============================================================ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 13: Calibrate a thermistor in a potential divider circuit as a thermostat</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Core Practical 13: Calibrate a thermistor in a potential divider as a thermostat</h2>
 
-<svg viewBox="0 0 540 420" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
-  <!-- Power supply -->
-  <rect x="30" y="60" width="70" height="40" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="65" y="75" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Power</text>
-  <text x="65" y="90" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Supply</text>
-  <text x="65" y="50" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">V<tspan font-size="8" dy="2">s</tspan></text>
-  <!-- Fixed resistor R1 -->
-  <rect x="160" y="65" width="70" height="30" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="195" y="85" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">R<tspan font-size="8" dy="2">1</tspan></text>
-  <text x="195" y="55" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8">Fixed resistor</text>
-  <!-- Thermistor (NTC) -->
-  <rect x="160" y="200" width="70" height="30" rx="4" fill="#DBEAFE" stroke="#1a73e8" stroke-width="2"/>
-  <text x="195" y="220" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">NTC</text>
-  <text x="260" y="220" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">Thermistor</text>
-  <!-- Water bath / beaker -->
-  <rect x="130" y="260" width="140" height="100" rx="6" fill="#E0F2FE" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="200" y="285" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8">Water bath</text>
-  <!-- Water lines -->
-  <line x1="145" y1="300" x2="255" y2="300" stroke="#93C5FD" stroke-width="1" opacity="0.5"/>
-  <line x1="145" y1="320" x2="255" y2="320" stroke="#93C5FD" stroke-width="1" opacity="0.5"/>
-  <line x1="145" y1="340" x2="255" y2="340" stroke="#93C5FD" stroke-width="1" opacity="0.5"/>
-  <!-- Thermometer in water -->
-  <rect x="220" y="240" width="6" height="80" rx="3" fill="#DC2626" stroke="#1a1a2e" stroke-width="1"/>
-  <circle cx="223" cy="325" r="6" fill="#DC2626" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="240" y="260" font-family="system-ui" font-size="10" fill="#DC2626">Thermometer</text>
-  <!-- Thermistor leads going into water -->
-  <line x1="175" y1="230" x2="175" y2="275" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="215" y1="230" x2="215" y2="275" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Voltmeter across thermistor -->
-  <circle cx="380" cy="215" r="20" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="380" y="221" text-anchor="middle" font-family="system-ui" font-size="16" fill="#1a73e8" font-weight="bold">V</text>
-  <text x="420" y="220" font-family="system-ui" font-size="11" fill="#1a73e8">Voltmeter</text>
-  <!-- Voltmeter connections -->
-  <line x1="230" y1="200" x2="360" y2="200" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="230" y1="230" x2="360" y2="230" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- Wiring: power supply to R1 -->
-  <line x1="100" y1="72" x2="160" y2="72" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- R1 to junction -->
-  <line x1="230" y1="80" x2="250" y2="80" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="250" y1="80" x2="250" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="230" y1="215" x2="250" y2="215" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- R1 input to thermistor input -->
-  <line x1="160" y1="80" x2="140" y2="80" stroke="#1a1a2e" stroke-width="0"/>
-  <line x1="140" y1="80" x2="140" y2="215" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="140" y1="215" x2="160" y2="215" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Bottom wire back to power supply -->
-  <line x1="140" y1="215" x2="65" y2="215" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="65" y1="100" x2="65" y2="215" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Junction dot -->
-  <circle cx="250" cy="80" r="3" fill="#1a1a2e"/>
-  <circle cx="140" cy="215" r="3" fill="#1a1a2e"/>
-  <!-- Heater -->
-  <rect x="155" y="330" width="30" height="20" rx="3" fill="#DC2626" stroke="#1a1a2e" stroke-width="1" opacity="0.7"/>
-  <text x="170" y="368" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">Heater</text>
-  <!-- Title -->
-  <text x="270" y="405" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP13: Thermistor in a potential divider</text>
-</svg>
+<h3>Aim</h3>
+<p>To calibrate an NTC thermistor in a potential divider circuit by plotting V<sub>out</sub> against temperature, producing a calibration curve that can be used as an electronic thermometer or thermostat.</p>
 
 <h3>Apparatus</h3>
-<ul>
-  <li>NTC thermistor</li>
-  <li>Fixed resistor (value chosen to be similar to thermistor resistance at mid-range temperature)</li>
-  <li>DC power supply (e.g. 5 V)</li>
-  <li>Voltmeter (across the thermistor)</li>
-  <li>Thermometer (resolution &plusmn;0.5 &deg;C, range 0&ndash;100 &deg;C)</li>
-  <li>Beaker of water, Bunsen burner or electric heater, stirrer</li>
-  <li>Connecting wires</li>
-</ul>
+<p>NTC thermistor, fixed resistor (value similar to thermistor at mid-range T), DC power supply (5 V), voltmeter (across thermistor), thermometer (0-100&deg;C), beaker of water, heater/Bunsen, stirrer, connecting wires.</p>
 
 <h3>Method</h3>
 <ol>
-  <li>Set up the potential divider: power supply in series with the fixed resistor R<sub>1</sub> and the NTC thermistor. Connect the voltmeter in parallel across the thermistor.</li>
-  <li>Place the thermistor (waterproofed or in a sealed tube) into the water bath along with the thermometer.</li>
-  <li>Record the temperature &theta; and the voltmeter reading V<sub>out</sub> at room temperature.</li>
-  <li>Heat the water slowly, stirring continuously. Record V<sub>out</sub> at regular temperature intervals (e.g. every 5 &deg;C from 20 &deg;C to 80 &deg;C).</li>
-  <li>Allow the thermistor time to reach thermal equilibrium at each temperature before reading.</li>
-  <li>Plot a <strong>calibration curve</strong>: V<sub>out</sub> (y-axis) against temperature &theta; (x-axis).</li>
+  <li>Set up the potential divider: supply in series with R<sub>1</sub> (fixed) and thermistor. Voltmeter across the thermistor.</li>
+  <li>Place the thermistor (waterproofed) in the water bath with the thermometer.</li>
+  <li>Record temperature &theta; and V<sub>out</sub> at room temperature.</li>
+  <li>Heat slowly, stirring continuously. Record V<sub>out</sub> every 5&deg;C from 20&deg;C to 80&deg;C.</li>
+  <li>Allow thermal equilibrium at each temperature before reading.</li>
+  <li>Plot the calibration curve: V<sub>out</sub> vs &theta;.</li>
 </ol>
 
-<h3>Safety</h3>
-<ul>
-  <li>Take care with hot water &mdash; do not heat above 80 &deg;C to avoid scalding risks.</li>
-  <li>Ensure electrical connections are kept away from water.</li>
-  <li>If using a Bunsen burner, tie back hair and loose clothing.</li>
-  <li>Use a heatproof mat under the beaker.</li>
-</ul>
-
 <h3>Analysis</h3>
-<p>In a potential divider, the output voltage across the thermistor is:</p>
-<div class="equation">
-  V<sub>out</sub> = V<sub>s</sub> &times; R<sub>thermistor</sub> / (R<sub>1</sub> + R<sub>thermistor</sub>)
-</div>
-<p>As temperature increases, the NTC thermistor resistance <strong>decreases</strong>, so V<sub>out</sub> decreases. The calibration curve allows any measured V<sub>out</sub> to be converted to a temperature reading, making this a <strong>thermostat</strong> or electronic thermometer.</p>
-<p>For a thermostat application, a comparator or switching circuit can be set to trigger at a specific V<sub>out</sub> corresponding to the desired temperature.</p>
+<p>V<sub>out</sub> = V<sub>s</sub> &times; R<sub>thermistor</sub>/(R<sub>1</sub> + R<sub>thermistor</sub>). As T increases, R<sub>thermistor</sub> decreases (NTC), so V<sub>out</sub> decreases. The calibration curve allows conversion of any measured V<sub>out</sub> to a temperature.</p>
+
+<h3>Safety</h3>
+<p>Take care with hot water (&le; 80&deg;C). Keep electrical connections away from water. Use a heatproof mat.</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Temperature not uniform in water bath</td><td>Random</td><td>Stir the water continuously; wait for equilibrium</td></tr>
-<tr><td>Thermistor not at same temperature as thermometer</td><td>Systematic</td><td>Place both sensors close together; allow time for thermal equilibrium</td></tr>
-<tr><td>Thermometer calibration error</td><td>Systematic</td><td>Use a calibrated digital thermometer</td></tr>
-<tr><td>Self-heating of thermistor by the current</td><td>Systematic</td><td>Use a low supply voltage to minimise current through the thermistor</td></tr>
-<tr><td>Evaporation of water changes bath level</td><td>Systematic</td><td>Top up the water; use a lid on the beaker</td></tr>
+<tr><td>Temperature not uniform in bath</td><td>Random</td><td>Stir continuously; wait for equilibrium</td></tr>
+<tr><td>Thermistor not at same T as thermometer</td><td>Systematic</td><td>Place both sensors close together; allow time</td></tr>
+<tr><td>Self-heating of thermistor by current</td><td>Systematic</td><td>Use low supply voltage</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> In a potential divider, when the thermistor resistance decreases (temperature rises), V<sub>out</sub> across it decreases. If the thermistor and fixed resistor swap positions, the relationship reverses. Be clear about which component V<sub>out</sub> is measured across.</div>
+<div class="exam-tip">Remember: when V<sub>out</sub> is measured across the thermistor, it decreases as temperature rises (because R<sub>thermistor</sub> falls). If the thermistor and fixed resistor swap positions, V<sub>out</sub> increases with temperature instead. Always check which component V<sub>out</sub> is across.</div>
 </div>
 
-    </div>
+</div>
 </body>
 </html>

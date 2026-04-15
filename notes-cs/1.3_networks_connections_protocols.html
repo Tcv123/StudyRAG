@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 1.3 — Computer Networks, Connections and Protocols</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>1.3 Computer Networks, Connections and Protocols</h1>
+<p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 1</p>
+
+<h2>1.3.1 Network Types and Performance</h2>
+
+<table>
+    <tr><th>Feature</th><th>LAN (Local Area Network)</th><th>WAN (Wide Area Network)</th></tr>
+    <tr><td><strong>Coverage</strong></td><td>Small geographic area &mdash; a single building, home, school campus, or office</td><td>Large geographic area &mdash; cities, countries, or the entire world</td></tr>
+    <tr><td><strong>Infrastructure ownership</strong></td><td>All hardware (cables, switches, routers) <strong>owned and managed by the organisation</strong></td><td>Uses third-party communication links <strong>leased from telecoms providers</strong> (e.g., BT, Virgin Media). Undersea fibre optic cables, satellite links.</td></tr>
+    <tr><td><strong>Connection type</strong></td><td>Ethernet cables (Cat5e/Cat6) or Wi-Fi</td><td>Leased lines, fibre optics, satellite, microwave links</td></tr>
+    <tr><td><strong>Speed</strong></td><td>Typically fast (100 Mbps to 10 Gbps)</td><td>Variable; often slower than LAN due to distance and shared infrastructure</td></tr>
+    <tr><td><strong>Security</strong></td><td>Easier to secure (physical access control, single admin)</td><td>Harder to secure (data travels over public infrastructure)</td></tr>
+    <tr><td><strong>Example</strong></td><td>School network, home Wi-Fi, office LAN</td><td>The internet (the world's largest WAN), a bank connecting branches across the country</td></tr>
+</table>
+
+<h3>Factors Affecting Network Performance</h3>
+<ul>
+    <li><strong>Bandwidth</strong> &mdash; the maximum data transfer capacity of the connection (measured in Mbps or Gbps). Higher bandwidth = more data per second. Like a wider pipe carrying more water.</li>
+    <li><strong>Number of connected devices</strong> &mdash; more devices sharing bandwidth means less for each. A network with 100 users will be slower per user than one with 10.</li>
+    <li><strong>Latency</strong> &mdash; the delay between sending data and it arriving. Affected by distance, number of router hops, and congestion. Measured in milliseconds (ms). Critical for gaming and video calls.</li>
+    <li><strong>Wired vs wireless</strong> &mdash; wired connections (Ethernet) are generally faster, more reliable, and more secure than wireless (Wi-Fi).</li>
+    <li><strong>Interference / obstacles</strong> &mdash; wireless signals are weakened by walls, floors, and electromagnetic interference from other devices (microwaves, Bluetooth, neighbouring Wi-Fi networks).</li>
+    <li><strong>Network hardware quality</strong> &mdash; older switches, routers, or cables can bottleneck performance even if the internet connection is fast.</li>
+</ul>
+
+<h2>1.3.2 Network Topologies</h2>
+
+<div class="definition">
+    A <strong>network topology</strong> is the arrangement of devices (nodes) and connections (links) in a network. It determines how data flows and affects performance, reliability, and cost.
+</div>
+
+<h3>Star Topology</h3>
+<p>All devices connect to a <strong>central switch</strong> (or hub) via individual cables. The most common LAN topology.</p>
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>If one cable fails, <strong>only that device</strong> is affected &mdash; the rest of the network continues working</td><td>The central switch is a <strong>single point of failure</strong> &mdash; if it fails, the entire network goes down</td></tr>
+    <tr><td>Easy to <strong>add new devices</strong> without disrupting the network (just plug into a spare switch port)</td><td>Requires <strong>more cabling</strong> than a bus topology (individual cable per device)</td></tr>
+    <tr><td>Easy to <strong>troubleshoot</strong> &mdash; faults can be isolated to individual cables or devices</td><td>The switch can be <strong>expensive</strong> (enterprise-grade managed switches)</td></tr>
+    <tr><td><strong>No collisions</strong> when using a switch (each port is a separate collision domain), so performance is consistent</td><td></td></tr>
+    <tr><td><strong>High performance</strong> &mdash; each device has a dedicated connection to the switch</td><td></td></tr>
+</table>
+
+<h3>Mesh Topology</h3>
+<p><strong>Full mesh:</strong> every device connects directly to every other device. <strong>Partial mesh:</strong> some (but not all) devices have redundant connections.</p>
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td><strong>Very resilient</strong> &mdash; if one connection fails, data can be rerouted via alternative paths. No single point of failure.</td><td><strong>Very expensive</strong> &mdash; requires a large amount of cabling (full mesh of n devices needs n(n-1)/2 connections)</td></tr>
+    <tr><td><strong>Multiple data paths</strong> &mdash; data can take the fastest or least congested route</td><td><strong>Complex</strong> to set up, configure, and maintain</td></tr>
+    <tr><td><strong>Fault tolerant</strong> &mdash; ideal for critical infrastructure</td><td>Impractical for large networks due to the number of connections required</td></tr>
+</table>
+<p>The <strong>internet</strong> uses a partial mesh topology &mdash; core routers have multiple redundant connections to ensure reliability, but not every device connects to every other.</p>
+
+<h2>1.3.3 Client-Server and Peer-to-Peer</h2>
+
+<table>
+    <tr><th>Feature</th><th>Client-Server</th><th>Peer-to-Peer (P2P)</th></tr>
+    <tr><td><strong>Structure</strong></td><td>Dedicated <strong>server(s)</strong> provide services (files, web pages, email, authentication); <strong>clients</strong> make requests</td><td>All devices (<strong>peers</strong>) are equal &mdash; each can act as both client and server simultaneously</td></tr>
+    <tr><td><strong>Security</strong></td><td>Centralised management &mdash; server enforces user accounts, permissions, passwords, encryption</td><td>Each peer manages its own security &mdash; harder to enforce consistent policies</td></tr>
+    <tr><td><strong>Backups</strong></td><td>Centralised backups on the server &mdash; systematic and reliable</td><td>Each peer must back up its own data &mdash; inconsistent and unreliable</td></tr>
+    <tr><td><strong>Cost</strong></td><td>Expensive &mdash; requires dedicated server hardware and a network administrator</td><td>Cheap &mdash; no dedicated hardware needed; uses existing devices</td></tr>
+    <tr><td><strong>Reliability</strong></td><td>Server is a single point of failure (mitigated by redundant servers)</td><td>No single point of failure &mdash; network survives if individual peers go offline</td></tr>
+    <tr><td><strong>Scalability</strong></td><td>Limited by server capacity (can upgrade or add servers)</td><td>Scales naturally &mdash; each new peer adds both demand AND capacity</td></tr>
+    <tr><td><strong>Examples</strong></td><td>School/corporate networks, web browsing, email systems, online gaming servers</td><td>Home networks, BitTorrent file sharing, some VoIP, cryptocurrency networks</td></tr>
+</table>
+
+<h2>1.3.4 Network Hardware</h2>
+
+<table>
+    <tr><th>Device</th><th>Purpose</th><th>Key Detail</th></tr>
+    <tr><td><strong>Router</strong></td><td>Connects <strong>different networks</strong> together; routes packets using <strong>IP addresses</strong></td><td>Connects your LAN to the internet. Examines destination IP in each packet and uses a routing table to determine the best next hop. A home "router" typically includes a switch, WAP, firewall, and DHCP server in one box.</td></tr>
+    <tr><td><strong>Switch</strong></td><td>Connects devices <strong>within a LAN</strong>; forwards data only to the intended recipient</td><td>Learns which device is connected to which port by building a <strong>MAC address table</strong>. Sends frames only to the correct port &mdash; much more efficient than a hub. Operates at Layer 2 (Data Link).</td></tr>
+    <tr><td><strong>WAP</strong></td><td><strong>Wireless Access Point</strong> &mdash; allows Wi-Fi devices to join a wired network</td><td>Broadcasts an SSID (network name). Handles wireless encryption (WPA2/WPA3). Bridges wireless and wired segments of the network.</td></tr>
+    <tr><td><strong>NIC</strong></td><td><strong>Network Interface Card</strong> &mdash; enables a device to connect to a network</td><td>Each NIC has a unique <strong>MAC address</strong> (48-bit hardware identifier, e.g., <code>4A:3B:2C:1D:0E:FF</code>). Can be wired (Ethernet RJ-45 port) or wireless (Wi-Fi antenna). Built into most modern devices.</td></tr>
+</table>
+
+<h3>Transmission Media</h3>
+<table>
+    <tr><th>Medium</th><th>Speed</th><th>Cost</th><th>Security</th><th>Other</th></tr>
+    <tr><td><strong>Copper Ethernet</strong> (Cat5e/Cat6)</td><td>Up to 10 Gbps (Cat6a)</td><td>Cheap</td><td>Secure (physical access needed to tap)</td><td>Reliable; limited to ~100m per run; susceptible to electromagnetic interference</td></tr>
+    <tr><td><strong>Fibre optic</strong></td><td>Very fast (100+ Gbps)</td><td>Expensive</td><td>Very secure (extremely difficult to tap without detection)</td><td>Immune to electromagnetic interference; fragile; long distance (tens of km); used for internet backbone</td></tr>
+    <tr><td><strong>Wireless (Wi-Fi)</strong></td><td>Up to ~9.6 Gbps (Wi-Fi 6)</td><td>Medium</td><td>Less secure (signals can be intercepted; requires encryption)</td><td>Convenient; no cables; affected by walls, distance, and interference; range typically 30-50m indoors</td></tr>
+</table>
+
+<h2>1.3.5 The Internet, DNS and the Cloud</h2>
+
+<div class="definition">
+    <strong>The internet</strong> is a global network of interconnected networks communicating via the TCP/IP protocol suite. It is the physical infrastructure (cables, routers, servers).<br>
+    <strong>The World Wide Web (WWW)</strong> is a collection of web pages accessed via browsers using HTTP/HTTPS. The web is a <em>service that runs on</em> the internet &mdash; they are <strong>not the same thing</strong>. Other internet services include email, FTP, VoIP, and streaming.
+</div>
+
+<h3>DNS (Domain Name System)</h3>
+<p>The DNS converts human-readable <strong>domain names</strong> (e.g., <code>www.bbc.co.uk</code>) into <strong>IP addresses</strong> (e.g., <code>151.101.0.81</code>) that computers use to route data. It is like the internet's phone book.</p>
+<ol>
+    <li>User types <code>www.bbc.co.uk</code> in the browser.</li>
+    <li>The browser checks its local DNS cache. If not found, it queries a DNS server (usually provided by the ISP).</li>
+    <li>The DNS server looks up the domain name and returns the corresponding IP address.</li>
+    <li>The browser uses the IP address to connect to the BBC's web server.</li>
+    <li>The web server responds with the requested web page.</li>
+</ol>
+
+<h3>Web Hosting</h3>
+<p>A <strong>web server</strong> stores website files (HTML, CSS, JavaScript, images) and serves them to clients. When a browser sends an <strong>HTTP request</strong> (e.g., GET /index.html), the web server processes the request and returns the appropriate files as an <strong>HTTP response</strong>.</p>
+
+<h3>The Cloud</h3>
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Accessible from <strong>anywhere</strong> with an internet connection, from any device</td><td>Requires a <strong>reliable internet connection</strong> &mdash; no internet = no access</td></tr>
+    <tr><td><strong>Automatic backups</strong> and redundancy (data replicated across data centres)</td><td><strong>Ongoing subscription cost</strong> (monthly/annual fees that accumulate over time)</td></tr>
+    <tr><td><strong>Scalable</strong> &mdash; easily increase storage or computing power on demand</td><td>Data held by a <strong>third party</strong> &mdash; privacy and security concerns (who can access your data?)</td></tr>
+    <tr><td>No local hardware to maintain, update, or replace</td><td>Potential <strong>data sovereignty issues</strong> &mdash; data may be stored in another country with different laws</td></tr>
+    <tr><td>Facilitates <strong>collaboration</strong> &mdash; multiple users can work on the same files simultaneously</td><td><strong>Speed</strong> limited by internet connection (uploading large files can be slow)</td></tr>
+</table>
+
+<h2>1.3.6 Protocols and the TCP/IP Model</h2>
+
+<div class="definition">
+    A <strong>protocol</strong> is a set of rules that govern how data is formatted, transmitted, and received across a network. Protocols ensure that devices from different manufacturers can communicate reliably. Without agreed protocols, devices would not understand each other's data.
+</div>
+
+<h3>The TCP/IP Model (4 Layers)</h3>
+<p>Data passes <strong>down</strong> through the layers on the sending side (each layer adds its own header &mdash; <strong>encapsulation</strong>) and <strong>up</strong> through the layers on the receiving side (each layer strips its header &mdash; <strong>de-encapsulation</strong>).</p>
+
+<table>
+    <tr><th>Layer</th><th>Name</th><th>Function</th><th>Protocols</th></tr>
+    <tr><td>4 (Top)</td><td><strong>Application</strong></td><td>Provides services directly to the user's application (web browsing, email, file transfer)</td><td>HTTP, HTTPS, FTP, SMTP, IMAP, POP, DNS</td></tr>
+    <tr><td>3</td><td><strong>Transport</strong></td><td>Breaks data into segments; provides reliable (TCP) or fast (UDP) delivery between applications using port numbers</td><td>TCP (reliable, ordered), UDP (fast, no guarantee)</td></tr>
+    <tr><td>2</td><td><strong>Internet</strong></td><td>Adds source and destination <strong>IP addresses</strong>; routes packets across networks</td><td>IP (IPv4, IPv6)</td></tr>
+    <tr><td>1 (Bottom)</td><td><strong>Link</strong></td><td>Handles physical transmission of frames over the network medium using <strong>MAC addresses</strong></td><td>Ethernet, Wi-Fi</td></tr>
+</table>
+
+<h3>Key Protocols</h3>
+<table>
+    <tr><th>Protocol</th><th>Purpose</th><th>Key Detail</th></tr>
+    <tr><td><strong>HTTP / HTTPS</strong></td><td>Web browsing (transferring web pages)</td><td>HTTPS uses <strong>SSL/TLS encryption</strong> to protect data in transit. HTTP sends data in plaintext (insecure). Always look for the padlock icon and <code>https://</code> in the URL.</td></tr>
+    <tr><td><strong>FTP</strong></td><td>File transfer between computers</td><td>Upload and download files to/from a server. Uses separate control (port 21) and data (port 20) connections.</td></tr>
+    <tr><td><strong>SMTP</strong></td><td><strong>Sending</strong> emails</td><td>Push protocol: pushes emails from client to server, and between mail servers.</td></tr>
+    <tr><td><strong>IMAP</strong></td><td><strong>Receiving</strong> emails (server-side storage)</td><td>Emails <strong>stay on the server</strong>; syncs across all devices. Best for users with multiple devices.</td></tr>
+    <tr><td><strong>POP</strong></td><td><strong>Receiving</strong> emails (local download)</td><td>Emails <strong>downloaded to device</strong> and usually deleted from server. Best for single-device use or limited internet.</td></tr>
+    <tr><td><strong>DNS</strong></td><td>Converts domain names to IP addresses</td><td>Distributed hierarchical database. Without DNS, you would need to type IP addresses instead of domain names.</td></tr>
+</table>
+
+<h2>1.3.7 IP and MAC Addresses</h2>
+
+<table>
+    <tr><th>Feature</th><th>IP Address</th><th>MAC Address</th></tr>
+    <tr><td><strong>Type</strong></td><td>Logical (software-assigned)</td><td>Physical (hardware-assigned)</td></tr>
+    <tr><td><strong>Can it change?</strong></td><td>Yes &mdash; assigned by DHCP or manually configured; can change when connecting to different networks</td><td>No &mdash; permanently set by the manufacturer in the NIC (though can be spoofed in software)</td></tr>
+    <tr><td><strong>Purpose</strong></td><td>Routes data <strong>between networks</strong> (across the internet)</td><td>Identifies devices <strong>within a LAN</strong> (local delivery)</td></tr>
+    <tr><td><strong>Format</strong></td><td><strong>IPv4:</strong> 32 bits, written as 4 decimal octets (e.g., <code>192.168.1.1</code>)<br><strong>IPv6:</strong> 128 bits, hexadecimal (e.g., <code>2001:0db8::1</code>)</td><td>48 bits, written as 6 pairs of hex digits (e.g., <code>4A:3B:2C:1D:0E:FF</code>)</td></tr>
+    <tr><td><strong>Scope</strong></td><td>Global (public IPs are unique worldwide) or local (private IPs within a LAN)</td><td>Unique worldwide (assigned by manufacturer)</td></tr>
+    <tr><td><strong>Analogy</strong></td><td>Like a <strong>postal address</strong> (can change if you move house)</td><td>Like a <strong>fingerprint</strong> (permanently unique to you)</td></tr>
+</table>
+
+<h3>Wired vs Wireless Connections</h3>
+<table>
+    <tr><th>Feature</th><th>Wired (Ethernet/Fibre)</th><th>Wireless (Wi-Fi)</th></tr>
+    <tr><td>Speed</td><td>Generally faster and more consistent</td><td>Variable; affected by distance and interference</td></tr>
+    <tr><td>Reliability</td><td>Very reliable (dedicated cable per device)</td><td>Less reliable (signal can drop, interference from walls/devices)</td></tr>
+    <tr><td>Security</td><td>More secure (physical access to cable needed to intercept)</td><td>Less secure (signals broadcast through air; requires WPA2/WPA3 encryption)</td></tr>
+    <tr><td>Portability</td><td>Not portable (device must be near a cable/socket)</td><td>Portable (move freely within range)</td></tr>
+    <tr><td>Cost</td><td>Higher installation cost (cabling infrastructure)</td><td>Lower installation cost (just need a WAP)</td></tr>
+</table>
+
+<p><strong>Bluetooth:</strong> Short-range wireless technology (typically 10m) for pairing personal devices (headphones, keyboards, smartwatches). Uses less power than Wi-Fi. Not designed for network access.</p>
+
+<div class="exam-tip">HTTP vs HTTPS: always mention that HTTPS uses <strong>SSL/TLS encryption</strong> to protect data in transit, while HTTP sends data in plaintext. DNS converts <strong>domain names to IP addresses</strong> &mdash; examiners want both parts stated explicitly. For client-server vs P2P: client-server is centralised and easier to manage/secure; P2P is cheaper but harder to secure.</div>
+
+</div>
+</body>
+</html>

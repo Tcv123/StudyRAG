@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 1.6 — Ethical, Legal, Cultural and Environmental Impacts</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>1.6 Ethical, Legal, Cultural and Environmental Impacts</h1>
+<p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 1</p>
+
+<p>Digital technology affects society in many ways. Exam questions expect you to discuss <strong>both sides</strong> of issues (benefits AND drawbacks) and reference <strong>specific legislation</strong> by name and year.</p>
+
+<h2>1.6.1 Ethical Issues</h2>
+
+<table>
+    <tr><th>Issue</th><th>Key Points</th><th>Arguments For / Against</th></tr>
+    <tr><td><strong>Privacy and surveillance</strong></td><td>Mass data collection (browsing history, location, purchases) often happens without full informed consent. Facial recognition identifies individuals in public spaces. Governments and companies can monitor communications at scale.</td><td><strong>For:</strong> Helps prevent crime and terrorism; protects national security. <strong>Against:</strong> Infringes right to privacy; chilling effect on free speech; risk of misuse; disproportionately affects minorities.</td></tr>
+    <tr><td><strong>AI and algorithmic bias</strong></td><td>AI systems make automated decisions in hiring, policing, credit scoring, healthcare, and justice. If trained on biased historical data, they perpetuate and amplify those biases.</td><td><strong>For:</strong> AI can be more consistent and faster than humans; removes some human biases. <strong>Against:</strong> "Black box" decisions are hard to explain or challenge; can discriminate against protected groups; accountability is unclear.</td></tr>
+    <tr><td><strong>Digital divide</strong></td><td>Unequal access to technology across rich/poor, urban/rural, and developed/developing nations. Also an age divide (older generations may lack digital skills).</td><td>Those without access are excluded from online education, banking, healthcare, government services, and employment opportunities. Widens existing inequality.</td></tr>
+    <tr><td><strong>Automation and unemployment</strong></td><td>Robots and AI replacing human workers in manufacturing, customer service, transport, retail, and data analysis.</td><td><strong>For:</strong> Increases efficiency, reduces costs, eliminates dangerous jobs. <strong>Against:</strong> Job losses cause economic hardship; ethical duty to retrain workers; benefits may not be shared equally. New job types may emerge but require different skills.</td></tr>
+    <tr><td><strong>Cyberbullying</strong></td><td>Technology enables harassment, trolling, and abuse at unprecedented scale. Online abuse can be anonymous, persistent (hard to remove), and reach a wide audience. Particularly harmful to young people.</td><td>Platforms have a responsibility to moderate content and protect users. Victims may suffer serious mental health impacts including anxiety, depression, and self-harm. Schools and parents need education strategies.</td></tr>
+    <tr><td><strong>Misinformation</strong></td><td>Social media algorithms can amplify fake news, conspiracy theories, and propaganda because sensational content drives engagement. Deepfakes make it harder to distinguish real from fabricated content.</td><td>Undermines trust in institutions, science, and democracy. Particularly dangerous during elections and public health crises. Fact-checking and media literacy are partial solutions.</td></tr>
+</table>
+
+<h2>1.6.2 Key UK Legislation</h2>
+
+<table>
+    <tr><th>Act</th><th>Year</th><th>Key Provisions</th><th>Why It Matters for CS</th></tr>
+    <tr>
+        <td><strong>Data Protection Act / UK GDPR</strong></td>
+        <td>2018</td>
+        <td>Controls the collection, storage, processing, and use of <strong>personal data</strong>. Organisations must: process data lawfully and transparently; collect only what is necessary; keep data accurate and up to date; store it securely; delete it when no longer needed. Individuals have rights to: access their data, correct inaccuracies, request deletion ("right to be forgotten"), and object to processing. Enforced by the <strong>ICO</strong> (Information Commissioner's Office) with fines up to &pound;17.5 million or 4% of global turnover.</td>
+        <td>Any system that stores personal data (name, email, address, health records, browsing history) must comply. Developers must implement encryption, access controls, and data minimisation.</td>
+    </tr>
+    <tr>
+        <td><strong>Computer Misuse Act</strong></td>
+        <td>1990</td>
+        <td><strong>Section 1:</strong> Unauthorised access to computer material (e.g., guessing someone's password to access their account) &mdash; up to 2 years imprisonment.<br>
+        <strong>Section 2:</strong> Unauthorised access with intent to commit a further offence (e.g., hacking to commit fraud) &mdash; up to 5 years.<br>
+        <strong>Section 3:</strong> Unauthorised modification of computer material (e.g., deploying malware, deleting files, DDoS attacks) &mdash; up to 10 years.<br>
+        Section 3A: Making/supplying/obtaining tools for computer misuse.</td>
+        <td>Protects computer systems from hacking, malware, and sabotage. Even accessing a system "just to look" without permission is a criminal offence under Section 1.</td>
+    </tr>
+    <tr>
+        <td><strong>Copyright, Designs and Patents Act</strong></td>
+        <td>1988</td>
+        <td>Protects <strong>creative works</strong> (software source code, music, images, videos, written content, website designs) from being copied, distributed, modified, or sold without the creator's permission. Copyright is automatic &mdash; no registration needed. Lasts for the creator's lifetime plus 70 years.</td>
+        <td>Pirating software, downloading music illegally, copying code without a licence, and using images from the internet without permission are all violations.</td>
+    </tr>
+    <tr>
+        <td><strong>Freedom of Information Act</strong></td>
+        <td>2000</td>
+        <td>Gives the public the right to request information held by <strong>public authorities</strong> (government, councils, NHS, police, schools). Must respond within 20 working days. Exemptions exist for national security, personal data, and law enforcement.</td>
+        <td>Promotes government transparency and accountability. Enforced by the ICO.</td>
+    </tr>
+</table>
+
+<h2>1.6.3 Software Licences</h2>
+
+<table>
+    <tr><th>Feature</th><th>Open Source</th><th>Proprietary (Closed Source)</th></tr>
+    <tr><td><strong>Source code</strong></td><td>Publicly available &mdash; anyone can view, study, and learn from it</td><td>Kept secret &mdash; only the compiled executable is distributed</td></tr>
+    <tr><td><strong>Cost</strong></td><td>Usually free to download, use, and distribute</td><td>Usually requires purchase (one-time licence or subscription)</td></tr>
+    <tr><td><strong>Modification</strong></td><td>Users can modify and customise the software to suit their needs</td><td>Modification is not permitted &mdash; users must use it as-is</td></tr>
+    <tr><td><strong>Distribution</strong></td><td>Can be freely redistributed (subject to licence terms like GPL or MIT)</td><td>Cannot be copied or shared without the publisher's permission</td></tr>
+    <tr><td><strong>Support</strong></td><td>Community-driven (forums, documentation); paid support available from specialist companies</td><td>Professional vendor support (phone, email, SLA guarantees)</td></tr>
+    <tr><td><strong>Security</strong></td><td>Code is transparent &mdash; vulnerabilities can be found and fixed by anyone. "Many eyes make all bugs shallow." But attackers can also read the code.</td><td>"Security through obscurity" &mdash; code is hidden. Vulnerabilities are fixed by the vendor on their schedule. Users depend on the vendor to issue patches promptly.</td></tr>
+    <tr><td><strong>Examples</strong></td><td>Linux, Firefox, LibreOffice, Python, VLC, Android (AOSP), WordPress</td><td>Microsoft Windows, Microsoft Office, Adobe Photoshop, macOS, iOS</td></tr>
+</table>
+
+<p><strong>When to recommend each:</strong></p>
+<ul>
+    <li><strong>Open source</strong> is better when: budget is limited; customisation is needed; the user has technical skills; community support is sufficient; vendor independence is important.</li>
+    <li><strong>Proprietary</strong> is better when: professional vendor support is essential; the software is specialised with no open-source equivalent; ease of use and polish are priorities; the organisation can afford the licence cost.</li>
+</ul>
+
+<h2>1.6.4 Cultural and Environmental Impacts</h2>
+
+<h3>Cultural Impacts of Technology</h3>
+<ul>
+    <li><strong>Social media</strong> connects people globally but also spreads misinformation, creates echo chambers, and can harm mental health</li>
+    <li><strong>Remote working</strong> enabled by video conferencing and cloud tools provides flexibility but can blur work-life boundaries and increase isolation</li>
+    <li><strong>Streaming services</strong> (Netflix, Spotify) disrupted traditional TV, music, and film industries, changing how content is created and consumed</li>
+    <li><strong>E-commerce</strong> (Amazon, online shopping) grew significantly; high street shops declined, changing town centres and communities</li>
+    <li><strong>Online education</strong> increases access to learning but may disadvantage those without reliable internet or devices (digital divide)</li>
+    <li><strong>Gaming culture</strong> is now mainstream entertainment but raises concerns about addiction, screen time, and online safety for young people</li>
+    <li><strong>Digital communication</strong> (messaging, video calls) keeps families and friends connected but may reduce face-to-face interaction skills</li>
+</ul>
+
+<h3>Environmental Impacts</h3>
+<table>
+    <tr><th>Negative Impacts</th><th>Positive Impacts</th></tr>
+    <tr><td><strong>Data centres</strong> consume enormous amounts of electricity (1-2% of global electricity) for computing and cooling. AI training (large language models) has a significant carbon footprint.</td><td><strong>Smart grids</strong> and IoT sensors optimise energy distribution, reducing waste and integrating renewable sources more effectively.</td></tr>
+    <tr><td><strong>E-waste</strong> &mdash; discarded electronics contain toxic materials (lead, mercury, cadmium, lithium). Much e-waste is exported to developing countries for unsafe informal recycling.</td><td><strong>Remote working</strong> reduces commuting (fewer cars on the road), office heating/cooling, and business travel, significantly cutting carbon emissions.</td></tr>
+    <tr><td><strong>Mining rare earth metals</strong> (cobalt, lithium, tantalum) for device manufacturing causes environmental destruction, water pollution, and human exploitation in developing countries.</td><td><strong>Precision agriculture</strong> uses sensors, drones, and AI to optimise water usage, fertiliser application, and crop monitoring, reducing environmental impact.</td></tr>
+    <tr><td><strong>Planned obsolescence</strong> &mdash; manufacturers design devices with short lifespans or stop providing software updates, creating unnecessary waste.</td><td><strong>Electric vehicle technology</strong> and smart traffic management reduce transport emissions.</td></tr>
+    <tr><td><strong>Manufacturing carbon footprint</strong> &mdash; producing and shipping devices worldwide generates significant greenhouse gas emissions.</td><td><strong>Environmental monitoring</strong> using satellite imagery, sensor networks, and AI tracks deforestation, pollution, wildlife populations, and climate change.</td></tr>
+    <tr><td></td><td><strong>Dematerialisation</strong> &mdash; digital alternatives reduce physical resource use (e-books, streaming music, video conferencing replacing travel, digital tickets).</td></tr>
+</table>
+
+<div class="exam-tip">Know all <strong>three sections of the Computer Misuse Act</strong> (this is frequently examined with specific scenarios). For open source vs proprietary, be able to <strong>recommend one for a given scenario</strong> with justification. For impact questions, <strong>always give both sides</strong> (positive AND negative) with specific examples. Name legislation by its full name and year.</div>
+
+</div>
+</body>
+</html>

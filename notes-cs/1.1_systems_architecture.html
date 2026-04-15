@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 1.1 — Systems Architecture</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>1.1 Systems Architecture</h1>
+<p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 1</p>
+
+<h2>1.1.1 Von Neumann Architecture and CPU Components</h2>
+
+<div class="definition">
+    The <strong>Von Neumann architecture</strong> is a computer design where data and instructions are stored in the <strong>same memory</strong> and are processed <strong>sequentially</strong> (one instruction at a time). This is the basis of virtually all modern general-purpose computers. The key insight is that programs are data &mdash; they can be loaded, modified, and replaced without physically rewiring the machine.
+</div>
+
+<h3>Key CPU Components</h3>
+<table>
+    <tr><th>Component</th><th>Function</th><th>Detail</th></tr>
+    <tr><td><strong>ALU (Arithmetic Logic Unit)</strong></td><td>Performs all arithmetic calculations and logical comparisons</td><td>Arithmetic: add, subtract, multiply, divide. Logic: AND, OR, NOT, comparisons (equal, greater than, less than). Results are stored in the accumulator.</td></tr>
+    <tr><td><strong>Control Unit (CU)</strong></td><td>Coordinates all CPU operations</td><td>Fetches instructions from memory, decodes them into operations, and directs other components (ALU, registers, buses) to carry them out. It sends control signals via the control bus. The CU does not process data itself.</td></tr>
+    <tr><td><strong>Registers</strong></td><td>Ultra-fast storage inside the CPU</td><td>Small number of storage locations that hold data, addresses, or instructions currently being used. Much faster than RAM (accessed in a single clock cycle). Each register typically holds one word of data (e.g., 32 or 64 bits).</td></tr>
+    <tr><td><strong>Cache</strong></td><td>Fast memory between CPU and RAM</td><td>Stores copies of frequently accessed data and instructions from RAM so the CPU does not have to wait for slower RAM. <strong>L1</strong> cache is fastest and smallest (per core); <strong>L2</strong> is larger but slightly slower; <strong>L3</strong> is largest and shared between cores. Cache is made of SRAM (faster than the DRAM used in main memory).</td></tr>
+    <tr><td><strong>Clock</strong></td><td>Synchronises all CPU operations</td><td>An electronic oscillator that generates a regular pulse. Each pulse is one <strong>clock cycle</strong>, and one or more stages of an instruction happen per cycle. Clock speed is measured in <strong>GHz</strong> (billions of cycles per second). A 3.5 GHz processor performs 3.5 billion clock cycles every second.</td></tr>
+</table>
+
+<h3>Buses</h3>
+<p>The CPU communicates with memory and I/O devices via a <strong>system bus</strong> consisting of three sub-buses:</p>
+<table>
+    <tr><th>Bus</th><th>Carries</th><th>Direction</th></tr>
+    <tr><td><strong>Address Bus</strong></td><td>Memory addresses &mdash; tells memory which location to read from or write to</td><td>Unidirectional (CPU &rarr; memory)</td></tr>
+    <tr><td><strong>Data Bus</strong></td><td>Actual data being transferred between CPU, memory, and I/O devices</td><td>Bidirectional</td></tr>
+    <tr><td><strong>Control Bus</strong></td><td>Control signals: read, write, clock, interrupt, bus request/grant</td><td>Bidirectional</td></tr>
+</table>
+
+<h2>1.1.2 Registers</h2>
+
+<table>
+    <tr><th>Register</th><th>Full Name</th><th>Holds</th><th>Purpose During the FDE Cycle</th></tr>
+    <tr><td><strong>PC</strong></td><td>Program Counter</td><td>Address</td><td>Holds the <strong>address of the NEXT instruction</strong> to be fetched. Incremented by 1 after each fetch (unless a branch instruction changes it to a different address).</td></tr>
+    <tr><td><strong>MAR</strong></td><td>Memory Address Register</td><td>Address</td><td>Holds the <strong>memory address</strong> the CPU wants to read from or write to. Connected to the address bus. The MAR is like a request slip sent to memory: "give me the data at this location".</td></tr>
+    <tr><td><strong>MDR</strong></td><td>Memory Data Register</td><td>Data</td><td>Holds the <strong>data</strong> just read from memory, or the data about to be written to memory. Connected to the data bus. Also called the Memory Buffer Register (MBR).</td></tr>
+    <tr><td><strong>ACC</strong></td><td>Accumulator</td><td>Data</td><td>Stores the <strong>result</strong> of the most recent ALU operation (arithmetic or logic). Acts as the primary working register for calculations.</td></tr>
+    <tr><td><strong>CIR</strong></td><td>Current Instruction Register</td><td>Data (instruction)</td><td>Holds the <strong>instruction currently being decoded and executed</strong>. The CU splits its contents into the opcode (what to do) and the operand (the data or address to use).</td></tr>
+</table>
+
+<div class="exam-tip">Always distinguish between registers that hold <strong>addresses</strong> (PC, MAR) and those that hold <strong>data</strong> (MDR, ACC, CIR). The PC holds the address of the <em>next</em> instruction, not the current one. The MAR holds addresses; the MDR holds data. This distinction is required for full marks.</div>
+
+<h2>1.1.3 The Fetch-Decode-Execute (FDE) Cycle</h2>
+
+<p>The CPU continuously repeats three stages for every instruction. This cycle runs billions of times per second.</p>
+
+<h3>1. Fetch</h3>
+<ol>
+    <li>The address in the <strong>PC</strong> is copied to the <strong>MAR</strong>.</li>
+    <li>The <strong>PC is incremented</strong> by 1 (PC = PC + 1), so it now points to the next instruction.</li>
+    <li>The address in the MAR is sent along the <strong>address bus</strong> to memory.</li>
+    <li>The CU sends a <strong>memory read</strong> signal on the control bus.</li>
+    <li>The instruction at that memory address is transferred along the <strong>data bus</strong> into the <strong>MDR</strong>.</li>
+    <li>The contents of the MDR are copied to the <strong>CIR</strong>.</li>
+</ol>
+<p><strong>Summary:</strong> PC &rarr; MAR &rarr; Memory &rarr; MDR &rarr; CIR. PC incremented.</p>
+
+<h3>2. Decode</h3>
+<ol>
+    <li>The <strong>Control Unit</strong> examines the instruction in the CIR.</li>
+    <li>It splits the instruction into the <strong>opcode</strong> (the operation to perform, e.g., ADD, LOAD, STORE) and the <strong>operand</strong> (the data or address to use).</li>
+    <li>The CU determines which control signals to send and to which components.</li>
+</ol>
+
+<h3>3. Execute</h3>
+<ol>
+    <li>The decoded instruction is carried out. This could be:
+        <ul>
+            <li>An <strong>arithmetic/logic operation</strong> (ALU performs a calculation, result goes to ACC)</li>
+            <li>A <strong>data transfer</strong> (load data from memory into a register, or store register data to memory)</li>
+            <li>A <strong>branch</strong> (load a new address into the PC, changing the sequence of execution)</li>
+        </ul>
+    </li>
+    <li>The result may be stored in the ACC or written back to memory via the MDR.</li>
+</ol>
+
+<h3>Worked Example</h3>
+<pre>
+Memory:
+  Address 0: LOAD 5      (load value at address 5 into ACC)
+  Address 1: ADD 6       (add value at address 6 to ACC)
+  Address 2: STORE 7     (store ACC into address 7)
+  Address 5: 10           (data)
+  Address 6: 25           (data)
+  Address 7: 0            (will receive result)
+
+Cycle 1 (LOAD 5):
+  Fetch:   PC=0 &rarr; MAR=0, PC becomes 1. Memory[0] &rarr; MDR="LOAD 5" &rarr; CIR
+  Decode:  Opcode=LOAD, Operand=address 5
+  Execute: MAR=5, Memory[5] &rarr; MDR=10, MDR &rarr; ACC. ACC now holds 10.
+
+Cycle 2 (ADD 6):
+  Fetch:   PC=1 &rarr; MAR=1, PC becomes 2. Memory[1] &rarr; MDR="ADD 6" &rarr; CIR
+  Decode:  Opcode=ADD, Operand=address 6
+  Execute: MAR=6, Memory[6] &rarr; MDR=25. ALU: ACC + MDR = 10+25 = 35 &rarr; ACC.
+
+Cycle 3 (STORE 7):
+  Fetch:   PC=2 &rarr; MAR=2, PC becomes 3. Memory[2] &rarr; MDR="STORE 7" &rarr; CIR
+  Decode:  Opcode=STORE, Operand=address 7
+  Execute: MAR=7, ACC &rarr; MDR=35, MDR written to Memory[7]. Address 7 now holds 35.
+</pre>
+
+<h2>1.1.4 CPU Performance Factors</h2>
+
+<table>
+    <tr><th>Factor</th><th>How It Improves Performance</th><th>Limitations</th></tr>
+    <tr><td><strong>Clock Speed</strong></td><td>Measured in GHz. Higher clock speed = more FDE cycles per second. A 4 GHz processor does 4 billion cycles/second. Doubling clock speed roughly doubles throughput for single-threaded tasks.</td><td>Higher clock speed generates more <strong>heat</strong> and uses more <strong>power</strong>. Physical limits exist (signal propagation, heat dissipation). Diminishing returns &mdash; modern CPUs hit thermal walls above ~5 GHz.</td></tr>
+    <tr><td><strong>Number of Cores</strong></td><td>Each core is an independent processor with its own ALU, CU, and registers. A quad-core CPU can run 4 threads simultaneously. Good for multi-tasking (running multiple programs) and multi-threaded applications.</td><td>Software must be written to use <strong>multiple threads</strong> to benefit. A single-threaded program uses only one core regardless. Not all tasks can be divided into parallel sub-tasks. Overhead from coordinating between cores.</td></tr>
+    <tr><td><strong>Cache Size</strong></td><td>Cache stores frequently accessed data closer to the CPU. Larger cache = more data available without slow RAM access = fewer delays. L1 is fastest/smallest (~1 nanosecond); L3 is slowest/largest (~10-20 ns). RAM access takes ~50-100 ns.</td><td>Cache is very <strong>expensive</strong> per byte (SRAM vs DRAM). Diminishing returns as cache grows larger (larger caches are slower). Takes up physical space on the CPU die.</td></tr>
+</table>
+
+<div class="exam-tip">When explaining CPU performance, always state <em>how</em> the factor helps AND its <em>limitations</em>. For example: "More cores allow multiple threads to execute simultaneously, improving performance for multi-threaded applications such as video editing. However, if the software is single-threaded, additional cores provide no benefit." This balanced answer scores higher than just stating the positive effect.</div>
+
+<h2>1.1.5 Embedded Systems</h2>
+
+<div class="definition">
+    An <strong>embedded system</strong> is a computer built into a larger device to perform one specific dedicated function. The program is stored in ROM (or flash memory) and runs automatically when the device is powered on. Unlike a general-purpose computer, an embedded system is designed for a single task and typically has no user-accessible operating system.
+</div>
+
+<h3>Characteristics</h3>
+<ul>
+    <li>Performs <strong>one specific dedicated function</strong> &mdash; it does not run arbitrary user programs</li>
+    <li>Program stored in <strong>ROM or flash</strong> &mdash; runs automatically on power-on without booting an OS</li>
+    <li><strong>Limited or no user interface</strong> &mdash; may have buttons/LEDs but not a keyboard/monitor</li>
+    <li><strong>Real-time response</strong> &mdash; must respond within a guaranteed time frame (critical for safety applications)</li>
+    <li><strong>Low power, compact, low cost</strong> &mdash; designed to be small and energy-efficient</li>
+    <li><strong>Highly reliable</strong> &mdash; must work continuously without crashing (e.g., in a pacemaker)</li>
+    <li><strong>Difficult to update</strong> &mdash; firmware updates may be infrequent or impossible once deployed</li>
+</ul>
+
+<h3>Examples</h3>
+<table>
+    <tr><th>Device</th><th>Dedicated Function</th></tr>
+    <tr><td>Washing machine</td><td>Controls water temperature, spin speed, and cycle timing based on selected programme</td></tr>
+    <tr><td>Car engine management (ECU)</td><td>Monitors sensors (temperature, air flow, RPM) and adjusts fuel injection and ignition timing in real-time</td></tr>
+    <tr><td>Anti-lock braking system (ABS)</td><td>Detects wheel lock-up and rapidly pulses brakes to maintain traction</td></tr>
+    <tr><td>Traffic light controller</td><td>Cycles through red/amber/green based on timers and vehicle sensor inputs</td></tr>
+    <tr><td>Pacemaker</td><td>Monitors heart rhythm and delivers electrical pulses to maintain regular heartbeat</td></tr>
+    <tr><td>Smart thermostat</td><td>Monitors temperature sensor and controls heating system to maintain set temperature</td></tr>
+    <tr><td>Microwave oven</td><td>Controls magnetron power level and timer based on user input</td></tr>
+    <tr><td>GPS navigation unit</td><td>Receives satellite signals and calculates position/route</td></tr>
+</table>
+
+<h3>Embedded vs General-Purpose Computers</h3>
+<table>
+    <tr><th>Feature</th><th>Embedded System</th><th>General-Purpose Computer</th></tr>
+    <tr><td>Purpose</td><td>One dedicated task</td><td>Many different tasks (runs any software)</td></tr>
+    <tr><td>Software</td><td>Fixed firmware in ROM</td><td>Changeable &mdash; user installs/removes programs</td></tr>
+    <tr><td>User interface</td><td>Minimal or none</td><td>Full GUI with keyboard, mouse, monitor</td></tr>
+    <tr><td>OS</td><td>Real-time OS or no OS</td><td>Full OS (Windows, macOS, Linux)</td></tr>
+    <tr><td>Cost</td><td>Low (mass-produced, minimal hardware)</td><td>Higher (powerful hardware, peripherals)</td></tr>
+    <tr><td>Power</td><td>Very low (milliwatts to watts)</td><td>Higher (tens to hundreds of watts)</td></tr>
+    <tr><td>Examples</td><td>Washing machine, car ECU, pacemaker</td><td>Laptop, desktop, server</td></tr>
+</table>
+
+<div class="exam-tip">For embedded systems questions, always give a <strong>specific example</strong> and state its <strong>dedicated function</strong>. Do not just say "a washing machine" &mdash; say "a washing machine controller that manages water temperature, spin speed, and cycle timing." Also know that embedded systems use ROM (non-volatile, runs automatically) rather than loading software from a hard drive.</div>
+
+</div>
+</body>
+</html>

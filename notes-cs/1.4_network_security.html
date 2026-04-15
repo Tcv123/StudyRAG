@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 1.4 — Network Security</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>1.4 Network Security</h1>
+<p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 1</p>
+
+<p>Network security protects computer systems, networks, and data from unauthorised access, damage, and theft. Understanding threats and their countermeasures is essential for both the exam and real-world practice.</p>
+
+<h2>1.4.1 Forms of Attack</h2>
+
+<table>
+    <tr><th>Threat</th><th>How It Works</th><th>Purpose / Impact</th><th>Real-World Example</th></tr>
+    <tr>
+        <td><strong>Malware</strong></td>
+        <td>Malicious software installed without the user's informed consent, typically via email attachments, infected downloads, compromised websites, or USB drives. Types include <strong>viruses</strong> (attach to files, spread when executed), <strong>worms</strong> (self-replicate across networks), <strong>trojans</strong> (disguised as legitimate software), <strong>spyware</strong> (monitors user activity), <strong>ransomware</strong> (encrypts files and demands payment), and <strong>adware</strong> (displays unwanted adverts).</td>
+        <td>Corrupt/delete files; steal personal data (passwords, banking details); give the attacker remote control of the system; encrypt files for ransom; slow down the system; use the computer as part of a botnet.</td>
+        <td>The WannaCry ransomware (2017) encrypted files on 200,000+ computers across 150 countries, including NHS hospitals, demanding Bitcoin payment for decryption.</td>
+    </tr>
+    <tr>
+        <td><strong>Phishing</strong></td>
+        <td>Fraudulent emails, texts, or fake websites that <strong>impersonate legitimate organisations</strong> (banks, HMRC, Amazon, social media) to trick users into revealing sensitive information. Exploits <strong>human trust</strong> rather than technical vulnerabilities. <strong>Spear phishing</strong> targets specific individuals with personalised messages.</td>
+        <td>Steal login credentials, credit card numbers, personal identity information, or trick users into installing malware. Can lead to identity theft, financial fraud, or account takeover.</td>
+        <td>An email appearing to be from a bank says "Your account has been compromised. Click here to verify your identity" and links to a fake login page that captures the user's credentials.</td>
+    </tr>
+    <tr>
+        <td><strong>Brute-force attack</strong></td>
+        <td>Automated software <strong>systematically tries every possible password</strong> combination until the correct one is found. Can also use <strong>dictionary attacks</strong> (trying common words/passwords) or <strong>credential stuffing</strong> (trying leaked username/password pairs from other breaches).</td>
+        <td>Gain unauthorised access to accounts, systems, or encrypted data.</td>
+        <td>A simple 4-digit PIN has only 10,000 combinations and can be cracked in seconds. An 8-character lowercase password has 26^8 (208 billion) combinations but can still be cracked in hours with modern hardware. A 16-character mixed password with symbols is practically unbreakable by brute force.</td>
+    </tr>
+    <tr>
+        <td><strong>DoS / DDoS</strong></td>
+        <td><strong>Denial of Service:</strong> floods a server with so many fake requests that it cannot respond to genuine users, effectively taking the service offline. <strong>Distributed DoS (DDoS):</strong> uses a <strong>botnet</strong> (thousands of compromised computers) to generate the flood from many sources simultaneously, making it much harder to block.</td>
+        <td>Take websites/services offline; cause financial losses (e-commerce sites losing sales); damage reputation; used for extortion ("pay us or we will DDoS you again").</td>
+        <td>Major gaming platforms, banking websites, and government services have been targeted by DDoS attacks causing hours or days of downtime.</td>
+    </tr>
+    <tr>
+        <td><strong>Data interception (Man-in-the-Middle)</strong></td>
+        <td>An attacker secretly <strong>intercepts data travelling across a network</strong> between two parties. The attacker can read, modify, or inject data without either party knowing. Common on unsecured public Wi-Fi networks.</td>
+        <td>Steal login credentials, financial data, personal information, session tokens, or confidential business communications.</td>
+        <td>An attacker on a coffee shop's open Wi-Fi intercepts unencrypted HTTP traffic and captures login cookies, gaining access to the victim's email account.</td>
+    </tr>
+    <tr>
+        <td><strong>SQL injection</strong></td>
+        <td>Malicious SQL code is entered into a web form input field (e.g., login form, search box). If the web application does not properly <strong>sanitise</strong> (validate and escape) user input, the malicious SQL is executed by the database server.</td>
+        <td>Bypass authentication (login without knowing the password); extract the entire database contents (usernames, passwords, personal data); modify or delete data; drop tables; gain administrative access.</td>
+        <td>Entering <code>' OR '1'='1</code> into a login form's password field. If the application constructs the SQL query by concatenating user input without sanitisation, this makes the WHERE clause always true, bypassing the password check entirely.</td>
+    </tr>
+</table>
+
+<pre>
+-- How SQL injection works:
+-- The application constructs:
+SELECT * FROM Users WHERE username='admin' AND password='[user input]';
+
+-- If the user enters:  ' OR '1'='1
+-- The query becomes:
+SELECT * FROM Users WHERE username='admin' AND password='' OR '1'='1';
+-- '1'='1' is always TRUE, so the WHERE clause is always TRUE
+-- The attacker is logged in as admin without knowing the password!
+
+-- Prevention: use PARAMETERISED QUERIES (prepared statements):
+SELECT * FROM Users WHERE username=? AND password=?;
+-- The ? placeholders ensure user input is treated as DATA, never as SQL code
+</pre>
+
+<h2>1.4.2 Prevention Methods</h2>
+
+<table>
+    <tr><th>Prevention</th><th>What It Protects Against</th><th>How It Works</th></tr>
+    <tr><td><strong>Penetration testing</strong></td><td>All vulnerabilities (before attackers find them)</td><td>Authorised <strong>ethical hackers</strong> (with written permission) attempt to break into systems using the same techniques as malicious hackers. Findings are documented and used to fix weaknesses <em>before</em> real attackers exploit them. Should be conducted regularly (at least annually).</td></tr>
+    <tr><td><strong>Anti-malware software</strong></td><td>Malware infections (viruses, worms, trojans, ransomware, spyware)</td><td>Scans files against a database of known malware <strong>signatures</strong> (patterns). Also uses <strong>heuristic analysis</strong> (detecting suspicious behaviour patterns even for unknown malware). Real-time protection monitors files as they are opened/downloaded. <strong>Must be kept updated</strong> &mdash; new malware is created daily.</td></tr>
+    <tr><td><strong>Firewall</strong></td><td>Unauthorised network connections</td><td>Monitors incoming and outgoing network traffic and <strong>allows or blocks</strong> connections based on predefined security rules (IP addresses, port numbers, protocols). Can be hardware (standalone device) or software (running on each computer). Blocks connections not matching the allowed criteria. Does NOT scan file contents &mdash; that is the anti-malware's job.</td></tr>
+    <tr><td><strong>User access levels</strong></td><td>Damage from compromised accounts; insider threats</td><td><strong>Principle of least privilege:</strong> each user is given the minimum access rights needed to do their job. An office worker does not need admin access to the server. If their account is compromised, damage is limited to what that account can access. Roles: admin, standard user, guest.</td></tr>
+    <tr><td><strong>Strong passwords</strong></td><td>Brute-force attacks, dictionary attacks, guessing</td><td>Passwords should be: <strong>long</strong> (12+ characters); <strong>complex</strong> (mix of uppercase, lowercase, digits, symbols); <strong>unique</strong> (different for every account); <strong>not based on personal information</strong> (names, birthdays, pet names). Changed regularly. Use a password manager to generate and store unique passwords.</td></tr>
+    <tr><td><strong>Encryption</strong></td><td>Data interception and theft</td><td>Converts plaintext into unreadable <strong>ciphertext</strong> using a cryptographic key. Only someone with the correct decryption key can read the data. Protects data <strong>in transit</strong> (HTTPS, VPN) and <strong>at rest</strong> (encrypted hard drives, encrypted databases). Even if intercepted, encrypted data is useless without the key.</td></tr>
+    <tr><td><strong>Physical security</strong></td><td>Unauthorised physical access to hardware</td><td>Locked server rooms with key card access; CCTV surveillance; biometric locks (fingerprint, retina); cable locks for laptops; visitor sign-in logs; security guards. Prevents someone from physically accessing a server, plugging in a USB drive, or stealing hardware.</td></tr>
+    <tr><td><strong>Two-factor authentication (2FA)</strong></td><td>Account compromise even if password is stolen</td><td>Requires <strong>two different types</strong> of evidence to log in: (1) something you <strong>know</strong> (password), (2) something you <strong>have</strong> (phone for SMS code or authenticator app), or (3) something you <strong>are</strong> (fingerprint, face recognition). Even if an attacker steals the password, they cannot log in without the second factor.</td></tr>
+    <tr><td><strong>Input sanitisation / validation</strong></td><td>SQL injection, XSS, and other injection attacks</td><td>All user input is checked, validated, and <strong>sanitised</strong> (special characters are escaped or removed) before being used in database queries or displayed on web pages. Use parameterised queries / prepared statements for SQL. Never trust user input.</td></tr>
+</table>
+
+<div class="exam-tip">For each threat, know <strong>HOW it works</strong> AND its <strong>purpose/impact</strong> &mdash; these are separate marks. A firewall controls <strong>network traffic</strong> (allows/blocks connections); anti-malware scans <strong>files</strong> for malicious code &mdash; they are <strong>different</strong> and complementary. For prevention methods, always explain the <em>mechanism</em> (how does it actually prevent the attack?) not just name it. For SQL injection, be able to give a specific example of the malicious input and explain how parameterised queries prevent it.</div>
+
+</div>
+</body>
+</html>

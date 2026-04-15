@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 1.5 — Systems Software</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>1.5 Systems Software</h1>
+<p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 1</p>
+
+<div class="definition">
+    <strong>Systems software</strong> manages the computer's hardware resources and provides a platform for application software to run. It acts as an intermediary between the user, application software, and hardware. The two main types are the <strong>operating system</strong> and <strong>utility software</strong>.
+</div>
+
+<h2>1.5.1 Operating System Functions</h2>
+
+<p>The <strong>operating system (OS)</strong> is the most important piece of systems software. Without it, the user would have to interact directly with the hardware using machine code. The OS manages six key functions:</p>
+
+<table>
+    <tr><th>OS Function</th><th>What It Does</th><th>Detail and Examples</th></tr>
+    <tr>
+        <td><strong>User interface</strong></td>
+        <td>Provides a way for the user to interact with the computer</td>
+        <td><strong>GUI (Graphical User Interface):</strong> windows, icons, menus, pointer (WIMP). Intuitive, easy to learn (e.g., Windows, macOS). <strong>CLI (Command Line Interface):</strong> typed text commands. More powerful and flexible; preferred by system administrators and programmers (e.g., Linux terminal, PowerShell). <strong>Touch interface:</strong> finger gestures on a touchscreen (e.g., iOS, Android).</td>
+    </tr>
+    <tr>
+        <td><strong>Memory management</strong></td>
+        <td>Allocates and deallocates RAM to programs and manages virtual memory</td>
+        <td>When a program opens, the OS allocates a block of RAM for it. When it closes, that RAM is freed for other programs. If RAM is full, the OS uses <strong>virtual memory</strong> (a section of the hard drive/SSD as overflow). The OS also provides <strong>memory protection</strong> &mdash; preventing one program from accessing another program's memory space (which would cause crashes or security vulnerabilities). <strong>Paging</strong> divides memory into fixed-size blocks and swaps them between RAM and disk as needed.</td>
+    </tr>
+    <tr>
+        <td><strong>Process (multitasking) management</strong></td>
+        <td>Schedules CPU time between processes to enable multiple programs to appear to run simultaneously</td>
+        <td>The OS uses <strong>scheduling algorithms</strong> (e.g., Round Robin) to rapidly switch between processes, giving each a small time slice of CPU time. This happens so fast (thousands of times per second) that the user perceives all programs running simultaneously. The OS also manages process creation, termination, and inter-process communication.</td>
+    </tr>
+    <tr>
+        <td><strong>Peripheral management</strong></td>
+        <td>Communicates with hardware devices (keyboard, mouse, printer, monitor, etc.)</td>
+        <td>Uses <strong>device drivers</strong> &mdash; specialised software that translates generic OS commands into device-specific instructions. Each hardware device needs a driver. The OS manages device drivers and routes data between devices and programs. Plug-and-play allows the OS to automatically detect and install drivers for new devices.</td>
+    </tr>
+    <tr>
+        <td><strong>User management</strong></td>
+        <td>Creates and manages user accounts, access rights, and security</td>
+        <td>Each user has an account with a username and password. The OS assigns <strong>access levels</strong> (administrator, standard user, guest) that determine what each user can do (install software, change settings, access files). Enforces the principle of least privilege. Manages login/logout and authentication (including multi-factor).</td>
+    </tr>
+    <tr>
+        <td><strong>File management</strong></td>
+        <td>Organises files in a hierarchical directory (folder) structure</td>
+        <td>The OS provides: file <strong>naming</strong> (extensions indicate type: .docx, .py, .jpg); <strong>directory structure</strong> (folders within folders); <strong>file operations</strong> (create, copy, move, rename, delete, search); <strong>file permissions</strong> (read, write, execute, by user/group); <strong>file allocation</strong> (tracking which disk sectors belong to which files using file systems like NTFS, ext4, APFS).</td>
+    </tr>
+</table>
+
+<h2>1.5.2 Utility Software</h2>
+
+<p><strong>Utility software</strong> performs specific maintenance and housekeeping tasks to keep the system running efficiently. Utilities are part of systems software (not application software) because they maintain the system rather than perform user tasks.</p>
+
+<table>
+    <tr><th>Utility</th><th>Purpose</th><th>How It Works</th><th>Key Detail</th></tr>
+    <tr>
+        <td><strong>Encryption software</strong></td>
+        <td>Protects data confidentiality</td>
+        <td>Encrypts files, folders, or entire drives with a cryptographic key. Data becomes unreadable without the correct decryption key.</td>
+        <td>Full-disk encryption (e.g., BitLocker on Windows, FileVault on macOS) protects all data if the device is lost or stolen. The thief gets the hardware but cannot read any of the data.</td>
+    </tr>
+    <tr>
+        <td><strong>Defragmentation</strong></td>
+        <td>Reorganises fragmented files on an HDD</td>
+        <td>Over time, files are stored in non-contiguous (scattered) blocks across the disk. Defragmentation rearranges them into <strong>contiguous blocks</strong>, reducing the distance the read/write head must travel.</td>
+        <td><strong>Only applies to HDDs</strong> (which have mechanical heads that must physically move). SSDs should <strong>NOT be defragmented</strong> &mdash; they have no moving parts (random access is equally fast from any location), and defragmentation causes unnecessary writes that reduce SSD lifespan. SSDs use TRIM instead.</td>
+    </tr>
+    <tr>
+        <td><strong>Data compression</strong></td>
+        <td>Reduces file sizes for storage and transmission</td>
+        <td><strong>Lossless</strong> (ZIP, PNG): compresses by finding patterns; original data fully recoverable. <strong>Lossy</strong> (JPEG, MP3): removes data humans cannot easily perceive; smaller files but some quality loss; not reversible.</td>
+        <td>Compression is essential for: reducing download times, fitting more data on storage devices, reducing bandwidth usage for streaming, and emailing large files.</td>
+    </tr>
+    <tr>
+        <td><strong>Backup software</strong></td>
+        <td>Creates copies of data for disaster recovery</td>
+        <td><strong>Full backup:</strong> copies everything (slow, large). <strong>Incremental:</strong> copies only files changed since the last backup (fast, small, but restoration requires all increments). <strong>Differential:</strong> copies files changed since the last full backup.</td>
+        <td>Follows the <strong>3-2-1 rule</strong>: 3 copies of data, on 2 different media types, with 1 copy offsite (or in the cloud). Protects against hardware failure, ransomware, theft, fire, and accidental deletion.</td>
+    </tr>
+    <tr>
+        <td><strong>Anti-malware</strong></td>
+        <td>Detects and removes malicious software</td>
+        <td>Scans files using <strong>signature detection</strong> (comparing against a database of known malware patterns) and <strong>heuristic/behavioural analysis</strong> (detecting suspicious activity patterns that indicate unknown malware).</td>
+        <td>Must be kept <strong>updated</strong> &mdash; hundreds of thousands of new malware variants are created daily. Provides real-time protection (scanning files as they are opened/downloaded) and scheduled full-system scans.</td>
+    </tr>
+</table>
+
+<div class="exam-tip">The OS <strong>manages hardware</strong> and provides a platform for applications; utility software performs specific <strong>maintenance tasks</strong>. These are different roles. Defragmentation <strong>only benefits HDDs</strong> (not SSDs) &mdash; this is a very common exam question. For memory management, be able to explain the process of moving data between RAM and secondary storage (virtual memory / paging) and why this causes slowdown (disk access is much slower than RAM access).</div>
+
+</div>
+</body>
+</html>

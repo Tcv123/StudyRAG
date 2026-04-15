@@ -11,6 +11,7 @@
   h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
   h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
   h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  h4 { font-size: 1.05rem; color: #1e3a5f; margin: 15px 0 8px 0; }
   p { margin-bottom: 12px; }
   ul, ol { margin: 10px 0 15px 25px; }
   li { margin-bottom: 6px; }
@@ -22,8 +23,11 @@
   .definition strong { color: #1e3a5f; }
   .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
   .exam-tip strong { color: #b45309; }
+  .real-world { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #15803d; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  svg text { font-family: system-ui, sans-serif; }
 </style>
 </head>
 <body>
@@ -31,85 +35,56 @@
 
 <h1>T3 — Inorganic Chemistry</h1>
 
-<h2>3.1 Periodicity — Period 3</h2>
+<h2>3.1 Periodicity &mdash; Period 3</h2>
 
 <div class="definition">
-  <strong>Periodicity:</strong> The repeating pattern of physical and chemical properties of elements across periods in the periodic table, as a consequence of repeating electron configurations.
+  <strong>Periodicity:</strong> The repeating pattern of physical and chemical properties of elements across periods in the periodic table. This periodicity arises because electron configurations repeat in a systematic pattern &mdash; each new period begins filling a new principal energy level.
 </div>
 
 <h3>Trends Across Period 3 (Na to Ar)</h3>
 
 <table>
   <tr><th>Property</th><th>Trend Na &rarr; Ar</th><th>Explanation</th></tr>
-  <tr><td>Atomic radius</td><td>Decreases</td><td>Increasing nuclear charge pulls electrons closer; same shielding (same shell)</td></tr>
-  <tr><td>First ionisation energy</td><td>General increase (with dips at Al and S)</td><td>Increasing nuclear charge; dip at Al (3p easier to remove than 3s), dip at S (paired 3p electron)</td></tr>
-  <tr><td>Electronegativity</td><td>Increases (Na to Cl)</td><td>Increasing nuclear charge, decreasing atomic radius</td></tr>
-  <tr><td>Melting point</td><td>Increases Na&rarr;Al, drops at Si, low for P&rarr;Ar</td><td>Metals: increasing charge/delocalised electrons. Si: giant covalent. P-Ar: simple molecular</td></tr>
-  <tr><td>Electrical conductivity</td><td>High for Na, Mg, Al; none for Si&rarr;Ar</td><td>Metals have delocalised electrons; non-metals do not (Si is a semiconductor)</td></tr>
+  <tr><td>Atomic radius</td><td>Decreases</td><td>Increasing nuclear charge pulls electrons closer; same number of shielding shells (all in period 3)</td></tr>
+  <tr><td>First ionisation energy</td><td>General increase with dips at Al and S</td><td>Increasing nuclear charge. Dip at Al: 3p electron is higher in energy and easier to remove than 3s (in Mg). Dip at S: the first paired 3p electron experiences repulsion, making it easier to remove than an unpaired 3p electron (in P).</td></tr>
+  <tr><td>Electronegativity</td><td>Increases (Na to Cl)</td><td>Increasing nuclear charge and decreasing atomic radius means bonding electrons are more strongly attracted. Noble gases are excluded (they do not normally form bonds).</td></tr>
+  <tr><td>Melting point</td><td>Increases Na&rarr;Si, drops sharply at P, low P&rarr;Ar</td><td>Na, Mg, Al: metallic bonding strengthens (more delocalised electrons, smaller ionic radius). Si: giant covalent (very high mp). P, S, Cl, Ar: simple molecular structures with weak London forces (low mp).</td></tr>
+  <tr><td>Electrical conductivity</td><td>High for Na, Mg, Al; semiconductor Si; none for P&rarr;Ar</td><td>Metals have delocalised electrons that carry charge. Si is a semiconductor (small band gap). Non-metals have no free electrons or ions.</td></tr>
 </table>
 
-<h3>Period 3 Oxides</h3>
-
-<table>
-  <tr><th>Oxide</th><th>Structure</th><th>Bonding</th><th>Acid-Base Character</th><th>Reaction with Water</th></tr>
-  <tr><td>Na<sub>2</sub>O</td><td>Giant ionic</td><td>Ionic</td><td>Strongly basic</td><td>Forms NaOH (alkaline, pH ~14)</td></tr>
-  <tr><td>MgO</td><td>Giant ionic</td><td>Ionic</td><td>Basic</td><td>Slightly soluble, forms Mg(OH)<sub>2</sub> (pH ~9)</td></tr>
-  <tr><td>Al<sub>2</sub>O<sub>3</sub></td><td>Giant ionic/covalent</td><td>Ionic with covalent character</td><td>Amphoteric</td><td>Insoluble</td></tr>
-  <tr><td>SiO<sub>2</sub></td><td>Giant covalent</td><td>Covalent</td><td>Weakly acidic</td><td>Insoluble (reacts with NaOH)</td></tr>
-  <tr><td>P<sub>4</sub>O<sub>10</sub></td><td>Simple molecular</td><td>Covalent</td><td>Strongly acidic</td><td>Forms H<sub>3</sub>PO<sub>4</sub> (pH ~1)</td></tr>
-  <tr><td>SO<sub>3</sub></td><td>Simple molecular</td><td>Covalent</td><td>Strongly acidic</td><td>Forms H<sub>2</sub>SO<sub>4</sub> (pH ~0)</td></tr>
-</table>
-
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> The key trend: metal oxides are basic, non-metal oxides are acidic, and Al<sub>2</sub>O<sub>3</sub> is amphoteric (reacts with both acids and bases). This is a very common exam question.
-</div>
-
-<!-- SVG: Periodic Table Trends - IE, Atomic Radius, Electronegativity -->
+<!-- SVG: Periodic Table Trends -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Periodic Table Trends (Period 3)</text>
   <defs>
     <marker id="ptArrowR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a73e8"/></marker>
-    <marker id="ptArrowD" markerWidth="5" markerHeight="7" refX="2.5" refY="7" orient="auto"><polygon points="0,0 2.5,7 5,0" fill="#DC2626"/></marker>
   </defs>
-
-  <!-- Period 3 element boxes -->
   <g transform="translate(35,45)">
     <rect x="0" y="0" width="58" height="36" rx="3" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
     <text x="29" y="15" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">11</text>
     <text x="29" y="30" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a73e8">Na</text>
-
     <rect x="65" y="0" width="58" height="36" rx="3" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
     <text x="94" y="15" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">12</text>
     <text x="94" y="30" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a73e8">Mg</text>
-
     <rect x="130" y="0" width="58" height="36" rx="3" fill="#e0ecff" stroke="#1a73e8" stroke-width="1.2"/>
     <text x="159" y="15" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">13</text>
     <text x="159" y="30" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a73e8">Al</text>
-
     <rect x="195" y="0" width="58" height="36" rx="3" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
     <text x="224" y="15" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">14</text>
     <text x="224" y="30" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#16A34A">Si</text>
-
     <rect x="260" y="0" width="58" height="36" rx="3" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
     <text x="289" y="15" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">15</text>
     <text x="289" y="30" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#16A34A">P</text>
-
     <rect x="325" y="0" width="58" height="36" rx="3" fill="#fee2e2" stroke="#DC2626" stroke-width="1.5"/>
     <text x="354" y="15" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">16</text>
     <text x="354" y="30" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#DC2626">S</text>
-
     <rect x="390" y="0" width="58" height="36" rx="3" fill="#fee2e2" stroke="#DC2626" stroke-width="1.5"/>
     <text x="419" y="15" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">17</text>
     <text x="419" y="30" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#DC2626">Cl</text>
   </g>
-
-  <!-- Across period arrow -->
   <line x1="50" y1="98" x2="460" y2="98" stroke="#1a73e8" stroke-width="2" marker-end="url(#ptArrowR)"/>
   <text x="260" y="112" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Across Period 3</text>
-
-  <!-- Trend bars -->
-  <!-- Ionisation Energy -->
+  <!-- IE bars -->
   <text x="30" y="145" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">1st IE</text>
   <rect x="90" y="132" width="40" height="14" rx="2" fill="#1a73e8" opacity="0.3"/>
   <rect x="140" y="132" width="55" height="14" rx="2" fill="#1a73e8" opacity="0.4"/>
@@ -118,11 +93,8 @@
   <rect x="323" y="132" width="65" height="14" rx="2" fill="#1a73e8" opacity="0.55"/>
   <rect x="398" y="132" width="45" height="14" rx="2" fill="#1a73e8" opacity="0.4"/>
   <rect x="453" y="132" width="47" height="14" rx="2" fill="#1a73e8" opacity="0.9"/>
-  <text x="467" y="145" text-anchor="middle" font-family="system-ui" font-size="7" fill="#ffffff" font-weight="bold">HIGH</text>
-  <text x="100" y="145" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8" font-weight="bold">LOW</text>
-  <text x="260" y="155" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">General increase (dips at Al and S)</text>
-
-  <!-- Atomic Radius -->
+  <text x="260" y="155" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">General increase (dips at Al and S due to sub-shell structure)</text>
+  <!-- Radius bars -->
   <text x="30" y="185" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Radius</text>
   <rect x="90" y="172" width="65" height="14" rx="2" fill="#DC2626" opacity="0.7"/>
   <rect x="165" y="172" width="55" height="14" rx="2" fill="#DC2626" opacity="0.6"/>
@@ -131,11 +103,8 @@
   <rect x="345" y="172" width="40" height="14" rx="2" fill="#DC2626" opacity="0.35"/>
   <rect x="395" y="172" width="35" height="14" rx="2" fill="#DC2626" opacity="0.3"/>
   <rect x="440" y="172" width="30" height="14" rx="2" fill="#DC2626" opacity="0.25"/>
-  <text x="118" y="185" text-anchor="middle" font-family="system-ui" font-size="7" fill="#ffffff" font-weight="bold">LARGE</text>
-  <text x="455" y="185" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626" font-weight="bold">SMALL</text>
-  <text x="260" y="196" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Decreases across period</text>
-
-  <!-- Electronegativity -->
+  <text x="260" y="196" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Decreases across period (increasing nuclear charge, same shielding)</text>
+  <!-- Electronegativity bars -->
   <text x="18" y="222" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Electro-</text>
   <text x="18" y="232" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">negativity</text>
   <rect x="90" y="215" width="25" height="14" rx="2" fill="#16A34A" opacity="0.2"/>
@@ -145,84 +114,94 @@
   <rect x="275" y="215" width="50" height="14" rx="2" fill="#16A34A" opacity="0.55"/>
   <rect x="335" y="215" width="55" height="14" rx="2" fill="#16A34A" opacity="0.65"/>
   <rect x="400" y="215" width="65" height="14" rx="2" fill="#16A34A" opacity="0.85"/>
-  <text x="100" y="228" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A" font-weight="bold">LOW</text>
-  <text x="430" y="228" text-anchor="middle" font-family="system-ui" font-size="7" fill="#ffffff" font-weight="bold">HIGH</text>
-  <text x="260" y="240" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">Increases across period (Na to Cl)</text>
-
-  <!-- Down group arrow -->
+  <text x="260" y="240" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">Increases across period (Na to Cl; Ar excluded)</text>
   <rect x="40" y="258" width="440" height="52" rx="6" fill="#fff8e1" stroke="#D97706" stroke-width="1"/>
   <text x="260" y="275" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Down a Group:</text>
   <text x="260" y="290" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">IE decreases | Atomic radius increases | Electronegativity decreases</text>
-  <text x="260" y="303" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">(more shells, more shielding, greater distance from nucleus)</text>
+  <text x="260" y="303" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">(more shells &rarr; more shielding &rarr; greater distance from nucleus)</text>
 </svg>
 </div>
 
-<h2>3.2 Group 1 — Alkali Metals</h2>
+<h3>Period 3 Oxides</h3>
 
-<p>Group 1 metals (Li, Na, K, Rb, Cs) have one electron in their outer s sub-shell. They are very reactive metals that readily lose this electron to form M<sup>+</sup> ions.</p>
+<p>There is a clear trend in the acid-base character of Period 3 oxides: metal oxides (Na<sub>2</sub>O, MgO) are basic, Al<sub>2</sub>O<sub>3</sub> is amphoteric, and non-metal oxides (SiO<sub>2</sub>, P<sub>4</sub>O<sub>10</sub>, SO<sub>3</sub>) are acidic.</p>
+
+<table>
+  <tr><th>Oxide</th><th>Structure</th><th>Bonding</th><th>Acid-Base</th><th>Reaction with Water</th><th>pH</th></tr>
+  <tr><td>Na<sub>2</sub>O</td><td>Giant ionic</td><td>Ionic</td><td>Strongly basic</td><td>Na<sub>2</sub>O + H<sub>2</sub>O &rarr; 2NaOH</td><td>~14</td></tr>
+  <tr><td>MgO</td><td>Giant ionic</td><td>Ionic</td><td>Basic</td><td>MgO + H<sub>2</sub>O &rarr; Mg(OH)<sub>2</sub> (sparingly soluble)</td><td>~9</td></tr>
+  <tr><td>Al<sub>2</sub>O<sub>3</sub></td><td>Giant ionic/covalent</td><td>Ionic with covalent character</td><td>Amphoteric</td><td>Insoluble in water</td><td>&mdash;</td></tr>
+  <tr><td>SiO<sub>2</sub></td><td>Giant covalent</td><td>Covalent</td><td>Weakly acidic</td><td>Insoluble (reacts with hot NaOH)</td><td>&mdash;</td></tr>
+  <tr><td>P<sub>4</sub>O<sub>10</sub></td><td>Simple molecular</td><td>Covalent</td><td>Strongly acidic</td><td>P<sub>4</sub>O<sub>10</sub> + 6H<sub>2</sub>O &rarr; 4H<sub>3</sub>PO<sub>4</sub></td><td>~1</td></tr>
+  <tr><td>SO<sub>3</sub></td><td>Simple molecular</td><td>Covalent</td><td>Strongly acidic</td><td>SO<sub>3</sub> + H<sub>2</sub>O &rarr; H<sub>2</sub>SO<sub>4</sub></td><td>~0</td></tr>
+</table>
+
+<div class="definition">
+  <strong>Amphoteric oxide:</strong> An oxide that reacts with both acids and bases.<br>
+  Al<sub>2</sub>O<sub>3</sub> + 6HCl &rarr; 2AlCl<sub>3</sub> + 3H<sub>2</sub>O (with acid)<br>
+  Al<sub>2</sub>O<sub>3</sub> + 2NaOH + 3H<sub>2</sub>O &rarr; 2Na[Al(OH)<sub>4</sub>] (with base)
+</div>
+
+<h3>Period 3 Chlorides</h3>
+
+<p>Ionic chlorides (NaCl, MgCl<sub>2</sub>) <strong>dissolve</strong> in water &mdash; the ions separate and become hydrated. Covalent chlorides (AlCl<sub>3</sub>, SiCl<sub>4</sub>, PCl<sub>5</sub>) undergo <strong>hydrolysis</strong> &mdash; the covalent bonds are broken by water, producing HCl (white misty fumes in moist air) and an acidic solution.</p>
+
+<div class="equation">SiCl<sub>4</sub>(l) + 2H<sub>2</sub>O(l) &rarr; SiO<sub>2</sub>(s) + 4HCl(g)</div>
+<div class="equation">PCl<sub>5</sub>(s) + 4H<sub>2</sub>O(l) &rarr; H<sub>3</sub>PO<sub>4</sub>(aq) + 5HCl(g)</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The key distinction: ionic chlorides dissolve (ions separate but no new substances form), while covalent chlorides hydrolyse (bonds break, new substances form including HCl). The white misty fumes of HCl in moist air are a key observation to mention in exam answers about covalent chloride hydrolysis.
+</div>
+
+<div class="real-world">
+  <strong>Real-World Application:</strong> The acidic non-metal oxides SO<sub>2</sub> and SO<sub>3</sub> are major contributors to acid rain when released from burning fossil fuels. They dissolve in atmospheric water to form sulfurous and sulfuric acid, damaging buildings, acidifying lakes, and harming ecosystems. Flue gas desulfurisation in power stations uses limestone (CaCO<sub>3</sub>) or lime (CaO) to neutralise the acidic gases: CaO + SO<sub>2</sub> &rarr; CaSO<sub>3</sub>.
+</div>
+
+<h2>3.2 Group 1 &mdash; Alkali Metals</h2>
+
+<p>Group 1 metals (Li, Na, K, Rb, Cs) have one electron in their outer s sub-shell. They are the most reactive metals, readily losing this single electron to form M<sup>+</sup> ions with a noble gas configuration.</p>
 
 <h3>Trends Down Group 1</h3>
-
-<ul>
-  <li><strong>Atomic radius increases:</strong> Additional electron shells</li>
-  <li><strong>Ionisation energy decreases:</strong> Outer electron is further from nucleus, more shielding</li>
-  <li><strong>Reactivity increases:</strong> Easier to lose the outer electron</li>
-  <li><strong>Melting point decreases:</strong> Metallic bonding weakens as ionic radius increases</li>
-</ul>
+<table>
+  <tr><th>Property</th><th>Trend</th><th>Explanation</th></tr>
+  <tr><td>Atomic radius</td><td>Increases</td><td>Additional electron shells</td></tr>
+  <tr><td>First ionisation energy</td><td>Decreases</td><td>Outer electron further from nucleus, more shielded</td></tr>
+  <tr><td>Reactivity</td><td>Increases</td><td>Easier to lose the outer electron (lower IE)</td></tr>
+  <tr><td>Melting point</td><td>Decreases</td><td>Metallic bonding weakens as ionic radius increases and charge density decreases</td></tr>
+  <tr><td>Density</td><td>Increases (general trend)</td><td>Mass increases faster than volume</td></tr>
+</table>
 
 <h3>Reactions of Group 1 Metals</h3>
 
-<p><strong>With water:</strong> 2M(s) + 2H<sub>2</sub>O(l) &rarr; 2MOH(aq) + H<sub>2</sub>(g). Vigour increases down the group. Lithium fizzes gently, sodium melts into a ball and fizzes vigorously, potassium ignites with a lilac flame.</p>
+<p><strong>With water:</strong></p>
+<div class="equation">2M(s) + 2H<sub>2</sub>O(l) &rarr; 2MOH(aq) + H<sub>2</sub>(g)</div>
+<p>Vigour increases down the group. Lithium fizzes gently on the surface. Sodium melts into a shiny ball, fizzes vigorously, and moves around on the surface. Potassium reacts even more vigorously and ignites the hydrogen gas with a lilac flame. Rubidium and caesium react explosively.</p>
 
-<p><strong>With oxygen:</strong> Lithium forms Li<sub>2</sub>O (oxide), sodium forms Na<sub>2</sub>O<sub>2</sub> (peroxide), potassium forms KO<sub>2</sub> (superoxide).</p>
+<p><strong>With oxygen:</strong> Lithium forms the normal oxide Li<sub>2</sub>O. Sodium forms the peroxide Na<sub>2</sub>O<sub>2</sub>. Potassium forms the superoxide KO<sub>2</sub>. All burn with characteristic flame colours.</p>
 
 <p><strong>With chlorine:</strong> 2M(s) + Cl<sub>2</sub>(g) &rarr; 2MCl(s). All form white ionic chlorides.</p>
 
-<h2>3.3 Group 2 — Alkaline Earth Metals</h2>
+<p><strong>Flame colours:</strong> Li = crimson red, Na = yellow/orange, K = lilac.</p>
 
-<p>Group 2 metals (Be, Mg, Ca, Sr, Ba) have two electrons in their outer s sub-shell. They form M<sup>2+</sup> ions.</p>
+<h2>3.3 Group 2 &mdash; Alkaline Earth Metals</h2>
+
+<p>Group 2 metals (Be, Mg, Ca, Sr, Ba) have two electrons in their outer s sub-shell. They form M<sup>2+</sup> ions by losing both outer electrons.</p>
 
 <h3>Trends Down Group 2</h3>
 
 <table>
-  <tr><th>Property</th><th>Trend Down Group</th><th>Explanation</th></tr>
+  <tr><th>Property</th><th>Trend</th><th>Explanation</th></tr>
   <tr><td>Atomic radius</td><td>Increases</td><td>More electron shells</td></tr>
-  <tr><td>First ionisation energy</td><td>Decreases</td><td>Greater distance, more shielding</td></tr>
-  <tr><td>Reactivity</td><td>Increases</td><td>Easier to remove outer electrons</td></tr>
-  <tr><td>Melting point</td><td>Decreases (general trend)</td><td>Weaker metallic bonding</td></tr>
+  <tr><td>First ionisation energy</td><td>Decreases</td><td>Greater distance and more shielding</td></tr>
+  <tr><td>Reactivity</td><td>Increases</td><td>Easier to remove two outer electrons</td></tr>
+  <tr><td>Melting point</td><td>General decrease (irregular)</td><td>Weaker metallic bonding as ionic radius increases</td></tr>
 </table>
 
-<h3>Reactions of Group 2</h3>
-
-<p><strong>With water:</strong> M(s) + 2H<sub>2</sub>O(l) &rarr; M(OH)<sub>2</sub>(aq) + H<sub>2</sub>(g). Mg reacts very slowly with cold water (faster with steam). Ca fizzes steadily. Sr and Ba react vigorously.</p>
-
-<p><strong>With oxygen:</strong> 2M(s) + O<sub>2</sub>(g) &rarr; 2MO(s). All burn in oxygen with characteristic flame colours. The oxides are white solids.</p>
-
-<h3>Thermal Decomposition of Group 2 Carbonates and Nitrates</h3>
-
-<p>Group 2 carbonates decompose on heating: MCO<sub>3</sub>(s) &rarr; MO(s) + CO<sub>2</sub>(g). The thermal stability increases down the group (BaCO<sub>3</sub> requires the highest temperature). This is because larger cations have lower charge density and are less able to polarise and weaken the carbonate ion.</p>
-
-<h3>Solubility Trends</h3>
-
-<table>
-  <tr><th>Compound Type</th><th>Solubility Trend Down Group 2</th></tr>
-  <tr><td>Hydroxides M(OH)<sub>2</sub></td><td>Increases (Mg(OH)<sub>2</sub> sparingly soluble, Ba(OH)<sub>2</sub> soluble)</td></tr>
-  <tr><td>Sulfates MSO<sub>4</sub></td><td>Decreases (MgSO<sub>4</sub> soluble, BaSO<sub>4</sub> insoluble)</td></tr>
-</table>
-
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> The test for sulfate ions uses BaCl<sub>2</sub>(aq) with dilute HCl. A white precipitate of BaSO<sub>4</sub> confirms sulfate is present. The HCl removes any carbonate ions that could also form a white precipitate with Ba<sup>2+</sup>.
-</div>
-
-<!-- SVG: Group 2 Trend Diagram -->
+<!-- SVG: Group 2 Trends -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Group 2 Trends Down the Group</text>
-  <defs>
-    <marker id="g2ArrowD" markerWidth="6" markerHeight="8" refX="3" refY="8" orient="auto"><polygon points="0,0 3,8 6,0" fill="#1a1a2e"/></marker>
-  </defs>
-
-  <!-- Element column -->
+  <defs><marker id="g2ArrowD" markerWidth="6" markerHeight="8" refX="3" refY="8" orient="auto"><polygon points="0,0 3,8 6,0" fill="#1a1a2e"/></marker></defs>
   <rect x="30" y="45" width="70" height="38" rx="5" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
   <text x="65" y="69" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#1a73e8">Be</text>
   <rect x="30" y="90" width="70" height="38" rx="5" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
@@ -233,421 +212,346 @@
   <text x="65" y="204" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#ffffff">Sr</text>
   <rect x="30" y="225" width="70" height="38" rx="5" fill="#818cf8" stroke="#1a73e8" stroke-width="2"/>
   <text x="65" y="249" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#ffffff">Ba</text>
-
-  <!-- Down arrow -->
   <line x1="65" y1="270" x2="65" y2="290" stroke="#1a1a2e" stroke-width="2" marker-end="url(#g2ArrowD)"/>
-
-  <!-- Reactivity bars (increasing) -->
+  <!-- Reactivity bars -->
   <text x="200" y="42" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Reactivity</text>
   <rect x="120" y="52" width="30" height="22" rx="3" fill="#DC2626" opacity="0.2"/>
   <rect x="120" y="97" width="60" height="22" rx="3" fill="#DC2626" opacity="0.35"/>
   <rect x="120" y="142" width="100" height="22" rx="3" fill="#DC2626" opacity="0.5"/>
   <rect x="120" y="187" width="140" height="22" rx="3" fill="#DC2626" opacity="0.7"/>
   <rect x="120" y="232" width="180" height="22" rx="3" fill="#DC2626" opacity="0.9"/>
-
-  <!-- Atomic radius bars (increasing) -->
+  <!-- Atomic radius bars -->
   <text x="395" y="42" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Atomic radius</text>
   <rect x="330" y="52" width="30" height="22" rx="3" fill="#16A34A" opacity="0.2"/>
   <rect x="330" y="97" width="50" height="22" rx="3" fill="#16A34A" opacity="0.35"/>
   <rect x="330" y="142" width="75" height="22" rx="3" fill="#16A34A" opacity="0.5"/>
   <rect x="330" y="187" width="100" height="22" rx="3" fill="#16A34A" opacity="0.7"/>
   <rect x="330" y="232" width="130" height="22" rx="3" fill="#16A34A" opacity="0.9"/>
-
-  <!-- IE arrow (decreasing, shown as text) -->
+  <!-- IE bars -->
   <text x="485" y="42" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">IE</text>
   <rect x="470" y="52" width="35" height="22" rx="3" fill="#D97706" opacity="0.9"/>
   <rect x="470" y="97" width="30" height="22" rx="3" fill="#D97706" opacity="0.7"/>
   <rect x="470" y="142" width="24" height="22" rx="3" fill="#D97706" opacity="0.5"/>
   <rect x="470" y="187" width="18" height="22" rx="3" fill="#D97706" opacity="0.35"/>
   <rect x="470" y="232" width="12" height="22" rx="3" fill="#D97706" opacity="0.2"/>
-
-  <!-- Summary -->
-  <text x="260" y="290" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Reactivity and atomic radius INCREASE down group | IE and melting point DECREASE</text>
+  <text x="260" y="290" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Reactivity and atomic radius INCREASE down group | IE DECREASES</text>
 </svg>
 </div>
 
-<h2>3.4 Group 7 — Halogens</h2>
+<h3>Reactions of Group 2</h3>
 
-<p>The halogens (F, Cl, Br, I) exist as diatomic molecules (X<sub>2</sub>) and have 7 electrons in their outer shell. They gain one electron to form X<sup>&minus;</sup> ions or share one electron in covalent bonds.</p>
+<p><strong>With water:</strong></p>
+<div class="equation">M(s) + 2H<sub>2</sub>O(l) &rarr; M(OH)<sub>2</sub>(aq) + H<sub>2</sub>(g)</div>
+<p>Magnesium reacts very slowly with cold water (forms a thin Mg(OH)<sub>2</sub> layer) but reacts vigorously with steam: Mg + H<sub>2</sub>O &rarr; MgO + H<sub>2</sub>. Calcium fizzes steadily in cold water. Strontium and barium react increasingly vigorously.</p>
+
+<p><strong>With oxygen:</strong> 2M(s) + O<sub>2</sub>(g) &rarr; 2MO(s). All burn with characteristic flame colours: Ca = orange-red, Sr = crimson red, Ba = pale green.</p>
+
+<h3>Thermal Stability of Group 2 Compounds</h3>
+
+<p><strong>Carbonates:</strong> MCO<sub>3</sub>(s) &rarr; MO(s) + CO<sub>2</sub>(g). Thermal stability increases down the group (BaCO<sub>3</sub> requires the highest temperature). This is because larger cations (e.g. Ba<sup>2+</sup>) have lower charge density and are less able to polarise and distort the carbonate ion. Smaller, more highly charged cations (e.g. Mg<sup>2+</sup>) have greater polarising power and can more easily destabilise the carbonate ion, making it decompose at lower temperatures.</p>
+
+<p><strong>Nitrates:</strong> 2M(NO<sub>3</sub>)<sub>2</sub>(s) &rarr; 2MO(s) + 4NO<sub>2</sub>(g) + O<sub>2</sub>(g). Same trend &mdash; stability increases down the group for the same reason.</p>
+
+<p><strong>Hydroxides:</strong> M(OH)<sub>2</sub>(s) &rarr; MO(s) + H<sub>2</sub>O(g). Same trend applies.</p>
+
+<h3>Solubility Trends in Group 2</h3>
+
+<table>
+  <tr><th>Compound Type</th><th>Solubility Trend Down Group 2</th><th>Key Examples</th></tr>
+  <tr><td>Hydroxides M(OH)<sub>2</sub></td><td>Increases</td><td>Mg(OH)<sub>2</sub> sparingly soluble &rarr; Ba(OH)<sub>2</sub> soluble</td></tr>
+  <tr><td>Sulfates MSO<sub>4</sub></td><td>Decreases</td><td>MgSO<sub>4</sub> soluble (Epsom salts) &rarr; BaSO<sub>4</sub> insoluble</td></tr>
+</table>
+
+<div class="real-world">
+  <strong>Real-World Application:</strong> Mg(OH)<sub>2</sub> (milk of magnesia) is used as an antacid to neutralise excess stomach acid: Mg(OH)<sub>2</sub> + 2HCl &rarr; MgCl<sub>2</sub> + 2H<sub>2</sub>O. Ca(OH)<sub>2</sub> (slaked lime) is used to neutralise acidic soils and treat acidified lakes. BaSO<sub>4</sub> is used as a "barium meal" in medical X-ray imaging &mdash; its insolubility means it is not absorbed into the body (if soluble barium salts were used, they would be toxic). CaO (quicklite) is used in cement production.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The test for sulfate ions uses BaCl<sub>2</sub>(aq) with dilute HCl first (to remove carbonates/sulfites that would give false positives). A white precipitate of BaSO<sub>4</sub> confirms sulfate is present. Do NOT use H<sub>2</sub>SO<sub>4</sub> as the acid (it adds sulfate ions). The precipitate is insoluble in excess acid, confirming it is BaSO<sub>4</sub> and not BaCO<sub>3</sub>.
+</div>
+
+<h2>3.4 Group 7 &mdash; Halogens</h2>
+
+<p>The halogens (F, Cl, Br, I) are non-metals that exist as diatomic molecules (X<sub>2</sub>). They have 7 outer electrons and gain one electron to form X<sup>-</sup> halide ions, or share one electron in covalent bonds.</p>
 
 <h3>Trends Down Group 7</h3>
 
 <table>
   <tr><th>Property</th><th>Trend</th><th>Explanation</th></tr>
   <tr><td>Atomic radius</td><td>Increases</td><td>More electron shells</td></tr>
-  <tr><td>Electronegativity</td><td>Decreases</td><td>Greater atomic radius and shielding</td></tr>
-  <tr><td>Boiling point</td><td>Increases (F<sub>2</sub> and Cl<sub>2</sub> gases, Br<sub>2</sub> liquid, I<sub>2</sub> solid)</td><td>Stronger London forces with more electrons</td></tr>
-  <tr><td>Reactivity (as oxidising agents)</td><td>Decreases</td><td>Harder to gain an electron as atom is larger</td></tr>
-  <tr><td>Colour</td><td>Darkens: pale yellow &rarr; green &rarr; red-brown &rarr; purple/black</td><td>—</td></tr>
+  <tr><td>Electronegativity</td><td>Decreases</td><td>Greater atomic radius and more shielding</td></tr>
+  <tr><td>Boiling point</td><td>Increases (F<sub>2</sub> gas, Cl<sub>2</sub> gas, Br<sub>2</sub> liquid, I<sub>2</sub> solid)</td><td>More electrons per molecule &rarr; stronger London dispersion forces</td></tr>
+  <tr><td>Colour</td><td>Darkens: pale yellow &rarr; yellow-green &rarr; red-brown &rarr; grey-black (purple vapour)</td><td>&mdash;</td></tr>
+  <tr><td>Reactivity (as oxidising agents)</td><td>Decreases</td><td>The incoming electron is further from the nucleus and more shielded, making it harder to attract and gain an electron</td></tr>
+  <tr><td>Reducing power of halide ions (X<sup>-</sup>)</td><td>Increases (I<sup>-</sup> is the strongest reducer)</td><td>Larger ions lose electrons more easily (weaker hold on outer electrons)</td></tr>
 </table>
 
-<h3>Halogen Displacement Reactions</h3>
-
-<p>A more reactive halogen can displace a less reactive halide from solution. This is because the more reactive halogen is a stronger oxidising agent.</p>
-
-<table>
-  <tr><th></th><th>KCl(aq)</th><th>KBr(aq)</th><th>KI(aq)</th></tr>
-  <tr><td>Cl<sub>2</sub>(aq)</td><td>No reaction</td><td>Orange/brown (Br<sub>2</sub> formed)</td><td>Brown (I<sub>2</sub> formed)</td></tr>
-  <tr><td>Br<sub>2</sub>(aq)</td><td>No reaction</td><td>No reaction</td><td>Brown (I<sub>2</sub> formed)</td></tr>
-  <tr><td>I<sub>2</sub>(aq)</td><td>No reaction</td><td>No reaction</td><td>No reaction</td></tr>
-</table>
-
-<h3>Reactions of Halogens with NaOH</h3>
-
-<p><strong>Cold dilute NaOH (disproportionation):</strong></p>
-
-<div class="equation">
-  Cl<sub>2</sub>(aq) + 2NaOH(aq) &rarr; NaCl(aq) + NaClO(aq) + H<sub>2</sub>O(l)
-</div>
-
-<p>Chlorine is simultaneously oxidised (0 to +1 in NaClO) and reduced (0 to &minus;1 in NaCl). This is disproportionation.</p>
-
-<div class="definition">
-  <strong>Disproportionation:</strong> A reaction in which the same element is simultaneously oxidised and reduced.
-</div>
-
-<p><strong>Hot concentrated NaOH:</strong></p>
-
-<div class="equation">
-  3Cl<sub>2</sub>(aq) + 6NaOH(aq) &rarr; 5NaCl(aq) + NaClO<sub>3</sub>(aq) + 3H<sub>2</sub>O(l)
-</div>
-
-<h3>Tests for Halide Ions</h3>
-
-<p>Add dilute HNO<sub>3</sub> (to remove interfering ions) then AgNO<sub>3</sub>(aq):</p>
-
-<table>
-  <tr><th>Halide Ion</th><th>Precipitate</th><th>Colour</th><th>Solubility in NH<sub>3</sub></th></tr>
-  <tr><td>Cl<sup>&minus;</sup></td><td>AgCl</td><td>White</td><td>Soluble in dilute NH<sub>3</sub></td></tr>
-  <tr><td>Br<sup>&minus;</sup></td><td>AgBr</td><td>Cream</td><td>Soluble in concentrated NH<sub>3</sub></td></tr>
-  <tr><td>I<sup>&minus;</sup></td><td>AgI</td><td>Yellow</td><td>Insoluble in NH<sub>3</sub></td></tr>
-</table>
-
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> Always add dilute nitric acid before silver nitrate in the halide test. If you use HCl, the Cl<sup>&minus;</sup> from HCl will give a false positive. Never use HCl or H<sub>2</sub>SO<sub>4</sub> for this test.
-</div>
-
-<!-- SVG: Group 7 Halogen Properties Trend -->
+<!-- SVG: Group 7 Halogen Trends -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 310" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Group 7 Halogen Trends</text>
-
-  <!-- Element boxes with colours -->
   <rect x="25" y="45" width="80" height="50" rx="6" fill="#fcfce0" stroke="#D97706" stroke-width="2"/>
-  <text x="65" y="66" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#D97706">F2</text>
+  <text x="65" y="66" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#D97706">F<sub>2</sub></text>
   <text x="65" y="82" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Pale yellow gas</text>
-
   <rect x="25" y="102" width="80" height="50" rx="6" fill="#dcfce7" stroke="#16A34A" stroke-width="2"/>
-  <text x="65" y="123" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#16A34A">Cl2</text>
+  <text x="65" y="123" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#16A34A">Cl<sub>2</sub></text>
   <text x="65" y="139" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Green gas</text>
-
   <rect x="25" y="159" width="80" height="50" rx="6" fill="#fee2e2" stroke="#DC2626" stroke-width="2"/>
-  <text x="65" y="180" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#DC2626">Br2</text>
+  <text x="65" y="180" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#DC2626">Br<sub>2</sub></text>
   <text x="65" y="196" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Red-brown liquid</text>
-
   <rect x="25" y="216" width="80" height="50" rx="6" fill="#e8e0f0" stroke="#6b21a8" stroke-width="2"/>
-  <text x="65" y="237" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#6b21a8">I2</text>
-  <text x="65" y="253" text-anchor="middle" font-family="system-ui" font-size="9" fill="#6b21a8">Grey/black solid</text>
-
-  <!-- Boiling point bars (increasing down) -->
+  <text x="65" y="237" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#6b21a8">I<sub>2</sub></text>
+  <text x="65" y="253" text-anchor="middle" font-family="system-ui" font-size="9" fill="#6b21a8">Grey-black solid</text>
+  <!-- BP bars -->
   <text x="190" y="40" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Boiling Point</text>
   <rect x="125" y="55" width="30" height="28" rx="3" fill="#1a73e8" opacity="0.25"/>
-  <text x="165" y="74" font-family="system-ui" font-size="8" fill="#1a73e8">-188C</text>
+  <text x="165" y="74" font-family="system-ui" font-size="8" fill="#1a73e8">-188&deg;C</text>
   <rect x="125" y="112" width="55" height="28" rx="3" fill="#1a73e8" opacity="0.4"/>
-  <text x="190" y="131" font-family="system-ui" font-size="8" fill="#1a73e8">-34C</text>
+  <text x="190" y="131" font-family="system-ui" font-size="8" fill="#1a73e8">-34&deg;C</text>
   <rect x="125" y="169" width="90" height="28" rx="3" fill="#1a73e8" opacity="0.6"/>
-  <text x="225" y="188" font-family="system-ui" font-size="8" fill="#1a73e8">59C</text>
+  <text x="225" y="188" font-family="system-ui" font-size="8" fill="#1a73e8">59&deg;C</text>
   <rect x="125" y="226" width="130" height="28" rx="3" fill="#1a73e8" opacity="0.85"/>
-  <text x="265" y="245" font-family="system-ui" font-size="8" fill="#1a73e8">184C</text>
-
-  <!-- Reactivity bars (DECREASING down) - as oxidising agents -->
-  <text x="370" y="40" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Reactivity (as oxidising agent)</text>
+  <text x="265" y="245" font-family="system-ui" font-size="8" fill="#1a73e8">184&deg;C</text>
+  <!-- Reactivity bars (decreasing) -->
+  <text x="370" y="40" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Oxidising power</text>
   <rect x="290" y="55" width="180" height="28" rx="3" fill="#DC2626" opacity="0.85"/>
   <text x="380" y="74" text-anchor="middle" font-family="system-ui" font-size="9" fill="#ffffff" font-weight="bold">Strongest oxidiser</text>
   <rect x="290" y="112" width="140" height="28" rx="3" fill="#DC2626" opacity="0.6"/>
   <rect x="290" y="169" width="100" height="28" rx="3" fill="#DC2626" opacity="0.4"/>
   <rect x="290" y="226" width="60" height="28" rx="3" fill="#DC2626" opacity="0.25"/>
   <text x="320" y="245" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Weakest</text>
-
-  <!-- Summary box -->
   <rect x="30" y="278" width="460" height="26" rx="5" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
-  <text x="260" y="295" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Down Group 7: BP increases (stronger London forces) | Reactivity decreases (harder to gain e-) | Colour darkens</text>
+  <text x="260" y="295" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Down Group 7: BP increases (stronger London forces) | Oxidising power decreases | Colour darkens</text>
 </svg>
+</div>
+
+<h3>Halogen Displacement Reactions</h3>
+
+<p>A more reactive (higher) halogen can oxidise (displace) a less reactive halide ion from solution. This is because the more reactive halogen is a stronger oxidising agent &mdash; it gains electrons more readily.</p>
+
+<table>
+  <tr><th>Halogen added</th><th>KCl(aq)</th><th>KBr(aq)</th><th>KI(aq)</th></tr>
+  <tr><td>Cl<sub>2</sub>(aq)</td><td>No reaction</td><td>Orange/brown solution (Br<sub>2</sub> formed)</td><td>Brown solution (I<sub>2</sub> formed)</td></tr>
+  <tr><td>Br<sub>2</sub>(aq)</td><td>No reaction</td><td>No reaction</td><td>Brown/yellow solution (I<sub>2</sub> formed)</td></tr>
+  <tr><td>I<sub>2</sub>(aq)</td><td>No reaction</td><td>No reaction</td><td>No reaction</td></tr>
+</table>
+
+<p><strong>Example equation:</strong> Cl<sub>2</sub>(aq) + 2KBr(aq) &rarr; 2KCl(aq) + Br<sub>2</sub>(aq). Ionic equation: Cl<sub>2</sub>(aq) + 2Br<sup>-</sup>(aq) &rarr; 2Cl<sup>-</sup>(aq) + Br<sub>2</sub>(aq). Chlorine oxidises bromide ions; chlorine is reduced from 0 to -1, bromine is oxidised from -1 to 0.</p>
+
+<h3>Reactions of Halide Ions with Concentrated H<sub>2</sub>SO<sub>4</sub></h3>
+
+<p>This reaction reveals the increasing reducing power of halide ions down the group:</p>
+<ul>
+  <li><strong>NaCl + H<sub>2</sub>SO<sub>4</sub>:</strong> Steamy white fumes of HCl. Cl<sup>-</sup> is not a strong enough reducing agent to reduce the sulfuric acid. This is a straightforward acid-base reaction.</li>
+  <li><strong>NaBr + H<sub>2</sub>SO<sub>4</sub>:</strong> Initially produces HBr (steamy fumes), but Br<sup>-</sup> can reduce H<sub>2</sub>SO<sub>4</sub> to SO<sub>2</sub> (choking gas). Orange/brown vapour of Br<sub>2</sub> is also seen.</li>
+  <li><strong>NaI + H<sub>2</sub>SO<sub>4</sub>:</strong> Produces HI initially, but I<sup>-</sup> is such a strong reducing agent that it reduces H<sub>2</sub>SO<sub>4</sub> further to SO<sub>2</sub>, then to S (yellow solid), and even to H<sub>2</sub>S (rotten egg smell). Purple vapour of I<sub>2</sub> is also produced.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The reactions of halide ions with conc. H<sub>2</sub>SO<sub>4</sub> are commonly examined. Know all the observations for each halide: Cl<sup>-</sup> gives only white fumes (HCl); Br<sup>-</sup> gives white fumes + orange vapour + choking SO<sub>2</sub>; I<sup>-</sup> gives all of these plus yellow solid (S), black solid/purple vapour (I<sub>2</sub>), and rotten egg gas (H<sub>2</sub>S). State the oxidation state changes.
+</div>
+
+<h3>Disproportionation of Chlorine</h3>
+
+<p><strong>Cold dilute NaOH:</strong></p>
+<div class="equation">Cl<sub>2</sub>(aq) + 2NaOH(aq) &rarr; NaCl(aq) + NaClO(aq) + H<sub>2</sub>O(l)</div>
+<p>Chlorine is simultaneously oxidised (0 &rarr; +1 in NaClO) and reduced (0 &rarr; -1 in NaCl). This is <strong>disproportionation</strong>.</p>
+
+<p><strong>Hot concentrated NaOH:</strong></p>
+<div class="equation">3Cl<sub>2</sub>(aq) + 6NaOH(aq) &rarr; 5NaCl(aq) + NaClO<sub>3</sub>(aq) + 3H<sub>2</sub>O(l)</div>
+<p>Chlorine is reduced to -1 (in NaCl) and oxidised to +5 (in NaClO<sub>3</sub>).</p>
+
+<div class="definition">
+  <strong>Disproportionation:</strong> A reaction in which the same element in one species is simultaneously oxidised and reduced, forming two products with different oxidation states of that element.
+</div>
+
+<div class="real-world">
+  <strong>Real-World Application:</strong> The reaction of chlorine with cold dilute NaOH produces sodium hypochlorite (NaClO), which is the active ingredient in household bleach. Chlorine is also used to treat drinking water (kills bacteria by oxidising cell membranes) and swimming pool water. The balance between the benefits (disease prevention) and risks (formation of chlorinated organic compounds) of water chlorination is a frequently examined topic.
+</div>
+
+<h3>Tests for Halide Ions</h3>
+
+<p>Add dilute HNO<sub>3</sub> (to remove interfering carbonate and sulfite ions), then AgNO<sub>3</sub>(aq):</p>
+
+<table>
+  <tr><th>Halide Ion</th><th>Precipitate</th><th>Colour</th><th>Solubility in NH<sub>3</sub></th></tr>
+  <tr><td>Cl<sup>-</sup></td><td>AgCl</td><td>White</td><td>Soluble in dilute NH<sub>3</sub></td></tr>
+  <tr><td>Br<sup>-</sup></td><td>AgBr</td><td>Cream</td><td>Soluble in concentrated NH<sub>3</sub> only</td></tr>
+  <tr><td>I<sup>-</sup></td><td>AgI</td><td>Yellow</td><td>Insoluble in NH<sub>3</sub> (even concentrated)</td></tr>
+</table>
+
+<p>The ammonia test distinguishes them further: AgCl dissolves easily in dilute ammonia because the Ag<sup>+</sup> forms a soluble diamminesilver(I) complex: AgCl + 2NH<sub>3</sub> &rarr; [Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup> + Cl<sup>-</sup>. AgBr requires concentrated NH<sub>3</sub>. AgI is too insoluble even for concentrated NH<sub>3</sub> to dissolve it.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always add dilute nitric acid before silver nitrate. If you use HCl, the Cl<sup>-</sup> from HCl gives a false positive. Never use HCl or H<sub>2</sub>SO<sub>4</sub> for this test. If asked how to distinguish between the three precipitates, use the ammonia solubility test.
 </div>
 
 <h2>3.5 Transition Metals</h2>
 
 <div class="definition">
-  <strong>Transition metal:</strong> A d-block element that forms at least one stable ion with an incomplete d sub-shell. Scandium (Sc<sup>3+</sup>: [Ar] 3d<sup>0</sup>) and zinc (Zn<sup>2+</sup>: [Ar] 3d<sup>10</sup>) are d-block but not transition metals.
+  <strong>Transition metal:</strong> A d-block element that forms at least one stable ion with an incomplete (partially filled) d sub-shell. This excludes scandium (Sc<sup>3+</sup>: [Ar] 3d<sup>0</sup>) and zinc (Zn<sup>2+</sup>: [Ar] 3d<sup>10</sup>) because their ions have empty or full d sub-shells.
 </div>
 
-<h3>Electron Configurations of Transition Metals</h3>
+<h3>Electron Configurations</h3>
+<p>Transition metals fill the 3d sub-shell after the 4s. When forming ions, electrons are removed from 4s <strong>before</strong> 3d. Anomalous configurations: Cr = [Ar] 3d<sup>5</sup> 4s<sup>1</sup> (half-filled d is stable) and Cu = [Ar] 3d<sup>10</sup> 4s<sup>1</sup> (full d is stable).</p>
 
-<p>Transition metals fill the 3d sub-shell after 4s. When forming ions, electrons are lost from 4s before 3d. For example: Fe = [Ar] 3d<sup>6</sup> 4s<sup>2</sup>, Fe<sup>2+</sup> = [Ar] 3d<sup>6</sup>, Fe<sup>3+</sup> = [Ar] 3d<sup>5</sup>.</p>
+<h3>Characteristic Properties of Transition Metals</h3>
 
-<h3>Properties of Transition Metals</h3>
-
-<ul>
-  <li><strong>Variable oxidation states:</strong> Due to the small energy gap between 3d and 4s sub-shells. Common examples: Fe<sup>2+</sup>/Fe<sup>3+</sup>, Cu<sup>+</sup>/Cu<sup>2+</sup>, Mn ranges from +2 to +7.</li>
-  <li><strong>Coloured compounds:</strong> Arise from d-d transitions. When ligands surround the metal ion, d orbitals split into two energy levels. Electrons absorb visible light to transition between levels. The colour seen is the complementary colour of the light absorbed.</li>
-  <li><strong>Catalytic activity:</strong> Transition metals can act as catalysts because they can change oxidation state, providing an alternative reaction pathway. Examples: Fe in the Haber process, V<sub>2</sub>O<sub>5</sub> in the Contact process, Mn in decomposition of H<sub>2</sub>O<sub>2</sub>.</li>
-  <li><strong>Complex ion formation:</strong> Transition metal ions form complex ions with ligands.</li>
-</ul>
-
-<h3>Complex Ions and Ligands</h3>
-
-<div class="definition">
-  <strong>Complex ion:</strong> A central metal ion surrounded by ligands, bonded by dative (coordinate) bonds from the ligand lone pairs to the metal ion.<br>
-  <strong>Ligand:</strong> A species that donates a lone pair of electrons to a central metal ion to form a dative bond.<br>
-  <strong>Coordination number:</strong> The total number of dative bonds from ligands to the central metal ion.
-</div>
-
+<h4>1. Variable Oxidation States</h4>
+<p>The 3d and 4s sub-shells are close in energy, so different numbers of electrons can be removed without a dramatic increase in ionisation energy. This allows multiple stable oxidation states.</p>
 <table>
-  <tr><th>Ligand</th><th>Type</th><th>Examples of Complexes</th></tr>
-  <tr><td>H<sub>2</sub>O</td><td>Monodentate</td><td>[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> (blue), [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> (yellow)</td></tr>
-  <tr><td>NH<sub>3</sub></td><td>Monodentate</td><td>[Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup> (deep blue)</td></tr>
-  <tr><td>Cl<sup>&minus;</sup></td><td>Monodentate</td><td>[CuCl<sub>4</sub>]<sup>2&minus;</sup> (yellow-green)</td></tr>
-  <tr><td>CN<sup>&minus;</sup></td><td>Monodentate</td><td>[Fe(CN)<sub>6</sub>]<sup>3&minus;</sup></td></tr>
-  <tr><td>NH<sub>2</sub>CH<sub>2</sub>CH<sub>2</sub>NH<sub>2</sub> (en)</td><td>Bidentate</td><td>[Ni(en)<sub>3</sub>]<sup>2+</sup></td></tr>
-  <tr><td>EDTA<sup>4&minus;</sup></td><td>Hexadentate</td><td>[Fe(EDTA)]<sup>&minus;</sup></td></tr>
+  <tr><th>Metal</th><th>Common oxidation states</th><th>Key species</th></tr>
+  <tr><td>V</td><td>+2, +3, +4, +5</td><td>V<sup>2+</sup> (violet), V<sup>3+</sup> (green), VO<sup>2+</sup> (blue), VO<sub>2</sub><sup>+</sup> (yellow)</td></tr>
+  <tr><td>Cr</td><td>+2, +3, +6</td><td>Cr<sup>3+</sup> (green), Cr<sub>2</sub>O<sub>7</sub><sup>2-</sup> (orange), CrO<sub>4</sub><sup>2-</sup> (yellow)</td></tr>
+  <tr><td>Mn</td><td>+2, +4, +7</td><td>Mn<sup>2+</sup> (pale pink), MnO<sub>2</sub> (black solid), MnO<sub>4</sub><sup>-</sup> (purple)</td></tr>
+  <tr><td>Fe</td><td>+2, +3</td><td>Fe<sup>2+</sup> (pale green), Fe<sup>3+</sup> (yellow/brown)</td></tr>
+  <tr><td>Cu</td><td>+1, +2</td><td>Cu<sup>+</sup> (white/colourless), Cu<sup>2+</sup> (blue)</td></tr>
 </table>
 
-<h3>Ligand Substitution</h3>
+<h4>2. Coloured Ions (d-d Transitions)</h4>
+<p>When ligands surround a transition metal ion, the five d orbitals split into two energy levels (crystal field splitting). Electrons absorb visible light of energy equal to the splitting energy (&Delta;) to transition from the lower to the upper level. The colour observed is the complementary colour of the light absorbed.</p>
 
-<p>Ligands can be exchanged in complex ions. Common substitution reactions with copper(II):</p>
+<p><strong>Factors affecting colour (and &Delta;):</strong> the identity of the metal ion, its oxidation state, the type of ligands, and the coordination number/geometry.</p>
 
-<div class="equation">
-  [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>&minus;</sup> &#8652; [CuCl<sub>4</sub>]<sup>2&minus;</sup> + 6H<sub>2</sub>O
-</div>
+<p><strong>Why Sc<sup>3+</sup> and Zn<sup>2+</sup> are colourless:</strong> Sc<sup>3+</sup> has 3d<sup>0</sup> (no d electrons to promote), and Zn<sup>2+</sup> has 3d<sup>10</sup> (no empty d orbitals to promote into).</p>
 
-<p>Blue solution &rarr; yellow-green solution. The coordination number changes from 6 to 4 because Cl<sup>&minus;</sup> is a larger ligand than H<sub>2</sub>O.</p>
-
-<div class="equation">
-  [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4NH<sub>3</sub> &rarr; [Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup> + 4H<sub>2</sub>O
-</div>
-
-<p>Pale blue &rarr; deep blue. Only 4 of the 6 water ligands are replaced (partial substitution).</p>
-
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> The chelate effect: polydentate ligands form more stable complexes than monodentate ligands. Replacing monodentate ligands with polydentate ones increases entropy (more free particles in solution), making &Delta;G more negative.
-</div>
-
-<!-- SVG: Transition Metal Complex Shapes -->
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 250" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Transition Metal Complex Shapes</text>
-
-  <!-- Octahedral -->
-  <text x="100" y="45" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Octahedral</text>
-  <text x="100" y="57" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Coord. no. = 6</text>
-  <circle cx="100" cy="130" r="14" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
-  <text x="100" y="134" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">M</text>
-  <!-- 6 ligands -->
-  <line x1="100" y1="116" x2="100" y2="78" stroke="#1a73e8" stroke-width="1.5"/>
-  <circle cx="100" cy="74" r="8" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/><text x="100" y="77" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">L</text>
-  <line x1="100" y1="144" x2="100" y2="182" stroke="#1a73e8" stroke-width="1.5"/>
-  <circle cx="100" cy="186" r="8" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/><text x="100" y="189" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">L</text>
-  <line x1="86" y1="130" x2="48" y2="130" stroke="#1a73e8" stroke-width="1.5"/>
-  <circle cx="44" cy="130" r="8" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/><text x="44" y="133" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">L</text>
-  <line x1="114" y1="130" x2="152" y2="130" stroke="#1a73e8" stroke-width="1.5"/>
-  <circle cx="156" cy="130" r="8" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/><text x="156" y="133" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">L</text>
-  <line x1="90" y1="120" x2="65" y2="95" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="3,2"/>
-  <circle cx="61" cy="91" r="8" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/><text x="61" y="94" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">L</text>
-  <line x1="110" y1="140" x2="135" y2="165" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="3,2"/>
-  <circle cx="139" cy="169" r="8" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/><text x="139" y="172" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">L</text>
-  <text x="100" y="210" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">90 degrees</text>
-  <text x="100" y="222" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">[Cu(H2O)6]2+</text>
-
-  <!-- Tetrahedral -->
-  <text x="280" y="45" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Tetrahedral</text>
-  <text x="280" y="57" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Coord. no. = 4</text>
-  <circle cx="280" cy="130" r="14" fill="#fee2e2" stroke="#DC2626" stroke-width="2"/>
-  <text x="280" y="134" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">M</text>
-  <!-- 4 ligands in tetrahedral arrangement -->
-  <line x1="270" y1="118" x2="240" y2="80" stroke="#DC2626" stroke-width="1.5"/>
-  <circle cx="236" cy="76" r="8" fill="#fee2e2" stroke="#DC2626" stroke-width="1"/><text x="236" y="79" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">L</text>
-  <line x1="290" y1="118" x2="320" y2="80" stroke="#DC2626" stroke-width="1.5"/>
-  <circle cx="324" cy="76" r="8" fill="#fee2e2" stroke="#DC2626" stroke-width="1"/><text x="324" y="79" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">L</text>
-  <line x1="270" y1="142" x2="240" y2="178" stroke="#DC2626" stroke-width="1.5"/>
-  <circle cx="236" cy="182" r="8" fill="#fee2e2" stroke="#DC2626" stroke-width="1"/><text x="236" y="185" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">L</text>
-  <line x1="290" y1="142" x2="320" y2="178" stroke="#DC2626" stroke-width="1.5"/>
-  <circle cx="324" cy="182" r="8" fill="#fee2e2" stroke="#DC2626" stroke-width="1"/><text x="324" y="185" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">L</text>
-  <text x="280" y="210" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">109.5 degrees</text>
-  <text x="280" y="222" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">[CuCl4]2-</text>
-
-  <!-- Square Planar -->
-  <text x="440" y="45" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Square Planar</text>
-  <text x="440" y="57" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Coord. no. = 4</text>
-  <circle cx="440" cy="130" r="14" fill="#dcfce7" stroke="#16A34A" stroke-width="2"/>
-  <text x="440" y="134" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">M</text>
-  <!-- 4 ligands in square planar -->
-  <line x1="440" y1="116" x2="440" y2="80" stroke="#16A34A" stroke-width="1.5"/>
-  <circle cx="440" cy="76" r="8" fill="#dcfce7" stroke="#16A34A" stroke-width="1"/><text x="440" y="79" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">L</text>
-  <line x1="440" y1="144" x2="440" y2="180" stroke="#16A34A" stroke-width="1.5"/>
-  <circle cx="440" cy="184" r="8" fill="#dcfce7" stroke="#16A34A" stroke-width="1"/><text x="440" y="187" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">L</text>
-  <line x1="426" y1="130" x2="390" y2="130" stroke="#16A34A" stroke-width="1.5"/>
-  <circle cx="386" cy="130" r="8" fill="#dcfce7" stroke="#16A34A" stroke-width="1"/><text x="386" y="133" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">L</text>
-  <line x1="454" y1="130" x2="490" y2="130" stroke="#16A34A" stroke-width="1.5"/>
-  <circle cx="494" cy="130" r="8" fill="#dcfce7" stroke="#16A34A" stroke-width="1"/><text x="494" y="133" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">L</text>
-  <text x="440" y="210" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">90 degrees</text>
-  <text x="440" y="222" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">[Pt(NH3)2Cl2]</text>
-
-  <!-- Note -->
-  <text x="260" y="242" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Dashed lines represent bonds going behind the plane; solid lines are in the plane or coming forward</text>
-</svg>
-</div>
-
-<!-- SVG: d-Orbital Splitting Diagram (Crystal Field for Octahedral) -->
+<!-- SVG: Crystal Field Splitting -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Crystal Field Splitting (Octahedral Complex)</text>
-
-  <!-- Energy axis -->
   <line x1="50" y1="50" x2="50" y2="240" stroke="#1a1a2e" stroke-width="1.5"/>
   <polygon points="50,48 46,58 54,58" fill="#1a1a2e"/>
   <text x="25" y="145" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,25,145)">Energy</text>
-
-  <!-- Free ion d orbitals (degenerate, left) -->
+  <!-- Free ion -->
   <text x="130" y="55" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">Free ion</text>
-  <line x1="85" y1="150" x2="120" y2="150" stroke="#1a73e8" stroke-width="2.5"/>
-  <line x1="100" y1="150" x2="135" y2="150" stroke="#1a73e8" stroke-width="2.5"/>
-  <line x1="115" y1="150" x2="150" y2="150" stroke="#1a73e8" stroke-width="2.5"/>
-  <line x1="130" y1="150" x2="165" y2="150" stroke="#1a73e8" stroke-width="2.5"/>
-  <line x1="145" y1="150" x2="180" y2="150" stroke="#1a73e8" stroke-width="2.5"/>
+  <line x1="85" y1="150" x2="175" y2="150" stroke="#1a73e8" stroke-width="2.5"/>
   <text x="130" y="170" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">5 degenerate d orbitals</text>
-
-  <!-- Arrow showing splitting -->
-  <path d="M190,150 Q230,150 260,100" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,2"/>
-  <path d="M190,150 Q230,150 260,190" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,2"/>
-
-  <!-- Octahedral complex (right) - split levels -->
+  <!-- Arrow -->
+  <path d="M190,145 Q230,145 260,100" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <path d="M190,155 Q230,155 260,190" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="225" y="130" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Ligands</text>
+  <text x="225" y="142" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">cause splitting</text>
+  <!-- Octahedral -->
   <text x="380" y="55" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">In octahedral field</text>
-
-  <!-- Upper level: eg (dx2-y2, dz2) - higher energy -->
+  <!-- eg -->
   <line x1="330" y1="100" x2="380" y2="100" stroke="#DC2626" stroke-width="2.5"/>
   <line x1="390" y1="100" x2="440" y2="100" stroke="#DC2626" stroke-width="2.5"/>
-  <text x="385" y="85" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">eg</text>
-  <text x="385" y="75" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">(dx2-y2, dz2)</text>
-
-  <!-- Lower level: t2g (dxy, dxz, dyz) - lower energy -->
+  <text x="385" y="85" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">e<tspan font-size="7" dy="2">g</tspan></text>
+  <text x="385" y="75" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">(d<tspan font-size="6">x2-y2</tspan>, d<tspan font-size="6">z2</tspan>)</text>
+  <!-- t2g -->
   <line x1="310" y1="190" x2="355" y2="190" stroke="#1a73e8" stroke-width="2.5"/>
   <line x1="365" y1="190" x2="410" y2="190" stroke="#1a73e8" stroke-width="2.5"/>
   <line x1="420" y1="190" x2="465" y2="190" stroke="#1a73e8" stroke-width="2.5"/>
-  <text x="385" y="210" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">t2g</text>
-  <text x="385" y="222" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">(dxy, dxz, dyz)</text>
-
-  <!-- Delta oct arrow -->
+  <text x="385" y="210" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">t<tspan font-size="7" dy="2">2g</tspan></text>
+  <text x="385" y="222" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">(d<tspan font-size="6">xy</tspan>, d<tspan font-size="6">xz</tspan>, d<tspan font-size="6">yz</tspan>)</text>
+  <!-- Delta -->
   <line x1="470" y1="100" x2="470" y2="190" stroke="#16A34A" stroke-width="2"/>
   <polygon points="470,100 466,110 474,110" fill="#16A34A"/>
   <polygon points="470,190 466,180 474,180" fill="#16A34A"/>
-  <text x="498" y="148" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Doct</text>
-
-  <!-- Photon absorption arrow -->
-  <path d="M340,185 Q310,145 345,108" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#bhArrow)"/>
-  <text x="300" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">visible</text>
-  <text x="300" y="157" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">light</text>
-  <text x="300" y="169" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">absorbed</text>
-
-  <!-- Summary -->
-  <text x="260" y="250" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Electrons absorb visible light to jump from t2g to eg. The colour seen is the complementary colour.</text>
-  <text x="260" y="264" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Doct depends on: ligand identity, metal ion charge, and metal ion identity</text>
+  <text x="498" y="148" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">&Delta;<tspan font-size="8" dy="2">oct</tspan></text>
+  <!-- Photon -->
+  <path d="M340,185 Q310,145 345,108" fill="none" stroke="#D97706" stroke-width="2"/>
+  <polygon points="345,108 340,116 348,114" fill="#D97706"/>
+  <text x="300" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">visible light</text>
+  <text x="300" y="157" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">absorbed</text>
+  <text x="260" y="250" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">e<sup>-</sup> absorbs visible light (E = &Delta;<tspan font-size="7">oct</tspan>) and is promoted from t<tspan font-size="7">2g</tspan> to e<tspan font-size="7">g</tspan></text>
+  <text x="260" y="265" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Observed colour = complementary colour of light absorbed</text>
 </svg>
 </div>
 
-<!-- SVG: Colour and Complementary Colour Wheel -->
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 260" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Complementary Colour Wheel</text>
-  <text x="260" y="38" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Colour absorbed vs colour observed in transition metal complexes</text>
+<h4>3. Catalytic Activity</h4>
+<p>Transition metals are effective catalysts because their variable oxidation states allow them to accept and donate electrons, providing alternative reaction pathways with lower activation energy.</p>
+<table>
+  <tr><th>Catalyst</th><th>Process</th><th>Type</th></tr>
+  <tr><td>Fe</td><td>Haber process: N<sub>2</sub> + 3H<sub>2</sub> &#8652; 2NH<sub>3</sub></td><td>Heterogeneous</td></tr>
+  <tr><td>V<sub>2</sub>O<sub>5</sub></td><td>Contact process: 2SO<sub>2</sub> + O<sub>2</sub> &#8652; 2SO<sub>3</sub></td><td>Heterogeneous</td></tr>
+  <tr><td>MnO<sub>2</sub></td><td>Decomposition of H<sub>2</sub>O<sub>2</sub></td><td>Heterogeneous</td></tr>
+  <tr><td>Ni</td><td>Hydrogenation of C=C bonds</td><td>Heterogeneous</td></tr>
+  <tr><td>Fe<sup>3+</sup>/Fe<sup>2+</sup></td><td>S<sub>2</sub>O<sub>8</sub><sup>2-</sup> + 2I<sup>-</sup></td><td>Homogeneous</td></tr>
+</table>
 
-  <!-- Colour wheel segments -->
-  <g transform="translate(190,145)">
-    <!-- Red -->
-    <path d="M0,0 L0,-80 A80,80 0 0,1 69.3,-40 Z" fill="#ef4444" opacity="0.8"/>
-    <text x="25" y="-55" font-family="system-ui" font-size="9" fill="#ffffff" font-weight="bold">Red</text>
-    <!-- Orange -->
-    <path d="M0,0 L69.3,-40 A80,80 0 0,1 69.3,40 Z" fill="#f97316" opacity="0.8"/>
-    <text x="48" y="5" font-family="system-ui" font-size="9" fill="#ffffff" font-weight="bold">Orange</text>
-    <!-- Yellow -->
-    <path d="M0,0 L69.3,40 A80,80 0 0,1 0,80 Z" fill="#eab308" opacity="0.8"/>
-    <text x="25" y="55" font-family="system-ui" font-size="9" fill="#ffffff" font-weight="bold">Yellow</text>
-    <!-- Green -->
-    <path d="M0,0 L0,80 A80,80 0 0,1 -69.3,40 Z" fill="#22c55e" opacity="0.8"/>
-    <text x="-30" y="55" font-family="system-ui" font-size="9" fill="#ffffff" font-weight="bold">Green</text>
-    <!-- Blue -->
-    <path d="M0,0 L-69.3,40 A80,80 0 0,1 -69.3,-40 Z" fill="#3b82f6" opacity="0.8"/>
-    <text x="-52" y="5" font-family="system-ui" font-size="9" fill="#ffffff" font-weight="bold">Blue</text>
-    <!-- Violet -->
-    <path d="M0,0 L-69.3,-40 A80,80 0 0,1 0,-80 Z" fill="#8b5cf6" opacity="0.8"/>
-    <text x="-30" y="-55" font-family="system-ui" font-size="9" fill="#ffffff" font-weight="bold">Violet</text>
-  </g>
+<h4>4. Complex Ion Formation</h4>
 
-  <!-- Complementary pairs with arrows -->
-  <text x="400" y="70" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">Complementary Pairs:</text>
-  <!-- Red <-> Green -->
-  <rect x="340" y="80" width="50" height="18" rx="3" fill="#ef4444" opacity="0.8"/>
-  <text x="365" y="93" text-anchor="middle" font-family="system-ui" font-size="9" fill="#ffffff">Red</text>
-  <text x="402" y="93" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">&#8596;</text>
-  <rect x="415" y="80" width="50" height="18" rx="3" fill="#22c55e" opacity="0.8"/>
-  <text x="440" y="93" text-anchor="middle" font-family="system-ui" font-size="9" fill="#ffffff">Green</text>
-  <!-- Orange <-> Blue -->
-  <rect x="340" y="105" width="50" height="18" rx="3" fill="#f97316" opacity="0.8"/>
-  <text x="365" y="118" text-anchor="middle" font-family="system-ui" font-size="9" fill="#ffffff">Orange</text>
-  <text x="402" y="118" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">&#8596;</text>
-  <rect x="415" y="105" width="50" height="18" rx="3" fill="#3b82f6" opacity="0.8"/>
-  <text x="440" y="118" text-anchor="middle" font-family="system-ui" font-size="9" fill="#ffffff">Blue</text>
-  <!-- Yellow <-> Violet -->
-  <rect x="340" y="130" width="50" height="18" rx="3" fill="#eab308" opacity="0.8"/>
-  <text x="365" y="143" text-anchor="middle" font-family="system-ui" font-size="9" fill="#ffffff">Yellow</text>
-  <text x="402" y="143" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">&#8596;</text>
-  <rect x="415" y="130" width="50" height="18" rx="3" fill="#8b5cf6" opacity="0.8"/>
-  <text x="440" y="143" text-anchor="middle" font-family="system-ui" font-size="9" fill="#ffffff">Violet</text>
+<div class="definition">
+  <strong>Complex ion:</strong> A central metal ion surrounded by ligands bonded through dative (coordinate) bonds.<br>
+  <strong>Ligand:</strong> A species with a lone pair that donates it to the central metal ion.<br>
+  <strong>Coordination number:</strong> The total number of dative bonds to the central metal ion.
+</div>
 
-  <!-- Example -->
-  <rect x="320" y="165" width="190" height="68" rx="5" fill="#fff8e1" stroke="#D97706" stroke-width="1"/>
-  <text x="415" y="180" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">Example:</text>
-  <text x="415" y="194" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">[Cu(H2O)6]2+ absorbs</text>
-  <text x="415" y="207" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">red-orange light</text>
-  <text x="415" y="220" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">so appears <tspan fill="#1a73e8" font-weight="bold">blue</tspan></text>
+<table>
+  <tr><th>Ligand Type</th><th>Examples</th><th>Bonds per ligand</th></tr>
+  <tr><td>Monodentate</td><td>H<sub>2</sub>O, NH<sub>3</sub>, Cl<sup>-</sup>, CN<sup>-</sup>, OH<sup>-</sup></td><td>1</td></tr>
+  <tr><td>Bidentate</td><td>Ethane-1,2-diamine (en), ethanedioate (C<sub>2</sub>O<sub>4</sub><sup>2-</sup>)</td><td>2</td></tr>
+  <tr><td>Hexadentate</td><td>EDTA<sup>4-</sup></td><td>6</td></tr>
+</table>
 
-  <text x="260" y="250" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Opposite colours on the wheel are complementary: the colour absorbed determines the colour observed</text>
-</svg>
+<p><strong>Common shapes:</strong></p>
+<ul>
+  <li>Coordination number 6 &rarr; <strong>Octahedral</strong> (90&deg;): [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>, [Fe(CN)<sub>6</sub>]<sup>3-</sup></li>
+  <li>Coordination number 4 &rarr; <strong>Tetrahedral</strong> (109.5&deg;): [CuCl<sub>4</sub>]<sup>2-</sup>, [CoCl<sub>4</sub>]<sup>2-</sup></li>
+  <li>Coordination number 4 &rarr; <strong>Square planar</strong> (90&deg;): cisplatin [PtCl<sub>2</sub>(NH<sub>3</sub>)<sub>2</sub>]</li>
+  <li>Coordination number 2 &rarr; <strong>Linear</strong> (180&deg;): [Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup></li>
+</ul>
+
+<h3>Ligand Substitution Reactions</h3>
+
+<p><strong>Copper(II) complexes:</strong></p>
+<div class="equation">[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CuCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O</div>
+<p>Pale blue &rarr; yellow-green. Octahedral (6) &rarr; tetrahedral (4). Cl<sup>-</sup> is larger than H<sub>2</sub>O, so only 4 can fit.</p>
+
+<div class="equation">[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4NH<sub>3</sub> &rarr; [Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup> + 4H<sub>2</sub>O</div>
+<p>Pale blue &rarr; deep blue. Coordination number stays at 6 (octahedral). Only 4 of 6 waters replaced (partial substitution) because NH<sub>3</sub> and H<sub>2</sub>O are similar in size.</p>
+
+<h4>The Chelate Effect</h4>
+<p>Substitution by polydentate ligands (bidentate, hexadentate) is thermodynamically favourable because it increases entropy. Replacing 6 monodentate H<sub>2</sub>O ligands with 3 bidentate en ligands increases the number of free species in solution (from 4 species on the left to 7 on the right), giving a positive &Delta;S and hence a more negative &Delta;G.</p>
+
+<div class="real-world">
+  <strong>Real-World Application:</strong> EDTA<sup>4-</sup> (hexadentate) forms very stable complexes with metal ions due to the chelate effect. It is used to treat heavy metal poisoning (lead, mercury), in food preservation (sequestering metal ions that catalyse oxidation), and in analytical chemistry (EDTA titrations to determine water hardness). Cisplatin [PtCl<sub>2</sub>(NH<sub>3</sub>)<sub>2</sub>] is a square planar complex used as an anticancer drug &mdash; it binds to DNA and prevents cancer cell replication. Haemoglobin uses an Fe<sup>2+</sup> ion in a haem complex to transport O<sub>2</sub> in blood.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When describing ligand substitution: state (1) the colour change, (2) any change in coordination number, (3) any change in shape, (4) whether substitution is partial or complete, (5) write the full balanced equation with square brackets and charges. For chelate effect questions, explain entropy increase in terms of the number of particles.
 </div>
 
 <h2>3.6 Qualitative Analysis Tests</h2>
 
-<h3>Tests for Cations</h3>
-
+<h3>Tests for Cations Using NaOH(aq)</h3>
 <table>
-  <tr><th>Ion</th><th>Test</th><th>Observation</th></tr>
-  <tr><td>Cu<sup>2+</sup></td><td>Add NaOH(aq)</td><td>Blue precipitate (Cu(OH)<sub>2</sub>), insoluble in excess</td></tr>
-  <tr><td>Fe<sup>2+</sup></td><td>Add NaOH(aq)</td><td>Green precipitate (Fe(OH)<sub>2</sub>), turns brown on standing in air</td></tr>
-  <tr><td>Fe<sup>3+</sup></td><td>Add NaOH(aq)</td><td>Brown/rust precipitate (Fe(OH)<sub>3</sub>), insoluble in excess</td></tr>
-  <tr><td>Al<sup>3+</sup></td><td>Add NaOH(aq)</td><td>White precipitate (Al(OH)<sub>3</sub>), dissolves in excess NaOH (amphoteric)</td></tr>
-  <tr><td>Mn<sup>2+</sup></td><td>Add NaOH(aq)</td><td>Pale pink/beige precipitate (Mn(OH)<sub>2</sub>), turns brown in air</td></tr>
-  <tr><td>NH<sub>4</sub><sup>+</sup></td><td>Warm with NaOH(aq)</td><td>Ammonia gas released; turns damp red litmus blue</td></tr>
+  <tr><th>Ion</th><th>Observation with NaOH(aq)</th><th>Effect of excess NaOH</th></tr>
+  <tr><td>Cu<sup>2+</sup></td><td>Blue precipitate Cu(OH)<sub>2</sub></td><td>Insoluble</td></tr>
+  <tr><td>Fe<sup>2+</sup></td><td>Green precipitate Fe(OH)<sub>2</sub></td><td>Insoluble; turns brown in air (oxidised)</td></tr>
+  <tr><td>Fe<sup>3+</sup></td><td>Brown precipitate Fe(OH)<sub>3</sub></td><td>Insoluble</td></tr>
+  <tr><td>Al<sup>3+</sup></td><td>White precipitate Al(OH)<sub>3</sub></td><td>Dissolves (amphoteric): Al(OH)<sub>3</sub> + OH<sup>-</sup> &rarr; [Al(OH)<sub>4</sub>]<sup>-</sup></td></tr>
+  <tr><td>Cr<sup>3+</sup></td><td>Green precipitate Cr(OH)<sub>3</sub></td><td>Dissolves (amphoteric): Cr(OH)<sub>3</sub> + 3OH<sup>-</sup> &rarr; [Cr(OH)<sub>6</sub>]<sup>3-</sup></td></tr>
+  <tr><td>Mn<sup>2+</sup></td><td>Pale pink/beige precipitate Mn(OH)<sub>2</sub></td><td>Insoluble; darkens in air</td></tr>
+  <tr><td>NH<sub>4</sub><sup>+</sup></td><td>Warm with NaOH: ammonia gas released</td><td>Gas turns damp red litmus blue</td></tr>
 </table>
 
 <h3>Tests for Anions</h3>
-
 <table>
-  <tr><th>Ion</th><th>Test</th><th>Observation</th></tr>
-  <tr><td>CO<sub>3</sub><sup>2&minus;</sup></td><td>Add dilute acid</td><td>Effervescence; gas turns limewater milky (CO<sub>2</sub>)</td></tr>
-  <tr><td>SO<sub>4</sub><sup>2&minus;</sup></td><td>Add dilute HCl then BaCl<sub>2</sub>(aq)</td><td>White precipitate (BaSO<sub>4</sub>)</td></tr>
-  <tr><td>Halide ions</td><td>Add dilute HNO<sub>3</sub> then AgNO<sub>3</sub>(aq)</td><td>See halide test table above</td></tr>
+  <tr><th>Ion</th><th>Test</th><th>Positive Result</th></tr>
+  <tr><td>CO<sub>3</sub><sup>2-</sup></td><td>Add dilute acid</td><td>Effervescence; gas turns limewater milky (CO<sub>2</sub>)</td></tr>
+  <tr><td>SO<sub>4</sub><sup>2-</sup></td><td>Add dilute HCl then BaCl<sub>2</sub>(aq)</td><td>White precipitate of BaSO<sub>4</sub></td></tr>
+  <tr><td>Cl<sup>-</sup>, Br<sup>-</sup>, I<sup>-</sup></td><td>Add dilute HNO<sub>3</sub> then AgNO<sub>3</sub>(aq)</td><td>White / cream / yellow precipitate</td></tr>
 </table>
 
 <h3>Flame Tests</h3>
-
 <table>
   <tr><th>Ion</th><th>Flame Colour</th></tr>
   <tr><td>Li<sup>+</sup></td><td>Crimson red</td></tr>
-  <tr><td>Na<sup>+</sup></td><td>Yellow/orange</td></tr>
-  <tr><td>K<sup>+</sup></td><td>Lilac</td></tr>
+  <tr><td>Na<sup>+</sup></td><td>Intense yellow/orange</td></tr>
+  <tr><td>K<sup>+</sup></td><td>Lilac (view through blue glass to filter Na contamination)</td></tr>
   <tr><td>Ca<sup>2+</sup></td><td>Orange-red</td></tr>
-  <tr><td>Ba<sup>2+</sup></td><td>Green</td></tr>
+  <tr><td>Sr<sup>2+</sup></td><td>Crimson red</td></tr>
+  <tr><td>Ba<sup>2+</sup></td><td>Pale/apple green</td></tr>
   <tr><td>Cu<sup>2+</sup></td><td>Blue-green</td></tr>
 </table>
+
+<p><strong>Procedure:</strong> Clean a nichrome wire loop by dipping it in concentrated HCl and holding it in a blue Bunsen flame until no colour is produced. Then dip the wire into the sample (or into HCl and then the solid sample) and hold in the flame. Record the flame colour.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Flame test colours are caused by electrons in metal ions being excited to higher energy levels by the flame energy, then falling back down and emitting light of specific wavelengths. Each metal ion has a unique set of energy levels, producing a characteristic colour. Sodium contamination (yellow flame) is very common &mdash; view potassium's lilac flame through blue glass to filter out the yellow.
+</div>
 
 </div>
 </body>
