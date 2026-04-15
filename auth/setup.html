@@ -708,8 +708,18 @@ async function save() {
     }
   }
 
-  // Delete old subjects then insert new ones
+  // Delete old subjects and their topic progress, then insert new ones
   await supabaseClient.from('user_subjects').delete().eq('user_id', user.id);
+
+  // Clean up topic_progress for subjects no longer selected
+  const newSubjectKeys = selectedSubjects.map(s => `${s.name}_${subjectBoards[s.name] || 'AQA'}`);
+  const { data: oldProgress } = await supabaseClient.from('topic_progress').select('id, subject, exam_board').eq('user_id', user.id);
+  if (oldProgress) {
+    const toDelete = oldProgress.filter(p => !newSubjectKeys.includes(`${p.subject}_${p.exam_board}`)).map(p => p.id);
+    if (toDelete.length) {
+      await supabaseClient.from('topic_progress').delete().in('id', toDelete);
+    }
+  }
 
   const rows = selectedSubjects.map(s => ({
     user_id:       user.id,
