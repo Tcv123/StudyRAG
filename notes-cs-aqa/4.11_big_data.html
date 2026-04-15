@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4.11 Big Data — AQA A-Level Computer Science</title>
+    <title>4.11 Big Data — AQA A-Level CS</title>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px; }
@@ -12,6 +12,7 @@
         .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
         h2 { font-size: 1.45rem; color: #1e3a5f; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #e5e7eb; }
         h3 { font-size: 1.15rem; color: #334155; margin-top: 28px; margin-bottom: 10px; }
+        h4 { font-size: 1.05rem; color: #4b5563; margin-top: 18px; margin-bottom: 8px; }
         p { margin-bottom: 14px; }
         ul, ol { margin-bottom: 14px; padding-left: 24px; }
         li { margin-bottom: 6px; }
@@ -25,8 +26,7 @@
         .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
         code { font-family: 'Consolas', 'Fira Code', 'Courier New', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
-        pre { background: #f3f4f6; padding: 18px 20px; border-radius: 8px; overflow-x: auto; margin: 14px 0 18px 0; font-size: 0.9rem; line-height: 1.6; }
-        pre code { background: none; padding: 0; }
+        pre { background: #f3f4f6; padding: 18px 20px; border-radius: 8px; overflow-x: auto; margin: 14px 0 18px 0; font-size: 0.9rem; line-height: 1.6; font-family: 'Consolas', 'Fira Code', 'Courier New', monospace; }
         @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
     </style>
 </head>
@@ -40,282 +40,221 @@
 <h2>4.11.1 What is Big Data?</h2>
 
 <div class="definition">
-    <strong>Big Data</strong> refers to datasets that are so large, fast-moving, or complex that traditional data-processing tools and relational databases are inadequate to store, manage, and analyse them effectively.
+    <strong>Big Data</strong> refers to datasets so large, fast-moving, or complex that traditional data-processing tools and relational databases are inadequate to store, manage, and analyse them.
 </div>
 
 <h3>The Four Vs of Big Data</h3>
 <table>
     <tr><th>V</th><th>Meaning</th><th>Example</th></tr>
-    <tr><td><strong>Volume</strong></td><td>The sheer <strong>amount</strong> of data generated. Can be terabytes, petabytes, or exabytes.</td><td>Facebook generates hundreds of petabytes of user data per year. The Large Hadron Collider produces about 1 PB per second during experiments. YouTube receives 500+ hours of video uploads per minute.</td></tr>
-    <tr><td><strong>Velocity</strong></td><td>The <strong>speed</strong> at which new data is generated and must be processed. Some applications require real-time or near-real-time processing.</td><td>Stock market transactions arrive in microseconds; live sensor feeds from IoT devices stream continuously; social media generates millions of posts per minute.</td></tr>
-    <tr><td><strong>Variety</strong></td><td>Data comes in many different <strong>formats</strong> and from many sources, much of it unstructured.</td><td>Text, images, video, audio, sensor readings, GPS coordinates, social media posts, medical scans, log files, JSON/XML documents, clickstream data.</td></tr>
-    <tr><td><strong>Veracity</strong></td><td>The <strong>uncertainty and trustworthiness</strong> of the data. Noisy, incomplete, biased, or inaccurate data reduces reliability of analysis.</td><td>Social media sentiment may be sarcastic, bot-generated, or misleading. Sensor data may have calibration errors. Survey responses may be dishonest.</td></tr>
+    <tr><td><strong>Volume</strong></td><td>Sheer <strong>amount</strong> of data. Terabytes to exabytes.</td><td>Facebook: hundreds of PB/year. YouTube: 500+ hours uploaded per minute. LHC: ~1 PB/second during experiments.</td></tr>
+    <tr><td><strong>Velocity</strong></td><td><strong>Speed</strong> of data generation and required processing speed. Some applications need real-time analysis.</td><td>Stock trades in microseconds. Live IoT sensor streams. Millions of social media posts per minute.</td></tr>
+    <tr><td><strong>Variety</strong></td><td>Data in many <strong>formats</strong> from many sources, much of it unstructured.</td><td>Text, images, video, audio, GPS, sensor readings, log files, JSON, medical scans, clickstreams.</td></tr>
+    <tr><td><strong>Veracity</strong></td><td><strong>Trustworthiness</strong> and quality of data. Noisy, incomplete, biased data reduces reliability.</td><td>Sarcastic social media posts. Bot-generated content. Sensor calibration errors. Dishonest survey responses.</td></tr>
 </table>
 
-<p>Some frameworks add a fifth V: <strong>Value</strong> &mdash; the usefulness and business insight that can be extracted from the data. Raw data has no value until it is processed into actionable information.</p>
+<p>Some frameworks add <strong>Value</strong> &mdash; the usefulness and business insight extractable from data. Raw data has no value until processed into actionable information.</p>
 
 <h3>Types of Data</h3>
 <table>
     <tr><th>Type</th><th>Definition</th><th>Examples</th><th>Storage</th></tr>
-    <tr><td><strong>Structured</strong></td><td>Data organised in a fixed schema with clearly defined fields and data types. Easily stored in relational database tables with rows and columns.</td><td>SQL databases, CSV files, spreadsheets, transaction records, sensor readings with fixed fields</td><td>Relational databases (SQL)</td></tr>
-    <tr><td><strong>Unstructured</strong></td><td>Data with no predefined schema or internal organisation. Cannot easily be stored in traditional rows and columns. Makes up approximately 80-90% of all data generated.</td><td>Emails, free-form text documents, images, videos, audio recordings, social media posts, satellite imagery</td><td>NoSQL databases, object storage, data lakes</td></tr>
-    <tr><td><strong>Semi-structured</strong></td><td>Data that has some organisational markers (tags, keys, hierarchies) but does not follow a rigid table structure.</td><td>JSON, XML, HTML, YAML, NoSQL documents (MongoDB), email headers (structured) with body (unstructured)</td><td>Document databases, key-value stores</td></tr>
+    <tr><td><strong>Structured</strong></td><td>Fixed schema, defined fields and types. Rows and columns.</td><td>SQL tables, CSV, spreadsheets, transaction records</td><td>Relational databases (SQL)</td></tr>
+    <tr><td><strong>Unstructured</strong></td><td>No predefined schema. ~80-90% of all data generated.</td><td>Emails, images, videos, free text, social media posts</td><td>NoSQL databases, data lakes, object storage</td></tr>
+    <tr><td><strong>Semi-structured</strong></td><td>Some organisational markers (tags, keys) but no rigid table structure.</td><td>JSON, XML, HTML, YAML, MongoDB documents</td><td>Document databases, key-value stores</td></tr>
 </table>
 
-<div class="exam-tip">Big Data questions often ask you to identify which of the four Vs is relevant to a given scenario. Read the scenario carefully: does it emphasise the <em>amount</em> of data (Volume), the <em>speed</em> (Velocity), the <em>different formats</em> (Variety), or the <em>reliability/quality</em> (Veracity)? Link your answer explicitly to the correct V with justification.</div>
+<div class="exam-tip">Read scenarios carefully to identify which V is relevant: emphasises <em>amount</em> = Volume; <em>speed</em> = Velocity; <em>different formats</em> = Variety; <em>quality/reliability</em> = Veracity. Link your answer explicitly to the correct V.</div>
 
 <!-- ============================================================ -->
 <h2>4.11.2 Machine Learning</h2>
 
 <div class="definition">
-    <strong>Machine learning (ML)</strong> is a branch of artificial intelligence in which a computer system learns patterns from data and improves its performance on a task <strong>without being explicitly programmed</strong> with rules. Instead of writing rules by hand, the programmer provides data and the algorithm discovers the rules.
+    <strong>Machine learning (ML):</strong> A branch of AI where systems learn patterns from data and improve without being explicitly programmed with rules. The programmer provides data; the algorithm discovers the rules.
 </div>
 
 <h3>Types of Machine Learning</h3>
 <table>
-    <tr><th>Type</th><th>How It Works</th><th>Data Required</th><th>Example</th></tr>
-    <tr><td><strong>Supervised learning</strong></td><td>The model is trained on a <strong>labelled dataset</strong> &mdash; each input has a known correct output (the "ground truth"). The model learns to map inputs to outputs by minimising prediction error.</td><td>Labelled data (expensive to create; requires human annotation)</td><td>Classifying emails as spam/not-spam using thousands of previously labelled emails. Predicting house prices from features (size, location, bedrooms) using historical sales data.</td></tr>
-    <tr><td><strong>Unsupervised learning</strong></td><td>The model is given an <strong>unlabelled dataset</strong> and must discover hidden patterns, structures, or groupings on its own, with no correct answers provided.</td><td>Unlabelled data (cheaper and more abundant)</td><td>Customer segmentation: grouping shoppers by purchasing behaviour without pre-defined categories. Anomaly detection in network traffic.</td></tr>
-    <tr><td><strong>Reinforcement learning</strong></td><td>An <strong>agent</strong> interacts with an <strong>environment</strong>, taking actions and receiving <strong>rewards</strong> (positive feedback) or <strong>penalties</strong> (negative feedback). It learns a strategy (policy) to maximise cumulative reward through trial and error.</td><td>No pre-labelled data; learns from experience (reward signal)</td><td>Training an AI to play chess or Go &mdash; reward for winning, penalty for losing. Training a robot to walk. Optimising data centre cooling (Google DeepMind).</td></tr>
+    <tr><th>Type</th><th>How It Works</th><th>Data</th><th>Example</th></tr>
+    <tr><td><strong>Supervised</strong></td><td>Trained on <strong>labelled</strong> data (input + known correct output). Learns input-to-output mapping.</td><td>Labelled (expensive to create)</td><td>Spam classification using labelled emails. House price prediction from features.</td></tr>
+    <tr><td><strong>Unsupervised</strong></td><td>Given <strong>unlabelled</strong> data. Discovers hidden patterns, groups, or structures.</td><td>Unlabelled (abundant, cheap)</td><td>Customer segmentation by purchase behaviour. Anomaly detection in network traffic.</td></tr>
+    <tr><td><strong>Reinforcement</strong></td><td>Agent takes actions in environment, receives <strong>rewards/penalties</strong>. Learns policy to maximise reward.</td><td>No labels; learns from experience</td><td>AI playing chess (reward for winning). Robot learning to walk. Data centre cooling optimisation.</td></tr>
 </table>
 
-<h3>Classification and Clustering</h3>
+<h3>Classification vs Clustering</h3>
 <table>
     <tr><th>Technique</th><th>Type</th><th>What It Does</th><th>Example</th></tr>
-    <tr><td><strong>Classification</strong></td><td>Supervised</td><td>Assigns each input to one of a set of <strong>predefined categories</strong> (labels). The model is trained on labelled examples and then predicts labels for new, unseen data.</td><td>Classifying a tumour as benign or malignant based on measured features. Categorising support tickets by urgency. Identifying handwritten digits (0-9).</td></tr>
-    <tr><td><strong>Clustering</strong></td><td>Unsupervised</td><td>Groups data points so that items in the same cluster are <strong>more similar</strong> to each other than to those in other clusters. No labels are provided or predicted &mdash; the algorithm discovers natural groupings.</td><td>Grouping news articles by topic without knowing the topics in advance. Segmenting customers by behaviour. Identifying communities in social networks.</td></tr>
+    <tr><td><strong>Classification</strong></td><td>Supervised</td><td>Assigns inputs to <strong>predefined categories</strong> (labels known in advance)</td><td>Tumour: benign or malignant. Handwritten digit recognition (0-9).</td></tr>
+    <tr><td><strong>Clustering</strong></td><td>Unsupervised</td><td>Groups data so items in same cluster are <strong>more similar</strong> to each other. No predefined labels.</td><td>Grouping news articles by topic. Customer behaviour segments.</td></tr>
 </table>
 
-<div class="exam-tip">Classification uses <strong>labelled</strong> data (supervised) &mdash; the categories are known in advance. Clustering uses <strong>unlabelled</strong> data (unsupervised) &mdash; the groups are discovered. This is a very common distinction in exam questions. If the question says "using historical data with known outcomes", it is supervised/classification. If it says "finding natural groups in data", it is unsupervised/clustering.</div>
+<div class="exam-tip">Classification = labelled data, categories known. Clustering = unlabelled data, groups discovered. If the question says "using historical data with known outcomes" = supervised/classification. "Finding natural groups" = unsupervised/clustering.</div>
 
 <!-- ============================================================ -->
 <h2>4.11.3 Neural Networks and Deep Learning</h2>
 
 <h3>Structure of a Neural Network</h3>
-<p>An <strong>artificial neural network (ANN)</strong> is a computational model inspired by the structure of biological neurons. It consists of interconnected nodes (neurons) arranged in layers:</p>
+<p>An <strong>artificial neural network (ANN)</strong> is inspired by biological neurons. Interconnected nodes in layers:</p>
 <ul>
-    <li><strong>Input layer</strong> &mdash; receives the raw input data. Each node represents one feature (e.g., a pixel value, a temperature reading, a word embedding). The number of input nodes matches the number of features.</li>
-    <li><strong>Hidden layer(s)</strong> &mdash; one or more intermediate layers that process inputs. Each node applies a mathematical function to a <strong>weighted sum</strong> of its inputs, then passes the result through an <strong>activation function</strong>.</li>
-    <li><strong>Output layer</strong> &mdash; produces the final result. For classification, each output node typically represents one class, and the node with the highest value is the predicted class.</li>
+    <li><strong>Input layer</strong> &mdash; receives raw input. One node per feature.</li>
+    <li><strong>Hidden layer(s)</strong> &mdash; process inputs. Each node computes a weighted sum + bias, then applies an <strong>activation function</strong>.</li>
+    <li><strong>Output layer</strong> &mdash; produces the result. For classification, each node represents one class.</li>
 </ul>
 
-<h3>How a Single Neuron Works</h3>
-<p>Each connection between nodes has a <strong>weight</strong> (w) that determines how much influence one node has on the next. Each node also has a <strong>bias</strong> (b), an additional constant that shifts the activation threshold.</p>
-<pre><code>output = activation_function( w1*x1 + w2*x2 + ... + wn*xn + bias )
+<!-- Neural network SVG -->
+<svg viewBox="0 0 400 200" style="width:100%;max-width:400px;display:block;margin:0 auto 18px auto;" xmlns="http://www.w3.org/2000/svg">
+  <text x="200" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a5f">Neural Network</text>
+  <!-- Input nodes -->
+  <circle cx="60" cy="50" r="18" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="60" y="54" text-anchor="middle" font-size="10" fill="#1e40af">x1</text>
+  <circle cx="60" cy="100" r="18" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="60" y="104" text-anchor="middle" font-size="10" fill="#1e40af">x2</text>
+  <circle cx="60" cy="150" r="18" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="60" y="154" text-anchor="middle" font-size="10" fill="#1e40af">x3</text>
+  <!-- Hidden nodes -->
+  <circle cx="200" cy="60" r="18" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="200" y="64" text-anchor="middle" font-size="10" fill="#92400e">h1</text>
+  <circle cx="200" cy="120" r="18" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="200" y="124" text-anchor="middle" font-size="10" fill="#92400e">h2</text>
+  <!-- Output node -->
+  <circle cx="340" cy="90" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="340" y="94" text-anchor="middle" font-size="10" fill="#065f46">out</text>
+  <!-- Connections input->hidden -->
+  <line x1="78" y1="50" x2="182" y2="60" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="78" y1="50" x2="182" y2="120" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="78" y1="100" x2="182" y2="60" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="78" y1="100" x2="182" y2="120" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="78" y1="150" x2="182" y2="60" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="78" y1="150" x2="182" y2="120" stroke="#94a3b8" stroke-width="1"/>
+  <!-- Connections hidden->output -->
+  <line x1="218" y1="60" x2="322" y2="90" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="218" y1="120" x2="322" y2="90" stroke="#94a3b8" stroke-width="1"/>
+  <!-- Labels -->
+  <text x="60" y="185" text-anchor="middle" font-size="9" fill="#6b7280">Input</text>
+  <text x="200" y="160" text-anchor="middle" font-size="9" fill="#6b7280">Hidden</text>
+  <text x="340" y="125" text-anchor="middle" font-size="9" fill="#6b7280">Output</text>
+</svg>
 
-Example with 3 inputs:
+<h3>How a Single Neuron Works</h3>
+<pre>output = activation_function(w1*x1 + w2*x2 + ... + wn*xn + bias)
+
+Example:
   Inputs:  x1=0.5, x2=0.8, x3=0.2
   Weights: w1=0.4, w2=-0.3, w3=0.9
   Bias:    b=0.1
 
   Weighted sum = (0.5*0.4) + (0.8*-0.3) + (0.2*0.9) + 0.1
-               = 0.2 + (-0.24) + 0.18 + 0.1
-               = 0.24
+               = 0.2 - 0.24 + 0.18 + 0.1 = 0.24
 
-  Apply activation function (e.g., ReLU):
-  ReLU(0.24) = max(0, 0.24) = 0.24  (output of this neuron)</code></pre>
+  If using step activation: output = 1 (since 0.24 > 0)
+  If using sigmoid: output = 1/(1+e^-0.24) = 0.56</pre>
 
-<p>Common <strong>activation functions</strong>:</p>
-<ul>
-    <li><strong>ReLU (Rectified Linear Unit):</strong> <code>f(x) = max(0, x)</code> &mdash; outputs x if positive, 0 if negative. Most commonly used in hidden layers because it is fast to compute and avoids the vanishing gradient problem.</li>
-    <li><strong>Sigmoid:</strong> <code>f(x) = 1 / (1 + e^(-x))</code> &mdash; squashes output to range (0, 1). Used for binary classification output.</li>
-    <li><strong>Softmax:</strong> Converts a vector of values into a probability distribution that sums to 1. Used for multi-class classification output (e.g., probabilities for digits 0-9).</li>
-</ul>
+<h3>Training (Backpropagation)</h3>
+<ol>
+    <li><strong>Forward pass:</strong> input flows through network, producing a prediction</li>
+    <li><strong>Calculate error:</strong> compare prediction to actual label (loss function)</li>
+    <li><strong>Backward pass:</strong> propagate error backwards, calculating how much each weight contributed</li>
+    <li><strong>Update weights:</strong> adjust weights to reduce error (gradient descent)</li>
+    <li>Repeat over many <strong>epochs</strong> (passes through the training data) until error is minimised</li>
+</ol>
 
 <h3>Deep Learning</h3>
 <div class="definition">
-    <strong>Deep learning</strong> uses neural networks with <strong>many hidden layers</strong> (hence "deep"). These deep networks can learn increasingly abstract and complex features at each successive layer, enabling them to solve problems like image recognition, speech processing, and language translation that were previously intractable.
+    <strong>Deep learning</strong> uses neural networks with <strong>many hidden layers</strong> (hence "deep"). Each layer learns increasingly abstract features. Deep learning powers image recognition, natural language processing, autonomous vehicles, and generative AI.
 </div>
-<ul>
-    <li>Early layers might detect simple features (e.g., edges, corners in an image; individual phonemes in audio).</li>
-    <li>Middle layers combine these into more complex features (e.g., shapes, textures; syllables, words).</li>
-    <li>Later layers recognise high-level concepts (e.g., a face, a specific object; a sentence, an emotion).</li>
-</ul>
-<p>Deep learning requires large amounts of training data and significant computational power (GPUs). It has driven recent breakthroughs in image recognition, natural language processing, game playing, protein structure prediction, and generative AI.</p>
 
-<h3>Backpropagation and Gradient Descent</h3>
-<p><strong>Backpropagation</strong> is the algorithm used to train a neural network by adjusting weights to minimise prediction error:</p>
-<ol>
-    <li><strong>Forward pass</strong> &mdash; input data passes through the network layer by layer to produce a prediction (output).</li>
-    <li><strong>Calculate error (loss)</strong> &mdash; the difference between the predicted output and the actual correct output is measured using a <strong>loss function</strong> (e.g., mean squared error for regression, cross-entropy for classification).</li>
-    <li><strong>Backward pass</strong> &mdash; the error is propagated backwards through the network. The algorithm calculates how much each weight contributed to the error using the <strong>chain rule of calculus</strong> (computing partial derivatives / gradients).</li>
-    <li><strong>Update weights</strong> &mdash; each weight is adjusted in the direction that reduces the error, by an amount proportional to its gradient.</li>
-</ol>
-
-<p><strong>Gradient descent</strong> determines <em>how much</em> to adjust each weight. The <strong>learning rate</strong> controls the step size:</p>
-<ul>
-    <li>Too large &rarr; the model may overshoot the optimal weights, oscillate, or diverge (fail to converge).</li>
-    <li>Too small &rarr; training is extremely slow and may get stuck in a <strong>local minimum</strong> (a sub-optimal solution).</li>
-    <li>In practice, adaptive learning rate algorithms (Adam, RMSprop) are used to automatically adjust the learning rate during training.</li>
-</ul>
-
-<pre><code>-- Pseudocode for training a neural network:
-for each epoch (full pass through all training data):
-    for each training example (input, correct_output):
-        predicted = forward_pass(network, input)
-        loss = calculate_loss(predicted, correct_output)
-        gradients = backward_pass(network, loss)
-        update_weights(network, gradients, learning_rate)
-    evaluate on validation set
-    if validation loss is increasing: STOP (early stopping to prevent overfitting)</code></pre>
-
-<div class="exam-tip">You do not need to perform the calculus, but you must be able to explain the conceptual process: forward pass produces output &rarr; error is calculated using a loss function &rarr; error is propagated backwards to compute gradients &rarr; weights are adjusted to reduce error &rarr; repeat for many epochs until the model converges.</div>
-
-<h3>Training, Validation, and Test Data</h3>
-<table>
-    <tr><th>Dataset</th><th>Purpose</th><th>When Used</th><th>Typical Split</th></tr>
-    <tr><td><strong>Training set</strong></td><td>The model learns patterns from this data by adjusting weights during backpropagation.</td><td>During training (every epoch)</td><td>~60-80%</td></tr>
-    <tr><td><strong>Validation set</strong></td><td>Used to tune <strong>hyperparameters</strong> (learning rate, number of layers, number of nodes) and detect overfitting. The model does <em>not</em> learn from this data.</td><td>During training (checked after each epoch)</td><td>~10-20%</td></tr>
-    <tr><td><strong>Test set</strong></td><td>Used <em>only after</em> training is complete to evaluate final model performance on completely unseen data. Gives an unbiased estimate of real-world accuracy.</td><td>Once, at the very end</td><td>~10-20%</td></tr>
-</table>
-
-<h3>Overfitting and Underfitting</h3>
-<table>
-    <tr><th>Problem</th><th>Description</th><th>Symptoms</th><th>Solutions</th></tr>
-    <tr>
-        <td><strong>Overfitting</strong></td>
-        <td>The model has learned the training data <em>too well</em>, including noise, outliers, and random fluctuations. It has essentially memorised the training data rather than learning general patterns.</td>
-        <td>High training accuracy, <strong>low test/validation accuracy</strong>. Large gap between training and validation performance.</td>
-        <td>Use more training data; simplify the model (fewer layers/nodes); use <strong>regularisation</strong> (L1/L2 penalties on weights); use <strong>dropout</strong> (randomly disable neurons during training); <strong>early stopping</strong> (stop training when validation loss starts increasing); data augmentation.</td>
-    </tr>
-    <tr>
-        <td><strong>Underfitting</strong></td>
-        <td>The model is too simple to capture the underlying patterns in the data. It fails to learn even the training data adequately.</td>
-        <td><strong>Low training accuracy</strong> AND low test accuracy. The model performs poorly everywhere.</td>
-        <td>Increase model complexity (more layers/nodes); train for more epochs; add more relevant features; reduce regularisation; use a more sophisticated model architecture.</td>
-    </tr>
-</table>
+<p><strong>Overfitting:</strong> The model performs well on training data but poorly on unseen data because it has memorised noise rather than learned general patterns. Prevented by: more training data, regularisation, dropout, cross-validation.</p>
 
 <!-- ============================================================ -->
-<h2>4.11.4 MapReduce and Distributed Computing</h2>
+<h2>4.11.4 Big Data Processing</h2>
 
-<h3>Why Distributed Computing?</h3>
-<p>Big Data is often too large to be stored or processed on a single machine. <strong>Distributed computing</strong> spreads storage and processing across a <strong>cluster</strong> of many interconnected commodity machines (nodes), enabling:</p>
-<ul>
-    <li><strong>Parallel processing</strong> of massive datasets (divide the work among hundreds or thousands of nodes).</li>
-    <li><strong>Fault tolerance</strong> &mdash; if one node fails, others continue; data is replicated across nodes for redundancy.</li>
-    <li><strong>Horizontal scalability</strong> &mdash; add more nodes as data grows (cheaper than buying a single supercomputer).</li>
-</ul>
+<h3>Distributed Computing</h3>
+<div class="definition">
+    <strong>Distributed computing</strong> splits a large task across multiple computers (nodes) that work in parallel. Necessary because big data cannot be processed on a single machine within a reasonable time.
+</div>
 
 <h3>MapReduce</h3>
+<p>A programming model for processing large datasets in parallel across a cluster. Two phases:</p>
+
+<ol>
+    <li><strong>Map phase:</strong> Each node processes a portion of the data and produces intermediate key-value pairs. Work is distributed across many nodes.</li>
+    <li><strong>Reduce phase:</strong> Intermediate results with the same key are combined (aggregated) to produce the final output.</li>
+</ol>
+
+<pre>-- Example: counting word frequencies in a large text corpus
+
+MAP phase (run on each node with a portion of the text):
+  Input:  "the cat sat on the mat"
+  Output: (the, 1), (cat, 1), (sat, 1), (on, 1), (the, 1), (mat, 1)
+
+SHUFFLE (group by key):
+  (the, [1, 1]), (cat, [1]), (sat, [1]), (on, [1]), (mat, [1])
+
+REDUCE phase (aggregate each key):
+  (the, 2), (cat, 1), (sat, 1), (on, 1), (mat, 1)</pre>
+
+<p><strong>Key advantage:</strong> Each Map task is independent, enabling massive parallelism. The Reduce phase aggregates results. This scales to thousands of nodes processing petabytes of data.</p>
+
+<h3>Hadoop Ecosystem</h3>
+<ul>
+    <li><strong>Hadoop</strong> &mdash; open-source framework for distributed storage and processing using MapReduce</li>
+    <li><strong>HDFS</strong> (Hadoop Distributed File System) &mdash; stores files across a cluster with replication for fault tolerance</li>
+    <li><strong>Apache Spark</strong> &mdash; faster alternative to MapReduce that processes data in memory rather than on disk</li>
+</ul>
+
+<h3>NoSQL Databases</h3>
 <div class="definition">
-    <strong>MapReduce</strong> is a programming model (developed by Google) for processing large datasets in parallel across a distributed cluster. It abstracts away the complexity of parallelism, distribution, fault tolerance, and load balancing, allowing the programmer to focus on the logic. It has two main phases: <strong>Map</strong> and <strong>Reduce</strong>.
+    <strong>NoSQL</strong> ("Not Only SQL") databases are designed for big data scenarios where relational databases struggle. They sacrifice some SQL features (joins, ACID guarantees) for scalability, flexibility, and performance.
 </div>
 
-<p><strong>Map phase:</strong></p>
-<ul>
-    <li>The input data is divided into chunks (splits) and distributed across the cluster nodes.</li>
-    <li>Each node applies a <strong>map function</strong> independently to its chunk, producing a set of intermediate <strong>key-value pairs</strong>.</li>
-    <li>The map function is applied to each input record independently &mdash; this is why it parallelises so well.</li>
-</ul>
-
-<p><strong>Shuffle and Sort (intermediate step):</strong></p>
-<ul>
-    <li>The system automatically groups all intermediate key-value pairs by key, sorting them, and distributing them so that all values for the same key go to the same reducer node.</li>
-</ul>
-
-<p><strong>Reduce phase:</strong></p>
-<ul>
-    <li>Each reducer node applies a <strong>reduce function</strong> to all the values associated with each key, combining or aggregating them to produce the final output.</li>
-</ul>
-
-<h3>MapReduce Example: Word Count</h3>
-<p>Count the occurrences of each word across a massive text corpus distributed across many machines:</p>
-<pre><code>Input (split across 3 nodes):
-  Node 1: "the cat sat on the mat"
-  Node 2: "the dog sat on the log"
-  Node 3: "the cat and the dog"
-
-Map phase (each node processes its chunk independently):
-  Node 1 emits: ("the",1) ("cat",1) ("sat",1) ("on",1) ("the",1) ("mat",1)
-  Node 2 emits: ("the",1) ("dog",1) ("sat",1) ("on",1) ("the",1) ("log",1)
-  Node 3 emits: ("the",1) ("cat",1) ("and",1) ("the",1) ("dog",1)
-
-Shuffle and sort (group by key, distribute to reducers):
-  Reducer A gets: "and" -> [1]    "cat" -> [1, 1]    "dog" -> [1, 1]
-  Reducer B gets: "log" -> [1]    "mat" -> [1]       "on"  -> [1, 1]
-  Reducer C gets: "sat" -> [1, 1] "the" -> [1, 1, 1, 1, 1, 1]
-
-Reduce phase (sum the values for each key):
-  "and" -> 1     "cat" -> 2     "dog" -> 2
-  "log" -> 1     "mat" -> 1     "on"  -> 2
-  "sat" -> 2     "the" -> 6</code></pre>
-
-<h3>Hadoop and HDFS</h3>
-<p><strong>Apache Hadoop</strong> is an open-source framework for distributed storage and processing of Big Data:</p>
-<ul>
-    <li><strong>HDFS (Hadoop Distributed File System)</strong> &mdash; stores data by splitting files into large blocks (typically 128 MB each) and replicating each block across multiple nodes (default 3 replicas) for fault tolerance. Architecture: a <strong>NameNode</strong> (master, stores metadata &mdash; which blocks belong to which file and where they are stored) and multiple <strong>DataNodes</strong> (workers, store actual data blocks).</li>
-    <li><strong>MapReduce engine (YARN)</strong> &mdash; manages the execution of Map and Reduce tasks across the cluster, scheduling them on nodes where the data is already stored ("move computation to data" rather than moving data to computation &mdash; minimises network transfer).</li>
-</ul>
-
-<div class="exam-tip">When explaining MapReduce, always describe both the Map phase (applies a function to each input, producing key-value pairs) and the Reduce phase (aggregates values by key). Including a brief worked example demonstrates clear understanding. Remember: the power of MapReduce comes from the fact that the map function is applied independently to each data chunk, allowing massive parallelism.</div>
-
-<!-- ============================================================ -->
-<h2>4.11.5 Data Mining and Predictive Analytics</h2>
-
-<div class="definition">
-    <strong>Data mining</strong> is the process of discovering patterns, correlations, trends, and anomalies within large datasets using statistical, mathematical, and computational techniques to extract useful knowledge and predict outcomes.
-</div>
-
-<p>Common data mining techniques:</p>
-<ul>
-    <li><strong>Association rule mining</strong> &mdash; finding items that frequently co-occur (e.g., "customers who buy bread also buy butter" &mdash; used for product recommendations and store layout optimisation).</li>
-    <li><strong>Classification</strong> &mdash; predicting a categorical label for new data based on learned patterns (e.g., spam detection, medical diagnosis).</li>
-    <li><strong>Clustering</strong> &mdash; grouping similar data points without predefined labels (e.g., customer segmentation, document categorisation).</li>
-    <li><strong>Anomaly detection</strong> &mdash; identifying unusual data points that deviate from normal patterns (e.g., fraud detection in banking, intrusion detection in networks, fault detection in manufacturing).</li>
-    <li><strong>Regression</strong> &mdash; predicting a continuous numerical value (e.g., predicting house prices, stock prices, energy consumption).</li>
-</ul>
-
-<h3>Predictive Analytics</h3>
-<p><strong>Predictive analytics</strong> uses historical data, statistical algorithms, and machine learning to forecast future outcomes. It goes beyond describing what happened to predicting what will happen next.</p>
-<p>Applications include: weather forecasting; medical diagnosis and prognosis; customer churn prediction; demand forecasting in supply chains; predictive maintenance (predicting when industrial equipment will fail before it does); credit scoring; targeted advertising.</p>
-
-<h3>Recommendation Systems</h3>
 <table>
-    <tr><th>Approach</th><th>How It Works</th><th>Strengths</th><th>Weaknesses</th></tr>
-    <tr><td><strong>Collaborative filtering</strong></td><td>Recommends items based on what <strong>similar users</strong> liked. "Users who liked X also liked Y." Builds a user-item interaction matrix.</td><td>Does not need item feature data; can discover unexpected recommendations; improves as user base grows.</td><td>Cold-start problem (new users/items have no data); requires large user base; popularity bias.</td></tr>
-    <tr><td><strong>Content-based filtering</strong></td><td>Recommends items <strong>similar to what the user has liked before</strong>, based on item attributes/features.</td><td>Works with single users; no cold-start for items (if features are known); transparent recommendations.</td><td>Limited to similar items (filter bubble); requires good feature descriptions; cannot discover unexpected items.</td></tr>
-    <tr><td><strong>Hybrid</strong></td><td>Combines collaborative and content-based approaches to leverage the strengths of both.</td><td>More accurate and robust; mitigates weaknesses of each individual approach.</td><td>More complex to implement.</td></tr>
+    <tr><th>Type</th><th>Structure</th><th>Example</th><th>Use Case</th></tr>
+    <tr><td><strong>Key-value</strong></td><td>Simple key-value pairs</td><td>Redis, DynamoDB</td><td>Caching, session storage</td></tr>
+    <tr><td><strong>Document</strong></td><td>JSON/BSON documents</td><td>MongoDB, CouchDB</td><td>Content management, user profiles</td></tr>
+    <tr><td><strong>Column-family</strong></td><td>Data stored in columns, not rows</td><td>Cassandra, HBase</td><td>Analytics, time-series data</td></tr>
+    <tr><td><strong>Graph</strong></td><td>Nodes and edges</td><td>Neo4j, Amazon Neptune</td><td>Social networks, recommendation engines</td></tr>
+</table>
+
+<table>
+    <tr><th>Feature</th><th>SQL (Relational)</th><th>NoSQL</th></tr>
+    <tr><td>Schema</td><td>Fixed, predefined</td><td>Flexible, schema-less</td></tr>
+    <tr><td>Scalability</td><td>Vertical (bigger server)</td><td>Horizontal (more servers)</td></tr>
+    <tr><td>Consistency</td><td>Strong (ACID)</td><td>Eventual consistency (BASE)</td></tr>
+    <tr><td>Data types</td><td>Structured only</td><td>Structured, semi-structured, unstructured</td></tr>
+    <tr><td>Joins</td><td>Supported (powerful)</td><td>Generally not supported</td></tr>
+    <tr><td>Best for</td><td>Complex queries, transactions</td><td>Big data, high throughput, flexible schema</td></tr>
 </table>
 
 <!-- ============================================================ -->
-<h2>4.11.6 Natural Language Processing (NLP)</h2>
+<h2>4.11.5 Data Mining</h2>
 
 <div class="definition">
-    <strong>Natural Language Processing (NLP)</strong> is a field of AI concerned with enabling computers to understand, interpret, and generate human language in a meaningful and useful way.
+    <strong>Data mining:</strong> The process of discovering patterns, correlations, anomalies, and trends in large datasets using statistical, mathematical, and computational techniques. It extracts useful knowledge from data that would be impossible to find manually.
 </div>
 
-<p>Key NLP tasks:</p>
-<table>
-    <tr><th>Task</th><th>Description</th><th>Application</th></tr>
-    <tr><td><strong>Tokenisation</strong></td><td>Splitting text into individual words, subwords, or tokens</td><td>First step in almost all NLP pipelines</td></tr>
-    <tr><td><strong>Sentiment analysis</strong></td><td>Determining whether text expresses positive, negative, or neutral opinion</td><td>Brand monitoring, product review analysis, social media tracking</td></tr>
-    <tr><td><strong>Named Entity Recognition (NER)</strong></td><td>Identifying and classifying entities (people, organisations, locations, dates, monetary values) in text</td><td>Information extraction, news analysis, legal document processing</td></tr>
-    <tr><td><strong>Machine translation</strong></td><td>Automatically translating text from one language to another</td><td>Google Translate, DeepL, real-time subtitle translation</td></tr>
-    <tr><td><strong>Speech recognition</strong></td><td>Converting spoken language into text (speech-to-text)</td><td>Voice assistants (Siri, Alexa), dictation software, accessibility tools</td></tr>
-    <tr><td><strong>Text generation</strong></td><td>Producing human-like text given a prompt or context</td><td>Chatbots, content creation, code generation, summarisation</td></tr>
-    <tr><td><strong>Text classification</strong></td><td>Categorising text documents into predefined categories</td><td>Spam filtering, topic classification, intent detection in customer service</td></tr>
-</table>
-
-<p>NLP is challenging because human language is inherently <strong>ambiguous</strong> (words have multiple meanings), <strong>context-dependent</strong> (meaning changes based on surrounding words), and full of <strong>idioms, sarcasm, implied meaning, and cultural references</strong> that are difficult for algorithms to interpret correctly.</p>
+<p><strong>Techniques:</strong></p>
+<ul>
+    <li><strong>Association rule mining</strong> &mdash; finding items that frequently occur together ("customers who buy X also buy Y"). Used in market basket analysis and recommendation systems.</li>
+    <li><strong>Classification</strong> &mdash; predicting categorical outcomes from labelled training data</li>
+    <li><strong>Clustering</strong> &mdash; discovering natural groupings in data</li>
+    <li><strong>Regression</strong> &mdash; predicting numerical values (e.g., forecasting sales figures)</li>
+    <li><strong>Anomaly detection</strong> &mdash; identifying unusual data points (fraud detection, intrusion detection)</li>
+    <li><strong>Sentiment analysis</strong> &mdash; determining the emotional tone of text (positive, negative, neutral)</li>
+</ul>
 
 <!-- ============================================================ -->
-<h2>4.11.7 Ethical and Social Implications of Big Data</h2>
+<h2>4.11.6 Privacy and Ethical Implications</h2>
 
 <table>
-    <tr><th>Issue</th><th>Detail</th><th>Example</th></tr>
-    <tr><td><strong>Privacy</strong></td><td>Large-scale data collection can reveal intimate details of individuals' lives, often without their informed consent. Aggregating individually harmless data points can create detailed personal profiles.</td><td>Location data from a mobile phone can reveal home address, workplace, medical appointments, political meetings, and personal relationships.</td></tr>
-    <tr><td><strong>Surveillance</strong></td><td>Governments and corporations can use Big Data for mass surveillance, monitoring citizens' communications, movements, and online activities at unprecedented scale.</td><td>Government mass surveillance programmes; employer monitoring of remote workers; facial recognition in public spaces.</td></tr>
-    <tr><td><strong>Bias and discrimination</strong></td><td>If training data reflects historical biases, ML models will perpetuate and amplify those biases in automated decisions.</td><td>Racial bias in criminal risk assessment algorithms; gender bias in AI recruitment tools; discriminatory credit scoring.</td></tr>
-    <tr><td><strong>Consent and transparency</strong></td><td>Users often do not understand what data is collected or how it is used. "Terms and conditions" are rarely read. Algorithmic decisions affecting people's lives are often opaque.</td><td>Social media platforms collecting and selling user data; "black box" algorithms making loan or parole decisions without explanation.</td></tr>
-    <tr><td><strong>Data ownership</strong></td><td>Disputes over who owns data &mdash; the individual who generated it, or the company that collected it.</td><td>The right to be forgotten (UK GDPR) allows individuals to request deletion; but what about data already used to train a model?</td></tr>
-    <tr><td><strong>Security</strong></td><td>Storing large volumes of personal data creates an attractive target for hackers and state actors.</td><td>Major data breaches exposing millions of records (financial data, health records, credentials).</td></tr>
-    <tr><td><strong>Job displacement</strong></td><td>Automation and AI powered by Big Data may replace jobs across many sectors.</td><td>Automated customer service (chatbots), self-checkout, algorithmic journalism, automated warehouse operations.</td></tr>
-    <tr><td><strong>Filter bubbles / Echo chambers</strong></td><td>Recommendation algorithms show users content reinforcing their existing views, limiting exposure to diverse perspectives.</td><td>Social media feeds showing only politically aligned content; news aggregators reinforcing existing beliefs.</td></tr>
-    <tr><td><strong>Profiling</strong></td><td>Combining multiple data sources creates detailed profiles enabling targeted manipulation.</td><td>Psychographic profiling for political micro-targeting; personalised pricing (charging different prices based on predicted willingness to pay).</td></tr>
+    <tr><th>Concern</th><th>Detail</th></tr>
+    <tr><td><strong>Privacy</strong></td><td>Big data enables profiling individuals from seemingly anonymous data. Re-identification attacks can link anonymised datasets to individuals. Mass data collection enables surveillance.</td></tr>
+    <tr><td><strong>Consent</strong></td><td>Users often do not understand what data is collected or how it is used. Terms of service are lengthy and rarely read. Data may be repurposed beyond original consent.</td></tr>
+    <tr><td><strong>Bias</strong></td><td>ML models trained on biased data perpetuate discrimination (e.g., biased hiring algorithms, prejudiced sentencing tools, inequitable credit scoring).</td></tr>
+    <tr><td><strong>Security</strong></td><td>Centralising massive datasets creates attractive targets for hackers. Data breaches expose millions of records.</td></tr>
+    <tr><td><strong>Ownership</strong></td><td>Who owns the data? The individual, the platform, or the company analysing it? Data portability and the right to deletion (GDPR) address this partially.</td></tr>
+    <tr><td><strong>Transparency</strong></td><td>Complex ML models are "black boxes" &mdash; decisions cannot be explained or audited. This is problematic for high-stakes decisions (loans, criminal justice, medical diagnosis).</td></tr>
+    <tr><td><strong>Power imbalance</strong></td><td>Large corporations accumulate data and analytical capabilities far beyond what individuals or regulators can scrutinise.</td></tr>
 </table>
 
-<div class="exam-tip">Ethics questions are common and carry significant marks. Always: (1) consider multiple perspectives (individual, business, society, government), (2) reference specific laws or regulations (Data Protection Act 2018, UK GDPR) where relevant, (3) use concrete real-world examples, and (4) discuss both benefits and risks of Big Data use. A balanced argument with specific examples scores much higher than a one-sided general answer.</div>
+<div class="exam-tip">For big data ethics questions, always discuss specific privacy risks and link to legislation (DPA 2018, GDPR). Explain the tension between the benefits of data analysis (medical breakthroughs, efficiency gains, personalisation) and the risks (surveillance, discrimination, loss of autonomy). Name specific stakeholders and their differing perspectives.</div>
 
 </div>
 </body>

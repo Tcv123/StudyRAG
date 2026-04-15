@@ -6,26 +6,28 @@
     <title>4.7 Computer Organisation and Architecture — AQA A-Level CS</title>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px; }
         .container { max-width: 800px; margin: 0 auto; }
         h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
         .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
-        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
-        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        h2 { font-size: 1.45rem; color: #1e3a5f; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #e5e7eb; }
+        h3 { font-size: 1.15rem; color: #334155; margin-top: 28px; margin-bottom: 10px; }
+        h4 { font-size: 1.05rem; color: #4b5563; margin-top: 18px; margin-bottom: 8px; }
         p { margin-bottom: 14px; }
         ul, ol { margin-bottom: 14px; padding-left: 24px; }
         li { margin-bottom: 6px; }
-        strong { color: #1a1a2e; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
-        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
-        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        strong { color: #1e3a5f; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0 20px 0; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; font-weight: 600; color: #1e3a5f; }
         tr:nth-child(even) { background: #f9fafb; }
         .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
-        .definition strong { color: #1e40af; }
+        .definition strong { color: #1d4ed8; }
         .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
         code { font-family: 'Consolas', 'Fira Code', 'Courier New', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
-        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', 'Fira Code', 'Courier New', monospace; font-size: 0.9em; line-height: 1.5; }
+        pre { background: #f3f4f6; padding: 18px 20px; border-radius: 8px; overflow-x: auto; margin: 14px 0 18px 0; font-size: 0.9rem; line-height: 1.6; font-family: 'Consolas', 'Fira Code', 'Courier New', monospace; }
+        pre code { background: none; padding: 0; }
         @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
     </style>
 </head>
@@ -36,433 +38,369 @@
 <p class="spec-ref">AQA A-Level Computer Science (7517) &mdash; Paper 1</p>
 
 <!-- ====== INTERNAL HARDWARE ====== -->
-<h2>4.7.1 Internal Hardware Components of a Computer</h2>
+<h2>4.7.1 Internal Hardware Components</h2>
 
 <h3>The Processor (CPU)</h3>
-<p>The <strong>Central Processing Unit (CPU)</strong> is the primary component responsible for executing instructions. It contains the <strong>Arithmetic Logic Unit (ALU)</strong>, the <strong>Control Unit (CU)</strong>, and a set of <strong>registers</strong>. Modern CPUs also contain on-die <strong>cache memory</strong> to speed up data access.</p>
-
 <div class="definition">
-    <strong>Processor:</strong> An electronic circuit that executes instructions from a program by performing arithmetic, logic, control, and input/output operations. It is the "brain" of the computer, but it can only do what its instructions tell it to do.
+    <strong>CPU (Central Processing Unit):</strong> An electronic circuit that executes instructions by performing arithmetic, logic, control, and I/O operations. It contains the <strong>ALU</strong>, <strong>Control Unit</strong>, <strong>registers</strong>, <strong>cache</strong>, and a <strong>clock</strong>.
 </div>
 
-<p><strong>Key internal components:</strong></p>
 <ul>
-    <li><strong>ALU (Arithmetic Logic Unit)</strong> &mdash; performs all arithmetic calculations (add, subtract, multiply, divide) and logical operations (AND, OR, NOT, XOR, comparisons). The ALU takes inputs from registers and outputs results to the accumulator.</li>
-    <li><strong>Control Unit (CU)</strong> &mdash; coordinates all CPU operations. It fetches instructions from memory, decodes them, and sends control signals to the ALU, registers, and other components. It generates timing signals using the system clock. The CU does not process data itself.</li>
-    <li><strong>Registers</strong> &mdash; ultra-fast storage locations inside the CPU, each holding a single word of data. They are the fastest form of storage but very limited in number. Different registers have specialised roles.</li>
-    <li><strong>Cache</strong> &mdash; small, fast SRAM memory between the CPU and main memory. It stores copies of frequently accessed data and instructions to reduce the average time to access memory.</li>
-    <li><strong>Clock</strong> &mdash; an electronic oscillator that generates a regular pulse signal, synchronising all CPU operations. Each pulse is one clock cycle. The clock speed (measured in GHz) determines how many cycles occur per second.</li>
+    <li><strong>ALU (Arithmetic Logic Unit)</strong> &mdash; performs arithmetic (add, subtract, multiply, divide) and logical operations (AND, OR, NOT, XOR, comparisons). Takes inputs from registers, outputs to the accumulator.</li>
+    <li><strong>Control Unit (CU)</strong> &mdash; coordinates all CPU operations. Fetches instructions, decodes them, sends control signals. Generates timing signals via the system clock. Does not process data itself.</li>
+    <li><strong>Registers</strong> &mdash; ultra-fast storage inside the CPU, each holding one word of data. The fastest form of storage but very limited in number.</li>
+    <li><strong>Cache</strong> &mdash; small, fast SRAM between CPU and main memory. Stores frequently accessed data/instructions to reduce average memory access time.</li>
+    <li><strong>Clock</strong> &mdash; electronic oscillator generating a regular pulse signal. Each pulse = one clock cycle. Speed measured in GHz (billions of cycles/second).</li>
 </ul>
 
 <h3>Main Memory</h3>
-<p><strong>Main memory</strong> (primary storage) holds data and instructions that the CPU needs to access quickly. It is directly addressable by the CPU via the address bus.</p>
-
 <table>
     <tr><th>Feature</th><th>RAM</th><th>ROM</th></tr>
-    <tr><td>Volatile?</td><td>Yes &mdash; contents lost when power removed</td><td>No &mdash; contents retained without power</td></tr>
-    <tr><td>Read/Write?</td><td>Both read and write</td><td>Read only (during normal operation)</td></tr>
-    <tr><td>Purpose</td><td>Stores currently running programs, OS, and active data</td><td>Stores boot instructions / BIOS / UEFI firmware</td></tr>
-    <tr><td>Speed</td><td>Fast (but slower than cache)</td><td>Generally slower than RAM</td></tr>
-    <tr><td>Types</td><td><strong>SRAM</strong> (used for cache &mdash; very fast, expensive, no refresh needed) and <strong>DRAM</strong> (used for main memory &mdash; slower, cheaper, requires periodic refresh)</td><td>PROM (programmable once), EPROM (erasable with UV light), EEPROM (electrically erasable), Flash ROM</td></tr>
-    <tr><td>Capacity</td><td>Typically 4&ndash;64 GB in modern PCs</td><td>Typically a few MB (just enough for boot firmware)</td></tr>
+    <tr><td>Volatile?</td><td>Yes &mdash; lost when power removed</td><td>No &mdash; retained without power</td></tr>
+    <tr><td>Read/Write?</td><td>Both</td><td>Read only (normally)</td></tr>
+    <tr><td>Purpose</td><td>Running programs, OS, active data</td><td>Boot instructions / BIOS / UEFI firmware</td></tr>
+    <tr><td>Types</td><td><strong>SRAM</strong> (cache &mdash; very fast, expensive, no refresh) and <strong>DRAM</strong> (main memory &mdash; slower, cheaper, needs periodic refresh)</td><td>PROM, EPROM, EEPROM, Flash ROM</td></tr>
+    <tr><td>Capacity</td><td>4&ndash;64 GB typically</td><td>A few MB</td></tr>
 </table>
 
 <h3>The System Bus</h3>
-<p>The <strong>system bus</strong> is a set of parallel wires that connects the CPU to main memory and I/O controllers. It consists of three distinct sub-buses, each carrying a different type of signal:</p>
+
+<!-- System bus SVG diagram -->
+<svg viewBox="0 0 500 180" style="width:100%;max-width:500px;display:block;margin:0 auto 18px auto;" xmlns="http://www.w3.org/2000/svg">
+  <rect x="30" y="20" width="120" height="60" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="90" y="55" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af">CPU</text>
+  <rect x="350" y="20" width="120" height="60" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="410" y="55" text-anchor="middle" font-size="14" font-weight="700" fill="#065f46">Memory</text>
+  <rect x="350" y="110" width="120" height="50" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="410" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">I/O</text>
+  <!-- Buses -->
+  <line x1="150" y1="35" x2="350" y2="35" stroke="#ef4444" stroke-width="3"/>
+  <text x="250" y="30" text-anchor="middle" font-size="10" fill="#ef4444">Address Bus (unidirectional &rarr;)</text>
+  <line x1="150" y1="50" x2="350" y2="50" stroke="#2563eb" stroke-width="3"/>
+  <text x="250" y="62" text-anchor="middle" font-size="10" fill="#2563eb">Data Bus (bidirectional &harr;)</text>
+  <line x1="150" y1="65" x2="350" y2="65" stroke="#10b981" stroke-width="3"/>
+  <text x="250" y="78" text-anchor="middle" font-size="10" fill="#10b981">Control Bus (bidirectional &harr;)</text>
+  <!-- Vertical connections to I/O -->
+  <line x1="410" y1="80" x2="410" y2="110" stroke="#94a3b8" stroke-width="2"/>
+</svg>
 
 <table>
     <tr><th>Bus</th><th>Purpose</th><th>Direction</th><th>Width Effect</th></tr>
-    <tr><td><strong>Address Bus</strong></td><td>Carries memory addresses from the CPU to identify the location being accessed</td><td><strong>Unidirectional</strong> (CPU &rarr; memory/IO)</td><td>n-bit address bus can address 2<sup>n</sup> unique locations. E.g., 32-bit bus = 4 GB addressable; 64-bit = 16 exabytes.</td></tr>
-    <tr><td><strong>Data Bus</strong></td><td>Carries actual data between CPU, memory, and I/O devices</td><td><strong>Bidirectional</strong></td><td>Wider data bus = more data per transfer. 64-bit data bus transfers 8 bytes per operation.</td></tr>
-    <tr><td><strong>Control Bus</strong></td><td>Carries control signals to coordinate operations</td><td><strong>Bidirectional</strong></td><td>Multiple individual lines, each carrying a specific signal.</td></tr>
+    <tr><td><strong>Address Bus</strong></td><td>Carries memory addresses from CPU</td><td><strong>Unidirectional</strong> (CPU &rarr; memory/IO)</td><td>n bits = 2<sup>n</sup> addressable locations. 32-bit = 4 GB; 64-bit = 16 EB.</td></tr>
+    <tr><td><strong>Data Bus</strong></td><td>Carries actual data between components</td><td><strong>Bidirectional</strong></td><td>Wider = more data per transfer. 64-bit = 8 bytes/operation.</td></tr>
+    <tr><td><strong>Control Bus</strong></td><td>Carries control signals</td><td><strong>Bidirectional</strong></td><td>Individual lines: Memory Read/Write, Clock, Interrupt, Bus Request/Grant, Reset.</td></tr>
 </table>
 
-<p><strong>Control signals</strong> carried on the control bus include:</p>
-<ul>
-    <li><strong>Memory Read / Memory Write</strong> &mdash; signals indicating whether data is being read from or written to memory</li>
-    <li><strong>Bus Request / Bus Grant</strong> &mdash; used by I/O devices requesting and being granted control of the bus (for DMA &mdash; Direct Memory Access)</li>
-    <li><strong>Clock</strong> &mdash; the timing signal that synchronises all operations</li>
-    <li><strong>Interrupt</strong> &mdash; signals from I/O devices or software requesting CPU attention</li>
-    <li><strong>Reset</strong> &mdash; resets the CPU to its initial state</li>
-</ul>
-
-<div class="exam-tip">The width of the <strong>address bus</strong> determines how many unique memory locations can be addressed: 2<sup>n</sup> locations for an n-bit bus. The width of the <strong>data bus</strong> determines how much data can be transferred in a single operation. If asked "what happens if you increase the address bus from 32 to 36 bits?", the answer is that addressable memory increases from 2<sup>32</sup> = 4 GB to 2<sup>36</sup> = 64 GB.</div>
+<div class="exam-tip">Address bus width determines addressable memory: 2<sup>n</sup> locations for n bits. If asked "what happens if address bus increases from 32 to 36 bits?", addressable memory goes from 4 GB to 64 GB. The address bus is unidirectional (CPU sends addresses); the data bus is bidirectional.</div>
 
 <!-- ====== VON NEUMANN ====== -->
 <h2>4.7.2 Von Neumann Architecture</h2>
 
 <div class="definition">
-    <strong>Stored Program Concept:</strong> The idea (proposed by John von Neumann in 1945) that instructions and data are stored together in the same main memory, and instructions are fetched and executed sequentially (unless a branch instruction is encountered). Before this, computers were rewired for each new program.
+    <strong>Stored Program Concept</strong> (von Neumann, 1945): Instructions and data are stored together in the same main memory, and instructions are fetched and executed sequentially. Before this, computers were physically rewired for each new program.
 </div>
 
-<p>Key features of the <strong>Von Neumann architecture:</strong></p>
 <ul>
-    <li>A single memory space holds both <strong>instructions and data</strong> &mdash; the CPU cannot distinguish between them by looking at the bits; it is the context (fetch vs data access) that determines interpretation.</li>
-    <li>A single bus system connects the CPU to memory</li>
-    <li>Instructions are fetched and executed <strong>sequentially</strong> (one after another, in order)</li>
-    <li>The CPU contains an ALU, CU, and registers</li>
-    <li>Programs can modify themselves at runtime (since instructions are data that can be overwritten) &mdash; though this is generally avoided in modern practice for security reasons.</li>
+    <li>Single memory holds both <strong>instructions and data</strong></li>
+    <li>Single bus system connects CPU to memory</li>
+    <li>Instructions fetched and executed <strong>sequentially</strong></li>
+    <li>Programs can modify themselves (instructions are writable data)</li>
 </ul>
 
 <h3>Key Registers</h3>
 <table>
-    <tr><th>Register</th><th>Abbreviation</th><th>Purpose</th></tr>
-    <tr><td><strong>Program Counter</strong></td><td>PC</td><td>Holds the <strong>address of the next instruction</strong> to be fetched. Incremented after each fetch. Changed by branch/jump instructions. This is what makes sequential execution possible.</td></tr>
-    <tr><td><strong>Memory Address Register</strong></td><td>MAR</td><td>Holds the address of the memory location currently being read from or written to. Connected to the <strong>address bus</strong>. The MAR acts as the "request slip" sent to memory.</td></tr>
-    <tr><td><strong>Memory Data Register</strong></td><td>MDR (or MBR)</td><td>Holds the data that has just been read from memory or is about to be written to memory. Connected to the <strong>data bus</strong>. Sometimes called the Memory Buffer Register.</td></tr>
-    <tr><td><strong>Current Instruction Register</strong></td><td>CIR</td><td>Holds the instruction currently being decoded and executed. The CU splits it into <strong>opcode</strong> (what to do) and <strong>operand</strong> (data or address to operate on).</td></tr>
-    <tr><td><strong>Accumulator</strong></td><td>ACC</td><td>A general-purpose register that stores intermediate results of arithmetic and logic operations performed by the ALU. The primary "working register".</td></tr>
-    <tr><td><strong>Status Register</strong></td><td>SR / FLAGS</td><td>Contains individual bits (flags) that indicate the outcome of operations: <strong>Carry</strong> (C), <strong>Overflow</strong> (V), <strong>Zero</strong> (Z), <strong>Negative</strong> (N), <strong>Interrupt enable</strong>. Used by conditional branch instructions.</td></tr>
-    <tr><td><strong>Index Register</strong></td><td>IX</td><td>Holds a value that is added to the operand address in indexed addressing mode. Used for iterating through arrays.</td></tr>
-    <tr><td><strong>Stack Pointer</strong></td><td>SP</td><td>Points to the top of the system stack in memory. Updated when data is pushed onto or popped off the stack (e.g., during subroutine calls and interrupt handling).</td></tr>
+    <tr><th>Register</th><th>Abbrev.</th><th>Purpose</th></tr>
+    <tr><td><strong>Program Counter</strong></td><td>PC</td><td>Address of the <strong>next</strong> instruction to fetch. Incremented after fetch. Changed by branches.</td></tr>
+    <tr><td><strong>Memory Address Register</strong></td><td>MAR</td><td>Address of memory location being accessed. Connected to <strong>address bus</strong>.</td></tr>
+    <tr><td><strong>Memory Data Register</strong></td><td>MDR/MBR</td><td>Data just read from or about to be written to memory. Connected to <strong>data bus</strong>.</td></tr>
+    <tr><td><strong>Current Instruction Register</strong></td><td>CIR</td><td>Instruction currently being decoded/executed. Split into <strong>opcode</strong> + <strong>operand</strong>.</td></tr>
+    <tr><td><strong>Accumulator</strong></td><td>ACC</td><td>Stores intermediate results from ALU operations.</td></tr>
+    <tr><td><strong>Status Register</strong></td><td>SR/FLAGS</td><td>Flags: Carry (C), Overflow (V), Zero (Z), Negative (N). Used by conditional branches.</td></tr>
+    <tr><td><strong>Index Register</strong></td><td>IX</td><td>Added to operand address in indexed addressing. Used for array iteration.</td></tr>
+    <tr><td><strong>Stack Pointer</strong></td><td>SP</td><td>Points to top of system stack. Updated on push/pop (subroutine calls, interrupts).</td></tr>
 </table>
 
-<div class="exam-tip">Always be precise about what each register holds. The PC holds the address of the <em>next</em> instruction, not the current one. The MAR holds an <em>address</em>; the MDR holds <em>data</em> (or an instruction fetched from that address). The CIR holds the <em>current</em> instruction being decoded. In AQA mark schemes, this precision is required for full marks.</div>
+<div class="exam-tip">Be precise: PC holds the address of the <em>next</em> instruction (not current). MAR holds an <em>address</em>; MDR holds <em>data</em>. CIR holds the <em>current</em> instruction. This precision is required for full marks in AQA mark schemes.</div>
 
 <!-- ====== HARVARD ====== -->
 <h2>4.7.3 Harvard Architecture</h2>
 
-<p>The <strong>Harvard architecture</strong> uses physically separate memory and separate buses for instructions and data. This allows the CPU to fetch an instruction and read/write data <strong>simultaneously</strong>, doubling potential throughput.</p>
+<p>Uses <strong>physically separate memory and buses</strong> for instructions and data, enabling simultaneous fetch and data access.</p>
 
 <table>
     <tr><th>Feature</th><th>Von Neumann</th><th>Harvard</th></tr>
-    <tr><td>Memory</td><td>Single shared memory for instructions and data</td><td>Separate memory for instructions and data</td></tr>
-    <tr><td>Bus system</td><td>Single bus (potential bottleneck)</td><td>Separate buses for instruction and data</td></tr>
-    <tr><td>Simultaneous access</td><td>No &mdash; fetch or data access, not both at once</td><td>Yes &mdash; can fetch next instruction while accessing data for current instruction</td></tr>
-    <tr><td>Speed</td><td>Slower (Von Neumann bottleneck)</td><td>Faster for specific tasks</td></tr>
-    <tr><td>Flexibility</td><td>More flexible (programs can be loaded from anywhere; self-modifying code possible)</td><td>Less flexible (instruction memory size is fixed at design time)</td></tr>
-    <tr><td>Typical use</td><td>General-purpose computers (desktops, laptops, servers)</td><td>Embedded systems (microcontrollers), DSPs (Digital Signal Processors), microcontrollers (Arduino, PIC)</td></tr>
+    <tr><td>Memory</td><td>Single shared memory</td><td>Separate instruction and data memory</td></tr>
+    <tr><td>Buses</td><td>Single bus (bottleneck)</td><td>Separate instruction and data buses</td></tr>
+    <tr><td>Simultaneous access</td><td>No (fetch OR data, not both)</td><td>Yes (fetch instruction while accessing data)</td></tr>
+    <tr><td>Flexibility</td><td>More flexible (programs loaded from anywhere)</td><td>Less flexible (instruction memory fixed at design)</td></tr>
+    <tr><td>Use</td><td>General-purpose (desktops, laptops)</td><td>Embedded systems, DSPs, microcontrollers (Arduino)</td></tr>
 </table>
 
 <div class="definition">
-    <strong>Von Neumann Bottleneck:</strong> The limitation that arises because both data and instructions share the same bus, meaning the CPU can be idle while waiting for data to be transferred. The bus becomes a performance bottleneck because the rate of data transfer is much slower than the rate at which the CPU can process data. Harvard architecture avoids this by having separate buses.
+    <strong>Von Neumann Bottleneck:</strong> Both data and instructions share the same bus, so the CPU idles while waiting for data transfer. The bus transfer rate is much slower than CPU processing speed. Harvard avoids this with separate buses.
 </div>
 
-<p><strong>Modified Harvard architecture</strong> is used in most modern processors: separate L1 caches for instructions (L1i) and data (L1d) provide Harvard-style parallel access at the cache level, but a unified main memory (Von Neumann style) retains flexibility. This hybrid approach provides the speed benefits of Harvard while maintaining the flexibility of Von Neumann.</p>
+<p><strong>Modified Harvard architecture</strong> (most modern processors): separate L1 caches for instructions (L1i) and data (L1d) provide Harvard-style parallelism, but unified main memory retains Von Neumann flexibility.</p>
 
 <!-- ====== FDE CYCLE ====== -->
 <h2>4.7.4 The Fetch-Decode-Execute Cycle</h2>
 
-<p>The CPU continuously repeats three stages to process each instruction. This cycle runs billions of times per second in a modern processor.</p>
-
 <h3>1. Fetch</h3>
 <ol>
-    <li>The contents of the <strong>PC</strong> are copied to the <strong>MAR</strong>. (PC &rarr; MAR)</li>
-    <li>The <strong>PC is incremented</strong> (PC &larr; PC + 1) to point to the next instruction. (This happens early so branch instructions can overwrite the PC if needed.)</li>
-    <li>The address in the MAR is placed on the <strong>address bus</strong> and sent to main memory.</li>
-    <li>The <strong>control unit</strong> sends a <strong>memory read</strong> signal along the control bus.</li>
-    <li>The data at the addressed memory location is transferred along the <strong>data bus</strong> into the <strong>MDR</strong>.</li>
-    <li>The contents of the MDR are copied to the <strong>CIR</strong>. (MDR &rarr; CIR)</li>
+    <li>PC &rarr; MAR (address of next instruction sent to MAR)</li>
+    <li>PC &larr; PC + 1 (increment to point to next instruction)</li>
+    <li>MAR placed on <strong>address bus</strong></li>
+    <li>CU sends <strong>memory read</strong> signal on control bus</li>
+    <li>Data from addressed location &rarr; <strong>data bus</strong> &rarr; MDR</li>
+    <li>MDR &rarr; CIR (instruction now in CIR for decoding)</li>
 </ol>
 
 <h3>2. Decode</h3>
 <ol>
-    <li>The <strong>control unit</strong> decodes the instruction held in the CIR.</li>
-    <li>The instruction is split into the <strong>opcode</strong> (the operation to perform, e.g., ADD, LDR, BRA) and the <strong>operand</strong> (the data value or address to operate on).</li>
-    <li>The CU determines what control signals need to be sent and to which components.</li>
-    <li>If the operand is a memory address, the addressing mode determines how to interpret it (immediate, direct, indirect, or indexed).</li>
+    <li>CU decodes instruction in CIR</li>
+    <li>Split into <strong>opcode</strong> (operation) and <strong>operand</strong> (data/address)</li>
+    <li>CU determines required control signals and addressing mode</li>
 </ol>
 
 <h3>3. Execute</h3>
 <ol>
-    <li>The decoded instruction is carried out. This could involve:
+    <li>Instruction carried out:
         <ul>
-            <li>An <strong>ALU operation</strong> &mdash; arithmetic or logic calculation, with the result stored in the ACC</li>
-            <li>A <strong>data transfer</strong> &mdash; loading data from memory into a register, or storing register contents to memory (requires MAR/MDR and the bus system)</li>
-            <li>A <strong>branch/jump</strong> &mdash; loading a new address into the PC, breaking sequential execution</li>
-            <li>A <strong>comparison</strong> &mdash; comparing two values and setting flags in the status register (Zero, Negative, Carry, Overflow)</li>
-            <li>A <strong>halt</strong> instruction &mdash; stopping the CPU</li>
+            <li><strong>ALU operation</strong> &mdash; arithmetic/logic, result to ACC</li>
+            <li><strong>Data transfer</strong> &mdash; load from memory or store to memory via MAR/MDR</li>
+            <li><strong>Branch/jump</strong> &mdash; new address loaded into PC</li>
+            <li><strong>Comparison</strong> &mdash; sets flags in status register</li>
+            <li><strong>Halt</strong> &mdash; stops the CPU</li>
         </ul>
     </li>
-    <li>Results may be stored in the <strong>accumulator</strong> or written back to memory via MDR and the data bus.</li>
-    <li>The status register flags are updated to reflect the result.</li>
+    <li>Status register flags updated</li>
+    <li>CPU checks for <strong>interrupts</strong></li>
 </ol>
 
-<h3>FDE Cycle Walkthrough Example</h3>
-<pre>
-  Memory contents:
-  Address 100: LDR R0, 200    (Load value at address 200 into R0)
-  Address 101: ADD R0, R0, #5  (Add 5 to R0)
-  Address 102: STR R0, 201    (Store R0 into address 201)
-  Address 200: 42             (Data value)
-  Address 201: 0              (Empty, will receive result)
+<h3>FDE Walkthrough</h3>
+<pre>Memory:
+  100: LDR R0, 200    (Load value at address 200 into R0)
+  101: ADD R0, R0, #5 (Add 5 to R0)
+  102: STR R0, 201    (Store R0 to address 201)
+  200: 42             (data)
+  201: 0              (empty)
 
-  Cycle 1 (instruction at 100):
-    Fetch:   PC=100 &rarr; MAR=100, PC incremented to 101
-             Memory[100] &rarr; MDR = "LDR R0, 200", MDR &rarr; CIR
-    Decode:  Opcode = LDR, Operand = address 200
-    Execute: MAR=200, Memory[200] &rarr; MDR=42, MDR &rarr; R0
-             R0 now contains 42
+Cycle 1 (address 100):
+  Fetch:   PC=100 &rarr; MAR, PC=101, Memory[100] &rarr; MDR &rarr; CIR
+  Decode:  Opcode=LDR, Operand=address 200
+  Execute: MAR=200, Memory[200] &rarr; MDR=42 &rarr; R0. R0 is now 42.
 
-  Cycle 2 (instruction at 101):
-    Fetch:   PC=101 &rarr; MAR=101, PC=102
-             Memory[101] &rarr; MDR = "ADD R0, R0, #5", MDR &rarr; CIR
-    Decode:  Opcode = ADD, Operand = R0, #5 (immediate)
-    Execute: ALU calculates R0 + 5 = 42 + 5 = 47, result &rarr; R0
+Cycle 2 (address 101):
+  Fetch:   PC=101 &rarr; MAR, PC=102, Memory[101] &rarr; MDR &rarr; CIR
+  Decode:  Opcode=ADD, Operands=R0, #5 (immediate)
+  Execute: ALU: 42+5=47 &rarr; R0
 
-  Cycle 3 (instruction at 102):
-    Fetch:   PC=102 &rarr; MAR=102, PC=103
-             Memory[102] &rarr; MDR = "STR R0, 201", MDR &rarr; CIR
-    Decode:  Opcode = STR, Operand = address 201
-    Execute: R0 &rarr; MDR=47, MAR=201, MDR written to Memory[201]
-             Memory[201] now contains 47
-</pre>
+Cycle 3 (address 102):
+  Fetch:   PC=102 &rarr; MAR, PC=103, Memory[102] &rarr; MDR &rarr; CIR
+  Decode:  Opcode=STR, Operand=address 201
+  Execute: R0(47) &rarr; MDR, MAR=201, MDR written to Memory[201]</pre>
 
-<div class="exam-tip">When describing the FDE cycle, always reference the specific registers and buses involved. Saying "the instruction is fetched from memory" is not detailed enough &mdash; you must describe the role of PC, MAR, MDR, CIR, and the address/data/control buses. Include the register transfers (e.g., PC &rarr; MAR, MDR &rarr; CIR).</div>
+<div class="exam-tip">Always reference specific registers and buses. "The instruction is fetched" is insufficient &mdash; describe PC &rarr; MAR, memory read signal on control bus, data bus &rarr; MDR &rarr; CIR. This level of detail is required for full marks.</div>
 
 <h3>Interrupts</h3>
-<p>After the execute phase of each instruction, the CPU checks for <strong>interrupts</strong>. An interrupt is a signal (sent via the control bus) from hardware or software requesting the CPU's immediate attention.</p>
+<p>After each execute phase, the CPU checks for <strong>interrupts</strong> &mdash; signals requesting immediate attention.</p>
 
-<p><strong>Common interrupt sources:</strong></p>
-<ul>
-    <li><strong>I/O interrupts:</strong> keyboard key pressed, mouse moved, printer ready, disk transfer complete</li>
-    <li><strong>Timer interrupts:</strong> the OS scheduler's time quantum has expired (triggers context switch)</li>
-    <li><strong>Software interrupts (traps):</strong> division by zero, stack overflow, system call from a program</li>
-    <li><strong>Hardware faults:</strong> memory parity error, power failure warning</li>
-</ul>
+<p><strong>Sources:</strong> I/O devices (key press, disk complete), timer (scheduler quantum expired), software traps (division by zero, system call), hardware faults (memory error).</p>
 
-<p><strong>Interrupt handling process:</strong></p>
+<p><strong>Interrupt handling:</strong></p>
 <ol>
-    <li>The CPU checks the interrupt flag after each execute phase. If interrupts are disabled (the interrupt mask is set), the interrupt is queued.</li>
-    <li>If an interrupt is detected and interrupts are enabled, the CPU saves its current state &mdash; all register contents (PC, ACC, status register, etc.) are pushed onto the <strong>system stack</strong>.</li>
-    <li>The PC is loaded with the address of the appropriate <strong>Interrupt Service Routine (ISR)</strong>, found via an interrupt vector table.</li>
-    <li>The ISR executes to handle the interrupt (e.g., read the keystroke, acknowledge the device).</li>
-    <li>On completion, the CPU restores its previous state by popping values from the stack and resumes the interrupted program exactly where it left off.</li>
+    <li>CPU checks interrupt flag after execute phase</li>
+    <li>If interrupt detected and enabled: save current state (all registers) onto <strong>system stack</strong></li>
+    <li>PC loaded with address of <strong>Interrupt Service Routine (ISR)</strong> from interrupt vector table</li>
+    <li>ISR executes to handle the interrupt</li>
+    <li>On completion, saved state is restored from the stack (registers popped)</li>
+    <li>CPU resumes the interrupted program from where it left off</li>
 </ol>
 
-<p><strong>Interrupt priorities:</strong> Multiple interrupts can occur simultaneously. Higher-priority interrupts (e.g., power failure) can interrupt lower-priority ISRs. This creates a nested interrupt system.</p>
+<p><strong>Interrupt priorities:</strong> Higher-priority interrupts can interrupt lower-priority ISRs (nested interrupts). The <strong>interrupt mask</strong> can disable certain interrupts temporarily.</p>
 
-<!-- ====== INSTRUCTION SET ====== -->
-<h2>4.7.5 Processor Instruction Set</h2>
+<!-- ====== ADDRESSING MODES ====== -->
+<h2>4.7.5 Addressing Modes</h2>
 
-<div class="definition">
-    <strong>Machine Code:</strong> The lowest-level programming language, consisting of binary instructions that the CPU can directly execute. Each instruction consists of an <strong>opcode</strong> (the operation) and typically one or more <strong>operands</strong> (the data or address).
-</div>
+<p>Addressing modes determine how the operand of an instruction is interpreted:</p>
 
-<h3>Instruction Format</h3>
-<pre>| Opcode | Operand |
-|  ADD   |  #42    |   &larr; Add the value 42 to the accumulator (immediate)
-|  LDR   |  200    |   &larr; Load the value at memory address 200 (direct)
-|  BRA   |  loop   |   &larr; Branch unconditionally to label "loop"
-|  HALT  |         |   &larr; No operand needed</pre>
-
-<h3>Types of Operation</h3>
-<ul>
-    <li><strong>Data transfer:</strong> LDR (load from memory to register), STR (store from register to memory), MOV (copy between registers)</li>
-    <li><strong>Arithmetic:</strong> ADD, SUB, MUL, DIV</li>
-    <li><strong>Logical / Bitwise:</strong> AND, ORR, EOR (XOR), MVN (bitwise NOT)</li>
-    <li><strong>Shift:</strong> LSL (logical shift left), LSR (logical shift right), ASR (arithmetic shift right)</li>
-    <li><strong>Branch:</strong> B (unconditional), BEQ (branch if equal/zero flag set), BNE (branch if not equal), BGT (branch if greater than), BLT (branch if less than)</li>
-    <li><strong>Comparison:</strong> CMP (compare two values, sets status register flags without storing the result)</li>
-    <li><strong>I/O:</strong> IN, OUT (not in all instruction sets)</li>
-    <li><strong>HALT:</strong> Stop execution</li>
-</ul>
-
-<h3>Addressing Modes</h3>
 <table>
-    <tr><th>Mode</th><th>Description</th><th>Example</th><th>Use Case</th></tr>
-    <tr><td><strong>Immediate</strong></td><td>The operand <em>is</em> the actual data value. No memory access needed.</td><td><code>ADD R0, R0, #5</code> &mdash; add the literal value 5</td><td>Loading constants, incrementing counters</td></tr>
-    <tr><td><strong>Direct</strong></td><td>The operand is the <em>memory address</em> where the data is stored.</td><td><code>LDR R0, 200</code> &mdash; load the value stored at address 200</td><td>Accessing global variables</td></tr>
-    <tr><td><strong>Indirect</strong></td><td>The operand is the address of a memory location that <em>contains the address</em> of the actual data (a pointer).</td><td><code>LDR R0, @200</code> &mdash; go to address 200, read the value there (say 350), then load from address 350</td><td>Implementing pointers, dynamic data structures</td></tr>
-    <tr><td><strong>Indexed</strong></td><td>The operand is added to the contents of an <strong>index register</strong> to form the effective address.</td><td><code>LDR R0, 200, IX</code> &mdash; load from address (200 + value in IX)</td><td>Iterating through arrays: base address stays constant, IX increments</td></tr>
+    <tr><th>Mode</th><th>Description</th><th>Example</th><th>Use</th></tr>
+    <tr><td><strong>Immediate</strong></td><td>Operand IS the data value</td><td><code>MOV R0, #5</code> &mdash; R0 = 5</td><td>Loading constants</td></tr>
+    <tr><td><strong>Direct</strong></td><td>Operand is the memory address of the data</td><td><code>LDR R0, 200</code> &mdash; R0 = Memory[200]</td><td>Accessing variables</td></tr>
+    <tr><td><strong>Indirect</strong></td><td>Operand is address of location holding the actual address</td><td><code>LDR R0, (200)</code> &mdash; R0 = Memory[Memory[200]]</td><td>Pointers, dynamic structures</td></tr>
+    <tr><td><strong>Indexed</strong></td><td>Effective address = operand + index register</td><td><code>LDR R0, 200+IX</code> &mdash; R0 = Memory[200+IX]</td><td>Array access, iteration</td></tr>
 </table>
 
-<div class="exam-tip">Indirect addressing is like following a pointer &mdash; the memory location holds a reference to another location. Indexed addressing is essential for array access: the base address stays constant while the index register is incremented each iteration. Be ready to trace through instructions using each addressing mode.</div>
+<pre># Indexed addressing for array traversal:
+# Array starts at address 200, IX initially 0
+# LDR R0, 200+IX  loads arr[0], arr[1], arr[2]... as IX increments
+# IX=0: loads Memory[200]  (arr[0])
+# IX=1: loads Memory[201]  (arr[1])
+# IX=2: loads Memory[202]  (arr[2])</pre>
 
-<h3>AQA Assembly Language Reference</h3>
-<pre>LDR  Rd, &lt;memory ref&gt;    ; Load register Rd with value at memory location
-STR  Rd, &lt;memory ref&gt;    ; Store value in Rd to memory location
-ADD  Rd, Rn, &lt;operand2&gt;  ; Rd = Rn + operand2
-SUB  Rd, Rn, &lt;operand2&gt;  ; Rd = Rn - operand2
-MOV  Rd, &lt;operand2&gt;      ; Copy operand2 into Rd
-CMP  Rn, &lt;operand2&gt;      ; Compare Rn with operand2 (sets flags, no result stored)
-B    &lt;label&gt;              ; Unconditional branch to label
-BEQ  &lt;label&gt;              ; Branch if last comparison was equal (Z flag set)
-BNE  &lt;label&gt;              ; Branch if last comparison was not equal (Z flag clear)
-BGT  &lt;label&gt;              ; Branch if greater than
-BLT  &lt;label&gt;              ; Branch if less than
-AND  Rd, Rn, &lt;operand2&gt;  ; Rd = Rn AND operand2  (bitwise)
-ORR  Rd, Rn, &lt;operand2&gt;  ; Rd = Rn OR operand2   (bitwise)
-EOR  Rd, Rn, &lt;operand2&gt;  ; Rd = Rn XOR operand2  (bitwise)
-MVN  Rd, &lt;operand2&gt;      ; Rd = NOT operand2      (bitwise complement)
-LSL  Rd, Rn, &lt;operand2&gt;  ; Logical shift left Rn by operand2 bits, store in Rd
-LSR  Rd, Rn, &lt;operand2&gt;  ; Logical shift right Rn by operand2 bits, store in Rd
-HALT                      ; Stop execution
+<!-- ====== MACHINE CODE ====== -->
+<h2>4.7.6 Machine Code and Assembly Language</h2>
 
-; operand2 can be: #n (immediate value), Rm (register), or a memory address
-; Labels identify locations in the code for branch targets</pre>
+<h3>Machine Code</h3>
+<p><strong>Machine code</strong> is the binary instructions directly executed by the CPU. Each instruction consists of an <strong>opcode</strong> (what operation) and an <strong>operand</strong> (data or address). Machine code is processor-specific &mdash; different CPU architectures have different instruction sets.</p>
 
-<h3>Assembly Language Example: Sum of an Array</h3>
-<pre>; Sum the values at addresses 100-104 (5 elements)
-        MOV  R0, #0       ; R0 = running total, initialise to 0
-        MOV  R1, #0       ; R1 = index counter
-        MOV  R2, #5       ; R2 = array length
-loop:   LDR  R3, 100      ; Load value at address (100 + R1) using indexed
-        ADD  R0, R0, R3   ; Add array element to total
-        ADD  R1, R1, #1   ; Increment index
-        CMP  R1, R2       ; Compare index with length
-        BLT  loop         ; If index &lt; length, repeat
-        STR  R0, 200      ; Store total at address 200
-        HALT</pre>
+<h3>Assembly Language</h3>
+<p><strong>Assembly language</strong> uses human-readable <strong>mnemonics</strong> for machine code instructions. There is a one-to-one mapping between assembly mnemonics and machine code instructions.</p>
+
+<pre># AQA assembly instruction set examples:
+LDR Rd, &lt;memory&gt;     # Load register Rd with value from memory
+STR Rd, &lt;memory&gt;     # Store register Rd to memory
+ADD Rd, Rn, &lt;op2&gt;    # Rd = Rn + operand2
+SUB Rd, Rn, &lt;op2&gt;    # Rd = Rn - operand2
+MOV Rd, &lt;op2&gt;        # Rd = operand2
+CMP Rn, &lt;op2&gt;        # Compare Rn with operand2 (sets flags)
+B &lt;label&gt;             # Branch unconditionally
+BEQ &lt;label&gt;           # Branch if equal (Zero flag set)
+BNE &lt;label&gt;           # Branch if not equal
+BGT &lt;label&gt;           # Branch if greater than
+BLT &lt;label&gt;           # Branch if less than
+AND Rd, Rn, &lt;op2&gt;    # Rd = Rn AND operand2
+ORR Rd, Rn, &lt;op2&gt;    # Rd = Rn OR operand2
+EOR Rd, Rn, &lt;op2&gt;    # Rd = Rn XOR operand2
+MVN Rd, &lt;op2&gt;        # Rd = NOT operand2
+LSL Rd, Rn, &lt;op2&gt;    # Logical shift left
+LSR Rd, Rn, &lt;op2&gt;    # Logical shift right
+HALT                   # Stop execution</pre>
+
+<h4>Example: Sum numbers 1 to 5</h4>
+<pre>        MOV R0, #0        ; R0 = sum = 0
+        MOV R1, #1        ; R1 = counter = 1
+loop:   ADD R0, R0, R1    ; sum += counter
+        ADD R1, R1, #1    ; counter++
+        CMP R1, #6        ; compare counter with 6
+        BLT loop          ; if counter &lt; 6, loop again
+        STR R0, result    ; store sum
+        HALT
+result: 0                 ; memory location for result
+; After execution: result = 15 (1+2+3+4+5)</pre>
 
 <!-- ====== PERFORMANCE ====== -->
-<h2>4.7.6 Factors Affecting Processor Performance</h2>
+<h2>4.7.7 Factors Affecting CPU Performance</h2>
 
 <table>
-    <tr><th>Factor</th><th>How It Affects Performance</th><th>Limitations</th></tr>
-    <tr><td><strong>Clock Speed</strong></td><td>Measured in GHz (billions of cycles per second). Higher clock speed = more FDE cycles per second = faster processing. A 3.5 GHz processor performs 3.5 billion cycles per second.</td><td>Increasing clock speed generates more heat and consumes more power. Physical limits exist (heat dissipation, signal propagation time). Diminishing returns above certain speeds.</td></tr>
-    <tr><td><strong>Number of Cores</strong></td><td>Each core is an independent processor that can execute its own FDE cycle. More cores allow <strong>parallel processing</strong> of tasks. A quad-core CPU can execute 4 instruction streams simultaneously.</td><td>Software must be written for parallelism (multi-threaded). Not all tasks can be parallelised (inherently sequential operations). Overhead from inter-core communication and synchronisation.</td></tr>
-    <tr><td><strong>Cache Size and Levels</strong></td><td>Cache is fast SRAM between CPU and RAM. <strong>L1</strong> is fastest and smallest (32-64 KB per core, ~1 ns access); <strong>L2</strong> is larger but slower (256 KB-1 MB per core, ~3-10 ns); <strong>L3</strong> is shared between all cores (4-32 MB, ~10-20 ns). Larger cache = higher <strong>cache hit rate</strong> = fewer slow RAM accesses.</td><td>Expensive per byte. Diminishing returns as size increases (larger caches are slower). Takes up die space that could be used for other components.</td></tr>
-    <tr><td><strong>Word Length</strong></td><td>The number of bits the CPU can process in a single operation (e.g., 32-bit, 64-bit). A 64-bit processor can handle larger numbers natively and address more memory than a 32-bit one.</td><td>Software must be compiled for the appropriate word length. Wider word length increases circuit complexity.</td></tr>
-    <tr><td><strong>Bus Width</strong></td><td>A wider data bus transfers more data per cycle. A wider address bus addresses more memory locations.</td><td>Wider buses require more physical wires and increase manufacturing cost.</td></tr>
-    <tr><td><strong>Pipelining</strong></td><td>Multiple instructions are overlapped by executing different stages simultaneously (see next section).</td><td>Branch instructions and data dependencies can stall the pipeline.</td></tr>
+    <tr><th>Factor</th><th>How It Affects Performance</th><th>Limitation</th></tr>
+    <tr><td><strong>Clock speed</strong></td><td>Higher clock = more cycles/second = more instructions processed per second</td><td>Higher heat generation; diminishing returns (not all operations scale linearly)</td></tr>
+    <tr><td><strong>Number of cores</strong></td><td>Each core executes instructions independently. n cores can potentially process n tasks simultaneously.</td><td>Not all software is parallelisable; Amdahl's Law limits speedup. Overhead of managing multiple cores.</td></tr>
+    <tr><td><strong>Cache size &amp; levels</strong></td><td>Larger/more cache = more data available without slow main memory access. L1 (fastest, smallest, per-core), L2 (larger), L3 (shared).</td><td>Cache is expensive (SRAM). Diminishing returns as size grows.</td></tr>
+    <tr><td><strong>Word length</strong></td><td>Wider word (32-bit vs 64-bit) = larger values processed per operation, wider data bus, more addressable memory.</td><td>Requires compatible software</td></tr>
+    <tr><td><strong>Bus width</strong></td><td>Wider data bus = more data per transfer. Wider address bus = more addressable memory.</td><td>Physical connector constraints</td></tr>
+    <tr><td><strong>Pipelining</strong></td><td>Overlaps FDE stages of different instructions (while one executes, the next decodes, the next fetches). Increases throughput.</td><td>Branch instructions flush the pipeline (branch prediction helps). Data hazards cause stalls.</td></tr>
 </table>
 
-<div class="exam-tip">When asked about factors affecting performance, always explain <em>how</em> and <em>why</em> each factor improves performance AND mention its limitations. For example: "More cores allow parallel execution of threads, improving throughput for multi-threaded applications. However, software must be designed for parallelism, and inherently sequential tasks cannot benefit."</div>
+<h3>Pipelining</h3>
+<div class="definition">
+    <strong>Pipelining</strong> overlaps the fetch, decode, and execute stages of sequential instructions. While instruction 1 executes, instruction 2 is decoded, and instruction 3 is fetched &mdash; all simultaneously, tripling throughput in ideal conditions.
+</div>
 
-<!-- ====== PIPELINING ====== -->
-<h2>4.7.7 Pipelining</h2>
+<pre>Without pipelining:
+  Cycle:  1  2  3  4  5  6  7  8  9
+  Inst 1: F  D  E
+  Inst 2:          F  D  E
+  Inst 3:                   F  D  E
+  3 instructions in 9 cycles
 
-<p><strong>Pipelining</strong> is a technique where multiple instructions are overlapped during execution. The FDE cycle is divided into stages, and each stage processes a different instruction simultaneously, like an assembly line in a factory.</p>
+With pipelining:
+  Cycle:  1  2  3  4  5
+  Inst 1: F  D  E
+  Inst 2:    F  D  E
+  Inst 3:       F  D  E
+  3 instructions in 5 cycles (nearly 2x faster)</pre>
 
-<table>
-    <tr><th>Clock Cycle</th><th>Fetch Unit</th><th>Decode Unit</th><th>Execute Unit</th></tr>
-    <tr><td>1</td><td>Instruction 1</td><td>&mdash;</td><td>&mdash;</td></tr>
-    <tr><td>2</td><td>Instruction 2</td><td>Instruction 1</td><td>&mdash;</td></tr>
-    <tr><td>3</td><td>Instruction 3</td><td>Instruction 2</td><td>Instruction 1</td></tr>
-    <tr><td>4</td><td>Instruction 4</td><td>Instruction 3</td><td>Instruction 2</td></tr>
-    <tr><td>5</td><td>Instruction 5</td><td>Instruction 4</td><td>Instruction 3</td></tr>
-</table>
-
-<p><strong>Without pipelining:</strong> each instruction takes 3 cycles; 5 instructions take 15 cycles.<br>
-<strong>With pipelining:</strong> after the initial fill (3 cycles), one instruction completes per cycle; 5 instructions take only 7 cycles. Throughput is approximately tripled.</p>
-
-<p><strong>Pipeline Hazards</strong> &mdash; situations that prevent the next instruction from entering the pipeline:</p>
+<p><strong>Pipeline hazards:</strong></p>
 <ul>
-    <li><strong>Control hazards (branch hazards):</strong> A branch instruction makes the destination of the next fetch unknown until the branch is resolved. The pipeline may have to be <strong>flushed</strong> (all partially completed instructions discarded), wasting the work done so far. <strong>Branch prediction</strong> guesses the outcome to keep the pipeline full; if wrong, the pipeline is flushed.</li>
-    <li><strong>Data hazards:</strong> An instruction depends on the result of a previous instruction that has not yet completed its execute stage. E.g., instruction 2 needs the result that instruction 1 is still computing. Solutions include <strong>forwarding</strong> (passing the result directly between pipeline stages) and <strong>stalling</strong> (inserting "bubbles" / NOPs).</li>
-    <li><strong>Structural hazards:</strong> Two instructions need the same hardware resource at the same time (e.g., both need to access memory). Resolved by having separate instruction and data caches (Harvard-style at cache level).</li>
+    <li><strong>Data hazard</strong> &mdash; instruction depends on result of a previous instruction not yet complete</li>
+    <li><strong>Control hazard</strong> &mdash; branch instruction changes PC; instructions already in pipeline are wrong (pipeline flush). Mitigated by <strong>branch prediction</strong>.</li>
+    <li><strong>Structural hazard</strong> &mdash; two instructions need the same hardware resource simultaneously</li>
 </ul>
 
 <!-- ====== CISC vs RISC ====== -->
-<h2>4.7.8 CISC vs RISC Processors</h2>
+<h2>4.7.8 CISC vs RISC</h2>
 
 <table>
     <tr><th>Feature</th><th>CISC</th><th>RISC</th></tr>
-    <tr><td><strong>Full name</strong></td><td>Complex Instruction Set Computer</td><td>Reduced Instruction Set Computer</td></tr>
-    <tr><td><strong>Instruction set</strong></td><td>Large (hundreds of instructions), many specialised</td><td>Small (typically &lt;100), simple, general-purpose</td></tr>
-    <tr><td><strong>Instruction length</strong></td><td>Variable length (1-15 bytes for x86)</td><td>Fixed length (always 4 bytes for ARM)</td></tr>
-    <tr><td><strong>Cycles per instruction</strong></td><td>Multiple (varies: 1 to 20+ depending on instruction)</td><td>Usually one cycle per instruction (after pipelining)</td></tr>
-    <tr><td><strong>Addressing modes</strong></td><td>Many (10+)</td><td>Few (typically 3-5)</td></tr>
-    <tr><td><strong>Pipelining</strong></td><td>Harder (variable instruction lengths complicate pipeline stages)</td><td>Easier and more efficient (fixed-length, uniform stages)</td></tr>
-    <tr><td><strong>Memory access</strong></td><td>Instructions can directly operate on memory (e.g., ADD memory, register)</td><td><strong>Load-store architecture:</strong> only LDR/STR access memory; all arithmetic/logic uses registers only</td></tr>
-    <tr><td><strong>Registers</strong></td><td>Fewer general-purpose registers (8-16)</td><td>Many general-purpose registers (16-32+)</td></tr>
-    <tr><td><strong>Code density</strong></td><td>Higher (fewer instructions needed for same task)</td><td>Lower (more instructions needed, but each is fast)</td></tr>
-    <tr><td><strong>Power consumption</strong></td><td>Higher</td><td>Lower (simpler circuits, fewer transistors per instruction)</td></tr>
-    <tr><td><strong>Design philosophy</strong></td><td>Hardware complexity (complex decoder handles complex instructions)</td><td>Software complexity (compiler generates more but simpler instructions)</td></tr>
-    <tr><td><strong>Examples</strong></td><td>Intel x86, AMD64</td><td>ARM (phones, tablets, Raspberry Pi, Apple M-series), MIPS, RISC-V</td></tr>
-    <tr><td><strong>Typical use</strong></td><td>Desktops, laptops, servers</td><td>Mobile devices, embedded systems, tablets, increasingly laptops (Apple M-series)</td></tr>
+    <tr><td>Full name</td><td>Complex Instruction Set Computer</td><td>Reduced Instruction Set Computer</td></tr>
+    <tr><td>Instructions</td><td>Many, complex, variable-length</td><td>Few, simple, fixed-length</td></tr>
+    <tr><td>Cycles per instruction</td><td>Multiple (some instructions take many cycles)</td><td>Typically one cycle per instruction</td></tr>
+    <tr><td>Addressing modes</td><td>Many</td><td>Few (usually load-store only)</td></tr>
+    <tr><td>Pipelining</td><td>Difficult (variable instruction length)</td><td>Easy (fixed-length, predictable)</td></tr>
+    <tr><td>Code density</td><td>Higher (fewer instructions needed)</td><td>Lower (more instructions needed)</td></tr>
+    <tr><td>Hardware complexity</td><td>Complex (microcode)</td><td>Simple hardware, complex compiler</td></tr>
+    <tr><td>Power consumption</td><td>Higher</td><td>Lower (simpler circuits)</td></tr>
+    <tr><td>Examples</td><td>x86 (Intel, AMD)</td><td>ARM (phones, tablets, Raspberry Pi), MIPS</td></tr>
 </table>
 
-<div class="exam-tip">Modern x86 processors internally translate complex CISC instructions into simpler micro-operations (similar to RISC) for efficient pipelining. The boundary has blurred significantly. ARM's RISC design dominates mobile because of its low power consumption &mdash; this is why your phone's battery lasts all day while a laptop's may not.</div>
-
-<!-- ====== MULTICORE / PARALLEL ====== -->
-<h2>4.7.9 Multicore and Parallel Processing</h2>
+<!-- ====== GPUs AND MULTICORE ====== -->
+<h2>4.7.9 GPUs, Multicore, and Parallel Processing</h2>
 
 <h3>Multicore Processors</h3>
-<p>A <strong>multicore processor</strong> has two or more independent processing units (cores) on a single chip. Each core has its own ALU, CU, L1 cache (and often L2 cache), and can execute its own FDE cycle independently and simultaneously.</p>
-
-<p><strong>Advantages:</strong></p>
+<p>A <strong>multicore processor</strong> has multiple independent processing cores on a single chip. Each core can execute its own FDE cycle independently, enabling true <strong>parallel processing</strong>.</p>
 <ul>
-    <li>Multiple tasks can be processed <strong>truly simultaneously</strong> (not just time-sliced)</li>
-    <li>Better performance for multi-threaded applications (web browsers, video editing, compiling)</li>
-    <li>Lower power consumption and heat generation compared to achieving the same throughput by increasing clock speed</li>
-    <li>The OS can assign different processes to different cores</li>
+    <li><strong>Dual-core:</strong> 2 cores; <strong>quad-core:</strong> 4 cores; <strong>octa-core:</strong> 8 cores</li>
+    <li>Not all tasks benefit &mdash; only parallelisable workloads speed up</li>
+    <li><strong>Amdahl's Law:</strong> the serial portion of a program limits the maximum speedup from parallelism</li>
 </ul>
 
-<p><strong>Limitations:</strong></p>
-<ul>
-    <li>Software must be written to use multiple threads to benefit from multiple cores &mdash; single-threaded software runs on only one core regardless of how many are available</li>
-    <li>Not all tasks can be parallelised &mdash; some computations are inherently sequential (each step depends on the previous result)</li>
-    <li><strong>Amdahl's Law</strong> &mdash; the overall speedup is limited by the proportion of the task that must be done sequentially. If 25% of a program is sequential, the maximum speedup (with infinite cores) is only 4x.</li>
-    <li>Overhead from coordinating cores: inter-core communication, cache coherency (ensuring all cores see consistent data), synchronisation (preventing race conditions)</li>
-</ul>
-
-<h3>Parallel Processing</h3>
-<p><strong>Parallel processing</strong> involves dividing a task into smaller sub-tasks that can be executed simultaneously across multiple cores or processors.</p>
-<ul>
-    <li><strong>Data parallelism:</strong> The same operation is applied to different pieces of data simultaneously. Example: applying a brightness filter to every pixel in an image &mdash; each core processes a different section of the image.</li>
-    <li><strong>Task parallelism:</strong> Different operations are performed simultaneously on the same or different data. Example: one core handles user input while another renders graphics and a third processes audio.</li>
-</ul>
-
-<!-- ====== CO-PROCESSORS ====== -->
-<h2>4.7.10 Co-processors (GPUs)</h2>
-
+<h3>GPU (Graphics Processing Unit)</h3>
 <div class="definition">
-    <strong>Co-processor:</strong> A supplementary processor designed to handle specific types of computation, offloading work from the main CPU. This allows the CPU to focus on general-purpose tasks while the co-processor handles specialised workloads.
+    A <strong>GPU</strong> contains <strong>thousands of small, simple cores</strong> optimised for performing the same operation on many data points simultaneously (<strong>SIMD</strong> &mdash; Single Instruction, Multiple Data). Originally for graphics rendering, now used for general-purpose parallel computing (<strong>GPGPU</strong>).
 </div>
-
-<h3>Graphics Processing Unit (GPU)</h3>
-<p>A <strong>GPU</strong> was originally designed for rendering graphics but is now widely used for <strong>general-purpose parallel computation (GPGPU)</strong>.</p>
 
 <table>
     <tr><th>Feature</th><th>CPU</th><th>GPU</th></tr>
-    <tr><td><strong>Cores</strong></td><td>Few powerful cores (4&ndash;16 typical, up to 128 in server CPUs)</td><td>Thousands of simpler cores (4,000&ndash;16,000+)</td></tr>
-    <tr><td><strong>Optimised for</strong></td><td>Sequential, complex tasks with branching logic</td><td>Massively parallel, repetitive tasks (same operation on many data points)</td></tr>
-    <tr><td><strong>Control logic</strong></td><td>Complex (branch prediction, out-of-order execution, speculative execution)</td><td>Simpler per-core (SIMD &mdash; Single Instruction, Multiple Data)</td></tr>
-    <tr><td><strong>Clock speed</strong></td><td>Higher per-core (3-5 GHz)</td><td>Lower per-core (1-2 GHz), but massively parallel</td></tr>
-    <tr><td><strong>Memory</strong></td><td>Access to large main memory (up to TB)</td><td>Dedicated VRAM (8-24 GB), very high bandwidth</td></tr>
+    <tr><td>Cores</td><td>Few (4&ndash;16 typically), powerful</td><td>Thousands, simple</td></tr>
+    <tr><td>Optimised for</td><td>Sequential, complex tasks</td><td>Massively parallel, simple tasks</td></tr>
+    <tr><td>Use cases</td><td>OS, applications, complex logic</td><td>Graphics, machine learning, scientific simulations, cryptocurrency mining</td></tr>
 </table>
 
-<p><strong>Applications of GPU computing:</strong></p>
-<ul>
-    <li><strong>Machine learning / AI:</strong> Training neural networks involves millions of matrix multiplications &mdash; perfectly suited to GPU parallelism (using frameworks like CUDA, TensorFlow, PyTorch)</li>
-    <li><strong>Cryptocurrency mining:</strong> Hash computations are highly parallel</li>
-    <li><strong>Scientific simulations:</strong> Weather modelling, molecular dynamics, fluid dynamics, protein folding</li>
-    <li><strong>Image and video processing:</strong> Filters, encoding, decoding</li>
-    <li><strong>Real-time ray tracing:</strong> Simulating light physics for photorealistic rendering in games</li>
-</ul>
-
-<!-- ====== EXTERNAL HARDWARE ====== -->
-<h2>4.7.11 External Hardware Devices</h2>
-
-<h3>Input/Output Devices</h3>
+<h3>Types of Parallel Processing</h3>
 <table>
-    <tr><th>Input Devices</th><th>Output Devices</th><th>Both Input and Output</th></tr>
-    <tr><td>Keyboard, mouse, trackpad, stylus</td><td>Monitor, printer, speakers, headphones</td><td>Touchscreen</td></tr>
-    <tr><td>Scanner, camera, microphone, webcam</td><td>Projector, plotter, actuators, motors</td><td>VR headset (displays + motion sensors)</td></tr>
-    <tr><td>Barcode/QR reader, NFC reader, RFID</td><td>LED displays, 3D printer</td><td>Network interface (sends and receives data)</td></tr>
-    <tr><td>Sensors (temperature, pressure, light, motion, proximity, GPS)</td><td>Haptic feedback devices</td><td>External storage devices (read and write)</td></tr>
+    <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+    <tr><td><strong>SISD</strong></td><td>Single Instruction, Single Data &mdash; traditional sequential</td><td>Classic Von Neumann</td></tr>
+    <tr><td><strong>SIMD</strong></td><td>Single Instruction, Multiple Data &mdash; same operation on many data points</td><td>GPU processing, vector operations</td></tr>
+    <tr><td><strong>MISD</strong></td><td>Multiple Instructions, Single Data &mdash; rare</td><td>Fault-tolerant systems</td></tr>
+    <tr><td><strong>MIMD</strong></td><td>Multiple Instructions, Multiple Data &mdash; independent parallel tasks</td><td>Multicore CPUs, distributed systems</td></tr>
 </table>
+
+<!-- ====== I/O ====== -->
+<h2>4.7.10 I/O and Storage</h2>
+
+<h3>Input/Output Controllers</h3>
+<p>I/O controllers manage communication between the CPU and peripheral devices. Each device type has a dedicated controller that translates between the CPU's digital signals and the device's specific protocol.</p>
 
 <h3>Secondary Storage</h3>
 <table>
-    <tr><th>Type</th><th>Technology</th><th>Advantages</th><th>Disadvantages</th></tr>
-    <tr>
-        <td><strong>Magnetic (HDD, tape)</strong></td>
-        <td>Data stored as magnetic patterns on spinning platters (HDD) or sequential tape</td>
-        <td>Very high capacity (up to 20+ TB for HDD); lowest cost per GB; well-established; tape is excellent for long-term archival</td>
-        <td>Moving parts = mechanical failure risk; slower than SSD (seek time + rotational latency); fragile (sensitive to shock); heavier and larger; audible noise</td>
-    </tr>
-    <tr>
-        <td><strong>Optical (CD, DVD, Blu-ray)</strong></td>
-        <td>Data stored as pits and lands on a disc surface, read by a laser</td>
-        <td>Cheap per unit; portable; good for distribution (software, films); durable (no magnetic degradation)</td>
-        <td>Low capacity (700 MB CD, 4.7 GB DVD, 25 GB Blu-ray); slow read/write; easily scratched; becoming obsolete</td>
-    </tr>
-    <tr>
-        <td><strong>Solid-state (SSD, USB flash, SD card)</strong></td>
-        <td>Data stored as electrical charge in NAND flash memory cells (no moving parts)</td>
-        <td>Very fast (especially NVMe SSDs &mdash; 5000+ MB/s); silent; durable (shock-resistant); low power; lightweight; compact</td>
-        <td>Higher cost per GB than HDD; limited write cycles (wear levelling mitigates this, modern SSDs last many years); data retention can degrade if unpowered for very long periods</td>
-    </tr>
+    <tr><th>Technology</th><th>How It Works</th><th>Speed</th><th>Capacity</th><th>Best For</th></tr>
+    <tr><td><strong>HDD</strong></td><td>Spinning magnetic platters with read/write head</td><td>Slowest (mechanical)</td><td>Up to 20+ TB</td><td>Bulk storage, backups, cost-sensitive</td></tr>
+    <tr><td><strong>SSD</strong></td><td>Flash memory (NAND), no moving parts</td><td>Much faster than HDD</td><td>Up to 8+ TB</td><td>OS drive, applications, performance</td></tr>
+    <tr><td><strong>Optical</strong></td><td>Laser reads pits/lands on disc surface</td><td>Slow</td><td>CD:700MB, DVD:4.7GB, Blu-ray:25GB</td><td>Distribution, archiving</td></tr>
 </table>
 
-<div class="definition">
-    <strong>Virtual Storage (Cloud):</strong> Data is stored on remote servers accessed via the internet. Users see it as a single logical storage location, but data may be distributed and replicated across multiple physical servers in different data centres worldwide. Requires an internet connection.
-</div>
+<h3>Memory Hierarchy</h3>
+<pre>     Registers      (bytes, &lt;1 ns, most expensive)
+         |
+      L1 Cache      (KB, ~1 ns)
+         |
+      L2 Cache      (MB, ~5 ns)
+         |
+      L3 Cache      (MB, ~10 ns)
+         |
+     Main Memory    (GB, ~50-100 ns)
+         |
+       SSD          (TB, ~0.1 ms)
+         |
+       HDD          (TB, ~5-10 ms)
+         |
+     Tape/Cloud     (PB, seconds-minutes)
 
-<div class="exam-tip">When comparing storage devices, structure your answer around these factors: capacity, speed (both read and write), cost per GB, durability/reliability, portability, power consumption, and whether the device has moving parts. Always relate each factor to the specific scenario in the question.</div>
+As you go down: capacity increases, speed decreases, cost per byte decreases.</pre>
+
+<div class="exam-tip">Know the memory hierarchy from registers (fastest, smallest, most expensive) to tape/cloud (slowest, largest, cheapest). Understand why cache exists (bridge the speed gap between CPU and RAM). For performance factors, always explain the mechanism: e.g., "more cache reduces the number of slow main memory accesses, so the CPU spends less time waiting for data."</div>
 
 </div>
 </body>

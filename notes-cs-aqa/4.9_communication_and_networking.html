@@ -6,26 +6,27 @@
     <title>4.9 Communication and Networking — AQA A-Level CS</title>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px; }
         .container { max-width: 800px; margin: 0 auto; }
         h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
         .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
-        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
-        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        h2 { font-size: 1.45rem; color: #1e3a5f; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #e5e7eb; }
+        h3 { font-size: 1.15rem; color: #334155; margin-top: 28px; margin-bottom: 10px; }
+        h4 { font-size: 1.05rem; color: #4b5563; margin-top: 18px; margin-bottom: 8px; }
         p { margin-bottom: 14px; }
         ul, ol { margin-bottom: 14px; padding-left: 24px; }
         li { margin-bottom: 6px; }
-        strong { color: #1a1a2e; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        strong { color: #1e3a5f; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0 20px 0; font-size: 0.95rem; }
         th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
-        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        th { background: #f0f4ff; font-weight: 600; color: #1e3a5f; }
         tr:nth-child(even) { background: #f9fafb; }
         .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
-        .definition strong { color: #1e40af; }
+        .definition strong { color: #1d4ed8; }
         .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
         code { font-family: 'Consolas', 'Fira Code', 'Courier New', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
-        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', 'Fira Code', 'Courier New', monospace; font-size: 0.9em; line-height: 1.5; }
+        pre { background: #f3f4f6; padding: 18px 20px; border-radius: 8px; overflow-x: auto; margin: 14px 0 18px 0; font-size: 0.9rem; line-height: 1.6; font-family: 'Consolas', 'Fira Code', 'Courier New', monospace; }
         @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
     </style>
 </head>
@@ -41,528 +42,249 @@
 <h3>Serial vs Parallel Transmission</h3>
 <table>
     <tr><th>Feature</th><th>Serial</th><th>Parallel</th></tr>
-    <tr><td><strong>How it works</strong></td><td>Bits sent <strong>one at a time</strong> along a single wire/channel, one after another</td><td>Multiple bits sent <strong>simultaneously</strong> along multiple wires (e.g., 8 wires for 8 bits at once)</td></tr>
-    <tr><td><strong>Speed (short distance)</strong></td><td>Slower (one bit per cycle)</td><td>Faster (multiple bits per cycle)</td></tr>
-    <tr><td><strong>Speed (long distance)</strong></td><td>Faster (no skew problems)</td><td>Slower (skew limits practical speed)</td></tr>
-    <tr><td><strong>Cost</strong></td><td>Cheaper (fewer wires, simpler connectors)</td><td>More expensive (many wires, wider cables)</td></tr>
-    <tr><td><strong>Skew</strong></td><td>No skew (single channel)</td><td>Bits can arrive at different times (<strong>skew</strong>) because wires have slightly different electrical properties, causing errors at longer distances</td></tr>
-    <tr><td><strong>Crosstalk</strong></td><td>Minimal</td><td>Electromagnetic interference between adjacent wires (<strong>crosstalk</strong>) corrupts signals</td></tr>
-    <tr><td><strong>Use cases</strong></td><td>USB, SATA, Ethernet, internet links, long-distance communication</td><td>Internal CPU-to-memory bus, old printer cables (IEEE 1284, now obsolete for external use)</td></tr>
+    <tr><td>How it works</td><td>Bits sent <strong>one at a time</strong> along a single channel</td><td>Multiple bits sent <strong>simultaneously</strong> along multiple wires</td></tr>
+    <tr><td>Speed (short)</td><td>Slower</td><td>Faster (multiple bits per cycle)</td></tr>
+    <tr><td>Speed (long)</td><td>Faster (no skew)</td><td>Slower (skew limits speed)</td></tr>
+    <tr><td>Cost</td><td>Cheaper (fewer wires)</td><td>More expensive</td></tr>
+    <tr><td>Skew</td><td>None</td><td>Bits arrive at different times, causing errors</td></tr>
+    <tr><td>Crosstalk</td><td>Minimal</td><td>EM interference between adjacent wires</td></tr>
+    <tr><td>Examples</td><td>USB, SATA, Ethernet</td><td>Internal CPU-to-memory bus</td></tr>
 </table>
 
 <div class="definition">
-    <strong>Skew:</strong> In parallel transmission, the phenomenon where bits sent simultaneously arrive at slightly different times due to differences in wire lengths, impedance, or electrical properties, potentially corrupting the data. Limits the maximum usable cable length and clock speed.<br>
-    <strong>Crosstalk:</strong> Electromagnetic interference between adjacent parallel wires where the signal in one wire induces a current in a neighbouring wire, corrupting data. Worse at higher frequencies and longer distances.
+    <strong>Skew:</strong> In parallel transmission, bits arrive at different times due to wire length/impedance differences, corrupting data.<br>
+    <strong>Crosstalk:</strong> EM interference between adjacent wires where one wire's signal induces current in another.
 </div>
 
 <h3>Synchronous vs Asynchronous Transmission</h3>
 <table>
     <tr><th>Feature</th><th>Synchronous</th><th>Asynchronous</th></tr>
-    <tr><td><strong>Timing</strong></td><td>Data sent in a <strong>continuous stream</strong> synchronised by a shared clock signal between sender and receiver</td><td>Data sent <strong>one character/byte at a time</strong> without a shared clock. Each character is framed with <strong>start bit</strong> (0) and <strong>stop bit(s)</strong> (1).</td></tr>
-    <tr><td><strong>Clock</strong></td><td>Both sender and receiver share a clock signal (embedded in the data or on a separate wire)</td><td>No shared clock. The start bit signals "data is coming" so the receiver can synchronise for that byte.</td></tr>
-    <tr><td><strong>Efficiency</strong></td><td>More efficient for large data transfers (minimal framing overhead)</td><td>Less efficient (at least 2 extra bits per byte for start/stop = ~20% overhead)</td></tr>
-    <tr><td><strong>Speed</strong></td><td>Generally faster (continuous stream)</td><td>Generally slower (gaps between characters)</td></tr>
-    <tr><td><strong>Use cases</strong></td><td>High-speed network links, video streaming, VoIP, SPI bus</td><td>Keyboard input, RS-232 serial ports, UART, modems, Bluetooth</td></tr>
+    <tr><td>Timing</td><td>Continuous stream, shared clock signal</td><td>One byte at a time, framed with <strong>start bit</strong> (0) and <strong>stop bit(s)</strong> (1)</td></tr>
+    <tr><td>Clock</td><td>Shared clock (embedded or separate)</td><td>No shared clock; start bit triggers synchronisation</td></tr>
+    <tr><td>Efficiency</td><td>Higher (minimal framing overhead)</td><td>Lower (~20% overhead for start/stop bits)</td></tr>
+    <tr><td>Use cases</td><td>Network links, video streaming, VoIP</td><td>Keyboard, RS-232, UART, Bluetooth</td></tr>
 </table>
 
-<h3>Bit Rate, Baud Rate, Bandwidth and Latency</h3>
+<h3>Bit Rate, Baud Rate, Bandwidth, Latency</h3>
 <div class="definition">
-    <strong>Bit rate:</strong> The number of <strong>bits</strong> transmitted per second (bps). This is the actual data throughput.<br>
-    <strong>Baud rate:</strong> The number of <strong>signal changes</strong> (symbols) per second. Each signal change can encode one or more bits.<br>
-    <strong>Bandwidth:</strong> The range of frequencies available for data transmission on a medium. Higher bandwidth allows a higher data rate. Measured in Hz but often colloquially used to mean data rate.<br>
-    <strong>Latency:</strong> The time delay between sending data and it arriving at the destination. Affected by distance, number of hops (routers), congestion, and processing time.
+    <strong>Bit rate:</strong> Bits transmitted per second (bps) &mdash; actual data throughput.<br>
+    <strong>Baud rate:</strong> Signal changes (symbols) per second. Each symbol can encode multiple bits.<br>
+    <strong>Bandwidth:</strong> Range of frequencies available. Higher bandwidth = higher data rate.<br>
+    <strong>Latency:</strong> Time delay between sending and receiving. Affected by distance, hops, congestion.
 </div>
 
-<p><strong>Relationship between bit rate and baud rate:</strong></p>
-<pre>Bit rate = Baud rate x Number of bits per signal change (bits per symbol)
+<pre>Bit rate = Baud rate x bits per symbol
 
-Example 1: If baud rate = 1000 and each signal encodes 1 bit:
-  Bit rate = 1000 x 1 = 1000 bps
-
-Example 2: If baud rate = 1000 and each signal encodes 4 bits
-  (using 16 different voltage/phase levels):
+Example: baud rate = 1000, 4 bits per symbol (16 levels):
   Bit rate = 1000 x 4 = 4000 bps
 
-Example 3: If baud rate = 2400 and each signal encodes 2 bits:
-  Bit rate = 2400 x 2 = 4800 bps</pre>
+Bit rate = baud rate ONLY when 1 bit per symbol.</pre>
 
-<p>Modern modems and network technologies use techniques like <strong>QAM (Quadrature Amplitude Modulation)</strong> to encode many bits per symbol. 256-QAM encodes 8 bits per symbol; 1024-QAM encodes 10 bits per symbol.</p>
-
-<div class="exam-tip">Bit rate and baud rate are only equal when each signal change encodes exactly one bit. In most modern systems, multiple bits are encoded per symbol, so the bit rate exceeds the baud rate. Questions often ask you to calculate one from the other.</div>
+<div class="exam-tip">Bit rate and baud rate are only equal when each signal encodes one bit. Modern systems (QAM) encode many bits per symbol, so bit rate exceeds baud rate. Know the formula.</div>
 
 <!-- ====== TOPOLOGIES ====== -->
 <h2>4.9.2 Network Topologies</h2>
 
 <div class="definition">
-    <strong>Topology:</strong> The arrangement of devices (nodes) and connections (links) in a network. <strong>Physical topology</strong> describes the physical cable layout. <strong>Logical topology</strong> describes how data flows through the network (which can differ from the physical layout).
+    <strong>Topology:</strong> The arrangement of devices and connections. <strong>Physical topology</strong> = cable layout. <strong>Logical topology</strong> = how data flows (can differ from physical).
 </div>
 
 <table>
     <tr><th>Topology</th><th>Description</th><th>Advantages</th><th>Disadvantages</th></tr>
-    <tr>
-        <td><strong>Star</strong></td>
-        <td>All devices connect to a central switch or hub via individual cables. The most common LAN topology.</td>
-        <td>Single cable failure only affects one device; easy to add/remove devices; easy to troubleshoot; high performance (no collisions with a switch); centralised management.</td>
-        <td>Central switch is a <strong>single point of failure</strong> (if it fails, the entire network goes down); requires more cabling than bus; switch hardware can be expensive for enterprise-grade models.</td>
-    </tr>
-    <tr>
-        <td><strong>Bus</strong></td>
-        <td>All devices connect to a single shared backbone cable with terminators at each end to prevent signal reflection.</td>
-        <td>Cheap and simple to set up; requires minimal cabling; suitable for small, temporary networks.</td>
-        <td>Backbone failure brings down the entire network; performance degrades with more devices (collisions increase); difficult to troubleshoot; limited cable length and device count; all data visible to all devices (security risk); largely obsolete.</td>
-    </tr>
-    <tr>
-        <td><strong>Mesh</strong></td>
-        <td><strong>Full mesh:</strong> every device connects to every other device. <strong>Partial mesh:</strong> some devices have redundant connections, but not all-to-all.</td>
-        <td>Highly redundant &mdash; no single point of failure; data can take multiple routes (fault tolerance); reliable; if one link fails, traffic is rerouted.</td>
-        <td>Very expensive (many cables and ports &mdash; full mesh of n devices needs n(n-1)/2 connections); complex to set up and manage; impractical for large networks. The internet is a partial mesh.</td>
-    </tr>
-    <tr>
-        <td><strong>Hybrid</strong></td>
-        <td>A combination of two or more topologies (e.g., star-bus where multiple star networks are connected by a bus backbone, or star-mesh in enterprise data centres).</td>
-        <td>Flexible and scalable; can be tailored to specific needs; combines advantages of constituent topologies.</td>
-        <td>Complex to design, implement, and manage; can be expensive; fault diagnosis may be more difficult.</td>
-    </tr>
+    <tr><td><strong>Star</strong></td><td>All devices connect to central switch/hub</td><td>Single cable failure affects one device; easy to add/remove; no collisions with switch; centralised management</td><td>Switch is single point of failure; more cabling; switch cost</td></tr>
+    <tr><td><strong>Bus</strong></td><td>All devices on shared backbone cable with terminators</td><td>Cheap, simple, minimal cabling</td><td>Backbone failure = entire network down; collisions increase with devices; difficult to troubleshoot; obsolete</td></tr>
+    <tr><td><strong>Mesh</strong></td><td>Full: every device connects to every other. Partial: some redundant connections.</td><td>Highly redundant; no single point of failure; data reroutes around failures</td><td>Very expensive; n devices need n(n-1)/2 links; complex management</td></tr>
+    <tr><td><strong>Hybrid</strong></td><td>Combination of topologies (e.g., star-bus)</td><td>Flexible, scalable, tailored</td><td>Complex, expensive</td></tr>
 </table>
+
+<!-- Star topology SVG -->
+<svg viewBox="0 0 300 220" style="width:100%;max-width:300px;display:block;margin:0 auto 18px auto;" xmlns="http://www.w3.org/2000/svg">
+  <text x="150" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a5f">Star Topology</text>
+  <rect x="120" y="85" width="60" height="40" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="150" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">Switch</text>
+  <circle cx="50" cy="40" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="50" y="44" text-anchor="middle" font-size="10" fill="#065f46">PC1</text>
+  <circle cx="250" cy="40" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="250" y="44" text-anchor="middle" font-size="10" fill="#065f46">PC2</text>
+  <circle cx="50" cy="180" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="50" y="184" text-anchor="middle" font-size="10" fill="#065f46">PC3</text>
+  <circle cx="250" cy="180" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="250" y="184" text-anchor="middle" font-size="10" fill="#065f46">PC4</text>
+  <line x1="65" y1="50" x2="120" y2="90" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="235" y1="50" x2="180" y2="90" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="65" y1="170" x2="120" y2="120" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="235" y1="170" x2="180" y2="120" stroke="#94a3b8" stroke-width="1.5"/>
+</svg>
 
 <!-- ====== CLIENT-SERVER / P2P ====== -->
 <h2>4.9.3 Client-Server vs Peer-to-Peer</h2>
 
 <table>
     <tr><th>Feature</th><th>Client-Server</th><th>Peer-to-Peer (P2P)</th></tr>
-    <tr><td><strong>Structure</strong></td><td>Dedicated server(s) provide services; clients make requests. Clear hierarchy.</td><td>All devices (peers) are equal; each can act as both client and server simultaneously.</td></tr>
-    <tr><td><strong>Data storage</strong></td><td>Centralised on the server &mdash; one authoritative copy</td><td>Distributed across peers &mdash; no single central store</td></tr>
-    <tr><td><strong>Security</strong></td><td>Centralised management; easier to enforce policies, access controls, and updates</td><td>Harder to manage; each peer responsible for its own security; malware can spread easily</td></tr>
-    <tr><td><strong>Reliability</strong></td><td>Server is a single point of failure (mitigated by redundant/backup servers)</td><td>No single point of failure; network survives individual peer failures; highly resilient</td></tr>
-    <tr><td><strong>Scalability</strong></td><td>Limited by server capacity (can add more servers, but costs increase)</td><td>Scales naturally &mdash; each new peer adds both demand AND capacity</td></tr>
-    <tr><td><strong>Cost</strong></td><td>Expensive (dedicated server hardware, admin staff, licences)</td><td>Cheap (no dedicated hardware needed; uses existing devices)</td></tr>
-    <tr><td><strong>Backups</strong></td><td>Centralised backups on server &mdash; systematic and reliable</td><td>Each peer must manage its own backups &mdash; inconsistent</td></tr>
-    <tr><td><strong>Performance</strong></td><td>Consistent (dedicated server hardware, professional network)</td><td>Variable (depends on peers' upload speeds and availability)</td></tr>
-    <tr><td><strong>Examples</strong></td><td>Web browsing (web server + browser client), email, corporate databases, school networks, cloud services</td><td>BitTorrent file sharing, cryptocurrency networks (Bitcoin), some VoIP, small home networks</td></tr>
+    <tr><td>Structure</td><td>Central server(s) provide services; clients make requests</td><td>All nodes are equal; each acts as client AND server</td></tr>
+    <tr><td>Data storage</td><td>Centralised on server(s)</td><td>Distributed across all peers</td></tr>
+    <tr><td>Security</td><td>Centralised (easier to manage, enforce policies)</td><td>Difficult (each peer manages its own security)</td></tr>
+    <tr><td>Backup</td><td>Centralised backup of server</td><td>Each peer responsible for own backups</td></tr>
+    <tr><td>Scalability</td><td>Server can become bottleneck</td><td>Scales well (more peers = more resources)</td></tr>
+    <tr><td>Cost</td><td>Expensive (server hardware, licences, admin)</td><td>Cheap (no dedicated server)</td></tr>
+    <tr><td>Single point of failure</td><td>Yes (the server)</td><td>No (network survives individual failures)</td></tr>
+    <tr><td>Examples</td><td>Web (browser&harr;web server), email, databases</td><td>BitTorrent, Bitcoin, Skype (original)</td></tr>
 </table>
-
-<!-- ====== LAN, WAN, PAN ====== -->
-<h2>4.9.4 Types of Network</h2>
-
-<table>
-    <tr><th>Type</th><th>Description</th><th>Scale</th><th>Ownership</th><th>Examples</th></tr>
-    <tr><td><strong>PAN</strong></td><td>Personal Area Network &mdash; connects personal devices within a few metres</td><td>~1-10 metres</td><td>Individual</td><td>Bluetooth headphones to phone, smartwatch to phone, laptop to wireless mouse</td></tr>
-    <tr><td><strong>LAN</strong></td><td>Local Area Network &mdash; covers a small geographic area (building, campus, home)</td><td>~10m to 1km</td><td>Single organisation owns and manages all infrastructure</td><td>School network, office network, home Wi-Fi, university campus network</td></tr>
-    <tr><td><strong>WAN</strong></td><td>Wide Area Network &mdash; spans large geographic area, connecting multiple LANs</td><td>Cities to worldwide</td><td>Uses third-party communication links (leased lines, satellite, undersea cables)</td><td>The internet (the largest WAN), corporate WANs connecting offices across countries</td></tr>
-</table>
-
-<!-- ====== NETWORK HARDWARE ====== -->
-<h2>4.9.5 Network Hardware</h2>
-
-<table>
-    <tr><th>Device</th><th>Function</th><th>OSI Layer</th></tr>
-    <tr><td><strong>NIC</strong></td><td><strong>Network Interface Card/Controller</strong> &mdash; hardware component (built-in or add-on) that enables a device to connect to a network. Each NIC has a unique <strong>MAC address</strong> (48-bit, hardware-level identifier, written in hex: <code>4A:3B:2C:1D:0E:FF</code>). Can be wired (Ethernet RJ-45) or wireless (Wi-Fi antenna).</td><td>Layer 2 (Data Link)</td></tr>
-    <tr><td><strong>Router</strong></td><td>Forwards data <strong>packets between different networks</strong> (e.g., between a LAN and the internet, or between two different subnets). Uses <strong>routing tables</strong> to determine the best path for packets based on <strong>IP addresses</strong>. Performs NAT. Assigns IP addresses via DHCP. Most home "routers" are actually router + switch + WAP + firewall combined.</td><td>Layer 3 (Network)</td></tr>
-    <tr><td><strong>Switch</strong></td><td>Connects devices <strong>within a LAN</strong>. Learns the MAC addresses of connected devices (builds a MAC address table) and forwards frames <strong>only to the intended recipient port</strong> &mdash; not to all ports. Much more efficient than a hub. Reduces collisions to zero (each port is its own collision domain).</td><td>Layer 2 (Data Link)</td></tr>
-    <tr><td><strong>Hub</strong></td><td>A simple, unintelligent device that <strong>broadcasts</strong> incoming data to <strong>all</strong> connected ports. Does not learn MAC addresses. Causes unnecessary traffic, collisions, and security risks (all devices see all data). <strong>Largely obsolete</strong> &mdash; replaced by switches.</td><td>Layer 1 (Physical)</td></tr>
-    <tr><td><strong>WAP</strong></td><td><strong>Wireless Access Point</strong> &mdash; allows wireless (Wi-Fi) devices to connect to a wired network. Broadcasts an SSID (network name). Uses Wi-Fi standards (802.11ac/Wi-Fi 5, 802.11ax/Wi-Fi 6, 802.11be/Wi-Fi 7). Handles wireless encryption (WPA2, WPA3).</td><td>Layer 2</td></tr>
-    <tr><td><strong>Gateway</strong></td><td>Connects networks that use <strong>different protocols</strong> and translates between them. Acts as the entry/exit point for a network. A home router often functions as the default gateway for the LAN.</td><td>Multiple layers</td></tr>
-    <tr><td><strong>Firewall</strong></td><td>Monitors and controls incoming and outgoing network traffic based on predefined security rules. Can be <strong>hardware</strong> (standalone appliance) or <strong>software</strong> (running on a host). Inspects packet headers and can perform deep packet inspection of payloads.</td><td>Layers 3-7</td></tr>
-</table>
-
-<div class="exam-tip">Know the difference between a switch and a hub &mdash; this is frequently examined. A switch is intelligent (sends data only to the destination device using MAC addresses), while a hub blindly broadcasts to all ports. Also remember: a <strong>router</strong> operates at Layer 3 using <strong>IP addresses</strong> and connects <strong>different</strong> networks; a <strong>switch</strong> operates at Layer 2 using <strong>MAC addresses</strong> and connects devices <strong>within</strong> a network.</div>
-
-<!-- ====== THE INTERNET ====== -->
-<h2>4.9.6 The Internet</h2>
-
-<div class="definition">
-    <strong>The Internet:</strong> A global network of interconnected networks that communicate using the TCP/IP protocol suite. It is the physical infrastructure of cables, routers, switches, and servers.<br>
-    <strong>The World Wide Web (WWW):</strong> A collection of web pages, documents, and resources linked by hyperlinks, accessed via the internet using HTTP/HTTPS and rendered by web browsers. The web is a <em>service that runs on top of</em> the internet &mdash; they are not the same thing. Other internet services include email (SMTP/IMAP), file transfer (FTP), DNS, VoIP, and streaming.
-</div>
-
-<h3>Internet Structure</h3>
-<ul>
-    <li>The internet is a hierarchical network of networks connected by high-capacity <strong>backbone links</strong> (fibre optic cables, including transoceanic undersea cables carrying nearly all international internet traffic)</li>
-    <li><strong>Internet Exchange Points (IXPs)</strong> are physical locations where different ISPs and networks interconnect and exchange traffic directly (peering), reducing latency and cost</li>
-    <li><strong>Internet Service Providers (ISPs)</strong> provide end users with internet access. ISPs operate in a tiered hierarchy:
-        <ul>
-            <li><strong>Tier 1:</strong> Global backbone providers (can reach any network without paying for transit)</li>
-            <li><strong>Tier 2:</strong> Regional ISPs that peer with some networks and pay Tier 1 for global reach</li>
-            <li><strong>Tier 3:</strong> Local ISPs that connect end users and buy transit from Tier 1/2</li>
-        </ul>
-    </li>
-    <li><strong>DNS servers</strong> translate human-readable domain names to IP addresses</li>
-    <li><strong>Web servers</strong> host websites and respond to HTTP/HTTPS requests from clients</li>
-</ul>
-
-<h3>Packet Switching vs Circuit Switching</h3>
-<table>
-    <tr><th>Feature</th><th>Packet Switching</th><th>Circuit Switching</th></tr>
-    <tr><td><strong>Connection</strong></td><td>No dedicated path; each packet independently routed; packets may take different routes</td><td>A dedicated end-to-end path (circuit) is established before data transfer begins and maintained for the duration</td></tr>
-    <tr><td><strong>Efficiency</strong></td><td>Efficient &mdash; bandwidth is shared; unused capacity is immediately available to others</td><td>Less efficient &mdash; dedicated path is reserved even during silence (e.g., pauses in a phone call)</td></tr>
-    <tr><td><strong>Reliability</strong></td><td>If a route fails, packets are automatically rerouted via alternative paths</td><td>If the circuit breaks at any point, the entire connection fails</td></tr>
-    <tr><td><strong>Order of arrival</strong></td><td>Packets may arrive <strong>out of order</strong>; receiver must reassemble using sequence numbers</td><td>Data arrives in order (same path throughout)</td></tr>
-    <tr><td><strong>Latency</strong></td><td>Variable (depends on network congestion and routing)</td><td>Consistent, low latency once the circuit is established</td></tr>
-    <tr><td><strong>Use cases</strong></td><td>The internet (HTTP, email, file transfer, streaming)</td><td>Traditional telephone networks (PSTN), some real-time systems</td></tr>
-</table>
-
-<!-- ====== TCP/IP ====== -->
-<h2>4.9.7 TCP/IP Protocol Stack</h2>
-
-<div class="definition">
-    <strong>Protocol:</strong> A set of rules that govern how data is formatted, transmitted, received, and acknowledged across a network. Protocols ensure that devices from different manufacturers, running different operating systems, can communicate reliably. They define message format, timing, sequencing, and error handling.
-</div>
-
-<p>The <strong>TCP/IP model</strong> has four layers. Data passes <strong>down</strong> through the layers on the sender's side (<strong>encapsulation</strong> &mdash; each layer adds its own header) and <strong>up</strong> through the layers on the receiver's side (<strong>de-encapsulation</strong> &mdash; each layer strips its header).</p>
-
-<table>
-    <tr><th>Layer</th><th>Name</th><th>Function</th><th>Key Protocols</th><th>Data Unit</th></tr>
-    <tr><td>4 (Top)</td><td><strong>Application</strong></td><td>Provides network services directly to user applications. Encodes data in the format required by the application protocol.</td><td>HTTP, HTTPS, FTP, SMTP, IMAP, POP3, SSH, DNS, DHCP, Telnet</td><td>Message / Data</td></tr>
-    <tr><td>3</td><td><strong>Transport</strong></td><td>Provides end-to-end communication between applications on different hosts. Segments data, provides error checking, flow control, and (with TCP) reliable ordered delivery. Uses <strong>port numbers</strong> to identify specific applications.</td><td>TCP, UDP</td><td>Segment (TCP) / Datagram (UDP)</td></tr>
-    <tr><td>2</td><td><strong>Internet (Network)</strong></td><td>Handles logical addressing (<strong>IP addresses</strong>) and routing. Packets are independently routed across networks towards the destination. Each router examines the destination IP and forwards accordingly.</td><td>IP (IPv4, IPv6), ARP, ICMP</td><td>Packet</td></tr>
-    <tr><td>1 (Bottom)</td><td><strong>Link (Network Interface)</strong></td><td>Handles physical transmission of data frames over the network medium. Uses <strong>MAC addresses</strong> for local (hop-to-hop) delivery. Manages access to the physical medium.</td><td>Ethernet, Wi-Fi (802.11), PPP</td><td>Frame</td></tr>
-</table>
-
-<p><strong>Why use layers?</strong></p>
-<ul>
-    <li><strong>Modularity:</strong> Each layer can be developed, tested, and updated independently without affecting other layers.</li>
-    <li><strong>Interoperability:</strong> Different vendors can implement the same layer to the same standard.</li>
-    <li><strong>Abstraction:</strong> Each layer only needs to know about the layer directly above and below it.</li>
-    <li><strong>Standardisation:</strong> Agreed standards ensure universal communication.</li>
-</ul>
-
-<h3>TCP vs UDP</h3>
-<table>
-    <tr><th>Feature</th><th>TCP (Transmission Control Protocol)</th><th>UDP (User Datagram Protocol)</th></tr>
-    <tr><td><strong>Connection</strong></td><td>Connection-oriented (three-way handshake: SYN &rarr; SYN-ACK &rarr; ACK establishes session before data transfer)</td><td>Connectionless (no handshake; just sends data immediately)</td></tr>
-    <tr><td><strong>Reliability</strong></td><td>Reliable &mdash; guarantees delivery, correct ordering, and error checking. Uses acknowledgements and retransmits lost packets.</td><td>Unreliable &mdash; no guarantee of delivery, ordering, or retransmission. "Best effort" delivery.</td></tr>
-    <tr><td><strong>Speed</strong></td><td>Slower (overhead from handshake, acknowledgements, retransmission, flow control)</td><td>Faster (minimal overhead &mdash; just header + data, no waiting for ACKs)</td></tr>
-    <tr><td><strong>Flow control</strong></td><td>Yes &mdash; windowing mechanism adjusts transmission rate to prevent overwhelming the receiver</td><td>No &mdash; sender transmits at whatever rate it chooses</td></tr>
-    <tr><td><strong>Ordering</strong></td><td>Yes &mdash; sequence numbers ensure correct order at receiver</td><td>No &mdash; packets may arrive in any order</td></tr>
-    <tr><td><strong>Use cases</strong></td><td>Web browsing (HTTP/HTTPS), email (SMTP/IMAP), file transfer (FTP), SSH &mdash; where data integrity is critical</td><td>Live streaming, VoIP, online gaming, DNS queries, video conferencing &mdash; where speed matters more than perfection (a dropped packet = minor glitch, not a problem)</td></tr>
-    <tr><td><strong>Header size</strong></td><td>20-60 bytes (larger overhead)</td><td>8 bytes (minimal overhead)</td></tr>
-</table>
-
-<!-- ====== OSI MODEL ====== -->
-<h2>4.9.8 OSI Model Overview</h2>
-
-<p>The <strong>OSI (Open Systems Interconnection) model</strong> is a seven-layer reference model for understanding network communication. It is more detailed than TCP/IP and used primarily for teaching and design, while TCP/IP is the practical implementation.</p>
-
-<table>
-    <tr><th>Layer</th><th>Name</th><th>Function</th><th>TCP/IP Equivalent</th></tr>
-    <tr><td>7</td><td><strong>Application</strong></td><td>User-facing network services (HTTP, FTP, SMTP, DNS)</td><td rowspan="3">Application</td></tr>
-    <tr><td>6</td><td><strong>Presentation</strong></td><td>Data formatting, encryption/decryption, compression (SSL/TLS, JPEG, ASCII, Unicode conversion)</td></tr>
-    <tr><td>5</td><td><strong>Session</strong></td><td>Manages sessions (establish, maintain, terminate connections between applications; authentication; checkpointing)</td></tr>
-    <tr><td>4</td><td><strong>Transport</strong></td><td>End-to-end delivery, segmentation, flow control, error recovery (TCP, UDP)</td><td>Transport</td></tr>
-    <tr><td>3</td><td><strong>Network</strong></td><td>Logical addressing (IP) and routing across networks</td><td>Internet</td></tr>
-    <tr><td>2</td><td><strong>Data Link</strong></td><td>Physical addressing (MAC), framing, error detection (CRC), media access control</td><td rowspan="2">Link</td></tr>
-    <tr><td>1</td><td><strong>Physical</strong></td><td>Raw bit transmission over physical medium (electrical signals, light pulses, radio waves; cables, connectors, voltages)</td></tr>
-</table>
-
-<p><strong>Mnemonic</strong> (top to bottom): <strong>All People Seem To Need Data Processing</strong> (Application, Presentation, Session, Transport, Network, Data Link, Physical).</p>
-
-<div class="exam-tip">Know how the OSI model maps to the TCP/IP model &mdash; the AQA spec requires understanding of both. The OSI Application, Presentation, and Session layers all map to the TCP/IP Application layer. The OSI Data Link and Physical layers both map to the TCP/IP Link layer. When answering questions about protocols, state which layer each protocol operates at.</div>
 
 <!-- ====== PROTOCOLS ====== -->
-<h2>4.9.9 Protocols</h2>
+<h2>4.9.4 Protocols and the TCP/IP Stack</h2>
+
+<div class="definition">
+    <strong>Protocol:</strong> A set of rules governing communication between devices. Protocols define message format, timing, error handling, and addressing so that different devices from different manufacturers can communicate.
+</div>
+
+<h3>The TCP/IP Protocol Stack</h3>
+<p>A layered model for network communication. Each layer provides services to the layer above and uses services from the layer below. Layering enables modularity &mdash; layers can be updated independently.</p>
 
 <table>
-    <tr><th>Protocol</th><th>Full Name</th><th>Purpose</th><th>Port</th></tr>
-    <tr><td><strong>HTTP</strong></td><td>HyperText Transfer Protocol</td><td>Transferring web pages between server and browser. Stateless request-response protocol. Data sent in <strong>plaintext</strong> (not encrypted).</td><td>80</td></tr>
-    <tr><td><strong>HTTPS</strong></td><td>HTTP Secure</td><td>Encrypted version of HTTP using <strong>TLS</strong> (Transport Layer Security). Ensures confidentiality (encryption), integrity (data not tampered), and authentication (server identity verified via certificate).</td><td>443</td></tr>
-    <tr><td><strong>FTP</strong></td><td>File Transfer Protocol</td><td>Transferring files between client and server. Supports upload, download, directory listing, rename, delete. Uses two connections: control (port 21) and data (port 20).</td><td>20/21</td></tr>
-    <tr><td><strong>SMTP</strong></td><td>Simple Mail Transfer Protocol</td><td><strong>Sending</strong> emails from client to server and between mail servers. Push protocol.</td><td>25 (unencrypted) / 587 (encrypted with STARTTLS)</td></tr>
-    <tr><td><strong>IMAP</strong></td><td>Internet Message Access Protocol</td><td><strong>Retrieving</strong> emails. Emails <strong>remain on server</strong>; syncs across all devices. Supports folders, search, flags.</td><td>143 / 993 (SSL)</td></tr>
-    <tr><td><strong>POP3</strong></td><td>Post Office Protocol v3</td><td><strong>Retrieving</strong> emails. <strong>Downloads</strong> emails to client and typically <strong>deletes from server</strong>. Single-device access.</td><td>110 / 995 (SSL)</td></tr>
-    <tr><td><strong>SSH</strong></td><td>Secure Shell</td><td>Secure remote command-line access to a computer over an encrypted connection. Replacement for insecure Telnet.</td><td>22</td></tr>
-    <tr><td><strong>DNS</strong></td><td>Domain Name System</td><td>Translates human-readable domain names (e.g., <code>google.com</code>) to IP addresses (e.g., <code>142.250.187.206</code>). Hierarchical distributed database.</td><td>53</td></tr>
-    <tr><td><strong>DHCP</strong></td><td>Dynamic Host Configuration Protocol</td><td>Automatically assigns IP addresses, subnet masks, default gateway, and DNS server addresses to devices joining a network. Lease-based.</td><td>67 (server) / 68 (client)</td></tr>
-    <tr><td><strong>ARP</strong></td><td>Address Resolution Protocol</td><td>Maps a known <strong>IP address</strong> to a <strong>MAC address</strong> on the local network. Broadcasts "Who has IP x.x.x.x?" and the device with that IP responds with its MAC.</td><td>&mdash;</td></tr>
+    <tr><th>Layer</th><th>Name</th><th>Purpose</th><th>Protocols</th><th>Data Unit</th></tr>
+    <tr><td>4</td><td><strong>Application</strong></td><td>Provides network services to user applications. Formats data for the end user.</td><td>HTTP, HTTPS, FTP, SMTP, IMAP, POP3, DNS, SSH, Telnet</td><td>Data/Message</td></tr>
+    <tr><td>3</td><td><strong>Transport</strong></td><td>Provides reliable (TCP) or fast (UDP) end-to-end delivery. Handles port numbers, sequencing, error checking, flow control.</td><td>TCP, UDP</td><td>Segment</td></tr>
+    <tr><td>2</td><td><strong>Internet (Network)</strong></td><td>Handles logical addressing (IP addresses) and routing packets across networks.</td><td>IP, ICMP, ARP</td><td>Packet</td></tr>
+    <tr><td>1</td><td><strong>Link (Network Interface)</strong></td><td>Handles physical transmission of data over the actual medium. MAC addressing, framing, error detection.</td><td>Ethernet, Wi-Fi (802.11), PPP</td><td>Frame</td></tr>
 </table>
 
-<h3>DNS Resolution Process (How a URL Becomes an IP Address)</h3>
-<ol>
-    <li>User types <code>www.example.com</code> in their browser.</li>
-    <li>Browser checks its <strong>local cache</strong> for a recent lookup. If found, uses it.</li>
-    <li>If not cached, the OS checks the <strong>host file</strong> and its own DNS cache.</li>
-    <li>If still not resolved, the query is sent to the <strong>recursive DNS resolver</strong> (usually provided by the ISP or a service like Google DNS 8.8.8.8).</li>
-    <li>The resolver queries the <strong>root DNS server</strong>, which directs it to the <strong>TLD (Top-Level Domain) server</strong> for <code>.com</code>.</li>
-    <li>The TLD server directs to the <strong>authoritative DNS server</strong> for <code>example.com</code>.</li>
-    <li>The authoritative server returns the IP address (e.g., <code>93.184.216.34</code>).</li>
-    <li>The resolver caches the result (with a TTL) and returns it to the browser.</li>
-    <li>The browser connects to the web server at that IP address.</li>
-</ol>
-
-<h3>IMAP vs POP3</h3>
+<h4>TCP vs UDP</h4>
 <table>
-    <tr><th>Feature</th><th>IMAP</th><th>POP3</th></tr>
-    <tr><td>Storage</td><td>Emails <strong>stay on the server</strong></td><td>Emails <strong>downloaded to client</strong>, typically deleted from server</td></tr>
-    <tr><td>Multi-device</td><td><strong>Syncs across all devices</strong> &mdash; read/unread status, folders, flags all synchronised</td><td>Typically accessible from <strong>one device only</strong></td></tr>
-    <tr><td>Server storage</td><td>Uses server storage (may fill up)</td><td>Frees server storage after download</td></tr>
-    <tr><td>Offline access</td><td>Requires internet for full access (can cache locally)</td><td>Once downloaded, emails available <strong>offline</strong></td></tr>
-    <tr><td>Best for</td><td>Users with multiple devices (phone + laptop + tablet)</td><td>Users with one device and limited internet</td></tr>
+    <tr><th>Feature</th><th>TCP</th><th>UDP</th></tr>
+    <tr><td>Connection</td><td>Connection-oriented (3-way handshake: SYN, SYN-ACK, ACK)</td><td>Connectionless (no handshake)</td></tr>
+    <tr><td>Reliability</td><td>Reliable: acknowledgements, retransmission, error checking, ordering</td><td>Unreliable: no guarantee of delivery, order, or integrity</td></tr>
+    <tr><td>Speed</td><td>Slower (overhead from reliability mechanisms)</td><td>Faster (minimal overhead)</td></tr>
+    <tr><td>Use cases</td><td>Web pages (HTTP), email, file transfer, where every byte matters</td><td>Live streaming, VoIP, online gaming, DNS lookups, where speed matters more than perfection</td></tr>
 </table>
 
-<!-- ====== IP ADDRESSES ====== -->
-<h2>4.9.10 IP Addresses</h2>
-
-<h3>IPv4 vs IPv6</h3>
+<h3>Key Protocols</h3>
 <table>
-    <tr><th>Feature</th><th>IPv4</th><th>IPv6</th></tr>
-    <tr><td><strong>Format</strong></td><td>32-bit, written as four decimal octets separated by dots<br><code>192.168.1.1</code></td><td>128-bit, written as eight groups of four hexadecimal digits separated by colons<br><code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code></td></tr>
-    <tr><td><strong>Address space</strong></td><td>~4.3 billion addresses (2<sup>32</sup>) &mdash; <strong>exhausted</strong></td><td>~3.4 x 10<sup>38</sup> addresses (2<sup>128</sup>) &mdash; enough for every grain of sand on Earth</td></tr>
-    <tr><td><strong>NAT required?</strong></td><td>Yes (to share limited public IPs)</td><td>No (enough unique addresses for every device)</td></tr>
-    <tr><td><strong>Built-in security</strong></td><td>Optional (IPsec)</td><td>Mandatory (IPsec built into the protocol)</td></tr>
-    <tr><td><strong>Header</strong></td><td>Variable length, more complex</td><td>Fixed length (40 bytes), simplified &mdash; faster to process</td></tr>
-    <tr><td><strong>Auto-configuration</strong></td><td>Requires DHCP</td><td>Supports SLAAC (Stateless Address Auto-Configuration) &mdash; devices can auto-assign themselves an address</td></tr>
+    <tr><th>Protocol</th><th>Purpose</th><th>Port</th></tr>
+    <tr><td><strong>HTTP/HTTPS</strong></td><td>Web page transfer. HTTPS adds TLS/SSL encryption for security.</td><td>80 / 443</td></tr>
+    <tr><td><strong>FTP</strong></td><td>File transfer between client and server</td><td>20, 21</td></tr>
+    <tr><td><strong>SMTP</strong></td><td>Sending email (client &rarr; server, server &rarr; server)</td><td>25 / 587</td></tr>
+    <tr><td><strong>IMAP / POP3</strong></td><td>Retrieving email. IMAP syncs across devices; POP3 downloads and deletes from server.</td><td>143 / 110</td></tr>
+    <tr><td><strong>DNS</strong></td><td>Translates domain names (google.com) to IP addresses (142.250.x.x)</td><td>53</td></tr>
+    <tr><td><strong>SSH</strong></td><td>Secure remote terminal access (encrypted)</td><td>22</td></tr>
+    <tr><td><strong>DHCP</strong></td><td>Automatically assigns IP addresses to devices on a network</td><td>67, 68</td></tr>
 </table>
 
-<h3>Public vs Private IP Addresses</h3>
+<h3>Benefits of Layering</h3>
 <ul>
-    <li><strong>Public IP addresses</strong> are globally unique, routable on the internet, and assigned by ISPs. Every device directly reachable on the internet needs one.</li>
-    <li><strong>Private IP addresses</strong> are used within local networks and are <strong>NOT routable</strong> on the internet. Multiple separate LANs can reuse the same private ranges without conflict. Standard private ranges:
-        <ul>
-            <li><code>10.0.0.0</code> &ndash; <code>10.255.255.255</code> (Class A &mdash; 16.7 million addresses)</li>
-            <li><code>172.16.0.0</code> &ndash; <code>172.31.255.255</code> (Class B &mdash; 1 million addresses)</li>
-            <li><code>192.168.0.0</code> &ndash; <code>192.168.255.255</code> (Class C &mdash; 65,536 addresses)</li>
-        </ul>
-    </li>
+    <li><strong>Modularity</strong> &mdash; each layer has a defined interface; internal changes do not affect other layers</li>
+    <li><strong>Interoperability</strong> &mdash; devices from different manufacturers can communicate via standard protocols</li>
+    <li><strong>Easier development</strong> &mdash; developers focus on one layer without understanding all others</li>
+    <li><strong>Easier troubleshooting</strong> &mdash; problems can be isolated to a specific layer</li>
 </ul>
 
-<h3>Static vs Dynamic IP Addresses</h3>
+<!-- ====== PACKET / CIRCUIT SWITCHING ====== -->
+<h2>4.9.5 Packet Switching vs Circuit Switching</h2>
+
 <table>
-    <tr><th>Feature</th><th>Static</th><th>Dynamic</th></tr>
-    <tr><td>Assignment</td><td>Manually configured; does not change</td><td>Automatically assigned by DHCP; may change each time the device connects (leased for a period)</td></tr>
-    <tr><td>Use case</td><td>Servers, printers, network devices, DNS servers &mdash; anything that other devices need to find at a consistent address</td><td>Client devices (laptops, phones, desktops, tablets)</td></tr>
-    <tr><td>Management</td><td>More admin effort; risk of address conflicts if misconfigured</td><td>Less admin effort; DHCP handles everything automatically</td></tr>
+    <tr><th>Feature</th><th>Packet Switching</th><th>Circuit Switching</th></tr>
+    <tr><td>Connection</td><td>No dedicated path; each packet routed independently</td><td>Dedicated path established for entire duration</td></tr>
+    <tr><td>Route</td><td>Packets can take different routes; reassembled at destination</td><td>Fixed route throughout communication</td></tr>
+    <tr><td>Efficiency</td><td>High (links shared between many communications)</td><td>Low (dedicated path even during silence)</td></tr>
+    <tr><td>Reliability</td><td>Packets can be rerouted around failures</td><td>If link breaks, entire connection fails</td></tr>
+    <tr><td>Ordering</td><td>Packets may arrive out of order (reassembled by TCP)</td><td>Data arrives in order</td></tr>
+    <tr><td>Latency</td><td>Variable (different routes, congestion)</td><td>Constant (dedicated path)</td></tr>
+    <tr><td>Use</td><td>Internet, email, web browsing</td><td>Traditional telephone networks (PSTN)</td></tr>
 </table>
 
-<h3>NAT (Network Address Translation)</h3>
+<h3>Packet Structure</h3>
+<p>Each packet contains a <strong>header</strong>, <strong>payload</strong> (data), and <strong>trailer</strong>:</p>
+<ul>
+    <li><strong>Header:</strong> source IP, destination IP, packet number (sequence), TTL (Time to Live), protocol, total packet count</li>
+    <li><strong>Payload:</strong> the actual data being transmitted (a portion of the original message)</li>
+    <li><strong>Trailer:</strong> error-checking data (checksum/CRC) to detect corruption during transmission</li>
+</ul>
+
+<p>At the destination, packets are <strong>reassembled</strong> in the correct order using sequence numbers. Missing or corrupt packets are requested again (TCP retransmission).</p>
+
+<!-- ====== INTERNET ====== -->
+<h2>4.9.6 The Internet</h2>
+
+<h3>IP Addressing</h3>
 <div class="definition">
-    <strong>NAT:</strong> A technique used by routers to translate private IP addresses on a local network to the router's single public IP address (and vice versa) when communicating with the internet. This allows many devices to share one public IP and helps conserve the limited IPv4 address space.
+    An <strong>IP address</strong> uniquely identifies a device on a network. <strong>IPv4:</strong> 32-bit address (4 octets, e.g., 192.168.1.1) &mdash; approximately 4.3 billion addresses (now exhausted). <strong>IPv6:</strong> 128-bit address (8 groups of 4 hex digits, e.g., 2001:0db8:85a3::8a2e:0370:7334) &mdash; virtually unlimited addresses.
 </div>
-<p>The router maintains a <strong>NAT table</strong> that maps each internal device's private IP:port combination to a unique port on the external public IP. When a response arrives from the internet, the router looks up the destination port in the NAT table and forwards the packet to the correct internal device.</p>
-<pre>
-  Example NAT Table:
-  Internal IP:Port       External IP:Port       Destination
-  192.168.1.5:52431  &rarr;  86.134.10.20:52431  &rarr;  google.com:443
-  192.168.1.8:49872  &rarr;  86.134.10.20:49872  &rarr;  bbc.co.uk:80
-  192.168.1.12:61000 &rarr;  86.134.10.20:61000  &rarr;  youtube.com:443
-</pre>
 
-<h3>Subnet Masking</h3>
-<p>A <strong>subnet mask</strong> divides an IP address into a <strong>network part</strong> (identifying the network/subnet) and a <strong>host part</strong> (identifying the specific device on that network).</p>
-<pre>
-IP Address:   192.168.1.100
-Subnet Mask:  255.255.255.0
+<h3>DNS (Domain Name System)</h3>
+<p>DNS translates human-readable domain names to IP addresses. It is a hierarchical, distributed system:</p>
+<ol>
+    <li>Browser checks its local cache</li>
+    <li>OS checks its DNS cache</li>
+    <li>Query sent to <strong>recursive DNS resolver</strong> (usually ISP's)</li>
+    <li>Resolver queries <strong>root DNS server</strong> &rarr; <strong>TLD server</strong> (.com, .uk) &rarr; <strong>authoritative server</strong> for the domain</li>
+    <li>IP address returned and cached at each level</li>
+</ol>
 
-Binary mask: 11111111.11111111.11111111.00000000
-Network Part: 192.168.1     (where mask bits are 1 &mdash; identifies the network)
-Host Part:    .100           (where mask bits are 0 &mdash; identifies the device)
-
-All devices with IPs 192.168.1.x (where x = 1 to 254) are on the same subnet.
-.0 is the network address (cannot be assigned to a device).
-.255 is the broadcast address (sends to all devices on the subnet).
-
-CIDR notation: 192.168.1.0/24  (the /24 means the first 24 bits are the network part)
-</pre>
-
-<p>Subnetting divides a large network into smaller, more manageable sub-networks. Benefits: improved security (traffic isolated between subnets), reduced congestion (broadcast traffic contained within each subnet), and easier administration.</p>
-
-<!-- ====== SECURITY ====== -->
-<h2>4.9.11 Firewalls, Proxy Servers, and Encryption</h2>
+<h3>Routers</h3>
+<p>A <strong>router</strong> forwards packets between different networks using IP addresses. It maintains a <strong>routing table</strong> mapping destination networks to next-hop addresses. Routers operate at the Internet (Network) layer of TCP/IP.</p>
 
 <h3>Firewalls</h3>
-<p>A <strong>firewall</strong> filters network traffic based on a set of security rules, acting as a barrier between trusted (internal) and untrusted (external) networks.</p>
+<div class="definition">
+    A <strong>firewall</strong> monitors and controls network traffic based on security rules. It acts as a barrier between trusted internal networks and untrusted external networks (the internet).
+</div>
 <ul>
-    <li><strong>Packet filtering:</strong> Inspects packet headers (source/destination IP, port numbers, protocol) and allows or denies based on rules. Fast but cannot inspect packet contents.</li>
-    <li><strong>Stateful inspection:</strong> Tracks the state of active connections (established, new, related) and makes decisions based on the context of traffic, not just individual packets. More intelligent than simple packet filtering.</li>
-    <li><strong>Application-layer filtering (proxy firewall):</strong> Inspects the actual content of packets at the application level (deep packet inspection). Can block specific URLs, file types, or malware signatures. Slowest but most thorough.</li>
+    <li><strong>Packet filtering</strong> &mdash; examines packet headers (source/destination IP, port, protocol) against rules</li>
+    <li><strong>Stateful inspection</strong> &mdash; tracks the state of active connections; only allows packets belonging to established sessions</li>
+    <li><strong>Application-level gateway (proxy)</strong> &mdash; inspects the actual data content (deep packet inspection)</li>
 </ul>
 
-<h3>Proxy Servers</h3>
-<div class="definition">
-    <strong>Proxy Server:</strong> An intermediary server that sits between client devices and the internet. Client requests go to the proxy first; the proxy forwards them to the destination on the client's behalf, then returns the response.
-</div>
-<p><strong>Functions:</strong></p>
-<ul>
-    <li><strong>Anonymity:</strong> Hides the client's real IP address from the destination server</li>
-    <li><strong>Caching:</strong> Stores frequently accessed web content locally; subsequent requests are served from cache without contacting the origin server (faster response, less bandwidth)</li>
-    <li><strong>Content filtering:</strong> Blocks access to specific websites or content categories (used by schools and businesses to enforce acceptable use policies)</li>
-    <li><strong>Logging:</strong> Records all web activity for monitoring, auditing, and compliance</li>
-    <li><strong>Security:</strong> Can scan content for malware before it reaches the internal network</li>
-    <li><strong>Load balancing:</strong> Distributes requests across multiple servers (reverse proxy)</li>
-</ul>
-
-<h3>Encryption &mdash; TLS (Transport Layer Security)</h3>
-<div class="definition">
-    <strong>TLS (Transport Layer Security)</strong> is a cryptographic protocol that provides secure, encrypted communication over a network. It is the successor to SSL and is used by HTTPS. It provides confidentiality (encryption), integrity (detecting tampering), and authentication (verifying server identity).
-</div>
-
-<p><strong>TLS Handshake (simplified):</strong></p>
-<ol>
-    <li><strong>Client Hello:</strong> Client sends supported TLS versions, cipher suites, and a random number.</li>
-    <li><strong>Server Hello:</strong> Server responds with chosen TLS version, cipher suite, its <strong>digital certificate</strong> (containing its public key, signed by a Certificate Authority), and a random number.</li>
-    <li><strong>Certificate Verification:</strong> Client verifies the server's certificate against its list of trusted Certificate Authorities (CAs). This confirms the server is who it claims to be.</li>
-    <li><strong>Key Exchange:</strong> Client generates a <strong>pre-master secret</strong>, encrypts it with the server's public key (<strong>asymmetric encryption</strong>), and sends it. Only the server can decrypt it with its private key.</li>
-    <li><strong>Session Key Derivation:</strong> Both client and server use the pre-master secret and the random numbers to independently compute the same <strong>symmetric session key</strong>.</li>
-    <li><strong>Secure Communication:</strong> All subsequent data is encrypted with the <strong>symmetric session key</strong>. Symmetric encryption is used because it is much faster than asymmetric for bulk data transfer.</li>
-</ol>
-
-<p>This hybrid approach uses <strong>asymmetric encryption</strong> (slow but solves key distribution) for the initial key exchange, then <strong>symmetric encryption</strong> (fast) for the actual data transfer.</p>
-
-<!-- ====== SOCKETS ====== -->
-<h2>4.9.12 Socket Programming Concepts</h2>
+<!-- ====== ENCRYPTION ====== -->
+<h2>4.9.7 Encryption</h2>
 
 <div class="definition">
-    <strong>Socket:</strong> An endpoint for communication between two processes over a network. A socket is uniquely identified by the combination of an <strong>IP address</strong> and a <strong>port number</strong> (e.g., <code>192.168.1.5:8080</code>). Sockets provide the interface between the application layer and the transport layer.
+    <strong>Encryption:</strong> Converting plaintext into ciphertext using an algorithm and a key, so that only authorised parties (with the correct key) can read the data.
 </div>
 
-<h3>Key Concepts</h3>
+<table>
+    <tr><th>Feature</th><th>Symmetric Encryption</th><th>Asymmetric Encryption</th></tr>
+    <tr><td>Keys</td><td><strong>Same key</strong> for encryption and decryption</td><td><strong>Pair of keys:</strong> public key (encrypt) and private key (decrypt)</td></tr>
+    <tr><td>Speed</td><td>Fast (simpler maths)</td><td>Slow (complex maths, large keys)</td></tr>
+    <tr><td>Key distribution</td><td>Problem: how to securely share the key?</td><td>No problem: public key is openly shared</td></tr>
+    <tr><td>Examples</td><td>AES, DES, 3DES</td><td>RSA, Diffie-Hellman, ECC</td></tr>
+    <tr><td>Use</td><td>Bulk data encryption, file encryption, VPNs</td><td>Key exchange, digital signatures, HTTPS handshake</td></tr>
+</table>
+
+<p><strong>In practice, both are used together:</strong> Asymmetric encryption securely exchanges a symmetric session key (during the TLS handshake), then symmetric encryption handles the fast bulk data transfer.</p>
+
+<h3>Digital Signatures and Certificates</h3>
 <ul>
-    <li><strong>Port number:</strong> A 16-bit number (0&ndash;65535) that identifies a specific application or service on a device. Well-known ports (0-1023): 80 (HTTP), 443 (HTTPS), 25 (SMTP), 22 (SSH), 53 (DNS). Ephemeral ports (49152-65535) are dynamically assigned to client applications.</li>
-    <li><strong>Server socket:</strong> Binds to a specific port and <strong>listens</strong> for incoming connections.</li>
-    <li><strong>Client socket:</strong> <strong>Initiates</strong> a connection to a server's IP address and port.</li>
+    <li><strong>Digital signature:</strong> The sender hashes the message and encrypts the hash with their <strong>private key</strong>. The receiver decrypts with the sender's <strong>public key</strong> and compares hashes. This verifies <strong>authenticity</strong> (it came from the claimed sender) and <strong>integrity</strong> (the message was not altered).</li>
+    <li><strong>Digital certificate:</strong> Issued by a <strong>Certificate Authority (CA)</strong>. Contains the server's public key, the domain name, the CA's digital signature, and an expiry date. Browsers use certificates to verify that a website is who it claims to be (essential for HTTPS).</li>
 </ul>
 
-<h3>TCP Socket Communication Flow</h3>
-<ol>
-    <li><strong>Server:</strong> Creates a socket, binds it to an IP:port, and starts listening.</li>
-    <li><strong>Client:</strong> Creates a socket and connects to the server's IP:port.</li>
-    <li><strong>Server:</strong> Accepts the connection, creating a new socket for this specific client.</li>
-    <li><strong>Both:</strong> Exchange data by reading from and writing to their sockets.</li>
-    <li><strong>Both:</strong> Close their sockets when communication is complete.</li>
-</ol>
+<div class="exam-tip">Know the difference between symmetric (one key, fast, key distribution problem) and asymmetric (key pair, slow, no distribution problem). TLS/HTTPS uses both: asymmetric for key exchange, symmetric for data. Digital signatures use the sender's private key (not public). Digital certificates are issued by Certificate Authorities to verify identity.</div>
 
-<pre># Python TCP socket example — Server
-import socket
-
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # TCP socket
-server.bind(('0.0.0.0', 8080))    # Bind to all interfaces, port 8080
-server.listen(5)                    # Queue up to 5 pending connections
-print("Server listening on port 8080...")
-
-client_socket, address = server.accept()   # Block until a client connects
-print(f"Connection from {address}")
-data = client_socket.recv(1024)            # Receive up to 1024 bytes
-print(f"Received: {data.decode()}")
-client_socket.send(b'Hello from server')   # Send response
-client_socket.close()                      # Close this client connection
-server.close()                             # Close the server socket</pre>
-
-<pre># Python TCP socket example — Client
-import socket
-
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect(('192.168.1.5', 8080))      # Connect to server
-client.send(b'Hello from client')           # Send data
-response = client.recv(1024)                # Receive response
-print(f"Server replied: {response.decode()}")
-client.close()                              # Close connection</pre>
-
-<!-- ====== WEB TECHNOLOGIES ====== -->
-<h2>4.9.13 Web Technologies</h2>
-
-<h3>HTML, CSS, and JavaScript</h3>
-<table>
-    <tr><th>Technology</th><th>Purpose</th><th>Layer of Web Page</th></tr>
-    <tr><td><strong>HTML</strong></td><td>Defines the <strong>structure and content</strong> of a web page (headings, paragraphs, links, images, forms, tables)</td><td>Content / Structure</td></tr>
-    <tr><td><strong>CSS</strong></td><td>Controls the <strong>presentation and layout</strong> (colours, fonts, spacing, positioning, responsive design, animations)</td><td>Presentation / Style</td></tr>
-    <tr><td><strong>JavaScript</strong></td><td>Adds <strong>interactivity and dynamic behaviour</strong> (form validation, DOM manipulation, AJAX requests, event handling)</td><td>Behaviour / Interactivity</td></tr>
-</table>
-
-<pre>&lt;!-- HTML example --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;My Page&lt;/title&gt;
-    &lt;style&gt;
-      body { font-family: Arial; background: #f0f0f0; }
-      h1 { color: #333; text-align: center; }
-      .highlight { background: yellow; padding: 10px; }
-    &lt;/style&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Welcome&lt;/h1&gt;
-    &lt;p class="highlight"&gt;This is highlighted text.&lt;/p&gt;
-    &lt;button id="btn"&gt;Click me&lt;/button&gt;
-
-    &lt;script&gt;
-      document.getElementById('btn').addEventListener('click', function() {
-          alert('Button clicked!');
-      });
-    &lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</pre>
-
-<h3>Client-Side vs Server-Side Processing</h3>
-<table>
-    <tr><th>Feature</th><th>Client-Side</th><th>Server-Side</th></tr>
-    <tr><td><strong>Where it runs</strong></td><td>In the user's web browser</td><td>On the web server</td></tr>
-    <tr><td><strong>Languages</strong></td><td>JavaScript (primary), HTML, CSS, WebAssembly</td><td>Python, PHP, Java, Node.js, C#, Ruby, Go</td></tr>
-    <tr><td><strong>Examples</strong></td><td>Form validation, animations, dynamic content updates (without page reload), interactive UI elements</td><td>Database queries, user authentication, file processing, business logic, payment processing</td></tr>
-    <tr><td><strong>Speed</strong></td><td>Fast (no server round-trip needed)</td><td>Depends on server load and network latency</td></tr>
-    <tr><td><strong>Security</strong></td><td>Code is <strong>visible to the user</strong> (View Source) &mdash; CANNOT be trusted for security. Users can modify or disable it.</td><td>Code is <strong>hidden from the user</strong> &mdash; secure for sensitive operations. Users cannot see or modify server code.</td></tr>
-    <tr><td><strong>Database access</strong></td><td>Cannot directly access server-side databases (would expose credentials)</td><td>Can directly query and modify databases securely</td></tr>
-</table>
-
-<div class="exam-tip">A very common exam question: "Why is client-side validation alone insufficient?" Answer: Users can bypass client-side code by disabling JavaScript in their browser, or by crafting HTTP requests directly (e.g., using developer tools or command-line tools). Server-side validation is essential because the server is under the developer's control and cannot be bypassed by the user. Best practice is to validate on BOTH sides: client-side for user experience (immediate feedback), server-side for security.</div>
-
-<!-- ====== PACKET STRUCTURE ====== -->
-<h2>4.9.14 Packet Structure</h2>
-
-<p>When data is transmitted across a packet-switched network, it is broken into <strong>packets</strong>. Each packet is routed independently and may take different paths to the destination. Each packet contains three parts:</p>
+<!-- ====== NETWORK SECURITY ====== -->
+<h2>4.9.8 Network Security Threats</h2>
 
 <table>
-    <tr><th>Component</th><th>Contents</th><th>Purpose</th></tr>
-    <tr>
-        <td><strong>Header</strong></td>
-        <td>
-            <ul>
-                <li>Source IP address</li>
-                <li>Destination IP address</li>
-                <li>Packet sequence number</li>
-                <li>Protocol identifier (TCP/UDP)</li>
-                <li>TTL (Time to Live)</li>
-                <li>Source and destination port numbers</li>
-                <li>Header checksum</li>
-                <li>Packet length</li>
-                <li>Flags (e.g., fragmentation flags)</li>
-            </ul>
-        </td>
-        <td>Provides all the routing and control information needed to deliver the packet to its destination and reassemble the original data correctly.</td>
-    </tr>
-    <tr>
-        <td><strong>Payload (Data)</strong></td>
-        <td>A portion of the actual data being transmitted</td>
-        <td>The useful content. Size is limited by the <strong>Maximum Transmission Unit (MTU)</strong> &mdash; typically 1500 bytes for Ethernet. Larger messages are split across multiple packets.</td>
-    </tr>
-    <tr>
-        <td><strong>Trailer</strong></td>
-        <td>
-            <ul>
-                <li>Error detection code (CRC &mdash; Cyclic Redundancy Check)</li>
-                <li>End-of-packet marker</li>
-            </ul>
-        </td>
-        <td>Allows the receiver to detect transmission errors. If the CRC does not match, the packet is discarded and retransmission is requested (by TCP).</td>
-    </tr>
+    <tr><th>Threat</th><th>Description</th><th>Prevention</th></tr>
+    <tr><td><strong>Malware</strong></td><td>Malicious software: viruses, worms, trojans, ransomware, spyware, adware</td><td>Anti-malware, regular updates, user education, sandboxing</td></tr>
+    <tr><td><strong>Phishing</strong></td><td>Fraudulent communications (email, SMS) impersonating trusted entities to steal credentials</td><td>User training, email filtering, 2FA, checking URLs</td></tr>
+    <tr><td><strong>SQL injection</strong></td><td>Inserting malicious SQL into input fields to access/modify databases</td><td>Parameterised queries, input validation, least privilege</td></tr>
+    <tr><td><strong>DDoS</strong></td><td>Flooding a server with traffic from many sources to make it unavailable</td><td>Rate limiting, traffic filtering, CDNs, ISP-level mitigation</td></tr>
+    <tr><td><strong>Man-in-the-middle</strong></td><td>Attacker intercepts communication between two parties</td><td>HTTPS/TLS, certificate pinning, VPNs</td></tr>
+    <tr><td><strong>Brute force</strong></td><td>Systematically trying all possible passwords</td><td>Account lockout, CAPTCHA, strong passwords, 2FA</td></tr>
+    <tr><td><strong>Social engineering</strong></td><td>Manipulating people into revealing information</td><td>Staff training, security policies, verification procedures</td></tr>
 </table>
 
-<h3>Key Header Fields Explained</h3>
+<h3>Prevention Measures</h3>
 <ul>
-    <li><strong>TTL (Time to Live):</strong> A counter (typically starting at 64 or 128) that is decremented by 1 each time the packet passes through a router. When TTL reaches 0, the packet is <strong>discarded</strong>. This prevents packets from circling the network indefinitely if there is a routing loop. The <code>traceroute</code> command uses TTL to discover the path packets take.</li>
-    <li><strong>Checksum:</strong> A value calculated from the packet's contents using an algorithm (e.g., CRC-32). The sender computes and includes the checksum. The receiver recalculates it and compares. If they differ, the packet has been <strong>corrupted</strong> during transmission and is discarded.</li>
-    <li><strong>Sequence number:</strong> Because packets may take different routes and arrive out of order, the sequence number allows the receiving device to <strong>reassemble packets in the correct order</strong>. It also allows detection of missing packets (gaps in the sequence).</li>
+    <li><strong>Firewalls</strong> &mdash; filter traffic based on rules</li>
+    <li><strong>Encryption</strong> &mdash; protect data in transit and at rest</li>
+    <li><strong>Authentication</strong> &mdash; passwords, biometrics, multi-factor (something you know + have + are)</li>
+    <li><strong>Access control</strong> &mdash; principle of least privilege; role-based access</li>
+    <li><strong>Regular updates/patches</strong> &mdash; fix known vulnerabilities</li>
+    <li><strong>Penetration testing</strong> &mdash; authorised simulated attacks to find weaknesses</li>
+    <li><strong>User education</strong> &mdash; training staff to recognise phishing and social engineering</li>
 </ul>
 
-<h3>Complete Data Transmission Process</h3>
-<ol>
-    <li>Application generates data (e.g., an HTTP request).</li>
-    <li>Transport layer (TCP) segments the data into chunks, adds port numbers and sequence numbers.</li>
-    <li>Internet layer (IP) adds source and destination IP addresses, creating packets.</li>
-    <li>Link layer adds source and destination MAC addresses, creating frames.</li>
-    <li>Frames are transmitted as electrical/optical/radio signals over the physical medium.</li>
-    <li>Each router along the path: receives the frame, strips the frame header, reads the IP destination, consults its routing table, adds new frame headers for the next hop, forwards the packet.</li>
-    <li>At the destination: the link layer checks the CRC, strips the frame header. The IP layer verifies the checksum and passes to TCP. TCP reassembles packets in order, checks for missing packets (requests retransmission), and delivers the complete data to the application.</li>
-</ol>
-
-<div class="exam-tip">When describing data transmission, cover the full process: data is segmented into packets; each packet has a header (source/destination IP, sequence number, TTL, checksum), payload, and trailer (CRC). Packets may take different routes. At the destination, packets are reassembled using sequence numbers, checksums are verified, and missing/corrupted packets are retransmitted (TCP). Always mention specific header fields by name.</div>
+<div class="exam-tip">For security questions, always pair threats with specific countermeasures. Know SQL injection well: <code>'; DROP TABLE users; --</code> and explain why parameterised queries prevent it. For encryption, know how TLS secures HTTPS using both symmetric and asymmetric methods.</div>
 
 </div>
 </body>
