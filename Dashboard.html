@@ -102,8 +102,28 @@
     .greeting-sub { font-size: 14px; color: var(--muted); margin-top: 2px; }
     .topbar-right { display: flex; align-items: center; gap: 10px; }
 
-    .notif-btn { width: 36px; height: 36px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 15px; transition: border-color 0.15s; box-shadow: 0 1px 4px rgba(91,173,207,0.1); }
-    .notif-btn:hover { border-color: var(--border-hover); }
+    .notif-btn, .help-btn { width: 36px; height: 36px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 15px; transition: border-color 0.15s; box-shadow: 0 1px 4px rgba(91,173,207,0.1); }
+    .notif-btn:hover, .help-btn:hover { border-color: var(--border-hover); }
+    .help-btn { font-size: 16px; font-weight: 700; color: var(--accent-dark); }
+
+    /* ── HELP PANEL OVERLAY ── */
+    .help-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 999; display: none; align-items: center; justify-content: center; animation: fadeIn 0.2s ease; }
+    .help-overlay.active { display: flex; }
+    .help-panel {
+      background: var(--surface); border-radius: 20px; padding: 32px 28px;
+      max-width: 520px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      position: relative; animation: slideUp 0.3s ease;
+    }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .help-panel-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 6px; }
+    .help-panel-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; line-height: 1.5; }
+    .help-panel-close { position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 18px; cursor: pointer; color: var(--muted); padding: 4px; }
+    .help-panel-close:hover { color: var(--text); }
+    .help-steps { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+    .help-step { display: flex; gap: 14px; align-items: flex-start; }
+    .help-step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.2); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: var(--accent-dark); flex-shrink: 0; }
+    .help-step-text { font-size: 14px; line-height: 1.6; padding-top: 5px; }
+    .help-goal { font-size: 14px; color: var(--accent-dark); font-weight: 600; text-align: center; padding: 14px; background: var(--accent-dim); border-radius: 12px; }
 
     .settings-link { display: flex; align-items: center; gap: 6px; padding: 7px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; font-size: 13px; color: var(--muted); text-decoration: none; transition: all 0.15s; }
     .settings-link:hover { border-color: var(--border-hover); color: var(--text); }
@@ -483,6 +503,7 @@
       </div>
       <div class="topbar-right">
         <a href="auth/setup.html" class="settings-link">✏️ Edit setup</a>
+        <div class="help-btn" onclick="document.getElementById('helpOverlay').classList.add('active')" title="How it works">?</div>
         <div class="notif-btn">🔔</div>
       </div>
     </div>
@@ -2159,5 +2180,34 @@ load().then(() => {
   checkDiagnosticHash();
 });
 </script>
+
+<!-- Help Panel Overlay -->
+<div class="help-overlay" id="helpOverlay" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="help-panel">
+    <button class="help-panel-close" onclick="document.getElementById('helpOverlay').classList.remove('active')">✕</button>
+    <div class="help-panel-title">🎯 How RAG Learning Works</div>
+    <div class="help-panel-sub">Follow these four steps to get the most out of your revision.</div>
+    <div class="help-steps">
+      <div class="help-step">
+        <div class="help-step-num">1</div>
+        <div class="help-step-text">Pick a topic from the <strong>Diagnostic</strong> tab and complete a quiz — this sets your RAG colour for that topic.</div>
+      </div>
+      <div class="help-step">
+        <div class="help-step-num">2</div>
+        <div class="help-step-text">Check your <strong>Breakdown</strong> page to see which topics need the most work.</div>
+      </div>
+      <div class="help-step">
+        <div class="help-step-num">3</div>
+        <div class="help-step-text">Use <strong>Practice Questions</strong> and <strong>Notes</strong> to drill exam-style questions on your weak areas.</div>
+      </div>
+      <div class="help-step">
+        <div class="help-step-num">4</div>
+        <div class="help-step-text">Re-do diagnostics to update your colours as you improve.</div>
+      </div>
+    </div>
+    <div class="help-goal">The goal is to get every topic green and feel confident heading into your exams. 💪</div>
+  </div>
+</div>
+
 </body>
 </html>
