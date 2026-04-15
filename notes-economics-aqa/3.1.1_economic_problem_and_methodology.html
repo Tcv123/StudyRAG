@@ -6,25 +6,28 @@
 <title>3.1.1 The Economic Problem and Economic Methodology — AQA A-Level Economics</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
-  .container { max-width: 800px; margin: 0 auto; }
-  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
-  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
-  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
-  p { margin: 8px 0; }
-  ul, ol { margin: 8px 0 8px 24px; }
-  li { margin: 4px 0; }
-  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
-  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.7; padding: 40px 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 28px; }
+  h2 { font-size: 1.5rem; color: #16213e; margin: 40px 0 16px; border-left: 4px solid #1a73e8; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #1a1a2e; margin: 26px 0 10px; }
+  h4 { font-size: 1.05rem; color: #374151; margin: 18px 0 8px; }
+  p { margin: 10px 0; }
+  ul, ol { margin: 10px 0 14px 24px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 14px; text-align: left; }
   th { background: #e8eef6; font-weight: 600; }
   tr:nth-child(even) { background: #f8fafc; }
-  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
-  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
-  .diagram-box { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+  .case-study { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+  .case-study strong.cs-title { color: #0369a1; font-size: 1.05rem; }
+  .diagram-box { background: #f9fafb; border: 2px solid #d1d5db; border-radius: 10px; padding: 20px; margin: 20px 0; text-align: center; }
   .diagram-box svg { max-width: 100%; }
-  .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 8px; font-style: italic; }
+  .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 10px; font-style: italic; }
+  .eval-box { background: #faf5ff; border-left: 4px solid #8b5cf6; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
   .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
-  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
 </head>
 <body>
@@ -32,327 +35,574 @@
 
 <h1>3.1.1 The Economic Problem and Economic Methodology</h1>
 
+<!-- ============================================================ -->
 <h2>The Nature of Economics</h2>
+<!-- ============================================================ -->
 
 <div class="def-box">
-<strong>Economics</strong> is the study of how scarce resources are allocated among competing, unlimited wants. It examines the choices individuals, firms, and governments make when faced with scarcity.
+<strong>Economics</strong> is the social science that studies how societies allocate scarce resources among competing, unlimited wants. It examines the choices and trade-offs that individuals, firms, and governments make.
 </div>
 
 <p>Economics is divided into two main branches:</p>
 <ul>
-  <li><strong>Microeconomics</strong> — the study of individual markets, consumers, and firms (e.g., price determination, market failure)</li>
-  <li><strong>Macroeconomics</strong> — the study of the economy as a whole (e.g., GDP, inflation, unemployment, economic growth)</li>
+  <li><strong>Microeconomics</strong> — studies individual markets, consumers, and firms. It asks questions like: Why do house prices rise? How do firms set prices? Why do some markets fail? Topics include demand and supply, market structures, and market failure.</li>
+  <li><strong>Macroeconomics</strong> — studies the economy as a whole. It asks questions like: Why does unemployment rise? What causes inflation? How can governments promote growth? Topics include GDP, inflation, unemployment, fiscal policy, and monetary policy.</li>
 </ul>
 
-<h2>The Economic Problem: Scarcity</h2>
+<p>The two branches are deeply connected. For example, a macroeconomic recession (falling GDP) causes microeconomic effects: individual firms lose revenue, workers lose jobs, and specific markets (like housing or luxury goods) suffer disproportionately.</p>
+
+<!-- ============================================================ -->
+<h2>The Economic Problem: Scarcity and Choice</h2>
+<!-- ============================================================ -->
 
 <div class="def-box">
-<strong>Scarcity</strong> is the fundamental economic problem: human wants are infinite, but the resources available to satisfy those wants are finite. This means choices must be made about how to allocate resources.
+<strong>The economic problem</strong> is the fundamental challenge of scarcity: human wants are infinite, but the resources available to satisfy them are finite. Because of this gap, choices must be made about how to allocate resources.
 </div>
 
-<p>Scarcity exists because:</p>
+<h3>Why Scarcity Exists</h3>
+<p>Scarcity is not about poverty or shortage — it is the permanent condition that there are never enough resources to produce everything that people want. Even wealthy countries face scarcity:</p>
 <ul>
-  <li>Human wants are unlimited — people always desire more goods and services</li>
-  <li>Resources (factors of production) are limited in supply at any given time</li>
-  <li>Therefore, not all wants can be satisfied simultaneously</li>
+  <li><strong>Human wants are unlimited</strong> — once basic needs (food, shelter, clothing) are met, people desire better housing, entertainment, travel, technology, healthcare, and education. Wants constantly grow and change.</li>
+  <li><strong>Resources are limited</strong> — at any point in time, there is a finite amount of land, workers, machinery, and entrepreneurial talent available.</li>
+  <li><strong>Therefore, not all wants can be satisfied simultaneously</strong> — trade-offs are unavoidable.</li>
 </ul>
 
-<p>Because of scarcity, every society must answer three fundamental questions:</p>
+<div class="case-study">
+<strong class="cs-title">Real-World Example: NHS Funding</strong><br>
+The UK's NHS has a limited budget (around £180 billion per year), but the demand for healthcare is essentially unlimited — new treatments, an ageing population, mental health services, cancer drugs. The NHS must constantly decide what to fund and what to reject. NICE (National Institute for Health and Care Excellence) evaluates whether new drugs are cost-effective enough to be provided. A decision to fund one treatment means less money for another — this is the economic problem in action.
+</div>
+
+<h3>The Three Fundamental Economic Questions</h3>
+<p>Because of scarcity, every society — regardless of its political system — must answer:</p>
 <ol>
-  <li><strong>What to produce?</strong> — Which goods and services should be produced with limited resources?</li>
-  <li><strong>How to produce?</strong> — What combination of resources and techniques should be used?</li>
-  <li><strong>For whom to produce?</strong> — How should output be distributed among the population?</li>
+  <li><strong>What to produce?</strong> — Should resources go towards healthcare or defence? Consumer goods or capital goods? Luxury items or basic necessities?</li>
+  <li><strong>How to produce?</strong> — Should production be labour-intensive or capital-intensive? Should farming use organic methods or industrial techniques?</li>
+  <li><strong>For whom to produce?</strong> — How should the output be distributed? Should it go to those who can pay the most (market allocation) or be shared equally (state allocation)?</li>
 </ol>
 
+<p>Different economic systems answer these questions in fundamentally different ways (see the Economic Systems section below).</p>
+
+<!-- ============================================================ -->
 <h2>Opportunity Cost</h2>
+<!-- ============================================================ -->
 
 <div class="def-box">
-<strong>Opportunity cost</strong> is the next best alternative foregone when a choice is made. It is the true cost of any decision, measured in terms of what must be given up.
+<strong>Opportunity cost</strong> is the value of the next best alternative foregone when a choice is made. It is the true economic cost of any decision, measured not in money but in what must be given up.
 </div>
 
-<p>Key points about opportunity cost:</p>
+<h3>Why Opportunity Cost Matters</h3>
+<p>Opportunity cost is perhaps the single most important concept in economics. It arises directly from scarcity — if resources were unlimited, choosing one option would not require giving up another. Every decision has an opportunity cost:</p>
+
+<h4>For Individuals</h4>
 <ul>
-  <li>It arises directly from scarcity — if resources were unlimited, there would be no opportunity cost</li>
-  <li>It applies to consumers (spending choices), firms (investment decisions), and governments (spending priorities)</li>
-  <li>It includes both monetary and non-monetary costs (e.g., time, enjoyment)</li>
-  <li>The opportunity cost of attending university includes not just tuition fees but also the wages foregone from working</li>
+  <li>Choosing to attend university: the opportunity cost includes the salary you could have earned working full-time for three years (potentially £60,000+), not just the tuition fees.</li>
+  <li>Spending £50 on a concert ticket: the opportunity cost is whatever else you would have done with that £50 (new clothes, savings, a meal out).</li>
+  <li>Spending an hour studying economics: the opportunity cost is the hour of revision for another subject, or an hour of leisure.</li>
 </ul>
 
-<div class="tip-box">
-<strong>Exam Tip:</strong> Always identify the specific next best alternative when discussing opportunity cost. Do not list multiple alternatives — opportunity cost is the single best option that was rejected.
+<h4>For Firms</h4>
+<ul>
+  <li>A company investing £1 million in a new factory: the opportunity cost is what else that £1 million could have been spent on — marketing, research, paying dividends to shareholders.</li>
+  <li>A farmer using land to grow wheat: the opportunity cost is the barley, rapeseed, or solar panels that could have occupied the same land.</li>
+</ul>
+
+<h4>For Governments</h4>
+<ul>
+  <li>Spending £50 billion on HS2 (high-speed rail): the opportunity cost is the hospitals, schools, or tax cuts that money could have funded instead.</li>
+  <li>Choosing to increase military spending: the opportunity cost is the social programmes that receive less funding.</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Real-World Example: The UK's HS2 Decision</strong><br>
+The HS2 high-speed rail project was originally budgeted at £37 billion but costs escalated to over £100 billion. Critics argued the opportunity cost was enormous — that money could have funded improvements to existing rail networks, built new hospitals, or been invested in green energy. In 2023, the northern leg was cancelled partly because the government judged the opportunity cost had become too high relative to the expected benefits.
 </div>
 
+<div class="tip-box">
+<strong>Exam Tip:</strong> Always identify the <em>specific</em> next best alternative when discussing opportunity cost. Do not list multiple alternatives — opportunity cost is the single best option that was rejected. Write: "The opportunity cost of building the hospital is the school that could have been built instead," not "the school, roads, and parks."
+</div>
+
+<!-- ============================================================ -->
 <h2>The Production Possibility Frontier (PPF)</h2>
+<!-- ============================================================ -->
 
 <div class="def-box">
 <strong>The Production Possibility Frontier (PPF)</strong> shows the maximum possible output combinations of two goods or services that an economy can produce when all resources are fully and efficiently employed, given the current state of technology.
 </div>
 
+<h3>Understanding the PPF Diagram</h3>
+
 <div class="diagram-box">
-<svg width="420" height="350" viewBox="0 0 420 350">
+<svg width="440" height="380" viewBox="0 0 440 380">
+  <!-- Grid lines for clarity -->
+  <line x1="70" y1="300" x2="70" y2="50" stroke="#e5e7eb" stroke-width="0.5"/>
+  <line x1="70" y1="300" x2="390" y2="300" stroke="#e5e7eb" stroke-width="0.5"/>
+
   <!-- Axes -->
-  <line x1="60" y1="290" x2="380" y2="290" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="60" y1="290" x2="60" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="70" y1="300" x2="400" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="70" y1="300" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2"/>
   <!-- Arrows -->
-  <polygon points="380,290 370,285 370,295" fill="#1a1a2e"/>
-  <polygon points="60,30 55,40 65,40" fill="#1a1a2e"/>
+  <polygon points="400,300 390,295 390,305" fill="#1a1a2e"/>
+  <polygon points="70,30 65,40 75,40" fill="#1a1a2e"/>
   <!-- Axis labels -->
-  <text x="210" y="325" text-anchor="middle" font-size="14" fill="#1a1a2e">Consumer Goods</text>
-  <text x="20" y="160" text-anchor="middle" font-size="14" fill="#1a1a2e" transform="rotate(-90,20,160)">Capital Goods</text>
-  <!-- PPF Curve (concave) -->
-  <path d="M 70,60 Q 120,70 180,110 Q 250,160 300,230 Q 340,275 360,285" stroke="#1a73e8" stroke-width="3" fill="none"/>
-  <!-- Points -->
-  <circle cx="180" cy="180" r="5" fill="#22c55e"/>
-  <text x="190" y="175" font-size="12" fill="#22c55e">A (efficient)</text>
-  <circle cx="140" cy="220" r="5" fill="#f59e0b"/>
-  <text x="150" y="235" font-size="12" fill="#f59e0b">B (inefficient)</text>
-  <circle cx="300" cy="100" r="5" fill="#ef4444"/>
-  <text x="310" y="95" font-size="12" fill="#ef4444">C (unattainable)</text>
+  <text x="235" y="340" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Consumer Goods</text>
+  <text x="22" y="170" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,22,170)">Capital Goods</text>
+
+  <!-- PPF Curve — clean quarter-circle arc -->
+  <path d="M 70,60 Q 75,290 380,300" stroke="#1a73e8" stroke-width="3" fill="none"/>
+
+  <!-- Shaded area inside PPF -->
+  <path d="M 70,60 Q 75,290 380,300 L 70,300 Z" fill="#1a73e8" fill-opacity="0.04"/>
+
   <!-- PPF label -->
-  <text x="330" y="250" font-size="13" fill="#1a73e8" font-weight="bold">PPF</text>
+  <text x="260" y="225" font-size="14" fill="#1a73e8" font-weight="bold" transform="rotate(-38,260,225)">PPF</text>
+
+  <!-- Point A — on the curve (efficient) -->
+  <circle cx="150" cy="115" r="6" fill="#22c55e"/>
+  <text x="162" y="108" font-size="13" font-weight="600" fill="#22c55e">A (efficient)</text>
+
+  <!-- Point B — inside the curve (inefficient) -->
+  <circle cx="160" cy="220" r="6" fill="#f59e0b"/>
+  <text x="172" y="225" font-size="13" font-weight="600" fill="#f59e0b">B (inefficient)</text>
+
+  <!-- Point C — outside the curve (unattainable) -->
+  <circle cx="310" cy="110" r="6" fill="#ef4444"/>
+  <text x="322" y="105" font-size="13" font-weight="600" fill="#ef4444">C (unattainable)</text>
+
+  <!-- Axis intercept labels -->
+  <text x="55" y="58" font-size="12" fill="#64748b" text-anchor="end">Max</text>
+  <text x="382" y="318" font-size="12" fill="#64748b" text-anchor="middle">Max</text>
 </svg>
-<div class="diagram-caption">Figure 1: The Production Possibility Frontier showing efficient (A), inefficient (B), and unattainable (C) points</div>
+<div class="diagram-caption">Figure 1: The Production Possibility Frontier — the curved boundary shows all efficient combinations of two goods</div>
 </div>
 
-<h3>Key Features of the PPF</h3>
-<ul>
-  <li><strong>Points on the PPF (e.g., A)</strong> — represent productive efficiency; all resources are fully employed</li>
-  <li><strong>Points inside the PPF (e.g., B)</strong> — represent inefficiency; resources are unemployed or underutilised</li>
-  <li><strong>Points outside the PPF (e.g., C)</strong> — are currently unattainable with existing resources and technology</li>
-  <li><strong>Concave shape</strong> — reflects the law of increasing opportunity cost; resources are not perfectly substitutable between uses</li>
-</ul>
+<h3>Key Points on the PPF</h3>
+<table>
+<tr><th>Point</th><th>Location</th><th>What It Means</th></tr>
+<tr><td><strong>A</strong></td><td>On the curve</td><td><strong>Productively efficient</strong> — all resources are fully and efficiently employed. The economy cannot produce more of one good without producing less of the other.</td></tr>
+<tr><td><strong>B</strong></td><td>Inside the curve</td><td><strong>Inefficient</strong> — resources are either unemployed (e.g., workers without jobs) or underutilised (e.g., factories running below capacity). The economy could produce more of both goods.</td></tr>
+<tr><td><strong>C</strong></td><td>Outside the curve</td><td><strong>Currently unattainable</strong> — the economy does not have enough resources or technology to produce this combination. It could become attainable if the PPF shifts outward.</td></tr>
+</table>
+
+<h3>Opportunity Cost on the PPF</h3>
+<p>Movement <strong>along</strong> the PPF illustrates opportunity cost. To produce more consumer goods, the economy must move resources away from capital goods — so capital goods output falls. The opportunity cost of more consumer goods is the capital goods given up.</p>
+
+<p>The PPF's curved (concave) shape reflects the <strong>law of increasing opportunity cost</strong>: as you produce more and more of one good, the opportunity cost of each additional unit rises. This happens because resources are not perfectly adaptable — a trained doctor cannot easily be redeployed to build cars.</p>
 
 <h3>Shifts in the PPF</h3>
-<p>The PPF can shift outward (economic growth) due to:</p>
+
+<div class="diagram-box">
+<svg width="440" height="380" viewBox="0 0 440 380">
+  <!-- Axes -->
+  <line x1="70" y1="300" x2="400" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="70" y1="300" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="400,300 390,295 390,305" fill="#1a1a2e"/>
+  <polygon points="70,30 65,40 75,40" fill="#1a1a2e"/>
+  <text x="235" y="340" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Consumer Goods</text>
+  <text x="22" y="170" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,22,170)">Capital Goods</text>
+
+  <!-- Original PPF -->
+  <path d="M 70,80 Q 75,275 340,300" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
+  <text x="220" y="215" font-size="13" fill="#1a73e8" font-weight="600" transform="rotate(-40,220,215)">PPF₁</text>
+
+  <!-- Shifted PPF (outward — economic growth) -->
+  <path d="M 70,50 Q 80,280 390,300" stroke="#22c55e" stroke-width="2.5" fill="none" stroke-dasharray="8,4"/>
+  <text x="280" y="195" font-size="13" fill="#22c55e" font-weight="600" transform="rotate(-35,280,195)">PPF₂</text>
+
+  <!-- Arrow showing shift -->
+  <line x1="210" y1="185" x2="260" y2="165" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowGrey)"/>
+  <defs><marker id="arrowGrey" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#64748b"/></marker></defs>
+  <text x="245" y="155" font-size="12" fill="#64748b">Growth</text>
+</svg>
+<div class="diagram-caption">Figure 2: An outward shift of the PPF represents economic growth — more of both goods can now be produced</div>
+</div>
+
+<h4>Causes of an Outward Shift (Economic Growth)</h4>
 <ul>
-  <li>Increase in quantity of factors of production (e.g., immigration, investment)</li>
-  <li>Improvement in quality of factors (e.g., better education, training)</li>
-  <li>Technological progress</li>
+  <li><strong>More resources:</strong> discovery of new oil reserves, immigration increasing the labour force, increased investment in machinery</li>
+  <li><strong>Better quality resources:</strong> improved education and training (better human capital), advances in technology</li>
+  <li><strong>Technological progress:</strong> new production techniques that allow more output from the same inputs (e.g., automation, AI)</li>
 </ul>
-<p>An inward shift indicates a reduction in productive capacity (e.g., natural disaster, emigration, resource depletion).</p>
 
-<h3>Opportunity Cost and the PPF</h3>
-<p>Movement along the PPF illustrates opportunity cost — producing more of one good requires producing less of another. The concave shape shows that opportunity cost increases as more of a good is produced, because resources become less well-suited to producing additional units of that good.</p>
+<h4>Causes of an Inward Shift (Reduced Capacity)</h4>
+<ul>
+  <li>Natural disasters destroying infrastructure</li>
+  <li>War or conflict depleting resources and labour</li>
+  <li>Emigration of skilled workers (brain drain)</li>
+  <li>Resource depletion (e.g., overfishing, deforestation)</li>
+</ul>
 
+<div class="case-study">
+<strong class="cs-title">Real-World Example: China's Economic Growth</strong><br>
+Between 1980 and 2020, China's PPF shifted dramatically outward. Massive investment in infrastructure (capital), a huge workforce moving from agriculture to manufacturing (labour reallocation), adoption of Western technology, and opening up to trade all contributed. China's GDP grew from $191 billion to over $14 trillion — the most dramatic outward PPF shift in modern history.
+</div>
+
+<div class="case-study">
+<strong class="cs-title">Real-World Example: COVID-19 and the PPF</strong><br>
+During 2020, the COVID-19 pandemic effectively moved many economies to a point <em>inside</em> their PPF. Resources were not destroyed, but they were idle — workers stayed home, factories shut, and shops closed. The PPF itself didn't shift inward (productive capacity was still there), but the economy operated well below its potential. Recovery meant moving back towards the PPF as restrictions eased.
+</div>
+
+<!-- ============================================================ -->
 <h2>Factors of Production</h2>
+<!-- ============================================================ -->
 
 <div class="def-box">
-<strong>Factors of production</strong> are the inputs used to produce goods and services. They are classified into four categories: land, labour, capital, and enterprise.
+<strong>Factors of production</strong> are the economic resources — the inputs used to produce goods and services. There are four categories, each earning a specific reward.
 </div>
 
 <table>
 <tr><th>Factor</th><th>Definition</th><th>Reward</th><th>Examples</th></tr>
-<tr><td><strong>Land</strong></td><td>All natural resources used in production</td><td>Rent</td><td>Oil, minerals, water, forests, fertile soil</td></tr>
-<tr><td><strong>Labour</strong></td><td>The human effort (physical and mental) used in production</td><td>Wages</td><td>Factory workers, teachers, doctors, managers</td></tr>
-<tr><td><strong>Capital</strong></td><td>Man-made resources used to produce other goods (not money)</td><td>Interest</td><td>Machinery, factories, tools, vehicles, IT systems</td></tr>
-<tr><td><strong>Enterprise</strong></td><td>The factor that organises other factors, takes risks, and innovates</td><td>Profit</td><td>Entrepreneurs who start and manage businesses</td></tr>
+<tr><td><strong>Land</strong></td><td>All natural resources, both renewable and non-renewable, used in production. Includes the physical land itself.</td><td>Rent</td><td>Oil, gas, minerals, water, fertile soil, forests, fish stocks, wind, solar energy</td></tr>
+<tr><td><strong>Labour</strong></td><td>The human effort — both physical and mental — used in the production of goods and services. Quantity and quality matter.</td><td>Wages / salaries</td><td>Factory workers, teachers, doctors, software engineers, delivery drivers</td></tr>
+<tr><td><strong>Capital</strong></td><td>Man-made resources used to produce other goods and services. This means physical/produced capital, NOT money.</td><td>Interest</td><td>Machinery, factories, tools, vehicles, computers, IT systems, robots</td></tr>
+<tr><td><strong>Enterprise</strong></td><td>The human factor that organises the other three factors, takes financial risks, makes business decisions, and innovates.</td><td>Profit</td><td>Entrepreneurs like James Dyson, startups, small business owners</td></tr>
 </table>
 
 <div class="tip-box">
-<strong>Exam Tip:</strong> Capital in economics means physical/produced capital (machinery, equipment), NOT financial capital (money). This is a common error in exams.
+<strong>Exam Tip:</strong> A very common exam mistake is confusing economic capital with financial capital. In economics, capital means physical goods used in production (machines, factories, tools) — NOT money or shares. If an exam question asks about capital, think machinery, not bank accounts.
 </div>
 
-<h3>Capital and Consumer Goods</h3>
+<h3>Capital Goods vs Consumer Goods</h3>
+<p>This distinction is important for understanding economic growth and the PPF:</p>
 <ul>
-  <li><strong>Capital goods</strong> — goods used to produce other goods (e.g., machinery, tools). Investment in capital goods sacrifices current consumption but increases future productive capacity.</li>
-  <li><strong>Consumer goods</strong> — goods purchased for direct satisfaction of wants (e.g., food, clothing, entertainment)</li>
+  <li><strong>Capital goods</strong> — goods used to produce other goods and services. Examples: factory machinery, delivery trucks, office computers. Investing in capital goods means sacrificing current consumption, but it increases future productive capacity (shifts the PPF outward).</li>
+  <li><strong>Consumer goods</strong> — goods purchased for the direct satisfaction of wants and needs. Examples: food, clothing, smartphones, entertainment.</li>
 </ul>
 
+<p>An economy that allocates more resources to capital goods today will have a larger PPF in the future (faster economic growth), but at the cost of less consumption today. This trade-off is central to development economics.</p>
+
+<div class="case-study">
+<strong class="cs-title">Real-World Example: South Korea vs. Ghana</strong><br>
+In the 1960s, South Korea and Ghana had similar GDP per capita (around $155). South Korea invested heavily in capital goods, education, and technology — sacrificing short-term consumption for long-term growth. Ghana focused more on current consumption. By 2020, South Korea's GDP per capita was over $31,000 while Ghana's was around $2,300. South Korea's PPF shifted outward far more rapidly because of its investment choices.
+</div>
+
+<h3>Human Capital</h3>
+<div class="def-box">
+<strong>Human capital</strong> refers to the skills, knowledge, experience, and health of the workforce. It is improved through education, training, and healthcare. Higher human capital increases labour productivity and shifts the PPF outward.
+</div>
+
+<!-- ============================================================ -->
+<h2>Opportunity Cost and the PPF Together</h2>
+<!-- ============================================================ -->
+
+<p>The PPF is the visual representation of opportunity cost. Every point on the PPF represents a trade-off: to have more of one good, society must accept less of another.</p>
+
+<div class="diagram-box">
+<svg width="440" height="380" viewBox="0 0 440 380">
+  <!-- Axes -->
+  <line x1="70" y1="300" x2="400" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="70" y1="300" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="400,300 390,295 390,305" fill="#1a1a2e"/>
+  <polygon points="70,30 65,40 75,40" fill="#1a1a2e"/>
+  <text x="235" y="340" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Healthcare</text>
+  <text x="22" y="170" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,22,170)">Defence</text>
+
+  <!-- PPF Curve -->
+  <path d="M 70,60 Q 75,290 380,300" stroke="#1a73e8" stroke-width="3" fill="none"/>
+
+  <!-- Point X -->
+  <circle cx="130" cy="98" r="6" fill="#2563eb"/>
+  <text x="142" y="93" font-size="13" font-weight="600" fill="#2563eb">X</text>
+
+  <!-- Point Y -->
+  <circle cx="260" cy="210" r="6" fill="#dc2626"/>
+  <text x="272" y="205" font-size="13" font-weight="600" fill="#dc2626">Y</text>
+
+  <!-- Dashed lines showing trade-off -->
+  <line x1="130" y1="98" x2="130" y2="300" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="130" y1="98" x2="70" y2="98" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="260" y1="210" x2="260" y2="300" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="260" y1="210" x2="70" y2="210" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Arrow along PPF -->
+  <path d="M 140,105 Q 190,140 250,205" stroke="#64748b" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrowGrey)"/>
+  <text x="205" y="145" font-size="11" fill="#64748b">Moving from X to Y:</text>
+  <text x="205" y="160" font-size="11" fill="#64748b">More healthcare,</text>
+  <text x="205" y="175" font-size="11" fill="#64748b">less defence</text>
+</svg>
+<div class="diagram-caption">Figure 3: Moving along the PPF from X to Y — the opportunity cost of more healthcare is the defence spending given up</div>
+</div>
+
+<!-- ============================================================ -->
 <h2>Economic Methodology</h2>
+<!-- ============================================================ -->
 
 <h3>Positive and Normative Statements</h3>
 
+<p>Economics uses two fundamentally different types of statements. Understanding the distinction is essential for evaluating economic arguments and policies.</p>
+
 <div class="def-box">
-<strong>Positive statements</strong> are objective, factual claims that can be tested and either proven or disproven with evidence. They describe "what is."<br><br>
-<strong>Normative statements</strong> are subjective, value-based opinions that cannot be proven or disproven. They describe "what ought to be."
+<strong>Positive statements</strong> are objective, factual claims about the world that can be tested with evidence and data. They describe <em>"what is"</em> or <em>"what will happen if..."</em>. They can be true or false, but the key point is that they are <em>testable</em>.<br><br>
+<strong>Normative statements</strong> are subjective, value-based opinions about what <em>ought to be</em>. They involve value judgements and cannot be proven or disproven with evidence alone. Different people can reasonably disagree about normative statements.
 </div>
 
 <table>
-<tr><th>Positive Statements</th><th>Normative Statements</th></tr>
-<tr><td>"Unemployment in the UK is 4.2%"</td><td>"Unemployment is too high"</td></tr>
-<tr><td>"A rise in income tax reduces disposable income"</td><td>"The government should raise income tax"</td></tr>
-<tr><td>"Minimum wage increases reduce employment in low-skill sectors"</td><td>"The minimum wage should be raised to £15 per hour"</td></tr>
-<tr><td>"Inflation is currently 3%"</td><td>"Inflation is the most important economic problem"</td></tr>
+<tr><th>Positive Statements (Testable Facts)</th><th>Normative Statements (Value Judgements)</th></tr>
+<tr><td>"UK unemployment is 4.2%"</td><td>"Unemployment is too high"</td></tr>
+<tr><td>"A rise in income tax reduces disposable income"</td><td>"The government should raise income tax to fund the NHS"</td></tr>
+<tr><td>"Raising the minimum wage to £15/hour would reduce employment in hospitality by 5%"</td><td>"The minimum wage should be raised to £15 per hour"</td></tr>
+<tr><td>"Inflation is currently 3%"</td><td>"Inflation is a bigger problem than unemployment"</td></tr>
+<tr><td>"Cigarette taxes reduce smoking rates"</td><td>"The government ought to ban smoking entirely"</td></tr>
 </table>
 
 <div class="tip-box">
-<strong>Exam Tip:</strong> Look for value words like "should", "ought to", "too much/little", "fair", "better" — these indicate normative statements. Positive statements can be wrong but must still be testable.
+<strong>Exam Tip:</strong> Spot normative statements by looking for value words: <em>"should", "ought to", "too much", "too little", "fair", "unfair", "better", "worse", "most important"</em>. Note that a positive statement can be wrong — "UK GDP is £5 trillion" is incorrect, but it is still a positive statement because it can be tested and disproven.
 </div>
 
 <h3>The Role of Value Judgements in Economics</h3>
-<p>Value judgements influence:</p>
+<p>Value judgements influence every aspect of economic policy:</p>
 <ul>
-  <li>Which economic problems are considered important</li>
-  <li>Which policies governments choose to implement</li>
-  <li>How we define concepts like "fairness" or "efficiency"</li>
-  <li>The weighting given to different policy objectives (e.g., growth vs. equality)</li>
+  <li><strong>Which problems to prioritise:</strong> Is inequality or inflation the bigger issue? This depends on values, not just data.</li>
+  <li><strong>Which policies to implement:</strong> Should the government raise taxes or cut spending? Both sides can cite evidence, but the choice involves values about fairness and the role of the state.</li>
+  <li><strong>How to define success:</strong> Is GDP growth the best measure of progress? Or should we focus on wellbeing, sustainability, or equality?</li>
+  <li><strong>How to weigh trade-offs:</strong> Is it worth accepting higher unemployment to reduce inflation? Different economists give different answers based partly on values.</li>
 </ul>
+
+<p>Economic policy debates are rarely purely positive. Most real-world arguments combine factual claims with value judgements — understanding the distinction helps you analyse both sides critically.</p>
 
 <h3>Ceteris Paribus</h3>
 
 <div class="def-box">
-<strong>Ceteris paribus</strong> means "all other things being equal." Economists use this assumption to isolate the effect of one variable while holding all others constant. This simplifies complex economic relationships for analysis.
+<strong>Ceteris paribus</strong> (Latin: "all other things being equal") is the assumption that all other relevant variables are held constant while examining the effect of one variable. This is fundamental to building economic models and theories.
 </div>
 
-<p>For example, the law of demand states that a rise in price leads to a fall in quantity demanded, <em>ceteris paribus</em>. In reality, many factors change simultaneously, but this assumption helps build theoretical models.</p>
+<p>For example, the law of demand states: "A rise in price leads to a fall in quantity demanded, <em>ceteris paribus</em>." In reality, many things change at the same time — income, tastes, prices of other goods, advertising. The ceteris paribus assumption allows economists to isolate one relationship at a time.</p>
 
+<p>This is a simplification, and economists recognise it. Real-world predictions must account for multiple variables changing simultaneously — this is why economic forecasting is difficult and often inaccurate.</p>
+
+<h3>Economic Models</h3>
+<p>Economists build simplified models of the real world to identify patterns, make predictions, and test theories. All models involve assumptions (like ceteris paribus, rational behaviour, or perfect information). These assumptions make the model tractable but also limit its accuracy. When evaluating economic models, consider:</p>
+<ul>
+  <li>Are the assumptions realistic enough to be useful?</li>
+  <li>Does the model predict real-world outcomes reasonably well?</li>
+  <li>What does the model leave out, and does that matter?</li>
+</ul>
+
+<!-- ============================================================ -->
 <h2>Economic Systems</h2>
+<!-- ============================================================ -->
 
-<p>Different societies answer the three fundamental economic questions in different ways. Economic systems exist on a spectrum:</p>
+<p>Different societies answer the three fundamental economic questions in different ways. Economic systems exist on a spectrum from pure free market to pure command, with most real economies sitting somewhere in between (mixed).</p>
 
 <h3>Free Market Economy</h3>
+
 <div class="def-box">
-<strong>Free market economy</strong> — an economic system where resources are allocated entirely through the price mechanism, with no government intervention. Private individuals and firms make all decisions about what, how, and for whom to produce.
+<strong>Free market economy</strong> — an economic system where resources are allocated entirely through the price mechanism, with no government intervention. Private individuals and firms make all decisions about what, how, and for whom to produce. The state's role is minimal — limited to enforcing property rights and contracts.
 </div>
 
-<p><strong>Characteristics:</strong></p>
+<h4>How It Works</h4>
 <ul>
-  <li>Private ownership of all factors of production</li>
-  <li>Profit motive drives production decisions</li>
-  <li>Consumer sovereignty — consumers determine what is produced through their spending</li>
-  <li>Prices act as signals and incentives to allocate resources</li>
-  <li>Competition among firms drives efficiency and innovation</li>
+  <li><strong>Private ownership:</strong> all factors of production are privately owned</li>
+  <li><strong>Profit motive:</strong> firms produce what is profitable; unprofitable activities cease</li>
+  <li><strong>Consumer sovereignty:</strong> consumers "vote with their wallets" — their spending decisions signal to firms what to produce</li>
+  <li><strong>Price signals:</strong> rising prices attract more supply; falling prices drive firms out of the market</li>
+  <li><strong>Competition:</strong> firms compete for customers, driving down prices and improving quality</li>
 </ul>
 
-<p><strong>Advantages:</strong></p>
+<h4>Advantages</h4>
 <ul>
-  <li>Efficient allocation of resources through the price mechanism</li>
-  <li>Consumer choice and variety</li>
-  <li>Innovation driven by profit motive</li>
-  <li>No bureaucratic inefficiency</li>
+  <li>Efficient allocation of resources through the price mechanism — resources flow to their highest-valued uses</li>
+  <li>Consumer choice and variety — firms respond to what consumers want</li>
+  <li>Innovation driven by the profit motive and competition</li>
+  <li>No bureaucratic inefficiency or government waste</li>
+  <li>Dynamic efficiency — firms constantly seek better products and lower costs</li>
 </ul>
 
-<p><strong>Disadvantages:</strong></p>
+<h4>Disadvantages</h4>
 <ul>
-  <li>Market failure (externalities, public goods, inequality)</li>
-  <li>Income and wealth inequality</li>
-  <li>Under-provision of merit goods, over-provision of demerit goods</li>
-  <li>Monopoly power may develop</li>
-  <li>Instability (boom and bust cycles)</li>
+  <li><strong>Market failure:</strong> externalities (pollution), public goods (street lighting), and information failures mean markets alone do not allocate resources efficiently</li>
+  <li><strong>Inequality:</strong> income and wealth become highly concentrated; those born into poverty have fewer opportunities</li>
+  <li><strong>Under-provision of merit goods:</strong> healthcare, education may be under-consumed because individuals undervalue their long-term benefits</li>
+  <li><strong>Over-provision of demerit goods:</strong> alcohol, cigarettes, gambling may be over-consumed</li>
+  <li><strong>Monopoly power:</strong> without regulation, dominant firms can exploit consumers with high prices and low quality</li>
+  <li><strong>Instability:</strong> boom-bust cycles, financial crises, mass unemployment without government stabilisation</li>
 </ul>
+
+<div class="case-study">
+<strong class="cs-title">Real-World Example: The 2008 Financial Crisis</strong><br>
+The 2008 financial crisis demonstrated the dangers of under-regulated markets. Banks in the US and UK, driven by profit, took excessive risks with complex financial products (subprime mortgages, CDOs). When the housing bubble burst, the banking system nearly collapsed. Governments had to intervene with massive bailouts — the UK government spent £137 billion rescuing banks. This showed that markets, left entirely to themselves, can produce catastrophic outcomes.
+</div>
 
 <h3>Command (Planned) Economy</h3>
+
 <div class="def-box">
-<strong>Command economy</strong> — an economic system where the government owns the factors of production and centrally plans all economic decisions. The state determines what, how, and for whom to produce.
+<strong>Command economy</strong> — an economic system where the government (or central planning authority) owns all or most factors of production and centrally plans all major economic decisions. The state determines what, how, and for whom to produce.
 </div>
 
-<p><strong>Characteristics:</strong></p>
+<h4>How It Works</h4>
 <ul>
-  <li>State ownership of all resources</li>
-  <li>Central planning authority makes allocation decisions</li>
-  <li>Prices set by the government, not market forces</li>
-  <li>Workers assigned to jobs by the state</li>
-  <li>Output targets set for each industry</li>
+  <li><strong>State ownership:</strong> government owns factories, land, and natural resources</li>
+  <li><strong>Central planning:</strong> a planning authority sets production targets, prices, and wages</li>
+  <li><strong>Government-set prices:</strong> prices are determined by planners, not supply and demand</li>
+  <li><strong>Directed labour:</strong> the state influences (or dictates) where people work</li>
+  <li><strong>Output targets:</strong> each industry receives production quotas</li>
 </ul>
 
-<p><strong>Advantages:</strong></p>
+<h4>Advantages</h4>
 <ul>
-  <li>Greater equality of income and wealth</li>
-  <li>Can direct resources to merit goods (health, education)</li>
-  <li>No unemployment (in theory)</li>
-  <li>Can avoid wasteful duplication</li>
-  <li>Can plan for long-term economic development</li>
+  <li>Greater equality of income and wealth — the state can redistribute resources</li>
+  <li>Can direct resources to merit goods (health, education) and avoid demerit goods</li>
+  <li>Full employment (in theory) — the state can create jobs for everyone</li>
+  <li>Can avoid wasteful duplication and coordinate large-scale projects</li>
+  <li>Can plan for long-term development without short-term profit pressures</li>
 </ul>
 
-<p><strong>Disadvantages:</strong></p>
+<h4>Disadvantages</h4>
 <ul>
-  <li>Information problem — planners cannot know all consumer preferences</li>
-  <li>Lack of incentives leads to inefficiency</li>
-  <li>No consumer choice or sovereignty</li>
-  <li>Bureaucratic waste and corruption</li>
-  <li>Surpluses and shortages common due to absence of price signals</li>
+  <li><strong>Information problem:</strong> central planners cannot possibly know the preferences of millions of consumers or the costs of thousands of firms. The price mechanism conveys this information automatically — planners cannot replicate it. (This is Friedrich Hayek's key argument against central planning.)</li>
+  <li><strong>Lack of incentives:</strong> without profit motive, there is little incentive to innovate, improve quality, or reduce costs</li>
+  <li><strong>No consumer choice:</strong> consumers take what the state provides, not what they want</li>
+  <li><strong>Bureaucratic waste and corruption:</strong> large state bureaucracies tend to be inefficient</li>
+  <li><strong>Surpluses and shortages:</strong> without market prices, planners often produce too much of some goods and too little of others</li>
 </ul>
+
+<div class="case-study">
+<strong class="cs-title">Real-World Example: The Soviet Union</strong><br>
+The USSR operated a command economy from 1928 to 1991. Central planners set five-year plans with output targets for every industry. While the system achieved rapid industrialisation in the 1930s-50s, it eventually stagnated. Chronic shortages of consumer goods were common — people queued for hours for basic items like bread and shoes. Factories produced goods nobody wanted because planners, not consumers, decided what was made. The system collapsed in 1991, and most former Soviet states transitioned to market economies.
+</div>
 
 <h3>Mixed Economy</h3>
+
 <div class="def-box">
-<strong>Mixed economy</strong> — an economic system that combines elements of both free market and command economies. Both the private sector and the government play a role in resource allocation.
+<strong>Mixed economy</strong> — an economic system that combines elements of both free market and command economies. Both the private sector and the government play a role in resource allocation. Most modern economies are mixed.
 </div>
 
-<p><strong>Characteristics:</strong></p>
+<h4>How It Works</h4>
 <ul>
-  <li>Both private and public sector ownership</li>
-  <li>Price mechanism operates alongside government intervention</li>
-  <li>Government provides public goods, regulates markets, and redistributes income</li>
-  <li>Most modern economies are mixed (including the UK)</li>
+  <li>Both private and public sector ownership of resources</li>
+  <li>The price mechanism operates for most goods, but the government intervenes where markets fail</li>
+  <li>Government provides public goods (defence, street lighting), regulates markets, and redistributes income through taxes and welfare</li>
+  <li>The degree of intervention varies — the UK is more market-oriented than France or Sweden, but more interventionist than Hong Kong or Singapore</li>
 </ul>
 
-<p>The degree of government intervention varies across mixed economies. The UK economy is largely market-based but with significant government involvement in healthcare (NHS), education, welfare, and regulation.</p>
+<h4>Government Roles in a Mixed Economy</h4>
+<ul>
+  <li><strong>Providing public goods:</strong> defence, law enforcement, street lighting (which the market would not provide)</li>
+  <li><strong>Correcting externalities:</strong> taxing pollution, subsidising education</li>
+  <li><strong>Regulating monopolies:</strong> preventing firms from exploiting consumers</li>
+  <li><strong>Redistributing income:</strong> progressive taxes and welfare payments to reduce inequality</li>
+  <li><strong>Macroeconomic stabilisation:</strong> using fiscal and monetary policy to manage inflation, unemployment, and growth</li>
+</ul>
 
 <table>
 <tr><th>Feature</th><th>Free Market</th><th>Command</th><th>Mixed</th></tr>
 <tr><td>Ownership</td><td>Private</td><td>State</td><td>Both</td></tr>
 <tr><td>Resource allocation</td><td>Price mechanism</td><td>Central planning</td><td>Both</td></tr>
 <tr><td>Motivation</td><td>Profit</td><td>Social welfare</td><td>Both</td></tr>
-<tr><td>Consumer choice</td><td>High</td><td>Low</td><td>Moderate-High</td></tr>
-<tr><td>Equality</td><td>Low</td><td>High</td><td>Moderate</td></tr>
+<tr><td>Consumer choice</td><td>High</td><td>Low</td><td>Moderate–High</td></tr>
+<tr><td>Equality</td><td>Low</td><td>High (in theory)</td><td>Moderate</td></tr>
 <tr><td>Efficiency</td><td>High (allocative)</td><td>Low</td><td>Variable</td></tr>
-<tr><td>Examples</td><td>Hong Kong (historically)</td><td>North Korea, Cuba</td><td>UK, USA, Germany</td></tr>
+<tr><td>Innovation</td><td>High</td><td>Low</td><td>Moderate–High</td></tr>
+<tr><td>Examples</td><td>Hong Kong (historically)</td><td>North Korea, Cuba</td><td>UK, USA, Germany, Sweden</td></tr>
 </table>
 
+<!-- ============================================================ -->
 <h2>The Price Mechanism</h2>
+<!-- ============================================================ -->
 
-<p>In a free market, the price mechanism performs three key functions:</p>
+<p>In a market economy, the price mechanism is the primary way resources are allocated. It performs three interconnected functions:</p>
 
-<ol>
-  <li><strong>Signalling function</strong> — prices communicate information to buyers and sellers. Rising prices signal that a good is becoming scarcer or more desired; falling prices signal surplus or reduced demand.</li>
-  <li><strong>Incentive function</strong> — price changes motivate economic agents to alter behaviour. High prices incentivise producers to supply more and consumers to demand less.</li>
-  <li><strong>Rationing function</strong> — prices ration scarce resources among competing uses. Those willing and able to pay the market price obtain the good; others are excluded.</li>
-</ol>
+<h3>1. Signalling Function</h3>
+<p>Prices communicate information to buyers and sellers throughout the economy. Rising prices signal that a good is becoming scarcer or more desired — this tells producers there is an opportunity to make profit. Falling prices signal surplus or declining demand — telling producers to redirect resources elsewhere.</p>
 
-<div class="tip-box">
-<strong>Exam Tip:</strong> When evaluating economic systems, consider the trade-off between efficiency and equity. Free markets tend to be efficient but unequal; command economies aim for equality but sacrifice efficiency. This is a recurring theme throughout the specification.
+<div class="case-study">
+<strong class="cs-title">Real-World Example:</strong> When oil prices spiked in 2022 (due to the Russia-Ukraine war), this signalled scarcity to the whole economy. Consumers switched to smaller cars and public transport. Energy companies invested in new drilling. Governments accelerated renewable energy programmes. All of these responses were triggered by the price signal — no central planner directed them.
 </div>
 
+<h3>2. Incentive Function</h3>
+<p>Price changes create incentives that motivate economic agents to change their behaviour:</p>
+<ul>
+  <li>High prices incentivise <strong>producers to supply more</strong> (higher profits attract new firms) and <strong>consumers to demand less</strong> (they switch to cheaper substitutes)</li>
+  <li>Low prices incentivise producers to exit the market and consumers to buy more</li>
+  <li>Higher wages in an industry incentivise workers to retrain and move into that sector</li>
+</ul>
+
+<h3>3. Rationing Function</h3>
+<p>Prices ration scarce resources among competing uses. When demand exceeds supply, prices rise — this limits (rations) consumption to those willing and able to pay. Only those who value the good at least as much as the market price will buy it.</p>
+
+<div class="eval-box">
+<strong>Evaluation:</strong> The price mechanism is remarkably efficient at coordinating millions of individual decisions without any central authority. However, it has limitations: it ignores externalities (the price of petrol doesn't reflect the climate damage), it cannot provide public goods, it can worsen inequality (rationing by ability to pay means the poor go without), and it can be distorted by monopoly power or imperfect information. These are all forms of <strong>market failure</strong> — the subject of topic 3.1.5.
+</div>
+
+<!-- ============================================================ -->
 <h2>Specialisation and Division of Labour</h2>
+<!-- ============================================================ -->
 
 <div class="def-box">
-<strong>Specialisation</strong> occurs when individuals, firms, or countries concentrate on producing a limited range of goods or services.<br><br>
-<strong>Division of labour</strong> is a form of specialisation where the production process is broken into separate tasks, each performed by different workers.
+<strong>Specialisation</strong> occurs when individuals, firms, regions, or countries concentrate on producing a limited range of goods or services, rather than being self-sufficient.<br><br>
+<strong>Division of labour</strong> is a form of specialisation within a firm where the production process is broken into separate tasks, each performed by different workers.
 </div>
 
-<h3>Advantages of Specialisation/Division of Labour</h3>
+<p>The concept was famously described by Adam Smith in <em>The Wealth of Nations</em> (1776), using the example of a pin factory. Smith observed that one worker alone might make 1 pin per day, but 10 workers dividing the process into 18 separate operations could produce 48,000 pins per day — a massive increase in productivity.</p>
+
+<h3>Advantages of Specialisation and Division of Labour</h3>
 <ul>
-  <li>Higher productivity — workers become skilled at repetitive tasks</li>
-  <li>Time saved — no switching between different tasks</li>
-  <li>Allows use of specialised capital equipment</li>
-  <li>Economies of scale become possible</li>
-  <li>Higher output and lower average costs</li>
+  <li><strong>Higher productivity:</strong> workers become highly skilled at their specific task through repetition and practice</li>
+  <li><strong>Time saved:</strong> workers don't waste time switching between different tasks or tools</li>
+  <li><strong>Specialised machinery:</strong> division of labour allows the use of purpose-built capital equipment for each stage</li>
+  <li><strong>Economies of scale:</strong> specialisation enables large-scale production, reducing average costs</li>
+  <li><strong>Higher output and lower prices:</strong> all of the above lead to more goods at lower cost for consumers</li>
+  <li><strong>Innovation:</strong> specialists develop deep expertise and are more likely to find improvements in their area</li>
 </ul>
 
-<h3>Disadvantages of Specialisation/Division of Labour</h3>
+<h3>Disadvantages of Specialisation and Division of Labour</h3>
 <ul>
-  <li>Worker boredom and demotivation from repetitive tasks</li>
-  <li>Structural unemployment if demand for specialised skills declines</li>
-  <li>Over-dependence on other producers/countries</li>
-  <li>Loss of craftsmanship and flexibility</li>
-  <li>Vulnerability to supply chain disruptions</li>
+  <li><strong>Worker boredom and demotivation:</strong> performing the same narrow task repeatedly can reduce job satisfaction and increase absenteeism</li>
+  <li><strong>Structural unemployment:</strong> if demand for a specialised skill declines (e.g., coal mining), workers may struggle to find alternative employment</li>
+  <li><strong>Over-dependence:</strong> reliance on others creates vulnerability. If one specialist supplier fails, the whole supply chain breaks down</li>
+  <li><strong>Loss of craftsmanship:</strong> workers lose the ability to see or understand the whole production process</li>
+  <li><strong>Supply chain risks:</strong> global specialisation means disruptions in one country can affect production worldwide</li>
 </ul>
 
+<div class="case-study">
+<strong class="cs-title">Real-World Example: COVID-19 Supply Chain Disruption</strong><br>
+The pandemic exposed the risks of global specialisation. When Chinese factories shut down in early 2020, global supply chains for electronics, car parts, and medical equipment were disrupted. The world had become heavily dependent on specialised production concentrated in a few countries. This led many governments to consider "reshoring" — bringing some production back home to reduce dependence on foreign suppliers, even though it would be less efficient.
+</div>
+
+<!-- ============================================================ -->
 <h2>Free Goods vs Economic Goods</h2>
+<!-- ============================================================ -->
 
 <table>
-<tr><th>Free Goods</th><th>Economic Goods</th></tr>
-<tr><td>Unlimited in supply relative to demand</td><td>Scarce — limited supply relative to demand</td></tr>
-<tr><td>Zero opportunity cost</td><td>Positive opportunity cost</td></tr>
-<tr><td>No price in a market</td><td>Command a price due to scarcity</td></tr>
-<tr><td>Examples: air, sunlight (in most contexts)</td><td>Examples: cars, food, housing, labour</td></tr>
+<tr><th>Feature</th><th>Free Goods</th><th>Economic Goods</th></tr>
+<tr><td>Supply</td><td>Unlimited relative to demand</td><td>Scarce — limited supply relative to demand</td></tr>
+<tr><td>Opportunity cost</td><td>Zero — no resources are sacrificed</td><td>Positive — resources used to produce them could have produced something else</td></tr>
+<tr><td>Price</td><td>No price in a market</td><td>Commands a price because of scarcity</td></tr>
+<tr><td>Examples</td><td>Air (in most contexts), sunlight, seawater</td><td>Cars, food, housing, healthcare, labour</td></tr>
 </table>
 
 <div class="tip-box">
-<strong>Exam Tip:</strong> Be careful with the concept of free goods. Clean air may now be considered an economic good because pollution has made it scarce (firms pay for carbon permits). Context matters in classification.
+<strong>Exam Tip:</strong> Be careful with the concept of "free goods." Clean air may now be considered an economic good because pollution has made it scarce — firms pay for carbon emission permits. Fresh water is a free good in rainy regions but an economic good in arid ones. Context and scarcity determine the classification, not the nature of the good itself.
 </div>
 
-<h2>Evaluation: Is There a "Best" Economic System?</h2>
+<!-- ============================================================ -->
+<h2>Key Economists and Their Ideas</h2>
+<!-- ============================================================ -->
 
-<p>When evaluating economic systems in exam essays, consider:</p>
+<p>These economists are relevant to this topic and may be referenced in exam answers:</p>
+
+<table>
+<tr><th>Economist</th><th>Key Idea</th><th>Relevance</th></tr>
+<tr><td><strong>Adam Smith</strong> (1723–1790)</td><td>The "invisible hand" — self-interested individuals, guided by market prices, unintentionally promote the public good. Also described the division of labour.</td><td>Justification for free markets; benefits of specialisation</td></tr>
+<tr><td><strong>Friedrich Hayek</strong> (1899–1992)</td><td>The knowledge problem — the information needed to allocate resources is dispersed across millions of individuals. Only the price mechanism can aggregate this information; central planners cannot.</td><td>Critique of command economies; defence of market allocation</td></tr>
+<tr><td><strong>Karl Marx</strong> (1818–1883)</td><td>Capitalism exploits workers by paying them less than the value they create. Advocated collective ownership of the means of production.</td><td>Intellectual basis for command/socialist economies</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>Evaluation: Key Debates</h2>
+<!-- ============================================================ -->
+
+<div class="eval-box">
+<strong>Is there a "best" economic system?</strong>
+<p>When evaluating economic systems in exam essays, consider these analytical points:</p>
 <ul>
-  <li><strong>Efficiency vs. equity trade-off</strong> — no system perfectly achieves both</li>
-  <li><strong>Information problems</strong> — central planners face impossible information requirements; markets use prices to convey dispersed information (Hayek's argument)</li>
-  <li><strong>Government failure</strong> — intervention can create new problems (bureaucracy, corruption, unintended consequences)</li>
-  <li><strong>Dynamic efficiency</strong> — free markets may be better at innovation due to profit incentive</li>
-  <li><strong>Historical evidence</strong> — collapse of Soviet Union demonstrated failures of pure command; 2008 financial crisis demonstrated failures of under-regulated markets</li>
-  <li><strong>Context matters</strong> — the optimal degree of government intervention depends on the specific market and economic conditions</li>
+  <li><strong>Efficiency vs. equity trade-off:</strong> Free markets tend to be allocatively efficient but create inequality. Command economies aim for equality but are productively inefficient. No system perfectly achieves both.</li>
+  <li><strong>The information problem (Hayek):</strong> Central planners face an impossible task — they cannot know the preferences and circumstances of millions of people. The price mechanism conveys this information automatically and efficiently.</li>
+  <li><strong>Government failure:</strong> Intervention can create new problems — bureaucracy, corruption, unintended consequences, and distortion of price signals. The cure can be worse than the disease.</li>
+  <li><strong>Dynamic efficiency:</strong> Free markets tend to be better at innovation because the profit motive rewards those who develop new products and technologies.</li>
+  <li><strong>Historical evidence:</strong> The collapse of the Soviet Union (1991) demonstrated the failures of pure central planning. The 2008 financial crisis demonstrated the failures of under-regulated markets. Both extremes have real-world failures.</li>
+  <li><strong>Context matters:</strong> The optimal degree of government intervention depends on the specific market, the country's institutions, and the economic conditions. There is no one-size-fits-all answer.</li>
 </ul>
+</div>
 
 </div>
 </body>

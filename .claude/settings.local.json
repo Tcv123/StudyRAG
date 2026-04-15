@@ -68,7 +68,17 @@
       "Bash(node -e \"const f=require\\('fs'\\); const c=f.readFileSync\\('questions/maths-aqa/maths-aqa-written.js','utf8'\\); const m=c.match\\(/\\\\{ q:/g\\); console.log\\('Written total:', m?m.length:0\\);\")",
       "Bash(wc -l questions/maths-aqa/*.js)",
       "Bash(wc -l /c/Users/tcvas/OneDrive/Desktop/Learning/questions/maths-aqa/*.js)",
-      "Bash(du -h /c/Users/tcvas/OneDrive/Desktop/Learning/questions/maths-aqa/*.js)"
+      "Bash(du -h /c/Users/tcvas/OneDrive/Desktop/Learning/questions/maths-aqa/*.js)",
+      "Bash(ls -lh \"C:/Users/tcvas/OneDrive/Desktop/Learning/subject-notes/economics\"* \"C:/Users/tcvas/OneDrive/Desktop/Learning/diagnostics/economics\"*)",
+      "Bash(du -k \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-aqa\"/*)",
+      "Bash(sort -k2)",
+      "Bash(du -k \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-edexcel-a\"/*)",
+      "Bash(du -k \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-edexcel-b\"/*)",
+      "Bash(du -k \"C:/Users/tcvas/OneDrive/Desktop/Learning/notes-economics-ocr\"/*)",
+      "Bash(ls -lh \"C:/Users/tcvas/OneDrive/Desktop/Learning/questions/economics-aqa\"/*)",
+      "Bash(ls -lh \"C:/Users/tcvas/OneDrive/Desktop/Learning/questions/economics-edexcel-a\"/*)",
+      "Bash(ls -lh \"C:/Users/tcvas/OneDrive/Desktop/Learning/questions/economics-edexcel-b\"/*)",
+      "Bash(ls -lh \"C:/Users/tcvas/OneDrive/Desktop/Learning/questions/economics-ocr\"/*)"
     ]
   },
   "hooks": {

@@ -6,25 +6,28 @@
 <title>3.1.3 Production, Costs and Revenue — AQA A-Level Economics</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
-  .container { max-width: 800px; margin: 0 auto; }
-  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
-  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
-  h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
-  p { margin: 8px 0; }
-  ul, ol { margin: 8px 0 8px 24px; }
-  li { margin: 4px 0; }
-  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
-  th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.7; padding: 40px 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 28px; }
+  h2 { font-size: 1.5rem; color: #16213e; margin: 40px 0 16px; border-left: 4px solid #1a73e8; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #1a1a2e; margin: 26px 0 10px; }
+  h4 { font-size: 1.05rem; color: #374151; margin: 18px 0 8px; }
+  p { margin: 10px 0; }
+  ul, ol { margin: 10px 0 14px 24px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 14px; text-align: left; }
   th { background: #e8eef6; font-weight: 600; }
   tr:nth-child(even) { background: #f8fafc; }
-  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
-  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
-  .diagram-box { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+  .case-study { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+  .case-study strong.cs-title { color: #0369a1; font-size: 1.05rem; }
+  .diagram-box { background: #f9fafb; border: 2px solid #d1d5db; border-radius: 10px; padding: 20px; margin: 20px 0; text-align: center; }
   .diagram-box svg { max-width: 100%; }
-  .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 8px; font-style: italic; }
-  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
-  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 10px; font-style: italic; }
+  .eval-box { background: #faf5ff; border-left: 4px solid #8b5cf6; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 14px 0; font-family: "Cambria Math", "Times New Roman", serif; background: #f1f5f9; padding: 10px; border-radius: 6px; }
 </style>
 </head>
 <body>
@@ -32,261 +35,466 @@
 
 <h1>3.1.3 Production, Costs and Revenue</h1>
 
+<!-- ============================================================ -->
 <h2>Production and Productivity</h2>
+<!-- ============================================================ -->
 
 <div class="def-box">
-<strong>Production</strong> is the process of converting inputs (factors of production) into outputs (goods and services).<br><br>
-<strong>Productivity</strong> is a measure of efficiency — the output per unit of input in a given time period (e.g., output per worker per hour).
+<strong>Production</strong> is the process of converting inputs (factors of production — land, labour, capital, enterprise) into outputs (goods and services).<br><br>
+<strong>Productivity</strong> is a measure of efficiency — the output produced per unit of input in a given time period. Higher productivity means more output from the same resources.
 </div>
 
-<h3>Short Run vs Long Run</h3>
+<h3>Measuring Productivity</h3>
+<div class="eq">Labour productivity = Total output ÷ Number of workers (or labour hours)</div>
 
-<div class="def-box">
-<strong>Short run</strong> — the time period in which at least one factor of production is fixed (typically capital). Only variable factors can be adjusted.<br><br>
-<strong>Long run</strong> — the time period in which all factors of production are variable. Firms can change scale of production, enter or exit the industry.
-</div>
-
-<h3>Law of Diminishing Marginal Returns (Short Run)</h3>
-
-<div class="def-box">
-<strong>The Law of Diminishing Marginal Returns</strong> states that as additional units of a variable factor (e.g., labour) are added to a fixed factor (e.g., capital), there comes a point at which the marginal product (extra output from one more unit of the variable factor) begins to fall.
-</div>
-
-<p>This law only applies in the short run (when at least one factor is fixed). It explains why short-run cost curves are U-shaped.</p>
-
-<p><strong>Example:</strong> A factory with 10 machines (fixed capital). As more workers are hired:</p>
+<p>Productivity can be increased through:</p>
 <ul>
-  <li>Initially, each extra worker adds more output (increasing returns — workers specialise)</li>
-  <li>Beyond a point, extra workers add less output (diminishing returns — machines become overcrowded)</li>
-  <li>Eventually, extra workers could reduce total output (negative returns — workers get in each other's way)</li>
+  <li><strong>Better technology:</strong> new machinery, automation, AI tools</li>
+  <li><strong>Education and training:</strong> improving human capital and worker skills</li>
+  <li><strong>Better management:</strong> more efficient work organisation and processes</li>
+  <li><strong>Specialisation:</strong> workers focusing on tasks where they have expertise</li>
+  <li><strong>Capital investment:</strong> providing workers with better tools and equipment</li>
 </ul>
 
-<h2>Short-Run Costs</h2>
+<div class="case-study">
+<strong class="cs-title">Real-World Example: UK Productivity Puzzle</strong><br>
+Since the 2008 financial crisis, UK productivity growth has stagnated — a phenomenon economists call the "productivity puzzle." Between 1970 and 2007, output per hour grew by about 2% per year. Since 2008, it has barely grown at all. Possible explanations include: underinvestment in capital, a shift towards low-productivity service jobs, zombie firms surviving on low interest rates, and slower technology adoption. This matters because productivity growth is the main driver of rising living standards in the long run.
+</div>
+
+<!-- ============================================================ -->
+<h2>The Short Run and the Long Run</h2>
+<!-- ============================================================ -->
 
 <div class="def-box">
-<strong>Fixed costs (FC)</strong> — costs that do not vary with output in the short run (e.g., rent, insurance, capital depreciation).<br><br>
-<strong>Variable costs (VC)</strong> — costs that vary directly with output (e.g., raw materials, energy, hourly wages).<br><br>
-<strong>Total cost (TC)</strong> = FC + VC
+<strong>The short run</strong> is the time period in which at least one factor of production is <em>fixed</em> (cannot be changed). Typically, capital is fixed in the short run — a firm cannot instantly build a new factory. Only variable factors (like labour and raw materials) can be adjusted.<br><br>
+<strong>The long run</strong> is the time period in which <em>all</em> factors of production are variable. The firm can change its entire scale of production — build new factories, buy new machinery, enter or exit the industry entirely.
+</div>
+
+<p>Important: the short run and long run are not specific time periods (not "6 months" or "5 years"). They are defined by the fixity of factors and vary by industry. For a software firm, the long run might be a few weeks (just hire more developers). For a nuclear power station, the long run might be 10+ years (building a new plant takes that long).</p>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Always be clear about whether you are discussing short-run or long-run analysis. The cost curves, the behaviour of firms, and the market outcomes are different in each time period. Mixing them up is a common source of lost marks.
+</div>
+
+<!-- ============================================================ -->
+<h2>The Law of Diminishing Marginal Returns</h2>
+<!-- ============================================================ -->
+
+<div class="def-box">
+<strong>The Law of Diminishing Marginal Returns</strong> states that as additional units of a variable factor (e.g., labour) are added to one or more fixed factors (e.g., capital/machinery), there comes a point beyond which the marginal product (the extra output from one more unit of the variable factor) begins to <strong>fall</strong>.
+</div>
+
+<p>This is a <strong>short-run concept only</strong> — it requires at least one factor to be fixed. It does NOT apply in the long run when all factors can be changed.</p>
+
+<h3>Detailed Example: A Coffee Shop</h3>
+<p>Imagine a coffee shop with 2 espresso machines (fixed capital), a fixed amount of counter space, and a fixed number of tables:</p>
+
+<table>
+<tr><th>Number of Workers</th><th>Total Output (coffees/hour)</th><th>Marginal Product (MP)</th><th>Stage</th></tr>
+<tr><td>0</td><td>0</td><td>—</td><td></td></tr>
+<tr><td>1</td><td>15</td><td>15</td><td rowspan="3">Increasing marginal returns — workers specialise (one takes orders, one makes coffee)</td></tr>
+<tr><td>2</td><td>35</td><td>20</td></tr>
+<tr><td>3</td><td>60</td><td>25</td></tr>
+<tr><td>4</td><td>80</td><td>20</td><td rowspan="3">Diminishing marginal returns — machines are being shared, workers start getting in each other's way</td></tr>
+<tr><td>5</td><td>95</td><td>15</td></tr>
+<tr><td>6</td><td>105</td><td>10</td></tr>
+<tr><td>7</td><td>108</td><td>3</td><td>Severely diminishing returns — far too many workers for the space and equipment</td></tr>
+<tr><td>8</td><td>105</td><td>-3</td><td>Negative returns — workers are so crowded they reduce total output</td></tr>
+</table>
+
+<h3>Why This Law Matters for Costs</h3>
+<p>Diminishing marginal returns directly explain why short-run cost curves are U-shaped:</p>
+<ul>
+  <li>When marginal product is <strong>rising</strong> (increasing returns): each extra worker produces more output, so the cost of each extra unit of output is <strong>falling</strong> → marginal cost falls</li>
+  <li>When marginal product is <strong>falling</strong> (diminishing returns): each extra worker produces less output, so the cost of each extra unit of output is <strong>rising</strong> → marginal cost rises</li>
+</ul>
+<p>This is why MC, AVC, and AC are all U-shaped — they first fall (increasing returns phase) then rise (diminishing returns phase).</p>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Do NOT confuse the law of diminishing marginal <em>returns</em> (short run, at least one fixed factor) with decreasing returns to <em>scale</em> (long run, all factors variable). This is one of the most common errors in A-Level Economics and will cost you marks every time.
+</div>
+
+<!-- ============================================================ -->
+<h2>Short-Run Costs</h2>
+<!-- ============================================================ -->
+
+<h3>Types of Cost</h3>
+
+<div class="def-box">
+<strong>Fixed costs (FC)</strong> — costs that do <em>not</em> vary with the level of output in the short run. They must be paid even if output is zero. Examples: rent, insurance premiums, salaries of permanent staff, depreciation of machinery, business rates.<br><br>
+<strong>Variable costs (VC)</strong> — costs that <em>do</em> vary directly with the level of output. If output is zero, variable costs are zero. Examples: raw materials, energy/electricity for production, hourly wages, packaging.<br><br>
+<strong>Total cost (TC)</strong> = Fixed costs + Variable costs (TC = FC + VC)
 </div>
 
 <h3>Average and Marginal Costs</h3>
 
 <table>
-<tr><th>Cost Concept</th><th>Formula</th><th>Description</th></tr>
-<tr><td>Average Fixed Cost (AFC)</td><td>FC &divide; Q</td><td>Fixed cost per unit; always falls as output increases (spreading overheads)</td></tr>
-<tr><td>Average Variable Cost (AVC)</td><td>VC &divide; Q</td><td>Variable cost per unit; U-shaped due to diminishing returns</td></tr>
-<tr><td>Average Total Cost (AC/ATC)</td><td>TC &divide; Q = AFC + AVC</td><td>Total cost per unit; U-shaped</td></tr>
-<tr><td>Marginal Cost (MC)</td><td>&Delta;TC &divide; &Delta;Q</td><td>The additional cost of producing one more unit of output</td></tr>
+<tr><th>Cost Measure</th><th>Formula</th><th>What It Tells You</th><th>Shape</th></tr>
+<tr><td><strong>Average Fixed Cost (AFC)</strong></td><td>FC ÷ Q</td><td>Fixed cost per unit of output. Falls continuously as output rises — the fixed cost is "spread" over more units.</td><td>Downward-sloping (asymptotic to x-axis)</td></tr>
+<tr><td><strong>Average Variable Cost (AVC)</strong></td><td>VC ÷ Q</td><td>Variable cost per unit. Falls initially (increasing returns), then rises (diminishing returns).</td><td>U-shaped</td></tr>
+<tr><td><strong>Average Total Cost (AC or ATC)</strong></td><td>TC ÷ Q = AFC + AVC</td><td>Total cost per unit. The gap between AC and AVC equals AFC (which narrows as output rises).</td><td>U-shaped</td></tr>
+<tr><td><strong>Marginal Cost (MC)</strong></td><td>ΔTC ÷ ΔQ</td><td>The additional cost of producing one more unit of output. The most important cost curve for decision-making.</td><td>U-shaped (falls then rises sharply)</td></tr>
 </table>
 
+<h3>Short-Run Cost Curves Diagram</h3>
+
 <div class="diagram-box">
-<svg width="420" height="340" viewBox="0 0 420 340">
+<svg width="460" height="380" viewBox="0 0 460 380">
   <!-- Axes -->
-  <line x1="60" y1="290" x2="390" y2="290" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="60" y1="290" x2="60" y2="30" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="390,290 380,285 380,295" fill="#1a1a2e"/>
-  <polygon points="60,30 55,40 65,40" fill="#1a1a2e"/>
-  <text x="225" y="325" text-anchor="middle" font-size="13" fill="#1a1a2e">Output (Q)</text>
-  <text x="20" y="160" text-anchor="middle" font-size="13" fill="#1a1a2e" transform="rotate(-90,20,160)">Cost (£)</text>
-  <!-- MC curve (U-shaped, steeper) -->
-  <path d="M 100,200 Q 140,260 180,250 Q 210,240 230,200 Q 260,140 290,90 Q 320,50 350,30" stroke="#ef4444" stroke-width="2.5" fill="none"/>
-  <text x="355" y="35" font-size="12" fill="#ef4444" font-weight="bold">MC</text>
-  <!-- AC curve (U-shaped) -->
-  <path d="M 100,120 Q 150,100 200,95 Q 250,100 300,130 Q 340,160 370,200" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
-  <text x="375" y="200" font-size="12" fill="#1a73e8" font-weight="bold">AC</text>
+  <line x1="70" y1="320" x2="420" y2="320" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="70" y1="320" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="420,320 410,315 410,325" fill="#1a1a2e"/>
+  <polygon points="70,30 65,40 75,40" fill="#1a1a2e"/>
+  <text x="245" y="358" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Output (Q)</text>
+  <text x="24" y="180" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,180)">Costs (£)</text>
+
+  <!-- AFC curve (continuously falling) -->
+  <path d="M 110,80 Q 160,180 210,230 Q 280,270 400,300" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="403" y="298" font-size="13" fill="#f59e0b" font-weight="600">AFC</text>
+
   <!-- AVC curve (U-shaped, lower) -->
-  <path d="M 100,180 Q 150,160 200,155 Q 250,160 300,185 Q 340,210 370,240" stroke="#22c55e" stroke-width="2.5" fill="none"/>
-  <text x="375" y="240" font-size="12" fill="#22c55e" font-weight="bold">AVC</text>
-  <!-- AFC curve (falling) -->
-  <path d="M 100,80 Q 150,150 200,200 Q 280,250 370,270" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,4"/>
-  <text x="375" y="270" font-size="12" fill="#f59e0b">AFC</text>
-  <!-- MC crosses AC at minimum -->
-  <circle cx="245" cy="100" r="4" fill="#555"/>
-  <text x="250" y="115" font-size="10" fill="#555">MC=AC (min AC)</text>
+  <path d="M 110,220 Q 160,180 220,170 Q 280,175 330,205 Q 370,235 400,270" stroke="#16a34a" stroke-width="2.5" fill="none"/>
+  <text x="403" y="270" font-size="13" fill="#16a34a" font-weight="700">AVC</text>
+
+  <!-- AC curve (U-shaped, higher than AVC) -->
+  <path d="M 110,140 Q 170,105 240,95 Q 310,105 360,140 Q 390,165 410,195" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+  <text x="413" y="195" font-size="13" fill="#2563eb" font-weight="700">AC</text>
+
+  <!-- MC curve (U-shaped, steeper, crosses AVC and AC at minima) -->
+  <path d="M 110,250 Q 150,290 175,280 Q 200,260 220,210 Q 245,145 265,105 Q 290,70 320,45 Q 350,25 380,10" stroke="#dc2626" stroke-width="2.5" fill="none"/>
+  <text x="385" y="14" font-size="13" fill="#dc2626" font-weight="700">MC</text>
+
+  <!-- MC crosses AVC at minimum of AVC -->
+  <circle cx="228" cy="170" r="4" fill="#374151"/>
+
+  <!-- MC crosses AC at minimum of AC -->
+  <circle cx="268" cy="100" r="5" fill="#374151"/>
+  <text x="275" y="120" font-size="11" fill="#374151" font-weight="600">MC = AC</text>
+  <text x="275" y="133" font-size="10" fill="#374151">(minimum AC)</text>
+
+  <!-- Annotation: gap = AFC -->
+  <line x1="325" y1="125" x2="325" y2="195" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="320" y1="125" x2="330" y2="125" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="320" y1="195" x2="330" y2="195" stroke="#64748b" stroke-width="1.5"/>
+  <text x="335" y="165" font-size="10" fill="#64748b">= AFC</text>
 </svg>
-<div class="diagram-caption">Figure 1: Short-run cost curves — MC intersects AC and AVC at their minimum points</div>
+<div class="diagram-caption">Figure 1: Short-run cost curves — MC crosses both AVC and AC at their minimum points. The gap between AC and AVC equals AFC.</div>
 </div>
 
-<h3>Key Relationships</h3>
-<ul>
-  <li>MC cuts AC at the minimum point of AC — when MC &lt; AC, AC is falling; when MC &gt; AC, AC is rising</li>
-  <li>MC cuts AVC at the minimum point of AVC</li>
-  <li>AFC continuously falls (fixed cost spread over more units)</li>
-  <li>The gap between AC and AVC equals AFC (which narrows as output increases)</li>
-  <li>The U-shape of MC, AVC, and AC is caused by diminishing marginal returns</li>
-</ul>
+<h3>Critical Relationships Between Cost Curves</h3>
+<p>These relationships are essential for exam diagrams — get them right every time:</p>
+<ol>
+  <li><strong>MC crosses AC at the minimum point of AC.</strong> When MC < AC, average cost is falling (being pulled down). When MC > AC, average cost is rising (being pulled up). Think of it like exam grades: if your next grade (marginal) is below your average, it pulls your average down.</li>
+  <li><strong>MC crosses AVC at the minimum point of AVC</strong> — same logic applies.</li>
+  <li><strong>AFC falls continuously</strong> — it never turns upward because fixed costs are constant being divided by ever-larger output.</li>
+  <li><strong>The vertical gap between AC and AVC equals AFC</strong> — this gap narrows as output increases (because AFC falls).</li>
+  <li><strong>The U-shape of all curves is caused by diminishing marginal returns.</strong></li>
+</ol>
 
-<div class="tip-box">
-<strong>Exam Tip:</strong> Always draw MC cutting AC at its lowest point. A common error is drawing MC crossing AC at the wrong position. Remember: if the marginal is below the average, it pulls the average down; if above, it pulls it up.
+<div class="case-study">
+<strong class="cs-title">Real-World Example: Why Airlines Sell Cheap Last-Minute Seats</strong><br>
+Airlines have very high fixed costs (aircraft leases, airport fees, crew salaries) and relatively low variable costs per additional passenger (a bit of fuel, a meal). Once a flight is scheduled, the marginal cost of filling an empty seat is very low — perhaps £20-30. This is why airlines sell remaining seats cheaply before departure. As long as the price covers the marginal cost, the airline is better off selling the seat than flying empty. This is the MC pricing principle in action.
 </div>
 
+<!-- ============================================================ -->
 <h2>Long-Run Costs</h2>
+<!-- ============================================================ -->
 
-<p>In the long run, all factors are variable. The firm can choose its optimal scale of production. The long-run average cost (LRAC) curve is derived from a series of short-run average cost (SRAC) curves — it is the envelope of all possible SRAC curves.</p>
+<p>In the long run, <strong>all</strong> factors of production are variable. There are no fixed costs. The firm can choose its optimal scale — the size of factory, amount of machinery, number of permanent staff. The key concept is the <strong>Long-Run Average Cost (LRAC)</strong> curve.</p>
 
-<h3>Economies of Scale</h3>
-
-<div class="def-box">
-<strong>Economies of scale</strong> are the cost advantages that a firm gains as it increases its scale of production. Average costs fall as output rises in the long run.
-</div>
-
-<table>
-<tr><th>Type</th><th>Explanation</th><th>Example</th></tr>
-<tr><td>Technical</td><td>Larger firms can use more efficient, specialised machinery. The "container principle" — doubling dimensions of a container more than doubles capacity</td><td>Oil tankers, assembly lines</td></tr>
-<tr><td>Managerial</td><td>Larger firms can employ specialist managers, improving efficiency</td><td>Marketing director, finance team</td></tr>
-<tr><td>Purchasing/Bulk-buying</td><td>Larger firms can negotiate lower unit prices due to buying in volume</td><td>Supermarket chains</td></tr>
-<tr><td>Financial</td><td>Larger firms can borrow at lower interest rates (lower risk to lenders)</td><td>Large PLCs vs small businesses</td></tr>
-<tr><td>Marketing</td><td>Advertising costs spread over more units of output</td><td>National TV campaigns</td></tr>
-<tr><td>Risk-bearing</td><td>Large firms can diversify products/markets to reduce risk</td><td>Conglomerates like Unilever</td></tr>
-</table>
-
-<h3>Diseconomies of Scale</h3>
-
-<div class="def-box">
-<strong>Diseconomies of scale</strong> occur when a firm becomes too large, causing average costs to rise as output increases. This is primarily due to management and coordination problems.
-</div>
-
-<ul>
-  <li><strong>Communication problems</strong> — information gets lost or distorted in large organisations</li>
-  <li><strong>Coordination difficulties</strong> — harder to organise and manage large numbers of workers/divisions</li>
-  <li><strong>Motivation/morale</strong> — workers may feel alienated in large firms, reducing productivity</li>
-  <li><strong>Bureaucracy</strong> — excessive layers of management slow decision-making</li>
-</ul>
-
-<h3>Minimum Efficient Scale (MES)</h3>
-
-<div class="def-box">
-<strong>Minimum Efficient Scale (MES)</strong> is the lowest level of output at which all economies of scale have been fully exploited and LRAC is at its minimum.
-</div>
-
-<p>The MES has implications for market structure. If MES is large relative to market demand, only a few firms can operate efficiently (natural oligopoly/monopoly). If MES is small relative to market demand, many firms can coexist (competitive market).</p>
-
-<h2>Revenue</h2>
-
-<div class="def-box">
-<strong>Total Revenue (TR)</strong> = Price × Quantity sold<br>
-<strong>Average Revenue (AR)</strong> = TR &divide; Q = Price (in single-price markets)<br>
-<strong>Marginal Revenue (MR)</strong> = the change in total revenue from selling one additional unit = &Delta;TR &divide; &Delta;Q
-</div>
-
-<h3>Revenue in Different Market Structures</h3>
-
-<p><strong>Perfect Competition:</strong> The firm is a price taker. It can sell any quantity at the market price.</p>
-<ul>
-  <li>AR = MR = Price (constant, horizontal line)</li>
-  <li>TR increases linearly with output</li>
-</ul>
-
-<p><strong>Monopoly/Imperfect Competition:</strong> The firm faces a downward-sloping demand curve. To sell more, it must lower price.</p>
-<ul>
-  <li>AR (demand curve) slopes downward</li>
-  <li>MR lies below AR (to sell an extra unit, the firm reduces price on ALL units)</li>
-  <li>MR falls twice as steeply as AR (for a linear demand curve)</li>
-  <li>TR is maximised where MR = 0</li>
-</ul>
+<h3>The LRAC Curve</h3>
+<p>The LRAC curve shows the lowest possible average cost of producing each level of output when the firm can vary all factors. It is derived as an "envelope" of many short-run average cost (SRAC) curves — each SRAC represents a different plant size. The firm chooses whichever plant size minimises cost for its desired output level.</p>
 
 <div class="diagram-box">
-<svg width="420" height="300" viewBox="0 0 420 300">
+<svg width="460" height="380" viewBox="0 0 460 380">
   <!-- Axes -->
-  <line x1="60" y1="260" x2="380" y2="260" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="60" y1="260" x2="60" y2="30" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="380,260 370,255 370,265" fill="#1a1a2e"/>
-  <polygon points="60,30 55,40 65,40" fill="#1a1a2e"/>
-  <text x="220" y="290" text-anchor="middle" font-size="13" fill="#1a1a2e">Output (Q)</text>
-  <text x="20" y="145" text-anchor="middle" font-size="13" fill="#1a1a2e" transform="rotate(-90,20,145)">Revenue (£)</text>
-  <!-- AR curve (demand) -->
-  <line x1="80" y1="60" x2="360" y2="250" stroke="#1a73e8" stroke-width="2.5"/>
-  <text x="365" y="250" font-size="12" fill="#1a73e8" font-weight="bold">AR=D</text>
-  <!-- MR curve (twice as steep) -->
-  <line x1="80" y1="60" x2="220" y2="250" stroke="#ef4444" stroke-width="2.5"/>
-  <text x="225" y="250" font-size="12" fill="#ef4444" font-weight="bold">MR</text>
-  <!-- MR = 0 line -->
-  <line x1="220" y1="250" x2="220" y2="260" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="210" y="275" font-size="10" fill="#555">MR=0</text>
-  <text x="220" y="45" font-size="10" fill="#555">TR maximised here</text>
+  <line x1="70" y1="320" x2="420" y2="320" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="70" y1="320" x2="70" y2="40" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="420,320 410,315 410,325" fill="#1a1a2e"/>
+  <polygon points="70,40 65,50 75,50" fill="#1a1a2e"/>
+  <text x="245" y="358" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Output (Q)</text>
+  <text x="24" y="180" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,180)">Average Cost (£)</text>
+
+  <!-- SRAC curves (small, medium, large plant) -->
+  <path d="M 90,200 Q 130,130 170,120 Q 210,130 250,200" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+  <text x="160" y="115" font-size="10" fill="#94a3b8">SRAC₁</text>
+
+  <path d="M 170,170 Q 220,100 270,90 Q 320,100 370,160" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+  <text x="260" y="85" font-size="10" fill="#94a3b8">SRAC₂</text>
+
+  <path d="M 260,160 Q 310,100 350,95 Q 390,105 420,150" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+  <text x="345" y="88" font-size="10" fill="#94a3b8">SRAC₃</text>
+
+  <!-- LRAC envelope curve -->
+  <path d="M 90,200 Q 140,130 200,105 Q 270,88 330,92 Q 380,105 420,140" stroke="#2563eb" stroke-width="3" fill="none"/>
+  <text x="408" y="155" font-size="14" fill="#2563eb" font-weight="700">LRAC</text>
+
+  <!-- Labels for sections -->
+  <text x="130" y="270" font-size="11" fill="#16a34a" font-weight="600" text-anchor="middle">Economies</text>
+  <text x="130" y="284" font-size="11" fill="#16a34a" font-weight="600" text-anchor="middle">of scale</text>
+  <line x1="95" y1="290" x2="165" y2="290" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrGreen)"/>
+  <defs><marker id="arrGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#16a34a"/></marker></defs>
+
+  <text x="280" y="270" font-size="11" fill="#64748b" font-weight="600" text-anchor="middle">Constant</text>
+  <text x="280" y="284" font-size="11" fill="#64748b" font-weight="600" text-anchor="middle">returns</text>
+
+  <text x="390" y="270" font-size="11" fill="#dc2626" font-weight="600" text-anchor="middle">Diseconomies</text>
+  <text x="390" y="284" font-size="11" fill="#dc2626" font-weight="600" text-anchor="middle">of scale</text>
+
+  <!-- MES point -->
+  <circle cx="270" cy="88" r="5" fill="#2563eb"/>
+  <line x1="270" y1="88" x2="270" y2="320" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="265" y="335" font-size="12" fill="#2563eb" font-weight="600">MES</text>
 </svg>
-<div class="diagram-caption">Figure 2: AR and MR curves for a firm facing a downward-sloping demand curve (imperfect competition)</div>
+<div class="diagram-caption">Figure 2: The LRAC curve showing economies of scale, constant returns, diseconomies of scale, and the Minimum Efficient Scale (MES)</div>
 </div>
 
-<h2>Profit</h2>
+<!-- ============================================================ -->
+<h2>Economies of Scale</h2>
+<!-- ============================================================ -->
 
 <div class="def-box">
-<strong>Profit</strong> = Total Revenue – Total Cost (TR – TC)<br><br>
-<strong>Normal profit</strong> — the minimum profit needed to keep a firm in the industry in the long run. It is an economic cost (the opportunity cost of enterprise). At normal profit, TR = TC.<br><br>
-<strong>Supernormal (abnormal) profit</strong> — profit above normal profit. TR > TC. This acts as a signal for new firms to enter the market.<br><br>
-<strong>Subnormal profit (loss)</strong> — profit below normal profit. TR < TC. This signals firms to leave the market.
+<strong>Economies of scale</strong> are the cost advantages that a firm gains as it increases its scale of production in the long run. As output rises, long-run average costs <strong>fall</strong>. They explain the downward-sloping section of the LRAC curve.
 </div>
 
-<h3>Profit Maximisation</h3>
-<p>A firm maximises profit where <strong>MC = MR</strong> (and MC is rising). At this point:</p>
-<ul>
-  <li>The additional revenue from the last unit sold equals the additional cost of producing it</li>
-  <li>Any unit where MR > MC adds to profit (so should be produced)</li>
-  <li>Any unit where MR < MC reduces profit (so should not be produced)</li>
-</ul>
-
-<div class="diagram-box">
-<svg width="420" height="320" viewBox="0 0 420 320">
-  <!-- Axes -->
-  <line x1="60" y1="270" x2="380" y2="270" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="60" y1="270" x2="60" y2="30" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="380,270 370,265 370,275" fill="#1a1a2e"/>
-  <polygon points="60,30 55,40 65,40" fill="#1a1a2e"/>
-  <text x="220" y="300" text-anchor="middle" font-size="13" fill="#1a1a2e">Output (Q)</text>
-  <text x="20" y="150" text-anchor="middle" font-size="13" fill="#1a1a2e" transform="rotate(-90,20,150)">Cost/Revenue (£)</text>
-  <!-- MC curve -->
-  <path d="M 100,220 Q 150,250 180,240 Q 210,220 240,170 Q 270,120 300,80 Q 330,50 360,30" stroke="#ef4444" stroke-width="2.5" fill="none"/>
-  <text x="365" y="35" font-size="12" fill="#ef4444" font-weight="bold">MC</text>
-  <!-- AC curve -->
-  <path d="M 100,130 Q 160,100 220,90 Q 280,100 330,130 Q 360,155 380,180" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
-  <text x="383" y="180" font-size="12" fill="#1a73e8" font-weight="bold">AC</text>
-  <!-- AR line -->
-  <line x1="60" y1="130" x2="380" y2="130" stroke="#22c55e" stroke-width="2"/>
-  <text x="383" y="130" font-size="12" fill="#22c55e" font-weight="bold">AR=MR=P</text>
-  <!-- Profit max point -->
-  <circle cx="263" cy="130" r="4" fill="#555"/>
-  <line x1="263" y1="130" x2="263" y2="270" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="268" y="280" font-size="11" fill="#555">Q*</text>
-  <!-- Supernormal profit area -->
-  <rect x="100" y="90" width="163" height="40" fill="rgba(34,197,94,0.15)" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,2"/>
-  <text x="180" y="115" font-size="11" fill="#22c55e" font-weight="bold">Supernormal Profit</text>
-</svg>
-<div class="diagram-caption">Figure 3: Profit maximisation at MC = MR for a perfectly competitive firm earning supernormal profit</div>
-</div>
-
-<h3>Shut-Down Condition</h3>
-<ul>
-  <li><strong>Short run:</strong> A firm should continue producing as long as price (AR) covers AVC. If AR &lt; AVC, the firm should shut down (it cannot even cover its variable costs).</li>
-  <li><strong>Long run:</strong> A firm should exit the industry if AR &lt; AC (it cannot cover all costs including fixed).</li>
-</ul>
-
-<h2>Alternative Objectives of Firms</h2>
-
-<p>Not all firms maximise profit. Alternative objectives include:</p>
+<h3>Internal Economies of Scale</h3>
+<p>These arise from the growth of the firm itself:</p>
 
 <table>
-<tr><th>Objective</th><th>Rule</th><th>Reason</th></tr>
-<tr><td>Revenue maximisation</td><td>MR = 0</td><td>Managers may seek to maximise sales revenue for bonuses/status</td></tr>
-<tr><td>Sales maximisation</td><td>AC = AR (normal profit constraint)</td><td>Maximise market share while covering costs</td></tr>
-<tr><td>Satisficing</td><td>Achieve "satisfactory" levels of profit</td><td>Separation of ownership and control; managers balance multiple stakeholder interests</td></tr>
-<tr><td>Survival</td><td>Cover costs in the short run</td><td>New firms or firms in recession focus on staying alive</td></tr>
-<tr><td>Social/ethical objectives</td><td>CSR considerations</td><td>Some firms prioritise environmental or social goals</td></tr>
+<tr><th>Type</th><th>Explanation</th><th>Real-World Example</th></tr>
+<tr><td><strong>Technical</strong></td><td>Larger firms can use more efficient, specialised machinery and production processes. The <em>container principle</em>: doubling the surface area of a container more than doubles its volume — so larger containers, tankers, and warehouses are more cost-effective per unit.</td><td>Amazon's massive automated warehouses process millions of items at a fraction of the cost per item compared to a small shop's stockroom</td></tr>
+<tr><td><strong>Managerial</strong></td><td>Larger firms can afford to hire specialist managers (marketing director, head of finance, HR director), each expert in their field. Small firms often have one person doing everything less efficiently.</td><td>A multinational like Unilever has entire teams dedicated to supply chain optimisation — a corner shop owner does it all themselves</td></tr>
+<tr><td><strong>Purchasing (bulk-buying)</strong></td><td>Larger firms buy raw materials in huge volumes and can negotiate significant discounts from suppliers. Their bargaining power reduces input costs per unit.</td><td>Tesco buys milk by the millions of litres and negotiates much lower prices than a small convenience store can</td></tr>
+<tr><td><strong>Financial</strong></td><td>Larger firms can borrow money at lower interest rates because banks see them as lower risk. They also have access to a wider range of financing (bonds, share issues).</td><td>Apple can borrow at near-government rates; a local startup might pay 8-12% on a bank loan</td></tr>
+<tr><td><strong>Marketing</strong></td><td>The cost of advertising is spread over a much larger output. A £1 million TV advert is expensive for a firm selling 10,000 units (£100 per unit) but cheap for a firm selling 10 million (£0.10 per unit).</td><td>Coca-Cola's global advertising budget is huge in total but tiny per bottle sold</td></tr>
+<tr><td><strong>Risk-bearing</strong></td><td>Large firms can diversify across products, markets, and countries. If one product fails, others compensate. This reduces overall business risk.</td><td>Samsung makes phones, TVs, semiconductors, washing machines, and ships — a failure in one area doesn't threaten the whole company</td></tr>
 </table>
 
-<div class="tip-box">
-<strong>Exam Tip:</strong> In evaluation, always consider whether profit maximisation is realistic. The principal-agent problem (managers may not share owners' objectives), imperfect information (firms may not know exact MC and MR), and stakeholder pressures may all mean firms do not profit-maximise in practice.
+<h3>External Economies of Scale</h3>
+<p>These arise from the growth of the <em>industry</em> rather than the individual firm:</p>
+<ul>
+  <li><strong>Skilled labour pool:</strong> As an industry grows in an area, a concentration of skilled workers develops. Firms benefit from easy access to trained workers without having to train them from scratch. Example: Silicon Valley for tech workers, the City of London for financial professionals.</li>
+  <li><strong>Supplier networks:</strong> Component suppliers and specialist services cluster near large industries, reducing transport costs and delivery times. Example: car parts suppliers cluster around car manufacturing plants in the Midlands.</li>
+  <li><strong>Knowledge spillovers:</strong> Firms in the same area share ideas, innovations, and best practices — through worker mobility, conferences, and informal networks. Example: biotech firms clustered around Cambridge benefit from proximity to university research.</li>
+  <li><strong>Infrastructure:</strong> Governments invest in transport, broadband, and facilities in areas where industries concentrate. Example: improved road networks near industrial parks.</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Real-World Example: Amazon's Economies of Scale</strong><br>
+Amazon is a textbook example of economies of scale in action. Its massive automated warehouses (technical economies), specialist logistics teams (managerial), bulk purchasing power over suppliers (purchasing), ability to borrow cheaply (financial), and global advertising spread across billions of orders (marketing) all give it dramatically lower average costs than smaller retailers. Amazon's fulfilment cost per unit has fallen consistently as it has scaled, allowing it to undercut competitors on price while still generating profit.
 </div>
 
+<!-- ============================================================ -->
+<h2>Diseconomies of Scale</h2>
+<!-- ============================================================ -->
+
+<div class="def-box">
+<strong>Diseconomies of scale</strong> occur when a firm becomes so large that long-run average costs begin to <strong>rise</strong> as output increases. The firm has grown beyond its optimal size. This explains the upward-sloping section of the LRAC curve.
+</div>
+
+<p>Diseconomies are primarily caused by <strong>management and organisational problems</strong>:</p>
+
+<table>
+<tr><th>Cause</th><th>Explanation</th><th>Example</th></tr>
+<tr><td><strong>Communication breakdown</strong></td><td>In very large organisations, information must pass through many layers of management. Messages get distorted, delayed, or lost entirely.</td><td>A directive from the CEO of a 100,000-employee firm may be misinterpreted by the time it reaches the shop floor</td></tr>
+<tr><td><strong>Coordination difficulties</strong></td><td>As firms grow, coordinating activities across departments, divisions, and countries becomes increasingly complex and expensive.</td><td>General Motors in the 2000s had overlapping car brands (Chevrolet, Pontiac, Saturn, Buick) that competed with each other internally</td></tr>
+<tr><td><strong>Worker alienation</strong></td><td>In very large firms, workers may feel like insignificant "cogs in a machine." This reduces motivation, job satisfaction, and productivity, increasing costs.</td><td>High turnover rates at Amazon warehouses have been linked to worker dissatisfaction, increasing recruitment and training costs</td></tr>
+<tr><td><strong>Bureaucracy</strong></td><td>Excessive layers of management and complex approval processes slow decision-making. The firm becomes inflexible and unresponsive to market changes.</td><td>Nokia's bureaucratic structure meant it was slow to respond to the smartphone revolution, losing market share to Apple and Samsung</td></tr>
+<tr><td><strong>Principal-agent problem</strong></td><td>As firms grow, it becomes harder for owners (principals) to monitor and control managers (agents), who may pursue their own interests rather than profit maximisation.</td><td>Managers may expand their departments for prestige even when it doesn't benefit the company</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>Minimum Efficient Scale (MES)</h2>
+<!-- ============================================================ -->
+
+<div class="def-box">
+<strong>Minimum Efficient Scale (MES)</strong> is the lowest level of output at which all internal economies of scale have been fully exploited and LRAC is at its minimum. Beyond MES, the firm cannot reduce average costs further by growing.
+</div>
+
+<h3>MES and Market Structure</h3>
+<p>The relationship between MES and total market demand determines the likely structure of the market:</p>
+
+<table>
+<tr><th>MES Relative to Market</th><th>Market Structure</th><th>Example</th></tr>
+<tr><td>MES is very large relative to market demand</td><td><strong>Natural monopoly</strong> — only one firm can operate efficiently</td><td>Water supply, electricity grid, railways</td></tr>
+<tr><td>MES is large relative to market demand</td><td><strong>Oligopoly</strong> — only a few firms can reach efficient scale</td><td>Car manufacturing, aircraft (Boeing & Airbus), supermarkets</td></tr>
+<tr><td>MES is small relative to market demand</td><td><strong>Competitive market</strong> — many firms can coexist at efficient scale</td><td>Restaurants, hairdressers, plumbers, small retail</td></tr>
+</table>
+
+<!-- ============================================================ -->
 <h2>Returns to Scale (Long Run)</h2>
+<!-- ============================================================ -->
 
-<ul>
-  <li><strong>Increasing returns to scale</strong> — output increases by more than the proportional increase in all inputs (economies of scale exist; LRAC falling)</li>
-  <li><strong>Constant returns to scale</strong> — output increases in the same proportion as inputs (LRAC constant)</li>
-  <li><strong>Decreasing returns to scale</strong> — output increases by less than the proportional increase in inputs (diseconomies of scale; LRAC rising)</li>
-</ul>
+<p>Returns to scale describe what happens to output when <strong>all inputs are increased proportionally</strong> in the long run:</p>
+
+<table>
+<tr><th>Type</th><th>What Happens</th><th>Implication for LRAC</th></tr>
+<tr><td><strong>Increasing returns to scale</strong></td><td>Output increases by <em>more</em> than the proportional increase in inputs. E.g., doubling all inputs more than doubles output.</td><td>LRAC is falling (economies of scale)</td></tr>
+<tr><td><strong>Constant returns to scale</strong></td><td>Output increases by exactly the same proportion as inputs. E.g., doubling all inputs exactly doubles output.</td><td>LRAC is constant (flat section)</td></tr>
+<tr><td><strong>Decreasing returns to scale</strong></td><td>Output increases by <em>less</em> than the proportional increase in inputs. E.g., doubling all inputs less than doubles output.</td><td>LRAC is rising (diseconomies of scale)</td></tr>
+</table>
 
 <div class="tip-box">
-<strong>Exam Tip:</strong> Do NOT confuse diminishing marginal returns (short run, one factor fixed) with decreasing returns to scale (long run, all factors variable). This is a very common mistake that loses marks.
+<strong>Exam Tip — CRITICAL DISTINCTION:</strong><br>
+<strong>Diminishing marginal returns</strong> = SHORT RUN. One factor is fixed, the other varies. It explains why short-run cost curves are U-shaped.<br>
+<strong>Decreasing returns to scale</strong> = LONG RUN. ALL factors are variable and are increased together. It explains why LRAC eventually rises.<br>
+These are completely different concepts. Confusing them is one of the most penalised mistakes in A-Level Economics.
+</div>
+
+<!-- ============================================================ -->
+<h2>Revenue</h2>
+<!-- ============================================================ -->
+
+<div class="def-box">
+<strong>Total Revenue (TR)</strong> = Price × Quantity sold (TR = P × Q)<br>
+<strong>Average Revenue (AR)</strong> = TR ÷ Q = Price (in a single-price market, AR is always equal to price)<br>
+<strong>Marginal Revenue (MR)</strong> = the change in total revenue from selling one additional unit (MR = ΔTR ÷ ΔQ)
+</div>
+
+<h3>Revenue Under Perfect Competition</h3>
+<p>In a perfectly competitive market, the firm is a <strong>price taker</strong> — it can sell any quantity at the market price but cannot influence that price. Therefore:</p>
+<ul>
+  <li>AR = MR = Price (all constant, represented by a horizontal line)</li>
+  <li>TR increases linearly with output (straight line from origin)</li>
+  <li>The firm's demand curve is perfectly elastic (horizontal)</li>
+</ul>
+
+<h3>Revenue Under Imperfect Competition (Monopoly/Oligopoly)</h3>
+<p>When a firm has some market power, it faces a <strong>downward-sloping demand curve</strong>. To sell more units, it must lower its price — and crucially, it must lower the price on <em>all</em> units, not just the extra one. This has important consequences:</p>
+<ul>
+  <li><strong>AR (= demand curve)</strong> slopes downward</li>
+  <li><strong>MR lies below AR</strong> — because to sell one more unit, the firm must reduce the price on all previous units too. The marginal revenue from an extra sale is less than the price received for it.</li>
+  <li>For a <strong>linear demand curve</strong>, MR has the same intercept but <strong>falls twice as steeply</strong> as AR</li>
+  <li><strong>TR is maximised where MR = 0</strong> — beyond this point, selling more actually reduces total revenue</li>
+</ul>
+
+<div class="diagram-box">
+<svg width="460" height="380" viewBox="0 0 460 380">
+  <!-- Axes -->
+  <line x1="70" y1="320" x2="420" y2="320" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="70" y1="320" x2="70" y2="40" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="420,320 410,315 410,325" fill="#1a1a2e"/>
+  <polygon points="70,40 65,50 75,50" fill="#1a1a2e"/>
+  <text x="245" y="358" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Output (Q)</text>
+  <text x="24" y="180" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,180)">Revenue (£)</text>
+
+  <!-- AR = Demand curve -->
+  <line x1="90" y1="60" x2="400" y2="310" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="403" y="310" font-size="14" fill="#2563eb" font-weight="700">AR = D</text>
+
+  <!-- MR curve (same intercept, twice as steep) -->
+  <line x1="90" y1="60" x2="245" y2="310" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="248" y="310" font-size="14" fill="#dc2626" font-weight="700">MR</text>
+
+  <!-- MR = 0 dashed line -->
+  <line x1="245" y1="310" x2="245" y2="320" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Elastic/inelastic regions -->
+  <text x="150" y="150" font-size="11" fill="#16a34a" font-weight="600">Elastic region</text>
+  <text x="150" y="165" font-size="10" fill="#16a34a">(MR > 0, TR rising)</text>
+
+  <text x="300" y="240" font-size="11" fill="#dc2626" font-weight="600">Inelastic region</text>
+  <text x="300" y="255" font-size="10" fill="#dc2626">(MR < 0, TR falling)</text>
+
+  <!-- Vertical line at MR=0 -->
+  <text x="230" y="340" font-size="11" fill="#64748b">TR max</text>
+</svg>
+<div class="diagram-caption">Figure 3: AR and MR for a firm with market power. MR falls twice as fast as AR. TR is maximised where MR = 0.</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Profit</h2>
+<!-- ============================================================ -->
+
+<div class="def-box">
+<strong>Profit</strong> = Total Revenue − Total Cost (TR − TC)<br><br>
+<strong>Normal profit:</strong> The minimum level of profit needed to keep a firm in the industry in the long run. It is the opportunity cost of the entrepreneur's time and capital — what they could earn in their next best alternative. At normal profit, TR = TC (because normal profit is included as a cost).<br><br>
+<strong>Supernormal (abnormal/economic) profit:</strong> Profit above normal profit. TR > TC. This is a signal that attracts new firms into the market.<br><br>
+<strong>Subnormal profit (economic loss):</strong> Profit below normal profit. TR < TC. This signals that resources are better used elsewhere and encourages firms to exit.
+</div>
+
+<h3>Profit Maximisation: MC = MR</h3>
+
+<p>The standard assumption is that firms maximise profit. A firm maximises profit by producing the quantity where <strong>MC = MR</strong> (and MC is rising through MR). The logic:</p>
+<ul>
+  <li>For any unit where <strong>MR > MC</strong>: producing that unit adds more to revenue than to cost → it adds to profit → produce it</li>
+  <li>For any unit where <strong>MR < MC</strong>: producing that unit adds more to cost than to revenue → it reduces profit → don't produce it</li>
+  <li>Therefore, profit is maximised at the exact point where <strong>MR = MC</strong></li>
+</ul>
+
+<div class="diagram-box">
+<svg width="460" height="400" viewBox="0 0 460 400">
+  <!-- Axes -->
+  <line x1="70" y1="340" x2="420" y2="340" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="70" y1="340" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="420,340 410,335 410,345" fill="#1a1a2e"/>
+  <polygon points="70,30 65,40 75,40" fill="#1a1a2e"/>
+  <text x="245" y="378" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Output (Q)</text>
+  <text x="24" y="190" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,190)">Cost / Revenue (£)</text>
+
+  <!-- MC curve -->
+  <path d="M 110,280 Q 150,310 180,300 Q 210,280 240,230 Q 265,170 285,130 Q 310,90 340,60 Q 370,35 400,15" stroke="#dc2626" stroke-width="2.5" fill="none"/>
+  <text x="405" y="18" font-size="13" fill="#dc2626" font-weight="700">MC</text>
+
+  <!-- AC curve -->
+  <path d="M 110,170 Q 170,125 240,110 Q 310,120 360,155 Q 390,180 410,210" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+  <text x="413" y="210" font-size="13" fill="#2563eb" font-weight="700">AC</text>
+
+  <!-- AR = MR = P line (perfectly competitive firm) -->
+  <line x1="70" y1="150" x2="420" y2="150" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="423" y="150" font-size="13" fill="#16a34a" font-weight="700">AR=MR=P</text>
+
+  <!-- Profit max point (MC = MR) -->
+  <circle cx="278" cy="150" r="5" fill="#374151"/>
+  <line x1="278" y1="150" x2="278" y2="340" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,3"/>
+  <text x="270" y="355" font-size="12" fill="#374151" font-weight="600">Q*</text>
+
+  <!-- AC at Q* -->
+  <line x1="70" y1="115" x2="278" y2="115" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="55" y="119" font-size="11" fill="#2563eb">AC</text>
+
+  <!-- Supernormal profit shaded area -->
+  <rect x="110" y="115" width="168" height="35" fill="#16a34a" fill-opacity="0.12" stroke="#16a34a" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="194" y="138" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">Supernormal Profit</text>
+
+  <!-- Price and AC labels -->
+  <text x="55" y="154" font-size="11" fill="#16a34a" font-weight="600">P</text>
+</svg>
+<div class="diagram-caption">Figure 4: Profit maximisation at MC = MR. Supernormal profit (green area) = (P − AC) × Q*</div>
+</div>
+
+<h3>The Shut-Down Condition</h3>
+<p>Even loss-making firms may continue producing in the short run:</p>
+<ul>
+  <li><strong>Short run:</strong> A firm should continue producing as long as <strong>AR ≥ AVC</strong>. If the firm shuts down, it still has to pay fixed costs. As long as revenue covers variable costs and contributes something towards fixed costs, the firm loses less by continuing than by shutting down. If <strong>AR < AVC</strong>, the firm should shut down immediately — it's losing money on every unit produced.</li>
+  <li><strong>Long run:</strong> A firm should exit the industry if <strong>AR < AC</strong> (it cannot cover all costs, including fixed costs that are now variable). There's no point staying in business if you can't earn at least normal profit.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>Alternative Objectives of Firms</h2>
+<!-- ============================================================ -->
+
+<p>The assumption that all firms maximise profit (MC = MR) is a simplification. In reality, firms pursue a range of objectives depending on their ownership structure, competitive environment, and managerial incentives:</p>
+
+<table>
+<tr><th>Objective</th><th>Decision Rule</th><th>Why a Firm Might Choose This</th><th>Example</th></tr>
+<tr><td><strong>Profit maximisation</strong></td><td>MC = MR</td><td>Traditional assumption. Owners want maximum returns on investment.</td><td>Small owner-managed businesses</td></tr>
+<tr><td><strong>Revenue maximisation</strong></td><td>MR = 0</td><td>Managers' bonuses may be linked to sales revenue rather than profit. Maximising revenue means selling more than profit max.</td><td>Sales-driven tech companies in growth phase</td></tr>
+<tr><td><strong>Sales maximisation</strong></td><td>AC = AR (normal profit constraint)</td><td>Maximise output/market share while still covering costs. Dominance in the market can have long-term strategic benefits.</td><td>Amazon sacrificed profits for years to maximise market share</td></tr>
+<tr><td><strong>Satisficing</strong></td><td>Achieve "satisfactory" levels of profit, not maximum</td><td>In large firms, managers (agents) may not share owners' (principals') goal of maximum profit. They balance multiple stakeholder interests — enough profit to keep shareholders happy, enough wages to keep workers, enough investment to keep the firm competitive.</td><td>Large PLCs where ownership is separated from control</td></tr>
+<tr><td><strong>Survival</strong></td><td>Cover costs / stay solvent</td><td>New firms or firms in a recession focus on staying alive rather than maximising profit.</td><td>Startups, firms during COVID-19 lockdowns</td></tr>
+<tr><td><strong>Social/ethical objectives</strong></td><td>Consider wider stakeholder impacts</td><td>Some firms prioritise environmental sustainability, employee welfare, or community impact alongside profit.</td><td>Patagonia, The Body Shop, social enterprises</td></tr>
+</table>
+
+<div class="eval-box">
+<strong>Evaluation: Is Profit Maximisation Realistic?</strong>
+<ul>
+  <li><strong>Information problem:</strong> Firms rarely know their exact MC and MR curves. They use rules of thumb (cost-plus pricing) rather than calculating MC = MR precisely.</li>
+  <li><strong>Principal-agent problem:</strong> In large PLCs, managers run the firm day-to-day but may pursue their own interests (higher salary, empire-building, easy life) rather than maximising profit for shareholders.</li>
+  <li><strong>Stakeholder pressure:</strong> Firms face pressure from employees, customers, governments, and the public — not just shareholders.</li>
+  <li><strong>Short-run vs long-run:</strong> A firm might sacrifice short-run profit (e.g., predatory pricing) to achieve long-run dominance.</li>
+  <li><strong>However:</strong> In competitive markets, firms that don't approximate profit maximisation will be driven out by those that do. Profit maximisation remains the best single assumption for predicting firm behaviour.</li>
+</ul>
 </div>
 
 </div>
