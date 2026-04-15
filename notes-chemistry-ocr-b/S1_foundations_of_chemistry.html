@@ -24,6 +24,10 @@
   .exam-tip strong { color: #b45309; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .application { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .application strong { color: #15803d; }
+  .worked-example { background: #fdf2f8; border-left: 4px solid #db2777; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .worked-example strong { color: #be185d; }
 </style>
 </head>
 <body>
@@ -58,6 +62,10 @@
 
 <p>Examples: carbon-12 (<sup>12</sup>C, 6p + 6n) and carbon-13 (<sup>13</sup>C, 6p + 7n). The existence of isotopes means most elements do not have whole-number relative atomic masses.</p>
 
+<div class="application">
+  <strong>Real-World Application:</strong> Isotopes have wide practical applications. Carbon-14 dating uses the known half-life of <sup>14</sup>C (5730 years) to determine the age of archaeological specimens up to ~50,000 years old. In medicine, <sup>99m</sup>Tc (technetium-99m) is injected as a radiotracer for imaging bones and organs, while <sup>131</sup>I (iodine-131) treats thyroid cancer. In analytical chemistry, deuterium (<sup>2</sup>H) is used in NMR solvents (e.g. CDCl<sub>3</sub>).
+</div>
+
 <h3>Mass Spectrometry</h3>
 
 <p>A mass spectrometer measures the relative masses and abundances of isotopes or molecules. The basic steps are:</p>
@@ -78,6 +86,12 @@
   <strong>Exam Tip:</strong> In mass spectra of molecules, the peak with the highest m/z value (ignoring the M+1 peak) is the molecular ion peak (M<sup>+</sup>), giving the relative molecular mass. Fragmentation patterns help identify functional groups and structural features.
 </div>
 
+<div class="worked-example">
+  <strong>Worked Example &mdash; Calculating A<sub>r</sub>:</strong><br><br>
+  Chlorine has two isotopes: <sup>35</sup>Cl (abundance 75.8%) and <sup>37</sup>Cl (abundance 24.2%).<br><br>
+  A<sub>r</sub> = (35 &times; 75.8 + 37 &times; 24.2) / 100 = (2653.0 + 895.4) / 100 = <strong>35.5</strong>
+</div>
+
 <h3>Electron Configuration</h3>
 
 <p>Electrons occupy atomic orbitals. An orbital is a region of space around the nucleus where there is a high probability of finding an electron. Each orbital holds a maximum of two electrons with opposite spins (Pauli exclusion principle).</p>
@@ -96,7 +110,11 @@
   <strong>Hund's rule:</strong> Electrons occupy orbitals of the same sub-shell singly before pairing up, and with parallel spins. This minimises electron-electron repulsion.
 </div>
 
-<p>Chromium and copper are exceptions: Cr is [Ar] 3d<sup>5</sup> 4s<sup>1</sup> (not 3d<sup>4</sup> 4s<sup>2</sup>) and Cu is [Ar] 3d<sup>10</sup> 4s<sup>1</sup> (not 3d<sup>9</sup> 4s<sup>2</sup>) because half-filled and fully-filled d sub-shells are more stable.</p>
+<p>Chromium and copper are exceptions: Cr is [Ar] 3d<sup>5</sup> 4s<sup>1</sup> (not 3d<sup>4</sup> 4s<sup>2</sup>) and Cu is [Ar] 3d<sup>10</sup> 4s<sup>1</sup> (not 3d<sup>9</sup> 4s<sup>2</sup>) because half-filled and fully-filled d sub-shells have extra stability due to symmetrical electron distribution and favourable exchange energy.</p>
+
+<div class="application">
+  <strong>Real-World Application:</strong> Electron configurations determine the chemical behaviour of every element. In medicine, gadolinium (with 7 unpaired electrons in its 4f sub-shell) is used as a contrast agent in MRI scans because its electron configuration gives it strong paramagnetic properties. The electron configurations of transition metals explain why they form coloured compounds used as pigments (e.g. cobalt blue, chromium green) and why they are effective catalysts in industrial processes.
+</div>
 
 <!-- SVG: Electron Configuration / Orbital Filling Diagram -->
 <div style="margin: 20px auto; text-align: center;">
@@ -328,7 +346,20 @@
 <p>where c is concentration in mol dm<sup>&minus;3</sup>, n is moles of solute, and V is volume of solution in dm<sup>3</sup>. To convert cm<sup>3</sup> to dm<sup>3</sup>, divide by 1000.</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> Always check your units. A very common error is using volume in cm<sup>3</sup> instead of dm<sup>3</sup> in the concentration formula. Remember: 1 dm<sup>3</sup> = 1000 cm<sup>3</sup>.
+  <strong>Exam Tip:</strong> Always check your units. A very common error is using volume in cm<sup>3</sup> instead of dm<sup>3</sup> in the concentration formula. Remember: 1 dm<sup>3</sup> = 1000 cm<sup>3</sup>. For pV = nRT, pressure must be in Pa, volume in m<sup>3</sup>, and temperature in K.
+</div>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Titration Calculation:</strong><br><br>
+  25.0 cm<sup>3</sup> of Na<sub>2</sub>CO<sub>3</sub> solution of unknown concentration was titrated with 0.100 mol dm<sup>&minus;3</sup> HCl. The mean titre was 27.60 cm<sup>3</sup>.<br>
+  Na<sub>2</sub>CO<sub>3</sub> + 2HCl &rarr; 2NaCl + H<sub>2</sub>O + CO<sub>2</sub><br><br>
+  n(HCl) = 0.100 &times; 27.60/1000 = 2.76 &times; 10<sup>&minus;3</sup> mol<br>
+  n(Na<sub>2</sub>CO<sub>3</sub>) = 2.76 &times; 10<sup>&minus;3</sup> / 2 = 1.38 &times; 10<sup>&minus;3</sup> mol (1:2 ratio)<br>
+  [Na<sub>2</sub>CO<sub>3</sub>] = 1.38 &times; 10<sup>&minus;3</sup> / 0.0250 = <strong>0.0552 mol dm<sup>&minus;3</sup></strong>
+</div>
+
+<div class="application">
+  <strong>Real-World Application:</strong> Mole calculations underpin all quantitative chemistry in industry. Pharmacists use moles to calculate drug dosages &mdash; getting the concentration wrong can be fatal. In environmental science, pollutant concentrations in water are expressed in mol dm<sup>&minus;3</sup> or parts per million (ppm) and must be accurately determined to assess whether they exceed safety limits. In the semiconductor industry, extremely precise molar quantities of dopants are added to silicon to create electronic devices.
 </div>
 
 <h3>Balanced Equations and Reacting Masses</h3>
@@ -582,7 +613,11 @@
 <p><strong>Simple molecular structures</strong> (e.g. I<sub>2</sub>, H<sub>2</sub>O, CO<sub>2</sub>): Strong covalent bonds within molecules but weak intermolecular forces between molecules &rarr; low melting/boiling points, do not conduct electricity (no charged particles free to move).</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> When explaining high melting points, always state the type of bonding/force that must be overcome and describe it as strong. For simple molecular substances, make clear it is the intermolecular forces (not the covalent bonds) that break during melting and boiling.
+  <strong>Exam Tip:</strong> When explaining high melting points, always state the type of bonding/force that must be overcome and describe it as strong. For simple molecular substances, make clear it is the intermolecular forces (not the covalent bonds) that break during melting and boiling. Never say "bonds are broken" when discussing boiling &mdash; use "intermolecular forces are overcome."
+</div>
+
+<div class="application">
+  <strong>Real-World Application:</strong> Understanding bonding and structure is essential for materials science. Diamond's giant covalent structure makes it the hardest natural material, used in cutting tools and drill bits. Graphite's layered structure with weak London forces between layers makes it an excellent lubricant and the "lead" in pencils. Graphene (a single layer of graphite) has extraordinary electrical conductivity, strength, and flexibility, with potential applications in electronics, energy storage, and water purification. The hydrogen bonding in water gives it unique properties (high specific heat capacity, expansion on freezing, excellent solvent) that are essential for life on Earth.
 </div>
 
 </div>
