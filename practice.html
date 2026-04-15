@@ -421,6 +421,27 @@
     .self-mark-btn.partial { background: var(--amber-bg); border-color: var(--amber-border); color: var(--amber); }
     .self-mark-btn.miss    { background: var(--red-bg);   border-color: var(--red-border);   color: var(--red); }
     .self-mark-btn:hover   { filter: brightness(1.1); transform: translateY(-1px); }
+  
+    /* Mobile menu */
+    .mobile-menu-btn {
+      display: none; width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      align-items: center; justify-content: center; cursor: pointer;
+      font-size: 18px; box-shadow: 0 1px 4px rgba(91,173,207,0.1);
+    }
+    .mobile-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99;
+    }
+    .mobile-overlay.active { display: block; }
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+      .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; padding: 16px 14px; }
+    }
+    @media (max-width: 480px) {
+      .main { padding: 12px 10px; }
+    }
   </style>
 </head>
 <body>
@@ -1580,5 +1601,6 @@ function showEmpty(msg) {
 
 init();
 </script>
+<div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
 </body>
 </html>

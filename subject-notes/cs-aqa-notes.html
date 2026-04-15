@@ -173,6 +173,21 @@
     .empty-icon { font-size: 52px; opacity: 0.5; }
     .empty-title { font-family: var(--font-display); font-size: 22px; color: var(--text); }
     .empty-sub { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 320px; }
+  
+    .mobile-menu-btn {
+      display: none; width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      align-items: center; justify-content: center; cursor: pointer;
+      font-size: 18px;
+    }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
+    .mobile-overlay.active { display: block; }
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+      .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; top: 0; left: 0; bottom: 0; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0 !important; padding: 16px 14px !important; }
+    }
   </style>
 </head>
 <body>
@@ -444,5 +459,6 @@ function openTopic(btn, num, name, path) {
   document.getElementById('openBtn').href     = path;
 }
 </script>
+<div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
 </body>
 </html>
