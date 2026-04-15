@@ -33,22 +33,107 @@
 <h1>2.4 Boolean Logic</h1>
 <p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 2</p>
 
-<p>Boolean logic underpins all decision-making in computers. Every condition in every program evaluates to either <strong>True (1)</strong> or <strong>False (0)</strong>. Logic gates implement Boolean operations in hardware circuits.</p>
+<p>Boolean logic underpins all decision-making in computers. Every condition in every program, every circuit in every processor, evaluates to either <strong>True (1)</strong> or <strong>False (0)</strong>. Logic gates are the physical electronic components that implement Boolean operations in hardware. Understanding Boolean logic is essential for both programming and understanding how computer hardware works at the fundamental level.</p>
 
 <h2>2.4.1 Boolean Operators and Truth Tables</h2>
 
-<h3>The Six Logic Gates</h3>
+<h3>The Three Core Gates: AND, OR, NOT</h3>
+
+<p>These three gates are the foundation. Every other gate (NAND, NOR, XOR) can be built from combinations of these three.</p>
+
+<h3>AND Gate</h3>
+<p>Output is TRUE only if <strong>BOTH</strong> inputs are TRUE. Think of two switches wired in <strong>series</strong> &mdash; the light only turns on if both switches are closed.</p>
+
+<!-- AND Gate Diagram -->
+<svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;margin:10px auto;display:block;">
+  <text x="150" y="15" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">AND Gate</text>
+  <!-- Gate body -->
+  <path d="M 80 25 L 80 75 L 140 75 A 25 25 0 0 0 140 25 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <!-- Inputs -->
+  <line x1="30" y1="40" x2="80" y2="40" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="30" y1="60" x2="80" y2="60" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="20" y="44" text-anchor="end" font-size="12" fill="#1e3a5f" font-weight="bold">A</text>
+  <text x="20" y="64" text-anchor="end" font-size="12" fill="#1e3a5f" font-weight="bold">B</text>
+  <!-- Output -->
+  <line x1="165" y1="50" x2="220" y2="50" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="230" y="54" font-size="12" fill="#1e3a5f" font-weight="bold">Q</text>
+  <!-- Label -->
+  <text x="120" y="54" text-anchor="middle" font-size="11" fill="#1e40af" font-weight="bold">AND</text>
+</svg>
+
 <table>
-    <tr><th>Gate</th><th>Symbol/Expression</th><th>Rule (in words)</th><th>Memory Aid</th></tr>
-    <tr style="text-align:left"><td><strong>AND</strong></td><td><code>A AND B</code></td><td>Output is TRUE only if <strong>BOTH</strong> inputs are TRUE</td><td>"Both must agree"</td></tr>
-    <tr style="text-align:left"><td><strong>OR</strong></td><td><code>A OR B</code></td><td>Output is TRUE if <strong>AT LEAST ONE</strong> input is TRUE</td><td>"Either will do"</td></tr>
-    <tr style="text-align:left"><td><strong>NOT</strong></td><td><code>NOT A</code></td><td><strong>Inverts</strong> the single input (TRUE becomes FALSE, FALSE becomes TRUE)</td><td>"Flip it"</td></tr>
-    <tr style="text-align:left"><td><strong>NAND</strong></td><td><code>NOT (A AND B)</code></td><td>Opposite of AND &mdash; output is FALSE only when both inputs are TRUE</td><td>"NOT AND"</td></tr>
-    <tr style="text-align:left"><td><strong>NOR</strong></td><td><code>NOT (A OR B)</code></td><td>Opposite of OR &mdash; output is TRUE only when <strong>BOTH inputs are FALSE</strong></td><td>"NOT OR"</td></tr>
-    <tr style="text-align:left"><td><strong>XOR</strong></td><td><code>A XOR B</code></td><td>Output is TRUE only when inputs are <strong>DIFFERENT</strong></td><td>"One or the other, but not both"</td></tr>
+    <tr><th>A</th><th>B</th><th>A AND B</th></tr>
+    <tr><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+</table>
+<p style="text-align:left"><strong>Programming example:</strong> <code>if age >= 18 AND hasTicket == True then allowEntry()</code> &mdash; both conditions must be true for entry.</p>
+
+<h3>OR Gate</h3>
+<p>Output is TRUE if <strong>AT LEAST ONE</strong> input is TRUE. Think of two switches wired in <strong>parallel</strong> &mdash; the light turns on if either switch is closed.</p>
+
+<!-- OR Gate Diagram -->
+<svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;margin:10px auto;display:block;">
+  <text x="150" y="15" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">OR Gate</text>
+  <!-- Gate body -->
+  <path d="M 75 25 Q 110 50 75 75 Q 140 75 165 50 Q 140 25 75 25" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <!-- Inputs -->
+  <line x1="30" y1="40" x2="88" y2="40" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="30" y1="60" x2="88" y2="60" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="20" y="44" text-anchor="end" font-size="12" fill="#1e3a5f" font-weight="bold">A</text>
+  <text x="20" y="64" text-anchor="end" font-size="12" fill="#1e3a5f" font-weight="bold">B</text>
+  <!-- Output -->
+  <line x1="165" y1="50" x2="220" y2="50" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="230" y="54" font-size="12" fill="#1e3a5f" font-weight="bold">Q</text>
+  <!-- Label -->
+  <text x="118" y="54" text-anchor="middle" font-size="11" fill="#166534" font-weight="bold">OR</text>
+</svg>
+
+<table>
+    <tr><th>A</th><th>B</th><th>A OR B</th></tr>
+    <tr><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>1</td><td>0</td><td><strong>1</strong></td></tr>
+    <tr><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+</table>
+<p style="text-align:left"><strong>Programming example:</strong> <code>if isStudent OR isChild then applyDiscount()</code> &mdash; either condition is sufficient.</p>
+
+<h3>NOT Gate (Inverter)</h3>
+<p><strong>Inverts</strong> the single input. TRUE becomes FALSE, FALSE becomes TRUE. It has only one input (unlike AND and OR which have two).</p>
+
+<!-- NOT Gate Diagram -->
+<svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;margin:10px auto;display:block;">
+  <text x="150" y="15" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">NOT Gate</text>
+  <!-- Gate body (triangle) -->
+  <polygon points="80,25 80,65 145,45" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <!-- Bubble -->
+  <circle cx="152" cy="45" r="7" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
+  <!-- Input -->
+  <line x1="30" y1="45" x2="80" y2="45" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="20" y="49" text-anchor="end" font-size="12" fill="#1e3a5f" font-weight="bold">A</text>
+  <!-- Output -->
+  <line x1="159" y1="45" x2="220" y2="45" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="230" y="49" font-size="12" fill="#1e3a5f" font-weight="bold">Q</text>
+</svg>
+
+<table>
+    <tr><th>A</th><th>NOT A</th></tr>
+    <tr><td>0</td><td><strong>1</strong></td></tr>
+    <tr><td>1</td><td>0</td></tr>
+</table>
+<p style="text-align:left"><strong>Programming example:</strong> <code>if NOT loggedIn then showLoginPage()</code> &mdash; inverts the condition.</p>
+
+<h3>Additional Gates: NAND, NOR, XOR</h3>
+
+<table style="text-align:left;">
+    <tr><th>Gate</th><th>Expression</th><th>Rule</th><th>Key Fact</th></tr>
+    <tr><td><strong>NAND</strong></td><td><code>NOT (A AND B)</code></td><td>Opposite of AND. Output is FALSE only when <strong>both</strong> inputs are TRUE.</td><td>NAND is a <strong>universal gate</strong> &mdash; any other gate can be built from NAND gates alone. This makes it extremely important in chip design because manufacturers only need to produce one type of gate.</td></tr>
+    <tr><td><strong>NOR</strong></td><td><code>NOT (A OR B)</code></td><td>Opposite of OR. Output is TRUE only when <strong>both</strong> inputs are FALSE.</td><td>NOR is also a universal gate. Early computers were built entirely from NOR gates.</td></tr>
+    <tr><td><strong>XOR</strong></td><td><code>A XOR B</code></td><td>Exclusive OR. Output is TRUE only when inputs are <strong>different</strong>.</td><td>Used in binary addition (half adder), parity checking, and simple encryption (XOR cipher). True when "one or the other, but not both."</td></tr>
 </table>
 
-<h3>Complete Truth Tables</h3>
+<h3>Complete Truth Tables for All Gates</h3>
 <table>
     <tr><th>A</th><th>B</th><th>AND</th><th>OR</th><th>NAND</th><th>NOR</th><th>XOR</th></tr>
     <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
@@ -57,45 +142,59 @@
     <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
 </table>
 
-<table>
-    <tr><th>A</th><th>NOT A</th></tr>
-    <tr><td>0</td><td>1</td></tr>
-    <tr><td>1</td><td>0</td></tr>
-</table>
-
-<h3>Understanding Each Gate</h3>
-<ul>
-    <li><strong>AND</strong> &mdash; Think of it as two switches in <strong>series</strong> (one after the other). The light only turns on if BOTH switches are on. In code: <code>if age >= 18 AND hasTicket == True then enter()</code></li>
-    <li><strong>OR</strong> &mdash; Think of two switches in <strong>parallel</strong>. The light turns on if EITHER switch is on. In code: <code>if isStudent == True OR isChild == True then applyDiscount()</code></li>
-    <li><strong>NOT</strong> &mdash; An inverter. If the input is on, the output is off, and vice versa. In code: <code>if NOT loggedIn then showLoginPage()</code></li>
-    <li><strong>NAND</strong> &mdash; AND followed by NOT. It is the <strong>exact opposite</strong> of AND. Output is 0 only when both inputs are 1. NAND is a universal gate (any other gate can be built from NAND gates alone).</li>
-    <li><strong>NOR</strong> &mdash; OR followed by NOT. The exact opposite of OR. Output is 1 only when both inputs are 0. Also a universal gate.</li>
-    <li><strong>XOR (Exclusive OR)</strong> &mdash; True when inputs are <strong>different</strong>. False when they are the same. Used in: parity checking, binary addition (half adder sum bit), simple encryption (XOR cipher), toggling bits.</li>
+<p style="text-align:left"><strong>Memory aids:</strong></p>
+<ul style="text-align:left">
+    <li><strong>AND</strong> &mdash; only 1 when ALL inputs are 1 (the strict gate)</li>
+    <li><strong>OR</strong> &mdash; only 0 when ALL inputs are 0 (the generous gate)</li>
+    <li><strong>NOT</strong> &mdash; always flips (the rebel)</li>
+    <li><strong>NAND</strong> &mdash; the opposite of AND (flip AND's output column)</li>
+    <li><strong>NOR</strong> &mdash; the opposite of OR (flip OR's output column)</li>
+    <li><strong>XOR</strong> &mdash; 1 only when inputs DIFFER (the "odd one out" gate)</li>
 </ul>
+
+<h3>Connecting Gates to Programming</h3>
+<pre style="text-align:left">
+// Every IF statement uses Boolean logic:
+
+// AND in code:
+if temperature > 20 AND weather == "sunny" then
+    print("Perfect for a picnic")
+endif
+
+// OR in code:
+if day == "Saturday" OR day == "Sunday" then
+    print("Weekend!")
+endif
+
+// NOT in code:
+if NOT fileExists("data.txt") then
+    print("Error: file not found")
+endif
+
+// Combined logic:
+if (isAdmin OR isModerator) AND isActive then
+    showControlPanel()
+endif
+// Brackets matter! Without them, AND binds first:
+// isAdmin OR (isModerator AND isActive) — different meaning!
+</pre>
+
+<div class="exam-tip">Make sure you can quickly recall the truth tables. A useful shortcut: <strong>AND</strong> outputs 1 in only ONE row (both inputs 1). <strong>OR</strong> outputs 0 in only ONE row (both inputs 0). <strong>NAND</strong> and <strong>NOR</strong> are simply the inverted outputs of AND and OR respectively. <strong>XOR</strong> outputs 1 when inputs are different.</div>
 
 <h2>2.4.2 Boolean Expressions and Constructing Truth Tables</h2>
 
-<h3>Common Boolean Expressions in Programming</h3>
-<table style="text-align: left;">
-    <tr><th>Expression</th><th>Meaning</th><th>When It Is True</th></tr>
-    <tr><td><code>x > 5 AND x < 10</code></td><td>x is between 5 and 10 (exclusive)</td><td>x = 6, 7, 8, or 9</td></tr>
-    <tr><td><code>age < 18 OR age > 65</code></td><td>Age is below 18 or above 65</td><td>A child or a senior citizen</td></tr>
-    <tr><td><code>NOT loggedIn</code></td><td>The user is NOT logged in</td><td>loggedIn is False</td></tr>
-    <tr><td><code>score >= 50 AND attempts <= 3</code></td><td>Score is at least 50 AND no more than 3 attempts used</td><td>Both conditions are true simultaneously</td></tr>
-    <tr><td><code>NOT (a == b)</code></td><td>a and b are NOT equal</td><td>a is different from b (equivalent to <code>a != b</code>)</td></tr>
-    <tr><td><code>(isAdmin OR isModerator) AND isActive</code></td><td>User has elevated privileges AND their account is active</td><td>Active admin or active moderator</td></tr>
-</table>
-
 <h3>How to Construct a Truth Table</h3>
+<p>Follow this systematic approach for any Boolean expression:</p>
 <ol>
-    <li>List all input variables as column headers on the left.</li>
-    <li>Calculate the number of rows needed: <strong>2<sup>n</sup></strong> rows for n inputs (2 inputs = 4 rows; 3 inputs = 8 rows).</li>
-    <li>Fill in all possible input combinations systematically (count in binary).</li>
-    <li>Add columns for any <strong>intermediate</strong> sub-expressions (work these out before the final output).</li>
-    <li>Calculate the <strong>final output</strong> column using the intermediate results.</li>
+    <li><strong>List all input variables</strong> as column headers on the left.</li>
+    <li><strong>Calculate the number of rows:</strong> 2<sup>n</sup> rows for n inputs. (2 inputs = 4 rows; 3 inputs = 8 rows; 4 inputs = 16 rows.)</li>
+    <li><strong>Fill in all input combinations</strong> systematically. For 2 inputs: 00, 01, 10, 11. For 3 inputs: 000, 001, 010, 011, 100, 101, 110, 111. (Count up in binary.)</li>
+    <li><strong>Add intermediate columns</strong> for sub-expressions (e.g., NOT B, A AND B). Work these out before the final output. This is crucial for avoiding mistakes and earning method marks.</li>
+    <li><strong>Calculate the final output</strong> column using the intermediate results.</li>
 </ol>
 
-<h3>Worked Example: A AND (NOT B)</h3>
+<h3>Worked Example 1: A AND (NOT B) &mdash; Two Inputs</h3>
+<p style="text-align:left">Step 1: Two inputs (A, B), so 2<sup>2</sup> = 4 rows. Step 2: Add intermediate column for NOT B. Step 3: Calculate final output.</p>
 <table>
     <tr><th>A</th><th>B</th><th>NOT B</th><th>A AND (NOT B)</th></tr>
     <tr><td>0</td><td>0</td><td>1</td><td>0</td></tr>
@@ -103,9 +202,10 @@
     <tr><td>1</td><td>0</td><td>1</td><td><strong>1</strong></td></tr>
     <tr><td>1</td><td>1</td><td>0</td><td>0</td></tr>
 </table>
-<p>Step by step: first calculate NOT B for each row (intermediate column), then calculate A AND (NOT B) using the A column and the NOT B column. The output is 1 only when A=1 AND B=0.</p>
+<p style="text-align:left"><strong>Interpretation:</strong> The output is 1 only when A is true AND B is false. In code: "if the alarm is set AND the door is NOT locked, trigger the alert."</p>
 
-<h3>Worked Example: (A OR B) AND (NOT C) &mdash; Three Inputs</h3>
+<h3>Worked Example 2: (A OR B) AND (NOT C) &mdash; Three Inputs</h3>
+<p style="text-align:left">Three inputs = 2<sup>3</sup> = 8 rows. Two intermediate columns needed: (A OR B) and (NOT C).</p>
 <table>
     <tr><th>A</th><th>B</th><th>C</th><th>A OR B</th><th>NOT C</th><th>(A OR B) AND (NOT C)</th></tr>
     <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
@@ -117,8 +217,54 @@
     <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td><strong>1</strong></td></tr>
     <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
 </table>
+<p style="text-align:left"><strong>Interpretation:</strong> Output is 1 when at least one of A or B is true, AND C is false. In code: "if (the student has a pass OR the teacher approves) AND the exam is NOT cancelled, allow entry to the exam room."</p>
 
-<div class="exam-tip"><strong>AND</strong> needs BOTH inputs to be True. <strong>OR</strong> needs at least one. <strong>NOT</strong> flips the value. <strong>NAND</strong> and <strong>NOR</strong> are AND/OR with the output inverted. <strong>XOR</strong> is True only when inputs DIFFER. When constructing truth tables, <strong>always work through intermediate columns first</strong> &mdash; this avoids mistakes and earns method marks even if the final answer has an error. For 2 inputs: 4 rows. For 3 inputs: 8 rows.</div>
+<h3>Worked Example 3: NOT (A AND B) OR C &mdash; Three Inputs</h3>
+<p style="text-align:left">This one requires careful attention to the order of operations. NOT applies to (A AND B) first, then the result is OR'd with C.</p>
+<table>
+    <tr><th>A</th><th>B</th><th>C</th><th>A AND B</th><th>NOT (A AND B)</th><th>NOT(A AND B) OR C</th></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td><strong>1</strong></td></tr>
+</table>
+<p style="text-align:left">The output is 0 only when A=1, B=1, and C=0 (the only row where NAND gives 0 and C does not rescue it with OR).</p>
+
+<h3>Common Boolean Expressions in Programming</h3>
+<table style="text-align: left;">
+    <tr><th>Expression</th><th>Meaning</th><th>When It Is True</th></tr>
+    <tr><td><code>x > 5 AND x &lt; 10</code></td><td>x is between 5 and 10 (exclusive)</td><td>x = 6, 7, 8, or 9</td></tr>
+    <tr><td><code>age &lt; 18 OR age > 65</code></td><td>Age is below 18 or above 65</td><td>A child or a senior citizen</td></tr>
+    <tr><td><code>NOT loggedIn</code></td><td>The user is NOT logged in</td><td>loggedIn is False</td></tr>
+    <tr><td><code>score >= 50 AND attempts &lt;= 3</code></td><td>Score at least 50 with 3 or fewer attempts</td><td>Both conditions must hold simultaneously</td></tr>
+    <tr><td><code>NOT (a == b)</code></td><td>a and b are NOT equal</td><td>Equivalent to <code>a != b</code></td></tr>
+    <tr><td><code>(isAdmin OR isModerator) AND isActive</code></td><td>User has elevated privileges AND is active</td><td>Active admin or active moderator</td></tr>
+</table>
+
+<h3>Writing a Boolean Expression from a Truth Table</h3>
+<p style="text-align:left">Sometimes an exam question gives you a truth table and asks you to write the Boolean expression. The method is:</p>
+<ol style="text-align:left">
+    <li>Find all rows where the output is <strong>1</strong>.</li>
+    <li>For each of these rows, write an AND expression using the input values (use NOT for any input that is 0).</li>
+    <li>OR all these AND expressions together.</li>
+</ol>
+<pre style="text-align:left">
+Example: Given this truth table, find the expression:
+  A  B  Q
+  0  0  0
+  0  1  1    ← Q=1 when A=0, B=1:  (NOT A) AND B
+  1  0  1    ← Q=1 when A=1, B=0:  A AND (NOT B)
+  1  1  0
+
+Expression: Q = ((NOT A) AND B) OR (A AND (NOT B))
+This is actually XOR! Q = A XOR B
+</pre>
+
+<div class="exam-tip"><strong>AND</strong> needs BOTH inputs to be True. <strong>OR</strong> needs at least one. <strong>NOT</strong> flips the value. <strong>NAND</strong> and <strong>NOR</strong> are AND/OR with the output inverted. <strong>XOR</strong> is True only when inputs DIFFER. When constructing truth tables, <strong>always add intermediate columns</strong> for sub-expressions &mdash; this avoids mistakes and earns method marks even if the final answer has an error. For 2 inputs: 4 rows. For 3 inputs: 8 rows. Count up in binary to fill in the input columns systematically (never skip or repeat a combination).</div>
 
 </div>
 </body>

@@ -21,6 +21,8 @@
         .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
         .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
         @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
     </style>
 </head>
@@ -30,97 +32,198 @@
 <h1>1.6 Ethical, Legal, Cultural and Environmental Impacts</h1>
 <p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 1</p>
 
-<p>Digital technology affects society in many ways. Exam questions expect you to discuss <strong>both sides</strong> of issues (benefits AND drawbacks) and reference <strong>specific legislation</strong> by name and year.</p>
+<p>Digital technology affects every aspect of modern society. Exam questions on this topic expect you to discuss <strong>both sides</strong> of issues (benefits AND drawbacks), reference <strong>specific legislation by name and year</strong>, and give considered, balanced arguments. This is one of the few areas where there are no definitively "right" answers &mdash; the marks come from the quality of your reasoning and the breadth of your discussion.</p>
 
 <h2>1.6.1 Ethical Issues</h2>
 
-<table>
-    <tr><th>Issue</th><th>Key Points</th><th>Arguments For / Against</th></tr>
-    <tr><td><strong>Privacy and surveillance</strong></td><td>Mass data collection (browsing history, location, purchases) often happens without full informed consent. Facial recognition identifies individuals in public spaces. Governments and companies can monitor communications at scale.</td><td><strong>For:</strong> Helps prevent crime and terrorism; protects national security. <strong>Against:</strong> Infringes right to privacy; chilling effect on free speech; risk of misuse; disproportionately affects minorities.</td></tr>
-    <tr><td><strong>AI and algorithmic bias</strong></td><td>AI systems make automated decisions in hiring, policing, credit scoring, healthcare, and justice. If trained on biased historical data, they perpetuate and amplify those biases.</td><td><strong>For:</strong> AI can be more consistent and faster than humans; removes some human biases. <strong>Against:</strong> "Black box" decisions are hard to explain or challenge; can discriminate against protected groups; accountability is unclear.</td></tr>
-    <tr><td><strong>Digital divide</strong></td><td>Unequal access to technology across rich/poor, urban/rural, and developed/developing nations. Also an age divide (older generations may lack digital skills).</td><td>Those without access are excluded from online education, banking, healthcare, government services, and employment opportunities. Widens existing inequality.</td></tr>
-    <tr><td><strong>Automation and unemployment</strong></td><td>Robots and AI replacing human workers in manufacturing, customer service, transport, retail, and data analysis.</td><td><strong>For:</strong> Increases efficiency, reduces costs, eliminates dangerous jobs. <strong>Against:</strong> Job losses cause economic hardship; ethical duty to retrain workers; benefits may not be shared equally. New job types may emerge but require different skills.</td></tr>
-    <tr><td><strong>Cyberbullying</strong></td><td>Technology enables harassment, trolling, and abuse at unprecedented scale. Online abuse can be anonymous, persistent (hard to remove), and reach a wide audience. Particularly harmful to young people.</td><td>Platforms have a responsibility to moderate content and protect users. Victims may suffer serious mental health impacts including anxiety, depression, and self-harm. Schools and parents need education strategies.</td></tr>
-    <tr><td><strong>Misinformation</strong></td><td>Social media algorithms can amplify fake news, conspiracy theories, and propaganda because sensational content drives engagement. Deepfakes make it harder to distinguish real from fabricated content.</td><td>Undermines trust in institutions, science, and democracy. Particularly dangerous during elections and public health crises. Fact-checking and media literacy are partial solutions.</td></tr>
-</table>
+<div class="definition">
+    <strong>Ethics</strong> in computing refers to the moral principles that guide how technology should be developed, deployed, and used. Ethical issues are not the same as legal issues &mdash; something can be legal but unethical (e.g., a company collecting excessive personal data within the law), or illegal but arguably ethical (e.g., a whistleblower exposing harmful practices).
+</div>
+
+<h3>Privacy and Surveillance</h3>
+<p>Mass data collection is now routine. Companies track browsing history, location, purchases, social media activity, and communications &mdash; often without users' full understanding or informed consent. Governments use surveillance cameras, facial recognition, and communications monitoring for law enforcement and national security.</p>
+<ul>
+    <li><strong>Arguments for surveillance:</strong> Helps prevent and solve crime and terrorism; protects national security; can improve public services (e.g., traffic management); assists in finding missing persons; deters antisocial behaviour.</li>
+    <li><strong>Arguments against:</strong> Infringes the right to privacy (a fundamental human right); creates a "chilling effect" on free speech (people self-censor if they know they are being watched); risk of misuse by authoritarian governments; disproportionately affects minority communities; data breaches can expose sensitive personal information; the power imbalance between those surveilling and those being surveilled.</li>
+</ul>
+
+<h3>AI and Algorithmic Bias</h3>
+<p>Artificial intelligence systems increasingly make or influence decisions about people &mdash; in hiring, criminal sentencing, credit scoring, healthcare, insurance, and content recommendation. These systems learn from historical data, which may contain biases.</p>
+<ul>
+    <li><strong>Arguments for AI decision-making:</strong> Can process more information than humans; more consistent (does not have bad days); faster; can identify patterns humans miss; potentially removes individual human prejudice.</li>
+    <li><strong>Arguments against:</strong> If trained on biased data, AI amplifies and systematises those biases at scale; "black box" decisions are difficult to explain, challenge, or appeal; accountability is unclear when an AI makes a harmful decision (who is responsible &mdash; the programmer, the company, the user?); can perpetuate discrimination against protected groups.</li>
+</ul>
+
+<h3>Digital Divide</h3>
+<p>The <strong>digital divide</strong> is the gap between those who have access to modern technology and internet connectivity and those who do not. This divide exists along several dimensions:</p>
+<ul>
+    <li><strong>Economic:</strong> Low-income households may not be able to afford devices, broadband, or data plans.</li>
+    <li><strong>Geographic:</strong> Rural areas often have slower or no broadband compared to urban areas.</li>
+    <li><strong>Global:</strong> Developing nations have far lower internet penetration than developed nations.</li>
+    <li><strong>Age:</strong> Older generations may lack digital skills or confidence with technology.</li>
+    <li><strong>Impact:</strong> Those without access are excluded from online education, banking, healthcare appointments, government services, job applications, and social connections. The COVID-19 pandemic highlighted how those without internet access were severely disadvantaged when schools and workplaces moved online.</li>
+</ul>
+
+<h3>Automation and Employment</h3>
+<p>Robots, AI, and software automation are replacing human workers across many industries &mdash; manufacturing, customer service (chatbots), transport (self-driving vehicles), retail (self-checkout), data analysis, and even creative fields.</p>
+<ul>
+    <li><strong>Arguments for automation:</strong> Increases efficiency and reduces costs; eliminates dangerous, repetitive, or unpleasant jobs; can work 24/7 without breaks; higher quality and consistency; frees humans for more creative, fulfilling work; new technology industries create new types of jobs.</li>
+    <li><strong>Arguments against:</strong> Mass job losses cause economic hardship, particularly for low-skilled workers; widening income inequality (benefits go to company owners, not displaced workers); ethical duty to retrain affected workers; transition period can be painful for communities; new jobs may require different skills that displaced workers lack; social and psychological impact of unemployment.</li>
+</ul>
+
+<h3>Cyberbullying and Online Harassment</h3>
+<p>Technology enables harassment at unprecedented scale. Online abuse can be anonymous, persistent (difficult to remove permanently), searchable, and reach a global audience. Particularly harmful to young people.</p>
+<ul>
+    <li>Platforms have a responsibility to moderate content, provide reporting mechanisms, and protect vulnerable users.</li>
+    <li>Victims may suffer serious mental health impacts including anxiety, depression, isolation, and self-harm.</li>
+    <li>Schools, parents, and technology companies all share responsibility for education, prevention, and response.</li>
+    <li>Legislation (such as the Online Safety Act 2023) places legal duties on platforms to protect users from harmful content.</li>
+</ul>
+
+<h3>Misinformation and Deepfakes</h3>
+<p>Social media algorithms are designed to maximise engagement, which means they often amplify sensational, controversial, or emotionally provocative content &mdash; including false information. Deepfake technology (AI-generated fake video/audio) makes it increasingly difficult to distinguish real from fabricated content.</p>
+<ul>
+    <li>Misinformation undermines trust in institutions, science, and democratic processes.</li>
+    <li>Particularly dangerous during elections (propaganda), public health crises (anti-vaccine misinformation), and conflicts (disinformation).</li>
+    <li>Solutions include fact-checking, media literacy education, platform moderation, and technical detection tools &mdash; but none is fully effective.</li>
+</ul>
+
+<div class="exam-tip">For ethical questions, always present <strong>both sides</strong> of the argument. Structure your answer: state the issue, give arguments for, give arguments against, and (if asked) give your reasoned conclusion. Do not just list points &mdash; explain and develop them. Use specific examples where possible. The best answers show awareness that these issues involve genuine tensions between competing values (privacy vs security, efficiency vs employment, innovation vs equality).</div>
 
 <h2>1.6.2 Key UK Legislation</h2>
 
+<p>You must know four key pieces of legislation by <strong>name and year</strong>, understand what each covers, and be able to apply them to specific scenarios.</p>
+
+<h3>Data Protection Act 2018 / UK GDPR</h3>
+<div class="definition">
+    The <strong>Data Protection Act 2018</strong> (incorporating the UK GDPR) controls the collection, storage, processing, and use of <strong>personal data</strong>. It replaced the 1998 Act and strengthened individuals' rights over their data.
+</div>
+
+<p><strong>Key principles &mdash; organisations must:</strong></p>
+<ol>
+    <li><strong>Lawfulness, fairness, transparency</strong> &mdash; process data lawfully and be transparent about how it is used.</li>
+    <li><strong>Purpose limitation</strong> &mdash; collect data only for specified, explicit purposes and not use it for anything else.</li>
+    <li><strong>Data minimisation</strong> &mdash; collect only the data that is necessary (do not collect data "just in case").</li>
+    <li><strong>Accuracy</strong> &mdash; keep data accurate and up to date.</li>
+    <li><strong>Storage limitation</strong> &mdash; do not keep data longer than necessary; delete it when no longer needed.</li>
+    <li><strong>Security</strong> &mdash; store data securely using appropriate technical measures (encryption, access controls, secure backups).</li>
+</ol>
+
+<p><strong>Individual rights:</strong></p>
+<ul>
+    <li><strong>Right of access</strong> &mdash; request a copy of all personal data held about you (Subject Access Request).</li>
+    <li><strong>Right to rectification</strong> &mdash; have inaccurate data corrected.</li>
+    <li><strong>Right to erasure</strong> &mdash; request deletion of your data ("right to be forgotten") in certain circumstances.</li>
+    <li><strong>Right to object</strong> &mdash; object to processing of your data for direct marketing.</li>
+    <li><strong>Right to data portability</strong> &mdash; receive your data in a machine-readable format to transfer to another service.</li>
+</ul>
+
+<p>Enforced by the <strong>ICO (Information Commissioner's Office)</strong> with fines up to 17.5 million pounds or 4% of global annual turnover (whichever is greater).</p>
+
+<h3>Computer Misuse Act 1990</h3>
+<div class="definition">
+    The <strong>Computer Misuse Act 1990</strong> makes it a criminal offence to access or modify computer systems without authorisation. It was introduced in response to early hacking cases and has been amended several times to address evolving cyber threats.
+</div>
+
+<p><strong>Three key sections (frequently examined):</strong></p>
 <table>
-    <tr><th>Act</th><th>Year</th><th>Key Provisions</th><th>Why It Matters for CS</th></tr>
-    <tr>
-        <td><strong>Data Protection Act / UK GDPR</strong></td>
-        <td>2018</td>
-        <td>Controls the collection, storage, processing, and use of <strong>personal data</strong>. Organisations must: process data lawfully and transparently; collect only what is necessary; keep data accurate and up to date; store it securely; delete it when no longer needed. Individuals have rights to: access their data, correct inaccuracies, request deletion ("right to be forgotten"), and object to processing. Enforced by the <strong>ICO</strong> (Information Commissioner's Office) with fines up to &pound;17.5 million or 4% of global turnover.</td>
-        <td>Any system that stores personal data (name, email, address, health records, browsing history) must comply. Developers must implement encryption, access controls, and data minimisation.</td>
-    </tr>
-    <tr>
-        <td><strong>Computer Misuse Act</strong></td>
-        <td>1990</td>
-        <td><strong>Section 1:</strong> Unauthorised access to computer material (e.g., guessing someone's password to access their account) &mdash; up to 2 years imprisonment.<br>
-        <strong>Section 2:</strong> Unauthorised access with intent to commit a further offence (e.g., hacking to commit fraud) &mdash; up to 5 years.<br>
-        <strong>Section 3:</strong> Unauthorised modification of computer material (e.g., deploying malware, deleting files, DDoS attacks) &mdash; up to 10 years.<br>
-        Section 3A: Making/supplying/obtaining tools for computer misuse.</td>
-        <td>Protects computer systems from hacking, malware, and sabotage. Even accessing a system "just to look" without permission is a criminal offence under Section 1.</td>
-    </tr>
-    <tr>
-        <td><strong>Copyright, Designs and Patents Act</strong></td>
-        <td>1988</td>
-        <td>Protects <strong>creative works</strong> (software source code, music, images, videos, written content, website designs) from being copied, distributed, modified, or sold without the creator's permission. Copyright is automatic &mdash; no registration needed. Lasts for the creator's lifetime plus 70 years.</td>
-        <td>Pirating software, downloading music illegally, copying code without a licence, and using images from the internet without permission are all violations.</td>
-    </tr>
-    <tr>
-        <td><strong>Freedom of Information Act</strong></td>
-        <td>2000</td>
-        <td>Gives the public the right to request information held by <strong>public authorities</strong> (government, councils, NHS, police, schools). Must respond within 20 working days. Exemptions exist for national security, personal data, and law enforcement.</td>
-        <td>Promotes government transparency and accountability. Enforced by the ICO.</td>
-    </tr>
+    <tr><th>Section</th><th>Offence</th><th>Example</th><th>Maximum Penalty</th></tr>
+    <tr><td><strong>Section 1</strong></td><td>Unauthorised <strong>access</strong> to computer material</td><td>Guessing or cracking someone's password to access their email or social media account. Even just looking at data you are not authorised to see, without modifying anything, is an offence.</td><td>Up to 2 years imprisonment</td></tr>
+    <tr><td><strong>Section 2</strong></td><td>Unauthorised access with <strong>intent to commit a further offence</strong></td><td>Hacking into a bank system with the intention of committing fraud; accessing a database to steal personal data for identity theft.</td><td>Up to 5 years imprisonment</td></tr>
+    <tr><td><strong>Section 3</strong></td><td>Unauthorised <strong>modification</strong> of computer material</td><td>Deploying malware (viruses, ransomware); deleting someone's files; launching a DDoS attack; modifying a website without permission (defacement).</td><td>Up to 10 years imprisonment</td></tr>
 </table>
+
+<p><strong>Section 3A</strong> (added 2006) makes it illegal to make, supply, or obtain tools intended for use in computer misuse offences.</p>
+
+<p><strong>Important distinction:</strong> Penetration testing (ethical hacking) is legal when performed with <strong>written authorisation</strong> from the system owner. Without authorisation, the same actions are criminal offences under this Act.</p>
+
+<h3>Copyright, Designs and Patents Act 1988</h3>
+<div class="definition">
+    The <strong>Copyright, Designs and Patents Act 1988</strong> protects <strong>creative works</strong> from being copied, distributed, modified, or sold without the creator's permission. Copyright is automatic &mdash; no registration is needed. The creator owns the copyright as soon as the work is created.
+</div>
+
+<p><strong>What is protected:</strong> Software source code and executables; music, audio recordings, and song lyrics; photographs and digital images; videos and films; written content (articles, books, blog posts, documentation); website designs; databases; game designs; artistic works.</p>
+
+<p><strong>Common violations in computing:</strong></p>
+<ul>
+    <li>Pirating software (downloading cracked versions or sharing licence keys)</li>
+    <li>Downloading music, films, or TV shows illegally (torrenting copyrighted content)</li>
+    <li>Copying code from another programmer without permission or proper licence</li>
+    <li>Using images from the internet without the photographer's permission</li>
+    <li>Copying and redistributing e-books or digital publications</li>
+</ul>
+
+<p>Copyright lasts for the creator's lifetime plus 70 years. Penalties include fines and up to 10 years imprisonment for serious commercial piracy.</p>
+
+<h3>Freedom of Information Act 2000</h3>
+<p>Gives the public the right to request information held by <strong>public authorities</strong> (government departments, councils, NHS, police, schools, universities). Public authorities must respond within 20 working days. Exemptions exist for national security, personal data, law enforcement, and commercial sensitivity. Promotes government transparency and accountability. Enforced by the ICO.</p>
 
 <h2>1.6.3 Software Licences</h2>
 
+<p>Software licences define how software can be used, modified, and distributed. Understanding the difference between open source and proprietary software is essential.</p>
+
 <table>
     <tr><th>Feature</th><th>Open Source</th><th>Proprietary (Closed Source)</th></tr>
-    <tr><td><strong>Source code</strong></td><td>Publicly available &mdash; anyone can view, study, and learn from it</td><td>Kept secret &mdash; only the compiled executable is distributed</td></tr>
-    <tr><td><strong>Cost</strong></td><td>Usually free to download, use, and distribute</td><td>Usually requires purchase (one-time licence or subscription)</td></tr>
-    <tr><td><strong>Modification</strong></td><td>Users can modify and customise the software to suit their needs</td><td>Modification is not permitted &mdash; users must use it as-is</td></tr>
-    <tr><td><strong>Distribution</strong></td><td>Can be freely redistributed (subject to licence terms like GPL or MIT)</td><td>Cannot be copied or shared without the publisher's permission</td></tr>
-    <tr><td><strong>Support</strong></td><td>Community-driven (forums, documentation); paid support available from specialist companies</td><td>Professional vendor support (phone, email, SLA guarantees)</td></tr>
-    <tr><td><strong>Security</strong></td><td>Code is transparent &mdash; vulnerabilities can be found and fixed by anyone. "Many eyes make all bugs shallow." But attackers can also read the code.</td><td>"Security through obscurity" &mdash; code is hidden. Vulnerabilities are fixed by the vendor on their schedule. Users depend on the vendor to issue patches promptly.</td></tr>
-    <tr><td><strong>Examples</strong></td><td>Linux, Firefox, LibreOffice, Python, VLC, Android (AOSP), WordPress</td><td>Microsoft Windows, Microsoft Office, Adobe Photoshop, macOS, iOS</td></tr>
+    <tr><td><strong>Source code</strong></td><td>Publicly available &mdash; anyone can view, study, learn from, and audit it</td><td>Kept secret &mdash; only the compiled executable is distributed. Users cannot see how it works internally.</td></tr>
+    <tr><td><strong>Cost</strong></td><td>Usually free to download, use, and distribute. Some companies offer paid support or premium features.</td><td>Usually requires purchase (one-time licence fee, subscription, or freemium model)</td></tr>
+    <tr><td><strong>Modification</strong></td><td>Users can modify and customise the software. Can adapt it for specific needs, fix bugs themselves, or add features.</td><td>Modification is not permitted. Users must use the software as-is and wait for the vendor to make changes.</td></tr>
+    <tr><td><strong>Distribution</strong></td><td>Can be freely redistributed (subject to licence terms like GPL, MIT, Apache). GPL requires that derivative works also be open source.</td><td>Cannot be copied, shared, or redistributed without the publisher's permission. Licence is typically per-user or per-device.</td></tr>
+    <tr><td><strong>Support</strong></td><td>Community-driven: forums, documentation, Stack Overflow, GitHub issues. Paid professional support available from specialist companies (e.g., Red Hat for Linux).</td><td>Professional vendor support: phone, email, live chat, guaranteed response times (SLAs). Training and certification programmes.</td></tr>
+    <tr><td><strong>Security</strong></td><td>Transparent code means vulnerabilities can be found and fixed by anyone in the community &mdash; "many eyes make all bugs shallow." But attackers can also read the code to find exploits.</td><td>"Security through obscurity" &mdash; code is hidden. Vulnerabilities are found and fixed by the vendor on their schedule. Users depend entirely on the vendor to issue patches promptly.</td></tr>
+    <tr><td><strong>Examples</strong></td><td>Linux, Firefox, LibreOffice, Python, VLC, Android (AOSP), WordPress, Apache, MySQL</td><td>Microsoft Windows, Microsoft Office, Adobe Photoshop, macOS, iOS, Final Cut Pro</td></tr>
 </table>
 
-<p><strong>When to recommend each:</strong></p>
-<ul>
-    <li><strong>Open source</strong> is better when: budget is limited; customisation is needed; the user has technical skills; community support is sufficient; vendor independence is important.</li>
-    <li><strong>Proprietary</strong> is better when: professional vendor support is essential; the software is specialised with no open-source equivalent; ease of use and polish are priorities; the organisation can afford the licence cost.</li>
-</ul>
+<h3>Recommending a Licence Type for a Scenario</h3>
+<pre>
+Scenario: A small charity with limited budget needs office software.
+→ Open source (LibreOffice). Free to use, reducing costs. Community
+  support is available. The charity does not need advanced features
+  that justify the cost of Microsoft Office.
+
+Scenario: A large bank needs a database system for financial records.
+→ Proprietary (e.g., Oracle). Professional vendor support with
+  guaranteed response times (SLA) is critical for a bank. The bank
+  can afford the licence cost and needs the reliability, compliance
+  features, and support guarantees that come with enterprise software.
+
+Scenario: A student learning to program.
+→ Open source (Python, VS Code). Free to use, widely documented,
+  large learning community. Being able to read source code aids
+  learning. No cost barrier to getting started.
+
+Scenario: A graphic design studio producing professional work.
+→ Proprietary (Adobe Photoshop/Illustrator). Industry-standard
+  tools with no open-source equivalent of the same quality.
+  Client compatibility requires specific file formats. Professional
+  support and training available.
+</pre>
 
 <h2>1.6.4 Cultural and Environmental Impacts</h2>
 
 <h3>Cultural Impacts of Technology</h3>
-<ul>
-    <li><strong>Social media</strong> connects people globally but also spreads misinformation, creates echo chambers, and can harm mental health</li>
-    <li><strong>Remote working</strong> enabled by video conferencing and cloud tools provides flexibility but can blur work-life boundaries and increase isolation</li>
-    <li><strong>Streaming services</strong> (Netflix, Spotify) disrupted traditional TV, music, and film industries, changing how content is created and consumed</li>
-    <li><strong>E-commerce</strong> (Amazon, online shopping) grew significantly; high street shops declined, changing town centres and communities</li>
-    <li><strong>Online education</strong> increases access to learning but may disadvantage those without reliable internet or devices (digital divide)</li>
-    <li><strong>Gaming culture</strong> is now mainstream entertainment but raises concerns about addiction, screen time, and online safety for young people</li>
-    <li><strong>Digital communication</strong> (messaging, video calls) keeps families and friends connected but may reduce face-to-face interaction skills</li>
-</ul>
+<p>Technology has fundamentally changed how people live, work, communicate, and consume media:</p>
+
+<table>
+    <tr><th>Area</th><th>Positive Impact</th><th>Negative Impact</th></tr>
+    <tr><td><strong>Social media and communication</strong></td><td>Connects people globally; enables communities around shared interests; amplifies marginalised voices; facilitates grassroots organising and activism</td><td>Spreads misinformation; creates echo chambers and political polarisation; can harm mental health (unrealistic comparisons, addiction, cyberbullying); reduces face-to-face social skills</td></tr>
+    <tr><td><strong>Working practices</strong></td><td>Remote working provides flexibility, eliminates commuting, opens opportunities regardless of location; video conferencing and cloud tools enable global collaboration</td><td>Blurs work-life boundaries ("always on" culture); can increase isolation; digital monitoring of employees raises privacy concerns; not all jobs can be done remotely (deepens inequality)</td></tr>
+    <tr><td><strong>Entertainment and media</strong></td><td>Streaming services provide vast libraries of content on demand; independent creators can reach global audiences; interactive entertainment (gaming) is now mainstream</td><td>Disrupted traditional industries (music, film, publishing, journalism); piracy challenges creators' livelihoods; concerns about screen time and addiction, especially for young people</td></tr>
+    <tr><td><strong>Shopping and commerce</strong></td><td>E-commerce offers convenience, wider choice, price comparison; enables small businesses to reach global markets</td><td>High street shops closing, changing town centres and communities; exploitation of gig economy workers (delivery drivers); concerns about monopoly power of large platforms</td></tr>
+    <tr><td><strong>Education</strong></td><td>Online learning increases access to education globally; resources available 24/7; personalised learning; enables lifelong learning</td><td>Digital divide excludes those without reliable internet or devices; concerns about quality of online-only learning; reduced social interaction between students</td></tr>
+    <tr><td><strong>Health and wellbeing</strong></td><td>Telehealth appointments increase access; health monitoring wearables; online mental health resources; AI-assisted diagnosis</td><td>Excessive screen time linked to health issues; social media linked to anxiety and depression in young people; technology addiction; reduced physical activity</td></tr>
+</table>
 
 <h3>Environmental Impacts</h3>
 <table>
     <tr><th>Negative Impacts</th><th>Positive Impacts</th></tr>
-    <tr><td><strong>Data centres</strong> consume enormous amounts of electricity (1-2% of global electricity) for computing and cooling. AI training (large language models) has a significant carbon footprint.</td><td><strong>Smart grids</strong> and IoT sensors optimise energy distribution, reducing waste and integrating renewable sources more effectively.</td></tr>
-    <tr><td><strong>E-waste</strong> &mdash; discarded electronics contain toxic materials (lead, mercury, cadmium, lithium). Much e-waste is exported to developing countries for unsafe informal recycling.</td><td><strong>Remote working</strong> reduces commuting (fewer cars on the road), office heating/cooling, and business travel, significantly cutting carbon emissions.</td></tr>
-    <tr><td><strong>Mining rare earth metals</strong> (cobalt, lithium, tantalum) for device manufacturing causes environmental destruction, water pollution, and human exploitation in developing countries.</td><td><strong>Precision agriculture</strong> uses sensors, drones, and AI to optimise water usage, fertiliser application, and crop monitoring, reducing environmental impact.</td></tr>
-    <tr><td><strong>Planned obsolescence</strong> &mdash; manufacturers design devices with short lifespans or stop providing software updates, creating unnecessary waste.</td><td><strong>Electric vehicle technology</strong> and smart traffic management reduce transport emissions.</td></tr>
-    <tr><td><strong>Manufacturing carbon footprint</strong> &mdash; producing and shipping devices worldwide generates significant greenhouse gas emissions.</td><td><strong>Environmental monitoring</strong> using satellite imagery, sensor networks, and AI tracks deforestation, pollution, wildlife populations, and climate change.</td></tr>
-    <tr><td></td><td><strong>Dematerialisation</strong> &mdash; digital alternatives reduce physical resource use (e-books, streaming music, video conferencing replacing travel, digital tickets).</td></tr>
+    <tr><td><strong>Data centres</strong> consume enormous amounts of electricity (estimated 1-2% of global electricity) for computing and cooling. Training large AI models has a significant and growing carbon footprint. Cloud computing shifts energy use from individual devices to centralised facilities, but overall energy demand is increasing.</td><td><strong>Smart grids</strong> and IoT sensors optimise energy distribution, reduce waste, and help integrate renewable energy sources more effectively. Smart meters help consumers reduce energy usage.</td></tr>
+    <tr><td><strong>E-waste (electronic waste)</strong> is one of the fastest-growing waste streams globally. Discarded electronics contain toxic materials (lead, mercury, cadmium, lithium, brominated flame retardants). Much e-waste is exported to developing countries where informal recycling exposes workers and communities to hazardous substances.</td><td><strong>Remote working</strong> reduces commuting (fewer cars, less fuel), office heating/cooling, and business travel (replaced by video conferencing), significantly reducing carbon emissions.</td></tr>
+    <tr><td><strong>Mining rare earth metals</strong> (cobalt, lithium, tantalum, neodymium) for device batteries, processors, and screens causes environmental destruction, water pollution, habitat loss, and human exploitation (including child labour in some cobalt mines).</td><td><strong>Precision agriculture</strong> uses sensors, drones, GPS, and AI to optimise water usage, fertiliser application, and crop monitoring. Reduces waste, chemical runoff, and environmental impact while improving yields.</td></tr>
+    <tr><td><strong>Planned obsolescence</strong> &mdash; manufacturers design devices with short lifespans, non-replaceable batteries, or stop providing software updates, forcing consumers to buy new devices more frequently. This creates unnecessary waste.</td><td><strong>Environmental monitoring</strong> using satellite imagery, sensor networks, and AI tracks deforestation, pollution levels, wildlife populations, ocean temperatures, and climate change &mdash; providing data essential for conservation efforts.</td></tr>
+    <tr><td><strong>Manufacturing and shipping</strong> &mdash; producing devices involves energy-intensive manufacturing processes and global supply chains that generate significant greenhouse gas emissions.</td><td><strong>Dematerialisation</strong> &mdash; digital alternatives reduce physical resource use: e-books replace printed books, streaming replaces physical media (CDs/DVDs), digital tickets replace paper, video calls replace some travel, cloud storage reduces need for physical media.</td></tr>
 </table>
 
-<div class="exam-tip">Know all <strong>three sections of the Computer Misuse Act</strong> (this is frequently examined with specific scenarios). For open source vs proprietary, be able to <strong>recommend one for a given scenario</strong> with justification. For impact questions, <strong>always give both sides</strong> (positive AND negative) with specific examples. Name legislation by its full name and year.</div>
+<div class="exam-tip">Know all <strong>three sections of the Computer Misuse Act 1990</strong> with specific examples for each &mdash; this is one of the most frequently examined topics in this unit. Be able to <strong>recommend open source or proprietary software for a given scenario</strong> with clear justification. For impact questions, <strong>always give both sides</strong> (positive AND negative) with specific examples. Name legislation by its <strong>full name and year</strong> &mdash; saying just "the Data Protection Act" without the year loses marks. For ethical questions, structure your answer with clear paragraphs covering different perspectives.</div>
 
 </div>
 </body>

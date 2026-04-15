@@ -33,205 +33,495 @@
 <p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 2</p>
 
 <h2>2.2.1 Data Types and Casting</h2>
+
+<p>Every piece of data in a program has a <strong>data type</strong> that determines what kind of value it holds, how much memory it uses, and what operations can be performed on it. Using the correct data type is essential &mdash; trying to add two strings will concatenate them rather than performing arithmetic.</p>
+
 <table>
-    <tr><th>Type</th><th>Description</th><th>OCR Pseudocode</th><th>Python Example</th></tr>
-    <tr><td><strong>Integer</strong></td><td>Whole number (positive, negative, or zero). No decimal point.</td><td><code>score = 0</code></td><td><code>age = 17</code></td></tr>
-    <tr><td><strong>Real (Float)</strong></td><td>Number with a decimal point (including x.0).</td><td><code>price = 3.99</code></td><td><code>pi = 3.14159</code></td></tr>
-    <tr><td><strong>Boolean</strong></td><td>Only two possible values: <code>True</code> or <code>False</code>.</td><td><code>gameOver = False</code></td><td><code>logged_in = True</code></td></tr>
-    <tr><td><strong>Character</strong></td><td>A single character (letter, digit, symbol, or space).</td><td><code>grade = 'A'</code></td><td><code>initial = 'J'</code></td></tr>
-    <tr><td><strong>String</strong></td><td>A sequence of zero or more characters. Text data.</td><td><code>name = "Jamie"</code></td><td><code>message = "Hello World"</code></td></tr>
+    <tr><th>Type</th><th>Description</th><th>OCR Pseudocode</th><th>Python Example</th><th>When to Use</th></tr>
+    <tr><td><strong>Integer</strong></td><td>Whole number (positive, negative, or zero). No decimal point.</td><td><code>score = 0</code></td><td><code>age = 17</code></td><td>Counting, indexing, quantities that cannot be fractional (number of students, lives remaining)</td></tr>
+    <tr><td><strong>Real (Float)</strong></td><td>Number with a decimal point (including x.0). Can represent fractions.</td><td><code>price = 3.99</code></td><td><code>pi = 3.14159</code></td><td>Measurements, money, percentages, scientific calculations</td></tr>
+    <tr><td><strong>Boolean</strong></td><td>Only two possible values: <code>True</code> or <code>False</code>.</td><td><code>gameOver = False</code></td><td><code>logged_in = True</code></td><td>Flags, conditions, yes/no states, switches</td></tr>
+    <tr><td><strong>Character</strong></td><td>A single character (letter, digit, symbol, or space).</td><td><code>grade = 'A'</code></td><td><code>initial = 'J'</code></td><td>Menu choices, grades, single-character codes</td></tr>
+    <tr><td><strong>String</strong></td><td>A sequence of zero or more characters. Text data.</td><td><code>name = "Jamie"</code></td><td><code>msg = "Hello"</code></td><td>Names, messages, addresses, any text</td></tr>
 </table>
 
 <h3>Casting (Type Conversion)</h3>
-<p><strong>Casting</strong> converts a value from one data type to another. This is necessary when, for example, you read user input (which is always a string) and need to use it as a number.</p>
+<p><strong>Casting</strong> converts a value from one data type to another. This is essential because user input is always received as a string, so you must cast it to the correct type before performing calculations.</p>
 <pre>
-// OCR Pseudocode / Python:
+// OCR Pseudocode and Python casting functions:
 int("5")       // String "5" → Integer 5
 str(42)        // Integer 42 → String "42"
 float("3.14")  // String "3.14" → Real 3.14
-int(7.9)       // Real 7.9 → Integer 7 (truncates, does not round)
+int(7.9)       // Real 7.9 → Integer 7 (TRUNCATES — does NOT round)
 bool(1)        // Integer 1 → Boolean True
 bool(0)        // Integer 0 → Boolean False
 
-// Common use: reading numeric input
-age = int(input("Enter your age: "))   // input() returns a string; int() converts it
+// WHY casting matters:
+"5" + "3" = "53"     // String concatenation (not what we want!)
+int("5") + int("3") = 8  // Arithmetic addition (correct!)
+
+// Common use: reading numeric input in Python
+age = int(input("Enter your age: "))
+// input() returns a string; int() converts it to an integer
+// Without int(), comparing age > 18 would fail or give wrong results
+
+// Casting error: trying to cast non-numeric text to a number
+int("hello")  // This causes a runtime ERROR (ValueError in Python)
+// Always validate input before casting!
 </pre>
+
+<div class="exam-tip">A very common mistake is forgetting to cast input to a number before doing calculations. <code>input()</code> in Python always returns a string. If you need a number, wrap it in <code>int()</code> or <code>float()</code>. Also remember that <code>int()</code> <strong>truncates</strong> (cuts off decimals) rather than rounds: <code>int(7.9)</code> gives 7, not 8.</div>
 
 <h2>2.2.2 Variables, Constants, and Operators</h2>
 
 <h3>Variables and Constants</h3>
 <ul>
-    <li><strong>Variable:</strong> A named storage location in memory whose value <strong>can change</strong> during program execution. E.g., <code>score = 0</code> then later <code>score = score + 10</code>.</li>
-    <li><strong>Constant:</strong> A named value that <strong>cannot change</strong> once set. Declared with <code>const</code> in OCR pseudocode. E.g., <code>const TAX_RATE = 0.2</code>. Using constants makes code more readable and easier to maintain (change the value in one place, not everywhere it is used).</li>
-    <li><strong>Local variable:</strong> Exists only inside the subroutine where it is declared. Cannot be accessed from outside. Destroyed when the subroutine finishes.</li>
-    <li><strong>Global variable:</strong> Accessible from anywhere in the program. Persists for the entire program's lifetime. Should be avoided where possible (harder to debug, risk of unintended modification).</li>
+    <li><strong>Variable:</strong> A named storage location in memory whose value <strong>can change</strong> during program execution. The name describes its purpose. E.g., <code>score = 0</code> then later <code>score = score + 10</code>.</li>
+    <li><strong>Constant:</strong> A named value that is set once and <strong>cannot change</strong> after that. Declared with <code>const</code> in OCR pseudocode. E.g., <code>const VAT_RATE = 0.2</code>. Constants make code more readable (the name explains the value) and easier to maintain (change the value in one place instead of everywhere). By convention, constant names use UPPER_CASE.</li>
+    <li><strong>Local variable:</strong> Declared inside a subroutine and exists only within that subroutine. Cannot be accessed from outside. Destroyed when the subroutine finishes. Preferred because it prevents unintended interference between subroutines.</li>
+    <li><strong>Global variable:</strong> Declared outside all subroutines and accessible from anywhere in the program. Persists for the entire program's lifetime. Should be avoided where possible because they make programs harder to debug (any part of the code could change the value unexpectedly) and harder to reuse (subroutines depend on external state).</li>
 </ul>
+
+<pre>
+// Demonstrating local vs global scope:
+
+globalScore = 0                     // global variable
+
+procedure addPoints(points)
+    localBonus = points * 2         // local to this procedure
+    globalScore = globalScore + localBonus
+endprocedure
+
+addPoints(5)
+print(globalScore)                  // prints 10 — global is accessible
+print(localBonus)                   // ERROR! localBonus does not exist here
+
+# Python equivalent:
+global_score = 0
+
+def add_points(points):
+    global global_score             # must declare global to modify it
+    local_bonus = points * 2        # local variable
+    global_score += local_bonus
+
+add_points(5)
+print(global_score)                 # 10
+# print(local_bonus)               # NameError: not defined
+</pre>
 
 <h3>Operators</h3>
 <table>
-    <tr><th>Category</th><th>Operators</th><th>Examples</th></tr>
-    <tr><td><strong>Arithmetic</strong></td><td><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>MOD</code> <code>DIV</code> <code>^</code></td><td><code>7 MOD 3 = 1</code> (remainder). <code>7 DIV 3 = 2</code> (integer division, discards remainder). <code>2^8 = 256</code> (exponentiation).</td></tr>
-    <tr><td><strong>Comparison</strong></td><td><code>==</code> <code>!=</code> <code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code></td><td><code>x == 5</code> (is x equal to 5?). <code>age >= 18</code>. Result is always Boolean (True/False).</td></tr>
-    <tr><td><strong>Boolean / Logical</strong></td><td><code>AND</code> <code>OR</code> <code>NOT</code></td><td><code>x > 5 AND x < 10</code> (both must be true). <code>a OR b</code> (at least one true). <code>NOT loggedIn</code> (inverts).</td></tr>
+    <tr><th>Category</th><th>Operators</th><th>Examples and Explanation</th></tr>
+    <tr><td><strong>Arithmetic</strong></td><td><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>MOD</code> <code>DIV</code> <code>^</code></td><td><code>7 MOD 3 = 1</code> (remainder after division). <code>7 DIV 3 = 2</code> (integer division, discards remainder). <code>2^8 = 256</code> (exponentiation). In Python: <code>%</code> for MOD, <code>//</code> for DIV, <code>**</code> for power.</td></tr>
+    <tr><td><strong>Comparison (Relational)</strong></td><td><code>==</code> <code>!=</code> <code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code></td><td><code>x == 5</code> (is x equal to 5?). <code>age >= 18</code> (is age at least 18?). Result is always Boolean (True or False). Note: <code>==</code> compares values; <code>=</code> assigns values. Confusing these is a very common bug.</td></tr>
+    <tr><td><strong>Boolean / Logical</strong></td><td><code>AND</code> <code>OR</code> <code>NOT</code></td><td><code>x > 5 AND x &lt; 10</code> (both must be true). <code>a OR b</code> (at least one must be true). <code>NOT loggedIn</code> (inverts the Boolean). In Python: <code>and</code>, <code>or</code>, <code>not</code> (lowercase).</td></tr>
 </table>
 
-<p><strong>MOD and DIV are frequently examined:</strong></p>
+<h3>MOD and DIV &mdash; Explained in Depth</h3>
+<p>MOD and DIV are frequently examined because they have many practical uses:</p>
 <pre>
-17 MOD 5 = 2    (17 / 5 = 3 remainder 2)
-17 DIV 5 = 3    (17 / 5 = 3, discard the remainder)
-20 MOD 4 = 0    (20 / 4 = 5, no remainder → divisible!)
+// MOD gives the REMAINDER after integer division:
+17 MOD 5 = 2    (17 / 5 = 3 remainder 2 → MOD gives 2)
+20 MOD 4 = 0    (20 / 4 = 5 remainder 0 → perfectly divisible!)
+7 MOD 2 = 1     (7 / 2 = 3 remainder 1 → odd number)
+8 MOD 2 = 0     (8 / 2 = 4 remainder 0 → even number)
 
-// Practical uses:
-// MOD: check if a number is even: n MOD 2 == 0
-// MOD: extract last digit: 1234 MOD 10 = 4
-// DIV: extract tens digit: (1234 DIV 10) MOD 10 = 3
-// MOD: wrap around: index MOD arrayLength (circular buffer)
+// DIV gives the QUOTIENT (integer part, discarding remainder):
+17 DIV 5 = 3    (17 / 5 = 3.4 → DIV gives 3)
+7 DIV 2 = 3     (7 / 2 = 3.5 → DIV gives 3)
+
+// Practical uses of MOD:
+n MOD 2 == 0          // Check if n is even
+n MOD 10              // Extract the last digit of n (1234 MOD 10 = 4)
+seconds MOD 60        // Convert seconds to remaining seconds (125 MOD 60 = 5)
+index MOD arrayLength // Wrap around (circular buffer/rotation)
+
+// Practical uses of DIV:
+n DIV 10              // Remove the last digit of n (1234 DIV 10 = 123)
+seconds DIV 60        // Convert seconds to whole minutes (125 DIV 60 = 2)
+(n DIV 10) MOD 10     // Extract the tens digit (1234: 123 MOD 10 = 3)
 </pre>
 
 <h2>2.2.3 Sequence, Selection, and Iteration</h2>
 
+<p>Every program, no matter how complex, is built from just three fundamental constructs:</p>
+
 <table>
-    <tr><th>Construct</th><th>Description</th><th>When to Use</th><th>OCR Pseudocode</th></tr>
-    <tr><td><strong>Sequence</strong></td><td>Statements execute <strong>top to bottom</strong> in order, one after another</td><td>When steps must happen in a specific order</td><td><code>x = 5<br>y = x + 3<br>print(y)</code></td></tr>
-    <tr><td><strong>IF selection</strong></td><td>Different code runs depending on whether a condition is True or False</td><td>When the program must make a decision</td><td><code>if score > 50 then<br>&nbsp;&nbsp;print("Pass")<br>else<br>&nbsp;&nbsp;print("Fail")<br>endif</code></td></tr>
-    <tr><td><strong>ELIF (else if)</strong></td><td>Chain multiple conditions</td><td>When there are more than two possible outcomes</td><td><code>if score >= 70 then<br>&nbsp;&nbsp;print("A")<br>elseif score >= 50 then<br>&nbsp;&nbsp;print("B")<br>else<br>&nbsp;&nbsp;print("C")<br>endif</code></td></tr>
-    <tr><td><strong>SWITCH / CASE</strong></td><td>Tests a variable against several specific values</td><td>When comparing one variable to many known values</td><td><code>switch grade:<br>&nbsp;&nbsp;case 'A': print("Excellent")<br>&nbsp;&nbsp;case 'B': print("Good")<br>&nbsp;&nbsp;default: print("Other")<br>endswitch</code></td></tr>
-    <tr><td><strong>FOR loop</strong></td><td>Repeats a <strong>fixed, known</strong> number of times</td><td>When you know in advance how many iterations are needed</td><td><code>for i = 1 to 10<br>&nbsp;&nbsp;print(i)<br>next i</code></td></tr>
-    <tr><td><strong>WHILE loop</strong></td><td>Repeats <strong>while</strong> condition is True. Checks condition <strong>before</strong> each iteration.</td><td>When the number of iterations is unknown; may run 0 times</td><td><code>while pass != "abc"<br>&nbsp;&nbsp;pass = input("Try: ")<br>endwhile</code></td></tr>
-    <tr><td><strong>DO-UNTIL</strong></td><td>Repeats <strong>until</strong> condition becomes True. Checks condition <strong>after</strong> each iteration.</td><td>When the loop body must run <strong>at least once</strong></td><td><code>do<br>&nbsp;&nbsp;x = int(input("> "))<br>until x > 0</code></td></tr>
+    <tr><th>Construct</th><th>Description</th><th>When to Use</th></tr>
+    <tr><td><strong>Sequence</strong></td><td>Statements execute <strong>one after another, top to bottom</strong>, in the order they are written.</td><td>When steps must happen in a specific fixed order. Every program uses sequence.</td></tr>
+    <tr><td><strong>Selection</strong></td><td>The program <strong>chooses</strong> which code to execute based on a condition (IF/ELSE, SWITCH/CASE). Different paths through the code.</td><td>When the program must make a decision: "If this condition is true, do X; otherwise do Y."</td></tr>
+    <tr><td><strong>Iteration (Loops)</strong></td><td>A section of code <strong>repeats</strong> either a set number of times (FOR) or while/until a condition is met (WHILE, DO-UNTIL).</td><td>When actions need to be repeated. Avoids writing the same code multiple times.</td></tr>
 </table>
 
-<div class="exam-tip">Use <strong>FOR</strong> when the count is known in advance; <strong>WHILE</strong> when it is not (and the loop may not run at all); <strong>DO-UNTIL</strong> when the body must execute at least once (e.g., input validation &mdash; ask the user, then check). The key difference between WHILE and DO-UNTIL: WHILE checks the condition <em>before</em> executing; DO-UNTIL checks <em>after</em>.</div>
+<h3>Selection in Detail</h3>
+<pre>
+// ── Simple IF ──────────────────────────────────────────────
+if temperature > 30 then
+    print("It's hot!")
+endif
+
+# Python:
+if temperature > 30:
+    print("It's hot!")
+
+// ── IF-ELSE ────────────────────────────────────────────────
+if age >= 18 then
+    print("Adult")
+else
+    print("Minor")
+endif
+
+# Python:
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+// ── IF-ELSEIF-ELSE (multiple conditions) ───────────────────
+if score >= 70 then
+    grade = "A"
+elseif score >= 60 then
+    grade = "B"
+elseif score >= 50 then
+    grade = "C"
+else
+    grade = "Fail"
+endif
+
+# Python:
+if score >= 70:
+    grade = "A"
+elif score >= 60:
+    grade = "B"
+elif score >= 50:
+    grade = "C"
+else:
+    grade = "Fail"
+
+// ── SWITCH/CASE (test one variable against specific values) ─
+switch day:
+    case "Monday":
+        print("Start of week")
+    case "Friday":
+        print("Nearly weekend")
+    default:
+        print("Midweek")
+endswitch
+
+# Python (match/case from Python 3.10, or use if/elif):
+match day:
+    case "Monday":
+        print("Start of week")
+    case "Friday":
+        print("Nearly weekend")
+    case _:
+        print("Midweek")
+</pre>
+
+<h3>Iteration (Loops) in Detail</h3>
+<pre>
+// ── FOR loop (count-controlled) ────────────────────────────
+// Use when you KNOW how many times the loop should run.
+for i = 1 to 5
+    print(i * i)        // prints: 1, 4, 9, 16, 25
+next i
+
+# Python:
+for i in range(1, 6):   # range(1,6) gives 1,2,3,4,5
+    print(i * i)
+
+// ── WHILE loop (condition-controlled, pre-check) ───────────
+// Use when you DON'T know how many times — may run 0 times.
+// Condition checked BEFORE each iteration.
+attempts = 0
+while attempts &lt; 3 AND password != "secret"
+    password = input("Enter password: ")
+    attempts = attempts + 1
+endwhile
+
+# Python:
+attempts = 0
+while attempts &lt; 3 and password != "secret":
+    password = input("Enter password: ")
+    attempts += 1
+
+// ── DO-UNTIL loop (post-check) ─────────────────────────────
+// Use when the body MUST run at least once.
+// Condition checked AFTER each iteration.
+do
+    choice = input("Enter Y or N: ")
+until choice == "Y" OR choice == "N"
+
+# Python (no do-until; use while True with break):
+while True:
+    choice = input("Enter Y or N: ")
+    if choice == "Y" or choice == "N":
+        break
+</pre>
+
+<div class="exam-tip">Use <strong>FOR</strong> when the count is known in advance; <strong>WHILE</strong> when it is not (and the loop might not run at all); <strong>DO-UNTIL</strong> when the body must execute at least once (e.g., asking for input then validating). The key difference: WHILE checks <em>before</em> the loop body (may run 0 times); DO-UNTIL checks <em>after</em> (always runs at least once). In Python, <code>range(1, 11)</code> gives 1 to 10 (the upper bound is exclusive).</div>
 
 <h2>2.2.4 Arrays (1D and 2D)</h2>
 <div class="definition">
-    An <strong>array</strong> is a fixed-size, ordered collection of elements of the <strong>same data type</strong>, stored in contiguous memory. Elements are accessed by their <strong>index</strong> (position number). OCR arrays are <strong>zero-indexed</strong> &mdash; the first element is at index 0.
+    An <strong>array</strong> is a fixed-size, ordered collection of elements of the <strong>same data type</strong>, stored in contiguous memory. Elements are accessed by their <strong>index</strong> (position number). OCR arrays are <strong>zero-indexed</strong> &mdash; the first element is at index 0, the last is at index (length - 1).
 </div>
-<pre>
-// 1D Array
-array scores[5]           // declare array of 5 elements
-scores[0] = 95            // assign value to first element
-scores[4] = 72            // assign value to last element (index 4, not 5!)
 
-for i = 0 to 4            // loop through all elements
+<pre>
+// ── 1D ARRAY ───────────────────────────────────────────────
+array scores[5]           // declare array of 5 elements (indices 0-4)
+scores[0] = 95            // first element
+scores[1] = 72
+scores[2] = 88
+scores[3] = 41
+scores[4] = 63            // last element (index 4, NOT 5!)
+
+// Looping through all elements:
+for i = 0 to 4
     print(scores[i])
 next i
 
-// 2D Array (table/grid — rows and columns)
+// Finding the maximum value:
+max = scores[0]
+for i = 1 to 4
+    if scores[i] > max then
+        max = scores[i]
+    endif
+next i
+print("Highest score: " + str(max))
+
+// Calculating the average:
+total = 0
+for i = 0 to 4
+    total = total + scores[i]
+next i
+average = total / 5
+print("Average: " + str(average))
+
+# Python equivalent:
+scores = [95, 72, 88, 41, 63]
+for score in scores:
+    print(score)
+print("Highest:", max(scores))
+print("Average:", sum(scores) / len(scores))
+
+// ── 2D ARRAY (table/grid) ──────────────────────────────────
 array grid[3][4]           // 3 rows, 4 columns
-grid[1][2] = 7             // row 1, column 2
+grid[0][0] = "Alice"       // row 0, column 0
+grid[0][1] = 17            // row 0, column 1
+grid[1][0] = "Bob"
+grid[1][1] = 16
 
-// 2D array as a database table:
-// Each row = a record; each column = a field
-// students[0][0] = "Alice"  (row 0, name field)
-// students[0][1] = 17       (row 0, age field)
+// A 2D array is like a table/spreadsheet:
+//          Col 0    Col 1    Col 2    Col 3
+// Row 0:  "Alice"   17       "A"      95
+// Row 1:  "Bob"     16       "B"      82
+// Row 2:  "Carol"   17       "A"      91
 
-// Nested loop to process all elements of a 2D array:
+// Nested loop to print all elements:
 for row = 0 to 2
     for col = 0 to 3
         print(grid[row][col])
     next col
+    print("")   // new line after each row
 next row
+
+# Python:
+grid = [
+    ["Alice", 17, "A", 95],
+    ["Bob", 16, "B", 82],
+    ["Carol", 17, "A", 91]
+]
+for row in grid:
+    for item in row:
+        print(item, end=" ")
+    print()
 </pre>
 
 <h2>2.2.5 String Manipulation</h2>
 <table>
-    <tr><th>Operation</th><th>Description</th><th>Example</th><th>Python</th></tr>
-    <tr><td><strong>Length</strong></td><td>Number of characters in a string</td><td><code>len("Hello") → 5</code></td><td><code>len("Hello")</code></td></tr>
-    <tr><td><strong>Substring</strong></td><td>Extract part of a string</td><td><code>"Hello".substring(1,3) → "ell"</code></td><td><code>"Hello"[1:4]</code></td></tr>
-    <tr><td><strong>Upper / Lower</strong></td><td>Convert case</td><td><code>"hello".upper() → "HELLO"</code></td><td><code>"hello".upper()</code></td></tr>
-    <tr><td><strong>Concatenation</strong></td><td>Join strings together using <code>+</code></td><td><code>"Hello" + " " + "World" → "Hello World"</code></td><td><code>"Hello" + " World"</code></td></tr>
-    <tr><td><strong>ASCII conversion</strong></td><td>Character to/from numeric code</td><td><code>ASC('A') → 65</code> / <code>CHR(65) → 'A'</code></td><td><code>ord('A')</code> / <code>chr(65)</code></td></tr>
+    <tr><th>Operation</th><th>Description</th><th>OCR Pseudocode</th><th>Python</th><th>Result</th></tr>
+    <tr><td><strong>Length</strong></td><td>Number of characters</td><td><code>len("Hello")</code></td><td><code>len("Hello")</code></td><td>5</td></tr>
+    <tr><td><strong>Substring</strong></td><td>Extract part of string</td><td><code>"Hello".substring(1,3)</code></td><td><code>"Hello"[1:4]</code></td><td>"ell"</td></tr>
+    <tr><td><strong>Upper</strong></td><td>Convert to uppercase</td><td><code>"hello".upper</code></td><td><code>"hello".upper()</code></td><td>"HELLO"</td></tr>
+    <tr><td><strong>Lower</strong></td><td>Convert to lowercase</td><td><code>"HELLO".lower</code></td><td><code>"HELLO".lower()</code></td><td>"hello"</td></tr>
+    <tr><td><strong>Concatenation</strong></td><td>Join strings with <code>+</code></td><td><code>"Hi" + " " + "there"</code></td><td><code>"Hi" + " " + "there"</code></td><td>"Hi there"</td></tr>
+    <tr><td><strong>ASCII value</strong></td><td>Character to number</td><td><code>ASC('A')</code></td><td><code>ord('A')</code></td><td>65</td></tr>
+    <tr><td><strong>ASCII char</strong></td><td>Number to character</td><td><code>CHR(65)</code></td><td><code>chr(65)</code></td><td>'A'</td></tr>
 </table>
+
+<pre>
+// Practical string manipulation example — reversing a string:
+original = "Hello"
+reversed = ""
+for i = len(original) - 1 to 0 step -1
+    reversed = reversed + original[i]
+next i
+print(reversed)    // "olleH"
+
+# Python:
+original = "Hello"
+reversed_str = original[::-1]    # slicing shortcut
+print(reversed_str)              # "olleH"
+
+// Checking if a string is a palindrome:
+function isPalindrome(word)
+    word = word.lower
+    reversed = ""
+    for i = len(word) - 1 to 0 step -1
+        reversed = reversed + word[i]
+    next i
+    return word == reversed
+endfunction
+</pre>
 
 <h2>2.2.6 File Handling, Records, SQL, and Random Numbers</h2>
 
 <h3>File Handling</h3>
+<p>Programs need to save data permanently (beyond the program's runtime). File handling allows reading data from files and writing data to files on secondary storage.</p>
 <pre>
-// Reading from a file
-myFile = open("data.txt")          // open file
-data = myFile.readLine()           // read one line
-myFile.close()                     // always close the file
-
-// Writing to a file
-myFile = open("output.txt")
-myFile.writeLine("Hello World")    // write a line
+// ── OCR Pseudocode ─────────────────────────────────────────
+// Reading from a file:
+myFile = open("data.txt")
+while NOT myFile.endOfFile()
+    line = myFile.readLine()
+    print(line)
+endwhile
 myFile.close()
 
-// Python equivalent:
-with open("data.txt", "r") as f:   // "r" = read mode
-    for line in f:
-        print(line.strip())
+// Writing to a file:
+myFile = open("output.txt")
+myFile.writeLine("Hello World")
+myFile.writeLine("Second line")
+myFile.close()
 
-with open("output.txt", "w") as f: // "w" = write mode (overwrites)
+// ── Python ─────────────────────────────────────────────────
+// Reading:
+with open("data.txt", "r") as f:    # "r" = read mode
+    for line in f:
+        print(line.strip())          # strip() removes trailing newline
+
+// Writing (overwrites existing content):
+with open("output.txt", "w") as f:  # "w" = write mode
     f.write("Hello World\n")
+    f.write("Second line\n")
+
+// Appending (adds to end of file):
+with open("log.txt", "a") as f:     # "a" = append mode
+    f.write("New entry\n")
 </pre>
 
+<p>The <code>with</code> statement in Python automatically closes the file when the block ends, even if an error occurs. Always close files when done to prevent data corruption.</p>
+
 <h3>Records</h3>
-<p>A <strong>record</strong> is a collection of related fields of <strong>different data types</strong> grouped together (unlike an array, which stores elements of the same type).</p>
+<p>A <strong>record</strong> is a collection of related fields of <strong>different data types</strong> grouped together (unlike an array, which stores elements of the same type). Each field has a name and a data type.</p>
 <pre>
+// OCR Pseudocode:
 record Student
     name : string
     age : integer
     grade : character
+    average : real
 endrecord
 
-// Create and use a record:
 pupil1 = new Student()
 pupil1.name = "Alice"
 pupil1.age = 17
 pupil1.grade = 'A'
+pupil1.average = 91.5
+
+// Array of records:
+array classList[30] of Student
+classList[0].name = "Alice"
+classList[0].age = 17
 </pre>
 
 <h3>SQL (Structured Query Language)</h3>
+<p>SQL is used to query (search and retrieve) data from databases. You need to know SELECT, FROM, WHERE, and ORDER BY.</p>
 <pre>
-// SELECT: retrieve specific columns FROM a table WHERE conditions are met
+// Basic SELECT query:
 SELECT name, age FROM students WHERE age > 16
-SELECT * FROM products WHERE price < 10.00 AND category = 'Electronics'
-SELECT name, score FROM results WHERE score >= 50 ORDER BY score DESC
 
-// Key clauses:
-// SELECT: which columns to return (* = all)
-// FROM: which table to query
-// WHERE: filter rows by condition
-// ORDER BY: sort results (ASC = ascending, DESC = descending)
+// Select ALL columns:
+SELECT * FROM products WHERE price &lt; 10.00
+
+// Multiple conditions with AND / OR:
+SELECT * FROM products WHERE price &lt; 10.00 AND category = 'Electronics'
+SELECT name FROM students WHERE year = 11 OR year = 12
+
+// Sorting results:
+SELECT name, score FROM results WHERE score >= 50 ORDER BY score DESC
+// ASC = ascending (A-Z, 0-9) — default if not specified
+// DESC = descending (Z-A, 9-0)
+
+// Key SQL clauses explained:
+// SELECT — which columns to return (* means all columns)
+// FROM   — which table to query
+// WHERE  — filter rows by condition (only rows matching are returned)
+// ORDER BY — sort the results
 </pre>
+
+<div class="exam-tip">SQL keywords (SELECT, FROM, WHERE, ORDER BY) are conventionally written in UPPERCASE but the exam accepts lowercase. Remember: SELECT picks <strong>columns</strong>; WHERE filters <strong>rows</strong>. Use AND/OR to combine conditions. Use single quotes around text values in WHERE clauses (e.g., <code>category = 'Electronics'</code>). Numbers do not need quotes.</div>
 
 <h3>Random Numbers</h3>
 <pre>
-x = random(1, 10)    // generates a random integer between 1 and 10 inclusive
+// OCR Pseudocode:
+x = random(1, 6)        // random integer between 1 and 6 inclusive (dice roll)
 
-// Python:
+# Python:
 import random
-x = random.randint(1, 10)    // random integer 1-10
-y = random.random()          // random float 0.0 to 1.0
+x = random.randint(1, 6)     # random integer 1 to 6 inclusive
+y = random.random()           # random float 0.0 to &lt; 1.0
+z = random.choice(["A","B","C"])  # random element from a list
 </pre>
 
 <h2>2.2.7 Subroutines &mdash; Procedures and Functions</h2>
 
+<div class="definition">
+    A <strong>subroutine</strong> is a named block of code that performs a specific task and can be called (invoked) from anywhere in the program. Subroutines come in two types: <strong>procedures</strong> (which perform an action but do not return a value) and <strong>functions</strong> (which perform a calculation and return a result).
+</div>
+
 <table>
     <tr><th>Feature</th><th>Procedure</th><th>Function</th></tr>
-    <tr><td><strong>Returns a value?</strong></td><td><strong>No</strong> &mdash; performs an action but does not return a value</td><td><strong>Yes</strong> &mdash; performs a calculation and returns a result using <code>return</code></td></tr>
-    <tr><td><strong>How called</strong></td><td>Called by name as a statement: <code>greet("Jamie")</code></td><td>Called within an expression: <code>result = square(5)</code></td></tr>
-    <tr><td><strong>Example</strong></td><td><code>procedure greet(name)<br>&nbsp;&nbsp;print("Hello, " + name)<br>endprocedure</code></td><td><code>function square(n)<br>&nbsp;&nbsp;return n * n<br>endfunction</code></td></tr>
+    <tr><td><strong>Returns a value?</strong></td><td><strong>No</strong> &mdash; performs an action (printing, saving, modifying) but does not give a value back</td><td><strong>Yes</strong> &mdash; calculates something and <code>return</code>s the result to the caller</td></tr>
+    <tr><td><strong>How called</strong></td><td>Called as a standalone statement: <code>greet("Jamie")</code></td><td>Called within an expression or assignment: <code>result = square(5)</code></td></tr>
+    <tr><td><strong>OCR Pseudocode</strong></td><td><code>procedure greet(name)<br>&nbsp;&nbsp;print("Hello, " + name)<br>endprocedure</code></td><td><code>function square(n)<br>&nbsp;&nbsp;return n * n<br>endfunction</code></td></tr>
+    <tr><td><strong>Python</strong></td><td><code>def greet(name):<br>&nbsp;&nbsp;print("Hello,", name)</code></td><td><code>def square(n):<br>&nbsp;&nbsp;return n * n</code></td></tr>
 </table>
 
 <h3>Parameters and Arguments</h3>
 <ul>
-    <li><strong>Parameter:</strong> The variable name in the subroutine definition (e.g., <code>name</code> in <code>procedure greet(name)</code>). It is a placeholder.</li>
-    <li><strong>Argument:</strong> The actual value passed when the subroutine is called (e.g., <code>"Jamie"</code> in <code>greet("Jamie")</code>).</li>
+    <li><strong>Parameter:</strong> The variable name in the subroutine <strong>definition</strong>. It is a placeholder that will receive a value when the subroutine is called. E.g., <code>name</code> in <code>procedure greet(name)</code>.</li>
+    <li><strong>Argument:</strong> The actual value passed when the subroutine is <strong>called</strong>. E.g., <code>"Jamie"</code> in <code>greet("Jamie")</code>. The argument is assigned to the parameter.</li>
 </ul>
 
-<h3>Benefits of Subroutines</h3>
+<pre>
+// Multiple parameters example:
+function calculateArea(length, width)
+    return length * width
+endfunction
+
+area = calculateArea(5, 3)     // arguments 5 and 3
+print(area)                     // prints 15
+
+# Python:
+def calculate_area(length, width):
+    return length * width
+
+area = calculate_area(5, 3)
+print(area)   # 15
+</pre>
+
+<h3>Benefits of Using Subroutines</h3>
 <ul>
-    <li><strong>Code reuse:</strong> Write once, call many times from different places. No copy-paste duplication.</li>
-    <li><strong>Easier to debug:</strong> Each subroutine can be tested independently in isolation.</li>
-    <li><strong>Improved readability:</strong> The main program reads like a high-level overview; details are in subroutines.</li>
-    <li><strong>Team development:</strong> Different programmers can work on different subroutines simultaneously.</li>
-    <li><strong>Easier maintenance:</strong> Changing the subroutine's implementation automatically updates everywhere it is called.</li>
+    <li><strong>Code reuse:</strong> Write once, call many times from different places. No copy-paste duplication. If you need the same calculation in 10 places, write one function and call it 10 times.</li>
+    <li><strong>Easier to debug:</strong> Each subroutine can be tested independently in isolation (unit testing). If there is a bug, you only need to fix it in one place.</li>
+    <li><strong>Improved readability:</strong> The main program reads like a high-level overview; details are in subroutines. <code>calculateTax(income)</code> is immediately understandable.</li>
+    <li><strong>Team development:</strong> Different programmers can work on different subroutines simultaneously without interfering with each other.</li>
+    <li><strong>Easier maintenance:</strong> Changing the subroutine's implementation automatically updates everywhere it is called. If the tax rate changes, update one function.</li>
+    <li><strong>Decomposition:</strong> Subroutines are the practical implementation of decomposition &mdash; breaking a large problem into smaller, manageable sub-problems.</li>
 </ul>
 
-<div class="exam-tip"><strong>Procedure = no return value</strong> (it does something but gives nothing back). <strong>Function = returns a value</strong> (it calculates something and gives the result back to the caller). Arrays are <strong>zero-indexed</strong> (first element at index 0, last at index length-1). Use <strong>FOR</strong> when count is known; <strong>WHILE</strong> when it is not. <strong>SQL:</strong> SELECT picks columns, FROM names the table, WHERE filters rows.</div>
+<div class="exam-tip"><strong>Procedure = no return value</strong> (it does something but gives nothing back). <strong>Function = returns a value</strong> (it calculates something and gives the result back). This is the most important distinction. Arrays are <strong>zero-indexed</strong> (first element at index 0, last at index length-1). A common off-by-one error is using <code>length</code> instead of <code>length-1</code> as the last index. For SQL: SELECT picks columns, FROM names the table, WHERE filters rows.</div>
 
 </div>
 </body>

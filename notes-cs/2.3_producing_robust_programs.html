@@ -32,97 +32,318 @@
 <h1>2.3 Producing Robust Programs</h1>
 <p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 2</p>
 
-<p>A <strong>robust program</strong> handles unexpected inputs and situations gracefully without crashing, is thoroughly tested, and is easy for other programmers to understand and maintain.</p>
+<div class="definition">
+    A <strong>robust program</strong> handles unexpected inputs and situations gracefully without crashing, is thoroughly tested to ensure it works correctly, and is written in a way that other programmers can easily read, understand, and maintain. Robustness is not optional &mdash; it is a fundamental quality requirement of all professional software.
+</div>
 
 <h2>2.3.1 Defensive Design</h2>
 
-<p>Defensive design means writing code that anticipates problems before they occur. The goal is to ensure the program behaves correctly even when users make mistakes or deliberately try to break it.</p>
+<p>Defensive design means writing code that <strong>anticipates problems before they occur</strong>. The goal is to ensure the program behaves correctly even when users make mistakes, enter unexpected data, or deliberately try to break it. A defensive programmer assumes that anything that can go wrong will go wrong.</p>
+
+<h3>Anticipating Misuse</h3>
+<p>Users will inevitably enter unexpected input. A robust program must handle all of these gracefully:</p>
+<ul>
+    <li><strong>Wrong data type</strong> &mdash; entering "hello" when a number is expected</li>
+    <li><strong>Out-of-range values</strong> &mdash; entering 999 for age, or -5 for a quantity</li>
+    <li><strong>Empty input</strong> &mdash; pressing Enter without typing anything</li>
+    <li><strong>Special characters</strong> &mdash; entering symbols, SQL code, or HTML tags in text fields</li>
+    <li><strong>Extremely long input</strong> &mdash; pasting thousands of characters into a short field</li>
+    <li><strong>Deliberate attacks</strong> &mdash; SQL injection, cross-site scripting (XSS), buffer overflow attempts</li>
+</ul>
+<p>For each possible misuse, the program should display a <strong>clear, helpful error message</strong> and allow the user to try again &mdash; not crash, freeze, or produce wrong results silently.</p>
+
+<h3>Input Validation</h3>
+<p>Input validation checks that data meets <strong>all requirements</strong> before the program processes it. There are several types of validation check, and a single input may need multiple checks:</p>
 
 <table>
-    <tr><th>Technique</th><th>Description</th><th>Example</th></tr>
-    <tr><td><strong>Anticipating misuse</strong></td><td>Design the program to handle <strong>unexpected or malicious input</strong> without crashing. Assume users will enter wrong data types, leave fields blank, or try to exploit the system.</td><td>If a form asks for age, what if the user enters "abc", -5, 999, or leaves it blank? The program must handle all these cases with clear error messages, not crash.</td></tr>
-    <tr><td><strong>Input validation</strong></td><td>Check that data meets <strong>all requirements</strong> before processing it. Common checks: range check, type check, length check, presence check, format check.</td><td><strong>Range check:</strong> age must be 0-120. <strong>Type check:</strong> age must be an integer (not text). <strong>Length check:</strong> password must be 8-64 characters. <strong>Presence check:</strong> email field must not be empty. <strong>Format check:</strong> email must contain '@' and a domain.</td></tr>
-    <tr><td><strong>Authentication</strong></td><td>Verify the <strong>identity</strong> of a user before granting access to the system or specific features.</td><td>Username/password login screen. <strong>Two-factor authentication (2FA):</strong> password + SMS code or authenticator app. Biometric: fingerprint or facial recognition.</td></tr>
+    <tr><th>Check Type</th><th>What It Checks</th><th>Example</th></tr>
+    <tr><td><strong>Range check</strong></td><td>Value falls within an acceptable minimum-maximum range</td><td>Age must be between 0 and 120. Temperature must be between -50 and 60. Quantity must be 1 or more.</td></tr>
+    <tr><td><strong>Type check</strong></td><td>Data is the correct data type</td><td>Age must be an integer (not "twelve" or "17.5"). Price must be a number. Name must not contain digits.</td></tr>
+    <tr><td><strong>Length check</strong></td><td>Input has an acceptable number of characters</td><td>Password must be 8-64 characters. Postcode must be 6-8 characters. Phone number must be 11 digits.</td></tr>
+    <tr><td><strong>Presence check</strong></td><td>Field is not empty &mdash; something was actually entered</td><td>Email field must not be blank. Name field is required. All mandatory fields must be filled.</td></tr>
+    <tr><td><strong>Format check</strong></td><td>Input matches a required pattern or structure</td><td>Email must contain '@' and a domain (e.g., user@example.com). Date must be DD/MM/YYYY. Postcode must match UK format (e.g., SW1A 1AA).</td></tr>
+    <tr><td><strong>Look-up check</strong></td><td>Value exists in a predefined list of acceptable values</td><td>Country must be from a list of valid countries. Product code must exist in the database. Title must be Mr, Mrs, Ms, Dr, etc.</td></tr>
 </table>
 
 <pre>
-// Input validation example (OCR pseudocode):
+// ── Input validation example (OCR pseudocode) ──────────────
+// Combining range check + type check using a DO-UNTIL loop:
+
 do
-    age = int(input("Enter your age (0-120): "))
-    if age < 0 OR age > 120 then
+    age = input("Enter your age (0-120): ")
+    if NOT isInteger(age) then
+        print("Error: please enter a whole number.")
+    elseif int(age) &lt; 0 OR int(age) > 120 then
         print("Error: age must be between 0 and 120.")
     endif
-until age >= 0 AND age <= 120
+until isInteger(age) AND int(age) >= 0 AND int(age) &lt;= 120
+age = int(age)
 
-// Python equivalent with error handling:
+// ── Python equivalent with full error handling ─────────────
 while True:
+    user_input = input("Enter your age (0-120): ")
+
+    # Presence check
+    if user_input == "":
+        print("Error: this field cannot be empty.")
+        continue
+
+    # Type check
     try:
-        age = int(input("Enter your age (0-120): "))
-        if 0 <= age <= 120:
-            break
-        else:
-            print("Error: age must be between 0 and 120.")
+        age = int(user_input)
     except ValueError:
         print("Error: please enter a whole number.")
+        continue
+
+    # Range check
+    if age &lt; 0 or age > 120:
+        print("Error: age must be between 0 and 120.")
+        continue
+
+    break  # All checks passed — exit loop
+
+print(f"Your age is {age}")
 </pre>
+
+<pre>
+// ── Email validation example ───────────────────────────────
+function isValidEmail(email)
+    // Presence check
+    if len(email) == 0 then
+        return false
+    endif
+    // Format check: must contain exactly one '@'
+    if email.count("@") != 1 then
+        return false
+    endif
+    // Format check: must have text before and after '@'
+    parts = email.split("@")
+    if len(parts[0]) == 0 OR len(parts[1]) == 0 then
+        return false
+    endif
+    // Format check: domain must contain a '.'
+    if "." not in parts[1] then
+        return false
+    endif
+    return true
+endfunction
+
+# Python:
+def is_valid_email(email):
+    if len(email) == 0:
+        return False
+    if email.count("@") != 1:
+        return False
+    local, domain = email.split("@")
+    if len(local) == 0 or len(domain) == 0:
+        return False
+    if "." not in domain:
+        return False
+    return True
+</pre>
+
+<h3>Authentication</h3>
+<p><strong>Authentication</strong> is the process of verifying a user's identity before granting access to the system or specific features. It answers the question: "Are you who you claim to be?"</p>
+
+<ul>
+    <li><strong>Username and password</strong> &mdash; the most common method. The system compares the entered credentials against stored records. Passwords should be stored as <strong>hashes</strong> (one-way mathematical transformations), not as plain text. If the database is breached, hashed passwords cannot be easily reversed to reveal the original password.</li>
+    <li><strong>Two-factor authentication (2FA)</strong> &mdash; requires two different types of evidence: something you <strong>know</strong> (password) + something you <strong>have</strong> (phone/security key) or something you <strong>are</strong> (fingerprint/face). Much more secure because an attacker needs both factors.</li>
+    <li><strong>Biometric authentication</strong> &mdash; fingerprint scanner, facial recognition, retina scan, voice recognition. Unique to each person and cannot be forgotten or shared. However, biometric data cannot be changed if compromised (unlike a password).</li>
+    <li><strong>CAPTCHA</strong> &mdash; "Completely Automated Public Turing test to tell Computers and Humans Apart." Prevents automated bots from creating accounts, submitting forms, or brute-forcing passwords. Presents a challenge (distorted text, image selection, puzzle) that is easy for humans but difficult for software.</li>
+</ul>
+
+<pre>
+// Simple authentication pseudocode:
+const MAX_ATTEMPTS = 3
+attempts = 0
+authenticated = false
+
+while attempts &lt; MAX_ATTEMPTS AND authenticated == false
+    username = input("Username: ")
+    password = input("Password: ")
+    if checkCredentials(username, password) == true then
+        authenticated = true
+        print("Login successful. Welcome, " + username)
+    else
+        attempts = attempts + 1
+        remaining = MAX_ATTEMPTS - attempts
+        print("Invalid credentials. " + str(remaining) + " attempts remaining.")
+    endif
+endwhile
+
+if authenticated == false then
+    print("Account locked. Contact administrator.")
+endif
+
+# Python:
+MAX_ATTEMPTS = 3
+for attempt in range(MAX_ATTEMPTS):
+    username = input("Username: ")
+    password = input("Password: ")
+    if check_credentials(username, password):
+        print(f"Login successful. Welcome, {username}")
+        break
+    remaining = MAX_ATTEMPTS - attempt - 1
+    print(f"Invalid credentials. {remaining} attempts remaining.")
+else:
+    print("Account locked. Contact administrator.")
+</pre>
+
+<div class="exam-tip">Validation checks data is <strong>reasonable and in the correct format</strong> (is this a valid email address?). Authentication checks the <strong>user's identity</strong> (are you who you claim to be?). These are different concepts &mdash; do not confuse them. Validation prevents bad data; authentication prevents unauthorised access. For validation questions, always name the <strong>specific type of check</strong> (range check, type check, etc.) and explain what it checks.</div>
 
 <h2>2.3.2 Maintainability</h2>
 
-<p>Code that is easy to <strong>read, understand, and modify</strong> by other programmers (or by yourself months later) is said to be maintainable. This is critical in professional software development where teams work on shared codebases over years.</p>
+<p>Code that is easy to <strong>read, understand, and modify</strong> by other programmers (or by yourself months later) is said to be maintainable. In professional software development, code is read far more often than it is written. Multiple programmers work on shared codebases over years. Unmaintainable code becomes a liability &mdash; changes take longer, bugs are harder to find, and the cost of development escalates.</p>
 
 <table>
-    <tr><th>Technique</th><th>Why It Matters</th><th>Example</th></tr>
-    <tr><td><strong>Meaningful variable/subroutine names</strong></td><td>Self-documenting code: the name tells you what it does. <code>totalScore</code> is clear; <code>ts</code> or <code>x</code> is not.</td><td><code>calculateTax(income)</code> vs <code>ct(i)</code>. <code>studentName</code> vs <code>sn</code>. <code>isGameOver</code> vs <code>flag</code>.</td></tr>
-    <tr><td><strong>Comments</strong></td><td>Explain <strong>what a block does and WHY</strong>. Future programmers (including your future self) need context. Do not comment obvious code (<code>x = x + 1 // add 1 to x</code> is pointless).</td><td><code>// Calculate VAT at 20% and add to subtotal</code> before the relevant code block. <code>// Binary search requires sorted data</code> to explain a pre-condition.</td></tr>
-    <tr><td><strong>Indentation</strong></td><td>Visually shows the <strong>structure</strong> of loops, conditions, and subroutines. Makes it easy to see which code is inside which block. Logic errors become easier to spot.</td><td>All code inside an IF block is indented one level; code inside a nested loop is indented two levels.</td></tr>
-    <tr><td><strong>Use of subroutines</strong></td><td>Break code into small, focused modules. Each subroutine does one thing. Individual parts are easier to <strong>test, debug, reuse, and update</strong> independently.</td><td>Instead of 200 lines in main(), have <code>readData()</code>, <code>processScores()</code>, <code>displayResults()</code>. If the display format changes, only <code>displayResults()</code> needs updating.</td></tr>
-    <tr><td><strong>Constants instead of "magic numbers"</strong></td><td>Give meaningful names to fixed values. <code>const MAX_LIVES = 3</code> is clearer than using <code>3</code> throughout the code. If the value needs to change, update one line instead of searching for every occurrence.</td><td><code>const VAT_RATE = 0.2</code> instead of writing <code>0.2</code> in multiple places.</td></tr>
-</table>
-
-<h2>2.3.3 Testing &mdash; Types of Test Data</h2>
-
-<p>Every program must be tested with carefully chosen test data to verify it works correctly. There are three essential types:</p>
-
-<table>
-    <tr><th>Type</th><th>Purpose</th><th>Example (valid range: 1-100)</th></tr>
-    <tr><td><strong>Normal (valid) data</strong></td><td>Confirm the program works correctly with <strong>typical, expected input</strong> that falls well within the valid range.</td><td>Enter <strong>50</strong> &mdash; should be accepted and processed normally. Also test other typical values like 25, 75.</td></tr>
-    <tr><td><strong>Boundary (edge) data</strong></td><td>Test values at the <strong>very edges</strong> of the acceptable range &mdash; both just inside and just outside. These are where off-by-one errors are most likely.</td><td>Enter <strong>1</strong> (lowest valid) and <strong>100</strong> (highest valid) &mdash; should be accepted.<br>Enter <strong>0</strong> (just below range) and <strong>101</strong> (just above range) &mdash; should be rejected.</td></tr>
-    <tr><td><strong>Erroneous (invalid) data</strong></td><td>Confirm the program <strong>rejects bad input gracefully</strong> with a clear error message, without crashing or producing wrong results.</td><td>Enter <strong>-5</strong> (negative), <strong>200</strong> (way out of range), <strong>"hello"</strong> (wrong data type), or <strong>leave blank</strong> (empty input) &mdash; should display a clear error message and ask again.</td></tr>
+    <tr><th>Technique</th><th>Why It Matters</th><th>Good vs Bad Example</th></tr>
+    <tr><td><strong>Meaningful names</strong></td><td>Names should describe the purpose of the variable, function, or constant. Self-documenting code is code that explains itself through clear naming. Avoids needing excessive comments.</td><td>Good: <code>totalScore</code>, <code>studentName</code>, <code>calculateTax(income)</code>, <code>isGameOver</code><br>Bad: <code>ts</code>, <code>sn</code>, <code>ct(i)</code>, <code>flag</code>, <code>x</code>, <code>temp2</code></td></tr>
+    <tr><td><strong>Comments</strong></td><td>Explain <strong>what a block does and WHY</strong>, not obvious single lines. Future programmers need context for complex logic. Comment the intent, not the mechanics.</td><td>Good: <code>// Apply 20% discount for loyalty members</code><br>Bad: <code>// add 1 to x</code> (this is obvious from the code itself and adds no value)</td></tr>
+    <tr><td><strong>Indentation</strong></td><td>Visually shows the <strong>structure</strong> of the code. Makes it immediately clear which lines are inside loops, conditions, and functions. Logic errors (like code accidentally outside a loop) become visible.</td><td>All code inside an IF block is indented one level; nested loops are indented further. Consistent indentation (always 4 spaces or always 1 tab, never mixed).</td></tr>
+    <tr><td><strong>Subroutines</strong></td><td>Break code into small, focused, reusable modules. Each subroutine does <strong>one thing well</strong>. The main program reads as a high-level overview.</td><td>Good: <code>readData()</code>, <code>processScores()</code>, <code>displayResults()</code><br>Bad: One giant main function with 500 lines doing everything</td></tr>
+    <tr><td><strong>Constants</strong></td><td>Give meaningful names to fixed values. <code>const MAX_LIVES = 3</code> is clearer than magic number <code>3</code> scattered through code. Change value in one place, not dozens.</td><td>Good: <code>const VAT_RATE = 0.2</code> then <code>tax = price * VAT_RATE</code><br>Bad: <code>tax = price * 0.2</code> (what is 0.2? Why 0.2?)</td></tr>
+    <tr><td><strong>Consistent style</strong></td><td>Follow a consistent naming convention (camelCase or snake_case), consistent spacing, consistent brace placement. Mixed styles make code harder to scan.</td><td>Pick one style and stick to it throughout the entire project.</td></tr>
 </table>
 
 <pre>
-// Test plan for a program that accepts ages 1-120:
-| Test # | Input    | Type      | Expected Result              |
-|--------|----------|-----------|------------------------------|
-| 1      | 25       | Normal    | Accepted, processed normally |
-| 2      | 65       | Normal    | Accepted, processed normally |
-| 3      | 1        | Boundary  | Accepted (lower boundary)    |
-| 4      | 120      | Boundary  | Accepted (upper boundary)    |
-| 5      | 0        | Boundary  | Rejected with error message  |
-| 6      | 121      | Boundary  | Rejected with error message  |
-| 7      | -5       | Erroneous | Rejected with error message  |
-| 8      | "abc"    | Erroneous | Rejected with error message  |
-| 9      | ""       | Erroneous | Rejected with error message  |
-| 10     | 3.5      | Erroneous | Rejected (not a whole number)|
+// ── POORLY MAINTAINED CODE ─────────────────────────────────
+x=0
+for i=0 to 9
+y=int(input(""))
+if y>x then
+x=y
+endif
+next i
+print(x)
+// What does this do? Hard to tell without careful analysis.
+
+// ── WELL MAINTAINED CODE (same logic) ──────────────────────
+// Find and display the highest score from 10 user inputs
+const NUM_ENTRIES = 10
+highestScore = 0
+
+for i = 0 to NUM_ENTRIES - 1
+    score = int(input("Enter score " + str(i + 1) + ": "))
+    if score > highestScore then
+        highestScore = score
+    endif
+next i
+
+print("The highest score is: " + str(highestScore))
+// Clear names, comments, constants, indentation — easy to understand.
 </pre>
+
+<h2>2.3.3 Testing &mdash; Types of Test Data</h2>
+
+<p>Every program must be tested with carefully chosen test data to verify it works correctly under all conditions. There are three essential categories of test data. A thorough test plan includes examples of all three.</p>
+
+<table>
+    <tr><th>Type</th><th>Purpose</th><th>Example (valid range: 1-100)</th></tr>
+    <tr><td><strong>Normal (valid) data</strong></td><td>Confirm the program works correctly with <strong>typical, expected input</strong> that falls comfortably within the valid range. Tests the "happy path" &mdash; what happens when everything is correct.</td><td>Enter <strong>50</strong> &mdash; should be accepted and processed normally.<br>Also test: 25, 75, 42 (various typical values).</td></tr>
+    <tr><td><strong>Boundary (edge) data</strong></td><td>Test values at the <strong>very edges</strong> of the acceptable range &mdash; both just inside and just outside. Off-by-one errors (using > instead of >=, or &lt; instead of &lt;=) are the most common logic bugs, and boundary testing catches them.</td><td>Enter <strong>1</strong> (lowest valid) &mdash; should be accepted.<br>Enter <strong>100</strong> (highest valid) &mdash; should be accepted.<br>Enter <strong>0</strong> (just below range) &mdash; should be rejected.<br>Enter <strong>101</strong> (just above range) &mdash; should be rejected.</td></tr>
+    <tr><td><strong>Erroneous (invalid) data</strong></td><td>Confirm the program <strong>rejects bad input gracefully</strong> with a clear error message, without crashing, freezing, or producing wrong results silently.</td><td>Enter <strong>-5</strong> (negative number).<br>Enter <strong>999</strong> (way out of range).<br>Enter <strong>"hello"</strong> (wrong data type).<br>Enter <strong>""</strong> (empty/blank).<br>Enter <strong>3.5</strong> (decimal when integer expected).<br>All should display appropriate error messages.</td></tr>
+</table>
+
+<h3>Writing a Complete Test Plan</h3>
+<p>A test plan documents what will be tested, with what data, and what the expected result should be. During testing, the actual result is compared to the expected result. Any mismatch indicates a bug.</p>
+
+<pre>
+// Test plan for: "Enter a percentage mark (0-100), display grade"
+// A: 70-100, B: 60-69, C: 50-59, Fail: 0-49
+
+| Test | Input  | Type      | Expected Result                    | Pass? |
+|------|--------|-----------|------------------------------------|-------|
+| 1    | 75     | Normal    | Accepted, displays "Grade: A"      |       |
+| 2    | 55     | Normal    | Accepted, displays "Grade: C"      |       |
+| 3    | 30     | Normal    | Accepted, displays "Grade: Fail"   |       |
+| 4    | 0      | Boundary  | Accepted, displays "Grade: Fail"   |       |
+| 5    | 100    | Boundary  | Accepted, displays "Grade: A"      |       |
+| 6    | 50     | Boundary  | Accepted, displays "Grade: C"      |       |
+| 7    | 49     | Boundary  | Accepted, displays "Grade: Fail"   |       |
+| 8    | 70     | Boundary  | Accepted, displays "Grade: A"      |       |
+| 9    | 69     | Boundary  | Accepted, displays "Grade: B"      |       |
+| 10   | -1     | Boundary  | Rejected with error message        |       |
+| 11   | 101    | Boundary  | Rejected with error message        |       |
+| 12   | -50    | Erroneous | Rejected with error message        |       |
+| 13   | 200    | Erroneous | Rejected with error message        |       |
+| 14   | "abc"  | Erroneous | Rejected with error message        |       |
+| 15   | ""     | Erroneous | Rejected with error message        |       |
+| 16   | 72.5   | Erroneous | Rejected (not whole number)        |       |
+
+Note: boundary tests check EVERY boundary between grades (49/50,
+69/70) plus the overall range boundaries (0, 100, -1, 101).
+</pre>
+
+<div class="exam-tip">Always test <strong>BOTH sides of every boundary</strong>. If the valid range is 1-10, test: 0 (invalid), 1 (valid boundary), 10 (valid boundary), and 11 (invalid). If there are internal boundaries (e.g., grade boundaries at 50, 60, 70), test both sides of each: 49 and 50, 59 and 60, 69 and 70. This is where off-by-one bugs hide. In exam test plans, include at least one normal, two boundary pairs, and two erroneous values.</div>
 
 <h2>2.3.4 Testing Strategies</h2>
 
 <table>
-    <tr><th>Strategy</th><th>When</th><th>Description</th><th>Tools Used</th></tr>
-    <tr><td><strong>Iterative testing</strong></td><td>Throughout development (ongoing)</td><td>Each module/subroutine is tested <strong>as it is written</strong>, before moving on to the next. Errors are caught early when they are cheaper and easier to fix. Individual components are tested in isolation.</td><td>Print statements (to check variable values at key points); trace tables; debugger stepping; breakpoints; unit tests.</td></tr>
-    <tr><td><strong>Final (terminal) testing</strong></td><td>After development is complete</td><td>Testing of the <strong>complete, integrated program</strong>. Checks that all parts work together correctly. Tests every execution path through the program. Includes user acceptance testing (UAT) where real users test the system.</td><td>Full test plan with all test data types; integration tests; system tests; UAT; performance/stress testing.</td></tr>
+    <tr><th>Strategy</th><th>When</th><th>Description</th><th>Advantage</th></tr>
+    <tr><td><strong>Iterative testing</strong></td><td>Throughout development (ongoing, continuous)</td><td>Each module or subroutine is tested <strong>as it is written</strong>, before moving on to the next. Errors are caught immediately while the code is fresh in the programmer's mind. Individual components are tested in isolation.</td><td>Bugs found early are cheaper and easier to fix. The programmer knows exactly which code they just changed, so the source of a bug is easy to identify. Prevents errors from accumulating.</td></tr>
+    <tr><td><strong>Final (terminal) testing</strong></td><td>After development is complete</td><td>Testing of the <strong>complete, integrated program</strong>. Checks that all parts work together correctly (integration). Tests every execution path. Includes User Acceptance Testing (UAT) where real end-users test the system against their requirements.</td><td>Verifies the whole system works as intended. Catches integration bugs (where individual modules work alone but fail together). UAT ensures the system meets user expectations.</td></tr>
 </table>
 
-<h3>Types of Errors</h3>
+<p><strong>Both strategies are needed.</strong> Iterative testing alone misses integration issues. Final testing alone catches bugs too late when they are expensive to fix. Professional development uses both: iterative testing during development (often automated as unit tests), followed by final integration and acceptance testing.</p>
+
+<h3>Debugging Tools and Techniques</h3>
+<ul>
+    <li><strong>Print statements:</strong> Insert temporary <code>print()</code> statements to display variable values at key points. Simple but effective for small programs. Remove or comment out after debugging.</li>
+    <li><strong>Trace tables:</strong> Manually track variable values step by step through the algorithm on paper. Excellent for finding logic errors in loops and conditions.</li>
+    <li><strong>Debugger (IDE feature):</strong> Step through code one line at a time, inspecting variable values at each step. Set breakpoints to pause execution at specific lines. Far more powerful than print statements for complex programs.</li>
+    <li><strong>Watch windows:</strong> Monitor specific variable values continuously as the program executes in the debugger.</li>
+    <li><strong>Test logs:</strong> Record all test results systematically to track which tests pass and which fail, making it easy to verify fixes.</li>
+</ul>
+
+<h2>2.3.5 Types of Errors</h2>
+
+<p>Programs can contain three types of errors. Understanding the differences is essential for debugging:</p>
+
 <table>
-    <tr><th>Error Type</th><th>What It Is</th><th>When Detected</th><th>Example</th></tr>
-    <tr><td><strong>Syntax error</strong></td><td>The code breaks the rules of the programming language. The program <strong>cannot run</strong> at all.</td><td>At compile/interpretation time (before the program runs)</td><td>Missing colon, misspelled keyword (<code>prnit</code> instead of <code>print</code>), mismatched brackets, missing <code>endif</code>.</td></tr>
-    <tr><td><strong>Logic error</strong></td><td>The code runs without crashing but produces <strong>wrong results</strong>. The algorithm is incorrect.</td><td>During testing (comparing actual output to expected output)</td><td>Using <code>+</code> instead of <code>-</code>; wrong comparison operator (<code>></code> instead of <code>>=</code>); loop runs one too many or too few times (off-by-one error).</td></tr>
-    <tr><td><strong>Runtime error</strong></td><td>The program crashes <strong>during execution</strong> due to an operation that cannot be performed.</td><td>During execution</td><td>Division by zero; accessing an array index that does not exist; trying to open a file that does not exist; running out of memory.</td></tr>
+    <tr><th>Error Type</th><th>What It Is</th><th>When Detected</th><th>Examples</th><th>How to Fix</th></tr>
+    <tr><td><strong>Syntax error</strong></td><td>The code breaks the grammatical rules of the programming language. The program <strong>cannot run at all</strong> &mdash; the translator (compiler/interpreter) refuses to process it.</td><td>At compile/interpretation time (before the program runs). The translator highlights the error with a line number and description.</td><td>Missing colon after <code>if</code> in Python; misspelled keyword (<code>prnit</code> instead of <code>print</code>); mismatched brackets or quotes; missing <code>endif</code> or <code>endwhile</code>; using <code>=</code> instead of <code>==</code> for comparison (in some languages).</td><td>Read the error message carefully &mdash; it usually tells you the line number and what is wrong. Fix the syntax and try again.</td></tr>
+    <tr><td><strong>Logic error</strong></td><td>The code runs without crashing but produces <strong>wrong results</strong>. The algorithm or formula is incorrect. The hardest type to find because there is no error message.</td><td>During testing, by comparing actual output to expected output. The program appears to work but gives incorrect answers.</td><td>Using <code>+</code> instead of <code>-</code>; wrong comparison (<code>></code> instead of <code>>=</code>); loop running one too many or too few times (off-by-one); using the wrong variable; conditions in the wrong order; calculating average as <code>total * count</code> instead of <code>total / count</code>.</td><td>Use trace tables, print statements, or a debugger to track variable values step by step. Compare actual behaviour to expected behaviour. Check formulas and conditions carefully.</td></tr>
+    <tr><td><strong>Runtime error</strong></td><td>The program starts running but <strong>crashes during execution</strong> when it attempts an impossible operation.</td><td>During execution. The program halts with an error message (exception/traceback).</td><td>Division by zero (<code>x / 0</code>); accessing an array index that does not exist (<code>list[10]</code> when list has 5 elements); trying to open a file that does not exist; converting invalid text to a number (<code>int("hello")</code>); stack overflow from infinite recursion; running out of memory.</td><td>Add validation to prevent the impossible operation (check divisor is not zero, check index is in range, check file exists). Use try/except (Python) to catch and handle exceptions gracefully.</td></tr>
 </table>
 
-<div class="exam-tip">Always include <strong>all three types of test data</strong> (normal, boundary, erroneous) in test plans. For boundary testing, test <strong>BOTH sides of every boundary</strong> &mdash; if the valid range is 1-10, you need to test 0 (invalid), 1 (valid boundary), 10 (valid boundary), and 11 (invalid). This is where bugs hide. For error types: syntax = cannot run (detected by translator); logic = runs but wrong answer; runtime = crashes during execution.</div>
+<pre>
+// ── SYNTAX ERROR ───────────────────────────────────────────
+# Python:
+if age > 18                    # Missing colon → SyntaxError
+    print("Adult")
+
+# Fixed:
+if age > 18:                   # Colon added
+    print("Adult")
+
+// ── LOGIC ERROR ────────────────────────────────────────────
+# Calculating average incorrectly:
+total = 10 + 20 + 30           # = 60
+count = 3
+average = total * count        # = 180 (WRONG! Should be total / count)
+
+# Fixed:
+average = total / count        # = 20 (correct)
+
+// ── RUNTIME ERROR ──────────────────────────────────────────
+# Division by zero:
+marks = 0
+average = total / marks        # ZeroDivisionError! Program crashes.
+
+# Fixed with validation:
+if marks != 0:
+    average = total / marks
+else:
+    print("Error: cannot divide by zero")
+
+# Fixed with exception handling:
+try:
+    average = total / marks
+except ZeroDivisionError:
+    print("Error: cannot calculate average with zero marks")
+</pre>
+
+<div class="exam-tip">The key distinctions: <strong>Syntax error</strong> = program cannot run at all (detected by the translator before execution). <strong>Logic error</strong> = program runs but produces wrong results (no error message &mdash; detected only by testing). <strong>Runtime error</strong> = program crashes during execution (error message/traceback at the point of failure). A common exam question gives a piece of code and asks you to identify what type of error it contains and how to fix it. Logic errors are the hardest to find because the program does not crash &mdash; it just silently gives wrong answers.</div>
 
 </div>
 </body>

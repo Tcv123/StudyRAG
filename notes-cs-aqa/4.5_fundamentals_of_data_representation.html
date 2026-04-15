@@ -6,89 +6,26 @@
     <title>AQA 4.5 — Fundamentals of Data Representation</title>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.7;
-            color: #1a1a1a;
-            background: #ffffff;
-            padding: 40px;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.7; color: #1a1a1a; background: #ffffff; padding: 40px; }
         .container { max-width: 800px; margin: 0 auto; }
-        h1 {
-            font-size: 2rem;
-            color: #1a1a2e;
-            border-bottom: 3px solid #1a1a2e;
-            padding-bottom: 10px;
-            margin-bottom: 8px;
-        }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 10px; margin-bottom: 8px; }
         .spec-code { font-size: 0.95rem; color: #555; margin-bottom: 30px; }
-        h2 {
-            font-size: 1.5rem;
-            color: #16213e;
-            margin-top: 40px;
-            margin-bottom: 12px;
-            border-left: 4px solid #0f3460;
-            padding-left: 12px;
-        }
-        h3 {
-            font-size: 1.15rem;
-            color: #0f3460;
-            margin-top: 24px;
-            margin-bottom: 8px;
-        }
+        h2 { font-size: 1.5rem; color: #16213e; margin-top: 40px; margin-bottom: 12px; border-left: 4px solid #0f3460; padding-left: 12px; }
+        h3 { font-size: 1.15rem; color: #0f3460; margin-top: 24px; margin-bottom: 8px; }
+        h4 { font-size: 1.05rem; color: #374151; margin-top: 18px; margin-bottom: 6px; }
         p { margin-bottom: 12px; }
         ul, ol { margin-bottom: 12px; padding-left: 24px; }
         li { margin-bottom: 4px; }
         strong { color: #1a1a2e; }
-        .definition {
-            background: #e8f0fe;
-            border-left: 4px solid #1a73e8;
-            padding: 14px 18px;
-            border-radius: 4px;
-            margin: 14px 0;
-        }
-        .exam-tip {
-            background: #fff8e1;
-            border-left: 4px solid #f9a825;
-            padding: 14px 18px;
-            border-radius: 4px;
-            margin: 14px 0;
-        }
+        .definition { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 4px; margin: 14px 0; }
+        .exam-tip { background: #fff8e1; border-left: 4px solid #f9a825; padding: 14px 18px; border-radius: 4px; margin: 14px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #e65100; }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 14px 0;
-            font-size: 0.95rem;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px 12px;
-            text-align: left;
-        }
+        table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.95rem; }
+        th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
         th { background: #f0f0f0; font-weight: 600; }
-        code {
-            font-family: 'Consolas', 'Courier New', monospace;
-            background: #f5f5f5;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.92em;
-        }
-        pre {
-            background: #f5f5f5;
-            padding: 16px;
-            border-radius: 6px;
-            overflow-x: auto;
-            margin: 14px 0;
-            font-family: 'Consolas', 'Courier New', monospace;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        @media print {
-            body { padding: 20px; font-size: 11pt; }
-            h2 { page-break-after: avoid; }
-            .definition, .exam-tip { break-inside: avoid; }
-        }
+        code { font-family: 'Consolas', 'Courier New', monospace; background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 0.92em; }
+        pre { background: #f5f5f5; padding: 16px; border-radius: 6px; overflow-x: auto; margin: 14px 0; font-family: 'Consolas', 'Courier New', monospace; font-size: 0.9rem; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } h2 { page-break-after: avoid; } .definition, .exam-tip { break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -101,289 +38,247 @@
 <h2>4.5.1 Number Systems</h2>
 
 <h3>Number Bases</h3>
-<p>Computers fundamentally operate in binary (base 2), but we use multiple number bases for convenience. Each base uses a different set of digits and a different positional weighting system.</p>
 <table>
-    <tr><th>Base</th><th>Name</th><th>Digits Used</th><th>Prefix</th><th>Why Used</th></tr>
+    <tr><th>Base</th><th>Name</th><th>Digits</th><th>Prefix</th><th>Why Used</th></tr>
     <tr><td>2</td><td>Binary</td><td>0, 1</td><td><code>0b</code></td><td>Native language of digital electronics (two voltage states)</td></tr>
-    <tr><td>10</td><td>Denary (Decimal)</td><td>0&ndash;9</td><td>None</td><td>Human-friendly; the system we grow up with</td></tr>
-    <tr><td>16</td><td>Hexadecimal</td><td>0&ndash;9, A&ndash;F</td><td><code>0x</code></td><td>Compact representation of binary; 1 hex digit = 4 bits</td></tr>
+    <tr><td>10</td><td>Denary (Decimal)</td><td>0&ndash;9</td><td>None</td><td>Human-friendly</td></tr>
+    <tr><td>16</td><td>Hexadecimal</td><td>0&ndash;9, A&ndash;F</td><td><code>0x</code></td><td>Compact binary representation; 1 hex digit = 4 bits</td></tr>
 </table>
 
 <h3>Why Hexadecimal?</h3>
-<p>Hexadecimal is widely used in computing because it provides a compact, human-readable representation of binary data. Each hex digit maps to exactly 4 binary bits, making conversions trivial. Common uses include:</p>
+<p>Hex provides a compact, human-readable representation of binary. Each hex digit maps to exactly 4 binary bits. Common uses:</p>
 <ul>
-    <li><strong>Memory addresses:</strong> <code>0x7FFF0000</code> is far easier to read than 32 binary digits</li>
-    <li><strong>Colour codes:</strong> <code>#FF5733</code> represents RGB values (FF=255 red, 57=87 green, 33=51 blue)</li>
+    <li><strong>Memory addresses:</strong> <code>0x7FFF0000</code> is far more readable than 32 binary digits</li>
+    <li><strong>Colour codes:</strong> <code>#FF5733</code> (FF=255 red, 57=87 green, 33=51 blue)</li>
     <li><strong>MAC addresses:</strong> <code>4A:3B:2C:1D:0E:FF</code></li>
-    <li><strong>Error codes and debugging:</strong> memory dumps are displayed in hex</li>
-    <li><strong>Assembly language:</strong> operands are often written in hex</li>
+    <li><strong>Error codes and debugging:</strong> memory dumps displayed in hex</li>
 </ul>
 
 <h3>Conversions</h3>
 
 <p><strong>Binary to Denary:</strong> Multiply each bit by its place value (powers of 2) and sum.</p>
-<pre>
-  1 0 1 1 0 1
+<pre>  1 0 1 1 0 1
   32 16 8 4 2 1
-  32 + 0 + 8 + 4 + 0 + 1 = 45
-</pre>
+  32 + 0 + 8 + 4 + 0 + 1 = 45</pre>
 
-<p><strong>Denary to Binary:</strong> Repeatedly divide by 2 and record remainders (read bottom to top), or subtract the largest power of 2 that fits.</p>
-<pre>
-  Method 1: Repeated division        Method 2: Subtraction
-  45 / 2 = 22 r1                     45 - 32 = 13  (bit 5 = 1)
-  22 / 2 = 11 r0                     13 - 16? No   (bit 4 = 0)
-  11 / 2 = 5  r1                     13 - 8  = 5   (bit 3 = 1)
-   5 / 2 = 2  r1                      5 - 4  = 1   (bit 2 = 1)
-   2 / 2 = 1  r0                      1 - 2? No    (bit 1 = 0)
-   1 / 2 = 0  r1                      1 - 1  = 0   (bit 0 = 1)
-  Read bottom-up: 101101              Result: 101101
-</pre>
+<p><strong>Denary to Binary:</strong> Repeated division by 2 (read remainders bottom-up) or subtraction of largest power of 2.</p>
+<pre>Method 1: Repeated division        Method 2: Subtraction
+45 / 2 = 22 r1                     45 - 32 = 13  (bit 5 = 1)
+22 / 2 = 11 r0                     13 - 16? No   (bit 4 = 0)
+11 / 2 = 5  r1                     13 - 8  = 5   (bit 3 = 1)
+ 5 / 2 = 2  r1                      5 - 4  = 1   (bit 2 = 1)
+ 2 / 2 = 1  r0                      1 - 2? No    (bit 1 = 0)
+ 1 / 2 = 0  r1                      1 - 1  = 0   (bit 0 = 1)
+Read bottom-up: 101101              Result: 101101</pre>
 
-<p><strong>Binary to Hexadecimal:</strong> Group binary digits into groups of 4 (from the right), pad with leading zeros if needed, then convert each group to a hex digit.</p>
-<pre>
-  1010 1111 = AF (hex)
-  1010 = A (10), 1111 = F (15)
+<p><strong>Binary to Hexadecimal:</strong> Group into nibbles (4 bits) from the right, pad with leading zeros, convert each group.</p>
+<pre>1010 1111 = AF     (1010=A, 1111=F)
+110110 = 0011 0110 = 36     (pad to 8 bits first)</pre>
 
-  Example: 110110 = 0011 0110 = 36 (hex)
-</pre>
+<p><strong>Hexadecimal to Binary:</strong> Each hex digit becomes 4 binary bits.</p>
+<pre>3C = 0011 1100     (3=0011, C=1100)</pre>
 
-<p><strong>Hexadecimal to Binary:</strong> Convert each hex digit to its 4-bit binary equivalent.</p>
-<pre>
-  3C = 0011 1100
-  3 = 0011, C = 1100
-</pre>
+<p><strong>Hexadecimal to Denary:</strong> Multiply each digit by powers of 16.</p>
+<pre>2F = (2 &times; 16) + (15 &times; 1) = 32 + 15 = 47
+A3 = (10 &times; 16) + (3 &times; 1) = 160 + 3 = 163</pre>
 
-<p><strong>Hexadecimal to Denary:</strong> Multiply each digit by its place value (powers of 16).</p>
-<pre>
-  2F = (2 x 16) + (15 x 1) = 32 + 15 = 47
-  A3 = (10 x 16) + (3 x 1) = 160 + 3 = 163
-</pre>
+<p><strong>Denary to Hexadecimal:</strong> Divide by 16; quotient = left digit, remainder = right digit.</p>
+<pre>163 / 16 = 10 remainder 3 &rarr; A3</pre>
 
-<p><strong>Denary to Hexadecimal:</strong> Divide by 16; the quotient is the left digit, the remainder is the right digit.</p>
-<pre>
-  163 / 16 = 10 remainder 3
-  10 = A, 3 = 3
-  Result: A3
-</pre>
-
-<div class="exam-tip">Show all working in conversion questions. For binary-to-hex, always group into nibbles (4-bit groups) from the right and pad with leading zeros if necessary. For denary-to-binary, the subtraction method is often faster and less error-prone than repeated division.</div>
+<div class="exam-tip">Show all working in conversion questions. For binary-to-hex, always group into nibbles from the right and pad. For denary-to-binary, the subtraction method is often faster.</div>
 
 <!-- ============================================================ -->
 <h2>4.5.2 Binary Arithmetic</h2>
 
 <h3>Binary Addition</h3>
-<p>Rules: <code>0+0=0</code>, <code>0+1=1</code>, <code>1+0=1</code>, <code>1+1=10</code> (0 carry 1), <code>1+1+1=11</code> (1 carry 1).</p>
-<pre>
-    0110 1101   (109)
+<p>Rules: <code>0+0=0</code>, <code>0+1=1</code>, <code>1+0=1</code>, <code>1+1=10</code> (0, carry 1), <code>1+1+1=11</code> (1, carry 1).</p>
+<pre>    0110 1101   (109)
   + 0011 0010   ( 50)
   -----------
     1001 1111   (159)
 
-  Working from right to left:
-  1+0=1, 0+1=1, 1+0=1, 1+1=10 (write 0 carry 1),
-  0+0+1(carry)=1, 1+1=10 (write 0 carry 1), 1+0+1(carry)=10 (write 0 carry 1), 0+0+1(carry)=1
-</pre>
+Working right to left:
+1+0=1, 0+1=1, 1+0=1, 1+1=10 (write 0, carry 1),
+0+0+1=1, 1+1=10 (write 0, carry 1),
+1+0+1=10 (write 0, carry 1), 0+0+1=1</pre>
 
 <h3>Binary Multiplication</h3>
-<p>Binary multiplication follows the same long multiplication method as denary, but uses only 0 and 1:</p>
-<pre>
-      1101   (13)
+<p>Same long multiplication as denary, but only 0 and 1. Shift and add.</p>
+<pre>      1101   (13)
     x 0101   ( 5)
     ------
       1101   (1101 x 1)
-     0000    (1101 x 0, shifted left 1)
-    1101     (1101 x 1, shifted left 2)
-   0000      (1101 x 0, shifted left 3)
+     0000    (shifted left 1, x 0)
+    1101     (shifted left 2, x 1)
+   0000      (shifted left 3, x 0)
   ---------
-   1000001   (65)    13 x 5 = 65  correct
-</pre>
+   1000001   (65)    13 x 5 = 65  correct</pre>
 
 <h3>Binary Subtraction Using Two's Complement</h3>
 <p>To subtract B from A: find the two's complement of B, then add it to A.</p>
 <ol>
-    <li><strong>Invert</strong> all the bits of B (one's complement).</li>
-    <li><strong>Add 1</strong> to get the two's complement.</li>
-    <li><strong>Add</strong> the two's complement of B to A.</li>
-    <li><strong>Discard</strong> any carry beyond the bit width.</li>
+    <li><strong>Invert</strong> all bits of B (one's complement)</li>
+    <li><strong>Add 1</strong> to get two's complement</li>
+    <li><strong>Add</strong> the two's complement of B to A</li>
+    <li><strong>Discard</strong> any carry beyond the bit width</li>
 </ol>
-<pre>
-  A = 0110 1101 (109)
-  B = 0011 0010 (50)
+<pre>A = 0110 1101 (109)
+B = 0011 0010 (50)
 
-  Step 1: Invert B  = 1100 1101
-  Step 2: Add 1     = 1100 1110  (two's complement of 50 = -50)
-  Step 3: A + (-B)  = 0110 1101 + 1100 1110
-                     = 1 0011 1011
-  Step 4: Discard carry = 0011 1011 (59)
-  Verify: 109 - 50 = 59  correct
-</pre>
+Step 1: Invert B  = 1100 1101
+Step 2: Add 1     = 1100 1110  (two's complement of 50 = -50)
+Step 3: A + (-B)  = 0110 1101 + 1100 1110
+                   = 1 0011 1011
+Step 4: Discard carry = 0011 1011 (59)
+Verify: 109 - 50 = 59  correct</pre>
 
 <h3>Overflow</h3>
-<p><strong>Overflow</strong> occurs when the result of an arithmetic operation exceeds the number of bits available to store it.</p>
 <ul>
-    <li>For <strong>unsigned 8-bit</strong>: max value is 255 (1111 1111). Adding 200 + 100 = 300, which cannot fit in 8 bits.</li>
-    <li>For <strong>signed 8-bit two's complement</strong>: range is -128 to +127. Adding 100 + 50 = 150, which exceeds +127.</li>
-    <li>Overflow can be detected when adding two positive numbers gives a negative result (or vice versa) in two's complement.</li>
-    <li>The CPU sets an <strong>overflow flag</strong> in the status register when overflow occurs.</li>
+    <li><strong>Unsigned 8-bit:</strong> max 255. Adding 200 + 100 = 300, cannot fit.</li>
+    <li><strong>Signed 8-bit two's complement:</strong> range -128 to +127. Adding 100 + 50 = 150, exceeds +127.</li>
+    <li>Overflow detected when adding two positive numbers gives a negative result (or vice versa) in two's complement.</li>
+    <li>The CPU sets an <strong>overflow flag</strong> in the status register.</li>
 </ul>
 
-<div class="exam-tip">Always show your carry bits clearly when performing binary addition. For subtraction, the method is always: invert, add 1, add, discard overflow carry. State the decimal equivalents to verify your answer.</div>
+<div class="exam-tip">Always show carry bits clearly in binary addition. For subtraction: invert, add 1, add, discard overflow carry. State decimal equivalents to verify your answer.</div>
 
 <!-- ============================================================ -->
 <h2>4.5.3 Signed and Unsigned Binary</h2>
 
 <h3>Unsigned Binary</h3>
-<p>All bits represent magnitude. An n-bit unsigned integer can represent values from <strong>0</strong> to <strong>2<sup>n</sup> - 1</strong>.</p>
+<p>All bits represent magnitude. n-bit unsigned range: <strong>0</strong> to <strong>2<sup>n</sup> - 1</strong>.</p>
 <table>
-    <tr><th>Bits</th><th>Range</th><th>Max Value</th></tr>
-    <tr><td>8</td><td>0 to 255</td><td>2<sup>8</sup> - 1 = 255</td></tr>
-    <tr><td>16</td><td>0 to 65,535</td><td>2<sup>16</sup> - 1 = 65,535</td></tr>
-    <tr><td>32</td><td>0 to 4,294,967,295</td><td>2<sup>32</sup> - 1 &approx; 4.3 billion</td></tr>
+    <tr><th>Bits</th><th>Range</th><th>Max</th></tr>
+    <tr><td>8</td><td>0 to 255</td><td>255</td></tr>
+    <tr><td>16</td><td>0 to 65,535</td><td>65,535</td></tr>
+    <tr><td>32</td><td>0 to 4,294,967,295</td><td>&asymp;4.3 billion</td></tr>
 </table>
 
 <h3>Sign-and-Magnitude</h3>
-<p>The <strong>most significant bit (MSB)</strong> represents the sign (0 = positive, 1 = negative). The remaining bits represent the magnitude.</p>
+<p>MSB = sign (0 = positive, 1 = negative). Remaining bits = magnitude.</p>
 <ul>
     <li><code>0 1010011</code> = +83</li>
     <li><code>1 1010011</code> = -83</li>
 </ul>
-<p>Drawbacks: two representations of zero (+0 = 00000000, -0 = 10000000), and arithmetic with negative numbers requires special handling (cannot simply add).</p>
+<p><strong>Drawbacks:</strong> two representations of zero (+0 and -0), arithmetic requires special handling.</p>
 
 <h3>Two's Complement</h3>
 <div class="definition">
-    <strong>Two's complement</strong> is the standard way computers represent signed integers. The MSB has a <strong>negative</strong> place value (-2<sup>n-1</sup>). An n-bit two's complement number ranges from <strong>-2<sup>n-1</sup></strong> to <strong>2<sup>n-1</sup> - 1</strong>.
+    <strong>Two's complement</strong> is the standard signed integer representation. The MSB has a <strong>negative</strong> place value (-2<sup>n-1</sup>). n-bit range: <strong>-2<sup>n-1</sup></strong> to <strong>2<sup>n-1</sup> - 1</strong>.
 </div>
 
-<p>In 8-bit two's complement, the place values are:</p>
-<pre>
-  Bit positions:  -128  64  32  16  8  4  2  1
+<p>8-bit place values:</p>
+<pre>Bit positions:  -128  64  32  16  8  4  2  1
 
-  0111 1111 = 64+32+16+8+4+2+1 =  127 (max positive)
-  0000 0001 =                1  =    1
-  0000 0000 =                0  =    0
-  1111 1111 = -128+64+32+16+8+4+2+1 = -1
-  1000 0000 = -128              = -128 (min negative)
-  1110 0100 = -128+64+32+4     =  -28
-</pre>
+0111 1111 = 64+32+16+8+4+2+1       =  127 (max positive)
+0000 0001 =                    1    =    1
+0000 0000 =                    0    =    0
+1111 1111 = -128+64+32+16+8+4+2+1  =   -1
+1000 0000 = -128                    = -128 (min negative)
+1110 0100 = -128+64+32+4           =  -28</pre>
 
-<p><strong>To negate a two's complement number:</strong> invert all bits, then add 1.</p>
-<pre>
-  +42 = 0010 1010
-  Invert: 1101 0101
-  Add 1:  1101 0110 = -42
+<p><strong>To negate:</strong> invert all bits, then add 1.</p>
+<pre>+42 = 0010 1010
+Invert: 1101 0101
+Add 1:  1101 0110 = -42
 
-  Verify: -128+64+16+4+2 = -128+86 = -42  correct
-</pre>
+Verify: -128+64+16+4+2 = -128+86 = -42  correct</pre>
 
-<p><strong>Advantages of two's complement over sign-and-magnitude:</strong></p>
-<ul>
-    <li>Only one representation of zero</li>
-    <li>Addition and subtraction work identically for positive and negative numbers using the same hardware circuits</li>
-    <li>No need for separate addition and subtraction logic &mdash; subtraction is simply addition of the negated value</li>
-</ul>
+<h4>Worked Example: Convert -73 to 8-bit Two's Complement</h4>
+<pre>Step 1: +73 in binary = 0100 1001
+Step 2: Invert all bits = 1011 0110
+Step 3: Add 1           = 1011 0111
 
-<div class="exam-tip">Two's complement is the representation used in virtually all modern computers. To convert a negative denary number to two's complement: first write the positive version in binary, then invert and add 1. To find the denary value of a two's complement number: if the MSB is 1 (negative), give it a negative place value of -128 (for 8-bit), then add the remaining place values as normal.</div>
+Verify: -128+32+16+4+2+1 = -128+55 = -73  correct</pre>
+
+<p><strong>Advantages over sign-and-magnitude:</strong> only one zero, addition/subtraction works identically for positive and negative numbers using the same hardware.</p>
+
+<div class="exam-tip">To convert negative denary to two's complement: write the positive version, invert, add 1. To find the denary value of a two's complement number with MSB=1: give MSB the negative weight (-128 for 8-bit), then add remaining positive place values.</div>
 
 <!-- ============================================================ -->
 <h2>4.5.4 Fixed Point and Floating Point</h2>
 
 <h3>Fixed Point Representation</h3>
-<p>The <strong>binary point</strong> is at a fixed position. Bits to the left represent whole-number powers of 2; bits to the right represent fractional powers (2<sup>-1</sup> = 0.5, 2<sup>-2</sup> = 0.25, 2<sup>-3</sup> = 0.125, etc.).</p>
-<pre>
-  Example (8 bits, 4 integer + 4 fractional):
-  Place values: 8  4  2  1 . 0.5  0.25  0.125  0.0625
+<p>The binary point is at a fixed position. Bits left of it = whole-number powers of 2; bits right = fractional powers (2<sup>-1</sup>=0.5, 2<sup>-2</sup>=0.25, 2<sup>-3</sup>=0.125, 2<sup>-4</sup>=0.0625).</p>
+<pre>8 bits: 4 integer + 4 fractional
+Place values: 8  4  2  1 . 0.5  0.25  0.125  0.0625
 
-  0101.1100 = 4 + 1 + 0.5 + 0.25 = 5.75
-  1001.0010 = 8 + 1 + 0.125      = 9.125
-</pre>
-<p>Fixed point is simple and fast but has <strong>limited range</strong> and <strong>fixed precision</strong>. It is used in embedded systems and financial calculations where the range of values is known in advance.</p>
+0101.1100 = 4 + 1 + 0.5 + 0.25 = 5.75
+1001.0010 = 8 + 1 + 0.125      = 9.125</pre>
+<p>Fixed point: simple, fast, but limited range and fixed precision. Used in embedded systems and financial calculations.</p>
 
 <h3>Floating Point Representation</h3>
 <div class="definition">
-    <strong>Floating point</strong> stores a number as a <strong>mantissa</strong> (significand) and an <strong>exponent</strong>:
-    value = mantissa &times; 2<sup>exponent</sup>. This is analogous to scientific notation in denary (e.g., 6.02 &times; 10<sup>23</sup>).
+    <strong>Floating point</strong> stores a number as <strong>mantissa</strong> &times; 2<sup><strong>exponent</strong></sup>. The mantissa determines <strong>precision</strong>; the exponent determines <strong>range</strong>. Both are stored in two's complement.
 </div>
 
-<p>A floating point number has two parts stored in binary:</p>
-<ul>
-    <li><strong>Mantissa</strong> &mdash; determines the <strong>precision</strong> (significant figures). Stored in two's complement. The binary point is assumed to be after the first bit (or before, depending on convention).</li>
-    <li><strong>Exponent</strong> &mdash; determines the <strong>range</strong> (magnitude). Stored in two's complement. Controls how far and in which direction the binary point is shifted.</li>
-</ul>
+<h4>Worked Example (6-bit mantissa, 4-bit exponent)</h4>
+<pre>Mantissa: 0.11010   Exponent: 0011 (= 3)
 
-<p><strong>Worked example</strong> (6-bit mantissa, 4-bit exponent):</p>
-<pre>
-  Mantissa: 0.11010   Exponent: 0011 (= 3)
+Step 1: Mantissa value = 0.5 + 0.25 + 0.0625 = 0.8125
+Step 2: Shift binary point 3 right: 0.11010 &rarr; 110.10
+Step 3: 110.10 = 4 + 2 + 0.5 = 6.5
 
-  The mantissa represents: 0.5 + 0.25 + 0.0625 = 0.8125
-  Shift the binary point 3 places right: 0.11010 &rarr; 110.10
-  110.10 = 4 + 2 + 0.5 = 6.5
+The stored value is 6.5</pre>
 
-  So the stored value is 6.5
-</pre>
+<h4>Negative Floating Point Example</h4>
+<pre>Mantissa: 1.01100   Exponent: 0010 (= 2)
 
-<p><strong>Negative floating point example:</strong></p>
-<pre>
-  Mantissa: 1.01100   Exponent: 0010 (= 2)
+Mantissa in two's complement: 1.01100
+= -1 + 0.25 + 0.125 = -0.625
+Shift binary point 2 right: 10.1100
+= -2 + 0.5 + 0.25 = -1.25</pre>
 
-  Mantissa in two's complement: 1.01100
-  = -1 + 0.25 + 0.125 = -0.625
-  Shift binary point 2 right: 10.1100
-  = -2 + 0.5 + 0.25 = -1.25
-</pre>
+<h4>Converting Denary to Floating Point</h4>
+<pre>Convert 13.5 to floating point (8-bit mantissa, 4-bit exponent)
+
+Step 1: 13.5 in binary = 1101.1
+Step 2: Normalise: 0.11011 x 2^4  (shift point left 4 places)
+Step 3: Mantissa = 0.1101100 (pad to 8 bits)
+Step 4: Exponent = 0100 (4 in two's complement)
+
+Result: Mantissa 01101100, Exponent 0100</pre>
 
 <h3>Normalisation</h3>
 <div class="definition">
-    A floating point number is <strong>normalised</strong> when the mantissa is in a form that maximises precision. For a positive number, the mantissa starts <code>0.1...</code>. For a negative number (two's complement), it starts <code>1.0...</code>.
+    A floating point number is <strong>normalised</strong> when the mantissa maximises precision. Positive mantissa starts <code>0.1...</code>; negative mantissa (two's complement) starts <code>1.0...</code>.
 </div>
 
-<p>Why normalise?</p>
-<ul>
-    <li>Ensures maximum precision by eliminating leading zeros (positive) or leading ones (negative) that waste mantissa bits.</li>
-    <li>Provides a unique representation for each value.</li>
-    <li>Makes the most of the available mantissa bits.</li>
-</ul>
+<p><strong>Why normalise?</strong> Eliminates leading zeros/ones that waste mantissa bits, ensuring maximum precision and a unique representation.</p>
 
-<p><strong>Normalisation example:</strong></p>
-<pre>
-  Unnormalised: mantissa = 0.01101, exponent = 0100 (4)
-  This wastes the second bit. Shift mantissa left by 1, subtract 1 from exponent:
-  Normalised:   mantissa = 0.11010, exponent = 0011 (3)
-  Both represent the same value, but the normalised form has one more significant bit.
-</pre>
+<pre>Unnormalised: mantissa = 0.01101, exponent = 0100 (4)
+Wastes the second bit. Shift mantissa left 1, subtract 1 from exponent:
+Normalised:   mantissa = 0.11010, exponent = 0011 (3)
+Same value, but one more significant bit of precision.</pre>
+
+<h4>Normalising a Negative Number</h4>
+<pre>Unnormalised: mantissa = 1.10100, exponent = 0011
+Starts 1.1... (not normalised for negative). Shift left 1, subtract 1:
+Normalised:   mantissa = 1.01000, exponent = 0010
+Starts 1.0... = correctly normalised negative.</pre>
 
 <h3>Precision vs Range Trade-off</h3>
-<p>Given a fixed total number of bits, allocating more bits to the mantissa increases precision but reduces range, and vice versa.</p>
 <table>
     <tr><th>Change</th><th>Effect on Range</th><th>Effect on Precision</th></tr>
-    <tr><td>More mantissa bits</td><td>No change</td><td>Increased precision</td></tr>
-    <tr><td>More exponent bits</td><td>Increased range</td><td>No change</td></tr>
-    <tr><td>Fewer mantissa bits</td><td>No change</td><td>Decreased precision</td></tr>
-    <tr><td>Fewer exponent bits</td><td>Decreased range</td><td>No change</td></tr>
+    <tr><td>More mantissa bits</td><td>No change</td><td>Increased (more sig. figures)</td></tr>
+    <tr><td>More exponent bits</td><td>Increased (larger/smaller values)</td><td>No change</td></tr>
+    <tr><td>Fewer mantissa bits</td><td>No change</td><td>Decreased</td></tr>
+    <tr><td>Fewer exponent bits</td><td>Decreased</td><td>No change</td></tr>
 </table>
 
-<p><strong>Real-world example:</strong> The IEEE 754 standard defines single precision (32-bit: 23-bit mantissa, 8-bit exponent) and double precision (64-bit: 52-bit mantissa, 11-bit exponent). Double precision has much higher precision and range.</p>
-
 <h3>Rounding Errors</h3>
-<p>Because floating point has finite precision, many real numbers cannot be represented exactly, leading to <strong>rounding errors</strong>. For example, 0.1 in denary is a recurring fraction in binary (0.000110011001100...) and cannot be stored exactly.</p>
-<ul>
-    <li><strong>Absolute error</strong> = |actual value - stored value|</li>
-    <li><strong>Relative error</strong> = absolute error / actual value (often expressed as a percentage)</li>
-</ul>
-
-<pre>
-# Python demonstration of floating point rounding
-print(0.1 + 0.2)          # Output: 0.30000000000000004
-print(0.1 + 0.2 == 0.3)   # Output: False
-</pre>
+<p>Finite precision means many real numbers cannot be stored exactly. E.g., 0.1 in denary is recurring in binary (0.0001100110011...). This causes rounding errors.</p>
+<pre># Python demonstration
+print(0.1 + 0.2)          # 0.30000000000000004
+print(0.1 + 0.2 == 0.3)   # False</pre>
 
 <h3>Overflow and Underflow</h3>
 <ul>
-    <li><strong>Overflow</strong> &mdash; the result is too large to be represented (exponent exceeds maximum). E.g., trying to store 10<sup>400</sup> in single precision.</li>
-    <li><strong>Underflow</strong> &mdash; the result is too close to zero to be represented (exponent is below minimum, and the number rounds to zero). E.g., trying to store 10<sup>-400</sup>.</li>
+    <li><strong>Overflow:</strong> result too large (exponent exceeds maximum)</li>
+    <li><strong>Underflow:</strong> result too close to zero (exponent below minimum, rounds to zero)</li>
 </ul>
 
-<div class="exam-tip">Practice converting between normalised floating point and denary. Remember: more mantissa bits = more precision; more exponent bits = greater range. The total bit width is fixed, so it is always a trade-off. Know the normalisation rules: positive mantissa starts 0.1...; negative mantissa starts 1.0... in two's complement.</div>
+<div class="exam-tip">Practice converting between normalised floating point and denary. Remember normalisation rules: positive starts 0.1...; negative starts 1.0... Show all working including the shift direction and exponent adjustment. More mantissa bits = more precision; more exponent bits = greater range.</div>
 
 <!-- ============================================================ -->
 <h2>4.5.5 Bit Manipulation</h2>
@@ -391,401 +286,287 @@ print(0.1 + 0.2 == 0.3)   # Output: False
 <h3>Bitwise Operations</h3>
 <table>
     <tr><th>Operation</th><th>Symbol</th><th>Rule</th><th>Use</th></tr>
-    <tr><td>AND</td><td><code>&amp;</code></td><td>1 only if both bits are 1</td><td><strong>Masking</strong> &mdash; extracting specific bits; clearing bits to 0</td></tr>
-    <tr><td>OR</td><td><code>|</code></td><td>1 if either bit is 1</td><td><strong>Setting</strong> specific bits to 1 without changing others</td></tr>
-    <tr><td>XOR</td><td><code>^</code></td><td>1 if bits are different</td><td><strong>Toggling</strong> bits; simple encryption (XOR cipher)</td></tr>
-    <tr><td>NOT</td><td><code>~</code></td><td>Inverts every bit</td><td>Finding one's complement; inverting a mask</td></tr>
+    <tr><td>AND</td><td><code>&amp;</code></td><td>1 only if both 1</td><td><strong>Masking</strong> &mdash; extracting/clearing bits</td></tr>
+    <tr><td>OR</td><td><code>|</code></td><td>1 if either 1</td><td><strong>Setting</strong> bits to 1</td></tr>
+    <tr><td>XOR</td><td><code>^</code></td><td>1 if bits differ</td><td><strong>Toggling</strong> bits; XOR cipher encryption</td></tr>
+    <tr><td>NOT</td><td><code>~</code></td><td>Inverts all bits</td><td>One's complement; inverting masks</td></tr>
 </table>
 
-<pre>
-  AND example (masking to extract lower 4 bits):
-    1011 0110
-  &amp; 0000 1111   (mask)
-  -----------
-    0000 0110   (only the lower 4 bits survive)
+<pre>AND masking (extract lower 4 bits):
+  1011 0110
+&amp; 0000 1111   (mask)
+-----------
+  0000 0110   (only lower nibble survives)
 
-  OR example (setting bit 3 to 1):
-    1010 0010
-  | 0000 1000   (bit 3 set)
-  -----------
-    1010 1010
+OR setting (set bit 3 to 1):
+  1010 0010
+| 0000 1000
+-----------
+  1010 1010
 
-  XOR example (toggling bits 0 and 1):
-    1010 0110
-  ^ 0000 0011
-  -----------
-    1010 0101
+XOR toggling (toggle bits 0 and 1):
+  1010 0110
+^ 0000 0011
+-----------
+  1010 0101
 
-  XOR encryption example:
-    Plaintext:  0100 1000  ('H' = 72)
-    Key:        1010 1010
-    Ciphertext: 1110 0010
-
-    Decrypt by XORing ciphertext with same key:
-    1110 0010 XOR 1010 1010 = 0100 1000 ('H' again)
-</pre>
+XOR encryption:
+  Plaintext:  0100 1000  ('H' = 72)
+  Key:        1010 1010
+  Ciphertext: 1110 0010
+  Decrypt:    1110 0010 XOR 1010 1010 = 0100 1000  ('H' restored)</pre>
 
 <h3>Bit Shifts</h3>
 <table>
     <tr><th>Shift Type</th><th>Operation</th><th>Effect</th></tr>
-    <tr><td>Logical left shift</td><td>Shift all bits left, fill with 0s on right</td><td>Multiplies by 2 per shift (unsigned)</td></tr>
-    <tr><td>Logical right shift</td><td>Shift all bits right, fill with 0s on left</td><td>Divides unsigned number by 2 per shift (integer division)</td></tr>
-    <tr><td>Arithmetic right shift</td><td>Shift right, preserve MSB (sign bit)</td><td>Divides signed number by 2 per shift (preserves sign)</td></tr>
+    <tr><td>Logical left shift</td><td>Shift left, fill with 0s</td><td>Multiply by 2 per shift (unsigned)</td></tr>
+    <tr><td>Logical right shift</td><td>Shift right, fill with 0s</td><td>Divide by 2 per shift (unsigned, integer division)</td></tr>
+    <tr><td>Arithmetic right shift</td><td>Shift right, preserve MSB (sign bit)</td><td>Divide signed number by 2 (preserves sign)</td></tr>
 </table>
 
-<pre>
-  Logical left shift by 2:
-  0001 0110  (22) &rarr;  0101 1000  (88)   [22 x 4 = 88]
+<pre>Logical left shift by 2:
+0001 0110  (22) &rarr;  0101 1000  (88)   [22 x 4 = 88]
 
-  Logical right shift by 1:
-  0001 0110  (22) &rarr;  0000 1011  (11)   [22 / 2 = 11]
+Logical right shift by 1:
+0001 0110  (22) &rarr;  0000 1011  (11)   [22 / 2 = 11]
 
-  Arithmetic right shift by 1 (signed):
-  1110 0100  (-28) &rarr;  1111 0010  (-14)  [-28 / 2 = -14]
-  Note: the MSB (1) is preserved, keeping the number negative.
+Arithmetic right shift by 1 (signed):
+1110 0100  (-28) &rarr;  1111 0010  (-14)  [-28 / 2 = -14]
+MSB (1) preserved, keeping the number negative.
 
-  Left shift by 3:
-  0000 0101  (5)  &rarr;  0010 1000  (40)   [5 x 2^3 = 5 x 8 = 40]
-</pre>
-
-<p><strong>Practical uses of bit shifts:</strong></p>
-<ul>
-    <li>Fast multiplication/division by powers of 2 (much faster than general multiplication)</li>
-    <li>Extracting specific bit fields from packed data</li>
-    <li>Implementing hash functions and checksums</li>
-    <li>Graphics programming (pixel manipulation)</li>
-</ul>
+Left shift by 3:
+0000 0101  (5)  &rarr;  0010 1000  (40)   [5 x 8 = 40]</pre>
 
 <!-- ============================================================ -->
 <h2>4.5.6 Character Encoding</h2>
 
 <h3>ASCII</h3>
 <div class="definition">
-    <strong>ASCII</strong> (American Standard Code for Information Interchange) uses <strong>7 bits</strong> to represent 128 characters (0&ndash;127), including uppercase and lowercase letters, digits, punctuation, and control characters (such as newline, tab, and carriage return).
+    <strong>ASCII</strong> (American Standard Code for Information Interchange) uses <strong>7 bits</strong> to represent 128 characters (0&ndash;127): letters, digits, punctuation, and control characters.
 </div>
-<p>Key ASCII values to know:</p>
+
 <table>
-    <tr><th>Character</th><th>Decimal</th><th>Binary</th><th>Hex</th></tr>
-    <tr><td>'A'</td><td>65</td><td>100 0001</td><td>41</td></tr>
-    <tr><td>'Z'</td><td>90</td><td>101 1010</td><td>5A</td></tr>
-    <tr><td>'a'</td><td>97</td><td>110 0001</td><td>61</td></tr>
-    <tr><td>'z'</td><td>122</td><td>111 1010</td><td>7A</td></tr>
-    <tr><td>'0'</td><td>48</td><td>011 0000</td><td>30</td></tr>
-    <tr><td>'9'</td><td>57</td><td>011 1001</td><td>39</td></tr>
-    <tr><td>Space</td><td>32</td><td>010 0000</td><td>20</td></tr>
+    <tr><th>Character</th><th>Decimal</th><th>Hex</th><th>Character</th><th>Decimal</th><th>Hex</th></tr>
+    <tr><td>'A'</td><td>65</td><td>41</td><td>'a'</td><td>97</td><td>61</td></tr>
+    <tr><td>'Z'</td><td>90</td><td>5A</td><td>'z'</td><td>122</td><td>7A</td></tr>
+    <tr><td>'0'</td><td>48</td><td>30</td><td>'9'</td><td>57</td><td>39</td></tr>
+    <tr><td>Space</td><td>32</td><td>20</td><td></td><td></td><td></td></tr>
 </table>
 
-<p><strong>Useful patterns:</strong> Uppercase letters are consecutive (A=65, B=66, ..., Z=90). Lowercase letters start at 97 (a=97). The difference between uppercase and lowercase is always 32 (e.g., 'A'=65, 'a'=97). This corresponds to bit 5: flipping bit 5 toggles case.</p>
-
-<p>Extended ASCII uses 8 bits (256 characters) for additional symbols, accented characters, and box-drawing characters.</p>
+<p><strong>Useful pattern:</strong> Uppercase-to-lowercase difference is always 32 (bit 5). 'A'=65, 'a'=97. Flipping bit 5 toggles case. Extended ASCII uses 8 bits (256 characters).</p>
 
 <h3>Unicode</h3>
 <div class="definition">
-    <strong>Unicode</strong> is a universal character encoding standard that can represent over 149,000 characters from virtually every writing system in the world, plus mathematical symbols, emoji, and historic scripts. It assigns each character a unique <strong>code point</strong> (e.g., U+0041 for 'A').
+    <strong>Unicode</strong> represents 149,000+ characters from virtually every writing system, plus emoji and symbols. Each character has a unique <strong>code point</strong> (e.g., U+0041 for 'A').
 </div>
 
 <table>
     <tr><th>Feature</th><th>ASCII</th><th>Unicode</th></tr>
-    <tr><td>Characters</td><td>128 (7-bit)</td><td>149,000+ (up to 1,114,112 code points)</td></tr>
-    <tr><td>Languages</td><td>English only</td><td>All major world scripts (Latin, Cyrillic, Arabic, Chinese, Japanese, Korean, etc.)</td></tr>
-    <tr><td>Size per character</td><td>1 byte</td><td>1&ndash;4 bytes (UTF-8), 2 or 4 bytes (UTF-16), 4 bytes (UTF-32)</td></tr>
-    <tr><td>Backward compatible</td><td>N/A</td><td>UTF-8 is backward compatible with ASCII (code points 0-127 use the same single byte)</td></tr>
+    <tr><td>Characters</td><td>128 (7-bit)</td><td>149,000+</td></tr>
+    <tr><td>Languages</td><td>English only</td><td>All major world scripts</td></tr>
+    <tr><td>Size per char</td><td>1 byte</td><td>1&ndash;4 bytes (UTF-8)</td></tr>
+    <tr><td>Compatibility</td><td>N/A</td><td>UTF-8 is backward compatible with ASCII</td></tr>
 </table>
 
-<p><strong>UTF-8</strong> is the most widely used encoding on the internet. It is variable-length: ASCII characters use 1 byte (identical to ASCII), while characters from other scripts use 2, 3, or 4 bytes. This makes it space-efficient for English text while supporting all world scripts.</p>
+<p><strong>UTF-8</strong> is variable-length: ASCII characters use 1 byte (identical to ASCII), other scripts use 2&ndash;4 bytes. Most widely used encoding on the internet.</p>
 
 <!-- ============================================================ -->
 <h2>4.5.7 Analogue and Digital</h2>
 
 <div class="definition">
-    <strong>Analogue</strong> signals are continuous &mdash; they can take any value over a range, with infinitely fine gradations. <strong>Digital</strong> signals are discrete &mdash; they can only take specific values (typically 0 and 1 in computing).
+    <strong>Analogue</strong> signals are continuous (infinitely fine gradations). <strong>Digital</strong> signals are discrete (specific values only, typically 0 and 1). All real-world signals must be converted to digital for computer processing.
 </div>
 
-<p>Examples: a microphone produces an analogue electrical signal that continuously varies with sound pressure. Temperature varies continuously. Light intensity varies continuously. All of these must be converted to digital form for a computer to process them.</p>
-
 <h3>Analogue-to-Digital Conversion (Sampling)</h3>
-<p>To convert an analogue signal (e.g., sound) to digital, the signal is <strong>sampled</strong> at regular intervals:</p>
 <ul>
-    <li><strong>Sample rate</strong> &mdash; the number of samples taken per second, measured in Hertz (Hz). CD quality uses 44,100 Hz (44.1 kHz), meaning 44,100 amplitude measurements per second.</li>
-    <li><strong>Bit depth</strong> (resolution) &mdash; the number of bits used to store each sample. Determines the number of possible amplitude levels: 2<sup>bit depth</sup> levels. CD quality uses 16 bits (65,536 levels).</li>
+    <li><strong>Sample rate</strong> &mdash; samples per second (Hz). CD quality: 44,100 Hz.</li>
+    <li><strong>Bit depth</strong> (resolution) &mdash; bits per sample. Determines amplitude levels: 2<sup>bit depth</sup>. CD: 16 bits = 65,536 levels.</li>
 </ul>
 
-<p><strong>The sampling process:</strong></p>
-<ol>
-    <li>At each sample interval, the analogue signal's amplitude is measured.</li>
-    <li>The measured amplitude is rounded to the nearest available level (quantisation).</li>
-    <li>The quantised value is stored as a binary number using the specified bit depth.</li>
-    <li>The difference between the actual amplitude and the quantised value is the <strong>quantisation error</strong>.</li>
-</ol>
+<p>The process: (1) measure amplitude at each sample interval, (2) round to nearest level (<strong>quantisation</strong>), (3) store as binary number. The difference between actual and quantised value is <strong>quantisation error</strong>.</p>
 
 <h3>Nyquist Theorem</h3>
 <div class="definition">
-    The <strong>Nyquist theorem</strong> states that the sample rate must be <strong>at least twice</strong> the highest frequency in the analogue signal to accurately reconstruct it without aliasing. If the highest frequency is f Hz, the minimum sample rate is 2f Hz.
+    The sample rate must be <strong>at least twice</strong> the highest frequency in the signal to accurately reconstruct it. If max frequency = f Hz, minimum sample rate = 2f Hz.
 </div>
-<p>Example: Human hearing goes up to approximately 20,000 Hz (20 kHz), so the sample rate must be at least 40,000 Hz. CDs use 44,100 Hz to provide a safety margin above this minimum.</p>
-<p>If the sample rate is too low, <strong>aliasing</strong> occurs: high-frequency components of the signal are misrepresented as lower frequencies, producing audible distortion.</p>
+<p>Human hearing: up to 20 kHz, so sample rate &ge; 40 kHz. CDs use 44.1 kHz for safety margin. If sample rate is too low, <strong>aliasing</strong> occurs (high frequencies misrepresented as lower ones).</p>
 
-<h3>Effect of Increasing Sample Rate and Bit Depth</h3>
+<h3>Quality vs File Size</h3>
 <table>
-    <tr><th>Change</th><th>Effect on Quality</th><th>Effect on File Size</th></tr>
-    <tr><td>Higher sample rate</td><td>More accurate timing, captures higher frequencies</td><td>Larger (more samples to store)</td></tr>
-    <tr><td>Higher bit depth</td><td>More precise amplitude, less quantisation noise</td><td>Larger (more bits per sample)</td></tr>
-    <tr><td>Lower sample rate</td><td>Loses high frequencies, may cause aliasing</td><td>Smaller</td></tr>
-    <tr><td>Lower bit depth</td><td>More quantisation noise, "grainy" sound</td><td>Smaller</td></tr>
+    <tr><th>Change</th><th>Quality Effect</th><th>File Size Effect</th></tr>
+    <tr><td>Higher sample rate</td><td>Captures higher frequencies</td><td>Larger</td></tr>
+    <tr><td>Higher bit depth</td><td>More precise amplitude</td><td>Larger</td></tr>
+    <tr><td>Lower sample rate</td><td>Loses high frequencies, aliasing</td><td>Smaller</td></tr>
+    <tr><td>Lower bit depth</td><td>More quantisation noise</td><td>Smaller</td></tr>
 </table>
 
-<div class="exam-tip">Nyquist theorem: sample rate must be at least 2x the maximum frequency. If asked to explain why a digitised sound does not perfectly match the original, discuss: (1) quantisation errors from rounding amplitudes to discrete levels, and (2) loss of frequencies above half the sample rate. Higher sample rate and bit depth improve quality but increase file size.</div>
+<div class="exam-tip">Nyquist: sample rate &ge; 2 &times; max frequency. If asked why digitised sound does not perfectly match the original: (1) quantisation errors, (2) loss of frequencies above half the sample rate.</div>
 
 <!-- ============================================================ -->
 <h2>4.5.8 Image Representation</h2>
 
 <h3>Bitmaps</h3>
 <div class="definition">
-    A <strong>bitmap</strong> image is made up of a grid of <strong>pixels</strong> (picture elements). Each pixel stores a colour value as a binary number. The image is stored as a sequence of pixel colour values plus metadata (headers containing width, height, colour depth).
+    A <strong>bitmap</strong> is a grid of <strong>pixels</strong>, each storing a colour value as binary. Metadata (headers) stores width, height, colour depth.
 </div>
 
 <ul>
-    <li><strong>Resolution</strong> &mdash; the number of pixels in the image, typically width &times; height (e.g., 1920 &times; 1080 = 2,073,600 pixels). Higher resolution means more detail but larger file size.</li>
-    <li><strong>Colour depth</strong> &mdash; the number of bits per pixel. Determines how many colours can be represented. n bits = 2<sup>n</sup> colours.</li>
+    <li><strong>Resolution</strong> &mdash; width &times; height in pixels (e.g., 1920 &times; 1080). Higher = more detail, larger file.</li>
+    <li><strong>Colour depth</strong> &mdash; bits per pixel. n bits = 2<sup>n</sup> colours.</li>
 </ul>
 
 <table>
-    <tr><th>Colour Depth</th><th>Colours Available</th><th>Example Use</th></tr>
-    <tr><td>1 bit</td><td>2</td><td>Black and white (monochrome)</td></tr>
-    <tr><td>8 bits</td><td>256</td><td>GIF palette, grayscale</td></tr>
-    <tr><td>24 bits</td><td>16,777,216</td><td>True colour (8 bits each for R, G, B)</td></tr>
-    <tr><td>32 bits</td><td>16,777,216 + alpha</td><td>True colour with transparency (RGBA)</td></tr>
+    <tr><th>Colour Depth</th><th>Colours</th><th>Use</th></tr>
+    <tr><td>1 bit</td><td>2</td><td>Black and white</td></tr>
+    <tr><td>8 bits</td><td>256</td><td>GIF, grayscale</td></tr>
+    <tr><td>24 bits</td><td>16,777,216</td><td>True colour (8 bits each R, G, B)</td></tr>
+    <tr><td>32 bits</td><td>16.7M + alpha</td><td>True colour with transparency (RGBA)</td></tr>
 </table>
 
-<h3>File Size Calculation</h3>
+<h3>Image File Size Calculation</h3>
 <div class="definition">
-    <strong>Image file size</strong> (uncompressed) = width &times; height &times; colour depth (in bits) &divide; 8 (to convert to bytes), plus metadata (headers).
+    <strong>File size</strong> (uncompressed) = width &times; height &times; colour depth (bits) &divide; 8 (bytes) + metadata
 </div>
-<pre>
-  Example: 1920 x 1080 image, 24-bit colour depth
-  File size = 1920 x 1080 x 24 / 8
-            = 1920 x 1080 x 3
-            = 6,220,800 bytes
-            = 6,220,800 / 1024 = 6,075 KB
-            = 6,075 / 1024 &approx; 5.93 MB (+ metadata)
-</pre>
+<pre>Example: 1920 x 1080, 24-bit colour
+= 1920 x 1080 x 24 / 8
+= 1920 x 1080 x 3 bytes
+= 6,220,800 bytes
+= 6,220,800 / 1024 = 6,075 KB
+= 6,075 / 1024 &approx; 5.93 MB</pre>
+
+<h4>Another Example: 640 x 480, 8-bit colour</h4>
+<pre>= 640 x 480 x 8 / 8
+= 640 x 480 x 1 byte
+= 307,200 bytes = 300 KB</pre>
 
 <h3>Vector Graphics vs Bitmaps</h3>
 <table>
     <tr><th>Feature</th><th>Bitmap</th><th>Vector</th></tr>
-    <tr><td>Made of</td><td>Pixels (grid of colour values)</td><td>Mathematical descriptions of shapes (lines, curves, fills)</td></tr>
-    <tr><td>Scaling</td><td>Loses quality when scaled up (pixelation)</td><td>Scales perfectly without quality loss</td></tr>
-    <tr><td>File size</td><td>Related to resolution and colour depth</td><td>Related to complexity (number of objects)</td></tr>
+    <tr><td>Made of</td><td>Pixels (grid of colour values)</td><td>Mathematical descriptions (lines, curves, fills)</td></tr>
+    <tr><td>Scaling</td><td>Pixelation when enlarged</td><td>Scales perfectly, no quality loss</td></tr>
+    <tr><td>File size depends on</td><td>Resolution and colour depth</td><td>Number/complexity of objects</td></tr>
     <tr><td>Editing</td><td>Edit individual pixels</td><td>Edit individual shapes/objects</td></tr>
     <tr><td>Best for</td><td>Photos, complex images</td><td>Logos, diagrams, fonts, icons</td></tr>
+    <tr><td>Formats</td><td>BMP, PNG, JPEG, GIF</td><td>SVG, AI, EPS</td></tr>
 </table>
+
+<p>Vector graphics store drawing commands (e.g., "draw a circle at (100,200) with radius 50, fill red"). The image is re-rendered at any size from these instructions, which is why it scales without quality loss.</p>
 
 <!-- ============================================================ -->
 <h2>4.5.9 Sound Representation</h2>
 
-<h3>Digital Sound Storage</h3>
-<p>Sound is an analogue waveform. To store it digitally, the waveform is sampled at regular intervals and each sample's amplitude is recorded as a binary number.</p>
-
 <h3>Sound File Size Calculation</h3>
 <div class="definition">
-    <strong>Sound file size</strong> (uncompressed) = sample rate &times; bit depth &times; number of channels &times; duration (seconds) &divide; 8
+    <strong>Sound file size</strong> (uncompressed) = sample rate &times; bit depth &times; channels &times; duration (seconds) &divide; 8
 </div>
-<pre>
-  Example: CD quality, stereo, 3 minutes
-  Sample rate = 44,100 Hz
-  Bit depth = 16 bits
-  Channels = 2 (stereo)
-  Duration = 180 seconds
 
-  File size = 44,100 x 16 x 2 x 180 / 8
-            = 254,016,000 / 8
-            = 31,752,000 bytes
-            &approx; 30.3 MB
+<pre>Example: CD quality, stereo, 3 minutes
+= 44,100 &times; 16 &times; 2 &times; 180 / 8
+= 254,016,000 / 8
+= 31,752,000 bytes &approx; 30.3 MB
 
-  Example 2: Mono telephone quality, 60 seconds
-  Sample rate = 8,000 Hz, Bit depth = 8 bits, Channels = 1
-  File size = 8,000 x 8 x 1 x 60 / 8 = 480,000 bytes &approx; 469 KB
-</pre>
+Example: Mono telephone, 60 seconds
+= 8,000 &times; 8 &times; 1 &times; 60 / 8
+= 480,000 bytes &approx; 469 KB</pre>
 
-<h3>MIDI (Musical Instrument Digital Interface)</h3>
-<p><strong>MIDI</strong> does not store sampled sound. Instead, it stores <strong>instructions</strong> (note on/off, pitch, duration, velocity, instrument) that tell a synthesiser what to play. MIDI files are very small but depend on the playback device for sound quality.</p>
+<h3>MIDI</h3>
+<p><strong>MIDI</strong> stores <strong>instructions</strong> (note, pitch, duration, velocity, instrument), not sampled sound. Very small files but quality depends on playback device/synthesiser.</p>
 
-<div class="exam-tip">Always check if the question specifies mono or stereo. Stereo doubles the file size compared to mono. Remember to divide by 8 to convert bits to bytes. Show all working and units clearly. Know the difference between sampled audio (stores actual waveform data) and MIDI (stores performance instructions).</div>
+<table>
+    <tr><th>Feature</th><th>Sampled Audio (WAV/MP3)</th><th>MIDI</th></tr>
+    <tr><td>Stores</td><td>Actual waveform data</td><td>Performance instructions</td></tr>
+    <tr><td>File size</td><td>Large (uncompressed)</td><td>Very small</td></tr>
+    <tr><td>Voice/speech</td><td>Yes</td><td>No (instruments only)</td></tr>
+    <tr><td>Editing</td><td>Edit waveform</td><td>Edit individual notes</td></tr>
+    <tr><td>Quality</td><td>Fixed at recording</td><td>Depends on synthesiser</td></tr>
+</table>
+
+<div class="exam-tip">Check if the question says mono or stereo (stereo = 2 channels, doubles file size). Always divide by 8 to convert bits to bytes. Show units clearly. Know the difference between sampled audio and MIDI.</div>
 
 <!-- ============================================================ -->
 <h2>4.5.10 Data Compression</h2>
 
 <h3>Why Compress?</h3>
 <ul>
-    <li>Reduces file size for <strong>faster transmission</strong> over networks (shorter download/upload times)</li>
-    <li><strong>Saves storage space</strong> on disks and servers</li>
-    <li>Reduces <strong>bandwidth usage</strong> (important for streaming, mobile data)</li>
-    <li>Allows more data to fit on removable media</li>
+    <li>Faster transmission over networks</li>
+    <li>Saves storage space</li>
+    <li>Reduces bandwidth usage</li>
 </ul>
 
-<h3>Lossy vs Lossless Compression</h3>
+<h3>Lossy vs Lossless</h3>
 <table>
     <tr><th>Feature</th><th>Lossy</th><th>Lossless</th></tr>
-    <tr><td>Data loss</td><td>Yes &mdash; some data permanently removed</td><td>No &mdash; original data fully recoverable</td></tr>
-    <tr><td>File size</td><td>Smaller (higher compression ratio)</td><td>Larger (but still smaller than original)</td></tr>
-    <tr><td>Quality</td><td>Reduced (may be imperceptible at high settings)</td><td>Identical to original</td></tr>
-    <tr><td>Reversible?</td><td>No &mdash; cannot recover original from compressed file</td><td>Yes &mdash; decompression gives exact original</td></tr>
-    <tr><td>Use cases</td><td>Images (JPEG), audio (MP3, AAC), video (MP4, H.264)</td><td>Text, executables, medical images (PNG, ZIP, FLAC)</td></tr>
-    <tr><td>How it works</td><td>Removes data humans cannot easily perceive (inaudible frequencies, imperceptible colour differences)</td><td>Finds and encodes patterns without removing data</td></tr>
+    <tr><td>Data loss</td><td>Yes &mdash; permanently removed</td><td>No &mdash; fully recoverable</td></tr>
+    <tr><td>File size</td><td>Smaller (higher ratio)</td><td>Larger (but still smaller than original)</td></tr>
+    <tr><td>Quality</td><td>Reduced (may be imperceptible)</td><td>Identical to original</td></tr>
+    <tr><td>Reversible?</td><td>No</td><td>Yes</td></tr>
+    <tr><td>Use cases</td><td>JPEG, MP3, MP4</td><td>PNG, ZIP, FLAC</td></tr>
+    <tr><td>Method</td><td>Removes imperceptible data</td><td>Encodes patterns without removing data</td></tr>
 </table>
 
 <h3>Run-Length Encoding (RLE)</h3>
 <div class="definition">
-    <strong>RLE</strong> replaces consecutive identical values with a count and the value. It is a lossless compression technique, most effective when data contains many repeated values.
+    <strong>RLE</strong> replaces consecutive identical values with a count and the value. Lossless. Most effective for data with long runs of repeated values.
 </div>
-<pre>
-  Original: AAABBBBBCCDDDDDDDD
-  Encoded:  3A 5B 2C 8D
-  Original length: 18 characters
-  Encoded length:  8 tokens (shorter!)
+<pre>Original: AAABBBBBCCDDDDDDDD (18 chars)
+Encoded:  3A 5B 2C 8D         (8 tokens)
 
-  Original (pixels): 255 255 255 255 0 0 0 128 128
-  Encoded:           4x255 3x0 2x128
-</pre>
-<p>RLE is effective for simple images with large blocks of the same colour (e.g., diagrams, icons, fax images). It is <strong>poor</strong> for complex images like photographs where adjacent pixels rarely match.</p>
-<p><strong>When RLE makes files larger:</strong> If data has few repeating values (e.g., <code>ABCDEF</code>), the counts add overhead without saving space: <code>1A1B1C1D1E1F</code> is longer than the original.</p>
+When RLE INCREASES file size:
+Original: ABCDEF               (6 chars)
+Encoded:  1A 1B 1C 1D 1E 1F   (12 tokens - worse!)</pre>
+
+<p>RLE works well for simple graphics (large blocks of same colour). Poor for photographs with varied pixel values.</p>
 
 <h3>Dictionary Encoding (LZW)</h3>
 <div class="definition">
-    <strong>Dictionary encoding</strong> (e.g., LZW &mdash; Lempel-Ziv-Welch) builds a dictionary of patterns found in the data. Repeated patterns are replaced with shorter references to dictionary entries. Used in GIF, ZIP, and PDF.
+    <strong>Dictionary encoding</strong> (e.g., LZW) dynamically builds a dictionary of patterns in the data. Repeated patterns are replaced with shorter dictionary references. Used in GIF, ZIP, PDF. Lossless.
 </div>
-<p>How it works:</p>
 <ol>
-    <li>Initialise a dictionary with all single characters (e.g., entries 0-255 for all byte values).</li>
-    <li>Read input and find the longest string already in the dictionary.</li>
-    <li>Output the dictionary index for that string.</li>
-    <li>Add the string plus the next character as a new dictionary entry.</li>
-    <li>Repeat until all input is processed.</li>
+    <li>Initialise dictionary with all single characters</li>
+    <li>Find the longest input string already in the dictionary</li>
+    <li>Output its dictionary index</li>
+    <li>Add string + next character as a new dictionary entry</li>
+    <li>Repeat</li>
 </ol>
-<p>The dictionary is built dynamically during compression and does not need to be stored separately &mdash; the decompressor rebuilds it from the same process.</p>
 
 <h3>Huffman Coding</h3>
 <div class="definition">
-    <strong>Huffman coding</strong> is a lossless compression technique that assigns <strong>variable-length codes</strong> to symbols based on their frequency. More frequent symbols get shorter codes; less frequent symbols get longer codes. This minimises the total number of bits needed.
+    <strong>Huffman coding</strong> assigns <strong>variable-length codes</strong> based on frequency. More frequent symbols get shorter codes. Lossless.
 </div>
 
-<p>Steps to build a Huffman tree:</p>
+<p><strong>Building a Huffman tree:</strong></p>
 <ol>
-    <li>Count the frequency of each symbol.</li>
-    <li>Create a leaf node for each symbol with its frequency.</li>
-    <li>Repeatedly take the two nodes with the <strong>lowest frequency</strong>, combine them into a new parent node with a frequency equal to their sum.</li>
-    <li>Repeat until only one node (the root) remains.</li>
-    <li>Assign <code>0</code> for left branches and <code>1</code> for right branches (or vice versa, as long as consistent).</li>
-    <li>Read codes by tracing from root to each leaf.</li>
+    <li>Count frequency of each symbol</li>
+    <li>Create a leaf node for each symbol</li>
+    <li>Repeatedly combine the two lowest-frequency nodes into a parent</li>
+    <li>Repeat until one root remains</li>
+    <li>Assign 0 for left, 1 for right</li>
+    <li>Read codes from root to each leaf</li>
 </ol>
 
-<pre>
-  Example: Encode "AABBBCCCC"
-  Frequencies: A=2, B=3, C=4
+<h4>Worked Example: Encode "AABBBCCCC"</h4>
+<pre>Frequencies: A=2, B=3, C=4
 
-  Step 1: Combine A(2) and B(3) &rarr; AB(5)
-  Step 2: Combine C(4) and AB(5) &rarr; root(9)
+Step 1: Combine A(2) + B(3) = AB(5)
+Step 2: Combine C(4) + AB(5) = root(9)
 
-  Tree:       root(9)
-             /       \
-           C(4)     AB(5)
-            |       /    \
-            0     A(2)  B(3)
-                   |      |
-                  10     11
+Tree:       root(9)
+           /       \
+         C(4)     AB(5)
+        code:0    /    \
+                A(2)  B(3)
+              code:10  code:11
 
-  Codes: C = 0, A = 10, B = 11
+Codes: C = 0, A = 10, B = 11
 
-  Encoded: 10 10 11 11 11 0 0 0 0 = 10101111100000 (14 bits)
-  Original at 8 bits each: 9 x 8 = 72 bits
-  Compression ratio: 14/72 = 19.4% of original size
-</pre>
+Original: AABBBCCCC
+Fixed-length (2 bits each): 2 x 9 = 18 bits
+Huffman: 10,10,11,11,11,0,0,0,0 = 2+2+2+2+2+1+1+1+1 = 14 bits
+Saving: 4 bits (22% smaller)</pre>
 
-<p><strong>Prefix-free property:</strong> No Huffman code is a prefix of another code. This means the encoded bit stream can be decoded unambiguously by reading bits left to right and matching against the tree. For example, seeing "10" immediately tells you it is 'A' &mdash; no other code starts with "10".</p>
+<p><strong>Important:</strong> Huffman codes are <strong>prefix-free</strong> &mdash; no code is a prefix of another, so the encoded data can be decoded unambiguously without separators.</p>
 
-<div class="exam-tip">Be prepared to build a Huffman tree from a frequency table, read off the codes, and calculate the compressed size. Always combine the two <em>smallest</em> nodes first. Remember: the most frequent symbol gets the shortest code. Show the tree diagram clearly in exam answers.</div>
-
-<!-- ============================================================ -->
-<h2>4.5.11 Encryption</h2>
-
-<h3>Purpose of Encryption</h3>
-<p>Encryption converts <strong>plaintext</strong> into <strong>ciphertext</strong> to protect data <strong>confidentiality</strong>. Only someone with the correct key can decrypt it back to plaintext. Encryption is essential for protecting data in transit (e.g., HTTPS, email) and at rest (e.g., encrypted hard drives).</p>
-
-<h3>Symmetric Encryption</h3>
-<div class="definition">
-    <strong>Symmetric encryption</strong> uses the <strong>same key</strong> for both encryption and decryption. Both sender and receiver must share this secret key securely before communication can begin.
-</div>
-<ul>
-    <li><strong>Advantages:</strong> Fast, computationally efficient, suitable for encrypting large volumes of data.</li>
-    <li><strong>Disadvantages:</strong> <strong>Key distribution problem</strong> &mdash; how to securely share the key? If the key is intercepted during transmission, all communications are compromised. The number of keys needed grows rapidly with users (n users need n(n-1)/2 keys for pairwise communication).</li>
-    <li><strong>Examples:</strong> AES (Advanced Encryption Standard &mdash; current standard, 128/192/256-bit keys), DES (obsolete, 56-bit key), 3DES.</li>
-</ul>
-
-<h3>Asymmetric Encryption</h3>
-<div class="definition">
-    <strong>Asymmetric encryption</strong> uses a <strong>pair of mathematically linked keys</strong>: a public key (shared openly) and a private key (kept secret). Data encrypted with one key can only be decrypted with the other.
-</div>
-<ul>
-    <li><strong>For confidentiality:</strong> Encrypt with the recipient's <strong>public key</strong>; only they can decrypt with their <strong>private key</strong>. Anyone can send an encrypted message, but only the intended recipient can read it.</li>
-    <li><strong>For authentication (digital signatures):</strong> Encrypt a hash with your <strong>private key</strong>; anyone can verify with your <strong>public key</strong>, confirming you are the sender.</li>
-    <li><strong>Advantages:</strong> No need to share secret keys; solves the key distribution problem. Each user only needs one key pair.</li>
-    <li><strong>Disadvantages:</strong> Much slower than symmetric encryption (100-1000x slower). Not practical for encrypting large data directly.</li>
-    <li><strong>Example:</strong> RSA (based on the difficulty of factoring large prime numbers).</li>
-</ul>
-
-<p><strong>In practice, both are used together:</strong> Asymmetric encryption securely exchanges a symmetric session key. The session key then encrypts the actual data at high speed. This is how HTTPS/TLS works.</p>
-
-<table>
-    <tr><th>Feature</th><th>Symmetric</th><th>Asymmetric</th></tr>
-    <tr><td>Keys</td><td>One shared secret key</td><td>Public + private key pair</td></tr>
-    <tr><td>Speed</td><td>Fast</td><td>Slow</td></tr>
-    <tr><td>Key distribution</td><td>Problematic (must share securely)</td><td>Easy (public key is shared openly)</td></tr>
-    <tr><td>Use case</td><td>Bulk data encryption</td><td>Key exchange, digital signatures, authentication</td></tr>
-    <tr><td>Key count for n users</td><td>n(n-1)/2 keys</td><td>2n keys (one pair per user)</td></tr>
-</table>
-
-<h3>Caesar Cipher</h3>
-<div class="definition">
-    The <strong>Caesar cipher</strong> is a simple substitution cipher that shifts each letter by a fixed number of positions in the alphabet. It is an example of symmetric encryption (the key is the shift value).
-</div>
-<pre>
-  Plaintext:  HELLO
-  Key (shift): 3
-  Ciphertext: KHOOR
-
-  H(7)  &rarr; K(10)  [+3]
-  E(4)  &rarr; H(7)   [+3]
-  L(11) &rarr; O(14)  [+3]
-  L(11) &rarr; O(14)  [+3]
-  O(14) &rarr; R(17)  [+3]
-
-  Decryption: shift by -3 (or +23)
-</pre>
-<p>The Caesar cipher is trivially breakable &mdash; there are only 25 possible shifts, so it can be cracked by <strong>brute force</strong> in seconds. Frequency analysis (comparing letter frequencies in the ciphertext to expected English frequencies) also breaks it easily. It is used only for teaching purposes.</p>
-
-<h3>Vernam Cipher (One-Time Pad)</h3>
-<p>The <strong>Vernam cipher</strong> XORs each character of the plaintext with the corresponding character of a key. The key must be:</p>
-<ul>
-    <li><strong>Truly random</strong> (not pseudorandom)</li>
-    <li><strong>At least as long</strong> as the message</li>
-    <li><strong>Used only once</strong> (hence "one-time pad")</li>
-    <li><strong>Known only to sender and receiver</strong></li>
-</ul>
-
-<pre>
-  Plaintext:  H  E  L  L  O     (ASCII: 72 69 76 76 79)
-  Key:        X  M  C  K  Q     (ASCII: 88 77 67 75 81)
-  XOR:        72^88=16  69^77=8  76^67=15  76^75=7  79^81=30
-  Ciphertext: 16 8 15 7 30      (unprintable characters)
-
-  Decryption: XOR ciphertext with same key:
-  16^88=72  8^77=69  15^67=76  7^75=76  30^81=79
-  Result:    H  E  L  L  O     (original plaintext restored)
-</pre>
-
-<p>If all four conditions are met, the Vernam cipher is <strong>mathematically unbreakable</strong> (proved by Claude Shannon in 1949). The reason: every possible plaintext is equally likely for any given ciphertext, so there is no information for an attacker to exploit. In practice, the key distribution and one-time-use requirements make it impractical for most applications, but it has been used for highly sensitive diplomatic and military communications.</p>
-
-<div class="exam-tip">The Vernam cipher is the only encryption method proven to be unbreakable (when used correctly). Be able to explain why each of the four conditions is necessary. For the Caesar cipher, know how to encrypt and decrypt with a given shift, and explain why it is insecure (only 25 possible keys, vulnerable to brute force and frequency analysis).</div>
+<div class="exam-tip">For Huffman questions, always show: (1) the frequency table, (2) the tree-building steps (which nodes combined at each step), (3) the final codes, (4) calculate the total bits used. Know that Huffman is lossless, prefix-free, and optimal for single-character encoding. RLE is best for data with long runs; dictionary encoding for data with repeated multi-character patterns; Huffman for data with uneven character frequencies.</div>
 
 </div>
 </body>
