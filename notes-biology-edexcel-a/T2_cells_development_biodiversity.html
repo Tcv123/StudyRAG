@@ -6,13 +6,7 @@
     <title>T2 Cells, Development and Biodiversity — Edexcel A A-Level Biology</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #ffffff;
-            color: #1a1a2e;
-            line-height: 1.7;
-            padding: 40px;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px; }
         .container { max-width: 800px; margin: 0 auto; }
         h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 32px; }
         h1 .spec-ref { display: block; font-size: 0.9rem; color: #6b7280; font-weight: 400; margin-top: 4px; }
@@ -31,7 +25,9 @@
         .equation { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; font-family: 'Consolas', monospace; }
         .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
-        @media print { body { padding: 20px; } h2 { break-before: auto; } .definition-box, .exam-tip, .equation { break-inside: avoid; } }
+        .application-box { background: #f0fdf4; border-left: 4px solid #059669; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
+        .application-box::before { content: "Real-World Application: "; font-weight: 700; color: #059669; }
+        @media print { body { padding: 20px; } h2 { break-before: auto; } .definition-box, .exam-tip, .equation, .application-box { break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -45,26 +41,26 @@
 <h2>2.1 Cell Structure</h2>
 
 <div class="definition-box">
-    <strong>Cell:</strong> The basic structural and functional unit of all living organisms. All cells are bounded by a cell surface membrane and contain genetic material (DNA).
+    <strong>Cell:</strong> The basic structural and functional unit of all living organisms. All cells are bounded by a cell surface membrane and contain genetic material (DNA). The cell theory states: (1) all living things are made of cells, (2) cells are the basic unit of structure and function, (3) new cells arise from pre-existing cells by division.
 </div>
 
 <h3>Eukaryotic Cell Organelles</h3>
-<table>
-    <tr><th>Organelle</th><th>Structure</th><th>Function</th></tr>
-    <tr><td>Nucleus</td><td>Double membrane (nuclear envelope) with pores; contains chromatin</td><td>Houses DNA; controls cell activities; site of transcription</td></tr>
-    <tr><td>Rough endoplasmic reticulum (RER)</td><td>Membrane-bound network studded with ribosomes</td><td>Synthesis and transport of proteins</td></tr>
-    <tr><td>Smooth endoplasmic reticulum (SER)</td><td>Membrane-bound network; no ribosomes</td><td>Synthesis of lipids and steroid hormones; detoxification</td></tr>
-    <tr><td>Golgi apparatus</td><td>Stack of flattened membrane sacs (cisternae)</td><td>Modifies, packages and sorts proteins; produces vesicles and lysosomes</td></tr>
-    <tr><td>Mitochondria</td><td>Double membrane; inner membrane folded into cristae; contains own DNA</td><td>Aerobic respiration (ATP production)</td></tr>
-    <tr><td>Chloroplasts</td><td>Double membrane; internal thylakoid membranes with grana; stroma; own DNA</td><td>Photosynthesis (plants and algae only)</td></tr>
-    <tr><td>Lysosomes</td><td>Membrane-bound vesicles containing hydrolytic enzymes</td><td>Intracellular digestion; autophagy; destruction of pathogens</td></tr>
-    <tr><td>Ribosomes</td><td>Two subunits (large + small); 80S in eukaryotes, 70S in prokaryotes</td><td>Translation (protein synthesis)</td></tr>
-    <tr><td>Centrioles</td><td>Paired cylindrical structures of microtubules (9+0 arrangement)</td><td>Organisation of spindle fibres during cell division</td></tr>
-    <tr><td>Cell wall</td><td>Cellulose microfibrils (plants); chitin (fungi)</td><td>Structural support; prevents lysis</td></tr>
-    <tr><td>Vacuole</td><td>Large membrane-bound sac (tonoplast) in plant cells</td><td>Maintains turgor pressure; storage of ions, pigments, waste</td></tr>
-</table>
+<p>Eukaryotic cells (animals, plants, fungi, protists) are characterised by membrane-bound organelles, a true nucleus with a nuclear envelope, and linear chromosomes. Compartmentalisation allows different metabolic reactions to occur simultaneously in optimal conditions within the same cell.</p>
 
-<div class="exam-tip">In electron micrograph questions, look for key identifying features: cristae (mitochondria), grana/thylakoids (chloroplasts), ribosomes on membranes (RER), and cisternae stacks (Golgi). The double membrane of mitochondria and chloroplasts supports the endosymbiotic theory.</div>
+<table>
+    <tr><th>Organelle</th><th>Structure</th><th>Function</th><th>Additional Detail</th></tr>
+    <tr><td><strong>Nucleus</strong></td><td>Double membrane (nuclear envelope) with nuclear pores (~3000&ndash;4000 per nucleus); contains chromatin (DNA + histone proteins) and one or more nucleoli</td><td>Houses and protects DNA; controls cell activities via gene expression; site of transcription and ribosomal RNA synthesis</td><td>Nuclear pores allow mRNA, ribosomes and proteins to pass between nucleus and cytoplasm. Nucleolus produces rRNA for ribosome assembly. During cell division, chromatin condenses into visible chromosomes</td></tr>
+    <tr><td><strong>Rough ER (RER)</strong></td><td>Flattened membrane-bound sacs (cisternae) continuous with nuclear envelope; studded with 80S ribosomes on cytoplasmic surface</td><td>Synthesis of proteins destined for secretion, membrane insertion, or lysosomes; folding and quality control of proteins</td><td>Proteins are synthesised by ribosomes on the RER surface, threaded into the lumen, folded by chaperone proteins, and transported in vesicles to the Golgi. Abundant in cells that secrete proteins (e.g., plasma cells secreting antibodies, pancreatic acinar cells secreting digestive enzymes)</td></tr>
+    <tr><td><strong>Smooth ER (SER)</strong></td><td>Tubular membrane network; no ribosomes</td><td>Synthesis of lipids (phospholipids, cholesterol, steroid hormones); detoxification of drugs and alcohol; calcium storage (in muscle cells = sarcoplasmic reticulum)</td><td>Abundant in liver cells (detoxification), adrenal cortex (steroid hormone synthesis), and ovary/testis cells (sex hormone synthesis)</td></tr>
+    <tr><td><strong>Golgi apparatus</strong></td><td>Stack of flattened membrane sacs (cisternae) with a cis face (receiving) and trans face (shipping); associated transport vesicles</td><td>Modifies proteins (glycosylation, phosphorylation, sulfation); packages proteins into vesicles; sorts and directs proteins to correct destination; produces lysosomes and secretory vesicles</td><td>Receives vesicles from the RER at the cis face; modifies contents as they move through the stack; exports from the trans face. Think of it as the cell's "post office"</td></tr>
+    <tr><td><strong>Mitochondria</strong></td><td>Double membrane; smooth outer membrane; highly folded inner membrane forming <strong>cristae</strong> (increasing surface area for oxidative phosphorylation); fluid-filled <strong>matrix</strong>; contains own circular DNA and 70S ribosomes</td><td>Site of aerobic respiration (ATP production). Krebs cycle occurs in the matrix; oxidative phosphorylation on cristae</td><td>Very active cells (muscle, nerve, liver, sperm) have many mitochondria. Own DNA and ribosomes support the <strong>endosymbiotic theory</strong> (mitochondria were once free-living prokaryotes engulfed by an ancestral eukaryote). Can self-replicate by binary fission. Maternally inherited</td></tr>
+    <tr><td><strong>Chloroplasts</strong></td><td>Double outer membrane (envelope); internal <strong>thylakoid</strong> membranes arranged in stacks called <strong>grana</strong> (connected by intergranal lamellae); fluid-filled <strong>stroma</strong>; own circular DNA and 70S ribosomes; starch grains</td><td>Site of photosynthesis (plants and algae). Light-dependent reactions on thylakoid membranes; Calvin cycle in stroma</td><td>Also support endosymbiotic theory (ancestral cyanobacterium). Contain photosynthetic pigments (chlorophyll a, b, carotenoids) in thylakoid membranes. Only in photosynthetic cells</td></tr>
+    <tr><td><strong>Lysosomes</strong></td><td>Single membrane-bound vesicles containing hydrolytic (digestive) enzymes (acid hydrolases) at optimum pH ~4.5&ndash;5</td><td>Intracellular digestion of: ingested material (phagocytosis), worn-out organelles (<strong>autophagy</strong>), pathogens (in immune cells); also involved in <strong>apoptosis</strong> (programmed cell death)</td><td>Membrane contains proton pumps to maintain acidic interior. Abundant in phagocytes (neutrophils, macrophages). Lysosomal storage diseases (e.g., Tay-Sachs) result from deficient lysosomal enzymes</td></tr>
+    <tr><td><strong>Ribosomes</strong></td><td>Two subunits (large + small); not membrane-bound. <strong>80S</strong> in eukaryotes (60S + 40S), <strong>70S</strong> in prokaryotes (50S + 30S). Made of rRNA + protein</td><td>Site of <strong>translation</strong> (protein synthesis); decode mRNA to assemble amino acids into polypeptides</td><td>Free ribosomes in cytoplasm make proteins for use within the cell. Bound ribosomes on RER make proteins for export or membrane insertion. The 70S vs 80S difference is clinically important: antibiotics like tetracycline target 70S ribosomes, killing bacteria without harming eukaryotic cells</td></tr>
+    <tr><td><strong>Centrioles</strong></td><td>Paired cylindrical structures composed of 9 triplets of microtubules (9+0 arrangement); located in the <strong>centrosome</strong></td><td>Organise the mitotic/meiotic spindle during cell division; form the basal bodies of cilia and flagella</td><td>Found in animal cells (and some lower plant cells) but NOT in higher plant cells (which still form spindles using other microtubule-organising mechanisms)</td></tr>
+    <tr><td><strong>Cell wall</strong></td><td>Rigid layer outside the cell membrane: <strong>cellulose</strong> in plants (microfibrils in a hemicellulose/pectin matrix), <strong>chitin</strong> in fungi, <strong>peptidoglycan</strong> in bacteria</td><td>Provides structural support, prevents lysis in hypotonic solutions, maintains cell shape, allows turgor pressure to develop</td><td>Freely permeable (unlike the cell membrane &mdash; not selectively permeable). Middle lamella (pectin) cements adjacent plant cells together. Plasmodesmata (channels through cell walls) allow cell-to-cell communication</td></tr>
+    <tr><td><strong>Vacuole</strong></td><td>Large, permanent, central membrane-bound sac (<strong>tonoplast</strong> membrane) in plant cells; filled with cell sap (water, ions, pigments, sugars, waste products)</td><td>Maintains <strong>turgor pressure</strong> (hydrostatic pressure pushing cell membrane against cell wall, giving rigidity to herbaceous plants); storage of ions, pigments (anthocyanins), metabolic waste; regulation of pH and ion concentration</td><td>Animal cells may have small temporary vacuoles (food vacuoles from endocytosis). The contractile vacuole in freshwater protists expels excess water</td></tr>
+</table>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 400" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -75,102 +71,93 @@
     .title { font-size: 14px; font-weight: bold; }
   </style>
   <text x="300" y="22" text-anchor="middle" class="title">Animal Cell vs Plant Cell</text>
-
   <!-- Animal Cell -->
   <text x="160" y="48" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Animal Cell</text>
-  <!-- Cell membrane -->
   <ellipse cx="160" cy="210" rx="130" ry="140" fill="#1a73e8" opacity="0.05" stroke="#1a73e8" stroke-width="2.5"/>
   <text x="55" y="95" class="small-label" fill="#1a73e8">Cell membrane</text>
-  <!-- Nucleus -->
   <ellipse cx="160" cy="190" rx="40" ry="35" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="2"/>
   <circle cx="160" cy="190" r="10" fill="#1a73e8" opacity="0.3"/>
   <text x="160" y="194" text-anchor="middle" font-size="9" fill="#1a73e8" font-weight="bold" font-family="system-ui">Nucleolus</text>
   <text x="160" y="215" text-anchor="middle" class="small-label" fill="#1a73e8">Nucleus</text>
-  <!-- Mitochondria -->
   <ellipse cx="105" cy="140" rx="18" ry="10" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5" transform="rotate(-20,105,140)"/>
   <line x1="92" y1="140" x2="118" y2="140" stroke="#DC2626" stroke-width="0.8" transform="rotate(-20,105,140)"/>
   <text x="105" y="125" text-anchor="middle" font-size="9" fill="#DC2626" font-family="system-ui">Mitochondrion</text>
-  <!-- RER -->
   <path d="M 195,140 Q 215,135 210,145 Q 205,155 225,150" fill="none" stroke="#16A34A" stroke-width="1.5"/>
   <path d="M 200,148 Q 220,143 215,153 Q 210,163 230,158" fill="none" stroke="#16A34A" stroke-width="1.5"/>
   <circle cx="200" cy="139" r="1.5" fill="#16A34A"/><circle cx="210" cy="144" r="1.5" fill="#16A34A"/><circle cx="205" cy="147" r="1.5" fill="#16A34A"/>
   <text x="230" y="140" class="small-label" fill="#16A34A" font-size="9">RER</text>
-  <!-- Golgi -->
   <path d="M 100,250 Q 115,245 130,250" fill="none" stroke="#D97706" stroke-width="2"/>
   <path d="M 102,257 Q 117,252 132,257" fill="none" stroke="#D97706" stroke-width="2"/>
   <path d="M 104,264 Q 119,259 134,264" fill="none" stroke="#D97706" stroke-width="2"/>
   <text x="117" y="282" text-anchor="middle" font-size="9" fill="#D97706" font-family="system-ui">Golgi</text>
-  <!-- Lysosomes -->
   <circle cx="200" cy="270" r="8" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1"/>
   <text x="200" y="290" text-anchor="middle" font-size="9" fill="#D97706" font-family="system-ui">Lysosome</text>
-  <!-- Centrioles -->
   <rect x="148" y="290" width="6" height="16" rx="2" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
   <rect x="156" y="292" width="6" height="16" rx="2" fill="none" stroke="#1a1a2e" stroke-width="1.5" transform="rotate(15,159,300)"/>
   <text x="160" y="322" text-anchor="middle" font-size="9" fill="#1a1a2e" font-family="system-ui">Centrioles</text>
-  <!-- Ribosomes -->
   <circle cx="220" cy="240" r="2" fill="#6b7280"/><circle cx="228" cy="237" r="2" fill="#6b7280"/><circle cx="224" cy="245" r="2" fill="#6b7280"/>
   <text x="240" y="243" font-size="9" fill="#6b7280" font-family="system-ui">Ribosomes</text>
 
   <!-- Plant Cell -->
   <text x="450" y="48" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">Plant Cell</text>
-  <!-- Cell wall -->
   <rect x="330" y="60" width="240" height="310" rx="12" fill="none" stroke="#16A34A" stroke-width="3"/>
   <text x="565" y="80" text-anchor="end" class="small-label" fill="#16A34A">Cell wall</text>
-  <!-- Cell membrane -->
   <rect x="338" y="68" width="224" height="294" rx="10" fill="#16A34A" opacity="0.04" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <!-- Nucleus -->
   <ellipse cx="450" cy="130" rx="35" ry="30" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="2"/>
   <circle cx="450" cy="130" r="8" fill="#1a73e8" opacity="0.3"/>
   <text x="450" y="152" text-anchor="middle" class="small-label" fill="#1a73e8">Nucleus</text>
-  <!-- Large central vacuole -->
   <ellipse cx="450" cy="250" rx="70" ry="55" fill="#1a73e8" opacity="0.08" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="5,3"/>
   <text x="450" y="248" text-anchor="middle" class="small-label" fill="#1a73e8">Large central</text>
   <text x="450" y="262" text-anchor="middle" class="small-label" fill="#1a73e8">vacuole</text>
-  <!-- Chloroplast -->
   <ellipse cx="390" cy="180" rx="22" ry="12" fill="#16A34A" opacity="0.25" stroke="#16A34A" stroke-width="1.5"/>
   <line x1="375" y1="180" x2="405" y2="180" stroke="#16A34A" stroke-width="0.8"/>
   <line x1="378" y1="176" x2="402" y2="176" stroke="#16A34A" stroke-width="0.8"/>
   <line x1="378" y1="184" x2="402" y2="184" stroke="#16A34A" stroke-width="0.8"/>
   <text x="390" y="205" text-anchor="middle" font-size="9" fill="#16A34A" font-family="system-ui">Chloroplast</text>
-  <!-- Mitochondrion -->
   <ellipse cx="510" cy="180" rx="16" ry="9" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
   <text x="510" y="200" text-anchor="middle" font-size="9" fill="#DC2626" font-family="system-ui">Mitochondrion</text>
 
-  <!-- Key differences at bottom -->
-  <text x="300" y="388" text-anchor="middle" class="small-label" fill="#6b7280" font-style="italic">Plant cells have cell wall, chloroplasts, large vacuole. Animal cells have centrioles, lysosomes.</text>
+  <text x="300" y="388" text-anchor="middle" class="small-label" fill="#6b7280" font-style="italic">Plant cells have: cell wall, chloroplasts, large permanent vacuole. Animal cells have: centrioles, lysosomes (prominent).</text>
 </svg>
 </div>
 
+<div class="exam-tip">In electron micrograph identification questions, look for key features: <strong>cristae</strong> (inner folds) = mitochondria; <strong>grana/thylakoids</strong> (stacked disc structures) = chloroplasts; <strong>ribosomes dotting membranes</strong> = RER; <strong>stacked cisternae with vesicles budding off</strong> = Golgi. The double membranes of mitochondria and chloroplasts, along with their own 70S ribosomes and circular DNA, provide evidence for the <strong>endosymbiotic theory</strong>.</div>
+
 <h3>Prokaryotic Cells</h3>
-<p>Prokaryotes (bacteria and archaea) are smaller and simpler than eukaryotes. They lack membrane-bound organelles.</p>
-<table>
-    <tr><th>Feature</th><th>Detail</th></tr>
-    <tr><td>Cell wall</td><td>Peptidoglycan (murein) &mdash; not cellulose</td></tr>
-    <tr><td>DNA</td><td>Single circular chromosome in nucleoid; also plasmids (small circular DNA)</td></tr>
-    <tr><td>Ribosomes</td><td>70S (smaller than eukaryotic 80S)</td></tr>
-    <tr><td>Flagella</td><td>For locomotion (different structure from eukaryotic flagella)</td></tr>
-    <tr><td>Capsule/slime layer</td><td>Additional outer protective layer (some bacteria)</td></tr>
-    <tr><td>Pili</td><td>Short projections for attachment or conjugation</td></tr>
-    <tr><td>Mesosomes</td><td>Infoldings of membrane (site of respiration)</td></tr>
-</table>
-
-<h3>Magnification and Resolution</h3>
-<div class="equation">Magnification = Image size / Actual size &nbsp;&nbsp;&nbsp; (I = M &times; A)</div>
-
-<p><strong>Resolution</strong> is the minimum distance between two points that can still be distinguished as separate. Electron microscopes have much higher resolution (~0.5 nm) than light microscopes (~200 nm) because electrons have a shorter wavelength than visible light.</p>
+<p>Prokaryotes (bacteria and archaea) are smaller (typically 0.5&ndash;5 &mu;m) and structurally simpler than eukaryotes. They lack membrane-bound organelles and have no true nucleus. Despite their simplicity, they are enormously successful and found in virtually every habitat on Earth.</p>
 
 <table>
-    <tr><th>Microscope</th><th>Max Resolution</th><th>Max Magnification</th><th>Specimen</th></tr>
-    <tr><td>Light microscope</td><td>~200 nm</td><td>&times;1500</td><td>Living or dead; colour visible</td></tr>
-    <tr><td>TEM (transmission)</td><td>~0.5 nm</td><td>&times;500,000</td><td>Dead; thin sections; 2D image</td></tr>
-    <tr><td>SEM (scanning)</td><td>~3&ndash;10 nm</td><td>&times;100,000</td><td>Dead; surface detail; 3D image</td></tr>
+    <tr><th>Feature</th><th>Detail</th><th>Comparison with Eukaryotes</th></tr>
+    <tr><td><strong>Cell wall</strong></td><td>Made of <strong>peptidoglycan</strong> (murein) &mdash; a polymer of sugars cross-linked by short polypeptide chains. Gram-positive bacteria have thick peptidoglycan; Gram-negative have thin peptidoglycan + outer lipopolysaccharide membrane</td><td>Eukaryotic cell walls (where present) are cellulose (plants), chitin (fungi) &mdash; never peptidoglycan</td></tr>
+    <tr><td><strong>DNA</strong></td><td>Single, circular chromosome in the <strong>nucleoid</strong> region (not enclosed by a membrane); DNA is "naked" (not associated with histones). Also contains <strong>plasmids</strong> &mdash; small, circular, self-replicating DNA molecules carrying accessory genes (e.g., antibiotic resistance)</td><td>Eukaryotic DNA is linear, associated with histones, contained within a nuclear envelope, and organised into multiple chromosomes</td></tr>
+    <tr><td><strong>Ribosomes</strong></td><td><strong>70S</strong> (50S + 30S subunits) &mdash; smaller than eukaryotic</td><td>Eukaryotic ribosomes are 80S (60S + 40S). This difference is exploited by antibiotics that target 70S ribosomes (e.g., tetracycline, chloramphenicol) without affecting human cells</td></tr>
+    <tr><td><strong>Flagella</strong></td><td>Whip-like appendages for locomotion; rotary motor driven by proton gradient. Structurally different from eukaryotic flagella (no 9+2 microtubule arrangement)</td><td>Eukaryotic flagella/cilia have a 9+2 microtubule arrangement and are powered by dynein motor proteins using ATP</td></tr>
+    <tr><td><strong>Capsule/slime layer</strong></td><td>Polysaccharide or polypeptide layer outside the cell wall in some bacteria. Provides protection against phagocytosis, desiccation, and antibiotics</td><td>Eukaryotes have a glycocalyx but not a capsule</td></tr>
+    <tr><td><strong>Pili (fimbriae)</strong></td><td>Short protein projections. Pili for attachment to host surfaces; sex pili (F pili) for <strong>conjugation</strong> (transfer of plasmid DNA between bacteria)</td><td>No equivalent in eukaryotes</td></tr>
+    <tr><td><strong>No membrane-bound organelles</strong></td><td>No nucleus, no ER, no Golgi, no mitochondria, no chloroplasts (though some have mesosomes &mdash; infolded membrane for respiration, and thylakoid-like membranes in cyanobacteria for photosynthesis)</td><td>Eukaryotes have extensive internal membrane compartmentalisation</td></tr>
 </table>
+
+<div class="application-box">Understanding prokaryotic cell structure is critical for medicine. Penicillin works by inhibiting <strong>transpeptidase</strong>, preventing peptidoglycan cross-linking during cell wall synthesis &mdash; the wall weakens and the bacterium lyses due to osmotic pressure. This does not affect human cells because we lack cell walls. Gram staining (distinguishing cell wall types) helps clinicians choose appropriate antibiotics. Plasmid-mediated antibiotic resistance is a major public health threat (e.g., MRSA, ESBL-producing bacteria).</div>
+
+<h3>Magnification, Resolution and Microscopy</h3>
+<div class="equation">Magnification = Image size / Actual size &nbsp;&nbsp;&nbsp; rearranged: I = M &times; A &nbsp;or&nbsp; A = I / M</div>
+
+<p><strong>Resolution</strong> is the minimum distance between two points that can still be distinguished as separate objects. It depends on the wavelength of the illumination source. Higher resolution reveals finer detail.</p>
+
+<table>
+    <tr><th>Microscope Type</th><th>Max Resolution</th><th>Max Magnification</th><th>Specimen Requirements</th><th>Advantages / Limitations</th></tr>
+    <tr><td><strong>Light (optical)</strong></td><td>~200 nm (0.2 &mu;m)</td><td>&times;1500</td><td>Living or dead; can be stained for contrast; thin sections or whole mounts; colour visible</td><td>Cheap, portable, easy to use; can observe living processes (e.g., mitosis in root tip squash). Limited resolution &mdash; cannot see organelles smaller than ~200 nm (ribosomes, ER membranes invisible)</td></tr>
+    <tr><td><strong>TEM (transmission electron)</strong></td><td>~0.5 nm</td><td>&times;500,000+</td><td>Dead, fixed, dehydrated; ultra-thin sections (~80 nm); stained with heavy metals (osmium, uranyl acetate); produces 2D images</td><td>Highest resolution; reveals internal ultrastructure of organelles (cristae, thylakoids, ribosomes, nuclear pores). Expensive; complex preparation; no living specimens; artefacts possible</td></tr>
+    <tr><td><strong>SEM (scanning electron)</strong></td><td>~3&ndash;10 nm</td><td>&times;100,000</td><td>Dead, fixed, coated in thin layer of gold or carbon; surface detail; produces 3D images</td><td>Reveals surface topology and 3D shape (e.g., cell surfaces, pollen grains, insect structures). Lower resolution than TEM but excellent depth of field</td></tr>
+</table>
+
+<div class="exam-tip">In magnification calculations, always convert units so they match (commonly to &mu;m or mm). Remember: 1 mm = 1000 &mu;m = 1,000,000 nm. To find actual size: measure the image with a ruler, then divide by the magnification. Common mistake: mixing up units or forgetting to convert the scale bar.</div>
 
 <!-- ==================== CELL DIVISION ==================== -->
 <h2>2.2 Cell Division</h2>
 
 <h3>The Cell Cycle</h3>
-<p>The cell cycle consists of <strong>interphase</strong> (G<sub>1</sub>, S, G<sub>2</sub>) and <strong>mitosis</strong> (M phase). Most of the cell's life is spent in interphase, where it grows, replicates DNA (S phase) and prepares for division.</p>
+<p>The cell cycle is the ordered sequence of events between one cell division and the next. It consists of <strong>interphase</strong> (the longest period, where the cell grows and prepares) and <strong>M phase</strong> (mitosis + cytokinesis). The entire cycle is regulated by <strong>cyclins</strong> and <strong>cyclin-dependent kinases (CDKs)</strong> at key checkpoints (G1/S, G2/M, and the metaphase/spindle assembly checkpoint).</p>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 350" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -181,70 +168,67 @@
     .title { font-size: 14px; font-weight: bold; }
   </style>
   <text x="300" y="22" text-anchor="middle" class="title">The Cell Cycle</text>
-  <!-- Outer circle -->
   <circle cx="250" cy="185" r="130" fill="none" stroke="#e5e7eb" stroke-width="2"/>
-  <!-- G1 phase arc (largest) ~40% of cycle, from top going clockwise -->
   <path d="M 250,55 A 130,130 0 0,1 376,143" fill="none" stroke="#1a73e8" stroke-width="22" opacity="0.3"/>
-  <!-- S phase arc ~35% -->
   <path d="M 376,143 A 130,130 0 0,1 310,312" fill="none" stroke="#16A34A" stroke-width="22" opacity="0.3"/>
-  <!-- G2 phase arc ~15% -->
   <path d="M 310,312 A 130,130 0 0,1 175,292" fill="none" stroke="#D97706" stroke-width="22" opacity="0.3"/>
-  <!-- M phase arc ~10% -->
   <path d="M 175,292 A 130,130 0 0,1 250,55" fill="none" stroke="#DC2626" stroke-width="22" opacity="0.3"/>
-
-  <!-- Phase labels on the arcs -->
-  <text x="330" y="95" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">G₁</text>
+  <text x="330" y="95" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">G&#8321;</text>
   <text x="370" y="240" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">S</text>
-  <text x="240" y="315" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">G₂</text>
+  <text x="240" y="315" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">G&#8322;</text>
   <text x="148" y="195" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">M</text>
-
-  <!-- Centre label -->
   <text x="250" y="178" text-anchor="middle" class="label" fill="#1a1a2e" font-weight="bold">INTERPHASE</text>
-  <text x="250" y="195" text-anchor="middle" class="small-label" fill="#6b7280">(G₁ + S + G₂)</text>
-
-  <!-- Arrows showing direction (clockwise) -->
+  <text x="250" y="195" text-anchor="middle" class="small-label" fill="#6b7280">(G&#8321; + S + G&#8322;)</text>
   <path d="M 250,53 L 256,45 L 258,57" fill="#1a1a2e"/>
-  <path d="M 378,145 L 382,135 L 373,138" fill="#1a1a2e"/>
-  <path d="M 308,313 L 315,319 L 305,318" fill="#1a1a2e"/>
-  <path d="M 173,290 L 168,298 L 179,295" fill="#1a1a2e"/>
-
-  <!-- Side annotations -->
   <line x1="385" y1="85" x2="430" y2="70" stroke="#1a73e8" stroke-width="1"/>
-  <text x="435" y="63" class="small-label" fill="#1a73e8" font-weight="bold">G₁ Phase</text>
-  <text x="435" y="77" class="small-label" fill="#1a73e8">Cell growth,</text>
-  <text x="435" y="91" class="small-label" fill="#1a73e8">organelle production,</text>
-  <text x="435" y="105" class="small-label" fill="#1a73e8">protein synthesis</text>
-
+  <text x="435" y="63" class="small-label" fill="#1a73e8" font-weight="bold">G&#8321; Phase (Gap 1)</text>
+  <text x="435" y="77" class="small-label" fill="#1a73e8">Cell growth, organelle</text>
+  <text x="435" y="91" class="small-label" fill="#1a73e8">production, protein synthesis.</text>
+  <text x="435" y="105" class="small-label" fill="#1a73e8">G&#8321;/S checkpoint: DNA</text>
+  <text x="435" y="119" class="small-label" fill="#1a73e8">damage? Cell size OK?</text>
   <line x1="390" y1="250" x2="430" y2="260" stroke="#16A34A" stroke-width="1"/>
-  <text x="435" y="255" class="small-label" fill="#16A34A" font-weight="bold">S Phase</text>
-  <text x="435" y="269" class="small-label" fill="#16A34A">DNA replication</text>
-  <text x="435" y="283" class="small-label" fill="#16A34A">(each chromosome</text>
-  <text x="435" y="297" class="small-label" fill="#16A34A">→ 2 sister chromatids)</text>
-
+  <text x="435" y="255" class="small-label" fill="#16A34A" font-weight="bold">S Phase (Synthesis)</text>
+  <text x="435" y="269" class="small-label" fill="#16A34A">DNA replication: each</text>
+  <text x="435" y="283" class="small-label" fill="#16A34A">chromosome &rarr; 2 sister</text>
+  <text x="435" y="297" class="small-label" fill="#16A34A">chromatids joined at centromere</text>
   <line x1="225" y1="320" x2="225" y2="340" stroke="#D97706" stroke-width="1"/>
-  <text x="228" y="340" class="small-label" fill="#D97706" font-weight="bold">G₂: Further growth, preparation for mitosis</text>
-
+  <text x="228" y="340" class="small-label" fill="#D97706" font-weight="bold">G&#8322;: Further growth, check DNA replication, prepare for mitosis</text>
   <line x1="130" y1="160" x2="60" y2="140" stroke="#DC2626" stroke-width="1"/>
   <text x="15" y="135" class="small-label" fill="#DC2626" font-weight="bold">M Phase</text>
-  <text x="15" y="149" class="small-label" fill="#DC2626">Mitosis +</text>
-  <text x="15" y="163" class="small-label" fill="#DC2626">Cytokinesis</text>
-  <text x="15" y="177" class="small-label" fill="#DC2626">(nuclear &amp; cell</text>
-  <text x="15" y="191" class="small-label" fill="#DC2626">division)</text>
+  <text x="15" y="149" class="small-label" fill="#DC2626">Mitosis (nuclear</text>
+  <text x="15" y="163" class="small-label" fill="#DC2626">division) followed</text>
+  <text x="15" y="177" class="small-label" fill="#DC2626">by cytokinesis</text>
+  <text x="15" y="191" class="small-label" fill="#DC2626">(cell division)</text>
 </svg>
 </div>
 
+<p><strong>Interphase</strong> has three sub-phases:</p>
+<ul>
+    <li><strong>G<sub>1</sub> (Gap 1):</strong> Cell grows; synthesises proteins, RNA, and organelles; prepares for DNA replication. The cell checks for DNA damage at the G<sub>1</sub>/S checkpoint (the "restriction point"). If conditions are not met, the cell enters G<sub>0</sub> (quiescent state &mdash; non-dividing, e.g., mature neurones)</li>
+    <li><strong>S (Synthesis):</strong> DNA is replicated semi-conservatively. Each chromosome becomes two <strong>sister chromatids</strong> joined at the <strong>centromere</strong>. Histones are also synthesised and assembled onto new DNA. Centrioles replicate</li>
+    <li><strong>G<sub>2</sub> (Gap 2):</strong> Further cell growth; synthesis of proteins needed for mitosis (e.g., tubulin for spindle fibres). The G<sub>2</sub>/M checkpoint verifies DNA replication is complete and checks for damage before committing to mitosis</li>
+</ul>
+
+<div class="application-box"><strong>Cancer</strong> results from uncontrolled cell division when cell cycle checkpoints fail. Mutations in <strong>proto-oncogenes</strong> (which promote cell division) can convert them to <strong>oncogenes</strong> that are permanently active, driving excessive proliferation. Mutations in <strong>tumour suppressor genes</strong> (e.g., p53, Rb) remove the "brakes" on the cell cycle. p53 normally halts the cell cycle at G<sub>1</sub> to allow DNA repair, or triggers apoptosis if damage is too severe. Loss of p53 function (found in ~50% of cancers) allows damaged cells to continue dividing, accumulating further mutations. Chemotherapy drugs often target rapidly dividing cells by disrupting DNA replication (S phase) or spindle formation (M phase).</div>
+
 <h3>Mitosis</h3>
 <div class="definition-box">
-    <strong>Mitosis:</strong> Nuclear division producing two genetically identical daughter nuclei, each with the same number of chromosomes as the parent cell (diploid). Used for growth, repair and asexual reproduction.
+    <strong>Mitosis:</strong> Nuclear division producing two genetically identical daughter nuclei, each with the same number of chromosomes as the parent cell (maintaining the diploid number, 2n). Used for growth, repair of damaged tissues, replacement of dead cells, and asexual reproduction. Followed by cytokinesis (division of the cytoplasm).
 </div>
 
 <table>
-    <tr><th>Stage</th><th>Key Events</th></tr>
-    <tr><td>Prophase</td><td>Chromosomes condense (visible as sister chromatids joined at centromere); centrioles move to poles; nuclear envelope breaks down; spindle fibres form</td></tr>
-    <tr><td>Metaphase</td><td>Chromosomes line up at the cell equator (metaphase plate); spindle fibres attach to centromeres</td></tr>
-    <tr><td>Anaphase</td><td>Centromeres split; sister chromatids pulled to opposite poles by shortening spindle fibres</td></tr>
-    <tr><td>Telophase</td><td>Chromatids reach poles; nuclear envelopes reform; chromosomes decondense; cytokinesis begins</td></tr>
+    <tr><th>Stage</th><th>Key Events</th><th>What to Look For (in micrographs)</th></tr>
+    <tr><td><strong>Prophase</strong></td><td>Chromatin condenses into visible chromosomes (each consisting of two sister chromatids joined at the centromere). Centrioles migrate to opposite poles and begin forming the spindle apparatus (microtubules). Nuclear envelope breaks down (disassembles into vesicles). Nucleolus disappears</td><td>Visible, thickened chromosomes; no clear nuclear boundary; spindle fibres beginning to form</td></tr>
+    <tr><td><strong>Metaphase</strong></td><td>Chromosomes are moved to the <strong>cell equator</strong> (metaphase plate) by spindle fibres. Spindle fibres (kinetochore microtubules) attach to the <strong>kinetochores</strong> at each centromere. The spindle assembly checkpoint ensures all chromosomes are properly attached before anaphase proceeds</td><td>Chromosomes lined up at the middle of the cell; clear spindle structure</td></tr>
+    <tr><td><strong>Anaphase</strong></td><td>Centromeres divide; sister chromatids separate and are pulled to <strong>opposite poles</strong> by shortening of kinetochore microtubules (motor proteins "walk" along the microtubules). The cell elongates as polar microtubules push poles apart. This is the shortest stage of mitosis</td><td>V-shaped chromatids being pulled to poles (centromeres lead); cell appears elongated</td></tr>
+    <tr><td><strong>Telophase</strong></td><td>Chromatids (now called chromosomes again) arrive at the poles and begin to decondense back into chromatin. Nuclear envelopes reform around each set of chromosomes. Nucleoli reappear. Spindle fibres disassemble. Cytokinesis begins</td><td>Two groups of chromosomes at opposite ends; nuclear envelopes reforming; cleavage furrow or cell plate forming</td></tr>
 </table>
+
+<p><strong>Cytokinesis</strong> differs between animal and plant cells:</p>
+<ul>
+    <li><strong>Animal cells:</strong> A <strong>cleavage furrow</strong> forms as a contractile ring of actin and myosin filaments pinches the cell membrane inward, eventually dividing the cell in two</li>
+    <li><strong>Plant cells:</strong> A <strong>cell plate</strong> forms at the equator from vesicles derived from the Golgi apparatus. These vesicles fuse to create a new cell membrane and cell wall (middle lamella) between the two daughter cells</li>
+</ul>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -256,167 +240,168 @@
     .stage-title { font-size: 11px; font-weight: bold; }
   </style>
   <text x="300" y="22" text-anchor="middle" class="title">Stages of Mitosis</text>
-
-  <!-- PROPHASE -->
   <text x="70" y="48" text-anchor="middle" class="stage-title" fill="#1a73e8">Prophase</text>
   <ellipse cx="70" cy="120" rx="50" ry="55" fill="#1a73e8" opacity="0.05" stroke="#1a73e8" stroke-width="1.5"/>
-  <!-- Condensing chromosomes (X shapes) -->
   <line x1="50" y1="95" x2="65" y2="115" stroke="#DC2626" stroke-width="2.5"/><line x1="65" y1="95" x2="50" y2="115" stroke="#DC2626" stroke-width="2.5"/>
   <line x1="70" y1="110" x2="85" y2="130" stroke="#1a73e8" stroke-width="2.5"/><line x1="85" y1="110" x2="70" y2="130" stroke="#1a73e8" stroke-width="2.5"/>
   <line x1="55" y1="130" x2="70" y2="150" stroke="#DC2626" stroke-width="2.5"/><line x1="70" y1="130" x2="55" y2="150" stroke="#DC2626" stroke-width="2.5"/>
   <line x1="78" y1="138" x2="90" y2="152" stroke="#1a73e8" stroke-width="2.5"/><line x1="90" y1="138" x2="78" y2="152" stroke="#1a73e8" stroke-width="2.5"/>
-  <!-- Centrioles at poles -->
   <circle cx="70" cy="68" r="3" fill="#16A34A"/><circle cx="70" cy="172" r="3" fill="#16A34A"/>
-  <!-- Spindle fibres forming -->
   <line x1="70" y1="71" x2="55" y2="90" stroke="#16A34A" stroke-width="0.7" stroke-dasharray="3,2"/>
   <line x1="70" y1="71" x2="85" y2="90" stroke="#16A34A" stroke-width="0.7" stroke-dasharray="3,2"/>
   <text x="70" y="195" text-anchor="middle" class="small-label" fill="#6b7280">Chromosomes</text>
   <text x="70" y="206" text-anchor="middle" class="small-label" fill="#6b7280">condense; spindle</text>
   <text x="70" y="217" text-anchor="middle" class="small-label" fill="#6b7280">forms; nuclear</text>
   <text x="70" y="228" text-anchor="middle" class="small-label" fill="#6b7280">envelope breaks</text>
-
-  <!-- Arrow -->
   <line x1="125" y1="120" x2="148" y2="120" stroke="#D97706" stroke-width="1.5" marker-end="url(#arr2)"/>
   <defs><marker id="arr2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#D97706"/></marker></defs>
-
-  <!-- METAPHASE -->
   <text x="195" y="48" text-anchor="middle" class="stage-title" fill="#16A34A">Metaphase</text>
   <ellipse cx="195" cy="120" rx="50" ry="55" fill="#16A34A" opacity="0.05" stroke="#16A34A" stroke-width="1.5"/>
-  <!-- Chromosomes at equator -->
   <line x1="180" y1="112" x2="193" y2="128" stroke="#DC2626" stroke-width="2.5"/><line x1="193" y1="112" x2="180" y2="128" stroke="#DC2626" stroke-width="2.5"/>
   <line x1="196" y1="108" x2="210" y2="125" stroke="#1a73e8" stroke-width="2.5"/><line x1="210" y1="108" x2="196" y2="125" stroke="#1a73e8" stroke-width="2.5"/>
   <line x1="182" y1="125" x2="195" y2="140" stroke="#DC2626" stroke-width="2.5"/><line x1="195" y1="125" x2="182" y2="140" stroke="#DC2626" stroke-width="2.5"/>
   <line x1="198" y1="125" x2="212" y2="140" stroke="#1a73e8" stroke-width="2.5"/><line x1="212" y1="125" x2="198" y2="140" stroke="#1a73e8" stroke-width="2.5"/>
-  <!-- Spindle fibres to poles -->
   <circle cx="195" cy="68" r="3" fill="#16A34A"/><circle cx="195" cy="172" r="3" fill="#16A34A"/>
   <line x1="195" y1="71" x2="188" y2="110" stroke="#16A34A" stroke-width="0.7"/><line x1="195" y1="71" x2="205" y2="106" stroke="#16A34A" stroke-width="0.7"/>
   <line x1="195" y1="169" x2="188" y2="142" stroke="#16A34A" stroke-width="0.7"/><line x1="195" y1="169" x2="205" y2="142" stroke="#16A34A" stroke-width="0.7"/>
-  <!-- Metaphase plate dashed -->
   <line x1="165" y1="120" x2="225" y2="120" stroke="#6b7280" stroke-width="0.8" stroke-dasharray="3,2"/>
-  <text x="195" y="195" text-anchor="middle" class="small-label" fill="#6b7280">Chromosomes</text>
-  <text x="195" y="206" text-anchor="middle" class="small-label" fill="#6b7280">line up at cell</text>
-  <text x="195" y="217" text-anchor="middle" class="small-label" fill="#6b7280">equator; spindle</text>
-  <text x="195" y="228" text-anchor="middle" class="small-label" fill="#6b7280">attaches to</text>
-  <text x="195" y="239" text-anchor="middle" class="small-label" fill="#6b7280">centromeres</text>
-
-  <!-- Arrow -->
+  <text x="195" y="195" text-anchor="middle" class="small-label" fill="#6b7280">Chromosomes at</text>
+  <text x="195" y="206" text-anchor="middle" class="small-label" fill="#6b7280">equator; spindle</text>
+  <text x="195" y="217" text-anchor="middle" class="small-label" fill="#6b7280">attached to</text>
+  <text x="195" y="228" text-anchor="middle" class="small-label" fill="#6b7280">centromeres</text>
   <line x1="250" y1="120" x2="273" y2="120" stroke="#D97706" stroke-width="1.5" marker-end="url(#arr2)"/>
-
-  <!-- ANAPHASE -->
   <text x="320" y="48" text-anchor="middle" class="stage-title" fill="#D97706">Anaphase</text>
   <ellipse cx="320" cy="120" rx="50" ry="55" fill="#D97706" opacity="0.05" stroke="#D97706" stroke-width="1.5"/>
-  <!-- Chromatids pulling apart to poles -->
   <circle cx="320" cy="68" r="3" fill="#16A34A"/><circle cx="320" cy="172" r="3" fill="#16A34A"/>
-  <!-- Top-bound chromatids -->
   <line x1="310" y1="80" x2="315" y2="92" stroke="#DC2626" stroke-width="2"/><line x1="325" y1="80" x2="330" y2="92" stroke="#1a73e8" stroke-width="2"/>
   <line x1="305" y1="88" x2="310" y2="100" stroke="#DC2626" stroke-width="2"/><line x1="330" y1="88" x2="335" y2="100" stroke="#1a73e8" stroke-width="2"/>
-  <!-- Bottom-bound chromatids -->
   <line x1="310" y1="148" x2="315" y2="160" stroke="#DC2626" stroke-width="2"/><line x1="325" y1="148" x2="330" y2="160" stroke="#1a73e8" stroke-width="2"/>
   <line x1="305" y1="140" x2="310" y2="152" stroke="#DC2626" stroke-width="2"/><line x1="330" y1="140" x2="335" y2="152" stroke="#1a73e8" stroke-width="2"/>
-  <!-- Spindle pulling -->
-  <line x1="320" y1="71" x2="312" y2="80" stroke="#16A34A" stroke-width="0.7"/><line x1="320" y1="71" x2="327" y2="80" stroke="#16A34A" stroke-width="0.7"/>
-  <line x1="320" y1="169" x2="312" y2="160" stroke="#16A34A" stroke-width="0.7"/><line x1="320" y1="169" x2="327" y2="160" stroke="#16A34A" stroke-width="0.7"/>
   <text x="320" y="195" text-anchor="middle" class="small-label" fill="#6b7280">Centromeres split;</text>
   <text x="320" y="206" text-anchor="middle" class="small-label" fill="#6b7280">sister chromatids</text>
   <text x="320" y="217" text-anchor="middle" class="small-label" fill="#6b7280">pulled to</text>
   <text x="320" y="228" text-anchor="middle" class="small-label" fill="#6b7280">opposite poles</text>
-
-  <!-- Arrow -->
   <line x1="375" y1="120" x2="398" y2="120" stroke="#D97706" stroke-width="1.5" marker-end="url(#arr2)"/>
-
-  <!-- TELOPHASE + CYTOKINESIS -->
   <text x="460" y="42" text-anchor="middle" class="stage-title" fill="#DC2626">Telophase &amp;</text>
   <text x="460" y="54" text-anchor="middle" class="stage-title" fill="#DC2626">Cytokinesis</text>
-  <!-- Two forming cells -->
   <ellipse cx="460" cy="92" rx="38" ry="32" fill="#DC2626" opacity="0.05" stroke="#DC2626" stroke-width="1.5"/>
   <ellipse cx="460" cy="152" rx="38" ry="32" fill="#DC2626" opacity="0.05" stroke="#DC2626" stroke-width="1.5"/>
-  <!-- Cleavage furrow -->
   <line x1="418" y1="122" x2="502" y2="122" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,2"/>
-  <!-- Nuclear envelopes reforming -->
   <ellipse cx="460" cy="88" rx="18" ry="12" fill="none" stroke="#1a73e8" stroke-width="1" stroke-dasharray="3,2"/>
   <ellipse cx="460" cy="155" rx="18" ry="12" fill="none" stroke="#1a73e8" stroke-width="1" stroke-dasharray="3,2"/>
-  <!-- Decondensing chromatin -->
   <path d="M 452,84 Q 458,88 464,84 Q 468,90 460,92" fill="none" stroke="#DC2626" stroke-width="1.2"/>
   <path d="M 452,151 Q 458,155 464,151 Q 468,157 460,159" fill="none" stroke="#DC2626" stroke-width="1.2"/>
   <text x="460" y="195" text-anchor="middle" class="small-label" fill="#6b7280">Nuclear envelopes</text>
   <text x="460" y="206" text-anchor="middle" class="small-label" fill="#6b7280">reform; chromosomes</text>
   <text x="460" y="217" text-anchor="middle" class="small-label" fill="#6b7280">decondense;</text>
   <text x="460" y="228" text-anchor="middle" class="small-label" fill="#6b7280">cell divides</text>
-
-  <!-- Result -->
   <rect x="100" y="255" width="400" height="50" rx="8" fill="#16A34A" opacity="0.07" stroke="#16A34A" stroke-width="1"/>
   <text x="300" y="278" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">Result: 2 genetically identical diploid daughter cells</text>
   <text x="300" y="296" text-anchor="middle" class="small-label" fill="#6b7280">Same chromosome number as parent cell (used for growth, repair, asexual reproduction)</text>
 </svg>
 </div>
 
+<div class="exam-tip">To remember the order: <strong>PMAT</strong> (Prophase, Metaphase, Anaphase, Telophase). In root tip squash practicals (CP), you can identify each stage: prophase cells have visible chromosomes but no clear arrangement; metaphase cells have chromosomes at the equator; anaphase cells show chromosomes at opposite ends; telophase cells show two groups with a dividing line. Count cells in each stage to calculate the <strong>mitotic index</strong> = (number of cells in mitosis / total cells counted) &times; 100%. A high mitotic index may indicate rapid growth or cancerous tissue.</div>
+
 <h3>Meiosis</h3>
 <div class="definition-box">
-    <strong>Meiosis:</strong> Two successive nuclear divisions (meiosis I and II) producing four genetically different haploid daughter cells. It introduces genetic variation and halves the chromosome number for sexual reproduction.
+    <strong>Meiosis:</strong> Two successive nuclear divisions (meiosis I and meiosis II) producing <strong>four genetically different haploid</strong> daughter cells from one diploid parent cell. It is essential for sexual reproduction: it halves the chromosome number (maintaining the species chromosome number across generations) and introduces genetic variation through crossing over and independent assortment.
 </div>
 
-<p><strong>Meiosis I</strong> (reduction division):</p>
+<p><strong>Meiosis I</strong> (the reduction division &mdash; homologous chromosomes are separated):</p>
 <ul>
-    <li>Homologous pairs synapse (bivalents form) during prophase I</li>
-    <li><strong>Crossing over</strong> occurs between non-sister chromatids at chiasmata</li>
-    <li><strong>Independent assortment</strong> &mdash; random orientation of bivalents at metaphase I</li>
-    <li>Homologous chromosomes separated (chromosome number halved)</li>
+    <li><strong>Prophase I:</strong> Homologous chromosomes pair up (<strong>synapsis</strong>), forming <strong>bivalents</strong> (tetrads). <strong>Crossing over</strong> occurs: non-sister chromatids of homologous chromosomes exchange corresponding segments of DNA at <strong>chiasmata</strong> (points of crossover). This recombines alleles on the same chromosome, creating new allele combinations. Chromosomes condense; nuclear envelope breaks down; spindle forms</li>
+    <li><strong>Metaphase I:</strong> Bivalents line up at the equator with random orientation (<strong>independent assortment</strong>) &mdash; which homologue faces which pole is entirely random for each bivalent, creating 2<sup>n</sup> possible arrangements (in humans, 2<sup>23</sup> = ~8.4 million combinations)</li>
+    <li><strong>Anaphase I:</strong> Homologous chromosomes are pulled to opposite poles (NOT sister chromatids &mdash; centromeres do NOT divide). Each pole receives one chromosome from each homologous pair</li>
+    <li><strong>Telophase I and cytokinesis:</strong> Two haploid cells form, each containing one chromosome from each homologous pair (but each chromosome still consists of two sister chromatids)</li>
 </ul>
 
-<p><strong>Meiosis II</strong> is similar to mitosis: sister chromatids are separated, producing four haploid cells.</p>
+<p><strong>Meiosis II</strong> is similar to mitosis:</p>
+<ul>
+    <li>No further DNA replication occurs between meiosis I and II</li>
+    <li>Chromosomes line up at the equator; centromeres divide; sister chromatids are pulled to opposite poles</li>
+    <li>Result: <strong>four haploid cells</strong>, each genetically unique</li>
+</ul>
 
-<div class="exam-tip">Sources of genetic variation in meiosis: (1) crossing over in prophase I, (2) independent assortment in metaphase I, and (3) random fertilisation. Be able to calculate the number of possible chromosome combinations: 2<sup>n</sup> where n = haploid number.</div>
+<h3>Sources of Genetic Variation in Meiosis</h3>
+<table>
+    <tr><th>Source</th><th>When It Occurs</th><th>How It Creates Variation</th></tr>
+    <tr><td><strong>Crossing over</strong></td><td>Prophase I</td><td>Exchange of alleles between non-sister chromatids of homologous chromosomes at chiasmata. Creates <strong>recombinant chromosomes</strong> with new combinations of alleles</td></tr>
+    <tr><td><strong>Independent assortment</strong></td><td>Metaphase I</td><td>Random orientation of bivalents means each gamete receives a random mix of maternal and paternal chromosomes. 2<sup>n</sup> possible combinations (2<sup>23</sup> &asymp; 8.4 million in humans)</td></tr>
+    <tr><td><strong>Random fertilisation</strong></td><td>At fertilisation</td><td>Any sperm can fertilise any egg; combining two independently assorted gametes creates enormous variation (8.4 million &times; 8.4 million &asymp; 70 trillion possible zygotes, before crossing over)</td></tr>
+    <tr><td><strong>Mutation</strong></td><td>During DNA replication (S phase)</td><td>Random changes to DNA sequence create new alleles (the ultimate source of all genetic variation)</td></tr>
+</table>
+
+<div class="exam-tip">Key differences between mitosis and meiosis: Mitosis produces 2 identical diploid cells; meiosis produces 4 different haploid cells. Mitosis has one division; meiosis has two. Crossing over and independent assortment occur in meiosis I only. Homologous chromosomes pair in meiosis I (not in mitosis). In anaphase I, homologous chromosomes separate; in anaphase II (and mitotic anaphase), sister chromatids separate.</div>
 
 <!-- ==================== STEM CELLS ==================== -->
 <h2>2.3 Cell Differentiation and Stem Cells</h2>
 
 <div class="definition-box">
-    <strong>Stem cell:</strong> An undifferentiated cell capable of dividing by mitosis to produce either more stem cells (self-renewal) or cells that can differentiate into specialised cell types.
+    <strong>Stem cell:</strong> An undifferentiated cell capable of dividing by mitosis to produce either more stem cells (<strong>self-renewal</strong>) or cells that can <strong>differentiate</strong> into specialised cell types. The range of cell types a stem cell can produce defines its potency.
 </div>
 
 <h3>Types of Stem Cells</h3>
 <table>
-    <tr><th>Type</th><th>Potency</th><th>Source</th></tr>
-    <tr><td>Totipotent</td><td>Can differentiate into any cell type including extraembryonic tissues</td><td>Zygote and early embryo (up to ~8 cells)</td></tr>
-    <tr><td>Pluripotent</td><td>Can differentiate into any cell type except extraembryonic tissues</td><td>Embryonic stem cells (inner cell mass of blastocyst)</td></tr>
-    <tr><td>Multipotent</td><td>Can differentiate into a limited range of related cell types</td><td>Adult stem cells (e.g., haematopoietic stem cells in bone marrow)</td></tr>
+    <tr><th>Type</th><th>Potency</th><th>Source</th><th>Examples</th></tr>
+    <tr><td><strong>Totipotent</strong></td><td>Can differentiate into <strong>any</strong> cell type, including extraembryonic tissues (placenta, umbilical cord)</td><td>Zygote and cells from the first few divisions (up to ~8-cell stage, approximately 3&ndash;4 days)</td><td>Zygote; cells of the morula</td></tr>
+    <tr><td><strong>Pluripotent</strong></td><td>Can differentiate into any cell type of the three germ layers (ectoderm, mesoderm, endoderm) but NOT extraembryonic tissues</td><td>Inner cell mass of the <strong>blastocyst</strong> (embryonic stem cells, ES cells); induced pluripotent stem cells (iPSCs)</td><td>Embryonic stem cells used in research; iPSCs derived from skin fibroblasts</td></tr>
+    <tr><td><strong>Multipotent</strong></td><td>Can differentiate into a <strong>limited range</strong> of related cell types within a particular tissue lineage</td><td>Adult tissues (bone marrow, brain, gut lining, skin)</td><td><strong>Haematopoietic stem cells</strong> in bone marrow produce all blood cell types (red blood cells, white blood cells, platelets). Neural stem cells produce neurones and glial cells</td></tr>
+    <tr><td><strong>Unipotent</strong></td><td>Can produce only <strong>one</strong> cell type (but can still self-renew)</td><td>Various adult tissues</td><td>Skin basal cells (produce keratinocytes only); muscle satellite cells</td></tr>
 </table>
 
-<h3>Induced Pluripotent Stem Cells (iPS cells)</h3>
-<p>Adult somatic cells can be reprogrammed to a pluripotent state by introducing specific transcription factors. This avoids the ethical issues of using embryonic stem cells while potentially allowing patient-specific therapies (reducing rejection risk).</p>
+<h3>Induced Pluripotent Stem Cells (iPSCs)</h3>
+<p>Shinya Yamanaka (2006, Nobel Prize 2012) showed that adult somatic cells (e.g., skin fibroblasts) can be reprogrammed to a pluripotent state by introducing four specific <strong>transcription factors</strong> (Oct4, Sox2, Klf4, c-Myc &mdash; the "Yamanaka factors"). These iPSCs behave similarly to embryonic stem cells and can differentiate into any cell type. Advantages: avoids the ethical issues of destroying embryos; allows patient-specific cells (reducing immune rejection risk). Challenges: risk of tumour formation (especially from c-Myc, an oncogene); reprogramming efficiency is low; epigenetic "memory" of the original cell type.</p>
 
 <h3>Cell Differentiation</h3>
-<p>Differentiation involves the expression of specific genes while other genes are switched off. All body cells contain the same genome but only transcribe the genes appropriate for their function. Differentiation is controlled by <strong>transcription factors</strong> and signalling molecules. Once differentiated, most animal cells cannot de-differentiate (unlike plant cells, which retain totipotency).</p>
+<p>Differentiation is the process by which an unspecialised cell becomes specialised for a particular function. It involves the <strong>selective expression</strong> of specific genes while other genes are switched off (silenced). All body cells contain the <strong>same genome</strong> (same DNA), but only transcribe the genes appropriate for their function. This differential gene expression is controlled by:</p>
+<ul>
+    <li><strong>Transcription factors</strong> &mdash; proteins that bind to DNA promoter/enhancer regions to activate or repress specific genes</li>
+    <li><strong>Signalling molecules</strong> &mdash; hormones, growth factors, and cell-surface signals from neighbouring cells</li>
+    <li><strong>Epigenetic modifications</strong> &mdash; DNA methylation (silences genes) and histone modification (acetylation opens chromatin, deacetylation closes it) without changing the DNA sequence</li>
+</ul>
+
+<p>In animals, most differentiated cells are <strong>terminally differentiated</strong> and cannot revert to a stem cell state (notable exceptions: iPSCs, liver regeneration). In plants, many differentiated cells retain <strong>totipotency</strong> &mdash; they can dedifferentiate and produce a whole new organism (the basis of plant tissue culture and cloning from cuttings).</p>
+
+<div class="application-box"><strong>Stem cell therapies</strong> hold enormous medical potential: bone marrow transplants (haematopoietic stem cells) already treat leukaemia and sickle cell disease. Research is ongoing for treating Parkinson's disease (dopamine-producing neurones from stem cells), type 1 diabetes (insulin-producing beta cells), spinal cord injuries, and heart failure. <strong>Ethical considerations</strong> include: the moral status of the embryo (pluripotent ES cells require embryo destruction), informed consent for donated embryos, safety concerns (tumour risk), and the distinction between therapeutic use and enhancement.</div>
 
 <!-- ==================== BIODIVERSITY ==================== -->
 <h2>2.4 Biodiversity</h2>
 
 <div class="definition-box">
-    <strong>Biodiversity:</strong> The variety of living organisms in an area, measured at three levels: genetic diversity (within species), species diversity (between species) and ecosystem diversity.
+    <strong>Biodiversity:</strong> The variety of living organisms in an area, considered at three levels: (1) <strong>genetic diversity</strong> &mdash; the range of alleles/genotypes within a species, (2) <strong>species diversity</strong> &mdash; the number and relative abundance of different species in a community, (3) <strong>ecosystem diversity</strong> &mdash; the range of different habitats and communities in an area.
 </div>
 
 <h3>Measuring Biodiversity</h3>
-<p><strong>Species richness</strong> is simply the number of different species in an area. However, <strong>species diversity</strong> takes into account both the number of species AND the evenness of distribution (abundance). It is measured using Simpson's Diversity Index:</p>
+<p><strong>Species richness</strong> is simply the number of different species present in an area. It is easy to measure but does not account for relative abundance (a community with 100 species where one species dominates at 99% of individuals is less diverse than one with 100 equally abundant species).</p>
+
+<p><strong>Species diversity</strong> takes into account both the number of species AND the <strong>evenness</strong> of their distribution (relative abundance). It is measured using <strong>Simpson's Diversity Index</strong>:</p>
 
 <div class="equation">D = 1 &minus; &Sigma;(n/N)<sup>2</sup></div>
 
-<p>Where n = number of individuals of each species, N = total number of individuals. Values range from 0 (no diversity) to 1 (infinite diversity). A higher value indicates a more stable, diverse ecosystem.</p>
+<p>Where <strong>n</strong> = number of individuals of each species, <strong>N</strong> = total number of all individuals. Values range from <strong>0</strong> (no diversity &mdash; only one species) to approaching <strong>1</strong> (high diversity &mdash; many equally abundant species). A higher D value indicates a more diverse, and generally more stable and resilient, ecosystem.</p>
+
+<div class="exam-tip">When calculating Simpson's Index: (1) find n/N for each species, (2) square each value, (3) sum all the squared values, (4) subtract the sum from 1. Common mistake: forgetting to subtract from 1, which gives the dominance index instead. Also note: some versions use D = 1 &minus; (&Sigma;n(n&minus;1))/(N(N&minus;1)) for finite populations. Check which formula is given in the exam question.</div>
 
 <h3>Sampling Techniques</h3>
-<ul>
-    <li><strong>Quadrats</strong> &mdash; placed randomly (using random number tables for coordinates); record frequency, percentage cover or density</li>
-    <li><strong>Transects</strong> &mdash; line or belt transect to study distribution along an environmental gradient</li>
-    <li><strong>Mark-release-recapture</strong> &mdash; estimates mobile animal population size using Lincoln Index</li>
-</ul>
+<table>
+    <tr><th>Technique</th><th>Used For</th><th>Method</th><th>Key Considerations</th></tr>
+    <tr><td><strong>Quadrats</strong></td><td>Sessile organisms (plants, barnacles, lichens)</td><td>Place quadrats at random positions (using random number generator for coordinates). Record species present: <strong>frequency</strong> (% of quadrats containing a species), <strong>percentage cover</strong> (estimated area covered), or <strong>density</strong> (count per unit area)</td><td>Must be random to avoid bias (systematic bias if placed only in "interesting" areas). Sufficient number of quadrats needed for reliability. Size appropriate for organisms studied</td></tr>
+    <tr><td><strong>Transects</strong></td><td>Studying distribution along an environmental gradient (e.g., seashore zonation, woodland edge)</td><td><strong>Line transect:</strong> record species touching a line. <strong>Belt transect:</strong> place quadrats at regular intervals along the line (more quantitative)</td><td>Shows how species distribution changes with distance. Not random &mdash; deliberately placed along a gradient. Useful for investigating abiotic factor effects on distribution</td></tr>
+    <tr><td><strong>Mark-release-recapture</strong></td><td>Estimating population size of mobile animals</td><td>Capture, count and mark a sample (n<sub>1</sub>). Release. After a suitable time, capture second sample (n<sub>2</sub>). Count how many are marked (n<sub>m</sub>). Use Lincoln Index</td><td>Assumes: no births/deaths/migration between samples; marks do not affect survival or behaviour; marked and unmarked animals mix freely; marks are permanent and recognisable; sufficient time for mixing; equal probability of capture</td></tr>
+</table>
 
-<div class="equation">Population estimate = (n<sub>1</sub> &times; n<sub>2</sub>) / n<sub>m</sub></div>
-<p>Where n<sub>1</sub> = number captured first time, n<sub>2</sub> = number captured second time, n<sub>m</sub> = number marked in second sample.</p>
+<div class="equation">Lincoln Index: Population estimate (N) = (n<sub>1</sub> &times; n<sub>2</sub>) / n<sub>m</sub></div>
+<p>Where n<sub>1</sub> = number captured and marked in first sample, n<sub>2</sub> = total number captured in second sample, n<sub>m</sub> = number of marked individuals found in second sample.</p>
+
+<div class="application-box">Biodiversity conservation is critically important. <strong>Ecosystem services</strong> provided by biodiversity include: pollination of crops (worth billions of pounds annually), water purification, carbon sequestration, soil formation, flood regulation, and natural pest control. Loss of biodiversity (through habitat destruction, pollution, overexploitation, invasive species, and climate change) threatens food security, medicine (many drugs derived from natural products), and ecosystem stability. The <strong>Convention on Biological Diversity</strong> aims to conserve biodiversity, ensure sustainable use, and share benefits equitably.</div>
 
 <!-- ==================== CLASSIFICATION ==================== -->
 <h2>2.5 Classification and Taxonomy</h2>
 
 <h3>Taxonomic Hierarchy</h3>
-<p>Organisms are classified into groups based on shared characteristics. The hierarchy (from largest to smallest) is:</p>
+<p>Organisms are classified into nested groups (taxa) based on shared characteristics. Classification helps to organise biological knowledge, predict characteristics of poorly studied species, and reflect evolutionary relationships. The hierarchy (from largest/most inclusive to smallest/most specific) is:</p>
+
 <p><strong>Domain &rarr; Kingdom &rarr; Phylum &rarr; Class &rarr; Order &rarr; Family &rarr; Genus &rarr; Species</strong></p>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -428,121 +413,113 @@
     .title { font-size: 14px; font-weight: bold; }
   </style>
   <text x="300" y="22" text-anchor="middle" class="title">Taxonomic Classification Hierarchy</text>
-  <text x="300" y="40" text-anchor="middle" class="small-label" fill="#6b7280">Largest (most organisms) → Smallest (fewest organisms)</text>
-
-  <!-- Funnel / inverted triangle with levels -->
-  <!-- Domain -->
+  <text x="300" y="40" text-anchor="middle" class="small-label" fill="#6b7280">Most inclusive (most organisms) &rarr; Most specific (fewest organisms)</text>
   <polygon points="60,60 540,60 520,95 80,95" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="300" y="83" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Domain</text>
   <text x="555" y="83" text-anchor="start" class="small-label" fill="#1a73e8">e.g. Eukarya</text>
-
-  <!-- Kingdom -->
   <polygon points="80,95 520,95 500,130 100,130" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="1.5"/>
   <text x="300" y="118" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">Kingdom</text>
   <text x="515" y="118" text-anchor="start" class="small-label" fill="#16A34A">e.g. Animalia</text>
-
-  <!-- Phylum -->
   <polygon points="100,130 500,130 480,165 120,165" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
   <text x="300" y="153" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">Phylum</text>
   <text x="495" y="153" text-anchor="start" class="small-label" fill="#D97706">e.g. Chordata</text>
-
-  <!-- Class -->
   <polygon points="120,165 480,165 460,200 140,200" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="1.5"/>
   <text x="300" y="188" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Class</text>
   <text x="475" y="188" text-anchor="start" class="small-label" fill="#DC2626">e.g. Mammalia</text>
-
-  <!-- Order -->
   <polygon points="140,200 460,200 440,235 160,235" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="300" y="223" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Order</text>
   <text x="455" y="223" text-anchor="start" class="small-label" fill="#1a73e8">e.g. Primates</text>
-
-  <!-- Family -->
   <polygon points="160,235 440,235 420,270 180,270" fill="#16A34A" opacity="0.12" stroke="#16A34A" stroke-width="1.5"/>
   <text x="300" y="258" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">Family</text>
   <text x="435" y="258" text-anchor="start" class="small-label" fill="#16A34A">e.g. Hominidae</text>
-
-  <!-- Genus -->
   <polygon points="180,270 420,270 400,305 200,305" fill="#D97706" opacity="0.12" stroke="#D97706" stroke-width="1.5"/>
   <text x="300" y="293" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">Genus</text>
   <text x="415" y="293" text-anchor="start" class="small-label" fill="#D97706" font-style="italic">e.g. Homo</text>
-
-  <!-- Species -->
   <polygon points="200,305 400,305 380,335 220,335" fill="#DC2626" opacity="0.12" stroke="#DC2626" stroke-width="1.5"/>
   <text x="300" y="326" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Species</text>
   <text x="395" y="326" text-anchor="start" class="small-label" fill="#DC2626" font-style="italic">e.g. sapiens</text>
-
-  <!-- Mnemonic on left -->
-  <text x="15" y="83" text-anchor="start" class="small-label" fill="#6b7280" font-weight="bold">D</text>
-  <text x="15" y="118" text-anchor="start" class="small-label" fill="#6b7280" font-weight="bold">K</text>
-  <text x="15" y="153" text-anchor="start" class="small-label" fill="#6b7280" font-weight="bold">P</text>
-  <text x="15" y="188" text-anchor="start" class="small-label" fill="#6b7280" font-weight="bold">C</text>
-  <text x="15" y="223" text-anchor="start" class="small-label" fill="#6b7280" font-weight="bold">O</text>
-  <text x="15" y="258" text-anchor="start" class="small-label" fill="#6b7280" font-weight="bold">F</text>
-  <text x="15" y="293" text-anchor="start" class="small-label" fill="#6b7280" font-weight="bold">G</text>
-  <text x="15" y="326" text-anchor="start" class="small-label" fill="#6b7280" font-weight="bold">S</text>
-
-  <text x="30" y="83" text-anchor="start" class="small-label" fill="#6b7280">ear</text>
-  <text x="30" y="118" text-anchor="start" class="small-label" fill="#6b7280">ing</text>
-  <text x="30" y="153" text-anchor="start" class="small-label" fill="#6b7280">hilip</text>
-  <text x="30" y="188" text-anchor="start" class="small-label" fill="#6b7280">ame</text>
-  <text x="30" y="223" text-anchor="start" class="small-label" fill="#6b7280">ver</text>
-  <text x="30" y="258" text-anchor="start" class="small-label" fill="#6b7280">or</text>
-  <text x="30" y="293" text-anchor="start" class="small-label" fill="#6b7280">ood</text>
-  <text x="30" y="326" text-anchor="start" class="small-label" fill="#6b7280">paghetti</text>
 </svg>
 </div>
 
-<h3>Three Domain System (Woese)</h3>
+<p>The <strong>binomial naming system</strong> (Linnaeus) gives each species a two-part Latin name: <em>Genus species</em> (e.g., <em>Homo sapiens</em>, <em>Escherichia coli</em>). The genus is capitalised, the species is not, and both are italicised (or underlined if handwritten). This system provides a universal, unambiguous name for every species.</p>
+
+<h3>Three Domain System (Carl Woese, 1990)</h3>
+<p>Based on analysis of <strong>ribosomal RNA (rRNA)</strong> gene sequences, Woese proposed dividing life into three domains &mdash; a level above kingdom:</p>
+
 <table>
-    <tr><th>Domain</th><th>Key Features</th><th>Examples</th></tr>
-    <tr><td>Bacteria</td><td>Prokaryotic; peptidoglycan cell walls; 70S ribosomes</td><td>E. coli, Streptococcus</td></tr>
-    <tr><td>Archaea</td><td>Prokaryotic; no peptidoglycan; unique membrane lipids; extremophiles</td><td>Methanogens, thermophiles</td></tr>
-    <tr><td>Eukarya</td><td>Eukaryotic; 80S ribosomes; membrane-bound organelles</td><td>Animals, plants, fungi, protists</td></tr>
+    <tr><th>Domain</th><th>Key Features</th><th>Cell Type</th><th>Examples</th></tr>
+    <tr><td><strong>Bacteria</strong></td><td>Peptidoglycan cell walls; 70S ribosomes; ester-linked membrane lipids; circular DNA; binary fission; diverse metabolisms</td><td>Prokaryotic</td><td><em>E. coli</em>, <em>Streptococcus</em>, <em>Mycobacterium tuberculosis</em></td></tr>
+    <tr><td><strong>Archaea</strong></td><td>NO peptidoglycan cell walls (often pseudopeptidoglycan or protein); unique ether-linked membrane lipids (branched isoprene chains); often extremophiles; some features more similar to eukaryotes (e.g., transcription/translation machinery)</td><td>Prokaryotic</td><td>Methanogens, halophiles (salt-loving), thermophiles (heat-loving), acidophiles</td></tr>
+    <tr><td><strong>Eukarya</strong></td><td>80S ribosomes; membrane-bound organelles; linear chromosomes with histones; nucleus; diverse cell structures</td><td>Eukaryotic</td><td>Animals, plants, fungi, protists</td></tr>
 </table>
 
 <h3>Phylogenetics and Molecular Evidence</h3>
-<p>Modern classification increasingly uses <strong>molecular phylogenetics</strong> &mdash; comparing DNA base sequences, amino acid sequences or ribosomal RNA sequences. Organisms with more similar sequences are more closely related (diverged more recently). This evidence led to the reclassification of organisms and the three-domain system.</p>
+<p>Modern classification increasingly uses <strong>molecular phylogenetics</strong> &mdash; comparing DNA base sequences, amino acid sequences, or rRNA sequences between organisms. The principle is that organisms that share more similar sequences diverged more recently from a common ancestor. This approach:</p>
+<ul>
+    <li>Provides <strong>quantitative, objective</strong> data (unlike morphological classification which can be subjective)</li>
+    <li>Can compare organisms that look very different morphologically but are closely related genetically (and vice versa)</li>
+    <li>Led to the three-domain system (Archaea were previously grouped with Bacteria)</li>
+    <li>Revealed that classification based on physical appearance alone can be misleading (e.g., convergent evolution produces similar features in unrelated organisms)</li>
+    <li>Allows construction of <strong>phylogenetic trees (cladograms)</strong> showing evolutionary relationships. On these trees, branch points (nodes) represent speciation events, and species that share a more recent common ancestor are more closely related</li>
+</ul>
 
-<div class="exam-tip">Phylogenetic trees (cladograms) show evolutionary relationships. The closer two species are on the tree, the more recently they shared a common ancestor. Branch points (nodes) represent speciation events.</div>
+<div class="exam-tip">When interpreting phylogenetic trees: the closer two species are on the tree (i.e., the more recently they share a common ancestor), the more closely related they are. The <strong>length of branches</strong> on some trees represents evolutionary time or the degree of genetic difference. Do NOT assume that species at the "top" of a tree are more "evolved" &mdash; all living species are equally evolved; they have all been evolving for the same amount of time since the origin of life.</div>
 
 <!-- ==================== NATURAL SELECTION ==================== -->
 <h2>2.6 Natural Selection and Evolution</h2>
 
 <div class="definition-box">
-    <strong>Natural selection:</strong> The process by which organisms with heritable characteristics better suited to their environment are more likely to survive and reproduce, passing on their advantageous alleles to the next generation.
+    <strong>Natural selection:</strong> The process by which organisms with heritable phenotypic characteristics that are better adapted to their environment are more likely to survive, reproduce, and pass on their advantageous alleles to the next generation. Over time, this leads to changes in allele frequency in a population &mdash; this is <strong>evolution</strong>.
 </div>
 
-<h3>Mechanism of Natural Selection</h3>
+<h3>Mechanism of Natural Selection (Darwin's Theory)</h3>
 <ol>
-    <li>Within a population, there is <strong>genetic variation</strong> (caused by mutation, meiosis, sexual reproduction)</li>
-    <li>Organisms produce more offspring than can survive (overproduction)</li>
-    <li>There is a <strong>struggle for existence</strong> (competition for resources)</li>
-    <li>Individuals with advantageous phenotypes have a <strong>selective advantage</strong> (higher survival and reproduction rate)</li>
-    <li>These individuals pass on their alleles &mdash; allele frequency changes over generations</li>
+    <li><strong>Variation exists</strong> within a population due to genetic differences (caused by mutation, meiosis, and sexual reproduction). Individuals have different alleles for many genes, producing different phenotypes</li>
+    <li><strong>Overproduction of offspring</strong> &mdash; organisms produce more offspring than the environment can support, leading to a struggle for existence (competition for limited resources: food, mates, territory, light)</li>
+    <li><strong>Selection pressure</strong> &mdash; environmental factors (predation, disease, competition, climate) act as selective pressures. Individuals with phenotypes better suited to the environment have a <strong>selective advantage</strong></li>
+    <li><strong>Differential survival and reproduction</strong> &mdash; individuals with advantageous traits are more likely to survive to reproductive age and produce more offspring (survival of the fittest = greatest reproductive success, NOT just physical strength)</li>
+    <li><strong>Inheritance</strong> &mdash; the alleles conferring the advantage are passed to the next generation. Over many generations, the frequency of these advantageous alleles increases in the population</li>
 </ol>
 
-<h3>Types of Selection</h3>
+<h3>Types of Natural Selection</h3>
 <table>
-    <tr><th>Type</th><th>Effect</th><th>Example</th></tr>
-    <tr><td>Directional selection</td><td>Favours one extreme phenotype; shifts mean</td><td>Antibiotic resistance in bacteria; peppered moth</td></tr>
-    <tr><td>Stabilising selection</td><td>Favours average phenotype; reduces variation</td><td>Human birth weight</td></tr>
-    <tr><td>Disruptive selection</td><td>Favours both extremes; can lead to speciation</td><td>Beak size in seed-eating birds with two seed sizes</td></tr>
+    <tr><th>Type</th><th>Selection Pattern</th><th>Effect on Population Distribution</th><th>Example</th></tr>
+    <tr><td><strong>Directional selection</strong></td><td>Favours individuals at <strong>one extreme</strong> of the phenotypic range</td><td>Mean shifts in one direction; variation may decrease</td><td>Antibiotic resistance in bacteria (resistant individuals favoured when antibiotics are present); industrial melanism in peppered moths (dark moths favoured in polluted areas); increasing brain size in human evolution</td></tr>
+    <tr><td><strong>Stabilising selection</strong></td><td>Favours the <strong>average/intermediate</strong> phenotype; selects against both extremes</td><td>Mean stays the same; variation decreases; population becomes more uniform</td><td>Human birth weight (~3.5 kg optimal; very small babies have health problems, very large babies risk delivery complications); clutch size in birds (too few = fewer offspring, too many = insufficient food per chick)</td></tr>
+    <tr><td><strong>Disruptive selection</strong></td><td>Favours <strong>both extremes</strong> of the phenotypic range; selects against intermediate phenotype</td><td>Population may split into two distinct groups; can lead to speciation</td><td>Beak sizes in seed-eating birds where only very large and very small seeds are available; colour morphs in land snails</td></tr>
 </table>
 
 <h3>Speciation</h3>
-<p><strong>Allopatric speciation:</strong> Geographic isolation separates populations; different selection pressures and genetic drift cause divergence; eventually populations become reproductively isolated (different species).</p>
-<p><strong>Sympatric speciation:</strong> Speciation without geographic isolation, often through polyploidy (in plants), behavioural isolation or temporal isolation.</p>
+<p>Speciation is the formation of new, distinct species that are <strong>reproductively isolated</strong> from each other (they can no longer interbreed to produce fertile offspring).</p>
+
+<p><strong>Allopatric speciation</strong> (geographic speciation):</p>
+<ol>
+    <li>A population is divided by a <strong>geographic barrier</strong> (mountain range, river, island colonisation, continental drift)</li>
+    <li>The separated populations experience different <strong>selection pressures</strong> and <strong>genetic drift</strong> (random changes in allele frequency, especially important in small populations)</li>
+    <li>Over time, the populations <strong>diverge genetically</strong> and develop different adaptations</li>
+    <li>Eventually, they become so different that they can no longer interbreed even if the barrier is removed &mdash; they are now <strong>reproductively isolated</strong> and constitute separate species</li>
+</ol>
+
+<p><strong>Sympatric speciation</strong> (speciation without geographic isolation):</p>
+<ul>
+    <li><strong>Polyploidy</strong> (common in plants) &mdash; errors in meiosis produce individuals with 3n, 4n or more chromosome sets. They can self-fertilise or breed with other polyploids but not with the diploid parent population. Instant speciation. Examples: bread wheat (hexaploid, 6n = 42); many crop plants are polyploid</li>
+    <li><strong>Behavioural isolation</strong> &mdash; different courtship behaviours or mating calls prevent interbreeding</li>
+    <li><strong>Temporal isolation</strong> &mdash; different breeding seasons or times of day</li>
+    <li><strong>Ecological isolation</strong> &mdash; populations exploit different niches within the same geographic area</li>
+</ul>
 
 <h3>Evidence for Evolution</h3>
 <ul>
-    <li><strong>Fossil record</strong> &mdash; shows progressive changes over time</li>
-    <li><strong>Comparative anatomy</strong> &mdash; homologous structures (same origin, different function)</li>
-    <li><strong>Molecular evidence</strong> &mdash; DNA/protein sequence similarities; molecular clocks</li>
-    <li><strong>Biogeography</strong> &mdash; distribution of species on islands and continents</li>
-    <li><strong>Observed selection</strong> &mdash; antibiotic resistance, pesticide resistance</li>
+    <li><strong>Fossil record</strong> &mdash; shows progressive changes in organisms over geological time; transitional fossils (e.g., <em>Archaeopteryx</em> &mdash; dinosaur/bird; <em>Tiktaalik</em> &mdash; fish/tetrapod)</li>
+    <li><strong>Comparative anatomy</strong> &mdash; <strong>homologous structures</strong> (same evolutionary origin, different function, e.g., pentadactyl limb in whale flipper, bat wing, human arm) indicate common ancestry. <strong>Analogous structures</strong> (different origin, similar function, e.g., insect wing vs bird wing) indicate convergent evolution</li>
+    <li><strong>Molecular evidence</strong> &mdash; DNA and protein sequence similarities; more similar sequences = more closely related. Molecular clocks (rate of neutral mutations) estimate divergence times. Universal genetic code and conserved genes (e.g., Hox genes) across all life suggest common origin</li>
+    <li><strong>Biogeography</strong> &mdash; distribution patterns of species across continents and islands (e.g., Darwin's finches on Galapagos, marsupials in Australia)</li>
+    <li><strong>Observed natural selection</strong> &mdash; antibiotic resistance in bacteria, pesticide resistance in insects, industrial melanism in peppered moths, changes in beak size in Galapagos finches during droughts</li>
 </ul>
 
-<div class="exam-tip">Antibiotic resistance is a key example of evolution by natural selection. Explain: random mutation gives resistance; antibiotic kills non-resistant bacteria; resistant bacteria survive and reproduce; allele frequency of resistance gene increases. This is NOT Lamarckian (bacteria do not "develop" resistance in response to antibiotics).</div>
+<div class="exam-tip"><strong>Antibiotic resistance</strong> is the most commonly examined example of evolution by natural selection. The correct explanation is: (1) random mutation produces a resistance allele <em>before</em> exposure to the antibiotic; (2) the antibiotic acts as a selection pressure, killing susceptible bacteria; (3) resistant bacteria survive and reproduce; (4) the resistance allele increases in frequency in the population. NEVER say bacteria "develop" or "become" resistant in response to antibiotics &mdash; this is Lamarckism (inheritance of acquired characteristics), which is WRONG. Resistance arises from random, pre-existing mutations that are <em>selected for</em>.</div>
+
+<div class="application-box"><strong>Antibiotic resistance</strong> is one of the biggest threats to global public health. MRSA (methicillin-resistant <em>Staphylococcus aureus</em>) causes serious hospital-acquired infections. Strategies to combat resistance include: completing prescribed courses of antibiotics, not using antibiotics for viral infections, reducing agricultural antibiotic use, developing new antibiotics and alternative treatments (e.g., bacteriophage therapy), and improved infection control in hospitals. Horizontal gene transfer (conjugation) via plasmids can spread resistance genes between different bacterial species, accelerating the problem.</div>
 
 </div>
 </body>

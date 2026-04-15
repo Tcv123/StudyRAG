@@ -115,10 +115,22 @@
             font-weight: 700;
             color: #b45309;
         }
+        .application-box {
+            background: #f0fdf4;
+            border-left: 4px solid #059669;
+            padding: 16px 20px;
+            margin-bottom: 18px;
+            border-radius: 0 8px 8px 0;
+        }
+        .application-box::before {
+            content: "Real-World Application: ";
+            font-weight: 700;
+            color: #059669;
+        }
         @media print {
             body { padding: 20px; }
             h2 { break-before: auto; }
-            pre, .definition-box, .exam-tip, .equation { break-inside: avoid; }
+            pre, .definition-box, .exam-tip, .equation, .application-box { break-inside: avoid; }
         }
     </style>
 </head>
@@ -133,38 +145,49 @@
 <h2>1.1 Water</h2>
 
 <div class="definition-box">
-    <strong>Water:</strong> A polar inorganic molecule (H<sub>2</sub>O) that acts as the universal solvent in biological systems, essential for metabolic reactions and transport.
+    <strong>Water:</strong> A polar inorganic molecule (H<sub>2</sub>O) that acts as the universal solvent in biological systems. It is essential for metabolic reactions, transport, temperature regulation and as a habitat.
 </div>
 
-<h3>Properties of Water</h3>
-<p>Water molecules are <strong>polar</strong> due to the uneven distribution of charge &mdash; oxygen is more electronegative than hydrogen, creating a dipole. This polarity allows hydrogen bonds to form between adjacent water molecules.</p>
+<h3>Molecular Structure of Water</h3>
+<p>Water is a simple molecule consisting of one oxygen atom covalently bonded to two hydrogen atoms. The bond angle is approximately 104.5 degrees. Because oxygen is significantly more <strong>electronegative</strong> than hydrogen, the shared electrons in each O&ndash;H bond are pulled towards the oxygen atom. This creates a <strong>permanent dipole</strong>: the oxygen carries a partial negative charge (&delta;&minus;) and each hydrogen carries a partial positive charge (&delta;+).</p>
 
+<p>This polarity enables water molecules to form <strong>hydrogen bonds</strong> with each other. Each water molecule can form up to four hydrogen bonds with neighbouring molecules (two through its hydrogen atoms acting as donors, two through its oxygen lone pairs acting as acceptors). Although each individual hydrogen bond is weak (approximately 1/20th the strength of a covalent bond), collectively they give water its remarkable properties.</p>
+
+<h3>Properties of Water and Their Biological Significance</h3>
 <table>
-    <tr><th>Property</th><th>Explanation</th><th>Biological Importance</th></tr>
-    <tr><td>Solvent</td><td>Polarity attracts ions and polar molecules</td><td>Metabolic reactions occur in aqueous solution; transport medium in blood and xylem</td></tr>
-    <tr><td>High specific heat capacity</td><td>Many hydrogen bonds must be broken to raise temperature</td><td>Stable environment for enzymes; thermoregulation in organisms</td></tr>
-    <tr><td>High latent heat of vaporisation</td><td>Significant energy needed to evaporate water</td><td>Effective cooling mechanism (sweating, transpiration)</td></tr>
-    <tr><td>Cohesion</td><td>Hydrogen bonds between water molecules</td><td>Water columns in xylem; surface tension</td></tr>
-    <tr><td>Less dense as ice</td><td>Hydrogen bonds in ice form open lattice</td><td>Ice floats, insulating water below and allowing aquatic life to survive</td></tr>
+    <tr><th>Property</th><th>Molecular Explanation</th><th>Biological Importance</th></tr>
+    <tr><td><strong>Excellent solvent</strong></td><td>The partial charges on water molecules attract ions and polar molecules, surrounding them and separating them from each other (hydration shells)</td><td>Most metabolic reactions occur in aqueous solution; transport medium in blood plasma, lymph, xylem sap and cytoplasm; ions (Na<sup>+</sup>, K<sup>+</sup>, Cl<sup>&minus;</sup>) dissolve readily for nerve impulses and muscle contraction</td></tr>
+    <tr><td><strong>High specific heat capacity</strong> (4.18 J g<sup>&minus;1</sup> &deg;C<sup>&minus;1</sup>)</td><td>A large amount of energy is needed to break the many hydrogen bonds before temperature rises</td><td>Resists temperature fluctuations, providing a stable environment for enzyme-catalysed reactions; aquatic habitats remain relatively constant; important for thermoregulation in endotherms</td></tr>
+    <tr><td><strong>High latent heat of vaporisation</strong> (2260 J g<sup>&minus;1</sup>)</td><td>Significant energy is required to break hydrogen bonds to convert liquid water to vapour</td><td>Effective cooling mechanism &mdash; evaporation of sweat removes heat from the body surface; transpiration cools plant leaves</td></tr>
+    <tr><td><strong>Cohesion and adhesion</strong></td><td>Cohesion: hydrogen bonds hold water molecules together. Adhesion: water attracted to other polar surfaces</td><td>Cohesion enables water columns in xylem to be pulled upward without breaking (cohesion-tension theory); surface tension allows small insects to walk on water; adhesion helps water climb narrow tubes (capillary action)</td></tr>
+    <tr><td><strong>Maximum density at 4&deg;C</strong> (ice is less dense than liquid water)</td><td>In ice, hydrogen bonds hold molecules in a rigid, open crystalline lattice with more space between molecules</td><td>Ice floats on the surface of ponds and lakes, insulating the water below and allowing aquatic organisms to survive winter; if ice sank, entire water bodies would freeze solid from the bottom up</td></tr>
+    <tr><td><strong>Transparency</strong></td><td>Visible light passes through water</td><td>Allows photosynthesis to occur in aquatic environments at depth; light reaches aquatic plants and algae</td></tr>
+    <tr><td><strong>Metabolic role</strong></td><td>Water is a reactant and product in many reactions</td><td>Hydrolysis reactions (digestion) require water; condensation reactions release water; photolysis of water in photosynthesis provides electrons and protons</td></tr>
 </table>
 
-<div class="exam-tip">When explaining water's properties, always link the molecular structure (polarity, hydrogen bonds) to the biological significance. A common mistake is describing properties without explaining the mechanism.</div>
+<div class="exam-tip">When explaining water's properties, always link the molecular structure (polarity and hydrogen bonds) to the biological significance. A common mistake is describing properties without explaining the underlying mechanism. For example: "Water has a high specific heat capacity <em>because</em> many hydrogen bonds must be broken before the temperature rises, <em>which means</em> aquatic environments remain stable for enzyme activity."</div>
+
+<div class="application-box">Hypothermia treatment in hospitals relies on water's high specific heat capacity &mdash; warming intravenous fluids before infusion prevents further heat loss. Conversely, athletes use evaporative cooling (sweating) to prevent overheating, exploiting water's high latent heat of vaporisation.</div>
 
 <!-- ==================== CARBOHYDRATES ==================== -->
 <h2>1.2 Carbohydrates</h2>
 
 <div class="definition-box">
-    <strong>Carbohydrate:</strong> An organic molecule containing carbon, hydrogen and oxygen in the ratio C<sub>n</sub>(H<sub>2</sub>O)<sub>n</sub>. They function as energy sources, energy stores and structural components.
+    <strong>Carbohydrate:</strong> An organic molecule containing carbon, hydrogen and oxygen, often in the ratio C<sub>n</sub>(H<sub>2</sub>O)<sub>n</sub>. They function as energy sources (glucose), energy stores (starch, glycogen) and structural components (cellulose, chitin).
 </div>
 
 <h3>Monosaccharides</h3>
-<p>The simplest sugars with the general formula (CH<sub>2</sub>O)<sub>n</sub>. They are classified by the number of carbon atoms:</p>
+<p>Monosaccharides are the simplest carbohydrates &mdash; single sugar units that cannot be hydrolysed further. They have the general formula (CH<sub>2</sub>O)<sub>n</sub> and are classified by the number of carbon atoms:</p>
 <ul>
-    <li><strong>Trioses</strong> (3C) &mdash; e.g., glyceraldehyde (intermediate in respiration)</li>
-    <li><strong>Pentoses</strong> (5C) &mdash; e.g., ribose (in RNA, ATP), deoxyribose (in DNA)</li>
-    <li><strong>Hexoses</strong> (6C) &mdash; e.g., glucose (alpha and beta forms), fructose, galactose</li>
+    <li><strong>Trioses (3C)</strong> &mdash; e.g., glyceraldehyde, dihydroxyacetone phosphate (DHAP). These are key intermediates in glycolysis and the Calvin cycle</li>
+    <li><strong>Pentoses (5C)</strong> &mdash; e.g., <strong>ribose</strong> (found in RNA, ATP, NAD, FAD, coenzyme A) and <strong>deoxyribose</strong> (found in DNA, which lacks the &ndash;OH on carbon-2)</li>
+    <li><strong>Hexoses (6C)</strong> &mdash; e.g., <strong>glucose</strong> (&alpha; and &beta; isomers), fructose, galactose. Glucose is the primary respiratory substrate in most organisms</li>
 </ul>
-<p>Alpha-glucose and beta-glucose differ in the position of the hydroxyl group on carbon-1. Alpha-glucose has the &ndash;OH group <strong>below</strong> the ring; beta-glucose has it <strong>above</strong>.</p>
+
+<p>All monosaccharides are <strong>reducing sugars</strong> &mdash; they can donate electrons to other molecules. This is the basis of the Benedict's test.</p>
+
+<h3>Alpha-Glucose vs Beta-Glucose</h3>
+<p>Glucose exists in two isomeric ring forms. <strong>Alpha-glucose (&alpha;)</strong> has the hydroxyl group (&ndash;OH) on carbon-1 positioned <strong>below</strong> the plane of the ring. <strong>Beta-glucose (&beta;)</strong> has it <strong>above</strong> the ring. This seemingly small difference has enormous consequences for the polysaccharides they form: &alpha;-glucose produces helical storage molecules (starch, glycogen), while &beta;-glucose produces straight structural chains (cellulose).</p>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -176,18 +199,14 @@
   </style>
   <text x="300" y="25" text-anchor="middle" class="title">Alpha-Glucose and Beta-Glucose Ring Structures</text>
   <!-- Alpha glucose -->
-  <text x="150" y="50" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">α-Glucose</text>
-  <!-- Hexagon ring -->
+  <text x="150" y="50" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">&alpha;-Glucose</text>
   <polygon points="100,120 130,90 175,90 205,120 175,150 130,150" fill="#1a73e8" opacity="0.06" stroke="#1a73e8" stroke-width="2"/>
-  <!-- O in ring -->
   <text x="205" y="107" text-anchor="start" class="label" fill="#DC2626" font-weight="bold">O</text>
-  <!-- Carbon labels -->
   <text x="125" y="168" text-anchor="middle" class="small-label" fill="#6b7280">C1</text>
   <text x="87" y="122" text-anchor="middle" class="small-label" fill="#6b7280">C2</text>
   <text x="125" y="83" text-anchor="middle" class="small-label" fill="#6b7280">C3</text>
   <text x="180" y="83" text-anchor="middle" class="small-label" fill="#6b7280">C4</text>
   <text x="215" y="135" text-anchor="middle" class="small-label" fill="#6b7280">C5</text>
-  <!-- OH groups -->
   <line x1="130" y1="150" x2="130" y2="178" stroke="#16A34A" stroke-width="1.5"/>
   <text x="130" y="192" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">OH</text>
   <text x="130" y="205" text-anchor="middle" class="small-label" fill="#D97706">(below)</text>
@@ -197,31 +216,25 @@
   <text x="130" y="60" text-anchor="middle" class="small-label" fill="#16A34A">OH</text>
   <line x1="175" y1="90" x2="175" y2="65" stroke="#16A34A" stroke-width="1.5"/>
   <text x="175" y="60" text-anchor="middle" class="small-label" fill="#16A34A">OH</text>
-  <!-- CH2OH on C5 -->
   <line x1="205" y1="120" x2="235" y2="105" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="255" y="103" text-anchor="middle" class="small-label">CH₂OH</text>
-  <!-- H labels -->
+  <text x="255" y="103" text-anchor="middle" class="small-label">CH&#8322;OH</text>
   <line x1="175" y1="150" x2="175" y2="175" stroke="#1a1a2e" stroke-width="1"/>
   <text x="175" y="186" text-anchor="middle" class="small-label" fill="#6b7280">H</text>
 
   <!-- Beta glucose -->
-  <text x="440" y="50" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">β-Glucose</text>
+  <text x="440" y="50" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">&beta;-Glucose</text>
   <polygon points="390,120 420,90 465,90 495,120 465,150 420,150" fill="#DC2626" opacity="0.06" stroke="#DC2626" stroke-width="2"/>
   <text x="495" y="107" text-anchor="start" class="label" fill="#DC2626" font-weight="bold">O</text>
-  <!-- Carbon labels -->
   <text x="415" y="168" text-anchor="middle" class="small-label" fill="#6b7280">C1</text>
   <text x="377" y="122" text-anchor="middle" class="small-label" fill="#6b7280">C2</text>
   <text x="415" y="83" text-anchor="middle" class="small-label" fill="#6b7280">C3</text>
   <text x="470" y="83" text-anchor="middle" class="small-label" fill="#6b7280">C4</text>
   <text x="505" y="135" text-anchor="middle" class="small-label" fill="#6b7280">C5</text>
-  <!-- OH on C1 - ABOVE for beta -->
-  <line x1="420" y1="150" x2="420" y2="125" stroke="#16A34A" stroke-width="0"/>
   <line x1="420" y1="150" x2="405" y2="175" stroke="#1a1a2e" stroke-width="1"/>
   <text x="400" y="188" text-anchor="middle" class="small-label" fill="#6b7280">H</text>
   <line x1="420" y1="150" x2="435" y2="175" stroke="#16A34A" stroke-width="1.5"/>
   <text x="448" y="188" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">OH</text>
   <text x="448" y="201" text-anchor="middle" class="small-label" fill="#D97706">(above)</text>
-  <!-- Other OH groups same positions -->
   <line x1="390" y1="120" x2="365" y2="135" stroke="#16A34A" stroke-width="1.5"/>
   <text x="352" y="145" text-anchor="middle" class="small-label" fill="#16A34A">OH</text>
   <line x1="420" y1="90" x2="420" y2="65" stroke="#16A34A" stroke-width="1.5"/>
@@ -229,72 +242,100 @@
   <line x1="465" y1="90" x2="465" y2="65" stroke="#16A34A" stroke-width="1.5"/>
   <text x="465" y="60" text-anchor="middle" class="small-label" fill="#16A34A">OH</text>
   <line x1="495" y1="120" x2="525" y2="105" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="548" y="103" text-anchor="middle" class="small-label">CH₂OH</text>
+  <text x="548" y="103" text-anchor="middle" class="small-label">CH&#8322;OH</text>
   <line x1="465" y1="150" x2="465" y2="175" stroke="#1a1a2e" stroke-width="1"/>
   <text x="465" y="186" text-anchor="middle" class="small-label" fill="#6b7280">H</text>
 
-  <!-- Key difference arrow -->
   <text x="300" y="245" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Key difference: position of OH on C1</text>
-  <text x="150" y="265" text-anchor="middle" class="small-label" fill="#1a73e8">α: OH below the ring</text>
-  <text x="440" y="265" text-anchor="middle" class="small-label" fill="#DC2626">β: OH above the ring</text>
+  <text x="150" y="265" text-anchor="middle" class="small-label" fill="#1a73e8">&alpha;: OH below the ring</text>
+  <text x="440" y="265" text-anchor="middle" class="small-label" fill="#DC2626">&beta;: OH above the ring</text>
 </svg>
 </div>
 
-<h3>Disaccharides and Glycosidic Bonds</h3>
-<p>Two monosaccharides join via a <strong>condensation reaction</strong> (releasing water) to form a disaccharide linked by a <strong>glycosidic bond</strong>. This bond is broken by <strong>hydrolysis</strong> (adding water).</p>
+<h3>Condensation and Hydrolysis</h3>
+<p>Monosaccharides join together by <strong>condensation reactions</strong>: the &ndash;OH group of one monosaccharide reacts with the &ndash;OH of another, releasing a molecule of water (H<sub>2</sub>O) and forming a <strong>glycosidic bond</strong>. The reverse process, <strong>hydrolysis</strong>, uses water to break the glycosidic bond, catalysed by specific enzymes (e.g., maltase, lactase, sucrase). Digestion of carbohydrates is essentially hydrolysis of glycosidic bonds.</p>
 
+<h3>Disaccharides and Glycosidic Bonds</h3>
 <table>
-    <tr><th>Disaccharide</th><th>Monosaccharides</th><th>Bond</th></tr>
-    <tr><td>Maltose</td><td>Glucose + Glucose</td><td>&alpha;-1,4 glycosidic</td></tr>
-    <tr><td>Sucrose</td><td>Glucose + Fructose</td><td>&alpha;-1,2 glycosidic</td></tr>
-    <tr><td>Lactose</td><td>Glucose + Galactose</td><td>&beta;-1,4 glycosidic</td></tr>
+    <tr><th>Disaccharide</th><th>Monosaccharides</th><th>Bond</th><th>Where Found</th></tr>
+    <tr><td>Maltose</td><td>Glucose + Glucose</td><td>&alpha;-1,4 glycosidic</td><td>Germinating seeds (starch digestion intermediate)</td></tr>
+    <tr><td>Sucrose</td><td>Glucose + Fructose</td><td>&alpha;-1,2 glycosidic</td><td>Transport sugar in phloem of plants; table sugar</td></tr>
+    <tr><td>Lactose</td><td>Glucose + Galactose</td><td>&beta;-1,4 glycosidic</td><td>Mammalian milk; requires lactase for digestion</td></tr>
 </table>
+
+<div class="application-box">Lactose intolerance occurs when adults produce insufficient <strong>lactase</strong> enzyme to hydrolyse lactose. Undigested lactose is fermented by gut bacteria, producing gas and causing bloating, cramps, and diarrhoea. This is common in populations with historically low dairy consumption (e.g., East Asian, African). Lactase persistence (continued production in adults) evolved in populations with a long history of pastoral farming.</div>
 
 <h3>Polysaccharides</h3>
-<p>Long chains of monosaccharides linked by glycosidic bonds. Their structure determines their function:</p>
+<p>Polysaccharides are long chains of monosaccharides linked by glycosidic bonds. They are <strong>not</strong> reducing sugars (the anomeric carbons are involved in bonds). Their structure determines their function:</p>
 
 <table>
-    <tr><th>Polysaccharide</th><th>Monomer</th><th>Structure</th><th>Function</th></tr>
-    <tr><td>Starch (amylose)</td><td>&alpha;-glucose</td><td>Unbranched helix, &alpha;-1,4 bonds</td><td>Energy store in plants</td></tr>
-    <tr><td>Starch (amylopectin)</td><td>&alpha;-glucose</td><td>Branched, &alpha;-1,4 and &alpha;-1,6 bonds</td><td>Rapid energy release in plants</td></tr>
-    <tr><td>Glycogen</td><td>&alpha;-glucose</td><td>Highly branched</td><td>Energy store in animals (liver, muscle)</td></tr>
-    <tr><td>Cellulose</td><td>&beta;-glucose</td><td>Straight chains with hydrogen bonds between chains</td><td>Structural (plant cell walls)</td></tr>
+    <tr><th>Polysaccharide</th><th>Monomer</th><th>Structure</th><th>Function</th><th>Key Features</th></tr>
+    <tr><td><strong>Starch (amylose)</strong></td><td>&alpha;-glucose</td><td>Unbranched helix; &alpha;-1,4 glycosidic bonds only</td><td>Long-term energy store in plants (tubers, seeds, starch grains in chloroplasts)</td><td>Compact helix; insoluble (no osmotic effect); iodine turns it blue-black by entering the helix</td></tr>
+    <tr><td><strong>Starch (amylopectin)</strong></td><td>&alpha;-glucose</td><td>Branched; &alpha;-1,4 bonds with &alpha;-1,6 branches every 24&ndash;30 residues</td><td>More rapidly mobilised energy in plants</td><td>Branches provide many terminal ends for enzyme action; faster hydrolysis than amylose</td></tr>
+    <tr><td><strong>Glycogen</strong></td><td>&alpha;-glucose</td><td>Highly branched; &alpha;-1,4 and &alpha;-1,6 bonds; more branches than amylopectin (every 8&ndash;12 residues)</td><td>Short-term energy store in animals (mainly liver and skeletal muscle)</td><td>Very many branch ends allow rapid glucose release; granules visible in liver cells; stored with associated water</td></tr>
+    <tr><td><strong>Cellulose</strong></td><td>&beta;-glucose</td><td>Straight, unbranched chains; &beta;-1,4 bonds; adjacent monomers rotated 180&deg;</td><td>Structural component of plant cell walls</td><td>Chains form hydrogen bonds with neighbouring chains, creating strong <strong>microfibrils</strong>; very high tensile strength; indigestible by most animals (no cellulase); provides dietary fibre</td></tr>
 </table>
 
-<div class="exam-tip">Remember that starch and glycogen are <strong>insoluble</strong> (do not affect water potential) and <strong>compact</strong>, making them ideal storage molecules. Cellulose has high tensile strength due to hydrogen bonds between parallel chains.</div>
+<div class="exam-tip">Storage molecules (starch and glycogen) are ideal stores because they are: (1) <strong>insoluble</strong> &mdash; do not affect water potential or diffuse out of cells, (2) <strong>compact</strong> &mdash; many glucose units in small space, (3) easily hydrolysed to release glucose when needed. Cellulose has high <strong>tensile strength</strong> because of hydrogen bonds between parallel chains forming microfibrils &mdash; not because of the &beta;-1,4 bonds alone.</div>
+
+<div class="exam-tip">A common 6-mark question asks you to compare and contrast starch and cellulose. Remember: both are glucose polymers, but starch uses &alpha;-glucose with &alpha;-1,4 bonds (coiled) while cellulose uses &beta;-glucose with &beta;-1,4 bonds (straight). This structural difference accounts for their entirely different functions (storage vs structural).</div>
 
 <!-- ==================== LIPIDS ==================== -->
 <h2>1.3 Lipids</h2>
 
 <div class="definition-box">
-    <strong>Lipid:</strong> A diverse group of hydrophobic organic molecules including triglycerides and phospholipids, containing carbon, hydrogen and oxygen (with a higher H:O ratio than carbohydrates).
+    <strong>Lipid:</strong> A diverse group of hydrophobic (water-insoluble) organic molecules containing carbon, hydrogen and oxygen, with a higher H:O ratio than carbohydrates. Includes triglycerides, phospholipids, cholesterol and waxes. They are not true polymers &mdash; they do not form by condensation of repeating monomers in the same way proteins and polysaccharides do.
 </div>
 
-<h3>Triglycerides</h3>
-<p>Formed from one molecule of <strong>glycerol</strong> and three <strong>fatty acid</strong> chains joined by <strong>ester bonds</strong> through condensation reactions. They are the main energy storage molecules in animals and plants (oils in seeds).</p>
-<p>Fatty acids can be:</p>
+<h3>Triglycerides (Fats and Oils)</h3>
+<p>Triglycerides are formed from one molecule of <strong>glycerol</strong> (a 3-carbon alcohol) and three <strong>fatty acid</strong> chains, joined by <strong>ester bonds</strong> through three condensation reactions (releasing 3 H<sub>2</sub>O). They are the main long-term energy storage molecules in animals and plants.</p>
+
+<div class="equation">Glycerol + 3 Fatty acids &rarr; Triglyceride + 3H<sub>2</sub>O (condensation / esterification)</div>
+
+<p>Fatty acids consist of a hydrocarbon chain (typically 14&ndash;20 carbons long) with a carboxyl group (&ndash;COOH) at one end. They can be:</p>
 <ul>
-    <li><strong>Saturated</strong> &mdash; no C=C double bonds; straight chains pack tightly; solid at room temperature (animal fats)</li>
-    <li><strong>Unsaturated</strong> &mdash; one or more C=C double bonds; kinked chains; liquid at room temperature (plant oils)</li>
+    <li><strong>Saturated</strong> &mdash; no C=C double bonds in the hydrocarbon chain; chains are straight and pack tightly together; solid at room temperature (e.g., animal fats: butter, lard). Associated with increased LDL cholesterol and cardiovascular disease risk</li>
+    <li><strong>Monounsaturated</strong> &mdash; one C=C double bond; introduces a kink in the chain; liquid at room temperature (e.g., olive oil)</li>
+    <li><strong>Polyunsaturated</strong> &mdash; two or more C=C double bonds; multiple kinks prevent tight packing; oils remain liquid even at low temperatures (e.g., sunflower oil, fish oils). Omega-3 fatty acids (in oily fish) are associated with reduced cardiovascular disease risk</li>
 </ul>
 
-<div class="equation">Glycerol + 3 Fatty acids &rarr; Triglyceride + 3H<sub>2</sub>O (condensation)</div>
+<h3>Why Lipids Store More Energy Than Carbohydrates</h3>
+<p>Lipids release approximately <strong>twice as much energy per gram</strong> (37 kJ g<sup>&minus;1</sup>) compared to carbohydrates (16 kJ g<sup>&minus;1</sup>). This is because lipids have a much higher proportion of hydrogen atoms relative to oxygen atoms &mdash; the C&ndash;H bonds provide more energy when oxidised. Additionally, lipids are stored in a <strong>anhydrous</strong> (water-free) state, making them lighter per unit of energy. This makes them ideal for long-distance migrants (birds) and organisms that need to minimise weight.</p>
 
 <h3>Phospholipids</h3>
-<p>Similar to triglycerides but with one fatty acid replaced by a <strong>phosphate group</strong>. This gives them an <strong>amphipathic</strong> nature: a hydrophilic phosphate head and two hydrophobic fatty acid tails. This is crucial for forming the <strong>phospholipid bilayer</strong> of cell membranes.</p>
+<p>Phospholipids are structurally similar to triglycerides, but with one fatty acid replaced by a <strong>phosphate group</strong> (often with an additional polar group such as choline). This gives them an <strong>amphipathic</strong> (or amphiphilic) nature:</p>
+<ul>
+    <li><strong>Hydrophilic head</strong> &mdash; the phosphate group is polar and charged; interacts with water</li>
+    <li><strong>Hydrophobic tails</strong> &mdash; the two fatty acid chains are non-polar; repelled by water</li>
+</ul>
+<p>In aqueous environments, phospholipids spontaneously arrange into a <strong>bilayer</strong> with hydrophilic heads facing outward (towards water) and hydrophobic tails facing inward (away from water). This is the fundamental structural basis of all biological membranes. One tail is usually saturated (straight) and one unsaturated (kinked), affecting membrane fluidity.</p>
 
 <h3>Cholesterol</h3>
-<p>A lipid with a four-ring hydrocarbon structure. In membranes, cholesterol sits between phospholipid molecules, regulating membrane <strong>fluidity</strong>: at high temperatures it reduces fluidity; at low temperatures it prevents the membrane from becoming too rigid.</p>
+<p>Cholesterol is a lipid with a distinctive four-ring hydrocarbon structure (a steroid) with a short hydrocarbon tail and a hydroxyl group. In cell membranes, cholesterol molecules sit between phospholipid tails. Cholesterol plays a dual role in regulating membrane <strong>fluidity</strong>:</p>
+<ul>
+    <li><strong>At high temperatures:</strong> cholesterol reduces fluidity by restricting phospholipid movement and making the membrane less permeable to small water-soluble molecules</li>
+    <li><strong>At low temperatures:</strong> cholesterol prevents the membrane from becoming too rigid by disrupting regular packing of fatty acid tails, acting as a "fluidity buffer"</li>
+</ul>
+<p>Cholesterol is also the precursor for steroid hormones (oestrogen, testosterone, cortisol), bile salts (emulsify fats in digestion) and vitamin D.</p>
+
+<div class="application-box">Blood cholesterol is transported by <strong>lipoproteins</strong>. <strong>LDL (low-density lipoprotein)</strong> carries cholesterol to tissues and can deposit it in arterial walls (increasing atherosclerosis risk). <strong>HDL (high-density lipoprotein)</strong> transports cholesterol back to the liver for excretion. High LDL:HDL ratio is a risk factor for cardiovascular disease. Statins are drugs that lower LDL by inhibiting HMG-CoA reductase, the enzyme controlling cholesterol synthesis in the liver.</div>
 
 <!-- ==================== PROTEINS ==================== -->
 <h2>1.4 Proteins</h2>
 
 <div class="definition-box">
-    <strong>Protein:</strong> A polymer of amino acids joined by peptide bonds. Proteins have diverse functions including enzymes, antibodies, transport proteins, structural proteins and hormones.
+    <strong>Protein:</strong> A polymer of amino acids joined by peptide bonds. Proteins have enormous structural and functional diversity: enzymes, antibodies, transport proteins (haemoglobin, channel proteins), structural proteins (collagen, keratin), hormones (insulin), receptors, motor proteins (actin, myosin) and storage proteins (casein in milk).
 </div>
 
 <h3>Amino Acid Structure</h3>
-<p>All amino acids share a common structure: a central carbon atom bonded to an amino group (&ndash;NH<sub>2</sub>), a carboxyl group (&ndash;COOH), a hydrogen atom and a variable <strong>R group</strong> (side chain). There are 20 different amino acids, distinguished by their R groups.</p>
+<p>All 20 amino acids share a common core structure: a central <strong>alpha carbon (&alpha;-C)</strong> bonded to four groups:</p>
+<ul>
+    <li>An <strong>amino group</strong> (&ndash;NH<sub>2</sub>) &mdash; acts as a base (can accept H<sup>+</sup>)</li>
+    <li>A <strong>carboxyl group</strong> (&ndash;COOH) &mdash; acts as an acid (can donate H<sup>+</sup>)</li>
+    <li>A <strong>hydrogen atom</strong></li>
+    <li>A variable <strong>R group</strong> (side chain) &mdash; determines the properties of each amino acid (polar, non-polar, charged, aromatic, sulfur-containing)</li>
+</ul>
+<p>At physiological pH (~7.4), amino acids exist as <strong>zwitterions</strong> with the amino group protonated (&ndash;NH<sub>3</sub><sup>+</sup>) and the carboxyl group deprotonated (&ndash;COO<sup>&minus;</sup>).</p>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -304,32 +345,23 @@
     .small-label { font-size: 11px; }
     .title { font-size: 14px; font-weight: bold; }
   </style>
-  <!-- Title -->
   <text x="300" y="25" text-anchor="middle" class="title">Amino Acid Structure and Peptide Bond Formation</text>
-  <!-- Amino acid 1 -->
   <text x="115" y="55" text-anchor="middle" class="small-label" fill="#6b7280">Amino Acid 1</text>
-  <!-- H2N group -->
-  <text x="30" y="130" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">H₂N</text>
+  <text x="30" y="130" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">H&#8322;N</text>
   <line x1="48" y1="126" x2="75" y2="126" stroke="#1a73e8" stroke-width="2"/>
-  <!-- Central carbon -->
   <circle cx="90" cy="126" r="16" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="2"/>
   <text x="90" y="131" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">C</text>
-  <!-- H above -->
   <line x1="90" y1="110" x2="90" y2="85" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="90" y="78" text-anchor="middle" class="small-label">H</text>
-  <!-- R group below -->
   <line x1="90" y1="142" x2="90" y2="170" stroke="#16A34A" stroke-width="2"/>
   <rect x="72" y="170" width="36" height="24" rx="4" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="90" y="187" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">R₁</text>
-  <!-- COOH group -->
+  <text x="90" y="187" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">R&#8321;</text>
   <line x1="106" y1="126" x2="135" y2="126" stroke="#DC2626" stroke-width="2"/>
   <text x="155" y="121" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">C=O</text>
   <text x="155" y="140" text-anchor="middle" class="small-label" fill="#DC2626">OH</text>
-  <!-- Plus sign -->
   <text x="195" y="131" text-anchor="middle" class="label" font-weight="bold" fill="#D97706">+</text>
-  <!-- Amino acid 2 -->
   <text x="315" y="55" text-anchor="middle" class="small-label" fill="#6b7280">Amino Acid 2</text>
-  <text x="230" y="130" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">H₂N</text>
+  <text x="230" y="130" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">H&#8322;N</text>
   <line x1="248" y1="126" x2="275" y2="126" stroke="#1a73e8" stroke-width="2"/>
   <circle cx="290" cy="126" r="16" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="2"/>
   <text x="290" y="131" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">C</text>
@@ -337,24 +369,21 @@
   <text x="290" y="78" text-anchor="middle" class="small-label">H</text>
   <line x1="290" y1="142" x2="290" y2="170" stroke="#16A34A" stroke-width="2"/>
   <rect x="272" y="170" width="36" height="24" rx="4" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="290" y="187" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">R₂</text>
+  <text x="290" y="187" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">R&#8322;</text>
   <line x1="306" y1="126" x2="335" y2="126" stroke="#DC2626" stroke-width="2"/>
   <text x="360" y="121" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">C=O</text>
   <text x="360" y="140" text-anchor="middle" class="small-label" fill="#DC2626">OH</text>
-  <!-- Arrow -->
   <line x1="200" y1="220" x2="400" y2="220" stroke="#D97706" stroke-width="2"/>
   <polygon points="400,215 415,220 400,225" fill="#D97706"/>
-  <text x="300" y="213" text-anchor="middle" class="small-label" fill="#D97706">Condensation (−H₂O)</text>
-  <!-- Dipeptide product -->
+  <text x="300" y="213" text-anchor="middle" class="small-label" fill="#D97706">Condensation (&minus;H&#8322;O)</text>
   <text x="300" y="250" text-anchor="middle" class="small-label" fill="#6b7280">Dipeptide</text>
-  <text x="80" y="290" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">H₂N</text>
+  <text x="80" y="290" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">H&#8322;N</text>
   <line x1="98" y1="286" x2="120" y2="286" stroke="#1a73e8" stroke-width="2"/>
   <circle cx="135" cy="286" r="14" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="135" y="291" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">C</text>
   <line x1="149" y1="286" x2="175" y2="286" stroke="#DC2626" stroke-width="2"/>
   <text x="188" y="278" text-anchor="middle" class="small-label" fill="#DC2626">O</text>
   <text x="188" y="293" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">C</text>
-  <!-- Peptide bond highlight -->
   <rect x="195" y="274" width="75" height="24" rx="6" fill="#D97706" opacity="0.12" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,2"/>
   <line x1="200" y1="286" x2="225" y2="286" stroke="#D97706" stroke-width="2.5"/>
   <text x="238" y="291" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">N</text>
@@ -365,59 +394,82 @@
   <line x1="304" y1="286" x2="330" y2="286" stroke="#DC2626" stroke-width="2"/>
   <text x="355" y="283" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">C=O</text>
   <text x="355" y="300" text-anchor="middle" class="small-label" fill="#DC2626">OH</text>
-  <!-- Peptide bond label -->
-  <text x="230" y="315" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Peptide bond</text>
-  <!-- Water released -->
-  <text x="480" y="290" text-anchor="middle" class="label" fill="#1a73e8">+ H₂O</text>
+  <text x="230" y="315" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Peptide bond (C&ndash;N)</text>
+  <text x="480" y="290" text-anchor="middle" class="label" fill="#1a73e8">+ H&#8322;O</text>
 </svg>
 </div>
 
 <h3>Peptide Bonds and Polypeptides</h3>
-<p>Amino acids are linked by <strong>peptide bonds</strong> formed through condensation reactions between the amino group of one amino acid and the carboxyl group of another. A chain of many amino acids is a <strong>polypeptide</strong>.</p>
+<p>Amino acids are linked by <strong>peptide bonds</strong> formed through condensation reactions between the amino group (&ndash;NH<sub>2</sub>) of one amino acid and the carboxyl group (&ndash;COOH) of another, releasing water. The bond formed is C&ndash;N (with partial double bond character due to resonance). A chain of two amino acids is a dipeptide; many amino acids form a <strong>polypeptide</strong>. Peptide bonds are broken by <strong>hydrolysis</strong> (adding water), catalysed by protease enzymes during digestion.</p>
 
 <h3>Levels of Protein Structure</h3>
 <table>
-    <tr><th>Level</th><th>Description</th><th>Bonds Involved</th></tr>
-    <tr><td>Primary</td><td>Sequence of amino acids in the polypeptide chain</td><td>Peptide bonds</td></tr>
-    <tr><td>Secondary</td><td>Regular local folding into alpha-helices or beta-pleated sheets</td><td>Hydrogen bonds between C=O and N&ndash;H groups of backbone</td></tr>
-    <tr><td>Tertiary</td><td>Overall 3D shape of a single polypeptide</td><td>Hydrogen bonds, ionic bonds, disulfide bridges, hydrophobic interactions</td></tr>
-    <tr><td>Quaternary</td><td>Multiple polypeptide chains and/or prosthetic groups combined</td><td>Same as tertiary (between subunits)</td></tr>
+    <tr><th>Level</th><th>Description</th><th>Bonds/Forces Involved</th><th>Example</th></tr>
+    <tr><td><strong>Primary</strong></td><td>The specific linear sequence of amino acids in the polypeptide chain, determined by the gene. Even one amino acid change can alter function (e.g., sickle cell anaemia: Glu &rarr; Val at position 6)</td><td>Peptide bonds (covalent)</td><td>Insulin: chain A (21 aa) and chain B (30 aa)</td></tr>
+    <tr><td><strong>Secondary</strong></td><td>Regular local folding into <strong>&alpha;-helices</strong> (right-handed coil) or <strong>&beta;-pleated sheets</strong> (zigzag pattern). These arise from hydrogen bonding along the polypeptide backbone</td><td>Hydrogen bonds between C=O and N&ndash;H groups of the peptide backbone (every 4th amino acid in &alpha;-helix)</td><td>Keratin is largely &alpha;-helical; silk fibroin has extensive &beta;-sheets</td></tr>
+    <tr><td><strong>Tertiary</strong></td><td>The overall 3D shape of a single polypeptide chain, determined by interactions between R groups. This gives the protein its specific shape and function (e.g., the active site of an enzyme)</td><td><strong>Hydrogen bonds</strong> (between polar R groups), <strong>ionic bonds</strong> (between charged R groups), <strong>disulfide bridges</strong> (covalent S&ndash;S bonds between cysteine residues), <strong>hydrophobic interactions</strong> (non-polar R groups cluster in the interior, away from water), and <strong>van der Waals forces</strong></td><td>Myoglobin, enzymes like lysozyme</td></tr>
+    <tr><td><strong>Quaternary</strong></td><td>The arrangement of two or more polypeptide subunits and/or prosthetic groups (non-protein components) into a functional protein complex</td><td>Same as tertiary (between subunits): hydrogen bonds, ionic bonds, disulfide bridges, hydrophobic interactions</td><td>Haemoglobin (4 subunits + 4 haem groups); collagen (3 polypeptide chains wound together); antibodies (2 heavy + 2 light chains)</td></tr>
 </table>
 
-<div class="exam-tip">Globular proteins (e.g., enzymes, haemoglobin) are soluble and have metabolic roles. Fibrous proteins (e.g., collagen, keratin) are insoluble with structural roles. Know specific examples for each.</div>
+<h3>Globular vs Fibrous Proteins</h3>
+<table>
+    <tr><th>Feature</th><th>Globular Proteins</th><th>Fibrous Proteins</th></tr>
+    <tr><td>Shape</td><td>Spherical/compact; polypeptide chain folded into a ball</td><td>Long, elongated; chains arranged in parallel or coiled</td></tr>
+    <tr><td>Solubility</td><td>Generally soluble in water (hydrophilic R groups on surface)</td><td>Generally insoluble in water</td></tr>
+    <tr><td>Function</td><td>Metabolic/functional roles: enzymes, antibodies, haemoglobin, hormones, receptors</td><td>Structural roles: support, protection, tensile strength</td></tr>
+    <tr><td>Examples</td><td>Haemoglobin, insulin, immunoglobulins, lysozyme, catalase</td><td>Collagen (connective tissue, tendons, bone matrix), keratin (hair, nails, skin), elastin (lungs, arteries)</td></tr>
+</table>
+
+<div class="exam-tip">For a 6-mark question on protein structure, make sure you can describe ALL four levels and name the specific bonds at each level. Remember: primary structure (gene-determined sequence) determines all higher levels &mdash; changing the primary structure can alter folding and function. Denaturation means loss of tertiary/quaternary structure but NOT breaking of peptide bonds (primary structure intact).</div>
+
+<div class="application-box"><strong>Sickle cell anaemia</strong> is caused by a single amino acid substitution in the &beta;-globin chain of haemoglobin (glutamic acid &rarr; valine at position 6). This changes a hydrophilic amino acid to a hydrophobic one, causing haemoglobin molecules to aggregate in low oxygen conditions, distorting red blood cells into a sickle shape. This demonstrates how primary structure determines function. Heterozygous carriers have sickle cell trait and partial resistance to malaria &mdash; an example of heterozygote advantage maintaining a harmful allele in populations.</div>
 
 <!-- ==================== ENZYMES ==================== -->
 <h2>1.5 Enzymes</h2>
 
 <div class="definition-box">
-    <strong>Enzyme:</strong> A biological catalyst (usually a globular protein) that lowers the activation energy of a metabolic reaction, increasing the rate of reaction without being used up.
+    <strong>Enzyme:</strong> A biological catalyst, usually a globular protein, that lowers the <strong>activation energy</strong> (E<sub>a</sub>) of a specific metabolic reaction, greatly increasing the rate of reaction without being consumed or permanently altered. Enzymes typically increase reaction rates by a factor of 10<sup>6</sup> to 10<sup>12</sup>.
 </div>
 
+<p>Enzymes work by providing an alternative reaction pathway with a lower activation energy. They do NOT change the equilibrium position or the overall free energy change (&Delta;G) of the reaction &mdash; they just help the reaction reach equilibrium faster.</p>
+
 <h3>Lock and Key Model vs Induced Fit Model</h3>
-<p>The <strong>lock and key model</strong> proposes that the substrate is exactly complementary to the enzyme's active site. However, the <strong>induced fit model</strong> (more accurate) suggests that the active site changes shape slightly upon substrate binding, moulding around the substrate for a tighter fit. This places strain on bonds in the substrate, lowering activation energy.</p>
+<p>The <strong>lock and key model</strong> (Emil Fischer, 1894) proposes that the substrate has a shape exactly complementary to the enzyme's <strong>active site</strong>, like a key fitting into a lock. While this explains enzyme specificity, it is an oversimplification.</p>
+
+<p>The <strong>induced fit model</strong> (Daniel Koshland, 1958) is more accurate. It proposes that the active site is not a rigid structure but changes shape slightly when the substrate binds, moulding around the substrate to form a tighter, more precise fit. This conformational change:</p>
+<ul>
+    <li>Places strain on bonds within the substrate, weakening them and lowering activation energy</li>
+    <li>Brings catalytic amino acid residues in the active site into optimal positions for catalysis</li>
+    <li>May exclude water from the active site, creating a more favourable chemical environment</li>
+</ul>
 
 <h3>Factors Affecting Enzyme Activity</h3>
 <ul>
-    <li><strong>Temperature:</strong> Increasing temperature increases kinetic energy and collisions; above optimum, hydrogen bonds break, active site denatures, rate drops to zero</li>
-    <li><strong>pH:</strong> Each enzyme has an optimum pH; extreme pH changes break ionic and hydrogen bonds, denaturing the enzyme</li>
-    <li><strong>Substrate concentration:</strong> Rate increases until all active sites are occupied (V<sub>max</sub>); further increases have no effect</li>
-    <li><strong>Enzyme concentration:</strong> More active sites available; rate increases proportionally (if substrate is in excess)</li>
+    <li><strong>Temperature:</strong> Increasing temperature increases kinetic energy of molecules, leading to more frequent and energetic enzyme-substrate collisions. Rate roughly doubles for every 10&deg;C rise (Q<sub>10</sub> &asymp; 2) up to the <strong>optimum temperature</strong>. Above the optimum, hydrogen bonds and ionic bonds maintaining the tertiary structure break, the active site changes shape (<strong>denaturation</strong>), and the rate drops sharply to zero. Denaturation is usually permanent (irreversible). Human enzymes typically have optimum ~37&deg;C; thermophilic bacteria (e.g., <em>Thermus aquaticus</em>) have enzymes with optima of 70&ndash;80&deg;C</li>
+    <li><strong>pH:</strong> Each enzyme has a characteristic optimum pH (e.g., pepsin pH 2, trypsin pH 8, most intracellular enzymes pH 7). Changes in pH alter the ionisation of amino acid R groups, disrupting ionic bonds and hydrogen bonds in the tertiary structure. Extreme pH causes denaturation. The active site shape changes and can no longer bind the substrate</li>
+    <li><strong>Substrate concentration:</strong> At low [S], rate increases proportionally (first-order kinetics) as more substrate molecules are available to bind active sites. Eventually, all active sites are occupied (enzyme saturated), and rate reaches <strong>V<sub>max</sub></strong> (zero-order kinetics). Further substrate increases have no effect unless more enzyme is added</li>
+    <li><strong>Enzyme concentration:</strong> If substrate is in excess, increasing enzyme concentration increases the rate proportionally &mdash; more active sites are available for catalysis</li>
 </ul>
 
-<h3>Inhibition</h3>
+<h3>Enzyme Inhibition</h3>
 <table>
-    <tr><th>Type</th><th>Mechanism</th><th>Effect on V<sub>max</sub></th><th>Effect on K<sub>m</sub></th></tr>
-    <tr><td>Competitive</td><td>Inhibitor competes with substrate for the active site (similar shape)</td><td>Unchanged (overcome with excess substrate)</td><td>Increased (apparent lower affinity)</td></tr>
-    <tr><td>Non-competitive</td><td>Inhibitor binds to allosteric site, changing active site shape</td><td>Reduced (fewer functional enzyme molecules)</td><td>Unchanged</td></tr>
+    <tr><th>Type</th><th>Mechanism</th><th>Effect on V<sub>max</sub></th><th>Effect on K<sub>m</sub></th><th>Reversibility</th><th>Example</th></tr>
+    <tr><td><strong>Competitive</strong></td><td>Inhibitor has a similar shape to substrate; competes for the active site; blocks substrate binding</td><td>Unchanged (can be overcome with excess substrate)</td><td>Increased (apparent lower affinity)</td><td>Reversible</td><td>Malonate inhibits succinate dehydrogenase (competes with succinate); statins compete with HMG-CoA</td></tr>
+    <tr><td><strong>Non-competitive</strong></td><td>Inhibitor binds to an <strong>allosteric site</strong> (not the active site); causes conformational change that distorts the active site shape; substrate can still bind but no catalysis occurs</td><td>Reduced (fewer functional enzyme-substrate complexes)</td><td>Unchanged (substrate still binds normally)</td><td>Can be reversible or irreversible</td><td>Heavy metal ions (Hg<sup>2+</sup>, Pb<sup>2+</sup>) bind to sulfhydryl groups; cyanide inhibits cytochrome c oxidase; nerve agents inhibit acetylcholinesterase</td></tr>
 </table>
 
-<div class="equation">Rate of reaction = V<sub>max</sub> &times; [S] / (K<sub>m</sub> + [S]) &mdash; Michaelis-Menten equation</div>
+<div class="equation">Michaelis-Menten equation: v = V<sub>max</sub> &times; [S] / (K<sub>m</sub> + [S])</div>
+<p>Where <strong>K<sub>m</sub></strong> (Michaelis constant) is the substrate concentration at which the reaction rate is half V<sub>max</sub>. A low K<sub>m</sub> indicates high enzyme-substrate affinity (the enzyme reaches half its maximum rate at a low substrate concentration).</p>
+
+<div class="exam-tip">On Lineweaver-Burk plots (1/v vs 1/[S]): competitive inhibition changes the x-intercept (K<sub>m</sub> appears to increase) but the y-intercept (1/V<sub>max</sub>) stays the same. Non-competitive inhibition changes the y-intercept (V<sub>max</sub> decreases) but the x-intercept (K<sub>m</sub>) stays the same. Know how to interpret both types of graph.</div>
+
+<div class="application-box"><strong>Drug design</strong> exploits enzyme inhibition. Penicillin is a competitive inhibitor of transpeptidase, preventing bacterial cell wall synthesis. HIV protease inhibitors block the viral protease needed to produce functional viral proteins. ACE inhibitors treat hypertension by inhibiting angiotensin-converting enzyme. Understanding K<sub>m</sub> and V<sub>max</sub> helps pharmacologists design effective drug dosages.</div>
 
 <!-- ==================== CELL MEMBRANES ==================== -->
 <h2>1.6 Cell Membranes</h2>
 
 <div class="definition-box">
-    <strong>Fluid mosaic model:</strong> The accepted model of membrane structure describing a phospholipid bilayer with proteins, cholesterol and glycolipids/glycoproteins distributed throughout like a mosaic, with components free to move laterally (fluid).
+    <strong>Fluid mosaic model (Singer and Nicolson, 1972):</strong> The accepted model of membrane structure describing a <strong>phospholipid bilayer</strong> with various proteins, cholesterol, and glycolipids/glycoproteins distributed throughout like tiles in a mosaic. The "fluid" aspect refers to the fact that phospholipids and some proteins can move laterally within the bilayer. The "mosaic" refers to the scattered arrangement of different protein molecules.
 </div>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -429,225 +481,280 @@
     .title { font-size: 14px; font-weight: bold; }
   </style>
   <text x="300" y="22" text-anchor="middle" class="title">Fluid Mosaic Model of the Cell Membrane</text>
-
-  <!-- Extracellular label -->
   <text x="300" y="45" text-anchor="middle" class="small-label" fill="#6b7280">Extracellular fluid</text>
-
   <!-- Glycoprotein -->
   <rect x="65" y="55" width="30" height="50" rx="6" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1.5"/>
-  <text x="80" y="80" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold" transform="rotate(-90, 80, 80)">Glyco-</text>
-  <!-- Sugar chains on glycoprotein -->
   <circle cx="72" cy="52" r="4" fill="#D97706" opacity="0.6"/>
   <circle cx="80" cy="48" r="4" fill="#D97706" opacity="0.6"/>
   <circle cx="88" cy="52" r="4" fill="#D97706" opacity="0.6"/>
-  <line x1="72" y1="56" x2="72" y2="55" stroke="#D97706" stroke-width="1"/>
-  <line x1="88" y1="56" x2="88" y2="55" stroke="#D97706" stroke-width="1"/>
-
-  <!-- Upper phospholipid layer (heads at top) -->
-  <!-- Phospholipid units across the membrane -->
+  <!-- Upper phospholipid layer -->
   <g id="upper-row">
-    <!-- Each phospholipid: circle head + two tail lines -->
     <circle cx="120" cy="105" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="117" y1="114" x2="115" y2="155" stroke="#D97706" stroke-width="1.5"/>
     <line x1="123" y1="114" x2="125" y2="155" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="145" cy="105" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="142" y1="114" x2="140" y2="155" stroke="#D97706" stroke-width="1.5"/>
     <line x1="148" y1="114" x2="150" y2="155" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="170" cy="105" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="167" y1="114" x2="165" y2="155" stroke="#D97706" stroke-width="1.5"/>
     <line x1="173" y1="114" x2="175" y2="155" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="195" cy="105" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="192" y1="114" x2="190" y2="155" stroke="#D97706" stroke-width="1.5"/>
     <line x1="198" y1="114" x2="200" y2="155" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="275" cy="105" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="272" y1="114" x2="270" y2="155" stroke="#D97706" stroke-width="1.5"/>
     <line x1="278" y1="114" x2="280" y2="155" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="300" cy="105" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="297" y1="114" x2="295" y2="155" stroke="#D97706" stroke-width="1.5"/>
     <line x1="303" y1="114" x2="305" y2="155" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="370" cy="105" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="367" y1="114" x2="365" y2="155" stroke="#D97706" stroke-width="1.5"/>
     <line x1="373" y1="114" x2="375" y2="155" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="395" cy="105" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="392" y1="114" x2="390" y2="155" stroke="#D97706" stroke-width="1.5"/>
     <line x1="398" y1="114" x2="400" y2="155" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="420" cy="105" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="417" y1="114" x2="415" y2="155" stroke="#D97706" stroke-width="1.5"/>
     <line x1="423" y1="114" x2="425" y2="155" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="480" cy="105" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="477" y1="114" x2="475" y2="155" stroke="#D97706" stroke-width="1.5"/>
     <line x1="483" y1="114" x2="485" y2="155" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="505" cy="105" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="502" y1="114" x2="500" y2="155" stroke="#D97706" stroke-width="1.5"/>
     <line x1="508" y1="114" x2="510" y2="155" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="530" cy="105" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="527" y1="114" x2="525" y2="155" stroke="#D97706" stroke-width="1.5"/>
     <line x1="533" y1="114" x2="535" y2="155" stroke="#D97706" stroke-width="1.5"/>
   </g>
-
-  <!-- Lower phospholipid layer (heads at bottom) -->
+  <!-- Lower phospholipid layer -->
   <g id="lower-row">
     <circle cx="120" cy="215" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="117" y1="206" x2="115" y2="165" stroke="#D97706" stroke-width="1.5"/>
     <line x1="123" y1="206" x2="125" y2="165" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="145" cy="215" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="142" y1="206" x2="140" y2="165" stroke="#D97706" stroke-width="1.5"/>
     <line x1="148" y1="206" x2="150" y2="165" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="170" cy="215" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="167" y1="206" x2="165" y2="165" stroke="#D97706" stroke-width="1.5"/>
     <line x1="173" y1="206" x2="175" y2="165" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="195" cy="215" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="192" y1="206" x2="190" y2="165" stroke="#D97706" stroke-width="1.5"/>
     <line x1="198" y1="206" x2="200" y2="165" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="275" cy="215" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="272" y1="206" x2="270" y2="165" stroke="#D97706" stroke-width="1.5"/>
     <line x1="278" y1="206" x2="280" y2="165" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="300" cy="215" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="297" y1="206" x2="295" y2="165" stroke="#D97706" stroke-width="1.5"/>
     <line x1="303" y1="206" x2="305" y2="165" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="370" cy="215" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="367" y1="206" x2="365" y2="165" stroke="#D97706" stroke-width="1.5"/>
     <line x1="373" y1="206" x2="375" y2="165" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="395" cy="215" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="392" y1="206" x2="390" y2="165" stroke="#D97706" stroke-width="1.5"/>
     <line x1="398" y1="206" x2="400" y2="165" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="420" cy="215" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="417" y1="206" x2="415" y2="165" stroke="#D97706" stroke-width="1.5"/>
     <line x1="423" y1="206" x2="425" y2="165" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="480" cy="215" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="477" y1="206" x2="475" y2="165" stroke="#D97706" stroke-width="1.5"/>
     <line x1="483" y1="206" x2="485" y2="165" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="505" cy="215" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="502" y1="206" x2="500" y2="165" stroke="#D97706" stroke-width="1.5"/>
     <line x1="508" y1="206" x2="510" y2="165" stroke="#D97706" stroke-width="1.5"/>
-
     <circle cx="530" cy="215" r="9" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
     <line x1="527" y1="206" x2="525" y2="165" stroke="#D97706" stroke-width="1.5"/>
     <line x1="533" y1="206" x2="535" y2="165" stroke="#D97706" stroke-width="1.5"/>
   </g>
-
   <!-- Channel protein -->
   <rect x="222" y="90" width="18" height="140" rx="4" fill="#16A34A" opacity="0.25" stroke="#16A34A" stroke-width="1.5"/>
   <rect x="246" y="90" width="18" height="140" rx="4" fill="#16A34A" opacity="0.25" stroke="#16A34A" stroke-width="1.5"/>
   <text x="242" y="165" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold" transform="rotate(-90, 242, 165)">Channel</text>
-
-  <!-- Integral/carrier protein -->
+  <!-- Carrier protein -->
   <ellipse cx="445" cy="160" rx="22" ry="55" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
   <text x="445" y="163" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold" transform="rotate(-90, 445, 163)">Carrier</text>
-
   <!-- Cholesterol -->
   <polygon points="330,130 345,115 345,145" fill="#1a1a2e" opacity="0.3" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="335" y="160" text-anchor="middle" class="small-label" fill="#1a1a2e">Cholesterol</text>
-
-  <!-- Glycoprotein extending from membrane -->
+  <!-- Glycoprotein extending -->
   <rect x="65" y="95" width="30" height="130" rx="6" fill="#D97706" opacity="0.2" stroke="#D97706" stroke-width="1.5"/>
-
-  <!-- Intracellular label -->
   <text x="300" y="248" text-anchor="middle" class="small-label" fill="#6b7280">Intracellular fluid (cytoplasm)</text>
-
   <!-- Key -->
   <circle cx="80" cy="280" r="7" fill="#1a73e8" opacity="0.7" stroke="#1a73e8" stroke-width="1"/>
   <text x="95" y="284" class="small-label" fill="#1a73e8">Phospholipid head (hydrophilic)</text>
   <line x1="280" y1="277" x2="280" y2="287" stroke="#D97706" stroke-width="2"/>
   <line x1="286" y1="277" x2="286" y2="287" stroke="#D97706" stroke-width="2"/>
   <text x="298" y="284" class="small-label" fill="#D97706">Fatty acid tails (hydrophobic)</text>
-
   <rect x="68" y="298" width="14" height="14" rx="3" fill="#16A34A" opacity="0.25" stroke="#16A34A" stroke-width="1"/>
   <text x="95" y="310" class="small-label" fill="#16A34A">Channel protein</text>
   <ellipse cx="248" cy="305" rx="8" ry="7" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1"/>
   <text x="265" y="310" class="small-label" fill="#DC2626">Carrier protein</text>
   <polygon points="405,300 415,295 415,310" fill="#1a1a2e" opacity="0.3" stroke="#1a1a2e" stroke-width="1"/>
   <text x="425" y="310" class="small-label" fill="#1a1a2e">Cholesterol</text>
-
   <rect x="68" y="325" width="14" height="14" rx="3" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1"/>
-  <text x="95" y="337" class="small-label" fill="#D97706">Glycoprotein</text>
-  <text x="300" y="360" text-anchor="middle" class="small-label" fill="#6b7280" font-style="italic">Components are free to move laterally (fluid) within the bilayer</text>
+  <text x="95" y="337" class="small-label" fill="#D97706">Glycoprotein (cell recognition)</text>
+  <text x="300" y="360" text-anchor="middle" class="small-label" fill="#6b7280" font-style="italic">Components move laterally (fluid) within the bilayer; asymmetric distribution</text>
 </svg>
 </div>
 
 <h3>Membrane Components and Functions</h3>
 <table>
-    <tr><th>Component</th><th>Function</th></tr>
-    <tr><td>Phospholipid bilayer</td><td>Barrier to water-soluble substances; provides fluidity</td></tr>
-    <tr><td>Channel proteins</td><td>Allow specific ions/polar molecules through (passive)</td></tr>
-    <tr><td>Carrier proteins</td><td>Transport molecules via facilitated diffusion or active transport</td></tr>
-    <tr><td>Glycoproteins</td><td>Cell signalling, cell recognition, immune response</td></tr>
-    <tr><td>Glycolipids</td><td>Cell recognition, stability</td></tr>
-    <tr><td>Cholesterol</td><td>Regulates fluidity and permeability</td></tr>
+    <tr><th>Component</th><th>Function</th><th>Additional Detail</th></tr>
+    <tr><td><strong>Phospholipid bilayer</strong></td><td>Barrier to water-soluble (hydrophilic) substances; provides the basic structure and fluidity</td><td>The hydrophobic core prevents ions, polar molecules and large molecules from crossing freely; small non-polar molecules (O<sub>2</sub>, CO<sub>2</sub>, steroid hormones) can diffuse through</td></tr>
+    <tr><td><strong>Channel proteins</strong></td><td>Allow specific ions/small polar molecules to pass through a water-filled pore (passive, down concentration gradient)</td><td>Highly selective for particular ions (Na<sup>+</sup>, K<sup>+</sup>, Ca<sup>2+</sup>); some are gated (open/close in response to voltage, ligands or mechanical stimuli)</td></tr>
+    <tr><td><strong>Carrier proteins</strong></td><td>Transport specific molecules across the membrane by changing shape</td><td>Used in both facilitated diffusion (passive) and active transport (requires ATP). Example: Na<sup>+</sup>/K<sup>+</sup> ATPase, GLUT transporters for glucose</td></tr>
+    <tr><td><strong>Glycoproteins</strong></td><td>Cell signalling, cell recognition, immune response (antigens)</td><td>Sugar chains on the extracellular surface act as receptors for hormones and neurotransmitters; form the glycocalyx; determine blood groups (ABO antigens); enable cell-cell adhesion</td></tr>
+    <tr><td><strong>Glycolipids</strong></td><td>Cell recognition, cell adhesion, membrane stability</td><td>Important in tissue formation; act as antigens on cell surfaces; contribute to the glycocalyx</td></tr>
+    <tr><td><strong>Cholesterol</strong></td><td>Regulates membrane fluidity and permeability</td><td>Reduces membrane permeability to small hydrophilic molecules; prevents crystallisation of fatty acid tails at low temperatures; maintains membrane stability across a temperature range</td></tr>
 </table>
 
 <h3>Factors Affecting Membrane Permeability</h3>
-<p>Temperature increases cause greater phospholipid movement and increased permeability. Very high temperatures denature proteins and cause gaps. Organic solvents (e.g., ethanol) dissolve lipids, increasing permeability. This can be investigated using beetroot discs and measuring anthocyanin leakage with a colorimeter.</p>
+<p>Temperature increases cause phospholipids to have more kinetic energy and move more, increasing membrane fluidity and permeability. At very high temperatures (above ~45&deg;C), membrane proteins denature and phospholipids move so much that temporary gaps form, dramatically increasing permeability. Organic solvents (e.g., ethanol, acetone) dissolve lipids in the membrane, disrupting the bilayer structure and increasing permeability.</p>
+
+<p>This can be investigated using <strong>beetroot discs</strong>: placing them in water at different temperatures and measuring the leakage of the red pigment <strong>betacyanin (anthocyanin)</strong> using a colorimeter. Higher temperature = more pigment leakage = higher absorbance reading.</p>
+
+<div class="exam-tip">When explaining the beetroot experiment, describe the mechanism precisely: high temperatures denature the <strong>intrinsic proteins</strong> in the tonoplast (vacuole membrane) and cell membrane, and increase phospholipid movement, creating gaps. Betacyanin leaks from the vacuole through the damaged tonoplast, then out through the damaged cell membrane into the surrounding water. This is NOT osmosis &mdash; it is increased permeability due to membrane disruption.</div>
 
 <!-- ==================== TRANSPORT ==================== -->
 <h2>1.7 Transport Across Membranes</h2>
 
 <table>
-    <tr><th>Mechanism</th><th>Energy Required?</th><th>Description</th></tr>
-    <tr><td>Simple diffusion</td><td>No (passive)</td><td>Net movement of molecules from high to low concentration down a concentration gradient</td></tr>
-    <tr><td>Facilitated diffusion</td><td>No (passive)</td><td>Movement through channel or carrier proteins down a concentration gradient</td></tr>
-    <tr><td>Osmosis</td><td>No (passive)</td><td>Net movement of water from high water potential to low water potential through a partially permeable membrane</td></tr>
-    <tr><td>Active transport</td><td>Yes (ATP)</td><td>Movement against the concentration gradient via carrier proteins</td></tr>
-    <tr><td>Endocytosis</td><td>Yes (ATP)</td><td>Cell engulfs material by infolding of the membrane</td></tr>
-    <tr><td>Exocytosis</td><td>Yes (ATP)</td><td>Vesicles fuse with membrane to release contents outside the cell</td></tr>
+    <tr><th>Mechanism</th><th>Energy Required?</th><th>Description</th><th>Examples</th></tr>
+    <tr><td><strong>Simple diffusion</strong></td><td>No (passive)</td><td>Net movement of molecules/ions from a region of <strong>higher</strong> concentration to <strong>lower</strong> concentration, down a concentration gradient. Molecules must be small and non-polar (or very small and uncharged) to cross the phospholipid bilayer directly</td><td>O<sub>2</sub> and CO<sub>2</sub> across alveolar epithelium; steroid hormones crossing cell membranes; ethanol absorption in the gut</td></tr>
+    <tr><td><strong>Facilitated diffusion</strong></td><td>No (passive)</td><td>Movement of ions or large/polar molecules down a concentration gradient through specific <strong>channel proteins</strong> or <strong>carrier proteins</strong>. The proteins are highly specific (each transports only one type or a closely related group of molecules)</td><td>Glucose via GLUT transporters; Na<sup>+</sup>, K<sup>+</sup>, Cl<sup>&minus;</sup> through ion channels; aquaporins for water</td></tr>
+    <tr><td><strong>Osmosis</strong></td><td>No (passive)</td><td>Net movement of <strong>water</strong> molecules from a region of <strong>higher water potential (&Psi;)</strong> to a region of <strong>lower water potential</strong> across a <strong>partially permeable membrane</strong>. Water moves to dilute the more concentrated solution</td><td>Water absorption in root hair cells; water reabsorption in kidney tubules; red blood cells in hypotonic/hypertonic solutions</td></tr>
+    <tr><td><strong>Active transport</strong></td><td>Yes (ATP)</td><td>Movement of molecules/ions <strong>against</strong> the concentration gradient (from low to high concentration) using carrier proteins that are powered by ATP hydrolysis. The carrier changes shape to move the substance across</td><td>Na<sup>+</sup>/K<sup>+</sup> ATPase (3 Na<sup>+</sup> out, 2 K<sup>+</sup> in); mineral ion uptake by root cells; glucose reabsorption in kidney PCT (co-transport with Na<sup>+</sup>)</td></tr>
+    <tr><td><strong>Endocytosis</strong></td><td>Yes (ATP)</td><td>Cell engulfs extracellular material by infolding of the membrane to form a vesicle. <strong>Phagocytosis</strong> = engulfing solid particles; <strong>pinocytosis</strong> = engulfing liquid/dissolved substances</td><td>White blood cells engulfing bacteria (phagocytosis); uptake of LDL cholesterol by receptor-mediated endocytosis</td></tr>
+    <tr><td><strong>Exocytosis</strong></td><td>Yes (ATP)</td><td>Vesicles (from Golgi or other sources) fuse with the cell surface membrane, releasing their contents outside the cell</td><td>Secretion of hormones (insulin from beta cells); neurotransmitter release at synapses; secretion of digestive enzymes</td></tr>
 </table>
 
 <div class="definition-box">
-    <strong>Water potential (&Psi;):</strong> The tendency of water molecules to move from one region to another. Pure water has the highest water potential of 0 kPa. Adding solute lowers (makes more negative) water potential.
+    <strong>Water potential (&Psi;):</strong> The tendency of water molecules to move from one region to another by osmosis. Pure water has the highest water potential, defined as <strong>0 kPa</strong>. Adding solute lowers (makes more negative) the water potential. Water always moves from <strong>less negative</strong> (higher) &Psi; to <strong>more negative</strong> (lower) &Psi;.
 </div>
 
-<div class="equation">&Psi; = &Psi;<sub>s</sub> + &Psi;<sub>p</sub> (water potential = solute potential + pressure potential)</div>
+<div class="equation">&Psi; = &Psi;<sub>s</sub> + &Psi;<sub>p</sub></div>
+<p>Where <strong>&Psi;<sub>s</sub></strong> = solute potential (always negative; more solute = more negative) and <strong>&Psi;<sub>p</sub></strong> = pressure potential (positive in turgid plant cells due to wall pressure; zero in animal cells).</p>
 
-<div class="exam-tip">Osmosis questions: water always moves from LESS negative (higher) water potential to MORE negative (lower) water potential. In animal cells, this can cause lysis (hypotonic) or crenation (hypertonic). In plant cells, turgid (hypotonic) or plasmolysed (hypertonic).</div>
+<h3>Osmosis and Cells</h3>
+<table>
+    <tr><th>Solution Type</th><th>Water Potential Relative to Cell</th><th>Animal Cell Response</th><th>Plant Cell Response</th></tr>
+    <tr><td><strong>Hypotonic</strong> (dilute; higher &Psi; than cell)</td><td>&Psi;<sub>solution</sub> > &Psi;<sub>cell</sub></td><td>Water enters by osmosis; cell swells and may burst (<strong>lysis</strong> / haemolysis in red blood cells)</td><td>Water enters; cell becomes <strong>turgid</strong> (firm); cell wall prevents bursting; turgor pressure builds up</td></tr>
+    <tr><td><strong>Isotonic</strong> (same &Psi;)</td><td>&Psi;<sub>solution</sub> = &Psi;<sub>cell</sub></td><td>No net water movement; cell stays normal</td><td>No net water movement; <strong>flaccid</strong> (soft, not turgid)</td></tr>
+    <tr><td><strong>Hypertonic</strong> (concentrated; lower &Psi; than cell)</td><td>&Psi;<sub>solution</sub> < &Psi;<sub>cell</sub></td><td>Water leaves by osmosis; cell shrinks (<strong>crenation</strong>)</td><td>Water leaves; cytoplasm shrinks away from cell wall (<strong>plasmolysis</strong>); membrane peels away; cell becomes flaccid then plasmolysed</td></tr>
+</table>
+
+<div class="exam-tip">Osmosis questions are very common. Always state: water moves from <strong>higher</strong> (less negative) water potential to <strong>lower</strong> (more negative) water potential. Never say "water moves from dilute to concentrated" &mdash; use correct terminology. In calculations, remember that &Psi;<sub>s</sub> is always negative and &Psi;<sub>p</sub> can be positive (plants) or zero (animal cells). At incipient plasmolysis, &Psi;<sub>p</sub> = 0 so &Psi;<sub>cell</sub> = &Psi;<sub>s</sub>.</div>
 
 <!-- ==================== CARDIOVASCULAR SYSTEM ==================== -->
 <h2>1.8 The Cardiovascular System</h2>
 
-<h3>Blood Vessel Structure</h3>
+<h3>Blood Vessel Structure and Function</h3>
+<p>All blood vessels (except capillaries) have walls with three layers: <strong>tunica intima</strong> (endothelium lining), <strong>tunica media</strong> (smooth muscle and elastic tissue), and <strong>tunica adventitia</strong> (outer connective tissue). The relative thickness and composition of these layers varies:</p>
+
 <table>
-    <tr><th>Feature</th><th>Artery</th><th>Vein</th><th>Capillary</th></tr>
-    <tr><td>Wall thickness</td><td>Thick</td><td>Thin</td><td>One cell thick</td></tr>
-    <tr><td>Lumen size</td><td>Small</td><td>Large</td><td>Very narrow</td></tr>
-    <tr><td>Muscle/elastic tissue</td><td>Thick layers of both</td><td>Thin layers</td><td>None</td></tr>
-    <tr><td>Valves</td><td>No (except semilunar in aorta/pulmonary artery)</td><td>Yes (prevent backflow)</td><td>No</td></tr>
-    <tr><td>Blood pressure</td><td>High</td><td>Low</td><td>Decreasing</td></tr>
+    <tr><th>Feature</th><th>Artery</th><th>Arteriole</th><th>Capillary</th><th>Venule</th><th>Vein</th></tr>
+    <tr><td>Wall thickness</td><td>Thick</td><td>Medium</td><td>One cell thick (endothelium only)</td><td>Thin</td><td>Thin (relative to lumen)</td></tr>
+    <tr><td>Lumen diameter</td><td>Relatively small</td><td>Very small</td><td>Very narrow (just wide enough for one RBC to pass)</td><td>Small</td><td>Large</td></tr>
+    <tr><td>Elastic tissue</td><td>Abundant (stretches and recoils with each heartbeat, maintaining smooth blood flow)</td><td>Little</td><td>None</td><td>Little</td><td>Some</td></tr>
+    <tr><td>Smooth muscle</td><td>Thick layer</td><td>Relatively thick (controls diameter for vasoconstriction/vasodilation)</td><td>None</td><td>Very little</td><td>Thin layer</td></tr>
+    <tr><td>Valves</td><td>No (except semilunar valves at base of aorta and pulmonary artery)</td><td>No</td><td>No</td><td>Sometimes</td><td>Yes (prevent backflow; especially in limbs where blood flows against gravity)</td></tr>
+    <tr><td>Blood pressure</td><td>High, pulsatile</td><td>Decreasing</td><td>Low, steady</td><td>Very low</td><td>Very low</td></tr>
+    <tr><td>Function</td><td>Carry blood away from heart under high pressure</td><td>Control blood flow to capillary beds; regulate blood pressure</td><td>Exchange of substances between blood and tissues (thin walls + large SA)</td><td>Collect blood from capillaries</td><td>Return blood to heart under low pressure</td></tr>
 </table>
 
-<h3>The Heart</h3>
-<p>The heart is a double pump with four chambers. The <strong>right side</strong> pumps deoxygenated blood to the lungs (pulmonary circulation) and the <strong>left side</strong> pumps oxygenated blood to the body (systemic circulation). The left ventricle has a thicker wall because it must generate higher pressure for systemic circulation.</p>
+<h3>The Heart Structure</h3>
+<p>The heart is a muscular double pump with four chambers. The <strong>right side</strong> pumps deoxygenated blood to the lungs via the pulmonary artery (pulmonary circulation). The <strong>left side</strong> pumps oxygenated blood to the body via the aorta (systemic circulation). The left ventricle wall is approximately <strong>three times thicker</strong> than the right because it must generate much higher pressure to push blood around the entire body, while the right ventricle only needs to push blood to the nearby lungs.</p>
 
-<h3>Cardiac Cycle</h3>
+<p>Key structural features:</p>
+<ul>
+    <li><strong>Septum</strong> &mdash; separates left and right sides, preventing mixing of oxygenated and deoxygenated blood</li>
+    <li><strong>Atrioventricular (AV) valves</strong>: tricuspid (right) and bicuspid/mitral (left) &mdash; prevent backflow from ventricles into atria during ventricular systole</li>
+    <li><strong>Semilunar valves</strong> &mdash; in the aorta and pulmonary artery; prevent backflow into ventricles during diastole</li>
+    <li><strong>Tendinous cords (chordae tendineae)</strong> &mdash; prevent AV valves from inverting under pressure</li>
+    <li><strong>Coronary arteries</strong> &mdash; branch from the aorta to supply heart muscle (cardiac muscle) with oxygen and glucose for continuous aerobic respiration</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 420" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #1a1a2e; }
+    .label { font-size: 12px; }
+    .small-label { font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+  </style>
+  <text x="300" y="22" text-anchor="middle" class="title">Heart Cross-Section (Front View)</text>
+  <text x="300" y="40" text-anchor="middle" class="small-label" fill="#6b7280">(Note: left/right are the patient's, reversed in diagram)</text>
+  <path d="M 300,380 Q 140,320 120,220 Q 100,130 180,80 Q 230,50 280,80 L 300,60 L 320,80 Q 370,50 420,80 Q 500,130 480,220 Q 460,320 300,380 Z" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="2.5"/>
+  <line x1="300" y1="90" x2="300" y2="360" stroke="#1a1a2e" stroke-width="3"/>
+  <line x1="150" y1="195" x2="450" y2="195" stroke="#1a1a2e" stroke-width="2"/>
+  <rect x="160" y="100" width="130" height="85" rx="8" fill="#1a73e8" opacity="0.12"/>
+  <text x="225" y="145" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Right</text>
+  <text x="225" y="160" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Atrium</text>
+  <rect x="310" y="100" width="130" height="85" rx="8" fill="#DC2626" opacity="0.12"/>
+  <text x="375" y="145" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Left</text>
+  <text x="375" y="160" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Atrium</text>
+  <path d="M 155,205 L 155,330 Q 200,370 290,355 L 290,205 Z" fill="#1a73e8" opacity="0.08" stroke="#1a73e8" stroke-width="1"/>
+  <text x="222" y="270" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Right</text>
+  <text x="222" y="286" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Ventricle</text>
+  <line x1="148" y1="220" x2="148" y2="310" stroke="#1a73e8" stroke-width="5" opacity="0.3"/>
+  <path d="M 310,205 L 310,355 Q 400,370 445,330 L 445,205 Z" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1"/>
+  <text x="378" y="270" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Left</text>
+  <text x="378" y="286" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Ventricle</text>
+  <line x1="452" y1="220" x2="452" y2="310" stroke="#DC2626" stroke-width="12" opacity="0.2"/>
+  <text x="490" y="268" text-anchor="start" class="small-label" fill="#DC2626">Thicker</text>
+  <text x="490" y="281" text-anchor="start" class="small-label" fill="#DC2626">wall</text>
+  <path d="M 210,190 L 225,205 L 240,190" fill="none" stroke="#D97706" stroke-width="2.5"/>
+  <text x="225" y="225" text-anchor="middle" class="small-label" fill="#D97706">Tricuspid</text>
+  <path d="M 360,190 L 375,205 L 390,190" fill="none" stroke="#D97706" stroke-width="2.5"/>
+  <text x="375" y="225" text-anchor="middle" class="small-label" fill="#D97706">Bicuspid</text>
+  <rect x="155" y="55" width="30" height="50" rx="4" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="100" y="73" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Vena</text>
+  <text x="100" y="86" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">cava</text>
+  <line x1="130" y1="80" x2="155" y2="80" stroke="#1a73e8" stroke-width="1"/>
+  <polygon points="165,100 170,90 175,100" fill="#1a73e8"/>
+  <rect x="225" y="55" width="30" height="50" rx="4" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1.5"/>
+  <polygon points="235,60 240,50 245,60" fill="#1a73e8"/>
+  <text x="240" y="48" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Pulmonary</text>
+  <text x="240" y="38" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">artery</text>
+  <path d="M 230,95 L 240,85 L 250,95" fill="none" stroke="#D97706" stroke-width="2"/>
+  <rect x="345" y="55" width="30" height="50" rx="4" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="355,100 360,90 365,100" fill="#DC2626"/>
+  <text x="360" y="48" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Pulmonary</text>
+  <text x="360" y="38" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">veins</text>
+  <rect x="415" y="55" width="35" height="50" rx="4" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="425,60 432,50 440,60" fill="#DC2626"/>
+  <text x="490" y="73" text-anchor="start" class="small-label" fill="#DC2626" font-weight="bold">Aorta</text>
+  <line x1="450" y1="75" x2="488" y2="75" stroke="#DC2626" stroke-width="1"/>
+  <path d="M 420,95 L 432,85 L 445,95" fill="none" stroke="#D97706" stroke-width="2"/>
+  <text x="300" y="345" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Septum</text>
+  <rect x="150" y="388" width="12" height="12" rx="2" fill="#1a73e8" opacity="0.3"/>
+  <text x="168" y="399" class="small-label" fill="#1a73e8">Deoxygenated blood</text>
+  <rect x="310" y="388" width="12" height="12" rx="2" fill="#DC2626" opacity="0.3"/>
+  <text x="328" y="399" class="small-label" fill="#DC2626">Oxygenated blood</text>
+  <path d="M 460,392 L 468,399 L 476,392" fill="none" stroke="#D97706" stroke-width="2"/>
+  <text x="483" y="399" class="small-label" fill="#D97706">Valves</text>
+</svg>
+</div>
+
+<h3>The Cardiac Cycle</h3>
+<p>The cardiac cycle is the sequence of events during one complete heartbeat, lasting approximately 0.8 seconds at rest (75 bpm):</p>
 <ol>
-    <li><strong>Atrial systole:</strong> Atria contract, forcing blood through atrioventricular (AV) valves into ventricles</li>
-    <li><strong>Ventricular systole:</strong> Ventricles contract, AV valves close (first heart sound), blood forced through semilunar valves into arteries</li>
-    <li><strong>Diastole:</strong> Heart relaxes, semilunar valves close (second heart sound), blood flows from veins into atria</li>
+    <li><strong>Atrial systole (0.1 s):</strong> Both atria contract simultaneously, increasing atrial pressure. Blood is pushed through the open AV valves into the ventricles (topping them up &mdash; ventricles are already ~70% full from passive filling during diastole). Semilunar valves remain closed</li>
+    <li><strong>Ventricular systole (0.3 s):</strong> Both ventricles contract from the apex upward. Ventricular pressure rises sharply, causing AV valves to snap shut (producing the first heart sound, "lub"). When ventricular pressure exceeds arterial pressure, semilunar valves open and blood is ejected into the aorta and pulmonary artery</li>
+    <li><strong>Diastole (0.4 s):</strong> All chambers relax. Ventricular pressure drops below arterial pressure; semilunar valves close (producing the second heart sound, "dub"), preventing backflow. Pressure in the atria exceeds ventricular pressure, so AV valves open and blood flows passively from the veins into the atria and then into the ventricles</li>
 </ol>
 
-<h3>Atherosclerosis and Cardiovascular Disease</h3>
-<p>Atherosclerosis is the build-up of fatty deposits (atheroma) in arterial walls, leading to plaque formation. This narrows the lumen, reduces blood flow, increases blood pressure and can lead to thrombosis (blood clot formation). If a coronary artery is blocked, the result is a <strong>myocardial infarction</strong> (heart attack).</p>
+<div class="exam-tip">In cardiac cycle pressure-time graphs, key things to identify: (1) atrial pressure rises slightly during atrial systole, (2) ventricular pressure rises steeply during ventricular systole, (3) the AV valves open when atrial pressure exceeds ventricular pressure and close when ventricular pressure exceeds atrial pressure, (4) semilunar valves open when ventricular pressure exceeds aortic/pulmonary pressure. The volume of blood in the ventricle decreases during systole and increases during diastole.</div>
 
-<p>Risk factors include: high blood cholesterol (especially LDL), smoking, high blood pressure, obesity, lack of exercise, genetic predisposition, diabetes and high-salt diets.</p>
+<h3>Atherosclerosis and Cardiovascular Disease (CVD)</h3>
+<p><strong>Atherosclerosis</strong> is the progressive build-up of fatty deposits (<strong>atheromas/plaques</strong>) within the walls of arteries. The process occurs over decades:</p>
+<ol>
+    <li><strong>Endothelial damage</strong> &mdash; caused by high blood pressure, smoking toxins, high LDL cholesterol, or infection. Damage to the endothelial lining triggers an inflammatory response</li>
+    <li><strong>LDL accumulation</strong> &mdash; low-density lipoproteins infiltrate the damaged arterial wall and become oxidised. Macrophages engulf the oxidised LDL, becoming <strong>foam cells</strong></li>
+    <li><strong>Plaque formation</strong> &mdash; foam cells, smooth muscle cells, cholesterol crystals and calcium deposits accumulate beneath the endothelium, forming a fibrous plaque with a lipid-rich core</li>
+    <li><strong>Narrowing of lumen</strong> &mdash; the plaque protrudes into the arterial lumen, reducing blood flow and increasing blood pressure</li>
+    <li><strong>Plaque rupture and thrombosis</strong> &mdash; if the fibrous cap ruptures, the exposed collagen activates the clotting cascade. Platelets aggregate at the site, forming a <strong>thrombus (blood clot)</strong></li>
+    <li><strong>Consequences</strong> &mdash; if a coronary artery is blocked: <strong>myocardial infarction</strong> (heart attack) due to oxygen deprivation of cardiac muscle. If a cerebral artery is blocked: <strong>stroke</strong>. An embolus is a detached clot that can travel and block a vessel elsewhere</li>
+</ol>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -658,106 +765,129 @@
     .title { font-size: 14px; font-weight: bold; }
   </style>
   <text x="300" y="22" text-anchor="middle" class="title">Atherosclerosis Progression</text>
-
-  <!-- Stage 1: Normal artery -->
   <text x="100" y="48" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">1. Normal Artery</text>
-  <!-- Outer wall -->
   <ellipse cx="100" cy="130" rx="55" ry="55" fill="none" stroke="#DC2626" stroke-width="3"/>
-  <!-- Artery wall thickness -->
   <ellipse cx="100" cy="130" rx="42" ry="42" fill="#DC2626" opacity="0.1"/>
-  <!-- Lumen -->
   <ellipse cx="100" cy="130" rx="35" ry="35" fill="#1a73e8" opacity="0.15"/>
   <text x="100" y="128" text-anchor="middle" class="small-label" fill="#1a73e8">Wide</text>
   <text x="100" y="141" text-anchor="middle" class="small-label" fill="#1a73e8">lumen</text>
-  <!-- Labels -->
   <line x1="140" y1="100" x2="165" y2="85" stroke="#6b7280" stroke-width="1"/>
   <text x="168" y="83" class="small-label" fill="#6b7280">Endothelium</text>
   <line x1="152" y1="130" x2="165" y2="130" stroke="#6b7280" stroke-width="1"/>
   <text x="168" y="134" class="small-label" fill="#DC2626">Artery wall</text>
-
-  <!-- Arrow 1->2 -->
   <line x1="175" y1="130" x2="210" y2="130" stroke="#D97706" stroke-width="2" marker-end="url(#arrowhead)"/>
   <defs><marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#D97706"/></marker></defs>
-
-  <!-- Stage 2: Early plaque -->
   <text x="300" y="48" text-anchor="middle" class="label" fill="#D97706" font-weight="bold">2. Plaque Build-up</text>
   <ellipse cx="300" cy="130" rx="55" ry="55" fill="none" stroke="#DC2626" stroke-width="3"/>
   <ellipse cx="300" cy="130" rx="42" ry="42" fill="#DC2626" opacity="0.1"/>
-  <!-- Narrowed lumen -->
   <ellipse cx="300" cy="130" rx="35" ry="35" fill="#1a73e8" opacity="0.15"/>
-  <!-- Atheroma/plaque (fatty deposit bulging into lumen) -->
   <path d="M 270,100 Q 265,130 270,160 Q 295,145 295,130 Q 295,115 270,100 Z" fill="#D97706" opacity="0.5" stroke="#D97706" stroke-width="1.5"/>
   <text x="275" y="133" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold" font-size="9">Fatty</text>
   <text x="275" y="143" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold" font-size="9">plaque</text>
-  <!-- Reduced lumen label -->
   <text x="320" y="133" text-anchor="middle" class="small-label" fill="#1a73e8">Narrowed</text>
   <text x="320" y="145" text-anchor="middle" class="small-label" fill="#1a73e8">lumen</text>
-
-  <!-- Arrow 2->3 -->
   <line x1="375" y1="130" x2="410" y2="130" stroke="#D97706" stroke-width="2" marker-end="url(#arrowhead)"/>
-
-  <!-- Stage 3: Severe / thrombosis -->
   <text x="500" y="48" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">3. Thrombosis</text>
   <ellipse cx="500" cy="130" rx="55" ry="55" fill="none" stroke="#DC2626" stroke-width="3"/>
   <ellipse cx="500" cy="130" rx="42" ry="42" fill="#DC2626" opacity="0.1"/>
   <ellipse cx="500" cy="130" rx="35" ry="35" fill="#1a73e8" opacity="0.15"/>
-  <!-- Large plaque -->
   <path d="M 465,95 Q 455,130 465,165 Q 505,155 505,130 Q 505,105 465,95 Z" fill="#D97706" opacity="0.5" stroke="#D97706" stroke-width="1.5"/>
-  <!-- Blood clot -->
   <ellipse cx="510" cy="120" rx="18" ry="12" fill="#DC2626" opacity="0.5" stroke="#DC2626" stroke-width="1.5"/>
   <text x="510" y="124" text-anchor="middle" font-size="8" fill="white" font-weight="bold" font-family="system-ui">Clot</text>
-  <!-- Almost blocked -->
   <text x="525" y="150" text-anchor="middle" class="small-label" fill="#DC2626">Blocked</text>
-
-  <!-- Bottom explanatory labels -->
   <rect x="30" y="210" width="540" height="80" rx="6" fill="#DC2626" opacity="0.05" stroke="#DC2626" stroke-width="1"/>
   <text x="300" y="230" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Consequences of Atherosclerosis</text>
-  <text x="300" y="248" text-anchor="middle" class="small-label" fill="#1a1a2e">Endothelial damage → LDL accumulation in wall → inflammatory response → fibrous cap forms</text>
-  <text x="300" y="264" text-anchor="middle" class="small-label" fill="#1a1a2e">Plaque rupture → platelet aggregation → thrombus (blood clot) formation</text>
-  <text x="300" y="280" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Coronary artery blockage → myocardial infarction (heart attack)</text>
+  <text x="300" y="248" text-anchor="middle" class="small-label" fill="#1a1a2e">Endothelial damage &rarr; LDL accumulation &rarr; foam cells &rarr; fibrous plaque &rarr; narrowed lumen</text>
+  <text x="300" y="264" text-anchor="middle" class="small-label" fill="#1a1a2e">Plaque rupture &rarr; platelet aggregation &rarr; thrombus (blood clot) formation</text>
+  <text x="300" y="280" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Coronary blockage &rarr; MI (heart attack) | Cerebral blockage &rarr; Stroke</text>
 </svg>
 </div>
 
-<!-- ==================== GAS EXCHANGE ==================== -->
-<h2>1.9 Gas Exchange</h2>
-
-<div class="definition-box">
-    <strong>Gas exchange surface:</strong> A specialised area where respiratory gases (O<sub>2</sub> and CO<sub>2</sub>) are exchanged between an organism and its environment by diffusion.
-</div>
-
-<h3>Features of Efficient Gas Exchange Surfaces</h3>
-<ul>
-    <li><strong>Large surface area</strong> &mdash; alveoli provide approximately 70 m<sup>2</sup></li>
-    <li><strong>Thin barrier</strong> &mdash; alveolar and capillary walls are one cell thick (short diffusion distance)</li>
-    <li><strong>Good blood supply</strong> &mdash; maintains steep concentration gradient</li>
-    <li><strong>Ventilation</strong> &mdash; breathing maintains concentration gradient</li>
-    <li><strong>Moist surface</strong> &mdash; gases dissolve before diffusing</li>
-</ul>
-
-<h3>Lung Structure</h3>
-<p>Air passes through: <strong>trachea</strong> &rarr; <strong>bronchi</strong> &rarr; <strong>bronchioles</strong> &rarr; <strong>alveoli</strong>. The trachea and bronchi are supported by C-shaped cartilage rings to prevent collapse. Goblet cells secrete mucus to trap pathogens, and ciliated epithelial cells beat to move mucus towards the throat.</p>
-
-<h3>Pulmonary Ventilation</h3>
-<div class="equation">Pulmonary ventilation rate = tidal volume &times; breathing rate</div>
-
-<p><strong>Inspiration:</strong> External intercostal muscles and diaphragm contract, increasing thoracic volume, decreasing pressure, air drawn in.</p>
-<p><strong>Expiration (at rest):</strong> Muscles relax, elastic recoil of lungs decreases volume, increases pressure, air forced out. Forced expiration involves internal intercostal muscles and abdominal muscles.</p>
-
-<div class="exam-tip">Fick's law describes the rate of diffusion: Rate &prop; (surface area &times; concentration difference) / thickness. Always relate lung adaptations back to these three factors when answering questions about gas exchange efficiency.</div>
-
-<!-- ==================== TESTING FOR BIOLOGICAL MOLECULES ==================== -->
-<h2>1.10 Biochemical Tests</h2>
-
+<h3>Risk Factors for CVD</h3>
 <table>
-    <tr><th>Test</th><th>Reagent</th><th>Positive Result</th><th>Tests for</th></tr>
-    <tr><td>Benedict's test</td><td>Benedict's reagent (heated)</td><td>Green &rarr; yellow &rarr; orange &rarr; brick-red precipitate</td><td>Reducing sugars</td></tr>
-    <tr><td>Non-reducing sugar test</td><td>HCl hydrolysis then Benedict's</td><td>Colour change after hydrolysis only</td><td>Non-reducing sugars (sucrose)</td></tr>
-    <tr><td>Iodine test</td><td>Iodine/potassium iodide solution</td><td>Blue-black colour</td><td>Starch</td></tr>
-    <tr><td>Biuret test</td><td>NaOH then CuSO<sub>4</sub></td><td>Purple/lilac colour</td><td>Proteins (peptide bonds)</td></tr>
-    <tr><td>Emulsion test</td><td>Ethanol then water</td><td>White emulsion (cloudy)</td><td>Lipids</td></tr>
+    <tr><th>Risk Factor</th><th>How It Increases CVD Risk</th><th>Modifiable?</th></tr>
+    <tr><td><strong>Smoking</strong></td><td>Carbon monoxide reduces oxygen-carrying capacity; nicotine increases heart rate and blood pressure; chemicals damage endothelium; increases platelet stickiness</td><td>Yes</td></tr>
+    <tr><td><strong>High blood cholesterol (high LDL)</strong></td><td>More LDL available to infiltrate and oxidise in arterial walls; accelerates plaque formation</td><td>Yes (diet, statins)</td></tr>
+    <tr><td><strong>High blood pressure (hypertension)</strong></td><td>Damages endothelial lining; increases risk of plaque rupture; puts strain on heart</td><td>Yes (exercise, diet, medication)</td></tr>
+    <tr><td><strong>Obesity</strong></td><td>Associated with high blood pressure, high LDL, type 2 diabetes, and chronic inflammation</td><td>Yes</td></tr>
+    <tr><td><strong>Physical inactivity</strong></td><td>Reduces HDL; increases blood pressure and obesity risk; reduces cardiovascular fitness</td><td>Yes</td></tr>
+    <tr><td><strong>High-salt diet</strong></td><td>Increases blood volume (water retention) and blood pressure</td><td>Yes</td></tr>
+    <tr><td><strong>Diabetes</strong></td><td>High blood glucose damages blood vessel walls; often associated with other risk factors</td><td>Partially (type 2 manageable with lifestyle)</td></tr>
+    <tr><td><strong>Genetic predisposition</strong></td><td>Family history of CVD; inherited conditions such as familial hypercholesterolaemia</td><td>No</td></tr>
+    <tr><td><strong>Age and sex</strong></td><td>Risk increases with age; males at higher risk until post-menopause (oestrogen is protective)</td><td>No</td></tr>
 </table>
 
-<div class="exam-tip">For the non-reducing sugar test, you MUST first test with Benedict's (negative result), THEN hydrolyse with HCl, neutralise with NaHCO<sub>3</sub>, and test again with Benedict's. If positive only after hydrolysis, the sample contains non-reducing sugars.</div>
+<div class="exam-tip">In questions about CVD risk factors, explain the <strong>mechanism</strong> by which each factor increases risk, not just that it does. For example, do not just say "smoking causes heart disease" &mdash; explain that chemicals in smoke damage the endothelium, nicotine raises heart rate and blood pressure, and carbon monoxide reduces oxygen transport. Also note that risk factors are often <strong>correlated</strong> rather than necessarily causative (this distinction is important in evaluating epidemiological studies).</div>
+
+<!-- ==================== GAS EXCHANGE ==================== -->
+<h2>1.9 Gas Exchange in the Lungs</h2>
+
+<div class="definition-box">
+    <strong>Gas exchange surface:</strong> A specialised area where respiratory gases (O<sub>2</sub> and CO<sub>2</sub>) are exchanged between an organism and its environment by diffusion down concentration gradients. All gas exchange surfaces share common adaptations to maximise the rate of diffusion.
+</div>
+
+<h3>Fick's Law of Diffusion</h3>
+<div class="equation">Rate of diffusion &prop; (surface area &times; concentration difference) / thickness of exchange surface</div>
+<p>This relationship explains why gas exchange surfaces are adapted to have a <strong>large surface area</strong>, maintain a <strong>steep concentration gradient</strong>, and have a <strong>short diffusion distance</strong>.</p>
+
+<h3>Adaptations of the Mammalian Lung for Efficient Gas Exchange</h3>
+<ul>
+    <li><strong>Large surface area (~70 m<sup>2</sup>)</strong> &mdash; provided by approximately 300&ndash;500 million alveoli (tiny air sacs, each 200&ndash;300 &mu;m diameter), which collectively provide a surface area roughly the size of a tennis court</li>
+    <li><strong>Thin barrier (short diffusion distance)</strong> &mdash; alveolar walls are one cell thick (squamous epithelium, ~0.2 &mu;m); capillary walls are also one cell thick. Total diffusion distance from air to blood is only about 0.5 &mu;m</li>
+    <li><strong>Rich blood supply</strong> &mdash; each alveolus is surrounded by a dense capillary network. Blood constantly carries away O<sub>2</sub> (maintaining low O<sub>2</sub> concentration in blood) and delivers CO<sub>2</sub> (maintaining high CO<sub>2</sub> in blood). This maintains steep concentration gradients for both gases</li>
+    <li><strong>Ventilation</strong> &mdash; continuous breathing replaces air in the alveoli, maintaining high O<sub>2</sub> and low CO<sub>2</sub> in the alveolar air space, keeping the concentration gradient steep</li>
+    <li><strong>Moist surface</strong> &mdash; alveolar lining is covered by a thin film of moisture; gases dissolve before diffusing across. Surfactant (a phospholipid mixture secreted by type II pneumocytes) reduces surface tension, preventing alveoli from collapsing</li>
+    <li><strong>Elastin fibres</strong> in alveolar walls allow elastic recoil during expiration</li>
+</ul>
+
+<h3>Lung Structure and Airway Hierarchy</h3>
+<p>Air passes through: <strong>trachea</strong> &rarr; <strong>bronchi</strong> (left and right) &rarr; <strong>bronchioles</strong> (smooth muscle in walls; can constrict in asthma) &rarr; <strong>terminal bronchioles</strong> &rarr; <strong>respiratory bronchioles</strong> &rarr; <strong>alveolar ducts</strong> &rarr; <strong>alveoli</strong>.</p>
+<p>The trachea and bronchi are supported by <strong>C-shaped cartilage rings</strong> that prevent collapse during inhalation (when internal pressure drops) while allowing the oesophagus behind to expand during swallowing. <strong>Goblet cells</strong> in the airways secrete mucus that traps inhaled pathogens, dust, and particles. <strong>Ciliated epithelial cells</strong> beat in coordinated waves (mucociliary escalator) to move the mucus and trapped debris upward towards the throat, where it is swallowed.</p>
+
+<div class="application-box"><strong>Smoking and lung disease:</strong> Tar in cigarette smoke destroys cilia and stimulates mucus overproduction, leading to chronic bronchitis (persistent cough). Toxins cause inflammation and destruction of alveolar walls, reducing surface area &mdash; this is <strong>emphysema</strong> (part of COPD). Together, loss of surface area, thickening of diffusion barrier, and impaired ventilation severely reduce gas exchange efficiency. Carcinogens in tar can cause mutations in genes controlling cell division, leading to <strong>lung cancer</strong>.</div>
+
+<h3>Pulmonary Ventilation</h3>
+<div class="equation">Pulmonary ventilation rate (dm<sup>3</sup> min<sup>&minus;1</sup>) = tidal volume (dm<sup>3</sup>) &times; breathing rate (breaths min<sup>&minus;1</sup>)</div>
+
+<p><strong>Inspiration (inhalation):</strong></p>
+<ul>
+    <li>External intercostal muscles <strong>contract</strong>, pulling the rib cage up and out</li>
+    <li>Diaphragm <strong>contracts</strong> and flattens (moves downward)</li>
+    <li>Thoracic volume <strong>increases</strong>, intrapulmonary pressure <strong>decreases</strong> below atmospheric pressure</li>
+    <li>Air is drawn into the lungs down the pressure gradient (Boyle's law)</li>
+    <li>This is an <strong>active</strong> process (requires ATP for muscle contraction)</li>
+</ul>
+
+<p><strong>Expiration (exhalation) at rest:</strong></p>
+<ul>
+    <li>External intercostal muscles and diaphragm <strong>relax</strong></li>
+    <li>Elastic recoil of lungs and chest wall decreases thoracic volume</li>
+    <li>Intrapulmonary pressure <strong>increases</strong> above atmospheric pressure</li>
+    <li>Air is forced out of the lungs</li>
+    <li>This is largely a <strong>passive</strong> process at rest (elastic recoil, no muscle contraction needed)</li>
+</ul>
+
+<p><strong>Forced expiration</strong> (during exercise) involves active contraction of <strong>internal intercostal muscles</strong> (pull ribs down and in) and <strong>abdominal muscles</strong> (push diaphragm up), increasing the rate and volume of air expelled.</p>
+
+<div class="exam-tip">Always refer to Fick's law when answering questions about gas exchange efficiency. For every adaptation you describe, explicitly link it to one of the three factors: surface area, concentration gradient, or diffusion distance. Common mistake: saying "thick walls" instead of "thin walls" or confusing the role of cartilage rings (support, NOT gas exchange).</div>
+
+<!-- ==================== BIOCHEMICAL TESTS ==================== -->
+<h2>1.10 Biochemical Tests for Biological Molecules</h2>
+
+<table>
+    <tr><th>Test</th><th>Reagent(s)</th><th>Procedure</th><th>Positive Result</th><th>Tests for</th></tr>
+    <tr><td><strong>Benedict's test</strong></td><td>Benedict's reagent (copper(II) sulfate in alkaline solution)</td><td>Add Benedict's reagent to sample; heat in water bath at 80&deg;C for 2&ndash;5 minutes</td><td>Colour change: blue &rarr; green &rarr; yellow &rarr; orange &rarr; <strong>brick-red precipitate</strong> (Cu<sub>2</sub>O). Semi-quantitative: more sugar = more red</td><td><strong>Reducing sugars</strong> (all monosaccharides + some disaccharides: maltose, lactose)</td></tr>
+    <tr><td><strong>Non-reducing sugar test</strong></td><td>HCl, NaHCO<sub>3</sub>, Benedict's reagent</td><td>(1) First test with Benedict's &mdash; must be <strong>negative</strong>. (2) Boil sample with dilute HCl (hydrolyses glycosidic bond). (3) Neutralise with NaHCO<sub>3</sub>. (4) Re-test with Benedict's</td><td>Colour change to brick-red ONLY after hydrolysis step</td><td><strong>Non-reducing sugars</strong> (sucrose &mdash; the anomeric carbons are locked in the glycosidic bond)</td></tr>
+    <tr><td><strong>Iodine test</strong></td><td>Iodine/potassium iodide (I<sub>2</sub>/KI) solution</td><td>Add drops of iodine solution to sample at room temperature</td><td><strong>Blue-black colour</strong> (iodine molecules become trapped inside the amylose helix, changing the light absorption)</td><td><strong>Starch</strong></td></tr>
+    <tr><td><strong>Biuret test</strong></td><td>NaOH (sodium hydroxide) then CuSO<sub>4</sub> (copper sulfate)</td><td>Add NaOH to make solution alkaline, then add dilute CuSO<sub>4</sub> drop by drop. Do NOT heat</td><td><strong>Purple/lilac colour</strong> (Cu<sup>2+</sup> ions form a complex with peptide bonds &mdash; at least two peptide bonds needed, so individual amino acids give negative result)</td><td><strong>Proteins</strong> (specifically peptide bonds)</td></tr>
+    <tr><td><strong>Emulsion test</strong></td><td>Ethanol, then distilled water</td><td>Dissolve sample in ethanol (shake vigorously); pour into water in a clean test tube</td><td><strong>White, cloudy emulsion</strong> (milky layer). Lipids are insoluble in water and form tiny suspended droplets that scatter light</td><td><strong>Lipids</strong> (fats and oils)</td></tr>
+</table>
+
+<div class="exam-tip">For the non-reducing sugar test, you MUST: (1) first perform Benedict's test and get a <strong>negative result</strong> (if positive, reducing sugars are present), (2) THEN hydrolyse with HCl, (3) neutralise with NaHCO<sub>3</sub> (essential &mdash; Benedict's only works in alkaline conditions), and (4) re-test with Benedict's. If positive only after hydrolysis, the sample contains non-reducing sugars (sucrose). Common mistake: forgetting to state the neutralisation step or not testing with Benedict's first.</div>
+
+<div class="exam-tip">For quantitative analysis, use a <strong>colorimeter</strong> to measure absorbance/transmission of the colour change, then compare to a calibration curve made with known concentrations. This is more objective and accurate than judging colour by eye. Serial dilutions can be used to create the standard curve.</div>
+
+<div class="application-box">These biochemical tests are used routinely in <strong>clinical diagnostics</strong> and <strong>food science</strong>. Urine dipstick tests for glucose (using glucose oxidase, a modified version of the reducing sugar concept) help diagnose diabetes mellitus. The biuret test principle is used in clinical protein assays (Bradford assay, BCA assay). Food labelling regulations require accurate determination of sugar, protein, and fat content in processed foods.</div>
 
 </div>
 </body>

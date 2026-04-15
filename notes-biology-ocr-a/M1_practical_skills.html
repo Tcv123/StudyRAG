@@ -283,7 +283,20 @@
     <tr><td>Spearman's rank correlation</td><td>Tests for correlation between two variables</td><td>Ordinal or continuous data that is not normally distributed</td></tr>
 </table>
 
-<p>For all tests, calculate the test statistic, determine degrees of freedom, and compare the calculated value against the critical value at the 0.05 significance level. If the calculated value exceeds the critical value (for t-test and chi-squared) or falls within the critical region (for Spearman's), the null hypothesis is rejected.</p>
+<p>For all tests, calculate the test statistic, determine degrees of freedom, and compare the calculated value against the critical value at the 0.05 significance level. If the calculated value exceeds the critical value (for t-test and chi-squared) or falls within the critical region (for Spearman's), the null hypothesis is rejected and the result is described as statistically significant.</p>
+
+<div class="definition-box">
+  <strong>Standard deviation (s):</strong> A measure of the spread (dispersion) of data around the mean. A small standard deviation means data points are clustered close to the mean (high precision); a large standard deviation means data is widely spread. Approximately 68% of data falls within one standard deviation of the mean in a normal distribution. Standard deviation is more informative than range because it uses all data values and is less affected by outliers.
+</div>
+
+<p><strong>Choosing the right statistical test:</strong></p>
+<ul>
+    <li>Comparing two means (e.g., height of plants with vs without fertiliser) &rarr; <strong>Student's t-test</strong></li>
+    <li>Testing observed vs expected ratios (e.g., genetic crosses, distribution patterns) &rarr; <strong>Chi-squared test</strong></li>
+    <li>Testing for correlation between two variables (e.g., altitude and species diversity) &rarr; <strong>Spearman's rank</strong></li>
+</ul>
+
+<div class="exam-tip">In exam calculations, always show your working clearly: state the null hypothesis, show the test statistic formula and substitution, state the degrees of freedom, compare with the critical value, and state your conclusion in context (e.g., "The difference in mean growth rate between the two groups is statistically significant at the 5% level, so we reject the null hypothesis that there is no difference").</div>
 
 <h3>Evaluating Experimental Procedures</h3>
 <p><strong>Accuracy</strong> refers to how close a measured value is to the true value. Accuracy is improved by calibrating instruments, using appropriate equipment, and eliminating systematic errors. <strong>Precision</strong> describes how close repeated measurements are to each other (reproducibility). High precision means low spread around the mean, reflected in a small standard deviation.</p>

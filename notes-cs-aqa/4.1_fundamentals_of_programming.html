@@ -107,10 +107,22 @@
             font-weight: 700;
             color: #b45309;
         }
+        .real-world {
+            background: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 16px 20px;
+            margin-bottom: 18px;
+            border-radius: 0 8px 8px 0;
+        }
+        .real-world::before {
+            content: "Real-World Example: ";
+            font-weight: 700;
+            color: #15803d;
+        }
         @media print {
             body { padding: 20px; }
             h2 { break-before: auto; }
-            pre, .definition-box, .exam-tip { break-inside: avoid; }
+            pre, .definition-box, .exam-tip, .real-world { break-inside: avoid; }
         }
     </style>
 </head>
@@ -125,54 +137,96 @@
 <h2>4.1.1 Programming Paradigms</h2>
 
 <div class="definition-box">
-    <strong>Programming paradigm:</strong> A fundamental style or approach to programming that defines how problems are structured, how data flows, and how computations are expressed.
+    <strong>Programming paradigm:</strong> A fundamental style or approach to programming that defines how problems are structured, how data flows, and how computations are expressed. Different paradigms suit different types of problems, and many modern languages support multiple paradigms (multi-paradigm).
 </div>
 
 <h3>Procedural Programming</h3>
-<p>A paradigm where a program is structured as a sequence of instructions (procedures/subroutines) that execute one after another. The program follows a <strong>top-down</strong> design and makes use of:</p>
+<p>A paradigm where a program is structured as a sequence of instructions (procedures/subroutines) that execute one after another. The program follows a <strong>top-down</strong> design approach, where a complex problem is broken down into smaller, manageable sub-problems (stepwise refinement). The three fundamental control structures are:</p>
 <ul>
-    <li><strong>Sequence</strong> &mdash; instructions executed in order</li>
-    <li><strong>Selection</strong> &mdash; branching with <code>if</code>/<code>else</code>/<code>switch</code></li>
-    <li><strong>Iteration</strong> &mdash; loops (<code>for</code>, <code>while</code>, <code>repeat</code>)</li>
-    <li><strong>Subroutines</strong> &mdash; reusable blocks of code (functions and procedures)</li>
+    <li><strong>Sequence</strong> &mdash; instructions executed in order, one after another</li>
+    <li><strong>Selection</strong> &mdash; branching with <code>if</code>/<code>else</code>/<code>switch</code> to choose different paths</li>
+    <li><strong>Iteration</strong> &mdash; loops (<code>for</code>, <code>while</code>, <code>repeat...until</code>) to repeat blocks of code</li>
+    <li><strong>Subroutines</strong> &mdash; reusable blocks of code (functions and procedures) that encapsulate specific tasks</li>
 </ul>
-<p>Examples: C, Pascal, early BASIC.</p>
+<p>Procedural programs maintain <strong>mutable state</strong> through variables whose values change during execution. Data is typically separate from the procedures that operate on it. Examples: C, Pascal, early BASIC, Fortran.</p>
+
+<pre># Procedural approach: calculate total cost of items
+def calculate_tax(price, rate):
+    return price * rate
+
+def calculate_total(items, tax_rate):
+    subtotal = 0
+    for item in items:            # iteration
+        subtotal += item          # mutable state changes
+    tax = calculate_tax(subtotal, tax_rate)  # subroutine call
+    return subtotal + tax
+
+prices = [10.99, 24.50, 7.25]
+total = calculate_total(prices, 0.20)
+print(f"Total: {total:.2f}")      # Total: 51.29</pre>
+
+<div class="real-world">Operating systems like early Unix were written in C (procedural). Scientific computing and numerical simulations often use procedural approaches because the problems naturally decompose into sequential mathematical steps.</div>
 
 <h3>Object-Oriented Programming (OOP)</h3>
-<p>Organises code around <strong>objects</strong> that combine data (attributes) and behaviour (methods). The key principles are encapsulation, inheritance, polymorphism, and abstraction (covered in detail below).</p>
-<p>Examples: Java, C++, Python, C#.</p>
+<p>Organises code around <strong>objects</strong> that combine data (attributes) and behaviour (methods). OOP models real-world entities and their interactions. The key principles are encapsulation, inheritance, polymorphism, and abstraction (covered in detail in 4.1.2). OOP supports <strong>bottom-up design</strong>, where individual objects are designed first and then combined to build the complete system.</p>
+<p>Examples: Java, C++, Python, C#, Ruby. OOP is dominant in enterprise software, game development, and mobile app development.</p>
 
 <h3>Functional Programming</h3>
-<p>Based on mathematical functions. Key features:</p>
+<p>Based on mathematical functions and lambda calculus. Programs are constructed by applying and composing functions rather than executing sequences of statements. Key features:</p>
 <ul>
-    <li><strong>First-class functions</strong> &mdash; functions can be passed as arguments, returned from other functions, and assigned to variables.</li>
-    <li><strong>Higher-order functions</strong> &mdash; functions that take other functions as parameters or return functions (e.g., <code>map</code>, <code>filter</code>, <code>reduce</code>).</li>
-    <li><strong>Immutability</strong> &mdash; once a value is assigned, it cannot be changed. New values are created instead of modifying existing ones.</li>
-    <li><strong>No side effects</strong> &mdash; a function's output depends only on its inputs; it does not modify external state.</li>
-    <li><strong>Recursion</strong> is favoured over iteration.</li>
-    <li><strong>Function composition</strong> &mdash; combining simple functions to build more complex ones.</li>
-    <li><strong>Partial application / currying</strong> &mdash; creating new functions by fixing some parameters of an existing function.</li>
+    <li><strong>First-class functions</strong> &mdash; functions can be passed as arguments, returned from other functions, and assigned to variables, just like any other data value.</li>
+    <li><strong>Higher-order functions</strong> &mdash; functions that take other functions as parameters or return functions (e.g., <code>map</code>, <code>filter</code>, <code>reduce/fold</code>).</li>
+    <li><strong>Immutability</strong> &mdash; once a value is assigned, it cannot be changed. New values are created instead of modifying existing ones. This eliminates many bugs caused by unintended state changes.</li>
+    <li><strong>No side effects</strong> &mdash; a pure function's output depends only on its inputs; it does not modify external state, write to files, or change global variables.</li>
+    <li><strong>Recursion</strong> is favoured over iteration, since loops require mutable counter variables.</li>
+    <li><strong>Function composition</strong> &mdash; combining simple functions to build more complex ones: <code>(f . g)(x) = f(g(x))</code>.</li>
+    <li><strong>Partial application / currying</strong> &mdash; creating new functions by fixing some parameters of an existing function, e.g., <code>add5 = add(5)</code> creates a function that adds 5 to any value.</li>
+    <li><strong>Referential transparency</strong> &mdash; an expression can always be replaced with its value without changing the program's behaviour, because functions are pure.</li>
 </ul>
-<p>Examples: Haskell, Erlang, Lisp. Python and JavaScript support functional features.</p>
+<p>Examples: Haskell, Erlang, Lisp, ML. Python and JavaScript support functional features (map, filter, lambda). Functional programming is especially suited to parallel/concurrent processing because immutable data requires no locks or synchronisation.</p>
+
+<pre># Functional approach in Python using map, filter, lambda
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# map: apply a function to every element
+squared = list(map(lambda x: x ** 2, numbers))
+# [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# filter: keep elements that satisfy a condition
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+# [2, 4, 6, 8, 10]
+
+# reduce: combine all elements into one value
+from functools import reduce
+total = reduce(lambda acc, x: acc + x, numbers, 0)
+# 55
+
+# Function composition
+def double(x): return x * 2
+def add_one(x): return x + 1
+# Compose: first double, then add one
+composed = lambda x: add_one(double(x))
+print(composed(5))  # 11</pre>
 
 <h3>Declarative Programming</h3>
-<p>The programmer specifies <strong>what</strong> the result should be, not <strong>how</strong> to achieve it. The language runtime determines the execution strategy.</p>
+<p>The programmer specifies <strong>what</strong> the result should be, not <strong>how</strong> to achieve it. The language runtime or engine determines the execution strategy. This is in contrast to imperative programming (procedural, OOP) where you specify the step-by-step process.</p>
 <ul>
-    <li><strong>SQL</strong> &mdash; you describe the data you want: <code>SELECT name FROM students WHERE grade &gt; 80</code></li>
-    <li><strong>HTML/CSS</strong> &mdash; you describe the structure and appearance of content</li>
-    <li><strong>Prolog</strong> &mdash; logic programming, stating facts and rules</li>
+    <li><strong>SQL</strong> &mdash; you describe the data you want: <code>SELECT name FROM students WHERE grade &gt; 80</code>. The database engine decides how to retrieve it (which index to use, join order, etc.).</li>
+    <li><strong>HTML/CSS</strong> &mdash; you describe the structure and appearance of content; the browser decides how to render it.</li>
+    <li><strong>Prolog</strong> &mdash; logic programming, stating facts and rules; the engine finds solutions through backtracking.</li>
+    <li><strong>Functional programming</strong> is also considered declarative in nature, as you describe transformations rather than steps.</li>
 </ul>
 
 <div class="exam-tip">
-    You may be asked to compare paradigms. Focus on how each approaches problem-solving: procedural = step-by-step instructions, OOP = modelling real-world entities, functional = mathematical transformations, declarative = describing desired outcomes.
+    You may be asked to compare paradigms. Focus on how each approaches problem-solving: procedural = step-by-step instructions with mutable state, OOP = modelling real-world entities with encapsulated data, functional = mathematical transformations with immutable data, declarative = describing desired outcomes. A common mistake is confusing "declarative" with "functional" &mdash; functional is a type of declarative, but SQL and HTML are declarative without being functional.
 </div>
 
 <table>
-    <tr><th>Paradigm</th><th>Focus</th><th>State</th><th>Example Languages</th></tr>
-    <tr><td>Procedural</td><td>Steps / procedures</td><td>Mutable variables</td><td>C, Pascal</td></tr>
-    <tr><td>Object-Oriented</td><td>Objects &amp; interactions</td><td>Encapsulated in objects</td><td>Java, C++, Python</td></tr>
-    <tr><td>Functional</td><td>Pure functions</td><td>Immutable</td><td>Haskell, Erlang</td></tr>
-    <tr><td>Declarative</td><td>What, not how</td><td>Abstracted away</td><td>SQL, Prolog, HTML</td></tr>
+    <tr><th>Paradigm</th><th>Focus</th><th>State</th><th>Control Flow</th><th>Example Languages</th></tr>
+    <tr><td>Procedural</td><td>Steps / procedures</td><td>Mutable variables</td><td>Sequence, selection, iteration</td><td>C, Pascal, BASIC</td></tr>
+    <tr><td>Object-Oriented</td><td>Objects &amp; interactions</td><td>Encapsulated in objects</td><td>Method calls, message passing</td><td>Java, C++, Python</td></tr>
+    <tr><td>Functional</td><td>Pure functions</td><td>Immutable</td><td>Recursion, composition</td><td>Haskell, Erlang, Lisp</td></tr>
+    <tr><td>Declarative</td><td>What, not how</td><td>Abstracted away</td><td>Determined by runtime</td><td>SQL, Prolog, HTML/CSS</td></tr>
 </table>
 
 <!-- ==================== OOP ==================== -->
@@ -180,143 +234,320 @@
 
 <h3>Classes and Objects</h3>
 <div class="definition-box">
-    <strong>Class:</strong> A blueprint or template that defines the attributes (data) and methods (behaviour) that objects of that type will have.<br>
-    <strong>Object:</strong> An instance of a class &mdash; a specific realisation with its own attribute values.
+    <strong>Class:</strong> A blueprint or template that defines the attributes (data) and methods (behaviour) that objects of that type will have. A class is a design-time concept &mdash; it exists in the source code.<br>
+    <strong>Object:</strong> An instance of a class &mdash; a specific realisation created at runtime with its own attribute values. Multiple objects can be created from the same class, each with different data.
 </div>
 
-<pre>class Dog:
-    def __init__(self, name, breed):
-        self.__name = name       # private attribute
-        self.__breed = breed     # private attribute
+<pre>class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.__owner = owner         # private attribute
+        self.__balance = balance     # private attribute
+        self.__transactions = []     # private list to track history
 
-    def bark(self):
-        return f"{self.__name} says Woof!"
+    def deposit(self, amount):
+        if amount &gt; 0:
+            self.__balance += amount
+            self.__transactions.append(f"Deposit: +{amount}")
+        else:
+            raise ValueError("Deposit must be positive")
 
-    def get_name(self):          # getter method
-        return self.__name
+    def withdraw(self, amount):
+        if 0 &lt; amount &lt;= self.__balance:
+            self.__balance -= amount
+            self.__transactions.append(f"Withdrawal: -{amount}")
+        else:
+            raise ValueError("Invalid withdrawal amount")
 
-rex = Dog("Rex", "Labrador")     # rex is an object (instance)
-print(rex.bark())                # Rex says Woof!</pre>
+    def get_balance(self):           # getter method
+        return self.__balance
+
+    def get_owner(self):
+        return self.__owner
+
+    def get_statement(self):
+        return "\n".join(self.__transactions)
+
+# Creating objects (instances)
+acc1 = BankAccount("Alice", 1000)    # acc1 is an object
+acc2 = BankAccount("Bob", 500)       # acc2 is a separate object
+
+acc1.deposit(250)
+acc1.withdraw(100)
+print(acc1.get_balance())            # 1150
+# print(acc1.__balance)              # ERROR: private attribute</pre>
 
 <h3>Encapsulation</h3>
-<p><strong>Encapsulation</strong> is the bundling of data and methods within a class, and restricting direct access to some of the object's components. Attributes are typically made <strong>private</strong> and accessed through <strong>public getter/setter methods</strong>. This:</p>
+<p><strong>Encapsulation</strong> is the bundling of data and methods within a class, and restricting direct access to some of the object's components. Attributes are typically made <strong>private</strong> (prefixed with <code>__</code> in Python) and accessed through <strong>public getter/setter methods</strong>. This:</p>
 <ul>
-    <li>Protects data from accidental modification</li>
-    <li>Hides internal implementation details</li>
-    <li>Allows validation in setter methods</li>
+    <li><strong>Protects data</strong> from accidental or malicious modification &mdash; external code cannot directly change private attributes</li>
+    <li><strong>Hides internal implementation details</strong> &mdash; the class can change how it stores data internally without affecting code that uses it</li>
+    <li><strong>Allows validation in setter methods</strong> &mdash; e.g., ensuring an age cannot be set to a negative number</li>
+    <li><strong>Reduces coupling</strong> &mdash; other parts of the program depend on the public interface, not the internal structure</li>
 </ul>
+
+<pre>class Student:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+
+    # Getter
+    def get_age(self):
+        return self.__age
+
+    # Setter with validation
+    def set_age(self, age):
+        if 0 &lt; age &lt; 150:       # validation prevents invalid data
+            self.__age = age
+        else:
+            raise ValueError(f"Invalid age: {age}")
+
+s = Student("Alice", 17)
+s.set_age(18)            # valid
+# s.set_age(-5)          # raises ValueError - data is protected</pre>
 
 <h3>Inheritance</h3>
 <div class="definition-box">
-    <strong>Inheritance:</strong> A mechanism where a new class (subclass / child class) derives attributes and methods from an existing class (superclass / parent class), promoting code reuse.
+    <strong>Inheritance:</strong> A mechanism where a new class (subclass / child class / derived class) derives attributes and methods from an existing class (superclass / parent class / base class), promoting code reuse. The subclass IS-A type of the superclass. Subclasses can add new attributes/methods and override inherited ones.
 </div>
 
 <pre>class Animal:
-    def __init__(self, name):
-        self._name = name
+    def __init__(self, name, species):
+        self._name = name          # protected (single underscore convention)
+        self._species = species
 
     def speak(self):
         return "..."
 
-class Cat(Animal):                # Cat inherits from Animal
-    def speak(self):              # overriding the parent method
+    def describe(self):
+        return f"{self._name} is a {self._species}"
+
+class Dog(Animal):                  # Dog inherits from Animal
+    def __init__(self, name, breed):
+        super().__init__(name, "Dog")   # call parent constructor
+        self.__breed = breed            # new attribute specific to Dog
+
+    def speak(self):                # overriding the parent method
+        return f"{self._name} says Woof!"
+
+    def fetch(self):                # new method specific to Dog
+        return f"{self._name} fetches the ball!"
+
+class Cat(Animal):
+    def __init__(self, name, indoor):
+        super().__init__(name, "Cat")
+        self.__indoor = indoor
+
+    def speak(self):
         return f"{self._name} says Meow!"
 
-class Dog(Animal):
-    def speak(self):
-        return f"{self._name} says Woof!"</pre>
+# Using inheritance
+rex = Dog("Rex", "Labrador")
+whiskers = Cat("Whiskers", True)
+print(rex.speak())                  # Rex says Woof!
+print(rex.describe())               # Rex is a Dog (inherited method)
+print(rex.fetch())                  # Rex fetches the ball!
+print(whiskers.speak())             # Whiskers says Meow!</pre>
 
-<p><strong>Advantages of inheritance:</strong> reduces code duplication, models real-world relationships (IS-A), makes code easier to extend and maintain.</p>
+<p><strong>Advantages of inheritance:</strong></p>
+<ul>
+    <li>Reduces code duplication &mdash; shared code is written once in the superclass</li>
+    <li>Models real-world IS-A relationships (a Dog IS-A Animal)</li>
+    <li>Makes code easier to extend &mdash; add new subclasses without modifying existing code</li>
+    <li>Supports polymorphism &mdash; subclass objects can be used wherever a superclass is expected</li>
+</ul>
 
 <h3>Polymorphism</h3>
 <div class="definition-box">
-    <strong>Polymorphism:</strong> The ability for objects of different classes to respond to the same method call in different ways. "Many forms."
+    <strong>Polymorphism:</strong> The ability for objects of different classes to respond to the same method call in different ways. The word means "many forms." Polymorphism allows writing generic code that works with objects of different types.
 </div>
-<p>In the example above, both <code>Cat</code> and <code>Dog</code> have a <code>speak()</code> method. Calling <code>speak()</code> on any <code>Animal</code> reference produces the correct output for the actual object type. This is <strong>overriding polymorphism</strong>.</p>
-<p><strong>Overloading polymorphism</strong> is when multiple methods share the same name but have different parameter lists (supported in Java/C++, not natively in Python).</p>
+
+<p><strong>Overriding polymorphism</strong> (runtime / dynamic): A subclass provides a different implementation of a method inherited from its superclass. The correct version is selected at runtime based on the actual object type.</p>
+
+<pre># Polymorphism in action
+animals = [Dog("Rex", "Lab"), Cat("Whiskers", True), Dog("Max", "Poodle")]
+
+for animal in animals:
+    print(animal.speak())    # Calls the correct speak() for each type
+# Rex says Woof!
+# Whiskers says Meow!
+# Max says Woof!
+
+# The same method name produces different behaviour depending on the object</pre>
+
+<p><strong>Overloading polymorphism</strong> (compile-time / static): Multiple methods share the same name but have different parameter lists (different number or types of parameters). This is supported in Java/C++ but not natively in Python. In Java:</p>
+
+<pre>// Java overloading example
+class Calculator {
+    int add(int a, int b) { return a + b; }
+    double add(double a, double b) { return a + b; }
+    int add(int a, int b, int c) { return a + b + c; }
+}
+// The compiler selects the correct method based on argument types</pre>
 
 <h3>Abstraction</h3>
-<p><strong>Abstraction</strong> means hiding unnecessary complexity and showing only the essential features of an object. An abstract class cannot be instantiated directly; it serves as a template for subclasses that must implement the abstract methods.</p>
+<p><strong>Abstraction</strong> means hiding unnecessary complexity and showing only the essential features of an object. An <strong>abstract class</strong> cannot be instantiated directly; it serves as a template for subclasses that must implement the abstract methods. Abstract classes define a common interface that all subclasses must follow.</p>
 
 <pre>from abc import ABC, abstractmethod
+import math
 
-class Shape(ABC):
+class Shape(ABC):                    # Abstract base class
     @abstractmethod
     def area(self):
-        pass         # subclasses MUST implement this
+        pass                         # subclasses MUST implement this
+
+    @abstractmethod
+    def perimeter(self):
+        pass                         # subclasses MUST implement this
+
+    def describe(self):              # concrete method (shared by all)
+        return f"Area: {self.area():.2f}, Perimeter: {self.perimeter():.2f}"
 
 class Circle(Shape):
     def __init__(self, radius):
         self.__radius = radius
 
     def area(self):
-        return 3.14159 * self.__radius ** 2</pre>
+        return math.pi * self.__radius ** 2
+
+    def perimeter(self):
+        return 2 * math.pi * self.__radius
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.__width = width
+        self.__height = height
+
+    def area(self):
+        return self.__width * self.__height
+
+    def perimeter(self):
+        return 2 * (self.__width + self.__height)
+
+# shape = Shape()                   # ERROR: can't instantiate abstract class
+c = Circle(5)
+r = Rectangle(4, 6)
+print(c.describe())                 # Area: 78.54, Perimeter: 31.42
+print(r.describe())                 # Area: 24.00, Perimeter: 20.00</pre>
 
 <h3>Association, Aggregation, and Composition</h3>
 <table>
-    <tr><th>Relationship</th><th>Description</th><th>Lifetime</th><th>Example</th></tr>
-    <tr><td>Association</td><td>Two objects are related but independent</td><td>Independent</td><td>Teacher &harr; Student</td></tr>
-    <tr><td>Aggregation</td><td>HAS-A (weak). Container holds references to objects that can exist independently</td><td>Independent</td><td>Department &rarr; Employees</td></tr>
-    <tr><td>Composition</td><td>HAS-A (strong). Contained objects cannot exist without the container</td><td>Dependent</td><td>House &rarr; Rooms</td></tr>
+    <tr><th>Relationship</th><th>Description</th><th>Lifetime</th><th>Strength</th><th>Example</th></tr>
+    <tr><td><strong>Association</strong></td><td>Two objects are related but independent &mdash; a general "uses" or "knows about" relationship</td><td>Independent</td><td>Weakest</td><td>Teacher &harr; Student</td></tr>
+    <tr><td><strong>Aggregation</strong></td><td>HAS-A (weak). Container holds references to objects that can exist independently. The parts can outlive the whole.</td><td>Independent</td><td>Medium</td><td>Department &rarr; Employees (employees exist without the department)</td></tr>
+    <tr><td><strong>Composition</strong></td><td>HAS-A (strong). Contained objects cannot exist without the container. If the whole is destroyed, so are the parts.</td><td>Dependent</td><td>Strongest</td><td>House &rarr; Rooms (rooms don't exist without the house)</td></tr>
 </table>
 
+<pre># Composition: Engine cannot exist without Car
+class Engine:
+    def __init__(self, horsepower):
+        self.horsepower = horsepower
+
+class Car:
+    def __init__(self, make, hp):
+        self.make = make
+        self.__engine = Engine(hp)    # Engine created inside Car
+    # If Car is deleted, Engine is deleted too
+
+# Aggregation: Students exist independently of Class
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+class ClassGroup:
+    def __init__(self):
+        self.students = []           # holds references to existing Students
+    def add_student(self, student):
+        self.students.append(student)
+    # If ClassGroup is deleted, Students still exist</pre>
+
 <div class="exam-tip">
-    Questions often ask you to design class hierarchies from a scenario. Identify the IS-A relationships for inheritance and HAS-A relationships for aggregation/composition.
+    Questions often ask you to design class hierarchies from a scenario. Identify the IS-A relationships for inheritance (Dog IS-A Animal) and HAS-A relationships for aggregation/composition (Car HAS-A Engine). A common mistake is using inheritance when aggregation/composition would be more appropriate &mdash; if the relationship is "has" rather than "is", use aggregation or composition.
 </div>
+
+<div class="real-world">Object-oriented design is used throughout software engineering. A game engine might have an abstract <code>GameObject</code> class with subclasses like <code>Player</code>, <code>Enemy</code>, and <code>Projectile</code>. A banking system might have a <code>BankAccount</code> superclass with <code>SavingsAccount</code> and <code>CurrentAccount</code> subclasses inheriting shared functionality.</div>
 
 <!-- ==================== DATA TYPES ==================== -->
 <h2>4.1.3 Data Types</h2>
 
 <table>
-    <tr><th>Data Type</th><th>Description</th><th>Example Values</th></tr>
-    <tr><td><strong>Integer</strong></td><td>Whole number (positive, negative, or zero)</td><td><code>-3</code>, <code>0</code>, <code>42</code></td></tr>
-    <tr><td><strong>Real / Float</strong></td><td>Number with a fractional part</td><td><code>3.14</code>, <code>-0.5</code></td></tr>
-    <tr><td><strong>Boolean</strong></td><td>Logical value &mdash; only two possible values</td><td><code>True</code>, <code>False</code></td></tr>
-    <tr><td><strong>Character</strong></td><td>A single symbol (letter, digit, punctuation)</td><td><code>'A'</code>, <code>'7'</code>, <code>'!'</code></td></tr>
-    <tr><td><strong>String</strong></td><td>A sequence of characters</td><td><code>"Hello"</code>, <code>""</code></td></tr>
-    <tr><td><strong>Date/Time</strong></td><td>Represents dates and/or times</td><td><code>2026-04-10</code></td></tr>
-    <tr><td><strong>Pointer / Reference</strong></td><td>Stores a memory address pointing to another value</td><td><code>0x7ffd5e8</code></td></tr>
-    <tr><td><strong>Record</strong></td><td>A composite type with named fields of potentially different types</td><td>A student record with name, age, grade</td></tr>
-    <tr><td><strong>Array</strong></td><td>An ordered, fixed-size collection of elements of the same type</td><td><code>[10, 20, 30]</code></td></tr>
+    <tr><th>Data Type</th><th>Description</th><th>Size (typical)</th><th>Example Values</th></tr>
+    <tr><td><strong>Integer</strong></td><td>Whole number (positive, negative, or zero)</td><td>2 or 4 bytes</td><td><code>-3</code>, <code>0</code>, <code>42</code></td></tr>
+    <tr><td><strong>Real / Float</strong></td><td>Number with a fractional part (stored as floating point)</td><td>4 or 8 bytes</td><td><code>3.14</code>, <code>-0.5</code>, <code>1.0e10</code></td></tr>
+    <tr><td><strong>Boolean</strong></td><td>Logical value &mdash; only two possible values</td><td>1 bit (stored as 1 byte)</td><td><code>True</code>, <code>False</code></td></tr>
+    <tr><td><strong>Character</strong></td><td>A single symbol (letter, digit, punctuation)</td><td>1 or 2 bytes</td><td><code>'A'</code>, <code>'7'</code>, <code>'!'</code></td></tr>
+    <tr><td><strong>String</strong></td><td>A sequence of characters</td><td>Variable</td><td><code>"Hello"</code>, <code>""</code></td></tr>
+    <tr><td><strong>Date/Time</strong></td><td>Represents dates and/or times</td><td>Variable</td><td><code>2026-04-10</code></td></tr>
+    <tr><td><strong>Pointer / Reference</strong></td><td>Stores a memory address pointing to another value</td><td>4 or 8 bytes</td><td><code>0x7ffd5e8</code></td></tr>
+    <tr><td><strong>Record</strong></td><td>A composite type with named fields of potentially different types</td><td>Variable</td><td>A student record with name, age, grade</td></tr>
+    <tr><td><strong>Array</strong></td><td>An ordered, fixed-size collection of elements of the same type</td><td>Variable</td><td><code>[10, 20, 30]</code></td></tr>
 </table>
 
+<h3>Type Casting (Type Conversion)</h3>
+<p><strong>Casting</strong> converts a value from one data type to another. This may be implicit (automatic, done by the compiler/interpreter) or explicit (programmer specifies the conversion).</p>
+<pre># Explicit casting in Python
+x = int("42")          # string to integer: 42
+y = float(7)            # integer to float: 7.0
+z = str(3.14)           # float to string: "3.14"
+w = int(9.8)            # float to integer: 9 (truncates, does NOT round)
+b = bool(0)             # integer to boolean: False (0 is False, non-zero is True)
+
+# Implicit casting
+result = 5 + 3.2        # int + float automatically produces float: 8.2</pre>
+
 <h3>Pointers and References</h3>
-<p>A <strong>pointer</strong> stores the memory address of another variable. A <strong>reference</strong> is an alias for another variable. In languages like C/C++, pointers are used for dynamic memory allocation, linked data structures, and passing data efficiently.</p>
+<p>A <strong>pointer</strong> stores the memory address of another variable. A <strong>reference</strong> is an alias for another variable. In languages like C/C++, pointers are used for dynamic memory allocation, linked data structures (linked lists, trees, graphs), and passing data efficiently without copying.</p>
+
+<pre>// C-style pointer example (for understanding)
+int x = 42;
+int *p = &amp;x;    // p stores the ADDRESS of x
+printf("%d", *p);  // dereference: prints 42 (the VALUE at that address)
+*p = 100;           // changes x to 100 through the pointer</pre>
 
 <h3>Records</h3>
-<p>A <strong>record</strong> (also called a struct in C) groups related data items of different types under one name:</p>
+<p>A <strong>record</strong> (also called a struct in C, or a named tuple) groups related data items of different types under one name:</p>
 <pre>TYPE Student
     name : STRING
     age : INTEGER
     grade : REAL
+    enrolled : BOOLEAN
 ENDTYPE
 
 pupil : Student
 pupil.name &larr; "Alice"
 pupil.age &larr; 17
-pupil.grade &larr; 92.5</pre>
+pupil.grade &larr; 92.5
+pupil.enrolled &larr; True</pre>
 
 <!-- ==================== PROGRAMMING CONCEPTS ==================== -->
 <h2>4.1.4 Programming Concepts</h2>
 
 <h3>Variables and Constants</h3>
-<p>A <strong>variable</strong> is a named storage location whose value can change during program execution. A <strong>constant</strong> is a named value that is fixed at the time of definition and cannot be altered. Using constants improves readability and maintainability.</p>
+<p>A <strong>variable</strong> is a named storage location whose value can change during program execution. A <strong>constant</strong> is a named value that is fixed at the time of definition and cannot be altered. Using constants improves readability (the name explains the value's purpose), maintainability (change the value in one place), and safety (prevents accidental modification).</p>
 
 <pre>CONSTANT PI &larr; 3.14159
+CONSTANT MAX_ATTEMPTS &larr; 3
+CONSTANT TAX_RATE &larr; 0.20
+
 radius &larr; 5
-area &larr; PI * radius * radius</pre>
+area &larr; PI * radius * radius         # 78.54
+price &larr; 100
+total &larr; price * (1 + TAX_RATE)      # 120.0</pre>
 
 <h3>Operators</h3>
 <table>
-    <tr><th>Type</th><th>Operators</th><th>Examples</th></tr>
-    <tr><td>Arithmetic</td><td><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>MOD</code>, <code>DIV</code>, <code>^</code></td><td><code>17 MOD 5 = 2</code>, <code>17 DIV 5 = 3</code></td></tr>
-    <tr><td>Comparison</td><td><code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></td><td><code>x &lt;&gt; y</code> means "not equal"</td></tr>
-    <tr><td>Boolean / Logical</td><td><code>AND</code>, <code>OR</code>, <code>NOT</code></td><td><code>(x &gt; 5) AND (x &lt; 10)</code></td></tr>
-    <tr><td>String</td><td>Concatenation <code>+</code> or <code>&amp;</code></td><td><code>"Hello" + " World"</code></td></tr>
+    <tr><th>Type</th><th>Operators</th><th>Examples</th><th>Notes</th></tr>
+    <tr><td>Arithmetic</td><td><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>MOD</code>, <code>DIV</code>, <code>^</code></td><td><code>17 MOD 5 = 2</code>, <code>17 DIV 5 = 3</code></td><td>MOD gives remainder; DIV gives integer quotient</td></tr>
+    <tr><td>Comparison</td><td><code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></td><td><code>x &lt;&gt; y</code> means "not equal"</td><td>Return Boolean values</td></tr>
+    <tr><td>Boolean / Logical</td><td><code>AND</code>, <code>OR</code>, <code>NOT</code></td><td><code>(x &gt; 5) AND (x &lt; 10)</code></td><td>Short-circuit evaluation is common</td></tr>
+    <tr><td>String</td><td>Concatenation <code>+</code> or <code>&amp;</code></td><td><code>"Hello" + " World"</code></td><td>Joins two strings together</td></tr>
 </table>
 
+<div class="exam-tip">
+    MOD and DIV are frequently tested. Remember: <code>17 DIV 5 = 3</code> (how many whole times 5 fits into 17) and <code>17 MOD 5 = 2</code> (the remainder). A useful application: to check if a number is even, use <code>n MOD 2 = 0</code>. To extract the last digit of a number, use <code>n MOD 10</code>.
+</div>
+
 <h3>Assignment</h3>
-<p><strong>Assignment</strong> stores a value in a variable. In pseudocode: <code>x &larr; 10</code>. In Python: <code>x = 10</code>. In many languages the assignment operator is <code>=</code> while comparison uses <code>==</code>.</p>
+<p><strong>Assignment</strong> stores a value in a variable. In pseudocode: <code>x &larr; 10</code>. In Python: <code>x = 10</code>. In many languages the assignment operator is <code>=</code> while comparison uses <code>==</code>. This is a common source of bugs &mdash; using <code>=</code> (assignment) where <code>==</code> (comparison) was intended.</p>
 
 <h3>Selection (Branching)</h3>
 <pre># IF / ELSE IF / ELSE
@@ -326,57 +557,117 @@ ELSE IF score &gt;= 80 THEN
     grade &larr; "A"
 ELSE IF score &gt;= 70 THEN
     grade &larr; "B"
+ELSE IF score &gt;= 60 THEN
+    grade &larr; "C"
 ELSE
-    grade &larr; "C or below"
+    grade &larr; "Below C"
 ENDIF
 
-# SWITCH / CASE
+# Nested IF example
+IF age &gt;= 18 THEN
+    IF hasLicence = True THEN
+        OUTPUT "Can drive"
+    ELSE
+        OUTPUT "Need a licence"
+    ENDIF
+ELSE
+    OUTPUT "Too young to drive"
+ENDIF
+
+# SWITCH / CASE (useful when comparing one variable against many values)
 SWITCH day:
-    CASE "Mon": output "Monday"
-    CASE "Tue": output "Tuesday"
-    DEFAULT: output "Other day"
+    CASE "Mon": OUTPUT "Monday"
+    CASE "Tue": OUTPUT "Tuesday"
+    CASE "Wed": OUTPUT "Wednesday"
+    DEFAULT: OUTPUT "Other day"
 ENDSWITCH</pre>
 
 <h3>Iteration (Loops)</h3>
 <table>
-    <tr><th>Loop Type</th><th>Description</th><th>Example</th></tr>
-    <tr><td><strong>FOR</strong> (count-controlled)</td><td>Repeats a fixed number of times</td><td><code>FOR i &larr; 1 TO 10</code></td></tr>
-    <tr><td><strong>WHILE</strong> (condition-controlled, pre-check)</td><td>Repeats while condition is true; may execute zero times</td><td><code>WHILE x &lt; 100</code></td></tr>
-    <tr><td><strong>REPEAT...UNTIL</strong> (condition-controlled, post-check)</td><td>Repeats until condition is true; always executes at least once</td><td><code>REPEAT ... UNTIL valid</code></td></tr>
+    <tr><th>Loop Type</th><th>Description</th><th>Example</th><th>When to Use</th></tr>
+    <tr><td><strong>FOR</strong> (count-controlled)</td><td>Repeats a fixed number of times. Loop variable is automatically incremented.</td><td><code>FOR i &larr; 1 TO 10</code></td><td>When you know exactly how many iterations are needed</td></tr>
+    <tr><td><strong>WHILE</strong> (pre-check)</td><td>Repeats while condition is true. Condition checked BEFORE each iteration; may execute <strong>zero</strong> times.</td><td><code>WHILE x &lt; 100</code></td><td>When number of iterations is unknown; when loop might not execute at all</td></tr>
+    <tr><td><strong>REPEAT...UNTIL</strong> (post-check)</td><td>Repeats until condition is true. Condition checked AFTER each iteration; always executes <strong>at least once</strong>.</td><td><code>REPEAT ... UNTIL valid</code></td><td>When the loop body must run at least once (e.g., input validation)</td></tr>
 </table>
+
+<pre># Input validation using REPEAT...UNTIL
+REPEAT
+    OUTPUT "Enter a number between 1 and 100: "
+    number &larr; USERINPUT
+UNTIL number &gt;= 1 AND number &lt;= 100
+# The user MUST enter something before validation can happen
+
+# Sentinel-controlled loop using WHILE
+total &larr; 0
+OUTPUT "Enter numbers (-1 to stop): "
+number &larr; USERINPUT
+WHILE number &lt;&gt; -1
+    total &larr; total + number
+    number &larr; USERINPUT
+ENDWHILE
+OUTPUT "Total: " + total
+
+# Nested loops: multiplication table
+FOR row &larr; 1 TO 12
+    FOR col &larr; 1 TO 12
+        OUTPUT (row * col) + "\t"
+    NEXT col
+    OUTPUT "\n"
+NEXT row</pre>
 
 <h3>Subroutines: Functions and Procedures</h3>
 <div class="definition-box">
-    <strong>Procedure:</strong> A named block of code that performs a task but does <em>not</em> return a value.<br>
-    <strong>Function:</strong> A named block of code that performs a task and <em>returns</em> a value.
+    <strong>Procedure:</strong> A named block of code that performs a task but does <em>not</em> return a value. It may have side effects (e.g., printing output, modifying data).<br>
+    <strong>Function:</strong> A named block of code that performs a task and <em>returns</em> a value to the calling code. The return value can be used in expressions.
 </div>
 
 <p><strong>Advantages of subroutines:</strong></p>
 <ul>
-    <li>Code reuse &mdash; write once, call many times</li>
-    <li>Modularity &mdash; break complex problems into manageable parts</li>
-    <li>Easier testing and debugging of individual components</li>
-    <li>Improved readability and maintainability</li>
-    <li>Supports team development &mdash; different programmers work on different subroutines</li>
+    <li><strong>Code reuse</strong> &mdash; write once, call many times from different places</li>
+    <li><strong>Modularity</strong> &mdash; break complex problems into manageable, self-contained parts (decomposition)</li>
+    <li><strong>Easier testing and debugging</strong> &mdash; test each subroutine independently</li>
+    <li><strong>Improved readability</strong> &mdash; meaningful subroutine names make code self-documenting</li>
+    <li><strong>Maintainability</strong> &mdash; fix a bug in one place rather than in every place the code is duplicated</li>
+    <li><strong>Supports team development</strong> &mdash; different programmers work on different subroutines simultaneously</li>
 </ul>
 
 <pre>FUNCTION calculateArea(length, width)
     RETURN length * width
 ENDFUNCTION
 
-PROCEDURE greetUser(name)
-    OUTPUT "Hello, " + name
-ENDPROCEDURE</pre>
+FUNCTION isPrime(n)
+    IF n &lt; 2 THEN
+        RETURN False
+    ENDIF
+    FOR i &larr; 2 TO n DIV 2
+        IF n MOD i = 0 THEN
+            RETURN False
+        ENDIF
+    NEXT i
+    RETURN True
+ENDFUNCTION
+
+PROCEDURE displayResult(name, value)
+    OUTPUT name + ": " + STR(value)
+ENDPROCEDURE
+
+# Usage
+area &larr; calculateArea(5, 3)        # function returns 15
+displayResult("Area", area)            # procedure outputs "Area: 15"
+
+IF isPrime(17) THEN
+    OUTPUT "17 is prime"               # This executes
+ENDIF</pre>
 
 <!-- ==================== RECURSION ==================== -->
 <h2>4.1.5 Recursion</h2>
 
 <div class="definition-box">
-    <strong>Recursion:</strong> A programming technique where a subroutine calls itself. Every recursive solution must have a <strong>base case</strong> (stopping condition) and a <strong>recursive case</strong> (where the function calls itself with a simpler input).
+    <strong>Recursion:</strong> A programming technique where a subroutine calls itself. Every recursive solution must have a <strong>base case</strong> (stopping condition that does not make a recursive call) and a <strong>recursive case</strong> (where the function calls itself with a simpler/smaller input, progressing towards the base case).
 </div>
 
 <h3>How Recursion Works &mdash; The Call Stack</h3>
-<p>Each recursive call is pushed onto the <strong>call stack</strong>. When the base case is reached, the stack unwinds as each call returns its result to the caller. If there is no base case or the recursion is too deep, a <strong>stack overflow</strong> error occurs.</p>
+<p>Each recursive call is pushed onto the <strong>call stack</strong> as a new <strong>stack frame</strong> containing the function's local variables and return address. When the base case is reached, the stack <strong>unwinds</strong> as each call returns its result to the caller. If there is no base case, or the recursion is too deep (does not converge towards the base case), a <strong>stack overflow</strong> error occurs because the stack runs out of memory.</p>
 
 <h3>Example: Factorial</h3>
 <pre>FUNCTION factorial(n)
@@ -387,147 +678,234 @@ ENDPROCEDURE</pre>
     ENDIF
 ENDFUNCTION
 
-# Call stack for factorial(4):
-# factorial(4) waits for 4 * factorial(3)
-#   factorial(3) waits for 3 * factorial(2)
-#     factorial(2) waits for 2 * factorial(1)
-#       factorial(1) waits for 1 * factorial(0)
-#         factorial(0) returns 1        &larr; base case
-#       factorial(1) returns 1 * 1 = 1
+# Call stack trace for factorial(4):
+#
+# factorial(4) calls factorial(3)  -- pushed onto stack
+#   factorial(3) calls factorial(2)
+#     factorial(2) calls factorial(1)
+#       factorial(1) calls factorial(0)
+#         factorial(0) returns 1           &larr; BASE CASE reached
+#       factorial(1) returns 1 * 1 = 1     &larr; stack unwinds
 #     factorial(2) returns 2 * 1 = 2
 #   factorial(3) returns 3 * 2 = 6
-# factorial(4) returns 4 * 6 = 24</pre>
+# factorial(4) returns 4 * 6 = 24
+#
+# Maximum stack depth: 5 frames (n=4, 3, 2, 1, 0)</pre>
 
 <h3>Example: Fibonacci</h3>
 <pre>FUNCTION fibonacci(n)
-    IF n &lt;= 1 THEN         # base case
+    IF n &lt;= 1 THEN         # base case (fib(0)=0, fib(1)=1)
         RETURN n
     ELSE
         RETURN fibonacci(n - 1) + fibonacci(n - 2)
+    ENDIF
+ENDFUNCTION
+
+# Note: this is inefficient! fibonacci(5) generates a tree of calls:
+#   fib(5) = fib(4) + fib(3)
+#   fib(4) = fib(3) + fib(2)
+#   fib(3) = fib(2) + fib(1)
+#   ... many duplicate calculations
+# Time complexity: O(2^n) - exponential!
+# A better approach would use iteration or memoisation.</pre>
+
+<h3>Example: Power Function</h3>
+<pre>FUNCTION power(base, exp)
+    IF exp = 0 THEN                # base case: anything^0 = 1
+        RETURN 1
+    ELSE
+        RETURN base * power(base, exp - 1)
+    ENDIF
+ENDFUNCTION
+
+# power(2, 4) = 2 * power(2, 3)
+#             = 2 * 2 * power(2, 2)
+#             = 2 * 2 * 2 * power(2, 1)
+#             = 2 * 2 * 2 * 2 * power(2, 0)
+#             = 2 * 2 * 2 * 2 * 1 = 16</pre>
+
+<h3>Example: Recursive Binary Search</h3>
+<pre>FUNCTION binarySearch(arr, target, low, high)
+    IF low &gt; high THEN              # base case: not found
+        RETURN -1
+    ENDIF
+    mid &larr; (low + high) DIV 2
+    IF arr[mid] = target THEN       # base case: found
+        RETURN mid
+    ELSE IF target &lt; arr[mid] THEN
+        RETURN binarySearch(arr, target, low, mid - 1)   # search left
+    ELSE
+        RETURN binarySearch(arr, target, mid + 1, high)  # search right
     ENDIF
 ENDFUNCTION</pre>
 
 <h3>Recursion vs Iteration</h3>
 <table>
     <tr><th>Feature</th><th>Recursion</th><th>Iteration</th></tr>
-    <tr><td>Code clarity</td><td>Often more elegant / readable for inherently recursive problems (trees, fractals)</td><td>Usually simpler for straightforward looping</td></tr>
-    <tr><td>Memory usage</td><td>Higher &mdash; each call uses stack space</td><td>Lower &mdash; constant memory for loop variables</td></tr>
-    <tr><td>Performance</td><td>Can be slower due to function call overhead</td><td>Generally faster</td></tr>
-    <tr><td>Risk</td><td>Stack overflow for deep recursion</td><td>Infinite loop if condition never met</td></tr>
-    <tr><td>Use cases</td><td>Tree traversal, divide-and-conquer, backtracking</td><td>Simple counting, sequential processing</td></tr>
+    <tr><td>Code clarity</td><td>Often more elegant and readable for inherently recursive problems (trees, fractals, divide-and-conquer)</td><td>Usually simpler and more intuitive for straightforward looping tasks</td></tr>
+    <tr><td>Memory usage</td><td>Higher &mdash; each call creates a new stack frame with local variables</td><td>Lower &mdash; constant memory for loop variables</td></tr>
+    <tr><td>Performance</td><td>Can be slower due to function call overhead (pushing/popping stack frames)</td><td>Generally faster due to less overhead</td></tr>
+    <tr><td>Risk</td><td>Stack overflow for deep recursion (Python default limit: ~1000 calls)</td><td>Infinite loop if termination condition never met</td></tr>
+    <tr><td>Termination</td><td>Base case must be reachable</td><td>Loop condition must eventually become false</td></tr>
+    <tr><td>Best use cases</td><td>Tree/graph traversal, divide-and-conquer (merge sort, quicksort), backtracking, parsing nested structures</td><td>Simple counting, sequential processing, accumulating totals</td></tr>
 </table>
 
 <div class="exam-tip">
-    Trace tables for recursion are common in exams. Show each call on the stack, the parameter values, and the return values as the stack unwinds. Always identify the base case and recursive case clearly.
+    Trace tables for recursion are common in exams. Show each call on the stack, the parameter values, and the return values as the stack unwinds. Always clearly identify: (1) the base case and what it returns, (2) the recursive case and how it reduces the problem, (3) that the recursive case converges towards the base case. A common mistake is writing recursion that never reaches the base case.
 </div>
 
 <!-- ==================== EXCEPTION HANDLING ==================== -->
 <h2>4.1.6 Exception Handling</h2>
 
 <div class="definition-box">
-    <strong>Exception:</strong> An unexpected event or error that disrupts normal program flow at runtime (e.g., division by zero, file not found, invalid input).
+    <strong>Exception:</strong> An unexpected event or error that disrupts normal program flow at runtime (e.g., division by zero, file not found, invalid input, index out of range, network timeout). Exceptions are distinct from syntax errors, which are caught before the program runs.
 </div>
 
-<p><strong>Exception handling</strong> allows a program to deal with errors gracefully instead of crashing.</p>
+<p><strong>Exception handling</strong> allows a program to deal with errors gracefully instead of crashing. It separates the "normal" code path from the error-handling code.</p>
 
 <pre>try:
+    filename = input("Enter filename: ")
+    file = open(filename, "r")
+    data = file.read()
     number = int(input("Enter a number: "))
     result = 100 / number
     print(f"Result: {result}")
+except FileNotFoundError:
+    print(f"Error: '{filename}' does not exist")
 except ValueError:
-    print("Invalid input - not a number")
+    print("Error: invalid input - not a valid number")
 except ZeroDivisionError:
-    print("Cannot divide by zero")
+    print("Error: cannot divide by zero")
+except Exception as e:
+    print(f"Unexpected error: {e}")     # catch-all for any other exception
 finally:
-    print("This always executes")</pre>
+    print("Cleanup complete")           # this ALWAYS executes</pre>
 
 <table>
-    <tr><th>Block</th><th>Purpose</th></tr>
-    <tr><td><code>try</code></td><td>Contains code that might raise an exception</td></tr>
-    <tr><td><code>except</code> / <code>catch</code></td><td>Handles specific exception types when they occur</td></tr>
-    <tr><td><code>finally</code></td><td>Code that always executes, regardless of whether an exception occurred (used for cleanup, e.g., closing files)</td></tr>
+    <tr><th>Block</th><th>Purpose</th><th>Executes When</th></tr>
+    <tr><td><code>try</code></td><td>Contains code that might raise an exception</td><td>Always attempted</td></tr>
+    <tr><td><code>except</code> / <code>catch</code></td><td>Handles specific exception types when they occur</td><td>Only when the matching exception is raised</td></tr>
+    <tr><td><code>else</code> (Python)</td><td>Runs if no exception occurred in the try block</td><td>Only when try succeeds</td></tr>
+    <tr><td><code>finally</code></td><td>Code that always executes regardless of whether an exception occurred &mdash; used for cleanup (closing files, releasing resources)</td><td>Always, even if an exception was raised</td></tr>
 </table>
 
 <p><strong>Why use exception handling?</strong></p>
 <ul>
-    <li>Prevents the program from crashing unexpectedly</li>
-    <li>Provides meaningful error messages to the user</li>
-    <li>Separates error-handling logic from normal logic</li>
-    <li>Ensures resources (files, connections) are properly released</li>
+    <li>Prevents the program from crashing unexpectedly &mdash; provides graceful degradation</li>
+    <li>Provides meaningful, user-friendly error messages instead of cryptic stack traces</li>
+    <li>Separates error-handling logic from normal logic, improving code clarity</li>
+    <li>Ensures resources (files, database connections, network sockets) are properly released via <code>finally</code></li>
+    <li>Allows the program to recover and continue executing after handling the error</li>
 </ul>
+
+<div class="exam-tip">
+    In exam questions, identify what specific exceptions could occur in a piece of code. Common ones: <code>ValueError</code> (wrong type of input), <code>ZeroDivisionError</code>, <code>IndexError</code> (array index out of bounds), <code>FileNotFoundError</code>, <code>TypeError</code> (incompatible types in an operation). Show how exception handling makes the program more robust.
+</div>
 
 <!-- ==================== PARAMETER PASSING ==================== -->
 <h2>4.1.7 Parameter Passing</h2>
 
 <h3>By Value</h3>
-<p>A <strong>copy</strong> of the argument's value is passed to the subroutine. Any changes made inside the subroutine do <strong>not</strong> affect the original variable.</p>
+<p>A <strong>copy</strong> of the argument's value is passed to the subroutine. Any changes made inside the subroutine do <strong>not</strong> affect the original variable. The subroutine works on its own private copy.</p>
 
-<pre>PROCEDURE doubleIt(x)     # x is a copy
+<pre>PROCEDURE doubleIt(x)     # x is a LOCAL COPY of the argument
     x &larr; x * 2
     OUTPUT x               # outputs 10
 ENDPROCEDURE
 
 num &larr; 5
 doubleIt(num)
-OUTPUT num                 # still outputs 5 (unchanged)</pre>
+OUTPUT num                 # still outputs 5 (original UNCHANGED)
+
+# What happened in memory:
+# 1. num = 5 (in calling code's memory)
+# 2. x = 5 (COPY created in doubleIt's stack frame)
+# 3. x = 10 (copy modified)
+# 4. doubleIt ends, x is destroyed
+# 5. num is still 5</pre>
 
 <h3>By Reference</h3>
-<p>The <strong>memory address</strong> of the argument is passed. The subroutine works directly on the original variable, so changes <strong>do</strong> affect the original.</p>
+<p>The <strong>memory address</strong> of the argument is passed. The subroutine works directly on the original variable through its address, so changes <strong>do</strong> affect the original.</p>
 
-<pre>PROCEDURE doubleIt(BYREF x)
+<pre>PROCEDURE doubleIt(BYREF x)    # x is a REFERENCE to the original
     x &larr; x * 2
 ENDPROCEDURE
 
 num &larr; 5
 doubleIt(num)
-OUTPUT num                 # outputs 10 (changed)</pre>
+OUTPUT num                      # outputs 10 (original CHANGED)
+
+# What happened in memory:
+# 1. num = 5 (at memory address, say, 0x1000)
+# 2. x points to address 0x1000 (same location as num)
+# 3. Value at 0x1000 changed to 10
+# 4. doubleIt ends
+# 5. num (at 0x1000) is now 10</pre>
 
 <table>
     <tr><th>Feature</th><th>By Value</th><th>By Reference</th></tr>
-    <tr><td>What is passed</td><td>A copy of the data</td><td>The address of the data</td></tr>
-    <tr><td>Original affected?</td><td>No</td><td>Yes</td></tr>
-    <tr><td>Memory</td><td>Uses more (copy created)</td><td>Uses less (no copy)</td></tr>
-    <tr><td>Safety</td><td>Safer &mdash; original protected</td><td>Less safe &mdash; original can be altered unintentionally</td></tr>
-    <tr><td>Use case</td><td>When you need to protect the original data</td><td>When you need to modify the original, or for large data structures to avoid copying overhead</td></tr>
+    <tr><td>What is passed</td><td>A copy of the data</td><td>The memory address of the data</td></tr>
+    <tr><td>Original affected?</td><td>No &mdash; completely safe</td><td>Yes &mdash; changes persist after the call</td></tr>
+    <tr><td>Memory</td><td>Uses more (copy created)</td><td>Uses less (no copy needed)</td></tr>
+    <tr><td>Safety</td><td>Safer &mdash; original protected from accidental changes</td><td>Less safe &mdash; original can be altered unintentionally</td></tr>
+    <tr><td>Performance</td><td>Slower for large data (copying overhead)</td><td>Faster for large data (no copying)</td></tr>
+    <tr><td>Use case</td><td>When you need to protect the original data; for small, simple values</td><td>When you need to modify the original; for large data structures to avoid copying overhead</td></tr>
 </table>
+
+<div class="exam-tip">
+    In Python, immutable types (int, float, string, tuple) behave like pass-by-value, while mutable types (list, dict, set) behave like pass-by-reference. In exams, be clear about whether the original variable is modified. Trace through the code step by step, showing the values of both the parameter and the original variable at each point.
+</div>
 
 <!-- ==================== SCOPE ==================== -->
 <h2>4.1.8 Scope</h2>
 
 <div class="definition-box">
-    <strong>Scope:</strong> The region of a program in which a variable is accessible.
+    <strong>Scope:</strong> The region of a program in which a variable is accessible (visible). Scope determines where a variable can be read from and written to.
 </div>
 
 <h3>Local Variables</h3>
 <ul>
     <li>Declared <strong>inside</strong> a subroutine</li>
-    <li>Only accessible within that subroutine</li>
-    <li>Created when the subroutine is called, destroyed when it ends</li>
+    <li>Only accessible within that subroutine &mdash; invisible outside it</li>
+    <li>Created when the subroutine is called, destroyed when it ends (stored on the stack)</li>
     <li>Cannot be accessed by other subroutines unless passed as parameters</li>
-    <li>Using local variables is considered <strong>good practice</strong></li>
+    <li>Two different subroutines can use the same variable name with no conflict</li>
+    <li>Using local variables is considered <strong>good practice</strong> &mdash; they make subroutines self-contained</li>
 </ul>
 
 <h3>Global Variables</h3>
 <ul>
-    <li>Declared <strong>outside</strong> all subroutines (at the top level)</li>
-    <li>Accessible from anywhere in the program</li>
+    <li>Declared <strong>outside</strong> all subroutines (at the top level of the program)</li>
+    <li>Accessible from <strong>anywhere</strong> in the program &mdash; all subroutines can read them</li>
     <li>Persist for the entire duration of the program</li>
-    <li>Generally <strong>discouraged</strong> because they make debugging harder, can be changed unexpectedly, and create dependencies between subroutines</li>
+    <li>Generally <strong>discouraged</strong> because they:
+        <ul>
+            <li>Make debugging harder &mdash; any part of the program could have changed the value</li>
+            <li>Create hidden dependencies between subroutines &mdash; changing one subroutine can break another</li>
+            <li>Make code harder to reuse &mdash; subroutines depend on external state rather than their parameters</li>
+            <li>Make testing more difficult &mdash; you cannot test a subroutine in isolation</li>
+        </ul>
+    </li>
 </ul>
 
 <pre>globalCounter = 0          # global variable
 
 def increment():
-    global globalCounter   # must declare to modify global in Python
-    localTemp = 1          # local variable
+    global globalCounter   # must declare 'global' to MODIFY a global in Python
+    localTemp = 1          # local variable (only exists inside increment)
     globalCounter += localTemp
 
+def display():
+    print(globalCounter)   # can READ global without 'global' keyword
+    # print(localTemp)     # ERROR - localTemp is not accessible here
+
 increment()
-print(globalCounter)       # 1
-# print(localTemp)         # ERROR - localTemp is not accessible here</pre>
+increment()
+display()                  # prints 2
+# print(localTemp)         # ERROR - localTemp does not exist at this scope</pre>
 
 <div class="exam-tip">
-    In exam questions, identify which variables are local and global. Explain why local variables are preferred: they reduce side effects, improve modularity, and make subroutines self-contained and easier to test.
+    In exam questions, identify which variables are local and global. Explain why local variables are preferred: they reduce side effects, improve modularity, make subroutines self-contained and easier to test and debug. If a question shows a program with global variables, you should be able to suggest how to refactor it to use parameters and return values instead.
 </div>
 
 <!-- ==================== STRING HANDLING ==================== -->
@@ -536,117 +914,177 @@ print(globalCounter)       # 1
 <p>Common string operations you must know:</p>
 
 <table>
-    <tr><th>Operation</th><th>Description</th><th>Example (Python)</th></tr>
-    <tr><td>Length</td><td>Number of characters in the string</td><td><code>len("Hello") &rarr; 5</code></td></tr>
-    <tr><td>Concatenation</td><td>Joining two strings together</td><td><code>"Hi" + " there" &rarr; "Hi there"</code></td></tr>
-    <tr><td>Substring / Slicing</td><td>Extracting part of a string</td><td><code>"Hello"[1:4] &rarr; "ell"</code></td></tr>
-    <tr><td>Character access</td><td>Accessing a character by index (0-based)</td><td><code>"Hello"[0] &rarr; "H"</code></td></tr>
-    <tr><td>Uppercase / Lowercase</td><td>Converting case</td><td><code>"abc".upper() &rarr; "ABC"</code></td></tr>
-    <tr><td>ASCII conversion</td><td>Character to/from ASCII code</td><td><code>ord('A') &rarr; 65</code>, <code>chr(65) &rarr; 'A'</code></td></tr>
-    <tr><td>Search / Find</td><td>Finding position of a substring</td><td><code>"Hello".find("ll") &rarr; 2</code></td></tr>
-    <tr><td>String comparison</td><td>Comparing using ASCII values</td><td><code>"apple" &lt; "banana" &rarr; True</code></td></tr>
+    <tr><th>Operation</th><th>Description</th><th>Pseudocode</th><th>Python</th></tr>
+    <tr><td>Length</td><td>Number of characters</td><td><code>LEN("Hello") = 5</code></td><td><code>len("Hello") = 5</code></td></tr>
+    <tr><td>Concatenation</td><td>Joining strings</td><td><code>"Hi" + " there"</code></td><td><code>"Hi" + " there"</code></td></tr>
+    <tr><td>Substring</td><td>Extract part of a string</td><td><code>MID("Hello", 1, 3) = "ell"</code></td><td><code>"Hello"[1:4] = "ell"</code></td></tr>
+    <tr><td>Character access</td><td>Access by index (0-based)</td><td><code>"Hello"[0] = "H"</code></td><td><code>"Hello"[0] = "H"</code></td></tr>
+    <tr><td>Uppercase</td><td>Convert to upper case</td><td><code>UPPER("abc") = "ABC"</code></td><td><code>"abc".upper() = "ABC"</code></td></tr>
+    <tr><td>Lowercase</td><td>Convert to lower case</td><td><code>LOWER("ABC") = "abc"</code></td><td><code>"ABC".lower() = "abc"</code></td></tr>
+    <tr><td>ASCII conversion</td><td>Char to/from ASCII code</td><td><code>ASC('A') = 65</code></td><td><code>ord('A')=65, chr(65)='A'</code></td></tr>
+    <tr><td>Search</td><td>Find position of substring</td><td><code>FIND("Hello","ll") = 2</code></td><td><code>"Hello".find("ll") = 2</code></td></tr>
+    <tr><td>Comparison</td><td>Compare using ASCII values</td><td><code>"apple" &lt; "banana"</code></td><td><code>"apple" &lt; "banana" = True</code></td></tr>
 </table>
 
-<pre># Example: reversing a string
+<pre># Practical string handling examples
+
+# Reverse a string
 def reverse_string(s):
     result = ""
     for i in range(len(s) - 1, -1, -1):
         result += s[i]
     return result
+print(reverse_string("Hello"))  # olleH
 
-print(reverse_string("Hello"))  # olleH</pre>
+# Check if a string is a palindrome
+def is_palindrome(s):
+    s = s.lower()               # case-insensitive
+    left = 0
+    right = len(s) - 1
+    while left &lt; right:
+        if s[left] != s[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+print(is_palindrome("Racecar"))  # True
+
+# Count occurrences of a character
+def count_char(s, target):
+    count = 0
+    for char in s:
+        if char == target:
+            count += 1
+    return count
+print(count_char("banana", "a"))  # 3
+
+# Caesar cipher encryption
+def caesar_encrypt(text, shift):
+    result = ""
+    for char in text:
+        if char.isalpha():
+            base = ord('A') if char.isupper() else ord('a')
+            result += chr((ord(char) - base + shift) % 26 + base)
+        else:
+            result += char
+    return result
+print(caesar_encrypt("Hello", 3))  # Khoor</pre>
 
 <!-- ==================== FILE HANDLING ==================== -->
 <h2>4.1.10 File Handling</h2>
 
-<p>Programs need to read from and write to files for <strong>persistent storage</strong> &mdash; data that survives after the program ends.</p>
+<p>Programs need to read from and write to files for <strong>persistent storage</strong> &mdash; data that survives after the program ends. Without files, all data would be lost when the program terminates (since variables are stored in RAM).</p>
 
 <h3>Text File Operations</h3>
-<pre># Writing to a file
-file = open("data.txt", "w")      # "w" = write (overwrites)
+<pre># Writing to a file (creates new or overwrites existing)
+file = open("data.txt", "w")      # "w" = write mode
 file.write("Line 1\n")
 file.write("Line 2\n")
 file.close()
 
-# Appending to a file
-file = open("data.txt", "a")      # "a" = append
+# Appending to a file (adds to end without overwriting)
+file = open("data.txt", "a")      # "a" = append mode
 file.write("Line 3\n")
 file.close()
 
-# Reading from a file
-file = open("data.txt", "r")      # "r" = read
-contents = file.read()            # read entire file
+# Reading entire file
+file = open("data.txt", "r")      # "r" = read mode
+contents = file.read()            # returns entire file as one string
 file.close()
 
 # Reading line by line
 file = open("data.txt", "r")
 for line in file:
-    print(line.strip())           # strip() removes \n
+    print(line.strip())           # strip() removes trailing \n
+file.close()
+
+# Reading all lines into a list
+file = open("data.txt", "r")
+lines = file.readlines()          # returns a list of strings
 file.close()</pre>
 
-<h3>Using <code>with</code> Statements</h3>
-<p>Best practice is to use <code>with</code> to automatically close the file, even if an exception occurs:</p>
+<h3>Using <code>with</code> Statements (Best Practice)</h3>
+<p>Best practice is to use <code>with</code> to automatically close the file, even if an exception occurs. This prevents resource leaks:</p>
 <pre>with open("data.txt", "r") as file:
     for line in file:
         print(line.strip())
-# file is automatically closed here</pre>
+# file is AUTOMATICALLY closed here, even if an error occurred</pre>
 
 <table>
-    <tr><th>Mode</th><th>Description</th></tr>
-    <tr><td><code>"r"</code></td><td>Read &mdash; file must exist</td></tr>
-    <tr><td><code>"w"</code></td><td>Write &mdash; creates file or overwrites existing</td></tr>
-    <tr><td><code>"a"</code></td><td>Append &mdash; adds to end of file</td></tr>
-    <tr><td><code>"r+"</code></td><td>Read and write</td></tr>
+    <tr><th>Mode</th><th>Description</th><th>File Must Exist?</th></tr>
+    <tr><td><code>"r"</code></td><td>Read only &mdash; file must exist or FileNotFoundError</td><td>Yes</td></tr>
+    <tr><td><code>"w"</code></td><td>Write &mdash; creates file or <strong>overwrites</strong> existing content</td><td>No (creates it)</td></tr>
+    <tr><td><code>"a"</code></td><td>Append &mdash; adds to end of file, preserving existing content</td><td>No (creates it)</td></tr>
+    <tr><td><code>"r+"</code></td><td>Read and write</td><td>Yes</td></tr>
 </table>
 
 <h3>CSV Files</h3>
+<p>CSV (Comma-Separated Values) files store tabular data as plain text, with each row on a new line and fields separated by commas. They are widely used for data exchange between applications.</p>
 <pre>import csv
 
 # Writing CSV
 with open("students.csv", "w", newline="") as file:
     writer = csv.writer(file)
-    writer.writerow(["Name", "Age", "Grade"])
+    writer.writerow(["Name", "Age", "Grade"])   # header row
     writer.writerow(["Alice", 17, "A"])
     writer.writerow(["Bob", 18, "B"])
+    writer.writerow(["Charlie", 17, "A*"])
 
 # Reading CSV
 with open("students.csv", "r") as file:
     reader = csv.reader(file)
+    header = next(reader)              # skip header row
     for row in reader:
-        print(row)          # ['Name', 'Age', 'Grade'] etc.</pre>
+        name, age, grade = row
+        print(f"{name} (age {age}): {grade}")
+
+# Searching in a CSV file
+def find_student(filename, target_name):
+    with open(filename, "r") as file:
+        reader = csv.reader(file)
+        next(reader)                   # skip header
+        for row in reader:
+            if row[0] == target_name:
+                return row
+    return None                        # not found</pre>
+
+<div class="exam-tip">
+    Always remember to close files after use (or use <code>with</code>). A common exam mistake is forgetting to handle the case where a file does not exist &mdash; wrap file operations in try/except. Also note the difference between <code>"w"</code> (which destroys existing content) and <code>"a"</code> (which preserves it).
+</div>
 
 <!-- ==================== ADTs ==================== -->
 <h2>4.1.11 Abstract Data Types</h2>
 
 <div class="definition-box">
-    <strong>Abstract Data Type (ADT):</strong> A logical description of how data is viewed and the operations that can be performed on it, without specifying how it is implemented. It defines <em>what</em> operations are available, not <em>how</em> they work internally.
+    <strong>Abstract Data Type (ADT):</strong> A logical description of how data is viewed and the operations that can be performed on it, without specifying how it is implemented. It defines <em>what</em> operations are available, not <em>how</em> they work internally. ADTs provide a layer of abstraction between the user of the data structure and its implementation.
 </div>
 
-<p>ADTs separate the <strong>interface</strong> (what operations exist) from the <strong>implementation</strong> (how the data is stored and manipulated). This is a form of abstraction and information hiding.</p>
+<p>ADTs separate the <strong>interface</strong> (what operations exist and what they do) from the <strong>implementation</strong> (how the data is stored and manipulated internally). This is a fundamental form of abstraction and information hiding. The same ADT can have multiple different implementations, and the implementation can be changed without affecting code that uses the ADT.</p>
 
 <h3>Common ADTs</h3>
 <table>
-    <tr><th>ADT</th><th>Key Operations</th><th>Possible Implementations</th></tr>
-    <tr><td>Stack</td><td>push, pop, peek, isEmpty</td><td>Array, linked list</td></tr>
-    <tr><td>Queue</td><td>enqueue, dequeue, peek, isEmpty</td><td>Array (circular), linked list</td></tr>
-    <tr><td>List</td><td>insert, delete, search, access by index</td><td>Array, linked list</td></tr>
-    <tr><td>Dictionary / Map</td><td>add, remove, lookup by key</td><td>Hash table, BST</td></tr>
-    <tr><td>Set</td><td>add, remove, union, intersection, difference</td><td>Hash table, BST</td></tr>
-    <tr><td>Tree</td><td>insert, delete, traverse</td><td>Linked nodes, array</td></tr>
-    <tr><td>Graph</td><td>addVertex, addEdge, traverse</td><td>Adjacency matrix, adjacency list</td></tr>
-    <tr><td>Priority Queue</td><td>insert with priority, remove highest priority</td><td>Heap, sorted array</td></tr>
+    <tr><th>ADT</th><th>Key Operations</th><th>Possible Implementations</th><th>Real-World Analogy</th></tr>
+    <tr><td><strong>Stack</strong></td><td>push, pop, peek, isEmpty</td><td>Array, linked list</td><td>Stack of plates &mdash; add/remove from top only</td></tr>
+    <tr><td><strong>Queue</strong></td><td>enqueue, dequeue, peek, isEmpty</td><td>Array (circular), linked list</td><td>Queue of people &mdash; join at back, served from front</td></tr>
+    <tr><td><strong>Priority Queue</strong></td><td>insert with priority, remove highest priority</td><td>Heap, sorted array</td><td>Hospital A&amp;E &mdash; most urgent treated first</td></tr>
+    <tr><td><strong>List</strong></td><td>insert, delete, search, access by index</td><td>Array, linked list</td><td>Shopping list &mdash; ordered collection of items</td></tr>
+    <tr><td><strong>Dictionary / Map</strong></td><td>add(key, value), remove, lookup by key</td><td>Hash table, BST</td><td>Phone book &mdash; look up number by name</td></tr>
+    <tr><td><strong>Set</strong></td><td>add, remove, union, intersection, difference, contains</td><td>Hash table, BST</td><td>Collection of unique items (no duplicates)</td></tr>
+    <tr><td><strong>Tree</strong></td><td>insert, delete, traverse</td><td>Linked nodes, array</td><td>Family tree &mdash; hierarchical relationships</td></tr>
+    <tr><td><strong>Graph</strong></td><td>addVertex, addEdge, traverse</td><td>Adjacency matrix, adjacency list</td><td>Road network &mdash; locations connected by roads</td></tr>
 </table>
 
 <p><strong>Benefits of ADTs:</strong></p>
 <ul>
-    <li>Encapsulation &mdash; internal workings are hidden from the user</li>
-    <li>Flexibility &mdash; the implementation can be changed without affecting code that uses the ADT</li>
-    <li>Modularity &mdash; complex systems can be built from well-defined components</li>
-    <li>Testability &mdash; each ADT can be tested independently</li>
+    <li><strong>Encapsulation</strong> &mdash; internal workings are hidden from the user; they interact only through the defined operations</li>
+    <li><strong>Flexibility</strong> &mdash; the implementation can be changed (e.g., from array to linked list) without affecting code that uses the ADT</li>
+    <li><strong>Modularity</strong> &mdash; complex systems can be built from well-defined, reusable components</li>
+    <li><strong>Testability</strong> &mdash; each ADT can be tested independently against its specification</li>
+    <li><strong>Abstraction</strong> &mdash; programmers can use the ADT without understanding the implementation details</li>
 </ul>
 
 <div class="exam-tip">
-    You may be asked to distinguish between an ADT and a data structure. An ADT is a theoretical concept (e.g., "a stack supports push and pop"). A data structure is the concrete implementation (e.g., "a stack implemented using an array with a top pointer"). The same ADT can have multiple implementations.
+    You may be asked to distinguish between an ADT and a data structure. An ADT is a theoretical concept that defines operations and behaviour (e.g., "a stack supports push and pop"). A data structure is the concrete implementation (e.g., "a stack implemented using an array with a top pointer"). The same ADT can have multiple implementations with different performance characteristics. For example, a queue can be implemented with a circular array (O(1) operations, fixed size) or a linked list (O(1) operations, dynamic size).
 </div>
 
 </div>

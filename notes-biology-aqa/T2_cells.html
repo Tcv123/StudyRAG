@@ -18,6 +18,8 @@
   .definition strong { color: #1e3a5f; }
   .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
   .exam-tip strong { color: #b45309; }
+  .case-study { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .case-study strong { color: #166534; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
@@ -28,36 +30,34 @@
 <h2>2.1 Cell Structure</h2>
 
 <div class="definition">
-<strong>Cell:</strong> The basic structural and functional unit of all living organisms. Cells are classified as either prokaryotic (no membrane-bound nucleus) or eukaryotic (membrane-bound nucleus and organelles).
+<strong>Cell:</strong> The basic structural and functional unit of all living organisms. Cells are classified as either <strong>prokaryotic</strong> (no membrane-bound nucleus; bacteria and archaea) or <strong>eukaryotic</strong> (membrane-bound nucleus and organelles; animals, plants, fungi, protists). All cells share certain features: a cell surface membrane, genetic material (DNA), ribosomes, and cytoplasm where metabolic reactions occur.
 </div>
 
 <h3>Eukaryotic Cell Organelles</h3>
 
 <table>
 <tr><th>Organelle</th><th>Structure</th><th>Function</th></tr>
-<tr><td>Nucleus</td><td>Double membrane (nuclear envelope) with pores; contains chromatin and nucleolus</td><td>Contains DNA; controls cell activities via mRNA production; nucleolus makes rRNA</td></tr>
-<tr><td>Mitochondria</td><td>Double membrane; inner membrane folded into cristae; matrix contains enzymes and own DNA</td><td>Site of aerobic respiration; produces ATP via oxidative phosphorylation</td></tr>
-<tr><td>Rough ER</td><td>Flattened membrane sacs (cisternae) studded with ribosomes</td><td>Synthesis and transport of proteins (especially secretory proteins)</td></tr>
-<tr><td>Smooth ER</td><td>Tubular membrane network; no ribosomes</td><td>Lipid and steroid synthesis; detoxification</td></tr>
-<tr><td>Golgi apparatus</td><td>Stack of flattened membrane sacs with vesicles</td><td>Modifies, packages, and sorts proteins; produces lysosomes and secretory vesicles</td></tr>
-<tr><td>Lysosomes</td><td>Single membrane vesicle containing hydrolytic enzymes</td><td>Intracellular digestion; breakdown of worn organelles; immune defence (after phagocytosis)</td></tr>
-<tr><td>Ribosomes</td><td>Two subunits (large + small); 80S in eukaryotes, 70S in prokaryotes</td><td>Site of translation (protein synthesis)</td></tr>
-<tr><td>Centrioles</td><td>Two cylindrical bundles of microtubules at right angles</td><td>Organise spindle fibres during cell division</td></tr>
-<tr><td>Chloroplasts (plants)</td><td>Double membrane; internal thylakoid membranes arranged in grana; stroma contains enzymes and own DNA</td><td>Site of photosynthesis</td></tr>
-<tr><td>Cell wall (plants)</td><td>Made of cellulose microfibrils</td><td>Provides structural support; prevents lysis due to osmotic pressure</td></tr>
-<tr><td>Vacuole (plants)</td><td>Large central vacuole with tonoplast membrane</td><td>Maintains turgor pressure; stores ions, pigments, waste</td></tr>
+<tr><td>Nucleus</td><td>Double membrane (nuclear envelope) with nuclear pores (~9 nm diameter); contains chromatin (DNA + histones) and one or more nucleoli</td><td>Contains DNA that controls cell activities via mRNA production. Nuclear pores allow mRNA and ribosomes to pass between nucleus and cytoplasm. Nucleolus produces ribosomal RNA (rRNA) for ribosome assembly.</td></tr>
+<tr><td>Mitochondria</td><td>Double membrane; inner membrane folded into cristae (increasing surface area); matrix contains enzymes, circular DNA, and 70S ribosomes</td><td>Site of aerobic respiration: the link reaction and Krebs cycle occur in the matrix; oxidative phosphorylation occurs on the cristae. Produces most of the cell's ATP. More cristae = more ATP synthase = more ATP production (e.g. muscle cells have many mitochondria with dense cristae).</td></tr>
+<tr><td>Rough Endoplasmic Reticulum (RER)</td><td>Flattened membrane sacs (cisternae) studded with 80S ribosomes on cytoplasmic face; continuous with nuclear envelope</td><td>Synthesis of proteins destined for secretion, membrane insertion, or lysosomes. Ribosomes on RER translate mRNA; the polypeptide is threaded into the ER lumen for folding and initial modification. Proteins are transported in vesicles to the Golgi.</td></tr>
+<tr><td>Smooth Endoplasmic Reticulum (SER)</td><td>Tubular membrane network; no ribosomes attached</td><td>Synthesis of lipids (phospholipids, steroids), detoxification of drugs and toxins (especially abundant in liver hepatocytes), storage and release of calcium ions (in muscle cells, the sarcoplasmic reticulum is specialised SER).</td></tr>
+<tr><td>Golgi apparatus</td><td>Stack of flattened membrane-bound sacs (cisternae) with vesicles budding from edges; has a cis face (receiving) and trans face (shipping)</td><td>Modifies proteins (glycosylation, phosphorylation), packages them into vesicles, and sorts them to correct destinations. Produces lysosomes and secretory vesicles. Very prominent in secretory cells (e.g. goblet cells producing mucus).</td></tr>
+<tr><td>Lysosomes</td><td>Single membrane vesicle containing hydrolytic (digestive) enzymes at ~pH 4.5</td><td>Intracellular digestion: breaks down worn-out organelles (autophagy), digests material engulfed by phagocytosis, and plays a role in apoptosis (programmed cell death). The acidic interior is maintained by H<sup>+</sup> pumps — if a lysosome ruptures, the enzymes are largely inactive at the cytoplasm's neutral pH, protecting the cell.</td></tr>
+<tr><td>Ribosomes</td><td>Two subunits (large + small) made of rRNA and protein. 80S in eukaryotes (large, in cytoplasm and on RER), 70S in prokaryotes (smaller, also found in mitochondria and chloroplasts)</td><td>Site of translation — mRNA codons are read and amino acids are assembled into polypeptides. Free ribosomes make proteins for use within the cell; bound ribosomes (on RER) make proteins for export or membrane insertion.</td></tr>
+<tr><td>Centrioles</td><td>Two cylindrical bundles of nine triplets of microtubules arranged at right angles to each other; found in animal cells (absent in most plant cells)</td><td>Organise the spindle fibres (microtubules) during cell division, ensuring chromosomes are pulled apart accurately. Also involved in forming cilia and flagella (basal body).</td></tr>
+<tr><td>Chloroplasts (plants only)</td><td>Double membrane (envelope); internal thylakoid membranes arranged in stacks called grana (singular: granum), connected by intergranal lamellae; stroma (fluid matrix) contains enzymes, circular DNA, and 70S ribosomes</td><td>Site of photosynthesis. Light-dependent reactions occur on the thylakoid membranes (photosystems, ETC, ATP synthase). Light-independent reactions (Calvin cycle) occur in the stroma. The large surface area of thylakoid membranes maximises light absorption.</td></tr>
+<tr><td>Cell wall (plants, fungi)</td><td>Made of cellulose microfibrils in plants (chitin in fungi); lies outside the cell membrane</td><td>Provides structural support and maintains cell shape. Prevents the cell from bursting (lysis) when water enters by osmosis — the cell becomes turgid instead. Freely permeable to most molecules (unlike the membrane).</td></tr>
+<tr><td>Vacuole (plants)</td><td>Large permanent central vacuole surrounded by a tonoplast membrane; contains cell sap (water, ions, sugars, pigments, waste products)</td><td>Maintains turgor pressure (keeping the plant upright); stores ions, sugars, amino acids, and pigments (e.g. anthocyanins for flower colour); stores waste products; helps regulate pH; the tonoplast controls what enters and leaves the vacuole.</td></tr>
 </table>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 500 420" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
   <text x="250" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">Animal Cell</text>
-  <!-- Cell membrane -->
   <ellipse cx="250" cy="220" rx="210" ry="170" fill="#1a73e8" opacity="0.04" stroke="#1a73e8" stroke-width="2.5"/>
   <text x="430" y="120" font-size="10" fill="#1a73e8" font-weight="bold">Cell</text>
   <text x="430" y="132" font-size="10" fill="#1a73e8" font-weight="bold">membrane</text>
   <line x1="420" y1="135" x2="440" y2="170" stroke="#1a73e8" stroke-width="1" stroke-dasharray="3"/>
-  <!-- Nucleus -->
   <ellipse cx="250" cy="200" rx="70" ry="55" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="2"/>
   <ellipse cx="250" cy="200" rx="65" ry="50" fill="none" stroke="#1a73e8" stroke-width="1" stroke-dasharray="3"/>
   <circle cx="250" cy="200" r="18" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1.5"/>
@@ -65,11 +65,9 @@
   <text x="250" y="240" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold">Nucleus</text>
   <text x="295" y="165" font-size="9" fill="#1a73e8">Nuclear pore</text>
   <circle cx="305" cy="158" r="3" fill="white" stroke="#1a73e8" stroke-width="1.5"/>
-  <!-- Mitochondria -->
   <ellipse cx="120" cy="140" rx="30" ry="15" fill="#DC2626" opacity="0.12" stroke="#DC2626" stroke-width="1.5"/>
   <path d="M 95,140 Q 105,130 115,140 Q 125,150 135,140" fill="none" stroke="#DC2626" stroke-width="1" opacity="0.5"/>
   <text x="120" y="170" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold">Mitochondrion</text>
-  <!-- Rough ER -->
   <path d="M 350,240 Q 370,230 380,245 Q 390,260 370,270 Q 350,280 340,265 Q 330,250 350,240" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.5"/>
   <circle cx="355" cy="242" r="2" fill="#16A34A"/>
   <circle cx="375" cy="248" r="2" fill="#16A34A"/>
@@ -78,29 +76,23 @@
   <circle cx="345" cy="260" r="2" fill="#16A34A"/>
   <text x="360" y="295" text-anchor="middle" font-size="10" fill="#16A34A" font-weight="bold">Rough ER</text>
   <text x="360" y="307" text-anchor="middle" font-size="9" fill="#16A34A">(ribosomes attached)</text>
-  <!-- Smooth ER -->
   <path d="M 380,170 Q 400,160 410,175 Q 420,190 400,195 Q 380,200 375,185 Q 370,170 380,170" fill="#16A34A" opacity="0.06" stroke="#16A34A" stroke-width="1.5"/>
   <text x="395" y="215" text-anchor="middle" font-size="10" fill="#16A34A" font-weight="bold">Smooth ER</text>
-  <!-- Golgi apparatus -->
   <path d="M 100,270 Q 130,260 160,270" fill="none" stroke="#D97706" stroke-width="2"/>
   <path d="M 103,280 Q 133,270 163,280" fill="none" stroke="#D97706" stroke-width="2"/>
   <path d="M 106,290 Q 136,280 166,290" fill="none" stroke="#D97706" stroke-width="2"/>
   <circle cx="170" cy="285" r="5" fill="#D97706" opacity="0.2" stroke="#D97706" stroke-width="1"/>
   <text x="133" y="310" text-anchor="middle" font-size="10" fill="#D97706" font-weight="bold">Golgi apparatus</text>
-  <!-- Ribosomes -->
   <circle cx="330" cy="180" r="3" fill="#1a1a2e"/>
   <circle cx="340" cy="175" r="3" fill="#1a1a2e"/>
   <circle cx="335" cy="188" r="3" fill="#1a1a2e"/>
   <text x="355" y="185" font-size="10" font-weight="bold">Ribosomes</text>
-  <!-- Lysosomes -->
   <circle cx="160" cy="330" r="14" fill="#DC2626" opacity="0.1" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="3"/>
   <text x="160" y="334" text-anchor="middle" font-size="8" fill="#DC2626">enzymes</text>
   <text x="160" y="360" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold">Lysosome</text>
-  <!-- Centrioles -->
-  <rect x="80" cy="95" y="85" width="20" height="10" rx="3" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="80" y="85" width="20" height="10" rx="3" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
   <rect x="88" y="92" width="10" height="20" rx="3" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="95" y="125" text-anchor="middle" font-size="10" font-weight="bold">Centrioles</text>
-  <!-- Cytoplasm label -->
   <text x="300" y="350" font-size="10" fill="#1a1a2e" opacity="0.5">Cytoplasm</text>
 </svg>
 </div>
@@ -109,110 +101,133 @@
 <svg viewBox="0 0 500 450" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
   <text x="250" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#16A34A">Plant Cell</text>
-  <!-- Cell wall -->
   <rect x="25" y="35" width="450" height="400" rx="12" fill="none" stroke="#16A34A" stroke-width="4" opacity="0.5"/>
   <text x="475" y="55" text-anchor="end" font-size="10" fill="#16A34A" font-weight="bold">Cell wall</text>
   <text x="475" y="67" text-anchor="end" font-size="9" fill="#16A34A">(cellulose)</text>
-  <!-- Cell membrane -->
   <rect x="35" y="45" width="430" height="380" rx="8" fill="#1a73e8" opacity="0.04" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="4"/>
-  <!-- Nucleus -->
   <ellipse cx="250" cy="180" rx="55" ry="45" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="2"/>
   <circle cx="250" cy="180" r="15" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1"/>
   <text x="250" y="184" text-anchor="middle" font-size="8" fill="#1a73e8">Nucleolus</text>
   <text x="250" y="215" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold">Nucleus</text>
-  <!-- Vacuole -->
   <ellipse cx="250" cy="310" rx="120" ry="60" fill="#1a73e8" opacity="0.06" stroke="#1a73e8" stroke-width="2" stroke-dasharray="4"/>
   <text x="250" y="314" text-anchor="middle" font-size="11" fill="#1a73e8" font-weight="bold">Large central vacuole</text>
   <text x="250" y="328" text-anchor="middle" font-size="9" fill="#1a73e8">(tonoplast membrane, cell sap)</text>
-  <!-- Chloroplasts -->
   <ellipse cx="100" cy="130" rx="28" ry="16" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="1.5"/>
   <line x1="82" y1="125" x2="118" y2="125" stroke="#16A34A" stroke-width="0.8"/>
   <line x1="85" y1="130" x2="115" y2="130" stroke="#16A34A" stroke-width="0.8"/>
   <line x1="82" y1="135" x2="118" y2="135" stroke="#16A34A" stroke-width="0.8"/>
   <text x="100" y="160" text-anchor="middle" font-size="10" fill="#16A34A" font-weight="bold">Chloroplast</text>
   <text x="100" y="172" text-anchor="middle" font-size="9" fill="#16A34A">(thylakoids, stroma)</text>
-  <!-- Mitochondrion -->
   <ellipse cx="400" cy="140" rx="25" ry="13" fill="#DC2626" opacity="0.12" stroke="#DC2626" stroke-width="1.5"/>
   <path d="M 380,140 Q 390,132 400,140 Q 410,148 420,140" fill="none" stroke="#DC2626" stroke-width="0.8"/>
   <text x="400" y="165" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold">Mitochondrion</text>
-  <!-- Rough ER -->
   <path d="M 340,210 Q 360,200 370,215 Q 380,230 360,235" fill="none" stroke="#D97706" stroke-width="1.5"/>
   <circle cx="348" cy="208" r="2" fill="#D97706"/>
   <circle cx="365" cy="210" r="2" fill="#D97706"/>
   <circle cx="372" cy="222" r="2" fill="#D97706"/>
   <text x="360" y="250" text-anchor="middle" font-size="10" fill="#D97706" font-weight="bold">Rough ER</text>
-  <!-- Golgi -->
-  <path d="M 90" y1="240" d="M 75,240 Q 100,232 125,240" fill="none" stroke="#D97706" stroke-width="1.5"/>
+  <path d="M 75,240 Q 100,232 125,240" fill="none" stroke="#D97706" stroke-width="1.5"/>
   <path d="M 78,248 Q 103,240 128,248" fill="none" stroke="#D97706" stroke-width="1.5"/>
   <text x="100" y="268" text-anchor="middle" font-size="10" fill="#D97706" font-weight="bold">Golgi</text>
-  <!-- Plasmodesmata -->
   <circle cx="30" cy="200" r="3" fill="#16A34A" stroke="#16A34A" stroke-width="1"/>
   <circle cx="30" cy="250" r="3" fill="#16A34A" stroke="#16A34A" stroke-width="1"/>
   <circle cx="30" cy="300" r="3" fill="#16A34A" stroke="#16A34A" stroke-width="1"/>
   <text x="55" y="255" font-size="9" fill="#16A34A" font-weight="bold" transform="rotate(-90,55,255)">Plasmodesmata</text>
-  <!-- Ribosomes -->
   <circle cx="380" cy="185" r="2.5" fill="#1a1a2e"/>
   <circle cx="388" cy="182" r="2.5" fill="#1a1a2e"/>
   <circle cx="384" cy="192" r="2.5" fill="#1a1a2e"/>
   <text x="400" y="192" font-size="9" font-weight="bold">Ribosomes</text>
-  <!-- Cytoplasm -->
   <text x="420" y="380" font-size="10" fill="#1a1a2e" opacity="0.5">Cytoplasm</text>
 </svg>
 </div>
 
+<h3>Comparing Animal and Plant Cells</h3>
+<table>
+<tr><th>Feature</th><th>Animal Cell</th><th>Plant Cell</th></tr>
+<tr><td>Cell wall</td><td>Absent</td><td>Present (cellulose)</td></tr>
+<tr><td>Chloroplasts</td><td>Absent</td><td>Present (in green parts)</td></tr>
+<tr><td>Large permanent vacuole</td><td>Absent (may have small temporary ones)</td><td>Present (large, central, with tonoplast)</td></tr>
+<tr><td>Centrioles</td><td>Present</td><td>Absent in most plant cells (present in lower plants like ferns)</td></tr>
+<tr><td>Starch / Glycogen</td><td>Stores glycogen</td><td>Stores starch</td></tr>
+<tr><td>Plasmodesmata</td><td>Absent</td><td>Present (cytoplasmic channels through cell walls connecting adjacent cells)</td></tr>
+</table>
+
 <h3>Prokaryotic Cells</h3>
-<p>Prokaryotic cells (bacteria) are smaller (typically 1-5 micrometres) and simpler than eukaryotic cells:</p>
+<p>Prokaryotic cells (bacteria and archaea) are significantly smaller (typically 0.5-5 micrometres diameter) and structurally simpler than eukaryotic cells (typically 10-100 micrometres):</p>
 <ul>
-<li>No membrane-bound nucleus — DNA is a single circular chromosome in the nucleoid region</li>
-<li>Small circular plasmids may also be present (carry genes for antibiotic resistance)</li>
-<li>70S ribosomes (smaller than eukaryotic 80S)</li>
-<li>No membrane-bound organelles (no mitochondria, ER, Golgi)</li>
-<li>Cell wall made of peptidoglycan (murein), not cellulose</li>
-<li>May have flagella for movement, pili for attachment, and a capsule (slime layer) for protection</li>
+<li><strong>No membrane-bound nucleus</strong> — DNA exists as a single, circular chromosome in the <strong>nucleoid region</strong> (not enclosed by a membrane). The DNA is not associated with histone proteins (though it is associated with other proteins for compaction).</li>
+<li><strong>Plasmids:</strong> Small, circular, self-replicating DNA molecules that may carry genes for antibiotic resistance, toxin production, or other survival advantages. Plasmids can be transferred between bacteria (horizontal gene transfer) and are widely used as vectors in genetic engineering.</li>
+<li><strong>70S ribosomes:</strong> Smaller than eukaryotic 80S ribosomes but functionally equivalent. This size difference is medically important — antibiotics such as erythromycin and chloramphenicol specifically target 70S ribosomes, inhibiting bacterial protein synthesis without affecting human 80S ribosomes.</li>
+<li><strong>No membrane-bound organelles</strong> — no mitochondria, ER, Golgi, or lysosomes. All metabolic processes occur in the cytoplasm or on the cell membrane.</li>
+<li><strong>Cell wall:</strong> Made of <strong>peptidoglycan</strong> (murein) — a polymer of sugars cross-linked by short amino acid chains. This is chemically distinct from the cellulose walls of plants. Gram-positive bacteria have a thick peptidoglycan layer; Gram-negative bacteria have a thin layer plus an outer lipopolysaccharide membrane.</li>
+<li><strong>Capsule (slime layer):</strong> A polysaccharide layer outside the cell wall in some bacteria. Provides protection against phagocytosis by white blood cells, desiccation, and helps with adhesion to surfaces (biofilm formation).</li>
+<li><strong>Flagella:</strong> Long, whip-like protein structures used for locomotion (powered by a proton-motive motor). Structurally different from eukaryotic flagella.</li>
+<li><strong>Pili (fimbriae):</strong> Short, hair-like protein projections used for attachment to host cells and for conjugation (transfer of plasmid DNA between bacteria).</li>
+<li><strong>Mesosomes:</strong> Infoldings of the cell membrane (though some consider these preparation artefacts). If present, they increase membrane surface area for respiration (since there are no mitochondria, respiratory enzymes are located on the cell membrane).</li>
 </ul>
 
 <div class="exam-tip">
-<strong>Exam Tip:</strong> Mitochondria and chloroplasts both have their own DNA and 70S ribosomes — this is evidence for the endosymbiotic theory (they were once free-living prokaryotes engulfed by an ancestral eukaryote).
+<strong>Exam Tip:</strong> Both mitochondria and chloroplasts have their own circular DNA and 70S ribosomes — this is key evidence for the <strong>endosymbiotic theory</strong>, which proposes they were once free-living prokaryotes engulfed by an ancestral eukaryotic cell. Additional evidence: they have double membranes (the inner membrane from the original prokaryote, the outer from the host's vesicle), they replicate by binary fission independently of the cell cycle, and their DNA sequences are more similar to bacterial DNA than to the host cell's nuclear DNA.
+</div>
+
+<div class="case-study">
+<strong>Application — Antibiotic Resistance:</strong> Bacteria can carry antibiotic resistance genes on plasmids. Through conjugation (direct transfer via pili), transformation (uptake of free DNA from the environment), or transduction (transfer via bacteriophages), these resistance genes can spread rapidly through bacterial populations. The overuse and misuse of antibiotics in medicine and agriculture has accelerated the evolution of multi-drug resistant strains (e.g. MRSA — methicillin-resistant <em>Staphylococcus aureus</em>). This is why antibiotics should only be prescribed when necessary and courses should always be completed.
 </div>
 
 <h2>2.2 Cell Fractionation and Ultracentrifugation</h2>
 
 <div class="definition">
-<strong>Cell fractionation:</strong> The process of separating cell components by breaking open cells (homogenisation) and spinning at increasing speeds (differential centrifugation) to isolate organelles by size and density.
+<strong>Cell fractionation:</strong> The process of separating cell components by breaking open cells (homogenisation) and spinning at increasing speeds (differential centrifugation) to isolate organelles by size and density. This allows the biochemical function of individual organelles to be studied in isolation.
 </div>
 
 <p>Steps in cell fractionation:</p>
 <ol>
-<li><strong>Homogenisation:</strong> Cells are broken open in ice-cold, isotonic, buffered solution. Ice-cold prevents enzyme activity; isotonic prevents osmotic damage to organelles; buffered maintains constant pH.</li>
-<li><strong>Filtration:</strong> The homogenate is filtered to remove large debris (cell walls, connective tissue).</li>
-<li><strong>Differential centrifugation:</strong> The filtrate is centrifuged at increasing speeds. The heaviest organelles sediment first as a pellet; the supernatant is transferred to a new tube and spun faster.</li>
+<li><strong>Homogenisation:</strong> Cells are broken open (by blender, Potter homogeniser, or ultrasound) in an ice-cold, isotonic, buffered solution.
+  <ul>
+  <li><strong>Ice-cold:</strong> Reduces kinase and hydrolytic enzyme activity, preventing digestion of organelles and their contents.</li>
+  <li><strong>Isotonic:</strong> Same water potential as cell contents — prevents organelles from swelling and bursting (in hypotonic solution) or shrinking (in hypertonic solution) due to osmosis.</li>
+  <li><strong>Buffered:</strong> Maintains a constant pH, preventing denaturation of enzymes within organelles.</li>
+  </ul>
+</li>
+<li><strong>Filtration:</strong> The homogenate is filtered through muslin or gauze to remove large cell debris (cell wall fragments, connective tissue, intact cells) that would interfere with separation.</li>
+<li><strong>Differential centrifugation:</strong> The filtrate is centrifuged at progressively increasing speeds. At each speed, the heaviest remaining organelles sediment to the bottom as a <strong>pellet</strong>; the <strong>supernatant</strong> (liquid above) is carefully transferred to a new tube and spun at a higher speed.
+  <ul>
+  <li>Low speed (~1000g for 10 min): <strong>Nuclei</strong> sediment (largest and heaviest)</li>
+  <li>Medium speed (~3500g for 10 min): <strong>Mitochondria</strong> (and chloroplasts if from plant cells)</li>
+  <li>Higher speed (~15,000g for 20 min): <strong>Lysosomes and peroxisomes</strong></li>
+  <li>Very high speed (~100,000g for 60 min): <strong>Ribosomes, endoplasmic reticulum fragments, and cell membrane vesicles</strong> (microsomes)</li>
+  </ul>
+</li>
 </ol>
 
-<p>Order of sedimentation (heaviest first): Nuclei → Mitochondria → Lysosomes → Ribosomes/ER</p>
+<p>Each pellet is resuspended and can be further purified by <strong>density gradient centrifugation</strong> (centrifuging through a sucrose density gradient, where organelles settle at the level matching their own density).</p>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Examiners frequently ask why each condition (ice-cold, isotonic, buffered) is necessary. Learn the three reasons as a set. Also remember: the order of sedimentation reflects organelle size/density. Nuclei first (largest), then mitochondria, then smaller structures. The final supernatant contains soluble cytoplasmic proteins.
+</div>
 
 <h2>2.3 Transport Across Cell Membranes</h2>
 
 <h3>The Fluid Mosaic Model</h3>
 <div class="definition">
-<strong>Fluid Mosaic Model:</strong> The cell membrane is described as a phospholipid bilayer with proteins embedded (integral/transmembrane) or attached to the surface (peripheral). It is "fluid" because phospholipids and proteins can move laterally, and "mosaic" because of the varied pattern of protein molecules.
+<strong>Fluid Mosaic Model (Singer and Nicolson, 1972):</strong> The cell surface membrane is a phospholipid bilayer with proteins embedded in or attached to it. It is called <strong>"fluid"</strong> because the individual phospholipids and proteins can move laterally within the plane of the membrane (lateral diffusion), and <strong>"mosaic"</strong> because the proteins are scattered across the membrane surface in a varied, patchwork pattern, like tiles in a mosaic.
 </div>
 
-<p>Components of the membrane:</p>
+<p>Components of the membrane and their functions:</p>
 <ul>
-<li><strong>Phospholipid bilayer:</strong> Forms the basic barrier; hydrophobic core prevents passage of polar/charged molecules</li>
-<li><strong>Cholesterol:</strong> Regulates fluidity — prevents membranes becoming too fluid or too rigid</li>
-<li><strong>Channel proteins:</strong> Water-filled pores allowing specific ions/polar molecules through (some are gated)</li>
-<li><strong>Carrier proteins:</strong> Change shape to transport specific molecules (facilitated diffusion or active transport)</li>
-<li><strong>Glycoproteins/glycolipids:</strong> Cell recognition, signalling, and adhesion</li>
+<li><strong>Phospholipid bilayer:</strong> Forms the fundamental barrier. The hydrophobic core prevents passage of polar molecules, ions, and large molecules. Small non-polar molecules (O<sub>2</sub>, CO<sub>2</sub>, steroid hormones) can pass through by dissolving in the hydrophobic core. The bilayer is selectively permeable.</li>
+<li><strong>Cholesterol:</strong> Sits between phospholipid tails, regulating membrane fluidity across a range of temperatures (see section 1.3). Makes the membrane less permeable to small water-soluble molecules and ions.</li>
+<li><strong>Integral (transmembrane) proteins:</strong> Span the entire bilayer. Include channel proteins (water-filled pores allowing specific ions or polar molecules to pass; some are gated — open/close in response to voltage or ligands) and carrier proteins (change shape to transport specific molecules across — used in facilitated diffusion and active transport).</li>
+<li><strong>Peripheral proteins:</strong> Attached to the inner or outer surface of the membrane (not embedded). Often have enzymatic or structural/signalling roles (e.g. components of the cytoskeleton, enzymes in metabolic pathways).</li>
+<li><strong>Glycoproteins:</strong> Proteins with carbohydrate chains attached, located on the extracellular surface. Function in cell-cell recognition (immune system identifies self vs non-self), cell signalling (hormone receptors), and cell adhesion.</li>
+<li><strong>Glycolipids:</strong> Lipids with carbohydrate chains attached, also on the extracellular surface. Contribute to cell recognition, stability of the membrane, and form part of the glycocalyx (sugar coat).</li>
 </ul>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 300" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
   <text x="260" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">Fluid Mosaic Model of Cell Membrane</text>
-  <!-- Extracellular label -->
   <text x="260" y="45" text-anchor="middle" font-size="10" fill="#1a1a2e" opacity="0.5">Extracellular space</text>
-  <!-- Upper phospholipid layer (heads) -->
   <g id="upper-heads">
     <circle cx="60" cy="80" r="10" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1.2"/>
     <circle cx="85" cy="80" r="10" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1.2"/>
@@ -226,7 +241,6 @@
     <circle cx="435" cy="80" r="10" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1.2"/>
     <circle cx="460" cy="80" r="10" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1.2"/>
   </g>
-  <!-- Upper tails -->
   <g stroke="#D97706" stroke-width="1.2" opacity="0.5">
     <line x1="60" y1="90" x2="57" y2="120"/><line x1="60" y1="90" x2="63" y2="120"/>
     <line x1="85" y1="90" x2="82" y2="120"/><line x1="85" y1="90" x2="88" y2="120"/>
@@ -240,7 +254,6 @@
     <line x1="435" y1="90" x2="432" y2="120"/><line x1="435" y1="90" x2="438" y2="120"/>
     <line x1="460" y1="90" x2="457" y2="120"/><line x1="460" y1="90" x2="463" y2="120"/>
   </g>
-  <!-- Lower tails -->
   <g stroke="#D97706" stroke-width="1.2" opacity="0.5">
     <line x1="60" y1="170" x2="57" y2="140"/><line x1="60" y1="170" x2="63" y2="140"/>
     <line x1="85" y1="170" x2="82" y2="140"/><line x1="85" y1="170" x2="88" y2="140"/>
@@ -254,7 +267,6 @@
     <line x1="435" y1="170" x2="432" y2="140"/><line x1="435" y1="170" x2="438" y2="140"/>
     <line x1="460" y1="170" x2="457" y2="140"/><line x1="460" y1="170" x2="463" y2="140"/>
   </g>
-  <!-- Lower phospholipid layer (heads) -->
   <g>
     <circle cx="60" cy="180" r="10" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1.2"/>
     <circle cx="85" cy="180" r="10" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1.2"/>
@@ -268,26 +280,20 @@
     <circle cx="435" cy="180" r="10" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1.2"/>
     <circle cx="460" cy="180" r="10" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1.2"/>
   </g>
-  <!-- Channel protein -->
   <rect x="155" y="65" width="45" height="130" rx="8" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="2"/>
   <rect x="166" y="65" width="23" height="130" rx="4" fill="#f8fafc" stroke="#16A34A" stroke-width="1" stroke-dasharray="3"/>
   <text x="177" y="135" text-anchor="middle" font-size="8" fill="#16A34A" font-weight="bold" transform="rotate(-90,177,135)">Channel protein</text>
-  <!-- Integral/carrier protein -->
   <rect x="265" y="65" width="30" height="130" rx="10" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="2"/>
   <text x="280" y="135" text-anchor="middle" font-size="8" fill="#DC2626" font-weight="bold" transform="rotate(-90,280,135)">Carrier protein</text>
-  <!-- Cholesterol -->
   <ellipse cx="375" cy="125" rx="12" ry="20" fill="#D97706" opacity="0.25" stroke="#D97706" stroke-width="1.5"/>
   <text x="375" y="100" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold">Cholesterol</text>
-  <!-- Glycoprotein -->
   <rect x="350" y="60" width="20" height="30" rx="4" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="1.5"/>
   <path d="M 352,60 Q 348,45 342,40 M 358,60 Q 360,48 365,42 M 368,60 Q 372,50 378,45" fill="none" stroke="#16A34A" stroke-width="1.5"/>
   <circle cx="342" cy="38" r="3" fill="#16A34A" opacity="0.4"/>
   <circle cx="365" cy="40" r="3" fill="#16A34A" opacity="0.4"/>
   <circle cx="378" cy="43" r="3" fill="#16A34A" opacity="0.4"/>
   <text x="360" y="35" text-anchor="middle" font-size="9" fill="#16A34A" font-weight="bold">Glycoprotein</text>
-  <!-- Intracellular label -->
   <text x="260" y="215" text-anchor="middle" font-size="10" fill="#1a1a2e" opacity="0.5">Intracellular (cytoplasm)</text>
-  <!-- Legend -->
   <rect x="30" y="230" width="460" height="60" rx="6" fill="white" stroke="#cbd5e1" stroke-width="1"/>
   <circle cx="55" cy="252" r="8" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1"/>
   <text x="68" y="256" font-size="10">Phospholipid head (hydrophilic)</text>
@@ -302,76 +308,113 @@
 
 <h3>Diffusion</h3>
 <div class="definition">
-<strong>Diffusion:</strong> The net movement of molecules or ions from a region of higher concentration to a region of lower concentration, down a concentration gradient. It is a passive process requiring no metabolic energy.
+<strong>Diffusion:</strong> The net movement of molecules or ions from a region of higher concentration to a region of lower concentration, down a concentration gradient. It is a <strong>passive</strong> process — it requires no metabolic energy (ATP) because it is driven by the random kinetic energy of the molecules themselves.
 </div>
 
-<p>Factors affecting rate of diffusion: concentration gradient (steeper = faster), temperature (higher = faster kinetic energy), surface area, thickness of membrane/exchange surface, size of molecule (smaller = faster).</p>
+<p>Factors affecting rate of diffusion (described by Fick's Law):</p>
+<div class="equation">
+Rate of diffusion &#8733; (Surface area x Concentration difference) / Thickness of barrier
+</div>
+<ul>
+<li><strong>Concentration gradient:</strong> Steeper gradient = faster diffusion. Maintained by constantly removing the substance on one side (e.g. blood flow past exchange surfaces).</li>
+<li><strong>Temperature:</strong> Higher temperature = greater kinetic energy = faster molecular movement = faster diffusion.</li>
+<li><strong>Surface area:</strong> Larger area = more space for molecules to cross = faster overall diffusion.</li>
+<li><strong>Thickness of membrane/barrier:</strong> Thinner barrier = shorter diffusion distance = faster diffusion.</li>
+<li><strong>Size of molecule:</strong> Smaller molecules diffuse faster than larger ones.</li>
+<li><strong>Polarity:</strong> Non-polar molecules (O<sub>2</sub>, CO<sub>2</sub>) diffuse directly through the phospholipid bilayer. Polar molecules and ions cannot easily cross the hydrophobic core and require membrane proteins.</li>
+</ul>
 
-<p><strong>Facilitated diffusion:</strong> Diffusion of polar molecules or ions through channel proteins or carrier proteins. Still passive (down the concentration gradient) but requires specific membrane proteins.</p>
+<p><strong>Facilitated diffusion:</strong> The passive movement of polar molecules or ions across a membrane <em>through</em> specific membrane proteins — either <strong>channel proteins</strong> (water-filled pores, often gated) or <strong>carrier proteins</strong> (which bind the molecule and change shape to release it on the other side). Facilitated diffusion is still passive (down the concentration gradient, no ATP required) but it depends on the number of available transport proteins, so it shows saturation kinetics (rate plateaus when all proteins are occupied).</p>
 
 <h3>Osmosis</h3>
 <div class="definition">
-<strong>Osmosis:</strong> The net movement of water molecules from a region of higher water potential (less negative) to a region of lower water potential (more negative) across a partially permeable membrane.
+<strong>Osmosis:</strong> The net movement of water molecules from a region of higher water potential (less negative / more dilute) to a region of lower water potential (more negative / more concentrated) across a <strong>partially permeable membrane</strong>. It is a special case of diffusion involving water only.
 </div>
 
 <div class="equation">
-Water potential (Ψ) = Pressure potential (Ψ<sub>p</sub>) + Solute potential (Ψ<sub>s</sub>)
+Water potential (&#936;) = Pressure potential (&#936;<sub>p</sub>) + Solute potential (&#936;<sub>s</sub>)
 </div>
 
-<p>Pure water has Ψ = 0. Adding solute makes Ψ<sub>s</sub> more negative, lowering overall Ψ. Water always moves from higher Ψ to lower Ψ.</p>
+<p><strong>Water potential (&#936;)</strong> is measured in kilopascals (kPa). Pure water has &#936; = 0 (the maximum). Adding solute makes &#936;<sub>s</sub> more negative, lowering overall &#936;. Water <strong>always</strong> moves from higher &#936; (less negative) to lower &#936; (more negative) across a partially permeable membrane. Pressure potential (&#936;<sub>p</sub>) is the physical pressure exerted on water — in plant cells, the rigid cell wall creates a positive pressure potential when the cell is turgid.</p>
 
-<p>Effects on cells:</p>
-<ul>
-<li><strong>Animal cell in hypotonic solution:</strong> Water enters by osmosis → cell swells → may lyse (cytolysis)</li>
-<li><strong>Animal cell in hypertonic solution:</strong> Water leaves → cell shrinks (crenation)</li>
-<li><strong>Plant cell in hypotonic solution:</strong> Water enters → vacuole expands → cell becomes turgid (cell wall prevents lysis)</li>
-<li><strong>Plant cell in hypertonic solution:</strong> Water leaves → membrane pulls away from wall (plasmolysis)</li>
-</ul>
+<p>Effects of osmosis on cells:</p>
+<table>
+<tr><th>Solution Type</th><th>Animal Cell</th><th>Plant Cell</th></tr>
+<tr><td><strong>Hypotonic</strong> (higher &#936; outside, dilute)</td><td>Water enters by osmosis &#8594; cell swells &#8594; may burst (<strong>cytolysis/lysis</strong>) because there is no cell wall to resist expansion</td><td>Water enters &#8594; vacuole expands &#8594; cell pushes against cell wall &#8594; becomes <strong>turgid</strong>. Cell wall prevents lysis. Turgid cells provide structural support to the plant.</td></tr>
+<tr><td><strong>Isotonic</strong> (same &#936;)</td><td>No net movement of water &#8594; cell maintains normal shape</td><td>No net movement &#8594; cell is <strong>flaccid</strong> (limp, not fully inflated)</td></tr>
+<tr><td><strong>Hypertonic</strong> (lower &#936; outside, concentrated)</td><td>Water leaves by osmosis &#8594; cell shrinks &#8594; <strong>crenation</strong> (becomes spiky/shrivelled)</td><td>Water leaves &#8594; vacuole shrinks &#8594; cell membrane pulls away from cell wall &#8594; <strong>plasmolysis</strong>. The cell is said to be plasmolysed. The plant wilts.</td></tr>
+</table>
+
+<div class="case-study">
+<strong>Application — IV Drips and Blood Transfusions:</strong> Intravenous fluids must be isotonic with blood (e.g. 0.9% saline — "normal saline" — or Ringer's solution). If a hypotonic solution were infused, red blood cells would swell and lyse (haemolysis). If a hypertonic solution were infused, red blood cells would crenate and be unable to carry oxygen efficiently. This is why the osmolarity of IV fluids is carefully controlled in clinical settings.
+</div>
 
 <h3>Active Transport</h3>
 <div class="definition">
-<strong>Active transport:</strong> The movement of molecules or ions across a membrane against their concentration gradient (from low to high concentration), requiring metabolic energy from ATP hydrolysis and specific carrier proteins.
+<strong>Active transport:</strong> The movement of molecules or ions across a membrane <strong>against</strong> their concentration gradient (from low to high concentration), requiring metabolic energy from <strong>ATP hydrolysis</strong> and specific <strong>carrier proteins</strong>. The carrier protein binds the molecule, ATP provides energy for a conformational change, and the molecule is released on the other side.
 </div>
 
-<h3>Co-transport</h3>
-<p>Co-transport couples the movement of one substance down its concentration gradient with the transport of another substance against its gradient. In the ileum:</p>
+<p>Key examples of active transport:</p>
+<ul>
+<li><strong>Na<sup>+</sup>/K<sup>+</sup> ATPase pump:</strong> Pumps 3 Na<sup>+</sup> out and 2 K<sup>+</sup> into the cell per ATP hydrolysed. Essential for maintaining resting potential in neurones, driving co-transport in the gut, and regulating cell volume.</li>
+<li><strong>Mineral ion uptake by root hair cells:</strong> Plants actively transport mineral ions (e.g. nitrate, magnesium) from the soil into root hair cells against steep concentration gradients.</li>
+<li><strong>H<sup>+</sup> pumping in chemiosmosis:</strong> Protons are actively pumped across mitochondrial inner membranes and thylakoid membranes to create the gradient that drives ATP synthesis.</li>
+</ul>
+
+<h3>Co-transport (Secondary Active Transport)</h3>
+<p>Co-transport couples the movement of one substance <em>down</em> its concentration gradient with the transport of another substance <em>against</em> its gradient, using the same carrier protein. The gradient of the first substance was established by active transport (primary), so co-transport indirectly requires ATP.</p>
+
+<p><strong>Glucose absorption in the ileum</strong> — a key AQA example:</p>
 <ol>
-<li>Na<sup>+</sup>/K<sup>+</sup> ATPase pumps Na<sup>+</sup> out of the epithelial cell into blood, maintaining a low intracellular Na<sup>+</sup> concentration.</li>
-<li>Na<sup>+</sup> diffuses back into the cell from the gut lumen via a sodium-glucose co-transporter, carrying glucose with it against glucose's concentration gradient.</li>
-<li>Glucose exits the cell into blood via facilitated diffusion through GLUT2 transporters on the basal membrane.</li>
+<li><strong>Na<sup>+</sup>/K<sup>+</sup> ATPase</strong> on the basal membrane pumps Na<sup>+</sup> out of the epithelial cell into the blood, maintaining a low intracellular [Na<sup>+</sup>].</li>
+<li>Na<sup>+</sup> diffuses back into the epithelial cell from the gut lumen via a <strong>sodium-glucose co-transporter (SGLT1)</strong> on the apical (brush border) membrane. The Na<sup>+</sup> moves down its concentration gradient, and this provides the energy to simultaneously carry glucose into the cell against glucose's concentration gradient.</li>
+<li>Glucose accumulates inside the cell to a concentration higher than in the blood. It then exits the cell into the blood via <strong>facilitated diffusion</strong> through GLUT2 transporters on the basal membrane.</li>
 </ol>
 
 <div class="exam-tip">
-<strong>Exam Tip:</strong> Co-transport still requires ATP indirectly — the Na+/K+ ATPase creates the sodium gradient that drives glucose uptake. It is not purely passive.
+<strong>Exam Tip:</strong> Co-transport still requires ATP indirectly — the Na<sup>+</sup>/K<sup>+</sup> ATPase pump creates the sodium gradient that drives glucose uptake. It is not purely passive. A common exam error is to describe co-transport as not requiring energy — always explain that the sodium gradient is maintained by active transport. Also: glucose absorption uses two different proteins — SGLT1 (apical, co-transport) and GLUT2 (basal, facilitated diffusion). Do not confuse them.
 </div>
+
+<h3>Endocytosis and Exocytosis</h3>
+<p><strong>Endocytosis</strong> is the bulk uptake of materials into the cell by invagination of the cell membrane to form a vesicle. <strong>Phagocytosis</strong> (cell eating) takes in large particles (e.g. bacteria engulfed by macrophages); <strong>pinocytosis</strong> (cell drinking) takes in fluid and dissolved molecules. Both require ATP.</p>
+
+<p><strong>Exocytosis</strong> is the reverse — vesicles fuse with the cell membrane, releasing their contents outside the cell. Used for secretion of hormones (e.g. insulin from beta cells), neurotransmitters (e.g. ACh at synapses), digestive enzymes (e.g. from pancreatic acinar cells), and cell wall materials in plants.</p>
+
+<h2>2.4 Cell Division — Mitosis</h2>
+
+<div class="definition">
+<strong>Cell cycle:</strong> The ordered sequence of events in a cell's life from one division to the next. It consists of <strong>interphase</strong> (G1, S, G2 — the cell grows, replicates DNA, and prepares for division) and the <strong>mitotic phase</strong> (mitosis + cytokinesis).
+</div>
+
+<p><strong>Interphase</strong> is the longest phase (~90% of cell cycle time) and consists of:</p>
+<ul>
+<li><strong>G1 (Gap 1):</strong> Cell grows, synthesises proteins and organelles, carries out normal functions. Cell cycle checkpoints verify the cell is ready to proceed.</li>
+<li><strong>S phase (Synthesis):</strong> DNA is replicated — each chromosome is copied to form two identical sister chromatids joined at the centromere. Histones are also synthesised.</li>
+<li><strong>G2 (Gap 2):</strong> Cell continues to grow, synthesises proteins needed for mitosis (e.g. tubulin for spindle fibres), checks for DNA replication errors.</li>
+</ul>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 540 320" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
   <text x="270" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a73e8">Stages of Mitosis</text>
-  <!-- Prophase -->
   <circle cx="70" cy="120" r="50" fill="#1a73e8" opacity="0.06" stroke="#1a73e8" stroke-width="2"/>
-  <!-- Condensed chromosomes -->
   <path d="M 55,100 Q 50,110 55,120 Q 60,130 55,140" fill="none" stroke="#DC2626" stroke-width="2.5"/>
   <path d="M 75,95 Q 80,108 75,120 Q 70,132 75,142" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
   <path d="M 65,98 Q 60,108 68,118" fill="none" stroke="#16A34A" stroke-width="2.5"/>
   <path d="M 82,105 Q 88,115 82,128" fill="none" stroke="#D97706" stroke-width="2.5"/>
   <text x="70" y="185" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a73e8">Prophase</text>
   <text x="70" y="198" text-anchor="middle" font-size="9">Chromosomes condense</text>
-  <text x="70" y="210" text-anchor="middle" font-size="9">Nuclear envelope breaks</text>
-  <text x="70" y="222" text-anchor="middle" font-size="9">Spindle fibres form</text>
-  <!-- Arrow -->
+  <text x="70" y="210" text-anchor="middle" font-size="9">and become visible</text>
+  <text x="70" y="222" text-anchor="middle" font-size="9">Nuclear envelope breaks</text>
+  <text x="70" y="234" text-anchor="middle" font-size="9">Spindle fibres form</text>
   <line x1="130" y1="120" x2="155" y2="120" stroke="#D97706" stroke-width="2" marker-end="url(#arrowMit)"/>
   <defs><marker id="arrowMit" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker></defs>
-  <!-- Metaphase -->
   <circle cx="200" cy="120" r="50" fill="#DC2626" opacity="0.06" stroke="#DC2626" stroke-width="2"/>
-  <!-- Chromosomes lined up at equator -->
   <line x1="200" y1="75" x2="200" y2="165" stroke="#1a1a2e" stroke-width="0.5" stroke-dasharray="3"/>
   <text x="200" y="72" text-anchor="middle" font-size="8" fill="#1a1a2e">Equator</text>
   <path d="M 195,95 L 195,105 M 205,95 L 205,105" stroke="#DC2626" stroke-width="3"/>
   <path d="M 195,115 L 195,125 M 205,115 L 205,125" stroke="#1a73e8" stroke-width="3"/>
   <path d="M 195,135 L 195,145 M 205,135 L 205,145" stroke="#16A34A" stroke-width="3"/>
-  <!-- Spindle fibres -->
   <line x1="200" y1="75" x2="175" y2="85" stroke="#1a1a2e" stroke-width="0.5" opacity="0.4"/>
   <line x1="200" y1="75" x2="225" y2="85" stroke="#1a1a2e" stroke-width="0.5" opacity="0.4"/>
   <line x1="200" y1="165" x2="175" y2="155" stroke="#1a1a2e" stroke-width="0.5" opacity="0.4"/>
@@ -379,125 +422,180 @@ Water potential (Ψ) = Pressure potential (Ψ<sub>p</sub>) + Solute potential (�
   <text x="200" y="185" text-anchor="middle" font-weight="bold" font-size="12" fill="#DC2626">Metaphase</text>
   <text x="200" y="198" text-anchor="middle" font-size="9">Chromosomes line up</text>
   <text x="200" y="210" text-anchor="middle" font-size="9">at the cell equator</text>
-  <text x="200" y="222" text-anchor="middle" font-size="9">Spindles attach to centromeres</text>
-  <!-- Arrow -->
+  <text x="200" y="222" text-anchor="middle" font-size="9">Spindles attach to</text>
+  <text x="200" y="234" text-anchor="middle" font-size="9">centromeres</text>
   <line x1="260" y1="120" x2="285" y2="120" stroke="#D97706" stroke-width="2" marker-end="url(#arrowMit)"/>
-  <!-- Anaphase -->
   <circle cx="330" cy="120" r="50" fill="#16A34A" opacity="0.06" stroke="#16A34A" stroke-width="2"/>
-  <!-- Chromatids being pulled apart -->
   <path d="M 315,95 L 312,85" stroke="#DC2626" stroke-width="2.5"/>
   <path d="M 345,95 L 348,85" stroke="#DC2626" stroke-width="2.5"/>
   <path d="M 315,110 L 310,100" stroke="#1a73e8" stroke-width="2.5"/>
   <path d="M 345,110 L 350,100" stroke="#1a73e8" stroke-width="2.5"/>
   <path d="M 315,130 L 310,140" stroke="#16A34A" stroke-width="2.5"/>
   <path d="M 345,130 L 350,140" stroke="#16A34A" stroke-width="2.5"/>
-  <!-- Pull arrows -->
-  <path d="M 312,85 L 308,78" stroke="#1a1a2e" stroke-width="0.5" opacity="0.4" marker-end="url(#arrowMit2)"/>
-  <path d="M 348,85 L 352,78" stroke="#1a1a2e" stroke-width="0.5" opacity="0.4"/>
-  <defs><marker id="arrowMit2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/></marker></defs>
   <text x="330" y="185" text-anchor="middle" font-weight="bold" font-size="12" fill="#16A34A">Anaphase</text>
   <text x="330" y="198" text-anchor="middle" font-size="9">Sister chromatids</text>
   <text x="330" y="210" text-anchor="middle" font-size="9">pulled to opposite poles</text>
-  <text x="330" y="222" text-anchor="middle" font-size="9">by spindle fibres</text>
-  <!-- Arrow -->
+  <text x="330" y="222" text-anchor="middle" font-size="9">by shortening spindles</text>
+  <text x="330" y="234" text-anchor="middle" font-size="9">Centromeres divide</text>
   <line x1="390" y1="120" x2="415" y2="120" stroke="#D97706" stroke-width="2" marker-end="url(#arrowMit)"/>
-  <!-- Telophase -->
   <ellipse cx="460" cy="105" rx="30" ry="30" fill="#D97706" opacity="0.06" stroke="#D97706" stroke-width="1.5"/>
   <ellipse cx="460" cy="140" rx="30" ry="30" fill="#D97706" opacity="0.06" stroke="#D97706" stroke-width="1.5"/>
-  <!-- Nuclear envelopes reforming -->
   <ellipse cx="460" cy="100" rx="15" ry="10" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="1" stroke-dasharray="3"/>
   <ellipse cx="460" cy="140" rx="15" ry="10" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="1" stroke-dasharray="3"/>
-  <!-- Chromosomes decondensing -->
   <path d="M 455,97 Q 458,100 462,98" stroke="#DC2626" stroke-width="1.5"/>
   <path d="M 455,103 Q 460,105 465,102" stroke="#1a73e8" stroke-width="1.5"/>
   <path d="M 455,137 Q 458,140 462,138" stroke="#DC2626" stroke-width="1.5"/>
   <path d="M 455,143 Q 460,145 465,142" stroke="#1a73e8" stroke-width="1.5"/>
-  <!-- Cleavage furrow -->
   <line x1="428" y1="122" x2="492" y2="122" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4"/>
   <text x="460" y="185" text-anchor="middle" font-weight="bold" font-size="12" fill="#D97706">Telophase</text>
   <text x="460" y="198" text-anchor="middle" font-size="9">Nuclear envelopes reform</text>
   <text x="460" y="210" text-anchor="middle" font-size="9">Chromosomes decondense</text>
-  <text x="460" y="222" text-anchor="middle" font-size="9">Cytokinesis divides cell</text>
-  <!-- Result -->
-  <rect x="120" y="250" width="300" height="55" rx="8" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="270" y="270" text-anchor="middle" font-weight="bold" font-size="11" fill="#16A34A">Result: 2 genetically identical diploid daughter cells</text>
-  <text x="270" y="288" text-anchor="middle" font-size="10" fill="#16A34A">Each with the same number of chromosomes as the parent cell</text>
+  <text x="460" y="222" text-anchor="middle" font-size="9">Cytokinesis divides</text>
+  <text x="460" y="234" text-anchor="middle" font-size="9">cytoplasm</text>
+  <rect x="120" y="258" width="300" height="55" rx="8" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="270" y="278" text-anchor="middle" font-weight="bold" font-size="11" fill="#16A34A">Result: 2 genetically identical diploid daughter cells</text>
+  <text x="270" y="296" text-anchor="middle" font-size="10" fill="#16A34A">Same number of chromosomes as the parent cell</text>
 </svg>
 </div>
 
-<h2>2.4 Cell Recognition and the Immune System</h2>
+<p><strong>Importance of mitosis:</strong> Growth and development of multicellular organisms, repair of damaged tissues, asexual reproduction (e.g. binary fission in unicellular eukaryotes, vegetative propagation in plants). All daughter cells are genetically identical clones of the parent cell.</p>
+
+<div class="definition">
+<strong>Mitotic index:</strong> The proportion of cells in a tissue that are undergoing mitosis at any given time. Mitotic index = number of cells in mitosis / total number of cells observed. A high mitotic index indicates rapid cell division and may suggest the presence of a tumour.
+</div>
+
+<div class="case-study">
+<strong>Application — Cancer:</strong> Cancer results from uncontrolled mitosis. Mutations in genes regulating the cell cycle — particularly <strong>proto-oncogenes</strong> (which promote cell division, becoming oncogenes when mutated to be permanently active) and <strong>tumour suppressor genes</strong> (like p53 and Rb, which normally halt the cell cycle at checkpoints) — can lead to unregulated cell proliferation. Chemotherapy drugs often target rapidly dividing cells: vincristine inhibits spindle formation (preventing metaphase to anaphase transition), while cisplatin cross-links DNA, preventing replication. The high mitotic index of cancer cells makes them more susceptible to these drugs, but rapidly dividing normal cells (hair follicles, gut epithelium, bone marrow) are also affected, causing side effects.
+</div>
+
+<h2>2.5 Cell Recognition and the Immune System</h2>
 
 <h3>Self and Non-Self</h3>
-<p>Every cell displays specific proteins and glycoproteins on its surface. The immune system recognises "self" antigens (the organism's own markers) and mounts a response against "non-self" antigens (from pathogens or foreign cells).</p>
+<p>Every nucleated cell displays <strong>MHC (Major Histocompatibility Complex)</strong> proteins on its surface — these are the "self" markers that identify the cell as belonging to the organism. The immune system is trained to tolerate self-antigens but to mount a response against <strong>non-self antigens</strong> (foreign molecules, usually proteins or glycoproteins on the surface of pathogens, toxins, or transplanted cells).</p>
 
 <div class="definition">
-<strong>Antigen:</strong> A molecule (usually a protein or glycoprotein) on the surface of a cell that can trigger an immune response. Pathogens carry foreign antigens that are recognised by the immune system.
+<strong>Antigen:</strong> Any molecule (usually a protein or glycoprotein) that can be recognised by the immune system and trigger an immune response. Pathogens carry <strong>non-self antigens</strong> on their surface. The immune system can also respond to abnormal self-antigens on cancer cells and to antigens on transplanted organs (causing rejection).
 </div>
 
-<h3>Phagocytosis</h3>
+<h3>Phagocytosis — Non-Specific (Innate) Immune Response</h3>
+<p>Phagocytes (neutrophils and macrophages) provide a rapid, non-specific first line of defence:</p>
 <ol>
-<li>Phagocyte (e.g. macrophage) is attracted to pathogen by chemicals released at site of infection (chemotaxis).</li>
-<li>Phagocyte recognises non-self antigens on the pathogen surface.</li>
-<li>Phagocyte engulfs pathogen by endocytosis, forming a phagosome.</li>
-<li>Lysosomes fuse with phagosome, releasing hydrolytic enzymes (lysozymes) that digest the pathogen.</li>
-<li>Phagocyte presents pathogen antigens on its surface (becomes an antigen-presenting cell, APC) to activate the specific immune response.</li>
+<li><strong>Chemotaxis:</strong> Phagocyte is attracted to the site of infection by chemical signals (cytokines, complement proteins, chemicals released by damaged cells).</li>
+<li><strong>Recognition:</strong> Phagocyte recognises non-self antigens on the pathogen surface (may be enhanced by opsonisation — coating the pathogen with antibodies or complement proteins).</li>
+<li><strong>Engulfment:</strong> Phagocyte extends pseudopodia (cytoplasmic extensions) around the pathogen, engulfing it by endocytosis into a membrane-bound vesicle called a <strong>phagosome</strong>.</li>
+<li><strong>Digestion:</strong> Lysosomes fuse with the phagosome, forming a <strong>phagolysosome</strong>. Hydrolytic enzymes (lysozymes, proteases) and reactive oxygen species digest and destroy the pathogen.</li>
+<li><strong>Antigen presentation:</strong> The phagocyte processes pathogen antigens and displays them on its surface bound to MHC II molecules. It becomes an <strong>antigen-presenting cell (APC)</strong>, which is essential for activating the specific (adaptive) immune response.</li>
 </ol>
 
-<h3>T Lymphocytes (T Cells)</h3>
-<p>T cells mature in the thymus and have specific receptors complementary to one antigen. When activated by APCs:</p>
+<h3>T Lymphocytes (T Cells) — Specific (Adaptive) Immune Response</h3>
+<p>T cells mature in the <strong>thymus</strong> gland, where they are selected to respond to non-self antigens only (self-reactive T cells are eliminated — this prevents autoimmune disease). Each T cell has a unique <strong>T cell receptor (TCR)</strong> on its surface that is complementary to one specific antigen.</p>
+
+<p>When an APC presents a matching antigen to a T cell, the T cell is activated and undergoes clonal expansion (rapid mitosis). T cells differentiate into several types:</p>
 <ul>
-<li><strong>Helper T cells (T<sub>H</sub>):</strong> Release cytokines that stimulate B cells to divide, activate cytotoxic T cells, and attract phagocytes.</li>
-<li><strong>Cytotoxic T cells (T<sub>C</sub>):</strong> Kill infected body cells by releasing perforin (creates pores in target cell membrane) causing lysis.</li>
-<li><strong>Memory T cells:</strong> Remain in the body long-term for a faster secondary response.</li>
+<li><strong>Helper T cells (T<sub>H</sub>, CD4+):</strong> The coordinators of the immune response. They release <strong>cytokines</strong> (interleukins) that: stimulate B cells to divide and differentiate into plasma cells; activate cytotoxic T cells; attract more phagocytes to the infection site; stimulate macrophage activity. Without helper T cells, neither the humoral nor the cell-mediated immune response can function effectively.</li>
+<li><strong>Cytotoxic T cells (T<sub>C</sub>, CD8+):</strong> Kill infected body cells, cancer cells, and transplanted cells that display foreign antigens. They release <strong>perforin</strong> (a protein that creates pores in the target cell membrane, causing lysis) and <strong>granzymes</strong> (enzymes that trigger apoptosis — programmed cell death).</li>
+<li><strong>Memory T cells:</strong> Long-lived cells that remain in the body for years or decades. They provide a faster and stronger secondary immune response upon re-exposure to the same antigen.</li>
 </ul>
 
-<h3>B Lymphocytes (B Cells) and Antibodies</h3>
-<p>B cells mature in the bone marrow. Each B cell produces one type of antibody complementary to one specific antigen. When activated (by helper T cells and antigen binding):</p>
+<h3>B Lymphocytes (B Cells) and Antibodies — Humoral Immunity</h3>
+<p>B cells mature in the <strong>bone marrow</strong>. Each B cell produces one specific type of antibody, which is displayed on its surface as a B cell receptor. Activation requires two signals: the antigen binding to the B cell receptor, AND stimulation by cytokines from helper T cells (this dual requirement prevents inappropriate immune activation).</p>
+
+<p>Once activated, B cells undergo <strong>clonal expansion</strong> (rapid mitosis) and differentiate into:</p>
 <ul>
-<li>B cells undergo clonal expansion (rapid mitosis).</li>
-<li>They differentiate into plasma cells (secrete large quantities of antibodies) and memory B cells.</li>
+<li><strong>Plasma cells:</strong> Short-lived cells that act as antibody factories, secreting up to 2000 antibody molecules per second into the blood and lymph. They are full of rough ER for protein synthesis.</li>
+<li><strong>Memory B cells:</strong> Long-lived cells that persist in the body and can rapidly differentiate into plasma cells upon re-exposure to the same antigen, providing a much faster and larger secondary response.</li>
 </ul>
 
 <div class="definition">
-<strong>Antibody:</strong> A Y-shaped glycoprotein (immunoglobulin) produced by plasma cells. It has two identical antigen-binding sites in the variable regions, which are complementary to one specific antigen. The constant region determines the class of antibody.
+<strong>Antibody (Immunoglobulin):</strong> A Y-shaped glycoprotein with quaternary structure, produced by plasma cells. It consists of four polypeptide chains (two identical heavy chains and two identical light chains) linked by disulfide bonds. Each antibody has two identical <strong>antigen-binding sites</strong> in the variable regions at the tips of the Y — these are complementary in shape to one specific antigen (like an enzyme's active site). The constant region (stem of the Y) determines the antibody class (IgG, IgA, IgM, etc.) and how it interacts with the rest of the immune system.
 </div>
 
-<p>How antibodies work:</p>
+<p>How antibodies help destroy pathogens:</p>
 <ul>
-<li><strong>Agglutination:</strong> Clumping pathogens together so phagocytes can engulf them more easily</li>
-<li><strong>Neutralisation:</strong> Blocking binding sites on toxins or viruses</li>
-<li><strong>Opsonisation:</strong> Coating pathogens to make them more recognisable to phagocytes</li>
+<li><strong>Agglutination:</strong> Antibodies (with two binding sites each) cross-link multiple pathogens together, forming clumps. This prevents pathogen movement and makes phagocytosis more efficient (one phagocyte can engulf the whole clump).</li>
+<li><strong>Neutralisation:</strong> Antibodies bind to toxins or viral surface proteins, blocking the active/binding sites so the toxin cannot bind to host cell receptors and the virus cannot enter cells.</li>
+<li><strong>Opsonisation:</strong> Antibodies coat the pathogen surface. Phagocytes have receptors for the constant region of antibodies, so opsonised pathogens are recognised and engulfed much more efficiently.</li>
+<li><strong>Complement activation:</strong> Antibodies bound to pathogen surfaces activate the complement cascade, leading to formation of membrane attack complexes (MACs) that punch holes in pathogen membranes, causing lysis.</li>
 </ul>
 
 <h3>Primary and Secondary Immune Response</h3>
 <table>
 <tr><th>Feature</th><th>Primary Response</th><th>Secondary Response</th></tr>
-<tr><td>Speed</td><td>Slow (days to weeks)</td><td>Rapid (hours to days)</td></tr>
-<tr><td>Antibody quantity</td><td>Low</td><td>Much higher</td></tr>
-<tr><td>Cause</td><td>First exposure to antigen</td><td>Re-exposure to same antigen</td></tr>
-<tr><td>Cells involved</td><td>Naive B and T cells</td><td>Memory B and T cells</td></tr>
+<tr><td>Timing</td><td>Slow onset (7-14 days to peak antibody levels)</td><td>Rapid onset (1-3 days to peak)</td></tr>
+<tr><td>Antibody quantity</td><td>Low peak concentration</td><td>Much higher peak (often 100-1000x more)</td></tr>
+<tr><td>Duration</td><td>Short-lived (antibody levels decline quickly)</td><td>Longer-lasting (antibodies persist for longer)</td></tr>
+<tr><td>Cause</td><td>First exposure to a specific antigen</td><td>Re-exposure to the same antigen</td></tr>
+<tr><td>Cells involved</td><td>Naive B and T cells must be activated (slow clonal selection)</td><td>Memory B and T cells are pre-expanded and respond rapidly</td></tr>
+<tr><td>Symptoms</td><td>Person usually becomes ill</td><td>Response is fast enough that symptoms may not develop</td></tr>
 </table>
 
 <h3>Vaccination</h3>
 <div class="definition">
-<strong>Vaccination:</strong> The introduction of a weakened, inactivated, or fragment of a pathogen (containing antigens) to stimulate a primary immune response and production of memory cells, without causing the disease. This provides immunity against future infection.
+<strong>Vaccination (Immunisation):</strong> The deliberate introduction of antigenic material (a vaccine) to stimulate a primary immune response and production of memory cells, providing immunity against future infection without causing the disease. The memory cells enable a rapid secondary response if the real pathogen is encountered later.
 </div>
 
-<p>Types of vaccines: live attenuated, inactivated whole pathogen, subunit (purified antigen), toxoid, mRNA vaccines.</p>
+<p>Types of vaccine:</p>
+<ul>
+<li><strong>Live attenuated:</strong> Weakened form of the pathogen that replicates but does not cause disease (e.g. MMR, BCG). Strong, long-lasting immunity but unsuitable for immunocompromised individuals.</li>
+<li><strong>Inactivated (killed):</strong> Pathogen killed by heat or chemicals (e.g. influenza injection, hepatitis A). Safe but may require booster doses.</li>
+<li><strong>Subunit/recombinant:</strong> Purified antigen proteins only, no whole pathogen (e.g. hepatitis B — recombinant HBsAg protein produced in yeast). Very safe but may need adjuvants to boost immune response.</li>
+<li><strong>Toxoid:</strong> Inactivated toxin (e.g. tetanus, diphtheria). Produces antibodies against the toxin rather than the pathogen itself.</li>
+<li><strong>mRNA vaccines:</strong> Contain mRNA encoding a pathogen antigen (e.g. spike protein of SARS-CoV-2). Host cells translate the mRNA, produce the antigen, and the immune system responds. mRNA is rapidly degraded and does not enter the nucleus or alter DNA.</li>
+</ul>
+
+<div class="case-study">
+<strong>Application — Herd Immunity:</strong> When a high proportion of a population is vaccinated (the herd immunity threshold varies by disease — ~95% for measles, ~80-85% for polio), the pathogen cannot spread easily because there are too few susceptible hosts. This protects individuals who cannot be vaccinated (e.g. infants, immunocompromised patients, those with allergies to vaccine components). Herd immunity is a public health goal, not just individual protection.
+</div>
 
 <h3>HIV and the Immune System</h3>
-<p>HIV (Human Immunodeficiency Virus) is a retrovirus that infects and destroys helper T cells (CD4+ cells):</p>
+<p><strong>HIV (Human Immunodeficiency Virus)</strong> is a retrovirus that specifically targets and destroys <strong>helper T cells (CD4+ cells)</strong>:</p>
 <ol>
-<li>HIV binds to CD4 receptor on helper T cells using its glycoprotein gp120.</li>
-<li>Viral RNA is reverse transcribed into DNA by reverse transcriptase.</li>
-<li>Viral DNA integrates into host genome.</li>
-<li>Host cell machinery produces new viral particles.</li>
-<li>Helper T cell is destroyed during viral budding.</li>
+<li>HIV glycoprotein <strong>gp120</strong> binds to the <strong>CD4 receptor</strong> on helper T cells (and a co-receptor, CCR5 or CXCR4).</li>
+<li>The viral envelope fuses with the host cell membrane; viral RNA and enzymes enter the cell.</li>
+<li><strong>Reverse transcriptase</strong> converts viral RNA into complementary DNA (cDNA), which is then made double-stranded.</li>
+<li><strong>Integrase</strong> inserts the viral DNA into the host cell's genome (it becomes a provirus).</li>
+<li>The host cell's machinery transcribes the viral DNA and translates it, producing new viral proteins and RNA.</li>
+<li>New viral particles assemble and bud from the host cell membrane, destroying the helper T cell in the process.</li>
 </ol>
-<p>As helper T cell count falls, the immune system becomes compromised. The patient becomes vulnerable to opportunistic infections — this stage is AIDS (Acquired Immunodeficiency Syndrome).</p>
+
+<p>As the helper T cell count progressively falls (from a normal ~1000 per mm<sup>3</sup> to below 200), the immune system becomes severely compromised. The patient becomes vulnerable to <strong>opportunistic infections</strong> (e.g. <em>Pneumocystis</em> pneumonia, tuberculosis, <em>Candida</em> infections, Kaposi's sarcoma) — this stage is defined as <strong>AIDS (Acquired Immunodeficiency Syndrome)</strong>.</p>
+
+<p>Why HIV is difficult to control with vaccines:</p>
+<ul>
+<li>HIV has a very high mutation rate (reverse transcriptase is error-prone), producing many antigenic variants</li>
+<li>HIV integrates into the host genome, hiding from the immune system (latent provirus)</li>
+<li>HIV directly attacks the immune cells (helper T cells) needed to mount a response against it</li>
+<li>The virus can spread through cell-to-cell contact without being exposed to antibodies</li>
+</ul>
 
 <div class="exam-tip">
-<strong>Exam Tip:</strong> HIV does not directly kill the person — it destroys helper T cells, meaning the body cannot mount effective immune responses to other infections. Always make this distinction clear in exam answers.
+<strong>Exam Tip:</strong> HIV does not directly kill the person — it destroys helper T cells, meaning the body cannot coordinate effective immune responses against other infections. Death results from opportunistic infections, not from HIV itself. Always make this distinction clear. Also: HIV is a retrovirus because it uses reverse transcriptase to convert RNA to DNA (the reverse of the normal flow of genetic information). Antiretroviral therapy (ART) targets multiple stages of the viral life cycle (e.g. reverse transcriptase inhibitors, protease inhibitors, integrase inhibitors) — combination therapy reduces the chance of resistance evolving.
+</div>
+
+<h3>Monoclonal Antibodies</h3>
+<div class="definition">
+<strong>Monoclonal antibodies:</strong> Identical antibodies produced by a single clone of B cells (hybridoma cells). They are specific to one epitope (binding site) on one antigen, making them highly targeted tools for medicine and research.
+</div>
+
+<p>Production of monoclonal antibodies:</p>
+<ol>
+<li>Inject a mouse with the target antigen to stimulate an immune response.</li>
+<li>Extract B cells from the mouse's spleen (these produce the desired antibody but have a limited lifespan).</li>
+<li>Fuse the B cells with immortal myeloma (cancer) cells using polyethylene glycol, creating <strong>hybridoma cells</strong> that both produce antibodies and divide indefinitely.</li>
+<li>Screen hybridomas to select those producing the correct antibody.</li>
+<li>Clone the selected hybridoma and grow in culture to produce large quantities of identical antibodies.</li>
+</ol>
+
+<p>Medical applications:</p>
+<ul>
+<li><strong>Pregnancy tests:</strong> Detect hCG (human chorionic gonadotropin) in urine using monoclonal antibodies bound to coloured particles.</li>
+<li><strong>Cancer treatment:</strong> Monoclonal antibodies targeted to tumour-specific antigens (e.g. Herceptin / trastuzumab targets HER2 on breast cancer cells). Can be conjugated to cytotoxic drugs, radioactive isotopes, or immune-stimulating molecules.</li>
+<li><strong>Diagnostic testing:</strong> ELISA tests for infections (e.g. HIV antibody test), blood typing, measuring hormone levels.</li>
+<li><strong>Transplant rejection prevention:</strong> Anti-CD3 antibodies suppress T cell activation.</li>
+</ul>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Ethical concerns with monoclonal antibody production include animal use (mice) in the initial stages and side effects in patients (e.g. allergic reactions to mouse-derived proteins — humanised antibodies have been developed to reduce this). Be prepared to discuss both benefits and limitations in extended response questions.
 </div>
 
 </div></body></html>

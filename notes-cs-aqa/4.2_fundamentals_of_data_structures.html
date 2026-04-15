@@ -107,10 +107,22 @@
             font-weight: 700;
             color: #b45309;
         }
+        .real-world {
+            background: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 16px 20px;
+            margin-bottom: 18px;
+            border-radius: 0 8px 8px 0;
+        }
+        .real-world::before {
+            content: "Real-World Example: ";
+            font-weight: 700;
+            color: #15803d;
+        }
         @media print {
             body { padding: 20px; }
             h2 { break-before: auto; }
-            pre, .definition-box, .exam-tip { break-inside: avoid; }
+            pre, .definition-box, .exam-tip, .real-world { break-inside: avoid; }
         }
     </style>
 </head>
@@ -125,58 +137,85 @@
 <h2>4.2.1 Arrays</h2>
 
 <div class="definition-box">
-    <strong>Array:</strong> An ordered, fixed-size collection of elements of the <strong>same data type</strong>, stored in contiguous memory locations. Elements are accessed by their index.
+    <strong>Array:</strong> An ordered, fixed-size collection of elements of the <strong>same data type</strong>, stored in <strong>contiguous</strong> (adjacent) memory locations. Elements are accessed by their index in <strong>O(1) constant time</strong> because the memory address can be calculated directly: <code>address = base_address + (index &times; element_size)</code>.
 </div>
 
 <h3>One-Dimensional (1D) Arrays</h3>
-<p>A simple list of elements accessed by a single index. Most languages use <strong>zero-based indexing</strong> (first element at index 0).</p>
-<pre>names = ["Alice", "Bob", "Charlie", "Diana"]
-# Index:    0        1        2         3
+<p>A simple list of elements accessed by a single index. Most languages use <strong>zero-based indexing</strong> (first element at index 0). Some languages like Pascal and pseudocode use one-based indexing.</p>
+<pre>names = ["Alice", "Bob", "Charlie", "Diana", "Eve"]
+# Index:    0        1        2         3       4
 
-print(names[0])     # Alice
-print(names[2])     # Charlie
-names[1] = "Ben"    # Modify element at index 1</pre>
+print(names[0])     # Alice (first element)
+print(names[4])     # Eve (last element)
+print(names[-1])    # Eve (Python shorthand for last element)
+names[1] = "Ben"    # Modify element at index 1
+
+# Traversing an array
+for i in range(len(names)):
+    print(f"Index {i}: {names[i]}")
+
+# Common operations
+length = len(names)              # 5
+names.append("Frank")            # Note: Python lists are dynamic, not true fixed arrays
+# In a true fixed-size array, you cannot add beyond the declared size</pre>
 
 <h3>Two-Dimensional (2D) Arrays</h3>
-<p>A table or grid of elements accessed by two indices: row and column. Conceptually an "array of arrays".</p>
+<p>A table or grid of elements accessed by two indices: row and column. Conceptually an "array of arrays". Useful for representing grids, matrices, tables, and game boards.</p>
 <pre># 2D array (3 rows x 4 columns)
 grid = [
-    [1, 2, 3, 4],      # row 0
-    [5, 6, 7, 8],      # row 1
-    [9, 10, 11, 12]    # row 2
+    [1,  2,  3,  4],      # row 0
+    [5,  6,  7,  8],      # row 1
+    [9, 10, 11, 12]       # row 2
 ]
 
-print(grid[1][2])       # 7 (row 1, column 2)
+print(grid[1][2])          # 7 (row 1, column 2)
+grid[0][3] = 99            # modify element at row 0, col 3
 
 # Iterating through a 2D array
 for row in range(3):
     for col in range(4):
         print(grid[row][col], end=" ")
-    print()</pre>
+    print()   # newline after each row
+
+# Output:
+# 1 2 3 99
+# 5 6 7 8
+# 9 10 11 12
+
+# Pseudocode for summing all elements in a 2D array
+total &larr; 0
+FOR row &larr; 0 TO ROWS - 1
+    FOR col &larr; 0 TO COLS - 1
+        total &larr; total + grid[row][col]
+    NEXT col
+NEXT row</pre>
 
 <h3>Multidimensional Arrays</h3>
-<p>Arrays with three or more dimensions. A 3D array can be thought of as a collection of 2D tables. Accessed with three indices: <code>array[layer][row][col]</code>.</p>
+<p>Arrays with three or more dimensions. A 3D array can be thought of as a collection of 2D tables (like a stack of spreadsheets, or a Rubik's cube of values). Accessed with three indices: <code>array[layer][row][col]</code>.</p>
 
 <table>
-    <tr><th>Dimension</th><th>Analogy</th><th>Access Pattern</th></tr>
-    <tr><td>1D</td><td>A single row of boxes</td><td><code>a[i]</code></td></tr>
-    <tr><td>2D</td><td>A spreadsheet / table</td><td><code>a[row][col]</code></td></tr>
-    <tr><td>3D</td><td>A stack of spreadsheets</td><td><code>a[layer][row][col]</code></td></tr>
+    <tr><th>Dimension</th><th>Analogy</th><th>Access Pattern</th><th>Example Use</th></tr>
+    <tr><td>1D</td><td>A single row of boxes</td><td><code>a[i]</code></td><td>List of names, sensor readings</td></tr>
+    <tr><td>2D</td><td>A spreadsheet / table</td><td><code>a[row][col]</code></td><td>Chess board, pixel grid, timetable</td></tr>
+    <tr><td>3D</td><td>A stack of spreadsheets</td><td><code>a[layer][row][col]</code></td><td>RGB image (3 colour channels), 3D game world</td></tr>
 </table>
 
 <p><strong>Key properties of arrays:</strong></p>
 <ul>
-    <li>Fixed size &mdash; declared at creation, cannot grow or shrink</li>
-    <li>Homogeneous &mdash; all elements must be the same type</li>
-    <li>Random access &mdash; any element accessed in O(1) time using its index</li>
-    <li>Contiguous memory &mdash; elements stored next to each other, allowing efficient access</li>
+    <li><strong>Fixed size</strong> &mdash; declared at creation, cannot grow or shrink (in most languages; Python lists are dynamic)</li>
+    <li><strong>Homogeneous</strong> &mdash; all elements must be the same type (int, float, string, etc.)</li>
+    <li><strong>Random access</strong> &mdash; any element accessed in O(1) time using its index, because the address is calculated directly</li>
+    <li><strong>Contiguous memory</strong> &mdash; elements stored next to each other in RAM, enabling efficient CPU cache utilisation</li>
+    <li><strong>Insertion/deletion is expensive</strong> &mdash; inserting or deleting in the middle requires shifting elements: O(n)</li>
 </ul>
+
+<div class="real-world">Arrays are used everywhere: pixel data in images (2D array of colour values), spreadsheet cells, look-up tables in embedded systems, and buffers for streaming data. In game development, a chess board is naturally a 2D array, and a 3D voxel world (like Minecraft) uses 3D arrays.</div>
 
 <!-- ==================== RECORDS ==================== -->
 <h2>4.2.2 Records</h2>
 
 <div class="definition-box">
-    <strong>Record:</strong> A composite data type that groups together related data items (fields) which may be of <strong>different types</strong>. Each field has a name and a data type.
+    <strong>Record:</strong> A composite data type that groups together related data items (fields) which may be of <strong>different types</strong>. Each field has a name and a data type. Records are also called <strong>structs</strong> (C), <strong>data classes</strong> (Kotlin/Python), or <strong>named tuples</strong>.
 </div>
 
 <pre>TYPE Student
@@ -192,99 +231,163 @@ pupil.firstName &larr; "Alice"
 pupil.lastName  &larr; "Smith"
 pupil.age       &larr; 17
 pupil.grade     &larr; 88.5
-pupil.enrolled  &larr; True</pre>
+pupil.enrolled  &larr; True
+
+# Python equivalent using a class or dataclass
+from dataclasses import dataclass
+
+@dataclass
+class Student:
+    first_name: str
+    last_name: str
+    age: int
+    grade: float
+    enrolled: bool
+
+pupil = Student("Alice", "Smith", 17, 88.5, True)
+print(pupil.first_name)   # Alice</pre>
 
 <p>Records are often used as the elements of arrays to create a simple database-like structure:</p>
-<pre># Array of records
+<pre># Array of records - like a simple database table
 students : ARRAY[0..29] OF Student
 
 students[0].firstName &larr; "Alice"
-students[0].age &larr; 17</pre>
+students[0].age &larr; 17
+students[1].firstName &larr; "Bob"
+students[1].age &larr; 18
 
-<p><strong>Records vs Arrays:</strong> Arrays store multiple items of the same type; records store a single entity with multiple fields of potentially different types.</p>
+# Searching through an array of records
+FOR i &larr; 0 TO 29
+    IF students[i].grade &gt;= 90 THEN
+        OUTPUT students[i].firstName + " achieved an A*"
+    ENDIF
+NEXT i</pre>
+
+<p><strong>Records vs Arrays:</strong> Arrays store multiple items of the same type; records store a single entity with multiple fields of potentially different types. Think of an array as a column in a table, and a record as a single row.</p>
 
 <!-- ==================== STACKS ==================== -->
 <h2>4.2.3 Stacks</h2>
 
 <div class="definition-box">
-    <strong>Stack:</strong> A <strong>Last-In, First-Out (LIFO)</strong> data structure. The last item added is the first to be removed. Think of a stack of plates.
+    <strong>Stack:</strong> A <strong>Last-In, First-Out (LIFO)</strong> abstract data type. The last item added is the first to be removed. Think of a stack of plates in a cafeteria &mdash; you can only add to or remove from the top.
 </div>
 
 <h3>Stack Operations</h3>
 <table>
-    <tr><th>Operation</th><th>Description</th><th>Time Complexity</th></tr>
-    <tr><td><strong>push(item)</strong></td><td>Add an item to the top of the stack</td><td>O(1)</td></tr>
-    <tr><td><strong>pop()</strong></td><td>Remove and return the item from the top</td><td>O(1)</td></tr>
-    <tr><td><strong>peek() / top()</strong></td><td>View the top item without removing it</td><td>O(1)</td></tr>
-    <tr><td><strong>isEmpty()</strong></td><td>Check if the stack is empty</td><td>O(1)</td></tr>
-    <tr><td><strong>isFull()</strong></td><td>Check if the stack is full (array-based)</td><td>O(1)</td></tr>
-    <tr><td><strong>size()</strong></td><td>Return the number of items</td><td>O(1)</td></tr>
+    <tr><th>Operation</th><th>Description</th><th>Time</th><th>Error Condition</th></tr>
+    <tr><td><strong>push(item)</strong></td><td>Add an item to the top of the stack</td><td>O(1)</td><td>Stack overflow (stack is full)</td></tr>
+    <tr><td><strong>pop()</strong></td><td>Remove and return the item from the top</td><td>O(1)</td><td>Stack underflow (stack is empty)</td></tr>
+    <tr><td><strong>peek() / top()</strong></td><td>View the top item without removing it</td><td>O(1)</td><td>Stack is empty</td></tr>
+    <tr><td><strong>isEmpty()</strong></td><td>Check if the stack is empty</td><td>O(1)</td><td>None</td></tr>
+    <tr><td><strong>isFull()</strong></td><td>Check if the stack is full (array-based only)</td><td>O(1)</td><td>None</td></tr>
+    <tr><td><strong>size()</strong></td><td>Return the number of items on the stack</td><td>O(1)</td><td>None</td></tr>
 </table>
 
 <h3>Array-Based Implementation</h3>
 <pre>class Stack:
     def __init__(self, maxSize):
-        self.stack = [None] * maxSize
+        self.stack = [None] * maxSize   # pre-allocate array
         self.maxSize = maxSize
-        self.top = -1              # -1 indicates empty stack
+        self.top = -1                   # -1 indicates empty stack
 
     def push(self, item):
         if self.top == self.maxSize - 1:
-            raise Exception("Stack overflow")
-        self.top += 1
-        self.stack[self.top] = item
+            raise Exception("Stack overflow - stack is full")
+        self.top += 1                   # move top pointer up
+        self.stack[self.top] = item     # place item at new top
 
     def pop(self):
         if self.top == -1:
-            raise Exception("Stack underflow")
-        item = self.stack[self.top]
-        self.top -= 1
+            raise Exception("Stack underflow - stack is empty")
+        item = self.stack[self.top]     # get item at top
+        self.top -= 1                   # move top pointer down
         return item
 
     def peek(self):
         if self.top == -1:
             raise Exception("Stack is empty")
-        return self.stack[self.top]
+        return self.stack[self.top]     # return without removing
 
     def isEmpty(self):
-        return self.top == -1</pre>
+        return self.top == -1
+
+    def isFull(self):
+        return self.top == self.maxSize - 1
+
+    def size(self):
+        return self.top + 1
+
+# Trace through operations:
+s = Stack(5)
+s.push(10)     # stack: [10, _, _, _, _]  top=0
+s.push(20)     # stack: [10, 20, _, _, _]  top=1
+s.push(30)     # stack: [10, 20, 30, _, _]  top=2
+print(s.peek())  # 30 (top item, not removed)
+print(s.pop())   # 30 (removed), stack: [10, 20, _, _, _]  top=1
+print(s.pop())   # 20 (removed), stack: [10, _, _, _, _]  top=0
+print(s.isEmpty())  # False (10 still on stack)</pre>
 
 <h3>Applications of Stacks</h3>
 <ul>
-    <li><strong>Function call stack</strong> &mdash; tracking return addresses and local variables during subroutine calls and recursion</li>
-    <li><strong>Undo functionality</strong> &mdash; each action is pushed; undo pops the last action</li>
-    <li><strong>Expression evaluation</strong> &mdash; evaluating postfix (Reverse Polish Notation) expressions</li>
-    <li><strong>Bracket matching</strong> &mdash; checking balanced parentheses in code/expressions</li>
-    <li><strong>Backtracking algorithms</strong> &mdash; depth-first search, maze solving</li>
+    <li><strong>Function call stack</strong> &mdash; the system uses a stack to track return addresses and local variables during subroutine calls and recursion. When a function is called, a stack frame is pushed; when it returns, the frame is popped.</li>
+    <li><strong>Undo functionality</strong> &mdash; each action is pushed onto an undo stack; pressing Ctrl+Z pops and reverses the last action</li>
+    <li><strong>Expression evaluation</strong> &mdash; evaluating postfix (Reverse Polish Notation) expressions using the operand stack</li>
+    <li><strong>Bracket matching</strong> &mdash; checking balanced parentheses in code/expressions: push opening brackets, pop when a closing bracket is encountered and check they match</li>
+    <li><strong>Backtracking algorithms</strong> &mdash; depth-first search, maze solving, puzzle solving</li>
+    <li><strong>Browser back button</strong> &mdash; visited pages are pushed onto a stack; pressing back pops the most recent page</li>
     <li><strong>Reversing data</strong> &mdash; push all items, then pop them out in reverse order</li>
+    <li><strong>Infix to postfix conversion</strong> &mdash; the Shunting Yard algorithm uses an operator stack</li>
 </ul>
 
+<pre># Bracket matching using a stack
+def is_balanced(expression):
+    stack = []
+    matching = {')': '(', ']': '[', '}': '{'}
+    for char in expression:
+        if char in '([{':
+            stack.append(char)        # push opening bracket
+        elif char in ')]}':
+            if len(stack) == 0:
+                return False          # no matching opening bracket
+            if stack.pop() != matching[char]:
+                return False          # mismatched bracket types
+    return len(stack) == 0            # empty stack = all matched
+
+print(is_balanced("((2+3)*[4-1])"))   # True
+print(is_balanced("((2+3)*[4-1)"))    # False - ] expected, got )</pre>
+
 <div class="exam-tip">
-    When tracing stack operations, draw the stack vertically with the top at the top. Show the top pointer moving up for push and down for pop. Always check for overflow (push to full stack) and underflow (pop from empty stack).
+    When tracing stack operations, draw the stack vertically with the top at the top. Show the top pointer moving up for push and down for pop. Always check for overflow (push to full stack) and underflow (pop from empty stack). A common exam mistake is confusing which end items are added/removed from &mdash; stacks always operate from the TOP only.
 </div>
 
 <!-- ==================== QUEUES ==================== -->
 <h2>4.2.4 Queues</h2>
 
 <div class="definition-box">
-    <strong>Queue:</strong> A <strong>First-In, First-Out (FIFO)</strong> data structure. The first item added is the first to be removed. Think of a queue of people waiting.
+    <strong>Queue:</strong> A <strong>First-In, First-Out (FIFO)</strong> abstract data type. The first item added is the first to be removed. Think of a queue of people at a bus stop &mdash; the person who arrived first is served first.
 </div>
 
 <h3>Queue Operations</h3>
 <table>
-    <tr><th>Operation</th><th>Description</th></tr>
-    <tr><td><strong>enqueue(item)</strong></td><td>Add an item to the rear of the queue</td></tr>
-    <tr><td><strong>dequeue()</strong></td><td>Remove and return the item from the front</td></tr>
-    <tr><td><strong>peek() / front()</strong></td><td>View the front item without removing it</td></tr>
-    <tr><td><strong>isEmpty()</strong></td><td>Check if the queue is empty</td></tr>
-    <tr><td><strong>isFull()</strong></td><td>Check if the queue is full</td></tr>
+    <tr><th>Operation</th><th>Description</th><th>Time</th></tr>
+    <tr><td><strong>enqueue(item)</strong></td><td>Add an item to the rear of the queue</td><td>O(1)</td></tr>
+    <tr><td><strong>dequeue()</strong></td><td>Remove and return the item from the front</td><td>O(1)</td></tr>
+    <tr><td><strong>peek() / front()</strong></td><td>View the front item without removing it</td><td>O(1)</td></tr>
+    <tr><td><strong>isEmpty()</strong></td><td>Check if the queue is empty</td><td>O(1)</td></tr>
+    <tr><td><strong>isFull()</strong></td><td>Check if the queue is full</td><td>O(1)</td></tr>
 </table>
 
 <h3>Linear Queue</h3>
-<p>A simple array-based queue with <strong>front</strong> and <strong>rear</strong> pointers. The problem with a linear queue is that as items are dequeued, space at the front of the array is wasted and cannot be reused. Eventually the rear pointer reaches the end even though there is free space at the front.</p>
+<p>A simple array-based queue with <strong>front</strong> and <strong>rear</strong> pointers. The problem with a linear queue is that as items are dequeued, space at the front of the array is wasted and cannot be reused. Eventually the rear pointer reaches the end of the array even though there is free space at the front.</p>
+
+<pre># Linear queue problem demonstration
+# After several enqueue and dequeue operations:
+# [_, _, _, D, E, F, G, _]
+#           ^front     ^rear
+# Indices 0-2 are wasted even though they are empty!</pre>
 
 <h3>Circular Queue</h3>
-<p>Solves the wasted space problem by treating the array as circular. When the rear pointer reaches the end, it wraps around to the beginning using the modulo operator.</p>
+<p>Solves the wasted space problem by treating the array as circular &mdash; when a pointer reaches the end of the array, it wraps around to the beginning using the <strong>modulo operator</strong>: <code>next_position = (current + 1) % maxSize</code>.</p>
 
 <pre>class CircularQueue:
     def __init__(self, maxSize):
@@ -297,7 +400,7 @@ students[0].age &larr; 17</pre>
     def enqueue(self, item):
         if self.size == self.maxSize:
             raise Exception("Queue is full")
-        self.rear = (self.rear + 1) % self.maxSize  # wrap around
+        self.rear = (self.rear + 1) % self.maxSize  # wrap around!
         self.queue[self.rear] = item
         self.size += 1
 
@@ -305,86 +408,121 @@ students[0].age &larr; 17</pre>
         if self.size == 0:
             raise Exception("Queue is empty")
         item = self.queue[self.front]
-        self.front = (self.front + 1) % self.maxSize  # wrap around
+        self.front = (self.front + 1) % self.maxSize  # wrap around!
         self.size -= 1
         return item
 
+    def peek(self):
+        if self.size == 0:
+            raise Exception("Queue is empty")
+        return self.queue[self.front]
+
     def isEmpty(self):
-        return self.size == 0</pre>
+        return self.size == 0
+
+# Trace through circular queue (maxSize = 4):
+q = CircularQueue(4)
+q.enqueue('A')     # [A, _, _, _]  front=0, rear=0, size=1
+q.enqueue('B')     # [A, B, _, _]  front=0, rear=1, size=2
+q.enqueue('C')     # [A, B, C, _]  front=0, rear=2, size=3
+q.dequeue()        # [_, B, C, _]  front=1, rear=2, size=2  returns 'A'
+q.dequeue()        # [_, _, C, _]  front=2, rear=2, size=1  returns 'B'
+q.enqueue('D')     # [_, _, C, D]  front=2, rear=3, size=2
+q.enqueue('E')     # [E, _, C, D]  front=2, rear=0, size=3  WRAPS AROUND!
+#                    ^rear   ^front  -- rear has wrapped to index 0</pre>
 
 <h3>Priority Queue</h3>
-<p>Each item has an associated <strong>priority</strong>. Items with higher priority are dequeued before items with lower priority, regardless of insertion order. If two items have equal priority, they follow FIFO order.</p>
+<p>Each item has an associated <strong>priority</strong>. Items with higher priority are dequeued before items with lower priority, regardless of insertion order. If two items have equal priority, they follow FIFO order. This is NOT a FIFO structure.</p>
 <p><strong>Implementation options:</strong></p>
 <ul>
-    <li><strong>Sorted array/list:</strong> Insert in correct position (O(n) insert, O(1) dequeue)</li>
-    <li><strong>Unsorted array/list:</strong> Insert at end (O(1) insert, O(n) dequeue &mdash; must search for highest priority)</li>
-    <li><strong>Heap:</strong> O(log n) for both insert and dequeue (most efficient)</li>
+    <li><strong>Sorted array/list:</strong> Insert in correct position (O(n) insert, O(1) dequeue &mdash; highest priority always at front)</li>
+    <li><strong>Unsorted array/list:</strong> Insert at end (O(1) insert, O(n) dequeue &mdash; must search for highest priority item)</li>
+    <li><strong>Binary heap:</strong> O(log n) for both insert and dequeue (most efficient in practice)</li>
 </ul>
 
 <h3>Applications of Queues</h3>
 <ul>
-    <li><strong>Print spooling</strong> &mdash; print jobs processed in order received</li>
-    <li><strong>CPU scheduling</strong> &mdash; processes waiting to use the processor</li>
-    <li><strong>Breadth-first search</strong> &mdash; traversing graphs level by level</li>
-    <li><strong>Keyboard buffer</strong> &mdash; storing keystrokes in order</li>
-    <li><strong>Priority queue:</strong> hospital A&amp;E triage, operating system task scheduling</li>
+    <li><strong>Print spooling</strong> &mdash; print jobs are processed in the order they are received (FIFO)</li>
+    <li><strong>CPU scheduling</strong> &mdash; processes waiting to use the processor in round-robin scheduling</li>
+    <li><strong>Breadth-first search (BFS)</strong> &mdash; traversing graphs level by level using a queue</li>
+    <li><strong>Keyboard buffer</strong> &mdash; storing keystrokes in order before they are processed</li>
+    <li><strong>Message queues</strong> &mdash; handling asynchronous communication between systems</li>
+    <li><strong>Priority queue examples:</strong> hospital A&amp;E triage (most critical patients first), operating system task scheduling, network packet prioritisation (VoIP over email)</li>
 </ul>
 
 <table>
-    <tr><th>Queue Type</th><th>Advantage</th><th>Disadvantage</th></tr>
-    <tr><td>Linear</td><td>Simple to implement</td><td>Wastes space as items dequeue</td></tr>
-    <tr><td>Circular</td><td>Reuses space efficiently</td><td>Slightly more complex (modulo logic)</td></tr>
-    <tr><td>Priority</td><td>Handles urgency-based ordering</td><td>More complex; insertion or deletion is O(n) unless using a heap</td></tr>
+    <tr><th>Queue Type</th><th>Advantage</th><th>Disadvantage</th><th>Best For</th></tr>
+    <tr><td>Linear</td><td>Simplest to implement</td><td>Wastes space as items are dequeued; eventually runs out of space</td><td>Teaching / very simple cases</td></tr>
+    <tr><td>Circular</td><td>Reuses space efficiently; no wasted memory</td><td>Slightly more complex (modulo logic); still fixed size</td><td>Most real queue implementations</td></tr>
+    <tr><td>Priority</td><td>Handles urgency-based ordering</td><td>More complex; insertion or deletion is O(n) unless using a heap</td><td>Scheduling, simulations</td></tr>
 </table>
+
+<div class="real-world">Operating systems use priority queues extensively. Real-time processes (like audio playback) get higher priority than background tasks (like virus scanning). Network routers use queues to buffer packets waiting to be forwarded; quality-of-service (QoS) uses priority queues to ensure voice and video traffic is forwarded before email.</div>
+
+<div class="exam-tip">
+    When tracing circular queue operations, always use the modulo operator for both front and rear pointers. Draw the array and clearly label front, rear, and size after each operation. The key insight is that <code>(rear + 1) % maxSize</code> wraps rear back to index 0 when it reaches the end of the array. A common exam mistake is not wrapping front as well when dequeuing.
+</div>
 
 <!-- ==================== LINKED LISTS ==================== -->
 <h2>4.2.5 Linked Lists</h2>
 
 <div class="definition-box">
-    <strong>Linked list:</strong> A dynamic data structure consisting of <strong>nodes</strong>, where each node contains a <strong>data</strong> field and a <strong>pointer</strong> (reference) to the next node in the sequence.
+    <strong>Linked list:</strong> A dynamic data structure consisting of <strong>nodes</strong>, where each node contains a <strong>data</strong> field and a <strong>pointer</strong> (reference) to the next node in the sequence. The last node points to <code>null</code>. The list is accessed through a <strong>head pointer</strong> that references the first node.
 </div>
 
 <h3>Structure</h3>
-<pre>Node:
-    data  &mdash; the value stored
-    next  &mdash; pointer to the next node (or null if last node)
+<pre>Each node contains:
+    data  &mdash; the value stored in this node
+    next  &mdash; pointer/reference to the next node (null if last)
 
-[Alice | &rarr;] &rarr; [Bob | &rarr;] &rarr; [Charlie | null]
-  head</pre>
+Visual representation:
+HEAD &rarr; [Alice | &rarr;] &rarr; [Bob | &rarr;] &rarr; [Charlie | &rarr;] &rarr; [Diana | null]
+
+The head pointer gives us entry to the list.
+To reach Diana, we must traverse through Alice, Bob, and Charlie.</pre>
+
+<h3>Types of Linked Lists</h3>
+<table>
+    <tr><th>Type</th><th>Description</th><th>Pointers per Node</th></tr>
+    <tr><td><strong>Singly linked</strong></td><td>Each node points to the next only; can only traverse forwards</td><td>1 (next)</td></tr>
+    <tr><td><strong>Doubly linked</strong></td><td>Each node points to both the next and previous nodes; can traverse both ways</td><td>2 (next, prev)</td></tr>
+    <tr><td><strong>Circular linked</strong></td><td>The last node points back to the first (instead of null); forms a ring</td><td>1 or 2</td></tr>
+</table>
 
 <h3>Static vs Dynamic Implementation</h3>
 <table>
     <tr><th>Feature</th><th>Static (Array-based)</th><th>Dynamic (Pointer-based)</th></tr>
-    <tr><td>Memory allocation</td><td>Fixed at compile time</td><td>Allocated at runtime as needed</td></tr>
+    <tr><td>Memory allocation</td><td>Fixed at compile time; uses an array of nodes</td><td>Allocated at runtime from the heap as needed</td></tr>
     <tr><td>Size</td><td>Maximum size predetermined</td><td>Can grow and shrink freely</td></tr>
-    <tr><td>Memory usage</td><td>May waste space if not full</td><td>Only uses what is needed (plus pointer overhead)</td></tr>
-    <tr><td>Free space management</td><td>Uses a free list within the array</td><td>OS manages free memory (heap)</td></tr>
+    <tr><td>Memory usage</td><td>May waste space if not full</td><td>Only uses what is needed (plus pointer overhead per node)</td></tr>
+    <tr><td>Free space management</td><td>Uses a <strong>free list</strong> (a linked list of unused array slots)</td><td>OS manages free memory (heap allocation/deallocation)</td></tr>
+    <tr><td>Suitable for</td><td>Embedded systems, fixed-size pools</td><td>General-purpose programming</td></tr>
 </table>
 
 <h3>Linked List Operations</h3>
 
-<p><strong>Inserting at the beginning:</strong></p>
+<p><strong>Inserting at the beginning (O(1)):</strong></p>
 <ol>
     <li>Create a new node with the data</li>
-    <li>Set new node's <code>next</code> to the current head</li>
+    <li>Set new node's <code>next</code> pointer to the current head</li>
     <li>Update head to point to the new node</li>
 </ol>
 
-<p><strong>Inserting at a specific position:</strong></p>
+<p><strong>Inserting at a specific position (O(n) to find position, O(1) to insert):</strong></p>
 <ol>
-    <li>Traverse to the node before the insertion point</li>
+    <li>Traverse to the node <em>before</em> the insertion point</li>
     <li>Set new node's <code>next</code> to the current node's <code>next</code></li>
     <li>Set current node's <code>next</code> to the new node</li>
 </ol>
 
-<p><strong>Deleting a node:</strong></p>
+<p><strong>Deleting a node (O(n) to find, O(1) to remove):</strong></p>
 <ol>
-    <li>Traverse to the node before the one to delete</li>
-    <li>Set its <code>next</code> to the deleted node's <code>next</code> (bypassing the deleted node)</li>
+    <li>Traverse to the node <em>before</em> the one to delete</li>
+    <li>Set its <code>next</code> to the deleted node's <code>next</code> (bypassing it)</li>
     <li>Free the deleted node's memory (in dynamic implementations)</li>
 </ol>
 
-<p><strong>Searching:</strong> Start at head, traverse node by node until the target is found or the end is reached. Time complexity: O(n).</p>
+<p><strong>Searching (O(n)):</strong> Start at head, traverse node by node, comparing each node's data to the target, until found or null is reached.</p>
 
 <pre>class Node:
     def __init__(self, data):
@@ -397,69 +535,117 @@ class LinkedList:
 
     def insert_at_start(self, data):
         new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
+        new_node.next = self.head   # point new node to current head
+        self.head = new_node        # update head to new node
+
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:       # empty list
+            self.head = new_node
+            return
+        current = self.head
+        while current.next is not None:   # traverse to last node
+            current = current.next
+        current.next = new_node     # last node now points to new node
 
     def delete(self, target):
         if self.head is None:
-            return
+            return                  # empty list, nothing to delete
         if self.head.data == target:
-            self.head = self.head.next
+            self.head = self.head.next   # delete head node
             return
         current = self.head
         while current.next is not None:
             if current.next.data == target:
-                current.next = current.next.next
+                current.next = current.next.next   # bypass deleted node
                 return
             current = current.next
+
+    def search(self, target):
+        current = self.head
+        index = 0
+        while current is not None:
+            if current.data == target:
+                return index        # found at this index
+            current = current.next
+            index += 1
+        return -1                   # not found
 
     def display(self):
         current = self.head
         while current is not None:
             print(current.data, end=" -> ")
             current = current.next
-        print("None")</pre>
+        print("None")
+
+# Usage
+ll = LinkedList()
+ll.insert_at_start("Charlie")
+ll.insert_at_start("Bob")
+ll.insert_at_start("Alice")
+ll.display()                # Alice -> Bob -> Charlie -> None
+ll.delete("Bob")
+ll.display()                # Alice -> Charlie -> None
+print(ll.search("Charlie")) # 1</pre>
+
+<h3>Static Array Implementation of a Linked List</h3>
+<p>When dynamic memory allocation is not available (e.g., in some embedded systems), a linked list can be simulated using an array. Each array element has a data field and a "pointer" field (which stores an array index rather than a memory address). A <strong>free list</strong> tracks which array positions are available.</p>
+
+<pre># Static linked list using an array
+# Array index:  0      1       2       3       4       5
+# Data:        "Bob"  "Eve"   "Alice" [free]  "Diana" [free]
+# Next:         4      -1      0       5       1       -1
+# Head pointer: 2 (points to "Alice")
+# Free list pointer: 3 (first free slot)
+
+# Following the chain from head:
+# Index 2 ("Alice") -> next=0 -> Index 0 ("Bob") -> next=4 ->
+# Index 4 ("Diana") -> next=1 -> Index 1 ("Eve") -> next=-1 (end)</pre>
 
 <h3>Linked Lists vs Arrays</h3>
 <table>
     <tr><th>Feature</th><th>Array</th><th>Linked List</th></tr>
-    <tr><td>Size</td><td>Fixed</td><td>Dynamic</td></tr>
-    <tr><td>Access by index</td><td>O(1) &mdash; direct</td><td>O(n) &mdash; must traverse</td></tr>
-    <tr><td>Insertion / deletion</td><td>O(n) &mdash; elements must shift</td><td>O(1) once position found</td></tr>
-    <tr><td>Memory</td><td>Contiguous, no pointer overhead</td><td>Non-contiguous, extra memory for pointers</td></tr>
-    <tr><td>Cache performance</td><td>Better (locality)</td><td>Worse (scattered in memory)</td></tr>
+    <tr><td>Size</td><td>Fixed (must be declared in advance)</td><td>Dynamic (grows/shrinks as needed)</td></tr>
+    <tr><td>Access by index</td><td>O(1) &mdash; direct random access</td><td>O(n) &mdash; must traverse from head</td></tr>
+    <tr><td>Insertion at start</td><td>O(n) &mdash; all elements must shift right</td><td>O(1) &mdash; just update head pointer</td></tr>
+    <tr><td>Insertion at end</td><td>O(1) if space available</td><td>O(n) &mdash; must traverse to end (O(1) if tail pointer maintained)</td></tr>
+    <tr><td>Deletion</td><td>O(n) &mdash; elements must shift to fill gap</td><td>O(1) once position found (just re-link pointers)</td></tr>
+    <tr><td>Memory</td><td>Contiguous block, no pointer overhead</td><td>Non-contiguous, extra memory for pointer in each node</td></tr>
+    <tr><td>Cache performance</td><td>Better (spatial locality &mdash; adjacent elements are in adjacent memory)</td><td>Worse (nodes scattered throughout memory)</td></tr>
+    <tr><td>Memory waste</td><td>If not full, unused slots are wasted</td><td>No wasted space (only allocates what is needed)</td></tr>
 </table>
 
 <div class="exam-tip">
-    When implementing a linked list using a static array, each array element has a data field and a pointer (index) field. You also need a <strong>free list</strong> pointer to track available array positions. Insertions take a node from the free list; deletions return a node to it.
+    When implementing a linked list using a static array, each array element has a data field and a pointer (index) field. You also need a <strong>free list</strong> pointer to track available array positions. Insertions take a node from the free list; deletions return a node to it. Be prepared to trace through insertion and deletion operations, showing both the data array and the head/free pointers changing at each step.
 </div>
 
 <!-- ==================== TREES ==================== -->
 <h2>4.2.6 Trees</h2>
 
 <div class="definition-box">
-    <strong>Tree:</strong> A connected, hierarchical data structure with no cycles, consisting of nodes connected by edges. It has a single <strong>root</strong> node, and every other node has exactly one parent.
+    <strong>Tree:</strong> A connected, acyclic (no cycles), hierarchical data structure consisting of nodes connected by edges. It has a single <strong>root</strong> node (the topmost node), and every other node has exactly one parent. A tree with n nodes has exactly n-1 edges.
 </div>
 
 <h3>Tree Terminology</h3>
 <table>
-    <tr><th>Term</th><th>Definition</th></tr>
-    <tr><td><strong>Root</strong></td><td>The topmost node (no parent)</td></tr>
-    <tr><td><strong>Child</strong></td><td>A node directly connected below another node</td></tr>
-    <tr><td><strong>Parent</strong></td><td>A node directly connected above another node</td></tr>
-    <tr><td><strong>Leaf</strong></td><td>A node with no children (also called a terminal node)</td></tr>
-    <tr><td><strong>Edge</strong></td><td>The connection between a parent and child node</td></tr>
-    <tr><td><strong>Subtree</strong></td><td>A node and all its descendants</td></tr>
-    <tr><td><strong>Depth / Level</strong></td><td>The number of edges from the root to a node</td></tr>
-    <tr><td><strong>Height</strong></td><td>The number of edges on the longest path from root to leaf</td></tr>
+    <tr><th>Term</th><th>Definition</th><th>Example</th></tr>
+    <tr><td><strong>Root</strong></td><td>The topmost node with no parent</td><td>The CEO in an org chart</td></tr>
+    <tr><td><strong>Child</strong></td><td>A node directly connected below another node</td><td>Departments under the CEO</td></tr>
+    <tr><td><strong>Parent</strong></td><td>A node directly connected above another node</td><td>CEO is parent of each department</td></tr>
+    <tr><td><strong>Leaf</strong></td><td>A node with no children (terminal node)</td><td>Individual employees</td></tr>
+    <tr><td><strong>Edge</strong></td><td>The connection (link) between a parent and child</td><td>The line in an org chart</td></tr>
+    <tr><td><strong>Subtree</strong></td><td>A node and all its descendants</td><td>A department and all its members</td></tr>
+    <tr><td><strong>Depth / Level</strong></td><td>The number of edges from the root to that node (root is depth 0)</td><td>CEO=0, Dept=1, Team=2</td></tr>
+    <tr><td><strong>Height</strong></td><td>The number of edges on the longest path from root to any leaf</td><td>Height of org chart</td></tr>
+    <tr><td><strong>Sibling</strong></td><td>Nodes that share the same parent</td><td>Departments under the same CEO</td></tr>
 </table>
 
 <h3>Binary Trees</h3>
-<p>A tree where each node has <strong>at most two children</strong>: a left child and a right child.</p>
+<p>A tree where each node has <strong>at most two children</strong>: a left child and a right child. A node with zero children is a leaf. A <strong>complete binary tree</strong> has all levels fully filled except possibly the last, which is filled from left to right.</p>
 
 <h3>Binary Search Trees (BST)</h3>
 <div class="definition-box">
-    <strong>Binary Search Tree:</strong> A binary tree where for every node, all values in the <strong>left subtree are less</strong> than the node's value, and all values in the <strong>right subtree are greater</strong> than the node's value.
+    <strong>Binary Search Tree:</strong> A binary tree with the ordering property: for every node, <strong>all values in the left subtree are less</strong> than the node's value, and <strong>all values in the right subtree are greater</strong> than the node's value. This property enables efficient searching.
 </div>
 
 <pre>         15
@@ -467,91 +653,141 @@ class LinkedList:
        8    23
       / \   / \
      4  12 18  27
+    /
+   2
 
-Searching for 18:
-  15 &rarr; 18 > 15, go right
-  23 &rarr; 18 < 23, go left
-  18 &rarr; found!</pre>
+All values left of 15 are &lt; 15: {2, 4, 8, 12}
+All values right of 15 are &gt; 15: {18, 23, 27}
+This property holds at EVERY node, not just the root.</pre>
 
 <p><strong>BST operations:</strong></p>
-<ul>
-    <li><strong>Search:</strong> Compare target with current node; go left if smaller, right if larger. Average O(log n), worst O(n) if tree is unbalanced.</li>
-    <li><strong>Insert:</strong> Search for the correct position (where a null pointer is), then place the new node there.</li>
-    <li><strong>Delete:</strong> Three cases: (1) leaf node &mdash; simply remove; (2) one child &mdash; replace with child; (3) two children &mdash; replace with in-order successor (smallest value in right subtree) or in-order predecessor.</li>
-</ul>
+
+<p><strong>Search:</strong> Compare target with current node. If equal, found. If target is smaller, go left. If larger, go right. Repeat until found or reach null.</p>
+<pre>Searching for 12:
+  Start at 15: 12 &lt; 15, go LEFT
+  At 8: 12 &gt; 8, go RIGHT
+  At 12: FOUND!
+
+Searching for 20:
+  Start at 15: 20 &gt; 15, go RIGHT
+  At 23: 20 &lt; 23, go LEFT
+  At 18: 20 &gt; 18, go RIGHT
+  null &rarr; NOT FOUND</pre>
+
+<p><strong>Insert:</strong> Follow the search path until you reach a null pointer, then place the new node there.</p>
+<pre>Inserting 10 into the BST above:
+  Start at 15: 10 &lt; 15, go LEFT
+  At 8: 10 &gt; 8, go RIGHT
+  At 12: 10 &lt; 12, go LEFT
+  null &rarr; Insert 10 as left child of 12
+
+         15
+        /  \
+       8    23
+      / \   / \
+     4  12 18  27
+    /  /
+   2  10</pre>
+
+<p><strong>Delete:</strong> Three cases:</p>
+<ol>
+    <li><strong>Leaf node</strong> &mdash; simply remove it (set parent's pointer to null)</li>
+    <li><strong>One child</strong> &mdash; replace the node with its only child</li>
+    <li><strong>Two children</strong> &mdash; replace with the <strong>in-order successor</strong> (smallest value in the right subtree) or in-order predecessor (largest value in left subtree), then delete that successor/predecessor node</li>
+</ol>
+
+<p><strong>Time complexity:</strong></p>
+<table>
+    <tr><th>Operation</th><th>Average (balanced tree)</th><th>Worst (degenerate/unbalanced)</th></tr>
+    <tr><td>Search</td><td>O(log n)</td><td>O(n)</td></tr>
+    <tr><td>Insert</td><td>O(log n)</td><td>O(n)</td></tr>
+    <tr><td>Delete</td><td>O(log n)</td><td>O(n)</td></tr>
+</table>
+<p>The worst case occurs when the tree degenerates into a linked list (e.g., inserting values in sorted order: 1, 2, 3, 4, 5 creates a chain going only right).</p>
 
 <h3>Tree Traversals</h3>
-<p>Three depth-first traversal methods, each visiting nodes in a different order:</p>
+<p>Three depth-first traversal methods, each visiting nodes in a different order. All three use <strong>recursion</strong>:</p>
 
 <table>
-    <tr><th>Traversal</th><th>Order</th><th>Mnemonic</th><th>Result for tree above</th></tr>
-    <tr><td><strong>Pre-order</strong></td><td>Root, Left, Right</td><td>Visit before children</td><td>15, 8, 4, 12, 23, 18, 27</td></tr>
-    <tr><td><strong>In-order</strong></td><td>Left, Root, Right</td><td>Visit between children</td><td>4, 8, 12, 15, 18, 23, 27</td></tr>
-    <tr><td><strong>Post-order</strong></td><td>Left, Right, Root</td><td>Visit after children</td><td>4, 12, 8, 18, 27, 23, 15</td></tr>
+    <tr><th>Traversal</th><th>Order</th><th>Mnemonic</th><th>Result for BST above</th></tr>
+    <tr><td><strong>Pre-order</strong></td><td>Root, Left, Right</td><td>Visit the root <em>before</em> its children</td><td>15, 8, 4, 2, 12, 23, 18, 27</td></tr>
+    <tr><td><strong>In-order</strong></td><td>Left, Root, Right</td><td>Visit the root <em>between</em> its children</td><td>2, 4, 8, 12, 15, 18, 23, 27</td></tr>
+    <tr><td><strong>Post-order</strong></td><td>Left, Right, Root</td><td>Visit the root <em>after</em> its children</td><td>2, 4, 12, 8, 18, 27, 23, 15</td></tr>
 </table>
 
 <pre># Recursive implementations
 def pre_order(node):
     if node is not None:
-        print(node.data)       # visit root
-        pre_order(node.left)   # traverse left
-        pre_order(node.right)  # traverse right
+        print(node.data)       # VISIT root first
+        pre_order(node.left)   # then traverse left subtree
+        pre_order(node.right)  # then traverse right subtree
 
 def in_order(node):
     if node is not None:
-        in_order(node.left)    # traverse left
-        print(node.data)       # visit root
-        in_order(node.right)   # traverse right
+        in_order(node.left)    # traverse left subtree first
+        print(node.data)       # VISIT root in the middle
+        in_order(node.right)   # then traverse right subtree
 
 def post_order(node):
     if node is not None:
-        post_order(node.left)  # traverse left
-        post_order(node.right) # traverse right
-        print(node.data)       # visit root</pre>
+        post_order(node.left)  # traverse left subtree first
+        post_order(node.right) # then traverse right subtree
+        print(node.data)       # VISIT root last</pre>
 
-<p><strong>Key fact:</strong> An in-order traversal of a BST produces the values in <strong>ascending sorted order</strong>.</p>
+<p><strong>Critical fact:</strong> An in-order traversal of a BST produces the values in <strong>ascending sorted order</strong>. This is because it visits all smaller values (left) before the node, and all larger values (right) after.</p>
 
-<p><strong>Uses of traversals:</strong></p>
+<p><strong>Uses of each traversal:</strong></p>
 <ul>
-    <li><strong>Pre-order:</strong> copying a tree, serialising a tree structure</li>
-    <li><strong>In-order:</strong> outputting sorted data from a BST</li>
-    <li><strong>Post-order:</strong> deleting a tree (children deleted before parent), evaluating expression trees</li>
+    <li><strong>Pre-order:</strong> Copying/cloning a tree, serialising a tree to a file (can reconstruct the tree from pre-order data), prefix expression evaluation</li>
+    <li><strong>In-order:</strong> Outputting sorted data from a BST, converting BST to sorted array</li>
+    <li><strong>Post-order:</strong> Safely deleting a tree (children deleted before parent), evaluating postfix expression trees, calculating directory sizes (process children before parent folder)</li>
 </ul>
 
 <div class="exam-tip">
-    To trace a traversal, use the "hand-hugging" technique: draw a path around the outside of the tree starting from the left of the root. For pre-order, record a node when you pass its left side. For in-order, record it when you pass underneath. For post-order, record it when you pass its right side.
+    To trace a traversal quickly, use the "hand-hugging" technique: imagine drawing a continuous line around the outside of the tree, hugging each node. Start from the left side of the root. For <strong>pre-order</strong>, record a node when the line passes its <strong>left side</strong>. For <strong>in-order</strong>, record it when passing <strong>underneath</strong>. For <strong>post-order</strong>, record it when passing its <strong>right side</strong>. This works every time and is faster than tracing recursion.
 </div>
 
 <!-- ==================== GRAPHS ==================== -->
 <h2>4.2.7 Graphs</h2>
 
 <div class="definition-box">
-    <strong>Graph:</strong> A data structure consisting of a set of <strong>vertices</strong> (nodes) connected by <strong>edges</strong> (arcs). Unlike trees, graphs can contain cycles and nodes can have any number of connections.
+    <strong>Graph:</strong> A data structure consisting of a set of <strong>vertices</strong> (nodes) connected by <strong>edges</strong> (arcs/links). Unlike trees, graphs can contain <strong>cycles</strong> (paths that loop back to a starting vertex) and vertices can have <strong>any number</strong> of connections. Formally: G = (V, E) where V is the set of vertices and E is the set of edges.
 </div>
 
 <h3>Types of Graphs</h3>
 <table>
-    <tr><th>Type</th><th>Description</th><th>Example</th></tr>
-    <tr><td><strong>Directed</strong> (digraph)</td><td>Edges have a direction (one-way)</td><td>Web page links, one-way streets</td></tr>
-    <tr><td><strong>Undirected</strong></td><td>Edges have no direction (two-way)</td><td>Friendships on social media</td></tr>
-    <tr><td><strong>Weighted</strong></td><td>Edges have an associated cost/weight</td><td>Road network with distances</td></tr>
-    <tr><td><strong>Unweighted</strong></td><td>All edges are equal</td><td>Simple connections</td></tr>
+    <tr><th>Type</th><th>Description</th><th>Real-World Example</th></tr>
+    <tr><td><strong>Directed</strong> (digraph)</td><td>Edges have a direction (one-way arrow from A to B does not imply B to A)</td><td>Web page hyperlinks, Twitter follows, one-way streets</td></tr>
+    <tr><td><strong>Undirected</strong></td><td>Edges have no direction (connection goes both ways)</td><td>Facebook friendships, road networks (two-way streets)</td></tr>
+    <tr><td><strong>Weighted</strong></td><td>Each edge has an associated numerical cost, distance, or capacity</td><td>Road network with distances, flight routes with prices</td></tr>
+    <tr><td><strong>Unweighted</strong></td><td>All edges are treated equally (no cost associated)</td><td>Simple social network connections</td></tr>
+    <tr><td><strong>Connected</strong></td><td>There is a path between every pair of vertices</td><td>A fully connected road network</td></tr>
+    <tr><td><strong>Cyclic</strong></td><td>Contains at least one cycle</td><td>A circular bus route</td></tr>
+    <tr><td><strong>Acyclic</strong></td><td>Contains no cycles (a tree is a connected acyclic graph)</td><td>Dependency graphs, file system hierarchy</td></tr>
 </table>
 
 <h3>Adjacency Matrix</h3>
-<p>A 2D array where <code>matrix[i][j]</code> represents the edge from vertex i to vertex j. For weighted graphs, the value is the weight; for unweighted, it is 1 (connected) or 0 (not connected).</p>
+<p>A 2D array where <code>matrix[i][j]</code> represents the edge from vertex i to vertex j. For weighted graphs, the value is the weight; for unweighted, it is 1 (connected) or 0 (not connected). A special value (e.g., 0 or infinity) indicates no edge.</p>
 
-<pre># Undirected, unweighted graph with vertices A, B, C, D
+<pre># Undirected, unweighted graph: A-B, A-C, B-C, B-D
 #     A  B  C  D
-# A [ 0, 1, 1, 0 ]
-# B [ 1, 0, 1, 1 ]
-# C [ 1, 1, 0, 0 ]
-# D [ 0, 1, 0, 0 ]
+# A [ 0, 1, 1, 0 ]   A connects to B and C
+# B [ 1, 0, 1, 1 ]   B connects to A, C, D
+# C [ 1, 1, 0, 0 ]   C connects to A, B
+# D [ 0, 1, 0, 0 ]   D connects to B only
 
-# Note: symmetric for undirected graphs</pre>
+# Note: the matrix is SYMMETRIC for undirected graphs
+# matrix[i][j] = matrix[j][i] always
+
+# Weighted version (distances in km):
+#     A    B    C    D
+# A [ 0,   5,   3, inf ]
+# B [ 5,   0,   2,   7 ]
+# C [ 3,   2,   0, inf ]
+# D [inf,  7, inf,   0 ]</pre>
 
 <h3>Adjacency List</h3>
-<p>Each vertex stores a list of its adjacent vertices (and edge weights if applicable).</p>
+<p>Each vertex stores a list of its adjacent vertices (and edge weights if applicable). More memory-efficient for sparse graphs (graphs with relatively few edges compared to the maximum possible).</p>
 
 <pre># Same graph as above
 adjacency_list = {
@@ -572,190 +808,256 @@ weighted_list = {
 <h3>Adjacency Matrix vs Adjacency List</h3>
 <table>
     <tr><th>Feature</th><th>Adjacency Matrix</th><th>Adjacency List</th></tr>
-    <tr><td>Space complexity</td><td>O(V&sup2;) &mdash; always</td><td>O(V + E)</td></tr>
-    <tr><td>Check if edge exists</td><td>O(1) &mdash; direct lookup</td><td>O(V) &mdash; search through list</td></tr>
-    <tr><td>Find all neighbours</td><td>O(V) &mdash; scan entire row</td><td>O(degree) &mdash; just read the list</td></tr>
-    <tr><td>Best for</td><td>Dense graphs (many edges)</td><td>Sparse graphs (few edges)</td></tr>
-    <tr><td>Memory for sparse graph</td><td>Wasteful (many zeros)</td><td>Efficient</td></tr>
-    <tr><td>Adding a vertex</td><td>Requires resizing the matrix</td><td>Simple &mdash; add new entry</td></tr>
+    <tr><td>Space complexity</td><td>O(V&sup2;) &mdash; always, regardless of edges</td><td>O(V + E) &mdash; proportional to actual edges</td></tr>
+    <tr><td>Check if edge exists</td><td>O(1) &mdash; direct array lookup</td><td>O(degree) &mdash; search through neighbour list</td></tr>
+    <tr><td>Find all neighbours</td><td>O(V) &mdash; must scan entire row</td><td>O(degree) &mdash; just iterate the list</td></tr>
+    <tr><td>Best for</td><td><strong>Dense</strong> graphs (many edges, close to V&sup2;)</td><td><strong>Sparse</strong> graphs (few edges, much less than V&sup2;)</td></tr>
+    <tr><td>Memory for sparse graph</td><td>Wasteful (many zeros stored)</td><td>Efficient (only stores actual edges)</td></tr>
+    <tr><td>Adding a vertex</td><td>Expensive &mdash; requires resizing the entire matrix</td><td>Simple &mdash; just add a new entry with empty list</td></tr>
+    <tr><td>Adding an edge</td><td>O(1) &mdash; set matrix[i][j]</td><td>O(1) &mdash; append to list</td></tr>
 </table>
 
+<div class="real-world">Google Maps uses a weighted directed graph where junctions are vertices, roads are edges, and weights represent travel time or distance. Social networks like Facebook use undirected graphs (friendship is mutual), while Twitter uses directed graphs (following is one-way). The Internet itself is a massive graph of connected devices and networks.</div>
+
 <div class="exam-tip">
-    You must be able to draw both representations from a given graph diagram, and to construct a graph from either representation. Remember that an adjacency matrix for an undirected graph is always symmetric along the main diagonal.
+    You must be able to: (1) draw both matrix and list representations from a graph diagram, (2) construct a graph diagram from either representation, and (3) decide which representation is more appropriate for a given scenario. Remember: an adjacency matrix for an <strong>undirected</strong> graph is always <strong>symmetric</strong> along the main diagonal. For a directed graph, it is NOT necessarily symmetric.
 </div>
 
 <!-- ==================== HASH TABLES ==================== -->
 <h2>4.2.8 Hash Tables</h2>
 
 <div class="definition-box">
-    <strong>Hash table:</strong> A data structure that maps <strong>keys</strong> to <strong>values</strong> using a <strong>hash function</strong>. The hash function converts a key into an array index, allowing near-constant-time access.
+    <strong>Hash table:</strong> A data structure that maps <strong>keys</strong> to <strong>values</strong> using a <strong>hash function</strong>. The hash function converts a key into an array index, allowing near-constant-time (O(1) average) access for insertion, deletion, and lookup.
 </div>
 
 <h3>Hashing</h3>
-<p>A <strong>hash function</strong> takes a key (e.g., a string) and computes an integer index into the hash table's array. A good hash function:</p>
+<p>A <strong>hash function</strong> takes a key (e.g., a string, number, or any data) and computes an integer index into the hash table's underlying array. A good hash function should:</p>
 <ul>
-    <li>Distributes keys uniformly across the table</li>
-    <li>Is deterministic &mdash; same key always produces the same hash</li>
-    <li>Is fast to compute</li>
-    <li>Minimises collisions</li>
+    <li>Distribute keys <strong>uniformly</strong> across the table (minimising clustering)</li>
+    <li>Be <strong>deterministic</strong> &mdash; the same key must always produce the same hash</li>
+    <li>Be <strong>fast</strong> to compute (O(1) time)</li>
+    <li>Minimise <strong>collisions</strong> (different keys mapping to the same index)</li>
 </ul>
 
-<pre># Simple hash function example
-def hash_function(key, table_size):
+<pre># Simple hash function examples
+def hash_mod(key, table_size):
+    """Sum ASCII values and take modulo"""
     total = 0
-    for char in key:
-        total += ord(char)       # sum ASCII values
-    return total % table_size    # modulo to fit in table
+    for char in str(key):
+        total += ord(char)
+    return total % table_size
 
-# hash_function("Cat", 10) = (67+97+116) % 10 = 280 % 10 = 0</pre>
+print(hash_mod("Cat", 10))   # (67+97+116) % 10 = 280 % 10 = 0
+print(hash_mod("Dog", 10))   # (68+111+103) % 10 = 282 % 10 = 2
+print(hash_mod("Bat", 10))   # (66+97+116) % 10 = 279 % 10 = 9
+
+# A better hash function uses position-weighting to avoid anagrams colliding:
+def hash_weighted(key, table_size):
+    total = 0
+    for i, char in enumerate(str(key)):
+        total += ord(char) * (i + 1)   # multiply by position
+    return total % table_size</pre>
 
 <h3>Collisions</h3>
-<p>A <strong>collision</strong> occurs when two different keys hash to the same index. Collision resolution strategies:</p>
+<p>A <strong>collision</strong> occurs when two different keys hash to the same index. Since the hash function maps a large key space to a small index space, collisions are inevitable (by the pigeonhole principle). Two main collision resolution strategies:</p>
 
 <p><strong>1. Open Addressing (Linear Probing):</strong></p>
 <ul>
-    <li>If the target slot is occupied, check the next slot, then the next, and so on (wrapping around)</li>
-    <li>Simple to implement but can cause <strong>clustering</strong> &mdash; groups of occupied slots that slow down operations</li>
-    <li>Other probing methods: quadratic probing (check i&sup2; slots ahead), double hashing (use a second hash function to determine step size)</li>
+    <li>If the target slot is occupied, check the next slot, then the next, wrapping around to the beginning if necessary</li>
+    <li>To search: hash the key, then probe forward until the key is found or an empty slot is reached</li>
+    <li>Simple to implement but can cause <strong>clustering</strong> &mdash; groups of consecutive occupied slots that force long probe sequences</li>
+    <li>Other variants: <strong>quadratic probing</strong> (probe 1, 4, 9, 16... slots ahead), <strong>double hashing</strong> (use a second hash function to determine step size)</li>
 </ul>
+
+<pre># Linear probing example: table size = 7
+# Insert keys with hashes: A->2, B->2, C->3, D->2
+
+# Insert A (hash=2): slot 2 empty, place A
+# [_, _, A, _, _, _, _]
+
+# Insert B (hash=2): slot 2 occupied, try 3 -> empty, place B
+# [_, _, A, B, _, _, _]
+
+# Insert C (hash=3): slot 3 occupied, try 4 -> empty, place C
+# [_, _, A, B, C, _, _]
+
+# Insert D (hash=2): slots 2,3,4 occupied, try 5 -> empty, place D
+# [_, _, A, B, C, D, _]
+# Notice the cluster forming at indices 2-5!</pre>
 
 <p><strong>2. Chaining (Separate Chaining):</strong></p>
 <ul>
-    <li>Each slot in the table holds a <strong>linked list</strong> of all key-value pairs that hash to that index</li>
-    <li>No clustering, but requires extra memory for linked list pointers</li>
-    <li>Performance degrades if lists become long</li>
+    <li>Each slot in the table holds a <strong>linked list</strong> (or other collection) of all key-value pairs that hash to that index</li>
+    <li>No clustering &mdash; multiple items simply share a slot via the linked list</li>
+    <li>Requires extra memory for linked list pointers</li>
+    <li>Performance degrades if lists become very long (worst case: all items in one chain = O(n))</li>
 </ul>
 
-<pre># Chaining example
-# Table size = 5
-# Insert: "Cat"->0, "Dog"->3, "Bat"->0 (collision with Cat)
+<pre># Chaining example: table size = 5
+# Insert: "Cat"->index 0, "Dog"->index 3, "Bat"->index 0 (collision!)
 
-# Index 0: [Cat: value] -> [Bat: value] -> None
+# Index 0: [Cat: "meow"] -> [Bat: "squeak"] -> None
 # Index 1: None
 # Index 2: None
-# Index 3: [Dog: value] -> None
-# Index 4: None</pre>
+# Index 3: [Dog: "woof"] -> None
+# Index 4: None
 
-<h3>Load Factor</h3>
+# To find "Bat": hash("Bat")=0, go to index 0, traverse linked list
+# until "Bat" is found</pre>
+
+<h3>Load Factor and Rehashing</h3>
 <div class="definition-box">
-    <strong>Load factor</strong> = number of items stored / table size. A higher load factor means more collisions. When the load factor exceeds a threshold (commonly 0.7), the table should be <strong>resized</strong> (usually doubled) and all items rehashed.
+    <strong>Load factor</strong> = number of items stored / table size. A higher load factor means more collisions and slower performance. When the load factor exceeds a threshold (commonly 0.7 or 70%), the table should be <strong>resized</strong> (usually doubled to the next prime number) and <strong>all items rehashed</strong> with the new table size.
 </div>
 
 <h3>Hash Table Performance</h3>
 <table>
-    <tr><th>Operation</th><th>Average Case</th><th>Worst Case</th></tr>
-    <tr><td>Search</td><td>O(1)</td><td>O(n)</td></tr>
-    <tr><td>Insert</td><td>O(1)</td><td>O(n)</td></tr>
-    <tr><td>Delete</td><td>O(1)</td><td>O(n)</td></tr>
+    <tr><th>Operation</th><th>Average Case</th><th>Worst Case</th><th>Worst Case Explanation</th></tr>
+    <tr><td>Search</td><td>O(1)</td><td>O(n)</td><td>All keys hash to same index</td></tr>
+    <tr><td>Insert</td><td>O(1)</td><td>O(n)</td><td>All keys in one chain/cluster</td></tr>
+    <tr><td>Delete</td><td>O(1)</td><td>O(n)</td><td>Must search through chain</td></tr>
 </table>
-<p>Worst case occurs when all keys hash to the same index (all items in one chain or cluster).</p>
+
+<div class="real-world">Hash tables are used to implement Python dictionaries, JavaScript objects, database indexing, caching systems (like memcached/Redis), compiler symbol tables (mapping variable names to memory addresses), and DNS lookup (mapping domain names to IP addresses). They are one of the most commonly used data structures in practice.</div>
 
 <!-- ==================== VECTORS ==================== -->
 <h2>4.2.9 Vectors</h2>
 
 <div class="definition-box">
-    <strong>Vector:</strong> A mathematical object that has both <strong>magnitude</strong> (size) and <strong>direction</strong>. In computer science, vectors are represented as ordered lists of numbers and can be treated as a special form of a 1D array or as a function mapping indices to values.
+    <strong>Vector:</strong> A mathematical object that has both <strong>magnitude</strong> (size/length) and <strong>direction</strong>. In computer science, vectors are represented as ordered lists of numbers and can be treated as a 1D array, a function mapping indices to values, or a point in n-dimensional space.
 </div>
 
 <h3>Representations</h3>
-<p>Vectors can be viewed as:</p>
+<p>Vectors can be viewed in multiple ways:</p>
 <ul>
     <li>A <strong>list of numbers</strong>: <strong>v</strong> = [3, 4] (a 2D vector), <strong>w</strong> = [1, 2, 5] (a 3D vector)</li>
-    <li>An <strong>arrow</strong> from the origin to a point in space</li>
+    <li>An <strong>arrow</strong> from the origin to a point in space (geometric interpretation)</li>
     <li>A <strong>function</strong> from index set {0, 1, ..., n-1} to real numbers: f(0) = 3, f(1) = 4</li>
-    <li>A <strong>dictionary</strong> mapping indices to values (useful for sparse vectors)</li>
+    <li>A <strong>dictionary</strong> mapping indices to values (useful for sparse vectors where most values are 0)</li>
 </ul>
 
 <h3>Vector Operations</h3>
 
-<p><strong>Addition:</strong> Add corresponding components.</p>
-<pre>[3, 4] + [1, 2] = [3+1, 4+2] = [4, 6]</pre>
+<p><strong>Addition:</strong> Add corresponding components. Both vectors must have the same dimension.</p>
+<pre>[3, 4] + [1, 2] = [3+1, 4+2] = [4, 6]
+[1, 5, 3] + [2, -1, 4] = [3, 4, 7]</pre>
 
-<p><strong>Scalar multiplication:</strong> Multiply every component by a scalar.</p>
-<pre>2 * [3, 4] = [6, 8]</pre>
+<p><strong>Scalar multiplication:</strong> Multiply every component by a scalar (single number). Scales the vector's magnitude without changing direction (unless the scalar is negative, which reverses direction).</p>
+<pre>2 * [3, 4] = [6, 8]          # doubled in length
+-1 * [3, 4] = [-3, -4]       # same length, opposite direction
+0.5 * [6, 10] = [3, 5]       # halved in length</pre>
 
-<p><strong>Dot product (scalar product):</strong> Multiply corresponding components and sum the results. The result is a single number (scalar), not a vector.</p>
+<p><strong>Dot product (scalar product):</strong> Multiply corresponding components and sum the results. The result is a single <strong>scalar</strong> (number), not a vector. The dot product measures how "aligned" two vectors are.</p>
 <pre>[3, 4] . [1, 2] = (3*1) + (4*2) = 3 + 8 = 11
+[1, 0] . [0, 1] = (1*0) + (0*1) = 0    (perpendicular vectors!)
 
 # General formula:
-# u . v = u[0]*v[0] + u[1]*v[1] + ... + u[n-1]*v[n-1]</pre>
+# u . v = u[0]*v[0] + u[1]*v[1] + ... + u[n-1]*v[n-1]
 
-<p><strong>Convex combination:</strong> A weighted average of two vectors where the weights are non-negative and sum to 1. If <strong>u</strong> and <strong>v</strong> are vectors and 0 &le; t &le; 1:</p>
-<pre>result = (1-t) * u + t * v
+# If dot product = 0, the vectors are perpendicular (orthogonal)</pre>
 
-# When t = 0, result = u
-# When t = 1, result = v
-# When t = 0.5, result = midpoint of u and v</pre>
+<p><strong>Magnitude (length):</strong> The length of a vector, calculated using Pythagoras' theorem.</p>
+<pre>|[3, 4]| = sqrt(3^2 + 4^2) = sqrt(9 + 16) = sqrt(25) = 5
+|[1, 2, 2]| = sqrt(1^2 + 2^2 + 2^2) = sqrt(9) = 3</pre>
+
+<p><strong>Convex combination:</strong> A weighted average of two vectors where the weights are non-negative and sum to 1. Produces a point that lies on the straight line between the two vectors.</p>
+<pre>result = (1-t) * u + t * v    where 0 &le; t &le; 1
+
+# When t = 0: result = u (start point)
+# When t = 1: result = v (end point)
+# When t = 0.5: result = midpoint of u and v
+
+# Example: u = [2, 8], v = [10, 4], t = 0.25
+# result = 0.75 * [2, 8] + 0.25 * [10, 4]
+#        = [1.5, 6] + [2.5, 1]
+#        = [4, 7]   (a point 25% of the way from u to v)</pre>
 
 <h3>Applications of Vectors</h3>
 <ul>
-    <li>Computer graphics &mdash; positions, directions, forces</li>
-    <li>Machine learning &mdash; feature vectors representing data points</li>
-    <li>Physics simulations &mdash; velocity, acceleration</li>
-    <li>Natural language processing &mdash; word embeddings</li>
+    <li><strong>Computer graphics</strong> &mdash; positions, directions, velocities, forces, normals for lighting</li>
+    <li><strong>Machine learning</strong> &mdash; feature vectors representing data points; weight vectors in neural networks</li>
+    <li><strong>Physics simulations</strong> &mdash; velocity, acceleration, gravitational force</li>
+    <li><strong>Natural language processing</strong> &mdash; word embeddings (words represented as vectors; similar words have similar vectors)</li>
+    <li><strong>Recommendation systems</strong> &mdash; users and items as vectors; dot product measures compatibility</li>
 </ul>
 
 <div class="exam-tip">
-    AQA may ask you to perform vector arithmetic by hand. Remember: addition requires vectors of the same dimension, and the dot product always produces a scalar. Be able to explain vectors as both a mathematical concept and a data structure.
+    AQA may ask you to perform vector arithmetic by hand. Remember: addition requires vectors of the <strong>same dimension</strong>, and the dot product always produces a <strong>scalar</strong> (not a vector). Be able to explain vectors as both a mathematical concept and a data structure (as a function from indices to values).
 </div>
 
 <!-- ==================== DICTIONARIES ==================== -->
 <h2>4.2.10 Dictionaries</h2>
 
 <div class="definition-box">
-    <strong>Dictionary:</strong> An abstract data type that stores <strong>key-value pairs</strong>, where each unique key maps to a value. Also known as an <strong>associative array</strong> or <strong>map</strong>.
+    <strong>Dictionary:</strong> An abstract data type that stores <strong>key-value pairs</strong>, where each unique key maps to exactly one value. Also known as an <strong>associative array</strong>, <strong>map</strong>, or <strong>symbol table</strong>. The key is used to look up the associated value, much like looking up a word in an English dictionary to find its definition.
 </div>
 
 <h3>Key Properties</h3>
 <ul>
-    <li>Keys must be <strong>unique</strong> (no duplicate keys)</li>
-    <li>Keys must be <strong>immutable</strong> (in most implementations)</li>
-    <li>Values can be of any type and can be duplicated</li>
-    <li>No inherent ordering (though some implementations maintain insertion order)</li>
+    <li>Keys must be <strong>unique</strong> &mdash; no duplicate keys (inserting with an existing key overwrites the value)</li>
+    <li>Keys must be <strong>immutable</strong> and <strong>hashable</strong> (in hash-based implementations) &mdash; strings, numbers, and tuples can be keys; lists and other mutable objects cannot</li>
+    <li>Values can be of <strong>any type</strong> and can be duplicated across different keys</li>
+    <li>No inherent ordering in the abstract definition (though Python 3.7+ dicts maintain insertion order)</li>
 </ul>
 
 <h3>Operations</h3>
 <table>
-    <tr><th>Operation</th><th>Description</th><th>Example (Python)</th></tr>
-    <tr><td>Create</td><td>Initialise a dictionary</td><td><code>d = {"name": "Alice", "age": 17}</code></td></tr>
-    <tr><td>Add / Update</td><td>Insert a new key-value pair or update existing</td><td><code>d["grade"] = "A"</code></td></tr>
-    <tr><td>Retrieve</td><td>Look up a value by its key</td><td><code>d["name"]</code> returns <code>"Alice"</code></td></tr>
-    <tr><td>Delete</td><td>Remove a key-value pair</td><td><code>del d["age"]</code></td></tr>
-    <tr><td>Check existence</td><td>Test if a key is in the dictionary</td><td><code>"name" in d</code> returns <code>True</code></td></tr>
-    <tr><td>Iterate</td><td>Loop through keys, values, or both</td><td><code>for key, val in d.items()</code></td></tr>
+    <tr><th>Operation</th><th>Description</th><th>Python Syntax</th><th>Time (average)</th></tr>
+    <tr><td>Create</td><td>Initialise a dictionary</td><td><code>d = {"name": "Alice", "age": 17}</code></td><td>O(n)</td></tr>
+    <tr><td>Add / Update</td><td>Insert or update a key-value pair</td><td><code>d["grade"] = "A"</code></td><td>O(1)</td></tr>
+    <tr><td>Retrieve</td><td>Look up a value by its key</td><td><code>d["name"]</code> &rarr; <code>"Alice"</code></td><td>O(1)</td></tr>
+    <tr><td>Delete</td><td>Remove a key-value pair</td><td><code>del d["age"]</code></td><td>O(1)</td></tr>
+    <tr><td>Check existence</td><td>Test if a key is in the dictionary</td><td><code>"name" in d</code> &rarr; <code>True</code></td><td>O(1)</td></tr>
+    <tr><td>Iterate</td><td>Loop through all key-value pairs</td><td><code>for k, v in d.items():</code></td><td>O(n)</td></tr>
 </table>
 
 <h3>Implementation</h3>
-<p>Dictionaries are most commonly implemented using <strong>hash tables</strong>, which is why lookup, insertion, and deletion are all O(1) on average. The key is hashed to determine where the value is stored.</p>
+<p>Dictionaries are most commonly implemented using <strong>hash tables</strong>, which is why lookup, insertion, and deletion are all O(1) on average. The key is hashed to determine the array index where the value is stored. This is why keys must be hashable.</p>
 
-<pre>students = {
-    "S001": {"name": "Alice", "grade": 92},
-    "S002": {"name": "Bob", "grade": 85},
-    "S003": {"name": "Charlie", "grade": 78}
+<pre># Practical dictionary example: student database
+students = {
+    "S001": {"name": "Alice", "age": 17, "grade": 92},
+    "S002": {"name": "Bob", "age": 18, "grade": 85},
+    "S003": {"name": "Charlie", "age": 17, "grade": 78}
 }
 
 # Access nested data
 print(students["S001"]["name"])     # Alice
+print(students["S002"]["grade"])    # 85
 
 # Add a new student
-students["S004"] = {"name": "Diana", "grade": 95}
+students["S004"] = {"name": "Diana", "age": 17, "grade": 95}
 
-# Check if a student exists
-if "S002" in students:
-    print(students["S002"]["grade"])  # 85</pre>
+# Check if a student exists before accessing
+student_id = "S005"
+if student_id in students:
+    print(students[student_id]["name"])
+else:
+    print(f"Student {student_id} not found")
+
+# Iterate through all students
+for sid, info in students.items():
+    if info["grade"] &gt;= 90:
+        print(f"{info['name']} ({sid}): A* student")
+
+# Using .get() for safe access with a default value
+grade = students.get("S999", {}).get("grade", "N/A")
+print(grade)   # "N/A" (student doesn't exist)</pre>
 
 <h3>Dictionaries vs Other Structures</h3>
 <table>
     <tr><th>Feature</th><th>Dictionary</th><th>Array</th><th>Linked List</th></tr>
-    <tr><td>Access method</td><td>By key</td><td>By index</td><td>By traversal</td></tr>
-    <tr><td>Lookup speed</td><td>O(1) average</td><td>O(1)</td><td>O(n)</td></tr>
-    <tr><td>Data types</td><td>Any key type, any value type</td><td>Homogeneous</td><td>Any type</td></tr>
-    <tr><td>Ordering</td><td>Unordered (or insertion-ordered)</td><td>Ordered by index</td><td>Ordered by position</td></tr>
-    <tr><td>Use case</td><td>Fast lookup by meaningful key</td><td>Indexed sequential data</td><td>Dynamic sequential data</td></tr>
+    <tr><td>Access method</td><td>By meaningful key (string, number)</td><td>By numeric index</td><td>By sequential traversal</td></tr>
+    <tr><td>Lookup speed</td><td>O(1) average</td><td>O(1) by index</td><td>O(n)</td></tr>
+    <tr><td>Key types</td><td>Any hashable type</td><td>Integer index only</td><td>N/A (no keys)</td></tr>
+    <tr><td>Ordering</td><td>Insertion-ordered (Python 3.7+)</td><td>Ordered by index</td><td>Ordered by position</td></tr>
+    <tr><td>Best use case</td><td>Fast lookup by meaningful key (phone book, symbol table, config settings)</td><td>Ordered sequential data with fast index access</td><td>Frequent insertions/deletions, unknown size</td></tr>
 </table>
 
+<div class="real-world">Dictionaries are everywhere in real software: JSON data (the format of most web APIs) is essentially nested dictionaries, database indexes map keys to row locations, DNS maps domain names to IP addresses, configuration files map setting names to values, and compiler symbol tables map variable names to their types and memory locations.</div>
+
 <div class="exam-tip">
-    The AQA spec treats dictionaries as an ADT. You should understand that a dictionary is conceptually a collection of key-value pairs with certain operations, and that a hash table is one way to implement it. Be prepared to trace dictionary operations and explain why hash-based dictionaries offer O(1) average lookup.
+    The AQA spec treats dictionaries as an ADT. You should understand that a dictionary is conceptually a collection of key-value pairs with certain operations (add, remove, lookup), and that a <strong>hash table</strong> is the most common way to implement it. Be prepared to trace dictionary operations and explain why hash-based dictionaries offer O(1) average lookup &mdash; because the hash function converts the key directly to an array index.
 </div>
 
 </div>

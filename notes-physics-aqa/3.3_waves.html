@@ -20,6 +20,7 @@
   tr:nth-child(even) { background: #f8fafc; }
   .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
@@ -31,27 +32,25 @@
 
 <!-- PROGRESSIVE WAVES -->
 <h2>1. Progressive Waves</h2>
-<div class="def-box"><strong>Progressive wave:</strong> A wave that transfers energy from one place to another without transferring matter. The oscillations of particles (or fields) propagate outward from the source.</div>
+<div class="def-box"><strong>Progressive wave:</strong> A wave that transfers energy from one place to another without transferring matter. The oscillations of particles (or fields) propagate outward from the source. Each particle oscillates about its equilibrium position but does not travel with the wave.</div>
 
 <h3>Transverse vs Longitudinal</h3>
 <table>
   <tr><th>Property</th><th>Transverse Wave</th><th>Longitudinal Wave</th></tr>
   <tr><td>Oscillation direction</td><td>Perpendicular to the direction of wave travel</td><td>Parallel to the direction of wave travel</td></tr>
-  <tr><td>Examples</td><td>EM waves, water surface waves, waves on a string, S-waves</td><td>Sound waves, P-waves, ultrasound, compression springs</td></tr>
+  <tr><td>Examples</td><td>EM waves, water surface waves, waves on a string, S-waves (seismic)</td><td>Sound waves, P-waves (seismic), ultrasound, compression springs</td></tr>
   <tr><td>Can be polarised?</td><td>Yes</td><td>No</td></tr>
   <tr><td>Features</td><td>Crests and troughs</td><td>Compressions and rarefactions</td></tr>
+  <tr><td>Requires a medium?</td><td>EM waves: no; mechanical: yes</td><td>Yes (always mechanical)</td></tr>
 </table>
 
 <!-- Transverse vs Longitudinal Wave Diagram -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 560 340" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="280" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Transverse vs Longitudinal Waves</text>
-
   <!-- TRANSVERSE WAVE -->
   <text x="30" y="55" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="700">Transverse Wave</text>
-  <!-- Equilibrium line -->
   <line x1="30" y1="110" x2="530" y2="110" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- Sine wave -->
   <path d="M30,110 Q70,40 110,110 Q150,180 190,110 Q230,40 270,110 Q310,180 350,110 Q390,40 430,110 Q470,180 510,110" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
   <!-- Amplitude arrow -->
   <line x1="110" y1="110" x2="110" y2="42" stroke="#DC2626" stroke-width="1.5"/>
@@ -72,35 +71,24 @@
 
   <!-- LONGITUDINAL WAVE -->
   <text x="30" y="210" font-family="system-ui" font-size="12" fill="#D97706" font-weight="700">Longitudinal Wave</text>
-  <!-- Particles as dots showing compressions and rarefactions -->
   <g fill="#D97706">
-    <!-- Compression region -->
     <circle cx="40" cy="250" r="3"/><circle cx="50" cy="250" r="3"/><circle cx="58" cy="250" r="3"/>
     <circle cx="65" cy="250" r="3"/><circle cx="72" cy="250" r="3"/><circle cx="78" cy="250" r="3"/>
-    <!-- Rarefaction -->
     <circle cx="100" cy="250" r="3"/><circle cx="120" cy="250" r="3"/><circle cx="140" cy="250" r="3"/>
-    <!-- Compression -->
     <circle cx="158" cy="250" r="3"/><circle cx="166" cy="250" r="3"/><circle cx="173" cy="250" r="3"/>
     <circle cx="180" cy="250" r="3"/><circle cx="187" cy="250" r="3"/><circle cx="194" cy="250" r="3"/>
-    <!-- Rarefaction -->
     <circle cx="216" cy="250" r="3"/><circle cx="236" cy="250" r="3"/><circle cx="256" cy="250" r="3"/>
-    <!-- Compression -->
     <circle cx="274" cy="250" r="3"/><circle cx="282" cy="250" r="3"/><circle cx="289" cy="250" r="3"/>
     <circle cx="296" cy="250" r="3"/><circle cx="303" cy="250" r="3"/><circle cx="310" cy="250" r="3"/>
-    <!-- Rarefaction -->
     <circle cx="332" cy="250" r="3"/><circle cx="352" cy="250" r="3"/><circle cx="372" cy="250" r="3"/>
-    <!-- Compression -->
     <circle cx="390" cy="250" r="3"/><circle cx="398" cy="250" r="3"/><circle cx="405" cy="250" r="3"/>
     <circle cx="412" cy="250" r="3"/><circle cx="419" cy="250" r="3"/><circle cx="426" cy="250" r="3"/>
-    <!-- Rarefaction -->
     <circle cx="448" cy="250" r="3"/><circle cx="468" cy="250" r="3"/><circle cx="488" cy="250" r="3"/>
   </g>
-  <!-- Labels -->
   <text x="60" y="276" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">C</text>
   <text x="120" y="276" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">R</text>
   <text x="176" y="276" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">C</text>
   <text x="236" y="276" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">R</text>
-  <!-- Wavelength for longitudinal -->
   <line x1="40" y1="295" x2="158" y2="295" stroke="#16A34A" stroke-width="1.5"/>
   <line x1="44" y1="290" x2="40" y2="295"/><line x1="44" y1="300" x2="40" y2="295"/>
   <line x1="154" y1="290" x2="158" y2="295"/><line x1="154" y1="300" x2="158" y2="295"/>
@@ -111,27 +99,60 @@
 
 <h3>Wave Properties</h3>
 <ul>
-  <li><strong>Amplitude (A):</strong> Maximum displacement of a particle from its equilibrium position. Related to intensity (I &propto; A<sup>2</sup>).</li>
-  <li><strong>Wavelength (&lambda;):</strong> The minimum distance between two points in phase (e.g. crest to crest).</li>
-  <li><strong>Frequency (f):</strong> Number of complete oscillations per second. Units: Hz (s<sup>-1</sup>).</li>
-  <li><strong>Period (T):</strong> Time for one complete oscillation. T = 1/f.</li>
+  <li><strong>Amplitude (A):</strong> Maximum displacement of a particle from its equilibrium position. Related to intensity: I &propto; A<sup>2</sup>. Larger amplitude means more energy.</li>
+  <li><strong>Wavelength (&lambda;):</strong> The minimum distance between two points in phase (e.g. crest to crest, compression to compression). Units: m.</li>
+  <li><strong>Frequency (f):</strong> Number of complete oscillations per second. Units: Hz (s<sup>-1</sup>). Determined by the source and does not change when a wave enters a different medium.</li>
+  <li><strong>Period (T):</strong> Time for one complete oscillation. T = 1/f. Units: s.</li>
+  <li><strong>Wave speed (v):</strong> The speed at which the wave front moves through the medium. Different from the speed of individual particles.</li>
 </ul>
 
 <h3>The Wave Equation</h3>
 <div class="eq">v = f&lambda;</div>
-<p>where v = wave speed (m s<sup>-1</sup>), f = frequency (Hz), &lambda; = wavelength (m).</p>
+<p>where v = wave speed (m s<sup>-1</sup>), f = frequency (Hz), &lambda; = wavelength (m). This equation applies to all waves.</p>
+
+<p><strong>Derivation:</strong> In one period T, a wave travels exactly one wavelength &lambda;. Speed = distance/time = &lambda;/T = &lambda; &times; (1/T) = f&lambda;.</p>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A radio station broadcasts at 98.5 MHz. Calculate the wavelength of the signal.<br><br>
+v = c = 3.00 &times; 10<sup>8</sup> m s<sup>-1</sup> (radio waves are EM waves)<br>
+f = 98.5 &times; 10<sup>6</sup> Hz<br>
+&lambda; = v/f = 3.00 &times; 10<sup>8</sup> / 98.5 &times; 10<sup>6</sup> = <strong>3.05 m</strong>
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Sound waves of frequency 440 Hz travel at 340 m s<sup>-1</sup> in air. Find the wavelength.<br><br>
+&lambda; = v/f = 340 / 440 = <strong>0.773 m</strong> (about 77 cm)
+</div>
+
+<h3>Intensity</h3>
+<div class="def-box"><strong>Intensity:</strong> The power transmitted per unit area perpendicular to the wave direction. I = P/A. Units: W m<sup>-2</sup>. For a point source radiating uniformly: I = P/(4&pi;r<sup>2</sup>), so intensity follows an inverse square law.</div>
+<div class="eq">I &propto; A<sup>2</sup></div>
+<p>Doubling the amplitude quadruples the intensity. This relationship holds for all waves.</p>
 
 <h3>Phase Difference</h3>
-<div class="def-box"><strong>Phase difference:</strong> The fraction of a cycle by which one wave leads or lags another. Measured in degrees (0&deg;&ndash;360&deg;) or radians (0&ndash;2&pi;).</div>
+<div class="def-box"><strong>Phase difference:</strong> The fraction of a cycle by which one wave leads or lags another. Measured in degrees (0&deg;-360&deg;) or radians (0-2&pi;).</div>
 <ul>
-  <li><strong>In phase:</strong> Phase difference = 0 (or 2&pi;, 4&pi;, ...). Points at the same displacement, moving in the same direction.</li>
-  <li><strong>Antiphase (completely out of phase):</strong> Phase difference = &pi; (or 180&deg;). Opposite displacements.</li>
+  <li><strong>In phase:</strong> Phase difference = 0 (or 2&pi;, 4&pi;, ..., i.e. any integer multiple of 2&pi;). Points at the same displacement, moving in the same direction.</li>
+  <li><strong>Antiphase (completely out of phase):</strong> Phase difference = &pi; (or 180&deg;, or any odd multiple of &pi;). Opposite displacements.</li>
+  <li><strong>Quadrature:</strong> Phase difference = &pi;/2 (90&deg;). One wave is at maximum when the other is at zero.</li>
 </ul>
 <div class="eq">Phase difference = (2&pi; / &lambda;) &times; path difference</div>
+<div class="eq">Phase difference (in radians) = (2&pi; / T) &times; time difference</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Two speakers emit sound of wavelength 0.50 m. Point P is 3.25 m from speaker 1 and 4.00 m from speaker 2. What is the phase difference and do the waves interfere constructively or destructively?<br><br>
+Path difference = 4.00 - 3.25 = 0.75 m<br>
+Phase difference = (2&pi; / 0.50) &times; 0.75 = 3&pi; radians = 540&deg;<br>
+3&pi; = &pi; + 2&pi;, which is equivalent to &pi; (antiphase).<br>
+Path difference / &lambda; = 0.75 / 0.50 = 1.5 = (1 + &frac12;)&lambda;<br>
+The waves arrive in <strong>antiphase: destructive interference</strong>.
+</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Coherence does NOT mean the waves are in phase — it means the phase difference is constant over time. Two coherent sources could have a fixed phase difference of, say, &pi;/3. A laser is coherent; a filament lamp is not.</div>
 
 <!-- SUPERPOSITION AND INTERFERENCE -->
 <h2>2. Superposition and Interference</h2>
-<div class="def-box"><strong>Principle of superposition:</strong> When two or more waves meet at a point, the resultant displacement is the vector sum of the individual displacements.</div>
+<div class="def-box"><strong>Principle of superposition:</strong> When two or more waves meet at a point, the resultant displacement is the vector sum of the individual displacements at that point and at that instant.</div>
 
 <h3>Interference</h3>
 <ul>
@@ -139,91 +160,94 @@
   <li><strong>Destructive interference:</strong> Waves arrive in antiphase. Resultant amplitude = difference of amplitudes. Path difference = (n + &frac12;)&lambda;</li>
 </ul>
 
+<div class="def-box"><strong>Coherent sources:</strong> Two sources that emit waves with a constant phase difference and the same frequency. Coherence is required to observe a stable, observable interference pattern. Without coherence, the interference pattern shifts randomly and averages out.</div>
+
 <!-- Superposition / Interference Diagram -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 200" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Superposition of Waves</text>
   <!-- Constructive -->
   <text x="140" y="42" text-anchor="middle" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">Constructive Interference</text>
-  <!-- Wave 1 -->
   <path d="M30,90 Q75,55 120,90 Q165,125 210,90" fill="none" stroke="#1a73e8" stroke-width="1.2" opacity="0.5"/>
-  <!-- Wave 2 (in phase) -->
   <path d="M30,90 Q75,55 120,90 Q165,125 210,90" fill="none" stroke="#DC2626" stroke-width="1.2" opacity="0.5"/>
-  <!-- = sign -->
   <text x="225" y="94" font-family="system-ui" font-size="16" fill="#1a1a2e">=</text>
-  <!-- Resultant (double amplitude) -->
   <path d="M240,90 Q285,20 330,90 Q375,160 420,90" fill="none" stroke="#16A34A" stroke-width="2.5"/>
   <text x="380" y="60" font-family="system-ui" font-size="10" fill="#16A34A">2A</text>
   <text x="140" y="108" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">Path difference = 0, lambda, 2lambda...</text>
 
   <!-- Destructive -->
   <text x="140" y="135" text-anchor="middle" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">Destructive Interference</text>
-  <!-- Wave 1 -->
   <path d="M30,165 Q75,135 120,165 Q165,195 210,165" fill="none" stroke="#1a73e8" stroke-width="1.2" opacity="0.5"/>
-  <!-- Wave 2 (antiphase) -->
   <path d="M30,165 Q75,195 120,165 Q165,135 210,165" fill="none" stroke="#DC2626" stroke-width="1.2" opacity="0.5"/>
   <text x="225" y="169" font-family="system-ui" font-size="16" fill="#1a1a2e">=</text>
-  <!-- Resultant (zero) -->
   <line x1="240" y1="165" x2="420" y2="165" stroke="#64748b" stroke-width="2.5"/>
   <text x="380" y="158" font-family="system-ui" font-size="10" fill="#64748b">0</text>
   <text x="140" y="195" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">Path difference = lambda/2, 3lambda/2...</text>
 </svg>
 </div>
 
-<h3>Coherence</h3>
-<div class="def-box"><strong>Coherent sources:</strong> Two sources that emit waves with a constant phase difference and the same frequency. Coherence is required to observe a stable interference pattern.</div>
-
-<div class="tip-box"><strong>Exam Tip:</strong> Coherence does NOT mean the waves are in phase &mdash; it means the phase difference is constant over time. Two coherent sources could have a fixed phase difference of, say, &pi;/3.</div>
+<p><strong>Real-world application:</strong> Noise-cancelling headphones work by detecting ambient sound and producing a wave of equal amplitude but opposite phase (antiphase). Superposition of the two waves results in destructive interference, greatly reducing the perceived noise. Active noise cancellation is particularly effective for low-frequency, steady sounds like aircraft engine hum.</p>
 
 <!-- YOUNG'S DOUBLE SLIT -->
 <h2>3. Young's Double Slit Experiment</h2>
-<p>Monochromatic, coherent light passes through two narrow slits separated by distance <em>d</em>. An interference pattern of bright and dark fringes is observed on a screen at distance <em>D</em>.</p>
+<p>Monochromatic, coherent light passes through two narrow slits separated by distance <em>d</em>. An interference pattern of bright and dark fringes is observed on a screen at distance <em>D</em>. This experiment (1801) provided the first strong evidence for the wave nature of light.</p>
 
 <div class="eq">w = &lambda;D / d</div>
 <ul>
-  <li>w = fringe spacing (m)</li>
+  <li>w = fringe spacing (distance between adjacent bright fringes) (m)</li>
   <li>&lambda; = wavelength (m)</li>
   <li>D = distance from slits to screen (m)</li>
   <li>d = slit separation (m)</li>
 </ul>
 
-<p>This experiment provided strong evidence for the wave nature of light. White light produces a central white fringe with coloured fringes either side (red fringes are wider because &lambda;<sub>red</sub> > &lambda;<sub>blue</sub>).</p>
+<div class="worked-example">
+<strong>Worked Example:</strong> A laser of wavelength 635 nm illuminates a double slit with separation 0.25 mm. The screen is 2.50 m away. Calculate the fringe spacing.<br><br>
+w = &lambda;D/d = (635 &times; 10<sup>-9</sup> &times; 2.50) / (0.25 &times; 10<sup>-3</sup>)<br>
+w = 1.5875 &times; 10<sup>-6</sup> / 2.5 &times; 10<sup>-4</sup> = <strong>6.35 &times; 10<sup>-3</sup> m = 6.35 mm</strong>
+</div>
+
+<p>White light produces a central white fringe (all wavelengths have zero path difference) with coloured fringes either side. Red fringes are wider than blue because &lambda;<sub>red</sub> > &lambda;<sub>blue</sub>, so w<sub>red</sub> > w<sub>blue</sub>. Away from the centre, the colours overlap and the pattern becomes less distinct.</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> A single slit is sometimes placed before the double slit to ensure coherence when using a white light source (not needed with a laser). The single slit acts as a point source so both slits are illuminated by the same wavefront. With a laser, the light is already coherent.</div>
 
 <!-- DIFFRACTION GRATINGS -->
 <h2>4. Diffraction Gratings</h2>
-<p>A diffraction grating has many equally-spaced slits (typically hundreds per mm). It produces sharp, bright maxima at specific angles.</p>
+<p>A diffraction grating has many equally-spaced slits (typically hundreds per mm). It produces sharp, bright maxima at specific angles, much narrower than the double slit fringes.</p>
 
 <div class="eq">d sin&theta; = n&lambda;</div>
 <ul>
   <li>d = slit spacing (distance between adjacent slits) = 1 / (number of slits per metre)</li>
-  <li>&theta; = angle of diffraction from the central maximum</li>
+  <li>&theta; = angle of diffraction from the central maximum (n=0)</li>
   <li>n = order of the maximum (0, 1, 2, ...)</li>
   <li>&lambda; = wavelength</li>
 </ul>
 
 <p>The maximum number of orders visible is when sin&theta; &le; 1, so n<sub>max</sub> = d / &lambda; (rounded down to the nearest integer).</p>
 
-<!-- Single Slit Diffraction and Interference Pattern -->
+<div class="worked-example">
+<strong>Worked Example:</strong> A diffraction grating has 600 lines per mm. Monochromatic light of wavelength 550 nm is incident normally. Calculate (a) the slit spacing, (b) the angle of the 2nd order maximum, (c) the maximum number of orders visible.<br><br>
+(a) d = 1 / (600 &times; 10<sup>3</sup>) = 1.667 &times; 10<sup>-6</sup> m<br><br>
+(b) d sin&theta; = n&lambda;<br>
+sin&theta; = n&lambda;/d = (2 &times; 550 &times; 10<sup>-9</sup>) / (1.667 &times; 10<sup>-6</sup>) = 0.660<br>
+&theta; = sin<sup>-1</sup>(0.660) = <strong>41.3&deg;</strong><br><br>
+(c) n<sub>max</sub> = d/&lambda; = 1.667 &times; 10<sup>-6</sup> / 550 &times; 10<sup>-9</sup> = 3.03<br>
+n<sub>max</sub> = <strong>3</strong> (round down). So orders n = 0, 1, 2, 3 are visible on each side.
+</div>
+
+<!-- Single Slit Diffraction Pattern -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 240" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Single Slit Diffraction Pattern</text>
-
-  <!-- Barrier with slit -->
   <rect x="130" y="35" width="8" height="80" fill="#1a1a2e"/>
   <rect x="130" y="130" width="8" height="80" fill="#1a1a2e"/>
-  <!-- Slit gap -->
   <line x1="134" y1="115" x2="134" y2="130" stroke="#D97706" stroke-width="2"/>
   <text x="120" y="126" text-anchor="end" font-family="system-ui" font-size="10" fill="#D97706">slit</text>
-
-  <!-- Incoming plane waves -->
   <g stroke="#1a73e8" stroke-width="1" opacity="0.5">
     <line x1="40" y1="60" x2="40" y2="180"/><line x1="60" y1="60" x2="60" y2="180"/>
     <line x1="80" y1="60" x2="80" y2="180"/><line x1="100" y1="60" x2="100" y2="180"/>
     <line x1="120" y1="60" x2="120" y2="180"/>
   </g>
   <text x="80" y="50" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Plane waves</text>
-
-  <!-- Diffracted waves (semicircular) -->
   <g fill="none" stroke="#1a73e8" stroke-width="0.8" opacity="0.4">
     <path d="M138,122 Q180,50 350,40"/>
     <path d="M138,122 Q180,70 350,65"/>
@@ -233,48 +257,59 @@
     <path d="M138,122 Q180,170 350,175"/>
     <path d="M138,122 Q180,190 350,200"/>
   </g>
-
-  <!-- Screen -->
   <rect x="380" y="30" width="6" height="190" fill="#e8eef6" stroke="#1a1a2e" stroke-width="1"/>
   <text x="400" y="45" font-family="system-ui" font-size="10" fill="#1a1a2e">Screen</text>
-
-  <!-- Intensity pattern on screen (side view as graph) -->
   <g transform="translate(410,30)">
-    <!-- Intensity envelope -->
     <path d="M0,95 Q5,95 8,88 Q15,55 20,20 Q25,55 32,88 Q35,95 40,95 Q42,95 44,90 Q48,82 50,78 Q52,82 56,90 Q58,95 60,95 Q62,95 64,90 Q68,84 70,80 Q72,84 76,90 Q78,95 80,95 M0,95 Q5,95 8,102 Q15,135 20,170 Q25,135 32,102 Q35,95 40,95 Q42,95 44,100 Q48,108 50,112 Q52,108 56,100 Q58,95 60,95 Q62,95 64,100 Q68,106 70,110 Q72,106 76,100 Q78,95 80,95" fill="none" stroke="#DC2626" stroke-width="2"/>
     <text x="20" y="10" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Central max</text>
     <text x="50" y="72" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">1st</text>
     <text x="70" y="74" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">2nd</text>
   </g>
-
   <text x="260" y="232" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">Central maximum is widest and brightest. Subsidiary maxima decrease in intensity.</text>
 </svg>
 </div>
 
-<div class="tip-box"><strong>Exam Tip:</strong> If given "600 lines per mm", then d = 1 / (600 &times; 10<sup>3</sup>) = 1.67 &times; 10<sup>-6</sup> m. Do NOT forget the unit conversion.</div>
+<div class="tip-box"><strong>Exam Tip:</strong> If given "600 lines per mm", then d = 1 / (600 &times; 10<sup>3</sup>) = 1.67 &times; 10<sup>-6</sup> m. Do NOT forget to convert mm to m. Also, gratings produce sharper, brighter maxima than the double slit because many slits contribute — this makes gratings better for precise wavelength measurement.</div>
 
 <h3>Gratings vs Double Slit</h3>
+<table>
+  <tr><th>Double Slit</th><th>Diffraction Grating</th></tr>
+  <tr><td>Broad, fuzzy fringes</td><td>Sharp, narrow, bright maxima</td></tr>
+  <tr><td>Fringes are evenly spaced and similar intensity</td><td>Maxima are widely spaced with dark regions between</td></tr>
+  <tr><td>Limited precision for wavelength measurement</td><td>High precision for wavelength measurement</td></tr>
+</table>
+
+<p><strong>Real-world applications of diffraction gratings:</strong> Spectroscopy (identifying elements in stars, chemical analysis), measuring wavelengths precisely, separating white light into a spectrum (used in spectrometers), holography, and the iridescent colours on CDs/DVDs (which act as reflection gratings).</p>
+
+<!-- DIFFRACTION -->
+<h2>5. Diffraction</h2>
+<div class="def-box"><strong>Diffraction:</strong> The spreading of waves when they pass through a gap or around an obstacle. It is most significant when the gap width is comparable to the wavelength. Diffraction is evidence of wave behaviour.</div>
+
 <ul>
-  <li>Gratings produce much <strong>sharper, brighter</strong> maxima than the double slit.</li>
-  <li>More slits &rarr; sharper peaks and more precise wavelength measurement.</li>
-  <li>Applications: spectroscopy, measuring wavelengths, analysing starlight.</li>
+  <li>Gap much larger than &lambda;: almost no diffraction, wave passes through with minimal spreading.</li>
+  <li>Gap approximately equal to &lambda;: maximum diffraction, wave spreads out in a semicircle.</li>
+  <li>Gap much smaller than &lambda;: very little wave energy passes through.</li>
 </ul>
 
+<p>Diffraction explains why you can hear sound around corners (sound wavelengths ~1 m, similar to doorway widths) but cannot see around corners (light wavelengths ~500 nm, much smaller than everyday objects).</p>
+
 <!-- STATIONARY WAVES -->
-<h2>5. Stationary (Standing) Waves</h2>
-<div class="def-box"><strong>Stationary wave:</strong> Formed by the superposition of two progressive waves of the same frequency and amplitude, travelling in opposite directions. Energy is stored, not transferred.</div>
+<h2>6. Stationary (Standing) Waves</h2>
+<div class="def-box"><strong>Stationary wave:</strong> Formed by the superposition of two progressive waves of the same frequency, same amplitude, and same wavelength, travelling in opposite directions. Energy is stored between the nodes, not transferred along the wave. Stationary waves do not propagate.</div>
 
 <h3>Nodes and Antinodes</h3>
 <ul>
-  <li><strong>Node:</strong> A point of zero displacement (always stationary). Formed by destructive interference.</li>
+  <li><strong>Node:</strong> A point of zero displacement (always stationary). Formed by permanent destructive interference.</li>
   <li><strong>Antinode:</strong> A point of maximum displacement. Formed by constructive interference.</li>
   <li>The distance between adjacent nodes (or adjacent antinodes) = &lambda;/2.</li>
+  <li>All points between two adjacent nodes oscillate in phase with each other.</li>
+  <li>Points on opposite sides of a node are in antiphase (&pi; phase difference).</li>
 </ul>
 
 <!-- Stationary Wave Diagram -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 260" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Stationary Wave — Nodes and Antinodes</text>
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Stationary Wave — Harmonics on a String</text>
 
   <!-- Fundamental (1st harmonic) -->
   <text x="30" y="68" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">1st</text>
@@ -286,6 +321,7 @@
   <text x="60" y="60" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">N</text>
   <text x="480" y="60" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">N</text>
   <text x="270" y="36" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">A</text>
+  <text x="510" y="68" font-family="system-ui" font-size="9" fill="#64748b">f1</text>
 
   <!-- 2nd harmonic -->
   <text x="30" y="138" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">2nd</text>
@@ -294,9 +330,7 @@
   <path d="M60,138 Q165,176 270,138 Q375,100 480,138" fill="none" stroke="#1a73e8" stroke-width="2" stroke-dasharray="5,3" opacity="0.5"/>
   <circle cx="60" cy="138" r="4" fill="#DC2626"/><circle cx="270" cy="138" r="4" fill="#DC2626"/><circle cx="480" cy="138" r="4" fill="#DC2626"/>
   <circle cx="165" cy="118" r="4" fill="#16A34A"/><circle cx="375" cy="118" r="4" fill="#16A34A"/>
-  <text x="60" y="130" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">N</text>
-  <text x="270" y="130" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">N</text>
-  <text x="480" y="130" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">N</text>
+  <text x="510" y="138" font-family="system-ui" font-size="9" fill="#64748b">2f1</text>
 
   <!-- 3rd harmonic -->
   <text x="30" y="208" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">3rd</text>
@@ -305,8 +339,8 @@
   <path d="M60,208 Q130,238 200,208 Q270,178 340,208 Q410,238 480,208" fill="none" stroke="#1a73e8" stroke-width="2" stroke-dasharray="5,3" opacity="0.5"/>
   <circle cx="60" cy="208" r="4" fill="#DC2626"/><circle cx="200" cy="208" r="4" fill="#DC2626"/>
   <circle cx="340" cy="208" r="4" fill="#DC2626"/><circle cx="480" cy="208" r="4" fill="#DC2626"/>
+  <text x="510" y="208" font-family="system-ui" font-size="9" fill="#64748b">3f1</text>
 
-  <!-- Legend -->
   <text x="260" y="250" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">
     <tspan fill="#DC2626" font-weight="600">N = Node</tspan> (zero displacement) |
     <tspan fill="#16A34A" font-weight="600">A = Antinode</tspan> (max displacement) |
@@ -321,67 +355,117 @@
   <tr><td>1st</td><td>Fundamental</td><td>2</td><td>1</td><td>&lambda;<sub>1</sub> = 2L</td><td>f<sub>1</sub></td></tr>
   <tr><td>2nd</td><td>1st overtone</td><td>3</td><td>2</td><td>&lambda;<sub>2</sub> = L</td><td>2f<sub>1</sub></td></tr>
   <tr><td>3rd</td><td>2nd overtone</td><td>4</td><td>3</td><td>&lambda;<sub>3</sub> = 2L/3</td><td>3f<sub>1</sub></td></tr>
-  <tr><td>nth</td><td>&mdash;</td><td>n+1</td><td>n</td><td>&lambda;<sub>n</sub> = 2L/n</td><td>nf<sub>1</sub></td></tr>
+  <tr><td>nth</td><td>—</td><td>n+1</td><td>n</td><td>&lambda;<sub>n</sub> = 2L/n</td><td>nf<sub>1</sub></td></tr>
 </table>
 
+<p>The fundamental frequency of a vibrating string depends on its length, tension, and mass per unit length:</p>
+<div class="eq">f<sub>1</sub> = (1 / 2L) &radic;(T / &mu;)</div>
+<p>where L = length, T = tension (N), &mu; = mass per unit length (kg m<sup>-1</sup>).</p>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A guitar string of length 0.65 m and mass per unit length 3.5 &times; 10<sup>-3</sup> kg m<sup>-1</sup> is under a tension of 100 N. Find the fundamental frequency and the frequency of the 3rd harmonic.<br><br>
+f<sub>1</sub> = (1 / 2L)&radic;(T/&mu;) = (1 / (2 &times; 0.65))&radic;(100 / 3.5 &times; 10<sup>-3</sup>)<br>
+= (1/1.30) &times; &radic;(28571) = 0.769 &times; 169.0 = <strong>130 Hz</strong><br><br>
+3rd harmonic: f<sub>3</sub> = 3f<sub>1</sub> = 3 &times; 130 = <strong>390 Hz</strong>
+</div>
+
 <h3>Stationary Waves in Pipes</h3>
-<p><strong>Closed pipe (one end closed):</strong> Node at the closed end, antinode at the open end. Only odd harmonics are present (1st, 3rd, 5th...). Fundamental: &lambda; = 4L.</p>
-<p><strong>Open pipe (both ends open):</strong> Antinodes at both ends. All harmonics present. Fundamental: &lambda; = 2L.</p>
+<p><strong>Open pipe (both ends open):</strong> Antinodes at both ends. All harmonics present. Fundamental: &lambda; = 2L, so f<sub>1</sub> = v/(2L).</p>
+<p><strong>Closed pipe (one end closed):</strong> Node at the closed end, antinode at the open end. Only <strong>odd</strong> harmonics are present (1st, 3rd, 5th...). Fundamental: &lambda; = 4L, so f<sub>1</sub> = v/(4L).</p>
+
+<p><strong>Real-world application:</strong> Musical instruments exploit stationary waves. A flute is an open pipe (all harmonics). A clarinet behaves as a closed pipe (odd harmonics only), giving it a distinctively different timbre. Organ pipes can be either open or closed.</p>
 
 <h3>Differences: Stationary vs Progressive</h3>
 <table>
   <tr><th>Stationary Wave</th><th>Progressive Wave</th></tr>
-  <tr><td>No energy transfer</td><td>Energy is transferred</td></tr>
-  <tr><td>Amplitude varies with position (zero at nodes, maximum at antinodes)</td><td>All points have the same amplitude</td></tr>
-  <tr><td>Points between adjacent nodes are in phase</td><td>Phase changes continuously along the wave</td></tr>
-  <tr><td>Frequency is fixed (specific harmonics only)</td><td>Any frequency is possible</td></tr>
+  <tr><td>No net energy transfer</td><td>Energy is transferred in the direction of propagation</td></tr>
+  <tr><td>Amplitude varies with position (zero at nodes, max at antinodes)</td><td>All points have the same amplitude</td></tr>
+  <tr><td>Points between adjacent nodes oscillate in phase</td><td>Phase changes continuously along the wave</td></tr>
+  <tr><td>Frequency is fixed (only specific harmonics)</td><td>Any frequency is possible</td></tr>
+  <tr><td>Wavelength is determined by the boundary conditions</td><td>Wavelength depends on speed and frequency</td></tr>
 </table>
 
 <!-- REFRACTION -->
-<h2>6. Refraction</h2>
-<div class="def-box"><strong>Refraction:</strong> The change in direction of a wave as it passes from one medium to another, caused by a change in speed.</div>
+<h2>7. Refraction</h2>
+<div class="def-box"><strong>Refraction:</strong> The change in direction of a wave as it passes from one medium to another, caused by a change in wave speed. The frequency remains constant while the wavelength and speed change.</div>
+
+<h3>Refractive Index</h3>
+<div class="eq">n = c / v</div>
+<p>where c = speed of light in a vacuum (3.00 &times; 10<sup>8</sup> m s<sup>-1</sup>), v = speed of light in the medium. The refractive index is always &ge; 1 (it equals 1 for a vacuum, ~1.0003 for air, ~1.5 for glass, ~1.33 for water, ~2.42 for diamond).</p>
 
 <h3>Snell's Law</h3>
 <div class="eq">n<sub>1</sub> sin&theta;<sub>1</sub> = n<sub>2</sub> sin&theta;<sub>2</sub></div>
-<p>where n is the refractive index of the medium and &theta; is the angle to the normal.</p>
-<div class="eq">n = c / v</div>
-<p>where c = speed of light in a vacuum, v = speed of light in the medium.</p>
+<p>where &theta; is the angle measured from the normal. When light enters a denser medium (higher n), it slows down and bends towards the normal.</p>
 
-<p>When light goes from a less dense to a more dense medium (e.g. air to glass), it slows down and bends towards the normal (&theta;<sub>2</sub> < &theta;<sub>1</sub>).</p>
+<div class="worked-example">
+<strong>Worked Example:</strong> Light passes from air (n = 1.00) into glass (n = 1.52) at an angle of incidence of 40&deg;. Find the angle of refraction.<br><br>
+n<sub>1</sub> sin&theta;<sub>1</sub> = n<sub>2</sub> sin&theta;<sub>2</sub><br>
+1.00 &times; sin 40&deg; = 1.52 &times; sin&theta;<sub>2</sub><br>
+sin&theta;<sub>2</sub> = sin 40&deg; / 1.52 = 0.6428 / 1.52 = 0.4229<br>
+&theta;<sub>2</sub> = sin<sup>-1</sup>(0.4229) = <strong>25.0&deg;</strong><br>
+The light bends towards the normal (as expected, entering a denser medium).
+</div>
 
 <h3>Total Internal Reflection (TIR)</h3>
-<div class="def-box"><strong>Total internal reflection:</strong> Occurs when light travelling in a denser medium hits the boundary with a less dense medium at an angle greater than the critical angle. All light is reflected back into the denser medium.</div>
+<div class="def-box"><strong>Total internal reflection:</strong> Occurs when light travelling in a denser medium hits the boundary with a less dense medium at an angle greater than the critical angle. All light is reflected back into the denser medium — no refracted ray exists.</div>
 
 <p>Conditions for TIR:</p>
 <ol>
   <li>Light must travel from a more optically dense medium to a less optically dense medium (n<sub>1</sub> > n<sub>2</sub>).</li>
-  <li>The angle of incidence must exceed the critical angle (&theta; > &theta;<sub>c</sub>).</li>
+  <li>The angle of incidence must be greater than the critical angle (&theta; > &theta;<sub>c</sub>).</li>
 </ol>
 
 <div class="eq">sin&theta;<sub>c</sub> = n<sub>2</sub> / n<sub>1</sub></div>
 <p>For a medium surrounded by air (n<sub>2</sub> &approx; 1): sin&theta;<sub>c</sub> = 1/n</p>
 
-<p><strong>Applications:</strong> Optical fibres (telecommunications, endoscopes), prisms in binoculars.</p>
+<div class="worked-example">
+<strong>Worked Example:</strong> Calculate the critical angle for light in glass (n = 1.52) meeting an air boundary.<br><br>
+sin&theta;<sub>c</sub> = n<sub>air</sub>/n<sub>glass</sub> = 1.00/1.52 = 0.658<br>
+&theta;<sub>c</sub> = sin<sup>-1</sup>(0.658) = <strong>41.1&deg;</strong><br>
+Any ray hitting the glass-air boundary at more than 41.1&deg; from the normal will be totally internally reflected.
+</div>
 
-<div class="tip-box"><strong>Exam Tip:</strong> In optical fibres, the core has a higher refractive index than the cladding. The cladding protects the core, prevents signal loss by maintaining TIR, and prevents crossover of signals between adjacent fibres.</div>
+<p><strong>Real-world applications of TIR:</strong></p>
+<ul>
+  <li><strong>Optical fibres:</strong> Used in telecommunications (internet data), medical endoscopes, and decorative lighting. The core has a higher n than the cladding, ensuring TIR keeps light trapped in the core.</li>
+  <li><strong>Cladding functions:</strong> Protects the core from damage, prevents signal leakage (crosstalk) between adjacent fibres, and maintains the conditions for TIR.</li>
+  <li><strong>Signal degradation:</strong> Absorption (energy loss to fibre material), dispersion (pulse broadening due to multipath or material dispersion), and scattering at impurities.</li>
+  <li><strong>Prisms in binoculars:</strong> Use TIR instead of mirrors (more efficient, no silvered coating needed).</li>
+</ul>
+
+<div class="tip-box"><strong>Exam Tip:</strong> In optical fibres, the core has a higher refractive index than the cladding. Without cladding, any contact with another surface could allow light to escape. Signal degradation in fibres is caused by absorption (solved by using very pure glass), modal dispersion (solved by using a narrow core), and material dispersion (solved by using monochromatic light).</div>
 
 <!-- POLARISATION -->
-<h2>7. Polarisation</h2>
-<div class="def-box"><strong>Polarisation:</strong> The restriction of the oscillations of a transverse wave to a single plane. Only transverse waves can be polarised (this proves light is a transverse wave).</div>
+<h2>8. Polarisation</h2>
+<div class="def-box"><strong>Polarisation:</strong> The restriction of the oscillations of a transverse wave to a single plane. Only transverse waves can be polarised — this is definitive evidence that light is a transverse wave. Longitudinal waves cannot be polarised.</div>
 
 <ul>
   <li><strong>Unpolarised light:</strong> Oscillations occur in all planes perpendicular to the direction of travel.</li>
   <li><strong>Plane-polarised light:</strong> Oscillations occur in only one plane.</li>
-  <li>A <strong>polarising filter (Polaroid)</strong> transmits only oscillations in one plane.</li>
+  <li>A <strong>polarising filter (Polaroid)</strong> transmits only the component of oscillation parallel to its transmission axis.</li>
 </ul>
 
 <h3>Two Polarising Filters</h3>
-<p>If two polarising filters are aligned, maximum light passes through. If they are crossed (at 90&deg;), no light passes through. At an angle &theta; between them, the transmitted intensity follows Malus's Law:</p>
+<p>If two polarising filters are aligned (transmission axes parallel), maximum light passes through. If they are crossed (at 90&deg;), no light passes through. At an angle &theta; between the transmission axes:</p>
 <div class="eq">I = I<sub>0</sub> cos<sup>2</sup>&theta;</div>
+<p>This is Malus's Law, where I<sub>0</sub> is the intensity after the first polariser and &theta; is the angle between the polariser and analyser.</p>
 
-<p><strong>Applications:</strong> Polaroid sunglasses (reduce glare from reflected light), LCD screens, stress analysis of transparent materials, confirming transverse nature of electromagnetic waves.</p>
+<div class="worked-example">
+<strong>Worked Example:</strong> Unpolarised light of intensity I<sub>0</sub> passes through two polarising filters with their axes at 30&deg; to each other. What fraction of the original intensity is transmitted?<br><br>
+After the first filter: I<sub>1</sub> = I<sub>0</sub>/2 (unpolarised light loses half its intensity)<br>
+After the second filter: I<sub>2</sub> = I<sub>1</sub> cos<sup>2</sup>30&deg; = (I<sub>0</sub>/2) &times; (&radic;3/2)<sup>2</sup> = (I<sub>0</sub>/2) &times; (3/4)<br>
+I<sub>2</sub> = <strong>3I<sub>0</sub>/8 = 0.375 I<sub>0</sub></strong> (37.5% of the original intensity)
+</div>
 
-<div class="tip-box"><strong>Exam Tip:</strong> Longitudinal waves (e.g. sound) cannot be polarised because their oscillations are already in one direction (parallel to wave travel). Polarisation is exclusive proof of transverse wave nature.</div>
+<p><strong>Applications of polarisation:</strong></p>
+<ul>
+  <li><strong>Polaroid sunglasses:</strong> Reduce glare from reflected light (light reflected off water/roads is partially polarised horizontally; vertical polarising filters block this).</li>
+  <li><strong>LCD screens:</strong> Use polarising filters and liquid crystals to control light transmission pixel by pixel.</li>
+  <li><strong>Stress analysis:</strong> Transparent materials under stress rotate the plane of polarisation. Viewed between crossed polarisers, stress concentrations show as coloured fringes.</li>
+  <li><strong>3D cinema:</strong> Two images projected with different polarisations; glasses with different polarising filters for each eye.</li>
+</ul>
+
+<div class="tip-box"><strong>Exam Tip:</strong> The fact that light can be polarised proves it is a transverse wave. Sound cannot be polarised because it is longitudinal. If asked for evidence that electromagnetic waves are transverse, cite polarisation experiments with Polaroid filters or microwave polarisation experiments with a metal grid.</div>
 
 <!-- ============================================================ -->
 <!-- REQUIRED PRACTICAL 1 -->
@@ -395,123 +479,101 @@
     <marker id="rp1arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#D97706"/></marker>
   </defs>
   <text x="310" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP1: Stationary Waves on a String</text>
-
-  <!-- Signal generator -->
   <rect x="20" y="80" width="80" height="50" rx="6" fill="#e8f0fe" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="60" y="100" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Signal</text>
   <text x="60" y="112" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Generator</text>
-  <!-- sine wave symbol on generator -->
   <path d="M40,120 Q50,115 55,120 Q60,125 70,120" fill="none" stroke="#1a73e8" stroke-width="1"/>
-
-  <!-- Vibrator -->
   <rect x="110" y="85" width="30" height="40" rx="4" fill="#d1d5db" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="125" y="105" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Vib.</text>
-
-  <!-- Wire from generator to vibrator -->
   <line x1="100" y1="105" x2="110" y2="105" stroke="#1a1a2e" stroke-width="1.5"/>
-
-  <!-- String with standing wave pattern (2nd harmonic) -->
   <path d="M140,105 Q200,60 260,105 Q320,150 380,105 Q440,60 500,105" fill="none" stroke="#DC2626" stroke-width="2"/>
-  <!-- Nodes -->
   <circle cx="140" cy="105" r="4" fill="#DC2626"/>
   <circle cx="260" cy="105" r="4" fill="#DC2626"/>
   <circle cx="380" cy="105" r="4" fill="#DC2626"/>
   <circle cx="500" cy="105" r="4" fill="#DC2626"/>
-  <!-- Node labels -->
   <text x="140" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
   <text x="260" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
   <text x="380" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
   <text x="500" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">N</text>
-  <!-- Antinode labels -->
   <text x="200" y="55" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">A</text>
   <text x="320" y="160" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">A</text>
   <text x="440" y="55" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">A</text>
-
-  <!-- Pulley -->
   <circle cx="510" cy="105" r="12" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
   <circle cx="510" cy="105" r="2" fill="#1a1a2e"/>
   <text x="510" y="85" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Pulley</text>
-
-  <!-- String over pulley going down -->
   <line x1="522" y1="105" x2="530" y2="105" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="530" y1="105" x2="530" y2="180" stroke="#1a1a2e" stroke-width="1.5"/>
-
-  <!-- Hanging masses -->
   <rect x="518" y="180" width="24" height="30" rx="3" fill="#fde68a" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="530" y="198" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">m</text>
   <text x="530" y="228" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Masses</text>
-
-  <!-- Ruler underneath -->
   <rect x="140" y="155" width="360" height="10" rx="2" fill="#fef3c7" stroke="#D97706" stroke-width="1"/>
   <text x="320" y="180" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Metre ruler</text>
-  <!-- Ruler markings -->
-  <line x1="200" y1="155" x2="200" y2="165" stroke="#D97706" stroke-width="0.5"/>
-  <line x1="260" y1="155" x2="260" y2="165" stroke="#D97706" stroke-width="0.5"/>
-  <line x1="320" y1="155" x2="320" y2="165" stroke="#D97706" stroke-width="0.5"/>
-  <line x1="380" y1="155" x2="380" y2="165" stroke="#D97706" stroke-width="0.5"/>
-  <line x1="440" y1="155" x2="440" y2="165" stroke="#D97706" stroke-width="0.5"/>
-
-  <!-- Length measurement arrow -->
   <line x1="140" y1="40" x2="500" y2="40" stroke="#D97706" stroke-width="1" marker-end="url(#rp1arrO)"/>
   <line x1="500" y1="40" x2="140" y2="40" stroke="#D97706" stroke-width="1" marker-end="url(#rp1arrO)"/>
   <text x="320" y="35" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">L (vibrating length)</text>
-
-  <!-- Labels -->
-  <text x="60" y="75" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Frequency control</text>
 </svg>
 
 <h3>Apparatus</h3>
 <ul>
   <li>Signal generator and vibration generator (mechanical oscillator)</li>
   <li>Thin string or elastic cord</li>
-  <li>Pulley and clamp</li>
-  <li>Slotted masses and hanger (to provide tension)</li>
+  <li>Pulley and clamp, retort stand</li>
+  <li>Slotted masses and hanger (to provide tension T = mg)</li>
   <li>Metre ruler</li>
-  <li>Retort stand and bench clamp</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
-  <li>Clamp the vibration generator to the bench. Attach the string to the vibrator, pass it over the pulley at the far end of the bench, and hang a known mass from the free end to provide tension T = mg.</li>
-  <li>Connect the signal generator to the vibration generator. Set a low frequency and slowly increase it until the fundamental mode (one loop) is clearly visible. Record this resonant frequency f<sub>1</sub>.</li>
-  <li>Measure the vibrating length L (from the vibrator blade to the pulley contact point) with the metre ruler.</li>
-  <li>Continue increasing frequency to find the 2nd, 3rd, 4th harmonics etc. Record each resonant frequency and count the number of loops n.</li>
-  <li>To investigate f vs 1/L: keep mass (tension) constant. Change L by moving the pulley. For each L find the fundamental frequency. Plot f against 1/L &mdash; expect a straight line through the origin.</li>
-  <li>To investigate f vs tension: keep L constant. Change the hanging mass. For each mass find the fundamental frequency. Plot f against &radic;T.</li>
+  <li>Clamp the vibration generator to the bench. Attach the string to the vibrator, pass it over the pulley, and hang a known mass to provide tension T = mg.</li>
+  <li>Set a low frequency and slowly increase until the fundamental mode (one antinode/loop) is clearly visible. Record this resonant frequency f<sub>1</sub>.</li>
+  <li>Measure the vibrating length L (vibrator blade to pulley contact) with the metre ruler.</li>
+  <li>Continue increasing frequency to find the 2nd, 3rd, 4th harmonics. Record each resonant frequency and count the number of loops n.</li>
+  <li><strong>To investigate f vs 1/L:</strong> Keep mass (tension) constant. Change L by moving the pulley. Find the fundamental frequency for each L. Plot f against 1/L — expect a straight line through the origin.</li>
+  <li><strong>To investigate f vs tension:</strong> Keep L constant. Change the hanging mass. Find the fundamental frequency for each mass. Plot f against &radic;T — expect a straight line through the origin.</li>
   <li>Repeat each measurement at least 3 times and calculate a mean.</li>
 </ol>
 
-<h3>Safety</h3>
-<ul>
-  <li>Wear safety goggles &mdash; the string may snap under tension.</li>
-  <li>Keep masses low to avoid the string breaking.</li>
-  <li>Place a cushion or box beneath the hanging masses to catch them if the string breaks.</li>
-  <li>Do not look directly at the vibrating string at eye level.</li>
-</ul>
-
-<h3>Analysis</h3>
-<p>For a vibrating string, the fundamental frequency is:</p>
-<p class="eq">f = (1 / 2L) &radic;(T / &mu;)</p>
-<p>Where &mu; = mass per unit length of the string. Rearranging: f = (1/2L)&radic;(T/&mu;), so plotting f vs 1/L should give a straight line through the origin with gradient = (1/2)&radic;(T/&mu;). Alternatively, plotting f vs &radic;T gives gradient = 1/(2L&radic;&mu;).</p>
-
-<h3>Sources of Error &amp; Improvements</h3>
+<h3>Variables</h3>
 <table>
-<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Difficult to judge exact node positions by eye</td><td>Systematic</td><td>Use a strobe light synchronised to the frequency; use a paper rider that is thrown off at antinodes</td></tr>
-<tr><td>String may not vibrate in a perfect plane</td><td>Random</td><td>Ensure the string and vibrator are properly aligned</td></tr>
-<tr><td>Measuring L is imprecise at the vibrator end</td><td>Systematic</td><td>Use a fixed reference point; measure from node to node and count half-wavelengths</td></tr>
-<tr><td>Frequency reading on signal generator may be inaccurate</td><td>Systematic</td><td>Calibrate against a known frequency source or use a digital frequency meter</td></tr>
-<tr><td>Tension changes slightly as string forms loops (string stretches)</td><td>Systematic</td><td>Use a stiff, inextensible string to minimise this effect</td></tr>
+  <tr><th>Variable</th><th>f vs 1/L investigation</th><th>f vs T investigation</th></tr>
+  <tr><td>Independent</td><td>Length L</td><td>Tension T (hanging mass)</td></tr>
+  <tr><td>Dependent</td><td>Resonant frequency f</td><td>Resonant frequency f</td></tr>
+  <tr><td>Control</td><td>Tension, string type (&mu;)</td><td>Length, string type (&mu;)</td></tr>
 </table>
 
-<div class="tip-box"><strong>Exam Tip:</strong> At resonance, nodes are stationary and antinodes have maximum amplitude. The distance between adjacent nodes is &lambda;/2. A paper rider placed at an antinode will be thrown off, confirming its position.</div>
+<h3>Expected Results</h3>
+<p>f = (1/2L)&radic;(T/&mu;), so:</p>
+<ul>
+  <li>f vs 1/L: straight line through origin with gradient = (1/2)&radic;(T/&mu;)</li>
+  <li>f vs &radic;T: straight line through origin with gradient = 1/(2L&radic;&mu;)</li>
+  <li>From the gradient, &mu; can be calculated and compared with a direct measurement (weigh a known length of string).</li>
+</ul>
+
+<h3>Safety</h3>
+<ul>
+  <li>Wear safety goggles — the string may snap under tension.</li>
+  <li>Place a cushion beneath the hanging masses to catch them if the string breaks.</li>
+  <li>Keep masses low to avoid string breakage.</li>
+</ul>
+
+<h3>Sources of Error and Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Difficult to judge exact node positions by eye</td><td>Systematic</td><td>Use a strobe light; use paper riders that are thrown off at antinodes</td></tr>
+<tr><td>String may not vibrate in a perfect plane</td><td>Random</td><td>Ensure string and vibrator are properly aligned</td></tr>
+<tr><td>Measuring L is imprecise at the vibrator end</td><td>Systematic</td><td>Measure from node to node and count half-wavelengths</td></tr>
+<tr><td>Frequency reading on signal generator may be inaccurate</td><td>Systematic</td><td>Calibrate with a digital frequency meter</td></tr>
+<tr><td>Tension changes as string forms loops (stretching)</td><td>Systematic</td><td>Use a stiff, inextensible string</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> At resonance, the amplitude is maximum and the standing wave pattern is clearly visible. A paper rider at an antinode will be thrown off, confirming its position. A paper rider at a node remains stationary.</div>
 </div>
 
 <!-- ============================================================ -->
 <!-- REQUIRED PRACTICAL 2 -->
 <!-- ============================================================ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 2: Investigation of Interference Effects (Young's Double Slit &amp; Diffraction Grating)</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 2: Investigation of Interference Effects (Young's Double Slit and Diffraction Grating)</h2>
 
 <svg viewBox="0 0 620 300" style="max-width:600px; display:block; margin:16px auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -519,103 +581,69 @@
     <marker id="rp2arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#D97706"/></marker>
   </defs>
   <text x="310" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP2: Young's Double Slit Experiment</text>
-
-  <!-- Laser -->
   <rect x="20" y="120" width="70" height="30" rx="5" fill="#fee2e2" stroke="#DC2626" stroke-width="1.5"/>
   <text x="55" y="139" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">LASER</text>
-  <!-- Laser beam -->
   <line x1="90" y1="135" x2="190" y2="135" stroke="#DC2626" stroke-width="2" stroke-dasharray="6,3"/>
-
-  <!-- Single slit (optional filter slit) -->
   <rect x="190" y="100" width="4" height="70" rx="1" fill="#1a1a2e"/>
   <rect x="190" y="132" width="4" height="6" fill="#f8fafc"/>
   <text x="192" y="92" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Single slit</text>
-
-  <!-- Double slit -->
   <rect x="260" y="100" width="4" height="70" rx="1" fill="#1a1a2e"/>
   <rect x="260" y="125" width="4" height="5" fill="#f8fafc"/>
   <rect x="260" y="140" width="4" height="5" fill="#f8fafc"/>
   <text x="262" y="92" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Double slit</text>
-
-  <!-- Diverging beams from double slit -->
   <line x1="264" y1="127" x2="520" y2="80" stroke="#DC2626" stroke-width="0.8" opacity="0.5"/>
   <line x1="264" y1="127" x2="520" y2="135" stroke="#DC2626" stroke-width="0.8" opacity="0.5"/>
   <line x1="264" y1="127" x2="520" y2="190" stroke="#DC2626" stroke-width="0.8" opacity="0.5"/>
   <line x1="264" y1="143" x2="520" y2="80" stroke="#DC2626" stroke-width="0.8" opacity="0.5"/>
   <line x1="264" y1="143" x2="520" y2="135" stroke="#DC2626" stroke-width="0.8" opacity="0.5"/>
   <line x1="264" y1="143" x2="520" y2="190" stroke="#DC2626" stroke-width="0.8" opacity="0.5"/>
-
-  <!-- Screen -->
   <rect x="520" y="60" width="8" height="150" rx="2" fill="#e2e8f0" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="550" y="135" text-anchor="start" font-family="system-ui" font-size="10" fill="#1a1a2e">Screen</text>
-
   <!-- Fringe pattern on screen -->
-  <rect x="522" y="72" width="4" height="6" fill="#DC2626" opacity="0.3"/>
-  <rect x="522" y="84" width="4" height="6" fill="#DC2626" opacity="0.6"/>
-  <rect x="522" y="96" width="4" height="6" fill="#DC2626" opacity="0.9"/>
-  <rect x="522" y="108" width="4" height="6" fill="#DC2626"/>
-  <rect x="522" y="120" width="4" height="6" fill="#DC2626" opacity="0.9"/>
-  <rect x="522" y="132" width="4" height="6" fill="#DC2626"/>
-  <rect x="522" y="144" width="4" height="6" fill="#DC2626" opacity="0.9"/>
-  <rect x="522" y="156" width="4" height="6" fill="#DC2626" opacity="0.6"/>
-  <rect x="522" y="168" width="4" height="6" fill="#DC2626" opacity="0.3"/>
-  <!-- Dark fringes -->
-  <rect x="522" y="78" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
-  <rect x="522" y="90" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
-  <rect x="522" y="102" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
-  <rect x="522" y="114" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
-  <rect x="522" y="126" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
-  <rect x="522" y="138" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
-  <rect x="522" y="150" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
-  <rect x="522" y="162" width="4" height="6" fill="#1a1a2e" opacity="0.1"/>
-
-  <!-- Measurement labels -->
-  <!-- d (slit separation) -->
+  <g>
+    <rect x="522" y="72" width="4" height="6" fill="#DC2626" opacity="0.3"/>
+    <rect x="522" y="84" width="4" height="6" fill="#DC2626" opacity="0.6"/>
+    <rect x="522" y="96" width="4" height="6" fill="#DC2626" opacity="0.9"/>
+    <rect x="522" y="108" width="4" height="6" fill="#DC2626"/>
+    <rect x="522" y="120" width="4" height="6" fill="#DC2626" opacity="0.9"/>
+    <rect x="522" y="132" width="4" height="6" fill="#DC2626"/>
+    <rect x="522" y="144" width="4" height="6" fill="#DC2626" opacity="0.9"/>
+    <rect x="522" y="156" width="4" height="6" fill="#DC2626" opacity="0.6"/>
+    <rect x="522" y="168" width="4" height="6" fill="#DC2626" opacity="0.3"/>
+  </g>
   <line x1="275" y1="127" x2="275" y2="143" stroke="#D97706" stroke-width="1.5" marker-start="url(#rp2arrO)" marker-end="url(#rp2arrO)"/>
   <text x="288" y="138" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">d</text>
-
-  <!-- D (slit-to-screen distance) -->
   <line x1="264" y1="225" x2="520" y2="225" stroke="#D97706" stroke-width="1" marker-start="url(#rp2arrO)" marker-end="url(#rp2arrO)"/>
   <text x="392" y="240" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">D (slit-to-screen distance)</text>
-
-  <!-- w (fringe spacing) -->
   <line x1="545" y1="108" x2="545" y2="120" stroke="#16A34A" stroke-width="1.5" marker-start="url(#rp2arrO)" marker-end="url(#rp2arrO)"/>
   <text x="560" y="117" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">w</text>
-  <text x="560" y="128" font-family="system-ui" font-size="8" fill="#16A34A">(fringe</text>
-  <text x="560" y="137" font-family="system-ui" font-size="8" fill="#16A34A">spacing)</text>
-
-  <!-- Formula -->
-  <text x="310" y="280" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="600">&lambda; = w d / D</text>
+  <text x="310" y="280" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="600">lambda = w d / D</text>
 </svg>
 
 <h3>Apparatus</h3>
 <ul>
   <li>Laser (e.g. He-Ne or diode laser, known wavelength for verification)</li>
-  <li>Double slit (known slit separation d, typically 0.1&ndash;0.5 mm)</li>
+  <li>Double slit (known separation d, typically 0.1-0.5 mm)</li>
   <li>Diffraction grating (known number of lines per mm, e.g. 300 lines/mm)</li>
-  <li>White screen or translucent screen</li>
-  <li>Metre ruler and/or tape measure</li>
+  <li>White screen, metre ruler and/or tape measure, darkened room</li>
   <li>Vernier callipers or travelling microscope (for measuring fringe spacing)</li>
-  <li>Darkened room</li>
 </ul>
 
-<h3>Method</h3>
-<p><strong>Part A &mdash; Young's Double Slit:</strong></p>
+<h3>Method — Part A: Young's Double Slit</h3>
 <ol>
-  <li>Set up the laser so the beam passes through the double slit and an interference pattern of bright and dark fringes appears on the distant screen.</li>
-  <li>Measure the distance D from the double slit to the screen using a tape measure (D should be large, e.g. 1&ndash;2 m, for clear fringes).</li>
-  <li>Measure the fringe spacing w: measure across several fringes (e.g. 10 fringes) and divide by the number of fringe spacings to get an accurate mean w.</li>
-  <li>Record the slit separation d (printed on the slide or measured with a travelling microscope).</li>
-  <li>Calculate the wavelength: &lambda; = wd / D.</li>
-  <li>Repeat for different values of D to check consistency.</li>
+  <li>Set up the laser so the beam passes through the double slit. An interference pattern of bright and dark fringes appears on the distant screen.</li>
+  <li>Measure distance D from slits to screen using a tape measure (D should be large, e.g. 1-2 m).</li>
+  <li>Measure the fringe spacing w: measure across several fringes (e.g. 10 bright fringes) and divide by the number of fringe spacings to get an accurate mean.</li>
+  <li>Record the slit separation d (from the slide labelling or measured with a travelling microscope).</li>
+  <li>Calculate wavelength: &lambda; = wd/D. Repeat for different D values to check consistency.</li>
 </ol>
-<p><strong>Part B &mdash; Diffraction Grating:</strong></p>
+
+<h3>Method — Part B: Diffraction Grating</h3>
 <ol>
-  <li>Replace the double slit with a diffraction grating. Observe sharp, bright maxima on the screen.</li>
-  <li>Measure the angle &theta; to each order maximum (n = 1, 2, 3, ...) using a protractor or by measuring the distance from the central maximum to the nth order and using tan&theta; = x/D.</li>
-  <li>The grating equation: d sin&theta; = n&lambda;, where d = 1/(number of lines per metre).</li>
-  <li>Calculate &lambda; for each order and take a mean value.</li>
-  <li>Compare with the known wavelength of the laser to assess accuracy.</li>
+  <li>Replace the double slit with a diffraction grating. Observe sharp, bright maxima.</li>
+  <li>Measure the angle &theta; to each order maximum (n = 1, 2, 3...) using tan&theta; = x/D where x is the distance from central maximum.</li>
+  <li>Apply d sin&theta; = n&lambda; to calculate &lambda; for each order. Take a mean.</li>
+  <li>Compare with the known laser wavelength to assess accuracy.</li>
 </ol>
 
 <h3>Safety</h3>
@@ -625,24 +653,18 @@
   <li>Turn off the laser when not taking measurements.</li>
   <li>Remove reflective objects (watches, jewellery) from the vicinity.</li>
   <li>Ensure the beam path is below or above eye level.</li>
-  <li>A Class 2 laser (max 1 mW) should be used for school experiments.</li>
 </ul>
 
-<h3>Analysis</h3>
-<p><strong>Double slit:</strong> &lambda; = wd / D. Measure across multiple fringes to reduce uncertainty in w. The percentage uncertainty in &lambda; combines the percentage uncertainties in w, d, and D.</p>
-<p><strong>Diffraction grating:</strong> d sin&theta; = n&lambda;. The grating produces sharper, brighter maxima than the double slit, giving a more accurate wavelength measurement. Higher orders (larger n) give larger angles and therefore smaller percentage uncertainty in &theta;.</p>
-
-<h3>Sources of Error &amp; Improvements</h3>
+<h3>Sources of Error and Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Fringe spacing is small and hard to measure accurately</td><td>Random</td><td>Measure across many fringes (e.g. 10) and divide; use a travelling microscope</td></tr>
-<tr><td>D measurement may be inaccurate if screen is not perpendicular to beam</td><td>Systematic</td><td>Use a set square to ensure the screen is perpendicular; measure D carefully to the slit plane</td></tr>
-<tr><td>Central maximum may not be identified correctly</td><td>Systematic</td><td>Ensure the laser beam hits the centre of the slit; the central fringe is the brightest</td></tr>
-<tr><td>Slit separation d may be inaccurate</td><td>Systematic</td><td>Use the manufacturer's stated value or measure with a travelling microscope</td></tr>
-<tr><td>Diffraction effects widen fringes</td><td>Systematic</td><td>Use a grating with many slits for sharper maxima</td></tr>
+<tr><td>Fringe spacing is small and hard to measure</td><td>Random</td><td>Measure across many fringes (e.g. 10) and divide; use a travelling microscope</td></tr>
+<tr><td>D measurement inaccurate if screen not perpendicular</td><td>Systematic</td><td>Use a set square; measure D carefully to the slit plane</td></tr>
+<tr><td>Central maximum incorrectly identified</td><td>Systematic</td><td>The central fringe is the brightest; ensure laser hits slit centre</td></tr>
+<tr><td>Slit separation d may be inaccurate</td><td>Systematic</td><td>Use manufacturer's value or measure with a travelling microscope</td></tr>
 </table>
 
-<div class="tip-box"><strong>Exam Tip:</strong> The double slit produces broad, fuzzy fringes; the diffraction grating produces sharp, narrow, bright maxima because many slits contribute to constructive interference. The grating therefore gives a more precise wavelength measurement. Always state that you measure across several fringes to reduce percentage uncertainty in w.</div>
+<div class="tip-box"><strong>Exam Tip:</strong> The diffraction grating produces sharper, brighter maxima than the double slit because many slits contribute to constructive interference. This gives a more precise wavelength measurement. Always measure across multiple fringes to reduce percentage uncertainty in w. The grating method is better when high accuracy is needed.</div>
 </div>
 
 </div>

@@ -126,7 +126,22 @@
   Standard deviation: s = sqrt( sum(x - x_mean)^2 / (n - 1) )
 </div>
 
-<p>Standard deviation quantifies the spread of data around the mean. A small standard deviation indicates data points are clustered close to the mean, suggesting high precision. A large standard deviation indicates wide spread, suggesting less consistency in results.</p>
+<p>Standard deviation quantifies the spread of data around the mean. A small standard deviation indicates data points are clustered close to the mean, suggesting high precision and reliable results. A large standard deviation indicates wide spread, suggesting less consistency. In a normal distribution, approximately 68% of values fall within one standard deviation of the mean, and about 95% within two standard deviations.</p>
+
+<p><strong>Error bars</strong> on graphs represent the variability of data, typically showing either the range, standard deviation, or standard error. If error bars of two data sets overlap, the difference between them is likely not statistically significant. Non-overlapping error bars suggest a significant difference (though a statistical test is needed to confirm).</p>
+
+<h3>Statistical Tests</h3>
+<p>Statistical tests determine whether observed differences or correlations are significant (unlikely to be due to chance alone). The significance level used is typically p = 0.05 (5%), meaning there is less than a 5% probability the result occurred by chance.</p>
+<table>
+  <tr><th>Test</th><th>When to Use</th><th>Data Requirements</th></tr>
+  <tr><td>Student's t-test</td><td>Comparing means of two groups</td><td>Continuous, normally distributed data</td></tr>
+  <tr><td>Chi-squared</td><td>Comparing observed and expected frequencies</td><td>Categoric/frequency data; expected values &ge;5</td></tr>
+  <tr><td>Spearman's rank</td><td>Testing for correlation between two variables</td><td>Ordinal or continuous data; not normally distributed</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When asked to suggest an appropriate statistical test, first identify what you are testing (difference between groups or correlation?), then check the data type (continuous or categoric?). State the null hypothesis, calculate the test statistic, compare with the critical value at p = 0.05, and state whether you reject or accept the null hypothesis in the context of the investigation.
+</div>
 
 <h3>Graphical Presentation</h3>
 <p>Graphs are essential for identifying trends, patterns, and anomalies. The type of graph depends on the type of data:</p>

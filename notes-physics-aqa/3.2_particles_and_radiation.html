@@ -20,6 +20,7 @@
   tr:nth-child(even) { background: #f8fafc; }
   .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
@@ -31,87 +32,143 @@
 
 <!-- ATOMIC STRUCTURE -->
 <h2>1. Atomic Structure</h2>
-<div class="def-box"><strong>Atom:</strong> A nucleus (protons + neutrons) surrounded by orbiting electrons. The nucleus contains almost all the mass but occupies a tiny fraction of the volume (~10<sup>-15</sup> m diameter vs ~10<sup>-10</sup> m for the atom).</div>
+<div class="def-box"><strong>Atom:</strong> A nucleus (protons + neutrons) surrounded by orbiting electrons. The nucleus contains almost all the mass but occupies a tiny fraction of the volume (~10<sup>-15</sup> m diameter vs ~10<sup>-10</sup> m for the atom). The nucleus is therefore approximately 10<sup>5</sup> times smaller than the atom.</div>
 
 <table>
-  <tr><th>Particle</th><th>Relative Charge</th><th>Relative Mass</th><th>Absolute Charge / C</th></tr>
-  <tr><td>Proton</td><td>+1</td><td>1</td><td>+1.60 &times; 10<sup>-19</sup></td></tr>
-  <tr><td>Neutron</td><td>0</td><td>1</td><td>0</td></tr>
-  <tr><td>Electron</td><td>-1</td><td>1/1836</td><td>-1.60 &times; 10<sup>-19</sup></td></tr>
+  <tr><th>Particle</th><th>Relative Charge</th><th>Relative Mass</th><th>Absolute Charge / C</th><th>Rest Mass / kg</th></tr>
+  <tr><td>Proton</td><td>+1</td><td>1</td><td>+1.60 &times; 10<sup>-19</sup></td><td>1.673 &times; 10<sup>-27</sup></td></tr>
+  <tr><td>Neutron</td><td>0</td><td>1</td><td>0</td><td>1.675 &times; 10<sup>-27</sup></td></tr>
+  <tr><td>Electron</td><td>-1</td><td>1/1836</td><td>-1.60 &times; 10<sup>-19</sup></td><td>9.109 &times; 10<sup>-31</sup></td></tr>
 </table>
 
 <h3>Notation</h3>
-<p>A nuclide is written as <sup>A</sup><sub>Z</sub>X, where A = mass number (protons + neutrons), Z = atomic number (protons).</p>
+<p>A nuclide is written as <sup>A</sup><sub>Z</sub>X, where A = mass number (protons + neutrons), Z = atomic number (protons). The number of neutrons N = A - Z.</p>
 
-<div class="def-box"><strong>Isotopes:</strong> Atoms of the same element (same Z) with different numbers of neutrons (different A). They have identical chemical properties but different physical properties (e.g. density, stability).</div>
+<div class="def-box"><strong>Isotopes:</strong> Atoms of the same element (same Z) with different numbers of neutrons (different A). They have identical chemical properties (same electron configuration) but different physical properties (e.g. density, stability, nuclear behaviour).</div>
+
+<p><strong>Real-world application:</strong> Isotopes have widespread medical and industrial uses. Carbon-14 is used in radiocarbon dating of archaeological artefacts. Iodine-131 is used to treat thyroid cancer. Uranium-235 and Uranium-238 are isotopes with very different nuclear properties — only U-235 undergoes thermal neutron fission.</p>
 
 <h3>Specific Charge</h3>
 <div class="eq">Specific charge = charge / mass (units: C kg<sup>-1</sup>)</div>
-<p>For a proton: specific charge = 1.60 &times; 10<sup>-19</sup> / 1.67 &times; 10<sup>-27</sup> = 9.58 &times; 10<sup>7</sup> C kg<sup>-1</sup></p>
+<p>Specific charge is useful for identifying particles in mass spectrometers and particle detectors, because particles with different specific charges follow different curved paths in electric and magnetic fields.</p>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Calculate the specific charge of (a) a proton, (b) an electron, (c) a He-4 nucleus.<br><br>
+(a) Proton: specific charge = 1.60 &times; 10<sup>-19</sup> / 1.673 &times; 10<sup>-27</sup> = <strong>9.56 &times; 10<sup>7</sup> C kg<sup>-1</sup></strong><br><br>
+(b) Electron: specific charge = 1.60 &times; 10<sup>-19</sup> / 9.109 &times; 10<sup>-31</sup> = <strong>1.76 &times; 10<sup>11</sup> C kg<sup>-1</sup></strong><br>
+(The electron has a much higher specific charge due to its tiny mass)<br><br>
+(c) He-4 nucleus (alpha particle): charge = 2 &times; 1.60 &times; 10<sup>-19</sup> = 3.20 &times; 10<sup>-19</sup> C<br>
+mass = 4 &times; 1.673 &times; 10<sup>-27</sup> = 6.692 &times; 10<sup>-27</sup> kg<br>
+specific charge = 3.20 &times; 10<sup>-19</sup> / 6.692 &times; 10<sup>-27</sup> = <strong>4.78 &times; 10<sup>7</sup> C kg<sup>-1</sup></strong>
+</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> When calculating specific charge, be careful to use the total charge and total mass of the particle or ion. For ions, include the charge from missing/extra electrons. For example, a Na<sup>+</sup> ion has charge +e but mass approximately 23u.</div>
 
 <!-- STABLE AND UNSTABLE NUCLEI -->
 <h2>2. Stable and Unstable Nuclei</h2>
 <p>The strong nuclear force holds the nucleus together, overcoming electrostatic repulsion between protons. Nuclei are unstable if they have:</p>
 <ul>
-  <li>Too many neutrons (beta-minus decay)</li>
-  <li>Too many protons (beta-plus decay or electron capture)</li>
-  <li>Too many nucleons overall — too heavy (alpha decay)</li>
+  <li>Too many neutrons (neutron-rich) &rarr; beta-minus decay</li>
+  <li>Too many protons (proton-rich) &rarr; beta-plus decay or electron capture</li>
+  <li>Too many nucleons overall (too heavy, A > ~82) &rarr; alpha decay</li>
 </ul>
+
+<h3>The Strong Nuclear Force</h3>
+<ul>
+  <li><strong>Range:</strong> Very short — effective only up to about 3-4 fm (femtometres).</li>
+  <li><strong>Attractive</strong> from about 3 fm down to about 0.5 fm — this holds the nucleus together.</li>
+  <li>Becomes <strong>repulsive</strong> below about 0.5 fm (prevents nucleons collapsing into each other).</li>
+  <li>Has zero effect beyond about 3-4 fm — this is why very large nuclei are less stable.</li>
+  <li>Acts between <strong>all nucleons</strong> (p-p, p-n, n-n) equally — it is charge-independent.</li>
+  <li>At its effective range, it is much stronger than the electromagnetic force.</li>
+</ul>
+
+<!-- Strong Nuclear Force Graph -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 480 280" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="240" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Strong Nuclear Force vs Nucleon Separation</text>
+  <!-- Axes -->
+  <line x1="80" y1="140" x2="440" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="80" y1="250" x2="80" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="260" y="270" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e">Separation (fm)</text>
+  <text x="30" y="140" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" transform="rotate(-90,30,140)">Force</text>
+  <!-- Labels -->
+  <text x="75" y="80" text-anchor="end" font-family="system-ui" font-size="10" fill="#DC2626">Repulsive</text>
+  <text x="75" y="200" text-anchor="end" font-family="system-ui" font-size="10" fill="#16A34A">Attractive</text>
+  <text x="75" y="144" text-anchor="end" font-family="system-ui" font-size="10" fill="#64748b">0</text>
+  <!-- Separation markers -->
+  <text x="120" y="155" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">0.5</text>
+  <text x="200" y="155" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">1</text>
+  <text x="280" y="155" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">2</text>
+  <text x="360" y="155" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">3</text>
+  <!-- Strong force curve -->
+  <path d="M90,50 Q100,50 110,60 Q120,100 130,130 Q135,140 140,160 Q160,210 200,225 Q250,232 300,238 Q350,240 440,140" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- Zero line approach -->
+  <line x1="350" y1="140" x2="440" y2="140" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+  <!-- Key labels on curve -->
+  <text x="100" y="45" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">Strong repulsion</text>
+  <text x="100" y="55" font-family="system-ui" font-size="9" fill="#DC2626">(&lt; 0.5 fm)</text>
+  <text x="200" y="248" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Maximum attraction</text>
+  <text x="360" y="130" font-family="system-ui" font-size="9" fill="#64748b">~0 beyond 3 fm</text>
+</svg>
+</div>
 
 <h3>Types of Radioactive Decay</h3>
 <table>
-  <tr><th>Decay</th><th>Particle Emitted</th><th>Change in A</th><th>Change in Z</th></tr>
-  <tr><td>Alpha (&alpha;)</td><td><sup>4</sup><sub>2</sub>He nucleus</td><td>-4</td><td>-2</td></tr>
-  <tr><td>Beta-minus (&beta;<sup>-</sup>)</td><td>Electron + antineutrino</td><td>0</td><td>+1</td></tr>
-  <tr><td>Beta-plus (&beta;<sup>+</sup>)</td><td>Positron + neutrino</td><td>0</td><td>-1</td></tr>
+  <tr><th>Decay</th><th>Particle Emitted</th><th>Change in A</th><th>Change in Z</th><th>Quark Change</th></tr>
+  <tr><td>Alpha (&alpha;)</td><td><sup>4</sup><sub>2</sub>He nucleus</td><td>-4</td><td>-2</td><td>N/A</td></tr>
+  <tr><td>Beta-minus (&beta;<sup>-</sup>)</td><td>Electron + antineutrino</td><td>0</td><td>+1</td><td>d &rarr; u</td></tr>
+  <tr><td>Beta-plus (&beta;<sup>+</sup>)</td><td>Positron + neutrino</td><td>0</td><td>-1</td><td>u &rarr; d</td></tr>
 </table>
 
 <p>In &beta;<sup>-</sup> decay: n &rarr; p + e<sup>-</sup> + <span style="text-decoration:overline;">&nu;</span><sub>e</sub></p>
 <p>In &beta;<sup>+</sup> decay: p &rarr; n + e<sup>+</sup> + &nu;<sub>e</sub></p>
+<p>In electron capture: p + e<sup>-</sup> &rarr; n + &nu;<sub>e</sub></p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Beta-plus decay and electron capture both reduce the proton number by 1 and increase the neutron number by 1. They are alternative processes for proton-rich nuclei. Electron capture is more common in heavier nuclei where inner orbital electrons are closer to the nucleus.</div>
 
 <!-- FUNDAMENTAL FORCES -->
 <h2>3. The Four Fundamental Forces</h2>
 <table>
   <tr><th>Force</th><th>Range</th><th>Acts On</th><th>Exchange Particle</th><th>Relative Strength</th></tr>
-  <tr><td>Strong nuclear</td><td>~10<sup>-15</sup> m (3&ndash;4 fm)</td><td>Hadrons (quarks)</td><td>Gluon</td><td>1</td></tr>
-  <tr><td>Electromagnetic</td><td>Infinite</td><td>Charged particles</td><td>Virtual photon (&gamma;)</td><td>10<sup>-2</sup></td></tr>
-  <tr><td>Weak nuclear</td><td>~10<sup>-18</sup> m</td><td>All particles</td><td>W<sup>+</sup>, W<sup>-</sup>, Z<sup>0</sup> bosons</td><td>10<sup>-6</sup></td></tr>
-  <tr><td>Gravitational</td><td>Infinite</td><td>All particles with mass</td><td>Graviton (theoretical)</td><td>10<sup>-39</sup></td></tr>
+  <tr><td>Strong nuclear</td><td>~3-4 fm</td><td>Hadrons (quarks)</td><td>Gluon (g)</td><td>1</td></tr>
+  <tr><td>Electromagnetic</td><td>Infinite (1/r<sup>2</sup>)</td><td>Charged particles</td><td>Virtual photon (&gamma;)</td><td>~10<sup>-2</sup></td></tr>
+  <tr><td>Weak nuclear</td><td>~10<sup>-18</sup> m</td><td>All fermions</td><td>W<sup>+</sup>, W<sup>-</sup>, Z<sup>0</sup> bosons</td><td>~10<sup>-6</sup></td></tr>
+  <tr><td>Gravitational</td><td>Infinite (1/r<sup>2</sup>)</td><td>All particles with mass</td><td>Graviton (theoretical)</td><td>~10<sup>-39</sup></td></tr>
 </table>
 
-<h3>The Strong Nuclear Force</h3>
-<ul>
-  <li>Attractive from about 3 fm down to about 0.5 fm.</li>
-  <li>Becomes <strong>repulsive</strong> below about 0.5 fm (prevents nucleons collapsing into each other).</li>
-  <li>Has zero effect beyond about 3&ndash;4 fm.</li>
-  <li>Acts between all nucleons (p-p, p-n, n-n) equally.</li>
-</ul>
+<div class="def-box"><strong>Exchange particles (gauge bosons):</strong> Forces between particles are mediated by the exchange of virtual particles. When two particles interact, they exchange a gauge boson, which transfers momentum and energy between them. This is the quantum mechanical model of forces.</div>
 
-<div class="tip-box"><strong>Exam Tip:</strong> The exchange particles for the weak force (W<sup>+</sup>, W<sup>-</sup>, Z<sup>0</sup>) are massive bosons, which is why the weak force has such a short range.</div>
+<p><strong>Why the weak force has short range:</strong> The W and Z bosons are very massive (W: ~80 GeV/c<sup>2</sup>, Z: ~91 GeV/c<sup>2</sup>). By the Heisenberg uncertainty principle, such massive virtual particles can only exist for an extremely brief time, limiting the range to ~10<sup>-18</sup> m.</p>
+
+<p><strong>Real-world application:</strong> The weak force is responsible for beta decay, which powers the proton-proton chain in the Sun. Without the weak force, hydrogen could not fuse into helium, and stars would not shine. The weak force also causes neutrino interactions used in neutrino detectors deep underground.</p>
 
 <!-- CLASSIFICATION OF PARTICLES -->
 <h2>4. Classification of Particles</h2>
 
 <h3>4.1 Hadrons</h3>
-<div class="def-box"><strong>Hadrons:</strong> Particles that experience the strong nuclear force. They are made of quarks.</div>
+<div class="def-box"><strong>Hadrons:</strong> Particles that experience the strong nuclear force. They are made of quarks. Hadrons are divided into baryons (3 quarks) and mesons (quark-antiquark pair).</div>
 
 <table>
-  <tr><th>Type</th><th>Quark Composition</th><th>Examples</th></tr>
-  <tr><td><strong>Baryons</strong></td><td>3 quarks (qqq)</td><td>Proton (uud), Neutron (udd)</td></tr>
-  <tr><td><strong>Antibaryons</strong></td><td>3 antiquarks (<span style="text-decoration:overline;">q</span><span style="text-decoration:overline;">q</span><span style="text-decoration:overline;">q</span>)</td><td>Antiproton (<span style="text-decoration:overline;">u</span><span style="text-decoration:overline;">u</span><span style="text-decoration:overline;">d</span>)</td></tr>
-  <tr><td><strong>Mesons</strong></td><td>Quark-antiquark pair (q<span style="text-decoration:overline;">q</span>)</td><td>Pion (&pi;<sup>+</sup>, &pi;<sup>0</sup>, &pi;<sup>-</sup>), Kaon (K<sup>+</sup>, K<sup>0</sup>, K<sup>-</sup>)</td></tr>
+  <tr><th>Type</th><th>Quark Composition</th><th>Baryon Number</th><th>Examples</th></tr>
+  <tr><td><strong>Baryons</strong></td><td>3 quarks (qqq)</td><td>+1</td><td>Proton (uud), Neutron (udd), Sigma, Lambda, Xi</td></tr>
+  <tr><td><strong>Antibaryons</strong></td><td>3 antiquarks (<span style="text-decoration:overline;">q</span><span style="text-decoration:overline;">q</span><span style="text-decoration:overline;">q</span>)</td><td>-1</td><td>Antiproton (<span style="text-decoration:overline;">u</span><span style="text-decoration:overline;">u</span><span style="text-decoration:overline;">d</span>)</td></tr>
+  <tr><td><strong>Mesons</strong></td><td>Quark-antiquark (q<span style="text-decoration:overline;">q</span>)</td><td>0</td><td>Pion (&pi;<sup>+</sup>, &pi;<sup>0</sup>, &pi;<sup>-</sup>), Kaon (K<sup>+</sup>, K<sup>0</sup>, K<sup>-</sup>)</td></tr>
 </table>
 
-<p>Baryons have a baryon number of +1. Antibaryons have a baryon number of -1. Mesons have a baryon number of 0.</p>
+<p>The proton is the only stable baryon. All other baryons eventually decay into protons. The neutron is unstable when free (half-life ~10 minutes) but stable inside most nuclei.</p>
 
 <h3>4.2 Leptons</h3>
-<div class="def-box"><strong>Leptons:</strong> Fundamental particles that do NOT experience the strong force. They have a lepton number of +1 (antileptons have -1).</div>
-<ul>
-  <li>Electron (e<sup>-</sup>) and electron neutrino (&nu;<sub>e</sub>)</li>
-  <li>Muon (&mu;<sup>-</sup>) and muon neutrino (&nu;<sub>&mu;</sub>)</li>
-  <li>Tau (&tau;<sup>-</sup>) and tau neutrino (&nu;<sub>&tau;</sub>)</li>
-</ul>
-<p>Each generation has its own lepton number (electron lepton number, muon lepton number) which is separately conserved.</p>
+<div class="def-box"><strong>Leptons:</strong> Fundamental particles that do NOT experience the strong force. They have a lepton number of +1 (antileptons have -1). Leptons are not made of quarks — they are fundamental.</div>
+<table>
+  <tr><th>Generation</th><th>Charged Lepton</th><th>Neutrino</th></tr>
+  <tr><td>1st</td><td>Electron (e<sup>-</sup>)</td><td>Electron neutrino (&nu;<sub>e</sub>)</td></tr>
+  <tr><td>2nd</td><td>Muon (&mu;<sup>-</sup>)</td><td>Muon neutrino (&nu;<sub>&mu;</sub>)</td></tr>
+  <tr><td>3rd</td><td>Tau (&tau;<sup>-</sup>)</td><td>Tau neutrino (&nu;<sub>&tau;</sub>)</td></tr>
+</table>
+<p>Each generation has its own lepton number (electron lepton number L<sub>e</sub>, muon lepton number L<sub>&mu;</sub>) which is separately conserved in all interactions.</p>
+
+<p><strong>Real-world application:</strong> Muons are produced when cosmic rays hit the upper atmosphere. Despite their short lifetime (~2.2 &mu;s), they reach the Earth's surface due to time dilation predicted by special relativity. This was one of the first experimental confirmations of Einstein's theory.</p>
 
 <!-- Standard Model Particle Classification -->
 <div style="margin: 20px auto; text-align: center;">
@@ -170,7 +227,7 @@
     <text x="425" y="144">W+, W-, Z0</text><text x="540" y="144" font-size="9" fill="#64748b">Weak</text>
     <text x="425" y="166">Graviton*</text><text x="540" y="166" font-size="9" fill="#64748b">Gravity</text>
   </g>
-  <text x="497" y="210" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">*theoretical</text>
+  <text x="497" y="210" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">*theoretical, not yet observed</text>
 
   <!-- Bottom summary -->
   <rect x="20" y="250" width="565" height="75" rx="6" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
@@ -182,66 +239,125 @@
 
 <!-- QUARKS -->
 <h2>5. Quarks</h2>
+<p>AQA requires knowledge of three quark flavours: up, down, and strange. Charm, top, and bottom exist but are not required.</p>
 <table>
-  <tr><th>Quark</th><th>Symbol</th><th>Charge</th><th>Baryon Number</th><th>Strangeness</th></tr>
+  <tr><th>Quark</th><th>Symbol</th><th>Charge (e)</th><th>Baryon Number</th><th>Strangeness</th></tr>
   <tr><td>Up</td><td>u</td><td>+2/3</td><td>+1/3</td><td>0</td></tr>
   <tr><td>Down</td><td>d</td><td>-1/3</td><td>+1/3</td><td>0</td></tr>
   <tr><td>Strange</td><td>s</td><td>-1/3</td><td>+1/3</td><td>-1</td></tr>
 </table>
-<p>Antiquarks have opposite charge, baryon number, and strangeness to their quark counterparts.</p>
+<p>Antiquarks (<span style="text-decoration:overline;">u</span>, <span style="text-decoration:overline;">d</span>, <span style="text-decoration:overline;">s</span>) have opposite charge, baryon number, and strangeness to their quark counterparts.</p>
 
 <h3>Checking Quark Compositions</h3>
-<ul>
-  <li><strong>Proton (uud):</strong> Charge = +2/3 + 2/3 - 1/3 = +1. Correct.</li>
-  <li><strong>Neutron (udd):</strong> Charge = +2/3 - 1/3 - 1/3 = 0. Correct.</li>
-  <li><strong>&pi;<sup>+</sup> (u<span style="text-decoration:overline;">d</span>):</strong> Charge = +2/3 + 1/3 = +1. Correct.</li>
-  <li><strong>K<sup>+</sup> (u<span style="text-decoration:overline;">s</span>):</strong> Charge = +2/3 + 1/3 = +1. Strangeness = 0 + 1 = +1. Correct.</li>
-</ul>
+<div class="worked-example">
+<strong>Worked Example:</strong> Verify the quark compositions and properties of key particles.<br><br>
+<strong>Proton (uud):</strong><br>
+Charge = +2/3 + 2/3 - 1/3 = +1 &#10004;<br>
+Baryon number = +1/3 + 1/3 + 1/3 = +1 &#10004;<br>
+Strangeness = 0 + 0 + 0 = 0 &#10004;<br><br>
 
-<div class="tip-box"><strong>Exam Tip:</strong> Strangeness is conserved in strong interactions but can change by 0 or &plusmn;1 in weak interactions. If a kaon (strangeness = &plusmn;1) is produced in a strong interaction, another strange particle must be produced alongside it (associated production).</div>
+<strong>Neutron (udd):</strong><br>
+Charge = +2/3 - 1/3 - 1/3 = 0 &#10004;<br>
+Baryon number = +1/3 + 1/3 + 1/3 = +1 &#10004;<br><br>
+
+<strong>&pi;<sup>+</sup> pion (u<span style="text-decoration:overline;">d</span>):</strong><br>
+Charge = +2/3 + 1/3 = +1 &#10004; (the antiquark <span style="text-decoration:overline;">d</span> has charge +1/3)<br>
+Baryon number = +1/3 - 1/3 = 0 &#10004; (mesons have B = 0)<br><br>
+
+<strong>K<sup>+</sup> kaon (u<span style="text-decoration:overline;">s</span>):</strong><br>
+Charge = +2/3 + 1/3 = +1 &#10004;<br>
+Strangeness = 0 + (+1) = +1 &#10004; (anti-strange has strangeness +1)
+</div>
+
+<h3>Key Meson Quark Compositions</h3>
+<table>
+  <tr><th>Meson</th><th>Quark Content</th><th>Charge</th><th>Strangeness</th></tr>
+  <tr><td>&pi;<sup>+</sup></td><td>u<span style="text-decoration:overline;">d</span></td><td>+1</td><td>0</td></tr>
+  <tr><td>&pi;<sup>-</sup></td><td>d<span style="text-decoration:overline;">u</span></td><td>-1</td><td>0</td></tr>
+  <tr><td>&pi;<sup>0</sup></td><td>u<span style="text-decoration:overline;">u</span> or d<span style="text-decoration:overline;">d</span></td><td>0</td><td>0</td></tr>
+  <tr><td>K<sup>+</sup></td><td>u<span style="text-decoration:overline;">s</span></td><td>+1</td><td>+1</td></tr>
+  <tr><td>K<sup>-</sup></td><td>s<span style="text-decoration:overline;">u</span></td><td>-1</td><td>-1</td></tr>
+  <tr><td>K<sup>0</sup></td><td>d<span style="text-decoration:overline;">s</span></td><td>0</td><td>+1</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Strangeness is conserved in strong interactions but can change by 0 or &plusmn;1 in weak interactions. If a kaon (strangeness = &plusmn;1) is produced in a strong interaction, another strange particle must be produced alongside it (associated production) to conserve strangeness. Kaons decay via the weak interaction because strangeness changes.</div>
 
 <!-- ANTIPARTICLES -->
 <h2>6. Antiparticles</h2>
-<div class="def-box"><strong>Antiparticle:</strong> Every particle has a corresponding antiparticle with the same mass and rest energy but opposite charge, baryon number, lepton number, and strangeness.</div>
+<div class="def-box"><strong>Antiparticle:</strong> Every particle has a corresponding antiparticle with the same mass and rest energy but opposite charge, baryon number, lepton number, and strangeness. Predicted by Dirac (1928) and confirmed by Anderson's discovery of the positron (1932).</div>
 <table>
   <tr><th>Particle</th><th>Antiparticle</th><th>Notes</th></tr>
   <tr><td>Electron (e<sup>-</sup>)</td><td>Positron (e<sup>+</sup>)</td><td>First antiparticle discovered (Anderson, 1932)</td></tr>
-  <tr><td>Proton (p)</td><td>Antiproton (<span style="text-decoration:overline;">p</span>)</td><td>Charge = -1</td></tr>
+  <tr><td>Proton (p)</td><td>Antiproton (<span style="text-decoration:overline;">p</span>)</td><td>Charge = -1, baryon number = -1</td></tr>
   <tr><td>Neutron (n)</td><td>Antineutron (<span style="text-decoration:overline;">n</span>)</td><td>Same charge (0) but opposite baryon number</td></tr>
-  <tr><td>Neutrino (&nu;)</td><td>Antineutrino (<span style="text-decoration:overline;">&nu;</span>)</td><td>Opposite lepton number</td></tr>
+  <tr><td>Neutrino (&nu;<sub>e</sub>)</td><td>Antineutrino (<span style="text-decoration:overline;">&nu;</span><sub>e</sub>)</td><td>Opposite lepton number</td></tr>
 </table>
 
 <h3>Pair Production and Annihilation</h3>
-<p><strong>Annihilation:</strong> A particle meets its antiparticle, both are destroyed, and their mass-energy is converted into two gamma photons (to conserve momentum).</p>
-<div class="eq">Minimum energy of each photon: E = m<sub>0</sub>c<sup>2</sup> (rest energy of one particle)</div>
+<p><strong>Annihilation:</strong> A particle meets its antiparticle, both are destroyed, and their mass-energy is converted into two gamma photons (two photons are needed to conserve momentum).</p>
+<div class="eq">Minimum energy of each photon: E<sub>photon</sub> = m<sub>0</sub>c<sup>2</sup></div>
 
-<p><strong>Pair production:</strong> A photon with sufficient energy creates a particle-antiparticle pair. The photon must have energy of at least 2m<sub>0</sub>c<sup>2</sup>. This usually occurs near a nucleus (to conserve momentum).</p>
+<div class="worked-example">
+<strong>Worked Example:</strong> Calculate the minimum energy and wavelength of photons produced when an electron and positron annihilate at rest.<br><br>
+Rest energy of electron = m<sub>e</sub>c<sup>2</sup> = 9.109 &times; 10<sup>-31</sup> &times; (3.0 &times; 10<sup>8</sup>)<sup>2</sup> = 8.20 &times; 10<sup>-14</sup> J = 0.511 MeV<br><br>
+Each photon carries at least this energy: E = 0.511 MeV = 8.20 &times; 10<sup>-14</sup> J<br><br>
+Wavelength: &lambda; = hc/E = (6.63 &times; 10<sup>-34</sup> &times; 3.0 &times; 10<sup>8</sup>) / 8.20 &times; 10<sup>-14</sup> = <strong>2.43 &times; 10<sup>-12</sup> m</strong><br>
+This is in the gamma ray region of the EM spectrum.
+</div>
+
+<p><strong>Pair production:</strong> A photon with sufficient energy creates a particle-antiparticle pair. The photon must have energy of at least 2m<sub>0</sub>c<sup>2</sup>. This usually occurs near a nucleus (to conserve momentum — the nucleus recoils to absorb the excess momentum).</p>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Calculate the minimum photon energy for electron-positron pair production.<br><br>
+E<sub>min</sub> = 2m<sub>e</sub>c<sup>2</sup> = 2 &times; 0.511 MeV = <strong>1.022 MeV</strong><br><br>
+The corresponding minimum frequency: f = E/h = 1.022 &times; 10<sup>6</sup> &times; 1.6 &times; 10<sup>-19</sup> / 6.63 &times; 10<sup>-34</sup> = 2.47 &times; 10<sup>20</sup> Hz (gamma ray)
+</div>
+
+<p><strong>Real-world application:</strong> PET (Positron Emission Tomography) scanners exploit electron-positron annihilation. A radioactive tracer emits positrons which annihilate with electrons in the body, producing pairs of gamma photons detected by the scanner. This is used to image brain activity, detect cancers, and monitor heart function.</p>
 
 <!-- PARTICLE INTERACTIONS -->
-<h2>7. Particle Interactions</h2>
+<h2>7. Particle Interactions and Conservation Laws</h2>
 
 <h3>Conservation Laws</h3>
-<p>In all interactions, the following are conserved:</p>
-<ul>
-  <li><strong>Energy</strong> (including mass-energy)</li>
-  <li><strong>Momentum</strong></li>
-  <li><strong>Charge</strong></li>
-  <li><strong>Baryon number</strong></li>
-  <li><strong>Lepton number</strong> (electron and muon separately)</li>
-</ul>
-<p>Strangeness is conserved in strong and electromagnetic interactions but can change by &plusmn;1 in weak interactions.</p>
+<p>In all interactions, the following quantities are conserved:</p>
+<table>
+  <tr><th>Quantity</th><th>Conserved in Strong?</th><th>Conserved in Weak?</th><th>Conserved in EM?</th></tr>
+  <tr><td>Energy (including mass-energy)</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Momentum</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Charge</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Baryon number</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Lepton number (each flavour)</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Strangeness</td><td>Yes</td><td>Can change by &plusmn;1</td><td>Yes</td></tr>
+</table>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Verify that beta-minus decay conserves all quantum numbers.<br><br>
+n &rarr; p + e<sup>-</sup> + <span style="text-decoration:overline;">&nu;</span><sub>e</sub><br><br>
+<strong>Charge:</strong> 0 &rarr; +1 + (-1) + 0 = 0 &#10004;<br>
+<strong>Baryon number:</strong> +1 &rarr; +1 + 0 + 0 = +1 &#10004;<br>
+<strong>Electron lepton number:</strong> 0 &rarr; 0 + 1 + (-1) = 0 &#10004;<br>
+(The antineutrino has L<sub>e</sub> = -1, the electron has L<sub>e</sub> = +1)<br>
+All conserved. This is a weak interaction (W<sup>-</sup> boson mediates it).
+</div>
 
 <h3>Key Interactions at A-Level</h3>
 <p><strong>Beta-minus decay</strong> (weak interaction):</p>
 <p>n &rarr; p + e<sup>-</sup> + <span style="text-decoration:overline;">&nu;</span><sub>e</sub></p>
-<p>At the quark level: d &rarr; u + e<sup>-</sup> + <span style="text-decoration:overline;">&nu;</span><sub>e</sub> (via W<sup>-</sup> boson)</p>
+<p>At the quark level: d &rarr; u + e<sup>-</sup> + <span style="text-decoration:overline;">&nu;</span><sub>e</sub> (mediated by W<sup>-</sup> boson)</p>
 
 <p><strong>Beta-plus decay</strong> (weak interaction):</p>
 <p>p &rarr; n + e<sup>+</sup> + &nu;<sub>e</sub></p>
-<p>At the quark level: u &rarr; d + e<sup>+</sup> + &nu;<sub>e</sub> (via W<sup>+</sup> boson)</p>
+<p>At the quark level: u &rarr; d + e<sup>+</sup> + &nu;<sub>e</sub> (mediated by W<sup>+</sup> boson)</p>
 
 <p><strong>Electron capture</strong> (weak interaction):</p>
-<p>p + e<sup>-</sup> &rarr; n + &nu;<sub>e</sub> (via W<sup>+</sup> boson)</p>
+<p>p + e<sup>-</sup> &rarr; n + &nu;<sub>e</sub> (mediated by W<sup>+</sup> boson)</p>
+
+<p><strong>Electron-proton collision</strong> (weak interaction, if energy is sufficient):</p>
+<p>p + e<sup>-</sup> &rarr; n + &nu;<sub>e</sub></p>
+
+<!-- Feynman Diagrams -->
+<h2>8. Feynman Diagrams</h2>
+<p>Feynman diagrams are pictorial representations of particle interactions. Time runs upward (or left-to-right). Straight lines represent fermions (quarks, leptons). Wavy or curly lines represent exchange bosons.</p>
 
 <!-- Feynman Diagram for Beta-minus Decay -->
 <div style="margin: 20px auto; text-align: center;">
@@ -271,11 +387,11 @@
   <line x1="230" y1="70" x2="370" y2="50" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowF)"/>
   <text x="375" y="48" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">e-</text>
 
-  <!-- Antineutrino out -->
+  <!-- Antineutrino out (arrow reversed for antiparticle) -->
   <line x1="230" y1="70" x2="370" y2="130" stroke="#1a1a2e" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowFr)"/>
-  <text x="375" y="134" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">ve</text>
+  <text x="375" y="134" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">ve (bar)</text>
 
-  <!-- Vertex dot -->
+  <!-- Vertex dots -->
   <circle cx="200" cy="160" r="4" fill="#1a73e8"/>
   <circle cx="230" cy="70" r="4" fill="#DC2626"/>
 
@@ -283,51 +399,164 @@
 </svg>
 </div>
 
-<div class="tip-box"><strong>Exam Tip:</strong> In Feynman diagrams, W bosons change flavour. W<sup>-</sup> emission turns a down quark into an up quark. W<sup>+</sup> emission turns an up quark into a down quark. The W then decays into a lepton pair.</div>
+<!-- Feynman Diagram for Beta-plus Decay -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 420 300" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="210" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Feynman Diagram: Beta-plus Decay</text>
+  <defs>
+    <marker id="arrowFbp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a1a2e"/></marker>
+    <marker id="arrowFbpG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#16A34A"/></marker>
+  </defs>
+  <!-- Time axis -->
+  <line x1="50" y1="270" x2="50" y2="50" stroke="#cbd5e1" stroke-width="1" marker-end="url(#arrowFbp)"/>
+  <text x="38" y="155" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b" transform="rotate(-90,38,155)">Time</text>
+
+  <!-- Proton (u quark) in -->
+  <line x1="80" y1="250" x2="200" y2="160" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowFbp)"/>
+  <text x="75" y="262" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="600">p (u quark)</text>
+
+  <!-- Neutron (d quark) out -->
+  <line x1="200" y1="160" x2="370" y2="80" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowFbp)"/>
+  <text x="340" y="72" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="600">n (d quark)</text>
+
+  <!-- W+ boson (wavy line) -->
+  <path d="M200,160 Q215,145 210,130 Q205,115 220,100 Q235,85 230,70" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <text x="195" y="105" text-anchor="end" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">W+</text>
+
+  <!-- Positron out -->
+  <line x1="230" y1="70" x2="370" y2="50" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowFbp)"/>
+  <text x="375" y="48" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">e+</text>
+
+  <!-- Neutrino out -->
+  <line x1="230" y1="70" x2="370" y2="130" stroke="#1a1a2e" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowFbpG)"/>
+  <text x="375" y="134" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">ve</text>
+
+  <!-- Vertex dots -->
+  <circle cx="200" cy="160" r="4" fill="#1a73e8"/>
+  <circle cx="230" cy="70" r="4" fill="#16A34A"/>
+
+  <text x="210" y="288" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">u quark emits W+ boson, becomes d quark. W+ decays into e+ and neutrino.</text>
+</svg>
+</div>
+
+<!-- Feynman Diagram for Electron Capture -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 420 280" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="210" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Feynman Diagram: Electron Capture</text>
+  <defs>
+    <marker id="arrowEC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a1a2e"/></marker>
+    <marker id="arrowECb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
+  </defs>
+  <!-- Time axis -->
+  <line x1="50" y1="250" x2="50" y2="50" stroke="#cbd5e1" stroke-width="1" marker-end="url(#arrowEC)"/>
+  <text x="38" y="150" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b" transform="rotate(-90,38,150)">Time</text>
+
+  <!-- Proton in -->
+  <line x1="80" y1="230" x2="200" y2="150" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowEC)"/>
+  <text x="75" y="242" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="600">p (u quark)</text>
+
+  <!-- Neutron out -->
+  <line x1="200" y1="150" x2="370" y2="70" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowEC)"/>
+  <text x="340" y="62" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="600">n (d quark)</text>
+
+  <!-- W+ boson -->
+  <path d="M200,150 Q210,135 208,120 Q205,105 215,90 Q225,80 222,68" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <text x="230" y="115" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">W+</text>
+
+  <!-- Electron in (from left, going right to vertex) -->
+  <line x1="80" y1="50" x2="222" y2="68" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowEC)"/>
+  <text x="75" y="46" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="600">e-</text>
+
+  <!-- Neutrino out -->
+  <line x1="222" y1="68" x2="370" y2="40" stroke="#1a1a2e" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowEC)"/>
+  <text x="375" y="38" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">ve</text>
+
+  <!-- Vertex dots -->
+  <circle cx="200" cy="150" r="4" fill="#1a73e8"/>
+  <circle cx="222" cy="68" r="4" fill="#16A34A"/>
+
+  <text x="210" y="268" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">Proton absorbs electron via W+ exchange, producing neutron + neutrino.</text>
+</svg>
+</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> In Feynman diagrams, W bosons change quark flavour. W<sup>-</sup> emission turns d &rarr; u. W<sup>+</sup> emission turns u &rarr; d. The W then decays into a lepton pair. Remember: antiparticle arrows point backward in time (downward if time goes up). You must be able to draw Feynman diagrams for beta-minus, beta-plus, electron capture, and electron-proton collisions.</div>
 
 <!-- PHOTOELECTRIC EFFECT -->
-<h2>8. The Photoelectric Effect</h2>
-<div class="def-box"><strong>Photoelectric effect:</strong> The emission of electrons from a metal surface when electromagnetic radiation of sufficiently high frequency is incident on it.</div>
+<h2>9. The Photoelectric Effect</h2>
+<div class="def-box"><strong>Photoelectric effect:</strong> The emission of electrons from a metal surface when electromagnetic radiation of sufficiently high frequency is incident on it. The emitted electrons are called photoelectrons.</div>
 
 <h3>Key Observations</h3>
-<ul>
+<ol>
   <li>No electrons are emitted below a certain <strong>threshold frequency</strong> (f<sub>0</sub>), regardless of intensity.</li>
-  <li>Emission is <strong>instantaneous</strong> above the threshold frequency.</li>
-  <li>Increasing intensity increases the number of photoelectrons emitted (rate), not their maximum kinetic energy.</li>
-  <li>Increasing frequency increases the maximum kinetic energy of photoelectrons.</li>
+  <li>Emission is <strong>instantaneous</strong> above the threshold frequency (no time delay).</li>
+  <li>Increasing intensity increases the <strong>number</strong> of photoelectrons emitted per second (the photocurrent), not their maximum kinetic energy.</li>
+  <li>Increasing frequency increases the <strong>maximum kinetic energy</strong> of photoelectrons.</li>
+  <li>Below the threshold frequency, even extremely intense light produces zero photoelectrons.</li>
+</ol>
+
+<h3>Why Wave Theory Fails</h3>
+<p>Classical wave theory predicts that energy is spread continuously across the wavefront. This would mean:</p>
+<ul>
+  <li>Any frequency should eventually cause emission if intense enough (wrong).</li>
+  <li>There should be a time delay as the electron gradually absorbs energy (wrong).</li>
+  <li>Increasing intensity should increase kinetic energy (wrong).</li>
 </ul>
+<p>The photoelectric effect provided strong evidence for the particle nature of light.</p>
 
-<p>These observations cannot be explained by the wave theory of light. Einstein explained them using the <strong>photon model</strong>:</p>
-
-<div class="def-box"><strong>Photon:</strong> A quantum (discrete packet) of electromagnetic energy. Each photon has energy E = hf, where h is the Planck constant (6.63 &times; 10<sup>-34</sup> J s).</div>
+<div class="def-box"><strong>Photon:</strong> A quantum (discrete packet) of electromagnetic energy. Each photon has energy E = hf = hc/&lambda;, where h is the Planck constant (6.63 &times; 10<sup>-34</sup> J s). Light consists of a stream of photons; intensity is proportional to the number of photons per second.</div>
 
 <h3>Einstein's Photoelectric Equation</h3>
-<div class="eq">E = hf = &phi; + E<sub>k(max)</sub></div>
+<div class="eq">hf = &phi; + E<sub>k(max)</sub></div>
 <div class="eq">hf = hf<sub>0</sub> + &frac12;mv<sub>max</sub><sup>2</sup></div>
 <ul>
   <li><strong>&phi;</strong> = work function (minimum energy needed to free an electron from the surface), units: J or eV</li>
   <li><strong>f<sub>0</sub></strong> = threshold frequency: &phi; = hf<sub>0</sub></li>
   <li><strong>E<sub>k(max)</sub></strong> = maximum kinetic energy of emitted photoelectron</li>
+  <li>The equation is one-photon-one-electron: each photon interacts with one electron</li>
 </ul>
 
-<div class="tip-box"><strong>Exam Tip:</strong> 1 eV = 1.60 &times; 10<sup>-19</sup> J. The electronvolt is the energy gained by an electron moving through a potential difference of 1 V.</div>
+<div class="def-box"><strong>Electronvolt (eV):</strong> The energy gained by an electron accelerated through a potential difference of 1 V. 1 eV = 1.60 &times; 10<sup>-19</sup> J. This is a convenient unit for atomic-scale energies.</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> UV light of wavelength 250 nm is incident on a zinc surface with work function 4.3 eV. Calculate whether photoelectrons are emitted and, if so, their maximum kinetic energy.<br><br>
+Photon energy: E = hc/&lambda; = (6.63 &times; 10<sup>-34</sup> &times; 3.0 &times; 10<sup>8</sup>) / (250 &times; 10<sup>-9</sup>)<br>
+E = 7.96 &times; 10<sup>-19</sup> J = 7.96 &times; 10<sup>-19</sup> / 1.60 &times; 10<sup>-19</sup> = <strong>4.97 eV</strong><br><br>
+Since 4.97 eV > 4.3 eV (work function), photoelectrons ARE emitted.<br>
+E<sub>k(max)</sub> = hf - &phi; = 4.97 - 4.3 = <strong>0.67 eV</strong> = 1.07 &times; 10<sup>-19</sup> J
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Calculate the threshold frequency for a metal with work function 2.2 eV.<br><br>
+&phi; = hf<sub>0</sub><br>
+f<sub>0</sub> = &phi;/h = (2.2 &times; 1.60 &times; 10<sup>-19</sup>) / (6.63 &times; 10<sup>-34</sup>) = <strong>5.31 &times; 10<sup>14</sup> Hz</strong><br>
+This corresponds to green/yellow light (&lambda; = c/f = 565 nm).
+</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> A graph of E<sub>k(max)</sub> vs f is a straight line with gradient = h (Planck constant), x-intercept = f<sub>0</sub> (threshold frequency), and y-intercept = -&phi; (negative work function). Different metals give parallel lines (same gradient h) with different intercepts.</div>
+
+<p><strong>Real-world application:</strong> The photoelectric effect is used in solar cells (photovoltaic cells) to generate electricity, in CCD sensors in digital cameras, in photoelectron spectroscopy for surface analysis, and in automatic door sensors.</p>
 
 <!-- ENERGY LEVELS -->
-<h2>9. Energy Levels and Photon Emission</h2>
-<p>Electrons in atoms occupy discrete energy levels (n = 1, 2, 3...). The ground state (n = 1) has the lowest (most negative) energy.</p>
+<h2>10. Energy Levels and Photon Emission</h2>
+<p>Electrons in atoms occupy discrete energy levels (n = 1, 2, 3...). The ground state (n = 1) has the lowest (most negative) energy. Energy levels are quantised — only certain specific energies are allowed.</p>
 
 <h3>Photon Emission</h3>
-<p>When an electron transitions from a higher energy level to a lower one, a photon is emitted with energy equal to the difference between the two levels:</p>
-<div class="eq">E = hf = E<sub>2</sub> &minus; E<sub>1</sub></div>
+<p>When an electron transitions from a higher energy level (E<sub>2</sub>) to a lower one (E<sub>1</sub>), a photon is emitted with energy exactly equal to the difference between the two levels:</p>
+<div class="eq">&Delta;E = E<sub>2</sub> &minus; E<sub>1</sub> = hf = hc/&lambda;</div>
 
 <!-- Energy Level Diagram -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 480 300" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="240" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Energy Levels and Photon Emission</text>
+  <text x="240" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Hydrogen Atom Energy Levels</text>
+  <defs>
+    <marker id="arrowRed32b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#DC2626"/></marker>
+    <marker id="arrowBlue32b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
+    <marker id="arrowGreen32b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#16A34A"/></marker>
+  </defs>
   <!-- Energy levels -->
   <line x1="100" y1="260" x2="300" y2="260" stroke="#1a1a2e" stroke-width="2"/>
   <text x="90" y="264" text-anchor="end" font-family="system-ui" font-size="11" fill="#1a1a2e">n=1</text>
-  <text x="310" y="264" font-family="system-ui" font-size="10" fill="#64748b">-13.6 eV</text>
+  <text x="310" y="264" font-family="system-ui" font-size="10" fill="#64748b">-13.6 eV (ground state)</text>
 
   <line x1="100" y1="180" x2="300" y2="180" stroke="#1a1a2e" stroke-width="2"/>
   <text x="90" y="184" text-anchor="end" font-family="system-ui" font-size="11" fill="#1a1a2e">n=2</text>
@@ -335,60 +564,63 @@
 
   <line x1="100" y1="130" x2="300" y2="130" stroke="#1a1a2e" stroke-width="2"/>
   <text x="90" y="134" text-anchor="end" font-family="system-ui" font-size="11" fill="#1a1a2e">n=3</text>
-  <text x="310" y="134" font-family="system-ui" font-size="10" fill="#64748b">-1.5 eV</text>
+  <text x="310" y="134" font-family="system-ui" font-size="10" fill="#64748b">-1.51 eV</text>
 
   <line x1="100" y1="95" x2="300" y2="95" stroke="#1a1a2e" stroke-width="2"/>
   <text x="90" y="99" text-anchor="end" font-family="system-ui" font-size="11" fill="#1a1a2e">n=4</text>
   <text x="310" y="99" font-family="system-ui" font-size="10" fill="#64748b">-0.85 eV</text>
 
   <line x1="100" y1="55" x2="300" y2="55" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="310" y="59" font-family="system-ui" font-size="10" fill="#64748b">0 eV (ionisation)</text>
+  <text x="310" y="59" font-family="system-ui" font-size="10" fill="#64748b">0 eV (ionisation / free)</text>
 
-  <!-- Transition arrows with photon emission -->
-  <!-- n=3 to n=1 -->
-  <line x1="160" y1="133" x2="160" y2="257" stroke="#DC2626" stroke-width="2" marker-end="url(#arrowRed32)"/>
+  <!-- Transition arrows -->
+  <line x1="160" y1="133" x2="160" y2="257" stroke="#DC2626" stroke-width="2" marker-end="url(#arrowRed32b)"/>
   <text x="140" y="200" text-anchor="end" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">12.1 eV</text>
-  <!-- wavy photon line -->
   <path d="M165,195 Q170,190 175,195 Q180,200 185,195 Q190,190 195,195 Q200,200 205,195" fill="none" stroke="#DC2626" stroke-width="1.2"/>
   <text x="210" y="199" font-family="system-ui" font-size="9" fill="#DC2626">photon</text>
 
-  <!-- n=2 to n=1 -->
-  <line x1="230" y1="183" x2="230" y2="257" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowBlue32)"/>
+  <line x1="230" y1="183" x2="230" y2="257" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowBlue32b)"/>
   <text x="248" y="225" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">10.2 eV</text>
 
-  <!-- n=3 to n=2 -->
-  <line x1="130" y1="133" x2="130" y2="177" stroke="#16A34A" stroke-width="2" marker-end="url(#arrowGreen32)"/>
+  <line x1="130" y1="133" x2="130" y2="177" stroke="#16A34A" stroke-width="2" marker-end="url(#arrowGreen32b)"/>
   <text x="112" y="160" text-anchor="end" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">1.9 eV</text>
 
-  <!-- Arrow markers -->
-  <defs>
-    <marker id="arrowRed32" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#DC2626"/></marker>
-    <marker id="arrowBlue32" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
-    <marker id="arrowGreen32" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#16A34A"/></marker>
-  </defs>
-
-  <text x="240" y="288" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">Photon energy = E(higher) - E(lower) = hf</text>
+  <text x="240" y="288" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">Photon energy = E(higher) - E(lower) = hf = hc/lambda</text>
 </svg>
 </div>
 
+<div class="worked-example">
+<strong>Worked Example:</strong> Calculate the wavelength of a photon emitted when an electron in hydrogen drops from n=3 to n=2.<br><br>
+&Delta;E = E<sub>3</sub> - E<sub>2</sub> = (-1.51) - (-3.4) = 1.89 eV<br>
+Convert to joules: 1.89 &times; 1.60 &times; 10<sup>-19</sup> = 3.024 &times; 10<sup>-19</sup> J<br>
+&lambda; = hc/E = (6.63 &times; 10<sup>-34</sup> &times; 3.0 &times; 10<sup>8</sup>) / 3.024 &times; 10<sup>-19</sup><br>
+&lambda; = <strong>6.58 &times; 10<sup>-7</sup> m = 658 nm</strong> (red light — this is the H-alpha line)
+</div>
+
 <h3>Photon Absorption</h3>
-<p>An atom can absorb a photon only if the photon energy exactly matches the difference between two energy levels. The electron is then promoted to the higher level.</p>
+<p>An atom can absorb a photon <strong>only if</strong> the photon energy exactly matches the difference between two energy levels. The electron is then promoted (excited) to the higher level. If the photon energy does not match any transition, it passes through without being absorbed.</p>
 
 <h3>Line Spectra</h3>
 <ul>
-  <li><strong>Emission spectrum:</strong> Bright lines on a dark background. Each line corresponds to a specific electron transition downward.</li>
-  <li><strong>Absorption spectrum:</strong> Dark lines on a continuous spectrum background. Each dark line corresponds to a frequency absorbed by the gas.</li>
+  <li><strong>Emission spectrum:</strong> Bright coloured lines on a dark background. Produced when excited atoms de-excite. Each line corresponds to a specific electron transition downward. Different elements produce different patterns of lines.</li>
+  <li><strong>Absorption spectrum:</strong> Dark lines on a continuous spectrum background. Produced when white light passes through a cool gas. Each dark line corresponds to a frequency absorbed by the gas, which matches an emission line.</li>
+  <li><strong>Continuous spectrum:</strong> Produced by hot, dense objects (e.g. a filament lamp, the Sun's core). Contains all wavelengths.</li>
 </ul>
 
-<h3>Ionisation</h3>
-<p>If a photon has enough energy, it can remove the electron from the atom entirely. The ionisation energy is the energy required to remove the electron from the ground state (taking it to E = 0).</p>
+<p><strong>Real-world application:</strong> Absorption spectra of starlight reveal the chemical composition of stellar atmospheres. The dark Fraunhofer lines in the solar spectrum show the presence of hydrogen, helium, sodium, calcium, and many other elements. This is how helium was first discovered — in the Sun's spectrum before it was found on Earth.</p>
+
+<h3>Ionisation and Excitation</h3>
+<div class="def-box"><strong>Excitation:</strong> When an electron absorbs energy and moves to a higher energy level within the atom. The atom remains neutral. Can be caused by photon absorption or by collisions with other particles (e.g. in a gas discharge tube).<br><br>
+<strong>Ionisation:</strong> When an electron gains enough energy to escape the atom entirely (reach E = 0 or above). The ionisation energy of hydrogen from the ground state is 13.6 eV.</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> In fluorescent tubes, mercury atoms are excited by electron collisions. When they de-excite, they emit UV photons. These UV photons hit the phosphor coating on the inside of the tube, which absorbs the UV and re-emits visible light. This is why the phosphor coating glows.</div>
 
 <!-- WAVE-PARTICLE DUALITY -->
-<h2>10. Wave-Particle Duality</h2>
-<div class="def-box"><strong>Wave-particle duality:</strong> Light and matter exhibit both wave-like and particle-like behaviour. Light shows wave behaviour in diffraction and interference, and particle behaviour in the photoelectric effect. Electrons show particle behaviour in collisions and wave behaviour in electron diffraction.</div>
+<h2>11. Wave-Particle Duality</h2>
+<div class="def-box"><strong>Wave-particle duality:</strong> Light and matter exhibit both wave-like and particle-like behaviour, depending on the experiment. Light shows wave behaviour in diffraction and interference, and particle behaviour in the photoelectric effect. Electrons show particle behaviour in collisions and wave behaviour in electron diffraction.</div>
 
 <h3>de Broglie Wavelength</h3>
-<p>Every moving particle has an associated wavelength:</p>
+<p>Every moving particle has an associated wavelength, proposed by de Broglie in 1924:</p>
 <div class="eq">&lambda; = h / p = h / (mv)</div>
 <ul>
   <li>&lambda; = de Broglie wavelength (m)</li>
@@ -397,9 +629,21 @@
   <li>m = mass (kg), v = velocity (m s<sup>-1</sup>)</li>
 </ul>
 
-<p>Evidence: Electrons fired at a thin crystal produce a diffraction pattern, confirming their wave-like nature. The pattern spacing matches predictions using &lambda; = h/mv.</p>
+<div class="worked-example">
+<strong>Worked Example:</strong> Calculate the de Broglie wavelength of an electron accelerated through a PD of 5.0 kV.<br><br>
+Kinetic energy gained: E<sub>k</sub> = eV = 1.60 &times; 10<sup>-19</sup> &times; 5000 = 8.0 &times; 10<sup>-16</sup> J<br>
+E<sub>k</sub> = &frac12;mv<sup>2</sup>, so v = &radic;(2E<sub>k</sub>/m) = &radic;(2 &times; 8.0 &times; 10<sup>-16</sup> / 9.109 &times; 10<sup>-31</sup>)<br>
+v = 4.19 &times; 10<sup>7</sup> m s<sup>-1</sup><br>
+&lambda; = h/(mv) = 6.63 &times; 10<sup>-34</sup> / (9.109 &times; 10<sup>-31</sup> &times; 4.19 &times; 10<sup>7</sup>)<br>
+&lambda; = <strong>1.74 &times; 10<sup>-11</sup> m = 0.017 nm</strong><br><br>
+This is smaller than atomic spacing (~0.1 nm), so electron diffraction by crystals is observable.
+</div>
 
-<div class="tip-box"><strong>Exam Tip:</strong> Larger objects have extremely tiny de Broglie wavelengths, so wave effects are unobservable for macroscopic objects. Wave-particle duality is only significant at the atomic/subatomic scale.</div>
+<p><strong>Evidence for electron waves:</strong> In 1927, Davisson and Germer fired electrons at a nickel crystal and observed a diffraction pattern, confirming de Broglie's hypothesis. The spacing of the diffraction maxima matched predictions using &lambda; = h/mv.</p>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Larger objects have extremely tiny de Broglie wavelengths. A tennis ball (mass ~0.06 kg, v ~50 m/s) has &lambda; ~ 10<sup>-34</sup> m, far too small to observe any wave effects. Wave-particle duality is only significant at the atomic/subatomic scale where &lambda; is comparable to the size of the objects or gaps involved.</div>
+
+<p><strong>Real-world application:</strong> Electron microscopes use the wave nature of electrons. Because high-energy electrons have much shorter wavelengths than visible light, electron microscopes can resolve structures down to ~0.1 nm — about 1000 times better than optical microscopes. This is essential for imaging individual atoms, viruses, and nanostructures.</p>
 
 </div>
 </body>

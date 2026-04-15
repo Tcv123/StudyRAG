@@ -24,6 +24,8 @@
   .exam-tip strong { color: #b45309; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .worked-example strong { color: #15803d; }
 </style>
 </head>
 <body>
@@ -32,7 +34,7 @@
 <h1>P2 — Physical Chemistry II</h1>
 
 <!-- ==================== KINETICS ==================== -->
-<h2>1. Kinetics</h2>
+<h2>1. Kinetics (Year 2)</h2>
 
 <h3>1.1 Rate of Reaction</h3>
 
@@ -40,13 +42,13 @@
   <strong>Rate of reaction:</strong> The change in concentration of a reactant or product per unit time. Units: mol dm<sup>-3</sup> s<sup>-1</sup>.
 </div>
 
-<p>Factors affecting rate: concentration (or pressure for gases), temperature, surface area, and catalysts.</p>
+<p>Rate can be measured as: the gradient of a concentration-time graph at any point (instantaneous rate), or as the initial rate (gradient at time = 0). The initial rate is often preferred because it eliminates complications from reverse reactions and changing concentrations.</p>
 
 <h3>1.2 Collision Theory and Activation Energy</h3>
-<p>For a reaction to occur, particles must collide with sufficient energy (greater than or equal to the activation energy, E<sub>a</sub>) and with the correct orientation.</p>
+<p>For a reaction to occur, particles must collide with sufficient energy (greater than or equal to the activation energy, E<sub>a</sub>) and with the correct orientation. Increasing temperature, concentration, pressure, surface area, or using a catalyst all increase the rate by different mechanisms.</p>
 
 <div class="definition">
-  <strong>Activation energy (E<sub>a</sub>):</strong> The minimum energy that colliding particles must have for a reaction to occur.
+  <strong>Activation energy (E<sub>a</sub>):</strong> The minimum energy that colliding particles must have for a reaction to occur. It represents the energy barrier between reactants and products on an enthalpy profile diagram.
 </div>
 
 <h3>1.3 Maxwell-Boltzmann Distribution</h3>
@@ -54,18 +56,19 @@
 <ul>
   <li>The curve starts at the origin (no molecules have zero energy).</li>
   <li>The peak represents the most probable energy.</li>
-  <li>The curve is asymmetric with a long tail to the right (no maximum energy).</li>
+  <li>The curve is asymmetric with a long tail to the right (no maximum energy limit).</li>
   <li>The area under the curve represents the total number of molecules and is constant.</li>
   <li>The area to the right of E<sub>a</sub> represents molecules with enough energy to react.</li>
 </ul>
 
-<p><strong>Effect of temperature increase:</strong> The peak shifts right and becomes lower and broader. More molecules have energy &ge; E<sub>a</sub>, so the rate increases.</p>
-<p><strong>Effect of a catalyst:</strong> Provides an alternative pathway with a lower E<sub>a</sub>. The distribution curve stays the same, but the E<sub>a</sub> line moves left, so more molecules have sufficient energy.</p>
+<p><strong>Effect of temperature increase:</strong> The peak shifts right and becomes lower and broader. More molecules have energy &ge; E<sub>a</sub>, so the rate increases. The total area under the curve remains the same. The key reason for the rate increase is the much larger proportion of molecules exceeding E<sub>a</sub>, not simply more frequent collisions.</p>
 
-<h3>1.4 Rate Equations and Orders</h3>
+<p><strong>Effect of a catalyst:</strong> Provides an alternative pathway with a lower E<sub>a</sub>. The distribution curve stays the same, but the E<sub>a</sub> line moves left, so more molecules have sufficient energy. A catalyst does not change the distribution of energies, the position of equilibrium, or &Delta;H.</p>
+
+<h3>1.4 Rate Equations and Orders of Reaction</h3>
 
 <div class="definition">
-  <strong>Order of reaction (with respect to a reactant):</strong> The power to which the concentration of that reactant is raised in the rate equation. Can only be determined experimentally.
+  <strong>Order of reaction (with respect to a reactant):</strong> The power to which the concentration of that reactant is raised in the rate equation. Orders can only be determined experimentally — they cannot be deduced from the balanced equation.
 </div>
 
 <p>For a reaction A + B &#8594; products:</p>
@@ -75,51 +78,99 @@
 <p>Where k = rate constant, m = order with respect to A, n = order with respect to B. The overall order = m + n.</p>
 
 <table>
-  <tr><th>Order</th><th>Effect of doubling [reactant]</th><th>Graph: [reactant] vs time</th><th>Graph: rate vs [reactant]</th></tr>
-  <tr><td>0</td><td>No effect on rate</td><td>Straight line (linear decrease)</td><td>Horizontal line</td></tr>
-  <tr><td>1</td><td>Rate doubles</td><td>Exponential decay curve</td><td>Straight line through origin</td></tr>
-  <tr><td>2</td><td>Rate quadruples</td><td>Steeper curve than first order</td><td>Upward curve (parabola)</td></tr>
+  <tr><th>Order</th><th>Effect of doubling [reactant]</th><th>Graph: [reactant] vs time</th><th>Graph: rate vs [reactant]</th><th>Half-life</th></tr>
+  <tr><td>0</td><td>No effect on rate</td><td>Straight line (linear decrease)</td><td>Horizontal line</td><td>Varies (decreases over time)</td></tr>
+  <tr><td>1</td><td>Rate doubles</td><td>Exponential decay curve</td><td>Straight line through origin</td><td>Constant</td></tr>
+  <tr><td>2</td><td>Rate quadruples (2<sup>2</sup>)</td><td>Steeper curve than first order</td><td>Upward curve (parabola through origin)</td><td>Varies (increases over time)</td></tr>
 </table>
 
-<p>Orders are determined from experimental data using the initial rates method: compare experiments where only one concentration changes.</p>
+<p><strong>Determining orders experimentally — the initial rates method:</strong></p>
+<ol>
+  <li>Carry out several experiments varying one concentration at a time while keeping others constant.</li>
+  <li>Measure the initial rate for each experiment.</li>
+  <li>Compare pairs of experiments where only one concentration changes.</li>
+  <li>If doubling [A] doubles the rate: order 1 with respect to A.</li>
+  <li>If doubling [A] quadruples the rate: order 2 with respect to A.</li>
+  <li>If doubling [A] has no effect on rate: order 0 with respect to A.</li>
+</ol>
 
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> The rate equation cannot be deduced from the stoichiometric equation. It must be determined experimentally. The orders tell you about the rate-determining step, not the overall equation.
+<div class="worked-example">
+  <strong>Worked Example:</strong> Given the following data for A + B &#8594; products:<br><br>
+  <table>
+    <tr><th>Expt</th><th>[A] / mol dm<sup>-3</sup></th><th>[B] / mol dm<sup>-3</sup></th><th>Initial rate / mol dm<sup>-3</sup> s<sup>-1</sup></th></tr>
+    <tr><td>1</td><td>0.10</td><td>0.10</td><td>1.5 &times; 10<sup>-4</sup></td></tr>
+    <tr><td>2</td><td>0.20</td><td>0.10</td><td>6.0 &times; 10<sup>-4</sup></td></tr>
+    <tr><td>3</td><td>0.10</td><td>0.20</td><td>3.0 &times; 10<sup>-4</sup></td></tr>
+  </table><br>
+  Comparing Expts 1 &amp; 2: [A] doubles, [B] constant, rate quadruples (6.0/1.5 = 4). So order 2 w.r.t. A.<br>
+  Comparing Expts 1 &amp; 3: [A] constant, [B] doubles, rate doubles (3.0/1.5 = 2). So order 1 w.r.t. B.<br>
+  <strong>Rate = k[A]<sup>2</sup>[B]</strong><br><br>
+  Finding k: 1.5 &times; 10<sup>-4</sup> = k &times; (0.10)<sup>2</sup> &times; 0.10 = k &times; 0.001<br>
+  k = 1.5 &times; 10<sup>-4</sup> / 0.001 = <strong>0.15 dm<sup>6</sup> mol<sup>-2</sup> s<sup>-1</sup></strong>
 </div>
 
-<h3>1.5 The Rate Constant and Units</h3>
-<p>Units of k depend on the overall order:</p>
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The rate equation cannot be deduced from the stoichiometric equation. It must be determined experimentally. The orders tell you about the rate-determining step, not the overall equation. Always show your reasoning clearly when deducing orders from data.
+</div>
+
+<h3>1.5 The Rate Constant (k) and its Units</h3>
+<p>Units of k depend on the overall order of the reaction:</p>
 <table>
-  <tr><th>Overall order</th><th>Units of k</th></tr>
-  <tr><td>0</td><td>mol dm<sup>-3</sup> s<sup>-1</sup></td></tr>
-  <tr><td>1</td><td>s<sup>-1</sup></td></tr>
-  <tr><td>2</td><td>dm<sup>3</sup> mol<sup>-1</sup> s<sup>-1</sup></td></tr>
-  <tr><td>3</td><td>dm<sup>6</sup> mol<sup>-2</sup> s<sup>-1</sup></td></tr>
+  <tr><th>Overall order</th><th>Units of k</th><th>Derivation</th></tr>
+  <tr><td>0</td><td>mol dm<sup>-3</sup> s<sup>-1</sup></td><td>Rate / 1</td></tr>
+  <tr><td>1</td><td>s<sup>-1</sup></td><td>Rate / [A]</td></tr>
+  <tr><td>2</td><td>dm<sup>3</sup> mol<sup>-1</sup> s<sup>-1</sup></td><td>Rate / [A]<sup>2</sup></td></tr>
+  <tr><td>3</td><td>dm<sup>6</sup> mol<sup>-2</sup> s<sup>-1</sup></td><td>Rate / [A]<sup>3</sup></td></tr>
 </table>
 
-<p>The value of k increases with temperature.</p>
+<p>The value of k increases with temperature because at higher temperature, a greater proportion of collisions are successful. The relationship is quantified by the Arrhenius equation.</p>
 
 <h3>1.6 The Arrhenius Equation</h3>
 <div class="equation">
   k = Ae<sup>-E<sub>a</sub>/RT</sup>
 </div>
+<p>Where k = rate constant, A = the pre-exponential factor (Arrhenius constant, related to collision frequency and orientation), E<sub>a</sub> = activation energy (J mol<sup>-1</sup>), R = 8.314 J K<sup>-1</sup> mol<sup>-1</sup>, T = temperature (K).</p>
+
+<p>The exponential term e<sup>-E<sub>a</sub>/RT</sup> represents the fraction of molecules with energy greater than E<sub>a</sub>. As T increases, E<sub>a</sub>/RT decreases, so e<sup>-E<sub>a</sub>/RT</sup> increases, meaning k increases.</p>
+
 <p>Taking the natural logarithm gives a linear form:</p>
 <div class="equation">
   ln k = ln A - E<sub>a</sub> / RT
 </div>
-<p>A graph of ln k (y-axis) against 1/T (x-axis) gives a straight line with gradient = -E<sub>a</sub>/R and y-intercept = ln A, where A is the pre-exponential (Arrhenius) factor.</p>
+<p>This has the form y = mx + c. A graph of ln k (y-axis) against 1/T (x-axis) gives a straight line with:</p>
+<ul>
+  <li>Gradient = -E<sub>a</sub>/R</li>
+  <li>y-intercept = ln A</li>
+</ul>
+
+<div class="worked-example">
+  <strong>Worked Example:</strong> From an Arrhenius plot, the gradient is found to be -1.25 &times; 10<sup>4</sup> K. Calculate E<sub>a</sub>.<br><br>
+  Gradient = -E<sub>a</sub>/R<br>
+  E<sub>a</sub> = -gradient &times; R = -(-1.25 &times; 10<sup>4</sup>) &times; 8.314 = 103,925 J mol<sup>-1</sup> = <strong>104 kJ mol<sup>-1</sup></strong>
+</div>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> To calculate E<sub>a</sub> from a graph: gradient = -E<sub>a</sub>/R, so E<sub>a</sub> = -gradient &times; R. Use R = 8.314 J K<sup>-1</sup> mol<sup>-1</sup>. The answer will be in J mol<sup>-1</sup>; divide by 1000 to convert to kJ mol<sup>-1</sup>.
+  <strong>Exam Tip:</strong> To calculate E<sub>a</sub> from an Arrhenius plot: gradient = -E<sub>a</sub>/R, so E<sub>a</sub> = -gradient &times; R. Use R = 8.314 J K<sup>-1</sup> mol<sup>-1</sup>. The answer will be in J mol<sup>-1</sup>; divide by 1000 to convert to kJ mol<sup>-1</sup>. When calculating the gradient, take two points far apart on the best-fit line (not data points).
 </div>
 
 <h3>1.7 Rate-Determining Step</h3>
 
 <div class="definition">
-  <strong>Rate-determining step:</strong> The slowest step in a multi-step reaction mechanism. It controls the overall rate of reaction.
+  <strong>Rate-determining step (RDS):</strong> The slowest step in a multi-step reaction mechanism. It acts as a bottleneck and controls the overall rate of reaction.
 </div>
 
-<p>Only species that appear in or before the rate-determining step appear in the rate equation. If the rate equation is Rate = k[A][B], the rate-determining step involves one molecule of A and one molecule of B.</p>
+<p>The species that appear in the rate equation are those that appear in or before the rate-determining step. The molecularity of the RDS corresponds to the rate equation:</p>
+<ul>
+  <li>If Rate = k[A][B], the RDS involves one molecule of A and one molecule of B (bimolecular).</li>
+  <li>If Rate = k[A]<sup>2</sup>, the RDS involves two molecules of A.</li>
+  <li>If Rate = k[A] (and B is also a reactant), then B is not involved in or before the RDS — it must be involved in a fast step after the RDS.</li>
+</ul>
+
+<p><strong>Example — SN1 reaction:</strong> The hydrolysis of tertiary halogenoalkanes has Rate = k[RX]. This tells us the RDS only involves the halogenoalkane, consistent with the slow heterolytic fission of the C-X bond (step 1), followed by fast nucleophilic attack (step 2).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> If asked to propose a mechanism consistent with a rate equation, check that the species and their stoichiometry in the RDS match the rate equation exactly. Species absent from the rate equation must appear in steps after the RDS.
+</div>
 
 <!-- ==================== EQUILIBRIA ==================== -->
 <h2>2. Equilibria</h2>
@@ -127,48 +178,76 @@
 <h3>2.1 Dynamic Equilibrium</h3>
 
 <div class="definition">
-  <strong>Dynamic equilibrium:</strong> A state reached in a closed system when the rate of the forward reaction equals the rate of the reverse reaction, so the concentrations of reactants and products remain constant (though not necessarily equal).
+  <strong>Dynamic equilibrium:</strong> A state reached in a closed system when the rate of the forward reaction equals the rate of the reverse reaction, so the concentrations of reactants and products remain constant (though not necessarily equal). Both forward and reverse reactions continue to occur — the equilibrium is dynamic, not static.
 </div>
 
-<h3>2.2 Kc — The Equilibrium Constant</h3>
+<p><strong>Conditions for dynamic equilibrium:</strong></p>
+<ul>
+  <li>A closed system (nothing enters or leaves).</li>
+  <li>A reversible reaction.</li>
+  <li>The forward and reverse rates are equal.</li>
+  <li>Macroscopic properties (concentrations, colour, pressure) remain constant.</li>
+</ul>
+
+<h3>2.2 Kc — The Equilibrium Constant (Concentrations)</h3>
 <p>For the reaction: aA + bB &#8652; cC + dD</p>
 <div class="equation">
   K<sub>c</sub> = [C]<sup>c</sup>[D]<sup>d</sup> / [A]<sup>a</sup>[B]<sup>b</sup>
 </div>
-<p>Where square brackets denote equilibrium concentrations in mol dm<sup>-3</sup>. K<sub>c</sub> has no units if the powers balance, but usually has units that must be calculated.</p>
+<p>Where square brackets denote equilibrium concentrations in mol dm<sup>-3</sup>. K<sub>c</sub> has units that must be worked out from the expression (they depend on the powers).</p>
 
-<p>A large K<sub>c</sub> means the equilibrium lies to the right (products favoured). A small K<sub>c</sub> means the equilibrium lies to the left (reactants favoured).</p>
+<p><strong>Interpreting Kc:</strong></p>
+<ul>
+  <li>K<sub>c</sub> >> 1: Equilibrium lies far to the right — products strongly favoured.</li>
+  <li>K<sub>c</sub> << 1: Equilibrium lies far to the left — reactants strongly favoured.</li>
+  <li>K<sub>c</sub> &approx; 1: Significant amounts of both reactants and products present.</li>
+</ul>
 
-<h3>2.3 Kp — Equilibrium Constant in Terms of Partial Pressures</h3>
-<p>For gaseous equilibria:</p>
-<div class="equation">
-  p<sub>A</sub> = x<sub>A</sub> &times; P<sub>total</sub>
+<div class="worked-example">
+  <strong>Worked Example:</strong> For N<sub>2</sub>O<sub>4</sub>(g) &#8652; 2NO<sub>2</sub>(g), at equilibrium [N<sub>2</sub>O<sub>4</sub>] = 0.0400 mol dm<sup>-3</sup> and [NO<sub>2</sub>] = 0.0280 mol dm<sup>-3</sup>. Calculate K<sub>c</sub>.<br><br>
+  K<sub>c</sub> = [NO<sub>2</sub>]<sup>2</sup> / [N<sub>2</sub>O<sub>4</sub>] = (0.0280)<sup>2</sup> / 0.0400 = 7.84 &times; 10<sup>-4</sup> / 0.0400 = <strong>0.0196 mol dm<sup>-3</sup></strong><br>
+  Units: (mol dm<sup>-3</sup>)<sup>2</sup> / (mol dm<sup>-3</sup>) = mol dm<sup>-3</sup>
 </div>
-<p>Where p<sub>A</sub> = partial pressure of A, x<sub>A</sub> = mole fraction of A.</p>
+
+<h3>2.3 Kp — Equilibrium Constant (Partial Pressures)</h3>
+<p>For gaseous equilibria, we can use partial pressures instead of concentrations:</p>
+<div class="equation">
+  Mole fraction: x<sub>A</sub> = moles of A / total moles of gas
+</div>
+<div class="equation">
+  Partial pressure: p<sub>A</sub> = x<sub>A</sub> &times; P<sub>total</sub>
+</div>
 <div class="equation">
   K<sub>p</sub> = p<sub>C</sub><sup>c</sup> &times; p<sub>D</sub><sup>d</sup> / (p<sub>A</sub><sup>a</sup> &times; p<sub>B</sub><sup>b</sup>)
+</div>
+
+<div class="worked-example">
+  <strong>Worked Example:</strong> In the Haber process N<sub>2</sub>(g) + 3H<sub>2</sub>(g) &#8652; 2NH<sub>3</sub>(g), at equilibrium the mole fractions are: x(N<sub>2</sub>) = 0.20, x(H<sub>2</sub>) = 0.60, x(NH<sub>3</sub>) = 0.20. Total pressure = 200 atm. Calculate K<sub>p</sub>.<br><br>
+  p(N<sub>2</sub>) = 0.20 &times; 200 = 40 atm<br>
+  p(H<sub>2</sub>) = 0.60 &times; 200 = 120 atm<br>
+  p(NH<sub>3</sub>) = 0.20 &times; 200 = 40 atm<br>
+  K<sub>p</sub> = (40)<sup>2</sup> / [(40) &times; (120)<sup>3</sup>] = 1600 / (40 &times; 1,728,000) = 1600 / 69,120,000 = <strong>2.31 &times; 10<sup>-5</sup> atm<sup>-2</sup></strong>
 </div>
 
 <h3>2.4 Le Chatelier's Principle</h3>
 
 <div class="definition">
-  <strong>Le Chatelier's Principle:</strong> If a system at equilibrium is subjected to a change in conditions, the position of equilibrium shifts to counteract the change and restore equilibrium.
+  <strong>Le Chatelier's Principle:</strong> If a system at dynamic equilibrium is subjected to a change in conditions (concentration, temperature, or pressure), the position of equilibrium shifts in the direction that tends to counteract the change and restore equilibrium.
 </div>
 
 <table>
-  <tr><th>Change</th><th>Effect on position</th><th>Effect on K</th></tr>
+  <tr><th>Change</th><th>Effect on position of equilibrium</th><th>Effect on K</th></tr>
   <tr><td>Increase concentration of reactant</td><td>Shifts right (towards products)</td><td>No change</td></tr>
+  <tr><td>Decrease concentration of product</td><td>Shifts right (towards products)</td><td>No change</td></tr>
   <tr><td>Increase temperature (exothermic forward)</td><td>Shifts left (endothermic direction)</td><td>K decreases</td></tr>
   <tr><td>Increase temperature (endothermic forward)</td><td>Shifts right (endothermic direction)</td><td>K increases</td></tr>
   <tr><td>Increase pressure</td><td>Shifts to side with fewer moles of gas</td><td>No change</td></tr>
   <tr><td>Add catalyst</td><td>No change in position</td><td>No change</td></tr>
 </table>
 
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> Only temperature changes the value of K. Concentration, pressure, and catalysts change the position of equilibrium but not K itself. A catalyst only speeds up the rate at which equilibrium is reached.
-</div>
+<p><strong>Critical point:</strong> Only temperature changes the value of K<sub>c</sub> or K<sub>p</sub>. Changes in concentration, pressure, or catalysts change the position of equilibrium but do NOT change K. A catalyst speeds up both forward and reverse reactions equally, so equilibrium is reached faster but at the same position.</p>
 
-<!-- SVG: Le Chatelier's Principle - Equilibrium Position Shift -->
+<!-- SVG: Le Chatelier's Principle -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Le Chatelier's Principle — Equilibrium Shifts</text>
@@ -181,9 +260,8 @@
   <text x="85" y="70" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Shifts RIGHT &#8594;</text>
   <text x="85" y="85" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Increase [reactant]</text>
   <text x="85" y="98" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Decrease [product]</text>
-  <text x="85" y="111" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Increase P (fewer gas mol)</text>
+  <text x="85" y="111" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Increase P (fewer gas mol on right)</text>
   <text x="85" y="124" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Increase T (if endo fwd)</text>
-  <!-- Arrow left to centre -->
   <line x1="155" y1="100" x2="178" y2="125" stroke="#16A34A" stroke-width="1.8"/>
   <polygon points="178,125 170,120 174,128" fill="#16A34A"/>
   <!-- Right: shifts left -->
@@ -191,22 +269,33 @@
   <text x="435" y="70" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">&#8592; Shifts LEFT</text>
   <text x="435" y="85" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Increase [product]</text>
   <text x="435" y="98" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Decrease [reactant]</text>
-  <text x="435" y="111" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Decrease P (more gas mol)</text>
+  <text x="435" y="111" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Decrease P (more gas mol on left)</text>
   <text x="435" y="124" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Increase T (if exo fwd)</text>
-  <!-- Arrow right to centre -->
   <line x1="365" y1="100" x2="342" y2="125" stroke="#DC2626" stroke-width="1.8"/>
   <polygon points="342,125 346,118 350,126" fill="#DC2626"/>
   <!-- Bottom: no shift -->
   <rect x="180" y="195" width="160" height="50" rx="6" fill="#fff" stroke="#D97706" stroke-width="1.2"/>
   <text x="260" y="215" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">No Shift in Position</text>
   <text x="260" y="232" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Adding a catalyst</text>
-  <!-- Arrow centre to bottom -->
   <line x1="260" y1="160" x2="260" y2="193" stroke="#D97706" stroke-width="1.5"/>
   <polygon points="260,193 257,186 263,186" fill="#D97706"/>
-  <!-- Bottom note -->
-  <text x="260" y="272" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Only temperature changes the value of K</text>
+  <text x="260" y="272" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Only temperature changes the value of K</text>
   <text x="260" y="288" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">Catalyst speeds up both forward and reverse rates equally</text>
 </svg>
+</div>
+
+<h3>2.5 Industrial Application — The Haber Process</h3>
+<p>N<sub>2</sub>(g) + 3H<sub>2</sub>(g) &#8652; 2NH<sub>3</sub>(g) &nbsp;&nbsp; &Delta;H = -92 kJ mol<sup>-1</sup></p>
+<p>This is an exothermic reaction with fewer moles of gas on the right (2 vs 4). Applying Le Chatelier's principle:</p>
+<ul>
+  <li><strong>Low temperature</strong> favours the exothermic forward reaction (higher yield) but makes the reaction too slow. Compromise: <strong>450 &deg;C</strong>.</li>
+  <li><strong>High pressure</strong> favours the side with fewer moles of gas (products). Compromise: <strong>200 atm</strong> (higher pressure is more expensive and dangerous).</li>
+  <li><strong>Iron catalyst</strong> increases the rate of reaching equilibrium (does not change yield) — essential for economic viability.</li>
+  <li>Ammonia is continuously removed by cooling and liquefying — this shifts the equilibrium to the right, increasing overall conversion.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A common exam error is saying that a catalyst increases the yield. It does NOT. A catalyst only increases the rate at which equilibrium is reached. The yield (position of equilibrium) is determined only by temperature and pressure.
 </div>
 
 <!-- ==================== REDOX ==================== -->
@@ -215,116 +304,201 @@
 <h3>3.1 Oxidation States</h3>
 
 <div class="definition">
-  <strong>Oxidation state (oxidation number):</strong> A measure of the degree of oxidation of an atom in a compound. It represents the charge an atom would have if all bonds were fully ionic.
+  <strong>Oxidation state (oxidation number):</strong> A measure of the degree of oxidation of an atom in a compound. It represents the charge an atom would have if all bonds were completely ionic.
 </div>
 
-<p>Rules for assigning oxidation states:</p>
+<p><strong>Rules for assigning oxidation states:</strong></p>
 <ul>
-  <li>Uncombined elements = 0</li>
-  <li>Simple ions = the charge on the ion</li>
-  <li>Oxygen = -2 (except in peroxides = -1, and OF<sub>2</sub> = +2)</li>
-  <li>Hydrogen = +1 (except in metal hydrides = -1)</li>
-  <li>Fluorine = always -1</li>
-  <li>Sum of oxidation states in a compound = 0; in a polyatomic ion = the charge</li>
+  <li>Uncombined elements = 0 (e.g. Na, O<sub>2</sub>, S<sub>8</sub>)</li>
+  <li>Simple ions = the charge on the ion (e.g. Na<sup>+</sup> = +1, Cl<sup>-</sup> = -1, Fe<sup>3+</sup> = +3)</li>
+  <li>Fluorine = always -1 (most electronegative element)</li>
+  <li>Oxygen = -2 (except in peroxides O<sub>2</sub><sup>2-</sup> = -1, and OF<sub>2</sub> = +2)</li>
+  <li>Hydrogen = +1 (except in metal hydrides like NaH = -1)</li>
+  <li>Sum of oxidation states in a neutral compound = 0</li>
+  <li>Sum of oxidation states in a polyatomic ion = the overall charge on the ion</li>
 </ul>
 
 <div class="definition">
-  <strong>Oxidation:</strong> Loss of electrons / increase in oxidation state.<br>
-  <strong>Reduction:</strong> Gain of electrons / decrease in oxidation state. (Remember OIL RIG)
+  <strong>Oxidation:</strong> Loss of electrons / increase in oxidation state. (OIL)<br>
+  <strong>Reduction:</strong> Gain of electrons / decrease in oxidation state. (RIG)<br>
+  <strong>Oxidising agent:</strong> A substance that oxidises another and is itself reduced (gains electrons).<br>
+  <strong>Reducing agent:</strong> A substance that reduces another and is itself oxidised (loses electrons).
+</div>
+
+<div class="worked-example">
+  <strong>Worked Example:</strong> Find the oxidation state of Mn in KMnO<sub>4</sub>.<br><br>
+  K = +1 (Group 1 metal), each O = -2, let Mn = x.<br>
+  (+1) + x + 4(-2) = 0<br>
+  +1 + x - 8 = 0<br>
+  x = <strong>+7</strong>
 </div>
 
 <h3>3.2 Half-Equations and Ionic Equations</h3>
-<p>Redox reactions can be split into two half-equations. To balance half-equations:</p>
+<p>Redox reactions can be split into two half-equations — one for oxidation and one for reduction. To balance half-equations in acidic solution:</p>
 <ol>
   <li>Balance the atoms other than O and H.</li>
-  <li>Balance oxygen by adding H<sub>2</sub>O.</li>
-  <li>Balance hydrogen by adding H<sup>+</sup>.</li>
-  <li>Balance charge by adding electrons.</li>
+  <li>Balance oxygen by adding H<sub>2</sub>O molecules.</li>
+  <li>Balance hydrogen by adding H<sup>+</sup> ions.</li>
+  <li>Balance charge by adding electrons (e<sup>-</sup>).</li>
 </ol>
+<p>To combine half-equations: multiply so the electron numbers are equal, then add and cancel.</p>
 
-<p>Combine half-equations by ensuring the number of electrons lost equals the number gained.</p>
+<div class="worked-example">
+  <strong>Worked Example:</strong> Balance the half-equation for the reduction of MnO<sub>4</sub><sup>-</sup> to Mn<sup>2+</sup> in acidic solution.<br><br>
+  MnO<sub>4</sub><sup>-</sup> &#8594; Mn<sup>2+</sup> (Mn goes from +7 to +2, gain of 5e<sup>-</sup>)<br>
+  Balance O: MnO<sub>4</sub><sup>-</sup> &#8594; Mn<sup>2+</sup> + 4H<sub>2</sub>O<br>
+  Balance H: MnO<sub>4</sub><sup>-</sup> + 8H<sup>+</sup> &#8594; Mn<sup>2+</sup> + 4H<sub>2</sub>O<br>
+  Balance charge: left = -1 + 8 = +7; right = +2. Need 5e<sup>-</sup> on left.<br>
+  <strong>MnO<sub>4</sub><sup>-</sup> + 8H<sup>+</sup> + 5e<sup>-</sup> &#8594; Mn<sup>2+</sup> + 4H<sub>2</sub>O</strong>
+</div>
+
+<h3>3.3 Redox Titrations</h3>
+<p>Potassium manganate(VII) (KMnO<sub>4</sub>) is commonly used as an oxidising agent in titrations. It is self-indicating: purple MnO<sub>4</sub><sup>-</sup> is decolourised as it reacts, turning to almost colourless Mn<sup>2+</sup>. The end point is reached when a permanent pink/purple colour persists.</p>
+
+<p>Common titrations involve manganate(VII) with iron(II) or with ethanedioic acid (oxalic acid):</p>
+<div class="equation">
+  MnO<sub>4</sub><sup>-</sup> + 8H<sup>+</sup> + 5Fe<sup>2+</sup> &#8594; Mn<sup>2+</sup> + 4H<sub>2</sub>O + 5Fe<sup>3+</sup>
+</div>
 
 <!-- ==================== THERMODYNAMICS ==================== -->
 <h2>4. Thermodynamics</h2>
 
 <h3>4.1 Born-Haber Cycles</h3>
-<p>A Born-Haber cycle applies Hess's law to calculate lattice enthalpy indirectly, since it cannot be measured directly. The cycle links:</p>
+<p>A Born-Haber cycle applies Hess's law to calculate lattice enthalpy indirectly. The cycle links several enthalpy terms:</p>
+
+<table>
+  <tr><th>Term</th><th>Definition</th><th>Sign</th></tr>
+  <tr><td>&Delta;H<sub>f</sub>&deg;</td><td>Standard enthalpy of formation of the ionic compound from its elements</td><td>Usually negative</td></tr>
+  <tr><td>&Delta;H<sub>at</sub>&deg;</td><td>Enthalpy of atomisation — forming one mole of gaseous atoms from the element</td><td>Always positive</td></tr>
+  <tr><td>IE</td><td>Ionisation energy — removing electrons from gaseous atoms to form cations</td><td>Always positive</td></tr>
+  <tr><td>EA</td><td>Electron affinity — gaseous atom gaining an electron to form an anion</td><td>1st EA usually negative; 2nd EA positive</td></tr>
+  <tr><td>&Delta;H<sub>latt</sub></td><td>Lattice enthalpy — see definition below</td><td>Depends on convention</td></tr>
+</table>
+
+<div class="definition">
+  <strong>Lattice enthalpy of formation (&Delta;H<sub>latt</sub>):</strong> The enthalpy change when one mole of an ionic lattice is formed from its gaseous ions under standard conditions. Always exothermic (negative). This is the convention used in Born-Haber cycles on AQA.
+</div>
+
+<div class="definition">
+  <strong>Lattice enthalpy of dissociation:</strong> The enthalpy change when one mole of an ionic lattice is completely separated into gaseous ions. Always endothermic (positive). This is the reverse of the formation definition.
+</div>
+
+<p><strong>Factors affecting lattice enthalpy magnitude:</strong></p>
 <ul>
-  <li>Enthalpy of formation (&Delta;H<sub>f</sub>)</li>
-  <li>Enthalpy of atomisation (&Delta;H<sub>at</sub>)</li>
-  <li>First and subsequent ionisation energies (IE)</li>
-  <li>Electron affinities (EA) — enthalpy change when a gaseous atom gains an electron</li>
-  <li>Lattice enthalpy (&Delta;H<sub>latt</sub>)</li>
+  <li><strong>Ionic charge:</strong> Higher charges = stronger electrostatic attraction = more exothermic lattice enthalpy. MgO has a much larger lattice enthalpy than NaCl because Mg<sup>2+</sup> and O<sup>2-</sup> have double the charges of Na<sup>+</sup> and Cl<sup>-</sup>.</li>
+  <li><strong>Ionic radius:</strong> Smaller ions = ions closer together = stronger attraction = more exothermic. LiF has a larger lattice enthalpy than CsI because Li<sup>+</sup> and F<sup>-</sup> are much smaller than Cs<sup>+</sup> and I<sup>-</sup>.</li>
 </ul>
 
-<div class="definition">
-  <strong>Lattice enthalpy of formation:</strong> The enthalpy change when one mole of an ionic lattice is formed from its gaseous ions under standard conditions. Always exothermic (negative).
+<!-- SVG: Born-Haber Cycle for NaCl -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 420" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Born-Haber Cycle for NaCl</text>
+  <line x1="30" y1="380" x2="180" y2="380" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="105" y="397" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(s) + &#189;Cl&#8322;(g)</text>
+  <line x1="30" y1="310" x2="180" y2="310" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="105" y="303" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(g) + &#189;Cl&#8322;(g)</text>
+  <line x1="30" y1="250" x2="180" y2="250" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="105" y="243" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(g) + Cl(g)</text>
+  <line x1="180" y1="170" x2="370" y2="170" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="275" y="163" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na&#8314;(g) + Cl(g) + e&#8315;</text>
+  <line x1="300" y1="250" x2="490" y2="250" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="395" y="243" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na&#8314;(g) + Cl&#8315;(g)</text>
+  <line x1="300" y1="380" x2="490" y2="380" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="395" y="397" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">NaCl(s)</text>
+  <!-- Arrows -->
+  <line x1="60" y1="378" x2="60" y2="312" stroke="#1a73e8" stroke-width="1.5"/>
+  <polygon points="60,312 57,319 63,319" fill="#1a73e8"/>
+  <text x="15" y="348" font-family="system-ui" font-size="9" fill="#1a73e8" transform="rotate(-90,15,348)">&Delta;H&#8336;&#8345; Na (+107)</text>
+  <line x1="100" y1="308" x2="100" y2="252" stroke="#16A34A" stroke-width="1.5"/>
+  <polygon points="100,252 97,259 103,259" fill="#16A34A"/>
+  <text x="140" y="284" font-family="system-ui" font-size="9" fill="#16A34A">&Delta;H&#8336;&#8345; Cl (+122)</text>
+  <line x1="175" y1="248" x2="185" y2="172" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="185,172 181,179 187,179" fill="#DC2626"/>
+  <text x="210" y="215" font-family="system-ui" font-size="9" fill="#DC2626">IE&#8321; Na (+496)</text>
+  <line x1="360" y1="172" x2="360" y2="248" stroke="#D97706" stroke-width="1.5"/>
+  <polygon points="360,248 357,241 363,241" fill="#D97706"/>
+  <text x="340" y="215" font-family="system-ui" font-size="9" fill="#D97706" text-anchor="end">EA Cl (-349)</text>
+  <line x1="440" y1="252" x2="440" y2="378" stroke="#1a73e8" stroke-width="1.5"/>
+  <polygon points="440,378 437,371 443,371" fill="#1a73e8"/>
+  <text x="475" y="320" font-family="system-ui" font-size="9" fill="#1a73e8">&Delta;H&#8343;&#8336;&#8345;&#8345; (-787)</text>
+  <line x1="180" y1="387" x2="300" y2="387" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="300,387 293,384 293,390" fill="#1a1a2e"/>
+  <text x="240" y="410" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">&Delta;H&#7739; (-411)</text>
+</svg>
 </div>
 
-<div class="definition">
-  <strong>Lattice enthalpy of dissociation:</strong> The enthalpy change when one mole of an ionic lattice is separated into gaseous ions. Always endothermic (positive).
-</div>
-
-<p>Lattice enthalpy is affected by ionic charge (higher charge = stronger attraction = more exothermic) and ionic radius (smaller ions = closer together = stronger attraction = more exothermic).</p>
+<p><strong>Theoretical vs experimental lattice enthalpies:</strong> Theoretical values are calculated assuming a purely ionic model (spherical ions with no distortion). If the experimental value (from Born-Haber) is more exothermic than the theoretical value, this indicates significant covalent character in the bonding — the ions are polarised. This is common when cations are small and highly charged (high charge density), or anions are large and easily polarised (e.g. I<sup>-</sup>).</p>
 
 <h3>4.2 Enthalpy of Solution and Hydration</h3>
+
+<div class="definition">
+  <strong>Enthalpy of hydration (&Delta;H<sub>hyd</sub>):</strong> The enthalpy change when one mole of gaseous ions is dissolved in sufficient water to form an infinitely dilute solution. Always exothermic because ion-dipole bonds form between the ion and water molecules.
+</div>
+
+<div class="definition">
+  <strong>Enthalpy of solution (&Delta;H<sub>sol</sub>):</strong> The enthalpy change when one mole of a solute dissolves in sufficient water to form an infinitely dilute solution.
+</div>
+
 <div class="equation">
   &Delta;H<sub>sol</sub> = -&Delta;H<sub>latt</sub>(formation) + &Delta;H<sub>hyd</sub>(cation) + &Delta;H<sub>hyd</sub>(anion)
 </div>
 
-<div class="definition">
-  <strong>Enthalpy of hydration:</strong> The enthalpy change when one mole of gaseous ions is dissolved in sufficient water to form an infinitely dilute solution.
-</div>
+<p>Or equivalently: &Delta;H<sub>sol</sub> = &Delta;H<sub>latt</sub>(dissociation) + &Delta;H<sub>hyd</sub>(cation) + &Delta;H<sub>hyd</sub>(anion)</p>
+
+<p>A substance dissolves if &Delta;H<sub>sol</sub> is exothermic (or only slightly endothermic, as entropy increase can compensate). If the lattice enthalpy is too large relative to the hydration enthalpies, the substance is insoluble.</p>
 
 <h3>4.3 Entropy</h3>
 
 <div class="definition">
-  <strong>Entropy (S):</strong> A measure of the disorder or number of ways energy can be distributed in a system. Units: J K<sup>-1</sup> mol<sup>-1</sup>.
+  <strong>Entropy (S):</strong> A measure of the disorder or dispersal of energy in a system — the number of possible arrangements of particles and energy. Units: J K<sup>-1</sup> mol<sup>-1</sup>. Higher entropy means more disorder.
 </div>
 
-<p>Entropy increases when: solids melt, liquids boil, the number of moles of gas increases, a solid dissolves.</p>
+<p><strong>Entropy increases when:</strong></p>
+<ul>
+  <li>Solids melt to liquids (particles gain freedom of movement)</li>
+  <li>Liquids evaporate to gases (massive increase in disorder)</li>
+  <li>The number of moles of gas increases (more gaseous particles = more ways to distribute energy)</li>
+  <li>A solid dissolves in a solvent (particles become dispersed)</li>
+  <li>Temperature increases (more energy quanta to distribute)</li>
+</ul>
 
-<!-- SVG: Entropy Diagram - Change in Disorder -->
+<!-- SVG: Entropy Diagram -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Entropy — Increasing Disorder</text>
-  <!-- Arrow across bottom -->
   <line x1="40" y1="250" x2="480" y2="250" stroke="#1a73e8" stroke-width="2"/>
   <polygon points="480,250 470,246 470,254" fill="#1a73e8"/>
   <text x="260" y="272" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a73e8">Increasing entropy (S) &#8594;</text>
-  <!-- SOLID box -->
+  <!-- SOLID -->
   <rect x="35" y="55" width="130" height="165" rx="8" fill="#e0f2fe" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="100" y="78" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a73e8">SOLID</text>
   <text x="100" y="95" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Low entropy</text>
-  <!-- Ordered particles -->
   <circle cx="70" cy="125" r="6" fill="#1a73e8" opacity="0.7"/><circle cx="88" cy="125" r="6" fill="#1a73e8" opacity="0.7"/><circle cx="106" cy="125" r="6" fill="#1a73e8" opacity="0.7"/><circle cx="124" cy="125" r="6" fill="#1a73e8" opacity="0.7"/>
   <circle cx="70" cy="143" r="6" fill="#1a73e8" opacity="0.7"/><circle cx="88" cy="143" r="6" fill="#1a73e8" opacity="0.7"/><circle cx="106" cy="143" r="6" fill="#1a73e8" opacity="0.7"/><circle cx="124" cy="143" r="6" fill="#1a73e8" opacity="0.7"/>
   <circle cx="70" cy="161" r="6" fill="#1a73e8" opacity="0.7"/><circle cx="88" cy="161" r="6" fill="#1a73e8" opacity="0.7"/><circle cx="106" cy="161" r="6" fill="#1a73e8" opacity="0.7"/><circle cx="124" cy="161" r="6" fill="#1a73e8" opacity="0.7"/>
   <text x="100" y="195" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Fixed positions,</text>
   <text x="100" y="207" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">vibrate only</text>
-  <!-- Melting arrow -->
+  <!-- Melt arrow -->
   <text x="195" y="130" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="bold">Melt</text>
   <line x1="175" y1="138" x2="210" y2="138" stroke="#D97706" stroke-width="1.5"/>
   <polygon points="210,138 204,135 204,141" fill="#D97706"/>
-  <!-- LIQUID box -->
+  <!-- LIQUID -->
   <rect x="195" y="55" width="130" height="165" rx="8" fill="#fef9c3" stroke="#D97706" stroke-width="1.5"/>
   <text x="260" y="78" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#D97706">LIQUID</text>
   <text x="260" y="95" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Medium entropy</text>
-  <!-- Loosely arranged particles -->
   <circle cx="228" cy="122" r="6" fill="#D97706" opacity="0.7"/><circle cx="250" cy="118" r="6" fill="#D97706" opacity="0.7"/><circle cx="272" cy="126" r="6" fill="#D97706" opacity="0.7"/><circle cx="292" cy="120" r="6" fill="#D97706" opacity="0.7"/>
   <circle cx="235" cy="142" r="6" fill="#D97706" opacity="0.7"/><circle cx="258" cy="148" r="6" fill="#D97706" opacity="0.7"/><circle cx="280" cy="140" r="6" fill="#D97706" opacity="0.7"/>
   <circle cx="242" cy="164" r="6" fill="#D97706" opacity="0.7"/><circle cx="268" cy="168" r="6" fill="#D97706" opacity="0.7"/><circle cx="288" cy="160" r="6" fill="#D97706" opacity="0.7"/>
   <text x="260" y="195" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Close together,</text>
   <text x="260" y="207" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">can move around</text>
-  <!-- Boiling arrow -->
+  <!-- Boil arrow -->
   <text x="355" y="130" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">Boil</text>
   <line x1="335" y1="138" x2="370" y2="138" stroke="#DC2626" stroke-width="1.5"/>
   <polygon points="370,138 364,135 364,141" fill="#DC2626"/>
-  <!-- GAS box -->
+  <!-- GAS -->
   <rect x="355" y="55" width="130" height="165" rx="8" fill="#fef2f2" stroke="#DC2626" stroke-width="1.5"/>
   <text x="420" y="78" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">GAS</text>
   <text x="420" y="95" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">High entropy</text>
-  <!-- Spread out particles -->
   <circle cx="380" cy="115" r="5" fill="#DC2626" opacity="0.7"/><circle cx="420" cy="108" r="5" fill="#DC2626" opacity="0.7"/><circle cx="460" cy="120" r="5" fill="#DC2626" opacity="0.7"/>
   <circle cx="395" cy="145" r="5" fill="#DC2626" opacity="0.7"/><circle cx="445" cy="140" r="5" fill="#DC2626" opacity="0.7"/>
   <circle cx="375" cy="170" r="5" fill="#DC2626" opacity="0.7"/><circle cx="430" cy="175" r="5" fill="#DC2626" opacity="0.7"/><circle cx="465" cy="160" r="5" fill="#DC2626" opacity="0.7"/>
@@ -332,8 +506,15 @@
   <text x="420" y="207" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">move randomly, fast</text>
 </svg>
 </div>
+
 <div class="equation">
-  &Delta;S<sub>system</sub> = &Sigma;S(products) - &Sigma;S(reactants)
+  &Delta;S<sub>system</sub> = &Sigma;S&deg;(products) - &Sigma;S&deg;(reactants)
+</div>
+
+<div class="worked-example">
+  <strong>Worked Example:</strong> Calculate &Delta;S for CaCO<sub>3</sub>(s) &#8594; CaO(s) + CO<sub>2</sub>(g). Given: S&deg;[CaCO<sub>3</sub>] = 93, S&deg;[CaO] = 40, S&deg;[CO<sub>2</sub>] = 214 J K<sup>-1</sup> mol<sup>-1</sup>.<br><br>
+  &Delta;S = (40 + 214) - 93 = <strong>+161 J K<sup>-1</sup> mol<sup>-1</sup></strong><br>
+  This is positive because a gas is produced (1 mole of solid &#8594; 1 mole of solid + 1 mole of gas).
 </div>
 
 <h3>4.4 Gibbs Free Energy</h3>
@@ -343,15 +524,27 @@
 <p>A reaction is thermodynamically feasible (spontaneous) when &Delta;G &le; 0.</p>
 
 <table>
-  <tr><th>&Delta;H</th><th>&Delta;S</th><th>Feasibility</th></tr>
-  <tr><td>Negative (exothermic)</td><td>Positive (disorder increases)</td><td>Always feasible at all temperatures</td></tr>
-  <tr><td>Negative</td><td>Negative</td><td>Feasible at low temperatures only</td></tr>
-  <tr><td>Positive (endothermic)</td><td>Positive</td><td>Feasible at high temperatures only</td></tr>
-  <tr><td>Positive</td><td>Negative</td><td>Never feasible</td></tr>
+  <tr><th>&Delta;H</th><th>&Delta;S</th><th>Feasibility</th><th>Example</th></tr>
+  <tr><td>Negative (exo)</td><td>Positive (+&Delta;S)</td><td>Always feasible (&Delta;G always negative)</td><td>Combustion of methane</td></tr>
+  <tr><td>Negative (exo)</td><td>Negative (-&Delta;S)</td><td>Feasible at low temperatures only</td><td>Freezing of water</td></tr>
+  <tr><td>Positive (endo)</td><td>Positive (+&Delta;S)</td><td>Feasible at high temperatures only</td><td>Thermal decomposition of CaCO<sub>3</sub></td></tr>
+  <tr><td>Positive (endo)</td><td>Negative (-&Delta;S)</td><td>Never feasible (&Delta;G always positive)</td><td>Very rare in practice</td></tr>
 </table>
 
+<p>The temperature at which an endothermic, positive-&Delta;S reaction becomes feasible can be found by setting &Delta;G = 0:</p>
+<div class="equation">
+  T = &Delta;H / &Delta;S &nbsp;&nbsp;(at the boundary of feasibility)
+</div>
+
+<div class="worked-example">
+  <strong>Worked Example:</strong> For CaCO<sub>3</sub>(s) &#8594; CaO(s) + CO<sub>2</sub>(g), &Delta;H = +178 kJ mol<sup>-1</sup> and &Delta;S = +161 J K<sup>-1</sup> mol<sup>-1</sup>. Find the temperature above which the reaction is feasible.<br><br>
+  Convert units: &Delta;S = 0.161 kJ K<sup>-1</sup> mol<sup>-1</sup><br>
+  T = &Delta;H / &Delta;S = 178 / 0.161 = <strong>1106 K (833 &deg;C)</strong><br>
+  Above this temperature, the T&Delta;S term outweighs &Delta;H, making &Delta;G negative.
+</div>
+
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> When using &Delta;G = &Delta;H - T&Delta;S, ensure units are consistent. &Delta;H is usually in kJ mol<sup>-1</sup> and &Delta;S in J K<sup>-1</sup> mol<sup>-1</sup>. Convert &Delta;S to kJ by dividing by 1000, or &Delta;H to J by multiplying by 1000.
+  <strong>Exam Tip:</strong> When using &Delta;G = &Delta;H - T&Delta;S, ensure units are consistent. &Delta;H is usually in kJ mol<sup>-1</sup> and &Delta;S in J K<sup>-1</sup> mol<sup>-1</sup>. Convert &Delta;S to kJ (divide by 1000) or &Delta;H to J (multiply by 1000) before calculating. A reaction with &Delta;G &le; 0 is feasible but may not occur in practice if the activation energy is too high (kinetic barrier).
 </div>
 
 <!-- ==================== ACIDS & BASES ==================== -->
@@ -364,209 +557,274 @@
   <strong>Bronsted-Lowry base:</strong> A proton (H<sup>+</sup>) acceptor.
 </div>
 
-<p>Strong acids (e.g. HCl, H<sub>2</sub>SO<sub>4</sub>, HNO<sub>3</sub>) fully dissociate in water. Weak acids (e.g. CH<sub>3</sub>COOH, H<sub>2</sub>CO<sub>3</sub>) partially dissociate — an equilibrium is established.</p>
+<p><strong>Conjugate acid-base pairs:</strong> When an acid donates a proton, it forms its conjugate base. When a base accepts a proton, it forms its conjugate acid. For example:</p>
+<div class="equation">
+  CH<sub>3</sub>COOH + H<sub>2</sub>O &#8652; CH<sub>3</sub>COO<sup>-</sup> + H<sub>3</sub>O<sup>+</sup>
+</div>
+<p>CH<sub>3</sub>COOH/CH<sub>3</sub>COO<sup>-</sup> is one conjugate pair; H<sub>2</sub>O/H<sub>3</sub>O<sup>+</sup> is the other.</p>
 
-<h3>5.2 pH Calculations</h3>
+<p><strong>Strong acids</strong> (HCl, H<sub>2</sub>SO<sub>4</sub>, HNO<sub>3</sub>) fully dissociate in water — the equilibrium lies completely to the right. <strong>Weak acids</strong> (CH<sub>3</sub>COOH, H<sub>2</sub>CO<sub>3</sub>, HF) only partially dissociate — an equilibrium is established, with most molecules remaining undissociated.</p>
+
+<h3>5.2 pH and [H<sup>+</sup>] Calculations</h3>
 <div class="equation">
   pH = -log<sub>10</sub>[H<sup>+</sup>] &nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp; [H<sup>+</sup>] = 10<sup>-pH</sup>
 </div>
 
-<p><strong>Strong acid:</strong> [H<sup>+</sup>] = concentration of acid (for monobasic). For H<sub>2</sub>SO<sub>4</sub>, [H<sup>+</sup>] = 2 &times; concentration.</p>
+<p><strong>Strong acid pH:</strong> For a monobasic strong acid (e.g. HCl): [H<sup>+</sup>] = concentration of acid. For dibasic H<sub>2</sub>SO<sub>4</sub>: [H<sup>+</sup>] = 2 &times; concentration.</p>
 
-<p><strong>Strong base:</strong> Calculate [OH<sup>-</sup>], then use K<sub>w</sub> to find [H<sup>+</sup>].</p>
+<p><strong>Strong base pH:</strong> Calculate [OH<sup>-</sup>] first, then use K<sub>w</sub>:</p>
 <div class="equation">
   K<sub>w</sub> = [H<sup>+</sup>][OH<sup>-</sup>] = 1.00 &times; 10<sup>-14</sup> mol<sup>2</sup> dm<sup>-6</sup> at 298 K
+</div>
+<p>At 298 K: [H<sup>+</sup>] = K<sub>w</sub> / [OH<sup>-</sup>], then pH = -log[H<sup>+</sup>].</p>
+
+<p>K<sub>w</sub> increases with temperature because the dissociation of water is endothermic (&Delta;H = +57.1 kJ mol<sup>-1</sup>). At higher temperatures, [H<sup>+</sup>] and [OH<sup>-</sup>] both increase (K<sub>w</sub> is larger), so pH of pure water decreases below 7 — but the water is still neutral because [H<sup>+</sup>] = [OH<sup>-</sup>].</p>
+
+<div class="worked-example">
+  <strong>Worked Example:</strong> Calculate the pH of 0.050 mol dm<sup>-3</sup> NaOH at 298 K.<br><br>
+  [OH<sup>-</sup>] = 0.050 mol dm<sup>-3</sup> (strong base, fully dissociates)<br>
+  [H<sup>+</sup>] = K<sub>w</sub> / [OH<sup>-</sup>] = 1.00 &times; 10<sup>-14</sup> / 0.050 = 2.00 &times; 10<sup>-13</sup> mol dm<sup>-3</sup><br>
+  pH = -log(2.00 &times; 10<sup>-13</sup>) = <strong>12.70</strong>
 </div>
 
 <h3>5.3 The Acid Dissociation Constant K<sub>a</sub></h3>
 <p>For a weak acid HA:</p>
 <div class="equation">
+  HA(aq) &#8652; H<sup>+</sup>(aq) + A<sup>-</sup>(aq)
+</div>
+<div class="equation">
   K<sub>a</sub> = [H<sup>+</sup>][A<sup>-</sup>] / [HA]
 </div>
-<p>Assumptions: [H<sup>+</sup>] = [A<sup>-</sup>] (negligible dissociation of water) and [HA]<sub>equilibrium</sub> &approx; [HA]<sub>initial</sub> (weak acid, very little dissociation).</p>
+
+<p><strong>Assumptions for weak acid pH calculations:</strong></p>
+<ul>
+  <li>[H<sup>+</sup>] = [A<sup>-</sup>] (because virtually all H<sup>+</sup> comes from the weak acid, not from water).</li>
+  <li>[HA]<sub>equilibrium</sub> &approx; [HA]<sub>initial</sub> (very little of the acid has dissociated).</li>
+</ul>
+
+<p>Therefore:</p>
+<div class="equation">
+  K<sub>a</sub> &approx; [H<sup>+</sup>]<sup>2</sup> / [HA]<sub>initial</sub> &nbsp;&nbsp; so &nbsp;&nbsp; [H<sup>+</sup>] = &radic;(K<sub>a</sub> &times; [HA])
+</div>
+
 <div class="equation">
   pK<sub>a</sub> = -log<sub>10</sub> K<sub>a</sub>
 </div>
-<p>A smaller K<sub>a</sub> (larger pK<sub>a</sub>) means a weaker acid.</p>
+<p>A smaller K<sub>a</sub> (larger pK<sub>a</sub>) means a weaker acid — less dissociation.</p>
+
+<div class="worked-example">
+  <strong>Worked Example:</strong> Calculate the pH of 0.100 mol dm<sup>-3</sup> ethanoic acid (K<sub>a</sub> = 1.74 &times; 10<sup>-5</sup> mol dm<sup>-3</sup>).<br><br>
+  [H<sup>+</sup>] = &radic;(K<sub>a</sub> &times; [HA]) = &radic;(1.74 &times; 10<sup>-5</sup> &times; 0.100) = &radic;(1.74 &times; 10<sup>-6</sup>) = 1.32 &times; 10<sup>-3</sup> mol dm<sup>-3</sup><br>
+  pH = -log(1.32 &times; 10<sup>-3</sup>) = <strong>2.88</strong>
+</div>
 
 <h3>5.4 Buffer Solutions</h3>
 
 <div class="definition">
-  <strong>Buffer solution:</strong> A solution that resists changes in pH when small amounts of acid or base are added. It consists of a weak acid and its conjugate base (or a weak base and its conjugate acid).
+  <strong>Buffer solution:</strong> A solution that resists changes in pH when small amounts of acid or base are added, or when diluted with water. It consists of a weak acid and its conjugate base (or a weak base and its conjugate acid) in roughly equal concentrations.
 </div>
 
-<p>An acidic buffer is made by mixing a weak acid with its sodium/potassium salt (e.g. CH<sub>3</sub>COOH + CH<sub>3</sub>COONa), or by partially neutralising a weak acid with a strong base.</p>
-
-<p>How a buffer works:</p>
+<p><strong>Making an acidic buffer:</strong></p>
 <ul>
-  <li>If H<sup>+</sup> is added: the conjugate base (A<sup>-</sup>) reacts with it: A<sup>-</sup> + H<sup>+</sup> &#8594; HA. This removes the added H<sup>+</sup>.</li>
-  <li>If OH<sup>-</sup> is added: the weak acid (HA) reacts with it: HA + OH<sup>-</sup> &#8594; A<sup>-</sup> + H<sub>2</sub>O. This removes the added OH<sup>-</sup>.</li>
+  <li>Mix a weak acid with its sodium/potassium salt (e.g. CH<sub>3</sub>COOH + CH<sub>3</sub>COONa).</li>
+  <li>Or partially neutralise a weak acid with a strong base (e.g. add NaOH to excess CH<sub>3</sub>COOH).</li>
 </ul>
 
-<p>To calculate buffer pH, use the Henderson-Hasselbalch approach or rearrange K<sub>a</sub>:</p>
+<p><strong>How a buffer works (using CH<sub>3</sub>COOH / CH<sub>3</sub>COO<sup>-</sup> as example):</strong></p>
+<ul>
+  <li><strong>If H<sup>+</sup> is added:</strong> The conjugate base (CH<sub>3</sub>COO<sup>-</sup>, present in large reserve) reacts with the added H<sup>+</sup>: CH<sub>3</sub>COO<sup>-</sup> + H<sup>+</sup> &#8594; CH<sub>3</sub>COOH. This removes the added H<sup>+</sup>, preventing pH from falling significantly.</li>
+  <li><strong>If OH<sup>-</sup> is added:</strong> The weak acid (CH<sub>3</sub>COOH, present in large reserve) reacts with the added OH<sup>-</sup>: CH<sub>3</sub>COOH + OH<sup>-</sup> &#8594; CH<sub>3</sub>COO<sup>-</sup> + H<sub>2</sub>O. This removes the added OH<sup>-</sup>, preventing pH from rising significantly.</li>
+</ul>
+
+<p><strong>Calculating buffer pH:</strong></p>
 <div class="equation">
   [H<sup>+</sup>] = K<sub>a</sub> &times; [HA] / [A<sup>-</sup>]
 </div>
+<p>Since [HA] and [A<sup>-</sup>] are in the same volume of solution, you can use moles instead of concentrations.</p>
+
+<div class="worked-example">
+  <strong>Worked Example:</strong> A buffer is made by mixing 100 cm<sup>3</sup> of 0.200 mol dm<sup>-3</sup> CH<sub>3</sub>COOH with 50 cm<sup>3</sup> of 0.200 mol dm<sup>-3</sup> NaOH. Calculate its pH. (K<sub>a</sub> = 1.74 &times; 10<sup>-5</sup>)<br><br>
+  Moles CH<sub>3</sub>COOH = 0.100 &times; 0.200 = 0.0200 mol<br>
+  Moles NaOH = 0.050 &times; 0.200 = 0.0100 mol<br>
+  NaOH neutralises some acid: CH<sub>3</sub>COOH + NaOH &#8594; CH<sub>3</sub>COONa + H<sub>2</sub>O<br>
+  Moles CH<sub>3</sub>COOH remaining = 0.0200 - 0.0100 = 0.0100 mol<br>
+  Moles CH<sub>3</sub>COO<sup>-</sup> formed = 0.0100 mol<br>
+  [H<sup>+</sup>] = K<sub>a</sub> &times; [HA] / [A<sup>-</sup>] = 1.74 &times; 10<sup>-5</sup> &times; (0.0100 / 0.0100) = 1.74 &times; 10<sup>-5</sup><br>
+  pH = -log(1.74 &times; 10<sup>-5</sup>) = <strong>4.76</strong> (= pK<sub>a</sub>, because [HA] = [A<sup>-</sup>])
+</div>
+
+<p><strong>Biological importance of buffers:</strong> Blood is maintained at pH 7.4 by the carbonic acid/hydrogencarbonate buffer system (H<sub>2</sub>CO<sub>3</sub>/HCO<sub>3</sub><sup>-</sup>). Enzymes require specific pH ranges to function — even small changes can denature proteins. Buffer systems in the body prevent dangerous pH fluctuations.</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> Blood is buffered at pH 7.4 by the H<sub>2</sub>CO<sub>3</sub>/HCO<sub>3</sub><sup>-</sup> system. This is a common application question. Explain the buffer action using the equilibrium and the role of both the acid and conjugate base.
+  <strong>Exam Tip:</strong> When explaining how a buffer works in exam questions, you MUST name the specific species that react (e.g. "the ethanoate ions react with the added H<sup>+</sup>" not just "the conjugate base"). Include the equation for each case (adding acid and adding base). Also state that the large reserves of both HA and A<sup>-</sup> are barely changed by the small addition.
 </div>
 
 <h3>5.5 Titration Curves and Indicators</h3>
-<p>The shape of a pH titration curve depends on the strength of the acid and base:</p>
+<p>The shape of a pH titration curve depends on the strengths of the acid and base used:</p>
 
 <table>
-  <tr><th>Combination</th><th>pH at equivalence</th><th>Suitable indicator</th></tr>
-  <tr><td>Strong acid + strong base</td><td>7</td><td>Any (phenolphthalein or methyl orange)</td></tr>
-  <tr><td>Strong acid + weak base</td><td>&lt; 7</td><td>Methyl orange</td></tr>
-  <tr><td>Weak acid + strong base</td><td>&gt; 7</td><td>Phenolphthalein</td></tr>
-  <tr><td>Weak acid + weak base</td><td>~7 (gradual change)</td><td>No suitable indicator</td></tr>
+  <tr><th>Combination</th><th>pH at equivalence point</th><th>Suitable indicator</th><th>Buffer region?</th></tr>
+  <tr><td>Strong acid + strong base</td><td>7</td><td>Any (phenolphthalein or methyl orange)</td><td>No</td></tr>
+  <tr><td>Strong acid + weak base</td><td>&lt; 7 (acidic salt formed)</td><td>Methyl orange (range 3.1-4.4)</td><td>After equivalence</td></tr>
+  <tr><td>Weak acid + strong base</td><td>&gt; 7 (basic salt formed)</td><td>Phenolphthalein (range 8.3-10)</td><td>Before equivalence</td></tr>
+  <tr><td>Weak acid + weak base</td><td>~7 (gradual change, no sharp endpoint)</td><td>No suitable indicator</td><td>Both sides</td></tr>
 </table>
 
-<p>The half-equivalence point of a weak acid titration gives pH = pK<sub>a</sub> (since [HA] = [A<sup>-</sup>] at this point).</p>
+<p><strong>Key features of a weak acid / strong base titration curve:</strong></p>
+<ul>
+  <li>Initial pH is higher than a strong acid (weak acid only partially dissociates).</li>
+  <li>Buffer region before the equivalence point (mixture of weak acid and its conjugate base).</li>
+  <li>Half-equivalence point: pH = pK<sub>a</sub> (because [HA] = [A<sup>-</sup>], so K<sub>a</sub> = [H<sup>+</sup>]).</li>
+  <li>Equivalence point: pH > 7 (the salt formed is basic).</li>
+  <li>Use phenolphthalein as indicator (its colour change range includes the steep section of the curve).</li>
+</ul>
 
-<!-- SVG: pH Curve for Strong Acid + Strong Base -->
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 500 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="250" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">pH Curve: Strong Acid + Strong Base</text>
-  <!-- Axes -->
-  <line x1="65" y1="42" x2="65" y2="275" stroke="#1a1a2e" stroke-width="1.5"/>
-  <polygon points="65,42 61,52 69,52" fill="#1a1a2e"/>
-  <line x1="65" y1="275" x2="460" y2="275" stroke="#1a1a2e" stroke-width="1.5"/>
-  <polygon points="460,275 450,271 450,279" fill="#1a1a2e"/>
-  <text x="32" y="160" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" transform="rotate(-90,32,160)">pH</text>
-  <text x="265" y="298" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">Volume of NaOH added (cm&#179;)</text>
-  <!-- pH scale markers -->
-  <text x="56" y="272" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">0</text>
-  <text x="56" y="255" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">1</text>
-  <line x1="62" y1="253" x2="68" y2="253" stroke="#1a1a2e" stroke-width="0.5"/>
-  <text x="56" y="189" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">4</text>
-  <text x="56" y="157" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">7</text>
-  <line x1="62" y1="155" x2="460" y2="155" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="3,3"/>
-  <text x="56" y="125" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">10</text>
-  <text x="56" y="75" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">14</text>
-  <!-- S-curve -->
-  <path d="M67,253 Q100,252 150,250 Q200,248 230,245 Q255,240 265,220 Q272,195 275,155 Q278,115 282,100 Q290,82 310,76 Q340,72 380,70 Q420,68 450,67" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
-  <!-- Equivalence point marker -->
-  <circle cx="275" cy="155" r="4" fill="#DC2626" stroke="#DC2626" stroke-width="1"/>
-  <text x="290" y="148" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">Equivalence point</text>
-  <text x="290" y="162" font-family="system-ui" font-size="10" fill="#DC2626">(pH = 7)</text>
-  <!-- Vertical steep region annotation -->
-  <line x1="275" y1="240" x2="275" y2="100" stroke="#D97706" stroke-width="1" stroke-dasharray="3,2"/>
-  <text x="200" y="310" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">Sharp vertical rise at equivalence</text>
-</svg>
-</div>
+<p>An indicator changes colour over a range of about 2 pH units. It must be chosen so that its colour change range falls within the steep (vertical) section of the titration curve, ensuring a sharp, precise endpoint.</p>
 
-<!-- SVG: pH Curve for Weak Acid + Strong Base -->
+<!-- SVG: pH Curves Comparison -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 500 340" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="250" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">pH Curve: Weak Acid + Strong Base</text>
+  <text x="250" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">pH Titration Curves Comparison</text>
   <!-- Axes -->
   <line x1="65" y1="42" x2="65" y2="275" stroke="#1a1a2e" stroke-width="1.5"/>
   <polygon points="65,42 61,52 69,52" fill="#1a1a2e"/>
   <line x1="65" y1="275" x2="460" y2="275" stroke="#1a1a2e" stroke-width="1.5"/>
-  <polygon points="460,275 450,271 450,279" fill="#1a1a2e"/>
   <text x="32" y="160" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" transform="rotate(-90,32,160)">pH</text>
-  <text x="265" y="298" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">Volume of NaOH added (cm&#179;)</text>
+  <text x="265" y="298" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">Volume of base added (cm&#179;)</text>
   <!-- pH scale markers -->
   <text x="56" y="272" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">0</text>
-  <text x="56" y="222" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">3</text>
-  <text x="56" y="189" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">4.7</text>
   <text x="56" y="157" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">7</text>
   <line x1="62" y1="155" x2="460" y2="155" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="3,3"/>
-  <text x="56" y="120" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">9</text>
   <text x="56" y="75" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">14</text>
-  <!-- S-curve for weak acid / strong base -->
-  <path d="M67,220 Q90,210 120,200 Q150,195 170,192 Q200,188 230,186 Q250,183 265,170 Q272,145 275,125 Q278,105 285,92 Q300,80 330,75 Q370,72 420,70 Q445,68 450,67" fill="none" stroke="#16A34A" stroke-width="2.5"/>
-  <!-- Equivalence point -->
-  <circle cx="275" cy="125" r="4" fill="#DC2626" stroke="#DC2626" stroke-width="1"/>
-  <text x="290" y="118" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">Equivalence point</text>
-  <text x="290" y="132" font-family="system-ui" font-size="10" fill="#DC2626">(pH &gt; 7)</text>
-  <!-- Half-equivalence point -->
-  <circle cx="170" cy="192" r="4" fill="#D97706" stroke="#D97706" stroke-width="1"/>
-  <line x1="170" y1="192" x2="170" y2="275" stroke="#D97706" stroke-width="0.8" stroke-dasharray="3,2"/>
-  <text x="170" y="315" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Half-equivalence</text>
-  <text x="170" y="327" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">pH = pK&#8336;</text>
-  <!-- Buffer region annotation -->
-  <rect x="100" y="175" width="140" height="24" rx="4" fill="#D97706" fill-opacity="0.1" stroke="#D97706" stroke-width="0.8" stroke-dasharray="3,2"/>
-  <text x="170" y="170" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706" font-weight="bold">Buffer region</text>
-  <!-- Note -->
-  <text x="400" y="310" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A">Use phenolphthalein</text>
-  <text x="400" y="325" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A">as indicator</text>
+  <!-- Strong acid + strong base (blue) -->
+  <path d="M67,253 Q150,250 230,245 Q255,240 265,220 Q272,195 275,155 Q278,115 282,100 Q290,82 310,76 Q380,70 450,67" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- Weak acid + strong base (green) -->
+  <path d="M67,220 Q120,200 170,192 Q220,188 250,183 Q265,170 275,125 Q278,105 285,92 Q300,80 340,75 Q400,72 450,67" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <!-- Equivalence point pH=7 marker -->
+  <circle cx="275" cy="155" r="4" fill="#1a73e8"/>
+  <!-- Equivalence point pH>7 marker -->
+  <circle cx="275" cy="125" r="4" fill="#16A34A"/>
+  <!-- Half-eq point for weak acid -->
+  <circle cx="170" cy="192" r="4" fill="#D97706"/>
+  <text x="180" y="210" font-family="system-ui" font-size="8" fill="#D97706">pH = pK&#8336;</text>
+  <!-- Legend -->
+  <line x1="80" y1="315" x2="110" y2="315" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="115" y="319" font-family="system-ui" font-size="9" fill="#1a73e8">Strong acid + strong base (pH=7 at eq.)</text>
+  <line x1="300" y1="315" x2="330" y2="315" stroke="#16A34A" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <text x="335" y="319" font-family="system-ui" font-size="9" fill="#16A34A">Weak acid + strong base (pH>7 at eq.)</text>
 </svg>
 </div>
 
 <!-- ==================== ELECTRODE POTENTIALS ==================== -->
-<h2>6. Electrode Potentials</h2>
+<h2>6. Electrode Potentials and Electrochemical Cells</h2>
 
 <h3>6.1 Standard Electrode Potential</h3>
 
 <div class="definition">
-  <strong>Standard electrode potential (E&deg;):</strong> The EMF of a half-cell connected to a standard hydrogen electrode under standard conditions (298 K, 100 kPa, 1.00 mol dm<sup>-3</sup> solutions).
+  <strong>Standard electrode potential (E&deg;):</strong> The EMF (electromotive force) of a half-cell connected to a standard hydrogen electrode under standard conditions: 298 K, 100 kPa, 1.00 mol dm<sup>-3</sup> solutions of all aqueous species.
 </div>
 
-<p>The standard hydrogen electrode (SHE) is assigned a potential of 0.00 V. It consists of hydrogen gas at 100 kPa bubbled over a platinum electrode in 1.00 mol dm<sup>-3</sup> H<sup>+</sup>(aq).</p>
+<p>The <strong>standard hydrogen electrode (SHE)</strong> is assigned a potential of exactly 0.00 V. It consists of hydrogen gas at 100 kPa bubbled over a platinum electrode in 1.00 mol dm<sup>-3</sup> H<sup>+</sup>(aq). The half-equation is: 2H<sup>+</sup>(aq) + 2e<sup>-</sup> &#8652; H<sub>2</sub>(g) &nbsp; E&deg; = 0.00 V.</p>
+
+<p><strong>More negative E&deg;</strong> = stronger reducing agent (greater tendency to lose electrons / be oxidised).<br>
+<strong>More positive E&deg;</strong> = stronger oxidising agent (greater tendency to gain electrons / be reduced).</p>
+
+<p><strong>Common standard electrode potentials:</strong></p>
+<table>
+  <tr><th>Half-equation</th><th>E&deg; / V</th></tr>
+  <tr><td>Li<sup>+</sup>(aq) + e<sup>-</sup> &#8652; Li(s)</td><td>-3.04</td></tr>
+  <tr><td>Zn<sup>2+</sup>(aq) + 2e<sup>-</sup> &#8652; Zn(s)</td><td>-0.76</td></tr>
+  <tr><td>Fe<sup>2+</sup>(aq) + 2e<sup>-</sup> &#8652; Fe(s)</td><td>-0.44</td></tr>
+  <tr><td>2H<sup>+</sup>(aq) + 2e<sup>-</sup> &#8652; H<sub>2</sub>(g)</td><td>0.00</td></tr>
+  <tr><td>Cu<sup>2+</sup>(aq) + 2e<sup>-</sup> &#8652; Cu(s)</td><td>+0.34</td></tr>
+  <tr><td>Ag<sup>+</sup>(aq) + e<sup>-</sup> &#8652; Ag(s)</td><td>+0.80</td></tr>
+  <tr><td>MnO<sub>4</sub><sup>-</sup>(aq) + 8H<sup>+</sup>(aq) + 5e<sup>-</sup> &#8652; Mn<sup>2+</sup>(aq) + 4H<sub>2</sub>O(l)</td><td>+1.51</td></tr>
+</table>
 
 <h3>6.2 Electrochemical Cells</h3>
+<p>An electrochemical cell consists of two half-cells connected by a wire (external circuit) and a salt bridge. The cell EMF is calculated as:</p>
 <div class="equation">
-  E<sub>cell</sub> = E&deg;(positive terminal / cathode) - E&deg;(negative terminal / anode)
+  E<sub>cell</sub> = E&deg;(cathode, more positive) - E&deg;(anode, more negative)
 </div>
-<p>Or equivalently: E<sub>cell</sub> = E&deg;(reduction at cathode) - E&deg;(reduction at anode)</p>
 
-<p>The more positive half-cell is the positive terminal (cathode, where reduction occurs). The more negative half-cell is the negative terminal (anode, where oxidation occurs). Electrons flow from the more negative to the more positive electrode through the external circuit.</p>
+<p>The more positive half-cell is the <strong>cathode</strong> (positive terminal, where reduction occurs). The more negative half-cell is the <strong>anode</strong> (negative terminal, where oxidation occurs). Electrons flow from the anode to the cathode through the external circuit.</p>
+
+<p>The <strong>salt bridge</strong> completes the circuit by allowing ions to flow between the half-cells, maintaining electrical neutrality. It is typically a strip of filter paper soaked in a saturated solution of KNO<sub>3</sub> (which doesn't react with the half-cell solutions).</p>
 
 <!-- SVG: Electrochemical Cell Diagram -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 340" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Electrochemical Cell</text>
+  <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Electrochemical Cell: Zn | Cu</text>
   <!-- Voltmeter -->
   <circle cx="260" cy="62" r="22" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="260" y="67" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">V</text>
-  <!-- Wires from voltmeter to electrodes -->
+  <!-- Wires -->
   <line x1="238" y1="62" x2="120" y2="62" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="120" y1="62" x2="120" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="282" y1="62" x2="400" y2="62" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="400" y1="62" x2="400" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Electron flow arrow -->
-  <text x="260" y="48" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">e&#8315; flow</text>
+  <!-- Electron flow -->
+  <text x="260" y="48" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">e&#8315; flow &#8594;</text>
   <line x1="195" y1="55" x2="230" y2="55" stroke="#D97706" stroke-width="1.2"/>
   <polygon points="230,55 224,52 224,58" fill="#D97706"/>
   <!-- Left beaker (anode) -->
   <rect x="55" y="140" width="130" height="140" rx="4" fill="#e0f2fe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="120" y="160" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Zn&#178;&#8314;(aq)</text>
-  <text x="120" y="175" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">1.00 mol dm&#8315;&#179;</text>
-  <!-- Zn electrode -->
+  <text x="120" y="160" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Zn<sup>2+</sup>(aq)</text>
+  <text x="120" y="175" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">1.00 mol dm<sup>-3</sup></text>
   <rect x="112" y="120" width="16" height="120" rx="2" fill="#94a3b8" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="120" y="305" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Anode (&#8722;)</text>
-  <text x="120" y="320" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Zn electrode</text>
-  <text x="120" y="333" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Oxidation: Zn &#8594; Zn&#178;&#8314; + 2e&#8315;</text>
+  <text x="120" y="305" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Anode (-)</text>
+  <text x="120" y="320" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">E&deg; = -0.76 V</text>
+  <text x="120" y="333" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Zn &#8594; Zn<sup>2+</sup> + 2e<sup>-</sup></text>
   <!-- Right beaker (cathode) -->
   <rect x="335" y="140" width="130" height="140" rx="4" fill="#fef2f2" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="400" y="160" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">Cu&#178;&#8314;(aq)</text>
-  <text x="400" y="175" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">1.00 mol dm&#8315;&#179;</text>
-  <!-- Cu electrode -->
+  <text x="400" y="160" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">Cu<sup>2+</sup>(aq)</text>
+  <text x="400" y="175" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">1.00 mol dm<sup>-3</sup></text>
   <rect x="392" y="120" width="16" height="120" rx="2" fill="#c2732e" stroke="#1a1a2e" stroke-width="1"/>
   <text x="400" y="305" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Cathode (+)</text>
-  <text x="400" y="320" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Cu electrode</text>
-  <text x="400" y="333" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Reduction: Cu&#178;&#8314; + 2e&#8315; &#8594; Cu</text>
+  <text x="400" y="320" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">E&deg; = +0.34 V</text>
+  <text x="400" y="333" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Cu<sup>2+</sup> + 2e<sup>-</sup> &#8594; Cu</text>
   <!-- Salt bridge -->
   <path d="M175,170 Q180,130 260,130 Q340,130 345,170" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round"/>
   <text x="260" y="120" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Salt bridge</text>
-  <text x="260" y="108" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">(KNO&#8323; in agar)</text>
+  <text x="260" y="108" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">(KNO<sub>3</sub> in agar)</text>
 </svg>
 </div>
 
-<h3>6.3 Feasibility of Reactions</h3>
-<p>A reaction is thermodynamically feasible if E<sub>cell</sub> is positive. However, a positive E<sub>cell</sub> does not guarantee a reaction will occur in practice — kinetic factors (e.g. high activation energy) may prevent it.</p>
-
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> When predicting feasibility, always state that a positive E<sub>cell</sub> only indicates thermodynamic feasibility. The reaction may be kinetically too slow to observe. Also note that non-standard conditions may alter the electrode potential and thus the feasibility.
+<div class="worked-example">
+  <strong>Worked Example:</strong> Calculate E<sub>cell</sub> for the Zn/Cu cell above.<br><br>
+  E<sub>cell</sub> = E&deg;(cathode) - E&deg;(anode) = (+0.34) - (-0.76) = <strong>+1.10 V</strong>
 </div>
+
+<h3>6.3 Feasibility of Reactions from Electrode Potentials</h3>
+<p>A reaction is thermodynamically feasible if E<sub>cell</sub> is positive. To predict whether a redox reaction will occur:</p>
+<ol>
+  <li>Identify the two relevant half-equations from the data.</li>
+  <li>The half-cell with the more positive E&deg; undergoes reduction (the forward reaction).</li>
+  <li>The half-cell with the more negative E&deg; undergoes oxidation (the reverse reaction).</li>
+  <li>Calculate E<sub>cell</sub> = E&deg;(reduction) - E&deg;(oxidation). If positive, the reaction is feasible.</li>
+</ol>
+
+<p><strong>Limitations of electrode potential predictions:</strong></p>
+<ul>
+  <li>A positive E<sub>cell</sub> only indicates <strong>thermodynamic feasibility</strong>. The reaction may be kinetically too slow (high activation energy barrier) — e.g. the reaction of permanganate with oxalic acid is very slow at room temperature despite having a large positive E<sub>cell</sub>.</li>
+  <li>Standard conditions may not apply — non-standard concentrations, temperatures, or pressures can shift electrode potentials.</li>
+  <li>The prediction says nothing about the rate of the reaction.</li>
+</ul>
+
+<h3>6.4 Storage Cells and Fuel Cells</h3>
+<p><strong>Non-rechargeable cells (primary cells):</strong> The chemical reactions are irreversible (e.g. zinc-carbon batteries).</p>
+<p><strong>Rechargeable cells (secondary cells):</strong> The reactions are reversible; applying an external voltage reverses the cell reaction (e.g. lithium-ion batteries in phones and laptops, lead-acid car batteries).</p>
+
+<p><strong>Hydrogen fuel cells:</strong> Hydrogen and oxygen react electrochemically to produce water and electricity. The overall reaction is 2H<sub>2</sub>(g) + O<sub>2</sub>(g) &#8594; 2H<sub>2</sub>O(l). Advantages: high efficiency (no Carnot limit), only product is water (zero emissions at point of use), renewable if hydrogen is produced from electrolysis using renewable energy. Disadvantages: hydrogen storage is difficult (low density, requires high pressure or cryogenic temperatures), hydrogen is flammable, platinum catalysts are expensive, and most hydrogen is currently produced from fossil fuels (steam reforming).</p>
 
 <div class="equation">
   &Delta;G = -nFE<sub>cell</sub>
 </div>
-<p>Where n = number of moles of electrons transferred, F = Faraday constant (96485 C mol<sup>-1</sup>). This links electrode potentials to free energy.</p>
+<p>Where n = number of moles of electrons transferred per mole of reaction, F = Faraday constant (96,485 C mol<sup>-1</sup>). This equation links electrode potentials to Gibbs free energy. If E<sub>cell</sub> is positive, &Delta;G is negative — the reaction is spontaneous.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When predicting feasibility from E&deg; values, always state three things: (1) E<sub>cell</sub> is positive so the reaction is thermodynamically feasible; (2) note that this doesn't guarantee the reaction will occur (kinetic factors); (3) the prediction applies under standard conditions only. For fuel cell questions, compare the advantages and disadvantages systematically.
+</div>
 
 </div>
 </body>
