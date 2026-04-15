@@ -1353,8 +1353,11 @@ async function load() {
   // Level banner
   renderLevel(level);
 
-  // Topic-level counts for stats row
-  const topicRows  = topicProgress || [];
+  // Build set of current subject keys to filter old data
+  const currentSubjectKeys = new Set((subjects || []).map(s => `${s.subject}_${s.exam_board}`));
+
+  // Filter topic progress to only include current subjects
+  const topicRows  = (topicProgress || []).filter(t => currentSubjectKeys.has(`${t.subject}_${t.exam_board}`));
   _cachedTopicRows = topicRows;
   const tGreen     = topicRows.filter(t => t.rag_status === 'green').length;
   const tAmber     = topicRows.filter(t => t.rag_status === 'amber').length;
