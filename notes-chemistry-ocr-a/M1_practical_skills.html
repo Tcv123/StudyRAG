@@ -24,88 +24,141 @@
   .exam-tip strong { color: #b45309; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .application { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .application strong { color: #15803d; }
+  .worked-example { background: #fdf2f8; border-left: 4px solid #db2777; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .worked-example strong { color: #be185d; }
 </style>
 </head>
 <body>
 <div class="container">
 
-<h1>Module 1 — Development of Practical Skills in Chemistry</h1>
+<h1>Module 1 &mdash; Development of Practical Skills in Chemistry</h1>
 
 <h2>1.1 Planning Experiments</h2>
 
 <div class="definition">
-  <strong>Hypothesis:</strong> A testable prediction based on scientific knowledge or prior observations that proposes a relationship between variables.
+  <strong>Hypothesis:</strong> A testable prediction based on scientific knowledge or prior observations that proposes a relationship between variables. A good hypothesis is specific and falsifiable &mdash; for example, "Increasing the concentration of hydrochloric acid will increase the rate of reaction with magnesium ribbon, measured by the volume of hydrogen gas produced in 60 seconds."
 </div>
 
 <h3>Variables</h3>
 <p>Every experiment involves three types of variables that must be clearly identified during the planning stage:</p>
 <ul>
-  <li><strong>Independent variable:</strong> The variable you deliberately change (e.g. concentration of acid).</li>
-  <li><strong>Dependent variable:</strong> The variable you measure as a result (e.g. volume of gas produced).</li>
-  <li><strong>Control variables:</strong> All other variables that must be kept constant to ensure a fair test (e.g. temperature, volume of reactant, catalyst presence).</li>
+  <li><strong>Independent variable:</strong> The variable you deliberately change (e.g. concentration of acid). You should plan at least five different values across a suitable range to identify a clear trend.</li>
+  <li><strong>Dependent variable:</strong> The variable you measure as a result (e.g. volume of gas produced). Choose a method of measurement that gives quantitative, continuous data where possible.</li>
+  <li><strong>Control variables:</strong> All other variables that must be kept constant to ensure a fair test (e.g. temperature, volume of reactant, catalyst presence, surface area of solid). Failing to control these introduces confounding variables that undermine validity.</li>
 </ul>
 
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When planning experiments, always explain <em>how</em> you will control each variable, not just state that you will. For example: "Temperature will be controlled by using a water bath set to 25 &deg;C, monitored with a thermometer."
+</div>
+
 <h3>Risk Assessments</h3>
-<p>A risk assessment identifies hazards associated with the chemicals and procedures, evaluates the likelihood and severity of harm, and outlines precautions to minimise risk. You should reference standard hazard symbols and safety data sheets (SDS).</p>
+<p>A risk assessment identifies hazards associated with the chemicals and procedures, evaluates the likelihood and severity of harm, and outlines precautions to minimise risk. You should reference standard hazard symbols (GHS pictograms) and safety data sheets (SDS). In an exam, structure your answer as: <strong>Hazard &rarr; Risk &rarr; Precaution</strong>.</p>
 
 <table>
   <tr><th>Hazard Symbol</th><th>Meaning</th><th>Example Chemical</th><th>Precaution</th></tr>
-  <tr><td>Corrosive</td><td>Destroys living tissue on contact</td><td>Concentrated sulfuric acid</td><td>Wear gloves, goggles; use in fume cupboard</td></tr>
-  <tr><td>Toxic</td><td>Can cause death or serious harm if inhaled, swallowed, or absorbed</td><td>Chlorine gas</td><td>Use fume cupboard; small quantities only</td></tr>
-  <tr><td>Flammable</td><td>Catches fire easily</td><td>Ethanol</td><td>Keep away from naked flames; no heating with Bunsen</td></tr>
-  <tr><td>Irritant</td><td>Causes redness or inflammation</td><td>Dilute hydrochloric acid</td><td>Wear goggles; wash skin if splashed</td></tr>
-  <tr><td>Oxidising</td><td>Provides oxygen; can intensify fires</td><td>Potassium manganate(VII)</td><td>Keep away from flammable materials</td></tr>
+  <tr><td>Corrosive</td><td>Destroys living tissue on contact</td><td>Concentrated sulfuric acid (H<sub>2</sub>SO<sub>4</sub>)</td><td>Wear gloves, goggles; use in fume cupboard; neutralise spills with sodium hydrogencarbonate</td></tr>
+  <tr><td>Toxic</td><td>Can cause death or serious harm if inhaled, swallowed, or absorbed</td><td>Chlorine gas (Cl<sub>2</sub>)</td><td>Use fume cupboard; small quantities only; know location of emergency eyewash</td></tr>
+  <tr><td>Flammable</td><td>Catches fire easily; flash point below 60 &deg;C</td><td>Ethanol (C<sub>2</sub>H<sub>5</sub>OH)</td><td>Keep away from naked flames; heat with water bath or electric heater, never a Bunsen burner</td></tr>
+  <tr><td>Irritant / Harmful</td><td>Causes redness, inflammation, or mild harm</td><td>Dilute hydrochloric acid (HCl)</td><td>Wear goggles; wash skin immediately if splashed</td></tr>
+  <tr><td>Oxidising</td><td>Provides oxygen; can intensify fires and cause explosions with flammable materials</td><td>Potassium manganate(VII) (KMnO<sub>4</sub>)</td><td>Keep away from flammable materials; store separately</td></tr>
+  <tr><td>Environmental hazard</td><td>Toxic to aquatic organisms</td><td>Copper sulfate (CuSO<sub>4</sub>)</td><td>Do not pour down the drain; dispose of in designated waste containers</td></tr>
 </table>
 
 <h3>Selecting Apparatus</h3>
-<p>You must choose apparatus appropriate to the measurement required. Consider the resolution (smallest scale division) and the range of the instrument. For measuring volumes of solutions, a burette (resolution 0.05 cm&sup3;) is more precise than a measuring cylinder (resolution 0.5 cm&sup3;). For measuring masses, a balance reading to 0.01 g or 0.001 g is typical.</p>
+<p>You must choose apparatus appropriate to the measurement required. Consider the <strong>resolution</strong> (smallest scale division), the <strong>range</strong> (maximum value it can measure), and the <strong>uncertainty</strong> of the instrument. Always select the instrument that gives the lowest percentage uncertainty for the quantity being measured.</p>
+
+<table>
+  <tr><th>Apparatus</th><th>Resolution</th><th>Typical Uncertainty</th><th>Best Use</th></tr>
+  <tr><td>Burette (50 cm&sup3;)</td><td>0.10 cm&sup3;</td><td>&plusmn;0.05 cm&sup3; per reading</td><td>Delivering variable, measured volumes in titrations</td></tr>
+  <tr><td>Graduated pipette (25.0 cm&sup3;)</td><td>0.10 cm&sup3;</td><td>&plusmn;0.06 cm&sup3;</td><td>Transferring a fixed, precise volume</td></tr>
+  <tr><td>Measuring cylinder (100 cm&sup3;)</td><td>1 cm&sup3;</td><td>&plusmn;0.5 cm&sup3;</td><td>Measuring approximate volumes</td></tr>
+  <tr><td>Volumetric flask (250 cm&sup3;)</td><td>Single graduation</td><td>&plusmn;0.20 cm&sup3;</td><td>Making standard solutions of known concentration</td></tr>
+  <tr><td>Balance (2 d.p.)</td><td>0.01 g</td><td>&plusmn;0.01 g</td><td>Measuring masses for moles calculations</td></tr>
+  <tr><td>Balance (3 d.p.)</td><td>0.001 g</td><td>&plusmn;0.001 g</td><td>Precise mass measurements for gravimetric analysis</td></tr>
+  <tr><td>Thermometer (&minus;10 to 110 &deg;C)</td><td>0.5 &deg;C or 1 &deg;C</td><td>&plusmn;0.5 &deg;C</td><td>Measuring temperature changes in calorimetry</td></tr>
+  <tr><td>Gas syringe (100 cm&sup3;)</td><td>1 cm&sup3;</td><td>&plusmn;0.5 cm&sup3;</td><td>Collecting and measuring volumes of gas</td></tr>
+</table>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> When asked to describe an experimental procedure, always state the specific apparatus you would use and why. For example, state "use a burette (resolution &plusmn;0.05 cm&sup3;)" rather than simply "measure the volume."
+  <strong>Exam Tip:</strong> When asked to describe an experimental procedure, always state the specific apparatus you would use and why. For example, state "use a burette (resolution &plusmn;0.05 cm&sup3;)" rather than simply "measure the volume." The key phrase is "appropriate to the scale of measurement."
+</div>
+
+<h3>Making Standard Solutions</h3>
+<p>A <strong>standard solution</strong> is one of accurately known concentration, prepared using a volumetric flask:</p>
+<ol>
+  <li>Calculate the mass of solute required using n = c &times; V and m = n &times; M.</li>
+  <li>Weigh the solute accurately on a balance (record to &plusmn;0.01 g or better).</li>
+  <li>Dissolve the solute in a small volume of distilled water in a beaker, stirring with a glass rod.</li>
+  <li>Transfer the solution to a volumetric flask using a funnel. Rinse the beaker and glass rod with distilled water and add the washings to the flask to ensure all solute is transferred.</li>
+  <li>Add distilled water to the flask up to the calibration mark, using a dropping pipette for the final drops. The bottom of the meniscus must sit exactly on the line.</li>
+  <li>Stopper and invert the flask several times to ensure thorough mixing.</li>
+</ol>
+
+<div class="application">
+  <strong>Real-World Application:</strong> Standard solutions are fundamental in quality control laboratories. Pharmaceutical companies prepare standard solutions of drug substances to calibrate analytical instruments, ensuring that medicine dosages are accurate. Water treatment plants use standard solutions of reagents to test for pollutants such as heavy metals and nitrates.
 </div>
 
 <h2>1.2 Recording and Presenting Results</h2>
 
 <h3>Recording Data</h3>
-<p>Raw data should be recorded in a clearly labelled table with appropriate headings that include units. Headings should follow the format: <em>Quantity / Unit</em> (e.g. "Volume / cm&sup3;"). All readings should be recorded to the same number of decimal places, consistent with the precision of the instrument.</p>
+<p>Raw data should be recorded in a clearly labelled table with appropriate headings that include units. Headings should follow the format: <em>Quantity / Unit</em> (e.g. "Volume / cm&sup3;"). All readings should be recorded to the same number of decimal places, consistent with the precision of the instrument. Never round raw data during recording.</p>
+
+<p>Qualitative observations should also be recorded systematically. For colour changes, describe both the initial and final colour (e.g. "orange solution turned green," not just "colour changed").</p>
 
 <h3>Significant Figures</h3>
 <p>Calculated results should be given to the same number of significant figures as the least precise measurement used. For example, if a mass is measured to 3 significant figures and a volume to 4, the final answer should be reported to 3 significant figures.</p>
 
 <div class="definition">
-  <strong>Significant figures:</strong> The number of meaningful digits in a measurement, starting from the first non-zero digit. For example, 0.00452 has 3 significant figures.
+  <strong>Significant figures:</strong> The number of meaningful digits in a measurement, starting from the first non-zero digit. For example, 0.00452 has 3 significant figures. Trailing zeros after a decimal point are significant (e.g. 2.50 has 3 s.f.), but leading zeros are not.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A common mistake is giving too many significant figures in a final answer. If your raw data is to 3 s.f., your answer cannot be more precise than 3 s.f. However, keep extra figures during intermediate calculations and only round at the very end to avoid rounding errors accumulating.
 </div>
 
 <h3>Graphs</h3>
 <p>Graphs should have:</p>
 <ul>
-  <li>Labelled axes with units</li>
-  <li>An appropriate scale that uses at least half the available graph paper</li>
-  <li>Data points plotted accurately as small crosses</li>
-  <li>A line of best fit (straight or curved as appropriate), which does not need to pass through every point</li>
+  <li>Labelled axes with units (in the format "Quantity / unit")</li>
+  <li>An appropriate scale that uses at least half the available graph paper in both directions</li>
+  <li>Data points plotted accurately as small crosses (&times;), not dots or circles</li>
+  <li>A line of best fit (straight or curved as appropriate), which does not need to pass through every point but should have roughly equal numbers of points above and below</li>
   <li>A descriptive title</li>
+  <li>Anomalous points clearly identified (circled) and excluded from the line of best fit</li>
 </ul>
+
+<p>When calculating a gradient, use a large triangle (at least half the length of the line) and show the construction on the graph. Read coordinates from the line of best fit, not from data points.</p>
 
 <h2>1.3 Analysis and Evaluation</h2>
 
-<h3>Accuracy, Precision and Reliability</h3>
+<h3>Accuracy, Precision, Reliability and Validity</h3>
 
 <div class="definition">
-  <strong>Accuracy:</strong> How close a measured value is to the true or accepted value.
+  <strong>Accuracy:</strong> How close a measured value is to the true or accepted value. Affected by systematic errors.
 </div>
 <div class="definition">
-  <strong>Precision:</strong> How close repeated measurements are to each other, regardless of whether they are close to the true value. A precise set of results has a small spread.
+  <strong>Precision:</strong> How close repeated measurements are to each other, regardless of whether they are close to the true value. A precise set of results has a small spread (low standard deviation). Affected by random errors.
 </div>
 <div class="definition">
-  <strong>Reliability:</strong> Results are reliable if they can be consistently reproduced under the same conditions by different experimenters.
+  <strong>Reliability (Repeatability):</strong> Results are reliable if they can be consistently reproduced under the same conditions by the same experimenter. <strong>Reproducibility</strong> is achieved when different experimenters using different equipment obtain similar results.
+</div>
+<div class="definition">
+  <strong>Validity:</strong> An experiment is valid if it measures what it claims to measure. This requires that all control variables are properly managed and the method is appropriate for the investigation.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Learn the distinction between these four terms precisely. A common exam error is confusing accuracy with precision. An analogy: if you throw five darts and they all land clustered tightly together but far from the bullseye, your throws are <em>precise but not accurate</em>. If they are scattered around the bullseye, they are <em>accurate (on average) but not precise</em>.
 </div>
 
 <h3>Types of Error</h3>
 <table>
   <tr><th>Error Type</th><th>Description</th><th>Effect</th><th>How to Reduce</th></tr>
-  <tr><td>Random error</td><td>Unpredictable fluctuations in readings</td><td>Reduces precision; scatter around the true value</td><td>Take repeat measurements and calculate a mean</td></tr>
-  <tr><td>Systematic error</td><td>Consistent error in the same direction every time</td><td>Reduces accuracy; shifts all readings</td><td>Calibrate instruments; improve technique</td></tr>
-  <tr><td>Zero error</td><td>Instrument does not read zero when it should</td><td>Systematic shift of all readings</td><td>Check and reset the instrument before use</td></tr>
+  <tr><td>Random error</td><td>Unpredictable fluctuations in readings caused by uncontrollable factors (e.g. slight variations in reading a meniscus, timing reflexes)</td><td>Reduces precision; scatter around the true value</td><td>Take repeat measurements and calculate a mean; use data-logging equipment; plot a graph and draw a line of best fit</td></tr>
+  <tr><td>Systematic error</td><td>Consistent error in the same direction every time (e.g. a balance that always reads 0.02 g too high, heat loss in calorimetry)</td><td>Reduces accuracy; shifts all readings in the same direction</td><td>Calibrate instruments before use; improve technique; use more insulated apparatus</td></tr>
+  <tr><td>Zero error</td><td>Instrument does not read zero when it should (a type of systematic error)</td><td>Systematic shift of all readings by a fixed amount</td><td>Check and reset the instrument before use; subtract the zero error from all readings</td></tr>
+  <tr><td>Parallax error</td><td>Reading a scale from an angle rather than at eye level</td><td>Systematic or random depending on consistency</td><td>Always read at eye level; for burettes, read the bottom of the meniscus</td></tr>
 </table>
 
 <h3>Percentage Error and Uncertainty</h3>
@@ -119,6 +172,15 @@
 </div>
 
 <p>For a burette with an uncertainty of &plusmn;0.05 cm&sup3; per reading, two readings are taken (initial and final), so the total uncertainty is &plusmn;0.10 cm&sup3;. If the titre is 25.00 cm&sup3;, the percentage uncertainty is (0.10 / 25.00) &times; 100 = 0.40%.</p>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Combining Uncertainties:</strong><br><br>
+  A student determines the concentration of NaOH by titration. The burette has an uncertainty of &plusmn;0.05 cm&sup3; per reading. The mean titre is 23.40 cm&sup3;. The pipette delivers 25.0 cm&sup3; with an uncertainty of &plusmn;0.06 cm&sup3;.<br><br>
+  Burette uncertainty = 2 &times; 0.05 = &plusmn;0.10 cm&sup3; &rarr; % uncertainty = (0.10 / 23.40) &times; 100 = 0.43%<br>
+  Pipette uncertainty = &plusmn;0.06 cm&sup3; &rarr; % uncertainty = (0.06 / 25.0) &times; 100 = 0.24%<br><br>
+  Total % uncertainty = 0.43 + 0.24 = <strong>0.67%</strong><br><br>
+  The burette contributes the most uncertainty, so to improve the experiment, you could use a larger titre volume (reducing the percentage uncertainty of the burette reading) or use a more precise burette.
+</div>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 500 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -166,46 +228,65 @@
   <text x="367" y="90" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Key Equation</text>
   <text x="367" y="112" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a73e8">q = mc&#916;T</text>
   <text x="275" y="132" font-family="system-ui" font-size="9" fill="#1a1a2e">m = mass of solution (g)</text>
-  <text x="275" y="146" font-family="system-ui" font-size="9" fill="#1a1a2e">c = 4.18 J g-1 K-1 (for water)</text>
+  <text x="275" y="146" font-family="system-ui" font-size="9" fill="#1a1a2e">c = 4.18 J g&#8315;&#185; K&#8315;&#185; (for water)</text>
   <text x="275" y="160" font-family="system-ui" font-size="9" fill="#1a1a2e">&#916;T = temperature change (K)</text>
   <!-- Sources of error box -->
-  <rect x="260" y="180" width="215" height="100" rx="6" fill="#fff8e1" stroke="#D97706" stroke-width="0.8"/>
+  <rect x="260" y="180" width="215" height="120" rx="6" fill="#fff8e1" stroke="#D97706" stroke-width="0.8"/>
   <text x="367" y="198" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#b45309">Sources of Error</text>
   <text x="270" y="215" font-family="system-ui" font-size="9" fill="#1a1a2e">- Heat loss to surroundings</text>
   <text x="270" y="230" font-family="system-ui" font-size="9" fill="#1a1a2e">- Incomplete combustion</text>
-  <text x="270" y="245" font-family="system-ui" font-size="9" fill="#1a1a2e">- Heat absorbed by cup</text>
+  <text x="270" y="245" font-family="system-ui" font-size="9" fill="#1a1a2e">- Heat absorbed by cup/therm.</text>
   <text x="270" y="260" font-family="system-ui" font-size="9" fill="#1a1a2e">- Evaporation of solution</text>
-  <text x="270" y="275" font-family="system-ui" font-size="9" fill="#16A34A">Improve: use lid + insulation</text>
+  <text x="270" y="275" font-family="system-ui" font-size="9" fill="#1a1a2e">- Density assumed = 1.00 g/cm&#179;</text>
+  <text x="270" y="292" font-family="system-ui" font-size="9" fill="#16A34A">Improve: use lid + insulation</text>
 </svg>
 </div>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> When combining uncertainties, add absolute uncertainties for addition/subtraction and add percentage uncertainties for multiplication/division.
+  <strong>Exam Tip:</strong> When combining uncertainties, <strong>add absolute uncertainties</strong> for addition/subtraction and <strong>add percentage uncertainties</strong> for multiplication/division. The largest percentage uncertainty identifies the piece of apparatus that limits the overall precision &mdash; suggest improving this apparatus first.
 </div>
 
 <h3>Evaluating Procedures</h3>
-<p>In evaluation questions, you should identify the most significant sources of error, suggest improvements to reduce those errors, and assess whether the results support the hypothesis. Consider whether anomalous results should be excluded from mean calculations and explain why.</p>
+<p>In evaluation questions, you should:</p>
+<ol>
+  <li>Identify the most significant sources of error (not trivial ones like "I might have spilt some").</li>
+  <li>Explain the direction of error &mdash; does it make the result too high or too low?</li>
+  <li>Suggest specific, practical improvements to reduce those errors.</li>
+  <li>Assess whether the results support the hypothesis with reference to the data.</li>
+  <li>Consider whether anomalous results should be excluded from mean calculations and explain why they occurred.</li>
+  <li>Calculate the percentage error compared to the accepted value and comment on accuracy.</li>
+</ol>
+
+<div class="application">
+  <strong>Real-World Application:</strong> In forensic science laboratories, rigorous evaluation of experimental procedures is essential. Evidence from crime scenes must be analysed using validated methods with known uncertainties. If a blood alcohol measurement has an uncertainty of &plusmn;3%, this must be reported to ensure fair legal proceedings. Pharmaceutical quality control requires that drug purity measurements fall within strict tolerance limits.
+</div>
 
 <h2>1.4 Practical Techniques</h2>
 
 <h3>Titrations</h3>
 
 <div class="definition">
-  <strong>Titration:</strong> A technique used to determine the concentration of a solution by reacting it with a solution of known concentration until the equivalence point is reached.
+  <strong>Titration:</strong> A quantitative technique used to determine the concentration of a solution by reacting it with a solution of known concentration until the equivalence point is reached. The equivalence point is the exact point where the moles of reactants are in the stoichiometric ratio.
 </div>
 
 <p>Standard procedure for an acid-base titration:</p>
 <ol>
-  <li>Rinse the burette with the solution it will contain (e.g. the acid). Fill and record the initial reading.</li>
-  <li>Use a pipette (rinsed with the solution it will contain) to transfer a fixed volume (e.g. 25.0 cm&sup3;) of the other solution into a conical flask.</li>
-  <li>Add a few drops of a suitable indicator (e.g. methyl orange for strong acid/weak base, phenolphthalein for weak acid/strong base).</li>
-  <li>Add the solution from the burette slowly, swirling the flask, until the indicator changes colour permanently. Record the final burette reading.</li>
-  <li>Perform a rough titration first, then repeat to obtain at least two concordant results (within 0.10 cm&sup3;).</li>
-  <li>Calculate the mean titre from concordant results only.</li>
+  <li>Rinse the burette with the solution it will contain (e.g. the acid) to prevent dilution. Fill and record the initial reading to 2 decimal places (e.g. 0.50 cm&sup3;, not 0.5).</li>
+  <li>Use a pipette (rinsed with the solution it will contain) to transfer a fixed volume (e.g. 25.0 cm&sup3;) of the other solution into a conical flask. The pipette should be allowed to drain freely &mdash; do not blow out the last drop.</li>
+  <li>Add 2&ndash;3 drops of a suitable indicator:
+    <ul>
+      <li><strong>Methyl orange:</strong> for strong acid + weak base (red in acid, yellow in alkali; endpoint is orange)</li>
+      <li><strong>Phenolphthalein:</strong> for weak acid + strong base (colourless in acid, pink in alkali)</li>
+      <li>For strong acid + strong base, either indicator works as the pH change at equivalence is very sharp</li>
+    </ul>
+  </li>
+  <li>Add the solution from the burette slowly, swirling the flask constantly for mixing, until the indicator changes colour permanently (lasting at least 30 seconds). Record the final burette reading.</li>
+  <li>Perform a rough titration first, then repeat to obtain at least two concordant results (within 0.10 cm&sup3; of each other).</li>
+  <li>Calculate the mean titre from concordant results only, discarding the rough and any anomalous values.</li>
 </ol>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> The conical flask is rinsed with deionised water only (not with the solution), because adding extra solution would change the amount of substance present. The pipette and burette are rinsed with their respective solutions to avoid dilution.
+  <strong>Exam Tip:</strong> The conical flask is rinsed with deionised water only (not with the solution), because adding extra solution would change the amount of substance present and alter the result. The pipette and burette are rinsed with their respective solutions to avoid dilution. A white tile is placed underneath the flask to help observe the colour change more clearly. These are common 1-mark points in practical questions.
 </div>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -244,7 +325,7 @@
   <!-- Labels -->
   <line x1="195" y1="150" x2="230" y2="130" stroke="#64748b" stroke-width="0.7"/>
   <text x="232" y="133" font-family="system-ui" font-size="10" fill="#1a1a2e">Burette</text>
-  <text x="232" y="145" font-family="system-ui" font-size="9" fill="#64748b">(+/- 0.05 cm3)</text>
+  <text x="232" y="145" font-family="system-ui" font-size="9" fill="#64748b">(+/- 0.05 cm&#179;)</text>
   <line x1="195" y1="242" x2="230" y2="240" stroke="#64748b" stroke-width="0.7"/>
   <text x="232" y="243" font-family="system-ui" font-size="10" fill="#1a1a2e">Stopcock</text>
   <line x1="205" y1="285" x2="260" y2="270" stroke="#64748b" stroke-width="0.7"/>
@@ -256,19 +337,33 @@
   <circle cx="158" cy="288" r="2" fill="#DC2626" opacity="0.7"/>
   <circle cx="166" cy="292" r="2" fill="#DC2626" opacity="0.7"/>
   <!-- Key steps note -->
-  <rect x="310" y="55" width="170" height="100" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="0.8"/>
+  <rect x="310" y="55" width="170" height="120" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="0.8"/>
   <text x="395" y="72" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1e3a5f">Key Steps</text>
   <text x="320" y="88" font-family="system-ui" font-size="9" fill="#1a1a2e">1. Rinse burette with acid</text>
-  <text x="320" y="101" font-family="system-ui" font-size="9" fill="#1a1a2e">2. Pipette 25.0 cm3 alkali</text>
+  <text x="320" y="101" font-family="system-ui" font-size="9" fill="#1a1a2e">2. Pipette 25.0 cm&#179; alkali</text>
   <text x="320" y="114" font-family="system-ui" font-size="9" fill="#1a1a2e">3. Add indicator drops</text>
   <text x="320" y="127" font-family="system-ui" font-size="9" fill="#1a1a2e">4. Add acid until colour</text>
   <text x="327" y="139" font-family="system-ui" font-size="9" fill="#1a1a2e">change is permanent</text>
   <text x="320" y="152" font-family="system-ui" font-size="9" fill="#1a1a2e">5. Record concordant titres</text>
+  <text x="320" y="168" font-family="system-ui" font-size="9" fill="#DC2626">6. Mean from concordant</text>
 </svg>
 </div>
 
+<div class="worked-example">
+  <strong>Worked Example &mdash; Titration Calculation:</strong><br><br>
+  25.0 cm&sup3; of 0.100 mol dm&sup3; NaOH was titrated against HCl of unknown concentration. The mean concordant titre was 22.50 cm&sup3;.<br><br>
+  <strong>Step 1:</strong> Moles of NaOH = c &times; V = 0.100 &times; (25.0/1000) = 2.50 &times; 10&sup3; mol<br>
+  <strong>Step 2:</strong> From the equation NaOH + HCl &rarr; NaCl + H<sub>2</sub>O, the ratio is 1:1, so moles of HCl = 2.50 &times; 10&sup3; mol<br>
+  <strong>Step 3:</strong> Concentration of HCl = n / V = 2.50 &times; 10&sup3; / (22.50/1000) = <strong>0.111 mol dm&sup3;</strong> (3 s.f.)
+</div>
+
+<div class="application">
+  <strong>Real-World Application:</strong> Titrations are used extensively in industry. In food manufacturing, acid-base titrations determine the acidity of fruit juices, vinegar, and dairy products. Redox titrations with iodine and thiosulfate are used to measure the vitamin C content in foods. In environmental monitoring, titrations quantify dissolved oxygen levels in rivers and lakes.
+</div>
+
 <h3>Distillation</h3>
-<p><strong>Simple distillation</strong> separates a solvent from a solution (e.g. water from salt water). The solution is heated, the solvent evaporates, passes through a condenser where it cools and condenses, and is collected in a receiving flask. This is suitable when the boiling points of the components differ by more than about 25 &deg;C.</p>
+<p><strong>Simple distillation</strong> separates a solvent from a solution (e.g. water from salt water) or separates liquids with boiling points differing by more than about 25 &deg;C. The solution is heated, the solvent evaporates, passes through a Liebig condenser where it cools and condenses, and is collected in a receiving flask. The thermometer at the top monitors the vapour temperature to ensure you are collecting the correct fraction.</p>
+
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 500 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Simple Distillation Apparatus</text>
@@ -327,12 +422,16 @@
 </svg>
 </div>
 
-<p><strong>Fractional distillation</strong> separates a mixture of miscible liquids with similar boiling points (e.g. ethanol and water). A fractionating column is packed with glass beads to provide a large surface area. The liquid with the lowest boiling point reaches the top of the column first and is collected. A thermometer at the top monitors which fraction is being collected.</p>
+<p><strong>Fractional distillation</strong> separates a mixture of miscible liquids with similar boiling points (within about 25 &deg;C of each other), such as ethanol and water. A fractionating column is packed with glass beads or has indentations to provide a large surface area for repeated vaporisation-condensation cycles. The liquid with the lowest boiling point reaches the top of the column first and is collected. A thermometer at the top monitors which fraction is being collected.</p>
+
+<div class="application">
+  <strong>Real-World Application:</strong> Fractional distillation is the basis of oil refining. Crude oil is separated into fractions (refinery gases, petrol, naphtha, kerosene, diesel, heavy fuel oil, bitumen) in industrial fractionating columns. The principle is the same as in the laboratory but on an enormous scale, processing millions of barrels daily. The technique is also used to separate liquid air into nitrogen and oxygen for industrial and medical use.
+</div>
 
 <h3>Reflux</h3>
 
 <div class="definition">
-  <strong>Reflux:</strong> A technique for heating a reaction mixture continuously without losing volatile components. Vapour rises, condenses in a vertical condenser attached to the flask, and drips back into the mixture.
+  <strong>Reflux:</strong> A technique for heating a reaction mixture continuously over an extended period without losing volatile components. Vapour rises, condenses in a vertical condenser attached to the flask, and drips back into the mixture. The apparatus is <strong>never sealed</strong> (open at the top of the condenser) to prevent dangerous pressure build-up.
 </div>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -378,7 +477,7 @@
   <rect x="96" y="60" width="5" height="250" fill="#94a3b8"/>
   <rect x="101" y="120" width="40" height="4" fill="#94a3b8"/>
   <!-- Key points box -->
-  <rect x="290" y="60" width="185" height="130" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="0.8"/>
+  <rect x="290" y="60" width="185" height="150" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="0.8"/>
   <text x="382" y="78" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1e3a5f">Why Use Reflux?</text>
   <text x="300" y="96" font-family="system-ui" font-size="9" fill="#1a1a2e">- Heats reaction continuously</text>
   <text x="300" y="112" font-family="system-ui" font-size="9" fill="#1a1a2e">- Volatile reactants/products</text>
@@ -397,29 +496,37 @@
 </svg>
 </div>
 
-<p>Reflux is used when a reaction requires prolonged heating (e.g. oxidation of a primary alcohol with acidified potassium dichromate to form a carboxylic acid). An anti-bumping granule is added to ensure smooth boiling. The flask is heated using a water bath or electric heater rather than a naked flame when flammable substances are involved.</p>
+<p>Reflux is used when a reaction requires prolonged heating (e.g. oxidation of a primary alcohol with acidified potassium dichromate to form a carboxylic acid, or esterification). An anti-bumping granule (porous ceramic chip) is added to ensure smooth boiling by providing nucleation sites for bubble formation. The flask is heated using a water bath or electric heater rather than a naked flame when flammable substances are involved.</p>
+
+<p><strong>Key distinction:</strong> Reflux is used to <em>carry out a reaction</em> that needs sustained heating. Distillation is used to <em>separate and collect</em> a product or component. Sometimes both are used in sequence: reflux first (to complete the reaction), then distillation (to collect the volatile product).</p>
 
 <h3>Recrystallisation</h3>
-<p>Recrystallisation purifies an impure solid by exploiting differences in solubility at different temperatures:</p>
+<p>Recrystallisation purifies an impure solid by exploiting differences in solubility at different temperatures. The underlying principle is that most solids are more soluble in hot solvents than cold solvents:</p>
 <ol>
-  <li>Dissolve the impure solid in the minimum volume of hot solvent.</li>
-  <li>Filter the hot solution to remove any insoluble impurities (this is called hot filtration using a pre-heated funnel).</li>
-  <li>Allow the filtrate to cool slowly. The desired product crystallises out as it becomes less soluble at lower temperatures. Impurities remain dissolved because they are present in small amounts.</li>
-  <li>Filter the crystals using vacuum (Buchner) filtration for faster and drier collection.</li>
-  <li>Wash the crystals with a small volume of cold solvent to remove residual impurities.</li>
-  <li>Dry the crystals between filter papers or in a desiccator.</li>
+  <li><strong>Dissolve</strong> the impure solid in the minimum volume of hot solvent. Using the minimum volume is critical &mdash; too much solvent means less product crystallises out, reducing yield.</li>
+  <li><strong>Hot filter</strong> the solution to remove any insoluble impurities (this is called hot filtration using a pre-heated funnel and fluted filter paper to prevent premature crystallisation).</li>
+  <li><strong>Cool slowly.</strong> Allow the filtrate to cool slowly to room temperature, then further in an ice bath. The desired product crystallises out as it becomes less soluble at lower temperatures. Impurities remain dissolved because they are present in small amounts below their saturation point.</li>
+  <li><strong>Filter</strong> the crystals using vacuum (Buchner) filtration for faster and drier collection.</li>
+  <li><strong>Wash</strong> the crystals with a small volume of ice-cold solvent to remove residual impurities from the crystal surfaces. Use cold solvent to minimise re-dissolving your product.</li>
+  <li><strong>Dry</strong> the crystals between filter papers, in an oven at low temperature, or in a desiccator.</li>
 </ol>
 
-<h3>Chromatography</h3>
-<p>Chromatography separates components of a mixture based on their different affinities for a stationary phase and a mobile phase.</p>
+<p><strong>Assessing purity:</strong> Measure the melting point of your purified product. A pure substance has a sharp melting point that matches the literature value. Impurities lower the melting point and broaden the melting range.</p>
 
-<p><strong>Thin-layer chromatography (TLC):</strong> A small spot of sample is placed on a TLC plate (stationary phase: silica or alumina on a glass or plastic plate). The plate is placed in a beaker with a shallow layer of solvent (mobile phase). The solvent rises by capillary action, carrying components at different rates. An R<sub>f</sub> value is calculated for each spot:</p>
+<div class="application">
+  <strong>Real-World Application:</strong> Recrystallisation is used in pharmaceutical manufacturing to purify drug substances to the very high purity levels required (often &gt;99.5%). For example, aspirin (acetylsalicylic acid) is purified by recrystallisation from ethanol or ethyl ethanoate. The melting point test provides a quick purity check before more sophisticated analyses are performed.
+</div>
+
+<h3>Chromatography</h3>
+<p>Chromatography separates components of a mixture based on their different affinities for a <strong>stationary phase</strong> (the fixed medium) and a <strong>mobile phase</strong> (the moving solvent or gas). Components with a greater affinity for the mobile phase travel faster and further.</p>
+
+<p><strong>Thin-layer chromatography (TLC):</strong> A small spot of sample is placed on a TLC plate (stationary phase: thin layer of silica or alumina on a glass or plastic plate). The plate is placed in a beaker with a shallow layer of solvent (mobile phase). The solvent rises by capillary action, carrying components at different rates. An R<sub>f</sub> value is calculated for each spot:</p>
 
 <div class="equation">
   R<sub>f</sub> = distance moved by spot / distance moved by solvent front
 </div>
 
-<p><strong>Paper chromatography</strong> works on the same principle but uses paper as the stationary phase. Both techniques can be used to identify unknown substances by comparing R<sub>f</sub> values with those of known standards run on the same plate or paper.</p>
+<p><strong>Paper chromatography</strong> works on the same principle but uses chromatography paper as the stationary phase (water trapped in the cellulose fibres acts as the true stationary phase). Both techniques can be used to identify unknown substances by comparing R<sub>f</sub> values with those of known standards run on the same plate or paper under identical conditions.</p>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 500 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -456,70 +563,82 @@
   <defs><marker id="arrowGrey1" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto"><polygon points="0 0, 6 2, 0 4" fill="#64748b"/></marker></defs>
   <!-- Rf formula box -->
   <rect x="280" y="80" width="195" height="80" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="0.8"/>
-  <text x="377" y="100" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Calculating Rf</text>
-  <text x="377" y="122" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">Rf = distance moved by spot</text>
+  <text x="377" y="100" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Calculating R&#7584;</text>
+  <text x="377" y="122" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">R&#7584; = distance moved by spot</text>
   <line x1="310" y1="128" x2="445" y2="128" stroke="#1a1a2e" stroke-width="0.8"/>
   <text x="377" y="143" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">distance moved by solvent</text>
   <!-- Key rules box -->
-  <rect x="280" y="180" width="195" height="100" rx="6" fill="#fff8e1" stroke="#D97706" stroke-width="0.8"/>
-  <text x="377" y="198" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#b45309">Key Rules</text>
-  <text x="290" y="215" font-family="system-ui" font-size="9" fill="#1a1a2e">- Use pencil line (not pen)</text>
-  <text x="290" y="230" font-family="system-ui" font-size="9" fill="#1a1a2e">- Solvent below baseline</text>
-  <text x="290" y="245" font-family="system-ui" font-size="9" fill="#1a1a2e">- Keep lid on (saturated</text>
-  <text x="296" y="257" font-family="system-ui" font-size="9" fill="#1a1a2e">vapour atmosphere)</text>
-  <text x="290" y="272" font-family="system-ui" font-size="9" fill="#1a1a2e">- Rf is always 0 to 1</text>
+  <rect x="280" y="175" width="195" height="120" rx="6" fill="#fff8e1" stroke="#D97706" stroke-width="0.8"/>
+  <text x="377" y="193" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#b45309">Key Rules</text>
+  <text x="290" y="210" font-family="system-ui" font-size="9" fill="#1a1a2e">- Use pencil line (not pen)</text>
+  <text x="290" y="225" font-family="system-ui" font-size="9" fill="#1a1a2e">- Solvent below baseline</text>
+  <text x="290" y="240" font-family="system-ui" font-size="9" fill="#1a1a2e">- Keep lid on (saturated</text>
+  <text x="296" y="252" font-family="system-ui" font-size="9" fill="#1a1a2e">vapour atmosphere)</text>
+  <text x="290" y="267" font-family="system-ui" font-size="9" fill="#1a1a2e">- R&#7584; is always 0 to 1</text>
+  <text x="290" y="282" font-family="system-ui" font-size="9" fill="#1a1a2e">- Use UV light or iodine</text>
+  <text x="296" y="294" font-family="system-ui" font-size="9" fill="#1a1a2e">to reveal colourless spots</text>
 </svg>
 </div>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> The pencil baseline must be used (not pen) because ink would dissolve in the solvent and interfere with results. The solvent level must be below the baseline so spots are not dissolved directly into the solvent.
+  <strong>Exam Tip:</strong> The pencil baseline must be used (not pen) because ink would dissolve in the solvent and interfere with results. The solvent level must be below the baseline so spots are not dissolved directly into the solvent. The lid must be on the beaker so the atmosphere is saturated with solvent vapour, preventing uneven evaporation from the plate. These are all common exam marks.
 </div>
 
 <h3>Gravimetric Analysis</h3>
 
 <div class="definition">
-  <strong>Gravimetric analysis:</strong> A quantitative technique that determines the amount of a substance by measuring mass changes, often involving precipitation, filtration, drying and weighing.
+  <strong>Gravimetric analysis:</strong> A quantitative technique that determines the amount of a substance by measuring mass changes, often involving precipitation, filtration, drying and weighing. The key principle is that a substance of interest is converted into an insoluble compound of known formula, which is then isolated and weighed.
 </div>
 
-<p>A typical gravimetric procedure involves adding an excess of a reagent to precipitate the desired ion from solution, then filtering, washing, drying and weighing the precipitate. For example, determining the sulfate content of a solution by adding excess barium chloride to precipitate barium sulfate.</p>
+<p>A typical gravimetric procedure involves adding an excess of a reagent to precipitate the desired ion from solution, then filtering, washing, drying and weighing the precipitate. For example, determining the sulfate content of a solution by adding excess barium chloride to precipitate barium sulfate:</p>
 
 <div class="equation">
-  Ba&sup2;+(aq) + SO&#8324;&sup2;&minus;(aq) &rarr; BaSO&#8324;(s)
+  Ba<sup>2+</sup>(aq) + SO<sub>4</sub><sup>2&minus;</sup>(aq) &rarr; BaSO<sub>4</sub>(s)
 </div>
 
-<p>The mass of the dried precipitate is used to calculate the moles and hence the mass or concentration of the sulfate ions originally present.</p>
+<p>The mass of the dried precipitate is used to calculate the moles and hence the mass or concentration of the sulfate ions originally present. Drying to <strong>constant mass</strong> means heating, cooling in a desiccator, and weighing repeatedly until successive weighings agree to within &plusmn;0.01 g.</p>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Gravimetric Analysis:</strong><br><br>
+  A 50.0 cm&sup3; sample of solution containing sulfate ions was treated with excess BaCl<sub>2</sub>. The precipitate of BaSO<sub>4</sub> was filtered, washed, dried and weighed. Mass = 0.466 g.<br><br>
+  <strong>Step 1:</strong> M<sub>r</sub> of BaSO<sub>4</sub> = 137.3 + 32.1 + (4 &times; 16.0) = 233.4<br>
+  <strong>Step 2:</strong> Moles of BaSO<sub>4</sub> = 0.466 / 233.4 = 2.00 &times; 10<sup>&minus;3</sup> mol<br>
+  <strong>Step 3:</strong> From the equation, moles of SO<sub>4</sub><sup>2&minus;</sup> = 2.00 &times; 10<sup>&minus;3</sup> mol (1:1 ratio)<br>
+  <strong>Step 4:</strong> Concentration of SO<sub>4</sub><sup>2&minus;</sup> = 2.00 &times; 10<sup>&minus;3</sup> / 0.0500 = <strong>0.0400 mol dm<sup>&minus;3</sup></strong>
+</div>
 
 <h3>Other Key Practical Techniques</h3>
 
 <table>
   <tr><th>Technique</th><th>Purpose</th><th>Key Points</th></tr>
-  <tr><td>Vacuum (Buchner) filtration</td><td>Faster filtration; drier solid product</td><td>Uses a Buchner funnel, filter flask, and vacuum pump. Wet the filter paper with solvent first.</td></tr>
-  <tr><td>Gravity filtration</td><td>Remove insoluble impurities from a solution</td><td>Uses a filter funnel and filter paper in a conical flask. Slower but simpler.</td></tr>
-  <tr><td>Water bath heating</td><td>Gentle, controlled heating of flammable liquids</td><td>Avoids naked flames; maintains more even temperature than direct heating.</td></tr>
-  <tr><td>Use of a desiccator</td><td>Drying solids to constant mass</td><td>Contains a drying agent (e.g. silica gel); weigh, dry, re-weigh until mass is constant.</td></tr>
-  <tr><td>Measuring pH</td><td>Determine acidity or alkalinity</td><td>Use a calibrated pH meter for accuracy or universal indicator for a rough estimate.</td></tr>
+  <tr><td>Vacuum (Buchner) filtration</td><td>Faster filtration; drier solid product</td><td>Uses a Buchner funnel, filter flask, and vacuum pump or water aspirator. Wet the filter paper with solvent first to create a seal. More efficient than gravity filtration for collecting precipitates and recrystallised products.</td></tr>
+  <tr><td>Gravity filtration</td><td>Remove insoluble impurities from a solution</td><td>Uses a filter funnel and filter paper in a conical flask. Slower but simpler. Used for hot filtration during recrystallisation (use a fluted filter paper and a pre-heated funnel).</td></tr>
+  <tr><td>Water bath heating</td><td>Gentle, controlled heating of flammable liquids</td><td>Avoids naked flames; maintains more even temperature than direct heating. Essential when working with ethanol, propanone, and other flammable organic solvents. An electric heating mantle is an alternative.</td></tr>
+  <tr><td>Use of a desiccator</td><td>Drying solids to constant mass</td><td>Contains a drying agent (e.g. anhydrous calcium chloride, silica gel); weigh, dry, re-weigh until mass is constant (&plusmn;0.01 g). Removes atmospheric moisture. Used in gravimetric analysis and determining water of crystallisation.</td></tr>
+  <tr><td>Measuring pH</td><td>Determine acidity or alkalinity</td><td>Use a calibrated pH meter for quantitative accuracy (resolution &plusmn;0.01 pH units) or universal indicator paper for a rough qualitative estimate. Calibrate the pH meter using standard buffer solutions before use.</td></tr>
+  <tr><td>Collecting gases</td><td>Measure gas volume produced in a reaction</td><td>Use a gas syringe for accurate measurement, or collect over water using an inverted measuring cylinder (only for insoluble gases). Ensure all joints are airtight to prevent gas loss.</td></tr>
 </table>
 
 <h2>1.5 Practical Endorsement (PAG Summary)</h2>
-<p>The OCR A specification includes a set of Practical Activity Groups (PAGs) that must be completed to gain the practical endorsement. These assess your ability to follow written instructions, use appropriate apparatus, make and record observations, and analyse results. Key PAGs include:</p>
+<p>The OCR A specification includes a set of Practical Activity Groups (PAGs) that must be completed to gain the practical endorsement. These assess your ability to follow written instructions, use appropriate apparatus, make and record observations, and analyse results. You need to demonstrate competence in <strong>five key areas</strong>: following procedures, applying investigative approaches, using instruments and equipment, making and recording observations, and researching and referencing.</p>
 
 <ul>
-  <li><strong>PAG 1:</strong> Moles determination (e.g. measuring molar gas volume, determining the formula of a hydrated salt by heating to constant mass)</li>
-  <li><strong>PAG 2:</strong> Titrations (acid-base and redox titrations)</li>
-  <li><strong>PAG 3:</strong> Enthalpy changes (e.g. calorimetry experiments measuring temperature changes)</li>
-  <li><strong>PAG 4:</strong> Rates of reaction (measuring how rate changes with concentration or temperature)</li>
-  <li><strong>PAG 5:</strong> Qualitative tests (identifying ions using test-tube reactions)</li>
-  <li><strong>PAG 6:</strong> Organic preparations (synthesis, purification, and testing of organic products)</li>
+  <li><strong>PAG 1:</strong> Moles determination (e.g. measuring molar gas volume using a gas syringe, determining the formula of a hydrated salt by heating to constant mass)</li>
+  <li><strong>PAG 2:</strong> Titrations (acid-base and redox titrations, including back titrations)</li>
+  <li><strong>PAG 3:</strong> Enthalpy changes (e.g. calorimetry experiments measuring temperature changes for neutralisation, dissolution, or combustion)</li>
+  <li><strong>PAG 4:</strong> Rates of reaction (measuring how rate changes with concentration, temperature, or surface area using gas collection or colorimetry)</li>
+  <li><strong>PAG 5:</strong> Qualitative tests (identifying cations, anions, and functional groups using test-tube reactions)</li>
+  <li><strong>PAG 6:</strong> Organic preparations (synthesis, purification by recrystallisation, and testing of organic products such as aspirin or an ester)</li>
 </ul>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> Questions about practical skills appear across all papers, not just in a dedicated practical paper. You may be asked to plan experiments, analyse data, evaluate methods, or suggest improvements to procedures. Always link your answers to specific apparatus and techniques.
+  <strong>Exam Tip:</strong> Questions about practical skills appear across <em>all</em> papers, not just in a dedicated practical paper. You may be asked to plan experiments, analyse data, evaluate methods, or suggest improvements to procedures. Always link your answers to specific apparatus and techniques. The command words "describe," "explain," and "evaluate" carry different expectations &mdash; "describe" requires stating what you do, "explain" requires stating why, and "evaluate" requires assessing strengths and weaknesses with a supported conclusion.
 </div>
 
 <h2>1.6 Working with Data</h2>
 
 <h3>Calculating Means</h3>
-<p>When calculating a mean, exclude any anomalous results first. An anomalous result is one that does not fit the pattern of the other data. You should identify and explain why a result might be anomalous (e.g. misreading a burette, contamination, incomplete reaction).</p>
+<p>When calculating a mean, exclude any anomalous results first. An anomalous result is one that does not fit the pattern of the other data and falls well outside the expected range. You should identify and explain why a result might be anomalous (e.g. misreading a burette, contamination, incomplete reaction, air bubble in syringe). Report the mean to the appropriate number of significant figures or decimal places.</p>
 
 <h3>Percentage Yield and Atom Economy</h3>
 
@@ -531,10 +650,35 @@
   Atom economy = (M<sub>r</sub> of desired product / sum of M<sub>r</sub> of all products) &times; 100%
 </div>
 
-<p>Percentage yield is always less than 100% in practice due to incomplete reactions, side reactions, and losses during purification (e.g. during transfer, filtration, or evaporation). Atom economy is a theoretical measure of how efficiently a reaction uses its atoms. A high atom economy means less waste, which is important in green chemistry and industrial processes.</p>
+<p>Percentage yield is always less than 100% in practice due to:</p>
+<ul>
+  <li>Incomplete reactions (equilibrium not fully to the right)</li>
+  <li>Side reactions producing unwanted by-products</li>
+  <li>Losses during transfer between containers</li>
+  <li>Losses during purification (e.g. filtration, evaporation, recrystallisation)</li>
+  <li>Impure reactants</li>
+</ul>
+
+<p>Atom economy is a <em>theoretical</em> measure of how efficiently a reaction uses its atoms. A high atom economy means less waste, which is important in green chemistry and industrial processes. Addition reactions always have 100% atom economy because all atoms end up in a single product. Substitution and elimination reactions typically have lower atom economy because they produce by-products.</p>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Atom Economy:</strong><br><br>
+  For the preparation of ethanol by fermentation:<br>
+  C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> &rarr; 2C<sub>2</sub>H<sub>5</sub>OH + 2CO<sub>2</sub><br><br>
+  M<sub>r</sub> of desired product (2 &times; C<sub>2</sub>H<sub>5</sub>OH) = 2 &times; 46.0 = 92.0<br>
+  Sum of M<sub>r</sub> of all products = 92.0 + (2 &times; 44.0) = 180.0<br>
+  Atom economy = (92.0 / 180.0) &times; 100 = <strong>51.1%</strong><br><br>
+  Compare with the hydration of ethene: CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub>O &rarr; C<sub>2</sub>H<sub>5</sub>OH<br>
+  Atom economy = 46.0 / 46.0 &times; 100 = <strong>100%</strong><br>
+  The hydration route has much better atom economy, but fermentation uses renewable feedstock (sugar), which is a green chemistry advantage.
+</div>
 
 <div class="definition">
-  <strong>Green chemistry:</strong> An approach to chemistry that seeks to reduce waste, use safer solvents and reagents, improve atom economy, and minimise environmental impact.
+  <strong>Green chemistry:</strong> An approach to chemistry that seeks to reduce waste, use safer solvents and reagents, improve atom economy, use renewable feedstocks, design energy-efficient processes, and minimise environmental impact throughout the lifecycle of a chemical product. The 12 principles of green chemistry guide sustainable chemical manufacturing.
+</div>
+
+<div class="application">
+  <strong>Real-World Application:</strong> Green chemistry principles have transformed industrial processes. For example, the pharmaceutical company Pfizer redesigned the synthesis of sildenafil (Viagra) to eliminate hazardous solvents, reduce waste by a factor of ten, and improve atom economy. In polymer chemistry, the development of biodegradable plastics from corn starch (PLA) represents a shift towards renewable feedstocks and reduced environmental persistence.
 </div>
 
 </div>

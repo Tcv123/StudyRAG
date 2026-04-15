@@ -5,106 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topic 8 — Nuclear and Particle Physics</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: #1a1a2e;
-            background: #ffffff;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 2rem;
-            color: #1a1a2e;
-            border-bottom: 3px solid #2563eb;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #1e40af;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            padding-left: 10px;
-            border-left: 4px solid #2563eb;
-        }
-        h3 {
-            font-size: 1.2rem;
-            color: #374151;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 12px;
-        }
-        .definition {
-            background: #eff6ff;
-            border-left: 4px solid #2563eb;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip {
-            background: #fffbeb;
-            border-left: 4px solid #f59e0b;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip::before {
-            content: "Exam Tip: ";
-            font-weight: 700;
-            color: #d97706;
-        }
-        .equation {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 12px 20px;
-            margin: 12px 0;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            text-align: center;
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-        th, td {
-            border: 1px solid #d1d5db;
-            padding: 10px 14px;
-            text-align: left;
-        }
-        th {
-            background: #f1f5f9;
-            font-weight: 600;
-            color: #1e40af;
-        }
-        tr:nth-child(even) {
-            background: #f9fafb;
-        }
-        ul, ol {
-            margin: 10px 0 15px 25px;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        strong {
-            color: #1e293b;
-        }
-        @media print {
-            body { padding: 20px; }
-            .exam-tip, .definition { break-inside: avoid; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+        h2 { font-size: 1.5rem; color: #1e40af; margin-top: 35px; margin-bottom: 15px; padding-left: 10px; border-left: 4px solid #2563eb; }
+        h3 { font-size: 1.2rem; color: #374151; margin-top: 20px; margin-bottom: 10px; }
+        p { margin-bottom: 12px; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #d97706; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #16a34a; }
+        .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .real-world::before { content: "Real-World Application: "; font-weight: 700; color: #7c3aed; }
+        .equation { background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 20px; margin: 12px 0; border-radius: 6px; font-size: 1.1rem; text-align: center; font-family: 'Cambria Math', 'Times New Roman', serif; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
+        th { background: #f1f5f9; font-weight: 600; color: #1e40af; }
+        tr:nth-child(even) { background: #f9fafb; }
+        ul, ol { margin: 10px 0 15px 25px; }
+        li { margin-bottom: 6px; }
+        strong { color: #1e293b; }
+        @media print { body { padding: 20px; } .exam-tip, .definition, .worked-example, .real-world { break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -115,203 +38,87 @@
 <h2>8.1 Atomic Structure</h2>
 
 <div class="definition">
-    <strong>The atom</strong> consists of a small, dense, positively charged nucleus (containing protons and neutrons) surrounded by orbiting electrons.
+    <strong>The atom</strong> consists of a small, dense, positively charged nucleus (containing protons and neutrons, collectively called nucleons) surrounded by orbiting electrons. The nucleus is approximately 10&#8315;&#185;&#8309; m in diameter, while the atom is approximately 10&#8315;&#185;&#8304; m &#8212; the nucleus is about 100,000 times smaller than the atom.
 </div>
 
 <table>
-    <tr>
-        <th>Particle</th>
-        <th>Relative Charge</th>
-        <th>Relative Mass</th>
-        <th>Location</th>
-    </tr>
-    <tr>
-        <td>Proton</td>
-        <td>+1</td>
-        <td>1</td>
-        <td>Nucleus</td>
-    </tr>
-    <tr>
-        <td>Neutron</td>
-        <td>0</td>
-        <td>1</td>
-        <td>Nucleus</td>
-    </tr>
-    <tr>
-        <td>Electron</td>
-        <td>−1</td>
-        <td>1/1836 ≈ 0.0005</td>
-        <td>Orbits / electron cloud</td>
-    </tr>
+    <tr><th>Particle</th><th>Relative Charge</th><th>Relative Mass</th><th>Location</th></tr>
+    <tr><td>Proton</td><td>+1</td><td>1</td><td>Nucleus</td></tr>
+    <tr><td>Neutron</td><td>0</td><td>1</td><td>Nucleus</td></tr>
+    <tr><td>Electron</td><td>&#8722;1</td><td>1/1836 &#8776; 0.0005</td><td>Orbits / electron cloud</td></tr>
 </table>
 
 <h3>Nuclear Notation</h3>
-<p>A nuclide is represented as: <sup>A</sup><sub>Z</sub>X, where A = mass number (protons + neutrons), Z = atomic number (protons), and X is the chemical symbol.</p>
+<p>A nuclide is represented as: <sup>A</sup><sub>Z</sub>X, where A = mass number (protons + neutrons), Z = atomic number (protons), and X is the chemical symbol. The number of neutrons is N = A &#8722; Z.</p>
 
 <h3>Isotopes</h3>
-<p><strong>Isotopes</strong> are atoms of the same element (same number of protons, same Z) but with different numbers of neutrons (different A). They have the same chemical properties but different physical properties (e.g., different mass, some may be radioactive).</p>
+<p><strong>Isotopes</strong> are atoms of the same element (same number of protons, same Z) but with different numbers of neutrons (different A). They have the same chemical properties (determined by electrons) but different physical properties (e.g., different mass, different stability &#8212; some may be radioactive).</p>
+
+<div class="worked-example">
+Carbon-12 (<sup>12</sup><sub>6</sub>C) has 6 protons and 6 neutrons. Carbon-14 (<sup>14</sup><sub>6</sub>C) has 6 protons and 8 neutrons. Both are carbon (Z = 6), but C-14 is radioactive and decays via beta-minus emission with a half-life of 5730 years, making it useful for radiocarbon dating.
+</div>
+
+<h3>Rutherford Scattering</h3>
+<p>The nuclear model of the atom was established by Rutherford's alpha-particle scattering experiment (1909-1911). When alpha particles were fired at thin gold foil:</p>
+<ul>
+    <li><strong>Most passed straight through</strong> &#8594; atoms are mostly empty space</li>
+    <li><strong>Some were deflected at small angles</strong> &#8594; the nucleus has positive charge</li>
+    <li><strong>Very few bounced back (>90&#176;)</strong> &#8594; the nucleus is small, dense, and contains most of the atom's mass</li>
+</ul>
 
 <h2>8.2 Fundamental Particles</h2>
 
 <h3>Quarks</h3>
-<p>Quarks are fundamental particles that make up hadrons. There are six flavours arranged in three generations:</p>
+<p>Quarks are fundamental particles that make up hadrons. There are six flavours arranged in three generations. Only the first generation (up and down) makes up stable everyday matter.</p>
 
 <table>
-    <tr>
-        <th>Generation</th>
-        <th>Quark</th>
-        <th>Symbol</th>
-        <th>Charge</th>
-        <th>Baryon Number</th>
-        <th>Strangeness</th>
-    </tr>
-    <tr>
-        <td>1st</td>
-        <td>Up</td>
-        <td>u</td>
-        <td>+2/3</td>
-        <td>+1/3</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>1st</td>
-        <td>Down</td>
-        <td>d</td>
-        <td>−1/3</td>
-        <td>+1/3</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>2nd</td>
-        <td>Charm</td>
-        <td>c</td>
-        <td>+2/3</td>
-        <td>+1/3</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>2nd</td>
-        <td>Strange</td>
-        <td>s</td>
-        <td>−1/3</td>
-        <td>+1/3</td>
-        <td>−1</td>
-    </tr>
-    <tr>
-        <td>3rd</td>
-        <td>Top</td>
-        <td>t</td>
-        <td>+2/3</td>
-        <td>+1/3</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>3rd</td>
-        <td>Bottom</td>
-        <td>b</td>
-        <td>−1/3</td>
-        <td>+1/3</td>
-        <td>0</td>
-    </tr>
+    <tr><th>Generation</th><th>Quark</th><th>Symbol</th><th>Charge</th><th>Baryon Number</th><th>Strangeness</th></tr>
+    <tr><td>1st</td><td>Up</td><td>u</td><td>+2/3</td><td>+1/3</td><td>0</td></tr>
+    <tr><td>1st</td><td>Down</td><td>d</td><td>&#8722;1/3</td><td>+1/3</td><td>0</td></tr>
+    <tr><td>2nd</td><td>Charm</td><td>c</td><td>+2/3</td><td>+1/3</td><td>0</td></tr>
+    <tr><td>2nd</td><td>Strange</td><td>s</td><td>&#8722;1/3</td><td>+1/3</td><td>&#8722;1</td></tr>
+    <tr><td>3rd</td><td>Top</td><td>t</td><td>+2/3</td><td>+1/3</td><td>0</td></tr>
+    <tr><td>3rd</td><td>Bottom</td><td>b</td><td>&#8722;1/3</td><td>+1/3</td><td>0</td></tr>
 </table>
 
-<p>Each quark has a corresponding <strong>antiquark</strong> with opposite charge, baryon number, and strangeness.</p>
+<p>Each quark has a corresponding <strong>antiquark</strong> with opposite charge, baryon number, and strangeness. For example, the anti-up quark (&#363;) has charge &#8722;2/3 and baryon number &#8722;1/3.</p>
+
+<div class="exam-tip">Remember the charges: up-type quarks (u, c, t) have charge +2/3, and down-type quarks (d, s, b) have charge &#8722;1/3. Antiquarks have opposite signs for all quantum numbers.</div>
 
 <h3>Leptons</h3>
-<p>Leptons are fundamental particles that do not experience the strong nuclear force.</p>
+<p>Leptons are fundamental particles that do not experience the strong nuclear force. They interact via the weak and electromagnetic forces (if charged).</p>
 
 <table>
-    <tr>
-        <th>Generation</th>
-        <th>Lepton</th>
-        <th>Symbol</th>
-        <th>Charge</th>
-        <th>Lepton Number</th>
-    </tr>
-    <tr>
-        <td>1st</td>
-        <td>Electron</td>
-        <td>e⁻</td>
-        <td>−1</td>
-        <td>+1</td>
-    </tr>
-    <tr>
-        <td>1st</td>
-        <td>Electron neutrino</td>
-        <td>νₑ</td>
-        <td>0</td>
-        <td>+1</td>
-    </tr>
-    <tr>
-        <td>2nd</td>
-        <td>Muon</td>
-        <td>μ⁻</td>
-        <td>−1</td>
-        <td>+1</td>
-    </tr>
-    <tr>
-        <td>2nd</td>
-        <td>Muon neutrino</td>
-        <td>ν_μ</td>
-        <td>0</td>
-        <td>+1</td>
-    </tr>
-    <tr>
-        <td>3rd</td>
-        <td>Tau</td>
-        <td>τ⁻</td>
-        <td>−1</td>
-        <td>+1</td>
-    </tr>
-    <tr>
-        <td>3rd</td>
-        <td>Tau neutrino</td>
-        <td>ν_τ</td>
-        <td>0</td>
-        <td>+1</td>
-    </tr>
+    <tr><th>Generation</th><th>Lepton</th><th>Symbol</th><th>Charge</th><th>Lepton Number (L<sub>e</sub>, L<sub>&#956;</sub>, L<sub>&#964;</sub>)</th></tr>
+    <tr><td>1st</td><td>Electron</td><td>e&#8315;</td><td>&#8722;1</td><td>L<sub>e</sub> = +1</td></tr>
+    <tr><td>1st</td><td>Electron neutrino</td><td>&#957;<sub>e</sub></td><td>0</td><td>L<sub>e</sub> = +1</td></tr>
+    <tr><td>2nd</td><td>Muon</td><td>&#956;&#8315;</td><td>&#8722;1</td><td>L<sub>&#956;</sub> = +1</td></tr>
+    <tr><td>2nd</td><td>Muon neutrino</td><td>&#957;<sub>&#956;</sub></td><td>0</td><td>L<sub>&#956;</sub> = +1</td></tr>
+    <tr><td>3rd</td><td>Tau</td><td>&#964;&#8315;</td><td>&#8722;1</td><td>L<sub>&#964;</sub> = +1</td></tr>
+    <tr><td>3rd</td><td>Tau neutrino</td><td>&#957;<sub>&#964;</sub></td><td>0</td><td>L<sub>&#964;</sub> = +1</td></tr>
 </table>
 
-<p>Each lepton has a corresponding antilepton with opposite charge and lepton number.</p>
+<p>Each lepton has a corresponding antilepton with opposite charge and lepton number. Neutrinos are extremely light (nearly massless), uncharged, and interact very weakly with matter &#8212; billions pass through your body every second from the Sun.</p>
 
 <h3>Exchange Particles (Gauge Bosons)</h3>
 
 <div class="definition">
-    <strong>Exchange particles</strong> (gauge bosons) are virtual particles that mediate the fundamental forces between other particles.
+    <strong>Exchange particles</strong> (gauge bosons) are virtual particles that mediate the fundamental forces between other particles. Each force has its own exchange particle(s).
 </div>
 
 <table>
-    <tr>
-        <th>Force</th>
-        <th>Exchange Particle</th>
-        <th>Acts On</th>
-        <th>Range</th>
-    </tr>
-    <tr>
-        <td>Electromagnetic</td>
-        <td>Photon (γ)</td>
-        <td>All charged particles</td>
-        <td>Infinite</td>
-    </tr>
-    <tr>
-        <td>Strong nuclear</td>
-        <td>Gluon (g)</td>
-        <td>Quarks and gluons</td>
-        <td>~10⁻¹⁵ m</td>
-    </tr>
-    <tr>
-        <td>Weak nuclear</td>
-        <td>W⁺, W⁻, Z⁰</td>
-        <td>All fermions</td>
-        <td>~10⁻¹⁸ m</td>
-    </tr>
-    <tr>
-        <td>Gravity</td>
-        <td>Graviton (hypothetical)</td>
-        <td>All particles with mass</td>
-        <td>Infinite</td>
-    </tr>
+    <tr><th>Force</th><th>Exchange Particle</th><th>Acts On</th><th>Range</th><th>Relative Strength</th></tr>
+    <tr><td>Electromagnetic</td><td>Photon (&#947;)</td><td>All charged particles</td><td>Infinite</td><td>10&#8315;&#178;</td></tr>
+    <tr><td>Strong nuclear</td><td>Gluon (g)</td><td>Quarks and gluons</td><td>~10&#8315;&#185;&#8309; m</td><td>1</td></tr>
+    <tr><td>Weak nuclear</td><td>W&#8314;, W&#8315;, Z&#8304;</td><td>All fermions</td><td>~10&#8315;&#185;&#8312; m</td><td>10&#8315;&#8310;</td></tr>
+    <tr><td>Gravity</td><td>Graviton (hypothetical)</td><td>All particles with mass</td><td>Infinite</td><td>10&#8315;&#179;&#8313;</td></tr>
 </table>
+
+<p>The <strong>W bosons</strong> carry charge (W&#8314; has charge +1, W&#8315; has charge &#8722;1) and are responsible for changing quark flavour in beta decay. The Z&#8304; boson is neutral and mediates neutral current interactions.</p>
+
+<div class="real-world">
+The weak force is responsible for nuclear beta decay, which drives processes in nuclear reactors and the Sun's energy production. The detection of W and Z bosons at CERN in 1983 by Carlo Rubbia and Simon van der Meer confirmed the electroweak theory and earned them the Nobel Prize in 1984.
+</div>
 
 <h2>8.3 Hadrons</h2>
 
@@ -319,71 +126,81 @@
 
 <h3>Baryons (3 quarks)</h3>
 <ul>
-    <li><strong>Proton (p):</strong> uud — charge = +2/3 +2/3 −1/3 = +1</li>
-    <li><strong>Neutron (n):</strong> udd — charge = +2/3 −1/3 −1/3 = 0</li>
-    <li>Baryon number = +1 for baryons, −1 for antibaryons</li>
+    <li><strong>Proton (p):</strong> uud &#8212; charge = +2/3 +2/3 &#8722;1/3 = +1, baryon number = +1</li>
+    <li><strong>Neutron (n):</strong> udd &#8212; charge = +2/3 &#8722;1/3 &#8722;1/3 = 0, baryon number = +1</li>
+    <li>Baryon number = +1 for baryons, &#8722;1 for antibaryons</li>
+    <li>The proton is the only stable baryon. Free neutrons decay via beta-minus with a half-life of about 10 minutes.</li>
 </ul>
+
+<div class="worked-example">
+Verify the charge of the proton from its quark composition (uud).<br><br>
+Charge = (+2/3) + (+2/3) + (&#8722;1/3) = +4/3 &#8722; 1/3 = <strong>+1</strong> &#10003;<br><br>
+Baryon number = (+1/3) + (+1/3) + (+1/3) = <strong>+1</strong> &#10003;
+</div>
 
 <h3>Mesons (quark-antiquark pair)</h3>
 <ul>
-    <li><strong>Pion (π⁺):</strong> ud̄ — charge = +2/3 +1/3 = +1</li>
-    <li><strong>Pion (π⁻):</strong> ūd — charge = −2/3 −1/3 = −1</li>
-    <li><strong>Pion (π⁰):</strong> uū or dd̄ — charge = 0</li>
-    <li><strong>Kaon (K⁺):</strong> us̄ — contains an anti-strange quark, strangeness = +1</li>
-    <li>Baryon number = 0 for all mesons</li>
+    <li><strong>Pion (&#960;&#8314;):</strong> u&#7693;&#772; &#8212; charge = +2/3 +1/3 = +1</li>
+    <li><strong>Pion (&#960;&#8315;):</strong> &#363;d &#8212; charge = &#8722;2/3 &#8722;1/3 = &#8722;1</li>
+    <li><strong>Pion (&#960;&#8304;):</strong> u&#363; or d&#7693;&#772; &#8212; charge = 0</li>
+    <li><strong>Kaon (K&#8314;):</strong> u&#7777;&#772; &#8212; contains an anti-strange quark, strangeness = +1</li>
+    <li><strong>Kaon (K&#8315;):</strong> &#363;s &#8212; strangeness = &#8722;1</li>
+    <li>Baryon number = 0 for all mesons (quark B = +1/3, antiquark B = &#8722;1/3)</li>
 </ul>
 
+<p>Pions are the lightest mesons and mediate the <strong>residual strong force</strong> between nucleons in the nucleus (also called the nuclear force). This is distinct from the fundamental strong force between quarks, which is mediated by gluons.</p>
+
 <h3>Antiparticles</h3>
-<p>Every particle has a corresponding <strong>antiparticle</strong> with the same mass but opposite charge, baryon number, lepton number, and strangeness. For example: the antiproton (p̄) has quark composition ūūd̄ and charge −1.</p>
+<p>Every particle has a corresponding <strong>antiparticle</strong> with the same mass but opposite charge, baryon number, lepton number, and strangeness. For example: the antiproton (p&#772;) has quark composition &#363;&#363;&#7693;&#772; and charge &#8722;1.</p>
+
+<div class="exam-tip">When identifying quark compositions, remember: (1) baryons have three quarks, mesons have a quark-antiquark pair; (2) add up the charges to check they give the correct total; (3) the antiquark in a meson has the opposite signs for all quantum numbers.</div>
 
 <h2>8.4 Particle Interactions</h2>
 
 <h3>Conservation Laws</h3>
-<p>In all particle interactions, the following quantities are conserved:</p>
+<p>In all particle interactions, certain quantities must be conserved. Whether a proposed reaction can occur depends on whether all conservation laws are satisfied.</p>
+
 <table>
-    <tr>
-        <th>Quantity</th>
-        <th>Conserved In</th>
-    </tr>
-    <tr>
-        <td>Charge (Q)</td>
-        <td>All interactions</td>
-    </tr>
-    <tr>
-        <td>Baryon number (B)</td>
-        <td>All interactions</td>
-    </tr>
-    <tr>
-        <td>Lepton number (L)</td>
-        <td>All interactions</td>
-    </tr>
-    <tr>
-        <td>Strangeness (S)</td>
-        <td>Strong and electromagnetic only (can change by 0 or ±1 in weak)</td>
-    </tr>
-    <tr>
-        <td>Energy and momentum</td>
-        <td>All interactions</td>
-    </tr>
+    <tr><th>Quantity</th><th>Conserved In</th></tr>
+    <tr><td>Charge (Q)</td><td>All interactions</td></tr>
+    <tr><td>Baryon number (B)</td><td>All interactions</td></tr>
+    <tr><td>Lepton number (L)</td><td>All interactions (separately for each generation: L<sub>e</sub>, L<sub>&#956;</sub>, L<sub>&#964;</sub>)</td></tr>
+    <tr><td>Strangeness (S)</td><td>Strong and electromagnetic only (can change by 0 or &#177;1 in weak interactions)</td></tr>
+    <tr><td>Energy and momentum</td><td>All interactions</td></tr>
 </table>
 
-<div class="exam-tip">Strangeness is conserved in strong interactions but can change by ±1 in weak interactions. This is how strange particles are produced (in pairs via the strong force) but decay individually via the weak force.</div>
+<div class="worked-example">
+Determine whether the following reaction is allowed: p + p &#8594; p + p + p + p&#772;<br><br>
+Check charge: LHS = +1 + +1 = +2. RHS = +1 + +1 + +1 + (&#8722;1) = +2. &#10003;<br>
+Check baryon number: LHS = +1 + +1 = +2. RHS = +1 + +1 + +1 + (&#8722;1) = +2. &#10003;<br>
+Check lepton number: LHS = 0. RHS = 0. &#10003;<br><br>
+All quantities conserved, so this reaction <strong>is allowed</strong>. This is proton-antiproton pair production &#8212; it requires sufficient kinetic energy (at least 2m<sub>p</sub>c&#178; = 1876 MeV).
+</div>
+
+<div class="exam-tip">Strangeness is conserved in strong interactions but can change by &#177;1 in weak interactions. This is how strange particles are produced (in pairs via the strong force, e.g., K&#8314; + K&#8315;) but decay individually via the weak force (relatively slowly).</div>
 
 <h3>Beta Decay at Quark Level</h3>
 
-<p><strong>Beta-minus decay (β⁻):</strong> A neutron decays into a proton, emitting an electron and an electron antineutrino.</p>
-<div class="equation">n → p + e⁻ + ν̄ₑ</div>
-<p>At quark level: d → u + e⁻ + ν̄ₑ (mediated by W⁻ boson)</p>
+<p><strong>Beta-minus decay (&#946;&#8315;):</strong> A neutron decays into a proton, emitting an electron and an electron antineutrino.</p>
+<div class="equation">n &#8594; p + e&#8315; + &#957;&#772;<sub>e</sub></div>
+<p>At quark level: d &#8594; u + e&#8315; + &#957;&#772;<sub>e</sub> (mediated by W&#8315; boson)</p>
+<p>The down quark emits a W&#8315; boson (changing to an up quark), and the W&#8315; immediately decays into an electron and electron antineutrino.</p>
 
-<p><strong>Beta-plus decay (β⁺):</strong> A proton decays into a neutron, emitting a positron and an electron neutrino.</p>
-<div class="equation">p → n + e⁺ + νₑ</div>
-<p>At quark level: u → d + e⁺ + νₑ (mediated by W⁺ boson)</p>
+<p><strong>Beta-plus decay (&#946;&#8314;):</strong> A proton decays into a neutron, emitting a positron and an electron neutrino.</p>
+<div class="equation">p &#8594; n + e&#8314; + &#957;<sub>e</sub></div>
+<p>At quark level: u &#8594; d + e&#8314; + &#957;<sub>e</sub> (mediated by W&#8314; boson)</p>
+
+<p><strong>Electron capture:</strong> An inner orbital electron is captured by a proton in the nucleus:</p>
+<div class="equation">p + e&#8315; &#8594; n + &#957;<sub>e</sub></div>
+<p>This is an alternative to beta-plus decay and is mediated by a W&#8314; boson.</p>
 
 <h2>8.5 Feynman Diagrams</h2>
 
-<p><strong>Feynman diagrams</strong> are spacetime diagrams that represent particle interactions. Convention:</p>
+<p><strong>Feynman diagrams</strong> are spacetime diagrams that represent particle interactions. They are not literal pictures of what happens but are powerful tools for visualising and calculating interaction probabilities.</p>
+
+<p>Convention:</p>
 <ul>
-    <li>Time axis runs upward (or left to right — check the diagram)</li>
+    <li>Time axis runs upward (or left to right &#8212; check the diagram)</li>
     <li>Straight lines represent fermions (particles/antiparticles)</li>
     <li>Wavy lines represent photons or W/Z bosons</li>
     <li>Curly lines represent gluons</li>
@@ -391,26 +208,68 @@
     <li>At each vertex, charge, baryon number, and lepton number are conserved</li>
 </ul>
 
-<p><strong>Electromagnetic interaction example:</strong> Electron-electron repulsion — two electrons exchange a virtual photon.</p>
+<!-- SVG: Feynman Diagrams -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 520 250" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="fd1" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto"><polygon points="0 0, 6 2, 0 4" fill="#1a1a2e"/></marker>
+        </defs>
+        <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Feynman Diagrams</text>
 
-<p><strong>Weak interaction example:</strong> Beta-minus decay — a down quark emits a W⁻ boson and becomes an up quark. The W⁻ then decays into an electron and an electron antineutrino.</p>
+        <!-- Beta-minus decay -->
+        <text x="130" y="45" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">Beta-minus Decay</text>
+        <!-- Time arrow -->
+        <text x="30" y="80" font-family="system-ui" font-size="9" fill="#999">time &#8593;</text>
+        <!-- Down quark in -->
+        <line x1="50" y1="210" x2="130" y2="130" stroke="#1a73e8" stroke-width="2" marker-end="url(#fd1)"/>
+        <text x="45" y="220" font-family="system-ui" font-size="10" fill="#1a73e8">d</text>
+        <!-- Up quark out -->
+        <line x1="130" y1="130" x2="50" y2="60" stroke="#1a73e8" stroke-width="2" marker-end="url(#fd1)"/>
+        <text x="45" y="55" font-family="system-ui" font-size="10" fill="#1a73e8">u</text>
+        <!-- W- boson -->
+        <path d="M 130,130 Q 155,130 170,130 Q 185,130 200,130" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="0" />
+        <line x1="130" y1="130" x2="200" y2="130" stroke="#DC2626" stroke-width="2"/>
+        <text x="165" y="120" font-family="system-ui" font-size="10" fill="#DC2626" text-anchor="middle" font-weight="600">W&#8315;</text>
+        <!-- Electron out -->
+        <line x1="200" y1="130" x2="230" y2="210" stroke="#16A34A" stroke-width="2" marker-end="url(#fd1)"/>
+        <text x="238" y="215" font-family="system-ui" font-size="10" fill="#16A34A">e&#8315;</text>
+        <!-- Antineutrino out -->
+        <line x1="200" y1="130" x2="230" y2="60" stroke="#16A34A" stroke-width="2"/>
+        <text x="238" y="55" font-family="system-ui" font-size="10" fill="#16A34A">&#957;&#772;<tspan font-size="8" dy="2">e</tspan></text>
 
-<div class="exam-tip">When drawing Feynman diagrams, always check conservation of charge at every vertex. The W⁺ carries charge +1 and the W⁻ carries charge −1. The Z⁰ and photon are neutral.</div>
+        <!-- Electron-electron repulsion -->
+        <text x="400" y="45" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">EM Repulsion</text>
+        <!-- Electron 1 -->
+        <line x1="320" y1="210" x2="380" y2="130" stroke="#1a73e8" stroke-width="2" marker-end="url(#fd1)"/>
+        <text x="315" y="220" font-family="system-ui" font-size="10" fill="#1a73e8">e&#8315;</text>
+        <line x1="380" y1="130" x2="320" y2="60" stroke="#1a73e8" stroke-width="2" marker-end="url(#fd1)"/>
+        <text x="315" y="55" font-family="system-ui" font-size="10" fill="#1a73e8">e&#8315;</text>
+        <!-- Photon -->
+        <path d="M 380,130 Q 395,120 410,130 Q 425,140 440,130" fill="none" stroke="#D97706" stroke-width="2"/>
+        <text x="410" y="118" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="middle" font-weight="600">&#947;</text>
+        <!-- Electron 2 -->
+        <line x1="480" y1="210" x2="440" y2="130" stroke="#1a73e8" stroke-width="2" marker-end="url(#fd1)"/>
+        <text x="485" y="220" font-family="system-ui" font-size="10" fill="#1a73e8">e&#8315;</text>
+        <line x1="440" y1="130" x2="480" y2="60" stroke="#1a73e8" stroke-width="2" marker-end="url(#fd1)"/>
+        <text x="485" y="55" font-family="system-ui" font-size="10" fill="#1a73e8">e&#8315;</text>
+    </svg>
+</div>
+
+<div class="exam-tip">When drawing Feynman diagrams, always check conservation of charge at every vertex. The W&#8314; carries charge +1 and the W&#8315; carries charge &#8722;1. The Z&#8304; and photon are neutral. At the quark-W vertex in beta-minus decay: charge in = &#8722;1/3 (d quark); charge out = +2/3 (u quark) + (&#8722;1) from W&#8315;. Check: +2/3 &#8722; 1 = &#8722;1/3 &#10003;</div>
 
 <h2>8.6 The Standard Model</h2>
 
 <p>The <strong>Standard Model</strong> of particle physics classifies all known fundamental particles and describes three of the four fundamental forces (excluding gravity).</p>
 
 <ul>
-    <li><strong>Fermions</strong> (matter particles, spin ½): 6 quarks + 6 leptons (plus their antiparticles)</li>
-    <li><strong>Bosons</strong> (force carriers, integer spin): photon, W±, Z⁰, gluons, Higgs boson</li>
+    <li><strong>Fermions</strong> (matter particles, spin &#189;): 6 quarks + 6 leptons (plus their antiparticles) = 24 matter particles</li>
+    <li><strong>Bosons</strong> (force carriers, integer spin): photon, W&#177;, Z&#8304;, 8 gluons, Higgs boson = 13 force/field particles</li>
 </ul>
 
 <!-- SVG: Standard Model Classification -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 520 300" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
         <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">The Standard Model of Particle Physics</text>
-
         <!-- Quarks -->
         <rect x="20" y="40" width="230" height="130" fill="#eff6ff" stroke="#1a73e8" stroke-width="1.5" rx="8"/>
         <text x="135" y="58" font-family="system-ui" font-size="12" fill="#1a73e8" text-anchor="middle" font-weight="600">Quarks (feel strong force)</text>
@@ -425,106 +284,159 @@
         <text x="62" y="150" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Gen 1</text>
         <text x="132" y="150" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Gen 2</text>
         <text x="202" y="150" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Gen 3</text>
-
         <!-- Leptons -->
         <rect x="260" y="40" width="230" height="130" fill="#fef3c7" stroke="#D97706" stroke-width="1.5" rx="8"/>
         <text x="375" y="58" font-family="system-ui" font-size="12" fill="#D97706" text-anchor="middle" font-weight="600">Leptons (no strong force)</text>
         <g font-family="system-ui" font-size="10" fill="#1a1a2e">
             <rect x="270" y="65" width="65" height="30" fill="#fef9c3" rx="4"/><text x="302" y="78" text-anchor="middle" font-weight="600">e</text><text x="302" y="90" text-anchor="middle" font-size="8">electron -1</text>
-            <rect x="340" y="65" width="65" height="30" fill="#fef9c3" rx="4"/><text x="372" y="78" text-anchor="middle" font-weight="600">μ</text><text x="372" y="90" text-anchor="middle" font-size="8">muon -1</text>
-            <rect x="410" y="65" width="65" height="30" fill="#fef9c3" rx="4"/><text x="442" y="78" text-anchor="middle" font-weight="600">τ</text><text x="442" y="90" text-anchor="middle" font-size="8">tau -1</text>
-            <rect x="270" y="100" width="65" height="30" fill="#fef9c3" rx="4"/><text x="302" y="113" text-anchor="middle" font-weight="600">νe</text><text x="302" y="125" text-anchor="middle" font-size="8">e-neutrino 0</text>
-            <rect x="340" y="100" width="65" height="30" fill="#fef9c3" rx="4"/><text x="372" y="113" text-anchor="middle" font-weight="600">νμ</text><text x="372" y="125" text-anchor="middle" font-size="8">μ-neutrino 0</text>
-            <rect x="410" y="100" width="65" height="30" fill="#fef9c3" rx="4"/><text x="442" y="113" text-anchor="middle" font-weight="600">ντ</text><text x="442" y="125" text-anchor="middle" font-size="8">τ-neutrino 0</text>
+            <rect x="340" y="65" width="65" height="30" fill="#fef9c3" rx="4"/><text x="372" y="78" text-anchor="middle" font-weight="600">&#956;</text><text x="372" y="90" text-anchor="middle" font-size="8">muon -1</text>
+            <rect x="410" y="65" width="65" height="30" fill="#fef9c3" rx="4"/><text x="442" y="78" text-anchor="middle" font-weight="600">&#964;</text><text x="442" y="90" text-anchor="middle" font-size="8">tau -1</text>
+            <rect x="270" y="100" width="65" height="30" fill="#fef9c3" rx="4"/><text x="302" y="113" text-anchor="middle" font-weight="600">&#957;e</text><text x="302" y="125" text-anchor="middle" font-size="8">e-neutrino 0</text>
+            <rect x="340" y="100" width="65" height="30" fill="#fef9c3" rx="4"/><text x="372" y="113" text-anchor="middle" font-weight="600">&#957;&#956;</text><text x="372" y="125" text-anchor="middle" font-size="8">&#956;-neutrino 0</text>
+            <rect x="410" y="100" width="65" height="30" fill="#fef9c3" rx="4"/><text x="442" y="113" text-anchor="middle" font-weight="600">&#957;&#964;</text><text x="442" y="125" text-anchor="middle" font-size="8">&#964;-neutrino 0</text>
         </g>
-
         <!-- Gauge bosons -->
         <rect x="20" y="185" width="360" height="50" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5" rx="8"/>
         <text x="200" y="203" font-family="system-ui" font-size="12" fill="#16A34A" text-anchor="middle" font-weight="600">Gauge Bosons (force carriers)</text>
         <g font-family="system-ui" font-size="10" fill="#1a1a2e">
-            <rect x="30" y="210" width="70" height="20" fill="#bbf7d0" rx="4"/><text x="65" y="224" text-anchor="middle">γ (EM)</text>
+            <rect x="30" y="210" width="70" height="20" fill="#bbf7d0" rx="4"/><text x="65" y="224" text-anchor="middle">&#947; (EM)</text>
             <rect x="110" y="210" width="70" height="20" fill="#bbf7d0" rx="4"/><text x="145" y="224" text-anchor="middle">g (Strong)</text>
-            <rect x="190" y="210" width="90" height="20" fill="#bbf7d0" rx="4"/><text x="235" y="224" text-anchor="middle">W±, Z⁰ (Weak)</text>
+            <rect x="190" y="210" width="90" height="20" fill="#bbf7d0" rx="4"/><text x="235" y="224" text-anchor="middle">W&#177;, Z&#8304; (Weak)</text>
             <rect x="290" y="210" width="80" height="20" fill="#bbf7d0" rx="4"/><text x="330" y="224" text-anchor="middle">Graviton (?)</text>
         </g>
-
         <!-- Higgs -->
         <rect x="400" y="185" width="100" height="50" fill="#fce7f3" stroke="#DC2626" stroke-width="1.5" rx="8"/>
         <text x="450" y="203" font-family="system-ui" font-size="11" fill="#DC2626" text-anchor="middle" font-weight="600">Scalar Boson</text>
         <rect x="415" y="210" width="70" height="20" fill="#fecdd3" rx="4"/>
         <text x="450" y="224" font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="middle">H (Higgs)</text>
-
-        <!-- FERMIONS / BOSONS labels -->
+        <!-- Labels -->
         <text x="260" y="255" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">Quarks + Leptons = Fermions (matter) | Gauge + Higgs = Bosons (forces)</text>
         <text x="260" y="270" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">Hadrons = quarks bound by strong force: Baryons (3 quarks) + Mesons (quark-antiquark)</text>
     </svg>
 </div>
 
-<p>The <strong>Higgs boson</strong> was confirmed in 2012 at CERN. It is associated with the Higgs field, which gives particles their mass through interaction with the field.</p>
+<p>The <strong>Higgs boson</strong> was confirmed in 2012 at CERN. It is associated with the Higgs field, which gives particles their mass through interaction with the field. Particles that interact more strongly with the Higgs field have greater mass (the top quark interacts most strongly; neutrinos interact very weakly).</p>
 
-<!-- SVG: Nuclear Fission and Fusion -->
-<div style="margin: 20px auto; text-align: center;">
-    <svg viewBox="0 0 500 180" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-        <text x="250" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Nuclear Fission vs Fusion</text>
-
-        <!-- Fission -->
-        <text x="130" y="45" font-family="system-ui" font-size="11" fill="#DC2626" text-anchor="middle" font-weight="600">Fission (heavy nucleus splits)</text>
-        <circle cx="80" cy="90" r="20" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="2"/>
-        <text x="80" y="94" font-family="system-ui" font-size="9" fill="#DC2626" text-anchor="middle">U-235</text>
-        <!-- Neutron in -->
-        <circle cx="40" cy="90" r="4" fill="#1a73e8"/>
-        <text x="40" y="82" font-family="system-ui" font-size="8" fill="#1a73e8" text-anchor="middle">n</text>
-        <line x1="44" y1="90" x2="58" y2="90" stroke="#1a73e8" stroke-width="1"/>
-        <!-- Arrow -->
-        <text x="115" y="94" font-family="system-ui" font-size="16" fill="#64748b">→</text>
-        <!-- Products -->
-        <circle cx="160" cy="75" r="14" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1.5"/>
-        <text x="160" y="79" font-family="system-ui" font-size="8" fill="#D97706" text-anchor="middle">Ba</text>
-        <circle cx="160" cy="108" r="12" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1.5"/>
-        <text x="160" y="112" font-family="system-ui" font-size="8" fill="#16A34A" text-anchor="middle">Kr</text>
-        <!-- Neutrons out -->
-        <circle cx="190" cy="65" r="3" fill="#1a73e8"/><circle cx="195" cy="90" r="3" fill="#1a73e8"/><circle cx="190" cy="120" r="3" fill="#1a73e8"/>
-        <text x="210" y="95" font-family="system-ui" font-size="8" fill="#1a73e8">2-3 neutrons</text>
-        <text x="130" y="150" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">+ Energy released</text>
-        <text x="130" y="165" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">(A > 56, moves UP BE curve)</text>
-
-        <!-- Fusion -->
-        <text x="380" y="45" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">Fusion (light nuclei combine)</text>
-        <circle cx="310" cy="82" r="12" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="2"/>
-        <text x="310" y="86" font-family="system-ui" font-size="8" fill="#1a73e8" text-anchor="middle">²H</text>
-        <circle cx="310" cy="112" r="12" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="2"/>
-        <text x="310" y="116" font-family="system-ui" font-size="8" fill="#1a73e8" text-anchor="middle">³H</text>
-        <!-- Arrow -->
-        <text x="340" y="100" font-family="system-ui" font-size="16" fill="#64748b">→</text>
-        <!-- Products -->
-        <circle cx="390" cy="95" r="18" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="2"/>
-        <text x="390" y="99" font-family="system-ui" font-size="9" fill="#16A34A" text-anchor="middle">⁴He</text>
-        <circle cx="430" cy="80" r="4" fill="#DC2626"/>
-        <text x="445" y="84" font-family="system-ui" font-size="8" fill="#DC2626">n</text>
-        <text x="380" y="150" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">+ Energy released</text>
-        <text x="380" y="165" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">(A < 56, moves UP BE curve)</text>
-    </svg>
+<div class="real-world">
+The discovery of the Higgs boson at the Large Hadron Collider (LHC) at CERN required proton-proton collisions at energies of 7-8 TeV. The LHC accelerates protons to 99.9999991% of the speed of light using superconducting magnets cooled to 1.9 K (colder than outer space). Peter Higgs and Francois Englert were awarded the 2013 Nobel Prize for their theoretical prediction made in 1964.
 </div>
+
+<h3>Limitations of the Standard Model</h3>
+<ul>
+    <li>Does not include gravity (no quantum theory of gravity yet exists)</li>
+    <li>Does not explain dark matter or dark energy (which make up ~95% of the universe)</li>
+    <li>Does not explain why there is more matter than antimatter in the universe</li>
+    <li>Does not predict the masses of particles (these must be measured experimentally)</li>
+    <li>Contains many free parameters (~19) that must be determined by experiment</li>
+</ul>
 
 <h2>8.7 Pair Production and Annihilation</h2>
 
 <div class="definition">
-    <strong>Pair production:</strong> A photon with sufficient energy creates a particle-antiparticle pair. The minimum photon energy required equals the combined rest mass energy of the pair: E = 2mc².
+    <strong>Pair production:</strong> A photon with sufficient energy creates a particle-antiparticle pair. The minimum photon energy required equals the combined rest mass energy of the pair: E = 2mc&#178;.
 </div>
 
-<div class="equation">γ → e⁻ + e⁺ &nbsp; (minimum photon energy = 2 × 0.511 MeV = 1.022 MeV)</div>
+<div class="equation">&#947; &#8594; e&#8315; + e&#8314; &nbsp; (minimum photon energy = 2 &#215; 0.511 MeV = 1.022 MeV)</div>
 
-<p>Pair production must occur near a nucleus (to conserve momentum).</p>
+<p>Pair production must occur near a nucleus (to conserve momentum &#8212; a single photon cannot produce a particle-antiparticle pair in empty space because momentum would not be conserved). The nucleus absorbs the recoil momentum.</p>
 
 <div class="definition">
     <strong>Annihilation:</strong> When a particle meets its antiparticle, they annihilate, converting their combined mass-energy into photon energy. Two photons are produced (to conserve momentum).
 </div>
 
-<div class="equation">e⁻ + e⁺ → 2γ</div>
+<div class="equation">e&#8315; + e&#8314; &#8594; 2&#947;</div>
 
-<p>Each photon has minimum energy E = mc² = 0.511 MeV (for electron-positron annihilation at rest).</p>
+<p>Each photon has minimum energy E = mc&#178; = 0.511 MeV (for electron-positron annihilation at rest). The two photons travel in opposite directions to conserve momentum.</p>
 
-<div class="exam-tip">In annihilation, two photons are produced travelling in opposite directions to conserve momentum. In pair production, a nearby nucleus is needed to absorb recoil momentum.</div>
+<div class="worked-example">
+Calculate the minimum frequency of a photon that can produce an electron-positron pair.<br><br>
+Minimum energy = 2m<sub>e</sub>c&#178; = 2 &#215; 9.11 &#215; 10&#8315;&#179;&#185; &#215; (3.00 &#215; 10&#8312;)&#178; = 1.64 &#215; 10&#8315;&#185;&#179; J<br><br>
+E = hf, so f = E/h = 1.64 &#215; 10&#8315;&#185;&#179; / 6.63 &#215; 10&#8315;&#179;&#8308; = <strong>2.47 &#215; 10&#178;&#8304; Hz</strong><br><br>
+This is in the gamma ray region of the electromagnetic spectrum.
+</div>
+
+<div class="real-world">
+PET (Positron Emission Tomography) scanners exploit electron-positron annihilation. A patient is injected with a radioactive tracer that emits positrons (e.g., fluorine-18 in FDG). Each positron annihilates with a nearby electron, producing two 0.511 MeV gamma photons travelling in opposite directions. Detectors surrounding the patient register coincident pairs, and a computer reconstructs a 3D image showing where the tracer has accumulated (e.g., in tumours, which metabolise glucose rapidly).
+</div>
+
+<div class="exam-tip">In annihilation, two photons are produced travelling in opposite directions to conserve momentum. In pair production, a nearby nucleus is needed to absorb recoil momentum. Always check that both energy and momentum are conserved.</div>
+
+<!-- SVG: Nuclear Fission and Fusion -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 500 180" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="250" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Nuclear Fission vs Fusion</text>
+        <!-- Fission -->
+        <text x="130" y="45" font-family="system-ui" font-size="11" fill="#DC2626" text-anchor="middle" font-weight="600">Fission (heavy nucleus splits)</text>
+        <circle cx="80" cy="90" r="20" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="2"/>
+        <text x="80" y="94" font-family="system-ui" font-size="9" fill="#DC2626" text-anchor="middle">U-235</text>
+        <circle cx="40" cy="90" r="4" fill="#1a73e8"/>
+        <text x="40" y="82" font-family="system-ui" font-size="8" fill="#1a73e8" text-anchor="middle">n</text>
+        <line x1="44" y1="90" x2="58" y2="90" stroke="#1a73e8" stroke-width="1"/>
+        <text x="115" y="94" font-family="system-ui" font-size="16" fill="#64748b">&#8594;</text>
+        <circle cx="160" cy="75" r="14" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1.5"/>
+        <text x="160" y="79" font-family="system-ui" font-size="8" fill="#D97706" text-anchor="middle">Ba</text>
+        <circle cx="160" cy="108" r="12" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1.5"/>
+        <text x="160" y="112" font-family="system-ui" font-size="8" fill="#16A34A" text-anchor="middle">Kr</text>
+        <circle cx="190" cy="65" r="3" fill="#1a73e8"/><circle cx="195" cy="90" r="3" fill="#1a73e8"/><circle cx="190" cy="120" r="3" fill="#1a73e8"/>
+        <text x="210" y="95" font-family="system-ui" font-size="8" fill="#1a73e8">2-3 neutrons</text>
+        <text x="130" y="150" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">+ Energy released</text>
+        <text x="130" y="165" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">(A > 56, moves UP BE curve)</text>
+        <!-- Fusion -->
+        <text x="380" y="45" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">Fusion (light nuclei combine)</text>
+        <circle cx="310" cy="82" r="12" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="2"/>
+        <text x="310" y="86" font-family="system-ui" font-size="8" fill="#1a73e8" text-anchor="middle">&#178;H</text>
+        <circle cx="310" cy="112" r="12" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="2"/>
+        <text x="310" y="116" font-family="system-ui" font-size="8" fill="#1a73e8" text-anchor="middle">&#179;H</text>
+        <text x="340" y="100" font-family="system-ui" font-size="16" fill="#64748b">&#8594;</text>
+        <circle cx="390" cy="95" r="18" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="2"/>
+        <text x="390" y="99" font-family="system-ui" font-size="9" fill="#16A34A" text-anchor="middle">&#8308;He</text>
+        <circle cx="430" cy="80" r="4" fill="#DC2626"/>
+        <text x="445" y="84" font-family="system-ui" font-size="8" fill="#DC2626">n</text>
+        <text x="380" y="150" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">+ Energy released</text>
+        <text x="380" y="165" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">(A &lt; 56, moves UP BE curve)</text>
+    </svg>
+</div>
+
+<h2>8.8 Classification Summary</h2>
+
+<!-- SVG: Particle Classification Tree -->
+<div style="margin: 20px auto; text-align: center;">
+    <svg viewBox="0 0 500 200" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="250" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Particle Classification</text>
+        <!-- All particles -->
+        <rect x="190" y="35" width="120" height="25" fill="#e2e8f0" stroke="#1a1a2e" stroke-width="1.5" rx="5"/>
+        <text x="250" y="52" font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="middle" font-weight="600">All Particles</text>
+        <!-- Split -->
+        <line x1="200" y1="60" x2="120" y2="80" stroke="#1a1a2e" stroke-width="1"/>
+        <line x1="300" y1="60" x2="380" y2="80" stroke="#1a1a2e" stroke-width="1"/>
+        <!-- Hadrons -->
+        <rect x="70" y="80" width="100" height="25" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5" rx="5"/>
+        <text x="120" y="97" font-family="system-ui" font-size="10" fill="#1a73e8" text-anchor="middle" font-weight="600">Hadrons</text>
+        <!-- Leptons -->
+        <rect x="330" y="80" width="100" height="25" fill="#fef3c7" stroke="#D97706" stroke-width="1.5" rx="5"/>
+        <text x="380" y="97" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="middle" font-weight="600">Leptons</text>
+        <!-- Split hadrons -->
+        <line x1="90" y1="105" x2="60" y2="125" stroke="#1a1a2e" stroke-width="1"/>
+        <line x1="150" y1="105" x2="180" y2="125" stroke="#1a1a2e" stroke-width="1"/>
+        <!-- Baryons -->
+        <rect x="15" y="125" width="90" height="25" fill="#eff6ff" stroke="#1a73e8" stroke-width="1" rx="5"/>
+        <text x="60" y="142" font-family="system-ui" font-size="9" fill="#1a73e8" text-anchor="middle" font-weight="600">Baryons (qqq)</text>
+        <!-- Mesons -->
+        <rect x="140" y="125" width="90" height="25" fill="#eff6ff" stroke="#1a73e8" stroke-width="1" rx="5"/>
+        <text x="185" y="142" font-family="system-ui" font-size="9" fill="#1a73e8" text-anchor="middle" font-weight="600">Mesons (q&#7839;)</text>
+        <!-- Examples -->
+        <text x="60" y="168" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">p, n, &#923;, &#931;</text>
+        <text x="185" y="168" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">&#960;, K, &#951;</text>
+        <text x="380" y="122" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">e, &#956;, &#964;, &#957;e, &#957;&#956;, &#957;&#964;</text>
+        <text x="380" y="140" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">(fundamental, no quarks)</text>
+        <!-- Also bosons -->
+        <rect x="330" y="160" width="100" height="25" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5" rx="5"/>
+        <text x="380" y="177" font-family="system-ui" font-size="9" fill="#16A34A" text-anchor="middle" font-weight="600">Bosons (force)</text>
+        <text x="380" y="195" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">&#947;, g, W&#177;, Z&#8304;, H</text>
+    </svg>
+</div>
+
+<div class="exam-tip">A common exam question asks you to classify a particle. The key decision tree is: (1) Does it feel the strong force? If yes &#8594; hadron. If no &#8594; lepton or boson. (2) If hadron: is it 3 quarks (baryon) or quark-antiquark (meson)? (3) Check quantum numbers add up correctly.</div>
 
 </div>
 </body>

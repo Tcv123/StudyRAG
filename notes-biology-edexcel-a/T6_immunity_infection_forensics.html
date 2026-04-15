@@ -25,7 +25,9 @@
         .equation { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; font-family: 'Consolas', monospace; }
         .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
-        @media print { body { padding: 20px; } h2 { break-before: auto; } .definition-box, .exam-tip, .equation { break-inside: avoid; } }
+        .real-world { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
+        .real-world::before { content: "Real-World Example: "; font-weight: 700; color: #15803d; }
+        @media print { body { padding: 20px; } h2 { break-before: auto; } .definition-box, .exam-tip, .equation, .real-world { break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -39,78 +41,118 @@
 <h2>6.1 Pathogens and Disease</h2>
 
 <div class="definition-box">
-    <strong>Pathogen:</strong> A microorganism that causes disease. Pathogens include bacteria, viruses, fungi and protists. They cause disease by producing toxins or by damaging host cells directly.
+    <strong>Pathogen:</strong> A microorganism that causes disease. Pathogens include bacteria, viruses, fungi and protists. They cause disease either by producing toxins (exotoxins released by living cells, endotoxins from cell walls of Gram-negative bacteria) or by directly damaging host cells and tissues.
+</div>
+
+<div class="definition-box">
+    <strong>Disease vs Infection:</strong> An <em>infection</em> occurs when a pathogen enters the body and reproduces. A <em>disease</em> occurs when the infection causes recognisable symptoms due to cell damage or toxin production. Not all infections cause disease &mdash; some individuals can be asymptomatic carriers.
 </div>
 
 <h3>Types of Pathogen</h3>
 <table>
-    <tr><th>Type</th><th>Cell Type</th><th>Key Features</th><th>Example Diseases</th></tr>
-    <tr><td>Bacteria</td><td>Prokaryotic</td><td>Cell wall (peptidoglycan); reproduce by binary fission; some produce exotoxins/endotoxins</td><td>Tuberculosis (TB), cholera, MRSA</td></tr>
-    <tr><td>Viruses</td><td>Acellular (not living)</td><td>DNA or RNA core; protein capsid; obligate intracellular parasites; use host machinery to replicate</td><td>HIV/AIDS, influenza, COVID-19</td></tr>
-    <tr><td>Fungi</td><td>Eukaryotic</td><td>Chitin cell walls; heterotrophic; reproduce by spores</td><td>Athlete's foot, ringworm</td></tr>
-    <tr><td>Protists</td><td>Eukaryotic</td><td>Single-celled; diverse; often vector-transmitted</td><td>Malaria (Plasmodium, vector: Anopheles mosquito)</td></tr>
+    <tr><th>Type</th><th>Cell Type</th><th>Key Features</th><th>Example Diseases</th><th>How They Cause Disease</th></tr>
+    <tr><td>Bacteria</td><td>Prokaryotic</td><td>Cell wall (peptidoglycan); reproduce by binary fission (as fast as every 20 min); some produce exotoxins/endotoxins; 0.2&ndash;10 &micro;m</td><td>TB, cholera, MRSA, Salmonella</td><td>Exotoxins (e.g. cholera toxin opens Cl<sup>&minus;</sup> channels in gut) or endotoxins trigger fever and inflammation</td></tr>
+    <tr><td>Viruses</td><td>Acellular (non-living)</td><td>DNA or RNA core; protein capsid &plusmn; lipid envelope; obligate intracellular parasites; 20&ndash;300 nm; use host ribosomes to replicate</td><td>HIV/AIDS, influenza, COVID-19, Ebola</td><td>Lyse host cells during replication (lytic cycle) or integrate into host DNA (lysogenic cycle); trigger immune-mediated damage</td></tr>
+    <tr><td>Fungi</td><td>Eukaryotic</td><td>Chitin cell walls; heterotrophic (secrete enzymes externally); reproduce by spores; can be unicellular (yeast) or multicellular (moulds)</td><td>Athlete's foot, ringworm, aspergillosis</td><td>Secrete digestive enzymes onto host tissue; absorb nutrients; trigger inflammatory allergic responses</td></tr>
+    <tr><td>Protists</td><td>Eukaryotic</td><td>Single-celled; diverse morphology; often vector-transmitted; complex life cycles</td><td>Malaria (<em>Plasmodium</em>, vector: <em>Anopheles</em> mosquito)</td><td><em>Plasmodium</em> invades red blood cells and liver cells; cells burst releasing merozoites; cycles of fever every 48&ndash;72 h</td></tr>
 </table>
+
+<div class="real-world"><strong>Malaria</strong> kills over 600,000 people annually, mostly children under 5 in sub-Saharan Africa. The parasite <em>Plasmodium falciparum</em> has a complex life cycle involving both the mosquito (sexual reproduction) and the human host (asexual reproduction in liver and red blood cells). Sickle-cell trait (heterozygous HbA/HbS) confers partial resistance to malaria &mdash; an example of heterozygote advantage maintaining allele frequency in affected populations.</div>
 
 <h3>Modes of Transmission</h3>
 <ul>
-    <li><strong>Direct contact</strong> &mdash; skin-to-skin, bodily fluids (STIs, HIV)</li>
-    <li><strong>Airborne (droplet)</strong> &mdash; coughing, sneezing (TB, influenza)</li>
-    <li><strong>Waterborne</strong> &mdash; contaminated water (cholera)</li>
-    <li><strong>Vector-borne</strong> &mdash; transmitted by another organism (malaria via mosquito)</li>
-    <li><strong>Fomites</strong> &mdash; contaminated surfaces/objects</li>
+    <li><strong>Direct contact</strong> &mdash; skin-to-skin, bodily fluids (STIs such as HIV, gonorrhoea; also Ebola through blood/bodily fluids)</li>
+    <li><strong>Airborne (droplet/aerosol)</strong> &mdash; coughing, sneezing produces droplets (&gt;5 &micro;m) or aerosol particles (&lt;5 &micro;m, remain suspended longer). Examples: TB, influenza, COVID-19</li>
+    <li><strong>Waterborne</strong> &mdash; contaminated water supply, often linked to poor sanitation. Examples: cholera (<em>Vibrio cholerae</em>), typhoid</li>
+    <li><strong>Vector-borne</strong> &mdash; transmitted by another organism (the vector). Malaria via <em>Anopheles</em> mosquito; Lyme disease via tick; plague via flea</li>
+    <li><strong>Fomites</strong> &mdash; contaminated surfaces or objects (door handles, medical equipment); norovirus and MRSA commonly spread this way</li>
+    <li><strong>Foodborne</strong> &mdash; contaminated or undercooked food. Salmonella in poultry, <em>E. coli</em> O157 in contaminated beef</li>
 </ul>
+
+<h3>Koch's Postulates</h3>
+<p>In the 19th century, Robert Koch established criteria to prove that a specific microorganism causes a specific disease:</p>
+<ol>
+    <li>The microorganism must be found in abundance in all organisms suffering from the disease, but not in healthy organisms</li>
+    <li>The microorganism must be isolated from a diseased organism and grown in pure culture</li>
+    <li>The cultured microorganism should cause disease when introduced into a healthy organism</li>
+    <li>The microorganism must be re-isolated from the newly diseased organism and shown to be identical to the original</li>
+</ol>
+<p><strong>Limitations:</strong> Some pathogens cannot be cultured (viruses need host cells); some healthy individuals carry pathogens asymptomatically; ethical issues prevent deliberate infection of humans.</p>
 
 <!-- ==================== INNATE IMMUNITY ==================== -->
 <h2>6.2 Non-Specific (Innate) Immune Response</h2>
 
-<p>The innate immune system provides immediate, non-specific defence against all pathogens. It does not involve memory.</p>
+<p>The innate immune system provides immediate (within minutes to hours), non-specific defence against all pathogens. It does not confer immunological memory and responds the same way regardless of previous exposure. It is present from birth and is the first line of defence.</p>
 
-<h3>Physical and Chemical Barriers</h3>
+<h3>Physical and Chemical Barriers (First Line of Defence)</h3>
 <table>
-    <tr><th>Barrier</th><th>Mechanism</th></tr>
-    <tr><td>Skin</td><td>Physical barrier; dead keratinised cells; low pH (sebum); antimicrobial peptides</td></tr>
-    <tr><td>Mucous membranes</td><td>Mucus traps pathogens; ciliated epithelium moves mucus to throat</td></tr>
-    <tr><td>Stomach acid</td><td>HCl (pH 1-2) denatures pathogen proteins and enzymes</td></tr>
-    <tr><td>Lysozyme</td><td>Enzyme in tears, saliva, nasal secretions; breaks down bacterial cell walls</td></tr>
-    <tr><td>Commensal bacteria</td><td>Normal flora outcompete pathogens for resources</td></tr>
+    <tr><th>Barrier</th><th>Mechanism</th><th>Additional Detail</th></tr>
+    <tr><td>Skin</td><td>Physical barrier; outer layer of dead keratinised cells resistant to penetration</td><td>Low pH from sebum (~pH 5.5); antimicrobial peptides (defensins); microbiome outcompetes pathogens; intact skin is nearly impenetrable</td></tr>
+    <tr><td>Mucous membranes</td><td>Mucus traps pathogens; ciliated epithelium (mucociliary escalator) sweeps mucus towards throat</td><td>Lines respiratory tract, GI tract, urogenital tract; goblet cells secrete mucus; cilia beat 10&ndash;20 times per second</td></tr>
+    <tr><td>Stomach acid</td><td>HCl creates pH 1&ndash;2 environment; denatures pathogen proteins and enzymes</td><td>Pepsin (optimum pH 2) also destroys ingested pathogens; this is why oral vaccines must be protected from stomach acid</td></tr>
+    <tr><td>Lysozyme</td><td>Enzyme in tears, saliva, nasal secretions; hydrolyses glycosidic bonds in bacterial peptidoglycan cell walls</td><td>Causes lysis of Gram-positive bacteria particularly; part of innate chemical defence</td></tr>
+    <tr><td>Commensal bacteria</td><td>Normal flora (~100 trillion bacteria) outcompete pathogens for resources and attachment sites</td><td>Produce bacteriocins; lower local pH; why broad-spectrum antibiotics can cause secondary infections (e.g. <em>Clostridium difficile</em>)</td></tr>
+    <tr><td>Blood clotting</td><td>Platelets aggregate at wound site; fibrinogen &rarr; fibrin mesh traps blood cells, sealing the wound</td><td>Prevents entry of pathogens through broken skin</td></tr>
 </table>
 
-<h3>Inflammatory Response</h3>
-<p>When tissue is damaged or infected: mast cells release <strong>histamine</strong> &rarr; vasodilation and increased permeability of capillaries &rarr; plasma and white blood cells (phagocytes) move to the site &rarr; redness, swelling, heat, pain. This recruits more immune cells to the area of infection.</p>
+<h3>The Inflammatory Response (Second Line of Defence)</h3>
+<p>When tissue is damaged or infected, the following cascade occurs:</p>
+<ol>
+    <li>Damaged cells and <strong>mast cells</strong> release <strong>histamine</strong> and other chemical mediators (cytokines, prostaglandins)</li>
+    <li>Histamine causes <strong>vasodilation</strong> (arterioles widen) and <strong>increased permeability</strong> of capillary walls</li>
+    <li>More blood flows to the area &rarr; redness and heat. Increased permeability allows plasma and white blood cells (neutrophils, macrophages) to leave the blood and enter the tissue (<strong>diapedesis</strong>)</li>
+    <li>Phagocytes are attracted to the site by chemical signals (<strong>chemotaxis</strong>)</li>
+    <li>Swelling (oedema) and pain result from fluid accumulation and pressure on nerve endings</li>
+</ol>
+<p>The four cardinal signs of inflammation: <strong>redness</strong> (rubor), <strong>heat</strong> (calor), <strong>swelling</strong> (tumor), <strong>pain</strong> (dolor).</p>
+
+<div class="exam-tip">Do not confuse inflammation with infection. Inflammation is the body's non-specific response to tissue damage (which could be caused by infection, but also by injury, burns, or allergens). It is a protective mechanism that recruits immune cells to the damaged area.</div>
 
 <h3>Phagocytosis</h3>
 <ol>
-    <li>Phagocyte (neutrophil or macrophage) detects pathogen (attracted by chemicals &mdash; chemotaxis)</li>
-    <li>Phagocyte engulfs pathogen by endocytosis, forming a <strong>phagosome</strong></li>
-    <li>Lysosomes fuse with phagosome, forming a <strong>phagolysosome</strong></li>
-    <li>Hydrolytic enzymes (lysozyme, proteases) digest the pathogen</li>
-    <li>Macrophages present pathogen antigens on their surface (become <strong>antigen-presenting cells</strong>, APCs) to activate the adaptive immune response</li>
+    <li>Phagocyte (neutrophil or macrophage) detects pathogen, attracted by chemicals released at the site of infection (<strong>chemotaxis</strong>). Pathogen may be recognised by its PAMPs (pathogen-associated molecular patterns) binding to PRRs (pattern recognition receptors) on the phagocyte</li>
+    <li>Phagocyte engulfs pathogen by endocytosis (membrane extends pseudopodia around the pathogen), forming a <strong>phagosome</strong></li>
+    <li>Lysosomes fuse with the phagosome, forming a <strong>phagolysosome</strong></li>
+    <li>Hydrolytic enzymes (lysozyme, proteases, nucleases) and reactive oxygen species digest and destroy the pathogen</li>
+    <li><strong>Neutrophils</strong> die after phagocytosis (forming pus); <strong>macrophages</strong> survive and present pathogen antigens on their surface via MHC II proteins, becoming <strong>antigen-presenting cells (APCs)</strong> that activate the adaptive immune response</li>
 </ol>
+
+<div class="real-world"><strong>Pus</strong> is composed of dead neutrophils, dead bacteria, tissue fluid, and dead cells. An abscess forms when pus accumulates in an enclosed tissue space. This is a visible sign that the innate immune system is actively fighting infection.</div>
+
+<h3>Opsonisation</h3>
+<p><strong>Opsonins</strong> are molecules (such as antibodies or complement proteins) that coat the surface of a pathogen, making it more recognisable to phagocytes. The opsonin acts as a bridge between the pathogen and the phagocyte receptor, dramatically increasing the rate of phagocytosis. This links innate and adaptive immunity.</p>
 
 <!-- ==================== ADAPTIVE IMMUNITY ==================== -->
 <h2>6.3 Specific (Adaptive) Immune Response</h2>
 
 <div class="definition-box">
-    <strong>Antigen:</strong> A molecule (usually protein or glycoprotein) on the surface of a cell that can trigger an immune response. Self-antigens are recognised as "self"; foreign antigens trigger immune attack.
+    <strong>Antigen:</strong> A molecule (usually a protein or glycoprotein) on the surface of a cell that can trigger an immune response. Self-antigens on body cells are recognised as "self" and tolerated. Foreign antigens (on pathogens, transplanted tissue, toxins) trigger an immune attack. Antigens are typically large molecules with a specific 3D shape that a complementary receptor/antibody can bind to.
+</div>
+
+<div class="definition-box">
+    <strong>Self vs Non-Self:</strong> Every nucleated body cell displays <strong>MHC (Major Histocompatibility Complex)</strong> proteins on its surface, which are unique to each individual (except identical twins). The immune system is trained during development to tolerate self-MHC markers. Any cell lacking the correct MHC is attacked. This is why organ transplant rejection occurs and why immunosuppressant drugs are needed.
 </div>
 
 <h3>T Lymphocytes (Cell-Mediated Response)</h3>
-<p>T cells mature in the <strong>thymus</strong> and have specific T-cell receptors that recognise antigens presented by APCs on MHC proteins.</p>
+<p>T cells are produced in the <strong>bone marrow</strong> but mature in the <strong>thymus</strong> (where self-reactive T cells are destroyed &mdash; central tolerance). Each T cell has a unique <strong>T-cell receptor (TCR)</strong> that recognises a specific antigen presented on an MHC protein by an APC.</p>
 <table>
-    <tr><th>Type</th><th>Function</th></tr>
-    <tr><td>T helper cells (T<sub>H</sub>)</td><td>Release cytokines that activate B cells and T killer cells; stimulate phagocytosis</td></tr>
-    <tr><td>T killer/cytotoxic cells (T<sub>C</sub>)</td><td>Destroy infected body cells, cancer cells and transplant cells by releasing perforin (creates pores) and granzymes</td></tr>
-    <tr><td>T regulatory cells (T<sub>reg</sub>)</td><td>Suppress immune response; prevent autoimmunity; maintain tolerance to self-antigens</td></tr>
-    <tr><td>T memory cells</td><td>Remain in body long-term; rapid response on re-infection (immunological memory)</td></tr>
+    <tr><th>Type</th><th>Function</th><th>Key Detail</th></tr>
+    <tr><td>T helper cells (T<sub>H</sub>), CD4+</td><td>Release cytokines that activate B cells, T killer cells, and macrophages; stimulate clonal expansion</td><td>Central coordinators of the immune response. HIV specifically targets and destroys T<sub>H</sub> cells (binds CD4 receptor), which is why AIDS causes immunodeficiency</td></tr>
+    <tr><td>T killer/cytotoxic cells (T<sub>C</sub>), CD8+</td><td>Destroy infected body cells, cancer cells, and transplanted cells</td><td>Release <strong>perforin</strong> (creates pores in target cell membrane) and <strong>granzymes</strong> (enter through pores and trigger apoptosis &mdash; programmed cell death)</td></tr>
+    <tr><td>T regulatory cells (T<sub>reg</sub>)</td><td>Suppress immune response after infection is cleared; prevent autoimmunity</td><td>Maintain tolerance to self-antigens; secrete inhibitory cytokines (IL-10, TGF-beta). Dysfunction leads to autoimmune diseases</td></tr>
+    <tr><td>T memory cells</td><td>Remain in body for years or decades; rapid response on re-infection</td><td>Responsible for immunological memory; can persist for a lifetime; divide rapidly on re-exposure to same antigen</td></tr>
 </table>
 
+<div class="exam-tip">The cell-mediated response is particularly important against: (1) intracellular pathogens (viruses, TB bacteria that live inside cells), (2) cancer cells displaying abnormal antigens, (3) transplant rejection, (4) fungal infections. Remember: T cells cannot detect free-floating pathogens &mdash; they need antigens presented on MHC proteins.</div>
+
 <h3>B Lymphocytes (Humoral Response)</h3>
-<p>B cells mature in the <strong>bone marrow</strong> and produce <strong>antibodies</strong> (immunoglobulins).</p>
+<p>B cells mature in the <strong>bone marrow</strong> and each produces a unique <strong>antibody</strong> (immunoglobulin) displayed on its surface as a B-cell receptor. The humoral response targets pathogens in body fluids (blood, lymph, tissue fluid).</p>
 <ol>
-    <li>B cell with complementary antibody on its surface binds to a specific antigen</li>
-    <li>T helper cell activates the B cell (via cytokines)</li>
-    <li>B cell undergoes <strong>clonal expansion</strong> (rapid mitosis)</li>
-    <li>B cells differentiate into <strong>plasma cells</strong> (secrete large quantities of specific antibodies) and <strong>B memory cells</strong></li>
+    <li>A B cell with a complementary antibody on its surface encounters and binds to a specific antigen (the B cell may also engulf and present the antigen on its MHC II)</li>
+    <li>A T helper cell with a complementary TCR binds to the antigen-MHC II complex on the B cell and releases <strong>cytokines</strong> (interleukins) that activate the B cell</li>
+    <li>The activated B cell undergoes <strong>clonal expansion</strong> (rapid mitotic division producing many identical clones)</li>
+    <li>Most clones differentiate into <strong>plasma cells</strong> (effector B cells) that secrete large quantities of specific antibodies (up to 2,000 molecules per second per cell) into the blood and lymph</li>
+    <li>Some clones become <strong>B memory cells</strong> that persist long-term and enable a faster, stronger secondary response</li>
 </ol>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -126,7 +168,6 @@
   <!-- Pathogen with antigens -->
   <circle cx="65" cy="100" r="30" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="2"/>
   <text x="65" y="97" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Pathogen</text>
-  <!-- Antigens on surface -->
   <polygon points="55,70 60,58 65,70" fill="#DC2626" opacity="0.6"/>
   <polygon points="80,75 90,68 85,80" fill="#DC2626" opacity="0.6"/>
   <polygon points="40,85 30,80 38,92" fill="#DC2626" opacity="0.6"/>
@@ -137,11 +178,10 @@
   <polygon points="125,96 135,100 125,104" fill="#D97706"/>
   <text x="115" y="88" text-anchor="middle" class="small-label" fill="#D97706">Phagocytosis</text>
 
-  <!-- APC (macrophage presenting antigen) -->
+  <!-- APC -->
   <circle cx="175" cy="100" r="30" fill="#D97706" opacity="0.12" stroke="#D97706" stroke-width="2"/>
   <text x="175" y="97" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">APC</text>
   <text x="175" y="110" text-anchor="middle" font-size="9" fill="#D97706" font-family="system-ui">(macrophage)</text>
-  <!-- Presented antigen -->
   <polygon points="170,70 175,58 180,70" fill="#DC2626" opacity="0.6"/>
   <text x="175" y="52" text-anchor="middle" class="small-label" fill="#DC2626">Presented</text>
   <text x="175" y="42" text-anchor="middle" class="small-label" fill="#DC2626">antigen</text>
@@ -155,7 +195,7 @@
   <text x="280" y="96" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">T Helper</text>
   <text x="280" y="109" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">Cell</text>
 
-  <!-- Arrow to B cell (cytokines) -->
+  <!-- Arrow to B cell -->
   <line x1="308" y1="100" x2="345" y2="100" stroke="#16A34A" stroke-width="2"/>
   <polygon points="345,96 355,100 345,104" fill="#16A34A"/>
   <text x="330" y="88" text-anchor="middle" class="small-label" fill="#16A34A">Cytokines</text>
@@ -165,24 +205,22 @@
   <text x="390" y="96" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">B Cell</text>
   <text x="390" y="109" text-anchor="middle" font-size="9" fill="#1a73e8" font-family="system-ui">(activated)</text>
 
-  <!-- Arrow down: Clonal expansion -->
+  <!-- Clonal expansion arrow -->
   <line x1="390" y1="128" x2="390" y2="165" stroke="#1a73e8" stroke-width="2"/>
   <polygon points="386,165 390,175 394,165" fill="#1a73e8"/>
   <text x="440" y="152" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Clonal</text>
   <text x="440" y="165" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">expansion</text>
 
-  <!-- Fork into plasma cells and memory cells -->
-  <!-- Plasma cells (left branch) -->
+  <!-- Plasma cells -->
   <line x1="390" y1="180" x2="310" y2="215" stroke="#1a73e8" stroke-width="2"/>
   <polygon points="313,211 307,219 317,217" fill="#1a73e8"/>
   <ellipse cx="280" cy="240" rx="45" ry="25" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="2"/>
   <text x="280" y="237" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Plasma Cells</text>
   <text x="280" y="250" text-anchor="middle" font-size="9" fill="#1a73e8" font-family="system-ui">(effector B cells)</text>
 
-  <!-- Antibodies from plasma cells -->
+  <!-- Antibodies -->
   <line x1="280" y1="265" x2="280" y2="290" stroke="#1a73e8" stroke-width="2"/>
   <polygon points="276,290 280,300 284,290" fill="#1a73e8"/>
-  <!-- Y-shaped antibody symbols -->
   <path d="M 245,310 L 255,300 L 260,310" fill="none" stroke="#1a73e8" stroke-width="2"/>
   <line x1="257" y1="305" x2="257" y2="320" stroke="#1a73e8" stroke-width="2"/>
   <path d="M 275,310 L 285,300 L 290,310" fill="none" stroke="#1a73e8" stroke-width="2"/>
@@ -191,7 +229,7 @@
   <line x1="312" y1="305" x2="312" y2="320" stroke="#1a73e8" stroke-width="2"/>
   <text x="282" y="328" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Antibodies secreted</text>
 
-  <!-- Memory cells (right branch) -->
+  <!-- Memory cells -->
   <line x1="390" y1="180" x2="470" y2="215" stroke="#16A34A" stroke-width="2"/>
   <polygon points="467,211 474,219 472,210" fill="#16A34A"/>
   <ellipse cx="500" cy="240" rx="50" ry="25" fill="#16A34A" opacity="0.12" stroke="#16A34A" stroke-width="2"/>
@@ -204,7 +242,12 @@
 </div>
 
 <h3>Antibody Structure and Function</h3>
-<p>Antibodies are Y-shaped glycoproteins with two heavy chains and two light chains, linked by disulfide bonds. The <strong>variable region</strong> (at the tips) forms the antigen-binding site and is specific to one antigen. The <strong>constant region</strong> determines the antibody class and effector function.</p>
+<p>Antibodies (immunoglobulins) are Y-shaped glycoproteins consisting of <strong>two identical heavy chains</strong> and <strong>two identical light chains</strong>, held together by <strong>disulfide bonds</strong>. The molecule has two distinct functional regions:</p>
+<ul>
+    <li><strong>Variable region (Fab)</strong> &mdash; at the tips of the Y; forms the <strong>antigen-binding site</strong>. The amino acid sequence varies enormously between antibodies, giving each a unique 3D shape complementary to one specific antigen. Each antibody has two identical binding sites</li>
+    <li><strong>Constant region (Fc)</strong> &mdash; the stem of the Y; determines the <strong>class</strong> (IgG, IgA, IgM, IgE, IgD) and <strong>effector function</strong> (e.g. ability to cross the placenta, activate complement, bind to mast cells)</li>
+    <li><strong>Hinge region</strong> &mdash; provides flexibility, allowing the two arms to move independently and bind antigens at different angles</li>
+</ul>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 340" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -217,97 +260,95 @@
   <text x="300" y="22" text-anchor="middle" class="title">Antibody (Immunoglobulin) Structure</text>
 
   <!-- Y-shape outline -->
-  <!-- Left arm -->
   <path d="M 150,70 Q 170,70 190,100 Q 210,130 230,150 L 250,170" fill="none" stroke="#1a73e8" stroke-width="3"/>
   <path d="M 180,70 Q 200,75 215,100 Q 230,125 245,145 L 260,160" fill="none" stroke="#1a73e8" stroke-width="3"/>
-  <!-- Right arm -->
   <path d="M 420,70 Q 400,70 380,100 Q 360,130 340,150 L 320,170" fill="none" stroke="#DC2626" stroke-width="3"/>
   <path d="M 390,70 Q 370,75 355,100 Q 340,125 325,145 L 310,160" fill="none" stroke="#DC2626" stroke-width="3"/>
-  <!-- Stem -->
   <line x1="255" y1="165" x2="265" y2="280" stroke="#1a73e8" stroke-width="3"/>
   <line x1="315" y1="165" x2="305" y2="280" stroke="#DC2626" stroke-width="3"/>
 
-  <!-- Fill regions -->
-  <!-- Variable regions (tips) - light colour -->
+  <!-- Variable regions -->
   <path d="M 150,70 Q 170,70 190,100 L 215,100 Q 200,75 180,70 Z" fill="#D97706" opacity="0.2"/>
   <path d="M 420,70 Q 400,70 380,100 L 355,100 Q 370,75 390,70 Z" fill="#D97706" opacity="0.2"/>
 
-  <!-- Constant regions - body of Y -->
+  <!-- Constant regions -->
   <path d="M 190,100 Q 210,130 230,150 L 245,145 Q 230,125 215,100 Z" fill="#1a73e8" opacity="0.1"/>
   <path d="M 380,100 Q 360,130 340,150 L 325,145 Q 340,125 355,100 Z" fill="#DC2626" opacity="0.1"/>
 
   <!-- Hinge region -->
   <ellipse cx="285" cy="165" rx="25" ry="12" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="4,2"/>
-
-  <!-- Disulfide bonds (S-S) in hinge -->
   <line x1="270" y1="160" x2="300" y2="160" stroke="#16A34A" stroke-width="1.5"/>
   <line x1="270" y1="170" x2="300" y2="170" stroke="#16A34A" stroke-width="1.5"/>
   <text x="285" y="155" text-anchor="middle" font-size="8" fill="#16A34A" font-family="system-ui">S-S</text>
   <text x="285" y="178" text-anchor="middle" font-size="8" fill="#16A34A" font-family="system-ui">S-S</text>
 
-  <!-- Antigen binding sites at tips -->
+  <!-- Antigen binding sites -->
   <path d="M 148,68 Q 155,55 168,55 Q 180,55 183,68" fill="none" stroke="#D97706" stroke-width="2.5"/>
   <path d="M 418,68 Q 410,55 398,55 Q 387,55 383,68" fill="none" stroke="#D97706" stroke-width="2.5"/>
-
-  <!-- Antigens fitting into binding sites -->
   <polygon points="160,55 165,42 170,55" fill="#DC2626" opacity="0.5" stroke="#DC2626" stroke-width="1"/>
   <polygon points="398,55 403,42 408,55" fill="#DC2626" opacity="0.5" stroke="#DC2626" stroke-width="1"/>
 
-  <!-- Labels with leader lines -->
-  <!-- Variable region -->
+  <!-- Labels -->
   <line x1="155" y1="85" x2="60" y2="85" stroke="#D97706" stroke-width="1"/>
   <text x="55" y="80" text-anchor="end" class="small-label" fill="#D97706" font-weight="bold">Variable region</text>
   <text x="55" y="93" text-anchor="end" class="small-label" fill="#D97706">(antigen-binding site)</text>
   <text x="55" y="106" text-anchor="end" class="small-label" fill="#D97706">Specific to one antigen</text>
 
-  <!-- Antigen label -->
   <line x1="165" y1="42" x2="100" y2="35" stroke="#DC2626" stroke-width="1"/>
   <text x="55" y="35" text-anchor="end" class="small-label" fill="#DC2626" font-weight="bold">Antigen</text>
 
-  <!-- Light chain -->
   <line x1="400" y1="85" x2="480" y2="60" stroke="#DC2626" stroke-width="1"/>
   <text x="485" y="55" text-anchor="start" class="small-label" fill="#DC2626" font-weight="bold">Light chain</text>
   <text x="485" y="68" text-anchor="start" class="small-label" fill="#DC2626">(shorter)</text>
 
-  <!-- Heavy chain -->
   <line x1="340" y1="145" x2="480" y2="120" stroke="#1a73e8" stroke-width="1"/>
   <text x="485" y="115" text-anchor="start" class="small-label" fill="#1a73e8" font-weight="bold">Heavy chain</text>
   <text x="485" y="128" text-anchor="start" class="small-label" fill="#1a73e8">(longer)</text>
 
-  <!-- Constant region -->
   <line x1="300" y1="230" x2="480" y2="200" stroke="#6b7280" stroke-width="1"/>
-  <text x="485" y="195" text-anchor="start" class="small-label" fill="#6b7280" font-weight="bold">Constant region</text>
+  <text x="485" y="195" text-anchor="start" class="small-label" fill="#6b7280" font-weight="bold">Constant region (Fc)</text>
   <text x="485" y="208" text-anchor="start" class="small-label" fill="#6b7280">(determines class</text>
   <text x="485" y="221" text-anchor="start" class="small-label" fill="#6b7280">and effector function)</text>
 
-  <!-- Hinge label -->
   <line x1="310" y1="165" x2="480" y2="160" stroke="#16A34A" stroke-width="1"/>
   <text x="485" y="157" text-anchor="start" class="small-label" fill="#16A34A" font-weight="bold">Hinge region</text>
   <text x="485" y="170" text-anchor="start" class="small-label" fill="#16A34A">(disulfide bonds,</text>
   <text x="485" y="183" text-anchor="start" class="small-label" fill="#16A34A">flexibility)</text>
 
-  <!-- Summary at bottom -->
   <rect x="60" y="290" width="480" height="40" rx="8" fill="#1a73e8" opacity="0.05" stroke="#1a73e8" stroke-width="1"/>
   <text x="300" y="308" text-anchor="middle" class="small-label" fill="#1a1a2e">Y-shaped glycoprotein: 2 heavy chains + 2 light chains, linked by disulfide bonds</text>
   <text x="300" y="322" text-anchor="middle" class="small-label" fill="#1a1a2e">Each antibody has 2 identical antigen-binding sites (variable regions)</text>
 </svg>
 </div>
 
-<p>Antibodies work by:</p>
+<h3>How Antibodies Destroy Pathogens</h3>
+<p>Antibodies do not directly kill pathogens. Instead, they work by several mechanisms:</p>
 <ul>
-    <li><strong>Agglutination</strong> &mdash; clumping pathogens together (easier for phagocytes)</li>
-    <li><strong>Neutralisation</strong> &mdash; blocking toxins or viral attachment sites</li>
-    <li><strong>Opsonisation</strong> &mdash; coating pathogen to enhance phagocytosis</li>
-    <li><strong>Complement activation</strong> &mdash; triggering complement cascade to lyse cells</li>
+    <li><strong>Agglutination</strong> &mdash; antibodies (especially IgM, which is pentameric with 10 binding sites) cross-link pathogens, clumping them together into large complexes that are easier for phagocytes to engulf and that cannot enter host cells</li>
+    <li><strong>Neutralisation</strong> &mdash; antibodies bind to toxin molecules or to viral attachment proteins, blocking their ability to interact with host cell receptors. For example, antibodies against the influenza haemagglutinin protein prevent the virus from attaching to respiratory epithelial cells</li>
+    <li><strong>Opsonisation</strong> &mdash; antibodies coat the pathogen surface; the Fc region of bound antibodies is recognised by Fc receptors on phagocytes, greatly enhancing phagocytosis (up to 4,000-fold increase)</li>
+    <li><strong>Complement activation</strong> &mdash; the Fc region of bound antibodies triggers the classical complement cascade, a series of ~30 plasma proteins that form a <strong>membrane attack complex (MAC)</strong>, creating pores in the pathogen membrane and causing osmotic lysis</li>
 </ul>
+
+<h3>Antibody Classes</h3>
+<table>
+    <tr><th>Class</th><th>Location</th><th>Key Function</th></tr>
+    <tr><td>IgG</td><td>Blood, tissue fluid</td><td>Most abundant (~75%); crosses placenta (passive immunity to fetus); activates complement; long-lived</td></tr>
+    <tr><td>IgA</td><td>Secretions (saliva, tears, breast milk, mucus)</td><td>Protects mucosal surfaces; main antibody in breast milk (passive immunity to newborn)</td></tr>
+    <tr><td>IgM</td><td>Blood</td><td>First antibody produced in primary response; pentamer with 10 binding sites &mdash; very effective at agglutination</td></tr>
+    <tr><td>IgE</td><td>Bound to mast cells in tissues</td><td>Triggers histamine release in allergic reactions; defence against parasites (helminths)</td></tr>
+    <tr><td>IgD</td><td>B cell surface</td><td>Functions as B cell receptor; role in B cell activation</td></tr>
+</table>
 
 <h3>Primary vs Secondary Immune Response</h3>
 <table>
     <tr><th>Feature</th><th>Primary Response</th><th>Secondary Response</th></tr>
-    <tr><td>Speed</td><td>Slow (days to weeks)</td><td>Rapid (hours to days)</td></tr>
-    <tr><td>Antibody quantity</td><td>Lower concentration</td><td>Much higher concentration</td></tr>
-    <tr><td>Cells involved</td><td>Naive B and T cells</td><td>Memory B and T cells</td></tr>
-    <tr><td>Duration</td><td>Short-lived</td><td>Longer-lasting</td></tr>
+    <tr><td>Speed</td><td>Slow (7&ndash;14 days to peak)</td><td>Rapid (1&ndash;3 days to peak)</td></tr>
+    <tr><td>Antibody quantity</td><td>Lower peak concentration</td><td>Much higher concentration (100&ndash;1000x more)</td></tr>
+    <tr><td>Main antibody class</td><td>IgM initially, then IgG</td><td>Predominantly IgG</td></tr>
+    <tr><td>Cells involved</td><td>Naive B and T cells (clonal selection + expansion needed)</td><td>Memory B and T cells (already expanded, higher numbers)</td></tr>
+    <tr><td>Duration of antibody production</td><td>Short-lived (weeks)</td><td>Longer-lasting (months to years)</td></tr>
+    <tr><td>Affinity of antibodies</td><td>Lower affinity</td><td>Higher affinity (affinity maturation occurs)</td></tr>
 </table>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -323,7 +364,6 @@
   <!-- Axes -->
   <line x1="70" y1="250" x2="570" y2="250" stroke="#1a1a2e" stroke-width="2"/>
   <line x1="70" y1="250" x2="70" y2="50" stroke="#1a1a2e" stroke-width="2"/>
-  <!-- Axis labels -->
   <text x="320" y="280" text-anchor="middle" class="label" fill="#1a1a2e">Time (days)</text>
   <text x="35" y="150" text-anchor="middle" class="label" fill="#1a1a2e" transform="rotate(-90,35,150)">Antibody concentration</text>
 
@@ -334,26 +374,25 @@
   <line x1="320" y1="250" x2="320" y2="255" stroke="#1a1a2e" stroke-width="1"/>
   <line x1="420" y1="250" x2="420" y2="255" stroke="#1a1a2e" stroke-width="1"/>
 
-  <!-- First infection marker -->
+  <!-- Infection markers -->
   <line x1="85" y1="250" x2="85" y2="45" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5,3"/>
   <text x="85" y="42" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">1st infection</text>
 
-  <!-- Second infection marker -->
   <line x1="320" y1="250" x2="320" y2="45" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5,3"/>
   <text x="320" y="42" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">2nd infection</text>
   <text x="320" y="55" text-anchor="middle" class="small-label" fill="#DC2626">(same pathogen)</text>
 
-  <!-- Primary response curve (slow, low) -->
+  <!-- Primary response curve -->
   <path d="M 85,248 Q 100,248 120,230 Q 150,180 170,180 Q 200,180 230,220 Q 260,245 320,248" fill="none" stroke="#1a73e8" stroke-width="3" opacity="0.7"/>
 
-  <!-- Secondary response curve (fast, high) -->
+  <!-- Secondary response curve -->
   <path d="M 320,248 Q 335,240 345,190 Q 355,100 380,80 Q 410,75 440,80 Q 480,100 510,150 Q 540,210 560,240" fill="none" stroke="#16A34A" stroke-width="3" opacity="0.7"/>
 
   <!-- Peak level markers -->
   <line x1="70" y1="180" x2="170" y2="180" stroke="#1a73e8" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
   <line x1="70" y1="78" x2="400" y2="78" stroke="#16A34A" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
 
-  <!-- Labels for curves -->
+  <!-- Labels -->
   <rect x="155" y="130" width="120" height="40" rx="6" fill="#1a73e8" opacity="0.08" stroke="#1a73e8" stroke-width="1"/>
   <text x="215" y="147" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">Primary response</text>
   <text x="215" y="162" text-anchor="middle" class="small-label" fill="#1a73e8">Slow, low antibody</text>
@@ -363,87 +402,143 @@
   <text x="490" y="116" text-anchor="middle" class="small-label" fill="#16A34A">Faster, greater</text>
   <text x="490" y="130" text-anchor="middle" class="small-label" fill="#16A34A">antibody production</text>
 
-  <!-- Annotations -->
   <text x="300" y="295" text-anchor="middle" class="small-label" fill="#6b7280" font-style="italic">Memory cells enable a faster, stronger response upon re-exposure to the same antigen</text>
 </svg>
 </div>
 
-<div class="exam-tip">The secondary response is faster and stronger because memory cells are present in higher numbers, have already undergone clonal selection, and can rapidly differentiate into effector cells without needing the full activation process.</div>
+<div class="exam-tip">The secondary response is faster and stronger because: (1) memory cells are present in much higher numbers than naive cells, (2) they have already undergone clonal selection so no delay in finding the right clone, (3) they have a lower activation threshold, (4) they can rapidly differentiate into effector cells without needing the full activation process. Questions often ask you to explain the shape of the antibody concentration graph &mdash; always refer to memory cells.</div>
 
 <!-- ==================== VACCINATION ==================== -->
 <h2>6.4 Vaccination and Immunity</h2>
 
 <div class="definition-box">
-    <strong>Vaccination:</strong> The administration of an antigen (in a weakened, inactivated or fragment form) to stimulate an immune response and the production of memory cells, providing protection against future infection without causing the disease.
+    <strong>Vaccination (immunisation):</strong> The deliberate administration of antigenic material (vaccine) to stimulate the adaptive immune response and the production of memory cells, providing long-term protection against future infection by the same pathogen, without causing the disease itself.
 </div>
+
+<h3>Types of Vaccine</h3>
+<table>
+    <tr><th>Type</th><th>Description</th><th>Example</th><th>Pros/Cons</th></tr>
+    <tr><td>Live attenuated</td><td>Weakened form of pathogen that replicates but does not cause disease</td><td>MMR, oral polio, BCG (TB)</td><td>Strong, long-lasting immunity (mimics real infection); risk for immunocompromised individuals; needs cold storage</td></tr>
+    <tr><td>Inactivated (killed)</td><td>Pathogen killed by heat/chemicals; cannot replicate</td><td>Influenza (injected), hepatitis A, rabies</td><td>Safer; weaker response; often needs booster doses</td></tr>
+    <tr><td>Subunit/conjugate</td><td>Purified antigen (protein or polysaccharide) from pathogen</td><td>Hepatitis B (HBsAg), HPV, meningococcal</td><td>Very safe; precise immune targeting; may need adjuvant</td></tr>
+    <tr><td>Toxoid</td><td>Inactivated toxin (formaldehyde-treated)</td><td>Tetanus, diphtheria</td><td>Targets the toxin rather than the organism itself</td></tr>
+    <tr><td>mRNA</td><td>mRNA encoding pathogen protein; host cells translate it and display the antigen</td><td>Pfizer/BioNTech and Moderna COVID-19 vaccines</td><td>Rapid development; does not contain live virus; needs ultra-cold storage (some formulations)</td></tr>
+</table>
+
+<h3>Adjuvants and Booster Doses</h3>
+<p><strong>Adjuvants</strong> (e.g. aluminium salts) are substances added to vaccines to enhance the immune response by prolonging antigen exposure, attracting more immune cells to the injection site, or stimulating cytokine release. <strong>Booster doses</strong> are given to re-expose the immune system to the antigen, stimulating memory cells to proliferate again, maintaining high antibody levels and long-term protection.</p>
 
 <h3>Types of Immunity</h3>
 <table>
-    <tr><th>Type</th><th>How Acquired</th><th>Memory Cells?</th><th>Duration</th></tr>
-    <tr><td>Active natural</td><td>Infection with pathogen</td><td>Yes</td><td>Long-lasting</td></tr>
-    <tr><td>Active artificial</td><td>Vaccination</td><td>Yes</td><td>Long-lasting</td></tr>
-    <tr><td>Passive natural</td><td>Antibodies across placenta or in breast milk</td><td>No</td><td>Temporary</td></tr>
-    <tr><td>Passive artificial</td><td>Injection of antibodies (e.g., antivenom)</td><td>No</td><td>Temporary</td></tr>
+    <tr><th>Type</th><th>How Acquired</th><th>Memory Cells?</th><th>Duration</th><th>Example</th></tr>
+    <tr><td>Active natural</td><td>Infection with pathogen</td><td>Yes</td><td>Long-lasting (often lifelong)</td><td>Catching chickenpox</td></tr>
+    <tr><td>Active artificial</td><td>Vaccination</td><td>Yes</td><td>Long-lasting (may need boosters)</td><td>MMR vaccine</td></tr>
+    <tr><td>Passive natural</td><td>Antibodies across placenta (IgG) or in breast milk (IgA)</td><td>No</td><td>Temporary (weeks to months)</td><td>Newborn immunity</td></tr>
+    <tr><td>Passive artificial</td><td>Injection of purified antibodies</td><td>No</td><td>Temporary (weeks)</td><td>Antivenom for snakebite; rabies immunoglobulin</td></tr>
 </table>
 
+<div class="exam-tip">A common exam question asks why passive immunity is temporary: the recipient's own immune system has not been activated, so no memory cells are produced. The injected antibodies are gradually broken down by proteases and not replaced. Active immunity is long-lasting because memory cells persist and can rapidly produce new antibodies on re-exposure.</div>
+
 <h3>Herd Immunity</h3>
-<p>When a high proportion of a population is vaccinated, the pathogen cannot spread easily, protecting unvaccinated individuals (those too young, immunocompromised). The threshold depends on how infectious the pathogen is (e.g., measles requires ~95% coverage).</p>
+<p>When a sufficiently high proportion of a population is immune (through vaccination or prior infection), the pathogen cannot find enough susceptible hosts to maintain transmission chains. This indirectly protects unvaccinated individuals (those too young, immunocompromised, or with medical contraindications). The threshold varies by pathogen:</p>
+<ul>
+    <li><strong>Measles:</strong> ~95% (extremely infectious, R<sub>0</sub> = 12&ndash;18)</li>
+    <li><strong>Polio:</strong> ~80&ndash;85%</li>
+    <li><strong>Influenza:</strong> ~75&ndash;85%</li>
+</ul>
+
+<div class="real-world">The global smallpox eradication campaign (WHO, 1967&ndash;1980) used ring vaccination to achieve herd immunity and eventually eliminate the virus entirely. Smallpox remains the only human disease to have been eradicated through vaccination. Polio eradication is ongoing, with cases reduced by &gt;99% since 1988.</div>
+
+<h3>Ethical Considerations of Vaccination</h3>
+<ul>
+    <li>Balancing individual rights (refusal of treatment) against public health (herd immunity protects vulnerable people)</li>
+    <li>Rare adverse effects weighed against massive public health benefit</li>
+    <li>Equitable global distribution: many LIDCs lack access to vaccines that are routine in HICs</li>
+    <li>Use of animal testing in vaccine development</li>
+    <li>Mandatory vs voluntary vaccination programmes</li>
+</ul>
 
 <!-- ==================== ANTIBIOTICS ==================== -->
 <h2>6.5 Antibiotics and Resistance</h2>
 
 <div class="definition-box">
-    <strong>Antibiotic:</strong> A substance produced by or derived from a microorganism that kills or inhibits the growth of bacteria. Antibiotics do NOT work against viruses (viruses use host cell machinery and lack the targets antibiotics act on).
+    <strong>Antibiotic:</strong> A substance produced by or derived from a microorganism that kills (<strong>bactericidal</strong>) or inhibits the growth of (<strong>bacteriostatic</strong>) bacteria. Antibiotics target specific bacterial structures or metabolic processes that are absent in human cells, which is why they can selectively harm bacteria without damaging the host. Antibiotics do <strong>NOT</strong> work against viruses because viruses lack their own metabolic machinery, cell walls, and ribosomes &mdash; they use host cell components instead.
 </div>
 
 <h3>Mechanisms of Antibiotic Action</h3>
-<ul>
-    <li><strong>Cell wall synthesis inhibitors</strong> (e.g., penicillin) &mdash; prevent cross-linking of peptidoglycan; bactericidal</li>
-    <li><strong>Protein synthesis inhibitors</strong> (e.g., tetracycline, erythromycin) &mdash; bind to 70S ribosomes; bacteriostatic or bactericidal</li>
-    <li><strong>DNA/RNA synthesis inhibitors</strong> (e.g., rifampicin) &mdash; block replication or transcription</li>
-    <li><strong>Membrane disruptors</strong> (e.g., polymyxins) &mdash; increase membrane permeability</li>
-</ul>
+<table>
+    <tr><th>Target</th><th>Mechanism</th><th>Example</th><th>Type</th></tr>
+    <tr><td>Cell wall synthesis</td><td>Prevents cross-linking of peptidoglycan; weakened wall leads to osmotic lysis</td><td>Penicillin, amoxicillin, vancomycin</td><td>Bactericidal</td></tr>
+    <tr><td>Protein synthesis (30S ribosome)</td><td>Binds to 30S subunit of 70S bacterial ribosome; causes misreading of mRNA or blocks tRNA binding</td><td>Tetracycline, streptomycin</td><td>Mostly bacteriostatic</td></tr>
+    <tr><td>Protein synthesis (50S ribosome)</td><td>Binds to 50S subunit; prevents translocation or peptide bond formation</td><td>Erythromycin, chloramphenicol</td><td>Bacteriostatic</td></tr>
+    <tr><td>DNA/RNA synthesis</td><td>Blocks DNA replication (DNA gyrase) or transcription (RNA polymerase)</td><td>Ciprofloxacin, rifampicin</td><td>Bactericidal</td></tr>
+    <tr><td>Cell membrane</td><td>Disrupts membrane integrity; increases permeability leading to leakage of cell contents</td><td>Polymyxins</td><td>Bactericidal</td></tr>
+    <tr><td>Metabolic pathways</td><td>Competitive inhibitor of folic acid synthesis (needed for DNA synthesis)</td><td>Trimethoprim, sulfonamides</td><td>Bacteriostatic</td></tr>
+</table>
 
-<h3>Antibiotic Resistance (MRSA as Example)</h3>
+<div class="exam-tip">A common 6-mark question asks why antibiotics work against bacteria but not viruses. Key points: (1) bacteria have their own ribosomes (70S, different from human 80S) that antibiotics can target, (2) bacteria have peptidoglycan cell walls that antibiotics can disrupt, (3) viruses lack these structures &mdash; they use host cell machinery to replicate, (4) antiviral drugs exist but work by different mechanisms (e.g. inhibiting viral enzymes like reverse transcriptase).</div>
+
+<h3>Antibiotic Resistance</h3>
+<p>Antibiotic resistance is one of the greatest threats to global public health. The mechanism of resistance evolution follows Darwinian natural selection:</p>
 <ol>
-    <li>Random mutation in bacterial DNA gives resistance (e.g., altered target protein, efflux pump, enzyme that breaks down antibiotic)</li>
-    <li>Antibiotic kills non-resistant bacteria (selection pressure)</li>
-    <li>Resistant bacteria survive and reproduce (natural selection)</li>
-    <li>Resistance allele frequency increases in population</li>
-    <li>Horizontal gene transfer (conjugation via plasmids) can spread resistance between species</li>
+    <li>Within any bacterial population, there is <strong>genetic variation</strong> due to random mutations in DNA (and horizontal gene transfer). Some mutations may confer resistance &mdash; these exist <em>before</em> any antibiotic exposure</li>
+    <li>When an antibiotic is applied, it acts as a <strong>selection pressure</strong>: susceptible bacteria are killed or inhibited</li>
+    <li>Resistant bacteria survive and reproduce with reduced competition for resources (<strong>survival of the fittest</strong>)</li>
+    <li>The <strong>resistance allele frequency increases</strong> in the population over subsequent generations (bacteria reproduce rapidly &mdash; generation time can be 20 minutes)</li>
+    <li><strong>Horizontal gene transfer</strong> spreads resistance: conjugation (plasmid transfer between bacteria via pili), transduction (bacteriophage carries gene between bacteria), transformation (uptake of free DNA from environment). Resistance can spread between different species</li>
 </ol>
 
-<div class="exam-tip">Always emphasise that bacteria do NOT "become resistant" in response to antibiotics. Resistance arises from random pre-existing mutations; antibiotics simply select for resistant individuals. This is evolution by natural selection.</div>
+<h3>Mechanisms of Resistance</h3>
+<ul>
+    <li><strong>Altered target site</strong> &mdash; mutation changes the protein the antibiotic normally binds to (e.g. altered penicillin-binding proteins in MRSA)</li>
+    <li><strong>Efflux pumps</strong> &mdash; membrane proteins actively pump the antibiotic out of the bacterial cell before it can act</li>
+    <li><strong>Enzymatic destruction</strong> &mdash; bacteria produce enzymes that break down the antibiotic (e.g. beta-lactamase destroys penicillin's beta-lactam ring)</li>
+    <li><strong>Reduced permeability</strong> &mdash; changes to outer membrane porins reduce antibiotic entry</li>
+    <li><strong>Alternative metabolic pathway</strong> &mdash; bacteria use a different enzyme that is not inhibited by the antibiotic</li>
+</ul>
+
+<div class="real-world"><strong>MRSA (Methicillin-Resistant Staphylococcus aureus)</strong> carries the <em>mecA</em> gene encoding an altered penicillin-binding protein (PBP2a) with low affinity for beta-lactam antibiotics. MRSA is particularly problematic in hospitals (healthcare-associated infections) because patients are often immunocompromised, have open wounds, and are in close proximity. Treatment requires last-resort antibiotics such as vancomycin. Hospital prevention measures include hand hygiene, patient isolation, and screening on admission.</div>
+
+<h3>Combating Resistance</h3>
+<ul>
+    <li>Complete full courses of antibiotics (prevents partially resistant bacteria surviving)</li>
+    <li>Do not use antibiotics for viral infections</li>
+    <li>Restrict use of antibiotics in agriculture and animal farming</li>
+    <li>Develop new antibiotics and alternative therapies (e.g. bacteriophage therapy, antimicrobial peptides)</li>
+    <li>Improved diagnostic tests to identify specific pathogens and targeted treatment</li>
+    <li>Antibiotic stewardship programmes in hospitals</li>
+</ul>
+
+<div class="exam-tip">Always emphasise that bacteria do NOT "become resistant" in response to antibiotics. Resistance arises from random pre-existing mutations; antibiotics simply act as a selection pressure that favours resistant individuals. This is evolution by natural selection &mdash; not Lamarckian inheritance. Examiners will penalise teleological language such as "bacteria develop resistance to survive."</div>
 
 <!-- ==================== FORENSIC BIOLOGY ==================== -->
 <h2>6.6 Forensic Biology</h2>
 
 <h3>DNA Profiling (Genetic Fingerprinting)</h3>
 <div class="definition-box">
-    <strong>DNA profiling:</strong> A technique that uses variable number tandem repeats (VNTRs) or short tandem repeats (STRs) &mdash; non-coding repetitive DNA sequences that vary between individuals &mdash; to produce a unique pattern (profile) for identification.
+    <strong>DNA profiling:</strong> A technique that analyses <strong>short tandem repeats (STRs)</strong> &mdash; short non-coding repetitive DNA sequences (2&ndash;6 base pairs repeated 5&ndash;50 times) that vary in the number of repeats between individuals &mdash; to produce a unique pattern (profile) for identification. STRs are inherited in a Mendelian fashion (co-dominant). The UK national DNA database analyses 16+ STR loci for forensic identification.
 </div>
 
-<h3>Steps in DNA Profiling</h3>
+<h3>Steps in Modern DNA Profiling</h3>
 <ol>
-    <li><strong>DNA extraction</strong> from sample (blood, saliva, hair follicle, semen)</li>
-    <li><strong>PCR amplification</strong> of STR regions (if sample is small)</li>
-    <li><strong>Restriction enzymes</strong> cut DNA at specific recognition sequences (or capillary electrophoresis of PCR products)</li>
-    <li><strong>Gel electrophoresis</strong> separates fragments by size (smaller fragments travel further)</li>
-    <li><strong>Southern blotting</strong> and radioactive/fluorescent probes to visualise specific STR regions</li>
-    <li>Pattern of bands compared between samples</li>
+    <li><strong>DNA extraction</strong> from biological sample (blood, saliva, hair follicle with root, semen, skin cells). Even tiny amounts of DNA can be used thanks to PCR amplification</li>
+    <li><strong>PCR amplification</strong> of specific STR loci. Primers flanking each STR region are used. Fluorescently labelled primers allow detection. Typically 16+ loci are amplified simultaneously (multiplex PCR)</li>
+    <li><strong>Capillary electrophoresis</strong> separates the amplified fragments by size. Smaller fragments migrate faster through the polymer-filled capillary under an electric field</li>
+    <li><strong>Fluorescent detection:</strong> A laser detects the fluorescent labels on fragments as they pass a detector, producing an electropherogram (peaks at specific sizes)</li>
+    <li><strong>Analysis:</strong> The pattern of peaks (alleles at each locus) is compared between samples. A match at all loci tested provides extremely high confidence of identity</li>
 </ol>
 
-<p>Applications: criminal investigations, paternity testing, identification of victims, immigration disputes, evolutionary relationships.</p>
+<p><strong>Note:</strong> The older technique used restriction enzymes to cut DNA at recognition sequences, gel electrophoresis to separate fragments, Southern blotting to transfer to a membrane, and radioactive/fluorescent probes to visualise VNTRs. Modern profiling using PCR and capillary electrophoresis is faster, more sensitive, and requires smaller samples.</p>
 
-<h3>Estimating Time of Death</h3>
-<table>
-    <tr><th>Method</th><th>Principle</th><th>Limitations</th></tr>
-    <tr><td>Body temperature</td><td>Body cools at ~1.5&deg;C/hour until ambient temperature reached</td><td>Affected by body size, clothing, ambient temperature, air movement</td></tr>
-    <tr><td>Rigor mortis</td><td>Muscles stiffen 4&ndash;6 h after death; peaks at 12&ndash;24 h; subsides by 36&ndash;48 h</td><td>Affected by temperature, exercise before death, body mass</td></tr>
-    <tr><td>Degree of decomposition</td><td>Predictable stages: fresh &rarr; bloat &rarr; active decay &rarr; advanced decay &rarr; dry remains</td><td>Affected by temperature, moisture, oxygen, access by insects</td></tr>
-    <tr><td>Entomology (insect succession)</td><td>Specific insects colonise at predictable times; larval development stages indicate time elapsed</td><td>Affected by temperature, location, season, access</td></tr>
-    <tr><td>Extent of decomposition of stomach contents</td><td>Food type and digestion stage indicate time since last meal</td><td>Variation between individuals; need to know last meal time</td></tr>
-</table>
+<h3>Applications of DNA Profiling</h3>
+<ul>
+    <li><strong>Criminal investigations</strong> &mdash; matching suspects to crime scene evidence</li>
+    <li><strong>Paternity/maternity testing</strong> &mdash; child must share alleles with each parent at every locus</li>
+    <li><strong>Identification of disaster victims</strong> &mdash; comparison with relatives or pre-existing DNA records</li>
+    <li><strong>Immigration disputes</strong> &mdash; verifying family relationships</li>
+    <li><strong>Evolutionary relationships</strong> &mdash; comparing STR profiles between species or populations</li>
+    <li><strong>Exonerating wrongly convicted individuals</strong> &mdash; the Innocence Project has freed over 375 people using DNA evidence</li>
+</ul>
 
 <h3>Gel Electrophoresis</h3>
 
@@ -460,15 +555,13 @@
   <!-- Gel box -->
   <rect x="80" y="50" width="350" height="240" rx="8" fill="#1a73e8" opacity="0.04" stroke="#1a73e8" stroke-width="2"/>
 
-  <!-- Negative electrode at top -->
+  <!-- Electrodes -->
   <rect x="80" y="42" width="350" height="10" rx="3" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1"/>
   <text x="60" y="50" text-anchor="end" class="small-label" fill="#DC2626" font-weight="bold">- ve</text>
-
-  <!-- Positive electrode at bottom -->
   <rect x="80" y="288" width="350" height="10" rx="3" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1"/>
   <text x="60" y="296" text-anchor="end" class="small-label" fill="#1a73e8" font-weight="bold">+ ve</text>
 
-  <!-- Wells at top -->
+  <!-- Wells -->
   <rect x="110" y="55" width="30" height="10" rx="2" fill="#1a1a2e" opacity="0.3"/>
   <rect x="170" y="55" width="30" height="10" rx="2" fill="#1a1a2e" opacity="0.3"/>
   <rect x="230" y="55" width="30" height="10" rx="2" fill="#1a1a2e" opacity="0.3"/>
@@ -485,7 +578,7 @@
   <text x="305" y="90" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">2</text>
   <text x="365" y="78" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Victim</text>
 
-  <!-- DNA Ladder bands (size markers) -->
+  <!-- Ladder bands -->
   <rect x="112" y="105" width="26" height="4" rx="1" fill="#6b7280" opacity="0.6"/>
   <rect x="112" y="130" width="26" height="4" rx="1" fill="#6b7280" opacity="0.6"/>
   <rect x="112" y="155" width="26" height="4" rx="1" fill="#6b7280" opacity="0.6"/>
@@ -500,36 +593,35 @@
   <rect x="172" y="220" width="26" height="4" rx="1" fill="#1a73e8" opacity="0.7"/>
   <rect x="172" y="260" width="26" height="4" rx="1" fill="#1a73e8" opacity="0.7"/>
 
-  <!-- Suspect 1 bands (different pattern - no match) -->
+  <!-- Suspect 1 (no match) -->
   <rect x="232" y="120" width="26" height="4" rx="1" fill="#DC2626" opacity="0.7"/>
   <rect x="232" y="155" width="26" height="4" rx="1" fill="#DC2626" opacity="0.7"/>
   <rect x="232" y="200" width="26" height="4" rx="1" fill="#DC2626" opacity="0.7"/>
   <rect x="232" y="240" width="26" height="4" rx="1" fill="#DC2626" opacity="0.7"/>
   <rect x="232" y="265" width="26" height="4" rx="1" fill="#DC2626" opacity="0.7"/>
 
-  <!-- Suspect 2 bands (MATCH with crime scene) -->
+  <!-- Suspect 2 (MATCH) -->
   <rect x="292" y="110" width="26" height="4" rx="1" fill="#16A34A" opacity="0.7"/>
   <rect x="292" y="150" width="26" height="4" rx="1" fill="#16A34A" opacity="0.7"/>
   <rect x="292" y="190" width="26" height="4" rx="1" fill="#16A34A" opacity="0.7"/>
   <rect x="292" y="220" width="26" height="4" rx="1" fill="#16A34A" opacity="0.7"/>
   <rect x="292" y="260" width="26" height="4" rx="1" fill="#16A34A" opacity="0.7"/>
 
-  <!-- Victim bands -->
+  <!-- Victim -->
   <rect x="352" y="115" width="26" height="4" rx="1" fill="#D97706" opacity="0.7"/>
   <rect x="352" y="145" width="26" height="4" rx="1" fill="#D97706" opacity="0.7"/>
   <rect x="352" y="180" width="26" height="4" rx="1" fill="#D97706" opacity="0.7"/>
   <rect x="352" y="235" width="26" height="4" rx="1" fill="#D97706" opacity="0.7"/>
   <rect x="352" y="255" width="26" height="4" rx="1" fill="#D97706" opacity="0.7"/>
 
-  <!-- Size labels on left -->
+  <!-- Size labels -->
   <text x="95" y="109" text-anchor="end" class="small-label" fill="#6b7280">Large</text>
   <text x="95" y="254" text-anchor="end" class="small-label" fill="#6b7280">Small</text>
-  <!-- Arrow showing direction of movement -->
   <line x1="98" y1="115" x2="98" y2="245" stroke="#6b7280" stroke-width="1.5"/>
   <polygon points="94,245 98,258 102,245" fill="#6b7280"/>
   <text x="75" y="180" text-anchor="middle" class="small-label" fill="#6b7280" transform="rotate(-90,75,180)">Migration</text>
 
-  <!-- Annotations on right -->
+  <!-- Match annotation -->
   <rect x="445" y="90" width="145" height="70" rx="6" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.5"/>
   <text x="518" y="108" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">MATCH!</text>
   <text x="518" y="123" text-anchor="middle" class="small-label" fill="#16A34A">Crime scene bands</text>
@@ -541,15 +633,39 @@
   <text x="518" y="206" text-anchor="middle" class="small-label" fill="#1a1a2e">Smaller fragments</text>
   <text x="518" y="220" text-anchor="middle" class="small-label" fill="#1a1a2e">travel further</text>
 
-  <!-- Bottom note -->
   <text x="300" y="318" text-anchor="middle" class="small-label" fill="#6b7280">DNA is negatively charged (phosphate groups) and moves towards the positive electrode</text>
   <text x="300" y="332" text-anchor="middle" class="small-label" fill="#6b7280">STR/VNTR regions vary between individuals, creating unique banding patterns</text>
 </svg>
 </div>
 
-<p>DNA fragments are placed in wells of an agarose gel and an electric current is applied. DNA is negatively charged (phosphate groups), so fragments move towards the positive electrode. Smaller fragments move faster/further. The gel acts as a molecular sieve. Fragments can be visualised with UV light (if stained with ethidium bromide) or by Southern blotting with labelled probes.</p>
+<p>In gel electrophoresis, DNA fragments are placed in wells of an <strong>agarose gel</strong> submerged in buffer solution and an electric current is applied. DNA molecules carry a <strong>negative charge</strong> (due to phosphate groups in the sugar-phosphate backbone), so they migrate towards the <strong>positive electrode (anode)</strong>. The gel acts as a molecular sieve: <strong>smaller fragments move faster and further</strong> because they encounter less resistance passing through the gel pores. Fragments are visualised with UV light (if stained with ethidium bromide or SYBR Green) or by fluorescent labelling.</p>
 
-<div class="exam-tip">In DNA profiling questions: identical twins have the same profile. Children share approximately half their bands with each parent. The probability of two unrelated individuals having the same profile is extremely low (typically 1 in billions when multiple STR loci are tested).</div>
+<div class="exam-tip">In DNA profiling questions: (1) identical twins have the same profile (same DNA), (2) children share approximately half their bands with each parent (one allele from each parent at each locus), (3) the probability of two unrelated individuals having the same profile is extremely low &mdash; typically less than 1 in a billion when 16+ STR loci are tested, (4) DNA profiling does not prove guilt on its own &mdash; it places the individual at the scene but does not explain how the DNA got there (could be contamination or legitimate presence).</div>
+
+<h3>Estimating Time of Death</h3>
+<p>Forensic scientists use multiple methods in combination to estimate the time since death (post-mortem interval), as no single method is fully reliable:</p>
+<table>
+    <tr><th>Method</th><th>Principle</th><th>Timescale</th><th>Limitations</th></tr>
+    <tr><td>Body temperature (algor mortis)</td><td>Body cools at approximately 1.5&deg;C/hour (Newton's law of cooling) until reaching ambient temperature</td><td>First 24 h</td><td>Affected by body mass, clothing, ambient temperature, air movement, body fat, fever at death</td></tr>
+    <tr><td>Rigor mortis</td><td>Muscles stiffen due to ATP depletion and actin-myosin cross-bridge formation. Onset 2&ndash;4 h; fully rigid by 12 h; begins to resolve at 24&ndash;36 h; fully resolved by 48&ndash;60 h</td><td>2&ndash;60 h</td><td>Affected by temperature (faster in heat), physical exertion before death, body mass</td></tr>
+    <tr><td>Livor mortis (hypostasis)</td><td>Blood pools in lowest parts of body due to gravity; initially blanchable (pressing turns skin pale), becomes fixed after 8&ndash;12 h</td><td>0.5&ndash;12 h</td><td>Skin colour may obscure; position changes before fixing affect distribution</td></tr>
+    <tr><td>Degree of decomposition</td><td>Predictable stages: fresh (0&ndash;2 days) &rarr; bloat (2&ndash;6 days) &rarr; active decay (6&ndash;10 days) &rarr; advanced decay (10&ndash;25 days) &rarr; dry/skeletal remains (&gt;25 days)</td><td>Days to months</td><td>Hugely affected by temperature, humidity, oxygen availability, burial, clothing</td></tr>
+    <tr><td>Forensic entomology</td><td>Specific insects colonise corpses in a predictable succession. Blowflies arrive within minutes. Larval (maggot) developmental stages and species present indicate time elapsed</td><td>Hours to months</td><td>Temperature-dependent development; geographical variation in species; access may be restricted</td></tr>
+    <tr><td>Stomach contents</td><td>Food type and degree of digestion indicate time since last meal. Stomach empties approximately 4&ndash;6 h after eating</td><td>Hours</td><td>Must know time of last meal; variation between individuals and food types; drugs/illness affect gastric emptying</td></tr>
+    <tr><td>Vitreous humour potassium</td><td>Potassium concentration in the eye's vitreous humour increases predictably after death as cell membranes break down</td><td>24&ndash;100 h</td><td>Affected by temperature; requires laboratory analysis</td></tr>
+</table>
+
+<div class="exam-tip">When answering questions on time of death estimation, always emphasise that (1) multiple methods should be used in combination for accuracy, (2) each method has limitations and confounding variables, (3) environmental conditions (especially temperature) are the biggest source of error across all methods. Examiners reward answers that discuss limitations as well as principles.</div>
+
+<h3>Decomposition and Succession</h3>
+<p>Decomposition involves both <strong>autolysis</strong> (self-digestion by the body's own enzymes, particularly from lysosomes) and <strong>putrefaction</strong> (bacterial breakdown, especially by anaerobic gut bacteria). The progression of insect colonisation follows a predictable ecological succession:</p>
+<ol>
+    <li><strong>Blowflies</strong> (<em>Calliphora</em>, <em>Lucilia</em>) arrive within minutes to hours; lay eggs in natural orifices and wounds</li>
+    <li><strong>Flesh flies</strong> and other dipterans arrive during bloat stage</li>
+    <li><strong>Beetles</strong> (e.g. <em>Dermestes</em>, hide beetles) arrive during later decay stages when tissue dries</li>
+    <li><strong>Moths and mites</strong> colonise during dry/skeletal stage</li>
+</ol>
+<p>By identifying the species present and measuring the developmental stage of larvae (instar stages), entomologists can calculate a <strong>minimum post-mortem interval</strong> (minimum PMI) using accumulated degree hours or days (ADH/ADD) adjusted for ambient temperature.</p>
 
 </div>
 </body>

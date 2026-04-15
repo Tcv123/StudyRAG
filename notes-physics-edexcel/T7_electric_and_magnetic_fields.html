@@ -5,106 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topic 7 — Electric and Magnetic Fields</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: #1a1a2e;
-            background: #ffffff;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 2rem;
-            color: #1a1a2e;
-            border-bottom: 3px solid #2563eb;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #1e40af;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            padding-left: 10px;
-            border-left: 4px solid #2563eb;
-        }
-        h3 {
-            font-size: 1.2rem;
-            color: #374151;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 12px;
-        }
-        .definition {
-            background: #eff6ff;
-            border-left: 4px solid #2563eb;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip {
-            background: #fffbeb;
-            border-left: 4px solid #f59e0b;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip::before {
-            content: "Exam Tip: ";
-            font-weight: 700;
-            color: #d97706;
-        }
-        .equation {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 12px 20px;
-            margin: 12px 0;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            text-align: center;
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-        th, td {
-            border: 1px solid #d1d5db;
-            padding: 10px 14px;
-            text-align: left;
-        }
-        th {
-            background: #f1f5f9;
-            font-weight: 600;
-            color: #1e40af;
-        }
-        tr:nth-child(even) {
-            background: #f9fafb;
-        }
-        ul, ol {
-            margin: 10px 0 15px 25px;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        strong {
-            color: #1e293b;
-        }
-        @media print {
-            body { padding: 20px; }
-            .exam-tip, .definition { break-inside: avoid; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+        h2 { font-size: 1.5rem; color: #1e40af; margin-top: 35px; margin-bottom: 15px; padding-left: 10px; border-left: 4px solid #2563eb; }
+        h3 { font-size: 1.2rem; color: #374151; margin-top: 20px; margin-bottom: 10px; }
+        p { margin-bottom: 12px; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #d97706; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #16a34a; }
+        .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .real-world::before { content: "Real-World Application: "; font-weight: 700; color: #7c3aed; }
+        .equation { background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 20px; margin: 12px 0; border-radius: 6px; font-size: 1.1rem; text-align: center; font-family: 'Cambria Math', 'Times New Roman', serif; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
+        th { background: #f1f5f9; font-weight: 600; color: #1e40af; }
+        tr:nth-child(even) { background: #f9fafb; }
+        ul, ol { margin: 10px 0 15px 25px; }
+        li { margin-bottom: 6px; }
+        strong { color: #1e293b; }
+        @media print { body { padding: 20px; } .exam-tip, .definition, .worked-example, .real-world { break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -115,17 +38,17 @@
 <h2>7.1 Electric Fields</h2>
 
 <div class="definition">
-    <strong>An electric field</strong> is a region of space where a charged particle experiences a force. Electric field lines show the direction of force on a positive test charge.
+    <strong>An electric field</strong> is a region of space where a charged particle experiences a force. Electric field lines show the direction of force on a positive test charge. Field lines never cross, and their density indicates the field strength.
 </div>
 
 <h3>Radial Fields</h3>
-<p>A <strong>radial field</strong> is produced by a point charge (or a charged sphere). The field lines radiate outward from a positive charge and inward toward a negative charge. The field strength decreases with distance from the charge according to an inverse-square law.</p>
+<p>A <strong>radial field</strong> is produced by a point charge (or a charged sphere). The field lines radiate outward from a positive charge and inward toward a negative charge. The field strength decreases with distance from the charge according to an inverse-square law, meaning that doubling the distance reduces the field strength to one quarter.</p>
 
 <h3>Uniform Fields</h3>
-<p>A <strong>uniform field</strong> exists between two parallel charged plates. The field lines are parallel and equally spaced. The field strength is the same at all points between the plates.</p>
+<p>A <strong>uniform field</strong> exists between two parallel charged plates. The field lines are parallel and equally spaced, indicating that the field strength is the same at all points between the plates (except near the edges where fringing occurs).</p>
 
 <div class="equation">E = V / d</div>
-<p>where V is the potential difference between the plates and d is the separation.</p>
+<p>where V is the potential difference between the plates (V) and d is the separation (m). This equation only applies to a uniform field.</p>
 
 <!-- SVG: Electric Field Lines -->
 <div style="margin: 20px auto; text-align: center;">
@@ -134,26 +57,21 @@
             <marker id="ef1" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto"><polygon points="0 0, 6 2, 0 4" fill="#1a73e8"/></marker>
         </defs>
         <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Electric Field Patterns</text>
-
         <!-- Parallel plates (uniform field) -->
         <text x="130" y="45" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">Uniform Field (Parallel Plates)</text>
-        <!-- Plates -->
         <rect x="50" y="60" width="160" height="6" fill="#DC2626" rx="2"/>
         <text x="220" y="66" font-family="system-ui" font-size="9" fill="#DC2626">+</text>
         <rect x="50" y="194" width="160" height="6" fill="#1a73e8" rx="2"/>
         <text x="220" y="200" font-family="system-ui" font-size="9" fill="#1a73e8">-</text>
-        <!-- Field lines (parallel, equally spaced) -->
         <line x1="80" y1="70" x2="80" y2="190" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
         <line x1="110" y1="70" x2="110" y2="190" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
         <line x1="140" y1="70" x2="140" y2="190" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
         <line x1="170" y1="70" x2="170" y2="190" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
         <text x="130" y="140" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">E = V/d</text>
-
         <!-- Radial field (point charges) -->
         <text x="390" y="45" font-family="system-ui" font-size="11" fill="#1a73e8" text-anchor="middle" font-weight="600">Radial Field (Point Charge +Q)</text>
         <circle cx="390" cy="130" r="14" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="2"/>
         <text x="390" y="134" font-family="system-ui" font-size="11" fill="#DC2626" text-anchor="middle" font-weight="600">+Q</text>
-        <!-- Radial field lines -->
         <line x1="404" y1="130" x2="460" y2="130" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
         <line x1="376" y1="130" x2="320" y2="130" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
         <line x1="390" y1="116" x2="390" y2="60" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
@@ -162,7 +80,6 @@
         <line x1="380" y1="140" x2="340" y2="180" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
         <line x1="400" y1="140" x2="440" y2="180" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
         <line x1="380" y1="120" x2="340" y2="80" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#ef1)"/>
-        <!-- Equipotentials -->
         <circle cx="390" cy="130" r="35" fill="none" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="3,3"/>
         <circle cx="390" cy="130" r="55" fill="none" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="3,3"/>
         <text x="390" y="220" font-family="system-ui" font-size="9" fill="#16A34A" text-anchor="middle">Equipotentials (dashed green)</text>
@@ -172,241 +89,295 @@
 <h3>Coulomb's Law</h3>
 <p>The force between two point charges is given by Coulomb's law:</p>
 
-<div class="equation">F = kQ₁Q₂ / r² = (1 / 4πε₀) × Q₁Q₂ / r²</div>
+<div class="equation">F = kQ&#8321;Q&#8322; / r&#178; = (1 / 4&#960;&#949;&#8320;) &#215; Q&#8321;Q&#8322; / r&#178;</div>
 
-<p>where k = 1/(4πε₀) = 8.99 × 10⁹ N m² C⁻² and ε₀ = 8.85 × 10⁻¹² F m⁻¹ is the permittivity of free space.</p>
-<p>The force is attractive between unlike charges and repulsive between like charges.</p>
+<p>where k = 1/(4&#960;&#949;&#8320;) = 8.99 &#215; 10&#8313; N m&#178; C&#8315;&#178; and &#949;&#8320; = 8.85 &#215; 10&#8315;&#185;&#178; F m&#8315;&#185; is the permittivity of free space.</p>
+<p>The force is attractive between unlike charges and repulsive between like charges. The magnitude of the force follows an inverse-square law with distance.</p>
+
+<div class="worked-example">
+A proton and an electron are separated by 5.3 &#215; 10&#8315;&#185;&#185; m (the Bohr radius of hydrogen). Calculate the electrostatic force between them.<br><br>
+F = kQ&#8321;Q&#8322; / r&#178; = (8.99 &#215; 10&#8313;)(1.60 &#215; 10&#8315;&#185;&#8313;)&#178; / (5.3 &#215; 10&#8315;&#185;&#185;)&#178;<br>
+F = (8.99 &#215; 10&#8313;)(2.56 &#215; 10&#8315;&#179;&#8312;) / (2.81 &#215; 10&#8315;&#178;&#178;)<br>
+F = <strong>8.2 &#215; 10&#8315;&#8312; N</strong><br><br>
+For comparison, the gravitational force between the same particles is approximately 3.6 &#215; 10&#8315;&#8308;&#8311; N, making the electrostatic force about 10&#179;&#8313; times stronger.
+</div>
 
 <h3>Electric Field Strength</h3>
 
 <div class="definition">
     <strong>Electric field strength (E)</strong> at a point is the force per unit positive charge placed at that point.<br>
-    <strong>E = F / Q</strong> &nbsp; (unit: N C⁻¹ or V m⁻¹)
+    <strong>E = F / Q</strong> &nbsp; (unit: N C&#8315;&#185; or V m&#8315;&#185;)
 </div>
 
 <p>For a radial field around a point charge Q:</p>
-<div class="equation">E = kQ / r² = Q / (4πε₀r²)</div>
+<div class="equation">E = kQ / r&#178; = Q / (4&#960;&#949;&#8320;r&#178;)</div>
 
 <p>For a uniform field between parallel plates:</p>
 <div class="equation">E = V / d</div>
 
+<div class="worked-example">
+Two parallel plates are separated by 2.0 cm with a potential difference of 500 V across them. Calculate the electric field strength and the force on an electron between the plates.<br><br>
+E = V / d = 500 / 0.020 = <strong>25 000 V m&#8315;&#185;</strong> = 25 kV m&#8315;&#185;<br><br>
+F = EQ = 25 000 &#215; 1.60 &#215; 10&#8315;&#185;&#8313; = <strong>4.0 &#215; 10&#8315;&#185;&#8309; N</strong>
+</div>
+
 <h3>Electric Potential</h3>
 
 <div class="definition">
-    <strong>Electric potential (V)</strong> at a point is the work done per unit positive charge in bringing a small test charge from infinity to that point.
+    <strong>Electric potential (V)</strong> at a point is the work done per unit positive charge in bringing a small test charge from infinity to that point. It is a scalar quantity.
 </div>
 
-<div class="equation">V = kQ / r = Q / (4πε₀r)</div>
+<div class="equation">V = kQ / r = Q / (4&#960;&#949;&#8320;r)</div>
 
 <p>Key points about electric potential:</p>
 <ul>
-    <li>Potential is a scalar quantity</li>
+    <li>Potential is a <strong>scalar</strong> quantity (no direction), so potentials from multiple charges add algebraically</li>
     <li>Potential is zero at infinity</li>
     <li>Positive charges create positive potential; negative charges create negative potential</li>
-    <li>Work done moving charge q through potential difference ΔV: W = qΔV</li>
+    <li>Work done moving charge q through potential difference &#916;V: W = q&#916;V</li>
+    <li>The electronvolt (eV) is the energy gained by an electron accelerated through 1 V: 1 eV = 1.60 &#215; 10&#8315;&#185;&#8313; J</li>
 </ul>
 
 <h3>Equipotentials</h3>
-<p><strong>Equipotential lines</strong> (or surfaces) connect points of equal potential. They are always perpendicular to field lines. No work is done moving a charge along an equipotential.</p>
+<p><strong>Equipotential lines</strong> (or surfaces) connect points of equal potential. They are always perpendicular to field lines. No work is done moving a charge along an equipotential because there is no component of the electric force in that direction.</p>
 
-<div class="exam-tip">The electric field strength is the negative of the potential gradient: E = −dV/dr. On a V-r graph, the gradient at any point gives E at that distance.</div>
+<div class="exam-tip">The electric field strength is the negative of the potential gradient: E = &#8722;dV/dr. On a V-r graph, the gradient at any point gives E at that distance. A steeper gradient means a stronger field.</div>
+
+<h3>Comparison of Electric and Gravitational Fields</h3>
+<table>
+    <tr><th>Property</th><th>Electric Field</th><th>Gravitational Field</th></tr>
+    <tr><td>Source</td><td>Charges</td><td>Masses</td></tr>
+    <tr><td>Force law</td><td>F = kQ&#8321;Q&#8322;/r&#178;</td><td>F = GM&#8321;M&#8322;/r&#178;</td></tr>
+    <tr><td>Nature</td><td>Attractive or repulsive</td><td>Always attractive</td></tr>
+    <tr><td>Field strength</td><td>E = F/Q (N C&#8315;&#185;)</td><td>g = F/m (N kg&#8315;&#185;)</td></tr>
+    <tr><td>Potential</td><td>V = kQ/r (can be + or &#8722;)</td><td>V = &#8722;GM/r (always negative)</td></tr>
+    <tr><td>Relative strength</td><td>Very strong</td><td>Extremely weak</td></tr>
+</table>
+
+<div class="real-world">
+Electrostatic precipitators in power stations use strong electric fields to remove particulate pollutants from exhaust gases. Particles are charged by corona discharge and then attracted to collection plates, removing over 99% of ash and dust before gases are released.
+</div>
 
 <h2>7.2 Capacitance</h2>
 
 <div class="definition">
-    <strong>Capacitance (C)</strong> is the charge stored per unit potential difference across the capacitor.<br>
-    <strong>C = Q / V</strong> &nbsp; (unit: farad, F)
+    <strong>Capacitance (C)</strong> is the charge stored per unit potential difference across the capacitor. It measures the ability of a component to store charge.<br>
+    <strong>C = Q / V</strong> &nbsp; (unit: farad, F; 1 F = 1 C V&#8315;&#185;)
 </div>
 
+<p>A 1 farad capacitor is enormously large. Practical capacitors are typically measured in microfarads (&#956;F = 10&#8315;&#8310; F), nanofarads (nF = 10&#8315;&#8313; F), or picofarads (pF = 10&#8315;&#185;&#178; F).</p>
+
 <h3>Parallel Plate Capacitor</h3>
-<div class="equation">C = ε₀εᵣA / d</div>
-<p>where A is the area of overlap of the plates, d is the separation, ε₀ is the permittivity of free space, and εᵣ is the relative permittivity (dielectric constant) of the material between the plates.</p>
+<div class="equation">C = &#949;&#8320;&#949;&#7523;A / d</div>
+<p>where A is the area of overlap of the plates (m&#178;), d is the separation (m), &#949;&#8320; is the permittivity of free space, and &#949;&#7523; is the relative permittivity (dielectric constant) of the material between the plates.</p>
+
+<p>A <strong>dielectric</strong> is an insulating material placed between the plates. It increases the capacitance by a factor of &#949;&#7523; because it reduces the effective electric field between the plates (polar molecules in the dielectric partially cancel the applied field).</p>
 
 <h3>Capacitors in Combination</h3>
 <table>
-    <tr>
-        <th>Arrangement</th>
-        <th>Formula</th>
-        <th>Notes</th>
-    </tr>
-    <tr>
-        <td>Parallel</td>
-        <td>C_total = C₁ + C₂ + C₃ + ...</td>
-        <td>Same p.d. across each; charges add</td>
-    </tr>
-    <tr>
-        <td>Series</td>
-        <td>1/C_total = 1/C₁ + 1/C₂ + 1/C₃ + ...</td>
-        <td>Same charge on each; p.d.s add</td>
-    </tr>
+    <tr><th>Arrangement</th><th>Formula</th><th>Notes</th></tr>
+    <tr><td>Parallel</td><td>C<sub>total</sub> = C&#8321; + C&#8322; + C&#8323; + ...</td><td>Same p.d. across each; charges add</td></tr>
+    <tr><td>Series</td><td>1/C<sub>total</sub> = 1/C&#8321; + 1/C&#8322; + 1/C&#8323; + ...</td><td>Same charge on each; p.d.s add</td></tr>
 </table>
+
+<div class="exam-tip">Note that capacitors in parallel add directly (like resistors in series), while capacitors in series add reciprocally (like resistors in parallel). This is the opposite way round from resistors.</div>
+
+<div class="worked-example">
+A 47 &#956;F and a 22 &#956;F capacitor are connected in series. Find the total capacitance and the charge stored when connected to a 9.0 V supply.<br><br>
+1/C<sub>total</sub> = 1/47 + 1/22 = 0.02128 + 0.04545 = 0.06673 &#956;F&#8315;&#185;<br>
+C<sub>total</sub> = 1/0.06673 = <strong>15.0 &#956;F</strong><br><br>
+Q = CV = 15.0 &#215; 10&#8315;&#8310; &#215; 9.0 = <strong>1.35 &#215; 10&#8315;&#8308; C</strong> = 135 &#956;C<br><br>
+Both capacitors store the same charge (135 &#956;C) because they are in series.
+</div>
 
 <h3>Energy Stored in a Capacitor</h3>
 <p>The energy stored in a charged capacitor is the area under the Q-V graph (a straight line through the origin):</p>
 
-<div class="equation">E = ½QV = ½CV² = ½Q²/C</div>
+<div class="equation">E = &#189;QV = &#189;CV&#178; = &#189;Q&#178;/C</div>
+
+<div class="worked-example">
+A 1000 &#956;F capacitor is charged to 12 V. Calculate the energy stored, and the new voltage if it is then connected to an uncharged 1000 &#956;F capacitor.<br><br>
+Energy stored = &#189;CV&#178; = &#189;(1000 &#215; 10&#8315;&#8310;)(12)&#178; = <strong>0.072 J</strong> = 72 mJ<br><br>
+When connected to the uncharged capacitor, charge is shared equally (total C = 2000 &#956;F, total Q = CV = 0.012 C):<br>
+New V = Q / C<sub>total</sub> = 0.012 / 0.002 = <strong>6.0 V</strong><br><br>
+New energy = &#189;(0.002)(6.0)&#178; = 0.036 J = 36 mJ<br>
+Half the original energy has been dissipated as heat in the connecting wires.
+</div>
 
 <h3>Charging and Discharging</h3>
 <p>When a capacitor charges or discharges through a resistor, the charge, voltage, and current change exponentially.</p>
 
 <p><strong>Discharging:</strong></p>
-<div class="equation">Q = Q₀ e^(−t/RC)</div>
-<div class="equation">V = V₀ e^(−t/RC)</div>
-<div class="equation">I = I₀ e^(−t/RC)</div>
+<div class="equation">Q = Q&#8320; e<sup>&#8315;t/RC</sup> &nbsp;&nbsp; V = V&#8320; e<sup>&#8315;t/RC</sup> &nbsp;&nbsp; I = I&#8320; e<sup>&#8315;t/RC</sup></div>
 
 <p><strong>Charging:</strong></p>
-<div class="equation">Q = Q₀ (1 − e^(−t/RC))</div>
-<div class="equation">V = V₀ (1 − e^(−t/RC))</div>
-<p>The current during charging still decays: I = I₀ e^(−t/RC)</p>
+<div class="equation">Q = Q&#8320;(1 &#8722; e<sup>&#8315;t/RC</sup>) &nbsp;&nbsp; V = V&#8320;(1 &#8722; e<sup>&#8315;t/RC</sup>)</div>
+<p>The current during charging still decays exponentially: I = I&#8320; e<sup>&#8315;t/RC</sup></p>
 
 <h3>Time Constant</h3>
 <div class="definition">
-    <strong>The time constant (τ = RC)</strong> is the time taken for the charge (or voltage or current) to fall to 1/e (≈ 37%) of its initial value during discharge, or to rise to (1 − 1/e) ≈ 63% of its final value during charging.
+    <strong>The time constant (&#964; = RC)</strong> is the time taken for the charge (or voltage or current) to fall to 1/e (&#8776; 37%) of its initial value during discharge, or to rise to (1 &#8722; 1/e) &#8776; 63% of its final value during charging.
 </div>
 
-<p>After 5 time constants (5RC), the capacitor is considered fully charged or fully discharged (>99%).</p>
+<p>After 5 time constants (5RC), the capacitor is considered fully charged or fully discharged (&gt;99%).</p>
 
-<div class="exam-tip">To find the time constant from a graph, read off the time at which V (or Q) has fallen to 0.37 of its initial value. Alternatively, use ln(V) vs t — the gradient equals −1/RC.</div>
+<div class="worked-example">
+A 470 &#956;F capacitor discharges through a 10 k&#937; resistor from an initial voltage of 9.0 V. Calculate: (a) the time constant, (b) the voltage after 3.0 s, (c) the time for the voltage to fall to 1.0 V.<br><br>
+(a) &#964; = RC = (10 &#215; 10&#179;)(470 &#215; 10&#8315;&#8310;) = <strong>4.7 s</strong><br><br>
+(b) V = V&#8320; e<sup>&#8315;t/RC</sup> = 9.0 &#215; e<sup>&#8315;3.0/4.7</sup> = 9.0 &#215; e<sup>&#8315;0.638</sup> = 9.0 &#215; 0.528 = <strong>4.8 V</strong><br><br>
+(c) 1.0 = 9.0 e<sup>&#8315;t/4.7</sup><br>
+e<sup>&#8315;t/4.7</sup> = 1/9 = 0.111<br>
+&#8315;t/4.7 = ln(0.111) = &#8315;2.197<br>
+t = 2.197 &#215; 4.7 = <strong>10.3 s</strong>
+</div>
+
+<div class="exam-tip">To find the time constant from a graph, read off the time at which V (or Q) has fallen to 0.37 of its initial value. Alternatively, use ln(V) vs t &#8212; the gradient equals &#8315;1/RC.</div>
+
+<div class="real-world">
+Camera flashes use capacitors to store energy and release it quickly. The capacitor charges slowly from the battery (over a few seconds) and then discharges through the flash tube in milliseconds, providing the brief intense burst of light needed for photography. Defibrillators use the same principle at much higher energies (200-360 J) to restart the heart.
+</div>
 
 <h2>7.3 Magnetic Fields</h2>
 
 <div class="definition">
     <strong>Magnetic flux density (B)</strong> is a measure of the strength of a magnetic field. It is defined as the force per unit length per unit current on a conductor carrying current perpendicular to the field.<br>
-    Unit: tesla (T), where 1 T = 1 kg s⁻² A⁻¹
+    Unit: tesla (T), where 1 T = 1 kg s&#8315;&#178; A&#8315;&#185;
 </div>
 
 <!-- SVG: Magnetic Field Patterns -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 520 210" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
         <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Magnetic Field Patterns</text>
-
         <!-- Bar magnet -->
         <text x="130" y="45" font-family="system-ui" font-size="11" fill="#DC2626" text-anchor="middle" font-weight="600">Bar Magnet</text>
         <rect x="90" y="95" width="40" height="30" fill="#DC2626" rx="2"/>
         <text x="110" y="115" font-family="system-ui" font-size="11" fill="#fff" text-anchor="middle" font-weight="600">N</text>
         <rect x="130" y="95" width="40" height="30" fill="#1a73e8" rx="2"/>
         <text x="150" y="115" font-family="system-ui" font-size="11" fill="#fff" text-anchor="middle" font-weight="600">S</text>
-        <!-- Field lines -->
         <path d="M 90,110 Q 50,110 50,60 Q 50,20 130,20 Q 210,20 210,60 Q 210,110 170,110" fill="none" stroke="#64748b" stroke-width="1.2"/>
         <path d="M 90,110 Q 60,110 60,70 Q 60,40 130,40 Q 200,40 200,70 Q 200,110 170,110" fill="none" stroke="#64748b" stroke-width="1.2"/>
         <path d="M 90,110 Q 50,110 50,160 Q 50,195 130,195 Q 210,195 210,160 Q 210,110 170,110" fill="none" stroke="#64748b" stroke-width="1.2"/>
         <path d="M 90,110 Q 60,110 60,150 Q 60,180 130,180 Q 200,180 200,150 Q 200,110 170,110" fill="none" stroke="#64748b" stroke-width="1.2"/>
-
         <!-- Current-carrying wire (into page) -->
         <text x="390" y="45" font-family="system-ui" font-size="11" fill="#16A34A" text-anchor="middle" font-weight="600">Wire (current into page)</text>
         <circle cx="390" cy="115" r="12" fill="#e2e8f0" stroke="#1a1a2e" stroke-width="2"/>
-        <!-- X for into page -->
         <line x1="384" y1="109" x2="396" y2="121" stroke="#1a1a2e" stroke-width="2"/>
         <line x1="396" y1="109" x2="384" y2="121" stroke="#1a1a2e" stroke-width="2"/>
-        <!-- Concentric circles -->
         <circle cx="390" cy="115" r="30" fill="none" stroke="#16A34A" stroke-width="1.5"/>
         <circle cx="390" cy="115" r="50" fill="none" stroke="#16A34A" stroke-width="1.2"/>
         <circle cx="390" cy="115" r="70" fill="none" stroke="#16A34A" stroke-width="0.9"/>
-        <!-- Direction arrows on circles -->
-        <text x="418" y="90" font-family="system-ui" font-size="14" fill="#16A34A">↓</text>
-        <text x="358" y="145" font-family="system-ui" font-size="14" fill="#16A34A">↑</text>
-        <text x="390" y="175" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Clockwise (right-hand rule)</text>
+        <text x="418" y="90" font-family="system-ui" font-size="14" fill="#16A34A">&#8595;</text>
+        <text x="358" y="145" font-family="system-ui" font-size="14" fill="#16A34A">&#8593;</text>
+        <text x="390" y="195" font-family="system-ui" font-size="9" fill="#64748b" text-anchor="middle">Clockwise (right-hand rule)</text>
     </svg>
 </div>
 
 <h3>Force on a Current-Carrying Conductor</h3>
-<p>A straight conductor of length L carrying current I at angle θ to a uniform magnetic field B experiences a force:</p>
+<p>A straight conductor of length L carrying current I at angle &#952; to a uniform magnetic field B experiences a force:</p>
 
-<div class="equation">F = BIL sin θ</div>
+<div class="equation">F = BIL sin &#952;</div>
 
 <p>The direction of the force is given by <strong>Fleming's left-hand rule</strong>:</p>
 <ul>
-    <li>First finger: Field (B)</li>
-    <li>Second finger: Current (I, conventional)</li>
-    <li>Thumb: Thrust (Force)</li>
+    <li><strong>F</strong>irst finger: <strong>F</strong>ield (B)</li>
+    <li><strong>S</strong>econd finger: Current (I, conventional current direction)</li>
+    <li><strong>Thu</strong>mb: <strong>Thu</strong>st (Force on conductor)</li>
 </ul>
 
-<!-- SVG: Force on current-carrying wire (F=BIL) -->
+<p>When &#952; = 90&#176; (current perpendicular to field), F = BIL (maximum force). When &#952; = 0&#176; (current parallel to field), F = 0 (no force).</p>
+
+<!-- SVG: Force on current-carrying wire -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 380 220" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <marker id="fl1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
-            <marker id="fl2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
-            <marker id="fl3" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#16A34A"/></marker>
         </defs>
         <text x="190" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Fleming's Left-Hand Rule: F = BIL</text>
-        <!-- Magnetic field (into page - X marks) -->
         <g fill="#1a73e8" font-family="system-ui" font-size="16" text-anchor="middle">
             <text x="80" y="70">x</text><text x="130" y="70">x</text><text x="180" y="70">x</text><text x="230" y="70">x</text><text x="280" y="70">x</text>
             <text x="80" y="110">x</text><text x="130" y="110">x</text><text x="180" y="110">x</text><text x="230" y="110">x</text><text x="280" y="110">x</text>
             <text x="80" y="150">x</text><text x="130" y="150">x</text><text x="180" y="150">x</text><text x="230" y="150">x</text><text x="280" y="150">x</text>
         </g>
         <text x="310" y="110" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">B (into page)</text>
-        <!-- Wire (current upward) -->
         <line x1="180" y1="180" x2="180" y2="50" stroke="#D97706" stroke-width="4"/>
         <line x1="180" y1="55" x2="180" y2="45" stroke="#D97706" stroke-width="2" marker-end="url(#fl1)"/>
         <text x="195" y="180" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">I (current)</text>
-        <!-- Force (to the right) -->
         <line x1="184" y1="110" x2="250" y2="110" stroke="#DC2626" stroke-width="3" marker-end="url(#fl1)"/>
         <text x="225" y="100" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">F (force)</text>
-        <!-- Legend -->
         <text x="190" y="205" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">First finger: Field | Second finger: Current | Thumb: Force</text>
     </svg>
+</div>
+
+<div class="worked-example">
+A wire of length 0.25 m carries a current of 3.0 A perpendicular to a magnetic field of flux density 0.15 T. Calculate the force on the wire.<br><br>
+F = BIL sin &#952; = 0.15 &#215; 3.0 &#215; 0.25 &#215; sin 90&#176; = <strong>0.11 N</strong>
 </div>
 
 <h3>Force on a Moving Charge</h3>
 <p>A charged particle moving through a magnetic field experiences a force:</p>
 
-<div class="equation">F = BQv sin θ</div>
+<div class="equation">F = BQv sin &#952;</div>
 
-<p>where Q is the charge, v is the velocity, and θ is the angle between v and B.</p>
-<p>The force is always perpendicular to the velocity, so it does no work on the charge and cannot change its speed — only its direction. A charged particle moving perpendicular to a uniform magnetic field follows a circular path:</p>
+<p>where Q is the charge, v is the velocity, and &#952; is the angle between v and B.</p>
+<p>The force is always perpendicular to the velocity, so it does no work on the charge and cannot change its speed &#8212; only its direction. A charged particle moving perpendicular to a uniform magnetic field follows a <strong>circular path</strong>:</p>
 
-<div class="equation">BQv = mv²/r &nbsp; → &nbsp; r = mv / (BQ)</div>
+<div class="equation">BQv = mv&#178;/r &nbsp; &#8594; &nbsp; r = mv / (BQ)</div>
+
+<p>The radius of the circular path increases with momentum and decreases with charge and field strength. This principle is used in cyclotrons, mass spectrometers, and the Large Hadron Collider.</p>
+
+<div class="worked-example">
+An electron (m = 9.11 &#215; 10&#8315;&#179;&#185; kg, Q = 1.60 &#215; 10&#8315;&#185;&#8313; C) moving at 2.0 &#215; 10&#8310; m s&#8315;&#185; enters a magnetic field of 0.50 mT perpendicular to its velocity. Find the radius of its circular path.<br><br>
+r = mv / (BQ) = (9.11 &#215; 10&#8315;&#179;&#185; &#215; 2.0 &#215; 10&#8310;) / (0.50 &#215; 10&#8315;&#179; &#215; 1.60 &#215; 10&#8315;&#185;&#8313;)<br>
+r = (1.822 &#215; 10&#8315;&#178;&#8308;) / (8.0 &#215; 10&#8315;&#178;&#179;) = <strong>0.023 m</strong> = 2.3 cm
+</div>
+
+<div class="real-world">
+Mass spectrometers use this principle to separate ions by mass-to-charge ratio. Ions are accelerated through a known potential difference, then deflected in a magnetic field. Lighter ions curve more sharply. This technique is used in forensic science, drug testing, environmental monitoring, and carbon dating.
+</div>
 
 <h3>Magnetic Flux</h3>
 
 <div class="definition">
-    <strong>Magnetic flux (Φ)</strong> through a surface is the product of the magnetic flux density and the area perpendicular to the field.<br>
-    <strong>Φ = BA cos θ</strong> &nbsp; (unit: weber, Wb, where 1 Wb = 1 T m²)
+    <strong>Magnetic flux (&#934;)</strong> through a surface is the product of the magnetic flux density and the area perpendicular to the field.<br>
+    <strong>&#934; = BA cos &#952;</strong> &nbsp; (unit: weber, Wb, where 1 Wb = 1 T m&#178;)
 </div>
 
-<p><strong>Flux linkage</strong> for a coil of N turns: NΦ = BAN cos θ</p>
+<p><strong>Flux linkage</strong> for a coil of N turns: N&#934; = BAN cos &#952;</p>
+<p>When &#952; = 0&#176; (field perpendicular to the plane of the coil, i.e., through it), flux linkage is maximum. When &#952; = 90&#176; (field parallel to the coil plane), flux linkage is zero.</p>
 
 <h2>7.4 Electromagnetic Induction</h2>
 
 <div class="definition">
     <strong>Faraday's law:</strong> The magnitude of the induced EMF is equal to the rate of change of magnetic flux linkage through the circuit.<br>
-    <strong>ε = −d(NΦ)/dt</strong>
+    <strong>&#949; = &#8722;d(N&#934;)/dt</strong>
 </div>
 
 <div class="definition">
     <strong>Lenz's law:</strong> The direction of the induced EMF (and hence the induced current) is such that it opposes the change in flux that produces it. This is represented by the negative sign in Faraday's law.
 </div>
 
-<p>Lenz's law is a consequence of conservation of energy — the induced current creates a magnetic field that opposes the change causing it, so work must be done to maintain the change.</p>
+<p>Lenz's law is a consequence of <strong>conservation of energy</strong> &#8212; the induced current creates a magnetic field that opposes the change causing it, so work must be done to maintain the change. If the induced current aided the change, you would get energy from nothing, violating the first law of thermodynamics.</p>
 
 <!-- SVG: Electromagnetic Induction -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 420 200" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <marker id="ei1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
-            <marker id="ei2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
         </defs>
         <text x="210" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Electromagnetic Induction (Faraday's Law)</text>
-        <!-- Coil -->
         <ellipse cx="250" cy="110" rx="50" ry="65" fill="none" stroke="#D97706" stroke-width="3"/>
         <ellipse cx="260" cy="110" rx="50" ry="65" fill="none" stroke="#D97706" stroke-width="2.5" opacity="0.5"/>
         <text x="255" y="185" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="middle" font-weight="600">Coil (N turns)</text>
-        <!-- Bar magnet moving towards coil -->
         <rect x="80" y="95" width="35" height="25" fill="#DC2626" rx="2"/>
         <text x="97" y="112" font-family="system-ui" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">N</text>
         <rect x="115" y="95" width="35" height="25" fill="#1a73e8" rx="2"/>
         <text x="132" y="112" font-family="system-ui" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">S</text>
-        <!-- Motion arrow -->
         <line x1="155" y1="80" x2="195" y2="80" stroke="#DC2626" stroke-width="2.5" marker-end="url(#ei1)"/>
         <text x="175" y="73" font-family="system-ui" font-size="10" fill="#DC2626" text-anchor="middle">Motion</text>
-        <!-- Flux lines -->
         <path d="M 80,107 Q 60,107 60,70 Q 60,40 100,40 Q 140,40 180,50 Q 220,58 250,55" fill="none" stroke="#16A34A" stroke-width="1" opacity="0.5"/>
         <path d="M 80,107 Q 60,107 60,145 Q 60,175 100,175 Q 140,175 180,165 Q 220,157 250,160" fill="none" stroke="#16A34A" stroke-width="1" opacity="0.5"/>
-        <!-- EMF indicator -->
         <text x="330" y="95" font-family="system-ui" font-size="10" fill="#1a1a2e">Induced EMF:</text>
-        <text x="330" y="112" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">ε = -d(NΦ)/dt</text>
+        <text x="330" y="112" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">&#949; = -d(N&#934;)/dt</text>
         <text x="330" y="130" font-family="system-ui" font-size="9" fill="#64748b">Opposes change</text>
         <text x="330" y="142" font-family="system-ui" font-size="9" fill="#64748b">(Lenz's law)</text>
     </svg>
@@ -416,73 +387,53 @@
 <ul>
     <li>Moving a conductor through a magnetic field</li>
     <li>Changing the area of a circuit in a magnetic field</li>
-    <li>Rotating a coil in a magnetic field</li>
+    <li>Rotating a coil in a magnetic field (this is how generators work)</li>
     <li>Changing the magnetic flux density (e.g., moving a magnet towards a coil)</li>
 </ul>
 
-<div class="exam-tip">When applying Faraday's law, identify what is changing: is it B, A, or θ? For a rotating coil, Φ = BAN cos(ωt), so ε = BANω sin(ωt). The maximum EMF is ε₀ = BANω.</div>
+<h3>The AC Generator</h3>
+<p>For a coil rotating at angular velocity &#969; in a uniform field B:</p>
+<div class="equation">&#934; = BAN cos(&#969;t) &nbsp; &#8594; &nbsp; &#949; = BAN&#969; sin(&#969;t)</div>
+<p>The maximum (peak) EMF is: &#949;&#8320; = BAN&#969;</p>
+<p>The EMF is zero when the coil is perpendicular to the field (maximum flux, zero rate of change) and maximum when the coil is parallel to the field (zero flux, maximum rate of change).</p>
 
+<div class="worked-example">
+A coil of 200 turns and area 0.04 m&#178; rotates at 50 Hz in a field of 0.30 T. Calculate the peak EMF.<br><br>
+&#969; = 2&#960;f = 2&#960;(50) = 314 rad s&#8315;&#185;<br>
+&#949;&#8320; = BAN&#969; = 0.30 &#215; 0.04 &#215; 200 &#215; 314 = <strong>754 V</strong>
+</div>
+
+<div class="exam-tip">When applying Faraday's law, identify what is changing: is it B, A, or &#952;? For a rotating coil, &#934; = BAN cos(&#969;t), so &#949; = BAN&#969; sin(&#969;t). The maximum EMF is &#949;&#8320; = BAN&#969;.</div>
+
+<div class="real-world">
+Electromagnetic induction is the basis of all electrical power generation. In power stations, turbines (driven by steam, water, or wind) rotate coils in magnetic fields, converting kinetic energy to electrical energy. Transformers use mutual induction to step voltages up (for efficient transmission) and down (for safe domestic use).
+</div>
+
+<h3>Summary of Key Quantities</h3>
 <table>
-    <tr>
-        <th>Quantity</th>
-        <th>Symbol</th>
-        <th>Unit</th>
-    </tr>
-    <tr>
-        <td>Electric field strength</td>
-        <td>E</td>
-        <td>N C⁻¹ or V m⁻¹</td>
-    </tr>
-    <tr>
-        <td>Electric potential</td>
-        <td>V</td>
-        <td>V (volts)</td>
-    </tr>
-    <tr>
-        <td>Capacitance</td>
-        <td>C</td>
-        <td>F (farads)</td>
-    </tr>
-    <tr>
-        <td>Time constant</td>
-        <td>τ = RC</td>
-        <td>s</td>
-    </tr>
-    <tr>
-        <td>Magnetic flux density</td>
-        <td>B</td>
-        <td>T (tesla)</td>
-    </tr>
-    <tr>
-        <td>Magnetic flux</td>
-        <td>Φ</td>
-        <td>Wb (weber)</td>
-    </tr>
-    <tr>
-        <td>EMF</td>
-        <td>ε</td>
-        <td>V (volts)</td>
-    </tr>
+    <tr><th>Quantity</th><th>Symbol</th><th>Unit</th></tr>
+    <tr><td>Electric field strength</td><td>E</td><td>N C&#8315;&#185; or V m&#8315;&#185;</td></tr>
+    <tr><td>Electric potential</td><td>V</td><td>V (volts)</td></tr>
+    <tr><td>Capacitance</td><td>C</td><td>F (farads)</td></tr>
+    <tr><td>Time constant</td><td>&#964; = RC</td><td>s</td></tr>
+    <tr><td>Magnetic flux density</td><td>B</td><td>T (tesla)</td></tr>
+    <tr><td>Magnetic flux</td><td>&#934;</td><td>Wb (weber)</td></tr>
+    <tr><td>Flux linkage</td><td>N&#934;</td><td>Wb turns</td></tr>
+    <tr><td>EMF (induced)</td><td>&#949;</td><td>V (volts)</td></tr>
 </table>
 
 <!-- ============ CORE PRACTICAL 7 & 15 ============ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 7 / 15: Investigate capacitor charge and discharge</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Core Practical 7 / 15: Investigate capacitor charge and discharge</h2>
 
 <svg viewBox="0 0 560 400" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
-  <!-- Power supply -->
   <rect x="30" y="60" width="70" height="40" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="65" y="75" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">DC</text>
   <text x="65" y="90" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Supply</text>
   <text x="65" y="50" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">V<tspan font-size="8" dy="2">0</tspan></text>
-  <!-- Two-way switch -->
   <rect x="150" y="55" width="50" height="30" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="175" y="74" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">S</text>
   <text x="175" y="48" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="bold">Two-way switch</text>
-  <!-- Labels: charge/discharge -->
-  <text x="140" y="40" font-family="system-ui" font-size="9" fill="#1a73e8">Charge &larr;</text>
-  <text x="190" y="40" font-family="system-ui" font-size="9" fill="#DC2626">&rarr; Discharge</text>
-  <!-- Resistor R -->
   <rect x="260" y="55" width="70" height="30" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="270" y1="70" x2="278" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="278" y1="60" x2="286" y2="80" stroke="#1a1a2e" stroke-width="1.5"/>
@@ -491,63 +442,51 @@
   <line x1="302" y1="80" x2="310" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="310" y1="60" x2="320" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="295" y="50" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">R (resistance)</text>
-  <!-- Capacitor C -->
   <line x1="410" y1="55" x2="410" y2="85" stroke="#1a1a2e" stroke-width="3"/>
   <line x1="425" y1="55" x2="425" y2="85" stroke="#1a1a2e" stroke-width="3"/>
   <text x="417" y="48" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">C</text>
   <text x="417" y="105" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8">Capacitor</text>
-  <!-- Voltmeter across capacitor -->
   <circle cx="465" cy="70" r="18" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="465" y="76" text-anchor="middle" font-family="system-ui" font-size="14" fill="#1a73e8" font-weight="bold">V</text>
   <text x="500" y="75" font-family="system-ui" font-size="10" fill="#1a73e8">Voltmeter</text>
   <text x="500" y="88" font-family="system-ui" font-size="9" fill="#1a73e8">(or datalogger)</text>
-  <!-- Voltmeter connections -->
   <line x1="410" y1="55" x2="410" y2="40" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="410" y1="40" x2="447" y2="55" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="425" y1="85" x2="425" y2="100" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="425" y1="100" x2="450" y2="88" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- Wiring -->
   <line x1="100" y1="70" x2="150" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="200" y1="70" x2="260" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="330" y1="70" x2="410" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Bottom wire back -->
   <line x1="425" y1="85" x2="425" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="425" y1="140" x2="30" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="30" y1="100" x2="30" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
   <!-- GRAPHS -->
-  <!-- Discharge graph -->
   <rect x="30" y="180" width="230" height="180" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
   <text x="145" y="200" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">Discharge curve</text>
-  <!-- Axes -->
   <line x1="70" y1="340" x2="240" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="70" y1="340" x2="70" y2="210" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="155" y="358" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">t / s</text>
   <text x="55" y="275" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,55,275)">V / V</text>
-  <!-- Exponential decay curve -->
   <path d="M70,215 Q100,220 130,260 Q160,300 200,330 Q220,338 240,340" fill="none" stroke="#DC2626" stroke-width="2.5"/>
-  <text x="100" y="235" font-family="system-ui" font-size="9" fill="#DC2626">V = V&sub;0&sub;e^(-t/RC)</text>
-  <!-- Time constant marking -->
+  <text x="100" y="235" font-family="system-ui" font-size="9" fill="#DC2626">V = V&#8320;e^(-t/RC)</text>
   <line x1="130" y1="260" x2="130" y2="340" stroke="#D97706" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="135" y="350" font-family="system-ui" font-size="9" fill="#D97706">&tau; = RC</text>
-  <!-- ln(V) graph -->
+  <text x="135" y="350" font-family="system-ui" font-size="9" fill="#D97706">&#964; = RC</text>
   <rect x="290" y="180" width="230" height="180" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
   <text x="405" y="200" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">ln(V) vs t</text>
   <line x1="330" y1="340" x2="500" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="330" y1="340" x2="330" y2="210" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="415" y="358" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">t / s</text>
   <text x="315" y="275" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,315,275)">ln(V)</text>
-  <!-- Straight line with negative gradient -->
   <line x1="340" y1="220" x2="490" y2="330" stroke="#1a73e8" stroke-width="2.5"/>
-  <text x="430" y="255" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">gradient = &minus;1/RC</text>
-  <text x="345" y="218" font-family="system-ui" font-size="9" fill="#16A34A">ln(V&sub;0&sub;)</text>
-  <!-- Title -->
+  <text x="430" y="255" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">gradient = &#8722;1/RC</text>
+  <text x="345" y="218" font-family="system-ui" font-size="9" fill="#16A34A">ln(V&#8320;)</text>
   <text x="280" y="390" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP7/15: Capacitor charge and discharge</text>
 </svg>
 
 <h3>Apparatus</h3>
 <ul>
-  <li>Capacitor (e.g. 470 &mu;F or 1000 &mu;F electrolytic)</li>
-  <li>Resistor (e.g. 10 k&Omega; or 100 k&Omega; &mdash; chosen to give RC &approx; 5&ndash;50 s)</li>
+  <li>Capacitor (e.g. 470 &#956;F or 1000 &#956;F electrolytic)</li>
+  <li>Resistor (e.g. 10 k&#937; or 100 k&#937; &#8212; chosen to give RC &#8776; 5&#8211;50 s)</li>
   <li>DC power supply (e.g. 6 V)</li>
   <li>Two-way switch (or two separate switches)</li>
   <li>Voltmeter or datalogger with voltage sensor</li>
@@ -557,49 +496,42 @@
 
 <h3>Method</h3>
 <ol>
-  <li>Connect the circuit: power supply &rarr; two-way switch &rarr; resistor &rarr; capacitor. Connect the voltmeter (or datalogger) in parallel across the capacitor.</li>
-  <li><strong>Charging:</strong> Flip the switch to connect the power supply. Record the voltage across the capacitor at regular time intervals (e.g. every 5 or 10 s) until it reaches approximately V<sub>0</sub>.</li>
+  <li>Connect the circuit: power supply &#8594; two-way switch &#8594; resistor &#8594; capacitor. Connect the voltmeter (or datalogger) in parallel across the capacitor.</li>
+  <li><strong>Charging:</strong> Flip the switch to connect the power supply. Record the voltage across the capacitor at regular time intervals (e.g. every 5 or 10 s) until it reaches approximately V&#8320;.</li>
   <li><strong>Discharging:</strong> Once fully charged, flip the switch to disconnect the supply and allow the capacitor to discharge through R only. Record V at regular time intervals until V is near zero.</li>
   <li>For the discharge: record at least 10 pairs of (t, V) readings.</li>
-  <li>A datalogger is preferable for accuracy &mdash; it records V continuously and can take readings at precise intervals.</li>
+  <li>A datalogger is preferable for accuracy &#8212; it records V continuously and can take readings at precise intervals.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-  <li>Use low voltages (&le; 12 V DC).</li>
+  <li>Use low voltages (&#8804; 12 V DC).</li>
   <li>Ensure electrolytic capacitors are connected with correct polarity (positive to positive).</li>
   <li>Discharge the capacitor fully before disassembling the circuit.</li>
-  <li>Do not use very large capacitors at high voltages &mdash; the stored energy could be dangerous.</li>
+  <li>Do not use very large capacitors at high voltages &#8212; the stored energy could be dangerous.</li>
 </ul>
 
 <h3>Analysis</h3>
-<p><strong>Discharge:</strong> The voltage decays exponentially:</p>
-<div class="equation">
-  V = V<sub>0</sub> e<sup>&minus;t/RC</sup>
-</div>
-<p>Taking natural logs:</p>
-<div class="equation">
-  ln(V) = ln(V<sub>0</sub>) &minus; t/RC
-</div>
+<p><strong>Discharge:</strong> The voltage decays exponentially: V = V&#8320; e<sup>&#8315;t/RC</sup></p>
+<p>Taking natural logs: ln(V) = ln(V&#8320;) &#8722; t/RC</p>
 <p>Plot <strong>ln(V)</strong> (y-axis) against <strong>t</strong> (x-axis). This gives a straight line with:</p>
 <ul>
-  <li><strong>Gradient</strong> = &minus;1/RC</li>
-  <li><strong>y-intercept</strong> = ln(V<sub>0</sub>)</li>
+  <li><strong>Gradient</strong> = &#8722;1/RC</li>
+  <li><strong>y-intercept</strong> = ln(V&#8320;)</li>
 </ul>
 <p>From the gradient, calculate RC (the time constant). If R is known, calculate C, and vice versa.</p>
-<p><strong>Charging:</strong> V = V<sub>0</sub>(1 &minus; e<sup>&minus;t/RC</sup>). Plot V against t to see the characteristic charging curve approaching V<sub>0</sub>.</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Capacitor tolerance (actual C differs from marked value)</td><td>Systematic</td><td>Measure C independently or use the experiment to determine C from the graph</td></tr>
-<tr><td>Voltmeter draws current, affecting the discharge rate</td><td>Systematic</td><td>Use a high-impedance voltmeter or datalogger (input resistance &gt;&gt; R)</td></tr>
+<tr><td>Capacitor tolerance (actual C differs from marked value)</td><td>Systematic</td><td>Measure C independently or determine from the graph</td></tr>
+<tr><td>Voltmeter draws current, affecting the discharge rate</td><td>Systematic</td><td>Use a high-impedance voltmeter or datalogger (input resistance >> R)</td></tr>
 <tr><td>Manual timing errors if reading V at intervals</td><td>Random</td><td>Use a datalogger for automated, precise time-stamped readings</td></tr>
-<tr><td>Capacitor leakage (charge leaks even without external circuit)</td><td>Systematic</td><td>Use a good-quality capacitor; perform experiment quickly</td></tr>
+<tr><td>Capacitor leakage</td><td>Systematic</td><td>Use a good-quality capacitor; perform experiment quickly</td></tr>
 <tr><td>Contact resistance in wires and switch</td><td>Systematic</td><td>Use short, thick connecting wires; ensure firm connections</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> The time constant &tau; = RC is the time taken for the voltage to fall to 1/e (&approx; 37%) of its initial value during discharge, or to rise to (1 &minus; 1/e) &approx; 63% during charging. After 5&tau;, the capacitor is considered fully charged or discharged (&gt;99%). Always use ln(V) vs t for a straight-line graph in discharge analysis.</div>
+<div class="exam-tip">If your ln(V) vs t graph is not a straight line, it suggests the discharge is not purely exponential. This could be caused by the voltmeter having too low an impedance (comparable to R), drawing significant current and affecting the discharge rate.</div>
 </div>
 
 </div>
