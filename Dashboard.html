@@ -910,11 +910,7 @@ function renderExamDates(subjects) {
     return;
   }
 
-  // Show as compact scrollable row — max 6, next soonest first
-  const show = upcoming.slice(0, 6);
-  const remaining = upcoming.length - show.length;
-
-  grid.innerHTML = `<div style="display:flex;gap:6px;flex-wrap:wrap;">${show.map(e => {
+  function renderPill(e) {
     const dayMonth = e.examDate.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
     const col = e.diffDays <= 3 ? 'var(--red)' : e.diffDays <= 14 ? 'var(--amber)' : 'var(--muted)';
     const bg = e.diffDays <= 3 ? 'var(--red-bg)' : e.diffDays <= 14 ? 'var(--amber-bg)' : 'var(--surface2)';
@@ -926,7 +922,17 @@ function renderExamDates(subjects) {
       <span style="color:var(--muted);">${dayMonth}</span>
       <span style="color:${col};font-weight:700;">${e.diffDays}d</span>
     </div>`;
-  }).join('')}${remaining > 0 ? `<div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:11px;color:var(--muted);font-weight:500;">+${remaining} more</div>` : ''}</div>`;
+  }
+
+  const show = upcoming.slice(0, 6);
+  const rest = upcoming.slice(6);
+
+  grid.innerHTML = `<div style="display:flex;gap:6px;flex-wrap:wrap;">
+    ${show.map(renderPill).join('')}
+    ${rest.length > 0 ? `<div id="examShowMore" onclick="document.getElementById('examExtra').style.display='flex';this.style.display='none';document.getElementById('examShowLess').style.display='';" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:11px;color:var(--accent-dark);font-weight:600;cursor:pointer;">+${rest.length} more</div>` : ''}
+    <span id="examExtra" style="display:none;gap:6px;flex-wrap:wrap;">${rest.map(renderPill).join('')}</span>
+    <div id="examShowLess" onclick="document.getElementById('examExtra').style.display='none';document.getElementById('examShowMore').style.display='';this.style.display='none';" style="display:none;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:11px;color:var(--accent-dark);font-weight:600;cursor:pointer;">Show less</div>
+  </div>`;
 }
 // ── Medal definitions ────────────────────────────────────────────────────
 const ALL_MEDALS = [
