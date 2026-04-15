@@ -1594,9 +1594,9 @@ async function load() {
     supabaseClient.from('topic_progress').select('subject, exam_board, topic, rag_status, updated_at').eq('user_id', user.id)
   ]);
 
-  const firstName = profile.first_name || '';
-  const lastName  = profile.last_name  || '';
-  const level     = profile.level      || 'as';
+  const firstName = profile?.first_name || '';
+  const lastName  = profile?.last_name  || '';
+  const level     = profile?.level      || 'as';
   const hour      = new Date().getHours();
   const greet     = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
 
@@ -1644,7 +1644,7 @@ async function load() {
   renderMedals(allMedalIds);
   renderSubjectsProgress(subjectList, topicRows);
   renderDiagnosticList(subjectList, topicRows);
-  renderExamDates(subjectList);
+  try { renderExamDates(subjectList); } catch(e) { console.error('Exam dates error:', e); }
   renderRecentActivity(topicRows, medals || [], profile);
 
   // Streak
@@ -2438,8 +2438,10 @@ function checkDiagnosticHash() {
 checkDiagnosticHash();
 
 load().then(() => {
-  // Re-check after data loads in case the view was reset
   checkDiagnosticHash();
+}).catch(err => {
+  console.error('Dashboard load error:', err);
+  document.querySelector('.main').innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted);"><p style="font-size:16px;margin-bottom:8px;">Something went wrong loading the dashboard.</p><p style="font-size:13px;">' + err.message + '</p><button onclick="location.reload()" style="margin-top:16px;padding:8px 20px;border-radius:8px;border:1px solid var(--border);background:var(--surface);cursor:pointer;font-size:13px;">Retry</button></div>';
 });
 </script>
 
