@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algebra &amp; Functions - AQA A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>1.2 Algebra &amp; Functions</h1>
+
+<!-- ============================================ -->
+<h2>Laws of Indices</h2>
+
+<div class="definition">
+<strong>Indices (powers)</strong> follow a set of rules that allow us to simplify expressions involving powers.
+</div>
+
+<table>
+<tr><th>Rule</th><th>Law</th><th>Example</th></tr>
+<tr><td>Multiplication</td><td>\(a^m \times a^n = a^{m+n}\)</td><td>\(x^3 \times x^4 = x^7\)</td></tr>
+<tr><td>Division</td><td>\(a^m \div a^n = a^{m-n}\)</td><td>\(x^5 \div x^2 = x^3\)</td></tr>
+<tr><td>Power of a power</td><td>\((a^m)^n = a^{mn}\)</td><td>\((x^2)^3 = x^6\)</td></tr>
+<tr><td>Zero index</td><td>\(a^0 = 1\)</td><td>\(5^0 = 1\)</td></tr>
+<tr><td>Negative index</td><td>\(a^{-n} = \dfrac{1}{a^n}\)</td><td>\(x^{-2} = \dfrac{1}{x^2}\)</td></tr>
+<tr><td>Fractional index</td><td>\(a^{1/n} = \sqrt[n]{a}\)</td><td>\(8^{1/3} = 2\)</td></tr>
+<tr><td>General fractional</td><td>\(a^{m/n} = (\sqrt[n]{a})^m\)</td><td>\(27^{2/3} = (\sqrt[3]{27})^2 = 9\)</td></tr>
+</table>
+
+<div class="example">
+<h3>Example: Simplify \(\ \dfrac{3x^{5/2} \times 2x^{-1}}{x^{1/2}}\)</h3>
+<p>Numerator: \(3x^{5/2} \times 2x^{-1} = 6x^{5/2 - 1} = 6x^{3/2}\)</p>
+<p>Divide by \(x^{1/2}\): \(6x^{3/2 - 1/2} = 6x\)</p>
+</div>
+
+<!-- ============================================ -->
+<h2>Surds</h2>
+
+<div class="definition">
+<strong>A surd</strong> is an irrational root that cannot be simplified to a rational number, e.g. \(\sqrt{2}, \sqrt{5}, \sqrt[3]{7}\).
+</div>
+
+<table>
+<tr><th>Rule</th><th>Formula</th><th>Example</th></tr>
+<tr><td>Multiplication</td><td>\(\sqrt{a} \times \sqrt{b} = \sqrt{ab}\)</td><td>\(\sqrt{3}\times\sqrt{12} = \sqrt{36} = 6\)</td></tr>
+<tr><td>Division</td><td>\(\dfrac{\sqrt{a}}{\sqrt{b}} = \sqrt{\dfrac{a}{b}}\)</td><td>\(\dfrac{\sqrt{20}}{\sqrt{5}} = \sqrt{4} = 2\)</td></tr>
+<tr><td>Simplification</td><td>\(\sqrt{a^2 b} = a\sqrt{b}\)</td><td>\(\sqrt{50} = 5\sqrt{2}\)</td></tr>
+<tr><td>Rationalise (simple)</td><td>\(\dfrac{1}{\sqrt{a}} = \dfrac{\sqrt{a}}{a}\)</td><td>\(\dfrac{1}{\sqrt{3}} = \dfrac{\sqrt{3}}{3}\)</td></tr>
+<tr><td>Rationalise (compound)</td><td>Multiply by conjugate \(\dfrac{a \mp \sqrt{b}}{a \mp \sqrt{b}}\)</td><td>\(\dfrac{1}{3+\sqrt{2}} = \dfrac{3-\sqrt{2}}{7}\)</td></tr>
+</table>
+
+<div class="example">
+<h3>Example: Rationalise \(\dfrac{5}{2 + \sqrt{3}}\)</h3>
+<p>Multiply top and bottom by the conjugate \(2 - \sqrt{3}\):</p>
+<div class="equation">$$\frac{5}{2 + \sqrt{3}} \times \frac{2 - \sqrt{3}}{2 - \sqrt{3}} = \frac{5(2 - \sqrt{3})}{4 - 3} = \frac{10 - 5\sqrt{3}}{1} = 10 - 5\sqrt{3}$$</div>
+</div>
+
+<!-- ============================================ -->
+<h2>Quadratics</h2>
+
+<div class="definition">
+<strong>A quadratic expression</strong> has the form \(ax^2 + bx + c\) where \(a \neq 0\). The graph is a parabola.
+</div>
+
+<h3>The Quadratic Formula</h3>
+<div class="equation">$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$</div>
+
+<h3>The Discriminant</h3>
+<div class="definition">
+The <strong>discriminant</strong> \(\Delta = b^2 - 4ac\) determines the nature of the roots of a quadratic equation.
+</div>
+
+<table>
+<tr><th>Discriminant</th><th>Nature of Roots</th><th>Graph</th></tr>
+<tr><td>\(b^2 - 4ac > 0\)</td><td>Two distinct real roots</td><td>Parabola crosses x-axis twice</td></tr>
+<tr><td>\(b^2 - 4ac = 0\)</td><td>One repeated real root</td><td>Parabola touches x-axis once</td></tr>
+<tr><td>\(b^2 - 4ac < 0\)</td><td>No real roots (complex)</td><td>Parabola does not cross x-axis</td></tr>
+</table>
+
+<!-- SVG: Discriminant cases -->
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;display:block;margin:20px auto;">
+  <!-- Case 1: two real roots -->
+  <g transform="translate(10,0)">
+    <line x1="20" y1="180" x2="210" y2="180" stroke="#94a3b8" stroke-width="1.5"/>
+    <path d="M 40 30 Q 115 230 190 30" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+    <circle cx="68" cy="180" r="4" fill="#dc2626"/>
+    <circle cx="162" cy="180" r="4" fill="#dc2626"/>
+    <text x="115" y="250" text-anchor="middle" fill="#1e3a5f" font-size="13" font-weight="600">b^2 - 4ac &gt; 0</text>
+    <text x="115" y="18" text-anchor="middle" fill="#2563eb" font-size="12">Two distinct roots</text>
+  </g>
+
+  <!-- Case 2: repeated root -->
+  <g transform="translate(250,0)">
+    <line x1="20" y1="180" x2="210" y2="180" stroke="#94a3b8" stroke-width="1.5"/>
+    <path d="M 40 30 Q 115 190 190 30" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+    <circle cx="115" cy="180" r="4" fill="#dc2626"/>
+    <text x="115" y="250" text-anchor="middle" fill="#1e3a5f" font-size="13" font-weight="600">b^2 - 4ac = 0</text>
+    <text x="115" y="18" text-anchor="middle" fill="#16a34a" font-size="12">One repeated root</text>
+  </g>
+
+  <!-- Case 3: no real roots -->
+  <g transform="translate(490,0)">
+    <line x1="20" y1="180" x2="210" y2="180" stroke="#94a3b8" stroke-width="1.5"/>
+    <path d="M 40 30 Q 115 160 190 30" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+    <text x="115" y="250" text-anchor="middle" fill="#1e3a5f" font-size="13" font-weight="600">b^2 - 4ac &lt; 0</text>
+    <text x="115" y="18" text-anchor="middle" fill="#f59e0b" font-size="12">No real roots</text>
+  </g>
+</svg>
+
+<h3>Completing the Square</h3>
+<div class="equation">$$ax^2 + bx + c = a\left(x + \frac{b}{2a}\right)^2 - \frac{b^2}{4a} + c$$</div>
+
+<div class="example">
+<h3>Example: Write \(2x^2 + 12x + 7\) in completed square form.</h3>
+<p>Factor out 2 from the \(x\) terms: \(2(x^2 + 6x) + 7\)</p>
+<p>Complete the square inside: \(2\big((x + 3)^2 - 9\big) + 7\)</p>
+<p>Expand: \(2(x+3)^2 - 18 + 7 = 2(x+3)^2 - 11\)</p>
+<p>Vertex is at \((-3, -11)\). Minimum value is \(-11\).</p>
+</div>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Completing the square tells you the vertex (turning point) of the parabola. If the question asks for the minimum/maximum value, this is the method to use. The vertex is \(\left(-\dfrac{b}{2a},\ c - \dfrac{b^2}{4a}\right)\).
+</div>
+
+<!-- ============================================ -->
+<h2>Simultaneous Equations</h2>
+
+<h3>Linear-Linear</h3>
+<p>Use <strong>elimination</strong> (add/subtract equations) or <strong>substitution</strong>.</p>
+
+<h3>Linear-Quadratic</h3>
+<p>Substitute the linear equation into the quadratic and solve the resulting quadratic.</p>
+
+<div class="example">
+<h3>Example: Solve \(y = x + 3\) and \(x^2 + y^2 = 29\).</h3>
+<p>Substitute: \(x^2 + (x+3)^2 = 29\)</p>
+<p>\(x^2 + x^2 + 6x + 9 = 29\)</p>
+<p>\(2x^2 + 6x - 20 = 0 \Rightarrow x^2 + 3x - 10 = 0\)</p>
+<p>\((x+5)(x-2) = 0 \Rightarrow x = -5\) or \(x = 2\)</p>
+<p>When \(x = -5\): \(y = -2\). When \(x = 2\): \(y = 5\).</p>
+<p>Solutions: \((-5, -2)\) and \((2, 5)\).</p>
+</div>
+
+<!-- ============================================ -->
+<h2>Inequalities</h2>
+
+<h3>Linear Inequalities</h3>
+<p>Solve like equations. <strong>Reverse the inequality sign when multiplying/dividing by a negative number.</strong></p>
+
+<h3>Quadratic Inequalities</h3>
+<ol>
+  <li>Solve the corresponding equation \(ax^2 + bx + c = 0\) to find critical values.</li>
+  <li>Sketch the parabola.</li>
+  <li>Read off the solution from the graph.</li>
+</ol>
+
+<div class="example">
+<h3>Example: Solve \(x^2 - 5x + 6 < 0\).</h3>
+<p>Factorise: \((x-2)(x-3) = 0\), so roots at \(x = 2\) and \(x = 3\).</p>
+<p>The parabola is U-shaped (positive \(x^2\) coefficient). It is below the x-axis between the roots.</p>
+<p>Solution: \(2 < x < 3\).</p>
+</div>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Always sketch the quadratic to decide the correct region. For \(> 0\) with a U-shaped parabola, the answer is two separate regions. For \(< 0\), the answer is between the roots.
+</div>
+
+<!-- ============================================ -->
+<h2>Polynomials</h2>
+
+<h3>Factor Theorem</h3>
+<div class="definition">
+If \(f(a) = 0\), then \((x - a)\) is a factor of \(f(x)\).
+<br>Conversely, if \((x - a)\) is a factor of \(f(x)\), then \(f(a) = 0\).
+</div>
+
+<div class="example">
+<h3>Example: Show that \((x - 2)\) is a factor of \(f(x) = x^3 - 6x^2 + 11x - 6\).</h3>
+<p>\(f(2) = 8 - 24 + 22 - 6 = 0\). Since \(f(2) = 0\), \((x-2)\) is a factor. Then:</p>
+<p>\(x^3 - 6x^2 + 11x - 6 = (x-2)(x^2 - 4x + 3) = (x-1)(x-2)(x-3)\)</p>
+</div>
+
+<h3>Algebraic Division</h3>
+<p>Use polynomial long division or compare coefficients to divide a polynomial by a linear or quadratic factor.</p>
+
+<div class="example">
+<h3>Example: Divide \(2x^3 + 3x^2 - 8x + 3\) by \((x + 3)\).</h3>
+<p>Using long division or inspection:</p>
+<div class="equation">$$2x^3 + 3x^2 - 8x + 3 = (x + 3)(2x^2 - 3x + 1) = (x+3)(2x-1)(x-1)$$</div>
+</div>
+
+<!-- ============================================ -->
+<h2>Graphs of Functions</h2>
+
+<p>You need to recognise and sketch the following key graphs:</p>
+<ul>
+  <li>Linear: \(y = mx + c\)</li>
+  <li>Quadratic: \(y = ax^2 + bx + c\)</li>
+  <li>Cubic: \(y = ax^3 + \ldots\)</li>
+  <li>Reciprocal: \(y = \dfrac{a}{x}\) and \(y = \dfrac{a}{x^2}\)</li>
+  <li>Exponential: \(y = a^x\)</li>
+  <li>Trigonometric: \(y = \sin x, \cos x, \tan x\)</li>
+</ul>
+
+<!-- ============================================ -->
+<h2>Graph Transformations</h2>
+
+<table>
+<tr><th>Transformation</th><th>Notation</th><th>Effect</th></tr>
+<tr><td>Translation up by \(a\)</td><td>\(y = f(x) + a\)</td><td>Shift graph up \(a\) units</td></tr>
+<tr><td>Translation down by \(a\)</td><td>\(y = f(x) - a\)</td><td>Shift graph down \(a\) units</td></tr>
+<tr><td>Translation right by \(a\)</td><td>\(y = f(x - a)\)</td><td>Shift graph right \(a\) units</td></tr>
+<tr><td>Translation left by \(a\)</td><td>\(y = f(x + a)\)</td><td>Shift graph left \(a\) units</td></tr>
+<tr><td>Vertical stretch, scale factor \(a\)</td><td>\(y = af(x)\)</td><td>Stretch parallel to y-axis by factor \(a\)</td></tr>
+<tr><td>Horizontal stretch, scale factor \(\frac{1}{a}\)</td><td>\(y = f(ax)\)</td><td>Stretch parallel to x-axis by factor \(\frac{1}{a}\)</td></tr>
+<tr><td>Reflection in x-axis</td><td>\(y = -f(x)\)</td><td>Flip graph over x-axis</td></tr>
+<tr><td>Reflection in y-axis</td><td>\(y = f(-x)\)</td><td>Flip graph over y-axis</td></tr>
+</table>
+
+<!-- SVG: Transformation diagram -->
+<svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;margin:20px auto;">
+  <defs>
+    <marker id="tarrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- Original: y = f(x) label in centre -->
+  <rect x="270" y="140" width="160" height="50" rx="10" fill="#2563eb" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="350" y="172" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">y = f(x)</text>
+
+  <!-- Top: f(x) + a -->
+  <rect x="270" y="20" width="160" height="40" rx="8" fill="#e8f0fe" stroke="#2563eb" stroke-width="2"/>
+  <text x="350" y="46" text-anchor="middle" fill="#1e3a5f" font-size="13" font-weight="600">y = f(x) + a</text>
+  <line x1="350" y1="60" x2="350" y2="138" stroke="#334155" stroke-width="1.5" marker-end="url(#tarrow)"/>
+  <text x="365" y="100" fill="#64748b" font-size="11">Shift up a</text>
+
+  <!-- Bottom: f(x) - a -->
+  <rect x="270" y="270" width="160" height="40" rx="8" fill="#e8f0fe" stroke="#2563eb" stroke-width="2"/>
+  <text x="350" y="296" text-anchor="middle" fill="#1e3a5f" font-size="13" font-weight="600">y = f(x) - a</text>
+  <line x1="350" y1="192" x2="350" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#tarrow)"/>
+  <text x="365" y="240" fill="#64748b" font-size="11">Shift down a</text>
+
+  <!-- Left: f(x + a) -->
+  <rect x="30" y="140" width="160" height="50" rx="8" fill="#fefce8" stroke="#f59e0b" stroke-width="2"/>
+  <text x="110" y="165" text-anchor="middle" fill="#b45309" font-size="13" font-weight="600">y = f(x + a)</text>
+  <text x="110" y="182" text-anchor="middle" fill="#64748b" font-size="10">Shift left a</text>
+  <line x1="192" y1="165" x2="268" y2="165" stroke="#334155" stroke-width="1.5" marker-end="url(#tarrow)"/>
+
+  <!-- Right: f(x - a) -->
+  <rect x="510" y="140" width="160" height="50" rx="8" fill="#fefce8" stroke="#f59e0b" stroke-width="2"/>
+  <text x="590" y="165" text-anchor="middle" fill="#b45309" font-size="13" font-weight="600">y = f(x - a)</text>
+  <text x="590" y="182" text-anchor="middle" fill="#64748b" font-size="10">Shift right a</text>
+  <line x1="432" y1="165" x2="508" y2="165" stroke="#334155" stroke-width="1.5" marker-end="url(#tarrow)"/>
+</svg>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Remember the counter-intuitive rule: changes <em>inside</em> the bracket (to \(x\)) do the <em>opposite</em> of what you expect. \(f(x - 3)\) shifts <strong>right</strong> by 3, and \(f(2x)\) squashes the graph <strong>horizontally</strong> by factor \(\frac{1}{2}\).
+</div>
+
+<!-- ============================================ -->
+<h2>Partial Fractions</h2>
+
+<div class="definition">
+<strong>Partial fractions</strong> decompose a single fraction into a sum of simpler fractions. This is the reverse of adding fractions together.
+</div>
+
+<h3>Types</h3>
+<table>
+<tr><th>Denominator Type</th><th>Partial Fraction Form</th></tr>
+<tr><td>Linear factors: \(\dfrac{f(x)}{(ax+b)(cx+d)}\)</td><td>\(\dfrac{A}{ax+b} + \dfrac{B}{cx+d}\)</td></tr>
+<tr><td>Repeated factor: \(\dfrac{f(x)}{(ax+b)^2(cx+d)}\)</td><td>\(\dfrac{A}{ax+b} + \dfrac{B}{(ax+b)^2} + \dfrac{C}{cx+d}\)</td></tr>
+<tr><td>Improper (degree num \(\geq\) denom)</td><td>Divide first, then decompose the remainder</td></tr>
+</table>
+
+<div class="example">
+<h3>Example: Express \(\dfrac{5x + 1}{(x-1)(x+2)}\) in partial fractions.</h3>
+<p>Let \(\dfrac{5x+1}{(x-1)(x+2)} = \dfrac{A}{x-1} + \dfrac{B}{x+2}\)</p>
+<p>Multiply through: \(5x + 1 = A(x+2) + B(x-1)\)</p>
+<p>Set \(x = 1\): \(6 = 3A \Rightarrow A = 2\)</p>
+<p>Set \(x = -2\): \(-9 = -3B \Rightarrow B = 3\)</p>
+<div class="equation">$$\frac{5x+1}{(x-1)(x+2)} = \frac{2}{x-1} + \frac{3}{x+2}$$</div>
+</div>
+
+<!-- ============================================ -->
+<h2>Modulus Function</h2>
+
+<div class="definition">
+The <strong>modulus</strong> (absolute value) of \(x\), written \(|x|\), gives the magnitude of \(x\) without regard to sign.
+<div class="equation">$$|x| = \begin{cases} x & \text{if } x \geq 0 \\ -x & \text{if } x < 0 \end{cases}$$</div>
+</div>
+
+<h3>Graph of \(y = |f(x)|\)</h3>
+<p>Reflect any part of \(y = f(x)\) that is below the x-axis in the x-axis (make negative y-values positive).</p>
+
+<h3>Graph of \(y = f(|x|)\)</h3>
+<p>Keep the graph for \(x \geq 0\) and reflect it in the y-axis (the graph becomes symmetric about the y-axis).</p>
+
+<!-- SVG: Modulus function graphs -->
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;margin:20px auto;">
+  <!-- Left graph: y = |f(x)| -->
+  <g transform="translate(10,10)">
+    <text x="150" y="15" text-anchor="middle" fill="#1e3a5f" font-size="14" font-weight="700">y = |f(x)|</text>
+    <!-- Axes -->
+    <line x1="30" y1="140" x2="290" y2="140" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="150" y1="30" x2="150" y2="250" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="285" y="155" fill="#64748b" font-size="11">x</text>
+    <text x="155" y="38" fill="#64748b" font-size="11">y</text>
+    <!-- Original line (dashed below axis) -->
+    <line x1="50" y1="50" x2="250" y2="230" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,5"/>
+    <!-- Reflected part (below axis reflected up) -->
+    <line x1="50" y1="50" x2="150" y2="140" stroke="#2563eb" stroke-width="2.5"/>
+    <line x1="150" y1="140" x2="250" y2="50" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="150" y="268" text-anchor="middle" fill="#64748b" font-size="11">Reflect below x-axis upward</text>
+  </g>
+
+  <!-- Right graph: y = f(|x|) -->
+  <g transform="translate(360,10)">
+    <text x="150" y="15" text-anchor="middle" fill="#1e3a5f" font-size="14" font-weight="700">y = f(|x|)</text>
+    <!-- Axes -->
+    <line x1="30" y1="140" x2="290" y2="140" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="150" y1="30" x2="150" y2="250" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="285" y="155" fill="#64748b" font-size="11">x</text>
+    <text x="155" y="38" fill="#64748b" font-size="11">y</text>
+    <!-- Right side original -->
+    <path d="M 150 80 Q 200 190 270 60" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+    <!-- Left side (mirror) -->
+    <path d="M 150 80 Q 100 190 30 60" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="150" y="268" text-anchor="middle" fill="#64748b" font-size="11">Symmetric about y-axis</text>
+  </g>
+</svg>
+
+<h3>Solving Modulus Equations</h3>
+
+<div class="example">
+<h3>Example: Solve \(|2x - 3| = 5\).</h3>
+<p><strong>Case 1:</strong> \(2x - 3 = 5 \Rightarrow 2x = 8 \Rightarrow x = 4\)</p>
+<p><strong>Case 2:</strong> \(2x - 3 = -5 \Rightarrow 2x = -2 \Rightarrow x = -1\)</p>
+<p>Solutions: \(x = 4\) or \(x = -1\).</p>
+</div>
+
+<div class="example">
+<h3>Example: Solve \(|x + 1| = |2x - 3|\).</h3>
+<p><strong>Case 1:</strong> \(x + 1 = 2x - 3 \Rightarrow 4 = x \Rightarrow x = 4\)</p>
+<p><strong>Case 2:</strong> \(x + 1 = -(2x - 3) \Rightarrow x + 1 = -2x + 3 \Rightarrow 3x = 2 \Rightarrow x = \frac{2}{3}\)</p>
+<p>Solutions: \(x = 4\) or \(x = \frac{2}{3}\).</p>
+</div>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> When solving \(|f(x)| = |g(x)|\), you can also square both sides: \(f(x)^2 = g(x)^2\), which avoids case work. For modulus inequalities like \(|f(x)| < a\), rewrite as \(-a < f(x) < a\).
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

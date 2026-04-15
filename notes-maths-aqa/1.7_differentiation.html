@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Differentiation</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Differentiation</h1>
+
+<!-- ================= FIRST PRINCIPLES ================= -->
+<h2>Differentiation from First Principles</h2>
+
+<div class="definition">
+  <strong>Definition:</strong> The derivative of \(f(x)\) from first principles is:
+  $$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$
+  This gives the gradient of the tangent to the curve at any point.
+</div>
+
+<div class="example">
+  <h3>Worked Example: First Principles for \(f(x) = x^3\)</h3>
+  <p><strong>Solution:</strong></p>
+  <div class="equation">$$f'(x) = \lim_{h \to 0} \frac{(x+h)^3 - x^3}{h}$$</div>
+  <p>Expand \((x+h)^3 = x^3 + 3x^2h + 3xh^2 + h^3\):</p>
+  <div class="equation">$$= \lim_{h \to 0} \frac{3x^2h + 3xh^2 + h^3}{h} = \lim_{h \to 0} (3x^2 + 3xh + h^2) = 3x^2$$</div>
+</div>
+
+<!-- ================= STANDARD DERIVATIVES ================= -->
+<h2>Standard Derivatives</h2>
+
+<table>
+  <tr><th>\(y\) or \(f(x)\)</th><th>\(\frac{dy}{dx}\) or \(f'(x)\)</th><th>Notes</th></tr>
+  <tr><td>\(x^n\)</td><td>\(nx^{n-1}\)</td><td>Power rule (all rational \(n\))</td></tr>
+  <tr><td>\(e^x\)</td><td>\(e^x\)</td><td>Self-derivative</td></tr>
+  <tr><td>\(e^{kx}\)</td><td>\(ke^{kx}\)</td><td>Chain rule applied</td></tr>
+  <tr><td>\(a^x\)</td><td>\(a^x \ln a\)</td><td>General exponential</td></tr>
+  <tr><td>\(\ln x\)</td><td>\(\dfrac{1}{x}\)</td><td>\(x > 0\)</td></tr>
+  <tr><td>\(\sin x\)</td><td>\(\cos x\)</td><td>\(x\) in radians</td></tr>
+  <tr><td>\(\cos x\)</td><td>\(-\sin x\)</td><td>\(x\) in radians</td></tr>
+  <tr><td>\(\tan x\)</td><td>\(\sec^2 x\)</td><td>\(x\) in radians</td></tr>
+  <tr><td>\(\sin(kx)\)</td><td>\(k\cos(kx)\)</td><td>Chain rule applied</td></tr>
+  <tr><td>\(\cos(kx)\)</td><td>\(-k\sin(kx)\)</td><td>Chain rule applied</td></tr>
+</table>
+
+<!-- ================= DIFFERENTIATION RULES ================= -->
+<h2>Differentiation Rules</h2>
+
+<h3>Chain Rule</h3>
+<div class="definition">
+  <strong>Chain Rule:</strong> If \(y = f(g(x))\), then:
+  $$\frac{dy}{dx} = f'(g(x)) \cdot g'(x)$$
+  Or equivalently: if \(y = f(u)\) and \(u = g(x)\), then \(\dfrac{dy}{dx} = \dfrac{dy}{du} \cdot \dfrac{du}{dx}\).
+</div>
+
+<div class="example">
+  <h3>Worked Example: Chain Rule</h3>
+  <p>Differentiate \(y = (3x^2 + 1)^5\).</p>
+  <p><strong>Solution:</strong> Let \(u = 3x^2 + 1\), so \(y = u^5\).</p>
+  <div class="equation">$$\frac{dy}{dx} = 5u^4 \cdot 6x = 30x(3x^2 + 1)^4$$</div>
+</div>
+
+<h3>Product Rule</h3>
+<div class="definition">
+  <strong>Product Rule:</strong> If \(y = uv\), then:
+  $$\frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}$$
+</div>
+
+<div class="example">
+  <h3>Worked Example: Product Rule</h3>
+  <p>Differentiate \(y = x^2 e^{3x}\).</p>
+  <p><strong>Solution:</strong> Let \(u = x^2\) and \(v = e^{3x}\).</p>
+  <div class="equation">$$\frac{dy}{dx} = x^2 \cdot 3e^{3x} + e^{3x} \cdot 2x = e^{3x}(3x^2 + 2x) = xe^{3x}(3x + 2)$$</div>
+</div>
+
+<h3>Quotient Rule</h3>
+<div class="definition">
+  <strong>Quotient Rule:</strong> If \(y = \dfrac{u}{v}\), then:
+  $$\frac{dy}{dx} = \frac{v\dfrac{du}{dx} - u\dfrac{dv}{dx}}{v^2}$$
+</div>
+
+<div class="example">
+  <h3>Worked Example: Quotient Rule</h3>
+  <p>Differentiate \(y = \dfrac{\sin x}{x^2}\).</p>
+  <p><strong>Solution:</strong> Let \(u = \sin x\), \(v = x^2\):</p>
+  <div class="equation">$$\frac{dy}{dx} = \frac{x^2 \cos x - \sin x \cdot 2x}{x^4} = \frac{x\cos x - 2\sin x}{x^3}$$</div>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Remember the quotient rule with the mnemonic "low d-high minus high d-low, over low squared". Always simplify your final answer by factorising where possible.
+</div>
+
+<!-- ================= TANGENT AND NORMAL ================= -->
+<h2>Tangents and Normals</h2>
+
+<!-- SVG: Tangent and Normal -->
+<svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:20px auto;">
+  <defs>
+    <marker id="darr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#1a1a2e"/></marker>
+  </defs>
+  <!-- axes -->
+  <line x1="40" y1="260" x2="470" y2="260" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#darr)"/>
+  <line x1="40" y1="290" x2="40" y2="20" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#darr)"/>
+  <text x="475" y="265" font-size="14" fill="#1a1a2e">x</text>
+  <text x="45" y="15" font-size="14" fill="#1a1a2e">y</text>
+  <!-- curve -->
+  <path d="M60,220 Q120,240 180,200 Q240,120 300,100 Q360,90 420,60" fill="none" stroke="#1a1a2e" stroke-width="2.5"/>
+  <text x="425" y="55" font-size="13" fill="#1a1a2e">y = f(x)</text>
+  <!-- point P -->
+  <circle cx="240" cy="140" r="5" fill="#dc2626"/>
+  <text x="248" y="135" font-size="13" fill="#dc2626" font-weight="600">P(a, f(a))</text>
+  <!-- tangent -->
+  <line x1="130" y1="210" x2="380" y2="50" stroke="#2563eb" stroke-width="2"/>
+  <text x="385" y="48" font-size="13" fill="#2563eb" font-weight="600">Tangent</text>
+  <text x="320" y="82" font-size="11" fill="#2563eb">gradient = f'(a)</text>
+  <!-- normal -->
+  <line x1="180" y1="60" x2="310" y2="230" stroke="#16a34a" stroke-width="2"/>
+  <text x="315" y="235" font-size="13" fill="#16a34a" font-weight="600">Normal</text>
+  <text x="310" y="205" font-size="11" fill="#16a34a">gradient = -1/f'(a)</text>
+  <!-- right angle -->
+  <rect x="237" y="140" width="8" height="8" fill="none" stroke="#666" stroke-width="1" transform="rotate(-30,240,140)"/>
+</svg>
+
+<p>At the point \((a, f(a))\):</p>
+<ul>
+  <li><strong>Tangent line:</strong> \(y - f(a) = f'(a)(x - a)\)</li>
+  <li><strong>Normal line:</strong> \(y - f(a) = -\dfrac{1}{f'(a)}(x - a)\) (perpendicular to tangent)</li>
+</ul>
+
+<!-- ================= IMPLICIT DIFFERENTIATION ================= -->
+<h2>Implicit Differentiation</h2>
+
+<div class="definition">
+  <strong>Implicit Differentiation:</strong> When \(y\) is defined implicitly by an equation (not written as \(y = ...\)), differentiate each term with respect to \(x\), applying the chain rule to terms involving \(y\):
+  $$\frac{d}{dx}[f(y)] = f'(y) \cdot \frac{dy}{dx}$$
+</div>
+
+<div class="example">
+  <h3>Worked Example: Implicit Differentiation</h3>
+  <p>Find \(\dfrac{dy}{dx}\) given \(x^2 + y^2 = 25\).</p>
+  <p><strong>Solution:</strong> Differentiate both sides with respect to \(x\):</p>
+  <div class="equation">$$2x + 2y\frac{dy}{dx} = 0$$</div>
+  <div class="equation">$$\frac{dy}{dx} = -\frac{x}{y}$$</div>
+</div>
+
+<div class="example">
+  <h3>Worked Example: Harder Implicit Differentiation</h3>
+  <p>Find \(\dfrac{dy}{dx}\) given \(x^2y + xy^3 = 6\).</p>
+  <p><strong>Solution:</strong> Use the product rule on each term:</p>
+  <div class="equation">$$\left(2xy + x^2\frac{dy}{dx}\right) + \left(y^3 + 3xy^2\frac{dy}{dx}\right) = 0$$</div>
+  <div class="equation">$$\frac{dy}{dx}(x^2 + 3xy^2) = -(2xy + y^3)$$</div>
+  <div class="equation">$$\frac{dy}{dx} = \frac{-(2xy + y^3)}{x^2 + 3xy^2}$$</div>
+</div>
+
+<!-- ================= STATIONARY POINTS ================= -->
+<h2>Stationary Points</h2>
+
+<div class="definition">
+  <strong>Definition:</strong> A stationary point occurs where \(f'(x) = 0\). The nature of the stationary point is determined by the second derivative or by examining the sign of the first derivative either side of the point.
+</div>
+
+<!-- SVG: Stationary Points -->
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:20px auto;">
+  <!-- Local max -->
+  <path d="M30,200 Q80,200 120,100 Q140,50 160,50 Q180,50 200,100 Q240,200 280,200" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <circle cx="160" cy="50" r="5" fill="#dc2626"/>
+  <text x="125" y="40" font-size="12" fill="#dc2626" font-weight="600">Local Max</text>
+  <text x="110" y="25" font-size="11" fill="#666">f'(x)=0, f''(x)&lt;0</text>
+  <!-- arrows showing gradient -->
+  <text x="90" y="120" font-size="16" fill="#16a34a">/</text>
+  <text x="100" y="135" font-size="11" fill="#16a34a">f'>0</text>
+  <text x="200" y="120" font-size="16" fill="#dc2626">\</text>
+  <text x="205" y="135" font-size="11" fill="#dc2626">f'&lt;0</text>
+  <!-- Local min -->
+  <path d="M250,80 Q300,80 340,180 Q360,230 380,230 Q400,230 420,180 Q460,80 490,80" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <circle cx="380" cy="230" r="5" fill="#dc2626"/>
+  <text x="345" y="260" font-size="12" fill="#dc2626" font-weight="600">Local Min</text>
+  <text x="330" y="275" font-size="11" fill="#666">f'(x)=0, f''(x)>0</text>
+  <!-- arrows -->
+  <text x="310" y="160" font-size="16" fill="#dc2626">\</text>
+  <text x="315" y="175" font-size="11" fill="#dc2626">f'&lt;0</text>
+  <text x="420" y="160" font-size="16" fill="#16a34a">/</text>
+  <text x="425" y="175" font-size="11" fill="#16a34a">f'>0</text>
+</svg>
+
+<table>
+  <tr><th>Second Derivative Test</th><th>Nature</th></tr>
+  <tr><td>\(f''(a) > 0\)</td><td>Local minimum at \(x = a\)</td></tr>
+  <tr><td>\(f''(a) < 0\)</td><td>Local maximum at \(x = a\)</td></tr>
+  <tr><td>\(f''(a) = 0\)</td><td>Inconclusive — check sign of \(f'(x)\) either side</td></tr>
+</table>
+
+<div class="example">
+  <h3>Worked Example: Finding Stationary Points</h3>
+  <p>Find the stationary points of \(f(x) = 2x^3 - 9x^2 + 12x - 4\) and determine their nature.</p>
+  <p><strong>Solution:</strong></p>
+  <div class="equation">$$f'(x) = 6x^2 - 18x + 12 = 6(x^2 - 3x + 2) = 6(x-1)(x-2)$$</div>
+  <p>Setting \(f'(x) = 0\): \(x = 1\) or \(x = 2\).</p>
+  <div class="equation">$$f''(x) = 12x - 18$$</div>
+  <p>At \(x = 1\): \(f''(1) = -6 < 0\) — local maximum. \(f(1) = 1\), so max at \((1, 1)\).</p>
+  <p>At \(x = 2\): \(f''(2) = 6 > 0\) — local minimum. \(f(2) = 0\), so min at \((2, 0)\).</p>
+</div>
+
+<!-- ================= CONNECTED RATES OF CHANGE ================= -->
+<h2>Connected Rates of Change</h2>
+
+<div class="definition">
+  <strong>Connected Rates of Change:</strong> Use the chain rule to relate rates:
+  $$\frac{dA}{dt} = \frac{dA}{dr} \cdot \frac{dr}{dt}$$
+  This connects the rate of change of one variable to another when both depend on time.
+</div>
+
+<div class="example">
+  <h3>Worked Example: Connected Rates</h3>
+  <p>A spherical balloon is being inflated so that its volume increases at \(20 \text{ cm}^3/\text{s}\). Find the rate of increase of the radius when \(r = 5\) cm.</p>
+  <p><strong>Solution:</strong> \(V = \frac{4}{3}\pi r^3\), so \(\frac{dV}{dr} = 4\pi r^2\).</p>
+  <div class="equation">$$\frac{dr}{dt} = \frac{dV}{dt} \cdot \frac{dr}{dV} = 20 \cdot \frac{1}{4\pi r^2}$$</div>
+  <p>When \(r = 5\): \(\dfrac{dr}{dt} = \dfrac{20}{4\pi(25)} = \dfrac{1}{5\pi} \approx 0.0637\) cm/s.</p>
+</div>
+
+<!-- ================= PARAMETRIC DIFFERENTIATION ================= -->
+<h2>Parametric Differentiation</h2>
+
+<div class="definition">
+  <strong>Parametric Differentiation:</strong> If \(x = f(t)\) and \(y = g(t)\), then:
+  $$\frac{dy}{dx} = \frac{\dfrac{dy}{dt}}{\dfrac{dx}{dt}}$$
+</div>
+
+<div class="example">
+  <h3>Worked Example: Parametric Curve</h3>
+  <p>A curve is defined by \(x = t^2 + 1\), \(y = t^3 - t\). Find \(\dfrac{dy}{dx}\) and the equation of the tangent when \(t = 2\).</p>
+  <p><strong>Solution:</strong></p>
+  <div class="equation">$$\frac{dx}{dt} = 2t, \quad \frac{dy}{dt} = 3t^2 - 1$$</div>
+  <div class="equation">$$\frac{dy}{dx} = \frac{3t^2 - 1}{2t}$$</div>
+  <p>When \(t = 2\): \(\dfrac{dy}{dx} = \dfrac{11}{4}\), and the point is \((5, 6)\).</p>
+  <div class="equation">$$y - 6 = \frac{11}{4}(x - 5) \implies y = \frac{11}{4}x - \frac{31}{4}$$</div>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For second parametric derivatives, use:
+  $$\frac{d^2y}{dx^2} = \frac{\dfrac{d}{dt}\!\left(\dfrac{dy}{dx}\right)}{\dfrac{dx}{dt}}$$
+  Do NOT simply differentiate \(\dfrac{dy}{dx}\) with respect to \(t\) and forget to divide by \(\dfrac{dx}{dt}\).
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>
