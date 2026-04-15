@@ -313,6 +313,12 @@
     <!-- Summary bar -->
     <div class="summary-bar" id="summaryBar"></div>
 
+    <!-- Upcoming exams -->
+    <div id="breakdownExamRow" style="margin-bottom:20px;display:none;">
+      <div style="font-size:11px;font-weight:600;color:var(--muted2);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">📅 Next exams</div>
+      <div id="breakdownExamCards" style="display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;"></div>
+    </div>
+
     <!-- Filter tabs -->
     <div class="filter-tabs">
       <button class="filter-tab active" onclick="setFilter('all', this)">All topics</button>
@@ -936,6 +942,162 @@ function renderSummaryBar(green, amber, red, pending) {
     <div class="summary-seg pending" style="width:${pct(pending)}%"></div>`;
 }
 
+// ── Exam dates (May/June 2026) ──
+const EXAM_DATES = {
+  'Computer Science_OCR': [
+    { paper: 'Paper 1', date: '2026-06-10', time: 'PM' },
+    { paper: 'Paper 2', date: '2026-06-17', time: 'AM' },
+  ],
+  'Computer Science_AQA': [
+    { paper: 'Paper 1', date: '2026-06-10', time: 'PM' },
+    { paper: 'Paper 2', date: '2026-06-17', time: 'AM' },
+  ],
+  'Mathematics_AQA': [
+    { paper: 'Paper 1', date: '2026-06-03', time: 'PM' },
+    { paper: 'Paper 2', date: '2026-06-11', time: 'PM' },
+    { paper: 'Paper 3', date: '2026-06-18', time: 'PM' },
+  ],
+  'Biology_AQA': [
+    { paper: 'Paper 1', date: '2026-06-04', time: 'PM' },
+    { paper: 'Paper 2', date: '2026-06-12', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-16', time: 'AM' },
+  ],
+  'Biology_Edexcel A': [
+    { paper: 'Paper 1', date: '2026-06-04', time: 'PM' },
+    { paper: 'Paper 2', date: '2026-06-12', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-16', time: 'AM' },
+  ],
+  'Biology_Edexcel B': [
+    { paper: 'Paper 1', date: '2026-06-04', time: 'PM' },
+    { paper: 'Paper 2', date: '2026-06-12', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-16', time: 'AM' },
+  ],
+  'Biology_OCR A': [
+    { paper: 'Paper 1', date: '2026-06-05', time: 'PM' },
+    { paper: 'Paper 2', date: '2026-06-13', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-18', time: 'AM' },
+  ],
+  'Biology_OCR B': [
+    { paper: 'Paper 1', date: '2026-06-05', time: 'PM' },
+    { paper: 'Paper 2', date: '2026-06-13', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-18', time: 'AM' },
+  ],
+  'Chemistry_AQA': [
+    { paper: 'Paper 1', date: '2026-06-02', time: 'AM' },
+    { paper: 'Paper 2', date: '2026-06-09', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-15', time: 'AM' },
+  ],
+  'Chemistry_Edexcel': [
+    { paper: 'Paper 1', date: '2026-06-02', time: 'AM' },
+    { paper: 'Paper 2', date: '2026-06-09', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-15', time: 'AM' },
+  ],
+  'Chemistry_OCR A': [
+    { paper: 'Paper 1', date: '2026-06-02', time: 'AM' },
+    { paper: 'Paper 2', date: '2026-06-09', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-15', time: 'AM' },
+  ],
+  'Chemistry_OCR B': [
+    { paper: 'Paper 1', date: '2026-06-02', time: 'AM' },
+    { paper: 'Paper 2', date: '2026-06-09', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-15', time: 'AM' },
+  ],
+  'Physics_AQA': [
+    { paper: 'Paper 1', date: '2026-05-20', time: 'PM' },
+    { paper: 'Paper 2', date: '2026-06-01', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-08', time: 'AM' },
+  ],
+  'Physics_Edexcel': [
+    { paper: 'Paper 1', date: '2026-05-20', time: 'PM' },
+    { paper: 'Paper 2', date: '2026-06-01', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-08', time: 'AM' },
+  ],
+  'Physics_OCR A': [
+    { paper: 'Paper 1', date: '2026-05-20', time: 'PM' },
+    { paper: 'Paper 2', date: '2026-06-01', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-08', time: 'AM' },
+  ],
+  'Physics_OCR B': [
+    { paper: 'Paper 1', date: '2026-05-20', time: 'PM' },
+    { paper: 'Paper 2', date: '2026-06-01', time: 'AM' },
+    { paper: 'Paper 3', date: '2026-06-08', time: 'AM' },
+  ],
+  'Economics_AQA': [
+    { paper: 'Paper 1', date: '2026-05-11', time: 'AM' },
+    { paper: 'Paper 2', date: '2026-05-18', time: 'PM' },
+    { paper: 'Paper 3', date: '2026-06-04', time: 'AM' },
+  ],
+  'Economics_Edexcel A': [
+    { paper: 'Paper 1', date: '2026-05-11', time: 'AM' },
+    { paper: 'Paper 2', date: '2026-05-18', time: 'PM' },
+    { paper: 'Paper 3', date: '2026-06-04', time: 'AM' },
+  ],
+  'Economics_Edexcel B': [
+    { paper: 'Paper 1', date: '2026-05-11', time: 'AM' },
+    { paper: 'Paper 2', date: '2026-05-18', time: 'PM' },
+    { paper: 'Paper 3', date: '2026-06-04', time: 'AM' },
+  ],
+  'Economics_OCR': [
+    { paper: 'Paper 1', date: '2026-05-11', time: 'AM' },
+    { paper: 'Paper 2', date: '2026-05-18', time: 'PM' },
+    { paper: 'Paper 3', date: '2026-06-04', time: 'AM' },
+  ],
+  'Geography_AQA': [
+    { paper: 'Paper 1', date: '2026-05-12', time: 'AM' },
+    { paper: 'Paper 2', date: '2026-05-21', time: 'PM' },
+  ],
+  'Geography_Edexcel': [
+    { paper: 'Paper 1', date: '2026-05-12', time: 'AM' },
+    { paper: 'Paper 2', date: '2026-05-21', time: 'PM' },
+    { paper: 'Paper 3', date: '2026-06-08', time: 'PM' },
+  ],
+  'Geography_OCR': [
+    { paper: 'Paper 1', date: '2026-05-12', time: 'AM' },
+    { paper: 'Paper 2', date: '2026-05-21', time: 'PM' },
+    { paper: 'Paper 3', date: '2026-06-08', time: 'PM' },
+  ],
+};
+
+function renderBreakdownExams(subjects) {
+  const row = document.getElementById('breakdownExamRow');
+  const cards = document.getElementById('breakdownExamCards');
+  if (!row || !cards) return;
+
+  const now = new Date();
+  const emojis = { 'Computer Science':'💻', 'Mathematics':'🔢', 'Biology':'🧬', 'Chemistry':'🧪', 'Physics':'⚡', 'Economics':'📈', 'Geography':'🌍' };
+  const exams = [];
+
+  (subjects || []).forEach(s => {
+    const dates = EXAM_DATES[`${s.subject}_${s.exam_board}`];
+    if (!dates) return;
+    dates.forEach(d => {
+      const dt = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
+      const diff = Math.ceil((dt - now) / 86400000);
+      if (diff >= 0) exams.push({ ...d, subject: s.subject, emoji: emojis[s.subject] || '📚', dt, diff });
+    });
+  });
+
+  if (!exams.length) { row.style.display = 'none'; return; }
+  exams.sort((a, b) => a.dt - b.dt);
+  row.style.display = '';
+
+  cards.innerHTML = exams.slice(0, 8).map(e => {
+    const dateStr = e.dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    const col = e.diff <= 3 ? 'var(--red)' : e.diff <= 14 ? 'var(--amber)' : 'var(--accent-dark)';
+    const bg = e.diff <= 3 ? 'var(--red-bg)' : e.diff <= 14 ? 'var(--amber-bg)' : 'var(--surface)';
+    const bd = e.diff <= 3 ? 'var(--red-border)' : e.diff <= 14 ? 'var(--amber-border)' : 'var(--border)';
+    const label = e.diff === 0 ? 'Today' : e.diff === 1 ? 'Tomorrow' : e.diff + 'd';
+    return `<div style="min-width:150px;flex-shrink:0;background:${bg};border:1px solid ${bd};border-radius:10px;padding:10px 14px;">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+        <span style="font-size:14px;">${e.emoji}</span>
+        <span style="font-size:12px;font-weight:600;flex:1;">${e.subject}</span>
+        <span style="font-size:11px;font-weight:700;color:${col};">${label}</span>
+      </div>
+      <div style="font-size:11px;color:var(--muted);">${e.paper} · ${dateStr} · ${e.time}</div>
+    </div>`;
+  }).join('');
+}
+
 async function load() {
   const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
   if (authErr || !user) { window.location = 'auth/login.html'; return; }
@@ -1007,6 +1169,7 @@ async function load() {
   document.getElementById('statPending').textContent = pending;
 
   renderSummaryBar(green, amber, red, pending);
+  renderBreakdownExams(subjects || []);
   renderTopics();
 }
 
