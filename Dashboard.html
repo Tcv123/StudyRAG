@@ -636,9 +636,9 @@
           <div class="shimmer" style="width:130px;flex-shrink:0;"></div>
           <div class="shimmer" style="width:130px;flex-shrink:0;"></div>
         </div>
-        <div id="examDatesRow" style="margin-top:14px;">
-          <div style="font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">📅 Upcoming exams</div>
-          <div id="examDatesGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;"></div>
+        <div id="examDatesRow" style="margin-top:12px;">
+          <div style="font-size:11px;font-weight:600;color:var(--muted2);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">📅 Upcoming exams</div>
+          <div id="examDatesGrid"></div>
         </div>
       </div>
 
@@ -910,30 +910,23 @@ function renderExamDates(subjects) {
     return;
   }
 
-  grid.innerHTML = upcoming.map(e => {
-    const dateStr = e.examDate.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
-    const isClose = e.diffDays <= 14;
-    const isVeryClose = e.diffDays <= 3;
-    const borderColor = isVeryClose ? 'var(--red-border)' : isClose ? 'var(--amber-border)' : 'var(--border)';
-    const bgColor = isVeryClose ? 'var(--red-bg)' : isClose ? 'var(--amber-bg)' : 'var(--surface)';
-    const countdownText = e.diffDays === 0 ? '<span style="color:var(--red);font-weight:700;">TODAY</span>' :
-      e.diffDays === 1 ? '<span style="color:var(--red);font-weight:700;">Tomorrow</span>' :
-      `<span style="color:${isClose ? 'var(--amber)' : 'var(--accent-dark)'};font-weight:600;">${e.diffDays}d</span>`;
+  // Show as compact scrollable row — max 6, next soonest first
+  const show = upcoming.slice(0, 6);
+  const remaining = upcoming.length - show.length;
 
-    return `<div style="background:${bgColor};border:1px solid ${borderColor};border-radius:10px;padding:10px 12px;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-        <span style="font-size:16px;">${e.emoji}</span>
-        <span style="font-weight:600;font-size:13px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${e.subject}</span>
-        ${countdownText}
-      </div>
-      <div style="font-size:12px;color:var(--text);font-weight:500;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${e.paper}</div>
-      <div style="font-size:11px;color:var(--muted);display:flex;gap:8px;">
-        <span>${dateStr}</span>
-        <span>${e.time === 'AM' ? '9:00 AM' : '1:30 PM'}</span>
-        <span>${e.duration}</span>
-      </div>
+  grid.innerHTML = `<div style="display:flex;gap:6px;flex-wrap:wrap;">${show.map(e => {
+    const dayMonth = e.examDate.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
+    const col = e.diffDays <= 3 ? 'var(--red)' : e.diffDays <= 14 ? 'var(--amber)' : 'var(--muted)';
+    const bg = e.diffDays <= 3 ? 'var(--red-bg)' : e.diffDays <= 14 ? 'var(--amber-bg)' : 'var(--surface2)';
+    const bd = e.diffDays <= 3 ? 'var(--red-border)' : e.diffDays <= 14 ? 'var(--amber-border)' : 'var(--border)';
+    return `<div style="background:${bg};border:1px solid ${bd};border-radius:8px;padding:6px 10px;display:flex;align-items:center;gap:6px;font-size:11px;">
+      <span>${e.emoji}</span>
+      <span style="font-weight:600;color:var(--text);">${e.subject}</span>
+      <span style="color:var(--muted);">·</span>
+      <span style="color:var(--muted);">${dayMonth}</span>
+      <span style="color:${col};font-weight:700;">${e.diffDays}d</span>
     </div>`;
-  }).join('');
+  }).join('')}${remaining > 0 ? `<div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:11px;color:var(--muted);font-weight:500;">+${remaining} more</div>` : ''}</div>`;
 }
 // ── Medal definitions ────────────────────────────────────────────────────
 const ALL_MEDALS = [
