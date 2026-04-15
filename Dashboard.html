@@ -473,6 +473,7 @@
       <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
       <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
       <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
     </div>
 
     <div class="nav-section" style="margin-top:8px;">
@@ -697,11 +698,195 @@
       </div>
     </div>
 
+    <!-- ══ EXAM DATES SECTION ═══════════════════════════════════════════ -->
+    <div class="view active" id="viewExamDates" style="margin-top:30px;">
+      <div class="section-hd" style="margin-bottom:16px;">
+        <div class="section-title">📅 Your Exam Dates</div>
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.5;">Showing only exams for your current subjects. Dates are for the May/June 2026 series. Always confirm with your school.</p>
+      <div id="examDatesGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;"></div>
+      <p style="font-size:11px;color:var(--muted2);margin-top:14px;">Results day: <strong>Thursday 13 August 2026</strong>. National contingency day: 24 June 2026.</p>
+    </div>
+
   </main>
 </div>
 
 
 <script>
+// ── Exam dates data (May/June 2026) ────────────────────────────────────
+const EXAM_DATES = {
+  'Computer Science_OCR': [
+    { paper: 'Paper 1 — Computer Systems', date: '2026-06-10', time: 'PM', duration: '2h 30m' },
+    { paper: 'Paper 2 — Algorithms & Programming', date: '2026-06-17', time: 'AM', duration: '2h 30m' },
+  ],
+  'Computer Science_AQA': [
+    { paper: 'Paper 1 — On-screen', date: '2026-06-10', time: 'PM', duration: '2h 30m' },
+    { paper: 'Paper 2 — Written', date: '2026-06-17', time: 'AM', duration: '2h' },
+  ],
+  'Mathematics_AQA': [
+    { paper: 'Paper 1 — Pure Mathematics', date: '2026-06-03', time: 'PM', duration: '2h' },
+    { paper: 'Paper 2 — Pure & Mechanics', date: '2026-06-11', time: 'PM', duration: '2h' },
+    { paper: 'Paper 3 — Pure & Statistics', date: '2026-06-18', time: 'PM', duration: '2h' },
+  ],
+  'Biology_AQA': [
+    { paper: 'Paper 1', date: '2026-06-04', time: 'PM', duration: '2h' },
+    { paper: 'Paper 2', date: '2026-06-12', time: 'AM', duration: '2h' },
+    { paper: 'Paper 3', date: '2026-06-16', time: 'AM', duration: '2h' },
+  ],
+  'Biology_Edexcel A': [
+    { paper: 'Paper 1', date: '2026-06-04', time: 'PM', duration: '2h' },
+    { paper: 'Paper 2', date: '2026-06-12', time: 'AM', duration: '2h' },
+    { paper: 'Paper 3', date: '2026-06-16', time: 'AM', duration: '2h' },
+  ],
+  'Biology_Edexcel B': [
+    { paper: 'Paper 1', date: '2026-06-04', time: 'PM', duration: '2h' },
+    { paper: 'Paper 2', date: '2026-06-12', time: 'AM', duration: '2h' },
+    { paper: 'Paper 3', date: '2026-06-16', time: 'AM', duration: '2h' },
+  ],
+  'Biology_OCR A': [
+    { paper: 'Paper 1 — Biological Processes', date: '2026-06-05', time: 'PM', duration: '2h 15m' },
+    { paper: 'Paper 2 — Biological Diversity', date: '2026-06-13', time: 'AM', duration: '2h 15m' },
+    { paper: 'Paper 3 — Unified Biology', date: '2026-06-18', time: 'AM', duration: '1h 30m' },
+  ],
+  'Biology_OCR B': [
+    { paper: 'Paper 1', date: '2026-06-05', time: 'PM', duration: '2h 15m' },
+    { paper: 'Paper 2', date: '2026-06-13', time: 'AM', duration: '2h 15m' },
+    { paper: 'Paper 3', date: '2026-06-18', time: 'AM', duration: '1h 30m' },
+  ],
+  'Chemistry_AQA': [
+    { paper: 'Paper 1 — Inorganic & Physical', date: '2026-06-02', time: 'AM', duration: '2h' },
+    { paper: 'Paper 2 — Organic & Physical', date: '2026-06-09', time: 'AM', duration: '2h' },
+    { paper: 'Paper 3 — Unified', date: '2026-06-15', time: 'AM', duration: '2h' },
+  ],
+  'Chemistry_Edexcel': [
+    { paper: 'Paper 1 — Advanced Inorganic & Physical', date: '2026-06-02', time: 'AM', duration: '1h 45m' },
+    { paper: 'Paper 2 — Advanced Organic & Physical', date: '2026-06-09', time: 'AM', duration: '1h 45m' },
+    { paper: 'Paper 3 — General & Practical', date: '2026-06-15', time: 'AM', duration: '2h 30m' },
+  ],
+  'Chemistry_OCR A': [
+    { paper: 'Paper 1 — Periodic Table & Energy', date: '2026-06-02', time: 'AM', duration: '2h 15m' },
+    { paper: 'Paper 2 — Synthesis & Analytical', date: '2026-06-09', time: 'AM', duration: '2h 15m' },
+    { paper: 'Paper 3 — Unified Chemistry', date: '2026-06-15', time: 'AM', duration: '1h 30m' },
+  ],
+  'Chemistry_OCR B': [
+    { paper: 'Paper 1 — Fundamentals', date: '2026-06-02', time: 'AM', duration: '2h 15m' },
+    { paper: 'Paper 2 — Scientific Literacy', date: '2026-06-09', time: 'AM', duration: '2h 15m' },
+    { paper: 'Paper 3 — Practical Skills', date: '2026-06-15', time: 'AM', duration: '1h 30m' },
+  ],
+  'Physics_AQA': [
+    { paper: 'Paper 1 — Sections 1–5 & 6.1', date: '2026-05-20', time: 'PM', duration: '2h' },
+    { paper: 'Paper 2 — Sections 6.2–8', date: '2026-06-01', time: 'AM', duration: '2h' },
+    { paper: 'Paper 3 — Practical & Option', date: '2026-06-08', time: 'AM', duration: '2h' },
+  ],
+  'Physics_Edexcel': [
+    { paper: 'Paper 1 — Advanced Physics I', date: '2026-05-20', time: 'PM', duration: '1h 45m' },
+    { paper: 'Paper 2 — Advanced Physics II', date: '2026-06-01', time: 'AM', duration: '1h 45m' },
+    { paper: 'Paper 3 — General & Practical', date: '2026-06-08', time: 'AM', duration: '2h 30m' },
+  ],
+  'Physics_OCR A': [
+    { paper: 'Paper 1 — Modelling Physics', date: '2026-05-20', time: 'PM', duration: '2h 15m' },
+    { paper: 'Paper 2 — Exploring Physics', date: '2026-06-01', time: 'AM', duration: '2h 15m' },
+    { paper: 'Paper 3 — Unified Physics', date: '2026-06-08', time: 'AM', duration: '1h 30m' },
+  ],
+  'Physics_OCR B': [
+    { paper: 'Paper 1 — Fundamentals', date: '2026-05-20', time: 'PM', duration: '2h 15m' },
+    { paper: 'Paper 2 — Scientific Literacy', date: '2026-06-01', time: 'AM', duration: '2h 15m' },
+    { paper: 'Paper 3 — Practical Skills', date: '2026-06-08', time: 'AM', duration: '1h 30m' },
+  ],
+  'Economics_AQA': [
+    { paper: 'Paper 1 — Markets & Market Failure', date: '2026-05-11', time: 'AM', duration: '2h' },
+    { paper: 'Paper 2 — National & International', date: '2026-05-18', time: 'PM', duration: '2h' },
+    { paper: 'Paper 3 — Economic Principles', date: '2026-06-04', time: 'AM', duration: '2h' },
+  ],
+  'Economics_Edexcel A': [
+    { paper: 'Paper 1 — Markets & Business', date: '2026-05-11', time: 'AM', duration: '2h' },
+    { paper: 'Paper 2 — National & Global', date: '2026-05-18', time: 'PM', duration: '2h' },
+    { paper: 'Paper 3 — Microeconomics & Macro', date: '2026-06-04', time: 'AM', duration: '2h' },
+  ],
+  'Economics_Edexcel B': [
+    { paper: 'Paper 1 — Markets, Consumers & Firms', date: '2026-05-11', time: 'AM', duration: '2h' },
+    { paper: 'Paper 2 — The Wider Economy', date: '2026-05-18', time: 'PM', duration: '2h' },
+    { paper: 'Paper 3 — Business & Economy', date: '2026-06-04', time: 'AM', duration: '2h' },
+  ],
+  'Economics_OCR': [
+    { paper: 'Paper 1 — Microeconomics', date: '2026-05-11', time: 'AM', duration: '2h' },
+    { paper: 'Paper 2 — Macroeconomics', date: '2026-05-18', time: 'PM', duration: '2h' },
+    { paper: 'Paper 3 — Themes in Economics', date: '2026-06-04', time: 'AM', duration: '2h' },
+  ],
+  'Geography_AQA': [
+    { paper: 'Paper 1 — Physical Geography', date: '2026-05-12', time: 'AM', duration: '2h 30m' },
+    { paper: 'Paper 2 — Human Geography', date: '2026-05-21', time: 'PM', duration: '2h 30m' },
+  ],
+  'Geography_Edexcel': [
+    { paper: 'Paper 1 — Physical Systems', date: '2026-05-12', time: 'AM', duration: '2h 15m' },
+    { paper: 'Paper 2 — Human Systems', date: '2026-05-21', time: 'PM', duration: '2h 15m' },
+    { paper: 'Paper 3 — Synoptic Investigation', date: '2026-06-08', time: 'PM', duration: '2h 15m' },
+  ],
+  'Geography_OCR': [
+    { paper: 'Paper 1 — Physical Systems', date: '2026-05-12', time: 'AM', duration: '2h 30m' },
+    { paper: 'Paper 2 — Human Interactions', date: '2026-05-21', time: 'PM', duration: '2h 30m' },
+    { paper: 'Paper 3 — Geographical Debates', date: '2026-06-08', time: 'PM', duration: '2h 30m' },
+  ],
+};
+
+function renderExamDates(subjects) {
+  const grid = document.getElementById('examDatesGrid');
+  if (!grid) return;
+
+  const now = new Date();
+  const exams = [];
+
+  (subjects || []).forEach(s => {
+    const key = `${s.subject}_${s.exam_board}`;
+    const dates = EXAM_DATES[key];
+    if (!dates) return;
+
+    const emoji = { 'Computer Science':'💻', 'Mathematics':'🔢', 'Biology':'🧬', 'Chemistry':'🧪', 'Physics':'⚡', 'Economics':'📈', 'Geography':'🌍' }[s.subject] || '📚';
+
+    dates.forEach(d => {
+      const examDate = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
+      const diffMs = examDate - now;
+      const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+      exams.push({ ...d, subject: s.subject, board: s.exam_board, emoji, examDate, diffDays });
+    });
+  });
+
+  exams.sort((a, b) => a.examDate - b.examDate);
+
+  if (!exams.length) {
+    grid.innerHTML = '<p style="grid-column:1/-1;font-size:14px;color:var(--muted);">No exam dates found for your current subjects.</p>';
+    return;
+  }
+
+  grid.innerHTML = exams.map(e => {
+    const dateStr = e.examDate.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+    const isPast = e.diffDays < 0;
+    const isClose = e.diffDays >= 0 && e.diffDays <= 14;
+    const borderColor = isPast ? 'var(--muted2)' : isClose ? 'var(--red)' : 'var(--border)';
+    const bgColor = isPast ? 'var(--surface2)' : isClose ? 'var(--red-bg)' : 'var(--surface)';
+    const countdownText = isPast ? '<span style="color:var(--muted);">Completed</span>' :
+      e.diffDays === 0 ? '<span style="color:var(--red);font-weight:700;">TODAY</span>' :
+      e.diffDays === 1 ? '<span style="color:var(--red);font-weight:700;">TOMORROW</span>' :
+      `<span style="color:${isClose ? 'var(--red)' : 'var(--accent-dark)'};font-weight:600;">${e.diffDays} days</span>`;
+
+    return `<div style="background:${bgColor};border:1px solid ${borderColor};border-radius:14px;padding:18px 20px;${isPast ? 'opacity:0.5;' : ''}">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <span style="font-size:20px;">${e.emoji}</span>
+        <div>
+          <div style="font-weight:600;font-size:14px;">${e.subject}</div>
+          <div style="font-size:11px;color:var(--muted);">${e.board}</div>
+        </div>
+        <div style="margin-left:auto;text-align:right;">${countdownText}</div>
+      </div>
+      <div style="font-size:13px;font-weight:500;margin-bottom:4px;">${e.paper}</div>
+      <div style="font-size:12px;color:var(--muted);display:flex;gap:12px;">
+        <span>📅 ${dateStr}</span>
+        <span>🕐 ${e.time === 'AM' ? '9:00 AM' : '1:30 PM'}</span>
+        <span>⏱ ${e.duration}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
 // ── Medal definitions ────────────────────────────────────────────────────
 const ALL_MEDALS = [
   // ── Getting Started ──
@@ -1387,6 +1572,7 @@ async function load() {
   renderMedals(allMedalIds);
   renderSubjectsProgress(subjectList, topicRows);
   renderDiagnosticList(subjectList, topicRows);
+  renderExamDates(subjectList);
   renderRecentActivity(topicRows, medals || [], profile);
 
   // Streak
