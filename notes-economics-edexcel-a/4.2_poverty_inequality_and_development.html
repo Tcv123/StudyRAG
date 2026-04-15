@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poverty, Inequality and Development — Edexcel A A-Level Economics</title>
+<title>Theme 4.2 Poverty, Inequality and Policies for Development — Edexcel A</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
-  .container { max-width: 800px; margin: 0 auto; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.7; padding: 40px 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
   h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
-  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h2 { font-size: 1.5rem; color: #16213e; margin: 36px 0 14px; border-left: 4px solid #1a73e8; padding-left: 12px; }
   h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
   p { margin: 8px 0; }
   ul, ol { margin: 8px 0 8px 24px; }
@@ -20,257 +20,599 @@
   tr:nth-child(even) { background: #f8fafc; }
   .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
-  .diagram-box { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
+  .case-study { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .case-study strong.cs-title { color: #0369a1; }
+  .eval-box { background: #faf5ff; border-left: 4px solid #8b5cf6; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .diagram-box { background: #f9fafb; border: 2px solid #d1d5db; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
   .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 8px; font-style: italic; }
-  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  .eq { background: #f1f5f9; padding: 10px; border-radius: 6px; text-align: center; font-size: 1.1rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
 </head>
 <body>
 <div class="container">
 
-<h1>4.2 Poverty, Inequality and Development</h1>
+<h1>4.2 Poverty, Inequality and Policies for Development</h1>
 
-<h2>Measuring Development</h2>
-
-<h3>Economic Growth vs. Development</h3>
+<!-- ============================================================ -->
+<h2>1. Economic Growth vs. Economic Development</h2>
+<!-- ============================================================ -->
 
 <div class="def-box">
-<strong>Economic growth</strong> is an increase in real GDP over time — a quantitative measure of output.<br>
-<strong>Economic development</strong> is a broader, qualitative concept encompassing improvements in living standards, health, education, political freedom, and human well-being. Growth is necessary but not sufficient for development.
+<strong>Economic growth:</strong> An increase in real GDP over time — a quantitative measure of the increase in the volume of goods and services produced.<br><br>
+<strong>Economic development:</strong> A broader, qualitative concept encompassing improvements in living standards, health, education, political freedoms, environmental sustainability, and human well-being. Growth is necessary but not sufficient for development.
 </div>
 
-<h3>Measures of Development</h3>
+<p><strong>Why growth does not always lead to development:</strong></p>
+<ul>
+  <li><strong>Inequality</strong> — growth may be captured by a small elite (e.g. oil-rich nations with extreme wealth disparity).</li>
+  <li><strong>Type of growth matters</strong> — resource extraction may generate GDP without creating widespread employment or skills.</li>
+  <li><strong>Environmental degradation</strong> — growth that destroys natural capital may reduce long-run welfare.</li>
+  <li><strong>Corruption</strong> — revenues may be siphoned off rather than invested in public services.</li>
+  <li><strong>Lack of investment in human capital</strong> — without health and education spending, growth does not translate into improved capabilities.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>2. Indicators of Development</h2>
+<!-- ============================================================ -->
 
 <table>
   <tr><th>Indicator</th><th>What It Measures</th><th>Strengths</th><th>Weaknesses</th></tr>
-  <tr><td>GDP per capita</td><td>Average income per person</td><td>Widely available, easy to compare</td><td>Ignores inequality, informal economy, quality of life</td></tr>
-  <tr><td>GDP per capita (PPP)</td><td>Adjusted for purchasing power differences</td><td>Better international comparison</td><td>Still ignores distribution and non-income factors</td></tr>
-  <tr><td>HDI (Human Development Index)</td><td>Composite: life expectancy, education (mean/expected years of schooling), GNI per capita (PPP)</td><td>Broader than GDP, multidimensional</td><td>Still an average (ignores inequality within countries), limited dimensions</td></tr>
-  <tr><td>MPI (Multidimensional Poverty Index)</td><td>Deprivations in health, education, living standards</td><td>Captures non-income poverty</td><td>Complex to calculate, data-intensive</td></tr>
-  <tr><td>Inequality-adjusted HDI (IHDI)</td><td>HDI adjusted for inequality in each dimension</td><td>Accounts for distribution</td><td>Complex, data requirements</td></tr>
-  <tr><td>Other indicators</td><td>Literacy rate, infant mortality, access to clean water, gender inequality index</td><td>Target specific aspects of development</td><td>Individual indicators give incomplete picture</td></tr>
+  <tr>
+    <td><strong>GDP per capita</strong></td>
+    <td>Total output divided by population — average income</td>
+    <td>Widely available; easy to compare across countries and over time</td>
+    <td>Ignores inequality, informal economy, non-market activity, quality of life, environmental costs</td>
+  </tr>
+  <tr>
+    <td><strong>GDP per capita (PPP)</strong></td>
+    <td>GDP per capita adjusted for differences in purchasing power between countries</td>
+    <td>Better international comparison; accounts for different price levels</td>
+    <td>Still ignores distribution and non-income dimensions of development</td>
+  </tr>
+  <tr>
+    <td><strong>HDI (Human Development Index)</strong></td>
+    <td>Composite index: life expectancy at birth, education (mean years + expected years of schooling), GNI per capita (PPP). Scored 0 to 1.</td>
+    <td>Broader than GDP; captures health and education; easy to compare</td>
+    <td>Still an average (hides inequality within countries); limited to three dimensions; ignores environmental sustainability, political freedom, security</td>
+  </tr>
+  <tr>
+    <td><strong>MPI (Multidimensional Poverty Index)</strong></td>
+    <td>10 indicators across health, education, and living standards. Measures both incidence and intensity of poverty.</td>
+    <td>Captures non-income deprivations; identifies who is poor and how; useful for targeting policy</td>
+    <td>Complex and data-intensive to calculate; may not be available for all countries; thresholds are somewhat arbitrary</td>
+  </tr>
+  <tr>
+    <td><strong>Other indicators</strong></td>
+    <td>Literacy rate, infant mortality rate, access to clean water, gender inequality index, Gini coefficient</td>
+    <td>Each captures a specific dimension well</td>
+    <td>Single indicators give an incomplete picture; must be used alongside others</td>
+  </tr>
 </table>
 
 <div class="tip-box">
-<strong>Exam tip:</strong> Always evaluate the limitations of development indicators. No single measure is perfect. HDI is better than GDP per capita alone but still has significant limitations. In essays, discuss why multiple indicators should be used together.
+<strong>Exam Tip:</strong> When asked to evaluate measures of development, always discuss both the strengths and limitations. The key argument is that no single indicator captures the full complexity of development — a combination of measures gives the most accurate picture.
 </div>
 
-<h2>Poverty</h2>
+<!-- ============================================================ -->
+<h2>3. Factors Influencing Growth and Development</h2>
+<!-- ============================================================ -->
+
+<h3>a) Primary Product Dependency</h3>
+
+<div class="def-box">
+<strong>Primary product dependency:</strong> When a country relies heavily on the export of unprocessed commodities (agricultural goods, minerals, oil) for its income and foreign exchange.
+</div>
+
+<p><strong>Problems:</strong></p>
+<ul>
+  <li><strong>Price volatility</strong> — commodity prices fluctuate wildly (e.g. oil price swings of 50%+ in a year), making government revenue and export earnings unpredictable.</li>
+  <li><strong>Prebisch-Singer hypothesis</strong> — the long-run terms of trade for primary products tend to decline relative to manufactured goods, meaning developing countries must export ever-increasing volumes to buy the same quantity of imports.</li>
+  <li><strong>Dutch Disease</strong> — a resource boom causes the exchange rate to appreciate, making other export sectors (manufacturing, agriculture) uncompetitive, leading to deindustrialisation.</li>
+  <li><strong>Resource curse</strong> — natural resource wealth can lead to corruption, rent-seeking, conflict, and weak institutions (e.g. Nigeria, Democratic Republic of Congo).</li>
+  <li><strong>Low value-added</strong> — exporting raw commodities earns less than processing them into finished goods.</li>
+  <li><strong>Vulnerability to external shocks</strong> — dependence on a single commodity means a price collapse can devastate the entire economy.</li>
+</ul>
+
+<h3>b) The Savings Gap (Harrod-Domar)</h3>
+<ul>
+  <li>Low incomes lead to low savings, which means low investment, leading to low capital accumulation and low productivity — a <strong>vicious cycle of poverty</strong>.</li>
+  <li>Many developing countries cannot generate enough domestic savings to fund the investment needed for growth.</li>
+  <li>The savings gap can be filled by foreign aid, FDI, or borrowing — but each has limitations.</li>
+</ul>
+
+<h3>c) Foreign Currency Gap</h3>
+<ul>
+  <li>Developing countries often need to import capital goods (machinery, technology) for development, but lack the foreign currency earned from exports to pay for them.</li>
+  <li>This creates a <strong>foreign exchange constraint</strong> on development.</li>
+  <li>Exacerbated by primary product dependency (volatile and declining export revenues).</li>
+</ul>
+
+<h3>d) Capital Flight</h3>
+
+<div class="def-box">
+<strong>Capital flight:</strong> The rapid movement of large sums of money out of a country, typically due to economic or political instability, high taxation, or corruption.
+</div>
+
+<ul>
+  <li>Reduces domestic investment and tax revenues.</li>
+  <li>Often involves wealthy elites moving money to foreign bank accounts or tax havens.</li>
+  <li>Estimated that Africa has lost over $1 trillion in capital flight since the 1970s — more than it has received in aid.</li>
+</ul>
+
+<h3>e) Corruption and Poor Governance</h3>
+<ul>
+  <li>Diverts resources from productive use and public services to private enrichment.</li>
+  <li>Deters FDI — investors avoid countries with unpredictable, corrupt regulatory environments.</li>
+  <li>Weakens rule of law and property rights, reducing incentives to invest and innovate.</li>
+  <li>Misallocation of aid funds — money intended for schools and hospitals may be embezzled.</li>
+  <li>Transparency International's Corruption Perceptions Index shows a strong correlation between low corruption and high development.</li>
+</ul>
+
+<h3>f) Debt</h3>
+<ul>
+  <li>Many developing countries took on large debts in the 1970s-80s (often at variable interest rates). When interest rates rose, debt burdens became unsustainable.</li>
+  <li><strong>Debt servicing</strong> (interest + principal repayments) diverts government spending away from health, education, and infrastructure.</li>
+  <li>Creates a <strong>debt trap</strong> — countries borrow more to service existing debt, worsening the situation.</li>
+  <li>Some countries spend more on debt servicing than on healthcare (e.g. several Sub-Saharan African nations in the 1990s).</li>
+</ul>
+
+<h3>g) Demographics</h3>
+<ul>
+  <li><strong>Rapid population growth</strong> — if population grows faster than GDP, GDP per capita falls. Resources are spread more thinly.</li>
+  <li><strong>High dependency ratio</strong> — a large proportion of non-working-age population (children under 15, elderly) means fewer productive workers supporting more dependants.</li>
+  <li><strong>Demographic dividend</strong> — countries that successfully reduce birth rates can benefit from a large working-age population relative to dependants (e.g. East Asian Tigers in the 1970s-90s).</li>
+  <li><strong>Brain drain</strong> — emigration of skilled workers (doctors, engineers) reduces human capital in the home country.</li>
+  <li><strong>HIV/AIDS</strong> — has devastated the working-age population in parts of Sub-Saharan Africa, reducing productivity and increasing healthcare costs.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>4. Models of Development</h2>
+<!-- ============================================================ -->
+
+<h3>a) Harrod-Domar Growth Model</h3>
+
+<div class="def-box">
+<strong>Harrod-Domar model:</strong> Economic growth depends on the level of <strong>saving</strong> (s) and the productivity of investment (the <strong>capital-output ratio</strong>, k). Growth rate = s / k.
+</div>
+
+<div class="eq">Growth rate (g) = s / k</div>
+<p>Where: s = savings ratio (proportion of national income saved), k = capital-output ratio (units of capital needed to produce one unit of output).</p>
+
+<p><strong>Implications:</strong></p>
+<ul>
+  <li>To grow faster, a country must either <strong>increase savings</strong> or <strong>reduce the capital-output ratio</strong> (use capital more productively).</li>
+  <li>If domestic savings are insufficient, the gap can be filled by <strong>foreign aid</strong>, <strong>FDI</strong>, or <strong>borrowing</strong>.</li>
+  <li>Justifies the role of aid as a means to fill the savings gap and kick-start investment.</li>
+</ul>
+
+<p><strong>Limitations:</strong></p>
+<ul>
+  <li>Assumes a <strong>fixed capital-output ratio</strong> — in reality, productivity of capital varies.</li>
+  <li>Ignores <strong>diminishing returns</strong> to capital.</li>
+  <li>Saving alone is not sufficient — investment must be <strong>productive</strong>, which depends on institutions, governance, and human capital.</li>
+  <li>Does not account for <strong>corruption</strong>, capital flight, or misallocation of investment.</li>
+  <li>Ignores the role of <strong>technology</strong> and <strong>human capital</strong> in driving growth.</li>
+</ul>
+
+<h3>b) Lewis Structural Change Model</h3>
+
+<div class="def-box">
+<strong>Lewis model (1954):</strong> Development involves the transfer of surplus labour from a traditional, low-productivity <strong>agricultural sector</strong> to a modern, high-productivity <strong>industrial/manufacturing sector</strong>.
+</div>
+
+<p><strong>How it works:</strong></p>
+<ol>
+  <li>The agricultural sector has <strong>surplus labour</strong> (workers whose marginal product is zero or near zero).</li>
+  <li>The modern industrial sector offers higher wages, attracting workers from agriculture.</li>
+  <li>Capitalists in the modern sector reinvest <strong>profits</strong>, expanding the sector and absorbing more surplus labour.</li>
+  <li>This continues until all surplus labour has been absorbed — the <strong>Lewis turning point</strong>.</li>
+  <li>After the turning point, wages begin to rise in both sectors, and the economy transitions to sustained growth.</li>
+</ol>
+
+<p><strong>Limitations:</strong></p>
+<ul>
+  <li>Assumes <strong>surplus labour exists</strong> — not always the case; removing workers from agriculture may reduce food output.</li>
+  <li>Assumes <strong>profits are reinvested</strong> domestically — in practice, profits may be repatriated by foreign firms or consumed.</li>
+  <li>Ignores the <strong>informal sector</strong> — many workers moving to cities end up in informal employment, not modern industry.</li>
+  <li>Assumes <strong>unlimited labour supply at constant wages</strong> — migration can push up urban wages before surplus labour is exhausted.</li>
+  <li>Does not account for <strong>urban unemployment</strong> and the social costs of rapid urbanisation (slums, congestion, pollution).</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: China's Lewis Turning Point</strong><br>
+China's rapid industrialisation (1980s-2010s) closely followed the Lewis model: hundreds of millions of rural workers migrated to coastal manufacturing cities. Around 2010-2015, China approached its Lewis turning point as rural surplus labour diminished, wages in manufacturing began to rise significantly (12-15% annually), and firms started relocating to cheaper countries (Vietnam, Bangladesh). This prompted China's shift toward higher-value manufacturing, automation, and services — demonstrating both the power and the eventual limits of the Lewis model.
+</div>
+
+<h3>c) Rostow's Stages of Economic Growth (1960)</h3>
+
+<div class="def-box">
+<strong>Rostow's model:</strong> All countries pass through five stages of economic development, modelled on the historical experience of Western industrialised nations.
+</div>
+
+<table>
+  <tr><th>Stage</th><th>Characteristics</th></tr>
+  <tr><td><strong>1. Traditional Society</strong></td><td>Subsistence agriculture dominates; limited technology; hierarchical social structure; low productivity.</td></tr>
+  <tr><td><strong>2. Preconditions for Take-off</strong></td><td>External demand for raw materials; commercial agriculture develops; investment in infrastructure (transport, communications); emergence of entrepreneurial class; institutions begin to modernise.</td></tr>
+  <tr><td><strong>3. Take-off</strong></td><td>Rapid industrialisation; investment rate rises to 10%+ of GDP; key leading sectors drive growth; political and institutional frameworks support industrialisation.</td></tr>
+  <tr><td><strong>4. Drive to Maturity</strong></td><td>Economy diversifies; technology spreads to all sectors; investment rate 10-20% of GDP; growth becomes self-sustaining; workforce becomes more skilled.</td></tr>
+  <tr><td><strong>5. Age of Mass Consumption</strong></td><td>High incomes; consumer goods and services dominate; welfare state develops; economy shifts to services sector.</td></tr>
+</table>
+
+<p><strong>Limitations:</strong></p>
+<ul>
+  <li><strong>Eurocentric</strong> — based on Western experience; assumes all countries follow the same linear path.</li>
+  <li>Ignores the role of <strong>colonialism and exploitation</strong> in shaping development paths — developing countries today face very different starting conditions.</li>
+  <li>Does not account for <strong>dependency theory</strong> — the argument that developing countries are structurally disadvantaged by the global economic system.</li>
+  <li>Assumes <strong>investment alone drives growth</strong> — ignores institutions, governance, culture, geography.</li>
+  <li>Many countries have not followed these stages (e.g. some oil states skipped industrialisation; some countries remain stuck).</li>
+  <li>Ignores <strong>environmental constraints</strong> on growth.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>5. Poverty and Inequality</h2>
+<!-- ============================================================ -->
 
 <h3>Absolute vs. Relative Poverty</h3>
 
 <div class="def-box">
-<strong>Absolute poverty</strong> — a condition where a person's income is insufficient to meet basic needs for survival (food, shelter, clothing, clean water). The World Bank defines extreme poverty as living on less than $2.15 per day (2022 PPP).<br><br>
-<strong>Relative poverty</strong> — a condition where a person's income falls below a certain proportion of the average/median income in their society. In the UK, this is typically defined as below 60% of median household income. Relative poverty is a measure of inequality.
+<strong>Absolute poverty:</strong> A condition where household income is insufficient to meet basic needs — food, shelter, clean water, healthcare. The World Bank defines extreme poverty as living on less than $2.15/day (2022 PPP).<br><br>
+<strong>Relative poverty:</strong> Having income significantly below the median or average for a given society. In the UK, it is defined as below 60% of median household income. A person can be relatively poor but not absolutely poor.
 </div>
-
-<table>
-  <tr><th>Absolute Poverty</th><th>Relative Poverty</th></tr>
-  <tr><td>Fixed threshold (basic needs)</td><td>Relative to society's living standards</td></tr>
-  <tr><td>Can be eliminated through growth</td><td>Can persist even with growth (if inequality worsens)</td></tr>
-  <tr><td>More relevant to developing countries</td><td>More relevant to developed countries</td></tr>
-  <tr><td>Objective, comparable across countries</td><td>Changes with median income</td></tr>
-</table>
-
-<h3>Causes of Poverty</h3>
-<ul>
-  <li><strong>Low income/wages</strong> — minimum wage below living wage, part-time/gig work</li>
-  <li><strong>Unemployment</strong> — structural, cyclical, frictional</li>
-  <li><strong>Low human capital</strong> — poor education, lack of skills/training</li>
-  <li><strong>Health problems</strong> — reduce ability to work, high healthcare costs</li>
-  <li><strong>Discrimination</strong> — gender, race, disability affecting employment and wages</li>
-  <li><strong>Housing costs</strong> — high rents consuming large share of income</li>
-  <li><strong>Poverty trap</strong> — high effective marginal tax rates mean working more barely increases net income</li>
-  <li><strong>Institutional factors</strong> — corruption, weak property rights, poor governance</li>
-</ul>
-
-<h2>Inequality</h2>
 
 <h3>The Lorenz Curve</h3>
 
-<div class="def-box">
-<strong>The Lorenz curve</strong> shows the cumulative share of income (or wealth) received by each cumulative percentage of the population, ranked from poorest to richest. The further the curve is from the line of perfect equality (45-degree line), the greater the inequality.
-</div>
-
 <div class="diagram-box">
-<svg viewBox="0 0 400 360" width="400" height="360">
-  <defs><marker id="arr17" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1a1a2e"/></marker></defs>
+<svg viewBox="0 0 480 480" width="440" style="max-width:100%">
+  <defs>
+    <marker id="arr5" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#333"/></marker>
+  </defs>
   <!-- Axes -->
-  <line x1="60" y1="300" x2="370" y2="300" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr17)"/>
-  <line x1="60" y1="300" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr17)"/>
+  <line x1="60" y1="420" x2="440" y2="420" stroke="#333" stroke-width="2" marker-end="url(#arr5)"/>
+  <line x1="60" y1="420" x2="60" y2="20" stroke="#333" stroke-width="2" marker-end="url(#arr5)"/>
+  <text x="250" y="460" text-anchor="middle" font-size="13" fill="#333">Cumulative % of population (poorest to richest)</text>
+  <text x="18" y="220" text-anchor="middle" font-size="13" fill="#333" transform="rotate(-90,18,220)">Cumulative % of income</text>
+
+  <!-- Axis labels -->
+  <text x="60" y="438" font-size="10" fill="#555" text-anchor="middle">0</text>
+  <text x="440" y="438" font-size="10" fill="#555" text-anchor="middle">100</text>
+  <text x="52" y="424" font-size="10" fill="#555" text-anchor="end">0</text>
+  <text x="52" y="44" font-size="10" fill="#555" text-anchor="end">100</text>
+
   <!-- Line of perfect equality -->
-  <line x1="60" y1="300" x2="350" y2="10" stroke="#666" stroke-width="1.5" stroke-dasharray="6,3"/>
-  <text x="180" y="130" font-size="11" fill="#666" transform="rotate(-45,180,130)">Line of equality</text>
-  <!-- Lorenz curve (Country A - less unequal) -->
-  <path d="M 60 300 Q 150 290, 220 250 Q 290 190, 350 10" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
-  <text x="260" y="220" font-size="12" fill="#1a73e8">Country A</text>
-  <!-- Lorenz curve (Country B - more unequal) -->
-  <path d="M 60 300 Q 180 298, 280 280 Q 340 240, 350 10" stroke="#e11d48" stroke-width="2.5" fill="none"/>
-  <text x="300" y="280" font-size="12" fill="#e11d48">Country B</text>
-  <!-- Shade area A (between equality line and Country A curve) -->
-  <path d="M 60 300 Q 150 290, 220 250 Q 290 190, 350 10 L 60 300" fill="rgba(26,115,232,0.1)" stroke="none"/>
-  <!-- Labels -->
-  <text x="70" y="335" font-size="11" fill="#1a1a2e">0%</text>
-  <text x="340" y="335" font-size="11" fill="#1a1a2e">100%</text>
-  <text x="150" y="345" font-size="13" fill="#1a1a2e">Cumulative % of population</text>
-  <text x="12" y="160" font-size="13" fill="#1a1a2e" transform="rotate(-90,12,160)">Cumulative % of income</text>
-  <text x="42" y="35" font-size="11" fill="#1a1a2e">100%</text>
-  <!-- Gini annotation -->
-  <text x="120" y="250" font-size="11" fill="#1a73e8">Area A</text>
-  <text x="130" y="265" font-size="10" fill="#666">Gini = A / (A+B)</text>
+  <line x1="60" y1="420" x2="440" y2="40" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="220" y="200" font-size="12" fill="#888" transform="rotate(-45,220,200)">Line of Perfect Equality</text>
+
+  <!-- Lorenz Curve (Country A - more equal) -->
+  <path d="M 60,420 Q 180,400 250,350 Q 340,260 400,140 L 440,40" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="310" y="310" font-size="12" fill="#1a73e8" font-weight="bold">Country A</text>
+  <text x="310" y="325" font-size="11" fill="#1a73e8">(more equal)</text>
+
+  <!-- Lorenz Curve (Country B - less equal) -->
+  <path d="M 60,420 Q 200,415 300,400 Q 380,360 420,250 L 440,40" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+  <text x="365" y="385" font-size="12" fill="#e74c3c" font-weight="bold">Country B</text>
+  <text x="365" y="400" font-size="11" fill="#e74c3c">(less equal)</text>
+
+  <!-- Shaded area A (between equality line and Country A curve) -->
+  <path d="M 60,420 Q 180,400 250,350 Q 340,260 400,140 L 440,40 L 60,420 Z" fill="#1a73e8" opacity="0.08"/>
+
+  <!-- Labels for Gini areas -->
+  <text x="180" y="310" font-size="12" fill="#1a73e8" font-weight="bold">Area A</text>
+  <text x="300" y="220" font-size="11" fill="#555">Area B</text>
 </svg>
-<p class="diagram-caption">Lorenz curves for two countries. Country B has greater inequality (curve further from the line of equality). The Gini coefficient equals Area A / (Area A + Area B).</p>
+<div class="diagram-caption">Figure 1: Lorenz Curves — the further from the line of equality, the greater the inequality</div>
 </div>
 
-<h3>Gini Coefficient</h3>
+<p>The <strong>Lorenz curve</strong> plots the cumulative percentage of income earned against the cumulative percentage of the population, ranked from poorest to richest. The further the curve bows away from the 45-degree line of perfect equality, the greater the inequality.</p>
+
+<h3>The Gini Coefficient</h3>
 
 <div class="def-box">
-<strong>Gini coefficient</strong> — a numerical measure of inequality ranging from 0 (perfect equality) to 1 (perfect inequality). It is calculated as the area between the Lorenz curve and the line of perfect equality, divided by the total area under the line of equality.
+<strong>Gini coefficient:</strong> A numerical measure of income inequality derived from the Lorenz curve. It ranges from 0 (perfect equality) to 1 (perfect inequality).
 </div>
 
-<div class="eq">Gini coefficient = Area between line of equality and Lorenz curve / Total area under line of equality</div>
+<div class="eq">Gini Coefficient = Area A / (Area A + Area B)</div>
 
-<p><strong>Interpreting the Gini coefficient:</strong></p>
 <ul>
-  <li>0 = perfect equality (everyone has same income)</li>
-  <li>1 = perfect inequality (one person has all income)</li>
-  <li>Typical values: Scandinavia ~0.25-0.30, UK ~0.35, USA ~0.39, South Africa ~0.63</li>
-  <li>Rising Gini = increasing inequality; falling Gini = decreasing inequality</li>
+  <li><strong>0</strong> = everyone has the same income (Lorenz curve = line of equality).</li>
+  <li><strong>1</strong> = one person has all the income (Lorenz curve hugs the axes).</li>
+  <li>Typical values: Scandinavian countries ~0.25-0.28 (low inequality); UK ~0.35; US ~0.39; South Africa ~0.63 (very high inequality).</li>
 </ul>
 
 <p><strong>Limitations of the Gini coefficient:</strong></p>
 <ul>
-  <li>Different Lorenz curves can give the same Gini value</li>
-  <li>Does not show where in the distribution inequality occurs</li>
-  <li>Based on income data which may be inaccurate (tax evasion, informal economy)</li>
-  <li>Does not account for wealth inequality (which is typically much greater)</li>
-  <li>Pre-tax vs. post-tax income can give very different values</li>
+  <li>Two countries can have the same Gini but very different Lorenz curves (inequality at different parts of the distribution).</li>
+  <li>Does not capture <strong>wealth</strong> inequality (only income).</li>
+  <li>Does not show <strong>absolute</strong> living standards — a country can have low inequality but be uniformly poor.</li>
+  <li>Ignores the <strong>informal economy</strong> and non-monetary income (e.g. subsistence farming).</li>
 </ul>
 
-<h2>Causes and Consequences of Inequality</h2>
+<h3>Causes of Inequality Within and Between Countries</h3>
 
-<p><strong>Causes of income inequality:</strong></p>
+<p><strong>Within countries:</strong></p>
 <ul>
-  <li>Differences in human capital (education, skills, experience)</li>
-  <li>Globalisation and technological change (skilled workers gain, unskilled lose)</li>
-  <li>Weakening of trade unions</li>
-  <li>Tax and benefit policy changes</li>
-  <li>Inheritance and wealth concentration</li>
-  <li>Discrimination in labour markets</li>
-  <li>Winner-take-all markets (celebrity, CEO pay)</li>
+  <li>Unequal access to education and healthcare</li>
+  <li>Discrimination (gender, ethnicity, caste)</li>
+  <li>Regional disparities (urban vs rural)</li>
+  <li>Regressive tax systems / weak social safety nets</li>
+  <li>Concentrated ownership of land and capital</li>
+  <li>Labour market changes — technology and globalisation increasing returns to skilled labour while depressing unskilled wages</li>
 </ul>
 
-<p><strong>Consequences of inequality:</strong></p>
+<p><strong>Between countries:</strong></p>
 <ul>
-  <li>Social: health problems, crime, lower social mobility, reduced social cohesion</li>
-  <li>Economic: lower aggregate demand (if poor have higher MPC), reduced human capital investment, political instability deterring investment</li>
-  <li>Some argue inequality provides incentives for effort and enterprise (though evidence suggests extreme inequality is harmful)</li>
+  <li>Historical factors — colonialism, exploitation, unequal treaties</li>
+  <li>Institutional quality — rule of law, property rights, governance</li>
+  <li>Geography and climate — landlocked countries, disease burden, natural disasters</li>
+  <li>Access to technology and capital</li>
+  <li>Terms of trade — declining for primary product exporters</li>
+  <li>Debt burdens and capital flight</li>
 </ul>
 
-<h2>Strategies for Economic Development</h2>
+<!-- ============================================================ -->
+<h2>6. Strategies for Development: Market-Based Approaches</h2>
+<!-- ============================================================ -->
 
-<h3>Market-Oriented Strategies</h3>
-<table>
-  <tr><th>Strategy</th><th>Description</th><th>Evaluation</th></tr>
-  <tr><td>Trade liberalisation</td><td>Remove trade barriers, integrate into global economy</td><td>Can boost growth but may harm infant industries; terms of trade may be unfavourable for primary producers</td></tr>
-  <tr><td>FDI attraction</td><td>Encourage foreign firms to invest</td><td>Creates jobs, transfers technology; but profits may be repatriated, exploitation risk</td></tr>
-  <tr><td>Privatisation</td><td>Sell state-owned enterprises to private sector</td><td>May improve efficiency; risk of private monopoly, job losses</td></tr>
-  <tr><td>Deregulation</td><td>Reduce government restrictions on business</td><td>Encourages enterprise; may reduce worker/environmental protections</td></tr>
-  <tr><td>Microfinance</td><td>Small loans to the poor/entrepreneurs</td><td>Empowers individuals; but high interest rates, limited scale</td></tr>
-</table>
-
-<h3>Interventionist Strategies</h3>
-<table>
-  <tr><th>Strategy</th><th>Description</th><th>Evaluation</th></tr>
-  <tr><td>Infrastructure investment</td><td>Roads, ports, energy, telecoms</td><td>Essential for growth; expensive, long time lags, corruption risk</td></tr>
-  <tr><td>Human capital development</td><td>Investment in education and healthcare</td><td>Long-run benefits to productivity; very long time lags</td></tr>
-  <tr><td>Industrial policy</td><td>Government supports strategic sectors (import substitution or export promotion)</td><td>Can build domestic capacity; risk of government failure</td></tr>
-  <tr><td>Foreign aid</td><td>Bilateral and multilateral aid flows</td><td>Can fund essential services; dependency, corruption, crowding out</td></tr>
-  <tr><td>Debt relief</td><td>Cancellation of external debt obligations</td><td>Frees resources for development; moral hazard risk</td></tr>
-</table>
-
-<h3>Other Important Factors</h3>
+<h3>a) Trade Liberalisation</h3>
 <ul>
-  <li><strong>Institutional quality</strong> — rule of law, property rights, good governance, low corruption are essential preconditions for development</li>
-  <li><strong>Political stability</strong> — conflict and instability deter investment and destroy human/physical capital</li>
-  <li><strong>Demographics</strong> — rapid population growth can offset GDP gains; demographic dividend from falling birth rates</li>
-  <li><strong>Geography and climate</strong> — landlocked countries, disease burden, natural disasters</li>
-  <li><strong>Resource curse</strong> — abundance of natural resources can lead to corruption, Dutch disease, and poor diversification</li>
+  <li>Removing tariffs, quotas, and other barriers to open the economy to international trade.</li>
+  <li><strong>Benefits:</strong> access to larger markets, economies of scale, competitive pressure drives efficiency, technology transfer, lower consumer prices, specialisation based on comparative advantage.</li>
+  <li><strong>Costs:</strong> infant industries may be destroyed before they can compete, structural unemployment, vulnerability to external shocks, potential worsening of terms of trade if exporting primary products.</li>
 </ul>
 
-<h2>Sustainability</h2>
-
-<div class="def-box">
-<strong>Sustainable development</strong> — development that meets the needs of the present without compromising the ability of future generations to meet their own needs. It requires balancing economic growth with environmental protection and social inclusion.
+<div class="case-study">
+<strong class="cs-title">Case Study: East Asian Tiger Economies (South Korea, Taiwan, Singapore, Hong Kong)</strong><br>
+These economies achieved spectacular growth (averaging 7-8% annually from the 1960s to 1990s) through a combination of export-oriented industrialisation and strategic state intervention. Key features included: heavy investment in education (South Korea's literacy rate went from 22% in 1945 to 96% by 1970), land reform reducing inequality, targeted industrial policy (South Korea's chaebols were guided into steel, shipbuilding, then electronics), high savings rates (30-40% of GDP), openness to trade but with selective infant industry protection, and strong state institutions. South Korea's GDP per capita rose from ~$100 in 1960 to over $30,000 by 2020. The Tigers demonstrate that the market-vs-state debate is a false dichotomy — the most successful strategies combined both.
 </div>
 
-<p><strong>Environmental concerns of growth:</strong></p>
+<h3>b) Promotion of FDI</h3>
+
+<div class="def-box">
+<strong>Foreign Direct Investment (FDI):</strong> Long-term investment by a foreign firm in the productive capacity of another country (e.g. building factories, acquiring businesses).
+</div>
+
 <ul>
-  <li>Climate change from carbon emissions</li>
-  <li>Deforestation, biodiversity loss</li>
-  <li>Resource depletion (fossil fuels, water, minerals)</li>
-  <li>Pollution (air, water, soil)</li>
-  <li>Environmental Kuznets Curve — suggests pollution rises with early development then falls as countries become richer (but evidence is mixed)</li>
+  <li><strong>Benefits:</strong> fills the savings and foreign exchange gaps, creates jobs, brings technology and management expertise, boosts tax revenue, integrates country into global supply chains.</li>
+  <li><strong>Costs:</strong> profit repatriation (reduces long-term benefit to host country), may exploit cheap labour and weak regulation, "race to the bottom" on environmental/labour standards, dependency on foreign capital, TNCs may crowd out domestic firms, transfer pricing to minimise tax obligations.</li>
 </ul>
 
-<p><strong>Policies for sustainable development:</strong></p>
+<h3>c) Microfinance</h3>
+
+<div class="def-box">
+<strong>Microfinance:</strong> Providing small loans, savings accounts, and financial services to low-income individuals who lack access to traditional banking.
+</div>
+
 <ul>
-  <li>Carbon taxes and emissions trading schemes</li>
-  <li>Investment in renewable energy</li>
-  <li>International agreements (Paris Agreement)</li>
-  <li>Sustainable agriculture and land management</li>
-  <li>Green technology transfer to developing countries</li>
-  <li>Circular economy initiatives</li>
+  <li><strong>Benefits:</strong> empowers entrepreneurs (especially women), enables investment in small businesses, provides a route out of poverty, builds financial inclusion.</li>
+  <li><strong>Costs:</strong> high interest rates (sometimes 30%+ annually), risk of over-indebtedness, may not reach the very poorest, limited evidence of transformative impact on poverty at scale.</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Microfinance in India</strong><br>
+India has one of the world's largest microfinance sectors, serving ~60 million borrowers. The Self-Help Group (SHG) model, where 10-20 women pool savings and take collective loans, has been particularly successful — the National Bank for Agriculture and Rural Development (NABARD) links SHGs to formal banks. Studies show improved financial resilience and women's empowerment. However, the 2010 Andhra Pradesh microfinance crisis revealed the dark side: aggressive lending by for-profit microfinance institutions (MFIs) led to over-indebtedness, with some borrowers taking multiple loans from different MFIs. Over 80 suicides were linked to debt pressure. This led to new regulation (the RBI Microfinance Regulatory Framework) capping interest rates and lending limits. The lesson: microfinance works best when regulated, not-for-profit, and combined with financial literacy programmes.
+</div>
+
+<h3>d) Deregulation and Privatisation</h3>
+<ul>
+  <li>Reducing government intervention in markets to encourage private enterprise, competition, and efficiency.</li>
+  <li><strong>Benefits:</strong> reduces bureaucratic barriers, encourages entrepreneurship, attracts FDI, improves efficiency of state-owned enterprises.</li>
+  <li><strong>Costs:</strong> may lead to monopoly if privatised firms face no competition, job losses in the transition, reduced access to essential services if profit motive dominates (e.g. water, healthcare), may worsen inequality if assets are sold cheaply to elites.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>7. Strategies for Development: Interventionist Approaches</h2>
+<!-- ============================================================ -->
+
+<h3>a) Protectionism / Import Substitution Industrialisation (ISI)</h3>
+<ul>
+  <li>Using tariffs, quotas, and subsidies to protect infant industries from foreign competition while they develop.</li>
+  <li><strong>Benefits:</strong> allows infant industries to grow, diversifies the economy away from primary products, creates manufacturing jobs, reduces dependency on imports.</li>
+  <li><strong>Costs:</strong> protected firms may never become competitive (moral hazard), higher consumer prices, misallocation of resources, risk of retaliation from trading partners, corruption in allocating protection.</li>
+  <li><strong>Historical success:</strong> South Korea, Japan, and China all used selective protection during early industrialisation. But many ISI programmes in Latin America (1950s-80s) produced inefficient industries that could not compete internationally.</li>
+</ul>
+
+<h3>b) Infrastructure Investment</h3>
+<ul>
+  <li>Government spending on transport (roads, railways, ports), energy (power generation), telecommunications, and water/sanitation.</li>
+  <li><strong>Benefits:</strong> reduces costs for businesses, enables market access for rural areas, attracts FDI, creates jobs during construction, generates positive externalities for decades.</li>
+  <li><strong>Costs:</strong> expensive (opportunity cost — money not spent on health/education), risk of corruption and white elephant projects, environmental damage, debt burden if financed by borrowing.</li>
+</ul>
+
+<h3>c) Investment in Education and Healthcare</h3>
+<ul>
+  <li>Building human capital through schools, universities, vocational training, hospitals, and public health programmes.</li>
+  <li><strong>Education benefits:</strong> raises labour productivity, enables technological adoption, reduces fertility rates, empowers women, reduces inequality.</li>
+  <li><strong>Healthcare benefits:</strong> reduces mortality and morbidity, increases working-age population, improves productivity (healthier workers are more productive).</li>
+  <li><strong>Limitations:</strong> very long time lags (10-20 years for education investment to show economic returns), brain drain may mean the country loses its most educated workers, quality matters more than quantity (building schools is not enough without trained teachers and good curricula).</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Bangladesh Garment Industry</strong><br>
+Bangladesh's ready-made garment (RMG) sector grew from virtually nothing in the 1980s to employing ~4 million workers (80% women) and generating ~$42 billion in exports (2022), making it the world's second-largest garment exporter after China. Development impacts: significant poverty reduction (poverty rate fell from 49% in 2000 to ~20% by 2022), women's empowerment through employment and income, and economic diversification. However, the sector highlights development trade-offs: the 2013 Rana Plaza factory collapse killed 1,134 workers, exposing extremely poor working conditions, low wages ($95/month minimum wage in 2023 — among the world's lowest), and weak regulation. Environmental costs include water pollution from textile dyeing. The Bangladesh experience shows that labour-intensive export manufacturing can drive development, but requires strong regulation to ensure workers share in the gains.
+</div>
+
+<!-- ============================================================ -->
+<h2>8. Foreign Aid</h2>
+<!-- ============================================================ -->
+
+<div class="def-box">
+<strong>Foreign aid (Official Development Assistance — ODA):</strong> Financial or technical assistance given by governments or international organisations to developing countries to promote economic development and welfare.
+</div>
+
+<h3>Types of Aid</h3>
+
+<table>
+  <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+  <tr><td><strong>Bilateral aid</strong></td><td>Government-to-government transfers</td><td>UK DFID (now FCDO) aid to Ethiopia</td></tr>
+  <tr><td><strong>Multilateral aid</strong></td><td>Channelled through international organisations</td><td>World Bank loans, UN programmes</td></tr>
+  <tr><td><strong>Tied aid</strong></td><td>Aid conditional on the recipient purchasing goods/services from the donor country</td><td>US requiring aid funds be spent on American-made equipment</td></tr>
+  <tr><td><strong>Untied aid</strong></td><td>No conditions on how money is spent</td><td>Scandinavian countries' aid tends to be largely untied</td></tr>
+  <tr><td><strong>Humanitarian / emergency aid</strong></td><td>Short-term assistance in response to crises</td><td>Earthquake relief, famine response</td></tr>
+  <tr><td><strong>Development aid</strong></td><td>Long-term assistance to build productive capacity</td><td>Funding for schools, infrastructure, agricultural technology</td></tr>
+  <tr><td><strong>Technical assistance</strong></td><td>Provision of expertise, training, and know-how</td><td>Sending engineers, teachers, or policy advisors</td></tr>
+</table>
+
+<h3>Arguments For Aid</h3>
+<ul>
+  <li>Fills the <strong>savings gap</strong> (Harrod-Domar) — provides capital for investment when domestic savings are insufficient.</li>
+  <li>Fills the <strong>foreign exchange gap</strong> — provides hard currency to import capital goods.</li>
+  <li>Humanitarian imperative — moral duty to help the world's poorest.</li>
+  <li>Can fund <strong>public goods</strong> that the private sector will not provide (roads, clean water, disease eradication).</li>
+  <li>Targeted programmes can be very effective — e.g. the WHO smallpox eradication programme, GAVI vaccine alliance.</li>
+</ul>
+
+<h3>Arguments Against Aid</h3>
+<ul>
+  <li><strong>Dependency culture</strong> — reduces incentive for governments to develop their own tax base and institutions.</li>
+  <li><strong>Corruption</strong> — funds may be diverted by corrupt officials (estimated 25-30% of aid to some countries is lost to corruption).</li>
+  <li><strong>Tied aid</strong> — benefits donor country firms more than recipients; often not aligned with recipient needs.</li>
+  <li><strong>Dutch Disease effect</strong> — large aid inflows can cause currency appreciation, harming export competitiveness.</li>
+  <li><strong>Donor motives</strong> — aid may be driven by political/strategic interests rather than development goals (e.g. Cold War era aid).</li>
+  <li><strong>Crowding out</strong> — may discourage domestic private investment and undermine local businesses.</li>
+  <li><strong>Fungibility</strong> — even if aid is earmarked for education, the government may simply reduce its own education spending and redirect funds elsewhere.</li>
+</ul>
+
+<div class="eval-box">
+<strong>Evaluation:</strong> The effectiveness of aid depends heavily on context. Evidence suggests aid works best when: (1) the recipient country has good governance and institutions, (2) aid is untied and aligned with recipient priorities, (3) it funds specific programmes with measurable outcomes (health, education), (4) it is delivered at sufficient scale and sustained over time. Aid alone cannot drive development — it is most effective as a complement to good domestic policies, trade openness, and institutional reform.
+</div>
+
+<!-- ============================================================ -->
+<h2>9. Debt Relief</h2>
+<!-- ============================================================ -->
+
+<div class="def-box">
+<strong>HIPC Initiative (Heavily Indebted Poor Countries):</strong> A programme launched in 1996 by the IMF and World Bank to provide debt relief to the world's poorest and most indebted countries, conditional on implementing economic reforms and poverty reduction strategies.
+</div>
+
+<ul>
+  <li>37 countries (33 in Africa) have completed the HIPC process, receiving ~$76 billion in debt relief.</li>
+  <li>Freed up government revenue for spending on health, education, and infrastructure.</li>
+  <li>HIPC countries increased poverty-reducing spending from 6.4% of GDP (2001) to 9.5% (2015).</li>
+</ul>
+
+<p><strong>Limitations:</strong></p>
+<ul>
+  <li>Conditions attached (Structural Adjustment Programmes) — austerity, privatisation, and liberalisation sometimes worsened poverty in the short run.</li>
+  <li>Some countries have since re-accumulated debt (e.g. Mozambique, Chad).</li>
+  <li>Does not address the root causes of debt accumulation (weak institutions, commodity dependence).</li>
+  <li>Moral hazard — may encourage future irresponsible borrowing.</li>
+  <li>Non-HIPC poor countries miss out.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>10. Role of the IMF and World Bank</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th></th><th>IMF (International Monetary Fund)</th><th>World Bank</th></tr>
+  <tr><td><strong>Founded</strong></td><td>1944 (Bretton Woods)</td><td>1944 (Bretton Woods)</td></tr>
+  <tr><td><strong>Primary role</strong></td><td>Maintain global financial stability; provide short-term loans to countries with balance of payments crises</td><td>Provide long-term loans and grants for development projects (infrastructure, education, health)</td></tr>
+  <tr><td><strong>Conditions</strong></td><td>Structural Adjustment Programmes (SAPs): austerity, deregulation, privatisation, trade liberalisation</td><td>Project-specific conditions; increasingly focused on governance and poverty reduction</td></tr>
+  <tr><td><strong>Successes</strong></td><td>Prevented financial collapse in Asian crisis (1997-98), provided COVID-19 emergency lending</td><td>Funded major infrastructure and health programmes; supported Green Revolution in agriculture</td></tr>
+  <tr><td><strong>Criticisms</strong></td><td>SAPs caused severe austerity and increased poverty; one-size-fits-all approach; dominated by developed countries (US effectively has veto power); conditions undermine sovereignty</td><td>Projects sometimes environmentally destructive; large bureaucracy; conditions too restrictive; loans can increase debt burden</td></tr>
+</table>
+
+<div class="eval-box">
+<strong>Evaluation:</strong> Both institutions have evolved significantly since the 1990s — the IMF has softened its approach to conditionality, and the World Bank increasingly focuses on governance, climate change, and poverty reduction. However, both face criticism for being dominated by Western nations (voting power is weighted by financial contribution) and for promoting a Washington Consensus model of development that may not suit all countries. Their effectiveness depends on whether reforms are owned by the country rather than imposed from outside.
+</div>
+
+<!-- ============================================================ -->
+<h2>11. Government Policies to Reduce Inequality and Poverty</h2>
+<!-- ============================================================ -->
+
+<h3>Fiscal Policies</h3>
+<ul>
+  <li><strong>Progressive taxation</strong> — higher earners pay a larger proportion of income in tax, reducing post-tax inequality.</li>
+  <li><strong>Transfer payments</strong> — benefits, pensions, and tax credits redistribute income to the poorest (e.g. Universal Credit in UK, Bolsa Familia in Brazil).</li>
+  <li><strong>Public spending on education and healthcare</strong> — improves access for the poor, enhancing equality of opportunity.</li>
+</ul>
+
+<h3>Labour Market Policies</h3>
+<ul>
+  <li><strong>Minimum wage</strong> — sets a floor on wages, directly raising incomes of the lowest paid. But may reduce employment if set too high.</li>
+  <li><strong>Training and skills programmes</strong> — help workers move into higher-paid employment.</li>
+  <li><strong>Anti-discrimination legislation</strong> — reduces gender and ethnic pay gaps.</li>
+</ul>
+
+<h3>Land Reform</h3>
+<ul>
+  <li>Redistributing land from large landowners to landless farmers.</li>
+  <li>Can reduce rural poverty and inequality (successful in South Korea, Taiwan).</li>
+  <li>But politically difficult and may reduce agricultural efficiency if farms become too small.</li>
+</ul>
+
+<h3>Conditional Cash Transfers</h3>
+<ul>
+  <li>Payments to poor households conditional on behaviours like sending children to school or attending health check-ups.</li>
+  <li><strong>Evidence:</strong> Brazil's Bolsa Familia reached 14 million families and contributed to reducing extreme poverty from 10% to 4% (2001-2013). Mexico's Progresa/Oportunidades increased school enrolment by 3-4 percentage points.</li>
 </ul>
 
 <div class="diagram-box">
-<svg viewBox="0 0 400 250" width="400" height="250">
-  <!-- Development indicators comparison -->
-  <text x="200" y="25" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="bold">Key Development Indicators Comparison</text>
-  <!-- HDI bar -->
-  <rect x="30" y="50" width="160" height="25" rx="4" fill="#1a73e8" opacity="0.8"/>
-  <text x="35" y="67" font-size="11" fill="white">HDI: Health + Education + Income</text>
-  <!-- GDP bar -->
-  <rect x="30" y="85" width="100" height="25" rx="4" fill="#e11d48" opacity="0.8"/>
-  <text x="35" y="102" font-size="11" fill="white">GDP per capita: Income only</text>
-  <!-- MPI bar -->
-  <rect x="30" y="120" width="180" height="25" rx="4" fill="#22c55e" opacity="0.8"/>
-  <text x="35" y="137" font-size="11" fill="white">MPI: Health + Education + Living Stds</text>
-  <!-- Gini bar -->
-  <rect x="30" y="155" width="80" height="25" rx="4" fill="#7c3aed" opacity="0.8"/>
-  <text x="35" y="172" font-size="11" fill="white">Gini: Distribution</text>
-  <!-- Scale -->
-  <text x="30" y="210" font-size="10" fill="#666">Narrow</text>
-  <line x1="60" y1="205" x2="320" y2="205" stroke="#ccc" stroke-width="1"/>
-  <text x="280" y="210" font-size="10" fill="#666">Comprehensive</text>
-  <text x="30" y="235" font-size="11" fill="#1a1a2e" font-style="italic">No single indicator captures all dimensions of development</text>
+<svg viewBox="0 0 520 360" width="500" style="max-width:100%">
+  <defs>
+    <marker id="arr6" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#333"/></marker>
+  </defs>
+  <!-- Axes -->
+  <line x1="60" y1="300" x2="480" y2="300" stroke="#333" stroke-width="2" marker-end="url(#arr6)"/>
+  <line x1="60" y1="300" x2="60" y2="20" stroke="#333" stroke-width="2" marker-end="url(#arr6)"/>
+  <text x="270" y="340" text-anchor="middle" font-size="13" fill="#333">Cumulative % of population</text>
+  <text x="18" y="160" text-anchor="middle" font-size="13" fill="#333" transform="rotate(-90,18,160)">Cumulative % of income</text>
+
+  <!-- Line of equality -->
+  <line x1="60" y1="300" x2="440" y2="30" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- Pre-redistribution Lorenz -->
+  <path d="M 60,300 Q 200,295 300,275 Q 380,230 420,150 L 440,30" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+  <text x="370" y="260" font-size="12" fill="#e74c3c" font-weight="bold">Before tax</text>
+  <text x="370" y="275" font-size="11" fill="#e74c3c">&amp; transfers</text>
+
+  <!-- Post-redistribution Lorenz -->
+  <path d="M 60,300 Q 160,280 250,240 Q 350,170 410,90 L 440,30" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="190" y="225" font-size="12" fill="#16a34a" font-weight="bold">After tax</text>
+  <text x="190" y="240" font-size="11" fill="#16a34a">&amp; transfers</text>
+
+  <!-- Arrow showing shift -->
+  <line x1="320" y1="265" x2="300" y2="215" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arr6)"/>
+  <text x="340" y="240" font-size="11" fill="#8b5cf6" font-weight="bold">Redistribution</text>
+  <text x="340" y="253" font-size="10" fill="#8b5cf6">reduces inequality</text>
 </svg>
-<p class="diagram-caption">Comparison of development indicators by comprehensiveness. Multiple measures should be used together for a complete picture.</p>
+<div class="diagram-caption">Figure 2: Effect of progressive taxation and transfers on the Lorenz curve</div>
+</div>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Sub-Saharan Africa Development Challenges</strong><br>
+Sub-Saharan Africa (SSA) faces a unique combination of development barriers. Despite averaging 4-5% GDP growth during the 2000s commodity boom, many countries remain trapped by: primary product dependency (oil/minerals account for 60%+ of exports in Nigeria, Angola, DRC), rapid population growth (SSA's population is projected to double to 2.1 billion by 2050), weak institutions and governance (Transparency International ranks most SSA nations in the bottom half), a $90+ billion annual infrastructure gap, brain drain (one-third of Africa's tertiary-educated live outside the continent), and the HIV/AIDS burden (SSA contains ~70% of global HIV cases, though treatment has improved dramatically). However, there are success stories: Rwanda's GDP per capita tripled between 2000-2020 with strong governance; Kenya became a fintech leader (M-Pesa mobile money serves 30+ million users); Ethiopia's manufacturing sector grew rapidly before the Tigray conflict. SSA's young population represents a potential demographic dividend if education and job creation keep pace.
+</div>
+
+<!-- ============================================================ -->
+<h2>12. Summary: Market-Based vs. Interventionist Strategies</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Market-Based</th><th>Interventionist</th></tr>
+  <tr><td>Trade liberalisation</td><td>Protectionism / ISI</td></tr>
+  <tr><td>FDI promotion</td><td>State-directed industrial policy</td></tr>
+  <tr><td>Microfinance</td><td>Government infrastructure investment</td></tr>
+  <tr><td>Deregulation / privatisation</td><td>Public education and healthcare</td></tr>
+  <tr><td>Floating exchange rates</td><td>Managed exchange rates / capital controls</td></tr>
+  <tr><td>Removal of subsidies</td><td>Conditional cash transfers / welfare</td></tr>
+</table>
+
+<div class="eval-box">
+<strong>Key Evaluation Points for the Exam:</strong>
+<ul>
+  <li>There is no one-size-fits-all strategy — the best approach depends on the country's specific circumstances (institutions, geography, colonial history, resource endowments).</li>
+  <li>The most successful developing countries (East Asian Tigers, China) combined elements of both market-based and interventionist approaches.</li>
+  <li>Sequencing matters — some protection may be needed initially, followed by gradual liberalisation once domestic industries are competitive.</li>
+  <li>Good governance and institutions are a prerequisite for any strategy to work — without rule of law, property rights, and accountability, neither markets nor government intervention will succeed.</li>
+  <li>Time lags are critical — education and infrastructure investments take 10-20 years to show results, while trade liberalisation effects can be immediate (but disruptive).</li>
+  <li>External factors matter — global commodity prices, interest rates, trade agreements, and geopolitics all constrain what domestic policy can achieve.</li>
+</ul>
 </div>
 
 <div class="tip-box">
-<strong>Exam tip:</strong> Development essays require nuanced evaluation. Consider: (1) the difference between growth and development; (2) short-run vs. long-run impacts; (3) the role of institutions and governance; (4) trade-offs between growth and sustainability; (5) whether market-oriented or interventionist approaches are more appropriate depends on the country's specific circumstances. Use real-world country examples to support your arguments.
+<strong>Exam Tip:</strong> For 25-mark essay questions on development, always consider the specific context of the country discussed. Avoid generic answers — use case studies to show that different strategies work in different circumstances. The best answers weigh market-based and interventionist approaches against each other, acknowledging that development requires a combination of both, tailored to local conditions.
 </div>
-
-<h2>Government Policies to Address Poverty and Inequality</h2>
-
-<p><strong>Redistribution policies:</strong></p>
-<ul>
-  <li><strong>Progressive taxation</strong> — higher earners pay a larger proportion of income in tax</li>
-  <li><strong>Transfer payments</strong> — benefits, pensions, universal credit</li>
-  <li><strong>National minimum/living wage</strong> — floor on wages</li>
-  <li><strong>In-kind provision</strong> — free education, NHS healthcare, social housing</li>
-</ul>
-
-<p><strong>Evaluation of redistribution:</strong></p>
-<ul>
-  <li>Progressive taxes may reduce incentives to work/invest (Laffer curve argument)</li>
-  <li>Benefits may create dependency and poverty traps</li>
-  <li>Minimum wage may cause unemployment if set too high</li>
-  <li>Public services improve equality of access but are expensive</li>
-  <li>Trade-off between equality and efficiency (though extreme inequality also harms efficiency)</li>
-</ul>
 
 </div>
 </body>

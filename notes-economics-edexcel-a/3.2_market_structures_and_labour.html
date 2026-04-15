@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Market Structures and the Labour Market — Edexcel A A-Level Economics</title>
+<title>Theme 3.2 Market Structures and Labour Market — Edexcel A</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
-  .container { max-width: 800px; margin: 0 auto; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.7; padding: 40px 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
   h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
-  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h2 { font-size: 1.5rem; color: #16213e; margin: 36px 0 14px; border-left: 4px solid #1a73e8; padding-left: 12px; }
   h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
   p { margin: 8px 0; }
   ul, ol { margin: 8px 0 8px 24px; }
@@ -20,278 +20,794 @@
   tr:nth-child(even) { background: #f8fafc; }
   .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
-  .diagram-box { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
+  .case-study { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .case-study strong.cs-title { color: #0369a1; }
+  .eval-box { background: #faf5ff; border-left: 4px solid #8b5cf6; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .diagram-box { background: #f9fafb; border: 2px solid #d1d5db; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
   .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 8px; font-style: italic; }
-  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  .eq { background: #f1f5f9; padding: 10px; border-radius: 6px; text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
 </head>
 <body>
 <div class="container">
 
-<h1>3.2 Market Structures and the Labour Market</h1>
+<h1>Theme 3.2 &mdash; Market Structures and the Labour Market</h1>
 
-<h2>Market Structures Overview</h2>
+<!-- ======================================== -->
+<h2>1. The Market Structure Spectrum</h2>
+
+<div class="def-box">
+<strong>Market structure</strong> describes the competitive environment in which a firm operates. It is determined by: the number and size of firms, the degree of product differentiation, barriers to entry and exit, and the availability of information.
+</div>
 
 <table>
   <tr><th>Feature</th><th>Perfect Competition</th><th>Monopolistic Competition</th><th>Oligopoly</th><th>Monopoly</th></tr>
   <tr><td>Number of firms</td><td>Very many</td><td>Many</td><td>Few dominant</td><td>One</td></tr>
   <tr><td>Barriers to entry</td><td>None</td><td>Low</td><td>High</td><td>Very high</td></tr>
-  <tr><td>Product</td><td>Homogeneous</td><td>Differentiated</td><td>Differentiated or homogeneous</td><td>Unique</td></tr>
+  <tr><td>Product type</td><td>Homogeneous</td><td>Differentiated</td><td>Differentiated or homogeneous</td><td>Unique (no close substitutes)</td></tr>
   <tr><td>Price setting</td><td>Price taker</td><td>Some price setting</td><td>Price maker (interdependent)</td><td>Price maker</td></tr>
-  <tr><td>Long-run profit</td><td>Normal only</td><td>Normal only</td><td>Supernormal possible</td><td>Supernormal possible</td></tr>
-  <tr><td>Efficiency</td><td>Allocative and productive</td><td>Neither in LR</td><td>Possible X-inefficiency</td><td>Neither</td></tr>
+  <tr><td>Non-price competition</td><td>None</td><td>Branding, advertising</td><td>Extensive</td><td>Limited (no rivals)</td></tr>
+  <tr><td>SR supernormal profit</td><td>Possible</td><td>Possible</td><td>Possible</td><td>Possible</td></tr>
+  <tr><td>LR supernormal profit</td><td>No (normal only)</td><td>No (normal only)</td><td>Yes (barriers protect it)</td><td>Yes (barriers protect it)</td></tr>
+  <tr><td>Allocative efficiency (LR)</td><td>Yes (P = MC)</td><td>No (P &gt; MC)</td><td>No (P &gt; MC)</td><td>No (P &gt; MC)</td></tr>
+  <tr><td>Productive efficiency (LR)</td><td>Yes (min ATC)</td><td>No (excess capacity)</td><td>Possible but unlikely</td><td>No (not at min ATC)</td></tr>
 </table>
 
-<h2>Perfect Competition</h2>
+<p>Market structure is best thought of as a <strong>spectrum</strong> from perfect competition (most competitive) to pure monopoly (least competitive). Most real-world markets fall somewhere in between, with oligopoly and monopolistic competition being the most common.</p>
+
+<!-- ======================================== -->
+<h2>2. Perfect Competition</h2>
 
 <div class="def-box">
-<strong>Perfect competition</strong> is a market structure with many buyers and sellers, homogeneous products, perfect information, no barriers to entry or exit, and no single firm can influence the market price. Each firm is a price taker.
+<strong>Perfect competition</strong> is a theoretical market structure with many buyers and sellers, homogeneous products, perfect information, no barriers to entry or exit, and each firm is a price taker facing a perfectly elastic demand curve.
 </div>
 
-<p><strong>Assumptions:</strong></p>
+<p><strong>Assumptions (all must hold):</strong></p>
 <ul>
-  <li>Many small firms, each with negligible market share</li>
-  <li>Identical (homogeneous) products</li>
-  <li>Perfect knowledge for all buyers and sellers</li>
-  <li>Freedom of entry and exit (no barriers)</li>
-  <li>Firms are price takers (perfectly elastic demand curve)</li>
-  <li>No externalities, no transport costs</li>
+  <li>Many small firms, each with a negligible market share</li>
+  <li>Identical (homogeneous) products &mdash; consumers see no difference between firms</li>
+  <li>Perfect knowledge for all buyers and sellers (of prices, costs, technology)</li>
+  <li>Freedom of entry and exit &mdash; no barriers, no sunk costs</li>
+  <li>Firms are <strong>price takers</strong> &mdash; they face a perfectly elastic (horizontal) demand curve at the market price</li>
+  <li>No externalities, no transport costs, rational profit-maximising behaviour</li>
 </ul>
 
-<div class="diagram-box">
-<svg viewBox="0 0 420 280" width="420" height="280">
-  <defs><marker id="arr12" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1a1a2e"/></marker></defs>
-  <!-- Axes -->
-  <line x1="60" y1="240" x2="390" y2="240" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr12)"/>
-  <line x1="60" y1="240" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr12)"/>
-  <!-- MC curve -->
-  <path d="M 100 200 Q 150 230, 180 180 Q 220 100, 340 40" stroke="#e11d48" stroke-width="2.5" fill="none"/>
-  <text x="345" y="40" font-size="12" fill="#e11d48">MC</text>
-  <!-- ATC curve -->
-  <path d="M 110 180 Q 180 100, 240 95 Q 310 100, 370 140" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
-  <text x="375" y="140" font-size="12" fill="#1a73e8">ATC</text>
-  <!-- AR=MR=P (horizontal) -->
-  <line x1="60" y1="95" x2="380" y2="95" stroke="#22c55e" stroke-width="2"/>
-  <text x="385" y="95" font-size="11" fill="#22c55e">AR=MR=P</text>
-  <!-- Equilibrium at MC=MR on ATC -->
-  <circle cx="240" cy="95" r="4" fill="#1a1a2e"/>
-  <line x1="240" y1="95" x2="240" y2="240" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="235" y="256" font-size="11" fill="#1a1a2e">Q*</text>
-  <!-- Labels -->
-  <text x="200" y="270" font-size="14" fill="#1a1a2e">Quantity</text>
-  <text x="12" y="130" font-size="14" fill="#1a1a2e" transform="rotate(-90,12,130)">Costs/Revenue</text>
-  <text x="100" y="75" font-size="11" fill="#7c3aed">Long-run: P = MC = min ATC</text>
-  <text x="100" y="88" font-size="11" fill="#7c3aed">(normal profit only)</text>
-</svg>
-<p class="diagram-caption">Perfect competition long-run equilibrium: P = MC = minimum ATC. The firm earns only normal profit. This achieves both allocative efficiency (P = MC) and productive efficiency (minimum ATC).</p>
-</div>
+<p>Because the product is homogeneous, <strong>AR = MR = Price</strong> for each firm. If a firm tries to charge above the market price, it sells nothing (consumers switch to identical substitutes with perfect knowledge).</p>
 
-<p><strong>Short-run:</strong> Firms can earn supernormal profit (P > ATC) or make losses (P < ATC).</p>
-<p><strong>Long-run adjustment:</strong> Supernormal profits attract new entrants, increasing supply, driving price down to P = min ATC. Losses cause firms to exit, reducing supply, driving price up. In long-run equilibrium, only normal profit is earned.</p>
-
-<h2>Monopoly</h2>
-
-<div class="def-box">
-<strong>Pure monopoly</strong> — a single firm is the sole supplier in the market. In practice, a firm with 25%+ market share can be considered to have monopoly power (under UK competition law).
-</div>
-
-<p><strong>Sources of monopoly power (barriers to entry):</strong></p>
-<ul>
-  <li><strong>Economies of scale</strong> — natural monopoly: one firm can supply at lower cost than two or more</li>
-  <li><strong>Legal barriers</strong> — patents, copyrights, licences, regulation</li>
-  <li><strong>Brand loyalty and advertising</strong> — huge marketing budgets deter entrants</li>
-  <li><strong>Control of essential resources</strong> — exclusive access to raw materials</li>
-  <li><strong>Predatory pricing</strong> — temporarily setting price below cost to drive out competitors</li>
-  <li><strong>High sunk costs</strong> — costs that cannot be recovered on exit</li>
-</ul>
+<h3>Short-Run Equilibrium: Supernormal Profit</h3>
 
 <div class="diagram-box">
-<svg viewBox="0 0 420 320" width="420" height="320">
-  <defs><marker id="arr13" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1a1a2e"/></marker></defs>
+<svg viewBox="0 0 480 310" width="480" height="310">
+  <defs><marker id="arrPC1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1a1a2e"/></marker></defs>
   <!-- Axes -->
-  <line x1="60" y1="280" x2="390" y2="280" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr13)"/>
-  <line x1="60" y1="280" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr13)"/>
+  <line x1="60" y1="260" x2="430" y2="260" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrPC1)"/>
+  <line x1="60" y1="260" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrPC1)"/>
   <!-- MC curve -->
-  <path d="M 90 220 Q 140 260, 170 210 Q 210 130, 340 40" stroke="#e11d48" stroke-width="2.5" fill="none"/>
-  <text x="345" y="40" font-size="12" fill="#e11d48">MC</text>
+  <path d="M 100 210 Q 155 245, 185 190 Q 230 100, 370 35" stroke="#e11d48" stroke-width="2.5" fill="none"/>
+  <text x="375" y="38" font-size="12" fill="#e11d48" font-weight="bold">MC</text>
   <!-- ATC curve -->
-  <path d="M 100 190 Q 180 105, 240 100 Q 310 105, 370 155" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
-  <text x="375" y="155" font-size="12" fill="#1a73e8">ATC</text>
-  <!-- AR/Demand -->
-  <line x1="80" y1="60" x2="370" y2="250" stroke="#22c55e" stroke-width="2"/>
-  <text x="375" y="250" font-size="12" fill="#22c55e">AR=D</text>
-  <!-- MR -->
-  <line x1="80" y1="60" x2="225" y2="250" stroke="#7c3aed" stroke-width="2"/>
-  <text x="230" y="250" font-size="12" fill="#7c3aed">MR</text>
-  <!-- Profit max: MC=MR -->
-  <circle cx="185" cy="170" r="4" fill="#1a1a2e"/>
-  <line x1="185" y1="170" x2="185" y2="280" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- Price from AR at profit max Q -->
-  <line x1="60" y1="118" x2="185" y2="118" stroke="#22c55e" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="60" y1="148" x2="185" y2="148" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <path d="M 110 190 Q 190 105, 255 100 Q 325 108, 400 155" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
+  <text x="405" y="158" font-size="12" fill="#1a73e8" font-weight="bold">ATC</text>
+  <!-- AR=MR=P (horizontal) above ATC minimum -->
+  <line x1="60" y1="80" x2="420" y2="80" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="425" y="84" font-size="11" fill="#22c55e" font-weight="bold">AR=MR=P</text>
+  <!-- MC=MR intersection -->
+  <circle cx="225" cy="80" r="4" fill="#1a1a2e"/>
+  <line x1="225" y1="80" x2="225" y2="260" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- ATC at Q* -->
+  <line x1="60" y1="108" x2="225" y2="108" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
   <!-- Supernormal profit -->
-  <rect x="60" y="118" width="125" height="30" fill="rgba(34,197,94,0.2)" stroke="#22c55e" stroke-width="1"/>
-  <text x="85" y="138" font-size="11" fill="#22c55e">Supernormal profit</text>
-  <!-- Deadweight loss area -->
-  <polygon points="185,170 255,137 255,170" fill="rgba(225,29,72,0.15)" stroke="#e11d48" stroke-width="1"/>
-  <text x="200" y="185" font-size="10" fill="#e11d48">DWL</text>
-  <text x="40" y="122" font-size="10" fill="#22c55e">Pm</text>
-  <text x="178" y="296" font-size="11" fill="#1a1a2e">Qm</text>
-  <!-- Labels -->
-  <text x="200" y="310" font-size="14" fill="#1a1a2e">Quantity</text>
-  <text x="12" y="150" font-size="14" fill="#1a1a2e" transform="rotate(-90,12,150)">Costs/Revenue</text>
+  <rect x="60" y="80" width="165" height="28" fill="rgba(34,197,94,0.15)" stroke="#22c55e" stroke-width="1"/>
+  <text x="100" y="99" font-size="11" fill="#16a34a" font-weight="bold">Supernormal profit</text>
+  <text x="40" y="84" font-size="10" fill="#22c55e">P</text>
+  <text x="30" y="112" font-size="10" fill="#1a73e8">ATC</text>
+  <text x="218" y="276" font-size="11" fill="#1a1a2e" font-weight="bold">Q*</text>
+  <text x="220" y="295" font-size="14" fill="#1a1a2e">Output (Q)</text>
+  <text x="12" y="140" font-size="14" fill="#1a1a2e" transform="rotate(-90,12,140)">Costs / Revenue (&pound;)</text>
 </svg>
-<p class="diagram-caption">Monopoly: profit maximisation at MC = MR. Price (Pm) exceeds ATC, generating supernormal profit. Output is lower and price higher than under perfect competition, creating a deadweight loss (DWL).</p>
+<p class="diagram-caption">Perfect competition: short-run supernormal profit. P &gt; ATC at the profit-maximising output (MC = MR). This attracts new entrants.</p>
 </div>
 
-<p><strong>Evaluation of monopoly:</strong></p>
-<table>
-  <tr><th>Costs</th><th>Benefits</th></tr>
-  <tr><td>Higher prices, lower output</td><td>Economies of scale may lower costs</td></tr>
-  <tr><td>Allocative inefficiency (P > MC)</td><td>Supernormal profits fund R&D and innovation</td></tr>
-  <tr><td>Productive inefficiency (not at min ATC)</td><td>Natural monopoly — duplication of infrastructure wasteful</td></tr>
-  <tr><td>X-inefficiency (lack of competitive pressure)</td><td>Cross-subsidisation of loss-making services</td></tr>
-  <tr><td>Reduced consumer surplus</td><td>International competitiveness (large firms compete globally)</td></tr>
-</table>
+<h3>Long-Run Equilibrium: Normal Profit Only</h3>
 
-<h2>Oligopoly</h2>
+<p><strong>Adjustment mechanism:</strong></p>
+<ol>
+  <li>Supernormal profits in the short run act as a <strong>signal</strong> to potential entrants</li>
+  <li>New firms enter the market (no barriers to entry)</li>
+  <li>Market supply increases &rarr; market price falls</li>
+  <li>This continues until price falls to the minimum of ATC</li>
+  <li>In long-run equilibrium: <strong>P = MC = minimum ATC</strong> &mdash; only normal profit is earned</li>
+</ol>
+
+<p>The reverse occurs if firms make losses: firms exit &rarr; supply falls &rarr; price rises &rarr; until normal profit is restored.</p>
+
+<div class="diagram-box">
+<svg viewBox="0 0 480 310" width="480" height="310">
+  <defs><marker id="arrPC2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1a1a2e"/></marker></defs>
+  <!-- Axes -->
+  <line x1="60" y1="260" x2="430" y2="260" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrPC2)"/>
+  <line x1="60" y1="260" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrPC2)"/>
+  <!-- MC curve -->
+  <path d="M 100 210 Q 155 245, 185 190 Q 230 100, 370 35" stroke="#e11d48" stroke-width="2.5" fill="none"/>
+  <text x="375" y="38" font-size="12" fill="#e11d48" font-weight="bold">MC</text>
+  <!-- ATC curve -->
+  <path d="M 110 190 Q 190 105, 255 100 Q 325 108, 400 155" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
+  <text x="405" y="158" font-size="12" fill="#1a73e8" font-weight="bold">ATC</text>
+  <!-- AR=MR=P tangent to ATC minimum -->
+  <line x1="60" y1="100" x2="420" y2="100" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="425" y="104" font-size="11" fill="#22c55e" font-weight="bold">AR=MR=P</text>
+  <!-- Equilibrium at MC=MR=min ATC -->
+  <circle cx="255" cy="100" r="4" fill="#1a1a2e"/>
+  <line x1="255" y1="100" x2="255" y2="260" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="248" y="276" font-size="11" fill="#1a1a2e" font-weight="bold">Q*</text>
+  <!-- Annotations -->
+  <text x="100" y="55" font-size="11" fill="#7c3aed" font-weight="bold">P = MC = min ATC</text>
+  <text x="100" y="70" font-size="11" fill="#7c3aed">Normal profit only</text>
+  <text x="100" y="85" font-size="11" fill="#7c3aed">Allocative + Productive efficiency</text>
+  <text x="220" y="295" font-size="14" fill="#1a1a2e">Output (Q)</text>
+  <text x="12" y="140" font-size="14" fill="#1a1a2e" transform="rotate(-90,12,140)">Costs / Revenue (&pound;)</text>
+</svg>
+<p class="diagram-caption">Perfect competition long-run equilibrium: P = MC = minimum ATC. Allocative efficiency (P = MC) and productive efficiency (minimum ATC) are both achieved. Only normal profit is earned.</p>
+</div>
+
+<h3>Efficiency in Perfect Competition</h3>
+<ul>
+  <li><strong>Allocative efficiency (P = MC):</strong> Resources are allocated to their most valued use. The price consumers pay equals the marginal cost of production.</li>
+  <li><strong>Productive efficiency (min ATC):</strong> Firms produce at the lowest possible average cost. No waste.</li>
+  <li><strong>Dynamic efficiency:</strong> Weak &mdash; normal profits may not fund R&amp;D and innovation. This is the main criticism of perfect competition.</li>
+  <li><strong>X-efficiency:</strong> Achieved &mdash; competitive pressure eliminates managerial slack.</li>
+</ul>
+
+<div class="tip-box">
+<strong>Exam tip:</strong> Perfect competition is a <em>benchmark model</em>, not a description of reality. Very few real-world markets satisfy all assumptions. Its value is in providing a standard against which to compare other market structures. The closest real-world examples are commodity markets (wheat, copper) and foreign exchange.
+</div>
+
+<!-- ======================================== -->
+<h2>3. Monopolistic Competition</h2>
 
 <div class="def-box">
-<strong>Oligopoly</strong> is a market structure dominated by a few large firms, each with significant market share. The key feature is <strong>interdependence</strong> — each firm's actions affect and are influenced by rivals' actions.
+<strong>Monopolistic competition</strong> combines elements of monopoly (differentiated products, downward-sloping demand) and competition (many firms, low barriers to entry). Each firm has a small degree of market power due to product differentiation.
+</div>
+
+<p><strong>Characteristics:</strong></p>
+<ul>
+  <li>Many firms, each with a small market share</li>
+  <li><strong>Product differentiation</strong> &mdash; products are similar but not identical (branding, quality, design, location)</li>
+  <li><strong>Low barriers to entry and exit</strong> &mdash; easy for new firms to enter</li>
+  <li>Each firm faces a <strong>downward-sloping demand curve</strong> (some price-setting power) but demand is relatively elastic due to many substitutes</li>
+  <li><strong>Non-price competition</strong> &mdash; advertising, branding, customer service, product innovation</li>
+</ul>
+
+<p><strong>Real-world examples:</strong> Restaurants, hairdressers, clothing retailers, independent coffee shops.</p>
+
+<h3>Short Run: Supernormal Profit Possible</h3>
+<p>In the short run, a monopolistically competitive firm can earn supernormal profit if demand is sufficiently high (AR &gt; ATC at MC = MR). The diagram is identical to the monopoly short-run diagram.</p>
+
+<h3>Long Run: Normal Profit Only</h3>
+
+<div class="diagram-box">
+<svg viewBox="0 0 480 320" width="480" height="320">
+  <defs><marker id="arrMC1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1a1a2e"/></marker></defs>
+  <!-- Axes -->
+  <line x1="60" y1="270" x2="430" y2="270" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrMC1)"/>
+  <line x1="60" y1="270" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrMC1)"/>
+  <!-- MC curve -->
+  <path d="M 100 220 Q 150 260, 185 200 Q 225 120, 370 40" stroke="#e11d48" stroke-width="2.5" fill="none"/>
+  <text x="375" y="43" font-size="12" fill="#e11d48" font-weight="bold">MC</text>
+  <!-- ATC curve tangent to AR -->
+  <path d="M 110 200 Q 190 110, 260 105 Q 330 110, 400 170" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
+  <text x="405" y="173" font-size="12" fill="#1a73e8" font-weight="bold">ATC</text>
+  <!-- AR curve (downward sloping, tangent to ATC) -->
+  <line x1="100" y1="55" x2="360" y2="230" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="365" y="233" font-size="12" fill="#22c55e" font-weight="bold">AR = D</text>
+  <!-- MR curve -->
+  <line x1="100" y1="55" x2="230" y2="230" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="235" y="233" font-size="12" fill="#7c3aed" font-weight="bold">MR</text>
+  <!-- MC = MR point -->
+  <circle cx="198" cy="168" r="4" fill="#1a1a2e"/>
+  <line x1="198" y1="168" x2="198" y2="270" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Price = ATC at Q* (tangent) -->
+  <line x1="60" y1="120" x2="198" y2="120" stroke="#22c55e" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="198" cy="120" r="4" fill="#22c55e"/>
+  <text x="35" y="124" font-size="10" fill="#22c55e">P*</text>
+  <text x="190" y="286" font-size="11" fill="#1a1a2e" font-weight="bold">Q*</text>
+  <!-- Excess capacity annotation -->
+  <line x1="260" y1="105" x2="260" y2="270" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="252" y="286" font-size="10" fill="#f59e0b">Q<tspan font-size="8" baseline-shift="sub">eff</tspan></text>
+  <line x1="198" y1="250" x2="260" y2="250" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrMC1)"/>
+  <text x="205" y="245" font-size="10" fill="#f59e0b" font-weight="bold">Excess capacity</text>
+  <!-- Annotations -->
+  <text x="270" y="80" font-size="11" fill="#7c3aed">AR tangent to ATC</text>
+  <text x="270" y="95" font-size="11" fill="#7c3aed">&rarr; Normal profit only</text>
+  <text x="220" y="300" font-size="14" fill="#1a1a2e">Output (Q)</text>
+  <text x="12" y="145" font-size="14" fill="#1a1a2e" transform="rotate(-90,12,145)">Costs / Revenue (&pound;)</text>
+</svg>
+<p class="diagram-caption">Monopolistic competition long-run equilibrium. AR is tangent to ATC (normal profit only). The firm produces at Q* which is below the output at minimum ATC (Q_eff), creating excess capacity.</p>
+</div>
+
+<p><strong>Long-run adjustment:</strong> Supernormal profits attract new entrants &rarr; each existing firm&rsquo;s demand curve shifts left (market share falls) &rarr; continues until AR is tangent to ATC &rarr; normal profit only.</p>
+
+<h3>Efficiency in Monopolistic Competition</h3>
+<ul>
+  <li><strong>Allocative inefficiency:</strong> P &gt; MC &mdash; price exceeds marginal cost, so too little is produced from society&rsquo;s perspective</li>
+  <li><strong>Productive inefficiency:</strong> Firms produce to the left of minimum ATC &mdash; there is <strong>excess capacity</strong>. Firms could produce more at lower average cost but choose not to.</li>
+  <li><strong>However:</strong> Product differentiation gives consumers <strong>variety and choice</strong>, which has value. The "cost" of inefficiency may be offset by the benefit of diversity.</li>
+</ul>
+
+<!-- ======================================== -->
+<h2>4. Oligopoly</h2>
+
+<div class="def-box">
+<strong>Oligopoly</strong> is a market structure dominated by a <strong>few large firms</strong>, each with significant market share. The defining feature is <strong>interdependence</strong> &mdash; each firm&rsquo;s pricing and output decisions affect, and are affected by, the decisions of rival firms.
+</div>
+
+<p><strong>Key characteristics:</strong></p>
+<ul>
+  <li><strong>High concentration ratio</strong> &mdash; a few firms dominate (e.g. 5-firm concentration ratio &gt; 50%)</li>
+  <li><strong>Interdependence</strong> &mdash; firms must consider how rivals will react before making decisions</li>
+  <li><strong>High barriers to entry</strong> &mdash; economies of scale, brand loyalty, patents, sunk costs</li>
+  <li><strong>Price rigidity</strong> &mdash; prices tend to be stable (explained by the kinked demand curve)</li>
+  <li><strong>Non-price competition</strong> &mdash; advertising, loyalty cards, product innovation, quality, customer service</li>
+  <li>Products may be <strong>differentiated</strong> (cars, smartphones) or <strong>homogeneous</strong> (oil, steel)</li>
+</ul>
+
+<h3>4a. The Kinked Demand Curve (Sweezy Model)</h3>
+
+<div class="def-box">
+The <strong>kinked demand curve</strong> model explains price rigidity in oligopoly. It assumes:<br>
+&bull; If a firm <strong>raises</strong> its price, rivals will <em>not</em> follow &rarr; the firm loses many customers &rarr; demand is <strong>elastic</strong> above the current price<br>
+&bull; If a firm <strong>lowers</strong> its price, rivals <em>will</em> follow (to protect market share) &rarr; the firm gains few extra customers &rarr; demand is <strong>inelastic</strong> below the current price
+</div>
+
+<div class="diagram-box">
+<svg viewBox="0 0 480 340" width="480" height="340">
+  <defs><marker id="arrK1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1a1a2e"/></marker></defs>
+  <!-- Axes -->
+  <line x1="60" y1="290" x2="430" y2="290" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrK1)"/>
+  <line x1="60" y1="290" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrK1)"/>
+  <!-- Kinked demand curve -->
+  <!-- Elastic portion (above kink) -->
+  <line x1="100" y1="50" x2="230" y2="140" stroke="#22c55e" stroke-width="2.5"/>
+  <!-- Inelastic portion (below kink) -->
+  <line x1="230" y1="140" x2="340" y2="260" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="345" y="263" font-size="12" fill="#22c55e" font-weight="bold">D (AR)</text>
+  <!-- Kink point -->
+  <circle cx="230" cy="140" r="5" fill="#1a1a2e"/>
+  <!-- MR (with discontinuity) -->
+  <line x1="100" y1="50" x2="230" y2="140" stroke="#7c3aed" stroke-width="0" fill="none"/>
+  <!-- MR elastic portion -->
+  <line x1="120" y1="80" x2="230" y2="185" stroke="#7c3aed" stroke-width="2.5"/>
+  <!-- MR vertical gap (discontinuity) -->
+  <line x1="230" y1="185" x2="230" y2="230" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,3"/>
+  <!-- MR inelastic portion -->
+  <line x1="230" y1="230" x2="290" y2="280" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="295" y="280" font-size="12" fill="#7c3aed" font-weight="bold">MR</text>
+  <!-- MC curves showing cost can vary without price change -->
+  <path d="M 160 260 Q 200 270, 220 220 Q 240 180, 300 100" stroke="#e11d48" stroke-width="2" fill="none"/>
+  <text x="305" y="100" font-size="11" fill="#e11d48">MC&#8321;</text>
+  <path d="M 140 280 Q 190 280, 215 250 Q 240 210, 310 130" stroke="#e11d48" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+  <text x="315" y="130" font-size="11" fill="#e11d48">MC&#8322;</text>
+  <!-- Price and quantity lines -->
+  <line x1="60" y1="140" x2="230" y2="140" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="230" y1="140" x2="230" y2="290" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="40" y="144" font-size="11" fill="#1a1a2e" font-weight="bold">P*</text>
+  <text x="223" y="305" font-size="11" fill="#1a1a2e" font-weight="bold">Q*</text>
+  <!-- Annotations -->
+  <text x="100" y="40" font-size="10" fill="#22c55e" font-weight="bold">Elastic: rivals don&rsquo;t follow</text>
+  <text x="290" y="240" font-size="10" fill="#22c55e" font-weight="bold">Inelastic: rivals follow</text>
+  <text x="240" y="210" font-size="10" fill="#7c3aed">Discontinuity</text>
+  <text x="220" y="325" font-size="14" fill="#1a1a2e">Output (Q)</text>
+  <text x="12" y="155" font-size="14" fill="#1a1a2e" transform="rotate(-90,12,155)">Price / Costs (&pound;)</text>
+</svg>
+<p class="diagram-caption">The kinked demand curve. The kink at the current price creates a discontinuity (vertical gap) in the MR curve. MC can shift between MC1 and MC2 without changing the profit-maximising price or quantity, explaining price rigidity.</p>
+</div>
+
+<p><strong>Key implication:</strong> Because MC can shift within the vertical gap in MR without changing the profit-maximising output, prices tend to be <strong>sticky</strong> in oligopoly. Firms compete on non-price factors instead.</p>
+
+<div class="eval-box">
+<strong>Evaluation of the kinked demand curve:</strong><br>
+<strong>Strengths:</strong> Explains observed price rigidity; explains why non-price competition is common.<br>
+<strong>Weaknesses:</strong> Does not explain how the initial price is set; does not explain price wars when they do occur; assumes asymmetric rival responses which may not always hold; it is descriptive rather than predictive.
+</div>
+
+<h3>4b. Game Theory and the Prisoner&rsquo;s Dilemma</h3>
+
+<div class="def-box">
+<strong>Game theory</strong> analyses strategic decision-making where the outcome for each player depends on the actions of all players. The <strong>prisoner&rsquo;s dilemma</strong> illustrates why oligopolistic firms may fail to collude even though collusion would maximise joint profits.
+</div>
+
+<p><strong>Classic oligopoly example:</strong> Two firms choose between a high price (cooperate) and a low price (compete).</p>
+
+<table>
+  <tr><th></th><th>Firm B: High Price</th><th>Firm B: Low Price</th></tr>
+  <tr><td><strong>Firm A: High Price</strong></td><td>A: &pound;5m, B: &pound;5m</td><td>A: &pound;1m, B: &pound;8m</td></tr>
+  <tr><td><strong>Firm A: Low Price</strong></td><td>A: &pound;8m, B: &pound;1m</td><td>A: &pound;3m, B: &pound;3m</td></tr>
+</table>
+
+<p><strong>Analysis:</strong></p>
+<ul>
+  <li>The best joint outcome is both firms charging a high price (&pound;5m each)</li>
+  <li>But each firm has a <strong>dominant strategy</strong> to charge a low price: whatever the rival does, low price yields a higher payoff</li>
+  <li>The <strong>Nash equilibrium</strong> is (Low, Low) &mdash; both firms charge a low price and earn &pound;3m each</li>
+  <li>This is a <strong>suboptimal outcome</strong> &mdash; both firms would be better off cooperating, but the incentive to cheat prevents it</li>
+</ul>
+
+<p>In <strong>repeated games</strong> (which oligopoly resembles), firms can learn to cooperate through strategies like <em>tit-for-tat</em> (cooperate first, then mirror the rival&rsquo;s previous action). This explains why tacit collusion is more common than price wars in stable oligopolies.</p>
+
+<h3>4c. Collusion</h3>
+
+<div class="def-box">
+<strong>Collusion</strong> occurs when firms in an oligopoly agree (formally or informally) to restrict competition, typically by fixing prices, limiting output, or dividing markets.
+</div>
+
+<table>
+  <tr><th>Type</th><th>Description</th><th>Legal Status</th><th>Example</th></tr>
+  <tr><td><strong>Overt (formal) collusion</strong></td><td>Explicit agreement between firms, often forming a cartel with quotas and prices</td><td>Illegal in UK/EU/US</td><td>OPEC oil cartel</td></tr>
+  <tr><td><strong>Tacit (informal) collusion</strong></td><td>Firms follow a price leader without formal agreement; parallel pricing behaviour</td><td>Difficult to prove/prosecute</td><td>UK petrol pricing</td></tr>
+</table>
+
+<p><strong>Factors favouring collusion:</strong> Few firms, similar cost structures, homogeneous product, high barriers to entry, stable demand, inelastic demand, weak regulation, repeated interaction.</p>
+<p><strong>Factors against collusion:</strong> Many firms, different costs, easy entry, volatile demand, strong regulation (CMA/EU Commission), incentive to cheat (prisoner&rsquo;s dilemma), differing objectives.</p>
+
+<h3>4d. Non-Price Competition</h3>
+<p>Because price competition can be destructive (price wars reduce all firms&rsquo; profits), oligopolists often compete through:</p>
+<ul>
+  <li><strong>Advertising and branding</strong> &mdash; building brand loyalty and perceived quality</li>
+  <li><strong>Product innovation and quality</strong> &mdash; new features, improved design</li>
+  <li><strong>Loyalty schemes</strong> &mdash; Tesco Clubcard, Nectar points</li>
+  <li><strong>Customer service</strong> &mdash; delivery speed, after-sales support</li>
+  <li><strong>Location and convenience</strong></li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: UK Supermarket Oligopoly</strong><br>
+The UK grocery market is a classic oligopoly: in 2024, Tesco (27%), Sainsbury&rsquo;s (15%), Asda (14%), and Morrisons (9%) together held roughly 65% market share (4-firm concentration ratio). <strong>Interdependence</strong> is clear: when Aldi and Lidl grew rapidly in the 2010s, all major supermarkets responded with price-matching campaigns. <strong>Non-price competition</strong> is extensive: Tesco Clubcard, Sainsbury&rsquo;s Nectar, home delivery services, own-brand ranges, and convenience store formats. There have been instances of <strong>tacit collusion</strong> &mdash; in 2007, the OFT fined supermarkets for coordinating price rises on dairy products. The entry of discounters Aldi and Lidl illustrates how <strong>contestability</strong> can discipline incumbent oligopolists, though these markets still exhibit significant barriers (land, supply chains, brand loyalty).
+</div>
+
+<!-- ======================================== -->
+<h2>5. Monopoly</h2>
+
+<div class="def-box">
+<strong>Pure monopoly:</strong> A single firm is the sole supplier in the market &mdash; it <em>is</em> the industry.<br>
+<strong>Legal monopoly (UK):</strong> A firm with 25%+ market share is considered to have monopoly power under the Enterprise Act 2002, allowing CMA investigation.
+</div>
+
+<h3>Sources of Monopoly Power (Barriers to Entry)</h3>
+<ul>
+  <li><strong>Economies of scale / natural monopoly</strong> &mdash; one firm can supply the whole market at lower cost than two or more firms (e.g. water pipes, rail network). The MES is close to or exceeds total market demand.</li>
+  <li><strong>Legal barriers</strong> &mdash; patents (up to 20 years), copyrights, licences, regulatory requirements</li>
+  <li><strong>Brand loyalty and advertising</strong> &mdash; huge marketing budgets create consumer loyalty that new entrants cannot match</li>
+  <li><strong>Control of essential resources</strong> &mdash; exclusive access to raw materials or technology</li>
+  <li><strong>Predatory pricing</strong> &mdash; temporarily setting price below cost to drive out competitors, then raising it once rivals have exited</li>
+  <li><strong>High sunk costs</strong> &mdash; irrecoverable costs that make exit costly, deterring entry</li>
+  <li><strong>Network effects</strong> &mdash; the value of a product increases with more users (e.g. social media, operating systems)</li>
+</ul>
+
+<h3>Monopoly Diagram</h3>
+
+<div class="diagram-box">
+<svg viewBox="0 0 500 350" width="500" height="350">
+  <defs><marker id="arrM1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1a1a2e"/></marker></defs>
+  <!-- Axes -->
+  <line x1="60" y1="300" x2="450" y2="300" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrM1)"/>
+  <line x1="60" y1="300" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrM1)"/>
+  <!-- MC curve -->
+  <path d="M 90 240 Q 145 275, 180 220 Q 225 130, 380 40" stroke="#e11d48" stroke-width="2.5" fill="none"/>
+  <text x="385" y="43" font-size="12" fill="#e11d48" font-weight="bold">MC</text>
+  <!-- ATC curve -->
+  <path d="M 100 210 Q 195 110, 265 105 Q 340 112, 420 170" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
+  <text x="425" y="173" font-size="12" fill="#1a73e8" font-weight="bold">ATC</text>
+  <!-- AR/Demand -->
+  <line x1="90" y1="60" x2="410" y2="270" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="415" y="273" font-size="12" fill="#22c55e" font-weight="bold">AR = D</text>
+  <!-- MR -->
+  <line x1="90" y1="60" x2="250" y2="270" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="255" y="273" font-size="12" fill="#7c3aed" font-weight="bold">MR</text>
+  <!-- MC = MR intersection -->
+  <circle cx="200" cy="180" r="4" fill="#1a1a2e"/>
+  <line x1="200" y1="180" x2="200" y2="300" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- Price from AR -->
+  <line x1="60" y1="120" x2="200" y2="120" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- ATC at Qm -->
+  <line x1="60" y1="155" x2="200" y2="155" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- Supernormal profit -->
+  <rect x="60" y="120" width="140" height="35" fill="rgba(34,197,94,0.15)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="85" y="143" font-size="11" fill="#16a34a" font-weight="bold">Supernormal profit</text>
+  <!-- Deadweight loss triangle -->
+  <!-- Competitive output would be where MC = AR (approx 280, 170) -->
+  <polygon points="200,120 280,155 200,180" fill="rgba(139,92,246,0.15)" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="215" y="155" font-size="10" fill="#8b5cf6" font-weight="bold">DWL</text>
+  <!-- Competitive point -->
+  <circle cx="280" cy="155" r="3" fill="#8b5cf6"/>
+  <text x="285" y="150" font-size="9" fill="#8b5cf6">P=MC</text>
+  <!-- Labels -->
+  <text x="35" y="124" font-size="11" fill="#22c55e" font-weight="bold">Pm</text>
+  <text x="28" y="160" font-size="11" fill="#1a73e8">ATC</text>
+  <text x="192" y="316" font-size="11" fill="#1a1a2e" font-weight="bold">Qm</text>
+  <text x="230" y="330" font-size="14" fill="#1a1a2e">Output (Q)</text>
+  <text x="12" y="160" font-size="14" fill="#1a1a2e" transform="rotate(-90,12,160)">Costs / Revenue (&pound;)</text>
+</svg>
+<p class="diagram-caption">Monopoly profit maximisation at MC = MR. The monopolist charges Pm (from AR) and produces Qm. Supernormal profit = (Pm &minus; ATC) x Qm. The deadweight loss (DWL) triangle shows the welfare loss compared to the competitive outcome (P = MC).</p>
+</div>
+
+<h3>Advantages and Disadvantages of Monopoly</h3>
+
+<table>
+  <tr><th>Disadvantages (Costs)</th><th>Advantages (Benefits)</th></tr>
+  <tr><td>Higher prices, lower output than competition</td><td><strong>Economies of scale</strong> may lead to lower costs and prices than many small firms</td></tr>
+  <tr><td><strong>Allocative inefficiency</strong> (P &gt; MC) &mdash; underproduction</td><td>Supernormal profits fund <strong>R&amp;D and innovation</strong> (Schumpeter argument)</td></tr>
+  <tr><td><strong>Productive inefficiency</strong> (not at min ATC)</td><td><strong>Natural monopoly</strong> &mdash; duplication of infrastructure is wasteful (e.g. two sets of water pipes)</td></tr>
+  <tr><td><strong>X-inefficiency</strong> &mdash; lack of competition removes incentive to minimise costs</td><td><strong>Cross-subsidisation</strong> &mdash; profits from one service fund loss-making services (e.g. rural postal delivery)</td></tr>
+  <tr><td>Reduced <strong>consumer surplus</strong></td><td><strong>International competitiveness</strong> &mdash; large firms compete effectively in global markets</td></tr>
+  <tr><td><strong>Deadweight welfare loss</strong></td><td><strong>Dynamic efficiency</strong> &mdash; monopoly profits provide the incentive and means for innovation</td></tr>
+</table>
+
+<div class="eval-box">
+<strong>Schumpeter vs the neoclassical view:</strong><br>
+The neoclassical view holds that monopoly is harmful: P &gt; MC, deadweight loss, and X-inefficiency. However, <strong>Schumpeter (1942)</strong> argued that monopoly power is actually the engine of innovation. Only firms with supernormal profits can afford the risky R&amp;D investments that drive "creative destruction" &mdash; new products and processes that benefit consumers in the long run. The truth likely depends on the specific market: in some industries (pharmaceuticals), patent-protected monopoly profits fund life-saving innovation; in others (cable TV), monopoly leads to poor service and high prices.
+</div>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Google (Alphabet) &mdash; Search Engine Monopoly</strong><br>
+Google holds approximately 90%+ of the global search engine market. Its monopoly power stems from <strong>network effects</strong> (more users &rarr; better data &rarr; better search results &rarr; more users), <strong>brand loyalty</strong>, and <strong>economies of scale</strong> in data centres. In 2024, the US Department of Justice ruled that Google maintained an illegal monopoly in search by paying Apple ~$20bn/year to be the default search engine on iPhones. <strong>Arguments for Google:</strong> Free service for consumers, continuous innovation, dynamic efficiency. <strong>Arguments against:</strong> Dominance in digital advertising (P &gt; MC for advertisers), stifles competition, raises barriers to entry for rival search engines, potential for data exploitation. This case shows the tension between static inefficiency and dynamic efficiency in monopoly evaluation.
+</div>
+
+<h3>Price Discrimination</h3>
+
+<div class="def-box">
+<strong>Price discrimination</strong> occurs when a firm charges <strong>different prices to different consumers</strong> for the same product, where the price difference is <em>not</em> justified by differences in cost.<br><br>
+<strong>Three degrees:</strong><br>
+&bull; <strong>1st degree (perfect):</strong> Each consumer is charged the maximum they are willing to pay. All consumer surplus is extracted. (e.g. auction, personal negotiation)<br>
+&bull; <strong>2nd degree:</strong> Different prices for different quantities (e.g. bulk discounts, "buy 2 get 1 free")<br>
+&bull; <strong>3rd degree:</strong> Different prices for different market segments based on identifiable characteristics (e.g. student discounts, peak/off-peak rail fares, age-based pricing)
+</div>
+
+<p><strong>Conditions required:</strong></p>
+<ul>
+  <li><strong>Market power</strong> &mdash; the firm must be a price maker (downward-sloping demand)</li>
+  <li><strong>Ability to segment the market</strong> &mdash; identify groups with different PED</li>
+  <li><strong>Ability to prevent resale (arbitrage)</strong> &mdash; consumers cannot buy cheaply and resell at a higher price</li>
+  <li><strong>Different PED in each segment</strong> &mdash; charge higher prices where demand is more inelastic</li>
+</ul>
+
+<div class="eval-box">
+<strong>Evaluation of price discrimination:</strong><br>
+<strong>Benefits:</strong> Can increase output beyond single-price monopoly; some consumers who would be priced out can now buy (e.g. students); enables cross-subsidisation; may improve dynamic efficiency through higher profits funding R&amp;D.<br>
+<strong>Costs:</strong> Reduces consumer surplus (especially 1st degree); can be seen as unfair/inequitable; those with inelastic demand (often the least well-off) pay the highest prices.
+</div>
+
+<!-- ======================================== -->
+<h2>6. Contestable Markets</h2>
+
+<div class="def-box">
+<strong>Contestable markets</strong> (Baumol, 1982) are markets where <strong>potential competition</strong> disciplines incumbent firms, even if the market is concentrated. The key condition is that <strong>barriers to entry and exit are low</strong> &mdash; particularly low <strong>sunk costs</strong> (costs that cannot be recovered on exit).
 </div>
 
 <p><strong>Key features:</strong></p>
 <ul>
-  <li>High concentration ratio (e.g., 5-firm concentration ratio &gt; 50%)</li>
-  <li>Interdependence — firms consider rivals' likely reactions</li>
-  <li>High barriers to entry</li>
-  <li>Non-price competition common (advertising, branding, quality)</li>
-  <li>Price rigidity — prices tend to be stable (kinked demand curve theory)</li>
+  <li><strong>Freedom of entry and exit</strong> &mdash; new firms can enter quickly and cheaply</li>
+  <li><strong>Low sunk costs</strong> &mdash; firms can exit without losing their investment</li>
+  <li>Incumbent firms are disciplined by the <strong>threat of hit-and-run entry</strong>: if supernormal profits exist, new firms enter, take profits, and can exit costlessly if conditions change</li>
+  <li>Even a monopolist in a perfectly contestable market must charge competitive prices to deter entry</li>
 </ul>
 
-<h3>Game Theory and the Prisoner's Dilemma</h3>
-<p>Firms face a strategic choice: cooperate (collude to keep prices high) or compete (cut prices). The prisoner's dilemma shows why firms may end up competing even though collusion would maximise joint profits — each firm has an incentive to cheat on any agreement.</p>
+<p><strong>Implications:</strong> The number of firms in a market matters less than the <em>threat</em> of entry. A monopoly in a contestable market may behave like a competitive firm &mdash; setting P close to AC, earning only normal profit.</p>
 
-<h3>Collusion</h3>
+<div class="eval-box">
+<strong>Evaluation of contestability:</strong><br>
+In practice, <strong>perfectly contestable markets are rare</strong>. Most markets have some sunk costs (advertising, specialised equipment, training). However, the theory is useful because it shifts focus from market structure to <strong>barriers to entry</strong> as the key determinant of firm behaviour. Examples of relatively contestable markets: budget airlines (aircraft can be leased and returned), some online markets (low setup costs), street food stalls.
+</div>
+
+<!-- ======================================== -->
+<h2>7. Efficiency Comparisons Across Market Structures</h2>
+
+<div class="def-box">
+<strong>Allocative efficiency:</strong> P = MC &mdash; resources are allocated to produce the goods consumers value most.<br>
+<strong>Productive efficiency:</strong> Production at minimum ATC &mdash; no wasted resources.<br>
+<strong>Dynamic efficiency:</strong> Firms innovate and improve products/processes over time, often funded by supernormal profits.<br>
+<strong>X-efficiency:</strong> Firms operate on (not above) their cost curves &mdash; no managerial slack.
+</div>
+
+<table>
+  <tr><th>Efficiency Type</th><th>Perfect Competition</th><th>Monopolistic Competition</th><th>Oligopoly</th><th>Monopoly</th></tr>
+  <tr><td>Allocative (P = MC)</td><td>Yes (LR)</td><td>No (P &gt; MC)</td><td>No (P &gt; MC)</td><td>No (P &gt; MC)</td></tr>
+  <tr><td>Productive (min ATC)</td><td>Yes (LR)</td><td>No (excess capacity)</td><td>Unlikely</td><td>No</td></tr>
+  <tr><td>Dynamic</td><td>Weak (no SN profit for R&amp;D)</td><td>Moderate (some differentiation)</td><td>Strong (profits + incentive)</td><td>Potentially strong (Schumpeter)</td></tr>
+  <tr><td>X-efficiency</td><td>Yes (competition forces it)</td><td>Yes (fairly competitive)</td><td>Variable</td><td>No (no competitive pressure)</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam tip:</strong> There is no single "best" market structure. Perfect competition achieves static efficiency but may lack dynamic efficiency. Monopoly can fund innovation but creates deadweight loss. The optimal outcome depends on the industry and the weight given to static vs dynamic efficiency. Always evaluate both sides.
+</div>
+
+<!-- ======================================== -->
+<h2>8. The Labour Market</h2>
+
+<h3>8a. Demand for Labour</h3>
+
+<div class="def-box">
+<strong>Demand for labour is a derived demand</strong> &mdash; firms demand workers not for their own sake but because they produce goods and services that generate revenue. The level of labour demand depends on the demand for the final product.
+</div>
+
+<div class="def-box">
+<strong>Marginal Revenue Product (MRP)</strong> = Marginal Physical Product (MPP) &times; Marginal Revenue (MR)<br><br>
+MRP measures the <em>additional revenue</em> generated by hiring one more worker. The MRP curve is the firm&rsquo;s <strong>demand curve for labour</strong>.
+</div>
+
+<div class="eq">MRP = MPP &times; MR</div>
+<div class="eq">Profit-maximising employment: hire workers until MRP = MC of labour (= wage in competitive market)</div>
+
+<p><strong>Why does MRP slope downward?</strong> Due to the <strong>law of diminishing marginal returns</strong>: as more workers are added to fixed capital, each additional worker&rsquo;s marginal product eventually falls, so MRP falls.</p>
+
+<p><strong>Factors shifting the demand for labour (shifting MRP):</strong></p>
 <ul>
-  <li><strong>Overt (formal) collusion</strong> — explicit agreements on prices/output (cartels like OPEC). Illegal in the UK/EU</li>
-  <li><strong>Tacit (informal) collusion</strong> — firms follow a price leader without formal agreement. Difficult to prove/prosecute</li>
+  <li><strong>Change in demand for the final product</strong> &mdash; if demand for cars rises, demand for car workers rises (derived demand)</li>
+  <li><strong>Change in productivity</strong> &mdash; better technology or training increases MPP, shifting MRP right</li>
+  <li><strong>Change in the price of the product</strong> &mdash; higher product price increases MR, shifting MRP right</li>
+  <li><strong>Change in price of substitute/complementary factors</strong> &mdash; cheaper robots may reduce demand for manual labour (substitution effect) but also allow expansion (scale effect)</li>
 </ul>
 
-<p><strong>Factors favouring collusion:</strong> Few firms, similar costs, high barriers, stable demand, lack of regulation</p>
-<p><strong>Factors against collusion:</strong> Many firms, different costs, easy entry, unstable demand, strong regulation</p>
+<h3>8b. Supply of Labour</h3>
 
-<h3>Price Discrimination</h3>
-<div class="def-box">
-<strong>Price discrimination</strong> occurs when a firm charges different prices to different consumers for the same product, where the price difference is not justified by cost differences.
-</div>
+<p><strong>Individual labour supply:</strong> At low wages, the <strong>substitution effect</strong> dominates (higher wage makes work more attractive relative to leisure &rarr; supply more hours). At high wages, the <strong>income effect</strong> may dominate (worker is wealthy enough to "buy" more leisure &rarr; supply fewer hours). This creates the <strong>backward-bending supply curve</strong> for individual labour.</p>
 
-<p><strong>Conditions for price discrimination:</strong> Market power, ability to segment markets, ability to prevent resale, different PED in each segment.</p>
+<p><strong>Market supply of labour to an occupation</strong> is influenced by:</p>
+<ul>
+  <li><strong>Wage rate</strong> &mdash; higher wages attract more workers</li>
+  <li><strong>Non-monetary factors</strong> &mdash; job satisfaction, status, working conditions, job security, flexibility</li>
+  <li><strong>Qualifications and training requirements</strong> &mdash; high entry requirements restrict supply (e.g. surgeons)</li>
+  <li><strong>Transfer earnings</strong> &mdash; the wage available in the next best occupation</li>
+  <li><strong>Net migration</strong> &mdash; immigration increases labour supply</li>
+  <li><strong>Population and demographics</strong> &mdash; ageing population reduces labour supply</li>
+  <li><strong>Benefits and tax system</strong> &mdash; high benefits or tax may create a poverty/unemployment trap, reducing labour supply</li>
+</ul>
 
-<h2>Monopolistic Competition</h2>
-<p>Many firms, differentiated products, low barriers to entry. Each firm has a small degree of market power due to differentiation. In the long run, entry of new firms competes away supernormal profits, leaving firms earning normal profit but not at minimum ATC (productive inefficiency) and with P > MC (allocative inefficiency).</p>
-
-<h2>The Labour Market</h2>
-
-<h3>Demand for Labour</h3>
-
-<div class="def-box">
-<strong>Demand for labour</strong> is a derived demand — firms demand workers not for their own sake but because they produce goods/services that generate revenue. The demand for labour depends on the demand for the final product.
-</div>
-
-<div class="def-box">
-<strong>Marginal Revenue Product (MRP)</strong> = Marginal Physical Product (MPP) x Marginal Revenue (MR). The MRP curve is the firm's demand curve for labour.
-</div>
-
-<p>A profit-maximising firm will hire workers up to the point where MRP = wage rate (MC of labour).</p>
+<h3>8c. Wage Determination in a Competitive Labour Market</h3>
 
 <div class="diagram-box">
-<svg viewBox="0 0 420 300" width="420" height="300">
-  <defs><marker id="arr14" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1a1a2e"/></marker></defs>
+<svg viewBox="0 0 480 330" width="480" height="330">
+  <defs><marker id="arrL1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1a1a2e"/></marker></defs>
   <!-- Axes -->
-  <line x1="60" y1="260" x2="390" y2="260" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr14)"/>
-  <line x1="60" y1="260" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr14)"/>
-  <!-- MRP/Demand for labour -->
-  <line x1="80" y1="50" x2="350" y2="240" stroke="#1a73e8" stroke-width="2.5"/>
-  <text x="355" y="240" font-size="12" fill="#1a73e8">D(L) = MRP</text>
-  <!-- Supply of labour (horizontal in competitive market) -->
-  <line x1="60" y1="140" x2="380" y2="140" stroke="#e11d48" stroke-width="2"/>
-  <text x="385" y="140" font-size="12" fill="#e11d48">S(L) = W</text>
+  <line x1="60" y1="280" x2="430" y2="280" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrL1)"/>
+  <line x1="60" y1="280" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrL1)"/>
+  <!-- Demand for labour (MRP) -->
+  <line x1="90" y1="50" x2="380" y2="250" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="385" y="253" font-size="12" fill="#1a73e8" font-weight="bold">D(L) = MRP</text>
+  <!-- Supply of labour -->
+  <line x1="90" y1="250" x2="380" y2="50" stroke="#e11d48" stroke-width="2.5"/>
+  <text x="385" y="53" font-size="12" fill="#e11d48" font-weight="bold">S(L)</text>
   <!-- Equilibrium -->
-  <circle cx="215" cy="140" r="4" fill="#1a1a2e"/>
-  <line x1="215" y1="140" x2="215" y2="260" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="40" y="145" font-size="11" fill="#1a1a2e">W*</text>
-  <text x="208" y="276" font-size="11" fill="#1a1a2e">L*</text>
+  <circle cx="235" cy="150" r="5" fill="#1a1a2e"/>
+  <line x1="60" y1="150" x2="235" y2="150" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="235" y1="150" x2="235" y2="280" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="35" y="154" font-size="12" fill="#1a1a2e" font-weight="bold">W*</text>
+  <text x="228" y="296" font-size="12" fill="#1a1a2e" font-weight="bold">L*</text>
   <!-- Labels -->
-  <text x="200" y="290" font-size="14" fill="#1a1a2e">Quantity of Labour</text>
-  <text x="12" y="140" font-size="14" fill="#1a1a2e" transform="rotate(-90,12,140)">Wage Rate</text>
+  <text x="220" y="320" font-size="14" fill="#1a1a2e">Quantity of Labour</text>
+  <text x="12" y="150" font-size="14" fill="#1a1a2e" transform="rotate(-90,12,150)">Wage Rate (&pound;)</text>
 </svg>
-<p class="diagram-caption">Labour market equilibrium in a competitive market. The firm hires L* workers where MRP = W (the wage rate). The MRP curve slopes downward due to diminishing marginal returns.</p>
+<p class="diagram-caption">Competitive labour market equilibrium. The wage (W*) and employment level (L*) are determined by the intersection of labour demand (MRP) and labour supply.</p>
 </div>
 
-<p><strong>Factors shifting labour demand:</strong></p>
+<p><strong>Factors causing wage differentials between occupations:</strong></p>
 <ul>
-  <li>Changes in demand for the final product</li>
-  <li>Changes in productivity (technology, training)</li>
-  <li>Changes in the price of substitute/complementary factors</li>
-  <li>Changes in the price of the final product</li>
+  <li><strong>Differences in human capital</strong> &mdash; education, skills, training, experience increase MRP</li>
+  <li><strong>Compensating wage differentials</strong> &mdash; dangerous, unpleasant, or unsociable work commands higher wages (e.g. oil rig workers, night shifts)</li>
+  <li><strong>Differences in MRP</strong> &mdash; some workers generate much more revenue (e.g. Premier League footballers)</li>
+  <li><strong>Barriers to entry</strong> &mdash; professional qualifications restrict supply (e.g. doctors, lawyers) &rarr; higher wages</li>
+  <li><strong>Trade union power</strong> &mdash; unions bargain for above-market wages</li>
+  <li><strong>Monopsony power</strong> &mdash; dominant employers suppress wages below competitive levels</li>
+  <li><strong>Discrimination</strong> &mdash; gender, race, age, disability</li>
+  <li><strong>Geographical immobility</strong> &mdash; workers may be unable to move to where wages are higher</li>
+  <li><strong>Occupational immobility</strong> &mdash; workers may lack skills to switch to higher-paying jobs</li>
 </ul>
 
-<h3>Supply of Labour</h3>
-<p><strong>Factors affecting labour supply to an occupation:</strong></p>
-<ul>
-  <li>Wage rate (higher wages attract more workers)</li>
-  <li>Non-monetary factors (job satisfaction, working conditions, status)</li>
-  <li>Qualifications and training requirements (barriers to entry)</li>
-  <li>Net migration</li>
-  <li>Population and demographics</li>
-  <li>Benefits and tax system (affects participation rates)</li>
-</ul>
-
-<h3>Wage Determination</h3>
-<p>In a competitive labour market, wages are determined by the interaction of labour demand (MRP) and labour supply. Wage differentials exist due to:</p>
-<ul>
-  <li>Differences in skills, qualifications, and human capital</li>
-  <li>Compensating wage differentials (dangerous or unpleasant work)</li>
-  <li>Differences in MRP across occupations</li>
-  <li>Barriers to entry (professional qualifications)</li>
-  <li>Trade union power</li>
-  <li>Discrimination</li>
-  <li>Monopsony power</li>
-</ul>
-
-<h3>Monopsony in the Labour Market</h3>
+<!-- ======================================== -->
+<h2>9. Monopsony in the Labour Market</h2>
 
 <div class="def-box">
-<strong>Monopsony</strong> — a market with a single (or dominant) buyer of labour. The monopsonist can set wages below the competitive equilibrium because workers have limited alternative employers. The marginal cost of labour (MCL) exceeds the average cost (wage) because hiring an additional worker requires raising wages for all workers.
+<strong>Monopsony</strong> is a market with a <strong>single (or dominant) buyer of labour</strong>. The monopsonist is a wage-setter, not a wage-taker. Because it is the only employer, it faces an <strong>upward-sloping supply curve</strong> for labour: to hire more workers, it must raise the wage for <em>all</em> workers, not just the marginal one. Therefore, the <strong>Marginal Cost of Labour (MCL) exceeds the wage (ACL)</strong>.
 </div>
 
-<p>A monopsonist hires where MCL = MRP, but pays the wage on the supply curve (lower). This results in lower employment and lower wages than in a competitive market.</p>
+<div class="diagram-box">
+<svg viewBox="0 0 500 350" width="500" height="350">
+  <defs><marker id="arrMon1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1a1a2e"/></marker></defs>
+  <!-- Axes -->
+  <line x1="60" y1="300" x2="450" y2="300" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrMon1)"/>
+  <line x1="60" y1="300" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrMon1)"/>
+  <!-- Supply of labour = ACL -->
+  <line x1="90" y1="260" x2="400" y2="60" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="405" y="63" font-size="12" fill="#1a73e8" font-weight="bold">S(L) = ACL</text>
+  <!-- MCL (steeper, above supply) -->
+  <line x1="90" y1="260" x2="280" y2="40" stroke="#e11d48" stroke-width="2.5"/>
+  <text x="285" y="40" font-size="12" fill="#e11d48" font-weight="bold">MCL</text>
+  <!-- MRP / Demand -->
+  <line x1="90" y1="60" x2="400" y2="260" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="405" y="263" font-size="12" fill="#22c55e" font-weight="bold">D(L) = MRP</text>
+  <!-- Monopsony equilibrium: MCL = MRP -->
+  <circle cx="210" cy="140" r="4" fill="#1a1a2e"/>
+  <line x1="210" y1="140" x2="210" y2="300" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- Wage from supply curve (lower) -->
+  <line x1="60" y1="198" x2="210" y2="198" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="25" y="202" font-size="11" fill="#1a73e8" font-weight="bold">Wm</text>
+  <text x="202" y="316" font-size="11" fill="#1a1a2e" font-weight="bold">Lm</text>
+  <!-- Competitive equilibrium for comparison -->
+  <circle cx="275" cy="168" r="4" fill="#8b5cf6"/>
+  <line x1="275" y1="168" x2="275" y2="300" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="60" y1="168" x2="275" y2="168" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="25" y="172" font-size="11" fill="#8b5cf6" font-weight="bold">Wc</text>
+  <text x="268" y="316" font-size="11" fill="#8b5cf6" font-weight="bold">Lc</text>
+  <text x="290" y="162" font-size="10" fill="#8b5cf6">Competitive equilibrium</text>
+  <!-- Exploitation area -->
+  <rect x="60" y="168" width="150" height="30" fill="rgba(139,92,246,0.1)" stroke="none"/>
+  <text x="75" y="188" font-size="10" fill="#8b5cf6">Wage exploitation</text>
+  <!-- Labels -->
+  <text x="220" y="335" font-size="14" fill="#1a1a2e">Quantity of Labour</text>
+  <text x="12" y="160" font-size="14" fill="#1a1a2e" transform="rotate(-90,12,160)">Wage Rate (&pound;)</text>
+</svg>
+<p class="diagram-caption">Monopsony: the firm hires where MCL = MRP (at Lm) but pays the wage from the supply curve (Wm). Compared to the competitive outcome (Wc, Lc), monopsony results in lower wages and lower employment. The shaded area represents wage exploitation.</p>
+</div>
 
-<h3>Trade Unions</h3>
+<p><strong>Key result:</strong> The monopsonist hires where MCL = MRP, but pays the wage on the supply curve (ACL) at that employment level. This results in:</p>
+<ul>
+  <li><strong>Lower wages</strong> than in a competitive market (Wm &lt; Wc)</li>
+  <li><strong>Lower employment</strong> than in a competitive market (Lm &lt; Lc)</li>
+  <li><strong>Exploitation</strong> &mdash; workers are paid less than their MRP</li>
+</ul>
+
+<p><strong>Real-world examples of monopsony:</strong> NHS (dominant employer of nurses/doctors in UK), Amazon in warehouse towns, the military, school teachers (local authority is often the main employer).</p>
+
+<div class="tip-box">
+<strong>Exam tip:</strong> Monopsony is one of the strongest justifications for a national minimum wage. If the labour market is monopsonistic, a minimum wage set between Wm and Wc can <em>increase both wages and employment</em> (moving towards the competitive outcome). This contradicts the simple supply-and-demand prediction that a minimum wage always reduces employment.
+</div>
+
+<!-- ======================================== -->
+<h2>10. Trade Unions</h2>
 
 <div class="def-box">
-<strong>Trade unions</strong> are organisations of workers that collectively bargain with employers over wages, working conditions, and other terms of employment.
+<strong>Trade unions</strong> are organisations of workers that collectively bargain with employers over wages, working conditions, and terms of employment. They use their collective bargaining power to negotiate higher wages than individual workers could achieve alone.
 </div>
+
+<p><strong>Types of union action:</strong></p>
+<ul>
+  <li><strong>Collective bargaining</strong> &mdash; negotiating wages and conditions on behalf of members</li>
+  <li><strong>Industrial action</strong> &mdash; strikes, work-to-rule, overtime bans (used as a last resort)</li>
+  <li><strong>Political lobbying</strong> &mdash; influencing government policy on workers&rsquo; rights, minimum wage, etc.</li>
+</ul>
 
 <p><strong>Effects of trade unions:</strong></p>
 <ul>
-  <li>Can raise wages above the competitive equilibrium (but may reduce employment)</li>
-  <li>Improve working conditions and job security</li>
-  <li>Counter monopsony power — bilateral monopoly can achieve a more competitive outcome</li>
-  <li>May reduce wage inequality within firms</li>
-  <li>Can cause wage-push inflation if wage rises exceed productivity growth</li>
+  <li><strong>Higher wages</strong> &mdash; but may reduce employment if set above the competitive wage (creates a surplus of labour)</li>
+  <li><strong>Improved working conditions</strong> and job security</li>
+  <li><strong>Counter monopsony power</strong> &mdash; in a <strong>bilateral monopoly</strong> (monopsony employer vs union), the union can push wages closer to the competitive level, potentially <em>increasing</em> employment</li>
+  <li><strong>Reduced wage inequality</strong> within firms (union wage structures compress differentials)</li>
+  <li><strong>Potential for wage-push inflation</strong> if wage rises exceed productivity growth</li>
+  <li><strong>May reduce labour market flexibility</strong> &mdash; restrictive practices, resistance to new technology</li>
 </ul>
 
-<h3>Discrimination in the Labour Market</h3>
-<p>Workers may be paid differently based on characteristics unrelated to productivity (gender, race, age, disability). This leads to wage gaps and is both allocatively inefficient and inequitable.</p>
+<div class="eval-box">
+<strong>Evaluation &mdash; Are trade unions beneficial?</strong><br>
+<strong>Yes:</strong> Correct monopsony exploitation, give workers a voice, improve safety, reduce inequality.<br>
+<strong>No:</strong> May cause unemployment (wage above equilibrium), reduce flexibility, contribute to inflation, benefit insiders (members) at the expense of outsiders (non-members who cannot find jobs at the union wage).<br>
+<strong>Key point:</strong> The impact depends on the existing market structure. In monopsonistic markets, unions are more likely to improve outcomes. In competitive markets, they may cause inefficiency.
+</div>
 
-<p><strong>Types:</strong> Direct discrimination, indirect discrimination, statistical discrimination (using group averages)</p>
-<p><strong>Solutions:</strong> Equal pay legislation, anti-discrimination laws, transparency reporting, positive action</p>
+<!-- ======================================== -->
+<h2>11. National Minimum Wage and National Living Wage</h2>
+
+<div class="def-box">
+The <strong>National Minimum Wage (NMW)</strong> is the legally mandated minimum hourly pay for workers, set by the government. The <strong>National Living Wage (NLW)</strong> is the higher rate for workers aged 21+ (as of 2024, &pound;11.44/hour). The NLW is different from the <strong>Real Living Wage</strong> calculated by the Living Wage Foundation, which is voluntary and based on the actual cost of living.
+</div>
+
+<h3>Effect of NMW in a Competitive Labour Market</h3>
+
+<div class="diagram-box">
+<svg viewBox="0 0 480 330" width="480" height="330">
+  <defs><marker id="arrNMW" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1a1a2e"/></marker></defs>
+  <!-- Axes -->
+  <line x1="60" y1="280" x2="430" y2="280" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrNMW)"/>
+  <line x1="60" y1="280" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrNMW)"/>
+  <!-- Demand -->
+  <line x1="90" y1="50" x2="380" y2="250" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="385" y="253" font-size="12" fill="#1a73e8" font-weight="bold">D(L)</text>
+  <!-- Supply -->
+  <line x1="90" y1="250" x2="380" y2="50" stroke="#e11d48" stroke-width="2.5"/>
+  <text x="385" y="53" font-size="12" fill="#e11d48" font-weight="bold">S(L)</text>
+  <!-- Equilibrium -->
+  <circle cx="235" cy="150" r="4" fill="#1a1a2e"/>
+  <line x1="60" y1="150" x2="235" y2="150" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="30" y="154" font-size="11" fill="#666">We</text>
+  <!-- NMW above equilibrium -->
+  <line x1="60" y1="110" x2="410" y2="110" stroke="#f59e0b" stroke-width="2.5"/>
+  <text x="415" y="114" font-size="12" fill="#f59e0b" font-weight="bold">NMW</text>
+  <!-- Quantity demanded at NMW -->
+  <line x1="195" y1="110" x2="195" y2="280" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="185" y="296" font-size="10" fill="#1a73e8" font-weight="bold">Ld</text>
+  <!-- Quantity supplied at NMW -->
+  <line x1="275" y1="110" x2="275" y2="280" stroke="#e11d48" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="268" y="296" font-size="10" fill="#e11d48" font-weight="bold">Ls</text>
+  <!-- Unemployment gap -->
+  <line x1="195" y1="260" x2="275" y2="260" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#arrNMW)"/>
+  <line x1="275" y1="260" x2="195" y2="260" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#arrNMW)"/>
+  <text x="200" y="255" font-size="10" fill="#8b5cf6" font-weight="bold">Unemployment</text>
+  <!-- Labels -->
+  <text x="220" y="320" font-size="14" fill="#1a1a2e">Quantity of Labour</text>
+  <text x="12" y="150" font-size="14" fill="#1a1a2e" transform="rotate(-90,12,150)">Wage Rate (&pound;)</text>
+</svg>
+<p class="diagram-caption">NMW set above the market equilibrium in a competitive labour market. Quantity of labour demanded (Ld) is less than quantity supplied (Ls), creating unemployment (Ls &minus; Ld).</p>
+</div>
+
+<p><strong>In a competitive market:</strong> A minimum wage above equilibrium causes a surplus of labour (unemployment). Firms hire fewer workers because the wage exceeds MRP for some.</p>
+
+<p><strong>In a monopsony market:</strong> A minimum wage between Wm and Wc can <em>increase</em> both wages and employment by effectively making the labour supply curve horizontal up to the NMW level, reducing the monopsonist&rsquo;s incentive to restrict hiring.</p>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: The UK Minimum Wage Debate</strong><br>
+The UK NMW was introduced in 1999 at &pound;3.60/hour. Critics predicted mass unemployment, particularly among young and low-skilled workers. The evidence, however, has been more nuanced. The Low Pay Commission found that the NMW has <strong>raised wages for the lowest-paid workers without significant negative employment effects</strong>. This is consistent with the <strong>monopsony model</strong> &mdash; many low-paid workers are in sectors (care homes, hospitality, retail) where employers have significant wage-setting power. However, there are concerns that very large increases (e.g. the NLW rising to &pound;11.44 in 2024) could start to affect employment in some sectors, particularly small businesses with thin margins. The debate illustrates the importance of <strong>elasticity of demand for labour</strong>: if demand is inelastic, employment effects are small; if elastic, job losses may be significant.
+</div>
+
+<!-- ======================================== -->
+<h2>12. Discrimination in the Labour Market</h2>
+
+<div class="def-box">
+<strong>Labour market discrimination</strong> occurs when workers are treated differently (in hiring, pay, or promotion) based on characteristics <strong>unrelated to productivity</strong>, such as gender, race, age, disability, or religion.
+</div>
+
+<p><strong>Types of discrimination:</strong></p>
+<ul>
+  <li><strong>Direct discrimination</strong> &mdash; explicitly treating someone less favourably (e.g. refusing to hire women)</li>
+  <li><strong>Indirect discrimination</strong> &mdash; applying rules that disproportionately disadvantage a group (e.g. height requirements that exclude women)</li>
+  <li><strong>Statistical discrimination</strong> &mdash; using group averages to make decisions about individuals (e.g. assuming young workers will leave for childcare)</li>
+  <li><strong>Occupational segregation</strong> &mdash; certain groups concentrated in lower-paying jobs ("sticky floor" / "glass ceiling")</li>
+</ul>
+
+<p><strong>Consequences of discrimination:</strong></p>
+<ul>
+  <li><strong>Allocative inefficiency</strong> &mdash; workers are not matched to jobs based on productivity, misallocating resources</li>
+  <li><strong>Lower output</strong> &mdash; talented workers are underemployed or excluded, reducing GDP</li>
+  <li><strong>Wage inequality</strong> &mdash; discriminated groups earn less than their MRP</li>
+  <li><strong>Social costs</strong> &mdash; poverty, reduced social mobility, inequality of opportunity</li>
+</ul>
+
+<p><strong>Government policies to address discrimination:</strong></p>
+<ul>
+  <li><strong>Equal Pay Act (1970) / Equality Act (2010)</strong> &mdash; illegal to pay differently for same work based on protected characteristics</li>
+  <li><strong>Gender pay gap reporting</strong> &mdash; firms with 250+ employees must publish pay gap data (since 2017)</li>
+  <li><strong>Positive action</strong> &mdash; encouraging underrepresented groups to apply (legal) vs positive discrimination (illegal in UK except disability)</li>
+  <li><strong>Education and training</strong> &mdash; addressing occupational segregation through broadening opportunities</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: The UK Gender Pay Gap</strong><br>
+In 2024, the UK gender pay gap (median) was approximately 14.3% for all employees (full and part-time). For full-time employees only, it was around 7.7%. <strong>Causes include:</strong> occupational segregation (women concentrated in lower-paid caring/service roles), the "motherhood penalty" (women taking career breaks for childcare), unconscious bias in hiring and promotion, and undervaluation of work in female-dominated sectors. <strong>Policy responses:</strong> The Equality Act 2010, mandatory gender pay gap reporting (introduced 2017), shared parental leave (2015), and free childcare for 3&ndash;4 year olds. <strong>Evaluation:</strong> The pay gap has narrowed significantly since the 1970s but progress has slowed. Pay gap reporting increases transparency but does not directly mandate change. Addressing the root causes (occupational segregation, caring responsibilities) requires deeper structural reform.
+</div>
+
+<!-- ======================================== -->
+<h2>Key Formulae and Conditions Summary</h2>
+
+<table>
+  <tr><th>Concept</th><th>Formula / Condition</th></tr>
+  <tr><td>MRP</td><td>MPP &times; MR</td></tr>
+  <tr><td>Profit-max employment</td><td>MRP = MCL (= wage in competitive market)</td></tr>
+  <tr><td>Allocative efficiency</td><td>P = MC</td></tr>
+  <tr><td>Productive efficiency</td><td>Production at minimum ATC</td></tr>
+  <tr><td>Normal profit</td><td>TR = TC (AR = ATC)</td></tr>
+  <tr><td>Supernormal profit</td><td>TR &gt; TC (AR &gt; ATC)</td></tr>
+  <tr><td>Perfect competition LR</td><td>P = MC = min ATC (normal profit)</td></tr>
+  <tr><td>Monopolistic competition LR</td><td>AR tangent to ATC (normal profit, P &gt; MC)</td></tr>
+  <tr><td>Monopoly / Oligopoly</td><td>MC = MR, P from AR curve (supernormal profit possible LR)</td></tr>
+  <tr><td>Monopsony employment</td><td>MCL = MRP, wage from S(L)</td></tr>
+</table>
 
 <div class="tip-box">
-<strong>Exam tip:</strong> When comparing market structures, always focus on price, output, efficiency, and profit outcomes. Use diagrams to support your analysis. For labour market questions, clearly show the MRP = W condition and discuss the impact of imperfections (monopsony, unions) on the competitive outcome.
+<strong>Exam tip &mdash; 25-mark essay structure for market structure questions:</strong><br>
+1. Define the market structure and its key features.<br>
+2. Draw and explain the relevant diagram (show price, output, profit).<br>
+3. Analyse efficiency outcomes (allocative, productive, dynamic, X-efficiency).<br>
+4. Evaluate with real-world examples &mdash; does the theoretical model match reality?<br>
+5. Consider contestability &mdash; how do barriers to entry affect the outcome?<br>
+6. Conclude: the best market structure depends on the criteria used (static vs dynamic efficiency, consumer vs producer welfare).
 </div>
 
 </div>
