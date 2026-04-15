@@ -6,18 +6,13 @@
     <title>AQA 4.6 — Fundamentals of Computer Systems</title>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.7;
-            color: #1a1a1a;
-            background: #ffffff;
-            padding: 40px;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.7; color: #1a1a1a; background: #ffffff; padding: 40px; }
         .container { max-width: 800px; margin: 0 auto; }
         h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 10px; margin-bottom: 8px; }
         .spec-code { font-size: 0.95rem; color: #555; margin-bottom: 30px; }
         h2 { font-size: 1.5rem; color: #16213e; margin-top: 40px; margin-bottom: 12px; border-left: 4px solid #0f3460; padding-left: 12px; }
         h3 { font-size: 1.15rem; color: #0f3460; margin-top: 24px; margin-bottom: 8px; }
+        h4 { font-size: 1.05rem; color: #374151; margin-top: 18px; margin-bottom: 6px; }
         p { margin-bottom: 12px; }
         ul, ol { margin-bottom: 12px; padding-left: 24px; }
         li { margin-bottom: 4px; }
@@ -43,16 +38,14 @@
 <h2>4.6.1 Hardware and Software</h2>
 
 <div class="definition">
-    <strong>Hardware</strong> is the physical components of a computer system &mdash; the parts you can physically touch (CPU, RAM, hard drive, keyboard, monitor, motherboard, GPU). <strong>Software</strong> is the set of instructions (programs) that tell the hardware what to do.
+    <strong>Hardware</strong> is the physical components of a computer system (CPU, RAM, hard drive, keyboard, monitor, GPU). <strong>Software</strong> is the set of instructions (programs) that tell the hardware what to do.
 </div>
 
-<p>The <strong>relationship</strong> between hardware and software:</p>
 <ul>
-    <li>Hardware is useless without software to control it &mdash; a bare CPU does nothing until it executes a program.</li>
-    <li>Software cannot run without hardware to execute it on &mdash; instructions must be processed by physical circuits.</li>
-    <li>Software provides the interface between the user and the hardware, translating human intentions into electrical signals.</li>
-    <li>The same hardware can run different software to perform completely different tasks &mdash; this is the key insight of the <strong>stored-program concept</strong>. A laptop can be a word processor, a gaming machine, a web server, or a music studio, simply by running different programs.</li>
-    <li>Hardware determines the <strong>capability ceiling</strong> (maximum speed, memory capacity), while software determines what the hardware actually does within those limits.</li>
+    <li>Hardware is useless without software to control it; software cannot run without hardware to execute it</li>
+    <li>Software provides the interface between the user and the hardware</li>
+    <li>The same hardware can run different software for different tasks &mdash; the key insight of the <strong>stored-program concept</strong></li>
+    <li>Hardware determines the <strong>capability ceiling</strong>; software determines what the hardware actually does</li>
 </ul>
 
 <!-- ============================================================ -->
@@ -60,16 +53,16 @@
 
 <table>
     <tr><th>Category</th><th>Description</th><th>Examples</th></tr>
-    <tr><td><strong>System software</strong></td><td>Software that manages the computer's resources and provides a platform for application software to run. It operates closest to the hardware.</td><td>Operating systems, utilities, device drivers, translators (compilers, interpreters, assemblers), linkers, loaders</td></tr>
-    <tr><td><strong>Application software</strong></td><td>Software designed to help the user perform specific productive tasks. It runs on top of system software.</td><td>Word processors, web browsers, games, databases, spreadsheets, email clients, photo editors</td></tr>
+    <tr><td><strong>System software</strong></td><td>Manages computer resources, provides platform for application software</td><td>OS, utilities, device drivers, translators, linkers, loaders</td></tr>
+    <tr><td><strong>Application software</strong></td><td>Helps users perform specific productive tasks</td><td>Word processors, browsers, games, databases, spreadsheets</td></tr>
 </table>
 
 <h3>Types of Application Software</h3>
 <table>
     <tr><th>Type</th><th>Description</th><th>Examples</th><th>Pros / Cons</th></tr>
-    <tr><td><strong>General-purpose</strong></td><td>Can be used for many different tasks across many industries</td><td>Spreadsheet, word processor, database, presentation software</td><td>Versatile and widely available; may not perfectly fit specialised needs</td></tr>
-    <tr><td><strong>Special-purpose</strong></td><td>Designed for one specific task or domain</td><td>Payroll software, air traffic control, tax return software, stock trading platforms</td><td>Optimised for its task; limited flexibility</td></tr>
-    <tr><td><strong>Bespoke (custom)</strong></td><td>Custom-built for a particular client's specific needs</td><td>A hospital's patient management system, a retailer's inventory system</td><td>Perfectly tailored; very expensive and slow to develop</td></tr>
+    <tr><td><strong>General-purpose</strong></td><td>Used for many different tasks</td><td>Spreadsheet, word processor, database</td><td>Versatile, widely available; may not fit specialised needs</td></tr>
+    <tr><td><strong>Special-purpose</strong></td><td>Designed for one specific task</td><td>Payroll software, air traffic control, tax software</td><td>Optimised for its task; limited flexibility</td></tr>
+    <tr><td><strong>Bespoke (custom)</strong></td><td>Custom-built for a particular client</td><td>Hospital patient management, retail inventory</td><td>Perfectly tailored; very expensive, slow to develop</td></tr>
 </table>
 
 <!-- ============================================================ -->
@@ -77,229 +70,186 @@
 
 <h3>Operating System (OS)</h3>
 <div class="definition">
-    An <strong>operating system</strong> is system software that manages hardware resources, provides services to application software, and acts as an intermediary between the user and the computer hardware. Without an OS, the user would have to interact directly with the hardware using machine code.
+    An <strong>operating system</strong> manages hardware resources, provides services to application software, and acts as an intermediary between user and hardware. Loaded from secondary storage into RAM during boot (initiated by BIOS/UEFI firmware in ROM).
 </div>
 
-<p>The OS is loaded from secondary storage into RAM when the computer boots (this process is initiated by the BIOS/UEFI firmware stored in ROM).</p>
-
 <h3>Utility Programs</h3>
-<p>Utility programs perform specific maintenance and housekeeping tasks to keep the system running efficiently:</p>
 <table>
-    <tr><th>Utility</th><th>Function</th><th>How It Works</th></tr>
-    <tr><td><strong>Disk defragmenter</strong></td><td>Reorganises fragmented files on a hard drive</td><td>Moves file fragments so they are stored in contiguous blocks, reducing read/write head movement and improving speed. Not needed for SSDs (no mechanical head; defragmentation actually reduces SSD lifespan).</td></tr>
-    <tr><td><strong>File manager</strong></td><td>File and directory operations</td><td>Allows users to browse, copy, move, rename, and delete files and directories through a GUI or CLI.</td></tr>
-    <tr><td><strong>Backup software</strong></td><td>Creates copies of data for recovery</td><td><strong>Full backup:</strong> copies everything. <strong>Incremental:</strong> copies only files changed since last backup (fast, small). <strong>Differential:</strong> copies files changed since last full backup.</td></tr>
-    <tr><td><strong>Antivirus/anti-malware</strong></td><td>Detects and removes malicious software</td><td>Uses <strong>signature-based detection</strong> (comparing against known malware patterns) and <strong>heuristic/behavioural analysis</strong> (detecting suspicious activity patterns). Requires regular updates.</td></tr>
-    <tr><td><strong>Compression utilities</strong></td><td>Reduce file sizes</td><td>Apply lossless algorithms (e.g., ZIP) or lossy algorithms (e.g., JPEG) to shrink files for storage and transmission.</td></tr>
-    <tr><td><strong>Encryption utilities</strong></td><td>Protect data confidentiality</td><td>Convert data to an unreadable form using cryptographic algorithms. Full-disk encryption (e.g., BitLocker) protects against physical theft.</td></tr>
+    <tr><th>Utility</th><th>Function</th><th>Details</th></tr>
+    <tr><td><strong>Disk defragmenter</strong></td><td>Reorganises fragmented files on HDD</td><td>Moves fragments to contiguous blocks, improving speed. Not needed for SSDs (reduces SSD lifespan).</td></tr>
+    <tr><td><strong>File manager</strong></td><td>Browse, copy, move, rename, delete files</td><td>Provides GUI or CLI interface for file operations</td></tr>
+    <tr><td><strong>Backup software</strong></td><td>Creates copies for recovery</td><td><strong>Full:</strong> copies everything. <strong>Incremental:</strong> only files changed since last backup. <strong>Differential:</strong> files changed since last full backup.</td></tr>
+    <tr><td><strong>Antivirus</strong></td><td>Detects and removes malware</td><td><strong>Signature-based</strong> (known patterns) and <strong>heuristic</strong> (suspicious behaviour). Needs regular updates.</td></tr>
+    <tr><td><strong>Compression</strong></td><td>Reduces file sizes</td><td>Lossless (ZIP) or lossy (JPEG) algorithms</td></tr>
+    <tr><td><strong>Encryption</strong></td><td>Protects data confidentiality</td><td>Full-disk encryption (BitLocker) protects against physical theft</td></tr>
 </table>
 
 <h3>Libraries</h3>
 <div class="definition">
-    A <strong>library</strong> is a collection of pre-compiled routines (functions/procedures) that programs can use. Libraries provide reusable, tested code, saving development time and reducing errors.
+    A <strong>library</strong> is a collection of pre-compiled routines that programs can reuse, saving development time and reducing errors.
 </div>
 <ul>
-    <li><strong>Static libraries</strong> &mdash; code is copied into the executable at compile time. Results in a larger executable but no external dependencies at runtime. The program is self-contained.</li>
-    <li><strong>Dynamic libraries</strong> (DLLs on Windows / shared objects on Linux) &mdash; loaded into memory at runtime and shared between programs. Saves memory and disk space; updates to the library benefit all programs that use it. However, "DLL hell" can occur if incompatible versions are installed.</li>
+    <li><strong>Static libraries</strong> &mdash; code copied into executable at compile time. Larger executable, but self-contained, no external dependencies.</li>
+    <li><strong>Dynamic libraries</strong> (DLLs / shared objects) &mdash; loaded at runtime, shared between programs. Saves memory and disk; updates benefit all users. Risk of version conflicts ("DLL hell").</li>
 </ul>
 
-<pre>
-# Python example: using the math library
+<pre># Python: using the math library
 import math
-
-print(math.sqrt(144))    # 12.0 (square root function from math library)
-print(math.pi)           # 3.141592653589793 (constant from math library)
-print(math.factorial(5)) # 120
-
-# Without the library, you would have to implement these algorithms yourself
-</pre>
+print(math.sqrt(144))    # 12.0
+print(math.pi)           # 3.141592653589793
+print(math.factorial(5)) # 120</pre>
 
 <h3>Translators</h3>
-<p>Translators convert source code written by programmers into machine code that the CPU can execute. There are three types, each with a different approach:</p>
-
 <table>
     <tr><th>Translator</th><th>Input</th><th>Process</th><th>Output</th></tr>
-    <tr><td><strong>Assembler</strong></td><td>Assembly language (mnemonics like <code>MOV</code>, <code>ADD</code>, <code>LDR</code>)</td><td>One-to-one translation of each mnemonic to its corresponding machine code instruction</td><td>Object code (machine code)</td></tr>
-    <tr><td><strong>Compiler</strong></td><td>High-level language (C, Java, Haskell)</td><td>Translates the <strong>entire source code at once</strong> before execution. Performs multiple passes: lexical analysis, syntax analysis, code generation, optimisation.</td><td>Standalone executable file</td></tr>
-    <tr><td><strong>Interpreter</strong></td><td>High-level language (Python, JavaScript)</td><td>Translates and executes <strong>one line/statement at a time</strong>. No separate compilation step.</td><td>No permanent object code produced</td></tr>
+    <tr><td><strong>Assembler</strong></td><td>Assembly language (MOV, ADD)</td><td>One-to-one translation of each mnemonic</td><td>Machine code (object code)</td></tr>
+    <tr><td><strong>Compiler</strong></td><td>High-level language (C, Java)</td><td>Translates <strong>entire source at once</strong> before execution</td><td>Standalone executable</td></tr>
+    <tr><td><strong>Interpreter</strong></td><td>High-level language (Python)</td><td>Translates and executes <strong>one line at a time</strong></td><td>No permanent object code</td></tr>
 </table>
 
+<h4>Compiler vs Interpreter</h4>
 <table>
     <tr><th>Feature</th><th>Compiler</th><th>Interpreter</th></tr>
-    <tr><td>Translation</td><td>Whole program at once (before execution)</td><td>Line by line (during execution)</td></tr>
-    <tr><td>Execution speed</td><td>Fast (machine code runs directly)</td><td>Slower (re-translates every time the program runs)</td></tr>
-    <tr><td>Error reporting</td><td>Lists all errors after compilation attempt</td><td>Stops at the first error encountered</td></tr>
-    <tr><td>Distribution</td><td>Distribute executable (source code hidden, IP protected)</td><td>Source code must be distributed (visible to users)</td></tr>
-    <tr><td>Development</td><td>Slower cycle (edit &rarr; compile &rarr; run &rarr; debug)</td><td>Faster cycle (edit &rarr; run &mdash; immediate feedback)</td></tr>
-    <tr><td>Optimisation</td><td>Can optimise across the whole program (dead code removal, loop unrolling, register allocation)</td><td>Limited optimisation (only sees one line at a time)</td></tr>
-    <tr><td>Memory</td><td>Executable can run without the compiler installed</td><td>Interpreter must be installed on every machine that runs the program</td></tr>
+    <tr><td>Translation</td><td>Whole program at once</td><td>Line by line during execution</td></tr>
+    <tr><td>Execution speed</td><td>Fast (native machine code)</td><td>Slower (re-translates each run)</td></tr>
+    <tr><td>Error reporting</td><td>Lists all errors after compilation</td><td>Stops at first error</td></tr>
+    <tr><td>Distribution</td><td>Distribute executable (source hidden)</td><td>Source code must be distributed</td></tr>
+    <tr><td>Development</td><td>Slower cycle (edit-compile-run-debug)</td><td>Faster cycle (edit-run, immediate feedback)</td></tr>
+    <tr><td>Optimisation</td><td>Can optimise across whole program</td><td>Limited (sees one line at a time)</td></tr>
+    <tr><td>Dependency</td><td>Executable runs without compiler</td><td>Interpreter must be installed</td></tr>
 </table>
 
-<p><strong>Stages of compilation:</strong></p>
+<h4>Stages of Compilation</h4>
 <ol>
-    <li><strong>Lexical analysis</strong> &mdash; the source code is read character by character and broken into <strong>tokens</strong> (keywords, identifiers, operators, literals). Whitespace and comments are removed. A <strong>symbol table</strong> is created to store identifiers and their attributes.</li>
-    <li><strong>Syntax analysis (parsing)</strong> &mdash; tokens are checked against the grammar rules of the language (often defined in BNF). An <strong>Abstract Syntax Tree (AST)</strong> is built. Syntax errors are reported at this stage.</li>
-    <li><strong>Semantic analysis</strong> &mdash; checks for logical errors: type mismatches, undeclared variables, incorrect function arguments.</li>
-    <li><strong>Code generation</strong> &mdash; the AST is translated into machine code or intermediate code.</li>
-    <li><strong>Optimisation</strong> &mdash; the generated code is improved for speed or size without changing its behaviour.</li>
+    <li><strong>Lexical analysis</strong> &mdash; source code broken into <strong>tokens</strong> (keywords, identifiers, operators, literals). Whitespace and comments removed. <strong>Symbol table</strong> created.</li>
+    <li><strong>Syntax analysis (parsing)</strong> &mdash; tokens checked against grammar rules (BNF). <strong>Abstract Syntax Tree (AST)</strong> built. Syntax errors reported.</li>
+    <li><strong>Semantic analysis</strong> &mdash; checks for type mismatches, undeclared variables, incorrect arguments.</li>
+    <li><strong>Code generation</strong> &mdash; AST translated into machine code or intermediate code.</li>
+    <li><strong>Optimisation</strong> &mdash; code improved for speed or size (dead code removal, loop unrolling, register allocation).</li>
 </ol>
 
-<div class="exam-tip">Many modern languages use both techniques: source code is compiled to intermediate bytecode, which is then interpreted or JIT-compiled (Just-In-Time) at runtime. Java compiles to bytecode for the JVM; Python compiles to bytecode for the CPython interpreter; C# compiles to CIL for the .NET CLR. Be able to explain the stages of compilation: lexical analysis &rarr; syntax analysis &rarr; code generation &rarr; optimisation.</div>
+<div class="exam-tip">Many modern languages use both: compile to intermediate bytecode, then interpret or JIT-compile at runtime. Java &rarr; bytecode &rarr; JVM; Python &rarr; bytecode &rarr; CPython interpreter; C# &rarr; CIL &rarr; .NET CLR. Know all five stages of compilation.</div>
 
 <!-- ============================================================ -->
 <h2>4.6.4 Role of the Operating System</h2>
 
-<p>The OS performs five major management functions. Each operates continuously and concurrently to keep the system running smoothly.</p>
+<p>Five major management functions, each operating continuously:</p>
 
-<h3>Memory Management</h3>
+<h3>1. Memory Management</h3>
 <ul>
-    <li><strong>Allocation and deallocation</strong> of memory to processes &mdash; when a program starts, the OS allocates RAM; when it closes, the OS reclaims that memory.</li>
-    <li><strong>Virtual memory</strong> &mdash; when physical RAM is full, the OS uses a section of the hard drive (the <strong>swap file / page file</strong>) as if it were RAM. Pages of data are swapped between RAM and disk on demand. This allows programs larger than physical RAM to run, but is much slower than real RAM because secondary storage access is orders of magnitude slower.</li>
-    <li><strong>Paging</strong> &mdash; memory is divided into fixed-size blocks called <strong>pages</strong> (typically 4 KB). The OS maintains a <strong>page table</strong> mapping virtual addresses to physical addresses. This allows non-contiguous physical memory to appear contiguous to each process.</li>
-    <li><strong>Segmentation</strong> &mdash; memory is divided into variable-size <strong>segments</strong> based on logical divisions of a program (code segment, data segment, stack segment, heap segment). Each segment can grow or shrink independently.</li>
-    <li><strong>Memory protection</strong> &mdash; prevents one process from reading or writing memory allocated to another process, providing security and stability. A rogue program cannot corrupt another program's data.</li>
-    <li><strong>Thrashing</strong> &mdash; occurs when the system spends more time swapping pages between RAM and disk than executing useful work. This happens when too many processes compete for too little RAM.</li>
+    <li><strong>Allocation/deallocation</strong> of RAM to processes</li>
+    <li><strong>Virtual memory</strong> &mdash; uses hard drive as overflow when RAM is full (<strong>swap/page file</strong>). Allows programs larger than physical RAM but much slower.</li>
+    <li><strong>Paging</strong> &mdash; fixed-size blocks (<strong>pages</strong>, typically 4 KB). <strong>Page table</strong> maps virtual to physical addresses. Non-contiguous physical memory appears contiguous to each process.</li>
+    <li><strong>Segmentation</strong> &mdash; variable-size segments based on logical program divisions (code, data, stack, heap).</li>
+    <li><strong>Memory protection</strong> &mdash; prevents processes from accessing each other's memory.</li>
+    <li><strong>Thrashing</strong> &mdash; excessive page swapping; system spends more time swapping than doing useful work.</li>
 </ul>
 
-<h3>Process Scheduling</h3>
+<h3>2. Process Scheduling</h3>
 <div class="definition">
-    <strong>Scheduling</strong> is the method by which the OS decides which process gets to use the CPU and for how long. In a multitasking system, the OS rapidly switches between processes (many times per second) to give the illusion that all programs are running simultaneously.
+    <strong>Scheduling</strong> decides which process gets the CPU and for how long. In multitasking, the OS rapidly switches between processes to give the illusion of simultaneous execution.
 </div>
 
-<p>Scheduling algorithms:</p>
 <table>
     <tr><th>Algorithm</th><th>Description</th><th>Pros</th><th>Cons</th></tr>
-    <tr><td><strong>First Come First Served (FCFS)</strong></td><td>Processes run in the order they arrive in the ready queue</td><td>Simple to implement; fair (FIFO order)</td><td>Long processes block short ones (<strong>convoy effect</strong>); poor for interactive systems</td></tr>
-    <tr><td><strong>Shortest Job First (SJF)</strong></td><td>The process with the shortest estimated execution time runs next</td><td>Minimises average waiting time</td><td>Requires knowing process length in advance; <strong>starvation</strong> of long processes</td></tr>
-    <tr><td><strong>Round Robin (RR)</strong></td><td>Each process gets a fixed time slice (<strong>quantum</strong>, e.g., 10ms), then goes to back of queue</td><td>Fair; no starvation; good response time for interactive use</td><td>Context switching overhead; choosing the right quantum size is critical (too small = too much switching; too large = degrades to FCFS)</td></tr>
-    <tr><td><strong>Priority Scheduling</strong></td><td>Each process has a priority value; highest priority runs first</td><td>Important/urgent processes run first (e.g., OS kernel tasks, real-time processes)</td><td>Low priority processes may <strong>starve</strong> (mitigated by <strong>aging</strong> &mdash; gradually increasing priority of waiting processes)</td></tr>
-    <tr><td><strong>Multilevel Feedback Queue</strong></td><td>Multiple queues with different priorities and time quanta; processes move between queues based on behaviour</td><td>Adaptive; balances responsiveness and throughput; CPU-bound processes sink to lower queues</td><td>Complex to implement and tune</td></tr>
+    <tr><td><strong>FCFS</strong></td><td>Processes run in arrival order</td><td>Simple, fair (FIFO)</td><td>Convoy effect; poor for interactive</td></tr>
+    <tr><td><strong>SJF</strong></td><td>Shortest estimated time runs next</td><td>Minimises average wait</td><td>Requires time estimates; starvation of long jobs</td></tr>
+    <tr><td><strong>Round Robin</strong></td><td>Fixed time slice (quantum), then back of queue</td><td>Fair, no starvation, good response</td><td>Context switch overhead; quantum size critical</td></tr>
+    <tr><td><strong>Priority</strong></td><td>Highest priority runs first</td><td>Urgent tasks prioritised</td><td>Starvation of low priority (fix: <strong>aging</strong>)</td></tr>
+    <tr><td><strong>Multilevel Feedback</strong></td><td>Multiple queues; processes move between them</td><td>Adaptive, balances responsiveness</td><td>Complex to implement</td></tr>
 </table>
 
-<p>Key concepts:</p>
+<p><strong>Key concepts:</strong></p>
 <ul>
-    <li><strong>Pre-emptive scheduling</strong> &mdash; the OS can forcibly interrupt a running process and give the CPU to another (e.g., Round Robin, Priority). Essential for responsive multitasking.</li>
-    <li><strong>Non-pre-emptive (co-operative) scheduling</strong> &mdash; a process runs until it finishes or voluntarily yields (e.g., FCFS, SJF). A misbehaving process can monopolise the CPU.</li>
-    <li><strong>Context switching</strong> &mdash; saving the complete state of the current process (register contents, program counter, stack pointer) and loading the saved state of the next process. This has a time overhead.</li>
-    <li><strong>Starvation</strong> &mdash; a low-priority process never gets to run because higher-priority processes are always available.</li>
+    <li><strong>Pre-emptive</strong> &mdash; OS can interrupt a running process (RR, Priority). Essential for responsive multitasking.</li>
+    <li><strong>Non-pre-emptive</strong> &mdash; process runs until it finishes or yields (FCFS, SJF). A misbehaving process can monopolise the CPU.</li>
+    <li><strong>Context switching</strong> &mdash; saving current process state (registers, PC, stack pointer) and loading the next. Has time overhead.</li>
+    <li><strong>Starvation</strong> &mdash; low-priority process never runs because higher-priority processes are always available.</li>
 </ul>
 
-<h3>I/O Management</h3>
+<h3>3. I/O Management</h3>
 <ul>
-    <li>The OS manages communication between the CPU and input/output devices via <strong>device drivers</strong> &mdash; software modules that translate generic OS commands into device-specific instructions.</li>
-    <li><strong>Buffering</strong> &mdash; data is temporarily held in a buffer (a region of RAM) to compensate for speed differences between devices. E.g., a keyboard buffer stores keystrokes until the CPU is ready to process them; a printer buffer holds print data.</li>
-    <li><strong>Spooling</strong> (Simultaneous Peripheral Operations On-Line) &mdash; jobs are queued on disk (e.g., print jobs in a print spooler) so the CPU does not have to wait for slow devices. Multiple users can send print jobs; they are printed sequentially from the queue.</li>
-    <li><strong>Interrupts</strong> &mdash; I/O devices signal the CPU via the control bus when they need attention (e.g., "data ready", "print complete", "key pressed"). This allows the CPU to do other work rather than continuously polling devices.</li>
+    <li><strong>Device drivers</strong> &mdash; translate generic OS commands into device-specific instructions</li>
+    <li><strong>Buffering</strong> &mdash; temporary data storage in RAM to compensate for speed differences between devices</li>
+    <li><strong>Spooling</strong> &mdash; jobs queued on disk for slow devices (e.g., print spooler). CPU does not wait.</li>
+    <li><strong>Interrupts</strong> &mdash; devices signal the CPU via control bus when needing attention, avoiding wasteful polling</li>
 </ul>
 
-<h3>File Management</h3>
+<h3>4. File Management</h3>
 <ul>
-    <li>The OS provides a <strong>file system</strong> that organises data into files and directories (folders) on storage devices, creating a logical hierarchical structure.</li>
-    <li>It manages <strong>file naming conventions</strong>, <strong>access control</strong> (permissions), and <strong>storage allocation</strong> (tracking which disk blocks belong to which files).</li>
-    <li><strong>Access control</strong> &mdash; permissions determine who can read, write, or execute files (e.g., owner/group/other in Linux; ACLs in Windows).</li>
-    <li><strong>File allocation methods:</strong> FAT (File Allocation Table), NTFS (Windows), ext4 (Linux), APFS (macOS).</li>
+    <li><strong>File system</strong> &mdash; organises data into files and directories (FAT, NTFS, ext4, APFS)</li>
+    <li><strong>Access control</strong> &mdash; permissions determine who can read, write, or execute files</li>
+    <li><strong>Storage allocation</strong> &mdash; tracks which disk blocks belong to which files</li>
 </ul>
 
-<h3>Security Management</h3>
+<h3>5. Security Management</h3>
 <ul>
-    <li><strong>User authentication</strong> &mdash; verifying identity via passwords, biometrics, smart cards, or multi-factor authentication (combining two or more methods).</li>
-    <li><strong>Access control</strong> &mdash; restricting what resources each user or process can access (principle of least privilege).</li>
-    <li><strong>Encryption</strong> &mdash; protecting data at rest (stored) and in transit (being transmitted).</li>
-    <li><strong>Firewall management</strong> &mdash; monitoring and controlling incoming and outgoing network traffic based on security rules.</li>
-    <li><strong>Audit logging</strong> &mdash; recording system events (logins, file access, permission changes) for security review and forensic analysis.</li>
+    <li><strong>User authentication</strong> &mdash; passwords, biometrics, multi-factor</li>
+    <li><strong>Access control</strong> &mdash; principle of least privilege</li>
+    <li><strong>Encryption</strong> &mdash; data at rest and in transit</li>
+    <li><strong>Firewall management</strong> &mdash; monitoring network traffic</li>
+    <li><strong>Audit logging</strong> &mdash; recording events for security review</li>
 </ul>
 
-<div class="exam-tip">When asked about the roles of an OS, structure your answer around these five areas: memory management, process scheduling, I/O management, file management, and security. Give specific examples and technical details for each. For scheduling, be ready to compare algorithms and explain which is best for a given scenario (e.g., Round Robin for interactive desktop use; Priority for real-time systems).</div>
+<div class="exam-tip">Structure OS role answers around these five areas: memory, scheduling, I/O, files, security. For scheduling, compare algorithms and explain which suits different scenarios (Round Robin for desktops; Priority for real-time systems; SJF minimises average waiting time).</div>
 
 <!-- ============================================================ -->
 <h2>4.6.5 Boolean Algebra</h2>
 
 <div class="definition">
-    <strong>Boolean algebra</strong> is a mathematical system for manipulating logical expressions where variables can only be <strong>TRUE (1)</strong> or <strong>FALSE (0)</strong>. It is fundamental to digital circuit design and simplification, and underpins all computer logic.
+    <strong>Boolean algebra</strong> manipulates logical expressions where variables are TRUE (1) or FALSE (0). Fundamental to digital circuit design and simplification.
 </div>
 
 <h3>Basic Operations</h3>
 <table>
-    <tr><th>Operation</th><th>Notation</th><th>Meaning</th><th>Circuit Gate</th></tr>
-    <tr><td>AND</td><td><code>A . B</code> or <code>AB</code></td><td>True only if both A and B are true</td><td>AND gate</td></tr>
-    <tr><td>OR</td><td><code>A + B</code></td><td>True if A or B (or both) are true</td><td>OR gate</td></tr>
-    <tr><td>NOT</td><td><code>&not;A</code> or <code>A&#x0305;</code></td><td>Inverts the value (true becomes false, false becomes true)</td><td>NOT gate (inverter)</td></tr>
+    <tr><th>Operation</th><th>Notation</th><th>Gate</th></tr>
+    <tr><td>AND</td><td><code>A . B</code> or <code>AB</code></td><td>AND gate</td></tr>
+    <tr><td>OR</td><td><code>A + B</code></td><td>OR gate</td></tr>
+    <tr><td>NOT</td><td><code>&not;A</code> or <code>A&#x0305;</code></td><td>NOT gate (inverter)</td></tr>
 </table>
 
 <h3>Laws of Boolean Algebra</h3>
-<p>These laws are used to simplify Boolean expressions, reducing the number of logic gates needed in a circuit (saving cost, power, and space).</p>
-
 <table>
     <tr><th>Law</th><th>AND form</th><th>OR form</th></tr>
-    <tr><td><strong>Identity</strong></td><td><code>A . 1 = A</code></td><td><code>A + 0 = A</code></td></tr>
-    <tr><td><strong>Null (Annulment)</strong></td><td><code>A . 0 = 0</code></td><td><code>A + 1 = 1</code></td></tr>
-    <tr><td><strong>Idempotent</strong></td><td><code>A . A = A</code></td><td><code>A + A = A</code></td></tr>
-    <tr><td><strong>Complement</strong></td><td><code>A . &not;A = 0</code></td><td><code>A + &not;A = 1</code></td></tr>
-    <tr><td><strong>Double Negation</strong></td><td colspan="2"><code>&not;(&not;A) = A</code></td></tr>
-    <tr><td><strong>Commutative</strong></td><td><code>A . B = B . A</code></td><td><code>A + B = B + A</code></td></tr>
-    <tr><td><strong>Associative</strong></td><td><code>(A.B).C = A.(B.C)</code></td><td><code>(A+B)+C = A+(B+C)</code></td></tr>
-    <tr><td><strong>Distributive</strong></td><td><code>A.(B+C) = A.B + A.C</code></td><td><code>A+(B.C) = (A+B).(A+C)</code></td></tr>
-    <tr><td><strong>Absorption</strong></td><td><code>A.(A+B) = A</code></td><td><code>A + A.B = A</code></td></tr>
+    <tr><td><strong>Identity</strong></td><td>A . 1 = A</td><td>A + 0 = A</td></tr>
+    <tr><td><strong>Null</strong></td><td>A . 0 = 0</td><td>A + 1 = 1</td></tr>
+    <tr><td><strong>Idempotent</strong></td><td>A . A = A</td><td>A + A = A</td></tr>
+    <tr><td><strong>Complement</strong></td><td>A . &not;A = 0</td><td>A + &not;A = 1</td></tr>
+    <tr><td><strong>Double Negation</strong></td><td colspan="2">&not;(&not;A) = A</td></tr>
+    <tr><td><strong>Commutative</strong></td><td>A . B = B . A</td><td>A + B = B + A</td></tr>
+    <tr><td><strong>Associative</strong></td><td>(A.B).C = A.(B.C)</td><td>(A+B)+C = A+(B+C)</td></tr>
+    <tr><td><strong>Distributive</strong></td><td>A.(B+C) = A.B + A.C</td><td>A+(B.C) = (A+B).(A+C)</td></tr>
+    <tr><td><strong>Absorption</strong></td><td>A.(A+B) = A</td><td>A + A.B = A</td></tr>
 </table>
 
 <h3>De Morgan's Laws</h3>
 <div class="definition">
-    <strong>De Morgan's Laws</strong> provide rules for complementing compound expressions:<br>
-    <code>&not;(A . B) = &not;A + &not;B</code> &mdash; "NOT (A AND B) = (NOT A) OR (NOT B)"<br>
-    <code>&not;(A + B) = &not;A . &not;B</code> &mdash; "NOT (A OR B) = (NOT A) AND (NOT B)"
+    <code>&not;(A . B) = &not;A + &not;B</code> &mdash; NOT (A AND B) = (NOT A) OR (NOT B)<br>
+    <code>&not;(A + B) = &not;A . &not;B</code> &mdash; NOT (A OR B) = (NOT A) AND (NOT B)<br>
+    To complement a compound expression: complement each variable AND swap AND&harr;OR.
 </div>
-<p>In words: to complement a compound expression, complement each variable AND swap AND with OR (and vice versa). These laws are essential for converting between NAND/NOR forms and for simplifying complex expressions.</p>
 
 <h3>Simplification Examples</h3>
-<pre>
-  Example 1: Simplify Q = A.B + A.B.C
+<pre>Example 1: Q = A.B + A.B.C
+Q = A.B.(1 + C)        [Distributive]
+Q = A.B.1              [Null: 1 + C = 1]
+Q = A.B                [Identity]
 
-  Factor out A.B:
-  Q = A.B.(1 + C)        [Distributive law]
-  Q = A.B.1              [Null: 1 + C = 1]
-  Q = A.B                [Identity: A.1 = A]
+Example 2: Q = (A + B).(A + &not;B)
+Expand: Q = A.A + A.&not;B + B.A + B.&not;B
+         = A + A.&not;B + A.B + 0   [Idempotent, Complement]
+         = A + A.(&not;B + B)       [Factor]
+         = A + A.1 = A + A = A   [Complement, Identity, Idempotent]
 
-  Result: Q = A.B (simplified from 3 terms to 2)
-</pre>
+Example 3: De Morgan's
+&not;(A.B + C) = &not;(A.B) . &not;C = (&not;A + &not;B) . &not;C</pre>
 
-<pre>
-  Example 2: Simplify Q = (A + B).(A + &not;B)
-
-  Expand using distributive law:
-  Q = A.A + A.&not;B + B.A + B.&not;B
-  Q = A + A.&not;B + A.B + 0     [Idempotent: A.A=A; Complement: B.&not;B=0]
-  Q = A + A.(&not;B + B)          [Factor out A]
-  Q = A + A.1                  [Complement: &not;B + B = 1]
-  Q = A + A                    [Identity: A.1 = A]
-  Q = A                        [Idempotent: A + A = A]
-
-  Result: Q = A (four gates reduced to a single wire!)
-</pre>
-
-<pre>
-  Example 3: Apply De Morgan's Law
-
-  &not;(A.B + C) = &not;(A.B) . &not;C      [De Morgan's on the OR]
-              = (&not;A + &not;B) . &not;C    [De Morgan's on the AND]
-</pre>
-
-<div class="exam-tip">When simplifying, look for: absorption (<code>A + A.B = A</code>), complementary pairs (<code>A.&not;A = 0</code>), and common factors. Show each step with the law used in square brackets. De Morgan's laws are essential for converting between AND/OR forms and for simplifying NAND/NOR expressions.</div>
+<div class="exam-tip">Show each simplification step with the law used in brackets. Look for absorption (A + A.B = A), complementary pairs (A.&not;A = 0), and common factors.</div>
 
 <!-- ============================================================ -->
 <h2>4.6.6 Logic Gates</h2>
 
-<h3>Basic Gates and Truth Tables</h3>
-<table>
-    <tr><th>Gate</th><th>Expression</th><th>Description</th></tr>
-    <tr><td><strong>AND</strong></td><td><code>Q = A . B</code></td><td>Output is 1 only when both inputs are 1</td></tr>
-    <tr><td><strong>OR</strong></td><td><code>Q = A + B</code></td><td>Output is 1 when at least one input is 1</td></tr>
-    <tr><td><strong>NOT</strong></td><td><code>Q = &not;A</code></td><td>Output is the inverse of the input</td></tr>
-    <tr><td><strong>NAND</strong></td><td><code>Q = &not;(A . B)</code></td><td>Output is 0 only when both inputs are 1 (NOT AND)</td></tr>
-    <tr><td><strong>NOR</strong></td><td><code>Q = &not;(A + B)</code></td><td>Output is 1 only when both inputs are 0 (NOT OR)</td></tr>
-    <tr><td><strong>XOR</strong></td><td><code>Q = A &oplus; B</code></td><td>Output is 1 when inputs are different</td></tr>
-</table>
-
-<h3>Complete Truth Table</h3>
+<h3>Gates and Truth Tables</h3>
 <table>
     <tr><th>A</th><th>B</th><th>AND</th><th>OR</th><th>NAND</th><th>NOR</th><th>XOR</th></tr>
     <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
@@ -308,62 +258,54 @@ print(math.factorial(5)) # 120
     <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
 </table>
 
+<table>
+    <tr><th>Gate</th><th>Expression</th><th>Description</th></tr>
+    <tr><td><strong>AND</strong></td><td>Q = A . B</td><td>1 only when both inputs are 1</td></tr>
+    <tr><td><strong>OR</strong></td><td>Q = A + B</td><td>1 when at least one input is 1</td></tr>
+    <tr><td><strong>NOT</strong></td><td>Q = &not;A</td><td>Inverts the input</td></tr>
+    <tr><td><strong>NAND</strong></td><td>Q = &not;(A . B)</td><td>0 only when both inputs are 1</td></tr>
+    <tr><td><strong>NOR</strong></td><td>Q = &not;(A + B)</td><td>1 only when both inputs are 0</td></tr>
+    <tr><td><strong>XOR</strong></td><td>Q = A &oplus; B</td><td>1 when inputs are different</td></tr>
+</table>
+
 <h3>Universal Gates</h3>
-<p><strong>NAND</strong> and <strong>NOR</strong> are called <strong>universal gates</strong> because any other logic gate can be built using only NAND gates (or only NOR gates). This is important in chip manufacturing &mdash; a chip built with only one gate type is simpler and cheaper to fabricate.</p>
-<pre>
-  Building gates from NAND only:
-  NOT A   = A NAND A                    (self-NAND gives NOT)
-  A AND B = (A NAND B) NAND (A NAND B)  (NAND then NOT)
-  A OR B  = (A NAND A) NAND (B NAND B)  (NOT each input, then NAND)
+<p><strong>NAND</strong> and <strong>NOR</strong> are universal &mdash; any gate can be built from just NAND (or just NOR). This simplifies chip manufacturing.</p>
+<pre>From NAND only:
+NOT A   = A NAND A
+A AND B = (A NAND B) NAND (A NAND B)
+A OR B  = (A NAND A) NAND (B NAND B)
 
-  Building gates from NOR only:
-  NOT A   = A NOR A
-  A OR B  = (A NOR B) NOR (A NOR B)
-  A AND B = (A NOR A) NOR (B NOR B)
-</pre>
+From NOR only:
+NOT A   = A NOR A
+A OR B  = (A NOR B) NOR (A NOR B)
+A AND B = (A NOR A) NOR (B NOR B)</pre>
 
-<h3>Deriving Boolean Expressions from Truth Tables</h3>
-<p>To derive a Sum of Products (SOP) expression from a truth table:</p>
-<ol>
-    <li>Look at each row where the output is 1.</li>
-    <li>Write an AND term for that row (use the variable if the input is 1, the complement if 0).</li>
-    <li>OR all the AND terms together.</li>
-</ol>
-<pre>
-  Example truth table:
-  A  B  Q
-  0  0  0
-  0  1  1
-  1  0  1
-  1  1  0
+<h3>Deriving Expressions from Truth Tables</h3>
+<p><strong>Sum of Products (SOP):</strong> for each row where output=1, write an AND term (variable if 1, complement if 0). OR all terms together.</p>
+<pre>A  B  Q
+0  0  0
+0  1  1    &rarr; &not;A.B
+1  0  1    &rarr; A.&not;B
+1  1  0
 
-  Rows where Q=1: row 2 (&not;A.B) and row 3 (A.&not;B)
-  Q = &not;A.B + A.&not;B = A XOR B
-</pre>
+Q = &not;A.B + A.&not;B = A XOR B</pre>
 
 <!-- ============================================================ -->
 <h2>4.6.7 Karnaugh Maps (K-Maps)</h2>
 
 <div class="definition">
-    A <strong>Karnaugh map</strong> is a graphical method for simplifying Boolean expressions. It arranges truth table values in a grid where adjacent cells differ by exactly one variable (<strong>Gray code ordering</strong>), making it easy to visually identify groups of 1s that can be combined to eliminate variables.
+    A <strong>Karnaugh map</strong> simplifies Boolean expressions visually. Truth table values are arranged in a grid where adjacent cells differ by one variable (<strong>Gray code</strong> ordering), making it easy to identify groups of 1s to combine.
 </div>
 
 <h3>K-Map Layouts</h3>
-<p><strong>2-Variable K-Map:</strong></p>
-<table>
-    <tr><th></th><th>B=0</th><th>B=1</th></tr>
-    <tr><td><strong>A=0</strong></td><td>m0</td><td>m1</td></tr>
-    <tr><td><strong>A=1</strong></td><td>m2</td><td>m3</td></tr>
-</table>
-
-<p><strong>3-Variable K-Map</strong> (note Gray code order: 00, 01, 11, 10):</p>
+<p><strong>3-variable</strong> (Gray code order: 00, 01, 11, 10):</p>
 <table>
     <tr><th></th><th>BC=00</th><th>BC=01</th><th>BC=11</th><th>BC=10</th></tr>
     <tr><td><strong>A=0</strong></td><td>m0</td><td>m1</td><td>m3</td><td>m2</td></tr>
     <tr><td><strong>A=1</strong></td><td>m4</td><td>m5</td><td>m7</td><td>m6</td></tr>
 </table>
 
-<p><strong>4-Variable K-Map:</strong></p>
+<p><strong>4-variable:</strong></p>
 <table>
     <tr><th></th><th>CD=00</th><th>CD=01</th><th>CD=11</th><th>CD=10</th></tr>
     <tr><td><strong>AB=00</strong></td><td>m0</td><td>m1</td><td>m3</td><td>m2</td></tr>
@@ -374,112 +316,73 @@ print(math.factorial(5)) # 120
 
 <h3>Grouping Rules</h3>
 <ol>
-    <li>Groups must contain <strong>1s only</strong> (for Sum of Products / SOP simplification).</li>
-    <li>Group sizes must be <strong>powers of 2</strong>: 1, 2, 4, 8, 16.</li>
-    <li>Groups must be <strong>rectangular</strong> (including squares).</li>
-    <li>Groups can <strong>wrap around</strong> edges (top-bottom, left-right &mdash; the map is topologically a torus).</li>
-    <li>Make groups as <strong>large as possible</strong> (larger groups eliminate more variables).</li>
-    <li>Every 1 must be in <strong>at least one group</strong>.</li>
-    <li>Groups <strong>can overlap</strong> (a cell can belong to multiple groups).</li>
-    <li>Use the <strong>fewest groups</strong> possible.</li>
+    <li>Groups contain <strong>1s only</strong></li>
+    <li>Group sizes must be <strong>powers of 2</strong> (1, 2, 4, 8, 16)</li>
+    <li>Groups must be <strong>rectangular</strong></li>
+    <li>Groups should be <strong>as large as possible</strong></li>
+    <li>Groups <strong>can wrap around</strong> edges (the map is a torus)</li>
+    <li>Every 1 must be in <strong>at least one group</strong></li>
+    <li>Overlapping groups are allowed (and often necessary)</li>
+    <li>Use <strong>fewest groups</strong> possible</li>
 </ol>
 
-<h3>Reading the Simplified Expression</h3>
-<p>For each group, identify the variables that remain <strong>constant</strong> across all cells in the group. Variables that change within the group are eliminated. Each group produces one AND term; OR all terms together for the final expression.</p>
-
 <h3>Worked Example</h3>
-<pre>
-  4-variable K-map for F(A,B,C,D):
+<pre>Boolean expression: Q = &not;A.&not;B.C + &not;A.B.C + A.&not;B.C + A.B.C
 
-           CD=00  CD=01  CD=11  CD=10
-  AB=00  |  0  |  1  |  1  |  0  |
-  AB=01  |  0  |  1  |  1  |  0  |
-  AB=11  |  0  |  1  |  1  |  0  |
-  AB=10  |  0  |  0  |  0  |  0  |
+3-variable K-map:
+        BC=00  BC=01  BC=11  BC=10
+A=0  [  0      1      1      0   ]
+A=1  [  0      1      1      0   ]
 
-  Group 1: 4 cells (AB=00,01 x CD=01,11) &rarr; A=0 is constant, D=1 is constant
-           &rarr; &not;A.D
+Group all four 1s (2x2 block in columns 01 and 11):
+This eliminates A and B (they both change within the group).
+Result: Q = C
 
-  Group 2: 4 cells (AB=01,11 x CD=01,11) &rarr; B=1 is constant, D=1 is constant
-           &rarr; B.D
+Simplified from 4 terms with 3 variables to just C!</pre>
 
-  F = &not;A.D + B.D
-  Factor: F = D.(&not;A + B)
-</pre>
+<h4>Another Example</h4>
+<pre>4-variable K-map:
+        CD=00  CD=01  CD=11  CD=10
+AB=00 [  1      0      0      1   ]
+AB=01 [  1      0      0      1   ]
+AB=11 [  0      0      0      0   ]
+AB=10 [  1      0      0      1   ]
 
-<h3>Don't Care Conditions</h3>
-<div class="definition">
-    <strong>Don't care conditions</strong> (marked as X or d) represent input combinations that either cannot occur in practice or whose output does not matter. When simplifying with K-maps, don't cares can be treated as either 0 or 1, whichever produces a simpler expression.
-</div>
-<p>Using don't cares allows larger groups, which leads to simpler expressions and fewer logic gates in the circuit.</p>
+Group the six 1s:
+- All cells in CD=00 column (except AB=11): wrap rows 00,01,10 = group of 4 if we
+  consider corners wrapping. Actually: column CD=00 rows 00,01,10 = 3 cells (not power of 2).
+  Better: pair (00,00)+(01,00) = 2, pair (00,00)+(10,00) wrap = 2.
+- Column CD=10 same pattern.
+- Larger group: all 1s form an L-shape; cover with two groups of 4 wrapping edges.
+  Group 1: CD=00 column rows 00,01,10 + CD=10 column row 00 (wrap) = 4 cells &rarr; &not;B.&not;D
+  Group 2: CD=10 column rows 00,01,10 + CD=00 column row 00 (wrap) = &not;B.&not;C...
 
-<div class="exam-tip">Always use Gray code ordering (00, 01, 11, 10) on K-map axes &mdash; this ensures adjacent cells differ by exactly one bit. Groups can wrap around all edges. Include don't cares in groups if it makes the group larger. Practice 3-variable and 4-variable maps thoroughly.</div>
+  Simpler: two groups of 4:
+  Corners wrap: (00,00),(01,00),(00,10),(01,10) = &not;A.&not;D (4 cells)
+  And: (00,00),(10,00),(00,10),(10,10) = &not;B.&not;D (4 cells)
+  Result: Q = &not;A.&not;D + &not;B.&not;D = &not;D.(&not;A + &not;B)</pre>
 
-<!-- ============================================================ -->
-<h2>4.6.8 Flip-Flops</h2>
-
-<div class="definition">
-    A <strong>flip-flop</strong> is a <strong>sequential logic circuit</strong> that can store one bit of data. Unlike combinational circuits (whose outputs depend only on current inputs), flip-flops have <strong>memory</strong> &mdash; their output depends on both current inputs and previous state. They are the fundamental building blocks of registers, counters, and memory.
-</div>
-
-<h3>SR Flip-Flop (Set-Reset)</h3>
-<p>The SR flip-flop has two inputs: <strong>S (Set)</strong> and <strong>R (Reset)</strong>, and two outputs: <strong>Q</strong> and <strong>&not;Q</strong>.</p>
-<table>
-    <tr><th>S</th><th>R</th><th>Q (next)</th><th>Action</th></tr>
-    <tr><td>0</td><td>0</td><td>Q (no change)</td><td>Hold / memory state &mdash; output remains as it was</td></tr>
-    <tr><td>0</td><td>1</td><td>0</td><td>Reset &mdash; output forced to 0</td></tr>
-    <tr><td>1</td><td>0</td><td>1</td><td>Set &mdash; output forced to 1</td></tr>
-    <tr><td>1</td><td>1</td><td><strong>Invalid</strong></td><td>Not allowed &mdash; both Q and &not;Q would be forced to the same value, which is contradictory</td></tr>
-</table>
-<p>An SR flip-flop can be constructed from two cross-coupled <strong>NAND</strong> or <strong>NOR</strong> gates. The invalid state (S=R=1) is the main drawback of this design.</p>
-
-<h3>D-Type Flip-Flop (Data)</h3>
-<p>The D flip-flop solves the invalid state problem. It has one data input <strong>D</strong> and a <strong>clock</strong> input. On the <strong>clock edge</strong> (rising or falling), the output Q takes whatever value D has at that instant.</p>
-<table>
-    <tr><th>Clock Edge</th><th>D</th><th>Q (next)</th><th>Action</th></tr>
-    <tr><td>Rising edge</td><td>0</td><td>0</td><td>Stores 0</td></tr>
-    <tr><td>Rising edge</td><td>1</td><td>1</td><td>Stores 1</td></tr>
-    <tr><td>No edge (between edges)</td><td>Any</td><td>Q (no change)</td><td>Output held regardless of D changes</td></tr>
-</table>
-
-<p><strong>Key properties and uses:</strong></p>
-<ul>
-    <li>Eliminates the invalid state of the SR flip-flop.</li>
-    <li>Output only changes on the <strong>clock edge</strong> &mdash; <strong>edge-triggered</strong>, making it ideal for synchronous circuits.</li>
-    <li><strong>Registers:</strong> A group of D flip-flops forms a register (e.g., 8 D flip-flops = an 8-bit register that stores one byte).</li>
-    <li><strong>Shift registers:</strong> D flip-flops chained together, where the output of each feeds the input of the next. Data shifts one position per clock cycle. Used in serial-to-parallel conversion.</li>
-    <li><strong>Counters:</strong> D flip-flops configured to count clock pulses in binary.</li>
-</ul>
-
-<div class="exam-tip">Be able to trace through timing diagrams for both SR and D flip-flops. The D flip-flop is edge-triggered: the value of D matters only at the clock edge, not between edges. Know that a group of D flip-flops forms a register, and be able to explain how shift registers work.</div>
+<div class="exam-tip">In K-map questions, remember Gray code ordering (00, 01, 11, 10 &mdash; NOT 00, 01, 10, 11). Groups can wrap around edges. A group of 2 eliminates 1 variable; a group of 4 eliminates 2 variables; a group of 8 eliminates 3. Always make groups as large as possible to maximise simplification.</div>
 
 <!-- ============================================================ -->
-<h2>4.6.9 Adders</h2>
+<h2>4.6.8 Half Adder and Full Adder</h2>
 
 <h3>Half Adder</h3>
-<div class="definition">
-    A <strong>half adder</strong> adds two single-bit binary numbers and produces a <strong>sum</strong> (S) and a <strong>carry</strong> (C). It does NOT handle a carry input from a previous stage, hence "half".
-</div>
+<p>Adds two single-bit inputs A and B. Produces a <strong>Sum</strong> and a <strong>Carry</strong>.</p>
 <table>
-    <tr><th>A</th><th>B</th><th>Sum (S)</th><th>Carry (C)</th></tr>
+    <tr><th>A</th><th>B</th><th>Sum</th><th>Carry</th></tr>
     <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
     <tr><td>0</td><td>1</td><td>1</td><td>0</td></tr>
     <tr><td>1</td><td>0</td><td>1</td><td>0</td></tr>
     <tr><td>1</td><td>1</td><td>0</td><td>1</td></tr>
 </table>
-<pre>
-  Boolean expressions:
-  S = A XOR B    (A &oplus; B)    &mdash; the sum is 1 when inputs differ
-  C = A AND B    (A . B)      &mdash; carry is 1 only when both inputs are 1
-</pre>
-<p>The half adder is built from one <strong>XOR gate</strong> (for sum) and one <strong>AND gate</strong> (for carry).</p>
+<p><strong>Sum = A XOR B</strong>, <strong>Carry = A AND B</strong></p>
+<p>Limitation: cannot handle a carry input from a previous addition.</p>
 
 <h3>Full Adder</h3>
-<div class="definition">
-    A <strong>full adder</strong> adds two single-bit binary numbers <strong>plus a carry-in</strong> (C<sub>in</sub>) from a previous stage. It produces a sum (S) and a carry-out (C<sub>out</sub>).
-</div>
+<p>Adds three single-bit inputs: A, B, and <strong>Carry In</strong> (C<sub>in</sub>). Produces Sum and Carry Out (C<sub>out</sub>).</p>
 <table>
-    <tr><th>A</th><th>B</th><th>C<sub>in</sub></th><th>Sum (S)</th><th>C<sub>out</sub></th></tr>
+    <tr><th>A</th><th>B</th><th>C<sub>in</sub></th><th>Sum</th><th>C<sub>out</sub></th></tr>
     <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
     <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
     <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
@@ -489,46 +392,24 @@ print(math.factorial(5)) # 120
     <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
     <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
 </table>
-<pre>
-  Boolean expressions:
-  S     = A XOR B XOR C_in
-  C_out = (A AND B) OR (C_in AND (A XOR B))
-</pre>
+<p><strong>Sum = A XOR B XOR C<sub>in</sub></strong>, <strong>C<sub>out</sub> = (A AND B) OR (C<sub>in</sub> AND (A XOR B))</strong></p>
+<p>A full adder can be built from <strong>two half adders</strong> and an OR gate. Multiple full adders are chained together (the carry out of one feeds the carry in of the next) to create an <strong>n-bit ripple-carry adder</strong>.</p>
 
-<p>A full adder can be built from <strong>two half adders and an OR gate</strong>:</p>
-<ol>
-    <li>First half adder: adds A and B &rarr; intermediate sum (S1) and carry (C1).</li>
-    <li>Second half adder: adds S1 and C<sub>in</sub> &rarr; final sum (S) and carry (C2).</li>
-    <li>OR gate: C<sub>out</sub> = C1 OR C2.</li>
-</ol>
+<h3>D-type Flip-Flop</h3>
+<div class="definition">
+    A <strong>D-type flip-flop</strong> is a sequential logic circuit that stores one bit of data. It has a <strong>data input (D)</strong> and a <strong>clock input</strong>. On the <strong>rising edge</strong> of the clock signal, the output Q takes the value of D and holds it until the next clock edge. This is the fundamental building block of <strong>registers</strong> and <strong>memory</strong>.
+</div>
 
-<h3>Multi-Bit Adders (Ripple Carry Adder)</h3>
-<p>To add multi-bit binary numbers, full adders are <strong>chained together</strong>:</p>
-<ul>
-    <li>The C<sub>out</sub> of each full adder feeds into the C<sub>in</sub> of the next (more significant) full adder.</li>
-    <li>The least significant bit can use a half adder (or a full adder with C<sub>in</sub> = 0).</li>
-    <li>An n-bit ripple carry adder uses n full adders.</li>
-</ul>
-<pre>
-  4-bit ripple carry adder:
+<table>
+    <tr><th>Clock Edge</th><th>D</th><th>Q (after clock edge)</th></tr>
+    <tr><td>Rising</td><td>0</td><td>0</td></tr>
+    <tr><td>Rising</td><td>1</td><td>1</td></tr>
+    <tr><td>No edge</td><td>Any</td><td>Holds previous value</td></tr>
+</table>
 
-  A3 B3    A2 B2    A1 B1    A0 B0
-   |  |     |  |     |  |     |  |
-  [FA3]----[FA2]----[FA1]----[FA0]---- C_in (0)
-   |  \     |  \     |  \     |  \
-  C_out S3      S2      S1      S0
+<p>8 D-type flip-flops connected in parallel form an <strong>8-bit register</strong> that can store one byte.</p>
 
-  Example: 0110 + 0011
-  FA0: 0+1+0 = S0=1, C=0
-  FA1: 1+1+0 = S1=0, C=1
-  FA2: 1+0+1 = S2=0, C=1
-  FA3: 0+0+1 = S3=1, C=0
-  Result: 1001 (9)   Verify: 6+3=9 correct
-</pre>
-
-<p><strong>Limitation:</strong> In a ripple carry adder, each full adder must wait for the carry from the previous stage before it can compute its result. This propagation delay is proportional to the number of bits, limiting speed. Advanced designs like <strong>carry-lookahead adders</strong> calculate carries in parallel, significantly reducing delay.</p>
-
-<div class="exam-tip">Be able to draw the circuits for half and full adders, write their Boolean expressions, explain how they chain together for multi-bit addition, and trace through an example. Key distinction: a half adder has no carry input; a full adder does.</div>
+<div class="exam-tip">Know half adder (2 inputs, no carry in) vs full adder (3 inputs including carry in). Full adders are chained for multi-bit addition. The D-type flip-flop stores 1 bit on the clock edge &mdash; it is the basis of all registers and memory. Be able to draw and explain the truth tables for all three circuits.</div>
 
 </div>
 </body>
