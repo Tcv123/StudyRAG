@@ -34,7 +34,7 @@
       --sidebar-w: 240px;
     }
 
-    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
     /* ── LAYOUT ── */
     .app { display: flex; min-height: 100vh; }
@@ -204,8 +204,8 @@
     }
 
     .subjects-scroll {
-      display: flex; gap: 10px;
-      overflow-x: auto; padding-bottom: 4px;
+      display: flex; gap: 8px;
+      flex-wrap: wrap;
     }
 
     .subjects-scroll::-webkit-scrollbar { height: 4px; }
@@ -215,8 +215,8 @@
       flex-shrink: 0;
       background: var(--surface2);
       border: 1px solid var(--border);
-      border-radius: 12px; padding: 14px 16px;
-      min-width: 130px;
+      border-radius: 10px; padding: 10px 12px;
+      min-width: 110px;
       transition: border-color 0.15s, box-shadow 0.15s;
       position: relative; overflow: hidden;
     }
@@ -638,7 +638,7 @@
         </div>
         <div id="examDatesRow" style="margin-top:14px;">
           <div style="font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">📅 Upcoming exams</div>
-          <div id="examDatesGrid" style="display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;"></div>
+          <div id="examDatesGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;"></div>
         </div>
       </div>
 
@@ -920,7 +920,7 @@ function renderExamDates(subjects) {
       e.diffDays === 1 ? '<span style="color:var(--red);font-weight:700;">Tomorrow</span>' :
       `<span style="color:${isClose ? 'var(--amber)' : 'var(--accent-dark)'};font-weight:600;">${e.diffDays}d</span>`;
 
-    return `<div style="min-width:200px;flex-shrink:0;background:${bgColor};border:1px solid ${borderColor};border-radius:12px;padding:14px 16px;">
+    return `<div style="background:${bgColor};border:1px solid ${borderColor};border-radius:10px;padding:10px 12px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
         <span style="font-size:16px;">${e.emoji}</span>
         <span style="font-weight:600;font-size:13px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${e.subject}</span>
