@@ -926,9 +926,9 @@ function renderExamDates(subjects) {
     bySubject[e.subject].exams.push(e);
   });
 
-  const subjects = Object.entries(bySubject);
-  const show = subjects.slice(0, 4);
-  const rest = subjects.slice(4);
+  const subjEntries = Object.entries(bySubject);
+  const show = subjEntries.slice(0, 4);
+  const rest = subjEntries.slice(4);
 
   function renderSubjRow([name, data]) {
     const papers = data.exams.map(e => {
