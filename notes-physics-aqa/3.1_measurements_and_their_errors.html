@@ -20,6 +20,7 @@
   tr:nth-child(even) { background: #f8fafc; }
   .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
@@ -31,7 +32,7 @@
 
 <!-- SI UNITS -->
 <h2>1. SI Base Units</h2>
-<p>The International System of Units (SI) defines seven base quantities, each with a base unit:</p>
+<p>The International System of Units (SI) defines seven base quantities, each with a base unit. These form the foundation of all physical measurement. Every other unit in physics can be derived from combinations of these seven.</p>
 <table>
   <tr><th>Base Quantity</th><th>SI Base Unit</th><th>Symbol</th></tr>
   <tr><td>Mass</td><td>kilogram</td><td>kg</td></tr>
@@ -43,8 +44,10 @@
   <tr><td>Luminous intensity</td><td>candela</td><td>cd</td></tr>
 </table>
 
+<p>Note that the kilogram is the only base unit with a prefix. The base unit of mass is <strong>not</strong> the gram. This matters when converting: 1 g = 10<sup>-3</sup> kg, not 1 kg = 10<sup>-3</sup> g.</p>
+
 <h2>2. Derived Units</h2>
-<p>Derived units are combinations of base units. They can always be expressed in terms of kg, m, s, A, K, mol.</p>
+<p>Derived units are combinations of base units. They can always be expressed in terms of kg, m, s, A, K, mol. Being able to derive the base units of any quantity is essential for checking equations.</p>
 <table>
   <tr><th>Quantity</th><th>Unit</th><th>Symbol</th><th>In Base Units</th></tr>
   <tr><td>Force</td><td>newton</td><td>N</td><td>kg m s<sup>-2</sup></td></tr>
@@ -57,22 +60,47 @@
   <tr><td>Frequency</td><td>hertz</td><td>Hz</td><td>s<sup>-1</sup></td></tr>
 </table>
 
-<div class="tip-box"><strong>Exam Tip:</strong> To verify an equation is correct, check the units on both sides match. This technique is called homogeneity of units (dimensional analysis).</div>
+<h3>How to Derive Base Units</h3>
+<p>Start from a defining equation and substitute until only base units remain.</p>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Show that the volt has base units kg m<sup>2</sup> s<sup>-3</sup> A<sup>-1</sup>.<br><br>
+V = W / Q (energy per unit charge)<br>
+W is in joules: J = N m = (kg m s<sup>-2</sup>)(m) = kg m<sup>2</sup> s<sup>-2</sup><br>
+Q is in coulombs: C = A s<br>
+So V = kg m<sup>2</sup> s<sup>-2</sup> / (A s) = <strong>kg m<sup>2</sup> s<sup>-3</sup> A<sup>-1</sup></strong>
+</div>
+
+<h3>Homogeneity of Units (Dimensional Analysis)</h3>
+<div class="def-box"><strong>Homogeneity:</strong> An equation is homogeneous if the units on the left-hand side are identical to the units on the right-hand side. Every valid physics equation must be homogeneous, though a homogeneous equation is not necessarily correct (it could have a wrong numerical factor or missing terms).</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Check whether E<sub>k</sub> = &frac12;mv<sup>2</sup> is homogeneous.<br><br>
+LHS: E<sub>k</sub> is in joules = kg m<sup>2</sup> s<sup>-2</sup><br>
+RHS: &frac12; is dimensionless, m is in kg, v<sup>2</sup> is in (m s<sup>-1</sup>)<sup>2</sup> = m<sup>2</sup> s<sup>-2</sup><br>
+So RHS = kg &times; m<sup>2</sup> s<sup>-2</sup> = <strong>kg m<sup>2</sup> s<sup>-2</sup></strong><br>
+LHS = RHS, so the equation is homogeneous.
+</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Dimensional analysis can help you spot errors in your working or eliminate wrong answers in multiple choice. If the units don't match on both sides, the equation (or your rearrangement of it) must be wrong. However, it cannot detect missing dimensionless constants like &frac12; or 2&pi;.</div>
 
 <h2>3. SI Prefixes</h2>
+<p>Prefixes allow us to express very large or very small quantities conveniently. You must be able to convert between prefixed and standard form rapidly in exam calculations.</p>
 <table>
-  <tr><th>Prefix</th><th>Symbol</th><th>Factor</th></tr>
-  <tr><td>tera</td><td>T</td><td>10<sup>12</sup></td></tr>
-  <tr><td>giga</td><td>G</td><td>10<sup>9</sup></td></tr>
-  <tr><td>mega</td><td>M</td><td>10<sup>6</sup></td></tr>
-  <tr><td>kilo</td><td>k</td><td>10<sup>3</sup></td></tr>
-  <tr><td>centi</td><td>c</td><td>10<sup>-2</sup></td></tr>
-  <tr><td>milli</td><td>m</td><td>10<sup>-3</sup></td></tr>
-  <tr><td>micro</td><td>&mu;</td><td>10<sup>-6</sup></td></tr>
-  <tr><td>nano</td><td>n</td><td>10<sup>-9</sup></td></tr>
-  <tr><td>pico</td><td>p</td><td>10<sup>-12</sup></td></tr>
-  <tr><td>femto</td><td>f</td><td>10<sup>-15</sup></td></tr>
+  <tr><th>Prefix</th><th>Symbol</th><th>Factor</th><th>Example</th></tr>
+  <tr><td>tera</td><td>T</td><td>10<sup>12</sup></td><td>1 THz = 10<sup>12</sup> Hz (infrared frequencies)</td></tr>
+  <tr><td>giga</td><td>G</td><td>10<sup>9</sup></td><td>1 GW = 10<sup>9</sup> W (power station output)</td></tr>
+  <tr><td>mega</td><td>M</td><td>10<sup>6</sup></td><td>1 M&Omega; = 10<sup>6</sup> &Omega; (high resistance)</td></tr>
+  <tr><td>kilo</td><td>k</td><td>10<sup>3</sup></td><td>1 km = 10<sup>3</sup> m</td></tr>
+  <tr><td>centi</td><td>c</td><td>10<sup>-2</sup></td><td>1 cm = 10<sup>-2</sup> m</td></tr>
+  <tr><td>milli</td><td>m</td><td>10<sup>-3</sup></td><td>1 mA = 10<sup>-3</sup> A</td></tr>
+  <tr><td>micro</td><td>&mu;</td><td>10<sup>-6</sup></td><td>1 &mu;m = 10<sup>-6</sup> m (cell biology scale)</td></tr>
+  <tr><td>nano</td><td>n</td><td>10<sup>-9</sup></td><td>1 nm = 10<sup>-9</sup> m (visible light wavelengths)</td></tr>
+  <tr><td>pico</td><td>p</td><td>10<sup>-12</sup></td><td>1 pF = 10<sup>-12</sup> F (small capacitors)</td></tr>
+  <tr><td>femto</td><td>f</td><td>10<sup>-15</sup></td><td>1 fm = 10<sup>-15</sup> m (nuclear radius)</td></tr>
 </table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> When converting squared or cubed units, remember to apply the power to the prefix too. For example, 1 cm<sup>2</sup> = (10<sup>-2</sup> m)<sup>2</sup> = 10<sup>-4</sup> m<sup>2</sup>, not 10<sup>-2</sup> m<sup>2</sup>. Similarly, 1 mm<sup>3</sup> = (10<sup>-3</sup> m)<sup>3</sup> = 10<sup>-9</sup> m<sup>3</sup>. This is one of the most common unit conversion errors in exams.</div>
 
 <!-- ERRORS -->
 <h2>4. Random and Systematic Errors</h2>
@@ -81,12 +109,24 @@
 
 <div class="def-box"><strong>Systematic error:</strong> A consistent error in the same direction every time a measurement is taken. It shifts all readings by the same amount (or proportion) away from the true value. It is NOT reduced by averaging.</div>
 
-<p><strong>Examples of random errors:</strong> fluctuations in readings due to electrical noise, varying reaction times, slight differences in positioning instruments.</p>
-<p><strong>Examples of systematic errors:</strong> zero error on a balance or micrometer, consistently reading a meniscus from the wrong angle (parallax), a miscalibrated instrument.</p>
+<table>
+  <tr><th>Feature</th><th>Random Error</th><th>Systematic Error</th></tr>
+  <tr><td>Effect on readings</td><td>Scatter about the true value</td><td>All shifted in the same direction</td></tr>
+  <tr><td>Effect on mean</td><td>Mean approaches true value as repeats increase</td><td>Mean is offset from true value regardless of repeats</td></tr>
+  <tr><td>How to detect</td><td>Spread in repeated readings</td><td>Compare with a known accurate value</td></tr>
+  <tr><td>How to reduce</td><td>Repeat and average; use more sensitive instruments</td><td>Recalibrate instruments; correct technique; check zero error</td></tr>
+  <tr><td>Examples</td><td>Fluctuations from electrical noise, varying reaction times, slight positioning differences</td><td>Zero error on a balance, parallax from consistent wrong angle, miscalibrated instrument</td></tr>
+</table>
 
-<h2>5. Precision and Accuracy</h2>
+<div class="def-box"><strong>Zero error:</strong> A specific type of systematic error where an instrument gives a non-zero reading when it should read zero. Before taking measurements, always check and record any zero error, then subtract it from all subsequent readings.</div>
+
+<p><strong>Real-world application:</strong> In medical physics, systematic errors in radiation dosimetry equipment could lead to patients receiving incorrect doses. Regular calibration against national standards is essential. Random errors in blood pressure measurements are reduced by taking multiple readings and averaging.</p>
+
+<h2>5. Precision, Accuracy, and Resolution</h2>
 <div class="def-box"><strong>Precision:</strong> How close repeated measurements are to each other. High precision means low spread (small random error). Related to the resolution of the instrument.</div>
 <div class="def-box"><strong>Accuracy:</strong> How close a measurement is to the true value. High accuracy means low systematic error.</div>
+<div class="def-box"><strong>Resolution:</strong> The smallest change in a quantity that an instrument can detect. For example, a ruler with mm markings has a resolution of 1 mm; a micrometer has a resolution of 0.01 mm.</div>
+<div class="def-box"><strong>Repeatability:</strong> Whether the same person using the same equipment gets the same results. <strong>Reproducibility:</strong> Whether different people using different equipment get the same results.</div>
 
 <p>A measurement can be precise but not accurate (e.g. consistently reading 10.3 when the true value is 10.0) or accurate but not precise (e.g. readings scattered around the true value with large spread).</p>
 
@@ -154,7 +194,7 @@
 </svg>
 </div>
 
-<div class="tip-box"><strong>Exam Tip:</strong> Repeating measurements improves precision (reduces the effect of random error) but does NOT improve accuracy. To improve accuracy, you must eliminate systematic errors (e.g. recalibrate the instrument).</div>
+<div class="tip-box"><strong>Exam Tip:</strong> Repeating measurements improves precision (reduces the effect of random error) but does NOT improve accuracy. To improve accuracy, you must eliminate systematic errors (e.g. recalibrate the instrument). These are different concepts — do not confuse them.</div>
 
 <!-- UNCERTAINTIES -->
 <h2>6. Uncertainties</h2>
@@ -163,36 +203,72 @@
 <p>The absolute uncertainty is the margin of error in a measurement, expressed in the same units as the measurement.</p>
 <ul>
   <li>For a <strong>single reading</strong> with an analogue scale: uncertainty = &plusmn; half the smallest division.</li>
-  <li>For a <strong>single reading</strong> with a digital instrument: uncertainty = &plusmn; the last digit.</li>
+  <li>For a <strong>single reading</strong> with a digital instrument: uncertainty = &plusmn; the last digit (the resolution).</li>
   <li>For <strong>repeated readings</strong>: uncertainty = range / 2 (i.e. half the range of the data set).</li>
 </ul>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A ruler with 1 mm divisions is used to measure a length. The reading is 245 mm.<br><br>
+Uncertainty = &plusmn; half the smallest division = &plusmn; 0.5 mm<br>
+Length = 245.0 &plusmn; 0.5 mm = 0.2450 &plusmn; 0.0005 m
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Five measurements of a time period give: 2.31, 2.28, 2.34, 2.30, 2.32 s.<br><br>
+Mean = (2.31 + 2.28 + 2.34 + 2.30 + 2.32) / 5 = 2.310 s<br>
+Range = 2.34 - 2.28 = 0.06 s<br>
+Uncertainty = range / 2 = 0.03 s<br>
+Result: T = 2.31 &plusmn; 0.03 s
+</div>
 
 <h3>6.2 Percentage (Fractional) Uncertainty</h3>
 <div class="eq">Percentage uncertainty = (absolute uncertainty / measured value) &times; 100%</div>
 
+<div class="worked-example">
+<strong>Worked Example:</strong> A diameter is measured as 5.30 &plusmn; 0.05 mm. Find the percentage uncertainty.<br><br>
+Percentage uncertainty = (0.05 / 5.30) &times; 100% = <strong>0.94%</strong>
+</div>
+
 <h3>6.3 Combining Uncertainties</h3>
 <table>
-  <tr><th>Operation</th><th>Rule</th></tr>
-  <tr><td><strong>Addition or Subtraction</strong><br>(e.g. y = a + b or y = a &minus; b)</td><td>Add the <em>absolute</em> uncertainties:<br>&Delta;y = &Delta;a + &Delta;b</td></tr>
-  <tr><td><strong>Multiplication or Division</strong><br>(e.g. y = ab or y = a/b)</td><td>Add the <em>percentage</em> uncertainties:<br>%&Delta;y = %&Delta;a + %&Delta;b</td></tr>
-  <tr><td><strong>Raising to a power</strong><br>(e.g. y = a<sup>n</sup>)</td><td>Multiply the percentage uncertainty by the power:<br>%&Delta;y = n &times; %&Delta;a</td></tr>
+  <tr><th>Operation</th><th>Rule</th><th>Example</th></tr>
+  <tr><td><strong>Addition or Subtraction</strong><br>(e.g. y = a + b or y = a &minus; b)</td><td>Add the <em>absolute</em> uncertainties:<br>&Delta;y = &Delta;a + &Delta;b</td><td>If a = 5.0 &plusmn; 0.1 and b = 3.0 &plusmn; 0.2,<br>then y = 8.0 &plusmn; 0.3 or y = 2.0 &plusmn; 0.3</td></tr>
+  <tr><td><strong>Multiplication or Division</strong><br>(e.g. y = ab or y = a/b)</td><td>Add the <em>percentage</em> uncertainties:<br>%&Delta;y = %&Delta;a + %&Delta;b</td><td>If %&Delta;a = 2% and %&Delta;b = 3%,<br>then %&Delta;y = 5%</td></tr>
+  <tr><td><strong>Raising to a power</strong><br>(e.g. y = a<sup>n</sup>)</td><td>Multiply the percentage uncertainty by the power:<br>%&Delta;y = n &times; %&Delta;a</td><td>If y = r<sup>2</sup> and %&Delta;r = 1.5%,<br>then %&Delta;y = 2 &times; 1.5% = 3%</td></tr>
 </table>
 
-<div class="tip-box"><strong>Exam Tip:</strong> When subtracting two similar values (e.g. a temperature change), the percentage uncertainty can become very large. This is why it is better to measure a large change where possible.</div>
+<div class="worked-example">
+<strong>Worked Example:</strong> Calculate the resistivity and its uncertainty given:<br>
+R = 4.50 &plusmn; 0.05 &Omega;, L = 0.800 &plusmn; 0.001 m, d = 0.28 &plusmn; 0.01 mm<br><br>
+A = &pi;(d/2)<sup>2</sup> = &pi;(0.14 &times; 10<sup>-3</sup>)<sup>2</sup> = 6.16 &times; 10<sup>-8</sup> m<sup>2</sup><br>
+&rho; = RA/L = (4.50)(6.16 &times; 10<sup>-8</sup>) / 0.800 = 3.47 &times; 10<sup>-7</sup> &Omega; m<br><br>
+Now for the uncertainty:<br>
+%&Delta;R = (0.05/4.50) &times; 100 = 1.11%<br>
+%&Delta;L = (0.001/0.800) &times; 100 = 0.125%<br>
+%&Delta;d = (0.01/0.28) &times; 100 = 3.57%<br>
+%&Delta;A = 2 &times; %&Delta;d = 2 &times; 3.57% = 7.14% (because A depends on d<sup>2</sup>)<br><br>
+%&Delta;&rho; = %&Delta;R + %&Delta;A + %&Delta;L = 1.11 + 7.14 + 0.125 = <strong>8.4%</strong><br>
+&Delta;&rho; = 0.084 &times; 3.47 &times; 10<sup>-7</sup> = 0.29 &times; 10<sup>-7</sup> &Omega; m<br>
+&rho; = (3.5 &plusmn; 0.3) &times; 10<sup>-7</sup> &Omega; m<br><br>
+Note: The diameter has the largest percentage uncertainty, so it dominates the final uncertainty.
+</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> When subtracting two similar values (e.g. a temperature change of 3 &deg;C from readings of 22 &deg;C and 25 &deg;C), the percentage uncertainty can become very large even though the absolute uncertainties are small. This is why it is better to measure a large change where possible. For example, measure the time for 10 oscillations rather than 1.</div>
 
 <h3>6.4 Uncertainty in a Mean</h3>
 <p>When you calculate a mean from repeated measurements:</p>
 <div class="eq">Uncertainty in the mean = range / 2</div>
-<p>where range = maximum value &minus; minimum value.</p>
+<p>where range = maximum value &minus; minimum value. If this is smaller than the instrument resolution, use the instrument resolution instead.</p>
 
 <h3>6.5 Uncertainties from Graphs</h3>
 <p>When determining a gradient from a straight-line graph:</p>
-<ul>
-  <li>Draw the <strong>line of best fit</strong>.</li>
-  <li>Draw the <strong>steepest</strong> and <strong>shallowest</strong> lines that still pass through the error bars.</li>
+<ol>
+  <li>Draw the <strong>line of best fit</strong> through the data points.</li>
+  <li>Draw the <strong>steepest</strong> acceptable line that still passes through the error bars.</li>
+  <li>Draw the <strong>shallowest</strong> acceptable line that still passes through the error bars.</li>
   <li>Uncertainty in gradient = (steepest gradient &minus; shallowest gradient) / 2.</li>
   <li>The same approach applies to the y-intercept.</li>
-</ul>
+</ol>
 
 <!-- Error Bars and Uncertainty on a Graph -->
 <div style="margin: 20px auto; text-align: center;">
@@ -205,17 +281,11 @@
   <text x="40" y="160" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" transform="rotate(-90,40,160)">y</text>
   <!-- Data points with error bars -->
   <g stroke="#1a73e8" stroke-width="1.5">
-    <!-- Point 1 -->
     <line x1="110" y1="230" x2="110" y2="250"/><line x1="105" y1="230" x2="115" y2="230"/><line x1="105" y1="250" x2="115" y2="250"/>
-    <!-- Point 2 -->
     <line x1="170" y1="195" x2="170" y2="215"/><line x1="165" y1="195" x2="175" y2="195"/><line x1="165" y1="215" x2="175" y2="215"/>
-    <!-- Point 3 -->
     <line x1="230" y1="158" x2="230" y2="182"/><line x1="225" y1="158" x2="235" y2="158"/><line x1="225" y1="182" x2="235" y2="182"/>
-    <!-- Point 4 -->
     <line x1="290" y1="120" x2="290" y2="148"/><line x1="285" y1="120" x2="295" y2="120"/><line x1="285" y1="148" x2="295" y2="148"/>
-    <!-- Point 5 -->
     <line x1="350" y1="85" x2="350" y2="115"/><line x1="345" y1="85" x2="355" y2="85"/><line x1="345" y1="115" x2="355" y2="115"/>
-    <!-- Point 6 -->
     <line x1="410" y1="50" x2="410" y2="82"/><line x1="405" y1="50" x2="415" y2="50"/><line x1="405" y1="82" x2="415" y2="82"/>
   </g>
   <!-- Data point dots -->
@@ -239,6 +309,17 @@
 </svg>
 </div>
 
+<div class="worked-example">
+<strong>Worked Example:</strong> Reading gradients from a graph:<br><br>
+Line of best fit gradient = (260 - 48) / (430 - 80) = 0.606<br>
+Steepest gradient = (255 - 35) / (430 - 80) = 0.629<br>
+Shallowest gradient = (270 - 62) / (430 - 80) = 0.594<br><br>
+Uncertainty in gradient = (0.629 - 0.594) / 2 = &plusmn; 0.018<br>
+Gradient = 0.606 &plusmn; 0.018 (or 0.61 &plusmn; 0.02 to 2 s.f.)
+</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> When plotting a graph with a y-intercept that has physical meaning (e.g. EMF from a V vs I graph), calculate the y-intercept uncertainty from the steepest and shallowest lines too. Use two large, well-separated points on each line to calculate the gradient — not the data points themselves.</div>
+
 <!-- SIGNIFICANT FIGURES -->
 <h2>7. Significant Figures</h2>
 <p>The number of significant figures in a result reflects the precision of the measurement.</p>
@@ -247,29 +328,91 @@
   <li>Zeros between non-zero digits are significant: 1002 has 4 s.f.</li>
   <li>Leading zeros are NOT significant: 0.0045 has 2 s.f.</li>
   <li>Trailing zeros after a decimal point ARE significant: 2.30 has 3 s.f.</li>
+  <li>Trailing zeros without a decimal point are ambiguous: 1200 could be 2, 3, or 4 s.f. (use standard form to be clear: 1.2 &times; 10<sup>3</sup> for 2 s.f.)</li>
 </ul>
 
-<div class="tip-box"><strong>Exam Tip:</strong> Your final answer should be given to the same number of significant figures as the data with the fewest significant figures used in the calculation. Do NOT round intermediate steps.</div>
+<h3>Rules for Calculations</h3>
+<ul>
+  <li><strong>Multiplication/Division:</strong> Round to the same number of significant figures as the value with the fewest s.f.</li>
+  <li><strong>Addition/Subtraction:</strong> Round to the same number of decimal places as the value with the fewest d.p.</li>
+  <li><strong>Never round intermediate steps</strong> — only round the final answer.</li>
+</ul>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Calculate the kinetic energy of a 2.5 kg object moving at 3.42 m s<sup>-1</sup>.<br><br>
+E<sub>k</sub> = &frac12;mv<sup>2</sup> = &frac12; &times; 2.5 &times; (3.42)<sup>2</sup> = &frac12; &times; 2.5 &times; 11.6964 = 14.6205 J<br><br>
+The value with fewest s.f. is 2.5 (2 s.f.), so E<sub>k</sub> = <strong>15 J</strong> (2 s.f.)
+</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Your final answer should be given to the same number of significant figures as the data with the fewest significant figures used in the calculation. Do NOT round intermediate steps. If a question says "give your answer to 3 significant figures," follow that instruction even if the data would suggest otherwise.</div>
 
 <!-- ESTIMATION -->
 <h2>8. Orders of Magnitude and Estimation</h2>
-<div class="def-box"><strong>Order of magnitude:</strong> The power of ten closest to a quantity. Used for rough comparisons and sanity checks. For example, the mass of the Earth is of order 10<sup>25</sup> kg.</div>
+<div class="def-box"><strong>Order of magnitude:</strong> The power of ten closest to a quantity. Used for rough comparisons and sanity checks. Two quantities are of the same order of magnitude if one is no more than about 10 times larger than the other.</div>
 
 <p>Common orders of magnitude you should know:</p>
 <table>
   <tr><th>Quantity</th><th>Approximate Value</th><th>Order of Magnitude</th></tr>
-  <tr><td>Diameter of an atom</td><td>1 &times; 10<sup>-10</sup> m</td><td>10<sup>-10</sup> m</td></tr>
-  <tr><td>Diameter of a nucleus</td><td>1 &times; 10<sup>-15</sup> m</td><td>10<sup>-15</sup> m</td></tr>
-  <tr><td>Width of a human hair</td><td>1 &times; 10<sup>-4</sup> m</td><td>10<sup>-4</sup> m</td></tr>
+  <tr><td>Diameter of a nucleus</td><td>~1 &times; 10<sup>-15</sup> m</td><td>10<sup>-15</sup> m</td></tr>
+  <tr><td>Diameter of an atom</td><td>~1 &times; 10<sup>-10</sup> m</td><td>10<sup>-10</sup> m</td></tr>
+  <tr><td>Width of a human hair</td><td>~1 &times; 10<sup>-4</sup> m</td><td>10<sup>-4</sup> m</td></tr>
   <tr><td>Height of a person</td><td>~2 m</td><td>10<sup>0</sup> m</td></tr>
   <tr><td>Diameter of the Earth</td><td>~1.3 &times; 10<sup>7</sup> m</td><td>10<sup>7</sup> m</td></tr>
+  <tr><td>Distance to the Sun</td><td>~1.5 &times; 10<sup>11</sup> m</td><td>10<sup>11</sup> m</td></tr>
   <tr><td>Mass of an electron</td><td>9.1 &times; 10<sup>-31</sup> kg</td><td>10<sup>-30</sup> kg</td></tr>
-  <tr><td>Mass of a proton</td><td>1.67 &times; 10<sup>-27</sup> kg</td><td>10<sup>-27</sup> kg</td></tr>
+  <tr><td>Mass of a proton/neutron</td><td>1.67 &times; 10<sup>-27</sup> kg</td><td>10<sup>-27</sup> kg</td></tr>
+  <tr><td>Mass of a person</td><td>~70 kg</td><td>10<sup>2</sup> kg</td></tr>
+  <tr><td>Mass of the Earth</td><td>~6 &times; 10<sup>24</sup> kg</td><td>10<sup>25</sup> kg</td></tr>
   <tr><td>Speed of light</td><td>3 &times; 10<sup>8</sup> m s<sup>-1</sup></td><td>10<sup>8</sup> m s<sup>-1</sup></td></tr>
   <tr><td>Speed of sound in air</td><td>~340 m s<sup>-1</sup></td><td>10<sup>2</sup> m s<sup>-1</sup></td></tr>
+  <tr><td>Atmospheric pressure</td><td>~1 &times; 10<sup>5</sup> Pa</td><td>10<sup>5</sup> Pa</td></tr>
 </table>
 
-<div class="tip-box"><strong>Exam Tip:</strong> Estimation questions often appear on Paper 1. They expect you to use sensible approximations and give your answer to 1 significant figure or as an order of magnitude. Show your working clearly.</div>
+<h3>Estimation Strategy</h3>
+<p>When making an estimate:</p>
+<ol>
+  <li>Identify the relevant physics equation or principle.</li>
+  <li>Estimate each quantity to 1 significant figure or the nearest order of magnitude.</li>
+  <li>Perform the calculation, showing working clearly.</li>
+  <li>Give your answer to 1 s.f. or as an order of magnitude.</li>
+  <li>Sense-check your answer — does it seem reasonable?</li>
+</ol>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Estimate the number of atoms in a human body.<br><br>
+Mass of a person &approx; 70 kg<br>
+Human body is mostly water (H<sub>2</sub>O), with molar mass &approx; 18 g/mol = 0.018 kg/mol<br>
+Number of moles &approx; 70 / 0.018 &approx; 4000 mol<br>
+Each molecule of water has 3 atoms<br>
+Number of atoms &approx; 3 &times; 4000 &times; 6 &times; 10<sup>23</sup> &approx; 7 &times; 10<sup>27</sup><br>
+Order of magnitude: <strong>10<sup>28</sup> atoms</strong>
+</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Estimate the power output of a person running up stairs.<br><br>
+Mass &approx; 70 kg, height of one floor &approx; 3 m, time to climb &approx; 5 s<br>
+Work done = mgh = 70 &times; 10 &times; 3 = 2100 J<br>
+Power = W/t = 2100 / 5 &approx; <strong>400 W</strong> (order of magnitude 10<sup>2</sup>&ndash;10<sup>3</sup> W)
+</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> Estimation questions often appear on Paper 1 (worth 2-4 marks). They expect you to use sensible approximations and give your answer to 1 significant figure or as an order of magnitude. Show your working clearly — marks are given for your method even if your estimate differs from the mark scheme. Common estimation targets: number of molecules, energy costs, sizes of objects, forces in everyday situations.</div>
+
+<h2>9. Selecting Appropriate Instruments</h2>
+<p>Choosing the right measuring instrument depends on the quantity being measured and the precision required:</p>
+
+<table>
+  <tr><th>Instrument</th><th>Typical Resolution</th><th>Use For</th></tr>
+  <tr><td>Metre ruler</td><td>1 mm</td><td>Lengths from ~10 cm to 1 m</td></tr>
+  <tr><td>Vernier calipers</td><td>0.1 mm (or 0.05 mm)</td><td>Internal/external diameters, small lengths</td></tr>
+  <tr><td>Micrometer screw gauge</td><td>0.01 mm</td><td>Thin objects: wire diameter, thickness of a sheet</td></tr>
+  <tr><td>Stopwatch (digital)</td><td>0.01 s</td><td>Time intervals (human reaction time adds ~0.2 s uncertainty)</td></tr>
+  <tr><td>Protractor</td><td>1&deg;</td><td>Angles in optics experiments</td></tr>
+  <tr><td>Digital balance</td><td>0.01 g (or 0.001 g)</td><td>Mass measurements in the lab</td></tr>
+  <tr><td>Digital multimeter</td><td>Varies (0.01 V, 0.01 A typical)</td><td>Voltage, current, resistance</td></tr>
+  <tr><td>Oscilloscope</td><td>Depends on timebase setting</td><td>Rapidly varying voltages, frequency, waveform shape</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> When asked to suggest improvements to an experiment, consider whether a more precise instrument could be used. For example, replacing a ruler (resolution 1 mm) with vernier calipers (resolution 0.1 mm) for measuring the diameter of a wire. Also consider whether timing multiple events (e.g. 10 oscillations) would reduce the percentage uncertainty.</div>
 
 </div>
 </body>
