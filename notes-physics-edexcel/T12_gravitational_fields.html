@@ -17,8 +17,6 @@
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
         .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
         .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #16a34a; }
-        .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
-        .real-world::before { content: "Real-World Application: "; font-weight: 700; color: #7c3aed; }
         .equation { background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 20px; margin: 12px 0; border-radius: 6px; font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 1.1rem; text-align: center; }
         table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
         th, td { border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left; }
@@ -27,7 +25,7 @@
         ul, ol { margin: 10px 0 15px 25px; }
         li { margin-bottom: 6px; }
         strong { color: #1e3a5f; }
-        @media print { body { padding: 20px; } .exam-tip, .definition, .worked-example, .real-world { break-inside: avoid; } }
+        @media print { body { padding: 20px; } .exam-tip, .definition, .worked-example, }
     </style>
 </head>
 <body>
@@ -373,10 +371,6 @@ Speed: v = 2&#960;r/T = 2&#960; &#215; 4.22&#215;10&#8311; / 86400 = <strong>307
     <li>Total energy: E<sub>total</sub> = E<sub>k</sub> + E<sub>p</sub> = &#8722;GMm/(2r)</li>
 </ul>
 <p>The total energy is <strong>negative</strong> (the satellite is bound). Moving to a higher orbit increases E<sub>total</sub> (makes it less negative), which requires energy input. The kinetic energy decreases (slower speed) but the potential energy increases by twice as much.</p>
-
-<div class="real-world">
-GPS (Global Positioning System) satellites orbit at an altitude of about 20 200 km (medium Earth orbit) with a period of 12 hours. There are 24-32 active satellites, and your phone needs signals from at least 4 to determine your position. The satellites carry atomic clocks accurate to nanoseconds &#8212; and their clocks must be corrected for both special relativistic time dilation (they run slightly slow due to their speed) and general relativistic effects (they run slightly fast due to weaker gravity). Without these corrections, GPS positions would drift by about 10 km per day.
-</div>
 
 </div>
 </body>

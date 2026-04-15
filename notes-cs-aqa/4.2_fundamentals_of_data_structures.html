@@ -107,22 +107,10 @@
             font-weight: 700;
             color: #b45309;
         }
-        .real-world {
-            background: #f0fdf4;
-            border-left: 4px solid #16a34a;
-            padding: 16px 20px;
-            margin-bottom: 18px;
-            border-radius: 0 8px 8px 0;
-        }
-        .real-world::before {
-            content: "Real-World Example: ";
-            font-weight: 700;
-            color: #15803d;
-        }
         @media print {
             body { padding: 20px; }
             h2 { break-before: auto; }
-            pre, .definition-box, .exam-tip, .real-world { break-inside: avoid; }
+            pre, .definition-box, .exam-tip,
         }
     </style>
 </head>
@@ -208,8 +196,6 @@ NEXT row</pre>
     <li><strong>Contiguous memory</strong> &mdash; elements stored next to each other in RAM, enabling efficient CPU cache utilisation</li>
     <li><strong>Insertion/deletion is expensive</strong> &mdash; inserting or deleting in the middle requires shifting elements: O(n)</li>
 </ul>
-
-<div class="real-world">Arrays are used everywhere: pixel data in images (2D array of colour values), spreadsheet cells, look-up tables in embedded systems, and buffers for streaming data. In game development, a chess board is naturally a 2D array, and a 3D voxel world (like Minecraft) uses 3D arrays.</div>
 
 <!-- ==================== RECORDS ==================== -->
 <h2>4.2.2 Records</h2>
@@ -456,8 +442,6 @@ q.enqueue('E')     # [E, _, C, D]  front=2, rear=0, size=3  WRAPS AROUND!
     <tr><td>Circular</td><td>Reuses space efficiently; no wasted memory</td><td>Slightly more complex (modulo logic); still fixed size</td><td>Most real queue implementations</td></tr>
     <tr><td>Priority</td><td>Handles urgency-based ordering</td><td>More complex; insertion or deletion is O(n) unless using a heap</td><td>Scheduling, simulations</td></tr>
 </table>
-
-<div class="real-world">Operating systems use priority queues extensively. Real-time processes (like audio playback) get higher priority than background tasks (like virus scanning). Network routers use queues to buffer packets waiting to be forwarded; quality-of-service (QoS) uses priority queues to ensure voice and video traffic is forwarded before email.</div>
 
 <div class="exam-tip">
     When tracing circular queue operations, always use the modulo operator for both front and rear pointers. Draw the array and clearly label front, rear, and size after each operation. The key insight is that <code>(rear + 1) % maxSize</code> wraps rear back to index 0 when it reaches the end of the array. A common exam mistake is not wrapping front as well when dequeuing.
@@ -817,8 +801,6 @@ weighted_list = {
     <tr><td>Adding an edge</td><td>O(1) &mdash; set matrix[i][j]</td><td>O(1) &mdash; append to list</td></tr>
 </table>
 
-<div class="real-world">Google Maps uses a weighted directed graph where junctions are vertices, roads are edges, and weights represent travel time or distance. Social networks like Facebook use undirected graphs (friendship is mutual), while Twitter uses directed graphs (following is one-way). The Internet itself is a massive graph of connected devices and networks.</div>
-
 <div class="exam-tip">
     You must be able to: (1) draw both matrix and list representations from a graph diagram, (2) construct a graph diagram from either representation, and (3) decide which representation is more appropriate for a given scenario. Remember: an adjacency matrix for an <strong>undirected</strong> graph is always <strong>symmetric</strong> along the main diagonal. For a directed graph, it is NOT necessarily symmetric.
 </div>
@@ -917,8 +899,6 @@ def hash_weighted(key, table_size):
     <tr><td>Insert</td><td>O(1)</td><td>O(n)</td><td>All keys in one chain/cluster</td></tr>
     <tr><td>Delete</td><td>O(1)</td><td>O(n)</td><td>Must search through chain</td></tr>
 </table>
-
-<div class="real-world">Hash tables are used to implement Python dictionaries, JavaScript objects, database indexing, caching systems (like memcached/Redis), compiler symbol tables (mapping variable names to memory addresses), and DNS lookup (mapping domain names to IP addresses). They are one of the most commonly used data structures in practice.</div>
 
 <!-- ==================== VECTORS ==================== -->
 <h2>4.2.9 Vectors</h2>
@@ -1053,8 +1033,6 @@ print(grade)   # "N/A" (student doesn't exist)</pre>
     <tr><td>Ordering</td><td>Insertion-ordered (Python 3.7+)</td><td>Ordered by index</td><td>Ordered by position</td></tr>
     <tr><td>Best use case</td><td>Fast lookup by meaningful key (phone book, symbol table, config settings)</td><td>Ordered sequential data with fast index access</td><td>Frequent insertions/deletions, unknown size</td></tr>
 </table>
-
-<div class="real-world">Dictionaries are everywhere in real software: JSON data (the format of most web APIs) is essentially nested dictionaries, database indexes map keys to row locations, DNS maps domain names to IP addresses, configuration files map setting names to values, and compiler symbol tables map variable names to their types and memory locations.</div>
 
 <div class="exam-tip">
     The AQA spec treats dictionaries as an ADT. You should understand that a dictionary is conceptually a collection of key-value pairs with certain operations (add, remove, lookup), and that a <strong>hash table</strong> is the most common way to implement it. Be prepared to trace dictionary operations and explain why hash-based dictionaries offer O(1) average lookup &mdash; because the hash function converts the key directly to an array index.

@@ -22,7 +22,6 @@
   .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
-  .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
@@ -146,8 +145,6 @@ This is extremely slow. The electric signal, however, travels at close to the sp
   <li>At higher temperatures, the ions vibrate with greater amplitude, so collisions are more frequent and resistance increases.</li>
   <li>In an NTC thermistor, higher temperature frees more charge carriers from atoms, and this increase in n outweighs the increased collision rate, so overall resistance decreases.</li>
 </ul>
-
-<div class="real-world"><strong>Real-World Application:</strong> Thermistors are used in car engine temperature sensors, digital thermometers, and fire alarm systems. LDRs are used in automatic street lights, camera light meters, and burglar alarms. Both work as part of potential divider circuits where the changing resistance produces a changing output voltage.</div>
 
 <div class="tip-box"><strong>Exam Tip:</strong> Be careful with thermistor types. AQA specifies NTC (Negative Temperature Coefficient) thermistors, where resistance falls as temperature rises. The physical reason is that more charge carriers are released at higher temperatures, and this effect dominates over the increased lattice vibrations. Always state the mechanism in terms of charge carriers for full marks.</div>
 
@@ -281,8 +278,6 @@ Check: total power = &epsilon;I = 9.0 &times; 2.0 = 18 W = 16 + 2 = 18 W. Correc
 </div>
 
 <div class="tip-box"><strong>Exam Tip:</strong> To find &epsilon; and r experimentally, plot V against I. The y-intercept gives &epsilon; and the gradient gives &minus;r. A common mistake is to just measure V with a voltmeter when no current flows and assume that is &epsilon; &mdash; but even a voltmeter draws a tiny current, so graphical extrapolation is more accurate. You can also rearrange to &epsilon; = V + Ir: plot &epsilon; vs I where &epsilon; is calculated from each pair of V and I readings to check for consistency.</div>
-
-<div class="real-world"><strong>Real-World Application:</strong> Internal resistance matters in car batteries. When starting a car engine, the starter motor draws a very large current (100+ A). Even with a small internal resistance (~0.01 &Omega;), the lost volts (Ir) become significant, which is why the headlights may dim when you turn the ignition. Rechargeable batteries develop higher internal resistance as they age, which reduces their ability to deliver power.</div>
 
 <!-- ============================================================ -->
 <!-- 5. KIRCHHOFF'S LAWS -->
@@ -487,8 +482,6 @@ In joules: E = 0.48 &times; 3.6 &times; 10<sup>6</sup> = <strong>1.73 &times; 10
 </div>
 
 <div class="tip-box"><strong>Exam Tip:</strong> Choose the power formula based on what you know. If you know I and R but not V, use P = I<sup>2</sup>R. If you know V and R but not I, use P = V<sup>2</sup>/R. This avoids unnecessary intermediate calculations and reduces rounding errors.</div>
-
-<div class="real-world"><strong>Real-World Application:</strong> Power transmission uses very high voltages (400 kV in the UK National Grid) to minimise energy losses. Since P<sub>loss</sub> = I<sup>2</sup>R, for a given power P = IV, increasing V reduces I, and the I<sup>2</sup>R losses decrease dramatically. Doubling the voltage quarters the power lost in the cables.</div>
 
 <!-- ============================================================ -->
 <!-- 9. CONSERVATION LAWS SUMMARY -->

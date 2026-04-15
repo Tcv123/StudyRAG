@@ -17,8 +17,6 @@
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
         .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
         .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #16a34a; }
-        .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
-        .real-world::before { content: "Real-World Application: "; font-weight: 700; color: #7c3aed; }
         .equation { background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 20px; margin: 12px 0; border-radius: 6px; font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 1.1rem; text-align: center; }
         table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
         th, td { border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left; }
@@ -27,7 +25,7 @@
         ul, ol { margin: 10px 0 15px 25px; }
         li { margin-bottom: 6px; }
         strong { color: #1e3a5f; }
-        @media print { body { padding: 20px; } .exam-tip, .definition, .worked-example, .real-world { break-inside: avoid; } }
+        @media print { body { padding: 20px; } .exam-tip, .definition, .worked-example, }
     </style>
 </head>
 <body>
@@ -226,10 +224,6 @@ t = 2.773 / 3.21 &#215; 10&#8315;&#8309; = 86 400 s = <strong>24 hours</strong> 
     <tr><td><strong>Shielding</strong></td><td>Absorbs radiation to protect workers and the environment</td><td>Thick concrete, steel, lead</td></tr>
 </table>
 
-<div class="real-world">
-Nuclear power provides about 10% of the world's electricity from ~440 reactors in 30 countries. A single uranium fuel pellet (about the size of a fingertip) contains the energy equivalent of one tonne of coal. Nuclear power produces no CO&#8322; during operation, though uranium mining and waste disposal raise environmental concerns.
-</div>
-
 <h2>11.5 Nuclear Fusion</h2>
 
 <div class="definition">
@@ -425,10 +419,6 @@ This is the energy released per single D-T fusion event &#8212; the most promisi
 </table>
 
 <div class="exam-tip">The corrected count rate is essential &#8212; without subtracting background, the graph will curve at large thicknesses instead of remaining linear on the ln plot. This is because the background becomes a significant fraction of the total count at high absorption.</div>
-</div>
-
-<div class="real-world">
-The principles of gamma absorption are used in medical imaging (CT scans), industrial radiography (checking welds in pipelines), and radiation therapy (calculating the dose delivered to tumours while minimising exposure to healthy tissue). The half-value thickness concept is critical for designing radiation shielding in hospitals and nuclear facilities.
 </div>
 
 </div>

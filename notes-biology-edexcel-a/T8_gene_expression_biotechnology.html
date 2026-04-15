@@ -25,9 +25,7 @@
         .equation { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; font-family: 'Consolas', monospace; }
         .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
-        .real-world { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
-        .real-world::before { content: "Real-World Example: "; font-weight: 700; color: #15803d; }
-        @media print { body { padding: 20px; } h2 { break-before: auto; } .definition-box, .exam-tip, .equation, .real-world { break-inside: avoid; } }
+        @media print { body { padding: 20px; } h2 { break-before: auto; } .definition-box, .exam-tip, .equation, }
     </style>
 </head>
 <body>
@@ -62,8 +60,6 @@
     <li><strong>Basal transcription factors:</strong> Required for all gene transcription; form the general transcription machinery with RNA polymerase at the TATA box (core promoter)</li>
 </ul>
 <p>In eukaryotes, transcription factors work in <strong>combinations</strong> (combinatorial control), allowing a relatively small number of transcription factors to generate a vast number of distinct gene expression patterns. This is how ~2,000 transcription factor genes can control the expression of ~20,000 protein-coding genes in different cell types.</p>
-
-<div class="real-world"><strong>Cancer and transcription factors:</strong> Many oncogenes encode transcription factors that, when mutated, become permanently active and drive uncontrolled cell division. For example, the <em>MYC</em> proto-oncogene encodes a transcription factor that activates genes involved in cell proliferation. When <em>MYC</em> is overexpressed or mutated, it can drive tumour formation. This illustrates why transcriptional control is so critical to normal cell behaviour.</div>
 
 <h3>The Lac Operon (Prokaryotic Gene Regulation)</h3>
 <p>The lac operon in <em>E. coli</em> is a classic model of <strong>inducible gene expression</strong>, demonstrating how bacteria regulate gene expression in response to environmental conditions to conserve energy and resources:</p>
@@ -443,8 +439,6 @@
     <tr><td>Examples</td><td>Penicillin production, beer/wine, insulin (GM bacteria), yoghurt</td><td>Mycoprotein (Quorn from <em>Fusarium venenatum</em>), single-cell protein, waste-water treatment</td></tr>
 </table>
 
-<div class="real-world"><strong>Mycoprotein (Quorn):</strong> The fungus <em>Fusarium venenatum</em> is grown in continuous culture in a 40-metre-tall airlift fermenter. Glucose syrup (from starch hydrolysis) is the carbon source. The harvested fungal biomass is high in protein and fibre, low in fat, and used as a meat substitute. It produces ~500 tonnes per week, demonstrating the efficiency of continuous fermentation for food production.</div>
-
 <!-- ==================== GENE THERAPY ==================== -->
 <h2>8.6 Gene Therapy</h2>
 
@@ -466,8 +460,6 @@
     <tr><td>Liposomes</td><td>Lipid vesicles encapsulating the therapeutic DNA; fuse with target cell membrane, releasing DNA into cytoplasm</td><td>Less immunogenic than viruses; no risk of insertional mutagenesis; can carry larger DNA inserts; relatively safe</td><td>Lower efficiency of gene delivery and expression; gene expression often transient; targeted delivery difficult</td></tr>
     <tr><td>Direct injection / electroporation</td><td>Naked DNA injected directly into tissue or cells made permeable by electric pulse</td><td>Simple; no vector-related immune response</td><td>Very low efficiency; DNA rapidly degraded by nucleases; not practical for most tissues</td></tr>
 </table>
-
-<div class="real-world"><strong>SCID (Severe Combined Immunodeficiency):</strong> The first successful gene therapy treated "bubble boy" disease caused by a defective gene for adenosine deaminase (ADA). In 2000, French researchers used a retroviral vector to deliver a working ADA gene to bone marrow stem cells. Most patients showed restored immune function, but tragically, some developed leukaemia due to insertional mutagenesis (the retrovirus integrated near the LMO2 oncogene). This led to improved vector design. Modern gene therapies like Luxturna (for inherited blindness) and Zolgensma (for spinal muscular atrophy) use safer AAV vectors.</div>
 
 <h3>Challenges and Limitations</h3>
 <ul>
@@ -543,8 +535,6 @@
     <li><strong>In situ editing:</strong> Modifies genes in their natural chromosomal location (no need to remove and reinsert)</li>
     <li><strong>Multiplexing:</strong> Can target multiple genes simultaneously using different gRNAs</li>
 </ul>
-
-<div class="real-world"><strong>CRISPR in medicine:</strong> In 2023, the first CRISPR-based therapy (Casgevy/exagamglogene autotemcel) was approved for treating sickle cell disease and transfusion-dependent beta-thalassaemia. Patient's bone marrow stem cells are extracted, edited with CRISPR to reactivate fetal haemoglobin production (which compensates for the defective adult haemoglobin), and reinfused. Early results show patients becoming transfusion-independent. <strong>Gene drives</strong> using CRISPR could potentially eliminate malaria by spreading infertility genes through mosquito populations, but raise profound ecological and ethical questions about permanently altering wild species.</div>
 
 <div class="exam-tip">For any biotechnology or genomics question, be prepared to discuss <strong>ethical, social and ecological implications</strong>. Key points to include: informed consent, equitable access, unintended consequences (off-target edits), environmental release of edited organisms, designer babies and genetic enhancement vs therapy, the distinction between somatic and germ line editing, patent and ownership issues, and the precautionary principle vs potential benefits. A well-structured evaluation considering multiple perspectives will score highly.</div>
 

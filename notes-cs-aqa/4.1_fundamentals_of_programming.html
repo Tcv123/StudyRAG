@@ -107,22 +107,10 @@
             font-weight: 700;
             color: #b45309;
         }
-        .real-world {
-            background: #f0fdf4;
-            border-left: 4px solid #16a34a;
-            padding: 16px 20px;
-            margin-bottom: 18px;
-            border-radius: 0 8px 8px 0;
-        }
-        .real-world::before {
-            content: "Real-World Example: ";
-            font-weight: 700;
-            color: #15803d;
-        }
         @media print {
             body { padding: 20px; }
             h2 { break-before: auto; }
-            pre, .definition-box, .exam-tip, .real-world { break-inside: avoid; }
+            pre, .definition-box, .exam-tip,
         }
     </style>
 </head>
@@ -164,8 +152,6 @@ def calculate_total(items, tax_rate):
 prices = [10.99, 24.50, 7.25]
 total = calculate_total(prices, 0.20)
 print(f"Total: {total:.2f}")      # Total: 51.29</pre>
-
-<div class="real-world">Operating systems like early Unix were written in C (procedural). Scientific computing and numerical simulations often use procedural approaches because the problems naturally decompose into sequential mathematical steps.</div>
 
 <h3>Object-Oriented Programming (OOP)</h3>
 <p>Organises code around <strong>objects</strong> that combine data (attributes) and behaviour (methods). OOP models real-world entities and their interactions. The key principles are encapsulation, inheritance, polymorphism, and abstraction (covered in detail in 4.1.2). OOP supports <strong>bottom-up design</strong>, where individual objects are designed first and then combined to build the complete system.</p>
@@ -463,8 +449,6 @@ class ClassGroup:
 <div class="exam-tip">
     Questions often ask you to design class hierarchies from a scenario. Identify the IS-A relationships for inheritance (Dog IS-A Animal) and HAS-A relationships for aggregation/composition (Car HAS-A Engine). A common mistake is using inheritance when aggregation/composition would be more appropriate &mdash; if the relationship is "has" rather than "is", use aggregation or composition.
 </div>
-
-<div class="real-world">Object-oriented design is used throughout software engineering. A game engine might have an abstract <code>GameObject</code> class with subclasses like <code>Player</code>, <code>Enemy</code>, and <code>Projectile</code>. A banking system might have a <code>BankAccount</code> superclass with <code>SavingsAccount</code> and <code>CurrentAccount</code> subclasses inheriting shared functionality.</div>
 
 <!-- ==================== DATA TYPES ==================== -->
 <h2>4.1.3 Data Types</h2>

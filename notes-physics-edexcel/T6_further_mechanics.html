@@ -17,8 +17,6 @@
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #d97706; }
         .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
         .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #16a34a; display: block; margin-bottom: 5px; }
-        .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
-        .real-world::before { content: "Real-World Application: "; font-weight: 700; color: #7c3aed; display: block; margin-bottom: 5px; }
         .equation { background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 20px; margin: 12px 0; border-radius: 6px; font-size: 1.1rem; text-align: center; font-family: 'Cambria Math', 'Times New Roman', serif; }
         table { width: 100%; border-collapse: collapse; margin: 15px 0; }
         th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
@@ -27,7 +25,7 @@
         ul, ol { margin: 10px 0 15px 25px; }
         li { margin-bottom: 6px; }
         strong { color: #1e293b; }
-        @media print { body { padding: 20px; } .exam-tip, .definition, .worked-example, .real-world { break-inside: avoid; } }
+        @media print { body { padding: 20px; } .exam-tip, .definition, .worked-example, }
     </style>
 </head>
 <body>
@@ -70,10 +68,6 @@
     &Delta;p = mv - mu = 0.058 &times; (-30) - 0.058 &times; (20) = -1.74 - 1.16 = -2.90 N s<br>
     F = &Delta;p / &Delta;t = -2.90 / 0.005 = <strong>-580 N</strong><br>
     The magnitude of the average force is 580 N, directed away from the racket (in the direction the ball leaves).
-</div>
-
-<div class="real-world">
-    <strong>Crumple zones</strong> in cars are designed to increase the time of collision during a crash. Since impulse = F&Delta;t and the change in momentum is fixed (determined by the initial speed), increasing &Delta;t reduces the average force F on the passengers. Airbags and seatbelts work on the same principle. A collision lasting 0.1 s produces one-tenth the force of one lasting 0.01 s, for the same momentum change.
 </div>
 
 <div class="exam-tip">If a question gives you a force-time graph, calculate the area under it to find the impulse. Always include units (N s). Be careful with direction: if an object bounces back, the change in momentum is the sum of the magnitudes of the initial and final momenta (since the velocity reverses sign).</div>
@@ -180,10 +174,6 @@
 </table>
 
 <p>A <strong>perfectly inelastic</strong> (totally inelastic) collision is one where the objects stick together after impact. Maximum kinetic energy is lost (consistent with momentum conservation). An <strong>explosion</strong> is the reverse of a perfectly inelastic collision: objects initially together move apart, with KE increasing (converted from chemical or other stored energy).</p>
-
-<div class="real-world">
-    <strong>Newton's cradle</strong> demonstrates nearly elastic collisions: when one ball strikes the row, one ball flies off the other end at the same speed. If two balls strike together, two fly off. This is consistent with both conservation of momentum and conservation of kinetic energy simultaneously.
-</div>
 
 <div class="exam-tip">To check if a collision is elastic, calculate the total KE before and after. If they are equal, it is elastic. Always show your working clearly. Remember: momentum is always conserved in collisions (provided no external forces act), but kinetic energy is only conserved in elastic collisions.</div>
 
@@ -307,10 +297,6 @@
     <li>Dividing: tan &theta; = v&sup2;/(rg)</li>
 </ul>
 <p>The banking angle determines the speed at which no friction is needed to maintain circular motion. At speeds above or below this design speed, friction is needed to prevent the vehicle sliding outward or inward respectively.</p>
-
-<div class="real-world">
-    <strong>Velodrome tracks</strong> and <strong>NASCAR oval circuits</strong> are banked so that cyclists and cars can travel at high speeds without relying solely on friction. The banking angle is calculated using tan &theta; = v&sup2;/(rg). Aircraft also bank when turning: the horizontal component of the lift force provides the centripetal force.
-</div>
 
 <h3>Vertical Circles</h3>
 <p>For an object on a string in a vertical circle, the centripetal force equation must account for the weight component:</p>

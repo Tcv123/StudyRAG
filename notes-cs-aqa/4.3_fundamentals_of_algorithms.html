@@ -32,9 +32,7 @@
         .definition-box strong { color: #1e40af; }
         .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
-        .real-world { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
-        .real-world::before { content: "Real-World Example: "; font-weight: 700; color: #15803d; }
-        @media print { body { padding: 20px; } h2 { break-before: auto; } pre, .definition-box, .exam-tip, .real-world { break-inside: avoid; } }
+        @media print { body { padding: 20px; } h2 { break-before: auto; } pre, .definition-box, .exam-tip, }
     </style>
 </head>
 <body>
@@ -358,8 +356,6 @@ ENDFUNCTION</pre>
     <li>It is a <strong>greedy algorithm</strong> &mdash; at each step it makes the locally optimal choice (smallest unvisited distance), and this guarantees the globally optimal solution for non-negative weights</li>
     <li>Produces a <strong>shortest-path tree</strong> rooted at the source</li>
 </ul>
-
-<div class="real-world">Dijkstra's algorithm is used in GPS navigation (Google Maps, Waze) to find the fastest route, in network routing protocols (OSPF uses a variant), and in telecommunications to route calls through the network with minimum cost.</div>
 
 <div class="exam-tip">
     In the exam, show a clear table with columns for each vertex and rows for each step. At each step: (1) identify the current vertex, (2) update distances to all unvisited neighbours, (3) mark the current vertex as visited. Circle or highlight the vertex selected at each step. You may also be asked to <strong>reconstruct the actual path</strong> (not just the distance) by tracking which vertex each distance update came from.
@@ -900,8 +896,6 @@ def binary_search(array, target):
     <li><strong>Merge sort vs Bubble sort:</strong> Merge sort uses O(n) extra space for guaranteed O(n log n) time; bubble sort uses O(1) space but is O(n&sup2;) time</li>
     <li><strong>Lookup tables:</strong> Pre-compute and store results for all inputs; O(n) space but O(1) lookup time</li>
 </ul>
-
-<div class="real-world">Caching is a universal time-space trade-off. Web browsers cache pages (use disk space to avoid re-downloading). CPUs use cache memory (expensive fast memory to avoid slow RAM access). Database indexes use disk space to speed up queries. In all cases: more memory = faster access.</div>
 
 <!-- ==================== OPTIMISATION ==================== -->
 <h2>4.3.9 Algorithm Comparison and Optimisation</h2>
