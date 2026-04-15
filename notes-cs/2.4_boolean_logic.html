@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 2.4 — Boolean Logic</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: center; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        td:first-child, td:nth-child(2) { font-weight: 600; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>2.4 Boolean Logic</h1>
+<p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 2</p>
+
+<p>Boolean logic underpins all decision-making in computers. Every condition in every program evaluates to either <strong>True (1)</strong> or <strong>False (0)</strong>. Logic gates implement Boolean operations in hardware circuits.</p>
+
+<h2>2.4.1 Boolean Operators and Truth Tables</h2>
+
+<h3>The Six Logic Gates</h3>
+<table>
+    <tr><th>Gate</th><th>Symbol/Expression</th><th>Rule (in words)</th><th>Memory Aid</th></tr>
+    <tr style="text-align:left"><td><strong>AND</strong></td><td><code>A AND B</code></td><td>Output is TRUE only if <strong>BOTH</strong> inputs are TRUE</td><td>"Both must agree"</td></tr>
+    <tr style="text-align:left"><td><strong>OR</strong></td><td><code>A OR B</code></td><td>Output is TRUE if <strong>AT LEAST ONE</strong> input is TRUE</td><td>"Either will do"</td></tr>
+    <tr style="text-align:left"><td><strong>NOT</strong></td><td><code>NOT A</code></td><td><strong>Inverts</strong> the single input (TRUE becomes FALSE, FALSE becomes TRUE)</td><td>"Flip it"</td></tr>
+    <tr style="text-align:left"><td><strong>NAND</strong></td><td><code>NOT (A AND B)</code></td><td>Opposite of AND &mdash; output is FALSE only when both inputs are TRUE</td><td>"NOT AND"</td></tr>
+    <tr style="text-align:left"><td><strong>NOR</strong></td><td><code>NOT (A OR B)</code></td><td>Opposite of OR &mdash; output is TRUE only when <strong>BOTH inputs are FALSE</strong></td><td>"NOT OR"</td></tr>
+    <tr style="text-align:left"><td><strong>XOR</strong></td><td><code>A XOR B</code></td><td>Output is TRUE only when inputs are <strong>DIFFERENT</strong></td><td>"One or the other, but not both"</td></tr>
+</table>
+
+<h3>Complete Truth Tables</h3>
+<table>
+    <tr><th>A</th><th>B</th><th>AND</th><th>OR</th><th>NAND</th><th>NOR</th><th>XOR</th></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+
+<table>
+    <tr><th>A</th><th>NOT A</th></tr>
+    <tr><td>0</td><td>1</td></tr>
+    <tr><td>1</td><td>0</td></tr>
+</table>
+
+<h3>Understanding Each Gate</h3>
+<ul>
+    <li><strong>AND</strong> &mdash; Think of it as two switches in <strong>series</strong> (one after the other). The light only turns on if BOTH switches are on. In code: <code>if age >= 18 AND hasTicket == True then enter()</code></li>
+    <li><strong>OR</strong> &mdash; Think of two switches in <strong>parallel</strong>. The light turns on if EITHER switch is on. In code: <code>if isStudent == True OR isChild == True then applyDiscount()</code></li>
+    <li><strong>NOT</strong> &mdash; An inverter. If the input is on, the output is off, and vice versa. In code: <code>if NOT loggedIn then showLoginPage()</code></li>
+    <li><strong>NAND</strong> &mdash; AND followed by NOT. It is the <strong>exact opposite</strong> of AND. Output is 0 only when both inputs are 1. NAND is a universal gate (any other gate can be built from NAND gates alone).</li>
+    <li><strong>NOR</strong> &mdash; OR followed by NOT. The exact opposite of OR. Output is 1 only when both inputs are 0. Also a universal gate.</li>
+    <li><strong>XOR (Exclusive OR)</strong> &mdash; True when inputs are <strong>different</strong>. False when they are the same. Used in: parity checking, binary addition (half adder sum bit), simple encryption (XOR cipher), toggling bits.</li>
+</ul>
+
+<h2>2.4.2 Boolean Expressions and Constructing Truth Tables</h2>
+
+<h3>Common Boolean Expressions in Programming</h3>
+<table style="text-align: left;">
+    <tr><th>Expression</th><th>Meaning</th><th>When It Is True</th></tr>
+    <tr><td><code>x > 5 AND x < 10</code></td><td>x is between 5 and 10 (exclusive)</td><td>x = 6, 7, 8, or 9</td></tr>
+    <tr><td><code>age < 18 OR age > 65</code></td><td>Age is below 18 or above 65</td><td>A child or a senior citizen</td></tr>
+    <tr><td><code>NOT loggedIn</code></td><td>The user is NOT logged in</td><td>loggedIn is False</td></tr>
+    <tr><td><code>score >= 50 AND attempts <= 3</code></td><td>Score is at least 50 AND no more than 3 attempts used</td><td>Both conditions are true simultaneously</td></tr>
+    <tr><td><code>NOT (a == b)</code></td><td>a and b are NOT equal</td><td>a is different from b (equivalent to <code>a != b</code>)</td></tr>
+    <tr><td><code>(isAdmin OR isModerator) AND isActive</code></td><td>User has elevated privileges AND their account is active</td><td>Active admin or active moderator</td></tr>
+</table>
+
+<h3>How to Construct a Truth Table</h3>
+<ol>
+    <li>List all input variables as column headers on the left.</li>
+    <li>Calculate the number of rows needed: <strong>2<sup>n</sup></strong> rows for n inputs (2 inputs = 4 rows; 3 inputs = 8 rows).</li>
+    <li>Fill in all possible input combinations systematically (count in binary).</li>
+    <li>Add columns for any <strong>intermediate</strong> sub-expressions (work these out before the final output).</li>
+    <li>Calculate the <strong>final output</strong> column using the intermediate results.</li>
+</ol>
+
+<h3>Worked Example: A AND (NOT B)</h3>
+<table>
+    <tr><th>A</th><th>B</th><th>NOT B</th><th>A AND (NOT B)</th></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<p>Step by step: first calculate NOT B for each row (intermediate column), then calculate A AND (NOT B) using the A column and the NOT B column. The output is 1 only when A=1 AND B=0.</p>
+
+<h3>Worked Example: (A OR B) AND (NOT C) &mdash; Three Inputs</h3>
+<table>
+    <tr><th>A</th><th>B</th><th>C</th><th>A OR B</th><th>NOT C</th><th>(A OR B) AND (NOT C)</th></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+
+<div class="exam-tip"><strong>AND</strong> needs BOTH inputs to be True. <strong>OR</strong> needs at least one. <strong>NOT</strong> flips the value. <strong>NAND</strong> and <strong>NOR</strong> are AND/OR with the output inverted. <strong>XOR</strong> is True only when inputs DIFFER. When constructing truth tables, <strong>always work through intermediate columns first</strong> &mdash; this avoids mistakes and earns method marks even if the final answer has an error. For 2 inputs: 4 rows. For 3 inputs: 8 rows.</div>
+
+</div>
+</body>
+</html>

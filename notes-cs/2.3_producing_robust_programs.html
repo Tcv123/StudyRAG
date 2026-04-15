@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 2.3 — Producing Robust Programs</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>2.3 Producing Robust Programs</h1>
+<p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 2</p>
+
+<p>A <strong>robust program</strong> handles unexpected inputs and situations gracefully without crashing, is thoroughly tested, and is easy for other programmers to understand and maintain.</p>
+
+<h2>2.3.1 Defensive Design</h2>
+
+<p>Defensive design means writing code that anticipates problems before they occur. The goal is to ensure the program behaves correctly even when users make mistakes or deliberately try to break it.</p>
+
+<table>
+    <tr><th>Technique</th><th>Description</th><th>Example</th></tr>
+    <tr><td><strong>Anticipating misuse</strong></td><td>Design the program to handle <strong>unexpected or malicious input</strong> without crashing. Assume users will enter wrong data types, leave fields blank, or try to exploit the system.</td><td>If a form asks for age, what if the user enters "abc", -5, 999, or leaves it blank? The program must handle all these cases with clear error messages, not crash.</td></tr>
+    <tr><td><strong>Input validation</strong></td><td>Check that data meets <strong>all requirements</strong> before processing it. Common checks: range check, type check, length check, presence check, format check.</td><td><strong>Range check:</strong> age must be 0-120. <strong>Type check:</strong> age must be an integer (not text). <strong>Length check:</strong> password must be 8-64 characters. <strong>Presence check:</strong> email field must not be empty. <strong>Format check:</strong> email must contain '@' and a domain.</td></tr>
+    <tr><td><strong>Authentication</strong></td><td>Verify the <strong>identity</strong> of a user before granting access to the system or specific features.</td><td>Username/password login screen. <strong>Two-factor authentication (2FA):</strong> password + SMS code or authenticator app. Biometric: fingerprint or facial recognition.</td></tr>
+</table>
+
+<pre>
+// Input validation example (OCR pseudocode):
+do
+    age = int(input("Enter your age (0-120): "))
+    if age < 0 OR age > 120 then
+        print("Error: age must be between 0 and 120.")
+    endif
+until age >= 0 AND age <= 120
+
+// Python equivalent with error handling:
+while True:
+    try:
+        age = int(input("Enter your age (0-120): "))
+        if 0 <= age <= 120:
+            break
+        else:
+            print("Error: age must be between 0 and 120.")
+    except ValueError:
+        print("Error: please enter a whole number.")
+</pre>
+
+<h2>2.3.2 Maintainability</h2>
+
+<p>Code that is easy to <strong>read, understand, and modify</strong> by other programmers (or by yourself months later) is said to be maintainable. This is critical in professional software development where teams work on shared codebases over years.</p>
+
+<table>
+    <tr><th>Technique</th><th>Why It Matters</th><th>Example</th></tr>
+    <tr><td><strong>Meaningful variable/subroutine names</strong></td><td>Self-documenting code: the name tells you what it does. <code>totalScore</code> is clear; <code>ts</code> or <code>x</code> is not.</td><td><code>calculateTax(income)</code> vs <code>ct(i)</code>. <code>studentName</code> vs <code>sn</code>. <code>isGameOver</code> vs <code>flag</code>.</td></tr>
+    <tr><td><strong>Comments</strong></td><td>Explain <strong>what a block does and WHY</strong>. Future programmers (including your future self) need context. Do not comment obvious code (<code>x = x + 1 // add 1 to x</code> is pointless).</td><td><code>// Calculate VAT at 20% and add to subtotal</code> before the relevant code block. <code>// Binary search requires sorted data</code> to explain a pre-condition.</td></tr>
+    <tr><td><strong>Indentation</strong></td><td>Visually shows the <strong>structure</strong> of loops, conditions, and subroutines. Makes it easy to see which code is inside which block. Logic errors become easier to spot.</td><td>All code inside an IF block is indented one level; code inside a nested loop is indented two levels.</td></tr>
+    <tr><td><strong>Use of subroutines</strong></td><td>Break code into small, focused modules. Each subroutine does one thing. Individual parts are easier to <strong>test, debug, reuse, and update</strong> independently.</td><td>Instead of 200 lines in main(), have <code>readData()</code>, <code>processScores()</code>, <code>displayResults()</code>. If the display format changes, only <code>displayResults()</code> needs updating.</td></tr>
+    <tr><td><strong>Constants instead of "magic numbers"</strong></td><td>Give meaningful names to fixed values. <code>const MAX_LIVES = 3</code> is clearer than using <code>3</code> throughout the code. If the value needs to change, update one line instead of searching for every occurrence.</td><td><code>const VAT_RATE = 0.2</code> instead of writing <code>0.2</code> in multiple places.</td></tr>
+</table>
+
+<h2>2.3.3 Testing &mdash; Types of Test Data</h2>
+
+<p>Every program must be tested with carefully chosen test data to verify it works correctly. There are three essential types:</p>
+
+<table>
+    <tr><th>Type</th><th>Purpose</th><th>Example (valid range: 1-100)</th></tr>
+    <tr><td><strong>Normal (valid) data</strong></td><td>Confirm the program works correctly with <strong>typical, expected input</strong> that falls well within the valid range.</td><td>Enter <strong>50</strong> &mdash; should be accepted and processed normally. Also test other typical values like 25, 75.</td></tr>
+    <tr><td><strong>Boundary (edge) data</strong></td><td>Test values at the <strong>very edges</strong> of the acceptable range &mdash; both just inside and just outside. These are where off-by-one errors are most likely.</td><td>Enter <strong>1</strong> (lowest valid) and <strong>100</strong> (highest valid) &mdash; should be accepted.<br>Enter <strong>0</strong> (just below range) and <strong>101</strong> (just above range) &mdash; should be rejected.</td></tr>
+    <tr><td><strong>Erroneous (invalid) data</strong></td><td>Confirm the program <strong>rejects bad input gracefully</strong> with a clear error message, without crashing or producing wrong results.</td><td>Enter <strong>-5</strong> (negative), <strong>200</strong> (way out of range), <strong>"hello"</strong> (wrong data type), or <strong>leave blank</strong> (empty input) &mdash; should display a clear error message and ask again.</td></tr>
+</table>
+
+<pre>
+// Test plan for a program that accepts ages 1-120:
+| Test # | Input    | Type      | Expected Result              |
+|--------|----------|-----------|------------------------------|
+| 1      | 25       | Normal    | Accepted, processed normally |
+| 2      | 65       | Normal    | Accepted, processed normally |
+| 3      | 1        | Boundary  | Accepted (lower boundary)    |
+| 4      | 120      | Boundary  | Accepted (upper boundary)    |
+| 5      | 0        | Boundary  | Rejected with error message  |
+| 6      | 121      | Boundary  | Rejected with error message  |
+| 7      | -5       | Erroneous | Rejected with error message  |
+| 8      | "abc"    | Erroneous | Rejected with error message  |
+| 9      | ""       | Erroneous | Rejected with error message  |
+| 10     | 3.5      | Erroneous | Rejected (not a whole number)|
+</pre>
+
+<h2>2.3.4 Testing Strategies</h2>
+
+<table>
+    <tr><th>Strategy</th><th>When</th><th>Description</th><th>Tools Used</th></tr>
+    <tr><td><strong>Iterative testing</strong></td><td>Throughout development (ongoing)</td><td>Each module/subroutine is tested <strong>as it is written</strong>, before moving on to the next. Errors are caught early when they are cheaper and easier to fix. Individual components are tested in isolation.</td><td>Print statements (to check variable values at key points); trace tables; debugger stepping; breakpoints; unit tests.</td></tr>
+    <tr><td><strong>Final (terminal) testing</strong></td><td>After development is complete</td><td>Testing of the <strong>complete, integrated program</strong>. Checks that all parts work together correctly. Tests every execution path through the program. Includes user acceptance testing (UAT) where real users test the system.</td><td>Full test plan with all test data types; integration tests; system tests; UAT; performance/stress testing.</td></tr>
+</table>
+
+<h3>Types of Errors</h3>
+<table>
+    <tr><th>Error Type</th><th>What It Is</th><th>When Detected</th><th>Example</th></tr>
+    <tr><td><strong>Syntax error</strong></td><td>The code breaks the rules of the programming language. The program <strong>cannot run</strong> at all.</td><td>At compile/interpretation time (before the program runs)</td><td>Missing colon, misspelled keyword (<code>prnit</code> instead of <code>print</code>), mismatched brackets, missing <code>endif</code>.</td></tr>
+    <tr><td><strong>Logic error</strong></td><td>The code runs without crashing but produces <strong>wrong results</strong>. The algorithm is incorrect.</td><td>During testing (comparing actual output to expected output)</td><td>Using <code>+</code> instead of <code>-</code>; wrong comparison operator (<code>></code> instead of <code>>=</code>); loop runs one too many or too few times (off-by-one error).</td></tr>
+    <tr><td><strong>Runtime error</strong></td><td>The program crashes <strong>during execution</strong> due to an operation that cannot be performed.</td><td>During execution</td><td>Division by zero; accessing an array index that does not exist; trying to open a file that does not exist; running out of memory.</td></tr>
+</table>
+
+<div class="exam-tip">Always include <strong>all three types of test data</strong> (normal, boundary, erroneous) in test plans. For boundary testing, test <strong>BOTH sides of every boundary</strong> &mdash; if the valid range is 1-10, you need to test 0 (invalid), 1 (valid boundary), 10 (valid boundary), and 11 (invalid). This is where bugs hide. For error types: syntax = cannot run (detected by translator); logic = runs but wrong answer; runtime = crashes during execution.</div>
+
+</div>
+</body>
+</html>

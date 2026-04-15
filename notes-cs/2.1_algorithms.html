@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 2.1 — Algorithms</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>2.1 Algorithms</h1>
+<p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 2</p>
+
+<h2>2.1.1 Computational Thinking</h2>
+
+<p>Computational thinking is a problem-solving approach that involves three key techniques:</p>
+
+<table>
+    <tr><th>Technique</th><th>Definition</th><th>Example</th></tr>
+    <tr><td><strong>Decomposition</strong></td><td>Breaking a complex problem into smaller, more manageable <strong>sub-problems</strong> that can be solved independently. Each sub-problem is simpler to understand, implement, and test.</td><td>Building a game: decompose into sub-problems: graphics rendering, user input handling, scoring system, sound effects, level design, save/load functionality. Each can be developed and tested by a different team member.</td></tr>
+    <tr><td><strong>Abstraction</strong></td><td>Removing unnecessary detail and focusing only on the <strong>relevant</strong> information needed to solve the problem. Hides complexity behind a simpler representation.</td><td>A road map abstracts away individual buildings, trees, and people &mdash; it shows only roads and junctions because that is all a driver needs. A weather app shows temperature and rain icons, abstracting away the complex atmospheric models behind them.</td></tr>
+    <tr><td><strong>Algorithmic thinking</strong></td><td>Designing a precise, unambiguous, <strong>step-by-step solution</strong> that can be followed mechanically to solve the problem. The steps must be in the correct order and cover all cases (including edge cases).</td><td>Writing exact instructions to find the largest number in a list: (1) set max to first element, (2) for each remaining element, if it is greater than max, update max, (3) return max.</td></tr>
+</table>
+
+<h2>2.1.2 Representing Algorithms</h2>
+
+<h3>Flowchart Symbols</h3>
+<table>
+    <tr><th>Symbol</th><th>Shape</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td><strong>Terminal</strong></td><td>Oval / rounded rectangle</td><td>Start or End of the algorithm</td><td>"Start", "End", "Stop"</td></tr>
+    <tr><td><strong>Process</strong></td><td>Rectangle</td><td>An action, calculation, or assignment</td><td>"total = total + price", "count = 0"</td></tr>
+    <tr><td><strong>Decision</strong></td><td>Diamond</td><td>A yes/no (true/false) question that creates a branch</td><td>"Is score > 50?", "Is x == 0?"</td></tr>
+    <tr><td><strong>Input / Output</strong></td><td>Parallelogram</td><td>Reading input from user or displaying output</td><td>"INPUT name", "OUTPUT total"</td></tr>
+    <tr><td><strong>Flow arrow</strong></td><td>Arrow</td><td>Shows the direction of flow between steps</td><td>&mdash;</td></tr>
+    <tr><td><strong>Subroutine</strong></td><td>Rectangle with double side borders</td><td>A call to a separate subroutine (procedure or function)</td><td>"CALL calculateTax()"</td></tr>
+</table>
+
+<h3>Pseudocode Constructs (OCR Style)</h3>
+<pre>
+// Selection (IF-ELSE)
+if score >= 50 then
+    print("Pass")
+else
+    print("Fail")
+endif
+
+// SWITCH / CASE (for multiple specific values)
+switch grade:
+    case 'A':
+        print("Excellent")
+    case 'B':
+        print("Good")
+    default:
+        print("Other")
+endswitch
+
+// Count-controlled loop (FOR) — runs a known number of times
+for i = 1 to 10
+    print(i)
+next i
+
+// Condition-controlled loop (WHILE) — may run 0 or more times
+while password != "abc"
+    password = input("Enter password: ")
+endwhile
+
+// Post-condition loop (DO-UNTIL) — runs at least once
+do
+    x = input("Enter a positive number: ")
+until x > 0
+</pre>
+
+<h3>Trace Tables</h3>
+<p>A <strong>trace table</strong> tracks the values of variables at each step of an algorithm's execution. It is an essential debugging tool and is frequently required in exam questions.</p>
+<pre>
+// Algorithm:
+x = 3
+for i = 1 to 4
+    x = x + i
+next i
+print(x)
+
+// Trace table:
+| Step | i | x  |
+|------|---|----|
+| Init | - | 3  |
+| 1    | 1 | 4  |  (3 + 1)
+| 2    | 2 | 6  |  (4 + 2)
+| 3    | 3 | 9  |  (6 + 3)
+| 4    | 4 | 13 |  (9 + 4)
+Output: 13
+</pre>
+
+<h2>2.1.3 Searching Algorithms</h2>
+
+<h3>Linear Search</h3>
+<div class="definition">
+    <strong>Linear search</strong> checks each item in the list <strong>one by one from the start</strong> until the target is found or the end of the list is reached. It works on both sorted and unsorted data.
+</div>
+
+<pre>
+function linearSearch(list, target):
+    for i = 0 to length(list) - 1
+        if list[i] == target then
+            return i           // found at index i
+        endif
+    next i
+    return -1                  // not found
+
+// Trace: searching for 25 in [3, 7, 12, 19, 25, 31, 44, 58]
+// Check index 0: 3 != 25
+// Check index 1: 7 != 25
+// Check index 2: 12 != 25
+// Check index 3: 19 != 25
+// Check index 4: 25 == 25 → FOUND at index 4 (5 comparisons)
+</pre>
+
+<table>
+    <tr><th>Feature</th><th>Detail</th></tr>
+    <tr><td>Data requirement</td><td>Works on <strong>unsorted AND sorted</strong> data</td></tr>
+    <tr><td>Best case</td><td>O(1) &mdash; target is the first element (1 comparison)</td></tr>
+    <tr><td>Worst case</td><td>O(n) &mdash; target is last or not present (n comparisons)</td></tr>
+    <tr><td>Average case</td><td>O(n/2) &approx; O(n)</td></tr>
+    <tr><td>Advantages</td><td>Simple to implement; works on unsorted data; no pre-processing needed</td></tr>
+    <tr><td>Disadvantages</td><td>Slow for large datasets; checks every element in the worst case</td></tr>
+</table>
+
+<h3>Binary Search</h3>
+<div class="definition">
+    <strong>Binary search</strong> repeatedly <strong>halves the search space</strong> by comparing the target to the middle element. If the target is smaller, search the left half; if larger, search the right half. The data <strong>must be sorted first</strong>.
+</div>
+
+<pre>
+function binarySearch(list, target):
+    low = 0
+    high = length(list) - 1
+    while low <= high
+        mid = (low + high) DIV 2
+        if list[mid] == target then
+            return mid         // found
+        elseif list[mid] < target then
+            low = mid + 1      // search right half
+        else
+            high = mid - 1     // search left half
+        endif
+    endwhile
+    return -1                  // not found
+
+// Trace: searching for 25 in [3, 7, 12, 19, 25, 31, 44, 58]
+// Step 1: low=0, high=7, mid=3, list[3]=19. 25 > 19 → low=4
+// Step 2: low=4, high=7, mid=5, list[5]=31. 25 < 31 → high=4
+// Step 3: low=4, high=4, mid=4, list[4]=25. 25 == 25 → FOUND (3 comparisons)
+// Much faster than linear search's 5 comparisons!
+</pre>
+
+<table>
+    <tr><th>Feature</th><th>Detail</th></tr>
+    <tr><td>Data requirement</td><td><strong>Must be sorted first</strong> (critical!)</td></tr>
+    <tr><td>Best case</td><td>O(1) &mdash; target is the exact middle element</td></tr>
+    <tr><td>Worst case</td><td>O(log n) &mdash; very efficient even for huge datasets</td></tr>
+    <tr><td>Advantage</td><td>Extremely fast for large datasets. Searching 1 billion items takes at most ~30 comparisons.</td></tr>
+    <tr><td>Disadvantage</td><td>Data must be sorted first (sorting takes O(n log n) time); more complex to implement</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Binary search requires sorted data</strong> &mdash; always state this explicitly. For a list of 1,000,000 items: linear search needs up to 1,000,000 comparisons; binary search needs at most 20 (log2 of 1,000,000 &approx; 20). You do NOT need to memorise algorithm code &mdash; only be able to apply and trace algorithms on a given dataset.</div>
+
+<h2>2.1.4 Sorting Algorithms</h2>
+
+<h3>Bubble Sort</h3>
+<div class="definition">
+    <strong>Bubble sort</strong> repeatedly compares <strong>adjacent pairs</strong> of elements and swaps them if they are in the wrong order. After each complete pass through the list, the next largest unsorted element "bubbles up" to its correct position at the end. Passes repeat until no swaps are made in a complete pass (meaning the list is sorted).
+</div>
+
+<pre>
+// Bubble sort trace: [5, 3, 8, 1, 9, 2]
+
+Pass 1:
+  Compare 5,3 → swap → [3, 5, 8, 1, 9, 2]
+  Compare 5,8 → no swap
+  Compare 8,1 → swap → [3, 5, 1, 8, 9, 2]
+  Compare 8,9 → no swap
+  Compare 9,2 → swap → [3, 5, 1, 8, 2, 9]   // 9 is now in final position
+
+Pass 2:
+  Compare 3,5 → no swap
+  Compare 5,1 → swap → [3, 1, 5, 8, 2, 9]
+  Compare 5,8 → no swap
+  Compare 8,2 → swap → [3, 1, 5, 2, 8, 9]   // 8 is now in final position
+
+Pass 3:
+  Compare 3,1 → swap → [1, 3, 5, 2, 8, 9]
+  Compare 3,5 → no swap
+  Compare 5,2 → swap → [1, 3, 2, 5, 8, 9]   // 5 in position
+
+Pass 4:
+  Compare 1,3 → no swap
+  Compare 3,2 → swap → [1, 2, 3, 5, 8, 9]   // 3 in position
+
+Pass 5:
+  No swaps made → list is sorted! STOP.
+  Final: [1, 2, 3, 5, 8, 9]
+</pre>
+
+<h3>Merge Sort</h3>
+<div class="definition">
+    <strong>Merge sort</strong> uses a <strong>divide and conquer</strong> strategy: (1) recursively split the list in half until each sub-list has one element, (2) merge the sub-lists back together in sorted order. It is much more efficient than bubble sort for large datasets.
+</div>
+
+<pre>
+// Merge sort trace: [5, 3, 8, 1, 9, 2]
+
+Split phase (divide until single elements):
+  [5, 3, 8, 1, 9, 2]
+  [5, 3, 8]        [1, 9, 2]
+  [5] [3, 8]       [1] [9, 2]
+  [5] [3] [8]      [1] [9] [2]
+
+Merge phase (merge pairs in sorted order):
+  [3, 8]  (merge [3] and [8])        [2, 9]  (merge [9] and [2])
+  [3, 5, 8]  (merge [5] and [3,8])   [1, 2, 9]  (merge [1] and [2,9])
+  [1, 2, 3, 5, 8, 9]  (merge [3,5,8] and [1,2,9])
+
+Merging [3,5,8] and [1,2,9]:
+  Compare 3 and 1 → take 1 → [1]
+  Compare 3 and 2 → take 2 → [1, 2]
+  Compare 3 and 9 → take 3 → [1, 2, 3]
+  Compare 5 and 9 → take 5 → [1, 2, 3, 5]
+  Compare 8 and 9 → take 8 → [1, 2, 3, 5, 8]
+  Take remaining 9 → [1, 2, 3, 5, 8, 9]
+</pre>
+
+<h3>Insertion Sort</h3>
+<div class="definition">
+    <strong>Insertion sort</strong> builds the sorted list one element at a time. It takes each element from the unsorted portion and <strong>inserts it into its correct position</strong> within the already-sorted portion, shifting elements as needed.
+</div>
+
+<pre>
+// Insertion sort trace: [5, 3, 8, 1, 9, 2]
+
+Start: sorted portion = [5], unsorted = [3, 8, 1, 9, 2]
+
+Insert 3: 3 < 5, shift 5 right, insert 3 → [3, 5, | 8, 1, 9, 2]
+Insert 8: 8 > 5, insert at end        → [3, 5, 8, | 1, 9, 2]
+Insert 1: 1 < 3, shift 3,5,8 right    → [1, 3, 5, 8, | 9, 2]
+Insert 9: 9 > 8, insert at end        → [1, 3, 5, 8, 9, | 2]
+Insert 2: 2 > 1, 2 < 3, shift 3,5,8,9 → [1, 2, 3, 5, 8, 9]
+</pre>
+
+<h3>Comparison</h3>
+<table>
+    <tr><th>Algorithm</th><th>Best Case</th><th>Worst Case</th><th>Key Characteristic</th></tr>
+    <tr><td><strong>Bubble sort</strong></td><td>O(n) &mdash; already sorted (one pass, no swaps)</td><td>O(n&sup2;) &mdash; reverse sorted</td><td>Simplest to understand and implement; least efficient for large data; good for teaching</td></tr>
+    <tr><td><strong>Merge sort</strong></td><td>O(n log n)</td><td>O(n log n) &mdash; always the same</td><td>Most efficient and consistent; works well on large datasets; requires extra memory for merging; uses divide and conquer</td></tr>
+    <tr><td><strong>Insertion sort</strong></td><td>O(n) &mdash; already sorted</td><td>O(n&sup2;) &mdash; reverse sorted</td><td>Good for small datasets or nearly-sorted data; simple; sorts in-place (no extra memory)</td></tr>
+</table>
+
+<div class="exam-tip">You do not need to memorise code for these algorithms. You DO need to be able to <strong>trace through</strong> each algorithm on a given dataset, showing the state of the list after each pass/step. For merge sort, show both the complete split phase AND the merge phase. For bubble sort, show each comparison and swap within each pass.</div>
+
+</div>
+</body>
+</html>

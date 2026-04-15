@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 2.5 — Programming Languages and IDEs</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>2.5 Programming Languages and IDEs</h1>
+<p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 2</p>
+
+<h2>2.5.1 Levels of Programming Language</h2>
+
+<p>Programming languages exist at different <strong>levels of abstraction</strong> from the hardware. Higher-level languages are easier for humans; lower-level languages give more control over hardware.</p>
+
+<table>
+    <tr><th>Level</th><th>Description</th><th>Examples</th><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr>
+        <td><strong>Machine code</strong> (lowest level)</td>
+        <td>Binary instructions (patterns of 0s and 1s) executed <strong>directly</strong> by the CPU. No translation needed. Each instruction is a specific operation for a specific processor architecture.</td>
+        <td><code>01001000 10000001</code></td>
+        <td>Fastest possible execution (no translation overhead); direct hardware control; smallest possible code size</td>
+        <td>Extremely difficult to read, write, and debug; processor-specific (not portable &mdash; code for Intel x86 will not run on ARM); very error-prone</td>
+    </tr>
+    <tr>
+        <td><strong>Assembly language</strong> (low level)</td>
+        <td>Human-readable <strong>mnemonics</strong> (short abbreviations) representing machine code instructions. Each mnemonic maps to exactly one machine code instruction (one-to-one correspondence). Translated by an <strong>assembler</strong>.</td>
+        <td><code>MOV AX, 5</code><br><code>ADD AX, BX</code><br><code>LDR R0, 200</code></td>
+        <td>More readable than machine code; direct hardware control (can access specific registers and memory addresses); useful for device drivers, OS kernels, embedded systems, performance-critical code</td>
+        <td>Still processor-specific (not portable); difficult and time-consuming to write complex programs; requires detailed knowledge of the processor's architecture and instruction set</td>
+    </tr>
+    <tr>
+        <td><strong>High-level language</strong> (highest level)</td>
+        <td>English-like syntax with abstractions (variables, loops, functions, objects) that hide hardware details. One high-level statement may translate to many machine code instructions. Must be translated by a <strong>compiler</strong> or <strong>interpreter</strong>.</td>
+        <td>Python, Java, C#, C++, JavaScript, Haskell</td>
+        <td>Easy to read, write, and debug; <strong>portable</strong> (same code runs on different processors after recompilation); large standard libraries; faster development time; easier to maintain</td>
+        <td>Slightly slower execution (translation overhead); less direct control over hardware; requires a translator to be installed</td>
+    </tr>
+</table>
+
+<p><strong>Why do we still need low-level languages?</strong> Some tasks require direct hardware control that high-level languages cannot provide: writing device drivers, operating system kernels, embedded system firmware, real-time systems, and performance-critical code (game engines, cryptographic algorithms). Assembly gives the programmer total control over exactly which instructions the CPU executes, how memory is used, and how hardware registers are manipulated.</p>
+
+<h2>2.5.2 Translators</h2>
+
+<div class="definition">
+    A <strong>translator</strong> converts source code written by a programmer into machine code that the CPU can execute. There are three types: assemblers, compilers, and interpreters.
+</div>
+
+<table>
+    <tr><th>Translator</th><th>Input</th><th>How It Works</th><th>Output</th></tr>
+    <tr><td><strong>Assembler</strong></td><td>Assembly language</td><td>Converts each assembly mnemonic to its corresponding machine code instruction. <strong>One-to-one</strong> translation. Specific to one processor architecture.</td><td>Machine code (object code) for a specific processor</td></tr>
+    <tr><td><strong>Compiler</strong></td><td>High-level language</td><td>Translates the <strong>ENTIRE source code at once</strong> (before execution). Performs lexical analysis, syntax checking, optimisation, and code generation. Produces a standalone <strong>executable file</strong> that can run independently.</td><td>Executable file (.exe, binary)</td></tr>
+    <tr><td><strong>Interpreter</strong></td><td>High-level language</td><td>Translates and executes <strong>ONE LINE AT A TIME</strong>. No separate executable is produced. The source code is re-translated every time the program runs.</td><td>No permanent output file &mdash; code is executed directly</td></tr>
+</table>
+
+<h3>Compiler vs Interpreter &mdash; Detailed Comparison</h3>
+<table>
+    <tr><th>Feature</th><th>Compiler</th><th>Interpreter</th></tr>
+    <tr><td><strong>Translation</strong></td><td>Entire program translated before any of it runs</td><td>One line/statement at a time, during execution</td></tr>
+    <tr><td><strong>Execution speed</strong></td><td><strong>Fast</strong> &mdash; compiled executable runs directly as machine code</td><td><strong>Slower</strong> &mdash; must re-translate the code every time it runs</td></tr>
+    <tr><td><strong>Error reporting</strong></td><td>Lists <strong>all errors</strong> found during compilation (can be overwhelming but comprehensive)</td><td>Stops at the <strong>first error</strong> encountered (useful for fixing one error at a time)</td></tr>
+    <tr><td><strong>Distribution</strong></td><td>Distribute the <strong>executable</strong> &mdash; source code stays private (intellectual property protected)</td><td><strong>Source code must be distributed</strong> to run the program (visible to everyone)</td></tr>
+    <tr><td><strong>Development cycle</strong></td><td>Slower: edit &rarr; compile (wait) &rarr; run &rarr; debug</td><td>Faster: edit &rarr; run immediately &mdash; great for prototyping and learning</td></tr>
+    <tr><td><strong>Portability</strong></td><td>Compiled executable is <strong>platform-specific</strong> (need to recompile for each OS/architecture)</td><td>Source code is <strong>portable</strong> &mdash; runs on any platform with the interpreter installed</td></tr>
+    <tr><td><strong>Optimisation</strong></td><td>Can optimise across the <strong>entire program</strong> (dead code removal, loop unrolling, inlining)</td><td>Limited optimisation (only sees one line at a time)</td></tr>
+    <tr><td><strong>Requirement</strong></td><td>Compiler NOT needed on the user's machine (only the executable)</td><td>Interpreter MUST be installed on every machine that runs the program</td></tr>
+    <tr><td><strong>Examples</strong></td><td>C, C++, Rust, Go, Java (to bytecode)</td><td>Python, JavaScript, Ruby, PHP</td></tr>
+</table>
+
+<p><strong>Hybrid approach:</strong> Many modern languages use both techniques. Java compiles source code to <strong>bytecode</strong> (intermediate representation), which is then interpreted (or JIT-compiled) by the Java Virtual Machine (JVM) at runtime. Python compiles to bytecode (.pyc files) which is interpreted by the CPython interpreter. This combines the error-checking benefits of compilation with the portability of interpretation.</p>
+
+<h2>2.5.3 IDE (Integrated Development Environment) Features</h2>
+
+<div class="definition">
+    An <strong>IDE (Integrated Development Environment)</strong> is a software application that provides a comprehensive set of tools for writing, testing, and debugging code, all within a single interface. Examples: Visual Studio Code, PyCharm, Eclipse, IDLE, Thonny.
+</div>
+
+<table>
+    <tr><th>Feature</th><th>What It Does</th><th>Why It Helps</th></tr>
+    <tr><td><strong>Syntax highlighting</strong></td><td>Colours different parts of the code differently: keywords in one colour, strings in another, comments in another, variables in another, numbers in another.</td><td>Makes code <strong>much easier to read</strong> at a glance. Helps spot typos immediately &mdash; if a keyword is not highlighted in the expected colour, you know it is misspelled. Mismatched string quotes become visually obvious.</td></tr>
+    <tr><td><strong>Error diagnostics / detection</strong></td><td>Flags syntax errors, warnings, and potential problems <strong>as you type</strong> (red underlines, error markers in the gutter). Shows descriptive error messages explaining what is wrong and often suggesting fixes.</td><td>Catches mistakes <strong>before running</strong> the program, saving time. Points to the exact line and position of the error. Some IDEs can auto-fix common errors.</td></tr>
+    <tr><td><strong>Run / Execute</strong></td><td>Compile and run the program directly from within the IDE with a single button click or keyboard shortcut.</td><td>No need to switch to a command line. Output is displayed in an integrated console/terminal within the IDE.</td></tr>
+    <tr><td><strong>Debugger (stepping)</strong></td><td>Allows you to execute code <strong>one line at a time</strong> (step over, step into, step out), inspecting the state of variables and the call stack at each step.</td><td>Identifies exactly <strong>where and why</strong> logic errors occur. You can watch variables change value step by step, which is far more powerful than adding print statements everywhere.</td></tr>
+    <tr><td><strong>Breakpoints</strong></td><td>Mark specific lines where execution should <strong>pause</strong> automatically. When the program reaches a breakpoint, it stops, and you can inspect all variable values at that precise moment.</td><td>Allows you to run the program at full speed until the interesting part, then pause and investigate. You can set conditional breakpoints that only trigger when a specific condition is true.</td></tr>
+    <tr><td><strong>Auto-completion / IntelliSense</strong></td><td>Suggests variable names, function names, method names, parameters, and keywords <strong>as you type</strong>. Shows function signatures and documentation on hover.</td><td>Reduces typos; speeds up coding; helps discover available functions and methods without consulting documentation; ensures correct spelling of identifiers.</td></tr>
+    <tr><td><strong>Version control integration</strong></td><td>Built-in support for Git/GitHub: commit changes, view history, compare versions, create branches, merge, push/pull.</td><td>Revert to previous working versions if something breaks; track who changed what and when; essential for team collaboration; safely experiment with new features on branches.</td></tr>
+    <tr><td><strong>Code refactoring tools</strong></td><td>Automated renaming of variables/functions across the entire project; extracting code into subroutines; reorganising code structure.</td><td>Safely rename a variable everywhere it is used (not just the current file). Reduces risk of errors during code reorganisation.</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Compiler:</strong> translates everything first &rarr; fast to run, source not distributed, all errors at once. <strong>Interpreter:</strong> line by line &rarr; easy to debug (stops at first error), slower to run, source must be distributed. For IDE questions, always <strong>name the specific feature</strong> AND <strong>explain why it helps the programmer</strong> &mdash; examiners award marks for both parts. Simply listing features without explaining their benefit will not get full marks.</div>
+
+</div>
+</body>
+</html>

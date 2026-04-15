@@ -25,7 +25,9 @@
         .equation { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; font-family: 'Consolas', monospace; }
         .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
-        @media print { body { padding: 20px; } h2 { break-before: auto; } .definition-box, .exam-tip, .equation { break-inside: avoid; } }
+        .real-world { background: #f0fdf4; border-left: 4px solid #059669; padding: 16px 20px; margin-bottom: 18px; border-radius: 0 8px 8px 0; }
+        .real-world::before { content: "Real-World Example: "; font-weight: 700; color: #059669; }
+        @media print { body { padding: 20px; } h2 { break-before: auto; } .definition-box, .exam-tip, .equation, .real-world { break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -39,15 +41,25 @@
 <h2>5.1 DNA Structure and Replication</h2>
 
 <div class="definition-box">
-    <strong>DNA (deoxyribonucleic acid):</strong> A double-stranded polynucleotide that carries the hereditary genetic information. Each nucleotide consists of deoxyribose sugar, a phosphate group, and one of four nitrogenous bases (A, T, C, G).
+    <strong>DNA (deoxyribonucleic acid):</strong> A double-stranded polynucleotide that carries the hereditary genetic information in all living organisms (except some viruses which use RNA). Each nucleotide consists of a deoxyribose sugar (5-carbon pentose), a phosphate group, and one of four nitrogenous bases: adenine (A), thymine (T), cytosine (C), or guanine (G). Purines (A, G) have a double-ring structure; pyrimidines (T, C) have a single-ring structure.
 </div>
 
 <h3>DNA Structure</h3>
 <ul>
-    <li>Two antiparallel polynucleotide strands form a <strong>double helix</strong></li>
-    <li>Sugar-phosphate backbone on the outside (covalent phosphodiester bonds)</li>
-    <li>Bases point inward and pair by <strong>complementary base pairing</strong>: A&ndash;T (2 hydrogen bonds), C&ndash;G (3 hydrogen bonds)</li>
-    <li>Strands are antiparallel: one runs 5'&rarr;3', the other 3'&rarr;5'</li>
+    <li>Two antiparallel polynucleotide strands form a <strong>double helix</strong>, first described by Watson and Crick (1953) using X-ray crystallography data from Franklin and Wilkins</li>
+    <li><strong>Sugar-phosphate backbone</strong> on the outside &mdash; nucleotides linked by covalent <strong>phosphodiester bonds</strong> (between the 3' carbon of one sugar and the 5' phosphate of the next). This gives the backbone great stability.</li>
+    <li>Bases point inward and pair by <strong>complementary base pairing</strong>: A&ndash;T (2 hydrogen bonds), C&ndash;G (3 hydrogen bonds). This means a purine always pairs with a pyrimidine, keeping the helix a constant width.</li>
+    <li>Strands are <strong>antiparallel</strong>: one runs 5'&rarr;3', the other 3'&rarr;5'. This has implications for replication (leading vs lagging strand).</li>
+    <li>The double helix makes one complete turn every 10 base pairs (~3.4 nm per turn), with a diameter of ~2 nm</li>
+</ul>
+
+<h3>Why DNA is Suited to Its Function</h3>
+<ul>
+    <li><strong>Stable</strong> &mdash; phosphodiester bonds in backbone are strong covalent bonds; double helix is reinforced by many hydrogen bonds and base stacking interactions</li>
+    <li><strong>Base pairing allows accurate replication</strong> &mdash; each strand serves as a template for producing a complementary copy</li>
+    <li><strong>Very long molecule</strong> &mdash; can carry a vast amount of genetic information (the human genome has ~3.2 billion base pairs)</li>
+    <li><strong>Two separate strands</strong> can unwind for replication and transcription, then re-form</li>
+    <li><strong>Base sequence</strong> carries the genetic code &mdash; infinite variety of sequences possible</li>
 </ul>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -60,19 +72,14 @@
   </style>
   <text x="300" y="22" text-anchor="middle" class="title">DNA Double Helix Structure</text>
 
-  <!-- Sugar-phosphate backbone strands (antiparallel) -->
-  <!-- Left strand (5' to 3' going down) -->
   <path d="M 160,50 Q 140,100 160,150 Q 180,200 160,250 Q 140,300 160,340" fill="none" stroke="#1a73e8" stroke-width="4" opacity="0.7"/>
-  <!-- Right strand (3' to 5' going down) -->
   <path d="M 340,50 Q 360,100 340,150 Q 320,200 340,250 Q 360,300 340,340" fill="none" stroke="#DC2626" stroke-width="4" opacity="0.7"/>
 
-  <!-- Direction labels -->
   <text x="145" y="45" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">5'</text>
   <text x="145" y="340" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">3'</text>
   <text x="355" y="45" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">3'</text>
   <text x="355" y="340" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">5'</text>
 
-  <!-- Base pairs (rungs) -->
   <!-- A-T pair -->
   <line x1="162" y1="80" x2="230" y2="80" stroke="#16A34A" stroke-width="3"/>
   <line x1="270" y1="80" x2="338" y2="80" stroke="#16A34A" stroke-width="3"/>
@@ -124,14 +131,13 @@
   <rect x="263" y="268" width="24" height="24" rx="4" fill="#16A34A" opacity="0.15"/>
   <text x="275" y="285" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">T</text>
 
-  <!-- Annotations on right -->
+  <!-- Annotations -->
   <line x1="365" y1="80" x2="420" y2="80" stroke="#16A34A" stroke-width="1"/>
   <text x="425" y="78" text-anchor="start" class="small-label" fill="#16A34A" font-weight="bold">A-T: 2 H-bonds</text>
 
   <line x1="365" y1="130" x2="420" y2="130" stroke="#D97706" stroke-width="1"/>
   <text x="425" y="128" text-anchor="start" class="small-label" fill="#D97706" font-weight="bold">C-G: 3 H-bonds</text>
 
-  <!-- Backbone labels -->
   <text x="425" y="195" text-anchor="start" class="small-label" fill="#1a73e8">Sugar-phosphate</text>
   <text x="425" y="209" text-anchor="start" class="small-label" fill="#1a73e8">backbone</text>
   <text x="425" y="223" text-anchor="start" class="small-label" fill="#1a73e8">(phosphodiester</text>
@@ -140,19 +146,29 @@
   <text x="425" y="270" text-anchor="start" class="small-label" fill="#6b7280">Strands are</text>
   <text x="425" y="284" text-anchor="start" class="small-label" fill="#6b7280" font-weight="bold">antiparallel</text>
 
-  <!-- Key -->
   <text x="55" y="65" text-anchor="middle" class="small-label" fill="#16A34A">--- H-bonds</text>
   <line x1="30" y1="72" x2="80" y2="72" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,3"/>
 </svg>
 </div>
 
+<h3>Chargaff's Rules</h3>
+<p>Erwin Chargaff discovered that in any DNA sample: the amount of adenine equals thymine (A = T), and the amount of cytosine equals guanine (C = G). This provided crucial evidence for complementary base pairing. Therefore: %A + %T + %C + %G = 100%, and if %A = 30%, then %T = 30%, leaving %C = %G = 20% each.</p>
+
 <h3>Semi-Conservative Replication</h3>
+<p>DNA replication is described as semi-conservative because each new DNA molecule consists of one original (conserved) strand and one newly synthesised strand.</p>
 <ol>
-    <li><strong>Helicase</strong> unwinds the double helix and breaks hydrogen bonds between base pairs, separating the two strands</li>
-    <li>Each strand acts as a <strong>template</strong></li>
-    <li><strong>DNA polymerase</strong> adds free nucleotides to the exposed bases by complementary base pairing (A with T, C with G)</li>
-    <li>DNA polymerase works in the 5'&rarr;3' direction only</li>
-    <li><strong>Leading strand</strong> is synthesised continuously; <strong>lagging strand</strong> is synthesised in short Okazaki fragments (joined by DNA ligase)</li>
+    <li><strong>Helicase</strong> unwinds the double helix by breaking hydrogen bonds between complementary base pairs, separating the two strands and creating a <strong>replication fork</strong>. Single-strand binding proteins (SSBs) stabilise the separated strands and prevent them re-annealing.</li>
+    <li>Each exposed strand acts as a <strong>template</strong> for the synthesis of a new complementary strand</li>
+    <li><strong>DNA primase</strong> synthesises a short RNA primer on each template strand (DNA polymerase cannot initiate synthesis from scratch &mdash; it can only extend an existing strand)</li>
+    <li><strong>DNA polymerase III</strong> adds free DNA nucleotides (deoxyribonucleoside triphosphates) to the 3' end of the primer/growing strand by complementary base pairing (A with T, C with G). The energy for bond formation comes from hydrolysis of the two extra phosphate groups on each nucleotide.</li>
+    <li>DNA polymerase works in the <strong>5'&rarr;3' direction only</strong>:
+        <ul>
+            <li><strong>Leading strand</strong> is synthesised continuously in the same direction as fork movement</li>
+            <li><strong>Lagging strand</strong> is synthesised discontinuously in short <strong>Okazaki fragments</strong> (each requiring its own RNA primer), because polymerase must work away from the fork</li>
+        </ul>
+    </li>
+    <li><strong>DNA polymerase I</strong> removes the RNA primers and replaces them with DNA nucleotides</li>
+    <li><strong>DNA ligase</strong> joins the Okazaki fragments by forming phosphodiester bonds between adjacent nucleotides, creating a continuous strand</li>
     <li>Result: two identical DNA molecules, each with one original strand and one new strand (semi-conservative)</li>
 </ol>
 
@@ -166,71 +182,56 @@
   </style>
   <text x="300" y="22" text-anchor="middle" class="title">DNA Replication Fork</text>
 
-  <!-- Original double strand on left (coming in) -->
   <line x1="30" y1="120" x2="200" y2="120" stroke="#1a73e8" stroke-width="4" opacity="0.7"/>
   <line x1="30" y1="140" x2="200" y2="140" stroke="#DC2626" stroke-width="4" opacity="0.7"/>
   <text x="30" y="115" text-anchor="start" class="small-label" fill="#1a73e8" font-weight="bold">3'</text>
   <text x="30" y="155" text-anchor="start" class="small-label" fill="#DC2626" font-weight="bold">5'</text>
 
-  <!-- H-bonds between strands -->
   <line x1="60" y1="124" x2="60" y2="136" stroke="#6b7280" stroke-width="1" stroke-dasharray="2,2"/>
   <line x1="90" y1="124" x2="90" y2="136" stroke="#6b7280" stroke-width="1" stroke-dasharray="2,2"/>
   <line x1="120" y1="124" x2="120" y2="136" stroke="#6b7280" stroke-width="1" stroke-dasharray="2,2"/>
   <line x1="150" y1="124" x2="150" y2="136" stroke="#6b7280" stroke-width="1" stroke-dasharray="2,2"/>
 
-  <!-- Fork opening (Y shape) -->
-  <!-- Top template strand continues right and up -->
   <path d="M 200,120 Q 240,115 280,80 L 530,80" fill="none" stroke="#1a73e8" stroke-width="4" opacity="0.7"/>
-  <!-- Bottom template strand continues right and down -->
   <path d="M 200,140 Q 240,145 280,180 L 530,180" fill="none" stroke="#DC2626" stroke-width="4" opacity="0.7"/>
 
-  <!-- Direction labels on template strands -->
   <text x="540" y="78" text-anchor="start" class="small-label" fill="#1a73e8" font-weight="bold">5'</text>
   <text x="540" y="183" text-anchor="start" class="small-label" fill="#DC2626" font-weight="bold">3'</text>
 
-  <!-- New strand on top (leading strand - continuous) -->
   <line x1="250" y1="95" x2="520" y2="95" stroke="#16A34A" stroke-width="3.5" opacity="0.7"/>
   <polygon points="520,90 535,95 520,100" fill="#16A34A" opacity="0.7"/>
   <text x="540" y="98" text-anchor="start" class="small-label" fill="#16A34A" font-weight="bold">3'</text>
   <text x="250" y="108" text-anchor="start" class="small-label" fill="#16A34A" font-weight="bold">5'</text>
 
-  <!-- New strand on bottom (lagging strand - Okazaki fragments) -->
   <line x1="420" y1="165" x2="520" y2="165" stroke="#16A34A" stroke-width="3.5" opacity="0.7"/>
   <line x1="310" y1="165" x2="400" y2="165" stroke="#16A34A" stroke-width="3.5" opacity="0.7"/>
   <line x1="265" y1="168" x2="295" y2="165" stroke="#16A34A" stroke-width="3.5" opacity="0.7"/>
-  <!-- Gaps between fragments -->
   <text x="405" y="162" text-anchor="middle" class="small-label" fill="#6b7280">|</text>
   <text x="303" y="162" text-anchor="middle" class="small-label" fill="#6b7280">|</text>
   <text x="540" y="168" text-anchor="start" class="small-label" fill="#16A34A" font-weight="bold">5'</text>
   <text x="430" y="160" text-anchor="start" class="small-label" fill="#16A34A" font-weight="bold">3'</text>
 
-  <!-- Helicase at fork -->
   <circle cx="220" cy="130" r="18" fill="#D97706" opacity="0.2" stroke="#D97706" stroke-width="2"/>
   <text x="220" y="134" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold" font-family="system-ui">Helicase</text>
 
-  <!-- DNA polymerase on leading strand -->
   <rect x="485" y="82" width="35" height="18" rx="4" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1.5"/>
   <text x="503" y="94" text-anchor="middle" font-size="8" fill="#16A34A" font-weight="bold" font-family="system-ui">Pol III</text>
 
-  <!-- DNA polymerase on lagging strand -->
   <rect x="270" y="155" width="35" height="18" rx="4" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1.5"/>
   <text x="288" y="167" text-anchor="middle" font-size="8" fill="#16A34A" font-weight="bold" font-family="system-ui">Pol III</text>
 
-  <!-- Labels -->
   <rect x="350" y="50" width="120" height="22" rx="4" fill="#16A34A" opacity="0.1" stroke="#16A34A" stroke-width="1"/>
   <text x="410" y="65" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">Leading strand</text>
-  <text x="410" y="45" text-anchor="middle" class="small-label" fill="#16A34A">(continuous, 5'→3')</text>
+  <text x="410" y="45" text-anchor="middle" class="small-label" fill="#16A34A">(continuous, 5'&#8594;3')</text>
 
   <rect x="340" y="195" width="140" height="22" rx="4" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="1"/>
   <text x="410" y="210" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">Lagging strand</text>
-  <text x="410" y="228" text-anchor="middle" class="small-label" fill="#D97706">(Okazaki fragments, 5'→3')</text>
+  <text x="410" y="228" text-anchor="middle" class="small-label" fill="#D97706">(Okazaki fragments, 5'&#8594;3')</text>
 
-  <!-- Helicase description -->
   <line x1="220" y1="148" x2="220" y2="170" stroke="#D97706" stroke-width="1"/>
   <text x="155" y="180" text-anchor="middle" class="small-label" fill="#D97706">Helicase unwinds</text>
   <text x="155" y="193" text-anchor="middle" class="small-label" fill="#D97706">and separates strands</text>
 
-  <!-- Key at bottom -->
   <line x1="60" y1="250" x2="90" y2="250" stroke="#1a73e8" stroke-width="3.5" opacity="0.7"/>
   <text x="95" y="254" text-anchor="start" class="small-label" fill="#1a73e8">Original template strand</text>
   <line x1="60" y1="270" x2="90" y2="270" stroke="#16A34A" stroke-width="3.5" opacity="0.7"/>
@@ -241,31 +242,59 @@
 </svg>
 </div>
 
-<div class="exam-tip">The Meselson-Stahl experiment (using heavy nitrogen <sup>15</sup>N and density gradient centrifugation) provided evidence for semi-conservative replication. After one generation in <sup>14</sup>N, all DNA was intermediate density. After two generations, half was intermediate and half was light.</div>
+<h3>Evidence for Semi-Conservative Replication: Meselson-Stahl Experiment (1958)</h3>
+<p>This elegant experiment used <em>E. coli</em> and heavy nitrogen (<sup>15</sup>N) with density gradient centrifugation:</p>
+<ol>
+    <li>Bacteria grown for many generations in <sup>15</sup>N medium &mdash; all DNA becomes "heavy" (both strands contain <sup>15</sup>N)</li>
+    <li>Transferred to <sup>14</sup>N (light) medium and allowed to replicate once</li>
+    <li><strong>After one generation:</strong> All DNA was <strong>intermediate density</strong> (one heavy strand + one light strand) &mdash; this ruled out conservative replication (which would have produced one heavy and one light band)</li>
+    <li><strong>After two generations:</strong> DNA was 50% intermediate and 50% light &mdash; exactly as predicted by semi-conservative replication</li>
+</ol>
+
+<div class="exam-tip">The Meselson-Stahl experiment is a key piece of evidence you must be able to describe. Explain why each result supports semi-conservative and rules out conservative replication. After generation 1: all intermediate density proves each molecule has one old and one new strand. Conservative replication would produce one fully heavy and one fully light molecule instead.</div>
 
 <!-- ==================== PROTEIN SYNTHESIS ==================== -->
 <h2>5.2 Protein Synthesis</h2>
 
+<h3>Genes and the Genetic Code</h3>
+<div class="definition-box">
+    <strong>Gene:</strong> A section of DNA that codes for a particular polypeptide (or functional RNA molecule such as tRNA or rRNA). A gene's nucleotide sequence determines the amino acid sequence of the protein it encodes, via the triplet code.
+</div>
+
+<div class="definition-box">
+    <strong>The genetic code:</strong> A triplet code (three bases = one codon = one amino acid). It is <strong>degenerate</strong> (most amino acids are coded by more than one codon &mdash; 64 possible codons for 20 amino acids + 3 stop codons), <strong>universal</strong> (the same code is used by virtually all organisms, providing evidence for a common ancestor), <strong>non-overlapping</strong> (each base is read only once), and read in a fixed reading frame from a start codon (AUG).
+</div>
+
 <h3>Transcription (Nucleus)</h3>
+<p>Transcription is the synthesis of an mRNA molecule from a DNA template. It produces a single-stranded RNA copy of one gene.</p>
 <ol>
-    <li><strong>RNA polymerase</strong> binds to the <strong>promoter region</strong> of the gene on the template (antisense) strand</li>
-    <li>Hydrogen bonds between DNA base pairs are broken; DNA strands separate</li>
-    <li>RNA polymerase moves along the template strand (3'&rarr;5'), assembling a complementary mRNA molecule (5'&rarr;3')</li>
-    <li>Free RNA nucleotides are added by complementary base pairing (U pairs with A in DNA)</li>
-    <li>RNA polymerase reaches a <strong>terminator sequence</strong> and detaches; mRNA is released</li>
-    <li>In eukaryotes: <strong>pre-mRNA</strong> undergoes splicing (introns removed, exons joined) before leaving the nucleus through nuclear pores</li>
+    <li><strong>RNA polymerase</strong> binds to the <strong>promoter region</strong> (a specific DNA sequence upstream of the gene) on the <strong>template (antisense) strand</strong>. Transcription factors must bind first to facilitate this.</li>
+    <li>Hydrogen bonds between DNA base pairs are broken; DNA strands separate locally (forming a "transcription bubble")</li>
+    <li>RNA polymerase moves along the template strand in the <strong>3'&rarr;5' direction</strong>, assembling a complementary mRNA molecule in the <strong>5'&rarr;3' direction</strong></li>
+    <li>Free RNA nucleotides (ribonucleoside triphosphates) are added by complementary base pairing: C pairs with G, G pairs with C, A pairs with T (in DNA), and <strong>U (uracil) pairs with A</strong> (RNA uses uracil instead of thymine)</li>
+    <li>RNA polymerase reaches a <strong>terminator sequence</strong> and detaches; the mRNA is released. The DNA double helix re-forms behind the polymerase.</li>
+    <li>In eukaryotes: the initial transcript is <strong>pre-mRNA</strong>, which undergoes <strong>post-transcriptional modification</strong>:
+        <ul>
+            <li><strong>Splicing</strong> &mdash; introns (non-coding sequences) are removed and exons (coding sequences) are joined together by spliceosomes</li>
+            <li><strong>5' capping</strong> &mdash; a modified guanine nucleotide is added to the 5' end (protects from degradation, aids ribosome binding)</li>
+            <li><strong>3' polyadenylation</strong> &mdash; a poly-A tail (~200 adenine nucleotides) is added to the 3' end (protects from exonuclease degradation, aids nuclear export)</li>
+        </ul>
+    </li>
+    <li>Mature mRNA leaves the nucleus through <strong>nuclear pores</strong> and enters the cytoplasm for translation</li>
 </ol>
 
 <h3>Translation (Ribosomes in Cytoplasm)</h3>
+<p>Translation is the synthesis of a polypeptide from an mRNA template. It takes place on ribosomes (which may be free in the cytoplasm or bound to the rough endoplasmic reticulum).</p>
 <ol>
-    <li>mRNA binds to the small ribosomal subunit; start codon (AUG) is positioned at the P site</li>
-    <li><strong>tRNA</strong> molecules carry specific amino acids; each has an <strong>anticodon</strong> complementary to an mRNA codon</li>
-    <li>First tRNA (carrying methionine) binds to AUG at the P site</li>
-    <li>Second tRNA binds at the A site (anticodon matches next mRNA codon)</li>
-    <li>A <strong>peptide bond</strong> forms between adjacent amino acids (catalysed by ribosome/rRNA)</li>
-    <li>Ribosome translocates one codon along mRNA; first tRNA released</li>
-    <li>Process repeats until a <strong>stop codon</strong> (UAA, UAG, UGA) is reached</li>
-    <li>Polypeptide is released and folds into its functional protein shape</li>
+    <li>mRNA binds to the <strong>small ribosomal subunit</strong>; the start codon (<strong>AUG</strong>) is positioned at the <strong>P site</strong> (peptidyl site)</li>
+    <li><strong>tRNA</strong> (transfer RNA) molecules are adaptor molecules &mdash; each carries a specific amino acid and has an <strong>anticodon</strong> (three bases) complementary to a specific mRNA codon. Aminoacyl-tRNA synthetases attach the correct amino acid to each tRNA.</li>
+    <li>The first tRNA (carrying methionine, with anticodon UAC) binds to the start codon AUG at the P site by complementary base pairing between anticodon and codon</li>
+    <li>A second tRNA (carrying the next amino acid) binds at the <strong>A site</strong> (aminoacyl site) &mdash; its anticodon matches the next mRNA codon</li>
+    <li>A <strong>peptide bond</strong> forms between the amino acids on adjacent tRNAs (catalysed by the ribosome itself &mdash; specifically by rRNA, making it a ribozyme)</li>
+    <li>The ribosome <strong>translocates</strong> one codon along the mRNA in the 5'&rarr;3' direction; the first tRNA (now empty) moves to the <strong>E site</strong> (exit site) and is released; the second tRNA (now carrying the dipeptide) moves to the P site; the A site is free for the next tRNA</li>
+    <li>Process repeats &mdash; the polypeptide chain elongates one amino acid at a time</li>
+    <li>When a <strong>stop codon</strong> (UAA, UAG, or UGA) enters the A site, no tRNA can bind. A <strong>release factor</strong> protein binds instead, causing the ribosome to release the polypeptide chain and dissociate from the mRNA.</li>
+    <li>The polypeptide folds into its functional protein shape (primary &rarr; secondary &rarr; tertiary &rarr; quaternary structure). Post-translational modifications may occur (e.g., glycosylation in the Golgi).</li>
 </ol>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -278,134 +307,117 @@
   </style>
   <text x="300" y="22" text-anchor="middle" class="title">Protein Synthesis: Transcription and Translation</text>
 
-  <!-- TRANSCRIPTION (left half) -->
   <rect x="15" y="38" width="270" height="145" rx="8" fill="#1a73e8" opacity="0.04" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="150" y="56" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">TRANSCRIPTION (Nucleus)</text>
 
-  <!-- DNA template strand -->
   <text x="25" y="80" text-anchor="start" class="small-label" fill="#6b7280">DNA template 3'</text>
   <line x1="25" y1="90" x2="270" y2="90" stroke="#1a73e8" stroke-width="3" opacity="0.6"/>
-  <!-- Bases on template -->
   <text x="110" y="88" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold" font-family="system-ui">T A C G A T</text>
 
-  <!-- RNA polymerase -->
   <ellipse cx="190" cy="110" rx="28" ry="14" fill="#D97706" opacity="0.2" stroke="#D97706" stroke-width="1.5"/>
   <text x="190" y="114" text-anchor="middle" font-size="8" fill="#D97706" font-weight="bold" font-family="system-ui">RNA Pol</text>
 
-  <!-- mRNA being made -->
   <line x1="80" y1="130" x2="270" y2="130" stroke="#DC2626" stroke-width="3" opacity="0.6"/>
   <text x="110" y="128" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">A U G C U A</text>
   <text x="25" y="134" text-anchor="start" class="small-label" fill="#DC2626">mRNA 5'</text>
 
-  <!-- Arrow showing direction -->
   <polygon points="265,127 275,130 265,133" fill="#DC2626"/>
 
-  <!-- Splicing note -->
   <text x="150" y="162" text-anchor="middle" class="small-label" fill="#6b7280">Pre-mRNA spliced (introns removed)</text>
   <text x="150" y="176" text-anchor="middle" class="small-label" fill="#6b7280">mRNA exits nucleus via nuclear pores</text>
 
-  <!-- Arrow from transcription to translation -->
   <line x1="285" y1="110" x2="315" y2="110" stroke="#D97706" stroke-width="2"/>
   <polygon points="315,106 328,110 315,114" fill="#D97706"/>
   <text x="300" y="100" text-anchor="middle" font-size="9" fill="#D97706" font-family="system-ui">mRNA</text>
 
-  <!-- TRANSLATION (right half) -->
   <rect x="315" y="38" width="270" height="145" rx="8" fill="#16A34A" opacity="0.04" stroke="#16A34A" stroke-width="1.5"/>
   <text x="450" y="56" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">TRANSLATION (Ribosome)</text>
 
-  <!-- mRNA strand through ribosome -->
   <line x1="330" y1="115" x2="575" y2="115" stroke="#DC2626" stroke-width="2.5" opacity="0.5"/>
   <text x="385" y="113" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">A U G</text>
   <text x="435" y="113" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">C U A</text>
   <text x="485" y="113" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">G C C</text>
 
-  <!-- Ribosome -->
   <ellipse cx="435" cy="105" rx="60" ry="30" fill="#16A34A" opacity="0.1" stroke="#16A34A" stroke-width="1.5"/>
   <text x="435" y="80" text-anchor="middle" class="small-label" fill="#16A34A">Ribosome</text>
 
-  <!-- tRNA molecules -->
-  <!-- tRNA 1 at P site -->
   <path d="M 385,115 L 385,140 L 375,155 L 395,155 L 385,140" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="385" y="168" text-anchor="middle" font-size="9" fill="#1a73e8" font-weight="bold" font-family="system-ui">U A C</text>
   <text x="385" y="180" text-anchor="middle" font-size="8" fill="#1a73e8" font-family="system-ui">anticodon</text>
 
-  <!-- tRNA 2 at A site -->
   <path d="M 435,115 L 435,140 L 425,155 L 445,155 L 435,140" fill="none" stroke="#D97706" stroke-width="1.5"/>
   <text x="435" y="168" text-anchor="middle" font-size="9" fill="#D97706" font-weight="bold" font-family="system-ui">G A U</text>
 
-  <!-- Amino acids on tRNAs -->
   <circle cx="385" cy="95" r="10" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="385" y="99" text-anchor="middle" font-size="8" fill="#1a73e8" font-weight="bold" font-family="system-ui">Met</text>
   <circle cx="435" cy="95" r="10" fill="#D97706" opacity="0.2" stroke="#D97706" stroke-width="1.5"/>
   <text x="435" y="99" text-anchor="middle" font-size="8" fill="#D97706" font-weight="bold" font-family="system-ui">Leu</text>
 
-  <!-- Peptide bond -->
   <line x1="395" y1="95" x2="425" y2="95" stroke="#DC2626" stroke-width="2"/>
   <text x="410" y="88" text-anchor="middle" font-size="8" fill="#DC2626" font-family="system-ui">peptide bond</text>
 
-  <!-- Growing polypeptide -->
   <circle cx="355" cy="80" r="8" fill="#16A34A" opacity="0.2" stroke="#16A34A" stroke-width="1"/>
   <line x1="363" y1="80" x2="375" y2="90" stroke="#16A34A" stroke-width="1.5"/>
   <text x="340" y="72" text-anchor="middle" class="small-label" fill="#16A34A">Polypeptide</text>
 
-  <!-- Summary flow at bottom -->
   <rect x="40" y="200" width="520" height="130" rx="8" fill="#1a1a2e" opacity="0.03" stroke="#1a1a2e" stroke-width="1"/>
   <text x="300" y="220" text-anchor="middle" class="label" fill="#1a1a2e" font-weight="bold">Summary of Information Flow</text>
 
-  <!-- DNA box -->
   <rect x="60" y="240" width="70" height="30" rx="6" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="95" y="260" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">DNA</text>
 
-  <!-- Arrow -->
   <line x1="130" y1="255" x2="175" y2="255" stroke="#D97706" stroke-width="2"/>
   <polygon points="175,251 188,255 175,259" fill="#D97706"/>
   <text x="158" y="248" text-anchor="middle" class="small-label" fill="#D97706">Transcription</text>
 
-  <!-- mRNA box -->
   <rect x="190" y="240" width="70" height="30" rx="6" fill="#DC2626" opacity="0.12" stroke="#DC2626" stroke-width="1.5"/>
   <text x="225" y="260" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">mRNA</text>
 
-  <!-- Arrow -->
   <line x1="260" y1="255" x2="305" y2="255" stroke="#D97706" stroke-width="2"/>
   <polygon points="305,251 318,255 305,259" fill="#D97706"/>
   <text x="290" y="248" text-anchor="middle" class="small-label" fill="#D97706">Translation</text>
 
-  <!-- Protein box -->
   <rect x="320" y="240" width="80" height="30" rx="6" fill="#16A34A" opacity="0.12" stroke="#16A34A" stroke-width="1.5"/>
   <text x="360" y="260" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">Protein</text>
 
-  <!-- Location labels -->
   <text x="95" y="285" text-anchor="middle" class="small-label" fill="#6b7280">Nucleus</text>
-  <text x="225" y="285" text-anchor="middle" class="small-label" fill="#6b7280">Nucleus → Cytoplasm</text>
+  <text x="225" y="285" text-anchor="middle" class="small-label" fill="#6b7280">Nucleus &#8594; Cytoplasm</text>
   <text x="360" y="285" text-anchor="middle" class="small-label" fill="#6b7280">Ribosomes</text>
 
-  <!-- Central dogma label -->
-  <text x="300" y="320" text-anchor="middle" class="small-label" fill="#1a1a2e" font-style="italic">Central dogma: DNA → RNA → Protein</text>
+  <text x="300" y="320" text-anchor="middle" class="small-label" fill="#1a1a2e" font-style="italic">Central dogma: DNA &#8594; RNA &#8594; Protein</text>
 </svg>
 </div>
 
-<div class="definition-box">
-    <strong>The genetic code:</strong> A triplet code (three bases = one codon = one amino acid). It is degenerate (most amino acids coded by more than one codon), universal (same in almost all organisms) and non-overlapping.
-</div>
+<div class="real-world">Sickle cell anaemia is caused by a single base substitution (missense mutation) in the gene for the beta-globin chain of haemoglobin: the codon GAG is changed to GTG, causing the amino acid glutamic acid (hydrophilic) to be replaced by valine (hydrophobic) at position 6. This causes haemoglobin molecules to polymerise under low O<sub>2</sub> conditions, distorting red blood cells into a sickle shape. Heterozygous carriers (HbAS) have some resistance to malaria, which is why the sickle cell allele is maintained at high frequency in malaria-endemic regions (heterozygote advantage/balancing selection).</div>
 
 <!-- ==================== GENE MUTATIONS ==================== -->
 <h2>5.3 Gene Mutations</h2>
 
 <div class="definition-box">
-    <strong>Gene mutation:</strong> A change in the nucleotide sequence of DNA. Mutations are the ultimate source of genetic variation and can be spontaneous or induced by mutagens (UV radiation, chemicals, ionising radiation).
+    <strong>Gene mutation:</strong> A change in the nucleotide sequence of DNA. Mutations are the ultimate source of all genetic variation and can be spontaneous (arising from errors during DNA replication, ~1 in 10<sup>9</sup> bases per cell division) or induced by <strong>mutagens</strong>: UV radiation (causes thymine dimers), ionising radiation (causes strand breaks), chemical mutagens (e.g., base analogues, alkylating agents, deaminating agents), and some viruses.
 </div>
 
 <h3>Types of Point Mutation</h3>
 <table>
-    <tr><th>Type</th><th>Change</th><th>Effect on Protein</th></tr>
-    <tr><td>Substitution (silent/synonymous)</td><td>One base replaced by another</td><td>No change &mdash; degenerate code means same amino acid coded</td></tr>
-    <tr><td>Substitution (missense)</td><td>One base replaced</td><td>Different amino acid incorporated &mdash; may alter protein function (e.g., sickle cell: GAG &rarr; GTG, Glu &rarr; Val)</td></tr>
-    <tr><td>Substitution (nonsense)</td><td>One base replaced</td><td>Creates a premature stop codon &mdash; truncated, non-functional protein</td></tr>
-    <tr><td>Insertion</td><td>One or more bases added</td><td><strong>Frameshift</strong> &mdash; all codons downstream are altered; usually non-functional protein</td></tr>
-    <tr><td>Deletion</td><td>One or more bases removed</td><td><strong>Frameshift</strong> &mdash; same severe effect as insertion</td></tr>
+    <tr><th>Type</th><th>Change</th><th>Effect on Protein</th><th>Example</th></tr>
+    <tr><td>Substitution (silent/synonymous)</td><td>One base replaced by another</td><td>No change to amino acid sequence &mdash; degenerate code means same amino acid coded (often in the third position of the codon, the "wobble" position)</td><td>CUU &rarr; CUC (both code for leucine)</td></tr>
+    <tr><td>Substitution (missense)</td><td>One base replaced</td><td>Different amino acid incorporated &mdash; may or may not alter protein function depending on the chemical similarity of the amino acids and the location in the protein</td><td>Sickle cell: GAG &rarr; GTG (Glu &rarr; Val in haemoglobin beta chain)</td></tr>
+    <tr><td>Substitution (nonsense)</td><td>One base replaced</td><td>Creates a premature stop codon &mdash; translation terminates early; truncated, usually non-functional protein</td><td>CAG (Gln) &rarr; UAG (stop)</td></tr>
+    <tr><td>Insertion</td><td>One or more bases added</td><td><strong>Frameshift</strong> &mdash; all codons downstream of the insertion are altered; usually produces a completely non-functional protein or premature stop codon</td><td>Addition of a base shifts the reading frame</td></tr>
+    <tr><td>Deletion</td><td>One or more bases removed</td><td><strong>Frameshift</strong> &mdash; same devastating effect as insertion; all downstream codons affected</td><td>Cystic fibrosis (most common mutation is deletion of 3 bases = loss of one amino acid, not a frameshift but still pathogenic)</td></tr>
 </table>
 
-<div class="exam-tip">Frameshift mutations (insertions and deletions) are generally more damaging than substitutions because they alter EVERY codon after the mutation point. A substitution typically only affects one amino acid.</div>
+<div class="exam-tip">Frameshift mutations (insertions and deletions of non-multiples of three) are generally MORE damaging than substitutions because they alter EVERY codon after the mutation point, producing a completely different amino acid sequence. A substitution typically only affects one amino acid. If three bases are inserted or deleted together, it adds or removes one amino acid without shifting the frame &mdash; still harmful but less catastrophic. The most common CF mutation (&Delta;F508) is a 3-base deletion that removes phenylalanine at position 508 but does not cause a frameshift.</div>
+
+<h3>Chromosome Mutations</h3>
+<p>Larger-scale mutations affecting whole chromosomes or large segments:</p>
+<ul>
+    <li><strong>Aneuploidy</strong> &mdash; gain or loss of individual chromosomes due to non-disjunction during meiosis. Example: Down syndrome (trisomy 21, three copies of chromosome 21)</li>
+    <li><strong>Polyploidy</strong> &mdash; having more than two complete sets of chromosomes (3n, 4n, etc.). Common in plants; can lead to instant speciation (sympatric). Many crop plants are polyploid (e.g., wheat is hexaploid, 6n).</li>
+    <li><strong>Translocation</strong> &mdash; segment of one chromosome breaks off and joins a different chromosome</li>
+    <li><strong>Inversion</strong> &mdash; segment of chromosome is reversed in orientation</li>
+    <li><strong>Duplication / deletion</strong> &mdash; segments are duplicated or lost</li>
+</ul>
 
 <!-- ==================== INHERITANCE ==================== -->
 <h2>5.4 Inheritance</h2>
@@ -413,22 +425,25 @@
 <h3>Key Terminology</h3>
 <table>
     <tr><th>Term</th><th>Definition</th></tr>
-    <tr><td>Gene</td><td>A section of DNA that codes for a particular polypeptide or functional RNA</td></tr>
-    <tr><td>Allele</td><td>An alternative form of a gene (different nucleotide sequence at the same locus)</td></tr>
-    <tr><td>Locus</td><td>The specific position of a gene on a chromosome</td></tr>
-    <tr><td>Genotype</td><td>The combination of alleles an organism possesses for a particular gene</td></tr>
-    <tr><td>Phenotype</td><td>The observable characteristics resulting from genotype and environment</td></tr>
+    <tr><td>Gene</td><td>A section of DNA that codes for a particular polypeptide or functional RNA molecule</td></tr>
+    <tr><td>Allele</td><td>An alternative form of a gene; different alleles arise by mutation and have different nucleotide sequences at the same locus</td></tr>
+    <tr><td>Locus</td><td>The specific, fixed position of a gene on a chromosome</td></tr>
+    <tr><td>Genotype</td><td>The combination of alleles an organism possesses for a particular gene (or set of genes)</td></tr>
+    <tr><td>Phenotype</td><td>The observable characteristics of an organism, resulting from the interaction of genotype and environment</td></tr>
     <tr><td>Homozygous</td><td>Two identical alleles at a locus (e.g., AA or aa)</td></tr>
     <tr><td>Heterozygous</td><td>Two different alleles at a locus (e.g., Aa)</td></tr>
-    <tr><td>Dominant</td><td>Allele expressed in both homozygous and heterozygous individuals</td></tr>
-    <tr><td>Recessive</td><td>Allele only expressed in the homozygous condition</td></tr>
+    <tr><td>Dominant</td><td>Allele that is expressed in both homozygous (AA) and heterozygous (Aa) individuals; the dominant phenotype is produced when at least one copy is present</td></tr>
+    <tr><td>Recessive</td><td>Allele only expressed in the homozygous condition (aa); masked by the dominant allele in heterozygotes</td></tr>
+    <tr><td>Codominant</td><td>Both alleles are expressed equally in the heterozygote; neither is dominant over the other</td></tr>
+    <tr><td>Multiple alleles</td><td>More than two alleles exist for a gene in the population (though each individual still has only two)</td></tr>
+    <tr><td>Test cross</td><td>Crossing an individual showing the dominant phenotype with a homozygous recessive individual to determine the unknown genotype</td></tr>
 </table>
 
 <h3>Monohybrid Inheritance</h3>
-<p>Involves one gene with two alleles. Use Punnett squares to predict offspring ratios. A cross between two heterozygotes (Aa &times; Aa) gives a <strong>3:1 phenotypic ratio</strong> (3 dominant : 1 recessive) and a 1:2:1 genotypic ratio.</p>
+<p>Involves one gene with two alleles. Use Punnett squares to predict offspring ratios. A cross between two heterozygotes (Aa &times; Aa) gives a <strong>3:1 phenotypic ratio</strong> (3 dominant : 1 recessive) and a 1:2:1 genotypic ratio (1 AA : 2 Aa : 1 aa). These are expected (theoretical) ratios; actual results may deviate due to chance, especially with small sample sizes. A chi-squared test can be used to determine whether observed ratios differ significantly from expected.</p>
 
 <h3>Dihybrid Inheritance</h3>
-<p>Involves two genes on different chromosomes (independently assorting). A cross between two double heterozygotes (AaBb &times; AaBb) gives a <strong>9:3:3:1 phenotypic ratio</strong>.</p>
+<p>Involves two genes on different chromosomes (independently assorting according to Mendel's law of independent assortment). A cross between two double heterozygotes (AaBb &times; AaBb) gives a <strong>9:3:3:1 phenotypic ratio</strong>: 9 with both dominant traits, 3 with first dominant and second recessive, 3 with first recessive and second dominant, 1 with both recessive.</p>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 310" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -440,44 +455,34 @@
   </style>
   <text x="300" y="22" text-anchor="middle" class="title">Punnett Squares: Monohybrid and Dihybrid Crosses</text>
 
-  <!-- MONOHYBRID (left) -->
   <text x="145" y="48" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Monohybrid: Aa x Aa</text>
 
-  <!-- Grid -->
   <rect x="55" y="62" width="55" height="30" rx="0" fill="#1a73e8" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="110" y="62" width="55" height="30" rx="0" fill="#1a73e8" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="165" y="62" width="55" height="30" rx="0" fill="#1a73e8" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
-
   <rect x="55" y="92" width="55" height="30" rx="0" fill="#1a73e8" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="55" y="122" width="55" height="30" rx="0" fill="#1a73e8" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
-
-  <!-- Data cells -->
   <rect x="110" y="92" width="55" height="30" rx="0" fill="#16A34A" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="165" y="92" width="55" height="30" rx="0" fill="#16A34A" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="110" y="122" width="55" height="30" rx="0" fill="#16A34A" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="165" y="122" width="55" height="30" rx="0" fill="#DC2626" opacity="0.1" stroke="#1a1a2e" stroke-width="1"/>
 
-  <!-- Headers -->
   <text x="83" y="82" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">Gametes</text>
   <text x="138" y="82" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">A</text>
   <text x="193" y="82" text-anchor="middle" class="label" fill="#1a73e8" font-weight="bold">a</text>
   <text x="83" y="112" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">A</text>
   <text x="83" y="142" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">a</text>
 
-  <!-- Offspring genotypes -->
   <text x="138" y="112" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">AA</text>
   <text x="193" y="112" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">Aa</text>
   <text x="138" y="142" text-anchor="middle" class="label" fill="#16A34A" font-weight="bold">Aa</text>
   <text x="193" y="142" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">aa</text>
 
-  <!-- Ratios -->
   <text x="145" y="172" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Genotypic: 1 AA : 2 Aa : 1 aa</text>
   <text x="145" y="188" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">Phenotypic: 3 dominant : 1 recessive</text>
 
-  <!-- DIHYBRID (right) -->
   <text x="430" y="48" text-anchor="middle" class="label" fill="#DC2626" font-weight="bold">Dihybrid: AaBb x AaBb</text>
 
-  <!-- Grid headers -->
   <rect x="310" y="62" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="350" y="62" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="390" y="62" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
@@ -490,7 +495,6 @@
   <text x="450" y="79" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold" font-family="system-ui">aB</text>
   <text x="490" y="79" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="bold" font-family="system-ui">ab</text>
 
-  <!-- Row headers -->
   <rect x="310" y="87" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="310" y="112" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="310" y="137" width="40" height="25" rx="0" fill="#DC2626" opacity="0.08" stroke="#1a1a2e" stroke-width="1"/>
@@ -501,8 +505,6 @@
   <text x="330" y="154" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">aB</text>
   <text x="330" y="179" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui">ab</text>
 
-  <!-- 4x4 data grid - color coded by phenotype -->
-  <!-- Row 1: AB x -->
   <rect x="350" y="87" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
   <rect x="390" y="87" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
   <rect x="430" y="87" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
@@ -512,7 +514,6 @@
   <text x="450" y="104" text-anchor="middle" font-size="8" font-family="system-ui">AaBB</text>
   <text x="490" y="104" text-anchor="middle" font-size="8" font-family="system-ui">AaBb</text>
 
-  <!-- Row 2: Ab x -->
   <rect x="350" y="112" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
   <rect x="390" y="112" width="40" height="25" fill="#1a73e8" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
   <rect x="430" y="112" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
@@ -522,7 +523,6 @@
   <text x="450" y="129" text-anchor="middle" font-size="8" font-family="system-ui">AaBb</text>
   <text x="490" y="129" text-anchor="middle" font-size="8" font-family="system-ui">Aabb</text>
 
-  <!-- Row 3: aB x -->
   <rect x="350" y="137" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
   <rect x="390" y="137" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
   <rect x="430" y="137" width="40" height="25" fill="#D97706" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
@@ -532,7 +532,6 @@
   <text x="450" y="154" text-anchor="middle" font-size="8" font-family="system-ui">aaBB</text>
   <text x="490" y="154" text-anchor="middle" font-size="8" font-family="system-ui">aaBb</text>
 
-  <!-- Row 4: ab x -->
   <rect x="350" y="162" width="40" height="25" fill="#16A34A" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
   <rect x="390" y="162" width="40" height="25" fill="#1a73e8" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
   <rect x="430" y="162" width="40" height="25" fill="#D97706" opacity="0.12" stroke="#1a1a2e" stroke-width="0.5"/>
@@ -542,10 +541,8 @@
   <text x="450" y="179" text-anchor="middle" font-size="8" font-family="system-ui">aaBb</text>
   <text x="490" y="179" text-anchor="middle" font-size="8" font-family="system-ui">aabb</text>
 
-  <!-- Phenotype ratio -->
   <text x="430" y="207" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Phenotypic ratio: 9 : 3 : 3 : 1</text>
 
-  <!-- Key for dihybrid -->
   <rect x="335" y="220" width="12" height="12" fill="#16A34A" opacity="0.15"/>
   <text x="352" y="231" font-size="9" fill="#16A34A" font-family="system-ui">9 A_B_ (both dominant)</text>
   <rect x="335" y="237" width="12" height="12" fill="#1a73e8" opacity="0.15"/>
@@ -555,52 +552,102 @@
   <rect x="335" y="271" width="12" height="12" fill="#DC2626" opacity="0.15"/>
   <text x="352" y="282" font-size="9" fill="#DC2626" font-family="system-ui">1 aabb (both recessive)</text>
 
-  <!-- Note -->
   <text x="300" y="305" text-anchor="middle" class="small-label" fill="#6b7280" font-style="italic">Dihybrid 9:3:3:1 ratio only applies with independent assortment (genes on different chromosomes)</text>
 </svg>
 </div>
 
-<h3>Codominance</h3>
-<p>Both alleles are equally expressed in the heterozygote (neither is dominant). Example: ABO blood groups where I<sup>A</sup> and I<sup>B</sup> are codominant (I<sup>A</sup>I<sup>B</sup> gives blood group AB), while both are dominant over i (recessive, gives group O).</p>
+<h3>Codominance and Multiple Alleles</h3>
+<p><strong>Codominance:</strong> Both alleles are equally expressed in the heterozygote (neither is dominant). The heterozygote shows a phenotype distinct from either homozygote, expressing both allelic products simultaneously.</p>
+<p><strong>ABO blood groups</strong> demonstrate both codominance and multiple alleles:</p>
+<ul>
+    <li>The ABO gene has three alleles: I<sup>A</sup>, I<sup>B</sup>, and i</li>
+    <li>I<sup>A</sup> and I<sup>B</sup> are <strong>codominant</strong> with each other (I<sup>A</sup>I<sup>B</sup> genotype gives blood group AB, expressing both A and B antigens on red blood cells)</li>
+    <li>Both I<sup>A</sup> and I<sup>B</sup> are <strong>dominant</strong> over i (recessive)</li>
+    <li>Blood group O = ii (no A or B antigens); group A = I<sup>A</sup>I<sup>A</sup> or I<sup>A</sup>i; group B = I<sup>B</sup>I<sup>B</sup> or I<sup>B</sup>i; group AB = I<sup>A</sup>I<sup>B</sup></li>
+</ul>
 
 <h3>Sex Linkage</h3>
-<p>Genes located on the X chromosome (X-linked). Males (XY) are <strong>hemizygous</strong> &mdash; only one allele, so recessive X-linked conditions are more common in males. Examples: haemophilia, red-green colour blindness.</p>
-<p>Carrier females (X<sup>H</sup>X<sup>h</sup>) are phenotypically normal but can pass the recessive allele to sons.</p>
+<p>Genes located on the <strong>X chromosome</strong> (X-linked genes) show a characteristic pattern of inheritance. Males (XY) are <strong>hemizygous</strong> for X-linked genes &mdash; they have only one allele, so a single recessive allele will be expressed. This is why X-linked recessive conditions are much more common in males.</p>
+<p>Examples: haemophilia A (factor VIII deficiency), red-green colour blindness, Duchenne muscular dystrophy.</p>
+<p><strong>Carrier females</strong> (X<sup>H</sup>X<sup>h</sup>) are phenotypically normal but can pass the recessive allele to their sons. An affected father (X<sup>h</sup>Y) cannot pass the condition to his sons (he gives them his Y chromosome) but all his daughters will be carriers.</p>
 
 <h3>Autosomal Linkage</h3>
-<p>Genes on the same chromosome tend to be inherited together (do not independently assort). Linked genes produce fewer recombinant offspring than expected. Crossing over during meiosis can break linkage, producing recombinants.</p>
+<p>Genes located on the <strong>same chromosome</strong> tend to be inherited together and do not independently assort (violating Mendel's law of independent assortment). Linked genes produce fewer recombinant offspring than the expected 9:3:3:1 ratio. <strong>Crossing over</strong> during meiosis I can break linkage, producing recombinant gametes. The frequency of recombination is proportional to the distance between genes on the chromosome &mdash; this principle is used to construct <strong>genetic maps</strong>.</p>
 
 <h3>Epistasis</h3>
-<p>One gene masks or modifies the expression of another gene at a different locus. This produces modified dihybrid ratios (e.g., 9:3:4 for recessive epistasis, 12:3:1 for dominant epistasis).</p>
+<p><strong>Epistasis</strong> occurs when one gene masks or modifies the expression of another gene at a different locus. This produces modified dihybrid ratios. The masking gene is said to be "epistatic to" the masked gene.</p>
+<table>
+    <tr><th>Type</th><th>Modified Ratio</th><th>Example</th></tr>
+    <tr><td>Recessive epistasis</td><td>9:3:4</td><td>Coat colour in Labrador retrievers: the ee genotype at the E locus masks the B/b locus, producing yellow regardless of B genotype</td></tr>
+    <tr><td>Dominant epistasis</td><td>12:3:1</td><td>Squash fruit colour: a dominant allele at one locus masks expression of another locus</td></tr>
+    <tr><td>Complementary genes</td><td>9:7</td><td>Flower colour in sweet peas: two genes both needed for pigment production; homozygous recessive at either locus = white</td></tr>
+    <tr><td>Duplicate genes</td><td>15:1</td><td>Kernel colour: a dominant allele at either locus produces the same phenotype</td></tr>
+</table>
 
-<div class="exam-tip">In genetics problems: (1) Define your symbols clearly, (2) State the parental genotypes, (3) Show gametes, (4) Draw a Punnett square, (5) State offspring ratios. For sex linkage, always use X<sup>H</sup>X<sup>h</sup> notation showing the alleles as superscripts on the X chromosome.</div>
+<div class="exam-tip">In genetics problems: (1) Define your allele symbols clearly (use a key), (2) State the parental genotypes and phenotypes, (3) Show the gametes each parent can produce, (4) Draw a complete Punnett square, (5) State offspring genotypic and phenotypic ratios. For sex linkage, always use X<sup>H</sup>X<sup>h</sup> notation showing the alleles as superscripts on the X chromosome. For dihybrid crosses, check whether the observed ratio matches 9:3:3:1 or a modified epistatic ratio.</div>
+
+<h3>Chi-Squared Test</h3>
+<p>The chi-squared (&chi;<sup>2</sup>) test determines whether the difference between observed and expected results is statistically significant or due to chance alone.</p>
+<div class="equation">&chi;<sup>2</sup> = &Sigma; (O &minus; E)<sup>2</sup> / E</div>
+<p>Where O = observed frequency, E = expected frequency. Sum across all categories.</p>
+<ol>
+    <li>State the <strong>null hypothesis</strong> (H<sub>0</sub>): there is no significant difference between observed and expected results</li>
+    <li>Calculate the expected values from the predicted ratio and total number of offspring</li>
+    <li>Calculate &chi;<sup>2</sup> using the formula</li>
+    <li>Determine <strong>degrees of freedom</strong> = number of categories &minus; 1</li>
+    <li>Compare &chi;<sup>2</sup> with the critical value at p = 0.05 (5% significance level)</li>
+    <li>If &chi;<sup>2</sup> &lt; critical value: accept H<sub>0</sub> (difference is due to chance; results fit the expected ratio)</li>
+    <li>If &chi;<sup>2</sup> &gt; critical value: reject H<sub>0</sub> (difference is statistically significant; results do not fit the expected ratio)</li>
+</ol>
 
 <!-- ==================== HARDY-WEINBERG ==================== -->
 <h2>5.5 Hardy-Weinberg Principle</h2>
 
 <div class="definition-box">
-    <strong>Hardy-Weinberg principle:</strong> In a large, randomly mating population with no selection, mutation, migration or genetic drift, allele frequencies remain constant from generation to generation.
+    <strong>Hardy-Weinberg principle:</strong> In a large, randomly mating population with no selection, mutation, migration, or genetic drift, allele frequencies and genotype frequencies remain constant from generation to generation. This provides a mathematical model against which real populations can be compared to detect evolutionary change.
 </div>
 
 <div class="equation">p + q = 1 &nbsp;&nbsp;(where p = frequency of dominant allele, q = frequency of recessive allele)</div>
 <div class="equation">p<sup>2</sup> + 2pq + q<sup>2</sup> = 1 &nbsp;&nbsp;(p<sup>2</sup> = freq of AA, 2pq = freq of Aa, q<sup>2</sup> = freq of aa)</div>
 
-<h3>Using Hardy-Weinberg</h3>
+<h3>Using Hardy-Weinberg in Calculations</h3>
 <ol>
-    <li>Identify the number/frequency of homozygous recessive individuals (q<sup>2</sup>)</li>
-    <li>Take the square root to find q</li>
-    <li>Calculate p = 1 &minus; q</li>
-    <li>Calculate carrier frequency: 2pq</li>
+    <li>Identify the number or frequency of <strong>homozygous recessive individuals</strong> (q<sup>2</sup>) &mdash; these are the only genotype identifiable directly from phenotype in a dominant/recessive system</li>
+    <li>Take the square root to find q (frequency of recessive allele)</li>
+    <li>Calculate p = 1 &minus; q (frequency of dominant allele)</li>
+    <li>Calculate carrier (heterozygote) frequency: 2pq</li>
+    <li>Calculate homozygous dominant frequency: p<sup>2</sup></li>
 </ol>
 
-<p>Conditions for Hardy-Weinberg equilibrium (all must be met):</p>
+<div class="real-world">Cystic fibrosis affects approximately 1 in 2500 people in the UK (q<sup>2</sup> = 1/2500 = 0.0004). Therefore q = 0.02, p = 0.98, and the carrier frequency 2pq = 2 &times; 0.98 &times; 0.02 = 0.0392, or approximately 1 in 25 people. This shows that although CF is rare, carriers are surprisingly common.</div>
+
+<p><strong>Conditions for Hardy-Weinberg equilibrium</strong> (all must be met &mdash; they rarely are in nature, which is why evolution occurs):</p>
 <ul>
-    <li>Large population size (no genetic drift)</li>
-    <li>Random mating (no sexual selection)</li>
-    <li>No natural selection (all genotypes equally fit)</li>
-    <li>No mutation</li>
-    <li>No migration (gene flow)</li>
+    <li>Large population size (no <strong>genetic drift</strong>)</li>
+    <li>Random mating (no <strong>sexual selection</strong> or assortative mating)</li>
+    <li>No <strong>natural selection</strong> (all genotypes equally fit)</li>
+    <li>No <strong>mutation</strong> (no new alleles introduced)</li>
+    <li>No <strong>migration</strong> (no gene flow into or out of the population)</li>
 </ul>
+
+<div class="exam-tip">In Hardy-Weinberg calculations, always start with q<sup>2</sup> (the proportion of homozygous recessive individuals). You cannot start with p<sup>2</sup> because you cannot distinguish AA from Aa by phenotype alone in a dominant/recessive system. Always show your working clearly: state what q<sup>2</sup> is, calculate q, then p, then 2pq if needed.</div>
+
+<!-- ==================== NATURAL SELECTION ==================== -->
+<h2>5.6 Natural Selection and Evolution</h2>
+
+<div class="definition-box">
+    <strong>Evolution:</strong> A change in allele frequency in a population over successive generations. It is driven by four main mechanisms: natural selection, genetic drift, mutation, and gene flow (migration). Natural selection is the only mechanism that is adaptive (leads to populations becoming better suited to their environment).
+</div>
+
+<h3>Mechanism of Natural Selection</h3>
+<ol>
+    <li><strong>Variation</strong> exists within the population due to genetic differences (caused by mutation, meiosis, and sexual reproduction)</li>
+    <li>There is a <strong>selection pressure</strong> (environmental factor such as competition for resources, predation, disease, or climate change)</li>
+    <li>Individuals with advantageous phenotypes have a <strong>selective advantage</strong> &mdash; they are more likely to survive to reproductive age ("survival of the fittest")</li>
+    <li>These individuals are more likely to <strong>reproduce</strong> and pass their advantageous alleles to the next generation</li>
+    <li>Over many generations, the <strong>frequency of the advantageous allele increases</strong> in the population</li>
+    <li>The population becomes better adapted to its environment</li>
+</ol>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -612,7 +659,6 @@
   </style>
   <text x="300" y="22" text-anchor="middle" class="title">Natural Selection -- Mechanism</text>
 
-  <!-- Step 1: Variation -->
   <rect x="20" y="50" width="105" height="65" rx="10" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="2"/>
   <text x="72" y="70" text-anchor="middle" class="small-label" fill="#1a73e8" font-weight="bold">1. Variation</text>
   <circle cx="45" cy="95" r="8" fill="#16A34A" opacity="0.5"/><circle cx="65" cy="95" r="8" fill="#1a73e8" opacity="0.5"/><circle cx="85" cy="95" r="8" fill="#D97706" opacity="0.5"/><circle cx="105" cy="95" r="8" fill="#DC2626" opacity="0.5"/>
@@ -622,7 +668,6 @@
   <line x1="125" y1="82" x2="145" y2="82" stroke="#D97706" stroke-width="2"/>
   <polygon points="145,78 155,82 145,86" fill="#D97706"/>
 
-  <!-- Step 2: Selection pressure -->
   <rect x="155" y="50" width="105" height="65" rx="10" fill="#DC2626" opacity="0.1" stroke="#DC2626" stroke-width="2"/>
   <text x="208" y="70" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">2. Selection</text>
   <text x="208" y="83" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Pressure</text>
@@ -632,7 +677,6 @@
   <line x1="260" y1="82" x2="280" y2="82" stroke="#D97706" stroke-width="2"/>
   <polygon points="280,78 290,82 280,86" fill="#D97706"/>
 
-  <!-- Step 3: Survival -->
   <rect x="290" y="50" width="105" height="65" rx="10" fill="#16A34A" opacity="0.1" stroke="#16A34A" stroke-width="2"/>
   <text x="342" y="70" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">3. Survival of</text>
   <text x="342" y="83" text-anchor="middle" class="small-label" fill="#16A34A" font-weight="bold">the Fittest</text>
@@ -643,19 +687,16 @@
   <line x1="395" y1="82" x2="415" y2="82" stroke="#D97706" stroke-width="2"/>
   <polygon points="415,78 425,82 415,86" fill="#D97706"/>
 
-  <!-- Step 4: Reproduction -->
   <rect x="425" y="50" width="105" height="65" rx="10" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="2"/>
   <text x="478" y="70" text-anchor="middle" class="small-label" fill="#D97706" font-weight="bold">4. Reproduction</text>
   <circle cx="450" cy="97" r="5" fill="#16A34A" opacity="0.5"/><circle cx="465" cy="97" r="5" fill="#16A34A" opacity="0.5"/><circle cx="480" cy="97" r="5" fill="#16A34A" opacity="0.5"/><circle cx="495" cy="97" r="5" fill="#16A34A" opacity="0.5"/><circle cx="508" cy="97" r="5" fill="#16A34A" opacity="0.5"/>
   <text x="478" y="130" text-anchor="middle" class="small-label" fill="#6b7280">Alleles passed to</text>
   <text x="478" y="142" text-anchor="middle" class="small-label" fill="#6b7280">next generation</text>
 
-  <!-- Curved arrow showing generations -->
   <path d="M 530,82 Q 555,82 555,180 Q 555,230 300,230 Q 45,230 45,180 Q 45,155 72,155" fill="none" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="5,3"/>
   <polygon points="72,151 80,155 72,159" fill="#1a1a2e"/>
   <text x="300" y="245" text-anchor="middle" class="small-label" fill="#1a1a2e" font-weight="bold">Over many generations: allele frequency changes in population</text>
 
-  <!-- Three types of selection -->
   <text x="300" y="270" text-anchor="middle" class="label" fill="#1a1a2e" font-weight="bold">Types of Selection:</text>
   <rect x="40" y="280" width="150" height="30" rx="6" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1"/>
   <text x="115" y="295" text-anchor="middle" class="small-label" fill="#DC2626" font-weight="bold">Directional</text>
@@ -669,36 +710,57 @@
 </svg>
 </div>
 
-<!-- ==================== EVOLUTION AND SPECIATION ==================== -->
-<h2>5.6 Evolution and Speciation</h2>
-
-<div class="definition-box">
-    <strong>Evolution:</strong> A change in allele frequency in a population over successive generations, driven by natural selection, genetic drift, mutation and gene flow.
-</div>
+<h3>Types of Natural Selection</h3>
+<table>
+    <tr><th>Type</th><th>What It Favours</th><th>Effect on Distribution</th><th>Example</th></tr>
+    <tr><td>Directional</td><td>One phenotypic extreme</td><td>Mean shifts towards the favoured extreme; distribution shifts left or right</td><td>Antibiotic resistance in bacteria (resistant individuals survive); peppered moth (industrial melanism &mdash; dark moths favoured in polluted environments)</td></tr>
+    <tr><td>Stabilising</td><td>Average/intermediate phenotype</td><td>Reduces variation; narrows the distribution; extremes are selected against</td><td>Human birth weight (very small or very large babies have lower survival); clutch size in birds</td></tr>
+    <tr><td>Disruptive</td><td>Both phenotypic extremes</td><td>Increases variation; creates a bimodal distribution; may lead to speciation</td><td>Beak size in African seedcrackers (large beaks for hard seeds, small for soft; intermediate beaks disadvantaged)</td></tr>
+</table>
 
 <h3>Genetic Drift</h3>
-<p>Random changes in allele frequency due to chance events, particularly significant in <strong>small populations</strong>. Can lead to fixation (allele frequency reaches 1.0) or loss (frequency reaches 0) regardless of selective advantage. Two types:</p>
+<p>Random changes in allele frequency due to chance events in reproduction, particularly significant in <strong>small populations</strong> where sampling error is large. Drift is non-adaptive (does not lead to better adaptation) and can lead to <strong>fixation</strong> (allele frequency reaches 1.0) or <strong>loss</strong> (frequency reaches 0) regardless of whether the allele is advantageous. Two important special cases:</p>
 <ul>
-    <li><strong>Bottleneck effect:</strong> Dramatic population reduction (disaster) randomly eliminates alleles</li>
-    <li><strong>Founder effect:</strong> Small group colonises new area; limited gene pool differs from parent population</li>
+    <li><strong>Bottleneck effect:</strong> A dramatic, often sudden, reduction in population size (natural disaster, disease, habitat destruction) randomly eliminates alleles. The surviving population has reduced genetic diversity and may have different allele frequencies from the original.</li>
+    <li><strong>Founder effect:</strong> A small group of individuals colonises a new area (e.g., island). Their limited gene pool differs from the parent population by chance, and rare alleles may be overrepresented. Example: high frequency of Ellis-van Creveld syndrome among Old Order Amish in Pennsylvania, descended from a small founding group.</li>
 </ul>
 
-<h3>Speciation</h3>
-<p><strong>Speciation</strong> is the formation of new species. A <strong>species</strong> is a group of organisms that can interbreed to produce fertile offspring and are reproductively isolated from other groups.</p>
+<!-- ==================== SPECIATION ==================== -->
+<h2>5.7 Speciation</h2>
+
+<div class="definition-box">
+    <strong>Species (biological species concept):</strong> A group of organisms that can interbreed to produce fertile offspring and are reproductively isolated from other groups. <strong>Speciation</strong> is the formation of new species, which requires reproductive isolation leading to genetic divergence.
+</div>
 
 <table>
-    <tr><th>Type</th><th>Mechanism</th><th>Example</th></tr>
-    <tr><td>Allopatric</td><td>Geographic isolation &rarr; different selection pressures &rarr; genetic divergence &rarr; reproductive isolation</td><td>Darwin's finches on Galapagos Islands</td></tr>
-    <tr><td>Sympatric</td><td>Reproductive isolation without geographic barrier (polyploidy, behavioural, temporal, ecological isolation)</td><td>Polyploidy in plants (e.g., wheat)</td></tr>
+    <tr><th>Type</th><th>Mechanism</th><th>Key Feature</th><th>Example</th></tr>
+    <tr><td>Allopatric speciation</td><td>Geographic isolation (physical barrier such as mountain range, river, ocean, glacier) separates populations &rarr; different selection pressures in different environments &rarr; different mutations accumulate &rarr; allele frequencies diverge independently &rarr; eventually reproductively isolated = new species</td><td>Requires a physical barrier</td><td>Darwin's finches on different Galapagos Islands; squirrels on opposite sides of the Grand Canyon</td></tr>
+    <tr><td>Sympatric speciation</td><td>Reproductive isolation develops within the same geographic area, without physical separation. Can occur through polyploidy (instant reproductive isolation in plants), ecological isolation (using different resources or microhabitats), temporal isolation (breeding at different times), or behavioural isolation (different mating calls/displays).</td><td>No physical barrier</td><td>Polyploidy in plants (e.g., bread wheat arose from hybridisation and chromosome doubling); cichlid fish in African lakes diverging by mate preference</td></tr>
 </table>
 
 <h3>Reproductive Isolation Mechanisms</h3>
 <ul>
-    <li><strong>Pre-zygotic:</strong> temporal (different breeding times), mechanical (incompatible genitalia), behavioural (different courtship), gametic (gametes incompatible)</li>
-    <li><strong>Post-zygotic:</strong> hybrid inviability (offspring do not survive), hybrid sterility (offspring infertile, e.g., mules)</li>
+    <li><strong>Pre-zygotic barriers</strong> (prevent fertilisation):
+        <ul>
+            <li>Temporal/seasonal &mdash; different breeding times or seasons</li>
+            <li>Mechanical &mdash; incompatible genitalia or flower structures</li>
+            <li>Behavioural &mdash; different courtship displays, mating calls, or pheromones (not recognised as potential mates)</li>
+            <li>Gametic &mdash; gametes cannot fuse (different surface proteins on sperm/egg)</li>
+            <li>Habitat/ecological &mdash; occupy different microhabitats within same area</li>
+        </ul>
+    </li>
+    <li><strong>Post-zygotic barriers</strong> (act after fertilisation):
+        <ul>
+            <li>Hybrid inviability &mdash; hybrid embryo does not develop or dies before reproduction</li>
+            <li>Hybrid sterility &mdash; hybrid offspring are viable but infertile (e.g., mules from horse &times; donkey; ligers from lion &times; tiger)</li>
+            <li>Hybrid breakdown &mdash; first-generation hybrids are fertile but subsequent generations have reduced fitness</li>
+        </ul>
+    </li>
 </ul>
 
-<div class="exam-tip">When explaining speciation, follow this sequence: (1) populations separated/isolated, (2) different selection pressures/environments, (3) different mutations arise, (4) natural selection favours different alleles, (5) allele frequencies diverge, (6) eventually reproductively isolated = new species.</div>
+<div class="exam-tip">When explaining speciation in an extended answer, follow this logical sequence: (1) populations are separated/isolated (describe how), (2) different selection pressures act in each environment, (3) different random mutations arise independently in each population, (4) natural selection favours different alleles in each population, (5) allele frequencies diverge over many generations, (6) genetic differences accumulate until the populations are reproductively isolated (they can no longer interbreed to produce fertile offspring) = they have become separate species. Always use the term "allele frequency" and link to natural selection.</div>
+
+<div class="real-world">The formation of antibiotic-resistant strains of bacteria (e.g., MRSA) is a real-time example of directional natural selection. Random mutations that confer resistance arise by chance. When antibiotics are applied, resistant bacteria survive and reproduce (selection pressure), passing the resistance allele to offspring. Over many generations, the frequency of resistance alleles increases in the bacterial population. This is NOT the bacteria "adapting" to the antibiotic in a Lamarckian sense &mdash; the variation already existed before the antibiotic was applied.</div>
 
 </div>
 </body>

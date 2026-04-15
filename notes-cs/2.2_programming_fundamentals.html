@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 2.2 — Programming Fundamentals</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>2.2 Programming Fundamentals</h1>
+<p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 2</p>
+
+<h2>2.2.1 Data Types and Casting</h2>
+<table>
+    <tr><th>Type</th><th>Description</th><th>OCR Pseudocode</th><th>Python Example</th></tr>
+    <tr><td><strong>Integer</strong></td><td>Whole number (positive, negative, or zero). No decimal point.</td><td><code>score = 0</code></td><td><code>age = 17</code></td></tr>
+    <tr><td><strong>Real (Float)</strong></td><td>Number with a decimal point (including x.0).</td><td><code>price = 3.99</code></td><td><code>pi = 3.14159</code></td></tr>
+    <tr><td><strong>Boolean</strong></td><td>Only two possible values: <code>True</code> or <code>False</code>.</td><td><code>gameOver = False</code></td><td><code>logged_in = True</code></td></tr>
+    <tr><td><strong>Character</strong></td><td>A single character (letter, digit, symbol, or space).</td><td><code>grade = 'A'</code></td><td><code>initial = 'J'</code></td></tr>
+    <tr><td><strong>String</strong></td><td>A sequence of zero or more characters. Text data.</td><td><code>name = "Jamie"</code></td><td><code>message = "Hello World"</code></td></tr>
+</table>
+
+<h3>Casting (Type Conversion)</h3>
+<p><strong>Casting</strong> converts a value from one data type to another. This is necessary when, for example, you read user input (which is always a string) and need to use it as a number.</p>
+<pre>
+// OCR Pseudocode / Python:
+int("5")       // String "5" → Integer 5
+str(42)        // Integer 42 → String "42"
+float("3.14")  // String "3.14" → Real 3.14
+int(7.9)       // Real 7.9 → Integer 7 (truncates, does not round)
+bool(1)        // Integer 1 → Boolean True
+bool(0)        // Integer 0 → Boolean False
+
+// Common use: reading numeric input
+age = int(input("Enter your age: "))   // input() returns a string; int() converts it
+</pre>
+
+<h2>2.2.2 Variables, Constants, and Operators</h2>
+
+<h3>Variables and Constants</h3>
+<ul>
+    <li><strong>Variable:</strong> A named storage location in memory whose value <strong>can change</strong> during program execution. E.g., <code>score = 0</code> then later <code>score = score + 10</code>.</li>
+    <li><strong>Constant:</strong> A named value that <strong>cannot change</strong> once set. Declared with <code>const</code> in OCR pseudocode. E.g., <code>const TAX_RATE = 0.2</code>. Using constants makes code more readable and easier to maintain (change the value in one place, not everywhere it is used).</li>
+    <li><strong>Local variable:</strong> Exists only inside the subroutine where it is declared. Cannot be accessed from outside. Destroyed when the subroutine finishes.</li>
+    <li><strong>Global variable:</strong> Accessible from anywhere in the program. Persists for the entire program's lifetime. Should be avoided where possible (harder to debug, risk of unintended modification).</li>
+</ul>
+
+<h3>Operators</h3>
+<table>
+    <tr><th>Category</th><th>Operators</th><th>Examples</th></tr>
+    <tr><td><strong>Arithmetic</strong></td><td><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>MOD</code> <code>DIV</code> <code>^</code></td><td><code>7 MOD 3 = 1</code> (remainder). <code>7 DIV 3 = 2</code> (integer division, discards remainder). <code>2^8 = 256</code> (exponentiation).</td></tr>
+    <tr><td><strong>Comparison</strong></td><td><code>==</code> <code>!=</code> <code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code></td><td><code>x == 5</code> (is x equal to 5?). <code>age >= 18</code>. Result is always Boolean (True/False).</td></tr>
+    <tr><td><strong>Boolean / Logical</strong></td><td><code>AND</code> <code>OR</code> <code>NOT</code></td><td><code>x > 5 AND x < 10</code> (both must be true). <code>a OR b</code> (at least one true). <code>NOT loggedIn</code> (inverts).</td></tr>
+</table>
+
+<p><strong>MOD and DIV are frequently examined:</strong></p>
+<pre>
+17 MOD 5 = 2    (17 / 5 = 3 remainder 2)
+17 DIV 5 = 3    (17 / 5 = 3, discard the remainder)
+20 MOD 4 = 0    (20 / 4 = 5, no remainder → divisible!)
+
+// Practical uses:
+// MOD: check if a number is even: n MOD 2 == 0
+// MOD: extract last digit: 1234 MOD 10 = 4
+// DIV: extract tens digit: (1234 DIV 10) MOD 10 = 3
+// MOD: wrap around: index MOD arrayLength (circular buffer)
+</pre>
+
+<h2>2.2.3 Sequence, Selection, and Iteration</h2>
+
+<table>
+    <tr><th>Construct</th><th>Description</th><th>When to Use</th><th>OCR Pseudocode</th></tr>
+    <tr><td><strong>Sequence</strong></td><td>Statements execute <strong>top to bottom</strong> in order, one after another</td><td>When steps must happen in a specific order</td><td><code>x = 5<br>y = x + 3<br>print(y)</code></td></tr>
+    <tr><td><strong>IF selection</strong></td><td>Different code runs depending on whether a condition is True or False</td><td>When the program must make a decision</td><td><code>if score > 50 then<br>&nbsp;&nbsp;print("Pass")<br>else<br>&nbsp;&nbsp;print("Fail")<br>endif</code></td></tr>
+    <tr><td><strong>ELIF (else if)</strong></td><td>Chain multiple conditions</td><td>When there are more than two possible outcomes</td><td><code>if score >= 70 then<br>&nbsp;&nbsp;print("A")<br>elseif score >= 50 then<br>&nbsp;&nbsp;print("B")<br>else<br>&nbsp;&nbsp;print("C")<br>endif</code></td></tr>
+    <tr><td><strong>SWITCH / CASE</strong></td><td>Tests a variable against several specific values</td><td>When comparing one variable to many known values</td><td><code>switch grade:<br>&nbsp;&nbsp;case 'A': print("Excellent")<br>&nbsp;&nbsp;case 'B': print("Good")<br>&nbsp;&nbsp;default: print("Other")<br>endswitch</code></td></tr>
+    <tr><td><strong>FOR loop</strong></td><td>Repeats a <strong>fixed, known</strong> number of times</td><td>When you know in advance how many iterations are needed</td><td><code>for i = 1 to 10<br>&nbsp;&nbsp;print(i)<br>next i</code></td></tr>
+    <tr><td><strong>WHILE loop</strong></td><td>Repeats <strong>while</strong> condition is True. Checks condition <strong>before</strong> each iteration.</td><td>When the number of iterations is unknown; may run 0 times</td><td><code>while pass != "abc"<br>&nbsp;&nbsp;pass = input("Try: ")<br>endwhile</code></td></tr>
+    <tr><td><strong>DO-UNTIL</strong></td><td>Repeats <strong>until</strong> condition becomes True. Checks condition <strong>after</strong> each iteration.</td><td>When the loop body must run <strong>at least once</strong></td><td><code>do<br>&nbsp;&nbsp;x = int(input("> "))<br>until x > 0</code></td></tr>
+</table>
+
+<div class="exam-tip">Use <strong>FOR</strong> when the count is known in advance; <strong>WHILE</strong> when it is not (and the loop may not run at all); <strong>DO-UNTIL</strong> when the body must execute at least once (e.g., input validation &mdash; ask the user, then check). The key difference between WHILE and DO-UNTIL: WHILE checks the condition <em>before</em> executing; DO-UNTIL checks <em>after</em>.</div>
+
+<h2>2.2.4 Arrays (1D and 2D)</h2>
+<div class="definition">
+    An <strong>array</strong> is a fixed-size, ordered collection of elements of the <strong>same data type</strong>, stored in contiguous memory. Elements are accessed by their <strong>index</strong> (position number). OCR arrays are <strong>zero-indexed</strong> &mdash; the first element is at index 0.
+</div>
+<pre>
+// 1D Array
+array scores[5]           // declare array of 5 elements
+scores[0] = 95            // assign value to first element
+scores[4] = 72            // assign value to last element (index 4, not 5!)
+
+for i = 0 to 4            // loop through all elements
+    print(scores[i])
+next i
+
+// 2D Array (table/grid — rows and columns)
+array grid[3][4]           // 3 rows, 4 columns
+grid[1][2] = 7             // row 1, column 2
+
+// 2D array as a database table:
+// Each row = a record; each column = a field
+// students[0][0] = "Alice"  (row 0, name field)
+// students[0][1] = 17       (row 0, age field)
+
+// Nested loop to process all elements of a 2D array:
+for row = 0 to 2
+    for col = 0 to 3
+        print(grid[row][col])
+    next col
+next row
+</pre>
+
+<h2>2.2.5 String Manipulation</h2>
+<table>
+    <tr><th>Operation</th><th>Description</th><th>Example</th><th>Python</th></tr>
+    <tr><td><strong>Length</strong></td><td>Number of characters in a string</td><td><code>len("Hello") → 5</code></td><td><code>len("Hello")</code></td></tr>
+    <tr><td><strong>Substring</strong></td><td>Extract part of a string</td><td><code>"Hello".substring(1,3) → "ell"</code></td><td><code>"Hello"[1:4]</code></td></tr>
+    <tr><td><strong>Upper / Lower</strong></td><td>Convert case</td><td><code>"hello".upper() → "HELLO"</code></td><td><code>"hello".upper()</code></td></tr>
+    <tr><td><strong>Concatenation</strong></td><td>Join strings together using <code>+</code></td><td><code>"Hello" + " " + "World" → "Hello World"</code></td><td><code>"Hello" + " World"</code></td></tr>
+    <tr><td><strong>ASCII conversion</strong></td><td>Character to/from numeric code</td><td><code>ASC('A') → 65</code> / <code>CHR(65) → 'A'</code></td><td><code>ord('A')</code> / <code>chr(65)</code></td></tr>
+</table>
+
+<h2>2.2.6 File Handling, Records, SQL, and Random Numbers</h2>
+
+<h3>File Handling</h3>
+<pre>
+// Reading from a file
+myFile = open("data.txt")          // open file
+data = myFile.readLine()           // read one line
+myFile.close()                     // always close the file
+
+// Writing to a file
+myFile = open("output.txt")
+myFile.writeLine("Hello World")    // write a line
+myFile.close()
+
+// Python equivalent:
+with open("data.txt", "r") as f:   // "r" = read mode
+    for line in f:
+        print(line.strip())
+
+with open("output.txt", "w") as f: // "w" = write mode (overwrites)
+    f.write("Hello World\n")
+</pre>
+
+<h3>Records</h3>
+<p>A <strong>record</strong> is a collection of related fields of <strong>different data types</strong> grouped together (unlike an array, which stores elements of the same type).</p>
+<pre>
+record Student
+    name : string
+    age : integer
+    grade : character
+endrecord
+
+// Create and use a record:
+pupil1 = new Student()
+pupil1.name = "Alice"
+pupil1.age = 17
+pupil1.grade = 'A'
+</pre>
+
+<h3>SQL (Structured Query Language)</h3>
+<pre>
+// SELECT: retrieve specific columns FROM a table WHERE conditions are met
+SELECT name, age FROM students WHERE age > 16
+SELECT * FROM products WHERE price < 10.00 AND category = 'Electronics'
+SELECT name, score FROM results WHERE score >= 50 ORDER BY score DESC
+
+// Key clauses:
+// SELECT: which columns to return (* = all)
+// FROM: which table to query
+// WHERE: filter rows by condition
+// ORDER BY: sort results (ASC = ascending, DESC = descending)
+</pre>
+
+<h3>Random Numbers</h3>
+<pre>
+x = random(1, 10)    // generates a random integer between 1 and 10 inclusive
+
+// Python:
+import random
+x = random.randint(1, 10)    // random integer 1-10
+y = random.random()          // random float 0.0 to 1.0
+</pre>
+
+<h2>2.2.7 Subroutines &mdash; Procedures and Functions</h2>
+
+<table>
+    <tr><th>Feature</th><th>Procedure</th><th>Function</th></tr>
+    <tr><td><strong>Returns a value?</strong></td><td><strong>No</strong> &mdash; performs an action but does not return a value</td><td><strong>Yes</strong> &mdash; performs a calculation and returns a result using <code>return</code></td></tr>
+    <tr><td><strong>How called</strong></td><td>Called by name as a statement: <code>greet("Jamie")</code></td><td>Called within an expression: <code>result = square(5)</code></td></tr>
+    <tr><td><strong>Example</strong></td><td><code>procedure greet(name)<br>&nbsp;&nbsp;print("Hello, " + name)<br>endprocedure</code></td><td><code>function square(n)<br>&nbsp;&nbsp;return n * n<br>endfunction</code></td></tr>
+</table>
+
+<h3>Parameters and Arguments</h3>
+<ul>
+    <li><strong>Parameter:</strong> The variable name in the subroutine definition (e.g., <code>name</code> in <code>procedure greet(name)</code>). It is a placeholder.</li>
+    <li><strong>Argument:</strong> The actual value passed when the subroutine is called (e.g., <code>"Jamie"</code> in <code>greet("Jamie")</code>).</li>
+</ul>
+
+<h3>Benefits of Subroutines</h3>
+<ul>
+    <li><strong>Code reuse:</strong> Write once, call many times from different places. No copy-paste duplication.</li>
+    <li><strong>Easier to debug:</strong> Each subroutine can be tested independently in isolation.</li>
+    <li><strong>Improved readability:</strong> The main program reads like a high-level overview; details are in subroutines.</li>
+    <li><strong>Team development:</strong> Different programmers can work on different subroutines simultaneously.</li>
+    <li><strong>Easier maintenance:</strong> Changing the subroutine's implementation automatically updates everywhere it is called.</li>
+</ul>
+
+<div class="exam-tip"><strong>Procedure = no return value</strong> (it does something but gives nothing back). <strong>Function = returns a value</strong> (it calculates something and gives the result back to the caller). Arrays are <strong>zero-indexed</strong> (first element at index 0, last at index length-1). Use <strong>FOR</strong> when count is known; <strong>WHILE</strong> when it is not. <strong>SQL:</strong> SELECT picks columns, FROM names the table, WHERE filters rows.</div>
+
+</div>
+</body>
+</html>

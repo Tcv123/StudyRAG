@@ -5,106 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topic 6 — Further Mechanics</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: #1a1a2e;
-            background: #ffffff;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 2rem;
-            color: #1a1a2e;
-            border-bottom: 3px solid #2563eb;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #1e40af;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            padding-left: 10px;
-            border-left: 4px solid #2563eb;
-        }
-        h3 {
-            font-size: 1.2rem;
-            color: #374151;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 12px;
-        }
-        .definition {
-            background: #eff6ff;
-            border-left: 4px solid #2563eb;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip {
-            background: #fffbeb;
-            border-left: 4px solid #f59e0b;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip::before {
-            content: "Exam Tip: ";
-            font-weight: 700;
-            color: #d97706;
-        }
-        .equation {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 12px 20px;
-            margin: 12px 0;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            text-align: center;
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-        th, td {
-            border: 1px solid #d1d5db;
-            padding: 10px 14px;
-            text-align: left;
-        }
-        th {
-            background: #f1f5f9;
-            font-weight: 600;
-            color: #1e40af;
-        }
-        tr:nth-child(even) {
-            background: #f9fafb;
-        }
-        ul, ol {
-            margin: 10px 0 15px 25px;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        strong {
-            color: #1e293b;
-        }
-        @media print {
-            body { padding: 20px; }
-            .exam-tip, .definition { break-inside: avoid; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+        h2 { font-size: 1.5rem; color: #1e40af; margin-top: 35px; margin-bottom: 15px; padding-left: 10px; border-left: 4px solid #2563eb; }
+        h3 { font-size: 1.2rem; color: #374151; margin-top: 20px; margin-bottom: 10px; }
+        p { margin-bottom: 12px; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #d97706; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #16a34a; display: block; margin-bottom: 5px; }
+        .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .real-world::before { content: "Real-World Application: "; font-weight: 700; color: #7c3aed; display: block; margin-bottom: 5px; }
+        .equation { background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 20px; margin: 12px 0; border-radius: 6px; font-size: 1.1rem; text-align: center; font-family: 'Cambria Math', 'Times New Roman', serif; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
+        th { background: #f1f5f9; font-weight: 600; color: #1e40af; }
+        tr:nth-child(even) { background: #f9fafb; }
+        ul, ol { margin: 10px 0 15px 25px; }
+        li { margin-bottom: 6px; }
+        strong { color: #1e293b; }
+        @media print { body { padding: 20px; } .exam-tip, .definition, .worked-example, .real-world { break-inside: avoid; } }
     </style>
 </head>
 <body>
@@ -115,22 +38,45 @@
 <h2>6.1 Impulse and Momentum</h2>
 
 <div class="definition">
-    <strong>Momentum (p)</strong> is the product of an object's mass and velocity. It is a vector quantity.<br>
-    <strong>p = mv</strong> &nbsp; (unit: kg m s⁻¹ or N s)
+    <strong>Momentum (p)</strong> is the product of an object's mass and velocity. It is a vector quantity, meaning it has both magnitude and direction. The direction of momentum is the same as the direction of velocity.<br>
+    <strong>p = mv</strong> &nbsp; (unit: kg m s<sup>-1</sup> or N s)
 </div>
 
+<p>Momentum is one of the most fundamental conserved quantities in physics. Unlike kinetic energy, momentum is always conserved in all types of collisions (provided no external forces act). The concept of momentum is central to understanding how forces change the motion of objects.</p>
+
 <h3>Impulse</h3>
-<p><strong>Impulse</strong> is defined as the change in momentum of an object. It equals the product of the resultant force and the time for which it acts.</p>
+<p><strong>Impulse</strong> is defined as the change in momentum of an object. It equals the product of the resultant force and the time for which it acts. Impulse is also a vector quantity, and its direction is the same as the direction of the resultant force.</p>
 
 <div class="equation">Impulse = F&Delta;t = &Delta;p = mv &minus; mu</div>
 
-<p>The unit of impulse is N s (equivalent to kg m s⁻¹).</p>
+<p>The unit of impulse is N s (equivalent to kg m s<sup>-1</sup>). This equivalence can be shown by dimensional analysis: 1 N s = 1 (kg m s<sup>-2</sup>)(s) = 1 kg m s<sup>-1</sup>.</p>
+
+<p>Newton's second law can be written in its more general form using impulse:</p>
+<div class="equation">F = &Delta;p / &Delta;t</div>
+<p>This form is more general than F = ma because it applies even when the mass of the object is changing (e.g., a rocket expelling fuel).</p>
 
 <h3>Force-Time Graphs</h3>
 <p>On a force-time graph, the <strong>area under the curve</strong> equals the impulse (change in momentum). This applies whether the force is constant or varying.</p>
-<p>For a variable force, you estimate the area using counting squares or the trapezium rule.</p>
+<ul>
+    <li>For a constant force, the area is a simple rectangle: impulse = F &times; &Delta;t</li>
+    <li>For a linearly varying force, use the area of a triangle or trapezium</li>
+    <li>For a variable force, estimate the area using counting squares or the trapezium rule</li>
+</ul>
 
-<div class="exam-tip">If a question gives you a force-time graph, calculate the area under it to find the impulse. Remember to include units (N s).</div>
+<div class="worked-example">
+    A tennis ball of mass 58 g is travelling at 20 m s<sup>-1</sup> towards a racket. After being hit, it travels at 30 m s<sup>-1</sup> in the opposite direction. The contact time is 5.0 ms. Calculate the average force on the ball.<br><br>
+    <strong>Solution:</strong> Taking the initial direction as positive:<br>
+    u = +20 m s<sup>-1</sup>, v = -30 m s<sup>-1</sup> (reversed direction), m = 0.058 kg<br>
+    &Delta;p = mv - mu = 0.058 &times; (-30) - 0.058 &times; (20) = -1.74 - 1.16 = -2.90 N s<br>
+    F = &Delta;p / &Delta;t = -2.90 / 0.005 = <strong>-580 N</strong><br>
+    The magnitude of the average force is 580 N, directed away from the racket (in the direction the ball leaves).
+</div>
+
+<div class="real-world">
+    <strong>Crumple zones</strong> in cars are designed to increase the time of collision during a crash. Since impulse = F&Delta;t and the change in momentum is fixed (determined by the initial speed), increasing &Delta;t reduces the average force F on the passengers. Airbags and seatbelts work on the same principle. A collision lasting 0.1 s produces one-tenth the force of one lasting 0.01 s, for the same momentum change.
+</div>
+
+<div class="exam-tip">If a question gives you a force-time graph, calculate the area under it to find the impulse. Always include units (N s). Be careful with direction: if an object bounces back, the change in momentum is the sum of the magnitudes of the initial and final momenta (since the velocity reverses sign).</div>
 
 <h2>6.2 Conservation of Momentum</h2>
 
@@ -138,22 +84,34 @@
     <strong>The principle of conservation of linear momentum:</strong> In a closed system (no external resultant force), the total momentum before an interaction equals the total momentum after the interaction.
 </div>
 
+<p>This principle arises directly from Newton's third law. When two objects interact, they exert equal and opposite forces on each other for the same time. Therefore, the impulse on object A is equal and opposite to the impulse on object B, meaning the total momentum of the system is unchanged.</p>
+
+<div class="worked-example">
+    A 2.0 kg trolley moving at 3.0 m s<sup>-1</sup> collides with a stationary 1.0 kg trolley. After the collision, the 2.0 kg trolley moves at 1.0 m s<sup>-1</sup> in the same direction. Find the velocity of the 1.0 kg trolley after the collision and determine whether the collision is elastic.<br><br>
+    <strong>Solution:</strong><br>
+    Total momentum before = 2.0 &times; 3.0 + 1.0 &times; 0 = 6.0 kg m s<sup>-1</sup><br>
+    Total momentum after = 2.0 &times; 1.0 + 1.0 &times; v<br>
+    By conservation: 6.0 = 2.0 + v, so v = <strong>4.0 m s<sup>-1</sup></strong><br><br>
+    KE before = &frac12; &times; 2.0 &times; 3.0<sup>2</sup> = 9.0 J<br>
+    KE after = &frac12; &times; 2.0 &times; 1.0<sup>2</sup> + &frac12; &times; 1.0 &times; 4.0<sup>2</sup> = 1.0 + 8.0 = 9.0 J<br>
+    KE before = KE after, so the collision is <strong>elastic</strong>.
+</div>
+
 <h3>Conservation of Momentum in 2D</h3>
-<p>In two dimensions, momentum is conserved independently in each perpendicular direction. You resolve momentum into x and y components:</p>
+<p>In two dimensions, momentum is conserved independently in each perpendicular direction. You resolve momentum into x and y components and apply conservation separately:</p>
 <ul>
     <li>Total x-momentum before = Total x-momentum after</li>
     <li>Total y-momentum before = Total y-momentum after</li>
 </ul>
+
 <!-- SVG: 2D Momentum Vector Diagram -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 440 220" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <marker id="mv1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
             <marker id="mv2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
-            <marker id="mv3" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#16A34A"/></marker>
         </defs>
         <text x="220" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">2D Collision: Momentum Conservation</text>
-
         <!-- Before collision -->
         <text x="110" y="48" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle" font-weight="600">Before</text>
         <circle cx="80" cy="110" r="14" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1.5"/>
@@ -163,23 +121,30 @@
         <circle cx="170" cy="110" r="12" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
         <text x="170" y="114" font-family="system-ui" font-size="10" fill="#DC2626" text-anchor="middle">m2</text>
         <text x="170" y="135" font-family="system-ui" font-size="9" fill="#DC2626" text-anchor="middle">(at rest)</text>
-
         <!-- After collision -->
         <text x="330" y="48" font-family="system-ui" font-size="12" fill="#64748b" text-anchor="middle" font-weight="600">After</text>
         <circle cx="280" cy="110" r="4" fill="#64748b"/>
-        <!-- m1 goes at angle up -->
         <line x1="280" y1="110" x2="360" y2="65" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#mv1)"/>
         <text x="330" y="72" font-family="system-ui" font-size="10" fill="#1a73e8">p1'</text>
         <circle cx="365" cy="62" r="10" fill="#1a73e8" opacity="0.2" stroke="#1a73e8" stroke-width="1.5"/>
-        <!-- m2 goes at angle down -->
         <line x1="280" y1="110" x2="380" y2="155" stroke="#DC2626" stroke-width="2.5" marker-end="url(#mv2)"/>
         <text x="345" y="148" font-family="system-ui" font-size="10" fill="#DC2626">p2'</text>
         <circle cx="385" cy="158" r="10" fill="#DC2626" opacity="0.2" stroke="#DC2626" stroke-width="1.5"/>
-
-        <!-- Vector triangle -->
-        <text x="220" y="180" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">x-momentum: p1 = p1'cosθ1 + p2'cosθ2</text>
-        <text x="220" y="195" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">y-momentum: 0 = p1'sinθ1 - p2'sinθ2</text>
+        <text x="220" y="180" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">x-momentum: p1 = p1'cos&theta;1 + p2'cos&theta;2</text>
+        <text x="220" y="195" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">y-momentum: 0 = p1'sin&theta;1 - p2'sin&theta;2</text>
     </svg>
+</div>
+
+<div class="worked-example">
+    A snooker ball of mass 0.16 kg moving at 2.0 m s<sup>-1</sup> strikes a stationary ball of equal mass. After the collision, the first ball moves at 1.2 m s<sup>-1</sup> at 40&deg; to the original direction. Find the speed and direction of the second ball.<br><br>
+    <strong>Solution:</strong><br>
+    x-direction: 0.16 &times; 2.0 = 0.16 &times; 1.2 cos 40&deg; + 0.16 &times; v cos &theta;<br>
+    0.32 = 0.147 + 0.16v cos &theta;<br>
+    0.16v cos &theta; = 0.173 ... (1)<br><br>
+    y-direction: 0 = 0.16 &times; 1.2 sin 40&deg; - 0.16 &times; v sin &theta;<br>
+    0.16v sin &theta; = 0.123 ... (2)<br><br>
+    Dividing (2) by (1): tan &theta; = 0.123 / 0.173 = 0.714, so &theta; = <strong>35.5&deg;</strong><br>
+    From (1): v = 0.173 / (0.16 &times; cos 35.5&deg;) = <strong>1.33 m s<sup>-1</sup></strong>
 </div>
 
 <p>Vector diagrams can be drawn to show that the total momentum vectors form a closed triangle (or polygon) if momentum is conserved.</p>
@@ -200,7 +165,7 @@
     <tr>
         <td>Kinetic Energy</td>
         <td>Conserved</td>
-        <td>Not conserved (some KE converted to other forms)</td>
+        <td>Not conserved (some KE converted to heat, sound, deformation)</td>
     </tr>
     <tr>
         <td>Total Energy</td>
@@ -209,51 +174,52 @@
     </tr>
     <tr>
         <td>Examples</td>
-        <td>Collisions between gas molecules, hard spheres</td>
-        <td>Most real-world collisions, car crashes</td>
+        <td>Collisions between gas molecules, hard spheres at low speeds</td>
+        <td>Most real-world collisions, car crashes, catching a ball</td>
     </tr>
 </table>
 
-<p>A <strong>perfectly inelastic</strong> (totally inelastic) collision is one where the objects stick together after impact. Maximum kinetic energy is lost (consistent with momentum conservation).</p>
+<p>A <strong>perfectly inelastic</strong> (totally inelastic) collision is one where the objects stick together after impact. Maximum kinetic energy is lost (consistent with momentum conservation). An <strong>explosion</strong> is the reverse of a perfectly inelastic collision: objects initially together move apart, with KE increasing (converted from chemical or other stored energy).</p>
 
-<div class="exam-tip">To check if a collision is elastic, calculate the total KE before and after. If they are equal, it is elastic. Always show your working clearly.</div>
+<div class="real-world">
+    <strong>Newton's cradle</strong> demonstrates nearly elastic collisions: when one ball strikes the row, one ball flies off the other end at the same speed. If two balls strike together, two fly off. This is consistent with both conservation of momentum and conservation of kinetic energy simultaneously.
+</div>
+
+<div class="exam-tip">To check if a collision is elastic, calculate the total KE before and after. If they are equal, it is elastic. Always show your working clearly. Remember: momentum is always conserved in collisions (provided no external forces act), but kinetic energy is only conserved in elastic collisions.</div>
 
 <h2>6.3 Circular Motion</h2>
 
 <div class="definition">
-    <strong>Circular motion</strong> occurs when an object moves in a circular path at constant speed. Although speed is constant, the velocity is continuously changing direction, so the object is accelerating.
+    <strong>Circular motion</strong> occurs when an object moves in a circular path at constant speed. Although speed is constant, the velocity is continuously changing direction, so the object is accelerating. This acceleration is always directed towards the centre of the circle.
 </div>
 
 <h3>Angular Velocity</h3>
-<p><strong>Angular velocity (ω)</strong> is the rate of change of angular displacement. It is measured in radians per second (rad s⁻¹).</p>
+<p><strong>Angular velocity (&omega;)</strong> is the rate of change of angular displacement. It is measured in radians per second (rad s<sup>-1</sup>).</p>
 
-<div class="equation">ω = 2π / T = 2πf</div>
+<div class="equation">&omega; = 2&pi; / T = 2&pi;f</div>
 
-<p>where T is the period (time for one complete revolution) and f is the frequency.</p>
+<p>where T is the period (time for one complete revolution) and f is the frequency (number of revolutions per second).</p>
 
 <p>The relationship between linear speed v and angular velocity:</p>
-<div class="equation">v = ωr</div>
+<div class="equation">v = &omega;r</div>
+
+<p>Note that one complete revolution = 2&pi; radians = 360&deg;. The radian is the SI unit of angle. 1 radian is the angle subtended at the centre of a circle by an arc equal in length to the radius.</p>
 
 <!-- SVG: Circular Motion Diagram -->
 <div style="margin: 20px auto; text-align: center;">
     <svg viewBox="0 0 400 320" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <marker id="cm1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
-            <marker id="cm2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
             <marker id="cm3" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#16A34A"/></marker>
         </defs>
         <text x="200" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Circular Motion: Forces and Vectors</text>
-        <!-- Circle path -->
         <circle cx="200" cy="170" r="100" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6,4"/>
-        <!-- Centre -->
         <circle cx="200" cy="170" r="3" fill="#64748b"/>
         <text x="210" y="175" font-family="system-ui" font-size="10" fill="#64748b">Centre</text>
         <!-- Object at top -->
         <circle cx="200" cy="70" r="8" fill="#1a73e8"/>
-        <!-- Velocity (tangential) at top -->
         <line x1="200" y1="70" x2="260" y2="70" stroke="#16A34A" stroke-width="2.5" marker-end="url(#cm3)"/>
         <text x="240" y="62" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">v</text>
-        <!-- Centripetal acceleration at top -->
         <line x1="200" y1="78" x2="200" y2="130" stroke="#DC2626" stroke-width="2.5" marker-end="url(#cm1)"/>
         <text x="215" y="110" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">a</text>
         <!-- Object at right -->
@@ -270,52 +236,108 @@
         <!-- Radius -->
         <line x1="200" y1="170" x2="200" y2="75" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,3"/>
         <text x="188" y="130" font-family="system-ui" font-size="10" fill="#D97706">r</text>
-        <!-- Labels -->
         <text x="200" y="305" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">v is always tangential | a always points to centre</text>
-        <text x="50" y="55" font-family="system-ui" font-size="10" fill="#16A34A">v = ωr</text>
-        <text x="50" y="70" font-family="system-ui" font-size="10" fill="#DC2626">a = v²/r = ω²r</text>
-        <text x="50" y="85" font-family="system-ui" font-size="10" fill="#1a73e8">F = mv²/r</text>
+        <text x="50" y="55" font-family="system-ui" font-size="10" fill="#16A34A">v = &omega;r</text>
+        <text x="50" y="70" font-family="system-ui" font-size="10" fill="#DC2626">a = v&sup2;/r = &omega;&sup2;r</text>
+        <text x="50" y="85" font-family="system-ui" font-size="10" fill="#1a73e8">F = mv&sup2;/r</text>
     </svg>
 </div>
 
 <h3>Centripetal Acceleration</h3>
-<p>An object in uniform circular motion has an acceleration directed towards the centre of the circle. This is the <strong>centripetal acceleration</strong>.</p>
+<p>An object in uniform circular motion has an acceleration directed towards the centre of the circle. This is the <strong>centripetal acceleration</strong>. It arises because the velocity vector is constantly changing direction, even though its magnitude (speed) remains constant.</p>
 
-<div class="equation">a = v² / r = ω²r</div>
+<div class="equation">a = v&sup2; / r = &omega;&sup2;r</div>
+
+<p>The derivation uses the vector change in velocity over a small time interval. As the object moves through a small angle &Delta;&theta;, the change in velocity &Delta;v has magnitude v&Delta;&theta; and points towards the centre. Therefore a = &Delta;v/&Delta;t = v(&Delta;&theta;/&Delta;t) = v&omega; = v&sup2;/r.</p>
 
 <h3>Centripetal Force</h3>
-<p>The <strong>centripetal force</strong> is the resultant force directed towards the centre of the circle that causes circular motion. It is not a new type of force — it is provided by existing forces (tension, gravity, friction, normal reaction, etc.).</p>
+<p>The <strong>centripetal force</strong> is the resultant force directed towards the centre of the circle that causes circular motion. It is not a new type of force -- it is provided by existing forces (tension, gravity, friction, normal reaction, etc.).</p>
 
-<div class="equation">F = mv² / r = mω²r</div>
+<div class="equation">F = mv&sup2; / r = m&omega;&sup2;r</div>
 
-<div class="exam-tip">Never label a force as "centripetal force" on a free-body diagram. Instead, identify the real force providing the centripetal force (e.g., tension, weight, friction).</div>
+<div class="exam-tip">Never label a force as "centripetal force" on a free-body diagram. Instead, identify the real force providing the centripetal force (e.g., tension, weight, friction, normal contact force). The centripetal force is the resultant of the real forces directed towards the centre.</div>
 
 <h3>Examples of Circular Motion</h3>
+
+<table>
+    <tr>
+        <th>Scenario</th>
+        <th>What provides the centripetal force</th>
+    </tr>
+    <tr>
+        <td>Car going around a flat bend</td>
+        <td>Friction between tyres and road</td>
+    </tr>
+    <tr>
+        <td>Satellite orbiting Earth</td>
+        <td>Gravitational force</td>
+    </tr>
+    <tr>
+        <td>Ball on a string (horizontal circle)</td>
+        <td>Horizontal component of tension</td>
+    </tr>
+    <tr>
+        <td>Electron orbiting a nucleus (classical model)</td>
+        <td>Electrostatic (Coulomb) force</td>
+    </tr>
+    <tr>
+        <td>Clothes in a washing machine drum</td>
+        <td>Normal reaction from the drum wall</td>
+    </tr>
+    <tr>
+        <td>Banked track (no friction)</td>
+        <td>Horizontal component of normal reaction</td>
+    </tr>
+</table>
+
+<div class="worked-example">
+    A car of mass 1200 kg travels around a flat circular bend of radius 50 m at a constant speed of 15 m s<sup>-1</sup>. Calculate: (a) the centripetal acceleration, (b) the centripetal force, (c) the minimum coefficient of friction needed.<br><br>
+    <strong>Solution:</strong><br>
+    (a) a = v&sup2;/r = 15&sup2;/50 = <strong>4.5 m s<sup>-2</sup></strong><br>
+    (b) F = ma = 1200 &times; 4.5 = <strong>5400 N</strong><br>
+    (c) Friction provides the centripetal force: &mu;mg = mv&sup2;/r<br>
+    &mu; = v&sup2;/(rg) = 225/(50 &times; 9.81) = <strong>0.46</strong>
+</div>
 
 <h3>Banked Tracks</h3>
 <p>On a banked track (no friction), the horizontal component of the normal reaction provides the centripetal force:</p>
 <ul>
-    <li>Vertical: N cos θ = mg</li>
-    <li>Horizontal: N sin θ = mv²/r</li>
-    <li>Dividing: tan θ = v²/(rg)</li>
+    <li>Vertical: N cos &theta; = mg</li>
+    <li>Horizontal: N sin &theta; = mv&sup2;/r</li>
+    <li>Dividing: tan &theta; = v&sup2;/(rg)</li>
 </ul>
-<p>The banking angle determines the speed at which no friction is needed to maintain circular motion.</p>
+<p>The banking angle determines the speed at which no friction is needed to maintain circular motion. At speeds above or below this design speed, friction is needed to prevent the vehicle sliding outward or inward respectively.</p>
+
+<div class="real-world">
+    <strong>Velodrome tracks</strong> and <strong>NASCAR oval circuits</strong> are banked so that cyclists and cars can travel at high speeds without relying solely on friction. The banking angle is calculated using tan &theta; = v&sup2;/(rg). Aircraft also bank when turning: the horizontal component of the lift force provides the centripetal force.
+</div>
 
 <h3>Vertical Circles</h3>
-<p>For an object on a string in a vertical circle:</p>
+<p>For an object on a string in a vertical circle, the centripetal force equation must account for the weight component:</p>
 <ul>
-    <li><strong>At the top:</strong> T + mg = mv²/r (both tension and weight act towards centre)</li>
-    <li><strong>At the bottom:</strong> T − mg = mv²/r (tension acts towards centre, weight acts away)</li>
+    <li><strong>At the top:</strong> T + mg = mv&sup2;/r (both tension and weight act towards centre)</li>
+    <li><strong>At the bottom:</strong> T - mg = mv&sup2;/r (tension acts towards centre, weight acts away)</li>
+    <li><strong>At the side (3 o'clock):</strong> T = mv&sup2;/r (weight is perpendicular to the radius, so does not contribute to centripetal force; it causes the speed to change instead)</li>
 </ul>
 <p>The minimum speed at the top occurs when tension T = 0:</p>
-<div class="equation">v_min = √(rg) &nbsp; (at the top)</div>
+<div class="equation">v<sub>min</sub> = &radic;(rg) &nbsp; (at the top)</div>
+
+<p>If the speed at the top drops below this value, the object will not complete the circle and will fall away from the circular path.</p>
+
+<div class="worked-example">
+    A bucket of water is swung in a vertical circle of radius 0.80 m. What is the minimum speed at the top of the circle to prevent the water falling out?<br><br>
+    <strong>Solution:</strong><br>
+    At the top, the water stays in the bucket when the centripetal acceleration equals or exceeds g:<br>
+    v<sub>min</sub> = &radic;(rg) = &radic;(0.80 &times; 9.81) = &radic;(7.85) = <strong>2.8 m s<sup>-1</sup></strong>
+</div>
 
 <h3>Conical Pendulum</h3>
-<p>A conical pendulum consists of a mass on a string that traces a horizontal circle. The string makes angle θ with the vertical.</p>
+<p>A conical pendulum consists of a mass on a string that traces a horizontal circle. The string makes angle &theta; with the vertical.</p>
 <ul>
-    <li>Vertical equilibrium: T cos θ = mg</li>
-    <li>Centripetal force: T sin θ = mω²r</li>
-    <li>Since r = L sin θ, dividing gives: tan θ = ω²r / g</li>
+    <li>Vertical equilibrium: T cos &theta; = mg</li>
+    <li>Centripetal force: T sin &theta; = m&omega;&sup2;r</li>
+    <li>Since r = L sin &theta; (where L is the string length), dividing gives: tan &theta; = &omega;&sup2;r / g</li>
+    <li>The period T = 2&pi;&radic;(L cos &theta; / g)</li>
 </ul>
 
 <table>
@@ -324,52 +346,40 @@
         <th>Symbol</th>
         <th>Unit</th>
     </tr>
-    <tr>
-        <td>Angular velocity</td>
-        <td>ω</td>
-        <td>rad s⁻¹</td>
-    </tr>
-    <tr>
-        <td>Period</td>
-        <td>T</td>
-        <td>s</td>
-    </tr>
-    <tr>
-        <td>Frequency</td>
-        <td>f</td>
-        <td>Hz</td>
-    </tr>
-    <tr>
-        <td>Centripetal acceleration</td>
-        <td>a</td>
-        <td>m s⁻²</td>
-    </tr>
-    <tr>
-        <td>Centripetal force</td>
-        <td>F</td>
-        <td>N</td>
-    </tr>
-    <tr>
-        <td>Radius</td>
-        <td>r</td>
-        <td>m</td>
-    </tr>
+    <tr><td>Angular velocity</td><td>&omega;</td><td>rad s<sup>-1</sup></td></tr>
+    <tr><td>Period</td><td>T</td><td>s</td></tr>
+    <tr><td>Frequency</td><td>f</td><td>Hz</td></tr>
+    <tr><td>Centripetal acceleration</td><td>a</td><td>m s<sup>-2</sup></td></tr>
+    <tr><td>Centripetal force</td><td>F</td><td>N</td></tr>
+    <tr><td>Radius</td><td>r</td><td>m</td></tr>
 </table>
 
-<div class="exam-tip">In vertical circle problems, always draw a free-body diagram at the point of interest. Apply Newton's second law towards the centre: net inward force = mv²/r.</div>
+<div class="exam-tip">In vertical circle problems, always draw a free-body diagram at the point of interest. Apply Newton's second law towards the centre: net inward force = mv&sup2;/r. At the top, both weight and tension act inward. At the bottom, tension acts inward but weight acts outward. The tension is greatest at the bottom and least at the top.</div>
+
+<h2>6.4 Key Relationships Summary</h2>
+
+<table>
+    <tr><th>Concept</th><th>Key Equation</th><th>When to Use</th></tr>
+    <tr><td>Momentum</td><td>p = mv</td><td>All collision and interaction problems</td></tr>
+    <tr><td>Impulse</td><td>F&Delta;t = &Delta;p</td><td>When force and time are given, or force-time graph</td></tr>
+    <tr><td>Newton's 2nd law (general)</td><td>F = &Delta;p/&Delta;t</td><td>When mass changes (rockets, etc.)</td></tr>
+    <tr><td>Angular velocity</td><td>&omega; = 2&pi;/T = 2&pi;f</td><td>Converting between period, frequency, and &omega;</td></tr>
+    <tr><td>Linear speed</td><td>v = &omega;r</td><td>Relating linear and angular quantities</td></tr>
+    <tr><td>Centripetal acceleration</td><td>a = v&sup2;/r = &omega;&sup2;r</td><td>Finding acceleration in circular motion</td></tr>
+    <tr><td>Centripetal force</td><td>F = mv&sup2;/r = m&omega;&sup2;r</td><td>Finding the net inward force</td></tr>
+    <tr><td>Banking angle</td><td>tan &theta; = v&sup2;/(rg)</td><td>Frictionless banked track problems</td></tr>
+    <tr><td>Min speed at top</td><td>v = &radic;(rg)</td><td>Vertical circles (T = 0 at top)</td></tr>
+</table>
 
 <!-- ============ CORE PRACTICAL 11 ============ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
 <h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 11: Determine the viscosity of a liquid by the falling-ball method</h2>
 
 <svg viewBox="0 0 420 560" style="max-width:500px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
-  <!-- Tall measuring cylinder -->
   <rect x="130" y="40" width="100" height="420" rx="6" fill="#FEF3C7" stroke="#1a1a2e" stroke-width="2" opacity="0.5"/>
   <rect x="130" y="40" width="100" height="420" rx="6" fill="none" stroke="#1a1a2e" stroke-width="2"/>
-  <!-- Liquid inside (glycerol) -->
   <rect x="132" y="50" width="96" height="405" rx="4" fill="#FDE68A" opacity="0.4"/>
   <text x="180" y="75" text-anchor="middle" font-family="system-ui" font-size="11" fill="#B45309" font-weight="bold">Glycerol</text>
-  <!-- Graduated markings on cylinder -->
   <line x1="230" y1="80" x2="240" y2="80" stroke="#1a1a2e" stroke-width="1"/>
   <line x1="230" y1="130" x2="240" y2="130" stroke="#1a1a2e" stroke-width="1"/>
   <line x1="230" y1="180" x2="240" y2="180" stroke="#1a1a2e" stroke-width="1"/>
@@ -378,61 +388,54 @@
   <line x1="230" y1="330" x2="240" y2="330" stroke="#1a1a2e" stroke-width="1"/>
   <line x1="230" y1="380" x2="240" y2="380" stroke="#1a1a2e" stroke-width="1"/>
   <line x1="230" y1="430" x2="240" y2="430" stroke="#1a1a2e" stroke-width="1"/>
-  <!-- Rubber band markers -->
   <rect x="125" y="150" width="110" height="4" rx="1" fill="#DC2626" opacity="0.7"/>
   <text x="260" y="155" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">Marker band A</text>
   <rect x="125" y="350" width="110" height="4" rx="1" fill="#DC2626" opacity="0.7"/>
   <text x="260" y="355" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">Marker band B</text>
-  <!-- Distance between markers -->
   <line x1="100" y1="152" x2="100" y2="352" stroke="#D97706" stroke-width="2"/>
   <polygon points="100,152 96,167 104,167" fill="#D97706"/>
   <polygon points="100,352 96,337 104,337" fill="#D97706"/>
   <text x="75" y="260" font-family="system-ui" font-size="12" fill="#D97706" font-weight="bold" text-anchor="middle" transform="rotate(-90,75,260)">Distance d</text>
-  <!-- Ball bearing at top (about to drop) -->
   <circle cx="180" cy="55" r="6" fill="#888" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="200" y="48" font-family="system-ui" font-size="10" fill="#1a1a2e">Ball bearing</text>
-  <!-- Ball bearing falling (at terminal velocity between markers) -->
   <circle cx="180" cy="250" r="6" fill="#888" stroke="#1a1a2e" stroke-width="1" opacity="0.4"/>
-  <!-- Downward arrow showing velocity -->
   <line x1="180" y1="200" x2="180" y2="300" stroke="#1a73e8" stroke-width="2" stroke-dasharray="6,4"/>
   <polygon points="180,300 175,285 185,285" fill="#1a73e8"/>
   <text x="165" y="260" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold" text-anchor="end">v<tspan font-size="8" dy="2">t</tspan></text>
-  <!-- Force arrows on ball -->
   <circle cx="340" cy="250" r="8" fill="#888" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Weight down -->
   <line x1="340" y1="260" x2="340" y2="310" stroke="#DC2626" stroke-width="2"/>
   <polygon points="340,310 336,298 344,298" fill="#DC2626"/>
   <text x="355" y="300" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">W</text>
-  <!-- Drag + upthrust up -->
   <line x1="340" y1="240" x2="340" y2="190" stroke="#16A34A" stroke-width="2"/>
   <polygon points="340,190 336,202 344,202" fill="#16A34A"/>
   <text x="360" y="200" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="bold">F<tspan font-size="7" dy="2">drag</tspan><tspan dy="-2"> + U</tspan></text>
   <text x="340" y="175" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">(At terminal velocity:</text>
   <text x="340" y="187" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">W = F<tspan font-size="7" dy="1">drag</tspan><tspan dy="-1"> + U)</tspan></text>
-  <!-- Stopwatch callout -->
   <rect x="20" y="380" width="80" height="50" rx="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="60" y="400" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="bold">Stopwatch</text>
   <text x="60" y="418" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Time ball</text>
   <text x="60" y="428" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">A &rarr; B</text>
-  <!-- Micrometer callout -->
   <rect x="280" y="380" width="100" height="50" rx="6" fill="#fff" stroke="#D97706" stroke-width="1.5"/>
   <text x="330" y="400" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="bold">Micrometer</text>
   <text x="330" y="418" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Measure ball</text>
   <text x="330" y="428" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">diameter d</text>
-  <!-- Thermometer -->
   <rect x="220" y="60" width="5" height="80" rx="2" fill="#DC2626" stroke="#1a1a2e" stroke-width="0.5"/>
   <circle cx="222" cy="145" r="5" fill="#DC2626" stroke="#1a1a2e" stroke-width="0.5"/>
   <text x="250" y="110" font-family="system-ui" font-size="9" fill="#DC2626">Thermometer</text>
-  <!-- Title -->
   <text x="210" y="500" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP11: Falling ball viscosity</text>
   <text x="210" y="520" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">(Stokes' law method)</text>
 </svg>
 
+<h3>Background Theory</h3>
+<p><strong>Viscosity (&eta;)</strong> is a measure of a fluid's resistance to flow. High-viscosity fluids (like glycerol, honey) resist motion more than low-viscosity fluids (like water). When a small sphere falls through a viscous fluid at low speed, the drag force is given by <strong>Stokes' law</strong>:</p>
+<div class="equation">F<sub>drag</sub> = 6&pi;&eta;rv</div>
+<p>This applies only for <strong>laminar (streamlined) flow</strong> at low Reynolds numbers (Re &lt; ~1). Laminar flow means the fluid moves in smooth layers without turbulence.</p>
+
 <h3>Apparatus</h3>
 <ul>
   <li>Tall measuring cylinder (or tall glass tube) filled with viscous liquid (e.g. glycerol)</li>
-  <li>Small steel ball bearings of various diameters</li>
-  <li>Micrometer screw gauge (to measure ball diameter)</li>
+  <li>Small steel ball bearings of various diameters (typically 1-5 mm)</li>
+  <li>Micrometer screw gauge (to measure ball diameter, resolution &plusmn;0.01 mm)</li>
   <li>Rubber bands or tape as distance markers on the cylinder</li>
   <li>Stopwatch (resolution &plusmn;0.01 s)</li>
   <li>Metre ruler</li>
@@ -446,7 +449,7 @@
   <li>Fill the tall measuring cylinder with glycerol. Allow it to settle and reach a uniform temperature. Record the temperature (viscosity depends strongly on temperature).</li>
   <li>Place two rubber band markers around the cylinder, well below the top (to allow the ball to reach terminal velocity before the first marker) and well above the base.</li>
   <li>Measure the distance <em>d</em> between the two markers with a ruler.</li>
-  <li>Measure the diameter of the ball bearing using a <strong>micrometer</strong> (at least 3 readings, taking the mean). Calculate the radius <em>r</em>.</li>
+  <li>Measure the diameter of the ball bearing using a <strong>micrometer</strong> (at least 3 readings in different orientations, taking the mean). Calculate the radius <em>r</em>.</li>
   <li>Gently release the ball bearing centrally at the surface of the liquid. <strong>Do not throw it.</strong></li>
   <li>Start the stopwatch as the ball passes marker A. Stop it as the ball passes marker B. Record the time <em>t</em>.</li>
   <li>Repeat at least 3 times with the same ball size and average the time.</li>
@@ -456,26 +459,30 @@
 
 <h3>Safety</h3>
 <ul>
-  <li>Glycerol is slippery &mdash; wipe up any spills immediately to prevent slipping.</li>
+  <li>Glycerol is slippery -- wipe up any spills immediately to prevent slipping.</li>
   <li>Wash hands after handling glycerol.</li>
-  <li>Use a tall, stable cylinder to prevent it toppling. Consider clamping it.</li>
+  <li>Use a tall, stable cylinder to prevent it toppling. Consider clamping it to a retort stand.</li>
   <li>Use a magnet to retrieve steel ball bearings from the glycerol rather than reaching in.</li>
 </ul>
 
 <h3>Analysis</h3>
 <p>At terminal velocity, the forces on the ball are balanced:</p>
-<div class="equation">
-  Weight = Drag force + Upthrust
-</div>
-<div class="equation">
-  (4/3)&pi;r&sup3;&rho;<sub>s</sub>g = 6&pi;&eta;rv<sub>t</sub> + (4/3)&pi;r&sup3;&rho;<sub>l</sub>g
-</div>
+<div class="equation">Weight = Drag force + Upthrust</div>
+<div class="equation">(4/3)&pi;r&sup3;&rho;<sub>s</sub>g = 6&pi;&eta;rv<sub>t</sub> + (4/3)&pi;r&sup3;&rho;<sub>l</sub>g</div>
 <p>Rearranging <strong>Stokes' law</strong>:</p>
-<div class="equation">
-  &eta; = 2r&sup2;(&rho;<sub>s</sub> &minus; &rho;<sub>l</sub>)g / (9v<sub>t</sub>)
+<div class="equation">&eta; = 2r&sup2;(&rho;<sub>s</sub> &minus; &rho;<sub>l</sub>)g / (9v<sub>t</sub>)</div>
+<p>Where &eta; = viscosity (Pa s), &rho;<sub>s</sub> = density of ball, &rho;<sub>l</sub> = density of liquid, r = radius of ball, v<sub>t</sub> = terminal velocity.</p>
+<p>Plot <strong>v<sub>t</sub></strong> against <strong>r&sup2;</strong> -- this should give a straight line through the origin with gradient = 2(&rho;<sub>s</sub> &minus; &rho;<sub>l</sub>)g / (9&eta;).</p>
+
+<div class="worked-example">
+    A steel ball bearing (density 7800 kg m<sup>-3</sup>) of diameter 3.0 mm falls through glycerol (density 1260 kg m<sup>-3</sup>) and reaches a terminal velocity of 0.28 m s<sup>-1</sup>. Calculate the viscosity of glycerol.<br><br>
+    <strong>Solution:</strong><br>
+    r = 1.5 &times; 10<sup>-3</sup> m<br>
+    &eta; = 2r&sup2;(&rho;<sub>s</sub> - &rho;<sub>l</sub>)g / (9v<sub>t</sub>)<br>
+    &eta; = 2 &times; (1.5 &times; 10<sup>-3</sup>)&sup2; &times; (7800 - 1260) &times; 9.81 / (9 &times; 0.28)<br>
+    &eta; = 2 &times; 2.25 &times; 10<sup>-6</sup> &times; 6540 &times; 9.81 / 2.52<br>
+    &eta; = <strong>0.115 Pa s</strong> (approximately 0.12 Pa s)
 </div>
-<p>Where &eta; = viscosity, &rho;<sub>s</sub> = density of ball, &rho;<sub>l</sub> = density of liquid, r = radius of ball, v<sub>t</sub> = terminal velocity.</p>
-<p>Plot <strong>v<sub>t</sub></strong> against <strong>r&sup2;</strong> &mdash; this should give a straight line through the origin with gradient = 2(&rho;<sub>s</sub> &minus; &rho;<sub>l</sub>)g / (9&eta;).</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
@@ -485,9 +492,10 @@
 <tr><td>Ball may not fall centrally (wall effects / Faxen correction)</td><td>Systematic</td><td>Release the ball in the centre; use a wide cylinder (diameter &ge; 10&times; ball diameter)</td></tr>
 <tr><td>Reaction time when using stopwatch</td><td>Random</td><td>Repeat timings and take the mean; use a longer distance between markers; consider video analysis</td></tr>
 <tr><td>Ball not perfectly spherical</td><td>Random</td><td>Measure diameter in multiple orientations; reject any deformed balls</td></tr>
+<tr><td>Parallax error when reading ball position against markers</td><td>Random</td><td>Position eyes at the same level as the marker; use a set square</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> Stokes' law (F = 6&pi;&eta;rv) only applies for <strong>laminar flow</strong> at low Reynolds numbers. If the ball is too large or falls too fast, turbulence occurs and the drag force is no longer given by Stokes' law. This is why small ball bearings in a very viscous liquid are used.</div>
+<div class="exam-tip">Stokes' law (F = 6&pi;&eta;rv) only applies for <strong>laminar flow</strong> at low Reynolds numbers. If the ball is too large or falls too fast, turbulence occurs and the drag force is no longer given by Stokes' law. This is why small ball bearings in a very viscous liquid are used. You can verify terminal velocity has been reached by checking that the time for equal distances is constant.</div>
 </div>
 
 </div>

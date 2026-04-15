@@ -11,6 +11,7 @@
   h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
   h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
   h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  h4 { font-size: 1.05rem; color: #1e3a5f; margin: 15px 0 8px 0; }
   p { margin-bottom: 12px; }
   ul, ol { margin: 10px 0 15px 25px; }
   li { margin-bottom: 6px; }
@@ -22,8 +23,11 @@
   .definition strong { color: #1e3a5f; }
   .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
   .exam-tip strong { color: #b45309; }
+  .real-world { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #15803d; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  svg text { font-family: system-ui, sans-serif; }
 </style>
 </head>
 <body>
@@ -31,847 +35,285 @@
 
 <h1>T6 — Advanced Organic Chemistry and Analysis</h1>
 
-<h2>6.1 Aromatic Chemistry — Benzene</h2>
+<!-- ==================== AROMATIC CHEMISTRY ==================== -->
+<h2>6.1 Aromatic Chemistry &mdash; Benzene</h2>
 
 <h3>Structure of Benzene</h3>
 
-<p>Benzene (C<sub>6</sub>H<sub>6</sub>) is a planar, hexagonal molecule. Kekule originally proposed alternating single and double C-C bonds, but this model has problems:</p>
-
+<p>Benzene (C<sub>6</sub>H<sub>6</sub>) is a planar, cyclic molecule. The Kekule model of alternating single and double bonds is incorrect because:</p>
 <ul>
-  <li>Benzene does not undergo addition reactions typical of alkenes (e.g. does not decolourise bromine water)</li>
-  <li>All six C-C bonds are the same length (140 pm), intermediate between a single bond (154 pm) and a double bond (134 pm)</li>
-  <li>The enthalpy of hydrogenation of benzene is less exothermic than expected for three isolated C=C bonds (by about 150 kJ mol<sup>&minus;1</sup>), indicating benzene is more stable than the Kekule structure predicts</li>
+  <li>All six C-C bonds are the <strong>same length</strong> (0.140 nm), intermediate between single (0.154 nm) and double (0.134 nm) bonds.</li>
+  <li>The <strong>enthalpy of hydrogenation</strong> is 152 kJ mol<sup>-1</sup> less exothermic than expected for three isolated C=C bonds, demonstrating extra thermodynamic stability (<strong>delocalisation energy</strong>).</li>
+  <li>Benzene undergoes <strong>electrophilic substitution</strong> rather than addition, preserving the aromatic ring stability.</li>
 </ul>
 
 <div class="definition">
-  <strong>Delocalisation model:</strong> Each carbon in benzene is sp<sup>2</sup> hybridised with one unhybridised p orbital perpendicular to the ring plane. The six p orbitals overlap sideways to form a delocalised &pi; system of electrons above and below the ring plane. This delocalisation stabilises benzene (thermodynamic stability) and makes it resist addition reactions (kinetic stability).
+  <strong>Delocalised model:</strong> Each carbon is sp<sup>2</sup> hybridised with one unhybridised p orbital perpendicular to the ring. The six p orbitals overlap sideways to form a continuous ring of delocalised &pi; electron density above and below the plane, stabilising the molecule.
 </div>
 
-<!-- SVG: Benzene Structure - Kekule vs Delocalised -->
+<!-- SVG: Benzene Structure -->
 <div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 240" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Structure of Benzene: Kekule vs Delocalised Model</text>
-
-  <!-- Kekule Structure -->
-  <text x="130" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Kekule Model</text>
-  <!-- Hexagon with alternating double bonds -->
-  <polygon points="130,70 175,96 175,148 130,174 85,148 85,96" fill="none" stroke="#1a1a2e" stroke-width="2.5"/>
-  <!-- Inner double bond lines (alternating) -->
-  <line x1="95" y1="100" x2="95" y2="144" stroke="#1a1a2e" stroke-width="2.5"/>
-  <line x1="130" y1="78" x2="167" y2="100" stroke="#1a1a2e" stroke-width="2.5"/>
-  <line x1="130" y1="166" x2="167" y2="144" stroke="#1a1a2e" stroke-width="2.5"/>
-  <!-- H atoms -->
-  <text x="130" y="62" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <text x="188" y="92" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <text x="188" y="158" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <text x="130" y="190" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <text x="68" y="158" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <text x="68" y="92" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <!-- Problems -->
-  <text x="130" y="208" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Predicts alternating bond lengths</text>
-  <text x="130" y="220" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Predicts addition reactions</text>
-  <text x="130" y="232" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Both are WRONG for benzene</text>
-
-  <!-- VS -->
-  <text x="260" y="130" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#D97706">vs</text>
-
-  <!-- Delocalised Structure -->
-  <text x="390" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Delocalised Model</text>
-  <!-- Hexagon -->
-  <polygon points="390,70 435,96 435,148 390,174 345,148 345,96" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
-  <!-- Inner circle (delocalised electrons) -->
-  <circle cx="390" cy="122" r="30" fill="none" stroke="#1a73e8" stroke-width="2" stroke-dasharray="5,3"/>
-  <!-- H atoms -->
-  <text x="390" y="62" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <text x="448" y="92" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <text x="448" y="158" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <text x="390" y="190" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <text x="328" y="158" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <text x="328" y="92" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <!-- Correct features -->
-  <text x="390" y="205" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">All bonds equal (140 pm)</text>
-  <text x="390" y="217" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">6 p-electrons delocalised above/below ring</text>
-  <text x="390" y="229" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Extra stability (~150 kJ/mol)</text>
+<svg viewBox="0 0 520 200" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Benzene: Kekule vs Delocalised Model</text>
+  <text x="130" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Kekule (incorrect)</text>
+  <polygon points="130,63 168,80 168,118 130,135 92,118 92,80" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="98" y1="84" x2="98" y2="114" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="130" y1="68" x2="162" y2="84" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="130" y1="130" x2="162" y2="114" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="130" y="158" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Predicts 2 bond lengths, addition reactions</text>
+  <text x="130" y="170" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">&Delta;H<sub>hyd</sub> should be -360 kJ/mol</text>
+  <text x="260" y="100" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#D97706">vs</text>
+  <text x="390" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Delocalised (correct)</text>
+  <polygon points="390,63 428,80 428,118 390,135 352,118 352,80" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <circle cx="390" cy="99" r="20" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <text x="390" y="158" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">All bonds equal, substitution not addition</text>
+  <text x="390" y="170" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">&Delta;H<sub>hyd</sub> = -208 kJ/mol (152 kJ more stable)</text>
+  <text x="260" y="192" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">6 p-orbitals overlap &rarr; delocalised &pi; system &rarr; extra thermodynamic stability</text>
 </svg>
 </div>
 
 <h3>Electrophilic Substitution of Benzene</h3>
 
-<p>Benzene undergoes electrophilic substitution rather than addition, because substitution preserves the stable delocalised &pi; system. The general mechanism involves:</p>
+<p>Benzene reacts with electrophiles via substitution (not addition), preserving aromatic stability. The mechanism has three steps: (1) generate the electrophile, (2) &pi; electrons attack electrophile forming a Wheland intermediate (non-aromatic, positively charged), (3) H<sup>+</sup> is lost to restore aromaticity.</p>
 
-<ol>
-  <li>An electrophile attacks the &pi; electron ring</li>
-  <li>A curly arrow from the &pi; system to the electrophile forms a new C-E bond</li>
-  <li>An intermediate carbocation (Wheland intermediate) forms, losing aromaticity temporarily</li>
-  <li>A proton is lost to regenerate the aromatic ring (H<sup>+</sup> leaves, restoring the delocalised system)</li>
-</ol>
+<h4>Nitration</h4>
+<div class="equation">C<sub>6</sub>H<sub>6</sub> + HNO<sub>3</sub> &rarr; C<sub>6</sub>H<sub>5</sub>NO<sub>2</sub> + H<sub>2</sub>O</div>
+<p><strong>Conditions:</strong> Conc. HNO<sub>3</sub> + conc. H<sub>2</sub>SO<sub>4</sub>, 50&deg;C. <strong>Electrophile:</strong> NO<sub>2</sub><sup>+</sup> (nitronium ion) from HNO<sub>3</sub> + H<sub>2</sub>SO<sub>4</sub> &rarr; NO<sub>2</sub><sup>+</sup> + HSO<sub>4</sub><sup>-</sup> + H<sub>2</sub>O. H<sub>2</sub>SO<sub>4</sub> is regenerated (catalyst).</p>
 
-<!-- SVG: Electrophilic Aromatic Substitution Mechanism -->
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Electrophilic Aromatic Substitution Mechanism</text>
-  <text x="260" y="38" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">(General mechanism for nitration, halogenation, Friedel-Crafts)</text>
-  <defs>
-    <marker id="easArrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#DC2626"/></marker>
-    <marker id="easArrow2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a73e8"/></marker>
-    <marker id="easArrowK" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker>
-  </defs>
+<h4>Friedel-Crafts Acylation</h4>
+<div class="equation">C<sub>6</sub>H<sub>6</sub> + RCOCl &rarr; C<sub>6</sub>H<sub>5</sub>COR + HCl</div>
+<p><strong>Conditions:</strong> RCOCl + AlCl<sub>3</sub> catalyst, reflux, anhydrous. <strong>Electrophile:</strong> RCO<sup>+</sup> from RCOCl + AlCl<sub>3</sub> &rarr; RCO<sup>+</sup> + AlCl<sub>4</sub><sup>-</sup>.</p>
 
-  <!-- Step 1: Benzene ring -->
-  <text x="85" y="60" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Step 1</text>
-  <polygon points="85,80 115,97 115,131 85,148 55,131 55,97" fill="none" stroke="#1a73e8" stroke-width="2"/>
-  <circle cx="85" cy="114" r="18" fill="none" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="4,2"/>
+<h4>Friedel-Crafts Alkylation</h4>
+<div class="equation">C<sub>6</sub>H<sub>6</sub> + RCl &rarr; C<sub>6</sub>H<sub>5</sub>R + HCl</div>
+<p><strong>Conditions:</strong> RCl + AlCl<sub>3</sub>. <strong>Electrophile:</strong> R<sup>+</sup>. Alkylation can lead to polysubstitution (alkyl groups activate the ring); acylation is preferred for monosubstitution.</p>
 
-  <!-- Electrophile approaching -->
-  <text x="85" y="170" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">E+</text>
+<h3>Phenol</h3>
+<p>Phenol (C<sub>6</sub>H<sub>5</sub>OH) has an -OH directly on the ring. The oxygen lone pair delocalises into the ring, increasing electron density. Consequences:</p>
+<ul>
+  <li><strong>More reactive</strong> towards electrophilic substitution than benzene (reacts with Br<sub>2</sub>(aq) at room temperature without a catalyst, giving a white precipitate of 2,4,6-tribromophenol)</li>
+  <li><strong>More acidic</strong> than aliphatic alcohols (pK<sub>a</sub> = 10). The phenoxide ion is stabilised by delocalisation. But weaker than carboxylic acids &mdash; does NOT react with Na<sub>2</sub>CO<sub>3</sub>.</li>
+</ul>
 
-  <!-- Curly arrow from ring to E+ -->
-  <path d="M85,150 Q85,155 85,162" fill="none" stroke="#DC2626" stroke-width="2" marker-end="url(#easArrow)"/>
-  <text x="110" y="162" font-family="system-ui" font-size="8" fill="#DC2626">pi electrons</text>
-  <text x="110" y="172" font-family="system-ui" font-size="8" fill="#DC2626">attack E+</text>
-
-  <!-- Arrow to step 2 -->
-  <line x1="140" y1="114" x2="170" y2="114" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#easArrowK)"/>
-
-  <!-- Step 2: Wheland intermediate (carbocation) -->
-  <text x="240" y="60" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Step 2: Intermediate</text>
-  <polygon points="240,80 270,97 270,131 240,148 210,131 210,97" fill="none" stroke="#D97706" stroke-width="2"/>
-  <!-- No circle - aromaticity broken -->
-  <!-- E bonded at top -->
-  <line x1="240" y1="80" x2="240" y2="65" stroke="#D97706" stroke-width="2"/>
-  <text x="240" y="62" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">E</text>
-  <!-- H at same carbon -->
-  <text x="252" y="62" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <!-- Positive charge -->
-  <text x="240" y="114" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#D97706">+</text>
-  <!-- Partial delocalisation shown with dashed lines -->
-  <line x1="215" y1="100" x2="215" y2="128" stroke="#D97706" stroke-width="1.5" stroke-dasharray="3,2"/>
-  <line x1="265" y1="100" x2="265" y2="128" stroke="#D97706" stroke-width="1.5" stroke-dasharray="3,2"/>
-  <text x="240" y="170" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Wheland intermediate</text>
-  <text x="240" y="182" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">(carbocation, NOT aromatic)</text>
-
-  <!-- Arrow to step 3 -->
-  <line x1="295" y1="114" x2="325" y2="114" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#easArrowK)"/>
-
-  <!-- Step 3: Proton lost, ring restored -->
-  <text x="400" y="60" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Step 3: Product</text>
-  <polygon points="400,80 430,97 430,131 400,148 370,131 370,97" fill="none" stroke="#16A34A" stroke-width="2"/>
-  <circle cx="400" cy="114" r="18" fill="none" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="4,2"/>
-  <!-- E bonded -->
-  <line x1="400" y1="80" x2="400" y2="65" stroke="#16A34A" stroke-width="2"/>
-  <text x="400" y="62" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">E</text>
-
-  <!-- H+ leaving -->
-  <path d="M415,80 Q430,65 445,65" fill="none" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#easArrow2)"/>
-  <text x="460" y="68" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">H+</text>
-  <text x="400" y="170" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">Aromatic ring restored</text>
-  <text x="400" y="182" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">(substitution, not addition)</text>
-
-  <!-- Summary box -->
-  <rect x="30" y="198" width="460" height="72" rx="6" fill="#fff8e1" stroke="#D97706" stroke-width="1"/>
-  <text x="260" y="215" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Common Electrophiles (E+):</text>
-  <text x="130" y="232" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Nitration: NO2+ (from HNO3 + H2SO4)</text>
-  <text x="380" y="232" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Halogenation: Br+ (from Br2 + AlBr3)</text>
-  <text x="130" y="248" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Alkylation: R+ (from RCl + AlCl3)</text>
-  <text x="380" y="248" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Acylation: RCO+ (from RCOCl + AlCl3)</text>
-  <text x="260" y="264" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Substitution preserves the stable delocalised pi system (addition would destroy it)</text>
-</svg>
-</div>
-
-<h3>Nitration</h3>
-
-<div class="equation">
-  C<sub>6</sub>H<sub>6</sub> + HNO<sub>3</sub> &rarr; C<sub>6</sub>H<sub>5</sub>NO<sub>2</sub> + H<sub>2</sub>O
-</div>
-
-<p>Conditions: concentrated HNO<sub>3</sub> + concentrated H<sub>2</sub>SO<sub>4</sub>, 50&deg;C (reflux). The electrophile is the nitronium ion, NO<sub>2</sub><sup>+</sup>, generated by:</p>
-
-<div class="equation">
-  HNO<sub>3</sub> + H<sub>2</sub>SO<sub>4</sub> &rarr; NO<sub>2</sub><sup>+</sup> + HSO<sub>4</sub><sup>&minus;</sup> + H<sub>2</sub>O
-</div>
+<h3>Reduction of Nitrobenzene to Phenylamine</h3>
+<div class="equation">C<sub>6</sub>H<sub>5</sub>NO<sub>2</sub> + 6[H] &rarr; C<sub>6</sub>H<sub>5</sub>NH<sub>2</sub> + 2H<sub>2</sub>O</div>
+<p><strong>Conditions:</strong> Sn + conc. HCl, reflux. Then add excess NaOH to liberate the free amine.</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> Temperature control is important in nitration. Above 50&deg;C, dinitrobenzene may form. Below 50&deg;C, the reaction is too slow. Always state the temperature in your answer.
+  <strong>Exam Tip:</strong> In electrophilic substitution mechanisms: show the electrophile generation, a curly arrow from the ring &pi; system to the electrophile, the Wheland intermediate with a + charge, and loss of H<sup>+</sup> to restore aromaticity. For Friedel-Crafts, also show regeneration of AlCl<sub>3</sub>.
 </div>
 
-<h3>Halogenation (Bromination)</h3>
-
-<div class="equation">
-  C<sub>6</sub>H<sub>6</sub> + Br<sub>2</sub> &rarr; C<sub>6</sub>H<sub>5</sub>Br + HBr
+<div class="real-world">
+  <strong>Real-World Application:</strong> Nitration of benzene derivatives produces intermediates for dyes, explosives (TNT), and pharmaceuticals. Phenol is used in the manufacture of Bakelite (the first synthetic plastic), antiseptics (TCP contains trichlorophenol), and bisphenol A (used in epoxy resins and polycarbonate plastics). Friedel-Crafts reactions are used in petroleum refining and pharmaceutical synthesis.
 </div>
 
-<p>Conditions: anhydrous AlBr<sub>3</sub> or FeBr<sub>3</sub> catalyst (Lewis acid / halogen carrier), reflux. The catalyst polarises Br<sub>2</sub> to generate Br<sup>+</sup> electrophile:</p>
-
-<div class="equation">
-  Br<sub>2</sub> + AlBr<sub>3</sub> &rarr; Br<sup>+</sup> + AlBr<sub>4</sub><sup>&minus;</sup>
-</div>
-
-<h3>Friedel-Crafts Alkylation</h3>
-
-<p>Introduces an alkyl group onto the benzene ring using a halogenoalkane (e.g. CH<sub>3</sub>Cl) with an AlCl<sub>3</sub> catalyst. The electrophile is a carbocation (CH<sub>3</sub><sup>+</sup>).</p>
-
-<div class="equation">
-  C<sub>6</sub>H<sub>6</sub> + CH<sub>3</sub>Cl &rarr; C<sub>6</sub>H<sub>5</sub>CH<sub>3</sub> + HCl &nbsp;&nbsp; (AlCl<sub>3</sub> catalyst)
-</div>
-
-<h3>Friedel-Crafts Acylation</h3>
-
-<p>Introduces an acyl group (RCO-) using an acyl chloride (e.g. CH<sub>3</sub>COCl) with AlCl<sub>3</sub> catalyst. The electrophile is the acylium ion (RCO<sup>+</sup>).</p>
-
-<div class="equation">
-  C<sub>6</sub>H<sub>6</sub> + CH<sub>3</sub>COCl &rarr; C<sub>6</sub>H<sub>5</sub>COCH<sub>3</sub> + HCl &nbsp;&nbsp; (AlCl<sub>3</sub> catalyst)
-</div>
-
-<p>Acylation is preferred over alkylation in synthesis because: (1) only monosubstitution occurs (the acyl group deactivates the ring), whereas alkylation can give polysubstitution; (2) the product ketone can be reduced to the alkyl group if needed.</p>
-
+<!-- ==================== ALDEHYDES & KETONES ==================== -->
 <h2>6.2 Aldehydes and Ketones</h2>
 
 <div class="definition">
-  <strong>Aldehyde:</strong> Contains a -CHO group (carbonyl at the end of a chain).<br>
-  <strong>Ketone:</strong> Contains a >C=O group (carbonyl within the chain).<br>
-  Both contain the carbonyl group (C=O), which is polar (&delta;+ on C, &delta;&minus; on O), making the carbon susceptible to nucleophilic addition.
+  <strong>Aldehyde (RCHO):</strong> Carbonyl at end of chain (bonded to at least one H).<br>
+  <strong>Ketone (RCOR'):</strong> Carbonyl within chain (bonded to two C atoms).<br>
+  Both contain the polar C=O (&delta;+C=O&delta;-), making the carbon electrophilic and susceptible to nucleophilic addition.
 </div>
 
-<h3>Nucleophilic Addition</h3>
+<h3>Nucleophilic Addition with HCN</h3>
+<div class="equation">RCHO + HCN &rarr; RCH(OH)CN &nbsp;&nbsp;(hydroxynitrile)</div>
+<p><strong>Conditions:</strong> NaCN/KCN in dilute H<sub>2</sub>SO<sub>4</sub> (generates HCN in situ). CN<sup>-</sup> is the nucleophile.</p>
+<p><strong>Mechanism:</strong> (1) CN<sup>-</sup> lone pair attacks &delta;+ C of C=O, &pi; bond breaks, electrons move to O, forming alkoxide RCH(CN)O<sup>-</sup>. (2) O<sup>-</sup> protonated by HCN &rarr; -OH formed, CN<sup>-</sup> regenerated.</p>
+<p><strong>Key points:</strong> Extends carbon chain by 1. Creates a chiral centre &rarr; racemic mixture. The -CN can be hydrolysed to -COOH or reduced to -CH<sub>2</sub>NH<sub>2</sub>.</p>
 
-<p>The C=O is attacked by nucleophiles. The key reaction is with HCN (hydrogen cyanide):</p>
-
-<div class="equation">
-  RCHO + HCN &rarr; RCH(OH)CN &nbsp;&nbsp; (a hydroxynitrile / cyanohydrin)
-</div>
-
-<p>Conditions: NaCN in dilute H<sub>2</sub>SO<sub>4</sub> (generates HCN in situ — safer than using HCN directly). The nucleophile is CN<sup>&minus;</sup>, which attacks the &delta;+ carbon of C=O. After CN<sup>&minus;</sup> bonds to carbon, H<sup>+</sup> from HCN protonates the resulting alkoxide to give the -OH group.</p>
-
-<p>This reaction extends the carbon chain by one and creates a new chiral centre, producing a racemic mixture (the nucleophile can attack from either side of the planar carbonyl).</p>
+<h3>Reduction with NaBH<sub>4</sub></h3>
+<p>NaBH<sub>4</sub> provides H<sup>-</sup> (hydride) as the nucleophile. Aldehydes &rarr; primary alcohols. Ketones &rarr; secondary alcohols. Conditions: NaBH<sub>4</sub> in water/methanol, room temperature.</p>
 
 <h3>Distinguishing Aldehydes from Ketones</h3>
-
 <table>
-  <tr><th>Test</th><th>Reagent/Conditions</th><th>Aldehyde Result</th><th>Ketone Result</th></tr>
-  <tr><td>Tollens' test</td><td>[Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup> (warm in water bath)</td><td>Silver mirror forms</td><td>No reaction</td></tr>
-  <tr><td>Fehling's test</td><td>Fehling's solution (heat)</td><td>Blue &rarr; brick-red precipitate (Cu<sub>2</sub>O)</td><td>No reaction</td></tr>
-  <tr><td>K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> / H<sub>2</sub>SO<sub>4</sub></td><td>Acidified dichromate (warm)</td><td>Orange &rarr; green</td><td>No reaction (stays orange)</td></tr>
+  <tr><th>Test</th><th>Reagent</th><th>Aldehyde</th><th>Ketone</th></tr>
+  <tr><td>Tollens'</td><td>[Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup>, warm</td><td>Silver mirror</td><td>No reaction</td></tr>
+  <tr><td>Fehling's</td><td>Cu<sup>2+</sup>/NaOH, heat</td><td>Blue &rarr; brick-red Cu<sub>2</sub>O precipitate</td><td>No reaction</td></tr>
+  <tr><td>K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>/H<sup>+</sup></td><td>Acidified dichromate, warm</td><td>Orange &rarr; green</td><td>No reaction</td></tr>
 </table>
 
-<h3>2,4-DNP Test (Brady's Reagent)</h3>
-
-<p>2,4-dinitrophenylhydrazine (2,4-DNP) reacts with any carbonyl compound (both aldehydes and ketones) to form a yellow/orange precipitate (a 2,4-dinitrophenylhydrazone). This confirms the presence of a C=O group. The precipitate can be recrystallised and its melting point measured to identify the specific carbonyl compound.</p>
+<p><strong>2,4-DNPH (Brady's):</strong> Both give orange/yellow precipitate (confirms C=O). <strong>Iodoform test:</strong> Positive for CH<sub>3</sub>CO- (methyl ketone) and CH<sub>3</sub>CH(OH)- groups. Yellow precipitate of CHI<sub>3</sub> with NaOH + I<sub>2</sub>.</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> 2,4-DNP tests for the presence of a carbonyl group (aldehyde OR ketone). It does not distinguish between them. Use Tollens' or Fehling's to distinguish aldehydes from ketones.
+  <strong>Exam Tip:</strong> Identification strategy: (1) 2,4-DNPH confirms C=O. (2) Tollens'/Fehling's distinguishes aldehyde from ketone. (3) Iodoform identifies CH<sub>3</sub>CO- specifically. Always state the exact observation.
 </div>
 
-<!-- SVG: Nucleophilic Addition to Carbonyl (with HCN) -->
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 270" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Nucleophilic Addition to a Carbonyl (HCN)</text>
-  <defs>
-    <marker id="naArrowR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#DC2626"/></marker>
-    <marker id="naArrowB" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a73e8"/></marker>
-    <marker id="naArrowK" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker>
-  </defs>
-
-  <!-- Step 1 -->
-  <rect x="15" y="38" width="240" height="140" rx="6" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="135" y="55" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Step 1: Nucleophilic attack</text>
-
-  <!-- C=O group -->
-  <text x="130" y="82" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">d+</text>
-  <text x="130" y="100" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#1a1a2e">C</text>
-  <line x1="130" y1="103" x2="130" y2="125" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="135" y1="103" x2="135" y2="125" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="132" y="140" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#DC2626">O</text>
-  <text x="148" y="135" font-family="system-ui" font-size="9" fill="#1a73e8">d-</text>
-  <!-- R and H on C -->
-  <text x="105" y="95" font-family="system-ui" font-size="10" fill="#1a1a2e">R</text>
-  <line x1="115" y1="92" x2="124" y2="95" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="148" y="90" font-family="system-ui" font-size="10" fill="#1a1a2e">H</text>
-  <line x1="136" y1="95" x2="145" y2="90" stroke="#1a1a2e" stroke-width="1.5"/>
-
-  <!-- CN- nucleophile -->
-  <text x="50" y="100" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a73e8">CN<tspan font-size="8" dy="-4">-</tspan></text>
-
-  <!-- Curly arrow from CN to C -->
-  <path d="M68,98 Q90,88 118,94" fill="none" stroke="#DC2626" stroke-width="2" marker-end="url(#naArrowR)"/>
-  <text x="85" y="80" font-family="system-ui" font-size="8" fill="#DC2626">lone pair</text>
-  <text x="85" y="70" font-family="system-ui" font-size="8" fill="#DC2626">attacks d+ C</text>
-
-  <!-- Curly arrow from C=O to O (pi bond breaks) -->
-  <path d="M127,108 Q118,118 122,130" fill="none" stroke="#1a73e8" stroke-width="2" marker-end="url(#naArrowB)"/>
-  <text x="180" y="120" font-family="system-ui" font-size="8" fill="#1a73e8">pi bond breaks;</text>
-  <text x="180" y="130" font-family="system-ui" font-size="8" fill="#1a73e8">electrons go to O</text>
-
-  <text x="135" y="168" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Forms alkoxide intermediate: RCH(CN)O-</text>
-
-  <!-- Arrow between steps -->
-  <line x1="260" y1="108" x2="280" y2="108" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#naArrowK)"/>
-
-  <!-- Step 2 -->
-  <rect x="285" y="38" width="220" height="140" rx="6" fill="#ffffff" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="395" y="55" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Step 2: Protonation</text>
-
-  <!-- Alkoxide picks up H+ from HCN -->
-  <text x="340" y="95" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">R</text>
-  <text x="370" y="90" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a1a2e">C</text>
-  <text x="370" y="110" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">CN</text>
-  <text x="395" y="90" font-family="system-ui" font-size="10" fill="#1a1a2e">H</text>
-  <text x="370" y="138" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">O<tspan font-size="8" dy="-4">-</tspan></text>
-  <line x1="370" y1="95" x2="370" y2="125" stroke="#1a1a2e" stroke-width="1.5"/>
-
-  <!-- H+ from HCN -->
-  <text x="440" y="135" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">+ H+</text>
-  <text x="440" y="148" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">(from HCN)</text>
-
-  <!-- Arrow down -->
-  <line x1="395" y1="152" x2="395" y2="168" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#naArrowK)"/>
-
-  <!-- Product -->
-  <text x="395" y="78" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Product: hydroxynitrile</text>
-
-  <!-- Final product box -->
-  <rect x="60" y="190" width="400" height="70" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="260" y="210" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Product: RCH(OH)CN (a hydroxynitrile / cyanohydrin)</text>
-  <text x="260" y="228" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">- Carbon chain extended by 1 carbon</text>
-  <text x="260" y="242" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">- New chiral centre created: racemic mixture (CN- attacks from either side of planar C=O)</text>
-  <text x="260" y="255" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Conditions: NaCN in dilute H2SO4 (generates HCN in situ)</text>
-</svg>
-</div>
-
+<!-- ==================== CARBOXYLIC ACIDS & DERIVATIVES ==================== -->
 <h2>6.3 Carboxylic Acids and Esters</h2>
 
-<p>Carboxylic acids contain the -COOH functional group. They are weak acids (partially dissociate in water). They react with bases, carbonates, and metals to form salts.</p>
+<p>Carboxylic acids (-COOH) are weak acids: RCOOH &#8652; RCOO<sup>-</sup> + H<sup>+</sup>. The carboxylate ion is stabilised by delocalisation over both oxygens.</p>
 
-<h3>Reactions of Carboxylic Acids</h3>
-
-<table>
-  <tr><th>Reaction</th><th>Equation</th></tr>
-  <tr><td>With NaOH</td><td>RCOOH + NaOH &rarr; RCOONa + H<sub>2</sub>O</td></tr>
-  <tr><td>With Na<sub>2</sub>CO<sub>3</sub></td><td>2RCOOH + Na<sub>2</sub>CO<sub>3</sub> &rarr; 2RCOONa + H<sub>2</sub>O + CO<sub>2</sub></td></tr>
-  <tr><td>Esterification with alcohol</td><td>RCOOH + R'OH &#8652; RCOOR' + H<sub>2</sub>O (H<sub>2</sub>SO<sub>4</sub> catalyst, reflux)</td></tr>
-</table>
+<p><strong>Key reactions:</strong> With metals (H<sub>2</sub> evolved), carbonates (CO<sub>2</sub> evolved &mdash; effervescence test), bases (neutralisation), alcohols (esterification with H<sub>2</sub>SO<sub>4</sub> catalyst).</p>
 
 <h3>Esters</h3>
+<p>Named: alkyl from alcohol + -oate from acid. <strong>Hydrolysis:</strong> Acid hydrolysis (reversible) &rarr; acid + alcohol. Base hydrolysis (irreversible, saponification) &rarr; sodium salt + alcohol.</p>
 
-<p>Esters have the general formula RCOOR'. They are formed by esterification (acid + alcohol) or by reaction of an acyl chloride with an alcohol (faster, goes to completion). Esters can be hydrolysed back to the acid and alcohol:</p>
+<h2>6.4 Acyl Chlorides and Acid Anhydrides</h2>
 
-<ul>
-  <li><strong>Acid hydrolysis:</strong> RCOOR' + H<sub>2</sub>O &#8652; RCOOH + R'OH (dilute H<sub>2</sub>SO<sub>4</sub>, reflux) — reversible</li>
-  <li><strong>Base hydrolysis (saponification):</strong> RCOOR' + NaOH &rarr; RCOONa + R'OH (NaOH, reflux) — irreversible, goes to completion</li>
-</ul>
-
-<h2>6.4 Acyl Chlorides</h2>
-
-<p>Acyl chlorides (RCOCl) are very reactive derivatives of carboxylic acids. They react vigorously at room temperature with nucleophiles via nucleophilic addition-elimination:</p>
-
+<p><strong>Acyl chlorides (RCOCl)</strong> react vigorously at room temperature via nucleophilic addition-elimination:</p>
 <table>
-  <tr><th>Nucleophile</th><th>Product</th><th>Other Product</th></tr>
-  <tr><td>H<sub>2</sub>O</td><td>Carboxylic acid (RCOOH)</td><td>HCl</td></tr>
-  <tr><td>ROH (alcohol)</td><td>Ester (RCOOR)</td><td>HCl</td></tr>
-  <tr><td>NH<sub>3</sub></td><td>Primary amide (RCONH<sub>2</sub>)</td><td>HCl</td></tr>
-  <tr><td>RNH<sub>2</sub> (amine)</td><td>N-substituted amide (RCONHR)</td><td>HCl</td></tr>
+  <tr><th>Nucleophile</th><th>Products</th></tr>
+  <tr><td>H<sub>2</sub>O</td><td>RCOOH + HCl (white fumes)</td></tr>
+  <tr><td>R'OH</td><td>RCOOR' + HCl (ester formed)</td></tr>
+  <tr><td>NH<sub>3</sub> (excess)</td><td>RCONH<sub>2</sub> + NH<sub>4</sub>Cl (amide)</td></tr>
+  <tr><td>R'NH<sub>2</sub></td><td>RCONHR' + R'NH<sub>3</sub><sup>+</sup>Cl<sup>-</sup> (N-substituted amide)</td></tr>
 </table>
+<p>Advantages over carboxylic acids: faster, irreversible, higher yield, no catalyst needed.</p>
+<p><strong>Acid anhydrides</strong> undergo the same reactions more gently. By-product is RCOOH (not HCl) &mdash; safer, cheaper, preferred industrially.</p>
 
-<p>Acyl chlorides are preferred over carboxylic acids for ester synthesis because the reaction is faster, irreversible, and gives higher yields.</p>
+<div class="real-world">
+  <strong>Real-World Application:</strong> Aspirin is made from salicylic acid + ethanoic anhydride. Polyester (PET) fabric is made by condensation of a dicarboxylic acid with a diol using ester linkages. Nylon 6,6 uses amide linkages from a dicarboxylic acid and diamine.
+</div>
 
+<!-- ==================== AMINES ==================== -->
 <h2>6.5 Amines</h2>
 
 <div class="definition">
-  <strong>Amine:</strong> An organic compound derived from ammonia (NH<sub>3</sub>) by replacing one or more H atoms with alkyl/aryl groups. Primary (RNH<sub>2</sub>), secondary (R<sub>2</sub>NH), tertiary (R<sub>3</sub>N). The lone pair on nitrogen makes amines basic and nucleophilic.
+  <strong>Amine:</strong> Organic compound with a nitrogen lone pair. Primary (RNH<sub>2</sub>), secondary (R<sub>2</sub>NH), tertiary (R<sub>3</sub>N). The lone pair makes amines basic (accept H<sup>+</sup>) and nucleophilic (donate lone pair to &delta;+ carbon).
 </div>
 
-<h3>Preparation of Amines</h3>
+<p><strong>Preparation:</strong> (1) RBr + excess NH<sub>3</sub> (sealed tube, heat). (2) RCN + 4[H] (LiAlH<sub>4</sub> or H<sub>2</sub>/Ni). (3) ArNO<sub>2</sub> + 6[H] (Sn/conc. HCl, then NaOH).</p>
 
-<ul>
-  <li><strong>From halogenoalkanes:</strong> RX + excess NH<sub>3</sub> &rarr; RNH<sub>2</sub> + HX (heated in sealed tube, ethanol solvent). Excess NH<sub>3</sub> is used to minimise further substitution.</li>
-  <li><strong>Reduction of nitriles:</strong> RCN + 4[H] &rarr; RCH<sub>2</sub>NH<sub>2</sub> (LiAlH<sub>4</sub> in dry ether, or H<sub>2</sub>/Ni catalyst)</li>
-  <li><strong>Reduction of nitrobenzene:</strong> C<sub>6</sub>H<sub>5</sub>NO<sub>2</sub> + 6[H] &rarr; C<sub>6</sub>H<sub>5</sub>NH<sub>2</sub> + 2H<sub>2</sub>O (Sn + conc. HCl, reflux, then NaOH)</li>
-</ul>
+<p><strong>Basicity order:</strong> Aliphatic amines > NH<sub>3</sub> > phenylamine. Alkyl groups donate electron density to N (+I effect). In phenylamine, the lone pair delocalises into the ring, making it less available.</p>
 
-<h3>Basicity of Amines</h3>
-
-<p>Amines act as Bronsted-Lowry bases by accepting a proton using their lone pair:</p>
-
-<div class="equation">
-  RNH<sub>2</sub> + H<sub>2</sub>O &#8652; RNH<sub>3</sub><sup>+</sup> + OH<sup>&minus;</sup>
-</div>
-
-<p>Aliphatic amines are stronger bases than ammonia (alkyl groups are electron-donating, increasing electron density on N). Aromatic amines (e.g. phenylamine) are weaker bases than ammonia because the nitrogen lone pair is delocalised into the benzene ring, making it less available for proton acceptance.</p>
-
+<!-- ==================== AMINO ACIDS ==================== -->
 <h2>6.6 Amino Acids and Proteins</h2>
 
-<div class="definition">
-  <strong>Amino acid:</strong> A molecule containing both an amine (-NH<sub>2</sub>) group and a carboxylic acid (-COOH) group, usually on the same carbon (&alpha;-amino acid). At neutral pH, amino acids exist as zwitterions (H<sub>3</sub>N<sup>+</sup>-CHR-COO<sup>&minus;</sup>).
-</div>
+<p>General formula: H<sub>2</sub>N-CHR-COOH. At the isoelectric point, they exist as zwitterions: <sup>+</sup>H<sub>3</sub>N-CHR-COO<sup>-</sup>. In acid: cation. In base: anion. All (except glycine) have a chiral centre.</p>
 
-<p>Amino acids (except glycine) have a chiral carbon and exist as optical isomers. Proteins are formed by condensation polymerisation of amino acids, linked by peptide bonds (-CONH-).</p>
+<p><strong>Peptide bonds (-CONH-):</strong> Formed by condensation between -COOH of one amino acid and -NH<sub>2</sub> of another, with loss of H<sub>2</sub>O. Proteins are polypeptides. Hydrolysis: 6M HCl reflux 24h, or enzymes.</p>
 
-<div class="equation">
-  H<sub>2</sub>N-CHR-COOH + H<sub>2</sub>N-CHR'-COOH &rarr; H<sub>2</sub>N-CHR-CO-NH-CHR'-COOH + H<sub>2</sub>O
-</div>
-
-<p>Peptide bonds can be hydrolysed by heating with 6 mol dm<sup>&minus;3</sup> HCl under reflux for 24 hours.</p>
-
-<!-- SVG: Amino Acid Zwitterion and Peptide Bond -->
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Amino Acids: Zwitterion and Peptide Bond Formation</text>
-
-  <!-- Amino acid structure -->
-  <text x="130" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Amino Acid</text>
-  <rect x="40" y="58" width="180" height="70" rx="6" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
-  <!-- NH2 -->
-  <text x="65" y="88" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a73e8">H2N</text>
-  <line x1="85" y1="85" x2="105" y2="85" stroke="#1a1a2e" stroke-width="2"/>
-  <!-- Central C -->
-  <text x="115" y="88" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a1a2e">C</text>
-  <!-- R group -->
-  <line x1="115" y1="92" x2="115" y2="110" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="115" y="122" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A">R</text>
-  <!-- H -->
-  <line x1="115" y1="78" x2="115" y2="68" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="115" y="65" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <!-- COOH -->
-  <line x1="122" y1="85" x2="142" y2="85" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="175" y="88" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">COOH</text>
-
-  <!-- Arrow to zwitterion -->
-  <line x1="225" y1="92" x2="260" y2="92" stroke="#D97706" stroke-width="1.5" marker-end="url(#naArrowK)"/>
-  <text x="242" y="85" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">at pH ~7</text>
-
-  <!-- Zwitterion -->
-  <text x="390" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#D97706">Zwitterion</text>
-  <rect x="280" y="58" width="220" height="70" rx="6" fill="#fff8e1" stroke="#D97706" stroke-width="1.5"/>
-  <!-- NH3+ -->
-  <text x="315" y="88" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">H3N+</text>
-  <line x1="338" y1="85" x2="358" y2="85" stroke="#1a1a2e" stroke-width="2"/>
-  <!-- Central C -->
-  <text x="368" y="88" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a1a2e">C</text>
-  <!-- R group -->
-  <line x1="368" y1="92" x2="368" y2="110" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="368" y="122" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A">R</text>
-  <!-- H -->
-  <line x1="368" y1="78" x2="368" y2="68" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="368" y="65" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">H</text>
-  <!-- COO- -->
-  <line x1="375" y1="85" x2="405" y2="85" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="450" y="88" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">COO-</text>
-
-  <!-- Peptide bond formation -->
-  <text x="260" y="155" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Peptide Bond Formation (Condensation)</text>
-
-  <!-- Two amino acids -->
-  <rect x="25" y="168" width="115" height="38" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
-  <text x="82" y="182" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">H2N-CHR-</text>
-  <text x="82" y="197" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">COOH</text>
-
-  <text x="155" y="190" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e">+</text>
-
-  <rect x="170" y="168" width="115" height="38" rx="4" fill="#dcfce7" stroke="#16A34A" stroke-width="1"/>
-  <text x="227" y="182" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">H2N</text>
-  <text x="227" y="197" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">-CHR'-COOH</text>
-
-  <!-- Arrow -->
-  <line x1="295" y1="187" x2="325" y2="187" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#naArrowK)"/>
-
-  <!-- Dipeptide product -->
-  <rect x="335" y="165" width="170" height="45" rx="4" fill="#fff8e1" stroke="#D97706" stroke-width="1.5"/>
-  <text x="420" y="182" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">H2N-CHR-<tspan font-weight="bold" fill="#DC2626">CO-NH</tspan>-CHR'-COOH</text>
-  <text x="420" y="200" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">peptide bond</text>
-
-  <!-- H2O lost -->
-  <text x="310" y="175" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">-H2O</text>
-
-  <!-- Highlight peptide bond -->
-  <rect x="100" y="225" width="320" height="45" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
-  <text x="260" y="242" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">The <tspan font-weight="bold" fill="#DC2626">peptide bond (-CO-NH-)</tspan> links amino acids in proteins</text>
-  <text x="260" y="258" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Hydrolysis: heat with 6 mol/dm3 HCl under reflux for 24 hours</text>
-</svg>
-</div>
-
+<!-- ==================== POLYMERS ==================== -->
 <h2>6.7 Polymers</h2>
 
 <h3>Addition Polymers</h3>
-
-<p>Formed from alkene monomers. The C=C opens and monomers join in a chain. No small molecule is lost. Examples: poly(ethene), poly(propene), PVC, PTFE. Non-biodegradable — persist in the environment.</p>
+<p>From alkene monomers (C=C opens). No by-product. 100% atom economy. Non-biodegradable. E.g. poly(ethene), PVC, PTFE.</p>
 
 <h3>Condensation Polymers</h3>
+<p><strong>Polyesters:</strong> Diacid + diol &rarr; ester linkages (-COO-) + H<sub>2</sub>O. E.g. PET.</p>
+<p><strong>Polyamides:</strong> Diacid + diamine &rarr; amide linkages (-CONH-) + H<sub>2</sub>O. E.g. Nylon 6,6. Proteins are natural polyamides.</p>
+<p>Condensation polymers are more biodegradable than addition polymers (ester/amide linkages can be hydrolysed by enzymes, acid, or base).</p>
 
-<p>Formed when monomers with two functional groups join, releasing a small molecule (usually H<sub>2</sub>O):</p>
-
-<ul>
-  <li><strong>Polyesters:</strong> Formed from a diol + dicarboxylic acid (or hydroxy acid). Ester links (-COO-). Example: PET (Terylene) from ethane-1,2-diol and benzene-1,4-dicarboxylic acid.</li>
-  <li><strong>Polyamides:</strong> Formed from a diamine + dicarboxylic acid (or amino acid). Amide links (-CONH-). Example: nylon-6,6 from 1,6-diaminohexane and hexanedioic acid. Proteins are natural polyamides.</li>
-</ul>
-
-<p>Condensation polymers are biodegradable (the ester or amide links can be hydrolysed). They can be broken down by hydrolysis with acid or base.</p>
-
-<!-- SVG: Addition vs Condensation Polymerisation -->
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Addition vs Condensation Polymerisation</text>
-
-  <!-- Addition Polymerisation -->
-  <rect x="15" y="38" width="240" height="245" rx="6" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="135" y="58" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Addition Polymerisation</text>
-
-  <!-- Monomer: alkene with C=C -->
-  <text x="135" y="78" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Monomer: alkene (contains C=C)</text>
-  <!-- n monomers -->
-  <text x="50" y="100" font-family="system-ui" font-size="10" fill="#1a1a2e">n</text>
-  <rect x="60" y="88" width="60" height="30" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="75" y="107" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">C</text>
-  <line x1="82" y1="100" x2="95" y2="100" stroke="#1a73e8" stroke-width="2"/>
-  <line x1="82" y1="105" x2="95" y2="105" stroke="#1a73e8" stroke-width="2"/>
-  <text x="105" y="107" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">C</text>
-
-  <!-- Arrow -->
-  <line x1="130" y1="103" x2="155" y2="103" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#naArrowK)"/>
-
-  <!-- Polymer chain -->
-  <text x="175" y="95" font-family="system-ui" font-size="8" fill="#1a1a2e">-[</text>
-  <rect x="182" y="88" width="50" height="30" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="195" y="107" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">C</text>
-  <line x1="202" y1="102" x2="215" y2="102" stroke="#1a73e8" stroke-width="2"/>
-  <text x="225" y="107" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">C</text>
-  <text x="237" y="95" font-family="system-ui" font-size="8" fill="#1a1a2e">]-</text>
-  <text x="245" y="107" font-family="system-ui" font-size="8" fill="#1a1a2e">n</text>
-
-  <!-- Key features -->
-  <text x="135" y="140" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Key features:</text>
-  <text x="135" y="155" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">- C=C opens to form C-C chain</text>
-  <text x="135" y="168" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">- NO small molecule lost</text>
-  <text x="135" y="181" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">- Only one type of monomer needed</text>
-  <text x="135" y="194" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">- NON-biodegradable</text>
-  <text x="135" y="212" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Examples:</text>
-  <text x="135" y="226" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">poly(ethene), poly(propene),</text>
-  <text x="135" y="239" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">PVC, PTFE</text>
-  <!-- Repeat unit note -->
-  <text x="135" y="258" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">All atoms of monomer in repeat unit</text>
-  <text x="135" y="270" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">(single bonds only in polymer)</text>
-
-  <!-- Condensation Polymerisation -->
-  <rect x="265" y="38" width="240" height="245" rx="6" fill="#ffffff" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="385" y="58" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Condensation Polymerisation</text>
-
-  <!-- Two monomers -->
-  <text x="385" y="78" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Monomers: bifunctional molecules</text>
-  <rect x="280" y="88" width="80" height="26" rx="4" fill="#fee2e2" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="320" y="105" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">HO-R-COOH</text>
-  <text x="370" y="105" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">+</text>
-  <rect x="382" y="88" width="80" height="26" rx="4" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="422" y="105" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">HO-R'-COOH</text>
-
-  <!-- Arrow -->
-  <line x1="385" y1="118" x2="385" y2="135" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#naArrowK)"/>
-  <text x="420" y="130" font-family="system-ui" font-size="8" fill="#1a73e8">-H2O</text>
-
-  <!-- Polymer with ester/amide links -->
-  <rect x="300" y="138" width="170" height="26" rx="4" fill="#fff8e1" stroke="#D97706" stroke-width="1.5"/>
-  <text x="385" y="155" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">-[ R-COO-R'-COO ]-n + nH2O</text>
-
-  <!-- Key features -->
-  <text x="385" y="182" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Key features:</text>
-  <text x="385" y="197" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">- Small molecule lost (usually H2O)</text>
-  <text x="385" y="210" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">- Often needs TWO types of monomer</text>
-  <text x="385" y="223" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">- Links: ester (-COO-) or amide (-CONH-)</text>
-  <text x="385" y="236" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">- BIODEGRADABLE (links can hydrolyse)</text>
-  <text x="385" y="254" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Examples:</text>
-  <text x="385" y="268" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Polyesters (PET/Terylene),</text>
-  <text x="385" y="278" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Polyamides (nylon, proteins)</text>
-</svg>
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> To find monomers from a polymer: locate the linkage (-COO- or -CONH-), break it, add -OH and -H where water was removed. Practise in both directions.
 </div>
 
-<h3>Recycling and Disposal</h3>
-
-<ul>
-  <li><strong>Mechanical recycling:</strong> Sorting, melting, remoulding (suitable for thermoplastics)</li>
-  <li><strong>Chemical recycling:</strong> Breaking polymers back into monomers (hydrolysis of condensation polymers)</li>
-  <li><strong>Energy recovery:</strong> Incineration to generate energy (produces CO<sub>2</sub> and potentially toxic gases)</li>
-  <li><strong>Biodegradable polymers:</strong> PLA (polylactic acid) and starch-based polymers decompose naturally</li>
-</ul>
-
+<!-- ==================== ORGANIC SYNTHESIS ==================== -->
 <h2>6.8 Organic Synthesis and Retrosynthesis</h2>
 
-<div class="definition">
-  <strong>Retrosynthesis:</strong> Working backwards from the target molecule to identify suitable starting materials and the reactions needed. Use the disconnection approach: break bonds in the target molecule and identify what reagents could form those bonds.
-</div>
+<p>Retrosynthetic analysis works backwards from the target, identifying the immediate precursor at each step.</p>
 
-<h3>Common Synthetic Routes Summary</h3>
-
+<h3>Key Inter-conversions</h3>
 <table>
-  <tr><th>From</th><th>To</th><th>Reagent/Conditions</th></tr>
-  <tr><td>Alkene</td><td>Alcohol</td><td>Steam, H<sub>3</sub>PO<sub>4</sub> catalyst, 300&deg;C</td></tr>
-  <tr><td>Alkene</td><td>Halogenoalkane</td><td>HBr (gas, room temp)</td></tr>
-  <tr><td>Halogenoalkane</td><td>Alcohol</td><td>NaOH(aq), warm</td></tr>
-  <tr><td>Halogenoalkane</td><td>Amine</td><td>Excess NH<sub>3</sub>, ethanol, heat in sealed tube</td></tr>
-  <tr><td>Halogenoalkane</td><td>Nitrile</td><td>KCN, ethanol/water, reflux</td></tr>
-  <tr><td>Nitrile</td><td>Carboxylic acid</td><td>Dilute H<sub>2</sub>SO<sub>4</sub>, reflux (hydrolysis)</td></tr>
-  <tr><td>Nitrile</td><td>Amine</td><td>LiAlH<sub>4</sub> in dry ether (reduction)</td></tr>
-  <tr><td>Primary alcohol</td><td>Aldehyde</td><td>K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>/H<sub>2</sub>SO<sub>4</sub>, distil</td></tr>
-  <tr><td>Primary alcohol</td><td>Carboxylic acid</td><td>K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>/H<sub>2</sub>SO<sub>4</sub>, reflux</td></tr>
-  <tr><td>Alcohol</td><td>Alkene</td><td>Conc. H<sub>2</sub>SO<sub>4</sub> or H<sub>3</sub>PO<sub>4</sub>, heat</td></tr>
-  <tr><td>Alcohol</td><td>Halogenoalkane</td><td>NaBr + conc. H<sub>2</sub>SO<sub>4</sub>, or HBr, or PCl<sub>5</sub>/SOCl<sub>2</sub></td></tr>
-  <tr><td>Carboxylic acid + Alcohol</td><td>Ester</td><td>Conc. H<sub>2</sub>SO<sub>4</sub> catalyst, reflux</td></tr>
-  <tr><td>Acyl chloride + Alcohol</td><td>Ester</td><td>Room temperature</td></tr>
+  <tr><th>From</th><th>Reagent / Conditions</th><th>To</th></tr>
+  <tr><td>Alkene</td><td>HBr</td><td>Halogenoalkane</td></tr>
+  <tr><td>Alkene</td><td>Steam, H<sub>3</sub>PO<sub>4</sub>, 300&deg;C</td><td>Alcohol</td></tr>
+  <tr><td>Halogenoalkane</td><td>Aq. NaOH, reflux</td><td>Alcohol</td></tr>
+  <tr><td>Halogenoalkane</td><td>Ethanolic KCN, reflux</td><td>Nitrile (chain +1)</td></tr>
+  <tr><td>Halogenoalkane</td><td>Ethanolic KOH, hot</td><td>Alkene</td></tr>
+  <tr><td>Halogenoalkane</td><td>Excess NH<sub>3</sub>, sealed tube</td><td>Amine</td></tr>
+  <tr><td>1&deg; alcohol</td><td>K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>/H<sub>2</sub>SO<sub>4</sub>, distil</td><td>Aldehyde</td></tr>
+  <tr><td>1&deg; alcohol</td><td>K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>/H<sub>2</sub>SO<sub>4</sub>, reflux</td><td>Carboxylic acid</td></tr>
+  <tr><td>2&deg; alcohol</td><td>K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>/H<sub>2</sub>SO<sub>4</sub></td><td>Ketone</td></tr>
+  <tr><td>Alcohol</td><td>Conc. H<sub>2</sub>SO<sub>4</sub>, heat</td><td>Alkene</td></tr>
+  <tr><td>Aldehyde/ketone</td><td>NaBH<sub>4</sub></td><td>Alcohol</td></tr>
+  <tr><td>Aldehyde/ketone</td><td>HCN/KCN</td><td>Hydroxynitrile (chain +1)</td></tr>
+  <tr><td>Nitrile</td><td>Dilute acid, reflux</td><td>Carboxylic acid</td></tr>
+  <tr><td>Nitrile</td><td>LiAlH<sub>4</sub>/dry ether</td><td>Primary amine</td></tr>
+  <tr><td>Acid + alcohol</td><td>H<sub>2</sub>SO<sub>4</sub> catalyst, reflux</td><td>Ester</td></tr>
+  <tr><td>Acyl chloride + alcohol</td><td>Room temperature</td><td>Ester + HCl</td></tr>
+  <tr><td>Benzene</td><td>HNO<sub>3</sub>/H<sub>2</sub>SO<sub>4</sub>, 50&deg;C</td><td>Nitrobenzene</td></tr>
+  <tr><td>Nitrobenzene</td><td>Sn/HCl, then NaOH</td><td>Phenylamine</td></tr>
+  <tr><td>Benzene</td><td>RCOCl/AlCl<sub>3</sub></td><td>Aryl ketone</td></tr>
 </table>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> In multi-step synthesis questions, always state reagents AND conditions for each step. A common chain-extending strategy is: halogenoalkane &rarr; nitrile (KCN) &rarr; carboxylic acid (hydrolysis) or amine (reduction). This adds one carbon.
+  <strong>Exam Tip:</strong> Always state reagents AND conditions. If the target has more carbons, use chain extension (KCN, Friedel-Crafts, or HCN). Work backwards from the target for multi-step synthesis.
 </div>
 
+<!-- ==================== MASS SPECTROMETRY ==================== -->
 <h2>6.9 Mass Spectrometry</h2>
 
-<p>Mass spectrometry measures the mass-to-charge ratio (m/z) of ions. The molecular ion peak (M<sup>+</sup>) gives the relative molecular mass of the compound. Fragmentation peaks correspond to pieces of the molecule after bonds break.</p>
-
-<h3>Common Fragments</h3>
-
-<table>
-  <tr><th>m/z Loss</th><th>Fragment Lost</th><th>Indicates</th></tr>
-  <tr><td>15</td><td>CH<sub>3</sub></td><td>Methyl group</td></tr>
-  <tr><td>17</td><td>OH</td><td>Hydroxyl group (alcohol/carboxylic acid)</td></tr>
-  <tr><td>18</td><td>H<sub>2</sub>O</td><td>Alcohol or carboxylic acid (dehydration)</td></tr>
-  <tr><td>28</td><td>CO or C<sub>2</sub>H<sub>4</sub></td><td>Carbonyl group or ethene</td></tr>
-  <tr><td>29</td><td>CHO or C<sub>2</sub>H<sub>5</sub></td><td>Aldehyde or ethyl group</td></tr>
-  <tr><td>31</td><td>CH<sub>2</sub>OH</td><td>Primary alcohol</td></tr>
-  <tr><td>43</td><td>CH<sub>3</sub>CO or C<sub>3</sub>H<sub>7</sub></td><td>Acyl group or propyl group</td></tr>
-  <tr><td>45</td><td>OC<sub>2</sub>H<sub>5</sub></td><td>Ethoxy group (ester)</td></tr>
-  <tr><td>77</td><td>C<sub>6</sub>H<sub>5</sub></td><td>Phenyl group</td></tr>
-</table>
-
-<!-- SVG: Mass Spectrometry Fragmentation Pattern -->
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 290" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Mass Spectrum: Fragmentation Pattern (Butan-1-ol, Mr=74)</text>
-
-  <!-- Axes -->
-  <line x1="60" y1="40" x2="60" y2="220" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="60" y1="220" x2="490" y2="220" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="22" y="135" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,22,135)">Relative abundance (%)</text>
-  <text x="280" y="238" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">m/z</text>
-
-  <!-- Y axis markers -->
-  <text x="52" y="224" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">0</text>
-  <text x="52" y="134" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">50</text>
-  <text x="52" y="48" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">100</text>
-  <line x1="55" y1="130" x2="65" y2="130" stroke="#cbd5e1" stroke-width="0.5"/>
-
-  <!-- Peaks as bars -->
-  <!-- m/z = 15 (CH3) -->
-  <rect x="80" y="160" width="12" height="60" fill="#1a73e8" opacity="0.7"/>
-  <text x="86" y="226" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">15</text>
-
-  <!-- m/z = 27 (C2H3) -->
-  <rect x="120" y="130" width="12" height="90" fill="#1a73e8" opacity="0.7"/>
-  <text x="126" y="226" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">27</text>
-
-  <!-- m/z = 29 (CHO or C2H5) -->
-  <rect x="140" y="100" width="12" height="120" fill="#1a73e8" opacity="0.7"/>
-  <text x="146" y="226" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">29</text>
-
-  <!-- m/z = 31 (CH2OH) - base peak -->
-  <rect x="160" y="45" width="12" height="175" fill="#DC2626" opacity="0.8"/>
-  <text x="166" y="226" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">31</text>
-  <text x="166" y="42" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">base</text>
-
-  <!-- m/z = 41 (C3H5) -->
-  <rect x="200" y="110" width="12" height="110" fill="#1a73e8" opacity="0.7"/>
-  <text x="206" y="226" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">41</text>
-
-  <!-- m/z = 43 (C3H7 or CH3CO) -->
-  <rect x="220" y="80" width="12" height="140" fill="#1a73e8" opacity="0.7"/>
-  <text x="226" y="226" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">43</text>
-
-  <!-- m/z = 56 (M-18, loss of H2O) -->
-  <rect x="290" y="60" width="12" height="160" fill="#16A34A" opacity="0.7"/>
-  <text x="296" y="226" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">56</text>
-  <text x="296" y="55" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">M-18</text>
-
-  <!-- m/z = 74 (M+ molecular ion) -->
-  <rect x="400" y="150" width="12" height="70" fill="#D97706" opacity="0.8"/>
-  <text x="406" y="226" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">74</text>
-  <text x="406" y="145" text-anchor="middle" font-family="system-ui" font-size="7" fill="#D97706">M+</text>
-
-  <!-- Annotations -->
-  <rect x="320" y="45" width="185" height="115" rx="5" fill="#fff8e1" stroke="#D97706" stroke-width="1"/>
-  <text x="412" y="60" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">Key Fragments:</text>
-  <text x="412" y="75" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">m/z 74: M+ (molecular ion)</text>
-  <text x="412" y="88" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">m/z 56: M-18 (loss of H2O)</text>
-  <text x="412" y="101" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">m/z 43: C3H7+ (loss of CH2OH)</text>
-  <text x="412" y="114" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">m/z 31: CH2OH+ (base peak)</text>
-  <text x="412" y="127" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">m/z 29: CHO+ or C2H5+</text>
-  <text x="412" y="140" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">m/z 15: CH3+</text>
-
-  <!-- Bottom note -->
-  <text x="260" y="258" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">M+ gives Mr. Fragmentation pattern identifies the compound.</text>
-  <text x="260" y="272" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Loss of 18 = H2O (alcohol/acid) | Loss of 15 = CH3 | Loss of 29 = CHO</text>
-  <text x="260" y="285" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Loss of 28 = CO | Loss of 17 = OH | Loss of 45 = OC2H5</text>
-</svg>
-</div>
-
-<h2>6.10 Infrared (IR) Spectroscopy</h2>
-
-<p>IR spectroscopy identifies functional groups by detecting the bonds that absorb infrared radiation. Each bond type absorbs at a characteristic wavenumber (cm<sup>&minus;1</sup>).</p>
+<p><strong>Molecular ion peak (M<sup>+</sup>):</strong> Gives relative molecular mass. M &rarr; M<sup>+&bull;</sup> + e<sup>-</sup>.</p>
+<p><strong>Fragmentation:</strong> M<sup>+</sup> breaks into fragments. m/z values help deduce structure.</p>
 
 <table>
-  <tr><th>Bond</th><th>Wavenumber Range (cm<sup>&minus;1</sup>)</th><th>Functional Group</th></tr>
-  <tr><td>O-H (alcohol)</td><td>3230-3550 (broad)</td><td>Alcohol</td></tr>
-  <tr><td>O-H (carboxylic acid)</td><td>2500-3300 (very broad)</td><td>Carboxylic acid</td></tr>
-  <tr><td>N-H</td><td>3300-3500</td><td>Amine / amide</td></tr>
-  <tr><td>C-H</td><td>2850-3100</td><td>Alkane / alkene / arene</td></tr>
-  <tr><td>C=O</td><td>1640-1750</td><td>Aldehyde, ketone, carboxylic acid, ester, amide</td></tr>
-  <tr><td>C=C</td><td>1620-1680</td><td>Alkene</td></tr>
-  <tr><td>C-O</td><td>1000-1300</td><td>Alcohol, ester, ether</td></tr>
+  <tr><th>m/z loss</th><th>Fragment lost</th></tr>
+  <tr><td>15</td><td>CH<sub>3</sub>&bull;</td></tr>
+  <tr><td>17</td><td>OH&bull;</td></tr>
+  <tr><td>18</td><td>H<sub>2</sub>O</td></tr>
+  <tr><td>28</td><td>CO or C<sub>2</sub>H<sub>4</sub></td></tr>
+  <tr><td>29</td><td>CHO&bull; or C<sub>2</sub>H<sub>5</sub>&bull;</td></tr>
+  <tr><td>31</td><td>CH<sub>2</sub>OH&bull;</td></tr>
+  <tr><td>45</td><td>OC<sub>2</sub>H<sub>5</sub>&bull;</td></tr>
+  <tr><td>77</td><td>C<sub>6</sub>H<sub>5</sub>&bull; (phenyl)</td></tr>
 </table>
+
+<p><strong>TOF MS stages:</strong> (1) Ionisation (electron impact or electrospray). (2) Acceleration (all ions get same KE). (3) Drift (lighter ions faster). (4) Detection. Electrospray gives MH<sup>+</sup> (M+1), so subtract 1.</p>
+<p><strong>M+1 peak:</strong> Due to <sup>13</sup>C. Height as % of M &asymp; 1.1 &times; number of C atoms.</p>
+
+<!-- ==================== IR SPECTROSCOPY ==================== -->
+<h2>6.10 Infrared Spectroscopy</h2>
+
+<table>
+  <tr><th>Bond</th><th>Wavenumber / cm<sup>-1</sup></th><th>Appearance</th><th>Found in</th></tr>
+  <tr><td>O-H (alcohol)</td><td>3230-3550</td><td>Broad</td><td>Alcohols, phenols</td></tr>
+  <tr><td>O-H (carboxylic acid)</td><td>2500-3300</td><td>Very broad</td><td>Carboxylic acids</td></tr>
+  <tr><td>N-H</td><td>3300-3500</td><td>Medium (may show 2 peaks for NH<sub>2</sub>)</td><td>Amines, amides</td></tr>
+  <tr><td>C-H</td><td>2850-3100</td><td>Strong</td><td>Most organic compounds</td></tr>
+  <tr><td>C=O</td><td>1680-1750</td><td>Strong, sharp</td><td>Aldehydes, ketones, acids, esters, amides</td></tr>
+  <tr><td>C=C</td><td>1620-1680</td><td>Medium</td><td>Alkenes</td></tr>
+  <tr><td>C-O</td><td>1000-1300</td><td>Strong</td><td>Alcohols, esters, ethers</td></tr>
+</table>
+
+<p><strong>Fingerprint region</strong> (below ~1500 cm<sup>-1</sup>) is unique to each compound; database matching for identification. Greenhouse gases absorb IR because bond vibrations change dipole moment (CO<sub>2</sub>, H<sub>2</sub>O, CH<sub>4</sub>). N<sub>2</sub> and O<sub>2</sub> do not.</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> The region below 1500 cm<sup>&minus;1</sup> is called the fingerprint region. It is unique to each compound but difficult to interpret directly. Focus on absorptions above 1500 cm<sup>&minus;1</sup> for functional group identification, and use the fingerprint region to match against reference spectra.
+  <strong>Exam Tip:</strong> Wavenumbers are in the data booklet. Focus on: broad O-H (alcohol vs very broad acid), sharp C=O, disappearance of O-H after esterification. Compare spectra before/after reactions to confirm functional group changes.
 </div>
 
-<!-- SVG: IR Spectroscopy Absorption Regions -->
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 310" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">IR Spectroscopy: Key Absorption Regions</text>
-
-  <!-- Wavenumber axis -->
-  <line x1="40" y1="52" x2="500" y2="52" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="270" y="44" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Wavenumber (cm-1)</text>
-  <!-- Scale markers -->
-  <text x="60" y="65" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">4000</text>
-  <line x1="60" y1="48" x2="60" y2="56" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="145" y="65" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">3000</text>
-  <line x1="145" y1="48" x2="145" y2="56" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="230" y="65" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">2500</text>
-  <line x1="230" y1="48" x2="230" y2="56" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="310" y="65" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">2000</text>
-  <line x1="310" y1="48" x2="310" y2="56" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="395" y="65" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">1500</text>
-  <line x1="395" y1="48" x2="395" y2="56" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="480" y="65" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">1000</text>
-  <line x1="480" y1="48" x2="480" y2="56" stroke="#1a1a2e" stroke-width="1"/>
-
-  <!-- Fingerprint region shading -->
-  <rect x="395" y="52" width="105" height="220" fill="#f1f5f9" opacity="0.6"/>
-  <text x="447" y="280" text-anchor="middle" font-family="system-ui" font-size="8" fill="#cbd5e1" font-weight="bold">FINGERPRINT</text>
-  <text x="447" y="290" text-anchor="middle" font-family="system-ui" font-size="8" fill="#cbd5e1" font-weight="bold">REGION</text>
-
-  <!-- O-H alcohol: 3230-3550 broad -->
-  <rect x="80" y="75" width="70" height="26" rx="4" fill="#1a73e8" opacity="0.7"/>
-  <text x="115" y="91" text-anchor="middle" font-family="system-ui" font-size="8" fill="#ffffff" font-weight="bold">O-H alcohol</text>
-  <text x="115" y="115" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">3230-3550 (broad)</text>
-
-  <!-- O-H carboxylic acid: 2500-3300 very broad -->
-  <rect x="75" y="125" width="155" height="26" rx="4" fill="#DC2626" opacity="0.7"/>
-  <text x="152" y="141" text-anchor="middle" font-family="system-ui" font-size="8" fill="#ffffff" font-weight="bold">O-H carboxylic acid</text>
-  <text x="152" y="165" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">2500-3300 (very broad)</text>
-
-  <!-- N-H: 3300-3500 -->
-  <rect x="85" y="175" width="50" height="26" rx="4" fill="#16A34A" opacity="0.7"/>
-  <text x="110" y="191" text-anchor="middle" font-family="system-ui" font-size="8" fill="#ffffff" font-weight="bold">N-H</text>
-  <text x="110" y="215" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">3300-3500</text>
-  <text x="110" y="225" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">(amine/amide)</text>
-
-  <!-- C-H: 2850-3100 -->
-  <rect x="120" y="75" width="55" height="26" rx="4" fill="#D97706" opacity="0.7"/>
-  <text x="147" y="91" text-anchor="middle" font-family="system-ui" font-size="8" fill="#ffffff" font-weight="bold">C-H</text>
-  <text x="185" y="91" font-family="system-ui" font-size="7" fill="#D97706">2850-3100</text>
-
-  <!-- C=O: 1640-1750 -->
-  <rect x="350" y="75" width="50" height="26" rx="4" fill="#DC2626" opacity="0.8"/>
-  <text x="375" y="91" text-anchor="middle" font-family="system-ui" font-size="8" fill="#ffffff" font-weight="bold">C=O</text>
-  <text x="375" y="115" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">1640-1750</text>
-  <text x="375" y="125" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">(aldehyde, ketone,</text>
-  <text x="375" y="135" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">acid, ester, amide)</text>
-
-  <!-- C=C: 1620-1680 -->
-  <rect x="355" y="150" width="40" height="26" rx="4" fill="#16A34A" opacity="0.7"/>
-  <text x="375" y="166" text-anchor="middle" font-family="system-ui" font-size="8" fill="#ffffff" font-weight="bold">C=C</text>
-  <text x="375" y="190" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">1620-1680</text>
-
-  <!-- C-O: 1000-1300 -->
-  <rect x="430" y="175" width="55" height="26" rx="4" fill="#1a73e8" opacity="0.7"/>
-  <text x="457" y="191" text-anchor="middle" font-family="system-ui" font-size="8" fill="#ffffff" font-weight="bold">C-O</text>
-  <text x="457" y="215" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">1000-1300</text>
-  <text x="457" y="225" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">(alcohol, ester)</text>
-
-  <!-- Key identification tips -->
-  <rect x="40" y="240" width="350" height="60" rx="5" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
-  <text x="215" y="256" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Quick Identification Tips:</text>
-  <text x="215" y="270" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Broad trough at 2500-3300 + C=O peak = carboxylic acid</text>
-  <text x="215" y="282" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Broad trough at 3230-3550 (no C=O) = alcohol</text>
-  <text x="215" y="294" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Sharp C=O peak alone = aldehyde, ketone, or ester</text>
-</svg>
-</div>
-
-<h2>6.11 Nuclear Magnetic Resonance (NMR) Spectroscopy</h2>
-
-<h3><sup>1</sup>H NMR (Proton NMR)</h3>
-
-<div class="definition">
-  <strong><sup>1</sup>H NMR:</strong> Detects hydrogen atoms in different chemical environments. The number of peaks indicates the number of distinct hydrogen environments. Chemical shift (&delta;, in ppm) indicates the type of environment. Integration (area under peak) gives the ratio of hydrogens. Splitting pattern reveals the number of neighbouring non-equivalent hydrogens.
-</div>
-
-<h3>Common <sup>1</sup>H Chemical Shifts</h3>
-
-<table>
-  <tr><th>Type of Proton</th><th>&delta; / ppm</th></tr>
-  <tr><td>R-CH<sub>3</sub> (alkyl)</td><td>0.7-1.6</td></tr>
-  <tr><td>R-CH<sub>2</sub>-R (alkyl)</td><td>1.2-1.8</td></tr>
-  <tr><td>R<sub>3</sub>CH (alkyl)</td><td>1.5-2.0</td></tr>
-  <tr><td>R-CO-CH<sub>3</sub> (adjacent to C=O)</td><td>2.0-2.5</td></tr>
-  <tr><td>R-O-CH<sub>3</sub> or R-O-CH<sub>2</sub></td><td>3.3-4.3</td></tr>
-  <tr><td>R-CHO (aldehyde)</td><td>9.0-10.0</td></tr>
-  <tr><td>R-OH (alcohol, variable)</td><td>0.5-5.5</td></tr>
-  <tr><td>Ar-H (aromatic)</td><td>6.5-8.0</td></tr>
-  <tr><td>R-COOH (carboxylic acid)</td><td>10.0-12.0</td></tr>
-</table>
-
-<h3>Splitting Patterns (n+1 Rule)</h3>
-
-<p>A peak is split into (n+1) peaks, where n is the number of equivalent non-equivalent hydrogen atoms on adjacent carbons:</p>
-
-<table>
-  <tr><th>n (adjacent H)</th><th>Splitting Pattern</th><th>Name</th></tr>
-  <tr><td>0</td><td>1 peak</td><td>Singlet (s)</td></tr>
-  <tr><td>1</td><td>2 peaks</td><td>Doublet (d)</td></tr>
-  <tr><td>2</td><td>3 peaks</td><td>Triplet (t)</td></tr>
-  <tr><td>3</td><td>4 peaks</td><td>Quartet (q)</td></tr>
-</table>
-
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> O-H and N-H protons do not usually show splitting and appear as broad singlets. They can be identified by the D<sub>2</sub>O shake test: add D<sub>2</sub>O to the sample, and the O-H/N-H peak disappears as the proton exchanges with deuterium.
-</div>
+<!-- ==================== NMR SPECTROSCOPY ==================== -->
+<h2>6.11 NMR Spectroscopy</h2>
 
 <h3><sup>13</sup>C NMR</h3>
+<p>Number of peaks = number of different carbon environments. Peak height does NOT indicate number of carbons. Chemical shifts: alkyl C (5-40 ppm), C-O (50-90), C=C/aromatic (110-160), C=O acid/ester (160-185), C=O aldehyde/ketone (190-220).</p>
 
-<div class="definition">
-  <strong><sup>13</sup>C NMR:</strong> Detects carbon-13 atoms in different chemical environments. The number of peaks equals the number of distinct carbon environments. No splitting occurs in proton-decoupled <sup>13</sup>C spectra (standard mode). Chemical shift indicates the type of carbon environment.
-</div>
+<h3><sup>1</sup>H NMR &mdash; Three Key Pieces of Information</h3>
 
-<h3>Common <sup>13</sup>C Chemical Shifts</h3>
+<h4>1. Chemical shift (&delta;)</h4>
+<p>Position relative to TMS (0 ppm). Key values: R-CH<sub>3</sub> (0.7-1.6), R-CH<sub>2</sub>-X (3.0-4.2), R-OH (0.5-6.0, variable), R-CHO (9.0-10.0), Ar-H (6.5-8.0), R-COOH (10.0-12.0).</p>
 
-<table>
-  <tr><th>Type of Carbon</th><th>&delta; / ppm</th></tr>
-  <tr><td>R-CH<sub>3</sub>, R-CH<sub>2</sub>-R, R<sub>3</sub>CH (alkyl)</td><td>5-55</td></tr>
-  <tr><td>C-Cl, C-Br</td><td>25-65</td></tr>
-  <tr><td>C-O (alcohols, ethers)</td><td>50-90</td></tr>
-  <tr><td>C=C (alkene)</td><td>100-150</td></tr>
-  <tr><td>Aromatic C</td><td>110-160</td></tr>
-  <tr><td>C=O (aldehydes, ketones)</td><td>190-220</td></tr>
-  <tr><td>C=O (carboxylic acids, esters)</td><td>160-185</td></tr>
-</table>
+<h4>2. Integration</h4>
+<p>Peak area &propto; number of H atoms in that environment. Given as a ratio.</p>
 
-<h2>6.12 Chromatography</h2>
+<h4>3. Splitting (n+1 rule)</h4>
+<p>A proton with n equivalent neighbours on adjacent carbons splits into (n+1) peaks: 0 &rarr; singlet, 1 &rarr; doublet, 2 &rarr; triplet, 3 &rarr; quartet.</p>
 
-<p>Chromatography separates mixtures based on the different affinities of components for a stationary phase and a mobile phase.</p>
-
-<ul>
-  <li><strong>Thin Layer Chromatography (TLC):</strong> Stationary phase = silica or alumina on a plate. Mobile phase = solvent. Used for quick identification and monitoring reactions. R<sub>f</sub> value = distance moved by spot / distance moved by solvent front.</li>
-  <li><strong>Column Chromatography:</strong> Stationary phase = silica/alumina packed in a column. Mobile phase = solvent. Used for separating and purifying mixtures. Components elute at different rates.</li>
-  <li><strong>Gas Chromatography (GC):</strong> Stationary phase = high boiling point liquid on an inert solid in a heated column. Mobile phase = inert carrier gas (e.g. N<sub>2</sub>, He). Retention time identifies each component; peak area gives relative amount. Often coupled with mass spectrometry (GC-MS) for identification.</li>
-</ul>
+<h4>D<sub>2</sub>O Shake</h4>
+<p>Adding D<sub>2</sub>O makes O-H and N-H peaks disappear (proton exchange with deuterium). Identifies exchangeable protons.</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> In GC-MS, the gas chromatograph separates the components of a mixture and the mass spectrometer identifies each component by its fragmentation pattern. GC-MS is widely used in forensics, drug testing, and environmental analysis. Always mention both separation and identification when describing GC-MS.
+  <strong>Exam Tip:</strong> O-H and N-H appear as broad singlets (no splitting due to rapid exchange). In combined-technique questions: MS for M<sub>r</sub>, IR for functional groups, <sup>13</sup>C NMR for carbon environments, <sup>1</sup>H NMR for H environments and connectivity. Degree of unsaturation (DBE) = (2C + 2 + N - H - X)/2; DBE of 4 suggests a benzene ring.
+</div>
+
+<!-- ==================== CHROMATOGRAPHY ==================== -->
+<h2>6.12 Chromatography</h2>
+
+<h3>TLC (Thin Layer Chromatography)</h3>
+<p>Stationary: silica/alumina plate. Mobile: organic solvent. R<sub>f</sub> = distance by substance / distance by solvent front. Quick qualitative identification and purity check.</p>
+
+<h3>GC (Gas Chromatography)</h3>
+<p>Stationary: high-bp liquid in column. Mobile: inert carrier gas. Separates volatile compounds. Retention time identifies components. Peak area gives quantitative composition.</p>
+
+<h3>GC-MS</h3>
+<p>GC separates the mixture; MS identifies each component by molecular mass and fragmentation pattern. Extremely powerful for forensics, environmental monitoring, drug testing, and quality control.</p>
+
+<h3>HPLC</h3>
+<p>Stationary: fine particles in column. Mobile: liquid solvent at high pressure. For non-volatile and thermally unstable compounds (pharmaceuticals, proteins, biological samples).</p>
+
+<div class="real-world">
+  <strong>Real-World Application:</strong> GC-MS is used in Olympic drug testing (detecting banned substances at parts-per-billion), forensic arson investigation (identifying accelerants in fire debris), airport security (trace explosives detection), and environmental monitoring (pesticide residues in water/food). HPLC is essential for pharmaceutical quality control and clinical diagnostics.
 </div>
 
 </div>

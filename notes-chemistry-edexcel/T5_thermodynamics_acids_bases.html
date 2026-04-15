@@ -11,6 +11,7 @@
   h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
   h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
   h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  h4 { font-size: 1.05rem; color: #1e3a5f; margin: 15px 0 8px 0; }
   p { margin-bottom: 12px; }
   ul, ol { margin: 10px 0 15px 25px; }
   li { margin-bottom: 6px; }
@@ -22,8 +23,11 @@
   .definition strong { color: #1e3a5f; }
   .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
   .exam-tip strong { color: #b45309; }
+  .real-world { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #15803d; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  svg text { font-family: system-ui, sans-serif; }
 </style>
 </head>
 <body>
@@ -34,40 +38,44 @@
 <h2>5.1 Born-Haber Cycles</h2>
 
 <div class="definition">
-  <strong>Born-Haber cycle:</strong> An enthalpy cycle used to calculate lattice enthalpy indirectly using Hess's law. It combines atomisation enthalpies, ionisation energies, electron affinities, and enthalpy of formation.
+  <strong>Born-Haber cycle:</strong> An enthalpy cycle (application of Hess's law) used to calculate lattice enthalpy indirectly by combining measurable enthalpy changes: atomisation enthalpies, ionisation energies, electron affinities, and the enthalpy of formation.
 </div>
 
 <h3>Key Enthalpy Terms</h3>
 
 <table>
-  <tr><th>Enthalpy Term</th><th>Definition</th><th>Sign</th></tr>
-  <tr><td>&Delta;<sub>f</sub>H&deg; (formation)</td><td>Formation of 1 mol of compound from elements in standard states</td><td>Usually negative (exothermic)</td></tr>
-  <tr><td>&Delta;<sub>at</sub>H&deg; (atomisation)</td><td>Formation of 1 mol of gaseous atoms from element in standard state</td><td>Always positive (endothermic)</td></tr>
-  <tr><td>IE (ionisation energy)</td><td>Removal of 1 mol of electrons from 1 mol of gaseous atoms/ions</td><td>Always positive (endothermic)</td></tr>
-  <tr><td>EA (electron affinity)</td><td>Addition of 1 mol of electrons to 1 mol of gaseous atoms/ions. 1st EA is exothermic; 2nd EA is endothermic</td><td>1st: negative; 2nd: positive</td></tr>
-  <tr><td>&Delta;<sub>LE</sub>H&deg; (lattice enthalpy)</td><td>Formation of 1 mol of ionic lattice from gaseous ions (exothermic definition) or the dissociation of 1 mol of ionic lattice into gaseous ions (endothermic definition)</td><td>Depends on definition used</td></tr>
+  <tr><th>Term</th><th>Symbol</th><th>Definition (per mole, standard conditions)</th><th>Sign</th></tr>
+  <tr><td>Enthalpy of formation</td><td>&Delta;<sub>f</sub>H&deg;</td><td>Formation of 1 mol of compound from its elements in standard states</td><td>Usually negative</td></tr>
+  <tr><td>Enthalpy of atomisation</td><td>&Delta;<sub>at</sub>H&deg;</td><td>Formation of 1 mol of gaseous atoms from the element in its standard state</td><td>Always positive (endothermic)</td></tr>
+  <tr><td>Ionisation energy</td><td>IE</td><td>Removal of 1 mol of electrons from 1 mol of gaseous atoms (or ions)</td><td>Always positive (endothermic)</td></tr>
+  <tr><td>Electron affinity (1st)</td><td>EA<sub>1</sub></td><td>Addition of 1 mol of electrons to 1 mol of gaseous atoms</td><td>Usually negative (exothermic)</td></tr>
+  <tr><td>Electron affinity (2nd)</td><td>EA<sub>2</sub></td><td>Addition of a second electron to a gaseous 1- ion</td><td>Always positive (endothermic &mdash; repulsion)</td></tr>
+  <tr><td>Lattice enthalpy (formation)</td><td>&Delta;<sub>LE</sub>H&deg;</td><td>Formation of 1 mol of ionic lattice from gaseous ions</td><td>Always negative (exothermic)</td></tr>
+  <tr><td>Lattice enthalpy (dissociation)</td><td>&Delta;<sub>LE</sub>H&deg;</td><td>Breaking of 1 mol of ionic lattice into gaseous ions</td><td>Always positive (endothermic)</td></tr>
 </table>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> Edexcel typically uses the exothermic definition of lattice enthalpy (formation of lattice from gaseous ions, so the value is negative). Check the wording carefully in the question — some mark schemes accept either convention if applied consistently.
+  <strong>Exam Tip:</strong> Edexcel typically uses the exothermic definition of lattice enthalpy (formation of lattice from gaseous ions, negative value). Always check the question wording. The magnitude of lattice enthalpy is the same for both definitions; only the sign differs.
 </div>
 
-<h3>Constructing a Born-Haber Cycle</h3>
+<h3>Constructing a Born-Haber Cycle for NaCl</h3>
 
-<p>For NaCl, the cycle connects the following steps:</p>
-
+<p>The cycle connects elements in standard states to the ionic compound via two routes:</p>
+<p><strong>Direct route:</strong> Na(s) + &frac12;Cl<sub>2</sub>(g) &rarr; NaCl(s) &nbsp;&nbsp; [&Delta;<sub>f</sub>H&deg; = -411 kJ mol<sup>-1</sup>]</p>
+<p><strong>Indirect route (via gaseous ions):</strong></p>
 <ol>
-  <li>Elements in standard states: Na(s) + 1/2 Cl<sub>2</sub>(g)</li>
-  <li>Atomisation of Na: Na(s) &rarr; Na(g) [&Delta;<sub>at</sub>H&deg;]</li>
-  <li>Atomisation of Cl: 1/2 Cl<sub>2</sub>(g) &rarr; Cl(g) [&Delta;<sub>at</sub>H&deg;]</li>
-  <li>First ionisation of Na: Na(g) &rarr; Na<sup>+</sup>(g) + e<sup>&minus;</sup> [IE<sub>1</sub>]</li>
-  <li>First electron affinity of Cl: Cl(g) + e<sup>&minus;</sup> &rarr; Cl<sup>&minus;</sup>(g) [EA<sub>1</sub>]</li>
-  <li>Lattice enthalpy: Na<sup>+</sup>(g) + Cl<sup>&minus;</sup>(g) &rarr; NaCl(s) [&Delta;<sub>LE</sub>H&deg;]</li>
+  <li>Atomise Na: Na(s) &rarr; Na(g) &nbsp; [&Delta;<sub>at</sub>H&deg; = +108 kJ mol<sup>-1</sup>]</li>
+  <li>Atomise Cl: &frac12;Cl<sub>2</sub>(g) &rarr; Cl(g) &nbsp; [&Delta;<sub>at</sub>H&deg; = +121 kJ mol<sup>-1</sup>]</li>
+  <li>Ionise Na: Na(g) &rarr; Na<sup>+</sup>(g) + e<sup>-</sup> &nbsp; [IE<sub>1</sub> = +496 kJ mol<sup>-1</sup>]</li>
+  <li>Add electron to Cl: Cl(g) + e<sup>-</sup> &rarr; Cl<sup>-</sup>(g) &nbsp; [EA<sub>1</sub> = -349 kJ mol<sup>-1</sup>]</li>
+  <li>Form lattice: Na<sup>+</sup>(g) + Cl<sup>-</sup>(g) &rarr; NaCl(s) &nbsp; [&Delta;<sub>LE</sub>H&deg; = ?]</li>
 </ol>
 
-<p>By Hess's law: &Delta;<sub>f</sub>H&deg; = &Delta;<sub>at</sub>H&deg;(Na) + &Delta;<sub>at</sub>H&deg;(Cl) + IE<sub>1</sub>(Na) + EA<sub>1</sub>(Cl) + &Delta;<sub>LE</sub>H&deg;</p>
+<p>By Hess's law: &Delta;<sub>f</sub>H&deg; = &Delta;<sub>at</sub>H&deg;(Na) + &Delta;<sub>at</sub>H&deg;(Cl) + IE<sub>1</sub> + EA<sub>1</sub> + &Delta;<sub>LE</sub>H&deg;</p>
+<p>Rearranging: &Delta;<sub>LE</sub>H&deg; = &Delta;<sub>f</sub>H&deg; - &Delta;<sub>at</sub>H&deg;(Na) - &Delta;<sub>at</sub>H&deg;(Cl) - IE<sub>1</sub> - EA<sub>1</sub></p>
+<p>&Delta;<sub>LE</sub>H&deg; = -411 - 108 - 121 - 496 - (-349) = -411 - 108 - 121 - 496 + 349 = <strong>-787 kJ mol<sup>-1</sup></strong></p>
 
-<!-- SVG: Born-Haber Cycle for NaCl (Lattice Enthalpy) -->
+<!-- SVG: Born-Haber Cycle -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 420" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Born-Haber Cycle for NaCl</text>
@@ -78,538 +86,404 @@
     <marker id="bh5ArrowA" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#D97706"/></marker>
     <marker id="bh5ArrowK" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker>
   </defs>
-
-  <!-- Level 1 (highest): Na+(g) + e- + Cl(g) -->
-  <line x1="160" y1="55" x2="430" y2="55" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="295" y="48" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na+(g) + e- + Cl(g)</text>
-
+  <!-- Energy levels -->
+  <!-- Level 1 (highest): Na+(g) + Cl(g) -->
+  <line x1="180" y1="50" x2="480" y2="50" stroke="#D97706" stroke-width="2"/>
+  <text x="330" y="44" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Na+(g) + Cl(g) + e-</text>
   <!-- Level 2: Na+(g) + Cl-(g) -->
-  <line x1="320" y1="125" x2="490" y2="125" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="405" y="118" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na+(g) + Cl-(g)</text>
-
+  <line x1="280" y1="125" x2="480" y2="125" stroke="#16A34A" stroke-width="2"/>
+  <text x="380" y="119" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Na+(g) + Cl-(g)</text>
   <!-- Level 3: Na(g) + Cl(g) -->
-  <line x1="30" y1="145" x2="155" y2="145" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="92" y="138" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(g) + Cl(g)</text>
-
+  <line x1="30" y1="140" x2="200" y2="140" stroke="#1a73e8" stroke-width="2"/>
+  <text x="115" y="134" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Na(g) + Cl(g)</text>
   <!-- Level 4: Na(g) + 1/2 Cl2(g) -->
-  <line x1="30" y1="215" x2="155" y2="215" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="92" y="208" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(g) + 1/2 Cl2(g)</text>
-
-  <!-- Level 5: Na(s) + 1/2 Cl2(g) (elements) -->
-  <line x1="30" y1="295" x2="190" y2="295" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="110" y="288" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(s) + 1/2 Cl2(g)</text>
-
-  <!-- Level 6 (lowest): NaCl(s) -->
+  <line x1="30" y1="210" x2="200" y2="210" stroke="#1a73e8" stroke-width="2"/>
+  <text x="115" y="204" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Na(g) + 1/2Cl2(g)</text>
+  <!-- Level 5: Na(s) + 1/2 Cl2(g) -->
+  <line x1="30" y1="290" x2="200" y2="290" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="115" y="284" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Na(s) + 1/2Cl2(g)</text>
+  <!-- Level 6: NaCl(s) -->
   <line x1="320" y1="380" x2="490" y2="380" stroke="#1a1a2e" stroke-width="2"/>
   <text x="405" y="398" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">NaCl(s)</text>
-
-  <!-- Arrow 1: Atomisation of Na -->
-  <line x1="70" y1="293" x2="70" y2="219" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#bh5ArrowB)"/>
-  <text x="25" y="260" font-family="system-ui" font-size="9" fill="#1a73e8">DatH(Na)</text>
-  <text x="25" y="272" font-family="system-ui" font-size="8" fill="#1a73e8">+108</text>
-
-  <!-- Arrow 2: Atomisation of Cl -->
-  <line x1="70" y1="213" x2="70" y2="149" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#bh5ArrowB)"/>
-  <text x="25" y="182" font-family="system-ui" font-size="9" fill="#1a73e8">DatH(Cl)</text>
-  <text x="25" y="194" font-family="system-ui" font-size="8" fill="#1a73e8">+121</text>
-
-  <!-- Arrow 3: IE1 of Na -->
-  <line x1="140" y1="143" x2="180" y2="59" stroke="#D97706" stroke-width="1.5" marker-end="url(#bh5ArrowA)"/>
-  <text x="130" y="100" font-family="system-ui" font-size="9" fill="#D97706">IE1(Na)</text>
-  <text x="130" y="112" font-family="system-ui" font-size="8" fill="#D97706">+496</text>
-
-  <!-- Arrow 4: EA1 of Cl (downward = exothermic) -->
-  <line x1="405" y1="57" x2="405" y2="121" stroke="#16A34A" stroke-width="1.5" marker-end="url(#bh5ArrowG)"/>
-  <text x="448" y="85" font-family="system-ui" font-size="9" fill="#16A34A">EA1(Cl)</text>
-  <text x="448" y="97" font-family="system-ui" font-size="8" fill="#16A34A">-349</text>
-
-  <!-- Arrow 5: Lattice enthalpy (large downward) -->
-  <line x1="405" y1="127" x2="405" y2="376" stroke="#DC2626" stroke-width="2" marker-end="url(#bh5ArrowR)"/>
+  <!-- Arrows -->
+  <!-- Atomisation Na -->
+  <line x1="70" y1="287" x2="70" y2="215" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#bh5ArrowB)"/>
+  <text x="25" y="255" font-family="system-ui" font-size="9" fill="#1a73e8">&Delta;atH(Na)</text>
+  <text x="25" y="267" font-family="system-ui" font-size="8" fill="#1a73e8">+108</text>
+  <!-- Atomisation Cl -->
+  <line x1="70" y1="207" x2="70" y2="145" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#bh5ArrowB)"/>
+  <text x="25" y="178" font-family="system-ui" font-size="9" fill="#1a73e8">&Delta;atH(Cl)</text>
+  <text x="25" y="190" font-family="system-ui" font-size="8" fill="#1a73e8">+121</text>
+  <!-- IE1 Na -->
+  <line x1="140" y1="137" x2="200" y2="55" stroke="#D97706" stroke-width="1.5" marker-end="url(#bh5ArrowA)"/>
+  <text x="135" y="96" font-family="system-ui" font-size="9" fill="#D97706">IE1(Na)</text>
+  <text x="135" y="108" font-family="system-ui" font-size="8" fill="#D97706">+496</text>
+  <!-- EA1 Cl (down = exothermic) -->
+  <line x1="405" y1="55" x2="405" y2="120" stroke="#16A34A" stroke-width="1.5" marker-end="url(#bh5ArrowG)"/>
+  <text x="448" y="82" font-family="system-ui" font-size="9" fill="#16A34A">EA1(Cl)</text>
+  <text x="448" y="94" font-family="system-ui" font-size="8" fill="#16A34A">-349</text>
+  <!-- Lattice enthalpy (large down) -->
+  <line x1="405" y1="130" x2="405" y2="375" stroke="#DC2626" stroke-width="2" marker-end="url(#bh5ArrowR)"/>
   <text x="470" y="250" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Lattice</text>
   <text x="470" y="262" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">enthalpy</text>
   <text x="470" y="274" font-family="system-ui" font-size="8" fill="#DC2626">-787</text>
-
-  <!-- Arrow 6: Formation enthalpy (dashed diagonal) -->
-  <path d="M190,297 Q260,340 320,380" fill="none" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#bh5ArrowK)"/>
-  <text x="225" y="350" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">DfH</text>
+  <!-- Formation enthalpy (diagonal dashed) -->
+  <path d="M190,293 Q260,340 325,380" fill="none" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#bh5ArrowK)"/>
+  <text x="225" y="350" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">&Delta;fH&deg;</text>
   <text x="225" y="362" font-family="system-ui" font-size="8" fill="#1a1a2e">-411</text>
-
   <!-- Note -->
-  <text x="260" y="414" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">All values in kJ mol-1 | Endothermic steps go UP | Exothermic steps go DOWN</text>
+  <text x="260" y="414" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">All values in kJ mol<tspan font-size="7" dy="-3">-1</tspan><tspan dy="3"> | Endothermic steps go UP | Exothermic steps go DOWN</tspan></text>
 </svg>
 </div>
 
 <h3>Factors Affecting Lattice Enthalpy</h3>
-
 <p>Lattice enthalpy becomes more exothermic (larger magnitude) with:</p>
 <ul>
-  <li><strong>Smaller ionic radii:</strong> Ions are closer together, so electrostatic attraction is stronger</li>
-  <li><strong>Higher ionic charges:</strong> Greater charge means stronger attraction (e.g. MgO has a much larger lattice enthalpy than NaCl because both ions are 2+/2&minus; rather than 1+/1&minus;)</li>
+  <li><strong>Smaller ionic radii:</strong> Ions closer together &rarr; stronger electrostatic attraction (Coulomb's law: F &propto; 1/r<sup>2</sup>)</li>
+  <li><strong>Higher ionic charges:</strong> Greater charges &rarr; stronger attraction (F &propto; q<sub>1</sub>q<sub>2</sub>)</li>
 </ul>
+<p>Example: MgO has a much larger lattice enthalpy (-3850 kJ mol<sup>-1</sup>) than NaCl (-787 kJ mol<sup>-1</sup>) because Mg<sup>2+</sup>/O<sup>2-</sup> have double the charges and smaller radii than Na<sup>+</sup>/Cl<sup>-</sup>.</p>
 
-<h2>5.2 Enthalpy of Hydration and Solution</h2>
+<h3>Theoretical vs Experimental Lattice Enthalpies</h3>
+<p>Theoretical lattice enthalpies (calculated from a perfect ionic model) can be compared with experimental values (from Born-Haber cycles). Good agreement suggests purely ionic bonding. A significant discrepancy (experimental more exothermic than theoretical) indicates covalent character in the bonding &mdash; this occurs when the cation has high charge density and polarises the anion's electron cloud (Fajans' rules).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> If asked why the experimental lattice enthalpy of AgI is much more exothermic than the theoretical value, explain that Ag<sup>+</sup> has a high polarising power (high charge density) and I<sup>-</sup> is easily polarised (large, diffuse electron cloud). The resulting covalent character provides additional bonding energy, making the actual lattice enthalpy larger than predicted by a purely ionic model.
+</div>
+
+<h2>5.2 Enthalpies of Hydration and Solution</h2>
 
 <div class="definition">
-  <strong>Enthalpy of hydration (&Delta;<sub>hyd</sub>H&deg;):</strong> The enthalpy change when 1 mol of gaseous ions is dissolved in sufficient water to form an infinitely dilute solution. Always exothermic (ion-dipole attractions form).<br>
-  <strong>Enthalpy of solution (&Delta;<sub>sol</sub>H&deg;):</strong> The enthalpy change when 1 mol of an ionic solid dissolves in sufficient water to form an infinitely dilute solution.
+  <strong>Enthalpy of hydration (&Delta;<sub>hyd</sub>H&deg;):</strong> The enthalpy change when 1 mol of gaseous ions is dissolved in sufficient water to form an infinitely dilute solution. Always exothermic (energy released as ion-dipole bonds form between ions and water molecules).<br><br>
+  <strong>Enthalpy of solution (&Delta;<sub>sol</sub>H&deg;):</strong> The enthalpy change when 1 mol of an ionic solid dissolves in sufficient water to form an infinitely dilute solution. Can be exothermic or endothermic.
 </div>
+
+<p>Dissolving involves two processes: (1) breaking the ionic lattice (endothermic, requires energy equal to the lattice dissociation enthalpy), and (2) hydrating the ions (exothermic, releasing hydration enthalpy). The overall enthalpy of solution is the sum:</p>
 
 <div class="equation">
-  &Delta;<sub>sol</sub>H&deg; = &minus;&Delta;<sub>LE</sub>H&deg; + &Delta;<sub>hyd</sub>H&deg;(cation) + &Delta;<sub>hyd</sub>H&deg;(anion)
+  &Delta;<sub>sol</sub>H&deg; = -&Delta;<sub>LE</sub>H&deg;(formation) + &Delta;<sub>hyd</sub>H&deg;(cation) + &Delta;<sub>hyd</sub>H&deg;(anion)
 </div>
 
-<p>(Using the exothermic lattice enthalpy convention, where &Delta;<sub>LE</sub>H&deg; is negative, so &minus;&Delta;<sub>LE</sub>H&deg; is positive — representing breaking the lattice.)</p>
+<p>If the sum of hydration enthalpies exceeds the lattice dissociation enthalpy, &Delta;<sub>sol</sub>H is negative (exothermic dissolution). If not, dissolution is endothermic but may still occur if the entropy increase is sufficient to make &Delta;G negative.</p>
 
-<p>A substance dissolves if the enthalpy of hydration of the ions is large enough to compensate for the energy needed to break the lattice. If &Delta;<sub>sol</sub>H is negative or only slightly positive, dissolving is energetically favourable or can be driven by entropy.</p>
-
-<!-- SVG: Hess's Law Cycle Diagram -->
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 250" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Hess's Law Enthalpy Cycles</text>
-  <defs>
-    <marker id="hlArrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker>
-  </defs>
-
-  <!-- Using Formation Enthalpies -->
-  <text x="140" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Using Formation Data</text>
-  <!-- Reactants -->
-  <rect x="20" y="60" width="100" height="30" rx="5" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="70" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Reactants</text>
-  <!-- Products -->
-  <rect x="160" y="60" width="100" height="30" rx="5" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="210" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Products</text>
-  <!-- Direct arrow -->
-  <line x1="120" y1="75" x2="156" y2="75" stroke="#1a1a2e" stroke-width="2" marker-end="url(#hlArrow)"/>
-  <text x="140" y="68" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">DrH</text>
-  <!-- Elements -->
-  <rect x="80" y="155" width="120" height="30" rx="5" fill="#fff8e1" stroke="#D97706" stroke-width="1.5"/>
-  <text x="140" y="175" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Elements</text>
-  <!-- Down arrow from elements to reactants (reverse of formation) -->
-  <line x1="95" y1="155" x2="70" y2="94" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#hlArrow)"/>
-  <text x="50" y="130" font-family="system-ui" font-size="8" fill="#1a73e8">-SDfH(R)</text>
-  <!-- Down arrow from elements to products -->
-  <line x1="185" y1="155" x2="210" y2="94" stroke="#16A34A" stroke-width="1.5" marker-end="url(#hlArrow)"/>
-  <text x="225" y="130" font-family="system-ui" font-size="8" fill="#16A34A">SDfH(P)</text>
-  <!-- Formula -->
-  <text x="140" y="208" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">DrH = SDfH(products) - SDfH(reactants)</text>
-
-  <!-- Using Combustion Enthalpies -->
-  <text x="400" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Using Combustion Data</text>
-  <!-- Reactants -->
-  <rect x="295" y="60" width="100" height="30" rx="5" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="345" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Reactants</text>
-  <!-- Products -->
-  <rect x="430" y="60" width="100" height="30" rx="5" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="480" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Products</text>
-  <!-- Direct arrow -->
-  <line x1="395" y1="75" x2="426" y2="75" stroke="#1a1a2e" stroke-width="2" marker-end="url(#hlArrow)"/>
-  <text x="412" y="68" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">DrH</text>
-  <!-- Combustion products -->
-  <rect x="340" y="155" width="140" height="30" rx="5" fill="#fee2e2" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="410" y="175" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">CO2 + H2O</text>
-  <!-- Arrow from reactants down to combustion products -->
-  <line x1="345" y1="94" x2="370" y2="151" stroke="#DC2626" stroke-width="1.5" marker-end="url(#hlArrow)"/>
-  <text x="325" y="130" font-family="system-ui" font-size="8" fill="#DC2626">SDcH(R)</text>
-  <!-- Arrow from products down to combustion products -->
-  <line x1="480" y1="94" x2="455" y2="151" stroke="#DC2626" stroke-width="1.5" marker-end="url(#hlArrow)"/>
-  <text x="490" y="130" font-family="system-ui" font-size="8" fill="#DC2626">SDcH(P)</text>
-  <!-- Formula -->
-  <text x="410" y="208" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">DrH = SDcH(reactants) - SDcH(products)</text>
-
-  <!-- Note -->
-  <rect x="60" y="222" width="400" height="22" rx="4" fill="#fff8e1" stroke="#D97706" stroke-width="1"/>
-  <text x="260" y="237" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Note: formation data uses Products - Reactants; combustion data uses Reactants - Products</text>
-</svg>
-</div>
+<p><strong>Factors affecting hydration enthalpy:</strong> More exothermic with smaller ionic radius and higher ionic charge (higher charge density creates stronger ion-dipole interactions with water).</p>
 
 <h2>5.3 Entropy</h2>
 
 <div class="definition">
-  <strong>Entropy (S):</strong> A measure of the disorder or number of ways of arranging energy in a system. Units: J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>. Greater disorder = higher entropy.
+  <strong>Entropy (S):</strong> A measure of the disorder or dispersal of energy in a system &mdash; specifically, the number of ways energy can be distributed among the particles. Units: J K<sup>-1</sup> mol<sup>-1</sup>. The third law of thermodynamics states that a perfect crystal at absolute zero (0 K) has zero entropy.
 </div>
 
 <h3>Entropy Trends</h3>
-
 <ul>
-  <li>S(gas) >> S(liquid) > S(solid) — gases have the most disorder</li>
-  <li>Entropy increases with temperature (more energy arrangements)</li>
-  <li>Entropy increases when the number of moles of gas increases in a reaction</li>
-  <li>Dissolving a solid in a solvent generally increases entropy</li>
-  <li>More complex molecules have higher entropy than simpler ones</li>
+  <li><strong>S(gas) >> S(liquid) > S(solid):</strong> Gas particles have the most freedom of movement and the greatest number of energy arrangements.</li>
+  <li>Entropy <strong>increases with temperature</strong> (particles have more kinetic energy, more ways to distribute it).</li>
+  <li>Entropy increases when the <strong>number of moles of gas increases</strong> in a reaction.</li>
+  <li>Entropy increases when a <strong>solid dissolves</strong> in a solvent (particles become more dispersed).</li>
+  <li><strong>More complex molecules</strong> (more atoms, more bonds) have higher entropy than simpler ones (more vibrational modes).</li>
 </ul>
 
 <h3>Entropy Change of a Reaction</h3>
-
 <div class="equation">
-  &Delta;S<sub>system</sub> = &Sigma;S&deg;(products) &minus; &Sigma;S&deg;(reactants)
+  &Delta;S<sub>system</sub> = &Sigma;S&deg;(products) - &Sigma;S&deg;(reactants)
 </div>
 
-<p>If &Delta;S is positive, the system becomes more disordered. If &Delta;S is negative, the system becomes more ordered. Note that a reaction can still be spontaneous even with negative &Delta;S if it is sufficiently exothermic.</p>
+<p><strong>Predicting the sign of &Delta;S:</strong></p>
+<ul>
+  <li>&Delta;S > 0 (positive): more gas moles in products, solid dissolving, solid &rarr; liquid &rarr; gas</li>
+  <li>&Delta;S < 0 (negative): fewer gas moles in products, gas &rarr; liquid &rarr; solid, polymerisation</li>
+</ul>
+
+<p><strong>Example:</strong> CaCO<sub>3</sub>(s) &rarr; CaO(s) + CO<sub>2</sub>(g). &Delta;S is positive because a gas is produced from a solid (increase in disorder).</p>
 
 <h2>5.4 Gibbs Free Energy</h2>
 
 <div class="definition">
-  <strong>Gibbs free energy (&Delta;G):</strong> A thermodynamic quantity that determines whether a reaction is thermodynamically feasible (spontaneous). A reaction is feasible when &Delta;G &lt; 0.
+  <strong>Gibbs free energy change (&Delta;G):</strong> The thermodynamic quantity that determines whether a reaction is feasible (spontaneous). A reaction is thermodynamically feasible when &Delta;G < 0 (negative).
 </div>
 
 <div class="equation">
-  &Delta;G = &Delta;H &minus; T&Delta;S
+  &Delta;G = &Delta;H - T&Delta;S
 </div>
 
-<p>where &Delta;H = enthalpy change (J mol<sup>&minus;1</sup>), T = temperature (K), &Delta;S = entropy change (J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>).</p>
-
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> Ensure units are consistent. If &Delta;H is in kJ mol<sup>&minus;1</sup> and &Delta;S is in J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>, convert &Delta;S to kJ K<sup>&minus;1</sup> mol<sup>&minus;1</sup> by dividing by 1000 before substituting into the equation.
-</div>
+<p>where &Delta;H = enthalpy change (kJ mol<sup>-1</sup>), T = temperature (K), &Delta;S = entropy change (kJ K<sup>-1</sup> mol<sup>-1</sup>). Note: &Delta;S is often given in J K<sup>-1</sup> mol<sup>-1</sup> and must be divided by 1000 before substituting.</p>
 
 <h3>Feasibility at Different Temperatures</h3>
 
 <table>
-  <tr><th>&Delta;H</th><th>&Delta;S</th><th>Feasibility</th></tr>
-  <tr><td>Negative (exo)</td><td>Positive</td><td>Feasible at all temperatures (&Delta;G always negative)</td></tr>
-  <tr><td>Negative (exo)</td><td>Negative</td><td>Feasible at low temperatures (when |&Delta;H| > |T&Delta;S|)</td></tr>
-  <tr><td>Positive (endo)</td><td>Positive</td><td>Feasible at high temperatures (when T&Delta;S > &Delta;H)</td></tr>
-  <tr><td>Positive (endo)</td><td>Negative</td><td>Never feasible (&Delta;G always positive)</td></tr>
+  <tr><th>&Delta;H</th><th>&Delta;S</th><th>&Delta;G</th><th>Feasibility</th></tr>
+  <tr><td>Negative (exo)</td><td>Positive (+)</td><td>Always negative</td><td>Feasible at ALL temperatures</td></tr>
+  <tr><td>Negative (exo)</td><td>Negative (-)</td><td>Negative at low T</td><td>Feasible at LOW temperatures only</td></tr>
+  <tr><td>Positive (endo)</td><td>Positive (+)</td><td>Negative at high T</td><td>Feasible at HIGH temperatures only</td></tr>
+  <tr><td>Positive (endo)</td><td>Negative (-)</td><td>Always positive</td><td>NEVER feasible</td></tr>
 </table>
 
-<p>The temperature at which a reaction becomes feasible (where &Delta;G = 0) can be found by rearranging:</p>
+<p>The <strong>temperature at which &Delta;G = 0</strong> (transition between feasible and non-feasible) is found by:</p>
+<div class="equation">T = &Delta;H / &Delta;S</div>
 
-<div class="equation">
-  T = &Delta;H / &Delta;S
-</div>
+<p><strong>Sample calculation:</strong> For CaCO<sub>3</sub> decomposition: &Delta;H = +178 kJ mol<sup>-1</sup>, &Delta;S = +0.161 kJ K<sup>-1</sup> mol<sup>-1</sup>. T = 178/0.161 = 1106 K (833&deg;C). Below this temperature, &Delta;G > 0 (not feasible). Above it, &Delta;G < 0 (feasible).</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> Thermodynamic feasibility (&Delta;G &lt; 0) does not guarantee a reaction will occur. Kinetic barriers (high activation energy) may prevent it. Always state this limitation when asked to discuss feasibility.
+  <strong>Exam Tip:</strong> Thermodynamic feasibility (&Delta;G < 0) does NOT guarantee a reaction will occur at an observable rate. Kinetic barriers (high E<sub>a</sub>) may prevent it. Example: diamond &rarr; graphite has &Delta;G < 0 at room temperature, but the rate is essentially zero because the activation energy for breaking C-C bonds in diamond is enormous. Always state this limitation when discussing feasibility.
 </div>
 
-<!-- SVG: Entropy / Free Energy Relationship Diagram -->
+<!-- SVG: Gibbs Free Energy Relationships -->
 <div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Gibbs Free Energy, Enthalpy and Entropy</text>
-  <text x="260" y="40" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">DG = DH - TDS</text>
-
-  <!-- Four quadrant table -->
-  <!-- Headers -->
-  <rect x="160" y="52" width="100" height="25" rx="3" fill="#1a73e8"/>
-  <text x="210" y="69" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">DS positive</text>
-  <rect x="265" y="52" width="100" height="25" rx="3" fill="#DC2626"/>
-  <text x="315" y="69" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">DS negative</text>
-
-  <rect x="40" y="80" width="115" height="40" rx="3" fill="#16A34A"/>
-  <text x="97" y="104" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">DH negative (exo)</text>
-  <rect x="40" y="125" width="115" height="40" rx="3" fill="#D97706"/>
-  <text x="97" y="149" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">DH positive (endo)</text>
-
-  <!-- Quadrant 1: DH- DS+ => Always feasible -->
-  <rect x="160" y="80" width="100" height="40" rx="0" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="210" y="97" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">ALWAYS</text>
-  <text x="210" y="110" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">feasible</text>
-
-  <!-- Quadrant 2: DH- DS- => Low temp -->
-  <rect x="265" y="80" width="100" height="40" rx="0" fill="#fff8e1" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="315" y="97" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">LOW temp</text>
-  <text x="315" y="110" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">feasible</text>
-
-  <!-- Quadrant 3: DH+ DS+ => High temp -->
-  <rect x="160" y="125" width="100" height="40" rx="0" fill="#fff8e1" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="210" y="142" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">HIGH temp</text>
-  <text x="210" y="155" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">feasible</text>
-
-  <!-- Quadrant 4: DH+ DS- => Never -->
-  <rect x="265" y="125" width="100" height="40" rx="0" fill="#fee2e2" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="315" y="142" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">NEVER</text>
-  <text x="315" y="155" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">feasible</text>
-
+<svg viewBox="0 0 520 260" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Gibbs Free Energy: &Delta;G = &Delta;H - T&Delta;S</text>
+  <!-- Four-quadrant table -->
+  <rect x="160" y="45" width="100" height="25" rx="3" fill="#1a73e8"/>
+  <text x="210" y="62" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">&Delta;S positive</text>
+  <rect x="265" y="45" width="100" height="25" rx="3" fill="#DC2626"/>
+  <text x="315" y="62" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">&Delta;S negative</text>
+  <rect x="40" y="73" width="115" height="40" rx="3" fill="#16A34A"/>
+  <text x="97" y="97" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">&Delta;H negative</text>
+  <rect x="40" y="118" width="115" height="40" rx="3" fill="#D97706"/>
+  <text x="97" y="142" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">&Delta;H positive</text>
+  <rect x="160" y="73" width="100" height="40" rx="0" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="210" y="90" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">ALWAYS</text>
+  <text x="210" y="103" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">feasible</text>
+  <rect x="265" y="73" width="100" height="40" rx="0" fill="#fff8e1" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="315" y="90" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">LOW temp</text>
+  <text x="315" y="103" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">feasible</text>
+  <rect x="160" y="118" width="100" height="40" rx="0" fill="#fff8e1" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="210" y="135" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">HIGH temp</text>
+  <text x="210" y="148" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">feasible</text>
+  <rect x="265" y="118" width="100" height="40" rx="0" fill="#fee2e2" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="315" y="135" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">NEVER</text>
+  <text x="315" y="148" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">feasible</text>
   <!-- DG vs T graph -->
-  <text x="260" y="185" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">DG vs Temperature</text>
-  <!-- Axes -->
-  <line x1="80" y1="200" x2="80" y2="290" stroke="#1a1a2e" stroke-width="1.2"/>
-  <line x1="40" y1="255" x2="230" y2="255" stroke="#1a1a2e" stroke-width="1.2"/>
-  <text x="60" y="210" font-family="system-ui" font-size="8" fill="#1a1a2e">+DG</text>
-  <text x="60" y="290" font-family="system-ui" font-size="8" fill="#1a1a2e">-DG</text>
-  <text x="220" y="250" font-family="system-ui" font-size="8" fill="#1a1a2e">T</text>
-  <text x="55" y="258" font-family="system-ui" font-size="7" fill="#1a1a2e">0</text>
-
-  <!-- DH- DS+ line (always below zero) -->
-  <line x1="85" y1="270" x2="220" y2="285" stroke="#16A34A" stroke-width="2"/>
-  <text x="225" y="288" font-family="system-ui" font-size="8" fill="#16A34A">DH- DS+</text>
-
-  <!-- DH- DS- line (starts below, crosses to above) -->
-  <line x1="85" y1="275" x2="220" y2="230" stroke="#D97706" stroke-width="2"/>
-  <text x="225" y="233" font-family="system-ui" font-size="8" fill="#D97706">DH- DS-</text>
-
-  <!-- DH+ DS+ line (starts above, crosses to below) -->
-  <line x1="85" y1="235" x2="220" y2="275" stroke="#1a73e8" stroke-width="2"/>
-  <text x="225" y="278" font-family="system-ui" font-size="8" fill="#1a73e8">DH+ DS+</text>
-
-  <!-- DH+ DS- line (always above zero) -->
-  <line x1="85" y1="225" x2="220" y2="210" stroke="#DC2626" stroke-width="2"/>
-  <text x="225" y="213" font-family="system-ui" font-size="8" fill="#DC2626">DH+ DS-</text>
-
-  <!-- Feasibility note (right side) -->
-  <rect x="290" y="195" width="210" height="85" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
-  <text x="395" y="212" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">Key relationships:</text>
-  <text x="395" y="228" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">DG &lt; 0: reaction is feasible</text>
-  <text x="395" y="243" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">DG = 0: at equilibrium</text>
-  <text x="395" y="258" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">T(feasible) = DH / DS</text>
-  <text x="395" y="273" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">(when DG changes sign)</text>
+  <text x="260" y="178" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">&Delta;G vs Temperature (for &Delta;H+, &Delta;S+ case)</text>
+  <line x1="100" y1="190" x2="100" y2="250" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="60" y1="225" x2="450" y2="225" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="80" y="198" font-family="system-ui" font-size="8" fill="#1a1a2e">+&Delta;G</text>
+  <text x="80" y="250" font-family="system-ui" font-size="8" fill="#1a1a2e">-&Delta;G</text>
+  <text x="440" y="220" font-family="system-ui" font-size="8" fill="#1a1a2e">T/K</text>
+  <!-- Line crossing zero -->
+  <line x1="105" y1="198" x2="430" y2="245" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- T = DH/DS marker -->
+  <circle cx="260" cy="225" r="4" fill="#DC2626"/>
+  <text x="260" y="218" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">T = &Delta;H/&Delta;S</text>
+  <text x="170" y="210" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">NOT feasible</text>
+  <text x="170" y="220" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">(&Delta;G > 0)</text>
+  <text x="360" y="240" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">FEASIBLE</text>
+  <text x="360" y="250" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">(&Delta;G < 0)</text>
 </svg>
 </div>
 
-<h2>5.5 Acids and Bases — Bronsted-Lowry Theory</h2>
+<div class="real-world">
+  <strong>Real-World Application:</strong> The decomposition of limestone (CaCO<sub>3</sub> &rarr; CaO + CO<sub>2</sub>) is endothermic and only becomes feasible above ~830&deg;C because &Delta;S is positive (gas produced) and at high enough T, the T&Delta;S term overcomes the positive &Delta;H. This is exploited industrially in lime kilns. The thermite reaction (Fe<sub>2</sub>O<sub>3</sub> + 2Al &rarr; 2Fe + Al<sub>2</sub>O<sub>3</sub>) is feasible at all temperatures (&Delta;H < 0, &Delta;S &asymp; 0) but requires ignition due to high E<sub>a</sub>.
+</div>
+
+<h2>5.5 Acids, Bases and pH</h2>
 
 <div class="definition">
   <strong>Bronsted-Lowry acid:</strong> A proton (H<sup>+</sup>) donor.<br>
   <strong>Bronsted-Lowry base:</strong> A proton (H<sup>+</sup>) acceptor.<br>
-  <strong>Conjugate acid-base pair:</strong> Two species that differ by one proton. When an acid donates a proton, it forms its conjugate base; when a base accepts a proton, it forms its conjugate acid.
+  <strong>Strong acid:</strong> Fully dissociates (ionises) in aqueous solution (e.g. HCl, HNO<sub>3</sub>, H<sub>2</sub>SO<sub>4</sub>).<br>
+  <strong>Weak acid:</strong> Partially dissociates in aqueous solution, establishing an equilibrium (e.g. CH<sub>3</sub>COOH, H<sub>2</sub>CO<sub>3</sub>, HF).<br>
+  <strong>Conjugate acid-base pair:</strong> Two species that differ by one proton. E.g. CH<sub>3</sub>COOH / CH<sub>3</sub>COO<sup>-</sup>.
 </div>
 
-<p>Example: HCl + H<sub>2</sub>O &rarr; H<sub>3</sub>O<sup>+</sup> + Cl<sup>&minus;</sup>. HCl is the acid (donates H<sup>+</sup>), H<sub>2</sub>O is the base (accepts H<sup>+</sup>). Cl<sup>&minus;</sup> is the conjugate base of HCl, H<sub>3</sub>O<sup>+</sup> is the conjugate acid of H<sub>2</sub>O.</p>
+<h3>pH Calculations</h3>
 
-<h3>Strong and Weak Acids</h3>
+<div class="equation">pH = -log<sub>10</sub>[H<sup>+</sup>] &nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp; [H<sup>+</sup>] = 10<sup>-pH</sup></div>
 
-<table>
-  <tr><th>Property</th><th>Strong Acid</th><th>Weak Acid</th></tr>
-  <tr><td>Dissociation</td><td>Complete — fully ionised in water</td><td>Partial — equilibrium lies to the left</td></tr>
-  <tr><td>Examples</td><td>HCl, H<sub>2</sub>SO<sub>4</sub>, HNO<sub>3</sub></td><td>CH<sub>3</sub>COOH, H<sub>2</sub>CO<sub>3</sub>, HF</td></tr>
-  <tr><td>[H<sup>+</sup>]</td><td>Equal to acid concentration</td><td>Much less than acid concentration</td></tr>
-  <tr><td>pH</td><td>Lower pH for same concentration</td><td>Higher pH for same concentration</td></tr>
-  <tr><td>Conductivity</td><td>Higher (more ions)</td><td>Lower (fewer ions)</td></tr>
-</table>
+<p><strong>pH of a strong acid:</strong> Since strong acids fully dissociate, [H<sup>+</sup>] = concentration of the acid (for monobasic acids like HCl). Example: 0.10 mol dm<sup>-3</sup> HCl has [H<sup>+</sup>] = 0.10, pH = -log(0.10) = 1.00.</p>
 
-<h2>5.6 pH Calculations</h2>
+<p><strong>For dibasic acids like H<sub>2</sub>SO<sub>4</sub>:</strong> [H<sup>+</sup>] = 2 &times; concentration (both protons donated). Example: 0.050 mol dm<sup>-3</sup> H<sub>2</sub>SO<sub>4</sub> has [H<sup>+</sup>] = 0.10, pH = 1.00.</p>
 
-<div class="equation">
-  pH = &minus;log<sub>10</sub>[H<sup>+</sup>] &nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp; [H<sup>+</sup>] = 10<sup>&minus;pH</sup>
+<h2>5.6 The Ionic Product of Water (K<sub>w</sub>)</h2>
+
+<p>Water undergoes autoionisation: H<sub>2</sub>O(l) &#8652; H<sup>+</sup>(aq) + OH<sup>-</sup>(aq)</p>
+
+<div class="equation">K<sub>w</sub> = [H<sup>+</sup>][OH<sup>-</sup>] = 1.00 &times; 10<sup>-14</sup> mol<sup>2</sup> dm<sup>-6</sup> at 25&deg;C (298 K)</div>
+
+<p>At 25&deg;C, in pure water: [H<sup>+</sup>] = [OH<sup>-</sup>] = 1.00 &times; 10<sup>-7</sup> mol dm<sup>-3</sup>, so pH = 7.00.</p>
+
+<p><strong>pH of a strong base:</strong> Find [OH<sup>-</sup>] from the base concentration, then [H<sup>+</sup>] = K<sub>w</sub>/[OH<sup>-</sup>], then pH = -log[H<sup>+</sup>].</p>
+<p>Example: 0.050 mol dm<sup>-3</sup> NaOH: [OH<sup>-</sup>] = 0.050, [H<sup>+</sup>] = 10<sup>-14</sup>/0.050 = 2.0 &times; 10<sup>-13</sup>, pH = -log(2.0 &times; 10<sup>-13</sup>) = 12.70.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> K<sub>w</sub> increases with temperature (the forward reaction is endothermic). At temperatures above 25&deg;C, K<sub>w</sub> > 10<sup>-14</sup>, so pH of pure water < 7. This does NOT mean the water is acidic &mdash; it is still neutral because [H<sup>+</sup>] = [OH<sup>-</sup>]. Neutral pH is only 7.00 at exactly 25&deg;C.
 </div>
-
-<h3>pH of Strong Acids</h3>
-
-<p>For a strong monoprotic acid (e.g. HCl): [H<sup>+</sup>] = concentration of acid. So pH = &minus;log[acid].</p>
-
-<p>For a strong diprotic acid (e.g. H<sub>2</sub>SO<sub>4</sub>): [H<sup>+</sup>] = 2 &times; concentration of acid (assuming full dissociation of both protons).</p>
-
-<h3>pH of Strong Bases</h3>
-
-<p>Use the ionic product of water:</p>
-
-<div class="equation">
-  K<sub>w</sub> = [H<sup>+</sup>][OH<sup>&minus;</sup>] = 1.00 &times; 10<sup>&minus;14</sup> mol<sup>2</sup> dm<sup>&minus;6</sup> at 25&deg;C
-</div>
-
-<p>Find [OH<sup>&minus;</sup>] from the base concentration, then calculate [H<sup>+</sup>] = K<sub>w</sub> / [OH<sup>&minus;</sup>], then find pH.</p>
 
 <h2>5.7 K<sub>a</sub> and pK<sub>a</sub></h2>
 
 <div class="definition">
-  <strong>Acid dissociation constant (K<sub>a</sub>):</strong> The equilibrium constant for the dissociation of a weak acid in water. For HA &#8652; H<sup>+</sup> + A<sup>&minus;</sup>:<br>
-  K<sub>a</sub> = [H<sup>+</sup>][A<sup>&minus;</sup>] / [HA]
+  <strong>Acid dissociation constant (K<sub>a</sub>):</strong> The equilibrium constant for the dissociation of a weak acid in water.<br>
+  For HA(aq) &#8652; H<sup>+</sup>(aq) + A<sup>-</sup>(aq):<br>
+  K<sub>a</sub> = [H<sup>+</sup>][A<sup>-</sup>] / [HA] &nbsp;&nbsp; (units: mol dm<sup>-3</sup>)
 </div>
 
-<p>A larger K<sub>a</sub> means a stronger acid (greater degree of dissociation).</p>
+<p>A larger K<sub>a</sub> means a stronger acid (greater degree of dissociation). A smaller pK<sub>a</sub> means a stronger acid.</p>
 
-<div class="equation">
-  pK<sub>a</sub> = &minus;log<sub>10</sub>K<sub>a</sub> &nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp; K<sub>a</sub> = 10<sup>&minus;pK<sub>a</sub></sup>
-</div>
-
-<p>A smaller pK<sub>a</sub> means a stronger acid.</p>
+<div class="equation">pK<sub>a</sub> = -log<sub>10</sub>K<sub>a</sub> &nbsp;&nbsp;&nbsp; K<sub>a</sub> = 10<sup>-pK<sub>a</sub></sup></div>
 
 <h3>Calculating pH of a Weak Acid</h3>
+<p>For a weak acid HA with initial concentration c and K<sub>a</sub> known, we make two key assumptions:</p>
+<ol>
+  <li>[H<sup>+</sup>] = [A<sup>-</sup>] (because they are produced in equal amounts)</li>
+  <li>[HA]<sub>equilibrium</sub> &asymp; c (because dissociation is so small that the amount of HA consumed is negligible)</li>
+</ol>
 
-<p>For a weak acid HA with concentration c and K<sub>a</sub> known, we assume [H<sup>+</sup>] = [A<sup>&minus;</sup>] and [HA] &approx; c (since dissociation is small):</p>
+<p>Substituting into K<sub>a</sub>:</p>
+<div class="equation">K<sub>a</sub> = [H<sup>+</sup>]<sup>2</sup> / c &nbsp;&nbsp; &rArr; &nbsp;&nbsp; [H<sup>+</sup>] = &radic;(K<sub>a</sub> &times; c) &nbsp;&nbsp; &rArr; &nbsp;&nbsp; pH = -log[H<sup>+</sup>]</div>
 
-<div class="equation">
-  K<sub>a</sub> = [H<sup>+</sup>]<sup>2</sup> / c &nbsp;&nbsp;&nbsp; so &nbsp;&nbsp;&nbsp; [H<sup>+</sup>] = &radic;(K<sub>a</sub> &times; c)
-</div>
+<p><strong>Sample calculation:</strong> CH<sub>3</sub>COOH, c = 0.10 mol dm<sup>-3</sup>, K<sub>a</sub> = 1.74 &times; 10<sup>-5</sup> mol dm<sup>-3</sup>.</p>
+<p>[H<sup>+</sup>] = &radic;(1.74 &times; 10<sup>-5</sup> &times; 0.10) = &radic;(1.74 &times; 10<sup>-6</sup>) = 1.32 &times; 10<sup>-3</sup> mol dm<sup>-3</sup>. pH = -log(1.32 &times; 10<sup>-3</sup>) = 2.88.</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> The assumptions [H<sup>+</sup>] = [A<sup>&minus;</sup>] and [HA] &approx; c are only valid for weak acids. State these assumptions explicitly in calculations. They break down for very dilute solutions or moderately strong weak acids.
+  <strong>Exam Tip:</strong> State BOTH assumptions explicitly in calculations for full marks. If you need to find K<sub>a</sub> from pH, work backwards: [H<sup>+</sup>] = 10<sup>-pH</sup>, then K<sub>a</sub> = [H<sup>+</sup>]<sup>2</sup>/c. These assumptions are only valid when less than ~5% of the acid dissociates.
 </div>
 
 <h2>5.8 Buffer Solutions</h2>
 
 <div class="definition">
-  <strong>Buffer solution:</strong> A solution that resists changes in pH when small amounts of acid or base are added. It consists of a weak acid and its conjugate base (or a weak base and its conjugate acid).
+  <strong>Buffer solution:</strong> A solution that resists changes in pH when small amounts of acid or base are added. An acidic buffer consists of a <strong>weak acid</strong> and its <strong>conjugate base</strong> (usually added as the sodium/potassium salt).
 </div>
 
-<h3>How Buffers Work</h3>
-
-<p>An acidic buffer contains a weak acid (HA) and its salt (e.g. NaA, providing A<sup>&minus;</sup>):</p>
-
+<p><strong>How buffers work:</strong> The buffer contains a large reservoir of both HA (weak acid) and A<sup>-</sup> (conjugate base):</p>
 <ul>
-  <li><strong>When acid (H<sup>+</sup>) is added:</strong> The conjugate base A<sup>&minus;</sup> reacts with H<sup>+</sup> to form HA. This removes the added H<sup>+</sup>, so pH barely changes.</li>
-  <li><strong>When base (OH<sup>&minus;</sup>) is added:</strong> The weak acid HA reacts with OH<sup>&minus;</sup> to form A<sup>&minus;</sup> + H<sub>2</sub>O. This removes the added OH<sup>&minus;</sup>, so pH barely changes.</li>
+  <li><strong>When H<sup>+</sup> is added:</strong> A<sup>-</sup> + H<sup>+</sup> &rarr; HA. The conjugate base removes the added H<sup>+</sup>, forming more undissociated acid. [H<sup>+</sup>] barely changes, so pH is maintained.</li>
+  <li><strong>When OH<sup>-</sup> is added:</strong> HA + OH<sup>-</sup> &rarr; A<sup>-</sup> + H<sub>2</sub>O. The weak acid neutralises the added OH<sup>-</sup>. [H<sup>+</sup>] barely changes.</li>
 </ul>
 
-<h3>Calculating the pH of a Buffer</h3>
+<p><strong>Making a buffer:</strong></p>
+<ul>
+  <li>Method 1: Mix a weak acid with its sodium/potassium salt (e.g. CH<sub>3</sub>COOH + CH<sub>3</sub>COONa)</li>
+  <li>Method 2: Partially neutralise a weak acid with a strong base (e.g. add NaOH to excess CH<sub>3</sub>COOH). The unreacted acid provides HA, and the salt formed provides A<sup>-</sup>.</li>
+</ul>
 
-<p>Using the K<sub>a</sub> expression: K<sub>a</sub> = [H<sup>+</sup>][A<sup>&minus;</sup>] / [HA], rearranging gives:</p>
+<h3>Calculating Buffer pH</h3>
+<div class="equation">[H<sup>+</sup>] = K<sub>a</sub> &times; [HA] / [A<sup>-</sup>]</div>
+<div class="equation">pH = pK<sub>a</sub> + log<sub>10</sub>([A<sup>-</sup>] / [HA]) &nbsp;&nbsp; (Henderson-Hasselbalch equation)</div>
 
-<div class="equation">
-  [H<sup>+</sup>] = K<sub>a</sub> &times; [HA] / [A<sup>&minus;</sup>]
-</div>
+<p><strong>Sample calculation:</strong> Buffer made from 0.20 mol dm<sup>-3</sup> CH<sub>3</sub>COOH and 0.10 mol dm<sup>-3</sup> CH<sub>3</sub>COONa. K<sub>a</sub> = 1.74 &times; 10<sup>-5</sup>.</p>
+<p>[H<sup>+</sup>] = 1.74 &times; 10<sup>-5</sup> &times; 0.20/0.10 = 3.48 &times; 10<sup>-5</sup>. pH = -log(3.48 &times; 10<sup>-5</sup>) = 4.46.</p>
 
-<p>Then pH = &minus;log[H<sup>+</sup>]. The Henderson-Hasselbalch equation is an equivalent form:</p>
+<p><strong>Note:</strong> When [HA] = [A<sup>-</sup>], then [H<sup>+</sup>] = K<sub>a</sub> and pH = pK<sub>a</sub>. This occurs at the half-equivalence point in a weak acid-strong base titration.</p>
 
-<div class="equation">
-  pH = pK<sub>a</sub> + log<sub>10</sub>([A<sup>&minus;</sup>] / [HA])
-</div>
-
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> When preparing a buffer, you can mix a weak acid with its sodium salt, or you can partially neutralise a weak acid with a strong base. In the latter case, calculate the moles of HA remaining and moles of A<sup>&minus;</sup> formed.
-</div>
-
-<!-- SVG: Buffer Action Diagram -->
+<!-- SVG: Buffer Action -->
 <div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 290" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Buffer Action: How Buffers Resist pH Change</text>
-  <text x="260" y="40" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Acidic buffer: weak acid (HA) + conjugate base (A-)</text>
-
+<svg viewBox="0 0 520 250" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Buffer Action: Resisting pH Change</text>
+  <text x="260" y="40" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Acidic buffer: weak acid (HA) + conjugate base (A<tspan font-size="7" dy="-3">-</tspan><tspan dy="3">)</tspan></text>
+  <defs><marker id="bufArr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#1a1a2e"/></marker></defs>
   <!-- Central equilibrium -->
-  <rect x="155" y="52" width="210" height="32" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="260" y="72" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">HA &#8652; H+ + A-</text>
-  <text x="260" y="100" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Large reservoir of both HA and A- present</text>
-
-  <!-- LEFT: Acid added -->
-  <rect x="15" y="120" width="230" height="155" rx="8" fill="#ffffff" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="130" y="140" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">When ACID (H+) is added:</text>
-
-  <!-- H+ added arrow -->
-  <rect x="35" y="152" width="55" height="25" rx="4" fill="#fee2e2" stroke="#DC2626" stroke-width="1"/>
-  <text x="62" y="169" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">H+</text>
-  <text x="100" y="169" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e">+</text>
-  <rect x="112" y="152" width="55" height="25" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
-  <text x="139" y="169" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">A-</text>
-
-  <!-- Arrow down -->
-  <line x1="130" y1="180" x2="130" y2="200" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#hlArrow)"/>
-
-  <!-- Product -->
-  <rect x="85" y="205" width="90" height="25" rx="4" fill="#fff8e1" stroke="#D97706" stroke-width="1"/>
-  <text x="130" y="222" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">HA</text>
-
-  <text x="130" y="250" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">A- removes added H+</text>
-  <text x="130" y="263" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">pH barely changes</text>
-
-  <!-- RIGHT: Base added -->
-  <rect x="265" y="120" width="240" height="155" rx="8" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="385" y="140" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">When BASE (OH-) is added:</text>
-
-  <!-- OH- added -->
-  <rect x="285" y="152" width="55" height="25" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
-  <text x="312" y="169" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">OH-</text>
-  <text x="350" y="169" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e">+</text>
-  <rect x="362" y="152" width="55" height="25" rx="4" fill="#fff8e1" stroke="#D97706" stroke-width="1"/>
-  <text x="389" y="169" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">HA</text>
-
-  <!-- Arrow down -->
-  <line x1="385" y1="180" x2="385" y2="200" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#hlArrow)"/>
-
-  <!-- Products -->
-  <rect x="340" y="205" width="90" height="25" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
-  <text x="385" y="222" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">A- + H2O</text>
-
-  <text x="385" y="250" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">HA neutralises added OH-</text>
-  <text x="385" y="263" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">pH barely changes</text>
-
-  <!-- Bottom note -->
-  <text x="260" y="285" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Buffer capacity depends on concentrations of HA and A- (higher = better buffering)</text>
+  <rect x="155" y="50" width="210" height="28" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="260" y="68" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">HA &#8652; H<tspan font-size="8" dy="-3">+</tspan><tspan dy="3"> + A</tspan><tspan font-size="8" dy="-3">-</tspan></text>
+  <!-- Left: H+ added -->
+  <rect x="15" y="95" width="235" height="140" rx="8" fill="#ffffff" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="132" y="115" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">H<tspan font-size="8" dy="-3">+</tspan><tspan dy="3"> added (acid):</tspan></text>
+  <text x="132" y="140" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">A<tspan font-size="7" dy="-3">-</tspan><tspan dy="3"> + H</tspan><tspan font-size="7" dy="-3">+</tspan><tspan dy="3"> &rarr; HA</tspan></text>
+  <text x="132" y="165" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">The conjugate base A<tspan font-size="7" dy="-3">-</tspan><tspan dy="3"> removes</tspan></text>
+  <text x="132" y="180" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">the added H<tspan font-size="7" dy="-3">+</tspan><tspan dy="3"> by forming HA</tspan></text>
+  <text x="132" y="210" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">&rarr; [H<tspan font-size="7" dy="-3">+</tspan><tspan dy="3">] barely changes</tspan></text>
+  <text x="132" y="225" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">&rarr; pH maintained</text>
+  <!-- Right: OH- added -->
+  <rect x="265" y="95" width="240" height="140" rx="8" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="385" y="115" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">OH<tspan font-size="8" dy="-3">-</tspan><tspan dy="3"> added (base):</tspan></text>
+  <text x="385" y="140" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">HA + OH<tspan font-size="7" dy="-3">-</tspan><tspan dy="3"> &rarr; A</tspan><tspan font-size="7" dy="-3">-</tspan><tspan dy="3"> + H</tspan><tspan font-size="7" dy="2">2</tspan><tspan dy="-2">O</tspan></text>
+  <text x="385" y="165" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">The weak acid HA neutralises</text>
+  <text x="385" y="180" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">the added OH<tspan font-size="7" dy="-3">-</tspan></text>
+  <text x="385" y="210" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">&rarr; [H<tspan font-size="7" dy="-3">+</tspan><tspan dy="3">] barely changes</tspan></text>
+  <text x="385" y="225" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">&rarr; pH maintained</text>
+  <text x="260" y="248" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Buffer capacity depends on concentrations of HA and A<tspan font-size="7" dy="-3">-</tspan><tspan dy="3"> (higher = better buffering)</tspan></text>
 </svg>
 </div>
 
-<h2>5.9 Titration Curves</h2>
+<div class="real-world">
+  <strong>Real-World Application:</strong> Blood is buffered at pH 7.35-7.45 by the carbonic acid/hydrogen carbonate system: H<sub>2</sub>CO<sub>3</sub>/HCO<sub>3</sub><sup>-</sup>. This is vital because enzymes function optimally only within a narrow pH range &mdash; even small pH changes can denature proteins and disrupt metabolic processes. Acidosis (pH < 7.35) and alkalosis (pH > 7.45) are life-threatening conditions.
+</div>
 
-<h3>Shapes of Titration Curves</h3>
+<h2>5.9 Titration Curves and Indicators</h2>
+
+<h3>Shapes of pH Titration Curves</h3>
 
 <table>
-  <tr><th>Combination</th><th>Initial pH</th><th>Equivalence Point pH</th><th>Suitable Indicator</th></tr>
-  <tr><td>Strong acid + Strong base</td><td>Low (~1)</td><td>7</td><td>Any (methyl orange or phenolphthalein)</td></tr>
-  <tr><td>Strong acid + Weak base</td><td>Low (~1)</td><td>&lt; 7 (acidic)</td><td>Methyl orange</td></tr>
-  <tr><td>Weak acid + Strong base</td><td>Higher (~3)</td><td>&gt; 7 (basic)</td><td>Phenolphthalein</td></tr>
-  <tr><td>Weak acid + Weak base</td><td>Higher (~3)</td><td>&asymp; 7</td><td>No suitable indicator (gradual change)</td></tr>
+  <tr><th>Combination</th><th>Start pH</th><th>Equivalence pH</th><th>Suitable Indicator</th></tr>
+  <tr><td>Strong acid + Strong base</td><td>Low (~1)</td><td>7.0</td><td>Any (methyl orange or phenolphthalein)</td></tr>
+  <tr><td>Strong acid + Weak base</td><td>Low (~1)</td><td>< 7 (acidic salt)</td><td>Methyl orange (range 3.1-4.4)</td></tr>
+  <tr><td>Weak acid + Strong base</td><td>Higher (~3)</td><td>> 7 (basic salt)</td><td>Phenolphthalein (range 8.3-10.0)</td></tr>
+  <tr><td>Weak acid + Weak base</td><td>Higher (~3)</td><td>&asymp; 7</td><td>No suitable indicator (no sharp endpoint)</td></tr>
 </table>
 
 <!-- SVG: pH Titration Curves -->
 <div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 520 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 520 310" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">pH Titration Curves (adding base to acid)</text>
-
-  <!-- Axes -->
-  <line x1="60" y1="45" x2="60" y2="270" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="60" y1="270" x2="490" y2="270" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="25" y="160" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" transform="rotate(-90,25,160)">pH</text>
-  <text x="280" y="290" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">Volume of base added (cm3)</text>
-
-  <!-- pH scale markers -->
-  <text x="50" y="268" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">0</text>
-  <text x="50" y="247" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">2</text>
-  <text x="50" y="225" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">4</text>
-  <text x="50" y="203" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">6</text>
-  <text x="50" y="181" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">8</text>
-  <text x="50" y="159" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">10</text>
-  <text x="50" y="137" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">12</text>
-  <text x="50" y="115" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">14</text>
-  <!-- Grid line at pH 7 -->
-  <line x1="60" y1="181" x2="490" y2="181" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="4,3"/>
-  <text x="495" y="184" font-family="system-ui" font-size="7" fill="#cbd5e1">pH 7</text>
-
-  <!-- Equivalence point vertical line -->
-  <line x1="270" y1="50" x2="270" y2="270" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="4,3"/>
-  <text x="270" y="46" text-anchor="middle" font-family="system-ui" font-size="7" fill="#cbd5e1">equivalence</text>
-
-  <!-- Curve 1: Strong acid + Strong base (steep jump at pH 7) -->
-  <path d="M65,260 Q100,258 150,255 Q200,250 240,248 Q255,245 262,230 Q266,200 270,181 Q274,140 278,130 Q290,118 320,115 Q380,112 490,110" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
-
-  <!-- Curve 2: Weak acid + Strong base (starts higher, buffer region, eq point >7) -->
-  <path d="M65,235 Q100,220 140,210 Q180,200 220,195 Q240,192 255,185 Q262,170 268,155 Q272,135 278,125 Q290,118 320,115 Q380,112 490,110" fill="none" stroke="#DC2626" stroke-width="2.5"/>
-
-  <!-- Curve 3: Strong acid + Weak base (eq point <7) -->
-  <path d="M65,260 Q100,258 150,255 Q200,250 240,248 Q255,245 262,235 Q266,215 270,200 Q274,185 278,180 Q290,175 320,175 Q380,172 490,170" fill="none" stroke="#16A34A" stroke-width="2.5"/>
-
-  <!-- Equivalence point markers -->
-  <circle cx="270" cy="181" r="4" fill="#1a73e8"/>
-  <circle cx="270" cy="148" r="4" fill="#DC2626"/>
-  <circle cx="270" cy="200" r="4" fill="#16A34A"/>
-
-  <!-- Half-equivalence marker for weak acid curve -->
-  <line x1="165" y1="197" x2="165" y2="270" stroke="#DC2626" stroke-width="0.5" stroke-dasharray="3,2"/>
-  <text x="165" y="283" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">half-eq</text>
-  <text x="165" y="192" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">pH=pKa</text>
-
+  <line x1="60" y1="45" x2="60" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="260" x2="490" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="25" y="155" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" transform="rotate(-90,25,155)">pH</text>
+  <text x="280" y="280" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Volume of base added / cm<tspan font-size="7" dy="-3">3</tspan></text>
+  <!-- pH scale -->
+  <text x="50" y="260" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">0</text>
+  <text x="50" y="196" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">7</text>
+  <text x="50" y="108" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">14</text>
+  <line x1="60" y1="196" x2="490" y2="196" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="4,3"/>
+  <line x1="270" y1="45" x2="270" y2="260" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="4,3"/>
+  <text x="270" y="42" text-anchor="middle" font-family="system-ui" font-size="7" fill="#cbd5e1">equivalence</text>
+  <!-- Strong acid + Strong base -->
+  <path d="M65,252 Q150,248 230,244 Q255,240 262,225 Q266,200 270,196 Q274,160 278,145 Q290,130 320,125 Q380,120 490,118" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- Weak acid + Strong base -->
+  <path d="M65,228 Q120,215 160,208 Q200,200 240,196 Q255,192 262,178 Q268,155 272,140 Q278,128 290,125 Q320,122 380,120 Q490,118 490,118" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <!-- Strong acid + Weak base -->
+  <path d="M65,252 Q150,248 230,244 Q255,240 262,230 Q266,215 270,208 Q274,198 278,195 Q290,192 320,190 Q380,188 490,186" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+  <!-- Equivalence dots -->
+  <circle cx="270" cy="196" r="3" fill="#1a73e8"/>
+  <circle cx="270" cy="155" r="3" fill="#DC2626"/>
+  <circle cx="270" cy="208" r="3" fill="#16A34A"/>
+  <!-- Half-eq for weak acid -->
+  <line x1="165" y1="200" x2="165" y2="260" stroke="#DC2626" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <text x="165" y="275" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">half-eq: pH=pKa</text>
   <!-- Legend -->
-  <line x1="70" y1="305" x2="95" y2="305" stroke="#1a73e8" stroke-width="2.5"/>
-  <text x="100" y="309" font-family="system-ui" font-size="9" fill="#1a1a2e">Strong acid + Strong base (eq. pH=7)</text>
-  <line x1="295" y1="305" x2="320" y2="305" stroke="#DC2626" stroke-width="2.5"/>
-  <text x="325" y="309" font-family="system-ui" font-size="9" fill="#1a1a2e">Weak acid + Strong base (eq. pH&gt;7)</text>
-  <line x1="180" y1="316" x2="205" y2="316" stroke="#16A34A" stroke-width="2.5"/>
-  <text x="210" y="320" font-family="system-ui" font-size="9" fill="#1a1a2e">Strong acid + Weak base (eq. pH&lt;7)</text>
+  <line x1="70" y1="296" x2="95" y2="296" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="100" y="300" font-family="system-ui" font-size="8" fill="#1a1a2e">SA + SB (eq pH=7)</text>
+  <line x1="220" y1="296" x2="245" y2="296" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="250" y="300" font-family="system-ui" font-size="8" fill="#1a1a2e">WA + SB (eq pH>7)</text>
+  <line x1="370" y1="296" x2="395" y2="296" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="400" y="300" font-family="system-ui" font-size="8" fill="#1a1a2e">SA + WB (eq pH<7)</text>
 </svg>
 </div>
 
-<h3>Key Features of a Weak Acid-Strong Base Curve</h3>
-
+<h3>Key Features of a Weak Acid + Strong Base Curve</h3>
 <ul>
-  <li>Starts at a higher pH than a strong acid (only partially dissociated)</li>
-  <li>Buffer region: a relatively flat section before equivalence where pH changes slowly (the solution acts as a buffer)</li>
-  <li>Half-equivalence point: halfway to equivalence, [HA] = [A<sup>&minus;</sup>], so pH = pK<sub>a</sub></li>
-  <li>Equivalence point: pH > 7 (the salt of a weak acid and strong base is slightly basic)</li>
-  <li>Steep section around equivalence point is shorter than for strong acid-strong base</li>
+  <li><strong>Initial pH</strong> is higher than for a strong acid (only partially dissociated, so fewer H<sup>+</sup> ions)</li>
+  <li><strong>Buffer region:</strong> A relatively flat section before equivalence where pH changes slowly. The solution acts as a natural buffer (mixture of HA and A<sup>-</sup>)</li>
+  <li><strong>Half-equivalence point:</strong> Halfway to equivalence, exactly half the acid has been neutralised, so [HA] = [A<sup>-</sup>] and pH = pK<sub>a</sub>. This allows K<sub>a</sub> to be determined experimentally.</li>
+  <li><strong>Equivalence point pH > 7:</strong> The salt formed (NaA) contains the conjugate base A<sup>-</sup>, which hydrolyses slightly: A<sup>-</sup> + H<sub>2</sub>O &#8652; HA + OH<sup>-</sup>, making the solution basic.</li>
+  <li><strong>Steep section</strong> around equivalence is shorter than for strong acid-strong base.</li>
 </ul>
 
 <h3>Indicators</h3>
 
 <div class="definition">
-  <strong>Indicator:</strong> A weak acid (HIn) that has a different colour to its conjugate base (In<sup>&minus;</sup>). The end point colour change occurs when pH = pK<sub>in</sub> &plusmn; 1. For a titration, choose an indicator whose pK<sub>in</sub> falls within the steep vertical section of the titration curve.
+  <strong>Indicator:</strong> A weak acid (HIn) that changes colour depending on pH. In acid: HIn predominates (one colour). In base: In<sup>-</sup> predominates (different colour). The colour change occurs over a range of about 2 pH units centred on pK<sub>in</sub>.
 </div>
 
+<p>For a titration, the indicator must have its pK<sub>in</sub> within the steep (near-vertical) section of the titration curve. This ensures a sharp colour change at the equivalence point.</p>
+
 <table>
-  <tr><th>Indicator</th><th>pK<sub>in</sub></th><th>Colour (acid)</th><th>Colour (base)</th><th>pH Range</th></tr>
-  <tr><td>Methyl orange</td><td>3.7</td><td>Red</td><td>Yellow</td><td>3.1 &ndash; 4.4</td></tr>
-  <tr><td>Phenolphthalein</td><td>9.3</td><td>Colourless</td><td>Pink</td><td>8.3 &ndash; 10.0</td></tr>
+  <tr><th>Indicator</th><th>pK<sub>in</sub></th><th>Colour (acid)</th><th>Colour (base)</th><th>pH range</th><th>Use with</th></tr>
+  <tr><td>Methyl orange</td><td>3.7</td><td>Red</td><td>Yellow</td><td>3.1-4.4</td><td>Strong acid + weak/strong base</td></tr>
+  <tr><td>Phenolphthalein</td><td>9.3</td><td>Colourless</td><td>Pink</td><td>8.3-10.0</td><td>Weak acid + strong base</td></tr>
 </table>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> For weak acid-weak base titrations, there is no steep vertical section on the curve, so no indicator gives a sharp colour change. These titrations cannot be accurately determined using indicators — use a pH meter instead.
+  <strong>Exam Tip:</strong> For weak acid + weak base titrations, there is no steep vertical section on the curve, so no indicator gives a sharp endpoint. Use a pH meter instead. At the half-equivalence point, pH = pK<sub>a</sub> &mdash; this is a very commonly examined relationship. You can read pK<sub>a</sub> directly from a titration curve at the point where half the base has been added.
+</div>
+
+<h2>5.10 Enthalpy of Neutralisation</h2>
+
+<p>The standard enthalpy of neutralisation is the enthalpy change when an acid and a base react to form one mole of water under standard conditions.</p>
+
+<p><strong>Strong acid + strong base:</strong> &Delta;<sub>neut</sub>H&deg; &asymp; -57.1 kJ mol<sup>-1</sup> (consistent value because both fully dissociate; the reaction is simply H<sup>+</sup>(aq) + OH<sup>-</sup>(aq) &rarr; H<sub>2</sub>O(l)).</p>
+
+<p><strong>Weak acid or weak base involved:</strong> &Delta;<sub>neut</sub>H&deg; is less exothermic (less negative) because some energy is used to dissociate the weak acid/base before neutralisation can occur. For example, CH<sub>3</sub>COOH + NaOH gives &Delta;<sub>neut</sub>H &asymp; -55.2 kJ mol<sup>-1</sup>.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> If asked why the enthalpy of neutralisation for a weak acid-strong base reaction is less exothermic than expected, explain that energy is required to complete the dissociation of the weak acid (HA &rarr; H<sup>+</sup> + A<sup>-</sup>) before neutralisation occurs, reducing the overall exothermic value.
 </div>
 
 </div>
