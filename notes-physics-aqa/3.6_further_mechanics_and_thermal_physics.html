@@ -11,6 +11,7 @@
   h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
   h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
   h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  h4 { font-size: 1.05rem; color: #334155; margin: 16px 0 8px; }
   p { margin: 8px 0; }
   ul, ol { margin: 8px 0 8px 24px; }
   li { margin: 4px 0; }
@@ -20,6 +21,8 @@
   tr:nth-child(even) { background: #f8fafc; }
   .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
@@ -29,63 +32,57 @@
 
 <h1>3.6 Further Mechanics and Thermal Physics</h1>
 
-<!-- CIRCULAR MOTION -->
+<!-- ============================================================ -->
+<!-- 1. CIRCULAR MOTION -->
+<!-- ============================================================ -->
 <h2>1. Circular Motion</h2>
-<div class="def-box"><strong>Uniform circular motion:</strong> Motion in a circle at constant speed. Although the speed is constant, the velocity is continuously changing (because the direction changes), so the object is accelerating.</div>
+<div class="def-box"><strong>Uniform circular motion:</strong> Motion in a circle at constant speed. Although the speed is constant, the velocity is continuously changing (because the direction changes), so the object is accelerating. This acceleration is always directed towards the centre of the circle.</div>
 
 <h3>Key Quantities</h3>
 <table>
   <tr><th>Quantity</th><th>Symbol</th><th>Equation</th><th>Units</th></tr>
-  <tr><td>Angular velocity</td><td>&omega;</td><td>&omega; = 2&pi;f = 2&pi;/T = v/r</td><td>rad s<sup>-1</sup></td></tr>
-  <tr><td>Linear speed</td><td>v</td><td>v = &omega;r = 2&pi;r/T</td><td>m s<sup>-1</sup></td></tr>
+  <tr><td>Angular displacement</td><td>&theta;</td><td>&theta; = s/r (arc length / radius)</td><td>rad</td></tr>
+  <tr><td>Angular velocity</td><td>&omega;</td><td>&omega; = 2&pi;f = 2&pi;/T = v/r = &Delta;&theta;/&Delta;t</td><td>rad s<sup>-1</sup></td></tr>
+  <tr><td>Linear (tangential) speed</td><td>v</td><td>v = &omega;r = 2&pi;r/T</td><td>m s<sup>-1</sup></td></tr>
   <tr><td>Centripetal acceleration</td><td>a</td><td>a = v<sup>2</sup>/r = &omega;<sup>2</sup>r</td><td>m s<sup>-2</sup></td></tr>
   <tr><td>Centripetal force</td><td>F</td><td>F = mv<sup>2</sup>/r = m&omega;<sup>2</sup>r</td><td>N</td></tr>
+  <tr><td>Period</td><td>T</td><td>T = 2&pi;r/v = 2&pi;/&omega; = 1/f</td><td>s</td></tr>
+  <tr><td>Frequency</td><td>f</td><td>f = 1/T = &omega;/(2&pi;)</td><td>Hz</td></tr>
 </table>
+
+<p>One complete revolution = 2&pi; radians = 360 degrees. To convert: angle in radians = angle in degrees &times; &pi;/180.</p>
 
 <!-- Circular Motion Diagram -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 420 320" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="210" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Circular Motion — Vectors</text>
+  <text x="210" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Circular Motion -- Vectors</text>
   <defs>
     <marker id="aCM" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
     <marker id="aCMr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#DC2626"/></marker>
     <marker id="aCMg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#16A34A"/></marker>
   </defs>
-  <!-- Circle path -->
   <circle cx="210" cy="170" r="100" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <!-- Centre -->
   <circle cx="210" cy="170" r="3" fill="#1a1a2e"/>
   <text x="210" y="162" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Centre</text>
-  <!-- Radius -->
   <line x1="210" y1="170" x2="310" y2="170" stroke="#64748b" stroke-width="1" stroke-dasharray="3,3"/>
   <text x="260" y="165" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">r</text>
-
   <!-- Object at top -->
   <circle cx="210" cy="70" r="8" fill="#1a73e8"/>
-  <!-- Velocity tangent at top (to right) -->
   <line x1="218" y1="70" x2="270" y2="70" stroke="#16A34A" stroke-width="2.5" marker-end="url(#aCMg)"/>
   <text x="275" y="68" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">v</text>
-  <!-- Centripetal acceleration at top (downward to centre) -->
   <line x1="210" y1="80" x2="210" y2="120" stroke="#DC2626" stroke-width="2.5" marker-end="url(#aCMr)"/>
   <text x="195" y="110" text-anchor="end" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">a, F</text>
-
   <!-- Object at right -->
   <circle cx="310" cy="170" r="8" fill="#1a73e8"/>
-  <!-- Velocity tangent (downward) -->
   <line x1="310" y1="178" x2="310" y2="230" stroke="#16A34A" stroke-width="2.5" marker-end="url(#aCMg)"/>
   <text x="322" y="215" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">v</text>
-  <!-- Centripetal acceleration (leftward to centre) -->
   <line x1="300" y1="170" x2="260" y2="170" stroke="#DC2626" stroke-width="2.5" marker-end="url(#aCMr)"/>
   <text x="270" y="186" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">a, F</text>
-
   <!-- Object at bottom -->
   <circle cx="210" cy="270" r="8" fill="#1a73e8"/>
-  <!-- Velocity tangent (to left) -->
   <line x1="202" y1="270" x2="150" y2="270" stroke="#16A34A" stroke-width="2.5" marker-end="url(#aCMg)"/>
   <text x="145" y="268" text-anchor="end" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="600">v</text>
-  <!-- Centripetal acceleration (upward to centre) -->
   <line x1="210" y1="260" x2="210" y2="220" stroke="#DC2626" stroke-width="2.5" marker-end="url(#aCMr)"/>
-
   <!-- Legend -->
   <text x="210" y="306" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">
     <tspan fill="#16A34A" font-weight="600">v</tspan> = velocity (tangent) |
@@ -94,30 +91,63 @@
 </svg>
 </div>
 
-<p>The centripetal acceleration (and force) is always directed towards the centre of the circle. It is perpendicular to the velocity at all times.</p>
+<p>The centripetal acceleration (and force) is always directed towards the centre of the circle. It is perpendicular to the velocity at all times. Because the force is always perpendicular to the velocity, <strong>no work is done</strong> by the centripetal force, and the kinetic energy (and speed) of the object remains constant.</p>
 
-<div class="tip-box"><strong>Exam Tip:</strong> Centripetal force is NOT an extra force. It is the resultant of real forces (gravity, tension, friction, normal contact) that happen to point towards the centre. Never label "centripetal force" as a separate force on a free body diagram.</div>
+<div class="tip-box"><strong>Exam Tip:</strong> Centripetal force is NOT a separate type of force. It is the <em>resultant</em> of real forces (gravity, tension, friction, normal contact) that happen to point towards the centre. Never label "centripetal force" as a separate force on a free body diagram. Instead, identify which real force (or combination of forces) provides the centripetal force.</div>
 
-<!-- SHM -->
+<h3>Common Examples of Circular Motion</h3>
+<table>
+  <tr><th>Scenario</th><th>What provides the centripetal force</th></tr>
+  <tr><td>Car going around a flat bend</td><td>Friction between tyres and road</td></tr>
+  <tr><td>Car on a banked track</td><td>Horizontal component of the normal reaction force (plus friction if needed)</td></tr>
+  <tr><td>Satellite orbiting Earth</td><td>Gravitational attraction</td></tr>
+  <tr><td>Ball on a string (horizontal circle)</td><td>Horizontal component of tension in the string</td></tr>
+  <tr><td>Electron orbiting a nucleus (classical model)</td><td>Electrostatic (Coulomb) attraction</td></tr>
+</table>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A 0.20 kg ball is attached to a string and moves in a horizontal circle of radius 0.80 m at a speed of 3.0 m s<sup>-1</sup>. Calculate (a) the centripetal acceleration, (b) the centripetal force, (c) the angular velocity.<br><br>
+<strong>Solution:</strong><br>
+(a) a = v<sup>2</sup>/r = (3.0)<sup>2</sup>/0.80 = 9.0/0.80 = <strong>11.25 m s<sup>-2</sup></strong> (11 m s<sup>-2</sup> to 2 s.f.)<br>
+(b) F = ma = 0.20 &times; 11.25 = <strong>2.3 N</strong><br>
+(c) &omega; = v/r = 3.0/0.80 = <strong>3.75 rad s<sup>-1</sup></strong> (3.8 rad s<sup>-1</sup> to 2 s.f.)<br>
+Check: F = m&omega;<sup>2</sup>r = 0.20 &times; (3.75)<sup>2</sup> &times; 0.80 = 0.20 &times; 14.06 &times; 0.80 = 2.25 N. Consistent.
+</div>
+
+<h3>Vertical Circular Motion</h3>
+<p>For an object on a string moving in a vertical circle, the speed and tension vary around the loop:</p>
+<ul>
+  <li><strong>At the top:</strong> mg + T = mv<sup>2</sup>/r (weight and tension both point toward centre). The minimum speed occurs when T = 0: v<sub>min</sub> = &radic;(gr).</li>
+  <li><strong>At the bottom:</strong> T &minus; mg = mv<sup>2</sup>/r (tension points toward centre, weight points away). Tension is greatest here.</li>
+</ul>
+
+<div class="real-world"><strong>Real-World Application:</strong> In a loop-the-loop on a roller coaster, the car must have sufficient speed at the top of the loop for the passengers to maintain contact with the seat. At the minimum speed, the weight alone provides the centripetal force and passengers experience apparent weightlessness. Modern roller coasters use clothoid (spiral) loops rather than perfect circles to reduce the g-forces experienced at the bottom of the loop.</div>
+
+<!-- ============================================================ -->
+<!-- 2. SIMPLE HARMONIC MOTION -->
+<!-- ============================================================ -->
 <h2>2. Simple Harmonic Motion (SHM)</h2>
-<div class="def-box"><strong>Simple harmonic motion:</strong> Oscillatory motion in which the acceleration is always directed towards a fixed equilibrium position and is proportional to the displacement from that position.</div>
+<div class="def-box"><strong>Simple harmonic motion (SHM):</strong> An oscillation in which the acceleration is:<br>
+(1) always directed towards a fixed equilibrium position, and<br>
+(2) directly proportional to the displacement from that equilibrium position.<br>
+These two conditions are expressed by the defining equation:</div>
 <div class="eq">a = &minus;&omega;<sup>2</sup>x</div>
-<p>The negative sign indicates the acceleration is always in the opposite direction to the displacement (i.e. towards the equilibrium).</p>
+<p>The negative sign indicates the acceleration is always in the opposite direction to the displacement (i.e. it is a restoring acceleration, always pulling the object back towards the equilibrium position).</p>
 
 <h3>SHM Equations</h3>
 <table>
-  <tr><th>Quantity</th><th>Equation</th></tr>
-  <tr><td>Displacement</td><td>x = A cos(&omega;t) &nbsp; (if starting at max displacement)<br>x = A sin(&omega;t) &nbsp; (if starting at equilibrium)</td></tr>
-  <tr><td>Velocity</td><td>v = &minus;A&omega; sin(&omega;t)<br>v = &plusmn;&omega;&radic;(A<sup>2</sup> &minus; x<sup>2</sup>)</td></tr>
-  <tr><td>Maximum velocity</td><td>v<sub>max</sub> = A&omega; &nbsp; (at x = 0, the equilibrium)</td></tr>
-  <tr><td>Maximum acceleration</td><td>a<sub>max</sub> = A&omega;<sup>2</sup> &nbsp; (at x = &plusmn;A, the extremes)</td></tr>
+  <tr><th>Quantity</th><th>Equation</th><th>Notes</th></tr>
+  <tr><td>Displacement</td><td>x = A cos(&omega;t)<br>x = A sin(&omega;t)</td><td>Use cos if timing starts at max displacement; use sin if timing starts at equilibrium</td></tr>
+  <tr><td>Velocity</td><td>v = &minus;A&omega; sin(&omega;t)<br>v = &plusmn;&omega;&radic;(A<sup>2</sup> &minus; x<sup>2</sup>)</td><td>The second form is very useful for finding v at a given x without knowing t</td></tr>
+  <tr><td>Maximum velocity</td><td>v<sub>max</sub> = A&omega;</td><td>Occurs at x = 0 (the equilibrium position)</td></tr>
+  <tr><td>Maximum acceleration</td><td>a<sub>max</sub> = A&omega;<sup>2</sup></td><td>Occurs at x = &plusmn;A (the extremes)</td></tr>
+  <tr><td>Angular frequency</td><td>&omega; = 2&pi;f = 2&pi;/T</td><td>Always in rad s<sup>-1</sup></td></tr>
 </table>
 
-<!-- SHM Graphs: displacement, velocity, acceleration -->
+<!-- SHM Graphs -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 340" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">SHM: Displacement, Velocity, and Acceleration vs Time</text>
-
   <!-- Displacement graph -->
   <g transform="translate(60,35)">
     <line x1="0" y1="40" x2="400" y2="40" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="3,3"/>
@@ -126,35 +156,43 @@
     <text x="0" y="12" font-family="system-ui" font-size="9" fill="#1a73e8">+A</text>
     <text x="0" y="76" font-family="system-ui" font-size="9" fill="#1a73e8">-A</text>
   </g>
-
   <!-- Velocity graph -->
   <g transform="translate(60,130)">
     <line x1="0" y1="40" x2="400" y2="40" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="3,3"/>
     <text x="-10" y="44" text-anchor="end" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">v</text>
-    <!-- Cosine wave (velocity leads displacement by pi/2) -->
     <path d="M0,85 Q50,40 100,-5 Q150,40 200,85 Q250,40 300,-5 Q350,40 400,85" fill="none" stroke="#DC2626" stroke-width="2"/>
-    <!-- Note: this should be -sin if x=Acos, giving phase lead of pi/2 -->
   </g>
-
   <!-- Acceleration graph -->
   <g transform="translate(60,225)">
     <line x1="0" y1="40" x2="400" y2="40" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="3,3"/>
     <text x="-10" y="44" text-anchor="end" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">a</text>
-    <!-- Acceleration = -omega^2 x, so antiphase to displacement -->
     <path d="M0,85 Q50,130 100,40 Q150,-50 200,40 Q250,130 300,40 Q350,-50 400,40" fill="none" stroke="#16A34A" stroke-width="2"/>
   </g>
-
   <!-- Time axis -->
   <line x1="60" y1="310" x2="460" y2="310" stroke="#1a1a2e" stroke-width="1"/>
   <text x="470" y="314" font-family="system-ui" font-size="10" fill="#1a1a2e">t</text>
-  <!-- Period markers -->
   <text x="160" y="325" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">T/2</text>
   <text x="260" y="325" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">T</text>
   <text x="360" y="325" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">3T/2</text>
-
-  <!-- Legend -->
-  <text x="260" y="340" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">Velocity leads displacement by pi/2. Acceleration is in antiphase with displacement.</text>
+  <text x="260" y="340" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">Velocity leads displacement by &pi;/2. Acceleration is in antiphase with displacement.</text>
 </svg>
+</div>
+
+<h3>Phase Relationships</h3>
+<ul>
+  <li>Velocity leads displacement by &pi;/2 radians (90 degrees, or a quarter of a period).</li>
+  <li>Acceleration is in antiphase with displacement (&pi; radians or 180 degrees out of phase).</li>
+  <li>When x = 0, v = &plusmn;v<sub>max</sub> and a = 0.</li>
+  <li>When x = &plusmn;A, v = 0 and a = &mp;a<sub>max</sub>.</li>
+</ul>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A mass on a spring oscillates with SHM. The amplitude is 0.050 m and the period is 0.40 s. Calculate (a) the angular frequency, (b) the maximum velocity, (c) the maximum acceleration, (d) the velocity when the displacement is 0.030 m.<br><br>
+<strong>Solution:</strong><br>
+(a) &omega; = 2&pi;/T = 2&pi;/0.40 = <strong>15.7 rad s<sup>-1</sup></strong><br>
+(b) v<sub>max</sub> = A&omega; = 0.050 &times; 15.7 = <strong>0.79 m s<sup>-1</sup></strong><br>
+(c) a<sub>max</sub> = A&omega;<sup>2</sup> = 0.050 &times; (15.7)<sup>2</sup> = 0.050 &times; 247 = <strong>12.3 m s<sup>-2</sup></strong><br>
+(d) v = &omega;&radic;(A<sup>2</sup> &minus; x<sup>2</sup>) = 15.7 &times; &radic;(0.050<sup>2</sup> &minus; 0.030<sup>2</sup>) = 15.7 &times; &radic;(0.0025 &minus; 0.0009) = 15.7 &times; &radic;(0.0016) = 15.7 &times; 0.040 = <strong>0.63 m s<sup>-1</sup></strong>
 </div>
 
 <h3>Energy in SHM</h3>
@@ -163,417 +201,461 @@
   <li>At the extremes (x = &plusmn;A): KE is zero, PE is maximum.</li>
   <li>Total energy = KE + PE = constant (in the absence of damping).</li>
   <li>E<sub>total</sub> = &frac12;m&omega;<sup>2</sup>A<sup>2</sup></li>
+  <li>KE at displacement x: E<sub>k</sub> = &frac12;m&omega;<sup>2</sup>(A<sup>2</sup> &minus; x<sup>2</sup>)</li>
+  <li>PE at displacement x: E<sub>p</sub> = &frac12;m&omega;<sup>2</sup>x<sup>2</sup></li>
 </ul>
+<p>The total energy is proportional to A<sup>2</sup>. Doubling the amplitude quadruples the total energy.</p>
+
+<!-- Energy in SHM diagram -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 400 260" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="200" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Energy vs Displacement in SHM</text>
+  <defs><marker id="aEN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a1a2e"/></marker></defs>
+  <!-- Axes -->
+  <line x1="60" y1="220" x2="360" y2="220" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#aEN)"/>
+  <line x1="200" y1="230" x2="200" y2="40" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#aEN)"/>
+  <text x="360" y="238" text-anchor="end" font-family="system-ui" font-size="10" fill="#1a1a2e">x</text>
+  <text x="195" y="38" text-anchor="end" font-family="system-ui" font-size="10" fill="#1a1a2e">Energy</text>
+  <text x="80" y="235" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">-A</text>
+  <text x="320" y="235" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">+A</text>
+  <!-- PE parabola (upward) -->
+  <path d="M80,60 Q200,220 320,60" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <text x="310" y="80" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">PE</text>
+  <!-- KE parabola (downward) -->
+  <path d="M80,220 Q200,60 320,220" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <text x="85" y="210" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">KE</text>
+  <!-- Total energy line -->
+  <line x1="80" y1="60" x2="320" y2="60" stroke="#16A34A" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="340" y="55" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">Total E</text>
+  <text x="200" y="252" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">Total energy = KE + PE = constant = &frac12;m&omega;&sup2;A&sup2;</text>
+</svg>
+</div>
 
 <h3>Time Periods of SHM Systems</h3>
 <p><strong>Mass-spring system:</strong></p>
 <div class="eq">T = 2&pi;&radic;(m/k)</div>
-<p>T depends on mass and spring constant. It does NOT depend on amplitude.</p>
+<p>T depends on mass m and spring constant k. It does NOT depend on amplitude or on g.</p>
 
 <p><strong>Simple pendulum:</strong></p>
 <div class="eq">T = 2&pi;&radic;(L/g)</div>
-<p>T depends on length and gravitational field strength. It does NOT depend on mass or amplitude (for small angles).</p>
+<p>T depends on length L and gravitational field strength g. It does NOT depend on mass or amplitude (for small angles, typically &lt; 10 degrees).</p>
 
-<div class="tip-box"><strong>Exam Tip:</strong> In SHM, the period is independent of amplitude. This is a defining feature. If an oscillator has a period that changes with amplitude, it is NOT SHM.</div>
+<div class="tip-box"><strong>Exam Tip:</strong> In SHM, the period is independent of amplitude. This is a defining feature called <strong>isochronous oscillation</strong>. If the period changes with amplitude, the motion is not truly SHM. For the pendulum, the small-angle approximation sin&theta; &asymp; &theta; (in radians) is needed for the motion to be SHM.</div>
 
-<!-- DAMPING AND RESONANCE -->
+<div class="tip-box"><strong>Exam Tip:</strong> When verifying SHM from the defining equation, you need to show that a &prop; &minus;x. For a mass-spring: F = &minus;kx, so a = &minus;(k/m)x, confirming SHM with &omega;<sup>2</sup> = k/m. For a pendulum: the restoring force along the arc is F = &minus;mg sin&theta; &asymp; &minus;mg&theta; = &minus;mg(x/L), giving a = &minus;(g/L)x, confirming SHM with &omega;<sup>2</sup> = g/L.</div>
+
+<!-- ============================================================ -->
+<!-- 3. DAMPING AND RESONANCE -->
+<!-- ============================================================ -->
 <h2>3. Damping</h2>
-<div class="def-box"><strong>Damping:</strong> The reduction in amplitude of an oscillation over time due to energy being transferred to the surroundings (usually as thermal energy due to frictional forces).</div>
+<div class="def-box"><strong>Damping:</strong> The reduction in amplitude of an oscillation over time due to energy being transferred to the surroundings (usually as thermal energy due to resistive or frictional forces). The frequency of a damped oscillation is slightly lower than the natural frequency.</div>
 
 <table>
-  <tr><th>Type of Damping</th><th>Description</th></tr>
-  <tr><td><strong>Light damping</strong></td><td>Amplitude decreases gradually over many oscillations. The frequency is hardly affected. Example: pendulum in air.</td></tr>
-  <tr><td><strong>Heavy damping</strong></td><td>Amplitude decreases rapidly. The system returns to equilibrium slowly without oscillating (or with very few oscillations). Example: door closer.</td></tr>
-  <tr><td><strong>Critical damping</strong></td><td>The system returns to equilibrium in the shortest possible time without oscillating. Example: car suspension, needle on a measuring instrument.</td></tr>
+  <tr><th>Type of Damping</th><th>Description</th><th>Example</th></tr>
+  <tr><td><strong>Light (under) damping</strong></td><td>Amplitude decreases gradually over many oscillations. The system oscillates with slowly decreasing amplitude, with the decay envelope being exponential. The period is hardly affected.</td><td>Pendulum swinging in air; vibrating guitar string</td></tr>
+  <tr><td><strong>Heavy (over) damping</strong></td><td>The system returns to equilibrium very slowly without oscillating (or with at most one or two oscillations). The restoring force is overwhelmed by the damping force.</td><td>Door closer on a heavy fire door; shock absorber in thick oil</td></tr>
+  <tr><td><strong>Critical damping</strong></td><td>The system returns to equilibrium in the <strong>shortest possible time</strong> without oscillating past the equilibrium position. This is the boundary between under-damping and over-damping.</td><td>Car suspension (designed for near-critical damping); galvanometer needle</td></tr>
 </table>
 
-<h3>Forced Oscillations and Resonance</h3>
-<div class="def-box"><strong>Forced oscillation:</strong> An oscillation caused by an external periodic driving force.<br>
-<strong>Natural frequency (f<sub>0</sub>):</strong> The frequency at which a system oscillates freely when displaced and released.</div>
+<!-- Damping envelope diagram -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 480 240" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="240" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Types of Damping</text>
+  <defs><marker id="aDamp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a1a2e"/></marker></defs>
+  <!-- Axes -->
+  <line x1="50" y1="130" x2="460" y2="130" stroke="#1a1a2e" stroke-width="1" marker-end="url(#aDamp)"/>
+  <line x1="50" y1="220" x2="50" y2="35" stroke="#1a1a2e" stroke-width="1" marker-end="url(#aDamp)"/>
+  <text x="460" y="148" text-anchor="end" font-family="system-ui" font-size="10" fill="#1a1a2e">t</text>
+  <text x="42" y="40" text-anchor="end" font-family="system-ui" font-size="10" fill="#1a1a2e">x</text>
+  <!-- Light damping (oscillating with decreasing envelope) -->
+  <path d="M50,50 Q65,130 80,180 Q95,130 110,90 Q125,130 140,165 Q155,130 170,100 Q185,130 200,155 Q215,130 230,115 Q245,130 260,142 Q275,130 290,125 Q305,130 320,133" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <text x="330" y="130" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">Light</text>
+  <!-- Critical damping (returns to zero without oscillation, fastest) -->
+  <path d="M50,50 Q100,100 150,125 Q200,130 260,130 L440,130" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <text x="280" y="118" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">Critical</text>
+  <!-- Heavy damping (very slow return without oscillation) -->
+  <path d="M50,50 Q100,60 180,90 Q260,110 350,125 Q400,128 440,130" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <text x="300" y="100" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Heavy</text>
+  <text x="240" y="232" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">Critical damping reaches equilibrium fastest without overshooting</text>
+</svg>
+</div>
 
-<div class="def-box"><strong>Resonance:</strong> Occurs when the driving frequency equals the natural frequency of the system. At resonance, maximum energy is transferred from the driver to the oscillating system, resulting in maximum amplitude.</div>
+<h3>Forced Oscillations and Resonance</h3>
+<div class="def-box"><strong>Free oscillation:</strong> An oscillation where the system vibrates at its natural frequency with no external driving force (though damping may be present).<br>
+<strong>Forced oscillation:</strong> An oscillation caused by an external periodic driving force. The system oscillates at the driving frequency, not necessarily its natural frequency.<br>
+<strong>Natural frequency (f<sub>0</sub>):</strong> The frequency at which a system oscillates freely when displaced and released (with no damping).</div>
+
+<div class="def-box"><strong>Resonance:</strong> Occurs when the driving frequency equals the natural frequency of the system (f<sub>driver</sub> = f<sub>0</sub>). At resonance, maximum energy is transferred from the driver to the oscillating system, resulting in maximum amplitude of oscillation.</div>
 
 <h3>Effects of Damping on Resonance</h3>
 <ul>
-  <li>Increased damping reduces the maximum amplitude at resonance.</li>
-  <li>Increased damping broadens the resonance peak.</li>
-  <li>Increased damping shifts the resonance frequency slightly below f<sub>0</sub>.</li>
+  <li>Increased damping <strong>reduces the maximum amplitude</strong> at resonance.</li>
+  <li>Increased damping <strong>broadens the resonance peak</strong> (the response curve becomes flatter and wider).</li>
+  <li>Increased damping <strong>shifts the resonance frequency slightly below f<sub>0</sub></strong>.</li>
+  <li>With very heavy damping, the resonance peak disappears entirely.</li>
 </ul>
 
-<p><strong>Examples of resonance:</strong> Tuning a radio (electrical resonance), Tacoma Narrows Bridge collapse (mechanical resonance), microwave heating (molecular resonance of water).</p>
+<!-- Resonance curves diagram -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 440 280" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="220" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Resonance Curves (Amplitude vs Driving Frequency)</text>
+  <defs><marker id="aRes" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a1a2e"/></marker></defs>
+  <line x1="60" y1="240" x2="410" y2="240" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#aRes)"/>
+  <line x1="60" y1="240" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#aRes)"/>
+  <text x="400" y="258" text-anchor="end" font-family="system-ui" font-size="10" fill="#1a1a2e">f<tspan font-size="7" dy="3">driver</tspan></text>
+  <text x="55" y="38" text-anchor="end" font-family="system-ui" font-size="10" fill="#1a1a2e">A</text>
+  <!-- f0 marker -->
+  <line x1="200" y1="240" x2="200" y2="245" stroke="#64748b" stroke-width="1"/>
+  <text x="200" y="258" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">f0</text>
+  <!-- Light damping (tall sharp peak) -->
+  <path d="M70,235 Q130,230 170,200 Q190,130 198,60 Q206,130 220,200 Q260,230 400,238" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <text x="220" y="55" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">Light damping</text>
+  <!-- Medium damping -->
+  <path d="M70,232 Q130,225 165,200 Q185,160 198,120 Q210,160 230,200 Q270,225 400,235" fill="none" stroke="#D97706" stroke-width="2"/>
+  <text x="270" y="120" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">Medium</text>
+  <!-- Heavy damping (low broad peak) -->
+  <path d="M70,228 Q130,218 170,200 Q190,190 198,180 Q210,190 230,200 Q270,218 400,232" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <text x="310" y="185" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">Heavy damping</text>
+  <text x="220" y="275" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">More damping: lower peak, broader curve, peak shifts slightly left</text>
+</svg>
+</div>
 
-<!-- THERMAL PHYSICS -->
+<div class="real-world"><strong>Real-World Applications:</strong>
+<ul>
+  <li><strong>Useful resonance:</strong> Tuning a radio (the receiver circuit resonates at the desired station frequency); microwave ovens (2.45 GHz matches the rotational frequency of water molecules); MRI scanners (hydrogen nuclei resonate at their Larmor frequency)</li>
+  <li><strong>Destructive resonance:</strong> The Tacoma Narrows Bridge collapsed in 1940 when wind vortices drove it at its natural frequency; soldiers break step when crossing bridges to avoid resonance; wine glasses can shatter when driven by a sound at their natural frequency</li>
+  <li><strong>Controlled damping:</strong> Car suspension systems use near-critical damping so the car returns to equilibrium quickly after hitting a bump without bouncing repeatedly</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- 4. THERMAL PHYSICS -->
+<!-- ============================================================ -->
 <h2>4. Thermal Physics</h2>
 
 <h3>Internal Energy</h3>
-<div class="def-box"><strong>Internal energy:</strong> The sum of the randomly distributed kinetic energies and potential energies of all the molecules in a system. For an ideal gas, internal energy is purely kinetic (no intermolecular forces, so no PE).</div>
+<div class="def-box"><strong>Internal energy:</strong> The sum of the randomly distributed kinetic energies and potential energies of all the molecules in a system.<br>
+<ul style="margin:6px 0 0 20px;">
+  <li>The kinetic energy component is associated with the random translational, rotational, and vibrational motion of molecules</li>
+  <li>The potential energy component is associated with the intermolecular forces between molecules</li>
+  <li>For an ideal gas, there are no intermolecular forces, so internal energy is purely kinetic</li>
+</ul>
+</div>
 
-<p>A change in internal energy can result from:</p>
+<p>The <strong>First Law of Thermodynamics</strong> states that a change in internal energy equals the heat added to the system minus the work done by the system: &Delta;U = Q &minus; W. Internal energy can change by:</p>
 <ul>
-  <li>Doing work on or by the system</li>
-  <li>Heating or cooling the system</li>
+  <li>Doing work on or by the system (compressing or expanding a gas)</li>
+  <li>Heating or cooling the system (energy transfer due to a temperature difference)</li>
 </ul>
 
+<h3>Temperature</h3>
+<p>Temperature is a measure of the average kinetic energy of the molecules. Two objects are in thermal equilibrium when they are at the same temperature (no net heat flow between them). The absolute (Kelvin) scale: T(K) = T(&deg;C) + 273.15. Absolute zero (0 K) is the lowest possible temperature, at which molecules have minimum (zero-point) energy.</p>
+
 <h3>Specific Heat Capacity</h3>
+<div class="def-box"><strong>Specific heat capacity (c):</strong> The energy required to raise the temperature of 1 kg of a substance by 1 K (or 1 &deg;C). Units: J kg<sup>-1</sup> K<sup>-1</sup>.</div>
 <div class="eq">Q = mc&Delta;&theta;</div>
 <ul>
   <li>Q = energy transferred (J)</li>
   <li>m = mass (kg)</li>
-  <li>c = specific heat capacity (J kg<sup>-1</sup> K<sup>-1</sup>) &mdash; the energy required to raise the temperature of 1 kg of the substance by 1 K</li>
-  <li>&Delta;&theta; = change in temperature (K or &deg;C)</li>
+  <li>c = specific heat capacity (J kg<sup>-1</sup> K<sup>-1</sup>)</li>
+  <li>&Delta;&theta; = change in temperature (K or &deg;C &mdash; both work since the intervals are equal)</li>
 </ul>
 
+<table>
+  <tr><th>Substance</th><th>Specific heat capacity (J kg<sup>-1</sup> K<sup>-1</sup>)</th></tr>
+  <tr><td>Water</td><td>4200</td></tr>
+  <tr><td>Aluminium</td><td>900</td></tr>
+  <tr><td>Copper</td><td>390</td></tr>
+  <tr><td>Iron/Steel</td><td>450</td></tr>
+  <tr><td>Air</td><td>~1000</td></tr>
+</table>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A 2.0 kW kettle contains 1.5 kg of water at 20 &deg;C. How long does it take to heat the water to 100 &deg;C? Assume all energy goes into heating the water (no losses).<br><br>
+<strong>Solution:</strong><br>
+Q = mc&Delta;&theta; = 1.5 &times; 4200 &times; (100 &minus; 20) = 1.5 &times; 4200 &times; 80 = 504000 J<br>
+P = Q/t, so t = Q/P = 504000 / 2000 = <strong>252 s</strong> (about 4.2 minutes)<br>
+In practice it takes longer because energy is lost to the surroundings and to heating the kettle itself.
+</div>
+
 <h3>Specific Latent Heat</h3>
+<div class="def-box"><strong>Specific latent heat (L):</strong> The energy required to change the state of 1 kg of a substance at constant temperature. Units: J kg<sup>-1</sup>.</div>
 <div class="eq">Q = mL</div>
 <ul>
-  <li>L = specific latent heat (J kg<sup>-1</sup>) &mdash; the energy required to change the state of 1 kg of a substance without changing its temperature</li>
   <li><strong>Specific latent heat of fusion (L<sub>f</sub>):</strong> for solid &harr; liquid transitions</li>
   <li><strong>Specific latent heat of vaporisation (L<sub>v</sub>):</strong> for liquid &harr; gas transitions</li>
 </ul>
 
-<p>During a change of state, temperature remains constant because the energy supplied is used to break (or form) intermolecular bonds, changing potential energy without changing kinetic energy.</p>
+<p>During a change of state, temperature remains constant because the energy supplied is used to break (or form) intermolecular bonds, changing potential energy without changing kinetic energy. L<sub>v</sub> is always much larger than L<sub>f</sub> because the molecules must be completely separated during vaporisation.</p>
 
-<div class="tip-box"><strong>Exam Tip:</strong> In a heating curve (temperature vs time), the flat sections represent changes of state. The gradient of the sloped sections depends on specific heat capacity. A lower gradient means a higher specific heat capacity (for the same power input and mass).</div>
+<table>
+  <tr><th>Substance</th><th>L<sub>f</sub> (kJ kg<sup>-1</sup>)</th><th>L<sub>v</sub> (kJ kg<sup>-1</sup>)</th></tr>
+  <tr><td>Water</td><td>334</td><td>2260</td></tr>
+  <tr><td>Aluminium</td><td>397</td><td>10900</td></tr>
+</table>
 
-<!-- GAS LAWS -->
+<div class="tip-box"><strong>Exam Tip:</strong> In a heating curve (temperature vs time at constant power), the flat (horizontal) sections represent changes of state where latent heat is being supplied. The gradient of the sloped sections depends on specific heat capacity. A lower gradient = higher specific heat capacity (for the same power input and mass). The length of a flat section depends on the latent heat &mdash; a longer plateau means a higher specific latent heat.</div>
+
+<!-- ============================================================ -->
+<!-- 5. GAS LAWS -->
+<!-- ============================================================ -->
 <h2>5. Gas Laws and the Ideal Gas</h2>
 
 <h3>The Three Gas Laws</h3>
 <table>
   <tr><th>Law</th><th>Statement</th><th>Equation</th><th>Conditions</th></tr>
-  <tr><td>Boyle's Law</td><td>Pressure is inversely proportional to volume</td><td>pV = constant</td><td>Constant temperature and mass</td></tr>
-  <tr><td>Charles's Law</td><td>Volume is directly proportional to absolute temperature</td><td>V/T = constant</td><td>Constant pressure and mass</td></tr>
-  <tr><td>Pressure Law</td><td>Pressure is directly proportional to absolute temperature</td><td>p/T = constant</td><td>Constant volume and mass</td></tr>
+  <tr><td>Boyle's Law</td><td>Pressure is inversely proportional to volume</td><td>pV = constant</td><td>Constant temperature (isothermal) and fixed mass of gas</td></tr>
+  <tr><td>Charles's Law</td><td>Volume is directly proportional to absolute temperature</td><td>V/T = constant</td><td>Constant pressure (isobaric) and fixed mass</td></tr>
+  <tr><td>Pressure Law (Gay-Lussac's)</td><td>Pressure is directly proportional to absolute temperature</td><td>p/T = constant</td><td>Constant volume (isochoric) and fixed mass</td></tr>
 </table>
 
-<p>These combine into:</p>
-<div class="eq">pV / T = constant &nbsp; or &nbsp; p<sub>1</sub>V<sub>1</sub>/T<sub>1</sub> = p<sub>2</sub>V<sub>2</sub>/T<sub>2</sub></div>
+<p>These combine into the combined gas law:</p>
+<div class="eq">p<sub>1</sub>V<sub>1</sub>/T<sub>1</sub> = p<sub>2</sub>V<sub>2</sub>/T<sub>2</sub></div>
 
 <h3>Ideal Gas Equation</h3>
 <div class="eq">pV = nRT = NkT</div>
 <ul>
   <li>p = pressure (Pa)</li>
   <li>V = volume (m<sup>3</sup>)</li>
-  <li>n = number of moles</li>
+  <li>n = number of moles (mol)</li>
   <li>R = molar gas constant = 8.31 J mol<sup>-1</sup> K<sup>-1</sup></li>
   <li>N = number of molecules</li>
   <li>k = Boltzmann constant = 1.38 &times; 10<sup>-23</sup> J K<sup>-1</sup></li>
   <li>T = absolute temperature (K)</li>
 </ul>
-<p>Note: N = nN<sub>A</sub> and k = R/N<sub>A</sub>, where N<sub>A</sub> = 6.02 &times; 10<sup>23</sup> mol<sup>-1</sup> (Avogadro's number).</p>
+<p>Relationships: N = nN<sub>A</sub> and k = R/N<sub>A</sub>, where N<sub>A</sub> = 6.02 &times; 10<sup>23</sup> mol<sup>-1</sup> (Avogadro constant).</p>
+<p>Number of moles: n = m/M (mass / molar mass) = N/N<sub>A</sub>.</p>
 
-<!-- Pressure-Volume Diagram for Ideal Gas -->
+<!-- Boyle's Law Diagram -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 440 300" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="220" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Pressure-Volume Diagram (Boyle's Law)</text>
-  <!-- Axes -->
+  <text x="220" y="22" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Pressure-Volume Diagram (Boyle's Law Isotherms)</text>
   <line x1="60" y1="260" x2="410" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="60" y1="260" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="235" y="285" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e">Volume (V)</text>
   <text x="30" y="150" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" transform="rotate(-90,30,150)">Pressure (p)</text>
-
-  <!-- Isotherms (pV = constant at different temperatures) -->
-  <!-- Higher T -->
+  <!-- Higher T isotherm -->
   <path d="M85,60 Q120,70 160,95 Q220,130 300,155 Q360,168 395,172" fill="none" stroke="#DC2626" stroke-width="2"/>
   <text x="400" y="170" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="600">T2 (high)</text>
-  <!-- Lower T -->
+  <!-- Lower T isotherm -->
   <path d="M85,110 Q120,130 160,160 Q220,200 300,225 Q360,238 395,242" fill="none" stroke="#1a73e8" stroke-width="2"/>
   <text x="400" y="240" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">T1 (low)</text>
-
-  <!-- Annotation -->
   <text x="220" y="50" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">Each curve is an isotherm (constant T)</text>
   <text x="220" y="65" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">pV = nRT = constant at fixed T</text>
-  <text x="220" y="80" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">Higher T gives a curve further from the origin</text>
 </svg>
 </div>
 
-<div class="tip-box"><strong>Exam Tip:</strong> Always convert temperature to kelvin (K = &deg;C + 273) and volume to m<sup>3</sup> (1 litre = 10<sup>-3</sup> m<sup>3</sup>) before using the ideal gas equation.</div>
+<div class="worked-example">
+<strong>Worked Example:</strong> A sealed container holds 0.50 mol of an ideal gas at 300 K and 1.0 &times; 10<sup>5</sup> Pa. (a) Calculate the volume of the gas. (b) The gas is heated to 450 K at constant volume. Calculate the new pressure.<br><br>
+<strong>Solution:</strong><br>
+(a) pV = nRT, so V = nRT/p = (0.50 &times; 8.31 &times; 300) / (1.0 &times; 10<sup>5</sup>) = 1246.5 / 100000 = <strong>0.0125 m<sup>3</sup></strong> (12.5 litres)<br>
+(b) At constant volume and fixed n: p<sub>1</sub>/T<sub>1</sub> = p<sub>2</sub>/T<sub>2</sub><br>
+p<sub>2</sub> = p<sub>1</sub> &times; T<sub>2</sub>/T<sub>1</sub> = 1.0 &times; 10<sup>5</sup> &times; 450/300 = <strong>1.5 &times; 10<sup>5</sup> Pa</strong>
+</div>
 
-<!-- KINETIC THEORY -->
+<div class="tip-box"><strong>Exam Tip:</strong> Always convert temperature to kelvin (K = &deg;C + 273) and volume to m<sup>3</sup> (1 litre = 10<sup>-3</sup> m<sup>3</sup>, 1 cm<sup>3</sup> = 10<sup>-6</sup> m<sup>3</sup>) before using the ideal gas equation. Pressure must be in Pa (1 atm = 1.013 &times; 10<sup>5</sup> Pa).</div>
+
+<!-- ============================================================ -->
+<!-- 6. KINETIC THEORY -->
+<!-- ============================================================ -->
 <h2>6. Kinetic Theory of Gases</h2>
 
-<h3>Assumptions of an Ideal Gas</h3>
-<ul>
-  <li>The gas contains a very large number of molecules in random motion.</li>
-  <li>The volume of the molecules is negligible compared to the volume of the container.</li>
-  <li>Collisions between molecules and between molecules and the walls are perfectly elastic.</li>
-  <li>The time of a collision is negligible compared to the time between collisions.</li>
-  <li>There are no intermolecular forces except during collisions.</li>
-</ul>
+<h3>Assumptions of the Kinetic Theory (Ideal Gas Model)</h3>
+<ol>
+  <li>The gas contains a <strong>very large number</strong> of molecules in <strong>random</strong> motion.</li>
+  <li>The <strong>volume of the molecules is negligible</strong> compared to the volume of the container.</li>
+  <li>Collisions between molecules and between molecules and the walls are <strong>perfectly elastic</strong> (kinetic energy is conserved).</li>
+  <li>The <strong>time of a collision is negligible</strong> compared to the time between collisions.</li>
+  <li>There are <strong>no intermolecular forces</strong> between molecules except during collisions (no attractive or repulsive forces at a distance).</li>
+</ol>
 
 <h3>Kinetic Theory Equation</h3>
 <div class="eq">pV = &frac13;Nm<span style="text-decoration:overline;">c<sup>2</sup></span></div>
-<p>where <span style="text-decoration:overline;">c<sup>2</sup></span> is the mean square speed of the molecules.</p>
+<p>where m is the mass of one molecule, N is the number of molecules, and <span style="text-decoration:overline;">c<sup>2</sup></span> is the mean square speed of the molecules.</p>
 
-<h3>Root Mean Square Speed</h3>
+<h3>Root Mean Square (rms) Speed</h3>
 <div class="eq">c<sub>rms</sub> = &radic;<span style="text-decoration:overline;">c<sup>2</sup></span></div>
-<p>The rms speed is NOT the same as the mean speed. It gives more weight to faster molecules.</p>
+<p>The rms speed is NOT the same as the mean speed. It gives more weight to faster molecules. The rms speed is always slightly larger than the mean speed for a Maxwell-Boltzmann distribution.</p>
 
-<h3>Molecular Kinetic Energy</h3>
+<h3>Molecular Kinetic Energy and Temperature</h3>
+<p>Combining the kinetic theory equation with the ideal gas equation (pV = NkT = &frac13;Nm<span style="text-decoration:overline;">c<sup>2</sup></span>) gives:</p>
 <div class="eq">&frac12;m<span style="text-decoration:overline;">c<sup>2</sup></span> = &frac32;kT</div>
-<p>The average translational kinetic energy of a gas molecule is directly proportional to the absolute temperature. This connects the microscopic (molecular KE) to the macroscopic (temperature).</p>
+<p>This is a profoundly important result: the average translational kinetic energy of a gas molecule is directly proportional to the absolute temperature. This connects the microscopic (molecular KE) to the macroscopic (temperature).</p>
 
-<div class="tip-box"><strong>Exam Tip:</strong> The Boltzmann constant k links microscopic energy to temperature. If a question asks about energy per molecule, use &frac32;kT. If it asks about energy per mole, use &frac32;RT.</div>
+<p>For one mole of gas, the total translational KE is:</p>
+<div class="eq">E<sub>total</sub> = &frac32;nRT = &frac32;NkT</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Calculate (a) the average KE of a nitrogen molecule at 300 K, (b) the rms speed of nitrogen molecules at 300 K. (m<sub>N2</sub> = 28 &times; 1.66 &times; 10<sup>-27</sup> kg = 4.65 &times; 10<sup>-26</sup> kg)<br><br>
+<strong>Solution:</strong><br>
+(a) &frac12;m<span style="text-decoration:overline;">c<sup>2</sup></span> = &frac32;kT = &frac32; &times; 1.38 &times; 10<sup>-23</sup> &times; 300 = <strong>6.21 &times; 10<sup>-21</sup> J</strong><br>
+(b) <span style="text-decoration:overline;">c<sup>2</sup></span> = 3kT/m = (3 &times; 1.38 &times; 10<sup>-23</sup> &times; 300) / (4.65 &times; 10<sup>-26</sup>) = 1.242 &times; 10<sup>-20</sup> / 4.65 &times; 10<sup>-26</sup> = 2.67 &times; 10<sup>5</sup> m<sup>2</sup> s<sup>-2</sup><br>
+c<sub>rms</sub> = &radic;(2.67 &times; 10<sup>5</sup>) = <strong>517 m s<sup>-1</sup></strong><br>
+This is faster than the speed of sound in air (~340 m s<sup>-1</sup>), which makes sense since sound propagates through molecular collisions.
+</div>
+
+<div class="tip-box"><strong>Exam Tip:</strong> The Boltzmann constant k links microscopic energy to temperature. If a question asks about energy <em>per molecule</em>, use &frac32;kT. If it asks about energy <em>per mole</em>, use &frac32;RT. Remember that temperature must always be in kelvin. Doubling the absolute temperature doubles the average KE, but the rms speed only increases by a factor of &radic;2.</div>
+
+<div class="real-world"><strong>Real-World Application:</strong> The rms speed equation explains why lighter molecules move faster at the same temperature (since &frac12;m<span style="text-decoration:overline;">c<sup>2</sup></span> = &frac32;kT, if m is smaller, <span style="text-decoration:overline;">c<sup>2</sup></span> must be larger). This is why hydrogen (the lightest gas) escapes from Earth's atmosphere over geological time but heavier gases like nitrogen and oxygen are retained &mdash; hydrogen molecules move fast enough to exceed escape velocity.</div>
+
+<h3>Summary of Key Equations</h3>
+<table>
+  <tr><th>Quantity</th><th>Equation</th></tr>
+  <tr><td>Circular motion</td><td>a = v<sup>2</sup>/r = &omega;<sup>2</sup>r; &nbsp; F = mv<sup>2</sup>/r = m&omega;<sup>2</sup>r</td></tr>
+  <tr><td>SHM defining equation</td><td>a = &minus;&omega;<sup>2</sup>x</td></tr>
+  <tr><td>SHM displacement</td><td>x = A cos(&omega;t) or x = A sin(&omega;t)</td></tr>
+  <tr><td>SHM velocity</td><td>v = &plusmn;&omega;&radic;(A<sup>2</sup> &minus; x<sup>2</sup>); &nbsp; v<sub>max</sub> = A&omega;</td></tr>
+  <tr><td>Mass-spring period</td><td>T = 2&pi;&radic;(m/k)</td></tr>
+  <tr><td>Simple pendulum period</td><td>T = 2&pi;&radic;(L/g)</td></tr>
+  <tr><td>Specific heat capacity</td><td>Q = mc&Delta;&theta;</td></tr>
+  <tr><td>Specific latent heat</td><td>Q = mL</td></tr>
+  <tr><td>Ideal gas equation</td><td>pV = nRT = NkT</td></tr>
+  <tr><td>Kinetic theory</td><td>pV = &frac13;Nm<span style="text-decoration:overline;">c<sup>2</sup></span></td></tr>
+  <tr><td>Molecular KE</td><td>&frac12;m<span style="text-decoration:overline;">c<sup>2</sup></span> = &frac32;kT</td></tr>
+</table>
 
 <!-- ============================================================ -->
 <!-- REQUIRED PRACTICAL 7 -->
 <!-- ============================================================ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 7: Investigation into Simple Harmonic Motion (Mass-Spring &amp; Pendulum)</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 7: Investigation into SHM (Mass-Spring &amp; Pendulum)</h2>
 
 <svg viewBox="0 0 620 320" style="max-width:600px; display:block; margin:16px auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="rp7arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#D97706"/></marker>
     <marker id="rp7arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
   </defs>
-  <text x="310" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP7: SHM — Mass-Spring System &amp; Simple Pendulum</text>
-
-  <!-- ===== LEFT: Mass-Spring System ===== -->
+  <text x="310" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP7: SHM -- Mass-Spring System &amp; Simple Pendulum</text>
+  <!-- LEFT: Mass-Spring System -->
   <text x="155" y="45" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">(a) Mass-Spring</text>
-
-  <!-- Clamp stand top bar -->
   <rect x="60" y="55" width="190" height="8" rx="2" fill="#94a3b8" stroke="#1a1a2e" stroke-width="1"/>
-  <!-- Stand pole -->
   <rect x="70" y="55" width="6" height="230" fill="#94a3b8" stroke="#1a1a2e" stroke-width="0.8"/>
-  <!-- Base -->
   <rect x="40" y="280" width="80" height="8" rx="2" fill="#94a3b8" stroke="#1a1a2e" stroke-width="0.8"/>
-
-  <!-- Spring -->
   <path d="M155,63 L150,73 L160,83 L150,93 L160,103 L150,113 L160,123 L150,133 L155,143" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
-
-  <!-- Mass on spring -->
   <rect x="138" y="143" width="34" height="30" rx="4" fill="#fde68a" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="155" y="162" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="600">m</text>
-
-  <!-- Ruler beside spring -->
   <rect x="100" y="63" width="8" height="220" rx="1" fill="#fef3c7" stroke="#D97706" stroke-width="0.8"/>
   <text x="95" y="170" text-anchor="end" font-family="system-ui" font-size="8" fill="#D97706">Ruler</text>
-
-  <!-- Fiducial marker -->
   <line x1="108" y1="158" x2="138" y2="158" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
-  <text x="125" y="195" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Fiducial</text>
-  <text x="125" y="205" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">marker</text>
-
-  <!-- Oscillation arrow -->
+  <text x="125" y="195" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Fiducial marker</text>
   <line x1="180" y1="120" x2="180" y2="200" stroke="#1a73e8" stroke-width="1" marker-start="url(#rp7arrB)" marker-end="url(#rp7arrB)"/>
   <text x="198" y="160" font-family="system-ui" font-size="9" fill="#1a73e8">Oscillation</text>
-
-  <!-- Vary mass label -->
   <text x="155" y="240" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Vary mass m</text>
   <text x="155" y="253" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Plot T&sup2; vs m</text>
-
-  <!-- ===== RIGHT: Simple Pendulum ===== -->
+  <!-- RIGHT: Simple Pendulum -->
   <text x="460" y="45" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">(b) Simple Pendulum</text>
-
-  <!-- Clamp at top -->
   <rect x="420" y="55" width="80" height="8" rx="2" fill="#94a3b8" stroke="#1a1a2e" stroke-width="1"/>
-  <!-- Clamp jaw detail -->
   <rect x="455" y="50" width="10" height="18" rx="2" fill="#6b7280" stroke="#1a1a2e" stroke-width="1"/>
-
-  <!-- String -->
   <line x1="460" y1="68" x2="460" y2="220" stroke="#1a1a2e" stroke-width="1.5"/>
-
-  <!-- Bob -->
   <circle cx="460" cy="230" r="12" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
-
-  <!-- Length measurement -->
   <line x1="430" y1="68" x2="430" y2="220" stroke="#D97706" stroke-width="1" marker-start="url(#rp7arr)" marker-end="url(#rp7arr)"/>
   <text x="420" y="145" text-anchor="end" font-family="system-ui" font-size="11" fill="#D97706" font-weight="600">L</text>
-
-  <!-- Swing arc (ghosted positions) -->
   <circle cx="420" cy="235" r="12" fill="#dbeafe" stroke="#1a73e8" stroke-width="0.8" opacity="0.2"/>
   <line x1="460" y1="68" x2="420" y2="225" stroke="#1a1a2e" stroke-width="0.8" opacity="0.2"/>
   <circle cx="500" cy="235" r="12" fill="#dbeafe" stroke="#1a73e8" stroke-width="0.8" opacity="0.2"/>
   <line x1="460" y1="68" x2="500" y2="225" stroke="#1a1a2e" stroke-width="0.8" opacity="0.2"/>
-
-  <!-- Angle -->
   <path d="M460,90 Q470,95 465,105" fill="none" stroke="#DC2626" stroke-width="1"/>
   <text x="478" y="100" font-family="system-ui" font-size="9" fill="#DC2626">&theta; &lt; 10&deg;</text>
-
-  <!-- Protractor hint -->
-  <path d="M440,68 A20,20 0 0,1 480,68" fill="none" stroke="#D97706" stroke-width="1"/>
-  <text x="490" y="72" font-family="system-ui" font-size="8" fill="#D97706">Protractor</text>
-
-  <!-- Vary length label -->
   <text x="460" y="270" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Vary length L</text>
   <text x="460" y="283" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Plot T&sup2; vs L</text>
-
-  <!-- Stopwatch -->
   <rect x="530" y="150" width="60" height="40" rx="8" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
   <text x="560" y="168" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Stopwatch</text>
   <text x="560" y="180" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Time 10T</text>
 </svg>
 
 <h3>Apparatus</h3>
-<p><strong>(a) Mass-Spring:</strong></p>
-<ul>
-  <li>Helical spring (known spring constant k, or to be determined)</li>
-  <li>Slotted masses and hanger</li>
-  <li>Retort stand, boss, and clamp</li>
-  <li>Metre ruler (with fiducial marker at equilibrium)</li>
-  <li>Stopwatch (resolution 0.01 s)</li>
-</ul>
-<p><strong>(b) Simple Pendulum:</strong></p>
-<ul>
-  <li>String (at least 1 m, light and inextensible)</li>
-  <li>Pendulum bob (small, dense sphere)</li>
-  <li>Clamp, boss, and retort stand</li>
-  <li>Metre ruler or tape measure</li>
-  <li>Protractor (to check angle &lt; 10&deg;)</li>
-  <li>Stopwatch</li>
-</ul>
+<p><strong>(a) Mass-Spring:</strong> Helical spring, slotted masses and hanger, retort stand with boss and clamp, metre ruler with fiducial marker, stopwatch (0.01 s resolution).</p>
+<p><strong>(b) Simple Pendulum:</strong> String (at least 1 m, light and inextensible), pendulum bob (small, dense sphere), clamp with boss and retort stand, metre ruler or tape measure, protractor (to check angle &lt; 10&deg;), stopwatch.</p>
 
 <h3>Method</h3>
 <p><strong>(a) Mass-Spring:</strong></p>
 <ol>
   <li>Hang the spring from the clamp. Attach a known mass m and allow it to reach equilibrium. Mark the equilibrium position with a fiducial marker on the ruler.</li>
-  <li>Pull the mass down a small distance (small amplitude, &lt; 5 cm) and release. Time 10 complete oscillations with the stopwatch. Divide by 10 to get T.</li>
+  <li>Pull the mass down a small distance (&lt; 5 cm) and release. Time 10 complete oscillations with the stopwatch. Divide by 10 to get T.</li>
   <li>Repeat 3 times and calculate a mean value of T at each mass.</li>
-  <li>Change the mass in steps (e.g. 50 g increments). Record T for each mass.</li>
-  <li>Plot T&sup2; (y-axis) vs m (x-axis). The gradient = 4&pi;&sup2;/k, so k = 4&pi;&sup2;/gradient.</li>
+  <li>Change the mass in steps (e.g. 50 g increments from 100 g to 500 g). Record T for each mass.</li>
+  <li>Plot T<sup>2</sup> (y-axis) vs m (x-axis). The gradient = 4&pi;<sup>2</sup>/k, so k = 4&pi;<sup>2</sup>/gradient.</li>
 </ol>
 <p><strong>(b) Simple Pendulum:</strong></p>
 <ol>
   <li>Set up the pendulum with a measured length L (from the pivot point to the centre of the bob).</li>
-  <li>Displace the bob by a small angle (&lt; 10&deg;) and release. Time 10 complete oscillations. Divide by 10 to get T.</li>
+  <li>Displace the bob by a small angle (&lt; 10&deg;, checked with a protractor) and release. Time 10 complete oscillations. Divide by 10 to get T.</li>
   <li>Repeat 3 times and calculate a mean T.</li>
-  <li>Change L in steps (e.g. 0.1 m from 0.2 m to 1.0 m). Record T at each length.</li>
-  <li>Plot T&sup2; (y-axis) vs L (x-axis). The gradient = 4&pi;&sup2;/g, so g = 4&pi;&sup2;/gradient.</li>
+  <li>Change L in steps (e.g. 0.10 m from 0.20 m to 1.00 m). Record T at each length.</li>
+  <li>Plot T<sup>2</sup> (y-axis) vs L (x-axis). The gradient = 4&pi;<sup>2</sup>/g, so g = 4&pi;<sup>2</sup>/gradient.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-  <li>Ensure the retort stand is clamped securely to the bench to prevent toppling.</li>
+  <li>Ensure the retort stand is clamped securely to the bench with a G-clamp to prevent toppling.</li>
   <li>Place a cushion beneath hanging masses in case the spring breaks.</li>
-  <li>Keep small amplitudes to ensure SHM conditions are met and to avoid large swings.</li>
+  <li>Keep small amplitudes to ensure SHM conditions are met.</li>
   <li>Stand clear of the swinging pendulum bob.</li>
 </ul>
-
-<h3>Analysis</h3>
-<p><strong>Mass-Spring:</strong> T = 2&pi;&radic;(m/k), so T&sup2; = (4&pi;&sup2;/k)m.</p>
-<p class="eq">T&sup2; = (4&pi;&sup2; / k) &times; m</p>
-<p>Gradient of T&sup2; vs m graph = 4&pi;&sup2;/k. Calculate k and compare with the manufacturer's value.</p>
-<p><strong>Simple Pendulum:</strong> T = 2&pi;&radic;(L/g), so T&sup2; = (4&pi;&sup2;/g)L.</p>
-<p class="eq">T&sup2; = (4&pi;&sup2; / g) &times; L</p>
-<p>Gradient of T&sup2; vs L graph = 4&pi;&sup2;/g. Calculate g and compare with 9.81 m s<sup>-2</sup>.</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Human reaction time when using a stopwatch (~0.2 s)</td><td>Random</td><td>Time 10 (or more) oscillations and divide; use a light gate or motion sensor</td></tr>
-<tr><td>Amplitude too large &mdash; motion is not truly SHM</td><td>Systematic</td><td>Use small amplitudes (&lt; 10&deg; for pendulum, small extension for spring)</td></tr>
-<tr><td>Pendulum length measured to the wrong point on the bob</td><td>Systematic</td><td>Measure to the centre of the bob; use a small, dense bob</td></tr>
-<tr><td>Spring may oscillate in a non-vertical mode (wobbling)</td><td>Random</td><td>Guide the mass vertically; use a card or guide tube</td></tr>
-<tr><td>Counting error (miscounting oscillations)</td><td>Random</td><td>Use a fiducial marker; start counting from zero when the mass passes the marker</td></tr>
-<tr><td>Effective mass of the spring itself contributes to the period</td><td>Systematic</td><td>Use a light spring; the y-intercept of the T&sup2; vs m graph accounts for the spring's effective mass (&frac13; of spring mass)</td></tr>
+<tr><td>Human reaction time (~0.2 s)</td><td>Random</td><td>Time 10+ oscillations and divide; use a light gate or motion sensor</td></tr>
+<tr><td>Amplitude too large (not truly SHM)</td><td>Systematic</td><td>Use small amplitudes (&lt; 10&deg; for pendulum, small extension for spring)</td></tr>
+<tr><td>Pendulum length measured to wrong point on bob</td><td>Systematic</td><td>Measure to the centre of the bob; use a small, dense bob</td></tr>
+<tr><td>Spring oscillates non-vertically (wobbling)</td><td>Random</td><td>Guide the mass vertically; use a card or guide tube</td></tr>
+<tr><td>Counting error (miscounting oscillations)</td><td>Random</td><td>Use a fiducial marker; start counting from zero</td></tr>
+<tr><td>Effective mass of the spring contributes to period</td><td>Systematic</td><td>Use a light spring; the y-intercept of T<sup>2</sup> vs m accounts for the spring's effective mass (&frac13; of spring mass)</td></tr>
 </table>
 
-<div class="tip-box"><strong>Exam Tip:</strong> Always time at least 10 oscillations and divide to reduce the percentage uncertainty from reaction time. Start counting from zero (not one) as the mass passes the fiducial marker. Plotting T&sup2; (not T) gives a straight-line graph, making it easier to determine the gradient and hence k or g.</div>
+<div class="tip-box"><strong>Exam Tip:</strong> Always time at least 10 oscillations and divide to reduce the percentage uncertainty from reaction time. Start counting from <strong>zero</strong> (not one) as the mass passes the fiducial marker. Plotting T<sup>2</sup> (not T) gives a straight-line graph, making it easier to determine the gradient and hence k or g.</div>
 </div>
 
 <!-- ============================================================ -->
 <!-- REQUIRED PRACTICAL 8 -->
 <!-- ============================================================ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 8: Investigation of Boyle's Law and Charles's Law</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 8: Boyle's Law and Charles's Law</h2>
 
 <svg viewBox="0 0 620 300" style="max-width:600px; display:block; margin:16px auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="rp8arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#D97706"/></marker>
-    <marker id="rp8arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
   </defs>
   <text x="310" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP8: Boyle's Law and Charles's Law</text>
-
-  <!-- ===== LEFT: Boyle's Law ===== -->
+  <!-- Boyle's Law -->
   <text x="155" y="45" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">(a) Boyle's Law: P vs 1/V</text>
-
-  <!-- Gas syringe -->
   <rect x="60" y="80" width="180" height="40" rx="5" fill="#e8f0fe" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Plunger -->
   <rect x="200" y="85" width="60" height="30" rx="3" fill="#94a3b8" stroke="#1a1a2e" stroke-width="1"/>
   <line x1="260" y1="100" x2="280" y2="100" stroke="#1a1a2e" stroke-width="3"/>
   <text x="290" y="104" font-family="system-ui" font-size="9" fill="#1a1a2e">Plunger</text>
-
-  <!-- Gas inside syringe -->
   <rect x="65" y="85" width="133" height="30" rx="3" fill="#dbeafe" opacity="0.5"/>
   <text x="130" y="104" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Trapped gas</text>
-
-  <!-- Volume scale on syringe -->
-  <line x1="80" y1="120" x2="80" y2="128" stroke="#D97706" stroke-width="0.5"/>
-  <line x1="100" y1="120" x2="100" y2="128" stroke="#D97706" stroke-width="0.5"/>
-  <line x1="120" y1="120" x2="120" y2="128" stroke="#D97706" stroke-width="0.5"/>
-  <line x1="140" y1="120" x2="140" y2="128" stroke="#D97706" stroke-width="0.5"/>
-  <line x1="160" y1="120" x2="160" y2="128" stroke="#D97706" stroke-width="0.5"/>
-  <line x1="180" y1="120" x2="180" y2="128" stroke="#D97706" stroke-width="0.5"/>
-  <text x="130" y="140" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Volume scale (cm&sup3;)</text>
-
-  <!-- Pressure gauge connected to syringe -->
   <line x1="60" y1="100" x2="40" y2="100" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="40" y1="100" x2="40" y2="170" stroke="#1a1a2e" stroke-width="1.5"/>
-
   <rect x="15" y="170" width="60" height="40" rx="6" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
   <text x="45" y="188" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Pressure</text>
   <text x="45" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Gauge</text>
-
-  <!-- Oil plug label -->
-  <rect x="190" y="90" width="8" height="20" rx="1" fill="#D97706" opacity="0.4"/>
-  <text x="205" y="80" font-family="system-ui" font-size="8" fill="#D97706">Oil plug</text>
-
-  <!-- Vary V, measure P -->
-  <text x="155" y="230" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Push plunger &rarr; vary V</text>
+  <text x="155" y="230" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Push plunger: vary V</text>
   <text x="155" y="243" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Record P at each V</text>
   <text x="155" y="260" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Plot P vs 1/V</text>
-
-  <!-- ===== RIGHT: Charles's Law ===== -->
+  <!-- Charles's Law -->
   <text x="465" y="45" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">(b) Charles's Law: V vs T</text>
-
-  <!-- Water bath (beaker) -->
   <rect x="380" y="100" width="160" height="130" rx="4" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5" opacity="0.4"/>
   <text x="460" y="225" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Water bath</text>
-
-  <!-- Capillary tube with trapped gas -->
   <rect x="430" y="70" width="10" height="155" rx="2" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Gas column -->
   <rect x="432" y="80" width="6" height="60" fill="#dbeafe"/>
-  <!-- Oil plug at top of gas -->
   <rect x="432" y="140" width="6" height="8" fill="#D97706"/>
   <text x="455" y="90" font-family="system-ui" font-size="8" fill="#1a73e8">Gas</text>
   <text x="455" y="148" font-family="system-ui" font-size="8" fill="#D97706">Oil plug</text>
-
-  <!-- Gas column length measurement -->
   <line x1="415" y1="80" x2="415" y2="140" stroke="#D97706" stroke-width="1" marker-start="url(#rp8arr)" marker-end="url(#rp8arr)"/>
-  <text x="405" y="115" text-anchor="end" font-family="system-ui" font-size="9" fill="#D97706">L &prop; V</text>
-
-  <!-- Thermometer -->
+  <text x="405" y="115" text-anchor="end" font-family="system-ui" font-size="9" fill="#D97706">L (proportional to V)</text>
   <rect x="490" y="90" width="8" height="120" rx="3" fill="#fee2e2" stroke="#DC2626" stroke-width="1"/>
   <circle cx="494" cy="215" r="6" fill="#DC2626"/>
-  <text x="510" y="150" font-family="system-ui" font-size="8" fill="#DC2626">Thermo-</text>
-  <text x="510" y="160" font-family="system-ui" font-size="8" fill="#DC2626">meter</text>
-
-  <!-- Heat source -->
+  <text x="510" y="150" font-family="system-ui" font-size="8" fill="#DC2626">Thermometer</text>
   <rect x="410" y="240" width="100" height="12" rx="3" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1"/>
   <text x="460" y="265" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Bunsen / hot plate</text>
-
-  <!-- Vary T, measure V -->
   <text x="465" y="283" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">Plot V (or L) vs T (in K)</text>
 </svg>
 
 <h3>Apparatus</h3>
-<p><strong>(a) Boyle's Law:</strong></p>
-<ul>
-  <li>Gas syringe (sealed) with oil plug to prevent gas leaks</li>
-  <li>Bourdon pressure gauge or digital pressure sensor</li>
-  <li>Clamp and stand</li>
-</ul>
-<p><strong>(b) Charles's Law:</strong></p>
-<ul>
-  <li>Sealed capillary tube containing a trapped air column (sealed by a drop of oil or concentrated sulfuric acid)</li>
-  <li>Water bath (beaker of water)</li>
-  <li>Thermometer (&minus;10 &deg;C to 110 &deg;C) or temperature sensor</li>
-  <li>Bunsen burner or electric hot plate</li>
-  <li>Ruler (to measure the length of the gas column)</li>
-  <li>Stirrer</li>
-</ul>
+<p><strong>(a) Boyle's Law:</strong> Gas syringe (sealed) with oil plug, Bourdon pressure gauge or digital pressure sensor, clamp and stand.</p>
+<p><strong>(b) Charles's Law:</strong> Sealed capillary tube with trapped air column (sealed by oil drop), water bath (beaker of water), thermometer (&minus;10 &deg;C to 110 &deg;C) or temperature sensor, Bunsen burner or electric hot plate, ruler, stirrer.</p>
 
 <h3>Method</h3>
 <p><strong>(a) Boyle's Law (constant temperature):</strong></p>
@@ -581,43 +663,36 @@
   <li>Record the initial volume V of trapped gas from the syringe scale and the pressure P from the gauge.</li>
   <li>Slowly push the plunger in to reduce the volume. Wait for the temperature to equalise (so the process is isothermal), then record V and P.</li>
   <li>Repeat for several different volumes, both increasing and decreasing the volume.</li>
-  <li>Plot P (y-axis) vs 1/V (x-axis). A straight line through the origin confirms Boyle's Law: P &prop; 1/V (at constant T).</li>
-  <li>Alternatively plot PV vs P &mdash; a horizontal line confirms PV = constant.</li>
+  <li>Plot P (y-axis) vs 1/V (x-axis). A straight line through the origin confirms Boyle's Law.</li>
 </ol>
 <p><strong>(b) Charles's Law (constant pressure):</strong></p>
 <ol>
-  <li>Place the capillary tube (with trapped gas column) in the water bath. Record the initial temperature T and the length L of the gas column (L &prop; V since the tube has uniform cross-section).</li>
-  <li>Heat the water slowly, stirring continuously to ensure a uniform temperature. At regular temperature intervals (e.g. every 10 &deg;C), record T and L.</li>
-  <li>Continue until the water is near boiling. Then allow to cool and take readings on the way down to check for consistency.</li>
+  <li>Place the capillary tube in the water bath. Record the initial temperature T and length L of the gas column (L is proportional to V since the tube has uniform cross-section).</li>
+  <li>Heat the water slowly, stirring continuously. At regular intervals (e.g. every 10 &deg;C), record T and L.</li>
+  <li>Continue until near boiling. Allow to cool and take readings on the way down to check for consistency.</li>
   <li>Convert temperatures to kelvin: T(K) = T(&deg;C) + 273.15.</li>
-  <li>Plot V (or L) against T (in kelvin). A straight line through the origin (when extrapolated) confirms Charles's Law: V &prop; T at constant P. The x-intercept should be near &minus;273 &deg;C (absolute zero).</li>
+  <li>Plot V (or L) against T (in kelvin). A straight line that, when extrapolated, passes through the origin confirms V is proportional to T.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-  <li>Take care with hot water &mdash; use tongs or a clamp to handle the capillary tube.</li>
-  <li>If using concentrated sulfuric acid as a plug, handle with extreme care (wear gloves and goggles).</li>
-  <li>Do not heat above 100 &deg;C &mdash; the tube may crack or the plug may be expelled.</li>
-  <li>Ensure the gas syringe is clamped securely to prevent it falling.</li>
-  <li>For Boyle's law, do not compress the gas too quickly (risk of syringe popping).</li>
+  <li>Take care with hot water; use tongs or clamps to handle the capillary tube.</li>
+  <li>If using concentrated sulfuric acid as a plug, handle with extreme care (gloves and goggles).</li>
+  <li>Do not heat above 100 &deg;C; the tube may crack or the plug may be expelled.</li>
+  <li>Ensure the gas syringe is clamped securely.</li>
 </ul>
-
-<h3>Analysis</h3>
-<p><strong>Boyle's Law:</strong> PV = constant at constant T. Plot P vs 1/V &rarr; straight line through origin, gradient = PV = nRT.</p>
-<p><strong>Charles's Law:</strong> V/T = constant at constant P. Plot V vs T(K) &rarr; straight line through origin (or extrapolates to 0 V at 0 K).</p>
-<p class="eq">PV = nRT</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Temperature not uniform in the water bath</td><td>Systematic</td><td>Stir the water continuously; allow time to equilibrate before reading</td></tr>
-<tr><td>Gas leaks past the oil plug or syringe seal</td><td>Systematic</td><td>Use a good seal; check for leaks by seeing if readings are consistent when repeated</td></tr>
-<tr><td>Friction in the syringe makes pressure readings inaccurate</td><td>Systematic</td><td>Tap the syringe gently before reading; use a low-friction syringe</td></tr>
-<tr><td>Gas may not behave ideally at high pressures or extreme temperatures</td><td>Systematic</td><td>Keep within moderate pressure and temperature ranges</td></tr>
-<tr><td>Reading the gas column length is imprecise</td><td>Random</td><td>Use a magnifying glass; read from the same angle to avoid parallax</td></tr>
+<tr><td>Temperature not uniform in water bath</td><td>Systematic</td><td>Stir continuously; allow time to equilibrate</td></tr>
+<tr><td>Gas leaks past the oil plug or syringe seal</td><td>Systematic</td><td>Use a good seal; check for leaks by repeating readings</td></tr>
+<tr><td>Friction in the syringe affects pressure readings</td><td>Systematic</td><td>Tap the syringe gently; use a low-friction syringe</td></tr>
+<tr><td>Gas may not behave ideally at high pressures</td><td>Systematic</td><td>Keep within moderate pressure and temperature ranges</td></tr>
+<tr><td>Reading the gas column length is imprecise</td><td>Random</td><td>Use a magnifying glass; read from the same angle</td></tr>
 </table>
 
-<div class="tip-box"><strong>Exam Tip:</strong> For Boyle's law, plot P vs 1/V (not P vs V, which gives a curve). For Charles's law, always convert to kelvin before plotting. Extrapolating the V vs T graph to V = 0 should give an x-intercept near &minus;273 &deg;C, providing an estimate of absolute zero.</div>
+<div class="tip-box"><strong>Exam Tip:</strong> For Boyle's law, plot P vs 1/V (not P vs V, which gives a curve). For Charles's law, always convert to kelvin before plotting. Extrapolating the V vs T graph to V = 0 should give a temperature intercept near &minus;273 &deg;C, providing an experimental estimate of absolute zero.</div>
 </div>
 
 </div>

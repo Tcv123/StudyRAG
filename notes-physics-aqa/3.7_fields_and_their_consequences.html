@@ -11,6 +11,7 @@
   h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
   h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
   h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  h4 { font-size: 1.05rem; color: #334155; margin: 16px 0 8px; }
   p { margin: 8px 0; }
   ul, ol { margin: 8px 0 8px 24px; }
   li { margin: 4px 0; }
@@ -20,6 +21,8 @@
   tr:nth-child(even) { background: #f8fafc; }
   .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
@@ -29,28 +32,32 @@
 
 <h1>3.7 Fields and Their Consequences</h1>
 
-<!-- GRAVITATIONAL FIELDS -->
+<!-- ============================================================ -->
+<!-- 1. GRAVITATIONAL FIELDS -->
+<!-- ============================================================ -->
 <h2>1. Gravitational Fields</h2>
 
-<div class="def-box"><strong>Gravitational field:</strong> A region of space in which a mass experiences a force. All objects with mass create a gravitational field. Gravity is always attractive.</div>
+<div class="def-box"><strong>Gravitational field:</strong> A region of space in which a mass experiences a force due to the presence of another mass. All objects with mass create a gravitational field around them. Gravity is always attractive &mdash; there is no gravitational repulsion.</div>
 
 <h3>Newton's Law of Gravitation</h3>
 <div class="eq">F = &minus;GMm / r<sup>2</sup></div>
 <ul>
-  <li>F = gravitational force (N) &mdash; the negative sign indicates attraction</li>
+  <li>F = gravitational force between two point masses (N)</li>
   <li>G = gravitational constant = 6.67 &times; 10<sup>-11</sup> N m<sup>2</sup> kg<sup>-2</sup></li>
   <li>M, m = masses of the two objects (kg)</li>
-  <li>r = distance between centres of mass (m)</li>
+  <li>r = distance between the centres of mass (m)</li>
+  <li>The negative sign indicates the force is attractive (directed inward)</li>
 </ul>
+<p>This is an inverse square law: doubling the distance reduces the force by a factor of four.</p>
 
 <h3>Gravitational Field Strength</h3>
-<div class="def-box"><strong>Gravitational field strength (g):</strong> The force per unit mass at a point in a gravitational field. g = F/m. Units: N kg<sup>-1</sup> (or m s<sup>-2</sup>).</div>
+<div class="def-box"><strong>Gravitational field strength (g):</strong> The gravitational force per unit mass experienced by a small test mass placed at that point. g = F/m. Units: N kg<sup>-1</sup> (equivalently, m s<sup>-2</sup>).</div>
 
 <p><strong>Radial field</strong> (point or spherical mass):</p>
 <div class="eq">g = GM / r<sup>2</sup></div>
-<p>Field strength follows an inverse square law. Field lines point radially inward towards the mass.</p>
+<p>Field strength follows an inverse square law. Field lines point radially inward towards the mass. The field is non-uniform (g decreases with distance).</p>
 
-<p><strong>Uniform field:</strong> Near the Earth's surface, g is approximately constant at 9.81 N kg<sup>-1</sup>. Field lines are parallel and equally spaced.</p>
+<p><strong>Uniform field:</strong> Near the Earth's surface, g is approximately constant at 9.81 N kg<sup>-1</sup>. Field lines are parallel, equally spaced, and directed downward.</p>
 
 <!-- Gravitational Field Lines -->
 <div style="margin: 20px auto; text-align: center;">
@@ -59,66 +66,91 @@
   <defs>
     <marker id="aGF" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
   </defs>
-
-  <!-- Radial field (point mass) -->
+  <!-- Radial field -->
   <text x="135" y="42" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">Radial Field (point mass)</text>
   <circle cx="135" cy="125" r="18" fill="#1a73e8"/>
   <text x="135" y="130" text-anchor="middle" font-family="system-ui" font-size="10" fill="#fff" font-weight="600">M</text>
-  <!-- Field lines pointing inward -->
   <line x1="135" y1="50" x2="135" y2="105" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
   <line x1="135" y1="200" x2="135" y2="145" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
   <line x1="50" y1="125" x2="115" y2="125" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
   <line x1="220" y1="125" x2="155" y2="125" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
-  <!-- Diagonals -->
   <line x1="75" y1="65" x2="123" y2="113" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
   <line x1="195" y1="65" x2="147" y2="113" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
   <line x1="75" y1="185" x2="123" y2="137" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
   <line x1="195" y1="185" x2="147" y2="137" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#aGF)"/>
-  <text x="135" y="212" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">g = GM/r2 (inverse square law)</text>
-
-  <!-- Uniform field (near surface) -->
+  <text x="135" y="212" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">g = GM/r&sup2; (inverse square law)</text>
+  <!-- Uniform field -->
   <text x="395" y="42" text-anchor="middle" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">Uniform Field (near surface)</text>
-  <!-- Ground surface -->
   <rect x="305" y="190" width="180" height="15" fill="#e8eef6" stroke="#cbd5e1" stroke-width="1"/>
   <text x="395" y="200" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">Earth's surface</text>
-  <!-- Parallel field lines -->
   <line x1="325" y1="55" x2="325" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aGF)"/>
   <line x1="355" y1="55" x2="355" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aGF)"/>
   <line x1="385" y1="55" x2="385" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aGF)"/>
   <line x1="415" y1="55" x2="415" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aGF)"/>
   <line x1="445" y1="55" x2="445" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aGF)"/>
   <line x1="465" y1="55" x2="465" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aGF)"/>
-  <text x="395" y="212" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">g approx 9.81 N/kg (constant)</text>
+  <text x="395" y="212" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">g &asymp; 9.81 N/kg (constant, parallel lines)</text>
 </svg>
 </div>
 
 <h3>Gravitational Potential</h3>
-<div class="def-box"><strong>Gravitational potential (V):</strong> The work done per unit mass in bringing a small test mass from infinity to that point. V is always negative (since gravity is attractive and V = 0 at infinity).</div>
-<div class="eq">V = &minus;GM / r</div>
+<div class="def-box"><strong>Gravitational potential (V<sub>g</sub>):</strong> The work done per unit mass in bringing a small test mass from infinity to that point. V<sub>g</sub> is always negative (since gravity is attractive and we define V<sub>g</sub> = 0 at infinity). Units: J kg<sup>-1</sup>.</div>
+<div class="eq">V<sub>g</sub> = &minus;GM / r</div>
 
-<p><strong>Gravitational potential energy:</strong></p>
-<div class="eq">E<sub>p</sub> = mV = &minus;GMm / r</div>
+<p><strong>Gravitational potential energy (E<sub>p</sub>):</strong> The potential energy of a mass m at a point where the gravitational potential is V<sub>g</sub>:</p>
+<div class="eq">E<sub>p</sub> = mV<sub>g</sub> = &minus;GMm / r</div>
 
-<p>The relationship between g and V: g = &minus;dV/dr (the field strength is the negative gradient of the potential).</p>
+<p><strong>The relationship between g and V<sub>g</sub>:</strong></p>
+<div class="eq">g = &minus;dV<sub>g</sub>/dr</div>
+<p>The field strength is the negative gradient of the potential. On a V<sub>g</sub>-r graph, g at any point equals the magnitude of the gradient of the tangent. Equipotential surfaces are perpendicular to field lines.</p>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> Calculate the gravitational potential and gravitational field strength at the surface of the Earth. (M<sub>E</sub> = 5.97 &times; 10<sup>24</sup> kg, R<sub>E</sub> = 6.37 &times; 10<sup>6</sup> m)<br><br>
+<strong>Solution:</strong><br>
+V<sub>g</sub> = &minus;GM/r = &minus;(6.67 &times; 10<sup>-11</sup> &times; 5.97 &times; 10<sup>24</sup>) / (6.37 &times; 10<sup>6</sup>) = <strong>&minus;6.26 &times; 10<sup>7</sup> J kg<sup>-1</sup></strong><br>
+g = GM/r<sup>2</sup> = (6.67 &times; 10<sup>-11</sup> &times; 5.97 &times; 10<sup>24</sup>) / (6.37 &times; 10<sup>6</sup>)<sup>2</sup> = <strong>9.82 N kg<sup>-1</sup></strong> (close to the standard value of 9.81)
+</div>
 
 <h3>Orbits and Satellites</h3>
 <p>For a circular orbit, the gravitational force provides the centripetal force:</p>
 <div class="eq">GMm/r<sup>2</sup> = mv<sup>2</sup>/r</div>
+<p>This gives the orbital speed and Kepler's Third Law:</p>
 <div class="eq">v = &radic;(GM/r)</div>
 <div class="eq">T<sup>2</sup> = (4&pi;<sup>2</sup>/GM) r<sup>3</sup></div>
+<p><strong>Kepler's Third Law:</strong> T<sup>2</sup> is proportional to r<sup>3</sup> for any objects orbiting the same central mass.</p>
 
-<p>This last equation is <strong>Kepler's Third Law</strong>: T<sup>2</sup> is proportional to r<sup>3</sup>.</p>
+<p><strong>Total energy of an orbiting satellite:</strong></p>
+<ul>
+  <li>KE = &frac12;mv<sup>2</sup> = GMm/(2r)</li>
+  <li>PE = &minus;GMm/r</li>
+  <li>Total energy = KE + PE = &minus;GMm/(2r) (always negative for a bound orbit)</li>
+</ul>
+<p>As r increases, KE decreases and PE increases (becomes less negative). The total energy also increases (becomes less negative).</p>
+
+<h3>Geostationary Orbits</h3>
+<div class="def-box"><strong>Geostationary orbit:</strong> A special orbit where the satellite remains above the same point on the Earth's equator at all times. Requirements:<br>
+<ul style="margin:6px 0 0 20px;">
+  <li>Orbital period T = 24 hours (86400 s)</li>
+  <li>Orbits directly above the equator</li>
+  <li>Orbits in the same direction as Earth's rotation (west to east)</li>
+  <li>Orbital radius &asymp; 42,200 km from Earth's centre (altitude &asymp; 35,800 km)</li>
+</ul>
+</div>
+<p>Uses: satellite TV, communications, weather monitoring.</p>
 
 <h3>Escape Velocity</h3>
-<p>The minimum velocity needed for an object to escape a gravitational field (reach infinity with zero KE):</p>
+<p>The minimum velocity needed for an object to escape a gravitational field entirely (reach infinity with zero KE). Found by equating initial KE to the magnitude of the gravitational PE:</p>
 <div class="eq">v<sub>esc</sub> = &radic;(2GM/r)</div>
+<p>For Earth's surface: v<sub>esc</sub> &asymp; 11.2 km s<sup>-1</sup>.</p>
 
-<div class="tip-box"><strong>Exam Tip:</strong> A geostationary orbit has T = 24 hours, orbits above the equator, and moves in the same direction as Earth's rotation. Using Kepler's Third Law, the orbital radius is approximately 42,200 km from Earth's centre.</div>
+<div class="tip-box"><strong>Exam Tip:</strong> Note that escape velocity is &radic;2 times the orbital velocity at the same radius: v<sub>esc</sub> = &radic;2 &times; v<sub>orbital</sub>. A geostationary orbit has T = 24 hours. Using Kepler's Third Law: r = (GMT<sup>2</sup>/(4&pi;<sup>2</sup>))<sup>1/3</sup> &asymp; 42,200 km from Earth's centre.</div>
 
-<!-- ELECTRIC FIELDS -->
+<!-- ============================================================ -->
+<!-- 2. ELECTRIC FIELDS -->
+<!-- ============================================================ -->
 <h2>2. Electric Fields</h2>
 
-<div class="def-box"><strong>Electric field:</strong> A region of space in which a charged particle experiences a force. Field lines go from positive to negative. Like charges repel; unlike charges attract.</div>
+<div class="def-box"><strong>Electric field:</strong> A region of space in which a charged particle experiences a force. Electric field lines go from positive to negative charges. Like charges repel; unlike charges attract.</div>
 
 <h3>Coulomb's Law</h3>
 <div class="eq">F = kQ<sub>1</sub>Q<sub>2</sub> / r<sup>2</sup> = Q<sub>1</sub>Q<sub>2</sub> / (4&pi;&epsilon;<sub>0</sub>r<sup>2</sup>)</div>
@@ -136,12 +168,12 @@
 
 <p><strong>Uniform field</strong> (between parallel plates):</p>
 <div class="eq">E = V / d</div>
-<p>where V = potential difference between the plates and d = plate separation. The field is uniform (constant E) between the plates.</p>
+<p>where V = potential difference between the plates and d = plate separation. The field is uniform (constant E) between the plates, and field lines are straight, parallel, and equally spaced from + plate to &minus; plate.</p>
 
 <h3>Electric Potential</h3>
-<div class="def-box"><strong>Electric potential (V):</strong> The work done per unit positive charge in bringing a small test charge from infinity to that point.</div>
-<div class="eq">V = kQ / r = Q / (4&pi;&epsilon;<sub>0</sub>r)</div>
-<p>V is positive for a positive charge and negative for a negative charge. E = &minus;dV/dr.</p>
+<div class="def-box"><strong>Electric potential (V<sub>e</sub>):</strong> The work done per unit positive charge in bringing a small positive test charge from infinity to that point. Units: V (or J C<sup>-1</sup>).</div>
+<div class="eq">V<sub>e</sub> = kQ / r = Q / (4&pi;&epsilon;<sub>0</sub>r)</div>
+<p>V<sub>e</sub> is positive near a positive charge and negative near a negative charge. The relationship E = &minus;dV<sub>e</sub>/dr applies (field strength is the negative potential gradient).</p>
 
 <!-- Electric Field Lines -->
 <div style="margin: 20px auto; text-align: center;">
@@ -149,14 +181,11 @@
   <text x="260" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Electric Field Lines</text>
   <defs>
     <marker id="aEF" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#DC2626"/></marker>
-    <marker id="aEFb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
   </defs>
-
-  <!-- Radial field (positive charge) -->
+  <!-- Radial field (+Q) -->
   <text x="135" y="42" text-anchor="middle" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">Radial (+Q)</text>
   <circle cx="135" cy="125" r="18" fill="#DC2626"/>
   <text x="135" y="130" text-anchor="middle" font-family="system-ui" font-size="10" fill="#fff" font-weight="600">+Q</text>
-  <!-- Field lines pointing OUTWARD -->
   <line x1="135" y1="105" x2="135" y2="50" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
   <line x1="135" y1="145" x2="135" y2="200" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
   <line x1="115" y1="125" x2="50" y2="125" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
@@ -166,16 +195,12 @@
   <line x1="123" y1="137" x2="75" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
   <line x1="147" y1="137" x2="195" y2="185" stroke="#DC2626" stroke-width="1.5" marker-end="url(#aEF)"/>
   <text x="135" y="212" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748b">Lines radiate outward from +</text>
-
   <!-- Uniform field (parallel plates) -->
   <text x="395" y="42" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">Uniform (parallel plates)</text>
-  <!-- Positive plate -->
   <rect x="310" y="55" width="8" height="150" fill="#DC2626" opacity="0.7"/>
   <text x="306" y="135" text-anchor="end" font-family="system-ui" font-size="12" fill="#DC2626" font-weight="600">+</text>
-  <!-- Negative plate -->
   <rect x="472" y="55" width="8" height="150" fill="#1a73e8" opacity="0.7"/>
-  <text x="490" y="135" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="600">-</text>
-  <!-- Parallel field lines from + to - -->
+  <text x="490" y="135" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="600">&minus;</text>
   <line x1="322" y1="80" x2="468" y2="80" stroke="#D97706" stroke-width="1.5" marker-end="url(#aEF)"/>
   <line x1="322" y1="110" x2="468" y2="110" stroke="#D97706" stroke-width="1.5" marker-end="url(#aEF)"/>
   <line x1="322" y1="140" x2="468" y2="140" stroke="#D97706" stroke-width="1.5" marker-end="url(#aEF)"/>
@@ -184,126 +209,173 @@
 </svg>
 </div>
 
+<div class="worked-example">
+<strong>Worked Example:</strong> A proton (charge +1.60 &times; 10<sup>-19</sup> C) is placed between two parallel plates separated by 2.0 cm with a PD of 500 V across them. Calculate (a) the electric field strength, (b) the force on the proton, (c) the acceleration of the proton. (m<sub>p</sub> = 1.67 &times; 10<sup>-27</sup> kg)<br><br>
+<strong>Solution:</strong><br>
+(a) E = V/d = 500 / 0.020 = <strong>25000 V m<sup>-1</sup></strong> = 2.5 &times; 10<sup>4</sup> N C<sup>-1</sup><br>
+(b) F = EQ = 25000 &times; 1.60 &times; 10<sup>-19</sup> = <strong>4.0 &times; 10<sup>-15</sup> N</strong><br>
+(c) a = F/m = 4.0 &times; 10<sup>-15</sup> / 1.67 &times; 10<sup>-27</sup> = <strong>2.4 &times; 10<sup>12</sup> m s<sup>-2</sup></strong><br>
+This enormous acceleration illustrates why electric fields are so effective at accelerating charged particles.
+</div>
+
 <h3>Comparison: Gravitational and Electric Fields</h3>
 <table>
   <tr><th>Property</th><th>Gravitational</th><th>Electric</th></tr>
   <tr><td>Source</td><td>Mass</td><td>Charge</td></tr>
   <tr><td>Force law</td><td>F = &minus;GMm/r<sup>2</sup></td><td>F = kQ<sub>1</sub>Q<sub>2</sub>/r<sup>2</sup></td></tr>
   <tr><td>Nature</td><td>Always attractive</td><td>Attractive or repulsive</td></tr>
-  <tr><td>Field strength</td><td>g = GM/r<sup>2</sup></td><td>E = kQ/r<sup>2</sup></td></tr>
+  <tr><td>Field strength</td><td>g = GM/r<sup>2</sup> (N kg<sup>-1</sup>)</td><td>E = kQ/r<sup>2</sup> (N C<sup>-1</sup>)</td></tr>
   <tr><td>Potential</td><td>V = &minus;GM/r (always negative)</td><td>V = kQ/r (can be + or &minus;)</td></tr>
+  <tr><td>Field strength &harr; potential</td><td>g = &minus;dV/dr</td><td>E = &minus;dV/dr</td></tr>
+  <tr><td>Relative strength</td><td>Very weak</td><td>Very strong (~10<sup>36</sup> times stronger)</td></tr>
+  <tr><td>Shielding</td><td>Cannot be shielded</td><td>Can be shielded (Faraday cage)</td></tr>
 </table>
 
-<div class="tip-box"><strong>Exam Tip:</strong> For fields, potential is a scalar (add algebraically with sign), but field strength is a vector (add using vector rules). When finding the resultant potential at a point due to multiple charges, just add the values. For field strength, you need vector addition.</div>
+<div class="tip-box"><strong>Exam Tip:</strong> Potential is a scalar &mdash; add algebraically with sign. Field strength is a vector &mdash; add using vector rules. When finding the resultant potential at a point due to multiple charges, just add the values (with signs). For field strength, you must resolve into components and add as vectors. A common exam question asks you to find the point where the resultant field is zero between two charges.</div>
 
-<!-- CAPACITANCE -->
+<div class="worked-example">
+<strong>Worked Example:</strong> Two point charges, Q<sub>1</sub> = +4.0 nC and Q<sub>2</sub> = &minus;2.0 nC, are separated by 0.30 m. Find the point along the line between them where the electric potential is zero.<br><br>
+<strong>Solution:</strong><br>
+Let the point be at distance x from Q<sub>1</sub> and (0.30 &minus; x) from Q<sub>2</sub>.<br>
+V = kQ<sub>1</sub>/x + kQ<sub>2</sub>/(0.30 &minus; x) = 0<br>
+Q<sub>1</sub>/x = &minus;Q<sub>2</sub>/(0.30 &minus; x)<br>
+4.0/x = 2.0/(0.30 &minus; x)<br>
+4.0(0.30 &minus; x) = 2.0x<br>
+1.2 &minus; 4.0x = 2.0x<br>
+1.2 = 6.0x<br>
+x = <strong>0.20 m</strong> from Q<sub>1</sub> (and 0.10 m from Q<sub>2</sub>)
+</div>
+
+<!-- ============================================================ -->
+<!-- 3. CAPACITANCE -->
+<!-- ============================================================ -->
 <h2>3. Capacitance</h2>
 
-<div class="def-box"><strong>Capacitance (C):</strong> The charge stored per unit potential difference across a capacitor. C = Q/V. Units: F (farads). 1 F = 1 C V<sup>-1</sup>.</div>
+<div class="def-box"><strong>Capacitance (C):</strong> The charge stored per unit potential difference across a capacitor. C = Q/V. Units: F (farads). 1 F = 1 C V<sup>-1</sup>. Typical values are in the &mu;F (10<sup>-6</sup>), nF (10<sup>-9</sup>), or pF (10<sup>-12</sup>) range.</div>
 
 <h3>Parallel Plate Capacitor</h3>
 <div class="eq">C = &epsilon;<sub>0</sub>&epsilon;<sub>r</sub>A / d</div>
 <ul>
-  <li>&epsilon;<sub>0</sub> = permittivity of free space</li>
+  <li>&epsilon;<sub>0</sub> = permittivity of free space = 8.85 &times; 10<sup>-12</sup> F m<sup>-1</sup></li>
   <li>&epsilon;<sub>r</sub> = relative permittivity (dielectric constant) of the material between the plates</li>
   <li>A = area of overlap of the plates (m<sup>2</sup>)</li>
   <li>d = separation of the plates (m)</li>
 </ul>
+<p>A dielectric material placed between the plates increases capacitance by a factor of &epsilon;<sub>r</sub>. The dielectric reduces the electric field inside the capacitor because its molecules become polarised and partially cancel the applied field.</p>
 
 <h3>Capacitors in Series and Parallel</h3>
 <table>
-  <tr><th>Arrangement</th><th>Rule</th></tr>
-  <tr><td>Series</td><td>1/C<sub>total</sub> = 1/C<sub>1</sub> + 1/C<sub>2</sub> + ... (total capacitance decreases)</td></tr>
-  <tr><td>Parallel</td><td>C<sub>total</sub> = C<sub>1</sub> + C<sub>2</sub> + ... (total capacitance increases)</td></tr>
+  <tr><th>Arrangement</th><th>Rule</th><th>Effect</th></tr>
+  <tr><td>Series</td><td>1/C<sub>total</sub> = 1/C<sub>1</sub> + 1/C<sub>2</sub> + ...</td><td>Total capacitance decreases (always less than smallest individual C)</td></tr>
+  <tr><td>Parallel</td><td>C<sub>total</sub> = C<sub>1</sub> + C<sub>2</sub> + ...</td><td>Total capacitance increases</td></tr>
 </table>
 
-<div class="tip-box"><strong>Exam Tip:</strong> Capacitors in series/parallel combine the OPPOSITE way to resistors. Capacitors in series use the reciprocal rule (like resistors in parallel). Capacitors in parallel add directly (like resistors in series).</div>
+<div class="tip-box"><strong>Exam Tip:</strong> Capacitors in series/parallel combine the OPPOSITE way to resistors. Capacitors in series use the reciprocal rule (like resistors in parallel). Capacitors in parallel add directly (like resistors in series). This is because adding capacitors in parallel increases the total plate area, while series decreases effective capacitance.</div>
 
 <h3>Energy Stored in a Capacitor</h3>
 <div class="eq">E = &frac12;QV = &frac12;CV<sup>2</sup> = &frac12;Q<sup>2</sup>/C</div>
-<p>This is the area under a Q-V graph (a straight line through the origin with gradient C).</p>
+<p>The energy stored equals the area under the Q-V graph (which is a straight line through the origin with gradient C). The factor of &frac12; arises because the average voltage during charging is V/2.</p>
 
-<h3>Charging and Discharging</h3>
-<p>When a capacitor charges or discharges through a resistor, the process is exponential:</p>
+<div class="worked-example">
+<strong>Worked Example:</strong> A 470 &mu;F capacitor is charged to 12 V. Calculate (a) the charge stored, (b) the energy stored. The capacitor is then disconnected and connected across a 1000 &mu;F uncharged capacitor. Find (c) the final voltage across both capacitors, (d) the energy lost.<br><br>
+<strong>Solution:</strong><br>
+(a) Q = CV = 470 &times; 10<sup>-6</sup> &times; 12 = <strong>5.64 &times; 10<sup>-3</sup> C</strong> (5.64 mC)<br>
+(b) E = &frac12;CV<sup>2</sup> = &frac12; &times; 470 &times; 10<sup>-6</sup> &times; 12<sup>2</sup> = <strong>0.0338 J</strong> (33.8 mJ)<br>
+(c) Charge is conserved: Q<sub>total</sub> = 5.64 &times; 10<sup>-3</sup> C. C<sub>total</sub> = 470 + 1000 = 1470 &mu;F.<br>
+V<sub>final</sub> = Q/C<sub>total</sub> = 5.64 &times; 10<sup>-3</sup> / 1470 &times; 10<sup>-6</sup> = <strong>3.84 V</strong><br>
+(d) E<sub>final</sub> = &frac12;C<sub>total</sub>V<sup>2</sup> = &frac12; &times; 1470 &times; 10<sup>-6</sup> &times; 3.84<sup>2</sup> = 0.0108 J<br>
+Energy lost = 0.0338 &minus; 0.0108 = <strong>0.0230 J</strong> (23.0 mJ, dissipated as heat in the connecting wires)
+</div>
+
+<h3>Charging and Discharging Through a Resistor</h3>
+<p>The charge, voltage, and current change exponentially:</p>
 
 <p><strong>Discharging:</strong></p>
-<div class="eq">Q = Q<sub>0</sub>e<sup>&minus;t/RC</sup></div>
-<div class="eq">V = V<sub>0</sub>e<sup>&minus;t/RC</sup></div>
-<div class="eq">I = I<sub>0</sub>e<sup>&minus;t/RC</sup></div>
+<div class="eq">Q = Q<sub>0</sub>e<sup>&minus;t/RC</sup> &nbsp;&nbsp; V = V<sub>0</sub>e<sup>&minus;t/RC</sup> &nbsp;&nbsp; I = I<sub>0</sub>e<sup>&minus;t/RC</sup></div>
 
 <p><strong>Charging:</strong></p>
-<div class="eq">Q = Q<sub>0</sub>(1 &minus; e<sup>&minus;t/RC</sup>)</div>
-<div class="eq">V = V<sub>0</sub>(1 &minus; e<sup>&minus;t/RC</sup>)</div>
-<p>Current still decays exponentially during charging: I = I<sub>0</sub>e<sup>&minus;t/RC</sup></p>
+<div class="eq">Q = Q<sub>0</sub>(1 &minus; e<sup>&minus;t/RC</sup>) &nbsp;&nbsp; V = V<sub>0</sub>(1 &minus; e<sup>&minus;t/RC</sup>)</div>
+<p>Current during charging still decays exponentially: I = I<sub>0</sub>e<sup>&minus;t/RC</sup> (highest at the start, falls to zero as the capacitor becomes fully charged).</p>
 
 <h3>Time Constant</h3>
 <div class="eq">&tau; = RC</div>
-<p>The time constant is the time taken for the charge (or PD or current) to fall to 1/e (&approx; 37%) of its initial value during discharge. After 5&tau;, the capacitor is considered fully discharged (&lt;1% remaining).</p>
+<p>The time constant is the time for the charge (or voltage) to fall to 1/e (&asymp; 37%) of its initial value during discharge, or to rise to (1 &minus; 1/e) &asymp; 63% of its final value during charging. After 5&tau;, the capacitor is considered fully charged or discharged (&lt; 1% remaining or &gt; 99% charged).</p>
 
-<div class="tip-box"><strong>Exam Tip:</strong> To find &tau; from a graph, read off the time when the value drops to 37% of the initial value. Alternatively, plot ln(Q) against t &mdash; the gradient is &minus;1/RC.</div>
+<div class="tip-box"><strong>Exam Tip:</strong> To find &tau; from a discharge graph, read off the time when the value drops to 37% of the initial value. To linearise the data, plot ln(V) against t &mdash; the gradient is &minus;1/RC and the y-intercept is ln(V<sub>0</sub>).</div>
 
-<!-- MAGNETIC FIELDS -->
+<div class="real-world"><strong>Real-World Application:</strong> RC circuits are used in camera flash units (rapid discharge of stored energy), timing circuits in electronics, smoothing circuits in power supplies, and defibrillators (storing energy to deliver controlled electrical pulses to the heart).</div>
+
+<!-- ============================================================ -->
+<!-- 4. MAGNETIC FIELDS -->
+<!-- ============================================================ -->
 <h2>4. Magnetic Fields</h2>
 
-<div class="def-box"><strong>Magnetic flux density (B):</strong> A measure of the strength of a magnetic field. Units: T (tesla). 1 T = 1 kg s<sup>-2</sup> A<sup>-1</sup>.</div>
+<div class="def-box"><strong>Magnetic flux density (B):</strong> A measure of the strength of a magnetic field at a point. It represents the force per unit current per unit length on a conductor carrying current perpendicular to the field. Units: T (tesla). 1 T = 1 kg s<sup>-2</sup> A<sup>-1</sup> = 1 Wb m<sup>-2</sup>.</div>
 
 <h3>Force on a Current-Carrying Conductor</h3>
 <div class="eq">F = BIL sin&theta;</div>
 <ul>
-  <li>F = force (N)</li>
+  <li>F = force on the conductor (N)</li>
   <li>B = magnetic flux density (T)</li>
-  <li>I = current (A)</li>
+  <li>I = current through the conductor (A)</li>
   <li>L = length of conductor in the field (m)</li>
-  <li>&theta; = angle between the current direction and the field direction</li>
+  <li>&theta; = angle between the current direction and the magnetic field direction</li>
+  <li>Maximum force when &theta; = 90&deg; (I perpendicular to B). Zero force when &theta; = 0&deg; (I parallel to B).</li>
 </ul>
-<p>Direction given by Fleming's left-hand rule (thuMb = Motion, First finger = Field, seCond finger = Current).</p>
+<p>Direction given by <strong>Fleming's left-hand rule</strong>: thuMb = Motion (force), First finger = Field (B), seCond finger = Current (I).</p>
 
-<!-- Magnetic Field Around Current-Carrying Wire -->
+<!-- Magnetic Field Around Wire -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 440 240" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="220" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Magnetic Field Around a Current-Carrying Wire</text>
-  <!-- Wire cross-section (current coming out of page) -->
   <circle cx="180" cy="130" r="14" fill="#1a1a2e"/>
   <circle cx="180" cy="130" r="4" fill="#16A34A"/>
   <text x="180" y="108" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="600">I (out of page)</text>
-  <!-- Concentric circular field lines -->
   <circle cx="180" cy="130" r="30" fill="none" stroke="#1a73e8" stroke-width="1.2"/>
   <circle cx="180" cy="130" r="50" fill="none" stroke="#1a73e8" stroke-width="1"/>
   <circle cx="180" cy="130" r="70" fill="none" stroke="#1a73e8" stroke-width="0.8"/>
   <circle cx="180" cy="130" r="90" fill="none" stroke="#1a73e8" stroke-width="0.6"/>
-  <!-- Direction arrows on circles (anticlockwise for current out of page) -->
   <polygon points="210,128 210,132 214,130" fill="#1a73e8"/>
   <polygon points="230,128 230,132 234,130" fill="#1a73e8"/>
   <polygon points="250,128 250,132 254,130" fill="#1a73e8"/>
   <polygon points="270,128 270,132 274,130" fill="#1a73e8"/>
-  <!-- Right side: wire into page -->
   <circle cx="370" cy="130" r="14" fill="#1a1a2e"/>
   <line x1="363" y1="123" x2="377" y2="137" stroke="#DC2626" stroke-width="2"/>
   <line x1="377" y1="123" x2="363" y2="137" stroke="#DC2626" stroke-width="2"/>
   <text x="370" y="108" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="600">I (into page)</text>
-  <!-- Use right-hand grip rule label -->
   <text x="220" y="228" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">Right-hand grip rule: thumb = current direction, fingers curl in field direction</text>
 </svg>
 </div>
 
 <h3>Force on a Moving Charge</h3>
 <div class="eq">F = BQv sin&theta;</div>
-<p>A charged particle moving perpendicular to a magnetic field follows a circular path (the magnetic force provides centripetal force):</p>
+<p>A charged particle moving perpendicular to a uniform magnetic field follows a circular path (the magnetic force provides the centripetal force, always perpendicular to velocity):</p>
 <div class="eq">BQv = mv<sup>2</sup>/r &nbsp; &rArr; &nbsp; r = mv / (BQ)</div>
+<p>The radius of the circular path increases with speed or mass, and decreases with stronger field or larger charge. The magnetic force does no work (F is always perpendicular to v), so the speed and KE remain constant.</p>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> An electron (m = 9.11 &times; 10<sup>-31</sup> kg, q = 1.60 &times; 10<sup>-19</sup> C) moves at 2.0 &times; 10<sup>7</sup> m s<sup>-1</sup> perpendicular to a magnetic field of 0.10 T. Calculate the radius of its circular path.<br><br>
+<strong>Solution:</strong><br>
+r = mv/(BQ) = (9.11 &times; 10<sup>-31</sup> &times; 2.0 &times; 10<sup>7</sup>) / (0.10 &times; 1.60 &times; 10<sup>-19</sup>)<br>
+r = (1.822 &times; 10<sup>-23</sup>) / (1.60 &times; 10<sup>-20</sup>) = <strong>1.14 &times; 10<sup>-3</sup> m</strong> (1.1 mm)
+</div>
 
 <h3>Magnetic Flux and Flux Linkage</h3>
-<div class="def-box"><strong>Magnetic flux (&Phi;):</strong> The product of the magnetic flux density and the area perpendicular to the field. &Phi; = BA cos&theta;. Units: Wb (webers). 1 Wb = 1 T m<sup>2</sup>.</div>
+<div class="def-box"><strong>Magnetic flux (&Phi;):</strong> The total magnetic field passing through an area. &Phi; = BA cos&theta;, where &theta; is the angle between B and the normal to the surface. Units: Wb (webers). 1 Wb = 1 T m<sup>2</sup>.</div>
 
-<div class="def-box"><strong>Flux linkage:</strong> For a coil of N turns, flux linkage = N&Phi; = BAN cos&theta;. Units: Wb (or Wb turns).</div>
+<div class="def-box"><strong>Flux linkage (N&Phi;):</strong> For a coil of N turns, flux linkage = N&Phi; = BAN cos&theta;. Units: Wb (or Wb-turns).</div>
 
 <h3>Electromagnetic Induction</h3>
 
-<div class="def-box"><strong>Faraday's Law:</strong> The magnitude of the induced EMF is equal to the rate of change of flux linkage.<br>
-&epsilon; = &minus;d(N&Phi;)/dt = &minus;N d&Phi;/dt</div>
+<div class="def-box"><strong>Faraday's Law:</strong> The magnitude of the induced EMF equals the rate of change of flux linkage:<br>
+<span class="eq">&epsilon; = &minus;N &times; d&Phi;/dt = &minus;d(N&Phi;)/dt</span></div>
 
-<div class="def-box"><strong>Lenz's Law:</strong> The direction of the induced EMF (and hence the induced current) is such that it opposes the change in flux that caused it. This is the reason for the negative sign in Faraday's Law. It is a consequence of conservation of energy.</div>
+<div class="def-box"><strong>Lenz's Law:</strong> The direction of the induced EMF (and current) is such that it opposes the change in flux that produced it. This is the reason for the negative sign in Faraday's Law and is a consequence of conservation of energy.</div>
 
-<!-- Electromagnetic Induction Diagram -->
+<p>For a straight wire of length L moving at velocity v perpendicular to a uniform field B:</p>
+<div class="eq">&epsilon; = BLv</div>
+
+<!-- EM Induction Diagram -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 480 250" style="max-width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="240" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">Electromagnetic Induction</text>
@@ -312,7 +384,6 @@
     <marker id="aEMr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#DC2626"/></marker>
     <marker id="aEMg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#16A34A"/></marker>
   </defs>
-  <!-- Magnetic field (into page - shown as X marks) -->
   <g font-family="system-ui" font-size="14" fill="#1a73e8" opacity="0.4">
     <text x="80" y="80">x</text><text x="120" y="80">x</text><text x="160" y="80">x</text><text x="200" y="80">x</text><text x="240" y="80">x</text><text x="280" y="80">x</text><text x="320" y="80">x</text><text x="360" y="80">x</text>
     <text x="80" y="120">x</text><text x="120" y="120">x</text><text x="160" y="120">x</text><text x="200" y="120">x</text><text x="240" y="120">x</text><text x="280" y="120">x</text><text x="320" y="120">x</text><text x="360" y="120">x</text>
@@ -321,174 +392,149 @@
   </g>
   <text x="410" y="120" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">B field</text>
   <text x="410" y="132" font-family="system-ui" font-size="10" fill="#1a73e8">(into page)</text>
-
-  <!-- Wire (vertical conductor) -->
   <rect x="195" y="60" width="10" height="160" rx="2" fill="#D97706" opacity="0.8"/>
-  <text x="185" y="145" text-anchor="end" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">Wire</text>
-
-  <!-- Velocity arrow (wire moving right) -->
+  <text x="185" y="145" text-anchor="end" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">Wire (L)</text>
   <line x1="210" y1="140" x2="260" y2="140" stroke="#DC2626" stroke-width="2.5" marker-end="url(#aEMr)"/>
   <text x="240" y="135" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="600">v</text>
-
-  <!-- Induced current direction (upward in wire using Fleming's RH rule) -->
   <line x1="200" y1="200" x2="200" y2="75" stroke="#16A34A" stroke-width="2" marker-end="url(#aEMg)"/>
   <text x="200" y="65" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="600">Induced I</text>
-
-  <!-- Force on wire labels -->
-  <text x="240" y="238" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">EMF = BLv (wire of length L moving at speed v in field B)</text>
+  <text x="240" y="238" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">EMF = BLv (wire length L, speed v, field B)</text>
 </svg>
 </div>
 
-<h3>EMF in a Rotating Coil</h3>
-<p>A coil rotating in a uniform magnetic field generates a sinusoidal EMF:</p>
+<h3>EMF in a Rotating Coil (AC Generator)</h3>
+<p>A coil of N turns and area A rotating at angular velocity &omega; in a uniform field B generates a sinusoidal EMF:</p>
 <div class="eq">&epsilon; = BAN&omega; sin(&omega;t)</div>
-<p>Maximum EMF: &epsilon;<sub>0</sub> = BAN&omega; (when the coil is parallel to the field).</p>
+<p>Peak EMF: &epsilon;<sub>0</sub> = BAN&omega; (when the coil plane is parallel to the field, i.e. the flux linkage is changing most rapidly).</p>
+
+<h3>Alternating Current</h3>
+<p>For a sinusoidal AC supply:</p>
+<div class="eq">V<sub>rms</sub> = V<sub>0</sub> / &radic;2 &nbsp;&nbsp;&nbsp; I<sub>rms</sub> = I<sub>0</sub> / &radic;2</div>
+<p>V<sub>rms</sub> and I<sub>rms</sub> are the root-mean-square values &mdash; the DC equivalent that would deliver the same power. UK mains: V<sub>rms</sub> = 230 V, f = 50 Hz (so V<sub>0</sub> &asymp; 325 V, T = 20 ms).</p>
+<p>Mean power: P = I<sub>rms</sub>V<sub>rms</sub> = I<sub>rms</sub><sup>2</sup>R = V<sub>rms</sub><sup>2</sup>/R = &frac12;I<sub>0</sub>V<sub>0</sub></p>
 
 <h3>Transformers</h3>
 <div class="eq">N<sub>s</sub>/N<sub>p</sub> = V<sub>s</sub>/V<sub>p</sub></div>
-<p>For an ideal transformer (100% efficient): V<sub>p</sub>I<sub>p</sub> = V<sub>s</sub>I<sub>s</sub></p>
+<p>For an ideal (100% efficient) transformer: V<sub>p</sub>I<sub>p</sub> = V<sub>s</sub>I<sub>s</sub> (input power = output power).</p>
 <ul>
-  <li>Step-up transformer: N<sub>s</sub> > N<sub>p</sub>, V<sub>s</sub> > V<sub>p</sub></li>
-  <li>Step-down transformer: N<sub>s</sub> < N<sub>p</sub>, V<sub>s</sub> < V<sub>p</sub></li>
+  <li><strong>Step-up transformer:</strong> N<sub>s</sub> > N<sub>p</sub>, so V<sub>s</sub> > V<sub>p</sub> and I<sub>s</sub> < I<sub>p</sub></li>
+  <li><strong>Step-down transformer:</strong> N<sub>s</sub> < N<sub>p</sub>, so V<sub>s</sub> < V<sub>p</sub> and I<sub>s</sub> > I<sub>p</sub></li>
 </ul>
 
-<p>Energy losses in real transformers are due to: resistance in coils (I<sup>2</sup>R heating), eddy currents in the core (reduced by lamination), magnetic hysteresis, flux leakage.</p>
+<p><strong>Transformer operation:</strong> AC in the primary coil produces a changing magnetic flux in the soft iron core. This changing flux links to the secondary coil and, by Faraday's law, induces an EMF. Transformers only work with AC (or changing current), not DC.</p>
 
-<div class="tip-box"><strong>Exam Tip:</strong> High-voltage transmission reduces power loss in cables. P<sub>loss</sub> = I<sup>2</sup>R. By stepping up the voltage, the current is reduced (since P = IV is constant), so I<sup>2</sup>R losses are greatly reduced. This is why the National Grid operates at very high voltages (up to 400 kV).</div>
+<p><strong>Energy losses in real transformers:</strong></p>
+<table>
+  <tr><th>Loss Mechanism</th><th>Cause</th><th>Reduction Method</th></tr>
+  <tr><td>Copper losses (I<sup>2</sup>R heating)</td><td>Resistance of the coil windings</td><td>Use thick, low-resistance copper wire</td></tr>
+  <tr><td>Eddy current losses</td><td>Induced currents in the iron core dissipate energy as heat</td><td>Laminate the core (thin insulated layers)</td></tr>
+  <tr><td>Hysteresis losses</td><td>Energy lost in repeatedly magnetising and demagnetising the core</td><td>Use a soft magnetic material (low hysteresis)</td></tr>
+  <tr><td>Flux leakage</td><td>Not all flux from primary links to secondary</td><td>Wind coils on top of each other; use a closed core</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> High-voltage transmission reduces power loss in cables. P<sub>loss</sub> = I<sup>2</sup>R<sub>cable</sub>. By stepping up the voltage (and thus reducing I for the same power P = IV), the I<sup>2</sup>R losses are dramatically reduced. Doubling V halves I and quarters the power loss. The UK National Grid operates at up to 400 kV for this reason.</div>
+
+<div class="real-world"><strong>Real-World Application:</strong> The National Grid uses step-up transformers at power stations to increase voltage to 275 kV or 400 kV for long-distance transmission, then step-down transformers reduce the voltage to 230 V for domestic use. Electromagnetic induction is also the principle behind generators, induction cookers, wireless phone charging, electric guitar pickups, and metal detectors.</div>
+
+<h3>Summary of Key Equations</h3>
+<table>
+  <tr><th>Topic</th><th>Key Equations</th></tr>
+  <tr><td>Gravitation</td><td>F = GMm/r<sup>2</sup>; &nbsp; g = GM/r<sup>2</sup>; &nbsp; V = &minus;GM/r; &nbsp; v<sub>esc</sub> = &radic;(2GM/r)</td></tr>
+  <tr><td>Orbits</td><td>v = &radic;(GM/r); &nbsp; T<sup>2</sup> = (4&pi;<sup>2</sup>/GM)r<sup>3</sup></td></tr>
+  <tr><td>Electric fields</td><td>F = kQ<sub>1</sub>Q<sub>2</sub>/r<sup>2</sup>; &nbsp; E = kQ/r<sup>2</sup>; &nbsp; V = kQ/r; &nbsp; E = V/d (uniform)</td></tr>
+  <tr><td>Capacitance</td><td>C = Q/V; &nbsp; E = &frac12;CV<sup>2</sup>; &nbsp; &tau; = RC; &nbsp; Q = Q<sub>0</sub>e<sup>&minus;t/RC</sup></td></tr>
+  <tr><td>Magnetic force</td><td>F = BIL sin&theta;; &nbsp; F = BQv sin&theta;; &nbsp; r = mv/(BQ)</td></tr>
+  <tr><td>Induction</td><td>&epsilon; = &minus;N d&Phi;/dt; &nbsp; &Phi; = BA cos&theta;; &nbsp; &epsilon; = BLv</td></tr>
+  <tr><td>Transformers</td><td>N<sub>s</sub>/N<sub>p</sub> = V<sub>s</sub>/V<sub>p</sub>; &nbsp; V<sub>rms</sub> = V<sub>0</sub>/&radic;2</td></tr>
+</table>
 
 <!-- ============================================================ -->
 <!-- REQUIRED PRACTICAL 9 -->
 <!-- ============================================================ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 9: Investigation of the Charge and Discharge of Capacitors</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 9: Capacitor Charge and Discharge</h2>
 
 <svg viewBox="0 0 580 280" style="max-width:600px; display:block; margin:16px auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="rp9arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
-  </defs>
+  <defs><marker id="rp9arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker></defs>
   <text x="290" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP9: Capacitor Charge and Discharge</text>
-
-  <!-- Power supply -->
   <rect x="20" y="60" width="60" height="40" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="50" y="78" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">DC Supply</text>
-  <text x="50" y="89" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">V<sub>0</sub></text>
-
-  <!-- Top wire -->
   <line x1="80" y1="70" x2="150" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
-
-  <!-- Two-way switch -->
   <circle cx="160" cy="70" r="3" fill="#1a1a2e"/>
   <circle cx="185" cy="55" r="3" fill="#1a1a2e"/>
   <circle cx="185" cy="85" r="3" fill="#1a1a2e"/>
   <line x1="163" y1="70" x2="185" y2="55" stroke="#1a1a2e" stroke-width="2"/>
   <text x="200" y="52" font-family="system-ui" font-size="8" fill="#16A34A">Charge</text>
   <text x="200" y="90" font-family="system-ui" font-size="8" fill="#DC2626">Discharge</text>
-
-  <!-- From charge position to resistor -->
   <line x1="185" y1="55" x2="250" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="250" y1="55" x2="250" y2="70" stroke="#1a1a2e" stroke-width="1.5"/>
-
-  <!-- Resistor -->
   <rect x="235" y="70" width="30" height="50" rx="4" fill="#e8f0fe" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="250" y="92" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="600">R</text>
-  <text x="250" y="135" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Resistor</text>
-
-  <!-- Wire from resistor to capacitor -->
   <line x1="250" y1="120" x2="250" y2="150" stroke="#1a1a2e" stroke-width="1.5"/>
-
-  <!-- Capacitor -->
   <line x1="230" y1="150" x2="270" y2="150" stroke="#1a1a2e" stroke-width="2.5"/>
   <line x1="230" y1="162" x2="270" y2="162" stroke="#1a1a2e" stroke-width="2.5"/>
   <text x="280" y="160" font-family="system-ui" font-size="10" fill="#1a1a2e" font-weight="600">C</text>
-  <text x="250" y="180" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Capacitor</text>
-
-  <!-- Wire from capacitor back to supply -->
   <line x1="250" y1="162" x2="250" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="250" y1="200" x2="50" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="50" y1="200" x2="50" y2="100" stroke="#1a1a2e" stroke-width="1.5"/>
-
-  <!-- Discharge path through resistor -->
-  <line x1="185" y1="85" x2="220" y2="85" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="3,3"/>
-  <line x1="220" y1="85" x2="235" y2="85" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="3,3"/>
-
-  <!-- Voltmeter / datalogger across capacitor -->
   <line x1="270" y1="156" x2="340" y2="156" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="340" y="130" width="80" height="50" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="380" y="152" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Voltmeter /</text>
   <text x="380" y="164" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Datalogger</text>
   <line x1="380" y1="180" x2="380" y2="200" stroke="#1a1a2e" stroke-width="1"/>
   <line x1="380" y1="200" x2="250" y2="200" stroke="#1a1a2e" stroke-width="1"/>
-
-  <!-- Graph area -->
   <rect x="440" y="55" width="120" height="100" rx="4" fill="#fff" stroke="#1a73e8" stroke-width="1"/>
   <text x="500" y="72" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">ln(V) vs t</text>
-  <!-- Axes -->
   <line x1="460" y1="140" x2="460" y2="80" stroke="#1a1a2e" stroke-width="1"/>
   <line x1="460" y1="140" x2="545" y2="140" stroke="#1a1a2e" stroke-width="1"/>
-  <!-- Discharge line (negative gradient) -->
   <line x1="465" y1="85" x2="540" y2="135" stroke="#DC2626" stroke-width="1.5"/>
   <text x="455" y="78" font-family="system-ui" font-size="8" fill="#1a1a2e">ln(V)</text>
   <text x="548" y="147" font-family="system-ui" font-size="8" fill="#1a1a2e">t</text>
-  <text x="500" y="118" font-family="system-ui" font-size="8" fill="#DC2626">grad = &minus;1/RC</text>
-
-  <!-- Time constant annotation -->
-  <text x="500" y="200" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">&tau; = RC</text>
-  <text x="500" y="215" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">(time constant)</text>
+  <text x="500" y="118" font-family="system-ui" font-size="8" fill="#DC2626">gradient = &minus;1/RC</text>
 </svg>
 
 <h3>Apparatus</h3>
 <ul>
   <li>Capacitor (e.g. 470 &mu;F or 1000 &mu;F electrolytic)</li>
-  <li>Resistor (e.g. 10 k&Omega; or 100 k&Omega; &mdash; chosen to give a time constant of several seconds)</li>
+  <li>Resistor (e.g. 10 k&Omega; or 100 k&Omega; &mdash; chosen so &tau; = RC is several seconds)</li>
   <li>DC power supply (e.g. 6 V)</li>
-  <li>Two-way switch (DPDT) for charge/discharge selection</li>
+  <li>Two-way switch (DPDT) for charge/discharge</li>
   <li>Voltmeter or datalogger with voltage sensor (across the capacitor)</li>
   <li>Stopwatch (if not using a datalogger)</li>
-  <li>Connecting leads</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
-  <li>Connect the circuit: DC supply &rarr; two-way switch &rarr; resistor R &rarr; capacitor C in series. Connect the voltmeter (or datalogger) across the capacitor.</li>
-  <li><strong>Charging:</strong> Set the switch to the charge position. The capacitor charges through R. If using a datalogger, record V across C at regular time intervals. If using a voltmeter and stopwatch, record V every 5&ndash;10 seconds.</li>
-  <li><strong>Discharging:</strong> Once fully charged (V = V<sub>0</sub>), switch to the discharge position. Record V at regular time intervals as the capacitor discharges through R.</li>
-  <li>Record data until V has dropped to less than 10% of V<sub>0</sub> (at least 5 time constants).</li>
-  <li>Plot ln(V) vs t for the discharge. This should be a straight line with gradient = &minus;1/RC.</li>
-  <li>Calculate the time constant &tau; = RC and compare with the theoretical value from the component ratings.</li>
+  <li>Connect the circuit as shown. Set the switch to the charge position and let the capacitor fully charge to V<sub>0</sub>.</li>
+  <li><strong>Discharging:</strong> Switch to discharge. Record voltage V at regular time intervals (e.g. every 5 s, or use a datalogger for continuous recording).</li>
+  <li>Continue recording until V drops below 10% of V<sub>0</sub>.</li>
+  <li>Plot V vs t (gives an exponential decay curve). Plot ln(V) vs t (gives a straight line with gradient = &minus;1/RC).</li>
+  <li>Calculate &tau; = RC = &minus;1/gradient and compare with the theoretical value.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-  <li>Use low voltages (6 V or less).</li>
-  <li>Ensure electrolytic capacitors are connected with the correct polarity (+ to +).</li>
-  <li>Discharge the capacitor fully before handling the circuit.</li>
-  <li>Large capacitors can store significant charge &mdash; avoid touching terminals.</li>
+  <li>Use low voltages (&le; 6 V). Ensure electrolytic capacitors are connected with correct polarity.</li>
+  <li>Discharge the capacitor fully before handling. Large capacitors can deliver a painful shock.</li>
 </ul>
-
-<h3>Analysis</h3>
-<p>During discharge: V = V<sub>0</sub>e<sup>&minus;t/RC</sup>. Taking natural logs:</p>
-<p class="eq">ln(V) = ln(V<sub>0</sub>) &minus; t/RC</p>
-<p>Plot ln(V) vs t: straight line with y-intercept = ln(V<sub>0</sub>) and gradient = &minus;1/RC.</p>
-<p>Therefore RC = &minus;1/gradient. The time constant &tau; = RC is the time for V to fall to V<sub>0</sub>/e &asymp; 0.37V<sub>0</sub>.</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Voltmeter draws current, reducing the effective resistance</td><td>Systematic</td><td>Use a high-impedance voltmeter or datalogger</td></tr>
-<tr><td>Timing is difficult if RC is too small (discharge is too fast)</td><td>Random</td><td>Choose R and C values to give &tau; = RC of 10&ndash;60 seconds; use a datalogger for fast recording</td></tr>
-<tr><td>Component tolerances &mdash; actual R and C differ from labelled values</td><td>Systematic</td><td>Measure R and C independently with a multimeter; compare theoretical and experimental &tau;</td></tr>
-<tr><td>Temperature change in resistor as current flows</td><td>Systematic</td><td>Use a low voltage; allow rest between charge/discharge cycles</td></tr>
+<tr><td>Voltmeter draws current, reducing effective R</td><td>Systematic</td><td>Use a high-impedance voltmeter or datalogger</td></tr>
+<tr><td>Timing is difficult if RC is too small</td><td>Random</td><td>Choose R and C to give &tau; = 10&ndash;60 s; use a datalogger</td></tr>
+<tr><td>Component tolerances differ from labelled values</td><td>Systematic</td><td>Measure R and C independently; compare theoretical and experimental &tau;</td></tr>
 <tr><td>Leakage current in the capacitor</td><td>Systematic</td><td>Use a high-quality capacitor; take readings quickly</td></tr>
 </table>
 
-<div class="tip-box"><strong>Exam Tip:</strong> The ln(V) vs t graph linearises the exponential. If it is a straight line, the discharge is exponential, confirming V = V<sub>0</sub>e<sup>&minus;t/RC</sup>. The time constant &tau; = RC can be read from the graph as the time for V to reach 0.37V<sub>0</sub>, or calculated from the gradient (&minus;1/RC).</div>
+<div class="tip-box"><strong>Exam Tip:</strong> The ln(V) vs t graph linearises the exponential. If it is a straight line, the discharge is exponential, confirming V = V<sub>0</sub>e<sup>&minus;t/RC</sup>. The time constant can also be read directly from the V vs t graph as the time at which V = 0.37V<sub>0</sub>.</div>
 </div>
 
 <!-- ============================================================ -->
 <!-- REQUIRED PRACTICAL 10 -->
 <!-- ============================================================ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 10: Investigation of the Force on a Current-Carrying Conductor in a Magnetic Field</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 10: Force on a Current-Carrying Wire</h2>
 
 <svg viewBox="0 0 560 300" style="max-width:600px; display:block; margin:16px auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -497,121 +543,75 @@
     <marker id="rp10arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#D97706"/></marker>
   </defs>
   <text x="280" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP10: Force on a Current-Carrying Wire</text>
-
-  <!-- Top-pan balance -->
+  <!-- Balance -->
   <rect x="150" y="200" width="200" height="15" rx="3" fill="#e2e8f0" stroke="#1a1a2e" stroke-width="1.5"/>
   <rect x="170" y="215" width="160" height="40" rx="6" fill="#e8f0fe" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="250" y="238" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">Top-Pan Balance</text>
-  <text x="250" y="250" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">0.000 g</text>
-
-  <!-- Horseshoe magnet on balance -->
-  <!-- Left pole -->
+  <!-- Magnet -->
   <rect x="200" y="130" width="15" height="70" rx="3" fill="#d1d5db" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="207" y="180" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="700">N</text>
-  <!-- Right pole -->
   <rect x="285" y="130" width="15" height="70" rx="3" fill="#d1d5db" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="293" y="180" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="700">S</text>
-  <!-- Top of horseshoe -->
   <rect x="200" y="120" width="100" height="15" rx="3" fill="#d1d5db" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="250" y="115" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Magnet (on balance)</text>
-
-  <!-- Magnetic field arrows (N to S) -->
-  <line x1="218" y1="165" x2="280" y2="165" stroke="#16A34A" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#rp10arr)"/>
-  <text x="250" y="160" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">B field</text>
-
-  <!-- Wire passing through the gap (horizontal, perpendicular to B) -->
-  <line x1="100" y1="170" x2="215" y2="170" stroke="#DC2626" stroke-width="3"/>
-  <line x1="285" y1="170" x2="420" y2="170" stroke="#DC2626" stroke-width="3"/>
   <!-- Wire through gap -->
-  <line x1="215" y1="170" x2="285" y2="170" stroke="#DC2626" stroke-width="3"/>
-
-  <!-- Current direction arrow -->
+  <line x1="100" y1="170" x2="420" y2="170" stroke="#DC2626" stroke-width="3"/>
   <line x1="100" y1="150" x2="160" y2="150" stroke="#DC2626" stroke-width="1" marker-end="url(#rp10arrR)"/>
   <text x="130" y="145" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">I (current)</text>
-
-  <!-- Wire label -->
   <text x="250" y="195" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Stiff copper wire (length L)</text>
-
-  <!-- Wire bends up at ends to stands -->
+  <!-- Wire bends up -->
   <line x1="100" y1="170" x2="100" y2="70" stroke="#DC2626" stroke-width="2"/>
   <line x1="420" y1="170" x2="420" y2="70" stroke="#DC2626" stroke-width="2"/>
-
-  <!-- Support frame at top -->
   <rect x="70" y="60" width="380" height="10" rx="2" fill="#94a3b8" stroke="#1a1a2e" stroke-width="1"/>
   <text x="250" y="55" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Rigid frame (clamped above)</text>
-
-  <!-- Ammeter -->
+  <!-- Ammeter and supply -->
   <circle cx="60" cy="70" r="15" fill="#fff" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="60" y="74" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="700">A</text>
   <line x1="60" y1="85" x2="60" y2="110" stroke="#1a1a2e" stroke-width="1.5"/>
-
-  <!-- Power supply -->
   <rect x="25" y="110" width="70" height="30" rx="5" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
   <text x="60" y="129" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Variable DC</text>
   <line x1="95" y1="125" x2="420" y2="125" stroke="#1a1a2e" stroke-width="1"/>
   <line x1="420" y1="125" x2="420" y2="70" stroke="#1a1a2e" stroke-width="1"/>
-
-  <!-- Force arrow (Newton's 3rd law reaction on magnet) -->
+  <!-- Force arrow -->
   <line x1="250" y1="200" x2="250" y2="270" stroke="#D97706" stroke-width="2" marker-end="url(#rp10arrO)"/>
-  <text x="320" y="270" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">F = BIL</text>
-  <text x="320" y="283" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">(detected by balance)</text>
+  <text x="320" y="270" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706" font-weight="600">F = BIL (on balance)</text>
 </svg>
 
 <h3>Apparatus</h3>
-<ul>
-  <li>Strong horseshoe magnet (or two flat magnets with a yoke)</li>
-  <li>Stiff copper wire (straight section of known length L)</li>
-  <li>Top-pan balance (reading to 0.01 g or 0.001 g)</li>
-  <li>Variable DC power supply</li>
-  <li>Ammeter (in series with the wire)</li>
-  <li>Retort stands and clamps to support the wire frame above the magnet</li>
-  <li>Connecting leads</li>
-</ul>
+<p>Strong horseshoe magnet, stiff copper wire (known length L), top-pan balance (0.01 g), variable DC power supply, ammeter, retort stand and clamps, connecting leads.</p>
 
 <h3>Method</h3>
 <ol>
   <li>Place the magnet on the top-pan balance. Zero (tare) the balance.</li>
-  <li>Clamp a rigid wire frame so the horizontal wire section sits in the gap between the poles of the magnet, perpendicular to the magnetic field.</li>
-  <li>Connect the wire in series with the ammeter and variable DC supply.</li>
-  <li>Switch on and set a current I. Read the apparent mass change &Delta;m on the balance. The force on the wire is F = BIL; by Newton's third law, an equal and opposite force acts on the magnet, changing the balance reading.</li>
-  <li>Calculate the force: F = &Delta;m &times; g (where g = 9.81 m s<sup>-2</sup>).</li>
-  <li>Vary the current in steps (e.g. 0.5 A increments). Record &Delta;m and hence F at each current.</li>
-  <li>Plot F (y-axis) vs I (x-axis). The gradient = BL, so B = gradient / L.</li>
+  <li>Clamp a rigid wire frame so the horizontal section sits in the gap between the poles, perpendicular to B.</li>
+  <li>Set a current I and read the apparent mass change &Delta;m. Calculate force: F = &Delta;m &times; g.</li>
+  <li>Vary current in steps. Record &Delta;m and F at each current.</li>
+  <li>Plot F vs I. Gradient = BL, so B = gradient/L.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-  <li>Keep currents moderate to avoid overheating the wire.</li>
-  <li>Switch off between readings.</li>
-  <li>Strong magnets can pinch fingers &mdash; handle with care.</li>
-  <li>Keep magnets away from electronic devices and credit cards.</li>
+  <li>Keep currents moderate to avoid overheating. Switch off between readings.</li>
+  <li>Strong magnets can pinch fingers. Keep magnets away from electronic devices.</li>
 </ul>
-
-<h3>Analysis</h3>
-<p>The force on a current-carrying wire in a magnetic field:</p>
-<p class="eq">F = BIL sin&theta;</p>
-<p>With the wire perpendicular to B (&theta; = 90&deg;, sin&theta; = 1): F = BIL.</p>
-<p>Plot F vs I: straight line through the origin with gradient = BL. Therefore B = gradient / L.</p>
-<p>The balance reading changes because the reaction force (Newton&rsquo;s 3rd law) acts on the magnet.</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Wire not exactly perpendicular to the magnetic field</td><td>Systematic</td><td>Use a set square to align the wire carefully</td></tr>
-<tr><td>Non-uniform magnetic field across the wire length</td><td>Systematic</td><td>Use a strong magnet with a wide, uniform field region; keep the wire centred in the gap</td></tr>
-<tr><td>Balance fluctuations due to vibrations or air currents</td><td>Random</td><td>Shield the balance from draughts; take several readings and average</td></tr>
-<tr><td>Wire heats up at high currents, causing expansion</td><td>Systematic</td><td>Use short measurement times; switch off between readings</td></tr>
-<tr><td>Connecting leads may exert forces on the magnet</td><td>Systematic</td><td>Arrange leads symmetrically and away from the magnet</td></tr>
+<tr><td>Wire not perpendicular to B</td><td>Systematic</td><td>Align carefully with a set square</td></tr>
+<tr><td>Non-uniform field</td><td>Systematic</td><td>Keep wire centred in the gap; use a strong magnet</td></tr>
+<tr><td>Balance fluctuations</td><td>Random</td><td>Shield from draughts; average readings</td></tr>
+<tr><td>Connecting leads exert forces</td><td>Systematic</td><td>Arrange leads symmetrically away from magnet</td></tr>
 </table>
 
-<div class="tip-box"><strong>Exam Tip:</strong> The balance method exploits Newton's third law. The motor effect pushes the wire up/down; the equal and opposite force pushes the magnet down/up, changing the balance reading. Remember: F = BIL applies when I is perpendicular to B. If the wire is at angle &theta; to B, use F = BIL sin&theta;.</div>
+<div class="tip-box"><strong>Exam Tip:</strong> The balance method uses Newton's third law: the force on the wire (F = BIL) produces an equal and opposite reaction force on the magnet, detected by the balance. If the wire is pushed up, the magnet is pushed down, increasing the balance reading.</div>
 </div>
 
 <!-- ============================================================ -->
 <!-- REQUIRED PRACTICAL 11 -->
 <!-- ============================================================ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 11: Investigation of Characteristics of an AC Supply Using an Oscilloscope</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 11: AC Supply with an Oscilloscope</h2>
 
 <svg viewBox="0 0 580 300" style="max-width:600px; display:block; margin:16px auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -619,30 +619,22 @@
     <marker id="rp11arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
   </defs>
   <text x="290" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP11: AC Characteristics with an Oscilloscope</text>
-
   <!-- AC Supply -->
   <rect x="30" y="100" width="70" height="50" rx="6" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
   <text x="65" y="122" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">AC Supply</text>
-  <!-- Sine wave symbol -->
   <path d="M45,138 Q55,128 65,138 Q75,148 85,138" fill="none" stroke="#D97706" stroke-width="1.5"/>
-
-  <!-- Wires to oscilloscope -->
   <line x1="100" y1="115" x2="180" y2="115" stroke="#1a1a2e" stroke-width="1.5"/>
   <line x1="100" y1="140" x2="180" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
-
-  <!-- Oscilloscope body -->
+  <!-- Oscilloscope -->
   <rect x="180" y="55" width="300" height="200" rx="10" fill="#e8eef6" stroke="#1a1a2e" stroke-width="2"/>
   <text x="330" y="48" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">Oscilloscope</text>
-
-  <!-- Screen -->
   <rect x="200" y="70" width="200" height="150" rx="5" fill="#1a1a2e"/>
-  <!-- Grid lines on screen -->
+  <!-- Grid -->
   <line x1="200" y1="95" x2="400" y2="95" stroke="#334155" stroke-width="0.5"/>
   <line x1="200" y1="120" x2="400" y2="120" stroke="#334155" stroke-width="0.5"/>
   <line x1="200" y1="145" x2="400" y2="145" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="4,4"/>
   <line x1="200" y1="170" x2="400" y2="170" stroke="#334155" stroke-width="0.5"/>
   <line x1="200" y1="195" x2="400" y2="195" stroke="#334155" stroke-width="0.5"/>
-  <!-- Vertical grid -->
   <line x1="225" y1="70" x2="225" y2="220" stroke="#334155" stroke-width="0.5"/>
   <line x1="250" y1="70" x2="250" y2="220" stroke="#334155" stroke-width="0.5"/>
   <line x1="275" y1="70" x2="275" y2="220" stroke="#334155" stroke-width="0.5"/>
@@ -650,81 +642,50 @@
   <line x1="325" y1="70" x2="325" y2="220" stroke="#334155" stroke-width="0.5"/>
   <line x1="350" y1="70" x2="350" y2="220" stroke="#334155" stroke-width="0.5"/>
   <line x1="375" y1="70" x2="375" y2="220" stroke="#334155" stroke-width="0.5"/>
-
-  <!-- Sine wave trace -->
+  <!-- Sine wave -->
   <path d="M210,145 Q230,80 260,145 Q290,210 320,145 Q350,80 380,145" fill="none" stroke="#16A34A" stroke-width="2.5"/>
-
-  <!-- Peak voltage measurement -->
+  <!-- V0 measurement -->
   <line x1="405" y1="82" x2="405" y2="145" stroke="#D97706" stroke-width="1.5" marker-start="url(#rp11arr)" marker-end="url(#rp11arr)"/>
-  <text x="420" y="100" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">V<tspan font-size="7" dy="3">0</tspan></text>
-
-  <!-- Time period measurement -->
+  <text x="420" y="100" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">V0</text>
+  <!-- Period measurement -->
   <line x1="232" y1="222" x2="352" y2="222" stroke="#1a73e8" stroke-width="1.5" marker-start="url(#rp11arrB)" marker-end="url(#rp11arrB)"/>
   <text x="292" y="237" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">T (one period)</text>
-
-  <!-- Controls on right side of oscilloscope -->
-  <!-- Y-gain knob -->
+  <!-- Controls -->
   <circle cx="440" cy="100" r="15" fill="#d1d5db" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="440" y1="85" x2="440" y2="95" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="440" y="125" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Y-Gain</text>
-  <text x="440" y="135" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">(V/div)</text>
-
-  <!-- Time base knob -->
+  <text x="440" y="125" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Y-Gain (V/div)</text>
   <circle cx="440" cy="175" r="15" fill="#d1d5db" stroke="#1a1a2e" stroke-width="1.5"/>
-  <line x1="440" y1="160" x2="440" y2="170" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="440" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Time base</text>
-  <text x="440" y="210" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a1a2e">(s/div)</text>
-
-  <!-- Formulae -->
-  <text x="290" y="278" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">f = 1/T &nbsp;&nbsp;&nbsp; V<tspan font-size="7" dy="2">rms</tspan><tspan dy="-2"> = V</tspan><tspan font-size="7" dy="2">0</tspan><tspan dy="-2"> / &radic;2</tspan></text>
+  <text x="440" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Time base (s/div)</text>
+  <text x="290" y="278" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">f = 1/T &nbsp;&nbsp; Vrms = V0 / &radic;2</text>
 </svg>
 
 <h3>Apparatus</h3>
-<ul>
-  <li>Oscilloscope (CRO or digital)</li>
-  <li>AC signal generator or low-voltage AC supply</li>
-  <li>Connecting leads (BNC to crocodile clips or banana plugs)</li>
-</ul>
+<p>Oscilloscope (CRO or digital), AC signal generator or low-voltage AC supply, connecting leads.</p>
 
 <h3>Method</h3>
 <ol>
   <li>Connect the AC supply to the Y-input of the oscilloscope.</li>
-  <li>Adjust the time base (s/div) until a clear, stable sine wave is displayed (1&ndash;3 complete cycles visible on screen).</li>
-  <li>Adjust the Y-gain (V/div) so the wave fills most of the screen vertically.</li>
-  <li>Measure the peak voltage V<sub>0</sub>: count the number of divisions from the centre line (zero) to the peak and multiply by the Y-gain setting.</li>
-  <li>Measure the time period T: count the number of divisions for one complete cycle and multiply by the time base setting.</li>
-  <li>Calculate the frequency: f = 1/T.</li>
-  <li>Calculate V<sub>rms</sub> = V<sub>0</sub> / &radic;2.</li>
-  <li>Vary the frequency or amplitude on the signal generator and repeat measurements to verify.</li>
+  <li>Adjust the time base (s/div) until 1&ndash;3 complete cycles are visible.</li>
+  <li>Adjust the Y-gain (V/div) so the wave fills most of the screen.</li>
+  <li>Measure V<sub>0</sub>: count divisions from the centre line to the peak &times; Y-gain setting.</li>
+  <li>Measure T: count divisions for one complete cycle &times; time base setting.</li>
+  <li>Calculate f = 1/T and V<sub>rms</sub> = V<sub>0</sub>/&radic;2.</li>
 </ol>
 
 <h3>Safety</h3>
 <ul>
-  <li>Use a low-voltage AC supply (e.g. signal generator output, typically &lt; 10 V).</li>
+  <li>Use a low-voltage AC supply (signal generator, typically &lt; 10 V).</li>
   <li>Do not connect the oscilloscope directly to mains voltage.</li>
-  <li>Ensure all connections are secure.</li>
 </ul>
-
-<h3>Analysis</h3>
-<p>From the oscilloscope trace:</p>
-<ul>
-  <li>V<sub>0</sub> (peak voltage) = number of vertical divisions from 0 to peak &times; Y-gain (V/div)</li>
-  <li>T (period) = number of horizontal divisions for one cycle &times; time base (s/div)</li>
-  <li>f = 1/T</li>
-  <li>V<sub>rms</sub> = V<sub>0</sub> / &radic;2 &asymp; 0.707 V<sub>0</sub></li>
-</ul>
-<p>For UK mains: V<sub>0</sub> &asymp; 325 V, V<sub>rms</sub> = 230 V, f = 50 Hz, T = 20 ms.</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Difficulty reading exact divisions on screen (trace has finite width)</td><td>Random</td><td>Use a digital oscilloscope with cursor measurements; use the highest practical Y-gain</td></tr>
-<tr><td>Calibration of Y-gain and time base may be inaccurate</td><td>Systematic</td><td>Calibrate the oscilloscope using a known signal; compare with a multimeter reading</td></tr>
-<tr><td>AC frequency may drift slightly</td><td>Random</td><td>Use a stable signal generator; take multiple readings of T</td></tr>
-<tr><td>Parallax when reading the screen at an angle</td><td>Random</td><td>Read from directly in front of the screen</td></tr>
+<tr><td>Difficult to read exact divisions (trace width)</td><td>Random</td><td>Use cursor measurements on a digital oscilloscope; maximise Y-gain</td></tr>
+<tr><td>Calibration of Y-gain or time base may be off</td><td>Systematic</td><td>Calibrate using a known signal; check with multimeter</td></tr>
+<tr><td>AC frequency may drift</td><td>Random</td><td>Use a stable signal generator; take multiple readings</td></tr>
 </table>
 
-<div class="tip-box"><strong>Exam Tip:</strong> V<sub>rms</sub> is the DC equivalent voltage that would deliver the same power. For a sinusoidal AC supply: V<sub>rms</sub> = V<sub>0</sub>/&radic;2 and I<sub>rms</sub> = I<sub>0</sub>/&radic;2. The oscilloscope shows V<sub>0</sub> (peak), not V<sub>rms</sub>. A multimeter set to AC reads V<sub>rms</sub>. Always state which you are using.</div>
+<div class="tip-box"><strong>Exam Tip:</strong> V<sub>rms</sub> is the DC equivalent voltage that delivers the same power: V<sub>rms</sub> = V<sub>0</sub>/&radic;2. The oscilloscope displays V<sub>0</sub> (peak), while an AC multimeter reads V<sub>rms</sub>. For UK mains: V<sub>rms</sub> = 230 V, V<sub>0</sub> = 325 V, f = 50 Hz, T = 20 ms.</div>
 </div>
 
 </div>

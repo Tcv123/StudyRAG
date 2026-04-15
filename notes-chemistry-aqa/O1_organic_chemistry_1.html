@@ -11,6 +11,7 @@
   h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
   h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
   h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  h4 { font-size: 1.05rem; color: #1e3a5f; margin: 15px 0 8px 0; }
   p { margin-bottom: 12px; }
   ul, ol { margin: 10px 0 15px 25px; }
   li { margin-bottom: 6px; }
@@ -22,8 +23,11 @@
   .definition strong { color: #1e3a5f; }
   .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
   .exam-tip strong { color: #b45309; }
+  .real-world { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #15803d; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  svg text { font-family: system-ui, sans-serif; }
 </style>
 </head>
 <body>
@@ -35,12 +39,25 @@
 <h2>1. Nomenclature and Functional Groups</h2>
 
 <h3>1.1 IUPAC Naming Rules</h3>
-<p>Organic molecules are named using the IUPAC system. The name has three parts:</p>
+<p>Organic molecules are named systematically using the IUPAC (International Union of Pure and Applied Chemistry) convention. The name consists of three parts:</p>
 <ol>
-  <li><strong>Prefix:</strong> Identifies the longest carbon chain (meth- = 1C, eth- = 2C, prop- = 3C, but- = 4C, pent- = 5C, hex- = 6C).</li>
-  <li><strong>Suffix:</strong> Identifies the functional group (-ane, -ene, -ol, -al, -one, -oic acid, -amine).</li>
-  <li><strong>Side chains and substituents:</strong> Named with a position number and prefix (e.g. 2-methyl, 3-chloro).</li>
+  <li><strong>Root/prefix:</strong> Identifies the longest continuous carbon chain: meth- (1C), eth- (2C), prop- (3C), but- (4C), pent- (5C), hex- (6C), hept- (7C), oct- (8C), non- (9C), dec- (10C).</li>
+  <li><strong>Suffix:</strong> Identifies the highest-priority functional group: -ane (alkane), -ene (alkene), -ol (alcohol), -al (aldehyde), -one (ketone), -oic acid (carboxylic acid), -amine (amine), -amide (amide).</li>
+  <li><strong>Substituents/side chains:</strong> Named with a position number (locant) and prefix. Use the lowest set of locants. Multiple identical substituents use di-, tri-, tetra- prefixes.</li>
 </ol>
+
+<p><strong>Naming procedure:</strong></p>
+<ol>
+  <li>Find the longest continuous carbon chain that includes the principal functional group.</li>
+  <li>Number from the end nearest to the principal functional group (or nearest branch point if no functional group suffix).</li>
+  <li>Identify and name all substituents with their position numbers.</li>
+  <li>List substituents alphabetically (ignore multiplying prefixes like di-, tri-).</li>
+  <li>Combine: substituents + root + suffix (e.g. 2-methylbutan-1-ol).</li>
+</ol>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Common naming errors: (1) Not finding the longest chain that includes the functional group. (2) Numbering from the wrong end. (3) Forgetting to use commas between numbers and hyphens between numbers and letters (e.g. 2,3-dimethylbutane). Practice naming at least 10 structures before the exam.
+</div>
 
 <h3>1.2 Key Functional Groups</h3>
 
@@ -53,49 +70,65 @@
   <tr><td>Aldehyde (-CHO)</td><td>C<sub>n</sub>H<sub>2n</sub>O</td><td>-al</td><td>Propanal CH<sub>3</sub>CH<sub>2</sub>CHO</td></tr>
   <tr><td>Ketone (-CO-)</td><td>C<sub>n</sub>H<sub>2n</sub>O</td><td>-one</td><td>Propanone CH<sub>3</sub>COCH<sub>3</sub></td></tr>
   <tr><td>Carboxylic acid (-COOH)</td><td>C<sub>n</sub>H<sub>2n</sub>O<sub>2</sub></td><td>-oic acid</td><td>Ethanoic acid CH<sub>3</sub>COOH</td></tr>
-  <tr><td>Ester (-COO-)</td><td>—</td><td>-yl -oate</td><td>Ethyl ethanoate CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub></td></tr>
-  <tr><td>Amine (-NH<sub>2</sub>)</td><td>C<sub>n</sub>H<sub>2n+1</sub>NH<sub>2</sub></td><td>-amine</td><td>Ethylamine CH<sub>3</sub>CH<sub>2</sub>NH<sub>2</sub></td></tr>
+  <tr><td>Ester (-COO-)</td><td>&mdash;</td><td>-yl -oate</td><td>Ethyl ethanoate CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub></td></tr>
+  <tr><td>Amine (-NH<sub>2</sub>)</td><td>C<sub>n</sub>H<sub>2n+1</sub>NH<sub>2</sub></td><td>-amine / amino-</td><td>Ethylamine CH<sub>3</sub>CH<sub>2</sub>NH<sub>2</sub></td></tr>
+  <tr><td>Amide (-CONH<sub>2</sub>)</td><td>&mdash;</td><td>-amide</td><td>Ethanamide CH<sub>3</sub>CONH<sub>2</sub></td></tr>
+  <tr><td>Nitrile (-CN)</td><td>&mdash;</td><td>-nitrile</td><td>Ethanenitrile CH<sub>3</sub>CN</td></tr>
+  <tr><td>Acyl chloride (-COCl)</td><td>&mdash;</td><td>-oyl chloride</td><td>Ethanoyl chloride CH<sub>3</sub>COCl</td></tr>
+  <tr><td>Acid anhydride</td><td>(RCO)<sub>2</sub>O</td><td>-ic anhydride</td><td>Ethanoic anhydride (CH<sub>3</sub>CO)<sub>2</sub>O</td></tr>
 </table>
 
+<h3>1.3 Types of Formulae</h3>
+<ul>
+  <li><strong>Molecular formula:</strong> Shows the actual number of each type of atom (e.g. C<sub>3</sub>H<sub>8</sub>O).</li>
+  <li><strong>Empirical formula:</strong> Simplest whole-number ratio of atoms (e.g. CH<sub>2</sub>O for glucose C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>).</li>
+  <li><strong>Structural formula:</strong> Shows the minimal detail to make the structure unambiguous (e.g. CH<sub>3</sub>CH<sub>2</sub>OH).</li>
+  <li><strong>Displayed formula:</strong> Shows all bonds between all atoms.</li>
+  <li><strong>Skeletal formula:</strong> Lines represent carbon-carbon bonds; hydrogen atoms on carbon are not shown; heteroatoms (O, N, Cl) and their hydrogens are shown.</li>
+</ul>
+
 <div class="definition">
-  <strong>Homologous series:</strong> A family of organic compounds with the same functional group, the same general formula, and similar chemical properties. Each successive member differs by CH<sub>2</sub>.
+  <strong>Homologous series:</strong> A family of organic compounds with the same functional group, the same general formula, and similar chemical properties. Each successive member differs by CH<sub>2</sub>. Physical properties (boiling point, density) show a gradual trend as chain length increases.
 </div>
 
 <!-- ==================== ISOMERISM ==================== -->
 <h2>2. Isomerism</h2>
 
 <div class="definition">
-  <strong>Isomers:</strong> Molecules with the same molecular formula but different structural arrangements.
+  <strong>Isomers:</strong> Molecules with the same molecular formula but different structural arrangements of atoms. They may have different physical and/or chemical properties.
 </div>
 
 <h3>2.1 Structural Isomerism</h3>
 <p>Structural isomers have the same molecular formula but different structural formulae. There are three types:</p>
 <ul>
-  <li><strong>Chain isomerism:</strong> Different arrangements of the carbon chain (e.g. butane and methylpropane, both C<sub>4</sub>H<sub>10</sub>).</li>
-  <li><strong>Position isomerism:</strong> Same carbon chain but the functional group is in a different position (e.g. butan-1-ol and butan-2-ol).</li>
-  <li><strong>Functional group isomerism:</strong> Same molecular formula but different functional groups (e.g. propanal C<sub>2</sub>H<sub>5</sub>CHO and propanone CH<sub>3</sub>COCH<sub>3</sub>, both C<sub>3</sub>H<sub>6</sub>O).</li>
+  <li><strong>Chain isomerism:</strong> Different arrangements of the carbon skeleton (e.g. butane CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub> and methylpropane (CH<sub>3</sub>)<sub>3</sub>CH, both C<sub>4</sub>H<sub>10</sub>). Branched isomers have lower boiling points because they are more compact with less surface area for London forces.</li>
+  <li><strong>Position isomerism:</strong> Same carbon chain and functional group, but the functional group is at a different position (e.g. butan-1-ol and butan-2-ol, both C<sub>4</sub>H<sub>9</sub>OH).</li>
+  <li><strong>Functional group isomerism:</strong> Same molecular formula but different functional groups (e.g. propanal C<sub>2</sub>H<sub>5</sub>CHO and propanone CH<sub>3</sub>COCH<sub>3</sub>, both C<sub>3</sub>H<sub>6</sub>O; or ethanol C<sub>2</sub>H<sub>5</sub>OH and methoxymethane CH<sub>3</sub>OCH<sub>3</sub>, both C<sub>2</sub>H<sub>6</sub>O).</li>
 </ul>
 
 <h3>2.2 E/Z Isomerism (Geometric Isomerism)</h3>
-<p>E/Z isomerism arises in alkenes when there is restricted rotation about the C=C double bond, and each carbon of the double bond has two different groups attached.</p>
+<p>E/Z isomerism is a form of stereoisomerism that arises when there is:</p>
+<ol>
+  <li><strong>Restricted rotation</strong> about a bond (usually a C=C double bond), AND</li>
+  <li><strong>Two different groups</strong> attached to each carbon of the double bond.</li>
+</ol>
 <ul>
-  <li><strong>Z-isomer (zusammen):</strong> The higher priority groups on each carbon are on the same side of the double bond.</li>
-  <li><strong>E-isomer (entgegen):</strong> The higher priority groups are on opposite sides.</li>
+  <li><strong>Z-isomer (zusammen = together):</strong> The higher priority groups on each carbon are on the same side of the double bond.</li>
+  <li><strong>E-isomer (entgegen = opposite):</strong> The higher priority groups are on opposite sides.</li>
 </ul>
-<p>Priority is determined by atomic number (higher atomic number = higher priority), following the Cahn-Ingold-Prelog rules.</p>
+<p>Priority is assigned using the Cahn-Ingold-Prelog (CIP) rules: the atom with the higher atomic number has higher priority. If the first atoms are the same, move along the chain until a difference is found.</p>
 
-<!-- SVG: Structural vs Stereoisomerism / E-Z Isomers -->
+<!-- SVG: Isomerism Hierarchy and E/Z Illustration -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 310" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Types of Isomerism</text>
   <!-- Top level: Isomerism -->
-  <rect x="195" y="40" width="130" height="30" rx="6" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="195" y="40" width="130" height="30" rx="6" fill="#1a1a2e"/>
   <text x="260" y="60" text-anchor="middle" font-family="system-ui" font-size="11" fill="#fff" font-weight="bold">Isomerism</text>
   <!-- Branch left: Structural -->
   <line x1="220" y1="70" x2="130" y2="95" stroke="#1a1a2e" stroke-width="1.5"/>
-  <rect x="50" y="95" width="160" height="28" rx="6" fill="#1a73e8" stroke="#1a73e8" stroke-width="1"/>
+  <rect x="50" y="95" width="160" height="28" rx="6" fill="#1a73e8"/>
   <text x="130" y="114" text-anchor="middle" font-family="system-ui" font-size="10" fill="#fff" font-weight="bold">Structural Isomerism</text>
-  <!-- Sub-branches of structural -->
   <line x1="80" y1="123" x2="55" y2="140" stroke="#1a73e8" stroke-width="1"/>
   <line x1="130" y1="123" x2="130" y2="140" stroke="#1a73e8" stroke-width="1"/>
   <line x1="180" y1="123" x2="205" y2="140" stroke="#1a73e8" stroke-width="1"/>
@@ -107,47 +140,38 @@
   <text x="205" y="155" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Functional group</text>
   <!-- Branch right: Stereoisomerism -->
   <line x1="300" y1="70" x2="390" y2="95" stroke="#1a1a2e" stroke-width="1.5"/>
-  <rect x="310" y="95" width="160" height="28" rx="6" fill="#DC2626" stroke="#DC2626" stroke-width="1"/>
+  <rect x="310" y="95" width="160" height="28" rx="6" fill="#DC2626"/>
   <text x="390" y="114" text-anchor="middle" font-family="system-ui" font-size="10" fill="#fff" font-weight="bold">Stereoisomerism</text>
-  <!-- Sub-branches of stereo -->
   <line x1="355" y1="123" x2="330" y2="140" stroke="#DC2626" stroke-width="1"/>
   <line x1="425" y1="123" x2="450" y2="140" stroke="#DC2626" stroke-width="1"/>
   <rect x="275" y="140" width="110" height="22" rx="4" fill="#fef2f2" stroke="#DC2626" stroke-width="1"/>
   <text x="330" y="155" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">E/Z (geometric)</text>
   <rect x="395" y="140" width="110" height="22" rx="4" fill="#fef2f2" stroke="#DC2626" stroke-width="1"/>
   <text x="450" y="155" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Optical</text>
-
   <!-- E/Z isomers illustration -->
   <text x="260" y="190" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#D97706">E/Z Isomers of But-2-ene</text>
-  <!-- Z-isomer (left) -->
   <rect x="40" y="200" width="195" height="95" rx="6" fill="#fff" stroke="#16A34A" stroke-width="1.5"/>
   <text x="138" y="218" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Z-isomer (zusammen)</text>
-  <text x="138" y="232" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Same side</text>
-  <!-- Z structure -->
+  <text x="138" y="232" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Higher priority groups SAME side</text>
   <text x="80" y="258" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">CH&#8323;</text>
   <text x="160" y="258" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">CH&#8323;</text>
   <line x1="105" y1="254" x2="140" y2="254" stroke="#1a1a2e" stroke-width="2"/>
   <line x1="107" y1="260" x2="138" y2="260" stroke="#1a1a2e" stroke-width="2"/>
   <text x="122" y="250" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">C=C</text>
-  <text x="80" y="280" font-family="system-ui" font-size="9" fill="#cbd5e1">H</text>
-  <text x="160" y="280" font-family="system-ui" font-size="9" fill="#cbd5e1">H</text>
+  <text x="80" y="280" font-family="system-ui" font-size="9" fill="#999">H</text>
+  <text x="160" y="280" font-family="system-ui" font-size="9" fill="#999">H</text>
   <text x="138" y="290" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">Both CH&#8323; on same side</text>
-
-  <!-- E-isomer (right) -->
   <rect x="285" y="200" width="195" height="95" rx="6" fill="#fff" stroke="#DC2626" stroke-width="1.5"/>
   <text x="383" y="218" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">E-isomer (entgegen)</text>
-  <text x="383" y="232" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Opposite sides</text>
-  <!-- E structure -->
+  <text x="383" y="232" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Higher priority groups OPPOSITE sides</text>
   <text x="325" y="258" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">CH&#8323;</text>
   <text x="405" y="280" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">CH&#8323;</text>
   <line x1="350" y1="260" x2="385" y2="260" stroke="#1a1a2e" stroke-width="2"/>
   <line x1="352" y1="266" x2="383" y2="266" stroke="#1a1a2e" stroke-width="2"/>
   <text x="367" y="256" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">C=C</text>
-  <text x="325" y="280" font-family="system-ui" font-size="9" fill="#cbd5e1">H</text>
-  <text x="405" y="258" font-family="system-ui" font-size="9" fill="#cbd5e1">H</text>
+  <text x="325" y="280" font-family="system-ui" font-size="9" fill="#999">H</text>
+  <text x="405" y="258" font-family="system-ui" font-size="9" fill="#999">H</text>
   <text x="383" y="290" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">CH&#8323; groups on opposite sides</text>
-
-  <!-- Requirement note -->
   <text x="260" y="308" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Requires: restricted rotation (C=C) + two different groups on each carbon of the double bond</text>
 </svg>
 </div>
@@ -155,404 +179,429 @@
 <h3>2.3 Optical Isomerism</h3>
 
 <div class="definition">
-  <strong>Chiral centre (asymmetric carbon):</strong> A carbon atom bonded to four different groups. This produces two non-superimposable mirror image forms called enantiomers.
+  <strong>Chiral centre (asymmetric carbon):</strong> A carbon atom bonded to four different groups. This produces two non-superimposable mirror image forms called <strong>enantiomers</strong>. A molecule with a chiral centre has no plane of symmetry.
 </div>
 
-<p>Enantiomers have identical physical properties (melting point, boiling point, solubility) and identical chemical properties, except they rotate the plane of plane-polarised light in opposite directions. One is the (+) enantiomer (rotates clockwise), the other is the (-) enantiomer (rotates anticlockwise).</p>
+<p><strong>Properties of enantiomers:</strong></p>
+<ul>
+  <li>Identical physical properties (melting point, boiling point, solubility, density).</li>
+  <li>Identical chemical properties with achiral reagents.</li>
+  <li>Different reactions with other chiral molecules (important in biochemistry — enzymes are chiral and usually only interact with one enantiomer).</li>
+  <li>Rotate the plane of plane-polarised light in opposite directions: (+) enantiomer rotates clockwise (dextrorotatory), (-) enantiomer rotates anticlockwise (laevorotatory).</li>
+</ul>
 
 <div class="definition">
-  <strong>Racemic mixture (racemate):</strong> A 50:50 mixture of the two enantiomers. It shows no overall rotation of plane-polarised light because the rotations cancel out.
+  <strong>Racemic mixture (racemate):</strong> A 50:50 mixture of the two enantiomers. It shows no overall rotation of plane-polarised light because the equal and opposite rotations cancel out. Racemic mixtures are produced when a new chiral centre is formed in a reaction from a non-chiral starting material (e.g. nucleophilic addition to a carbonyl).
+</div>
+
+<div class="real-world">
+  <strong>Real-World Application:</strong> The drug thalidomide is a striking example of why chirality matters. One enantiomer was an effective anti-morning-sickness drug; the other caused severe birth defects. Modern drug regulations now require testing of individual enantiomers. Many biological molecules (amino acids, sugars) exist as only one enantiomer in nature — L-amino acids and D-sugars.
 </div>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> To identify a chiral centre, look for a carbon bonded to four DIFFERENT groups. Draw the two enantiomers as mirror images. In reactions that create a new chiral centre from a planar molecule (e.g. nucleophilic addition to an aldehyde), a racemic mixture is formed because the reagent can attack equally from both sides.
+  <strong>Exam Tip:</strong> To identify a chiral centre, look for a carbon bonded to four DIFFERENT groups. Draw the two enantiomers as mirror images with a dashed line between them. In reactions that create a new chiral centre from a planar intermediate (e.g. nucleophilic addition to an aldehyde), explain that the nucleophile can attack equally from both sides, producing a racemic mixture.
 </div>
 
 <!-- ==================== ALKANES ==================== -->
 <h2>3. Alkanes</h2>
 
-<h3>3.1 Properties</h3>
-<p>Alkanes are saturated hydrocarbons (contain only C-C single bonds and C-H bonds). General formula: C<sub>n</sub>H<sub>2n+2</sub>. They are relatively unreactive because C-C and C-H bonds are strong and non-polar (similar electronegativities of C and H).</p>
+<h3>3.1 Structure and Properties</h3>
+<p>Alkanes are saturated hydrocarbons containing only C-C single bonds and C-H bonds. General formula: C<sub>n</sub>H<sub>2n+2</sub>. They are relatively unreactive because:</p>
+<ul>
+  <li>C-C bonds (346 kJ mol<sup>-1</sup>) and C-H bonds (413 kJ mol<sup>-1</sup>) are strong and require significant energy to break.</li>
+  <li>The C-H bond is only very slightly polar (electronegativity of C = 2.5, H = 2.1), so alkanes are not attacked by nucleophiles or electrophiles.</li>
+</ul>
 
-<p>Boiling points increase with chain length (more London forces) and decrease with branching (less surface area for intermolecular contact).</p>
+<p><strong>Boiling point trends:</strong></p>
+<ul>
+  <li>Boiling points <strong>increase with chain length</strong> because longer chains have more electrons, leading to stronger London dispersion forces between molecules.</li>
+  <li>Boiling points <strong>decrease with branching</strong> because branched molecules are more compact with less surface area, reducing intermolecular contact and weakening London forces.</li>
+</ul>
 
 <h3>3.2 Combustion</h3>
-<p><strong>Complete combustion</strong> (excess oxygen):</p>
+<p><strong>Complete combustion</strong> (excess oxygen) produces carbon dioxide and water:</p>
 <div class="equation">
-  C<sub>n</sub>H<sub>2n+2</sub> + (3n+1)/2 O<sub>2</sub> &#8594; nCO<sub>2</sub> + (n+1)H<sub>2</sub>O
+  C<sub>n</sub>H<sub>2n+2</sub> + (3n+1)/2 O<sub>2</sub> &rarr; nCO<sub>2</sub> + (n+1)H<sub>2</sub>O
 </div>
-<p>Alkanes are used as fuels. Complete combustion produces CO<sub>2</sub> (a greenhouse gas contributing to climate change) and H<sub>2</sub>O.</p>
+<p>Example: CH<sub>4</sub> + 2O<sub>2</sub> &rarr; CO<sub>2</sub> + 2H<sub>2</sub>O &nbsp; &Delta;H = -890 kJ mol<sup>-1</sup></p>
+<p>Alkanes are the primary component of fossil fuels (natural gas, petrol, diesel). CO<sub>2</sub> is a greenhouse gas that contributes to climate change by absorbing and re-emitting infrared radiation.</p>
 
-<p><strong>Incomplete combustion</strong> (limited oxygen) produces CO (toxic, colourless, odourless gas that binds irreversibly to haemoglobin) and/or C (soot/particulates that cause respiratory problems).</p>
+<p><strong>Incomplete combustion</strong> (limited oxygen supply) produces:</p>
+<ul>
+  <li><strong>Carbon monoxide (CO)</strong> — a toxic, colourless, odourless gas. It binds irreversibly to haemoglobin (forming carboxyhaemoglobin), preventing oxygen transport. CO has a higher affinity for haemoglobin than O<sub>2</sub>.</li>
+  <li><strong>Carbon/soot (C)</strong> — particulates that cause respiratory problems, reduce air quality, and contribute to global dimming.</li>
+  <li><strong>Water (H<sub>2</sub>O)</strong> — always produced.</li>
+</ul>
+
+<p><strong>Other pollutants from combustion engines:</strong></p>
+<ul>
+  <li><strong>NO<sub>x</sub> (nitrogen oxides)</strong> — formed when N<sub>2</sub> and O<sub>2</sub> react at high temperatures inside engines. Contributes to acid rain and photochemical smog.</li>
+  <li><strong>SO<sub>2</sub></strong> — from sulfur impurities in fuel. Causes acid rain.</li>
+  <li><strong>Unburned hydrocarbons (VOCs)</strong> — contribute to smog formation.</li>
+</ul>
+<p>Catalytic converters reduce these pollutants: 2CO + 2NO &rarr; 2CO<sub>2</sub> + N<sub>2</sub>.</p>
+
+<div class="real-world">
+  <strong>Real-World Application:</strong> Natural gas (primarily methane) is the cleanest fossil fuel, producing more energy per mole of CO<sub>2</sub> emitted than coal or oil. However, methane itself is a potent greenhouse gas (~80x more effective than CO<sub>2</sub> over 20 years), so methane leaks from pipelines and fracking operations are a significant environmental concern.
+</div>
 
 <h3>3.3 Free Radical Substitution</h3>
-<p>Alkanes react with halogens (Cl<sub>2</sub>, Br<sub>2</sub>) in the presence of UV light via a free radical mechanism. This is the only reaction of alkanes at A-level (besides combustion).</p>
+<p>Alkanes react with halogens (Cl<sub>2</sub> or Br<sub>2</sub>) in the presence of UV light via a free radical chain mechanism. This is the only useful reaction of alkanes (besides combustion).</p>
 
 <div class="definition">
-  <strong>Free radical:</strong> A reactive species with an unpaired electron. They are formed by homolytic fission of a covalent bond.
+  <strong>Free radical:</strong> A reactive species with an unpaired electron, written with a dot notation (e.g. Cl&bull;). Radicals are formed by <strong>homolytic fission</strong> — the equal splitting of a covalent bond, where each atom takes one electron.
 </div>
 
-<p><strong>Mechanism (three stages):</strong></p>
+<p><strong>Mechanism (three stages) — chlorination of methane:</strong></p>
 
-<p><strong>Initiation:</strong> UV light causes homolytic fission of the Cl-Cl bond:</p>
+<p><strong>1. Initiation:</strong> UV light causes homolytic fission of the Cl-Cl bond, generating two chlorine radicals:</p>
 <div class="equation">
-  Cl<sub>2</sub> &#8594; 2Cl&bull; &nbsp;&nbsp;(UV light)
+  Cl<sub>2</sub> &rarr; 2Cl&bull; &nbsp;&nbsp;(UV light provides the energy)
 </div>
 
-<p><strong>Propagation:</strong> Chain reactions that regenerate free radicals:</p>
+<p><strong>2. Propagation:</strong> Chain reactions that consume and regenerate radicals. Each step produces one radical from one radical, maintaining the chain:</p>
 <div class="equation">
-  CH<sub>4</sub> + Cl&bull; &#8594; &bull;CH<sub>3</sub> + HCl
+  CH<sub>4</sub> + Cl&bull; &rarr; &bull;CH<sub>3</sub> + HCl &nbsp;&nbsp;(Step 1: Cl&bull; abstracts an H atom)
 </div>
 <div class="equation">
-  &bull;CH<sub>3</sub> + Cl<sub>2</sub> &#8594; CH<sub>3</sub>Cl + Cl&bull;
-</div>
-
-<p><strong>Termination:</strong> Two free radicals combine:</p>
-<div class="equation">
-  Cl&bull; + Cl&bull; &#8594; Cl<sub>2</sub> &nbsp;&nbsp;&nbsp; &bull;CH<sub>3</sub> + Cl&bull; &#8594; CH<sub>3</sub>Cl &nbsp;&nbsp;&nbsp; &bull;CH<sub>3</sub> + &bull;CH<sub>3</sub> &#8594; C<sub>2</sub>H<sub>6</sub>
+  &bull;CH<sub>3</sub> + Cl<sub>2</sub> &rarr; CH<sub>3</sub>Cl + Cl&bull; &nbsp;&nbsp;(Step 2: &bull;CH<sub>3</sub> reacts with Cl<sub>2</sub>; Cl&bull; regenerated)
 </div>
 
-<p><strong>Limitations of free radical substitution:</strong></p>
-<ul>
-  <li>Further substitution can occur (CH<sub>3</sub>Cl &#8594; CH<sub>2</sub>Cl<sub>2</sub> &#8594; CHCl<sub>3</sub> &#8594; CCl<sub>4</sub>), giving a mixture of products.</li>
-  <li>For longer alkanes, hydrogen atoms on different carbons can be substituted, giving positional isomers.</li>
-  <li>This makes free radical substitution a poor method for preparing specific halogenoalkanes.</li>
-</ul>
+<p><strong>3. Termination:</strong> Any two radicals combine, ending the chain:</p>
+<div class="equation">
+  Cl&bull; + Cl&bull; &rarr; Cl<sub>2</sub> &nbsp;&nbsp;&nbsp; &bull;CH<sub>3</sub> + Cl&bull; &rarr; CH<sub>3</sub>Cl &nbsp;&nbsp;&nbsp; &bull;CH<sub>3</sub> + &bull;CH<sub>3</sub> &rarr; C<sub>2</sub>H<sub>6</sub>
+</div>
 
 <!-- SVG: Free Radical Substitution Mechanism -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 340" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Free Radical Substitution of Methane</text>
-  <!-- INITIATION -->
   <rect x="20" y="45" width="480" height="55" rx="6" fill="#fff" stroke="#DC2626" stroke-width="1.5"/>
   <text x="40" y="65" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Initiation</text>
   <text x="260" y="65" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">UV light breaks Cl-Cl bond by homolytic fission</text>
-  <text x="260" y="88" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">Cl-Cl &#8594; Cl&#8226; + Cl&#8226;</text>
+  <text x="260" y="88" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">Cl-Cl &rarr; Cl&bull; + Cl&bull;</text>
   <text x="440" y="88" font-family="system-ui" font-size="9" fill="#DC2626">(two radicals)</text>
-  <!-- PROPAGATION -->
   <rect x="20" y="115" width="480" height="100" rx="6" fill="#fff" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="40" y="135" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Propagation</text>
-  <text x="340" y="135" font-family="system-ui" font-size="9" fill="#1a73e8">(chain reaction — radicals regenerated)</text>
-  <!-- Step 1 -->
+  <text x="340" y="135" font-family="system-ui" font-size="9" fill="#1a73e8">(chain reaction &mdash; radicals regenerated)</text>
   <text x="50" y="158" font-family="system-ui" font-size="10" fill="#D97706" font-weight="bold">Step 1:</text>
-  <text x="260" y="158" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">CH&#8324; + Cl&#8226; &#8594; &#8226;CH&#8323; + HCl</text>
-  <!-- Curly arrow hint for step 1 -->
-  <path d="M210,163 Q225,175 240,163" fill="none" stroke="#D97706" stroke-width="1.2"/>
-  <polygon points="240,163 236,170 242,168" fill="#D97706"/>
-  <text x="225" y="185" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">fishhook arrows</text>
-  <!-- Step 2 -->
+  <text x="260" y="158" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">CH&#8324; + Cl&bull; &rarr; &bull;CH&#8323; + HCl</text>
+  <text x="225" y="185" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Use single-headed (fishhook) curly arrows</text>
   <text x="50" y="202" font-family="system-ui" font-size="10" fill="#D97706" font-weight="bold">Step 2:</text>
-  <text x="260" y="202" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">&#8226;CH&#8323; + Cl&#8322; &#8594; CH&#8323;Cl + Cl&#8226;</text>
-  <!-- TERMINATION -->
+  <text x="260" y="202" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">&bull;CH&#8323; + Cl&#8322; &rarr; CH&#8323;Cl + Cl&bull;</text>
   <rect x="20" y="230" width="480" height="80" rx="6" fill="#fff" stroke="#16A34A" stroke-width="1.5"/>
   <text x="40" y="250" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Termination</text>
-  <text x="340" y="250" font-family="system-ui" font-size="9" fill="#16A34A">(two radicals combine — chain ends)</text>
-  <text x="130" y="275" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">Cl&#8226; + Cl&#8226; &#8594; Cl&#8322;</text>
-  <text x="300" y="275" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">&#8226;CH&#8323; + Cl&#8226; &#8594; CH&#8323;Cl</text>
-  <text x="460" y="275" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">&#8226;CH&#8323; + &#8226;CH&#8323; &#8594; C&#8322;H&#8326;</text>
+  <text x="340" y="250" font-family="system-ui" font-size="9" fill="#16A34A">(two radicals combine &mdash; chain ends)</text>
+  <text x="130" y="275" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">Cl&bull; + Cl&bull; &rarr; Cl&#8322;</text>
+  <text x="300" y="275" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">&bull;CH&#8323; + Cl&bull; &rarr; CH&#8323;Cl</text>
+  <text x="460" y="275" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">&bull;CH&#8323; + &bull;CH&#8323; &rarr; C&#8322;H&#8326;</text>
   <text x="260" y="300" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Limitation: further substitution gives CH&#8322;Cl&#8322;, CHCl&#8323;, CCl&#8324; (mixture of products)</text>
-  <!-- Bottom note -->
-  <text x="260" y="330" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">&#8226; = unpaired electron (free radical) | Use single-headed (fishhook) curly arrows</text>
+  <text x="260" y="330" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">&bull; = unpaired electron (free radical) | Use single-headed (fishhook) curly arrows</text>
 </svg>
 </div>
 
+<p><strong>Limitations of free radical substitution:</strong></p>
+<ul>
+  <li><strong>Further substitution:</strong> The product CH<sub>3</sub>Cl can react further to give CH<sub>2</sub>Cl<sub>2</sub>, CHCl<sub>3</sub>, and CCl<sub>4</sub>, producing a mixture of mono-, di-, tri-, and tetra-substituted products.</li>
+  <li><strong>Multiple products from longer alkanes:</strong> For propane, the H on C-1 or C-2 can be replaced, giving a mixture of 1-chloropropane and 2-chloropropane.</li>
+  <li>The C<sub>2</sub>H<sub>6</sub> formed in termination shows that CH<sub>3</sub>&bull; + CH<sub>3</sub>&bull; combination occurred.</li>
+  <li>This makes free radical substitution a poor preparative method for specific halogenoalkanes.</li>
+</ul>
+
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> Use single-headed curly arrows (fishhooks) for free radical mechanisms to show the movement of single electrons. Use the dot notation (&bull;) to show unpaired electrons on radicals. You must show all three stages clearly labelled.
+  <strong>Exam Tip:</strong> Use single-headed curly arrows (fishhooks) for free radical mechanisms to show the movement of single electrons. Use full-headed curly arrows for ionic mechanisms. You must show all three stages clearly labelled. The C<sub>2</sub>H<sub>6</sub> by-product in termination is evidence for the radical mechanism (it cannot form from CH<sub>4</sub> and Cl<sub>2</sub> alone).
 </div>
 
 <!-- ==================== ALKENES ==================== -->
 <h2>4. Alkenes</h2>
 
-<h3>4.1 Properties</h3>
-<p>Alkenes are unsaturated hydrocarbons containing at least one C=C double bond. General formula: C<sub>n</sub>H<sub>2n</sub>. The double bond consists of a sigma (&sigma;) bond (head-on overlap) and a pi (&pi;) bond (sideways overlap of p orbitals). The &pi; bond is an area of high electron density, making alkenes susceptible to attack by electrophiles.</p>
+<h3>4.1 Structure and Bonding</h3>
+<p>Alkenes are unsaturated hydrocarbons containing at least one C=C double bond. General formula: C<sub>n</sub>H<sub>2n</sub> (for monoenes). The C=C double bond consists of:</p>
+<ul>
+  <li>A <strong>sigma (&sigma;) bond</strong> — formed by head-on overlap of sp<sup>2</sup> hybrid orbitals. This is a strong bond with electron density concentrated between the nuclei.</li>
+  <li>A <strong>pi (&pi;) bond</strong> — formed by sideways overlap of unhybridised p orbitals above and below the plane of the molecule. The &pi; bond is weaker than the &sigma; bond and is the region of high electron density that makes alkenes reactive.</li>
+</ul>
+<p>The &pi; electron cloud makes alkenes susceptible to attack by electrophiles (electron-pair acceptors). The C=C bond cannot rotate freely (the &pi; bond would have to break), which is why E/Z isomerism exists in alkenes.</p>
 
 <h3>4.2 Electrophilic Addition</h3>
 
 <div class="definition">
-  <strong>Electrophile:</strong> An electron-pair acceptor; a species attracted to areas of high electron density. Examples: H<sup>+</sup>, Br<sup>+</sup>, NO<sub>2</sub><sup>+</sup>, carbocations.
+  <strong>Electrophile:</strong> An electron-pair acceptor; a species that is attracted to areas of high electron density. It accepts a pair of electrons from the electron-rich &pi; bond to form a new covalent bond. Examples: H<sup>+</sup>, NO<sub>2</sub><sup>+</sup>, Br<sup>&delta;+</sup>, carbocations (R<sup>+</sup>).
 </div>
 
-<p>The general mechanism for electrophilic addition to alkenes:</p>
+<p>The general mechanism for electrophilic addition to alkenes has two steps:</p>
 <ol>
-  <li>The &pi; bond electrons attract the electrophile.</li>
-  <li>A pair of electrons from the &pi; bond forms a new bond with the electrophile.</li>
-  <li>The other part of the electrophile (now a negative species) bonds to the other carbon of the double bond.</li>
+  <li>The &pi; bond electrons are attracted to the electrophilic part of the reagent. A curly arrow shows the &pi; bond electrons forming a new bond to the electrophile, while the bond within the electrophilic species breaks heterolytically.</li>
+  <li>The carbocation intermediate is rapidly attacked by the nucleophilic negative species to form the second new bond.</li>
 </ol>
 
 <p><strong>Key electrophilic addition reactions:</strong></p>
-
 <table>
-  <tr><th>Reagent</th><th>Conditions</th><th>Product</th><th>Product type</th></tr>
-  <tr><td>HBr (or HCl)</td><td>Room temperature</td><td>Halogenoalkane</td><td>e.g. CH<sub>3</sub>CHBrCH<sub>3</sub></td></tr>
-  <tr><td>Br<sub>2</sub></td><td>Room temperature</td><td>Dihalogenoalkane</td><td>e.g. CH<sub>2</sub>BrCHBrCH<sub>3</sub></td></tr>
-  <tr><td>H<sub>2</sub>O (steam)</td><td>H<sub>3</sub>PO<sub>4</sub> catalyst, 300&deg;C, 60 atm</td><td>Alcohol</td><td>e.g. CH<sub>3</sub>CH(OH)CH<sub>3</sub></td></tr>
-  <tr><td>H<sub>2</sub></td><td>Ni catalyst, 150&deg;C</td><td>Alkane</td><td>e.g. CH<sub>3</sub>CH<sub>2</sub>CH<sub>3</sub></td></tr>
+  <tr><th>Reagent</th><th>Conditions</th><th>Product</th><th>Type of product</th></tr>
+  <tr><td>HBr (or HCl, HI)</td><td>Room temperature, gas bubbled through</td><td>Halogenoalkane</td><td>e.g. CH<sub>3</sub>CHBrCH<sub>3</sub> from propene</td></tr>
+  <tr><td>Br<sub>2</sub> (in organic solvent or aqueous)</td><td>Room temperature</td><td>Dihalogenoalkane</td><td>e.g. CH<sub>2</sub>BrCHBrCH<sub>3</sub></td></tr>
+  <tr><td>H<sub>2</sub>O (steam)</td><td>H<sub>3</sub>PO<sub>4</sub> catalyst, 300&deg;C, 60-70 atm</td><td>Alcohol</td><td>e.g. ethanol from ethene (industrial method)</td></tr>
+  <tr><td>H<sub>2</sub></td><td>Ni catalyst, 150&deg;C</td><td>Alkane</td><td>e.g. ethane from ethene (hydrogenation)</td></tr>
+  <tr><td>H<sub>2</sub>SO<sub>4</sub> (conc.)</td><td>Room temperature, then add water and warm</td><td>Alcohol (indirect hydration)</td><td>Via alkyl hydrogen sulfate intermediate</td></tr>
 </table>
 
 <!-- SVG: Electrophilic Addition Mechanism -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 310" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Electrophilic Addition of HBr to Ethene</text>
-  <!-- Step 1 -->
   <text x="30" y="55" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Step 1</text>
-  <!-- Ethene C=C -->
   <text x="90" y="105" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">H&#8322;C</text>
   <line x1="115" y1="97" x2="155" y2="97" stroke="#1a1a2e" stroke-width="2.5"/>
   <line x1="115" y1="105" x2="155" y2="105" stroke="#1a1a2e" stroke-width="2.5"/>
   <text x="178" y="105" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CH&#8322;</text>
-  <!-- HBr approaching -->
-  <text x="135" y="60" text-anchor="middle" font-family="system-ui" font-size="12" fill="#DC2626">H&#8314;&#8212;Br&#8315;</text>
-  <text x="135" y="48" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">&delta;+ &delta;-</text>
-  <!-- Curly arrow from pi bond to H -->
+  <text x="135" y="60" text-anchor="middle" font-family="system-ui" font-size="12" fill="#DC2626">H&#8314;&mdash;Br&#8315;</text>
+  <text x="135" y="48" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">&delta;+ &nbsp;&nbsp;&nbsp; &delta;-</text>
   <path d="M135,93 Q135,78 135,68" fill="none" stroke="#D97706" stroke-width="1.8"/>
   <polygon points="135,68 132,75 138,75" fill="#D97706"/>
-  <text x="118" y="78" font-family="system-ui" font-size="8" fill="#D97706">&#960; bond</text>
-  <!-- Curly arrow from H-Br bond to Br -->
+  <text x="118" y="78" font-family="system-ui" font-size="8" fill="#D97706">&pi; bond</text>
   <path d="M150,55 Q165,50 170,55" fill="none" stroke="#D97706" stroke-width="1.5"/>
   <polygon points="170,55 165,50 167,58" fill="#D97706"/>
-  <!-- Arrow to step 2 -->
   <line x1="210" y1="95" x2="240" y2="95" stroke="#1a1a2e" stroke-width="1.5"/>
   <polygon points="240,95 233,91 233,99" fill="#1a1a2e"/>
-  <!-- Step 2: carbocation intermediate -->
   <text x="250" y="55" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Step 2</text>
   <text x="290" y="92" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">CH&#8323;</text>
   <line x1="308" y1="87" x2="338" y2="87" stroke="#1a1a2e" stroke-width="2.5"/>
   <text x="360" y="92" text-anchor="middle" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="bold">CH&#8322;</text>
   <text x="380" y="82" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">+</text>
-  <text x="325" y="112" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">carbocation</text>
-  <!-- Br- approaching -->
+  <text x="325" y="112" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">carbocation intermediate</text>
   <text x="430" y="92" text-anchor="middle" font-family="system-ui" font-size="12" fill="#16A34A">Br&#8315;</text>
-  <!-- Curly arrow from Br- to C+ -->
   <path d="M418,88 Q400,85 385,88" fill="none" stroke="#D97706" stroke-width="1.8"/>
   <polygon points="385,88 392,85 390,92" fill="#D97706"/>
-  <!-- Arrow to product -->
   <line x1="450" y1="95" x2="480" y2="95" stroke="#1a1a2e" stroke-width="1.5"/>
   <polygon points="480,95 473,91 473,99" fill="#1a1a2e"/>
-  <!-- Product -->
   <text x="500" y="82" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="bold">Product:</text>
   <text x="500" y="98" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">CH&#8323;CH&#8322;Br</text>
-  <!-- Summary box -->
   <rect x="30" y="135" width="460" height="50" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
   <text x="260" y="153" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">Mechanism summary: Electrophilic Addition</text>
-  <text x="260" y="170" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">&#960; bond electrons attack the electrophile (H&#8314;) &#8594; carbocation forms &#8594; Br&#8315; attacks C&#8314;</text>
-  <!-- Markownikoff's rule illustration -->
+  <text x="260" y="170" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">&pi; bond electrons attack the electrophile &rarr; carbocation forms &rarr; nucleophile attacks C&#8314;</text>
   <text x="260" y="205" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#D97706">Markownikoff's Rule (unsymmetrical alkenes)</text>
   <text x="100" y="235" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">CH&#8323;CH=CH&#8322; + HBr</text>
   <line x1="175" y1="230" x2="210" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
   <polygon points="210,230 203,226 203,234" fill="#1a1a2e"/>
-  <!-- Major product -->
   <rect x="215" y="218" width="135" height="30" rx="5" fill="#d1fae5" stroke="#16A34A" stroke-width="1.2"/>
   <text x="283" y="237" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="bold">CH&#8323;CHBrCH&#8323;</text>
   <text x="283" y="260" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Major product</text>
-  <text x="283" y="275" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">(2&#176; carbocation more stable)</text>
-  <!-- Minor product -->
+  <text x="283" y="275" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">(2&deg; carbocation more stable)</text>
   <rect x="365" y="218" width="135" height="30" rx="5" fill="#fef2f2" stroke="#DC2626" stroke-width="1.2"/>
   <text x="433" y="237" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">CH&#8323;CH&#8322;CH&#8322;Br</text>
   <text x="433" y="260" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Minor product</text>
-  <text x="433" y="275" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">(1&#176; carbocation less stable)</text>
-  <!-- Bottom -->
-  <text x="260" y="300" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">H adds to carbon with more H atoms already; positive charge on more substituted carbon</text>
+  <text x="433" y="275" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">(1&deg; carbocation less stable)</text>
+  <text x="260" y="300" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">H adds to the carbon with more H atoms; charge goes to the more substituted carbon</text>
 </svg>
 </div>
 
-<p><strong>Markownikoff's rule:</strong> When HBr adds across an unsymmetrical alkene, the major product has the hydrogen atom added to the carbon already bonded to more hydrogen atoms. The intermediate carbocation is more stable when the positive charge is on the more substituted carbon (tertiary &gt; secondary &gt; primary stability due to the inductive effect of alkyl groups).</p>
+<p><strong>Markownikoff's rule:</strong> When HX adds across an unsymmetrical alkene (e.g. propene), the hydrogen atom adds to the carbon already bonded to more hydrogen atoms. The major product has the halogen on the more substituted carbon. This is because the intermediate carbocation is more stable when the positive charge is on the more substituted carbon (stability order: tertiary > secondary > primary). The inductive (electron-pushing) effect of alkyl groups stabilises the positive charge through hyperconjugation.</p>
 
-<p><strong>Test for unsaturation:</strong> Add bromine water (orange). If the solution decolourises, a C=C double bond is present (electrophilic addition of Br<sub>2</sub>).</p>
+<p><strong>Test for unsaturation (C=C):</strong> Add bromine water (orange/brown). Alkenes decolourise bromine water immediately at room temperature without UV light. Alkanes do not decolourise bromine water (unless UV light is present, which would cause free radical substitution).</p>
 
 <h3>4.3 Addition Polymerisation</h3>
-<p>Many alkene molecules (monomers) join together to form a long chain polymer. The double bond opens up and each monomer bonds to the next:</p>
+<p>Many alkene monomers can join together to form a long-chain polymer by addition polymerisation. The C=C double bond in each monomer opens up, and each carbon forms a new bond to the adjacent monomer:</p>
 <div class="equation">
-  nCH<sub>2</sub>=CH<sub>2</sub> &#8594; -(CH<sub>2</sub>-CH<sub>2</sub>)<sub>n</sub>-
+  nCH<sub>2</sub>=CH<sub>2</sub> &rarr; -(CH<sub>2</sub>-CH<sub>2</sub>)<sub>n</sub>- &nbsp;&nbsp;(poly(ethene))
 </div>
-<p>Addition polymers are unreactive and non-biodegradable, causing environmental problems. They can be recycled mechanically, used as fuel (incineration), or processed using feedstock recycling (cracking back to monomers).</p>
+<div class="equation">
+  nCH<sub>2</sub>=CHCl &rarr; -(CH<sub>2</sub>-CHCl)<sub>n</sub>- &nbsp;&nbsp;(poly(chloroethene), PVC)
+</div>
+
+<p><strong>Environmental issues:</strong> Addition polymers are chemically inert and non-biodegradable because of the strong C-C backbone. Disposal methods include:</p>
+<ul>
+  <li><strong>Landfill:</strong> Cheap but wasteful; takes up space; polymers persist for centuries.</li>
+  <li><strong>Incineration:</strong> Releases energy (can generate electricity) but produces CO<sub>2</sub> and possibly toxic gases (HCl from PVC).</li>
+  <li><strong>Recycling:</strong> Mechanical (melt and remould) or feedstock (crack back to monomers). Requires sorting by polymer type.</li>
+</ul>
+
+<div class="real-world">
+  <strong>Real-World Application:</strong> Poly(ethene) is the most widely produced plastic globally (~100 million tonnes/year). LDPE (low-density, branched) is used for packaging films and bags. HDPE (high-density, linear) is used for bottles and pipes. Poly(propene) is used in packaging, textiles, and car bumpers. PVC is used in window frames, pipes, and cables.
+</div>
 
 <!-- ==================== HALOGENOALKANES ==================== -->
 <h2>5. Halogenoalkanes</h2>
 
-<h3>5.1 Classification</h3>
-<p>Halogenoalkanes are classified as primary, secondary, or tertiary depending on the number of carbon atoms bonded to the carbon carrying the halogen:</p>
+<h3>5.1 Classification and Bonding</h3>
+<p>Halogenoalkanes contain a halogen atom (F, Cl, Br, or I) bonded to a saturated carbon atom. They are classified by the number of carbon atoms bonded to the carbon carrying the halogen:</p>
 <ul>
-  <li><strong>Primary:</strong> The halogen-bearing carbon is bonded to one other carbon (e.g. CH<sub>3</sub>CH<sub>2</sub>Br).</li>
-  <li><strong>Secondary:</strong> Bonded to two other carbons (e.g. (CH<sub>3</sub>)<sub>2</sub>CHBr).</li>
-  <li><strong>Tertiary:</strong> Bonded to three other carbons (e.g. (CH<sub>3</sub>)<sub>3</sub>CBr).</li>
+  <li><strong>Primary (1&deg;):</strong> The halogen-bearing carbon is bonded to one other carbon (e.g. CH<sub>3</sub>CH<sub>2</sub>Br, bromoethane).</li>
+  <li><strong>Secondary (2&deg;):</strong> Bonded to two other carbons (e.g. (CH<sub>3</sub>)<sub>2</sub>CHBr, 2-bromopropane).</li>
+  <li><strong>Tertiary (3&deg;):</strong> Bonded to three other carbons (e.g. (CH<sub>3</sub>)<sub>3</sub>CBr, 2-bromo-2-methylpropane).</li>
 </ul>
+
+<p>The C-X bond is polar (&delta;+C-X&delta;-) because halogens are more electronegative than carbon. The &delta;+ carbon is susceptible to attack by nucleophiles. The polarity and bond strength of C-X bonds determine the reactivity.</p>
 
 <h3>5.2 Nucleophilic Substitution</h3>
 
 <div class="definition">
-  <strong>Nucleophile:</strong> An electron-pair donor; a species with a lone pair that is attracted to a &delta;+ carbon. Examples: OH<sup>-</sup>, CN<sup>-</sup>, NH<sub>3</sub>, H<sub>2</sub>O.
+  <strong>Nucleophile:</strong> An electron-pair donor; a species with a lone pair of electrons that is attracted to a &delta;+ (electron-deficient) carbon atom. It donates its lone pair to form a new covalent bond. Examples: OH<sup>-</sup>, CN<sup>-</sup>, NH<sub>3</sub>, H<sub>2</sub>O.
 </div>
 
-<p>The C-X bond is polar (&delta;+C-X&delta;-) because halogens are more electronegative than carbon. Nucleophiles attack the &delta;+ carbon.</p>
+<p>The nucleophile attacks the &delta;+ carbon, displacing the halogen as a halide ion (X<sup>-</sup>). The mechanism depends on the classification of the halogenoalkane:</p>
 
-<p><strong>SN2 mechanism (primary halogenoalkanes):</strong></p>
+<h4>S<sub>N</sub>2 Mechanism (primary halogenoalkanes)</h4>
 <ul>
-  <li>One-step mechanism. The nucleophile attacks the &delta;+ carbon from the opposite side to the halogen (backside attack).</li>
-  <li>A transition state forms where the nucleophile is partially bonded and the halogen is partially leaving.</li>
-  <li>Rate = k[halogenoalkane][nucleophile] — second order, bimolecular.</li>
-  <li>Produces inversion of configuration at the carbon centre.</li>
+  <li><strong>One-step concerted mechanism.</strong> The nucleophile attacks the &delta;+ carbon from the opposite side to the halogen (backside attack), while the C-X bond breaks simultaneously.</li>
+  <li>A transition state forms where the nucleophile is partially bonded and the halogen is partially leaving: [Nu&middot;&middot;&middot;C&middot;&middot;&middot;X]<sup>&#8225;</sup></li>
+  <li><strong>Rate equation:</strong> Rate = k[halogenoalkane][nucleophile] &mdash; second order, bimolecular (both species in the rate-determining step).</li>
+  <li>Produces <strong>inversion of configuration</strong> at the carbon centre (Walden inversion).</li>
+  <li>Favoured by primary halogenoalkanes (less steric hindrance around the carbon).</li>
 </ul>
 
-<p><strong>SN1 mechanism (tertiary halogenoalkanes):</strong></p>
+<h4>S<sub>N</sub>1 Mechanism (tertiary halogenoalkanes)</h4>
 <ul>
-  <li>Two-step mechanism. Step 1: The C-X bond breaks heterolytically to form a carbocation (slow, rate-determining step). Step 2: The nucleophile rapidly attacks the carbocation.</li>
-  <li>Rate = k[halogenoalkane] — first order, unimolecular.</li>
-  <li>Tertiary carbocations are more stable (inductive effect of three alkyl groups stabilises the positive charge).</li>
-  <li>Produces a racemic mixture if a chiral centre is formed (nucleophile can attack from either side of the planar carbocation).</li>
+  <li><strong>Two-step mechanism.</strong> Step 1 (slow, rate-determining): The C-X bond breaks heterolytically to form a planar carbocation and X<sup>-</sup>. Step 2 (fast): The nucleophile rapidly attacks the carbocation from either side.</li>
+  <li><strong>Rate equation:</strong> Rate = k[halogenoalkane] &mdash; first order, unimolecular (only the halogenoalkane in the rate-determining step).</li>
+  <li>Tertiary carbocations are most stable (three alkyl groups donate electron density to stabilise the positive charge via the inductive effect).</li>
+  <li>Produces a <strong>racemic mixture</strong> if a chiral centre is formed, because the nucleophile can attack from either side of the planar carbocation.</li>
 </ul>
 
-<p>Secondary halogenoalkanes undergo a mixture of SN1 and SN2.</p>
+<p>Secondary halogenoalkanes undergo a mixture of S<sub>N</sub>1 and S<sub>N</sub>2.</p>
 
-<!-- SVG: SN1 vs SN2 Mechanisms -->
+<!-- SVG: SN1 vs SN2 -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 340" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Nucleophilic Substitution: SN2 vs SN1</text>
-  <!-- SN2 Section -->
+  <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Nucleophilic Substitution: S<tspan font-size="9" dy="3">N</tspan><tspan dy="-3">2 vs S</tspan><tspan font-size="9" dy="3">N</tspan><tspan dy="-3">1</tspan></text>
   <rect x="15" y="42" width="240" height="265" rx="8" fill="#fff" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="135" y="62" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a73e8">SN2 Mechanism</text>
+  <text x="135" y="62" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a73e8">S<tspan font-size="8" dy="2">N</tspan><tspan dy="-2">2 Mechanism</tspan></text>
   <text x="135" y="78" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">(Primary halogenoalkanes)</text>
-  <!-- SN2: one step diagram -->
   <text x="135" y="100" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">One-step concerted</text>
-  <!-- Nucleophile -->
   <text x="35" y="140" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="bold">Nu&#8315;</text>
-  <!-- Curly arrow -->
   <path d="M55,137 Q75,130 90,137" fill="none" stroke="#D97706" stroke-width="1.8"/>
   <polygon points="90,137 84,132 85,140" fill="#D97706"/>
-  <!-- C with groups -->
   <circle cx="110" cy="140" r="15" fill="#e0f2fe" stroke="#1a73e8" stroke-width="1.2"/>
   <text x="110" y="144" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">C</text>
   <text x="110" y="122" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">&delta;+</text>
-  <!-- Leaving group -->
   <line x1="125" y1="140" x2="155" y2="140" stroke="#1a1a2e" stroke-width="1.2"/>
   <text x="170" y="144" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">X</text>
-  <!-- Arrow from bond to X -->
   <path d="M140,135 Q155,128 165,135" fill="none" stroke="#D97706" stroke-width="1.5"/>
   <polygon points="165,135 159,130 161,138" fill="#D97706"/>
-  <!-- Arrow to transition state -->
   <line x1="135" y1="155" x2="135" y2="175" stroke="#1a1a2e" stroke-width="1"/>
   <polygon points="135,175 132,168 138,168" fill="#1a1a2e"/>
-  <!-- Transition state -->
   <text x="135" y="192" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">[Nu---C---X]&#8225;</text>
   <text x="135" y="205" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">transition state</text>
-  <!-- Key features -->
   <text x="135" y="228" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Rate = k[RX][Nu&#8315;]</text>
   <text x="135" y="244" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Second order, bimolecular</text>
   <text x="135" y="260" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Backside attack</text>
   <text x="135" y="276" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">Inversion of configuration</text>
-  <text x="135" y="296" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="bold">Favoured by 1&#176; RX</text>
-
-  <!-- SN1 Section -->
+  <text x="135" y="296" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="bold">Favoured by 1&deg; RX</text>
   <rect x="265" y="42" width="240" height="265" rx="8" fill="#fff" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="385" y="62" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">SN1 Mechanism</text>
+  <text x="385" y="62" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">S<tspan font-size="8" dy="2">N</tspan><tspan dy="-2">1 Mechanism</tspan></text>
   <text x="385" y="78" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">(Tertiary halogenoalkanes)</text>
-  <!-- SN1: two steps -->
   <text x="385" y="100" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">Two-step process</text>
-  <!-- Step 1 -->
-  <text x="295" y="120" font-family="system-ui" font-size="9" fill="#D97706" font-weight="bold">Step 1 (slow):</text>
+  <text x="295" y="120" font-family="system-ui" font-size="9" fill="#D97706" font-weight="bold">Step 1 (slow, RDS):</text>
   <circle cx="370" cy="140" r="15" fill="#fef2f2" stroke="#DC2626" stroke-width="1.2"/>
   <text x="370" y="144" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">C</text>
   <line x1="385" y1="140" x2="415" y2="140" stroke="#1a1a2e" stroke-width="1.2"/>
   <text x="430" y="144" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">X</text>
-  <!-- Arrow breaking -->
   <path d="M400,135 Q415,128 425,135" fill="none" stroke="#D97706" stroke-width="1.5"/>
   <polygon points="425,135 419,130 421,138" fill="#D97706"/>
   <line x1="370" y1="158" x2="370" y2="175" stroke="#1a1a2e" stroke-width="1"/>
   <polygon points="370,175 367,168 373,168" fill="#1a1a2e"/>
-  <!-- Carbocation -->
   <circle cx="370" cy="192" r="15" fill="#fef2f2" stroke="#DC2626" stroke-width="1.5"/>
   <text x="370" y="189" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">C&#8314;</text>
   <text x="370" y="200" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">planar</text>
   <text x="420" y="192" font-family="system-ui" font-size="8" fill="#DC2626">+ X&#8315;</text>
-  <!-- Step 2 -->
   <text x="295" y="215" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="bold">Step 2 (fast):</text>
   <text x="385" y="230" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Nu&#8315; attacks C&#8314; from either side</text>
-  <!-- Key features -->
   <text x="385" y="250" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Rate = k[RX]</text>
   <text x="385" y="266" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">First order, unimolecular</text>
   <text x="385" y="282" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Attack from both sides</text>
   <text x="385" y="296" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="bold">Racemic mixture formed</text>
-
-  <!-- Bottom note -->
-  <text x="260" y="326" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">Secondary halogenoalkanes: mixture of SN1 and SN2</text>
+  <text x="260" y="326" text-anchor="middle" font-family="system-ui" font-size="10" fill="#D97706">Secondary halogenoalkanes: mixture of S<tspan font-size="7" dy="2">N</tspan><tspan dy="-2">1 and S</tspan><tspan font-size="7" dy="2">N</tspan><tspan dy="-2">2</tspan></text>
 </svg>
 </div>
 
-<p><strong>Key nucleophilic substitution reactions:</strong></p>
+<p><strong>Key nucleophilic substitution reactions of halogenoalkanes:</strong></p>
 <table>
-  <tr><th>Nucleophile</th><th>Conditions</th><th>Product</th></tr>
-  <tr><td>OH<sup>-</sup> (from NaOH/KOH)</td><td>Warm aqueous NaOH, reflux</td><td>Alcohol</td></tr>
-  <tr><td>CN<sup>-</sup> (from KCN)</td><td>Warm ethanolic KCN, reflux</td><td>Nitrile (extends carbon chain by 1)</td></tr>
-  <tr><td>NH<sub>3</sub></td><td>Excess conc. NH<sub>3</sub>, sealed tube, heat</td><td>Amine</td></tr>
+  <tr><th>Nucleophile</th><th>Conditions</th><th>Product</th><th>Carbon chain change</th></tr>
+  <tr><td>OH<sup>-</sup> (from dilute NaOH/KOH)</td><td>Warm aqueous NaOH, reflux</td><td>Alcohol (R-OH)</td><td>Same chain length</td></tr>
+  <tr><td>CN<sup>-</sup> (from KCN in ethanol)</td><td>Warm ethanolic KCN, reflux</td><td>Nitrile (R-CN)</td><td>Chain extended by 1 carbon</td></tr>
+  <tr><td>NH<sub>3</sub></td><td>Excess concentrated NH<sub>3</sub> in ethanol, sealed tube, heat</td><td>Primary amine (R-NH<sub>2</sub>)</td><td>Same chain length</td></tr>
 </table>
 
-<h3>5.3 Elimination</h3>
-<p>Halogenoalkanes can also undergo elimination instead of substitution, forming an alkene:</p>
-<div class="equation">
-  CH<sub>3</sub>CHBrCH<sub>3</sub> + KOH &#8594; CH<sub>3</sub>CH=CH<sub>2</sub> + KBr + H<sub>2</sub>O
-</div>
-<p>Conditions: Hot ethanolic KOH (dissolved in ethanol). The OH<sup>-</sup> acts as a base, removing a hydrogen from a carbon adjacent to the halogen. The C-X bond breaks and the electrons form the double bond.</p>
+<p><strong>Why CN<sup>-</sup> is important:</strong> Reaction with cyanide extends the carbon chain by one atom. The nitrile can then be hydrolysed to a carboxylic acid (R-CN + 2H<sub>2</sub>O + HCl &rarr; R-COOH + NH<sub>4</sub>Cl) or reduced to an amine (R-CN + 4[H] &rarr; R-CH<sub>2</sub>NH<sub>2</sub> using LiAlH<sub>4</sub> or H<sub>2</sub>/Ni).</p>
+
+<p><strong>Why excess NH<sub>3</sub> is used:</strong> If the amine product is formed with excess halogenoalkane still present, further substitution occurs: the amine acts as a nucleophile, leading to secondary amines, tertiary amines, and eventually a quaternary ammonium salt. Using excess NH<sub>3</sub> minimises this by ensuring most halogenoalkane reacts with NH<sub>3</sub> rather than the amine product.</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> The conditions determine whether substitution or elimination occurs. Aqueous NaOH (warm) favours substitution (OH<sup>-</sup> acts as nucleophile). Ethanolic KOH (hot) favours elimination (OH<sup>-</sup> acts as base). Tertiary halogenoalkanes favour elimination and SN1; primary favour SN2.
+  <strong>Exam Tip:</strong> In mechanism questions, show the lone pair on the nucleophile and use a curly arrow from the lone pair to the &delta;+ carbon. Show the bond breaking from the C-X bond to the X atom. For S<sub>N</sub>1, clearly show two separate steps. For S<sub>N</sub>2, show it in one step with the transition state.
 </div>
 
-<h3>5.4 Reactivity of Halogenoalkanes</h3>
-<p>The rate of hydrolysis (substitution with water/OH<sup>-</sup>) depends on the strength of the C-X bond:</p>
+<h3>5.3 Elimination</h3>
+<p>Halogenoalkanes can also undergo elimination, losing HX to form an alkene:</p>
+<div class="equation">
+  CH<sub>3</sub>CHBrCH<sub>3</sub> + KOH &rarr; CH<sub>3</sub>CH=CH<sub>2</sub> + KBr + H<sub>2</sub>O
+</div>
+<p><strong>Conditions:</strong> Hot ethanolic KOH (KOH dissolved in ethanol, heated under reflux). The OH<sup>-</sup> acts as a <strong>base</strong> (not a nucleophile), removing an H<sup>+</sup> from a carbon adjacent to the halogen. As the C-H bond breaks, the electrons form the C=C double bond, and the C-X bond breaks to release X<sup>-</sup>.</p>
+
+<p><strong>Substitution vs Elimination — how to control which occurs:</strong></p>
 <table>
-  <tr><th>C-X bond</th><th>Bond enthalpy (kJ mol<sup>-1</sup>)</th><th>Rate of hydrolysis</th></tr>
-  <tr><td>C-F</td><td>484</td><td>Very slow (strongest bond)</td></tr>
+  <tr><th>Factor</th><th>Favours substitution</th><th>Favours elimination</th></tr>
+  <tr><td>Solvent</td><td>Aqueous (water)</td><td>Ethanolic (ethanol)</td></tr>
+  <tr><td>Temperature</td><td>Warm</td><td>Hot (higher temperature)</td></tr>
+  <tr><td>Type of halogenoalkane</td><td>Primary</td><td>Tertiary</td></tr>
+  <tr><td>OH<sup>-</sup> acts as...</td><td>Nucleophile</td><td>Base</td></tr>
+</table>
+
+<h3>5.4 Reactivity of Halogenoalkanes</h3>
+<p>The rate of nucleophilic substitution depends on the C-X bond strength (bond enthalpy), not the polarity:</p>
+<table>
+  <tr><th>C-X bond</th><th>Bond enthalpy / kJ mol<sup>-1</sup></th><th>Rate of hydrolysis</th></tr>
+  <tr><td>C-F</td><td>484</td><td>Very slow (strongest, hardest to break)</td></tr>
   <tr><td>C-Cl</td><td>338</td><td>Slow</td></tr>
   <tr><td>C-Br</td><td>276</td><td>Moderate</td></tr>
-  <tr><td>C-I</td><td>238</td><td>Fast (weakest bond)</td></tr>
+  <tr><td>C-I</td><td>238</td><td>Fast (weakest, easiest to break)</td></tr>
 </table>
-<p>Iodoalkanes react fastest because the C-I bond is the weakest and easiest to break.</p>
+<p>Iodoalkanes react fastest because the C-I bond is the weakest and has the lowest activation energy for breaking, despite C-I being the least polar. This shows that bond strength, not polarity, determines reactivity for halogenoalkanes.</p>
+
+<div class="real-world">
+  <strong>Real-World Application:</strong> CFCs (chlorofluorocarbons, e.g. CCl<sub>2</sub>F<sub>2</sub>) were used as refrigerants and propellants. UV light in the stratosphere breaks the C-Cl bond (homolytic fission) to produce Cl&bull; radicals, which catalytically destroy ozone: Cl&bull; + O<sub>3</sub> &rarr; ClO&bull; + O<sub>2</sub>, then ClO&bull; + O&bull; &rarr; Cl&bull; + O<sub>2</sub>. One Cl&bull; radical can destroy thousands of O<sub>3</sub> molecules. CFCs are now banned under the Montreal Protocol (1987) and replaced by HFCs and HCFCs.
+</div>
 
 <!-- ==================== ALCOHOLS ==================== -->
 <h2>6. Alcohols</h2>
 
-<h3>6.1 Classification</h3>
+<h3>6.1 Classification and Properties</h3>
 <ul>
-  <li><strong>Primary (1&deg;):</strong> The -OH group is on a carbon bonded to one other carbon (e.g. butan-1-ol).</li>
-  <li><strong>Secondary (2&deg;):</strong> The -OH is on a carbon bonded to two other carbons (e.g. butan-2-ol).</li>
-  <li><strong>Tertiary (3&deg;):</strong> The -OH is on a carbon bonded to three other carbons (e.g. 2-methylpropan-2-ol).</li>
+  <li><strong>Primary (1&deg;):</strong> The -OH group is on a carbon bonded to one other carbon (e.g. butan-1-ol CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>2</sub>OH).</li>
+  <li><strong>Secondary (2&deg;):</strong> The -OH is on a carbon bonded to two other carbons (e.g. butan-2-ol CH<sub>3</sub>CH(OH)CH<sub>2</sub>CH<sub>3</sub>).</li>
+  <li><strong>Tertiary (3&deg;):</strong> The -OH is on a carbon bonded to three other carbons (e.g. 2-methylpropan-2-ol (CH<sub>3</sub>)<sub>3</sub>COH).</li>
 </ul>
 
+<p>Alcohols have higher boiling points than alkanes of similar molecular mass because the -OH group forms hydrogen bonds with other alcohol molecules and with water. Short-chain alcohols are miscible with water (hydrogen bonding). As the carbon chain lengthens, the non-polar hydrocarbon part dominates and solubility decreases.</p>
+
 <h3>6.2 Oxidation of Alcohols</h3>
-<p>The oxidising agent is acidified potassium dichromate (K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> / H<sub>2</sub>SO<sub>4</sub>). The orange Cr<sub>2</sub>O<sub>7</sub><sup>2-</sup> is reduced to green Cr<sup>3+</sup>.</p>
+<p>The oxidising agent is <strong>acidified potassium dichromate(VI)</strong> (K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> / dilute H<sub>2</sub>SO<sub>4</sub>). When oxidation occurs, the orange Cr<sub>2</sub>O<sub>7</sub><sup>2-</sup> is reduced to green Cr<sup>3+</sup>.</p>
 
 <table>
-  <tr><th>Alcohol type</th><th>Distillation product</th><th>Reflux product</th></tr>
-  <tr><td>Primary</td><td>Aldehyde (distil off immediately)</td><td>Carboxylic acid (further oxidation)</td></tr>
-  <tr><td>Secondary</td><td colspan="2">Ketone (no further oxidation possible)</td></tr>
-  <tr><td>Tertiary</td><td colspan="2">No reaction (cannot be oxidised by K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>)</td></tr>
+  <tr><th>Alcohol type</th><th>With distillation</th><th>Under reflux</th></tr>
+  <tr><td>Primary (1&deg;)</td><td>Aldehyde (removed as it forms, preventing further oxidation)</td><td>Carboxylic acid (aldehyde oxidised further)</td></tr>
+  <tr><td>Secondary (2&deg;)</td><td colspan="2">Ketone (cannot be oxidised further &mdash; no H on the carbonyl C)</td></tr>
+  <tr><td>Tertiary (3&deg;)</td><td colspan="2">No reaction &mdash; dichromate stays orange (no H on the C-OH carbon to remove)</td></tr>
 </table>
 
 <!-- SVG: Alcohol Oxidation Pathway -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 250" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Oxidation of Alcohols — Pathway</text>
-  <!-- PRIMARY pathway -->
+  <text x="260" y="24" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Oxidation of Alcohols &mdash; Pathway</text>
   <text x="30" y="60" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Primary:</text>
   <rect x="25" y="70" width="110" height="40" rx="6" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="80" y="87" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">Alcohol</text>
   <text x="80" y="102" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">R-CH&#8322;OH</text>
-  <!-- Arrow 1 -->
   <line x1="135" y1="90" x2="185" y2="90" stroke="#D97706" stroke-width="1.8"/>
   <polygon points="185,90 178,86 178,94" fill="#D97706"/>
   <text x="160" y="82" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">[O] distil</text>
-  <!-- Aldehyde -->
   <rect x="185" y="70" width="110" height="40" rx="6" fill="#fef9c3" stroke="#D97706" stroke-width="1.5"/>
   <text x="240" y="87" text-anchor="middle" font-family="system-ui" font-size="11" fill="#D97706" font-weight="bold">Aldehyde</text>
   <text x="240" y="102" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">R-CHO</text>
-  <!-- Arrow 2 -->
   <line x1="295" y1="90" x2="345" y2="90" stroke="#DC2626" stroke-width="1.8"/>
   <polygon points="345,90 338,86 338,94" fill="#DC2626"/>
   <text x="320" y="82" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">[O] reflux</text>
-  <!-- Carboxylic acid -->
   <rect x="345" y="70" width="145" height="40" rx="6" fill="#fef2f2" stroke="#DC2626" stroke-width="1.5"/>
   <text x="418" y="87" text-anchor="middle" font-family="system-ui" font-size="11" fill="#DC2626" font-weight="bold">Carboxylic acid</text>
   <text x="418" y="102" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">R-COOH</text>
-  <!-- SECONDARY pathway -->
   <text x="30" y="140" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Secondary:</text>
   <rect x="25" y="150" width="110" height="40" rx="6" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="80" y="167" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="bold">Alcohol</text>
@@ -563,9 +612,7 @@
   <rect x="185" y="150" width="110" height="40" rx="6" fill="#f0fdf4" stroke="#16A34A" stroke-width="1.5"/>
   <text x="240" y="167" text-anchor="middle" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="bold">Ketone</text>
   <text x="240" y="182" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">R&#8322;C=O</text>
-  <!-- X - no further -->
   <text x="320" y="173" font-family="system-ui" font-size="12" fill="#DC2626" font-weight="bold">&#10008; No further oxidation</text>
-  <!-- TERTIARY -->
   <text x="30" y="215" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Tertiary:</text>
   <rect x="25" y="220" width="110" height="25" rx="6" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="80" y="237" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">R&#8323;COH</text>
@@ -574,65 +621,103 @@
 </svg>
 </div>
 
-<p>[O] is used as shorthand for the oxidising agent in equations:</p>
-<div class="equation">
-  Primary alcohol + [O] &#8594; Aldehyde + H<sub>2</sub>O &nbsp;&nbsp;(distillation)<br>
-  Aldehyde + [O] &#8594; Carboxylic acid &nbsp;&nbsp;(reflux)
+<p><strong>Equations using [O] notation:</strong></p>
+<div class="equation">Primary: CH<sub>3</sub>CH<sub>2</sub>OH + [O] &rarr; CH<sub>3</sub>CHO + H<sub>2</sub>O &nbsp;(distillation)</div>
+<div class="equation">Then: CH<sub>3</sub>CHO + [O] &rarr; CH<sub>3</sub>COOH &nbsp;(reflux)</div>
+<div class="equation">Secondary: CH<sub>3</sub>CH(OH)CH<sub>3</sub> + [O] &rarr; CH<sub>3</sub>COCH<sub>3</sub> + H<sub>2</sub>O</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The key distinction between distillation and reflux: Distillation removes the aldehyde product as soon as it forms (it has a low boiling point and evaporates). Reflux keeps the mixture at the boiling point without losing volatile components, so the aldehyde is further oxidised to the carboxylic acid. You must specify which apparatus is used when answering questions about oxidation of primary alcohols.
 </div>
 
-<h3>6.3 Dehydration</h3>
-<p>Alcohols can be dehydrated to form alkenes using a strong acid catalyst:</p>
+<h3>6.3 Dehydration (Elimination)</h3>
+<p>Alcohols can be dehydrated to form alkenes by removing H<sub>2</sub>O:</p>
 <div class="equation">
-  CH<sub>3</sub>CH<sub>2</sub>OH &#8594; CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub>O
+  CH<sub>3</sub>CH<sub>2</sub>OH &rarr; CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub>O
 </div>
-<p>Conditions: Concentrated H<sub>2</sub>SO<sub>4</sub> or concentrated H<sub>3</sub>PO<sub>4</sub> at elevated temperature. Alternatively, pass alcohol vapour over hot Al<sub>2</sub>O<sub>3</sub>. This is an elimination reaction.</p>
+<p><strong>Conditions:</strong> Concentrated H<sub>2</sub>SO<sub>4</sub> or concentrated H<sub>3</sub>PO<sub>4</sub> at elevated temperature (170&deg;C for ethanol). Alternatively, pass alcohol vapour over heated aluminium oxide (Al<sub>2</sub>O<sub>3</sub>) at 300-400&deg;C. This is an elimination reaction &mdash; the acid acts as a catalyst.</p>
 
 <h3>6.4 Esterification</h3>
-<p>An alcohol reacts with a carboxylic acid in the presence of a concentrated H<sub>2</sub>SO<sub>4</sub> catalyst to form an ester and water:</p>
+<p>An alcohol reacts with a carboxylic acid in the presence of a concentrated H<sub>2</sub>SO<sub>4</sub> catalyst to form an ester and water (condensation reaction):</p>
 <div class="equation">
   CH<sub>3</sub>COOH + CH<sub>3</sub>CH<sub>2</sub>OH &#8652; CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub> + H<sub>2</sub>O
 </div>
-<p>This is a reversible reaction (equilibrium). Esters have sweet, fruity smells and are used as flavourings, solvents, and in perfumes.</p>
+<p>This is a reversible equilibrium reaction. Conditions: warm with concentrated H<sub>2</sub>SO<sub>4</sub> catalyst under reflux. The yield can be improved by using excess of one reactant or removing the water.</p>
 
-<h3>6.5 Combustion</h3>
-<p>Alcohols burn completely in excess oxygen to produce CO<sub>2</sub> and H<sub>2</sub>O. Ethanol is used as a biofuel (carbon neutral in principle, as the CO<sub>2</sub> released was absorbed by the plant during photosynthesis).</p>
+<div class="real-world">
+  <strong>Real-World Application:</strong> Esters are responsible for the characteristic smells of fruits (ethyl butanoate = pineapple, pentyl ethanoate = pear). They are widely used in the food industry as artificial flavourings, in perfumes, and as solvents (ethyl ethanoate in nail varnish remover). Biodiesel is a mixture of esters made from vegetable oils and methanol.
+</div>
+
+<h3>6.5 Substitution to Halogenoalkanes</h3>
+<p>Alcohols can be converted to halogenoalkanes by replacing the -OH group:</p>
+<ul>
+  <li><strong>With HCl, HBr, or HI:</strong> e.g. CH<sub>3</sub>CH<sub>2</sub>OH + HBr &rarr; CH<sub>3</sub>CH<sub>2</sub>Br + H<sub>2</sub>O (NaBr + conc. H<sub>2</sub>SO<sub>4</sub> generates HBr in situ)</li>
+  <li><strong>With PCl<sub>3</sub> or PCl<sub>5</sub>:</strong> 3ROH + PCl<sub>3</sub> &rarr; 3RCl + H<sub>3</sub>PO<sub>3</sub></li>
+  <li><strong>With SOCl<sub>2</sub> (thionyl chloride):</strong> ROH + SOCl<sub>2</sub> &rarr; RCl + SO<sub>2</sub> + HCl (preferred method as by-products are gases that leave the mixture)</li>
+</ul>
+
+<h3>6.6 Combustion</h3>
+<p>Alcohols burn in excess oxygen: C<sub>2</sub>H<sub>5</sub>OH + 3O<sub>2</sub> &rarr; 2CO<sub>2</sub> + 3H<sub>2</sub>O. Ethanol is used as a biofuel, either neat or blended with petrol (E10 = 10% ethanol). It is considered closer to carbon neutral than fossil fuels because the CO<sub>2</sub> released was originally absorbed by the crops used to make the ethanol (via fermentation of sugars: C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> &rarr; 2C<sub>2</sub>H<sub>5</sub>OH + 2CO<sub>2</sub>, using yeast at 25-37&deg;C).</p>
 
 <!-- ==================== ORGANIC ANALYSIS ==================== -->
 <h2>7. Organic Analysis</h2>
 
 <h3>7.1 Mass Spectrometry</h3>
-<p>The molecular ion peak (M<sup>+</sup>) in a mass spectrum gives the relative molecular mass of the compound. The molecular ion is formed when the molecule loses one electron: M &#8594; M<sup>+</sup> + e<sup>-</sup>.</p>
-<p>Fragmentation patterns help identify the structure. Common fragment losses: 15 (CH<sub>3</sub>), 17 (OH), 29 (CHO or C<sub>2</sub>H<sub>5</sub>), 45 (OC<sub>2</sub>H<sub>5</sub>).</p>
+<p>The <strong>molecular ion peak</strong> (M<sup>+</sup>) in a mass spectrum gives the relative molecular mass of the compound. The molecular ion forms when the molecule loses one electron in the ionisation chamber: M &rarr; M<sup>+&bull;</sup> + e<sup>-</sup>.</p>
+
+<p><strong>Fragmentation:</strong> The molecular ion can break apart into smaller fragments. The m/z values of fragment ions help deduce the structure. Common fragment losses:</p>
+<table>
+  <tr><th>m/z loss</th><th>Fragment lost</th></tr>
+  <tr><td>15</td><td>CH<sub>3</sub>&bull; (methyl group)</td></tr>
+  <tr><td>17</td><td>OH&bull; (hydroxyl group)</td></tr>
+  <tr><td>18</td><td>H<sub>2</sub>O (from alcohols/carboxylic acids)</td></tr>
+  <tr><td>28</td><td>CO (from aldehydes/ketones) or C<sub>2</sub>H<sub>4</sub></td></tr>
+  <tr><td>29</td><td>CHO&bull; or C<sub>2</sub>H<sub>5</sub>&bull;</td></tr>
+  <tr><td>31</td><td>CH<sub>2</sub>OH&bull; (from primary alcohols)</td></tr>
+  <tr><td>45</td><td>OC<sub>2</sub>H<sub>5</sub>&bull; (from ethyl esters)</td></tr>
+</table>
+
+<p>The <strong>M+1 peak</strong> (due to <sup>13</sup>C) can help determine the number of carbon atoms in the molecule. The height of M+1 as a percentage of M is approximately 1.1 &times; (number of C atoms).</p>
 
 <h3>7.2 Infrared Spectroscopy</h3>
-<p>Different bonds absorb IR radiation at characteristic wavenumbers. Key absorptions:</p>
+<p>Different covalent bonds absorb infrared radiation at characteristic frequencies (wavenumbers, cm<sup>-1</sup>). IR spectroscopy identifies functional groups present in a molecule.</p>
 
 <table>
-  <tr><th>Bond</th><th>Wavenumber (cm<sup>-1</sup>)</th><th>Found in</th></tr>
-  <tr><td>O-H (alcohol)</td><td>3230-3550 (broad)</td><td>Alcohols</td></tr>
-  <tr><td>O-H (carboxylic acid)</td><td>2500-3300 (very broad)</td><td>Carboxylic acids</td></tr>
-  <tr><td>N-H</td><td>3300-3500</td><td>Amines, amides</td></tr>
-  <tr><td>C-H</td><td>2850-3100</td><td>Most organic compounds</td></tr>
-  <tr><td>C=O</td><td>1680-1750</td><td>Aldehydes, ketones, carboxylic acids, esters</td></tr>
-  <tr><td>C-O</td><td>1000-1300</td><td>Alcohols, esters</td></tr>
+  <tr><th>Bond</th><th>Wavenumber / cm<sup>-1</sup></th><th>Appearance</th><th>Found in</th></tr>
+  <tr><td>O-H (alcohol, hydrogen-bonded)</td><td>3230-3550</td><td>Broad absorption</td><td>Alcohols, phenols</td></tr>
+  <tr><td>O-H (carboxylic acid)</td><td>2500-3300</td><td>Very broad absorption</td><td>Carboxylic acids</td></tr>
+  <tr><td>N-H</td><td>3300-3500</td><td>Medium, may show 2 peaks (NH<sub>2</sub>)</td><td>Amines, amides</td></tr>
+  <tr><td>C-H</td><td>2850-3100</td><td>Strong</td><td>Most organic compounds</td></tr>
+  <tr><td>C=O</td><td>1680-1750</td><td>Strong, sharp</td><td>Aldehydes, ketones, carboxylic acids, esters, amides</td></tr>
+  <tr><td>C=C</td><td>1620-1680</td><td>Medium</td><td>Alkenes</td></tr>
+  <tr><td>C-O</td><td>1000-1300</td><td>Strong</td><td>Alcohols, esters, ethers</td></tr>
 </table>
 
-<p>IR spectroscopy can be used to identify functional groups. The fingerprint region (below 1500 cm<sup>-1</sup>) is unique to each molecule and can be compared against a database for identification.</p>
+<p>The <strong>fingerprint region</strong> (below ~1500 cm<sup>-1</sup>) is unique to each molecule, like a molecular fingerprint. Computer databases can match an unknown spectrum to a known compound in this region.</p>
+
+<p><strong>Greenhouse gases and IR:</strong> CO<sub>2</sub>, H<sub>2</sub>O, and CH<sub>4</sub> absorb IR radiation because their bonds can change dipole moment when they vibrate (asymmetric stretching and bending). N<sub>2</sub> and O<sub>2</sub> do not absorb IR because they are non-polar and have no change in dipole during vibration.</p>
 
 <div class="exam-tip">
-  <strong>Exam Tip:</strong> You do not need to memorise exact wavenumbers — they are given in the data booklet. Focus on recognising the broad O-H absorptions (alcohols vs carboxylic acids) and the sharp C=O peak. The shape of the absorption is as important as its position.
+  <strong>Exam Tip:</strong> You do NOT need to memorise exact wavenumbers &mdash; they are given in the data booklet. Focus on recognising: (1) the broad O-H absorption in alcohols vs the very broad O-H in carboxylic acids, (2) the strong sharp C=O peak, (3) the absence of O-H after esterification. When interpreting spectra, look at the absorption shape and position, not just whether a peak exists.
 </div>
 
-<h3>7.3 Test-Tube Reactions for Identification</h3>
+<h3>7.3 Test-Tube Reactions for Functional Group Identification</h3>
 
 <table>
-  <tr><th>Test</th><th>Reagent/Conditions</th><th>Positive result</th><th>Identifies</th></tr>
-  <tr><td>Bromine water</td><td>Br<sub>2</sub>(aq), shake</td><td>Orange to colourless</td><td>Alkene (C=C)</td></tr>
-  <tr><td>Acidified K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub></td><td>Warm with H<sub>2</sub>SO<sub>4</sub></td><td>Orange to green</td><td>Primary/secondary alcohol (or aldehyde)</td></tr>
-  <tr><td>Tollens' reagent</td><td>[Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup>, warm</td><td>Silver mirror</td><td>Aldehyde (not ketone)</td></tr>
-  <tr><td>Fehling's solution</td><td>Cu<sup>2+</sup> in NaOH, heat</td><td>Blue to red precipitate</td><td>Aldehyde (not ketone)</td></tr>
-  <tr><td>Na<sub>2</sub>CO<sub>3</sub></td><td>Add solid/solution</td><td>Effervescence (CO<sub>2</sub>)</td><td>Carboxylic acid</td></tr>
+  <tr><th>Test</th><th>Reagent and conditions</th><th>Positive result</th><th>Identifies</th></tr>
+  <tr><td>Bromine water test</td><td>Add Br<sub>2</sub>(aq), shake at room temperature</td><td>Orange &rarr; colourless</td><td>Alkene (C=C double bond)</td></tr>
+  <tr><td>Acidified K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub></td><td>Warm with H<sub>2</sub>SO<sub>4</sub></td><td>Orange &rarr; green</td><td>Primary or secondary alcohol (or aldehyde)</td></tr>
+  <tr><td>Tollens' reagent</td><td>[Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup> in NaOH, warm gently in water bath</td><td>Silver mirror on glass</td><td>Aldehyde (not ketone)</td></tr>
+  <tr><td>Fehling's solution</td><td>Cu<sup>2+</sup> in NaOH/tartrate, heat</td><td>Blue &rarr; brick-red precipitate (Cu<sub>2</sub>O)</td><td>Aldehyde (not ketone)</td></tr>
+  <tr><td>Na<sub>2</sub>CO<sub>3</sub> / NaHCO<sub>3</sub></td><td>Add to unknown compound</td><td>Effervescence (CO<sub>2</sub> gas)</td><td>Carboxylic acid</td></tr>
+  <tr><td>2,4-DNPH (Brady's reagent)</td><td>Add to unknown, shake</td><td>Orange/yellow precipitate (hydrazone)</td><td>Aldehyde or ketone (C=O present)</td></tr>
+  <tr><td>PCl<sub>5</sub></td><td>Add to unknown at room temperature</td><td>White misty fumes of HCl</td><td>-OH group (alcohol or carboxylic acid)</td></tr>
+  <tr><td>Iodoform test (tri-iodomethane)</td><td>NaOH(aq) + I<sub>2</sub>(aq), warm</td><td>Yellow precipitate of CHI<sub>3</sub> (antiseptic smell)</td><td>Methyl ketone (CH<sub>3</sub>CO-) or secondary alcohol with CH<sub>3</sub>CH(OH)-</td></tr>
 </table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A common multi-step identification question: (1) Use 2,4-DNPH to confirm C=O present. (2) Then use Tollens' reagent to distinguish aldehyde (silver mirror) from ketone (no reaction). (3) If the compound is an alcohol, use K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> to test for primary/secondary (colour change) vs tertiary (no change). (4) The iodoform test is positive for methyl ketones and methyl secondary alcohols specifically &mdash; it is very commonly examined.
+</div>
 
 </div>
 </body>

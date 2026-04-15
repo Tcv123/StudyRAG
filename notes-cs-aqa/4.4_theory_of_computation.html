@@ -116,9 +116,22 @@
     <strong>Abstraction</strong> is the process of removing unnecessary detail so that only the relevant information needed to solve a problem remains. It allows complex real-world systems to be modelled computationally.
 </div>
 
-<p><strong>Representational abstraction</strong> removes unnecessary detail from a representation. For example, the London Underground map abstracts away accurate geographic distances and only shows the relative positions of stations and the connections between them.</p>
+<p><strong>Representational abstraction</strong> removes unnecessary detail from a representation. For example, the London Underground map abstracts away accurate geographic distances and only shows the relative positions of stations and the connections between them. A pilot's flight map, by contrast, keeps geographic distances accurate but abstracts away street-level detail.</p>
 
 <p><strong>Abstraction by generalisation / classification</strong> groups things by common characteristics, placing them into hierarchies. For example, in object-oriented programming, a <code>Vehicle</code> class generalises cars, bikes, and lorries under one umbrella. Specific attributes are inherited from more general categories.</p>
+
+<p><strong>Procedural abstraction</strong> hides the details of how a task is performed behind a named procedure or function. A programmer can call <code>sort(list)</code> without knowing the internal algorithm.</p>
+
+<p><strong>Data abstraction</strong> hides the internal representation of data behind an interface. For example, the abstract data type "stack" provides <code>push</code>, <code>pop</code>, and <code>peek</code> operations without revealing whether it uses an array or linked list internally.</p>
+
+<p><strong>Information hiding</strong> is the principle that components should only expose what is necessary and conceal internal details. This is closely related to abstraction and is central to modular design and OOP encapsulation.</p>
+
+<p><strong>Real-world examples of abstraction:</strong></p>
+<ul>
+    <li><strong>Maps:</strong> The Tube map omits geographic accuracy; a road map omits individual buildings. Each retains only what the user needs.</li>
+    <li><strong>APIs:</strong> A weather API returns temperature data without exposing the sensor hardware, calibration algorithms, or database structure behind it.</li>
+    <li><strong>Programming languages:</strong> High-level languages abstract away registers and memory addresses, letting the programmer think in terms of variables and functions.</li>
+</ul>
 
 <h3>Automation</h3>
 <div class="definition">
@@ -132,7 +145,9 @@
     <li>The implementation of that algorithm in <strong>code</strong> that a machine can execute</li>
 </ul>
 
-<div class="exam-tip">You may be asked to explain how abstraction and automation are used together. Abstraction simplifies the problem; automation uses algorithms to solve the simplified model.</div>
+<p><strong>Example workflow:</strong> To automate traffic light control: (1) abstract the real junction into a state model with states like "North-South Green" and "East-West Green"; (2) define an algorithm that cycles through these states based on timers and sensor inputs; (3) implement the algorithm on a microcontroller.</p>
+
+<div class="exam-tip">You may be asked to explain how abstraction and automation are used together. The pattern is always: abstraction simplifies the problem into a model; automation uses algorithms to solve or operate on that simplified model. Give a concrete example to illustrate.</div>
 
 <!-- ============================================================ -->
 <h2>4.4.2 Finite State Machines (FSMs)</h2>
@@ -141,13 +156,16 @@
     A <strong>Finite State Machine (FSM)</strong> is an abstract model of computation consisting of a finite number of states, transitions between those states triggered by inputs, a single start state, and one or more accepting (final) states.
 </div>
 
-<h3>Components of an FSM</h3>
+<p>FSMs are used to model systems that exist in a limited number of conditions, where the next condition depends on the current condition and the input received. Real-world examples include vending machines, traffic light controllers, lift systems, and protocol handlers in networking.</p>
+
+<h3>Formal Definition</h3>
+<p>An FSM is formally defined as a 5-tuple: <code>M = (Q, &Sigma;, &delta;, q0, F)</code> where:</p>
 <ul>
-    <li><strong>States</strong> &mdash; a finite set, often labelled S0, S1, S2...</li>
-    <li><strong>Input alphabet</strong> &mdash; the set of symbols the machine can read</li>
-    <li><strong>Transition function</strong> &mdash; defines the next state for each (state, input) pair</li>
-    <li><strong>Start state</strong> &mdash; the state the machine begins in</li>
-    <li><strong>Accepting states</strong> &mdash; states that indicate the input has been accepted</li>
+    <li><strong>Q</strong> &mdash; a finite set of states (e.g., {S0, S1, S2})</li>
+    <li><strong>&Sigma;</strong> &mdash; the input alphabet (e.g., {0, 1})</li>
+    <li><strong>&delta;</strong> &mdash; the transition function: Q &times; &Sigma; &rarr; Q</li>
+    <li><strong>q0</strong> &mdash; the start state (q0 &isin; Q)</li>
+    <li><strong>F</strong> &mdash; the set of accepting (final) states (F &sube; Q)</li>
 </ul>
 
 <h3>State Transition Diagrams</h3>
@@ -171,8 +189,17 @@
                                   1
                                   |
                                   v
-                                  S2
+                                  S0
 </div>
+
+<p><strong>Trace-through example:</strong> Input = "1001"</p>
+<pre>
+  State: S0, Read: 1 &rarr; S0
+  State: S0, Read: 0 &rarr; S1
+  State: S1, Read: 0 &rarr; S1
+  State: S1, Read: 1 &rarr; S2 (accepting) &mdash; ACCEPTED
+</pre>
+<p>Input "100" would end in S1 (not accepting) &mdash; REJECTED.</p>
 
 <h3>State Transition Tables</h3>
 <p>An equivalent way to represent an FSM using a table:</p>
@@ -185,32 +212,34 @@
 
 <h3>Deterministic vs Non-Deterministic FSMs</h3>
 <ul>
-    <li>A <strong>Deterministic Finite Automaton (DFA)</strong> has exactly one transition for each (state, input) pair.</li>
-    <li>A <strong>Non-Deterministic Finite Automaton (NFA)</strong> can have zero, one, or multiple transitions for a given (state, input) pair. It may also have epsilon (empty) transitions.</li>
-    <li>Every NFA can be converted to an equivalent DFA (they recognise the same set of languages).</li>
+    <li>A <strong>Deterministic Finite Automaton (DFA)</strong> has exactly one transition for each (state, input) pair. Given any state and input, the next state is always uniquely determined.</li>
+    <li>A <strong>Non-Deterministic Finite Automaton (NFA)</strong> can have zero, one, or multiple transitions for a given (state, input) pair. It may also have <strong>epsilon (&epsilon;) transitions</strong> &mdash; transitions that occur without consuming any input.</li>
+    <li>Every NFA can be converted to an equivalent DFA (they recognise exactly the same set of languages). The DFA may require more states (up to 2<sup>n</sup> states for an NFA with n states, in the worst case).</li>
+    <li>NFAs are often easier to design; DFAs are easier to implement in hardware or software.</li>
 </ul>
 
 <h3>Mealy and Moore Machines</h3>
-<p>These are FSMs <strong>with output</strong> (unlike basic FSMs which only accept or reject).</p>
+<p>These are FSMs <strong>with output</strong> (unlike basic FSMs which only accept or reject). They are used in digital circuit design and protocol handling.</p>
 
 <table>
     <tr><th>Feature</th><th>Moore Machine</th><th>Mealy Machine</th></tr>
     <tr><td><strong>Output depends on</strong></td><td>Current state only</td><td>Current state AND current input</td></tr>
     <tr><td><strong>Output labelled on</strong></td><td>States</td><td>Transitions</td></tr>
     <tr><td><strong>Number of states</strong></td><td>Typically more</td><td>Typically fewer</td></tr>
-    <tr><td><strong>Output timing</strong></td><td>Changes with state change</td><td>Changes with input</td></tr>
+    <tr><td><strong>Output timing</strong></td><td>Changes with state change</td><td>Changes with input (can change mid-state)</td></tr>
+    <tr><td><strong>Real-world use</strong></td><td>Traffic light controller (output is light colour, depends on current state)</td><td>Vending machine (output depends on current state + coin inserted)</td></tr>
 </table>
 
-<p><strong>Moore machine example:</strong> Each state has an associated output. A state labelled <code>S1/0</code> means state S1 outputs 0.</p>
-<p><strong>Mealy machine example:</strong> Transitions are labelled <code>input/output</code>. A transition labelled <code>1/0</code> means on input 1, output 0.</p>
+<p><strong>Moore machine example:</strong> Each state has an associated output. A state labelled <code>S1/0</code> means "when in state S1, output is 0".</p>
+<p><strong>Mealy machine example:</strong> Transitions are labelled <code>input/output</code>. A transition labelled <code>1/0</code> means "on input 1, output 0".</p>
 
-<div class="exam-tip">In the exam, Mealy machines typically require fewer states than equivalent Moore machines. Be prepared to convert between the two representations.</div>
+<div class="exam-tip">In the exam, Mealy machines typically require fewer states than equivalent Moore machines because the output can change on each transition rather than only on each state. Be prepared to convert between the two representations and to trace through inputs producing outputs at each step.</div>
 
 <!-- ============================================================ -->
 <h2>4.4.3 Sets</h2>
 
 <div class="definition">
-    A <strong>set</strong> is an unordered collection of distinct values (no duplicates). Sets are used in the formal definition of languages and machines in computer science.
+    A <strong>set</strong> is an unordered collection of distinct values (no duplicates). Sets are used in the formal definition of languages, machines, and mathematical structures in computer science.
 </div>
 
 <h3>Set Notation</h3>
@@ -235,21 +264,44 @@
     <tr><td>Cartesian Product</td><td><code>A &times; B</code></td><td>Set of all ordered pairs (a, b)</td><td><code>{1,2} &times; {a,b} = {(1,a),(1,b),(2,a),(2,b)}</code></td></tr>
 </table>
 
+<h3>Set-Builder Notation</h3>
+<p>Sets can be defined by describing a property that members must satisfy:</p>
+<pre>
+  {x | x &isin; Z, x > 0}       = {1, 2, 3, 4, ...}   (positive integers)
+  {x | x &isin; N, x mod 2 = 0}  = {0, 2, 4, 6, ...}   (even natural numbers)
+  {x&sup2; | x &isin; {1,2,3,4}}      = {1, 4, 9, 16}        (squares of 1 to 4)
+</pre>
+<p>Read the <code>|</code> symbol as "such that".</p>
+
 <h3>Subsets and Proper Subsets</h3>
 <ul>
     <li>A is a <strong>subset</strong> of B (<code>A &sube; B</code>) if every element of A is also in B. A can equal B.</li>
     <li>A is a <strong>proper subset</strong> of B (<code>A &sub; B</code>) if every element of A is in B, but A &ne; B (B has at least one extra element).</li>
     <li>The empty set is a subset of every set: <code>&emptyset; &sube; A</code> for all A.</li>
+    <li>A set with n elements has <strong>2<sup>n</sup> subsets</strong> (including the empty set and the set itself).</li>
 </ul>
 
 <h3>Cardinality</h3>
 <ul>
     <li><strong>Finite set:</strong> cardinality is the number of elements, e.g. <code>|{a, b, c}| = 3</code>.</li>
-    <li><strong>Countably infinite set:</strong> elements can be put into a one-to-one correspondence with the natural numbers (e.g. the set of integers).</li>
-    <li><strong>Uncountably infinite set:</strong> cannot be put into correspondence with the naturals (e.g. the set of real numbers between 0 and 1).</li>
+    <li><strong>Countably infinite set:</strong> elements can be put into a one-to-one correspondence with the natural numbers (e.g., the set of integers, the set of rational numbers). Cardinality is denoted &alefsym;<sub>0</sub>.</li>
+    <li><strong>Uncountably infinite set:</strong> cannot be put into correspondence with the naturals (e.g., the set of real numbers between 0 and 1). This was proved by Cantor's diagonal argument.</li>
 </ul>
 
-<div class="exam-tip">Be comfortable reading set-builder notation like <code>{x | x &isin; Z, x &gt; 0}</code> which means "the set of all x such that x is a positive integer."</div>
+<h3>Sets in Computing</h3>
+<p>Many programming languages support set data types:</p>
+<pre>
+# Python set operations
+A = {1, 2, 3}
+B = {2, 3, 4}
+
+A | B     # Union:        {1, 2, 3, 4}
+A & B     # Intersection: {2, 3}
+A - B     # Difference:   {1}
+3 in A    # Membership:   True
+</pre>
+
+<div class="exam-tip">Be comfortable reading set-builder notation like <code>{x | x &isin; Z, x &gt; 0}</code> and be able to enumerate the first few elements. Also be ready to calculate the result of set operations (union, intersection, difference, Cartesian product) given specific sets.</div>
 
 <!-- ============================================================ -->
 <h2>4.4.4 Regular Expressions</h2>
@@ -258,7 +310,7 @@
     A <strong>regular expression</strong> (regex) is a notation for defining patterns of strings. It precisely describes a <strong>regular language</strong> &mdash; the set of all strings that match the pattern.
 </div>
 
-<h3>Regex Syntax</h3>
+<h3>Regex Syntax (Formal / AQA Style)</h3>
 <table>
     <tr><th>Symbol</th><th>Meaning</th><th>Example</th><th>Matches</th></tr>
     <tr><td><code>a</code></td><td>Literal character a</td><td><code>abc</code></td><td>"abc"</td></tr>
@@ -269,17 +321,48 @@
     <tr><td><code>()</code></td><td>Grouping</td><td><code>(ab)*</code></td><td>"", "ab", "abab", ...</td></tr>
 </table>
 
+<p>Note: <code>a+</code> is equivalent to <code>aa*</code> (one a followed by zero or more a's). <code>a?</code> is equivalent to <code>(a|&epsilon;)</code>.</p>
+
 <h3>Constructing Regular Expressions</h3>
-<p>Example patterns:</p>
+<p>Example patterns and what they match:</p>
 <ul>
     <li><code>a(b|c)d</code> &mdash; matches "abd" or "acd"</li>
     <li><code>ab*c</code> &mdash; matches "ac", "abc", "abbc", "abbbc", ...</li>
-    <li><code>(0|1)*</code> &mdash; matches any binary string (including empty)</li>
-    <li><code>a+b+</code> &mdash; matches one or more a's followed by one or more b's</li>
+    <li><code>(0|1)*</code> &mdash; matches any binary string (including the empty string)</li>
+    <li><code>a+b+</code> &mdash; matches one or more a's followed by one or more b's ("ab", "aab", "abb", "aaabbb", ...)</li>
     <li><code>(ab|cd)?ef</code> &mdash; matches "ef", "abef", or "cdef"</li>
+    <li><code>1(01)*</code> &mdash; matches "1", "101", "10101", "1010101", ... (1 followed by zero or more repetitions of 01)</li>
 </ul>
 
-<div class="exam-tip">In the AQA exam, you may be asked to write a regular expression for a given language, or identify which strings a given regex matches. Practice reading them left to right and consider edge cases (especially the empty string).</div>
+<h3>Worked Example: Writing a Regex from a Description</h3>
+<p><strong>Task:</strong> Write a regular expression for binary strings that contain at least one 1.</p>
+<pre>
+  Analysis: The string must have at least one 1, with any number of 0s or 1s
+  before and after it.
+
+  Answer: (0|1)*1(0|1)*
+
+  This means: zero or more binary digits, then a 1, then zero or more binary digits.
+  It matches: "1", "01", "10", "010", "111", "0001000", etc.
+  It does NOT match: "", "0", "000" (no 1 present).
+</pre>
+
+<h3>Regex in Programming (Python)</h3>
+<pre>
+import re
+
+# Check if a string matches a pattern
+pattern = r'^[a-z]+@[a-z]+\.[a-z]{2,}$'   # Simple email pattern
+result = re.match(pattern, 'user@example.com')
+print(result is not None)  # True
+
+# Find all matches
+text = "Call 020-1234 or 020-5678"
+numbers = re.findall(r'\d{3}-\d{4}', text)
+print(numbers)  # ['020-1234', '020-5678']
+</pre>
+
+<div class="exam-tip">In the AQA exam, you may be asked to write a regular expression for a given language, or identify which strings a given regex matches. Practice reading them left to right and consider edge cases (especially the empty string with <code>*</code> and <code>?</code>). Remember that <code>*</code> includes zero repetitions.</div>
 
 <!-- ============================================================ -->
 <h2>4.4.5 Regular Languages</h2>
@@ -292,35 +375,50 @@
 <ul>
     <li>Every regular expression defines a regular language.</li>
     <li>Every FSM (DFA or NFA) recognises a regular language.</li>
+    <li>There is a direct equivalence: for every regex there is an FSM, and for every FSM there is a regex.</li>
     <li>Regular languages are <strong>closed under</strong> union, intersection, complement, concatenation, and Kleene star &mdash; performing these operations on regular languages always produces another regular language.</li>
-    <li>Not all languages are regular. For example, the language <code>{a<sup>n</sup>b<sup>n</sup> | n &ge; 0}</code> (equal numbers of a's followed by b's) is NOT regular because an FSM has no memory (no stack or tape) to count.</li>
 </ul>
 
-<p>The <strong>Chomsky hierarchy</strong> classifies formal languages into four types:</p>
+<h3>Limitations of Regular Languages</h3>
+<p>Not all languages are regular. A language is NOT regular if recognising it requires unbounded memory (e.g., counting or matching nested structures). Examples of non-regular languages:</p>
+<ul>
+    <li><code>{a<sup>n</sup>b<sup>n</sup> | n &ge; 0}</code> &mdash; equal numbers of a's followed by b's. An FSM cannot count to an arbitrary n because it has a finite number of states.</li>
+    <li>Balanced parentheses &mdash; e.g., <code>(())</code> is valid but <code>(()</code> is not. Matching nested brackets requires a stack (unbounded memory).</li>
+    <li>Palindromes of arbitrary length.</li>
+</ul>
+
+<p>The <strong>pumping lemma</strong> is a formal tool for proving that a language is not regular. Intuitively, if a string in a regular language is long enough, part of it must correspond to a loop in the FSM, and that part can be "pumped" (repeated any number of times) while still remaining in the language.</p>
+
+<h3>The Chomsky Hierarchy</h3>
+<p>The <strong>Chomsky hierarchy</strong> classifies formal languages into four types, each strictly more powerful than the one below:</p>
 <table>
-    <tr><th>Type</th><th>Language Class</th><th>Machine</th><th>Grammar</th></tr>
-    <tr><td>3</td><td>Regular</td><td>Finite State Machine</td><td>Regular grammar</td></tr>
-    <tr><td>2</td><td>Context-free</td><td>Pushdown Automaton</td><td>Context-free grammar</td></tr>
-    <tr><td>1</td><td>Context-sensitive</td><td>Linear Bounded Automaton</td><td>Context-sensitive grammar</td></tr>
-    <tr><td>0</td><td>Recursively enumerable</td><td>Turing Machine</td><td>Unrestricted grammar</td></tr>
+    <tr><th>Type</th><th>Language Class</th><th>Machine</th><th>Grammar</th><th>Example</th></tr>
+    <tr><td>3</td><td>Regular</td><td>Finite State Machine</td><td>Regular grammar</td><td><code>(ab)*</code></td></tr>
+    <tr><td>2</td><td>Context-free</td><td>Pushdown Automaton (FSM + stack)</td><td>Context-free grammar</td><td><code>a<sup>n</sup>b<sup>n</sup></code></td></tr>
+    <tr><td>1</td><td>Context-sensitive</td><td>Linear Bounded Automaton</td><td>Context-sensitive grammar</td><td><code>a<sup>n</sup>b<sup>n</sup>c<sup>n</sup></code></td></tr>
+    <tr><td>0</td><td>Recursively enumerable</td><td>Turing Machine</td><td>Unrestricted grammar</td><td>Any Turing-recognisable language</td></tr>
 </table>
 
-<p>Each type is a proper subset of the one above it: Regular &sub; Context-free &sub; Context-sensitive &sub; Recursively enumerable.</p>
+<p>Each type is a proper subset of the one above it: Regular &sub; Context-free &sub; Context-sensitive &sub; Recursively enumerable. The hierarchy tells us that more powerful machines can recognise strictly larger classes of languages.</p>
+
+<div class="exam-tip">A common question is: "Why is the language a<sup>n</sup>b<sup>n</sup> not regular?" Answer: An FSM has a finite number of states and therefore cannot count to an arbitrary n. It would need to remember how many a's it has seen to check that the same number of b's follow, which requires unbounded memory that an FSM does not have. A pushdown automaton (which has a stack) can recognise this language.</div>
 
 <!-- ============================================================ -->
 <h2>4.4.6 Context-Free Languages, BNF and Syntax Diagrams</h2>
 
 <div class="definition">
-    A <strong>context-free language (CFL)</strong> is a language generated by a context-free grammar. It can be recognised by a <strong>pushdown automaton</strong> (an FSM with a stack). Most programming languages have a context-free syntax.
+    A <strong>context-free language (CFL)</strong> is a language generated by a context-free grammar. It can be recognised by a <strong>pushdown automaton</strong> (an FSM augmented with a stack). Most programming languages have a context-free syntax.
 </div>
 
+<p>Context-free languages can express nested and recursive structures that regular languages cannot, such as matched parentheses, nested if-else blocks, and arithmetic expressions with correct operator precedence.</p>
+
 <h3>Context-Free Grammars (CFGs)</h3>
-<p>A CFG consists of:</p>
+<p>A CFG is formally defined as a 4-tuple: <code>G = (N, &Sigma;, P, S)</code> where:</p>
 <ul>
-    <li><strong>Terminal symbols</strong> &mdash; actual characters/tokens that appear in the final string (e.g., <code>+</code>, <code>0</code>, <code>if</code>)</li>
-    <li><strong>Non-terminal symbols</strong> &mdash; variables representing syntactic categories (e.g., &lt;expression&gt;, &lt;digit&gt;)</li>
-    <li><strong>Production rules</strong> &mdash; rules that define how non-terminals can be replaced</li>
-    <li><strong>Start symbol</strong> &mdash; the non-terminal from which derivations begin</li>
+    <li><strong>N</strong> &mdash; a finite set of <strong>non-terminal symbols</strong> (variables representing syntactic categories, e.g., &lt;expression&gt;, &lt;digit&gt;)</li>
+    <li><strong>&Sigma;</strong> &mdash; a finite set of <strong>terminal symbols</strong> (actual characters/tokens that appear in the final string, e.g., <code>+</code>, <code>0</code>, <code>if</code>)</li>
+    <li><strong>P</strong> &mdash; a set of <strong>production rules</strong> defining how non-terminals can be replaced</li>
+    <li><strong>S</strong> &mdash; the <strong>start symbol</strong> (a non-terminal from which derivations begin)</li>
 </ul>
 
 <h3>Backus-Naur Form (BNF)</h3>
@@ -338,6 +436,24 @@
 
 <p>Note how <code>&lt;identifier&gt;</code> is defined recursively &mdash; this is very common in BNF. The recursive definition allows identifiers of any length, starting with a letter.</p>
 
+<h3>Derivation Example</h3>
+<p>Derive the string "3 + 5 * 2" from the grammar above:</p>
+<pre>
+  &lt;expression&gt;
+  &rarr; &lt;expression&gt; + &lt;term&gt;
+  &rarr; &lt;term&gt; + &lt;term&gt;
+  &rarr; &lt;factor&gt; + &lt;term&gt;
+  &rarr; &lt;integer&gt; + &lt;term&gt;
+  &rarr; &lt;digit&gt; + &lt;term&gt;
+  &rarr; 3 + &lt;term&gt;
+  &rarr; 3 + &lt;term&gt; * &lt;factor&gt;
+  &rarr; 3 + &lt;factor&gt; * &lt;factor&gt;
+  &rarr; 3 + 5 * 2
+
+  Notice how * binds tighter than + because &lt;term&gt; handles
+  multiplication before &lt;expression&gt; handles addition.
+</pre>
+
 <h3>Syntax Diagrams (Railroad Diagrams)</h3>
 <p>Syntax diagrams are a visual alternative to BNF:</p>
 <ul>
@@ -348,7 +464,9 @@
     <li><strong>Branching paths</strong> represent alternatives (the <code>|</code> in BNF)</li>
 </ul>
 
-<div class="exam-tip">You may be asked to convert between BNF and syntax diagrams. Practice both directions. Remember that recursion in BNF corresponds to loops in syntax diagrams.</div>
+<p>For example, the BNF rule <code>&lt;integer&gt; ::= &lt;digit&gt; | &lt;integer&gt;&lt;digit&gt;</code> becomes a syntax diagram with one path through a "digit" box and a loop arrow going back, meaning "one or more digits".</p>
+
+<div class="exam-tip">You may be asked to convert between BNF and syntax diagrams. Practice both directions. Key correspondence: recursion in BNF = loops in syntax diagrams; alternation (<code>|</code>) in BNF = branching paths in syntax diagrams. You may also be asked to derive a specific string from a BNF grammar step-by-step.</div>
 
 <!-- ============================================================ -->
 <h2>4.4.7 Turing Machines</h2>
@@ -359,38 +477,66 @@
 
 <h3>Components</h3>
 <ul>
-    <li><strong>Infinite tape</strong> &mdash; divided into cells, each holding one symbol from the tape alphabet. The tape extends infinitely in both directions (or one direction, depending on the definition).</li>
-    <li><strong>Read/write head</strong> &mdash; positioned over one cell at a time. It can read the current symbol, write a new symbol, and move left or right.</li>
-    <li><strong>State register</strong> &mdash; stores the current state of the machine from a finite set of states.</li>
-    <li><strong>Transition function</strong> &mdash; a set of rules of the form: given the current state and the symbol being read, write a new symbol, move the head (L or R), and transition to a new state.</li>
+    <li><strong>Infinite tape</strong> &mdash; divided into cells, each holding one symbol from the tape alphabet. The tape extends infinitely in both directions. Blank cells contain a special blank symbol (&blank;).</li>
+    <li><strong>Read/write head</strong> &mdash; positioned over one cell at a time. It can read the current symbol, write a new symbol, and move left (L) or right (R).</li>
+    <li><strong>State register</strong> &mdash; stores the current state from a finite set of states.</li>
+    <li><strong>Transition function</strong> &mdash; a set of rules: given the current state and the symbol being read, write a new symbol, move the head (L or R), and transition to a new state.</li>
     <li><strong>Start state</strong> and <strong>halting state(s)</strong>.</li>
 </ul>
 
 <h3>Transition Functions</h3>
-<p>A transition rule is typically written as:</p>
+<p>A transition rule is written as:</p>
 <pre>
 (current_state, read_symbol) &rarr; (new_state, write_symbol, direction)
 </pre>
-<p>Example transition table for a Turing machine that inverts binary digits:</p>
+
+<p><strong>Example: Turing machine that inverts binary digits</strong></p>
 <table>
     <tr><th>Current State</th><th>Read</th><th>Write</th><th>Move</th><th>New State</th></tr>
     <tr><td>S0</td><td>0</td><td>1</td><td>R</td><td>S0</td></tr>
     <tr><td>S0</td><td>1</td><td>0</td><td>R</td><td>S0</td></tr>
     <tr><td>S0</td><td>&#9633; (blank)</td><td>&#9633;</td><td>&mdash;</td><td>HALT</td></tr>
 </table>
-<p>This machine reads each bit, writes the opposite, moves right, and halts when it reaches a blank cell.</p>
+
+<p><strong>Trace-through:</strong> Input tape = <code>1010</code></p>
+<pre>
+  Step 1: State=S0, Read=1, Write=0, Move=R &rarr; Tape: 0010, Head at position 2
+  Step 2: State=S0, Read=0, Write=1, Move=R &rarr; Tape: 0110, Head at position 3
+  Step 3: State=S0, Read=1, Write=0, Move=R &rarr; Tape: 0100, Head at position 4
+  Step 4: State=S0, Read=0, Write=1, Move=R &rarr; Tape: 0101, Head at position 5
+  Step 5: State=S0, Read=blank &rarr; HALT
+  Output tape: 0101 (inverted)
+</pre>
+
+<h3>More Complex Example: Turing Machine to Add 1 to a Binary Number</h3>
+<table>
+    <tr><th>Current State</th><th>Read</th><th>Write</th><th>Move</th><th>New State</th></tr>
+    <tr><td>S0 (seek end)</td><td>0</td><td>0</td><td>R</td><td>S0</td></tr>
+    <tr><td>S0</td><td>1</td><td>1</td><td>R</td><td>S0</td></tr>
+    <tr><td>S0</td><td>&#9633;</td><td>&#9633;</td><td>L</td><td>S1 (add)</td></tr>
+    <tr><td>S1</td><td>0</td><td>1</td><td>&mdash;</td><td>HALT</td></tr>
+    <tr><td>S1</td><td>1</td><td>0</td><td>L</td><td>S1 (carry)</td></tr>
+    <tr><td>S1</td><td>&#9633;</td><td>1</td><td>&mdash;</td><td>HALT</td></tr>
+</table>
+<p>S0 moves right to find the end. S1 adds 1 from the rightmost bit, propagating carries leftward. E.g., input <code>1011</code> &rarr; output <code>1100</code>.</p>
 
 <h3>The Universal Turing Machine (UTM)</h3>
 <div class="definition">
-    A <strong>Universal Turing Machine</strong> is a Turing machine that can simulate any other Turing machine. It takes as input on its tape: (1) a description/encoding of a Turing machine T, and (2) the input for T. It then simulates T running on that input.
+    A <strong>Universal Turing Machine</strong> is a Turing machine that can simulate any other Turing machine. It takes as input on its tape: (1) an encoded description of a Turing machine T, and (2) the input for T. It then simulates T running on that input.
 </div>
 
 <p>The UTM is significant because:</p>
 <ul>
     <li>It demonstrates that a <strong>single machine</strong> can be programmed to perform any computation &mdash; this is the theoretical foundation for the <strong>stored-program computer</strong>.</li>
-    <li>It shows that programs and data are fundamentally the same thing (both are just symbols on a tape).</li>
-    <li>Modern general-purpose computers are practical implementations of the concept of a UTM.</li>
+    <li>It shows that programs and data are fundamentally the same thing (both are just symbols on a tape). A program is data that is interpreted as instructions.</li>
+    <li>Modern general-purpose computers are practical implementations of the concept of a UTM. The CPU is the "machine" and the program loaded into memory is the "encoded Turing machine description".</li>
+    <li>The concept was proposed by Alan Turing in 1936, before electronic computers existed.</li>
 </ul>
+
+<h3>The Church-Turing Thesis</h3>
+<div class="definition">
+    The <strong>Church-Turing thesis</strong> states that any function that can be effectively computed (by any reasonable method) can be computed by a Turing machine. Equivalently, a Turing machine can compute anything that is computable. This is a thesis (an assertion), not a proven theorem, but no counterexample has ever been found.
+</div>
 
 <h3>The Halting Problem</h3>
 <div class="definition">
@@ -399,8 +545,8 @@
 
 <p>The proof uses a <strong>proof by contradiction</strong>:</p>
 <ol>
-    <li>Assume a Turing machine H exists that can decide the halting problem. H(M, I) outputs "halts" if M halts on input I, and "loops" otherwise.</li>
-    <li>Construct a new machine D that takes a machine M as input:
+    <li>Assume a Turing machine H exists that can decide the halting problem. H(M, I) outputs "halts" if machine M halts on input I, and "loops" otherwise.</li>
+    <li>Construct a new machine D that takes a machine description M as input:
         <ul>
             <li>If H(M, M) says "halts", then D loops forever.</li>
             <li>If H(M, M) says "loops", then D halts.</li>
@@ -408,33 +554,35 @@
     </li>
     <li>Run D on itself: D(D).
         <ul>
-            <li>If H says D halts on D, then D loops &mdash; contradiction.</li>
-            <li>If H says D loops on D, then D halts &mdash; contradiction.</li>
+            <li>If H says D(D) halts, then by D's definition, D loops &mdash; <strong>contradiction</strong>.</li>
+            <li>If H says D(D) loops, then by D's definition, D halts &mdash; <strong>contradiction</strong>.</li>
         </ul>
     </li>
-    <li>Therefore H cannot exist. The halting problem is <strong>undecidable</strong>.</li>
+    <li>In both cases we reach a contradiction. Therefore H cannot exist. The halting problem is <strong>undecidable</strong>.</li>
 </ol>
 
-<p>Consequences of the halting problem:</p>
+<p><strong>Consequences of the halting problem:</strong></p>
 <ul>
     <li>There is no general algorithm that can check whether any given program will terminate.</li>
-    <li>Some problems are fundamentally <strong>non-computable</strong>.</li>
+    <li>Some problems are fundamentally <strong>non-computable</strong> &mdash; no algorithm can solve them.</li>
     <li>It places limits on what computers can do, regardless of their speed or memory.</li>
+    <li>Related undecidable problems: determining whether two programs are equivalent for all inputs; determining whether a program produces any output at all.</li>
+    <li>Note: we can often determine if a <em>specific</em> program halts on a <em>specific</em> input. The halting problem says no <em>single general algorithm</em> works for <em>all</em> programs and inputs.</li>
 </ul>
 
-<div class="exam-tip">The halting problem is a favourite exam topic. Be able to explain the proof by contradiction clearly, step by step, and explain why it matters.</div>
+<div class="exam-tip">The halting problem is a favourite exam topic. Be able to explain the proof by contradiction clearly, step by step, and explain why it matters. The key is the self-referential paradox: D does the opposite of what H predicts, leading to an impossible situation.</div>
 
 <!-- ============================================================ -->
 <h2>4.4.8 Classification of Algorithms</h2>
 
 <h3>Computable vs Non-Computable Problems</h3>
 <div class="definition">
-    A problem is <strong>computable</strong> (decidable) if there exists an algorithm (a Turing machine) that can solve every instance of it in a finite number of steps. A <strong>non-computable</strong> (undecidable) problem has no such algorithm.
+    A problem is <strong>computable</strong> (decidable) if there exists an algorithm (a Turing machine) that can solve every instance of it in a finite number of steps and always produce a correct answer. A <strong>non-computable</strong> (undecidable) problem has no such algorithm.
 </div>
 
 <ul>
-    <li><strong>Computable:</strong> sorting a list, searching for an item, finding the shortest path in a graph.</li>
-    <li><strong>Non-computable:</strong> the halting problem, determining whether two programs are functionally equivalent for all inputs.</li>
+    <li><strong>Computable:</strong> sorting a list, searching for an item, finding the shortest path in a graph, determining if a number is prime.</li>
+    <li><strong>Non-computable:</strong> the halting problem, determining whether two programs are functionally equivalent for all inputs, determining whether a given context-free grammar is ambiguous.</li>
 </ul>
 
 <h3>Tractable vs Intractable Problems</h3>
@@ -443,30 +591,56 @@
 </div>
 
 <table>
-    <tr><th>Category</th><th>Time Complexity</th><th>Example</th></tr>
-    <tr><td>Tractable</td><td>O(1), O(n), O(n log n), O(n<sup>2</sup>), O(n<sup>3</sup>)</td><td>Sorting, searching, shortest path</td></tr>
-    <tr><td>Intractable</td><td>O(2<sup>n</sup>), O(n!)</td><td>Travelling salesman (exact solution), satisfiability</td></tr>
+    <tr><th>Category</th><th>Time Complexity</th><th>Example</th><th>Feasibility</th></tr>
+    <tr><td>Tractable</td><td>O(1), O(n), O(n log n), O(n<sup>2</sup>), O(n<sup>3</sup>)</td><td>Sorting, searching, shortest path</td><td>Practical for large inputs</td></tr>
+    <tr><td>Intractable</td><td>O(2<sup>n</sup>), O(n!)</td><td>Travelling salesman (exact), satisfiability</td><td>Impractical for even moderate n</td></tr>
 </table>
+
+<p><strong>Growth rate comparison:</strong> For n = 30:</p>
+<pre>
+  O(n)      = 30
+  O(n^2)    = 900
+  O(n^3)    = 27,000
+  O(2^n)    = 1,073,741,824  (over 1 billion)
+  O(n!)     = 265,252,859,812,191,058,636,308,480,000,000  (unimaginably large)
+</pre>
+<p>This demonstrates why exponential and factorial algorithms are impractical for real-world problem sizes.</p>
 
 <h3>Complexity Classes</h3>
 <ul>
-    <li><strong>P</strong> &mdash; the class of problems solvable in polynomial time by a deterministic Turing machine. These are tractable.</li>
-    <li><strong>NP</strong> &mdash; the class of problems whose solutions can be <strong>verified</strong> in polynomial time. (A solution can be checked quickly, even if finding one is hard.)</li>
-    <li><strong>NP-Complete</strong> &mdash; the hardest problems in NP. If any NP-complete problem can be solved in polynomial time, then every problem in NP can (this would prove P = NP).</li>
+    <li><strong>P</strong> &mdash; the class of problems solvable in polynomial time by a deterministic Turing machine. These are tractable. Examples: sorting, shortest path, matrix multiplication.</li>
+    <li><strong>NP</strong> &mdash; the class of problems whose solutions can be <strong>verified</strong> in polynomial time. A solution can be checked quickly, even if finding one may be hard. Every problem in P is also in NP (if you can solve it quickly, you can certainly verify a solution quickly).</li>
+    <li><strong>NP-Complete</strong> &mdash; the hardest problems in NP. If any NP-complete problem can be solved in polynomial time, then <em>every</em> problem in NP can (this would prove P = NP). Examples: Boolean satisfiability (SAT), travelling salesman (decision version), graph colouring.</li>
     <li><strong>NP-Hard</strong> &mdash; at least as hard as NP-complete, but not necessarily in NP (their solutions may not even be verifiable in polynomial time).</li>
 </ul>
 
-<p>The <strong>P vs NP question</strong> asks whether every problem whose solution can be verified quickly (NP) can also be solved quickly (P). This is one of the great unsolved problems in computer science and mathematics.</p>
+<p>The <strong>P vs NP question</strong> asks whether every problem whose solution can be verified quickly (NP) can also be <em>solved</em> quickly (P). If P = NP, many currently intractable problems (cryptography, optimisation, scheduling) would become tractable. Most computer scientists believe P &ne; NP, but this has not been proven. It is one of the seven Millennium Prize Problems.</p>
 
 <h3>Heuristics</h3>
 <p>For intractable problems, we often use <strong>heuristic</strong> approaches:</p>
 <ul>
     <li>A heuristic is a practical technique that finds a <strong>good enough</strong> solution in reasonable time, without guaranteeing the optimal answer.</li>
-    <li>Example: the <strong>nearest neighbour algorithm</strong> for the travelling salesman problem &mdash; always visit the closest unvisited city. This runs in polynomial time but may not find the shortest route.</li>
+    <li>Example: the <strong>nearest neighbour algorithm</strong> for the travelling salesman problem &mdash; always visit the closest unvisited city. This runs in O(n<sup>2</sup>) time but may not find the shortest route. It typically finds a route within 20-25% of optimal.</li>
+    <li>Other heuristic approaches include <strong>genetic algorithms</strong>, <strong>simulated annealing</strong>, and <strong>greedy algorithms</strong>.</li>
     <li>Heuristics trade <strong>optimality for speed</strong>.</li>
 </ul>
 
-<div class="exam-tip">Know the difference between non-computable (no algorithm exists at all) and intractable (an algorithm exists but takes impractically long). The halting problem is non-computable. The travelling salesman problem (optimal solution) is intractable but computable.</div>
+<p><strong>Nearest Neighbour Pseudocode (TSP):</strong></p>
+<pre>
+function nearestNeighbour(cities, start):
+    current = start
+    unvisited = all cities except start
+    route = [start]
+    while unvisited is not empty:
+        next = closest city in unvisited to current
+        route.append(next)
+        unvisited.remove(next)
+        current = next
+    route.append(start)   // return to start
+    return route
+</pre>
+
+<div class="exam-tip">Know the difference between non-computable (no algorithm exists at all) and intractable (an algorithm exists but takes impractically long). The halting problem is non-computable. The travelling salesman problem (exact optimal solution) is intractable but computable. Also know that heuristics provide approximate solutions to intractable problems in reasonable time.</div>
 
 </div>
 </body>

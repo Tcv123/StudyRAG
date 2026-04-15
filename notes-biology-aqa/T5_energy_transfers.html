@@ -18,6 +18,8 @@
   .definition strong { color: #1e3a5f; }
   .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
   .exam-tip strong { color: #b45309; }
+  .real-world { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .real-world strong { color: #166534; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
@@ -28,11 +30,90 @@
 <h2>5.1 Photosynthesis</h2>
 
 <div class="definition">
-<strong>Photosynthesis:</strong> The process by which light energy is used to convert carbon dioxide and water into glucose and oxygen. It occurs in chloroplasts and involves two main stages: the light-dependent reactions (on thylakoid membranes) and the light-independent reactions (in the stroma).
+<strong>Photosynthesis:</strong> The process by which light energy is used to convert carbon dioxide and water into glucose and oxygen. It occurs in <strong>chloroplasts</strong> and involves two main stages: the <strong>light-dependent reactions</strong> (on thylakoid membranes) and the <strong>light-independent reactions</strong> / Calvin cycle (in the stroma). It is the fundamental process that converts light energy into chemical energy (stored in organic molecules), making it the entry point for almost all energy in biological systems.
 </div>
 
 <div class="equation">
-6CO<sub>2</sub> + 6H<sub>2</sub>O → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>
+6CO<sub>2</sub> + 6H<sub>2</sub>O &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> &nbsp;&nbsp; (&Delta;G = +2870 kJ mol<sup>-1</sup>, endergonic)
+</div>
+
+<h3>Chloroplast Structure</h3>
+<p>Chloroplasts are double-membrane organelles (~5-10 &mu;m long) with their own circular DNA and 70S ribosomes (evidence for endosymbiotic origin). Their internal structure is highly adapted for photosynthesis:</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 480 260" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
+  <text x="240" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#16A34A">Chloroplast Structure</text>
+  <!-- Outer membrane -->
+  <ellipse cx="240" cy="140" rx="210" ry="95" fill="#16A34A" opacity="0.04" stroke="#16A34A" stroke-width="2.5"/>
+  <!-- Inner membrane -->
+  <ellipse cx="240" cy="140" rx="200" ry="87" fill="#16A34A" opacity="0.04" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="4"/>
+  <text x="440" y="90" font-size="9" fill="#16A34A" font-weight="bold">Outer</text>
+  <text x="440" y="102" font-size="9" fill="#16A34A" font-weight="bold">membrane</text>
+  <text x="420" y="120" font-size="9" fill="#16A34A">Inner</text>
+  <text x="420" y="132" font-size="9" fill="#16A34A">membrane</text>
+  <!-- Stroma label -->
+  <text x="350" y="175" font-size="11" fill="#1a73e8" font-weight="bold">Stroma</text>
+  <text x="350" y="189" font-size="9" fill="#1a73e8">(Calvin cycle enzymes,</text>
+  <text x="350" y="201" font-size="9" fill="#1a73e8">DNA, 70S ribosomes,</text>
+  <text x="350" y="213" font-size="9" fill="#1a73e8">starch grains)</text>
+  <!-- Granum 1 -->
+  <rect x="80" y="100" width="80" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
+  <rect x="80" y="114" width="80" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
+  <rect x="80" y="128" width="80" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
+  <rect x="80" y="142" width="80" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
+  <rect x="80" y="156" width="80" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
+  <text x="120" y="185" text-anchor="middle" font-size="10" fill="#16A34A" font-weight="bold">Granum</text>
+  <text x="120" y="197" text-anchor="middle" font-size="9" fill="#16A34A">(stack of thylakoids)</text>
+  <!-- Granum 2 -->
+  <rect x="220" y="110" width="70" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
+  <rect x="220" y="124" width="70" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
+  <rect x="220" y="138" width="70" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
+  <!-- Intergranal lamella -->
+  <line x1="160" y1="135" x2="220" y2="125" stroke="#16A34A" stroke-width="2" opacity="0.4"/>
+  <text x="190" y="118" text-anchor="middle" font-size="8" fill="#16A34A">Intergranal</text>
+  <text x="190" y="128" text-anchor="middle" font-size="8" fill="#16A34A">lamella</text>
+  <!-- Thylakoid lumen label -->
+  <line x1="95" y1="135" x2="60" y2="125" stroke="#D97706" stroke-width="0.8" stroke-dasharray="3"/>
+  <text x="45" y="118" font-size="8" fill="#D97706">Thylakoid</text>
+  <text x="45" y="128" font-size="8" fill="#D97706">lumen (low pH)</text>
+  <!-- Key functions note -->
+  <rect x="60" y="215" width="360" height="35" rx="6" fill="#16A34A" opacity="0.06" stroke="#16A34A" stroke-width="1"/>
+  <text x="240" y="230" text-anchor="middle" font-size="9" fill="#16A34A" font-weight="bold">Thylakoid membranes: photosystems, ETC, ATP synthase (light-dependent)</text>
+  <text x="240" y="244" text-anchor="middle" font-size="9" fill="#16A34A" font-weight="bold">Stroma: RuBisCO and Calvin cycle enzymes (light-independent)</text>
+</svg>
+</div>
+
+<h3>Photosynthetic Pigments</h3>
+<p>Chloroplasts contain several pigments organised into <strong>photosystems</strong> (light-harvesting complexes):</p>
+<table>
+<tr><th>Pigment</th><th>Colour</th><th>Absorption Peaks</th><th>Role</th></tr>
+<tr><td>Chlorophyll a</td><td>Blue-green</td><td>430 nm (blue) and 662 nm (red)</td><td>Primary pigment; reaction centre of both photosystems; directly involved in light reactions</td></tr>
+<tr><td>Chlorophyll b</td><td>Yellow-green</td><td>453 nm and 642 nm</td><td>Accessory pigment; absorbs light and transfers energy to chlorophyll a; broadens absorption range</td></tr>
+<tr><td>Carotenoids (carotene, xanthophyll)</td><td>Orange/yellow</td><td>400-500 nm (blue-violet)</td><td>Accessory pigments; also protect chlorophyll from photo-oxidation damage</td></tr>
+</table>
+
+<p>Pigments can be separated by <strong>chromatography</strong> (see Required Practical 7). The R<sub>f</sub> value = distance moved by pigment / distance moved by solvent front.</p>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Leaves appear green because chlorophyll reflects green light (around 550 nm) and absorbs red and blue light most strongly. The absorption spectrum (wavelengths absorbed) closely mirrors the action spectrum (wavelengths driving photosynthesis) — this provides evidence that chlorophyll is the main photosynthetic pigment.
+</div>
+
+<h3>Light-Dependent Reactions (Thylakoid Membranes)</h3>
+<p>These reactions require light energy directly and produce ATP and reduced NADP (NADPH) for use in the Calvin cycle, plus oxygen as a by-product.</p>
+
+<h3>Non-Cyclic Photophosphorylation (the main pathway)</h3>
+<ol>
+<li><strong>Photoexcitation of PSII:</strong> Light energy is absorbed by chlorophyll and accessory pigments in <strong>photosystem II</strong> (PSII, P680). Energy is funnelled to the reaction centre chlorophyll a molecule. Two electrons in the chlorophyll are excited to a higher energy level and released to an electron acceptor.</li>
+<li><strong>Photolysis of water:</strong> The lost electrons are replaced by splitting water (photolysis): <strong>2H<sub>2</sub>O &rarr; 4H<sup>+</sup> + 4e<sup>&minus;</sup> + O<sub>2</sub></strong>. The oxygen is released as a by-product. The H<sup>+</sup> ions remain in the thylakoid lumen, contributing to the proton gradient.</li>
+<li><strong>Electron transport chain (ETC):</strong> High-energy electrons pass from PSII along a chain of electron carriers embedded in the thylakoid membrane (plastoquinone, cytochrome b6f complex, plastocyanin). At each carrier, electrons lose energy. This energy is used to <strong>pump H<sup>+</sup> ions from the stroma into the thylakoid lumen</strong>, building a proton (electrochemical) gradient.</li>
+<li><strong>Chemiosmosis:</strong> The concentration of H<sup>+</sup> in the lumen is now much higher than in the stroma. H<sup>+</sup> ions flow back through <strong>ATP synthase</strong> (down their concentration gradient). This drives the synthesis of ATP from ADP + P<sub>i</sub>. This is called <strong>photophosphorylation</strong> because light energy ultimately drives the phosphorylation.</li>
+<li><strong>Photoexcitation of PSI:</strong> The electrons arriving from the ETC enter <strong>photosystem I</strong> (PSI, P700), where light energy re-excites them to an even higher energy level.</li>
+<li><strong>Reduction of NADP:</strong> These high-energy electrons are passed to <strong>NADP reductase</strong>, which combines them with H<sup>+</sup> ions (from the stroma) to reduce NADP<sup>+</sup> to <strong>NADPH</strong>.</li>
+</ol>
+
+<div class="equation">
+Products of non-cyclic photophosphorylation: ATP + NADPH + O<sub>2</sub>
 </div>
 
 <div style="margin: 20px auto; text-align: center;">
@@ -67,7 +148,7 @@
   <line x1="230" y1="210" x2="280" y2="180" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrowT5)"/>
   <line x1="230" y1="225" x2="280" y2="195" stroke="#16A34A" stroke-width="1.5" marker-end="url(#arrowT5g)"/>
   <defs><marker id="arrowT5g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker></defs>
-  <!-- Calvin Cycle (right side - stroma) -->
+  <!-- Calvin Cycle (right side) -->
   <rect x="280" y="80" width="190" height="160" rx="10" fill="#1a73e8" opacity="0.06" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="375" y="100" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a73e8">Calvin Cycle</text>
   <text x="375" y="115" text-anchor="middle" font-size="9" fill="#1a73e8">(Stroma)</text>
@@ -77,7 +158,7 @@
   <text x="480" y="125" font-size="10" fill="#DC2626" font-weight="bold">CO&#8322;</text>
   <line x1="475" y1="128" x2="425" y2="148" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowT5r)"/>
   <defs><marker id="arrowT5r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/></marker></defs>
-  <!-- RuBP, GP, TP labels in cycle -->
+  <!-- RuBP, GP, TP labels -->
   <text x="375" y="132" text-anchor="middle" font-size="9" fill="#1a73e8" font-weight="bold">RuBP (5C)</text>
   <text x="420" y="175" font-size="9" fill="#DC2626" font-weight="bold">GP (3C)</text>
   <text x="375" y="210" text-anchor="middle" font-size="9" fill="#16A34A" font-weight="bold">TP (3C)</text>
@@ -89,95 +170,91 @@
   <defs><marker id="arrowT5k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/></marker></defs>
   <!-- Glucose output -->
   <line x1="375" y1="215" x2="375" y2="235" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrowT5y)"/>
-  <text x="375" y="248" text-anchor="middle" font-size="10" fill="#D97706" font-weight="bold">Glucose (C&#8326;H&#8321;&#8322;O&#8326;)</text>
-  <text x="375" y="262" text-anchor="middle" font-size="9" fill="#D97706">(and other organic molecules)</text>
+  <text x="375" y="248" text-anchor="middle" font-size="10" fill="#D97706" font-weight="bold">Glucose and other organics</text>
+  <text x="375" y="262" text-anchor="middle" font-size="9" fill="#D97706">(hexose sugars, amino acids, lipids)</text>
 </svg>
 </div>
 
-<h3>Light-Dependent Reactions (Thylakoid Membranes)</h3>
-<p>These reactions require light energy directly and produce ATP and reduced NADP (NADPH) for use in the Calvin cycle, plus oxygen as a by-product.</p>
+<h3>Cyclic Photophosphorylation</h3>
+<p>Electrons from PSI are passed back to the electron transport chain between PSII and PSI (rather than to NADP). This produces <strong>ATP only</strong> (no NADPH, no photolysis, no O<sub>2</sub> released). It is used when more ATP than NADPH is needed — the Calvin cycle requires 3 ATP but only 2 NADPH per CO<sub>2</sub> fixed, so cyclic photophosphorylation provides the extra ATP.</p>
 
-<ol>
-<li><strong>Photoexcitation:</strong> Light energy is absorbed by chlorophyll a in photosystem II (PSII). Electrons in the chlorophyll are excited to a higher energy level and released.</li>
-<li><strong>Photolysis of water:</strong> Water is split to replace the lost electrons: 2H<sub>2</sub>O → 4H<sup>+</sup> + 4e<sup>-</sup> + O<sub>2</sub>. The oxygen is released as a by-product.</li>
-<li><strong>Electron transport chain:</strong> High-energy electrons pass along a chain of electron carriers in the thylakoid membrane, losing energy at each step. This energy is used to pump H<sup>+</sup> ions from the stroma into the thylakoid lumen (creating a proton gradient).</li>
-<li><strong>Chemiosmosis:</strong> H<sup>+</sup> ions flow back through ATP synthase (down their concentration gradient) — this drives the synthesis of ATP from ADP + Pi (photophosphorylation).</li>
-<li><strong>Photosystem I (PSI):</strong> Light re-excites electrons. These high-energy electrons are used to reduce NADP<sup>+</sup> to NADPH (using NADP reductase), combining with H<sup>+</sup> ions from photolysis.</li>
-</ol>
-
-<p><strong>Cyclic photophosphorylation:</strong> Electrons from PSI are passed back to the electron transport chain between PSII and PSI (rather than to NADP). This produces ATP only (no NADPH, no photolysis). Used when more ATP than NADPH is needed (e.g. for the Calvin cycle).</p>
+<table>
+<tr><th>Feature</th><th>Non-Cyclic</th><th>Cyclic</th></tr>
+<tr><td>Photosystems used</td><td>PSII and PSI</td><td>PSI only</td></tr>
+<tr><td>Electron pathway</td><td>Linear: H<sub>2</sub>O &rarr; PSII &rarr; ETC &rarr; PSI &rarr; NADP</td><td>Circular: PSI &rarr; ETC &rarr; back to PSI</td></tr>
+<tr><td>Products</td><td>ATP + NADPH + O<sub>2</sub></td><td>ATP only</td></tr>
+<tr><td>Photolysis of water</td><td>Yes</td><td>No</td></tr>
+</table>
 
 <h3>Light-Independent Reactions — The Calvin Cycle (Stroma)</h3>
+<p>The Calvin cycle uses the ATP and NADPH from the light-dependent reactions to fix CO<sub>2</sub> into organic molecules. It does not directly require light, but it depends on products of the light reactions and therefore stops in the dark.</p>
+
 <ol>
-<li><strong>Carbon fixation:</strong> CO<sub>2</sub> combines with ribulose bisphosphate (RuBP, a 5C molecule) catalysed by the enzyme RuBisCO, forming an unstable 6C compound that immediately splits into two molecules of glycerate-3-phosphate (GP, 3C).</li>
-<li><strong>Reduction:</strong> GP is reduced to triose phosphate (G3P/TP, 3C) using ATP and NADPH from the light-dependent reactions.</li>
-<li><strong>Regeneration of RuBP:</strong> Most TP (5 out of every 6 molecules) is used to regenerate RuBP, using ATP. One in six TP molecules is used to synthesise glucose and other organic molecules.</li>
+<li><strong>Carbon fixation:</strong> CO<sub>2</sub> combines with <strong>ribulose bisphosphate (RuBP, a 5C molecule)</strong> catalysed by the enzyme <strong>RuBisCO</strong> (ribulose bisphosphate carboxylase/oxygenase). This forms an unstable 6C compound that immediately splits into two molecules of <strong>glycerate-3-phosphate (GP, 3C)</strong>.</li>
+<li><strong>Reduction:</strong> GP is reduced to <strong>triose phosphate (G3P/TP, 3C)</strong> using ATP (provides energy and phosphate) and NADPH (provides hydrogen/electrons) from the light-dependent reactions. NADP<sup>+</sup> and ADP + P<sub>i</sub> are recycled back to the light-dependent reactions.</li>
+<li><strong>Regeneration of RuBP:</strong> Most TP (5 out of every 6 molecules) is used to regenerate RuBP, using ATP. This allows the cycle to continue.</li>
+<li><strong>Product:</strong> One in six TP molecules is the net gain — it exits the cycle and is used to synthesise glucose (two TP molecules combine to form one hexose), amino acids, lipids, and other organic molecules.</li>
 </ol>
 
 <div class="equation">
-For every 3 CO<sub>2</sub> fixed: 3 RuBP + 3 CO<sub>2</sub> → 6 GP → 6 TP → 1 TP (net gain, used for glucose) + 5 TP (regenerate 3 RuBP)
+For every 3 CO<sub>2</sub> fixed: 3 RuBP + 3 CO<sub>2</sub> &rarr; 6 GP &rarr; 6 TP &rarr; 1 TP net gain + 5 TP regenerate 3 RuBP<br>
+Requires: 9 ATP + 6 NADPH per 3 CO<sub>2</sub> (i.e. 3 ATP + 2 NADPH per CO<sub>2</sub>)
 </div>
 
 <div class="exam-tip">
-<strong>Exam Tip:</strong> RuBisCO is the most abundant enzyme on Earth. A common exam question asks what happens to GP, TP, and RuBP levels when light or CO2 is suddenly removed. If light stops: NADPH and ATP are not produced, so GP accumulates (cannot be reduced) and TP/RuBP levels fall.
+<strong>Exam Tip:</strong> RuBisCO is the most abundant enzyme on Earth (and the most abundant protein). A very common exam question asks what happens to GP, TP, and RuBP levels when conditions suddenly change:
+<ul style="margin-top:6px;">
+<li><strong>Light stops:</strong> No ATP or NADPH produced. GP accumulates (cannot be reduced to TP). TP and RuBP levels fall (TP still used to regenerate RuBP but not replenished; RuBP still used to fix CO<sub>2</sub> but not regenerated).</li>
+<li><strong>CO<sub>2</sub> removed:</strong> RuBP accumulates (not being used up by fixation). GP falls (not being produced). TP falls (GP not being reduced).</li>
+<li><strong>CO<sub>2</sub> increased:</strong> GP increases initially (more fixation), then TP increases, then RuBP falls (used up faster than regenerated), until a new equilibrium is reached.</li>
+</ul>
 </div>
 
-<div style="margin: 20px auto; text-align: center;">
-<svg viewBox="0 0 480 260" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <style>text { font-family: system-ui; font-size: 11px; fill: #1a1a2e; }</style>
-  <text x="240" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#16A34A">Chloroplast Structure</text>
-  <!-- Outer membrane -->
-  <ellipse cx="240" cy="140" rx="210" ry="95" fill="#16A34A" opacity="0.04" stroke="#16A34A" stroke-width="2.5"/>
-  <!-- Inner membrane -->
-  <ellipse cx="240" cy="140" rx="200" ry="87" fill="#16A34A" opacity="0.04" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="4"/>
-  <text x="440" y="90" font-size="9" fill="#16A34A" font-weight="bold">Outer</text>
-  <text x="440" y="102" font-size="9" fill="#16A34A" font-weight="bold">membrane</text>
-  <text x="420" y="120" font-size="9" fill="#16A34A">Inner</text>
-  <text x="420" y="132" font-size="9" fill="#16A34A">membrane</text>
-  <!-- Stroma label -->
-  <text x="350" y="180" font-size="11" fill="#1a73e8" font-weight="bold">Stroma</text>
-  <text x="350" y="194" font-size="9" fill="#1a73e8">(Calvin cycle enzymes,</text>
-  <text x="350" y="206" font-size="9" fill="#1a73e8">DNA, 70S ribosomes)</text>
-  <!-- Granum 1 (stack of thylakoids) -->
-  <rect x="80" y="100" width="80" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
-  <rect x="80" y="114" width="80" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
-  <rect x="80" y="128" width="80" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
-  <rect x="80" y="142" width="80" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
-  <rect x="80" y="156" width="80" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
-  <text x="120" y="185" text-anchor="middle" font-size="10" fill="#16A34A" font-weight="bold">Granum</text>
-  <text x="120" y="197" text-anchor="middle" font-size="9" fill="#16A34A">(stack of thylakoids)</text>
-  <!-- Granum 2 -->
-  <rect x="220" y="110" width="70" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
-  <rect x="220" y="124" width="70" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
-  <rect x="220" y="138" width="70" height="10" rx="4" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
-  <!-- Intergranal lamella connecting grana -->
-  <line x1="160" y1="135" x2="220" y2="125" stroke="#16A34A" stroke-width="2" opacity="0.4"/>
-  <text x="190" y="118" text-anchor="middle" font-size="8" fill="#16A34A">Intergranal</text>
-  <text x="190" y="128" text-anchor="middle" font-size="8" fill="#16A34A">lamella</text>
-  <!-- Thylakoid lumen label -->
-  <line x1="95" y1="135" x2="60" y2="125" stroke="#D97706" stroke-width="0.8" stroke-dasharray="3"/>
-  <text x="45" y="118" font-size="8" fill="#D97706">Thylakoid</text>
-  <text x="45" y="128" font-size="8" fill="#D97706">lumen</text>
-  <!-- Key functions note -->
-  <rect x="60" y="215" width="360" height="35" rx="6" fill="#16A34A" opacity="0.06" stroke="#16A34A" stroke-width="1"/>
-  <text x="240" y="230" text-anchor="middle" font-size="9" fill="#16A34A" font-weight="bold">Thylakoid membranes: light-dependent reactions (photosystems, ETC, ATP synthase)</text>
-  <text x="240" y="244" text-anchor="middle" font-size="9" fill="#16A34A" font-weight="bold">Stroma: light-independent reactions (Calvin cycle, RuBisCO)</text>
-</svg>
-</div>
+<h3>Fate of Triose Phosphate (TP)</h3>
+<p>TP is the versatile 3-carbon molecule from which the plant synthesises all its organic molecules:</p>
+<ul>
+<li><strong>Glucose</strong> (2 TP &rarr; 1 glucose) &mdash; for respiration, cellulose cell walls, starch storage</li>
+<li><strong>Sucrose</strong> &mdash; transport sugar in phloem</li>
+<li><strong>Starch</strong> &mdash; storage polysaccharide in chloroplasts and amyloplasts</li>
+<li><strong>Amino acids</strong> &mdash; TP converted to organic acids, then aminated using nitrate/ammonium ions from roots</li>
+<li><strong>Fatty acids and glycerol</strong> &mdash; for membrane phospholipids and lipid storage</li>
+<li><strong>Nucleotides</strong> &mdash; for DNA and RNA</li>
+</ul>
 
 <h3>Limiting Factors in Photosynthesis</h3>
+<p>At any given time, the rate of photosynthesis is limited by whichever factor is in shortest supply (Blackman's Law of Limiting Factors).</p>
 <table>
-<tr><th>Factor</th><th>How it limits</th><th>Notes</th></tr>
-<tr><td>Light intensity</td><td>Below saturation: rate increases proportionally. Above saturation: another factor limits</td><td>At very high intensities, photoinhibition can damage photosystems</td></tr>
-<tr><td>CO<sub>2</sub> concentration</td><td>Substrate for carbon fixation; at low [CO2], RuBisCO limits Calvin cycle rate</td><td>Atmospheric CO2 (~0.04%) is often limiting in natural conditions</td></tr>
-<tr><td>Temperature</td><td>Affects enzyme activity (RuBisCO, ATP synthase). Too low: slow kinetics. Too high: enzyme denaturation</td><td>Optimum typically 25-35°C for most plants</td></tr>
+<tr><th>Factor</th><th>How It Limits</th><th>Practical Notes</th></tr>
+<tr><td><strong>Light intensity</strong></td><td>Below saturation: rate increases proportionally (more photoexcitation). Above saturation: another factor becomes limiting.</td><td>At very high intensities, photoinhibition can damage photosystems. Inverse square law: intensity &prop; 1/d<sup>2</sup></td></tr>
+<tr><td><strong>CO<sub>2</sub> concentration</strong></td><td>Substrate for carbon fixation by RuBisCO. At low [CO<sub>2</sub>], RuBisCO limits Calvin cycle rate.</td><td>Atmospheric CO<sub>2</sub> (~0.04% / 420 ppm) is often the limiting factor in natural conditions. Greenhouses may enrich to 0.1%</td></tr>
+<tr><td><strong>Temperature</strong></td><td>Affects enzyme activity (RuBisCO, ATP synthase). Too low: slow kinetics. Too high: enzyme denaturation.</td><td>Q<sub>10</sub> ~2 for most enzymes. Optimum typically 25-35&deg;C. Above ~40&deg;C, rate drops sharply.</td></tr>
 </table>
+
+<div class="real-world">
+<strong>Real-World Link:</strong> Commercial greenhouses exploit limiting factors to maximise crop yield. They use supplementary lighting (LEDs optimised for red and blue wavelengths), CO<sub>2</sub> enrichment (often from burning natural gas), and temperature control. Paraffin heaters are efficient because they provide heat AND CO<sub>2</sub> simultaneously. These controlled environments allow year-round crop production at higher yields than field-grown alternatives.
+</div>
 
 <h2>5.2 Respiration</h2>
 
 <div class="definition">
-<strong>Respiration:</strong> The metabolic process in which organic molecules (mainly glucose) are broken down to release energy for ATP synthesis. It occurs in all living cells continuously.
+<strong>Respiration:</strong> The metabolic process in which organic molecules (mainly glucose) are broken down in a series of enzyme-catalysed reactions to release energy for ATP synthesis. It occurs in all living cells continuously — it is NOT breathing (ventilation).
 </div>
+
+<div class="equation">
+C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> &rarr; 6CO<sub>2</sub> + 6H<sub>2</sub>O &nbsp;&nbsp; (&Delta;G = -2870 kJ mol<sup>-1</sup>, exergonic)
+</div>
+
+<h3>ATP — The Universal Energy Currency</h3>
+<p>ATP (adenosine triphosphate) is a nucleotide derivative consisting of adenine, ribose, and three phosphate groups. Hydrolysis of ATP to ADP + P<sub>i</sub> (catalysed by ATPase) releases ~30.5 kJ mol<sup>-1</sup> of energy. ATP is ideal as an energy currency because:</p>
+<ul>
+<li>Releases a small, manageable amount of energy per molecule (not wasted as heat)</li>
+<li>Can be rapidly regenerated from ADP + P<sub>i</sub> (ATP synthase / substrate-level phosphorylation)</li>
+<li>Soluble and easily transported within cells</li>
+<li>Universal — used by all living organisms</li>
+<li>Cannot pass through cell membranes — each cell makes its own</li>
+</ul>
+
+<h3>Mitochondrial Structure</h3>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 480 250" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -186,10 +263,10 @@ For every 3 CO<sub>2</sub> fixed: 3 RuBP + 3 CO<sub>2</sub> → 6 GP → 6 TP �
   <!-- Outer membrane -->
   <ellipse cx="240" cy="130" rx="210" ry="90" fill="#DC2626" opacity="0.04" stroke="#DC2626" stroke-width="2.5"/>
   <text x="440" y="80" font-size="9" fill="#DC2626" font-weight="bold">Outer membrane</text>
-  <!-- Inner membrane with cristae -->
+  <!-- Inner membrane -->
   <ellipse cx="240" cy="130" rx="190" ry="75" fill="#DC2626" opacity="0.04" stroke="#DC2626" stroke-width="1.5"/>
   <text x="425" y="105" font-size="9" fill="#DC2626">Inner membrane</text>
-  <!-- Cristae (folds of inner membrane) -->
+  <!-- Cristae -->
   <path d="M 80,130 Q 100,80 130,100 Q 160,120 140,130 Q 120,140 100,130" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1.5"/>
   <path d="M 160,130 Q 180,80 210,100 Q 240,120 220,130 Q 200,140 180,130" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1.5"/>
   <path d="M 240,130 Q 260,80 290,100 Q 320,120 300,130 Q 280,140 260,130" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1.5"/>
@@ -201,16 +278,18 @@ For every 3 CO<sub>2</sub> fixed: 3 RuBP + 3 CO<sub>2</sub> → 6 GP → 6 TP �
   <text x="155" y="79" font-size="9" fill="#DC2626">ETC + ATP synthase)</text>
   <!-- Matrix label -->
   <text x="240" y="170" text-anchor="middle" font-size="11" fill="#1a73e8" font-weight="bold">Matrix</text>
-  <text x="240" y="185" text-anchor="middle" font-size="9" fill="#1a73e8">(Krebs cycle enzymes, DNA, 70S ribosomes)</text>
+  <text x="240" y="185" text-anchor="middle" font-size="9" fill="#1a73e8">(Krebs cycle enzymes, DNA, 70S ribosomes,</text>
+  <text x="240" y="197" text-anchor="middle" font-size="9" fill="#1a73e8">pyruvate dehydrogenase complex)</text>
   <!-- Intermembrane space -->
-  <line x1="430" y1="90" x2="430" y2="70" stroke="#D97706" stroke-width="0.8" stroke-dasharray="3"/>
-  <text x="430" y="65" text-anchor="middle" font-size="9" fill="#D97706">Intermembrane space</text>
-  <text x="430" y="55" text-anchor="middle" font-size="9" fill="#D97706">(H+ accumulates here)</text>
-  <!-- Key functions -->
+  <text x="430" y="55" text-anchor="middle" font-size="9" fill="#D97706">Intermembrane space</text>
+  <text x="430" y="67" text-anchor="middle" font-size="9" fill="#D97706">(H+ accumulates here)</text>
+  <!-- Key -->
   <rect x="60" y="210" width="360" height="30" rx="6" fill="#DC2626" opacity="0.06" stroke="#DC2626" stroke-width="1"/>
-  <text x="240" y="225" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="bold">Large SA of cristae = more ATP synthase = more ATP by oxidative phosphorylation</text>
+  <text x="240" y="230" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="bold">Large SA of cristae = more ETC complexes + ATP synthase = more ATP by oxidative phosphorylation</text>
 </svg>
 </div>
+
+<h3>Overview of Aerobic Respiration</h3>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 540 280" style="max-width: 600px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
@@ -220,9 +299,8 @@ For every 3 CO<sub>2</sub> fixed: 3 RuBP + 3 CO<sub>2</sub> → 6 GP → 6 TP �
   <rect x="20" y="50" width="100" height="70" rx="8" fill="#16A34A" opacity="0.1" stroke="#16A34A" stroke-width="2"/>
   <text x="70" y="72" text-anchor="middle" font-weight="bold" font-size="11" fill="#16A34A">Glycolysis</text>
   <text x="70" y="88" text-anchor="middle" font-size="9" fill="#16A34A">(Cytoplasm)</text>
-  <text x="70" y="105" text-anchor="middle" font-size="9" fill="#16A34A">Glucose&#8594;2 Pyruvate</text>
-  <text x="70" y="135" text-anchor="middle" font-size="9" fill="#16A34A">Net: 2 ATP</text>
-  <text x="70" y="148" text-anchor="middle" font-size="9" fill="#16A34A">2 NADH</text>
+  <text x="70" y="105" text-anchor="middle" font-size="9" fill="#16A34A">Glucose&rarr;2 Pyruvate</text>
+  <text x="70" y="135" text-anchor="middle" font-size="9" fill="#16A34A">Net: 2 ATP, 2 NADH</text>
   <!-- Arrow -->
   <line x1="120" y1="85" x2="150" y2="85" stroke="#D97706" stroke-width="2" marker-end="url(#arrowResp)"/>
   <defs><marker id="arrowResp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/></marker></defs>
@@ -230,16 +308,15 @@ For every 3 CO<sub>2</sub> fixed: 3 RuBP + 3 CO<sub>2</sub> → 6 GP → 6 TP �
   <rect x="155" y="50" width="100" height="70" rx="8" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="2"/>
   <text x="205" y="72" text-anchor="middle" font-weight="bold" font-size="11" fill="#D97706">Link Reaction</text>
   <text x="205" y="88" text-anchor="middle" font-size="9" fill="#D97706">(Matrix)</text>
-  <text x="205" y="105" text-anchor="middle" font-size="9" fill="#D97706">Pyruvate&#8594;Acetyl CoA</text>
-  <text x="205" y="135" text-anchor="middle" font-size="9" fill="#D97706">2 NADH</text>
-  <text x="205" y="148" text-anchor="middle" font-size="9" fill="#D97706">2 CO&#8322;</text>
+  <text x="205" y="105" text-anchor="middle" font-size="9" fill="#D97706">Pyruvate&rarr;Acetyl CoA</text>
+  <text x="205" y="135" text-anchor="middle" font-size="9" fill="#D97706">2 NADH, 2 CO&#8322;</text>
   <!-- Arrow -->
   <line x1="255" y1="85" x2="285" y2="85" stroke="#D97706" stroke-width="2" marker-end="url(#arrowResp)"/>
   <!-- Krebs Cycle box -->
   <rect x="290" y="50" width="100" height="70" rx="8" fill="#DC2626" opacity="0.1" stroke="#DC2626" stroke-width="2"/>
   <text x="340" y="72" text-anchor="middle" font-weight="bold" font-size="11" fill="#DC2626">Krebs Cycle</text>
   <text x="340" y="88" text-anchor="middle" font-size="9" fill="#DC2626">(Matrix)</text>
-  <text x="340" y="105" text-anchor="middle" font-size="9" fill="#DC2626">Acetyl CoA&#8594;CO&#8322;</text>
+  <text x="340" y="105" text-anchor="middle" font-size="9" fill="#DC2626">Acetyl CoA&rarr;CO&#8322;</text>
   <text x="340" y="135" text-anchor="middle" font-size="9" fill="#DC2626">2 ATP, 6 NADH</text>
   <text x="340" y="148" text-anchor="middle" font-size="9" fill="#DC2626">2 FADH&#8322;, 4 CO&#8322;</text>
   <!-- Arrow -->
@@ -251,13 +328,12 @@ For every 3 CO<sub>2</sub> fixed: 3 RuBP + 3 CO<sub>2</sub> → 6 GP → 6 TP �
   <text x="475" y="98" text-anchor="middle" font-size="9" fill="#1a73e8">(Cristae)</text>
   <text x="475" y="112" text-anchor="middle" font-size="9" fill="#1a73e8">ETC + Chemiosmosis</text>
   <text x="475" y="135" text-anchor="middle" font-size="9" fill="#1a73e8" font-weight="bold">~34 ATP</text>
-  <!-- NADH/FADH2 arrows feeding into ox phos -->
+  <!-- NADH/FADH2 feeding into ox phos -->
   <path d="M 70,155 Q 70,200 270,210 Q 470,220 475,125" fill="none" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="4" marker-end="url(#arrowRespB)"/>
   <defs><marker id="arrowRespB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8"/></marker></defs>
-  <text x="270" y="225" text-anchor="middle" font-size="9" fill="#1a73e8">NADH and FADH&#8322; carry electrons to ETC</text>
-  <!-- O2 as final electron acceptor -->
-  <text x="475" y="155" text-anchor="middle" font-size="9" fill="#DC2626">O&#8322; = final e&#8315; acceptor</text>
-  <text x="475" y="168" text-anchor="middle" font-size="9" fill="#DC2626">&#8594; H&#8322;O</text>
+  <text x="270" y="225" text-anchor="middle" font-size="9" fill="#1a73e8">NADH and FADH&#8322; carry electrons and H+ to ETC</text>
+  <!-- O2 -->
+  <text x="475" y="155" text-anchor="middle" font-size="9" fill="#DC2626">O&#8322; = final e&#8315; acceptor &rarr; H&#8322;O</text>
   <!-- Total ATP -->
   <rect x="160" y="245" width="220" height="28" rx="6" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="1.5"/>
   <text x="270" y="265" text-anchor="middle" font-weight="bold" font-size="12" fill="#D97706">Total theoretical yield: ~38 ATP per glucose</text>
@@ -265,67 +341,109 @@ For every 3 CO<sub>2</sub> fixed: 3 RuBP + 3 CO<sub>2</sub> → 6 GP → 6 TP �
 </div>
 
 <h3>Glycolysis (Cytoplasm)</h3>
-<p>Glycolysis is the splitting of one glucose molecule (6C) into two molecules of pyruvate (3C). It is anaerobic (does not require oxygen).</p>
+<p>Glycolysis is the splitting of one glucose molecule (6C) into two molecules of pyruvate (3C). It is <strong>anaerobic</strong> (does not require oxygen) and occurs in the cytoplasm of all living cells.</p>
 <ol>
-<li><strong>Phosphorylation:</strong> Glucose is phosphorylated using 2 ATP → fructose-1,6-bisphosphate (6C). This activates the molecule and prevents it leaving the cell.</li>
-<li><strong>Lysis:</strong> The 6C molecule is split into two molecules of triose phosphate (3C).</li>
-<li><strong>Oxidation:</strong> Each triose phosphate is oxidised to pyruvate (3C). For each triose phosphate: 2 ATP produced (substrate-level phosphorylation) and 1 NAD reduced to NADH.</li>
+<li><strong>Phosphorylation (energy investment phase):</strong> Glucose is phosphorylated using 2 ATP &rarr; fructose-1,6-bisphosphate (6C). This lowers the activation energy for subsequent reactions, makes the molecule more reactive, and prevents it leaving the cell (charged phosphate groups cannot cross membranes).</li>
+<li><strong>Lysis:</strong> The 6C fructose-1,6-bisphosphate is split into two molecules of <strong>triose phosphate (3C)</strong> (glyceraldehyde-3-phosphate, G3P).</li>
+<li><strong>Oxidation (energy payoff phase):</strong> Each triose phosphate is oxidised to pyruvate (3C). For each triose phosphate: 2 ATP produced by <strong>substrate-level phosphorylation</strong> and 1 NAD<sup>+</sup> reduced to NADH + H<sup>+</sup>.</li>
 </ol>
 
 <div class="equation">
-Net yield per glucose: 2 ATP + 2 NADH + 2 pyruvate
+Net yield per glucose: 2 ATP + 2 NADH + 2 pyruvate<br>
+(4 ATP produced - 2 ATP invested = 2 ATP net gain)
 </div>
 
 <h3>Link Reaction (Mitochondrial Matrix)</h3>
-<p>Pyruvate is actively transported into the mitochondrial matrix. There it is:</p>
+<p>Pyruvate is actively transported from the cytoplasm into the mitochondrial matrix via a specific carrier protein in the inner membrane. There it undergoes <strong>oxidative decarboxylation</strong>:</p>
 <ul>
-<li>Oxidatively decarboxylated: one carbon removed as CO<sub>2</sub>, and NAD is reduced to NADH</li>
-<li>Combined with coenzyme A (CoA) to form acetyl CoA (2C)</li>
+<li>One carbon is removed as CO<sub>2</sub> (decarboxylation)</li>
+<li>NAD<sup>+</sup> is reduced to NADH (oxidation)</li>
+<li>The remaining 2C acetyl group is combined with <strong>coenzyme A (CoA)</strong> to form <strong>acetyl CoA</strong></li>
 </ul>
 <div class="equation">
-Pyruvate (3C) + NAD + CoA → Acetyl CoA (2C) + CO<sub>2</sub> + NADH (×2 per glucose)
+Pyruvate (3C) + NAD<sup>+</sup> + CoA &rarr; Acetyl CoA (2C) + CO<sub>2</sub> + NADH &nbsp; (x2 per glucose)
 </div>
 
 <h3>Krebs Cycle (Mitochondrial Matrix)</h3>
+<p>The Krebs cycle (citric acid cycle) is a series of enzyme-catalysed reactions that completely oxidise the acetyl group from acetyl CoA:</p>
 <ol>
-<li>Acetyl CoA (2C) combines with oxaloacetate (4C) to form citrate (6C). CoA is recycled.</li>
-<li>Citrate is decarboxylated and oxidised in a series of steps, regenerating oxaloacetate.</li>
-<li>Per turn: 1 ATP (substrate-level), 3 NADH, 1 FADH<sub>2</sub>, 2 CO<sub>2</sub> released.</li>
+<li><strong>Acetyl CoA (2C)</strong> combines with <strong>oxaloacetate (4C)</strong> to form <strong>citrate (6C)</strong>. CoA is released and recycled.</li>
+<li>Citrate undergoes a series of <strong>decarboxylation</strong> and <strong>oxidation</strong> reactions, producing two molecules of CO<sub>2</sub> and regenerating oxaloacetate.</li>
+<li>At various steps, NAD<sup>+</sup> and FAD are reduced to NADH and FADH<sub>2</sub> (these carry electrons to the ETC).</li>
+<li>One molecule of ATP is produced by substrate-level phosphorylation (actually GTP, which is quickly converted to ATP).</li>
 </ol>
 
 <div class="equation">
+Per turn of the Krebs cycle: 1 ATP + 3 NADH + 1 FADH<sub>2</sub> + 2 CO<sub>2</sub><br>
 Per glucose (2 turns): 2 ATP + 6 NADH + 2 FADH<sub>2</sub> + 4 CO<sub>2</sub>
 </div>
 
+<div class="exam-tip">
+<strong>Exam Tip:</strong> The main purpose of the Krebs cycle is NOT to produce ATP directly (only 2 per glucose) — it is to generate <strong>reduced coenzymes</strong> (NADH and FADH<sub>2</sub>) that carry electrons to the electron transport chain, where the vast majority of ATP is produced. The CO<sub>2</sub> you breathe out comes from the link reaction and Krebs cycle (decarboxylation reactions).
+</div>
+
 <h3>Oxidative Phosphorylation (Inner Mitochondrial Membrane — Cristae)</h3>
+<p>This is where most ATP is produced (~34 out of ~38 total per glucose). It involves the electron transport chain and chemiosmosis:</p>
 <ol>
-<li>NADH and FADH<sub>2</sub> donate electrons to the electron transport chain (ETC) on the inner membrane (cristae).</li>
-<li>Electrons pass along a series of carriers, releasing energy at each step.</li>
-<li>This energy is used to pump H<sup>+</sup> ions from the matrix into the intermembrane space, creating a proton gradient (chemiosmotic gradient).</li>
-<li>H<sup>+</sup> ions flow back into the matrix through ATP synthase, driving ATP synthesis (chemiosmosis) — approximately 34 ATP per glucose.</li>
-<li><strong>Oxygen is the final electron acceptor.</strong> It combines with electrons and H<sup>+</sup> to form water. Without oxygen, the ETC stops, NADH cannot be reoxidised, and the Krebs cycle halts.</li>
+<li><strong>NADH and FADH<sub>2</sub></strong> donate their electrons and H<sup>+</sup> ions to the <strong>electron transport chain (ETC)</strong> — a series of protein complexes embedded in the inner mitochondrial membrane (cristae). NADH donates to Complex I; FADH<sub>2</sub> donates to Complex II (at a lower energy level, producing fewer ATP).</li>
+<li>Electrons pass along the chain of carriers (including ubiquinone, cytochrome c, and cytochrome oxidase), losing energy at each step.</li>
+<li>The energy released is used to <strong>pump H<sup>+</sup> ions from the matrix into the intermembrane space</strong>, creating a steep electrochemical (proton) gradient.</li>
+<li>H<sup>+</sup> ions flow back into the matrix through <strong>ATP synthase</strong> (down their concentration gradient). This flow drives the rotation of ATP synthase, catalysing ATP synthesis from ADP + P<sub>i</sub>. This process is called <strong>chemiosmosis</strong> (proposed by Peter Mitchell, 1961).</li>
+<li><strong>Oxygen is the final electron acceptor.</strong> At the end of the ETC, electrons and H<sup>+</sup> combine with molecular oxygen to form water: &frac12;O<sub>2</sub> + 2H<sup>+</sup> + 2e<sup>&minus;</sup> &rarr; H<sub>2</sub>O. Without oxygen, electrons cannot leave the chain, the ETC stops, NADH cannot be reoxidised, and the Krebs cycle halts.</li>
 </ol>
 
 <div class="exam-tip">
-<strong>Exam Tip:</strong> Cyanide inhibits cytochrome c oxidase (the final ETC complex). This stops electron flow, H+ pumping ceases, no ATP is made by chemiosmosis, and aerobic respiration stops. The organism must rely on anaerobic respiration alone.
+<strong>Exam Tip:</strong> Cyanide inhibits cytochrome c oxidase (Complex IV — the final ETC complex). This stops electron flow, H<sup>+</sup> pumping ceases, the proton gradient collapses, and no ATP is made by chemiosmosis. The organism must rely on anaerobic respiration (glycolysis) alone — producing only 2 ATP per glucose, which is insufficient for survival. This is why cyanide is so lethal even in small doses.
 </div>
 
-<h3>Total ATP Yield (Theoretical Maximum)</h3>
+<h3>Total ATP Yield (Theoretical Maximum per Glucose)</h3>
 <table>
-<tr><th>Stage</th><th>ATP (net)</th><th>NADH</th><th>FADH<sub>2</sub></th></tr>
-<tr><td>Glycolysis</td><td>2</td><td>2</td><td>0</td></tr>
-<tr><td>Link reaction (×2)</td><td>0</td><td>2</td><td>0</td></tr>
-<tr><td>Krebs cycle (×2)</td><td>2</td><td>6</td><td>2</td></tr>
-<tr><td>Oxidative phosphorylation</td><td>~34 (from 10 NADH × 2.5 + 2 FADH2 × 1.5)</td><td>—</td><td>—</td></tr>
-<tr><td><strong>Total</strong></td><td><strong>~38 ATP</strong></td><td>—</td><td>—</td></tr>
+<tr><th>Stage</th><th>Location</th><th>ATP (net)</th><th>NADH</th><th>FADH<sub>2</sub></th></tr>
+<tr><td>Glycolysis</td><td>Cytoplasm</td><td>2</td><td>2</td><td>0</td></tr>
+<tr><td>Link reaction (x2)</td><td>Matrix</td><td>0</td><td>2</td><td>0</td></tr>
+<tr><td>Krebs cycle (x2)</td><td>Matrix</td><td>2</td><td>6</td><td>2</td></tr>
+<tr><td>Oxidative phosphorylation</td><td>Cristae</td><td>~34 (10 NADH x ~2.5 + 2 FADH<sub>2</sub> x ~1.5)</td><td>—</td><td>—</td></tr>
+<tr><td><strong>Total</strong></td><td></td><td><strong>~38 ATP</strong></td><td>—</td><td>—</td></tr>
 </table>
 
+<p><strong>Note:</strong> The actual yield is less than 38 ATP because: (1) some of the proton gradient energy is used for other transport processes; (2) NADH from glycolysis must be shuttled into the mitochondria, costing energy; (3) the inner membrane is not perfectly impermeable to H<sup>+</sup>. The real yield is approximately <strong>30-32 ATP per glucose</strong>.</p>
+
 <h3>Anaerobic Respiration</h3>
-<p>When oxygen is unavailable, oxidative phosphorylation stops. NAD must be regenerated for glycolysis to continue:</p>
+<p>When oxygen is unavailable, oxidative phosphorylation stops. NAD<sup>+</sup> must be regenerated from NADH for glycolysis to continue (otherwise glycolysis would also halt). Anaerobic pathways regenerate NAD<sup>+</sup> without using oxygen:</p>
+
+<table>
+<tr><th>Feature</th><th>Lactate Fermentation (Animals, some bacteria)</th><th>Alcoholic Fermentation (Yeast, some plants)</th></tr>
+<tr><td>Reaction</td><td>Pyruvate + NADH &rarr; Lactate + NAD<sup>+</sup></td><td>Pyruvate &rarr; Ethanal + CO<sub>2</sub><br>Ethanal + NADH &rarr; Ethanol + NAD<sup>+</sup></td></tr>
+<tr><td>Enzyme</td><td>Lactate dehydrogenase</td><td>Pyruvate decarboxylase, then alcohol dehydrogenase</td></tr>
+<tr><td>Reversible?</td><td>Yes — lactate can be converted back to pyruvate when O<sub>2</sub> available (in liver)</td><td>No — ethanol is toxic; organism cannot convert it back</td></tr>
+<tr><td>ATP yield</td><td>2 ATP per glucose (glycolysis only)</td><td>2 ATP per glucose (glycolysis only)</td></tr>
+<tr><td>CO<sub>2</sub> produced?</td><td>No</td><td>Yes (in decarboxylation step)</td></tr>
+</table>
+
+<p><strong>Oxygen debt:</strong> After vigorous exercise, extra oxygen is consumed to: (1) convert lactate back to pyruvate (and then to glucose via gluconeogenesis in the liver — the Cori cycle); (2) re-oxygenate haemoglobin and myoglobin; (3) replenish phosphocreatine stores in muscle.</p>
+
+<div class="real-world">
+<strong>Real-World Link:</strong> Brewers and bakers exploit alcoholic fermentation. In brewing, yeast ferments sugars to produce ethanol and CO<sub>2</sub> (the ethanol is the desired product). In bread-making, it is the CO<sub>2</sub> that is wanted — it creates bubbles that make bread rise (the small amount of ethanol evaporates during baking). Yoghurt and cheese production rely on lactate fermentation by bacteria (Lactobacillus), which lowers pH and curdles milk proteins.
+</div>
+
+<h3>Respiratory Substrates</h3>
+<p>Cells can respire substrates other than glucose:</p>
 <ul>
-<li><strong>In animals:</strong> Pyruvate + NADH → Lactate + NAD (catalysed by lactate dehydrogenase). Reversible — lactate can be converted back to pyruvate when oxygen is available (oxygen debt).</li>
-<li><strong>In yeast/plants:</strong> Pyruvate → Ethanal + CO<sub>2</sub> (decarboxylation), then Ethanal + NADH → Ethanol + NAD (alcoholic fermentation). Irreversible.</li>
+<li><strong>Lipids:</strong> Glycerol enters glycolysis as triose phosphate. Fatty acids undergo beta-oxidation in the matrix to produce acetyl CoA (which enters the Krebs cycle) and reduced NAD/FAD. Lipids yield more ATP per gram than carbohydrates (~9 kcal/g vs ~4 kcal/g) because they are more reduced (more C-H bonds to oxidise).</li>
+<li><strong>Proteins:</strong> Amino acids are deaminated (amino group removed as urea). The remaining carbon skeleton enters respiration as pyruvate, acetyl CoA, or a Krebs cycle intermediate, depending on the amino acid.</li>
 </ul>
+
+<p>The <strong>respiratory quotient (RQ)</strong> indicates which substrate is being respired:</p>
+<div class="equation">
+RQ = CO<sub>2</sub> produced / O<sub>2</sub> consumed
+</div>
+<table>
+<tr><th>Substrate</th><th>RQ</th></tr>
+<tr><td>Carbohydrate (glucose)</td><td>1.0</td></tr>
+<tr><td>Protein</td><td>~0.9</td></tr>
+<tr><td>Lipid (fat)</td><td>~0.7</td></tr>
+<tr><td>Anaerobic respiration</td><td>&gt; 1.0 (CO<sub>2</sub> produced without O<sub>2</sub> consumption)</td></tr>
+</table>
 
 <h2>5.3 Energy and Ecosystems</h2>
 
@@ -336,50 +454,77 @@ Per glucose (2 turns): 2 ATP + 6 NADH + 2 FADH<sub>2</sub> + 4 CO<sub>2</sub>
 
 <div class="equation">
 Net Primary Productivity (NPP) = GPP - Respiration (R)<br>
-NPP is the energy available to consumers (stored in plant biomass)
+NPP is the rate of energy storage in plant biomass — this is the energy available to consumers
 </div>
 
-<p>Energy transfer between trophic levels is inefficient (typically 5-20%):</p>
+<p>Similarly, for consumers:</p>
+<div class="equation">
+Net Production (N) = Ingested energy (I) - Faecal losses (F) - Respiratory losses (R)
+</div>
+
+<p>Energy transfer between trophic levels is <strong>inefficient</strong> (typically only 5-20% of energy passes to the next level). Energy is lost because:</p>
 <ul>
-<li>Not all organisms at one level are eaten (some die and enter detritivore food chains)</li>
-<li>Not all parts eaten are digested (egested as faeces)</li>
-<li>Energy lost as heat through respiration at each trophic level</li>
-<li>Energy lost in excretory products (urine)</li>
+<li><strong>Not all organisms are eaten</strong> — some die and are decomposed (enter the detritivore food chain)</li>
+<li><strong>Not all parts eaten are digested</strong> — indigestible material (cellulose, bone, chitin) is egested as faeces</li>
+<li><strong>Respiratory heat loss</strong> — the largest loss at each level; energy released from respiration as metabolic heat cannot be used by the next trophic level (except in endotherms where it maintains body temperature)</li>
+<li><strong>Excretory losses</strong> — urea in urine, CO<sub>2</sub> breathed out</li>
 </ul>
 
 <div class="equation">
-Efficiency of energy transfer = (Energy available at trophic level n+1 / Energy available at trophic level n) × 100%
+Efficiency of energy transfer = (Energy available at trophic level n+1 / Energy available at trophic level n) x 100%
+</div>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> This efficiency is typically 5-20% between trophic levels. This explains why food chains rarely exceed 4-5 trophic levels — too little energy reaches higher levels to sustain populations. It also explains why farming animals is less energy-efficient than growing crops. Endotherms (mammals, birds) lose more energy as heat than ectotherms (reptiles, fish), so conversion efficiency is lower in cattle (~4%) than in fish (~10%).
+</div>
+
+<h3>Farming Practices and Productivity</h3>
+<p>Agricultural practices aim to maximise NPP (crop yield) or to improve energy transfer efficiency in livestock:</p>
+<ul>
+<li><strong>Crop productivity:</strong> Fertilisers (replace minerals removed at harvest), pesticides (reduce energy loss to pests), selective breeding for high-yield varieties, glasshouses (optimise limiting factors)</li>
+<li><strong>Livestock productivity:</strong> Restricting movement (less energy lost in locomotion), controlling temperature (less energy for thermoregulation), high-energy feed (more digestible), selective breeding for fast growth</li>
+</ul>
+
+<div class="real-world">
+<strong>Real-World Link:</strong> There is an ethical debate around intensive farming. Battery hens and veal crates maximise energy conversion efficiency but raise serious animal welfare concerns. Free-range farming is less energy-efficient but allows more natural behaviour. The growing demand for plant-based diets is partly driven by the ecological argument that eating lower on the food chain is more energy-efficient and requires less land — approximately 10x less land per calorie compared to beef production.
 </div>
 
 <h3>Nutrient Cycles</h3>
 
 <p><strong>The Carbon Cycle:</strong></p>
 <ul>
-<li>CO<sub>2</sub> enters living systems via photosynthesis (carbon fixation by RuBisCO)</li>
-<li>Carbon passes through food chains as organic molecules</li>
-<li>CO<sub>2</sub> returned to atmosphere by respiration (all organisms), combustion of fossil fuels, and decomposition</li>
-<li>Carbon stored long-term in fossil fuels, limestone, and ocean carbonates</li>
+<li>CO<sub>2</sub> enters living systems via <strong>photosynthesis</strong> (carbon fixation by RuBisCO in producers)</li>
+<li>Carbon passes through food chains as organic molecules (glucose, amino acids, lipids, nucleic acids)</li>
+<li>CO<sub>2</sub> returned to atmosphere by <strong>respiration</strong> (all organisms), <strong>combustion</strong> of fossil fuels, and <strong>decomposition</strong> (saprobionts release CO<sub>2</sub> through respiration as they break down dead organic matter)</li>
+<li>Carbon stored long-term as fossil fuels (coal, oil, natural gas — formed from ancient organisms), limestone (CaCO<sub>3</sub>), and dissolved ocean carbonates</li>
+<li>Human combustion of fossil fuels is releasing stored carbon faster than it can be re-fixed, causing rising atmospheric CO<sub>2</sub> and climate change</li>
 </ul>
 
 <p><strong>The Nitrogen Cycle:</strong></p>
 <ul>
-<li><strong>Nitrogen fixation:</strong> N<sub>2</sub> → NH<sub>4</sub><sup>+</sup> by Rhizobium (in root nodules of legumes) or by lightning</li>
-<li><strong>Nitrification:</strong> NH<sub>4</sub><sup>+</sup> → NO<sub>2</sub><sup>-</sup> → NO<sub>3</sub><sup>-</sup> by nitrifying bacteria (Nitrosomonas, Nitrobacter) — requires aerobic conditions</li>
-<li><strong>Assimilation:</strong> Plants absorb NO<sub>3</sub><sup>-</sup> or NH<sub>4</sub><sup>+</sup> to make amino acids and nucleotides</li>
-<li><strong>Ammonification:</strong> Decomposers break down organic nitrogen in dead matter → NH<sub>4</sub><sup>+</sup></li>
-<li><strong>Denitrification:</strong> NO<sub>3</sub><sup>-</sup> → N<sub>2</sub> by denitrifying bacteria under anaerobic (waterlogged) conditions</li>
-</ul>
-
-<p><strong>The Phosphorus Cycle:</strong></p>
-<ul>
-<li>Phosphorus is found in rocks (as phosphate minerals); released by weathering</li>
-<li>Phosphate ions (PO<sub>4</sub><sup>3-</sup>) absorbed by plants from soil solution</li>
-<li>Passes through food chains in nucleic acids, ATP, phospholipids</li>
-<li>Returned to soil by decomposition; eventually re-incorporated into sedimentary rock</li>
+<li><strong>Nitrogen fixation:</strong> N<sub>2</sub> &rarr; NH<sub>4</sub><sup>+</sup> (ammonium) by <em>Rhizobium</em> bacteria in root nodules of leguminous plants (mutualistic relationship). Also by free-living <em>Azotobacter</em>, and industrially by the Haber process (for fertiliser). Lightning can also fix small amounts.</li>
+<li><strong>Nitrification:</strong> NH<sub>4</sub><sup>+</sup> &rarr; NO<sub>2</sub><sup>&minus;</sup> (by <em>Nitrosomonas</em>) &rarr; NO<sub>3</sub><sup>&minus;</sup> (by <em>Nitrobacter</em>). These are <strong>chemoautotrophic</strong> nitrifying bacteria that require <strong>aerobic conditions</strong>.</li>
+<li><strong>Assimilation:</strong> Plants absorb NO<sub>3</sub><sup>&minus;</sup> or NH<sub>4</sub><sup>+</sup> via active transport in root hairs. These are used to make amino acids, nucleotides, and chlorophyll. Animals obtain nitrogen by eating plants/other animals.</li>
+<li><strong>Ammonification:</strong> Decomposers (saprobionts) break down organic nitrogen compounds (proteins, nucleic acids) in dead organisms and excretory products &rarr; NH<sub>4</sub><sup>+</sup> released into soil.</li>
+<li><strong>Denitrification:</strong> NO<sub>3</sub><sup>&minus;</sup> &rarr; N<sub>2</sub> (gas lost to atmosphere) by denitrifying bacteria (e.g. <em>Pseudomonas</em>) under <strong>anaerobic conditions</strong> (waterlogged soil). This is a loss of useful nitrogen from the soil.</li>
 </ul>
 
 <div class="exam-tip">
-<strong>Exam Tip:</strong> Farming reduces soil nutrient levels because crops are harvested and removed from the ecosystem. This is why farmers add fertilisers (NPK) — to replace nitrogen, phosphorus, and potassium removed in harvested biomass.
+<strong>Exam Tip:</strong> Remember the conditions: nitrification requires aerobic conditions (well-aerated soil), while denitrification occurs under anaerobic conditions (waterlogged soil). Farmers plough soil to increase aeration, promoting nitrification and reducing denitrification — this keeps nitrogen available as nitrate for plant uptake.
+</div>
+
+<p><strong>The Phosphorus Cycle:</strong></p>
+<ul>
+<li>Phosphorus is found in rocks as phosphate minerals; released by <strong>weathering</strong> over geological timescales</li>
+<li>Phosphate ions (PO<sub>4</sub><sup>3&minus;</sup>) absorbed by plants from soil solution via active transport</li>
+<li>Passes through food chains in nucleic acids, ATP, phospholipids, bone</li>
+<li>Returned to soil by decomposition of dead organisms and excretion</li>
+<li>Leached into rivers and eventually deposited in ocean sediments; re-incorporated into sedimentary rock over millions of years</li>
+<li>Phosphorus has no gaseous phase — unlike carbon and nitrogen, it does not cycle through the atmosphere</li>
+</ul>
+
+<div class="real-world">
+<strong>Real-World Link:</strong> Farming removes nutrients because crops are harvested rather than allowed to decompose and return minerals to the soil. Farmers add NPK fertilisers (nitrogen, phosphorus, potassium) to replace what is removed. Excess fertiliser can leach into waterways causing <strong>eutrophication</strong>: increased mineral ions &rarr; algal bloom &rarr; algae block light &rarr; aquatic plants die &rarr; decomposer bacteria multiply &rarr; bacterial respiration depletes dissolved oxygen &rarr; aerobic organisms (fish) die. This is a common AQA extended-response topic.
 </div>
 
 </div></body></html>
