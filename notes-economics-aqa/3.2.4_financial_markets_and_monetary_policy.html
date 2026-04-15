@@ -6,11 +6,12 @@
 <title>3.2.4 Financial Markets and Monetary Policy — AQA A-Level Economics</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.65; padding: 40px 24px; }
-  .container { max-width: 800px; margin: 0 auto; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.7; padding: 40px 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
   h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 24px; }
-  h2 { font-size: 1.45rem; color: #16213e; margin: 32px 0 14px; }
+  h2 { font-size: 1.5rem; color: #16213e; margin: 36px 0 14px; border-left: 4px solid #1a73e8; padding-left: 12px; }
   h3 { font-size: 1.15rem; color: #1a1a2e; margin: 22px 0 10px; }
+  h4 { font-size: 1.05rem; color: #334155; margin: 16px 0 8px; }
   p { margin: 8px 0; }
   ul, ol { margin: 8px 0 8px 24px; }
   li { margin: 4px 0; }
@@ -20,10 +21,13 @@
   tr:nth-child(even) { background: #f8fafc; }
   .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
   .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
-  .diagram-box { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
+  .case-study { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .case-study strong.cs-title { color: #0369a1; font-size: 1.05rem; display: block; margin-bottom: 6px; }
+  .eval-box { background: #faf5ff; border-left: 4px solid #8b5cf6; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .diagram-box { background: #f9fafb; border: 2px solid #d1d5db; border-radius: 10px; padding: 20px; margin: 18px 0; text-align: center; }
   .diagram-box svg { max-width: 100%; }
   .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 8px; font-style: italic; }
-  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+  .eq { background: #f1f5f9; padding: 10px; border-radius: 6px; text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
 </style>
 </head>
@@ -32,227 +36,838 @@
 
 <h1>3.2.4 Financial Markets and Monetary Policy</h1>
 
-<h2>The Role of Financial Markets</h2>
+<!-- ===== SECTION 1: ROLE OF FINANCIAL MARKETS ===== -->
+<h2>1. The Role and Functions of Financial Markets</h2>
 
 <div class="def-box">
-<strong>Financial markets</strong> are markets where financial instruments (shares, bonds, currencies, derivatives) are traded. They facilitate the flow of funds from savers to borrowers and play a crucial role in the allocation of capital in the economy.
+<strong>Financial markets</strong> are markets in which financial instruments (shares, bonds, currencies, derivatives) are traded. They facilitate the flow of funds from those with surplus capital (savers) to those who need capital (borrowers), playing a crucial role in the efficient allocation of resources in the economy.
 </div>
 
-<h3>Functions of Financial Markets</h3>
+<h3>1.1 Key Functions of Financial Markets</h3>
 <ul>
-  <li><strong>Channelling funds from savers to borrowers</strong> — financial intermediation (banks take deposits and make loans)</li>
-  <li><strong>Providing liquidity</strong> — allowing assets to be bought and sold easily</li>
-  <li><strong>Pricing risk</strong> — the price of financial assets reflects the risk of the underlying investment</li>
-  <li><strong>Facilitating exchange</strong> — currency markets enable international trade</li>
-  <li><strong>Enabling firms to raise capital</strong> — through issuing shares (equity) or bonds (debt)</li>
-  <li><strong>Forward markets</strong> — allowing hedging against future price/currency changes</li>
+  <li><strong>Facilitating saving</strong> — financial markets provide a safe and rewarding place for households and firms to save surplus income (e.g. bank deposits, bonds, ISAs).</li>
+  <li><strong>Channelling funds from savers to borrowers (financial intermediation)</strong> — banks and other institutions take deposits and make loans, directing capital to its most productive use. This is the core function of financial markets.</li>
+  <li><strong>Providing liquidity</strong> — secondary markets (e.g. the London Stock Exchange) allow financial assets to be bought and sold quickly, so investors are not locked in. Liquidity is vital for confidence in the financial system.</li>
+  <li><strong>Pricing risk</strong> — the price/yield of a financial asset reflects its perceived risk. Riskier bonds pay higher interest rates (yields). Share prices reflect expected profitability. This helps allocate capital efficiently.</li>
+  <li><strong>Enabling firms to raise capital</strong> — companies can issue shares (equity finance) via an IPO or rights issue, or issue bonds (debt finance). This is essential for investment and economic growth.</li>
+  <li><strong>Facilitating international trade</strong> — the foreign exchange market allows currencies to be exchanged, enabling importers and exporters to conduct business across borders.</li>
+  <li><strong>Providing forward markets for hedging</strong> — derivatives (futures, options) allow firms to manage risk by locking in future prices for currencies, commodities, or interest rates.</li>
 </ul>
 
-<h3>Types of Financial Markets</h3>
+<h3>1.2 Types of Financial Markets</h3>
+
 <table>
-<tr><th>Market</th><th>What Is Traded</th><th>Function</th></tr>
-<tr><td>Money markets</td><td>Short-term debt (up to 1 year)</td><td>Short-term lending/borrowing between banks and institutions</td></tr>
-<tr><td>Capital markets</td><td>Long-term debt and equity</td><td>Firms raise long-term finance (stock market, bond market)</td></tr>
-<tr><td>Foreign exchange (forex) market</td><td>Currencies</td><td>Facilitates international trade and investment</td></tr>
-<tr><td>Derivatives markets</td><td>Futures, options, swaps</td><td>Risk management and speculation</td></tr>
+<tr><th>Market</th><th>What is Traded</th><th>Key Features</th></tr>
+<tr>
+  <td><strong>Money markets</strong></td>
+  <td>Short-term debt instruments (maturity up to 1 year) — Treasury bills, commercial paper, interbank loans</td>
+  <td>Used by banks, firms, and governments for short-term borrowing and lending. The Bank of England operates in the money market to influence short-term interest rates.</td>
+</tr>
+<tr>
+  <td><strong>Capital markets</strong></td>
+  <td>Long-term debt (bonds) and equity (shares)</td>
+  <td>The stock market and bond market. Firms raise long-term finance here. Primary market = new issues; secondary market = trading existing securities.</td>
+</tr>
+<tr>
+  <td><strong>Foreign exchange (forex) market</strong></td>
+  <td>Currencies</td>
+  <td>The largest financial market in the world (over $6 trillion traded daily). Determines exchange rates. Operates 24 hours a day globally.</td>
+</tr>
+<tr>
+  <td><strong>Derivatives markets</strong></td>
+  <td>Futures, options, swaps, CDOs</td>
+  <td>Financial instruments whose value derives from an underlying asset. Used for hedging (risk management) and speculation. Their complexity contributed to the 2008 crisis.</td>
+</tr>
 </table>
-
-<h2>The Role of Money</h2>
-
-<div class="def-box">
-<strong>Money</strong> is anything widely accepted as a medium of exchange. It serves four functions:<br>
-1. <strong>Medium of exchange</strong> — eliminates the need for barter<br>
-2. <strong>Store of value</strong> — can be saved and used later (inflation erodes this)<br>
-3. <strong>Unit of account</strong> — allows prices to be compared<br>
-4. <strong>Standard of deferred payment</strong> — enables credit and future payment contracts
-</div>
-
-<h3>Money Supply</h3>
-<p>The money supply is the total stock of money circulating in an economy. Key measures:</p>
-<ul>
-  <li><strong>Narrow money (M0/base money)</strong> — notes and coins in circulation plus banks' reserves at the central bank</li>
-  <li><strong>Broad money (M4)</strong> — includes narrow money plus bank deposits and other liquid assets. This is the more relevant measure as most money exists as bank deposits, not physical cash.</li>
-</ul>
-
-<h3>How Banks Create Money</h3>
-<p>Commercial banks create money through the process of lending. When a bank makes a loan, it creates a new deposit (an asset for the borrower and a liability for the bank). This is the "credit creation" or "money multiplier" process:</p>
-<ul>
-  <li>A bank receives a deposit and keeps a fraction as reserves (reserve ratio)</li>
-  <li>It lends the remainder, which creates a new deposit when spent</li>
-  <li>This deposit enables further lending, and so on</li>
-  <li>The credit multiplier = 1 / reserve ratio</li>
-</ul>
-
-<h2>The Money Market</h2>
-
-<div class="diagram-box">
-<svg width="420" height="320" viewBox="0 0 420 320">
-  <!-- Axes -->
-  <line x1="60" y1="270" x2="380" y2="270" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="60" y1="270" x2="60" y2="30" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="380,270 370,265 370,275" fill="#1a1a2e"/>
-  <polygon points="60,30 55,40 65,40" fill="#1a1a2e"/>
-  <text x="220" y="300" text-anchor="middle" font-size="13" fill="#1a1a2e">Quantity of Money</text>
-  <text x="20" y="150" text-anchor="middle" font-size="13" fill="#1a1a2e" transform="rotate(-90,20,150)">Interest Rate (%)</text>
-  <!-- Money Supply (vertical) -->
-  <line x1="220" y1="50" x2="220" y2="265" stroke="#1a73e8" stroke-width="2.5"/>
-  <text x="230" y="45" font-size="11" fill="#1a73e8" font-weight="bold">MS</text>
-  <!-- Money Supply 2 (shifted right) -->
-  <line x1="280" y1="50" x2="280" y2="265" stroke="#1a73e8" stroke-width="2" stroke-dasharray="6,4"/>
-  <text x="290" y="45" font-size="11" fill="#1a73e8">MS2</text>
-  <!-- Money Demand (downward sloping) -->
-  <line x1="90" y1="60" x2="360" y2="240" stroke="#ef4444" stroke-width="2.5"/>
-  <text x="365" y="240" font-size="11" fill="#ef4444" font-weight="bold">MD</text>
-  <!-- Equilibrium 1 -->
-  <circle cx="220" cy="140" r="4" fill="#555"/>
-  <line x1="60" y1="140" x2="220" y2="140" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="40" y="144" font-size="11" fill="#555">r1</text>
-  <!-- Equilibrium 2 -->
-  <circle cx="280" cy="175" r="4" fill="#555"/>
-  <line x1="60" y1="175" x2="280" y2="175" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="40" y="179" font-size="11" fill="#555">r2</text>
-  <!-- Arrow showing MS shift -->
-  <line x1="235" y1="155" x2="265" y2="155" stroke="#22c55e" stroke-width="2" marker-end="url(#arrGn)"/>
-  <text x="200" y="230" font-size="10" fill="#22c55e">Increase in MS → lower interest rate</text>
-  <defs><marker id="arrGn" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#22c55e"/></marker></defs>
-</svg>
-<div class="diagram-caption">Figure 1: The money market — an increase in money supply reduces the equilibrium interest rate</div>
-</div>
-
-<h3>Money Demand (Liquidity Preference)</h3>
-<p>Keynes identified three motives for holding money:</p>
-<ul>
-  <li><strong>Transactions motive</strong> — money needed for everyday purchases (increases with income)</li>
-  <li><strong>Precautionary motive</strong> — money held for unexpected expenses</li>
-  <li><strong>Speculative motive</strong> — money held to take advantage of future changes in asset prices (inversely related to interest rates — at low rates, the opportunity cost of holding money is low)</li>
-</ul>
-
-<h2>The Central Bank (Bank of England)</h2>
-
-<div class="def-box">
-<strong>The Bank of England</strong> is the UK's central bank. Its primary objective is to maintain price stability (CPI inflation at 2%). It was granted operational independence in 1997 to set interest rates through the Monetary Policy Committee (MPC).
-</div>
-
-<h3>Roles of the Bank of England</h3>
-<ul>
-  <li><strong>Setting monetary policy</strong> — the MPC sets the Bank Rate (base interest rate)</li>
-  <li><strong>Lender of last resort</strong> — providing emergency liquidity to banks to prevent systemic collapse</li>
-  <li><strong>Managing the national debt</strong></li>
-  <li><strong>Banker to the government and commercial banks</strong></li>
-  <li><strong>Issuing banknotes</strong></li>
-  <li><strong>Maintaining financial stability</strong> — macro-prudential regulation</li>
-  <li><strong>Managing foreign exchange reserves</strong></li>
-</ul>
-
-<h2>Monetary Policy</h2>
-
-<div class="def-box">
-<strong>Monetary policy</strong> involves the use of interest rates, money supply, and credit conditions to influence aggregate demand and achieve macroeconomic objectives (primarily the 2% inflation target).
-</div>
-
-<h3>Interest Rates</h3>
-<p>The Bank Rate is the main tool of monetary policy. The MPC meets 8 times a year to decide whether to change it.</p>
-
-<h3>The Transmission Mechanism of Monetary Policy</h3>
-<p>A change in the Bank Rate affects the economy through multiple channels:</p>
-
-<ol>
-  <li><strong>Borrowing/saving channel</strong> — lower rates reduce the cost of borrowing and reward for saving → more spending (C and I rise)</li>
-  <li><strong>Asset prices channel</strong> — lower rates boost asset prices (houses, shares) → positive wealth effect → higher consumption</li>
-  <li><strong>Exchange rate channel</strong> — lower rates make the UK less attractive for foreign investment → exchange rate depreciates → exports cheaper, imports dearer → net exports rise</li>
-  <li><strong>Expectations/confidence channel</strong> — rate cuts signal economic support, boosting confidence</li>
-  <li><strong>Cash flow channel</strong> — lower mortgage payments increase disposable income for homeowners</li>
-</ol>
-
-<h3>Expansionary vs Contractionary Monetary Policy</h3>
-<table>
-<tr><th>Expansionary (loose)</th><th>Contractionary (tight)</th></tr>
-<tr><td>Cut interest rates</td><td>Raise interest rates</td></tr>
-<tr><td>Increase money supply (QE)</td><td>Decrease money supply</td></tr>
-<tr><td>Stimulates AD</td><td>Reduces AD</td></tr>
-<tr><td>Used when: inflation below target, recession, high unemployment</td><td>Used when: inflation above target, economy overheating</td></tr>
-<tr><td>Risk: may cause inflation, asset bubbles</td><td>Risk: may cause unemployment, recession</td></tr>
-</table>
-
-<h2>Quantitative Easing (QE)</h2>
-
-<div class="def-box">
-<strong>Quantitative Easing (QE)</strong> is an unconventional monetary policy tool used when interest rates are at or near zero (the zero lower bound). The central bank creates new money electronically and uses it to purchase financial assets (mainly government bonds) from financial institutions.
-</div>
-
-<h3>How QE Works</h3>
-<ol>
-  <li>Bank of England creates new electronic money</li>
-  <li>Uses it to buy government bonds from pension funds, insurance companies, and banks</li>
-  <li>This pushes up bond prices and pushes down bond yields (long-term interest rates)</li>
-  <li>Sellers of bonds now have cash which they may reinvest in riskier assets (shares, corporate bonds) or lend</li>
-  <li>This stimulates investment and spending in the real economy</li>
-  <li>Wealth effect from rising asset prices encourages consumption</li>
-</ol>
-
-<h3>Evaluation of QE</h3>
-<p><strong>Advantages:</strong></p>
-<ul>
-  <li>Provides stimulus when conventional monetary policy is exhausted (rates at zero)</li>
-  <li>Reduces long-term borrowing costs for firms and government</li>
-  <li>Prevents deflation and supports economic recovery</li>
-  <li>Can restore confidence in financial markets</li>
-</ul>
-
-<p><strong>Disadvantages/Limitations:</strong></p>
-<ul>
-  <li>May increase inequality (benefits those with assets — house/share owners — more than those without)</li>
-  <li>Risk of future inflation if money supply grows too fast relative to output</li>
-  <li>Banks may not lend the extra reserves ("pushing on a string" — banks hoard liquidity)</li>
-  <li>May create asset bubbles (artificially inflated house/share prices)</li>
-  <li>Exit strategy is difficult — unwinding QE (selling bonds back) may disrupt markets</li>
-  <li>Weakens the exchange rate — imported inflation risk</li>
-</ul>
-
-<h2>Evaluation of Monetary Policy</h2>
-
-<h3>Strengths</h3>
-<ul>
-  <li>Independent from political interference (MPC makes decisions based on data, not elections)</li>
-  <li>Flexible — can be adjusted quickly (MPC meets every 6 weeks)</li>
-  <li>Proven track record — UK inflation remained close to 2% for much of 1997-2021</li>
-  <li>Credibility — if markets trust the central bank, expectations remain anchored</li>
-</ul>
-
-<h3>Weaknesses/Limitations</h3>
-<ul>
-  <li><strong>Time lags</strong> — takes 18-24 months for interest rate changes to fully affect the economy</li>
-  <li><strong>Blunt instrument</strong> — affects all sectors equally, cannot target specific problems</li>
-  <li><strong>Ineffective against cost-push inflation</strong> — raising rates does not address supply-side cost increases</li>
-  <li><strong>Liquidity trap</strong> — at very low interest rates, further cuts may have no effect (consumers/firms save rather than spend)</li>
-  <li><strong>Asymmetric effects</strong> — rate changes affect borrowers more than savers (or vice versa)</li>
-  <li><strong>Depends on bank lending</strong> — if banks are unwilling to lend, lower rates may not translate to more credit</li>
-  <li><strong>Exchange rate conflicts</strong> — rate changes to control inflation may have unwanted exchange rate effects</li>
-</ul>
 
 <div class="tip-box">
-<strong>Exam Tip:</strong> When evaluating monetary policy, consider the current economic context. Monetary policy is most effective when: inflation is demand-pull, the banking system is functioning normally, consumer/business confidence is moderate, and there is room to cut or raise rates. It is least effective during supply shocks, financial crises, or when rates are already at zero.
+<strong>Exam Tip:</strong> Make sure you can distinguish between money markets (short-term, less than 1 year) and capital markets (long-term). Also distinguish between primary markets (new issues of shares/bonds) and secondary markets (trading existing ones). The secondary market provides liquidity but does not directly raise new capital for firms.
 </div>
 
-<h2>Financial Market Failure and Regulation</h2>
+<!-- ===== SECTION 2: MONEY ===== -->
+<h2>2. Money: Functions and the Money Supply</h2>
 
-<h3>Causes of Financial Instability</h3>
+<h3>2.1 What is Money?</h3>
+
+<div class="def-box">
+<strong>Money</strong> is anything that is widely accepted as a medium of exchange for goods and services. In modern economies, money is primarily digital bank deposits rather than physical cash.
+</div>
+
+<h3>2.2 The Four Functions of Money</h3>
+<ol>
+  <li><strong>Medium of exchange</strong> — money eliminates the need for barter (which requires a "double coincidence of wants"). It allows specialisation and trade to occur efficiently.</li>
+  <li><strong>Store of value</strong> — money can be saved and used to make purchases in the future. However, inflation erodes this function: if prices rise, the real value of money falls.</li>
+  <li><strong>Unit of account</strong> — money provides a common measure in which the value of goods and services can be expressed and compared (e.g. pricing everything in pounds).</li>
+  <li><strong>Standard of deferred payment</strong> — money enables credit, loans, and contracts that involve payments in the future. Without this function, borrowing and lending would be very difficult.</li>
+</ol>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Hyperinflation destroys all four functions of money. In Zimbabwe (2008) and Venezuela (2018+), money could no longer serve as a reliable store of value or unit of account, and people reverted to barter or foreign currencies (dollarisation).
+</div>
+
+<h3>2.3 The Money Supply</h3>
+<p>The money supply is the total stock of money circulating in an economy at a given time. There are different measures:</p>
+
+<table>
+<tr><th>Measure</th><th>Includes</th><th>Key Points</th></tr>
+<tr>
+  <td><strong>M0 (Narrow money / Monetary base)</strong></td>
+  <td>Notes and coins in circulation + banks' reserve balances held at the Bank of England</td>
+  <td>A very narrow measure. Physical cash is only a small fraction of total money in the economy (around 3-4%).</td>
+</tr>
+<tr>
+  <td><strong>M4 (Broad money)</strong></td>
+  <td>M0 + all bank and building society deposits held by UK households and firms (current accounts, savings accounts, time deposits)</td>
+  <td>The most commonly used measure. The vast majority of money in the UK economy exists as electronic bank deposits, not physical cash. M4 was approximately 2.9 trillion GBP in 2023.</td>
+</tr>
+</table>
+
+<h3>2.4 How Banks Create Money: The Credit Creation Multiplier</h3>
+
+<p>Commercial banks do not simply lend out money that has been deposited with them. When a bank makes a loan, it <strong>creates a new deposit</strong> in the borrower's account. This is the process of credit creation, and it means that banks create the majority of money in the modern economy.</p>
+
+<h4>The Process Step by Step</h4>
+<ol>
+  <li>A customer deposits 1,000 GBP in Bank A.</li>
+  <li>Bank A keeps a fraction as reserves (say 10%, i.e. 100 GBP) and lends out the remaining 900 GBP.</li>
+  <li>The borrower spends the 900 GBP, which is deposited in Bank B.</li>
+  <li>Bank B keeps 10% (90 GBP) as reserves and lends out 810 GBP.</li>
+  <li>This process continues, with each round creating new deposits but in smaller amounts.</li>
+</ol>
+
+<div class="eq">
+Credit Multiplier = 1 / Reserve Ratio
+</div>
+
+<p>If the reserve ratio is 10% (0.1), then the credit multiplier = 1 / 0.1 = <strong>10</strong>. An initial deposit of 1,000 GBP could theoretically create up to 10,000 GBP of money in the banking system.</p>
+
+<div class="eval-box">
+<strong>Evaluation: Limitations of the Credit Multiplier Model</strong>
 <ul>
-  <li>Excessive risk-taking by banks (moral hazard — "too big to fail")</li>
-  <li>Asset bubbles (property, shares) fuelled by cheap credit</li>
-  <li>Lack of transparency in complex financial products</li>
-  <li>Herding behaviour and speculation</li>
-  <li>Inadequate capital reserves in banks</li>
+  <li>In practice, the multiplier is much smaller than the theoretical maximum because banks may choose to hold excess reserves (especially during crises when they fear losses).</li>
+  <li>Borrowers may not spend all of their loan, or may repay debts rather than creating new deposits.</li>
+  <li>Cash leakage — some money is withdrawn as cash and leaves the banking system.</li>
+  <li>The Bank of England (2014) has stated that in the modern economy, banks do not simply multiply up deposits. Instead, lending decisions are driven by profitability and regulation (capital requirements), not mechanically by reserves.</li>
+</ul>
+</div>
+
+<!-- ===== SECTION 3: THE MONEY MARKET ===== -->
+<h2>3. The Money Market Diagram</h2>
+
+<p>The money market model shows how the interaction of money supply and money demand determines the equilibrium interest rate. This is a key diagram for this topic.</p>
+
+<div class="diagram-box">
+<svg width="480" height="370" viewBox="0 0 480 370">
+  <defs>
+    <marker id="arrBlk" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#1a1a2e"/></marker>
+    <marker id="arrGrn" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#16a34a"/></marker>
+  </defs>
+  <!-- Axes -->
+  <line x1="70" y1="300" x2="430" y2="300" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrBlk)"/>
+  <line x1="70" y1="300" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrBlk)"/>
+  <text x="250" y="340" text-anchor="middle" font-size="13" fill="#1a1a2e" font-weight="600">Quantity of Money</text>
+  <text x="18" y="170" text-anchor="middle" font-size="13" fill="#1a1a2e" font-weight="600" transform="rotate(-90,18,170)">Rate of Interest (r)</text>
+
+  <!-- Money Supply MS1 (vertical) -->
+  <line x1="220" y1="55" x2="220" y2="295" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="210" y="48" font-size="12" fill="#1a73e8" font-weight="bold">MS1</text>
+
+  <!-- Money Supply MS2 (shifted right, dashed) -->
+  <line x1="300" y1="55" x2="300" y2="295" stroke="#1a73e8" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="305" y="48" font-size="12" fill="#1a73e8" font-weight="bold">MS2</text>
+
+  <!-- Money Demand (downward sloping) -->
+  <line x1="100" y1="70" x2="400" y2="270" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="405" y="270" font-size="12" fill="#dc2626" font-weight="bold">MD</text>
+  <text x="405" y="284" font-size="10" fill="#dc2626">(Liquidity</text>
+  <text x="405" y="296" font-size="10" fill="#dc2626">Preference)</text>
+
+  <!-- Equilibrium 1 -->
+  <circle cx="220" cy="150" r="4" fill="#1a1a2e"/>
+  <line x1="70" y1="150" x2="220" y2="150" stroke="#64748b" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="50" y="154" font-size="12" fill="#1a1a2e" font-weight="600">r1</text>
+
+  <!-- Equilibrium 2 -->
+  <circle cx="300" cy="203" r="4" fill="#1a1a2e"/>
+  <line x1="70" y1="203" x2="300" y2="203" stroke="#64748b" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="50" y="207" font-size="12" fill="#1a1a2e" font-weight="600">r2</text>
+
+  <!-- Quantity labels -->
+  <line x1="220" y1="300" x2="220" y2="308" stroke="#64748b" stroke-width="1"/>
+  <text x="220" y="320" font-size="11" fill="#1a1a2e" text-anchor="middle">Q1</text>
+  <line x1="300" y1="300" x2="300" y2="308" stroke="#64748b" stroke-width="1"/>
+  <text x="300" y="320" font-size="11" fill="#1a1a2e" text-anchor="middle">Q2</text>
+
+  <!-- Shift arrow -->
+  <line x1="235" y1="180" x2="282" y2="180" stroke="#16a34a" stroke-width="2" marker-end="url(#arrGrn)"/>
+  <text x="258" y="172" font-size="10" fill="#16a34a" text-anchor="middle">Increase</text>
+  <text x="258" y="160" font-size="10" fill="#16a34a" text-anchor="middle">in MS</text>
+</svg>
+<div class="diagram-caption">Figure 1: The money market — an increase in money supply (MS1 to MS2) lowers the equilibrium interest rate from r1 to r2.</div>
+</div>
+
+<h3>Key Points from the Diagram</h3>
+<ul>
+  <li><strong>Money supply (MS) is vertical</strong> because it is set by the central bank (exogenous) and does not change with the interest rate.</li>
+  <li><strong>Money demand (MD) is downward sloping</strong> because at lower interest rates, the opportunity cost of holding money is lower, so people demand more money (liquidity preference).</li>
+  <li>An <strong>increase in money supply</strong> (MS shifts right) leads to a <strong>fall in the equilibrium interest rate</strong>.</li>
+  <li>A <strong>decrease in money supply</strong> (MS shifts left) leads to a <strong>rise in the equilibrium interest rate</strong>.</li>
+  <li>An <strong>increase in money demand</strong> (MD shifts right) — e.g. due to higher national income — leads to a <strong>rise in the interest rate</strong> for a given money supply.</li>
 </ul>
 
-<h3>Regulation of Financial Markets</h3>
+<h3>3.1 Liquidity Preference Theory (Keynes)</h3>
+
+<div class="def-box">
+<strong>Liquidity preference</strong> is Keynes' theory that the interest rate is determined by the supply of and demand for money. People have a preference for holding their wealth in liquid form (money) rather than illiquid assets (bonds). The interest rate is the reward for giving up liquidity.
+</div>
+
+<p>Keynes identified <strong>three motives</strong> for holding money (demanding liquidity):</p>
+
+<table>
+<tr><th>Motive</th><th>Explanation</th><th>Determined By</th></tr>
+<tr>
+  <td><strong>Transactions motive</strong></td>
+  <td>Money needed for everyday purchases of goods and services. Firms need money for wages, raw materials, etc.</td>
+  <td>Positively related to national income (Y). Higher GDP means more transactions and more money demanded.</td>
+</tr>
+<tr>
+  <td><strong>Precautionary motive</strong></td>
+  <td>Money held as a buffer for unexpected expenses or emergencies (e.g. car repairs, medical bills, sudden drops in income).</td>
+  <td>Positively related to income and uncertainty. In times of economic uncertainty, people hold more precautionary balances.</td>
+</tr>
+<tr>
+  <td><strong>Speculative motive</strong></td>
+  <td>Money held to take advantage of future changes in bond prices or interest rates. If people expect interest rates to rise (and bond prices to fall), they hold money now to buy bonds cheaply later.</td>
+  <td><strong>Inversely related to the interest rate.</strong> At low interest rates, the opportunity cost of holding money is low, so more money is demanded speculatively. This gives the MD curve its downward slope.</td>
+</tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Remember the inverse relationship between bond prices and interest rates. When interest rates rise, existing bonds with lower coupon rates become less attractive, so their price falls. When interest rates fall, existing bonds become more attractive, so their price rises. This is key to understanding the speculative motive.
+</div>
+
+<!-- ===== SECTION 4: THE LIQUIDITY TRAP ===== -->
+<h3>3.2 The Liquidity Trap</h3>
+
+<div class="def-box">
+<strong>The liquidity trap</strong> occurs when interest rates are so low (at or near zero) that monetary policy becomes ineffective. People become indifferent between holding money and bonds because the return on bonds is negligible. The MD curve becomes perfectly elastic (horizontal) at very low interest rates.
+</div>
+
+<div class="diagram-box">
+<svg width="480" height="350" viewBox="0 0 480 350">
+  <defs>
+    <marker id="arrBlk2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#1a1a2e"/></marker>
+  </defs>
+  <!-- Axes -->
+  <line x1="70" y1="280" x2="430" y2="280" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrBlk2)"/>
+  <line x1="70" y1="280" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrBlk2)"/>
+  <text x="250" y="315" text-anchor="middle" font-size="13" fill="#1a1a2e" font-weight="600">Quantity of Money</text>
+  <text x="18" y="155" text-anchor="middle" font-size="13" fill="#1a1a2e" font-weight="600" transform="rotate(-90,18,155)">Rate of Interest (r)</text>
+
+  <!-- MD curve: downward sloping then flat (liquidity trap) -->
+  <polyline points="110,60 200,160 240,200 260,220 280,232 310,240 420,240" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="108" y="55" font-size="12" fill="#dc2626" font-weight="bold">MD</text>
+
+  <!-- MS1 in the trap zone -->
+  <line x1="340" y1="50" x2="340" y2="275" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="330" y="45" font-size="11" fill="#1a73e8" font-weight="bold">MS1</text>
+
+  <!-- MS2 also in trap zone -->
+  <line x1="390" y1="50" x2="390" y2="275" stroke="#1a73e8" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="394" y="45" font-size="11" fill="#1a73e8" font-weight="bold">MS2</text>
+
+  <!-- Trap interest rate line -->
+  <line x1="70" y1="240" x2="310" y2="240" stroke="#64748b" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="50" y="244" font-size="12" fill="#1a1a2e" font-weight="600">r*</text>
+
+  <!-- Label: Liquidity Trap zone -->
+  <text x="355" y="260" font-size="11" fill="#dc2626" font-style="italic" text-anchor="middle">Liquidity trap zone</text>
+  <text x="355" y="274" font-size="10" fill="#dc2626" font-style="italic" text-anchor="middle">(r does not fall further)</text>
+
+  <!-- Arrow showing shift has no effect on r -->
+  <line x1="350" y1="130" x2="382" y2="130" stroke="#16a34a" stroke-width="2" marker-end="url(#arrBlk2)"/>
+  <text x="366" y="120" font-size="10" fill="#64748b" text-anchor="middle">MS rises but</text>
+  <text x="366" y="108" font-size="10" fill="#64748b" text-anchor="middle">r unchanged</text>
+</svg>
+<div class="diagram-caption">Figure 2: The liquidity trap — when both MS1 and MS2 intersect the flat portion of the MD curve, increasing money supply does not reduce the interest rate.</div>
+</div>
+
+<p>In a liquidity trap, increasing the money supply has no effect on the interest rate because people simply absorb the extra money into idle cash balances. This is why, during the 2008-09 recession, the Bank of England had to turn to quantitative easing after cutting Bank Rate to 0.5%.</p>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: The UK Liquidity Trap (2009-2021)</strong>
+<p>Following the 2008 financial crisis, the Bank of England cut Bank Rate from 5% to 0.5% by March 2009. Despite these extremely low rates, lending and spending did not recover sufficiently because banks were hoarding reserves and households were paying down debt. The economy was stuck in a liquidity trap. The Bank responded with quantitative easing, purchasing 375 billion GBP of assets by 2012, later expanded to 895 billion GBP during COVID-19. Bank Rate was held at 0.5% or below for over 12 years, illustrating how prolonged and difficult it is to escape a liquidity trap.</p>
+</div>
+
+<!-- ===== SECTION 5: BANK OF ENGLAND ===== -->
+<h2>4. The Bank of England</h2>
+
+<div class="def-box">
+<strong>The Bank of England (BoE)</strong> is the UK's central bank, established in 1694. Its primary statutory objective is to maintain price stability (defined as CPI inflation at the government's target of 2%). Subject to this, it must also support the government's economic objectives for growth and employment.
+</div>
+
+<h3>4.1 Roles of the Bank of England</h3>
+<table>
+<tr><th>Role</th><th>Explanation</th></tr>
+<tr><td><strong>Setting monetary policy</strong></td><td>The Monetary Policy Committee (MPC) sets the Bank Rate and decides on QE. This is the primary tool for managing inflation and aggregate demand.</td></tr>
+<tr><td><strong>Lender of last resort</strong></td><td>Provides emergency liquidity to commercial banks facing short-term cash shortages to prevent bank runs and systemic collapse. This role was critical during the 2007-08 Northern Rock crisis.</td></tr>
+<tr><td><strong>Issuing banknotes</strong></td><td>The BoE has a monopoly on issuing banknotes in England and Wales.</td></tr>
+<tr><td><strong>Banker to the government</strong></td><td>Manages the government's accounts and the national debt (gilt issuance via the Debt Management Office).</td></tr>
+<tr><td><strong>Banker to the banking system</strong></td><td>Commercial banks hold reserve accounts at the BoE, and settlements between banks occur through these accounts.</td></tr>
+<tr><td><strong>Managing foreign exchange reserves</strong></td><td>Holds and manages gold and foreign currency reserves on behalf of the government.</td></tr>
+<tr><td><strong>Maintaining financial stability</strong></td><td>Through the Financial Policy Committee (FPC) and Prudential Regulation Authority (PRA), the BoE monitors systemic risks and regulates banks and insurers.</td></tr>
+</table>
+
+<h3>4.2 Bank of England Independence (1997)</h3>
+
+<p>In May 1997, the incoming Labour government under Gordon Brown granted the Bank of England <strong>operational independence</strong> to set interest rates. This meant the Monetary Policy Committee (MPC), not politicians, would decide the Bank Rate.</p>
+
+<h4>Why was independence granted?</h4>
 <ul>
-  <li><strong>Capital requirements</strong> — banks must hold minimum capital ratios (Basel III)</li>
-  <li><strong>Stress testing</strong> — banks must prove they can withstand economic shocks</li>
-  <li><strong>Deposit insurance</strong> — protects savers (FSCS in UK, up to £85,000)</li>
-  <li><strong>Macro-prudential regulation</strong> — monitoring systemic risk (Financial Policy Committee)</li>
-  <li><strong>Ring-fencing</strong> — separating retail banking from riskier investment banking activities</li>
+  <li><strong>Remove political short-termism</strong> — governments may cut rates before elections to boost the economy (the "political business cycle"), even if this causes inflation.</li>
+  <li><strong>Improve credibility</strong> — if markets and the public trust that the central bank will keep inflation low, inflation expectations remain anchored, making the target easier to achieve.</li>
+  <li><strong>International norm</strong> — many countries (US Federal Reserve, ECB) already had independent central banks with strong track records.</li>
 </ul>
+
+<h4>The Monetary Policy Committee (MPC)</h4>
+<ul>
+  <li>Consists of <strong>9 members</strong>: the Governor, 3 Deputy Governors, the Chief Economist, and 4 external members appointed by the Chancellor.</li>
+  <li>Meets <strong>8 times per year</strong> to decide on the Bank Rate.</li>
+  <li>Each member has one vote; decisions are made by majority.</li>
+  <li>The inflation target (currently 2% CPI) is set by the government, not the MPC. If inflation deviates by more than 1 percentage point (above 3% or below 1%), the Governor must write an open letter to the Chancellor explaining why.</li>
+</ul>
+
+<div class="eval-box">
+<strong>Evaluation: Is Central Bank Independence Always Beneficial?</strong>
+<ul>
+  <li><strong>For:</strong> Keeps inflation low and stable. UK inflation averaged close to 2% from 1997-2021. Removes politicisation. Anchors expectations.</li>
+  <li><strong>Against:</strong> Unelected officials making decisions that affect millions (democratic deficit). The MPC may focus too narrowly on inflation and ignore unemployment. Independence is not absolute: the government sets the target and appoints members. During crises (e.g. COVID), the boundary between fiscal and monetary policy blurs (BoE buying government debt looks like monetary financing).</li>
+</ul>
+</div>
+
+<!-- ===== SECTION 6: MONETARY POLICY ===== -->
+<h2>5. Monetary Policy</h2>
+
+<div class="def-box">
+<strong>Monetary policy</strong> is the use of interest rates, the money supply, and credit conditions by the central bank to influence aggregate demand (AD) in order to achieve macroeconomic objectives — primarily the 2% inflation target, but also supporting growth and employment.
+</div>
+
+<h3>5.1 Interest Rates as the Main Tool</h3>
+
+<p>The <strong>Bank Rate</strong> (also called the base rate or policy rate) is the interest rate the Bank of England pays on commercial banks' reserves held at the BoE. Changes in Bank Rate feed through to the rates commercial banks charge on loans and pay on savings.</p>
+
+<h3>5.2 Expansionary vs Contractionary Monetary Policy</h3>
+
+<table>
+<tr><th></th><th>Expansionary (Loose) Policy</th><th>Contractionary (Tight) Policy</th></tr>
+<tr><td><strong>Action</strong></td><td>Cut Bank Rate / increase money supply (QE)</td><td>Raise Bank Rate / reduce money supply</td></tr>
+<tr><td><strong>Effect on AD</strong></td><td>AD increases (shifts right)</td><td>AD decreases (shifts left)</td></tr>
+<tr><td><strong>Used when</strong></td><td>Inflation below target; recession; high unemployment; low growth</td><td>Inflation above target; economy overheating; demand-pull inflation</td></tr>
+<tr><td><strong>Risks</strong></td><td>Inflation; asset bubbles; currency depreciation; imported inflation</td><td>Unemployment; negative growth; reduced investment; possible recession</td></tr>
+</table>
+
+<h3>5.3 The Transmission Mechanism of Monetary Policy</h3>
+
+<p>The transmission mechanism describes the channels through which a change in the Bank Rate affects the real economy. There is typically a <strong>time lag of 18-24 months</strong> before the full effects are felt.</p>
+
+<div class="diagram-box">
+<svg width="680" height="340" viewBox="0 0 680 340">
+  <defs>
+    <marker id="arrTM" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#1a73e8"/></marker>
+  </defs>
+  <!-- Central box: Bank Rate Cut -->
+  <rect x="10" y="130" width="120" height="60" rx="8" fill="#1a73e8" stroke="none"/>
+  <text x="70" y="155" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Bank Rate</text>
+  <text x="70" y="172" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">CUT</text>
+
+  <!-- Channel boxes -->
+  <!-- 1. Borrowing/Saving -->
+  <rect x="170" y="10" width="150" height="52" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="245" y="30" text-anchor="middle" font-size="10.5" fill="#1a1a2e" font-weight="600">Borrowing/Saving</text>
+  <text x="245" y="44" text-anchor="middle" font-size="9.5" fill="#475569">Cheaper loans, lower</text>
+  <text x="245" y="55" text-anchor="middle" font-size="9.5" fill="#475569">saving returns -> C+I rise</text>
+
+  <!-- 2. Asset Prices -->
+  <rect x="170" y="72" width="150" height="52" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="245" y="92" text-anchor="middle" font-size="10.5" fill="#1a1a2e" font-weight="600">Asset Prices</text>
+  <text x="245" y="106" text-anchor="middle" font-size="9.5" fill="#475569">House/share prices rise</text>
+  <text x="245" y="117" text-anchor="middle" font-size="9.5" fill="#475569">-> positive wealth effect</text>
+
+  <!-- 3. Exchange Rate -->
+  <rect x="170" y="134" width="150" height="52" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="245" y="154" text-anchor="middle" font-size="10.5" fill="#1a1a2e" font-weight="600">Exchange Rate</text>
+  <text x="245" y="168" text-anchor="middle" font-size="9.5" fill="#475569">Hot money outflows -> GBP</text>
+  <text x="245" y="179" text-anchor="middle" font-size="9.5" fill="#475569">depreciates -> (X-M) rises</text>
+
+  <!-- 4. Expectations -->
+  <rect x="170" y="196" width="150" height="52" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="245" y="216" text-anchor="middle" font-size="10.5" fill="#1a1a2e" font-weight="600">Expectations</text>
+  <text x="245" y="230" text-anchor="middle" font-size="9.5" fill="#475569">Confidence rises -> more</text>
+  <text x="245" y="241" text-anchor="middle" font-size="9.5" fill="#475569">willing to spend/invest</text>
+
+  <!-- 5. Cash Flow -->
+  <rect x="170" y="258" width="150" height="52" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="245" y="278" text-anchor="middle" font-size="10.5" fill="#1a1a2e" font-weight="600">Cash Flow</text>
+  <text x="245" y="292" text-anchor="middle" font-size="9.5" fill="#475569">Lower mortgage payments</text>
+  <text x="245" y="303" text-anchor="middle" font-size="9.5" fill="#475569">-> more disposable income</text>
+
+  <!-- Arrows from Bank Rate to channels -->
+  <line x1="130" y1="148" x2="168" y2="36" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrTM)"/>
+  <line x1="130" y1="152" x2="168" y2="98" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrTM)"/>
+  <line x1="130" y1="160" x2="168" y2="160" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrTM)"/>
+  <line x1="130" y1="168" x2="168" y2="222" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrTM)"/>
+  <line x1="130" y1="172" x2="168" y2="284" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#arrTM)"/>
+
+  <!-- Aggregate box -->
+  <rect x="370" y="110" width="110" height="60" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="425" y="135" text-anchor="middle" font-size="11" fill="#1a1a2e" font-weight="600">Aggregate</text>
+  <text x="425" y="150" text-anchor="middle" font-size="11" fill="#1a1a2e" font-weight="600">Demand rises</text>
+  <text x="425" y="164" text-anchor="middle" font-size="10" fill="#475569">(C+I+G+(X-M))</text>
+
+  <!-- Arrows from channels to AD -->
+  <line x1="320" y1="36" x2="368" y2="128" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrTM)"/>
+  <line x1="320" y1="98" x2="368" y2="132" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrTM)"/>
+  <line x1="320" y1="160" x2="368" y2="145" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrTM)"/>
+  <line x1="320" y1="222" x2="368" y2="155" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrTM)"/>
+  <line x1="320" y1="284" x2="368" y2="162" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrTM)"/>
+
+  <!-- Final outcomes -->
+  <rect x="530" y="80" width="130" height="40" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="595" y="100" text-anchor="middle" font-size="11" fill="#166534" font-weight="600">Output/GDP rises</text>
+  <text x="595" y="113" text-anchor="middle" font-size="10" fill="#166534">Employment rises</text>
+
+  <rect x="530" y="130" width="130" height="40" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="595" y="150" text-anchor="middle" font-size="11" fill="#991b1b" font-weight="600">Prices rise</text>
+  <text x="595" y="163" text-anchor="middle" font-size="10" fill="#991b1b">Inflation increases</text>
+
+  <rect x="530" y="180" width="130" height="40" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="595" y="200" text-anchor="middle" font-size="11" fill="#854d0e" font-weight="600">Time lag</text>
+  <text x="595" y="213" text-anchor="middle" font-size="10" fill="#854d0e">18-24 months</text>
+
+  <line x1="480" y1="135" x2="528" y2="100" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrTM)"/>
+  <line x1="480" y1="145" x2="528" y2="148" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrTM)"/>
+  <line x1="480" y1="155" x2="528" y2="198" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrTM)"/>
+</svg>
+<div class="diagram-caption">Figure 3: The transmission mechanism of monetary policy — how a Bank Rate cut feeds through to the real economy via five channels.</div>
+</div>
+
+<h4>Detailed Explanation of Each Channel</h4>
+
+<p><strong>1. The Borrowing and Saving Channel (most direct)</strong></p>
+<ul>
+  <li>Lower Bank Rate reduces commercial bank lending rates (mortgages, business loans, credit cards).</li>
+  <li>Lower interest rates also reduce the return on savings, discouraging saving.</li>
+  <li>Both effects increase consumption (C) and investment (I), boosting AD.</li>
+  <li>The reverse applies when rates rise: borrowing becomes more expensive, saving more attractive, and AD falls.</li>
+</ul>
+
+<p><strong>2. The Asset Prices Channel (wealth effect)</strong></p>
+<ul>
+  <li>Lower interest rates increase the present value of future cash flows, pushing up house prices and share prices.</li>
+  <li>Homeowners and investors feel wealthier (the <strong>wealth effect</strong>) and spend more.</li>
+  <li>Higher house prices also increase the collateral value against which households can borrow.</li>
+  <li>When rates rise, asset prices tend to fall, reducing wealth and spending.</li>
+</ul>
+
+<p><strong>3. The Exchange Rate Channel</strong></p>
+<ul>
+  <li>Lower UK interest rates reduce the return on UK financial assets relative to other countries.</li>
+  <li>This causes <strong>hot money outflows</strong>: investors move funds abroad seeking higher returns.</li>
+  <li>Demand for GBP falls, and the exchange rate depreciates.</li>
+  <li>A weaker pound makes UK exports cheaper and imports more expensive, improving net exports (X-M) and boosting AD.</li>
+  <li>However, a weaker pound also causes <strong>imported inflation</strong> (higher prices for imported raw materials and consumer goods).</li>
+</ul>
+
+<p><strong>4. The Expectations and Confidence Channel</strong></p>
+<ul>
+  <li>A rate cut signals that the central bank is supporting the economy, which can boost consumer and business confidence.</li>
+  <li>More confident households spend more; more confident firms invest more.</li>
+  <li>Conversely, rate rises may dampen confidence and spending plans.</li>
+  <li>Expectations of future rates also matter: if people expect further cuts, they may bring spending forward.</li>
+</ul>
+
+<p><strong>5. The Cash Flow Channel</strong></p>
+<ul>
+  <li>Many UK households have variable-rate or tracker mortgages. When Bank Rate falls, their monthly mortgage payments decrease immediately.</li>
+  <li>This increases their <strong>disposable income</strong>, which they may spend on goods and services.</li>
+  <li>Firms with variable-rate loans also see reduced debt servicing costs, freeing up cash for investment.</li>
+  <li>When rates rise, mortgage payments increase, squeezing household budgets and reducing consumption.</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Bank of England Rate Rises 2022-2023</strong>
+<p>In December 2021, the Bank of England began raising interest rates from 0.1% in response to rising inflation (which peaked at 11.1% in October 2022, driven by energy prices and post-COVID supply disruptions). By August 2023, Bank Rate had reached 5.25%, the highest since 2008.</p>
+<p><strong>Effects through the transmission mechanism:</strong></p>
+<ul>
+  <li><strong>Borrowing/saving:</strong> Average 2-year fixed mortgage rates rose from around 2% to over 6%, significantly reducing new mortgage lending and housing market activity.</li>
+  <li><strong>Asset prices:</strong> UK house prices fell by approximately 5% from peak to trough during 2023.</li>
+  <li><strong>Cash flow:</strong> An estimated 1.6 million households faced sharply higher mortgage costs when their fixed-rate deals expired and they remortgaged at higher rates (the "mortgage cliff").</li>
+  <li><strong>Exchange rate:</strong> The pound initially strengthened against the dollar as UK-US rate differentials narrowed.</li>
+  <li><strong>Confidence:</strong> Consumer confidence remained weak throughout 2023, with many households cutting discretionary spending.</li>
+</ul>
+<p>This case study illustrates the transmission mechanism working in reverse (contractionary policy) and the significant time lags involved: inflation only began falling meaningfully in mid-2023, over 18 months after rate rises began.</p>
+</div>
+
+<!-- ===== SECTION 7: QUANTITATIVE EASING ===== -->
+<h2>6. Quantitative Easing (QE)</h2>
+
+<div class="def-box">
+<strong>Quantitative Easing (QE)</strong> is an unconventional monetary policy tool used when interest rates have been cut to the zero lower bound (ZLB) and conventional policy is exhausted. The central bank electronically creates new money and uses it to purchase financial assets (mainly government bonds / gilts) from financial institutions, increasing the money supply and reducing long-term interest rates.
+</div>
+
+<h3>6.1 How QE Works — Step by Step</h3>
+
+<div class="diagram-box">
+<svg width="600" height="300" viewBox="0 0 600 300">
+  <defs>
+    <marker id="arrQE" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#1a73e8"/></marker>
+  </defs>
+
+  <!-- Step 1 -->
+  <rect x="10" y="20" width="120" height="55" rx="8" fill="#1a73e8"/>
+  <text x="70" y="42" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">Step 1</text>
+  <text x="70" y="56" text-anchor="middle" font-size="9" fill="#e0e7ff">BoE creates new</text>
+  <text x="70" y="68" text-anchor="middle" font-size="9" fill="#e0e7ff">electronic money</text>
+
+  <!-- Step 2 -->
+  <rect x="160" y="20" width="120" height="55" rx="8" fill="#1a73e8"/>
+  <text x="220" y="42" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">Step 2</text>
+  <text x="220" y="56" text-anchor="middle" font-size="9" fill="#e0e7ff">Buys gov bonds</text>
+  <text x="220" y="68" text-anchor="middle" font-size="9" fill="#e0e7ff">from institutions</text>
+
+  <!-- Step 3 -->
+  <rect x="310" y="20" width="120" height="55" rx="8" fill="#1a73e8"/>
+  <text x="370" y="42" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">Step 3</text>
+  <text x="370" y="56" text-anchor="middle" font-size="9" fill="#e0e7ff">Bond prices rise,</text>
+  <text x="370" y="68" text-anchor="middle" font-size="9" fill="#e0e7ff">yields (LT rates) fall</text>
+
+  <!-- Step 4 -->
+  <rect x="460" y="20" width="120" height="55" rx="8" fill="#1a73e8"/>
+  <text x="520" y="42" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">Step 4</text>
+  <text x="520" y="56" text-anchor="middle" font-size="9" fill="#e0e7ff">Institutions reinvest</text>
+  <text x="520" y="68" text-anchor="middle" font-size="9" fill="#e0e7ff">in riskier assets</text>
+
+  <!-- Arrows between steps -->
+  <line x1="130" y1="47" x2="158" y2="47" stroke="#fff" stroke-width="1.5" marker-end="url(#arrQE)"/>
+  <line x1="280" y1="47" x2="308" y2="47" stroke="#fff" stroke-width="1.5" marker-end="url(#arrQE)"/>
+  <line x1="430" y1="47" x2="458" y2="47" stroke="#fff" stroke-width="1.5" marker-end="url(#arrQE)"/>
+
+  <!-- Effects row -->
+  <rect x="10" y="110" width="170" height="50" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="95" y="132" text-anchor="middle" font-size="10" fill="#166534" font-weight="600">Portfolio Rebalancing</text>
+  <text x="95" y="148" text-anchor="middle" font-size="9" fill="#166534">Investors buy shares, corp</text>
+  <text x="95" y="158" text-anchor="middle" font-size="9" fill="#166534">bonds -> asset prices rise</text>
+
+  <rect x="210" y="110" width="170" height="50" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="295" y="132" text-anchor="middle" font-size="10" fill="#166534" font-weight="600">Wealth Effect</text>
+  <text x="295" y="148" text-anchor="middle" font-size="9" fill="#166534">Rising asset prices make</text>
+  <text x="295" y="158" text-anchor="middle" font-size="9" fill="#166534">people feel wealthier -> C rises</text>
+
+  <rect x="410" y="110" width="170" height="50" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="495" y="132" text-anchor="middle" font-size="10" fill="#166534" font-weight="600">Lower Borrowing Costs</text>
+  <text x="495" y="148" text-anchor="middle" font-size="9" fill="#166534">Lower yields reduce LT</text>
+  <text x="495" y="158" text-anchor="middle" font-size="9" fill="#166534">borrowing costs for firms/gov</text>
+
+  <!-- Final effect -->
+  <rect x="160" y="200" width="280" height="45" rx="8" fill="#e8f0fe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="300" y="220" text-anchor="middle" font-size="12" fill="#1a1a2e" font-weight="700">AD increases -> Output and Employment rise</text>
+  <text x="300" y="236" text-anchor="middle" font-size="10" fill="#475569">Prevents deflation and supports recovery</text>
+
+  <!-- Arrows down -->
+  <line x1="95" y1="160" x2="220" y2="200" stroke="#16a34a" stroke-width="1.2" marker-end="url(#arrQE)"/>
+  <line x1="295" y1="160" x2="300" y2="198" stroke="#16a34a" stroke-width="1.2" marker-end="url(#arrQE)"/>
+  <line x1="495" y1="160" x2="380" y2="200" stroke="#16a34a" stroke-width="1.2" marker-end="url(#arrQE)"/>
+
+  <!-- Warning note -->
+  <text x="300" y="275" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">Note: QE increases the monetary base, but only translates to broad money</text>
+  <text x="300" y="290" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">if banks actually lend the extra reserves to the real economy.</text>
+</svg>
+<div class="diagram-caption">Figure 4: How Quantitative Easing works — from money creation through to effects on the real economy.</div>
+</div>
+
+<h4>Key Mechanism: Bond Prices and Yields</h4>
+<p>When the BoE buys large quantities of government bonds, the <strong>increased demand pushes bond prices up</strong>. Because bond yields move inversely to bond prices, <strong>yields (long-term interest rates) fall</strong>. This reduces the cost of long-term borrowing for the government, firms, and households.</p>
+
+<div class="eq">
+Bond yield and bond price are inversely related: Price up -> Yield down
+</div>
+
+<h3>6.2 Evaluation of Quantitative Easing</h3>
+
+<table>
+<tr><th>Advantages</th><th>Disadvantages / Limitations</th></tr>
+<tr>
+  <td>Provides monetary stimulus when Bank Rate is at the zero lower bound and cannot be cut further.</td>
+  <td><strong>Increases wealth inequality.</strong> QE inflates asset prices (houses, shares), benefiting those who already own assets (typically wealthier, older households) while those without assets (younger, lower-income) see no direct benefit.</td>
+</tr>
+<tr>
+  <td>Reduces long-term borrowing costs for firms (corporate bonds) and the government (gilts), encouraging investment.</td>
+  <td><strong>Banks may not lend.</strong> "Pushing on a string" — banks may hoard the extra reserves rather than lending to the real economy, especially if they are worried about credit risk (this was a major issue in 2009-12).</td>
+</tr>
+<tr>
+  <td>Prevents deflation by putting upward pressure on prices and supporting nominal spending.</td>
+  <td><strong>Risk of future inflation</strong> if the money supply grows much faster than real output. However, this risk did not materialise significantly after 2009 QE (though some argue COVID-era QE contributed to 2022 inflation).</td>
+</tr>
+<tr>
+  <td>Restores confidence in financial markets during crises.</td>
+  <td><strong>Creates asset bubbles.</strong> Artificially inflated house and share prices may be unsustainable and vulnerable to sharp correction when QE is unwound.</td>
+</tr>
+<tr>
+  <td>Depreciates the exchange rate, helping exporters.</td>
+  <td><strong>Difficult exit strategy (Quantitative Tightening).</strong> Selling bonds back to the market pushes prices down and yields up, potentially disrupting financial markets. The BoE began QT in 2022, selling gilts at a loss.</td>
+</tr>
+<tr>
+  <td>The BoE estimated that its first 375 billion GBP of QE raised GDP by 1.5-2% and prevented a deeper recession.</td>
+  <td><strong>Diminishing returns.</strong> Each additional round of QE may be less effective as interest rates and yields are already very low.</td>
+</tr>
+</table>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: QE During COVID-19 (2020-2021)</strong>
+<p>When COVID-19 struck in March 2020, the Bank of England cut Bank Rate from 0.75% to 0.1% and announced 200 billion GBP of new QE (later expanded to 450 billion GBP on top of the existing 445 billion GBP). Total QE peaked at 895 billion GBP by December 2021.</p>
+<p><strong>Aims:</strong> Prevent financial market panic, keep government borrowing costs low to fund furlough and support schemes, prevent a deflationary spiral, and support economic recovery.</p>
+<p><strong>Outcomes:</strong></p>
+<ul>
+  <li>Government bond yields stayed low, allowing the government to borrow over 300 billion GBP in 2020-21 at very low cost.</li>
+  <li>House prices surged by 10%+ in 2021, partly due to low rates and QE (plus the stamp duty holiday).</li>
+  <li>Critics argued that the massive QE expansion planted the seeds for the inflation surge of 2022-23 by creating excess demand when supply chains were already disrupted.</li>
+  <li>The Bank of England began Quantitative Tightening (selling gilts and not reinvesting maturing ones) from late 2022, realising losses of billions on bonds bought at high prices and now sold at lower prices.</li>
+</ul>
+</div>
+
+<!-- ===== SECTION 8: EVALUATION OF MONETARY POLICY ===== -->
+<h2>7. Evaluation of Monetary Policy</h2>
+
+<h3>7.1 Strengths of Monetary Policy</h3>
+<ul>
+  <li><strong>Independence and credibility</strong> — decisions are made by the MPC based on economic data, not political pressures. This anchors inflation expectations and makes the policy more effective.</li>
+  <li><strong>Flexibility and speed</strong> — the MPC meets 8 times a year and can change rates quickly in response to economic developments. Fiscal policy, by contrast, requires parliamentary approval and has longer implementation lags.</li>
+  <li><strong>Proven track record</strong> — UK inflation remained close to the 2% target for most of 1997-2021 (averaging 2.0% over this period), demonstrating the effectiveness of inflation targeting.</li>
+  <li><strong>Credibility reduces the sacrifice ratio</strong> — if the public believes the BoE will control inflation, expectations remain anchored, meaning less output/employment needs to be sacrificed to bring inflation down.</li>
+  <li><strong>Can work alongside fiscal policy</strong> — monetary and fiscal policy can complement each other (e.g. during COVID, both were expansionary).</li>
+</ul>
+
+<h3>7.2 Weaknesses and Limitations of Monetary Policy</h3>
+<ul>
+  <li><strong>Time lags</strong> — it takes 18-24 months for interest rate changes to fully feed through to the economy. By the time the effects are felt, economic conditions may have changed. The MPC must therefore set policy based on forecasts, which may be wrong.</li>
+  <li><strong>Blunt instrument</strong> — a change in Bank Rate affects the entire economy. It cannot target specific sectors or regions. Rate rises to control London house prices also hit struggling northern businesses.</li>
+  <li><strong>Ineffective against cost-push inflation</strong> — monetary policy works by managing demand. If inflation is caused by supply-side factors (e.g. energy price shocks, as in 2022), raising rates cannot fix the root cause and may worsen the recession ("stagflation dilemma").</li>
+  <li><strong>The liquidity trap / zero lower bound</strong> — when rates are already at zero, conventional monetary policy is exhausted. The BoE must turn to QE, which has its own limitations.</li>
+  <li><strong>Asymmetric effects</strong> — rate changes affect different groups unevenly. Rate rises hit borrowers (especially variable-rate mortgage holders) hard, while benefiting savers. Rate cuts do the opposite. This creates winners and losers.</li>
+  <li><strong>Depends on banks lending</strong> — monetary policy works through the banking system. If banks are unwilling to lend (e.g. due to risk aversion post-crisis), lower rates may not translate into more credit in the real economy.</li>
+  <li><strong>Exchange rate conflicts</strong> — lowering rates to stimulate the domestic economy may cause currency depreciation, leading to imported inflation. Raising rates to control inflation may cause appreciation that harms exporters.</li>
+  <li><strong>Consumer and business confidence</strong> — if confidence is very low (e.g. deep recession), even very low interest rates may not persuade people to borrow and spend. "You can lead a horse to water but you cannot make it drink."</li>
+</ul>
+
+<div class="eval-box">
+<strong>Evaluation: When is Monetary Policy Most/Least Effective?</strong>
+<p><strong>Most effective when:</strong></p>
+<ul>
+  <li>Inflation is demand-pull (monetary policy directly addresses demand).</li>
+  <li>The banking system is functioning normally and transmitting rate changes to the real economy.</li>
+  <li>Consumer/business confidence is moderate (people respond to rate incentives).</li>
+  <li>There is room to move rates (not at the zero lower bound).</li>
+</ul>
+<p><strong>Least effective when:</strong></p>
+<ul>
+  <li>Inflation is cost-push (rate rises cannot fix supply-side problems and worsen unemployment).</li>
+  <li>The economy is in a liquidity trap (rates already at zero).</li>
+  <li>The banking system is impaired (banks not lending, as in 2009-12).</li>
+  <li>Confidence is extremely low or there is deep uncertainty.</li>
+  <li>Fiscal policy is working in the opposite direction (policy conflicts).</li>
+</ul>
+</div>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Always consider context when evaluating monetary policy. A 25-mark essay on monetary policy effectiveness should discuss: the type of inflation, the state of the banking system, the level of confidence, whether rates are near zero, time lags, and whether fiscal policy is complementary or contradictory. Use real-world examples (2008 crisis, 2022 inflation) to support your arguments.
+</div>
+
+<!-- ===== SECTION 9: 2008 FINANCIAL CRISIS ===== -->
+<h2>8. Financial Market Failure and the 2008 Financial Crisis</h2>
+
+<h3>8.1 What is Financial Market Failure?</h3>
+
+<div class="def-box">
+<strong>Financial market failure</strong> occurs when financial markets fail to allocate resources efficiently, leading to instability and negative externalities for the wider economy. This is a form of market failure caused by information asymmetries, moral hazard, speculation, and externalities.
+</div>
+
+<h3>8.2 Causes of Financial Instability</h3>
+<ul>
+  <li><strong>Moral hazard</strong> — if banks believe they are "too big to fail" and will be bailed out by the government, they have an incentive to take excessive risks because they keep the profits but socialise the losses.</li>
+  <li><strong>Asymmetric information</strong> — borrowers know more about their ability to repay than lenders. Banks may not fully understand the risks of the complex financial products they are trading. Credit rating agencies gave AAA ratings to risky securities.</li>
+  <li><strong>Speculation and herding</strong> — irrational exuberance leads to asset bubbles. When prices rise, more people buy, pushing prices higher (positive feedback loop) until the bubble bursts.</li>
+  <li><strong>Excessive leverage</strong> — banks borrow large amounts relative to their equity, magnifying both gains and losses. Before 2008, some banks had leverage ratios of 30:1 or more.</li>
+  <li><strong>Externalities</strong> — the failure of one large bank can cause contagion throughout the entire financial system, affecting innocent third parties (systemic risk). The social cost of bank failure far exceeds the private cost.</li>
+  <li><strong>Inadequate regulation</strong> — "light-touch" regulation before 2008 allowed banks to take on excessive risk with insufficient capital buffers.</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: The 2008 Global Financial Crisis</strong>
+<p><strong>Background:</strong> In the years leading up to 2008, US banks made large volumes of subprime mortgages (loans to borrowers with poor credit histories) on the assumption that house prices would keep rising. These mortgages were bundled into complex securities (Mortgage-Backed Securities and Collateralised Debt Obligations) and sold to banks and investors worldwide. Credit rating agencies rated many of these as safe (AAA).</p>
+
+<p><strong>What happened:</strong></p>
+<ul>
+  <li>US house prices began falling in 2006-07. Subprime borrowers defaulted on their mortgages.</li>
+  <li>The complex securities backed by these mortgages collapsed in value. Banks around the world suffered huge losses.</li>
+  <li>Lehman Brothers, the fourth-largest US investment bank, went bankrupt in September 2008 — the largest bankruptcy in US history.</li>
+  <li>Interbank lending froze: banks did not trust each other because nobody knew who held toxic assets. The money market seized up.</li>
+  <li>A full-scale credit crunch followed: banks drastically cut lending to businesses and households.</li>
+</ul>
+
+<p><strong>Impact on the UK:</strong></p>
+<ul>
+  <li>Northern Rock experienced the first UK bank run in 150 years (September 2007) and was nationalised in February 2008.</li>
+  <li>The government bailed out RBS (45.5 billion GBP) and Lloyds/HBOS (20.3 billion GBP) at a combined cost of approximately 65 billion GBP.</li>
+  <li>UK GDP fell by 6% from peak to trough (the deepest recession since WWII).</li>
+  <li>Unemployment rose from 5.2% to 8.5%.</li>
+  <li>Bank Rate was cut from 5% to 0.5%, and QE of 200 billion GBP was launched in March 2009.</li>
+</ul>
+
+<p><strong>Key lessons:</strong> The crisis demonstrated the dangers of moral hazard, inadequate regulation, excessive risk-taking, information failures, and the systemic importance of the banking sector. It led to major regulatory reform (see Section 9 below).</p>
+</div>
+
+<!-- ===== SECTION 10: REGULATION ===== -->
+<h2>9. Regulation of Financial Markets</h2>
+
+<p>The 2008 crisis exposed severe weaknesses in financial regulation. In response, the UK and international community introduced major reforms to make the banking system safer and more resilient.</p>
+
+<h3>9.1 Key Regulatory Measures</h3>
+
+<table>
+<tr><th>Regulation</th><th>How It Works</th><th>Purpose</th></tr>
+<tr>
+  <td><strong>Basel III Capital Requirements</strong></td>
+  <td>International framework requiring banks to hold a minimum ratio of high-quality capital (equity) relative to their risk-weighted assets. The minimum Tier 1 capital ratio is 6%, with additional buffers.</td>
+  <td>Ensures banks have a financial cushion to absorb losses without becoming insolvent. Before 2008, many banks had dangerously thin capital buffers.</td>
+</tr>
+<tr>
+  <td><strong>Stress Testing</strong></td>
+  <td>The Bank of England (PRA) regularly tests whether major UK banks could withstand severe economic scenarios (e.g. a deep recession, house price crash, or interest rate spike).</td>
+  <td>Identifies vulnerabilities before they cause a crisis. Banks that fail stress tests must raise additional capital or reduce risk.</td>
+</tr>
+<tr>
+  <td><strong>Ring-fencing</strong></td>
+  <td>Since January 2019, UK banks with more than 25 billion GBP in deposits must legally separate their retail banking (deposits, mortgages, lending to individuals and small businesses) from their investment banking (trading, derivatives, securities).</td>
+  <td>Protects ordinary depositors' money from losses in risky investment banking activities. The retail bank can survive even if the investment bank fails.</td>
+</tr>
+<tr>
+  <td><strong>Financial Services Compensation Scheme (FSCS)</strong></td>
+  <td>Guarantees bank deposits up to 85,000 GBP per person per institution. If a bank fails, depositors are compensated quickly.</td>
+  <td>Prevents bank runs by ensuring savers know their money is safe. Maintains confidence in the banking system.</td>
+</tr>
+<tr>
+  <td><strong>Liquidity Requirements</strong></td>
+  <td>Basel III also requires banks to hold sufficient liquid assets (Liquidity Coverage Ratio) to survive a 30-day period of financial stress without needing external support.</td>
+  <td>Ensures banks can meet short-term obligations even during a liquidity crisis.</td>
+</tr>
+<tr>
+  <td><strong>Macro-prudential Regulation</strong></td>
+  <td>The Financial Policy Committee (FPC) at the Bank of England monitors systemic risks to the financial system as a whole and can impose countercyclical capital buffers, lending limits, etc.</td>
+  <td>Addresses systemic risk — individual bank regulation is not enough if the system as a whole is fragile.</td>
+</tr>
+</table>
+
+<h3>9.2 Evaluation of Financial Regulation</h3>
+
+<div class="eval-box">
+<strong>Arguments For Stronger Regulation:</strong>
+<ul>
+  <li>Financial market failure (moral hazard, asymmetric information, externalities) means free markets alone do not produce efficient or stable outcomes in banking.</li>
+  <li>The cost of bank bailouts (65 billion GBP+ for RBS and Lloyds) and the wider economic damage of the 2008 crisis (lost output, unemployment, austerity) far exceed the compliance costs of regulation.</li>
+  <li>The FSCS and ring-fencing protect ordinary depositors who have no ability to assess bank risk themselves.</li>
+  <li>Stress tests improve transparency and force banks to maintain adequate capital.</li>
+</ul>
+
+<strong>Arguments Against / Limitations:</strong>
+<ul>
+  <li><strong>Regulatory burden</strong> — compliance costs are significant, especially for smaller banks, potentially reducing competition and lending.</li>
+  <li><strong>Regulatory arbitrage</strong> — banks may shift risky activities to less regulated jurisdictions (the "shadow banking" system) or to non-bank financial institutions.</li>
+  <li><strong>Moral hazard persists</strong> — deposit insurance and the "too big to fail" expectation may still encourage excessive risk-taking.</li>
+  <li><strong>Cannot prevent all crises</strong> — regulation responds to past crises. The next crisis may come from an unexpected source (e.g. crypto, cyber risk, or non-bank lending).</li>
+  <li><strong>Trade-off with growth</strong> — tighter capital requirements mean banks have less money available for lending, which could restrict credit and slow economic growth.</li>
+</ul>
+</div>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> In a 25-mark essay on financial regulation, consider the trade-off between stability and growth. Stronger regulation makes the financial system safer but may reduce lending, competition, and innovation. Weaker regulation promotes growth and lending but increases the risk of another crisis. The key is finding the right balance. Always refer to specific examples: the 2008 crisis, Northern Rock, Basel III, ring-fencing.
+</div>
+
+<!-- ===== SECTION 11: AD/AS DIAGRAM ===== -->
+<h2>10. Monetary Policy and the AD/AS Framework</h2>
+
+<p>It is important to be able to show the effects of monetary policy on an AD/AS diagram, as this is frequently required in exam questions.</p>
+
+<h3>10.1 Expansionary Monetary Policy (Rate Cut)</h3>
+
+<div class="diagram-box">
+<svg width="460" height="370" viewBox="0 0 460 370">
+  <defs>
+    <marker id="arrAD" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#1a1a2e"/></marker>
+    <marker id="arrShft" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#16a34a"/></marker>
+  </defs>
+  <!-- Axes -->
+  <line x1="60" y1="310" x2="420" y2="310" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrAD)"/>
+  <line x1="60" y1="310" x2="60" y2="30" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrAD)"/>
+  <text x="240" y="345" text-anchor="middle" font-size="13" fill="#1a1a2e" font-weight="600">Real GDP (Y)</text>
+  <text x="18" y="170" text-anchor="middle" font-size="13" fill="#1a1a2e" font-weight="600" transform="rotate(-90,18,170)">Price Level (PL)</text>
+
+  <!-- SRAS -->
+  <line x1="90" y1="260" x2="380" y2="80" stroke="#f59e0b" stroke-width="2.5"/>
+  <text x="385" y="78" font-size="12" fill="#f59e0b" font-weight="bold">SRAS</text>
+
+  <!-- AD1 -->
+  <line x1="100" y1="70" x2="310" y2="280" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="315" y="284" font-size="12" fill="#dc2626" font-weight="bold">AD1</text>
+
+  <!-- AD2 (shifted right) -->
+  <line x1="160" y1="70" x2="370" y2="280" stroke="#dc2626" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="375" y="284" font-size="12" fill="#dc2626" font-weight="bold">AD2</text>
+
+  <!-- Equilibrium 1 -->
+  <circle cx="202" cy="173" r="4" fill="#1a1a2e"/>
+  <line x1="60" y1="173" x2="202" y2="173" stroke="#64748b" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="42" y="177" font-size="11" fill="#1a1a2e">PL1</text>
+  <line x1="202" y1="173" x2="202" y2="310" stroke="#64748b" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="202" y="326" font-size="11" fill="#1a1a2e" text-anchor="middle">Y1</text>
+
+  <!-- Equilibrium 2 -->
+  <circle cx="248" cy="148" r="4" fill="#1a1a2e"/>
+  <line x1="60" y1="148" x2="248" y2="148" stroke="#64748b" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="42" y="152" font-size="11" fill="#1a1a2e">PL2</text>
+  <line x1="248" y1="148" x2="248" y2="310" stroke="#64748b" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="248" y="326" font-size="11" fill="#1a1a2e" text-anchor="middle">Y2</text>
+
+  <!-- Shift arrow -->
+  <line x1="220" y1="220" x2="268" y2="220" stroke="#16a34a" stroke-width="2" marker-end="url(#arrShft)"/>
+</svg>
+<div class="diagram-caption">Figure 5: Expansionary monetary policy (rate cut) shifts AD right from AD1 to AD2, increasing real GDP from Y1 to Y2 and raising the price level from PL1 to PL2.</div>
+</div>
+
+<p><strong>Analysis:</strong> A cut in Bank Rate, through the transmission mechanism, increases consumption and investment, shifting AD to the right. This leads to higher real output (economic growth), lower unemployment, but also a higher price level (some inflationary pressure). The extent of the price rise vs. output gain depends on the position on the SRAS curve and how close the economy is to full capacity.</p>
+
+<h3>10.2 Contractionary Monetary Policy (Rate Rise)</h3>
+<p>A rise in Bank Rate has the opposite effect: AD shifts left, reducing output and the price level but potentially increasing unemployment. This is used when inflation is above target.</p>
+
+<div class="eval-box">
+<strong>Evaluation Point:</strong> The impact depends on the <strong>spare capacity</strong> in the economy. If the economy is well below full employment (large negative output gap), expansionary monetary policy will mainly increase output with little inflation. If the economy is near or at full capacity, the same policy will mainly cause inflation with little output gain. Always consider where the economy is on the SRAS curve when drawing and explaining your diagram.
+</div>
+
+<!-- ===== SUMMARY TABLE ===== -->
+<h2>Summary: Key Concepts at a Glance</h2>
+
+<table>
+<tr><th>Concept</th><th>Key Points</th></tr>
+<tr><td>Financial markets</td><td>Channel funds from savers to borrowers, provide liquidity, price risk, enable capital-raising, facilitate trade.</td></tr>
+<tr><td>Money</td><td>Medium of exchange, store of value, unit of account, standard of deferred payment. M0 = narrow, M4 = broad.</td></tr>
+<tr><td>Credit creation</td><td>Banks create money by lending. Credit multiplier = 1 / reserve ratio. Limited in practice by regulation and bank behaviour.</td></tr>
+<tr><td>Money market</td><td>MS (vertical, set by BoE) and MD (downward sloping, liquidity preference) determine the interest rate.</td></tr>
+<tr><td>Liquidity preference</td><td>Keynes: 3 motives for holding money (transactions, precautionary, speculative). Speculative motive gives MD its slope.</td></tr>
+<tr><td>Bank of England</td><td>Sets monetary policy (MPC), lender of last resort, financial stability, independent since 1997.</td></tr>
+<tr><td>Monetary policy</td><td>Bank Rate is the main tool. Works through 5 channels (borrowing/saving, asset prices, exchange rate, expectations, cash flow). 18-24 month time lag.</td></tr>
+<tr><td>QE</td><td>BoE creates money to buy bonds, reducing long-term rates. Used at ZLB. Risk of inequality, asset bubbles, limited effectiveness.</td></tr>
+<tr><td>Financial crisis (2008)</td><td>Caused by subprime mortgages, securitisation, moral hazard, asymmetric information, excessive leverage, light-touch regulation.</td></tr>
+<tr><td>Regulation</td><td>Basel III (capital requirements), stress testing, ring-fencing, FSCS (85,000 GBP), macro-prudential (FPC). Trade-off: stability vs. growth/lending.</td></tr>
+</table>
 
 </div>
 </body>
