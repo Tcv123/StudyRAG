@@ -26,6 +26,7 @@
   .case-study strong { color: #15803d; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  @media print { body { padding: 20px; } .case-study, .exam-tip, .definition { break-inside: avoid; } }
 </style>
 </head>
 <body>
@@ -36,31 +37,30 @@
 <h2>Systems Approach to Landscapes</h2>
 
 <div class="definition">
-  <strong>System:</strong> A set of interrelated components connected by flows of energy and materials, working together as a complex whole. Coastal landscapes operate as open systems with inputs, throughputs, outputs, and feedback loops.
+  <strong>System:</strong> A set of interrelated components connected by flows of energy and materials, working together as a complex whole. Coastal landscapes operate as <strong>open systems</strong> with inputs of energy and matter from outside the system, internal throughputs (transfers and transformations), and outputs that leave the system. The systems approach allows geographers to understand how changes to one component ripple through the entire landscape.
 </div>
 
 <h3>Systems Terminology</h3>
 <ul>
-  <li><strong>Inputs:</strong> Energy from waves, wind, tides; sediment from rivers, cliff erosion, offshore sources; precipitation</li>
-  <li><strong>Throughputs (transfers/processes):</strong> Erosion, transport (longshore drift), weathering, mass movement</li>
-  <li><strong>Outputs:</strong> Sediment removed by longshore drift, dissolved minerals, offshore sediment loss</li>
-  <li><strong>Stores:</strong> Beaches, sand dunes, spits, bars, mudflats</li>
+  <li><strong>Inputs:</strong> Energy from waves (derived from wind), tidal energy (gravitational pull of moon/sun), wind energy, solar radiation (drives weathering and evaporation); sediment from rivers, cliff erosion, offshore seabed, and longshore drift from adjacent cells; precipitation</li>
+  <li><strong>Throughputs (transfers and processes):</strong> Erosion (hydraulic action, abrasion, attrition, corrosion), weathering (freeze-thaw, carbonation, biological), mass movement (rockfall, slumping, mudflow), sediment transport (longshore drift, traction, saltation, suspension, solution), deposition</li>
+  <li><strong>Outputs:</strong> Sediment removed by longshore drift to adjacent cells or offshore, dissolved minerals lost in solution, energy dissipated as heat and sound</li>
+  <li><strong>Stores:</strong> Beaches (temporary sediment stores), sand dunes, spits, bars, mudflats, cliff faces, wave-cut platforms</li>
 </ul>
 
 <div class="definition">
-  <strong>Dynamic equilibrium:</strong> A balanced state in a system where inputs and outputs are roughly equal. Any change in one component causes adjustments elsewhere to restore balance. For example, increased cliff erosion adds sediment to the beach, which then absorbs more wave energy and reduces further erosion.
+  <strong>Dynamic equilibrium:</strong> A balanced state in a system where inputs and outputs are roughly equal over time. The system appears stable but is constantly adjusting to small changes. Any significant change in one component (e.g. increased storm frequency, human intervention, sea-level rise) causes adjustments elsewhere to restore balance. For example, increased cliff erosion adds more sediment to the beach &rarr; wider beach absorbs more wave energy &rarr; erosion rate decreases (negative feedback). However, if the disturbance is too great, the system may shift to a new equilibrium state.
 </div>
 
 <h3>Feedback Loops</h3>
 <ul>
-  <li><strong>Negative feedback:</strong> Self-regulating &mdash; a change triggers a response that counteracts the original change. Example: cliff collapse adds sediment to beach &rarr; wider beach absorbs wave energy &rarr; reduced erosion</li>
-  <li><strong>Positive feedback:</strong> Self-reinforcing &mdash; a change triggers a response that amplifies the original change. Example: sea-level rise increases erosion &rarr; narrower beach &rarr; less wave energy absorption &rarr; more erosion</li>
+  <li><strong>Negative feedback (self-regulating):</strong> A change triggers a response that <strong>counteracts</strong> the original change, stabilising the system. Example: cliff collapse adds sediment to the beach &rarr; wider beach absorbs wave energy before it reaches the cliff &rarr; erosion rate decreases &rarr; less cliff collapse. This is the dominant feedback mechanism that maintains dynamic equilibrium</li>
+  <li><strong>Positive feedback (self-reinforcing):</strong> A change triggers a response that <strong>amplifies</strong> the original change, destabilising the system and pushing it towards a new equilibrium. Example: sea-level rise causes increased wave erosion &rarr; narrower beach &rarr; less wave energy absorption &rarr; even more erosion. Also: removal of coastal vegetation &rarr; increased erosion &rarr; less vegetation can establish &rarr; more erosion</li>
 </ul>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="300" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Coastal System: Inputs, Throughputs, Outputs</text>
-  <!-- Inputs box -->
   <rect x="20" y="50" width="140" height="200" rx="8" fill="#e8f0fe" stroke="#1a73e8" stroke-width="2"/>
   <text x="90" y="75" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a73e8">INPUTS</text>
   <text x="90" y="100" text-anchor="middle" font-size="11" fill="#1a1a2e">Wave energy</text>
@@ -70,7 +70,6 @@
   <text x="90" y="172" text-anchor="middle" font-size="11" fill="#1a1a2e">Precipitation</text>
   <text x="90" y="190" text-anchor="middle" font-size="11" fill="#1a1a2e">Solar energy</text>
   <text x="90" y="208" text-anchor="middle" font-size="11" fill="#1a1a2e">Geology (rock type)</text>
-  <!-- Throughputs box -->
   <rect x="200" y="50" width="180" height="200" rx="8" fill="#fff8e1" stroke="#D97706" stroke-width="2"/>
   <text x="290" y="75" text-anchor="middle" font-size="13" font-weight="bold" fill="#D97706">THROUGHPUTS</text>
   <text x="290" y="100" text-anchor="middle" font-size="11" fill="#1a1a2e">Erosion processes</text>
@@ -80,7 +79,6 @@
   <text x="290" y="172" text-anchor="middle" font-size="11" fill="#1a1a2e">Deposition</text>
   <text x="290" y="190" text-anchor="middle" font-size="11" fill="#1a1a2e">Transport (traction,</text>
   <text x="290" y="206" text-anchor="middle" font-size="11" fill="#1a1a2e">saltation, suspension)</text>
-  <!-- Outputs box -->
   <rect x="420" y="50" width="160" height="200" rx="8" fill="#f0fdf4" stroke="#16A34A" stroke-width="2"/>
   <text x="500" y="75" text-anchor="middle" font-size="13" font-weight="bold" fill="#16A34A">OUTPUTS</text>
   <text x="500" y="100" text-anchor="middle" font-size="11" fill="#1a1a2e">Sediment lost</text>
@@ -89,10 +87,8 @@
   <text x="500" y="166" text-anchor="middle" font-size="11" fill="#1a1a2e">Sediment drift</text>
   <text x="500" y="184" text-anchor="middle" font-size="11" fill="#1a1a2e">along coast</text>
   <text x="500" y="208" text-anchor="middle" font-size="11" fill="#1a1a2e">Energy dissipation</text>
-  <!-- Arrows -->
   <line x1="165" y1="150" x2="195" y2="150" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowhead1)"/>
   <line x1="385" y1="150" x2="415" y2="150" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowhead1)"/>
-  <!-- Feedback arrow -->
   <path d="M500,255 Q500,280 290,280 Q90,280 90,255" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowRed)"/>
   <text x="300" y="295" text-anchor="middle" font-size="10" fill="#DC2626">Feedback loops</text>
   <defs>
@@ -105,66 +101,56 @@
 <h2>Waves</h2>
 
 <div class="definition">
-  <strong>Wave:</strong> A transfer of energy through water caused by wind blowing over the sea surface. Waves are characterised by their height, wavelength, frequency, and type.
+  <strong>Wave:</strong> A transfer of energy through water caused by wind blowing across the sea surface. Importantly, in open water the water itself does not travel forward &mdash; individual water particles move in circular orbits (orbital motion), returning approximately to their starting position. Only the energy moves forward. When waves approach shallow water, the circular orbits become elliptical, friction with the seabed slows the wave base, the wavelength decreases, the wave height increases, and eventually the wave breaks.
 </div>
 
-<h3>Wave Formation</h3>
-<p>Waves form when wind blows across the surface of the sea, transferring energy through friction. Three factors determine wave size:</p>
+<h3>Wave Formation and Size</h3>
+<p>Three factors determine wave size and energy:</p>
 <ul>
-  <li><strong>Wind speed:</strong> Stronger winds generate larger waves</li>
-  <li><strong>Wind duration:</strong> Longer blowing time builds bigger waves</li>
-  <li><strong>Fetch:</strong> The distance of open water over which the wind blows. A longer fetch means larger, more powerful waves</li>
+  <li><strong>Wind speed:</strong> Stronger winds transfer more energy to the water surface, generating larger, more powerful waves</li>
+  <li><strong>Wind duration:</strong> The longer the wind blows in a consistent direction, the more energy is transferred and the bigger the waves become</li>
+  <li><strong>Fetch:</strong> The distance of open water over which the wind blows without obstruction. A longer fetch allows waves to accumulate more energy. The prevailing south-westerly winds in the UK have a fetch across the entire Atlantic Ocean (~5,000 km), which is why the western coastline receives much more powerful waves than the eastern coast (short fetch across the North Sea, ~500 km)</li>
 </ul>
 
-<h3>Wave Behaviour</h3>
-<p>In deep water, water particles move in circular orbits. As waves approach the shore, the sea floor causes friction, the base of the wave slows, and the top topples forward, forming a <strong>breaker</strong>. The <strong>swash</strong> pushes water up the beach; the <strong>backwash</strong> pulls it back under gravity.</p>
+<h3>Wave Behaviour at the Coast</h3>
+<p>In deep water, water particles move in <strong>circular orbits</strong> that decrease in diameter with depth. When the water depth is less than half the wavelength, the seabed interferes with these orbits (wave base touches the bottom). This causes friction, which slows the wave, steepens it, and eventually causes it to break. The <strong>swash</strong> is the rush of water up the beach after a wave breaks. The <strong>backwash</strong> is the return of water back down the beach under gravity.</p>
+
+<h3>Wave Refraction</h3>
+<p>When waves approach an irregular coastline with headlands and bays, the parts of the wave in shallower water near the headland slow down first, while the parts in deeper water in the bay continue at their original speed. This causes the wave fronts to <strong>bend</strong> (refract) and converge on the headlands, concentrating wave energy there and causing erosion. In the bays, wave energy is dispersed, favouring deposition. This is why headlands erode faster and bays tend to have beaches.</p>
 
 <h3>Constructive vs Destructive Waves</h3>
 <table>
   <tr><th>Feature</th><th>Constructive Waves</th><th>Destructive Waves</th></tr>
-  <tr><td>Frequency</td><td>6&ndash;8 per minute</td><td>10&ndash;14 per minute</td></tr>
-  <tr><td>Wave height</td><td>Low</td><td>High, steep</td></tr>
-  <tr><td>Swash vs backwash</td><td>Strong swash, weak backwash</td><td>Weak swash, strong backwash</td></tr>
-  <tr><td>Effect</td><td>Build up beach (deposition)</td><td>Erode and remove material</td></tr>
-  <tr><td>Beach profile</td><td>Wide, gently sloping</td><td>Steep, narrow</td></tr>
-  <tr><td>Associated weather</td><td>Calm conditions, distant storms</td><td>Local storms, strong winds</td></tr>
+  <tr><td>Frequency</td><td>Low: 6&ndash;8 waves per minute</td><td>High: 10&ndash;14 waves per minute</td></tr>
+  <tr><td>Wave height</td><td>Low (&lt;1 m), long wavelength</td><td>High (&gt;1 m), steep, short wavelength</td></tr>
+  <tr><td>Swash vs backwash</td><td><strong>Strong swash</strong>, weak backwash &mdash; deposits more than removes</td><td>Weak swash, <strong>strong backwash</strong> &mdash; removes more than deposits</td></tr>
+  <tr><td>Net effect</td><td><strong>Build up</strong> the beach (net deposition)</td><td><strong>Erode</strong> and remove beach material</td></tr>
+  <tr><td>Beach profile produced</td><td>Wide, gently sloping sandy beach with berms</td><td>Steep, narrow shingle/pebble beach</td></tr>
+  <tr><td>Associated conditions</td><td>Calm weather; swell waves from distant storms (long wavelength)</td><td>Local storms; strong onshore winds; high wave energy</td></tr>
+  <tr><td>Typical environment</td><td>Sheltered bays, summer conditions</td><td>Exposed headlands, winter storms</td></tr>
 </table>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="300" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Constructive vs Destructive Waves</text>
-  <!-- Constructive side -->
   <text x="150" y="50" text-anchor="middle" font-size="12" font-weight="bold" fill="#16A34A">Constructive Wave</text>
-  <!-- Beach profile -->
   <path d="M30,250 Q80,245 150,210 Q200,185 270,140" fill="none" stroke="#D97706" stroke-width="2"/>
   <text x="160" y="260" font-size="10" fill="#D97706">Wide, gentle beach</text>
-  <!-- Wave -->
   <path d="M30,180 Q60,160 80,170 Q100,180 120,165 Q140,150 155,160" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
-  <!-- Swash arrow (big) -->
   <line x1="100" y1="200" x2="180" y2="175" stroke="#16A34A" stroke-width="3" marker-end="url(#arrG)"/>
   <text x="155" y="168" font-size="10" fill="#16A34A">Strong swash</text>
-  <!-- Backwash arrow (small) -->
   <line x1="170" y1="195" x2="115" y2="215" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrR)"/>
   <text x="110" y="232" font-size="9" fill="#DC2626">Weak backwash</text>
-
-  <!-- Destructive side -->
   <text x="450" y="50" text-anchor="middle" font-size="12" font-weight="bold" fill="#DC2626">Destructive Wave</text>
-  <!-- Beach profile steep -->
   <path d="M340,250 Q370,248 420,220 Q460,190 490,120" fill="none" stroke="#D97706" stroke-width="2"/>
   <text x="440" y="260" font-size="10" fill="#D97706">Steep, narrow beach</text>
-  <!-- Tall wave -->
   <path d="M340,180 Q360,130 380,120 Q400,115 410,140 Q420,160 430,155" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
   <text x="385" y="108" font-size="10" fill="#1a73e8">Tall wave</text>
-  <!-- Swash arrow (small) -->
   <line x1="400" y1="200" x2="440" y2="185" stroke="#16A34A" stroke-width="1.5" marker-end="url(#arrG)"/>
   <text x="445" y="180" font-size="9" fill="#16A34A">Weak swash</text>
-  <!-- Backwash arrow (big) -->
   <line x1="440" y1="205" x2="375" y2="225" stroke="#DC2626" stroke-width="3" marker-end="url(#arrR)"/>
   <text x="370" y="240" font-size="10" fill="#DC2626">Strong backwash</text>
-
-  <!-- Divider -->
   <line x1="300" y1="40" x2="300" y2="270" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,3"/>
-
   <defs>
     <marker id="arrG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#16A34A"/></marker>
     <marker id="arrR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#DC2626"/></marker>
@@ -172,152 +158,171 @@
 </svg>
 </div>
 
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> When explaining wave type, always link frequency, swash/backwash balance, and the resulting beach profile. Examiners want to see the process-landform connection.
-</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> When explaining wave type, always explicitly link the swash/backwash balance to the resulting beach profile and landform. Constructive waves have a strong swash that deposits material faster than the weak backwash removes it &rarr; net deposition &rarr; wide beach. Destructive waves have a strong backwash that removes material faster than the weak swash deposits it &rarr; net erosion &rarr; narrow beach. Examiners want to see the <strong>process-landform connection</strong> clearly articulated.</div>
 
 <h2>Coastal Erosion Processes</h2>
 
-<h3>Marine Erosion</h3>
+<h3>Marine Erosion (Wave Processes)</h3>
 <table>
-  <tr><th>Process</th><th>Description</th></tr>
-  <tr><td><strong>Hydraulic action</strong></td><td>Force of water hitting the cliff face compresses air in cracks, exerting pressure that widens joints and fractures. When the wave retreats, explosive decompression occurs (cavitation).</td></tr>
-  <tr><td><strong>Abrasion (corrasion)</strong></td><td>Waves hurl sand, pebbles, and rocks against the cliff face, wearing it away like sandpaper. Most effective during storms with large sediment loads.</td></tr>
-  <tr><td><strong>Attrition</strong></td><td>Rocks and pebbles carried by waves knock against each other, becoming smaller, smoother, and more rounded over time.</td></tr>
-  <tr><td><strong>Corrosion (solution)</strong></td><td>Chemical dissolution of soluble rocks (e.g., limestone, chalk) by slightly acidic seawater containing carbonic acid.</td></tr>
+  <tr><th>Process</th><th>Description</th><th>Key Detail</th></tr>
+  <tr><td><strong>Hydraulic action</strong></td><td>The sheer force of water hitting the cliff face compresses air trapped in cracks, joints, and faults. The repeated compression and decompression (cavitation) gradually widens these weaknesses, breaking the rock apart.</td><td>Most effective on well-jointed rocks (e.g. chalk, limestone). During storms, wave pressure can exceed 30 tonnes per m<sup>2</sup></td></tr>
+  <tr><td><strong>Abrasion (corrasion)</strong></td><td>Waves pick up sand, pebbles, and rocks and hurl them against the cliff face, wearing it away like sandpaper. The eroded cliff material provides ammunition for further abrasion.</td><td>Most effective during storms when waves carry heavy sediment loads. Creates wave-cut notches at the base of cliffs. Often the most significant erosion process</td></tr>
+  <tr><td><strong>Attrition</strong></td><td>Rocks and pebbles carried by waves collide with each other and the cliff, becoming progressively smaller, smoother, and more rounded.</td><td>Explains why sediment becomes finer and more rounded downstream/downdrift. Angular boulders at cliff base &rarr; rounded pebbles &rarr; sand &rarr; silt</td></tr>
+  <tr><td><strong>Corrosion (solution/chemical erosion)</strong></td><td>Chemical dissolution of soluble rocks by slightly acidic seawater. Carbonic acid (from dissolved CO<sub>2</sub>) reacts with calcium carbonate in limestone and chalk.</td><td>CaCO<sub>3</sub> + H<sub>2</sub>O + CO<sub>2</sub> &rarr; Ca(HCO<sub>3</sub>)<sub>2</sub> (soluble). Particularly important on limestone and chalk coasts. Acts continuously, not just during storms</td></tr>
 </table>
 
-<h3>Sub-aerial Processes</h3>
-<p>These operate on the cliff face from above, weakening rock and making it more vulnerable to marine erosion.</p>
+<h3>Sub-aerial Processes (Weathering and Mass Movement)</h3>
+<p>These operate on the cliff face from above the waterline, weakening rock and making it more vulnerable to marine erosion from below. The combination of sub-aerial weathering (top-down) and marine erosion (base) is what drives cliff retreat.</p>
 
 <p><strong>Weathering types:</strong></p>
 <ul>
-  <li><strong>Mechanical (physical) weathering:</strong> Freeze-thaw &mdash; water enters cracks, freezes and expands by 9%, widening cracks. Repeated cycles shatter rock. Also salt crystallisation in coastal areas.</li>
-  <li><strong>Chemical weathering:</strong> Carbonation &mdash; rainwater + CO<sub>2</sub> forms weak carbonic acid that dissolves calcium carbonate in limestone/chalk. Oxidation weakens iron-rich rocks.</li>
-  <li><strong>Biological weathering:</strong> Plant roots grow into cracks and widen them. Burrowing organisms (piddocks) bore into rock. Algae produce acids.</li>
+  <li><strong>Freeze-thaw (frost shattering):</strong> Water enters cracks and joints during the day. At night, it freezes and expands by approximately <strong>9%</strong>, exerting pressure of up to 2,100 kPa on the rock. When it thaws, the water penetrates deeper into the widened crack. Repeated freeze-thaw cycles (above and below 0 degrees C) progressively shatter the rock. Most effective in environments with frequent temperature oscillations around 0 degrees C (e.g. northern UK coasts in winter)</li>
+  <li><strong>Salt crystallisation:</strong> Seawater spray enters rock pores and cracks. As water evaporates, salt crystals grow, exerting pressure on the rock and causing granular disintegration. Particularly effective on porous rocks like sandstone in warm, exposed coastal environments</li>
+  <li><strong>Carbonation (chemical weathering):</strong> Rainwater absorbs CO<sub>2</sub> from the atmosphere to form weak carbonic acid (H<sub>2</sub>CO<sub>3</sub>). This reacts with calcium carbonate in limestone and chalk, dissolving it into soluble calcium bicarbonate. Accelerated by increased atmospheric CO<sub>2</sub></li>
+  <li><strong>Oxidation:</strong> Iron-rich minerals in rocks react with oxygen and water, weakening the rock structure (forming rust-coloured iron oxides). Particularly visible in rocks with high iron content</li>
+  <li><strong>Biological weathering:</strong> Plant roots grow into cracks and exert pressure as they enlarge (root wedging). Burrowing organisms (piddocks, sea urchins) bore into rock, weakening it. Algae and lichens produce organic acids that chemically dissolve rock surfaces</li>
 </ul>
 
 <h3>Mass Movement</h3>
+<p>The downslope movement of rock, soil, and debris under the influence of gravity. Mass movement is triggered when the force of gravity exceeds the resisting forces (friction, cohesion) holding material in place. This balance is affected by: undercutting by wave erosion (removes support), saturation by rainfall (adds weight, reduces friction, increases pore water pressure), weathering (weakens rock), vegetation removal, and steep slope angles.</p>
+
 <table>
-  <tr><th>Type</th><th>Description</th><th>Conditions</th></tr>
-  <tr><td>Rockfall</td><td>Fragments break off steep cliff face under gravity</td><td>Freeze-thaw weathering, steep bare cliffs</td></tr>
-  <tr><td>Landslide</td><td>Block of rock slides along a flat plane (bedding plane/fault)</td><td>Saturated ground, weak rock layers</td></tr>
-  <tr><td>Rotational slump</td><td>Curved slip plane; material rotates as it moves</td><td>Clay/soft rock, heavy rainfall, undercutting</td></tr>
-  <tr><td>Mudflow</td><td>Saturated soil/clay flows downslope</td><td>Heavy rain on impermeable/clay-rich slopes</td></tr>
-  <tr><td>Soil creep</td><td>Slow, gradual downslope movement</td><td>Ongoing process on most slopes</td></tr>
+  <tr><th>Type</th><th>Description</th><th>Speed</th><th>Conditions</th></tr>
+  <tr><td><strong>Rockfall</strong></td><td>Individual fragments or blocks of rock break away from a steep or overhanging cliff face and fall under gravity, accumulating as scree (talus) at the base</td><td>Very fast (instantaneous)</td><td>Steep, bare, well-jointed rock cliffs. Triggered by freeze-thaw weathering, undercutting, vibration</td></tr>
+  <tr><td><strong>Landslide (translational slide)</strong></td><td>A block of rock slides downslope along a relatively flat plane (bedding plane, fault surface, or clay layer). The block may remain largely intact</td><td>Fast</td><td>Layered geology with a weak layer (e.g. clay between sandstone beds). Often triggered by saturation or undercutting</td></tr>
+  <tr><td><strong>Rotational slump (rotational slide)</strong></td><td>A mass of saturated material slides along a <strong>curved slip plane</strong>, rotating backwards as it moves. Leaves a crescent-shaped scar at the top and a bulge of displaced material at the base</td><td>Fast to moderate</td><td>Clay or soft rock cliffs. Heavy rainfall saturates the material, adding weight and reducing shear strength. Undercutting by waves removes toe support</td></tr>
+  <tr><td><strong>Mudflow</strong></td><td>Highly saturated soil or clay flows rapidly downslope as a viscous mass</td><td>Fast</td><td>Impermeable clay-rich soils; very heavy or prolonged rainfall; steep slopes. Common on clay cliffs like Holderness</td></tr>
+  <tr><td><strong>Soil creep</strong></td><td>The very slow, continuous, downslope movement of soil under gravity</td><td>Very slow (mm/year)</td><td>Most vegetated slopes; evidenced by terracettes (small steps), tilted fence posts, curved tree trunks</td></tr>
 </table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> In exam answers about cliff retreat, always combine <strong>marine erosion at the base</strong> with <strong>sub-aerial weathering and mass movement above</strong>. The process is cyclical: (1) waves erode a notch at the base (hydraulic action + abrasion), (2) the cliff above becomes unsupported and weakened by weathering, (3) mass movement (rockfall, slump) causes the cliff to collapse, (4) debris is removed by waves, exposing a fresh cliff face, and the cycle repeats. This demonstrates the interaction of different process groups within the landscape system.</div>
 
 <h2>Sediment Transport</h2>
 
-<h3>Methods of Transport</h3>
+<h3>Methods of Sediment Transport</h3>
 <ul>
-  <li><strong>Traction:</strong> Large boulders and pebbles rolled along the seabed by wave action</li>
-  <li><strong>Saltation:</strong> Smaller stones bounced along the seabed in a hopping motion</li>
-  <li><strong>Suspension:</strong> Fine sand and silt carried within the water column</li>
-  <li><strong>Solution:</strong> Dissolved minerals carried invisibly in the water</li>
+  <li><strong>Traction:</strong> Large boulders and cobbles rolled along the seabed by strong wave action. Requires the most energy</li>
+  <li><strong>Saltation:</strong> Smaller pebbles and gravel bounced along the seabed in a hopping motion by moderate wave energy</li>
+  <li><strong>Suspension:</strong> Fine sand, silt, and clay particles carried within the water column. Gives the sea a brown/turbid colour during storms. Can transport material long distances</li>
+  <li><strong>Solution:</strong> Dissolved minerals (e.g. calcium bicarbonate from limestone dissolution) carried invisibly in the water. Cannot be deposited mechanically &mdash; only through chemical precipitation or biological processes</li>
 </ul>
 
 <h3>Longshore Drift (Littoral Drift)</h3>
 <div class="definition">
-  <strong>Longshore drift:</strong> The movement of sediment along the coast by wave action. Waves approach the beach at an angle determined by the prevailing wind direction. Swash carries sediment up the beach at this angle, while backwash drags sediment straight back down the beach under gravity. This creates a zigzag movement of material along the shore.
+  <strong>Longshore drift:</strong> The systematic movement of sediment along the coast by wave action. Waves approach the beach at an <strong>angle determined by the prevailing wind direction</strong>. The swash carries sediment up the beach at this oblique angle. The backwash, under the influence of gravity, drags sediment straight back down the beach perpendicular to the shoreline. The net result is a <strong>zigzag movement</strong> of sediment along the coast in the direction of the prevailing wind. On England's south coast, longshore drift generally moves sediment from west to east (prevailing south-westerly winds). On the east coast, it moves southward.
 </div>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="300" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Longshore Drift</text>
-  <!-- Beach area -->
   <path d="M50,200 L550,200 L550,280 L50,280 Z" fill="#f5e6c8" stroke="#D97706" stroke-width="1"/>
   <text x="300" y="270" text-anchor="middle" font-size="12" fill="#D97706">BEACH</text>
-  <!-- Sea area -->
   <rect x="50" y="60" width="500" height="140" fill="#dbeafe" stroke="#1a73e8" stroke-width="1"/>
   <text x="300" y="85" text-anchor="middle" font-size="12" fill="#1a73e8">SEA</text>
-  <!-- Wind arrow -->
-  <line x1="80" y1="50" x2="180" y2="100" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrB)"/>
+  <line x1="80" y1="50" x2="180" y2="100" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrB2)"/>
   <text x="80" y="45" font-size="11" fill="#1a1a2e">Prevailing wind</text>
-  <!-- Wave lines at angle -->
   <line x1="100" y1="110" x2="250" y2="130" stroke="#1a73e8" stroke-width="1.5"/>
   <line x1="130" y1="120" x2="280" y2="140" stroke="#1a73e8" stroke-width="1.5"/>
   <line x1="160" y1="130" x2="310" y2="150" stroke="#1a73e8" stroke-width="1.5"/>
-  <!-- Zigzag sediment path -->
   <path d="M150,200 L200,175 L200,200 L260,175 L260,200 L320,175 L320,200 L380,175 L380,200 L440,175 L440,200 L500,175" fill="none" stroke="#DC2626" stroke-width="2.5" marker-end="url(#arrRed2)"/>
-  <!-- Labels -->
   <text x="185" y="168" font-size="9" fill="#16A34A" transform="rotate(-25,185,168)">Swash (angled)</text>
   <text x="208" y="210" font-size="9" fill="#1a73e8">Backwash</text>
-  <text x="268" y="210" font-size="9" fill="#1a73e8">(straight)</text>
-  <!-- Direction arrow -->
+  <text x="268" y="210" font-size="9" fill="#1a73e8">(straight down)</text>
   <line x1="150" y1="240" x2="500" y2="240" stroke="#DC2626" stroke-width="2" marker-end="url(#arrRed2)"/>
   <text x="320" y="255" text-anchor="middle" font-size="11" fill="#DC2626">Direction of longshore drift</text>
   <defs>
-    <marker id="arrB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1a1a2e"/></marker>
+    <marker id="arrB2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1a1a2e"/></marker>
     <marker id="arrRed2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#DC2626"/></marker>
   </defs>
 </svg>
 </div>
 
-<h3>Sediment Cells</h3>
+<h3>Sediment Cells (Littoral Cells)</h3>
 <div class="definition">
-  <strong>Sediment cell (littoral cell):</strong> A self-contained stretch of coastline within which sediment movement is largely independent of adjacent cells. The coast of England and Wales is divided into 11 major sediment cells. Understanding these is crucial for coastal management because interventions in one cell should not affect another.
+  <strong>Sediment cell:</strong> A self-contained stretch of coastline within which sediment movement (input, transport, and output) is largely independent of adjacent cells. The coast of England and Wales is divided into <strong>11 major sediment cells</strong>. Each cell has sources (cliff erosion, river input), transfers (longshore drift), and sinks (deposition as beaches, spits, or loss offshore). Understanding sediment cells is crucial for coastal management because interventions in one part of a cell (e.g. building groynes) can have unintended consequences in other parts of the same cell (e.g. sediment starvation of downdrift beaches).
 </div>
 
-<h2>Coastal Deposition</h2>
+<h2>Coastal Deposition and Depositional Landforms</h2>
 
 <p>Deposition occurs when the sea loses energy and can no longer carry its sediment load. This happens when:</p>
 <ul>
-  <li>Waves enter sheltered bays or behind headlands</li>
-  <li>Wind speed decreases</li>
-  <li>There is a large sediment supply (e.g., from river mouths)</li>
-  <li>Constructive waves dominate with strong swash</li>
-  <li>Longshore drift reaches a change in coastline direction</li>
+  <li>Waves enter sheltered areas (bays, behind headlands, estuaries) &mdash; wave energy is reduced</li>
+  <li>Wind speed decreases or changes direction</li>
+  <li>There is a large sediment supply (e.g. from river mouths or rapidly eroding cliffs)</li>
+  <li>Constructive waves dominate (strong swash deposits sediment high on the beach)</li>
+  <li>Longshore drift reaches a change in coastline direction (material can no longer be transported forward)</li>
 </ul>
+
+<h3>Beaches</h3>
+<p>The most common depositional landform, found at the interface between land and sea. Beaches vary in composition, gradient, and morphology depending on sediment type and wave conditions:</p>
+<ul>
+  <li><strong>Sandy beaches:</strong> Wide, gently sloping (2&ndash;5 degrees). Fine sand is easily transported by constructive waves and deposited uniformly. Common in sheltered bays</li>
+  <li><strong>Shingle/pebble beaches:</strong> Steep (10&ndash;20 degrees). Coarse material is too heavy for the backwash to move far, so it piles up steeply. Water percolates quickly through pebbles, reducing backwash energy further (positive feedback for steepening)</li>
+  <li><strong>Beach features:</strong> Berms (ridges of material deposited at successive high tide marks), cusps (semicircular depressions formed by swash/backwash interaction), ripples (small-scale features on sandy surfaces), runnels (channels formed by drainage)</li>
+</ul>
+
+<h3>Spits</h3>
+<p>A <strong>spit</strong> is a long, narrow ridge of sand or shingle extending from the mainland into the sea (or across an estuary) at a point where the coastline changes direction. It forms because longshore drift continues to carry material in its original direction even though the coast turns. The end of the spit may curve landward (forming a <strong>recurved tip</strong>) due to wave refraction or secondary currents. A sheltered, low-energy area behind the spit often develops into a <strong>salt marsh</strong> through ecological succession (halophyte colonisation).</p>
+
+<div class="case-study">
+  <strong>Case Study: Spurn Point, Humber Estuary, East Yorkshire</strong><br>
+  Spurn Point is a <strong>5.5 km long</strong> sand and shingle spit extending across the mouth of the Humber Estuary. It is formed by longshore drift carrying material <strong>southward</strong> from the rapidly eroding Holderness cliffs (the source of sediment). The spit has a pronounced recurved tip and encloses extensive mudflats and salt marshes within the estuary. Spurn is <strong>extremely dynamic</strong> and migrates westward over time &mdash; it has been breached and reformed at least twice in recorded history (1849 and 2013). The December 2013 storm surge breached the spit in several places, and it is now classified as a tidal island (only accessible at low tide). It is managed by the <strong>Yorkshire Wildlife Trust</strong> as a nature reserve and illustrates key concepts: the link between cliff erosion (source) and spit formation (store/output) within a sediment cell; the dynamic, ever-changing nature of coastal landforms; and the tension between "holding the line" and allowing natural processes.
+</div>
+
+<h3>Bars and Tombolos</h3>
+<ul>
+  <li><strong>Bar:</strong> A spit that grows all the way across a bay, sealing off a <strong>lagoon</strong> of trapped water behind it. Bars form in sheltered conditions where wave energy is low enough to allow deposition across the full bay width. Example: <strong>Slapton Ley, Devon</strong> &mdash; a freshwater lagoon trapped behind a shingle bar</li>
+  <li><strong>Tombolo:</strong> A bar of deposited sediment that connects the mainland to an offshore island. Forms when waves refract around an island, creating a zone of constructive interference and deposition in the sheltered area between the island and the shore. Example: <strong>Chesil Beach</strong> connecting the Isle of Portland to the Dorset coast (28 km long, graded from pebbles at the Portland end to fine sand at the Bridport end &mdash; evidence of longshore sorting)</li>
+</ul>
+
+<h3>Sand Dunes</h3>
+<p>Formed when sand is blown inland by <strong>onshore winds</strong> and trapped by obstacles (driftwood, vegetation). Dunes develop through <strong>ecological succession (psammosere)</strong>:</p>
+<ol>
+  <li><strong>Embryo dunes</strong> &mdash; nearest the strand line; small mounds around obstacles; colonised by pioneer species (sea rocket, sea sandwort) that tolerate salt spray, drought, and burial</li>
+  <li><strong>Foredunes (yellow dunes)</strong> &mdash; taller (5&ndash;10 m); dominated by <strong>marram grass</strong> (<em>Ammophila arenaria</em>), which has adaptations for sand dune life: deep roots stabilise sand, rolled leaves reduce water loss, buried stems survive burial. Still very little humus in soil; alkaline pH; harsh conditions</li>
+  <li><strong>Grey dunes</strong> &mdash; further inland; more humus develops; greater species diversity (mosses, lichens, low shrubs); more sheltered; slightly acidic soil</li>
+  <li><strong>Dune slacks</strong> &mdash; low-lying wet areas between dune ridges where the water table is close to the surface; support wetland species (creeping willow, orchids)</li>
+  <li><strong>Mature/fixed dunes</strong> &mdash; furthest inland; thick soil with abundant humus; climax vegetation may include shrubs, heather, and woodland; pH acidic; well-established ecosystem</li>
+</ol>
 
 <h2>Erosional Landforms</h2>
 
 <h3>Headlands and Bays</h3>
-<p>Form where the coast is made of alternating bands of hard and soft rock (discordant coastline). The sea erodes the weaker rock faster, forming bays, while the more resistant rock protrudes as headlands. Over time, wave refraction concentrates energy on the headlands and disperses it in the bays.</p>
+<p>Form where the coast is made of <strong>alternating bands of hard and soft rock perpendicular to the shore</strong> (a <strong>discordant coastline</strong>). The sea erodes the weaker rock (e.g. clay, shale) faster, forming bays. The more resistant rock (e.g. granite, limestone) protrudes as headlands. Over time, wave refraction concentrates energy on the headlands (accelerating their erosion) and disperses it in the bays (encouraging deposition of beaches). Eventually, this differential erosion will straighten the coastline &mdash; a demonstration of the system seeking dynamic equilibrium.</p>
 
 <h3>Cliff Profiles and Wave-Cut Platforms</h3>
 <ol>
-  <li>Waves attack the base of the cliff, especially between high and low tide marks</li>
-  <li>Hydraulic action and abrasion create a <strong>wave-cut notch</strong></li>
-  <li>The rock above the notch becomes unsupported and collapses</li>
-  <li>The cliff retreats, leaving a gently sloping <strong>wave-cut platform</strong></li>
-  <li>As the platform extends, waves lose energy crossing it, slowing further erosion</li>
+  <li>Waves attack the base of the cliff, concentrated between <strong>high and low tide marks</strong> (the inter-tidal zone)</li>
+  <li><strong>Hydraulic action and abrasion</strong> create a <strong>wave-cut notch</strong> (an indent at the cliff base)</li>
+  <li>As the notch deepens, the rock above becomes unsupported and <strong>collapses</strong> (mass movement)</li>
+  <li>The cliff retreats inland, leaving behind a gently sloping (<1&ndash;3 degrees) rocky platform &mdash; the <strong>wave-cut platform</strong></li>
+  <li>As the platform extends seaward, waves lose energy crossing its shallow, rough surface, which gradually <strong>slows further erosion</strong> (negative feedback). Maximum platform width is typically ~500 m before erosion effectively ceases</li>
 </ol>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="300" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Wave-Cut Platform Formation</text>
-  <!-- Sea -->
   <rect x="30" y="140" width="300" height="80" fill="#dbeafe" opacity="0.5"/>
   <text x="150" y="175" text-anchor="middle" font-size="11" fill="#1a73e8">Sea</text>
-  <!-- High/low tide -->
   <line x1="30" y1="145" x2="330" y2="145" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="35" y="140" font-size="9" fill="#1a73e8">High tide</text>
   <line x1="30" y1="195" x2="280" y2="195" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="35" y="210" font-size="9" fill="#1a73e8">Low tide</text>
-  <!-- Original cliff (dashed) -->
   <path d="M430,75 L430,220 L330,220" fill="none" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5,4"/>
   <text x="440" y="150" font-size="9" fill="#aaa">Original cliff</text>
-  <!-- Current cliff -->
   <path d="M330,75 L330,140 Q330,155 340,160 L330,170 L330,220" fill="#e2c9a0" stroke="#D97706" stroke-width="2"/>
-  <!-- Wave-cut notch -->
   <text x="350" y="158" font-size="9" fill="#DC2626">Wave-cut notch</text>
   <path d="M330,145 Q345,155 330,165" fill="none" stroke="#DC2626" stroke-width="2"/>
-  <!-- Cliff face -->
   <rect x="330" y="75" width="230" height="145" fill="#e2c9a0" stroke="#D97706" stroke-width="2"/>
   <text x="445" y="130" text-anchor="middle" font-size="12" fill="#D97706">Cliff</text>
-  <!-- Wave-cut platform -->
   <line x1="180" y1="220" x2="330" y2="220" stroke="#D97706" stroke-width="3"/>
   <text x="255" y="240" text-anchor="middle" font-size="11" font-weight="bold" fill="#D97706">Wave-cut platform</text>
-  <!-- Fallen debris -->
   <circle cx="290" cy="215" r="5" fill="#c9a97a"/>
   <circle cx="305" cy="213" r="4" fill="#c9a97a"/>
   <circle cx="315" cy="216" r="3" fill="#c9a97a"/>
   <text x="280" y="250" font-size="9" fill="#1a1a2e">Fallen debris</text>
-  <!-- Retreat arrow -->
   <line x1="430" y1="65" x2="340" y2="65" stroke="#DC2626" stroke-width="2" marker-end="url(#arrR3)"/>
   <text x="385" y="58" text-anchor="middle" font-size="10" fill="#DC2626">Cliff retreat</text>
-  <!-- Wave arrows -->
   <line x1="80" y1="165" x2="160" y2="165" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrB3)"/>
   <line x1="120" y1="175" x2="200" y2="175" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrB3)"/>
   <defs>
@@ -328,148 +333,118 @@
 </div>
 
 <h3>Caves, Arches, Stacks, and Stumps</h3>
+<p>A <strong>sequence of erosional landforms</strong> that develops on headlands, demonstrating the progressive erosion of resistant rock through geological weaknesses:</p>
 <ol>
-  <li><strong>Cave:</strong> Hydraulic action and abrasion exploit a weakness (joint/fault) in a headland, eroding it into a cave</li>
-  <li><strong>Arch:</strong> Back-to-back caves erode through the headland to form an arch</li>
-  <li><strong>Stack:</strong> The roof of the arch collapses due to weathering and gravity, leaving an isolated column of rock</li>
-  <li><strong>Stump:</strong> Continued erosion at the base of the stack causes it to collapse, leaving a low stump visible at low tide</li>
+  <li><strong>Cave:</strong> Hydraulic action and abrasion exploit a line of weakness (joint, fault, bedding plane) in the headland, eroding it into a tunnel-like cave. The back of the cave is continually eroded deeper</li>
+  <li><strong>Arch:</strong> When caves on <strong>both sides</strong> of a narrow headland erode through and meet, they form an arch &mdash; a bridge of rock spanning the gap with sea on both sides</li>
+  <li><strong>Stack:</strong> The roof of the arch is weakened by weathering (freeze-thaw, biological) and wave action from below. Eventually it <strong>collapses</strong>, leaving an isolated column of rock separated from the headland</li>
+  <li><strong>Stump:</strong> Continued erosion at the base of the stack (abrasion, hydraulic action) undermines it. Eventually the stack collapses, leaving a low stump that is only visible at low tide. The stump may eventually be completely eroded away</li>
 </ol>
 
 <div class="case-study">
-  <strong>Case Study: Old Harry Rocks, Dorset</strong><br>
-  Located on the Purbeck coast, Old Harry Rocks are chalk stacks at the eastern end of the Jurassic Coast. Old Harry is a stack, and Old Harry's Wife (now a stump) collapsed in 1896. They demonstrate the headland erosion sequence: the Foreland headland has caves, arches, and stacks in various stages. The chalk is relatively resistant but has many joints that are exploited by hydraulic action. The site shows how geological structure (concordant/discordant coast) controls landform development.
+  <strong>Case Study: Old Harry Rocks, Purbeck Coast, Dorset</strong><br>
+  Located at the eastern end of the <strong>Jurassic Coast</strong> World Heritage Site, Old Harry Rocks are chalk stacks and stumps on the Foreland headland. <strong>Old Harry</strong> is a prominent stack, and <strong>Old Harry's Wife</strong> was a stack that collapsed to become a stump in 1896 &mdash; demonstrating the erosion sequence in action within recent history. The Foreland headland has caves, arches, and stacks in various stages of development, making it an ideal location for studying the complete erosion sequence. The chalk is relatively resistant but is heavily jointed, and these joints are exploited by hydraulic action, freeze-thaw weathering, and biological weathering (plant roots, boring organisms). The site illustrates how <strong>geological structure</strong> (concordant/discordant coastline, rock resistance, joint patterns) controls the rate and pattern of landform development. The Jurassic Coast demonstrates coastal landforms from 185 million years of geological history in just 155 km.
 </div>
 
 <h3>Geo and Blow Hole</h3>
 <ul>
-  <li><strong>Geo:</strong> A narrow, steep-sided inlet formed when a cave roof collapses or a joint is eroded</li>
-  <li><strong>Blow hole:</strong> A vertical shaft formed when wave pressure exploits a weakness in the cave roof; spray erupts through it during storms</li>
+  <li><strong>Geo:</strong> A narrow, steep-sided coastal inlet formed when a cave roof collapses or a major joint/fault is eroded by wave action. Common on well-jointed rock coastlines</li>
+  <li><strong>Blow hole:</strong> A vertical shaft formed when wave pressure exploits a weakness in the roof of a sea cave, eventually breaking through to the surface. During storms, air and spray are forced up through the blow hole with considerable force. Example: Blow Hole, Flamborough Head, East Yorkshire</li>
 </ul>
 
-<h2>Depositional Landforms</h2>
-
-<h3>Beaches</h3>
-<p>The most common depositional landform. Sandy beaches tend to be wide and gently sloping (fine material easily moved by constructive waves). Shingle/pebble beaches are steeper because water percolates through the coarse material, reducing backwash.</p>
-
-<p><strong>Beach features:</strong> berms (ridges marking high tide), cusps (semicircular depressions), ripples, runnels</p>
-
-<h3>Spits</h3>
-<p>A spit is a long, narrow ridge of sand or shingle extending from the mainland into the sea at a point where the coastline changes direction. Longshore drift carries material past the change in direction. The end may curve (recurved tip) due to secondary wave action. A sheltered area behind the spit often develops into a salt marsh.</p>
-
-<div class="case-study">
-  <strong>Case Study: Spurn Point, Humber Estuary</strong><br>
-  Spurn Point is a 5.5 km long sand and shingle spit extending across the mouth of the Humber Estuary. It is formed by longshore drift carrying material southward from Holderness cliffs. The spit has a recurved tip and encloses mudflats and salt marshes. It has been breached multiple times (e.g., 2013 storm surge) and is extremely dynamic, migrating westward. It is managed by the Yorkshire Wildlife Trust. The spit illustrates the link between cliff erosion (source) and deposition (store) within a sediment cell.
-</div>
-
-<h3>Bars and Tombolos</h3>
-<ul>
-  <li><strong>Bar:</strong> A spit that grows across a bay, sealing off a lagoon behind it. Example: Slapton Ley, Devon</li>
-  <li><strong>Tombolo:</strong> A bar that connects the mainland to an offshore island. Example: Chesil Beach connecting Portland to the Dorset coast</li>
-</ul>
-
-<h3>Sand Dunes</h3>
-<p>Formed when sand is blown inland by onshore winds and trapped by vegetation or obstacles. Dunes develop in a succession (psammosere) from embryo dunes nearest the sea to mature fixed dunes inland, with increasing soil depth, humus, moisture, and biodiversity.</p>
-
-<h2>Influence of Geology</h2>
+<h2>Influence of Geology on Coastal Landscapes</h2>
 
 <h3>Rock Type and Resistance</h3>
 <table>
-  <tr><th>Rock</th><th>Resistance</th><th>Typical Landforms</th></tr>
-  <tr><td>Granite</td><td>Very resistant</td><td>Rugged headlands, cliffs</td></tr>
-  <tr><td>Chalk</td><td>Resistant but permeable</td><td>White cliffs, stacks (e.g., Old Harry)</td></tr>
-  <tr><td>Limestone</td><td>Resistant</td><td>Cliffs with caves (chemical weathering)</td></tr>
-  <tr><td>Clay/shale</td><td>Weak, impermeable</td><td>Bays, slumping, gentle slopes</td></tr>
-  <tr><td>Sand/gravel</td><td>Weak</td><td>Rapid erosion, low cliffs</td></tr>
+  <tr><th>Rock</th><th>Resistance</th><th>Typical Coastal Landforms</th><th>Why</th></tr>
+  <tr><td>Granite</td><td>Very resistant</td><td>Rugged headlands, towering cliffs, stacks</td><td>Crystalline, interlocking mineral structure; very hard; few weaknesses</td></tr>
+  <tr><td>Chalk</td><td>Resistant but permeable and jointed</td><td>White cliffs, stacks, arches (e.g. Old Harry, Seven Sisters)</td><td>Hard but joints allow hydraulic action; permeable so reduces surface runoff (less mass movement); dissolved by carbonation</td></tr>
+  <tr><td>Limestone (carboniferous)</td><td>Resistant but soluble and jointed</td><td>Cliffs with caves and blow holes; coastal karst features</td><td>Hard but dissolved by carbonic acid (corrosion); joints and bedding planes exploited by waves</td></tr>
+  <tr><td>Clay / shale</td><td>Weak, impermeable</td><td>Bays, rotational slumps, low and gentle cliff profiles, mudflows</td><td>Easily eroded; impermeable so becomes saturated after rain &rarr; mass movement; shapes bays in discordant coasts</td></tr>
+  <tr><td>Sand / unconsolidated glacial till</td><td>Very weak</td><td>Rapid erosion, low crumbling cliffs (e.g. Holderness)</td><td>Loose particles easily eroded by waves and rain; no resistance to hydraulic action. Holderness boulder clay erodes at up to 2&ndash;10 m per year</td></tr>
 </table>
 
 <h3>Concordant and Discordant Coastlines</h3>
 <ul>
-  <li><strong>Discordant coast:</strong> Rock bands run perpendicular to the coast &rarr; alternating headlands and bays (e.g., Swanage Bay area)</li>
-  <li><strong>Concordant coast:</strong> Rock bands run parallel to the coast &rarr; if outer resistant rock is breached, the softer rock behind erodes into a cove (e.g., Lulworth Cove, Dorset)</li>
+  <li><strong>Discordant coastline:</strong> Rock bands run <strong>perpendicular</strong> to the coast. Differential erosion of hard and soft rock creates alternating headlands and bays. Example: the Purbeck coast around Swanage Bay &mdash; resistant chalk forms Ballard Point headland while softer clay/sands erode to form Swanage Bay</li>
+  <li><strong>Concordant coastline:</strong> Rock bands run <strong>parallel</strong> to the coast. If the outer resistant rock band is breached by wave action, the softer rock behind erodes rapidly to form a cove (rounded bay). Example: <strong>Lulworth Cove, Dorset</strong></li>
 </ul>
 
 <div class="case-study">
   <strong>Case Study: Lulworth Cove, Dorset</strong><br>
-  A concordant coastline where the outer band of resistant Portland limestone was breached by wave action. Behind it, the softer Wealden clay was rapidly eroded into a near-circular cove. The back wall of the cove is more resistant chalk, which slows further erosion. Stair Hole nearby shows an earlier stage in cove development with the limestone being breached in several places.
+  A textbook example of a <strong>concordant coastline</strong> landform. The outer band of very resistant <strong>Portland limestone</strong> (hard, resistant to erosion) runs parallel to the coast. At Lulworth, this limestone band was breached by wave action at a point of weakness. Behind it, the much softer <strong>Wealden clay</strong> was rapidly eroded into a near-circular cove (~500 m wide). The back wall of the cove is formed by more resistant <strong>chalk</strong>, which slows further inland erosion. Nearby <strong>Stair Hole</strong> shows an earlier stage in cove development: the limestone barrier is being breached in several places, and small coves are forming in the clay behind. Together, Lulworth and Stair Hole demonstrate the progressive sequence of concordant coastline evolution. The distinctive scallop shape of the cove results from wave refraction within the breached bay, which distributes erosive energy evenly around the circumference.
 </div>
 
 <h2>Coastal Management Strategies</h2>
 
 <div class="definition">
-  <strong>Coastal management:</strong> Strategies used to protect coastlines from erosion and flooding, while considering economic, social, and environmental factors.
+  <strong>Coastal management:</strong> Strategies used to protect coastlines from erosion and flooding, while balancing economic, social, environmental, and political considerations. The fundamental choice is between fighting natural processes (hard engineering), working with them (soft engineering), or allowing retreat (managed realignment / no active intervention).
 </div>
 
 <h3>Hard Engineering</h3>
 <table>
-  <tr><th>Method</th><th>Description</th><th>Advantages</th><th>Disadvantages</th></tr>
-  <tr><td>Sea wall</td><td>Concrete/stone wall at base of cliff; curved top reflects wave energy</td><td>Effective barrier; long lifespan</td><td>Very expensive (up to &pound;6000/m); can cause scour at base; ugly</td></tr>
-  <tr><td>Groynes</td><td>Wooden/stone barriers built perpendicular to shore; trap sediment moved by longshore drift</td><td>Relatively cheap; build up beach</td><td>Starve downdrift beaches of sediment; need maintenance</td></tr>
-  <tr><td>Rock armour (rip-rap)</td><td>Large boulders placed at cliff base to absorb wave energy</td><td>Cheaper than sea walls; effective</td><td>Can be moved by storms; visually intrusive</td></tr>
-  <tr><td>Gabions</td><td>Wire cages filled with rocks; placed at cliff base</td><td>Cheap; absorb wave energy</td><td>Short lifespan (5&ndash;10 years); unattractive</td></tr>
-  <tr><td>Offshore breakwaters</td><td>Rock/concrete barriers offshore that break waves before they reach the coast</td><td>Reduce wave energy reaching shore</td><td>Expensive; can disrupt sediment movement</td></tr>
-  <tr><td>Revetments</td><td>Sloped structures (wood/concrete) at cliff base that absorb wave energy</td><td>Less expensive than sea walls</td><td>May need frequent replacement</td></tr>
+  <tr><th>Method</th><th>Description</th><th>Advantages</th><th>Disadvantages</th><th>Cost</th></tr>
+  <tr><td><strong>Sea wall</strong></td><td>Concrete or stone wall at the base of a cliff; often with a curved (recurved) top to deflect wave energy back seaward</td><td>Effective barrier against erosion and flooding; protects high-value property; long lifespan (50&ndash;100 years)</td><td>Very expensive; can cause wave scour at the base (undermining); creates a harsh visual impact; impedes beach access; reflected wave energy can erode the beach in front</td><td>Up to &pound;6,000&ndash;10,000 per metre</td></tr>
+  <tr><td><strong>Groynes</strong></td><td>Wooden or stone barriers built perpendicular to the shore at regular intervals; trap sediment moved by longshore drift</td><td>Relatively cheap; effective at building up the beach (wider beach = better protection and tourism); well-understood technology</td><td><strong>Starve downdrift beaches of sediment</strong> (the terminal groyne problem) &mdash; can accelerate erosion elsewhere in the sediment cell. Need regular maintenance (wood rots)</td><td>&pound;5,000&ndash;10,000 per groyne</td></tr>
+  <tr><td><strong>Rock armour (rip-rap)</strong></td><td>Large boulders (typically granite or basalt, 5&ndash;10 tonnes each) placed at the cliff base to absorb and dissipate wave energy</td><td>Cheaper than sea walls; effective at absorbing energy; can look relatively natural; gaps allow drainage</td><td>Can be moved by severe storms; visually intrusive (especially if different rock type to local geology); difficult to walk on</td><td>&pound;1,000&ndash;3,000 per metre</td></tr>
+  <tr><td><strong>Gabions</strong></td><td>Wire mesh cages filled with stones, placed at the cliff base</td><td>Cheap; relatively easy to construct; absorb wave energy; can be adapted to site</td><td>Short lifespan (5&ndash;10 years as wire corrodes in salt water); unattractive; individual cages can be damaged by storms</td><td>&pound;100&ndash;500 per metre</td></tr>
+  <tr><td><strong>Offshore breakwaters</strong></td><td>Rock or concrete barriers built parallel to the coast offshore; break waves before they reach the shore</td><td>Reduce wave energy reaching the beach; can encourage deposition behind them (tombolo-like features)</td><td>Expensive; can disrupt sediment transport patterns; navigational hazard; may alter wave patterns unpredictably</td><td>&pound;3,000&ndash;5,000 per metre</td></tr>
+  <tr><td><strong>Revetments</strong></td><td>Sloped structures (wood, concrete, or rock) placed against the cliff base; absorb wave energy through their permeable or profiled surface</td><td>Less expensive than sea walls; can be designed to blend with environment</td><td>May need frequent replacement; less effective than sea walls against severe storms</td><td>&pound;2,000&ndash;4,000 per metre</td></tr>
 </table>
 
 <h3>Soft Engineering</h3>
 <table>
-  <tr><th>Method</th><th>Description</th><th>Advantages</th><th>Disadvantages</th></tr>
-  <tr><td>Beach nourishment</td><td>Adding sand/shingle to a beach from elsewhere</td><td>Natural-looking; wider beach protects cliffs and attracts tourism</td><td>Expensive; needs repeating (storms remove material)</td></tr>
-  <tr><td>Managed retreat</td><td>Allowing the sea to flood low-value land; creating salt marshes</td><td>Cheap; creates habitats; sustainable long-term</td><td>Land/property lost; compensation costs; unpopular with residents</td></tr>
-  <tr><td>Dune stabilisation</td><td>Planting marram grass or using fencing to encourage dune growth</td><td>Cheap; natural method; improves biodiversity</td><td>Takes time to establish; vulnerable to storms</td></tr>
-  <tr><td>Cliff drainage</td><td>Removing water from cliffs to reduce mass movement risk</td><td>Reduces slumping effectively</td><td>Can be expensive to install and maintain</td></tr>
+  <tr><th>Method</th><th>Description</th><th>Advantages</th><th>Disadvantages</th><th>Cost</th></tr>
+  <tr><td><strong>Beach nourishment (replenishment)</strong></td><td>Adding sand or shingle to a beach, typically dredged from offshore or transported from elsewhere</td><td>Looks natural; wider beach provides better protection and attracts tourists; does not starve downdrift areas</td><td>Expensive and needs repeating every few years as storms remove material; can damage donor site ecology</td><td>&pound;3,000&ndash;5,000 per metre (each application)</td></tr>
+  <tr><td><strong>Managed retreat (managed realignment)</strong></td><td>Allowing the sea to flood low-value land behind existing defences; often involves deliberately breaching sea walls to create new salt marshes</td><td>Cheap in the long term; creates valuable habitats (salt marshes absorb wave energy, store carbon, support biodiversity); sustainable; reduces flood risk by allowing natural floodplain function</td><td>Land and property permanently lost (compensation costs); very unpopular with affected residents and farmers; difficult political decision</td><td>Low ongoing cost (but compensation payments needed)</td></tr>
+  <tr><td><strong>Dune stabilisation</strong></td><td>Planting marram grass, installing sand fencing, creating boardwalks to reduce trampling</td><td>Cheap; natural-looking; improves biodiversity; dunes act as natural buffer against storms and flooding</td><td>Takes years to establish; vulnerable to storm damage; requires visitor management</td><td>&pound;200&ndash;2,000 per 100 m</td></tr>
+  <tr><td><strong>Cliff drainage</strong></td><td>Installing drainage pipes or channels to remove water from cliff material, reducing saturation and pore water pressure</td><td>Effectively reduces mass movement (slumping, mudflows); relatively unobtrusive</td><td>Does not prevent marine erosion at the base; can be expensive to install and maintain; may not work on all cliff types</td><td>Variable</td></tr>
 </table>
 
 <h3>Shoreline Management Plans (SMPs)</h3>
 <div class="definition">
-  <strong>SMP:</strong> A strategic plan for managing flood and erosion risk along a stretch of coastline. The coast is divided into management units and each is assigned one of four policies.
+  <strong>SMP:</strong> A long-term strategic plan for managing flood and erosion risk along a stretch of coastline (typically one sediment cell). Developed by the Environment Agency and local authorities, they assess the economic, social, and environmental value of each section of coast and assign one of four policies for three time periods (0&ndash;20, 20&ndash;50, and 50&ndash;100 years into the future).
 </div>
 
 <table>
-  <tr><th>Policy</th><th>Meaning</th></tr>
-  <tr><td>Hold the line</td><td>Maintain current coastal defences; protect existing land</td></tr>
-  <tr><td>Advance the line</td><td>Build new defences seaward of the current position</td></tr>
-  <tr><td>Managed realignment</td><td>Allow coastline to retreat in a controlled way</td></tr>
-  <tr><td>No active intervention</td><td>Let natural processes take their course; no new defences</td></tr>
+  <tr><th>Policy</th><th>Meaning</th><th>Where Applied</th></tr>
+  <tr><td><strong>Hold the line</strong></td><td>Maintain or improve current coastal defences to keep the coastline in its present position</td><td>High-value settlements, infrastructure, industry (e.g. major towns, ports)</td></tr>
+  <tr><td><strong>Advance the line</strong></td><td>Build new defences seaward of the current coastline (rare and expensive)</td><td>Very high-value areas requiring new land reclamation (e.g. some ports)</td></tr>
+  <tr><td><strong>Managed realignment (retreat)</strong></td><td>Allow the coastline to retreat in a controlled, planned way; may involve breaching existing defences</td><td>Low-value agricultural land where habitat creation is beneficial; areas where defending is not cost-effective</td></tr>
+  <tr><td><strong>No active intervention</strong></td><td>Allow natural processes to take their course without building or maintaining any defences</td><td>Remote, low-value, sparsely populated areas where the cost of defence exceeds the value of what is protected</td></tr>
 </table>
 
 <div class="case-study">
   <strong>Case Study: Holderness Coast, East Yorkshire</strong><br>
-  Europe's fastest eroding coastline, retreating at an average of 1.8 m per year (some areas up to 10 m). The cliffs are made of soft, easily eroded boulder clay (glacial till). Key points:
+  Europe's <strong>fastest-eroding coastline</strong>, retreating at an average of <strong>1.8 metres per year</strong> (some sections up to <strong>10 m in a single storm event</strong>). Over 30 villages listed in the Domesday Book (1086) have been lost to the sea. The cliffs are made of soft, easily eroded <strong>boulder clay (glacial till)</strong> deposited during the last Ice Age &mdash; it is weakly consolidated, impermeable (so easily saturated by rain), and offers almost no resistance to wave erosion. The coast faces the North Sea with a long fetch from the north-east. Key management issues:
   <ul>
-    <li><strong>Mappleton:</strong> Two rock groynes and rock armour were installed in 1991 at a cost of &pound;2 million to protect the village. They were effective locally but starved beaches to the south (e.g., Cowden) of sediment, accelerating erosion there.</li>
-    <li><strong>Withernsea:</strong> Sea wall and groynes protect the town. Tourism depends on the beach.</li>
-    <li><strong>Skipsea:</strong> No defences &mdash; properties lost to the sea. Residents feel abandoned by the SMP "no active intervention" policy.</li>
-    <li><strong>Spurn Point:</strong> The spit at the estuary mouth depends on material eroded from Holderness cliffs further north &mdash; protecting the cliffs would starve the spit of sediment.</li>
-    <li>The case illustrates conflicts between economic value, social justice, environmental sustainability, and the interconnectedness of the sediment cell.</li>
+    <li><strong>Mappleton:</strong> Two rock groynes and granite rock armour were installed in 1991 at a cost of <strong>&pound;2 million</strong> to protect the B1242 road and the village of 50 properties. They were effective locally (stabilised the cliffs). However, they <strong>starved beaches to the south</strong> (particularly at Cowden and Great Cowden) of sediment by intercepting longshore drift, accelerating erosion there from 1.8 m/yr to 3&ndash;4 m/yr. This is the <strong>terminal groyne effect</strong> &mdash; a textbook example of how protecting one section of coast can damage another within the same sediment cell.</li>
+    <li><strong>Withernsea:</strong> A sea wall and groynes protect the town centre and promenade. Tourism depends on maintaining the beach. "Hold the line" policy.</li>
+    <li><strong>Skipsea:</strong> No defences &mdash; classified as "no active intervention" in the SMP because the cost of protection exceeds the economic value of the properties at risk. Multiple homes have been lost; residents feel abandoned and argue the policy is socially unjust.</li>
+    <li><strong>Spurn Point spit:</strong> Depends on sediment eroded from Holderness cliffs being transported southward by longshore drift. Protecting the entire Holderness coast would starve Spurn of its sediment supply, potentially causing the spit to disappear &mdash; demonstrating the interconnectedness of the sediment cell system.</li>
+    <li><strong>Broader lessons:</strong> The Holderness case illustrates the conflicts between <strong>economic value vs social justice</strong> (who decides which communities are "worth" protecting?), <strong>local vs strategic management</strong> (protecting one place can harm another), and <strong>short-term fixes vs long-term sustainability</strong> (hard engineering buys time but transfers problems; managed retreat is unpopular but may be the only sustainable option for much of the coast under rising sea levels).</li>
   </ul>
 </div>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 350" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="300" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Hard Engineering: Groynes &amp; Sea Wall</text>
-  <!-- Sea -->
   <rect x="30" y="40" width="540" height="130" fill="#dbeafe"/>
   <text x="300" y="70" text-anchor="middle" font-size="12" fill="#1a73e8">SEA</text>
-  <!-- Beach -->
   <path d="M30,170 L570,170 L570,270 L30,270 Z" fill="#f5e6c8"/>
   <text x="80" y="250" font-size="11" fill="#D97706">Beach</text>
-  <!-- Sea wall -->
   <rect x="30" y="160" width="540" height="15" fill="#94a3b8" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="300" y="155" text-anchor="middle" font-size="10" fill="#1a1a2e">Sea Wall</text>
-  <!-- Groynes -->
   <rect x="100" y="130" width="8" height="120" fill="#8B6914" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="220" y="130" width="8" height="120" fill="#8B6914" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="340" y="130" width="8" height="120" fill="#8B6914" stroke="#1a1a2e" stroke-width="1"/>
   <rect x="460" y="130" width="8" height="120" fill="#8B6914" stroke="#1a1a2e" stroke-width="1"/>
   <text x="164" y="290" text-anchor="middle" font-size="10" fill="#8B6914">Groynes</text>
-  <!-- Trapped sediment -->
   <path d="M108,170 Q115,155 150,150 L150,170 Z" fill="#dcc9a0" opacity="0.7"/>
   <path d="M228,170 Q235,155 270,150 L270,170 Z" fill="#dcc9a0" opacity="0.7"/>
   <path d="M348,170 Q355,155 390,150 L390,170 Z" fill="#dcc9a0" opacity="0.7"/>
-  <!-- LSD arrow -->
   <line x1="80" y1="100" x2="520" y2="100" stroke="#DC2626" stroke-width="2" marker-end="url(#arrR4)"/>
   <text x="300" y="95" text-anchor="middle" font-size="10" fill="#DC2626">Longshore Drift direction</text>
-  <!-- Labels -->
   <text x="140" y="140" font-size="9" fill="#16A34A">Sediment trapped</text>
   <text x="400" y="320" text-anchor="middle" font-size="10" fill="#1a1a2e">Groynes prevent sediment loss but starve</text>
   <text x="400" y="335" text-anchor="middle" font-size="10" fill="#1a1a2e">downdrift beaches of material</text>
@@ -479,24 +454,29 @@
 </svg>
 </div>
 
-<h2>Coastal Landscape as a System: Putting It All Together</h2>
+<h2>Climate Change and Future Challenges</h2>
 
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> In 20-mark essays, use the systems framework to structure your answer. Show how inputs (wave energy, geology), throughputs (erosion, transport), and outputs (sediment loss) create landforms. Always include specific place examples and use correct terminology. Link management strategies back to the system &mdash; explain how human intervention disrupts dynamic equilibrium.
-</div>
-
-<h3>Key Connections</h3>
+<p>Climate change poses significant challenges for coastal landscape systems:</p>
 <ul>
-  <li>Cliff erosion provides sediment input &rarr; transported by longshore drift &rarr; deposited as spits/beaches</li>
-  <li>Geology determines cliff resistance &rarr; controls rate of erosion &rarr; shapes headlands and bays</li>
-  <li>Wave type (constructive/destructive) determines whether coastline is eroding or accreting</li>
-  <li>Human management interrupts natural processes &rarr; unintended consequences in other parts of the sediment cell</li>
-  <li>Climate change (rising sea levels, more storms) &rarr; increased erosion &rarr; positive feedback &rarr; management challenges</li>
+  <li><strong>Sea-level rise:</strong> Global mean sea level is rising at ~3.6 mm per year (accelerating) due to thermal expansion of ocean water and melting of ice sheets. Higher sea levels mean waves reach further up the cliff, increasing erosion rates and flooding frequency. The IPCC projects 0.3&ndash;1.1 m rise by 2100 depending on emissions scenario</li>
+  <li><strong>Increased storminess:</strong> Climate models suggest more frequent and intense storms in the North Atlantic, increasing destructive wave energy and the frequency of storm surge events. The 2013/14 winter storms caused severe coastal damage across southern England</li>
+  <li><strong>Changes to sediment supply:</strong> Altered wave patterns and storm tracks may change longshore drift patterns, disrupting established sediment cells and the landforms they sustain</li>
+  <li><strong>Implications for management:</strong> Many current defences were designed for historical conditions and may be inadequate for future sea levels and storm intensities. The economic cost of "holding the line" everywhere is unsustainable. Managed retreat may become the default policy for many stretches of coast, raising difficult social and political questions about which communities to protect and which to abandon</li>
 </ul>
 
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> For OCR A-Level, always use the terms "landscape system" and "dynamic equilibrium." Show you understand that landscapes are the result of interacting processes operating over time, and that human intervention creates new challenges within the system.
-</div>
+<h2>Putting It All Together: The Coastal System</h2>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> In 20-mark essays, use the <strong>systems framework</strong> to structure your answer. Show how inputs (wave energy, geology, sediment supply), throughputs (erosion, transport, deposition), and outputs (sediment loss, landform creation) interact to create the landscape. Always include <strong>specific place examples</strong> with data (e.g. Holderness erodes at 1.8 m/yr; Mappleton groynes cost &pound;2 million). Use <strong>correct terminology</strong> (dynamic equilibrium, negative/positive feedback, sediment cell, concordant/discordant). Link management strategies back to the system &mdash; explain how human intervention disrupts dynamic equilibrium and creates unintended consequences elsewhere in the system. For the highest marks, discuss how landscape systems are being altered by <strong>climate change</strong> and evaluate whether current management approaches are sustainable in the long term.</div>
+
+<h3>Key System Connections</h3>
+<ul>
+  <li>Cliff erosion (throughput) provides sediment input &rarr; transported by longshore drift &rarr; deposited as spits, beaches, bars (stores)</li>
+  <li>Geology (input) determines cliff resistance &rarr; controls rate and pattern of erosion &rarr; shapes headlands, bays, and cliff profiles</li>
+  <li>Wave type (constructive/destructive) determines whether the coastline is net eroding or net accreting</li>
+  <li>Human management interrupts natural processes &rarr; unintended consequences in other parts of the sediment cell (e.g. terminal groyne effect)</li>
+  <li>Climate change alters inputs (more energy, higher sea level) &rarr; positive feedback &rarr; accelerated change &rarr; management challenges</li>
+  <li>The coastal landscape is always evolving &mdash; it is a dynamic system, not a static one</li>
+</ul>
 
 </div>
 </body>

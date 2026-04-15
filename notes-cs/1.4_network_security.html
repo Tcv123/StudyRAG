@@ -32,82 +32,191 @@
 <h1>1.4 Network Security</h1>
 <p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 1</p>
 
-<p>Network security protects computer systems, networks, and data from unauthorised access, damage, and theft. Understanding threats and their countermeasures is essential for both the exam and real-world practice.</p>
+<p>Network security protects computer systems, networks, and data from unauthorised access, damage, and theft. A comprehensive security strategy combines multiple layers of protection &mdash; no single measure is sufficient on its own. Understanding both the threats and their countermeasures is essential.</p>
 
 <h2>1.4.1 Forms of Attack</h2>
 
+<p>Attacks can be broadly categorised into <strong>social engineering</strong> (exploiting human psychology) and <strong>technical attacks</strong> (exploiting software/hardware vulnerabilities). Many attacks combine both.</p>
+
+<h3>Malware</h3>
+<div class="definition">
+    <strong>Malware</strong> (malicious software) is any software intentionally designed to cause damage, steal data, or gain unauthorised access. It is installed without the user's informed consent, typically via email attachments, infected downloads, compromised websites, or infected USB drives.
+</div>
+
 <table>
-    <tr><th>Threat</th><th>How It Works</th><th>Purpose / Impact</th><th>Real-World Example</th></tr>
-    <tr>
-        <td><strong>Malware</strong></td>
-        <td>Malicious software installed without the user's informed consent, typically via email attachments, infected downloads, compromised websites, or USB drives. Types include <strong>viruses</strong> (attach to files, spread when executed), <strong>worms</strong> (self-replicate across networks), <strong>trojans</strong> (disguised as legitimate software), <strong>spyware</strong> (monitors user activity), <strong>ransomware</strong> (encrypts files and demands payment), and <strong>adware</strong> (displays unwanted adverts).</td>
-        <td>Corrupt/delete files; steal personal data (passwords, banking details); give the attacker remote control of the system; encrypt files for ransom; slow down the system; use the computer as part of a botnet.</td>
-        <td>The WannaCry ransomware (2017) encrypted files on 200,000+ computers across 150 countries, including NHS hospitals, demanding Bitcoin payment for decryption.</td>
-    </tr>
-    <tr>
-        <td><strong>Phishing</strong></td>
-        <td>Fraudulent emails, texts, or fake websites that <strong>impersonate legitimate organisations</strong> (banks, HMRC, Amazon, social media) to trick users into revealing sensitive information. Exploits <strong>human trust</strong> rather than technical vulnerabilities. <strong>Spear phishing</strong> targets specific individuals with personalised messages.</td>
-        <td>Steal login credentials, credit card numbers, personal identity information, or trick users into installing malware. Can lead to identity theft, financial fraud, or account takeover.</td>
-        <td>An email appearing to be from a bank says "Your account has been compromised. Click here to verify your identity" and links to a fake login page that captures the user's credentials.</td>
-    </tr>
-    <tr>
-        <td><strong>Brute-force attack</strong></td>
-        <td>Automated software <strong>systematically tries every possible password</strong> combination until the correct one is found. Can also use <strong>dictionary attacks</strong> (trying common words/passwords) or <strong>credential stuffing</strong> (trying leaked username/password pairs from other breaches).</td>
-        <td>Gain unauthorised access to accounts, systems, or encrypted data.</td>
-        <td>A simple 4-digit PIN has only 10,000 combinations and can be cracked in seconds. An 8-character lowercase password has 26^8 (208 billion) combinations but can still be cracked in hours with modern hardware. A 16-character mixed password with symbols is practically unbreakable by brute force.</td>
-    </tr>
-    <tr>
-        <td><strong>DoS / DDoS</strong></td>
-        <td><strong>Denial of Service:</strong> floods a server with so many fake requests that it cannot respond to genuine users, effectively taking the service offline. <strong>Distributed DoS (DDoS):</strong> uses a <strong>botnet</strong> (thousands of compromised computers) to generate the flood from many sources simultaneously, making it much harder to block.</td>
-        <td>Take websites/services offline; cause financial losses (e-commerce sites losing sales); damage reputation; used for extortion ("pay us or we will DDoS you again").</td>
-        <td>Major gaming platforms, banking websites, and government services have been targeted by DDoS attacks causing hours or days of downtime.</td>
-    </tr>
-    <tr>
-        <td><strong>Data interception (Man-in-the-Middle)</strong></td>
-        <td>An attacker secretly <strong>intercepts data travelling across a network</strong> between two parties. The attacker can read, modify, or inject data without either party knowing. Common on unsecured public Wi-Fi networks.</td>
-        <td>Steal login credentials, financial data, personal information, session tokens, or confidential business communications.</td>
-        <td>An attacker on a coffee shop's open Wi-Fi intercepts unencrypted HTTP traffic and captures login cookies, gaining access to the victim's email account.</td>
-    </tr>
-    <tr>
-        <td><strong>SQL injection</strong></td>
-        <td>Malicious SQL code is entered into a web form input field (e.g., login form, search box). If the web application does not properly <strong>sanitise</strong> (validate and escape) user input, the malicious SQL is executed by the database server.</td>
-        <td>Bypass authentication (login without knowing the password); extract the entire database contents (usernames, passwords, personal data); modify or delete data; drop tables; gain administrative access.</td>
-        <td>Entering <code>' OR '1'='1</code> into a login form's password field. If the application constructs the SQL query by concatenating user input without sanitisation, this makes the WHERE clause always true, bypassing the password check entirely.</td>
-    </tr>
+    <tr><th>Type</th><th>How It Works</th><th>Key Characteristic</th></tr>
+    <tr><td><strong>Virus</strong></td><td>Attaches itself to a legitimate file or program. When the infected file is opened/executed, the virus activates and can copy itself to other files.</td><td>Requires <strong>user action</strong> to spread (e.g., opening an infected file). Cannot spread on its own.</td></tr>
+    <tr><td><strong>Worm</strong></td><td>Self-replicating malware that spreads across networks <strong>without any user action</strong>. Exploits vulnerabilities in operating systems or network services.</td><td>Spreads <strong>automatically</strong> across networks. Can consume bandwidth and system resources even without a payload.</td></tr>
+    <tr><td><strong>Trojan</strong></td><td>Disguised as legitimate, useful software (a game, utility, or update). Once installed, it performs hidden malicious actions in the background.</td><td><strong>Does not self-replicate</strong> &mdash; relies on tricking users into installing it. Named after the Trojan Horse from Greek mythology.</td></tr>
+    <tr><td><strong>Spyware</strong></td><td>Secretly monitors user activity: keystrokes (keylogger), browsing history, screenshots, webcam, microphone. Sends collected data to the attacker.</td><td>Designed to be <strong>invisible</strong> to the user. Can capture passwords, credit card numbers, and private communications.</td></tr>
+    <tr><td><strong>Ransomware</strong></td><td>Encrypts the victim's files with a strong encryption key, then displays a ransom demand (typically in cryptocurrency) for the decryption key.</td><td>Files are <strong>irrecoverable without the key</strong> (or a backup). Paying the ransom does not guarantee decryption. Prevention and backups are the only reliable defences.</td></tr>
+    <tr><td><strong>Adware</strong></td><td>Displays unwanted advertisements, pop-ups, and redirects browser to advertising sites. May track browsing habits for targeted advertising.</td><td>More annoying than destructive, but can slow systems and sometimes bundle more dangerous malware.</td></tr>
 </table>
 
+<p><strong>Impact of malware:</strong> Corrupt or delete files; steal personal data (passwords, banking details, identity information); give the attacker remote control of the system; encrypt files for ransom; slow down the system; use the computer as part of a <strong>botnet</strong> (network of compromised computers controlled remotely for DDoS attacks or spam); damage hardware (in rare cases, e.g., Stuxnet targeting industrial control systems).</p>
+
+<h3>Phishing</h3>
+<div class="definition">
+    <strong>Phishing</strong> is a social engineering attack where fraudulent emails, texts (smishing), phone calls (vishing), or fake websites <strong>impersonate legitimate organisations</strong> to trick users into revealing sensitive information. It exploits <strong>human trust</strong> rather than technical vulnerabilities.
+</div>
+
+<p><strong>How phishing works:</strong></p>
+<ol>
+    <li>The attacker creates a convincing fake email or website that closely mimics a trusted organisation (bank, HMRC, Amazon, a social media platform).</li>
+    <li>The message creates <strong>urgency</strong> ("Your account will be suspended!", "Unusual activity detected!") or <strong>opportunity</strong> ("You've won a prize!") to pressure quick action.</li>
+    <li>A link directs the victim to a fake website that looks identical to the real one.</li>
+    <li>The victim enters their credentials, credit card details, or personal information, which are captured by the attacker.</li>
+    <li>The attacker uses the stolen information for identity theft, financial fraud, or account takeover.</li>
+</ol>
+
+<p><strong>Spear phishing</strong> is a targeted variant that uses personal details (from social media, data breaches, or company websites) to craft highly personalised, convincing messages aimed at specific individuals. Much harder to detect because the message appears to come from someone the victim knows.</p>
+
+<p><strong>How to spot phishing:</strong> Generic greetings ("Dear Customer"); urgency/threats; spelling and grammar errors; mismatched URLs (hover over links before clicking); requests for sensitive information; unexpected attachments; sender email address that does not match the claimed organisation.</p>
+
+<h3>Brute-Force Attack</h3>
+<div class="definition">
+    A <strong>brute-force attack</strong> uses automated software to <strong>systematically try every possible password combination</strong> until the correct one is found. Given enough time and computing power, any password can theoretically be cracked &mdash; the question is whether it takes seconds or centuries.
+</div>
+
+<p><strong>Variations of brute-force attacks:</strong></p>
+<ul>
+    <li><strong>Pure brute force</strong> &mdash; tries every possible combination of characters. Effective against short passwords but impractical for long ones.</li>
+    <li><strong>Dictionary attack</strong> &mdash; tries common words, phrases, and known passwords from leaked databases. Much faster than pure brute force because most people choose predictable passwords.</li>
+    <li><strong>Credential stuffing</strong> &mdash; uses username/password pairs leaked from other data breaches, testing them against different services. Works because many people reuse passwords across sites.</li>
+</ul>
+
 <pre>
--- How SQL injection works:
--- The application constructs:
-SELECT * FROM Users WHERE username='admin' AND password='[user input]';
+Password strength comparison:
+  4-digit PIN:         10,000 combinations        → cracked in seconds
+  6-char lowercase:    308 million combinations    → cracked in minutes
+  8-char mixed case:   218 billion combinations    → cracked in hours
+  12-char mixed+symbols: 475 trillion combinations → cracked in years
+  16-char mixed+symbols: practically unbreakable by brute force
 
--- If the user enters:  ' OR '1'='1
--- The query becomes:
-SELECT * FROM Users WHERE username='admin' AND password='' OR '1'='1';
--- '1'='1' is always TRUE, so the WHERE clause is always TRUE
--- The attacker is logged in as admin without knowing the password!
-
--- Prevention: use PARAMETERISED QUERIES (prepared statements):
-SELECT * FROM Users WHERE username=? AND password=?;
--- The ? placeholders ensure user input is treated as DATA, never as SQL code
+Key insight: each additional character MULTIPLIES the number of
+combinations. A 16-character password is not twice as strong as
+8 characters — it is billions of times stronger.
 </pre>
+
+<h3>Denial of Service (DoS / DDoS)</h3>
+<div class="definition">
+    A <strong>Denial of Service (DoS)</strong> attack floods a server with so many fake requests that it cannot respond to genuine users, effectively taking the service offline. A <strong>Distributed DoS (DDoS)</strong> attack uses a <strong>botnet</strong> &mdash; thousands or millions of compromised computers &mdash; to generate the flood from many sources simultaneously, making it much harder to block.
+</div>
+
+<p><strong>How a DDoS attack works:</strong></p>
+<ol>
+    <li>The attacker infects thousands of computers with malware, creating a <strong>botnet</strong> (the owners of these computers usually do not know they are compromised).</li>
+    <li>The attacker sends a command to all botnet machines simultaneously.</li>
+    <li>Every botnet machine sends floods of requests to the target server.</li>
+    <li>The target server is overwhelmed &mdash; it cannot distinguish fake requests from legitimate ones.</li>
+    <li>Genuine users receive timeout errors or extremely slow responses. The service is effectively offline.</li>
+</ol>
+
+<p><strong>Impact:</strong> Financial losses (e-commerce sites losing sales); reputational damage; disruption to critical services; used for extortion, competitive sabotage, or as a distraction while another attack occurs simultaneously.</p>
+
+<p><strong>Why DDoS is hard to stop:</strong> The attack comes from thousands of different IP addresses (each a real compromised computer), so you cannot simply block one source. The traffic looks similar to legitimate requests, making filtering difficult.</p>
+
+<h3>Data Interception (Man-in-the-Middle)</h3>
+<div class="definition">
+    In a <strong>man-in-the-middle (MITM) attack</strong>, an attacker secretly <strong>intercepts data travelling between two parties</strong> on a network. The attacker can read, modify, or inject data without either party knowing. Both sides believe they are communicating directly with each other.
+</div>
+
+<p><strong>Common scenarios:</strong></p>
+<ul>
+    <li><strong>Unsecured public Wi-Fi</strong> &mdash; an attacker on the same open Wi-Fi network (coffee shop, airport) can intercept unencrypted traffic between your device and the router.</li>
+    <li><strong>ARP spoofing</strong> &mdash; the attacker tricks devices on a LAN into sending traffic through their machine by poisoning the ARP table (associating their MAC address with the router's IP).</li>
+    <li><strong>Fake Wi-Fi hotspot</strong> &mdash; the attacker sets up a rogue access point with a legitimate-sounding name (e.g., "Airport_Free_WiFi"). Users connect, and all their traffic flows through the attacker's device.</li>
+</ul>
+
+<p><strong>Prevention:</strong> Use HTTPS (encrypted); use a VPN on public Wi-Fi; verify SSL certificates; avoid entering sensitive data on unsecured networks.</p>
+
+<h3>SQL Injection</h3>
+<div class="definition">
+    <strong>SQL injection</strong> is an attack where malicious SQL code is entered into a web form input field (e.g., login form, search box). If the web application does not properly <strong>sanitise</strong> (validate and escape) user input, the malicious SQL is executed directly by the database server, potentially giving the attacker full access to the database.
+</div>
+
+<p><strong>How SQL injection works &mdash; step by step:</strong></p>
+<pre>
+-- The web application has a login form. When the user submits their
+-- username and password, the application constructs an SQL query:
+
+SELECT * FROM Users WHERE username='[input]' AND password='[input]';
+
+-- Normal login: user enters username "admin" and password "pa55word"
+SELECT * FROM Users WHERE username='admin' AND password='pa55word';
+-- This returns the admin row only if the password matches. Correct behaviour.
+
+-- SQL INJECTION: attacker enters password: ' OR '1'='1
+SELECT * FROM Users WHERE username='admin' AND password='' OR '1'='1';
+
+-- Breaking this down:
+--   password=''         → this is false (empty string is wrong password)
+--   OR '1'='1'          → this is ALWAYS TRUE
+--   False OR True       → the WHERE clause evaluates to TRUE
+-- Result: the attacker is logged in as admin WITHOUT knowing the password!
+
+-- Even worse: attacker enters:  '; DROP TABLE Users; --
+SELECT * FROM Users WHERE username='admin' AND password=''; DROP TABLE Users; --';
+-- This DELETES the entire Users table from the database!
+-- The -- is a comment that ignores everything after it.
+</pre>
+
+<p><strong>Prevention &mdash; parameterised queries (prepared statements):</strong></p>
+<pre>
+-- VULNERABLE code (string concatenation — NEVER do this):
+query = "SELECT * FROM Users WHERE username='" + username + "'"
+
+-- SAFE code (parameterised query — ALWAYS do this):
+query = "SELECT * FROM Users WHERE username=? AND password=?"
+-- The ? placeholders ensure user input is ALWAYS treated as DATA,
+-- never as executable SQL code. Even if the user enters SQL syntax,
+-- it is treated as a literal string, not as part of the query.
+
+# Python example using parameterised query:
+cursor.execute("SELECT * FROM Users WHERE username=? AND password=?",
+               (username, password))
+</pre>
+
+<div class="exam-tip">For each threat, the exam expects you to explain <strong>HOW it works</strong> (the mechanism) AND its <strong>purpose/impact</strong> (what the attacker gains) &mdash; these are separate marks. For SQL injection specifically, be able to give a concrete example of the malicious input (e.g., <code>' OR '1'='1</code>) and explain how parameterised queries prevent it by treating input as data rather than executable code. A common mistake is confusing social engineering attacks (phishing &mdash; exploits humans) with technical attacks (SQL injection &mdash; exploits software).</div>
 
 <h2>1.4.2 Prevention Methods</h2>
 
+<p>Effective security uses <strong>defence in depth</strong> &mdash; multiple overlapping layers of protection so that if one layer fails, others still provide security. No single measure is sufficient alone.</p>
+
 <table>
     <tr><th>Prevention</th><th>What It Protects Against</th><th>How It Works</th></tr>
-    <tr><td><strong>Penetration testing</strong></td><td>All vulnerabilities (before attackers find them)</td><td>Authorised <strong>ethical hackers</strong> (with written permission) attempt to break into systems using the same techniques as malicious hackers. Findings are documented and used to fix weaknesses <em>before</em> real attackers exploit them. Should be conducted regularly (at least annually).</td></tr>
-    <tr><td><strong>Anti-malware software</strong></td><td>Malware infections (viruses, worms, trojans, ransomware, spyware)</td><td>Scans files against a database of known malware <strong>signatures</strong> (patterns). Also uses <strong>heuristic analysis</strong> (detecting suspicious behaviour patterns even for unknown malware). Real-time protection monitors files as they are opened/downloaded. <strong>Must be kept updated</strong> &mdash; new malware is created daily.</td></tr>
-    <tr><td><strong>Firewall</strong></td><td>Unauthorised network connections</td><td>Monitors incoming and outgoing network traffic and <strong>allows or blocks</strong> connections based on predefined security rules (IP addresses, port numbers, protocols). Can be hardware (standalone device) or software (running on each computer). Blocks connections not matching the allowed criteria. Does NOT scan file contents &mdash; that is the anti-malware's job.</td></tr>
-    <tr><td><strong>User access levels</strong></td><td>Damage from compromised accounts; insider threats</td><td><strong>Principle of least privilege:</strong> each user is given the minimum access rights needed to do their job. An office worker does not need admin access to the server. If their account is compromised, damage is limited to what that account can access. Roles: admin, standard user, guest.</td></tr>
-    <tr><td><strong>Strong passwords</strong></td><td>Brute-force attacks, dictionary attacks, guessing</td><td>Passwords should be: <strong>long</strong> (12+ characters); <strong>complex</strong> (mix of uppercase, lowercase, digits, symbols); <strong>unique</strong> (different for every account); <strong>not based on personal information</strong> (names, birthdays, pet names). Changed regularly. Use a password manager to generate and store unique passwords.</td></tr>
-    <tr><td><strong>Encryption</strong></td><td>Data interception and theft</td><td>Converts plaintext into unreadable <strong>ciphertext</strong> using a cryptographic key. Only someone with the correct decryption key can read the data. Protects data <strong>in transit</strong> (HTTPS, VPN) and <strong>at rest</strong> (encrypted hard drives, encrypted databases). Even if intercepted, encrypted data is useless without the key.</td></tr>
-    <tr><td><strong>Physical security</strong></td><td>Unauthorised physical access to hardware</td><td>Locked server rooms with key card access; CCTV surveillance; biometric locks (fingerprint, retina); cable locks for laptops; visitor sign-in logs; security guards. Prevents someone from physically accessing a server, plugging in a USB drive, or stealing hardware.</td></tr>
-    <tr><td><strong>Two-factor authentication (2FA)</strong></td><td>Account compromise even if password is stolen</td><td>Requires <strong>two different types</strong> of evidence to log in: (1) something you <strong>know</strong> (password), (2) something you <strong>have</strong> (phone for SMS code or authenticator app), or (3) something you <strong>are</strong> (fingerprint, face recognition). Even if an attacker steals the password, they cannot log in without the second factor.</td></tr>
-    <tr><td><strong>Input sanitisation / validation</strong></td><td>SQL injection, XSS, and other injection attacks</td><td>All user input is checked, validated, and <strong>sanitised</strong> (special characters are escaped or removed) before being used in database queries or displayed on web pages. Use parameterised queries / prepared statements for SQL. Never trust user input.</td></tr>
+    <tr><td><strong>Penetration testing</strong></td><td>All vulnerabilities (finds them before attackers do)</td><td>Authorised <strong>ethical hackers</strong> (also called white-hat hackers), with written permission, attempt to break into systems using the same techniques as malicious hackers. They systematically probe for vulnerabilities in networks, applications, and configurations. Findings are documented in a detailed report with recommendations for fixing each weakness. Should be conducted regularly (at least annually and after major system changes). The key distinction from malicious hacking is <strong>authorisation</strong> &mdash; penetration testers have written permission.</td></tr>
+    <tr><td><strong>Anti-malware software</strong></td><td>Malware infections (viruses, worms, trojans, ransomware, spyware)</td><td>Uses two main detection methods: <strong>Signature detection</strong> &mdash; compares files against a database of known malware patterns (signatures). Effective against known threats but cannot detect brand-new (zero-day) malware. <strong>Heuristic/behavioural analysis</strong> &mdash; monitors program behaviour for suspicious patterns (e.g., a program trying to modify system files, encrypt many files rapidly, or send data to unknown servers). Can detect unknown malware but may produce false positives. <strong>Must be kept updated</strong> &mdash; hundreds of thousands of new malware variants are created daily. Provides real-time protection (scanning files as they are opened/downloaded) and scheduled full-system scans.</td></tr>
+    <tr><td><strong>Firewall</strong></td><td>Unauthorised network connections and intrusions</td><td>Monitors all incoming and outgoing network traffic and <strong>allows or blocks</strong> connections based on predefined security rules. Rules filter by IP address, port number, protocol, and direction. Can be <strong>hardware</strong> (standalone device at the network boundary, protecting all devices behind it) or <strong>software</strong> (running on individual computers, protecting just that machine). A firewall does NOT scan file contents for malware &mdash; that is the anti-malware's job. Think of a firewall as a security guard at the door checking ID, while anti-malware is like a detective searching for hidden weapons inside.</td></tr>
+    <tr><td><strong>User access levels</strong></td><td>Damage from compromised accounts; insider threats; accidental damage</td><td>The <strong>principle of least privilege</strong>: each user is given the minimum access rights needed to do their job and no more. An office worker does not need administrator access to the server. If their account is compromised, damage is limited to what that account can access. Common levels: <strong>Administrator</strong> (full control), <strong>Standard user</strong> (run programs, access own files), <strong>Guest</strong> (very limited, read-only). This limits the "blast radius" of any security incident.</td></tr>
+    <tr><td><strong>Strong passwords</strong></td><td>Brute-force attacks, dictionary attacks, guessing</td><td>Passwords should be: <strong>Long</strong> (12+ characters &mdash; length matters most); <strong>Complex</strong> (mix of uppercase, lowercase, digits, symbols); <strong>Unique</strong> (different for every account &mdash; a breach at one site should not compromise all accounts); <strong>Not predictable</strong> (no names, birthdays, dictionary words, or common patterns like "Password1!"). Use a <strong>password manager</strong> to generate and store unique passwords. Enforce password policies: minimum length, complexity requirements, account lockout after failed attempts.</td></tr>
+    <tr><td><strong>Encryption</strong></td><td>Data interception and theft (both in transit and at rest)</td><td>Converts readable <strong>plaintext</strong> into unreadable <strong>ciphertext</strong> using a cryptographic algorithm and a key. Only someone with the correct decryption key can convert it back to plaintext. Protects data <strong>in transit</strong> (HTTPS/TLS encrypts web traffic; VPNs encrypt all network traffic) and <strong>at rest</strong> (full-disk encryption like BitLocker; encrypted databases). Even if data is intercepted or stolen, it is useless without the decryption key. The strength of encryption depends on the key length &mdash; modern AES-256 encryption is considered unbreakable with current technology.</td></tr>
+    <tr><td><strong>Physical security</strong></td><td>Unauthorised physical access to hardware</td><td>Locked server rooms with key card/PIN access; CCTV surveillance; biometric locks (fingerprint, retina scan); cable locks for laptops; visitor sign-in logs and escorts; security guards; locked cabinets for backup media. Physical security is often overlooked but critical &mdash; if an attacker can physically access a server, they can bypass almost all software security measures (e.g., by removing the hard drive, booting from a USB drive, or installing a hardware keylogger).</td></tr>
+    <tr><td><strong>Two-factor authentication (2FA)</strong></td><td>Account compromise even when password is stolen</td><td>Requires <strong>two different categories</strong> of evidence to log in: (1) Something you <strong>know</strong> (password or PIN), (2) Something you <strong>have</strong> (phone for SMS code, authenticator app, security key), or (3) Something you <strong>are</strong> (fingerprint, face recognition, retina scan). Even if an attacker steals the password, they cannot log in without the second factor. Authenticator apps (e.g., Google Authenticator) are more secure than SMS codes (which can be intercepted via SIM swapping).</td></tr>
+    <tr><td><strong>Input sanitisation / validation</strong></td><td>SQL injection, cross-site scripting (XSS), and other injection attacks</td><td>All user input is checked, validated, and <strong>sanitised</strong> before being processed. Special characters that could be interpreted as code (single quotes, angle brackets, semicolons) are either escaped (treated as literal text) or stripped out. The golden rule: <strong>never trust user input</strong>. Use parameterised queries for database operations. Validate data type, length, range, and format before processing.</td></tr>
+    <tr><td><strong>Network policies</strong></td><td>Various threats; accidental exposure</td><td>Acceptable use policies define what users may and may not do on the network. Includes: no personal devices (or BYOD restrictions), mandatory software updates, regular password changes, not sharing passwords, reporting suspicious emails, not installing unauthorised software. Training users is crucial because many attacks exploit human error.</td></tr>
+    <tr><td><strong>Software updates / patching</strong></td><td>Known vulnerabilities exploited by malware and hackers</td><td>Software vendors regularly release security patches that fix discovered vulnerabilities. Unpatched systems are vulnerable to attacks that exploit these known weaknesses. Automatic updates should be enabled where possible. The WannaCry ransomware attack in 2017 primarily affected systems that had not applied a Microsoft patch released two months earlier.</td></tr>
 </table>
 
-<div class="exam-tip">For each threat, know <strong>HOW it works</strong> AND its <strong>purpose/impact</strong> &mdash; these are separate marks. A firewall controls <strong>network traffic</strong> (allows/blocks connections); anti-malware scans <strong>files</strong> for malicious code &mdash; they are <strong>different</strong> and complementary. For prevention methods, always explain the <em>mechanism</em> (how does it actually prevent the attack?) not just name it. For SQL injection, be able to give a specific example of the malicious input and explain how parameterised queries prevent it.</div>
+<h3>Matching Threats to Prevention Methods</h3>
+<pre>
+Threat                  Primary Prevention Methods
+────────────────────    ─────────────────────────────────────────
+Malware              →  Anti-malware, software updates, user training,
+                        firewall, not opening suspicious attachments
+Phishing             →  User training, email filtering, 2FA (limits
+                        damage even if credentials stolen), checking URLs
+Brute-force          →  Strong/long passwords, account lockout, 2FA,
+                        CAPTCHA, rate limiting
+DDoS                 →  Firewall rules, traffic filtering, CDN services,
+                        redundant servers, ISP-level mitigation
+Data interception    →  Encryption (HTTPS/TLS), VPN, avoid public Wi-Fi,
+                        WPA3 for wireless
+SQL injection        →  Input sanitisation, parameterised queries,
+                        web application firewall, penetration testing
+</pre>
+
+<div class="exam-tip">A firewall controls <strong>network traffic</strong> (allows/blocks connections based on rules); anti-malware scans <strong>file contents</strong> for malicious code &mdash; they are <strong>different</strong> and complementary. Both are needed. For prevention methods, always explain the <em>mechanism</em> (how does it actually prevent the attack?) rather than just naming it. For 2FA, name the two categories used (e.g., something you know + something you have) and explain why it helps even if the password is stolen. Always state that penetration testing requires <strong>written authorisation</strong> &mdash; without it, the same actions would be illegal under the Computer Misuse Act.</div>
 
 </div>
 </body>

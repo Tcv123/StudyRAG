@@ -35,91 +35,171 @@
 <h2>1.2.1 Primary Storage &mdash; RAM, ROM and Cache</h2>
 
 <div class="definition">
-    <strong>Primary storage</strong> is memory that is directly accessible by the CPU via the system bus. It includes RAM, ROM, and cache. Primary storage is fast but limited in capacity compared to secondary storage.
+    <strong>Primary storage</strong> (also called main memory) is memory that is directly accessible by the CPU via the system bus. It includes RAM, ROM, and cache. Primary storage is fast but limited in capacity compared to secondary storage. The CPU cannot process data directly from secondary storage &mdash; everything must first be loaded into primary storage.
 </div>
 
+<h3>Why Do We Need Primary Storage?</h3>
+<p>Secondary storage (hard drives, SSDs) is far too slow for the CPU to work with directly. The CPU operates in nanoseconds, while even an SSD takes microseconds to respond &mdash; a thousand times slower. RAM bridges this gap by holding the programs and data the CPU is currently using. When you open a program, it is copied from secondary storage into RAM, where the CPU can access it millions of times faster.</p>
+
 <h3>The Memory Hierarchy</h3>
-<p>Computer storage is organised in a hierarchy from fastest/smallest/most expensive at the top to slowest/largest/cheapest at the bottom:</p>
+<p>Computer storage is organised in a hierarchy from fastest/smallest/most expensive at the top to slowest/largest/cheapest at the bottom. Each level acts as a buffer for the level below it:</p>
+
+<!-- Memory Hierarchy Diagram -->
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;margin:20px auto;display:block;">
+  <text x="300" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Memory Hierarchy</text>
+  <!-- Triangle shape via trapezoids -->
+  <polygon points="250,40 350,40 420,270 180,270" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <!-- Levels -->
+  <line x1="262" y1="75" x2="338" y2="75" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="274" y1="110" x2="326" y2="110" stroke="#d1d5db" stroke-width="0"/>
+  <line x1="240" y1="120" x2="360" y2="120" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="225" y1="165" x2="375" y2="165" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="205" y1="210" x2="395" y2="210" stroke="#d1d5db" stroke-width="1"/>
+  <!-- Labels inside -->
+  <text x="300" y="63" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">Registers</text>
+  <text x="300" y="100" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">Cache (L1/L2/L3)</text>
+  <text x="300" y="148" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">RAM</text>
+  <text x="300" y="193" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">SSD</text>
+  <text x="300" y="248" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">HDD</text>
+  <!-- Left labels -->
+  <text x="150" y="60" text-anchor="end" font-size="10" fill="#dc2626">Fastest</text>
+  <text x="150" y="75" text-anchor="end" font-size="10" fill="#dc2626">Smallest</text>
+  <text x="150" y="90" text-anchor="end" font-size="10" fill="#dc2626">Most expensive</text>
+  <!-- Right labels -->
+  <text x="450" y="240" text-anchor="start" font-size="10" fill="#16a34a">Slowest</text>
+  <text x="450" y="255" text-anchor="start" font-size="10" fill="#16a34a">Largest</text>
+  <text x="450" y="270" text-anchor="start" font-size="10" fill="#16a34a">Cheapest</text>
+  <!-- Arrows -->
+  <line x1="160" y1="95" x2="160" y2="60" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow1)"/>
+  <line x1="440" y1="235" x2="440" y2="270" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow1)"/>
+</svg>
+
 <ol>
-    <li><strong>Registers</strong> &mdash; inside CPU, fastest, a few bytes (e.g., 16 registers of 8 bytes each)</li>
+    <li><strong>Registers</strong> &mdash; inside CPU, fastest, a few bytes (e.g., 16 registers of 8 bytes each, ~1 ns access)</li>
     <li><strong>L1 Cache</strong> &mdash; on CPU die, very fast, 32-64 KB per core (~1 ns access)</li>
     <li><strong>L2/L3 Cache</strong> &mdash; on CPU die, fast, 256 KB - 32 MB (~3-20 ns)</li>
     <li><strong>RAM</strong> &mdash; main memory, fast but volatile, 4-64 GB (~50-100 ns)</li>
-    <li><strong>SSD</strong> &mdash; secondary storage, non-volatile, 128 GB - 4 TB (~0.1 ms)</li>
-    <li><strong>HDD</strong> &mdash; secondary storage, non-volatile, 1-20 TB (~5-10 ms)</li>
+    <li><strong>SSD</strong> &mdash; secondary storage, non-volatile, 128 GB - 4 TB (~0.1 ms = 100,000 ns)</li>
+    <li><strong>HDD</strong> &mdash; secondary storage, non-volatile, 1-20 TB (~5-10 ms = 5,000,000 ns)</li>
 </ol>
 
+<p>Notice how dramatic the speed differences are: RAM is roughly 1,000 times slower than cache, and an HDD is roughly 100,000 times slower than RAM. This is why the hierarchy exists &mdash; each level acts as a cache for the level below it, keeping frequently used data as close to the CPU as possible.</p>
+
+<h3>RAM vs ROM</h3>
 <table>
-    <tr><th>Feature</th><th>RAM</th><th>ROM</th></tr>
-    <tr><td><strong>Volatile?</strong></td><td><strong>Yes</strong> &mdash; all data lost when power is removed</td><td><strong>No</strong> &mdash; data retained without power</td></tr>
-    <tr><td><strong>Read/Write?</strong></td><td>Both &mdash; data can be freely read and written</td><td>Read only during normal operation (contents cannot be changed by the CPU)</td></tr>
-    <tr><td><strong>Purpose</strong></td><td>Holds the <strong>OS</strong>, <strong>currently running programs</strong>, and their <strong>active data</strong>. When you open a program, it is loaded from secondary storage into RAM.</td><td>Stores the <strong>BIOS/UEFI boot firmware</strong>. When the computer is first powered on, the CPU executes instructions from ROM to perform the POST (Power-On Self-Test) and load the OS from secondary storage into RAM.</td></tr>
-    <tr><td><strong>Capacity</strong></td><td>Typically 4-64 GB (upgradeable)</td><td>Typically a few MB (sufficient for boot firmware)</td></tr>
-    <tr><td><strong>Effect of more</strong></td><td>More RAM = more programs can run simultaneously without slowdown</td><td>Amount of ROM is not a performance factor for the user</td></tr>
+    <tr><th>Feature</th><th>RAM (Random Access Memory)</th><th>ROM (Read Only Memory)</th></tr>
+    <tr><td><strong>Volatile?</strong></td><td><strong>Yes</strong> &mdash; all data lost when power is removed. This is why unsaved work is lost during a power cut.</td><td><strong>No</strong> &mdash; data retained without power. Contents are permanent.</td></tr>
+    <tr><td><strong>Read/Write?</strong></td><td>Both &mdash; data can be freely read and written millions of times</td><td>Read only during normal operation (contents cannot be changed by the CPU during normal use)</td></tr>
+    <tr><td><strong>Purpose</strong></td><td>Holds the <strong>OS</strong>, <strong>currently running programs</strong>, and their <strong>active data</strong>. When you open a program, it is loaded from secondary storage into RAM so the CPU can access it quickly.</td><td>Stores the <strong>BIOS/UEFI boot firmware</strong>. When the computer is first powered on, the CPU executes instructions from ROM to perform the POST (Power-On Self-Test), check hardware, and load the OS from secondary storage into RAM.</td></tr>
+    <tr><td><strong>Capacity</strong></td><td>Typically 4-64 GB (upgradeable by adding more RAM sticks)</td><td>Typically a few MB (sufficient for boot firmware)</td></tr>
+    <tr><td><strong>Speed</strong></td><td>Fast (~50-100 ns)</td><td>Slower than RAM but still fast enough for boot-up</td></tr>
+    <tr><td><strong>Effect of more</strong></td><td>More RAM = more programs can run simultaneously without slowdown. Less reliance on slow virtual memory.</td><td>Amount of ROM is not a performance factor for the user</td></tr>
 </table>
 
-<h3>Cache</h3>
-<p><strong>Cache</strong> sits between the CPU and RAM and stores copies of frequently/recently accessed data. When the CPU needs data, it checks the cache first (<strong>cache hit</strong> = data found, very fast). If not in cache (<strong>cache miss</strong>), it must fetch from slower RAM.</p>
+<p><strong>What happens when you open a program:</strong> The OS locates the program's files on secondary storage (HDD/SSD), copies them into RAM, and tells the CPU to begin executing the instructions at the RAM address where the program was loaded. This is why programs with more features take longer to open &mdash; more data needs to be copied from slow secondary storage into fast RAM.</p>
+
+<h3>Cache &mdash; Bridging the CPU-RAM Speed Gap</h3>
+<p><strong>Cache</strong> sits between the CPU and RAM and stores copies of frequently/recently accessed data and instructions. When the CPU needs data, it checks the cache first. If the data is there (<strong>cache hit</strong>), it is returned very quickly. If not (<strong>cache miss</strong>), the CPU must fetch from slower RAM.</p>
+
 <ul>
-    <li><strong>L1 cache:</strong> Fastest, smallest, closest to CPU cores. Typically 32-64 KB per core.</li>
-    <li><strong>L2 cache:</strong> Larger, slightly slower. Typically 256 KB - 1 MB per core.</li>
-    <li><strong>L3 cache:</strong> Largest, shared between all cores. Typically 4-32 MB.</li>
+    <li><strong>L1 cache:</strong> Fastest, smallest, closest to CPU cores. Typically 32-64 KB per core. Accessed in ~1 ns. Often split into separate instruction and data caches.</li>
+    <li><strong>L2 cache:</strong> Larger, slightly slower. Typically 256 KB - 1 MB per core. Accessed in ~3-10 ns.</li>
+    <li><strong>L3 cache:</strong> Largest, shared between all cores. Typically 4-32 MB. Accessed in ~10-20 ns. Still much faster than RAM.</li>
 </ul>
+
+<p>Cache works on the principle of <strong>locality of reference</strong>: programs tend to access the same data repeatedly (temporal locality) and access data near recently used data (spatial locality). By keeping recently and frequently used data in cache, most CPU requests can be served without going to slower RAM.</p>
 
 <h3>Virtual Memory</h3>
 <div class="definition">
-    <strong>Virtual memory</strong> is a section of the hard drive/SSD used as an overflow area when RAM is full. The OS swaps (pages) data between RAM and virtual memory on demand, allowing programs that need more memory than physically available to still run.
+    <strong>Virtual memory</strong> is a section of the hard drive/SSD used as an overflow area when RAM is full. The OS swaps (pages) data between RAM and virtual memory on demand, allowing programs that need more memory than physically available to still run. It creates the illusion of having more RAM than physically exists.
 </div>
+
+<p><strong>How virtual memory works (paging):</strong></p>
+<ol>
+    <li>RAM is divided into fixed-size blocks called <strong>pages</strong> (typically 4 KB each).</li>
+    <li>When RAM is full and a new page is needed, the OS identifies the <strong>least recently used</strong> page currently in RAM.</li>
+    <li>That page is <strong>swapped out</strong> &mdash; written to a designated area on the hard drive/SSD (the swap file or page file).</li>
+    <li>The newly needed page is <strong>swapped in</strong> &mdash; loaded from secondary storage into the freed RAM space.</li>
+    <li>If the swapped-out page is needed again later, it must be swapped back in, potentially displacing another page.</li>
+</ol>
+
 <ul>
-    <li>Virtual memory is <strong>much slower</strong> than RAM because secondary storage access is orders of magnitude slower.</li>
-    <li>Heavy use of virtual memory causes <strong>thrashing</strong> &mdash; the system spends more time swapping data than doing useful work, causing severe slowdown.</li>
-    <li>Virtual memory is a <strong>temporary solution</strong> &mdash; adding more physical RAM is the proper fix.</li>
+    <li>Virtual memory is <strong>much slower</strong> than RAM because secondary storage access is orders of magnitude slower (an HDD is roughly 100,000 times slower than RAM).</li>
+    <li>Heavy use of virtual memory causes <strong>thrashing</strong> &mdash; the system spends more time swapping pages between RAM and disk than doing useful work, causing severe slowdown. The hard drive light flickers constantly and the computer becomes almost unresponsive.</li>
+    <li>Virtual memory is a <strong>temporary solution</strong> &mdash; adding more physical RAM is the proper fix. If you regularly experience slowdown from virtual memory usage, you need more RAM.</li>
 </ul>
+
+<div class="exam-tip">A common exam question asks: "Explain why a computer with insufficient RAM runs slowly." The answer must explain the chain: RAM is full &rarr; OS must use virtual memory (section of HDD/SSD) &rarr; data is swapped between RAM and secondary storage &rarr; secondary storage is much slower than RAM &rarr; this swapping takes time &rarr; if excessive, causes thrashing &rarr; system becomes very slow. The solution is to add more RAM.</div>
 
 <h2>1.2.2 Secondary Storage</h2>
 
-<p><strong>Secondary storage</strong> is non-volatile, persistent storage that retains data even when the computer is powered off. It is used for long-term storage of the OS, programs, and user files.</p>
+<p><strong>Secondary storage</strong> is non-volatile, persistent storage that retains data even when the computer is powered off. It is used for long-term storage of the OS, programs, and user files. Unlike RAM, data in secondary storage survives power loss, but it is much slower to access.</p>
 
+<h3>Types of Secondary Storage</h3>
 <table>
     <tr><th>Type</th><th>Technology</th><th>Speed</th><th>Capacity</th><th>Durability</th><th>Cost/GB</th><th>Best For</th></tr>
-    <tr><td><strong>HDD</strong></td><td>Spinning magnetic platters with a moving read/write head</td><td>Slow (moving parts; 5-10 ms seek time)</td><td>Very high (1-20 TB)</td><td>Fragile (moving parts; sensitive to shock)</td><td>Very low (&pound;0.02-0.03/GB)</td><td>Bulk storage, backups, servers where cost matters most</td></tr>
-    <tr><td><strong>SSD</strong></td><td>NAND flash memory chips &mdash; no moving parts</td><td>Fast (0.1 ms; 500-7000 MB/s read)</td><td>Medium-high (128 GB - 4 TB)</td><td>High (no moving parts; shock-resistant)</td><td>Medium (&pound;0.05-0.10/GB)</td><td>OS drive, applications, laptops, gaming</td></tr>
-    <tr><td><strong>Optical</strong></td><td>Laser reads pits and lands on disc surface (CD/DVD/Blu-ray)</td><td>Slow</td><td>Low (700 MB CD, 4.7 GB DVD, 25 GB Blu-ray)</td><td>Moderate (scratch-sensitive but no magnetic degradation)</td><td>Very low per disc</td><td>Software distribution, music/film, archival</td></tr>
-    <tr><td><strong>Flash/USB</strong></td><td>Flash memory chips in a portable casing</td><td>Medium</td><td>Low-medium (4 GB - 512 GB)</td><td>High (solid-state, compact)</td><td>Low</td><td>Portable file transfer, backups</td></tr>
+    <tr><td><strong>HDD (Hard Disk Drive)</strong></td><td>Spinning magnetic platters with a moving read/write head. Data stored as magnetic patterns on the platter surface. The head floats nanometres above the platter and reads/writes by magnetising tiny regions.</td><td>Slow (moving parts; 5-10 ms seek time; 100-200 MB/s sequential read)</td><td>Very high (1-20 TB)</td><td>Fragile (moving parts; sensitive to shock and vibration; head crash can destroy data)</td><td>Very low</td><td>Bulk storage, backups, servers, media libraries where cost per GB matters most</td></tr>
+    <tr><td><strong>SSD (Solid State Drive)</strong></td><td>NAND flash memory chips &mdash; no moving parts. Data stored as electrical charges in billions of tiny memory cells. Uses transistors to trap electrons.</td><td>Fast (0.05-0.1 ms; 500-7000 MB/s read for NVMe)</td><td>Medium-high (128 GB - 4 TB)</td><td>High (no moving parts; shock-resistant; silent)</td><td>Medium</td><td>OS drive, applications, laptops (shock resistance), gaming (fast load times)</td></tr>
+    <tr><td><strong>Optical disc</strong></td><td>Laser reads pits (indentations) and lands (flat areas) on a reflective disc surface. CD uses infrared laser; DVD uses red laser (shorter wavelength, more data); Blu-ray uses blue-violet laser (even shorter).</td><td>Slow (disc must spin to correct position)</td><td>Low (700 MB CD, 4.7 GB DVD, 25 GB Blu-ray)</td><td>Moderate (scratch-sensitive but no magnetic degradation; long archival life if stored properly)</td><td>Very low per disc</td><td>Software distribution, music/film, archival, backups</td></tr>
+    <tr><td><strong>Flash / USB drive</strong></td><td>Flash memory chips in a portable casing. Same underlying technology as SSDs but smaller capacity and simpler controller.</td><td>Medium (varies widely)</td><td>Low-medium (4 GB - 1 TB)</td><td>High (solid-state, compact, no moving parts)</td><td>Low-medium</td><td>Portable file transfer, small backups, bootable media</td></tr>
 </table>
 
-<p><strong>Cloud storage</strong> stores data on remote servers accessed via the internet. Advantages: accessible from anywhere, automatic backups, scalable, no local hardware to maintain. Disadvantages: requires internet, ongoing subscription cost, data held by a third party (privacy and security concerns), speed limited by internet connection.</p>
+<h3>How to Choose Storage for a Scenario</h3>
+<p>Exam questions often describe a scenario and ask you to recommend the most appropriate storage type. Consider these factors:</p>
+<ul>
+    <li><strong>Speed:</strong> Does the user need fast access? (SSD for OS/apps; HDD acceptable for bulk storage)</li>
+    <li><strong>Capacity:</strong> How much data needs to be stored? (HDD for large media libraries; SSD for smaller, frequently accessed data)</li>
+    <li><strong>Portability:</strong> Does the data need to be carried around? (USB flash drive; optical disc for distributing to others)</li>
+    <li><strong>Durability:</strong> Will the device be moved or subjected to shocks? (SSD or flash for laptops/portable devices; HDD is fragile)</li>
+    <li><strong>Cost:</strong> Is budget a constraint? (HDD is cheapest per GB for large amounts; optical discs are cheapest per unit)</li>
+    <li><strong>Longevity:</strong> How long does the data need to last? (Optical discs for archival; SSDs and flash drives have limited write cycles)</li>
+</ul>
 
-<div class="exam-tip">When comparing storage types, structure your answer around: speed, capacity, cost per GB, durability, portability, and whether it has moving parts. For a specific scenario, recommend the most appropriate type and justify your choice. For example: "An SSD would be best for a laptop's main drive because it is shock-resistant (no moving parts, important for a portable device), fast (improves boot time and application loading), and silent."</div>
+<p><strong>Cloud storage</strong> stores data on remote servers accessed via the internet. It is not a separate hardware type but rather uses HDDs and SSDs in data centres managed by companies. Advantages: accessible from anywhere, automatic backups, scalable, no local hardware to maintain, enables collaboration. Disadvantages: requires internet, ongoing subscription cost, data held by a third party (privacy and security concerns), speed limited by internet connection, potential data sovereignty issues (data may be stored in another country with different laws).</p>
+
+<div class="exam-tip">When comparing storage types, structure your answer around: speed, capacity, cost per GB, durability, portability, and whether it has moving parts. For a specific scenario, recommend the most appropriate type and justify your choice. For example: "An SSD would be best for a laptop's main drive because it is shock-resistant (no moving parts, important for a portable device), fast (improves boot time and application loading), and silent." Always give reasons specific to the scenario.</div>
 
 <h2>1.2.3 Units of Data and File Size Calculations</h2>
 
 <h3>Data Units</h3>
+<p>All data in a computer is ultimately stored as binary digits (bits). Larger units are multiples of bytes:</p>
 <table>
     <tr><th>Unit</th><th>Size</th><th>Context</th></tr>
-    <tr><td>Bit</td><td>Single 0 or 1</td><td>Smallest unit of data</td></tr>
-    <tr><td>Nibble</td><td>4 bits</td><td>One hexadecimal digit</td></tr>
-    <tr><td>Byte</td><td>8 bits</td><td>One character (in ASCII)</td></tr>
-    <tr><td>Kilobyte (KB)</td><td>1,000 bytes</td><td>A few paragraphs of text</td></tr>
-    <tr><td>Megabyte (MB)</td><td>1,000 KB = 1,000,000 bytes</td><td>An MP3 song (~3-5 MB)</td></tr>
-    <tr><td>Gigabyte (GB)</td><td>1,000 MB</td><td>A feature-length HD film (~4-5 GB)</td></tr>
-    <tr><td>Terabyte (TB)</td><td>1,000 GB</td><td>A large hard drive</td></tr>
-    <tr><td>Petabyte (PB)</td><td>1,000 TB</td><td>Data centre scale</td></tr>
+    <tr><td>Bit</td><td>Single 0 or 1</td><td>Smallest unit of data. A single binary digit.</td></tr>
+    <tr><td>Nibble</td><td>4 bits</td><td>One hexadecimal digit. Can represent 0-15 (16 values).</td></tr>
+    <tr><td>Byte</td><td>8 bits</td><td>One character (in ASCII). Can represent 0-255 (256 values).</td></tr>
+    <tr><td>Kilobyte (KB)</td><td>1,000 bytes</td><td>A few paragraphs of text; a small text file.</td></tr>
+    <tr><td>Megabyte (MB)</td><td>1,000 KB = 1,000,000 bytes</td><td>An MP3 song (~3-5 MB); a high-resolution photo (~5-10 MB).</td></tr>
+    <tr><td>Gigabyte (GB)</td><td>1,000 MB</td><td>A feature-length HD film (~4-5 GB); a modern game (~30-100 GB).</td></tr>
+    <tr><td>Terabyte (TB)</td><td>1,000 GB</td><td>A large hard drive; a small data centre.</td></tr>
+    <tr><td>Petabyte (PB)</td><td>1,000 TB</td><td>Large data centre scale; all of Netflix's video content is ~tens of PB.</td></tr>
 </table>
+
+<p><strong>Note:</strong> OCR uses decimal prefixes (1 KB = 1,000 bytes), not binary prefixes (1 KiB = 1,024 bytes). In exam calculations, always use 1,000 unless told otherwise.</p>
 
 <h3>File Size Formulae</h3>
 
 <p><strong>Sound file size (uncompressed):</strong></p>
 <pre>
-File size (bits) = sample rate (Hz) x duration (seconds) x bit depth (bits)
+File size (bits) = sample rate (Hz) x duration (seconds) x bit depth (bits) x channels
 File size (bytes) = file size (bits) / 8
 
-Example: 44,100 Hz, 60 seconds, 16-bit depth, mono
-= 44,100 x 60 x 16 = 42,336,000 bits
-= 42,336,000 / 8 = 5,292,000 bytes = 5.29 MB
+Example 1: Mono recording
+  44,100 Hz sample rate, 60 seconds, 16-bit depth, 1 channel (mono)
+  = 44,100 x 60 x 16 x 1 = 42,336,000 bits
+  = 42,336,000 / 8 = 5,292,000 bytes
+  = 5,292,000 / 1,000,000 = 5.29 MB
 
-For stereo: multiply by 2 (two channels)
-= 5,292,000 x 2 = 10,584,000 bytes = 10.58 MB
+Example 2: Stereo recording (same settings but 2 channels)
+  = 44,100 x 60 x 16 x 2 = 84,672,000 bits
+  = 84,672,000 / 8 = 10,584,000 bytes = 10.58 MB
+  (Stereo is exactly double mono because there are 2 channels)
+
+Example 3: How long can you record on 100 MB at CD quality (stereo)?
+  100 MB = 100,000,000 bytes = 800,000,000 bits
+  Duration = 800,000,000 / (44,100 x 16 x 2)
+  Duration = 800,000,000 / 1,411,200
+  Duration = 566.9 seconds ≈ 9 minutes 27 seconds
 </pre>
 
 <p><strong>Image file size (uncompressed bitmap):</strong></p>
@@ -127,9 +207,21 @@ For stereo: multiply by 2 (two channels)
 File size (bits) = width (pixels) x height (pixels) x colour depth (bits per pixel)
 File size (bytes) = file size (bits) / 8
 
-Example: 1920 x 1080, 24-bit colour depth
-= 1920 x 1080 x 24 = 49,766,400 bits
-= 49,766,400 / 8 = 6,220,800 bytes = 6.22 MB
+Example 1: Full HD image
+  1920 x 1080 pixels, 24-bit colour depth (true colour)
+  = 1920 x 1080 x 24 = 49,766,400 bits
+  = 49,766,400 / 8 = 6,220,800 bytes = 6.22 MB
+
+Example 2: How many 4-megapixel photos fit on a 2 GB memory card?
+  4 megapixels = 4,000,000 pixels, assume 24-bit colour
+  Each photo = 4,000,000 x 24 / 8 = 12,000,000 bytes = 12 MB
+  2 GB = 2,000 MB
+  Number of photos = 2,000 / 12 = 166 photos (approximately)
+
+Example 3: What colour depth allows a 640 x 480 image in 150 KB?
+  150 KB = 150,000 bytes = 1,200,000 bits
+  Colour depth = 1,200,000 / (640 x 480) = 1,200,000 / 307,200 = 3.9
+  So a colour depth of 3 bits (8 colours) would fit; 4 bits (16 colours) would not.
 </pre>
 
 <p><strong>Text file size:</strong></p>
@@ -138,88 +230,150 @@ File size (bits) = number of characters x bits per character
 File size (bytes) = file size (bits) / 8
 
 Example: 2000 characters, ASCII (8 bits per character)
-= 2000 x 8 = 16,000 bits = 2,000 bytes = 2 KB
+  = 2000 x 8 = 16,000 bits = 2,000 bytes = 2 KB
+
+Example: 5000 characters, Unicode UTF-16 (16 bits per character)
+  = 5000 x 16 = 80,000 bits = 10,000 bytes = 10 KB
 </pre>
 
-<div class="exam-tip">Always show your working clearly. Remember to divide by 8 to convert bits to bytes. For sound, check whether it is mono or stereo (stereo = double). These calculation questions are worth several marks, and partial marks are awarded for correct working even if the final answer is wrong.</div>
+<div class="exam-tip">Always show your working clearly in calculation questions &mdash; partial marks are awarded for correct method even if the final answer is wrong. Remember to divide by 8 to convert bits to bytes. For sound, always check whether it is mono or stereo (stereo = multiply by 2 for two channels). These are common multi-mark questions that students lose marks on by rushing or forgetting a step.</div>
 
 <h2>1.2.4 Number Representation</h2>
 
+<p>Computers use binary (base 2) internally, but humans find denary (base 10) and hexadecimal (base 16) more convenient. You must be able to convert between all three and perform binary arithmetic.</p>
+
+<h3>Number Systems Overview</h3>
 <table>
-    <tr><th>Conversion</th><th>Method</th><th>Example</th></tr>
-    <tr><td><strong>Denary &rarr; Binary</strong></td><td>Divide by 2 repeatedly; record remainders bottom-to-top. Or subtract largest power of 2 that fits.</td><td>75: 64+8+2+1 = <code>01001011</code></td></tr>
-    <tr><td><strong>Binary &rarr; Denary</strong></td><td>Multiply each bit by its place value (128, 64, 32, 16, 8, 4, 2, 1) and sum.</td><td><code>01001011</code> = 64+8+2+1 = 75</td></tr>
-    <tr><td><strong>Denary &rarr; Hex</strong></td><td>Divide by 16; quotient = left digit, remainder = right digit.</td><td>75 / 16 = 4 remainder 11(B) &rarr; <code>4B</code></td></tr>
-    <tr><td><strong>Binary &rarr; Hex</strong></td><td>Split into nibbles (groups of 4 from right); convert each nibble.</td><td><code>0100 1011</code> &rarr; 4 B &rarr; <code>4B</code></td></tr>
-    <tr><td><strong>Hex &rarr; Binary</strong></td><td>Convert each hex digit to 4-bit binary.</td><td><code>4B</code> &rarr; 0100 1011</td></tr>
-    <tr><td><strong>Hex &rarr; Denary</strong></td><td>Multiply each digit by powers of 16 and sum.</td><td><code>4B</code> = (4 x 16) + (11 x 1) = 75</td></tr>
+    <tr><th>System</th><th>Base</th><th>Digits Used</th><th>Where Used</th></tr>
+    <tr><td><strong>Binary</strong></td><td>2</td><td>0, 1</td><td>How computers store and process all data internally</td></tr>
+    <tr><td><strong>Denary</strong></td><td>10</td><td>0-9</td><td>Human everyday counting system</td></tr>
+    <tr><td><strong>Hexadecimal</strong></td><td>16</td><td>0-9, A-F</td><td>Compact representation of binary; colour codes (#FF0000); MAC addresses; memory addresses; error codes</td></tr>
+</table>
+
+<p><strong>Why hexadecimal?</strong> Binary numbers are long and error-prone for humans. Hexadecimal provides a compact representation: each hex digit maps to exactly 4 binary digits (one nibble). So an 8-bit binary number becomes just 2 hex digits, and a 32-bit address becomes 8 hex digits. This makes hex much easier to read and less prone to transcription errors.</p>
+
+<h3>Conversion Methods</h3>
+<table>
+    <tr><th>Conversion</th><th>Method</th><th>Worked Example</th></tr>
+    <tr><td><strong>Denary &rarr; Binary</strong></td><td>Write place values (128, 64, 32, 16, 8, 4, 2, 1). Subtract the largest that fits, write 1 for that position, 0 otherwise.</td><td>75: 75-64=11, 11-8=3, 3-2=1, 1-1=0. Bits at 64,8,2,1 = <code>01001011</code></td></tr>
+    <tr><td><strong>Binary &rarr; Denary</strong></td><td>Multiply each bit by its place value (128, 64, 32, 16, 8, 4, 2, 1) and sum all results.</td><td><code>01001011</code> = 0+64+0+0+8+0+2+1 = 75</td></tr>
+    <tr><td><strong>Denary &rarr; Hex</strong></td><td>Divide by 16: quotient = left digit, remainder = right digit. Remainders 10-15 use A-F.</td><td>75 / 16 = 4 remainder 11 (B) &rarr; <code>4B</code></td></tr>
+    <tr><td><strong>Hex &rarr; Denary</strong></td><td>Multiply each digit by its power of 16 and sum.</td><td><code>4B</code> = (4 x 16) + (11 x 1) = 64 + 11 = 75</td></tr>
+    <tr><td><strong>Binary &rarr; Hex</strong></td><td>Split into nibbles (groups of 4 from right); convert each nibble to its hex digit.</td><td><code>0100 1011</code> &rarr; 4 B &rarr; <code>4B</code></td></tr>
+    <tr><td><strong>Hex &rarr; Binary</strong></td><td>Convert each hex digit to its 4-bit binary equivalent.</td><td><code>4B</code> &rarr; 0100 1011 &rarr; <code>01001011</code></td></tr>
 </table>
 
 <h3>Binary Addition</h3>
+<p>Binary addition follows four rules, just like denary addition but with only two digits:</p>
 <pre>
-Rules: 0+0=0, 0+1=1, 1+0=1, 1+1=10 (write 0, carry 1), 1+1+1=11 (write 1, carry 1)
+Rules: 0+0 = 0    0+1 = 1    1+0 = 1    1+1 = 10 (write 0, carry 1)
+       1+1+1 = 11 (write 1, carry 1)
 
 Example: 01001011 (75) + 00110010 (50)
-    0 1 0 0 1 0 1 1
-  + 0 0 1 1 0 0 1 0
-  -------------------
-    0 1 1 1 1 1 0 1  = 125   (75 + 50 = 125 correct)
+  Carry:  1 1 1
+          0 1 0 0 1 0 1 1    (75)
+        + 0 0 1 1 0 0 1 0    (50)
+        -------------------
+          0 1 1 1 1 1 0 1    (125)
 
-Overflow: if the result exceeds 8 bits (e.g., 200 + 100 = 300 > 255), an overflow error occurs.
+  Check: 64+32+16+8+4+1 = 125. Correct! (75 + 50 = 125)
+
+Overflow example: 11001000 (200) + 01100100 (100)
+  The result is 300, but 300 > 255 (maximum for 8 bits).
+  An OVERFLOW ERROR occurs &mdash; the result cannot be stored in 8 bits.
+  The 9th bit (carry out) is lost, giving a wrong answer.
 </pre>
 
-<h3>Bit Shifts</h3>
+<h3>Binary Shifts</h3>
+<p>Binary shifts move all bits left or right by a specified number of positions. They are a very fast way to multiply or divide by powers of 2:</p>
 <table>
     <tr><th>Shift</th><th>Operation</th><th>Effect</th><th>Example</th></tr>
-    <tr><td><strong>Left shift by n</strong></td><td>Move all bits left by n positions; fill right with zeros</td><td>Multiplies by 2<sup>n</sup></td><td><code>0011</code> (3) &lt;&lt; 2 = <code>1100</code> (12). 3 x 4 = 12.</td></tr>
-    <tr><td><strong>Right shift by n</strong></td><td>Move all bits right by n positions; fill left with zeros</td><td>Integer divides by 2<sup>n</sup> (rounds down)</td><td><code>1100</code> (12) &gt;&gt; 1 = <code>0110</code> (6). 12 / 2 = 6.</td></tr>
+    <tr><td><strong>Left shift by n</strong></td><td>Move all bits left by n positions; fill right with zeros</td><td>Multiplies by 2<sup>n</sup></td><td><code>00000011</code> (3) &lt;&lt; 2 = <code>00001100</code> (12). 3 x 2<sup>2</sup> = 3 x 4 = 12.</td></tr>
+    <tr><td><strong>Right shift by n</strong></td><td>Move all bits right by n positions; fill left with zeros</td><td>Integer divides by 2<sup>n</sup> (rounds down)</td><td><code>00001100</code> (12) &gt;&gt; 1 = <code>00000110</code> (6). 12 / 2<sup>1</sup> = 6.</td></tr>
 </table>
-<p>Note: bits shifted off the edge are lost. A left shift can cause overflow if a 1 is shifted out of the most significant position.</p>
+<p><strong>Important:</strong> bits shifted off the edge are lost permanently. A left shift can cause overflow if a 1 is shifted out of the most significant position. A right shift of an odd number loses the remainder: <code>00000111</code> (7) &gt;&gt; 1 = <code>00000011</code> (3), not 3.5 &mdash; the 0.5 is lost.</p>
+
+<pre>
+More shift examples:
+  00000101 (5) &lt;&lt; 1 = 00001010 (10)    — 5 x 2 = 10
+  00000101 (5) &lt;&lt; 3 = 00101000 (40)    — 5 x 8 = 40
+  00110000 (48) &gt;&gt; 2 = 00001100 (12)   — 48 / 4 = 12
+  00001001 (9) &gt;&gt; 1 = 00000100 (4)     — 9 / 2 = 4 (remainder lost)
+</pre>
 
 <h2>1.2.5 Characters, Images and Sound</h2>
 
 <h3>Character Sets</h3>
+<p>A <strong>character set</strong> is a mapping between characters (letters, digits, symbols) and binary numbers. Every character stored in a computer has a unique binary code.</p>
+
 <table>
     <tr><th>Feature</th><th>ASCII</th><th>Unicode</th></tr>
-    <tr><td>Bits per character</td><td>7 bits (128 characters) or 8 bits extended (256 characters)</td><td>8 to 32 bits (UTF-8: 1-4 bytes; UTF-16: 2-4 bytes)</td></tr>
-    <tr><td>Characters supported</td><td>English letters, digits, punctuation, control characters</td><td>All world scripts: Latin, Cyrillic, Arabic, Chinese, Japanese, Korean, emoji, mathematical symbols, historic scripts</td></tr>
-    <tr><td>File size impact</td><td>Smaller (1 byte per character)</td><td>Larger (1-4 bytes per character)</td></tr>
-    <tr><td>Key fact</td><td>A=65, a=97, 0=48. Uppercase and lowercase differ by 32. Characters are sequential (B=66, C=67, etc.).</td><td>UTF-8 is backward compatible with ASCII &mdash; the first 128 characters are identical.</td></tr>
+    <tr><td>Bits per character</td><td>7 bits (128 characters) or 8 bits extended ASCII (256 characters)</td><td>Variable: UTF-8 uses 1-4 bytes; UTF-16 uses 2-4 bytes; UTF-32 uses 4 bytes</td></tr>
+    <tr><td>Characters supported</td><td>English letters (A-Z, a-z), digits (0-9), punctuation, control characters (newline, tab)</td><td>All world scripts: Latin, Cyrillic, Arabic, Chinese, Japanese, Korean, emoji, mathematical symbols, historic scripts &mdash; over 149,000 characters</td></tr>
+    <tr><td>File size impact</td><td>Smaller (1 byte per character for English text)</td><td>Larger (1-4 bytes per character depending on encoding and script)</td></tr>
+    <tr><td>Key facts</td><td>A=65, a=97, 0=48. Uppercase and lowercase differ by 32. Characters are sequential (B=66, C=67, etc.). Space = 32.</td><td>UTF-8 is backward compatible with ASCII &mdash; the first 128 characters are identical. UTF-8 is the most common encoding on the web.</td></tr>
 </table>
 
+<p><strong>Why was Unicode needed?</strong> ASCII only supports 128 (or 256) characters, which is sufficient for English but cannot represent Chinese characters (tens of thousands), Arabic, Hindi, Japanese, or emoji. As computing became global, a universal character set was needed. Unicode solves this by assigning a unique code point to every character in every writing system.</p>
+
 <h3>Images</h3>
+<p>Digital images are represented as a grid of tiny coloured squares called <strong>pixels</strong> (picture elements). Each pixel stores a binary value representing its colour.</p>
 <ul>
-    <li>Each <strong>pixel</strong> stores a binary colour value. The image is a grid of pixels.</li>
-    <li><strong>Colour depth</strong> = bits per pixel. More bits = more possible colours. 1 bit = 2 colours; 8 bits = 256 colours; 24 bits = 16.7 million colours (true colour).</li>
-    <li><strong>Resolution</strong> = total number of pixels (width x height). Higher resolution = more detail = larger file.</li>
-    <li><strong>Metadata</strong> stored in the file header: width, height, colour depth, file format.</li>
-    <li>Increasing colour depth or resolution improves quality but increases file size.</li>
+    <li><strong>Colour depth</strong> = the number of bits used to represent the colour of each pixel. More bits = more possible colours. 1 bit = 2 colours (black/white); 8 bits = 256 colours; 24 bits = 16.7 million colours (true colour, using 8 bits each for red, green, and blue).</li>
+    <li><strong>Resolution</strong> = the total number of pixels in the image (width x height). Higher resolution = more detail and sharper image = larger file size. A 1920 x 1080 image has 2,073,600 pixels (about 2 megapixels).</li>
+    <li><strong>Metadata</strong> stored in the file header includes: width, height, colour depth, file format, and potentially camera settings (EXIF data).</li>
+    <li>Increasing colour depth improves colour accuracy but increases file size. Increasing resolution improves detail but also increases file size. There is always a trade-off between quality and file size.</li>
 </ul>
 
 <h3>Sound</h3>
+<p>Sound in the real world is an analogue wave &mdash; a continuously varying signal. Computers are digital and can only store discrete values, so analogue sound must be converted to digital through a process called <strong>sampling</strong>.</p>
 <ul>
-    <li>Analogue sound waves are converted to digital by <strong>sampling</strong> at regular intervals.</li>
-    <li><strong>Sample rate</strong> = number of samples per second (Hz). CD quality = 44,100 Hz.</li>
-    <li><strong>Bit depth</strong> = bits per sample. More bits = more precise amplitude levels = less quantisation noise. CD quality = 16 bits.</li>
-    <li>Higher sample rate captures higher frequencies (Nyquist theorem: sample rate must be at least 2x the highest frequency).</li>
-    <li>Higher bit depth captures more precise amplitude levels.</li>
-    <li>Both increase quality AND file size.</li>
+    <li><strong>Sampling</strong> means measuring the amplitude (height) of the sound wave at regular time intervals and recording each measurement as a binary number.</li>
+    <li><strong>Sample rate</strong> = the number of samples taken per second, measured in Hertz (Hz). CD quality = 44,100 Hz (44,100 measurements per second). A higher sample rate captures more detail of the original wave, including higher frequencies.</li>
+    <li><strong>Bit depth</strong> = the number of bits used to store each sample. More bits = more precise amplitude levels = less <strong>quantisation error</strong> (the difference between the actual amplitude and the nearest digital level). CD quality = 16 bits (65,536 possible levels).</li>
+    <li><strong>Nyquist theorem:</strong> the sample rate must be at least <strong>twice</strong> the highest frequency in the sound to accurately reproduce it. Human hearing goes up to ~20,000 Hz, so CD audio samples at 44,100 Hz (just over double).</li>
+    <li>Higher sample rate AND higher bit depth both increase quality AND file size. This is the fundamental trade-off in digital audio.</li>
 </ul>
 
 <h2>1.2.6 Compression</h2>
 
+<p><strong>Compression</strong> reduces the file size of data so it takes up less storage space and can be transmitted faster over networks. There are two fundamentally different approaches:</p>
+
 <table>
     <tr><th>Feature</th><th>Lossy Compression</th><th>Lossless Compression</th></tr>
-    <tr><td><strong>Data loss</strong></td><td>Yes &mdash; some data permanently removed (data deemed imperceptible to humans)</td><td>No &mdash; original data fully recoverable after decompression</td></tr>
-    <tr><td><strong>File size</strong></td><td>Much smaller (high compression ratios, e.g., 10:1)</td><td>Smaller than original, but larger than lossy (typical 2:1 to 3:1)</td></tr>
-    <tr><td><strong>Quality</strong></td><td>Reduced (may be imperceptible at high quality settings)</td><td>Identical to original</td></tr>
-    <tr><td><strong>Reversible?</strong></td><td>No &mdash; cannot recover original from compressed file</td><td>Yes &mdash; decompression gives exact original</td></tr>
-    <tr><td><strong>Formats</strong></td><td>JPEG (images), MP3/AAC (audio), MP4/H.264 (video)</td><td>PNG (images), FLAC (audio), ZIP/7z (any files)</td></tr>
-    <tr><td><strong>Best for</strong></td><td>Media where slight quality loss is acceptable (streaming, web images, music)</td><td>Data where accuracy is critical (text documents, executables, source code, medical images)</td></tr>
-    <tr><td><strong>How it works</strong></td><td>Removes data humans cannot easily perceive (inaudible frequencies, imperceptible colour differences, redundant video frames)</td><td>Finds patterns and encodes them more efficiently (Huffman coding, RLE, dictionary compression) without removing any data</td></tr>
+    <tr><td><strong>Data loss</strong></td><td>Yes &mdash; some data is permanently removed (data deemed imperceptible to humans)</td><td>No &mdash; original data is fully recoverable after decompression. Not a single bit is lost.</td></tr>
+    <tr><td><strong>File size reduction</strong></td><td>Much smaller (high compression ratios, e.g., 10:1 or more)</td><td>Moderately smaller (typical 2:1 to 3:1 ratio)</td></tr>
+    <tr><td><strong>Quality</strong></td><td>Reduced (may be imperceptible at high quality settings, but degrades with more compression)</td><td>Identical to original &mdash; no quality loss whatsoever</td></tr>
+    <tr><td><strong>Reversible?</strong></td><td>No &mdash; cannot recover original from compressed file. Lost data is gone forever.</td><td>Yes &mdash; decompression gives the exact original file, bit for bit</td></tr>
+    <tr><td><strong>Formats</strong></td><td>JPEG (images), MP3/AAC (audio), MP4/H.264/H.265 (video)</td><td>PNG (images), FLAC/WAV (audio), ZIP/7z (any files), GIF (images, limited colours)</td></tr>
+    <tr><td><strong>Best for</strong></td><td>Media where slight quality loss is acceptable: streaming video, web images, music for portable players, social media</td><td>Data where accuracy is critical: text documents, executables, source code, medical images, archival, financial records</td></tr>
+    <tr><td><strong>How it works</strong></td><td>Removes data humans cannot easily perceive: inaudible frequencies in audio, imperceptible colour differences in images, redundant information between video frames</td><td>Finds patterns and encodes them more efficiently without removing any data. Techniques include: <strong>Huffman coding</strong> (frequent characters get shorter codes), <strong>RLE</strong> (Run Length Encoding &mdash; "AAAA" becomes "4A"), <strong>dictionary compression</strong> (LZW &mdash; repeated sequences replaced with references)</td></tr>
 </table>
 
-<div class="exam-tip">Know the key difference: lossy = quality lost permanently (cannot undo); lossless = fully recoverable (no quality loss). For a given scenario, justify your choice: "A medical X-ray should use lossless compression (e.g., PNG) because any data loss could obscure diagnostic detail, potentially leading to misdiagnosis." File size calculations do not account for compression &mdash; they give the uncompressed size.</div>
+<h3>When to Use Each Type</h3>
+<pre>
+Scenario: Storing holiday photos to share on social media
+  → Lossy (JPEG). Slight quality loss is imperceptible on screens,
+    and much smaller files upload faster and use less data.
+
+Scenario: Archiving a medical X-ray for a hospital database
+  → Lossless (PNG). Any data loss could obscure diagnostic detail,
+    potentially leading to misdiagnosis. Accuracy is critical.
+
+Scenario: Sending a software installer via email
+  → Lossless (ZIP). Losing even one bit of an executable file would
+    corrupt it and prevent it from running. Software must be exact.
+
+Scenario: Streaming music on a mobile phone with limited data
+  → Lossy (MP3/AAC). Compression ratios of 10:1 make streaming
+    practical. Most listeners cannot tell the difference at 256 kbps.
+
+Scenario: Backing up important text documents
+  → Lossless (ZIP). Text files are typically small anyway, and
+    no data can be lost from important documents.
+</pre>
+
+<div class="exam-tip">Know the key difference: lossy = quality lost permanently (cannot undo); lossless = fully recoverable (no quality loss). For a given scenario, justify your choice clearly. File size calculation formulae give the <strong>uncompressed</strong> size &mdash; actual files are usually compressed and smaller than the calculated value. A common mistake is saying "lossy compression loses some of the file" without specifying that it removes data <em>humans cannot easily perceive</em> &mdash; this detail matters for full marks.</div>
 
 </div>
 </body>

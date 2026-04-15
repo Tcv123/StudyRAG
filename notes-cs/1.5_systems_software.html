@@ -21,6 +21,8 @@
         .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
         .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
         .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
         @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
     </style>
 </head>
@@ -31,86 +33,146 @@
 <p class="spec-ref">OCR GCSE Computer Science (J277) &mdash; Paper 1</p>
 
 <div class="definition">
-    <strong>Systems software</strong> manages the computer's hardware resources and provides a platform for application software to run. It acts as an intermediary between the user, application software, and hardware. The two main types are the <strong>operating system</strong> and <strong>utility software</strong>.
+    <strong>Systems software</strong> manages the computer's hardware resources and provides a platform for application software to run. It acts as an intermediary between the user, application software, and hardware. Without systems software, applications would have to communicate directly with hardware &mdash; every program would need to know the specific details of every possible printer, graphics card, and storage device. The two main types are the <strong>operating system</strong> and <strong>utility software</strong>.
 </div>
+
+<p><strong>Systems software vs application software:</strong> Systems software manages and maintains the computer itself (OS, drivers, anti-malware, disk utilities). Application software performs tasks for the user (word processor, web browser, games, email client). Systems software runs in the background; application software runs in the foreground for the user to interact with.</p>
 
 <h2>1.5.1 Operating System Functions</h2>
 
-<p>The <strong>operating system (OS)</strong> is the most important piece of systems software. Without it, the user would have to interact directly with the hardware using machine code. The OS manages six key functions:</p>
+<p>The <strong>operating system (OS)</strong> is the most important piece of systems software. It is loaded into RAM when the computer starts (the boot process) and runs continuously until shutdown. Without it, the user would have to interact directly with the hardware using machine code. The OS provides an abstraction layer &mdash; it hides the complexity of the hardware and presents a simple, consistent interface to both users and applications.</p>
 
+<p>The OS manages <strong>six key functions</strong>. You must be able to explain each one in detail:</p>
+
+<h3>1. User Interface</h3>
+<p>The user interface provides a way for the user to interact with the computer, issue commands, and receive feedback.</p>
 <table>
-    <tr><th>OS Function</th><th>What It Does</th><th>Detail and Examples</th></tr>
-    <tr>
-        <td><strong>User interface</strong></td>
-        <td>Provides a way for the user to interact with the computer</td>
-        <td><strong>GUI (Graphical User Interface):</strong> windows, icons, menus, pointer (WIMP). Intuitive, easy to learn (e.g., Windows, macOS). <strong>CLI (Command Line Interface):</strong> typed text commands. More powerful and flexible; preferred by system administrators and programmers (e.g., Linux terminal, PowerShell). <strong>Touch interface:</strong> finger gestures on a touchscreen (e.g., iOS, Android).</td>
-    </tr>
-    <tr>
-        <td><strong>Memory management</strong></td>
-        <td>Allocates and deallocates RAM to programs and manages virtual memory</td>
-        <td>When a program opens, the OS allocates a block of RAM for it. When it closes, that RAM is freed for other programs. If RAM is full, the OS uses <strong>virtual memory</strong> (a section of the hard drive/SSD as overflow). The OS also provides <strong>memory protection</strong> &mdash; preventing one program from accessing another program's memory space (which would cause crashes or security vulnerabilities). <strong>Paging</strong> divides memory into fixed-size blocks and swaps them between RAM and disk as needed.</td>
-    </tr>
-    <tr>
-        <td><strong>Process (multitasking) management</strong></td>
-        <td>Schedules CPU time between processes to enable multiple programs to appear to run simultaneously</td>
-        <td>The OS uses <strong>scheduling algorithms</strong> (e.g., Round Robin) to rapidly switch between processes, giving each a small time slice of CPU time. This happens so fast (thousands of times per second) that the user perceives all programs running simultaneously. The OS also manages process creation, termination, and inter-process communication.</td>
-    </tr>
-    <tr>
-        <td><strong>Peripheral management</strong></td>
-        <td>Communicates with hardware devices (keyboard, mouse, printer, monitor, etc.)</td>
-        <td>Uses <strong>device drivers</strong> &mdash; specialised software that translates generic OS commands into device-specific instructions. Each hardware device needs a driver. The OS manages device drivers and routes data between devices and programs. Plug-and-play allows the OS to automatically detect and install drivers for new devices.</td>
-    </tr>
-    <tr>
-        <td><strong>User management</strong></td>
-        <td>Creates and manages user accounts, access rights, and security</td>
-        <td>Each user has an account with a username and password. The OS assigns <strong>access levels</strong> (administrator, standard user, guest) that determine what each user can do (install software, change settings, access files). Enforces the principle of least privilege. Manages login/logout and authentication (including multi-factor).</td>
-    </tr>
-    <tr>
-        <td><strong>File management</strong></td>
-        <td>Organises files in a hierarchical directory (folder) structure</td>
-        <td>The OS provides: file <strong>naming</strong> (extensions indicate type: .docx, .py, .jpg); <strong>directory structure</strong> (folders within folders); <strong>file operations</strong> (create, copy, move, rename, delete, search); <strong>file permissions</strong> (read, write, execute, by user/group); <strong>file allocation</strong> (tracking which disk sectors belong to which files using file systems like NTFS, ext4, APFS).</td>
-    </tr>
+    <tr><th>Interface Type</th><th>Description</th><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td><strong>GUI (Graphical User Interface)</strong></td><td>Windows, Icons, Menus, Pointer (WIMP). Users interact by clicking, dragging, and using visual elements.</td><td>Intuitive and easy to learn; visual feedback; good for casual users; supports multitasking with multiple windows</td><td>Uses more system resources (RAM, CPU, GPU); slower for repetitive tasks; limited control compared to CLI</td></tr>
+    <tr><td><strong>CLI (Command Line Interface)</strong></td><td>Users type text commands (e.g., <code>dir</code>, <code>ls</code>, <code>cd</code>, <code>mkdir</code>). Output is displayed as text.</td><td>Very powerful and flexible; faster for experienced users; uses fewer resources; can be scripted/automated; precise control over the system</td><td>Steep learning curve; must memorise commands; easy to make mistakes; not visual</td></tr>
+    <tr><td><strong>Touch / Gesture</strong></td><td>Users interact via finger gestures (tap, swipe, pinch, drag) on a touchscreen.</td><td>Very intuitive; no keyboard/mouse needed; natural for mobile devices</td><td>Less precise than mouse; limited screen size on mobile; on-screen keyboard takes up space; finger obscures content</td></tr>
+    <tr><td><strong>Voice</strong></td><td>Users speak commands processed by speech recognition (e.g., Siri, Alexa, Cortana).</td><td>Hands-free; accessible for users with physical disabilities</td><td>Accuracy varies; privacy concerns (always listening); not suitable for noisy environments; limited command set</td></tr>
 </table>
+
+<h3>2. Memory Management</h3>
+<p>The OS is responsible for allocating and managing RAM to ensure all running programs have the memory they need without interfering with each other.</p>
+<ul>
+    <li><strong>Allocation:</strong> When a program opens, the OS allocates a block of RAM for its code, data, and stack. When the program closes, that RAM is freed (deallocated) and made available for other programs.</li>
+    <li><strong>Memory protection:</strong> The OS prevents one program from accessing another program's memory space. Without this, a bug in one program could corrupt data in another, causing crashes or security vulnerabilities. Each process has its own protected memory space.</li>
+    <li><strong>Virtual memory:</strong> If RAM is full, the OS uses a section of the hard drive/SSD as overflow (the page file or swap space). It divides memory into fixed-size <strong>pages</strong> and swaps them between RAM and disk as needed. This allows programs that need more memory than physically available to still run, but at a significant performance cost because disk access is much slower than RAM.</li>
+    <li><strong>Paging:</strong> The OS divides both RAM and virtual memory into pages of equal size (typically 4 KB). A page table maps virtual addresses (what the program thinks) to physical addresses (where the data actually is in RAM or on disk). When a program accesses a page that is on disk, a <strong>page fault</strong> occurs &mdash; the OS must load that page into RAM, potentially evicting another page.</li>
+</ul>
+
+<p><strong>Why excessive virtual memory use (thrashing) is bad:</strong> If the OS is constantly swapping pages between RAM and disk because too many programs are running, the system spends more time managing memory than doing useful work. The hard drive thrashes (constant read/write activity) and the computer becomes extremely slow. The solution is to add more physical RAM or close some programs.</p>
+
+<h3>3. Process (Multitasking) Management</h3>
+<p>Modern computers appear to run multiple programs simultaneously, but a single CPU core can only execute one instruction at a time. The OS creates this illusion through <strong>time-slicing</strong> and <strong>scheduling</strong>.</p>
+<ul>
+    <li>Each running program is a <strong>process</strong> with its own allocated resources (memory, CPU time, file handles).</li>
+    <li>The OS uses a <strong>scheduler</strong> to decide which process gets CPU time and for how long.</li>
+    <li><strong>Time-slicing</strong>: The scheduler gives each process a small time slice (typically a few milliseconds) of CPU time, then switches to the next process. This happens thousands of times per second, so the user perceives all programs running simultaneously.</li>
+    <li><strong>Priority scheduling</strong>: Some processes have higher priority (e.g., system processes, real-time audio playback) and get CPU time more frequently than lower-priority processes.</li>
+    <li>The OS handles <strong>context switching</strong> &mdash; saving the state (register values, program counter, memory maps) of the current process before loading the state of the next process. This has overhead &mdash; too many context switches waste CPU time.</li>
+    <li>With multi-core CPUs, the OS can run different processes on different cores truly simultaneously.</li>
+</ul>
+
+<h3>4. Peripheral (Device) Management</h3>
+<p>The OS manages communication with all hardware devices (keyboard, mouse, printer, monitor, webcam, USB drives, etc.).</p>
+<ul>
+    <li>Uses <strong>device drivers</strong> &mdash; specialised software that translates generic OS commands into device-specific instructions. Each hardware device needs a compatible driver. A printer driver translates a "print this document" command into the specific sequence of instructions that particular printer model understands.</li>
+    <li>The OS provides a <strong>standard interface</strong> for applications to use hardware without knowing the specific details. An application calls "print()" and the OS + driver handle the rest.</li>
+    <li><strong>Plug-and-play:</strong> The OS automatically detects newly connected devices and installs appropriate drivers (either from a built-in library or by downloading them).</li>
+    <li>The OS manages <strong>device queues</strong> &mdash; for example, a print queue holds print jobs in order when multiple users send documents to the same printer.</li>
+    <li><strong>Interrupts:</strong> When a device needs attention (e.g., keyboard key pressed, mouse moved, data received from network), it sends an interrupt signal to the CPU. The OS pauses the current task, handles the interrupt (e.g., processes the key press), then resumes the previous task.</li>
+</ul>
+
+<h3>5. User Management</h3>
+<p>On shared or networked systems, the OS manages multiple user accounts with different levels of access.</p>
+<ul>
+    <li>Each user has a unique account with username and password (or other authentication methods like biometrics or 2FA).</li>
+    <li>The OS assigns <strong>access levels</strong> that determine what each user can do:
+        <ul>
+            <li><strong>Administrator:</strong> Full control &mdash; can install/remove software, change system settings, create/delete user accounts, access all files.</li>
+            <li><strong>Standard user:</strong> Can run applications, access their own files, change personal settings. Cannot install system software or modify other users' files.</li>
+            <li><strong>Guest:</strong> Very limited access &mdash; typically read-only, cannot install software or change settings. For temporary or untrusted users.</li>
+        </ul>
+    </li>
+    <li>Enforces the <strong>principle of least privilege</strong> &mdash; users only have the permissions they need for their role, minimising damage if their account is compromised.</li>
+    <li>Manages login/logout sessions, audit logs (who did what and when), and account policies (password complexity, expiry, lockout after failed attempts).</li>
+</ul>
+
+<h3>6. File Management</h3>
+<p>The OS organises files in a hierarchical directory (folder) structure and provides tools for managing them.</p>
+<ul>
+    <li><strong>Directory structure:</strong> Files are organised in a tree of folders within folders. The root is the top level (e.g., <code>C:\</code> on Windows, <code>/</code> on Linux). This hierarchy allows millions of files to be organised logically.</li>
+    <li><strong>File naming and extensions:</strong> Extensions indicate file type and which application should open them (.docx for Word, .py for Python, .jpg for images, .mp3 for audio). The OS maintains associations between extensions and applications.</li>
+    <li><strong>File operations:</strong> Create, copy, move, rename, delete, search, sort. The OS handles these through the file manager GUI or CLI commands.</li>
+    <li><strong>File permissions:</strong> Read (view contents), Write (modify contents), Execute (run as a program). Permissions can be set per user or per group. This prevents unauthorised users from reading, modifying, or deleting files they should not have access to.</li>
+    <li><strong>File system:</strong> The OS tracks which physical disk sectors belong to which files using a file system (NTFS on Windows, ext4 on Linux, APFS on macOS). The file system also tracks free space, handles fragmentation, and provides journaling (crash recovery).</li>
+    <li><strong>File allocation:</strong> When saving a file, the OS finds free space on the disk, writes the data, and updates the file allocation table to record which sectors belong to that file. When deleting, it marks those sectors as free (the data is not immediately erased &mdash; which is why deleted files can sometimes be recovered).</li>
+</ul>
+
+<div class="exam-tip">Know all six OS functions and be able to explain each one with specific details. Memory management and process management are the most commonly examined. For memory management, explain the chain: RAM full &rarr; virtual memory used &rarr; pages swapped between RAM and disk &rarr; disk is much slower &rarr; performance drops &rarr; thrashing if excessive. For process management, explain time-slicing: each process gets a small time slice of CPU time, switching so fast the user perceives simultaneous execution.</div>
 
 <h2>1.5.2 Utility Software</h2>
 
-<p><strong>Utility software</strong> performs specific maintenance and housekeeping tasks to keep the system running efficiently. Utilities are part of systems software (not application software) because they maintain the system rather than perform user tasks.</p>
+<p><strong>Utility software</strong> performs specific maintenance and housekeeping tasks to keep the system running efficiently and securely. Utilities are part of systems software (not application software) because they maintain the system rather than perform user tasks. Most operating systems include basic utilities, but more advanced versions can be purchased separately.</p>
 
 <table>
     <tr><th>Utility</th><th>Purpose</th><th>How It Works</th><th>Key Detail</th></tr>
     <tr>
         <td><strong>Encryption software</strong></td>
-        <td>Protects data confidentiality</td>
-        <td>Encrypts files, folders, or entire drives with a cryptographic key. Data becomes unreadable without the correct decryption key.</td>
-        <td>Full-disk encryption (e.g., BitLocker on Windows, FileVault on macOS) protects all data if the device is lost or stolen. The thief gets the hardware but cannot read any of the data.</td>
+        <td>Protects data confidentiality by making it unreadable without the correct key</td>
+        <td>Uses a cryptographic algorithm and a key to convert plaintext into ciphertext. The data can only be read by someone who has the correct decryption key. Can encrypt individual files, folders, or entire drives.</td>
+        <td><strong>Full-disk encryption</strong> (e.g., BitLocker on Windows, FileVault on macOS) protects all data if the device is lost or stolen. The thief gets the hardware but cannot read any data without the encryption key/password. Essential for laptops and portable devices that may be lost or stolen.</td>
     </tr>
     <tr>
         <td><strong>Defragmentation</strong></td>
-        <td>Reorganises fragmented files on an HDD</td>
-        <td>Over time, files are stored in non-contiguous (scattered) blocks across the disk. Defragmentation rearranges them into <strong>contiguous blocks</strong>, reducing the distance the read/write head must travel.</td>
-        <td><strong>Only applies to HDDs</strong> (which have mechanical heads that must physically move). SSDs should <strong>NOT be defragmented</strong> &mdash; they have no moving parts (random access is equally fast from any location), and defragmentation causes unnecessary writes that reduce SSD lifespan. SSDs use TRIM instead.</td>
+        <td>Reorganises fragmented files on an HDD to improve read speed</td>
+        <td>Over time, as files are created, modified, and deleted, they become stored in non-contiguous (scattered) blocks across the disk surface. The read/write head must jump between different areas to read a single file, slowing access. Defragmentation rearranges file blocks into <strong>contiguous sequences</strong>, reducing head movement and improving read speed.</td>
+        <td><strong>Only applies to HDDs</strong> (which have a mechanical head that must physically move to different positions). <strong>SSDs should NOT be defragmented</strong> &mdash; they have no moving parts (all locations are accessed at the same speed), defragmentation provides no benefit, and the unnecessary write operations reduce the SSD's limited lifespan. SSDs use <strong>TRIM</strong> instead, which tells the SSD which blocks are no longer in use so they can be efficiently reused.</td>
     </tr>
     <tr>
         <td><strong>Data compression</strong></td>
         <td>Reduces file sizes for storage and transmission</td>
-        <td><strong>Lossless</strong> (ZIP, PNG): compresses by finding patterns; original data fully recoverable. <strong>Lossy</strong> (JPEG, MP3): removes data humans cannot easily perceive; smaller files but some quality loss; not reversible.</td>
-        <td>Compression is essential for: reducing download times, fitting more data on storage devices, reducing bandwidth usage for streaming, and emailing large files.</td>
+        <td><strong>Lossless</strong> (ZIP, PNG, FLAC): compresses by finding patterns and encoding them more efficiently. Original data is fully recoverable. <strong>Lossy</strong> (JPEG, MP3, MP4): removes data humans cannot easily perceive. Smaller files but some quality loss; not reversible.</td>
+        <td>Essential for: reducing download times; fitting more data on storage devices; reducing bandwidth usage for streaming; emailing large files within attachment size limits; making web pages load faster.</td>
     </tr>
     <tr>
         <td><strong>Backup software</strong></td>
         <td>Creates copies of data for disaster recovery</td>
-        <td><strong>Full backup:</strong> copies everything (slow, large). <strong>Incremental:</strong> copies only files changed since the last backup (fast, small, but restoration requires all increments). <strong>Differential:</strong> copies files changed since the last full backup.</td>
-        <td>Follows the <strong>3-2-1 rule</strong>: 3 copies of data, on 2 different media types, with 1 copy offsite (or in the cloud). Protects against hardware failure, ransomware, theft, fire, and accidental deletion.</td>
+        <td><strong>Full backup:</strong> Copies everything. Slow to create, large storage requirement, but simple to restore (just restore the single full backup). <strong>Incremental:</strong> Copies only files changed since the <em>last backup of any type</em>. Fast to create, minimal storage, but restoration requires the last full backup PLUS every incremental since then (slow and complex). <strong>Differential:</strong> Copies files changed since the <em>last full backup</em>. Middle ground &mdash; faster than full, simpler to restore than incremental (need full + latest differential only).</td>
+        <td>Best practice is the <strong>3-2-1 rule</strong>: keep 3 copies of data, on 2 different media types, with 1 copy offsite (or in the cloud). Protects against hardware failure, ransomware, theft, fire, flood, and accidental deletion. Backups should be tested regularly to ensure they can actually be restored.</td>
     </tr>
     <tr>
         <td><strong>Anti-malware</strong></td>
-        <td>Detects and removes malicious software</td>
-        <td>Scans files using <strong>signature detection</strong> (comparing against a database of known malware patterns) and <strong>heuristic/behavioural analysis</strong> (detecting suspicious activity patterns that indicate unknown malware).</td>
-        <td>Must be kept <strong>updated</strong> &mdash; hundreds of thousands of new malware variants are created daily. Provides real-time protection (scanning files as they are opened/downloaded) and scheduled full-system scans.</td>
+        <td>Detects, quarantines, and removes malicious software</td>
+        <td>Uses <strong>signature detection</strong> (comparing file hash/patterns against a database of known malware) and <strong>heuristic/behavioural analysis</strong> (monitoring for suspicious behaviour patterns like rapid file encryption, which could indicate ransomware, or a program trying to access the webcam without permission).</td>
+        <td>Must be kept <strong>updated</strong> because new malware variants are created constantly. Provides both real-time protection (scans files as they are opened/downloaded/executed) and on-demand full-system scans. Some advanced solutions use machine learning to detect previously unknown threats based on their behaviour.</td>
     </tr>
 </table>
 
-<div class="exam-tip">The OS <strong>manages hardware</strong> and provides a platform for applications; utility software performs specific <strong>maintenance tasks</strong>. These are different roles. Defragmentation <strong>only benefits HDDs</strong> (not SSDs) &mdash; this is a very common exam question. For memory management, be able to explain the process of moving data between RAM and secondary storage (virtual memory / paging) and why this causes slowdown (disk access is much slower than RAM access).</div>
+<h3>Backup Types Comparison</h3>
+<pre>
+Scenario: You have 100 GB of data and back up nightly. Monday = full backup.
+Suppose 2 GB of data changes each day.
+
+Full backup every night:
+  Mon: 100 GB  |  Tue: 100 GB  |  Wed: 100 GB  |  Thu: 100 GB
+  Total storage: 400 GB.  Restore: load any single backup. Simple but wasteful.
+
+Incremental (changes since LAST backup):
+  Mon: 100 GB (full)  |  Tue: 2 GB  |  Wed: 2 GB  |  Thu: 2 GB
+  Total storage: 106 GB.  Restore Thursday: need Mon + Tue + Wed + Thu.
+  Fast backups, minimal storage, but complex/slow restore.
+
+Differential (changes since LAST FULL backup):
+  Mon: 100 GB (full)  |  Tue: 2 GB  |  Wed: 4 GB  |  Thu: 6 GB
+  Total storage: 112 GB.  Restore Thursday: need Mon + Thu only.
+  Middle ground — reasonable storage, simpler restore than incremental.
+</pre>
+
+<div class="exam-tip">The OS <strong>manages hardware</strong> and provides a platform for applications; utility software performs specific <strong>maintenance tasks</strong>. These are different roles &mdash; do not confuse them. Defragmentation <strong>only benefits HDDs</strong> (not SSDs) &mdash; this is a very commonly examined point. If asked why you should not defragment an SSD, the answer is: SSDs have no moving parts so fragmentation does not slow them down, and the unnecessary write operations reduce the SSD's limited lifespan. For backup types, know the trade-offs: full = simple to restore but slow/large; incremental = fast/small but complex restore; differential = middle ground.</div>
 
 </div>
 </body>

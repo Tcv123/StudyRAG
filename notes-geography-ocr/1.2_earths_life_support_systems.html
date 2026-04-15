@@ -26,6 +26,7 @@
   .case-study strong { color: #15803d; }
   .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  @media print { body { padding: 20px; } .case-study, .exam-tip, .definition { break-inside: avoid; } }
 </style>
 </head>
 <body>
@@ -33,97 +34,80 @@
 
 <h1>1.2 Earth's Life Support Systems</h1>
 
-<p>This topic examines the water and carbon cycles as key Earth systems that sustain life. It explores how these cycles operate at different scales, how they are interconnected, and how human activity is disrupting them with consequences for climate change.</p>
+<p>This topic examines the water and carbon cycles as fundamental Earth systems that sustain life. It explores how these cycles operate at scales from local to global, how they are interconnected, and how human activity is disrupting their natural balance with profound consequences for climate, ecosystems, and human societies.</p>
 
 <h2>The Water Cycle (Hydrological Cycle)</h2>
 
 <div class="definition">
-  <strong>Hydrological cycle:</strong> The continuous movement of water between the atmosphere, land surface, and subsurface. It is a closed system at the global scale (no water is added or lost), but open at the local/drainage basin scale (water enters and leaves).
+  <strong>Hydrological cycle:</strong> The continuous movement of water between the atmosphere, land surface, oceans, and subsurface stores, driven primarily by solar energy (evaporation) and gravity (precipitation, runoff, percolation). At the <strong>global scale</strong>, it is a <strong>closed system</strong> &mdash; no water is created or destroyed; the total amount of water on Earth remains constant (~1.4 billion km<sup>3</sup>). At the <strong>local/drainage basin scale</strong>, it operates as an <strong>open system</strong> with inputs (precipitation) and outputs (river discharge, evapotranspiration) crossing the system boundary (the watershed).
 </div>
 
 <h3>Key Stores</h3>
 <table>
-  <tr><th>Store</th><th>% of Global Water</th><th>Residence Time</th></tr>
-  <tr><td>Oceans</td><td>96.5%</td><td>~3,200 years</td></tr>
-  <tr><td>Ice caps &amp; glaciers</td><td>1.74%</td><td>~10,000 years</td></tr>
-  <tr><td>Groundwater</td><td>1.69%</td><td>100s&ndash;1000s of years</td></tr>
-  <tr><td>Lakes &amp; rivers</td><td>0.013%</td><td>Days to years</td></tr>
-  <tr><td>Soil moisture</td><td>0.001%</td><td>Weeks to months</td></tr>
-  <tr><td>Atmosphere</td><td>0.001%</td><td>~9 days</td></tr>
-  <tr><td>Biosphere</td><td>0.0001%</td><td>~1 week</td></tr>
+  <tr><th>Store</th><th>% of Global Water</th><th>Approximate Volume</th><th>Residence Time</th></tr>
+  <tr><td><strong>Oceans</strong></td><td>96.5%</td><td>~1,335 million km<sup>3</sup></td><td>~3,200 years</td></tr>
+  <tr><td>Ice caps, glaciers, permanent snow</td><td>1.74%</td><td>~26 million km<sup>3</sup></td><td>~10,000 years (glaciers); 1 million+ years (Antarctic ice sheet)</td></tr>
+  <tr><td>Groundwater (total)</td><td>1.69%</td><td>~10.5 million km<sup>3</sup></td><td>Hundreds to thousands of years</td></tr>
+  <tr><td>Freshwater lakes</td><td>0.013%</td><td>~91,000 km<sup>3</sup></td><td>~17 years</td></tr>
+  <tr><td>Soil moisture</td><td>0.001%</td><td>~16,500 km<sup>3</sup></td><td>Weeks to months</td></tr>
+  <tr><td>Atmosphere (water vapour)</td><td>0.001%</td><td>~12,900 km<sup>3</sup></td><td>~9 days</td></tr>
+  <tr><td>Rivers</td><td>0.0002%</td><td>~2,120 km<sup>3</sup></td><td>~16 days</td></tr>
+  <tr><td>Biosphere (living organisms)</td><td>0.0001%</td><td>~1,120 km<sup>3</sup></td><td>~1 week</td></tr>
 </table>
 
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> Only about 2.5% of all water is freshwater, and most of that is locked in ice. Only ~0.3% of freshwater is readily available in rivers, lakes, and accessible groundwater. This makes water a precious and unevenly distributed resource.
-</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> Only about <strong>2.5%</strong> of all water on Earth is freshwater, and most of that is locked in ice caps and glaciers (~68.7% of freshwater) or deep groundwater (~30.1% of freshwater). Only about <strong>0.3%</strong> of freshwater is readily accessible in rivers, lakes, and shallow groundwater. This makes freshwater a precious and unevenly distributed resource. Use these statistics to support arguments about water security and resource conflicts.</div>
 
-<h3>Key Flows (Transfers &amp; Transformations)</h3>
+<h3>Key Flows (Transfers and Transformations)</h3>
 <ul>
-  <li><strong>Evaporation:</strong> Liquid water converts to water vapour using solar energy; greatest over warm tropical oceans</li>
-  <li><strong>Transpiration:</strong> Water loss from plants through stomata; a major flux in vegetated areas</li>
-  <li><strong>Evapotranspiration:</strong> Combined evaporation and transpiration from a land surface</li>
-  <li><strong>Condensation:</strong> Water vapour cools and converts to liquid droplets, forming clouds</li>
-  <li><strong>Precipitation:</strong> Water falling from the atmosphere as rain, snow, sleet, or hail</li>
-  <li><strong>Infiltration:</strong> Water soaking into the soil from the surface</li>
-  <li><strong>Percolation:</strong> Deeper movement of water through soil into underlying rock (groundwater)</li>
-  <li><strong>Throughflow:</strong> Lateral movement of water through soil towards rivers</li>
-  <li><strong>Groundwater flow:</strong> Slow movement of water through permeable rock (aquifer)</li>
-  <li><strong>Surface runoff (overland flow):</strong> Water flowing over the ground surface into rivers; occurs when soil is saturated or impermeable</li>
-  <li><strong>Interception:</strong> Precipitation caught by vegetation before reaching the ground</li>
-  <li><strong>Stemflow:</strong> Water running down plant stems/trunks to the ground</li>
-  <li><strong>Channel flow:</strong> Water flowing within a river channel towards the sea</li>
+  <li><strong>Evaporation:</strong> Liquid water converts to water vapour using solar energy (latent heat of vaporisation). Greatest over warm tropical oceans. Rate increases with temperature, wind speed, and low humidity. Global evaporation: ~505,000 km<sup>3</sup>/year</li>
+  <li><strong>Transpiration:</strong> Water loss from plants through open stomata on leaf surfaces. A single large tree can transpire 100+ litres per day. Accounts for ~10% of atmospheric moisture. A major flux in forested areas</li>
+  <li><strong>Evapotranspiration:</strong> The combined water loss from evaporation (from surfaces) and transpiration (from plants). Measured using lysimeters. Potential evapotranspiration (PET) is the amount that would occur if water were unlimited; actual evapotranspiration is often lower in arid areas</li>
+  <li><strong>Condensation:</strong> Water vapour cools (reaches dew point) and converts to liquid droplets around condensation nuclei (dust, salt, pollen). Forms clouds, fog, and dew</li>
+  <li><strong>Precipitation:</strong> Water falling from the atmosphere as rain, snow, sleet, or hail when cloud droplets grow heavy enough to fall. Global precipitation: ~505,000 km<sup>3</sup>/year (balanced with evaporation in the long term)</li>
+  <li><strong>Interception:</strong> Precipitation caught by vegetation canopy or built surfaces before reaching the ground. Can account for 10&ndash;40% of rainfall in forested areas. Intercepted water evaporates directly back to the atmosphere or reaches the ground via stemflow or throughfall</li>
+  <li><strong>Infiltration:</strong> Water soaking into the soil from the surface, driven by gravity and capillary action. Rate depends on soil porosity, permeability, antecedent moisture, vegetation cover, and land use. Infiltration capacity is the maximum rate at which soil can absorb water</li>
+  <li><strong>Percolation:</strong> Deeper, slower movement of water through soil and rock into the groundwater store (aquifer). Occurs through permeable rocks like chalk, sandstone, and limestone</li>
+  <li><strong>Throughflow:</strong> Lateral (sideways) movement of water through the soil layer towards rivers and streams. Slower than surface runoff but faster than groundwater flow. Often follows natural pipes and macropores in the soil</li>
+  <li><strong>Groundwater flow:</strong> Very slow movement of water through saturated permeable rock (aquifer) towards rivers, lakes, or the sea. The water table marks the upper surface of the saturated zone. Groundwater feeds rivers as <strong>baseflow</strong>, maintaining river levels during dry periods</li>
+  <li><strong>Surface runoff (overland flow):</strong> Water flowing over the ground surface directly into rivers. Occurs when rainfall intensity exceeds infiltration capacity (<strong>Hortonian overland flow</strong>) or when the soil is fully saturated (<strong>saturation overland flow</strong>). Fastest transfer &mdash; responds quickly to rainfall, contributing to flood peaks</li>
+  <li><strong>Stemflow:</strong> Water running down plant stems and trunks to the ground after interception</li>
+  <li><strong>Channel flow:</strong> Water flowing within a river channel towards the sea. Velocity depends on gradient, channel shape, roughness, and discharge. Measured in <strong>cumecs</strong> (m<sup>3</sup>/s)</li>
 </ul>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 380" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">The Water Cycle</text>
-  <!-- Sky -->
   <rect x="20" y="30" width="560" height="100" fill="#e0f2fe" rx="5"/>
-  <!-- Cloud -->
   <ellipse cx="300" cy="65" rx="80" ry="30" fill="#bfdbfe" stroke="#1a73e8" stroke-width="1.5"/>
   <ellipse cx="260" cy="70" rx="50" ry="25" fill="#bfdbfe" stroke="#1a73e8" stroke-width="1.5"/>
   <ellipse cx="340" cy="72" rx="45" ry="22" fill="#bfdbfe" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="300" y="70" text-anchor="middle" font-size="10" fill="#1a73e8">Condensation</text>
-  <!-- Sun -->
   <circle cx="530" cy="55" r="20" fill="#fbbf24" stroke="#D97706" stroke-width="1.5"/>
   <text x="530" y="59" text-anchor="middle" font-size="8" fill="#D97706">Solar</text>
-  <!-- Mountain/Land -->
   <polygon points="20,250 150,160 280,250" fill="#a3d9a5" stroke="#16A34A" stroke-width="1.5"/>
   <rect x="20" y="250" width="560" height="50" fill="#a3d9a5" stroke="#16A34A" stroke-width="1"/>
   <text x="160" y="245" font-size="9" fill="#15803d">Land surface</text>
-  <!-- Ocean -->
   <rect x="350" y="220" width="230" height="80" fill="#93c5fd" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
   <text x="465" y="250" text-anchor="middle" font-size="11" fill="#1e3a5f">Ocean (96.5%)</text>
-  <!-- Underground -->
   <rect x="20" y="300" width="330" height="60" fill="#d4c5a9" stroke="#D97706" stroke-width="1"/>
   <text x="185" y="325" text-anchor="middle" font-size="10" fill="#D97706">Groundwater store</text>
-  <!-- Soil layer -->
   <rect x="20" y="275" width="330" height="25" fill="#c9a97a" stroke="#D97706" stroke-width="0.5"/>
   <text x="185" y="291" text-anchor="middle" font-size="9" fill="#1a1a2e">Soil moisture</text>
-  <!-- Evaporation arrow from ocean -->
   <path d="M430,220 Q430,150 370,90" fill="none" stroke="#DC2626" stroke-width="2" marker-end="url(#awc1)"/>
   <text x="440" y="165" font-size="9" fill="#DC2626">Evaporation</text>
-  <!-- Transpiration arrow -->
   <path d="M120,160 Q120,120 220,75" fill="none" stroke="#16A34A" stroke-width="1.5" marker-end="url(#awc2)"/>
   <text x="100" y="135" font-size="9" fill="#16A34A">Transpiration</text>
-  <!-- Precipitation -->
   <line x1="270" y1="95" x2="230" y2="165" stroke="#1a73e8" stroke-width="2" marker-end="url(#awc3)"/>
   <text x="225" y="130" font-size="9" fill="#1a73e8">Precipitation</text>
-  <!-- Precipitation to ocean -->
   <line x1="330" y1="95" x2="420" y2="218" stroke="#1a73e8" stroke-width="2" marker-end="url(#awc3)"/>
-  <!-- Surface runoff -->
   <path d="M280,250 Q320,240 350,225" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#awc4)"/>
   <text x="295" y="230" font-size="9" fill="#D97706">Runoff</text>
-  <!-- Infiltration -->
   <line x1="200" y1="252" x2="200" y2="275" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#awc5)"/>
   <text x="220" y="268" font-size="8" fill="#1a1a2e">Infiltration</text>
-  <!-- Percolation -->
   <line x1="200" y1="295" x2="200" y2="310" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#awc5)"/>
   <text x="225" y="308" font-size="8" fill="#1a1a2e">Percolation</text>
-  <!-- Groundwater flow -->
   <line x1="250" y1="335" x2="360" y2="280" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#awc4)"/>
   <text x="270" y="350" font-size="8" fill="#D97706">Groundwater flow</text>
-  <!-- Tree -->
   <rect x="135" y="190" width="6" height="60" fill="#8B6914"/>
   <circle cx="138" cy="180" r="20" fill="#4ade80" opacity="0.7"/>
   <defs>
@@ -139,53 +123,42 @@
 <h3>Drainage Basin Hydrology</h3>
 
 <div class="definition">
-  <strong>Drainage basin:</strong> The area of land drained by a river and its tributaries. It is an open system bounded by a watershed (ridge of high land). Water enters as precipitation and leaves via the river mouth (discharge) and evapotranspiration.
+  <strong>Drainage basin:</strong> The area of land drained by a river and all its tributaries. It is an <strong>open system</strong> bounded by a <strong>watershed</strong> (ridge of high land forming the boundary). Water enters as precipitation and leaves via the river mouth (discharge) and evapotranspiration. The drainage basin is the fundamental unit for studying the water cycle at a local/regional scale.
 </div>
 
 <p><strong>Water balance equation:</strong></p>
 <div class="equation">P = Q + E &plusmn; &Delta;S</div>
-<p>Where P = precipitation, Q = discharge, E = evapotranspiration, &Delta;S = change in storage</p>
+<p style="text-align:center;font-size:0.9rem;">Where P = precipitation, Q = discharge (river output), E = evapotranspiration, &Delta;S = change in storage (soil moisture, groundwater, lakes). If &Delta;S is positive, the basin is gaining water (wet season); if negative, it is losing stored water (dry season).</p>
 
 <h3>Storm Hydrographs</h3>
 
 <div class="definition">
-  <strong>Storm hydrograph:</strong> A graph showing how river discharge changes over time in response to a rainfall event. Key features: peak discharge, lag time, rising limb, falling (recession) limb, and baseflow.
+  <strong>Storm hydrograph:</strong> A graph showing how <strong>river discharge</strong> changes over time in response to a rainfall event. Key features: <strong>peak discharge</strong> (maximum flow), <strong>lag time</strong> (time between peak rainfall and peak discharge), <strong>rising limb</strong> (increasing discharge as rainfall reaches the river), <strong>falling/recession limb</strong> (declining discharge as water drains from stores), and <strong>baseflow</strong> (the steady contribution from groundwater seeping into the river).
 </div>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 350" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Storm Hydrograph</text>
-  <!-- Axes -->
   <line x1="80" y1="290" x2="560" y2="290" stroke="#1a1a2e" stroke-width="2"/>
   <line x1="80" y1="40" x2="80" y2="290" stroke="#1a1a2e" stroke-width="2"/>
-  <!-- Y-axis label -->
   <text x="25" y="170" text-anchor="middle" font-size="11" fill="#1a1a2e" transform="rotate(-90,25,170)">Discharge (cumecs)</text>
-  <!-- X-axis label -->
   <text x="320" y="320" text-anchor="middle" font-size="11" fill="#1a1a2e">Time (hours)</text>
-  <!-- Rainfall bars (top) -->
   <line x1="80" y1="40" x2="560" y2="40" stroke="#1a73e8" stroke-width="0.5" stroke-dasharray="3,3"/>
   <rect x="150" y="42" width="25" height="20" fill="#1a73e8" opacity="0.6"/>
   <rect x="175" y="42" width="25" height="35" fill="#1a73e8" opacity="0.6"/>
   <rect x="200" y="42" width="25" height="28" fill="#1a73e8" opacity="0.6"/>
   <rect x="225" y="42" width="25" height="12" fill="#1a73e8" opacity="0.6"/>
   <text x="200" y="95" text-anchor="middle" font-size="9" fill="#1a73e8">Rainfall</text>
-  <!-- Baseflow line -->
   <line x1="80" y1="260" x2="560" y2="245" stroke="#D97706" stroke-width="1.5" stroke-dasharray="5,3"/>
   <text x="520" y="240" font-size="9" fill="#D97706">Baseflow</text>
-  <!-- Hydrograph curve -->
   <path d="M80,260 Q150,258 200,250 Q250,220 280,150 Q300,90 320,80 Q340,90 360,120 Q400,180 440,220 Q480,240 540,248" fill="none" stroke="#DC2626" stroke-width="2.5"/>
-  <!-- Peak discharge -->
   <line x1="320" y1="80" x2="320" y2="290" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,3"/>
   <text x="330" y="72" font-size="10" font-weight="bold" fill="#DC2626">Peak discharge</text>
-  <!-- Lag time -->
   <line x1="188" y1="105" x2="320" y2="105" stroke="#16A34A" stroke-width="2" marker-start="url(#ahs1)" marker-end="url(#ahs2)"/>
   <text x="254" y="118" text-anchor="middle" font-size="10" font-weight="bold" fill="#16A34A">Lag time</text>
-  <!-- Peak rainfall marker -->
   <line x1="188" y1="77" x2="188" y2="130" stroke="#16A34A" stroke-width="1" stroke-dasharray="3,3"/>
   <text x="188" y="140" text-anchor="middle" font-size="8" fill="#16A34A">Peak rainfall</text>
-  <!-- Rising limb label -->
   <text x="240" y="200" font-size="10" fill="#1a73e8" transform="rotate(-50,240,200)">Rising limb</text>
-  <!-- Falling limb label -->
   <text x="410" y="175" font-size="10" fill="#1a73e8" transform="rotate(25,410,175)">Recession limb</text>
   <defs>
     <marker id="ahs1" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto"><polygon points="8 0, 0 3, 8 6" fill="#16A34A"/></marker>
@@ -194,100 +167,92 @@
 </svg>
 </div>
 
-<h3>Factors Affecting Hydrographs</h3>
+<h3>Factors Affecting Storm Hydrograph Shape</h3>
+<p>A <strong>flashy hydrograph</strong> (short lag time, high peak discharge, steep rising limb) indicates rapid water transfer to the river, increasing flood risk. A <strong>flat hydrograph</strong> (long lag time, low peak, gentle rising limb) indicates water is being stored and slowly released.</p>
+
 <table>
-  <tr><th>Factor</th><th>Flashy Hydrograph (short lag time, high peak)</th><th>Flat Hydrograph (long lag time, low peak)</th></tr>
-  <tr><td>Soil/rock type</td><td>Impermeable clay, thin soils</td><td>Permeable sand/chalk, thick soils</td></tr>
-  <tr><td>Land use</td><td>Urbanised (concrete, drains)</td><td>Forested (interception, infiltration)</td></tr>
-  <tr><td>Drainage density</td><td>High density &rarr; rapid channel flow</td><td>Low density &rarr; slow throughflow</td></tr>
-  <tr><td>Rainfall intensity</td><td>Heavy, short bursts</td><td>Gentle, prolonged</td></tr>
-  <tr><td>Slope gradient</td><td>Steep slopes &rarr; fast runoff</td><td>Gentle slopes &rarr; more infiltration</td></tr>
-  <tr><td>Antecedent moisture</td><td>Already saturated soil</td><td>Dry soil absorbs water</td></tr>
-  <tr><td>Basin shape</td><td>Circular (tributaries arrive together)</td><td>Elongated (tributaries staggered)</td></tr>
+  <tr><th>Factor</th><th>Flashy Hydrograph (High Flood Risk)</th><th>Flat Hydrograph (Low Flood Risk)</th></tr>
+  <tr><td><strong>Soil/rock type</strong></td><td>Impermeable clay or thin soils (water cannot infiltrate, so runs off)</td><td>Permeable sand, chalk, or thick soils (water infiltrates and percolates slowly)</td></tr>
+  <tr><td><strong>Land use</strong></td><td>Urbanised: concrete, tarmac, drains (impermeable surfaces, rapid channel transfer)</td><td>Forested: high interception, infiltration, transpiration (water stored in vegetation and soil)</td></tr>
+  <tr><td><strong>Drainage density</strong></td><td>High density of streams &rarr; water enters channels quickly</td><td>Low density &rarr; water travels slowly through soil as throughflow</td></tr>
+  <tr><td><strong>Rainfall intensity</strong></td><td>Heavy, intense bursts (exceeds infiltration capacity &rarr; surface runoff)</td><td>Gentle, prolonged rainfall (infiltrates into soil)</td></tr>
+  <tr><td><strong>Slope gradient</strong></td><td>Steep slopes &rarr; fast surface runoff, limited infiltration time</td><td>Gentle slopes &rarr; water has time to infiltrate</td></tr>
+  <tr><td><strong>Antecedent moisture</strong></td><td>Soil already saturated from previous rain (no more absorption capacity)</td><td>Dry soil (high infiltration capacity, absorbs rainfall)</td></tr>
+  <tr><td><strong>Basin shape</strong></td><td>Circular (tributaries deliver water to the main channel simultaneously)</td><td>Elongated (tributaries deliver water at staggered times, spreading the peak)</td></tr>
+  <tr><td><strong>Season</strong></td><td>Winter: saturated soil, low transpiration, deciduous trees bare</td><td>Summer: higher evapotranspiration, drier soil, leafy canopy intercepts rain</td></tr>
 </table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> When analysing a hydrograph, always explain the link between the physical characteristic and the hydrological process. For example: "Urbanisation increases the peak discharge and reduces lag time because impermeable surfaces (concrete, tarmac) prevent infiltration, so precipitation rapidly becomes surface runoff, entering storm drains and reaching the river channel very quickly." Do not just state the factor &mdash; explain the mechanism.</div>
 
 <h2>The Carbon Cycle</h2>
 
 <div class="definition">
-  <strong>Carbon cycle:</strong> The biogeochemical cycle by which carbon is exchanged between the atmosphere, oceans, biosphere, and lithosphere. Carbon is essential for all life and its movement between stores regulates Earth's climate through the greenhouse effect.
+  <strong>Carbon cycle:</strong> The biogeochemical cycle by which carbon is exchanged between the atmosphere, oceans, biosphere (living organisms), pedosphere (soils), and lithosphere (rocks and fossil fuels). Carbon is the fundamental element of all organic life and its movement between these stores &mdash; through processes like photosynthesis, respiration, combustion, weathering, and ocean absorption &mdash; regulates Earth's climate through the greenhouse effect. The carbon cycle operates on timescales from seconds (respiration) to millions of years (rock formation).
 </div>
 
 <h3>Carbon Stores</h3>
 <table>
-  <tr><th>Store</th><th>Approximate Amount (GtC)</th><th>Residence Time</th></tr>
-  <tr><td>Lithosphere (sedimentary rocks, fossil fuels)</td><td>~100,000,000</td><td>Millions of years</td></tr>
-  <tr><td>Deep ocean</td><td>~38,000</td><td>1000s of years</td></tr>
-  <tr><td>Soil organic matter</td><td>~1,500&ndash;2,400</td><td>Decades to centuries</td></tr>
-  <tr><td>Atmosphere (CO<sub>2</sub>, CH<sub>4</sub>)</td><td>~830</td><td>~5 years (CO<sub>2</sub>)</td></tr>
-  <tr><td>Terrestrial vegetation</td><td>~560</td><td>Years to decades</td></tr>
-  <tr><td>Surface ocean</td><td>~900</td><td>Years to decades</td></tr>
+  <tr><th>Store</th><th>Approximate Amount (GtC)</th><th>Residence Time</th><th>Key Detail</th></tr>
+  <tr><td><strong>Lithosphere</strong> (sedimentary rocks + fossil fuels)</td><td>~100,000,000</td><td>Millions of years</td><td>By far the largest store. Includes limestone (CaCO<sub>3</sub>), coal, oil, gas. Carbon enters via sedimentation and burial; exits via volcanic outgassing and human extraction/combustion</td></tr>
+  <tr><td><strong>Deep ocean</strong></td><td>~38,000</td><td>1,000s of years</td><td>Dissolved inorganic carbon (bicarbonate/carbonate ions), dissolved organic carbon, and particulate matter. The thermohaline circulation (oceanic conveyor belt) transports carbon to the deep ocean</td></tr>
+  <tr><td><strong>Soil organic matter</strong></td><td>~1,500&ndash;2,400</td><td>Decades to centuries</td><td>Humus from decomposed organisms. Contains more carbon than the atmosphere and terrestrial vegetation combined. Peatlands alone store ~600 GtC. Soil carbon is vulnerable to release through land-use change, drainage, and warming</td></tr>
+  <tr><td><strong>Surface ocean</strong></td><td>~900</td><td>Years to decades</td><td>CO<sub>2</sub> dissolves at the surface (governed by Henry's Law: colder water absorbs more). Phytoplankton fix carbon via photosynthesis. The ocean is currently a net carbon sink (~2.5 GtC/year)</td></tr>
+  <tr><td><strong>Atmosphere</strong></td><td>~830 (and rising)</td><td>~5 years for a CO<sub>2</sub> molecule</td><td>Mainly CO<sub>2</sub> (~420 ppm in 2024, up from ~280 ppm pre-industrial) and CH<sub>4</sub> (~1,900 ppb). Small store but critical for regulating temperature via the greenhouse effect</td></tr>
+  <tr><td><strong>Terrestrial vegetation</strong></td><td>~560</td><td>Years to decades</td><td>Carbon fixed by photosynthesis and stored in wood, leaves, roots. Tropical rainforests are the largest terrestrial carbon store per unit area. Temperate and boreal forests store significant carbon in slow-growing wood</td></tr>
 </table>
 
 <h3>Carbon Fluxes (Transfers)</h3>
 
 <p><strong>Biological fluxes:</strong></p>
 <ul>
-  <li><strong>Photosynthesis:</strong> Plants absorb CO<sub>2</sub> from the atmosphere and convert it to organic carbon (glucose). Formula: 6CO<sub>2</sub> + 6H<sub>2</sub>O &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>. This is the primary mechanism transferring carbon from atmosphere to biosphere.</li>
-  <li><strong>Respiration:</strong> Living organisms break down glucose, releasing CO<sub>2</sub> back to the atmosphere. The reverse of photosynthesis.</li>
-  <li><strong>Decomposition:</strong> Dead organic matter broken down by bacteria/fungi, releasing CO<sub>2</sub>. Rate depends on temperature, moisture, and oxygen availability.</li>
+  <li><strong>Photosynthesis:</strong> Plants, algae, and cyanobacteria absorb CO<sub>2</sub> from the atmosphere and convert it to organic carbon compounds (glucose) using solar energy. <strong>6CO<sub>2</sub> + 6H<sub>2</sub>O &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub></strong>. This is the primary mechanism transferring carbon from the atmosphere to the biosphere. Global terrestrial photosynthesis fixes ~120 GtC/year</li>
+  <li><strong>Respiration:</strong> All living organisms (plants, animals, microbes) break down organic carbon compounds to release energy, producing CO<sub>2</sub> as a waste product. The reverse of photosynthesis. Returns ~119 GtC/year to the atmosphere from terrestrial sources (approximately balanced with photosynthesis before human interference)</li>
+  <li><strong>Decomposition:</strong> Dead organic matter (detritus) is broken down by bacteria and fungi (decomposers), releasing CO<sub>2</sub> (aerobic decomposition) or CH<sub>4</sub> (anaerobic decomposition in waterlogged conditions like wetlands and rice paddies). Rate depends on temperature (faster when warm), moisture, oxygen availability, and the chemical composition of the material</li>
 </ul>
 
-<p><strong>Geological/chemical fluxes:</strong></p>
+<p><strong>Geological and chemical fluxes:</strong></p>
 <ul>
-  <li><strong>Combustion:</strong> Burning of fossil fuels and biomass releases stored carbon as CO<sub>2</sub>. This is the largest human-caused flux.</li>
-  <li><strong>Weathering:</strong> Chemical weathering of silicate rocks absorbs CO<sub>2</sub> (carbonation). Very slow but significant over geological time.</li>
-  <li><strong>Volcanic outgassing:</strong> CO<sub>2</sub> released from Earth's interior during eruptions (small compared to human emissions).</li>
-  <li><strong>Ocean absorption:</strong> CO<sub>2</sub> dissolves in seawater (Henry's Law &mdash; cold water absorbs more). This creates carbonic acid (ocean acidification).</li>
-  <li><strong>Sedimentation:</strong> Dead marine organisms (shells, skeletons) sink and accumulate on the ocean floor; over millions of years become limestone/chalk (lithification).</li>
+  <li><strong>Combustion of fossil fuels:</strong> Burning coal, oil, and natural gas releases carbon stored over millions of years. This is the largest human-caused carbon flux (~9.5 GtC/year and rising). It has increased atmospheric CO<sub>2</sub> by ~50% since the Industrial Revolution</li>
+  <li><strong>Chemical weathering:</strong> Carbonic acid (formed from CO<sub>2</sub> dissolving in rainwater) reacts with silicate and carbite rocks, drawing down atmospheric CO<sub>2</sub>. Very slow but significant over geological timescales (millions of years). Acts as a natural negative feedback on atmospheric CO<sub>2</sub></li>
+  <li><strong>Volcanic outgassing:</strong> CO<sub>2</sub> and other gases released from Earth's interior during volcanic eruptions and through hydrothermal vents. Approximately 0.15&ndash;0.26 GtC/year &mdash; small compared to human emissions but important over geological time</li>
+  <li><strong>Ocean absorption and outgassing:</strong> CO<sub>2</sub> dissolves in surface seawater (governed by Henry's Law &mdash; cold water absorbs more than warm water). CO<sub>2</sub> reacts with water to form carbonic acid (H<sub>2</sub>CO<sub>3</sub>), contributing to <strong>ocean acidification</strong> (pH has fallen by ~0.1 units since pre-industrial, a 26% increase in acidity). The ocean is currently absorbing ~2.5 GtC/year (a critical carbon sink), but its capacity may decrease as waters warm</li>
+  <li><strong>Sedimentation and lithification:</strong> Dead marine organisms with calcium carbonate shells (foraminifera, corals, molluscs) sink to the ocean floor. Over millions of years, these sediments are compressed and lithified into limestone and chalk, locking carbon away in the lithosphere for geological timescales</li>
 </ul>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 380" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">The Carbon Cycle</text>
-  <!-- Atmosphere -->
   <rect x="180" y="35" width="240" height="50" rx="8" fill="#e0f2fe" stroke="#1a73e8" stroke-width="2"/>
   <text x="300" y="58" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a73e8">Atmosphere</text>
-  <text x="300" y="73" text-anchor="middle" font-size="9" fill="#1a73e8">~830 GtC (CO&#8322;, CH&#8324;)</text>
-  <!-- Vegetation -->
+  <text x="300" y="73" text-anchor="middle" font-size="9" fill="#1a73e8">~830 GtC (CO2, CH4)</text>
   <rect x="30" y="140" width="130" height="55" rx="8" fill="#dcfce7" stroke="#16A34A" stroke-width="2"/>
   <text x="95" y="162" text-anchor="middle" font-size="10" font-weight="bold" fill="#16A34A">Vegetation</text>
   <text x="95" y="180" text-anchor="middle" font-size="9" fill="#16A34A">~560 GtC</text>
-  <!-- Ocean -->
   <rect x="430" y="140" width="140" height="55" rx="8" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
   <text x="500" y="162" text-anchor="middle" font-size="10" font-weight="bold" fill="#1a73e8">Ocean</text>
   <text x="500" y="180" text-anchor="middle" font-size="9" fill="#1a73e8">~38,900 GtC</text>
-  <!-- Soil -->
   <rect x="180" y="230" width="150" height="55" rx="8" fill="#fef3c7" stroke="#D97706" stroke-width="2"/>
   <text x="255" y="252" text-anchor="middle" font-size="10" font-weight="bold" fill="#D97706">Soil</text>
-  <text x="255" y="270" text-anchor="middle" font-size="9" fill="#D97706">~1,500&ndash;2,400 GtC</text>
-  <!-- Fossil fuels / Lithosphere -->
+  <text x="255" y="270" text-anchor="middle" font-size="9" fill="#D97706">~1,500-2,400 GtC</text>
   <rect x="180" y="320" width="240" height="45" rx="8" fill="#f1f5f9" stroke="#1a1a2e" stroke-width="2"/>
   <text x="300" y="340" text-anchor="middle" font-size="10" font-weight="bold" fill="#1a1a2e">Lithosphere &amp; Fossil Fuels</text>
   <text x="300" y="356" text-anchor="middle" font-size="9" fill="#1a1a2e">~100,000,000 GtC</text>
-  <!-- Photosynthesis arrow (atmos -> veg) -->
   <path d="M190,75 Q120,100 100,135" fill="none" stroke="#16A34A" stroke-width="2" marker-end="url(#acc1)"/>
   <text x="110" y="105" font-size="8" fill="#16A34A">Photosynthesis</text>
-  <!-- Respiration arrow (veg -> atmos) -->
   <path d="M120,140 Q150,110 195,80" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#acc2)"/>
   <text x="175" y="110" font-size="8" fill="#DC2626">Respiration</text>
-  <!-- Ocean exchange -->
   <path d="M415,75 Q460,100 470,135" fill="none" stroke="#1a73e8" stroke-width="2" marker-end="url(#acc3)"/>
   <text x="465" y="105" font-size="8" fill="#1a73e8">Absorption</text>
   <path d="M490,140 Q500,110 420,78" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#acc2)"/>
   <text x="500" y="115" font-size="8" fill="#DC2626">Outgassing</text>
-  <!-- Decomposition (veg -> soil) -->
   <path d="M95,195 Q95,220 185,245" fill="none" stroke="#D97706" stroke-width="1.5" marker-end="url(#acc4)"/>
   <text x="80" y="225" font-size="8" fill="#D97706">Decomposition</text>
-  <!-- Soil respiration to atmosphere -->
   <path d="M210,230 Q200,150 200,85" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#acc2)"/>
   <text x="170" y="165" font-size="8" fill="#DC2626">Soil resp.</text>
-  <!-- Combustion (fossil -> atmos) -->
   <path d="M300,320 Q330,200 350,85" fill="none" stroke="#DC2626" stroke-width="2.5" marker-end="url(#acc2)"/>
   <text x="360" y="210" font-size="9" font-weight="bold" fill="#DC2626">Combustion</text>
-  <!-- Sedimentation (ocean -> lithosphere) -->
   <path d="M500,195 Q500,290 420,330" fill="none" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#acc5)"/>
   <text x="500" y="270" font-size="8" fill="#1a1a2e">Sedimentation</text>
-  <!-- Volcanic -->
   <path d="M200,320 Q100,280 100,200" fill="none" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="55" y="275" font-size="8" fill="#DC2626">Volcanic</text>
   <defs>
@@ -302,89 +267,77 @@
 
 <h2>Interconnections Between Water and Carbon Cycles</h2>
 
-<p>The water and carbon cycles are deeply linked:</p>
+<p>The water and carbon cycles are deeply and fundamentally linked &mdash; disrupting one inevitably affects the other. Understanding these interconnections is essential for OCR examiners:</p>
 <ul>
-  <li><strong>Vegetation:</strong> Plants need water for photosynthesis (which sequesters carbon). Transpiration links the two cycles &mdash; forests are both carbon sinks and drivers of local water cycling.</li>
-  <li><strong>Oceans:</strong> The ocean is both the largest water store and a major carbon sink. CO<sub>2</sub> dissolves more readily in cold water &mdash; thermohaline circulation transports carbon to the deep ocean.</li>
-  <li><strong>Soil:</strong> Soil stores both water and carbon. Waterlogged conditions reduce decomposition, preserving soil carbon (e.g., peat bogs).</li>
-  <li><strong>Climate:</strong> The carbon cycle regulates temperature via the greenhouse effect, which in turn drives evaporation rates and precipitation patterns in the water cycle.</li>
-  <li><strong>Weathering:</strong> Chemical weathering requires water (carbonic acid) and removes atmospheric CO<sub>2</sub>.</li>
+  <li><strong>Vegetation links both cycles:</strong> Plants need water for photosynthesis (which sequesters atmospheric carbon). Transpiration drives the local water cycle by returning water vapour to the atmosphere. Forests are simultaneously <strong>carbon sinks</strong> (absorbing CO<sub>2</sub>) and <strong>drivers of local water cycling</strong> (generating atmospheric moisture that falls as "recycled" precipitation). Deforestation disrupts both cycles simultaneously</li>
+  <li><strong>Oceans link both cycles:</strong> The ocean is both the largest water store (96.5%) and a major carbon sink (~2.5 GtC/year). CO<sub>2</sub> dissolves more readily in cold water (Henry's Law), so cold polar waters are important CO<sub>2</sub> sinks. The thermohaline circulation transports dissolved carbon to the deep ocean (the "biological pump" and "solubility pump")</li>
+  <li><strong>Soil links both cycles:</strong> Soil stores both water (soil moisture) and carbon (humus, organic matter). <strong>Waterlogged conditions</strong> (anaerobic) dramatically slow decomposition, preserving soil carbon &mdash; this is how <strong>peat bogs</strong> form (accumulating carbon over thousands of years). Draining peatlands exposes the organic matter to oxygen, rapidly releasing stored carbon as CO<sub>2</sub></li>
+  <li><strong>Climate links both cycles:</strong> The carbon cycle regulates temperature via the greenhouse effect, which in turn drives evaporation rates and precipitation patterns in the water cycle. A warmer atmosphere holds more water vapour (~7% more per degree C &mdash; Clausius-Clapeyron relation), intensifying the hydrological cycle (more intense rainfall events, greater flood risk)</li>
+  <li><strong>Chemical weathering links both cycles:</strong> Requires water (as carbonic acid: CO<sub>2</sub> + H<sub>2</sub>O &rarr; H<sub>2</sub>CO<sub>3</sub>) to dissolve silicate and carbonate rocks, drawing down atmospheric CO<sub>2</sub>. More rainfall &rarr; more weathering &rarr; more CO<sub>2</sub> removal (a slow negative feedback on warming)</li>
 </ul>
 
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> OCR examiners love questions on interconnections. Always link processes across the two cycles. For example: deforestation reduces photosynthesis (carbon cycle) AND reduces interception and transpiration (water cycle), increasing both atmospheric CO<sub>2</sub> and flood risk.
-</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> OCR examiners frequently ask about <strong>interconnections</strong> between the two cycles. Always link processes across both systems. For example: "Deforestation reduces photosynthesis (carbon cycle: less CO<sub>2</sub> sequestered) AND reduces interception and transpiration (water cycle: less evapotranspiration, more surface runoff, increased flood risk, reduced local rainfall through loss of moisture recycling). This demonstrates how a single human action disrupts both cycles simultaneously, with cascading consequences." This kind of synoptic thinking scores very highly.</div>
 
 <h2>Climate Change</h2>
 
 <h3>The Greenhouse Effect</h3>
-<p>Natural greenhouse gases (CO<sub>2</sub>, CH<sub>4</sub>, N<sub>2</sub>O, water vapour) trap outgoing longwave radiation, keeping Earth's average temperature at about 15&deg;C (without them it would be &minus;18&deg;C). The enhanced greenhouse effect is the additional warming caused by increased concentrations of these gases from human activity.</p>
+<p>The <strong>natural greenhouse effect</strong> is essential for life: greenhouse gases (CO<sub>2</sub>, CH<sub>4</sub>, N<sub>2</sub>O, water vapour, ozone) in the atmosphere absorb and re-emit outgoing longwave (infrared) radiation from Earth's surface, trapping heat and keeping the global mean temperature at about <strong>15 degrees C</strong> (without them it would be approximately <strong>&minus;18 degrees C</strong>). The <strong>enhanced greenhouse effect</strong> is the additional warming caused by human-induced increases in greenhouse gas concentrations, particularly CO<sub>2</sub> from fossil fuel combustion and CH<sub>4</sub> from agriculture.</p>
 
-<h3>Evidence for Climate Change</h3>
-<ul>
-  <li><strong>Ice cores:</strong> Air bubbles trapped in Antarctic ice (Vostok, EPICA) show CO<sub>2</sub> and temperature correlation over 800,000 years</li>
-  <li><strong>Instrumental records:</strong> Global mean temperature has risen ~1.1&deg;C since pre-industrial times</li>
-  <li><strong>Sea level rise:</strong> ~20 cm rise since 1900 due to thermal expansion and ice melt</li>
-  <li><strong>Glacial retreat:</strong> Most mountain glaciers are shrinking (e.g., Glacier National Park)</li>
-  <li><strong>Ocean acidification:</strong> pH has dropped by ~0.1 units since pre-industrial era</li>
-  <li><strong>Phenological changes:</strong> Earlier spring flowering, bird migration shifts</li>
-</ul>
+<h3>Evidence for Recent Climate Change</h3>
+<table>
+  <tr><th>Evidence Type</th><th>Detail</th><th>Significance</th></tr>
+  <tr><td><strong>Ice cores</strong></td><td>Air bubbles trapped in Antarctic ice (Vostok, EPICA Dome C) provide a record of atmospheric CO<sub>2</sub> and temperature going back ~800,000 years</td><td>Show a strong correlation between CO<sub>2</sub> and temperature throughout glacial-interglacial cycles. Current CO<sub>2</sub> (420 ppm) is far higher than any point in the 800,000-year record (natural range: 180&ndash;280 ppm)</td></tr>
+  <tr><td><strong>Instrumental records</strong></td><td>Thermometer records since ~1850 show global mean surface temperature has risen by approximately <strong>1.1 degrees C</strong> above pre-industrial levels (as of 2023). 2023 was the warmest year on record</td><td>The rate of warming is unprecedented in geological context. Most warming has occurred since 1970</td></tr>
+  <tr><td><strong>Sea-level rise</strong></td><td>Global mean sea level has risen ~20 cm since 1900 and is currently rising at ~3.6 mm/year (accelerating)</td><td>Caused by thermal expansion of ocean water (~42%) and melting of ice sheets and glaciers (~58%). Threatens low-lying islands and coastal cities</td></tr>
+  <tr><td><strong>Glacial retreat</strong></td><td>Most mountain glaciers worldwide are shrinking. Glacier National Park (USA) had 150 glaciers in 1850; fewer than 26 remain. The Greenland ice sheet is losing ~280 Gt of ice per year</td><td>Visual, measurable evidence of warming. Glaciers respond directly to temperature changes</td></tr>
+  <tr><td><strong>Arctic sea ice decline</strong></td><td>September Arctic sea ice extent has declined by ~13% per decade since satellite records began (1979). 2012 and 2020 were record lows</td><td>Accelerates warming through ice-albedo positive feedback. Opens shipping routes but threatens Arctic ecosystems and indigenous communities</td></tr>
+  <tr><td><strong>Ocean acidification</strong></td><td>Ocean pH has dropped by ~0.1 units since pre-industrial times (a 26% increase in hydrogen ion concentration)</td><td>Threatens calcifying organisms (corals, shellfish, plankton) that cannot build shells/skeletons in more acidic water. Impacts marine food chains</td></tr>
+  <tr><td><strong>Phenological changes</strong></td><td>Earlier spring flowering, earlier bird migration, shifts in species ranges towards poles and higher altitudes</td><td>Biological evidence that ecosystems are responding to warming. Can cause mismatches (e.g. birds arriving before insect food is available)</td></tr>
+</table>
 
 <h3>Causes of Climate Change</h3>
 <table>
   <tr><th>Natural Causes</th><th>Human (Anthropogenic) Causes</th></tr>
-  <tr><td>Milankovitch cycles (orbital changes)</td><td>Burning fossil fuels (CO<sub>2</sub>)</td></tr>
-  <tr><td>Solar output variations</td><td>Deforestation (reduced carbon sink)</td></tr>
-  <tr><td>Volcanic eruptions (aerosol cooling)</td><td>Agriculture (CH<sub>4</sub> from livestock, rice paddies; N<sub>2</sub>O from fertilisers)</td></tr>
-  <tr><td>Ocean current changes</td><td>Industry (cement production releases CO<sub>2</sub>)</td></tr>
+  <tr><td><strong>Milankovitch cycles:</strong> Periodic changes in Earth's orbital eccentricity (~100,000 years), axial tilt (~41,000 years), and precession (~26,000 years) alter the distribution and intensity of solar radiation reaching Earth. Drive glacial-interglacial cycles</td><td><strong>Fossil fuel combustion:</strong> Burning coal, oil, and gas for energy, transport, and industry releases CO<sub>2</sub>. Responsible for ~75% of anthropogenic greenhouse gas emissions. CO<sub>2</sub> has risen from 280 ppm to &gt;420 ppm</td></tr>
+  <tr><td><strong>Solar output variations:</strong> Small (~0.1%) fluctuations in solar energy output over the 11-year sunspot cycle. Cannot explain the magnitude of recent warming</td><td><strong>Deforestation:</strong> Removing forests eliminates a carbon sink (reduced photosynthesis) and releases stored carbon when trees are burned or decompose. Responsible for ~10% of anthropogenic CO<sub>2</sub> emissions</td></tr>
+  <tr><td><strong>Volcanic eruptions:</strong> Large eruptions inject SO<sub>2</sub> aerosols into the stratosphere, reflecting sunlight and causing temporary cooling (1&ndash;3 years). Also emit small amounts of CO<sub>2</sub></td><td><strong>Agriculture:</strong> CH<sub>4</sub> from livestock digestion (enteric fermentation) and rice paddies; N<sub>2</sub>O from synthetic fertilisers; CO<sub>2</sub> from machinery and land clearance. Agriculture is responsible for ~10&ndash;12% of global emissions</td></tr>
+  <tr><td><strong>Ocean circulation changes:</strong> El Nino/La Nina cycles, thermohaline circulation variations affect heat distribution and CO<sub>2</sub> exchange</td><td><strong>Industrial processes:</strong> Cement production (heating limestone releases CO<sub>2</sub>: CaCO<sub>3</sub> &rarr; CaO + CO<sub>2</sub>), steel manufacturing, chemical production. Cement alone accounts for ~8% of global CO<sub>2</sub> emissions</td></tr>
 </table>
 
-<h3>Feedback Mechanisms</h3>
-
-<div class="definition">
-  <strong>Positive feedback:</strong> Amplifies the initial change. <strong>Negative feedback:</strong> Dampens/reverses the initial change.
-</div>
-
+<h3>Feedback Mechanisms in Climate Change</h3>
 <table>
   <tr><th>Feedback</th><th>Type</th><th>Mechanism</th></tr>
-  <tr><td>Ice-albedo feedback</td><td>Positive</td><td>Warming melts ice &rarr; darker surface exposed &rarr; absorbs more solar radiation &rarr; more warming</td></tr>
-  <tr><td>Permafrost thaw</td><td>Positive</td><td>Warming thaws permafrost &rarr; releases trapped CH<sub>4</sub> and CO<sub>2</sub> &rarr; enhanced greenhouse effect &rarr; more warming</td></tr>
-  <tr><td>Water vapour feedback</td><td>Positive</td><td>Warming increases evaporation &rarr; more water vapour (a greenhouse gas) &rarr; more warming</td></tr>
-  <tr><td>Increased cloud cover</td><td>Negative</td><td>Warming increases evaporation &rarr; more clouds &rarr; increased albedo &rarr; reflect solar radiation &rarr; cooling (but complicated: low clouds cool, high clouds warm)</td></tr>
-  <tr><td>CO<sub>2</sub> fertilisation</td><td>Negative</td><td>Higher CO<sub>2</sub> &rarr; increased photosynthesis &rarr; plants absorb more CO<sub>2</sub> &rarr; slows warming (limited by water/nutrient availability)</td></tr>
-  <tr><td>Ocean solubility pump</td><td>Positive</td><td>Warming oceans absorb less CO<sub>2</sub> (warmer water holds less gas) &rarr; more atmospheric CO<sub>2</sub> &rarr; more warming</td></tr>
+  <tr><td><strong>Ice-albedo feedback</strong></td><td>Positive</td><td>Warming melts ice and snow &rarr; darker land/ocean surface exposed &rarr; lower albedo &rarr; absorbs more solar radiation &rarr; more warming &rarr; more ice melts. Particularly powerful in the Arctic (Arctic is warming ~3x faster than the global average)</td></tr>
+  <tr><td><strong>Permafrost thaw</strong></td><td>Positive</td><td>Warming thaws permafrost (permanently frozen ground containing ~1,500 GtC in organic matter) &rarr; decomposition of previously frozen organic material releases CH<sub>4</sub> and CO<sub>2</sub> &rarr; enhanced greenhouse effect &rarr; more warming &rarr; more thaw. A potential "tipping point" &mdash; once initiated, may become irreversible</td></tr>
+  <tr><td><strong>Water vapour feedback</strong></td><td>Positive</td><td>Warming increases evaporation &rarr; more water vapour in atmosphere (water vapour is the most abundant greenhouse gas) &rarr; enhanced greenhouse effect &rarr; more warming. Amplifies CO<sub>2</sub>-driven warming by a factor of ~2</td></tr>
+  <tr><td><strong>Ocean solubility pump weakening</strong></td><td>Positive</td><td>Warmer oceans absorb less CO<sub>2</sub> (solubility decreases with temperature) &rarr; more CO<sub>2</sub> remains in atmosphere &rarr; more warming. The ocean's role as a carbon sink may weaken over time</td></tr>
+  <tr><td><strong>Cloud feedback</strong></td><td>Mixed / uncertain</td><td>Warming increases evaporation &rarr; more clouds. <strong>Low clouds</strong> (cumulus) have high albedo and cool the surface (negative feedback). <strong>High clouds</strong> (cirrus) trap outgoing radiation and warm the surface (positive feedback). The net effect is one of the largest uncertainties in climate models</td></tr>
+  <tr><td><strong>CO<sub>2</sub> fertilisation</strong></td><td>Negative (limited)</td><td>Higher CO<sub>2</sub> &rarr; increased rate of photosynthesis &rarr; plants absorb more CO<sub>2</sub> &rarr; slows atmospheric CO<sub>2</sub> increase. However, this effect is limited by water and nutrient availability, and may saturate at higher CO<sub>2</sub> levels</td></tr>
 </table>
 
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
   <text x="300" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Ice-Albedo Positive Feedback Loop</text>
-  <!-- Central circle: warming -->
   <circle cx="300" cy="160" r="45" fill="#fef3c7" stroke="#D97706" stroke-width="2"/>
   <text x="300" y="155" text-anchor="middle" font-size="11" font-weight="bold" fill="#D97706">Global</text>
   <text x="300" y="170" text-anchor="middle" font-size="11" font-weight="bold" fill="#D97706">Warming</text>
-  <!-- Step 1: Ice melts (top right) -->
   <rect x="430" y="60" width="140" height="45" rx="6" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
   <text x="500" y="80" text-anchor="middle" font-size="10" fill="#1a73e8">Ice &amp; snow</text>
   <text x="500" y="95" text-anchor="middle" font-size="10" fill="#1a73e8">melts</text>
-  <!-- Step 2: Lower albedo (bottom right) -->
   <rect x="430" y="200" width="140" height="45" rx="6" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
   <text x="500" y="220" text-anchor="middle" font-size="10" fill="#D97706">Darker surface</text>
   <text x="500" y="235" text-anchor="middle" font-size="10" fill="#D97706">exposed (low albedo)</text>
-  <!-- Step 3: More absorption (bottom left) -->
   <rect x="30" y="200" width="140" height="45" rx="6" fill="#fee2e2" stroke="#DC2626" stroke-width="1.5"/>
   <text x="100" y="220" text-anchor="middle" font-size="10" fill="#DC2626">More solar energy</text>
   <text x="100" y="235" text-anchor="middle" font-size="10" fill="#DC2626">absorbed</text>
-  <!-- Step 4: More warming (top left) -->
   <rect x="30" y="60" width="140" height="45" rx="6" fill="#fee2e2" stroke="#DC2626" stroke-width="1.5"/>
   <text x="100" y="80" text-anchor="middle" font-size="10" fill="#DC2626">Temperature</text>
   <text x="100" y="95" text-anchor="middle" font-size="10" fill="#DC2626">increases further</text>
-  <!-- Arrows connecting them clockwise -->
   <path d="M340,135 Q390,80 425,80" fill="none" stroke="#1a73e8" stroke-width="2" marker-end="url(#afb1)"/>
   <path d="M500,108 Q500,160 500,195" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#afb2)"/>
   <path d="M425,225 Q300,270 175,225" fill="none" stroke="#DC2626" stroke-width="2" marker-end="url(#afb3)"/>
   <path d="M100,195 Q100,140 100,108" fill="none" stroke="#DC2626" stroke-width="2" marker-end="url(#afb3)"/>
   <path d="M170,78 Q230,60 255,125" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#afb2)"/>
-  <!-- Positive feedback label -->
   <text x="300" y="285" text-anchor="middle" font-size="12" font-weight="bold" fill="#DC2626">POSITIVE FEEDBACK (+)</text>
   <defs>
     <marker id="afb1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1a73e8"/></marker>
@@ -398,62 +351,63 @@
 
 <h3>Deforestation</h3>
 <ul>
-  <li>Removes a major carbon sink (trees absorb CO<sub>2</sub> via photosynthesis)</li>
-  <li>Burning or decomposition of trees releases stored carbon</li>
-  <li>Exposed soil oxidises, releasing more CO<sub>2</sub></li>
-  <li>Reduces transpiration, affecting local water cycle and rainfall</li>
+  <li>Removes a major carbon sink (trees absorb CO<sub>2</sub> via photosynthesis and store it in biomass for decades to centuries)</li>
+  <li>Burning or decomposition of felled trees releases stored carbon back to the atmosphere as CO<sub>2</sub></li>
+  <li>Exposed soil dries out and oxidises, releasing additional CO<sub>2</sub>. Erosion by rain removes carbon-rich topsoil</li>
+  <li>Reduces transpiration, decreasing local atmospheric moisture and potentially reducing rainfall (positive feedback: less rain &rarr; forest stress &rarr; more dieback &rarr; less rain)</li>
+  <li>Deforestation is responsible for approximately <strong>10% of global CO<sub>2</sub> emissions</strong></li>
 </ul>
 
 <div class="case-study">
   <strong>Case Study: Amazon Rainforest</strong><br>
-  The Amazon stores ~150&ndash;200 billion tonnes of carbon in its biomass and soil. Deforestation (for cattle ranching, soy, logging) releases this carbon. Between 2001&ndash;2020, approximately 17% of the Amazon was lost. Studies suggest that parts of the eastern Amazon have become a net carbon source rather than a sink. Deforestation also reduces evapotranspiration, potentially reducing rainfall in the region (a positive feedback loop: less rain &rarr; more forest dieback &rarr; less rain). This is the "tipping point" risk.
+  The Amazon basin stores approximately <strong>150&ndash;200 billion tonnes of carbon</strong> in its biomass and soil, making it one of the most important carbon stores on Earth. Deforestation &mdash; primarily for cattle ranching (~80% of cleared land), soy cultivation, and logging &mdash; is releasing this carbon at an alarming rate. Between 2001 and 2022, approximately <strong>17&ndash;20%</strong> of the original Amazon forest was lost or severely degraded. Recent studies (Gatti et al., 2021) found that parts of the <strong>eastern Amazon have already become a net carbon source</strong> rather than a sink, emitting more CO<sub>2</sub> than they absorb due to fires and deforestation. Deforestation also reduces evapotranspiration &mdash; the Amazon generates approximately <strong>50% of its own rainfall</strong> through moisture recycling (the "flying rivers" phenomenon). Continued deforestation risks pushing the Amazon past a <strong>tipping point</strong> (~20&ndash;25% deforestation) where reduced rainfall triggers irreversible large-scale dieback, converting forest to savanna and releasing catastrophic amounts of stored carbon. This would have global climate consequences.
 </div>
 
 <h3>Fossil Fuel Combustion</h3>
 <ul>
-  <li>Releases carbon stored over millions of years in a very short time</li>
-  <li>CO<sub>2</sub> levels have risen from ~280 ppm (pre-industrial) to over 420 ppm (2024)</li>
-  <li>Responsible for ~75% of anthropogenic greenhouse gas emissions</li>
-  <li>Accelerates the greenhouse effect far beyond natural rates</li>
+  <li>Transfers carbon from the long-term geological store (where it was locked away over <strong>millions of years</strong>) to the atmosphere in a <strong>geological instant</strong> (decades)</li>
+  <li>Atmospheric CO<sub>2</sub> has risen from ~280 ppm (pre-industrial, 1750) to over <strong>420 ppm</strong> (2024) &mdash; a 50% increase and the highest level in at least 3 million years (Pliocene epoch)</li>
+  <li>Fossil fuel combustion is responsible for approximately <strong>75%</strong> of all anthropogenic greenhouse gas emissions (~36 GtCO<sub>2</sub>/year or ~9.5 GtC/year)</li>
+  <li>Fundamentally disrupts the balance between natural carbon fluxes that maintained stable atmospheric CO<sub>2</sub> for millennia</li>
 </ul>
 
 <h2>Human Impacts on the Water Cycle</h2>
 
 <ul>
-  <li><strong>Urbanisation:</strong> Impermeable surfaces increase surface runoff, reduce infiltration &rarr; flashier hydrographs, flood risk</li>
-  <li><strong>Deforestation:</strong> Reduces interception and transpiration &rarr; more runoff, less evapotranspiration, reduced local rainfall</li>
-  <li><strong>Agriculture:</strong> Irrigation depletes groundwater stores; drainage of wetlands removes water storage</li>
-  <li><strong>Dam construction:</strong> Alters river regimes; creates new stores; reduces downstream sediment/water supply</li>
-  <li><strong>Climate change:</strong> Increased evaporation, altered precipitation patterns, glacial melt</li>
+  <li><strong>Urbanisation:</strong> Impermeable surfaces (concrete, tarmac, roofs) dramatically increase surface runoff and reduce infiltration. Storm drains channel water rapidly to rivers. Result: flashier hydrographs, increased flood frequency and magnitude, reduced groundwater recharge. Example: the area of urban land in England increased by 16% between 1990 and 2018</li>
+  <li><strong>Deforestation:</strong> Reduces interception (no canopy to catch rain) and transpiration (no trees to return moisture to atmosphere). Result: more surface runoff, increased flood risk, reduced local rainfall through loss of moisture recycling, soil erosion. The Amazon generates ~50% of its own rainfall through evapotranspiration</li>
+  <li><strong>Agriculture:</strong> Irrigation depletes groundwater stores and rivers (the Ogallala Aquifer in the US Great Plains is declining by ~1 m/year in some areas). Drainage of wetlands removes natural water storage. Ploughing increases runoff. Fertiliser runoff causes eutrophication of water bodies</li>
+  <li><strong>Dam construction:</strong> Creates new storage (reservoir), alters downstream river regime (flow pattern), traps sediment (downstream erosion), enables irrigation and hydroelectric power, can displace communities. Example: Three Gorges Dam (China) displaced 1.3 million people</li>
+  <li><strong>Climate change:</strong> Intensifies the hydrological cycle (warmer atmosphere holds ~7% more moisture per degree C). Leads to: more intense rainfall events (increased flood risk), longer dry periods (drought risk), glacial melt (temporary increase then loss of meltwater supply), rising sea levels, altered monsoon patterns</li>
 </ul>
 
 <div class="case-study">
-  <strong>Case Study: Aral Sea</strong><br>
-  Once the world's 4th largest lake, the Aral Sea shrank dramatically from the 1960s when the Soviet Union diverted the Amu Darya and Syr Darya rivers for cotton irrigation. By 2014, the eastern basin had dried completely. This caused: collapse of the fishing industry (60,000 jobs lost), salinisation of remaining water, dust storms carrying pesticides from the exposed seabed, desertification of the surrounding area. The case study shows how human alteration of the water cycle can cause environmental catastrophe.
+  <strong>Case Study: Aral Sea, Central Asia</strong><br>
+  Once the <strong>world's 4th largest lake</strong> (68,000 km<sup>2</sup> in 1960), the Aral Sea has shrunk catastrophically since the 1960s when the Soviet Union diverted the <strong>Amu Darya and Syr Darya rivers</strong> to irrigate cotton fields in Uzbekistan and Kazakhstan. By 2014, the eastern basin had <strong>completely dried up</strong> for the first time in 600 years. The lake has lost over 90% of its volume. Consequences: (1) <strong>Collapse of the fishing industry</strong> &mdash; 60,000 jobs lost; the port of Moynaq is now 150 km from the water, (2) <strong>Salinisation</strong> &mdash; remaining water became hypersaline (100+ g/L), killing aquatic life, (3) <strong>Dust storms</strong> &mdash; toxic dust containing pesticides and salt from the exposed seabed blows over surrounding populations, causing respiratory disease, kidney disease, and cancer, (4) <strong>Climate change</strong> &mdash; loss of the moderating influence of the lake has made local climate more extreme (hotter summers, colder winters), (5) <strong>Desertification</strong> of the former lake bed. The Aral Sea is one of the most dramatic examples of how <strong>human alteration of the water cycle</strong> can cause environmental and humanitarian catastrophe. Partial recovery of the northern Aral Sea has been achieved through the Kok-Aral Dam (funded by the World Bank), but the southern basin is considered irreversibly lost.
 </div>
 
 <h2>Management and Mitigation</h2>
 
 <h3>Carbon Cycle Management</h3>
-<ul>
-  <li><strong>REDD+:</strong> Reducing Emissions from Deforestation and forest Degradation &mdash; financial incentives for developing countries to protect forests</li>
-  <li><strong>Carbon capture and storage (CCS):</strong> Technology to capture CO<sub>2</sub> from power stations and store it underground</li>
-  <li><strong>Afforestation/reforestation:</strong> Planting trees to increase carbon sequestration</li>
-  <li><strong>Renewable energy transition:</strong> Reducing fossil fuel dependence</li>
-  <li><strong>International agreements:</strong> Paris Agreement (2015) &mdash; limit warming to 1.5&ndash;2&deg;C above pre-industrial levels</li>
-</ul>
+<table>
+  <tr><th>Strategy</th><th>Description</th><th>Evaluation</th></tr>
+  <tr><td><strong>REDD+</strong></td><td>Reducing Emissions from Deforestation and forest Degradation: pays developing countries to protect existing forests and plant new ones</td><td>Addresses ~10% of emissions. Challenges include monitoring, corruption, indigenous rights, and "carbon leakage" (deforestation shifts to unprotected areas)</td></tr>
+  <tr><td><strong>Carbon capture and storage (CCS)</strong></td><td>Captures CO<sub>2</sub> from power station emissions and stores it underground in depleted oil/gas reservoirs or saline aquifers</td><td>Technology works but is extremely expensive and not yet deployed at scale. Only ~40 CCS facilities worldwide. Risk of leakage from underground storage</td></tr>
+  <tr><td><strong>Afforestation / reforestation</strong></td><td>Planting new forests or restoring degraded forests to increase carbon sequestration</td><td>Effective and relatively cheap. The Bonn Challenge aims to restore 350 million hectares by 2030. However, monoculture plantations are less effective than natural forests, and trees take decades to mature as significant carbon stores</td></tr>
+  <tr><td><strong>Renewable energy transition</strong></td><td>Replacing fossil fuels with solar, wind, hydro, tidal, geothermal, and nuclear energy</td><td>Essential for deep decarbonisation. Costs have fallen dramatically (solar PV down 89% since 2010). Challenges: intermittency, energy storage, grid infrastructure, political resistance from fossil fuel interests</td></tr>
+  <tr><td><strong>International agreements</strong></td><td>Paris Agreement (2015): signatories commit to limiting warming to <strong>1.5&ndash;2 degrees C</strong> above pre-industrial levels through Nationally Determined Contributions (NDCs)</td><td>Historic agreement but NDCs are voluntary, and current pledges (if fully met) would result in ~2.5&ndash;2.8 degrees C of warming. No enforcement mechanism. US withdrew under Trump (2017&ndash;2021, rejoined 2021)</td></tr>
+</table>
 
 <h3>Water Cycle Management</h3>
-<ul>
-  <li><strong>Sustainable drainage systems (SuDS):</strong> Permeable paving, green roofs, retention ponds to mimic natural drainage</li>
-  <li><strong>Wetland restoration:</strong> Natural flood management and water storage</li>
-  <li><strong>Water conservation:</strong> Reducing demand through efficient irrigation, metering</li>
-  <li><strong>Catchment management:</strong> Integrated approach to managing water across entire drainage basins</li>
-</ul>
+<table>
+  <tr><th>Strategy</th><th>Description</th><th>Example</th></tr>
+  <tr><td><strong>Sustainable drainage systems (SuDS)</strong></td><td>Permeable paving, green roofs, rain gardens, retention ponds, swales &mdash; designed to mimic natural drainage and reduce surface runoff in urban areas</td><td>London Olympic Park used extensive SuDS; Sheffield Grey to Green project converted road surfaces to rain gardens, reducing flood risk and improving urban amenity</td></tr>
+  <tr><td><strong>Wetland restoration</strong></td><td>Restoring drained wetlands to act as natural flood storage, carbon sinks, and biodiversity habitats</td><td>Wicken Fen (Cambridgeshire): 100-year plan to restore 5,300 hectares of former farmland to wetland. The Great Fen project</td></tr>
+  <tr><td><strong>Water conservation</strong></td><td>Reducing demand through water meters, efficient irrigation (drip irrigation rather than spray), water recycling, leak reduction</td><td>Israel recycles 86% of its wastewater for agricultural irrigation (world leader). Thames Water loses ~24% of supply through pipe leaks</td></tr>
+  <tr><td><strong>Catchment-scale management</strong></td><td>Integrated approach managing land use, forestry, farming, and development across entire drainage basins to reduce flood risk and improve water quality</td><td>Slowing the Flow at Pickering (North Yorkshire): planting trees, installing leaky dams, and creating bunds in the upper catchment reduced peak flood discharge by 15&ndash;20%</td></tr>
+</table>
 
-<div class="exam-tip">
-  <strong>Exam Tip:</strong> For 20-mark essays on this topic, structure your answer around: (1) the natural cycle, (2) human disruption of stores and flows, (3) consequences and feedbacks, (4) management strategies. Always include specific data and named examples. Show awareness that the water and carbon cycles are interconnected &mdash; disrupting one affects the other.
-</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> For 20-mark essays on this topic, structure your answer around: (1) <strong>the natural cycle</strong> (stores, flows, key processes), (2) <strong>human disruption</strong> of stores and flows (with specific data), (3) <strong>consequences and feedbacks</strong> (both positive and negative), (4) <strong>management strategies</strong> (evaluate effectiveness, not just describe). Always include specific data and named case studies (Amazon: 150&ndash;200 GtC stored; CO<sub>2</sub>: 280 &rarr; 420 ppm; Aral Sea: 90% volume loss). Show awareness that the <strong>water and carbon cycles are interconnected</strong> &mdash; disrupting one affects the other. For the highest marks, discuss <strong>tipping points</strong> and <strong>feedback loops</strong> that could push systems past the point of no return.</div>
 
 </div>
 </body>
