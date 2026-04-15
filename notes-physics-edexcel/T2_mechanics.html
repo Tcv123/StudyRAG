@@ -1,543 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topic 2 — Mechanics</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: #1a1a2e;
-            background: #ffffff;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 2rem;
-            color: #1a1a2e;
-            border-bottom: 3px solid #2563eb;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #1e3a5f;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            border-left: 4px solid #2563eb;
-            padding-left: 12px;
-        }
-        h3 {
-            font-size: 1.2rem;
-            color: #334155;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 12px;
-        }
-        ul, ol {
-            margin-left: 25px;
-            margin-bottom: 15px;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 0.95rem;
-        }
-        th, td {
-            border: 1px solid #d1d5db;
-            padding: 10px 14px;
-            text-align: left;
-        }
-        th {
-            background: #f1f5f9;
-            font-weight: 600;
-            color: #1e3a5f;
-        }
-        tr:nth-child(even) {
-            background: #f8fafc;
-        }
-        .definition-box {
-            background: #eff6ff;
-            border-left: 4px solid #2563eb;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip {
-            background: #fffbeb;
-            border-left: 4px solid #f59e0b;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .exam-tip::before {
-            content: "Exam Tip: ";
-            font-weight: 700;
-            color: #b45309;
-        }
-        .equation {
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-            font-size: 1.1rem;
-            background: #f8fafc;
-            padding: 10px 20px;
-            margin: 10px 0;
-            border-radius: 6px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-        }
-        strong {
-            color: #1e3a5f;
-        }
-        @media print {
-            body { padding: 20px; }
-            .exam-tip, .definition-box { break-inside: avoid; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 2 — Mechanics</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.7; color: #1a1a2e; background: #ffffff; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin-top: 35px; margin-bottom: 15px; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #334155; margin-top: 20px; margin-bottom: 10px; }
+  h4 { font-size: 1.05rem; color: #475569; margin-top: 16px; margin-bottom: 8px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin-left: 25px; margin-bottom: 15px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
+  th { background: #f1f5f9; font-weight: 600; color: #1e3a5f; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition-box { background: #eff6ff; border-left: 4px solid #2563eb; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+  .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .real-world { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .equation { font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 1.1rem; background: #f8fafc; padding: 10px 20px; margin: 10px 0; border-radius: 6px; text-align: center; border: 1px solid #e2e8f0; }
+  strong { color: #1e3a5f; }
+  @media print { body { padding: 20px; } .exam-tip, .definition-box { break-inside: avoid; } }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Topic 2 — Mechanics</h1>
+<div class="container">
 
-        <h2>2.1 Scalars and Vectors</h2>
-        <div class="definition-box">
-            <p><strong>Scalar</strong> — a quantity that has magnitude only (e.g., mass, speed, energy, temperature, distance).</p>
-            <p><strong>Vector</strong> — a quantity that has both magnitude and direction (e.g., force, velocity, acceleration, displacement, momentum).</p>
-        </div>
+<h1>Topic 2 — Mechanics</h1>
 
-        <h3>Adding Vectors</h3>
-        <p>Vectors are added using the <strong>triangle of vectors</strong> or <strong>parallelogram rule</strong>. For two vectors at right angles, use Pythagoras' theorem to find the resultant magnitude and trigonometry to find the angle:</p>
-        <div class="equation">
-            Resultant = &radic;(A&sup2; + B&sup2;)
-        </div>
-        <div class="equation">
-            &theta; = tan<sup>-1</sup>(opposite / adjacent)
-        </div>
+<!-- ============================================================ -->
+<!-- 2.1 SCALARS AND VECTORS -->
+<!-- ============================================================ -->
+<h2>2.1 Scalars and Vectors</h2>
+<div class="definition-box">
+  <strong>Scalar:</strong> A quantity that has magnitude (size) only. Examples: mass, speed, energy, temperature, distance, time, power.<br>
+  <strong>Vector:</strong> A quantity that has both magnitude and direction. Examples: force, velocity, acceleration, displacement, momentum, weight.
+</div>
 
-        <h3>Resolving Vectors into Components</h3>
-        <p>Any vector can be split into two perpendicular components (typically horizontal and vertical):</p>
-        <div class="equation">
-            Horizontal component: F<sub>x</sub> = F cos &theta;
-        </div>
-        <div class="equation">
-            Vertical component: F<sub>y</sub> = F sin &theta;
-        </div>
-        <p>where &theta; is the angle between the vector and the horizontal.</p>
+<h3>Adding Vectors</h3>
+<p>Vectors are added using the <strong>triangle of vectors</strong> (head-to-tail method) or <strong>parallelogram rule</strong> (tail-to-tail method). For two vectors at right angles, use Pythagoras and trigonometry:</p>
+<div class="equation">
+  Resultant = &radic;(A<sup>2</sup> + B<sup>2</sup>) &nbsp;&nbsp;&nbsp; &theta; = tan<sup>-1</sup>(opposite / adjacent)
+</div>
+<p>For vectors not at right angles, resolve into components first, then add components separately.</p>
 
-        <!-- SVG: Free Body Force Diagram with Resolved Components -->
-        <div style="margin: 20px auto; text-align: center;">
-            <svg viewBox="0 0 480 320" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                    .mech-label { font-family: system-ui; font-size: 12px; fill: #1a1a2e; }
-                    .mech-title { font-family: system-ui; font-size: 14px; fill: #1a1a2e; font-weight: 600; text-anchor: middle; }
-                </style>
-                <text x="240" y="22" class="mech-title">Free Body Diagram: Resolving a Force</text>
-                <defs>
-                    <marker id="ah2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1a73e8"/></marker>
-                    <marker id="ahr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#DC2626"/></marker>
-                    <marker id="ahg" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#16A34A"/></marker>
-                </defs>
-                <!-- Object -->
-                <rect x="170" y="140" width="60" height="60" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
-                <text x="200" y="175" class="mech-label" text-anchor="middle" font-weight="600">m</text>
-                <!-- Force F at angle -->
-                <line x1="230" y1="170" x2="370" y2="90" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#ah2)"/>
-                <text x="310" y="115" class="mech-label" fill="#1a73e8" font-weight="600">F</text>
-                <!-- Horizontal component -->
-                <line x1="230" y1="170" x2="370" y2="170" stroke="#DC2626" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#ahr)"/>
-                <text x="310" y="190" class="mech-label" fill="#DC2626">F cos θ</text>
-                <!-- Vertical component -->
-                <line x1="370" y1="170" x2="370" y2="90" stroke="#16A34A" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#ahg)"/>
-                <text x="400" y="135" class="mech-label" fill="#16A34A">F sin θ</text>
-                <!-- Angle arc -->
-                <path d="M 270,170 A 40,40 0 0,0 257,145" fill="none" stroke="#D97706" stroke-width="1.5"/>
-                <text x="275" y="158" class="mech-label" fill="#D97706">θ</text>
-                <!-- Right angle marker -->
-                <rect x="360" y="160" width="10" height="10" fill="none" stroke="#64748b" stroke-width="1"/>
-                <!-- Weight -->
-                <line x1="200" y1="200" x2="200" y2="280" stroke="#1a1a2e" stroke-width="2.5" marker-end="url(#ah2)"/>
-                <text x="215" y="260" class="mech-label" fill="#1a1a2e" font-weight="600">mg</text>
-                <!-- Normal -->
-                <line x1="200" y1="140" x2="200" y2="60" stroke="#16A34A" stroke-width="2.5" marker-end="url(#ahg)"/>
-                <text x="215" y="80" class="mech-label" fill="#16A34A" font-weight="600">N</text>
-                <!-- Ground -->
-                <line x1="80" y1="200" x2="400" y2="200" stroke="#64748b" stroke-width="2"/>
-                <line x1="80" y1="200" x2="90" y2="212" stroke="#64748b" stroke-width="1"/>
-                <line x1="100" y1="200" x2="110" y2="212" stroke="#64748b" stroke-width="1"/>
-                <line x1="120" y1="200" x2="130" y2="212" stroke="#64748b" stroke-width="1"/>
-                <line x1="140" y1="200" x2="150" y2="212" stroke="#64748b" stroke-width="1"/>
-                <line x1="160" y1="200" x2="170" y2="212" stroke="#64748b" stroke-width="1"/>
-            </svg>
-        </div>
+<h3>Resolving Vectors into Components</h3>
+<p>Any vector can be split into two perpendicular components (typically horizontal and vertical):</p>
+<div class="equation">
+  Horizontal: F<sub>x</sub> = F cos &theta; &nbsp;&nbsp;&nbsp; Vertical: F<sub>y</sub> = F sin &theta;
+</div>
+<p>where &theta; is the angle between the vector and the horizontal.</p>
 
-        <div class="exam-tip">
-            When resolving forces on an inclined plane, resolve parallel and perpendicular to the slope — not horizontally and vertically. The component of weight along the slope is mg sin &theta; and perpendicular to the slope is mg cos &theta;.
-        </div>
+<!-- SVG: Resolving Forces -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 480 320" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="240" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Free Body Diagram: Resolving a Force</text>
+  <defs>
+    <marker id="ah2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1a73e8"/></marker>
+    <marker id="ahr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#DC2626"/></marker>
+    <marker id="ahg" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#16A34A"/></marker>
+  </defs>
+  <rect x="170" y="140" width="60" height="60" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+  <text x="200" y="175" font-family="system-ui" font-size="12" fill="#1a1a2e" text-anchor="middle" font-weight="600">m</text>
+  <line x1="230" y1="170" x2="370" y2="90" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#ah2)"/>
+  <text x="310" y="115" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="600">F</text>
+  <line x1="230" y1="170" x2="370" y2="170" stroke="#DC2626" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#ahr)"/>
+  <text x="310" y="190" font-family="system-ui" font-size="12" fill="#DC2626">F cos &theta;</text>
+  <line x1="370" y1="170" x2="370" y2="90" stroke="#16A34A" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#ahg)"/>
+  <text x="400" y="135" font-family="system-ui" font-size="12" fill="#16A34A">F sin &theta;</text>
+  <path d="M 270,170 A 40,40 0 0,0 257,145" fill="none" stroke="#D97706" stroke-width="1.5"/>
+  <text x="275" y="158" font-family="system-ui" font-size="12" fill="#D97706">&theta;</text>
+  <rect x="360" y="160" width="10" height="10" fill="none" stroke="#64748b" stroke-width="1"/>
+  <line x1="200" y1="200" x2="200" y2="280" stroke="#1a1a2e" stroke-width="2.5" marker-end="url(#ah2)"/>
+  <text x="215" y="260" font-family="system-ui" font-size="12" fill="#1a1a2e" font-weight="600">mg</text>
+  <line x1="200" y1="140" x2="200" y2="60" stroke="#16A34A" stroke-width="2.5" marker-end="url(#ahg)"/>
+  <text x="215" y="80" font-family="system-ui" font-size="12" fill="#16A34A" font-weight="600">N</text>
+  <line x1="80" y1="200" x2="400" y2="200" stroke="#64748b" stroke-width="2"/>
+  <line x1="80" y1="200" x2="90" y2="212" stroke="#64748b" stroke-width="1"/>
+  <line x1="100" y1="200" x2="110" y2="212" stroke="#64748b" stroke-width="1"/>
+  <line x1="120" y1="200" x2="130" y2="212" stroke="#64748b" stroke-width="1"/>
+  <line x1="140" y1="200" x2="150" y2="212" stroke="#64748b" stroke-width="1"/>
+  <line x1="160" y1="200" x2="170" y2="212" stroke="#64748b" stroke-width="1"/>
+</svg>
+</div>
 
-        <h2>2.2 Motion Graphs</h2>
-        <h3>Displacement-Time Graphs</h3>
-        <ul>
-            <li>Gradient = <strong>velocity</strong></li>
-            <li>Horizontal line = stationary (zero velocity)</li>
-            <li>Straight line with positive gradient = constant velocity forwards</li>
-            <li>Curve with increasing gradient = acceleration</li>
-            <li>The instantaneous velocity at a point on a curve is found from the gradient of the tangent at that point.</li>
-        </ul>
+<div class="worked-example">
+<strong>Worked Example:</strong> A force of 50 N acts at 30 degrees above the horizontal on an object. Find the horizontal and vertical components.<br><br>
+<strong>Solution:</strong><br>
+F<sub>x</sub> = 50 cos 30 = 50 &times; 0.866 = <strong>43.3 N</strong> (horizontal)<br>
+F<sub>y</sub> = 50 sin 30 = 50 &times; 0.500 = <strong>25.0 N</strong> (vertical)<br>
+Check: &radic;(43.3<sup>2</sup> + 25.0<sup>2</sup>) = &radic;(1875 + 625) = &radic;2500 = 50 N. Correct.
+</div>
 
-        <h3>Velocity-Time Graphs</h3>
-        <ul>
-            <li>Gradient = <strong>acceleration</strong></li>
-            <li>Area under the graph = <strong>displacement</strong></li>
-            <li>Horizontal line = constant velocity (zero acceleration)</li>
-            <li>Straight line with positive gradient = constant acceleration</li>
-            <li>Negative velocity = moving in the opposite direction</li>
-        </ul>
+<div class="exam-tip">
+When resolving forces on an inclined plane, resolve parallel and perpendicular to the slope &mdash; not horizontally and vertically. The component of weight along the slope is mg sin &theta; and perpendicular to the slope is mg cos &theta; (where &theta; is the angle of the incline).
+</div>
 
-        <!-- SVG: Displacement-Time and Velocity-Time Graphs -->
-        <div style="margin: 20px auto; text-align: center;">
-            <svg viewBox="0 0 520 260" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-                <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Motion Graphs Comparison (constant acceleration)</text>
-                <!-- s-t graph -->
-                <text x="135" y="42" font-family="system-ui" font-size="12" fill="#1a73e8" text-anchor="middle" font-weight="600">Displacement-Time</text>
-                <line x1="50" y1="230" x2="240" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
-                <line x1="50" y1="230" x2="50" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
-                <text x="145" y="248" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">t</text>
-                <text x="38" y="140" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,38,140)">s</text>
-                <!-- Curved line (s = ut + 1/2at^2) -->
-                <path d="M 50,230 Q 100,210 140,160 Q 180,100 230,60" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
-                <text x="180" y="85" font-family="system-ui" font-size="10" fill="#1a73e8">gradient = v</text>
-                <!-- Tangent line -->
-                <line x1="110" y1="210" x2="180" y2="130" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
-                <text x="165" y="185" font-family="system-ui" font-size="9" fill="#DC2626">tangent at</text>
-                <text x="165" y="195" font-family="system-ui" font-size="9" fill="#DC2626">a point = v</text>
+<!-- ============================================================ -->
+<!-- 2.2 MOTION GRAPHS -->
+<!-- ============================================================ -->
+<h2>2.2 Motion Graphs</h2>
 
-                <!-- v-t graph -->
-                <text x="395" y="42" font-family="system-ui" font-size="12" fill="#16A34A" text-anchor="middle" font-weight="600">Velocity-Time</text>
-                <line x1="300" y1="230" x2="490" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
-                <line x1="300" y1="230" x2="300" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
-                <text x="395" y="248" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">t</text>
-                <text x="288" y="140" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,288,140)">v</text>
-                <!-- Straight line (v = u + at) -->
-                <line x1="300" y1="210" x2="480" y2="70" stroke="#16A34A" stroke-width="2.5"/>
-                <text x="420" y="100" font-family="system-ui" font-size="10" fill="#16A34A">gradient = a</text>
-                <!-- Shaded area -->
-                <polygon points="300,230 300,210 480,70 480,230" fill="#16A34A" opacity="0.1"/>
-                <text x="390" y="200" font-family="system-ui" font-size="10" fill="#16A34A">area = displacement</text>
-            </svg>
-        </div>
+<h3>Displacement-Time (s-t) Graphs</h3>
+<ul>
+  <li><strong>Gradient = velocity</strong> (instantaneous velocity from the tangent at a point)</li>
+  <li>Horizontal line = stationary (v = 0)</li>
+  <li>Straight line with constant gradient = constant velocity</li>
+  <li>Curve with increasing gradient = increasing velocity (acceleration)</li>
+  <li>Negative gradient = moving in the negative direction</li>
+</ul>
 
-        <h2>2.3 SUVAT Equations</h2>
-        <div class="definition-box">
-            The SUVAT equations apply to objects moving with <strong>constant (uniform) acceleration</strong> in a straight line. The five variables are: <strong>s</strong> (displacement), <strong>u</strong> (initial velocity), <strong>v</strong> (final velocity), <strong>a</strong> (acceleration), <strong>t</strong> (time).
-        </div>
+<h3>Velocity-Time (v-t) Graphs</h3>
+<ul>
+  <li><strong>Gradient = acceleration</strong></li>
+  <li><strong>Area under the graph = displacement</strong> (counting areas below the time axis as negative)</li>
+  <li>Horizontal line = constant velocity (a = 0)</li>
+  <li>Straight line with positive gradient = constant positive acceleration</li>
+  <li>Negative velocity = moving in the opposite (negative) direction</li>
+</ul>
 
-        <table>
-            <tr><th>Equation</th><th>Missing Variable</th></tr>
-            <tr><td class="equation" style="text-align:center; border:none; background:none;">v = u + at</td><td>s</td></tr>
-            <tr><td class="equation" style="text-align:center; border:none; background:none;">s = ut + &frac12;at&sup2;</td><td>v</td></tr>
-            <tr><td class="equation" style="text-align:center; border:none; background:none;">s = vt - &frac12;at&sup2;</td><td>u</td></tr>
-            <tr><td class="equation" style="text-align:center; border:none; background:none;">v&sup2; = u&sup2; + 2as</td><td>t</td></tr>
-            <tr><td class="equation" style="text-align:center; border:none; background:none;">s = &frac12;(u + v)t</td><td>a</td></tr>
-        </table>
+<!-- SVG: Motion Graphs -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 520 260" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="260" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Motion Graphs (constant acceleration from rest)</text>
+  <!-- s-t graph -->
+  <text x="135" y="42" font-family="system-ui" font-size="12" fill="#1a73e8" text-anchor="middle" font-weight="600">Displacement-Time</text>
+  <line x1="50" y1="230" x2="240" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="50" y1="230" x2="50" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="145" y="248" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">t</text>
+  <text x="38" y="140" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,38,140)">s</text>
+  <path d="M 50,230 Q 100,210 140,160 Q 180,100 230,60" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="180" y="85" font-family="system-ui" font-size="10" fill="#1a73e8">gradient = v</text>
+  <line x1="110" y1="210" x2="180" y2="130" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="165" y="185" font-family="system-ui" font-size="9" fill="#DC2626">tangent at</text>
+  <text x="165" y="195" font-family="system-ui" font-size="9" fill="#DC2626">a point = v</text>
+  <!-- v-t graph -->
+  <text x="395" y="42" font-family="system-ui" font-size="12" fill="#16A34A" text-anchor="middle" font-weight="600">Velocity-Time</text>
+  <line x1="300" y1="230" x2="490" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="300" y1="230" x2="300" y2="55" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="395" y="248" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">t</text>
+  <text x="288" y="140" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle" transform="rotate(-90,288,140)">v</text>
+  <line x1="300" y1="210" x2="480" y2="70" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="420" y="100" font-family="system-ui" font-size="10" fill="#16A34A">gradient = a</text>
+  <polygon points="300,230 300,210 480,70 480,230" fill="#16A34A" opacity="0.1"/>
+  <text x="390" y="200" font-family="system-ui" font-size="10" fill="#16A34A">area = displacement</text>
+</svg>
+</div>
 
-        <h3>Derivations</h3>
-        <p><strong>v = u + at</strong> — from the definition of acceleration: a = (v - u)/t, rearranged.</p>
-        <p><strong>s = ut + &frac12;at&sup2;</strong> — area under a v-t graph: s = ut + &frac12;(v - u)t, then substitute v - u = at.</p>
-        <p><strong>v&sup2; = u&sup2; + 2as</strong> — eliminate t: from v = u + at, t = (v-u)/a; substitute into s = &frac12;(u+v)t to get s = (v&sup2; - u&sup2;)/2a, then rearrange.</p>
+<div class="exam-tip">
+The area under a v-t graph gives displacement, not distance. If velocity goes negative, the area below the t-axis represents displacement in the negative direction. For distance, take the absolute value of each area section and add them.
+</div>
 
-        <div class="exam-tip">
-            Always list the known values of s, u, v, a, t before choosing which equation to use. Pick the equation that contains the three known quantities and the one unknown you need.
-        </div>
+<!-- ============================================================ -->
+<!-- 2.3 SUVAT EQUATIONS -->
+<!-- ============================================================ -->
+<h2>2.3 SUVAT Equations (Constant Acceleration)</h2>
+<div class="definition-box">
+  The SUVAT equations apply to objects moving with <strong>constant (uniform) acceleration</strong> in a straight line. The five kinematic variables are:
+  <strong>s</strong> (displacement), <strong>u</strong> (initial velocity), <strong>v</strong> (final velocity), <strong>a</strong> (acceleration), <strong>t</strong> (time).
+</div>
 
-        <h2>2.4 Projectile Motion</h2>
-        <div class="definition-box">
-            <strong>Projectile motion</strong> is the motion of an object under the influence of gravity alone (ignoring air resistance). The horizontal and vertical components of motion are independent of each other.
-        </div>
+<table>
+  <tr><th>Equation</th><th>Variables Present</th><th>Missing Variable</th></tr>
+  <tr><td class="equation" style="border:none; background:none;">v = u + at</td><td>v, u, a, t</td><td>s</td></tr>
+  <tr><td class="equation" style="border:none; background:none;">s = ut + &frac12;at<sup>2</sup></td><td>s, u, a, t</td><td>v</td></tr>
+  <tr><td class="equation" style="border:none; background:none;">s = vt &minus; &frac12;at<sup>2</sup></td><td>s, v, a, t</td><td>u</td></tr>
+  <tr><td class="equation" style="border:none; background:none;">v<sup>2</sup> = u<sup>2</sup> + 2as</td><td>v, u, a, s</td><td>t</td></tr>
+  <tr><td class="equation" style="border:none; background:none;">s = &frac12;(u + v)t</td><td>s, u, v, t</td><td>a</td></tr>
+</table>
 
-        <h3>Key Principles</h3>
-        <ul>
-            <li><strong>Horizontally:</strong> No acceleration (ignoring air resistance), so horizontal velocity is constant: x = v<sub>x</sub> t</li>
-            <li><strong>Vertically:</strong> Acceleration = g = 9.81 m s<sup>-2</sup> downwards. Use SUVAT equations with a = g.</li>
-            <li>At the highest point, the vertical component of velocity = 0 (but horizontal velocity remains unchanged).</li>
-            <li>Time of flight is determined entirely by the vertical motion.</li>
-        </ul>
+<h3>How to Derive Them</h3>
+<ul>
+  <li><strong>v = u + at</strong> &mdash; from the definition of acceleration: a = (v &minus; u)/t, rearranged.</li>
+  <li><strong>s = ut + &frac12;at<sup>2</sup></strong> &mdash; area under the v-t graph: s = ut + &frac12;(v &minus; u)t, then substitute v &minus; u = at.</li>
+  <li><strong>v<sup>2</sup> = u<sup>2</sup> + 2as</strong> &mdash; eliminate t: from v = u + at, get t = (v &minus; u)/a; substitute into s = &frac12;(u + v)t.</li>
+</ul>
 
-        <!-- SVG: Projectile Motion Path -->
-        <div style="margin: 20px auto; text-align: center;">
-            <svg viewBox="0 0 500 280" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <marker id="pah" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
-                    <marker id="par" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
-                    <marker id="pag" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#16A34A"/></marker>
-                </defs>
-                <text x="250" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Projectile Motion with Velocity Vectors</text>
-                <!-- Axes -->
-                <line x1="40" y1="240" x2="470" y2="240" stroke="#64748b" stroke-width="1.5"/>
-                <!-- Parabolic path -->
-                <path d="M 60,240 Q 150,40 260,60 Q 370,80 450,240" fill="none" stroke="#1a73e8" stroke-width="2.5" stroke-dasharray="6,3"/>
-                <!-- Launch point -->
-                <circle cx="60" cy="240" r="4" fill="#1a73e8"/>
-                <!-- Velocity vectors at launch -->
-                <line x1="60" y1="240" x2="120" y2="180" stroke="#1a73e8" stroke-width="2" marker-end="url(#pah)"/>
-                <text x="105" y="195" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">v</text>
-                <line x1="60" y1="240" x2="120" y2="240" stroke="#DC2626" stroke-width="1.5" marker-end="url(#par)"/>
-                <text x="95" y="255" font-family="system-ui" font-size="10" fill="#DC2626">vx</text>
-                <line x1="60" y1="240" x2="60" y2="180" stroke="#16A34A" stroke-width="1.5" marker-end="url(#pag)"/>
-                <text x="42" y="210" font-family="system-ui" font-size="10" fill="#16A34A">vy</text>
-                <!-- At peak -->
-                <circle cx="260" cy="60" r="4" fill="#1a73e8"/>
-                <line x1="260" y1="60" x2="320" y2="60" stroke="#DC2626" stroke-width="2" marker-end="url(#par)"/>
-                <text x="295" y="52" font-family="system-ui" font-size="10" fill="#DC2626">vx (constant)</text>
-                <text x="260" y="48" font-family="system-ui" font-size="10" fill="#16A34A" text-anchor="middle">vy = 0</text>
-                <!-- At landing -->
-                <circle cx="450" cy="240" r="4" fill="#1a73e8"/>
-                <line x1="450" y1="240" x2="490" y2="280" stroke="#1a73e8" stroke-width="2"/>
-                <line x1="450" y1="240" x2="490" y2="240" stroke="#DC2626" stroke-width="1.5" marker-end="url(#par)"/>
-                <line x1="450" y1="240" x2="450" y2="280" stroke="#16A34A" stroke-width="1.5"/>
-                <!-- Labels -->
-                <text x="255" y="140" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Horizontal: constant velocity</text>
-                <text x="255" y="155" font-family="system-ui" font-size="11" fill="#64748b" text-anchor="middle">Vertical: accelerates at g downward</text>
-                <!-- Angle -->
-                <path d="M 90,240 A 30,30 0 0,0 78,222" fill="none" stroke="#D97706" stroke-width="1.5"/>
-                <text x="100" y="230" font-family="system-ui" font-size="11" fill="#D97706">θ</text>
-                <!-- max height label -->
-                <line x1="260" y1="60" x2="260" y2="240" stroke="#64748b" stroke-width="0.8" stroke-dasharray="3,3"/>
-                <text x="270" y="150" font-family="system-ui" font-size="10" fill="#64748b" transform="rotate(90,270,150)">max height</text>
-            </svg>
-        </div>
+<div class="worked-example">
+<strong>Worked Example:</strong> A car accelerates uniformly from 5.0 m s<sup>-1</sup> to 25 m s<sup>-1</sup> over a distance of 200 m. Calculate (a) the acceleration, (b) the time taken.<br><br>
+<strong>Solution:</strong><br>
+Known: u = 5.0, v = 25, s = 200. Find a and t.<br>
+(a) v<sup>2</sup> = u<sup>2</sup> + 2as<br>
+25<sup>2</sup> = 5.0<sup>2</sup> + 2a(200)<br>
+625 = 25 + 400a<br>
+a = 600/400 = <strong>1.5 m s<sup>-2</sup></strong><br>
+(b) v = u + at<br>
+25 = 5.0 + 1.5t<br>
+t = 20/1.5 = <strong>13.3 s</strong>
+</div>
 
-        <h3>Projectile Launched at Angle &theta;</h3>
-        <div class="equation">
-            Horizontal component: u<sub>x</sub> = u cos &theta;
-        </div>
-        <div class="equation">
-            Vertical component: u<sub>y</sub> = u sin &theta;
-        </div>
+<div class="exam-tip">
+Always list the known values of s, u, v, a, t before choosing which equation to use. Pick the equation that contains the three known quantities and the one unknown. Remember: these equations only work for constant acceleration. If acceleration varies, use calculus or graphical methods.
+</div>
 
-        <h2>2.5 Newton's Laws of Motion</h2>
-        <div class="definition-box">
-            <p><strong>Newton's First Law:</strong> An object remains at rest or moves with constant velocity unless acted upon by a resultant force.</p>
-            <p><strong>Newton's Second Law:</strong> The resultant force on an object is proportional to its rate of change of momentum. For constant mass: F = ma.</p>
-            <p><strong>Newton's Third Law:</strong> If object A exerts a force on object B, then object B exerts an equal and opposite force on object A. These forces act on different objects, are the same type, and act along the same line.</p>
-        </div>
+<!-- ============================================================ -->
+<!-- 2.4 PROJECTILE MOTION -->
+<!-- ============================================================ -->
+<h2>2.4 Projectile Motion</h2>
+<div class="definition-box">
+  <strong>Projectile motion</strong> is the motion of an object under the influence of gravity alone (ignoring air resistance). The key principle: horizontal and vertical components of motion are <strong>independent</strong> of each other.
+</div>
 
-        <h3>Free Body Diagrams</h3>
-        <p>A <strong>free body diagram</strong> shows all the forces acting on a single object. Each force is drawn as an arrow starting from the object, with length proportional to magnitude.</p>
-        <ul>
-            <li>Weight (mg) acts downwards from the centre of mass</li>
-            <li>Normal contact force acts perpendicular to the surface</li>
-            <li>Friction acts parallel to the surface, opposing motion</li>
-            <li>Tension acts along a rope or string, away from the object</li>
-            <li>Air resistance acts opposite to the direction of motion</li>
-        </ul>
+<h3>Key Principles</h3>
+<ul>
+  <li><strong>Horizontally:</strong> No acceleration (ignoring air resistance), so horizontal velocity is constant: x = v<sub>x</sub>t</li>
+  <li><strong>Vertically:</strong> Acceleration = g = 9.81 m s<sup>-2</sup> downwards. Use SUVAT with a = g (or &minus;g depending on sign convention).</li>
+  <li>At the highest point, v<sub>y</sub> = 0 (but v<sub>x</sub> remains unchanged throughout).</li>
+  <li>Time of flight is determined entirely by the vertical motion.</li>
+  <li>The trajectory is a parabola (when air resistance is negligible).</li>
+</ul>
 
-        <div class="exam-tip">
-            Newton's Third Law pairs must be: the same type of force, equal in magnitude, opposite in direction, and acting on two DIFFERENT objects. Weight and normal reaction are NOT a Newton's Third Law pair (they act on the same object and are different types of force).
-        </div>
+<!-- SVG: Projectile Motion -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 280" style="max-width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="pah" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#1a73e8"/></marker>
+    <marker id="par" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#DC2626"/></marker>
+    <marker id="pag" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#16A34A"/></marker>
+  </defs>
+  <text x="250" y="22" font-family="system-ui" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Projectile Motion with Velocity Vectors</text>
+  <line x1="40" y1="240" x2="470" y2="240" stroke="#64748b" stroke-width="1.5"/>
+  <path d="M 60,240 Q 150,40 260,60 Q 370,80 450,240" fill="none" stroke="#1a73e8" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <circle cx="60" cy="240" r="4" fill="#1a73e8"/>
+  <line x1="60" y1="240" x2="120" y2="180" stroke="#1a73e8" stroke-width="2" marker-end="url(#pah)"/>
+  <text x="105" y="195" font-family="system-ui" font-size="11" fill="#1a73e8" font-weight="600">v</text>
+  <line x1="60" y1="240" x2="120" y2="240" stroke="#DC2626" stroke-width="1.5" marker-end="url(#par)"/>
+  <text x="95" y="255" font-family="system-ui" font-size="10" fill="#DC2626">v<tspan font-size="7" dy="3">x</tspan></text>
+  <line x1="60" y1="240" x2="60" y2="180" stroke="#16A34A" stroke-width="1.5" marker-end="url(#pag)"/>
+  <text x="42" y="210" font-family="system-ui" font-size="10" fill="#16A34A">v<tspan font-size="7" dy="3">y</tspan></text>
+  <circle cx="260" cy="60" r="4" fill="#1a73e8"/>
+  <line x1="260" y1="60" x2="320" y2="60" stroke="#DC2626" stroke-width="2" marker-end="url(#par)"/>
+  <text x="295" y="52" font-family="system-ui" font-size="10" fill="#DC2626">v<tspan font-size="7" dy="3">x</tspan><tspan dy="-3"> (constant)</tspan></text>
+  <text x="260" y="48" font-family="system-ui" font-size="10" fill="#16A34A" text-anchor="middle">v<tspan font-size="7" dy="3">y</tspan><tspan dy="-3"> = 0 at peak</tspan></text>
+  <circle cx="450" cy="240" r="4" fill="#1a73e8"/>
+  <line x1="260" y1="60" x2="260" y2="240" stroke="#64748b" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <text x="270" y="150" font-family="system-ui" font-size="10" fill="#64748b" transform="rotate(90,270,150)">max height</text>
+  <path d="M 90,240 A 30,30 0 0,0 78,222" fill="none" stroke="#D97706" stroke-width="1.5"/>
+  <text x="100" y="230" font-family="system-ui" font-size="11" fill="#D97706">&theta;</text>
+  <text x="255" y="270" font-family="system-ui" font-size="10" fill="#64748b" text-anchor="middle">Horizontal: constant velocity | Vertical: accelerates at g downward</text>
+</svg>
+</div>
 
-        <h2>2.6 Momentum</h2>
-        <div class="definition-box">
-            <strong>Momentum (p)</strong> is the product of an object's mass and velocity. It is a vector quantity measured in kg m s<sup>-1</sup>.
-        </div>
-        <div class="equation">
-            p = mv
-        </div>
+<h3>Projectile Launched at Angle &theta; to the Horizontal</h3>
+<div class="equation">u<sub>x</sub> = u cos &theta; &nbsp;&nbsp;&nbsp; u<sub>y</sub> = u sin &theta;</div>
+<p>Then apply SUVAT separately to each component. The horizontal and vertical motions share the same time t.</p>
 
-        <h3>Conservation of Momentum</h3>
-        <p>In a <strong>closed system</strong> (no external forces), the total momentum before an event equals the total momentum after:</p>
-        <div class="equation">
-            m<sub>1</sub>u<sub>1</sub> + m<sub>2</sub>u<sub>2</sub> = m<sub>1</sub>v<sub>1</sub> + m<sub>2</sub>v<sub>2</sub>
-        </div>
+<div class="worked-example">
+<strong>Worked Example:</strong> A ball is kicked at 20 m s<sup>-1</sup> at 45 degrees to the horizontal from level ground. Find (a) the time of flight, (b) the maximum height, (c) the range. (g = 9.81 m s<sup>-2</sup>)<br><br>
+<strong>Solution:</strong><br>
+u<sub>x</sub> = 20 cos 45 = 14.14 m s<sup>-1</sup>; &nbsp; u<sub>y</sub> = 20 sin 45 = 14.14 m s<sup>-1</sup><br><br>
+(a) Time of flight: At landing, vertical displacement = 0. s<sub>y</sub> = u<sub>y</sub>t &minus; &frac12;gt<sup>2</sup> = 0<br>
+t(u<sub>y</sub> &minus; &frac12;gt) = 0, so t = 0 (launch) or t = 2u<sub>y</sub>/g = 2 &times; 14.14/9.81 = <strong>2.88 s</strong><br><br>
+(b) At max height, v<sub>y</sub> = 0. v<sub>y</sub><sup>2</sup> = u<sub>y</sub><sup>2</sup> &minus; 2gs<br>
+0 = 14.14<sup>2</sup> &minus; 2(9.81)s<sub>max</sub><br>
+s<sub>max</sub> = 200/19.62 = <strong>10.2 m</strong><br><br>
+(c) Range = u<sub>x</sub> &times; t = 14.14 &times; 2.88 = <strong>40.7 m</strong>
+</div>
 
-        <h3>Types of Collision</h3>
-        <table>
-            <tr><th>Type</th><th>Momentum Conserved?</th><th>Kinetic Energy Conserved?</th></tr>
-            <tr><td>Elastic</td><td>Yes</td><td>Yes</td></tr>
-            <tr><td>Inelastic</td><td>Yes</td><td>No (some KE lost)</td></tr>
-            <tr><td>Perfectly inelastic</td><td>Yes</td><td>No (objects stick together, maximum KE lost)</td></tr>
-            <tr><td>Explosion</td><td>Yes (total = 0 if initially at rest)</td><td>No (KE increases from internal energy)</td></tr>
-        </table>
+<div class="exam-tip">
+For a horizontal launch (e.g. ball rolling off a table), u<sub>x</sub> = u and u<sub>y</sub> = 0. The time to hit the ground depends only on the height: h = &frac12;gt<sup>2</sup>. The range is then R = u<sub>x</sub> &times; t. A common mistake is to use the launch speed as the vertical component.
+</div>
 
-        <h2>2.7 Impulse</h2>
-        <div class="definition-box">
-            <strong>Impulse</strong> is the change in momentum of an object. It equals the force multiplied by the time for which it acts.
-        </div>
-        <div class="equation">
-            Impulse = F&Delta;t = &Delta;p = mv - mu
-        </div>
-        <p>The area under a force-time graph equals the impulse (change in momentum).</p>
-        <p>Applications: crumple zones, airbags, and helmets increase the time of impact, reducing the average force on the person for the same change in momentum.</p>
+<!-- ============================================================ -->
+<!-- 2.5 NEWTON'S LAWS -->
+<!-- ============================================================ -->
+<h2>2.5 Newton's Laws of Motion</h2>
+<div class="definition-box">
+  <strong>Newton's First Law:</strong> An object remains at rest or moves with constant velocity unless acted upon by a resultant (net) force. This defines inertia &mdash; the tendency of an object to resist changes in its motion.<br><br>
+  <strong>Newton's Second Law:</strong> The resultant force on an object equals the rate of change of its momentum. For constant mass: <strong>F = ma</strong>. More generally: F = dp/dt.<br><br>
+  <strong>Newton's Third Law:</strong> If object A exerts a force on object B, then object B exerts an equal and opposite force on object A. These forces are always: the same type, equal in magnitude, opposite in direction, and act on <strong>different objects</strong>.
+</div>
 
-        <h2>2.8 Work, Energy, and Power</h2>
-        <h3>Work Done</h3>
-        <div class="definition-box">
-            <strong>Work done</strong> is the energy transferred when a force moves an object through a distance in the direction of the force.
-        </div>
-        <div class="equation">
-            W = Fd cos &theta;
-        </div>
-        <p>where &theta; is the angle between the force and the direction of motion. Work done is measured in joules (J). If &theta; = 90&deg;, no work is done (e.g., centripetal force).</p>
+<h3>Free Body Diagrams</h3>
+<p>A free body diagram shows all the forces acting on a single isolated object:</p>
+<ul>
+  <li><strong>Weight (W = mg)</strong> &mdash; acts vertically downwards from the centre of mass</li>
+  <li><strong>Normal contact force (N)</strong> &mdash; acts perpendicular to the surface of contact</li>
+  <li><strong>Friction (f)</strong> &mdash; acts parallel to the surface, opposing relative motion or tendency to slide</li>
+  <li><strong>Tension (T)</strong> &mdash; acts along a string or rope, pulling away from the object</li>
+  <li><strong>Air resistance / drag (D)</strong> &mdash; acts opposite to the direction of motion</li>
+  <li><strong>Thrust / driving force (F)</strong> &mdash; acts in the direction of motion</li>
+</ul>
 
-        <h3>Kinetic Energy</h3>
-        <div class="equation">
-            E<sub>k</sub> = &frac12;mv&sup2;
-        </div>
+<div class="exam-tip">
+Weight and normal reaction are NOT a Newton's Third Law pair. They act on the same object and are different types of force. A correct N3L pair for weight: "The Earth pulls the object down (gravity), and the object pulls the Earth up (gravity) with an equal force." For the normal force: "The surface pushes the object up, and the object pushes the surface down."
+</div>
 
-        <h3>Gravitational Potential Energy</h3>
-        <div class="equation">
-            E<sub>p</sub> = mgh
-        </div>
-        <p>where h is the vertical height change above a reference point.</p>
+<div class="worked-example">
+<strong>Worked Example:</strong> A 1200 kg car accelerates from rest at 2.5 m s<sup>-2</sup>. The total resistive force (friction + drag) is 400 N. Calculate the driving force produced by the engine.<br><br>
+<strong>Solution:</strong><br>
+Resultant force = ma = 1200 &times; 2.5 = 3000 N<br>
+Resultant = driving force &minus; resistive force<br>
+3000 = F<sub>drive</sub> &minus; 400<br>
+F<sub>drive</sub> = <strong>3400 N</strong>
+</div>
 
-        <h3>Conservation of Energy</h3>
-        <p>Energy cannot be created or destroyed, only transferred from one form to another. In the absence of dissipative forces:</p>
-        <div class="equation">
-            &frac12;mv&sup2; = mgh
-        </div>
+<!-- ============================================================ -->
+<!-- 2.6 MOMENTUM -->
+<!-- ============================================================ -->
+<h2>2.6 Momentum</h2>
+<div class="definition-box">
+  <strong>Momentum (p):</strong> The product of an object's mass and velocity. It is a vector quantity. Units: kg m s<sup>-1</sup> (or equivalently N s).
+</div>
+<div class="equation">p = mv</div>
 
-        <h3>Power</h3>
-        <div class="definition-box">
-            <strong>Power</strong> is the rate of doing work (or the rate of energy transfer). Measured in watts (W), where 1 W = 1 J s<sup>-1</sup>.
-        </div>
-        <div class="equation">
-            P = W / t = &Delta;E / t
-        </div>
-        <div class="equation">
-            P = Fv
-        </div>
-        <p>This second equation is useful for finding the driving force at a given speed, or the power needed to maintain a constant velocity against resistive forces.</p>
+<h3>Conservation of Momentum</h3>
+<p>In a <strong>closed system</strong> (no external resultant force), the total momentum before an interaction equals the total momentum after:</p>
+<div class="equation">m<sub>1</sub>u<sub>1</sub> + m<sub>2</sub>u<sub>2</sub> = m<sub>1</sub>v<sub>1</sub> + m<sub>2</sub>v<sub>2</sub></div>
 
-        <h3>Efficiency</h3>
-        <div class="equation">
-            Efficiency = (useful energy output / total energy input) &times; 100%
-        </div>
-        <div class="equation">
-            Efficiency = (useful power output / total power input) &times; 100%
-        </div>
+<h3>Types of Collision</h3>
+<table>
+  <tr><th>Type</th><th>Momentum Conserved?</th><th>KE Conserved?</th><th>Example</th></tr>
+  <tr><td><strong>Perfectly elastic</strong></td><td>Yes</td><td>Yes (no KE lost)</td><td>Ideal gas molecule collisions; billiard balls (approximately)</td></tr>
+  <tr><td><strong>Inelastic</strong></td><td>Yes</td><td>No (some KE converted to heat, sound, deformation)</td><td>Most real collisions; car crashes</td></tr>
+  <tr><td><strong>Perfectly inelastic</strong></td><td>Yes</td><td>No (maximum KE lost; objects stick together)</td><td>Bullet embedding in a block; coupling railway carriages</td></tr>
+  <tr><td><strong>Explosion/separation</strong></td><td>Yes (total = 0 if initially at rest)</td><td>No (KE increases; from internal/chemical energy)</td><td>Guns firing; rocket propulsion; spring-loaded trolleys</td></tr>
+</table>
 
-        <div class="exam-tip">
-            At constant velocity, driving force = resistive force (no net force, so no acceleration). Power at constant velocity is P = Fv where F is the driving force needed to overcome friction and drag.
-        </div>
+<div class="worked-example">
+<strong>Worked Example:</strong> A 2.0 kg trolley moving at 3.0 m s<sup>-1</sup> collides with a stationary 1.0 kg trolley. They stick together. Find (a) the velocity after the collision, (b) the KE lost.<br><br>
+<strong>Solution:</strong><br>
+(a) Conservation of momentum: m<sub>1</sub>u<sub>1</sub> + m<sub>2</sub>u<sub>2</sub> = (m<sub>1</sub> + m<sub>2</sub>)v<br>
+2.0 &times; 3.0 + 1.0 &times; 0 = (2.0 + 1.0)v<br>
+6.0 = 3.0v, so v = <strong>2.0 m s<sup>-1</sup></strong><br><br>
+(b) KE before = &frac12;(2.0)(3.0)<sup>2</sup> = 9.0 J<br>
+KE after = &frac12;(3.0)(2.0)<sup>2</sup> = 6.0 J<br>
+KE lost = 9.0 &minus; 6.0 = <strong>3.0 J</strong> (converted to heat and sound; this was an inelastic collision)
+</div>
 
-<!-- ============ CORE PRACTICAL 1 ============ -->
+<!-- ============================================================ -->
+<!-- 2.7 IMPULSE -->
+<!-- ============================================================ -->
+<h2>2.7 Impulse</h2>
+<div class="definition-box">
+  <strong>Impulse:</strong> The change in momentum of an object. It equals the force multiplied by the time for which it acts. Units: N s (or kg m s<sup>-1</sup>).
+</div>
+<div class="equation">Impulse = F&Delta;t = &Delta;p = mv &minus; mu</div>
+<p>The area under a <strong>force-time graph</strong> equals the impulse (change in momentum).</p>
+
+<p><strong>Safety applications:</strong> Crumple zones, airbags, helmets, and crash mats all work on the same principle &mdash; they increase the time of impact &Delta;t, which reduces the average force F for the same change in momentum (since F = &Delta;p/&Delta;t).</p>
+
+<div class="real-world"><strong>Real-World Application:</strong> In a car crash, the change in momentum is fixed (determined by the mass and speed of the car). Without a crumple zone, the car stops in ~0.05 s, giving a very large force. With a crumple zone, deceleration takes ~0.5 s &mdash; ten times longer &mdash; reducing the average force on the occupants by a factor of 10. This is why modern cars are designed to crumple progressively.</div>
+
+<!-- ============================================================ -->
+<!-- 2.8 WORK, ENERGY, POWER -->
+<!-- ============================================================ -->
+<h2>2.8 Work, Energy, and Power</h2>
+
+<h3>Work Done</h3>
+<div class="definition-box">
+  <strong>Work done (W):</strong> The energy transferred when a force moves an object through a distance in the direction of the force. Units: J (joules).
+</div>
+<div class="equation">W = Fd cos &theta;</div>
+<p>where &theta; is the angle between the force and the direction of displacement. If &theta; = 0, W = Fd. If &theta; = 90, W = 0 (no work done &mdash; e.g. centripetal force does no work).</p>
+
+<h3>Kinetic Energy</h3>
+<div class="equation">E<sub>k</sub> = &frac12;mv<sup>2</sup></div>
+<p>The work-energy theorem: the net work done on an object equals its change in kinetic energy: W<sub>net</sub> = &Delta;E<sub>k</sub>.</p>
+
+<h3>Gravitational Potential Energy</h3>
+<div class="equation">E<sub>p</sub> = mgh</div>
+<p>where h is the vertical height change above a chosen reference point. This is the "near-surface" approximation valid when g is approximately constant.</p>
+
+<h3>Conservation of Energy</h3>
+<p>Energy cannot be created or destroyed, only transferred from one form to another. In the absence of dissipative forces (friction, air resistance):</p>
+<div class="equation">&frac12;mv<sup>2</sup> + mgh = constant</div>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A 0.50 kg ball is dropped from a height of 8.0 m. Assuming no air resistance, find (a) its speed just before hitting the ground, (b) the time it takes to fall.<br><br>
+<strong>Solution:</strong><br>
+(a) Using conservation of energy: mgh = &frac12;mv<sup>2</sup><br>
+v = &radic;(2gh) = &radic;(2 &times; 9.81 &times; 8.0) = &radic;(156.96) = <strong>12.5 m s<sup>-1</sup></strong><br><br>
+(b) Using s = &frac12;gt<sup>2</sup>: 8.0 = &frac12;(9.81)t<sup>2</sup><br>
+t = &radic;(16.0/9.81) = &radic;(1.631) = <strong>1.28 s</strong>
+</div>
+
+<h3>Power</h3>
+<div class="definition-box">
+  <strong>Power (P):</strong> The rate of doing work (or the rate of energy transfer). Units: W (watts). 1 W = 1 J s<sup>-1</sup>.
+</div>
+<div class="equation">P = W/t = &Delta;E/&Delta;t</div>
+<div class="equation">P = Fv</div>
+<p>The second equation (P = Fv) is very useful for finding the driving force at a given speed, or the power needed to maintain a constant velocity against resistive forces.</p>
+
+<h3>Efficiency</h3>
+<div class="equation">Efficiency = (useful energy output / total energy input) &times; 100%</div>
+<div class="equation">Efficiency = (useful power output / total power input) &times; 100%</div>
+<p>Efficiency is always less than 100% in practice because some energy is always dissipated (usually as thermal energy due to friction).</p>
+
+<div class="worked-example">
+<strong>Worked Example:</strong> A car of mass 1500 kg travels at a constant velocity of 30 m s<sup>-1</sup> on a level road. The total resistive force is 800 N. Calculate (a) the driving force, (b) the power output of the engine, (c) the rate of fuel consumption if the fuel provides 40 MJ per litre and the engine is 25% efficient.<br><br>
+<strong>Solution:</strong><br>
+(a) At constant velocity, a = 0, so driving force = resistive force = <strong>800 N</strong><br>
+(b) P = Fv = 800 &times; 30 = <strong>24000 W</strong> = 24 kW<br>
+(c) Total power needed = 24000 / 0.25 = 96000 W (since only 25% is useful)<br>
+Fuel energy per second = 96000 J s<sup>-1</sup><br>
+Volume per second = 96000 / (40 &times; 10<sup>6</sup>) = 2.4 &times; 10<sup>-3</sup> L s<sup>-1</sup><br>
+= <strong>8.64 L per hour</strong> (or about 0.144 L per minute)
+</div>
+
+<div class="exam-tip">
+At constant velocity, the resultant force is zero, so driving force = resistive force. Power at constant velocity is P = Fv where F is the driving force. If the car accelerates, the driving force must exceed the resistive force, and P = Fv gives the instantaneous power at speed v.
+</div>
+
+<h3>Summary of Key Equations</h3>
+<table>
+  <tr><th>Quantity</th><th>Equation</th><th>Units</th></tr>
+  <tr><td>SUVAT</td><td>v = u + at; s = ut + &frac12;at<sup>2</sup>; v<sup>2</sup> = u<sup>2</sup> + 2as; s = &frac12;(u+v)t</td><td>m, m/s, m/s<sup>2</sup>, s</td></tr>
+  <tr><td>Newton's Second Law</td><td>F = ma = &Delta;p/&Delta;t</td><td>N</td></tr>
+  <tr><td>Momentum</td><td>p = mv</td><td>kg m s<sup>-1</sup></td></tr>
+  <tr><td>Impulse</td><td>F&Delta;t = &Delta;p</td><td>N s</td></tr>
+  <tr><td>Work done</td><td>W = Fd cos&theta;</td><td>J</td></tr>
+  <tr><td>Kinetic energy</td><td>E<sub>k</sub> = &frac12;mv<sup>2</sup></td><td>J</td></tr>
+  <tr><td>GPE (near surface)</td><td>E<sub>p</sub> = mgh</td><td>J</td></tr>
+  <tr><td>Power</td><td>P = W/t = Fv</td><td>W</td></tr>
+  <tr><td>Efficiency</td><td>&eta; = useful output / total input</td><td>% or ratio</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<!-- CORE PRACTICAL 1 -->
+<!-- ============================================================ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
-<h2 style="color:#1a73e8; margin-top:0;">&#9879;&#65039; Core Practical 1: Determine the acceleration of a freely falling object</h2>
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Core Practical 1: Determine the acceleration of a freely falling object</h2>
 
 <svg viewBox="0 0 500 520" style="max-width:600px; margin:16px auto; display:block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
-  <!-- Clamp stand -->
   <rect x="60" y="30" width="12" height="420" rx="2" fill="#555" stroke="#1a1a2e" stroke-width="1.5"/>
   <rect x="30" y="440" width="80" height="12" rx="2" fill="#555" stroke="#1a1a2e" stroke-width="1.5"/>
-  <!-- Clamp arm -->
   <rect x="72" y="50" width="80" height="10" rx="2" fill="#777" stroke="#1a1a2e" stroke-width="1"/>
-  <!-- Electromagnet -->
   <rect x="140" y="40" width="50" height="30" rx="4" fill="#4A90D9" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="165" y="60" text-anchor="middle" font-family="system-ui" font-size="10" fill="white" font-weight="bold">EM</text>
   <text x="230" y="58" font-family="system-ui" font-size="12" fill="#1a73e8" font-weight="bold">Electromagnet</text>
-  <!-- Ball bearing -->
   <circle cx="165" cy="85" r="10" fill="#888" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="200" y="90" font-family="system-ui" font-size="11" fill="#1a73e8">Steel ball bearing</text>
-  <!-- Dashed fall path -->
+  <text x="200" y="90" font-family="system-ui" font-size="11" fill="#1a73e8">Steel ball</text>
   <line x1="165" y1="100" x2="165" y2="370" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="6,4"/>
-  <!-- Height arrow -->
   <line x1="110" y1="85" x2="110" y2="380" stroke="#D97706" stroke-width="2"/>
   <polygon points="110,85 106,100 114,100" fill="#D97706"/>
   <polygon points="110,380 106,365 114,365" fill="#D97706"/>
   <text x="90" y="235" font-family="system-ui" font-size="13" fill="#D97706" font-weight="bold" text-anchor="middle" transform="rotate(-90,90,235)">Height h</text>
-  <!-- Light gate 1 -->
   <rect x="140" y="130" width="50" height="8" rx="2" fill="#16A34A" stroke="#1a1a2e" stroke-width="1"/>
   <text x="230" y="138" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="bold">Light gate 1</text>
-  <!-- Light gate 2 -->
   <rect x="140" y="370" width="50" height="8" rx="2" fill="#16A34A" stroke="#1a1a2e" stroke-width="1"/>
   <text x="230" y="378" font-family="system-ui" font-size="11" fill="#16A34A" font-weight="bold">Light gate 2</text>
-  <!-- Trapdoor / pad -->
   <rect x="130" y="400" width="70" height="15" rx="3" fill="#B45309" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="230" y="412" font-family="system-ui" font-size="11" fill="#1a73e8">Trapdoor / landing pad</text>
-  <!-- Timer / datalogger -->
+  <text x="230" y="412" font-family="system-ui" font-size="11" fill="#1a73e8">Landing pad</text>
   <rect x="310" y="140" width="100" height="60" rx="6" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1.5"/>
   <text x="360" y="168" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">Electronic</text>
   <text x="360" y="183" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="bold">Timer</text>
-  <!-- Wires from light gates to timer -->
   <line x1="190" y1="134" x2="310" y2="160" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="190" y1="374" x2="310" y2="185" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- Ruler alongside -->
   <rect x="125" y="70" width="8" height="340" fill="#FBBF24" stroke="#1a1a2e" stroke-width="1" opacity="0.7"/>
-  <text x="118" y="60" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="end">Metre ruler</text>
-  <!-- Downward arrow showing g -->
+  <text x="118" y="60" font-family="system-ui" font-size="10" fill="#D97706" text-anchor="end">Ruler</text>
   <line x1="165" y1="210" x2="165" y2="280" stroke="#DC2626" stroke-width="2.5"/>
   <polygon points="165,280 159,265 171,265" fill="#DC2626"/>
   <text x="175" y="250" font-family="system-ui" font-size="13" fill="#DC2626" font-weight="bold">g</text>
-  <!-- Switch -->
-  <rect x="310" y="45" width="60" height="25" rx="4" fill="#f0f0f0" stroke="#1a1a2e" stroke-width="1"/>
-  <text x="340" y="62" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Switch</text>
-  <line x1="190" y1="55" x2="310" y2="57" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- Title -->
   <text x="250" y="500" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="bold">CP1: Measuring g by free fall</text>
 </svg>
 
+<h3>Aim</h3>
+<p>To determine the acceleration due to gravity (g) by timing the free fall of a ball bearing through a known height.</p>
+
 <h3>Apparatus</h3>
-<ul>
-  <li>Electromagnet and steel ball bearing</li>
-  <li>Two light gates connected to an electronic timer (or datalogger)</li>
-  <li>Metre ruler (resolution &plusmn;1 mm)</li>
-  <li>Clamp stand, boss and clamp</li>
-  <li>Trapdoor switch (alternative method) or landing pad</li>
-  <li>Set square (to measure vertical height)</li>
-</ul>
+<p>Electromagnet and steel ball bearing, two light gates (or electromagnet + trapdoor timer), electronic timer or datalogger, metre ruler, clamp stand, boss and clamp, set square, landing pad.</p>
 
 <h3>Method</h3>
 <ol>
-  <li>Set up the electromagnet at the top of a clamp stand with the ball bearing held by it.</li>
-  <li>Position two light gates at a known vertical separation <em>h</em>, measured with a metre ruler from the centre of each gate.</li>
-  <li>Connect both light gates to the electronic timer set to measure the time interval between the ball passing each gate.</li>
-  <li>Switch off the electromagnet to release the ball. Record the fall time <em>t</em>.</li>
-  <li>Repeat the drop 3 times for each height and calculate the mean time.</li>
-  <li>Vary the height <em>h</em> (at least 5 different values, e.g. 0.20 m to 1.00 m in steps of ~0.15 m).</li>
-  <li>Record all values of <em>h</em> and the corresponding mean time <em>t</em>.</li>
+  <li>Clamp the electromagnet at the top. Hold the ball bearing with it.</li>
+  <li>Position two light gates at a known vertical separation h, measured with a metre ruler and set square.</li>
+  <li>Connect both light gates to the timer (measures the time interval between the ball passing each gate).</li>
+  <li>Switch off the electromagnet to release the ball. Record the fall time t.</li>
+  <li>Repeat 3 times for each height and calculate the mean time.</li>
+  <li>Vary the height h (at least 5&ndash;6 different values from ~0.20 m to ~1.00 m).</li>
 </ol>
+
+<h3>Analysis</h3>
+<p>Using s = ut + &frac12;gt<sup>2</sup> with u = 0: h = &frac12;gt<sup>2</sup>, so 2h = gt<sup>2</sup>.</p>
+<p>Plot <strong>2h (y-axis) vs t<sup>2</sup> (x-axis)</strong>. Gradient = g. Expected: ~9.81 m s<sup>-2</sup>.</p>
 
 <h3>Safety</h3>
 <ul>
-  <li>Place a cushion or sand tray beneath the landing area to catch the ball and prevent damage or bouncing.</li>
-  <li>Use a clamp stand on a stable base to prevent toppling &mdash; consider a G-clamp to secure it to the bench.</li>
-  <li>Keep feet clear of the falling ball.</li>
-  <li>Do not look directly into the light gate beams (infrared LEDs).</li>
+  <li>Cushion beneath landing area. Stable clamp stand (G-clamp). Feet clear of falling ball.</li>
 </ul>
-
-<h3>Analysis</h3>
-<p>Using <strong>s = ut + &frac12;at&sup2;</strong> with u = 0 (ball released from rest):</p>
-<div class="equation">
-  h = &frac12;g t&sup2; &nbsp;&nbsp;&rArr;&nbsp;&nbsp; 2h = g t&sup2;
-</div>
-<p>Plot <strong>2h</strong> (y-axis) against <strong>t&sup2;</strong> (x-axis). The graph should be a straight line through the origin. The <strong>gradient = g</strong> (acceleration due to gravity, expected ~9.81 m s<sup>-2</sup>).</p>
-<p>Alternatively, plot <strong>h</strong> vs <strong>t&sup2;</strong> and the gradient = g/2.</p>
 
 <h3>Sources of Error &amp; Improvements</h3>
 <table>
 <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-<tr><td>Delay in ball release when electromagnet switches off (residual magnetism)</td><td>Systematic</td><td>Use a ball-release mechanism with no residual magnetism, or use the two-light-gate method so release timing does not matter</td></tr>
-<tr><td>Air resistance on the ball</td><td>Systematic (makes g appear smaller)</td><td>Use a small, dense steel ball to minimise drag; keep distances relatively short</td></tr>
-<tr><td>Measuring height h to centre of light gates</td><td>Random</td><td>Use a set square and ruler; repeat measurements and take the mean</td></tr>
-<tr><td>Parallax error when reading the ruler</td><td>Random</td><td>Read the ruler at eye level; use a set square to align</td></tr>
-<tr><td>Ball not falling vertically through both gates</td><td>Systematic</td><td>Use a plumb line to ensure the gates are vertically aligned</td></tr>
+<tr><td>Residual magnetism delays ball release</td><td>Systematic (g too small)</td><td>Use two light gates (eliminates release timing); or use non-magnetic release</td></tr>
+<tr><td>Air resistance on ball</td><td>Systematic (g too small)</td><td>Use a small, dense, smooth steel ball</td></tr>
+<tr><td>Height measurement to wrong point</td><td>Random</td><td>Use a set square; measure from centre of each light gate</td></tr>
+<tr><td>Ball not falling vertically through both gates</td><td>Systematic</td><td>Use a plumb line to align the gates vertically</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> If the graph of 2h against t&sup2; does not pass through the origin, this suggests a systematic error in the timing (e.g. a delay in releasing the ball). The gradient still gives a valid value for g. Always quote your answer to an appropriate number of significant figures and compare with the accepted value of 9.81 m s<sup>-2</sup>.</div>
+<div class="exam-tip">If the 2h vs t<sup>2</sup> graph has a non-zero y-intercept, this indicates a systematic timing error (e.g. release delay). The gradient is still valid for determining g. Compare your result with 9.81 m s<sup>-2</sup> and calculate the percentage difference.</div>
 </div>
 
-    </div>
+</div>
 </body>
 </html>
