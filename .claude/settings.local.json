@@ -66,7 +66,9 @@
       "Bash(node -e \"const f=require\\('fs'\\); const c=f.readFileSync\\('questions/maths-aqa/maths-aqa-practice.js','utf8'\\); const m=c.match\\(/\\\\{ q:/g\\); console.log\\('Practice total:', m?m.length:0\\);\")",
       "Bash(node -e \"const f=require\\('fs'\\); const c=f.readFileSync\\('questions/maths-aqa/maths-aqa.js','utf8'\\); const m=c.match\\(/\\\\{ q:/g\\); console.log\\('MCQ total:', m?m.length:0\\);\")",
       "Bash(node -e \"const f=require\\('fs'\\); const c=f.readFileSync\\('questions/maths-aqa/maths-aqa-written.js','utf8'\\); const m=c.match\\(/\\\\{ q:/g\\); console.log\\('Written total:', m?m.length:0\\);\")",
-      "Bash(wc -l questions/maths-aqa/*.js)"
+      "Bash(wc -l questions/maths-aqa/*.js)",
+      "Bash(wc -l /c/Users/tcvas/OneDrive/Desktop/Learning/questions/maths-aqa/*.js)",
+      "Bash(du -h /c/Users/tcvas/OneDrive/Desktop/Learning/questions/maths-aqa/*.js)"
     ]
   },
   "hooks": {

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mechanics</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Mechanics</h1>
+
+<!-- ================= KINEMATICS ================= -->
+<h2>Kinematics (Motion in a Straight Line)</h2>
+
+<div class="definition">
+  <strong>Key quantities:</strong>
+  <ul>
+    <li>\(s\) = displacement (m)</li>
+    <li>\(u\) = initial velocity (m/s)</li>
+    <li>\(v\) = final velocity (m/s)</li>
+    <li>\(a\) = acceleration (m/s\(^2\))</li>
+    <li>\(t\) = time (s)</li>
+  </ul>
+</div>
+
+<h3>SUVAT Equations (Constant Acceleration)</h3>
+<table>
+  <tr><th>Equation</th><th>Missing Variable</th></tr>
+  <tr><td>\(v = u + at\)</td><td>\(s\)</td></tr>
+  <tr><td>\(s = ut + \frac{1}{2}at^2\)</td><td>\(v\)</td></tr>
+  <tr><td>\(s = vt - \frac{1}{2}at^2\)</td><td>\(u\)</td></tr>
+  <tr><td>\(v^2 = u^2 + 2as\)</td><td>\(t\)</td></tr>
+  <tr><td>\(s = \frac{1}{2}(u + v)t\)</td><td>\(a\)</td></tr>
+</table>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>A particle starts from rest and accelerates at \(10\) m/s\(^2\) for \(4\) s. Find the distance travelled.</p>
+  <p>\(u = 0\), \(a = 10\), \(t = 4\), find \(s\):</p>
+  <div class="equation">$$s = ut + \frac{1}{2}at^2 = 0 + \frac{1}{2}(10)(16) = 80 \text{ m}$$</div>
+</div>
+
+<h3>Velocity-Time Graphs</h3>
+<ul>
+  <li><strong>Gradient</strong> = acceleration</li>
+  <li><strong>Area under the graph</strong> = displacement</li>
+</ul>
+
+<!-- SVG: Velocity-Time Graph -->
+<svg viewBox="0 0 460 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;display:block;margin:20px auto;">
+  <defs>
+    <marker id="karr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#1a1a2e"/></marker>
+  </defs>
+  <line x1="60" y1="220" x2="430" y2="220" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#karr)"/>
+  <line x1="60" y1="220" x2="60" y2="20" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#karr)"/>
+  <text x="430" y="240" font-size="13" fill="#1a1a2e">t</text>
+  <text x="35" y="25" font-size="13" fill="#1a1a2e">v</text>
+  <line x1="60" y1="180" x2="200" y2="80" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="200" y1="80" x2="340" y2="80" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="340" y1="80" x2="400" y2="220" stroke="#2563eb" stroke-width="2.5"/>
+  <path d="M60,220 L60,180 L200,80 L200,220 Z" fill="#2563eb" fill-opacity="0.08"/>
+  <path d="M200,220 L200,80 L340,80 L340,220 Z" fill="#16a34a" fill-opacity="0.08"/>
+  <path d="M340,220 L340,80 L400,220 Z" fill="#dc2626" fill-opacity="0.08"/>
+  <text x="105" y="195" font-size="11" fill="#2563eb">accelerating</text>
+  <text x="240" y="160" font-size="11" fill="#16a34a">constant v</text>
+  <text x="348" y="170" font-size="11" fill="#dc2626">decel.</text>
+  <text x="120" y="115" font-size="11" fill="#64748b">gradient = a</text>
+  <text x="240" y="240" font-size="11" fill="#64748b">area = displacement</text>
+</svg>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> SUVAT only works for <strong>constant acceleration</strong>. If acceleration varies, use calculus: \(v = \frac{ds}{dt}\), \(a = \frac{dv}{dt}\), \(s = \int v\, dt\).
+</div>
+
+<!-- ================= VARIABLE ACCELERATION ================= -->
+<h2>Variable Acceleration</h2>
+
+<div class="definition">
+  When acceleration is not constant, use calculus:
+  $$v = \frac{ds}{dt} \qquad a = \frac{dv}{dt} = \frac{d^2s}{dt^2}$$
+  $$s = \int v\, dt \qquad v = \int a\, dt$$
+</div>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>A particle has velocity \(\mathbf{v} = (3t^2)\mathbf{i} + (2t)\mathbf{j}\). Find the acceleration at \(t = 2\).</p>
+  <div class="equation">$$\mathbf{a} = \frac{d\mathbf{v}}{dt} = (6t)\mathbf{i} + 2\mathbf{j}$$</div>
+  <div class="equation">$$\text{At } t = 2: \quad \mathbf{a} = 12\mathbf{i} + 2\mathbf{j}$$</div>
+</div>
+
+<!-- ================= FORCES & NEWTON'S LAWS ================= -->
+<h2>Forces and Newton's Laws</h2>
+
+<h3>Newton's Three Laws</h3>
+<ol>
+  <li>An object remains at rest or in uniform motion unless acted on by a resultant force</li>
+  <li>\(\mathbf{F} = m\mathbf{a}\) — the resultant force equals mass times acceleration</li>
+  <li>Every action has an equal and opposite reaction</li>
+</ol>
+
+<h3>Common Forces</h3>
+<table>
+  <tr><th>Force</th><th>Symbol</th><th>Direction</th></tr>
+  <tr><td>Weight</td><td>\(W = mg\)</td><td>Vertically downward</td></tr>
+  <tr><td>Normal reaction</td><td>\(R\) or \(N\)</td><td>Perpendicular to surface</td></tr>
+  <tr><td>Friction</td><td>\(F = \mu R\)</td><td>Opposite to motion/tendency</td></tr>
+  <tr><td>Tension</td><td>\(T\)</td><td>Along the string, away from object</td></tr>
+</table>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>A 5 kg block on a rough surface (\(\mu = 0.4\)) is pulled with 30 N horizontally. Find the acceleration.</p>
+  <p>Normal reaction: \(R = mg = 5 \times 9.8 = 49\) N</p>
+  <p>Friction: \(F = \mu R = 0.4 \times 49 = 19.6\) N</p>
+  <div class="equation">$$a = \frac{30 - 19.6}{5} = \frac{10.4}{5} = 2.08 \text{ m/s}^2$$</div>
+</div>
+
+<!-- ================= CONNECTED PARTICLES ================= -->
+<h2>Connected Particles</h2>
+
+<h3>Pulleys</h3>
+<p>For two particles of mass \(m_1\) and \(m_2\) connected by a string over a smooth pulley (with \(m_1 > m_2\)):</p>
+<div class="equation">$$a = \frac{(m_1 - m_2)g}{m_1 + m_2} \qquad T = \frac{2m_1 m_2 g}{m_1 + m_2}$$</div>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>Masses of 3 kg and 2 kg are connected over a smooth pulley. Find the acceleration (\(g = 10\)).</p>
+  <div class="equation">$$a = \frac{(3-2) \times 10}{3+2} = \frac{10}{5} = 2 \text{ m/s}^2$$</div>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For connected particle problems, draw a <strong>separate force diagram</strong> for each particle and apply \(F = ma\) to each. The string tension is the same throughout (for a light, inextensible string).
+</div>
+
+<!-- ================= INCLINED PLANES ================= -->
+<h2>Motion on Inclined Planes</h2>
+
+<!-- SVG: Inclined Plane -->
+<svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;display:block;margin:20px auto;">
+  <line x1="40" y1="240" x2="420" y2="240" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="40" y1="240" x2="340" y2="80" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="40" y1="240" x2="340" y2="240" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="175" y="120" width="50" height="40" fill="#2563eb" fill-opacity="0.2" stroke="#2563eb" stroke-width="1.5" transform="rotate(-28, 200, 140)"/>
+  <line x1="200" y1="140" x2="200" y2="210" stroke="#dc2626" stroke-width="2" marker-end="url(#karr)"/>
+  <text x="205" y="200" font-size="12" fill="#dc2626" font-weight="600">mg</text>
+  <line x1="200" y1="140" x2="172" y2="82" stroke="#16a34a" stroke-width="2" marker-end="url(#karr)"/>
+  <text x="155" y="80" font-size="12" fill="#16a34a" font-weight="600">R</text>
+  <line x1="200" y1="140" x2="147" y2="165" stroke="#f59e0b" stroke-width="2" marker-end="url(#karr)"/>
+  <text x="130" y="175" font-size="12" fill="#f59e0b" font-weight="600">F</text>
+  <path d="M90,240 A50,50 0 0,0 80,215" fill="none" stroke="#64748b" stroke-width="1.2"/>
+  <text x="95" y="228" font-size="13" fill="#64748b">\(\alpha\)</text>
+</svg>
+
+<p>Resolve forces parallel and perpendicular to the slope:</p>
+<ul>
+  <li><strong>Along the plane:</strong> \(mg\sin\alpha\) (down the slope)</li>
+  <li><strong>Perpendicular:</strong> Normal reaction \(R = mg\cos\alpha\)</li>
+  <li><strong>Friction:</strong> \(F = \mu R = \mu mg\cos\alpha\)</li>
+</ul>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>A 3 kg object slides down a smooth incline at \(30°\). Find its acceleration.</p>
+  <div class="equation">$$a = g\sin 30° = 9.8 \times 0.5 = 4.9 \text{ m/s}^2$$</div>
+</div>
+
+<!-- ================= PROJECTILES ================= -->
+<h2>Projectiles</h2>
+
+<div class="definition">
+  A projectile launched at speed \(u\) at angle \(\theta\) to the horizontal:
+  <ul>
+    <li><strong>Horizontal:</strong> constant velocity \(u\cos\theta\) (no horizontal acceleration)</li>
+    <li><strong>Vertical:</strong> initial velocity \(u\sin\theta\), acceleration \(-g\)</li>
+  </ul>
+</div>
+
+<h3>Key Formulae</h3>
+<div class="equation">$$\text{Time of flight} = \frac{2u\sin\theta}{g}$$</div>
+<div class="equation">$$\text{Maximum height} = \frac{u^2\sin^2\theta}{2g}$$</div>
+<div class="equation">$$\text{Range} = \frac{u^2\sin 2\theta}{g}$$</div>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>A ball is projected at \(30°\) with speed \(20\) m/s. Find the horizontal and vertical components of velocity.</p>
+  <div class="equation">$$v_x = 20\cos 30° = 10\sqrt{3} \approx 17.3 \text{ m/s}$$</div>
+  <div class="equation">$$v_y = 20\sin 30° = 10 \text{ m/s}$$</div>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Treat horizontal and vertical motion separately. The horizontal velocity is constant (no air resistance). Use SUVAT vertically with \(a = -g\) (taking upward as positive).
+</div>
+
+<!-- ================= MOMENTS ================= -->
+<h2>Moments</h2>
+
+<div class="definition">
+  <strong>Moment of a force</strong> about a point = force \(\times\) perpendicular distance from the point to the line of action.
+  $$M = F \times d$$
+</div>
+
+<p>For equilibrium:</p>
+<ul>
+  <li>Resultant force = 0</li>
+  <li>Sum of clockwise moments = sum of anticlockwise moments (about any point)</li>
+</ul>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>A uniform beam of length 6 m and weight 120 N rests on supports at its ends A and B. A 60 N weight is placed 2 m from A. Find the reaction at A.</p>
+  <p>Taking moments about B:</p>
+  <div class="equation">$$R_A \times 6 = 120 \times 3 + 60 \times 4 = 360 + 240 = 600$$</div>
+  <div class="equation">$$R_A = 100 \text{ N}$$</div>
+  <p>Check: \(R_B = 120 + 60 - 100 = 80\) N.</p>
+</div>
+
+<!-- ================= MOMENTUM & IMPULSE ================= -->
+<h2>Momentum and Impulse</h2>
+
+<div class="definition">
+  <strong>Momentum:</strong> \(p = mv\) (vector quantity, units: kg m/s or N s)
+  <br><strong>Impulse:</strong> \(I = Ft = mv - mu\) (change in momentum)
+  <br><strong>Conservation of momentum:</strong> In a closed system, total momentum before = total momentum after.
+</div>
+
+<div class="equation">$$m_1 u_1 + m_2 u_2 = m_1 v_1 + m_2 v_2$$</div>
+
+<h3>Coefficient of Restitution</h3>
+<div class="equation">$$e = \frac{\text{speed of separation}}{\text{speed of approach}} \qquad 0 \leq e \leq 1$$</div>
+<p>\(e = 1\): perfectly elastic. \(e = 0\): perfectly inelastic (objects coalesce).</p>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>A 0.5 kg ball moving at 4 m/s strikes a wall and rebounds at 3 m/s. Find the impulse.</p>
+  <p>Taking rebound direction as positive:</p>
+  <div class="equation">$$I = mv - mu = 0.5(3) - 0.5(-4) = 1.5 + 2 = 3.5 \text{ N s}$$</div>
+</div>
+
+<!-- ================= WORK, ENERGY & POWER ================= -->
+<h2>Work, Energy, and Power</h2>
+
+<div class="definition">
+  <strong>Work done:</strong> \(W = Fs\cos\theta\) (force \(\times\) displacement \(\times\) cosine of angle between them)
+  <br><strong>Kinetic energy:</strong> \(KE = \frac{1}{2}mv^2\)
+  <br><strong>Gravitational PE:</strong> \(GPE = mgh\)
+  <br><strong>Power:</strong> \(P = \frac{W}{t} = Fv\)
+</div>
+
+<h3>Work-Energy Principle</h3>
+<p>Net work done on a body = change in kinetic energy:</p>
+<div class="equation">$$W_{\text{net}} = \frac{1}{2}mv^2 - \frac{1}{2}mu^2$$</div>
+
+<h3>Conservation of Energy</h3>
+<p>Total energy is conserved (KE + PE + work done against friction):</p>
+<div class="equation">$$\frac{1}{2}mu^2 + mgh_1 = \frac{1}{2}mv^2 + mgh_2 + F_{\text{friction}} \times d$$</div>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>A 2 kg block slides 5 m down a rough incline (\(30°\), \(\mu = 0.3\)). Find its speed at the bottom (starting from rest).</p>
+  <p>Height lost: \(h = 5\sin 30° = 2.5\) m</p>
+  <p>Friction: \(F = \mu mg\cos 30° = 0.3 \times 2 \times 9.8 \times \cos 30° \approx 5.09\) N</p>
+  <div class="equation">$$\frac{1}{2}(2)v^2 = 2(9.8)(2.5) - 5.09(5)$$</div>
+  <div class="equation">$$v^2 = 49 - 25.45 = 23.55 \implies v \approx 4.85 \text{ m/s}$$</div>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In energy problems, always draw a clear diagram and define your reference level for GPE. The work-energy approach often avoids the need to find acceleration — useful when the force varies or the path is complex.
+</div>
+
+<!-- ================= RESOLVING FORCES ================= -->
+<h2>Resolving Forces</h2>
+
+<p>Any force can be resolved into two perpendicular components:</p>
+<div class="equation">$$F_x = F\cos\theta \qquad F_y = F\sin\theta$$</div>
+
+<p>The resultant of two perpendicular forces \(F_x\) and \(F_y\):</p>
+<div class="equation">$$R = \sqrt{F_x^2 + F_y^2} \qquad \tan\alpha = \frac{F_y}{F_x}$$</div>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>Two forces of 5 N and 12 N act perpendicular to each other. Find the resultant.</p>
+  <div class="equation">$$R = \sqrt{5^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = 13 \text{ N}$$</div>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

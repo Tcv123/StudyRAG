@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statistics</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Statistics</h1>
+
+<!-- ================= MEASURES OF CENTRAL TENDENCY ================= -->
+<h2>Measures of Central Tendency</h2>
+
+<div class="definition">
+  <strong>Mean:</strong> The sum of all values divided by the number of values.
+  $$\bar{x} = \frac{\sum x}{n} \qquad \text{or for a frequency table:} \qquad \bar{x} = \frac{\sum fx}{\sum f}$$
+</div>
+
+<p><strong>Median:</strong> The middle value when data is arranged in order. For \(n\) values, the median is the \(\frac{n+1}{2}\)th value.</p>
+
+<p><strong>Mode:</strong> The most frequently occurring value. A data set can be bimodal (two modes) or have no mode.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The mean is affected by outliers. The median is resistant to outliers and often better for skewed data. Always state which measure you are using and why.
+</div>
+
+<!-- ================= MEASURES OF SPREAD ================= -->
+<h2>Measures of Spread</h2>
+
+<h3>Range and Interquartile Range</h3>
+<p><strong>Range</strong> = highest value \(-\) lowest value.</p>
+<p><strong>Interquartile range (IQR)</strong> = \(Q_3 - Q_1\), where \(Q_1\) is the lower quartile and \(Q_3\) is the upper quartile.</p>
+
+<h3>Variance and Standard Deviation</h3>
+
+<div class="definition">
+  <strong>Variance:</strong>
+  $$\text{Var}(X) = \sigma^2 = \frac{\sum x^2}{n} - \bar{x}^2 = \frac{\sum (x - \bar{x})^2}{n}$$
+  <strong>Standard deviation:</strong> \(\sigma = \sqrt{\text{Var}(X)}\)
+</div>
+
+<p>Using summary statistics \(\sum x\) and \(\sum x^2\):</p>
+<div class="equation">$$\sigma^2 = \frac{\sum x^2}{n} - \left(\frac{\sum x}{n}\right)^2$$</div>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>Data has \(\sum x = 120\), \(\sum x^2 = 1960\), \(n = 10\). Find the variance.</p>
+  <p><strong>Solution:</strong></p>
+  <div class="equation">$$\sigma^2 = \frac{1960}{10} - \left(\frac{120}{10}\right)^2 = 196 - 144 = 52$$</div>
+</div>
+
+<h3>Outliers</h3>
+<p>A common rule: a value is an outlier if it is more than \(1.5 \times \text{IQR}\) beyond the quartiles:</p>
+<ul>
+  <li>Below \(Q_1 - 1.5 \times \text{IQR}\)</li>
+  <li>Above \(Q_3 + 1.5 \times \text{IQR}\)</li>
+</ul>
+
+<!-- ================= CODING ================= -->
+<h2>Coding</h2>
+
+<div class="definition">
+  <strong>Coding</strong> simplifies calculations by transforming data. If \(y = \frac{x - a}{b}\), then:
+  $$\bar{x} = b\bar{y} + a \qquad \sigma_x = b\sigma_y$$
+</div>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>Data is coded as \(y = \frac{x - 50}{10}\). If \(\bar{y} = 2\) and \(\sigma_y = 1.5\), find \(\bar{x}\) and \(\sigma_x\).</p>
+  <div class="equation">$$\bar{x} = 10(2) + 50 = 70 \qquad \sigma_x = 10(1.5) = 15$$</div>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Coding affects the mean (both shift and scale) but the standard deviation is only affected by the scale factor \(b\), not the shift \(a\).
+</div>
+
+<!-- ================= CORRELATION & REGRESSION ================= -->
+<h2>Correlation and Regression</h2>
+
+<h3>Scatter Diagrams</h3>
+<p>A scatter diagram shows the relationship between two variables. Look for:</p>
+<ul>
+  <li><strong>Positive correlation:</strong> as one increases, the other tends to increase</li>
+  <li><strong>Negative correlation:</strong> as one increases, the other tends to decrease</li>
+  <li><strong>No correlation:</strong> no clear linear trend</li>
+</ul>
+
+<h3>Product Moment Correlation Coefficient (PMCC)</h3>
+<div class="definition">
+  The PMCC \(r\) measures the strength and direction of linear correlation.
+  $$-1 \leq r \leq 1$$
+  <ul>
+    <li>\(r = 1\): perfect positive linear correlation</li>
+    <li>\(r = -1\): perfect negative linear correlation</li>
+    <li>\(r = 0\): no linear correlation</li>
+  </ul>
+</div>
+
+<h3>Regression Line</h3>
+<p>The regression line of \(y\) on \(x\) is \(y = a + bx\), where \(b\) is the gradient and \(a\) is the intercept.</p>
+<p>The regression line always passes through \((\bar{x}, \bar{y})\).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Only use the regression line for <strong>interpolation</strong> (within the range of the data). <strong>Extrapolation</strong> (outside the range) is unreliable. Also, correlation does not imply causation.
+</div>
+
+<!-- ================= PROBABILITY ================= -->
+<h2>Probability</h2>
+
+<h3>Basic Probability</h3>
+<div class="definition">
+  <strong>Complement:</strong> \(P(A') = 1 - P(A)\)
+  <br><strong>Addition law:</strong> \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)
+  <br><strong>Mutually exclusive:</strong> \(P(A \cap B) = 0\), so \(P(A \cup B) = P(A) + P(B)\)
+</div>
+
+<h3>Independent Events</h3>
+<p>Events \(A\) and \(B\) are independent if and only if:</p>
+<div class="equation">$$P(A \cap B) = P(A) \times P(B)$$</div>
+
+<h3>Conditional Probability</h3>
+<div class="definition">
+  $$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
+  This reads: "the probability of \(A\) given that \(B\) has occurred."
+</div>
+
+<h3>Tree Diagrams and Bayes' Theorem</h3>
+<p>For two events \(A\) and \(A'\) with outcomes \(B\):</p>
+<div class="equation">$$P(B) = P(B|A)P(A) + P(B|A')P(A')$$</div>
+<div class="equation">$$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$</div>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>\(P(A) = 0.6\), \(P(B|A) = 0.5\), \(P(B|A') = 0.3\). Find \(P(B)\) and \(P(A|B)\).</p>
+  <div class="equation">$$P(B) = 0.5 \times 0.6 + 0.3 \times 0.4 = 0.30 + 0.12 = 0.42$$</div>
+  <div class="equation">$$P(A|B) = \frac{0.5 \times 0.6}{0.42} = \frac{0.30}{0.42} = \frac{5}{7} \approx 0.714$$</div>
+</div>
+
+<!-- ================= DISCRETE DISTRIBUTIONS ================= -->
+<h2>Discrete Probability Distributions</h2>
+
+<h3>Binomial Distribution</h3>
+<div class="definition">
+  If \(X \sim B(n, p)\) (number of successes in \(n\) independent trials, each with probability \(p\)):
+  $$P(X = r) = \binom{n}{r} p^r (1-p)^{n-r}$$
+  $$\text{Mean} = np \qquad \text{Variance} = np(1-p)$$
+</div>
+
+<p>Conditions for binomial: fixed number of trials, independent trials, two outcomes (success/failure), constant probability.</p>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>\(X \sim B(10, 0.3)\). Find \(P(X = 3)\).</p>
+  <div class="equation">$$P(X = 3) = \binom{10}{3}(0.3)^3(0.7)^7 = 120 \times 0.027 \times 0.0824 \approx 0.267$$</div>
+</div>
+
+<h3>Poisson Distribution</h3>
+<div class="definition">
+  If \(X \sim \text{Po}(\lambda)\) (number of events in a fixed interval, mean rate \(\lambda\)):
+  $$P(X = r) = \frac{e^{-\lambda}\lambda^r}{r!}$$
+  $$\text{Mean} = \lambda \qquad \text{Variance} = \lambda$$
+</div>
+
+<p>Conditions: events occur independently, at a constant average rate, and singly (not simultaneously).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For Poisson, the mean equals the variance. If data shows mean \(\approx\) variance, it suggests a Poisson model. A binomial can be approximated by Poisson when \(n\) is large and \(p\) is small, with \(\lambda = np\).
+</div>
+
+<!-- ================= NORMAL DISTRIBUTION ================= -->
+<h2>Normal Distribution</h2>
+
+<div class="definition">
+  The normal distribution \(X \sim N(\mu, \sigma^2)\) is symmetric and bell-shaped about the mean \(\mu\).
+  <ul>
+    <li>\(\approx 68\%\) of data within \(\mu \pm \sigma\)</li>
+    <li>\(\approx 95\%\) of data within \(\mu \pm 2\sigma\)</li>
+    <li>\(\approx 99.7\%\) of data within \(\mu \pm 3\sigma\)</li>
+  </ul>
+</div>
+
+<!-- SVG: Normal Distribution Curve -->
+<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:20px auto;">
+  <line x1="40" y1="200" x2="460" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="250" y1="200" x2="250" y2="25" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+  <path d="M40,200 Q100,198 140,185 Q180,160 200,120 Q220,70 250,30 Q280,70 300,120 Q320,160 360,185 Q400,198 460,200" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <path d="M180,200 Q200,160 220,105 Q235,60 250,30 Q265,60 280,105 Q300,160 320,200 Z" fill="#2563eb" fill-opacity="0.15"/>
+  <text x="250" y="220" font-size="12" fill="#1a1a2e" text-anchor="middle">\(\mu\)</text>
+  <text x="180" y="220" font-size="11" fill="#64748b" text-anchor="middle">\(\mu - \sigma\)</text>
+  <text x="320" y="220" font-size="11" fill="#64748b" text-anchor="middle">\(\mu + \sigma\)</text>
+  <text x="245" y="135" font-size="12" fill="#2563eb" font-weight="600">68%</text>
+</svg>
+
+<h3>Standard Normal Distribution</h3>
+<p>Standardise using:</p>
+<div class="equation">$$Z = \frac{X - \mu}{\sigma} \qquad \text{where } Z \sim N(0, 1)$$</div>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>\(X \sim N(50, 16)\). Find \(P(X < 54)\).</p>
+  <p>Here \(\sigma = \sqrt{16} = 4\).</p>
+  <div class="equation">$$Z = \frac{54 - 50}{4} = 1 \implies P(X < 54) = P(Z < 1) = 0.8413$$</div>
+</div>
+
+<!-- ================= APPROXIMATIONS ================= -->
+<h2>Distribution Approximations</h2>
+
+<table>
+  <tr><th>From</th><th>To</th><th>Condition</th><th>Parameters</th></tr>
+  <tr><td>\(B(n, p)\)</td><td>\(\text{Po}(\lambda)\)</td><td>\(n\) large, \(p\) small</td><td>\(\lambda = np\)</td></tr>
+  <tr><td>\(B(n, p)\)</td><td>\(N(\mu, \sigma^2)\)</td><td>\(n\) large, \(np > 5\), \(nq > 5\)</td><td>\(\mu = np\), \(\sigma^2 = np(1-p)\)</td></tr>
+  <tr><td>\(\text{Po}(\lambda)\)</td><td>\(N(\mu, \sigma^2)\)</td><td>\(\lambda\) large (\(\lambda > 15\))</td><td>\(\mu = \lambda\), \(\sigma^2 = \lambda\)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When approximating a discrete distribution with a normal, apply a <strong>continuity correction</strong>: for \(P(X \leq k)\), calculate \(P(Y \leq k + 0.5)\). For \(P(X \geq k)\), calculate \(P(Y \geq k - 0.5)\).
+</div>
+
+<!-- ================= HYPOTHESIS TESTING ================= -->
+<h2>Hypothesis Testing</h2>
+
+<div class="definition">
+  <strong>Null hypothesis \(H_0\):</strong> the default assumption (e.g. \(p = 0.3\), \(\mu = 50\)).<br>
+  <strong>Alternative hypothesis \(H_1\):</strong> what we are testing for (e.g. \(p > 0.3\), \(\mu \neq 50\)).
+</div>
+
+<h3>Steps for a Hypothesis Test</h3>
+<ol>
+  <li>State \(H_0\) and \(H_1\)</li>
+  <li>Choose the significance level (e.g. 5%)</li>
+  <li>Calculate the test statistic</li>
+  <li>Find the critical value or p-value</li>
+  <li>Compare and decide: reject or do not reject \(H_0\)</li>
+  <li>Write a conclusion in context</li>
+</ol>
+
+<h3>One-tailed vs Two-tailed Tests</h3>
+<ul>
+  <li><strong>One-tailed:</strong> \(H_1: p > k\) or \(H_1: p < k\) — entire significance level in one tail</li>
+  <li><strong>Two-tailed:</strong> \(H_1: p \neq k\) — significance level split between both tails (e.g. 2.5% each for 5%)</li>
+</ul>
+
+<h3>Test for the Mean</h3>
+<p>For a sample mean \(\bar{x}\) from a normal distribution with known variance \(\sigma^2\):</p>
+<div class="equation">$$Z = \frac{\bar{x} - \mu}{\sigma / \sqrt{n}}$$</div>
+
+<div class="example">
+  <h3>Worked Example</h3>
+  <p>A company claims mean weight is 500g. A sample of 25 gives \(\bar{x} = 495\) and \(\sigma = 10\). Test at 5% significance.</p>
+  <p>\(H_0: \mu = 500\), \(H_1: \mu < 500\) (one-tailed)</p>
+  <div class="equation">$$Z = \frac{495 - 500}{10/\sqrt{25}} = \frac{-5}{2} = -2.5$$</div>
+  <p>Critical value at 5% one-tailed: \(Z = -1.645\). Since \(-2.5 < -1.645\), reject \(H_0\). There is significant evidence that the mean weight is less than 500g.</p>
+</div>
+
+<h3>Type I and Type II Errors</h3>
+<table>
+  <tr><th></th><th>\(H_0\) true</th><th>\(H_0\) false</th></tr>
+  <tr><td><strong>Reject \(H_0\)</strong></td><td>Type I error</td><td>Correct</td></tr>
+  <tr><td><strong>Do not reject \(H_0\)</strong></td><td>Correct</td><td>Type II error</td></tr>
+</table>
+<p>\(P(\text{Type I error}) = \text{significance level}\)</p>
+
+<h3>Correlation Hypothesis Test</h3>
+<p>To test whether a population has linear correlation:</p>
+<p>\(H_0: \rho = 0\) (no correlation), \(H_1: \rho \neq 0\) (or one-tailed). Compare the sample \(r\) with the critical value from tables.</p>
+
+<!-- ================= CHI-SQUARED TEST ================= -->
+<h2>Chi-Squared Goodness-of-Fit Test</h2>
+
+<div class="definition">
+  The test statistic:
+  $$\chi^2 = \sum \frac{(O - E)^2}{E}$$
+  where \(O\) = observed frequency and \(E\) = expected frequency. Degrees of freedom = number of categories \(-\) 1 \(-\) number of estimated parameters.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In hypothesis testing, always state your hypotheses clearly, show your working, compare with the critical value, and write a conclusion <strong>in context</strong> (e.g. "there is sufficient evidence at the 5% level to suggest...").
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>
