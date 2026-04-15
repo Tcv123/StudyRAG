@@ -910,28 +910,37 @@ function renderExamDates(subjects) {
     return;
   }
 
-  function renderPill(e) {
-    const dayMonth = e.examDate.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
-    const col = e.diffDays <= 3 ? 'var(--red)' : e.diffDays <= 14 ? 'var(--amber)' : 'var(--muted)';
-    const bg = e.diffDays <= 3 ? 'var(--red-bg)' : e.diffDays <= 14 ? 'var(--amber-bg)' : 'var(--surface2)';
-    const bd = e.diffDays <= 3 ? 'var(--red-border)' : e.diffDays <= 14 ? 'var(--amber-border)' : 'var(--border)';
-    return `<div style="background:${bg};border:1px solid ${bd};border-radius:8px;padding:6px 10px;display:flex;align-items:center;gap:6px;font-size:11px;">
-      <span>${e.emoji}</span>
-      <span style="font-weight:600;color:var(--text);">${e.subject}</span>
-      <span style="color:var(--muted);">·</span>
-      <span style="color:var(--muted);">${dayMonth}</span>
-      <span style="color:${col};font-weight:700;">${e.diffDays}d</span>
+  // Group exams by subject
+  const bySubject = {};
+  upcoming.forEach(e => {
+    if (!bySubject[e.subject]) bySubject[e.subject] = { emoji: e.emoji, board: e.board, exams: [] };
+    bySubject[e.subject].exams.push(e);
+  });
+
+  const subjects = Object.entries(bySubject);
+  const show = subjects.slice(0, 4);
+  const rest = subjects.slice(4);
+
+  function renderSubjRow([name, data]) {
+    const papers = data.exams.map(e => {
+      const d = e.examDate.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
+      const col = e.diffDays <= 3 ? 'var(--red)' : e.diffDays <= 14 ? 'var(--amber)' : 'var(--accent-dark)';
+      return `<span style="color:var(--muted);">${d}</span> <span style="color:${col};font-weight:600;">${e.diffDays}d</span>`;
+    }).join('<span style="color:var(--border);margin:0 4px;">|</span>');
+    return `<div style="display:flex;align-items:center;gap:8px;padding:5px 0;font-size:12px;">
+      <span style="font-size:14px;width:20px;text-align:center;">${data.emoji}</span>
+      <span style="font-weight:600;min-width:100px;">${name}</span>
+      <span style="color:var(--muted);font-size:11px;">${data.board}</span>
+      <span style="margin-left:auto;display:flex;align-items:center;gap:2px;">${papers}</span>
     </div>`;
   }
 
-  const show = upcoming.slice(0, 6);
-  const rest = upcoming.slice(6);
-
-  grid.innerHTML = `<div style="display:flex;gap:6px;flex-wrap:wrap;">
-    ${show.map(renderPill).join('')}
-    ${rest.length > 0 ? `<div id="examShowMore" onclick="document.getElementById('examExtra').style.display='flex';this.style.display='none';document.getElementById('examShowLess').style.display='';" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:11px;color:var(--accent-dark);font-weight:600;cursor:pointer;">+${rest.length} more</div>` : ''}
-    <span id="examExtra" style="display:none;gap:6px;flex-wrap:wrap;">${rest.map(renderPill).join('')}</span>
-    <div id="examShowLess" onclick="document.getElementById('examExtra').style.display='none';document.getElementById('examShowMore').style.display='';this.style.display='none';" style="display:none;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:11px;color:var(--accent-dark);font-weight:600;cursor:pointer;">Show less</div>
+  grid.innerHTML = `<div style="border:1px solid var(--border);border-radius:10px;background:var(--surface);overflow:hidden;">
+    <div style="padding:4px 12px;">${show.map(renderSubjRow).join('<div style="border-top:1px solid var(--border);"></div>')}</div>
+    ${rest.length > 0 ? `<div id="examExtra" style="display:none;padding:0 12px 4px;border-top:1px solid var(--border);">${rest.map(renderSubjRow).join('<div style="border-top:1px solid var(--border);"></div>')}</div>
+    <div style="border-top:1px solid var(--border);text-align:center;padding:4px;">
+      <span id="examToggle" onclick="const ex=document.getElementById('examExtra');const vis=ex.style.display==='none';ex.style.display=vis?'block':'none';this.textContent=vis?'Show less ▴':'+ ${rest.length} more subjects ▾';" style="font-size:11px;color:var(--accent-dark);font-weight:600;cursor:pointer;">+ ${rest.length} more subjects ▾</span>
+    </div>` : ''}
   </div>`;
 }
 // ── Medal definitions ────────────────────────────────────────────────────
