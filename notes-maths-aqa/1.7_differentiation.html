@@ -268,6 +268,66 @@
   Do NOT simply differentiate \(\dfrac{dy}{dx}\) with respect to \(t\) and forget to divide by \(\dfrac{dx}{dt}\).
 </div>
 
+<!-- ================= INCREASING / DECREASING ================= -->
+<h2>Increasing and Decreasing Functions</h2>
+
+<div class="definition">
+  <ul>
+    <li>\(f\) is <strong>increasing</strong> on an interval if \(f'(x) \geq 0\) for all \(x\) in that interval</li>
+    <li>\(f\) is <strong>decreasing</strong> on an interval if \(f'(x) \leq 0\) for all \(x\) in that interval</li>
+  </ul>
+</div>
+
+<div class="example">
+  <h3>Worked Example: Finding Increasing/Decreasing Intervals</h3>
+  <p>Find the intervals where \(f(x) = x^3 - 6x^2 + 9x + 1\) is increasing and decreasing.</p>
+  <p><strong>Solution:</strong></p>
+  <div class="equation">$$f'(x) = 3x^2 - 12x + 9 = 3(x-1)(x-3)$$</div>
+  <table>
+    <tr><th>Interval</th><th>Sign of \(f'(x)\)</th><th>Behaviour</th></tr>
+    <tr><td>\(x < 1\)</td><td>\(+\)</td><td>Increasing</td></tr>
+    <tr><td>\(1 < x < 3\)</td><td>\(-\)</td><td>Decreasing</td></tr>
+    <tr><td>\(x > 3\)</td><td>\(+\)</td><td>Increasing</td></tr>
+  </table>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> To "show that \(f\) is increasing for all \(x\)", prove that \(f'(x) \geq 0\) for all \(x\). A common approach is to complete the square in \(f'(x)\) and show the result is always non-negative.
+</div>
+
+<!-- ================= POINTS OF INFLECTION ================= -->
+<h2>Points of Inflection</h2>
+
+<div class="definition">
+  <strong>Point of Inflection:</strong> A point where the curve changes concavity (from concave up to concave down, or vice versa). Necessary condition: \(f''(x) = 0\). The sign of \(f''(x)\) must change either side to confirm it.
+</div>
+
+<p>A <strong>stationary point of inflection</strong> has both \(f'(x) = 0\) and \(f''(x) = 0\) at that point, with a sign change in \(f''\) confirming it is not a maximum or minimum.</p>
+
+<table>
+  <tr><th>At point \(x = a\)</th><th>Nature</th></tr>
+  <tr><td>\(f'(a)=0,\ f''(a) < 0\)</td><td>Local maximum</td></tr>
+  <tr><td>\(f'(a)=0,\ f''(a) > 0\)</td><td>Local minimum</td></tr>
+  <tr><td>\(f'(a)=0,\ f''(a) = 0\), sign change in \(f''\)</td><td>Stationary point of inflection</td></tr>
+  <tr><td>\(f'(a)\neq 0,\ f''(a) = 0\), sign change in \(f''\)</td><td>Non-stationary point of inflection</td></tr>
+</table>
+
+<div class="example">
+  <h3>Worked Example: Finding Points of Inflection</h3>
+  <p>Find any points of inflection of \(f(x) = x^4 - 4x^3\).</p>
+  <p><strong>Solution:</strong></p>
+  <div class="equation">$$f''(x) = 12x^2 - 24x = 12x(x-2)$$</div>
+  <p>Setting \(f''(x) = 0\): \(x = 0\) or \(x = 2\).</p>
+  <ul>
+    <li>At \(x = 0\): \(f''\) changes from \(+\) to \(-\) — point of inflection at \((0,\ 0)\).</li>
+    <li>At \(x = 2\): \(f''\) changes from \(-\) to \(+\) — point of inflection at \((2,\ -16)\).</li>
+  </ul>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> \(f''(a) = 0\) alone does NOT confirm a point of inflection — you must verify the sign change. For example, \(f(x) = x^4\) has \(f''(0) = 0\) but \(f''\) does not change sign at 0, so it is a minimum, not an inflection.
+</div>
+
 </div>
 <script>
   renderMathInElement(document.body, {

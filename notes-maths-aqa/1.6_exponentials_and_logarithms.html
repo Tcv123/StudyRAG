@@ -155,6 +155,35 @@
   <strong>Exam Tip:</strong> When simplifying logarithmic expressions, always look for opportunities to combine terms using log laws before evaluating. Remember that you can only combine logs with the same base.
 </div>
 
+<!-- ================= SOLVING LOG EQUATIONS ================= -->
+<h2>Solving Logarithmic Equations</h2>
+
+<p>To solve equations involving logarithms, use log laws to combine terms, then convert to exponential form.</p>
+
+<div class="example">
+  <h3>Worked Example: Combining Logs</h3>
+  <p>Solve \(\log_2(x+3) + \log_2(x-1) = 5\).</p>
+  <p><strong>Solution:</strong> Use the product law:</p>
+  <div class="equation">$$\log_2[(x+3)(x-1)] = 5$$</div>
+  <div class="equation">$$(x+3)(x-1) = 2^5 = 32$$</div>
+  <div class="equation">$$x^2 + 2x - 3 = 32 \implies x^2 + 2x - 35 = 0$$</div>
+  <div class="equation">$$(x+7)(x-5) = 0 \implies x = 5 \text{ (reject } x = -7 \text{, as log of negative is undefined)}$$</div>
+</div>
+
+<div class="example">
+  <h3>Worked Example: Logarithm Equals Number</h3>
+  <p>Solve \(2\ln x - \ln(2x-1) = \ln 3\).</p>
+  <p><strong>Solution:</strong> Use the power and quotient laws:</p>
+  <div class="equation">$$\ln x^2 - \ln(2x-1) = \ln 3 \implies \ln\frac{x^2}{2x-1} = \ln 3$$</div>
+  <div class="equation">$$\frac{x^2}{2x-1} = 3 \implies x^2 = 6x - 3 \implies x^2 - 6x + 3 = 0$$</div>
+  <div class="equation">$$x = \frac{6 \pm \sqrt{24}}{2} = 3 \pm \sqrt{6}$$</div>
+  <p>Check: for the solution \(x = 3 - \sqrt{6} \approx 0.55\), we get \(2x - 1 \approx 0.1 > 0\), so both solutions are valid.</p>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always check your solutions are valid — a logarithm is only defined for positive arguments. After solving, substitute back and verify that all log arguments are positive. Reject any solution that makes a log argument \(\leq 0\).
+</div>
+
 <!-- ================= CHANGE OF BASE ================= -->
 <h2>Change of Base Formula</h2>
 

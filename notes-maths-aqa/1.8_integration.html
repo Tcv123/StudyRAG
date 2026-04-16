@@ -247,6 +247,89 @@
   <strong>Exam Tip:</strong> When solving differential equations, always use the given boundary condition to find the constant of integration. Present your final answer as \(y = ...\) if possible, and check by substituting back into the original equation.
 </div>
 
+<!-- ================= VOLUMES OF REVOLUTION ================= -->
+<h2>Volumes of Revolution</h2>
+
+<div class="definition">
+  <strong>Rotation about the x-axis:</strong> The volume formed when the region between \(y = f(x)\), \(x = a\) and \(x = b\) is rotated \(360°\) about the x-axis:
+  $$V = \pi \int_a^b y^2\,dx$$
+</div>
+
+<div class="definition">
+  <strong>Rotation about the y-axis:</strong>
+  $$V = \pi \int_c^d x^2\,dy$$
+</div>
+
+<!-- SVG: Volume of Revolution -->
+<svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:20px auto;">
+  <defs>
+    <marker id="varr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#1a1a2e"/></marker>
+  </defs>
+  <!-- axes -->
+  <line x1="40" y1="130" x2="470" y2="130" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#varr)"/>
+  <line x1="40" y1="230" x2="40" y2="20" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#varr)"/>
+  <text x="475" y="135" font-size="13" fill="#1a1a2e">x</text>
+  <text x="44" y="15" font-size="13" fill="#1a1a2e">y</text>
+  <!-- shaded region -->
+  <path d="M120,130 Q160,80 220,70 Q280,65 340,80 Q380,90 400,130" fill="#bfdbfe" fill-opacity="0.5" stroke="none"/>
+  <!-- reflection below axis -->
+  <path d="M120,130 Q160,180 220,190 Q280,195 340,180 Q380,170 400,130" fill="#bfdbfe" fill-opacity="0.3" stroke="none"/>
+  <!-- upper curve -->
+  <path d="M80,130 Q100,115 120,100 Q160,80 220,70 Q280,65 340,80 Q380,90 400,110 Q430,125 460,130" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- lower mirror curve (dashed) -->
+  <path d="M80,130 Q100,145 120,160 Q160,180 220,190 Q280,195 340,180 Q380,170 400,150 Q430,135 460,130" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <!-- bounds -->
+  <line x1="120" y1="130" x2="120" y2="100" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="400" y1="130" x2="400" y2="110" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="112" y="148" font-size="13" fill="#dc2626" font-weight="600">a</text>
+  <text x="393" y="148" font-size="13" fill="#dc2626" font-weight="600">b</text>
+  <!-- ellipse at right end to suggest 3D -->
+  <ellipse cx="400" cy="130" rx="12" ry="22" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="155" y="55" font-size="13" fill="#1e3a5f" font-weight="600">V = π∫y² dx — rotation about x-axis</text>
+</svg>
+
+<div class="example">
+  <h3>Worked Example: Volume of Revolution</h3>
+  <p>The region bounded by \(y = \sqrt{x}\), \(x = 1\) and \(x = 4\) is rotated \(360°\) about the x-axis. Find the volume.</p>
+  <p><strong>Solution:</strong> \(y = \sqrt{x} \implies y^2 = x\).</p>
+  <div class="equation">$$V = \pi \int_1^4 x\,dx = \pi \left[\frac{x^2}{2}\right]_1^4 = \pi\!\left(8 - \frac{1}{2}\right) = \frac{15\pi}{2}$$</div>
+</div>
+
+<div class="example">
+  <h3>Worked Example: Volume with Subtraction</h3>
+  <p>The region bounded by \(y = x^2 + 1\) and \(y = 5\) is rotated \(360°\) about the y-axis. Find the volume.</p>
+  <p><strong>Solution:</strong> From \(y = x^2 + 1\): \(x^2 = y - 1\). Limits in \(y\): curve meets \(y = 5\) at \(x^2 = 4\), and meets \(y\)-axis at \(y = 1\).</p>
+  <div class="equation">$$V = \pi \int_1^5 (y - 1)\,dy = \pi\left[\frac{y^2}{2} - y\right]_1^5 = \pi\!\left[\left(\frac{25}{2}-5\right) - \left(\frac{1}{2}-1\right)\right] = 8\pi$$</div>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always include \(\pi\) in volume answers and leave in exact form. The formula is \(\pi\!\int y^2\,dx\) — square the full expression for \(y\) before integrating. A common error is integrating \(y\) then squaring the result.
+</div>
+
+<!-- ================= TRIG INTEGRATION ================= -->
+<h2>Integrating Trigonometric Functions</h2>
+
+<p>Use double angle identities to integrate even powers of sine and cosine:</p>
+<div class="equation">$$\cos^2 x = \frac{1 + \cos 2x}{2}, \qquad \sin^2 x = \frac{1 - \cos 2x}{2}$$</div>
+
+<div class="example">
+  <h3>Worked Example: Integrating cos²x</h3>
+  <p>Find \(\displaystyle \int \cos^2 x\,dx\).</p>
+  <p><strong>Solution:</strong> Substitute the identity \(\cos^2 x = \dfrac{1 + \cos 2x}{2}\):</p>
+  <div class="equation">$$\int \cos^2 x\,dx = \int \frac{1 + \cos 2x}{2}\,dx = \frac{x}{2} + \frac{\sin 2x}{4} + c$$</div>
+</div>
+
+<div class="example">
+  <h3>Worked Example: Definite Integral with sin²x</h3>
+  <p>Evaluate \(\displaystyle \int_0^{\pi} \sin^2 x\,dx\).</p>
+  <p><strong>Solution:</strong> Use \(\sin^2 x = \dfrac{1 - \cos 2x}{2}\):</p>
+  <div class="equation">$$\int_0^{\pi} \frac{1 - \cos 2x}{2}\,dx = \left[\frac{x}{2} - \frac{\sin 2x}{4}\right]_0^{\pi} = \frac{\pi}{2} - 0 = \frac{\pi}{2}$$</div>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Never try to integrate \(\sin^2 x\) or \(\cos^2 x\) directly — always use the double angle identity first. These appear frequently in definite integral and volume of revolution questions.
+</div>
+
 </div>
 <script>
   renderMathInElement(document.body, {

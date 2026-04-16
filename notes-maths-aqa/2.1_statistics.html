@@ -229,6 +229,38 @@
   <div class="equation">$$Z = \frac{54 - 50}{4} = 1 \implies P(X < 54) = P(Z < 1) = 0.8413$$</div>
 </div>
 
+<!-- ================= INVERSE NORMAL ================= -->
+<h2>Finding Unknown Normal Parameters</h2>
+
+<p>When given a probability and asked to find \(\mu\) or \(\sigma\), standardise and use the inverse normal (percentage point) tables.</p>
+
+<div class="example">
+  <h3>Worked Example: Finding σ</h3>
+  <p>\(X \sim N(60, \sigma^2)\) and \(P(X > 70) = 0.05\). Find \(\sigma\).</p>
+  <p><strong>Solution:</strong> From tables, \(P(Z > z) = 0.05 \implies z = 1.6449\).</p>
+  <div class="equation">$$\frac{70 - 60}{\sigma} = 1.6449 \implies \sigma = \frac{10}{1.6449} \approx 6.08$$</div>
+</div>
+
+<div class="example">
+  <h3>Worked Example: Finding μ</h3>
+  <p>\(X \sim N(\mu, 25)\) and \(P(X < 47) = 0.9\). Find \(\mu\).</p>
+  <p><strong>Solution:</strong> \(\sigma = 5\). From tables, \(\Phi^{-1}(0.9) = 1.2816\).</p>
+  <div class="equation">$$\frac{47 - \mu}{5} = 1.2816 \implies \mu = 47 - 6.408 = 40.6 \text{ (3 s.f.)}$$</div>
+</div>
+
+<div class="example">
+  <h3>Worked Example: Finding Both μ and σ</h3>
+  <p>\(X \sim N(\mu, \sigma^2)\) with \(P(X < 50) = 0.8\) and \(P(X < 40) = 0.3\). Find \(\mu\) and \(\sigma\).</p>
+  <p><strong>Solution:</strong> Standardise both:</p>
+  <div class="equation">$$\frac{50 - \mu}{\sigma} = 0.8416 \qquad \frac{40 - \mu}{\sigma} = -0.5244$$</div>
+  <p>Subtract the equations: \(\dfrac{10}{\sigma} = 1.3660 \implies \sigma = 7.32\).</p>
+  <p>Then \(\mu = 50 - 0.8416 \times 7.32 = 43.8\).</p>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When \(P(X < x) < 0.5\), the \(z\)-value is negative. For \(P(X > x)\), note \(P(Z > z) = P(Z < -z)\) by symmetry. Always sketch the curve and shade before reading from tables.
+</div>
+
 <!-- ================= APPROXIMATIONS ================= -->
 <h2>Distribution Approximations</h2>
 
@@ -286,6 +318,30 @@
   <tr><td><strong>Do not reject \(H_0\)</strong></td><td>Correct</td><td>Type II error</td></tr>
 </table>
 <p>\(P(\text{Type I error}) = \text{significance level}\)</p>
+
+<h3>Binomial Hypothesis Test</h3>
+<p>Used to test a claim about a proportion \(p\) using the binomial model. Let \(X \sim B(n, p)\) under \(H_0\).</p>
+
+<div class="example">
+  <h3>Worked Example: Binomial Hypothesis Test</h3>
+  <p>A coin is claimed to be fair (\(p = 0.5\)). In 20 tosses, 14 heads are obtained. Test at 5% significance whether the coin is biased towards heads.</p>
+  <p>\(H_0: p = 0.5\), \(H_1: p > 0.5\) (one-tailed)</p>
+  <p>Under \(H_0\): \(X \sim B(20, 0.5)\). Find \(P(X \geq 14)\):</p>
+  <div class="equation">$$P(X \geq 14) = 1 - P(X \leq 13) = 1 - 0.9423 = 0.0577$$</div>
+  <p>Since \(0.0577 > 0.05\), we do not reject \(H_0\). There is insufficient evidence at the 5% level to conclude the coin is biased towards heads.</p>
+</div>
+
+<div class="example">
+  <h3>Worked Example: Critical Region</h3>
+  <p>Find the critical region for a one-tailed test (\(H_1: p > 0.3\)) with \(n = 20\) at the 5% level.</p>
+  <p>Find the smallest \(c\) such that \(P(X \geq c) \leq 0.05\) where \(X \sim B(20, 0.3)\).</p>
+  <p>From tables: \(P(X \geq 10) = 0.0480 < 0.05\) and \(P(X \geq 9) = 0.1133 > 0.05\).</p>
+  <p>So the critical region is \(X \geq 10\). The actual significance level is 4.80%.</p>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When finding the critical region, the actual significance level will usually be less than the stated level (because the binomial is discrete). Always state both the critical region AND the actual significance level.
+</div>
 
 <h3>Correlation Hypothesis Test</h3>
 <p>To test whether a population has linear correlation:</p>

@@ -108,10 +108,22 @@
 </div>
 
 <div class="example">
-  <h3>Worked Example</h3>
+  <h3>Worked Example: Differentiation</h3>
   <p>A particle has velocity \(\mathbf{v} = (3t^2)\mathbf{i} + (2t)\mathbf{j}\). Find the acceleration at \(t = 2\).</p>
   <div class="equation">$$\mathbf{a} = \frac{d\mathbf{v}}{dt} = (6t)\mathbf{i} + 2\mathbf{j}$$</div>
   <div class="equation">$$\text{At } t = 2: \quad \mathbf{a} = 12\mathbf{i} + 2\mathbf{j}$$</div>
+</div>
+
+<div class="example">
+  <h3>Worked Example: Integration to Find Displacement</h3>
+  <p>A particle has acceleration \(a = (6t - 2)\) m/s\(^2\). At \(t = 0\), the velocity is 3 m/s and displacement is 0. Find the displacement when \(t = 3\).</p>
+  <p><strong>Step 1: Find velocity</strong></p>
+  <div class="equation">$$v = \int (6t - 2)\,dt = 3t^2 - 2t + c$$</div>
+  <p>At \(t = 0\), \(v = 3\): \(c = 3\). So \(v = 3t^2 - 2t + 3\).</p>
+  <p><strong>Step 2: Find displacement</strong></p>
+  <div class="equation">$$s = \int (3t^2 - 2t + 3)\,dt = t^3 - t^2 + 3t + k$$</div>
+  <p>At \(t = 0\), \(s = 0\): \(k = 0\). At \(t = 3\):</p>
+  <div class="equation">$$s = 27 - 9 + 9 = 27 \text{ m}$$</div>
 </div>
 
 <!-- ================= FORCES & NEWTON'S LAWS ================= -->
@@ -207,10 +219,16 @@
 <div class="equation">$$\text{Range} = \frac{u^2\sin 2\theta}{g}$$</div>
 
 <div class="example">
-  <h3>Worked Example</h3>
-  <p>A ball is projected at \(30°\) with speed \(20\) m/s. Find the horizontal and vertical components of velocity.</p>
-  <div class="equation">$$v_x = 20\cos 30° = 10\sqrt{3} \approx 17.3 \text{ m/s}$$</div>
-  <div class="equation">$$v_y = 20\sin 30° = 10 \text{ m/s}$$</div>
+  <h3>Worked Example: Full Projectile Problem</h3>
+  <p>A ball is projected from ground level at \(30°\) to the horizontal with speed \(20\) m/s. Find: (a) the time of flight, (b) the maximum height, (c) the range. (\(g = 10\) m/s\(^2\))</p>
+  <p><strong>Horizontal:</strong> \(v_x = 20\cos 30° = 10\sqrt{3}\) m/s (constant)</p>
+  <p><strong>Vertical:</strong> \(u_y = 20\sin 30° = 10\) m/s, \(a = -10\) m/s\(^2\)</p>
+  <p><strong>(a) Time of flight:</strong> Land when \(s_y = 0\):</p>
+  <div class="equation">$$s_y = u_y t + \tfrac{1}{2}at^2 = 10t - 5t^2 = 0 \implies t(10 - 5t) = 0 \implies t = 2 \text{ s}$$</div>
+  <p><strong>(b) Maximum height:</strong> At top, \(v_y = 0\):</p>
+  <div class="equation">$$v_y^2 = u_y^2 + 2as \implies 0 = 100 - 20H \implies H = 5 \text{ m}$$</div>
+  <p><strong>(c) Range:</strong></p>
+  <div class="equation">$$R = v_x \times t = 10\sqrt{3} \times 2 = 20\sqrt{3} \approx 34.6 \text{ m}$$</div>
 </div>
 
 <div class="exam-tip">
