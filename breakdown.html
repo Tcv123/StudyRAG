@@ -1098,6 +1098,8 @@ let _calExams = [];
 let _calYear  = 0;
 let _calMonth = 0;
 
+let _calMonths = []; // [{year, month}] — only months with exams
+
 function renderBreakdownExams(subjects) {
   const row = document.getElementById('breakdownExamRow');
   if (!row) return;
@@ -1118,17 +1120,28 @@ function renderBreakdownExams(subjects) {
   if (!_calExams.length) { row.style.display = 'none'; return; }
   row.style.display = '';
 
-  // Start on the month of the first upcoming exam
   _calExams.sort((a,b) => a.examDate - b.examDate);
-  _calYear  = _calExams[0].examDate.getFullYear();
-  _calMonth = _calExams[0].examDate.getMonth();
+
+  // Build unique sorted list of months that contain exams
+  const seen = new Set();
+  _calMonths = [];
+  _calExams.forEach(e => {
+    const key = `${e.examDate.getFullYear()}-${e.examDate.getMonth()}`;
+    if (!seen.has(key)) { seen.add(key); _calMonths.push({ year: e.examDate.getFullYear(), month: e.examDate.getMonth() }); }
+  });
+
+  // Start on first exam month
+  _calYear  = _calMonths[0].year;
+  _calMonth = _calMonths[0].month;
   renderCalendar();
 }
 
 function shiftCalMonth(dir) {
-  _calMonth += dir;
-  if (_calMonth > 11) { _calMonth = 0; _calYear++; }
-  if (_calMonth < 0)  { _calMonth = 11; _calYear--; }
+  const idx = _calMonths.findIndex(m => m.year === _calYear && m.month === _calMonth);
+  const next = _calMonths[idx + dir];
+  if (!next) return; // already at boundary
+  _calYear  = next.year;
+  _calMonth = next.month;
   renderCalendar();
   document.getElementById('calDetail').style.display = 'none';
 }
@@ -1140,6 +1153,13 @@ function renderCalendar() {
 
   const monthName = new Date(_calYear, _calMonth, 1).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
   label.textContent = monthName;
+
+  // Disable prev/next arrows at the boundary months
+  const idx = _calMonths.findIndex(m => m.year === _calYear && m.month === _calMonth);
+  const prevBtn = document.getElementById('calPrev');
+  const nextBtn = document.getElementById('calNext');
+  if (prevBtn) { prevBtn.disabled = idx <= 0; prevBtn.style.opacity = idx <= 0 ? '0.3' : '1'; prevBtn.style.cursor = idx <= 0 ? 'default' : 'pointer'; }
+  if (nextBtn) { nextBtn.disabled = idx >= _calMonths.length - 1; nextBtn.style.opacity = idx >= _calMonths.length - 1 ? '0.3' : '1'; nextBtn.style.cursor = idx >= _calMonths.length - 1 ? 'default' : 'pointer'; }
 
   // Build exam map: dateStr -> [exams]
   const examMap = {};
@@ -1164,7 +1184,7 @@ function renderCalendar() {
 
   // Empty cells before first day
   for (let i = 0; i < startDow; i++) {
-    html += `<div style="min-height:64px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface2);"></div>`;
+    html += `<div style="min-height:70px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface2);"></div>`;
   }
 
   for (let day = 1; day <= totalDays; day++) {
@@ -1188,20 +1208,23 @@ function renderCalendar() {
       const bc  = BOARD_COLOR[e.board] || '#374151';
       const bb  = BOARD_BG[e.board] || 'rgba(55,65,81,0.1)';
       const timeStr = e.time === 'AM' ? '9:00 AM' : '1:30 PM';
-      const urgency = e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : 'var(--accent-dark)';
-      const urgBg   = e.diffDays <= 7 ? 'rgba(239,68,68,0.08)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.08)' : 'var(--accent-dim)';
-      return `<div style="background:${sc}10;border:1px solid ${sc}30;border-left:3px solid ${sc};border-radius:6px;padding:5px 8px;margin-top:4px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;">
-          <div style="font-size:11.5px;font-weight:700;color:var(--text);">${e.emoji} ${e.subject} <span style="color:${bc};font-size:10px;font-weight:600;background:${bb};border:1px solid ${bc}40;padding:0px 5px;border-radius:6px;">${e.board}</span></div>
-          <span style="font-size:11px;font-weight:700;color:${urgency};background:${urgBg};padding:1px 7px;border-radius:12px;border:1px solid ${urgency}33;flex-shrink:0;">${e.diffDays}d</span>
+      const urgency = e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : '#059669';
+      const urgBg   = e.diffDays <= 7 ? 'rgba(239,68,68,0.1)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.1)' : 'rgba(5,150,105,0.1)';
+      const urgLabel = e.diffDays <= 7 ? `${e.diffDays}d` : e.diffDays <= 21 ? `${e.diffDays}d` : `${e.diffDays}d`;
+      return `<div style="background:${sc}15;border:1px solid ${sc}40;border-left:4px solid ${sc};border-radius:8px;padding:8px 10px;margin-top:5px;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:4px;">
+          <div style="font-size:13px;font-weight:700;color:var(--text);line-height:1.2;">${e.emoji} ${e.subject}</div>
+          <span style="font-size:11.5px;font-weight:700;color:${urgency};background:${urgBg};padding:2px 8px;border-radius:10px;border:1px solid ${urgency}40;flex-shrink:0;white-space:nowrap;">${urgLabel}</span>
         </div>
-        <div style="font-size:10.5px;color:var(--muted);margin-top:2px;">${e.paper}</div>
-        <div style="font-size:10px;color:var(--muted2);margin-top:1px;">🕐 ${timeStr}${e.duration ? ' · ⏱ '+e.duration : ''}</div>
+        <div style="margin-bottom:3px;"><span style="color:${bc};font-size:11px;font-weight:600;background:${bb};border:1px solid ${bc}40;padding:1px 7px;border-radius:6px;">${e.board}</span></div>
+        <div style="font-size:12px;font-weight:600;color:var(--text);margin-top:3px;line-height:1.3;">${e.paper}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:3px;">🕐 ${timeStr}${e.duration ? ' &nbsp;·&nbsp; ⏱ '+e.duration : ''}</div>
       </div>`;
     }).join('');
 
-    html += `<div style="min-height:90px;padding:7px 6px;border-right:${isLast?'none':'1px solid var(--border)'};border-bottom:1px solid var(--border);background:${isToday?'var(--accent-dim)':isPast?'var(--surface2)':isWeekend?'#f8fbfe':'var(--surface)'};">
-      <div style="font-size:12px;font-weight:${isToday?'700':'500'};color:${isToday?'var(--accent-dark)':isPast?'var(--muted2)':'var(--text)'};">${day}</div>
+    const hasExams = examsOnDay.length > 0;
+    html += `<div style="min-height:${hasExams ? '120' : '70'}px;padding:8px 7px;border-right:${isLast?'none':'1px solid var(--border)'};border-bottom:1px solid var(--border);background:${isToday?'var(--accent-dim)':isPast?'var(--surface2)':isWeekend?'rgba(248,251,254,0.6)':'var(--surface)'};">
+      <div style="font-size:${isToday?'14':'13'}px;font-weight:${isToday?'800':'500'};color:${isToday?'var(--accent-dark)':isPast?'var(--muted2)':'var(--text)'};${isToday?'background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;':''}">${day}</div>
       ${inlineEvents}
     </div>`;
   }
@@ -1212,7 +1235,7 @@ function renderCalendar() {
   if (remainder !== 0) {
     for (let i = 0; i < 7 - remainder; i++) {
       const isLast = i === (7 - remainder - 1);
-      html += `<div style="min-height:64px;border-right:${isLast?'none':'1px solid var(--border)'};background:var(--surface2);"></div>`;
+      html += `<div style="min-height:70px;border-right:${isLast?'none':'1px solid var(--border)'};background:var(--surface2);"></div>`;
     }
   }
 
