@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 2.1 — Algebraic Expressions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .higher { background: #fdf4ff; border-left: 4px solid #9333ea; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-label { font-weight: 700; color: #7e22ce; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        .katex-display { margin: 16px 0; }
+        .step { margin-bottom: 8px; padding-left: 16px; border-left: 2px solid #86efac; }
+        .diagram-container { text-align: center; margin: 20px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.1 Algebraic Expressions</h1>
+<p class="spec-ref">OCR GCSE Mathematics (J560) &mdash; Paper 1, 2 &amp; 3 &mdash; Foundation and Higher</p>
+
+<!-- ============================================================ -->
+<h2>2.1.1 Algebraic Notation and Writing Expressions</h2>
+
+<h3>Key Vocabulary</h3>
+
+<div class="definition">
+  <strong>Term:</strong> A single number, variable, or product of numbers and variables. E.g. $3x$, $-5y^2$, $7$.<br><br>
+  <strong>Coefficient:</strong> The numerical factor of a term. In $-4x^3$ the coefficient is $-4$.<br><br>
+  <strong>Variable:</strong> A letter representing an unknown or changing quantity, e.g. $x$, $y$, $t$.<br><br>
+  <strong>Constant:</strong> A term with no variable part; its value does not change, e.g. $6$ in $3x + 6$.<br><br>
+  <strong>Expression:</strong> A combination of terms without an equals sign, e.g. $5x^2 - 3x + 2$.<br><br>
+  <strong>Equation:</strong> Two expressions connected by an equals sign, e.g. $2x + 1 = 9$.<br><br>
+  <strong>Formula:</strong> A rule connecting two or more variables, e.g. $A = \pi r^2$.<br><br>
+  <strong>Identity:</strong> True for all values of the variable, shown with $\equiv$, e.g. $2(x+3) \equiv 2x + 6$.
+</div>
+
+<h3>Writing Algebraic Expressions from Words</h3>
+<table>
+  <thead><tr><th>Word phrase</th><th>Algebraic expression</th></tr></thead>
+  <tbody>
+    <tr><td>$n$ more than 5</td><td>$5 + n$</td></tr>
+    <tr><td>3 less than $x$</td><td>$x - 3$</td></tr>
+    <tr><td>double $y$</td><td>$2y$</td></tr>
+    <tr><td>$k$ squared</td><td>$k^2$</td></tr>
+    <tr><td>$p$ divided by 4</td><td>$\dfrac{p}{4}$</td></tr>
+    <tr><td>product of $a$ and $b$</td><td>$ab$</td></tr>
+    <tr><td>sum of $m$ and $n$, all multiplied by 3</td><td>$3(m+n)$</td></tr>
+    <tr><td>square root of $q$</td><td>$\sqrt{q}$</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">
+  Never write multiplication signs between a number and a letter: $3 \times x$ is written $3x$. Also, $1 \times x = x$ (never write $1x$ unless expanding a bracket).
+</div>
+
+<h3>Understanding Index Notation</h3>
+<p>In algebra, powers follow the same rules as arithmetic:</p>
+$$a^m \times a^n = a^{m+n}, \qquad a^m \div a^n = a^{m-n}, \qquad (a^m)^n = a^{mn}$$
+$$a^0 = 1 \quad (a \neq 0), \qquad a^{-n} = \frac{1}{a^n}, \qquad a^{1/n} = \sqrt[n]{a}$$
+
+<div class="worked-example">
+  Simplify $\dfrac{x^5 \cdot x^{-2}}{x^3}$.<br><br>
+  <div class="step">Numerator: $x^5 \cdot x^{-2} = x^{5+(-2)} = x^3$</div>
+  <div class="step">Overall: $\dfrac{x^3}{x^3} = x^0 = 1$</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>2.1.2 Simplifying Expressions</h2>
+
+<h3>Collecting Like Terms</h3>
+<p><strong>Like terms</strong> have exactly the same variable part (including power). Only like terms can be added or subtracted.</p>
+<ul>
+  <li>$3x$ and $7x$ are like terms &rarr; $3x + 7x = 10x$</li>
+  <li>$5y^2$ and $-2y^2$ are like terms &rarr; $5y^2 - 2y^2 = 3y^2$</li>
+  <li>$4x$ and $4x^2$ are <em>not</em> like terms (different powers)</li>
+  <li>$3xy$ and $5yx$ are like terms ($xy = yx$)</li>
+</ul>
+
+<div class="worked-example">
+  Simplify $7a + 3b - 2a + 5b - b$.<br><br>
+  <div class="step">Group $a$ terms: $7a - 2a = 5a$</div>
+  <div class="step">Group $b$ terms: $3b + 5b - b = 7b$</div>
+  <div class="step">Answer: $5a + 7b$</div>
+</div>
+
+<div class="worked-example">
+  Simplify $4x^2 - 3x + 2 + x^2 + 5x - 7$.<br><br>
+  <div class="step">$x^2$ terms: $4x^2 + x^2 = 5x^2$</div>
+  <div class="step">$x$ terms: $-3x + 5x = 2x$</div>
+  <div class="step">Constants: $2 - 7 = -5$</div>
+  <div class="step">Answer: $5x^2 + 2x - 5$</div>
+</div>
+
+<h3>Multiplying and Dividing Terms</h3>
+<p>When multiplying terms, multiply the coefficients and add the indices of like bases:</p>
+$$3x^2 \times 4x^3 = 12x^5 \qquad \text{(multiply coefficients: } 3 \times 4 = 12 \text{, add powers: } 2+3=5\text{)}$$
+
+<p>When dividing terms, divide the coefficients and subtract the indices:</p>
+$$\frac{15x^4}{5x} = 3x^3 \qquad \text{(divide coefficients: } 15 \div 5 = 3 \text{, subtract powers: } 4-1=3\text{)}$$
+
+<div class="worked-example">
+  Simplify $\dfrac{6a^3b^2}{9a^2b^4}$.<br><br>
+  <div class="step">Coefficients: $6 \div 9 = \dfrac{2}{3}$</div>
+  <div class="step">$a$ terms: $a^{3-2} = a$</div>
+  <div class="step">$b$ terms: $b^{2-4} = b^{-2} = \dfrac{1}{b^2}$</div>
+  <div class="step">Answer: $\dfrac{2a}{3b^2}$</div>
+</div>
+
+<div class="exam-tip">
+  Multiplying two negatives gives a positive: $(-3x)(-4y) = 12xy$. Take extra care with signs.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.1.3 Expanding Brackets</h2>
+
+<h3>Single Brackets</h3>
+<p>Multiply every term inside the bracket by the term outside:</p>
+$$a(b + c) = ab + ac$$
+
+<div class="worked-example">
+  Expand $5(3x - 4)$.<br><br>
+  <div class="step">$5 \times 3x = 15x$</div>
+  <div class="step">$5 \times (-4) = -20$</div>
+  <div class="step">Answer: $15x - 20$</div>
+</div>
+
+<div class="worked-example">
+  Expand and simplify $3(2x + 1) - 2(x - 5)$.<br><br>
+  <div class="step">$3(2x+1) = 6x + 3$</div>
+  <div class="step">$-2(x-5) = -2x + 10$</div>
+  <div class="step">Combine: $6x + 3 - 2x + 10 = 4x + 13$</div>
+</div>
+
+<h3>Double Brackets — FOIL Method</h3>
+<p>To expand $(a+b)(c+d)$, multiply each term in the first bracket by each term in the second:</p>
+$$\underbrace{ac}_{\text{F}} + \underbrace{ad}_{\text{O}} + \underbrace{bc}_{\text{I}} + \underbrace{bd}_{\text{L}}$$
+
+<div class="worked-example">
+  Expand $(x+3)(x+5)$.<br><br>
+  <div class="step">F: $x \cdot x = x^2$</div>
+  <div class="step">O: $x \cdot 5 = 5x$</div>
+  <div class="step">I: $3 \cdot x = 3x$</div>
+  <div class="step">L: $3 \cdot 5 = 15$</div>
+  <div class="step">Collect like terms: $x^2 + 5x + 3x + 15 = x^2 + 8x + 15$</div>
+</div>
+
+<h3>Grid Method for Double Brackets</h3>
+<p>The grid method is a reliable alternative to FOIL. Each cell is the product of the row and column headers.</p>
+
+<!-- SVG Grid Method Diagram -->
+<div class="diagram-container">
+<svg viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg" style="max-width:460px;width:100%;font-family:system-ui,sans-serif;">
+  <!-- Title -->
+  <text x="230" y="22" text-anchor="middle" font-size="14" fill="#1e40af" font-weight="600">Grid method: (2x + 3)(x − 4)</text>
+
+  <!-- Grid outline -->
+  <rect x="100" y="40" width="160" height="130" fill="none" stroke="#1e40af" stroke-width="1.5"/>
+  <!-- Column divider -->
+  <line x1="180" y1="40" x2="180" y2="170" stroke="#1e40af" stroke-width="1.5"/>
+  <!-- Row divider -->
+  <line x1="100" y1="90" x2="260" y2="90" stroke="#1e40af" stroke-width="1.5"/>
+
+  <!-- Column headers -->
+  <rect x="100" y="40" width="80" height="50" fill="#dbeafe"/>
+  <rect x="180" y="40" width="80" height="50" fill="#dbeafe"/>
+  <text x="140" y="70" text-anchor="middle" font-size="15" fill="#1e40af" font-weight="700">2x</text>
+  <text x="220" y="70" text-anchor="middle" font-size="15" fill="#1e40af" font-weight="700">+3</text>
+
+  <!-- Row headers -->
+  <rect x="40" y="90" width="60" height="40" fill="#dbeafe"/>
+  <rect x="40" y="130" width="60" height="40" fill="#dbeafe"/>
+  <text x="70" y="115" text-anchor="middle" font-size="15" fill="#1e40af" font-weight="700">x</text>
+  <text x="70" y="155" text-anchor="middle" font-size="15" fill="#1e40af" font-weight="700">−4</text>
+
+  <!-- Cell contents -->
+  <rect x="100" y="90" width="80" height="40" fill="#f0fdf4"/>
+  <rect x="180" y="90" width="80" height="40" fill="#f0fdf4"/>
+  <rect x="100" y="130" width="80" height="40" fill="#fefce8"/>
+  <rect x="180" y="130" width="80" height="40" fill="#fefce8"/>
+
+  <text x="140" y="115" text-anchor="middle" font-size="15" fill="#166534" font-weight="600">2x²</text>
+  <text x="220" y="115" text-anchor="middle" font-size="15" fill="#166534" font-weight="600">3x</text>
+  <text x="140" y="155" text-anchor="middle" font-size="15" fill="#92400e" font-weight="600">−8x</text>
+  <text x="220" y="155" text-anchor="middle" font-size="15" fill="#92400e" font-weight="600">−12</text>
+
+  <!-- Arrow and result -->
+  <text x="290" y="100" font-size="13" fill="#374151">= 2x²</text>
+  <text x="290" y="118" font-size="13" fill="#166534">+ 3x</text>
+  <text x="290" y="136" font-size="13" fill="#92400e">− 8x</text>
+  <text x="290" y="154" font-size="13" fill="#374151">− 12</text>
+  <line x1="285" y1="160" x2="375" y2="160" stroke="#374151" stroke-width="1"/>
+  <text x="290" y="178" font-size="13" fill="#1e40af" font-weight="700">= 2x² − 5x − 12</text>
+</svg>
+</div>
+
+<h3>Special Cases</h3>
+
+<p><strong>Perfect square: $(a+b)^2$</strong></p>
+$$(a+b)^2 = a^2 + 2ab + b^2$$
+$$(a-b)^2 = a^2 - 2ab + b^2$$
+
+<div class="worked-example">
+  Expand $(3x - 2)^2$.<br><br>
+  <div class="step">$(3x)^2 - 2(3x)(2) + 2^2$</div>
+  <div class="step">$= 9x^2 - 12x + 4$</div>
+</div>
+
+<p><strong>Difference of two squares: $(a+b)(a-b)$</strong></p>
+$$(a+b)(a-b) = a^2 - b^2$$
+
+<div class="worked-example">
+  Expand $(5x+3)(5x-3)$.<br><br>
+  <div class="step">$(5x)^2 - 3^2 = 25x^2 - 9$</div>
+</div>
+
+<div class="exam-tip">
+  Recognising the difference of two squares is a key skill — both in expanding and factorising. Look for two brackets that are identical except for the sign between the terms.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.1.4 Factorising</h2>
+
+<h3>Taking Out the HCF</h3>
+<p>Find the highest common factor (HCF) of all terms and place it outside a bracket:</p>
+
+<div class="worked-example">
+  Factorise $12x^3 - 8x^2 + 4x$.<br><br>
+  <div class="step">HCF of 12, 8, 4 is 4; HCF of $x^3, x^2, x$ is $x$</div>
+  <div class="step">HCF = $4x$</div>
+  <div class="step">$4x(3x^2 - 2x + 1)$</div>
+  <div class="step">Check by expanding: $4x \cdot 3x^2 = 12x^3$ ✓</div>
+</div>
+
+<div class="worked-example">
+  Factorise $6a^2b - 9ab^2$.<br><br>
+  <div class="step">HCF = $3ab$</div>
+  <div class="step">$3ab(2a - 3b)$</div>
+</div>
+
+<h3>Factorising Quadratics $ax^2 + bx + c$</h3>
+
+<p><strong>Case 1: $a = 1$ (simple quadratics)</strong></p>
+<p>Find two numbers that <em>multiply</em> to give $c$ and <em>add</em> to give $b$:</p>
+
+<div class="worked-example">
+  Factorise $x^2 + 7x + 12$.<br><br>
+  <div class="step">Need two numbers that multiply to $+12$ and add to $+7$</div>
+  <div class="step">Factors of 12: $(1,12),(2,6),(3,4)$ &rarr; $3 + 4 = 7$ ✓</div>
+  <div class="step">Answer: $(x+3)(x+4)$</div>
+</div>
+
+<div class="worked-example">
+  Factorise $x^2 - 5x - 6$.<br><br>
+  <div class="step">Need two numbers that multiply to $-6$ and add to $-5$</div>
+  <div class="step">$-6$ and $+1$: $(-6)(+1) = -6$ ✓, $-6 + 1 = -5$ ✓</div>
+  <div class="step">Answer: $(x-6)(x+1)$</div>
+</div>
+
+<table>
+  <thead><tr><th>Sign pattern in $x^2 + bx + c$</th><th>Signs in factors</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>$b > 0$, $c > 0$</td><td>Both positive</td><td>$(x+3)(x+4)$</td></tr>
+    <tr><td>$b < 0$, $c > 0$</td><td>Both negative</td><td>$(x-3)(x-4)$</td></tr>
+    <tr><td>$c < 0$</td><td>One positive, one negative</td><td>$(x+3)(x-4)$ or $(x-3)(x+4)$</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Case 2: $a \neq 1$ — The AC Method</strong></p>
+<ol>
+  <li>Find the product $ac$.</li>
+  <li>Find two numbers that multiply to $ac$ and add to $b$.</li>
+  <li>Rewrite the middle term using these two numbers, then factorise by grouping.</li>
+</ol>
+
+<div class="worked-example">
+  Factorise $2x^2 + 7x + 3$.<br><br>
+  <div class="step">$a=2,\ b=7,\ c=3$ so $ac = 6$</div>
+  <div class="step">Find two numbers: multiply to 6, add to 7 &rarr; $1$ and $6$</div>
+  <div class="step">Rewrite: $2x^2 + x + 6x + 3$</div>
+  <div class="step">Group: $x(2x+1) + 3(2x+1)$</div>
+  <div class="step">Factor: $(2x+1)(x+3)$</div>
+</div>
+
+<h3>Difference of Two Squares (Factorising)</h3>
+$$a^2 - b^2 = (a+b)(a-b)$$
+
+<div class="worked-example">
+  Factorise $9x^2 - 16$.<br><br>
+  <div class="step">$9x^2 = (3x)^2$ and $16 = 4^2$</div>
+  <div class="step">Answer: $(3x+4)(3x-4)$</div>
+</div>
+
+<div class="exam-tip">
+  Always check for a common factor first before using any other factorising method. E.g. $2x^2 - 8 = 2(x^2 - 4) = 2(x+2)(x-2)$.
+</div>
+
+<div class="higher">
+  <p><span class="higher-label">Higher — Factorising by Grouping (4-term expressions)</span></p>
+  <p>When an expression has four terms, try grouping them in pairs and factorising each pair:</p>
+  <div class="worked-example">
+    Factorise $ax + ay + bx + by$.<br><br>
+    <div class="step">Group: $(ax + ay) + (bx + by)$</div>
+    <div class="step">Factorise each pair: $a(x+y) + b(x+y)$</div>
+    <div class="step">The common bracket is $(x+y)$: $(x+y)(a+b)$</div>
+  </div>
+  <div class="worked-example">
+    Factorise $3x^2 - 6x + 2x - 4$.<br><br>
+    <div class="step">Group: $3x(x-2) + 2(x-2)$</div>
+    <div class="step">Answer: $(x-2)(3x+2)$</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<h2>2.1.5 Algebraic Fractions <span style="font-size:0.8rem;color:#7e22ce;">[Higher]</span></h2>
+
+<div class="higher">
+<p><span class="higher-label">Higher only</span></p>
+
+<h3>Simplifying Algebraic Fractions</h3>
+<p>Factorise the numerator and denominator completely, then cancel common factors:</p>
+
+<div class="worked-example">
+  Simplify $\dfrac{x^2 - 9}{x^2 - x - 6}$.<br><br>
+  <div class="step">Numerator: $x^2 - 9 = (x+3)(x-3)$</div>
+  <div class="step">Denominator: $x^2 - x - 6 = (x-3)(x+2)$</div>
+  <div class="step">Cancel $(x-3)$: $\dfrac{(x+3)\cancel{(x-3)}}{\cancel{(x-3)}(x+2)} = \dfrac{x+3}{x+2}$</div>
+</div>
+
+<h3>Multiplying and Dividing Algebraic Fractions</h3>
+<p>Multiply: multiply numerators together and denominators together (simplify first if possible).</p>
+<p>Divide: flip the second fraction (reciprocal) and multiply.</p>
+
+<div class="worked-example">
+  Simplify $\dfrac{3x+6}{x^2} \times \dfrac{x}{x+2}$.<br><br>
+  <div class="step">Factorise: $\dfrac{3(x+2)}{x^2} \times \dfrac{x}{x+2}$</div>
+  <div class="step">Cancel $(x+2)$ and one $x$: $\dfrac{3 \cdot x}{x^2} = \dfrac{3}{x}$</div>
+</div>
+
+<h3>Adding and Subtracting Algebraic Fractions</h3>
+<p>Find the lowest common denominator (LCD), rewrite each fraction, then combine numerators:</p>
+
+<div class="worked-example">
+  Simplify $\dfrac{3}{x+1} + \dfrac{2}{x-2}$.<br><br>
+  <div class="step">LCD $= (x+1)(x-2)$</div>
+  <div class="step">Rewrite: $\dfrac{3(x-2)}{(x+1)(x-2)} + \dfrac{2(x+1)}{(x+1)(x-2)}$</div>
+  <div class="step">Combine: $\dfrac{3(x-2)+2(x+1)}{(x+1)(x-2)}$</div>
+  <div class="step">Expand numerator: $3x - 6 + 2x + 2 = 5x - 4$</div>
+  <div class="step">Answer: $\dfrac{5x-4}{(x+1)(x-2)}$</div>
+</div>
+
+<div class="exam-tip">
+  In Higher exams, algebraic fractions questions often require factorising before simplifying. Always factorise both top and bottom first.
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Quick Reference Summary</h2>
+<table>
+  <thead><tr><th>Skill</th><th>Key rule / formula</th></tr></thead>
+  <tbody>
+    <tr><td>Collecting like terms</td><td>Only add/subtract terms with identical variable parts</td></tr>
+    <tr><td>Multiplying terms</td><td>Multiply coefficients, add indices: $x^m \cdot x^n = x^{m+n}$</td></tr>
+    <tr><td>Expand single bracket</td><td>$a(b+c) = ab + ac$</td></tr>
+    <tr><td>Expand double brackets</td><td>FOIL or grid method; collect like terms</td></tr>
+    <tr><td>Perfect square</td><td>$(a \pm b)^2 = a^2 \pm 2ab + b^2$</td></tr>
+    <tr><td>Difference of two squares</td><td>$(a+b)(a-b) = a^2 - b^2$</td></tr>
+    <tr><td>Factorise: HCF</td><td>Identify and extract highest common factor</td></tr>
+    <tr><td>Factorise: simple quadratic</td><td>Two numbers that multiply to $c$ and add to $b$</td></tr>
+    <tr><td>Factorise: $a \neq 1$</td><td>AC method — split middle term, group</td></tr>
+    <tr><td>Algebraic fractions [H]</td><td>Factorise fully, then cancel common factors</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+</body>
+</html>
