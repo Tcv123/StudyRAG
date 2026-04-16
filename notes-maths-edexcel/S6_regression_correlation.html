@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S6: Regression, Correlation & Hypothesis Testing - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>S6: Regression, Correlation and Hypothesis Testing</h1>
+
+<h2>1. Scatter Diagrams and Correlation</h2>
+
+<p>A <strong>scatter diagram</strong> plots bivariate data (two variables, one on each axis) to reveal the relationship between them. The independent variable is placed on the x-axis; the dependent variable on the y-axis.</p>
+
+<div class="definition">
+  <strong>Correlation</strong> describes the linear relationship between two variables. It can be:
+  <ul>
+    <li><strong>Positive</strong> — as x increases, y tends to increase</li>
+    <li><strong>Negative</strong> — as x increases, y tends to decrease</li>
+    <li><strong>Zero (none)</strong> — no linear relationship visible</li>
+  </ul>
+  Strength: <em>strong</em> (points close to a line), <em>moderate</em>, or <em>weak</em> (widely scattered).
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Correlation does NOT imply causation. Always state this explicitly if asked. Two variables can be correlated due to a <em>lurking/confounding variable</em> or pure coincidence.
+</div>
+
+<!-- SVG Scatter diagram with regression line -->
+<svg width="100%" viewBox="0 0 500 320" style="margin:20px 0;background:#f8fafc;border-radius:8px;border:1px solid #cbd5e1;">
+  <!-- Axes -->
+  <line x1="60" y1="270" x2="460" y2="270" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="270" x2="60" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- Axis labels -->
+  <text x="250" y="300" text-anchor="middle" font-size="13" fill="#1a1a2e">x (Independent variable)</text>
+  <text x="18" y="155" text-anchor="middle" font-size="13" fill="#1a1a2e" transform="rotate(-90,18,155)">y (Dependent variable)</text>
+  <!-- Regression line -->
+  <line x1="80" y1="230" x2="440" y2="70" stroke="#2563eb" stroke-width="2" stroke-dasharray="6,3"/>
+  <!-- Data points (positive correlation) -->
+  <circle cx="90" cy="225" r="5" fill="#dc2626"/>
+  <circle cx="120" cy="210" r="5" fill="#dc2626"/>
+  <circle cx="150" cy="195" r="5" fill="#dc2626"/>
+  <circle cx="180" cy="188" r="5" fill="#dc2626"/>
+  <circle cx="210" cy="170" r="5" fill="#dc2626"/>
+  <circle cx="240" cy="158" r="5" fill="#dc2626"/>
+  <circle cx="270" cy="152" r="5" fill="#dc2626"/>
+  <circle cx="300" cy="140" r="5" fill="#dc2626"/>
+  <circle cx="330" cy="130" r="5" fill="#dc2626"/>
+  <circle cx="360" cy="118" r="5" fill="#dc2626"/>
+  <circle cx="390" cy="105" r="5" fill="#dc2626"/>
+  <circle cx="420" cy="90" r="5" fill="#dc2626"/>
+  <!-- Legend -->
+  <circle cx="300" cy="265" r="5" fill="#dc2626"/>
+  <text x="310" y="269" font-size="12" fill="#1a1a2e">Data points</text>
+  <line x1="370" y1="265" x2="395" y2="265" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="400" y="269" font-size="12" fill="#1a1a2e">Regression line</text>
+  <!-- Title -->
+  <text x="250" y="20" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="600">Strong positive correlation with regression line</text>
+</svg>
+
+<h2>2. Product Moment Correlation Coefficient (PMCC)</h2>
+
+<div class="definition">
+  <strong>PMCC</strong>, denoted \(r\), measures the strength and direction of the <em>linear</em> relationship between two variables. It always satisfies \(-1 \leq r \leq 1\).
+</div>
+
+<div class="equation">
+  $$r = \frac{S_{xy}}{\sqrt{S_{xx} \cdot S_{yy}}}$$
+</div>
+
+<p>where the summary statistics are:</p>
+
+<div class="equation">
+  $$S_{xy} = \sum xy - \frac{\sum x \sum y}{n}, \quad S_{xx} = \sum x^2 - \frac{(\sum x)^2}{n}, \quad S_{yy} = \sum y^2 - \frac{(\sum y)^2}{n}$$
+</div>
+
+<table>
+  <tr><th>Value of \(r\)</th><th>Interpretation</th></tr>
+  <tr><td>\(r = 1\)</td><td>Perfect positive linear correlation</td></tr>
+  <tr><td>\(0 < r < 1\)</td><td>Positive linear correlation (closer to 1 = stronger)</td></tr>
+  <tr><td>\(r = 0\)</td><td>No linear correlation</td></tr>
+  <tr><td>\(-1 < r < 0\)</td><td>Negative linear correlation (closer to -1 = stronger)</td></tr>
+  <tr><td>\(r = -1\)</td><td>Perfect negative linear correlation</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> \(r\) measures only <em>linear</em> correlation. A value near 0 does not mean no relationship — there could be a strong non-linear relationship.
+</div>
+
+<h3>Worked Example — Calculating PMCC</h3>
+
+<div class="example">
+  <strong>Example:</strong> For \(n = 5\) data pairs, \(\sum x = 20\), \(\sum y = 30\), \(\sum xy = 135\), \(\sum x^2 = 90\), \(\sum y^2 = 200\). Find \(r\).<br><br>
+  \(S_{xy} = 135 - \dfrac{20 \times 30}{5} = 135 - 120 = 15\)<br>
+  \(S_{xx} = 90 - \dfrac{20^2}{5} = 90 - 80 = 10\)<br>
+  \(S_{yy} = 200 - \dfrac{30^2}{5} = 200 - 180 = 20\)<br>
+  \(r = \dfrac{15}{\sqrt{10 \times 20}} = \dfrac{15}{\sqrt{200}} = \dfrac{15}{14.14...} \approx 0.671\)<br><br>
+  This indicates moderate positive linear correlation.
+</div>
+
+<h2>3. Linear Regression</h2>
+
+<p>The <strong>regression line of y on x</strong> (also called the least squares regression line) minimises the sum of squared <em>vertical</em> residuals. Its equation is:</p>
+
+<div class="equation">
+  $$\hat{y} = a + bx$$
+</div>
+
+<p>where the gradient and intercept are calculated as:</p>
+
+<div class="equation">
+  $$b = \frac{S_{xy}}{S_{xx}}, \qquad a = \bar{y} - b\bar{x}$$
+</div>
+
+<p>Here \(\bar{x} = \dfrac{\sum x}{n}\) and \(\bar{y} = \dfrac{\sum y}{n}\) are the sample means. The regression line always passes through \((\bar{x}, \bar{y})\).</p>
+
+<div class="definition">
+  <strong>Residual</strong> for a data point \((x_i, y_i)\): the difference \(e_i = y_i - \hat{y}_i\). The regression line makes \(\sum e_i^2\) as small as possible.
+</div>
+
+<h3>Using the Regression Line</h3>
+<ul>
+  <li>Use the <strong>y on x</strong> line to <em>predict y from a given x value only</em>.</li>
+  <li><strong>Interpolation</strong> — predicting within the range of the data. Generally reliable.</li>
+  <li><strong>Extrapolation</strong> — predicting outside the range of the data. Unreliable; the model may not hold beyond the data.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Never use the y on x regression line to predict x from y. If asked to predict x, you need the x on y regression line (which is NOT the rearrangement of y on x).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> From the data above, find the regression line of y on x.<br><br>
+  \(\bar{x} = \dfrac{20}{5} = 4\), \quad \(\bar{y} = \dfrac{30}{5} = 6\)<br>
+  \(b = \dfrac{15}{10} = 1.5\)<br>
+  \(a = 6 - 1.5 \times 4 = 6 - 6 = 0\)<br>
+  So the regression line is \(\hat{y} = 1.5x\).<br><br>
+  Predict y when x = 3 (interpolation): \(\hat{y} = 1.5 \times 3 = 4.5\).
+</div>
+
+<h2>4. Coding Data for Regression</h2>
+
+<p>When data is <strong>coded</strong> (transformed) to simplify calculations, the regression equation must be decoded to express y in terms of x (original variables).</p>
+
+<p>Common coding: \(p = \dfrac{x - a}{b}\) and \(q = \dfrac{y - c}{d}\). If the regression of q on p is \(q = \alpha + \beta p\), then substitute back:</p>
+
+<div class="equation">
+  $$\frac{y - c}{d} = \alpha + \beta \cdot \frac{x - a}{b}$$
+</div>
+
+<p>Then rearrange for y in terms of x.</p>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> The PMCC \(r\) is unaffected by linear coding (it is dimensionless). You get the same value of \(r\) whether you use raw or coded data.
+</div>
+
+<h2>5. Hypothesis Testing for \(\rho\) (Population PMCC)</h2>
+
+<div class="definition">
+  The <strong>population PMCC</strong> \(\rho\) (rho) measures the true underlying linear correlation. The sample PMCC \(r\) is an estimate of \(\rho\). A hypothesis test determines whether observed correlation is statistically significant.
+</div>
+
+<h3>Setting Up the Test</h3>
+<ul>
+  <li><strong>\(H_0\): \(\rho = 0\)</strong> (no linear correlation in the population)</li>
+  <li><strong>\(H_1\): \(\rho \neq 0\)</strong> (two-tailed, testing for any correlation)</li>
+  <li><strong>\(H_1\): \(\rho > 0\)</strong> (one-tailed, testing for positive correlation)</li>
+  <li><strong>\(H_1\): \(\rho < 0\)</strong> (one-tailed, testing for negative correlation)</li>
+</ul>
+
+<h3>Procedure</h3>
+<ol>
+  <li>State \(H_0\) and \(H_1\) clearly, including the significance level \(\alpha\).</li>
+  <li>Calculate the sample PMCC \(r\) from the data.</li>
+  <li>Look up the critical value \(r_c\) from the Edexcel critical values table (using \(n\) and \(\alpha\)).</li>
+  <li>Compare: if \(|r| > r_c\) (two-tailed) or \(r > r_c\) (one-tailed positive), reject \(H_0\).</li>
+  <li>State conclusion in context.</li>
+</ol>
+
+<div class="example">
+  <strong>Example:</strong> A researcher collects \(n = 10\) pairs of data and calculates \(r = 0.65\). Test, at the 5% significance level, whether there is evidence of positive correlation.<br><br>
+  \(H_0: \rho = 0\), \quad \(H_1: \rho > 0\) (one-tailed, 5%)<br>
+  Critical value from table for \(n = 10\), one-tailed 5%: \(r_c = 0.5494\)<br>
+  Since \(0.65 > 0.5494\), we <strong>reject \(H_0\)</strong>.<br>
+  There is sufficient evidence at the 5% significance level to conclude that there is positive linear correlation between the two variables.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Always look up the correct critical value for your \(n\) and significance level. For a two-tailed test at 5%, use the 2.5% column. State the conclusion in the context of the problem — say what the variables are.
+</div>
+
+<h2>6. Key Formulae Summary</h2>
+
+<table>
+  <tr><th>Formula</th><th>Description</th></tr>
+  <tr><td>\(S_{xy} = \sum xy - \dfrac{\sum x \sum y}{n}\)</td><td>Sum of products (coded)</td></tr>
+  <tr><td>\(S_{xx} = \sum x^2 - \dfrac{(\sum x)^2}{n}\)</td><td>Sum of squares for x</td></tr>
+  <tr><td>\(S_{yy} = \sum y^2 - \dfrac{(\sum y)^2}{n}\)</td><td>Sum of squares for y</td></tr>
+  <tr><td>\(r = \dfrac{S_{xy}}{\sqrt{S_{xx} S_{yy}}}\)</td><td>Sample PMCC</td></tr>
+  <tr><td>\(b = \dfrac{S_{xy}}{S_{xx}}\)</td><td>Gradient of regression line</td></tr>
+  <tr><td>\(a = \bar{y} - b\bar{x}\)</td><td>Intercept of regression line</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

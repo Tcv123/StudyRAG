@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M3: Forces and Newton's Laws - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>M3: Forces and Newton's Laws</h1>
+
+<h2>1. Forces as Vectors</h2>
+<p>Forces are vector quantities — they have both magnitude and direction. The <strong>resultant force</strong> is the single force equivalent to all forces acting, found by vector addition.</p>
+<div class="definition">
+  <strong>Resultant Force:</strong> \(\mathbf{F}_{net} = \mathbf{F}_1 + \mathbf{F}_2 + \cdots + \mathbf{F}_n\)<br>
+  In component form: \(F_x = \sum F_i \cos\theta_i\), \quad \(F_y = \sum F_i \sin\theta_i\)
+</div>
+<p>The magnitude of the resultant: \(|\mathbf{F}_{net}| = \sqrt{F_x^2 + F_y^2}\), and its direction: \(\theta = \arctan\!\left(\tfrac{F_y}{F_x}\right)\).</p>
+
+<h2>2. Newton's Laws of Motion</h2>
+<ul>
+  <li><strong>First Law:</strong> A particle remains at rest or moves with constant velocity unless acted on by a resultant force.</li>
+  <li><strong>Second Law:</strong> \(\mathbf{F}_{net} = m\mathbf{a}\) — the net force equals mass times acceleration (vector equation).</li>
+  <li><strong>Third Law:</strong> Every action has an equal and opposite reaction.</li>
+</ul>
+<div class="equation">$$\mathbf{F}_{net} = m\mathbf{a}$$</div>
+<p>For problems in a single direction, resolve forces along that direction and apply \(F = ma\) as a scalar equation.</p>
+
+<h2>3. Common Forces in Mechanics</h2>
+<table>
+  <tr><th>Force</th><th>Symbol</th><th>Definition</th></tr>
+  <tr><td>Weight</td><td>\(W\)</td><td>\(W = mg\) downward; \(g = 9.8\ \text{m/s}^2\)</td></tr>
+  <tr><td>Normal Reaction</td><td>\(R\) or \(N\)</td><td>Perpendicular to the surface, away from surface</td></tr>
+  <tr><td>Tension</td><td>\(T\)</td><td>Along a string/rod, pulling the particle</td></tr>
+  <tr><td>Friction</td><td>\(F\)</td><td>Along the surface, opposing motion or tendency to move</td></tr>
+  <tr><td>Thrust</td><td>\(P\)</td><td>Along a rod, pushing the particle (compressive)</td></tr>
+</table>
+
+<h2>4. Resolving Forces</h2>
+<p>Any force \(F\) at angle \(\theta\) to the horizontal can be split into:</p>
+<div class="equation">$$F_x = F\cos\theta \qquad F_y = F\sin\theta$$</div>
+<p>To solve problems: choose axes (usually horizontal/vertical or along/perpendicular to slope), resolve all forces, apply \(F = ma\) in each direction.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always draw a clear force diagram before writing equations. Label every force with its magnitude and direction. Never omit the weight \(mg\).
+</div>
+
+<h2>5. Equilibrium</h2>
+<div class="definition">
+  A particle is in <strong>equilibrium</strong> when the resultant force is zero:<br>
+  $$\sum F_x = 0 \qquad \text{and} \qquad \sum F_y = 0$$
+  Equivalently, \(\mathbf{F}_{net} = \mathbf{0}\), so \(m\mathbf{a} = \mathbf{0}\) and the particle is at rest or moving at constant velocity.
+</div>
+
+<h3>Particle on a Horizontal Surface — Force Diagram</h3>
+<div style="text-align:center;margin:20px 0;">
+<svg width="380" height="220" viewBox="0 0 380 220">
+  <!-- Ground -->
+  <rect x="60" y="150" width="260" height="8" fill="#cbd5e1" rx="2"/>
+  <!-- Particle block -->
+  <rect x="155" y="110" width="70" height="40" fill="#bfdbfe" stroke="#2563eb" stroke-width="2" rx="4"/>
+  <text x="190" y="134" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="bold">m</text>
+  <!-- Normal reaction (up) -->
+  <line x1="190" y1="110" x2="190" y2="55" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowG)"/>
+  <text x="198" y="72" font-size="13" fill="#16a34a" font-weight="600">R</text>
+  <!-- Weight (down) -->
+  <line x1="190" y1="150" x2="190" y2="205" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowR)"/>
+  <text x="198" y="198" font-size="13" fill="#dc2626" font-weight="600">mg</text>
+  <!-- Applied force (right) -->
+  <line x1="225" y1="130" x2="295" y2="130" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrowP)"/>
+  <text x="305" y="135" font-size="13" fill="#7c3aed" font-weight="600">F</text>
+  <!-- Friction (left) -->
+  <line x1="155" y1="130" x2="85" y2="130" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrowA)"/>
+  <text x="56" y="135" font-size="13" fill="#f59e0b" font-weight="600">Fr</text>
+  <defs>
+    <marker id="arrowG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/></marker>
+    <marker id="arrowR" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+    <marker id="arrowP" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7c3aed"/></marker>
+    <marker id="arrowA" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#f59e0b"/></marker>
+  </defs>
+</svg>
+<p style="font-size:0.88rem;color:#64748b;margin-top:4px;">Particle on a smooth horizontal surface: R (normal), mg (weight), F (applied), Fr (friction)</p>
+</div>
+
+<h2>6. Connected Particles</h2>
+<p>When two particles are connected by a <strong>light inextensible string</strong> over a <strong>smooth pulley</strong> (Atwood machine):</p>
+<ul>
+  <li>The string has the same tension \(T\) throughout (light string, smooth pulley).</li>
+  <li>Both particles have the <strong>same magnitude of acceleration</strong> \(a\) (inextensible string).</li>
+  <li>Write a separate \(F = ma\) equation for each particle, then solve simultaneously.</li>
+</ul>
+
+<h3>Atwood Machine Setup</h3>
+<div style="text-align:center;margin:20px 0;">
+<svg width="300" height="280" viewBox="0 0 300 280">
+  <!-- Pulley circle -->
+  <circle cx="150" cy="50" r="22" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>
+  <circle cx="150" cy="50" r="6" fill="#475569"/>
+  <!-- String left -->
+  <line x1="132" y1="65" x2="90" y2="145" stroke="#475569" stroke-width="2"/>
+  <!-- String right -->
+  <line x1="168" y1="65" x2="210" y2="145" stroke="#475569" stroke-width="2"/>
+  <!-- Mass 1 (left, heavier) -->
+  <rect x="60" y="145" width="60" height="45" fill="#bfdbfe" stroke="#2563eb" stroke-width="2" rx="4"/>
+  <text x="90" y="172" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="bold">m&#8321;</text>
+  <!-- Mass 2 (right, lighter) -->
+  <rect x="180" y="145" width="60" height="40" fill="#fde8d8" stroke="#ea580c" stroke-width="2" rx="4"/>
+  <text x="210" y="169" text-anchor="middle" font-size="13" fill="#9a3412" font-weight="bold">m&#8322;</text>
+  <!-- T arrows up on both -->
+  <line x1="90" y1="145" x2="90" y2="95" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowT)"/>
+  <text x="96" y="113" font-size="12" fill="#16a34a" font-weight="600">T</text>
+  <line x1="210" y1="145" x2="210" y2="98" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowT2)"/>
+  <text x="216" y="115" font-size="12" fill="#16a34a" font-weight="600">T</text>
+  <!-- Weight arrows down -->
+  <line x1="90" y1="190" x2="90" y2="245" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowW1)"/>
+  <text x="96" y="238" font-size="12" fill="#dc2626" font-weight="600">m&#8321;g</text>
+  <line x1="210" y1="185" x2="210" y2="240" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowW2)"/>
+  <text x="216" y="233" font-size="12" fill="#dc2626" font-weight="600">m&#8322;g</text>
+  <!-- a arrows -->
+  <text x="52" y="200" font-size="11" fill="#7c3aed">↓ a</text>
+  <text x="222" y="200" font-size="11" fill="#7c3aed">↑ a</text>
+  <defs>
+    <marker id="arrowT" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/></marker>
+    <marker id="arrowT2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/></marker>
+    <marker id="arrowW1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+    <marker id="arrowW2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+  </defs>
+</svg>
+<p style="font-size:0.88rem;color:#64748b;margin-top:4px;">Atwood machine: \(m_1 > m_2\), so \(m_1\) descends with acceleration \(a\)</p>
+</div>
+
+<div class="example">
+  <strong>Atwood Machine Equations:</strong><br>
+  For \(m_1\) (descending): \(\quad m_1 g - T = m_1 a\)<br>
+  For \(m_2\) (ascending): \(\quad T - m_2 g = m_2 a\)<br>
+  Adding: \(\quad (m_1 - m_2)g = (m_1 + m_2)a\)<br>
+  $$a = \frac{(m_1 - m_2)g}{m_1 + m_2}, \qquad T = \frac{2m_1 m_2 g}{m_1 + m_2}$$
+</div>
+
+<h3>Particle on a Table Connected to a Hanging Particle</h3>
+<p>Particle A (mass \(m_1\)) on a smooth horizontal table, connected by a string over a pulley at the edge to particle B (mass \(m_2\)) hanging freely.</p>
+<ul>
+  <li>For A (horizontal, no friction if smooth): \(T = m_1 a\)</li>
+  <li>For B (vertical): \(m_2 g - T = m_2 a\)</li>
+  <li>Solve: \(a = \dfrac{m_2 g}{m_1 + m_2}\), \quad \(T = \dfrac{m_1 m_2 g}{m_1 + m_2}\)</li>
+</ul>
+
+<h2>7. Particle in a Lift</h2>
+<p>A particle of mass \(m\) stands on the floor of a lift. The normal reaction \(N\) (apparent weight) depends on the lift's acceleration \(a\):</p>
+<div class="equation">$$N = m(g + a) \quad \text{(accelerating upward)}$$
+$$N = m(g - a) \quad \text{(accelerating downward)}$$</div>
+<ul>
+  <li>If \(a = 0\) (constant velocity): \(N = mg\) (normal weight).</li>
+  <li>If \(a = g\) downward (free fall): \(N = 0\) (weightlessness).</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In a lift problem, always define positive direction clearly (e.g., upward positive). Apply \(F = ma\) in that direction. If lift accelerates upward, net upward force = \(N - mg = ma\), giving \(N = m(g+a)\).
+</div>
+
+<h2>8. Worked Example</h2>
+<div class="example">
+  <strong>Example:</strong> Two particles, A (\(3\ \text{kg}\)) and B (\(5\ \text{kg}\)), are connected by a light inextensible string over a smooth pulley. Find the acceleration and tension.<br><br>
+  <strong>Take downward as positive for each particle in its direction of motion (B descends).</strong><br>
+  For B: \(5(9.8) - T = 5a \Rightarrow 49 - T = 5a\) ...(1)<br>
+  For A: \(T - 3(9.8) = 3a \Rightarrow T - 29.4 = 3a\) ...(2)<br>
+  Add (1)+(2): \(19.6 = 8a \Rightarrow a = 2.45\ \text{m/s}^2\)<br>
+  Sub into (2): \(T = 29.4 + 3(2.45) = 36.75\ \text{N}\)
+</div>
+
+<h2>9. Key Formulae Summary</h2>
+<table>
+  <tr><th>Formula</th><th>Use</th></tr>
+  <tr><td>\(\mathbf{F} = m\mathbf{a}\)</td><td>Newton's Second Law (vector)</td></tr>
+  <tr><td>\(W = mg\)</td><td>Weight (\(g = 9.8\ \text{m/s}^2\))</td></tr>
+  <tr><td>\(F_x = F\cos\theta,\ F_y = F\sin\theta\)</td><td>Resolving components</td></tr>
+  <tr><td>\(\sum F_x = 0,\ \sum F_y = 0\)</td><td>Equilibrium conditions</td></tr>
+  <tr><td>\(N = m(g \pm a)\)</td><td>Apparent weight in lift</td></tr>
+  <tr><td>\(a = \frac{(m_1-m_2)g}{m_1+m_2}\)</td><td>Atwood machine acceleration</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Common Errors to Avoid:</strong>
+  <ul>
+    <li>Using \(g = 10\) instead of \(g = 9.8\) — Edexcel uses 9.8 unless told otherwise.</li>
+    <li>Forgetting to write separate \(F = ma\) equations for each particle in a connected particle problem.</li>
+    <li>Wrong sign for tension direction — tension always pulls the particle toward the string/pulley.</li>
+    <li>Forgetting that the string tension is the same throughout (light string, smooth pulley).</li>
+  </ul>
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

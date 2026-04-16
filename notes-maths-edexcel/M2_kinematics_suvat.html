@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M2: Kinematics — SUVAT - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>M2: Constant Acceleration — Kinematics (SUVAT)</h1>
+
+<h2>1. SUVAT Variables</h2>
+
+<div class="definition">
+  The five SUVAT variables describe motion under <strong>constant acceleration</strong>:
+  <ul>
+    <li>\(s\) — <strong>displacement</strong> (m) — change in position from start (vector: can be negative)</li>
+    <li>\(u\) — <strong>initial velocity</strong> (m s⁻¹) — velocity at \(t = 0\)</li>
+    <li>\(v\) — <strong>final velocity</strong> (m s⁻¹) — velocity at time \(t\)</li>
+    <li>\(a\) — <strong>acceleration</strong> (m s⁻²) — constant throughout</li>
+    <li>\(t\) — <strong>time</strong> (s) — duration of motion</li>
+  </ul>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> SUVAT equations only apply when acceleration is <strong>constant</strong>. If acceleration varies, you must use calculus (differentiation/integration).
+</div>
+
+<h2>2. The SUVAT Equations</h2>
+
+<p>There are five SUVAT equations — each one omits one variable. Identify the unknown and the known quantities, then select the equation that does not involve the unwanted variable.</p>
+
+<table>
+  <tr><th>Equation</th><th>Omits</th></tr>
+  <tr><td>\(v = u + at\)</td><td>\(s\)</td></tr>
+  <tr><td>\(s = ut + \dfrac{1}{2}at^2\)</td><td>\(v\)</td></tr>
+  <tr><td>\(s = vt - \dfrac{1}{2}at^2\)</td><td>\(u\)</td></tr>
+  <tr><td>\(v^2 = u^2 + 2as\)</td><td>\(t\)</td></tr>
+  <tr><td>\(s = \dfrac{1}{2}(u+v)t\)</td><td>\(a\)</td></tr>
+</table>
+
+<div class="example">
+  <strong>Example:</strong> A car accelerates from rest at 2 m s⁻² for 8 seconds. Find its final velocity and the distance travelled.<br><br>
+  Known: \(u = 0\), \(a = 2\), \(t = 8\). Find \(v\) and \(s\).<br><br>
+  \(v = u + at = 0 + 2 \times 8 = 16 \text{ m s}^{-1}\)<br>
+  \(s = ut + \tfrac{1}{2}at^2 = 0 + \tfrac{1}{2} \times 2 \times 64 = 64 \text{ m}\)<br><br>
+  Check with \(v^2 = u^2 + 2as\): \(16^2 = 0 + 2 \times 2 \times 64 = 256\). ✓
+</div>
+
+<h2>3. Vertical Motion Under Gravity</h2>
+
+<p>When an object moves vertically, the only force is gravity (ignoring air resistance), giving a constant downward acceleration of \(g = 9.8 \text{ m s}^{-2}\).</p>
+
+<div class="definition">
+  Convention: take <strong>upward as positive</strong>. Then \(a = -9.8 \text{ m s}^{-2}\) (downward).<br>
+  If downward is taken as positive: \(a = +9.8 \text{ m s}^{-2}\) — be consistent throughout!
+</div>
+
+<p>At the highest point, velocity = 0. The motion is symmetric: time up = time down (if returning to same level).</p>
+
+<!-- SVG: Vertical motion diagram -->
+<svg width="100%" viewBox="0 0 520 320" style="margin:20px 0;background:#f8fafc;border-radius:8px;border:1px solid #cbd5e1;">
+  <!-- Ground -->
+  <line x1="40" y1="280" x2="480" y2="280" stroke="#1a1a2e" stroke-width="3"/>
+  <!-- Ball trajectory (parabolic arc) -->
+  <path d="M 120,278 Q 260,50 400,278" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <!-- Ball at start -->
+  <circle cx="120" cy="275" r="10" fill="#2563eb"/>
+  <!-- Ball at top -->
+  <circle cx="260" cy="53" r="10" fill="#16a34a"/>
+  <!-- Ball at end -->
+  <circle cx="400" cy="275" r="10" fill="#dc2626"/>
+  <!-- Arrow for initial velocity -->
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowhead-g" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <line x1="120" y1="265" x2="120" y2="210" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+  <text x="88" y="235" font-size="12" fill="#2563eb" font-weight="600">u (up)</text>
+  <!-- Arrow for g at top -->
+  <line x1="260" y1="65" x2="260" y2="110" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowhead-g)"/>
+  <text x="268" y="95" font-size="12" fill="#dc2626">g = 9.8↓</text>
+  <!-- Labels -->
+  <text x="260" y="38" text-anchor="middle" font-size="13" fill="#16a34a" font-weight="600">v = 0 at maximum height</text>
+  <text x="115" y="298" text-anchor="middle" font-size="12" fill="#2563eb">Launch</text>
+  <text x="400" y="298" text-anchor="middle" font-size="12" fill="#dc2626">Return</text>
+  <!-- Symmetry arrow -->
+  <line x1="135" y1="265" x2="245" y2="265" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="275" y1="265" x2="385" y2="265" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="190" y="258" font-size="11" fill="#16a34a">t up</text>
+  <text x="325" y="258" font-size="11" fill="#16a34a">t down</text>
+  <!-- Title -->
+  <text x="260" y="18" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="600">Vertical Motion Under Gravity (Upward Positive)</text>
+</svg>
+
+<div class="example">
+  <strong>Example:</strong> A ball is thrown upward with speed 15 m s⁻¹. Find the maximum height reached and the time of flight before it returns to the same level.<br><br>
+  Taking upward as positive: \(u = 15\), \(a = -9.8\), \(v = 0\) at max height.<br><br>
+  <strong>Max height:</strong> \(v^2 = u^2 + 2as\): \(0 = 225 - 19.6s\) → \(s = \dfrac{225}{19.6} \approx 11.5 \text{ m}\)<br><br>
+  <strong>Time to max height:</strong> \(v = u + at\): \(0 = 15 - 9.8t\) → \(t = \dfrac{15}{9.8} \approx 1.53 \text{ s}\)<br><br>
+  <strong>Total flight time:</strong> By symmetry, \(T = 2 \times 1.53 \approx 3.06 \text{ s}\)
+</div>
+
+<h2>4. Displacement-Time and Velocity-Time Graphs</h2>
+
+<!-- SVG: s-t and v-t graphs side by side -->
+<svg width="100%" viewBox="0 0 520 250" style="margin:20px 0;background:#f8fafc;border-radius:8px;border:1px solid #cbd5e1;">
+  <!-- LEFT: Displacement-time graph -->
+  <!-- Axes -->
+  <line x1="40" y1="210" x2="230" y2="210" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="40" y1="210" x2="40" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="235" y="214" font-size="12" fill="#1a1a2e">t</text>
+  <text x="43" y="26" font-size="12" fill="#1a1a2e">s</text>
+  <text x="130" y="20" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="600">Displacement-Time</text>
+  <!-- Constant velocity: straight line -->
+  <line x1="50" y1="190" x2="130" y2="90" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="95" y="148" font-size="11" fill="#2563eb">constant v</text>
+  <!-- Gradient annotation -->
+  <line x1="100" y1="90" x2="130" y2="90" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="130" y1="90" x2="130" y2="148" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="145" y="122" font-size="10" fill="#1e3a5f">gradient</text>
+  <text x="145" y="134" font-size="10" fill="#1e3a5f">= velocity</text>
+  <!-- Accelerating curve -->
+  <path d="M 50,200 Q 110,185 220,80" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="155" y="155" font-size="11" fill="#dc2626">accelerating</text>
+
+  <!-- RIGHT: Velocity-time graph -->
+  <line x1="290" y1="210" x2="480" y2="210" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="290" y1="210" x2="290" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="485" y="214" font-size="12" fill="#1a1a2e">t</text>
+  <text x="293" y="26" font-size="12" fill="#1a1a2e">v</text>
+  <text x="385" y="20" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="600">Velocity-Time</text>
+  <!-- Constant acceleration: straight line -->
+  <line x1="300" y1="190" x2="460" y2="60" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="390" y="110" font-size="11" fill="#2563eb">const. accel.</text>
+  <!-- Gradient = acceleration annotation -->
+  <line x1="380" y1="60" x2="460" y2="60" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="460" y1="60" x2="460" y2="135" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="400" y="52" font-size="10" fill="#1e3a5f">grad = a</text>
+  <!-- Shaded area label -->
+  <polygon points="300,190 420,95 420,210" fill="rgba(37,99,235,0.12)" stroke="none"/>
+  <text x="345" y="185" font-size="10" fill="#2563eb">area = s</text>
+</svg>
+
+<table>
+  <tr><th>Graph type</th><th>Gradient gives</th><th>Area gives</th></tr>
+  <tr><td>Displacement-time (s-t)</td><td>Velocity</td><td>—</td></tr>
+  <tr><td>Velocity-time (v-t)</td><td>Acceleration</td><td>Displacement (signed area)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> For a v-t graph, area <em>below</em> the t-axis represents negative displacement (motion in the opposite direction). Always distinguish between total distance travelled and displacement.
+</div>
+
+<h2>5. Multi-Stage Problems</h2>
+
+<p>Many problems involve two or more stages with different constant accelerations. Apply SUVAT separately to each stage. The final velocity of one stage is the initial velocity of the next.</p>
+
+<div class="example">
+  <strong>Example:</strong> A train starts from rest and accelerates at 0.5 m s⁻² for 60 s. It then travels at constant velocity for 3 minutes before decelerating to rest at 1 m s⁻². Find the total distance travelled.<br><br>
+  <strong>Stage 1</strong> (acceleration): \(u=0\), \(a=0.5\), \(t=60\)<br>
+  \(v = 0 + 0.5 \times 60 = 30 \text{ m s}^{-1}\)<br>
+  \(s_1 = 0 + \tfrac{1}{2} \times 0.5 \times 3600 = 900 \text{ m}\)<br><br>
+  <strong>Stage 2</strong> (constant velocity): \(u = v = 30\), \(t = 180\)<br>
+  \(s_2 = 30 \times 180 = 5400 \text{ m}\)<br><br>
+  <strong>Stage 3</strong> (deceleration): \(u=30\), \(v=0\), \(a=-1\)<br>
+  \(v^2 = u^2 + 2as \Rightarrow 0 = 900 - 2s_3 \Rightarrow s_3 = 450 \text{ m}\)<br><br>
+  <strong>Total:</strong> \(s = 900 + 5400 + 450 = 6750 \text{ m}\)
+</div>
+
+<h2>6. Connected Particles</h2>
+
+<p>When two particles are connected by a light inextensible string over a smooth light pulley:</p>
+<ul>
+  <li>Both particles have the <strong>same magnitude of acceleration</strong>.</li>
+  <li>The tension \(T\) is the same throughout the string.</li>
+  <li>Write separate Newton's Second Law equations for each particle, then solve simultaneously.</li>
+</ul>
+
+<div class="example">
+  <strong>Example:</strong> Masses of 5 kg and 3 kg are connected by a light inextensible string over a smooth pulley. The system is released from rest. Find the acceleration and the tension.<br><br>
+  For the 5 kg mass (heavier, moving down): \(5g - T = 5a\) → \(49 - T = 5a\) &emsp; (1)<br>
+  For the 3 kg mass (moving up): \(T - 3g = 3a\) → \(T - 29.4 = 3a\) &emsp; (2)<br><br>
+  Add (1) and (2): \(49 - 29.4 = 8a\) → \(a = \dfrac{19.6}{8} = 2.45 \text{ m s}^{-2}\)<br>
+  From (2): \(T = 29.4 + 3 \times 2.45 = 29.4 + 7.35 = 36.75 \text{ N} \approx 36.8 \text{ N}\)
+</div>
+
+<h2>7. Summary of SUVAT Equations</h2>
+
+<table>
+  <tr><th>Equation</th><th>Variables used</th><th>Omits</th></tr>
+  <tr><td>\(v = u + at\)</td><td>v, u, a, t</td><td>s</td></tr>
+  <tr><td>\(s = ut + \frac{1}{2}at^2\)</td><td>s, u, a, t</td><td>v</td></tr>
+  <tr><td>\(s = vt - \frac{1}{2}at^2\)</td><td>s, v, a, t</td><td>u</td></tr>
+  <tr><td>\(v^2 = u^2 + 2as\)</td><td>v, u, a, s</td><td>t</td></tr>
+  <tr><td>\(s = \frac{1}{2}(u+v)t\)</td><td>s, u, v, t</td><td>a</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Always define your positive direction before starting a problem and be consistent. For vertical problems, state whether upward or downward is positive and write \(a = \pm 9.8 \text{ m s}^{-2}\) accordingly.
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Presentation and Measures - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>S2: Data Presentation and Measures</h1>
+
+<h2>1. Types of Data</h2>
+
+<table>
+  <tr><th>Type</th><th>Description</th><th>Examples</th></tr>
+  <tr><td>Qualitative (Categorical)</td><td>Non-numerical; describes categories</td><td>Colour, gender, blood type</td></tr>
+  <tr><td>Quantitative — Discrete</td><td>Numerical; only specific values (often integers)</td><td>Number of siblings, shoe size, goals scored</td></tr>
+  <tr><td>Quantitative — Continuous</td><td>Numerical; can take any value in a range</td><td>Height, weight, time, temperature</td></tr>
+</table>
+
+<h2>2. Frequency Tables and Grouped Data</h2>
+
+<p>A <strong>frequency table</strong> lists each value (or class) and the number of times it occurs.</p>
+<p>For <strong>grouped continuous data</strong>, use class intervals. The <strong>midpoint</strong> of each class is used to estimate the mean:</p>
+<div class="equation">$$\bar{x} = \frac{\sum f x}{\sum f}$$</div>
+<p>where \(x\) is the midpoint and \(f\) is the frequency.</p>
+
+<div class="example">
+  <strong>Example:</strong> Heights (cm):
+  <table style="margin-top:8px;">
+    <tr><th>Class</th><th>Midpoint \(x\)</th><th>Frequency \(f\)</th><th>\(fx\)</th></tr>
+    <tr><td>150–160</td><td>155</td><td>5</td><td>775</td></tr>
+    <tr><td>160–170</td><td>165</td><td>12</td><td>1980</td></tr>
+    <tr><td>170–180</td><td>175</td><td>8</td><td>1400</td></tr>
+    <tr><td><strong>Total</strong></td><td></td><td><strong>25</strong></td><td><strong>4155</strong></td></tr>
+  </table>
+  \(\bar{x} = 4155 / 25 = 166.2\) cm
+</div>
+
+<h2>3. Histograms</h2>
+
+<div class="definition">
+  <strong>Histogram rule:</strong> In a histogram, the <strong>area</strong> of each bar is proportional to the frequency, NOT the height. The y-axis shows <strong>frequency density</strong>:
+  $$\text{Frequency Density} = \frac{\text{Frequency}}{\text{Class Width}}$$
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When class widths are unequal, you MUST use frequency density. A common error is plotting frequency on the y-axis — this is only correct when all class widths are equal.
+</div>
+
+<!-- SVG: Histogram with frequency density -->
+<svg viewBox="0 0 520 240" width="100%" style="margin:20px 0;border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;">
+  <!-- Axes -->
+  <line x1="60" y1="200" x2="480" y2="200" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="60" y1="20" x2="60" y2="200" stroke="#1e3a5f" stroke-width="2"/>
+  <!-- Y axis labels -->
+  <text x="55" y="200" text-anchor="end" font-size="11" fill="#64748b">0</text>
+  <text x="55" y="160" text-anchor="end" font-size="11" fill="#64748b">1</text>
+  <text x="55" y="120" text-anchor="end" font-size="11" fill="#64748b">2</text>
+  <text x="55" y="80" text-anchor="end" font-size="11" fill="#64748b">3</text>
+  <text x="55" y="40" text-anchor="end" font-size="11" fill="#64748b">4</text>
+  <!-- Grid lines -->
+  <line x1="60" y1="160" x2="480" y2="160" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="60" y1="120" x2="480" y2="120" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="60" y1="80" x2="480" y2="80" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="60" y1="40" x2="480" y2="40" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Bars (class width = 10, scale: 40px per unit FD, 80px per 10cm) -->
+  <!-- [10,20): FD=1.5 → height=60 -->
+  <rect x="60" y="140" width="80" height="60" fill="#93c5fd" stroke="#2563eb" stroke-width="1.5"/>
+  <!-- [20,30): FD=3.5 → height=140 -->
+  <rect x="140" y="60" width="80" height="140" fill="#2563eb" stroke="#1e3a5f" stroke-width="1.5"/>
+  <!-- [30,40): FD=4 → height=160 -->
+  <rect x="220" y="40" width="80" height="160" fill="#1d4ed8" stroke="#1e3a5f" stroke-width="1.5"/>
+  <!-- [40,50): FD=2 → height=80 -->
+  <rect x="300" y="120" width="80" height="80" fill="#60a5fa" stroke="#2563eb" stroke-width="1.5"/>
+  <!-- [50,70): class width=20, FD=0.75 → height=30 -->
+  <rect x="380" y="170" width="80" height="30" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <!-- X labels -->
+  <text x="60" y="215" text-anchor="middle" font-size="11" fill="#64748b">10</text>
+  <text x="140" y="215" text-anchor="middle" font-size="11" fill="#64748b">20</text>
+  <text x="220" y="215" text-anchor="middle" font-size="11" fill="#64748b">30</text>
+  <text x="300" y="215" text-anchor="middle" font-size="11" fill="#64748b">40</text>
+  <text x="380" y="215" text-anchor="middle" font-size="11" fill="#64748b">50</text>
+  <text x="460" y="215" text-anchor="middle" font-size="11" fill="#64748b">70</text>
+  <!-- Axis labels -->
+  <text x="270" y="235" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="600">Value</text>
+  <text x="15" y="115" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="600" transform="rotate(-90,15,115)">Frequency Density</text>
+  <text x="270" y="14" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="600">Histogram (Frequency Density on y-axis)</text>
+</svg>
+
+<h2>4. Cumulative Frequency and Box Plots</h2>
+
+<p>A <strong>cumulative frequency graph</strong> (ogive) plots cumulative frequency against the <strong>upper class boundary</strong>. From it, read off:</p>
+<ul>
+  <li><strong>Median (Q2):</strong> at the \(\frac{n}{2}\)th value</li>
+  <li><strong>Lower quartile (Q1):</strong> at the \(\frac{n}{4}\)th value</li>
+  <li><strong>Upper quartile (Q3):</strong> at the \(\frac{3n}{4}\)th value</li>
+  <li><strong>IQR:</strong> \(Q_3 - Q_1\)</li>
+</ul>
+
+<!-- SVG: Box plot -->
+<svg viewBox="0 0 520 130" width="100%" style="margin:20px 0;border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;">
+  <!-- Scale line -->
+  <line x1="50" y1="90" x2="490" y2="90" stroke="#94a3b8" stroke-width="1"/>
+  <!-- Scale ticks and labels -->
+  <text x="50" y="108" text-anchor="middle" font-size="11" fill="#64748b">10</text>
+  <text x="160" y="108" text-anchor="middle" font-size="11" fill="#64748b">20</text>
+  <text x="270" y="108" text-anchor="middle" font-size="11" fill="#64748b">30</text>
+  <text x="380" y="108" text-anchor="middle" font-size="11" fill="#64748b">40</text>
+  <text x="490" y="108" text-anchor="middle" font-size="11" fill="#64748b">50</text>
+  <!-- Whisker left: Min=14 → x=93.4 -->
+  <line x1="93" y1="65" x2="93" y2="77" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="93" y1="71" x2="160" y2="71" stroke="#1e3a5f" stroke-width="2"/>
+  <!-- Box Q1=20 → x=160, Q3=38 → x=358 -->
+  <rect x="160" y="52" width="198" height="38" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+  <!-- Median Q2=28 → x=248 -->
+  <line x1="248" y1="52" x2="248" y2="90" stroke="#1e3a5f" stroke-width="2.5"/>
+  <!-- Whisker right: Max=44 → x=424 -->
+  <line x1="358" y1="71" x2="424" y2="71" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="424" y1="65" x2="424" y2="77" stroke="#1e3a5f" stroke-width="2"/>
+  <!-- Outlier at x=48 → x=468 -->
+  <circle cx="468" cy="71" r="5" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <!-- Labels -->
+  <text x="93" y="44" text-anchor="middle" font-size="10" fill="#1e3a5f">Min=14</text>
+  <text x="160" y="44" text-anchor="middle" font-size="10" fill="#2563eb">Q1=20</text>
+  <text x="248" y="44" text-anchor="middle" font-size="10" fill="#1e3a5f">Q2=28</text>
+  <text x="358" y="44" text-anchor="middle" font-size="10" fill="#2563eb">Q3=38</text>
+  <text x="424" y="44" text-anchor="middle" font-size="10" fill="#1e3a5f">Max=44</text>
+  <text x="468" y="44" text-anchor="middle" font-size="10" fill="#dc2626">Outlier=48</text>
+  <text x="270" y="20" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="600">Box Plot with Outlier</text>
+</svg>
+
+<h2>5. Measures of Central Tendency</h2>
+
+<table>
+  <tr><th>Measure</th><th>Definition</th><th>When to use</th></tr>
+  <tr><td>Mean \(\bar{x}\)</td><td>Sum of all values ÷ number of values</td><td>Symmetric data; no extreme outliers</td></tr>
+  <tr><td>Median</td><td>Middle value when ordered</td><td>Skewed data; outliers present</td></tr>
+  <tr><td>Mode</td><td>Most frequent value</td><td>Categorical data; finding most common</td></tr>
+</table>
+
+<p><strong>Mean from a frequency table:</strong></p>
+<div class="equation">$$\bar{x} = \frac{\sum fx}{\sum f}$$</div>
+<p><strong>Mean from grouped data:</strong> use midpoints for \(x\) in the formula above.</p>
+
+<h2>6. Measures of Spread</h2>
+
+<h3>Range and Interquartile Range</h3>
+<div class="equation">$$\text{Range} = x_{\max} - x_{\min} \qquad \text{IQR} = Q_3 - Q_1$$</div>
+
+<h3>Variance and Standard Deviation</h3>
+<div class="equation">$$\sigma^2 = \frac{\sum fx^2}{\sum f} - \bar{x}^2$$</div>
+<div class="equation">$$\sigma = \sqrt{\frac{\sum fx^2}{\sum f} - \bar{x}^2}$$</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> On your calculator, use the statistics mode to find \(\bar{x}\) and \(\sigma_x\) directly. Make sure you use \(\sigma_x\) (population standard deviation), not \(S_x\) (sample standard deviation), unless the question specifies otherwise.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the variance of: 2, 4, 4, 6, 8, 10, 10, 12 (n = 8)<br>
+  \(\bar{x} = \frac{2+4+4+6+8+10+10+12}{8} = \frac{56}{8} = 7\)<br>
+  \(\sum x^2 = 4+16+16+36+64+100+100+144 = 480\)<br>
+  \(\sigma^2 = \frac{480}{8} - 7^2 = 60 - 49 = 11\)<br>
+  \(\sigma = \sqrt{11} \approx 3.317\)
+</div>
+
+<h2>7. Coding</h2>
+
+<p>Coding simplifies calculations by transforming the data. If \(y = \frac{x - a}{b}\) then:</p>
+<div class="equation">$$\bar{y} = \frac{\bar{x} - a}{b} \qquad \sigma_y = \frac{\sigma_x}{b}$$</div>
+<p>Note: subtracting a constant \(a\) shifts the mean but does NOT affect the standard deviation. Dividing by \(b\) scales both the mean and standard deviation.</p>
+
+<div class="example">
+  <strong>Example:</strong> Data is coded using \(y = \frac{x - 50}{10}\). Given \(\bar{y} = 3.2\) and \(\sigma_y = 1.4\):<br>
+  \(\bar{x} = 10 \times 3.2 + 50 = 82\)<br>
+  \(\sigma_x = 10 \times 1.4 = 14\)
+</div>
+
+<h2>8. Outliers</h2>
+
+<div class="definition">
+  A data point is an <strong>outlier</strong> if it lies more than \(1.5 \times \text{IQR}\) above \(Q_3\) or below \(Q_1\):
+  $$\text{Outlier if } x > Q_3 + 1.5 \times \text{IQR} \quad \text{or} \quad x < Q_1 - 1.5 \times \text{IQR}$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> \(Q_1 = 20,\; Q_3 = 38,\; \text{IQR} = 18\)<br>
+  Upper fence: \(38 + 1.5 \times 18 = 38 + 27 = 65\)<br>
+  Lower fence: \(20 - 27 = -7\)<br>
+  Any value above 65 or below −7 is an outlier.
+</div>
+
+<h2>9. Skewness</h2>
+
+<table>
+  <tr><th>Skewness</th><th>Relationship</th><th>Distribution shape</th></tr>
+  <tr><td>Positive (right) skew</td><td>Mean &gt; Median &gt; Mode</td><td>Tail extends to the right</td></tr>
+  <tr><td>Negative (left) skew</td><td>Mean &lt; Median &lt; Mode</td><td>Tail extends to the left</td></tr>
+  <tr><td>Symmetric</td><td>Mean = Median = Mode</td><td>Bell-shaped</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> You can also compare \(Q_2 - Q_1\) with \(Q_3 - Q_2\) using a box plot: if the right whisker (or box) is longer, the data is positively skewed.
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

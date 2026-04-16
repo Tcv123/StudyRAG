@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numerical Methods - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P19: Numerical Methods</h1>
+
+<h2>1. Locating Roots — Change of Sign Method</h2>
+<div class="definition">
+  <strong>Change of sign principle:</strong> If \(f(a)\) and \(f(b)\) have opposite signs (i.e. \(f(a) \cdot f(b) < 0\)) and \(f\) is continuous on \([a,b]\), then by the Intermediate Value Theorem there is at least one root in \((a, b)\).
+</div>
+
+<h3>Procedure</h3>
+<ol>
+  <li>Evaluate \(f(a)\) and \(f(b)\)</li>
+  <li>If signs differ, state: "There is a sign change in \([a,b]\), so by the IVT there is a root in this interval."</li>
+  <li>To narrow down: evaluate \(f\) at the midpoint and repeat (bisection)</li>
+</ol>
+
+<div class="example">
+  <strong>Example:</strong> Show that \(f(x) = x^3 - x - 1\) has a root between 1 and 2.
+  <br><br>
+  \(f(1) = 1 - 1 - 1 = -1 < 0\)
+  <br>
+  \(f(2) = 8 - 2 - 1 = 5 > 0\)
+  <br>
+  Since \(f\) is continuous and there is a sign change, there is a root in \((1, 2)\).
+</div>
+
+<h3>Limitations of the change of sign method</h3>
+<ul>
+  <li><strong>Repeated roots:</strong> \(f(x) = (x-2)^2\) touches zero but does not change sign — no sign change detected even though \(x=2\) is a root.</li>
+  <li><strong>Discontinuities:</strong> If \(f\) has a vertical asymptote in \([a,b]\), a sign change may be detected even with no root (e.g. \(f(x) = \tan x\) near \(x = \pi/2\)).</li>
+  <li><strong>Multiple roots in interval:</strong> The method only guarantees at least one root — there could be more (e.g. two roots, net sign unchanged).</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Always state "sign change and \(f\) is continuous on \([a,b]\)" when justifying a root. Do not just say "one positive, one negative" — the continuity argument is required for full marks.
+</div>
+
+<h2>2. Fixed-Point Iteration</h2>
+<p>To solve \(f(x) = 0\), rearrange to the form \(x = g(x)\) and iterate:</p>
+<div class="definition">
+  $$x_{n+1} = g(x_n)$$
+  Starting from an initial estimate \(x_0\), compute \(x_1, x_2, x_3, \ldots\) until convergence.
+</div>
+
+<h3>Choosing a rearrangement</h3>
+<p>Different rearrangements of the same equation give different iterative formulae. Some converge; others diverge. A rearrangement \(x = g(x)\) converges near a root \(\alpha\) if:</p>
+<div class="equation">
+  $$|g'(\alpha)| < 1$$
+</div>
+<p>If \(|g'(\alpha)| > 1\), the iteration diverges.</p>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(x^3 - x - 1 = 0\) using \(x_{n+1} = (x_n + 1)^{1/3}\), starting at \(x_0 = 1.3\).
+  <br><br>
+  \(x_1 = (1.3 + 1)^{1/3} = (2.3)^{1/3} \approx 1.3200\)
+  <br>
+  \(x_2 = (1.3200 + 1)^{1/3} \approx 1.3247\)
+  <br>
+  \(x_3 \approx 1.3252\)
+  <br>
+  Converging to root \(\approx 1.3247\).
+</div>
+
+<h3>Staircase and Cobweb Diagrams</h3>
+<p>The iteration can be visualised by plotting \(y = g(x)\) and \(y = x\). Starting from \(x_0\), draw vertical and horizontal lines alternately between the two curves.</p>
+
+<svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;display:block;margin:20px auto;background:#f8fafc;border-radius:8px;border:1px solid #cbd5e1;">
+  <!-- Axes -->
+  <line x1="50" y1="240" x2="470" y2="240" stroke="#888" stroke-width="1.5"/>
+  <line x1="50" y1="20" x2="50" y2="240" stroke="#888" stroke-width="1.5"/>
+  <polygon points="470,240 460,235 460,245" fill="#888"/>
+  <polygon points="50,20 45,30 55,30" fill="#888"/>
+  <text x="474" y="244" font-size="13" fill="#555">x</text>
+  <text x="40" y="16" font-size="13" fill="#555">y</text>
+  <!-- y = x line -->
+  <line x1="50" y1="240" x2="430" y2="60" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="432" y="58" font-size="12" fill="#94a3b8">y = x</text>
+  <!-- g(x) curve: concave, converging, approximate cubic root shape -->
+  <path d="M 50 230 C 100 200 200 150 280 120 C 340 100 410 90 460 86" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="462" y="84" font-size="12" fill="#2563eb">y=g(x)</text>
+  <!-- Root (intersection) at approx x=290, y=117 -->
+  <circle cx="290" cy="117" r="5" fill="#dc2626"/>
+  <text x="293" y="113" font-size="11" fill="#dc2626">root α</text>
+  <!-- Staircase iteration: x0=130 -->
+  <!-- x0 on x-axis: x=130 → g(130)≈168 on curve -->
+  <line x1="130" y1="240" x2="130" y2="188" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="130" y1="188" x2="188" y2="188" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="188" y1="188" x2="188" y2="161" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="188" y1="161" x2="228" y2="161" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="228" y1="161" x2="228" y2="142" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="228" y1="142" x2="257" y2="142" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="257" y1="142" x2="257" y2="130" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="257" y1="130" x2="275" y2="130" stroke="#16a34a" stroke-width="1.5"/>
+  <!-- Labels -->
+  <text x="125" y="254" font-size="11" fill="#16a34a">x₀</text>
+  <text x="183" y="254" font-size="11" fill="#16a34a">x₁</text>
+  <text x="222" y="254" font-size="11" fill="#16a34a">x₂</text>
+  <text x="251" y="254" font-size="11" fill="#16a34a">x₃</text>
+  <text x="85" y="270" font-size="12" fill="#1a1a2e">Staircase diagram: convergent iteration towards root α</text>
+</svg>
+
+<p>A <strong>staircase diagram</strong> arises when \(0 < g'(\alpha) < 1\) (monotone convergence). A <strong>cobweb diagram</strong> (oscillating inward spiral) arises when \(-1 < g'(\alpha) < 0\).</p>
+
+<h2>3. Newton-Raphson Method</h2>
+<div class="definition">
+  <strong>Newton-Raphson formula:</strong>
+  $$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
+  This is a special case of fixed-point iteration with \(g(x) = x - \dfrac{f(x)}{f'(x)}\). It converges much faster than basic iteration when it works.
+</div>
+
+<p>Geometrically: at \(x_n\), draw the tangent to \(y = f(x)\). The next estimate \(x_{n+1}\) is where this tangent crosses the \(x\)-axis.</p>
+
+<svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;display:block;margin:20px auto;background:#f8fafc;border-radius:8px;border:1px solid #cbd5e1;">
+  <!-- Axes -->
+  <line x1="40" y1="240" x2="490" y2="240" stroke="#888" stroke-width="1.5"/>
+  <line x1="40" y1="20" x2="40" y2="250" stroke="#888" stroke-width="1.5"/>
+  <polygon points="490,240 480,235 480,245" fill="#888"/>
+  <text x="493" y="244" font-size="13" fill="#555">x</text>
+  <text x="28" y="17" font-size="13" fill="#555">y</text>
+  <!-- f(x) curve: smooth, crosses x-axis at about x=350 -->
+  <path d="M 80 60 C 150 55 220 90 270 140 C 310 180 330 210 350 240 C 365 240 390 220 430 180 C 455 155 470 130 480 110" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Root at x=350 -->
+  <circle cx="350" cy="240" r="5" fill="#dc2626"/>
+  <text x="344" y="258" font-size="12" fill="#dc2626">α</text>
+  <!-- x_n at x=220, f(x_n) ≈ 90 above axis → y = 240-90=150 -->
+  <circle cx="220" cy="152" r="5" fill="#16a34a"/>
+  <line x1="220" y1="152" x2="220" y2="240" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="213" y="256" font-size="12" fill="#16a34a">xₙ</text>
+  <!-- Tangent at x_n: slope downward, hits x-axis at x≈295 -->
+  <line x1="140" y1="222" x2="310" y2="240" stroke="#f59e0b" stroke-width="2"/>
+  <!-- x_{n+1} at x=310 (tangent hits x-axis) -->
+  <circle cx="310" cy="240" r="5" fill="#f59e0b"/>
+  <text x="300" y="258" font-size="12" fill="#f59e0b">xₙ₊₁</text>
+  <!-- Labels -->
+  <text x="225" y="148" font-size="11" fill="#16a34a">(xₙ, f(xₙ))</text>
+  <text x="140" y="210" font-size="11" fill="#f59e0b">tangent at xₙ</text>
+  <text x="60" y="270" font-size="12" fill="#1a1a2e">Newton-Raphson: tangent line gives next estimate xₙ₊₁ closer to root α</text>
+</svg>
+
+<div class="example">
+  <strong>Example:</strong> Use Newton-Raphson to find the root of \(f(x) = x^3 - 2x - 5\), starting at \(x_0 = 2\).
+  <br><br>
+  \(f'(x) = 3x^2 - 2\)
+  <br>
+  \(x_1 = 2 - \dfrac{f(2)}{f'(2)} = 2 - \dfrac{8-4-5}{12-2} = 2 - \dfrac{-1}{10} = 2.1\)
+  <br>
+  \(f(2.1) = 9.261 - 4.2 - 5 = 0.061\)
+  <br>
+  \(x_2 = 2.1 - \dfrac{0.061}{f'(2.1)} = 2.1 - \dfrac{0.061}{11.23} \approx 2.0946\)
+  <br>
+  The root is approximately \(2.0946\).
+</div>
+
+<h3>Failure of Newton-Raphson</h3>
+<p>Newton-Raphson <strong>fails or behaves poorly</strong> when:</p>
+<ul>
+  <li>The initial estimate \(x_0\) is near a <strong>stationary point</strong> (\(f'(x_0) \approx 0\)) — the tangent is nearly horizontal and \(x_1\) is far from the root.</li>
+  <li>The function has <strong>oscillatory behaviour</strong> — the iterates may cycle without converging.</li>
+  <li>The starting point is on the <strong>wrong side of a discontinuity</strong>.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Questions often ask you to explain why Newton-Raphson fails for a given starting point. The answer is almost always: "The gradient \(f'(x_0)\) is very small (close to zero) because \(x_0\) is near a stationary point, so the tangent is nearly horizontal and gives a very poor next estimate."
+</div>
+
+<h2>4. Trapezium Rule (Numerical Integration)</h2>
+<p>Approximates \(\displaystyle\int_a^b f(x)\,dx\) by dividing the area into trapezoids of equal width \(h = \dfrac{b-a}{n}\):</p>
+<div class="definition">
+  $$\int_a^b f(x)\,dx \approx \frac{h}{2}\bigl[y_0 + 2(y_1 + y_2 + \cdots + y_{n-1}) + y_n\bigr]$$
+  where \(h = \dfrac{b-a}{n}\), \(y_i = f(a + ih)\).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Estimate \(\displaystyle\int_0^1 e^{x^2}\,dx\) using 4 strips.
+  <br><br>
+  \(h = 0.25\), \(x\)-values: \(0, 0.25, 0.5, 0.75, 1\)
+  <br>
+  \(y_0 = e^0 = 1\), \(y_1 = e^{0.0625} \approx 1.0645\), \(y_2 = e^{0.25} \approx 1.2840\), \(y_3 = e^{0.5625} \approx 1.7551\), \(y_4 = e^1 \approx 2.7183\)
+  <br>
+  \(I \approx \dfrac{0.25}{2}[1 + 2(1.0645 + 1.2840 + 1.7551) + 2.7183]\)
+  \(= 0.125[1 + 2(4.1036) + 2.7183] = 0.125 \times 11.9255 \approx 1.491\)
+</div>
+
+<h3>Overestimate or underestimate?</h3>
+<ul>
+  <li>If \(f\) is <strong>convex</strong> (concave up, \(f'' > 0\)): trapezium rule <strong>overestimates</strong></li>
+  <li>If \(f\) is <strong>concave</strong> (concave down, \(f'' < 0\)): trapezium rule <strong>underestimates</strong></li>
+  <li>More strips = smaller \(h\) = better approximation</li>
+</ul>
+
+<h2>5. Error in Numerical Methods</h2>
+<p>To verify a root \(\alpha\) lies in an interval, show a sign change in \(f\) over that interval at the required decimal place accuracy. For example, to confirm \(\alpha = 1.324\) to 3 d.p., show \(f(1.3235) < 0\) and \(f(1.3245) > 0\) (or vice versa).</p>
+
+<h2>6. Summary Comparison</h2>
+<table>
+  <tr><th>Method</th><th>Formula</th><th>Speed</th><th>When it fails</th></tr>
+  <tr><td>Change of sign</td><td>Sign change in \(f\)</td><td>Slow (bisection)</td><td>Repeated roots, discontinuities</td></tr>
+  <tr><td>Fixed-point iteration</td><td>\(x_{n+1} = g(x_n)\)</td><td>Moderate</td><td>\(|g'(\alpha)| \ge 1\)</td></tr>
+  <tr><td>Newton-Raphson</td><td>\(x_{n+1} = x_n - f/f'\)</td><td>Fast (quadratic)</td><td>\(f'(x_0) \approx 0\)</td></tr>
+  <tr><td>Trapezium rule</td><td>\(\tfrac{h}{2}[y_0+2y_1+\cdots+y_n]\)</td><td>N/A</td><td>Inaccurate for small \(n\)</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

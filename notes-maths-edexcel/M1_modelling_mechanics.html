@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M1: Modelling in Mechanics - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>M1: Modelling in Mechanics</h1>
+
+<h2>1. Mathematical Models in Mechanics</h2>
+
+<p>Mechanics uses <strong>mathematical models</strong> to simplify real-world situations. A model makes assumptions to make the mathematics tractable, then solutions are interpreted in context.</p>
+
+<div class="definition">
+  A <strong>model</strong> is an idealised mathematical representation of a physical situation. Models involve assumptions that may be stated and their reasonableness assessed.
+</div>
+
+<h3>Common Assumptions and What They Mean</h3>
+
+<table>
+  <tr><th>Term</th><th>Assumption</th><th>Effect on model</th></tr>
+  <tr><td><strong>Particle</strong></td><td>Object treated as a point mass (no size, no rotation)</td><td>Mass acts at a single point; ignore rotational effects</td></tr>
+  <tr><td><strong>Light object</strong></td><td>Object has negligible mass (massless)</td><td>No weight force; tension same throughout</td></tr>
+  <tr><td><strong>Uniform rod</strong></td><td>Rod has uniform density; mass acts at centre</td><td>Weight acts at midpoint</td></tr>
+  <tr><td><strong>Smooth surface</strong></td><td>No friction between surface and object</td><td>No friction force; only normal reaction perpendicular to surface</td></tr>
+  <tr><td><strong>Rough surface</strong></td><td>Friction exists between surface and object</td><td>Friction force \(F \leq \mu R\) acts opposing motion</td></tr>
+  <tr><td><strong>Inextensible string</strong></td><td>String does not stretch under tension</td><td>Objects at each end have the same speed/acceleration; tension uniform throughout</td></tr>
+  <tr><td><strong>Light string/pulley</strong></td><td>String and pulley have negligible mass</td><td>Tension same on both sides of the pulley</td></tr>
+  <tr><td><strong>Rigid body</strong></td><td>Object does not deform under forces</td><td>Shape remains constant; used in moments problems</td></tr>
+  <tr><td><strong>Air resistance neglected</strong></td><td>No drag force from air</td><td>Only gravity acts on projectiles</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> If asked to "state an assumption" or "comment on whether the model is valid," think about which idealisation is most questionable in the context. For example, a rope is not truly inextensible; a surface is never perfectly smooth.
+</div>
+
+<h2>2. SI Units</h2>
+
+<table>
+  <tr><th>Quantity</th><th>SI Unit</th><th>Symbol</th></tr>
+  <tr><td>Length / Distance</td><td>metre</td><td>m</td></tr>
+  <tr><td>Time</td><td>second</td><td>s</td></tr>
+  <tr><td>Mass</td><td>kilogram</td><td>kg</td></tr>
+  <tr><td>Force / Weight</td><td>newton</td><td>N = kg m s⁻²</td></tr>
+  <tr><td>Velocity</td><td>metres per second</td><td>m s⁻¹</td></tr>
+  <tr><td>Acceleration</td><td>metres per second squared</td><td>m s⁻²</td></tr>
+  <tr><td>Momentum</td><td>kilogram metres per second</td><td>kg m s⁻¹</td></tr>
+</table>
+
+<h2>3. Scalars and Vectors</h2>
+
+<table>
+  <tr><th>Scalar (magnitude only)</th><th>Vector (magnitude AND direction)</th></tr>
+  <tr><td>Distance</td><td>Displacement</td></tr>
+  <tr><td>Speed</td><td>Velocity</td></tr>
+  <tr><td>Mass</td><td>Force / Weight</td></tr>
+  <tr><td>Time</td><td>Acceleration</td></tr>
+  <tr><td>Energy</td><td>Momentum</td></tr>
+</table>
+
+<div class="definition">
+  <strong>Displacement</strong> is the vector from the starting position to the current position — it includes direction. <strong>Distance</strong> is the total length of path travelled (scalar, always positive).
+</div>
+
+<h2>4. Newton's Three Laws of Motion</h2>
+
+<div class="definition">
+  <strong>Newton's First Law:</strong> An object remains at rest, or moves with constant velocity, unless a resultant (net) external force acts on it.
+</div>
+
+<div class="definition">
+  <strong>Newton's Second Law:</strong> The resultant force on an object equals its mass times its acceleration:
+  $$F = ma$$
+  where \(F\) is the resultant force in N, \(m\) is mass in kg, and \(a\) is acceleration in m s⁻².
+</div>
+
+<div class="definition">
+  <strong>Newton's Third Law:</strong> For every action force, there is an equal and opposite reaction force. If object A exerts a force on object B, then B exerts an equal force in the opposite direction on A.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Newton's Third Law pairs must act on <em>different</em> objects. The normal reaction on a book from a table and the book's weight are NOT a Newton's Third Law pair — they happen to be equal only because the book is in equilibrium.
+</div>
+
+<h2>5. Forces Acting on Objects</h2>
+
+<h3>Weight</h3>
+<p>Every object with mass experiences a downward gravitational force:</p>
+<div class="equation">
+  $$W = mg, \quad g = 9.8 \text{ m s}^{-2} \text{ (use unless told otherwise)}$$
+</div>
+
+<h3>Normal Reaction \(R\)</h3>
+<p>When an object rests on a surface, the surface exerts a <strong>normal reaction</strong> force perpendicular to the surface, preventing the object from passing through it.</p>
+
+<h3>Friction \(F\)</h3>
+<p>On a rough surface, friction opposes the direction of motion (or tendency to move). For a sliding object:</p>
+<div class="equation">
+  $$F = \mu R$$
+</div>
+<p>where \(\mu\) is the coefficient of friction. If the object is in equilibrium (or on the verge of moving): \(F \leq \mu R\).</p>
+
+<h3>Tension \(T\)</h3>
+<p>A string under tension pulls its endpoints towards the centre of the string. For a light inextensible string, T is the same throughout.</p>
+
+<h3>Thrust</h3>
+<p>A rod under compression exerts a thrust (push) at its ends, in contrast to tension which pulls.</p>
+
+<h2>6. Free Body Diagrams</h2>
+
+<p>A <strong>free body diagram (FBD)</strong> shows all forces acting on a single object, drawn as arrows from or at the object's centre. It is essential for applying Newton's Second Law.</p>
+
+<!-- SVG: Free body diagram of a particle on a slope -->
+<svg width="100%" viewBox="0 0 500 300" style="margin:20px 0;background:#f8fafc;border-radius:8px;border:1px solid #cbd5e1;">
+  <!-- Slope surface -->
+  <polygon points="60,260 400,260 400,150" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+  <!-- Ground line -->
+  <line x1="40" y1="260" x2="420" y2="260" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- Particle (circle on slope) -->
+  <circle cx="280" cy="195" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="280" y="200" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="700">m</text>
+  <!-- Slope angle label -->
+  <path d="M 350,260 A 30,30 0 0,0 332,243" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="362" y="250" font-size="13" fill="#1a1a2e">θ</text>
+  <!-- Weight arrow (downward) -->
+  <line x1="280" y1="217" x2="280" y2="268" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="293" y="260" font-size="13" fill="#dc2626" font-weight="600">mg</text>
+  <!-- Normal reaction arrow (perpendicular to slope) -->
+  <line x1="280" y1="173" x2="248" y2="128" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+  <text x="220" y="122" font-size="13" fill="#16a34a" font-weight="600">R</text>
+  <!-- Friction arrow (up the slope) -->
+  <line x1="260" y1="183" x2="218" y2="160" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-purple)"/>
+  <text x="194" y="158" font-size="13" fill="#7c3aed" font-weight="600">F</text>
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+  <!-- Title -->
+  <text x="250" y="20" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="600">Free Body Diagram: Particle on a Rough Slope</text>
+  <!-- Legend -->
+  <line x1="60" y1="285" x2="80" y2="285" stroke="#dc2626" stroke-width="2"/>
+  <text x="85" y="289" font-size="11" fill="#dc2626">Weight (mg)</text>
+  <line x1="160" y1="285" x2="180" y2="285" stroke="#16a34a" stroke-width="2"/>
+  <text x="185" y="289" font-size="11" fill="#16a34a">Normal (R)</text>
+  <line x1="255" y1="285" x2="275" y2="285" stroke="#7c3aed" stroke-width="2"/>
+  <text x="280" y="289" font-size="11" fill="#7c3aed">Friction (F)</text>
+</svg>
+
+<h3>Resolving Forces on a Slope</h3>
+
+<p>Resolve forces <strong>parallel</strong> and <strong>perpendicular</strong> to the slope (taking up the slope as positive):</p>
+
+<div class="equation">
+  $$\text{Perpendicular: } R - mg\cos\theta = 0 \Rightarrow R = mg\cos\theta$$
+  $$\text{Parallel (no acceleration): } F - mg\sin\theta = 0 \Rightarrow F = mg\sin\theta$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> A 5 kg particle rests on a smooth slope inclined at 30° to the horizontal. Find the normal reaction.<br><br>
+  Resolving perpendicular to slope:<br>
+  \(R = mg\cos 30° = 5 \times 9.8 \times \cos 30° = 49 \times \dfrac{\sqrt{3}}{2} \approx 42.4 \text{ N}\)
+</div>
+
+<h2>7. Applying Newton's Second Law</h2>
+
+<div class="example">
+  <strong>Example:</strong> A 3 kg box is pushed along a rough horizontal floor by a force of 20 N. The coefficient of friction is 0.4. Find the acceleration.<br><br>
+  Normal reaction: \(R = mg = 3 \times 9.8 = 29.4 \text{ N}\)<br>
+  Friction: \(F = \mu R = 0.4 \times 29.4 = 11.76 \text{ N}\)<br>
+  Net force: \(F_{\text{net}} = 20 - 11.76 = 8.24 \text{ N}\)<br>
+  Newton's Second Law: \(F = ma \Rightarrow a = \dfrac{8.24}{3} \approx 2.75 \text{ m s}^{-2}\)
+</div>
+
+<h2>8. Summary of Modelling Assumptions</h2>
+
+<table>
+  <tr><th>Scenario</th><th>Key assumption(s)</th></tr>
+  <tr><td>Ball rolling down a ramp</td><td>Particle; smooth surface; ignore air resistance</td></tr>
+  <tr><td>Two masses on a pulley</td><td>Light inextensible string; light smooth pulley; particles</td></tr>
+  <tr><td>Ladder against wall</td><td>Uniform rod; rough floor, smooth wall (or stated)</td></tr>
+  <tr><td>Projectile motion</td><td>Particle; ignore air resistance; constant g</td></tr>
+  <tr><td>Car on road</td><td>Particle (or uniform body); driving force and friction stated</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M4: Moments - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>M4: Moments</h1>
+
+<h2>1. Moment of a Force</h2>
+<div class="definition">
+  The <strong>moment</strong> of a force about a point is the turning effect of that force about the point.<br><br>
+  $$M = F \times d$$
+  where \(F\) is the magnitude of the force and \(d\) is the <strong>perpendicular distance</strong> from the point to the line of action of the force.<br><br>
+  Units: <strong>Newton-metres (N·m)</strong>
+</div>
+<p>Direction matters: moments are <strong>clockwise</strong> or <strong>anticlockwise</strong>. By convention, anticlockwise is often taken as positive, but you can choose either — be consistent.</p>
+<div class="exam-tip">
+  <strong>Key:</strong> Always use the perpendicular distance from the pivot to the line of action of the force. If the force is not perpendicular to the rod, use \(M = F \times d\sin\theta\) where \(\theta\) is the angle between the force and the rod.
+</div>
+
+<h2>2. Principle of Moments</h2>
+<div class="definition">
+  <strong>Principle of Moments:</strong> For a body in equilibrium,<br>
+  $$\text{Sum of clockwise moments} = \text{Sum of anticlockwise moments}$$
+  about any point.
+</div>
+<p>This holds about <em>any</em> chosen point — choose the pivot wisely to eliminate unknown forces from the equation (take moments about a point where an unknown acts to remove it).</p>
+
+<h2>3. Equilibrium Conditions</h2>
+<p>For a rigid body in equilibrium, <strong>both</strong> conditions must hold:</p>
+<div class="equation">$$\sum F = 0 \qquad \text{(resultant force = 0)}$$
+$$\sum M = 0 \qquad \text{(resultant moment = 0 about any point)}$$</div>
+<ul>
+  <li>\(\sum F = 0\) means the body does not accelerate (translate).</li>
+  <li>\(\sum M = 0\) means the body does not rotate.</li>
+</ul>
+
+<h2>4. Uniform Rod — Weight at Midpoint</h2>
+<div class="definition">
+  A <strong>uniform rod</strong> of length \(L\) has its weight \(W = mg\) acting at its <strong>midpoint</strong> (centre of mass at \(L/2\) from either end).
+</div>
+<p>For a <strong>non-uniform rod</strong>, the centre of mass is at some unknown position \(x\) from one end. Use the principle of moments to find \(x\).</p>
+
+<h3>Beam on Two Supports — Diagram</h3>
+<div style="text-align:center;margin:24px 0;">
+<svg width="520" height="170" viewBox="0 0 520 170">
+  <!-- Beam -->
+  <rect x="40" y="80" width="440" height="14" fill="#bfdbfe" stroke="#2563eb" stroke-width="2" rx="3"/>
+  <!-- Support A (left, triangle) -->
+  <polygon points="100,94 84,128 116,128" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
+  <line x1="74" y1="128" x2="126" y2="128" stroke="#475569" stroke-width="2"/>
+  <text x="100" y="145" text-anchor="middle" font-size="12" fill="#475569">A</text>
+  <!-- Support B (right, triangle) -->
+  <polygon points="380,94 364,128 396,128" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
+  <line x1="354" y1="128" x2="406" y2="128" stroke="#475569" stroke-width="2"/>
+  <text x="380" y="145" text-anchor="middle" font-size="12" fill="#475569">B</text>
+  <!-- Reaction arrows up -->
+  <line x1="100" y1="80" x2="100" y2="40" stroke="#16a34a" stroke-width="2.5" marker-end="url(#ag)"/>
+  <text x="108" y="58" font-size="13" fill="#16a34a" font-weight="600">R&#8321;</text>
+  <line x1="380" y1="80" x2="380" y2="40" stroke="#16a34a" stroke-width="2.5" marker-end="url(#ag2)"/>
+  <text x="388" y="58" font-size="13" fill="#16a34a" font-weight="600">R&#8322;</text>
+  <!-- Weight at midpoint -->
+  <line x1="260" y1="94" x2="260" y2="140" stroke="#dc2626" stroke-width="2.5" marker-end="url(#aw)"/>
+  <text x="268" y="158" font-size="13" fill="#dc2626" font-weight="600">W = mg</text>
+  <!-- Midpoint mark -->
+  <circle cx="260" cy="87" r="3" fill="#dc2626"/>
+  <!-- Distance labels -->
+  <text x="178" y="72" text-anchor="middle" font-size="11" fill="#64748b">L/2</text>
+  <text x="320" y="72" text-anchor="middle" font-size="11" fill="#64748b">L/2</text>
+  <!-- Dimension line -->
+  <line x1="100" y1="68" x2="260" y2="68" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="260" y1="68" x2="380" y2="68" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4"/>
+  <defs>
+    <marker id="ag" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/></marker>
+    <marker id="ag2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/></marker>
+    <marker id="aw" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+  </defs>
+</svg>
+<p style="font-size:0.88rem;color:#64748b;">Uniform beam on two supports: weight acts at midpoint, reactions \(R_1\) and \(R_2\) at supports A and B</p>
+</div>
+
+<h2>5. Solving Beam Problems</h2>
+<ol>
+  <li>Draw a diagram with all forces (weights, reactions, applied forces).</li>
+  <li>Take moments about one support to find the reaction at the other (unknown eliminates itself).</li>
+  <li>Use \(\sum F = 0\) (upward = downward) to find the remaining reaction.</li>
+  <li>Check: both reactions should be positive (if not, recheck assumptions).</li>
+</ol>
+<div class="example">
+  <strong>Example:</strong> A uniform beam AB, length 4 m, mass 20 kg, rests on supports at A and C where C is 3 m from A. A load of 50 N hangs at B. Find reactions at A and C.<br><br>
+  Weight of beam: \(20 \times 9.8 = 196\ \text{N}\) at 2 m from A.<br>
+  Take moments about A: \(R_C \times 3 = 196 \times 2 + 50 \times 4\)<br>
+  \(3R_C = 392 + 200 = 592 \Rightarrow R_C = 197.3\ \text{N}\)<br>
+  Resolve vertically: \(R_A + R_C = 196 + 50 = 246\)<br>
+  \(R_A = 246 - 197.3 = 48.7\ \text{N}\)
+</div>
+
+<h2>6. Non-Uniform Rods — Finding Centre of Mass</h2>
+<p>If a rod AB of mass \(m\) has its centre of mass at distance \(x\) from A (unknown), use two different experimental configurations (e.g., different pivot positions) and apply the principle of moments to find \(x\).</p>
+<div class="example">
+  <strong>Setup:</strong> Non-uniform rod AB, length 5 m, mass 8 kg. Balanced on pivot 2 m from A. A 4 kg particle is placed at A to achieve balance. Find the distance of the centre of mass from A.<br><br>
+  Taking moments about pivot (2 m from A):<br>
+  Anticlockwise: \(4g \times 2 = 8g\) ...(load at A, distance 2 m)<br>
+  Clockwise: \(8g \times (x - 2)\) ...(weight at CoM, distance \(x-2\) from pivot)<br>
+  \(4g \times 2 = 8g(x-2)\)<br>
+  \(8 = 8(x-2) \Rightarrow x - 2 = 1 \Rightarrow x = 3\ \text{m from A}\)
+</div>
+
+<h2>7. Tilting</h2>
+<div class="definition">
+  A body is <strong>about to tilt</strong> about a support when the contact force (reaction) at the other support becomes zero. At this point, the body is on the verge of rotating about the tilting support.
+</div>
+<div style="text-align:center;margin:20px 0;">
+<svg width="400" height="160" viewBox="0 0 400 160">
+  <!-- Beam tilting about right support -->
+  <rect x="30" y="70" width="340" height="12" fill="#bfdbfe" stroke="#2563eb" stroke-width="2" rx="2" transform="rotate(-5 200 76)"/>
+  <!-- Pivot (right support) -->
+  <polygon points="310,82 296,118 324,118" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
+  <line x1="284" y1="118" x2="336" y2="118" stroke="#475569" stroke-width="2"/>
+  <text x="310" y="135" text-anchor="middle" font-size="12" fill="#475569">Pivot</text>
+  <!-- Left support with R=0 label -->
+  <text x="65" y="110" text-anchor="middle" font-size="12" fill="#dc2626">R = 0</text>
+  <!-- Extra load at left causing tilt -->
+  <line x1="65" y1="68" x2="65" y2="118" stroke="#dc2626" stroke-width="2" marker-end="url(#awt)"/>
+  <text x="73" y="110" font-size="12" fill="#dc2626">W</text>
+  <defs>
+    <marker id="awt" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+  </defs>
+</svg>
+<p style="font-size:0.88rem;color:#64748b;">Tilting: body rotates about right pivot; reaction at left support = 0</p>
+</div>
+<p>To find the load required to cause tilting: set the reaction at the non-tilting support to zero and take moments about the tilting support.</p>
+
+<h2>8. Ladder Problems</h2>
+<p>A uniform ladder of mass \(m\), length \(2L\), leans against a smooth vertical wall at angle \(\theta\) to the horizontal, with its base on rough ground.</p>
+<ul>
+  <li>Forces: Weight \(mg\) at midpoint, Normal reaction from wall \(S\) (horizontal, smooth wall), Normal reaction from ground \(R\) (vertical), Friction from ground \(F\) (horizontal, toward wall).</li>
+  <li>Resolve horizontally: \(F = S\)</li>
+  <li>Resolve vertically: \(R = mg\)</li>
+  <li>Take moments about base: \(S \times 2L\sin\theta = mg \times L\cos\theta\)</li>
+  <li>So: \(S = \dfrac{mg\cos\theta}{2\sin\theta} = \dfrac{mg}{2\tan\theta}\)</li>
+  <li>For ladder not to slip: \(F \leq \mu R\), so \(S \leq \mu mg\), giving \(\tan\theta \geq \dfrac{1}{2\mu}\)</li>
+</ul>
+
+<h2>9. Key Formulae Summary</h2>
+<table>
+  <tr><th>Formula</th><th>Use</th></tr>
+  <tr><td>\(M = F \times d\)</td><td>Moment of force about a point</td></tr>
+  <tr><td>\(\sum \text{CW moments} = \sum \text{ACW moments}\)</td><td>Principle of moments (equilibrium)</td></tr>
+  <tr><td>\(\sum F = 0\) and \(\sum M = 0\)</td><td>Full equilibrium conditions</td></tr>
+  <tr><td>Weight at midpoint</td><td>Uniform rod/beam</td></tr>
+  <tr><td>\(R = 0\) at one support</td><td>Condition for tilting</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Strategy for Moments Problems:</strong>
+  <ul>
+    <li>Always take moments about a point where an unknown force acts — this eliminates it from the equation.</li>
+    <li>For a beam on two supports, take moments about each support in turn to find both reactions directly.</li>
+    <li>For tilting questions, explicitly state "R = 0 at [support]" before taking moments.</li>
+    <li>For non-uniform rods, set up two equations (resolve vertically + take moments) to find two unknowns.</li>
+  </ul>
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

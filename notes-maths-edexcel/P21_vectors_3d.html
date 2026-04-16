@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vectors (3D) - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P21: Vectors (Year 2 — 3D)</h1>
+
+<h2>1. 3D Coordinate System</h2>
+<p>In three dimensions, every point is described by three coordinates \((x, y, z)\). The three coordinate axes (\(x\), \(y\), \(z\)) are mutually perpendicular.</p>
+
+<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;display:block;margin:20px auto;background:#f8fafc;border-radius:8px;border:1px solid #cbd5e1;">
+  <!-- 3D axes in isometric projection -->
+  <!-- Origin at (200, 200) -->
+  <!-- x-axis goes right-down (isometric x) -->
+  <line x1="200" y1="200" x2="330" y2="265" stroke="#dc2626" stroke-width="2.5"/>
+  <polygon points="330,265 315,256 322,270" fill="#dc2626"/>
+  <text x="334" y="270" font-size="14" fill="#dc2626" font-weight="bold">x</text>
+  <!-- y-axis goes up -->
+  <line x1="200" y1="200" x2="200" y2="50" stroke="#16a34a" stroke-width="2.5"/>
+  <polygon points="200,50 195,65 205,65" fill="#16a34a"/>
+  <text x="204" y="44" font-size="14" fill="#16a34a" font-weight="bold">z</text>
+  <!-- z-axis goes left-down (isometric z, labelled y) -->
+  <line x1="200" y1="200" x2="70" y2="265" stroke="#2563eb" stroke-width="2.5"/>
+  <polygon points="70,265 85,256 78,270" fill="#2563eb"/>
+  <text x="50" y="270" font-size="14" fill="#2563eb" font-weight="bold">y</text>
+  <!-- Origin label -->
+  <circle cx="200" cy="200" r="4" fill="#1a1a2e"/>
+  <text x="206" y="198" font-size="13" fill="#1a1a2e">O</text>
+  <!-- Unit vectors labels -->
+  <text x="270" y="222" font-size="12" fill="#dc2626">i</text>
+  <text x="202" y="140" font-size="12" fill="#16a34a">k</text>
+  <text x="124" y="222" font-size="12" fill="#2563eb">j</text>
+  <!-- Example point P = (3,2,4) approximately -->
+  <line x1="200" y1="200" x2="260" y2="232" stroke="#dc2626" stroke-width="1" stroke-dasharray="5,3"/>
+  <line x1="260" y1="232" x2="220" y2="210" stroke="#2563eb" stroke-width="1" stroke-dasharray="5,3"/>
+  <line x1="220" y1="210" x2="220" y2="130" stroke="#16a34a" stroke-width="1" stroke-dasharray="5,3"/>
+  <circle cx="220" cy="130" r="5" fill="#7c3aed"/>
+  <text x="225" y="127" font-size="12" fill="#7c3aed">P(x,y,z)</text>
+  <text x="100" y="290" font-size="12" fill="#1a1a2e">Right-hand 3D coordinate system (isometric view)</text>
+</svg>
+
+<h2>2. 3D Vectors — Notation and Basics</h2>
+<p>A 3D vector can be written in two equivalent ways:</p>
+<div class="definition">
+  <strong>Column vector:</strong> \(\mathbf{a} = \begin{pmatrix}a_1\\a_2\\a_3\end{pmatrix}\)
+  <br><br>
+  <strong>ijk notation:</strong> \(\mathbf{a} = a_1\mathbf{i} + a_2\mathbf{j} + a_3\mathbf{k}\)
+  <br><br>
+  where \(\mathbf{i} = \begin{pmatrix}1\\0\\0\end{pmatrix}\), \(\mathbf{j} = \begin{pmatrix}0\\1\\0\end{pmatrix}\), \(\mathbf{k} = \begin{pmatrix}0\\0\\1\end{pmatrix}\) are unit vectors along the coordinate axes.
+</div>
+
+<h3>Operations on 3D vectors</h3>
+<table>
+  <tr><th>Operation</th><th>Formula</th></tr>
+  <tr><td>Addition</td><td>\(\mathbf{a}+\mathbf{b} = \begin{pmatrix}a_1+b_1\\a_2+b_2\\a_3+b_3\end{pmatrix}\)</td></tr>
+  <tr><td>Scalar multiplication</td><td>\(\lambda\mathbf{a} = \begin{pmatrix}\lambda a_1\\\lambda a_2\\\lambda a_3\end{pmatrix}\)</td></tr>
+  <tr><td>Magnitude</td><td>\(|\mathbf{a}| = \sqrt{a_1^2 + a_2^2 + a_3^2}\)</td></tr>
+  <tr><td>Unit vector</td><td>\(\hat{\mathbf{a}} = \dfrac{\mathbf{a}}{|\mathbf{a}|}\)</td></tr>
+</table>
+
+<h2>3. Position Vectors and Distance</h2>
+<p>The position vector of point \(P(x,y,z)\) is \(\overrightarrow{OP} = \begin{pmatrix}x\\y\\z\end{pmatrix}\).</p>
+
+<div class="definition">
+  <strong>Vector between two points:</strong> \(\overrightarrow{AB} = \mathbf{b} - \mathbf{a} = \begin{pmatrix}b_1-a_1\\b_2-a_2\\b_3-a_3\end{pmatrix}\)
+  <br><br>
+  <strong>Distance between A and B:</strong> \(|AB| = |\overrightarrow{AB}| = \sqrt{(b_1-a_1)^2+(b_2-a_2)^2+(b_3-a_3)^2}\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the distance between \(A(1, 2, -1)\) and \(B(4, 0, 3)\).
+  <br><br>
+  \(\overrightarrow{AB} = \begin{pmatrix}3\\-2\\4\end{pmatrix}\), \(|AB| = \sqrt{9+4+16} = \sqrt{29}\)
+</div>
+
+<h2>4. Equation of a Line in 3D</h2>
+<div class="definition">
+  <strong>Vector equation of a line</strong> passing through point \(A\) with position vector \(\mathbf{a}\), in direction \(\mathbf{b}\):
+  $$\mathbf{r} = \mathbf{a} + t\mathbf{b}, \quad t \in \mathbb{R}$$
+  The parameter \(t\) gives different points on the line.
+</div>
+
+<h3>Cartesian form of a line</h3>
+<p>If \(\mathbf{a} = \begin{pmatrix}a_1\\a_2\\a_3\end{pmatrix}\) and \(\mathbf{b} = \begin{pmatrix}b_1\\b_2\\b_3\end{pmatrix}\), the Cartesian form is:</p>
+<div class="equation">
+  $$\frac{x - a_1}{b_1} = \frac{y - a_2}{b_2} = \frac{z - a_3}{b_3} = t$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Write the vector equation of the line through \(A(1, -2, 3)\) with direction \(\begin{pmatrix}2\\1\\-1\end{pmatrix}\).
+  <br><br>
+  \(\mathbf{r} = \begin{pmatrix}1\\-2\\3\end{pmatrix} + t\begin{pmatrix}2\\1\\-1\end{pmatrix}\)
+  <br>
+  Cartesian form: \(\dfrac{x-1}{2} = \dfrac{y+2}{1} = \dfrac{z-3}{-1}\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the vector equation of the line through \(P(2, 1, 0)\) and \(Q(5, 3, -2)\).
+  <br><br>
+  Direction: \(\overrightarrow{PQ} = \begin{pmatrix}3\\2\\-2\end{pmatrix}\)
+  <br>
+  \(\mathbf{r} = \begin{pmatrix}2\\1\\0\end{pmatrix} + t\begin{pmatrix}3\\2\\-2\end{pmatrix}\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Any scalar multiple of the direction vector gives the same line. The point on the line can be any point — not just the specific one given. Use the simplest values.
+</div>
+
+<h2>5. Scalar (Dot) Product</h2>
+<div class="definition">
+  For \(\mathbf{a} = \begin{pmatrix}a_1\\a_2\\a_3\end{pmatrix}\) and \(\mathbf{b} = \begin{pmatrix}b_1\\b_2\\b_3\end{pmatrix}\):
+  $$\mathbf{a} \cdot \mathbf{b} = a_1b_1 + a_2b_2 + a_3b_3 = |\mathbf{a}||\mathbf{b}|\cos\theta$$
+  where \(\theta\) is the angle between \(\mathbf{a}\) and \(\mathbf{b}\).
+</div>
+
+<h3>Finding the angle between two vectors</h3>
+<div class="equation">
+  $$\cos\theta = \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}||\mathbf{b}|}$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the angle between \(\mathbf{a} = \begin{pmatrix}1\\2\\2\end{pmatrix}\) and \(\mathbf{b} = \begin{pmatrix}0\\1\\-1\end{pmatrix}\).
+  <br><br>
+  \(\mathbf{a}\cdot\mathbf{b} = 0 + 2 - 2 = 0\)
+  <br>
+  Since the dot product is 0, the vectors are <strong>perpendicular</strong>.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the acute angle between \(\mathbf{a} = \begin{pmatrix}2\\1\\0\end{pmatrix}\) and \(\mathbf{b} = \begin{pmatrix}1\\-1\\1\end{pmatrix}\).
+  <br><br>
+  \(\mathbf{a}\cdot\mathbf{b} = 2-1+0=1\)
+  <br>
+  \(|\mathbf{a}| = \sqrt{5},\; |\mathbf{b}| = \sqrt{3}\)
+  <br>
+  \(\cos\theta = \dfrac{1}{\sqrt{15}}\), so \(\theta = \cos^{-1}\!\left(\dfrac{1}{\sqrt{15}}\right) \approx 75.0°\)
+</div>
+
+<h3>Perpendicular vectors</h3>
+<div class="definition">
+  \(\mathbf{a} \perp \mathbf{b} \iff \mathbf{a} \cdot \mathbf{b} = 0\)
+</div>
+
+<h2>6. Angle Between Two Lines</h2>
+<p>The angle between two lines with direction vectors \(\mathbf{b}_1\) and \(\mathbf{b}_2\) is found using:</p>
+<div class="equation">
+  $$\cos\theta = \frac{|\mathbf{b}_1 \cdot \mathbf{b}_2|}{|\mathbf{b}_1||\mathbf{b}_2|}$$
+</div>
+<p><strong>Take the modulus</strong> so that \(\theta\) is the acute angle between the lines (lines are undirected).</p>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Always use \(|\mathbf{b}_1 \cdot \mathbf{b}_2|\) (absolute value of the dot product) when finding the angle between two lines. If you get \(\cos\theta < 0\), the answer would be the obtuse angle — take \(180° - \theta\) instead.
+</div>
+
+<h2>7. Parallel, Intersecting, and Skew Lines</h2>
+<table>
+  <tr><th>Relationship</th><th>Condition</th><th>Test</th></tr>
+  <tr><td>Parallel</td><td>Direction vectors are scalar multiples: \(\mathbf{b}_1 = \lambda\mathbf{b}_2\)</td><td>Check \(\mathbf{b}_1 \times \mathbf{b}_2 = \mathbf{0}\) (or ratio test)</td></tr>
+  <tr><td>Intersecting</td><td>Lines meet at a point</td><td>Set \(\mathbf{r}_1 = \mathbf{r}_2\), solve for parameters; check consistency</td></tr>
+  <tr><td>Skew</td><td>Not parallel, not intersecting</td><td>As above — if equations are inconsistent and not parallel, lines are skew</td></tr>
+</table>
+
+<h3>Testing for intersection</h3>
+<ol>
+  <li>Write both lines parametrically: \(\mathbf{r}_1 = \mathbf{a}_1 + s\mathbf{b}_1\) and \(\mathbf{r}_2 = \mathbf{a}_2 + t\mathbf{b}_2\)</li>
+  <li>Set equal component by component — gives 3 equations in 2 unknowns (\(s\) and \(t\))</li>
+  <li>Solve two of the equations for \(s\) and \(t\)</li>
+  <li>Substitute into the third equation — if consistent, lines intersect; if not, lines are skew</li>
+</ol>
+
+<div class="example">
+  <strong>Example:</strong> Lines \(\ell_1: \mathbf{r} = \begin{pmatrix}1\\2\\3\end{pmatrix}+s\begin{pmatrix}1\\1\\-1\end{pmatrix}\) and \(\ell_2: \mathbf{r} = \begin{pmatrix}2\\1\\1\end{pmatrix}+t\begin{pmatrix}2\\-1\\1\end{pmatrix}\). Do they intersect?
+  <br><br>
+  Setting equal:
+  <br>
+  \(x: 1+s = 2+2t \Rightarrow s - 2t = 1\) ... (1)
+  <br>
+  \(y: 2+s = 1-t \Rightarrow s + t = -1\) ... (2)
+  <br>
+  (1)-(2): \(-3t = 2 \Rightarrow t = -\tfrac{2}{3}\), \(s = -\tfrac{1}{3} + (-\tfrac{2}{3}) = \ldots\)
+  <br>
+  From (2): \(s = -1 - t = -1 + \tfrac{2}{3} = -\tfrac{1}{3}\)
+  <br>
+  Check \(z: 3 + s(-1) = 1 + t(1)\): \(3 - \tfrac{1}{3} = 1 - \tfrac{2}{3}\): \(\tfrac{8}{3} \ne \tfrac{1}{3}\).
+  <br>
+  Inconsistent — the lines are <strong>skew</strong>.
+</div>
+
+<h2>8. Key Properties of the Dot Product</h2>
+<ul>
+  <li>\(\mathbf{a} \cdot \mathbf{b} = \mathbf{b} \cdot \mathbf{a}\) (commutative)</li>
+  <li>\(\mathbf{a} \cdot (\mathbf{b} + \mathbf{c}) = \mathbf{a}\cdot\mathbf{b} + \mathbf{a}\cdot\mathbf{c}\) (distributive)</li>
+  <li>\(\mathbf{a} \cdot \mathbf{a} = |\mathbf{a}|^2\)</li>
+  <li>\(\mathbf{i}\cdot\mathbf{i} = \mathbf{j}\cdot\mathbf{j} = \mathbf{k}\cdot\mathbf{k} = 1\), \(\mathbf{i}\cdot\mathbf{j} = \mathbf{j}\cdot\mathbf{k} = \mathbf{i}\cdot\mathbf{k} = 0\)</li>
+</ul>
+
+<h2>9. Summary of Key Formulae</h2>
+<table>
+  <tr><th>Topic</th><th>Formula</th></tr>
+  <tr><td>Magnitude</td><td>\(|\mathbf{a}| = \sqrt{a_1^2+a_2^2+a_3^2}\)</td></tr>
+  <tr><td>Unit vector</td><td>\(\hat{\mathbf{a}} = \mathbf{a}/|\mathbf{a}|\)</td></tr>
+  <tr><td>Distance AB</td><td>\(\sqrt{(b_1-a_1)^2+(b_2-a_2)^2+(b_3-a_3)^2}\)</td></tr>
+  <tr><td>Line equation</td><td>\(\mathbf{r} = \mathbf{a} + t\mathbf{b}\)</td></tr>
+  <tr><td>Dot product</td><td>\(\mathbf{a}\cdot\mathbf{b} = a_1b_1+a_2b_2+a_3b_3\)</td></tr>
+  <tr><td>Angle between vectors</td><td>\(\cos\theta = \dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}||\mathbf{b}|}\)</td></tr>
+  <tr><td>Perpendicularity</td><td>\(\mathbf{a}\cdot\mathbf{b} = 0\)</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

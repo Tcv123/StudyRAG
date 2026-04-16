@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M6: Projectiles - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>M6: Projectiles</h1>
+
+<h2>1. Key Principle: Independence of Motion</h2>
+<div class="definition">
+  In projectile motion, the <strong>horizontal</strong> and <strong>vertical</strong> components of motion are completely independent:<br><br>
+  <ul style="margin-left:20px;">
+    <li><strong>Horizontal:</strong> constant velocity (no air resistance assumed)</li>
+    <li><strong>Vertical:</strong> constant downward acceleration \(g = 9.8\ \text{m/s}^2\)</li>
+  </ul>
+  This means you apply the constant acceleration (suvat) equations separately to each direction.
+</div>
+
+<h2>2. Setting Up — Initial Velocity Components</h2>
+<p>A projectile is launched with speed \(u\) at angle \(\theta\) above the horizontal:</p>
+<div class="equation">$$u_x = u\cos\theta \qquad u_y = u\sin\theta$$</div>
+<p>Standard axes: x positive to the right (horizontal), y positive upward (vertical).</p>
+
+<h3>Projectile Path Diagram</h3>
+<div style="text-align:center;margin:24px 0;">
+<svg width="500" height="240" viewBox="0 0 500 240">
+  <!-- Ground line -->
+  <line x1="40" y1="200" x2="480" y2="200" stroke="#94a3b8" stroke-width="2"/>
+  <!-- Parabolic path (approximate via quadratic) -->
+  <!-- Points: x=0,y=200; x=200,y=60; x=400,y=200 -->
+  <path d="M 60,200 Q 230,40 420,200" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Launch point -->
+  <circle cx="60" cy="200" r="5" fill="#2563eb"/>
+  <!-- Landing point -->
+  <circle cx="420" cy="200" r="5" fill="#2563eb"/>
+  <!-- Max height marker -->
+  <line x1="240" y1="40" x2="240" y2="200" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="245" y="118" font-size="12" fill="#16a34a" font-weight="600">Max height H</text>
+  <!-- Range arrow -->
+  <line x1="60" y1="215" x2="420" y2="215" stroke="#dc2626" stroke-width="2" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <text x="215" y="232" font-size="12" fill="#dc2626" font-weight="600" text-anchor="middle">Range R</text>
+  <!-- Initial velocity vector -->
+  <line x1="60" y1="200" x2="120" y2="152" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#av)"/>
+  <text x="125" y="148" font-size="12" fill="#7c3aed" font-weight="600">u</text>
+  <!-- Angle arc -->
+  <path d="M 88,200 A 28,28 0 0,1 74,177" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="94" y="192" font-size="12" fill="#f59e0b">θ</text>
+  <!-- Horizontal component arrow -->
+  <line x1="60" y1="200" x2="120" y2="200" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4"/>
+  <text x="82" y="218" font-size="11" fill="#2563eb">u cosθ</text>
+  <!-- Vertical component arrow -->
+  <line x1="120" y1="200" x2="120" y2="152" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4"/>
+  <text x="124" y="180" font-size="11" fill="#dc2626">u sinθ</text>
+  <!-- At peak: only horizontal velocity -->
+  <line x1="240" y1="40" x2="285" y2="40" stroke="#2563eb" stroke-width="2" marker-end="url(#ahv)"/>
+  <text x="290" y="44" font-size="11" fill="#2563eb">u cosθ</text>
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+    <marker id="al" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto-start-reverse"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+    <marker id="av" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7c3aed"/></marker>
+    <marker id="ahv" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/></marker>
+  </defs>
+</svg>
+<p style="font-size:0.88rem;color:#64748b;">Projectile parabola: initial angle θ, range R, maximum height H. At peak, vertical velocity = 0, only horizontal velocity \(u\cos\theta\) remains.</p>
+</div>
+
+<h2>3. Equations of Motion</h2>
+<table>
+  <tr><th></th><th>Horizontal (x)</th><th>Vertical (y)</th></tr>
+  <tr><td><strong>Acceleration</strong></td><td>\(a_x = 0\)</td><td>\(a_y = -g = -9.8\ \text{m/s}^2\)</td></tr>
+  <tr><td><strong>Initial velocity</strong></td><td>\(u_x = u\cos\theta\)</td><td>\(u_y = u\sin\theta\)</td></tr>
+  <tr><td><strong>Velocity at time t</strong></td><td>\(v_x = u\cos\theta\)</td><td>\(v_y = u\sin\theta - gt\)</td></tr>
+  <tr><td><strong>Position at time t</strong></td><td>\(x = u\cos\theta \cdot t\)</td><td>\(y = u\sin\theta \cdot t - \tfrac{1}{2}gt^2\)</td></tr>
+</table>
+<p>(Taking the launch point as the origin, upward positive.)</p>
+
+<h2>4. Key Results</h2>
+
+<h3>Time of Flight</h3>
+<p>Set \(y = 0\) (return to launch height) and solve for \(t\):</p>
+<div class="equation">$$u\sin\theta \cdot t - \tfrac{1}{2}gt^2 = 0 \implies t(u\sin\theta - \tfrac{1}{2}gt) = 0$$
+$$T = \frac{2u\sin\theta}{g}$$</div>
+<p>Discard \(t = 0\) (launch instant). The non-zero solution is the time of flight \(T\).</p>
+
+<h3>Maximum Height</h3>
+<p>At maximum height, vertical velocity \(v_y = 0\):</p>
+<div class="equation">$$t_{max} = \frac{u\sin\theta}{g} \qquad H = \frac{u^2\sin^2\theta}{2g}$$</div>
+
+<h3>Range</h3>
+<p>Horizontal distance when \(y = 0\) (substitute \(T\) into \(x\)):</p>
+<div class="equation">$$R = \frac{u^2\sin 2\theta}{g}$$</div>
+<p>Maximum range occurs when \(\sin 2\theta = 1\), i.e., \(\theta = 45°\): \(R_{max} = \dfrac{u^2}{g}\)</p>
+
+<div class="exam-tip">
+  <strong>Symmetry:</strong> The same range \(R\) is achieved by two complementary angles, \(\theta\) and \((90° - \theta)\). For example, 30° and 60° give the same range.
+</div>
+
+<h2>5. Trajectory Equation (Eliminating t)</h2>
+<p>From horizontal: \(t = \dfrac{x}{u\cos\theta}\). Substitute into the vertical equation:</p>
+<div class="equation">$$y = x\tan\theta - \frac{gx^2}{2u^2\cos^2\theta}$$</div>
+<p>This is the <strong>equation of the parabolic path</strong>. It is useful for questions giving a point on the trajectory (e.g., a specific \((x,y)\) coordinate) and asking you to find \(u\), \(\theta\), or whether the projectile clears an obstacle.</p>
+
+<h2>6. Projectile from a Height</h2>
+<p>When launched from a height \(h\) above the ground (e.g., from a cliff):</p>
+<ul>
+  <li>Set origin at launch point. Ground is at \(y = -h\).</li>
+  <li>Set \(y = -h\) in \(y = u\sin\theta \cdot t - \tfrac{1}{2}gt^2\) to find time of landing.</li>
+  <li>Range = \(x = u\cos\theta \cdot t\) using the landing time.</li>
+</ul>
+
+<div class="example">
+  <strong>Example:</strong> A ball is thrown from a cliff top 45 m high, with speed 20 m/s at 30° above horizontal. Find (a) the time of flight, (b) the horizontal range.<br><br>
+  \(u_x = 20\cos30° = 17.32\ \text{m/s}\), \(u_y = 20\sin30° = 10\ \text{m/s}\)<br>
+  Taking upward as positive, ground at \(y = -45\):<br>
+  \(-45 = 10t - \tfrac{1}{2}(9.8)t^2\)<br>
+  \(4.9t^2 - 10t - 45 = 0\)<br>
+  \(t = \dfrac{10 \pm \sqrt{100 + 4(4.9)(45)}}{9.8} = \dfrac{10 \pm \sqrt{982}}{9.8}\)<br>
+  Taking positive root: \(t = \dfrac{10 + 31.34}{9.8} = 4.22\ \text{s}\)<br>
+  Range: \(x = 17.32 \times 4.22 = 73.1\ \text{m}\)
+</div>
+
+<h2>7. Speed and Direction at Any Point</h2>
+<p>At time \(t\):</p>
+<ul>
+  <li>Speed: \(v = \sqrt{v_x^2 + v_y^2} = \sqrt{(u\cos\theta)^2 + (u\sin\theta - gt)^2}\)</li>
+  <li>Direction (angle to horizontal): \(\phi = \arctan\!\left(\dfrac{v_y}{v_x}\right)\) — negative means below horizontal</li>
+</ul>
+
+<h2>8. Key Formulae Summary</h2>
+<table>
+  <tr><th>Quantity</th><th>Formula</th></tr>
+  <tr><td>Horizontal displacement</td><td>\(x = u\cos\theta \cdot t\)</td></tr>
+  <tr><td>Vertical displacement</td><td>\(y = u\sin\theta \cdot t - \tfrac{1}{2}gt^2\)</td></tr>
+  <tr><td>Vertical velocity</td><td>\(v_y = u\sin\theta - gt\)</td></tr>
+  <tr><td>Time of flight (same level)</td><td>\(T = \dfrac{2u\sin\theta}{g}\)</td></tr>
+  <tr><td>Maximum height</td><td>\(H = \dfrac{u^2\sin^2\theta}{2g}\)</td></tr>
+  <tr><td>Range (same level)</td><td>\(R = \dfrac{u^2\sin 2\theta}{g}\)</td></tr>
+  <tr><td>Trajectory equation</td><td>\(y = x\tan\theta - \dfrac{gx^2}{2u^2\cos^2\theta}\)</td></tr>
+  <tr><td>Maximum range angle</td><td>\(\theta = 45°\)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Common Errors:</strong>
+  <ul>
+    <li>Using \(g = 9.8\) but forgetting to halve it in \(\frac{1}{2}gt^2\).</li>
+    <li>Confusing the direction of \(g\): it acts downward, so in the vertical equation with upward positive it is \(-g\), not \(+g\).</li>
+    <li>Discarding both roots when solving \(y = 0\): always keep the non-zero positive \(t\).</li>
+    <li>Using suvat in the horizontal direction with \(a = g\) — horizontal acceleration is zero (no air resistance).</li>
+    <li>For projectile from a height, always set \(y = -h\) (below launch point), not \(y = 0\).</li>
+  </ul>
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

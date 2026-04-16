@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Differentiation (Year 1) - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P9: Differentiation (Year 1)</h1>
+
+<h2>1. Differentiation from First Principles</h2>
+
+<div class="definition">
+  <strong>Definition of the Derivative:</strong>
+  $$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$
+  The derivative measures the <strong>instantaneous rate of change</strong> of \(f(x)\) — the gradient of the tangent to the curve at a given point.
+</div>
+
+<div style="text-align:center; margin: 20px 0;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
+  <!-- Axes -->
+  <line x1="40" y1="20" x2="40" y2="270" stroke="#333" stroke-width="1.5"/>
+  <line x1="20" y1="250" x2="460" y2="250" stroke="#333" stroke-width="1.5"/>
+  <polygon points="40,16 35,28 45,28" fill="#333"/>
+  <polygon points="464,250 452,245 452,255" fill="#333"/>
+  <!-- Curve: y = x^2 scaled, origin at (40,250) scale: 70px/unit -->
+  <!-- x=0: y=0 -> (40,250); x=1: y=1 -> (110,180); x=2: y=4 -> (180,no), let's use x=0.5,1,1.5,2 -->
+  <!-- scale: 140px/unit x, 35px/unit y; x from 0 to 3 -->
+  <!-- point P at x=1: (40+140=180, 250-35=215); point Q at x=2: (40+280=320, 250-140=110) -->
+  <path d="M 40,250 C 80,248 120,240 160,222 C 200,200 230,165 270,120 C 310,75 360,40 420,20" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Point P at x=1, y=1: (40+140=180, 250-35*1=215) -->
+  <circle cx="180" cy="215" r="5" fill="#2563eb"/>
+  <text x="185" y="210" font-size="12" fill="#2563eb">P(x, f(x))</text>
+  <!-- Point Q at x=1.7 (h=0.7): approx (40+238=278, 250-35*2.89≈148) -->
+  <circle cx="278" cy="148" r="5" fill="#dc2626"/>
+  <text x="283" y="145" font-size="12" fill="#dc2626">Q(x+h, f(x+h))</text>
+  <!-- Secant line through P and Q -->
+  <line x1="100" y1="282" x2="380" y2="50" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <!-- Tangent at P -->
+  <line x1="60" y1="240" x2="320" y2="155" stroke="#16a34a" stroke-width="2"/>
+  <!-- Vertical line from Q to x-axis -->
+  <line x1="278" y1="148" x2="278" y2="250" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Horizontal line from P to below Q -->
+  <line x1="180" y1="215" x2="278" y2="215" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- h label -->
+  <text x="225" y="232" font-size="11" fill="#555">h</text>
+  <!-- f(x+h)-f(x) label -->
+  <text x="282" y="185" font-size="11" fill="#555">f(x+h)−f(x)</text>
+  <!-- Labels -->
+  <text x="315" y="165" font-size="12" fill="#dc2626">Secant (slope ≈ f')</text>
+  <text x="170" y="155" font-size="12" fill="#16a34a">Tangent (exact f')</text>
+  <text x="380" y="30" font-size="13" fill="#2563eb">y = f(x)</text>
+  <text x="464" y="254" font-size="12" fill="#333">x</text>
+  <text x="44" y="14" font-size="12" fill="#333">y</text>
+  <!-- x and x+h on axis -->
+  <text x="176" y="265" font-size="10" fill="#555">x</text>
+  <text x="270" y="265" font-size="10" fill="#555">x+h</text>
+  <line x1="180" y1="247" x2="180" y2="253" stroke="#333" stroke-width="1"/>
+  <line x1="278" y1="247" x2="278" y2="253" stroke="#333" stroke-width="1"/>
+  <!-- As h->0 annotation -->
+  <text x="50" y="35" font-size="11" fill="#555">As h → 0, secant</text>
+  <text x="50" y="50" font-size="11" fill="#555">approaches tangent</text>
+</svg>
+</div>
+
+<div class="example">
+  <strong>First Principles — Differentiate \(f(x) = x^2\):</strong><br><br>
+  \(f'(x) = \lim_{h \to 0} \dfrac{(x+h)^2 - x^2}{h}\)<br><br>
+  \(= \lim_{h \to 0} \dfrac{x^2 + 2xh + h^2 - x^2}{h}\)<br><br>
+  \(= \lim_{h \to 0} \dfrac{2xh + h^2}{h}\)<br><br>
+  \(= \lim_{h \to 0} (2x + h) = 2x\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> First principles questions appear regularly. Always expand \(f(x+h)\), subtract \(f(x)\), divide by \(h\), cancel the \(h\) factor, then take the limit. Edexcel may ask this for \(x^2\), \(x^3\), \(\frac{1}{x}\), or \(\sqrt{x}\).
+</div>
+
+<h2>2. Standard Differentiation Rules</h2>
+
+<h3>Power Rule (the most important rule)</h3>
+
+<div class="definition">
+  $$\frac{d}{dx}(x^n) = nx^{n-1}$$
+  Works for all rational \(n\) — positive, negative, fractional.
+</div>
+
+<table>
+  <thead>
+    <tr><th>Function</th><th>Derivative</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>\(y = x^n\)</td><td>\(\dfrac{dy}{dx} = nx^{n-1}\)</td><td>All values of \(n\)</td></tr>
+    <tr><td>\(y = c\) (constant)</td><td>\(\dfrac{dy}{dx} = 0\)</td><td>Gradient of horizontal line is 0</td></tr>
+    <tr><td>\(y = cx^n\)</td><td>\(\dfrac{dy}{dx} = cnx^{n-1}\)</td><td>Multiply by coefficient</td></tr>
+    <tr><td>\(y = e^x\)</td><td>\(\dfrac{dy}{dx} = e^x\)</td><td>Unique self-derivative property</td></tr>
+    <tr><td>\(y = \ln x\)</td><td>\(\dfrac{dy}{dx} = \dfrac{1}{x}\)</td><td>Defined for \(x > 0\)</td></tr>
+    <tr><td>\(y = \sin x\)</td><td>\(\dfrac{dy}{dx} = \cos x\)</td><td>\(x\) in radians</td></tr>
+    <tr><td>\(y = \cos x\)</td><td>\(\dfrac{dy}{dx} = -\sin x\)</td><td>\(x\) in radians</td></tr>
+  </tbody>
+</table>
+
+<div class="example">
+  <strong>Example — Differentiate each:</strong><br><br>
+  (a) \(y = 3x^4 - 2x^3 + 5x - 7\)<br>
+  \(\dfrac{dy}{dx} = 12x^3 - 6x^2 + 5\)<br><br>
+  (b) \(y = \dfrac{4}{x^2} = 4x^{-2}\)<br>
+  \(\dfrac{dy}{dx} = -8x^{-3} = -\dfrac{8}{x^3}\)<br><br>
+  (c) \(y = 5\sqrt{x} = 5x^{1/2}\)<br>
+  \(\dfrac{dy}{dx} = \dfrac{5}{2}x^{-1/2} = \dfrac{5}{2\sqrt{x}}\)<br><br>
+  (d) \(y = \dfrac{3x^2 + 2x}{x} = 3x + 2\) (simplify first!)<br>
+  \(\dfrac{dy}{dx} = 3\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always simplify before differentiating — rewrite fractions and roots as powers of \(x\). Never differentiate a fraction like \(\frac{f(x)}{g(x)}\) without the quotient rule (Year 2), unless it simplifies.
+</div>
+
+<h2>3. Tangents and Normals</h2>
+
+<div style="text-align:center; margin: 20px 0;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
+  <!-- Axes -->
+  <line x1="40" y1="20" x2="40" y2="270" stroke="#333" stroke-width="1.5"/>
+  <line x1="20" y1="230" x2="460" y2="230" stroke="#333" stroke-width="1.5"/>
+  <!-- Curve -->
+  <path d="M 60,220 C 120,210 160,180 200,150 C 240,120 280,90 340,60 C 380,42 420,30 440,25" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Point P at roughly (200,150) -->
+  <circle cx="200" cy="150" r="5" fill="#1a1a2e"/>
+  <text x="205" y="145" font-size="12" fill="#1a1a2e">P(a, f(a))</text>
+  <!-- Tangent line through P: slope ~-0.65 -->
+  <line x1="80" y1="204" x2="370" y2="16" stroke="#16a34a" stroke-width="2"/>
+  <!-- Normal line through P: perpendicular, slope ~1.54 -->
+  <line x1="80" y1="90" x2="330" y2="276" stroke="#dc2626" stroke-width="2" stroke-dasharray="7,4"/>
+  <!-- Labels -->
+  <text x="370" y="14" font-size="12" fill="#16a34a">Tangent: gradient = f'(a)</text>
+  <text x="330" y="290" font-size="12" fill="#dc2626">Normal: gradient = −1/f'(a)</text>
+  <text x="420" y="28" font-size="13" fill="#2563eb">y = f(x)</text>
+  <text x="460" y="234" font-size="12" fill="#333">x</text>
+  <text x="44" y="14" font-size="12" fill="#333">y</text>
+  <!-- Right angle symbol at P for normal -->
+  <line x1="207" y1="155" x2="213" y2="148" stroke="#dc2626" stroke-width="1.5"/>
+  <line x1="200" y1="162" x2="213" y2="148" stroke="#dc2626" stroke-width="1.5"/>
+</svg>
+</div>
+
+<p>At a point \(P(a, f(a))\) on a curve:</p>
+<ul>
+  <li><strong>Gradient of tangent</strong> = \(f'(a)\)</li>
+  <li><strong>Gradient of normal</strong> = \(-\dfrac{1}{f'(a)}\) (negative reciprocal, since tangent ⊥ normal)</li>
+</ul>
+
+<p>Equation of tangent at \((a, f(a))\): \(y - f(a) = f'(a)(x - a)\)</p>
+<p>Equation of normal at \((a, f(a))\): \(y - f(a) = -\dfrac{1}{f'(a)}(x - a)\)</p>
+
+<div class="example">
+  <strong>Example — Find the equation of the tangent and normal to \(y = x^3 - 2x\) at \(x = 2\):</strong><br><br>
+  \(y\)-value: \(y = 8 - 4 = 4\), so point is \((2, 4)\)<br>
+  \(\dfrac{dy}{dx} = 3x^2 - 2\), at \(x=2\): gradient \(= 12 - 2 = 10\)<br><br>
+  <strong>Tangent:</strong> \(y - 4 = 10(x - 2) \Rightarrow y = 10x - 16\)<br>
+  <strong>Normal:</strong> \(y - 4 = -\frac{1}{10}(x - 2) \Rightarrow 10y + x = 42\)
+</div>
+
+<h2>4. Second Derivative</h2>
+
+<div class="definition">
+  <strong>Second Derivative</strong> \(f''(x)\) or \(\dfrac{d^2y}{dx^2}\) is the derivative of the derivative.<br><br>
+  It measures the <strong>rate of change of the gradient</strong>:
+  <ul>
+    <li>\(f''(x) > 0\): gradient is increasing — curve is <strong>concave up</strong></li>
+    <li>\(f''(x) < 0\): gradient is decreasing — curve is <strong>concave down</strong></li>
+  </ul>
+</div>
+
+<h2>5. Stationary Points</h2>
+
+<div class="definition">
+  A <strong>stationary point</strong> occurs where \(f'(x) = 0\) (the tangent is horizontal).<br><br>
+  To classify the stationary point at \(x = a\):
+  <ul>
+    <li>If \(f''(a) > 0\): <strong>local minimum</strong></li>
+    <li>If \(f''(a) < 0\): <strong>local maximum</strong></li>
+    <li>If \(f''(a) = 0\): test is inconclusive — use sign change of \(f'(x)\)</li>
+  </ul>
+</div>
+
+<div class="example">
+  <strong>Example — Find and classify stationary points of \(y = 2x^3 - 9x^2 + 12x - 4\):</strong><br><br>
+  \(\dfrac{dy}{dx} = 6x^2 - 18x + 12 = 6(x^2 - 3x + 2) = 6(x-1)(x-2)\)<br><br>
+  Stationary points where \(\dfrac{dy}{dx} = 0\): \(x = 1\) and \(x = 2\)<br><br>
+  \(\dfrac{d^2y}{dx^2} = 12x - 18\)<br><br>
+  At \(x = 1\): \(f''(1) = 12 - 18 = -6 < 0\) → <strong>local maximum</strong>; \(y = 2 - 9 + 12 - 4 = 1\)<br>
+  At \(x = 2\): \(f''(2) = 24 - 18 = 6 > 0\) → <strong>local minimum</strong>; \(y = 16 - 36 + 24 - 4 = 0\)<br><br>
+  Local max at \((1, 1)\), local min at \((2, 0)\).
+</div>
+
+<h2>6. Increasing and Decreasing Functions</h2>
+
+<ul>
+  <li>\(f'(x) > 0\) for all \(x\) in an interval \(\Rightarrow f\) is <strong>increasing</strong> on that interval</li>
+  <li>\(f'(x) < 0\) for all \(x\) in an interval \(\Rightarrow f\) is <strong>decreasing</strong> on that interval</li>
+</ul>
+
+<div class="example">
+  <strong>Example — Find where \(f(x) = x^3 - 3x^2 + 1\) is increasing:</strong><br><br>
+  \(f'(x) = 3x^2 - 6x = 3x(x-2)\)<br>
+  \(f'(x) > 0\) when \(x < 0\) or \(x > 2\)<br>
+  So \(f\) is increasing for \(x < 0\) and \(x > 2\).
+</div>
+
+<h2>7. Optimisation</h2>
+
+<p>Real-world problems asking to maximise area, minimise cost, etc. Follow this method:</p>
+<ol>
+  <li>Define a variable and express the quantity to optimise as a function of that variable</li>
+  <li>Use a constraint to reduce to one variable if necessary</li>
+  <li>Differentiate and set equal to 0</li>
+  <li>Verify it is a maximum/minimum using the second derivative</li>
+  <li>Check endpoints of the domain if required</li>
+</ol>
+
+<div class="example">
+  <strong>Example — A farmer has 100 m of fencing to enclose a rectangular pen against a wall (no fence needed on wall side). Find the dimensions for maximum area:</strong><br><br>
+  Let width = \(x\) m (two sides), length = \(100 - 2x\) m<br>
+  Area: \(A = x(100 - 2x) = 100x - 2x^2\)<br>
+  \(\dfrac{dA}{dx} = 100 - 4x = 0 \Rightarrow x = 25\)<br>
+  \(\dfrac{d^2A}{dx^2} = -4 < 0\) — confirms maximum<br>
+  Dimensions: 25 m × 50 m, Area = 1250 m²
+</div>
+
+<div class="exam-tip">
+  <strong>Key Exam Points for P9:</strong>
+  <ul>
+    <li>First principles: expand \(f(x+h)\), simplify, cancel \(h\), take limit — show all steps</li>
+    <li>Rewrite before differentiating: \(\frac{1}{x^2} = x^{-2}\), \(\sqrt[3]{x} = x^{1/3}\), \(\frac{3}{x} = 3x^{-1}\)</li>
+    <li>For tangent/normal: find \(y\)-value at the point, find gradient, substitute into \(y - y_1 = m(x - x_1)\)</li>
+    <li>Second derivative test: if \(f''=0\) at a stationary point, check sign change of \(f'\) instead</li>
+    <li>In optimisation, always verify whether you have a max or min and check the context makes sense</li>
+  </ul>
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

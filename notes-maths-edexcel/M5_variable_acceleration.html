@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M5: Variable Acceleration - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>M5: Variable Acceleration</h1>
+
+<h2>1. The Calculus Connection</h2>
+<p>When acceleration is not constant, the constant acceleration (suvat) equations do not apply. Instead, we use calculus to relate displacement, velocity, and acceleration.</p>
+<div class="definition">
+  <table style="margin:0;border:none;">
+    <tr><td style="border:none;padding:4px 12px 4px 0;"><strong>Velocity from displacement:</strong></td><td style="border:none;">\(v = \dfrac{ds}{dt}\)</td></tr>
+    <tr><td style="border:none;padding:4px 12px 4px 0;"><strong>Acceleration from velocity:</strong></td><td style="border:none;">\(a = \dfrac{dv}{dt} = \dfrac{d^2s}{dt^2}\)</td></tr>
+    <tr><td style="border:none;padding:4px 12px 4px 0;"><strong>Alternative acceleration form:</strong></td><td style="border:none;">\(a = v\dfrac{dv}{ds}\) (useful when \(a\) depends on \(s\))</td></tr>
+  </table>
+</div>
+<p>Integration reverses differentiation:</p>
+<div class="equation">$$s = \int v \, dt + C \qquad v = \int a \, dt + C$$</div>
+<p>Always use an <strong>initial condition</strong> (e.g., \(s = 0\) when \(t = 0\)) to find the constant of integration \(C\), or use definite integrals with limits.</p>
+
+<h2>2. Direction of Motion</h2>
+<p>The sign of velocity indicates direction (e.g., positive = rightward/upward):</p>
+<ul>
+  <li><strong>Particle at rest:</strong> \(v = 0\)</li>
+  <li><strong>Particle reverses direction:</strong> \(v\) changes sign; the maximum displacement from the starting point occurs when \(v = 0\)</li>
+  <li><strong>Maximum speed:</strong> occurs when \(\dfrac{dv}{dt} = a = 0\) (but check it is a maximum using the second derivative or context)</li>
+</ul>
+
+<h2>3. Finding Displacement Using Integration</h2>
+<p>To find displacement between times \(t_1\) and \(t_2\):</p>
+<div class="equation">$$\text{Displacement} = \int_{t_1}^{t_2} v \, dt$$</div>
+<p>To find total <strong>distance</strong> travelled (not displacement), split the integral at times when \(v = 0\) and take the absolute value of each part:</p>
+<div class="equation">$$\text{Distance} = \int_{t_1}^{t_2} |v| \, dt$$</div>
+
+<div class="exam-tip">
+  <strong>Exam Trap:</strong> Displacement and distance are different. If the particle reverses, the integrals can partially cancel — always check for sign changes in \(v\) and compute distance as the sum of absolute values of each segment.
+</div>
+
+<h2>4. Worked Example — Full Solution</h2>
+<div class="example">
+  <strong>A particle moves so that its velocity at time \(t\) seconds is given by:</strong>
+  $$v = 3t^2 - 12t + 9 \quad (t \geq 0)$$
+  The particle starts at the origin (\(s = 0\) when \(t = 0\)).<br><br>
+
+  <strong>(a) When is the particle at rest?</strong><br>
+  Set \(v = 0\): \(3t^2 - 12t + 9 = 0 \Rightarrow t^2 - 4t + 3 = 0 \Rightarrow (t-1)(t-3) = 0\)<br>
+  At rest when \(t = 1\ \text{s}\) and \(t = 3\ \text{s}\).<br><br>
+
+  <strong>(b) Find the acceleration at \(t = 2\).</strong><br>
+  \(a = \dfrac{dv}{dt} = 6t - 12\)<br>
+  At \(t = 2\): \(a = 12 - 12 = 0\ \text{m/s}^2\) (this is when speed is minimum, a turning point).<br><br>
+
+  <strong>(c) Find the displacement at \(t = 3\).</strong><br>
+  \(s = \int_0^3 (3t^2 - 12t + 9)\, dt = \left[t^3 - 6t^2 + 9t\right]_0^3 = (27 - 54 + 27) - 0 = 0\ \text{m}\)<br>
+  (Particle returns to origin at \(t = 3\).)<br><br>
+
+  <strong>(d) Find the total distance travelled from \(t = 0\) to \(t = 3\).</strong><br>
+  Check signs of \(v\): at \(t = 0\), \(v = 9 > 0\); at \(t = 2\), \(v = 12 - 24 + 9 = -3 < 0\).<br>
+  So \(v > 0\) on \([0,1]\) and \(v < 0\) on \([1,3]\).<br>
+  \(s_1 = \int_0^1 v\,dt = [t^3 - 6t^2 + 9t]_0^1 = 1 - 6 + 9 = 4\ \text{m}\)<br>
+  \(s_2 = \int_1^3 v\,dt = (0) - 4 = -4\ \text{m}\) (magnitude 4 m)<br>
+  Total distance \(= 4 + 4 = 8\ \text{m}\)
+</div>
+
+<h2>5. v-t Graph Interpretation</h2>
+<div style="text-align:center;margin:20px 0;">
+<svg width="480" height="220" viewBox="0 0 480 220">
+  <!-- Axes -->
+  <line x1="50" y1="180" x2="450" y2="180" stroke="#475569" stroke-width="2" marker-end="url(#arrowX)"/>
+  <line x1="50" y1="20" x2="50" y2="190" stroke="#475569" stroke-width="2" marker-end="url(#arrowY)"/>
+  <!-- Axis labels -->
+  <text x="455" y="184" font-size="13" fill="#475569">t</text>
+  <text x="38" y="18" font-size="13" fill="#475569">v</text>
+  <!-- Zero line -->
+  <line x1="50" y1="120" x2="450" y2="120" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5"/>
+  <text x="35" y="124" font-size="11" fill="#94a3b8">0</text>
+  <!-- v = 3t²-12t+9 curve: parametric points -->
+  <!-- t=0: v=9 (at y=120-9*10=30); t=1: v=0 (at y=120); t=2: v=-3 (at y=150); t=3: v=0 (at y=120) -->
+  <!-- scale: pixel_y = 120 - v*10, pixel_x = 50 + t*100 -->
+  <polyline points="50,30 100,120 150,150 200,120 250,60" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Mark points -->
+  <circle cx="100" cy="120" r="4" fill="#dc2626"/>
+  <text x="96" y="135" font-size="11" fill="#dc2626">t=1, v=0</text>
+  <circle cx="200" cy="120" r="4" fill="#dc2626"/>
+  <text x="196" y="135" font-size="11" fill="#dc2626">t=3, v=0</text>
+  <circle cx="150" cy="150" r="4" fill="#7c3aed"/>
+  <text x="155" y="148" font-size="11" fill="#7c3aed">min v at t=2</text>
+  <!-- Shading: area between t=0..1 above axis (positive) -->
+  <polygon points="50,30 100,120 50,120" fill="#bbf7d0" opacity="0.6"/>
+  <!-- Shading: area between t=1..3 below axis (negative) -->
+  <polygon points="100,120 150,150 200,120" fill="#fecaca" opacity="0.6"/>
+  <!-- t axis labels -->
+  <text x="46" y="195" font-size="11" fill="#475569">0</text>
+  <text x="96" y="195" font-size="11" fill="#475569">1</text>
+  <text x="146" y="195" font-size="11" fill="#475569">2</text>
+  <text x="196" y="195" font-size="11" fill="#475569">3</text>
+  <!-- Legend -->
+  <rect x="290" y="60" width="12" height="12" fill="#bbf7d0" stroke="#16a34a"/>
+  <text x="308" y="72" font-size="11" fill="#16a34a">displacement (positive)</text>
+  <rect x="290" y="80" width="12" height="12" fill="#fecaca" stroke="#dc2626"/>
+  <text x="308" y="92" font-size="11" fill="#dc2626">displacement (negative)</text>
+  <defs>
+    <marker id="arrowX" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#475569"/></marker>
+    <marker id="arrowY" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#475569"/></marker>
+  </defs>
+</svg>
+<p style="font-size:0.88rem;color:#64748b;">v-t graph for \(v = 3t^2 - 12t + 9\): green area = positive displacement, red area = negative displacement</p>
+</div>
+
+<h2>6. The Alternative Form: \(a = v\,\dfrac{dv}{ds}\)</h2>
+<p>This form is used when acceleration is given as a function of displacement \(s\), or when you need to find velocity as a function of position.</p>
+<div class="example">
+  <strong>Example:</strong> A particle has acceleration \(a = 2s + 1\) m/s². Given \(v = 3\) when \(s = 0\), find \(v\) when \(s = 2\).<br><br>
+  Use \(v\dfrac{dv}{ds} = 2s + 1\)<br>
+  Integrate: \(\dfrac{v^2}{2} = s^2 + s + C\)<br>
+  At \(s = 0\), \(v = 3\): \(C = \dfrac{9}{2}\)<br>
+  At \(s = 2\): \(\dfrac{v^2}{2} = 4 + 2 + 4.5 = 10.5 \Rightarrow v^2 = 21 \Rightarrow v = \sqrt{21} \approx 4.58\ \text{m/s}\)
+</div>
+
+<h2>7. Vectors in 2D — Variable Acceleration</h2>
+<p>For a particle moving in 2D, position is a vector function of time:</p>
+<div class="equation">$$\mathbf{r}(t) = x(t)\,\mathbf{i} + y(t)\,\mathbf{j}$$</div>
+<p>Differentiate component-wise:</p>
+<div class="equation">$$\mathbf{v} = \frac{d\mathbf{r}}{dt} = \dot{x}\,\mathbf{i} + \dot{y}\,\mathbf{j} \qquad \mathbf{a} = \frac{d\mathbf{v}}{dt} = \ddot{x}\,\mathbf{i} + \ddot{y}\,\mathbf{j}$$</div>
+<p>Speed (magnitude of velocity): \(|\mathbf{v}| = \sqrt{v_x^2 + v_y^2}\)</p>
+<div class="example">
+  <strong>Example:</strong> A particle has position \(\mathbf{r} = (t^3 - 3t)\,\mathbf{i} + (2t^2 - 1)\,\mathbf{j}\) m. Find the speed at \(t = 2\).<br><br>
+  \(\mathbf{v} = (3t^2 - 3)\,\mathbf{i} + 4t\,\mathbf{j}\)<br>
+  At \(t = 2\): \(\mathbf{v} = (12-3)\,\mathbf{i} + 8\,\mathbf{j} = 9\,\mathbf{i} + 8\,\mathbf{j}\)<br>
+  Speed \(= \sqrt{81 + 64} = \sqrt{145} \approx 12.0\ \text{m/s}\)
+</div>
+
+<h2>8. Key Formulae Summary</h2>
+<table>
+  <tr><th>Operation</th><th>Formula</th></tr>
+  <tr><td>Velocity from displacement</td><td>\(v = \dfrac{ds}{dt}\)</td></tr>
+  <tr><td>Acceleration from velocity</td><td>\(a = \dfrac{dv}{dt}\)</td></tr>
+  <tr><td>Alternative acceleration</td><td>\(a = v\dfrac{dv}{ds}\)</td></tr>
+  <tr><td>Displacement from velocity</td><td>\(s = \int v\,dt\) (use limits or +C)</td></tr>
+  <tr><td>Velocity from acceleration</td><td>\(v = \int a\,dt\) (use limits or +C)</td></tr>
+  <tr><td>At rest</td><td>\(v = 0\)</td></tr>
+  <tr><td>Maximum speed</td><td>\(a = \dfrac{dv}{dt} = 0\)</td></tr>
+  <tr><td>2D speed</td><td>\(|\mathbf{v}| = \sqrt{v_x^2 + v_y^2}\)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Common Errors:</strong>
+  <ul>
+    <li>Confusing displacement and distance — check for sign changes in \(v\).</li>
+    <li>Forgetting the constant of integration when integrating indefinitely — always apply an initial condition.</li>
+    <li>Differentiating to find displacement (wrong direction) — differentiate for velocity/acceleration, integrate for velocity/displacement.</li>
+    <li>In 2D, treat \(\mathbf{i}\) and \(\mathbf{j}\) components separately — never mix them.</li>
+  </ul>
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

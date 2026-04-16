@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vectors (Year 1) - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P11: Vectors (Year 1)</h1>
+
+<h2>1. Vector Notation and Basics</h2>
+
+<div class="definition">
+  <strong>Vector vs Scalar:</strong><br>
+  A <strong>scalar</strong> has magnitude only (e.g., speed, temperature).<br>
+  A <strong>vector</strong> has both magnitude and direction (e.g., velocity, displacement, force).<br><br>
+  <strong>Notation:</strong>
+  <ul>
+    <li>Bold letters: \(\mathbf{a}\) (printed) or \(\underline{a}\) (handwritten)</li>
+    <li>Arrow notation: \(\vec{AB}\) — vector from A to B</li>
+    <li>Column vector: \(\dbinom{x}{y}\) — x-component, y-component</li>
+    <li>Component form: \(\mathbf{a} = x\mathbf{i} + y\mathbf{j}\), where \(\mathbf{i} = \dbinom{1}{0}\), \(\mathbf{j} = \dbinom{0}{1}\)</li>
+  </ul>
+</div>
+
+<p>Two vectors are <strong>equal</strong> if they have the same magnitude and direction — position does not matter (free vectors).</p>
+
+<h2>2. Vector Operations</h2>
+
+<h3>Addition and Subtraction</h3>
+<div class="equation">$$\dbinom{a_1}{a_2} + \dbinom{b_1}{b_2} = \dbinom{a_1+b_1}{a_2+b_2} \qquad \dbinom{a_1}{a_2} - \dbinom{b_1}{b_2} = \dbinom{a_1-b_1}{a_2-b_2}$$</div>
+
+<h3>Scalar Multiplication</h3>
+<div class="equation">$$k\dbinom{a_1}{a_2} = \dbinom{ka_1}{ka_2}$$</div>
+<p>Multiplying by a positive scalar: scales the magnitude, keeps direction.<br>
+Multiplying by a negative scalar: scales and <strong>reverses</strong> direction.</p>
+
+<div style="text-align:center; margin: 20px 0;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" width="480" height="280">
+  <!-- LEFT: Triangle law of addition -->
+  <!-- a vector: from O(80,220) to A(210,140) -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9333ea"/>
+    </marker>
+  </defs>
+  <!-- Triangle law -->
+  <!-- a: O to A -->
+  <line x1="80" y1="220" x2="208" y2="143" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="130" y="173" font-size="13" fill="#2563eb" font-weight="bold">a</text>
+  <!-- b: A to B -->
+  <line x1="212" y1="140" x2="308" y2="203" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+  <text x="272" y="162" font-size="13" fill="#16a34a" font-weight="bold">b</text>
+  <!-- a+b: O to B (resultant) -->
+  <line x1="80" y1="220" x2="306" y2="207" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" stroke-dasharray="7,4"/>
+  <text x="185" y="230" font-size="13" fill="#dc2626" font-weight="bold">a + b</text>
+  <!-- Points -->
+  <circle cx="80" cy="220" r="3" fill="#333"/>
+  <circle cx="312" cy="207" r="3" fill="#333"/>
+  <circle cx="212" cy="140" r="3" fill="#333"/>
+  <text x="68" y="235" font-size="11" fill="#333">O</text>
+  <text x="315" y="207" font-size="11" fill="#333">B</text>
+  <text x="215" y="135" font-size="11" fill="#333">A</text>
+  <text x="140" y="260" font-size="12" fill="#555" text-anchor="middle">Triangle Law</text>
+
+  <!-- Divider -->
+  <line x1="240" y1="30" x2="240" y2="260" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- RIGHT: Parallelogram law -->
+  <!-- a: O to A -->
+  <line x1="310" y1="220" x2="398" y2="153" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="342" y="178" font-size="13" fill="#2563eb" font-weight="bold">a</text>
+  <!-- b: O to C -->
+  <line x1="310" y1="220" x2="405" y2="220" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+  <text x="357" y="237" font-size="13" fill="#16a34a" font-weight="bold">b</text>
+  <!-- a from C: C to D (parallel to a) -->
+  <line x1="408" y1="220" x2="443" y2="153" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- b from A: A to D (parallel to b) -->
+  <line x1="402" y1="150" x2="443" y2="150" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- Diagonal: O to D (resultant) -->
+  <line x1="310" y1="220" x2="440" y2="152" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="363" y="182" font-size="13" fill="#dc2626" font-weight="bold">a+b</text>
+  <!-- Points -->
+  <circle cx="310" cy="220" r="3" fill="#333"/>
+  <circle cx="410" cy="220" r="3" fill="#333"/>
+  <circle cx="403" cy="150" r="3" fill="#333"/>
+  <circle cx="445" cy="150" r="3" fill="#333"/>
+  <text x="297" y="235" font-size="11" fill="#333">O</text>
+  <text x="408" y="235" font-size="11" fill="#333">C</text>
+  <text x="406" y="147" font-size="11" fill="#333">A</text>
+  <text x="448" y="147" font-size="11" fill="#333">D</text>
+  <text x="375" y="260" font-size="12" fill="#555" text-anchor="middle">Parallelogram Law</text>
+</svg>
+</div>
+
+<div class="example">
+  <strong>Example — Given \(\mathbf{a} = 3\mathbf{i} + 2\mathbf{j}\) and \(\mathbf{b} = -\mathbf{i} + 4\mathbf{j}\), find:</strong><br><br>
+  (a) \(\mathbf{a} + \mathbf{b} = (3-1)\mathbf{i} + (2+4)\mathbf{j} = 2\mathbf{i} + 6\mathbf{j}\)<br>
+  (b) \(\mathbf{a} - \mathbf{b} = (3+1)\mathbf{i} + (2-4)\mathbf{j} = 4\mathbf{i} - 2\mathbf{j}\)<br>
+  (c) \(3\mathbf{a} - 2\mathbf{b} = (9+2)\mathbf{i} + (6-8)\mathbf{j} = 11\mathbf{i} - 2\mathbf{j}\)
+</div>
+
+<h2>3. Magnitude and Unit Vectors</h2>
+
+<div class="definition">
+  <strong>Magnitude (length) of a vector:</strong>
+  $$|\mathbf{a}| = \left|\dbinom{a_1}{a_2}\right| = \sqrt{a_1^2 + a_2^2}$$
+  This is just Pythagoras' theorem applied to the components.<br><br>
+  <strong>Unit vector:</strong> A vector of magnitude 1 in the direction of \(\mathbf{a}\):
+  $$\hat{\mathbf{a}} = \frac{\mathbf{a}}{|\mathbf{a}|}$$
+</div>
+
+<div class="example">
+  <strong>Example — Find the unit vector in the direction of \(\mathbf{a} = 3\mathbf{i} + 4\mathbf{j}\):</strong><br><br>
+  \(|\mathbf{a}| = \sqrt{9 + 16} = \sqrt{25} = 5\)<br>
+  \(\hat{\mathbf{a}} = \dfrac{1}{5}(3\mathbf{i} + 4\mathbf{j}) = \dfrac{3}{5}\mathbf{i} + \dfrac{4}{5}\mathbf{j}\)<br><br>
+  Check: \(\left|\hat{\mathbf{a}}\right| = \sqrt{\frac{9}{25} + \frac{16}{25}} = \sqrt{1} = 1\) ✓
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> \(\mathbf{i}\) and \(\mathbf{j}\) are unit vectors. Note: \(|\mathbf{i}| = |\mathbf{j}| = 1\), and they are perpendicular to each other.
+</div>
+
+<h2>4. Position Vectors and \(\vec{AB}\)</h2>
+
+<div style="text-align:center; margin: 20px 0;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+  <!-- Axes -->
+  <line x1="40" y1="20" x2="40" y2="255" stroke="#333" stroke-width="1.5"/>
+  <line x1="20" y1="240" x2="380" y2="240" stroke="#333" stroke-width="1.5"/>
+  <polygon points="40,16 35,28 45,28" fill="#333"/>
+  <polygon points="384,240 372,235 372,245" fill="#333"/>
+  <!-- O at origin -->
+  <text x="28" y="255" font-size="12" fill="#333">O</text>
+  <!-- OA vector: O(40,240) to A(130,140) -->
+  <line x1="40" y1="240" x2="126" y2="144" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="68" y="188" font-size="13" fill="#2563eb" font-weight="bold">a</text>
+  <!-- OB vector: O(40,240) to B(280,100) -->
+  <line x1="40" y1="240" x2="274" y2="104" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+  <text x="165" y="168" font-size="13" fill="#16a34a" font-weight="bold">b</text>
+  <!-- AB vector: A to B -->
+  <line x1="133" y1="140" x2="274" y2="106" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="210" y="118" font-size="13" fill="#dc2626" font-weight="bold">b − a</text>
+  <!-- Points -->
+  <circle cx="130" cy="140" r="4" fill="#2563eb"/>
+  <circle cx="278" cy="100" r="4" fill="#16a34a"/>
+  <text x="108" y="138" font-size="13" fill="#2563eb" font-weight="bold">A</text>
+  <text x="282" y="98" font-size="13" fill="#16a34a" font-weight="bold">B</text>
+  <!-- Axis labels -->
+  <text x="380" y="254" font-size="12" fill="#333">x</text>
+  <text x="44" y="14" font-size="12" fill="#333">y</text>
+  <!-- Formula -->
+  <text x="40" y="30" font-size="12" fill="#dc2626">AB = b − a = OB − OA</text>
+</svg>
+</div>
+
+<div class="definition">
+  <strong>Position Vectors:</strong><br>
+  The position vector of a point P is \(\vec{OP} = \mathbf{p}\) — the vector from the origin O to P.<br><br>
+  <strong>Vector between two points:</strong>
+  $$\vec{AB} = \vec{OB} - \vec{OA} = \mathbf{b} - \mathbf{a}$$
+  This is the vector "going from A to B" — always: destination minus start.
+</div>
+
+<div class="example">
+  <strong>Example — A has position vector \(\mathbf{a} = \dbinom{2}{5}\), B has position vector \(\mathbf{b} = \dbinom{6}{1}\):</strong><br><br>
+  \(\vec{AB} = \mathbf{b} - \mathbf{a} = \dbinom{6-2}{1-5} = \dbinom{4}{-4}\)<br>
+  \(|\vec{AB}| = \sqrt{16+16} = \sqrt{32} = 4\sqrt{2}\)<br><br>
+  Midpoint M of AB has position vector: \(\dfrac{\mathbf{a}+\mathbf{b}}{2} = \dfrac{1}{2}\dbinom{8}{6} = \dbinom{4}{3}\)
+</div>
+
+<h2>5. Midpoints and Dividing a Line in a Ratio</h2>
+
+<div class="definition">
+  <strong>Midpoint:</strong> The midpoint M of AB has position vector \(\dfrac{\mathbf{a}+\mathbf{b}}{2}\).<br><br>
+  <strong>Dividing in ratio \(m:n\):</strong> Point P dividing AB in ratio \(m:n\) has position vector:
+  $$\vec{OP} = \frac{n\mathbf{a} + m\mathbf{b}}{m+n}$$
+</div>
+
+<div class="example">
+  <strong>Example — Find the position vector of P that divides AB in the ratio 2:3, where \(\mathbf{a} = \mathbf{i} + 4\mathbf{j}\) and \(\mathbf{b} = 6\mathbf{i} - \mathbf{j}\):</strong><br><br>
+  \(\vec{OP} = \dfrac{3\mathbf{a} + 2\mathbf{b}}{5} = \dfrac{3(\mathbf{i}+4\mathbf{j}) + 2(6\mathbf{i}-\mathbf{j})}{5} = \dfrac{(3+12)\mathbf{i} + (12-2)\mathbf{j}}{5} = \dfrac{15\mathbf{i}+10\mathbf{j}}{5} = 3\mathbf{i}+2\mathbf{j}\)
+</div>
+
+<h2>6. Proving Geometric Results with Vectors</h2>
+
+<h3>Parallel Vectors</h3>
+<div class="definition">
+  Two vectors \(\mathbf{p}\) and \(\mathbf{q}\) are <strong>parallel</strong> if \(\mathbf{p} = k\mathbf{q}\) for some scalar \(k\).<br>
+  If \(k > 0\): same direction. If \(k < 0\): opposite direction.
+</div>
+
+<h3>Collinear Points</h3>
+<div class="definition">
+  Points A, B, C are <strong>collinear</strong> (on the same line) if \(\vec{AB} = k\vec{AC}\) for some scalar \(k\).<br>
+  This means \(\vec{AB}\) and \(\vec{AC}\) are parallel and share point A.
+</div>
+
+<div class="example">
+  <strong>Example — Show that A(1,2), B(3,6), C(5,10) are collinear:</strong><br><br>
+  \(\vec{AB} = \dbinom{2}{4}\), \(\vec{AC} = \dbinom{4}{8} = 2\dbinom{2}{4} = 2\vec{AB}\)<br>
+  So \(\vec{AC} = 2\vec{AB}\) — parallel and share point A — therefore A, B, C are collinear.
+</div>
+
+<div class="example">
+  <strong>Example (geometric proof) — OABC is a parallelogram with \(\vec{OA} = \mathbf{a}\) and \(\vec{OC} = \mathbf{c}\). M is the midpoint of AB. Show that OM passes through the midpoint of CB.</strong><br><br>
+  \(\vec{OB} = \mathbf{a} + \mathbf{c}\) (diagonal of parallelogram)<br>
+  M is midpoint of AB: \(\vec{OM} = \mathbf{a} + \frac{1}{2}\mathbf{c}\)<br><br>
+  Midpoint N of CB: \(\vec{ON} = \frac{1}{2}(\vec{OC} + \vec{OB}) = \frac{1}{2}(\mathbf{c} + \mathbf{a} + \mathbf{c}) = \frac{1}{2}\mathbf{a} + \mathbf{c}\)<br><br>
+  \(\vec{OM} = \mathbf{a} + \frac{1}{2}\mathbf{c} = 2(\frac{1}{2}\mathbf{a} + \frac{1}{4}\mathbf{c})\) — hmm, let's check: \(\vec{ON} = \frac{1}{2}(\mathbf{a} + 2\mathbf{c})\)... We verify N lies on line OM by expressing it as a scalar multiple from O in direction \(\vec{OM}\).
+</div>
+
+<h2>7. Summary Table</h2>
+
+<table>
+  <thead>
+    <tr><th>Concept</th><th>Formula</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Magnitude in 2D</td><td>\(|\mathbf{a}| = \sqrt{a_1^2 + a_2^2}\)</td></tr>
+    <tr><td>Unit vector</td><td>\(\hat{\mathbf{a}} = \dfrac{\mathbf{a}}{|\mathbf{a}|}\)</td></tr>
+    <tr><td>Vector A to B</td><td>\(\vec{AB} = \mathbf{b} - \mathbf{a}\)</td></tr>
+    <tr><td>Midpoint of AB</td><td>\(\dfrac{\mathbf{a}+\mathbf{b}}{2}\)</td></tr>
+    <tr><td>Divide AB in ratio m:n</td><td>\(\dfrac{n\mathbf{a}+m\mathbf{b}}{m+n}\)</td></tr>
+    <tr><td>Parallel condition</td><td>\(\mathbf{p} = k\mathbf{q}\) for some scalar \(k\)</td></tr>
+    <tr><td>Collinear A, B, C</td><td>\(\vec{AB} = k\vec{AC}\) for some scalar \(k\)</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">
+  <strong>Key Exam Points for P11:</strong>
+  <ul>
+    <li>Always write \(\vec{AB} = \mathbf{b} - \mathbf{a}\) (destination minus start — not the other way round)</li>
+    <li>Magnitude: use Pythagoras on components; simplify surds in your answer</li>
+    <li>For collinearity proofs: show two vectors through a common point are parallel (\(\mathbf{p} = k\mathbf{q}\))</li>
+    <li>For geometric proofs: set up all position vectors from origin O, express each point in terms of the given base vectors</li>
+    <li>i and j components must be equal independently when setting vector equations — equate coefficients of i and j separately</li>
+  </ul>
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P16: Trigonometric Functions - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P16: Trigonometric Functions</h1>
+
+<h2>1. Reciprocal Trigonometric Functions</h2>
+
+<div class="definition">
+  $$\sec x = \frac{1}{\cos x} \qquad \cosec x = \frac{1}{\sin x} \qquad \cot x = \frac{1}{\tan x} = \frac{\cos x}{\sin x}$$
+  These are defined wherever the denominator is non-zero.
+</div>
+
+<table>
+  <tr><th>Function</th><th>Undefined when</th><th>Period</th><th>Range</th></tr>
+  <tr><td>\(\sec x\)</td><td>\(\cos x = 0\), i.e. \(x = \frac{\pi}{2} + n\pi\)</td><td>\(2\pi\)</td><td>\(\sec x \leq -1\) or \(\sec x \geq 1\)</td></tr>
+  <tr><td>\(\cosec x\)</td><td>\(\sin x = 0\), i.e. \(x = n\pi\)</td><td>\(2\pi\)</td><td>\(\cosec x \leq -1\) or \(\cosec x \geq 1\)</td></tr>
+  <tr><td>\(\cot x\)</td><td>\(\sin x = 0\), i.e. \(x = n\pi\)</td><td>\(\pi\)</td><td>All real numbers</td></tr>
+</table>
+
+<h3>Graph of \(y = \sec x\)</h3>
+
+<svg width="560" height="220" viewBox="0 0 560 220" style="display:block;margin:15px auto;">
+  <!-- Axes -->
+  <line x1="20" y1="110" x2="540" y2="110" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="280" y1="10" x2="280" y2="210" stroke="#94a3b8" stroke-width="1"/>
+  <!-- x-axis labels -->
+  <text x="110" y="126" font-size="12" fill="#64748b" text-anchor="middle">−π</text>
+  <text x="195" y="126" font-size="12" fill="#64748b" text-anchor="middle">−π/2</text>
+  <text x="365" y="126" font-size="12" fill="#64748b" text-anchor="middle">π/2</text>
+  <text x="450" y="126" font-size="12" fill="#64748b" text-anchor="middle">π</text>
+  <!-- Asymptote lines -->
+  <line x1="195" y1="10" x2="195" y2="210" stroke="#e63946" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="365" y1="10" x2="365" y2="210" stroke="#e63946" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- sec x curve: left branch (x in (-pi, -pi/2)) -->
+  <path d="M 115 110 Q 135 170 155 200" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- sec x curve: middle branch (x in (-pi/2, pi/2)) -->
+  <path d="M 200 200 Q 220 140 280 88 Q 340 140 360 200" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- sec x curve: right branch (x in (pi/2, pi)) -->
+  <path d="M 368 200 Q 400 170 445 110" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- y=1 and y=-1 dashed reference -->
+  <line x1="20" y1="88" x2="540" y2="88" stroke="#16a34a" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="20" y1="132" x2="540" y2="132" stroke="#16a34a" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="542" y="92" font-size="11" fill="#16a34a">1</text>
+  <text x="538" y="136" font-size="11" fill="#16a34a">−1</text>
+  <text x="370" y="25" font-size="14" fill="#2563eb">y = sec x</text>
+  <text x="375" y="45" font-size="11" fill="#e63946">— asymptotes at x = ±π/2, ±3π/2</text>
+</svg>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The graphs of \(\sec x\) and \(\cosec x\) have U-shaped and ∩-shaped branches between asymptotes. \(\sec x\) has its minimum at \(y=1\) (when \(\cos x = 1\)) and maximum at \(y=-1\) (when \(\cos x = -1\)).
+</div>
+
+<h2>2. Pythagorean Identities</h2>
+
+<p>Starting from \(\sin^2 x + \cos^2 x \equiv 1\):</p>
+
+<div class="equation">$$1 + \tan^2 x \equiv \sec^2 x$$</div>
+<div class="equation">$$1 + \cot^2 x \equiv \cosec^2 x$$</div>
+
+<p>Derived by dividing \(\sin^2 x + \cos^2 x = 1\) by \(\cos^2 x\) and \(\sin^2 x\) respectively.</p>
+
+<div class="example">
+  <strong>Example — Simplify:</strong> \(\dfrac{\sec^2 x - 1}{\tan x}\)<br><br>
+  Since \(\sec^2 x - 1 = \tan^2 x\):<br>
+  \(\dfrac{\tan^2 x}{\tan x} = \tan x\)
+</div>
+
+<h2>3. Inverse Trigonometric Functions</h2>
+
+<table>
+  <tr><th>Function</th><th>Definition</th><th>Domain</th><th>Range</th></tr>
+  <tr><td>\(\arcsin x\)</td><td>Inverse of \(\sin x\) restricted to \(\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]\)</td><td>\(-1 \leq x \leq 1\)</td><td>\(-\frac{\pi}{2} \leq y \leq \frac{\pi}{2}\)</td></tr>
+  <tr><td>\(\arccos x\)</td><td>Inverse of \(\cos x\) restricted to \([0, \pi]\)</td><td>\(-1 \leq x \leq 1\)</td><td>\(0 \leq y \leq \pi\)</td></tr>
+  <tr><td>\(\arctan x\)</td><td>Inverse of \(\tan x\) restricted to \(\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)\)</td><td>All reals</td><td>\(-\frac{\pi}{2} < y < \frac{\pi}{2}\)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Inverse trig functions are only defined on restricted domains to make them one-to-one. \(\arcsin\) and \(\arctan\) output values in \(\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]\); \(\arccos\) outputs in \([0, \pi]\).
+</div>
+
+<h2>4. Addition Formulae</h2>
+
+<div class="equation">$$\sin(A \pm B) = \sin A \cos B \pm \cos A \sin B$$</div>
+<div class="equation">$$\cos(A \pm B) = \cos A \cos B \mp \sin A \sin B$$</div>
+<div class="equation">$$\tan(A \pm B) = \frac{\tan A \pm \tan B}{1 \mp \tan A \tan B}$$</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the exact value of \(\sin 75°\).<br><br>
+  \(\sin 75° = \sin(45° + 30°) = \sin 45°\cos 30° + \cos 45°\sin 30°\)<br>
+  \(= \dfrac{\sqrt{2}}{2} \cdot \dfrac{\sqrt{3}}{2} + \dfrac{\sqrt{2}}{2} \cdot \dfrac{1}{2} = \dfrac{\sqrt{6} + \sqrt{2}}{4}\)
+</div>
+
+<div class="example">
+  <strong>Example — Prove:</strong> \(\cos(A - B) - \cos(A + B) \equiv 2\sin A \sin B\)<br><br>
+  LHS \(= (\cos A\cos B + \sin A\sin B) - (\cos A\cos B - \sin A\sin B)\)<br>
+  \(= 2\sin A\sin B =\) RHS \(\square\)
+</div>
+
+<h2>5. Double Angle Formulae</h2>
+
+<div class="equation">$$\sin 2A = 2\sin A\cos A$$</div>
+<div class="equation">$$\cos 2A = \cos^2 A - \sin^2 A = 2\cos^2 A - 1 = 1 - 2\sin^2 A$$</div>
+<div class="equation">$$\tan 2A = \frac{2\tan A}{1 - \tan^2 A}$$</div>
+
+<div class="definition">
+  <strong>Key rearrangements of double angle:</strong><br>
+  \(\cos^2 A = \dfrac{1 + \cos 2A}{2}\) &nbsp;&nbsp;|&nbsp;&nbsp; \(\sin^2 A = \dfrac{1 - \cos 2A}{2}\)<br>
+  These are essential for integration of \(\sin^2 x\) and \(\cos^2 x\).
+</div>
+
+<div class="example">
+  <strong>Example — Solve:</strong> \(\sin 2x = \cos x\) for \(0 \leq x \leq 2\pi\).<br><br>
+  \(2\sin x\cos x = \cos x \Rightarrow \cos x(2\sin x - 1) = 0\)<br>
+  Either \(\cos x = 0 \Rightarrow x = \dfrac{\pi}{2}, \dfrac{3\pi}{2}\)<br>
+  Or \(\sin x = \dfrac{1}{2} \Rightarrow x = \dfrac{\pi}{6}, \dfrac{5\pi}{6}\)<br>
+  Solutions: \(x = \dfrac{\pi}{6}, \dfrac{\pi}{2}, \dfrac{5\pi}{6}, \dfrac{3\pi}{2}\)
+</div>
+
+<h2>6. The R-form (Harmonic Form)</h2>
+
+<div class="definition">
+  Any expression of the form \(a\sin x + b\cos x\) can be written as:
+  $$a\sin x + b\cos x \equiv R\sin(x + \alpha)$$
+  where:
+  $$R = \sqrt{a^2 + b^2} \qquad \tan\alpha = \frac{b}{a}$$
+  Similarly: \(a\sin x - b\cos x \equiv R\sin(x - \alpha)\), and \(a\cos x \pm b\sin x \equiv R\cos(x \mp \alpha)\).
+</div>
+
+<h3>Method</h3>
+<ol>
+  <li>Expand \(R\sin(x + \alpha) = R\sin x\cos\alpha + R\cos x\sin\alpha\)</li>
+  <li>Match coefficients: \(R\cos\alpha = a\) and \(R\sin\alpha = b\)</li>
+  <li>Solve: \(R = \sqrt{a^2+b^2}\) and \(\alpha = \arctan\!\left(\dfrac{b}{a}\right)\)</li>
+</ol>
+
+<div class="example">
+  <strong>Example:</strong> Write \(3\sin x + 4\cos x\) in the form \(R\sin(x+\alpha)\).<br><br>
+  \(R = \sqrt{9 + 16} = 5\)<br>
+  \(\tan\alpha = \dfrac{4}{3} \Rightarrow \alpha = \arctan\!\left(\dfrac{4}{3}\right) \approx 0.927\) rad<br>
+  Answer: \(5\sin(x + 0.927)\)<br><br>
+  Maximum value: \(5\), when \(x + 0.927 = \dfrac{\pi}{2}\).
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always state \(R > 0\) and \(0 < \alpha < \frac{\pi}{2}\). The R-form is used to find maximum/minimum values and to solve equations of the type \(a\sin x + b\cos x = k\).
+</div>
+
+<h2>7. Using Identities to Prove and Simplify</h2>
+
+<p>Key strategies for proving identities:</p>
+<ul>
+  <li>Work on one side only (usually the more complex side)</li>
+  <li>Convert everything to \(\sin\) and \(\cos\) if stuck</li>
+  <li>Use Pythagorean identities to substitute \(\sin^2 + \cos^2 = 1\), or equivalents</li>
+  <li>Look for double angle or addition formula opportunities</li>
+  <li>Multiply numerator and denominator by a conjugate if needed</li>
+</ul>
+
+<div class="example">
+  <strong>Prove:</strong> \(\dfrac{\cosec x}{1 + \cot^2 x} \equiv \sin x\)<br><br>
+  LHS: \(\dfrac{\cosec x}{\cosec^2 x} = \dfrac{1}{\cosec x} = \sin x\) = RHS \(\square\)
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trigonometric Ratios - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P6: Trigonometric Ratios</h1>
+
+<h2>1. SOHCAHTOA in Right-Angled Triangles</h2>
+
+<div class="definition">
+  For a right-angled triangle with angle \(\theta\):
+  $$\sin\theta = \frac{\text{opposite}}{\text{hypotenuse}}, \quad \cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}}, \quad \tan\theta = \frac{\text{opposite}}{\text{adjacent}}$$
+</div>
+
+<p>Mnemonic: <strong>SOH CAH TOA</strong></p>
+
+<h2>2. Exact Trigonometric Values</h2>
+
+<table>
+  <tr><th>Angle</th><th>\(\sin\)</th><th>\(\cos\)</th><th>\(\tan\)</th></tr>
+  <tr><td>\(0°\)</td><td>\(0\)</td><td>\(1\)</td><td>\(0\)</td></tr>
+  <tr><td>\(30°\)</td><td>\(\dfrac{1}{2}\)</td><td>\(\dfrac{\sqrt{3}}{2}\)</td><td>\(\dfrac{1}{\sqrt{3}} = \dfrac{\sqrt{3}}{3}\)</td></tr>
+  <tr><td>\(45°\)</td><td>\(\dfrac{\sqrt{2}}{2} = \dfrac{1}{\sqrt{2}}\)</td><td>\(\dfrac{\sqrt{2}}{2}\)</td><td>\(1\)</td></tr>
+  <tr><td>\(60°\)</td><td>\(\dfrac{\sqrt{3}}{2}\)</td><td>\(\dfrac{1}{2}\)</td><td>\(\sqrt{3}\)</td></tr>
+  <tr><td>\(90°\)</td><td>\(1\)</td><td>\(0\)</td><td>undefined</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Memory trick:</strong> For sin: \(0°\to\frac{\sqrt{0}}{2}\), \(30°\to\frac{\sqrt{1}}{2}\), \(45°\to\frac{\sqrt{2}}{2}\), \(60°\to\frac{\sqrt{3}}{2}\), \(90°\to\frac{\sqrt{4}}{2}\). These must be memorised — they appear in almost every trig question.
+</div>
+
+<h2>3. The Sine Rule</h2>
+
+<div class="equation">$$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$$</div>
+
+<p>Use when: given two angles and one side (AAS/ASA), or two sides and a non-included angle (SSA — beware ambiguous case).</p>
+
+<div class="example">
+  <strong>Example:</strong> In triangle ABC, \(A = 40°\), \(B = 75°\), \(a = 8\) cm. Find \(b\).
+  <br><br>
+  \(\dfrac{b}{\sin 75°} = \dfrac{8}{\sin 40°}\)
+  <br>
+  \(b = \dfrac{8 \sin 75°}{\sin 40°} = \dfrac{8 \times 0.9659}{0.6428} \approx 12.02\) cm
+</div>
+
+<h3>Ambiguous Case (SSA)</h3>
+<p>When given two sides \(a, b\) and angle \(A\) (not the included angle), there may be <strong>two possible triangles</strong>. Always check whether \(\sin B > 1\) (no solution), \(\sin B = 1\) (one solution), or \(\sin B < 1\) with \(B\) acute and obtuse versions both valid.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When using the sine rule to find an angle, always consider whether the obtuse version of the angle is also valid. Check by seeing if the angles still sum to less than 180°.
+</div>
+
+<h2>4. The Cosine Rule</h2>
+
+<div class="equation">$$a^2 = b^2 + c^2 - 2bc\cos A$$</div>
+
+<p>Rearranged to find angle A:</p>
+<div class="equation">$$\cos A = \frac{b^2 + c^2 - a^2}{2bc}$$</div>
+
+<p>Use when: given three sides (SSS), or two sides and the included angle (SAS).</p>
+
+<div class="example">
+  <strong>Example:</strong> In triangle PQR, \(p = 7\), \(q = 5\), \(R = 60°\). Find \(r\).
+  <br><br>
+  \(r^2 = 7^2 + 5^2 - 2(7)(5)\cos 60° = 49 + 25 - 70 \times \frac{1}{2} = 74 - 35 = 39\)
+  <br>
+  \(r = \sqrt{39} \approx 6.24\) cm
+</div>
+
+<h2>5. Area of a Triangle</h2>
+
+<div class="equation">$$\text{Area} = \frac{1}{2}\,ab\sin C$$</div>
+
+<p>Use when two sides and the included angle are known.</p>
+
+<div class="example">
+  <strong>Example:</strong> Find the area of a triangle with sides 6 cm and 9 cm and included angle 50°.
+  <br><br>
+  Area \(= \frac{1}{2} \times 6 \times 9 \times \sin 50° = 27 \times 0.7660 \approx 20.7\) cm²
+</div>
+
+<h2>6. Unit Circle and CAST Diagram</h2>
+
+<p>The unit circle defines trig functions for all angles. For an angle \(\theta\) from the positive x-axis, the point on the unit circle is \((\cos\theta, \sin\theta)\).</p>
+
+<svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:420px;">
+  <!-- Axes -->
+  <line x1="30" y1="190" x2="390" y2="190" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="210" y1="20" x2="210" y2="360" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="393" y="194" font-size="13" fill="#1a1a2e">x</text>
+  <text x="213" y="16" font-size="13" fill="#1a1a2e">y</text>
+
+  <!-- Unit circle: centre (210,190), radius 130 -->
+  <circle cx="210" cy="190" r="130" fill="none" stroke="#2563eb" stroke-width="2"/>
+
+  <!-- CAST quadrant labels -->
+  <rect x="220" y="30" width="155" height="155" fill="#fff8e1" opacity="0.7" rx="4"/>
+  <text x="290" y="110" font-size="32" font-weight="bold" fill="#16a34a" text-anchor="middle">A</text>
+  <text x="290" y="80" font-size="11" fill="#16a34a" text-anchor="middle">All positive</text>
+
+  <rect x="40" y="30" width="155" height="155" fill="#fee2e2" opacity="0.7" rx="4"/>
+  <text x="118" y="110" font-size="32" font-weight="bold" fill="#9333ea" text-anchor="middle">S</text>
+  <text x="118" y="80" font-size="11" fill="#9333ea" text-anchor="middle">Sin positive</text>
+
+  <rect x="220" y="200" width="155" height="155" fill="#dcfce7" opacity="0.7" rx="4"/>
+  <text x="290" y="278" font-size="32" font-weight="bold" fill="#f59e0b" text-anchor="middle">C</text>
+  <text x="290" y="250" font-size="11" fill="#f59e0b" text-anchor="middle">Cos positive</text>
+
+  <rect x="40" y="200" width="155" height="155" fill="#e0e7ff" opacity="0.7" rx="4"/>
+  <text x="118" y="278" font-size="32" font-weight="bold" fill="#dc2626" text-anchor="middle">T</text>
+  <text x="118" y="250" font-size="11" fill="#dc2626" text-anchor="middle">Tan positive</text>
+
+  <!-- Key angles on circle -->
+  <!-- 0° → (340,190) -->
+  <circle cx="340" cy="190" r="4" fill="#1a1a2e"/>
+  <text x="344" y="186" font-size="11" fill="#1a1a2e">0°/360°</text>
+  <!-- 90° → (210,60) -->
+  <circle cx="210" cy="60" r="4" fill="#1a1a2e"/>
+  <text x="215" y="57" font-size="11" fill="#1a1a2e">90°</text>
+  <!-- 180° → (80,190) -->
+  <circle cx="80" cy="190" r="4" fill="#1a1a2e"/>
+  <text x="28" y="186" font-size="11" fill="#1a1a2e">180°</text>
+  <!-- 270° → (210,320) -->
+  <circle cx="210" cy="320" r="4" fill="#1a1a2e"/>
+  <text x="215" y="335" font-size="11" fill="#1a1a2e">270°</text>
+
+  <!-- Example angle 30°: point (210+130cos30, 190-130sin30) ≈ (323, 125) -->
+  <line x1="210" y1="190" x2="323" y2="125" stroke="#dc2626" stroke-width="1.5"/>
+  <circle cx="323" cy="125" r="4" fill="#dc2626"/>
+  <text x="328" y="122" font-size="11" fill="#dc2626">30°: (cos30°,sin30°)</text>
+
+  <!-- CAST label -->
+  <text x="135" y="370" font-size="12" fill="#555">CAST: which trig ratios are positive in each quadrant</text>
+</svg>
+
+<div class="definition">
+  <strong>CAST rule:</strong>
+  <ul>
+    <li><strong>Q1 (0°–90°):</strong> All of sin, cos, tan positive</li>
+    <li><strong>Q2 (90°–180°):</strong> Sin positive only</li>
+    <li><strong>Q3 (180°–270°):</strong> Tan positive only</li>
+    <li><strong>Q4 (270°–360°):</strong> Cos positive only</li>
+  </ul>
+</div>
+
+<p>Related angles (using the CAST principle):</p>
+<table>
+  <tr><th>Quadrant</th><th>Related angle</th><th>Example</th></tr>
+  <tr><td>Q2</td><td>\(180° - \theta\)</td><td>\(\sin 150° = \sin 30° = \frac{1}{2}\)</td></tr>
+  <tr><td>Q3</td><td>\(180° + \theta\)</td><td>\(\tan 210° = \tan 30° = \frac{1}{\sqrt{3}}\)</td></tr>
+  <tr><td>Q4</td><td>\(360° - \theta\)</td><td>\(\cos 330° = \cos 30° = \frac{\sqrt{3}}{2}\)</td></tr>
+</table>
+
+<h2>7. Graphs of sin, cos, tan</h2>
+
+<svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:500px;">
+  <!-- Axis: x from 0 to 360° mapped to pixels 30 to 480, y centred at 130, amplitude 80 -->
+  <line x1="30" y1="130" x2="490" y2="130" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="30" y1="20" x2="30" y2="240" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="492" y="134" font-size="12" fill="#1a1a2e">x</text>
+  <text x="33" y="16" font-size="12" fill="#1a1a2e">y</text>
+
+  <!-- x-axis labels -->
+  <line x1="30" y1="127" x2="30" y2="133" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="22" y="145" font-size="11" fill="#1a1a2e">0°</text>
+  <line x1="145" y1="127" x2="145" y2="133" stroke="#999" stroke-width="1"/>
+  <text x="132" y="145" font-size="11" fill="#999">90°</text>
+  <line x1="258" y1="127" x2="258" y2="133" stroke="#999" stroke-width="1"/>
+  <text x="242" y="145" font-size="11" fill="#999">180°</text>
+  <line x1="371" y1="127" x2="371" y2="133" stroke="#999" stroke-width="1"/>
+  <text x="355" y="145" font-size="11" fill="#999">270°</text>
+  <line x1="480" y1="127" x2="480" y2="133" stroke="#999" stroke-width="1"/>
+  <text x="464" y="145" font-size="11" fill="#999">360°</text>
+
+  <!-- y-axis labels -->
+  <text x="10" y="53" font-size="11" fill="#1a1a2e">1</text>
+  <line x1="27" y1="50" x2="33" y2="50" stroke="#999" stroke-width="1"/>
+  <text x="5" y="212" font-size="11" fill="#1a1a2e">-1</text>
+  <line x1="27" y1="210" x2="33" y2="210" stroke="#999" stroke-width="1"/>
+
+  <!-- Sine curve: y_px = 130 - 80*sin(x_deg*PI/180); x_px = 30 + (x_deg/360)*450 -->
+  <!-- Key points: 0→(30,130), 90→(145,50), 180→(258,130), 270→(371,210), 360→(480,130) -->
+  <path d="M 30,130 C 68,50 108,50 145,130 C 182,210 220,210 258,130 C 296,50 334,50 371,130 C 408,210 445,210 480,130" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="50" y="35" font-size="12" fill="#2563eb">y = sin x</text>
+
+  <!-- Cosine curve: same shape but shifted left by 90°; start at y=1 -->
+  <!-- 0→(30,50), 90→(145,130), 180→(258,210), 270→(371,130), 360→(480,50) -->
+  <path d="M 30,50 C 68,50 108,130 145,130 C 182,130 220,210 258,210 C 296,210 334,130 371,130 C 408,130 445,50 480,50" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="50" y="22" font-size="12" fill="#dc2626">y = cos x</text>
+
+  <!-- Legend -->
+  <line x1="350" y1="20" x2="380" y2="20" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="384" y="24" font-size="11" fill="#2563eb">sin x</text>
+  <line x1="350" y1="35" x2="380" y2="35" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="384" y="39" font-size="11" fill="#dc2626">cos x</text>
+</svg>
+
+<table>
+  <tr><th>Function</th><th>Period</th><th>Amplitude</th><th>Key feature</th></tr>
+  <tr><td>\(\sin x\)</td><td>\(360°\)</td><td>1</td><td>Starts at 0, max at 90°</td></tr>
+  <tr><td>\(\cos x\)</td><td>\(360°\)</td><td>1</td><td>Starts at 1, zero at 90°</td></tr>
+  <tr><td>\(\tan x\)</td><td>\(180°\)</td><td>Undefined</td><td>Vertical asymptotes at 90°, 270°; passes through origin</td></tr>
+</table>
+
+<p>Key symmetry identities:</p>
+<div class="equation">$$\sin(180° - x) = \sin x \qquad \cos(180° - x) = -\cos x$$</div>
+<div class="equation">$$\sin(-x) = -\sin x \qquad \cos(-x) = \cos x \qquad \tan(-x) = -\tan x$$</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When solving \(\sin\theta = k\) for \(0° \leq \theta \leq 360°\), find the principal value \(\theta_1 = \arcsin k\), then use CAST or the formula \(\theta_2 = 180° - \theta_1\) for the second solution. For \(\cos\theta = k\): second solution is \(\theta_2 = 360° - \theta_1\). For \(\tan\theta = k\): second solution is \(\theta_1 + 180°\).
+</div>
+
+<h2>8. Summary of Formulae</h2>
+<table>
+  <tr><th>Formula</th><th>Used for</th></tr>
+  <tr><td>\(\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}\)</td><td>Sine rule: AAS, ASA, SSA</td></tr>
+  <tr><td>\(a^2 = b^2 + c^2 - 2bc\cos A\)</td><td>Cosine rule: SAS, SSS</td></tr>
+  <tr><td>Area \(= \dfrac{1}{2}ab\sin C\)</td><td>Area when two sides and included angle known</td></tr>
+  <tr><td>CAST diagram</td><td>Find all solutions in a given range</td></tr>
+  <tr><td>Exact values table</td><td>Leave answers in exact surd form</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

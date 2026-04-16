@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphs and Transformations - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P4: Graphs and Transformations</h1>
+
+<h2>1. Common Curve Shapes</h2>
+
+<table>
+  <tr><th>Function</th><th>Key features</th></tr>
+  <tr><td>\(y = x^2\)</td><td>Upward parabola, vertex at origin, symmetric about y-axis</td></tr>
+  <tr><td>\(y = x^3\)</td><td>S-shaped cubic, passes through origin, no symmetry axis (point symmetry about origin)</td></tr>
+  <tr><td>\(y = \frac{1}{x}\) (reciprocal)</td><td>Two branches in quadrants 1 and 3; asymptotes: \(x=0\) and \(y=0\)</td></tr>
+  <tr><td>\(y = \frac{1}{x^2}\)</td><td>Always positive; asymptotes \(x=0\), \(y=0\); symmetric about y-axis</td></tr>
+  <tr><td>\(y = \sqrt{x}\)</td><td>Defined for \(x \geq 0\); passes through origin; increases, concave down</td></tr>
+  <tr><td>\(y = |x|\)</td><td>V-shape, vertex at origin; equal arms with gradient \(\pm 1\)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For any sketch, always label axes, key coordinates (intercepts, vertex, asymptotes), and the equation of any asymptote. Marks are awarded for these labels.
+</div>
+
+<h2>2. Graph Transformations</h2>
+
+<div class="definition">
+  A <strong>transformation</strong> maps each point \((x,y)\) on \(y = f(x)\) to a new point according to specific rules. You must know all four types for the exam.
+</div>
+
+<h3>Translations</h3>
+<table>
+  <tr><th>Transformation</th><th>Equation</th><th>Effect</th></tr>
+  <tr><td>Vertical translation up by \(a\)</td><td>\(y = f(x) + a\)</td><td>Every point moves up \(a\) units</td></tr>
+  <tr><td>Vertical translation down by \(a\)</td><td>\(y = f(x) - a\)</td><td>Every point moves down \(a\) units</td></tr>
+  <tr><td>Horizontal translation right by \(a\)</td><td>\(y = f(x - a)\)</td><td>Every point moves right \(a\) units (counter-intuitive — note the sign)</td></tr>
+  <tr><td>Horizontal translation left by \(a\)</td><td>\(y = f(x + a)\)</td><td>Every point moves left \(a\) units</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Counter-intuitive:</strong> \(y = f(x-3)\) moves the graph <em>right</em> by 3. Think: to get the same y-value, you need a larger x-input.
+</div>
+
+<h3>Stretches</h3>
+<table>
+  <tr><th>Transformation</th><th>Equation</th><th>Effect</th></tr>
+  <tr><td>Vertical stretch by scale factor \(a\)</td><td>\(y = a\,f(x)\)</td><td>y-coordinates multiplied by \(a\); x-intercepts unchanged</td></tr>
+  <tr><td>Horizontal stretch by scale factor \(\frac{1}{a}\)</td><td>\(y = f(ax)\)</td><td>x-coordinates divided by \(a\); y-intercept unchanged</td></tr>
+</table>
+
+<div class="exam-tip">
+  A horizontal stretch by factor \(\frac{1}{a}\) means the graph is compressed if \(a > 1\) and stretched if \(0 < a < 1\). For example, \(y = f(2x)\) halves all x-coordinates.
+</div>
+
+<h3>Reflections</h3>
+<table>
+  <tr><th>Transformation</th><th>Equation</th><th>Effect</th></tr>
+  <tr><td>Reflection in the x-axis</td><td>\(y = -f(x)\)</td><td>Negate all y-coordinates</td></tr>
+  <tr><td>Reflection in the y-axis</td><td>\(y = f(-x)\)</td><td>Negate all x-coordinates</td></tr>
+</table>
+
+<h2>3. Transformations of a Parabola — Visual</h2>
+
+<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:480px;">
+  <!-- Axes -->
+  <line x1="30" y1="240" x2="460" y2="240" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="240" y1="10" x2="240" y2="255" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="462" y="244" font-size="12" fill="#1a1a2e">x</text>
+  <text x="243" y="10" font-size="12" fill="#1a1a2e">y</text>
+
+  <!-- Original: y=x^2, vertex at (240,240), scale 30px/unit -->
+  <!-- x from -4 to 4; y_px = 240 - 30*x^2; x_px = 240 + 60*x -->
+  <!-- At x=-4: y_px=240-480 clipped; use x from -2.5 to 2.5 -->
+  <!-- Points: x=-2.5,y=6.25→(90,53); x=-2,y=4→(120,120); x=-1,y=1→(180,210); x=0,y=0→(240,240); x=1→(300,210); x=2→(360,120); x=2.5→(390,53) -->
+  <polyline points="90,53 120,120 180,210 240,240 300,210 360,120 390,53" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="395" y="50" font-size="12" fill="#2563eb">y=f(x)=x²</text>
+
+  <!-- Translation up by 2: y=x^2+2, vertex (240,180) -->
+  <!-- Points: x=-2.5,y=8.25→(90,-7) clipped; x=-2,y=6→(120,60); x=0,y=2→(240,180); x=2→(360,60) -->
+  <polyline points="120,60 180,150 240,180 300,150 360,60" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="362" y="58" font-size="12" fill="#16a34a">y=f(x)+2</text>
+
+  <!-- Horizontal shift right 2: y=(x-2)^2, vertex (360,240) -->
+  <!-- x_px = 240+60*(x-2) = 60x+120; at x=2,→(240,240)... wait let me recalc -->
+  <!-- vertex at x=2: x_px=240+60*2=360, y_px=240 -->
+  <!-- x=4: x_px=480 (clipped); x=0: x_px=120, y=4→(120,120); x=2→(360,240) -->
+  <polyline points="120,120 180,150 240,180 300,210 360,240 390,210" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,4"/>
+  <text x="368" y="238" font-size="12" fill="#dc2626">y=f(x-2)</text>
+
+  <!-- Reflection in x-axis: y=-x^2, vertex (240,240), opens down -->
+  <!-- At x=0,y=0; x=±1,y=-1→y_px=270 (below axis-but axis at 240, so would be below) -->
+  <!-- Actually: y_px = 240 - 30*(-x^2) = 240+30x^2; vertex at (240,240), opens downward in pixel coords too -->
+  <!-- x=±1: y_px=270; x=±2: y_px=360 (off screen); so only show a small bit -->
+  <polyline points="180,270 210,248 240,240 270,248 300,270" fill="none" stroke="#9333ea" stroke-width="2" stroke-dasharray="2,3"/>
+  <text x="170" y="278" font-size="12" fill="#9333ea">y=-f(x)</text>
+</svg>
+
+<h2>4. Combined Transformations</h2>
+
+<div class="definition">
+  When applying multiple transformations, the <strong>order matters</strong>. As a general rule:
+  <ol>
+    <li>First apply transformations inside the brackets (horizontal changes)</li>
+    <li>Then apply transformations outside the brackets (vertical changes)</li>
+  </ol>
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Describe the transformations that map \(y = f(x)\) to \(y = 3f(2x - 1) + 4\).
+  <br><br>
+  Rewrite as \(y = 3f\!\left(2\!\left(x - \tfrac{1}{2}\right)\right) + 4\)
+  <br><br>
+  Order of transformations:
+  <ol>
+    <li>Horizontal stretch by factor \(\frac{1}{2}\) (i.e., \(y = f(2x)\))</li>
+    <li>Horizontal translation right by \(\frac{1}{2}\) (i.e., \(y = f(2x-1)\))</li>
+    <li>Vertical stretch by factor 3 (i.e., \(y = 3f(2x-1)\))</li>
+    <li>Vertical translation up by 4 (i.e., \(y = 3f(2x-1)+4\))</li>
+  </ol>
+</div>
+
+<h2>5. Using Intersections to Solve Equations</h2>
+
+<p>The solutions of \(f(x) = g(x)\) are the x-coordinates of the intersections of \(y = f(x)\) and \(y = g(x)\).</p>
+
+<div class="example">
+  <strong>Example:</strong> Use a sketch to find the number of solutions of \(x^2 = \dfrac{1}{x}\) for \(x > 0\).
+  <br><br>
+  \(y = x^2\) (upward parabola) and \(y = \frac{1}{x}\) (reciprocal curve, upper branch for \(x>0\)) cross exactly once in the first quadrant.
+  <br>
+  Setting equal: \(x^3 = 1 \Rightarrow x = 1\). One solution.
+</div>
+
+<h2>6. Summary Table of Transformations</h2>
+<table>
+  <tr><th>Equation</th><th>Type</th><th>Effect on points \((x, y)\)</th></tr>
+  <tr><td>\(y = f(x) + a\)</td><td>Vertical translation</td><td>\((x,\; y+a)\)</td></tr>
+  <tr><td>\(y = f(x-a)\)</td><td>Horizontal translation</td><td>\((x+a,\; y)\)</td></tr>
+  <tr><td>\(y = af(x)\)</td><td>Vertical stretch sf \(a\)</td><td>\((x,\; ay)\)</td></tr>
+  <tr><td>\(y = f(ax)\)</td><td>Horizontal stretch sf \(1/a\)</td><td>\((x/a,\; y)\)</td></tr>
+  <tr><td>\(y = -f(x)\)</td><td>Reflection in x-axis</td><td>\((x,\; -y)\)</td></tr>
+  <tr><td>\(y = f(-x)\)</td><td>Reflection in y-axis</td><td>\((-x,\; y)\)</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

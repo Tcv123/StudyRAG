@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P15: Radians - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P15: Radians</h1>
+
+<h2>1. Definition of a Radian</h2>
+
+<div class="definition">
+  <strong>1 radian</strong> is the angle subtended at the centre of a circle when the arc length equals the radius.
+  $$\pi \text{ radians} = 180°$$
+</div>
+
+<!-- Visual: arc length = radius definition -->
+<svg width="340" height="240" viewBox="0 0 340 240" style="display:block;margin:15px auto;">
+  <!-- Circle -->
+  <circle cx="170" cy="140" r="90" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <!-- Radius 1 (along x-axis) -->
+  <line x1="170" y1="140" x2="260" y2="140" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="205" y="160" font-size="14" fill="#2563eb">r</text>
+  <!-- Radius 2 (at ~57.3 degrees) -->
+  <line x1="170" y1="140" x2="219" y2="63" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="185" y="92" font-size="14" fill="#2563eb">r</text>
+  <!-- Arc from 0 to ~57.3 degrees (1 radian) -->
+  <path d="M 260 140 A 90 90 0 0 0 219 63" fill="none" stroke="#e63946" stroke-width="3"/>
+  <text x="262" y="100" font-size="13" fill="#e63946">arc = r</text>
+  <!-- Angle arc -->
+  <path d="M 200 140 A 30 30 0 0 0 184 113" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="200" y="128" font-size="13" fill="#16a34a">1 rad</text>
+  <!-- Centre dot -->
+  <circle cx="170" cy="140" r="3" fill="#1a1a2e"/>
+  <text x="155" y="158" font-size="12" fill="#1a1a2e">O</text>
+</svg>
+
+<p style="text-align:center;font-size:0.9rem;color:#64748b;">When arc length = radius, the angle at centre = 1 radian</p>
+
+<h2>2. Converting Between Degrees and Radians</h2>
+
+<div class="equation">$$\text{Degrees} \to \text{Radians}: \times \frac{\pi}{180}$$</div>
+<div class="equation">$$\text{Radians} \to \text{Degrees}: \times \frac{180}{\pi}$$</div>
+
+<h3>Exact Values in Radians</h3>
+<table>
+  <tr><th>Degrees</th><th>Radians</th><th>\(\sin\)</th><th>\(\cos\)</th><th>\(\tan\)</th></tr>
+  <tr><td>0°</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+  <tr><td>30°</td><td>\(\dfrac{\pi}{6}\)</td><td>\(\dfrac{1}{2}\)</td><td>\(\dfrac{\sqrt{3}}{2}\)</td><td>\(\dfrac{1}{\sqrt{3}}\)</td></tr>
+  <tr><td>45°</td><td>\(\dfrac{\pi}{4}\)</td><td>\(\dfrac{\sqrt{2}}{2}\)</td><td>\(\dfrac{\sqrt{2}}{2}\)</td><td>1</td></tr>
+  <tr><td>60°</td><td>\(\dfrac{\pi}{3}\)</td><td>\(\dfrac{\sqrt{3}}{2}\)</td><td>\(\dfrac{1}{2}\)</td><td>\(\sqrt{3}\)</td></tr>
+  <tr><td>90°</td><td>\(\dfrac{\pi}{2}\)</td><td>1</td><td>0</td><td>undefined</td></tr>
+  <tr><td>180°</td><td>\(\pi\)</td><td>0</td><td>−1</td><td>0</td></tr>
+</table>
+
+<h2>3. Arc Length and Sector Area</h2>
+
+<!-- Sector SVG -->
+<svg width="320" height="220" viewBox="0 0 320 220" style="display:block;margin:15px auto;">
+  <!-- Sector shading -->
+  <path d="M 120 160 L 240 160 A 120 120 0 0 0 180 46 Z" fill="#e8f0fe" opacity="0.6"/>
+  <!-- Sector boundary -->
+  <line x1="120" y1="160" x2="240" y2="160" stroke="#2563eb" stroke-width="2"/>
+  <line x1="120" y1="160" x2="180" y2="46" stroke="#2563eb" stroke-width="2"/>
+  <!-- Arc -->
+  <path d="M 240 160 A 120 120 0 0 0 180 46" fill="none" stroke="#e63946" stroke-width="3"/>
+  <!-- Labels -->
+  <text x="180" y="178" font-size="14" fill="#2563eb" text-anchor="middle">r</text>
+  <text x="138" y="105" font-size="14" fill="#2563eb">r</text>
+  <text x="225" y="95" font-size="14" fill="#e63946">l = rθ</text>
+  <!-- Angle -->
+  <path d="M 155 160 A 35 35 0 0 0 142 130" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="157" y="148" font-size="13" fill="#16a34a">θ</text>
+  <!-- Centre -->
+  <circle cx="120" cy="160" r="3" fill="#1a1a2e"/>
+  <text x="105" y="175" font-size="12" fill="#1a1a2e">O</text>
+</svg>
+
+<div class="equation">$$\text{Arc length: } l = r\theta$$</div>
+<div class="equation">$$\text{Sector area: } A = \frac{1}{2}r^2\theta$$</div>
+<div class="equation">$$\text{Segment area: } A = \frac{1}{2}r^2(\theta - \sin\theta)$$</div>
+
+<div class="definition">
+  <strong>Segment area</strong> = Area of sector − Area of triangle<br>
+  $$A_{\text{segment}} = \frac{1}{2}r^2\theta - \frac{1}{2}r^2\sin\theta = \frac{1}{2}r^2(\theta - \sin\theta)$$
+</div>
+
+<h3>Perimeter of Sector and Segment</h3>
+<ul>
+  <li><strong>Perimeter of sector</strong> = arc length + 2 radii = \(r\theta + 2r\)</li>
+  <li><strong>Perimeter of segment</strong> = arc length + chord length = \(r\theta + 2r\sin\!\left(\dfrac{\theta}{2}\right)\)</li>
+</ul>
+
+<div class="example">
+  <strong>Example:</strong> A sector has radius 8 cm and angle \(\dfrac{\pi}{3}\) rad. Find its arc length, area, and perimeter.<br><br>
+  Arc length: \(l = 8 \times \dfrac{\pi}{3} = \dfrac{8\pi}{3}\) cm<br>
+  Sector area: \(A = \dfrac{1}{2}(8)^2 \times \dfrac{\pi}{3} = \dfrac{32\pi}{3}\) cm²<br>
+  Perimeter: \(\dfrac{8\pi}{3} + 2(8) = \dfrac{8\pi}{3} + 16\) cm
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> All arc length and area formulas require \(\theta\) to be in <strong>radians</strong>. If the angle is given in degrees, convert first.
+</div>
+
+<h2>4. Small Angle Approximations</h2>
+
+<div class="definition">
+  For small \(\theta\) (in radians):
+  $$\sin\theta \approx \theta \qquad \cos\theta \approx 1 - \frac{\theta^2}{2} \qquad \tan\theta \approx \theta$$
+</div>
+
+<p>These approximations become more accurate as \(\theta \to 0\). They are derived from the Maclaurin series (not required to derive in exam, but should be able to apply).</p>
+
+<div class="example">
+  <strong>Example:</strong> Show that for small \(\theta\), \(\dfrac{\sin 3\theta}{1 - \cos 2\theta} \approx \dfrac{3}{\theta}\).<br><br>
+  Numerator: \(\sin 3\theta \approx 3\theta\)<br>
+  Denominator: \(1 - \cos 2\theta \approx 1 - \left(1 - \dfrac{(2\theta)^2}{2}\right) = 2\theta^2\)<br>
+  Ratio: \(\dfrac{3\theta}{2\theta^2} = \dfrac{3}{2\theta}\)<br><br>
+  <em>Note: This gives \(\dfrac{3}{2\theta}\), not \(\dfrac{3}{\theta}\) — always work through the algebra carefully.</em>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When using small angle approximations, substitute immediately without rearranging first. Always check which approximation applies to which trig function in the expression.
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

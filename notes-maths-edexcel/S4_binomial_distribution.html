@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Binomial Distribution - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>S4: Statistical Distributions — Binomial</h1>
+
+<h2>1. Conditions for a Binomial Distribution</h2>
+
+<p>A random variable \(X\) follows a <strong>binomial distribution</strong> \(X \sim B(n, p)\) when ALL four conditions hold:</p>
+
+<div class="definition">
+  <ol>
+    <li><strong>Fixed number of trials:</strong> \(n\) is known in advance.</li>
+    <li><strong>Two outcomes only:</strong> Each trial results in either a "success" (S) or "failure" (F).</li>
+    <li><strong>Constant probability:</strong> The probability of success \(p\) is the same for every trial.</li>
+    <li><strong>Independent trials:</strong> The outcome of one trial does not affect any other trial.</li>
+  </ol>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When asked to state assumptions, write all four conditions in context. For example: "Each customer either buys or doesn't buy (two outcomes); the probability a customer buys remains constant at 0.4; purchases are independent of each other; there are a fixed 20 customers."
+</div>
+
+<h2>2. Binomial Formula</h2>
+
+<div class="definition">
+  If \(X \sim B(n, p)\), then:
+  $$P(X = r) = \binom{n}{r} p^r (1-p)^{n-r}, \quad r = 0, 1, 2, \ldots, n$$
+  where \(\binom{n}{r} = \frac{n!}{r!(n-r)!}\) is the binomial coefficient.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> \(X \sim B(6, 0.4)\). Find \(P(X = 2)\).<br>
+  \(P(X=2) = \binom{6}{2}(0.4)^2(0.6)^4 = 15 \times 0.16 \times 0.1296 = 0.3110\) (4 d.p.)
+</div>
+
+<h2>3. Mean, Variance and Standard Deviation</h2>
+
+<div class="equation">$$E(X) = np$$</div>
+<div class="equation">$$\text{Var}(X) = np(1-p) = npq \quad \text{where } q = 1-p$$</div>
+<div class="equation">$$\sigma = \sqrt{np(1-p)}$$</div>
+
+<div class="example">
+  <strong>Example:</strong> \(X \sim B(20, 0.35)\)<br>
+  \(E(X) = 20 \times 0.35 = 7\)<br>
+  \(\text{Var}(X) = 20 \times 0.35 \times 0.65 = 4.55\)<br>
+  \(\sigma = \sqrt{4.55} \approx 2.133\)
+</div>
+
+<h2>4. Cumulative Probabilities</h2>
+
+<p>Use your calculator's binomial CDF (cumulative distribution function) to find \(P(X \leq r)\). Key conversions:</p>
+
+<table>
+  <tr><th>Required Probability</th><th>How to Calculate</th></tr>
+  <tr><td>\(P(X \leq r)\)</td><td>Direct from CDF</td></tr>
+  <tr><td>\(P(X &lt; r)\)</td><td>\(P(X \leq r-1)\)</td></tr>
+  <tr><td>\(P(X \geq r)\)</td><td>\(1 - P(X \leq r-1)\)</td></tr>
+  <tr><td>\(P(X &gt; r)\)</td><td>\(1 - P(X \leq r)\)</td></tr>
+  <tr><td>\(P(a \leq X \leq b)\)</td><td>\(P(X \leq b) - P(X \leq a-1)\)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Be very careful with strict vs non-strict inequalities. \(P(X \geq 5)\) means \(1 - P(X \leq 4)\), NOT \(1 - P(X \leq 5)\).
+</div>
+
+<h2>5. Worked Example: B(10, 0.3) Distribution Table</h2>
+
+<table>
+  <tr><th>\(r\)</th><th>\(P(X=r)\)</th><th>\(P(X \leq r)\)</th></tr>
+  <tr><td>0</td><td>0.0282</td><td>0.0282</td></tr>
+  <tr><td>1</td><td>0.1211</td><td>0.1493</td></tr>
+  <tr><td>2</td><td>0.2335</td><td>0.3828</td></tr>
+  <tr><td>3</td><td>0.2668</td><td>0.6496</td></tr>
+  <tr><td>4</td><td>0.2001</td><td>0.8497</td></tr>
+  <tr><td>5</td><td>0.1029</td><td>0.9527</td></tr>
+  <tr><td>6</td><td>0.0368</td><td>0.9894</td></tr>
+  <tr><td>7</td><td>0.0090</td><td>0.9984</td></tr>
+  <tr><td>8</td><td>0.0014</td><td>0.9999</td></tr>
+  <tr><td>9</td><td>0.0001</td><td>1.0000</td></tr>
+  <tr><td>10</td><td>0.0000</td><td>1.0000</td></tr>
+</table>
+
+<div class="example">
+  Using the table for \(X \sim B(10, 0.3)\):<br>
+  \(P(X \geq 4) = 1 - P(X \leq 3) = 1 - 0.6496 = 0.3504\)<br>
+  \(P(3 \leq X \leq 6) = P(X \leq 6) - P(X \leq 2) = 0.9894 - 0.3828 = 0.6066\)
+</div>
+
+<h2>6. Bar Chart of B(10, 0.5)</h2>
+
+<!-- SVG: Bar chart of B(10,0.5) -->
+<svg viewBox="0 0 540 250" width="100%" style="margin:20px 0;border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;">
+  <!-- Axes -->
+  <line x1="50" y1="210" x2="520" y2="210" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="50" y1="20" x2="50" y2="210" stroke="#1e3a5f" stroke-width="2"/>
+  <!-- Y axis labels (scale: max prob ~0.246 → 180px high, scale = 180/0.25 = 720) -->
+  <text x="45" y="210" text-anchor="end" font-size="10" fill="#64748b">0</text>
+  <text x="45" y="138" text-anchor="end" font-size="10" fill="#64748b">0.1</text>
+  <text x="45" y="66" text-anchor="end" font-size="10" fill="#64748b">0.2</text>
+  <line x1="50" y1="138" x2="520" y2="138" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="50" y1="66" x2="520" y2="66" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Probabilities B(10,0.5): r=0..10
+       0:0.001,1:0.010,2:0.044,3:0.117,4:0.205,5:0.246,6:0.205,7:0.117,8:0.044,9:0.010,10:0.001
+       scale = 720 px/unit, bar width = 36, gap=6 -->
+  <!-- r=0: h=0.001*720=0.7≈1 -->
+  <rect x="56" y="209" width="36" height="1" fill="#2563eb" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="74" y="224" text-anchor="middle" font-size="10" fill="#64748b">0</text>
+  <!-- r=1: h=0.010*720=7.2≈7 -->
+  <rect x="98" y="203" width="36" height="7" fill="#2563eb" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="116" y="224" text-anchor="middle" font-size="10" fill="#64748b">1</text>
+  <!-- r=2: h=0.044*720=31.7≈32 -->
+  <rect x="140" y="178" width="36" height="32" fill="#2563eb" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="158" y="224" text-anchor="middle" font-size="10" fill="#64748b">2</text>
+  <!-- r=3: h=0.117*720=84.2≈84 -->
+  <rect x="182" y="126" width="36" height="84" fill="#2563eb" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="200" y="224" text-anchor="middle" font-size="10" fill="#64748b">3</text>
+  <!-- r=4: h=0.205*720=147.6≈148 -->
+  <rect x="224" y="62" width="36" height="148" fill="#60a5fa" stroke="#2563eb" stroke-width="1"/>
+  <text x="242" y="224" text-anchor="middle" font-size="10" fill="#64748b">4</text>
+  <!-- r=5: h=0.246*720=177.1≈177 -->
+  <rect x="266" y="33" width="36" height="177" fill="#1d4ed8" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="284" y="224" text-anchor="middle" font-size="10" fill="#64748b">5</text>
+  <!-- r=6: h=0.205*720=148 -->
+  <rect x="308" y="62" width="36" height="148" fill="#60a5fa" stroke="#2563eb" stroke-width="1"/>
+  <text x="326" y="224" text-anchor="middle" font-size="10" fill="#64748b">6</text>
+  <!-- r=7: h=0.117*720=84 -->
+  <rect x="350" y="126" width="36" height="84" fill="#2563eb" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="368" y="224" text-anchor="middle" font-size="10" fill="#64748b">7</text>
+  <!-- r=8: h=0.044*720=32 -->
+  <rect x="392" y="178" width="36" height="32" fill="#2563eb" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="410" y="224" text-anchor="middle" font-size="10" fill="#64748b">8</text>
+  <!-- r=9: h=0.010*720=7 -->
+  <rect x="434" y="203" width="36" height="7" fill="#2563eb" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="452" y="224" text-anchor="middle" font-size="10" fill="#64748b">9</text>
+  <!-- r=10: h=1 -->
+  <rect x="476" y="209" width="36" height="1" fill="#2563eb" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="494" y="224" text-anchor="middle" font-size="10" fill="#64748b">10</text>
+  <!-- Axis labels -->
+  <text x="285" y="240" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="600">r (number of successes)</text>
+  <text x="14" y="115" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="600" transform="rotate(-90,14,115)">P(X = r)</text>
+  <text x="285" y="14" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="600">B(10, 0.5) — Symmetric Distribution</text>
+</svg>
+
+<h2>7. Modelling with the Binomial Distribution</h2>
+
+<p>Before applying \(B(n, p)\), check all four conditions hold in context. Then identify \(n\) and \(p\) from the problem.</p>
+
+<div class="example">
+  <strong>Example:</strong> A spinner has probability 0.25 of landing on red. It is spun 15 times. Let \(X\) = number of times it lands on red.<br>
+  Model: \(X \sim B(15, 0.25)\) — fixed 15 spins, two outcomes (red/not red), constant probability 0.25, spins are independent.<br>
+  \(P(X \geq 5) = 1 - P(X \leq 4)\)<br>
+  Using calculator: \(P(X \leq 4) = 0.6865\)<br>
+  \(P(X \geq 5) = 1 - 0.6865 = 0.3135\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> If sampling without replacement from a small finite population, the binomial model is not strictly appropriate (probabilities change). However, if the population is large relative to the sample, the binomial is used as an approximation and the assumption of independence is stated.
+</div>
+
+<h2>8. Summary of Key Formulae</h2>
+
+<table>
+  <tr><th>Formula</th><th>Meaning</th></tr>
+  <tr><td>\(P(X=r) = \binom{n}{r}p^r(1-p)^{n-r}\)</td><td>Binomial probability formula</td></tr>
+  <tr><td>\(E(X) = np\)</td><td>Mean of binomial</td></tr>
+  <tr><td>\(\text{Var}(X) = np(1-p)\)</td><td>Variance of binomial</td></tr>
+  <tr><td>\(\sigma = \sqrt{np(1-p)}\)</td><td>Standard deviation of binomial</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

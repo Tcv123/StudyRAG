@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M7: Further Forces (Friction and Inclines) - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>M7: Further Forces — Friction and Inclines</h1>
+
+<h2>1. The Friction Law</h2>
+<div class="definition">
+  Friction is a force that opposes relative motion (or the tendency of motion) between two surfaces in contact.<br><br>
+  $$F \leq \mu R$$
+  where \(F\) is the frictional force, \(\mu\) is the <strong>coefficient of friction</strong>, and \(R\) is the normal reaction.<br><br>
+  At <strong>limiting equilibrium</strong> (particle about to move, or sliding): \(F = \mu R\)<br>
+  When not at the point of sliding: \(F < \mu R\) (static friction, unknown value — find by resolving)
+</div>
+<ul>
+  <li>\(\mu\) is dimensionless: typically \(0 \leq \mu \leq 1\) for most surfaces, but can be greater than 1.</li>
+  <li>\(\mu = 0\) means the surface is smooth (frictionless).</li>
+  <li>Friction always acts to <strong>oppose</strong> the motion or tendency of motion.</li>
+</ul>
+
+<h2>2. Particle on an Inclined Plane</h2>
+<p>For a particle of mass \(m\) on a slope inclined at angle \(\alpha\) to the horizontal:</p>
+<ul>
+  <li>Resolve <strong>perpendicular to slope</strong>: \(R = mg\cos\alpha\)</li>
+  <li>Resolve <strong>along slope</strong>: depends on motion/equilibrium</li>
+</ul>
+<div class="equation">$$R = mg\cos\alpha \qquad F_{max} = \mu R = \mu mg\cos\alpha$$</div>
+
+<h3>Inclined Plane — Force Diagram</h3>
+<div style="text-align:center;margin:24px 0;">
+<svg width="480" height="260" viewBox="0 0 480 260">
+  <!-- Slope triangle -->
+  <polygon points="40,220 420,220 420,100" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <!-- Slope surface label -->
+  <text x="200" y="215" font-size="11" fill="#94a3b8" text-anchor="middle">Ground</text>
+  <!-- Angle arc at base -->
+  <path d="M 80,220 A 40,40 0 0,1 80,190" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="88" y="210" font-size="13" fill="#f59e0b" font-weight="600">α</text>
+  <!-- Particle block on slope (rotated) -->
+  <g transform="rotate(-15 285 175)">
+    <rect x="255" y="155" width="60" height="40" fill="#bfdbfe" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="285" y="179" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="bold">m</text>
+  </g>
+  <!-- Normal reaction R (perpendicular to slope, which is ~75° from horizontal for 15° slope) -->
+  <line x1="282" y1="155" x2="248" y2="90" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arn)"/>
+  <text x="230" y="95" font-size="13" fill="#16a34a" font-weight="600">R</text>
+  <!-- Weight mg (vertically down) -->
+  <line x1="282" y1="195" x2="282" y2="248" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arw)"/>
+  <text x="290" y="242" font-size="13" fill="#dc2626" font-weight="600">mg</text>
+  <!-- Weight components: along slope (down) and perp to slope -->
+  <line x1="282" y1="195" x2="240" y2="220" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="222" y="225" font-size="11" fill="#dc2626">mg sinα</text>
+  <line x1="282" y1="195" x2="300" y2="240" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="305" y="240" font-size="11" fill="#dc2626">mg cosα</text>
+  <!-- Friction up the slope -->
+  <line x1="265" y1="175" x2="210" y2="150" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arf)"/>
+  <text x="192" y="148" font-size="13" fill="#f59e0b" font-weight="600">F</text>
+  <!-- Label F direction -->
+  <text x="160" y="162" font-size="11" fill="#f59e0b">(friction up slope</text>
+  <text x="160" y="175" font-size="11" fill="#f59e0b"> if particle slides down)</text>
+  <defs>
+    <marker id="arn" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/></marker>
+    <marker id="arw" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+    <marker id="arf" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#f59e0b"/></marker>
+  </defs>
+</svg>
+<p style="font-size:0.88rem;color:#64748b;">Forces on a particle on an inclined plane: R (normal), mg (weight), F (friction). Weight components shown dashed.</p>
+</div>
+
+<h2>3. Particle Sliding Down a Slope</h2>
+<p>If the particle slides <strong>down</strong> the slope, friction acts <strong>up</strong> the slope.</p>
+<div class="equation">$$\text{Along slope: } mg\sin\alpha - F = ma$$
+$$\text{Perp to slope: } R - mg\cos\alpha = 0 \implies R = mg\cos\alpha$$
+$$F = \mu R = \mu mg\cos\alpha$$
+$$\text{So: } a = g(\sin\alpha - \mu\cos\alpha)$$</div>
+
+<h2>4. Particle Moving Up a Slope</h2>
+<p>If the particle moves <strong>up</strong> the slope, friction acts <strong>down</strong> the slope (opposing motion).</p>
+<div class="equation">$$\text{Along slope (taking up as positive): } -mg\sin\alpha - F = ma$$
+$$a = -g(\sin\alpha + \mu\cos\alpha)$$</div>
+<p>The deceleration is greater when moving up than when sliding down — the friction adds to gravity on the way up and opposes it on the way down.</p>
+
+<h2>5. Equilibrium on a Slope</h2>
+<p>For a particle in equilibrium on a slope:</p>
+<ul>
+  <li>If the particle is on the verge of sliding <strong>down</strong>: \(mg\sin\alpha = \mu mg\cos\alpha \implies \tan\alpha = \mu\)</li>
+  <li>This gives the <strong>maximum angle</strong> before sliding: \(\alpha_{max}\) where \(\tan\alpha_{max} = \mu\)</li>
+</ul>
+<div class="definition">
+  <strong>Angle of Friction \(\lambda\):</strong> \(\tan\lambda = \mu\)<br>
+  If the slope angle \(\alpha \leq \lambda\), the particle remains in equilibrium. If \(\alpha > \lambda\), the particle slides.
+</div>
+
+<h2>6. Particle on a Rough Horizontal Surface with a Force at an Angle</h2>
+<p>If a force \(P\) at angle \(\theta\) above horizontal is applied to a particle of mass \(m\) on a rough surface (\(\mu\)):</p>
+<ul>
+  <li>Vertically: \(R + P\sin\theta = mg \implies R = mg - P\sin\theta\)</li>
+  <li>Horizontally: \(P\cos\theta - F = ma\)</li>
+  <li>At limiting equilibrium: \(F = \mu R = \mu(mg - P\sin\theta)\)</li>
+</ul>
+<div class="exam-tip">
+  <strong>Key:</strong> When a force has an upward component, the normal reaction R decreases, which also decreases the maximum friction. Always recalculate R after resolving vertically.
+</div>
+
+<h2>7. Connected Particles on a Slope</h2>
+<p>Two particles connected by a string over a pulley at the top of a slope:</p>
+<ul>
+  <li>Particle A (mass \(m_1\)) on the slope at angle \(\alpha\), rough (\(\mu\)).</li>
+  <li>Particle B (mass \(m_2\)) hanging freely.</li>
+  <li>If B descends (pulling A up the slope):</li>
+</ul>
+<div class="example">
+  For A (up the slope, friction acts down): \(T - m_1 g\sin\alpha - \mu m_1 g\cos\alpha = m_1 a\)<br>
+  For B (descending): \(m_2 g - T = m_2 a\)<br>
+  Add: \(m_2 g - m_1 g\sin\alpha - \mu m_1 g\cos\alpha = (m_1 + m_2)a\)<br>
+  $$a = \frac{m_2 g - m_1 g(\sin\alpha + \mu\cos\alpha)}{m_1 + m_2}$$
+</div>
+
+<h2>8. Worked Example — Full Solution</h2>
+<div class="example">
+  <strong>A 5 kg particle rests on a rough plane inclined at 30° to the horizontal. The coefficient of friction between the particle and the plane is 0.4. A force P acts up the slope. Find the minimum P to keep the particle in equilibrium.</strong><br><br>
+  Resolve perpendicular to slope: \(R = 5 \times 9.8 \times \cos30° = 49 \times \tfrac{\sqrt{3}}{2} = 42.43\ \text{N}\)<br>
+  Friction (max, acting up slope since particle tends to slide down): \(F = \mu R = 0.4 \times 42.43 = 16.97\ \text{N}\)<br>
+  Resolve along slope (up positive): \(P + F - mg\sin30° = 0\)<br>
+  \(P = mg\sin30° - F = 49 \times 0.5 - 16.97 = 24.5 - 16.97 = 7.53\ \text{N}\)<br><br>
+  (If P were absent and friction insufficient: particle would slide down. The minimum P is when friction is at its maximum value acting up the slope.)
+</div>
+
+<h2>9. Key Formulae Summary</h2>
+<table>
+  <tr><th>Formula</th><th>Use</th></tr>
+  <tr><td>\(F \leq \mu R\)</td><td>Friction law (always)</td></tr>
+  <tr><td>\(F = \mu R\)</td><td>Limiting equilibrium / sliding</td></tr>
+  <tr><td>\(R = mg\cos\alpha\)</td><td>Normal reaction on slope angle α</td></tr>
+  <tr><td>\(a = g(\sin\alpha - \mu\cos\alpha)\)</td><td>Acceleration down rough slope</td></tr>
+  <tr><td>\(\tan\alpha = \mu\)</td><td>Max slope angle for equilibrium</td></tr>
+  <tr><td>\(\tan\lambda = \mu\)</td><td>Angle of friction</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Common Errors:</strong>
+  <ul>
+    <li>Friction direction error — friction always opposes the motion (or tendency of motion), not just "down the slope" always.</li>
+    <li>Using \(R = mg\) on a slope — always resolve perpendicular: \(R = mg\cos\alpha\).</li>
+    <li>Forgetting to update R when an angled force is applied (R changes).</li>
+    <li>Using \(F = \mu R\) when the particle is not at limiting equilibrium — if the particle is stationary and no information says it is about to slip, friction may be less than \(\mu R\); find F by resolving.</li>
+    <li>Sign error when friction reverses direction (e.g., particle pushed up vs sliding down — opposite friction directions give different accelerations).</li>
+  </ul>
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

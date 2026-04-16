@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Differentiation (Year 2) - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P18: Differentiation (Year 2)</h1>
+
+<h2>1. Standard Derivatives — Complete Table</h2>
+<p>You must know these results. Some appear in the formula booklet; others must be memorised.</p>
+
+<table>
+  <tr><th>Function \(f(x)\)</th><th>Derivative \(f'(x)\)</th><th>Notes</th></tr>
+  <tr><td>\(x^n\)</td><td>\(nx^{n-1}\)</td><td>Any real \(n\)</td></tr>
+  <tr><td>\(e^x\)</td><td>\(e^x\)</td><td>Memorise</td></tr>
+  <tr><td>\(e^{ax+b}\)</td><td>\(ae^{ax+b}\)</td><td>Chain rule applied</td></tr>
+  <tr><td>\(a^x\)</td><td>\(a^x \ln a\)</td><td>Write as \(e^{x\ln a}\)</td></tr>
+  <tr><td>\(\ln x\)</td><td>\(\dfrac{1}{x}\)</td><td>\(x > 0\)</td></tr>
+  <tr><td>\(\ln|f(x)|\)</td><td>\(\dfrac{f'(x)}{f(x)}\)</td><td>Chain rule</td></tr>
+  <tr><td>\(\sin x\)</td><td>\(\cos x\)</td><td>Radians only</td></tr>
+  <tr><td>\(\cos x\)</td><td>\(-\sin x\)</td><td>Radians only</td></tr>
+  <tr><td>\(\tan x\)</td><td>\(\sec^2 x\)</td><td>In formula booklet</td></tr>
+  <tr><td>\(\sec x\)</td><td>\(\sec x \tan x\)</td><td>In formula booklet</td></tr>
+  <tr><td>\(\csc x\)</td><td>\(-\csc x \cot x\)</td><td>In formula booklet</td></tr>
+  <tr><td>\(\cot x\)</td><td>\(-\csc^2 x\)</td><td>In formula booklet</td></tr>
+  <tr><td>\(\sin^{-1} x\)</td><td>\(\dfrac{1}{\sqrt{1-x^2}}\)</td><td>In formula booklet</td></tr>
+  <tr><td>\(\cos^{-1} x\)</td><td>\(-\dfrac{1}{\sqrt{1-x^2}}\)</td><td>In formula booklet</td></tr>
+  <tr><td>\(\tan^{-1} x\)</td><td>\(\dfrac{1}{1+x^2}\)</td><td>In formula booklet</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> For \(a^x\), rewrite as \(e^{x\ln a}\), then differentiate: \(\dfrac{d}{dx}(e^{x\ln a}) = \ln a \cdot e^{x\ln a} = a^x \ln a\).
+</div>
+
+<h2>2. Chain Rule</h2>
+<div class="definition">
+  If \(y = f(g(x))\), let \(u = g(x)\), then:
+  $$\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$$
+  In words: <em>differentiate the outside, keep the inside, times derivative of the inside</em>.
+</div>
+
+<div class="example">
+  <strong>Example 1:</strong> Differentiate \(y = \sin(3x^2 + 1)\).
+  <br><br>
+  Let \(u = 3x^2+1\), so \(y = \sin u\).
+  <br>
+  \(\dfrac{dy}{du} = \cos u\), \(\dfrac{du}{dx} = 6x\)
+  <br>
+  \(\dfrac{dy}{dx} = 6x\cos(3x^2+1)\)
+</div>
+
+<div class="example">
+  <strong>Example 2:</strong> Differentiate \(y = e^{\sin x}\).
+  <br><br>
+  \(\dfrac{dy}{dx} = \cos x \cdot e^{\sin x}\)
+</div>
+
+<div class="example">
+  <strong>Example 3:</strong> Differentiate \(y = \ln(x^2 + 4)\).
+  <br><br>
+  \(\dfrac{dy}{dx} = \dfrac{2x}{x^2+4}\)
+</div>
+
+<h2>3. Product Rule</h2>
+<div class="definition">
+  If \(y = uv\) where \(u\) and \(v\) are functions of \(x\):
+  $$\frac{d}{dx}(uv) = u\frac{dv}{dx} + v\frac{du}{dx}$$
+  Mnemonic: <strong>u dv + v du</strong>
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Differentiate \(y = x^2 e^{3x}\).
+  <br><br>
+  Let \(u = x^2\), \(v = e^{3x}\).
+  <br>
+  \(\dfrac{du}{dx} = 2x\), \(\dfrac{dv}{dx} = 3e^{3x}\)
+  <br>
+  \(\dfrac{dy}{dx} = x^2 \cdot 3e^{3x} + e^{3x} \cdot 2x = e^{3x}(3x^2 + 2x) = xe^{3x}(3x+2)\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Differentiate \(y = x\ln x\).
+  <br><br>
+  \(u = x,\; v = \ln x\)
+  <br>
+  \(\dfrac{dy}{dx} = x \cdot \dfrac{1}{x} + \ln x \cdot 1 = 1 + \ln x\)
+</div>
+
+<h2>4. Quotient Rule</h2>
+<div class="definition">
+  If \(y = \dfrac{u}{v}\):
+  $$\frac{d}{dx}\!\left(\frac{u}{v}\right) = \frac{v\dfrac{du}{dx} - u\dfrac{dv}{dx}}{v^2}$$
+  Mnemonic: <strong>v du minus u dv, all over v squared</strong>
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Differentiate \(y = \dfrac{\sin x}{x^2}\).
+  <br><br>
+  \(u = \sin x,\; v = x^2\)
+  <br>
+  \(\dfrac{du}{dx} = \cos x,\; \dfrac{dv}{dx} = 2x\)
+  <br>
+  \(\dfrac{dy}{dx} = \dfrac{x^2\cos x - 2x\sin x}{x^4} = \dfrac{x\cos x - 2\sin x}{x^3}\)
+</div>
+
+<div class="exam-tip">
+  <strong>Quotient vs product:</strong> It is often easier to write \(\dfrac{u}{v} = u \cdot v^{-1}\) and use the product rule with chain rule, avoiding the quotient rule formula entirely.
+</div>
+
+<h2>5. Implicit Differentiation</h2>
+<p>When \(y\) is not expressed explicitly as a function of \(x\), differentiate both sides with respect to \(x\) and use the chain rule for terms involving \(y\):</p>
+<div class="definition">
+  $$\frac{d}{dx}[f(y)] = f'(y) \cdot \frac{dy}{dx}$$
+  Key results:
+  <ul>
+    <li>\(\dfrac{d}{dx}(y^2) = 2y\dfrac{dy}{dx}\)</li>
+    <li>\(\dfrac{d}{dx}(y^n) = ny^{n-1}\dfrac{dy}{dx}\)</li>
+    <li>\(\dfrac{d}{dx}(\sin y) = \cos y\dfrac{dy}{dx}\)</li>
+    <li>\(\dfrac{d}{dx}(e^y) = e^y\dfrac{dy}{dx}\)</li>
+    <li>\(\dfrac{d}{dx}(xy) = x\dfrac{dy}{dx} + y\) (product rule)</li>
+  </ul>
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\dfrac{dy}{dx}\) for \(x^2 + y^2 = 25\).
+  <br><br>
+  Differentiate both sides: \(2x + 2y\dfrac{dy}{dx} = 0\)
+  <br>
+  \(\dfrac{dy}{dx} = -\dfrac{x}{y}\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\dfrac{dy}{dx}\) for \(x^3 + y^3 - 3xy = 0\).
+  <br><br>
+  \(3x^2 + 3y^2\dfrac{dy}{dx} - 3\!\left(x\dfrac{dy}{dx} + y\right) = 0\)
+  <br>
+  \(3x^2 - 3y + (3y^2 - 3x)\dfrac{dy}{dx} = 0\)
+  <br>
+  \(\dfrac{dy}{dx} = \dfrac{y - x^2}{y^2 - x}\)
+</div>
+
+<h3>Second derivative implicitly</h3>
+<p>To find \(\dfrac{d^2y}{dx^2}\) implicitly, differentiate \(\dfrac{dy}{dx}\) again with respect to \(x\), substituting back for \(\dfrac{dy}{dx}\) as needed.</p>
+
+<h2>6. Parametric Differentiation</h2>
+<div class="definition">
+  For \(x = f(t),\; y = g(t)\):
+  $$\frac{dy}{dx} = \frac{dy/dt}{dx/dt} \qquad \frac{d^2y}{dx^2} = \frac{\dfrac{d}{dt}\!\left(\dfrac{dy}{dx}\right)}{\dfrac{dx}{dt}}$$
+</div>
+<p>See also Topic P17 for full treatment of parametric equations.</p>
+
+<h2>7. Connected Rates of Change</h2>
+<p>The chain rule links rates of change in real-world problems:</p>
+<div class="definition">
+  $$\frac{dA}{dt} = \frac{dA}{dr} \cdot \frac{dr}{dt} \qquad \text{(general form: chain rule in context)}$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> A spherical balloon is inflated so its radius increases at \(2\) cm/s. Find the rate of increase of volume when \(r = 5\) cm.
+  <br><br>
+  \(V = \dfrac{4}{3}\pi r^3 \Rightarrow \dfrac{dV}{dr} = 4\pi r^2\)
+  <br>
+  \(\dfrac{dV}{dt} = \dfrac{dV}{dr} \cdot \dfrac{dr}{dt} = 4\pi(5)^2 \times 2 = 200\pi \text{ cm}^3/\text{s}\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Water flows into a cone at \(10\) cm\(^3\)/s. Given \(h = 3r\), find \(\dfrac{dr}{dt}\) when \(r = 4\) cm.
+  <br><br>
+  \(V = \dfrac{1}{3}\pi r^2 h = \dfrac{1}{3}\pi r^2(3r) = \pi r^3\)
+  <br>
+  \(\dfrac{dV}{dr} = 3\pi r^2\), so \(\dfrac{dr}{dt} = \dfrac{1}{3\pi r^2}\cdot\dfrac{dV}{dt} = \dfrac{10}{3\pi(16)} = \dfrac{5}{24\pi}\) cm/s
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Write out the chain rule equation first, identify which rates are known and which is unknown, then solve. Never mix up \(\dfrac{dV}{dt}\) with \(\dfrac{dt}{dV}\).
+</div>
+
+<h2>8. Second Derivatives and Nature of Stationary Points</h2>
+<p>For a stationary point where \(f'(x) = 0\):</p>
+<ul>
+  <li>If \(f''(x) > 0\): local <strong>minimum</strong></li>
+  <li>If \(f''(x) < 0\): local <strong>maximum</strong></li>
+  <li>If \(f''(x) = 0\): inconclusive — use first derivative test</li>
+</ul>
+<p>A <strong>point of inflection</strong> occurs where \(f''(x) = 0\) and \(f''\) changes sign. Note: \(f''(x)=0\) is necessary but not sufficient.</p>
+
+<h2>9. Summary: Which Rule to Use?</h2>
+<table>
+  <tr><th>Situation</th><th>Rule</th></tr>
+  <tr><td>Function of a function, e.g. \(\sin(x^2)\)</td><td>Chain rule</td></tr>
+  <tr><td>Product of two functions, e.g. \(x^2 e^x\)</td><td>Product rule</td></tr>
+  <tr><td>Ratio of two functions, e.g. \(\dfrac{\sin x}{x}\)</td><td>Quotient rule (or product + chain)</td></tr>
+  <tr><td>Equation mixing \(x\) and \(y\), e.g. \(x^2+y^2=1\)</td><td>Implicit differentiation</td></tr>
+  <tr><td>\(x = f(t), y = g(t)\)</td><td>Parametric: \(dy/dx = (dy/dt)/(dx/dt)\)</td></tr>
+  <tr><td>Relating two rates e.g. \(dV/dt\) and \(dr/dt\)</td><td>Connected rates of change (chain rule)</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

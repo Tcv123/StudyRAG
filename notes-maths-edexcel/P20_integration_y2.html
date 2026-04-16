@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integration (Year 2) - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P20: Integration (Year 2)</h1>
+
+<h2>1. Standard Integrals</h2>
+<table>
+  <tr><th>Function</th><th>Integral</th><th>Notes</th></tr>
+  <tr><td>\(x^n\)</td><td>\(\dfrac{x^{n+1}}{n+1} + C\)</td><td>\(n \ne -1\)</td></tr>
+  <tr><td>\(\dfrac{1}{x}\)</td><td>\(\ln|x| + C\)</td><td>Modulus for negative \(x\)</td></tr>
+  <tr><td>\(e^x\)</td><td>\(e^x + C\)</td><td></td></tr>
+  <tr><td>\(e^{ax+b}\)</td><td>\(\dfrac{1}{a}e^{ax+b} + C\)</td><td></td></tr>
+  <tr><td>\(a^x\)</td><td>\(\dfrac{a^x}{\ln a} + C\)</td><td>\(a > 0, a \ne 1\)</td></tr>
+  <tr><td>\(\sin(ax+b)\)</td><td>\(-\dfrac{1}{a}\cos(ax+b) + C\)</td><td></td></tr>
+  <tr><td>\(\cos(ax+b)\)</td><td>\(\dfrac{1}{a}\sin(ax+b) + C\)</td><td></td></tr>
+  <tr><td>\(\sec^2 x\)</td><td>\(\tan x + C\)</td><td></td></tr>
+  <tr><td>\(\dfrac{1}{ax+b}\)</td><td>\(\dfrac{1}{a}\ln|ax+b| + C\)</td><td></td></tr>
+  <tr><td>\(\dfrac{f'(x)}{f(x)}\)</td><td>\(\ln|f(x)| + C\)</td><td>Recognise this form!</td></tr>
+  <tr><td>\(\dfrac{1}{\sqrt{a^2-x^2}}\)</td><td>\(\sin^{-1}\!\left(\dfrac{x}{a}\right) + C\)</td><td></td></tr>
+  <tr><td>\(\dfrac{1}{a^2+x^2}\)</td><td>\(\dfrac{1}{a}\tan^{-1}\!\left(\dfrac{x}{a}\right) + C\)</td><td></td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> The integral \(\displaystyle\int \dfrac{f'(x)}{f(x)}\,dx = \ln|f(x)| + C\) is one of the most important patterns. Always check if the numerator is (a multiple of) the derivative of the denominator before using substitution.
+</div>
+
+<h2>2. Integration by Substitution</h2>
+<p>Use substitution when the integrand contains a composite function. Let \(u = g(x)\), then \(du = g'(x)\,dx\).</p>
+
+<div class="definition">
+  <strong>Procedure:</strong>
+  <ol>
+    <li>Choose a substitution \(u = g(x)\)</li>
+    <li>Find \(\dfrac{du}{dx}\) and write \(dx = \dfrac{du}{g'(x)}\)</li>
+    <li>Rewrite the integral entirely in terms of \(u\)</li>
+    <li>Integrate with respect to \(u\)</li>
+    <li>Substitute back to get the answer in terms of \(x\)</li>
+  </ol>
+  For definite integrals: <strong>change the limits</strong> to \(u\)-values.
+</div>
+
+<div class="example">
+  <strong>Example 1:</strong> Find \(\displaystyle\int 2x(x^2+1)^4\,dx\).
+  <br><br>
+  Let \(u = x^2 + 1\), so \(du = 2x\,dx\).
+  <br>
+  \(\displaystyle\int u^4\,du = \dfrac{u^5}{5} + C = \dfrac{(x^2+1)^5}{5} + C\)
+</div>
+
+<div class="example">
+  <strong>Example 2 (definite):</strong> Find \(\displaystyle\int_0^1 x\sqrt{x^2+1}\,dx\).
+  <br><br>
+  Let \(u = x^2+1\), \(du = 2x\,dx\).
+  <br>
+  When \(x=0\): \(u=1\). When \(x=1\): \(u=2\).
+  <br>
+  \(\displaystyle\int_1^2 \dfrac{\sqrt{u}}{2}\,du = \dfrac{1}{2}\cdot\dfrac{2}{3}[u^{3/2}]_1^2 = \dfrac{1}{3}(2\sqrt{2}-1)\)
+</div>
+
+<h2>3. Integration by Parts</h2>
+<div class="definition">
+  $$\int u\,\frac{dv}{dx}\,dx = uv - \int v\,\frac{du}{dx}\,dx$$
+  Or in shorthand: \(\displaystyle\int u\,dv = uv - \int v\,du\)
+</div>
+
+<h3>LIATE: Choosing \(u\)</h3>
+<p>Choose \(u\) as whichever function comes first in LIATE; let \(dv\) be everything else.</p>
+
+<table>
+  <tr><th>Letter</th><th>Type</th><th>Examples</th></tr>
+  <tr><td><strong>L</strong></td><td>Logarithmic</td><td>\(\ln x,\;\log x\)</td></tr>
+  <tr><td><strong>I</strong></td><td>Inverse trig</td><td>\(\sin^{-1}x,\;\tan^{-1}x\)</td></tr>
+  <tr><td><strong>A</strong></td><td>Algebraic</td><td>\(x^n,\;x^2+1\)</td></tr>
+  <tr><td><strong>T</strong></td><td>Trigonometric</td><td>\(\sin x,\;\cos x\)</td></tr>
+  <tr><td><strong>E</strong></td><td>Exponential</td><td>\(e^x,\;2^x\)</td></tr>
+</table>
+
+<div class="example">
+  <strong>Example 1:</strong> Find \(\displaystyle\int x e^x\,dx\).
+  <br><br>
+  \(u = x \Rightarrow \dfrac{du}{dx} = 1\); \(\dfrac{dv}{dx} = e^x \Rightarrow v = e^x\)
+  <br>
+  \(\displaystyle\int xe^x\,dx = xe^x - \int e^x\,dx = xe^x - e^x + C = e^x(x-1) + C\)
+</div>
+
+<div class="example">
+  <strong>Example 2:</strong> Find \(\displaystyle\int x^2\sin x\,dx\).
+  <br><br>
+  \(u = x^2,\; dv = \sin x\,dx \Rightarrow v = -\cos x\)
+  <br>
+  \(= -x^2\cos x + 2\displaystyle\int x\cos x\,dx\)
+  <br>
+  Apply IBP again: \(u=x,\;dv=\cos x\,dx\Rightarrow v=\sin x\)
+  <br>
+  \(= -x^2\cos x + 2(x\sin x - \int\sin x\,dx) = -x^2\cos x + 2x\sin x + 2\cos x + C\)
+</div>
+
+<div class="example">
+  <strong>Example 3:</strong> Find \(\displaystyle\int \ln x\,dx\).
+  <br><br>
+  \(u = \ln x,\; dv = 1\,dx \Rightarrow v = x\)
+  <br>
+  \(= x\ln x - \displaystyle\int x \cdot \dfrac{1}{x}\,dx = x\ln x - x + C\)
+</div>
+
+<div class="exam-tip">
+  <strong>Cyclic integration:</strong> For \(\displaystyle\int e^x\sin x\,dx\), apply IBP twice. The original integral reappears — collect it on one side and solve algebraically.
+</div>
+
+<h2>4. Integration by Partial Fractions</h2>
+<p>Used when integrating rational functions. Decompose into partial fractions first, then integrate term by term using \(\displaystyle\int \dfrac{1}{ax+b}\,dx = \dfrac{1}{a}\ln|ax+b| + C\).</p>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\displaystyle\int \dfrac{5x+3}{(x+1)(2x-1)}\,dx\).
+  <br><br>
+  Partial fractions: \(\dfrac{5x+3}{(x+1)(2x-1)} = \dfrac{A}{x+1} + \dfrac{B}{2x-1}\)
+  <br>
+  \(5x+3 = A(2x-1) + B(x+1)\)
+  <br>
+  \(x = -1\): \(-2 = -3A \Rightarrow A = \tfrac{2}{3}\). \(\quad x = \tfrac{1}{2}\): \(\tfrac{11}{2} = \tfrac{3}{2}B \Rightarrow B = \tfrac{11}{3}\)
+  <br>
+  \(\displaystyle\int \left(\dfrac{2/3}{x+1} + \dfrac{11/3}{2x-1}\right)dx = \dfrac{2}{3}\ln|x+1| + \dfrac{11}{6}\ln|2x-1| + C\)
+</div>
+
+<h2>5. Differential Equations</h2>
+<h3>Separable Differential Equations</h3>
+<div class="definition">
+  A first-order ODE of the form \(\dfrac{dy}{dx} = f(x)g(y)\) is solved by separating variables:
+  $$\int \frac{1}{g(y)}\,dy = \int f(x)\,dx$$
+  Then integrate both sides and include a constant of integration \(C\).
+</div>
+
+<div class="example">
+  <strong>Example (General solution):</strong> Solve \(\dfrac{dy}{dx} = \dfrac{x}{y}\).
+  <br><br>
+  Separate: \(y\,dy = x\,dx\)
+  <br>
+  Integrate: \(\dfrac{y^2}{2} = \dfrac{x^2}{2} + C\)
+  <br>
+  General solution: \(y^2 - x^2 = k\) (where \(k = 2C\))
+</div>
+
+<div class="example">
+  <strong>Example (Particular solution with boundary condition):</strong>
+  Solve \(\dfrac{dy}{dx} = 2xy\), given \(y = 3\) when \(x = 0\).
+  <br><br>
+  Separate: \(\dfrac{1}{y}\,dy = 2x\,dx\)
+  <br>
+  Integrate: \(\ln|y| = x^2 + C\)
+  <br>
+  So \(y = Ae^{x^2}\) where \(A = e^C\).
+  <br>
+  Apply BC: \(3 = Ae^0 = A\).
+  <br>
+  <strong>Particular solution:</strong> \(y = 3e^{x^2}\)
+</div>
+
+<h3>General vs Particular Solutions</h3>
+<ul>
+  <li><strong>General solution</strong>: includes arbitrary constant \(C\); represents a family of curves</li>
+  <li><strong>Particular solution</strong>: found by applying an initial/boundary condition to determine \(C\)</li>
+</ul>
+
+<h2>6. Modelling with Differential Equations</h2>
+
+<h3>Exponential Growth and Decay</h3>
+<div class="definition">
+  $$\frac{dN}{dt} = kN \quad \Rightarrow \quad N = N_0 e^{kt}$$
+  If \(k > 0\): growth. If \(k < 0\): decay.
+</div>
+
+<h3>Newton's Law of Cooling</h3>
+<div class="definition">
+  $$\frac{d\theta}{dt} = -k(\theta - \theta_s)$$
+  where \(\theta_s\) is the surrounding temperature, \(k > 0\).
+  <br>
+  Solution: \(\theta - \theta_s = A e^{-kt}\), so \(\theta = \theta_s + Ae^{-kt}\).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> A cup of tea at 90°C cools in a room at 20°C. After 5 minutes, its temperature is 70°C. Find the temperature after 15 minutes.
+  <br><br>
+  \(\theta = 20 + Ae^{-kt}\). At \(t=0\): \(90 = 20 + A \Rightarrow A = 70\).
+  <br>
+  At \(t=5\): \(70 = 20 + 70e^{-5k} \Rightarrow e^{-5k} = \dfrac{50}{70} = \dfrac{5}{7}\)
+  <br>
+  \(-5k = \ln\dfrac{5}{7} \Rightarrow k = \dfrac{1}{5}\ln\dfrac{7}{5}\)
+  <br>
+  At \(t=15\): \(\theta = 20 + 70\!\left(\dfrac{5}{7}\right)^3 = 20 + 70 \cdot \dfrac{125}{343} \approx 20 + 25.5 \approx 45.5\)°C
+</div>
+
+<h3>Logistic Growth (context)</h3>
+<p>Population growth may be modelled by \(\dfrac{dP}{dt} = kP\!\left(1 - \dfrac{P}{M}\right)\) where \(M\) is the carrying capacity. This is separable.</p>
+
+<h2>7. Choosing an Integration Strategy</h2>
+<table>
+  <tr><th>Form of integrand</th><th>Method</th></tr>
+  <tr><td>Standard form (see table)</td><td>Direct integration</td></tr>
+  <tr><td>Numerator is derivative of denominator</td><td>\(\ln|f(x)|\) pattern</td></tr>
+  <tr><td>Composite function, e.g. \((2x+1)^5\)</td><td>Substitution or inspection</td></tr>
+  <tr><td>Product of different types, e.g. \(xe^x\)</td><td>Integration by parts (LIATE)</td></tr>
+  <tr><td>Rational function (proper fraction)</td><td>Partial fractions first</td></tr>
+  <tr><td>Trig powers, e.g. \(\sin^2 x\)</td><td>Double angle formulae then integrate</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> For \(\displaystyle\int \sin^2 x\,dx\), use \(\sin^2 x = \dfrac{1-\cos 2x}{2}\). For \(\displaystyle\int \cos^2 x\,dx\), use \(\cos^2 x = \dfrac{1+\cos 2x}{2}\).
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

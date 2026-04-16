@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hypothesis Testing (Binomial) - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>S5: Hypothesis Testing — Binomial</h1>
+
+<h2>1. Purpose of Hypothesis Testing</h2>
+
+<p>A <strong>hypothesis test</strong> uses sample data to assess whether there is sufficient statistical evidence to challenge a claim about a population parameter — in this case, the proportion \(p\).</p>
+
+<div class="definition">
+  <strong>Null hypothesis \(H_0\):</strong> The default assumption; states the value of \(p\) if nothing has changed. Example: \(H_0: p = 0.3\)<br><br>
+  <strong>Alternative hypothesis \(H_1\):</strong> What the researcher believes may be true; determines whether the test is one- or two-tailed.
+</div>
+
+<h2>2. One-Tailed vs Two-Tailed Tests</h2>
+
+<table>
+  <tr><th>Test type</th><th>Alternative hypothesis</th><th>Significance level used</th></tr>
+  <tr><td>One-tailed (upper)</td><td>\(H_1: p > k\)</td><td>Full \(\alpha\) in upper tail</td></tr>
+  <tr><td>One-tailed (lower)</td><td>\(H_1: p < k\)</td><td>Full \(\alpha\) in lower tail</td></tr>
+  <tr><td>Two-tailed</td><td>\(H_1: p \neq k\)</td><td>\(\alpha/2\) in each tail</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The wording of the question tells you which tail to use. "Increased", "more likely", "greater" → upper tail. "Decreased", "less likely", "fewer" → lower tail. "Changed", "different" → two-tailed (use \(\alpha/2\)).
+</div>
+
+<h2>3. Significance Level</h2>
+
+<p>The <strong>significance level</strong> \(\alpha\) (typically 5% or 1%) is the maximum probability of incorrectly rejecting \(H_0\) when it is true (Type I error). We reject \(H_0\) if the p-value \(< \alpha\).</p>
+
+<h2>4. The Test Statistic</h2>
+
+<p>Under \(H_0\), assume \(X \sim B(n, p_0)\) where \(p_0\) is the value stated in \(H_0\). The test statistic is the <strong>observed value</strong> of \(X\) from the sample.</p>
+
+<h2>5. Two Methods to Carry Out the Test</h2>
+
+<h3>Method 1: p-value Method</h3>
+<ol>
+  <li>Find the probability of obtaining a result at least as extreme as the observed value, assuming \(H_0\) is true.</li>
+  <li>For a lower tail test: p-value \(= P(X \leq x_{\text{obs}})\)</li>
+  <li>For an upper tail test: p-value \(= P(X \geq x_{\text{obs}})\)</li>
+  <li>If p-value \(< \alpha\): <strong>reject \(H_0\)</strong>.</li>
+  <li>If p-value \(\geq \alpha\): <strong>do not reject \(H_0\)</strong>.</li>
+</ol>
+
+<h3>Method 2: Critical Region Method</h3>
+<ol>
+  <li>Find the <strong>critical value</strong> \(c\) such that \(P(X \leq c) < \alpha\) (lower tail) or \(P(X \geq c) < \alpha\) (upper tail).</li>
+  <li>The critical region is all values of \(X\) that lead to rejection of \(H_0\).</li>
+  <li>If observed value falls in the critical region: <strong>reject \(H_0\)</strong>.</li>
+</ol>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The critical region is the largest set of values satisfying the probability condition. Because the binomial is discrete, the actual significance level (probability of the critical region under \(H_0\)) will usually be less than the nominal \(\alpha\).
+</div>
+
+<h2>6. Hypothesis Test Flowchart</h2>
+
+<!-- SVG: Flowchart showing hypothesis test procedure -->
+<svg viewBox="0 0 500 520" width="100%" style="margin:20px 0;border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;">
+  <!-- Box 1: State H0 H1 -->
+  <rect x="130" y="15" width="240" height="50" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="250" y="37" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="600">Step 1: State H₀ and H₁</text>
+  <text x="250" y="53" text-anchor="middle" font-size="11" fill="#1e3a5f">e.g. H₀: p = 0.3, H₁: p &gt; 0.3</text>
+  <!-- Arrow -->
+  <line x1="250" y1="65" x2="250" y2="90" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrfc)"/>
+  <defs><marker id="arrfc" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#64748b"/></marker></defs>
+  <!-- Box 2: Significance level -->
+  <rect x="130" y="90" width="240" height="50" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="250" y="111" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="600">Step 2: State significance level</text>
+  <text x="250" y="127" text-anchor="middle" font-size="11" fill="#1e3a5f">α = 0.05 (5%) or α = 0.01 (1%)</text>
+  <!-- Arrow -->
+  <line x1="250" y1="140" x2="250" y2="165" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrfc)"/>
+  <!-- Box 3: Distribution under H0 -->
+  <rect x="110" y="165" width="280" height="50" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="250" y="186" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="600">Step 3: Assume H₀ true</text>
+  <text x="250" y="202" text-anchor="middle" font-size="11" fill="#1e3a5f">X ~ B(n, p₀) under H₀</text>
+  <!-- Arrow -->
+  <line x1="250" y1="215" x2="250" y2="240" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrfc)"/>
+  <!-- Box 4: Calculate p-value or CR -->
+  <rect x="95" y="240" width="310" height="60" rx="8" fill="#fff8e1" stroke="#f59e0b" stroke-width="2"/>
+  <text x="250" y="262" text-anchor="middle" font-size="12" fill="#92400e" font-weight="600">Step 4: Find p-value or critical region</text>
+  <text x="250" y="278" text-anchor="middle" font-size="11" fill="#92400e">p-value: P(X ≥ obs) or P(X ≤ obs)</text>
+  <text x="250" y="292" text-anchor="middle" font-size="11" fill="#92400e">CR: largest c with P in tail &lt; α</text>
+  <!-- Arrow -->
+  <line x1="250" y1="300" x2="250" y2="325" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrfc)"/>
+  <!-- Decision diamond -->
+  <polygon points="250,325 350,365 250,405 150,365" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="250" y="360" text-anchor="middle" font-size="11" fill="#92400e" font-weight="600">p-value &lt; α ?</text>
+  <text x="250" y="376" text-anchor="middle" font-size="11" fill="#92400e">or obs in CR?</text>
+  <!-- Yes branch (left) -->
+  <line x1="150" y1="365" x2="65" y2="365" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrfc)"/>
+  <text x="105" y="358" text-anchor="middle" font-size="11" fill="#16a34a">YES</text>
+  <rect x="10" y="390" width="110" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="65" y="416" text-anchor="middle" font-size="11" fill="#14532d" font-weight="600">Reject H₀</text>
+  <text x="65" y="432" text-anchor="middle" font-size="10" fill="#14532d">Evidence for H₁</text>
+  <line x1="65" y1="390" x2="65" y2="370" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrfc)"/>
+  <!-- No branch (right) -->
+  <line x1="350" y1="365" x2="435" y2="365" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrfc)"/>
+  <text x="395" y="358" text-anchor="middle" font-size="11" fill="#dc2626">NO</text>
+  <rect x="380" y="390" width="110" height="60" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="435" y="416" text-anchor="middle" font-size="11" fill="#991b1b" font-weight="600">Do not reject H₀</text>
+  <text x="435" y="432" text-anchor="middle" font-size="10" fill="#991b1b">Insufficient evidence</text>
+  <line x1="435" y1="390" x2="435" y2="370" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrfc)"/>
+  <!-- Box 5: Conclusion -->
+  <rect x="100" y="460" width="300" height="50" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+  <text x="250" y="481" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="600">Step 5: Write full conclusion in context</text>
+  <text x="250" y="497" text-anchor="middle" font-size="10" fill="#64748b">Include: significance level, H₀, what it means</text>
+  <!-- Arrows to conclusion -->
+  <line x1="65" y1="450" x2="65" y2="485" stroke="#64748b" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="65" y1="485" x2="100" y2="485" stroke="#64748b" stroke-width="1" marker-end="url(#arrfc)"/>
+  <line x1="435" y1="450" x2="435" y2="485" stroke="#64748b" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="435" y1="485" x2="400" y2="485" stroke="#64748b" stroke-width="1" marker-end="url(#arrfc)"/>
+</svg>
+
+<h2>7. Full Worked Example</h2>
+
+<div class="example">
+  <strong>Question:</strong> A coin is suspected to be biased in favour of heads. In 20 flips, it lands on heads 15 times. Test at the 5% significance level whether there is evidence that \(p > 0.5\).<br><br>
+
+  <strong>Step 1:</strong> \(H_0: p = 0.5\), \(H_1: p > 0.5\) (one-tailed, upper)<br><br>
+
+  <strong>Step 2:</strong> Significance level \(\alpha = 0.05\)<br><br>
+
+  <strong>Step 3:</strong> Under \(H_0\): \(X \sim B(20, 0.5)\). Observed value \(x = 15\).<br><br>
+
+  <strong>Step 4 (p-value method):</strong><br>
+  \(p\text{-value} = P(X \geq 15) = 1 - P(X \leq 14)\)<br>
+  Using calculator: \(P(X \leq 14) = 0.9793\)<br>
+  \(p\text{-value} = 1 - 0.9793 = 0.0207\)<br><br>
+
+  <strong>Decision:</strong> \(0.0207 < 0.05\), so we reject \(H_0\).<br><br>
+
+  <strong>Conclusion:</strong> "There is sufficient evidence at the 5% significance level to reject \(H_0\) and conclude that the coin is biased towards heads (i.e., \(p > 0.5\))."
+</div>
+
+<h2>8. Critical Region Example</h2>
+
+<div class="example">
+  <strong>Question:</strong> Using the same scenario (\(X \sim B(20, 0.5)\), upper-tail test at 5%), find the critical region.<br><br>
+  We need the largest \(c\) such that \(P(X \geq c) < 0.05\):<br>
+  \(P(X \geq 14) = 1 - P(X \leq 13) = 1 - 0.9423 = 0.0577 > 0.05\) — not in CR<br>
+  \(P(X \geq 15) = 0.0207 < 0.05\) — in CR<br><br>
+  <strong>Critical region: \(X \geq 15\)</strong><br>
+  Actual significance level: \(P(X \geq 15) = 0.0207\) (2.07%)<br>
+  Since \(x_{\text{obs}} = 15\) is in the CR, we reject \(H_0\). Same conclusion as above.
+</div>
+
+<h2>9. Writing the Conclusion — Template</h2>
+
+<div class="definition">
+  <strong>Rejecting \(H_0\):</strong> "There is sufficient evidence at the [x]% significance level to reject \(H_0\) and to suggest that [interpret \(H_1\) in context]."<br><br>
+  <strong>Not rejecting \(H_0\):</strong> "There is insufficient evidence at the [x]% significance level to reject \(H_0\). There is no significant evidence that [interpret \(H_1\) in context]."
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Never say "accept \(H_0\)" — always say "do not reject \(H_0\)" or "there is insufficient evidence to reject \(H_0\)". You cannot prove a null hypothesis true.
+</div>
+
+<h2>10. Type I and Type II Errors</h2>
+
+<table>
+  <tr><th>Error Type</th><th>Definition</th><th>Probability</th></tr>
+  <tr><td><strong>Type I Error</strong></td><td>Rejecting \(H_0\) when it is actually true (false positive)</td><td>= actual significance level \(= P(\text{CR} \mid H_0 \text{ true})\)</td></tr>
+  <tr><td><strong>Type II Error</strong></td><td>Failing to reject \(H_0\) when it is actually false (false negative)</td><td>Depends on true value of \(p\)</td></tr>
+</table>
+
+<div class="example">
+  <strong>Type I error example:</strong> From the worked example, if the coin is actually fair (\(p = 0.5\)) but we observe \(X = 15\), the probability of incorrectly rejecting \(H_0\) = 0.0207 (the actual significance level).
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The probability of a Type I error equals the actual significance level (probability that the observed value lies in the critical region given \(H_0\) is true). This is NOT always equal to the nominal \(\alpha\) for discrete distributions.
+</div>
+
+<h2>11. Two-Tailed Test Example</h2>
+
+<div class="example">
+  <strong>Question:</strong> A manufacturer claims a machine produces 20% defective items. A sample of 25 items is taken and 9 are defective. Test at the 5% level whether there is evidence the proportion has changed.<br><br>
+  \(H_0: p = 0.2\), \(H_1: p \neq 0.2\) (two-tailed). \(\alpha/2 = 0.025\) in each tail.<br>
+  Under \(H_0\): \(X \sim B(25, 0.2)\). Observed \(x = 9\) (upper tail, since 9 &gt; np = 5).<br>
+  \(P(X \geq 9) = 1 - P(X \leq 8) = 1 - 0.9532 = 0.0468\)<br>
+  Compare with \(\alpha/2 = 0.025\): \(0.0468 > 0.025\)<br>
+  <strong>Do not reject \(H_0\).</strong> "There is insufficient evidence at the 5% significance level to suggest the proportion of defective items has changed."
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

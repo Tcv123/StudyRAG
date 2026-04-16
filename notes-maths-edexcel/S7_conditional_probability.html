@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S7: Conditional Probability - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>S7: Conditional Probability</h1>
+
+<h2>1. Set Notation</h2>
+
+<table>
+  <tr><th>Notation</th><th>Meaning</th><th>Read as</th></tr>
+  <tr><td>\(A \cup B\)</td><td>Union — elements in A or B (or both)</td><td>"A or B"</td></tr>
+  <tr><td>\(A \cap B\)</td><td>Intersection — elements in both A and B</td><td>"A and B"</td></tr>
+  <tr><td>\(A'\)</td><td>Complement — elements not in A</td><td>"not A"</td></tr>
+  <tr><td>\(A \subseteq B\)</td><td>A is a subset of B</td><td>"A is contained in B"</td></tr>
+  <tr><td>\(\emptyset\)</td><td>Empty set (no elements)</td><td>"null set"</td></tr>
+  <tr><td>\(P(A)\)</td><td>Probability of event A occurring</td><td>"P of A"</td></tr>
+</table>
+
+<p><strong>Key identity:</strong> \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</p>
+
+<h2>2. Conditional Probability</h2>
+
+<div class="definition">
+  <strong>Conditional probability</strong> \(P(A|B)\) is the probability that event A occurs <em>given that</em> event B has already occurred.
+  $$P(A|B) = \frac{P(A \cap B)}{P(B)}, \quad \text{provided } P(B) \neq 0$$
+</div>
+
+<p>Rearranging gives the <strong>Multiplication Rule</strong>:</p>
+
+<div class="equation">
+  $$P(A \cap B) = P(A|B) \times P(B) = P(B|A) \times P(A)$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> In a class, \(P(\text{passed Maths}) = 0.7\), \(P(\text{passed both Maths and Physics}) = 0.42\). Find the probability that a student passed Physics given they passed Maths.<br><br>
+  \(P(\text{Physics} | \text{Maths}) = \dfrac{P(\text{Physics} \cap \text{Maths})}{P(\text{Maths})} = \dfrac{0.42}{0.7} = 0.6\)
+</div>
+
+<h2>3. Independence</h2>
+
+<div class="definition">
+  Events A and B are <strong>independent</strong> if the occurrence of one does not affect the probability of the other:
+  $$P(A|B) = P(A) \quad \Leftrightarrow \quad P(A \cap B) = P(A) \times P(B)$$
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> To test independence, check whether \(P(A \cap B) = P(A) \times P(B)\). If it equals, the events are independent. Do not just look at a Venn diagram visually — always check the numbers.
+</div>
+
+<h2>4. Law of Total Probability</h2>
+
+<p>If B and B' are complementary events (partition the sample space):</p>
+
+<div class="equation">
+  $$P(A) = P(A|B) \cdot P(B) + P(A|B') \cdot P(B')$$
+</div>
+
+<p>This is useful when A can occur via two mutually exclusive routes.</p>
+
+<h2>5. Bayes' Theorem</h2>
+
+<div class="definition">
+  <strong>Bayes' theorem</strong> allows you to reverse the conditioning — find \(P(B|A)\) when you know \(P(A|B)\):
+  $$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$
+  where \(P(A)\) is found using the law of total probability.
+</div>
+
+<div class="example">
+  <strong>Medical Testing Example:</strong> A disease affects 1% of the population. A test has 95% sensitivity (correctly identifies disease) and 90% specificity (correctly identifies no disease). Given a positive test, find the probability the person actually has the disease.<br><br>
+  Let D = has disease, T = positive test.<br>
+  \(P(D) = 0.01\), \(P(D') = 0.99\)<br>
+  \(P(T|D) = 0.95\) (sensitivity), \(P(T|D') = 0.10\) (false positive rate = 1 − specificity)<br><br>
+  \(P(T) = P(T|D)P(D) + P(T|D')P(D')\)<br>
+  \(P(T) = 0.95 \times 0.01 + 0.10 \times 0.99 = 0.0095 + 0.099 = 0.1085\)<br><br>
+  \(P(D|T) = \dfrac{P(T|D) \cdot P(D)}{P(T)} = \dfrac{0.95 \times 0.01}{0.1085} = \dfrac{0.0095}{0.1085} \approx 0.0876\)<br><br>
+  Despite a positive test, there is only an 8.76% chance of having the disease — due to the low base rate.
+</div>
+
+<h2>6. Venn Diagrams with Three Events</h2>
+
+<p>A triple Venn diagram has 8 regions (7 named regions inside the rectangle, plus the "none" region outside all circles):</p>
+
+<!-- SVG 3-circle Venn diagram -->
+<svg width="100%" viewBox="0 0 500 340" style="margin:20px 0;background:#f8fafc;border-radius:8px;border:1px solid #cbd5e1;">
+  <!-- Rectangle boundary -->
+  <rect x="10" y="10" width="480" height="320" fill="none" stroke="#94a3b8" stroke-width="1.5" rx="8"/>
+  <!-- Circle A (top left) -->
+  <circle cx="185" cy="145" r="110" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="2"/>
+  <!-- Circle B (top right) -->
+  <circle cx="315" cy="145" r="110" fill="rgba(16,163,74,0.08)" stroke="#16a34a" stroke-width="2"/>
+  <!-- Circle C (bottom centre) -->
+  <circle cx="250" cy="215" r="110" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="2"/>
+  <!-- Labels for each circle -->
+  <text x="130" y="80" font-size="16" font-weight="700" fill="#2563eb">A</text>
+  <text x="360" y="80" font-size="16" font-weight="700" fill="#16a34a">B</text>
+  <text x="246" y="310" font-size="16" font-weight="700" fill="#ea580c">C</text>
+  <!-- Region labels -->
+  <text x="148" y="148" text-anchor="middle" font-size="11" fill="#1a1a2e">A only</text>
+  <text x="352" y="148" text-anchor="middle" font-size="11" fill="#1a1a2e">B only</text>
+  <text x="250" y="270" text-anchor="middle" font-size="11" fill="#1a1a2e">C only</text>
+  <text x="250" y="118" text-anchor="middle" font-size="11" fill="#1a1a2e">A∩B</text>
+  <text x="196" y="218" text-anchor="middle" font-size="11" fill="#1a1a2e">A∩C</text>
+  <text x="306" y="218" text-anchor="middle" font-size="11" fill="#1a1a2e">B∩C</text>
+  <text x="250" y="175" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a2e">A∩B∩C</text>
+  <text x="440" y="30" text-anchor="middle" font-size="11" fill="#94a3b8">None</text>
+</svg>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Fill in a Venn diagram from the inside out — start with the central region \(A \cap B \cap C\), then the two-way intersections, then the individual regions. Always check that all regions sum to 1 (or the total count).
+</div>
+
+<h2>7. Tree Diagrams</h2>
+
+<p>Tree diagrams show sequences of events with conditional probabilities on the branches. Multiply along branches for joint probabilities; add for mutually exclusive outcomes.</p>
+
+<div class="example">
+  <strong>Quality Control Example:</strong> A factory has two machines, M1 and M2. M1 produces 60% of items; M2 produces 40%. The defect rates are 3% (M1) and 5% (M2). Find the probability a randomly selected item is defective.<br><br>
+  \(P(\text{defective}) = P(D|M_1)P(M_1) + P(D|M_2)P(M_2)\)<br>
+  \(= 0.03 \times 0.6 + 0.05 \times 0.4 = 0.018 + 0.020 = 0.038\)<br><br>
+  Given a defective item, find \(P(M_1|\text{defective})\):<br>
+  \(P(M_1|D) = \dfrac{0.03 \times 0.6}{0.038} = \dfrac{0.018}{0.038} \approx 0.474\)
+</div>
+
+<h2>8. Key Formulae Summary</h2>
+
+<table>
+  <tr><th>Formula</th><th>Name/Use</th></tr>
+  <tr><td>\(P(A|B) = \dfrac{P(A \cap B)}{P(B)}\)</td><td>Definition of conditional probability</td></tr>
+  <tr><td>\(P(A \cap B) = P(A|B) \cdot P(B)\)</td><td>Multiplication rule</td></tr>
+  <tr><td>\(P(A \cap B) = P(A) \cdot P(B)\)</td><td>Independence condition</td></tr>
+  <tr><td>\(P(A) = P(A|B)P(B) + P(A|B')P(B')\)</td><td>Law of total probability</td></tr>
+  <tr><td>\(P(B|A) = \dfrac{P(A|B) \cdot P(B)}{P(A)}\)</td><td>Bayes' theorem</td></tr>
+  <tr><td>\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</td><td>Addition rule</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>
