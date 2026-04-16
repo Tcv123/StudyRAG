@@ -114,6 +114,186 @@
 <strong>Exam Tip:</strong> Edexcel expects you to understand why hazards vary at different plate boundaries. Divergent boundaries produce low-viscosity basaltic magma (effusive eruptions, lower risk). Convergent boundaries produce high-viscosity andesitic/rhyolitic magma (explosive eruptions, higher risk) because subducting oceanic crust and seawater trigger partial melting with high silica content. Conservative boundaries produce no magma (no volcanic hazard) but store enormous strain energy released as powerful earthquakes.
 </div>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 500" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowLeft" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto">
+      <path d="M6,0 L6,6 L0,3 z" fill="#374151"/>
+    </marker>
+    <marker id="arrowRight" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#374151"/>
+    </marker>
+    <marker id="arrowUp" markerWidth="6" markerHeight="6" refX="3" refY="0" orient="auto">
+      <path d="M0,6 L6,6 L3,0 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrowDown" markerWidth="6" markerHeight="6" refX="3" refY="6" orient="auto">
+      <path d="M0,0 L6,0 L3,6 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <text x="300" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Types of Plate Boundary</text>
+
+  <!-- ===================== TOP LEFT: DIVERGENT (CONSTRUCTIVE) ===================== -->
+  <text x="150" y="42" text-anchor="middle" font-size="11" font-weight="bold" fill="#2563eb">Divergent / Constructive</text>
+  <text x="150" y="55" text-anchor="middle" font-size="9" fill="#64748b">(Oceanic)</text>
+
+  <!-- Ocean water surface -->
+  <rect x="20" y="65" width="260" height="18" rx="2" fill="#bfdbfe" opacity="0.6"/>
+  <text x="150" y="78" text-anchor="middle" font-size="8.5" fill="#1e3a5f">Ocean</text>
+
+  <!-- Left plate -->
+  <polygon points="20,83 110,83 110,175 20,200" fill="#d97706" opacity="0.8" stroke="#78350f" stroke-width="1.2"/>
+  <!-- Right plate -->
+  <polygon points="190,83 280,83 280,200 190,175" fill="#d97706" opacity="0.8" stroke="#78350f" stroke-width="1.2"/>
+
+  <!-- Mid-ocean ridge (raised centre) -->
+  <polygon points="110,83 150,58 190,83 190,155 150,135 110,155" fill="#d97706" stroke="#78350f" stroke-width="1.2"/>
+  <text x="150" y="110" text-anchor="middle" font-size="8" font-weight="bold" fill="#fff">Mid-ocean</text>
+  <text x="150" y="121" text-anchor="middle" font-size="8" font-weight="bold" fill="#fff">Ridge</text>
+
+  <!-- Rising magma -->
+  <line x1="150" y1="195" x2="150" y2="140" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowUp)"/>
+  <text x="150" y="210" text-anchor="middle" font-size="8" fill="#dc2626">Rising magma</text>
+
+  <!-- Plate movement arrows -->
+  <line x1="100" y1="95" x2="55" y2="95" stroke="#374151" stroke-width="1.8" marker-end="url(#arrowLeft)"/>
+  <line x1="200" y1="95" x2="245" y2="95" stroke="#374151" stroke-width="1.8" marker-end="url(#arrowRight)"/>
+  <text x="55" y="110" text-anchor="middle" font-size="7.5" fill="#374151">plates apart</text>
+
+  <!-- New crust label -->
+  <text x="150" y="175" text-anchor="middle" font-size="7.5" fill="#78350f">New oceanic crust</text>
+
+  <!-- Labels -->
+  <text x="30" y="225" font-size="8" fill="#374151">Hazards: effusive eruptions,</text>
+  <text x="30" y="236" font-size="8" fill="#374151">shallow low-magnitude earthquakes</text>
+  <text x="30" y="247" font-size="8" fill="#64748b">e.g. Mid-Atlantic Ridge / Iceland</text>
+
+  <!-- ===================== TOP RIGHT: CONVERGENT OCEANIC-CONTINENTAL ===================== -->
+  <text x="450" y="42" text-anchor="middle" font-size="11" font-weight="bold" fill="#2563eb">Convergent: Oceanic–Continental</text>
+  <text x="450" y="55" text-anchor="middle" font-size="9" fill="#64748b">(Subduction zone)</text>
+
+  <!-- Ocean surface -->
+  <rect x="310" y="65" width="270" height="14" rx="2" fill="#bfdbfe" opacity="0.6"/>
+  <text x="400" y="76" text-anchor="middle" font-size="8" fill="#1e3a5f">Ocean</text>
+
+  <!-- Continental plate (right, higher) -->
+  <polygon points="430,79 580,79 580,175 430,175" fill="#8B4513" opacity="0.6" stroke="#78350f" stroke-width="1.2"/>
+  <text x="510" y="130" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#4a2500">Continental</text>
+  <text x="510" y="142" text-anchor="middle" font-size="8.5" fill="#4a2500">plate</text>
+
+  <!-- Oceanic plate (left, subducting) -->
+  <polygon points="310,79 430,79 395,200 310,200" fill="#d97706" opacity="0.75" stroke="#78350f" stroke-width="1.2"/>
+  <text x="345" y="115" text-anchor="middle" font-size="8" font-weight="bold" fill="#78350f">Oceanic</text>
+  <text x="345" y="126" text-anchor="middle" font-size="8" fill="#78350f">plate</text>
+
+  <!-- Subducting slab diagonal -->
+  <polygon points="395,175 430,175 430,200 410,235" fill="#6b7280" opacity="0.7" stroke="#374151" stroke-width="1"/>
+  <!-- Benioff zone line -->
+  <line x1="430" y1="175" x2="395" y2="240" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="370" y="225" text-anchor="middle" font-size="7.5" fill="#dc2626">Benioff</text>
+  <text x="370" y="235" text-anchor="middle" font-size="7.5" fill="#dc2626">Zone</text>
+
+  <!-- Ocean trench -->
+  <polygon points="415,175 440,175 430,195 420,195" fill="#1e3a5f" opacity="0.7"/>
+  <text x="410" y="210" text-anchor="middle" font-size="7.5" fill="#1e3a5f" font-weight="bold">Trench</text>
+
+  <!-- Composite volcano -->
+  <polygon points="490,79 510,50 530,79" fill="#374151" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="510" y="47" text-anchor="middle" font-size="7.5" fill="#374151">Composite</text>
+  <text x="510" y="38" text-anchor="middle" font-size="7.5" fill="#374151">Volcano</text>
+  <!-- Eruption plume -->
+  <line x1="510" y1="50" x2="510" y2="32" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrowUp)"/>
+
+  <!-- Rising magma arc -->
+  <path d="M420,230 Q460,180 490,80" stroke="#dc2626" stroke-width="1.5" fill="none" stroke-dasharray="3,2"/>
+
+  <!-- Fold mountains -->
+  <polygon points="540,79 555,60 570,79" fill="#8B4513" opacity="0.6" stroke="#78350f" stroke-width="1"/>
+  <text x="556" y="57" text-anchor="middle" font-size="7" fill="#78350f">Fold Mts</text>
+
+  <!-- Plate movement arrows -->
+  <line x1="350" y1="88" x2="395" y2="88" stroke="#374151" stroke-width="1.8" marker-end="url(#arrowRight)"/>
+  <line x1="475" y1="88" x2="445" y2="88" stroke="#374151" stroke-width="1.8" marker-end="url(#arrowLeft)"/>
+
+  <!-- Labels -->
+  <text x="315" y="255" font-size="8" fill="#374151">Hazards: explosive eruptions,</text>
+  <text x="315" y="266" font-size="8" fill="#374151">powerful EQs, tsunamis, lahars</text>
+  <text x="315" y="277" font-size="8" fill="#64748b">e.g. Andes (Nazca/S.American)</text>
+
+  <!-- ===================== BOTTOM LEFT: CONTINENTAL COLLISION ===================== -->
+  <text x="150" y="300" text-anchor="middle" font-size="11" font-weight="bold" fill="#2563eb">Convergent: Continental–Continental</text>
+  <text x="150" y="313" text-anchor="middle" font-size="9" fill="#64748b">(Collision zone)</text>
+
+  <!-- Left continental plate -->
+  <polygon points="20,325 130,325 130,405 20,405" fill="#8B4513" opacity="0.55" stroke="#78350f" stroke-width="1.2"/>
+  <text x="75" y="370" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#4a2500">Continental</text>
+  <text x="75" y="382" text-anchor="middle" font-size="8.5" fill="#4a2500">plate</text>
+
+  <!-- Right continental plate -->
+  <polygon points="170,325 280,325 280,405 170,405" fill="#8B4513" opacity="0.55" stroke="#78350f" stroke-width="1.2"/>
+  <text x="225" y="370" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#4a2500">Continental</text>
+  <text x="225" y="382" text-anchor="middle" font-size="8.5" fill="#4a2500">plate</text>
+
+  <!-- Fold mountains at collision zone (buckled upward) -->
+  <polygon points="115,325 130,295 145,310 160,285 175,310 185,295 200,325" fill="#a16207" stroke="#78350f" stroke-width="1.3"/>
+  <text x="157" y="280" text-anchor="middle" font-size="8" font-weight="bold" fill="#78350f">Fold Mountains</text>
+  <text x="157" y="268" text-anchor="middle" font-size="7.5" fill="#78350f">(e.g. Himalayas)</text>
+
+  <!-- Crustal thickening indicator -->
+  <line x1="130" y1="405" x2="170" y2="405" stroke="#78350f" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="150" y="418" text-anchor="middle" font-size="7.5" fill="#78350f">Crustal thickening</text>
+
+  <!-- Plate movement arrows -->
+  <line x1="80" y1="335" x2="115" y2="335" stroke="#374151" stroke-width="1.8" marker-end="url(#arrowRight)"/>
+  <line x1="220" y1="335" x2="185" y2="335" stroke="#374151" stroke-width="1.8" marker-end="url(#arrowLeft)"/>
+
+  <!-- No volcano label -->
+  <text x="150" y="435" text-anchor="middle" font-size="8" fill="#374151">No subduction → no volcanism</text>
+  <text x="150" y="447" text-anchor="middle" font-size="8" fill="#374151">Hazards: powerful shallow EQs, landslides</text>
+  <text x="150" y="458" text-anchor="middle" font-size="8" fill="#64748b">e.g. Himalayas (Indian/Eurasian)</text>
+
+  <!-- ===================== BOTTOM RIGHT: CONSERVATIVE / TRANSFORM ===================== -->
+  <text x="450" y="300" text-anchor="middle" font-size="11" font-weight="bold" fill="#2563eb">Conservative / Transform</text>
+  <text x="450" y="313" text-anchor="middle" font-size="9" fill="#64748b">(plates slide past each other)</text>
+
+  <!-- Left block moving up -->
+  <rect x="310" y="325" width="120" height="80" rx="4" fill="#6b7280" opacity="0.5" stroke="#374151" stroke-width="1.5"/>
+  <text x="370" y="362" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#1a1a2e">Plate A</text>
+
+  <!-- Right block moving down -->
+  <rect x="440" y="325" width="120" height="80" rx="4" fill="#6b7280" opacity="0.5" stroke="#374151" stroke-width="1.5"/>
+  <text x="500" y="362" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#1a1a2e">Plate B</text>
+
+  <!-- Transform fault line -->
+  <line x1="435" y1="320" x2="440" y2="415" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="460" y="318" font-size="8" font-weight="bold" fill="#dc2626">Transform</text>
+  <text x="460" y="328" font-size="8" font-weight="bold" fill="#dc2626">fault</text>
+
+  <!-- Movement arrows (opposite directions) -->
+  <line x1="360" y1="338" x2="360" y2="320" stroke="#374151" stroke-width="1.8" marker-end="url(#arrowUp)"/>
+  <text x="340" y="316" font-size="7.5" fill="#374151">▲ N</text>
+  <line x1="500" y1="398" x2="500" y2="416" stroke="#374151" stroke-width="1.8" marker-end="url(#arrowDown)"/>
+  <text x="515" y="418" font-size="7.5" fill="#374151">▼ S</text>
+
+  <!-- Earthquake epicentre dots -->
+  <circle cx="437" cy="335" r="4" fill="#dc2626" opacity="0.85"/>
+  <circle cx="438" cy="355" r="3" fill="#dc2626" opacity="0.7"/>
+  <circle cx="437" cy="375" r="4" fill="#dc2626" opacity="0.85"/>
+  <circle cx="438" cy="395" r="3" fill="#dc2626" opacity="0.7"/>
+  <text x="418" y="345" text-anchor="end" font-size="7.5" fill="#dc2626">EQ</text>
+  <text x="418" y="370" text-anchor="end" font-size="7.5" fill="#dc2626">EQ</text>
+  <text x="418" y="393" text-anchor="end" font-size="7.5" fill="#dc2626">EQ</text>
+
+  <!-- Labels -->
+  <text x="315" y="435" font-size="8" fill="#374151">No crust created or destroyed</text>
+  <text x="315" y="447" font-size="8" fill="#374151">Hazards: powerful shallow EQs; NO volcanism</text>
+  <text x="315" y="458" font-size="8" fill="#64748b">e.g. San Andreas Fault (Pacific/N.American)</text>
+
+  <!-- Dividing lines -->
+  <line x1="300" y1="35" x2="300" y2="490" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="10" y1="290" x2="590" y2="290" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="5,4"/>
+</svg>
+</div>
+
 <h2>1.3 Volcanic Hazards</h2>
 
 <div class="definition">
@@ -138,6 +318,85 @@
   <li><strong>Tsunamis</strong> &mdash; generated by volcanic island collapse, submarine eruptions, or caldera formation. Krakatoa (1883): tsunamis up to 40 m killed 36,000. Hunga Tonga-Hunga Ha'apai (2022): submarine eruption generated tsunamis across the Pacific.</li>
   <li><strong>Jokullhlaups</strong> &mdash; glacial outburst floods caused by subglacial volcanic eruptions melting ice. Specific to Iceland and other glaciated volcanic regions.</li>
 </ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowUpV" markerWidth="6" markerHeight="6" refX="3" refY="0" orient="auto">
+      <path d="M0,6 L6,6 L3,0 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <text x="300" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Volcano Types: Profile Comparison</text>
+
+  <!-- Ground line -->
+  <line x1="10" y1="225" x2="590" y2="225" stroke="#8B4513" stroke-width="2.5"/>
+
+  <!-- ===== LEFT: SHIELD VOLCANO ===== -->
+  <!-- Very wide, very gently sloping -->
+  <polygon points="10,225 100,225 90,215 110,200 130,193 150,190 170,193 190,200 210,215 220,225 340,225" fill="#d97706" opacity="0.75" stroke="#78350f" stroke-width="1.3"/>
+  <!-- Crater at top -->
+  <ellipse cx="175" cy="190" rx="12" ry="5" fill="#dc2626" opacity="0.6"/>
+  <!-- Lava flow -->
+  <path d="M185,195 Q230,210 290,225" stroke="#dc2626" stroke-width="2.5" fill="none" opacity="0.7"/>
+  <text x="260" y="220" font-size="7.5" fill="#dc2626">lava flow</text>
+  <!-- Label -->
+  <text x="175" y="250" text-anchor="middle" font-size="11" font-weight="bold" fill="#78350f">Shield Volcano</text>
+  <text x="175" y="263" text-anchor="middle" font-size="8.5" fill="#374151">Basaltic lava; gentle slopes (~5–10°)</text>
+  <text x="175" y="275" text-anchor="middle" font-size="8.5" fill="#374151">Very wide base; effusive eruptions</text>
+  <text x="175" y="287" text-anchor="middle" font-size="8" fill="#64748b">e.g. Mauna Loa, Hawaii</text>
+  <!-- Slope angle indicator -->
+  <text x="100" y="215" text-anchor="middle" font-size="8" fill="#78350f">~5–10°</text>
+
+  <!-- Vertical divider -->
+  <line x1="340" y1="25" x2="340" y2="225" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ===== CENTRE-RIGHT: COMPOSITE / STRATOVOLCANO ===== -->
+  <!-- Tall, steep-sided classic cone -->
+  <polygon points="340,225 360,225 370,215 380,195 385,170 390,140 395,105 400,75 405,105 410,140 415,170 420,195 430,215 440,225 460,225" fill="#6b7280" opacity="0.75" stroke="#374151" stroke-width="1.3"/>
+  <!-- Layering lines (alternating lava/ash) -->
+  <line x1="385" y1="160" x2="415" y2="160" stroke="#8B4513" stroke-width="1" stroke-dasharray="3,2" opacity="0.8"/>
+  <line x1="382" y1="180" x2="418" y2="180" stroke="#8B4513" stroke-width="1" stroke-dasharray="3,2" opacity="0.8"/>
+  <line x1="380" y1="200" x2="420" y2="200" stroke="#8B4513" stroke-width="1" stroke-dasharray="3,2" opacity="0.8"/>
+  <!-- Eruption column -->
+  <line x1="400" y1="75" x2="400" y2="45" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowUpV)"/>
+  <!-- Ash cloud -->
+  <ellipse cx="400" cy="38" rx="22" ry="10" fill="#9ca3af" opacity="0.8"/>
+  <text x="400" y="41" text-anchor="middle" font-size="7" fill="#374151">Ash cloud</text>
+  <!-- Pyroclastic flow -->
+  <path d="M405,120 Q430,165 455,225" stroke="#f87171" stroke-width="2.5" fill="none"/>
+  <text x="462" y="195" font-size="7.5" fill="#dc2626">Pyroclastic</text>
+  <text x="462" y="206" font-size="7.5" fill="#dc2626">flow</text>
+  <!-- Labels -->
+  <text x="400" y="250" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">Composite / Stratovolcano</text>
+  <text x="400" y="263" text-anchor="middle" font-size="8.5" fill="#374151">Andesitic magma; steep (~30–35°)</text>
+  <text x="400" y="275" text-anchor="middle" font-size="8.5" fill="#374151">Alternating lava &amp; ash layers</text>
+  <text x="400" y="287" text-anchor="middle" font-size="8" fill="#64748b">e.g. Merapi, Pinatubo, Vesuvius</text>
+  <!-- Slope angle -->
+  <text x="435" y="185" font-size="8" fill="#374151">~30–35°</text>
+
+  <!-- Vertical divider 2 -->
+  <line x1="480" y1="25" x2="480" y2="225" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ===== RIGHT: CALDERA ===== -->
+  <!-- Wide, low, collapsed summit -->
+  <polygon points="480,225 488,225 492,215 496,205 500,200 504,200 510,198 516,200 520,200 524,205 528,215 532,225 560,225" fill="#64748b" opacity="0.65" stroke="#374151" stroke-width="1.3"/>
+  <!-- Collapsed summit depression -->
+  <path d="M500,200 Q510,210 520,200" stroke="#374151" stroke-width="1.5" fill="#d1d5db" opacity="0.8"/>
+  <!-- Crater lake or explosion indicator -->
+  <ellipse cx="510" cy="202" rx="10" ry="4" fill="#bfdbfe" opacity="0.7"/>
+  <!-- Explosive eruption (large plume) -->
+  <ellipse cx="510" cy="178" rx="28" ry="16" fill="#9ca3af" opacity="0.6"/>
+  <ellipse cx="510" cy="162" rx="20" ry="12" fill="#6b7280" opacity="0.5"/>
+  <line x1="510" y1="198" x2="510" y2="175" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowUpV)"/>
+  <text x="510" y="174" text-anchor="middle" font-size="7" fill="#374151">Explosive</text>
+  <text x="510" y="184" text-anchor="middle" font-size="7" fill="#374151">eruption</text>
+  <!-- Labels -->
+  <text x="515" y="250" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">Caldera</text>
+  <text x="515" y="263" text-anchor="middle" font-size="8.5" fill="#374151">Rhyolitic; very explosive</text>
+  <text x="515" y="275" text-anchor="middle" font-size="8.5" fill="#374151">Collapsed summit; wide depression</text>
+  <text x="515" y="287" text-anchor="middle" font-size="8" fill="#64748b">e.g. Yellowstone, Toba</text>
+</svg>
+</div>
 
 <h3>Volcanic Explosivity Index (VEI)</h3>
 <p>A logarithmic scale from 0 (gentle effusive) to 8 (mega-colossal) measuring eruption magnitude based on volume of material ejected and plume height. Each level represents a 10x increase. VEI 5+ eruptions are relatively rare: Pinatubo (1991) was VEI 6; the most recent VEI 7 was Tambora (1815, which caused the "Year Without a Summer" in 1816). VEI 8 (supervolcano): last was Toba ~74,000 years ago; Yellowstone has potential but low probability.</p>
@@ -222,6 +481,97 @@ A magnitude 9.0 megathrust earthquake offshore NE Japan, focus at 32 km depth, o
 
 <h3>The Hazard Management Cycle</h3>
 <p>Effective management is a continuous cycle: <strong>Mitigation</strong> (reducing risk before an event) &rarr; <strong>Preparedness</strong> (planning for response) &rarr; <strong>Response</strong> (immediate actions during/after event) &rarr; <strong>Recovery</strong> (rebuilding and learning lessons) &rarr; back to improved Mitigation. The cycle should improve with each iteration as lessons are learned. In practice, LICs often become trapped in the response-recovery phase without adequate investment in mitigation and preparedness.</p>
+
+<h3>Park's Hazard Response Model</h3>
+<p>Park's Model (1991) illustrates how a community's <strong>quality of life</strong> changes over time in response to a hazard event. It highlights the phases of response and the variable nature of recovery, particularly between HICs and LICs.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 340" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Park's Hazard Response Model</text>
+
+  <!-- Axes -->
+  <!-- Y axis -->
+  <line x1="70" y1="40" x2="70" y2="280" stroke="#374151" stroke-width="2"/>
+  <!-- X axis -->
+  <line x1="70" y1="280" x2="580" y2="280" stroke="#374151" stroke-width="2"/>
+
+  <!-- Y axis label -->
+  <text x="18" y="170" text-anchor="middle" font-size="10" font-weight="bold" fill="#1a1a2e" transform="rotate(-90,18,170)">Quality of Life / Normality</text>
+
+  <!-- X axis label -->
+  <text x="325" y="310" text-anchor="middle" font-size="10" font-weight="bold" fill="#1a1a2e">Time</text>
+
+  <!-- Y axis ticks + labels -->
+  <line x1="65" y1="75" x2="75" y2="75" stroke="#374151" stroke-width="1.2"/>
+  <text x="60" y="79" text-anchor="end" font-size="9" fill="#64748b">High</text>
+  <line x1="65" y1="160" x2="75" y2="160" stroke="#374151" stroke-width="1.2"/>
+  <text x="60" y="164" text-anchor="end" font-size="9" fill="#64748b">Pre-event</text>
+  <line x1="65" y1="240" x2="75" y2="240" stroke="#374131" stroke-width="1.2"/>
+  <text x="60" y="244" text-anchor="end" font-size="9" fill="#64748b">Low</text>
+
+  <!-- Pre-disaster normality line (horizontal, left of event) -->
+  <line x1="70" y1="160" x2="170" y2="160" stroke="#2563eb" stroke-width="2.5"/>
+
+  <!-- Hazard event vertical marker -->
+  <line x1="170" y1="60" x2="170" y2="280" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="5,3"/>
+  <text x="170" y="57" text-anchor="middle" font-size="9" font-weight="bold" fill="#dc2626">Hazard</text>
+  <text x="170" y="68" text-anchor="middle" font-size="9" font-weight="bold" fill="#dc2626">Event</text>
+
+  <!-- MAIN CURVE (HIC — good recovery, back above pre-event) -->
+  <!-- Drop immediately at event -->
+  <!-- Relief phase: continues dropping -->
+  <!-- Rehabilitation: gradual rise -->
+  <!-- Reconstruction: rises above original -->
+  <path d="M170,160 L185,230 Q205,255 240,250 Q280,245 320,210 Q370,170 430,145 Q490,125 550,118"
+        stroke="#2563eb" stroke-width="3" fill="none"/>
+
+  <!-- DASHED CURVE (LIC — poor recovery, never reaches pre-event level) -->
+  <path d="M170,160 L185,250 Q210,268 250,265 Q300,262 360,245 Q420,228 490,220 Q530,215 550,212"
+        stroke="#d97706" stroke-width="2.2" fill="none" stroke-dasharray="7,4"/>
+
+  <!-- Phase labels on X axis -->
+  <!-- Relief phase bracket: 170–240 -->
+  <line x1="170" y1="282" x2="240" y2="282" stroke="#374151" stroke-width="1.2"/>
+  <line x1="170" y1="280" x2="170" y2="285" stroke="#374151" stroke-width="1.2"/>
+  <line x1="240" y1="280" x2="240" y2="285" stroke="#374151" stroke-width="1.2"/>
+  <text x="205" y="295" text-anchor="middle" font-size="9" font-weight="bold" fill="#374151">Relief</text>
+  <text x="205" y="306" text-anchor="middle" font-size="8" fill="#64748b">(immediate)</text>
+
+  <!-- Rehabilitation: 240–360 -->
+  <line x1="240" y1="282" x2="360" y2="282" stroke="#374151" stroke-width="1.2"/>
+  <line x1="360" y1="280" x2="360" y2="285" stroke="#374151" stroke-width="1.2"/>
+  <text x="300" y="295" text-anchor="middle" font-size="9" font-weight="bold" fill="#374151">Rehabilitation</text>
+  <text x="300" y="306" text-anchor="middle" font-size="8" fill="#64748b">(weeks–months)</text>
+
+  <!-- Reconstruction: 360–550 -->
+  <line x1="360" y1="282" x2="550" y2="282" stroke="#374151" stroke-width="1.2"/>
+  <line x1="550" y1="280" x2="550" y2="285" stroke="#374151" stroke-width="1.2"/>
+  <text x="455" y="295" text-anchor="middle" font-size="9" font-weight="bold" fill="#374151">Reconstruction</text>
+  <text x="455" y="306" text-anchor="middle" font-size="8" fill="#64748b">(months–years)</text>
+
+  <!-- Pre-event level dashed horizontal reference -->
+  <line x1="170" y1="160" x2="580" y2="160" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="575" y="157" text-anchor="end" font-size="8" fill="#64748b">pre-event level</text>
+
+  <!-- Arrow on blue curve at end -->
+  <!-- End annotations -->
+  <text x="555" y="115" font-size="8.5" fill="#2563eb" font-weight="bold">HIC: recovery</text>
+  <text x="555" y="126" font-size="8.5" fill="#2563eb" font-weight="bold">above pre-event</text>
+
+  <text x="555" y="208" font-size="8.5" fill="#d97706" font-weight="bold">LIC: incomplete</text>
+  <text x="555" y="219" font-size="8.5" fill="#d97706" font-weight="bold">recovery</text>
+
+  <!-- Legend -->
+  <line x1="80" y1="50" x2="115" y2="50" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="120" y="54" font-size="9" fill="#2563eb">HIC / good governance</text>
+  <line x1="80" y1="65" x2="115" y2="65" stroke="#d97706" stroke-width="2.2" stroke-dasharray="6,3"/>
+  <text x="120" y="69" font-size="9" fill="#d97706">LIC / poor governance (may not recover to pre-event level)</text>
+
+  <!-- Minimum quality of life label -->
+  <text x="205" y="260" text-anchor="middle" font-size="8" fill="#dc2626">Minimum quality of life</text>
+  <text x="205" y="271" text-anchor="middle" font-size="8" fill="#dc2626">(worst point of crisis)</text>
+</svg>
+</div>
 
 <h3>The Role of Governance and Development</h3>
 <p>The effectiveness of hazard management depends heavily on governance quality and level of development:</p>

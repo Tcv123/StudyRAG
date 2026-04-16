@@ -91,6 +91,78 @@
   <tr><td>Breaking type</td><td>Spilling breakers</td><td>Plunging breakers</td></tr>
 </table>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Constructive vs Destructive Wave Profiles</text>
+  <defs>
+    <marker id="wArr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#2563eb"/></marker>
+    <marker id="wArrRd" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#DC2626"/></marker>
+    <marker id="wArrThin" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#2563eb"/></marker>
+    <marker id="wArrThinRd" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#DC2626"/></marker>
+  </defs>
+
+  <!-- LEFT: Constructive wave -->
+  <text x="145" y="45" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Constructive Wave</text>
+
+  <!-- Sea area -->
+  <rect x="20" y="55" width="220" height="100" fill="#dbeafe" rx="3"/>
+  <!-- Beach slope (gentle) -->
+  <polygon points="20,155 240,155 240,300 20,300" fill="#fef3c7"/>
+  <polygon points="20,155 240,155 240,300 20,300" fill="#d97706" opacity="0.15"/>
+  <!-- Beach line -->
+  <line x1="20" y1="155" x2="240" y2="155" stroke="#d97706" stroke-width="1"/>
+  <!-- Gentle beach slope surface -->
+  <line x1="20" y1="155" x2="220" y2="265" stroke="#92400e" stroke-width="1.5"/>
+  <!-- Berm at top -->
+  <rect x="170" y="148" width="50" height="10" fill="#d97706" rx="2"/>
+  <text x="195" y="144" text-anchor="middle" font-size="8" fill="#92400e">Berm</text>
+
+  <!-- Low flat wave shape -->
+  <path d="M20 120 Q40 105 60 115 Q80 125 100 115 Q120 105 140 115 Q160 125 180 115 Q200 110 220 115" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="120" y="102" text-anchor="middle" font-size="9" fill="#2563eb">Low, flat wave</text>
+
+  <!-- Strong swash arrow (long, diagonal up beach) -->
+  <path d="M30 153 L165 210" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#wArr)"/>
+  <text x="60" y="170" font-size="8" fill="#2563eb" transform="rotate(28,60,170)">Strong swash</text>
+
+  <!-- Thin backwash arrow (short) -->
+  <path d="M165 215 L90 195" fill="none" stroke="#DC2626" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#wArrThinRd)"/>
+  <text x="115" y="225" text-anchor="middle" font-size="7.5" fill="#DC2626">Weak backwash</text>
+
+  <!-- Labels -->
+  <text x="30" y="295" font-size="8" fill="#92400e">Wide, gentle beach profile (1-5°)</text>
+
+  <!-- RIGHT: Destructive wave -->
+  <text x="455" y="45" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Destructive Wave</text>
+
+  <!-- Sea area -->
+  <rect x="340" y="55" width="240" height="100" fill="#dbeafe" rx="3"/>
+  <!-- Beach (steep, narrow) -->
+  <polygon points="340,155 580,155 580,300 340,300" fill="#fef3c7"/>
+  <polygon points="340,155 580,155 580,300 340,300" fill="#d97706" opacity="0.15"/>
+  <line x1="340" y1="155" x2="580" y2="155" stroke="#d97706" stroke-width="1"/>
+  <!-- Steep beach slope -->
+  <line x1="340" y1="155" x2="430" y2="265" stroke="#92400e" stroke-width="1.5"/>
+
+  <!-- Tall steep wave -->
+  <path d="M340 140 Q360 75 380 80 Q400 120 420 125 Q440 120 460 125 Q480 120 500 125" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="420" y="70" text-anchor="middle" font-size="9" fill="#2563eb">Tall, steep wave</text>
+
+  <!-- Thin swash (short) -->
+  <path d="M350 153 L400 195" fill="none" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#wArrThin)"/>
+  <text x="357" y="185" font-size="7.5" fill="#2563eb" transform="rotate(38,357,185)">Weak swash</text>
+
+  <!-- Strong backwash (long) -->
+  <path d="M400 200 L340 165" fill="none" stroke="#DC2626" stroke-width="2.5" marker-end="url(#wArrRd)"/>
+  <text x="390" y="222" text-anchor="middle" font-size="8" fill="#DC2626">Strong backwash</text>
+
+  <text x="350" y="295" font-size="8" fill="#92400e">Steep, narrow profile (10-20°)</text>
+
+  <!-- Dividing line -->
+  <line x1="300" y1="40" x2="300" y2="310" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="6,3"/>
+</svg>
+</div>
+
 <h3>Wave Refraction</h3>
 <p>When waves approach an irregular coastline with headlands and bays, they bend (refract) due to differential friction with the seabed. Waves slow in shallow water near headlands, causing wave fronts to curve and concentrate energy on the headland (explaining why headlands erode). In bays, waves spread out and energy is dissipated over a wider area, encouraging deposition and beach formation. Over geological time, wave refraction tends to straighten irregular coastlines.</p>
 
@@ -219,6 +291,89 @@
 <h3>Cliff Recession and Wave-cut Platforms</h3>
 <p>Waves attack the base of a cliff between the high and low tide marks, eroding a <strong>wave-cut notch</strong> through hydraulic action and abrasion. As the notch deepens, the overhanging cliff becomes unsupported and collapses under gravity. Repeated cycles of notch erosion and cliff collapse cause the cliff to <strong>retreat</strong> landward, leaving a gently sloping (typically 1&ndash;4&deg;) <strong>wave-cut platform</strong> at the base, exposed at low tide. The platform eventually limits further erosion because waves break further from the cliff as the platform widens, dissipating energy. Average cliff recession rates in the UK: chalk cliffs 0.1&ndash;1 m/yr, soft clay cliffs up to 2&ndash;10 m/yr (e.g. Holderness, up to 2 m/yr).</p>
 
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Wave-cut Notch and Platform Formation</text>
+  <defs>
+    <marker id="wcArr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#2563eb"/></marker>
+  </defs>
+
+  <!-- Stage labels -->
+  <text x="90" y="44" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">Stage 1</text>
+  <text x="300" y="44" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">Stage 2</text>
+  <text x="510" y="44" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">Stage 3</text>
+
+  <!-- Stage 1: Initial notch cut -->
+  <!-- Sea -->
+  <rect x="20" y="55" width="140" height="95" fill="#bfdbfe" rx="2"/>
+  <text x="55" y="75" font-size="9" fill="#1e3a5f">Sea</text>
+  <!-- Cliff body -->
+  <rect x="110" y="55" width="50" height="200" fill="#8B4513" rx="2"/>
+  <!-- Notch cut at base -->
+  <polygon points="110,135 125,130 110,125" fill="#f8fafc"/>
+  <text x="75" y="138" text-anchor="middle" font-size="8" fill="#64748b">Wave-cut</text>
+  <text x="75" y="149" text-anchor="middle" font-size="8" fill="#64748b">notch</text>
+  <!-- Wave arrow -->
+  <path d="M55 130 L108 130" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#wcArr)"/>
+  <!-- High/low tide lines -->
+  <line x1="20" y1="110" x2="110" y2="110" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="24" y="107" font-size="7" fill="#1e3a5f">HT</text>
+  <line x1="20" y1="150" x2="110" y2="150" stroke="#64748b" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="24" y="165" font-size="7" fill="#64748b">LT</text>
+  <!-- Ground -->
+  <rect x="20" y="255" width="140" height="10" fill="#8B4513" rx="1"/>
+  <text x="90" y="280" text-anchor="middle" font-size="8" fill="#64748b">Notch cut at base</text>
+
+  <!-- Stage 2: Notch deepens, overhang -->
+  <!-- Sea -->
+  <rect x="220" y="55" width="160" height="95" fill="#bfdbfe" rx="2"/>
+  <text x="255" y="75" font-size="9" fill="#1e3a5f">Sea</text>
+  <!-- Cliff body -->
+  <rect x="325" y="55" width="55" height="200" fill="#8B4513" rx="2"/>
+  <!-- Deep notch + overhang -->
+  <polygon points="325,145 295,137 325,129" fill="#f8fafc"/>
+  <!-- Overhang label -->
+  <text x="270" y="130" text-anchor="middle" font-size="8" fill="#64748b">Deepened</text>
+  <text x="270" y="141" text-anchor="middle" font-size="8" fill="#64748b">notch</text>
+  <text x="360" y="110" text-anchor="middle" font-size="8" fill="#92400e">Overhang</text>
+  <!-- Wave arrow -->
+  <path d="M255 137 L293 137" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#wcArr)"/>
+  <!-- Tide lines -->
+  <line x1="220" y1="110" x2="325" y2="110" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="224" y="107" font-size="7" fill="#1e3a5f">HT</text>
+  <line x1="220" y1="150" x2="325" y2="150" stroke="#64748b" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="224" y="165" font-size="7" fill="#64748b">LT</text>
+  <rect x="220" y="255" width="160" height="10" fill="#8B4513" rx="1"/>
+  <text x="300" y="280" text-anchor="middle" font-size="8" fill="#64748b">Overhang unsupported</text>
+
+  <!-- Stage 3: Cliff collapse, platform exposed -->
+  <!-- Sea -->
+  <rect x="415" y="55" width="165" height="95" fill="#bfdbfe" rx="2"/>
+  <text x="445" y="75" font-size="9" fill="#1e3a5f">Sea</text>
+  <!-- Retreated cliff -->
+  <rect x="535" y="55" width="45" height="200" fill="#8B4513" rx="2"/>
+  <!-- Wave-cut platform (gently sloping) -->
+  <polygon points="415,150 535,148 535,158 415,160" fill="#d97706" opacity="0.7"/>
+  <!-- Talus/debris at cliff base -->
+  <polygon points="535,158 560,158 535,180" fill="#8B4513" opacity="0.5"/>
+  <text x="472" y="170" text-anchor="middle" font-size="8" fill="#92400e">Wave-cut platform (1-4°)</text>
+  <!-- Retreated cliff label -->
+  <text x="555" y="90" text-anchor="middle" font-size="7.5" fill="#fff" transform="rotate(90,555,90)">Cliff face</text>
+  <text x="558" y="175" font-size="7.5" fill="#64748b">Talus</text>
+  <!-- Tide lines -->
+  <line x1="415" y1="110" x2="535" y2="110" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="419" y="107" font-size="7" fill="#1e3a5f">HT</text>
+  <line x1="415" y1="150" x2="535" y2="150" stroke="#64748b" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="419" y="165" font-size="7" fill="#64748b">LT</text>
+  <rect x="415" y="255" width="165" height="10" fill="#8B4513" rx="1"/>
+  <text x="497" y="280" text-anchor="middle" font-size="8" fill="#64748b">Cliff retreats, platform exposed</text>
+
+  <!-- Vertical dividers -->
+  <line x1="210" y1="40" x2="210" y2="270" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,3"/>
+  <line x1="408" y1="40" x2="408" y2="270" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,3"/>
+</svg>
+</div>
+
 <h3>Caves, Arches, Stacks, and Stumps</h3>
 <p>A sequence of erosional landforms developing on headlands:</p>
 <ol>
@@ -227,6 +382,71 @@
   <li><strong>Stack:</strong> Continued erosion and weathering cause the roof of the arch to collapse, leaving an isolated pillar of rock &mdash; a stack (e.g. Old Harry Rocks, Dorset; The Needles, Isle of Wight).</li>
   <li><strong>Stump:</strong> The stack is undercut at the base, eventually collapsing to leave a low stump, often only visible at low tide.</li>
 </ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Headland Erosion Sequence: Cave → Arch → Stack → Stump</text>
+
+  <!-- Stage 1: Cave (plan view) -->
+  <text x="75" y="45" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">1. Cave</text>
+  <!-- Headland shape -->
+  <path d="M30,60 L120,60 L120,170 Q105,180 90,185 Q75,187 60,185 Q45,180 30,170 Z" fill="#8B4513" stroke="#5a2d0c" stroke-width="1.5"/>
+  <!-- Joint/weakness line -->
+  <line x1="75" y1="60" x2="75" y2="145" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <!-- Cave indent -->
+  <path d="M60,145 Q75,160 90,145" fill="#bfdbfe" stroke="#5a2d0c" stroke-width="1"/>
+  <text x="75" y="200" text-anchor="middle" font-size="8" fill="#64748b">Sea</text>
+  <rect x="30" y="195" width="90" height="25" fill="#bfdbfe" rx="2"/>
+  <text x="75" y="209" text-anchor="middle" font-size="8" fill="#1e3a5f">Sea</text>
+  <text x="95" y="110" font-size="7.5" fill="#fbbf24">Joint</text>
+  <text x="75" y="240" text-anchor="middle" font-size="8" fill="#64748b">Wave exploits joint,</text>
+  <text x="75" y="252" text-anchor="middle" font-size="8" fill="#64748b">cave forms</text>
+
+  <!-- Stage 2: Arch -->
+  <text x="225" y="45" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">2. Arch</text>
+  <path d="M180,60 L270,60 L270,170 Q255,180 240,185 Q225,187 210,185 Q195,180 180,170 Z" fill="#8B4513" stroke="#5a2d0c" stroke-width="1.5"/>
+  <!-- Arch opening through headland -->
+  <ellipse cx="225" cy="140" rx="15" ry="22" fill="#bfdbfe" stroke="#5a2d0c" stroke-width="1"/>
+  <rect x="180" y="195" width="90" height="25" fill="#bfdbfe" rx="2"/>
+  <text x="225" y="209" text-anchor="middle" font-size="8" fill="#1e3a5f">Sea</text>
+  <text x="225" y="240" text-anchor="middle" font-size="8" fill="#64748b">Caves on both sides</text>
+  <text x="225" y="252" text-anchor="middle" font-size="8" fill="#64748b">break through: arch</text>
+
+  <!-- Stage 3: Stack -->
+  <text x="375" y="45" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">3. Stack</text>
+  <!-- Remaining headland with gap -->
+  <path d="M330,60 L420,60 L420,170 Q410,178 400,182 Q390,185 375,185 Q355,182 330,170 Z" fill="#8B4513" stroke="#5a2d0c" stroke-width="1.5"/>
+  <!-- Gap showing arch collapse -->
+  <rect x="357" y="90" width="36" height="85" fill="#bfdbfe"/>
+  <!-- Isolated stack -->
+  <rect x="365" y="90" width="20" height="70" fill="#8B4513" stroke="#5a2d0c" stroke-width="1.2" rx="2"/>
+  <rect x="330" y="195" width="90" height="25" fill="#bfdbfe" rx="2"/>
+  <text x="375" y="209" text-anchor="middle" font-size="8" fill="#1e3a5f">Sea</text>
+  <text x="375" y="240" text-anchor="middle" font-size="8" fill="#64748b">Arch roof collapses,</text>
+  <text x="375" y="252" text-anchor="middle" font-size="8" fill="#64748b">isolated stack remains</text>
+
+  <!-- Stage 4: Stump -->
+  <text x="530" y="45" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">4. Stump</text>
+  <!-- Retreated headland -->
+  <path d="M480,60 L575,60 L575,170 Q565,178 555,182 Q540,185 525,185 Q508,182 480,170 Z" fill="#8B4513" stroke="#5a2d0c" stroke-width="1.5"/>
+  <!-- Gap -->
+  <rect x="510" y="90" width="36" height="100" fill="#bfdbfe"/>
+  <!-- Low stump (barely above water) -->
+  <rect x="517" y="148" width="22" height="18" fill="#8B4513" stroke="#5a2d0c" stroke-width="1" rx="2"/>
+  <rect x="480" y="195" width="95" height="25" fill="#bfdbfe" rx="2"/>
+  <text x="527" y="209" text-anchor="middle" font-size="8" fill="#1e3a5f">Sea</text>
+  <text x="527" y="240" text-anchor="middle" font-size="8" fill="#64748b">Stack undercut, collapses</text>
+  <text x="527" y="252" text-anchor="middle" font-size="8" fill="#64748b">to low stump at low tide</text>
+
+  <!-- Dividers -->
+  <line x1="155" y1="38" x2="155" y2="260" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="305" y1="38" x2="305" y2="260" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="460" y1="38" x2="460" y2="260" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Arrow showing sequence -->
+  <text x="300" y="275" text-anchor="middle" font-size="9" fill="#64748b">Direction of progression ───────────────────────────────────────────────────&gt;</text>
+</svg>
+</div>
 
 <h3>Geo and Blowhole</h3>
 <p>A <strong>geo</strong> is a narrow inlet formed when the roof of a cave collapses inland, or when waves erode along a fault line. A <strong>blowhole</strong> forms when a vertical crack above a cave is widened by hydraulic pressure from waves entering the cave below; spray is forced upward through the hole during storms.</p>
@@ -249,6 +469,78 @@ The Dorset coast stretches 155 km from Exmouth to Studland and displays a remark
 
 <h3>Spits</h3>
 <p>A spit is a long, narrow finger of sand or shingle extending from the coastline into the sea, usually at a point where the coast changes direction (e.g. at a river mouth or change in coastline orientation). Formed by longshore drift continuing to transport sediment beyond the change in coastline direction. The tip may curve due to secondary wave action from a different direction. Sheltered water behind the spit often develops into mudflats and salt marsh, created by deposition of fine sediment in calm conditions.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 340" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Spit Formation (Plan View)</text>
+  <defs>
+    <marker id="spArr" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7" fill="#2563eb"/></marker>
+    <marker id="spArrGr" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7" fill="#64748b"/></marker>
+    <marker id="spArrDr" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7" fill="#d97706"/></marker>
+  </defs>
+
+  <!-- Sea (upper area) -->
+  <rect x="20" y="35" width="560" height="280" fill="#bfdbfe" rx="4"/>
+  <text x="100" y="65" font-size="10" fill="#1e3a5f">Sea</text>
+
+  <!-- Main coastline running top-left to middle, then turning right -->
+  <!-- Vertical coast segment -->
+  <rect x="20" y="35" width="160" height="280" fill="#16a34a" opacity="0.8"/>
+  <!-- Horizontal coast segment (coast changes direction) -->
+  <rect x="20" y="230" width="440" height="85" fill="#16a34a" opacity="0.8"/>
+
+  <!-- Land labels -->
+  <text x="90" y="160" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">Land</text>
+  <text x="320" y="295" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">Land</text>
+
+  <!-- Spit (sand/shingle) extending southward beyond bend -->
+  <path d="M160,230 L190,80 Q200,55 215,52 Q225,52 228,68 Q222,90 215,115 L185,230 Z" fill="#d97706" stroke="#92400e" stroke-width="1.5"/>
+
+  <!-- Recurved tip -->
+  <path d="M215,52 Q240,48 255,60 Q265,75 255,90 Q240,100 228,95" fill="#d97706" stroke="#92400e" stroke-width="1.5"/>
+
+  <!-- Salt marsh behind spit -->
+  <path d="M160,95 Q175,90 185,105 L185,230 L160,230 Z" fill="#4ade80" opacity="0.7"/>
+  <text x="170" y="165" text-anchor="middle" font-size="8" fill="#15803d" font-weight="bold" transform="rotate(-90,170,165)">Salt marsh</text>
+
+  <!-- Prevailing wind arrow -->
+  <path d="M50,55 L50,110" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#spArrGr)"/>
+  <text x="55" y="70" font-size="9" fill="#64748b">Prevailing</text>
+  <text x="55" y="82" font-size="9" fill="#64748b">wind</text>
+
+  <!-- Longshore drift (net drift along coast, southward) -->
+  <path d="M120,60 L120,200" fill="none" stroke="#d97706" stroke-width="2.5" marker-end="url(#spArrDr)"/>
+  <text x="80" y="130" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#d97706" transform="rotate(-90,80,130)">Net longshore drift</text>
+
+  <!-- Wave approach arrows (diagonal) -->
+  <path d="M290,55 L210,120" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#spArr)"/>
+  <path d="M380,55 L300,120" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#spArr)"/>
+  <path d="M470,55 L390,120" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#spArr)"/>
+  <text x="410" y="50" font-size="9" fill="#2563eb">Waves (at angle)</text>
+
+  <!-- Labels with leader lines -->
+  <!-- Spit label -->
+  <line x1="200" y1="145" x2="310" y2="130" stroke="#92400e" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="315" y="128" font-size="9" font-weight="bold" fill="#92400e">Spit</text>
+
+  <!-- Recurved tip label -->
+  <line x1="240" y1="60" x2="310" y2="78" stroke="#92400e" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="315" y="77" font-size="9" fill="#92400e">Recurved tip</text>
+  <text x="315" y="89" font-size="8" fill="#64748b">(secondary wave action)</text>
+
+  <!-- Sheltered water label -->
+  <text x="310" y="160" font-size="9" fill="#1e3a5f">Sheltered water</text>
+  <text x="310" y="173" font-size="8" fill="#64748b">(fine sediment deposited)</text>
+
+  <!-- Coast changes direction label -->
+  <line x1="160" y1="230" x2="270" y2="215" stroke="#15803d" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="275" y="214" font-size="9" fill="#15803d">Coast changes direction</text>
+
+  <!-- Spit growth direction -->
+  <path d="M195,190 L193,110" fill="none" stroke="#92400e" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#spArrDr)"/>
+  <text x="205" y="155" font-size="7.5" fill="#92400e" transform="rotate(-85,205,155)">Spit grows</text>
+</svg>
+</div>
 
 <div class="case-study">
 <strong>Case Study: Spurn Head, East Yorkshire</strong><br>

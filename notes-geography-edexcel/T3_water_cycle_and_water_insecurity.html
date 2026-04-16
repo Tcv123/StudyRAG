@@ -73,6 +73,118 @@
   <li><strong>Channel flow</strong> &mdash; water flowing in a defined river channel towards the sea. Discharge (Q) = cross-sectional area (A) &times; velocity (V), measured in cumecs (m&sup3;/s).</li>
 </ul>
 
+<!-- Diagram: Drainage Basin Hydrological Cycle -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 310" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="db-blue" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="db-dk" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#1e3a5f"/>
+    </marker>
+    <marker id="db-br" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#8B4513"/>
+    </marker>
+  </defs>
+  <text x="300" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">The Drainage Basin Hydrological Cycle</text>
+
+  <!-- Sky / Atmosphere -->
+  <rect x="0" y="28" width="600" height="55" fill="#bfdbfe" opacity="0.3" rx="0"/>
+
+  <!-- Cloud -->
+  <ellipse cx="290" cy="50" rx="55" ry="22" fill="#94a3b8" opacity="0.7"/>
+  <ellipse cx="265" cy="56" rx="35" ry="18" fill="#94a3b8" opacity="0.7"/>
+  <ellipse cx="320" cy="56" rx="35" ry="18" fill="#94a3b8" opacity="0.7"/>
+  <text x="290" y="53" text-anchor="middle" font-size="9" fill="#1a1a2e">Cloud</text>
+
+  <!-- Hillside (ground profile) -->
+  <!-- Left hill (watershed) -->
+  <polygon points="0,290 0,150 140,105 280,165 280,290" fill="#8B4513" opacity="0.4"/>
+  <!-- Valley/river base -->
+  <polygon points="280,165 420,105 560,150 560,290 280,290" fill="#8B4513" opacity="0.4"/>
+  <!-- Ground surface lines -->
+  <polyline points="0,150 140,105 280,165 420,105 560,150" stroke="#8B4513" stroke-width="2" fill="none"/>
+
+  <!-- Soil layer -->
+  <polygon points="0,175 140,130 280,190 420,130 560,175 560,220 280,230 0,220" fill="#a16207" opacity="0.3"/>
+  <text x="100" y="185" font-size="8" fill="#92400e">Soil</text>
+  <text x="480" y="155" font-size="8" fill="#92400e">Soil</text>
+
+  <!-- Groundwater / bedrock layer -->
+  <polygon points="0,220 280,230 560,220 560,290 0,290" fill="#64748b" opacity="0.3"/>
+  <text x="290" y="265" text-anchor="middle" font-size="8" fill="#475569">Groundwater / Bedrock</text>
+
+  <!-- River channel at bottom centre -->
+  <ellipse cx="280" cy="192" rx="22" ry="10" fill="#3b82f6" opacity="0.7"/>
+  <text x="280" y="205" text-anchor="middle" font-size="8" fill="#1e3a5f">River</text>
+
+  <!-- Watershed labels (hilltops) -->
+  <text x="140" y="98" text-anchor="middle" font-size="9" font-weight="bold" fill="#1a1a2e">Watershed</text>
+  <text x="420" y="98" text-anchor="middle" font-size="9" font-weight="bold" fill="#1a1a2e">Watershed</text>
+
+  <!-- Tree canopy (left slope) -->
+  <circle cx="90" cy="112" r="18" fill="#16a34a" opacity="0.8"/>
+  <line x1="90" y1="130" x2="90" y2="148" stroke="#8B4513" stroke-width="2"/>
+  <text x="78" y="93" font-size="8" fill="#15803d">Canopy</text>
+
+  <!-- PRECIPITATION arrows -->
+  <!-- From cloud to canopy -->
+  <line x1="265" y1="72" x2="120" y2="98" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#db-blue)" stroke-dasharray="4,2"/>
+  <text x="180" y="82" font-size="9" fill="#3b82f6" transform="rotate(-22,180,82)">Precipitation</text>
+
+  <!-- Precip falling on right slope (no tree) -->
+  <line x1="315" y1="72" x2="450" y2="110" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#db-blue)" stroke-dasharray="4,2"/>
+
+  <!-- INTERCEPTION label at canopy -->
+  <text x="55" y="107" font-size="8" fill="#2563eb">Interception</text>
+
+  <!-- THROUGHFALL: drip from canopy to ground -->
+  <line x1="90" y1="130" x2="90" y2="146" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#db-blue)"/>
+  <text x="94" y="143" font-size="8" fill="#3b82f6">Throughfall</text>
+
+  <!-- STEMFLOW: down trunk -->
+  <line x1="88" y1="136" x2="88" y2="150" stroke="#3b82f6" stroke-width="1" stroke-dasharray="2,1"/>
+  <text x="52" y="136" font-size="8" fill="#3b82f6">Stemflow</text>
+
+  <!-- INFILTRATION: into soil (left slope) -->
+  <line x1="90" y1="154" x2="90" y2="172" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#db-blue)"/>
+  <text x="95" y="166" font-size="8" fill="#3b82f6">Infiltration</text>
+
+  <!-- Surface runoff (left slope → river) -->
+  <path d="M120 155 Q200 175 258 188" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#db-blue)"/>
+  <text x="165" y="168" font-size="8" fill="#3b82f6" transform="rotate(15,165,168)">Surface runoff</text>
+
+  <!-- THROUGHFLOW (lateral in soil) -->
+  <path d="M90 180 Q180 188 258 192" stroke="#8B4513" stroke-width="1.8" fill="none" marker-end="url(#db-br)" stroke-dasharray="4,2"/>
+  <text x="160" y="197" font-size="8" fill="#8B4513" transform="rotate(8,160,197)">Throughflow</text>
+
+  <!-- PERCOLATION (down to groundwater) -->
+  <line x1="90" y1="180" x2="90" y2="222" stroke="#64748b" stroke-width="1.5" marker-end="url(#db-dk)" stroke-dasharray="3,2"/>
+  <text x="95" y="208" font-size="8" fill="#64748b">Percolation</text>
+
+  <!-- GROUNDWATER FLOW (slow, to river) -->
+  <path d="M120 240 Q200 245 258 215" stroke="#64748b" stroke-width="1.5" fill="none" marker-end="url(#db-dk)" stroke-dasharray="3,2"/>
+  <text x="178" y="248" font-size="8" fill="#64748b">Groundwater flow</text>
+
+  <!-- CHANNEL FLOW (river flows right) -->
+  <line x1="302" y1="192" x2="370" y2="192" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#db-blue)"/>
+  <text x="340" y="186" font-size="8" fill="#3b82f6">Channel flow</text>
+
+  <!-- Right slope: Surface runoff -->
+  <path d="M450 140 Q380 168 302 190" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#db-blue)"/>
+  <text x="400" y="160" font-size="8" fill="#3b82f6" transform="rotate(-20,400,160)">Surface runoff</text>
+
+  <!-- Soil moisture store label -->
+  <text x="90" y="193" font-size="8" fill="#92400e">Soil moisture</text>
+  <text x="90" y="203" font-size="8" fill="#92400e">store</text>
+
+  <!-- Evapotranspiration back to cloud -->
+  <line x1="100" y1="94" x2="240" y2="60" stroke="#64748b" stroke-width="1.5" marker-end="url(#db-dk)" stroke-dasharray="3,2"/>
+  <text x="158" y="68" font-size="8" fill="#64748b" transform="rotate(-18,158,68)">Evapotranspiration</text>
+</svg>
+</div>
+
 <h2>3.2 The Drainage Basin as a Local Open System</h2>
 
 <div class="definition">
@@ -104,6 +216,121 @@ P = Q + E &plusmn; &Delta;S
 </div>
 
 <p>A <strong>flashy hydrograph</strong> (steep rising limb, short lag time, high peak) indicates rapid transfer of water to the channel: impermeable surfaces, steep slopes, saturated/clay soils, urban areas, deforested catchments. A <strong>flat hydrograph</strong> (gentle rising limb, long lag time, low peak) indicates slow transfer: permeable geology, gentle slopes, dense vegetation, large basins.</p>
+
+<!-- Diagram: Storm Hydrograph -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="sh-blk" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#1a1a2e"/>
+    </marker>
+    <marker id="sh-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <text x="300" y="19" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Storm Hydrograph</text>
+
+  <!-- Rainfall bar chart area (top strip) -->
+  <rect x="60" y="30" width="510" height="60" fill="#e0f2fe" opacity="0.6" rx="3"/>
+  <text x="30" y="65" text-anchor="middle" font-size="9" fill="#1e3a5f">Rainfall</text>
+  <text x="30" y="77" text-anchor="middle" font-size="9" fill="#1e3a5f">(mm)</text>
+
+  <!-- Rainfall bars (peak around hour 4-5) -->
+  <rect x="100" y="78" width="28" height="8"  fill="#3b82f6" opacity="0.7"/>
+  <rect x="135" y="68" width="28" height="18" fill="#3b82f6" opacity="0.7"/>
+  <rect x="170" y="45" width="28" height="41" fill="#3b82f6" opacity="0.85"/><!-- peak rainfall -->
+  <rect x="205" y="55" width="28" height="31" fill="#3b82f6" opacity="0.75"/>
+  <rect x="240" y="72" width="28" height="14" fill="#3b82f6" opacity="0.6"/>
+  <rect x="275" y="80" width="28" height="6"  fill="#3b82f6" opacity="0.5"/>
+
+  <!-- Peak rainfall marker -->
+  <line x1="184" y1="44" x1="184" y1="44" x2="184" y2="38" stroke="#3b82f6" stroke-width="1"/>
+  <text x="205" y="38" font-size="9" fill="#3b82f6">Peak rainfall</text>
+
+  <!-- Discharge graph area -->
+  <rect x="60" y="98" width="510" height="175" fill="white" opacity="0.6" rx="3"/>
+
+  <!-- Y axis -->
+  <line x1="60" y1="98" x2="60" y2="273" stroke="#1a1a2e" stroke-width="2" marker-end="url(#sh-blk)"/>
+  <!-- X axis -->
+  <line x1="60" y1="273" x2="575" y2="273" stroke="#1a1a2e" stroke-width="2" marker-end="url(#sh-blk)"/>
+
+  <!-- Y axis label -->
+  <text x="15" y="200" text-anchor="middle" font-size="10" fill="#1a1a2e" transform="rotate(-90,15,200)">Discharge (m³/s)</text>
+
+  <!-- X axis label -->
+  <text x="318" y="290" text-anchor="middle" font-size="10" fill="#1a1a2e">Time (hours)</text>
+
+  <!-- X axis ticks and time labels -->
+  <line x1="100" y1="273" x2="100" y2="278" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="100" y="287" text-anchor="middle" font-size="8" fill="#64748b">2</text>
+  <line x1="170" y1="273" x2="170" y2="278" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="170" y="287" text-anchor="middle" font-size="8" fill="#64748b">4</text>
+  <line x1="240" y1="273" x2="240" y2="278" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="240" y="287" text-anchor="middle" font-size="8" fill="#64748b">6</text>
+  <line x1="310" y1="273" x2="310" y2="278" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="310" y="287" text-anchor="middle" font-size="8" fill="#64748b">8</text>
+  <line x1="380" y1="273" x2="380" y2="278" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="380" y="287" text-anchor="middle" font-size="8" fill="#64748b">10</text>
+  <line x1="450" y1="273" x2="450" y2="278" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="450" y="287" text-anchor="middle" font-size="8" fill="#64748b">12</text>
+  <line x1="520" y1="273" x2="520" y2="278" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="520" y="287" text-anchor="middle" font-size="8" fill="#64748b">14</text>
+
+  <!-- Y axis ticks -->
+  <line x1="55" y1="253" x2="60" y2="253" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="52" y="256" text-anchor="end" font-size="8" fill="#64748b">50</text>
+  <line x1="55" y1="220" x2="60" y2="220" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="52" y="223" text-anchor="end" font-size="8" fill="#64748b">150</text>
+  <line x1="55" y1="155" x2="60" y2="155" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="52" y="158" text-anchor="end" font-size="8" fill="#64748b">350</text>
+
+  <!-- BASEFLOW line (horizontal) -->
+  <line x1="60" y1="262" x2="575" y2="262" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="540" y="258" font-size="8" fill="#64748b">Baseflow</text>
+
+  <!-- NORMAL hydrograph curve (rural catchment) -->
+  <!-- Starts at baseflow ~262, rises to peak at ~hr 8 (x=310, y=145), recedes -->
+  <path d="M60,262 C80,262 100,260 130,255 C155,250 180,240 220,210 C255,184 290,148 310,138 C335,148 365,175 400,210 C430,235 470,252 510,260 C540,263 560,263 575,263"
+        stroke="#2563eb" stroke-width="3" fill="none"/>
+
+  <!-- FLASHY hydrograph (urban/dashed) -->
+  <!-- Peak at ~hr 5 (x=240, y=112), steeper rise and fall -->
+  <path d="M60,262 C80,262 100,260 120,255 C145,245 165,215 195,170 C218,137 235,112 245,108 C260,120 280,155 310,195 C340,225 380,250 430,260 C470,264 520,265 575,265"
+        stroke="#dc2626" stroke-width="2" fill="none" stroke-dasharray="6,3"/>
+
+  <!-- PEAK DISCHARGE label (blue curve) -->
+  <circle cx="310" cy="138" r="4" fill="#2563eb"/>
+  <text x="318" y="133" font-size="9" fill="#2563eb">Peak discharge</text>
+
+  <!-- PEAK DISCHARGE (red curve) -->
+  <circle cx="245" cy="108" r="4" fill="#dc2626"/>
+  <text x="252" y="104" font-size="9" fill="#dc2626">Higher peak</text>
+  <text x="252" y="115" font-size="9" fill="#dc2626">(urban/flashy)</text>
+
+  <!-- LAG TIME annotation -->
+  <!-- Peak rainfall at x=184, peak discharge (blue) at x=310 -->
+  <line x1="184" y1="138" x2="310" y2="138" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="184" y1="134" x2="184" y2="142" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="310" y1="134" x2="310" y2="142" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="247" y="130" text-anchor="middle" font-size="9" font-weight="bold" fill="#1a1a2e">Lag time</text>
+
+  <!-- Peak rainfall vertical reference line -->
+  <line x1="184" y1="86" x2="184" y2="273" stroke="#3b82f6" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+
+  <!-- Rising limb label -->
+  <text x="222" y="195" font-size="9" fill="#2563eb" transform="rotate(-55,222,195)">Rising limb</text>
+
+  <!-- Recession limb label -->
+  <text x="398" y="210" font-size="9" fill="#2563eb" transform="rotate(25,398,210)">Recession limb</text>
+
+  <!-- Legend -->
+  <line x1="68" y1="118" x2="95" y2="118" stroke="#2563eb" stroke-width="3"/>
+  <text x="98" y="122" font-size="9" fill="#2563eb">Rural/natural catchment</text>
+  <line x1="68" y1="132" x2="95" y2="132" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="98" y="136" font-size="9" fill="#dc2626">Urban/flashy catchment</text>
+</svg>
+</div>
 
 <div class="case-study">
 <strong>Case Study: Boscastle Flash Flood, Cornwall (16 August 2004)</strong><br>
@@ -169,6 +396,89 @@ P = Q + E &plusmn; &Delta;S
   <tr><td>Demand management</td><td>Metering, pricing, leak repair, efficient irrigation, behaviour change campaigns</td><td>Cost-effective, reduces waste. Water metering reduces use 10&ndash;15%. Drip irrigation uses 30&ndash;50% less water than flood irrigation.</td><td>Requires behaviour change (difficult), pricing may harm the poor, infrastructure investment needed</td></tr>
   <tr><td>Appropriate technology for LICs</td><td>Hand pumps (India Mark II), biosand filters, solar disinfection (SODIS), fog nets, protected springs</td><td>Low-cost, locally maintainable, empowers communities, culturally appropriate</td><td>Limited scale, maintenance challenges, may not meet growing urban demand</td></tr>
 </table>
+
+<!-- Diagram: Physical vs Economic Water Scarcity -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 270" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Physical vs Economic Water Scarcity</text>
+
+  <!-- LEFT BOX: Physical Scarcity -->
+  <rect x="20" y="32" width="262" height="220" rx="8" fill="#fff7ed" stroke="#d97706" stroke-width="2"/>
+  <text x="151" y="52" text-anchor="middle" font-size="12" font-weight="bold" fill="#d97706">Physical Scarcity</text>
+  <text x="151" y="65" text-anchor="middle" font-size="9" fill="#92400e">Water simply does not exist in sufficient quantity</text>
+
+  <!-- Sun symbol -->
+  <circle cx="90" cy="108" r="22" fill="#fbbf24" opacity="0.85"/>
+  <line x1="90" y1="80" x2="90" y2="72" stroke="#fbbf24" stroke-width="2.5"/>
+  <line x1="90" y1="136" x2="90" y2="144" stroke="#fbbf24" stroke-width="2.5"/>
+  <line x1="62" y1="108" x2="54" y2="108" stroke="#fbbf24" stroke-width="2.5"/>
+  <line x1="118" y1="108" x2="126" y2="108" stroke="#fbbf24" stroke-width="2.5"/>
+  <line x1="71" y1="89" x2="65" y2="83" stroke="#fbbf24" stroke-width="2.5"/>
+  <line x1="109" y1="127" x2="115" y2="133" stroke="#fbbf24" stroke-width="2.5"/>
+  <line x1="71" y1="127" x2="65" y2="133" stroke="#fbbf24" stroke-width="2.5"/>
+  <line x1="109" y1="89" x2="115" y2="83" stroke="#fbbf24" stroke-width="2.5"/>
+  <text x="90" y="112" text-anchor="middle" font-size="9" fill="#92400e">Intense</text>
+  <text x="90" y="124" text-anchor="middle" font-size="9" fill="#92400e">heat</text>
+
+  <!-- Dry cracked earth -->
+  <rect x="35" y="140" width="105" height="30" fill="#d97706" opacity="0.25" rx="3"/>
+  <line x1="50" y1="143" x2="58" y2="170" stroke="#92400e" stroke-width="1"/>
+  <line x1="70" y1="141" x2="65" y2="170" stroke="#92400e" stroke-width="1"/>
+  <line x1="90" y1="140" x2="95" y2="170" stroke="#92400e" stroke-width="1"/>
+  <line x1="110" y1="141" x2="105" y2="170" stroke="#92400e" stroke-width="1"/>
+  <line x1="128" y1="143" x2="122" y2="170" stroke="#92400e" stroke-width="1"/>
+  <text x="87" y="183" text-anchor="middle" font-size="9" fill="#92400e">Dry/cracked land</text>
+
+  <!-- Empty reservoir -->
+  <path d="M150 100 L200 100 L210 145 L140 145 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="175" y="125" text-anchor="middle" font-size="8" fill="#94a3b8">Empty</text>
+  <text x="175" y="137" text-anchor="middle" font-size="8" fill="#94a3b8">reservoir</text>
+
+  <!-- Physical scarcity description -->
+  <text x="151" y="200" text-anchor="middle" font-size="9" fill="#92400e" font-weight="bold">Insufficient rainfall / resources</text>
+  <text x="151" y="213" text-anchor="middle" font-size="8.5" fill="#78350f">Middle East, N. Africa,</text>
+  <text x="151" y="225" text-anchor="middle" font-size="8.5" fill="#78350f">Central Asia, parts of India</text>
+  <text x="151" y="237" text-anchor="middle" font-size="8.5" fill="#78350f">Australia, W. USA</text>
+
+  <!-- RIGHT BOX: Economic Scarcity -->
+  <rect x="318" y="32" width="262" height="220" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="449" y="52" text-anchor="middle" font-size="12" font-weight="bold" fill="#16a34a">Economic Scarcity</text>
+  <text x="449" y="65" text-anchor="middle" font-size="9" fill="#15803d">Water exists but cannot be accessed</text>
+
+  <!-- Water source (pond/lake with water) -->
+  <ellipse cx="370" cy="105" rx="35" ry="18" fill="#3b82f6" opacity="0.5"/>
+  <text x="370" y="109" text-anchor="middle" font-size="9" fill="#1e3a5f">Water</text>
+  <text x="370" y="121" text-anchor="middle" font-size="9" fill="#1e3a5f">source</text>
+
+  <!-- Broken/no pipe symbol -->
+  <!-- Pipe coming from water source -->
+  <rect x="395" y="99" width="55" height="12" rx="3" fill="#64748b" opacity="0.5"/>
+  <!-- Break in pipe -->
+  <line x1="432" y1="96" x2="438" y2="114" stroke="#dc2626" stroke-width="2"/>
+  <text x="440" y="96" font-size="8" fill="#dc2626">Broken/</text>
+  <text x="440" y="107" font-size="8" fill="#dc2626">no infra-</text>
+  <text x="440" y="118" font-size="8" fill="#dc2626">structure</text>
+  <!-- Water dripping (wasted) -->
+  <circle cx="430" cy="118" r="3" fill="#3b82f6" opacity="0.6"/>
+  <circle cx="425" cy="126" r="2" fill="#3b82f6" opacity="0.5"/>
+
+  <!-- No money / coin symbol -->
+  <circle cx="370" cy="155" r="18" fill="#fbbf24" opacity="0.3" stroke="#d97706" stroke-width="1.5"/>
+  <text x="370" y="151" text-anchor="middle" font-size="14" fill="#d97706">$</text>
+  <line x1="355" y1="140" x2="385" y2="170" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="395" y="152" font-size="8" fill="#dc2626">Lack of</text>
+  <text x="395" y="163" font-size="8" fill="#dc2626">investment</text>
+
+  <!-- Economic scarcity description -->
+  <text x="449" y="200" text-anchor="middle" font-size="9" fill="#15803d" font-weight="bold">Water exists but lacks access/</text>
+  <text x="449" y="212" text-anchor="middle" font-size="9" fill="#15803d" font-weight="bold">infrastructure/governance</text>
+  <text x="449" y="225" text-anchor="middle" font-size="8.5" fill="#166534">Sub-Saharan Africa,</text>
+  <text x="449" y="237" text-anchor="middle" font-size="8.5" fill="#166534">parts of S. Asia, C. America</text>
+
+  <!-- VS divider -->
+  <text x="300" y="148" text-anchor="middle" font-size="14" font-weight="bold" fill="#64748b">vs</text>
+</svg>
+</div>
 
 <div class="case-study">
 <strong>Case Study: The Aral Sea &mdash; Human-Caused Water Disaster</strong><br>

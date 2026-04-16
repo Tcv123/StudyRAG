@@ -85,8 +85,152 @@
 
 <p><strong>Seasonal beach profiles:</strong> In summer, calmer conditions produce constructive waves that build wide, gently-sloping beaches with prominent berms. In winter, storm waves (destructive) strip material from the upper beach and deposit it offshore as breakpoint bars. The beach steepens and narrows. This seasonal cycle demonstrates dynamic equilibrium.</p>
 
+<!-- Diagram: Constructive vs Destructive Waves -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Constructive vs Destructive Waves</text>
+
+  <!-- LEFT: Constructive Wave -->
+  <text x="145" y="44" text-anchor="middle" font-size="12" font-weight="bold" fill="#2563eb">Constructive Wave</text>
+  <!-- Sea (left) -->
+  <rect x="20" y="50" width="110" height="60" fill="#bfdbfe" rx="3"/>
+  <text x="75" y="68" text-anchor="middle" font-size="9" fill="#1e3a5f">Sea</text>
+  <!-- Wave profile: low, long, gently sloping -->
+  <path d="M20 110 Q75 90 130 110" stroke="#3b82f6" stroke-width="2.5" fill="none"/>
+  <text x="75" y="88" text-anchor="middle" font-size="9" fill="#1e3a5f">Low height</text>
+  <!-- Beach (gentle slope, sandy) -->
+  <polygon points="130,110 270,110 270,180 130,180" fill="#d97706" opacity="0.5"/>
+  <line x1="130" y1="110" x2="270" y2="180" stroke="#8B4513" stroke-width="2"/>
+  <text x="205" y="155" text-anchor="middle" font-size="9" fill="#1e3a5f">Gentle beach</text>
+  <!-- Swash arrow (strong, up beach) -->
+  <line x1="140" y1="120" x2="225" y2="158" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="162" y="127" font-size="9" fill="#2563eb" transform="rotate(33,162,127)">Strong swash</text>
+  <!-- Backwash arrow (thin, short) -->
+  <line x1="210" y1="162" x2="155" y2="133" stroke="#64748b" stroke-width="1.2" marker-end="url(#arrow-grey)"/>
+  <text x="165" y="152" font-size="9" fill="#64748b" transform="rotate(33,165,152)">Weak backwash</text>
+  <!-- Water table line -->
+  <line x1="20" y1="110" x2="130" y2="110" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- DIVIDER -->
+  <line x1="300" y1="35" x2="300" y2="250" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- RIGHT: Destructive Wave -->
+  <text x="455" y="44" text-anchor="middle" font-size="12" font-weight="bold" fill="#dc2626">Destructive Wave</text>
+  <!-- Sea (right) -->
+  <rect x="320" y="50" width="110" height="80" fill="#bfdbfe" rx="3"/>
+  <text x="375" y="68" text-anchor="middle" font-size="9" fill="#1e3a5f">Sea</text>
+  <!-- Wave profile: tall, steep -->
+  <path d="M320 130 Q355 80 390 130" stroke="#3b82f6" stroke-width="2.5" fill="none"/>
+  <text x="355" y="76" text-anchor="middle" font-size="9" fill="#1e3a5f">High (steep)</text>
+  <!-- Steep beach -->
+  <polygon points="390,130 490,130 490,210 390,210" fill="#d97706" opacity="0.5"/>
+  <line x1="390" y1="130" x2="490" y2="210" stroke="#8B4513" stroke-width="2"/>
+  <text x="450" y="185" text-anchor="middle" font-size="9" fill="#1e3a5f">Steep beach</text>
+  <!-- Swash arrow (short, weak) -->
+  <line x1="398" y1="140" x2="425" y2="162" stroke="#2563eb" stroke-width="1.2" marker-end="url(#arrow-blue)"/>
+  <text x="400" y="138" font-size="9" fill="#2563eb">Weak swash</text>
+  <!-- Backwash arrow (strong, long) -->
+  <line x1="440" y1="172" x2="400" y2="145" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="413" y="174" font-size="9" fill="#dc2626" transform="rotate(38,413,174)">Strong backwash</text>
+
+  <!-- Wave height label with brace -->
+  <line x1="365" y1="82" x2="365" y2="130" stroke="#64748b" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="327" y="108" font-size="9" fill="#64748b">Wave</text>
+  <text x="327" y="119" font-size="9" fill="#64748b">height</text>
+
+  <!-- Legend / summary labels -->
+  <text x="145" y="200" text-anchor="middle" font-size="10" fill="#2563eb">Net: deposition</text>
+  <text x="145" y="214" text-anchor="middle" font-size="10" fill="#2563eb">Builds beach</text>
+  <text x="455" y="200" text-anchor="middle" font-size="10" fill="#dc2626">Net: erosion</text>
+  <text x="455" y="214" text-anchor="middle" font-size="10" fill="#dc2626">Removes sediment</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-grey" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+</svg>
+</div>
+
 <h3>Wave Refraction</h3>
 <p>When waves approach an irregular coastline, they slow in shallow water near headlands but continue at speed in deeper water in bays. This causes wave fronts to curve (refract), concentrating energy on headlands (causing erosion) and dispersing energy in bays (encouraging deposition). Over geological time, wave refraction tends to straighten coastlines &mdash; but never completely, because the geology that creates differential resistance persists.</p>
+
+<!-- Diagram: Wave Refraction Around a Headland -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow-blk" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#1a1a2e"/>
+    </marker>
+    <marker id="arrow-red2" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-grn" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+  <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Wave Refraction Around a Headland (Plan View)</text>
+
+  <!-- Sea background -->
+  <rect x="0" y="30" width="600" height="270" fill="#bfdbfe" rx="0"/>
+
+  <!-- Land: coastline with headland protruding downward and two bays -->
+  <!-- Left bay -->
+  <path d="M0 160 Q60 200 120 175 Q150 165 180 155 L180 300 L0 300 Z" fill="#16a34a"/>
+  <!-- Right bay -->
+  <path d="M600 160 Q540 200 480 175 Q450 165 420 155 L420 300 L600 300 Z" fill="#16a34a"/>
+  <!-- Headland (centre) -->
+  <path d="M180 155 Q210 130 260 100 Q300 80 340 100 Q390 130 420 155 L420 300 L180 300 Z" fill="#16a34a"/>
+
+  <!-- Coastline line -->
+  <path d="M0 160 Q60 200 120 175 Q150 165 180 155 Q210 130 260 100 Q300 80 340 100 Q390 130 420 155 Q450 165 480 175 Q540 200 600 160" stroke="#8B4513" stroke-width="2" fill="none"/>
+
+  <!-- Wave crests (refracted) - 3 sets, bending around headland -->
+  <!-- Crest 1 (furthest out) -->
+  <path d="M10 75 Q80 72 150 72 Q220 72 260 55 Q300 42 340 55 Q380 72 450 72 Q520 72 590 75" stroke="#2563eb" stroke-width="2" fill="none" opacity="0.8"/>
+  <!-- Crest 2 -->
+  <path d="M10 100 Q70 98 130 100 Q200 102 250 82 Q300 65 350 82 Q400 100 470 100 Q530 98 590 100" stroke="#2563eb" stroke-width="2.5" fill="none" opacity="0.85"/>
+  <!-- Crest 3 (closest to shore) -->
+  <path d="M10 130 Q55 130 100 135 Q150 142 200 130 Q240 118 260 110 Q300 95 340 110 Q360 118 400 130 Q450 142 500 135 Q545 130 590 130" stroke="#2563eb" stroke-width="3" fill="none" opacity="0.9"/>
+
+  <!-- Wave direction arrows in open sea (parallel) -->
+  <line x1="300" y1="42" x2="300" y2="62" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrow-blk)"/>
+  <line x1="150" y1="55" x2="150" y2="75" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrow-blk)"/>
+  <line x1="450" y1="55" x2="450" y2="75" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrow-blk)"/>
+
+  <!-- Energy convergence arrow on headland -->
+  <line x1="300" y1="62" x2="300" y2="88" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red2)"/>
+  <text x="308" y="75" font-size="9" fill="#dc2626" font-weight="bold">Energy</text>
+  <text x="308" y="86" font-size="9" fill="#dc2626" font-weight="bold">convergence</text>
+
+  <!-- Labels -->
+  <text x="300" y="115" text-anchor="middle" font-size="10" font-weight="bold" fill="#1a1a2e">HEADLAND</text>
+  <text x="300" y="127" text-anchor="middle" font-size="9" fill="#dc2626">Erosion concentrated</text>
+
+  <!-- Bay labels -->
+  <text x="80" y="210" text-anchor="middle" font-size="10" font-weight="bold" fill="#1a1a2e">BAY</text>
+  <text x="80" y="222" text-anchor="middle" font-size="9" fill="#16a34a">Deposition</text>
+  <text x="80" y="233" text-anchor="middle" font-size="9" fill="#16a34a">(energy dispersed)</text>
+  <text x="520" y="210" text-anchor="middle" font-size="10" font-weight="bold" fill="#1a1a2e">BAY</text>
+  <text x="520" y="222" text-anchor="middle" font-size="9" fill="#16a34a">Deposition</text>
+  <text x="520" y="233" text-anchor="middle" font-size="9" fill="#16a34a">(energy dispersed)</text>
+
+  <!-- Refraction label arrows (wave crest bends) -->
+  <text x="168" y="115" font-size="9" fill="#2563eb" transform="rotate(-25,168,115)">Refraction</text>
+  <text x="398" y="105" font-size="9" fill="#2563eb" transform="rotate(25,398,105)">Refraction</text>
+
+  <!-- Wave crests label -->
+  <text x="22" y="78" font-size="9" fill="#2563eb">Wave</text>
+  <text x="22" y="88" font-size="9" fill="#2563eb">crests</text>
+</svg>
+</div>
 
 <h2>2.3 Coastal Processes</h2>
 
@@ -121,6 +265,80 @@
 <h3>Sediment Transport: Longshore Drift</h3>
 <p>Longshore drift is the dominant process moving sediment along the coast. Waves approach at an angle (determined by the prevailing wind direction), carrying sediment diagonally up the beach with the swash. Backwash pulls sediment straight back down under gravity. The net result is a zig-zag movement along the shore. In southern England, the prevailing SW winds drive drift west to east along the south coast and south to north up the east coast. Evidence of longshore drift: sediment accumulation on the updrift side of groynes; formation of spits at changes in coastline direction; progressive decrease in sediment size in the drift direction (attrition).</p>
 
+<!-- Diagram: Longshore Drift -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 290" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ld-blue" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="ld-grey" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="ld-orange" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#d97706"/>
+    </marker>
+    <marker id="ld-wind" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#1e3a5f"/>
+    </marker>
+  </defs>
+  <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Longshore Drift (Plan View)</text>
+
+  <!-- Sea background -->
+  <rect x="0" y="35" width="600" height="120" fill="#bfdbfe" rx="0"/>
+  <!-- Beach -->
+  <rect x="0" y="155" width="600" height="135" fill="#d97706" opacity="0.35"/>
+  <!-- Coastline boundary -->
+  <line x1="0" y1="155" x2="600" y2="155" stroke="#8B4513" stroke-width="2.5"/>
+  <text x="10" y="148" font-size="10" fill="#1e3a5f">Sea</text>
+  <text x="10" y="172" font-size="10" fill="#8B4513">Beach</text>
+
+  <!-- Prevailing wind arrow -->
+  <line x1="30" y1="55" x2="130" y2="55" stroke="#1e3a5f" stroke-width="2.5" marker-end="url(#ld-wind)"/>
+  <text x="30" y="47" font-size="10" font-weight="bold" fill="#1e3a5f">Prevailing wind</text>
+
+  <!-- Groyne (vertical bar across beach and into sea) -->
+  <rect x="380" y="120" width="12" height="120" fill="#475569" rx="2"/>
+  <text x="400" y="140" font-size="10" font-weight="bold" fill="#475569">Groyne</text>
+  <!-- Sediment accumulation updrift (left) side of groyne -->
+  <ellipse cx="330" cy="175" rx="45" ry="12" fill="#d97706" opacity="0.7"/>
+  <text x="308" y="196" font-size="9" fill="#d97706">Sediment</text>
+  <text x="308" y="207" font-size="9" fill="#d97706">accumulates</text>
+  <text x="308" y="218" font-size="9" fill="#d97706">(updrift)</text>
+  <!-- Downdrift side: less sediment -->
+  <text x="400" y="196" font-size="9" fill="#64748b">Sediment</text>
+  <text x="400" y="207" font-size="9" fill="#64748b">starved</text>
+  <text x="400" y="218" font-size="9" fill="#64748b">(downdrift)</text>
+
+  <!-- Zig-zag sediment path (3 cycles) -->
+  <!-- Each cycle: diagonal swash up + vertical backwash down -->
+  <!-- Particle 1 -->
+  <line x1="60" y1="155" x2="110" y2="188" stroke="#3b82f6" stroke-width="2" marker-end="url(#ld-blue)" stroke-dasharray="5,2"/>
+  <line x1="110" y1="188" x2="110" y2="155" stroke="#64748b" stroke-width="2" marker-end="url(#ld-grey)" stroke-dasharray="4,2"/>
+  <!-- Particle 2 -->
+  <line x1="110" y1="155" x2="165" y2="190" stroke="#3b82f6" stroke-width="2" marker-end="url(#ld-blue)" stroke-dasharray="5,2"/>
+  <line x1="165" y1="190" x2="165" y2="155" stroke="#64748b" stroke-width="2" marker-end="url(#ld-grey)" stroke-dasharray="4,2"/>
+  <!-- Particle 3 -->
+  <line x1="165" y1="155" x2="220" y2="192" stroke="#3b82f6" stroke-width="2" marker-end="url(#ld-blue)" stroke-dasharray="5,2"/>
+  <line x1="220" y1="192" x2="220" y2="155" stroke="#64748b" stroke-width="2" marker-end="url(#ld-grey)" stroke-dasharray="4,2"/>
+  <!-- Particle 4 -->
+  <line x1="220" y1="155" x2="275" y2="193" stroke="#3b82f6" stroke-width="2" marker-end="url(#ld-blue)" stroke-dasharray="5,2"/>
+  <line x1="275" y1="193" x2="275" y2="155" stroke="#64748b" stroke-width="2" marker-end="url(#ld-grey)" stroke-dasharray="4,2"/>
+
+  <!-- Swash direction label -->
+  <line x1="85" y1="168" x2="118" y2="182" stroke="#3b82f6" stroke-width="1"/>
+  <text x="62" y="185" font-size="9" fill="#3b82f6">Swash</text>
+  <text x="62" y="196" font-size="9" fill="#3b82f6">(diagonal)</text>
+  <!-- Backwash label -->
+  <text x="120" y="175" font-size="9" fill="#64748b">Backwash</text>
+  <text x="120" y="186" font-size="9" fill="#64748b">(down slope)</text>
+
+  <!-- Net drift arrow -->
+  <line x1="60" y1="250" x2="370" y2="250" stroke="#d97706" stroke-width="3" marker-end="url(#ld-orange)"/>
+  <text x="180" y="266" text-anchor="middle" font-size="11" font-weight="bold" fill="#d97706">Net sediment drift direction</text>
+</svg>
+</div>
+
 <p><strong>Other transport mechanisms:</strong> traction (large particles rolled along seabed), saltation (pebbles bounced), suspension (fine silt/clay held in water column), solution (dissolved minerals).</p>
 
 <h2>2.4 Erosional Landforms</h2>
@@ -131,6 +349,67 @@
 <h3>Cliff Recession and Wave-cut Platforms</h3>
 <p>Waves erode a <strong>wave-cut notch</strong> at the cliff base between high and low tide marks. As the notch deepens, the unsupported cliff above collapses. Repeated cycles cause the cliff to <strong>retreat landward</strong>, leaving a gently sloping (1&ndash;4&deg;) <strong>wave-cut platform</strong> exposed at low tide. Platform width eventually limits further erosion by dissipating wave energy before it reaches the cliff. UK chalk cliff recession rates: Beachy Head ~0.5 m/yr; Holderness boulder clay cliffs: ~1.8 m/yr (up to 10 m in single storm events).</p>
 
+<!-- Diagram: Cliff Recession and Wave-cut Platform Formation -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 270" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="cp-blk" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <text x="300" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Cliff Recession &amp; Wave-cut Platform Formation (Cross-section)</text>
+
+  <!-- Sea water -->
+  <rect x="0" y="130" width="600" height="70" fill="#3b82f6" opacity="0.25"/>
+  <!-- Water surface line -->
+  <line x1="0" y1="130" x2="600" y2="130" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- High tide mark -->
+  <line x1="0" y1="115" x2="600" y2="115" stroke="#3b82f6" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+  <text x="5" y="112" font-size="9" fill="#3b82f6">High tide</text>
+  <!-- Low tide mark -->
+  <line x1="0" y1="148" x2="600" y2="148" stroke="#3b82f6" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+  <text x="5" y="162" font-size="9" fill="#3b82f6">Low tide</text>
+
+  <!-- Wave-cut platform (gently sloping, brownish rock) -->
+  <polygon points="0,200 380,200 380,155 0,148" fill="#8B4513" opacity="0.55"/>
+  <!-- Platform surface line -->
+  <line x1="0" y1="200" x2="380" y2="200" stroke="#8B4513" stroke-width="1.5"/>
+  <line x1="0" y1="148" x2="380" y2="155" stroke="#8B4513" stroke-width="1.5"/>
+  <text x="170" y="182" text-anchor="middle" font-size="10" font-weight="bold" fill="#1a1a2e">Wave-cut Platform</text>
+  <text x="170" y="194" text-anchor="middle" font-size="9" fill="#64748b">(gently sloping, exposed at low tide)</text>
+
+  <!-- Current cliff face (most retreated) -->
+  <polygon points="380,50 420,50 420,200 380,200" fill="#8B4513" opacity="0.75"/>
+  <line x1="380" y1="50" x2="380" y2="200" stroke="#5e3a1a" stroke-width="2"/>
+  <text x="430" y="125" font-size="10" font-weight="bold" fill="#1a1a2e">Cliff face</text>
+
+  <!-- Wave-cut notch at base of current cliff -->
+  <path d="M380 130 Q355 130 355 148 Q355 162 380 162" stroke="#3b82f6" stroke-width="2" fill="#3b82f6" fill-opacity="0.3"/>
+  <text x="310" y="150" font-size="9" fill="#2563eb">Wave-cut</text>
+  <text x="310" y="161" font-size="9" fill="#2563eb">notch</text>
+  <line x1="353" y1="148" x2="340" y2="148" stroke="#2563eb" stroke-width="1" marker-end="url(#cp-blk)"/>
+
+  <!-- Former cliff positions (ghost lines, showing retreat) -->
+  <line x1="460" y1="50" x2="460" y2="200" stroke="#a16207" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>
+  <text x="462" y="75" font-size="9" fill="#a16207">Former cliff</text>
+  <text x="462" y="86" font-size="9" fill="#a16207">positions</text>
+  <line x1="530" y1="50" x2="530" y2="200" stroke="#a16207" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.5"/>
+
+  <!-- Retreat arrow -->
+  <line x1="530" y1="65" x2="390" y2="65" stroke="#dc2626" stroke-width="2" marker-end="url(#cp-blk)"/>
+  <text x="455" y="60" text-anchor="middle" font-size="9" fill="#dc2626">Cliff retreats</text>
+  <text x="455" y="72" text-anchor="middle" font-size="9" fill="#dc2626">landward</text>
+
+  <!-- Talus / debris at cliff base -->
+  <polygon points="380,200 420,175 420,200" fill="#64748b" opacity="0.6"/>
+  <text x="395" y="220" font-size="9" fill="#64748b">Talus/debris</text>
+
+  <!-- Stage labels -->
+  <text x="300" y="248" text-anchor="middle" font-size="10" fill="#64748b">Repeated notch → collapse → retreat creates the platform over time</text>
+</svg>
+</div>
+
 <h3>Caves, Arches, Stacks, and Stumps</h3>
 <p>A sequence of erosional features developing on headlands:</p>
 <ol>
@@ -139,6 +418,85 @@
   <li><strong>Stack</strong> &mdash; the arch roof collapses, leaving an isolated pillar of rock. Examples: Old Harry Rocks (Dorset chalk), The Needles (Isle of Wight chalk), Orkney sea stacks (Old Man of Hoy &mdash; sandstone, 137 m tall).</li>
   <li><strong>Stump</strong> &mdash; the stack is undercut and collapsed, leaving a low remnant often only visible at low tide.</li>
 </ol>
+
+<!-- Diagram: Cave to Arch to Stack to Stump -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="cass-blk" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <text x="300" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Cave → Arch → Stack → Stump Sequence</text>
+
+  <!-- Sea -->
+  <rect x="0" y="168" width="600" height="55" fill="#3b82f6" opacity="0.2"/>
+  <line x1="0" y1="168" x2="600" y2="168" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- === STAGE 1: CAVE === -->
+  <!-- Headland block -->
+  <rect x="18" y="60" width="110" height="108" rx="3" fill="#8B4513" opacity="0.75"/>
+  <!-- Cave opening (joint exploited) -->
+  <path d="M18 130 Q40 115 40 148 Q40 165 18 168" fill="#1a1a2e" opacity="0.6"/>
+  <!-- Joint line (weakness) -->
+  <line x1="40" y1="60" x2="40" y2="130" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="41" y="85" font-size="8" fill="#dc2626">joint/</text>
+  <text x="41" y="95" font-size="8" fill="#dc2626">weakness</text>
+  <!-- Label -->
+  <text x="73" y="48" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a1a2e">1. Cave</text>
+  <text x="73" y="196" text-anchor="middle" font-size="9" fill="#64748b">Cave eroded</text>
+  <text x="73" y="207" text-anchor="middle" font-size="9" fill="#64748b">into headland</text>
+
+  <!-- arrow 1→2 -->
+  <line x1="140" y1="110" x2="162" y2="110" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#cass-blk)"/>
+
+  <!-- === STAGE 2: ARCH === -->
+  <!-- Two headland sides with arch gap -->
+  <rect x="165" y="60" width="40" height="108" rx="3" fill="#8B4513" opacity="0.75"/>
+  <rect x="250" y="60" width="40" height="108" rx="3" fill="#8B4513" opacity="0.75"/>
+  <!-- Arch roof -->
+  <path d="M165 60 Q215 30 290 60" stroke="#8B4513" stroke-width="0" fill="#8B4513" opacity="0.75"/>
+  <path d="M168 60 Q215 38 287 60 L287 78 Q215 52 168 78 Z" fill="#8B4513" opacity="0.75"/>
+  <!-- Arch opening -->
+  <rect x="205" y="78" width="80" height="90" rx="2" fill="#3b82f6" opacity="0.15"/>
+  <!-- Two cave mouths formed -->
+  <text x="217" y="48" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a1a2e">2. Arch</text>
+  <text x="217" y="196" text-anchor="middle" font-size="9" fill="#64748b">Caves break</text>
+  <text x="217" y="207" text-anchor="middle" font-size="9" fill="#64748b">through headland</text>
+
+  <!-- arrow 2→3 -->
+  <line x1="296" y1="110" x2="318" y2="110" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#cass-blk)"/>
+
+  <!-- === STAGE 3: STACK === -->
+  <!-- Stack: isolated pillar -->
+  <rect x="340" y="80" width="38" height="88" rx="4" fill="#8B4513" opacity="0.75"/>
+  <!-- Collapsed arch rubble hint (small rocks on platform) -->
+  <polygon points="320,168 338,160 360,168" fill="#8B4513" opacity="0.4"/>
+  <polygon points="378,168 395,162 410,168" fill="#8B4513" opacity="0.4"/>
+  <text x="359" y="48" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a1a2e">3. Stack</text>
+  <text x="359" y="78" text-anchor="middle" font-size="9" fill="#64748b">Arch roof</text>
+  <text x="359" y="89" text-anchor="middle" font-size="9" fill="#dc2626">collapses</text>
+  <text x="359" y="196" text-anchor="middle" font-size="9" fill="#64748b">Isolated rock</text>
+  <text x="359" y="207" text-anchor="middle" font-size="9" fill="#64748b">pillar remains</text>
+
+  <!-- arrow 3→4 -->
+  <line x1="385" y1="110" x2="407" y2="110" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#cass-blk)"/>
+
+  <!-- === STAGE 4: STUMP === -->
+  <!-- Stump: low, partially submerged -->
+  <rect x="430" y="148" width="50" height="20" rx="3" fill="#8B4513" opacity="0.75"/>
+  <!-- Waterline over it -->
+  <rect x="430" y="158" width="50" height="10" rx="0" fill="#3b82f6" opacity="0.3"/>
+  <text x="455" y="48" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a1a2e">4. Stump</text>
+  <text x="455" y="140" text-anchor="middle" font-size="9" fill="#64748b">Stack</text>
+  <text x="455" y="151" text-anchor="middle" font-size="9" fill="#dc2626">eroded/collapses</text>
+  <text x="455" y="196" text-anchor="middle" font-size="9" fill="#64748b">Low remnant,</text>
+  <text x="455" y="207" text-anchor="middle" font-size="9" fill="#64748b">visible at low tide</text>
+
+  <!-- Examples label -->
+  <text x="300" y="238" text-anchor="middle" font-size="9" fill="#64748b">Examples: Old Harry Rocks (Dorset), The Needles (IoW), Old Man of Hoy (Orkney)</text>
+</svg>
+</div>
 
 <h2>2.5 Depositional Landforms</h2>
 
@@ -152,6 +510,78 @@
   <li><strong>Tombolo:</strong> a bar connecting an island to the mainland. E.g. Chesil Beach (28 km, connecting Isle of Portland to Dorset), St Ninian's Tombolo (Shetland).</li>
 </ul>
 
+<!-- Diagram: Spit Formation -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="sp-orange" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#d97706"/>
+    </marker>
+    <marker id="sp-blk" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#1a1a2e"/>
+    </marker>
+    <marker id="sp-blue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#3b82f6"/>
+    </marker>
+  </defs>
+  <text x="300" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Spit Formation (Plan View)</text>
+
+  <!-- Sea background -->
+  <rect x="0" y="30" width="600" height="270" fill="#bfdbfe" opacity="0.55"/>
+
+  <!-- Coastline (vertical, then turns right at river mouth) -->
+  <!-- Left coast going down vertically -->
+  <polygon points="0,35 120,35 120,180 0,180" fill="#16a34a" opacity="0.85"/>
+  <!-- Bottom coast going horizontally right -->
+  <polygon points="0,180 600,180 600,300 0,300" fill="#16a34a" opacity="0.85"/>
+  <!-- Coast lines -->
+  <line x1="120" y1="35" x2="120" y2="180" stroke="#8B4513" stroke-width="2.5"/>
+  <line x1="120" y1="180" x2="600" y2="180" stroke="#8B4513" stroke-width="2.5"/>
+
+  <!-- River/estuary mouth -->
+  <rect x="110" y="155" width="90" height="40" fill="#3b82f6" opacity="0.4"/>
+  <text x="155" y="178" text-anchor="middle" font-size="9" fill="#1e3a5f">Estuary/</text>
+  <text x="155" y="189" text-anchor="middle" font-size="9" fill="#1e3a5f">river mouth</text>
+  <!-- River flow arrow -->
+  <line x1="155" y1="140" x2="155" y2="162" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#sp-blue)"/>
+
+  <!-- Spit (extending from corner of coastline change into sea) -->
+  <!-- Spit body: elongated sandy strip -->
+  <polygon points="120,155 120,145 330,125 345,138 200,160" fill="#d97706" opacity="0.75"/>
+  <!-- Recurved tip -->
+  <path d="M330 125 Q370 110 375 140 Q370 160 345 155" fill="#d97706" opacity="0.7" stroke="#d97706" stroke-width="1"/>
+  <!-- Spit outline -->
+  <path d="M120 145 Q230 128 330 125 Q370 110 375 140 Q370 162 345 155 Q230 158 120 160 Z" stroke="#a16207" stroke-width="1.5" fill="none"/>
+
+  <!-- Labels -->
+  <text x="220" y="137" text-anchor="middle" font-size="10" font-weight="bold" fill="#92400e">Spit</text>
+  <text x="370" y="118" font-size="9" fill="#92400e">Recurved</text>
+  <text x="370" y="129" font-size="9" fill="#92400e">tip</text>
+
+  <!-- Salt marsh behind spit -->
+  <ellipse cx="220" cy="163" rx="80" ry="12" fill="#16a34a" opacity="0.5"/>
+  <text x="220" y="167" text-anchor="middle" font-size="9" fill="#15803d">Salt marsh</text>
+  <text x="220" y="177" text-anchor="middle" font-size="9" fill="#15803d">(sheltered water)</text>
+
+  <!-- Longshore drift arrow -->
+  <line x1="60" y1="90" x2="60" y2="158" stroke="#d97706" stroke-width="3" marker-end="url(#sp-orange)"/>
+  <text x="65" y="98" font-size="10" font-weight="bold" fill="#d97706">Longshore</text>
+  <text x="65" y="110" font-size="10" font-weight="bold" fill="#d97706">drift</text>
+
+  <!-- Wave refraction arrow at spit tip -->
+  <path d="M420 75 Q390 95 375 130" stroke="#3b82f6" stroke-width="1.5" fill="none" marker-end="url(#sp-blue)" stroke-dasharray="4,2"/>
+  <text x="420" y="72" font-size="9" fill="#3b82f6">Wave refraction</text>
+  <text x="420" y="83" font-size="9" fill="#3b82f6">curves tip</text>
+
+  <!-- Coastline label -->
+  <text x="55" y="50" font-size="9" font-weight="bold" fill="#15803d">Coastline</text>
+  <text x="350" y="200" font-size="9" font-weight="bold" fill="#15803d">Coastline</text>
+
+  <!-- Prevailing wind / drift direction note -->
+  <text x="300" y="280" text-anchor="middle" font-size="10" fill="#64748b">Drift continues beyond change in coast direction, building spit into open water</text>
+</svg>
+</div>
+
 <h3>Sand Dunes</h3>
 <p>Form where onshore winds blow dry sand inland from a wide beach. A succession (<strong>psammosere</strong>) develops from embryo dunes to climax woodland:</p>
 <table>
@@ -162,6 +592,106 @@
   <tr><td>Dune slacks</td><td>Low (between ridges)</td><td>Wetland species: creeping willow, orchids, reeds</td><td>Water table at or near surface, unique habitat</td></tr>
   <tr><td>Mature/climax</td><td>Stable</td><td>Shrubs, birch, pine, oak woodland</td><td>Well-developed soil, pH 4&ndash;5 (acidic), thick humus</td></tr>
 </table>
+
+<!-- Diagram: Sand Dune Succession (Psammosere) -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="sd-blk" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#1a1a2e"/>
+    </marker>
+    <marker id="sd-wind" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <text x="300" y="19" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Sand Dune Succession: Psammosere (Cross-section)</text>
+
+  <!-- Ground/base line -->
+  <line x1="10" y1="210" x2="590" y2="210" stroke="#8B4513" stroke-width="1.5"/>
+
+  <!-- Sea (left) -->
+  <rect x="10" y="150" width="55" height="60" fill="#3b82f6" opacity="0.3" rx="2"/>
+  <text x="37" y="183" text-anchor="middle" font-size="9" fill="#1e3a5f">Sea</text>
+  <!-- Beach -->
+  <polygon points="65,210 95,210 95,200 65,200" fill="#d97706" opacity="0.5"/>
+  <text x="80" y="225" text-anchor="middle" font-size="8" fill="#d97706">Beach</text>
+
+  <!-- ZONE 1: Embryo dune (very small) -->
+  <ellipse cx="105" cy="202" rx="18" ry="8" fill="#d97706" opacity="0.7"/>
+  <text x="105" y="228" text-anchor="middle" font-size="8" fill="#92400e">Embryo</text>
+  <text x="105" y="238" text-anchor="middle" font-size="8" fill="#92400e">dune</text>
+  <!-- Pioneer plants (dots) -->
+  <circle cx="100" cy="195" r="2" fill="#16a34a"/>
+  <circle cx="108" cy="196" r="2" fill="#16a34a"/>
+  <text x="105" y="190" text-anchor="middle" font-size="7" fill="#15803d">pioneers</text>
+
+  <!-- ZONE 2: Fore/Yellow dune (taller) -->
+  <ellipse cx="165" cy="188" rx="28" ry="22" fill="#d97706" opacity="0.65"/>
+  <text x="165" y="228" text-anchor="middle" font-size="8" fill="#92400e">Fore dune</text>
+  <text x="165" y="238" text-anchor="middle" font-size="8" fill="#92400e">(yellow)</text>
+  <!-- Marram grass symbols (tall lines) -->
+  <line x1="155" y1="186" x2="155" y2="172" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="162" y1="185" x2="162" y2="170" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="170" y1="184" x2="170" y2="171" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="177" y1="185" x2="177" y2="173" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="165" y="166" text-anchor="middle" font-size="7" fill="#15803d">marram</text>
+
+  <!-- ZONE 3: Grey dune (a bit higher, greener) -->
+  <ellipse cx="240" cy="178" rx="34" ry="30" fill="#b5a060" opacity="0.6"/>
+  <text x="240" y="228" text-anchor="middle" font-size="8" fill="#78560a">Grey dune</text>
+  <!-- Various vegetation (circles) -->
+  <circle cx="228" cy="170" r="5" fill="#16a34a" opacity="0.7"/>
+  <circle cx="240" cy="165" r="6" fill="#16a34a" opacity="0.75"/>
+  <circle cx="252" cy="170" r="5" fill="#16a34a" opacity="0.65"/>
+  <text x="240" y="156" text-anchor="middle" font-size="7" fill="#15803d">mosses, lichens</text>
+
+  <!-- ZONE 4: Dune slack (low, wet) -->
+  <ellipse cx="315" cy="206" rx="28" ry="10" fill="#3b82f6" opacity="0.25"/>
+  <line x1="295" y1="208" x2="345" y2="208" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="315" y="226" text-anchor="middle" font-size="8" fill="#1e3a5f">Dune slack</text>
+  <text x="315" y="236" text-anchor="middle" font-size="8" fill="#3b82f6">water table</text>
+  <!-- Wetland plants -->
+  <line x1="310" y1="206" x2="310" y2="194" stroke="#16a34a" stroke-width="1.2"/>
+  <line x1="318" y1="206" x2="318" y2="193" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="315" y="189" text-anchor="middle" font-size="7" fill="#15803d">orchids/reeds</text>
+
+  <!-- ZONE 5: Mature dune / scrub -->
+  <ellipse cx="400" cy="172" rx="40" ry="36" fill="#a0845c" opacity="0.5"/>
+  <!-- Shrub circles -->
+  <circle cx="385" cy="162" r="9" fill="#16a34a" opacity="0.75"/>
+  <circle cx="405" cy="158" r="11" fill="#16a34a" opacity="0.7"/>
+  <circle cx="420" cy="165" r="8" fill="#16a34a" opacity="0.75"/>
+  <text x="400" y="228" text-anchor="middle" font-size="8" fill="#78560a">Mature dune</text>
+  <text x="400" y="238" text-anchor="middle" font-size="8" fill="#78560a">(shrub/birch)</text>
+  <text x="400" y="148" text-anchor="middle" font-size="7" fill="#15803d">heather, birch</text>
+
+  <!-- ZONE 6: Climax woodland -->
+  <ellipse cx="520" cy="162" rx="55" ry="46" fill="#7a5c3a" opacity="0.4"/>
+  <!-- Trees (triangles) -->
+  <polygon points="498,162 508,135 518,162" fill="#16a34a" opacity="0.85"/>
+  <polygon points="515,165 527,134 539,165" fill="#16a34a" opacity="0.85"/>
+  <polygon points="532,160 544,130 556,160" fill="#16a34a" opacity="0.85"/>
+  <!-- Tree trunks -->
+  <line x1="508" y1="162" x2="508" y2="210" stroke="#8B4513" stroke-width="2"/>
+  <line x1="527" y1="165" x2="527" y2="210" stroke="#8B4513" stroke-width="2"/>
+  <line x1="544" y1="160" x2="544" y2="210" stroke="#8B4513" stroke-width="2"/>
+  <text x="520" y="228" text-anchor="middle" font-size="8" fill="#78560a">Climax</text>
+  <text x="520" y="238" text-anchor="middle" font-size="8" fill="#78560a">woodland</text>
+  <text x="520" y="122" text-anchor="middle" font-size="7" fill="#15803d">oak, pine</text>
+
+  <!-- Wind arrow -->
+  <line x1="12" y1="140" x2="75" y2="140" stroke="#2563eb" stroke-width="2" marker-end="url(#sd-wind)"/>
+  <text x="10" y="132" font-size="9" fill="#2563eb">Wind</text>
+
+  <!-- Direction of succession -->
+  <line x1="80" y1="252" x2="580" y2="252" stroke="#64748b" stroke-width="1.5" marker-end="url(#sd-blk)"/>
+  <text x="330" y="265" text-anchor="middle" font-size="9" fill="#64748b">Direction of succession: increasing organic matter, soil development, vegetation diversity</text>
+
+  <!-- Height increase marker -->
+  <text x="300" y="50" text-anchor="middle" font-size="9" fill="#64748b">Increasing dune height</text>
+  <line x1="90" y1="46" x2="450" y2="46" stroke="#64748b" stroke-width="1" marker-end="url(#sd-blk)"/>
+</svg>
+</div>
 
 <h3>Salt Marshes</h3>
 <p>Develop in sheltered, low-energy environments (behind spits, in estuaries). Fine sediment (silt, mud) deposited by tides. Pioneer plants (glasswort/Salicornia, cord grass/Spartina) colonise, trapping more sediment and raising the surface. A <strong>halosere</strong> succession develops: pioneer zone (daily inundation) &rarr; lower marsh &rarr; upper marsh &rarr; transitional. Salt marshes are ecologically vital: nursery habitats for fish and invertebrates, feeding grounds for migratory birds, carbon sinks (sequestering carbon at 2&ndash;4x the rate of tropical forests per hectare), and natural flood defences (absorbing wave energy and tidal surge).</p>
