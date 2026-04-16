@@ -405,6 +405,186 @@ As you go down: capacity increases, speed decreases, cost per byte decreases.</p
 
 <div class="exam-tip">Know the memory hierarchy from registers (fastest, smallest, most expensive) to tape/cloud (slowest, largest, cheapest). Understand why cache exists (bridge the speed gap between CPU and RAM). For performance factors, always explain the mechanism: e.g., "more cache reduces the number of slow main memory accesses, so the CPU spends less time waiting for data."</div>
 
+<!-- ====== I/O METHODS ====== -->
+<h2>4.7.11 I/O Methods: Programmed I/O, Interrupts, and DMA</h2>
+
+<p>Three different methods allow the CPU to communicate with I/O devices. Each represents a different trade-off between CPU involvement and efficiency.</p>
+
+<h3>1. Programmed I/O (Polling)</h3>
+<div class="definition">
+    In <strong>programmed I/O (polling)</strong>, the CPU repeatedly checks a status register on the I/O device to see whether it is ready. The CPU is entirely in control and actively waits in a busy loop.
+</div>
+<ul>
+    <li>The CPU enters a <strong>polling loop</strong>, reading the device status register over and over</li>
+    <li>When the device signals ready, the CPU performs the transfer</li>
+    <li>Simple to implement; no hardware beyond the device controller</li>
+    <li><strong>Disadvantage:</strong> the CPU is occupied doing nothing useful while it polls — this is called <strong>busy waiting</strong>. Wastes CPU cycles that could run other processes.</li>
+    <li>Acceptable for very fast devices or simple embedded systems where there is nothing else to do</li>
+</ul>
+<pre>Polling loop (pseudocode):
+WHILE device_status_register != READY DO
+    WAIT      ; CPU stuck here, doing nothing useful
+ENDWHILE
+; Device is ready, perform data transfer
+READ data_register</pre>
+
+<h3>2. Interrupt-Driven I/O</h3>
+<div class="definition">
+    In <strong>interrupt-driven I/O</strong>, the CPU starts an I/O operation and then <strong>continues executing other instructions</strong>. When the device finishes, it sends an <strong>interrupt signal</strong> on the control bus. The CPU pauses its current task, saves state, and runs the <strong>Interrupt Service Routine (ISR)</strong> to complete the transfer.
+</div>
+<ul>
+    <li>CPU does not waste time polling; it runs other processes while the device works</li>
+    <li>Device signals the CPU via the <strong>interrupt request line (IRQ)</strong> on the control bus</li>
+    <li>The CPU checks for interrupts at the end of each FDE cycle</li>
+    <li>ISR reads data from the device and stores it; then restores CPU state</li>
+    <li><strong>Advantage:</strong> efficient CPU use — handles slow devices without blocking</li>
+    <li><strong>Disadvantage:</strong> context-switch overhead; interrupt handling complexity; not ideal for very high-speed data streams (many interrupts per second saturate the CPU)</li>
+</ul>
+
+<h3>3. Direct Memory Access (DMA)</h3>
+<div class="definition">
+    <strong>DMA</strong> uses a dedicated <strong>DMA controller</strong> chip to transfer data <strong>directly between main memory and a device</strong>, without routing every byte through the CPU. The CPU only initiates and concludes the transfer.
+</div>
+
+<p><strong>DMA transfer process:</strong></p>
+<ol>
+    <li>CPU programs the DMA controller with: source address, destination address, number of bytes to transfer, direction (read/write)</li>
+    <li>CPU continues executing instructions independently</li>
+    <li>DMA controller takes control of the buses (<strong>cycle stealing</strong> or burst mode) and transfers data directly to/from RAM</li>
+    <li>When the transfer is complete, DMA controller sends a <strong>completion interrupt</strong> to the CPU</li>
+    <li>CPU checks results and resumes normal operation</li>
+</ol>
+
+<table>
+    <tr><th>Feature</th><th>Programmed I/O (Polling)</th><th>Interrupt-Driven I/O</th><th>DMA</th></tr>
+    <tr><td>CPU involvement during transfer</td><td>100% — busy waiting</td><td>Low — only during ISR</td><td>Very low — only at start/end</td></tr>
+    <tr><td>CPU efficiency</td><td>Very low (blocked)</td><td>High</td><td>Highest</td></tr>
+    <tr><td>Hardware complexity</td><td>Lowest</td><td>Medium (interrupt controller)</td><td>Highest (DMA controller chip)</td></tr>
+    <tr><td>Best for</td><td>Simple/fast devices, embedded</td><td>Slow devices (keyboard, mouse)</td><td>High-bandwidth transfers (disk, GPU, network)</td></tr>
+    <tr><td>Data path</td><td>Device &rarr; CPU &rarr; Memory</td><td>Device &rarr; CPU (ISR) &rarr; Memory</td><td>Device &rarr; Memory (directly)</td></tr>
+</table>
+
+<div class="exam-tip">The key exam distinction: polling wastes CPU time (busy waiting); interrupt-driven frees the CPU but involves the CPU for every data item; DMA frees the CPU almost entirely for large bulk transfers. DMA is used by hard drives, graphics cards, and network cards because they move large amounts of data at high speed. A 6-mark question may ask you to compare all three methods — cover CPU use, efficiency, hardware needed, and suitability.</div>
+
+<!-- ====== BIOS ====== -->
+<h2>4.7.12 BIOS and the Boot Process</h2>
+
+<div class="definition">
+    The <strong>BIOS</strong> (Basic Input/Output System) is firmware stored in ROM on the motherboard. It is the first software to run when a computer is powered on, before the OS is loaded. Modern systems use <strong>UEFI</strong> (Unified Extensible Firmware Interface) which extends BIOS with a GUI, faster boot, and support for large disks.
+</div>
+
+<p><strong>BIOS / UEFI functions:</strong></p>
+<ol>
+    <li><strong>POST (Power-On Self-Test)</strong> &mdash; checks that essential hardware is present and functional (CPU, RAM, keyboard, storage devices). Errors are reported via beep codes or on-screen messages.</li>
+    <li><strong>Hardware initialisation</strong> &mdash; sets up CPU, memory controller, and basic I/O chips to a known working state.</li>
+    <li><strong>Boot device selection</strong> &mdash; identifies the bootable device (SSD, HDD, USB, network) based on configured boot order.</li>
+    <li><strong>Loads the bootloader</strong> &mdash; reads the first sector (Master Boot Record or UEFI boot partition) from the boot device into RAM and transfers control to it. The bootloader then loads the operating system kernel.</li>
+</ol>
+
+<p><strong>Boot sequence summary:</strong></p>
+<pre>Power on
+  &darr;
+BIOS/UEFI runs from ROM
+  &darr;
+POST (hardware test)
+  &darr;
+Locate boot device (SSD/HDD/USB)
+  &darr;
+Load bootloader from MBR/EFI partition into RAM
+  &darr;
+Bootloader loads OS kernel into RAM
+  &darr;
+OS takes control, loads drivers, starts services
+  &darr;
+Login screen / desktop presented to user</pre>
+
+<table>
+    <tr><th>Feature</th><th>BIOS</th><th>UEFI</th></tr>
+    <tr><td>Storage</td><td>ROM / Flash ROM</td><td>Flash ROM</td></tr>
+    <tr><td>Interface</td><td>Text-based only</td><td>Graphical interface, mouse support</td></tr>
+    <tr><td>Disk support</td><td>Max 2 TB (MBR partition table)</td><td>Supports disks larger than 2 TB (GPT partition table)</td></tr>
+    <tr><td>Boot speed</td><td>Slower initialisation</td><td>Faster boot (Secure Boot, parallel initialisation)</td></tr>
+    <tr><td>Security</td><td>None</td><td><strong>Secure Boot</strong> &mdash; verifies OS bootloader hasn't been tampered with</td></tr>
+    <tr><td>OS compatibility</td><td>Legacy OS support</td><td>Modern OSes (Windows 8+, Linux)</td></tr>
+</table>
+
+<div class="exam-tip">BIOS is stored in ROM (non-volatile — survives power-off). Its primary jobs are POST (test hardware) and bootstrapping (loading the OS). If asked why BIOS is in ROM rather than RAM: ROM is non-volatile so the BIOS persists when power is removed — RAM would lose it. UEFI replaces BIOS on all modern systems; the key improvements are GUI, Secure Boot, and support for drives larger than 2 TB.</div>
+
+<!-- ====== ASSEMBLY LANGUAGE DETAIL ====== -->
+<h2>4.7.13 AQA Assembly Language — Full Instruction Set</h2>
+
+<p>AQA uses its own simplified assembly language for exam questions. All instructions follow the same format and use registers R0–R12.</p>
+
+<h3>Instruction Reference Table</h3>
+<table>
+    <tr><th>Instruction</th><th>Format</th><th>Operation</th></tr>
+    <tr><td><strong>LDR</strong></td><td><code>LDR Rd, &lt;address&gt;</code></td><td>Load register Rd with value from memory address</td></tr>
+    <tr><td><strong>STR</strong></td><td><code>STR Rd, &lt;address&gt;</code></td><td>Store value in Rd to memory address</td></tr>
+    <tr><td><strong>ADD</strong></td><td><code>ADD Rd, Rn, &lt;op&gt;</code></td><td>Rd = Rn + operand</td></tr>
+    <tr><td><strong>SUB</strong></td><td><code>SUB Rd, Rn, &lt;op&gt;</code></td><td>Rd = Rn &minus; operand</td></tr>
+    <tr><td><strong>MOV</strong></td><td><code>MOV Rd, &lt;op&gt;</code></td><td>Rd = operand (copy value into register)</td></tr>
+    <tr><td><strong>CMP</strong></td><td><code>CMP Rn, &lt;op&gt;</code></td><td>Compare Rn with operand; sets flags (does not store result)</td></tr>
+    <tr><td><strong>B</strong></td><td><code>B &lt;label&gt;</code></td><td>Branch unconditionally to label</td></tr>
+    <tr><td><strong>BEQ</strong></td><td><code>BEQ &lt;label&gt;</code></td><td>Branch if equal (Zero flag = 1)</td></tr>
+    <tr><td><strong>BNE</strong></td><td><code>BNE &lt;label&gt;</code></td><td>Branch if not equal (Zero flag = 0)</td></tr>
+    <tr><td><strong>BGT</strong></td><td><code>BGT &lt;label&gt;</code></td><td>Branch if greater than (result was positive)</td></tr>
+    <tr><td><strong>BLT</strong></td><td><code>BLT &lt;label&gt;</code></td><td>Branch if less than (result was negative)</td></tr>
+    <tr><td><strong>AND</strong></td><td><code>AND Rd, Rn, &lt;op&gt;</code></td><td>Rd = Rn AND operand (bitwise)</td></tr>
+    <tr><td><strong>ORR</strong></td><td><code>ORR Rd, Rn, &lt;op&gt;</code></td><td>Rd = Rn OR operand (bitwise)</td></tr>
+    <tr><td><strong>EOR</strong></td><td><code>EOR Rd, Rn, &lt;op&gt;</code></td><td>Rd = Rn XOR operand (bitwise)</td></tr>
+    <tr><td><strong>MVN</strong></td><td><code>MVN Rd, &lt;op&gt;</code></td><td>Rd = NOT operand (bitwise complement)</td></tr>
+    <tr><td><strong>LSL</strong></td><td><code>LSL Rd, Rn, &lt;op&gt;</code></td><td>Rd = Rn shifted left by operand bits (multiply by 2<sup>n</sup>)</td></tr>
+    <tr><td><strong>LSR</strong></td><td><code>LSR Rd, Rn, &lt;op&gt;</code></td><td>Rd = Rn shifted right by operand bits (divide by 2<sup>n</sup>)</td></tr>
+    <tr><td><strong>HALT</strong></td><td><code>HALT</code></td><td>Stop program execution</td></tr>
+</table>
+
+<p><strong>Operand notation:</strong> <code>#n</code> = immediate value n; <code>Rn</code> = register n; a label = memory address.</p>
+
+<h3>Worked Example: Find the Maximum of Two Numbers</h3>
+<pre>; Find max of values at address 200 and 201, store in 202
+        LDR R0, 200         ; R0 = first number
+        LDR R1, 201         ; R1 = second number
+        CMP R0, R1          ; compare R0 and R1
+        BGT store           ; if R0 > R1, branch to store
+        MOV R0, R1          ; otherwise, R0 = R1 (R1 is larger)
+store:  STR R0, 202         ; store max value to address 202
+        HALT
+
+; If Memory[200]=15, Memory[201]=22:
+; CMP sets flags: 15-22 = negative, so BGT not taken
+; MOV R0, R1  sets R0 = 22
+; STR stores 22 to Memory[202]</pre>
+
+<h3>Worked Example: Counting Loop (Multiplication by Repeated Addition)</h3>
+<pre>; Compute 4 x 7 using repeated addition
+        MOV R0, #0          ; R0 = product = 0
+        MOV R1, #4          ; R1 = multiplicand
+        MOV R2, #7          ; R2 = counter (multiply 7 times)
+loop:   ADD R0, R0, R1      ; product += multiplicand
+        SUB R2, R2, #1      ; counter--
+        CMP R2, #0          ; has counter reached 0?
+        BNE loop            ; if not, repeat
+        STR R0, result      ; store result (should be 28)
+        HALT
+result: 0</pre>
+
+<h3>Bitwise Operations in Assembly</h3>
+<pre>; Test if bit 3 of R0 is set (masking):
+        AND R1, R0, #8      ; #8 = 00001000 in binary
+        CMP R1, #0
+        BNE bit_set         ; branch if bit 3 was 1
+
+; Set bit 4 of R0:
+        ORR R0, R0, #16     ; #16 = 00010000
+
+; Toggle bit 2 of R0:
+        EOR R0, R0, #4      ; #4 = 00000100
+
+; Logical shift left by 3 (multiply by 8):
+        LSL R1, R0, #3      ; R1 = R0 * 8</pre>
+
+<div class="exam-tip">In AQA assembly questions, use <code>#</code> for immediate values (e.g., <code>MOV R0, #5</code> sets R0 to the number 5) and no <code>#</code> for memory addresses (e.g., <code>LDR R0, 200</code> loads from address 200). The <code>CMP</code> instruction subtracts but does not store the result — it only sets flags. Always trace through each register value at each step to verify correctness.</div>
+
 </div>
 </body>
 </html>

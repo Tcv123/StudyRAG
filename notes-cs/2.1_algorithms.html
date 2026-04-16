@@ -602,6 +602,103 @@ Step 5: Insert 2 into sorted [1, 3, 5, 8, 9]
 
 <div class="exam-tip">You do not need to memorise code for these algorithms. You DO need to be able to <strong>trace through</strong> each algorithm on a given dataset, showing the state of the list after each pass/step. For merge sort, show <strong>both</strong> the complete split phase AND the merge phase with each comparison. For bubble sort, show each comparison and swap within each pass, and clearly indicate when a pass has no swaps (which triggers termination). For insertion sort, show the sorted and unsorted portions at each step.</div>
 
+
+<h2>2.1.5 Big-O Notation and Algorithm Efficiency</h2>
+
+<div class="definition">
+    <strong>Big-O notation</strong> describes how the time (or space) an algorithm takes <strong>grows</strong> as the size of its input (n) increases. It expresses the <em>worst-case</em> relationship between input size and the number of steps required. It is a way of comparing algorithms independently of hardware speed or programming language — it focuses purely on how the algorithm scales.
+</div>
+
+<p>The key question Big-O answers is: "If I double the number of items, what happens to the time taken?" The notation uses <strong>n</strong> to represent the number of items in the input.</p>
+
+<table>
+    <tr><th>Notation</th><th>Name</th><th>Meaning</th><th>Example Algorithm</th><th>Behaviour when n doubles</th></tr>
+    <tr><td><strong>O(1)</strong></td><td>Constant time</td><td>The algorithm always takes the <strong>same amount of time</strong> regardless of input size. It does not depend on n at all.</td><td>Accessing an array element by index (<code>scores[3]</code>); checking if a stack is empty; looking up a value in a hash table.</td><td>Time stays the same. Doubling n has no effect.</td></tr>
+    <tr><td><strong>O(log n)</strong></td><td>Logarithmic time</td><td>The number of steps grows very slowly — each step <strong>halves</strong> the remaining problem. Very efficient for large inputs.</td><td>Binary search. With 1 billion items, takes only ~30 steps (log₂(1,000,000,000) ≈ 30).</td><td>Time increases by just 1 step. Doubling from 1M to 2M items adds only 1 more comparison.</td></tr>
+    <tr><td><strong>O(n)</strong></td><td>Linear time</td><td>The number of steps grows <strong>proportionally</strong> to the input size. Double the items = double the time.</td><td>Linear search; traversing every element of a list; reading all elements of an array once.</td><td>Time doubles. n items → n steps.</td></tr>
+    <tr><td><strong>O(n log n)</strong></td><td>Linearithmic time</td><td>Slightly worse than linear — common for efficient sorting algorithms that divide the problem into parts.</td><td>Merge sort; efficient sorting algorithms generally.</td><td>Time slightly more than doubles — highly efficient for sorting.</td></tr>
+    <tr><td><strong>O(n²)</strong></td><td>Quadratic time</td><td>The number of steps grows as the <strong>square</strong> of the input size. Double the items = four times the time. Gets very slow quickly.</td><td>Bubble sort; insertion sort; any algorithm with two nested loops each iterating through all n items.</td><td>Time quadruples. 10 items → 100 steps; 100 items → 10,000 steps; 1,000 items → 1,000,000 steps.</td></tr>
+</table>
+
+<h3>Visual Comparison — Growth Rates</h3>
+<pre>
+Steps taken for different input sizes (n):
+
+ n    | O(1) | O(log n) | O(n)  | O(n log n) | O(n²)
+------|------|----------|-------|------------|----------
+   10 |    1 |        4 |    10 |         40 |       100
+  100 |    1 |        7 |   100 |        700 |    10,000
+1,000 |    1 |       10 |  1000 |     10,000 | 1,000,000
+1,000,000 | 1 |   20 | 1,000,000 | 20,000,000 | 1,000,000,000,000
+
+Conclusion:
+  O(1)      — ideal (never gets slower)
+  O(log n)  — excellent (binary search)
+  O(n)      — acceptable (linear search)
+  O(n log n)— good (merge sort)
+  O(n²)     — poor for large n (bubble/insertion sort)
+</pre>
+
+<!-- Big-O Graph SVG -->
+<svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;margin:20px auto;display:block;">
+  <text x="260" y="18" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Big-O Growth Rates</text>
+  <!-- Axes -->
+  <line x1="50" y1="240" x2="480" y2="240" stroke="#374151" stroke-width="1.5"/>
+  <line x1="50" y1="240" x2="50" y2="30" stroke="#374151" stroke-width="1.5"/>
+  <text x="480" y="255" text-anchor="middle" font-size="10" fill="#6b7280">n (input size)</text>
+  <text x="20" y="135" text-anchor="middle" font-size="10" fill="#6b7280" transform="rotate(-90,20,135)">Steps</text>
+  <!-- O(1) — flat line -->
+  <line x1="50" y1="235" x2="480" y2="235" stroke="#16a34a" stroke-width="2"/>
+  <text x="485" y="238" font-size="9" fill="#16a34a" font-weight="bold">O(1)</text>
+  <!-- O(log n) — very gradual curve -->
+  <path d="M50,235 Q150,200 250,185 Q350,175 480,165" stroke="#2563eb" stroke-width="2" fill="none"/>
+  <text x="485" y="168" font-size="9" fill="#2563eb" font-weight="bold">O(log n)</text>
+  <!-- O(n) — straight diagonal -->
+  <line x1="50" y1="235" x2="480" y2="50" stroke="#f59e0b" stroke-width="2"/>
+  <text x="485" y="53" font-size="9" fill="#f59e0b" font-weight="bold">O(n)</text>
+  <!-- O(n²) — steep curve -->
+  <path d="M50,235 Q150,230 200,200 Q300,150 350,90 Q400,50 420,35" stroke="#dc2626" stroke-width="2" fill="none"/>
+  <text x="425" y="32" font-size="9" fill="#dc2626" font-weight="bold">O(n²)</text>
+  <!-- O(n log n) — between O(n) and O(n²) -->
+  <path d="M50,235 Q200,220 300,160 Q380,110 440,75" stroke="#7c3aed" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+  <text x="445" y="73" font-size="9" fill="#7c3aed" font-weight="bold">O(n log n)</text>
+  <!-- Small legend note -->
+  <text x="260" y="270" text-anchor="middle" font-size="9" fill="#6b7280">Lower = more efficient. O(1) is best; O(n²) is worst shown here.</text>
+</svg>
+
+<h3>Big-O for Algorithms You Have Studied</h3>
+<table>
+    <tr><th>Algorithm</th><th>Best Case</th><th>Worst Case</th><th>Why?</th></tr>
+    <tr><td><strong>Linear search</strong></td><td>O(1) — target is first element</td><td><strong>O(n)</strong> — must check every element</td><td>In the worst case, the target is at the end or not in the list at all, so every element is checked once.</td></tr>
+    <tr><td><strong>Binary search</strong></td><td>O(1) — target is the middle element</td><td><strong>O(log n)</strong> — each step halves the search space</td><td>With 8 items: max 3 steps. With 16 items: max 4 steps. Each doubling of n adds only 1 step. Requires sorted data.</td></tr>
+    <tr><td><strong>Bubble sort</strong></td><td>O(n) — already sorted (detect with "no swaps" flag)</td><td><strong>O(n²)</strong> — two nested passes through all elements</td><td>For each of n elements, a pass through up to n-1 pairs is needed. n × n = n².</td></tr>
+    <tr><td><strong>Insertion sort</strong></td><td>O(n) — already sorted (each element already in place)</td><td><strong>O(n²)</strong> — reverse sorted (every element must shift past all others)</td><td>Same reason as bubble sort — can require nested iterations.</td></tr>
+    <tr><td><strong>Merge sort</strong></td><td>O(n log n)</td><td><strong>O(n log n)</strong> — always consistent</td><td>The divide phase takes log n levels; merging takes O(n) at each level. n × log n total. Consistent regardless of input order.</td></tr>
+</table>
+
+<h3>Choosing the Right Algorithm</h3>
+<pre>
+Q: "Should I use linear or binary search on a list of 1 million names?"
+
+Linear search: up to 1,000,000 comparisons in the worst case.
+Binary search: up to 20 comparisons (log₂(1,000,000) ≈ 20).
+
+Binary search is roughly 50,000x faster for large sorted datasets.
+BUT: binary search requires the list to be sorted first.
+Sorting costs O(n log n) — about 20,000,000 steps for 1 million items.
+If you only search once, sorting first + binary searching is SLOWER
+than just doing a linear search.
+If you search many times, sorting once and binary searching repeatedly
+is far more efficient overall.
+
+Rule of thumb:
+  Small list (< 20 items): linear search — simpler, overhead not worth it
+  Large sorted list, many searches: binary search — dramatically faster
+  Large unsorted list, one search: linear search — sorting first costs more
+</pre>
+
+<div class="exam-tip">Big-O tells you the <strong>worst-case scaling behaviour</strong>, not the exact number of steps. O(n²) does not mean "n squared steps" exactly — it means "the steps grow proportionally to n²". The most important facts to know: <strong>O(1)</strong> = constant (array index lookup); <strong>O(log n)</strong> = binary search; <strong>O(n)</strong> = linear search; <strong>O(n log n)</strong> = merge sort; <strong>O(n²)</strong> = bubble/insertion sort. In exam answers, always state the Big-O of both algorithms when comparing them, and explain what it means for performance at scale: "Binary search is O(log n) so for 1 million items it requires only about 20 comparisons, whereas linear search is O(n) and may require up to 1 million comparisons."</div>
+
 </div>
 </body>
 </html>

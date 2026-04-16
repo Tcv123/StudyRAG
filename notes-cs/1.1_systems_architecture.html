@@ -414,6 +414,53 @@ multiple threads); upgrade to faster RAM (reduces the penalty of a cache miss).
 
 <div class="exam-tip">For embedded systems questions, always give a <strong>specific example</strong> and state its <strong>dedicated function</strong>. Do not just say "a washing machine" &mdash; say "a washing machine controller that manages water temperature, spin speed, and cycle timing." Also know that embedded systems use ROM (non-volatile, runs automatically) rather than loading software from a hard drive. A common exam question gives a scenario and asks you to explain why an embedded system is more suitable than a general-purpose computer &mdash; focus on: single function, low power, low cost, high reliability, real-time response, and compact size.</div>
 
+
+<h2>1.1.6 Secondary Storage Types</h2>
+
+<p>Secondary storage is <strong>non-volatile</strong> (data is retained when power is removed) and is used for long-term storage of the OS, programs, and user files. The CPU cannot access secondary storage directly — data must first be loaded into RAM. There are four main types, each with different technologies, speeds, costs, and suitable uses.</p>
+
+<table>
+    <tr><th>Type</th><th>Technology</th><th>Speed</th><th>Capacity</th><th>Durability</th><th>Cost/GB</th><th>Best Use</th></tr>
+    <tr><td><strong>HDD (Hard Disk Drive)</strong></td><td>Spinning magnetic platters with a moving read/write head. Data is stored as magnetic patterns on the platter surface. The head floats nanometres above the spinning platter and changes magnetisation to read/write data. Motor spins the platter at 5400–7200 RPM.</td><td>Slow — moving parts mean mechanical seek time (5–10 ms). Sequential read ~100–200 MB/s.</td><td>Very high (1–20 TB); cheapest per GB of any technology.</td><td>Fragile — the read/write head can crash into the platter if the drive is dropped. Sensitive to vibration and magnetic fields. Data can also degrade over many years.</td><td>Very low (~£0.02–0.04/GB)</td><td>Bulk storage, NAS (Network Attached Storage), desktop computers, server data archives, media libraries where cost per GB is the priority.</td></tr>
+    <tr><td><strong>SSD (Solid State Drive)</strong></td><td>NAND flash memory chips — no moving parts. Data is stored as electrical charges trapped in billions of floating-gate transistors. Uses a controller to manage wear levelling (distributing writes evenly across cells to extend lifespan). NAND cells can only be written a finite number of times (TBW — terabytes written rating).</td><td>Fast — no mechanical movement means near-instant access (~0.05–0.1 ms). SATA SSDs: 500–550 MB/s; NVMe SSDs: 3,000–7,000+ MB/s.</td><td>Medium-high (128 GB–4 TB). More expensive per GB than HDDs.</td><td>High — no moving parts means shock-resistant, silent, and suitable for mobile devices. However, NAND cells wear out after a finite number of write cycles.</td><td>Medium (~£0.08–0.15/GB)</td><td>OS drive (fast boot times), laptops (shock resistance), gaming (fast load times), any workload requiring high read/write speeds.</td></tr>
+    <tr><td><strong>Optical Disc</strong></td><td>A laser reads pits (physical indentations) and lands (flat areas) on a reflective disc surface. CD uses an infrared laser; DVD uses a shorter-wavelength red laser (smaller pits, more data); Blu-ray uses an even shorter blue-violet laser (even more data). The disc spins while the laser tracks across it. Recordable discs (CD-R, DVD-R) use a heat-sensitive dye layer that the laser burns permanently; rewritable discs (RW) use a phase-change alloy that can be re-melted and reset.</td><td>Slow — disc must spin up to speed and the laser must seek the correct track. Sequential read ~150 KB/s (1x CD) to ~72 MB/s (Blu-ray).</td><td>Low — CD: 700 MB; DVD: 4.7 GB (single-layer); Blu-ray: 25 GB (single-layer), 50 GB (dual-layer).</td><td>Moderate — no moving internal parts, but discs are scratch-sensitive on their data surface. Resistant to magnetic fields. If stored away from light and heat in a case, optical discs can last 50–100+ years (better archival longevity than HDD/SSD). Easily damaged if bent or scratched.</td><td>Very low per disc (~£0.20–2.00 per disc regardless of data stored)</td><td>Distributing software and media, music/film, long-term archival (especially gold-archival Blu-ray), read-only content distribution, situations where the medium needs to be physically handed to someone.</td></tr>
+    <tr><td><strong>Magnetic Tape</strong></td><td>Data is stored as magnetic patterns on a thin plastic tape coated with ferromagnetic material. A read/write head moves across the tape as it winds from reel to reel (or in a cassette cartridge like LTO). Modern LTO (Linear Tape-Open) cartridges store many terabytes on a single tape.</td><td>Very slow for <strong>random access</strong> — to reach data in the middle of the tape, the drive must physically wind past all the preceding tape (<strong>sequential access only</strong>). However, sequential read/write speed can be fast (250–400 MB/s for LTO-8). Accessing a random file can take minutes.</td><td>Very high — LTO-9 cartridges hold up to 18 TB uncompressed (45 TB compressed). Extremely high capacity per unit cost.</td><td>High for archival — magnetic patterns on tape are stable for decades if stored correctly (away from heat, moisture, and magnetic fields). No moving internal parts in the cartridge itself. Tape is fragile if physically damaged but has excellent shelf life when cared for.</td><td>Extremely low (~£0.002–0.005/GB — the cheapest storage per gigabyte available)</td><td>Large-scale long-term backups, disaster recovery archives, cloud provider cold storage (Google, Amazon, Microsoft all use tape for deep archive), broadcasting archives, any situation where data is written once and rarely (if ever) read back.</td></tr>
+</table>
+
+<h3>Comparison Summary — Choosing the Right Storage</h3>
+<table>
+    <tr><th>Factor</th><th>HDD</th><th>SSD</th><th>Optical</th><th>Magnetic Tape</th></tr>
+    <tr><td><strong>Access type</strong></td><td>Random (fast seek)</td><td>Random (near-instant)</td><td>Sequential / random (slow)</td><td>Sequential only (slow random)</td></tr>
+    <tr><td><strong>Moving parts?</strong></td><td>Yes — platter + head</td><td>No</td><td>Yes — disc spins, laser moves</td><td>Yes — tape winds on reels</td></tr>
+    <tr><td><strong>Typical capacity</strong></td><td>1–20 TB</td><td>128 GB–4 TB</td><td>700 MB–50 GB</td><td>Up to 18 TB+ per cartridge</td></tr>
+    <tr><td><strong>Speed</strong></td><td>Medium</td><td>Fast to very fast</td><td>Slow</td><td>Fast sequential, very slow random</td></tr>
+    <tr><td><strong>Cost per GB</strong></td><td>Low</td><td>Medium</td><td>Very low per disc</td><td>Extremely low</td></tr>
+    <tr><td><strong>Portability</strong></td><td>Moderate (external HDDs)</td><td>High (USB SSDs)</td><td>High (discs easy to post/share)</td><td>High (cartridges, but needs special drive)</td></tr>
+    <tr><td><strong>Ideal for</strong></td><td>Bulk desktop storage, cheap large-scale data</td><td>OS, apps, laptops, gaming</td><td>Distribution, archival, physical copies</td><td>Offsite backup, cloud archive, broadcast archive</td></tr>
+</table>
+
+<pre>
+Scenario: A streaming company needs to archive 10 years of video content
+rarely accessed but kept for legal reasons.
+→ Magnetic tape. Cheapest per GB by far, very high capacity per cartridge,
+  good long-term stability. Sequential access is fine because archives
+  are almost never retrieved.
+
+Scenario: A student needs fast loading times for their laptop's OS.
+→ SSD. No moving parts (shock-resistant for portable use), fast boot
+  times, silent. Higher cost per GB is acceptable for smaller capacity.
+
+Scenario: A band wants to distribute 500 copies of their new album.
+→ Optical disc (CD). Cheap per unit, easy to distribute physically,
+  recipients need no special hardware beyond a standard CD drive.
+
+Scenario: A video production company needs a fast, large desktop drive.
+→ HDD. Very high capacity at low cost. Sequential access for large
+  video files suits HDD characteristics.
+</pre>
+
+<div class="exam-tip">In exam questions on storage, always state whether the storage type has <strong>moving parts</strong> (HDD and optical yes; SSD no; tape yes). Moving parts mean slower access and greater fragility. Magnetic tape is <strong>sequential access</strong> only — it must wind to find data — making it unsuitable for tasks requiring random access but ideal for backup. The four types examiners test most are HDD, SSD, optical, and magnetic tape — know at least two advantages and two disadvantages of each, and be ready to recommend one for a given scenario with justification.</div>
+
 </div>
 </body>
 </html>

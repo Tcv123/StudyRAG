@@ -497,6 +497,173 @@ add5 3                        -- 8</code></pre>
 
 <div class="exam-tip">A closure is a function bundled with its environment (captured variables). The key exam point: the captured variables persist after the enclosing function returns. Be able to trace through a closure example showing which variables are captured and how they retain their values across multiple calls to the closure.</div>
 
+<!-- ============================================================ -->
+<h2>4.12.9 Lambda (Anonymous) Functions</h2>
+
+<div class="definition">
+    A <strong>lambda function</strong> (anonymous function) is a function defined without being given a name. It is created inline wherever a function is needed, typically as an argument to a higher-order function or to be assigned to a variable. Lambda functions are a direct consequence of functions being first-class objects.
+</div>
+
+<p>Lambda functions are mathematically grounded in <strong>lambda calculus</strong> (&lambda;-calculus), developed by Alonzo Church in the 1930s as a formal system for expressing computation. In lambda calculus, <code>&lambda;x.x+1</code> defines an anonymous function that adds 1 to its input.</p>
+
+<pre><code>-- Haskell lambda syntax: \parameter -> body
+
+-- Named function:
+double x = x * 2
+
+-- Equivalent lambda:
+double = \x -> x * 2
+
+-- Multi-parameter lambda:
+add = \x y -> x + y
+add 3 4                  -- 7
+
+-- Lambda used inline (not assigned to a name):
+map (\x -> x * x) [1, 2, 3, 4]   -- [1, 4, 9, 16]
+filter (\x -> x > 3) [1,2,3,4,5] -- [4, 5]
+foldl (\acc x -> acc + x) 0 [1,2,3] -- 6</code></pre>
+
+<pre><code># Python lambda syntax: lambda parameters: expression
+
+# Named function:
+def double(x):
+    return x * 2
+
+# Equivalent lambda:
+double = lambda x: x * 2
+double(5)               # 10
+
+# Multi-parameter lambda:
+add = lambda x, y: x + y
+add(3, 4)               # 7
+
+# Lambda used inline with higher-order functions:
+list(map(lambda x: x ** 2, [1, 2, 3, 4]))         # [1, 4, 9, 16]
+list(filter(lambda x: x % 2 == 0, [1,2,3,4,5]))   # [2, 4]
+sorted(["banana","apple","cherry"], key=lambda s: len(s))  # sorted by length
+
+# Immediately invoked lambda:
+result = (lambda x, y: x + y)(10, 5)   # 15</code></pre>
+
+<p><strong>When to use lambdas:</strong></p>
+<ul>
+    <li>When a function is used only once (no need for a name)</li>
+    <li>When passing a short function as an argument to <code>map</code>, <code>filter</code>, <code>reduce</code>, <code>sorted</code></li>
+    <li>When returning a simple function from another function (partial application, closures)</li>
+</ul>
+
+<p><strong>Limitations:</strong></p>
+<ul>
+    <li>In Python, lambda bodies must be a single expression — cannot contain statements, loops, or multiple lines</li>
+    <li>No built-in recursion using the lambda name (since it has no name to refer back to)</li>
+    <li>Can reduce readability if overused — a named function is clearer for complex logic</li>
+</ul>
+
+<div class="exam-tip">Lambda functions are anonymous (no name) and first-class (can be passed as arguments or returned). In Haskell, <code>\x -> x + 1</code> is the lambda syntax. In Python, <code>lambda x: x + 1</code>. The backslash in Haskell represents the lambda symbol &lambda; (they look similar). Lambdas are frequently used with map, filter, and fold — be able to write and trace through examples using them.</div>
+
+<!-- ============================================================ -->
+<h2>4.12.10 Advantages of Functional Programming — Summary</h2>
+
+<p>AQA exam questions frequently ask for advantages of functional programming over imperative/OOP. Here is a structured summary with specific explanations for each advantage:</p>
+
+<table>
+    <tr><th>Advantage</th><th>Explanation</th><th>Why it matters</th></tr>
+    <tr><td><strong>Easier to reason about correctness</strong></td><td>Pure functions always produce the same output for the same input, with no side effects. Behaviour can be understood by reading the function alone, without tracking global state.</td><td>Formal verification and testing are simpler — test by checking input/output pairs.</td></tr>
+    <tr><td><strong>No side effects</strong></td><td>Functions do not modify variables outside their scope. Each function call is independent.</td><td>Eliminates a major class of bugs (unintended state mutations) found in imperative programs.</td></tr>
+    <tr><td><strong>Immutable data</strong></td><td>Data values cannot be changed after creation. "Modifying" a list creates a new one.</td><td>Prevents bugs caused by shared mutable state, particularly in concurrent programs.</td></tr>
+    <tr><td><strong>Safer parallelism / concurrency</strong></td><td>Since data is immutable, multiple threads can safely read shared data simultaneously without locks, race conditions, or deadlocks.</td><td>Enables efficient use of multi-core CPUs without complex synchronisation code.</td></tr>
+    <tr><td><strong>Referential transparency</strong></td><td>Any expression can be replaced with its value without changing the program's behaviour (because functions have no side effects).</td><td>Enables compiler optimisations (e.g., caching results, reordering evaluation) and simplifies reasoning.</td></tr>
+    <tr><td><strong>Higher-order functions enable code reuse</strong></td><td>map, filter, fold capture general patterns; specific behaviour is supplied as a function argument.</td><td>Avoids writing repetitive loop code; separation of pattern from logic.</td></tr>
+    <tr><td><strong>Easier to test</strong></td><td>Pure functions are deterministic — given the same input, always the same output. No need to set up external state for testing.</td><td>Unit tests are simple input/output checks, with no mocking of external state required.</td></tr>
+</table>
+
+<h3>Disadvantages (for balance)</h3>
+<ul>
+    <li><strong>I/O is awkward</strong> — side effects are unavoidable for I/O, requiring special handling (e.g., Haskell's IO monad)</li>
+    <li><strong>Recursion can be less intuitive</strong> than iterative loops for programmers coming from imperative backgrounds</li>
+    <li><strong>Memory usage</strong> — creating new data structures instead of modifying existing ones can use more memory (though optimisations like persistent data structures mitigate this)</li>
+    <li><strong>Fewer trained programmers</strong> — most industry programmers are more familiar with imperative/OOP paradigms</li>
+    <li><strong>Performance</strong> — functional languages may have overhead from function calls and garbage collection; though modern compilers optimise well</li>
+</ul>
+
+<div class="exam-tip">The most exam-relevant advantages are: (1) no side effects make programs easier to reason about; (2) immutability makes parallelism safe without locks; (3) pure functions are easier to test because they always give the same output for the same input. If asked for three advantages, use these three. If asked for the relationship to parallelism specifically: immutable data means threads never conflict when reading the same data, so no synchronisation (locks/mutexes) is needed, making parallel programs simpler and safer.</div>
+
+<!-- ============================================================ -->
+<h2>4.12.11 Recursion in Functional Programming</h2>
+
+<p>In functional programming, <strong>recursion replaces iteration</strong>. Because variables are immutable (a counter cannot be updated in a loop), repetition must be expressed as a function calling itself with modified arguments.</p>
+
+<h3>Structure of Recursive Functions</h3>
+<p>Every recursive function must have:</p>
+<ul>
+    <li><strong>Base case(s)</strong> — condition under which recursion stops and a direct value is returned</li>
+    <li><strong>Recursive case</strong> — the function calls itself with a smaller/simpler input, progressing toward the base case</li>
+</ul>
+
+<h3>Worked Examples</h3>
+<pre><code>-- Factorial:
+factorial 0 = 1                            -- base case
+factorial n = n * factorial (n - 1)        -- recursive case
+
+-- Trace: factorial 4
+-- = 4 * factorial 3
+-- = 4 * (3 * factorial 2)
+-- = 4 * (3 * (2 * factorial 1))
+-- = 4 * (3 * (2 * (1 * factorial 0)))
+-- = 4 * 3 * 2 * 1 * 1 = 24
+
+-- Fibonacci:
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n-1) + fib (n-2)
+
+-- Power function:
+power _ 0 = 1                              -- anything^0 = 1
+power base n = base * power base (n - 1)
+
+-- List reverse:
+myReverse []     = []
+myReverse (x:xs) = myReverse xs ++ [x]    -- append head to reversed tail</code></pre>
+
+<pre><code># Python equivalents:
+
+def factorial(n):
+    if n == 0:          # base case
+        return 1
+    return n * factorial(n - 1)   # recursive case
+
+def fibonacci(n):
+    if n == 0: return 0
+    if n == 1: return 1
+    return fibonacci(n-1) + fibonacci(n-2)</code></pre>
+
+<h3>Tail Recursion</h3>
+<div class="definition">
+    A function is <strong>tail recursive</strong> when the recursive call is the <strong>last operation</strong> in the function — nothing is done with the result after the call returns. Tail-recursive functions can be optimised by the compiler into a loop (<strong>tail call optimisation</strong>), preventing stack overflow.
+</div>
+
+<pre><code>-- Non-tail recursive (builds up pending multiplications):
+factorial n = n * factorial (n - 1)     -- multiply AFTER recursive call
+
+-- Tail recursive (uses accumulator to carry result forward):
+factorial_tail n acc =
+    if n == 0
+    then acc                             -- return accumulator
+    else factorial_tail (n - 1) (n * acc)  -- recursive call is LAST thing
+
+factorial 5 = factorial_tail 5 1         -- call with accumulator = 1
+
+-- Trace of factorial_tail 4 1:
+-- factorial_tail 3 4   (4*1=4)
+-- factorial_tail 2 12  (3*4=12)
+-- factorial_tail 1 24  (2*12=24)
+-- factorial_tail 0 24  (1*24=24)
+-- returns 24 (base case, n=0)</code></pre>
+
+<p><strong>Why tail recursion matters:</strong> Regular recursion builds a call stack — factorial(1000) creates 1000 stack frames, risking a stack overflow. Tail call optimisation rewrites this as a loop using a constant amount of stack space. Haskell, Scheme, and other functional languages guarantee tail call optimisation.</p>
+
+<div class="exam-tip">Be able to identify whether a function is tail recursive: look at whether any operation is applied to the result of the recursive call (e.g., <code>n * factorial(n-1)</code> is NOT tail recursive because multiplication happens after the call returns). Show the trace of a recursive function step by step, demonstrating how the call stack builds up (for non-tail) or stays flat (for tail-recursive with optimisation).</div>
+
 </div>
 </body>
 </html>

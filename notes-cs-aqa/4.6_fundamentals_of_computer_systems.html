@@ -570,6 +570,184 @@ Group the six 1s:
 
 <div class="exam-tip">Know half adder (2 inputs, no carry in) vs full adder (3 inputs including carry in). Full adders are chained for multi-bit addition. The D-type flip-flop stores 1 bit on the clock edge &mdash; it is the basis of all registers and memory. Be able to draw and explain the truth tables for all three circuits.</div>
 
+<!-- ============================================================ -->
+<h2>4.6.9 SR Flip-Flop</h2>
+
+<div class="definition">
+    The <strong>SR (Set-Reset) flip-flop</strong> is the most basic sequential logic circuit — a 1-bit memory element built from two cross-coupled <strong>NOR gates</strong> (or NAND gates). It has two inputs: <strong>S (Set)</strong> and <strong>R (Reset)</strong>, and two complementary outputs: <strong>Q</strong> and <strong>Q̄</strong> (Q-bar / NOT Q).
+</div>
+
+<h3>SR Flip-Flop Truth Table (NOR-based)</h3>
+<table>
+    <tr><th>S (Set)</th><th>R (Reset)</th><th>Q (output)</th><th>Q̄</th><th>State</th></tr>
+    <tr><td>0</td><td>0</td><td>Q (previous)</td><td>Q̄ (previous)</td><td><strong>Hold</strong> — no change, retains last stored bit</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>0</td><td><strong>Set</strong> — Q forced to 1</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>1</td><td><strong>Reset</strong> — Q forced to 0</td></tr>
+    <tr><td>1</td><td>1</td><td>Invalid</td><td>Invalid</td><td><strong>Forbidden</strong> — both outputs try to be 0 simultaneously, causes undefined behaviour</td></tr>
+</table>
+
+<h3>Circuit Diagram (NOR-based SR Flip-Flop)</h3>
+<svg viewBox="0 0 380 160" style="width:100%;max-width:380px;display:block;margin:0 auto 14px auto;" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="srm" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#374151" stroke-width="1"/></marker></defs>
+  <!-- NOR gate 1 (top) -->
+  <path d="M120,25 Q140,25 145,45 Q155,25 145,65 Q140,65 120,65 Q130,55 130,45 Q130,35 120,25Z" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="148" cy="45" r="4" fill="white" stroke="#2563eb" stroke-width="2"/>
+  <text x="133" y="49" text-anchor="middle" font-size="10" font-weight="700" fill="#1e40af">NOR</text>
+  <!-- NOR gate 2 (bottom) -->
+  <path d="M120,95 Q140,95 145,115 Q155,95 145,135 Q140,135 120,135 Q130,125 130,115 Q130,105 120,95Z" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="148" cy="115" r="4" fill="white" stroke="#2563eb" stroke-width="2"/>
+  <text x="133" y="119" text-anchor="middle" font-size="10" font-weight="700" fill="#1e40af">NOR</text>
+  <!-- S input -->
+  <line x1="20" y1="35" x2="120" y2="35" stroke="#374151" stroke-width="1.5" marker-end="url(#srm)"/>
+  <text x="10" y="39" font-size="12" font-weight="700" fill="#374151">S</text>
+  <!-- R input -->
+  <line x1="20" y1="125" x2="120" y2="125" stroke="#374151" stroke-width="1.5" marker-end="url(#srm)"/>
+  <text x="10" y="129" font-size="12" font-weight="700" fill="#374151">R</text>
+  <!-- Q output (top NOR output) -->
+  <line x1="152" y1="45" x2="220" y2="45" stroke="#374151" stroke-width="1.5"/>
+  <text x="225" y="49" font-size="12" font-weight="700" fill="#374151">Q</text>
+  <!-- Q-bar output (bottom NOR output) -->
+  <line x1="152" y1="115" x2="220" y2="115" stroke="#374151" stroke-width="1.5"/>
+  <text x="225" y="119" font-size="12" font-weight="700" fill="#374151">Q̄</text>
+  <!-- Cross-coupling: Q feeds back to bottom NOR input -->
+  <line x1="180" y1="45" x2="180" y2="70" stroke="#374151" stroke-width="1.5"/>
+  <line x1="180" y1="70" x2="100" y2="70" stroke="#374151" stroke-width="1.5"/>
+  <line x1="100" y1="70" x2="100" y2="105" stroke="#374151" stroke-width="1.5"/>
+  <line x1="100" y1="105" x2="120" y2="105" stroke="#374151" stroke-width="1.5" marker-end="url(#srm)"/>
+  <!-- Cross-coupling: Q-bar feeds back to top NOR input -->
+  <line x1="180" y1="115" x2="180" y2="90" stroke="#374151" stroke-width="1.5"/>
+  <line x1="180" y1="90" x2="95" y2="90" stroke="#374151" stroke-width="1.5"/>
+  <line x1="95" y1="90" x2="95" y2="55" stroke="#374151" stroke-width="1.5"/>
+  <line x1="95" y1="55" x2="120" y2="55" stroke="#374151" stroke-width="1.5" marker-end="url(#srm)"/>
+  <!-- Feedback arrows label -->
+  <text x="280" y="80" font-size="10" fill="#6b7280">Cross-coupling</text>
+  <text x="280" y="93" font-size="10" fill="#6b7280">creates memory</text>
+</svg>
+
+<p>The cross-coupling (output of each gate feeds back as an input to the other) creates <strong>bistable behaviour</strong> — the circuit can be in two stable states and remains in one state until explicitly changed. This bistability is the fundamental mechanism of all digital memory.</p>
+
+<h3>SR vs D-Type Flip-Flop Comparison</h3>
+<table>
+    <tr><th>Feature</th><th>SR Flip-Flop</th><th>D-Type Flip-Flop</th></tr>
+    <tr><td>Inputs</td><td>S (set) and R (reset)</td><td>D (data) and Clock</td></tr>
+    <tr><td>Forbidden state</td><td>Yes (S=1, R=1 is invalid)</td><td>No (only one data input)</td></tr>
+    <tr><td>Clock-controlled?</td><td>Not inherently (asynchronous)</td><td>Yes (clocked, synchronous)</td></tr>
+    <tr><td>When does output change?</td><td>Immediately when inputs change</td><td>Only on rising clock edge</td></tr>
+    <tr><td>Use</td><td>Debouncing, latches, SRAM cells</td><td>Registers, synchronous counters, pipeline stages</td></tr>
+    <tr><td>Relation</td><td>Building block</td><td>D flip-flop is built from SR flip-flop + NOT gate on S</td></tr>
+</table>
+
+<div class="exam-tip">The forbidden state (S=1, R=1) for an SR flip-flop causes both outputs to try to become 0 simultaneously, violating Q̄ = NOT Q. When S and R return to 0, the output is unpredictable. AQA exam questions may ask you to complete a timing diagram for an SR flip-flop, or to explain the difference between SR and D-type. Key: SR has a forbidden state; D-type eliminates this by having a single data input.</div>
+
+<!-- ============================================================ -->
+<h2>4.6.10 Classification of Programming Languages</h2>
+
+<p>Programming languages can be classified into different <strong>paradigms</strong> based on their fundamental approach to expressing computation. A single language may support multiple paradigms.</p>
+
+<table>
+    <tr><th>Paradigm</th><th>Core idea</th><th>Key features</th><th>Examples</th></tr>
+    <tr><td><strong>Imperative</strong></td><td>"How" to do it — give the computer step-by-step instructions that change state</td><td>Variables, assignment, loops, sequences of statements, mutable state</td><td>C, Pascal, BASIC, early Python</td></tr>
+    <tr><td><strong>Procedural</strong></td><td>Imperative but organised into named <strong>procedures/subroutines</strong></td><td>Functions/procedures, parameters, return values, modular code</td><td>C, Pascal, Python (procedural style)</td></tr>
+    <tr><td><strong>Object-Oriented (OOP)</strong></td><td>Group data and behaviour into <strong>objects</strong>; communicate via method calls</td><td>Classes, objects, encapsulation, inheritance, polymorphism</td><td>Java, C++, Python, C#, Ruby</td></tr>
+    <tr><td><strong>Declarative</strong></td><td>"What" to compute, not how — specify the result, let the system figure out the method</td><td>No explicit control flow; queries, constraints, rules</td><td>SQL, Prolog, HTML, CSS, Haskell (partially)</td></tr>
+    <tr><td><strong>Functional</strong></td><td>Computation as evaluation of mathematical functions; no mutable state</td><td>Pure functions, higher-order functions, immutability, recursion</td><td>Haskell, Lisp, Erlang, ML, Clojure</td></tr>
+    <tr><td><strong>Logic / Constraint</strong></td><td>Specify facts and rules; the system derives answers through inference</td><td>Unification, backtracking, rule-based inference</td><td>Prolog, Datalog</td></tr>
+    <tr><td><strong>Event-driven</strong></td><td>Program flow is determined by events (user actions, messages, sensor inputs)</td><td>Event handlers, callbacks, asynchronous execution</td><td>JavaScript (browser), Visual Basic, Node.js</td></tr>
+</table>
+
+<h3>Levels of Language</h3>
+<table>
+    <tr><th>Level</th><th>Examples</th><th>Key properties</th></tr>
+    <tr><td><strong>Machine code</strong></td><td>Binary instruction sequences (01001101...)</td><td>Directly executed by CPU; fastest; unreadable; processor-specific</td></tr>
+    <tr><td><strong>Assembly language</strong></td><td>x86, ARM assembly; AQA assembly</td><td>Mnemonics (MOV, ADD) for machine code; 1-to-1 mapping; processor-specific; assembled to machine code</td></tr>
+    <tr><td><strong>High-level language</strong></td><td>Python, Java, C, Haskell</td><td>Human-readable; abstracted from hardware; portable (with compiler); one statement = many machine code instructions</td></tr>
+    <tr><td><strong>Very high-level / 4GL</strong></td><td>SQL, MATLAB, R, Mathematica</td><td>Domain-specific; highly abstract; less control but faster to write</td></tr>
+</table>
+
+<h3>Low-Level vs High-Level: Trade-offs</h3>
+<table>
+    <tr><th>Feature</th><th>Low-level (Assembly/Machine Code)</th><th>High-level</th></tr>
+    <tr><td>Readability</td><td>Very difficult</td><td>Easy (English-like)</td></tr>
+    <tr><td>Portability</td><td>Not portable (CPU-specific)</td><td>Portable (compile for different CPUs)</td></tr>
+    <tr><td>Development speed</td><td>Very slow</td><td>Fast</td></tr>
+    <tr><td>Execution speed</td><td>Fastest (direct control)</td><td>Slower (overhead from abstraction)</td></tr>
+    <tr><td>Hardware access</td><td>Direct (every register, bit)</td><td>Abstracted (through OS calls)</td></tr>
+    <tr><td>Use cases</td><td>Device drivers, OS kernels, embedded firmware, bootloaders</td><td>Applications, web, data science, most software</td></tr>
+</table>
+
+<div class="exam-tip">AQA asks about language classification in two ways: (1) matching paradigm to language (know which languages use which paradigms), and (2) comparing low-level vs high-level (know portability, readability, execution speed trade-offs). Python supports imperative, procedural, OOP, and some functional styles — it is multi-paradigm. The key advantage of low-level: speed and hardware control. Key disadvantage: complex to write, not portable, hard to debug.</div>
+
+<!-- ============================================================ -->
+<h2>4.6.11 Virtual Machines</h2>
+
+<div class="definition">
+    A <strong>virtual machine (VM)</strong> is software that emulates a complete computer system, providing a <strong>virtualised</strong> hardware environment in which another operating system and its applications can run, completely isolated from the host system.
+</div>
+
+<h3>How Virtual Machines Work</h3>
+<p>The <strong>hypervisor</strong> (also called the Virtual Machine Monitor, VMM) is the software layer that creates and manages VMs. It runs on the <strong>host machine</strong> and provides each VM with its own virtualised CPU, RAM, storage, and network interfaces. The OS running inside the VM is called the <strong>guest OS</strong>.</p>
+
+<table>
+    <tr><th>Feature</th><th>Type 1 Hypervisor (bare-metal)</th><th>Type 2 Hypervisor (hosted)</th></tr>
+    <tr><td>Runs on</td><td>Directly on hardware (no host OS)</td><td>On top of a host operating system</td></tr>
+    <tr><td>Performance</td><td>Higher (direct hardware access)</td><td>Lower (host OS adds overhead)</td></tr>
+    <tr><td>Examples</td><td>VMware ESXi, Microsoft Hyper-V, Xen</td><td>VMware Workstation, VirtualBox, Parallels</td></tr>
+    <tr><td>Use case</td><td>Data centres, cloud servers</td><td>Developer workstations, personal use</td></tr>
+</table>
+
+<h3>Uses of Virtual Machines</h3>
+<ul>
+    <li><strong>Running multiple operating systems</strong> on one physical machine — e.g., running Windows and Linux simultaneously on the same hardware. Each VM believes it has dedicated hardware.</li>
+    <li><strong>Software testing</strong> — test software in different OS environments without needing separate machines. Snapshots allow the VM to be reset to a clean state after testing.</li>
+    <li><strong>Sandboxing</strong> — running untrusted or potentially malicious software in an isolated environment. If the guest is compromised, the host machine is protected because the VM's access is restricted by the hypervisor.</li>
+    <li><strong>Malware analysis</strong> — security researchers run malware inside a VM to observe its behaviour safely. The VM can be discarded afterwards.</li>
+    <li><strong>Development and deployment</strong> — developers can create a VM matching the production server environment, eliminating "works on my machine" problems.</li>
+    <li><strong>Cloud computing</strong> — cloud providers (AWS, Azure, GCP) run thousands of VMs on large physical servers. Customers rent VMs without managing the underlying hardware.</li>
+    <li><strong>Legacy software</strong> — old software that only runs on Windows XP can be run in a Windows XP VM on modern hardware.</li>
+</ul>
+
+<h3>Java Virtual Machine (JVM) — A Different Kind of VM</h3>
+<p>The JVM is a <strong>process virtual machine</strong> rather than a system virtual machine. It does not emulate a whole computer — instead, it provides an abstract execution environment for Java bytecode.</p>
+<ul>
+    <li>Java source code is compiled to <strong>platform-independent bytecode</strong> (.class files)</li>
+    <li>The JVM interprets/JIT-compiles that bytecode on any platform that has a JVM installed</li>
+    <li>This achieves <strong>portability</strong>: "write once, run anywhere"</li>
+    <li>The JVM is not a hypervisor; it cannot run a different OS</li>
+</ul>
+
+<h3>Advantages and Disadvantages of VMs</h3>
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Run multiple OSes simultaneously on one machine</td><td>Performance overhead — virtualisation is not as fast as native execution</td></tr>
+    <tr><td>Strong isolation between VMs — crash in one does not affect host</td><td>Each VM requires its own OS licence and RAM allocation</td></tr>
+    <tr><td>Easy snapshots and rollback for testing</td><td>Requires powerful host hardware to run multiple VMs simultaneously</td></tr>
+    <tr><td>Sandboxing improves security</td><td>VM escape attacks (rare but possible) — malware breaks out of VM into host</td></tr>
+    <tr><td>Efficient use of physical server hardware (cloud)</td><td>Complex to set up and manage at scale</td></tr>
+</table>
+
+<div class="exam-tip">AQA exam questions on virtual machines focus on: (1) what a VM is (software that emulates hardware, allowing a guest OS to run on a host); (2) uses — especially sandboxing (isolating untrusted code), testing (clean snapshots), and running multiple OSes; (3) advantages/disadvantages. For sandboxing specifically: the key benefit is that malicious code is confined to the VM and cannot access the host OS or other VMs. Common 4-mark question: "Explain two uses of a virtual machine" — each answer needs what it is + why it is useful.</div>
+
+<!-- ============================================================ -->
+<h2>4.6.12 BIOS and Firmware</h2>
+
+<div class="definition">
+    The <strong>BIOS</strong> (Basic Input/Output System) is firmware stored in non-volatile ROM on the motherboard. It is the first software the CPU executes when the computer powers on, initialising hardware and loading the operating system.
+</div>
+
+<p><strong>BIOS / UEFI roles:</strong></p>
+<ol>
+    <li><strong>POST (Power-On Self-Test)</strong> &mdash; tests and initialises CPU, RAM, storage, keyboard. Reports faults via beep codes.</li>
+    <li><strong>Hardware initialisation</strong> &mdash; configures memory controller, chipset, and basic I/O to a working state.</li>
+    <li><strong>Locates and loads the bootloader</strong> &mdash; reads the boot sector (MBR or UEFI boot partition) from the selected boot device into RAM and transfers control to it.</li>
+    <li><strong>Provides basic I/O services</strong> &mdash; in legacy systems, provided a software interface for disk and keyboard access during early boot. (Modern OSes bypass this entirely.)</li>
+</ol>
+
+<p><strong>Why BIOS is in ROM:</strong> ROM is <strong>non-volatile</strong> — its contents survive when the computer is turned off. If BIOS were in RAM, it would be lost on power-off and the computer could never start. ROM is also <strong>read-only under normal conditions</strong>, preventing accidental corruption.</p>
+
+<p>Modern systems use <strong>UEFI</strong> (Unified Extensible Firmware Interface), which provides a graphical pre-boot environment, supports disks larger than 2 TB, and adds <strong>Secure Boot</strong> (verification that the bootloader has not been tampered with by malware). Both BIOS and UEFI serve the same fundamental role in the boot sequence.</p>
+
+<div class="exam-tip">If asked "why is the BIOS stored in ROM rather than RAM?": RAM is volatile (loses contents when power is off), so if BIOS were in RAM it would be gone when the computer powers on, meaning the computer could never start. ROM retains contents without power. If asked what BIOS does: initialises hardware (POST), then loads the OS bootloader from secondary storage into RAM.</div>
+
 </div>
 </body>
 </html>

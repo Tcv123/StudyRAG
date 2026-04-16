@@ -508,6 +508,97 @@ Output: 1100 (= 12 in decimal). Correct!</pre>
 
 <div class="exam-tip">Know the distinction between tractable (polynomial), intractable (exponential), and non-computable (no algorithm exists). For the AQA spec, understand that some problems cannot be solved in reasonable time as inputs grow, and heuristics provide practical approximate solutions. The halting problem is the key example of a non-computable problem.</div>
 
+<!-- ============================================================ -->
+<h2>4.4.9 Extended Backus-Naur Form (EBNF)</h2>
+
+<div class="definition">
+    <strong>Extended BNF (EBNF)</strong> adds extra notation to standard BNF to make grammars more concise, eliminating some need for recursive rules. While BNF only has <code>::=</code> and <code>|</code>, EBNF adds symbols for optional parts, repetition, and grouping.
+</div>
+
+<h3>EBNF Notation</h3>
+<table>
+    <tr><th>EBNF Symbol</th><th>Meaning</th><th>BNF Equivalent</th></tr>
+    <tr><td><code>{ ... }</code></td><td>Zero or more repetitions (like <code>*</code> in regex)</td><td>Requires recursive rule: <code>&lt;A&gt; ::= &epsilon; | &lt;A&gt; &lt;item&gt;</code></td></tr>
+    <tr><td><code>[ ... ]</code></td><td>Optional — zero or one occurrence (like <code>?</code> in regex)</td><td>Requires rule: <code>&lt;A&gt; ::= &epsilon; | &lt;item&gt;</code></td></tr>
+    <tr><td><code>( ... )</code></td><td>Grouping — treats contents as a unit</td><td>Can be expressed with an extra rule</td></tr>
+    <tr><td><code>|</code></td><td>Alternation (same as BNF)</td><td>Same</td></tr>
+    <tr><td><code>=</code></td><td>Is defined as (replaces <code>::=</code>)</td><td><code>::=</code></td></tr>
+    <tr><td><code>;</code></td><td>End of rule</td><td>End of line</td></tr>
+    <tr><td><code>"..."</code></td><td>Terminal symbol (literal)</td><td>Written unquoted in BNF</td></tr>
+</table>
+
+<h3>EBNF Examples</h3>
+<pre>-- BNF for an integer (recursive):
+&lt;integer&gt; ::= &lt;digit&gt; | &lt;integer&gt;&lt;digit&gt;
+
+-- EBNF equivalent (non-recursive, cleaner):
+integer = digit { digit } ;
+-- Reads: one digit, then zero or more digits
+
+-- BNF for identifier with optional sign (cumbersome):
+&lt;signed-int&gt; ::= &lt;integer&gt; | + &lt;integer&gt; | - &lt;integer&gt;
+
+-- EBNF equivalent:
+signed-int = [ "+" | "-" ] integer ;
+-- Optional sign, then integer
+
+-- BNF for a statement list (recursive):
+&lt;statement-list&gt; ::= &lt;statement&gt; | &lt;statement-list&gt; &lt;statement&gt;
+
+-- EBNF equivalent:
+statement-list = statement { statement } ;
+
+-- EBNF for a function call:
+function-call = identifier "(" [ argument { "," argument } ] ")" ;
+-- A name, left paren, optional arguments separated by commas, right paren</pre>
+
+<h3>Converting Between BNF and EBNF</h3>
+<pre>-- EBNF to BNF conversion rule:
+-- { X }  becomes:  &lt;X-list&gt; ::= &epsilon; | &lt;X-list&gt; X    (right-recursive)
+--                 or: &lt;X-list&gt; ::= &epsilon; | X &lt;X-list&gt;  (left-recursive)
+
+-- [ X ]  becomes:  &lt;opt-X&gt; ::= &epsilon; | X
+
+-- Example: EBNF   integer = digit { digit } ;
+-- becomes BNF:
+--   &lt;integer&gt;    ::= &lt;digit&gt; &lt;more-digits&gt;
+--   &lt;more-digits&gt; ::= &epsilon; | &lt;digit&gt; &lt;more-digits&gt;</pre>
+
+<div class="exam-tip">AQA exam questions can use either BNF or EBNF notation. Key differences: EBNF's <code>{ }</code> replaces recursive repetition rules; <code>[ ]</code> replaces rules with an empty alternative. You may be asked to interpret an EBNF grammar, derive a string from it, or identify whether a string is valid according to it. Practice tracing through each symbol: <code>{ }</code> means "this part can repeat any number of times including zero".</div>
+
+<!-- ============================================================ -->
+<h2>4.4.10 The Church-Turing Thesis — Detailed</h2>
+
+<div class="definition">
+    The <strong>Church-Turing thesis</strong> states that any function that can be computed by an <em>effective procedure</em> (a well-defined, step-by-step algorithm that always terminates) can be computed by a Turing machine. It defines the boundary between what is and is not computable.
+</div>
+
+<p><strong>Background:</strong> In the 1930s, mathematicians were trying to formally define "computability". Three independent approaches converged to the same answer:</p>
+<ul>
+    <li><strong>Alan Turing (1936)</strong> &mdash; Turing machines: a mechanical model of computation</li>
+    <li><strong>Alonzo Church (1936)</strong> &mdash; lambda calculus: a formal system based on function application</li>
+    <li><strong>Stephen Kleene</strong> &mdash; recursive functions: functions defined by induction/recursion</li>
+</ul>
+<p>All three independently proved equivalent — anything computable by one is computable by all three. This convergence is strong evidence (though not a formal proof) that they capture the true notion of computability.</p>
+
+<h3>Implications</h3>
+<table>
+    <tr><th>Implication</th><th>Explanation</th></tr>
+    <tr><td><strong>All general-purpose computers are equivalent</strong></td><td>Any computer (x86, ARM, quantum, DNA) that can simulate a Turing machine can compute the same set of functions. No standard computer is more powerful than any other.</td></tr>
+    <tr><td><strong>Limits of computation</strong></td><td>Problems that a Turing machine cannot solve (like the halting problem) cannot be solved by any computer, no matter how powerful.</td></tr>
+    <tr><td><strong>Foundation for all programming languages</strong></td><td>Any Turing-complete language can express any computable function. This includes Python, Java, Haskell, and even simple cellular automata like Conway's Game of Life.</td></tr>
+    <tr><td><strong>Not a proven theorem</strong></td><td>It is a <em>thesis</em> (conjecture), not a theorem, because "effectively computable" is an intuitive notion that cannot be formally defined within mathematics itself. However, no counterexample has ever been found.</td></tr>
+</table>
+
+<h3>Turing Completeness</h3>
+<div class="definition">
+    A system is <strong>Turing complete</strong> if it can simulate any Turing machine (i.e., compute any computable function). All general-purpose programming languages are Turing complete.
+</div>
+
+<p>A Turing-complete language requires: (1) conditional branching (if/else), (2) some form of looping or recursion, (3) ability to read/write arbitrary memory. Spreadsheet formulas (without circular references) are NOT Turing complete.</p>
+
+<div class="exam-tip">For the Church-Turing thesis, know: (1) it equates "computable" with "Turing-machine computable"; (2) it is a thesis not a theorem — because we cannot formally define "computable" independently; (3) it implies that no physical computer can solve the halting problem; (4) all general-purpose programming languages are equivalent in computing power (Turing complete). If asked why the halting problem is significant: it proves there exist well-defined mathematical problems for which no algorithm can exist — a fundamental limit on computation.</div>
+
 </div>
 </body>
 </html>

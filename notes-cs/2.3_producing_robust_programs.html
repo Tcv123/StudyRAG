@@ -298,6 +298,60 @@ Note: boundary tests check EVERY boundary between grades (49/50,
     <li><strong>Test logs:</strong> Record all test results systematically to track which tests pass and which fail, making it easy to verify fixes.</li>
 </ul>
 
+<h2>2.3.4b White-Box and Black-Box Testing</h2>
+
+<div class="definition">
+    Testing approaches can be classified by whether the tester can see the internal code of the program. <strong>White-box testing</strong> (also called structural or glass-box testing) tests the program with full knowledge of its internal structure. <strong>Black-box testing</strong> (also called functional or behavioural testing) tests the program based purely on its specification — the tester has no knowledge of how the code works internally, only what inputs and outputs are expected.
+</div>
+
+<table>
+    <tr><th>Feature</th><th>White-Box Testing</th><th>Black-Box Testing</th></tr>
+    <tr><td><strong>Access to code?</strong></td><td><strong>Yes</strong> — tester can see, read, and analyse the source code</td><td><strong>No</strong> — tester only knows the specification (what the program should do), not how it does it</td></tr>
+    <tr><td><strong>Who performs it?</strong></td><td>Usually the <strong>developer</strong> who wrote the code, or another developer on the same team. Requires programming knowledge.</td><td>Usually a <strong>separate test team</strong>, the client, or end-users. Does not require programming knowledge — only knowledge of the requirements.</td></tr>
+    <tr><td><strong>What it tests</strong></td><td>Internal logic: every branch of every IF statement is executed; every loop runs at least once; all code paths are covered. Checks that the <em>implementation</em> is correct.</td><td>Inputs and outputs: does the program meet its specification? Given this input, does it produce the correct output? Checks that the <em>behaviour</em> is correct from the user's perspective.</td></tr>
+    <tr><td><strong>Test design basis</strong></td><td>Based on the <strong>structure of the code</strong> — test cases are designed to exercise specific lines, branches, or paths through the code.</td><td>Based on the <strong>specification / requirements</strong> — test cases are designed from the expected behaviour without looking at the code.</td></tr>
+    <tr><td><strong>What it finds</strong></td><td>Logic errors in specific code paths; dead code (code that can never be reached); untested branches; security vulnerabilities in the implementation.</td><td>Missing functionality; incorrect outputs; failures to meet the specification; issues the user would actually notice.</td></tr>
+    <tr><td><strong>Limitations</strong></td><td>The developer may have the same blind spots as when writing the code — if a feature was forgotten entirely, it will not be tested. Difficult for complex programs (many possible paths).</td><td>Cannot test internal logic — a function could work correctly from the outside even while containing internal errors that will cause problems in edge cases not covered by the spec.</td></tr>
+    <tr><td><strong>Examples</strong></td><td>Checking that every branch of an IF-ELSEIF-ELSE chain is executed at least once; verifying a loop terminates correctly; checking that an error-handling path is actually reachable.</td><td>Entering test data and checking the output matches the expected result from the specification; UAT (User Acceptance Testing) where real users test the system against their requirements.</td></tr>
+</table>
+
+<pre>
+Example: Testing a function that calculates a student's grade (0-100 → A/B/C/Fail)
+
+WHITE-BOX test design (based on the code):
+  The tester reads the code and sees:
+    if score >= 70: grade = "A"
+    elif score >= 60: grade = "B"
+    elif score >= 50: grade = "C"
+    else: grade = "Fail"
+  Test cases designed to execute EVERY branch:
+    Test 1: score = 75 → should enter first branch (A)
+    Test 2: score = 65 → should enter second branch (B)
+    Test 3: score = 55 → should enter third branch (C)
+    Test 4: score = 40 → should enter else branch (Fail)
+    Test 5: score = 70 → boundary of first branch (A)
+    Test 6: score = 69 → boundary between A and B (B)
+  Every line and every branch is covered.
+
+BLACK-BOX test design (based on the specification):
+  The tester only knows the spec: "accepts 0-100, outputs A (70-100),
+  B (60-69), C (50-59), Fail (0-49), rejects out-of-range values"
+  Test cases based on the SPEC, not the code:
+    Test 1: 75 → expect "A"           (normal, A range)
+    Test 2: 55 → expect "C"           (normal, C range)
+    Test 3: 100 → expect "A"          (boundary, top)
+    Test 4: 0   → expect "Fail"       (boundary, bottom)
+    Test 5: 101 → expect error        (erroneous)
+    Test 6: -1  → expect error        (erroneous)
+    Test 7: "abc" → expect error      (erroneous, wrong type)
+    Test 8: 70  → expect "A"          (boundary between A and B)
+    Test 9: 69  → expect "B"          (boundary between A and B)
+  The tester never looks at the code — only verifies the outputs
+  match the specification.
+</pre>
+
+<div class="exam-tip">White-box = tester <strong>can see the code</strong> (tests internal logic, code paths, branches). Black-box = tester <strong>cannot see the code</strong> (tests inputs and outputs against the specification). In practice, both are used: developers use white-box testing during development (iterative testing) to ensure all code paths work; independent testers and users use black-box testing to verify the program meets its requirements. A key exam point: black-box testing is better for <em>finding missing features</em> because the tester is focused on the spec; white-box testing is better for <em>finding unreachable code</em> and <em>logic errors in specific branches</em>.</div>
+
 <h2>2.3.5 Types of Errors</h2>
 
 <p>Programs can contain three types of errors. Understanding the differences is essential for debugging:</p>

@@ -147,6 +147,97 @@
 </table>
 <p>The <strong>internet</strong> uses a partial mesh topology &mdash; core routers have multiple redundant connections to ensure reliability, but not every device connects to every other. This balances cost with resilience.</p>
 
+<h3>Bus Topology</h3>
+<p>All devices connect to a single central cable called the <strong>backbone</strong> or bus. Data sent by any device travels in both directions along the backbone and is seen by all devices. Each device checks whether the data is addressed to it; if not, it ignores it. Terminators at each end of the bus absorb signals and prevent them bouncing back.</p>
+
+<!-- Bus Topology Diagram -->
+<svg viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;margin:20px auto;display:block;">
+  <text x="250" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Bus Topology</text>
+  <!-- Backbone cable -->
+  <line x1="40" y1="90" x2="460" y2="90" stroke="#2563eb" stroke-width="3"/>
+  <!-- Terminators -->
+  <rect x="25" y="80" width="15" height="20" rx="3" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/>
+  <text x="32" y="120" text-anchor="middle" font-size="8" fill="#991b1b">T</text>
+  <rect x="460" y="80" width="15" height="20" rx="3" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/>
+  <text x="468" y="120" text-anchor="middle" font-size="8" fill="#991b1b">T</text>
+  <!-- Devices on top -->
+  <line x1="100" y1="90" x2="100" y2="50" stroke="#2563eb" stroke-width="1.5"/>
+  <circle cx="100" cy="38" r="18" fill="#f0f4ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="100" y="42" text-anchor="middle" font-size="9" fill="#1e3a5f">PC 1</text>
+  <line x1="190" y1="90" x2="190" y2="50" stroke="#2563eb" stroke-width="1.5"/>
+  <circle cx="190" cy="38" r="18" fill="#f0f4ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="190" y="42" text-anchor="middle" font-size="9" fill="#1e3a5f">PC 2</text>
+  <line x1="280" y1="90" x2="280" y2="50" stroke="#2563eb" stroke-width="1.5"/>
+  <circle cx="280" cy="38" r="18" fill="#f0f4ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="280" y="42" text-anchor="middle" font-size="9" fill="#1e3a5f">PC 3</text>
+  <line x1="370" y1="90" x2="370" y2="50" stroke="#2563eb" stroke-width="1.5"/>
+  <circle cx="370" cy="38" r="18" fill="#f0f4ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="370" y="42" text-anchor="middle" font-size="9" fill="#1e3a5f">PC 4</text>
+  <!-- Labels -->
+  <text x="250" y="108" text-anchor="middle" font-size="9" fill="#6b7280">Backbone cable (single shared medium)</text>
+  <text x="32" y="130" text-anchor="middle" font-size="8" fill="#991b1b">Term.</text>
+  <text x="468" y="130" text-anchor="middle" font-size="8" fill="#991b1b">Term.</text>
+</svg>
+
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Simple and <strong>cheap to install</strong> — less cabling than star (no central switch needed, no individual cable per device)</td><td><strong>Single point of failure</strong> — if the backbone cable breaks or a terminator fails, the <em>entire</em> network goes down</td></tr>
+    <tr><td>Easy to extend — add new devices by connecting to any point on the backbone</td><td><strong>Collisions</strong> — only one device can transmit at a time. If two devices send simultaneously, their signals collide, both are corrupted, and both must retransmit after a random delay. Performance degrades badly as more devices are added.</td></tr>
+    <tr><td>Suitable for small networks where cost is a priority</td><td>All devices see all data — less secure (any device can sniff traffic from any other)</td></tr>
+    <tr><td></td><td>Difficult to <strong>fault find</strong> — a break anywhere in the backbone kills everything; isolating the fault is hard</td></tr>
+    <tr><td></td><td>Now <strong>largely obsolete</strong> — replaced by star topology in all modern LANs</td></tr>
+</table>
+
+<h3>Ring Topology</h3>
+<p>Each device connects to exactly two others, forming a closed loop. Data travels around the ring in one direction (or both directions in a dual-ring), passing through each device in sequence until it reaches its destination.</p>
+
+<!-- Ring Topology Diagram -->
+<svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:340px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrowRing" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2563eb"/></marker>
+  </defs>
+  <text x="170" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Ring Topology</text>
+  <!-- Devices as circles -->
+  <circle cx="170" cy="60" r="22" fill="#f0f4ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="170" y="64" text-anchor="middle" font-size="9" fill="#1e3a5f">PC 1</text>
+  <circle cx="285" cy="155" r="22" fill="#f0f4ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="285" y="159" text-anchor="middle" font-size="9" fill="#1e3a5f">PC 2</text>
+  <circle cx="235" cy="260" r="22" fill="#f0f4ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="235" y="264" text-anchor="middle" font-size="9" fill="#1e3a5f">PC 3</text>
+  <circle cx="105" cy="260" r="22" fill="#f0f4ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="105" y="264" text-anchor="middle" font-size="9" fill="#1e3a5f">PC 4</text>
+  <circle cx="55" cy="155" r="22" fill="#f0f4ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="55" y="159" text-anchor="middle" font-size="9" fill="#1e3a5f">PC 5</text>
+  <!-- Ring connections with directional arrows -->
+  <line x1="185" y1="78" x2="270" y2="140" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowRing)"/>
+  <line x1="278" y1="175" x2="248" y2="240" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowRing)"/>
+  <line x1="215" y1="260" x2="130" y2="260" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowRing)"/>
+  <line x1="90" y1="244" x2="68" y2="175" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowRing)"/>
+  <line x1="72" y1="138" x2="150" y2="72" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowRing)"/>
+  <text x="170" y="158" text-anchor="middle" font-size="9" fill="#6b7280">Data travels</text>
+  <text x="170" y="170" text-anchor="middle" font-size="9" fill="#6b7280">in one direction</text>
+</svg>
+
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Data travels in one direction — <strong>no collisions</strong>, unlike a bus topology. Each device acts as a repeater, boosting the signal before passing it on.</td><td>If <strong>any device or cable fails</strong>, the entire ring is broken and the whole network goes down (unless a dual-ring or bypass mechanism is used)</td></tr>
+    <tr><td>Performs well under <strong>heavy load</strong> — token-ring protocols ensure only one device transmits at a time without collisions</td><td>Adding or removing a device <strong>disrupts the whole network</strong> — the ring must be broken to insert or remove a node</td></tr>
+    <tr><td>Equal access for all devices — no device can monopolise the network</td><td>Difficult to <strong>fault find</strong> — a problem anywhere on the ring affects everything</td></tr>
+    <tr><td></td><td>Now mostly <strong>obsolete</strong> for wired LANs (replaced by star). Still used in some WAN and fibre metropolitan networks (dual-ring SONET/SDH).</td></tr>
+</table>
+
+<h3>Topology Comparison Summary</h3>
+<table>
+    <tr><th>Feature</th><th>Star</th><th>Bus</th><th>Ring</th><th>Mesh</th></tr>
+    <tr><td><strong>Single point of failure</strong></td><td>Switch (but devices still isolated)</td><td>Backbone cable or terminator</td><td>Any device or cable</td><td>None (full mesh)</td></tr>
+    <tr><td><strong>Collisions?</strong></td><td>No (switch)</td><td>Yes (shared medium)</td><td>No (token-based)</td><td>No (direct paths)</td></tr>
+    <tr><td><strong>Cabling cost</strong></td><td>Medium (one cable per device)</td><td>Low (single backbone)</td><td>Medium (each device connects to two others)</td><td>Very high (n(n-1)/2 cables)</td></tr>
+    <tr><td><strong>Fault tolerance</strong></td><td>Medium</td><td>Very low</td><td>Low</td><td>Very high</td></tr>
+    <tr><td><strong>Common today?</strong></td><td>Yes — standard LAN</td><td>Obsolete</td><td>Mostly obsolete</td><td>Internet backbone, critical infrastructure</td></tr>
+</table>
+
+<div class="exam-tip">The star topology is the most important for GCSE — know it in detail. For bus topology, the key weaknesses are: (1) single backbone = single point of failure for the whole network, and (2) all devices share the medium so collisions occur. For ring topology, the key weakness is that any break in the ring brings down the entire network. Mesh topology's key strength is redundancy — multiple paths mean no single point of failure. Always relate topology choice to the scenario: a school network uses star; a critical military network uses mesh.</div>
+
 <h2>1.3.3 Client-Server and Peer-to-Peer</h2>
 
 <p>These are two different models for how devices on a network interact and share resources:</p>

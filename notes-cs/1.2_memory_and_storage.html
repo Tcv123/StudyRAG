@@ -159,6 +159,23 @@
     <li><strong>Longevity:</strong> How long does the data need to last? (Optical discs for archival; SSDs and flash drives have limited write cycles)</li>
 </ul>
 
+<h3>Magnetic Tape</h3>
+<div class="definition">
+    <strong>Magnetic tape</strong> stores data as magnetic patterns on a thin coated plastic strip wound onto reels or inside a cartridge. Modern LTO (Linear Tape-Open) cartridges can hold up to 18 TB uncompressed. It uses <strong>sequential access</strong> — to reach a specific piece of data the tape must physically wind from its current position to the target location, which can take minutes.
+</div>
+
+<table>
+    <tr><th>Feature</th><th>Detail</th></tr>
+    <tr><td><strong>Access type</strong></td><td><strong>Sequential only</strong> — data must be accessed in order. Cannot jump directly to any location the way an HDD or SSD can (random access). This makes it unsuitable for tasks requiring fast lookups.</td></tr>
+    <tr><td><strong>Speed</strong></td><td>Very slow for random access; fast for sequential streaming (LTO-8: ~360 MB/s sequential). Retrieving a random file can take minutes as the tape must wind to the correct position.</td></tr>
+    <tr><td><strong>Capacity</strong></td><td>Very high — LTO-9 holds 18 TB uncompressed, 45 TB compressed. A single cartridge can store an enormous amount of data.</td></tr>
+    <tr><td><strong>Cost per GB</strong></td><td>Extremely low — the cheapest storage medium per gigabyte. Ideal when cost is the dominant concern and fast access is not needed.</td></tr>
+    <tr><td><strong>Durability</strong></td><td>Excellent archival life (30–50+ years if stored correctly, away from heat, moisture, and magnetic fields). Physically fragile if bent or stretched.</td></tr>
+    <tr><td><strong>Uses</strong></td><td>Long-term offsite backups, disaster recovery archives, cloud provider cold storage (Google, AWS, Azure all use tape), broadcast archives, legal records, any data that is written once and very rarely read back.</td></tr>
+</table>
+
+<div class="exam-tip">The key feature that separates magnetic tape from all other storage types is <strong>sequential access</strong> — you must wind through the tape to reach a specific location, unlike HDDs and SSDs which can jump directly to any sector (random access). Always state this in exam answers. Magnetic tape is the only appropriate answer for questions about <em>large-scale long-term archival backup at minimum cost</em>.</div>
+
 <p><strong>Cloud storage</strong> stores data on remote servers accessed via the internet. It is not a separate hardware type but rather uses HDDs and SSDs in data centres managed by companies. Advantages: accessible from anywhere, automatic backups, scalable, no local hardware to maintain, enables collaboration. Disadvantages: requires internet, ongoing subscription cost, data held by a third party (privacy and security concerns), speed limited by internet connection, potential data sovereignty issues (data may be stored in another country with different laws).</p>
 
 <div class="exam-tip">When comparing storage types, structure your answer around: speed, capacity, cost per GB, durability, portability, and whether it has moving parts. For a specific scenario, recommend the most appropriate type and justify your choice. For example: "An SSD would be best for a laptop's main drive because it is shock-resistant (no moving parts, important for a portable device), fast (improves boot time and application loading), and silent." Always give reasons specific to the scenario.</div>
