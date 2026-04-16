@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Confirming Email</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EEF5FC;
+      --surface: #FFFFFF;
+      --border: #D2E5F3;
+      --text: #1B2D4F;
+      --muted: #6B87A8;
+      --accent: #5BADCF;
+      --accent-dark: #3D95BC;
+      --accent-glow: rgba(91,173,207,0.2);
+      --green: #16A34A;
+      --green-bg: rgba(22,163,74,0.07);
+      --green-border: rgba(22,163,74,0.18);
+      --green-text: #15803D;
+      --red: #DC2626;
+      --red-bg: rgba(220,38,38,0.07);
+      --red-border: rgba(220,38,38,0.18);
+      --red-text: #B91C1C;
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(91,173,207,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(91,173,207,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none; z-index: 0;
+    }
+
+    .layout {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 44px;
+      width: 100%; max-width: 440px;
+      box-shadow: 0 4px 32px rgba(91,173,207,0.12);
+      text-align: center;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .logo {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .logo-dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent-glow);
+    }
+
+    .logo-name {
+      font-family: var(--font-display);
+      font-size: 18px; color: var(--text); letter-spacing: -0.01em;
+    }
+
+    .icon-circle {
+      width: 72px; height: 72px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .icon-circle.loading { background: rgba(91,173,207,0.1); border: 1px solid rgba(91,173,207,0.2); }
+    .icon-circle.success { background: var(--green-bg); border: 1px solid var(--green-border); }
+    .icon-circle.error   { background: var(--red-bg); border: 1px solid var(--red-border); }
+
+    .icon-circle svg { width: 32px; height: 32px; }
+    .icon-circle.loading svg { color: var(--accent); animation: spin 1s linear infinite; }
+    .icon-circle.success svg { color: var(--green); }
+    .icon-circle.error svg   { color: var(--red); }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 22px; color: var(--text); margin-bottom: 8px;
+    }
+
+    p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .btn {
+      display: inline-block; padding: 12px 32px; border: none; border-radius: 10px;
+      font-family: var(--font-body); font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: all 0.2s; margin-top: 20px; text-decoration: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; box-shadow: 0 4px 14px var(--accent-glow);
+    }
+
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px var(--accent-glow); }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hide { display: none; }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <div class="card">
+    <div class="logo">
+      <div class="logo-dot"></div>
+      <div class="logo-name">RAG Learning</div>
+    </div>
+
+    <!-- loading state -->
+    <div id="loading">
+      <div class="icon-circle loading">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182"/>
+        </svg>
+      </div>
+      <h2>Verifying your email</h2>
+      <p>Hang tight, this will only take a moment...</p>
+    </div>
+
+    <!-- success state -->
+    <div id="success" class="hide">
+      <div class="icon-circle success">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <h2>Email verified!</h2>
+      <p>Your account is all set. Redirecting you now...</p>
+    </div>
+
+    <!-- error state -->
+    <div id="error" class="hide">
+      <div class="icon-circle error">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/>
+        </svg>
+      </div>
+      <h2>Verification failed</h2>
+      <p id="errorDetail">The link may have expired or already been used.</p>
+      <a href="login.html" class="btn">Go to Sign In</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(async () => {
+  const loadingEl = document.getElementById('loading');
+  const successEl = document.getElementById('success');
+  const errorEl   = document.getElementById('error');
+  const errorDetail = document.getElementById('errorDetail');
+
+  function showError(message) {
+    loadingEl.classList.add('hide');
+    errorDetail.textContent = message || 'The link may have expired or already been used.';
+    errorEl.classList.remove('hide');
+  }
+
+  function showSuccess() {
+    loadingEl.classList.add('hide');
+    successEl.classList.remove('hide');
+  }
+
+  // Supabase puts tokens in the URL hash after the user clicks the email link
+  // The client library picks them up automatically via onAuthStateChange
+  const { data: { subscription } } = supabaseClient.auth.onAuthStateChange(async (event, session) => {
+    if (event === 'SIGNED_IN' && session) {
+      // Create the profile row now that the user is verified
+      const user = session.user;
+      await supabaseClient.from('profiles').upsert({
+        id:             user.id,
+        first_name:     user.user_metadata?.first_name || '',
+        last_name:      user.user_metadata?.last_name  || '',
+        email:          user.email,
+        setup_complete: false
+      }, { onConflict: 'id', ignoreDuplicates: true });
+
+      showSuccess();
+      subscription.unsubscribe();
+
+      // Check if setup is complete
+      const { data: profile } = await supabaseClient
+        .from('profiles')
+        .select('setup_complete')
+        .eq('id', user.id)
+        .single();
+
+      setTimeout(() => {
+        if (profile && profile.setup_complete) {
+          window.location = '../Dashboard.html';
+        } else {
+          window.location = 'setup.html';
+        }
+      }, 1500);
+    }
+  });
+
+  // Fallback: if nothing happens after 8 seconds, show error
+  setTimeout(() => {
+    if (!successEl.classList.contains('hide')) return; // already succeeded
+    if (!loadingEl.classList.contains('hide')) {
+      showError('The link may have expired or already been used.');
+    }
+  }, 8000);
+})();
+</script>
+</body>
+</html>
