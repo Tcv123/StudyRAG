@@ -906,10 +906,8 @@ function renderExamDates(subjects) {
   const progressGrid = document.getElementById('subjectsProgressGrid');
   if (progressGrid && row) {
     const count = progressGrid.querySelectorAll('.subj-card').length;
-    const cols = 3;
-    const remainder = count % cols;
-    const span = remainder === 0 ? cols : cols - remainder;
-    row.style.gridColumn = `span ${span}`;
+    row.style.gridColumn = '1 / -1';
+    row.style.marginTop = '0';
     progressGrid.appendChild(row);
   }
 
