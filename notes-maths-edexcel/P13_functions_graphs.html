@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P13: Functions and Graphs - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P13: Functions and Graphs</h1>
+
+<h2>1. Function Notation, Domain and Range</h2>
+
+<div class="definition">
+  <strong>Function:</strong> A mapping where every element of the domain maps to exactly one element of the range.<br><br>
+  <strong>Domain:</strong> The set of allowable input values (the \(x\)-values).<br>
+  <strong>Range:</strong> The set of output values (the \(f(x)\)-values).
+</div>
+
+<p>Functions can be described using function notation: \(f : x \mapsto 2x + 1\) or \(f(x) = 2x + 1\).</p>
+<p>When stating a domain, write it explicitly, e.g. \(f(x) = \sqrt{x}\), \(x \geq 0\).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A mapping diagram with one-to-one or many-to-one arrows represents a valid function. A one-to-many mapping is NOT a function.
+</div>
+
+<h2>2. Composite Functions</h2>
+
+<div class="definition">
+  <strong>Composite function</strong> \(fg(x)\) means "apply \(g\) first, then apply \(f\) to the result":<br>
+  $$fg(x) = f(g(x))$$
+  Note: order matters — \(fg(x) \neq gf(x)\) in general.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Given \(f(x) = x^2 + 1\) and \(g(x) = 3x - 2\):<br><br>
+  \(fg(x) = f(3x-2) = (3x-2)^2 + 1 = 9x^2 - 12x + 5\)<br>
+  \(gf(x) = g(x^2+1) = 3(x^2+1) - 2 = 3x^2 + 1\)<br><br>
+  These are clearly different — order matters!
+</div>
+
+<h2>3. Inverse Functions</h2>
+
+<div class="definition">
+  The <strong>inverse function</strong> \(f^{-1}(x)\) reverses the effect of \(f\):<br>
+  $$f^{-1}(f(x)) = x \quad \text{and} \quad f(f^{-1}(x)) = x$$
+  The graph of \(y = f^{-1}(x)\) is the reflection of \(y = f(x)\) in the line \(y = x\).<br>
+  <strong>Domain of \(f^{-1}\) = Range of \(f\)</strong> &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Range of \(f^{-1}\) = Domain of \(f\)</strong>
+</div>
+
+<h3>Method to Find an Inverse</h3>
+<ol>
+  <li>Write \(y = f(x)\)</li>
+  <li>Swap \(x\) and \(y\): write \(x = f(y)\)</li>
+  <li>Rearrange to make \(y\) the subject</li>
+  <li>Write \(f^{-1}(x) = \ldots\) with the domain stated as the range of \(f\)</li>
+</ol>
+
+<div class="example">
+  <strong>Example:</strong> Find \(f^{-1}(x)\) where \(f(x) = \dfrac{2x+1}{x-3}\), \(x \neq 3\).<br><br>
+  Let \(y = \dfrac{2x+1}{x-3}\). Swap: \(x = \dfrac{2y+1}{y-3}\).<br>
+  \(x(y-3) = 2y + 1 \Rightarrow xy - 3x = 2y + 1 \Rightarrow y(x-2) = 3x + 1\)<br>
+  \(f^{-1}(x) = \dfrac{3x+1}{x-2}\), \(x \neq 2\)
+</div>
+
+<svg width="300" height="300" viewBox="0 0 300 300" style="display:block;margin:15px auto;">
+  <line x1="0" y1="150" x2="300" y2="150" stroke="#ccc" stroke-width="1"/>
+  <line x1="150" y1="0" x2="150" y2="300" stroke="#ccc" stroke-width="1"/>
+  <!-- y = x line -->
+  <line x1="0" y1="300" x2="300" y2="0" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="245" y="30" font-size="12" fill="#94a3b8">y = x</text>
+  <!-- f(x) = e^x style curve approximation -->
+  <path d="M 30 270 Q 100 240 150 150 Q 200 60 260 30" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="255" y="55" font-size="13" fill="#2563eb">y=f(x)</text>
+  <!-- f^-1(x) — reflection -->
+  <path d="M 30 260 Q 60 200 150 150 Q 240 100 270 30" fill="none" stroke="#e63946" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="240" y="115" font-size="13" fill="#e63946">y=f⁻¹(x)</text>
+</svg>
+<p style="text-align:center;font-size:0.9rem;color:#64748b;">Graph of \(f\) and its inverse, reflected in \(y=x\)</p>
+
+<h2>4. The Modulus Function</h2>
+
+<div class="definition">
+  $$|x| = \begin{cases} x & \text{if } x \geq 0 \\ -x & \text{if } x < 0 \end{cases}$$
+  The graph of \(y = |f(x)|\) reflects all parts of \(y = f(x)\) that lie below the \(x\)-axis up above it.
+</div>
+
+<h3>Solving Modulus Equations</h3>
+<p>To solve \(|f(x)| = g(x)\), consider two cases:</p>
+<ul>
+  <li><strong>Case 1:</strong> \(f(x) = g(x)\) (where \(f(x) \geq 0\))</li>
+  <li><strong>Case 2:</strong> \(-f(x) = g(x)\), i.e. \(f(x) = -g(x)\)</li>
+</ul>
+<p><strong>Always check</strong> solutions in the original equation — extraneous solutions can arise.</p>
+
+<h3>Modulus Inequalities</h3>
+<p>Best solved graphically: sketch both sides and identify where one is above/below the other.</p>
+<ul>
+  <li>\(|f(x)| < k \Rightarrow -k < f(x) < k\)</li>
+  <li>\(|f(x)| > k \Rightarrow f(x) < -k\) or \(f(x) > k\)</li>
+</ul>
+
+<svg width="400" height="260" viewBox="0 0 400 260" style="display:block;margin:15px auto;">
+  <line x1="10" y1="200" x2="390" y2="200" stroke="#ccc" stroke-width="1"/>
+  <line x1="200" y1="10" x2="200" y2="260" stroke="#ccc" stroke-width="1"/>
+  <!-- y = x^2 - 4 -->
+  <path d="M 40 184 Q 100 40 200 200 Q 300 40 360 184" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="340" y="170" font-size="12" fill="#94a3b8">y=x²−4</text>
+  <!-- y = |x^2 - 4| — reflects negative portion up -->
+  <path d="M 40 184 Q 100 40 155 200" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <path d="M 155 200 Q 200 20 245 200" fill="none" stroke="#e63946" stroke-width="2.5"/>
+  <path d="M 245 200 Q 300 40 360 184" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="260" y="30" font-size="13" fill="#e63946">y=|x²−4|</text>
+  <text x="140" y="215" font-size="12" fill="#1a1a2e">−2</text>
+  <text x="238" y="215" font-size="12" fill="#1a1a2e">2</text>
+</svg>
+<p style="text-align:center;font-size:0.9rem;color:#64748b;">Graph of \(y = |x^2 - 4|\): the section between \(x = -2\) and \(x = 2\) is reflected upward.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When solving modulus equations, always draw a sketch first. This helps identify how many solutions exist and avoids missing cases.
+</div>
+
+<h2>5. Transformations of Functions</h2>
+
+<table>
+  <tr><th>Transformation</th><th>Mapping</th><th>Effect on graph</th></tr>
+  <tr><td>Translation by \(\begin{pmatrix}a\\0\end{pmatrix}\)</td><td>\(y = f(x-a)\)</td><td>Shift right by \(a\)</td></tr>
+  <tr><td>Translation by \(\begin{pmatrix}0\\b\end{pmatrix}\)</td><td>\(y = f(x) + b\)</td><td>Shift up by \(b\)</td></tr>
+  <tr><td>Horizontal stretch SF \(\frac{1}{a}\)</td><td>\(y = f(ax)\)</td><td>Stretch parallel to \(x\)-axis, factor \(\frac{1}{a}\)</td></tr>
+  <tr><td>Vertical stretch SF \(a\)</td><td>\(y = af(x)\)</td><td>Stretch parallel to \(y\)-axis, factor \(a\)</td></tr>
+  <tr><td>Reflection in \(x\)-axis</td><td>\(y = -f(x)\)</td><td>Reflects in \(x\)-axis</td></tr>
+  <tr><td>Reflection in \(y\)-axis</td><td>\(y = f(-x)\)</td><td>Reflects in \(y\)-axis</td></tr>
+</table>
+
+<h3>Order of Transformations</h3>
+<p>When combining transformations, order matters. Changes <em>inside</em> the function (affecting \(x\)) act in the <strong>opposite</strong> direction and in <strong>reverse order</strong> to what you might expect.</p>
+
+<div class="example">
+  <strong>Example:</strong> Describe the transformation \(y = 2f(3x - 1)\).<br><br>
+  Rewrite as \(y = 2f\!\left(3\left(x - \tfrac{1}{3}\right)\right)\).<br>
+  Order: (1) horizontal stretch by factor \(\frac{1}{3}\), (2) translation by \(\frac{1}{3}\) right, (3) vertical stretch by factor 2.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Inside brackets — horizontal effects, but reversed in direction. Outside brackets — vertical effects, as expected.
+</div>
+
+<h2>6. Piecewise Functions</h2>
+<p>A piecewise function is defined by different rules on different intervals:</p>
+<div class="equation">$$f(x) = \begin{cases} x^2 & x < 0 \\ 2x + 1 & 0 \leq x \leq 3 \\ 7 & x > 3 \end{cases}$$</div>
+<p>When sketching, plot each piece on its interval. Use open circles \(\circ\) for excluded endpoints and closed circles \(\bullet\) for included endpoints.</p>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

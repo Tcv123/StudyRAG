@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statistical Sampling - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>S1: Statistical Sampling</h1>
+
+<h2>1. Population, Census and Sample</h2>
+
+<div class="definition">
+  <strong>Population:</strong> The entire group of individuals or items being studied. A population can be finite (e.g. all students in a school) or infinite (e.g. all possible tosses of a coin).
+</div>
+
+<div class="definition">
+  <strong>Census:</strong> A survey of the <em>entire</em> population. Every member is included.
+</div>
+
+<div class="definition">
+  <strong>Sample:</strong> A subset of the population selected for study. Findings from the sample are used to make inferences about the whole population.
+</div>
+
+<table>
+  <tr><th></th><th>Census</th><th>Sample Survey</th></tr>
+  <tr><td><strong>Advantages</strong></td><td>Completely accurate; no sampling error; gives exact results for every subgroup</td><td>Cheaper, faster; less data to process; useful when testing is destructive</td></tr>
+  <tr><td><strong>Disadvantages</strong></td><td>Very expensive and time-consuming; impractical for large or infinite populations; destructive testing impossible</td><td>Results subject to sampling error and bias; may not represent every subgroup</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Questions often ask you to state one advantage or disadvantage. Make sure your answer is specific to the context given — don't just copy a generic list.
+</div>
+
+<h2>2. Sampling Frames and Key Terms</h2>
+
+<div class="definition">
+  <strong>Sampling frame:</strong> A complete list of all members of the population from which a sample can be drawn (e.g. an electoral register, school roll).
+</div>
+
+<ul>
+  <li><strong>Sample unit:</strong> Each individual member of the population.</li>
+  <li><strong>Representative sample:</strong> A sample that accurately reflects the characteristics of the whole population.</li>
+  <li><strong>Random sample:</strong> A sample in which every member of the population has an equal chance of being selected.</li>
+</ul>
+
+<h2>3. Sampling Methods</h2>
+
+<h3>Simple Random Sampling</h3>
+<p>Every member of the population has an <strong>equally likely</strong> chance of being selected. Requires a complete sampling frame. Each member is given a number; numbers are generated randomly (random number table or calculator).</p>
+<ul>
+  <li>Lottery method: names in a hat, draw without replacement.</li>
+  <li>Random number generator: assign numbers 1 to N; generate n random numbers.</li>
+</ul>
+<div class="example">
+  <strong>Example:</strong> A school has 600 students. A simple random sample of 30 is required. Number all students 001–600 and use a random number generator to select 30 distinct numbers.
+</div>
+
+<h3>Systematic Sampling</h3>
+<p>Members are selected at regular intervals from a sampling frame. The <strong>sampling interval</strong> is:</p>
+<div class="equation">$$k = \frac{N}{n}$$</div>
+<p>where \(N\) = population size, \(n\) = sample size. Choose a random starting point between 1 and \(k\), then select every \(k\)th member.</p>
+<div class="example">
+  <strong>Example:</strong> Population size 500, sample size 25. \(k = 500/25 = 20\). Random start between 1 and 20, say 7. Sample: 7, 27, 47, 67, …
+</div>
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Systematic sampling requires a <em>sampling frame</em>. It can introduce bias if there is a periodic pattern in the list that coincides with the sampling interval.
+</div>
+
+<h3>Stratified Sampling</h3>
+<p>The population is divided into non-overlapping groups (<strong>strata</strong>) based on a shared characteristic (e.g. year group, gender). A proportional number is then selected from each stratum using simple random sampling.</p>
+<div class="equation">$$\text{Sample from stratum} = \frac{\text{stratum size}}{N} \times n$$</div>
+<div class="example">
+  <strong>Example:</strong> A school has 400 Year 12 and 200 Year 13 students. A stratified sample of 60 is needed.<br>
+  Year 12: \(\frac{400}{600} \times 60 = 40\) students<br>
+  Year 13: \(\frac{200}{600} \times 60 = 20\) students
+</div>
+
+<!-- SVG: Stratified Sample Diagram -->
+<svg viewBox="0 0 540 200" width="100%" style="margin:20px 0;border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;">
+  <!-- Population box -->
+  <rect x="20" y="30" width="160" height="140" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="22" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="600">Population (N=600)</text>
+  <!-- Stratum A -->
+  <rect x="30" y="40" width="140" height="58" rx="4" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+  <text x="100" y="65" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="600">Stratum A</text>
+  <text x="100" y="84" text-anchor="middle" font-size="11" fill="#1e3a5f">Year 12: 400</text>
+  <!-- Stratum B -->
+  <rect x="30" y="105" width="140" height="55" rx="4" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+  <text x="100" y="128" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="600">Stratum B</text>
+  <text x="100" y="147" text-anchor="middle" font-size="11" fill="#1e3a5f">Year 13: 200</text>
+  <!-- Arrow -->
+  <line x1="185" y1="100" x2="240" y2="100" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#64748b"/></marker></defs>
+  <!-- Sample box -->
+  <rect x="245" y="30" width="160" height="140" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="325" y="22" text-anchor="middle" font-size="13" fill="#14532d" font-weight="600">Sample (n=60)</text>
+  <!-- Sample A -->
+  <rect x="255" y="40" width="140" height="58" rx="4" fill="#86efac" stroke="#16a34a" stroke-width="1"/>
+  <text x="325" y="65" text-anchor="middle" font-size="12" fill="#14532d" font-weight="600">From Stratum A</text>
+  <text x="325" y="84" text-anchor="middle" font-size="11" fill="#14532d">40 students (SRS)</text>
+  <!-- Sample B -->
+  <rect x="255" y="105" width="140" height="55" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="1"/>
+  <text x="325" y="128" text-anchor="middle" font-size="12" fill="#14532d" font-weight="600">From Stratum B</text>
+  <text x="325" y="147" text-anchor="middle" font-size="11" fill="#14532d">20 students (SRS)</text>
+  <!-- Formula -->
+  <text x="430" y="90" text-anchor="middle" font-size="12" fill="#1e3a5f">k = N/n</text>
+  <text x="430" y="108" text-anchor="middle" font-size="11" fill="#64748b">proportional</text>
+  <text x="430" y="124" text-anchor="middle" font-size="11" fill="#64748b">allocation</text>
+</svg>
+
+<h3>Opportunity (Convenience) Sampling</h3>
+<p>The researcher samples whoever is available at the time. No sampling frame is required.</p>
+<ul>
+  <li><strong>Advantage:</strong> Quick, cheap, easy to carry out.</li>
+  <li><strong>Disadvantage:</strong> Highly likely to be biased; not representative of the whole population.</li>
+</ul>
+
+<h3>Quota Sampling</h3>
+<p>The researcher divides the population into groups and sets quotas for each. Individuals are then selected non-randomly until each quota is filled.</p>
+<ul>
+  <li><strong>Advantage:</strong> Ensures representation of key subgroups; no sampling frame needed.</li>
+  <li><strong>Disadvantage:</strong> Non-random selection within quotas introduces bias; not truly random.</li>
+</ul>
+
+<h2>4. Summary Table — Advantages and Disadvantages</h2>
+
+<table>
+  <tr><th>Method</th><th>Requires sampling frame?</th><th>Advantages</th><th>Disadvantages</th></tr>
+  <tr><td>Simple Random</td><td>Yes</td><td>Unbiased; each member has equal chance</td><td>Requires complete list; impractical for large populations</td></tr>
+  <tr><td>Systematic</td><td>Yes</td><td>Simple to carry out; spread across population</td><td>Periodic bias possible; requires ordered list</td></tr>
+  <tr><td>Stratified</td><td>Yes (per stratum)</td><td>Proportional representation of subgroups; more accurate for heterogeneous populations</td><td>More complex; need to know stratum sizes</td></tr>
+  <tr><td>Opportunity</td><td>No</td><td>Very quick and cheap; easy to implement</td><td>Highly biased; not representative</td></tr>
+  <tr><td>Quota</td><td>No</td><td>Ensures subgroup representation without sampling frame</td><td>Non-random within quotas; interviewer bias</td></tr>
+</table>
+
+<h2>5. Bias in Sampling</h2>
+
+<div class="definition">
+  <strong>Bias:</strong> A systematic error that causes the sample to be unrepresentative of the population. A biased sample consistently over- or under-estimates the true value.
+</div>
+
+<ul>
+  <li><strong>Selection bias:</strong> Certain groups are more likely to be chosen (e.g. only sampling people in a particular location).</li>
+  <li><strong>Non-response bias:</strong> People who don't respond may differ systematically from those who do.</li>
+  <li><strong>Question wording bias:</strong> Leading questions nudge respondents towards certain answers (e.g. "Don't you agree that…?").</li>
+  <li><strong>Volunteer bias:</strong> People who choose to participate may not be representative.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In context questions, identify <em>why</em> a sampling method is biased. For example, "standing outside a gym to survey exercise habits" would over-represent frequent exercisers.
+</div>
+
+<h2>6. Choosing and Justifying a Sampling Method</h2>
+
+<p>Exam questions often ask you to: (a) identify the sampling method used, or (b) suggest an appropriate method and give a reason.</p>
+
+<ul>
+  <li>Use <strong>stratified</strong> when the population has distinct subgroups that should be proportionally represented.</li>
+  <li>Use <strong>systematic</strong> when a sampling frame exists and simplicity is important.</li>
+  <li>Use <strong>simple random</strong> when complete fairness is needed and the population is manageable.</li>
+  <li>Use <strong>opportunity</strong> or <strong>quota</strong> when no sampling frame exists and speed is prioritised (acknowledge the bias).</li>
+</ul>
+
+<div class="example">
+  <strong>Worked Example:</strong> A factory produces 2000 bolts per day: 800 from Machine A, 700 from Machine B, and 500 from Machine C. A quality control sample of 40 is needed. Suggest an appropriate sampling method and calculate how many from each machine.<br><br>
+  <strong>Method:</strong> Stratified sampling, because the bolts come from different machines (subgroups) and we want proportional representation.<br>
+  Machine A: \(\frac{800}{2000} \times 40 = 16\)<br>
+  Machine B: \(\frac{700}{2000} \times 40 = 14\)<br>
+  Machine C: \(\frac{500}{2000} \times 40 = 10\)<br>
+  Total: \(16 + 14 + 10 = 40\) ✓
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

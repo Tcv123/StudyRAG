@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equations and Inequalities - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P3: Equations and Inequalities</h1>
+
+<h2>1. Simultaneous Equations</h2>
+
+<h3>Both Linear — Elimination Method</h3>
+<p>Multiply equations to make coefficients of one variable equal, then add or subtract to eliminate it.</p>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(3x + 2y = 8\) and \(5x - y = 7\).
+  <br><br>
+  Multiply equation 2 by 2: \(10x - 2y = 14\)
+  <br>
+  Add to equation 1: \(13x = 22 \Rightarrow x = \dfrac{22}{13}\)
+  <br>
+  Substitute: \(y = 5 \cdot \dfrac{22}{13} - 7 = \dfrac{110-91}{13} = \dfrac{19}{13}\)
+</div>
+
+<h3>Both Linear — Substitution Method</h3>
+<p>Rearrange one equation for a variable, substitute into the other.</p>
+
+<h3>One Linear, One Quadratic (Common Exam Type)</h3>
+<p>Rearrange the linear equation and substitute into the quadratic. This typically gives a quadratic to solve.</p>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(y = x + 1\) and \(x^2 + y^2 = 25\).
+  <br><br>
+  Substitute \(y = x+1\): \(x^2 + (x+1)^2 = 25\)
+  <br>
+  \(x^2 + x^2 + 2x + 1 = 25\)
+  <br>
+  \(2x^2 + 2x - 24 = 0 \Rightarrow x^2 + x - 12 = 0\)
+  <br>
+  \((x+4)(x-3) = 0 \Rightarrow x = -4\) or \(x = 3\)
+  <br>
+  Corresponding \(y\): \(y = -3\) or \(y = 4\)
+  <br>
+  Solutions: \((-4,\,-3)\) and \((3,\,4)\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always substitute from the <em>linear</em> equation into the <em>quadratic</em> — never the other way round, as this creates higher-degree equations. Give both \((x,y)\) pairs in your final answer.
+</div>
+
+<h2>2. Linear Inequalities</h2>
+
+<p>Solve like a linear equation, but <strong>reverse the inequality sign when multiplying or dividing by a negative number</strong>.</p>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(3 - 2x > 7\).
+  <br><br>
+  \(-2x > 4\)
+  <br>
+  Dividing by \(-2\) (flip sign): \(x < -2\)
+</div>
+
+<p>Number line representation:</p>
+<svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:10px auto;max-width:400px;">
+  <line x1="20" y1="30" x2="380" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- Arrow heads -->
+  <polygon points="380,30 370,25 370,35" fill="#1a1a2e"/>
+  <polygon points="20,30 30,25 30,35" fill="#1a1a2e"/>
+  <!-- Tick at x = -2 (mapped to pixel 200) -->
+  <line x1="200" y1="24" x2="200" y2="36" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="196" y="52" font-size="13" fill="#1a1a2e">-2</text>
+  <!-- Open circle for strict inequality -->
+  <circle cx="200" cy="30" r="6" fill="white" stroke="#dc2626" stroke-width="2.5"/>
+  <!-- Shaded region to the left -->
+  <line x1="20" y1="30" x2="194" y2="30" stroke="#dc2626" stroke-width="4"/>
+  <polygon points="20,30 32,24 32,36" fill="#dc2626"/>
+  <!-- Label -->
+  <text x="50" y="20" font-size="12" fill="#dc2626">x &lt; -2</text>
+  <!-- Ticks for reference -->
+  <line x1="250" y1="26" x2="250" y2="34" stroke="#999" stroke-width="1.5"/>
+  <text x="246" y="50" font-size="11" fill="#999">0</text>
+  <line x1="300" y1="26" x2="300" y2="34" stroke="#999" stroke-width="1.5"/>
+  <text x="296" y="50" font-size="11" fill="#999">2</text>
+</svg>
+
+<ul>
+  <li>Open circle (\(\circ\)) for strict inequalities \(<\) or \(>\)</li>
+  <li>Filled circle (\(\bullet\)) for \(\leq\) or \(\geq\)</li>
+</ul>
+
+<h2>3. Quadratic Inequalities</h2>
+
+<p>Solve by finding roots of the corresponding equation, then using the shape of the parabola to determine the solution set.</p>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(x^2 - 4x - 5 \leq 0\).
+  <br><br>
+  Roots of \(x^2 - 4x - 5 = 0\): \((x-5)(x+1) = 0 \Rightarrow x = -1,\; x = 5\)
+  <br>
+  Parabola opens upward (positive \(a\)), so \(\leq 0\) between the roots.
+  <br>
+  Answer: \(-1 \leq x \leq 5\)
+</div>
+
+<div class="exam-tip">
+  <strong>Sign diagram approach:</strong> divide the number line into regions using the roots and test each region:
+  <br>For \((x-5)(x+1)\): regions \(x<-1\), \(-1 < x < 5\), \(x>5\)
+  <ul>
+    <li>\(x=-2\): \((-7)(-1) = +7 > 0\)</li>
+    <li>\(x=0\): \((-5)(1) = -5 < 0\) ✓ (satisfies \(\leq 0\))</li>
+    <li>\(x=6\): \((1)(7) = +7 > 0\)</li>
+  </ul>
+</div>
+
+<h2>4. Modulus (Absolute Value)</h2>
+
+<div class="definition">
+  The <strong>modulus</strong> \(|x|\) gives the distance from \(x\) to zero:
+  $$|x| = \begin{cases} x & \text{if } x \geq 0 \\ -x & \text{if } x < 0 \end{cases}$$
+</div>
+
+<h3>Solving Modulus Equations</h3>
+<div class="equation">$$|f(x)| = a \implies f(x) = a \text{ or } f(x) = -a \quad (a > 0)$$</div>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(|2x - 3| = 5\).
+  <br><br>
+  Case 1: \(2x - 3 = 5 \Rightarrow x = 4\)
+  <br>
+  Case 2: \(2x - 3 = -5 \Rightarrow x = -1\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(|3x + 1| = |x - 2|\).
+  <br><br>
+  Case 1: \(3x+1 = x-2 \Rightarrow 2x = -3 \Rightarrow x = -\frac{3}{2}\)
+  <br>
+  Case 2: \(3x+1 = -(x-2) \Rightarrow 3x+1 = -x+2 \Rightarrow 4x = 1 \Rightarrow x = \frac{1}{4}\)
+</div>
+
+<h3>Modulus Inequalities</h3>
+<table>
+  <tr><th>Form</th><th>Equivalent condition</th></tr>
+  <tr><td>\(|f(x)| < a\)</td><td>\(-a < f(x) < a\)</td></tr>
+  <tr><td>\(|f(x)| > a\)</td><td>\(f(x) > a\) or \(f(x) < -a\)</td></tr>
+  <tr><td>\(|f(x)| \leq a\)</td><td>\(-a \leq f(x) \leq a\)</td></tr>
+  <tr><td>\(|f(x)| \geq a\)</td><td>\(f(x) \geq a\) or \(f(x) \leq -a\)</td></tr>
+</table>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(|2x - 1| < 7\).
+  <br><br>
+  \(-7 < 2x - 1 < 7\)
+  <br>
+  \(-6 < 2x < 8\)
+  <br>
+  \(-3 < x < 4\)
+</div>
+
+<h3>Graph of \(y = |2x - 1|\)</h3>
+<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:400px;">
+  <!-- Axes -->
+  <line x1="30" y1="190" x2="390" y2="190" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="200" y1="10" x2="200" y2="200" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="392" y="194" font-size="13" fill="#1a1a2e">x</text>
+  <text x="203" y="10" font-size="13" fill="#1a1a2e">y</text>
+
+  <!-- y = |2x-1|: vertex at x=0.5, y=0 → pixel (220, 190) -->
+  <!-- Scale: 80px per unit x, 30px per unit y -->
+  <!-- x in [-2, 3]; x_px = 200 + 80*(x-0) = 200+80x; y_px = 190 - 30*y -->
+  <!-- Left branch (x < 0.5): y = -(2x-1) = 1-2x -->
+  <!-- At x=-2: y=5 → (40, 40) -->
+  <!-- At x=0.5: y=0 → (240, 190) -->
+  <line x1="40" y1="40" x2="240" y2="190" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Right branch (x >= 0.5): y = 2x-1 -->
+  <!-- At x=0.5: y=0 → (240,190); at x=3: y=5 → (440,40) but clip at 380 →  -->
+  <!-- At x=2.25: y=3.5 → (380, 85) -->
+  <line x1="240" y1="190" x2="380" y2="85" stroke="#2563eb" stroke-width="2.5"/>
+
+  <!-- Vertex label -->
+  <circle cx="240" cy="190" r="4" fill="#dc2626"/>
+  <text x="244" y="185" font-size="11" fill="#dc2626">vertex (½, 0)</text>
+
+  <!-- y-intercept: x=0, y=1 → (200, 160) -->
+  <circle cx="200" cy="160" r="4" fill="#16a34a"/>
+  <text x="205" y="158" font-size="11" fill="#16a34a">y-int (0,1)</text>
+
+  <!-- x-axis label -->
+  <text x="155" y="208" font-size="11" fill="#1a1a2e">½</text>
+  <line x1="240" y1="188" x2="240" y2="192" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <!-- Equation label -->
+  <text x="60" y="30" font-size="13" fill="#2563eb" font-style="italic">y = |2x − 1|</text>
+</svg>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When solving modulus equations graphically, sketch \(y = |f(x)|\) and the horizontal line \(y = a\) to count intersections (i.e., how many solutions exist). For modulus of modulus — work inside out.
+</div>
+
+<h2>5. Common Mistakes to Avoid</h2>
+<table>
+  <tr><th>Mistake</th><th>Correct approach</th></tr>
+  <tr><td>Squaring both sides of a modulus equation without checking</td><td>Always verify solutions satisfy the original equation</td></tr>
+  <tr><td>Forgetting to flip inequality when dividing by negative</td><td>\(-2x > 4 \Rightarrow x < -2\)</td></tr>
+  <tr><td>Only finding one case for \(|f(x)| = a\)</td><td>Always consider both \(f(x)=a\) and \(f(x)=-a\)</td></tr>
+  <tr><td>Solving linear–quadratic system by substituting into the linear</td><td>Always substitute the linear into the quadratic</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

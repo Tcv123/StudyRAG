@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P12: Algebraic Methods - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P12: Algebraic Methods</h1>
+
+<h2>1. Algebraic Division</h2>
+<p>Polynomial long division allows us to divide one polynomial by another. The result takes the form:</p>
+<div class="equation">$$\frac{f(x)}{d(x)} = q(x) + \frac{r(x)}{d(x)}$$</div>
+<p>where \(q(x)\) is the quotient and \(r(x)\) is the remainder (with degree less than the divisor).</p>
+
+<h3>Method: Long Division Layout</h3>
+<p>To divide \(2x^3 + 3x^2 - 4x + 1\) by \((x + 2)\):</p>
+
+<svg width="500" height="180" viewBox="0 0 500 180" style="display:block;margin:15px auto;font-size:15px;">
+  <text x="80" y="30" font-size="15" fill="#1a1a2e">2x³ + 3x² − 4x + 1</text>
+  <line x1="60" y1="38" x2="420" y2="38" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="10" y="30" font-size="15" fill="#1a1a2e">(x+2)</text>
+  <text x="80" y="60" font-size="14" fill="#16a34a">2x² — quotient term 1: 2x³ ÷ x = 2x²</text>
+  <text x="80" y="85" font-size="14" fill="#1a1a2e">Multiply (x+2) by 2x²: 2x³ + 4x²</text>
+  <text x="80" y="108" font-size="14" fill="#e63946">Subtract → −x² − 4x + 1</text>
+  <text x="80" y="132" font-size="14" fill="#16a34a">Next term: −x² ÷ x = −x</text>
+  <text x="80" y="155" font-size="14" fill="#1a1a2e">Continue until remainder found</text>
+</svg>
+
+<div class="example">
+  <strong>Worked Example:</strong> Divide \(2x^3 + 3x^2 - 4x + 1\) by \((x + 2)\).<br><br>
+  Step 1: \(2x^3 \div x = 2x^2\). Multiply: \(2x^2(x+2) = 2x^3 + 4x^2\). Subtract: \(-x^2 - 4x + 1\).<br>
+  Step 2: \(-x^2 \div x = -x\). Multiply: \(-x(x+2) = -x^2 - 2x\). Subtract: \(-2x + 1\).<br>
+  Step 3: \(-2x \div x = -2\). Multiply: \(-2(x+2) = -2x - 4\). Subtract: \(5\).<br><br>
+  Result: \(2x^3 + 3x^2 - 4x + 1 = (x+2)(2x^2 - x - 2) + 5\)
+</div>
+
+<h2>2. Factor Theorem and Remainder Theorem</h2>
+
+<div class="definition">
+  <strong>Factor Theorem:</strong> If \(f(a) = 0\) then \((x - a)\) is a factor of \(f(x)\).<br>
+  Conversely, if \((x - a)\) is a factor, then \(f(a) = 0\).
+</div>
+
+<div class="definition">
+  <strong>Remainder Theorem:</strong> When \(f(x)\) is divided by \((x - a)\), the remainder is \(f(a)\).<br>
+  More generally, when divided by \((ax - b)\), the remainder is \(f\!\left(\dfrac{b}{a}\right)\).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Show \((x - 2)\) is a factor of \(f(x) = x^3 - 3x^2 + 4\).<br><br>
+  \(f(2) = 8 - 12 + 4 = 0\) ✓ So \((x-2)\) is a factor.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When finding factors by trial, test \(x = \pm 1, \pm 2, \pm 3, \ldots\) systematically. Once one factor is found, use long division to find the remaining quadratic, then factorise further if possible.
+</div>
+
+<h2>3. Factorising Cubics</h2>
+<p>The general method to fully factorise a cubic \(f(x)\):</p>
+<ol>
+  <li>Find a value \(a\) such that \(f(a) = 0\) by inspection/trial</li>
+  <li>Divide \(f(x)\) by \((x - a)\) to obtain a quadratic quotient \(q(x)\)</li>
+  <li>Factorise \(q(x)\) by inspection or the quadratic formula</li>
+  <li>Write \(f(x) = (x - a) \cdot q(x)\) fully factorised</li>
+</ol>
+
+<div class="example">
+  <strong>Example:</strong> Fully factorise \(f(x) = x^3 - x^2 - 4x + 4\).<br><br>
+  Try \(x = 1\): \(f(1) = 1 - 1 - 4 + 4 = 0\) ✓<br>
+  Divide by \((x-1)\): \(f(x) = (x-1)(x^2 - 4)\)<br>
+  Factorise: \(f(x) = (x-1)(x-2)(x+2)\)
+</div>
+
+<h2>4. Partial Fractions</h2>
+<p>Partial fractions decompose a rational expression into simpler fractions. Three main cases:</p>
+
+<h3>Case 1: Distinct Linear Factors</h3>
+<div class="equation">$$\frac{px + q}{(ax+b)(cx+d)} \equiv \frac{A}{ax+b} + \frac{B}{cx+d}$$</div>
+
+<h3>Case 2: Repeated Linear Factor</h3>
+<div class="equation">$$\frac{px + q}{(ax+b)^2} \equiv \frac{A}{ax+b} + \frac{B}{(ax+b)^2}$$</div>
+<p>For three factors with one repeated: \(\dfrac{f(x)}{(ax+b)^2(cx+d)} \equiv \dfrac{A}{ax+b} + \dfrac{B}{(ax+b)^2} + \dfrac{C}{cx+d}\)</p>
+
+<h3>Case 3: Improper Fractions</h3>
+<p>When the degree of the numerator is <strong>greater than or equal to</strong> the degree of the denominator, perform polynomial division first, then apply partial fractions to the remainder.</p>
+
+<div class="example">
+  <strong>Worked Example — Partial Fractions Method:</strong><br><br>
+  Express \(\dfrac{5x+1}{(x+1)(x-2)}\) in partial fractions.<br><br>
+  Let \(\dfrac{5x+1}{(x+1)(x-2)} \equiv \dfrac{A}{x+1} + \dfrac{B}{x-2}\)<br><br>
+  Multiply both sides by \((x+1)(x-2)\):<br>
+  \(5x + 1 \equiv A(x-2) + B(x+1)\)<br><br>
+  Set \(x = 2\): \(11 = 3B\), so \(B = \dfrac{11}{3}\)<br>
+  Set \(x = -1\): \(-4 = -3A\), so \(A = \dfrac{4}{3}\)<br><br>
+  Answer: \(\dfrac{4/3}{x+1} + \dfrac{11/3}{x-2}\)
+</div>
+
+<table>
+  <tr><th>Case</th><th>Form</th><th>Decomposition</th><th>Key Step</th></tr>
+  <tr><td>Distinct linear factors</td><td>\(\frac{f(x)}{(ax+b)(cx+d)}\)</td><td>\(\frac{A}{ax+b}+\frac{B}{cx+d}\)</td><td>Substitute roots to find A, B</td></tr>
+  <tr><td>Repeated factor</td><td>\(\frac{f(x)}{(ax+b)^2(cx+d)}\)</td><td>\(\frac{A}{ax+b}+\frac{B}{(ax+b)^2}+\frac{C}{cx+d}\)</td><td>Substitute roots; equate coefficients for remaining</td></tr>
+  <tr><td>Improper fraction</td><td>deg(num) ≥ deg(denom)</td><td>Quotient + partial fractions of remainder</td><td>Divide first, then decompose</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always check: if the numerator degree ≥ denominator degree, the fraction is <em>improper</em>. Divide first. A common error is forgetting this step.
+</div>
+
+<h2>5. Proof by Contradiction</h2>
+
+<div class="definition">
+  <strong>Proof by Contradiction:</strong> Assume the negation of what you want to prove. Show this assumption leads to a logical contradiction. Therefore the original statement must be true.
+</div>
+
+<h3>Structure of a Proof by Contradiction</h3>
+<ol>
+  <li>State: "Assume for contradiction that [negation of statement] is true."</li>
+  <li>Use valid logical steps from this assumption.</li>
+  <li>Arrive at a contradiction (e.g. a number is both even and odd, or \(p\) and \(\neg p\)).</li>
+  <li>Conclude: "This is a contradiction, so the original statement must be true."</li>
+</ol>
+
+<h3>Classic Example 1: \(\sqrt{2}\) is Irrational</h3>
+<div class="example">
+  <strong>Proof:</strong> Assume \(\sqrt{2}\) is rational. Then \(\sqrt{2} = \dfrac{p}{q}\) where \(p, q \in \mathbb{Z}\), \(q \neq 0\), and \(\gcd(p,q) = 1\) (fully reduced).<br><br>
+  Then \(2 = \dfrac{p^2}{q^2}\), so \(p^2 = 2q^2\).<br>
+  This means \(p^2\) is even, so \(p\) is even. Write \(p = 2m\).<br>
+  Then \((2m)^2 = 2q^2 \Rightarrow 4m^2 = 2q^2 \Rightarrow q^2 = 2m^2\).<br>
+  So \(q\) is also even. But then \(p\) and \(q\) share factor 2 — contradiction with \(\gcd(p,q)=1\).<br>
+  Therefore \(\sqrt{2}\) is irrational. \(\square\)
+</div>
+
+<h3>Classic Example 2: Infinitely Many Primes</h3>
+<div class="example">
+  <strong>Proof:</strong> Assume there are finitely many primes: \(p_1, p_2, \ldots, p_n\).<br><br>
+  Consider \(N = p_1 \cdot p_2 \cdots p_n + 1\).<br>
+  Dividing \(N\) by any \(p_i\) gives remainder 1, so no \(p_i\) divides \(N\).<br>
+  But every integer \(> 1\) has a prime factor, so \(N\) must have a prime factor not in our list — contradiction.<br>
+  Therefore there are infinitely many primes. \(\square\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> You must explicitly state the assumption, reach a clear contradiction, and conclude. Simply finding something "odd" is not sufficient — name the contradiction precisely.
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

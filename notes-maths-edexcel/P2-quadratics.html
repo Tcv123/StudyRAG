@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quadratics - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P2: Quadratics</h1>
+
+<h2>1. Solving Quadratic Equations</h2>
+
+<div class="definition">
+  A <strong>quadratic equation</strong> has the form \(ax^2 + bx + c = 0\) where \(a \neq 0\). It has at most two solutions (roots).
+</div>
+
+<h3>Method 1: Factorising</h3>
+<p>If the quadratic factorises neatly, this is the quickest method.</p>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(x^2 - 5x + 6 = 0\).
+  <br><br>
+  Factorise: \((x-2)(x-3) = 0\)
+  <br>
+  So \(x = 2\) or \(x = 3\)
+</div>
+
+<h3>Method 2: Quadratic Formula</h3>
+<p>Always works, even when factorising is impossible:</p>
+<div class="equation">$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$</div>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(2x^2 + 3x - 1 = 0\).
+  <br><br>
+  \(a=2,\; b=3,\; c=-1\)
+  <br>
+  \(x = \dfrac{-3 \pm \sqrt{9 + 8}}{4} = \dfrac{-3 \pm \sqrt{17}}{4}\)
+  <br>
+  \(x = \dfrac{-3 + \sqrt{17}}{4} \approx 0.28\) or \(x = \dfrac{-3 - \sqrt{17}}{4} \approx -1.78\)
+</div>
+
+<h3>Method 3: Completing the Square</h3>
+<p>Rewrite \(ax^2 + bx + c\) in the form \(a(x+p)^2 + q\):</p>
+<div class="equation">$$ax^2 + bx + c = a\!\left(x + \frac{b}{2a}\right)^2 + c - \frac{b^2}{4a}$$</div>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(x^2 - 6x + 4 = 0\) by completing the square.
+  <br><br>
+  \((x-3)^2 - 9 + 4 = 0\)
+  <br>
+  \((x-3)^2 = 5\)
+  <br>
+  \(x - 3 = \pm\sqrt{5}\)
+  <br>
+  \(x = 3 \pm \sqrt{5}\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Completing the square is often asked explicitly. Also use it to find the vertex of a parabola: \(a(x+p)^2 + q\) has vertex \((-p,\, q)\).
+</div>
+
+<h2>2. The Discriminant</h2>
+
+<div class="definition">
+  The <strong>discriminant</strong> \(\Delta = b^2 - 4ac\) determines how many real roots the quadratic has.
+</div>
+
+<table>
+  <tr><th>Discriminant</th><th>Number of real roots</th><th>Graph crosses x-axis</th></tr>
+  <tr><td>\(\Delta > 0\)</td><td>Two distinct real roots</td><td>At two points</td></tr>
+  <tr><td>\(\Delta = 0\)</td><td>One repeated (equal) root</td><td>Touches (tangent) at one point</td></tr>
+  <tr><td>\(\Delta < 0\)</td><td>No real roots</td><td>Does not cross x-axis</td></tr>
+</table>
+
+<div class="example">
+  <strong>Example:</strong> Find the values of \(k\) for which \(x^2 + kx + 9 = 0\) has two distinct real roots.
+  <br><br>
+  Require \(\Delta > 0\): \(k^2 - 36 > 0\)
+  <br>
+  \((k-6)(k+6) > 0\)
+  <br>
+  \(k < -6\) or \(k > 6\)
+</div>
+
+<h2>3. Quadratic Graphs</h2>
+
+<svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:460px;">
+  <!-- Axes -->
+  <line x1="40" y1="240" x2="420" y2="240" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="230" y1="20" x2="230" y2="255" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="425" y="244" font-size="13" fill="#1a1a2e">x</text>
+  <text x="233" y="16" font-size="13" fill="#1a1a2e">y</text>
+
+  <!-- Parabola y = (x-1)^2 - 4 → vertex (1,-4), roots at x=-1 and x=3 -->
+  <!-- Scaled: x_px = 230 + 50*x_real, y_px = 240 - 25*y_real -->
+  <!-- vertex: (230+50, 240+100) = (280, 340)... let's use y_px = 150 - 20*y_real, origin at (160, 190) -->
+  <!-- x_px = 160 + 60*(x_real), y_px = 190 - 20*y_real -->
+  <!-- vertex (1,-4): (220, 270)... let me just draw by points -->
+  <!-- Let centre x_px=230, y_origin=200. Scale: 60px per unit x, 25px per unit y -->
+  <!-- x=-2: y=5 → (110, 75) -->
+  <!-- x=-1: y=0 → (170, 200) -->
+  <!-- x=0:  y=-3 → (230, 275) clipped, use y_scale=20 -->
+  <!-- Rescale: x_px=230+60*xr, y_px=200-20*yr; vertex (1,-4)->(290,280), roots (-1,0)->(170,200),(3,0)->(410,200) -->
+  <polyline points="
+    80,60
+    110,88
+    140,108
+    170,120
+    200,124
+    230,120
+    260,108
+    290,88
+    320,60
+    350,24
+  " fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Actual parabola for y = x^2/2 - 80 (visual, not exact), better: manual point plot -->
+  <!-- Let me use y = 0.03*(x-230)^2 - 20 in pixel coords, shifted to look like parabola with vertex at (230,220) -->
+  <!-- Redraw more carefully: vertex at pixel (250, 220), opening upward, roots at pixel (130,140) and (370,140) -->
+  <!-- y_px = 220 - 80 = 140 when x_px = 130 or 370 → check: 0.0133*(130-250)^2 = 0.0133*14400 = 191.5 — too steep -->
+  <!-- Use parabola: y_px = a*(x_px - 250)^2 + 220; at x_px=130, y_px=140: 80 = a*14400 → a=0.00556 -->
+  <!-- Generate 15 points: -->
+  <!-- Actually just draw a clean SVG parabola with path -->
+  <path d="M 100,170 Q 250,290 400,170" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+
+  <!-- Vertex point -->
+  <circle cx="250" cy="250" r="4" fill="#dc2626"/>
+  <!-- Roots -->
+  <circle cx="100" cy="170" r="4" fill="#16a34a"/>
+  <circle cx="400" cy="170" r="4" fill="#16a34a"/>
+
+  <!-- Axis of symmetry (dashed) -->
+  <line x1="250" y1="30" x2="250" y2="250" stroke="#9333ea" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <!-- Labels -->
+  <text x="254" y="266" font-size="12" fill="#dc2626">Vertex (min)</text>
+  <text x="60" y="162" font-size="12" fill="#16a34a">root</text>
+  <text x="405" y="162" font-size="12" fill="#16a34a">root</text>
+  <text x="252" y="26" font-size="12" fill="#9333ea">axis of</text>
+  <text x="245" y="40" font-size="12" fill="#9333ea">symmetry</text>
+  <text x="165" y="60" font-size="13" fill="#2563eb" font-style="italic">y = ax² + bx + c</text>
+  <text x="200" y="248" font-size="11" fill="#1a1a2e">x = -b/(2a)</text>
+</svg>
+
+<p>Key features of \(y = ax^2 + bx + c\):</p>
+<ul>
+  <li><strong>Vertex:</strong> \(\left(-\dfrac{b}{2a},\; c - \dfrac{b^2}{4a}\right)\) — minimum if \(a>0\), maximum if \(a<0\)</li>
+  <li><strong>Axis of symmetry:</strong> \(x = -\dfrac{b}{2a}\)</li>
+  <li><strong>y-intercept:</strong> \((0, c)\)</li>
+  <li><strong>x-intercepts (roots):</strong> found using the quadratic formula</li>
+  <li>Parabola opens <strong>upward</strong> if \(a > 0\), <strong>downward</strong> if \(a < 0\)</li>
+</ul>
+
+<h2>4. Quadratic Inequalities</h2>
+
+<p>To solve a quadratic inequality, always sketch the parabola first and identify where it is above/below the x-axis.</p>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(x^2 - x - 6 < 0\).
+  <br><br>
+  Step 1: Factorise: \((x-3)(x+2) = 0\), roots \(x = -2\) and \(x = 3\)
+  <br>
+  Step 2: Parabola opens upward (\(a=1>0\)), so it is <em>below</em> the x-axis between the roots.
+  <br>
+  Answer: \(-2 < x < 3\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(2x^2 - 5x + 2 \geq 0\).
+  <br><br>
+  Factorise: \((2x-1)(x-2) = 0\), roots \(x = \frac{1}{2}\) and \(x = 2\)
+  <br>
+  Parabola opens upward, so it is <em>above or on</em> the x-axis outside the roots.
+  <br>
+  Answer: \(x \leq \dfrac{1}{2}\) or \(x \geq 2\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> "Between the roots" for \(< 0\) when \(a > 0\). "Outside the roots" for \(> 0\) when \(a > 0\). A quick sketch prevents sign errors.
+</div>
+
+<h2>5. Disguised Quadratics</h2>
+
+<p>Some equations look non-quadratic but become quadratic after a substitution.</p>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(x^4 - 5x^2 + 4 = 0\).
+  <br><br>
+  Let \(u = x^2\): \(u^2 - 5u + 4 = 0\)
+  <br>
+  \((u-1)(u-4) = 0\) → \(u = 1\) or \(u = 4\)
+  <br>
+  Back-substitute: \(x^2 = 1 \Rightarrow x = \pm 1\); \(x^2 = 4 \Rightarrow x = \pm 2\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(e^{2x} - 7e^x + 10 = 0\).
+  <br><br>
+  Let \(u = e^x\): \(u^2 - 7u + 10 = 0\) → \((u-2)(u-5) = 0\)
+  <br>
+  \(e^x = 2 \Rightarrow x = \ln 2\); \(e^x = 5 \Rightarrow x = \ln 5\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Common substitutions: \(u = x^2\), \(u = e^x\), \(u = \sin x\), \(u = \sqrt{x}\). Always state your substitution clearly and back-substitute at the end.
+</div>
+
+<h2>6. Summary</h2>
+<table>
+  <tr><th>Technique</th><th>When to use</th><th>Key result</th></tr>
+  <tr><td>Factorising</td><td>Simple integer roots</td><td>Factors directly give roots</td></tr>
+  <tr><td>Quadratic formula</td><td>Any quadratic</td><td>\(x = \frac{-b\pm\sqrt{\Delta}}{2a}\)</td></tr>
+  <tr><td>Completing the square</td><td>Finding vertex; when asked explicitly</td><td>\(a(x+p)^2 + q\), vertex \((-p,q)\)</td></tr>
+  <tr><td>Discriminant</td><td>Checking number of roots</td><td>\(\Delta = b^2-4ac\)</td></tr>
+  <tr><td>Quadratic inequalities</td><td>Inequality with quadratic</td><td>Sketch parabola, read off regions</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

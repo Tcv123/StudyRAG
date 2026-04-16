@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trigonometric Identities and Equations - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P7: Trigonometric Identities and Equations</h1>
+
+<h2>1. Fundamental Trigonometric Identities</h2>
+
+<div class="definition">
+  <strong>Pythagorean Identity (Year 1 core):</strong><br>
+  $$\sin^2\theta + \cos^2\theta \equiv 1$$
+  This holds for all values of \(\theta\). The \(\equiv\) symbol means "identically equal" — true for every value, not just specific solutions.
+</div>
+
+<p>Dividing both sides of \(\sin^2\theta + \cos^2\theta \equiv 1\) by \(\cos^2\theta\) gives:</p>
+<div class="equation">$$\tan^2\theta + 1 \equiv \sec^2\theta$$</div>
+
+<p>Dividing instead by \(\sin^2\theta\) gives:</p>
+<div class="equation">$$1 + \cot^2\theta \equiv \csc^2\theta$$</div>
+
+<div class="definition">
+  <strong>Tangent Identity:</strong>
+  $$\tan\theta \equiv \frac{\sin\theta}{\cos\theta}$$
+  Undefined when \(\cos\theta = 0\), i.e., at \(\theta = 90°, 270°, \ldots\)
+</div>
+
+<h3>Using Identities to Simplify and Prove</h3>
+<p>These identities allow you to rewrite expressions entirely in terms of one trig function, which is essential for solving equations and proving results.</p>
+
+<div class="example">
+  <strong>Example — Prove that \(\frac{\sin^2\theta}{1-\cos\theta} \equiv 1 + \cos\theta\):</strong><br><br>
+  <strong>LHS</strong> \(= \dfrac{\sin^2\theta}{1-\cos\theta}\)<br><br>
+  Substitute \(\sin^2\theta = 1 - \cos^2\theta = (1-\cos\theta)(1+\cos\theta)\):<br><br>
+  \(= \dfrac{(1-\cos\theta)(1+\cos\theta)}{1-\cos\theta} = 1 + \cos\theta\) = <strong>RHS</strong> ✓
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always start from the more complicated side in a proof. Never move terms across the equals sign — work on each side independently until they match.
+</div>
+
+<h2>2. The CAST Diagram</h2>
+
+<p>The CAST diagram shows which trig ratios are <strong>positive</strong> in each quadrant (angles measured anticlockwise from positive x-axis).</p>
+
+<div style="text-align:center; margin: 20px 0;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="320" height="320">
+  <!-- Axes -->
+  <line x1="180" y1="20" x2="180" y2="340" stroke="#333" stroke-width="2"/>
+  <line x1="20" y1="180" x2="340" y2="180" stroke="#333" stroke-width="2"/>
+  <!-- Arrow heads -->
+  <polygon points="180,16 175,28 185,28" fill="#333"/>
+  <polygon points="344,180 332,175 332,185" fill="#333"/>
+  <!-- Quadrant labels -->
+  <text x="260" y="100" font-size="22" font-weight="bold" fill="#16a34a" text-anchor="middle">A</text>
+  <text x="100" y="100" font-size="22" font-weight="bold" fill="#2563eb" text-anchor="middle">S</text>
+  <text x="100" y="270" font-size="22" font-weight="bold" fill="#dc2626" text-anchor="middle">T</text>
+  <text x="260" y="270" font-size="22" font-weight="bold" fill="#9333ea" text-anchor="middle">C</text>
+  <!-- Quadrant descriptions -->
+  <text x="260" y="125" font-size="12" fill="#16a34a" text-anchor="middle">All positive</text>
+  <text x="100" y="125" font-size="12" fill="#2563eb" text-anchor="middle">Sin positive</text>
+  <text x="100" y="248" font-size="12" fill="#dc2626" text-anchor="middle">Tan positive</text>
+  <text x="260" y="248" font-size="12" fill="#9333ea" text-anchor="middle">Cos positive</text>
+  <!-- Angle labels -->
+  <text x="295" y="175" font-size="11" fill="#555" text-anchor="middle">0°/360°</text>
+  <text x="180" y="14" font-size="11" fill="#555" text-anchor="middle">90°</text>
+  <text x="75" y="175" font-size="11" fill="#555" text-anchor="middle">180°</text>
+  <text x="180" y="350" font-size="11" fill="#555" text-anchor="middle">270°</text>
+  <!-- Circle -->
+  <circle cx="180" cy="180" r="140" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <!-- CAST label -->
+  <text x="180" y="190" font-size="13" fill="#999" text-anchor="middle">CAST</text>
+</svg>
+</div>
+
+<p><strong>Memory aid: "All Students Take Chemistry"</strong> — going anticlockwise from quadrant 1.</p>
+
+<table>
+  <thead>
+    <tr><th>Quadrant</th><th>Angle range</th><th>Positive ratios</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1st (A)</td><td>\(0° < \theta < 90°\)</td><td>sin, cos, tan</td></tr>
+    <tr><td>2nd (S)</td><td>\(90° < \theta < 180°\)</td><td>sin only</td></tr>
+    <tr><td>3rd (T)</td><td>\(180° < \theta < 270°\)</td><td>tan only</td></tr>
+    <tr><td>4th (C)</td><td>\(270° < \theta < 360°\)</td><td>cos only</td></tr>
+  </tbody>
+</table>
+
+<h3>Finding All Solutions Using CAST</h3>
+<p>If the principal value (from calculator) is \(\alpha\), the second solution in \([0°, 360°]\) is:</p>
+<ul>
+  <li>For \(\sin\theta = k\): second solution is \(180° - \alpha\)</li>
+  <li>For \(\cos\theta = k\): second solution is \(360° - \alpha\)</li>
+  <li>For \(\tan\theta = k\): second solution is \(180° + \alpha\)</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always check how many solutions are expected in the given interval. For \(0° \leq x \leq 360°\) there are usually 2 solutions for sin and cos equations, 2 for tan equations.
+</div>
+
+<h2>3. Solving Trigonometric Equations</h2>
+
+<h3>Basic Method</h3>
+<ol>
+  <li>Rearrange to get a single trig function = number</li>
+  <li>Find the principal value using your calculator (\(\sin^{-1}\), \(\cos^{-1}\), \(\tan^{-1}\))</li>
+  <li>Use CAST or graph to find all solutions in the given interval</li>
+  <li>Check all solutions satisfy the original equation</li>
+</ol>
+
+<div class="example">
+  <strong>Example — Solve \(\sin x = 0.5\) for \(0° \leq x \leq 360°\):</strong><br><br>
+  Principal value: \(x = \sin^{-1}(0.5) = 30°\)<br>
+  Since sin is positive, solutions are in Q1 and Q2:<br>
+  \(x = 30°\) and \(x = 180° - 30° = 150°\)
+</div>
+
+<div style="text-align:center; margin: 20px 0;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 240" width="500" height="240">
+  <!-- Axes -->
+  <line x1="30" y1="120" x2="480" y2="120" stroke="#333" stroke-width="1.5"/>
+  <line x1="30" y1="20" x2="30" y2="220" stroke="#333" stroke-width="1.5"/>
+  <!-- Sine curve -->
+  <path d="M30,120 C75,20 105,20 150,120 C195,220 225,220 270,120 C315,20 345,20 390,120 C435,220 465,220 480,120" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- y=0.5 line -->
+  <line x1="30" y1="70" x2="480" y2="70" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <!-- Solution points -->
+  <circle cx="120" cy="70" r="5" fill="#dc2626"/>
+  <circle cx="240" cy="70" r="5" fill="#dc2626"/>
+  <!-- Vertical lines to x-axis -->
+  <line x1="120" y1="70" x2="120" y2="120" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="240" y1="70" x2="240" y2="120" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Labels -->
+  <text x="118" y="138" font-size="12" fill="#dc2626" text-anchor="middle">30°</text>
+  <text x="240" y="138" font-size="12" fill="#dc2626" text-anchor="middle">150°</text>
+  <text x="36" y="74" font-size="12" fill="#dc2626">0.5</text>
+  <text x="150" y="18" font-size="13" fill="#2563eb" text-anchor="middle">y = sin x</text>
+  <text x="475" y="116" font-size="12" fill="#555">x</text>
+  <text x="35" y="18" font-size="12" fill="#555">y</text>
+  <!-- Degree markers on x-axis -->
+  <text x="30" y="138" font-size="11" fill="#555" text-anchor="middle">0°</text>
+  <text x="150" y="138" font-size="11" fill="#555" text-anchor="middle">90°</text>
+  <text x="270" y="138" font-size="11" fill="#555" text-anchor="middle">180°</text>
+  <text x="390" y="138" font-size="11" fill="#555" text-anchor="middle">270°</text>
+  <text x="480" y="138" font-size="11" fill="#555" text-anchor="middle">360°</text>
+  <!-- Tick marks -->
+  <line x1="150" y1="117" x2="150" y2="123" stroke="#333" stroke-width="1"/>
+  <line x1="270" y1="117" x2="270" y2="123" stroke="#333" stroke-width="1"/>
+  <line x1="390" y1="117" x2="390" y2="123" stroke="#333" stroke-width="1"/>
+</svg>
+</div>
+
+<h3>Equations Involving Transformations</h3>
+<p>When solving \(\sin(2x) = 0.5\) for \(0° \leq x \leq 360°\), let \(u = 2x\), so the interval for \(u\) becomes \(0° \leq u \leq 720°\).</p>
+
+<div class="example">
+  <strong>Example — Solve \(\sin(2x) = 0.5\) for \(0° \leq x \leq 360°\):</strong><br><br>
+  Let \(u = 2x\), interval: \(0° \leq u \leq 720°\)<br>
+  \(\sin u = 0.5 \Rightarrow u = 30°, 150°, 390°, 510°\)<br>
+  Divide by 2: \(x = 15°, 75°, 195°, 255°\)
+</div>
+
+<h2>4. Disguised Quadratics in Trig</h2>
+
+<p>Many Edexcel exam questions disguise a quadratic equation using trig functions. Spot these by looking for squared trig terms.</p>
+
+<div class="example">
+  <strong>Example — Solve \(2\sin^2 x - \sin x - 1 = 0\) for \(0° \leq x \leq 360°\):</strong><br><br>
+  Let \(s = \sin x\). Then: \(2s^2 - s - 1 = 0\)<br>
+  Factorise: \((2s + 1)(s - 1) = 0\)<br>
+  So \(s = -\frac{1}{2}\) or \(s = 1\)<br><br>
+  Case 1: \(\sin x = 1 \Rightarrow x = 90°\)<br>
+  Case 2: \(\sin x = -\frac{1}{2}\): sin is negative, so solutions in Q3 and Q4:<br>
+  \(x = 180° + 30° = 210°\) and \(x = 360° - 30° = 330°\)<br><br>
+  <strong>Solutions: \(x = 90°, 210°, 330°\)</strong>
+</div>
+
+<div class="example">
+  <strong>Example — Solve \(2\cos^2\theta - 3\cos\theta + 1 = 0\) for \(0 \leq \theta \leq 2\pi\):</strong><br><br>
+  Let \(c = \cos\theta\): \((2c - 1)(c - 1) = 0\)<br>
+  \(\cos\theta = \frac{1}{2} \Rightarrow \theta = \frac{\pi}{3}, \frac{5\pi}{3}\)<br>
+  \(\cos\theta = 1 \Rightarrow \theta = 0, 2\pi\)<br><br>
+  <strong>Solutions: \(\theta = 0, \frac{\pi}{3}, \frac{5\pi}{3}, 2\pi\)</strong>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When the equation involves both \(\sin^2 x\) and \(\cos^2 x\), use the identity \(\sin^2 x = 1 - \cos^2 x\) to rewrite everything in terms of one function.
+</div>
+
+<h2>5. Using Identities to Solve Equations</h2>
+
+<p>If an equation contains mixed trig functions, use identities to reduce to one function.</p>
+
+<div class="example">
+  <strong>Example — Solve \(2\cos^2 x + \sin x - 1 = 0\) for \(0° \leq x \leq 360°\):</strong><br><br>
+  Replace \(\cos^2 x\) with \(1 - \sin^2 x\):<br>
+  \(2(1 - \sin^2 x) + \sin x - 1 = 0\)<br>
+  \(2 - 2\sin^2 x + \sin x - 1 = 0\)<br>
+  \(-2\sin^2 x + \sin x + 1 = 0\)<br>
+  \(2\sin^2 x - \sin x - 1 = 0\)<br>
+  \((2\sin x + 1)(\sin x - 1) = 0\)<br>
+  \(\sin x = -\frac{1}{2}\) or \(\sin x = 1\)<br>
+  \(x = 90°, 210°, 330°\)
+</div>
+
+<h2>6. General Solutions</h2>
+
+<p>For equations where solutions in all of \(\mathbb{R}\) are needed:</p>
+
+<div class="equation">
+  $$\sin\theta = k \Rightarrow \theta = \sin^{-1}(k) + 360n° \quad \text{or} \quad \theta = (180° - \sin^{-1}(k)) + 360n°$$
+</div>
+<div class="equation">
+  $$\cos\theta = k \Rightarrow \theta = \pm\cos^{-1}(k) + 360n°$$
+</div>
+<div class="equation">
+  $$\tan\theta = k \Rightarrow \theta = \tan^{-1}(k) + 180n°$$
+</div>
+
+<p>where \(n \in \mathbb{Z}\) (any integer).</p>
+
+<h2>7. Introduction to R sin(x + α) Form</h2>
+
+<p>Expressions of the form \(a\sin x + b\cos x\) can be written as \(R\sin(x + \alpha)\) where:</p>
+
+<div class="equation">$$R = \sqrt{a^2 + b^2}, \qquad \tan\alpha = \frac{b}{a}$$</div>
+
+<p>This is particularly useful for finding the maximum/minimum of such expressions and solving equations. The full method is developed in P16 (Further Trigonometry).</p>
+
+<div class="example">
+  <strong>Example — Express \(3\sin x + 4\cos x\) in the form \(R\sin(x + \alpha)\):</strong><br><br>
+  \(R = \sqrt{3^2 + 4^2} = \sqrt{25} = 5\)<br>
+  \(\tan\alpha = \frac{4}{3} \Rightarrow \alpha = 53.13°\)<br>
+  So \(3\sin x + 4\cos x \equiv 5\sin(x + 53.13°)\)<br>
+  Maximum value is 5, minimum value is −5.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip — Common Exact Values:</strong><br>
+  <table style="margin-top:10px;">
+    <thead><tr><th>\(\theta\)</th><th>\(\sin\theta\)</th><th>\(\cos\theta\)</th><th>\(\tan\theta\)</th></tr></thead>
+    <tbody>
+      <tr><td>\(0°\)</td><td>\(0\)</td><td>\(1\)</td><td>\(0\)</td></tr>
+      <tr><td>\(30°\)</td><td>\(\frac{1}{2}\)</td><td>\(\frac{\sqrt{3}}{2}\)</td><td>\(\frac{1}{\sqrt{3}}\)</td></tr>
+      <tr><td>\(45°\)</td><td>\(\frac{\sqrt{2}}{2}\)</td><td>\(\frac{\sqrt{2}}{2}\)</td><td>\(1\)</td></tr>
+      <tr><td>\(60°\)</td><td>\(\frac{\sqrt{3}}{2}\)</td><td>\(\frac{1}{2}\)</td><td>\(\sqrt{3}\)</td></tr>
+      <tr><td>\(90°\)</td><td>\(1\)</td><td>\(0\)</td><td>undefined</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="exam-tip">
+  <strong>Key Exam Points for P7:</strong>
+  <ul>
+    <li>Always state the number of solutions expected and check your answers lie in the given interval</li>
+    <li>When working in radians, keep answers as exact multiples of \(\pi\) unless told otherwise</li>
+    <li>Disguised quadratics — let \(u = \sin x\) or \(u = \cos x\), factorise, then solve each case</li>
+    <li>If \(|\sin x| > 1\) or \(|\cos x| > 1\), there are no solutions — state this clearly</li>
+    <li>Proofs: never cross-multiply across \(\equiv\); work on one side at a time</li>
+  </ul>
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>

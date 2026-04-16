@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parametric Equations - Edexcel A-Level Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a><span style="color:#999;font-size:14px;">›</span><a href="index.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Maths</a></div>
+
+<h1>P17: Parametric Equations</h1>
+
+<h2>1. Introduction to Parametric Form</h2>
+<p>Instead of relating \(x\) and \(y\) directly, parametric equations express both coordinates in terms of a third variable called the <strong>parameter</strong>, usually \(t\).</p>
+<div class="definition">
+  <strong>Parametric equations:</strong> A curve is defined by \(x = f(t)\) and \(y = g(t)\), where \(t\) ranges over some domain. Each value of \(t\) gives a point \((x, y)\) on the curve.
+</div>
+<p>The parameter \(t\) often represents time, an angle, or a scaling variable. As \(t\) varies, the point \((f(t), g(t))\) traces out the curve.</p>
+
+<h3>Why use parametric equations?</h3>
+<ul>
+  <li>Some curves (e.g. a circle) cannot be expressed as a single function \(y = f(x)\)</li>
+  <li>They naturally describe motion — position at time \(t\)</li>
+  <li>Easier to differentiate and integrate certain curves</li>
+</ul>
+
+<h2>2. Common Parametric Curves</h2>
+
+<table>
+  <tr><th>Curve</th><th>Parametric form</th><th>Cartesian form</th></tr>
+  <tr><td>Circle (radius \(r\), centre origin)</td><td>\(x = r\cos t,\; y = r\sin t\)</td><td>\(x^2 + y^2 = r^2\)</td></tr>
+  <tr><td>Circle (centre \((a,b)\), radius \(r\))</td><td>\(x = a + r\cos t,\; y = b + r\sin t\)</td><td>\((x-a)^2+(y-b)^2=r^2\)</td></tr>
+  <tr><td>Parabola</td><td>\(x = at^2,\; y = 2at\)</td><td>\(y^2 = 4ax\)</td></tr>
+  <tr><td>Ellipse</td><td>\(x = a\cos t,\; y = b\sin t\)</td><td>\(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\)</td></tr>
+  <tr><td>Straight line</td><td>\(x = x_0 + t\cos\theta,\; y = y_0 + t\sin\theta\)</td><td>\(\frac{y-y_0}{x-x_0}=\tan\theta\)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> For the parabola \(x = at^2, y = 2at\), note the standard result \(y^2 = 4ax\). Recognise this family quickly — it appears frequently in exam questions.
+</div>
+
+<h2>3. Converting to Cartesian Form</h2>
+<p>To eliminate the parameter \(t\) and find the Cartesian equation:</p>
+<ol>
+  <li>From one equation, express \(t\) in terms of \(x\) (or \(y\))</li>
+  <li>Substitute into the other equation</li>
+  <li>Simplify to get a relation between \(x\) and \(y\) only</li>
+</ol>
+
+<div class="example">
+  <strong>Example 1:</strong> Find the Cartesian equation of \(x = t^2 + 1,\; y = 2t - 3\).
+  <br><br>
+  From the second equation: \(t = \dfrac{y+3}{2}\)
+  <br>
+  Substitute into the first: \(x = \left(\dfrac{y+3}{2}\right)^2 + 1\)
+  <br>
+  So: \(x - 1 = \dfrac{(y+3)^2}{4}\), i.e. \((y+3)^2 = 4(x-1)\)
+  <br>
+  This is a parabola with vertex \((1, -3)\).
+</div>
+
+<div class="example">
+  <strong>Example 2:</strong> Find the Cartesian equation of \(x = 3\cos t,\; y = 2\sin t\).
+  <br><br>
+  Use the identity \(\cos^2 t + \sin^2 t = 1\):
+  <br>
+  \(\cos t = \dfrac{x}{3}\), \(\sin t = \dfrac{y}{2}\)
+  <br>
+  So: \(\dfrac{x^2}{9} + \dfrac{y^2}{4} = 1\) — an ellipse.
+</div>
+
+<div class="exam-tip">
+  <strong>Key identities for elimination:</strong>
+  <ul>
+    <li>\(\sin^2 t + \cos^2 t = 1\) — for trig parametric equations</li>
+    <li>\(\sec^2 t = 1 + \tan^2 t\) — if \(x = a\sec t, y = b\tan t\)</li>
+    <li>\(\cosh^2 t - \sinh^2 t = 1\) — hyperbolic forms (rare)</li>
+  </ul>
+</div>
+
+<h2>4. Domain and Range from Parametric Equations</h2>
+<p>The <strong>domain</strong> of \(x\) and the <strong>range</strong> of \(y\) are determined by the allowed values of the parameter \(t\).</p>
+
+<div class="example">
+  <strong>Example:</strong> For \(x = \cos t,\; y = \sin 2t\) where \(0 \le t \le \pi\):
+  <br>
+  When \(t=0\): \((1, 0)\). When \(t=\pi/2\): \((0, 0)\). When \(t=\pi\): \((-1, 0)\).
+  <br>
+  Domain of \(x\): \([-1, 1]\). Range of \(y\): \([-1, 1]\).
+  <br>
+  Note: you must trace the curve over the full parameter range to find domain/range correctly.
+</div>
+
+<h2>5. Differentiating Parametric Equations</h2>
+<div class="definition">
+  <strong>Chain rule for parametric differentiation:</strong>
+  $$\frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{\dot{y}}{\dot{x}}$$
+  provided \(\dfrac{dx}{dt} \ne 0\).
+</div>
+
+<h3>Second derivative</h3>
+<p>To find \(\dfrac{d^2y}{dx^2}\), differentiate \(\dfrac{dy}{dx}\) with respect to \(x\) using the chain rule again:</p>
+<div class="equation">
+  $$\frac{d^2y}{dx^2} = \frac{\dfrac{d}{dt}\!\left(\dfrac{dy}{dx}\right)}{\dfrac{dx}{dt}}$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> For \(x = t^2,\; y = t^3\), find \(\dfrac{dy}{dx}\) and \(\dfrac{d^2y}{dx^2}\).
+  <br><br>
+  \(\dfrac{dx}{dt} = 2t\), \(\dfrac{dy}{dt} = 3t^2\)
+  <br>
+  \(\dfrac{dy}{dx} = \dfrac{3t^2}{2t} = \dfrac{3t}{2}\)
+  <br><br>
+  \(\dfrac{d}{dt}\!\left(\dfrac{3t}{2}\right) = \dfrac{3}{2}\), so \(\dfrac{d^2y}{dx^2} = \dfrac{3/2}{2t} = \dfrac{3}{4t}\)
+</div>
+
+<h2>6. Tangents and Normals to Parametric Curves</h2>
+<p>At parameter value \(t = t_0\):</p>
+<ul>
+  <li><strong>Gradient of tangent</strong>: \(m = \dfrac{dy}{dx}\bigg|_{t=t_0}\)</li>
+  <li><strong>Point on curve</strong>: \((f(t_0),\, g(t_0))\)</li>
+  <li><strong>Tangent equation</strong>: \(y - g(t_0) = m\bigl(x - f(t_0)\bigr)\)</li>
+  <li><strong>Normal gradient</strong>: \(-1/m\)</li>
+</ul>
+
+<div class="example">
+  <strong>Example:</strong> For \(x = t^2,\; y = 2t\), find the equation of the tangent at \(t = 3\).
+  <br><br>
+  Point: \((9, 6)\). \(\dfrac{dy}{dx} = \dfrac{2}{2t} = \dfrac{1}{t}\bigg|_{t=3} = \dfrac{1}{3}\)
+  <br>
+  Tangent: \(y - 6 = \dfrac{1}{3}(x - 9)\), so \(y = \dfrac{x}{3} + 3\)
+</div>
+
+<div class="exam-tip">
+  <strong>Stationary points:</strong> occur where \(\dfrac{dy}{dt} = 0\) and \(\dfrac{dx}{dt} \ne 0\). Points where \(\dfrac{dx}{dt} = 0\) give <em>vertical tangents</em>.
+</div>
+
+<h2>7. Integrating Parametric Equations</h2>
+<p>To find the area under a parametric curve between \(t = \alpha\) and \(t = \beta\):</p>
+<div class="definition">
+  $$A = \int y \, dx = \int_\alpha^\beta y(t) \cdot \frac{dx}{dt} \, dt$$
+  <br>
+  <strong>Important:</strong> Check whether \(x\) is increasing or decreasing as \(t\) increases. If decreasing, swap limits or include a negative sign.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the area under \(x = t^2,\; y = t^3\) from \(t=0\) to \(t=2\).
+  <br><br>
+  \(\dfrac{dx}{dt} = 2t\)
+  <br>
+  \(A = \displaystyle\int_0^2 t^3 \cdot 2t \, dt = \int_0^2 2t^4 \, dt = \left[\dfrac{2t^5}{5}\right]_0^2 = \dfrac{64}{5}\)
+</div>
+
+<h3>Area enclosed by a closed parametric curve</h3>
+<p>For a closed curve traced once for \(\alpha \le t \le \beta\) (anticlockwise), the enclosed area is:</p>
+<div class="equation">
+  $$A = \frac{1}{2}\int_\alpha^\beta \left(x\frac{dy}{dt} - y\frac{dx}{dt}\right) dt$$
+</div>
+
+<h2>8. Visualising Parametric Curves</h2>
+<p>The diagram below shows how a parameter \(t\) moves along an interval and traces a curve in the \(xy\)-plane. The arrows indicate the direction of travel as \(t\) increases.</p>
+
+<svg viewBox="0 0 540 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:540px;display:block;margin:20px auto;background:#f8fafc;border-radius:8px;border:1px solid #cbd5e1;">
+  <!-- Axes -->
+  <line x1="40" y1="220" x2="300" y2="220" stroke="#888" stroke-width="1.5"/>
+  <line x1="40" y1="30" x2="40" y2="220" stroke="#888" stroke-width="1.5"/>
+  <text x="305" y="224" font-size="13" fill="#555">x</text>
+  <text x="34" y="25" font-size="13" fill="#555">y</text>
+  <!-- Parametric curve: ellipse-like path -->
+  <ellipse cx="170" cy="125" rx="110" ry="80" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-dasharray="0"/>
+  <!-- Direction arrow on top of ellipse -->
+  <path d="M170 45 L185 50 L170 47" fill="#2563eb" stroke="#2563eb" stroke-width="1"/>
+  <!-- Points on curve -->
+  <circle cx="280" cy="125" r="5" fill="#16a34a"/>
+  <text x="284" y="121" font-size="12" fill="#16a34a">t = 0</text>
+  <circle cx="170" cy="45" r="5" fill="#f59e0b"/>
+  <text x="174" y="40" font-size="12" fill="#f59e0b">t = π/2</text>
+  <circle cx="60" cy="125" r="5" fill="#dc2626"/>
+  <text x="10" y="121" font-size="12" fill="#dc2626">t = π</text>
+  <circle cx="170" cy="205" r="5" fill="#7c3aed"/>
+  <text x="174" y="218" font-size="12" fill="#7c3aed">t = 3π/2</text>
+  <!-- Arrow showing direction -->
+  <text x="200" y="58" font-size="11" fill="#2563eb">direction of</text>
+  <text x="200" y="71" font-size="11" fill="#2563eb">increasing t</text>
+  <!-- Parameter axis on right -->
+  <line x1="370" y1="30" x2="370" y2="220" stroke="#888" stroke-width="1.5"/>
+  <text x="358" y="27" font-size="12" fill="#555">t</text>
+  <line x1="363" y1="45" x2="377" y2="45" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="382" y="49" font-size="12" fill="#16a34a">0</text>
+  <line x1="363" y1="90" x2="377" y2="90" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="382" y="94" font-size="12" fill="#f59e0b">π/2</text>
+  <line x1="363" y1="135" x2="377" y2="135" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="382" y="139" font-size="12" fill="#dc2626">π</text>
+  <line x1="363" y1="180" x2="377" y2="180" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="382" y="184" font-size="12" fill="#7c3aed">3π/2</text>
+  <!-- Arrow on t axis -->
+  <polygon points="370,220 366,208 374,208" fill="#888"/>
+  <!-- Labels -->
+  <text x="60" y="248" font-size="12" fill="#1a1a2e">x = r cos t, y = r sin t traces a circle as t goes from 0 to 2π</text>
+</svg>
+
+<div class="exam-tip">
+  <strong>Exam tip — direction matters:</strong> When computing a parametric area, always check whether \(x\) increases or decreases as \(t\) increases. If the curve is traced right-to-left, the integral gives a negative value — take the modulus for area.
+</div>
+
+<h2>9. Summary of Key Formulae</h2>
+<table>
+  <tr><th>Topic</th><th>Formula</th></tr>
+  <tr><td>First derivative</td><td>\(\dfrac{dy}{dx} = \dfrac{dy/dt}{dx/dt}\)</td></tr>
+  <tr><td>Second derivative</td><td>\(\dfrac{d^2y}{dx^2} = \dfrac{\frac{d}{dt}(dy/dx)}{dx/dt}\)</td></tr>
+  <tr><td>Area under curve</td><td>\(A = \displaystyle\int_\alpha^\beta y\,\dfrac{dx}{dt}\,dt\)</td></tr>
+  <tr><td>Circle</td><td>\(x=r\cos t,\;y=r\sin t \Rightarrow x^2+y^2=r^2\)</td></tr>
+  <tr><td>Parabola</td><td>\(x=at^2,\;y=2at \Rightarrow y^2=4ax\)</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]
+    });
+  });
+</script>
+</body>
+</html>
