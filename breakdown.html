@@ -1184,11 +1184,23 @@ function renderCalendar() {
     const extra = examsOnDay.length > 3 ? `<div style="font-size:9px;color:var(--muted2);font-weight:600;">+${examsOnDay.length-3}</div>` : '';
 
     const inlineEvents = examsOnDay.map(e => {
-      const sc = SUBJ_COLOR[e.subject] || 'var(--accent)';
-      return `<div style="background:${sc};border-radius:4px;padding:2px 5px;font-size:10px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px;" title="${e.subject} · ${e.paper}">${e.emoji} ${e.subject}</div>`;
+      const sc  = SUBJ_COLOR[e.subject] || 'var(--accent)';
+      const bc  = BOARD_COLOR[e.board] || '#374151';
+      const bb  = BOARD_BG[e.board] || 'rgba(55,65,81,0.1)';
+      const timeStr = e.time === 'AM' ? '9:00 AM' : '1:30 PM';
+      const urgency = e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : 'var(--accent-dark)';
+      const urgBg   = e.diffDays <= 7 ? 'rgba(239,68,68,0.08)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.08)' : 'var(--accent-dim)';
+      return `<div style="background:${sc}10;border:1px solid ${sc}30;border-left:3px solid ${sc};border-radius:6px;padding:5px 8px;margin-top:4px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;">
+          <div style="font-size:11.5px;font-weight:700;color:var(--text);">${e.emoji} ${e.subject} <span style="color:${bc};font-size:10px;font-weight:600;background:${bb};border:1px solid ${bc}40;padding:0px 5px;border-radius:6px;">${e.board}</span></div>
+          <span style="font-size:11px;font-weight:700;color:${urgency};background:${urgBg};padding:1px 7px;border-radius:12px;border:1px solid ${urgency}33;flex-shrink:0;">${e.diffDays}d</span>
+        </div>
+        <div style="font-size:10.5px;color:var(--muted);margin-top:2px;">${e.paper}</div>
+        <div style="font-size:10px;color:var(--muted2);margin-top:1px;">🕐 ${timeStr}${e.duration ? ' · ⏱ '+e.duration : ''}</div>
+      </div>`;
     }).join('');
 
-    html += `<div style="min-height:80px;padding:7px 6px;border-right:${isLast?'none':'1px solid var(--border)'};border-bottom:1px solid var(--border);background:${isToday?'var(--accent-dim)':isPast?'var(--surface2)':isWeekend?'#f8fbfe':'var(--surface)'};">
+    html += `<div style="min-height:90px;padding:7px 6px;border-right:${isLast?'none':'1px solid var(--border)'};border-bottom:1px solid var(--border);background:${isToday?'var(--accent-dim)':isPast?'var(--surface2)':isWeekend?'#f8fbfe':'var(--surface)'};">
       <div style="font-size:12px;font-weight:${isToday?'700':'500'};color:${isToday?'var(--accent-dark)':isPast?'var(--muted2)':'var(--text)'};">${day}</div>
       ${inlineEvents}
     </div>`;
