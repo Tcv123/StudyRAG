@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 4.2 — Mensuration: Area, Perimeter and Volume</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .katex-display { margin: 16px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .shapes-row { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start; margin: 16px 0; align-items: flex-end; }
+        .diagram-label { font-size: 0.88rem; color: #6b7280; text-align: center; margin-top: 4px; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.2 Mensuration: Area, Perimeter and Volume</h1>
+<p class="spec-ref">OCR GCSE Mathematics J560 &nbsp;|&nbsp; Component 4 (Geometry and Measures) &nbsp;|&nbsp; Papers 1, 2 &amp; 3</p>
+
+<!-- ===================== 4.2.1 ===================== -->
+<h2>4.2.1 Perimeter and Area of Standard Shapes</h2>
+
+<div class="shapes-row">
+
+  <!-- Rectangle -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 130 90" width="130" height="90" aria-label="Rectangle with dimensions l and w">
+      <rect x="15" y="15" width="100" height="60" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <text x="62" y="12" font-size="13" fill="#1e40af" font-family="sans-serif" text-anchor="middle" font-style="italic">l</text>
+      <text x="8" y="48" font-size="13" fill="#1e40af" font-family="sans-serif" text-anchor="middle" font-style="italic">w</text>
+    </svg>
+    <div class="diagram-label">Rectangle</div>
+  </div>
+
+  <!-- Triangle -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 130 100" width="130" height="100" aria-label="Triangle with base b and perpendicular height h">
+      <polygon points="20,85 110,85 65,15" fill="#d1fae5" stroke="#16a34a" stroke-width="2"/>
+      <!-- Height dashed line -->
+      <line x1="65" y1="15" x2="65" y2="85" stroke="#374151" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <!-- Right angle at foot -->
+      <polyline points="65,85 58,85 58,78" fill="none" stroke="#374151" stroke-width="1.5"/>
+      <text x="62" y="57" font-size="12" fill="#374151" font-family="sans-serif" font-style="italic">h</text>
+      <text x="63" y="98" font-size="13" fill="#16a34a" font-family="sans-serif" text-anchor="middle" font-style="italic">b</text>
+    </svg>
+    <div class="diagram-label">Triangle</div>
+  </div>
+
+  <!-- Parallelogram -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 130 100" width="130" height="100" aria-label="Parallelogram with base b and height h">
+      <polygon points="25,80 115,80 100,20 10,20" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+      <!-- Height line -->
+      <line x1="100" y1="20" x2="100" y2="80" stroke="#374151" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polyline points="100,80 93,80 93,73" fill="none" stroke="#374151" stroke-width="1.5"/>
+      <text x="104" y="54" font-size="12" fill="#374151" font-family="sans-serif" font-style="italic">h</text>
+      <text x="63" y="95" font-size="13" fill="#ca8a04" font-family="sans-serif" text-anchor="middle" font-style="italic">b</text>
+    </svg>
+    <div class="diagram-label">Parallelogram</div>
+  </div>
+
+  <!-- Trapezium -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 140 100" width="140" height="100" aria-label="Trapezium with parallel sides a and b and height h">
+      <polygon points="30,80 120,80 100,20 45,20" fill="#faf5ff" stroke="#7c3aed" stroke-width="2"/>
+      <!-- Height line -->
+      <line x1="80" y1="20" x2="80" y2="80" stroke="#374151" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polyline points="80,80 73,80 73,73" fill="none" stroke="#374151" stroke-width="1.5"/>
+      <text x="83" y="54" font-size="12" fill="#374151" font-family="sans-serif" font-style="italic">h</text>
+      <!-- Labels a (top) and b (bottom) -->
+      <text x="72" y="16" font-size="13" fill="#7c3aed" font-family="sans-serif" text-anchor="middle" font-style="italic">a</text>
+      <text x="75" y="95" font-size="13" fill="#7c3aed" font-family="sans-serif" text-anchor="middle" font-style="italic">b</text>
+    </svg>
+    <div class="diagram-label">Trapezium</div>
+  </div>
+
+</div>
+
+<div class="formula-box">
+  <table>
+    <tr><th>Shape</th><th>Area Formula</th><th>Perimeter</th></tr>
+    <tr><td>Rectangle</td><td>$A = lw$</td><td>$P = 2(l+w)$</td></tr>
+    <tr><td>Triangle</td><td>$A = \frac{1}{2}bh$</td><td>Sum of three sides</td></tr>
+    <tr><td>Parallelogram</td><td>$A = bh$ (perpendicular height)</td><td>$P = 2(a+b)$</td></tr>
+    <tr><td>Trapezium</td><td>$A = \frac{1}{2}(a+b)h$</td><td>Sum of four sides</td></tr>
+  </table>
+</div>
+
+<div class="exam-tip">
+  For the triangle and parallelogram, $h$ must be the <strong>perpendicular</strong> height — the vertical distance between the parallel sides, not the slant side.
+</div>
+
+<div class="worked-example">
+  Find the area of a trapezium with parallel sides 8 cm and 14 cm and perpendicular height 5 cm.<br><br>
+  $A = \tfrac{1}{2}(8+14) \times 5 = \tfrac{1}{2} \times 22 \times 5 = \mathbf{55\,\text{cm}^2}$
+</div>
+
+<div class="worked-example">
+  A triangle has base 9 cm and area 27 cm². Find the perpendicular height.<br><br>
+  $27 = \tfrac{1}{2} \times 9 \times h \Rightarrow h = 27 \times 2 \div 9 = \mathbf{6\,\text{cm}}$
+</div>
+
+<!-- ===================== 4.2.2 ===================== -->
+<h2>4.2.2 Area and Circumference of Circles</h2>
+
+<!-- Circle SVG -->
+<div style="text-align:center; margin: 16px 0;">
+  <svg viewBox="0 0 200 200" width="180" height="180" aria-label="Circle with radius and diameter labelled">
+    <circle cx="100" cy="100" r="75" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <!-- Centre -->
+    <circle cx="100" cy="100" r="3" fill="#374151"/>
+    <text x="104" y="97" font-size="11" fill="#374151" font-family="sans-serif">O</text>
+    <!-- Radius line -->
+    <line x1="100" y1="100" x2="175" y2="100" stroke="#dc2626" stroke-width="2"/>
+    <text x="130" y="94" font-size="13" fill="#dc2626" font-family="sans-serif" font-style="italic">r</text>
+    <!-- Diameter line -->
+    <line x1="25" y1="100" x2="175" y2="100" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+    <text x="60" y="117" font-size="13" fill="#2563eb" font-family="sans-serif" font-style="italic">d = 2r</text>
+    <!-- Circumference arc annotation -->
+    <text x="148" y="55" font-size="11" fill="#16a34a" font-family="sans-serif">C = 2πr</text>
+  </svg>
+</div>
+
+<div class="formula-box">
+  $$\text{Circumference: } C = 2\pi r = \pi d$$
+  $$\text{Area: } A = \pi r^2$$
+  <p style="margin-top:8px;">For an arc of angle $\theta°$: $\;\text{Arc length} = \dfrac{\theta}{360} \times 2\pi r$</p>
+  <p>For a sector of angle $\theta°$: $\;\text{Sector area} = \dfrac{\theta}{360} \times \pi r^2$</p>
+</div>
+
+<div class="worked-example">
+  Find the circumference and area of a circle with radius 7 cm. (Leave answers in terms of $\pi$.)<br><br>
+  $C = 2\pi \times 7 = 14\pi \approx \mathbf{44.0\,\text{cm}}$<br>
+  $A = \pi \times 7^2 = 49\pi \approx \mathbf{153.9\,\text{cm}^2}$
+</div>
+
+<div class="worked-example">
+  A sector has radius 12 cm and angle $150°$. Find its arc length and area.<br><br>
+  Arc length = $\dfrac{150}{360} \times 2\pi \times 12 = \dfrac{5}{12} \times 24\pi = 10\pi \approx \mathbf{31.4\,\text{cm}}$<br><br>
+  Sector area = $\dfrac{150}{360} \times \pi \times 12^2 = \dfrac{5}{12} \times 144\pi = 60\pi \approx \mathbf{188.5\,\text{cm}^2}$
+</div>
+
+<div class="exam-tip">
+  If the question says "leave in terms of $\pi$", do not press the $\pi$ button on your calculator — just write $49\pi$ etc. If it asks for a decimal, use $\pi \approx 3.14159\ldots$
+</div>
+
+<!-- ===================== 4.2.3 ===================== -->
+<h2>4.2.3 Area of Composite Shapes</h2>
+
+<div class="definition">
+  A <strong>composite shape</strong> is made up of two or more standard shapes joined together. Split it into rectangles, triangles, circles, etc. and add or subtract areas.
+</div>
+
+<div class="worked-example">
+  Find the area of an L-shaped figure formed by a rectangle 10 cm × 8 cm with a 4 cm × 3 cm rectangle cut from one corner.<br><br>
+  Area of full rectangle: $10 \times 8 = 80\,\text{cm}^2$<br>
+  Area removed: $4 \times 3 = 12\,\text{cm}^2$<br>
+  Composite area = $80 - 12 = \mathbf{68\,\text{cm}^2}$
+</div>
+
+<div class="worked-example">
+  A shape consists of a rectangle 6 cm × 4 cm with a semicircle of diameter 4 cm attached to one end. Find the total area.<br><br>
+  Rectangle area = $6 \times 4 = 24\,\text{cm}^2$<br>
+  Semicircle: radius = 2 cm; area = $\tfrac{1}{2}\pi \times 2^2 = 2\pi \approx 6.28\,\text{cm}^2$<br>
+  Total = $24 + 2\pi \approx \mathbf{30.3\,\text{cm}^2}$
+</div>
+
+<!-- ===================== 4.2.4 ===================== -->
+<h2>4.2.4 Volume and Surface Area of Prisms and Cylinders</h2>
+
+<!-- Prism and Cylinder SVGs -->
+<div class="shapes-row">
+
+  <!-- Triangular prism -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 160 130" width="155" height="125" aria-label="Triangular prism">
+      <!-- Front triangle face -->
+      <polygon points="20,110 80,110 50,40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <!-- Back edges (dashed) -->
+      <line x1="50" y1="40" x2="110" y2="40" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <line x1="80" y1="110" x2="140" y2="110" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <!-- Solid side edges -->
+      <line x1="50" y1="40" x2="50" y2="40" stroke="#2563eb" stroke-width="2"/>
+      <line x1="110" y1="40" x2="140" y2="110" stroke="#2563eb" stroke-width="2"/>
+      <line x1="80" y1="110" x2="140" y2="110" stroke="#2563eb" stroke-width="2"/>
+      <line x1="50" y1="40" x2="110" y2="40" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,3"/>
+      <!-- Top and bottom connecting edges -->
+      <line x1="80" y1="110" x2="140" y2="110" stroke="#2563eb" stroke-width="2"/>
+      <!-- Height annotation -->
+      <text x="44" y="125" font-size="11" fill="#374151" font-family="sans-serif">cross-section</text>
+      <text x="100" y="78" font-size="11" fill="#2563eb" font-family="sans-serif" font-style="italic">l</text>
+    </svg>
+    <div class="diagram-label">Triangular prism<br>(length $l$)</div>
+  </div>
+
+  <!-- Cylinder -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 130 150" width="120" height="140" aria-label="Cylinder with radius r and height h">
+      <!-- Cylinder body -->
+      <rect x="20" y="40" width="90" height="80" fill="#d1fae5" stroke="#16a34a" stroke-width="2"/>
+      <!-- Top ellipse -->
+      <ellipse cx="65" cy="40" rx="45" ry="15" fill="#a7f3d0" stroke="#16a34a" stroke-width="2"/>
+      <!-- Bottom ellipse (front half) -->
+      <path d="M 20,120 A 45,15 0 0,0 110,120" fill="none" stroke="#16a34a" stroke-width="2"/>
+      <!-- Radius line -->
+      <line x1="65" y1="40" x2="110" y2="40" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="83" y="36" font-size="13" fill="#dc2626" font-family="sans-serif" font-style="italic">r</text>
+      <!-- Height arrow -->
+      <line x1="118" y1="40" x2="118" y2="120" stroke="#374151" stroke-width="1.5" marker-start="url(#arrowstart)" marker-end="url(#arrowend)"/>
+      <text x="122" y="84" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">h</text>
+    </svg>
+    <div class="diagram-label">Cylinder</div>
+  </div>
+
+</div>
+
+<div class="formula-box">
+  <strong>All prisms and cylinders:</strong>
+  $$V = A_{\text{cross-section}} \times l$$
+  <table style="margin-top:10px;">
+    <tr><th>Shape</th><th>Volume</th><th>Curved Surface Area</th><th>Total Surface Area</th></tr>
+    <tr><td>Prism (general)</td><td>$V = A \times l$</td><td>Perimeter of cross-section $\times l$</td><td>$2A + \text{CSA}$</td></tr>
+    <tr><td>Cylinder</td><td>$V = \pi r^2 h$</td><td>$2\pi r h$</td><td>$2\pi r h + 2\pi r^2$</td></tr>
+  </table>
+</div>
+
+<div class="worked-example">
+  Find the volume and total surface area of a cylinder with radius 5 cm and height 12 cm.<br><br>
+  <strong>Volume:</strong> $V = \pi \times 5^2 \times 12 = 300\pi \approx \mathbf{942.5\,\text{cm}^3}$<br><br>
+  <strong>Curved surface area:</strong> $2\pi \times 5 \times 12 = 120\pi \approx 376.99\,\text{cm}^2$<br>
+  <strong>Two circular ends:</strong> $2 \times \pi \times 5^2 = 50\pi \approx 157.08\,\text{cm}^2$<br>
+  <strong>Total SA:</strong> $120\pi + 50\pi = 170\pi \approx \mathbf{534.1\,\text{cm}^2}$
+</div>
+
+<div class="worked-example">
+  A triangular prism has a right-angled triangular cross-section with legs 3 cm and 4 cm (hypotenuse 5 cm). The prism has length 10 cm. Find its volume and surface area.<br><br>
+  <strong>Volume:</strong> Cross-section area = $\tfrac{1}{2} \times 3 \times 4 = 6\,\text{cm}^2$<br>
+  $V = 6 \times 10 = \mathbf{60\,\text{cm}^3}$<br><br>
+  <strong>Surface area:</strong><br>
+  2 triangular ends: $2 \times 6 = 12\,\text{cm}^2$<br>
+  3 rectangular faces: $(3 \times 10) + (4 \times 10) + (5 \times 10) = 30 + 40 + 50 = 120\,\text{cm}^2$<br>
+  Total SA = $12 + 120 = \mathbf{132\,\text{cm}^2}$
+</div>
+
+<!-- ===================== 4.2.5 ===================== -->
+<h2>4.2.5 Volume and Surface Area of Pyramids, Cones and Spheres</h2>
+
+<!-- Shape SVGs: cone, sphere, pyramid -->
+<div class="shapes-row">
+
+  <!-- Cone -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 130 160" width="120" height="150" aria-label="Cone with radius r, height h and slant height l">
+      <!-- Base ellipse -->
+      <ellipse cx="65" cy="130" rx="50" ry="17" fill="#fce7f3" stroke="#9d174d" stroke-width="2"/>
+      <!-- Cone sides -->
+      <line x1="15" y1="130" x2="65" y2="20" stroke="#9d174d" stroke-width="2"/>
+      <line x1="115" y1="130" x2="65" y2="20" stroke="#9d174d" stroke-width="2"/>
+      <!-- Height dashed -->
+      <line x1="65" y1="20" x2="65" y2="130" stroke="#374151" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <!-- Slant height l -->
+      <line x1="65" y1="20" x2="115" y2="130" stroke="#dc2626" stroke-width="1.5"/>
+      <!-- Labels -->
+      <text x="38" y="90" font-size="12" fill="#374151" font-family="sans-serif" font-style="italic">l</text>
+      <text x="68" y="80" font-size="12" fill="#374151" font-family="sans-serif" font-style="italic">h</text>
+      <text x="82" y="128" font-size="12" fill="#9d174d" font-family="sans-serif" font-style="italic">r</text>
+      <line x1="65" y1="130" x2="115" y2="130" stroke="#9d174d" stroke-width="1.5"/>
+    </svg>
+    <div class="diagram-label">Cone</div>
+  </div>
+
+  <!-- Sphere -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 130 130" width="120" height="120" aria-label="Sphere with radius r">
+      <!-- Sphere circle -->
+      <circle cx="65" cy="65" r="55" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+      <!-- Equator ellipse -->
+      <ellipse cx="65" cy="65" rx="55" ry="18" fill="none" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <!-- Radius -->
+      <line x1="65" y1="65" x2="120" y2="65" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="88" y="60" font-size="13" fill="#dc2626" font-family="sans-serif" font-style="italic">r</text>
+      <circle cx="65" cy="65" r="3" fill="#374151"/>
+    </svg>
+    <div class="diagram-label">Sphere</div>
+  </div>
+
+  <!-- Square-based pyramid -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 140 140" width="130" height="130" aria-label="Square-based pyramid">
+      <!-- Base parallelogram (perspective) -->
+      <polygon points="25,110 90,130 125,90 60,70" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+      <!-- Front visible edges to apex -->
+      <line x1="25" y1="110" x2="70" y2="20" stroke="#ca8a04" stroke-width="2"/>
+      <line x1="90" y1="130" x2="70" y2="20" stroke="#ca8a04" stroke-width="2"/>
+      <line x1="125" y1="90" x2="70" y2="20" stroke="#ca8a04" stroke-width="2"/>
+      <!-- Back edge dashed -->
+      <line x1="60" y1="70" x2="70" y2="20" stroke="#ca8a04" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <!-- Height dashed from apex to base centre -->
+      <line x1="70" y1="20" x2="72" y2="100" stroke="#374151" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <!-- Labels -->
+      <text x="72" y="18" font-size="11" fill="#374151" font-family="sans-serif">apex</text>
+      <text x="76" y="65" font-size="12" fill="#374151" font-family="sans-serif" font-style="italic">h</text>
+    </svg>
+    <div class="diagram-label">Square-based pyramid</div>
+  </div>
+
+</div>
+
+<div class="formula-box">
+  <table>
+    <tr><th>Shape</th><th>Volume</th><th>Surface Area</th></tr>
+    <tr><td>Pyramid (any base)</td><td>$V = \dfrac{1}{3}Ah$</td><td>Base area + area of all triangular faces</td></tr>
+    <tr><td>Cone</td><td>$V = \dfrac{1}{3}\pi r^2 h$</td><td>$\pi r l + \pi r^2$ where $l = \sqrt{r^2+h^2}$</td></tr>
+    <tr><td>Sphere</td><td>$V = \dfrac{4}{3}\pi r^3$</td><td>$4\pi r^2$</td></tr>
+  </table>
+  <p style="margin-top:8px; font-size:0.93rem;">$l$ = slant height of cone; $h$ = perpendicular height; $A$ = base area of pyramid.</p>
+</div>
+
+<div class="worked-example">
+  Find the volume of a cone with radius 6 cm and height 8 cm.<br><br>
+  $V = \dfrac{1}{3} \times \pi \times 6^2 \times 8 = \dfrac{1}{3} \times 36\pi \times 8 = 96\pi \approx \mathbf{301.6\,\text{cm}^3}$
+</div>
+
+<div class="worked-example">
+  Find the total surface area of a cone with radius 5 cm and height 12 cm.<br><br>
+  Slant height: $l = \sqrt{5^2 + 12^2} = \sqrt{25+144} = \sqrt{169} = 13\,\text{cm}$<br>
+  Curved SA = $\pi \times 5 \times 13 = 65\pi$<br>
+  Base area = $\pi \times 5^2 = 25\pi$<br>
+  Total SA = $65\pi + 25\pi = 90\pi \approx \mathbf{282.7\,\text{cm}^2}$
+</div>
+
+<div class="worked-example">
+  A sphere has volume $288\pi\,\text{cm}^3$. Find its radius.<br><br>
+  $\dfrac{4}{3}\pi r^3 = 288\pi$<br>
+  $r^3 = 288 \times \dfrac{3}{4} = 216$<br>
+  $r = \sqrt[3]{216} = \mathbf{6\,\text{cm}}$
+</div>
+
+<div class="worked-example">
+  A square-based pyramid has base side 9 cm and perpendicular height 10 cm. Find its volume.<br><br>
+  Base area $A = 9^2 = 81\,\text{cm}^2$<br>
+  $V = \dfrac{1}{3} \times 81 \times 10 = \mathbf{270\,\text{cm}^3}$
+</div>
+
+<!-- ===================== 4.2.6 ===================== -->
+<h2>4.2.6 Frustums <span class="higher-tag">Higher</span></h2>
+
+<div class="definition">
+  A <strong>frustum</strong> is the part of a cone left after the top (a smaller, similar cone) is removed by a cut parallel to the base.
+</div>
+
+<!-- Frustum SVG -->
+<div style="text-align:center; margin: 16px 0;">
+  <svg viewBox="0 0 220 200" width="200" height="185" aria-label="Frustum diagram showing full cone minus small cone">
+    <!-- Full cone (large) -->
+    <g opacity="0.3">
+      <line x1="110" y1="10" x2="30" y2="170" stroke="#374151" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <line x1="110" y1="10" x2="190" y2="170" stroke="#374151" stroke-width="1.5" stroke-dasharray="4,3"/>
+    </g>
+    <!-- Small removed top cone outline -->
+    <line x1="110" y1="10" x2="72" y2="80" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <line x1="110" y1="10" x2="148" y2="80" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <!-- Top cut circle (small ellipse) -->
+    <ellipse cx="110" cy="80" rx="38" ry="12" fill="#fce7f3" stroke="#dc2626" stroke-width="1.5"/>
+    <!-- Frustum sides -->
+    <line x1="72" y1="80" x2="30" y2="170" stroke="#9d174d" stroke-width="2"/>
+    <line x1="148" y1="80" x2="190" y2="170" stroke="#9d174d" stroke-width="2"/>
+    <!-- Bottom base ellipse -->
+    <ellipse cx="110" cy="170" rx="80" ry="22" fill="#fce7f3" stroke="#9d174d" stroke-width="2"/>
+    <!-- Height labels -->
+    <!-- H total (whole cone) -->
+    <line x1="196" y1="10" x2="196" y2="170" stroke="#374151" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="200" y="95" font-size="11" fill="#374151" font-family="sans-serif">H</text>
+    <!-- h small cone -->
+    <line x1="196" y1="10" x2="196" y2="80" stroke="#dc2626" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="200" y="50" font-size="11" fill="#dc2626" font-family="sans-serif">h</text>
+    <!-- Radii labels -->
+    <text x="110" y="74" font-size="11" fill="#dc2626" font-family="sans-serif" text-anchor="middle">r</text>
+    <text x="110" y="197" font-size="11" fill="#9d174d" font-family="sans-serif" text-anchor="middle">R</text>
+    <!-- Top vertex -->
+    <circle cx="110" cy="10" r="2" fill="#374151"/>
+    <text x="114" y="10" font-size="11" fill="#374151" font-family="sans-serif">apex</text>
+  </svg>
+</div>
+
+<div class="formula-box">
+  Volume of frustum = Volume of large cone $-$ Volume of small cone:
+  $$V_{\text{frustum}} = \frac{1}{3}\pi R^2 H - \frac{1}{3}\pi r^2 h = \frac{\pi}{3}(R^2 H - r^2 h)$$
+  where $R$ = radius of base, $r$ = radius of top, $H$ = height of full cone, $h$ = height of removed small cone.
+</div>
+
+<div class="exam-tip">
+  To find $H$ and $h$, use the similar triangle ratio $\dfrac{r}{R} = \dfrac{h}{H}$. If you are given only the height of the frustum ($H - h$), you will need to set up a ratio to find $H$ and $h$ separately.
+</div>
+
+<div class="worked-example">
+  A frustum is formed by removing a small cone of height 6 cm and radius 2 cm from a full cone of height 18 cm and radius 6 cm. Find the volume of the frustum.<br><br>
+  Check similarity ratio: $r/R = 2/6 = 1/3$ and $h/H = 6/18 = 1/3$ ✓ (consistent)<br><br>
+  $V_{\text{large}} = \tfrac{1}{3}\pi \times 6^2 \times 18 = \tfrac{1}{3}\pi \times 36 \times 18 = 216\pi$<br>
+  $V_{\text{small}} = \tfrac{1}{3}\pi \times 2^2 \times 6 = \tfrac{1}{3}\pi \times 4 \times 6 = 8\pi$<br>
+  $V_{\text{frustum}} = 216\pi - 8\pi = 208\pi \approx \mathbf{653.5\,\text{cm}^3}$
+</div>
+
+<!-- ===================== 4.2.7 ===================== -->
+<h2>4.2.7 Units of Area and Volume</h2>
+
+<div class="formula-box">
+  <strong>Units of length:</strong> $1\,\text{km} = 1000\,\text{m}$; $1\,\text{m} = 100\,\text{cm}$; $1\,\text{cm} = 10\,\text{mm}$<br><br>
+  <strong>Units of area:</strong>
+  $$1\,\text{m}^2 = 10{,}000\,\text{cm}^2 = 100^2\,\text{cm}^2$$
+  $$1\,\text{km}^2 = 1{,}000{,}000\,\text{m}^2$$
+  $$1\,\text{hectare (ha)} = 10{,}000\,\text{m}^2$$
+  <strong>Units of volume:</strong>
+  $$1\,\text{m}^3 = 1{,}000{,}000\,\text{cm}^3 = 100^3\,\text{cm}^3$$
+  $$1\,\text{litre} = 1000\,\text{cm}^3 = 1000\,\text{ml}$$
+  $$1\,\text{m}^3 = 1000\,\text{litres}$$
+</div>
+
+<table>
+  <tr><th>Conversion</th><th>Multiply by</th><th>Example</th></tr>
+  <tr><td>cm² to mm²</td><td>$\times 100$</td><td>$5\,\text{cm}^2 = 500\,\text{mm}^2$</td></tr>
+  <tr><td>m² to cm²</td><td>$\times 10{,}000$</td><td>$3\,\text{m}^2 = 30{,}000\,\text{cm}^2$</td></tr>
+  <tr><td>cm³ to mm³</td><td>$\times 1000$</td><td>$2\,\text{cm}^3 = 2000\,\text{mm}^3$</td></tr>
+  <tr><td>m³ to cm³</td><td>$\times 1{,}000{,}000$</td><td>$0.5\,\text{m}^3 = 500{,}000\,\text{cm}^3$</td></tr>
+  <tr><td>cm³ to litres</td><td>$\div 1000$</td><td>$5000\,\text{cm}^3 = 5\,\text{litres}$</td></tr>
+  <tr><td>litres to cm³</td><td>$\times 1000$</td><td>$2.5\,\text{litres} = 2500\,\text{cm}^3$</td></tr>
+</table>
+
+<div class="exam-tip">
+  Remember: when converting units of <em>area</em>, square the linear conversion factor. When converting units of <em>volume</em>, cube the linear conversion factor. E.g., $1\,\text{m} = 100\,\text{cm}$, so $1\,\text{m}^2 = 100^2 = 10{,}000\,\text{cm}^2$ and $1\,\text{m}^3 = 100^3 = 1{,}000{,}000\,\text{cm}^3$.
+</div>
+
+<div class="worked-example">
+  A tank has volume $0.36\,\text{m}^3$. How many litres of water does it hold?<br><br>
+  $0.36\,\text{m}^3 = 0.36 \times 1{,}000{,}000\,\text{cm}^3 = 360{,}000\,\text{cm}^3$<br>
+  Litres = $360{,}000 \div 1000 = \mathbf{360\,\text{litres}}$
+</div>
+
+<!-- ===================== Master Formula Table ===================== -->
+<h2>Master Formula Summary</h2>
+
+<table>
+  <tr><th>Shape</th><th>Area / Volume</th><th>Perimeter / Surface Area</th></tr>
+  <tr><td>Rectangle</td><td>$A = lw$</td><td>$P = 2(l+w)$</td></tr>
+  <tr><td>Triangle</td><td>$A = \tfrac{1}{2}bh$</td><td>Sum of sides</td></tr>
+  <tr><td>Parallelogram</td><td>$A = bh$</td><td>$2(a+b)$</td></tr>
+  <tr><td>Trapezium</td><td>$A = \tfrac{1}{2}(a+b)h$</td><td>Sum of sides</td></tr>
+  <tr><td>Circle</td><td>$A = \pi r^2$</td><td>$C = 2\pi r$</td></tr>
+  <tr><td>Sector</td><td>$A = \tfrac{\theta}{360}\pi r^2$</td><td>$\tfrac{\theta}{360} \times 2\pi r + 2r$</td></tr>
+  <tr><td>Prism</td><td>$V = A_{\text{cs}} \times l$</td><td>$2A_{\text{cs}} + P_{\text{cs}} \times l$</td></tr>
+  <tr><td>Cylinder</td><td>$V = \pi r^2 h$</td><td>$2\pi rh + 2\pi r^2$</td></tr>
+  <tr><td>Pyramid</td><td>$V = \tfrac{1}{3}Ah$</td><td>Base + triangular faces</td></tr>
+  <tr><td>Cone</td><td>$V = \tfrac{1}{3}\pi r^2 h$</td><td>$\pi rl + \pi r^2$; $l=\sqrt{r^2+h^2}$</td></tr>
+  <tr><td>Sphere</td><td>$V = \tfrac{4}{3}\pi r^3$</td><td>$SA = 4\pi r^2$</td></tr>
+  <tr><td>Frustum (Higher)</td><td>$V = \tfrac{\pi}{3}(R^2H - r^2h)$</td><td>$\pi Rl + \pi rl + \pi R^2 + \pi r^2$ (approx.)</td></tr>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>
