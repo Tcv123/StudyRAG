@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 4.1 — Properties of Shapes and Angles</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .theorem-box { background: #fff1f2; border-left: 4px solid #e11d48; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .theorem-box strong { color: #9f1239; }
+        .katex-display { margin: 16px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .diagrams-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start; margin: 16px 0; }
+        .diagram-label { font-size: 0.88rem; color: #6b7280; text-align: center; margin-top: 6px; margin-bottom: 16px; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .theorem-box { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.1 Properties of Shapes and Angles</h1>
+<p class="spec-ref">OCR GCSE Mathematics J560 &nbsp;|&nbsp; Component 4 (Geometry and Measures) &nbsp;|&nbsp; Papers 1, 2 &amp; 3</p>
+
+<!-- ===================== 4.1.1 ===================== -->
+<h2>4.1.1 Basic Angle Rules</h2>
+
+<table>
+  <tr><th>Rule</th><th>Statement</th><th>Diagram description</th></tr>
+  <tr><td>Angles on a straight line</td><td>Sum = $180°$</td><td>Two or more angles forming a straight line</td></tr>
+  <tr><td>Angles around a point</td><td>Sum = $360°$</td><td>All angles meeting at a single point</td></tr>
+  <tr><td>Vertically opposite angles</td><td>Equal</td><td>Two intersecting lines form two pairs of equal angles</td></tr>
+  <tr><td>Supplementary angles</td><td>Sum = $180°$</td><td>Any two angles that add to $180°$</td></tr>
+  <tr><td>Complementary angles</td><td>Sum = $90°$</td><td>Any two angles that add to $90°$</td></tr>
+</table>
+
+<!-- Vertically opposite angles SVG -->
+<svg viewBox="0 0 200 160" width="200" height="160" style="display:block;margin:0 auto;" aria-label="Vertically opposite angles diagram">
+  <!-- Two intersecting lines -->
+  <line x1="20" y1="140" x2="180" y2="20" stroke="#374151" stroke-width="2"/>
+  <line x1="20" y1="20" x2="180" y2="140" stroke="#374151" stroke-width="2"/>
+  <!-- Label angles -->
+  <text x="88" y="58" font-size="14" fill="#2563eb" font-family="sans-serif" font-style="italic">a</text>
+  <text x="88" y="118" font-size="14" fill="#2563eb" font-family="sans-serif" font-style="italic">a</text>
+  <text x="56" y="88" font-size="14" fill="#dc2626" font-family="sans-serif" font-style="italic">b</text>
+  <text x="122" y="88" font-size="14" fill="#dc2626" font-family="sans-serif" font-style="italic">b</text>
+  <text x="60" y="155" font-size="11" fill="#374151" font-family="sans-serif">Vertically opposite: a = a, b = b</text>
+</svg>
+<p class="diagram-label">Fig 1 — Vertically opposite angles are equal</p>
+
+<div class="worked-example">
+  Two angles on a straight line are $(3x + 20)°$ and $(x + 40)°$. Find $x$.<br><br>
+  $(3x+20) + (x+40) = 180$<br>
+  $4x + 60 = 180$<br>
+  $4x = 120$<br>
+  $x = \mathbf{30}$
+</div>
+
+<!-- ===================== 4.1.2 ===================== -->
+<h2>4.1.2 Angles and Parallel Lines</h2>
+
+<div class="definition">
+  When a <strong>transversal</strong> crosses two parallel lines, three types of angle pairs are formed. You must know their names, their letter shapes, and whether they are equal or supplementary.
+</div>
+
+<!-- Parallel lines with transversal SVG -->
+<svg viewBox="0 0 400 240" width="400" height="240" style="display:block;margin:16px auto;max-width:100%;" aria-label="Parallel lines with transversal showing alternate, corresponding and co-interior angles">
+  <!-- Parallel line 1 -->
+  <line x1="30" y1="70" x2="370" y2="70" stroke="#374151" stroke-width="2"/>
+  <!-- Parallel line 2 -->
+  <line x1="30" y1="170" x2="370" y2="170" stroke="#374151" stroke-width="2"/>
+  <!-- Parallel arrows -->
+  <polygon points="200,66 200,74 210,70" fill="#374151"/>
+  <polygon points="200,166 200,174 210,170" fill="#374151"/>
+  <!-- Transversal -->
+  <line x1="100" y1="10" x2="280" y2="230" stroke="#374151" stroke-width="2"/>
+
+  <!-- Intersection 1: approx (145, 70) -->
+  <!-- Intersection 2: approx (235, 170) -->
+
+  <!-- Alternate angles (Z-shape): angle below line1 left = angle above line2 right -->
+  <!-- Angle c at intersection 1 (below-left): arc between transversal going down-right and line going left -->
+  <path d="M 135,80 A 15,15 0 0,0 155,72" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="118" y="97" font-size="13" fill="#2563eb" font-family="sans-serif" font-style="italic" font-weight="700">c</text>
+
+  <!-- Angle c at intersection 2 (above-right): arc between line going right and transversal going up-left -->
+  <path d="M 250,165 A 15,15 0 0,0 230,158" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="252" y="158" font-size="13" fill="#2563eb" font-family="sans-serif" font-style="italic" font-weight="700">c</text>
+
+  <!-- Corresponding angles (F-shape): angle above line1 right = angle above line2 right -->
+  <!-- Angle d at intersection 1 (above-right) -->
+  <path d="M 155,68 A 14,14 0 0,1 168,57" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <text x="162" y="56" font-size="13" fill="#16a34a" font-family="sans-serif" font-style="italic" font-weight="700">d</text>
+
+  <!-- Angle d at intersection 2 (above-right) -->
+  <path d="M 246,168 A 14,14 0 0,1 258,157" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <text x="252" y="155" font-size="13" fill="#16a34a" font-family="sans-serif" font-style="italic" font-weight="700">d</text>
+
+  <!-- Co-interior angles (C-shape): angle below line1 right + angle above line2 right = 180 -->
+  <!-- Angle e at intersection 1 below-right -->
+  <path d="M 155,72 A 14,14 0 0,1 168,82" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <text x="162" y="90" font-size="13" fill="#dc2626" font-family="sans-serif" font-style="italic" font-weight="700">e</text>
+
+  <!-- Angle f at intersection 2 above-right (note: e+f = 180) -->
+  <path d="M 246,168 A 14,14 0 0,1 258,157" fill="none" stroke="#dc2626" stroke-width="2" opacity="0.5"/>
+  <text x="228" y="155" font-size="13" fill="#dc2626" font-family="sans-serif" font-style="italic" font-weight="700">f</text>
+
+  <!-- Labels at right side -->
+  <text x="320" y="60" font-size="12" fill="#2563eb" font-family="sans-serif" font-weight="700">Alternate</text>
+  <text x="320" y="75" font-size="11" fill="#2563eb" font-family="sans-serif">(Z-angles): c = c</text>
+  <text x="320" y="100" font-size="12" fill="#16a34a" font-family="sans-serif" font-weight="700">Corresponding</text>
+  <text x="320" y="115" font-size="11" fill="#16a34a" font-family="sans-serif">(F-angles): d = d</text>
+  <text x="320" y="140" font-size="12" fill="#dc2626" font-family="sans-serif" font-weight="700">Co-interior</text>
+  <text x="320" y="155" font-size="11" fill="#dc2626" font-family="sans-serif">(C-angles): e+f=180°</text>
+</svg>
+<p class="diagram-label">Fig 2 — Parallel lines with transversal: alternate (blue, equal), corresponding (green, equal), co-interior (red, supplementary)</p>
+
+<table>
+  <tr><th>Angle Pair</th><th>Letter Shape</th><th>Relationship</th><th>Reason to write</th></tr>
+  <tr><td>Alternate angles</td><td>Z (or N)</td><td>Equal</td><td>"alternate angles, parallel lines"</td></tr>
+  <tr><td>Corresponding angles</td><td>F</td><td>Equal</td><td>"corresponding angles, parallel lines"</td></tr>
+  <tr><td>Co-interior angles</td><td>C (or U)</td><td>Sum = $180°$</td><td>"co-interior angles, parallel lines"</td></tr>
+</table>
+
+<div class="exam-tip">
+  Always state the reason when finding angles from parallel lines. "Z angles" alone is not sufficient — write "alternate angles, parallel lines".
+</div>
+
+<div class="worked-example">
+  Lines AB and CD are parallel. A transversal creates an angle of $65°$ with AB. Find the co-interior angle with CD.<br><br>
+  Co-interior angles sum to $180°$.<br>
+  Co-interior angle = $180° - 65° = \mathbf{115°}$<br>
+  Reason: co-interior angles, AB parallel to CD.
+</div>
+
+<!-- ===================== 4.1.3 ===================== -->
+<h2>4.1.3 Angles in Triangles and Quadrilaterals</h2>
+
+<div class="formula-box">
+  <strong>Triangle:</strong> angles sum to $180°$<br>
+  <strong>Quadrilateral:</strong> angles sum to $360°$
+</div>
+
+<h3>Types of Triangle</h3>
+<table>
+  <tr><th>Triangle</th><th>Properties</th></tr>
+  <tr><td>Equilateral</td><td>All sides equal; all angles = $60°$</td></tr>
+  <tr><td>Isosceles</td><td>Two sides equal; base angles equal</td></tr>
+  <tr><td>Scalene</td><td>All sides different; all angles different</td></tr>
+  <tr><td>Right-angled</td><td>One angle = $90°$</td></tr>
+  <tr><td>Obtuse</td><td>One angle $> 90°$</td></tr>
+  <tr><td>Acute</td><td>All angles $< 90°$</td></tr>
+</table>
+
+<div class="definition">
+  The <strong>exterior angle</strong> of a triangle equals the sum of the two non-adjacent interior angles (the "remote interior angles").
+</div>
+
+<!-- Exterior angle theorem SVG -->
+<svg viewBox="0 0 320 150" width="320" height="150" style="display:block;margin:0 auto;" aria-label="Exterior angle theorem diagram">
+  <!-- Triangle vertices: A(30,120), B(290,120), C(160,20) -->
+  <polygon points="30,120 290,120 160,20" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <!-- Extend base past B to D(330,120) -->
+  <line x1="290" y1="120" x2="330" y2="120" stroke="#374151" stroke-width="2"/>
+  <!-- Angle labels inside triangle -->
+  <text x="42" y="112" font-size="13" fill="#1e40af" font-family="sans-serif" font-style="italic">a</text>
+  <text x="155" y="38" font-size="13" fill="#1e40af" font-family="sans-serif" font-style="italic">b</text>
+  <text x="265" y="112" font-size="13" fill="#1e40af" font-family="sans-serif" font-style="italic">c</text>
+  <!-- Exterior angle arc -->
+  <path d="M 290,108 A 12,12 0 0,1 310,118" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <text x="308" y="108" font-size="13" fill="#dc2626" font-family="sans-serif" font-style="italic">ext</text>
+  <!-- Equation label -->
+  <text x="60" y="143" font-size="12" fill="#374151" font-family="sans-serif">ext = a + b (exterior angle theorem)</text>
+</svg>
+<p class="diagram-label">Fig 3 — Exterior angle of a triangle = sum of the two remote interior angles</p>
+
+<div class="worked-example">
+  In triangle PQR, angle P = $48°$ and angle Q = $67°$. Find the exterior angle at R.<br><br>
+  Interior angle R = $180 - 48 - 67 = 65°$<br>
+  Exterior angle at R = $180 - 65 = 115°$<br>
+  Or directly: exterior angle = $48 + 67 = \mathbf{115°}$
+</div>
+
+<!-- ===================== 4.1.4 ===================== -->
+<h2>4.1.4 Angles in Polygons</h2>
+
+<div class="formula-box">
+  <strong>Sum of interior angles</strong> of a polygon with $n$ sides:
+  $$S = (n-2) \times 180°$$
+  <strong>Sum of exterior angles</strong> of any convex polygon = $360°$ (always)<br><br>
+  For a <strong>regular polygon</strong> with $n$ sides:
+  $$\text{Each interior angle} = \frac{(n-2) \times 180°}{n}$$
+  $$\text{Each exterior angle} = \frac{360°}{n}$$
+</div>
+
+<!-- Interior/exterior angle SVG for regular polygon -->
+<svg viewBox="0 0 340 200" width="340" height="200" style="display:block;margin:16px auto;max-width:100%;" aria-label="Interior and exterior angles of a regular hexagon">
+  <!-- Regular hexagon centred at (170, 100), radius 70 -->
+  <!-- Vertices at angles 90,30,-30,-90,-150,150 degrees -->
+  <!-- V0: 170, 30; V1: 230.6, 65; V2: 230.6, 135; V3: 170, 170; V4: 109.4, 135; V5: 109.4, 65 -->
+  <polygon points="170,30 230,63 230,137 170,170 110,137 110,63" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <!-- Extend one side past a vertex for exterior angle -->
+  <!-- Extend past V0(170,30) along direction of V5->V0: direction is (170-110,30-63)=(60,-33), normalized -->
+  <!-- Extension goes in same direction beyond V0 -->
+  <line x1="170" y1="30" x2="220" y2="2" stroke="#374151" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- Interior angle arc at V0 -->
+  <path d="M 125,55 A 40,40 0 0,1 215,55" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="152" y="65" font-size="12" fill="#2563eb" font-family="sans-serif">interior = 120°</text>
+  <!-- Exterior angle arc at V0 -->
+  <path d="M 215,55 A 15,15 0 0,1 200,17" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <text x="210" y="18" font-size="12" fill="#dc2626" font-family="sans-serif">ext = 60°</text>
+  <!-- Arrow showing sum of exteriors = 360 -->
+  <text x="50" y="190" font-size="11" fill="#374151" font-family="sans-serif">Sum of exterior angles = 360° (always)</text>
+  <!-- n label -->
+  <text x="155" y="105" font-size="13" fill="#374151" font-family="sans-serif" text-anchor="middle">n = 6</text>
+</svg>
+<p class="diagram-label">Fig 4 — Regular hexagon: interior angle = $120°$, exterior angle = $60°$, sum of all exterior angles = $360°$</p>
+
+<table>
+  <tr><th>Shape</th><th>$n$</th><th>Interior angle sum</th><th>Each interior (regular)</th><th>Each exterior (regular)</th></tr>
+  <tr><td>Triangle</td><td>3</td><td>$180°$</td><td>$60°$</td><td>$120°$</td></tr>
+  <tr><td>Quadrilateral</td><td>4</td><td>$360°$</td><td>$90°$</td><td>$90°$</td></tr>
+  <tr><td>Pentagon</td><td>5</td><td>$540°$</td><td>$108°$</td><td>$72°$</td></tr>
+  <tr><td>Hexagon</td><td>6</td><td>$720°$</td><td>$120°$</td><td>$60°$</td></tr>
+  <tr><td>Octagon</td><td>8</td><td>$1080°$</td><td>$135°$</td><td>$45°$</td></tr>
+  <tr><td>Decagon</td><td>10</td><td>$1440°$</td><td>$144°$</td><td>$36°$</td></tr>
+</table>
+
+<div class="worked-example">
+  The interior angle of a regular polygon is $156°$. How many sides does it have?<br><br>
+  Exterior angle = $180 - 156 = 24°$<br>
+  $n = 360 \div 24 = \mathbf{15\,\text{sides}}$
+</div>
+
+<div class="exam-tip">
+  If you know the exterior angle, use $n = 360 \div \text{exterior angle}$ — much quicker than using the interior angle formula.
+</div>
+
+<!-- ===================== 4.1.5 ===================== -->
+<h2>4.1.5 Properties of Quadrilaterals</h2>
+
+<!-- Quadrilaterals grid of SVGs -->
+<div class="diagrams-grid">
+
+  <!-- Square -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 120 120" width="110" height="110" aria-label="Square">
+      <rect x="20" y="20" width="80" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <!-- Right angle marks -->
+      <polyline points="20,32 32,32 32,20" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+      <polyline points="88,20 88,32 100,32" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+      <polyline points="100,88 88,88 88,100" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+      <polyline points="32,100 32,88 20,88" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+      <!-- Tick marks (equal sides) -->
+      <line x1="58" y1="18" x2="62" y2="22" stroke="#2563eb" stroke-width="1.5"/><line x1="56" y1="20" x2="64" y2="20" stroke="#2563eb" stroke-width="1.5"/>
+      <line x1="98" y1="58" x2="102" y2="62" stroke="#2563eb" stroke-width="1.5"/><line x1="100" y1="56" x2="100" y2="64" stroke="#2563eb" stroke-width="1.5"/>
+      <line x1="58" y1="98" x2="62" y2="102" stroke="#2563eb" stroke-width="1.5"/><line x1="56" y1="100" x2="64" y2="100" stroke="#2563eb" stroke-width="1.5"/>
+      <line x1="18" y1="58" x2="22" y2="62" stroke="#2563eb" stroke-width="1.5"/><line x1="20" y1="56" x2="20" y2="64" stroke="#2563eb" stroke-width="1.5"/>
+    </svg>
+    <div class="diagram-label">Square</div>
+  </div>
+
+  <!-- Rectangle -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 140 100" width="130" height="90" aria-label="Rectangle">
+      <rect x="15" y="20" width="110" height="60" fill="#d1fae5" stroke="#16a34a" stroke-width="2"/>
+      <!-- Right angle marks -->
+      <polyline points="15,32 27,32 27,20" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+      <polyline points="113,20 113,32 125,32" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+      <!-- Opposite sides equal (double ticks on long sides, single on short) -->
+      <line x1="68" y1="18" x2="72" y2="22" stroke="#16a34a" stroke-width="1.5"/><line x1="64" y1="20" x2="76" y2="20" stroke="#16a34a" stroke-width="1.5"/>
+      <line x1="13" y1="48" x2="17" y2="52" stroke="#16a34a" stroke-width="1.5"/>
+      <line x1="123" y1="48" x2="127" y2="52" stroke="#16a34a" stroke-width="1.5"/>
+    </svg>
+    <div class="diagram-label">Rectangle</div>
+  </div>
+
+  <!-- Parallelogram -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 130 100" width="120" height="90" aria-label="Parallelogram">
+      <polygon points="30,80 110,80 100,20 20,20" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+      <!-- Arrow marks for parallel sides -->
+      <text x="58" y="16" font-size="11" fill="#ca8a04" font-family="sans-serif">▶</text>
+      <text x="58" y="76" font-size="11" fill="#ca8a04" font-family="sans-serif">▶</text>
+      <text x="12" y="54" font-size="11" fill="#ca8a04" font-family="sans-serif" transform="rotate(-78,18,50)">▶</text>
+      <text x="102" y="54" font-size="11" fill="#ca8a04" font-family="sans-serif" transform="rotate(-78,108,50)">▶</text>
+    </svg>
+    <div class="diagram-label">Parallelogram</div>
+  </div>
+
+  <!-- Rhombus -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 120 120" width="110" height="110" aria-label="Rhombus">
+      <polygon points="60,10 110,60 60,110 10,60" fill="#fce7f3" stroke="#9d174d" stroke-width="2"/>
+      <!-- Tick marks all equal -->
+      <line x1="82" y1="33" x2="88" y2="37" stroke="#9d174d" stroke-width="1.5"/>
+      <line x1="32" y1="83" x2="38" y2="87" stroke="#9d174d" stroke-width="1.5"/>
+      <line x1="82" y1="87" x2="88" y2="83" stroke="#9d174d" stroke-width="1.5"/>
+      <line x1="32" y1="37" x2="38" y2="33" stroke="#9d174d" stroke-width="1.5"/>
+    </svg>
+    <div class="diagram-label">Rhombus</div>
+  </div>
+
+  <!-- Trapezium -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 130 100" width="120" height="90" aria-label="Trapezium">
+      <polygon points="30,80 110,80 90,20 40,20" fill="#faf5ff" stroke="#7c3aed" stroke-width="2"/>
+      <!-- Parallel arrows on top and bottom -->
+      <text x="58" y="16" font-size="11" fill="#7c3aed" font-family="sans-serif">▶</text>
+      <text x="68" y="76" font-size="11" fill="#7c3aed" font-family="sans-serif">▶</text>
+    </svg>
+    <div class="diagram-label">Trapezium</div>
+  </div>
+
+  <!-- Kite -->
+  <div style="text-align:center;">
+    <svg viewBox="0 0 120 140" width="110" height="130" aria-label="Kite">
+      <polygon points="60,10 100,65 60,130 20,65" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+      <!-- Tick marks: top two sides equal, bottom two equal -->
+      <line x1="77" y1="35" x2="83" y2="38" stroke="#ea580c" stroke-width="1.5"/>
+      <line x1="37" y1="35" x2="43" y2="38" stroke="#ea580c" stroke-width="1.5"/>
+      <line x1="78" y1="95" x2="82" y2="100" stroke="#ea580c" stroke-width="1.5"/><line x1="75" y1="99" x2="82" y2="96" stroke="#ea580c" stroke-width="1.5"/>
+      <line x1="38" y1="95" x2="42" y2="100" stroke="#ea580c" stroke-width="1.5"/><line x1="35" y1="99" x2="42" y2="96" stroke="#ea580c" stroke-width="1.5"/>
+    </svg>
+    <div class="diagram-label">Kite</div>
+  </div>
+
+</div>
+
+<table>
+  <tr><th>Shape</th><th>Sides</th><th>Angles</th><th>Diagonals</th><th>Lines of symmetry</th></tr>
+  <tr><td><strong>Square</strong></td><td>All 4 equal; opposite sides parallel</td><td>All $90°$</td><td>Equal, bisect at $90°$, bisect corner angles</td><td>4</td></tr>
+  <tr><td><strong>Rectangle</strong></td><td>Opposite sides equal and parallel</td><td>All $90°$</td><td>Equal, bisect each other</td><td>2</td></tr>
+  <tr><td><strong>Parallelogram</strong></td><td>Opposite sides equal and parallel</td><td>Opposite angles equal; co-interior sum $180°$</td><td>Bisect each other (not equal)</td><td>0</td></tr>
+  <tr><td><strong>Rhombus</strong></td><td>All 4 equal; opposite sides parallel</td><td>Opposite angles equal; co-interior sum $180°$</td><td>Bisect at $90°$, bisect corner angles (not equal)</td><td>2</td></tr>
+  <tr><td><strong>Trapezium</strong></td><td>One pair of parallel sides</td><td>Co-interior angles between parallel sides sum to $180°$</td><td>Not generally special</td><td>0 (1 if isosceles)</td></tr>
+  <tr><td><strong>Kite</strong></td><td>Two pairs of adjacent equal sides</td><td>One pair of opposite angles equal</td><td>One diagonal is perpendicular bisector of other</td><td>1</td></tr>
+</table>
+
+<!-- ===================== 4.1.6 Circle Theorems ===================== -->
+<h2>4.1.6 Circle Theorems <span class="higher-tag">Higher</span></h2>
+
+<div class="definition">
+  <strong>Key vocabulary:</strong>
+  <ul>
+    <li><strong>Chord</strong> — a straight line joining two points on the circumference.</li>
+    <li><strong>Arc</strong> — part of the circumference.</li>
+    <li><strong>Tangent</strong> — a line that touches the circle at exactly one point.</li>
+    <li><strong>Cyclic quadrilateral</strong> — a quadrilateral whose four vertices all lie on a circle.</li>
+    <li><strong>Subtend</strong> — an arc or chord subtends an angle at a point if the two ends of the arc/chord are joined to that point.</li>
+  </ul>
+</div>
+
+<!-- THEOREM 1: Angle at centre is twice angle at circumference -->
+<div class="theorem-box">
+  <strong>Theorem 1: Angle at the Centre</strong><br>
+  The angle subtended at the <em>centre</em> of a circle is <strong>twice</strong> the angle subtended at the <em>circumference</em> by the same arc.
+</div>
+<svg viewBox="0 0 200 200" width="180" height="180" style="display:block;margin:8px auto;" aria-label="Angle at centre theorem">
+  <circle cx="100" cy="100" r="75" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <!-- Centre O -->
+  <circle cx="100" cy="100" r="3" fill="#374151"/>
+  <text x="104" y="100" font-size="11" fill="#374151" font-family="sans-serif">O</text>
+  <!-- Arc endpoints A(40,165) and B(160,165) -->
+  <!-- Point C on circumference (upper): C(100,25) -->
+  <line x1="100" y1="100" x2="40" y2="165" stroke="#2563eb" stroke-width="1.5"/>
+  <line x1="100" y1="100" x2="160" y2="165" stroke="#2563eb" stroke-width="1.5"/>
+  <line x1="100" y1="25" x2="40" y2="165" stroke="#374151" stroke-width="1.5"/>
+  <line x1="100" y1="25" x2="160" y2="165" stroke="#374151" stroke-width="1.5"/>
+  <text x="42" y="163" font-size="11" fill="#374151" font-family="sans-serif">A</text>
+  <text x="163" y="163" font-size="11" fill="#374151" font-family="sans-serif">B</text>
+  <text x="97" y="20" font-size="11" fill="#374151" font-family="sans-serif">C</text>
+  <!-- Angle labels -->
+  <text x="90" y="115" font-size="12" fill="#2563eb" font-family="sans-serif" font-style="italic">2θ</text>
+  <text x="93" y="42" font-size="12" fill="#dc2626" font-family="sans-serif" font-style="italic">θ</text>
+  <text x="55" y="190" font-size="11" fill="#374151" font-family="sans-serif">∠AOB = 2 × ∠ACB</text>
+</svg>
+
+<!-- THEOREM 2: Angles in the same segment -->
+<div class="theorem-box">
+  <strong>Theorem 2: Angles in the Same Segment</strong><br>
+  Angles subtended by the same arc (or chord) at the circumference are <strong>equal</strong>.
+</div>
+<svg viewBox="0 0 200 200" width="180" height="180" style="display:block;margin:8px auto;" aria-label="Angles in same segment theorem">
+  <circle cx="100" cy="105" r="75" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <!-- Chord AB at bottom: A(40,165), B(160,165) -->
+  <line x1="40" y1="165" x2="160" y2="165" stroke="#16a34a" stroke-width="1.5"/>
+  <!-- Two points on upper arc: C(65,40), D(140,45) -->
+  <line x1="65" y1="40" x2="40" y2="165" stroke="#374151" stroke-width="1.5"/>
+  <line x1="65" y1="40" x2="160" y2="165" stroke="#374151" stroke-width="1.5"/>
+  <line x1="140" y1="45" x2="40" y2="165" stroke="#374151" stroke-width="1.5"/>
+  <line x1="140" y1="45" x2="160" y2="165" stroke="#374151" stroke-width="1.5"/>
+  <text x="37" y="163" font-size="11" fill="#374151" font-family="sans-serif">A</text>
+  <text x="163" y="163" font-size="11" fill="#374151" font-family="sans-serif">B</text>
+  <text x="58" y="36" font-size="11" fill="#374151" font-family="sans-serif">C</text>
+  <text x="143" y="40" font-size="11" fill="#374151" font-family="sans-serif">D</text>
+  <text x="68" y="56" font-size="12" fill="#16a34a" font-family="sans-serif" font-style="italic">α</text>
+  <text x="133" y="60" font-size="12" fill="#16a34a" font-family="sans-serif" font-style="italic">α</text>
+  <text x="30" y="195" font-size="11" fill="#374151" font-family="sans-serif">∠CAB = ∠DAB (same arc)</text>
+</svg>
+
+<!-- THEOREM 3: Angle in a semicircle -->
+<div class="theorem-box">
+  <strong>Theorem 3: Angle in a Semicircle</strong><br>
+  The angle subtended by a <em>diameter</em> at the circumference is always $90°$.
+</div>
+<svg viewBox="0 0 200 180" width="180" height="160" style="display:block;margin:8px auto;" aria-label="Angle in semicircle theorem">
+  <circle cx="100" cy="100" r="70" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <circle cx="100" cy="100" r="3" fill="#374151"/>
+  <!-- Diameter A to B: (30,100) to (170,100) -->
+  <line x1="30" y1="100" x2="170" y2="100" stroke="#ca8a04" stroke-width="2"/>
+  <!-- Point C on circumference: (100,30) -->
+  <line x1="30" y1="100" x2="100" y2="30" stroke="#374151" stroke-width="1.5"/>
+  <line x1="170" y1="100" x2="100" y2="30" stroke="#374151" stroke-width="1.5"/>
+  <!-- Right angle mark at C -->
+  <polyline points="92,35 97,43 105,39" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="25" y="115" font-size="11" fill="#374151" font-family="sans-serif">A</text>
+  <text x="173" y="115" font-size="11" fill="#374151" font-family="sans-serif">B</text>
+  <text x="97" y="22" font-size="11" fill="#374151" font-family="sans-serif">C</text>
+  <text x="104" y="97" font-size="11" fill="#374151" font-family="sans-serif">O</text>
+  <text x="30" y="168" font-size="11" fill="#374151" font-family="sans-serif">∠ACB = 90° (angle in semicircle)</text>
+</svg>
+
+<!-- THEOREM 4: Cyclic quadrilateral -->
+<div class="theorem-box">
+  <strong>Theorem 4: Cyclic Quadrilateral</strong><br>
+  Opposite angles in a cyclic quadrilateral sum to $180°$ (they are <em>supplementary</em>).
+</div>
+<svg viewBox="0 0 200 200" width="180" height="180" style="display:block;margin:8px auto;" aria-label="Cyclic quadrilateral theorem">
+  <circle cx="100" cy="100" r="75" fill="#fce7f3" stroke="#9d174d" stroke-width="2"/>
+  <!-- Vertices: A(40,40), B(165,60), C(150,165), D(35,155) -->
+  <polygon points="40,40 165,60 150,165 35,155" fill="none" stroke="#9d174d" stroke-width="2"/>
+  <text x="32" y="36" font-size="11" fill="#374151" font-family="sans-serif">A</text>
+  <text x="168" y="57" font-size="11" fill="#374151" font-family="sans-serif">B</text>
+  <text x="153" y="178" font-size="11" fill="#374151" font-family="sans-serif">C</text>
+  <text x="22" y="165" font-size="11" fill="#374151" font-family="sans-serif">D</text>
+  <!-- Angle labels -->
+  <text x="48" y="55" font-size="12" fill="#9d174d" font-family="sans-serif" font-style="italic">α</text>
+  <text x="138" y="158" font-size="12" fill="#9d174d" font-family="sans-serif" font-style="italic">α'</text>
+  <text x="150" y="77" font-size="12" fill="#2563eb" font-family="sans-serif" font-style="italic">β</text>
+  <text x="37" y="152" font-size="12" fill="#2563eb" font-family="sans-serif" font-style="italic">β'</text>
+  <text x="15" y="195" font-size="11" fill="#374151" font-family="sans-serif">α+α'=180°, β+β'=180°</text>
+</svg>
+
+<!-- THEOREM 5: Tangent-radius -->
+<div class="theorem-box">
+  <strong>Theorem 5: Tangent–Radius</strong><br>
+  A tangent to a circle is <strong>perpendicular</strong> to the radius drawn to the point of tangency.
+</div>
+<svg viewBox="0 0 200 180" width="180" height="160" style="display:block;margin:8px auto;" aria-label="Tangent perpendicular to radius">
+  <circle cx="100" cy="90" r="60" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <circle cx="100" cy="90" r="3" fill="#374151"/>
+  <text x="105" y="90" font-size="11" fill="#374151" font-family="sans-serif">O</text>
+  <!-- Tangent at bottom point (100,150) -->
+  <line x1="30" y1="150" x2="170" y2="150" stroke="#ea580c" stroke-width="2.5"/>
+  <!-- Radius to tangent point -->
+  <line x1="100" y1="90" x2="100" y2="150" stroke="#374151" stroke-width="1.5"/>
+  <!-- Right angle mark -->
+  <polyline points="92,150 92,142 100,142" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="35" y="145" font-size="11" fill="#ea580c" font-family="sans-serif">tangent</text>
+  <text x="104" y="124" font-size="11" fill="#374151" font-family="sans-serif">radius</text>
+  <text x="20" y="170" font-size="11" fill="#374151" font-family="sans-serif">Tangent ⊥ radius at point of contact</text>
+</svg>
+
+<!-- THEOREM 6: Tangents from external point -->
+<div class="theorem-box">
+  <strong>Theorem 6: Two Tangents from an External Point</strong><br>
+  Tangent segments from an external point to a circle are <strong>equal in length</strong>.
+</div>
+<svg viewBox="0 0 220 180" width="200" height="160" style="display:block;margin:8px auto;" aria-label="Two tangents from external point">
+  <circle cx="110" cy="90" r="60" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <!-- External point P(10,90) -->
+  <circle cx="10" cy="90" r="3" fill="#374151"/>
+  <text x="2" y="86" font-size="11" fill="#374151" font-family="sans-serif">P</text>
+  <!-- Tangent 1 to (75, 40) approx -->
+  <line x1="10" y1="90" x2="72" y2="38" stroke="#2563eb" stroke-width="1.5"/>
+  <!-- Tangent 2 to (75, 140) approx -->
+  <line x1="10" y1="90" x2="72" y2="142" stroke="#2563eb" stroke-width="1.5"/>
+  <!-- Tangent points -->
+  <circle cx="72" cy="38" r="3" fill="#2563eb"/>
+  <circle cx="72" cy="142" r="3" fill="#2563eb"/>
+  <!-- Tick marks -->
+  <line x1="38" y1="62" x2="44" y2="67" stroke="#2563eb" stroke-width="2"/>
+  <line x1="38" y1="118" x2="44" y2="113" stroke="#2563eb" stroke-width="2"/>
+  <text x="65" y="30" font-size="11" fill="#374151" font-family="sans-serif">T₁</text>
+  <text x="65" y="160" font-size="11" fill="#374151" font-family="sans-serif">T₂</text>
+  <text x="50" y="175" font-size="11" fill="#374151" font-family="sans-serif">PT₁ = PT₂</text>
+</svg>
+
+<!-- THEOREM 7: Perpendicular from centre to chord -->
+<div class="theorem-box">
+  <strong>Theorem 7: Perpendicular from Centre to Chord</strong><br>
+  The perpendicular from the centre of a circle to a chord <strong>bisects</strong> the chord.
+</div>
+<svg viewBox="0 0 200 180" width="180" height="160" style="display:block;margin:8px auto;" aria-label="Perpendicular from centre bisects chord">
+  <circle cx="100" cy="90" r="70" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <circle cx="100" cy="90" r="3" fill="#374151"/>
+  <text x="104" y="90" font-size="11" fill="#374151" font-family="sans-serif">O</text>
+  <!-- Chord A(35,130) to B(165,130) -->
+  <line x1="35" y1="130" x2="165" y2="130" stroke="#16a34a" stroke-width="2"/>
+  <!-- Perpendicular from O to midpoint M(100,130) -->
+  <line x1="100" y1="90" x2="100" y2="130" stroke="#374151" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- Right angle mark -->
+  <polyline points="92,130 92,122 100,122" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+  <!-- Mid-point ticks -->
+  <line x1="96" y1="128" x2="100" y2="132" stroke="#16a34a" stroke-width="2"/>
+  <line x1="104" y1="128" x2="100" y2="132" stroke="#16a34a" stroke-width="2"/>
+  <line x1="96" y1="132" x2="100" y2="128" stroke="#16a34a" stroke-width="2"/>
+  <line x1="104" y1="132" x2="100" y2="128" stroke="#16a34a" stroke-width="2"/>
+  <text x="30" y="145" font-size="11" fill="#374151" font-family="sans-serif">A</text>
+  <text x="168" y="145" font-size="11" fill="#374151" font-family="sans-serif">B</text>
+  <text x="104" y="132" font-size="11" fill="#374151" font-family="sans-serif">M</text>
+  <text x="20" y="168" font-size="11" fill="#374151" font-family="sans-serif">OM ⊥ AB  and  AM = MB</text>
+</svg>
+
+<!-- THEOREM 8: Alternate segment theorem -->
+<div class="theorem-box">
+  <strong>Theorem 8: Alternate Segment Theorem (Tangent–Chord Angle)</strong><br>
+  The angle between a tangent and a chord equals the inscribed angle in the <em>alternate segment</em> (the segment on the other side of the chord).
+</div>
+<svg viewBox="0 0 220 200" width="200" height="185" style="display:block;margin:8px auto;" aria-label="Alternate segment theorem">
+  <circle cx="110" cy="100" r="70" fill="#faf5ff" stroke="#7c3aed" stroke-width="2"/>
+  <!-- Chord from T(60,163) to B(175,80) -->
+  <!-- Tangent at T: horizontal -->
+  <line x1="10" y1="163" x2="200" y2="163" stroke="#7c3aed" stroke-width="2.5"/>
+  <line x1="60" y1="163" x2="175" y2="80" stroke="#374151" stroke-width="1.5"/>
+  <!-- Point C in upper arc: C(110,30) -->
+  <line x1="60" y1="163" x2="110" y2="30" stroke="#374151" stroke-width="1.5"/>
+  <line x1="175" y1="80" x2="110" y2="30" stroke="#374151" stroke-width="1.5"/>
+  <!-- Tangent-chord angle arc at T -->
+  <path d="M 80,163 A 20,20 0 0,0 72,148" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <text x="82" y="158" font-size="12" fill="#dc2626" font-family="sans-serif" font-style="italic">φ</text>
+  <!-- Inscribed angle at C -->
+  <text x="103" y="50" font-size="12" fill="#dc2626" font-family="sans-serif" font-style="italic">φ</text>
+  <text x="55" y="178" font-size="11" fill="#374151" font-family="sans-serif">T</text>
+  <text x="178" y="78" font-size="11" fill="#374151" font-family="sans-serif">B</text>
+  <text x="107" y="24" font-size="11" fill="#374151" font-family="sans-serif">C</text>
+  <text x="10" y="156" font-size="10" fill="#7c3aed" font-family="sans-serif">tangent</text>
+  <text x="10" y="195" font-size="11" fill="#374151" font-family="sans-serif">∠(tangent,chord) = inscribed angle, alt. seg.</text>
+</svg>
+
+<div class="exam-tip">
+  When tackling circle theorem problems, mark all given angles on the diagram first. Work systematically around the circle stating each reason. Always use the full theorem name as the reason (e.g., "angle in a semicircle = 90°" not just "semicircle").
+</div>
+
+<div class="worked-example">
+  O is the centre of a circle. Points A, B and C lie on the circumference. Angle AOB = $130°$. Find angle ACB.<br><br>
+  Angle at centre = twice angle at circumference (same arc):<br>
+  $\angle ACB = 130 \div 2 = \mathbf{65°}$<br>
+  Reason: angle at centre is twice angle at circumference (Theorem 1).
+</div>
+
+<div class="worked-example">
+  ABCD is a cyclic quadrilateral. Angle ABC = $74°$ and angle BCD = $110°$. Find angles CDA and DAB.<br><br>
+  Opposite angles in cyclic quadrilateral sum to $180°$:<br>
+  $\angle CDA = 180 - 74 = \mathbf{106°}$<br>
+  $\angle DAB = 180 - 110 = \mathbf{70°}$
+</div>
+
+<!-- ===================== Formula Summary ===================== -->
+<h2>Formula Summary</h2>
+
+<table>
+  <tr><th>Rule / Theorem</th><th>Statement</th></tr>
+  <tr><td>Angles on a straight line</td><td>Sum = $180°$</td></tr>
+  <tr><td>Angles around a point</td><td>Sum = $360°$</td></tr>
+  <tr><td>Vertically opposite</td><td>Equal</td></tr>
+  <tr><td>Alternate angles (parallel lines)</td><td>Equal</td></tr>
+  <tr><td>Corresponding angles (parallel lines)</td><td>Equal</td></tr>
+  <tr><td>Co-interior angles (parallel lines)</td><td>Sum = $180°$</td></tr>
+  <tr><td>Interior angle sum of polygon</td><td>$(n-2) \times 180°$</td></tr>
+  <tr><td>Exterior angle sum</td><td>Always $360°$</td></tr>
+  <tr><td>Angle at centre (Th. 1)</td><td>$= 2 \times$ angle at circumference</td></tr>
+  <tr><td>Angles in same segment (Th. 2)</td><td>Equal</td></tr>
+  <tr><td>Angle in semicircle (Th. 3)</td><td>$= 90°$</td></tr>
+  <tr><td>Cyclic quadrilateral (Th. 4)</td><td>Opposite angles sum to $180°$</td></tr>
+  <tr><td>Tangent–radius (Th. 5)</td><td>Perpendicular ($90°$)</td></tr>
+  <tr><td>Tangents from external point (Th. 6)</td><td>Equal length</td></tr>
+  <tr><td>Perpendicular from centre (Th. 7)</td><td>Bisects chord</td></tr>
+  <tr><td>Alternate segment (Th. 8)</td><td>Tangent–chord angle = inscribed angle in alt. segment</td></tr>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>
