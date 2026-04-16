@@ -331,6 +331,281 @@ r<sub>s</sub> = 1 &minus; (6&sum;d&sup2;) / (n(n&sup2; &minus; 1))
 <strong>Exam Tip:</strong> AQA expects you to demonstrate that your fieldwork is connected to the wider specification. For a river investigation, link to water cycle processes (infiltration, runoff, throughflow) and the drainage basin system. For an urban investigation, link to place identity, inequality, or sustainability. This synoptic connection lifts your evaluation from competent to excellent.
 </div>
 
+
+<h2>7. Spearman's Rank: Full Worked Example</h2>
+
+<p>Below is a complete worked example of Spearman's Rank Correlation, the most commonly required statistical test in AQA Geography Paper 3.</p>
+
+<h3>Research Question and Data</h3>
+
+<p><strong>Research question:</strong> "Is there a significant relationship between distance downstream from the source and mean pebble size at a river in the Lake District?"</p>
+<p><strong>Null hypothesis (H<sub>0</sub>):</strong> There is no significant correlation between distance downstream and mean pebble size.</p>
+<p><strong>Alternative hypothesis (H<sub>1</sub>):</strong> There is a significant negative correlation between distance downstream and mean pebble size (pebbles become smaller with distance as attrition and abrasion reduce size).</p>
+
+<table>
+  <tr><th>Site</th><th>Distance from source (km)</th><th>Mean pebble b-axis (mm)</th><th>Rank: Distance (R<sub>1</sub>)</th><th>Rank: Pebble size (R<sub>2</sub>)</th><th>Difference (d = R<sub>1</sub>&minus;R<sub>2</sub>)</th><th>d&sup2;</th></tr>
+  <tr><td>1</td><td>0.5</td><td>87</td><td>1</td><td>10</td><td>&minus;9</td><td>81</td></tr>
+  <tr><td>2</td><td>1.2</td><td>74</td><td>2</td><td>9</td><td>&minus;7</td><td>49</td></tr>
+  <tr><td>3</td><td>2.1</td><td>68</td><td>3</td><td>8</td><td>&minus;5</td><td>25</td></tr>
+  <tr><td>4</td><td>3.4</td><td>61</td><td>4</td><td>7</td><td>&minus;3</td><td>9</td></tr>
+  <tr><td>5</td><td>4.7</td><td>55</td><td>5</td><td>6</td><td>&minus;1</td><td>1</td></tr>
+  <tr><td>6</td><td>5.9</td><td>48</td><td>6</td><td>5</td><td>1</td><td>1</td></tr>
+  <tr><td>7</td><td>7.2</td><td>42</td><td>7</td><td>4</td><td>3</td><td>9</td></tr>
+  <tr><td>8</td><td>8.8</td><td>36</td><td>8</td><td>3</td><td>5</td><td>25</td></tr>
+  <tr><td>9</td><td>10.1</td><td>29</td><td>9</td><td>2</td><td>7</td><td>49</td></tr>
+  <tr><td>10</td><td>12.3</td><td>21</td><td>10</td><td>1</td><td>9</td><td>81</td></tr>
+  <tr><td colspan="6" style="text-align:right; font-weight:600;">&sum;d&sup2; =</td><td><strong>330</strong></td></tr>
+</table>
+
+<h3>Calculation</h3>
+
+<div class="equation">
+r<sub>s</sub> = 1 &minus; (6 &times; &sum;d&sup2;) / (n(n&sup2; &minus; 1))
+</div>
+
+<div class="equation">
+r<sub>s</sub> = 1 &minus; (6 &times; 330) / (10 &times; (100 &minus; 1))
+</div>
+
+<div class="equation">
+r<sub>s</sub> = 1 &minus; 1980 / (10 &times; 99)
+</div>
+
+<div class="equation">
+r<sub>s</sub> = 1 &minus; 1980 / 990
+</div>
+
+<div class="equation">
+r<sub>s</sub> = 1 &minus; 2.0 = <strong>&minus;1.0</strong>
+</div>
+
+<h3>Interpreting the Result</h3>
+
+<p>r<sub>s</sub> = &minus;1.0 is a perfect negative correlation (in this simplified example). In real fieldwork, r<sub>s</sub> values between &minus;0.7 and &minus;0.9 are typical for downstream pebble-size studies, indicating a strong negative correlation with some variation.</p>
+
+<p><strong>Critical value check:</strong> For n = 10 at p = 0.05 (95% confidence level), the critical value from Spearman's Rank table is <strong>0.648</strong>. Since |&minus;1.0| = 1.0 &gt; 0.648, we <strong>reject H<sub>0</sub></strong>.</p>
+
+<p><strong>Conclusion:</strong> There is a statistically significant negative correlation between distance downstream and mean pebble size (r<sub>s</sub> = &minus;1.0, n = 10, p &lt; 0.05). We accept H<sub>1</sub>. This supports the theoretical prediction that attrition and abrasion reduce pebble size with increasing distance downstream, consistent with the Bradshaw model's prediction of decreasing sediment particle size downstream.</p>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Note two important conventions when ranking: (1) When ranking data for Spearman's, rank 1 is assigned to the <em>smallest</em> value if you are correlating two variables that should both increase (or both decrease) together. Be consistent &mdash; decide before you start whether rank 1 = smallest or largest, and apply this consistently to BOTH variables. (2) For <em>tied values</em>: if two values are equal, assign them the average of the ranks they would have occupied (e.g. if values ranked 3rd and 4th are equal, both get rank 3.5). This must be done correctly or your r<sub>s</sub> calculation will be wrong.
+</div>
+
+<h2>8. Chi-Squared: Worked Example</h2>
+
+<h3>Research Question and Observed Data</h3>
+
+<p><strong>Research question:</strong> "Is there a significant association between proximity to a city park and residents' reported use of outdoor green space for exercise?"</p>
+<p><strong>H<sub>0</sub>:</strong> There is no significant association between proximity to the park and frequency of outdoor exercise.</p>
+<p><strong>H<sub>1</sub>:</strong> There is a significant association between proximity to the park and frequency of outdoor exercise.</p>
+
+<p><strong>Observed frequencies (from questionnaire survey, n = 120):</strong></p>
+
+<table>
+  <tr><th></th><th>Exercises outdoors 3+ times/week</th><th>Exercises outdoors fewer than 3 times/week</th><th>Row Total</th></tr>
+  <tr><td><strong>Lives within 300 m of park</strong></td><td>42</td><td>18</td><td>60</td></tr>
+  <tr><td><strong>Lives more than 300 m from park</strong></td><td>24</td><td>36</td><td>60</td></tr>
+  <tr><td><strong>Column Total</strong></td><td>66</td><td>54</td><td>120</td></tr>
+</table>
+
+<h3>Step 1: Calculate Expected Frequencies</h3>
+<p>Expected frequency (E) for each cell = (Row total &times; Column total) / Grand total</p>
+<ul>
+  <li>Near park, exercises frequently: (60 &times; 66) / 120 = 33</li>
+  <li>Near park, exercises infrequently: (60 &times; 54) / 120 = 27</li>
+  <li>Far from park, exercises frequently: (60 &times; 66) / 120 = 33</li>
+  <li>Far from park, exercises infrequently: (60 &times; 54) / 120 = 27</li>
+</ul>
+
+<h3>Step 2: Calculate Chi-Squared</h3>
+
+<div class="equation">
+&chi;&sup2; = &sum; (O &minus; E)&sup2; / E
+</div>
+
+<table>
+  <tr><th>Cell</th><th>O (Observed)</th><th>E (Expected)</th><th>(O &minus; E)</th><th>(O &minus; E)&sup2;</th><th>(O &minus; E)&sup2; / E</th></tr>
+  <tr><td>Near, frequent</td><td>42</td><td>33</td><td>9</td><td>81</td><td>2.45</td></tr>
+  <tr><td>Near, infrequent</td><td>18</td><td>27</td><td>&minus;9</td><td>81</td><td>3.00</td></tr>
+  <tr><td>Far, frequent</td><td>24</td><td>33</td><td>&minus;9</td><td>81</td><td>2.45</td></tr>
+  <tr><td>Far, infrequent</td><td>36</td><td>27</td><td>9</td><td>81</td><td>3.00</td></tr>
+  <tr><td colspan="5" style="text-align:right; font-weight:600;">&chi;&sup2; =</td><td><strong>10.91</strong></td></tr>
+</table>
+
+<h3>Step 3: Compare to Critical Value</h3>
+
+<p>Degrees of freedom = (rows &minus; 1) &times; (columns &minus; 1) = (2&minus;1) &times; (2&minus;1) = 1</p>
+<p>Critical value at p = 0.05, df = 1: <strong>3.84</strong></p>
+<p>Critical value at p = 0.01, df = 1: <strong>6.63</strong></p>
+
+<p>Our calculated &chi;&sup2; = 10.91 &gt; 6.63 (p = 0.01 critical value). Therefore we <strong>reject H<sub>0</sub></strong> at the 99% confidence level.</p>
+
+<p><strong>Conclusion:</strong> There is a highly significant association between proximity to the park and frequency of outdoor exercise (&chi;&sup2; = 10.91, df = 1, p &lt; 0.01). We accept H<sub>1</sub>. People living within 300 m of the park are more likely to exercise outdoors 3+ times per week. This is consistent with the concept that accessible urban green space promotes physical activity and health.</p>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Chi-squared has strict requirements that examiners test: (1) data must be in <em>frequencies</em> (counts), not percentages or proportions &mdash; convert percentages back to counts if the total sample size is given; (2) no expected frequency should be less than 5 &mdash; if any cell has E &lt; 5, you must either collapse categories or use an alternative test; (3) observations must be <em>independent</em> &mdash; each person/location should only appear in one cell. Violating these conditions invalidates the test. In your evaluation, mention any cells that approached the E &lt; 5 threshold as a limitation.
+</div>
+
+<h2>9. Hypothesis Testing Framework</h2>
+
+<p>AQA Geography Paper 3 requires a rigorous approach to hypothesis testing. The following framework applies to all statistical tests:</p>
+
+<table>
+  <tr><th>Step</th><th>Action</th><th>Example</th></tr>
+  <tr><td>1</td><td>State the research question clearly</td><td>"Does land use diversity decrease with distance from the CBD?"</td></tr>
+  <tr><td>2</td><td>State H<sub>0</sub> (null hypothesis) &mdash; always states NO significant relationship/difference</td><td>"There is no significant correlation between distance from the CBD and land use diversity index score."</td></tr>
+  <tr><td>3</td><td>State H<sub>1</sub> (alternative hypothesis) &mdash; states the expected pattern, justified by theory</td><td>"There is a significant negative correlation between distance from the CBD and land use diversity, because competing land values near the CBD favour commercial monoculture." (based on Burgess model)</td></tr>
+  <tr><td>4</td><td>Identify the appropriate statistical test and justify its selection</td><td>"Spearman's Rank is appropriate because both variables are ordinal/continuous, the relationship is expected to be monotonic (consistently increasing or decreasing), and the sample is too small for parametric tests (n = 12)."</td></tr>
+  <tr><td>5</td><td>State the significance level and justify it</td><td>"I will use p = 0.05 (95% confidence level), which is standard for geographical fieldwork. A 5% probability of random results being accepted as significant is acceptable for this exploratory investigation."</td></tr>
+  <tr><td>6</td><td>Collect data using appropriate sampling method</td><td>Systematic sampling at 200 m intervals along 5 transect routes from CBD to urban fringe.</td></tr>
+  <tr><td>7</td><td>Calculate the test statistic</td><td>Calculate r<sub>s</sub> using the formula, showing working.</td></tr>
+  <tr><td>8</td><td>Compare calculated value to critical value from table</td><td>r<sub>s</sub> = &minus;0.73; critical value for n = 12 at p = 0.05 is 0.591. Since 0.73 &gt; 0.591, the result is significant.</td></tr>
+  <tr><td>9</td><td>State conclusion: accept or reject H<sub>0</sub></td><td>"I reject H<sub>0</sub>. There is a significant negative correlation between distance from the CBD and land use diversity (r<sub>s</sub> = &minus;0.73, n = 12, p &lt; 0.05)."</td></tr>
+  <tr><td>10</td><td>Interpret the result geographically &mdash; link to theory</td><td>"This supports the Burgess concentric zone model's prediction that land use near the CBD is dominated by commercial uses (low diversity) while the residential zone contains a greater mix of uses. However, two anomalous sites with high commercial diversity at 1.8 km distance may reflect out-of-town retail developments."</td></tr>
+  <tr><td>11</td><td>Evaluate: what are the limitations of this conclusion?</td><td>"The sample size (n = 12) is near the minimum for Spearman's Rank; a larger sample would increase confidence. The transect routes chosen may not be representative of all directions from the CBD. The land use diversity index is a subjective measurement instrument and different observers may score the same street differently."</td></tr>
+</table>
+
+<h2>10. Primary vs Secondary Data: Evaluation Framework</h2>
+
+<table>
+  <tr><th>Criterion</th><th>Primary Data</th><th>Secondary Data</th></tr>
+  <tr><td><strong>Definition</strong></td><td>Collected first-hand by the researcher through direct observation, measurement, or survey</td><td>Collected by another party and made available for use by others</td></tr>
+  <tr><td><strong>Control over methodology</strong></td><td>Full control: researcher decides when, where, how, and what to measure. Can be tailored precisely to the research question.</td><td>No control: methodology was determined by the original collector. May not precisely match your research question.</td></tr>
+  <tr><td><strong>Accuracy</strong></td><td>Accuracy depends on researcher's skill, equipment quality, and conditions at time of collection. Errors can be identified and controlled.</td><td>Accuracy depends on the original collector's methodology. Errors may be unknown or undisclosed. Errors may be systematic across the entire dataset.</td></tr>
+  <tr><td><strong>Currency/timeliness</strong></td><td>Can be collected at the exact time needed (e.g. during a flood event, immediately after a storm).</td><td>May be outdated: census data is 10 years old at collection time; Environment Agency river data may have gaps. Historical data allows time-series analysis that primary data cannot provide.</td></tr>
+  <tr><td><strong>Scale and coverage</strong></td><td>Limited to what one researcher (or group) can physically collect in the time available. Typically small sample sizes and limited spatial coverage.</td><td>Can cover large areas and long time periods impossible for one researcher: ONS census covers entire population; EA river gauging stations record 15-minute intervals continuously.</td></tr>
+  <tr><td><strong>Cost and access</strong></td><td>Free to collect but time-intensive. Access to some sites may be restricted.</td><td>Much secondary data is free and publicly accessible (ONS, EA, OS, police.uk, IMD). Some datasets require purchase or institutional access.</td></tr>
+  <tr><td><strong>Bias</strong></td><td>Researcher bias in collection (questionnaire wording, sampling location choices, measurement technique). Can be designed to minimise bias.</td><td>Bias embedded in the original collection: government statistics may reflect political priorities; media representations are inherently selective; company data may be partial.</td></tr>
+  <tr><td><strong>Examples (physical)</strong></td><td>River width/depth/velocity measurements; pebble size; infiltration rates; vegetation quadrats; soil pH; weather observations</td><td>Environment Agency gauging station records; Met Office weather data; BGS geological maps; OS maps; satellite NDVI imagery; EA flood risk maps</td></tr>
+  <tr><td><strong>Examples (human)</strong></td><td>Questionnaires; interviews; EQI surveys; pedestrian counts; land use mapping; photographic surveys; traffic counts</td><td>ONS Census; IMD data; Land Registry house prices; crime statistics; NHS health data; Google Street View; social media analytics; historical maps and photographs</td></tr>
+</table>
+
+<h3>Evaluating Secondary Data Sources: Key Questions</h3>
+<ul>
+  <li><strong>Who collected it, and why?</strong> A government report on immigration may undercount irregular migrants; a company's environmental performance data may be selectively positive. Identify the collector and their purpose.</li>
+  <li><strong>When was it collected?</strong> The 2021 UK Census is the most recent but already 3 years old; the IMD was last updated in 2019 (using 2017&ndash;18 data). Areas may have changed substantially.</li>
+  <li><strong>What methodology was used?</strong> Census data is comprehensive but self-reported (people may misreport). Police crime statistics undercount unreported crimes (typically only 40% of crimes are reported).</li>
+  <li><strong>What are the spatial and temporal units?</strong> IMD data is at LSOA level (~1,500 people); averaging across larger areas may mask significant intra-area variation.</li>
+  <li><strong>Are there gaps or known biases?</strong> The 2021 Census estimated 10% non-response in some London boroughs; LA-level data may mask significant neighbourhood variation.</li>
+  <li><strong>Has it been published in a peer-reviewed or quality-assured context?</strong> ONS, EA, and academic journals are more reliable than tabloid news coverage or advocacy group statistics.</li>
+</ul>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> In the Paper 3 unfamiliar investigation section, you will often be asked to evaluate secondary data sources. Apply the questions above systematically. Do not simply say "secondary data is less reliable than primary data" &mdash; this is too vague. Instead, identify SPECIFIC limitations of the specific secondary source presented (e.g. "The crime statistics used may undercount actual crime because many crimes go unreported; the researcher has no way of knowing the unreported crime rate in this area").
+</div>
+
+<h2>11. Data Presentation Techniques: Extended Analysis</h2>
+
+<h3>Choosing the Right Presentation Method</h3>
+
+<p>The choice of presentation technique must be justified in terms of: (1) data type (nominal, ordinal, interval, ratio); (2) what you want to show (trend, distribution, relationship, spatial pattern, proportion); and (3) the audience and purpose.</p>
+
+<table>
+  <tr><th>Data Type</th><th>Definition</th><th>Examples in Geography</th><th>Appropriate techniques</th></tr>
+  <tr><td><strong>Nominal</strong></td><td>Categories with no numerical order or ranking</td><td>Land use type (residential, commercial, industrial); vegetation community; rock type</td><td>Bar chart, pie chart, choropleth (categories), pictogram</td></tr>
+  <tr><td><strong>Ordinal</strong></td><td>Categories that can be ranked but intervals are not equal</td><td>Beaufort wind scale; Richter scale; EQI scores; IMD quintile ranking</td><td>Bar chart, ranked data table, Spearman's Rank, percentile charts</td></tr>
+  <tr><td><strong>Interval</strong></td><td>Numerical data with equal intervals but no true zero</td><td>Temperature in &deg;C; years (AD/BC); pH scale</td><td>Line graph, scatter graph, histogram, box-and-whisker</td></tr>
+  <tr><td><strong>Ratio</strong></td><td>Numerical data with equal intervals AND a true zero</td><td>Rainfall (mm); discharge (m&sup3;/s); population; distance; pebble size</td><td>All techniques; allows ratios (twice as much) to be meaningful</td></tr>
+</table>
+
+<h3>Box-and-Whisker Plots</h3>
+
+<p>Box-and-whisker plots (box plots) are particularly useful in geographical fieldwork for comparing the distribution and spread of two or more datasets. They display five summary statistics: minimum, lower quartile (Q1), median (Q2), upper quartile (Q3), and maximum.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Box-and-Whisker Plot: Pebble Size at Two Sites</text>
+  <!-- Axis -->
+  <line x1="60" y1="210" x2="560" y2="210" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="310" y="235" text-anchor="middle" font-size="11" fill="#1a1a2e">Pebble b-axis (mm)</text>
+  <!-- X-axis ticks -->
+  <line x1="60" y1="210" x2="60" y2="215" stroke="#1a1a2e" stroke-width="1.5"/><text x="60" y="226" text-anchor="middle" font-size="9" fill="#64748b">0</text>
+  <line x1="160" y1="210" x2="160" y2="215" stroke="#1a1a2e" stroke-width="1.5"/><text x="160" y="226" text-anchor="middle" font-size="9" fill="#64748b">20</text>
+  <line x1="260" y1="210" x2="260" y2="215" stroke="#1a1a2e" stroke-width="1.5"/><text x="260" y="226" text-anchor="middle" font-size="9" fill="#64748b">40</text>
+  <line x1="360" y1="210" x2="360" y2="215" stroke="#1a1a2e" stroke-width="1.5"/><text x="360" y="226" text-anchor="middle" font-size="9" fill="#64748b">60</text>
+  <line x1="460" y1="210" x2="460" y2="215" stroke="#1a1a2e" stroke-width="1.5"/><text x="460" y="226" text-anchor="middle" font-size="9" fill="#64748b">80</text>
+  <line x1="560" y1="210" x2="560" y2="215" stroke="#1a1a2e" stroke-width="1.5"/><text x="560" y="226" text-anchor="middle" font-size="9" fill="#64748b">100</text>
+  <!-- Site A (upstream): Min=45, Q1=55, Median=68, Q3=80, Max=95 -->
+  <!-- Scale: 0=60, 100=560; 1mm=5px -->
+  <!-- Min line at x=60+45*5=285; Q1 at 60+55*5=335; Median at 60+68*5=400; Q3 at 60+80*5=460; Max at 60+95*5=535 -->
+  <text x="30" y="95" text-anchor="middle" font-size="10" font-weight="bold" fill="#1a73e8">Site A</text>
+  <text x="30" y="107" text-anchor="middle" font-size="8" fill="#64748b">(Upstream)</text>
+  <!-- whisker left -->
+  <line x1="285" y1="80" x2="285" y2="110" stroke="#1a73e8" stroke-width="2"/>
+  <line x1="285" y1="95" x2="335" y2="95" stroke="#1a73e8" stroke-width="2"/>
+  <!-- box -->
+  <rect x="335" y="70" width="125" height="50" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <!-- median line -->
+  <line x1="400" y1="70" x2="400" y2="120" stroke="#1a73e8" stroke-width="2.5"/>
+  <!-- whisker right -->
+  <line x1="460" y1="95" x2="535" y2="95" stroke="#1a73e8" stroke-width="2"/>
+  <line x1="535" y1="80" x2="535" y2="110" stroke="#1a73e8" stroke-width="2"/>
+  <!-- Labels -->
+  <text x="285" y="67" text-anchor="middle" font-size="8" fill="#1a73e8">Min=45</text>
+  <text x="335" y="67" text-anchor="middle" font-size="8" fill="#1a73e8">Q1=55</text>
+  <text x="400" y="67" text-anchor="middle" font-size="8" fill="#1a73e8">Med=68</text>
+  <text x="460" y="67" text-anchor="middle" font-size="8" fill="#1a73e8">Q3=80</text>
+  <text x="535" y="67" text-anchor="middle" font-size="8" fill="#1a73e8">Max=95</text>
+  <!-- Site B (downstream): Min=8, Q1=15, Median=24, Q3=35, Max=50 -->
+  <!-- Min=8: 60+8*5=100; Q1=15: 60+15*5=135; Med=24: 60+24*5=180; Q3=35: 60+35*5=235; Max=50: 60+50*5=310 -->
+  <text x="30" y="170" text-anchor="middle" font-size="10" font-weight="bold" fill="#DC2626">Site B</text>
+  <text x="30" y="182" text-anchor="middle" font-size="8" fill="#64748b">(Downstream)</text>
+  <line x1="100" y1="155" x2="100" y2="185" stroke="#DC2626" stroke-width="2"/>
+  <line x1="100" y1="170" x2="135" y2="170" stroke="#DC2626" stroke-width="2"/>
+  <rect x="135" y="145" width="100" height="50" fill="#fee2e2" stroke="#DC2626" stroke-width="2"/>
+  <line x1="180" y1="145" x2="180" y2="195" stroke="#DC2626" stroke-width="2.5"/>
+  <line x1="235" y1="170" x2="310" y2="170" stroke="#DC2626" stroke-width="2"/>
+  <line x1="310" y1="155" x2="310" y2="185" stroke="#DC2626" stroke-width="2"/>
+  <text x="100" y="143" text-anchor="middle" font-size="8" fill="#DC2626">Min=8</text>
+  <text x="135" y="143" text-anchor="middle" font-size="8" fill="#DC2626">Q1=15</text>
+  <text x="180" y="143" text-anchor="middle" font-size="8" fill="#DC2626">Med=24</text>
+  <text x="235" y="143" text-anchor="middle" font-size="8" fill="#DC2626">Q3=35</text>
+  <text x="310" y="143" text-anchor="middle" font-size="8" fill="#DC2626">Max=50</text>
+  <text x="300" y="250" text-anchor="middle" font-size="9" fill="#64748b" font-style="italic">Site A (upstream) has consistently larger pebbles than Site B (downstream). No overlap in IQR.</text>
+</svg>
+</div>
+
+<p>Reading this box-and-whisker plot:</p>
+<ul>
+  <li><strong>Site A</strong> (upstream) has a median pebble size of 68 mm and IQR of 25 mm (Q1=55, Q3=80), indicating a wide spread of pebble sizes.</li>
+  <li><strong>Site B</strong> (downstream) has a median pebble size of 24 mm and IQR of 20 mm (Q1=15, Q3=35), indicating smaller pebbles with less variation.</li>
+  <li>The fact that the boxes (IQR) <strong>do not overlap</strong> is strong visual evidence of a significant difference in distributions between the two sites, consistent with downstream fining.</li>
+  <li>A Mann-Whitney U test could be used to formally test whether this difference is statistically significant.</li>
+</ul>
+
+<h2>12. Evaluating Your Fieldwork Investigation: A Framework</h2>
+
+<h3>The AREA Framework for Evaluation</h3>
+
+<table>
+  <tr><th>Element</th><th>Questions to ask</th><th>Example of high-quality evaluation</th></tr>
+  <tr><td><strong>A</strong>ccuracy</td><td>How close were your measurements to the true value? What sources of measurement error existed?</td><td>"Flow velocity measurements using a floating orange are known to overestimate mean velocity as they measure surface velocity. We multiplied all values by 0.85 to correct for this, but this correction factor is itself an approximation and may introduce error of ±10%."</td></tr>
+  <tr><td><strong>R</strong>epresentativeness</td><td>Does your sample represent the population from which it was drawn? What spatial or temporal biases exist?</td><td>"We conducted all fieldwork on a single weekday in October. Consumer behaviour and pedestrian counts in our CBD study would differ significantly on a Saturday, during school holidays, or in December. Results may not represent the typical weekday pattern either, as we only collected data between 10am and 2pm."</td></tr>
+  <tr><td><strong>E</strong>vidence base</td><td>Is your sample size large enough to draw reliable conclusions? Do you have enough data points for statistical analysis?</td><td>"Our Spearman's Rank analysis used n=8 sites, which is at the lower boundary of reliability for this test. The critical value at n=8 (p=0.05) is 0.738, meaning we needed a very strong correlation to achieve significance. Increasing to n=15+ sites would lower the required threshold and increase the test's power."</td></tr>
+  <tr><td><strong>A</strong>lternative explanations</td><td>Could factors other than your hypothesised relationship explain your findings?</td><td>"The negative correlation we found between distance from the CBD and Environmental Quality Index scores could reflect distance from the CBD, OR it could reflect the age of housing stock (which is older nearer the CBD), proximity to traffic (main roads radiate from the CBD), or socioeconomic status (which also varies with distance in the Burgess model). We cannot isolate the specific causal variable from our data alone."</td></tr>
+</table>
+
+<h3>Improvements and Extensions: How to Write Them Well</h3>
+
+<p>Examiners reward <em>specific, justified</em> improvements. Avoid generic statements. For each improvement, explain:</p>
+<ol>
+  <li><strong>What</strong> you would change</li>
+  <li><strong>How</strong> specifically (the methodology)</li>
+  <li><strong>Why</strong> this would improve the investigation (the limitation it addresses)</li>
+  <li><strong>What</strong> you would expect to find differently (the predicted impact on results)</li>
+</ol>
+
+<p><strong>Example of a weak improvement statement:</strong> "I would collect more data."</p>
+<p><strong>Example of a strong improvement statement:</strong> "I would increase the number of transect sites from 8 to 20, spaced at 500 m intervals along the full 10 km study reach, rather than our current irregular spacing. This would improve the spatial representativeness of our dataset and provide a sufficient sample size (n=20) to detect moderate correlations in Spearman's Rank (critical value at n=20, p=0.05 is 0.450, compared to 0.738 at n=8). Currently, our irregular spacing means that a 3 km section of the middle reach is represented by only 2 data points, which may be insufficient to capture the full variation in that section."</p>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Paper 3 Section A (your own fieldwork) and Section B (unfamiliar investigation) both reward the same evaluation skills. For Section B, you are given an investigation you have not seen before and asked to evaluate its methodology. The skills are identical: identify what the researcher did, evaluate its strengths and limitations, suggest improvements, and interpret whether the conclusions are supported by the data. Practise by evaluating past-paper scenarios as well as your own fieldwork.
+</div>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> AQA Paper 3 is 2 hours 30 minutes for 120 marks. Section A (your own fieldwork) = 48 marks; Section B (unfamiliar investigation) = 36 marks; Section C (synoptic essay) = 36 marks. Time management is critical. For each mark, budget approximately 1.25 minutes. The synoptic essay (36 marks) should take ~45 minutes. Practise writing concise, evidence-based answers under timed conditions.
+</div>
+
 </div>
 </body>
 </html>
