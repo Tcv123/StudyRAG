@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 4.6 — Vectors</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .diagram-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 20px 0; align-items: flex-start; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.6 Vectors <span class="higher-tag">Higher</span></h1>
+<p class="spec-ref">OCR GCSE Mathematics J560 &mdash; Component 4 (Geometry and Measures) &mdash; Papers 2, 3 (Higher only)</p>
+
+<!-- ===================== 4.6.1 VECTOR NOTATION ===================== -->
+<h2>4.6.1 Vector Notation</h2>
+
+<div class="definition">
+  A <strong>vector</strong> has both <strong>magnitude</strong> (size) and <strong>direction</strong>. A scalar has magnitude only. Vectors are used to represent displacements, velocities, and forces.
+</div>
+
+<h3>Ways to Write a Vector</h3>
+<table>
+  <thead><tr><th>Notation</th><th>Meaning</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>$\mathbf{a}$ (bold)</td><td>Vector named $a$ (used in printed text)</td><td>$\mathbf{a} = \begin{pmatrix}3\\2\end{pmatrix}$</td></tr>
+    <tr><td>$\underline{a}$ (underlined)</td><td>Handwritten form of bold notation</td><td>$\underline{a}$</td></tr>
+    <tr><td>$\overrightarrow{AB}$</td><td>Vector from point A to point B</td><td>$\overrightarrow{AB} = \begin{pmatrix}4\\-1\end{pmatrix}$</td></tr>
+    <tr><td>$\begin{pmatrix}x\\y\end{pmatrix}$</td><td>Column vector: $x$ right, $y$ up</td><td>$\begin{pmatrix}-2\\5\end{pmatrix}$ means 2 left, 5 up</td></tr>
+  </tbody>
+</table>
+
+<div class="formula-box">
+  <strong>Magnitude (modulus) of a vector:</strong><br>
+  If $\mathbf{a} = \begin{pmatrix}a_x\\a_y\end{pmatrix}$, then $|\mathbf{a}| = \sqrt{a_x^2 + a_y^2}$<br><br>
+  Example: $\mathbf{a} = \begin{pmatrix}3\\4\end{pmatrix}$, then $|\mathbf{a}| = \sqrt{9 + 16} = \sqrt{25} = 5$
+</div>
+
+<div class="worked-example">
+  Find the magnitude of $\overrightarrow{AB}$ where A = (2, 5) and B = (8, 1).<br><br>
+  $\overrightarrow{AB} = B - A = \begin{pmatrix}8-2\\1-5\end{pmatrix} = \begin{pmatrix}6\\-4\end{pmatrix}$<br><br>
+  $|\overrightarrow{AB}| = \sqrt{6^2 + (-4)^2} = \sqrt{36 + 16} = \sqrt{52} = 2\sqrt{13} \approx 7.21$
+</div>
+
+<div class="exam-tip">
+  In handwritten work, always underline vector letters (e.g. $\underline{a}$) or use arrow notation (e.g. $\overrightarrow{AB}$). Writing just "$a$" (not bold or underlined) suggests a scalar, which loses marks. Notice that $\overrightarrow{BA} = -\overrightarrow{AB}$.
+</div>
+
+<!-- ===================== 4.6.2 ADDING AND SUBTRACTING VECTORS ===================== -->
+<h2>4.6.2 Adding and Subtracting Vectors</h2>
+
+<div class="definition">
+  <strong>Vector addition:</strong> $\mathbf{a} + \mathbf{b}$ means "travel along $\mathbf{a}$, then travel along $\mathbf{b}$." The result is the same as going directly from start to finish.<br><br>
+  <strong>Vector subtraction:</strong> $\mathbf{a} - \mathbf{b} = \mathbf{a} + (-\mathbf{b})$, i.e. add the negative of $\mathbf{b}$.
+</div>
+
+<div class="formula-box">
+  $\begin{pmatrix}a_1\\a_2\end{pmatrix} + \begin{pmatrix}b_1\\b_2\end{pmatrix} = \begin{pmatrix}a_1+b_1\\a_2+b_2\end{pmatrix}$
+  &nbsp;&nbsp;&nbsp;
+  $\begin{pmatrix}a_1\\a_2\end{pmatrix} - \begin{pmatrix}b_1\\b_2\end{pmatrix} = \begin{pmatrix}a_1-b_1\\a_2-b_2\end{pmatrix}$
+</div>
+
+<h3>Triangle Law and Parallelogram Law</h3>
+<div class="diagram-row">
+
+<!-- Triangle Law SVG -->
+<svg width="240" height="200" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <defs>
+    <marker id="arr1" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arr2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr3" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+    </marker>
+  </defs>
+  <!-- Points: A(30,160) B(150,90) C(210,160) -->
+  <circle cx="30" cy="160" r="3" fill="#374151"/><text x="16" y="175" font-size="12" font-family="sans-serif" fill="#374151">A</text>
+  <circle cx="150" cy="80" r="3" fill="#374151"/><text x="154" y="76" font-size="12" font-family="sans-serif" fill="#374151">B</text>
+  <circle cx="215" cy="160" r="3" fill="#374151"/><text x="218" y="175" font-size="12" font-family="sans-serif" fill="#374151">C</text>
+  <!-- AB = a (blue) -->
+  <line x1="30" y1="160" x2="143" y2="84" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr1)"/>
+  <text x="70" y="110" font-size="13" fill="#2563eb" font-family="sans-serif" font-weight="700" font-style="italic">a</text>
+  <!-- BC = b (red) -->
+  <line x1="150" y1="80" x2="208" y2="154" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr2)"/>
+  <text x="192" y="110" font-size="13" fill="#dc2626" font-family="sans-serif" font-weight="700" font-style="italic">b</text>
+  <!-- AC = a+b (green) -->
+  <line x1="30" y1="160" x2="208" y2="160" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arr3)" stroke-dasharray="6,3"/>
+  <text x="110" y="180" font-size="13" fill="#16a34a" font-family="sans-serif" font-weight="700" font-style="italic">a+b</text>
+  <text x="55" y="30" font-size="13" fill="#374151" font-family="sans-serif" font-weight="700">Triangle Law</text>
+  <text x="30" y="48" font-size="11" fill="#6b7280" font-family="sans-serif">a+b goes A to C directly</text>
+</svg>
+
+<!-- Parallelogram Law SVG -->
+<svg width="240" height="200" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <defs>
+    <marker id="arr4" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arr5" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr6" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arr7" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9ca3af"/>
+    </marker>
+  </defs>
+  <!-- Origin O, A, B, and A+B -->
+  <!-- O(30,160) A(160,160) B(70,80) A+B=(200,80) -->
+  <circle cx="30" cy="160" r="3" fill="#374151"/><text x="16" y="175" font-size="12" font-family="sans-serif" fill="#374151">O</text>
+  <circle cx="170" cy="160" r="3" fill="#374151"/><text x="174" y="175" font-size="12" font-family="sans-serif" fill="#374151">A</text>
+  <circle cx="80" cy="80" r="3" fill="#374151"/><text x="62" y="75" font-size="12" font-family="sans-serif" fill="#374151">B</text>
+  <circle cx="220" cy="80" r="3" fill="#374151"/><text x="218" y="72" font-size="12" font-family="sans-serif" fill="#374151">A+B</text>
+  <!-- OA = a -->
+  <line x1="30" y1="160" x2="163" y2="160" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr4)"/>
+  <text x="90" y="177" font-size="13" fill="#2563eb" font-family="sans-serif" font-weight="700" font-style="italic">a</text>
+  <!-- OB = b -->
+  <line x1="30" y1="160" x2="73" y2="84" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr5)"/>
+  <text x="34" y="118" font-size="13" fill="#dc2626" font-family="sans-serif" font-weight="700" font-style="italic">b</text>
+  <!-- AB+b = resultant -->
+  <line x1="170" y1="160" x2="214" y2="84" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arr7)" stroke-dasharray="5,3"/>
+  <line x1="80" y1="80" x2="214" y2="80" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arr7)" stroke-dasharray="5,3"/>
+  <!-- O to A+B (resultant) -->
+  <line x1="30" y1="160" x2="213" y2="82" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arr6)"/>
+  <text x="130" y="115" font-size="13" fill="#16a34a" font-family="sans-serif" font-weight="700" font-style="italic">a+b</text>
+  <text x="42" y="24" font-size="13" fill="#374151" font-family="sans-serif" font-weight="700">Parallelogram Law</text>
+</svg>
+</div>
+
+<div class="worked-example">
+  $\mathbf{a} = \begin{pmatrix}4\\1\end{pmatrix}$, $\mathbf{b} = \begin{pmatrix}-2\\5\end{pmatrix}$. Calculate $\mathbf{a} + \mathbf{b}$ and $\mathbf{a} - \mathbf{b}$.<br><br>
+  $\mathbf{a} + \mathbf{b} = \begin{pmatrix}4+(-2)\\1+5\end{pmatrix} = \begin{pmatrix}2\\6\end{pmatrix}$<br><br>
+  $\mathbf{a} - \mathbf{b} = \begin{pmatrix}4-(-2)\\1-5\end{pmatrix} = \begin{pmatrix}6\\-4\end{pmatrix}$
+</div>
+
+<!-- ===================== 4.6.3 SCALAR MULTIPLICATION ===================== -->
+<h2>4.6.3 Scalar Multiplication</h2>
+
+<div class="definition">
+  Multiplying a vector by a <strong>scalar</strong> (a number) changes its magnitude but not its direction (unless the scalar is negative, which reverses direction).<br><br>
+  $k\mathbf{a} = k\begin{pmatrix}a_x\\a_y\end{pmatrix} = \begin{pmatrix}ka_x\\ka_y\end{pmatrix}$
+</div>
+
+<div class="formula-box">
+  <strong>Parallel vectors:</strong> Two vectors are parallel if one is a scalar multiple of the other. If $\mathbf{b} = k\mathbf{a}$ for some scalar $k$, then $\mathbf{a} \parallel \mathbf{b}$.<br><br>
+  <strong>Negative vector:</strong> $-\mathbf{a}$ has the same magnitude as $\mathbf{a}$ but points in the opposite direction.
+</div>
+
+<!-- SVG: Scalar multiples -->
+<svg width="380" height="160" viewBox="0 0 380 160" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <defs>
+    <marker id="asm1" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/></marker>
+    <marker id="asm2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/></marker>
+    <marker id="asm3" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+    <marker id="asm4" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7c3aed"/></marker>
+  </defs>
+  <!-- a -->
+  <line x1="20" y1="60" x2="78" y2="60" stroke="#2563eb" stroke-width="2.5" marker-end="url(#asm1)"/>
+  <text x="38" y="48" font-size="12" fill="#2563eb" font-family="sans-serif" font-weight="700" font-style="italic">a</text>
+  <!-- 2a -->
+  <line x1="20" y1="95" x2="138" y2="95" stroke="#16a34a" stroke-width="2.5" marker-end="url(#asm2)"/>
+  <text x="68" y="112" font-size="12" fill="#16a34a" font-family="sans-serif" font-weight="700">2a (twice as long)</text>
+  <!-- 0.5a -->
+  <line x1="20" y1="130" x2="49" y2="130" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#asm4)"/>
+  <text x="52" y="142" font-size="12" fill="#7c3aed" font-family="sans-serif" font-weight="700">&#189;a (half as long)</text>
+  <!-- -a (reversed) -->
+  <line x1="140" y1="60" x2="82" y2="60" stroke="#dc2626" stroke-width="2.5" marker-end="url(#asm3)"/>
+  <text x="148" y="67" font-size="12" fill="#dc2626" font-family="sans-serif" font-weight="700">-a (reversed direction)</text>
+  <!-- Note -->
+  <text x="20" y="20" font-size="12" fill="#374151" font-family="sans-serif">All vectors above are parallel to each other</text>
+</svg>
+
+<div class="worked-example">
+  $\mathbf{a} = \begin{pmatrix}2\\-3\end{pmatrix}$. Find $3\mathbf{a}$, $-\mathbf{a}$, and $\frac{1}{2}\mathbf{a}$.<br><br>
+  $3\mathbf{a} = \begin{pmatrix}6\\-9\end{pmatrix}$ &nbsp;&nbsp; $-\mathbf{a} = \begin{pmatrix}-2\\3\end{pmatrix}$ &nbsp;&nbsp; $\frac{1}{2}\mathbf{a} = \begin{pmatrix}1\\-1.5\end{pmatrix}$
+</div>
+
+<!-- ===================== 4.6.4 FINDING VECTORS FROM DIAGRAMS ===================== -->
+<h2>4.6.4 Finding Vectors from Diagrams</h2>
+
+<div class="definition">
+  Given a diagram where $\overrightarrow{OA} = \mathbf{a}$ and $\overrightarrow{OB} = \mathbf{b}$, you can express any other vector in terms of $\mathbf{a}$ and $\mathbf{b}$ by finding a path between the two points using vectors you already know.
+</div>
+
+<p><strong>Key strategy:</strong> To find $\overrightarrow{XY}$, write it as $\overrightarrow{XO} + \overrightarrow{OY}$ (go via O or any convenient intermediate point). Remember $\overrightarrow{XO} = -\overrightarrow{OX}$.</p>
+
+<!-- SVG: Vector diagram with midpoints -->
+<svg width="380" height="240" viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <defs>
+    <marker id="avd1" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/></marker>
+    <marker id="avd2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+    <marker id="avd3" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7c3aed"/></marker>
+    <marker id="avd4" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/></marker>
+  </defs>
+  <!-- Points: O(40,200) A(200,200) B(100,60) C=A+B-O=(260,60) M=midpoint AB=(120,130) -->
+  <circle cx="40" cy="200" r="4" fill="#374151"/><text x="22" y="215" font-size="13" font-family="sans-serif" fill="#374151" font-weight="700">O</text>
+  <circle cx="220" cy="200" r="4" fill="#374151"/><text x="224" y="215" font-size="13" font-family="sans-serif" fill="#374151" font-weight="700">A</text>
+  <circle cx="100" cy="60" r="4" fill="#374151"/><text x="85" y="52" font-size="13" font-family="sans-serif" fill="#374151" font-weight="700">B</text>
+  <circle cx="280" cy="60" r="4" fill="#374151"/><text x="284" y="52" font-size="13" font-family="sans-serif" fill="#374151" font-weight="700">C</text>
+  <!-- Midpoint M of OA -->
+  <circle cx="130" cy="200" r="4" fill="#16a34a"/><text x="128" y="218" font-size="12" font-family="sans-serif" fill="#16a34a" font-weight="700">M</text>
+  <!-- OA = a (blue) -->
+  <line x1="40" y1="200" x2="213" y2="200" stroke="#2563eb" stroke-width="2.5" marker-end="url(#avd1)"/>
+  <text x="120" y="193" font-size="13" fill="#2563eb" font-family="sans-serif" font-weight="700" font-style="italic">a</text>
+  <!-- OB = b (red) -->
+  <line x1="40" y1="200" x2="93" y2="65" stroke="#dc2626" stroke-width="2.5" marker-end="url(#avd2)"/>
+  <text x="48" y="128" font-size="13" fill="#dc2626" font-family="sans-serif" font-weight="700" font-style="italic">b</text>
+  <!-- AC (purple) = b -->
+  <line x1="220" y1="200" x2="274" y2="65" stroke="#7c3aed" stroke-width="2" marker-end="url(#avd3)" stroke-dasharray="6,3"/>
+  <text x="258" y="135" font-size="13" fill="#7c3aed" font-family="sans-serif" font-weight="700" font-style="italic">b</text>
+  <!-- BC (green) = a -->
+  <line x1="100" y1="60" x2="273" y2="60" stroke="#16a34a" stroke-width="2" marker-end="url(#avd4)" stroke-dasharray="6,3"/>
+  <text x="180" y="52" font-size="13" fill="#16a34a" font-family="sans-serif" font-weight="700" font-style="italic">a</text>
+  <!-- OM = 1/2 a -->
+  <text x="70" y="218" font-size="11" fill="#166534" font-family="sans-serif">&#189;a</text>
+  <!-- BM label -->
+  <line x1="100" y1="60" x2="130" y2="195" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="100" y="140" font-size="11" fill="#b45309" font-family="sans-serif" font-style="italic">BM = -b+&#189;a</text>
+  <text x="10" y="25" font-size="12" fill="#374151" font-family="sans-serif">OABC is a parallelogram. M is midpoint of OA.</text>
+</svg>
+
+<div class="worked-example">
+  OABC is a parallelogram. $\overrightarrow{OA} = \mathbf{a}$, $\overrightarrow{OB} = \mathbf{b}$, M is the midpoint of OA.<br><br>
+  <strong>(a)</strong> Find $\overrightarrow{AB}$<br>
+  $\overrightarrow{AB} = \overrightarrow{AO} + \overrightarrow{OB} = -\mathbf{a} + \mathbf{b} = \mathbf{b} - \mathbf{a}$<br><br>
+  <strong>(b)</strong> Find $\overrightarrow{BM}$<br>
+  $\overrightarrow{BM} = \overrightarrow{BO} + \overrightarrow{OM} = -\mathbf{b} + \frac{1}{2}\mathbf{a}$<br><br>
+  <strong>(c)</strong> Find $\overrightarrow{BC}$ (note BC is parallel to OA, so $\overrightarrow{BC} = \mathbf{a}$)<br>
+  $\overrightarrow{OC} = \overrightarrow{OB} + \overrightarrow{BC} = \mathbf{b} + \mathbf{a} = \mathbf{a} + \mathbf{b}$
+</div>
+
+<div class="exam-tip">
+  Always trace a path between the two points using vectors with known values. Keep track of the direction: going against an arrow means negating the vector. Show all intermediate steps.
+</div>
+
+<!-- ===================== 4.6.5 VECTOR PROOFS ===================== -->
+<h2>4.6.5 Vector Proofs</h2>
+
+<p>Vector proofs typically ask you to show that:</p>
+<ul>
+  <li><strong>Two lines are parallel</strong>: show one vector is a scalar multiple of the other</li>
+  <li><strong>Three points are collinear</strong>: show the vector between any two of the points is parallel to the vector between another pair (and they share a point)</li>
+  <li><strong>A point is a midpoint</strong>: show the vector from each end to the point is equal in magnitude (half of the segment's vector)</li>
+</ul>
+
+<div class="formula-box">
+  <strong>Proving lines are parallel:</strong> If $\overrightarrow{XY} = k\overrightarrow{PQ}$ for a non-zero scalar $k$, then XY is parallel to PQ.<br><br>
+  <strong>Proving points are collinear:</strong> Show $\overrightarrow{AB} = k\overrightarrow{AC}$ (same direction, share point A), so A, B, C are collinear.
+</div>
+
+<div class="worked-example">
+  <strong>Proof: midpoint and parallel line</strong><br>
+  OAB is a triangle. $\overrightarrow{OA} = \mathbf{a}$, $\overrightarrow{OB} = \mathbf{b}$. M is the midpoint of OA, N is the midpoint of OB. Prove that MN is parallel to AB and $MN = \frac{1}{2}AB$.<br><br>
+  $\overrightarrow{OM} = \frac{1}{2}\mathbf{a}$, &nbsp; $\overrightarrow{ON} = \frac{1}{2}\mathbf{b}$<br><br>
+  $\overrightarrow{MN} = \overrightarrow{MO} + \overrightarrow{ON} = -\frac{1}{2}\mathbf{a} + \frac{1}{2}\mathbf{b} = \frac{1}{2}(\mathbf{b} - \mathbf{a})$<br><br>
+  $\overrightarrow{AB} = \overrightarrow{AO} + \overrightarrow{OB} = -\mathbf{a} + \mathbf{b} = \mathbf{b} - \mathbf{a}$<br><br>
+  Since $\overrightarrow{MN} = \frac{1}{2}\overrightarrow{AB}$:<br>
+  (1) MN is parallel to AB (scalar multiple relationship)<br>
+  (2) $|MN| = \frac{1}{2}|AB|$ (the scalar is $\frac{1}{2}$) &nbsp; <strong>QED</strong>
+</div>
+
+<div class="worked-example">
+  <strong>Proving collinearity:</strong> $\overrightarrow{OA} = \mathbf{a}$, $\overrightarrow{OB} = \mathbf{b}$. Point P lies on AB such that $AP:PB = 2:1$. Show that O, A, P are NOT collinear but find $\overrightarrow{OP}$.<br><br>
+  $\overrightarrow{AP} = \frac{2}{3}\overrightarrow{AB} = \frac{2}{3}(-\mathbf{a} + \mathbf{b}) = -\frac{2}{3}\mathbf{a} + \frac{2}{3}\mathbf{b}$<br><br>
+  $\overrightarrow{OP} = \overrightarrow{OA} + \overrightarrow{AP} = \mathbf{a} - \frac{2}{3}\mathbf{a} + \frac{2}{3}\mathbf{b} = \frac{1}{3}\mathbf{a} + \frac{2}{3}\mathbf{b}$<br><br>
+  Since $\overrightarrow{OP}$ contains both $\mathbf{a}$ and $\mathbf{b}$ (which are not parallel), O, A, P are not collinear.
+</div>
+
+<div class="worked-example">
+  <strong>Classic exam proof:</strong> In triangle OAB, $\overrightarrow{OA} = 6\mathbf{a}$, $\overrightarrow{OB} = 6\mathbf{b}$. X is the midpoint of AB. Y is on OB such that $OY:YB = 1:2$. Show that A, X, Y are collinear.<br><br>
+  $\overrightarrow{OX} = \overrightarrow{OA} + \frac{1}{2}\overrightarrow{AB} = 6\mathbf{a} + \frac{1}{2}(-6\mathbf{a}+6\mathbf{b}) = 3\mathbf{a} + 3\mathbf{b}$<br><br>
+  $\overrightarrow{OY} = \frac{1}{3} \times 6\mathbf{b} = 2\mathbf{b}$<br><br>
+  $\overrightarrow{AX} = \overrightarrow{AO} + \overrightarrow{OX} = -6\mathbf{a} + 3\mathbf{a} + 3\mathbf{b} = -3\mathbf{a} + 3\mathbf{b}$<br><br>
+  $\overrightarrow{AY} = \overrightarrow{AO} + \overrightarrow{OY} = -6\mathbf{a} + 2\mathbf{b}$<br><br>
+  Check: is $\overrightarrow{AY}$ a multiple of $\overrightarrow{AX}$?<br>
+  $\frac{2}{3}\overrightarrow{AY} = \frac{2}{3}(-6\mathbf{a}+2\mathbf{b}) = -4\mathbf{a} + \frac{4}{3}\mathbf{b}$ — this is NOT a multiple of $\overrightarrow{AX} = -3\mathbf{a}+3\mathbf{b}$...<br>
+  Let's check $\overrightarrow{XY}$: $\overrightarrow{XY} = \overrightarrow{XO} + \overrightarrow{OY} = -(3\mathbf{a}+3\mathbf{b}) + 2\mathbf{b} = -3\mathbf{a} - \mathbf{b}$<br>
+  Is $\overrightarrow{XY} = k\overrightarrow{AX}$? $-3\mathbf{a}-\mathbf{b} = k(-3\mathbf{a}+3\mathbf{b})$ requires $k=-1$ (from $\mathbf{a}$) and $k=-\frac{1}{3}$ (from $\mathbf{b}$) — not equal, so A, X, Y are NOT collinear in this case. (This demonstrates the method; adjust ratios in your exam question carefully.)
+</div>
+
+<div class="exam-tip">
+  For collinearity proofs: (1) find $\overrightarrow{AB}$ and $\overrightarrow{AC}$, (2) show $\overrightarrow{AC} = k\overrightarrow{AB}$, (3) state "since they are parallel and share point A, A, B, C are collinear." All three steps are needed for full marks. A ratio alone without the shared point statement is incomplete.
+</div>
+
+<h3>Summary of Key Techniques</h3>
+<table>
+  <thead><tr><th>Task</th><th>Method</th></tr></thead>
+  <tbody>
+    <tr><td>Find $\overrightarrow{AB}$</td><td>$\overrightarrow{AB} = \overrightarrow{AO} + \overrightarrow{OB} = -\overrightarrow{OA} + \overrightarrow{OB} = \mathbf{b} - \mathbf{a}$</td></tr>
+    <tr><td>Find midpoint M of AB</td><td>$\overrightarrow{OM} = \frac{1}{2}(\mathbf{a} + \mathbf{b})$</td></tr>
+    <tr><td>Point dividing AB in ratio $m:n$</td><td>$\overrightarrow{OP} = \mathbf{a} + \frac{m}{m+n}(\mathbf{b}-\mathbf{a})$</td></tr>
+    <tr><td>Prove parallel</td><td>Show $\overrightarrow{XY} = k\overrightarrow{PQ}$, state "scalar multiple, therefore parallel"</td></tr>
+    <tr><td>Prove collinear</td><td>Show vectors between pairs of points are parallel AND share a common point</td></tr>
+    <tr><td>Magnitude of $\mathbf{a} = \begin{pmatrix}p\\q\end{pmatrix}$</td><td>$|\mathbf{a}| = \sqrt{p^2 + q^2}$</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>
