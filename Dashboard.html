@@ -326,7 +326,7 @@
     .content-grid { display: grid; grid-template-columns: 1fr 280px; gap: 16px; }
 
     /* ── SUBJECT PROGRESS CARDS ── */
-    .subjects-progress-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 0; align-items: start; }
+    .subjects-progress-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 0; align-items: start; grid-auto-rows: auto; }
 
     .subj-card {
       background: var(--surface); border: 1px solid var(--border);
@@ -1287,22 +1287,6 @@ function renderSubjectsProgress(subjects, topicRows) {
     </div>`;
   }).join('');
 
-  // Inject exam dates into the grid to fill empty cells in last row
-  const cols = 3;
-  const remainder = subjects.length % cols;
-  if (remainder !== 0) {
-    const span = cols - remainder;
-    const examRow = document.getElementById('examDatesRow');
-    if (examRow) {
-      examRow.style.gridColumn = `span ${span}`;
-      examRow.style.margin = '0';
-      examRow.style.borderRadius = '14px';
-      examRow.style.background = 'var(--surface)';
-      examRow.style.border = '1px solid var(--border)';
-      examRow.style.padding = '14px';
-      grid.appendChild(examRow);
-    }
-  }
 }
 
 function TOTAL_TOPICS_FOR(key) {
