@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 1.2 — Fractions, Decimals and Percentages</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        .katex-display { margin: 16px 0; }
+        .diagram-caption { text-align: center; font-size: 0.88rem; color: #6b7280; margin-top: 6px; margin-bottom: 20px; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.2 Fractions, Decimals and Percentages</h1>
+<p class="spec-ref">OCR GCSE Mathematics (J560) &mdash; Component 01 (Paper 1, Non-Calculator), Component 02 (Paper 2, Calculator), Component 03 (Paper 3, Calculator)</p>
+
+<!-- ===================== FDP Conversion Table ===================== -->
+<h2>Quick Reference: FDP Conversion Table</h2>
+
+<svg viewBox="0 0 720 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;display:block;margin:16px auto;">
+  <rect x="0" y="0" width="720" height="160" rx="8" fill="#f8faff" stroke="#d1d5db" stroke-width="1.5"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="720" height="40" rx="8" fill="#2563eb"/>
+  <!-- Column headers -->
+  <text x="80" y="25" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Fraction</text>
+  <text x="240" y="25" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Decimal</text>
+  <text x="400" y="25" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Percentage</text>
+  <text x="560" y="25" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Fraction</text>
+  <text x="650" y="25" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Decimal</text>
+  <!-- Column dividers -->
+  <line x1="160" y1="0" x2="160" y2="160" stroke="white" stroke-width="1" opacity="0.4"/>
+  <line x1="320" y1="0" x2="320" y2="160" stroke="white" stroke-width="1" opacity="0.4"/>
+  <line x1="480" y1="0" x2="480" y2="160" stroke="white" stroke-width="1" opacity="0.4"/>
+  <line x1="600" y1="0" x2="600" y2="160" stroke="#d1d5db" stroke-width="1"/>
+  <!-- Rows -->
+  <line x1="0" y1="40" x2="720" y2="40" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="0" y1="70" x2="720" y2="70" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="0" y1="100" x2="720" y2="100" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="0" y1="130" x2="720" y2="130" stroke="#d1d5db" stroke-width="1"/>
+  <!-- Row 1 -->
+  <text x="80" y="61" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">1/2</text>
+  <text x="240" y="61" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">0.5</text>
+  <text x="400" y="61" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">50%</text>
+  <text x="560" y="61" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">1/8</text>
+  <text x="650" y="61" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">0.125</text>
+  <!-- Row 2 -->
+  <rect x="0" y="70" width="720" height="30" fill="#f9fafb"/>
+  <text x="80" y="91" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">1/4</text>
+  <text x="240" y="91" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">0.25</text>
+  <text x="400" y="91" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">25%</text>
+  <text x="560" y="91" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">1/3</text>
+  <text x="650" y="91" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">0.333...</text>
+  <!-- Row 3 -->
+  <text x="80" y="121" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">3/4</text>
+  <text x="240" y="121" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">0.75</text>
+  <text x="400" y="121" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">75%</text>
+  <text x="560" y="121" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">2/3</text>
+  <text x="650" y="121" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">0.666...</text>
+  <!-- Row 4 -->
+  <rect x="0" y="130" width="720" height="30" fill="#f9fafb"/>
+  <text x="80" y="151" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">1/5</text>
+  <text x="240" y="151" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">0.2</text>
+  <text x="400" y="151" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">20%</text>
+  <text x="560" y="151" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">1/10</text>
+  <text x="650" y="151" text-anchor="middle" fill="#1a1a2e" font-family="system-ui,sans-serif" font-size="13">0.1</text>
+</svg>
+<p class="diagram-caption">Common fraction-decimal-percentage equivalences. These should be memorised for Paper 1 (non-calculator).</p>
+
+<!-- ===================== 1.2.1 ===================== -->
+<h2>1.2.1 Types of Fractions and Equivalence</h2>
+
+<div class="definition">
+<ul>
+  <li><strong>Proper fraction:</strong> numerator &lt; denominator, e.g. $\frac{3}{5}$. Value is less than 1.</li>
+  <li><strong>Improper fraction:</strong> numerator &ge; denominator, e.g. $\frac{7}{4}$. Value is 1 or more.</li>
+  <li><strong>Mixed number:</strong> whole number + proper fraction, e.g. $1\frac{3}{4}$.</li>
+  <li><strong>Equivalent fractions:</strong> fractions with the same value, e.g. $\frac{1}{2} = \frac{3}{6} = \frac{50}{100}$.</li>
+</ul>
+</div>
+
+<h3>Converting Between Improper Fractions and Mixed Numbers</h3>
+<div class="worked-example">
+<p>Convert $\frac{17}{5}$ to a mixed number.</p>
+<p>Divide: $17 \div 5 = 3$ remainder $2$</p>
+$$\frac{17}{5} = 3\frac{2}{5}$$
+</div>
+<div class="worked-example">
+<p>Convert $2\frac{3}{7}$ to an improper fraction.</p>
+<p>Multiply whole number by denominator, add numerator: $2 \times 7 + 3 = 17$</p>
+$$2\frac{3}{7} = \frac{17}{7}$$
+</div>
+
+<h3>Simplifying Fractions</h3>
+<p>Divide numerator and denominator by their HCF. A fraction is in its <strong>simplest form</strong> (or lowest terms) when the only common factor of top and bottom is 1.</p>
+<div class="worked-example">
+<p>Simplify $\frac{36}{48}$.</p>
+<p>$\text{HCF}(36, 48) = 12$</p>
+$$\frac{36}{48} = \frac{36 \div 12}{48 \div 12} = \frac{3}{4}$$
+</div>
+
+<h3>Equivalent Fractions</h3>
+<p>Multiply or divide both numerator and denominator by the same number.</p>
+$$\frac{2}{3} = \frac{2 \times 5}{3 \times 5} = \frac{10}{15}$$
+
+<div class="exam-tip">
+Always simplify your final fraction answer unless the question asks you to leave it in a specific form. Marks can be lost for unsimplified answers.
+</div>
+
+<!-- ===================== 1.2.2 ===================== -->
+<h2>1.2.2 Operations with Fractions</h2>
+
+<h3>Adding and Subtracting Fractions</h3>
+<p>Fractions must have the same denominator (a <strong>common denominator</strong>) before they can be added or subtracted. Find the LCM of the denominators.</p>
+
+<div class="worked-example">
+<p>Calculate $\frac{3}{4} + \frac{5}{6}$</p>
+<p>LCM(4, 6) = 12</p>
+$$\frac{3}{4} + \frac{5}{6} = \frac{9}{12} + \frac{10}{12} = \frac{19}{12} = 1\frac{7}{12}$$
+</div>
+
+<div class="worked-example">
+<p>Calculate $3\frac{1}{2} - 1\frac{2}{3}$</p>
+<p>Convert to improper fractions: $\frac{7}{2} - \frac{5}{3}$</p>
+<p>LCM(2, 3) = 6</p>
+$$\frac{7}{2} - \frac{5}{3} = \frac{21}{6} - \frac{10}{6} = \frac{11}{6} = 1\frac{5}{6}$$
+</div>
+
+<h3>Multiplying Fractions</h3>
+<p>Multiply numerators together and denominators together. Cancel common factors first to keep numbers small (this is called <strong>cross-cancelling</strong>).</p>
+
+$$\frac{a}{b} \times \frac{c}{d} = \frac{a \times c}{b \times d}$$
+
+<div class="worked-example">
+<p>Calculate $\frac{4}{9} \times \frac{3}{8}$</p>
+<p>Cross-cancel: 4 and 8 share factor 4; 3 and 9 share factor 3</p>
+$$\frac{\cancel{4}^1}{9_{\cancel{3}}} \times \frac{\cancel{3}^1}{\cancel{8}^2} = \frac{1 \times 1}{3 \times 2} = \frac{1}{6}$$
+</div>
+
+<div class="worked-example">
+<p>Calculate $1\frac{2}{3} \times 2\frac{1}{4}$</p>
+<p>Convert: $\frac{5}{3} \times \frac{9}{4}$</p>
+<p>Cancel: 9 and 3 share factor 3</p>
+$$\frac{5}{\cancel{3}} \times \frac{\cancel{9}^3}{4} = \frac{5 \times 3}{1 \times 4} = \frac{15}{4} = 3\frac{3}{4}$$
+</div>
+
+<h3>Dividing Fractions</h3>
+<p>To divide by a fraction, <strong>flip the second fraction</strong> (find its reciprocal) and multiply. Remember: <em>Keep, Change, Flip</em> (KCF).</p>
+
+$$\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c}$$
+
+<div class="worked-example">
+<p>Calculate $\frac{5}{6} \div \frac{2}{3}$</p>
+$$\frac{5}{6} \div \frac{2}{3} = \frac{5}{6} \times \frac{3}{2} = \frac{15}{12} = \frac{5}{4} = 1\frac{1}{4}$$
+</div>
+
+<div class="worked-example">
+<p>Calculate $2\frac{1}{2} \div 1\frac{1}{4}$</p>
+<p>Convert: $\frac{5}{2} \div \frac{5}{4}$</p>
+$$\frac{5}{2} \times \frac{4}{5} = \frac{\cancel{5}}{\cancel{2}} \times \frac{\cancel{4}^2}{\cancel{5}} = \frac{1 \times 2}{1 \times 1} = 2$$
+</div>
+
+<div class="exam-tip">
+Always convert mixed numbers to improper fractions BEFORE multiplying or dividing. Trying to work with mixed numbers directly leads to errors.
+</div>
+
+<!-- ===================== 1.2.3 ===================== -->
+<h2>1.2.3 Converting Between FDP</h2>
+
+<h3>Fraction to Decimal</h3>
+<p>Divide the numerator by the denominator.</p>
+$$\frac{3}{8} = 3 \div 8 = 0.375$$
+
+<h3>Decimal to Fraction</h3>
+<p>Write the decimal over the appropriate power of 10, then simplify.</p>
+$$0.45 = \frac{45}{100} = \frac{9}{20}$$
+
+<h3>Fraction/Decimal to Percentage</h3>
+<p>Multiply by 100.</p>
+$$\frac{7}{20} = 0.35 = 35\%$$
+$$0.625 \times 100 = 62.5\%$$
+
+<h3>Percentage to Fraction/Decimal</h3>
+<p>Divide by 100.</p>
+$$37\% = \frac{37}{100} = 0.37$$
+
+<h3>Recurring Decimals</h3>
+<div class="definition">
+A <strong>recurring decimal</strong> is one where digits repeat forever. Notation: a dot above the repeating digit(s).<br>
+$0.\dot{3} = 0.333...$ &nbsp;&nbsp; $0.\dot{1}\dot{8} = 0.181818...$ &nbsp;&nbsp; $0.1\dot{6} = 0.1666...$
+</div>
+
+<p>To convert a recurring decimal to a fraction, use the algebraic method:</p>
+
+<div class="worked-example">
+<p>Convert $0.\dot{3}$ to a fraction.</p>
+<p>Let $x = 0.3333...$</p>
+<p>Then $10x = 3.3333...$</p>
+<p>Subtract: $10x - x = 3.3333... - 0.3333... = 3$</p>
+<p>$9x = 3 \Rightarrow x = \frac{3}{9} = \frac{1}{3}$</p>
+</div>
+
+<div class="worked-example">
+<p>Convert $0.\dot{1}\dot{8}$ to a fraction.</p>
+<p>Let $x = 0.181818...$</p>
+<p>Then $100x = 18.181818...$</p>
+<p>Subtract: $99x = 18 \Rightarrow x = \frac{18}{99} = \frac{2}{11}$</p>
+</div>
+
+<div class="worked-example">
+<p>Convert $0.1\dot{6}$ to a fraction.</p>
+<p>Let $x = 0.1666...$</p>
+<p>$10x = 1.666...$ and $100x = 16.666...$</p>
+<p>$100x - 10x = 16.666... - 1.666... = 15$</p>
+<p>$90x = 15 \Rightarrow x = \frac{15}{90} = \frac{1}{6}$</p>
+</div>
+
+<div class="exam-tip">
+Multiply by $10^n$ where $n$ is the number of digits in the repeating block. If one digit repeats, multiply by 10; if two digits repeat, multiply by 100; and so on.
+</div>
+
+<!-- ===================== 1.2.4 ===================== -->
+<h2>1.2.4 Percentage Calculations</h2>
+
+<h3>Finding a Percentage of an Amount</h3>
+<p>Multiply the amount by the percentage expressed as a decimal (the <strong>multiplier</strong>).</p>
+
+$$\text{Amount} \times \frac{\text{percentage}}{100}$$
+
+<div class="worked-example">
+<p>Find 35% of £240.</p>
+$$240 \times 0.35 = \pounds 84$$
+<p>Or: 10% of 240 = 24; 30% = 72; 5% = 12; 35% = 72 + 12 = £84</p>
+</div>
+
+<h3>Percentage Increase and Decrease</h3>
+<div class="definition">
+<ul>
+  <li><strong>Multiplier for an increase:</strong> $1 + \frac{r}{100}$ &nbsp;&nbsp; e.g. 15% increase: multiplier = 1.15</li>
+  <li><strong>Multiplier for a decrease:</strong> $1 - \frac{r}{100}$ &nbsp;&nbsp; e.g. 20% decrease: multiplier = 0.80</li>
+</ul>
+</div>
+
+<div class="worked-example">
+<p>A jacket costs £85. It is increased by 12%. Find the new price.</p>
+$$85 \times 1.12 = \pounds 95.20$$
+</div>
+
+<div class="worked-example">
+<p>A car costs £14,000. After a 15% discount, find the sale price.</p>
+$$14{,}000 \times 0.85 = \pounds 11{,}900$$
+</div>
+
+<h3>Percentage Change</h3>
+$$\text{Percentage change} = \frac{\text{change}}{\text{original}} \times 100$$
+
+<div class="worked-example">
+<p>A share was worth £2.40 and rose to £2.64. Find the percentage increase.</p>
+$$\text{Change} = 2.64 - 2.40 = 0.24$$
+$$\text{Percentage increase} = \frac{0.24}{2.40} \times 100 = 10\%$$
+</div>
+
+<h3>Reverse Percentages (Finding the Original Amount)</h3>
+<p>When you know the value <em>after</em> a percentage change, divide by the multiplier to find the original.</p>
+
+<div class="worked-example">
+<p>After a 20% increase, a price is £96. Find the original price.</p>
+<p>Multiplier = 1.20 (for a 20% increase)</p>
+$$\text{Original} = 96 \div 1.20 = \pounds 80$$
+</div>
+
+<div class="worked-example">
+<p>A TV costs £374 after a 15% reduction. What was the original price?</p>
+<p>Multiplier = 0.85 (for a 15% decrease)</p>
+$$\text{Original} = 374 \div 0.85 = \pounds 440$$
+</div>
+
+<div class="exam-tip">
+Never calculate a reverse percentage by adding or subtracting the percentage from the sale price. For example, if a price was reduced by 20% to give £80, the original is NOT £80 + 20% of £80 = £96. The correct method is £80 ÷ 0.80 = £100.
+</div>
+
+<!-- ===================== 1.2.5 ===================== -->
+<h2>1.2.5 Compound Interest and Depreciation</h2>
+
+<div class="definition">
+<strong>Compound interest</strong> means interest is calculated on the amount including all previously earned interest, not just the original principal. <strong>Depreciation</strong> applies the same logic but as a repeated percentage decrease (e.g. the falling value of a car).
+</div>
+
+<p>The compound interest formula is:</p>
+$$A = P\left(1 + \frac{r}{100}\right)^n$$
+<p>where $A$ is the final amount, $P$ is the principal (starting amount), $r$ is the annual interest rate (%), and $n$ is the number of years.</p>
+
+<p>For depreciation, replace the $+$ with a $-$:</p>
+$$A = P\left(1 - \frac{r}{100}\right)^n$$
+
+<div class="worked-example">
+<p>£5,000 is invested at 3% compound interest per year for 4 years. Find the total amount.</p>
+$$A = 5000 \times (1.03)^4 = 5000 \times 1.12550881 = \pounds 5{,}627.54 \text{ (to 2 d.p.)}$$
+</div>
+
+<div class="worked-example">
+<p>A car is bought for £18,000. It depreciates at 12% per year. Find its value after 3 years.</p>
+$$A = 18{,}000 \times (0.88)^3 = 18{,}000 \times 0.681472 = \pounds 12{,}266.50 \text{ (to 2 d.p.)}$$
+</div>
+
+<div class="worked-example">
+<p>How many years does it take for £3,000 invested at 5% compound interest to exceed £4,000?</p>
+<p>Try $n = 5$: $3000 \times 1.05^5 = 3000 \times 1.2762... = \pounds 3{,}828.84$ (not yet over £4,000)</p>
+<p>Try $n = 6$: $3000 \times 1.05^6 = 3000 \times 1.3400... = \pounds 4{,}020.19$ (over £4,000)</p>
+<p><strong>Answer: 6 years</strong></p>
+</div>
+
+<h3>Simple Interest</h3>
+<p>Simple interest is calculated only on the original principal each year:</p>
+$$\text{Total interest} = \frac{P \times r \times t}{100}$$
+<p>where $t$ is the time in years.</p>
+
+<div class="worked-example">
+<p>£2,000 is invested at 4% simple interest per year. How much interest is earned over 3 years?</p>
+$$\text{Interest} = \frac{2000 \times 4 \times 3}{100} = \pounds 240$$
+<p>Total amount = £2,000 + £240 = <strong>£2,240</strong></p>
+</div>
+
+<table>
+  <thead>
+    <tr><th>Feature</th><th>Simple Interest</th><th>Compound Interest</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Interest earned on</td><td>Original principal only</td><td>Principal + all previous interest</td></tr>
+    <tr><td>Formula</td><td>$I = \frac{Prt}{100}$</td><td>$A = P(1 + \frac{r}{100})^n$</td></tr>
+    <tr><td>Growth pattern</td><td>Linear (straight line)</td><td>Exponential (curve)</td></tr>
+    <tr><td>Long-term value</td><td>Lower</td><td>Higher (grows faster over time)</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">
+For compound interest questions, use your calculator's power function $(1.r)^n$ rather than multiplying repeatedly. This is faster and avoids rounding errors between steps.
+</div>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+</body>
+</html>

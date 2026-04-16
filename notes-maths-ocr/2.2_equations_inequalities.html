@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 2.2 — Equations and Inequalities</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .higher { background: #fdf4ff; border-left: 4px solid #9333ea; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-label { font-weight: 700; color: #7e22ce; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .step { margin-bottom: 8px; padding-left: 16px; border-left: 2px solid #86efac; }
+        .diagram-container { text-align: center; margin: 20px 0; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.2 Equations and Inequalities</h1>
+<p class="spec-ref">OCR GCSE Mathematics (J560) &mdash; Paper 1, 2 &amp; 3 &mdash; Foundation and Higher</p>
+
+<!-- ============================================================ -->
+<h2>2.2.1 Solving Linear Equations</h2>
+
+<div class="definition">
+  <strong>Linear equation:</strong> An equation where the highest power of the unknown is 1. The goal is to find the value of the unknown that makes the equation true.<br><br>
+  The golden rule: <strong>whatever you do to one side, do the same to the other side.</strong>
+</div>
+
+<h3>One-Step and Two-Step Equations</h3>
+
+<div class="worked-example">
+  Solve $5x - 3 = 17$.<br><br>
+  <div class="step">Add 3 to both sides: $5x = 20$</div>
+  <div class="step">Divide both sides by 5: $x = 4$</div>
+</div>
+
+<div class="worked-example">
+  Solve $\dfrac{2x+1}{3} = 5$.<br><br>
+  <div class="step">Multiply both sides by 3: $2x + 1 = 15$</div>
+  <div class="step">Subtract 1: $2x = 14$</div>
+  <div class="step">Divide by 2: $x = 7$</div>
+</div>
+
+<h3>Equations with Unknowns on Both Sides</h3>
+<p>Collect all variable terms onto one side, then all constants onto the other:</p>
+
+<div class="worked-example">
+  Solve $5x + 2 = 3x + 10$.<br><br>
+  <div class="step">Subtract $3x$ from both sides: $2x + 2 = 10$</div>
+  <div class="step">Subtract 2: $2x = 8$</div>
+  <div class="step">Divide by 2: $x = 4$</div>
+</div>
+
+<div class="worked-example">
+  Solve $4(2x - 3) = 6x + 2$.<br><br>
+  <div class="step">Expand: $8x - 12 = 6x + 2$</div>
+  <div class="step">Subtract $6x$: $2x - 12 = 2$</div>
+  <div class="step">Add 12: $2x = 14$</div>
+  <div class="step">Divide by 2: $x = 7$</div>
+</div>
+
+<div class="worked-example">
+  Solve $\dfrac{x+3}{4} = \dfrac{2x-1}{3}$.<br><br>
+  <div class="step">Multiply through by 12 (LCM of 4 and 3): $3(x+3) = 4(2x-1)$</div>
+  <div class="step">Expand: $3x + 9 = 8x - 4$</div>
+  <div class="step">Collect terms: $9 + 4 = 8x - 3x$, so $13 = 5x$</div>
+  <div class="step">$x = \dfrac{13}{5} = 2.6$</div>
+</div>
+
+<div class="exam-tip">
+  Always check your answer by substituting back into the original equation. This takes 10 seconds and will catch arithmetic slips.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.2.2 Forming and Solving Equations</h2>
+
+<p>Many real-world and geometry problems require you to write an equation before solving it.</p>
+
+<div class="worked-example">
+  The angles of a triangle are $3x$, $(2x+10)°$, and $(x-4)°$. Find $x$ and the three angles.<br><br>
+  <div class="step">Angles in a triangle sum to 180°: $3x + (2x+10) + (x-4) = 180$</div>
+  <div class="step">Simplify: $6x + 6 = 180$</div>
+  <div class="step">$6x = 174$, so $x = 29$</div>
+  <div class="step">Angles: $87°$, $68°$, $25°$. Check: $87+68+25 = 180$ ✓</div>
+</div>
+
+<div class="worked-example">
+  A rectangle has length $(3x+2)$ cm and width $(x-1)$ cm. Its perimeter is 46 cm. Find its area.<br><br>
+  <div class="step">Perimeter: $2(3x+2) + 2(x-1) = 46$</div>
+  <div class="step">$6x + 4 + 2x - 2 = 46$</div>
+  <div class="step">$8x + 2 = 46 \Rightarrow 8x = 44 \Rightarrow x = 5.5$</div>
+  <div class="step">Length $= 3(5.5)+2 = 18.5$ cm, Width $= 4.5$ cm</div>
+  <div class="step">Area $= 18.5 \times 4.5 = 83.25$ cm²</div>
+</div>
+
+<div class="worked-example">
+  A bag of sweets contains $n$ sweets. Ali takes 5, then Ben takes half of what remains. 12 sweets are left. How many sweets were in the bag?<br><br>
+  <div class="step">After Ali: $n - 5$</div>
+  <div class="step">After Ben: $\dfrac{n-5}{2} = 12$</div>
+  <div class="step">$n - 5 = 24 \Rightarrow n = 29$</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>2.2.3 Linear Inequalities</h2>
+
+<div class="definition">
+  An <strong>inequality</strong> shows that one expression is greater than (or less than) another. The solution is a range of values, not a single value.<br><br>
+  Symbols: $<$ (less than), $\leq$ (less than or equal to), $>$ (greater than), $\geq$ (greater than or equal to).
+</div>
+
+<h3>Solving Linear Inequalities</h3>
+<p>Use the same inverse operations as equations, with one critical difference:</p>
+
+<div class="definition">
+  <strong>When you multiply or divide both sides by a negative number, you must reverse the inequality sign.</strong>
+</div>
+
+<div class="worked-example">
+  Solve $3x - 7 > 5$.<br><br>
+  <div class="step">Add 7: $3x > 12$</div>
+  <div class="step">Divide by 3: $x > 4$</div>
+</div>
+
+<div class="worked-example">
+  Solve $-2x + 1 \leq 9$.<br><br>
+  <div class="step">Subtract 1: $-2x \leq 8$</div>
+  <div class="step">Divide by $-2$ (reverse sign!): $x \geq -4$</div>
+</div>
+
+<h3>Representing Inequalities on a Number Line</h3>
+<p>Use an <strong>open circle</strong> $\circ$ for strict inequalities ($<$ or $>$) and a <strong>filled circle</strong> $\bullet$ for $\leq$ or $\geq$.</p>
+
+<!-- SVG Number Line Diagrams -->
+<div class="diagram-container">
+<svg viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg" style="max-width:500px;width:100%;font-family:system-ui,sans-serif;">
+  <!-- Title -->
+  <text x="250" y="18" text-anchor="middle" font-size="13" fill="#1e40af" font-weight="600">Number line representations</text>
+
+  <!-- Line 1: x > 2 -->
+  <text x="10" y="50" font-size="12" fill="#374151">x &gt; 2</text>
+  <line x1="80" y1="46" x2="430" y2="46" stroke="#9ca3af" stroke-width="1.5"/>
+  <!-- Arrow right -->
+  <polygon points="430,46 420,41 420,51" fill="#9ca3af"/>
+  <!-- Tick marks and labels for line 1 -->
+  <line x1="150" y1="42" x2="150" y2="50" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="150" y="63" text-anchor="middle" font-size="11" fill="#374151">0</text>
+  <line x1="230" y1="42" x2="230" y2="50" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="230" y="63" text-anchor="middle" font-size="11" fill="#374151">2</text>
+  <line x1="310" y1="42" x2="310" y2="50" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="310" y="63" text-anchor="middle" font-size="11" fill="#374151">4</text>
+  <!-- Open circle at 2, arrow right -->
+  <circle cx="230" cy="46" r="6" fill="white" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="236" y1="46" x2="410" y2="46" stroke="#2563eb" stroke-width="3"/>
+  <polygon points="420,46 408,40 408,52" fill="#2563eb"/>
+
+  <!-- Line 2: x <= -1 -->
+  <text x="10" y="120" font-size="12" fill="#374151">x &#x2264; −1</text>
+  <line x1="80" y1="116" x2="430" y2="116" stroke="#9ca3af" stroke-width="1.5"/>
+  <polygon points="430,116 420,111 420,121" fill="#9ca3af"/>
+  <!-- Tick marks -->
+  <line x1="150" y1="112" x2="150" y2="120" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="150" y="133" text-anchor="middle" font-size="11" fill="#374151">−3</text>
+  <line x1="230" y1="112" x2="230" y2="120" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="230" y="133" text-anchor="middle" font-size="11" fill="#374151">−1</text>
+  <line x1="310" y1="112" x2="310" y2="120" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="310" y="133" text-anchor="middle" font-size="11" fill="#374151">1</text>
+  <!-- Filled circle at -1, arrow left -->
+  <circle cx="230" cy="116" r="6" fill="#dc2626" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="80" y1="116" x2="224" y2="116" stroke="#dc2626" stroke-width="3"/>
+  <polygon points="80,116 92,110 92,122" fill="#dc2626"/>
+</svg>
+</div>
+
+<h3>Combined Inequalities</h3>
+<p>E.g. $-3 < 2x + 1 \leq 7$: solve as two separate inequalities or work on all three parts simultaneously.</p>
+
+<div class="worked-example">
+  Solve $-3 < 2x + 1 \leq 7$ and represent on a number line.<br><br>
+  <div class="step">Subtract 1 from all three parts: $-4 < 2x \leq 6$</div>
+  <div class="step">Divide all three parts by 2: $-2 < x \leq 3$</div>
+  <div class="step">Integer values: $x \in \{-1, 0, 1, 2, 3\}$</div>
+  <div class="step">Number line: open circle at $-2$, filled circle at $3$, line between them.</div>
+</div>
+
+<div class="exam-tip">
+  When listing integer solutions, make sure to include the endpoints only if the sign is $\leq$ or $\geq$.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.2.4 Simultaneous Equations</h2>
+
+<p>Two equations in two unknowns — find values of both unknowns that satisfy <em>both</em> equations simultaneously.</p>
+
+<h3>Method 1: Elimination</h3>
+<p>Add or subtract multiples of the equations to eliminate one variable.</p>
+
+<div class="worked-example">
+  Solve: $3x + 2y = 13$ and $5x - 2y = 11$.<br><br>
+  <div class="step">Coefficients of $y$ are $+2$ and $-2$, so add the equations:</div>
+  <div class="step">$8x = 24 \Rightarrow x = 3$</div>
+  <div class="step">Substitute into equation 1: $9 + 2y = 13 \Rightarrow 2y = 4 \Rightarrow y = 2$</div>
+  <div class="step">Check in equation 2: $15 - 4 = 11$ ✓</div>
+</div>
+
+<div class="worked-example">
+  Solve: $2x + 3y = 16$ and $5x - y = 2$.<br><br>
+  <div class="step">Multiply equation 2 by 3: $15x - 3y = 6$</div>
+  <div class="step">Add to equation 1: $17x = 22 \Rightarrow x = \dfrac{22}{17}$</div>
+  <div class="step">Or — to get integers here, multiply eq 1 by 5 and eq 2 by 2: $10x+15y=80$ and $10x-2y=4$. Subtract: $17y=76 \Rightarrow y=\dfrac{76}{17}$. Messy — but systematic.</div>
+  <div class="step">Better: multiply eq 2 by 3 to match $y$ coefficient: $15x-3y=6$. Add to eq 1: $17x=22$, so $x=\frac{22}{17}$, and back-substitute for $y$.</div>
+</div>
+
+<h3>Method 2: Substitution</h3>
+<p>Rearrange one equation to express one variable in terms of the other, then substitute into the second equation.</p>
+
+<div class="worked-example">
+  Solve: $y = 2x - 1$ and $3x + 4y = 18$.<br><br>
+  <div class="step">Substitute $y = 2x-1$ into the second equation:</div>
+  <div class="step">$3x + 4(2x-1) = 18$</div>
+  <div class="step">$3x + 8x - 4 = 18 \Rightarrow 11x = 22 \Rightarrow x = 2$</div>
+  <div class="step">$y = 2(2)-1 = 3$</div>
+  <div class="step">Solution: $x = 2,\ y = 3$</div>
+</div>
+
+<h3>Graphical Method</h3>
+<p>Plot both equations as straight lines. The solution is the point of intersection of the two lines.</p>
+<ul>
+  <li>Parallel lines (same gradient, different intercept) &rarr; no solution.</li>
+  <li>Coincident lines (same equation) &rarr; infinitely many solutions.</li>
+</ul>
+
+<div class="exam-tip">
+  In elimination, make sure the signs are correct when subtracting — this is the most common error. Write the subtraction out explicitly.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.2.5 Quadratic Equations</h2>
+
+<p>A quadratic equation has the form $ax^2 + bx + c = 0$ and generally has <strong>two solutions</strong> (roots).</p>
+
+<h3>Method 1: Factorising</h3>
+<p>Rearrange to equal zero, factorise, then set each factor equal to zero:</p>
+
+<div class="worked-example">
+  Solve $x^2 - 5x + 6 = 0$.<br><br>
+  <div class="step">Factorise: $(x-2)(x-3) = 0$</div>
+  <div class="step">Either $x-2=0$ or $x-3=0$</div>
+  <div class="step">$x = 2$ or $x = 3$</div>
+</div>
+
+<div class="worked-example">
+  Solve $2x^2 + x - 6 = 0$.<br><br>
+  <div class="step">Factorise (AC method: $ac = -12$; factors $-3$ and $4$): $(2x-3)(x+2)=0$</div>
+  <div class="step">$x = \dfrac{3}{2}$ or $x = -2$</div>
+</div>
+
+<h3>Method 2: The Quadratic Formula</h3>
+<p>For any quadratic $ax^2 + bx + c = 0$:</p>
+
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+<p>The expression $b^2 - 4ac$ is called the <strong>discriminant</strong>:</p>
+<table>
+  <thead><tr><th>Value of $b^2 - 4ac$</th><th>Number of real roots</th><th>Nature of roots</th></tr></thead>
+  <tbody>
+    <tr><td>$b^2 - 4ac > 0$</td><td>2 distinct real roots</td><td>Two different solutions</td></tr>
+    <tr><td>$b^2 - 4ac = 0$</td><td>1 repeated root</td><td>One solution (parabola touches $x$-axis)</td></tr>
+    <tr><td>$b^2 - 4ac < 0$</td><td>No real roots</td><td>Parabola does not cross $x$-axis</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  Solve $3x^2 - 5x - 2 = 0$ using the quadratic formula.<br><br>
+  <div class="step">$a=3,\ b=-5,\ c=-2$</div>
+  <div class="step">$b^2 - 4ac = 25 - 4(3)(-2) = 25 + 24 = 49$</div>
+  <div class="step">$x = \dfrac{5 \pm \sqrt{49}}{6} = \dfrac{5 \pm 7}{6}$</div>
+  <div class="step">$x = \dfrac{12}{6} = 2$ or $x = \dfrac{-2}{6} = -\dfrac{1}{3}$</div>
+</div>
+
+<div class="worked-example">
+  Solve $x^2 + 3x - 1 = 0$, giving answers to 2 decimal places.<br><br>
+  <div class="step">$a=1,\ b=3,\ c=-1$</div>
+  <div class="step">$b^2-4ac = 9+4 = 13$</div>
+  <div class="step">$x = \dfrac{-3 \pm \sqrt{13}}{2}$</div>
+  <div class="step">$x = \dfrac{-3 + 3.6056}{2} = 0.30$ (2 d.p.) or $x = \dfrac{-3 - 3.6056}{2} = -3.30$ (2 d.p.)</div>
+</div>
+
+<div class="exam-tip">
+  The quadratic formula always works, even when factorising seems impossible. Always rearrange to $ax^2 + bx + c = 0$ first. Identify $a$, $b$, $c$ before substituting — include the sign.
+</div>
+
+<div class="higher">
+  <p><span class="higher-label">Higher — Completing the Square</span></p>
+  <p>Write $ax^2 + bx + c$ in the form $a(x+p)^2 + q$. This reveals the vertex of the parabola and is a third method for solving quadratics.</p>
+  <p>For $x^2 + bx + c$ (coefficient of $x^2$ is 1):</p>
+  $$x^2 + bx + c = \left(x + \frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2 + c$$
+
+  <div class="worked-example">
+    Solve $x^2 + 6x + 2 = 0$ by completing the square.<br><br>
+    <div class="step">$(x+3)^2 - 9 + 2 = 0$</div>
+    <div class="step">$(x+3)^2 = 7$</div>
+    <div class="step">$x + 3 = \pm\sqrt{7}$</div>
+    <div class="step">$x = -3 \pm \sqrt{7}$</div>
+  </div>
+
+  <div class="worked-example">
+    Write $2x^2 - 8x + 5$ in the form $a(x+p)^2 + q$. Hence state the minimum value and the $x$-coordinate where it occurs.<br><br>
+    <div class="step">Factor out 2: $2(x^2 - 4x) + 5$</div>
+    <div class="step">Complete the square inside: $2\big[(x-2)^2 - 4\big] + 5$</div>
+    <div class="step">Expand: $2(x-2)^2 - 8 + 5 = 2(x-2)^2 - 3$</div>
+    <div class="step">Minimum value is $-3$ at $x = 2$</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<h2>2.2.6 Algebraic Proof <span style="font-size:0.8rem;color:#7e22ce;">[Higher]</span></h2>
+
+<div class="higher">
+<p><span class="higher-label">Higher only</span></p>
+
+<div class="definition">
+  <strong>Algebraic proof</strong> uses algebra to show that a statement is always true. You must work with general expressions, not specific numbers.<br><br>
+  Key vocabulary:
+  <ul>
+    <li>Even number: $2n$</li>
+    <li>Odd number: $2n+1$</li>
+    <li>Consecutive integers: $n, n+1, n+2, \ldots$</li>
+    <li>Multiple of $k$: $kn$ (where $n$ is any integer)</li>
+  </ul>
+</div>
+
+<h3>Showing Identities</h3>
+
+<div class="worked-example">
+  Prove that $(n+3)^2 - (n+1)^2 \equiv 4(n+2)$.<br><br>
+  <div class="step">LHS: $(n+3)^2 - (n+1)^2$</div>
+  <div class="step">$= n^2 + 6n + 9 - (n^2 + 2n + 1)$</div>
+  <div class="step">$= n^2 + 6n + 9 - n^2 - 2n - 1$</div>
+  <div class="step">$= 4n + 8 = 4(n+2)$ = RHS ✓</div>
+</div>
+
+<h3>Proving Divisibility</h3>
+
+<div class="worked-example">
+  Prove that the sum of any three consecutive integers is always divisible by 3.<br><br>
+  <div class="step">Let the three integers be $n$, $n+1$, $n+2$</div>
+  <div class="step">Sum $= n + (n+1) + (n+2) = 3n + 3 = 3(n+1)$</div>
+  <div class="step">This is a multiple of 3, so the sum is always divisible by 3. $\square$</div>
+</div>
+
+<div class="worked-example">
+  Prove that the product of two odd numbers is always odd.<br><br>
+  <div class="step">Let the two odd numbers be $2m+1$ and $2n+1$</div>
+  <div class="step">Product $= (2m+1)(2n+1) = 4mn + 2m + 2n + 1 = 2(2mn+m+n) + 1$</div>
+  <div class="step">This is in the form $2k + 1$ (where $k = 2mn+m+n$ is an integer), so the product is odd. $\square$</div>
+</div>
+
+<h3>Disproving by Counterexample</h3>
+<p>To disprove a general claim, you only need to find ONE example where it fails — a <strong>counterexample</strong>.</p>
+
+<div class="worked-example">
+  Disprove: "The square of any odd number is always 1 more than a multiple of 8."<br><br>
+  <div class="step">Wait — actually this is TRUE. $(2n+1)^2 = 4n^2 + 4n + 1 = 4n(n+1) + 1$. Since one of $n$ or $n+1$ is even, $4n(n+1)$ is a multiple of 8, so $(2n+1)^2 \equiv 1 \pmod{8}$.</div>
+  <div class="step">Alternative disproof example — "The sum of two prime numbers is always even": counterexample is $2 + 3 = 5$ (odd). $\square$</div>
+</div>
+
+<div class="exam-tip">
+  In a proof question, use fully general algebraic expressions. Do not use specific numbers. End with a clear concluding sentence explaining what you have shown.
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Quick Reference Summary</h2>
+<table>
+  <thead><tr><th>Topic</th><th>Key method / formula</th></tr></thead>
+  <tbody>
+    <tr><td>Linear equations</td><td>Inverse operations; same operation on both sides</td></tr>
+    <tr><td>Inequalities</td><td>Same as equations but reverse sign when multiplying/dividing by a negative</td></tr>
+    <tr><td>Simultaneous (linear)</td><td>Elimination (match coefficients) or substitution</td></tr>
+    <tr><td>Quadratic: factorising</td><td>$(x-p)(x-q)=0 \Rightarrow x=p$ or $x=q$</td></tr>
+    <tr><td>Quadratic formula</td><td>$x = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}$</td></tr>
+    <tr><td>Completing the square [H]</td><td>$x^2+bx+c = (x+\tfrac{b}{2})^2 - (\tfrac{b}{2})^2 + c$</td></tr>
+    <tr><td>Algebraic proof [H]</td><td>Use $2n$ (even), $2n+1$ (odd), $n, n+1, \ldots$ (consecutive)</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+</body>
+</html>

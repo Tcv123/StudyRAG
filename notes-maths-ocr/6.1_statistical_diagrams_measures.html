@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 6.1 — Statistical Diagrams and Measures</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .higher-only { background: #fdf4ff; border-left: 4px solid #a855f7; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-only::before { content: "Higher Tier Only: "; font-weight: 700; color: #7e22ce; }
+        .katex-display { margin: 16px 0; }
+        svg { display: block; margin: 16px auto; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>6.1 Statistical Diagrams and Measures</h1>
+<p class="spec-ref">OCR GCSE Mathematics J560 &mdash; Unit 6 &mdash; Papers 2 and 3 (Foundation and Higher)</p>
+
+<!-- ============================================================ -->
+<h2>6.1.1 Types of Data</h2>
+
+<table>
+  <tr><th>Type</th><th>Description</th><th>Examples</th></tr>
+  <tr><td><strong>Qualitative</strong></td><td>Non-numerical (categories)</td><td>Colour, gender, favourite subject</td></tr>
+  <tr><td><strong>Quantitative</strong></td><td>Numerical (measured or counted)</td><td>Height, number of goals, temperature</td></tr>
+  <tr><td><strong>Discrete</strong></td><td>Exact values only (usually counted)</td><td>Shoe size, number of students, goals scored</td></tr>
+  <tr><td><strong>Continuous</strong></td><td>Any value in a range (usually measured)</td><td>Height, weight, time, temperature</td></tr>
+  <tr><td><strong>Primary data</strong></td><td>Collected first-hand by the investigator</td><td>Surveys, experiments, observations</td></tr>
+  <tr><td><strong>Secondary data</strong></td><td>Collected by someone else, already exists</td><td>Census data, published reports, databases</td></tr>
+</table>
+
+<div class="exam-tip">
+  Shoe size is a common trick: it looks continuous but is actually discrete (sizes are 4, 4.5, 5, … — not every value possible). Number of siblings is always discrete (you cannot have 2.3 siblings). Height and weight are always continuous.
+</div>
+
+<!-- ============================================================ -->
+<h2>6.1.2 Averages and Range</h2>
+
+<div class="definition">
+  The three averages and range are:<br><br>
+  <ul style="margin-bottom:0;">
+    <li><strong>Mean</strong>: sum of all values &divide; number of values. Notation: $\bar{x} = \dfrac{\sum x}{n}$</li>
+    <li><strong>Median</strong>: middle value when data is arranged in order. For $n$ values, position is $\dfrac{n+1}{2}$</li>
+    <li><strong>Mode</strong>: most frequent value (there can be more than one, or none)</li>
+    <li><strong>Range</strong>: largest value $-$ smallest value (measures <em>spread</em>, not average)</li>
+  </ul>
+</div>
+
+<h3>Comparing the Averages</h3>
+<table>
+  <tr><th>Average</th><th>Advantages</th><th>Disadvantages</th><th>Best used when</th></tr>
+  <tr><td><strong>Mean</strong></td><td>Uses all data values; most precise</td><td>Distorted by outliers</td><td>Data is roughly symmetrical, no extreme values</td></tr>
+  <tr><td><strong>Median</strong></td><td>Not affected by outliers</td><td>Ignores most values</td><td>Data is skewed or has outliers (e.g. salaries)</td></tr>
+  <tr><td><strong>Mode</strong></td><td>Easy to find; only average for qualitative data</td><td>May not exist or may not be representative</td><td>Finding most common category (e.g. most popular shoe size)</td></tr>
+</table>
+
+<h3>Averages from a Frequency Table</h3>
+
+<div class="worked-example">
+  The table shows the number of books read by 20 students last month.<br><br>
+  <table>
+    <tr><th>Books read ($x$)</th><th>Frequency ($f$)</th><th>$f \times x$</th></tr>
+    <tr><td>0</td><td>3</td><td>0</td></tr>
+    <tr><td>1</td><td>5</td><td>5</td></tr>
+    <tr><td>2</td><td>7</td><td>14</td></tr>
+    <tr><td>3</td><td>4</td><td>12</td></tr>
+    <tr><td>4</td><td>1</td><td>4</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>20</strong></td><td><strong>35</strong></td></tr>
+  </table>
+  <strong>Mean</strong> $= \dfrac{\sum fx}{\sum f} = \dfrac{35}{20} = 1.75$ books<br><br>
+  <strong>Mode</strong> $= 2$ (highest frequency = 7)<br><br>
+  <strong>Median</strong>: $\dfrac{20+1}{2} = 10.5$th position &rarr; average of 10th and 11th values.<br>
+  Cumulative frequencies: 3, 8, 15, ... The 10th and 11th values are both in the group with $x=2$.<br>
+  <strong>Median = 2</strong>
+</div>
+
+<h3>Averages from a Grouped Frequency Table</h3>
+<p>When data is grouped, we cannot find exact values. We use the <strong>midpoint</strong> of each class interval.</p>
+
+<div class="worked-example">
+  <table>
+    <tr><th>Height $h$ (cm)</th><th>Frequency</th><th>Midpoint</th><th>$f \times \text{midpoint}$</th></tr>
+    <tr><td>$150 \leq h &lt; 160$</td><td>4</td><td>155</td><td>620</td></tr>
+    <tr><td>$160 \leq h &lt; 170$</td><td>11</td><td>165</td><td>1815</td></tr>
+    <tr><td>$170 \leq h &lt; 180$</td><td>9</td><td>175</td><td>1575</td></tr>
+    <tr><td>$180 \leq h &lt; 190$</td><td>6</td><td>185</td><td>1110</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>30</strong></td><td></td><td><strong>5120</strong></td></tr>
+  </table>
+  <strong>Estimated mean</strong> $= \dfrac{5120}{30} \approx 170.7$ cm<br><br>
+  <strong>Modal class</strong> $= 160 \leq h &lt; 170$ (highest frequency)<br><br>
+  <strong>Median class</strong>: $\dfrac{30}{2} = 15$th value &rarr; cumulative frequencies: 4, 15, 24... &rarr; median lies in $160 \leq h &lt; 170$
+</div>
+
+<div class="exam-tip">
+  For grouped data, you can only estimate the mean (using midpoints). Always state it is an estimate. The modal class is the class with the highest frequency — do not just write the midpoint.
+</div>
+
+<!-- ============================================================ -->
+<h2>6.1.3 Bar Charts, Pictograms and Pie Charts</h2>
+
+<h3>Pie Charts</h3>
+<div class="definition">
+  In a pie chart, each sector represents a category. The <strong>angle</strong> of each sector is:<br><br>
+  $$\text{Angle} = \frac{\text{frequency}}{\text{total frequency}} \times 360°$$
+</div>
+
+<div class="worked-example">
+  30 students were asked their favourite sport. Results: Football 12, Tennis 8, Swimming 6, Other 4.<br><br>
+  <table>
+    <tr><th>Sport</th><th>Frequency</th><th>Angle calculation</th><th>Angle</th></tr>
+    <tr><td>Football</td><td>12</td><td>$\frac{12}{30} \times 360$</td><td>144°</td></tr>
+    <tr><td>Tennis</td><td>8</td><td>$\frac{8}{30} \times 360$</td><td>96°</td></tr>
+    <tr><td>Swimming</td><td>6</td><td>$\frac{6}{30} \times 360$</td><td>72°</td></tr>
+    <tr><td>Other</td><td>4</td><td>$\frac{4}{30} \times 360$</td><td>48°</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>30</strong></td><td></td><td><strong>360°</strong></td></tr>
+  </table>
+</div>
+
+<!-- Pie Chart SVG -->
+<svg width="420" height="280" viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" aria-label="Pie chart showing favourite sports">
+  <!-- Title -->
+  <text x="210" y="20" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">Favourite Sport (n = 30)</text>
+
+  <!-- Pie sectors centred at (160, 150), radius 100 -->
+  <!-- Football: 144° starting at -90° (top) = -90° to 54° -->
+  <path d="M160,150 L160,50 A100,100 0 0,1 241.76,225.88 Z" fill="#3b82f6"/>
+  <!-- Tennis: 96° from 54° to 150° -->
+  <path d="M160,150 L241.76,225.88 A100,100 0 0,1 60,216.60 Z" fill="#f59e0b"/>
+  <!-- Swimming: 72° from 150° to 222° -->
+  <path d="M160,150 L60,216.60 A100,100 0 0,1 91.25,68.88 Z" fill="#10b981"/>
+  <!-- Other: 48° from 222° to 270° -->
+  <path d="M160,150 L91.25,68.88 A100,100 0 0,1 160,50 Z" fill="#ef4444"/>
+
+  <!-- Legend -->
+  <rect x="290" y="80" width="14" height="14" fill="#3b82f6" rx="2"/>
+  <text x="310" y="92" font-size="12" fill="#374151">Football (144°)</text>
+  <rect x="290" y="104" width="14" height="14" fill="#f59e0b" rx="2"/>
+  <text x="310" y="116" font-size="12" fill="#374151">Tennis (96°)</text>
+  <rect x="290" y="128" width="14" height="14" fill="#10b981" rx="2"/>
+  <text x="310" y="140" font-size="12" fill="#374151">Swimming (72°)</text>
+  <rect x="290" y="152" width="14" height="14" fill="#ef4444" rx="2"/>
+  <text x="310" y="164" font-size="12" fill="#374151">Other (48°)</text>
+
+  <!-- Centre dot -->
+  <circle cx="160" cy="150" r="2" fill="#374151"/>
+</svg>
+
+<div class="exam-tip">
+  When drawing a pie chart, always check your angles add to 360°. When reading a pie chart to find a frequency, rearrange the formula: frequency = (angle / 360) × total.
+</div>
+
+<!-- ============================================================ -->
+<h2>6.1.4 Frequency Diagrams and Polygons</h2>
+
+<div class="definition">
+  A <strong>frequency polygon</strong> is drawn for grouped data by:<br>
+  <ol style="margin-bottom:0;">
+    <li>Finding the <strong>midpoint</strong> of each class interval.</li>
+    <li>Plotting (midpoint, frequency) for each class.</li>
+    <li>Joining the points with straight lines.</li>
+    <li>Extending the line to the midpoints of the empty classes at each end (touching the x-axis).</li>
+  </ol>
+</div>
+
+<p>Frequency polygons are particularly useful for comparing two distributions on the same diagram.</p>
+
+<div class="exam-tip">
+  A frequency polygon is NOT a bar chart. Do not shade under the lines. Plot points at midpoints, not at the boundaries of the class intervals.
+</div>
+
+<!-- ============================================================ -->
+<h2>6.1.5 Scatter Diagrams and Correlation</h2>
+
+<div class="definition">
+  A <strong>scatter diagram</strong> shows the relationship between two variables. Each point represents one data item (its two measurements).<br><br>
+  <ul style="margin-bottom:0;">
+    <li><strong>Positive correlation</strong>: as one variable increases, so does the other.</li>
+    <li><strong>Negative correlation</strong>: as one variable increases, the other decreases.</li>
+    <li><strong>No correlation</strong>: no clear pattern between the variables.</li>
+    <li>Correlation can be <strong>strong</strong> (points close to a line) or <strong>weak</strong> (points more scattered).</li>
+  </ul>
+</div>
+
+<!-- Scatter Diagram SVG -->
+<svg width="500" height="340" viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" aria-label="Scatter diagram showing positive correlation between hours of revision and test score">
+  <!-- Title -->
+  <text x="250" y="20" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">Hours of Revision vs Test Score</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="280" x2="460" y2="280" stroke="#374151" stroke-width="2"/>
+  <line x1="60" y1="280" x2="60"  y2="40"  stroke="#374151" stroke-width="2"/>
+
+  <!-- Arrowheads -->
+  <polygon points="460,280 452,275 452,285" fill="#374151"/>
+  <polygon points="60,40 55,48 65,48" fill="#374151"/>
+
+  <!-- X-axis label -->
+  <text x="260" y="320" text-anchor="middle" font-size="13" fill="#374151">Hours of revision</text>
+  <!-- Y-axis label (rotated) -->
+  <text x="18" y="160" text-anchor="middle" font-size="13" fill="#374151" transform="rotate(-90,18,160)">Test score (%)</text>
+
+  <!-- X-axis ticks and labels -->
+  <line x1="100" y1="280" x2="100" y2="285" stroke="#374151"/>
+  <text x="100" y="298" text-anchor="middle" font-size="11" fill="#374151">1</text>
+  <line x1="150" y1="280" x2="150" y2="285" stroke="#374151"/>
+  <text x="150" y="298" text-anchor="middle" font-size="11" fill="#374151">2</text>
+  <line x1="200" y1="280" x2="200" y2="285" stroke="#374151"/>
+  <text x="200" y="298" text-anchor="middle" font-size="11" fill="#374151">3</text>
+  <line x1="250" y1="280" x2="250" y2="285" stroke="#374151"/>
+  <text x="250" y="298" text-anchor="middle" font-size="11" fill="#374151">4</text>
+  <line x1="300" y1="280" x2="300" y2="285" stroke="#374151"/>
+  <text x="300" y="298" text-anchor="middle" font-size="11" fill="#374151">5</text>
+  <line x1="350" y1="280" x2="350" y2="285" stroke="#374151"/>
+  <text x="350" y="298" text-anchor="middle" font-size="11" fill="#374151">6</text>
+  <line x1="400" y1="280" x2="400" y2="285" stroke="#374151"/>
+  <text x="400" y="298" text-anchor="middle" font-size="11" fill="#374151">7</text>
+
+  <!-- Y-axis ticks and labels -->
+  <line x1="60" y1="240" x2="55" y2="240" stroke="#374151"/>
+  <text x="50" y="244" text-anchor="end" font-size="11" fill="#374151">20</text>
+  <line x1="60" y1="200" x2="55" y2="200" stroke="#374151"/>
+  <text x="50" y="204" text-anchor="end" font-size="11" fill="#374151">40</text>
+  <line x1="60" y1="160" x2="55" y2="160" stroke="#374151"/>
+  <text x="50" y="164" text-anchor="end" font-size="11" fill="#374151">60</text>
+  <line x1="60" y1="120" x2="55" y2="120" stroke="#374151"/>
+  <text x="50" y="124" text-anchor="end" font-size="11" fill="#374151">80</text>
+  <line x1="60" y1="80" x2="55" y2="80" stroke="#374151"/>
+  <text x="50" y="84" text-anchor="end" font-size="11" fill="#374151">100</text>
+
+  <!-- Data points (showing positive correlation) -->
+  <!-- (hours, score) scaled: x = 60 + hours*50, y = 280 - score*2 -->
+  <circle cx="110" cy="245" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 1, 17 -->
+  <circle cx="115" cy="235" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 1.1, 22 -->
+  <circle cx="155" cy="220" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 1.9, 30 -->
+  <circle cx="160" cy="210" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 2, 35 -->
+  <circle cx="170" cy="200" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 2.2, 40 -->
+  <circle cx="200" cy="195" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 2.8, 42 -->
+  <circle cx="210" cy="185" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 3, 47 -->
+  <circle cx="220" cy="175" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 3.2, 52 -->
+  <circle cx="245" cy="165" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 3.7, 57 -->
+  <circle cx="255" cy="155" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 3.9, 62 -->
+  <circle cx="300" cy="145" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 4.8, 67 -->
+  <circle cx="310" cy="130" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 5, 75 -->
+  <circle cx="330" cy="118" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 5.4, 81 -->
+  <circle cx="360" cy="107" r="5" fill="#2563eb" opacity="0.85"/>  <!-- 6, 86 -->
+  <circle cx="400" cy="88"  r="5" fill="#2563eb" opacity="0.85"/>  <!-- 6.8, 96 -->
+
+  <!-- Line of best fit (approximate) -->
+  <line x1="90" y1="258" x2="430" y2="78" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="440" y="74" font-size="11" fill="#ef4444">Line of</text>
+  <text x="440" y="88" font-size="11" fill="#ef4444">best fit</text>
+
+  <!-- Positive correlation label -->
+  <text x="90" y="65" font-size="12" font-weight="600" fill="#166534">Strong positive correlation</text>
+</svg>
+
+<h3>Line of Best Fit</h3>
+<div class="definition">
+  A <strong>line of best fit</strong> (or trend line) is a straight line that best represents the data on a scatter diagram. It passes through the mean point $(\bar{x}, \bar{y})$ and has roughly equal numbers of points above and below it.
+</div>
+
+<h3>Interpolation vs Extrapolation</h3>
+<table>
+  <tr><th>Interpolation</th><th>Extrapolation</th></tr>
+  <tr><td>Using the line of best fit <strong>within</strong> the data range</td><td>Using the line of best fit <strong>outside</strong> the data range</td></tr>
+  <tr><td>Generally reliable</td><td>Less reliable — the pattern may not continue</td></tr>
+</table>
+
+<h3>Correlation vs Causation</h3>
+<div class="definition">
+  <strong>Correlation</strong> does not imply <strong>causation</strong>. Just because two variables are correlated does not mean one causes the other — there may be a third (confounding) variable, or the correlation may be coincidental.
+</div>
+
+<div class="exam-tip">
+  In exam questions about scatter diagrams: (1) describe the correlation (strong/weak, positive/negative/none), (2) use the line of best fit to make predictions only within the data range, (3) if asked whether correlation implies causation, the answer is always no — explain why.
+</div>
+
+<!-- ============================================================ -->
+<h2>6.1.6 Time Series and Line Graphs</h2>
+
+<div class="definition">
+  A <strong>time series</strong> is a set of data recorded at regular time intervals. Points are joined with straight lines to show trends over time.
+</div>
+
+<p>When reading a time series graph:</p>
+<ul>
+  <li>Identify the overall <strong>trend</strong> (increasing, decreasing, constant).</li>
+  <li>Identify any <strong>seasonal variation</strong> (regular up-down pattern).</li>
+</ul>
+
+<div class="higher-only">
+  <strong>Moving Averages</strong> smooth out seasonal variation to reveal the underlying trend.<br><br>
+  For a <strong>4-point moving average</strong>, average each group of 4 consecutive values:<br><br>
+  $$\text{MA}_1 = \frac{Q1 + Q2 + Q3 + Q4}{4}, \quad \text{MA}_2 = \frac{Q2 + Q3 + Q4 + Q5}{4}, \quad \ldots$$
+  <br>
+  Plot each moving average at the <em>midpoint</em> of its group of 4 values.
+</div>
+
+<div class="worked-example">
+  Quarterly sales (£000s): Q1=12, Q2=18, Q3=22, Q4=14, Q1=15, Q2=20<br><br>
+  <strong>4-point moving averages:</strong><br>
+  MA1 $= \dfrac{12+18+22+14}{4} = \dfrac{66}{4} = 16.5$<br><br>
+  MA2 $= \dfrac{18+22+14+15}{4} = \dfrac{69}{4} = 17.25$<br><br>
+  MA3 $= \dfrac{22+14+15+20}{4} = \dfrac{71}{4} = 17.75$<br><br>
+  The moving averages are increasing from 16.5 to 17.75, suggesting an upward trend.
+</div>
+
+<div class="exam-tip">
+  Moving averages are plotted at the mid-time point between the first and last data points in each group. For a 4-point MA, plot between the 2nd and 3rd point of each group of 4. The trend line is drawn through the moving average points.
+</div>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

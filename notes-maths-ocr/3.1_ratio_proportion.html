@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 3.1 — Ratio and Proportion</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .katex-display { margin: 16px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .diagram-label { font-size: 0.88rem; color: #6b7280; text-align: center; margin-top: 6px; margin-bottom: 16px; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>3.1 Ratio and Proportion</h1>
+<p class="spec-ref">OCR GCSE Mathematics J560 &nbsp;|&nbsp; Component 3 (Ratio, Proportion and Rates of Change) &nbsp;|&nbsp; Papers 1, 2 &amp; 3</p>
+
+<!-- ===================== 3.1.1 ===================== -->
+<h2>3.1.1 Simplifying and Using Ratios</h2>
+
+<div class="definition">
+  <strong>Ratio</strong> — a ratio compares two or more quantities of the <em>same type</em> and shows their relative sizes. It is written using a colon, e.g. $3 : 5$.
+</div>
+
+<h3>Writing a Ratio</h3>
+<ul>
+  <li>Quantities must be in the <strong>same units</strong> before forming a ratio.</li>
+  <li>Order matters: "the ratio of boys to girls is $2:3$" is different from $3:2$.</li>
+  <li>Ratios have <strong>no units</strong> — they are pure numbers once units are matched.</li>
+</ul>
+
+<div class="worked-example">
+  Write the ratio 40 cm to 1.2 m in its simplest form.<br><br>
+  <strong>Step 1:</strong> Convert to the same unit: $1.2\,\text{m} = 120\,\text{cm}$<br>
+  <strong>Step 2:</strong> Write the ratio: $40 : 120$<br>
+  <strong>Step 3:</strong> Simplify by dividing both by HCF (40): $1 : 3$
+</div>
+
+<h3>Simplifying to Simplest Form</h3>
+<ul>
+  <li>Divide all parts of the ratio by their <strong>Highest Common Factor (HCF)</strong>.</li>
+  <li>A ratio is in simplest form when all parts are integers with HCF = 1.</li>
+  <li>For ratios with fractions or decimals, multiply through to clear them first.</li>
+</ul>
+
+<div class="worked-example">
+  Simplify the ratio $1.5 : 4.5$.<br><br>
+  Multiply both by 2 to clear decimals: $3 : 9$<br>
+  Divide by HCF (3): $\mathbf{1:3}$
+</div>
+
+<h3>Equivalent Ratios</h3>
+<p>Equivalent ratios are found by multiplying or dividing all parts by the same non-zero number, just like equivalent fractions.</p>
+<table>
+  <tr><th>Ratio</th><th>Multiply by 2</th><th>Multiply by 5</th></tr>
+  <tr><td>$1 : 3$</td><td>$2 : 6$</td><td>$5 : 15$</td></tr>
+  <tr><td>$2 : 5$</td><td>$4 : 10$</td><td>$10 : 25$</td></tr>
+</table>
+
+<div class="exam-tip">
+  Always check units match before writing a ratio. A common mistake is to write "30 minutes to 2 hours" as $30:2$ instead of $30:120 = 1:4$.
+</div>
+
+<!-- ===================== 3.1.2 ===================== -->
+<h2>3.1.2 Dividing in a Ratio</h2>
+
+<div class="definition">
+  <strong>Dividing in a ratio</strong> — split a total quantity into parts proportional to a given ratio.
+</div>
+
+<h3>Method</h3>
+<ol>
+  <li>Find the <strong>total number of parts</strong> (add the ratio values).</li>
+  <li>Find the <strong>value of one part</strong> by dividing the total by the number of parts.</li>
+  <li>Multiply by each ratio value to find each share.</li>
+</ol>
+
+<div class="worked-example">
+  Share £420 in the ratio $3:4$.<br><br>
+  <strong>Step 1:</strong> Total parts = $3+4 = 7$<br>
+  <strong>Step 2:</strong> Value of 1 part = $£420 \div 7 = £60$<br>
+  <strong>Step 3:</strong> First share = $3 \times £60 = £180$; Second share = $4 \times £60 = £240$<br>
+  <strong>Check:</strong> $£180 + £240 = £420$ ✓
+</div>
+
+<div class="worked-example">
+  A recipe uses flour, butter and sugar in the ratio $5:3:2$. If the total mixture is 600 g, find the mass of each ingredient.<br><br>
+  Total parts = $5+3+2=10$<br>
+  1 part = $600 \div 10 = 60\,\text{g}$<br>
+  Flour: $5 \times 60 = 300\,\text{g}$<br>
+  Butter: $3 \times 60 = 180\,\text{g}$<br>
+  Sugar: $2 \times 60 = 120\,\text{g}$
+</div>
+
+<div class="worked-example">
+  Alice and Bob share profits in the ratio $2:5$. Alice receives £140. How much does Bob receive?<br><br>
+  Alice's 2 parts = £140, so 1 part = £70<br>
+  Bob's share = $5 \times £70 = \mathbf{£350}$
+</div>
+
+<div class="exam-tip">
+  When only one share is given, find "1 part" first, then scale to the other share. You do not need to find the total first.
+</div>
+
+<!-- ===================== 3.1.3 ===================== -->
+<h2>3.1.3 Comparing Using Ratios</h2>
+
+<h3>Unit Ratio (1 : n or n : 1)</h3>
+<p>A unit ratio has 1 as one of its parts. It makes comparison easy.</p>
+<div class="worked-example">
+  Write $6:15$ as a unit ratio of the form $1:n$.<br><br>
+  Divide both by 6: $1 : 2.5$
+</div>
+
+<h3>Best Buy Problems</h3>
+<p>To find the best value, compare the <strong>price per unit</strong> (unit rate). Divide the price by the quantity for each option.</p>
+
+<div class="worked-example">
+  Box A: 400 g for £1.60. Box B: 550 g for £2.09. Which is the better value?<br><br>
+  Box A: $£1.60 \div 400 = £0.0040$ per gram<br>
+  Box B: $£2.09 \div 550 = £0.0038$ per gram<br>
+  Box B is cheaper per gram — <strong>Box B is better value</strong>.
+</div>
+
+<div class="exam-tip">
+  Always state your conclusion clearly. Show the unit rate for each option so the examiner can award method marks even if arithmetic slips.
+</div>
+
+<!-- ===================== 3.1.4 ===================== -->
+<h2>3.1.4 Direct Proportion</h2>
+
+<div class="definition">
+  Two quantities are in <strong>direct proportion</strong> if, when one doubles, the other doubles (and so on). Their ratio remains constant. We write $y \propto x$, which means $y = kx$ for some constant $k$.
+</div>
+
+<h3>Finding the Constant of Proportionality</h3>
+<ol>
+  <li>Use a known pair of values to find $k = y/x$.</li>
+  <li>Write the equation $y = kx$.</li>
+  <li>Use the equation to find unknown values.</li>
+</ol>
+
+<div class="worked-example">
+  $y$ is directly proportional to $x$. When $x = 4$, $y = 20$. Find $y$ when $x = 7$.<br><br>
+  $k = y/x = 20/4 = 5$<br>
+  Equation: $y = 5x$<br>
+  When $x = 7$: $y = 5 \times 7 = \mathbf{35}$
+</div>
+
+<div class="worked-example">
+  5 identical books cost £12.50. Find the cost of 8 books.<br><br>
+  Cost per book = $£12.50 \div 5 = £2.50$<br>
+  Cost of 8 books = $8 \times £2.50 = \mathbf{£20.00}$
+</div>
+
+<h3>Graph of Direct Proportion</h3>
+<p>A direct proportion graph is a <strong>straight line through the origin</strong>. The gradient equals $k$.</p>
+
+<!-- Direct proportion graph SVG -->
+<svg viewBox="0 0 300 220" width="300" height="220" style="display:block;margin:16px auto;" aria-label="Direct proportion graph: straight line through origin">
+  <!-- Axes -->
+  <line x1="40" y1="190" x2="280" y2="190" stroke="#374151" stroke-width="2"/>
+  <line x1="40" y1="190" x2="40" y2="20" stroke="#374151" stroke-width="2"/>
+  <!-- Arrowheads -->
+  <polygon points="280,186 280,194 290,190" fill="#374151"/>
+  <polygon points="36,20 44,20 40,10" fill="#374151"/>
+  <!-- Grid lines -->
+  <line x1="40" y1="140" x2="280" y2="140" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="40" y1="90" x2="280" y2="90" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="40" y1="40" x2="280" y2="40" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="100" y1="20" x2="100" y2="190" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="160" y1="20" x2="160" y2="190" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="220" y1="20" x2="220" y2="190" stroke="#e5e7eb" stroke-width="1"/>
+  <!-- Direct proportion line: y = kx, passes through (40,190) to (260,30) -->
+  <line x1="40" y1="190" x2="260" y2="30" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Label -->
+  <text x="245" y="26" font-size="13" fill="#2563eb" font-family="sans-serif" font-style="italic">y = kx</text>
+  <!-- Axis labels -->
+  <text x="285" y="194" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">x</text>
+  <text x="32" y="12" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">y</text>
+  <!-- Origin label -->
+  <text x="28" y="204" font-size="12" fill="#374151" font-family="sans-serif">O</text>
+  <!-- Gradient annotation -->
+  <line x1="160" y1="190" x2="160" y2="110" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="40" y1="110" x2="160" y2="110" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="165" y="155" font-size="11" fill="#b45309" font-family="sans-serif">rise</text>
+  <text x="90" y="106" font-size="11" fill="#b45309" font-family="sans-serif">run</text>
+</svg>
+<p class="diagram-label">Fig 1 — Direct proportion: straight line through origin with gradient $k$</p>
+
+<!-- ===================== 3.1.5 ===================== -->
+<h2>3.1.5 Inverse Proportion</h2>
+
+<div class="definition">
+  Two quantities are in <strong>inverse proportion</strong> if, when one doubles, the other halves. We write $y \propto \frac{1}{x}$, which means $y = \frac{k}{x}$ for some constant $k$. The product $xy$ is always constant.
+</div>
+
+<h3>Finding k for Inverse Proportion</h3>
+<ol>
+  <li>Use a known pair of values: $k = xy$.</li>
+  <li>Write the equation $y = k/x$.</li>
+  <li>Substitute to find unknowns.</li>
+</ol>
+
+<div class="worked-example">
+  $y$ is inversely proportional to $x$. When $x=3$, $y=8$. Find $y$ when $x=6$.<br><br>
+  $k = xy = 3 \times 8 = 24$<br>
+  Equation: $y = 24/x$<br>
+  When $x = 6$: $y = 24/6 = \mathbf{4}$
+</div>
+
+<div class="worked-example">
+  8 workers take 15 days to complete a project. How long would 12 workers take (assuming constant rate)?<br><br>
+  $k = 8 \times 15 = 120$ (worker-days)<br>
+  Time = $120 \div 12 = \mathbf{10\,\text{days}}$
+</div>
+
+<h3>Higher: Other Proportionality Relationships <span class="higher-tag">Higher</span></h3>
+
+<table>
+  <tr><th>Type</th><th>Notation</th><th>Equation</th></tr>
+  <tr><td>Direct (square)</td><td>$y \propto x^2$</td><td>$y = kx^2$</td></tr>
+  <tr><td>Direct (cube)</td><td>$y \propto x^3$</td><td>$y = kx^3$</td></tr>
+  <tr><td>Inverse (square)</td><td>$y \propto \frac{1}{x^2}$</td><td>$y = \frac{k}{x^2}$</td></tr>
+  <tr><td>Inverse (square root)</td><td>$y \propto \frac{1}{\sqrt{x}}$</td><td>$y = \frac{k}{\sqrt{x}}$</td></tr>
+</table>
+
+<div class="worked-example">
+  $y \propto x^2$. When $x=3$, $y=36$. Find $y$ when $x=5$.<br><br>
+  $k = y/x^2 = 36/9 = 4$<br>
+  Equation: $y = 4x^2$<br>
+  When $x=5$: $y = 4 \times 25 = \mathbf{100}$
+</div>
+
+<div class="worked-example">
+  $y \propto \frac{1}{x^2}$. When $x=2$, $y=5$. Find $y$ when $x=10$.<br><br>
+  $k = yx^2 = 5 \times 4 = 20$<br>
+  Equation: $y = 20/x^2$<br>
+  When $x=10$: $y = 20/100 = \mathbf{0.2}$
+</div>
+
+<!-- Comparison graphs: direct vs inverse -->
+<h3>Proportion Graphs: Direct vs Inverse</h3>
+
+<svg viewBox="0 0 560 230" width="560" height="230" style="display:block;margin:16px auto;max-width:100%;" aria-label="Direct and inverse proportion graphs side by side">
+  <!-- === Left: Direct proportion === -->
+  <!-- Background label -->
+  <text x="90" y="16" font-size="13" fill="#374151" font-family="sans-serif" font-weight="600" text-anchor="middle">Direct Proportion</text>
+  <!-- Axes -->
+  <line x1="30" y1="200" x2="180" y2="200" stroke="#374151" stroke-width="2"/>
+  <line x1="30" y1="200" x2="30" y2="25" stroke="#374151" stroke-width="2"/>
+  <polygon points="180,196 180,204 190,200" fill="#374151"/>
+  <polygon points="26,25 34,25 30,15" fill="#374151"/>
+  <!-- Straight line through origin -->
+  <line x1="30" y1="200" x2="170" y2="40" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="158" y="36" font-size="12" fill="#2563eb" font-family="sans-serif" font-style="italic">y=kx</text>
+  <!-- Axis labels -->
+  <text x="192" y="204" font-size="12" fill="#374151" font-family="sans-serif" font-style="italic">x</text>
+  <text x="22" y="13" font-size="12" fill="#374151" font-family="sans-serif" font-style="italic">y</text>
+  <text x="20" y="213" font-size="11" fill="#374151" font-family="sans-serif">O</text>
+  <!-- Gradient label -->
+  <text x="50" y="185" font-size="11" fill="#2563eb" font-family="sans-serif">gradient = k</text>
+
+  <!-- === Right: Inverse proportion (hyperbola) === -->
+  <text x="390" y="16" font-size="13" fill="#374151" font-family="sans-serif" font-weight="600" text-anchor="middle">Inverse Proportion</text>
+  <!-- Axes -->
+  <line x1="290" y1="200" x2="540" y2="200" stroke="#374151" stroke-width="2"/>
+  <line x1="290" y1="200" x2="290" y2="25" stroke="#374151" stroke-width="2"/>
+  <polygon points="540,196 540,204 550,200" fill="#374151"/>
+  <polygon points="286,25 294,25 290,15" fill="#374151"/>
+  <!-- Hyperbola y = k/x, drawn as polyline, x from 1 to 8 mapped to pixels -->
+  <!-- x_px = 290 + x*30; y_px = 200 - k/x * scale; let k=3, scale=20 -->
+  <!-- Points: x=0.5->290+15=305, y=200-3/0.5*20=200-120=80 -->
+  <polyline points="
+    305,80
+    308,92
+    312,105
+    320,118
+    330,131
+    340,138
+    350,143
+    360,148
+    370,152
+    380,154
+    390,157
+    400,159
+    420,162
+    450,165
+    480,167
+    510,169
+    535,170
+  " fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="510" y="165" font-size="12" fill="#dc2626" font-family="sans-serif" font-style="italic">y=k/x</text>
+  <!-- Asymptote hints -->
+  <line x1="290" y1="170" x2="535" y2="170" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <line x1="305" y1="25" x2="305" y2="200" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <!-- Axis labels -->
+  <text x="552" y="204" font-size="12" fill="#374151" font-family="sans-serif" font-style="italic">x</text>
+  <text x="282" y="13" font-size="12" fill="#374151" font-family="sans-serif" font-style="italic">y</text>
+  <text x="280" y="213" font-size="11" fill="#374151" font-family="sans-serif">O</text>
+  <!-- curve annotation -->
+  <text x="295" y="60" font-size="10" fill="#6b7280" font-family="sans-serif">approaches axes</text>
+  <text x="295" y="72" font-size="10" fill="#6b7280" font-family="sans-serif">but never crosses</text>
+</svg>
+<p class="diagram-label">Fig 2 — Left: direct proportion ($y=kx$, straight line through origin). Right: inverse proportion ($y=k/x$, hyperbola approaching both axes).</p>
+
+<div class="exam-tip">
+  The inverse proportion graph never touches the axes. If asked to sketch it, draw a curve that gets closer and closer to each axis (asymptotic behaviour).
+</div>
+
+<!-- ===================== 3.1.6 ===================== -->
+<h2>3.1.6 Proportionality in Geometry — Similar Shapes</h2>
+
+<div class="definition">
+  <strong>Similar shapes</strong> have the same angles and all corresponding lengths are in the same ratio (the <em>scale factor</em> $k$). They are enlargements of each other.
+</div>
+
+<h3>Linear Scale Factor</h3>
+<p>If shape B is an enlargement of shape A with linear scale factor $k$, then every length in B is $k$ times the corresponding length in A.</p>
+
+$$k = \frac{\text{length in image}}{\text{corresponding length in original}}$$
+
+<h3>Area Scale Factor and Volume Scale Factor</h3>
+
+<div class="formula-box">
+  If the linear scale factor is $k$, then:
+  $$\text{Area scale factor} = k^2$$
+  $$\text{Volume scale factor} = k^3$$
+</div>
+
+<table>
+  <tr><th>Relationship</th><th>Scale Factor</th></tr>
+  <tr><td>Lengths (1D)</td><td>$k$</td></tr>
+  <tr><td>Areas (2D)</td><td>$k^2$</td></tr>
+  <tr><td>Volumes (3D)</td><td>$k^3$</td></tr>
+</table>
+
+<div class="worked-example">
+  Two similar triangles have corresponding sides of 4 cm and 10 cm.<br>
+  (a) Find the area scale factor. (b) If the smaller triangle has area 24 cm², find the area of the larger.<br><br>
+  Linear scale factor: $k = 10/4 = 2.5$<br>
+  (a) Area scale factor: $k^2 = 2.5^2 = 6.25$<br>
+  (b) Area of larger = $24 \times 6.25 = \mathbf{150\,\text{cm}^2}$
+</div>
+
+<div class="worked-example">
+  Two similar cylinders have heights 6 cm and 9 cm. The smaller has volume 80 cm³. Find the volume of the larger.<br><br>
+  Linear scale factor: $k = 9/6 = 1.5$<br>
+  Volume scale factor: $k^3 = 1.5^3 = 3.375$<br>
+  Volume of larger = $80 \times 3.375 = \mathbf{270\,\text{cm}^3}$
+</div>
+
+<div class="worked-example">
+  Two similar shapes have areas 50 cm² and 200 cm². Find the ratio of their perimeters.<br><br>
+  Area scale factor: $200/50 = 4$<br>
+  Linear scale factor: $k = \sqrt{4} = 2$<br>
+  Ratio of perimeters = $1:2$
+</div>
+
+<div class="exam-tip">
+  Always identify what you are given — length, area or volume — and apply the correct power. If you are given areas and want lengths, take the square root. If you are given volumes and want lengths, take the cube root.
+</div>
+
+<!-- ===================== Formula Summary ===================== -->
+<h2>Formula Summary</h2>
+
+<table>
+  <tr><th>Topic</th><th>Key Formula / Rule</th></tr>
+  <tr><td>Simplify ratio</td><td>Divide all parts by HCF; match units first</td></tr>
+  <tr><td>Divide in ratio $a:b$</td><td>1 part = Total $\div (a+b)$; shares = $a\times$part and $b\times$part</td></tr>
+  <tr><td>Direct proportion</td><td>$y = kx$; $k = y/x$ is constant</td></tr>
+  <tr><td>Inverse proportion</td><td>$y = k/x$; $k = xy$ is constant</td></tr>
+  <tr><td>$y \propto x^2$ (Higher)</td><td>$y = kx^2$; $k = y/x^2$</td></tr>
+  <tr><td>$y \propto 1/x^2$ (Higher)</td><td>$y = k/x^2$; $k = yx^2$</td></tr>
+  <tr><td>Similar shapes — area</td><td>Area SF $= k^2$</td></tr>
+  <tr><td>Similar shapes — volume</td><td>Volume SF $= k^3$</td></tr>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

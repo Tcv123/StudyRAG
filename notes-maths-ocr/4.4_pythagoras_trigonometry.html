@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 4.4 — Pythagoras &amp; Trigonometry</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.4 Pythagoras' Theorem &amp; Trigonometry</h1>
+<p class="spec-ref">OCR GCSE Mathematics J560 &mdash; Component 4 (Geometry and Measures) &mdash; Papers 1, 2, 3</p>
+
+<!-- ===================== 4.4.1 PYTHAGORAS ===================== -->
+<h2>4.4.1 Pythagoras' Theorem</h2>
+
+<div class="definition">
+  In any <strong>right-angled triangle</strong>, the square of the length of the hypotenuse (the side opposite the right angle) equals the sum of the squares of the other two sides.
+  $$a^2 + b^2 = c^2$$
+  where $c$ is the hypotenuse.
+</div>
+
+<!-- SVG: Right-angled triangle labelled -->
+<div style="margin: 20px 0; display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start;">
+<svg width="260" height="200" viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <!-- Triangle: right angle at bottom-left -->
+  <polygon points="40,160 220,160 40,40" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Right angle mark -->
+  <polyline points="40,145 55,145 55,160" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <!-- Labels -->
+  <text x="120" y="182" font-size="15" fill="#166534" font-family="sans-serif" font-weight="700" text-anchor="middle">a (adjacent/base)</text>
+  <text x="22" y="105" font-size="15" fill="#7c3aed" font-family="sans-serif" font-weight="700" text-anchor="middle">b</text>
+  <text x="145" y="92" font-size="15" fill="#dc2626" font-family="sans-serif" font-weight="700" text-anchor="middle" transform="rotate(-33 145 92)">c (hypotenuse)</text>
+  <!-- Angle theta at bottom-right -->
+  <path d="M 200,160 A 20 20 0 0 0 220,143" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <text x="192" y="152" font-size="13" fill="#374151" font-family="sans-serif">&#952;</text>
+</svg>
+<div style="flex:1; min-width:200px;">
+  <div class="formula-box" style="margin-top:0;">
+    <strong>Finding the hypotenuse:</strong><br>
+    $c = \sqrt{a^2 + b^2}$<br><br>
+    <strong>Finding a shorter side:</strong><br>
+    $a = \sqrt{c^2 - b^2}$
+  </div>
+</div>
+</div>
+
+<div class="worked-example">
+  A right-angled triangle has legs 5 cm and 12 cm. Find the hypotenuse.<br><br>
+  $c = \sqrt{5^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = \mathbf{13}$ <strong>cm</strong>
+</div>
+
+<div class="worked-example">
+  The hypotenuse is 17 cm and one leg is 8 cm. Find the other leg.<br><br>
+  $a = \sqrt{17^2 - 8^2} = \sqrt{289 - 64} = \sqrt{225} = \mathbf{15}$ <strong>cm</strong>
+</div>
+
+<h3>Common Pythagorean Triples</h3>
+<table>
+  <thead><tr><th>Triple</th><th>Multiples (×2, ×3, …)</th></tr></thead>
+  <tbody>
+    <tr><td>3, 4, 5</td><td>6,8,10 &nbsp; 9,12,15 &nbsp; 15,20,25</td></tr>
+    <tr><td>5, 12, 13</td><td>10,24,26</td></tr>
+    <tr><td>8, 15, 17</td><td></td></tr>
+    <tr><td>7, 24, 25</td><td></td></tr>
+  </tbody>
+</table>
+
+<h3>Pythagoras in 3D</h3>
+<p>For a cuboid with dimensions $l \times w \times h$, the space diagonal $d$ is:</p>
+$$d = \sqrt{l^2 + w^2 + h^2}$$
+
+<div class="worked-example">
+  A cuboid is 6 cm long, 4 cm wide, 3 cm tall. Find the length of the space diagonal.<br><br>
+  First find the base diagonal: $\sqrt{6^2 + 4^2} = \sqrt{52}$<br>
+  Then: $d = \sqrt{(\sqrt{52})^2 + 3^2} = \sqrt{52 + 9} = \sqrt{61} \approx \mathbf{7.81}$ <strong>cm</strong>
+</div>
+
+<div class="exam-tip">
+  Always identify the hypotenuse first &mdash; it is opposite the right angle and is the longest side. If the answer is not a whole number, leave it as a surd ($\sqrt{}$) unless asked to round.
+</div>
+
+<!-- ===================== 4.4.2 SOHCAHTOA ===================== -->
+<h2>4.4.2 SOHCAHTOA (Right-Angled Trigonometry)</h2>
+
+<div class="definition">
+  For a right-angled triangle, the three basic trigonometric ratios relate an angle $\theta$ to the sides:
+  <ul>
+    <li><strong>Opposite</strong> — the side opposite to $\theta$</li>
+    <li><strong>Adjacent</strong> — the side next to $\theta$ (not the hypotenuse)</li>
+    <li><strong>Hypotenuse</strong> — the longest side (opposite the right angle)</li>
+  </ul>
+</div>
+
+<div class="sohcahtoa">
+  <div class="soh-card">
+    <div class="label">SOH</div>
+    <div class="formula">$\sin\theta = \dfrac{\text{Opp}}{\text{Hyp}}$</div>
+  </div>
+  <div class="soh-card">
+    <div class="label">CAH</div>
+    <div class="formula">$\cos\theta = \dfrac{\text{Adj}}{\text{Hyp}}$</div>
+  </div>
+  <div class="soh-card">
+    <div class="label">TOA</div>
+    <div class="formula">$\tan\theta = \dfrac{\text{Opp}}{\text{Adj}}$</div>
+  </div>
+</div>
+
+<!-- SVG: Labelled right-angle triangle for SOHCAHTOA -->
+<svg width="340" height="200" viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <!-- Triangle: right angle bottom-left, angle theta bottom-right -->
+  <polygon points="50,170 290,170 50,40" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Right angle mark -->
+  <polyline points="50,155 65,155 65,170" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <!-- Angle at bottom-right -->
+  <path d="M 268,170 A 22 22 0 0 0 290,150" fill="none" stroke="#374151" stroke-width="2"/>
+  <text x="256" y="162" font-size="14" fill="#374151" font-family="sans-serif" font-style="italic">&#952;</text>
+  <!-- Labels -->
+  <text x="165" y="192" font-size="14" fill="#16a34a" font-family="sans-serif" font-weight="700" text-anchor="middle">Adjacent</text>
+  <text x="25" y="110" font-size="14" fill="#7c3aed" font-family="sans-serif" font-weight="700" text-anchor="middle">Opposite</text>
+  <text x="195" y="90" font-size="14" fill="#dc2626" font-family="sans-serif" font-weight="700" text-anchor="middle" transform="rotate(-28 195 90)">Hypotenuse</text>
+  <!-- Small triangle for angle -->
+  <text x="50" y="25" font-size="12" fill="#374151" font-family="sans-serif">(right angle here)</text>
+</svg>
+
+<div class="worked-example">
+  <strong>Find a missing side:</strong> In triangle ABC, angle B = 35°, hypotenuse AB = 12 cm. Find BC (adjacent).<br><br>
+  Using CAH: $\cos 35° = \dfrac{BC}{12}$<br>
+  $BC = 12 \times \cos 35° = 12 \times 0.8192 \approx \mathbf{9.83}$ <strong>cm</strong>
+</div>
+
+<div class="worked-example">
+  <strong>Find a missing angle:</strong> Opposite = 7 cm, hypotenuse = 10 cm. Find $\theta$.<br><br>
+  Using SOH: $\sin\theta = \dfrac{7}{10} = 0.7$<br>
+  $\theta = \sin^{-1}(0.7) \approx \mathbf{44.4°}$
+</div>
+
+<h3>Special Triangles</h3>
+<div style="display:flex; gap:20px; flex-wrap:wrap; margin: 16px 0;">
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <!-- 30-60-90: sides 1, √3, 2 -->
+  <polygon points="20,160 160,160 20,40" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+  <polyline points="20,145 35,145 35,160" fill="none" stroke="#d97706" stroke-width="2"/>
+  <text x="85" y="178" font-size="13" fill="#374151" font-family="sans-serif" text-anchor="middle">&#8730;3</text>
+  <text x="8" y="103" font-size="13" fill="#374151" font-family="sans-serif">1</text>
+  <text x="103" y="95" font-size="13" fill="#374151" font-family="sans-serif" transform="rotate(-38 103 95)">2</text>
+  <text x="22" y="37" font-size="12" fill="#d97706" font-family="sans-serif">60°</text>
+  <text x="130" y="156" font-size="12" fill="#d97706" font-family="sans-serif">30°</text>
+  <text x="55" y="25" font-size="13" fill="#92400e" font-family="sans-serif" font-weight="700">30-60-90</text>
+</svg>
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <!-- 45-45-90: sides 1, 1, √2 -->
+  <polygon points="20,160 160,160 160,20" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>
+  <polyline points="145,160 145,145 160,145" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <text x="85" y="178" font-size="13" fill="#374151" font-family="sans-serif" text-anchor="middle">1</text>
+  <text x="166" y="93" font-size="13" fill="#374151" font-family="sans-serif">1</text>
+  <text x="78" y="88" font-size="13" fill="#374151" font-family="sans-serif" transform="rotate(-45 78 88)">&#8730;2</text>
+  <text x="22" y="150" font-size="12" fill="#166534" font-family="sans-serif">45°</text>
+  <text x="140" y="40" font-size="12" fill="#166534" font-family="sans-serif">45°</text>
+  <text x="42" y="20" font-size="13" fill="#166534" font-family="sans-serif" font-weight="700">45-45-90</text>
+</svg>
+</div>
+
+<table>
+  <thead><tr><th>Angle</th><th>sin</th><th>cos</th><th>tan</th></tr></thead>
+  <tbody>
+    <tr><td>0°</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>30°</td><td>$\frac{1}{2}$</td><td>$\frac{\sqrt{3}}{2}$</td><td>$\frac{1}{\sqrt{3}}$</td></tr>
+    <tr><td>45°</td><td>$\frac{1}{\sqrt{2}}$</td><td>$\frac{1}{\sqrt{2}}$</td><td>1</td></tr>
+    <tr><td>60°</td><td>$\frac{\sqrt{3}}{2}$</td><td>$\frac{1}{2}$</td><td>$\sqrt{3}$</td></tr>
+    <tr><td>90°</td><td>1</td><td>0</td><td>undefined</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">
+  When asked to give an exact value, use the special triangle values above &mdash; do not use a decimal approximation. On non-calculator papers, you will always get a special angle.
+</div>
+
+<!-- ===================== 4.4.3 TRIG GRAPHS [HIGHER] ===================== -->
+<h2>4.4.3 Trigonometric Graphs <span class="higher-tag">H</span></h2>
+
+<!-- SVG: sin and cos graphs -->
+<svg width="700" height="200" viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <!-- Axes -->
+  <line x1="30" y1="100" x2="690" y2="100" stroke="#9ca3af" stroke-width="1.5"/>
+  <line x1="30" y1="10" x2="30" y2="190" stroke="#9ca3af" stroke-width="1.5"/>
+  <!-- x labels -->
+  <text x="107" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">90</text>
+  <text x="193" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">180</text>
+  <text x="279" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">270</text>
+  <text x="363" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">360</text>
+  <text x="447" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">450</text>
+  <text x="533" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">540</text>
+  <text x="617" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">630</text>
+  <!-- y labels -->
+  <text x="8" y="35" font-size="11" fill="#6b7280" font-family="sans-serif">1</text>
+  <text x="4" y="168" font-size="11" fill="#6b7280" font-family="sans-serif">-1</text>
+  <!-- Tick marks -->
+  <line x1="110" y1="96" x2="110" y2="104" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="196" y1="96" x2="196" y2="104" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="282" y1="96" x2="282" y2="104" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="368" y1="96" x2="368" y2="104" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="454" y1="96" x2="454" y2="104" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="540" y1="96" x2="540" y2="104" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="626" y1="96" x2="626" y2="104" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="26" y1="30" x2="34" y2="30" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="26" y1="170" x2="34" y2="170" stroke="#9ca3af" stroke-width="1"/>
+  <!-- sin curve: period 360, amplitude 65px, centre y=100 -->
+  <!-- y = 100 - 65*sin(x*pi/180), x in degrees, pixel x = 30 + x*0.952 (360deg = 343px) -->
+  <path d="M30,100 C57,100 71,35 110,35 C149,35 163,100 196,100 C229,100 243,165 282,165 C321,165 335,100 368,100 C401,100 415,35 454,35 C493,35 507,100 540,100 C573,100 587,165 626,165 C651,165 665,100 684,100" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- cos curve: shifted 90 left -->
+  <path d="M30,35 C69,35 83,100 110,100 C137,100 151,165 196,165 C241,165 255,100 282,100 C309,100 323,35 368,35 C413,35 427,100 454,100 C481,100 495,165 540,165 C585,165 599,100 626,100 C653,100 667,35 684,35" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <!-- Legend -->
+  <line x1="50" y1="185" x2="80" y2="185" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="84" y="189" font-size="12" fill="#1e40af" font-family="sans-serif">y = sin x</text>
+  <line x1="170" y1="185" x2="200" y2="185" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <text x="204" y="189" font-size="12" fill="#dc2626" font-family="sans-serif">y = cos x</text>
+  <text x="590" y="20" font-size="12" fill="#374151" font-family="sans-serif">x (degrees)</text>
+</svg>
+
+<table>
+  <thead><tr><th>Graph</th><th>Period</th><th>Amplitude</th><th>Key features</th></tr></thead>
+  <tbody>
+    <tr><td>$y = \sin x$</td><td>360°</td><td>1</td><td>Starts at (0,0); max at 90°; zero at 180°, 360°; min at 270°</td></tr>
+    <tr><td>$y = \cos x$</td><td>360°</td><td>1</td><td>Starts at (0,1); zero at 90°, 270°; min at 180°; max at 360°</td></tr>
+    <tr><td>$y = \tan x$</td><td>180°</td><td>Unbounded</td><td>Asymptotes at 90°, 270°; passes through (0,0), (45°,1), (135°,−1)</td></tr>
+  </tbody>
+</table>
+
+<h3>Symmetry and Solutions</h3>
+<ul>
+  <li>$\sin(180° - x) = \sin x$ — sine is symmetric about 90°</li>
+  <li>$\cos(360° - x) = \cos x$ — cosine is symmetric about 0°/360°</li>
+  <li>$\cos(-x) = \cos x$ — cosine is an even function</li>
+  <li>If $\sin\theta = k$, the second solution in $[0°, 360°]$ is $180° - \theta$</li>
+  <li>If $\cos\theta = k$, the second solution in $[0°, 360°]$ is $360° - \theta$</li>
+</ul>
+
+<div class="worked-example">
+  Solve $\sin\theta = 0.6$ for $0° \le \theta \le 360°$.<br><br>
+  $\theta = \sin^{-1}(0.6) = 36.87°$<br>
+  Second solution: $180° - 36.87° = 143.13°$<br>
+  <strong>$\theta \approx 36.9°$ or $143.1°$</strong>
+</div>
+
+<!-- ===================== 4.4.4 SINE RULE [HIGHER] ===================== -->
+<h2>4.4.4 Sine Rule <span class="higher-tag">H</span></h2>
+
+<div class="definition">
+  For any triangle with sides $a, b, c$ opposite to angles $A, B, C$ respectively:
+  $$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$$
+  Rearranged for finding angles:
+  $$\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$$
+</div>
+
+<p><strong>Use the Sine Rule when you know:</strong> two angles and one side (AAS / ASA), or two sides and a non-included angle (SSA).</p>
+
+<div class="worked-example">
+  In triangle ABC: $a = 8$ cm, $A = 40°$, $B = 70°$. Find $b$.<br><br>
+  $\dfrac{b}{\sin 70°} = \dfrac{8}{\sin 40°}$<br><br>
+  $b = \dfrac{8 \times \sin 70°}{\sin 40°} = \dfrac{8 \times 0.9397}{0.6428} \approx \mathbf{11.7}$ <strong>cm</strong>
+</div>
+
+<div class="worked-example">
+  Find angle $B$ given $b = 12$ cm, $a = 9$ cm, $A = 55°$.<br><br>
+  $\dfrac{\sin B}{12} = \dfrac{\sin 55°}{9}$<br><br>
+  $\sin B = \dfrac{12 \times \sin 55°}{9} = \dfrac{12 \times 0.8192}{9} = 1.092...$<br><br>
+  Since $\sin B > 1$, no solution exists — the triangle is impossible with these measurements.
+</div>
+
+<h3>The Ambiguous Case (SSA)</h3>
+<p>When given two sides and a non-included angle, there may be <strong>0, 1, or 2 valid triangles</strong>. If $\sin B < 1$, check whether $B$ (acute) and $180° - B$ (obtuse) both give a valid triangle (i.e. sum of angles &lt; 180°).</p>
+
+<div class="exam-tip">
+  For angles, use the form $\frac{\sin A}{a}$ (sine over side). For sides, use $\frac{a}{\sin A}$ (side over sine). Only use two parts of the rule at once &mdash; pick the pair with the most knowns.
+</div>
+
+<!-- ===================== 4.4.5 COSINE RULE [HIGHER] ===================== -->
+<h2>4.4.5 Cosine Rule <span class="higher-tag">H</span></h2>
+
+<div class="definition">
+  For any triangle:
+  $$a^2 = b^2 + c^2 - 2bc\cos A$$
+  Rearranged to find an angle:
+  $$\cos A = \frac{b^2 + c^2 - a^2}{2bc}$$
+</div>
+
+<p><strong>Use the Cosine Rule when you know:</strong> two sides and the included angle (SAS), or all three sides (SSS).</p>
+
+<div class="worked-example">
+  Sides $b = 7$, $c = 10$, included angle $A = 50°$. Find $a$.<br><br>
+  $a^2 = 7^2 + 10^2 - 2(7)(10)\cos 50°$<br>
+  $a^2 = 49 + 100 - 140 \times 0.6428 = 149 - 89.99 = 59.01$<br>
+  $a = \sqrt{59.01} \approx \mathbf{7.68}$ <strong>cm</strong>
+</div>
+
+<div class="worked-example">
+  Three sides $a = 5$, $b = 7$, $c = 9$. Find angle $A$.<br><br>
+  $\cos A = \dfrac{7^2 + 9^2 - 5^2}{2 \times 7 \times 9} = \dfrac{49 + 81 - 25}{126} = \dfrac{105}{126} = 0.8333$<br><br>
+  $A = \cos^{-1}(0.8333) \approx \mathbf{33.6°}$
+</div>
+
+<div class="exam-tip">
+  Never use the Cosine Rule for a right-angled triangle &mdash; Pythagoras or SOHCAHTOA is simpler. The Cosine Rule is for non-right-angled triangles only.
+</div>
+
+<!-- ===================== 4.4.6 AREA OF TRIANGLE [HIGHER] ===================== -->
+<h2>4.4.6 Area of a Triangle <span class="higher-tag">H</span></h2>
+
+<div class="formula-box">
+  For any triangle with two sides $a$ and $b$ and included angle $C$:
+  $$A = \frac{1}{2}ab\sin C$$
+</div>
+
+<div class="worked-example">
+  Triangle with sides 8 cm and 11 cm, included angle 63°. Find the area.<br><br>
+  $A = \frac{1}{2} \times 8 \times 11 \times \sin 63° = 44 \times 0.891 \approx \mathbf{39.2}$ <strong>cm²</strong>
+</div>
+
+<div class="worked-example">
+  The area of a triangle is 30 cm². Two sides are 10 cm and 9 cm. Find the included angle.<br><br>
+  $30 = \frac{1}{2} \times 10 \times 9 \times \sin C$<br>
+  $\sin C = \dfrac{30}{45} = 0.6\overline{6}$<br>
+  $C = \sin^{-1}(0.6\overline{6}) \approx \mathbf{41.8°}$
+</div>
+
+<h3>Choosing the Right Rule</h3>
+<table>
+  <thead><tr><th>Given</th><th>Find</th><th>Rule to use</th></tr></thead>
+  <tbody>
+    <tr><td>Right angle + 2 sides</td><td>Side or angle</td><td>Pythagoras / SOHCAHTOA</td></tr>
+    <tr><td>AAS or ASA (2 angles, 1 side)</td><td>Side or angle</td><td>Sine Rule</td></tr>
+    <tr><td>SSA (2 sides, non-included angle)</td><td>Angle or side</td><td>Sine Rule</td></tr>
+    <tr><td>SAS (2 sides, included angle)</td><td>Third side</td><td>Cosine Rule</td></tr>
+    <tr><td>SSS (3 sides)</td><td>Any angle</td><td>Cosine Rule</td></tr>
+    <tr><td>SAS (2 sides, included angle)</td><td>Area</td><td>$\frac{1}{2}ab\sin C$</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

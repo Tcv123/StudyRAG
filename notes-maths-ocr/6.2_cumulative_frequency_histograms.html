@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 6.2 — Cumulative Frequency, Histograms and Box Plots</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .higher-only { background: #fdf4ff; border-left: 4px solid #a855f7; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-only::before { content: "Higher Tier Only: "; font-weight: 700; color: #7e22ce; }
+        .katex-display { margin: 16px 0; }
+        svg { display: block; margin: 16px auto; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>6.2 Cumulative Frequency, Histograms and Box Plots</h1>
+<p class="spec-ref">OCR GCSE Mathematics J560 &mdash; Unit 6 &mdash; Papers 2 and 3 (Higher content marked)</p>
+
+<!-- ============================================================ -->
+<h2>6.2.1 Cumulative Frequency Tables and Graphs</h2>
+
+<div class="definition">
+  <strong>Cumulative frequency</strong> is a running total of frequencies up to (and including) the end of each class interval.<br><br>
+  The cumulative frequency graph (ogive) is plotted with:<br>
+  <ul style="margin-bottom:0;">
+    <li><strong>x-axis</strong>: the <em>upper boundary</em> of each class interval</li>
+    <li><strong>y-axis</strong>: the cumulative frequency</li>
+  </ul>
+  Points are joined with a smooth S-shaped curve. The curve always starts at the lower boundary of the first class (cumulative frequency = 0) and ends at the total frequency.
+</div>
+
+<div class="worked-example">
+  The heights of 60 plants are recorded.<br><br>
+  <table>
+    <tr><th>Height $h$ (cm)</th><th>Frequency</th><th>Cumulative Frequency</th></tr>
+    <tr><td>$0 \leq h &lt; 10$</td><td>5</td><td>5</td></tr>
+    <tr><td>$10 \leq h &lt; 20$</td><td>12</td><td>17</td></tr>
+    <tr><td>$20 \leq h &lt; 30$</td><td>20</td><td>37</td></tr>
+    <tr><td>$30 \leq h &lt; 40$</td><td>15</td><td>52</td></tr>
+    <tr><td>$40 \leq h &lt; 50$</td><td>8</td><td>60</td></tr>
+  </table>
+  Plot points at: $(10, 5)$, $(20, 17)$, $(30, 37)$, $(40, 52)$, $(50, 60)$, and also $(0, 0)$ as the starting point.
+</div>
+
+<h3>Reading Median and Quartiles from the Curve</h3>
+<div class="definition">
+  For a total frequency $n$:<br><br>
+  <ul style="margin-bottom:0;">
+    <li><strong>Median</strong>: read off at cumulative frequency $= \dfrac{n}{2}$</li>
+    <li><strong>Lower Quartile (Q1)</strong>: read off at cumulative frequency $= \dfrac{n}{4}$</li>
+    <li><strong>Upper Quartile (Q3)</strong>: read off at cumulative frequency $= \dfrac{3n}{4}$</li>
+    <li><strong>Interquartile Range (IQR)</strong> $= Q3 - Q1$</li>
+  </ul>
+</div>
+
+<!-- Cumulative Frequency Curve SVG -->
+<svg width="560" height="360" viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" aria-label="Cumulative frequency curve (S-curve) with median and quartiles marked">
+  <!-- Title -->
+  <text x="280" y="20" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">Cumulative Frequency Curve (n = 60)</text>
+
+  <!-- Axes -->
+  <line x1="70" y1="310" x2="500" y2="310" stroke="#374151" stroke-width="2"/>
+  <line x1="70" y1="310" x2="70"  y2="30"  stroke="#374151" stroke-width="2"/>
+  <polygon points="500,310 492,305 492,315" fill="#374151"/>
+  <polygon points="70,30 65,38 75,38" fill="#374151"/>
+
+  <!-- Axis labels -->
+  <text x="285" y="348" text-anchor="middle" font-size="13" fill="#374151">Height (cm)</text>
+  <text x="18" y="175" text-anchor="middle" font-size="13" fill="#374151" transform="rotate(-90,18,175)">Cumulative Frequency</text>
+
+  <!-- X-axis ticks: 0,10,20,30,40,50 mapped to x=70+val*8.4 -->
+  <!-- 0→70, 10→154, 20→238, 30→322, 40→406, 50→490 -->
+  <line x1="70"  y1="310" x2="70"  y2="316" stroke="#374151"/>
+  <text x="70"  y="328" text-anchor="middle" font-size="11" fill="#374151">0</text>
+  <line x1="154" y1="310" x2="154" y2="316" stroke="#374151"/>
+  <text x="154" y="328" text-anchor="middle" font-size="11" fill="#374151">10</text>
+  <line x1="238" y1="310" x2="238" y2="316" stroke="#374151"/>
+  <text x="238" y="328" text-anchor="middle" font-size="11" fill="#374151">20</text>
+  <line x1="322" y1="310" x2="322" y2="316" stroke="#374151"/>
+  <text x="322" y="328" text-anchor="middle" font-size="11" fill="#374151">30</text>
+  <line x1="406" y1="310" x2="406" y2="316" stroke="#374151"/>
+  <text x="406" y="328" text-anchor="middle" font-size="11" fill="#374151">40</text>
+  <line x1="490" y1="310" x2="490" y2="316" stroke="#374151"/>
+  <text x="490" y="328" text-anchor="middle" font-size="11" fill="#374151">50</text>
+
+  <!-- Y-axis ticks: 0,10,20,30,40,50,60 mapped to y=310-val*4.5 -->
+  <!-- 0→310, 10→265, 20→220, 30→175, 40→130, 50→85, 60→40 -->
+  <line x1="70" y1="310" x2="64" y2="310" stroke="#374151"/>
+  <text x="60" y="314" text-anchor="end" font-size="11" fill="#374151">0</text>
+  <line x1="70" y1="265" x2="64" y2="265" stroke="#374151"/>
+  <text x="60" y="269" text-anchor="end" font-size="11" fill="#374151">10</text>
+  <line x1="70" y1="220" x2="64" y2="220" stroke="#374151"/>
+  <text x="60" y="224" text-anchor="end" font-size="11" fill="#374151">20</text>
+  <line x1="70" y1="175" x2="64" y2="175" stroke="#374151"/>
+  <text x="60" y="179" text-anchor="end" font-size="11" fill="#374151">30</text>
+  <line x1="70" y1="130" x2="64" y2="130" stroke="#374151"/>
+  <text x="60" y="134" text-anchor="end" font-size="11" fill="#374151">40</text>
+  <line x1="70" y1="85"  x2="64" y2="85"  stroke="#374151"/>
+  <text x="60" y="89"  text-anchor="end" font-size="11" fill="#374151">50</text>
+  <line x1="70" y1="40"  x2="64" y2="40"  stroke="#374151"/>
+  <text x="60" y="44"  text-anchor="end" font-size="11" fill="#374151">60</text>
+
+  <!-- S-curve: points (0,0),(10,5),(20,17),(30,37),(40,52),(50,60)
+       Mapped: x=70+h*8.4, y=310-cf*4.5
+       (70,310),(154,287.5),(238,233.5),(322,143.5),(406,76),(490,40) -->
+  <path d="M70,310 C100,310 130,292 154,287.5 C185,282 210,255 238,233.5 C270,207 295,165 322,143.5 C355,120 380,82 406,76 C435,70 465,42 490,40"
+        fill="none" stroke="#2563eb" stroke-width="2.5"/>
+
+  <!-- Data points -->
+  <circle cx="70"  cy="310"   r="4" fill="#2563eb"/>
+  <circle cx="154" cy="287.5" r="4" fill="#2563eb"/>
+  <circle cx="238" cy="233.5" r="4" fill="#2563eb"/>
+  <circle cx="322" cy="143.5" r="4" fill="#2563eb"/>
+  <circle cx="406" cy="76"    r="4" fill="#2563eb"/>
+  <circle cx="490" cy="40"    r="4" fill="#2563eb"/>
+
+  <!-- Median line: n/2 = 30, y=310-30*4.5=175 → read x from curve ≈ 322 (h=30) -->
+  <!-- Actually from curve h≈28.5 for cf=30; approximate x = 70+28.5*8.4 ≈ 309 -->
+  <line x1="70" y1="175" x2="309" y2="175" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="309" y1="175" x2="309" y2="310" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="68" y="172" text-anchor="end" font-size="11" fill="#dc2626" font-weight="600">30</text>
+  <text x="309" y="325" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="600">~28.5</text>
+  <text x="315" y="165" font-size="11" fill="#dc2626" font-weight="600">Median</text>
+
+  <!-- Q1 line: n/4=15, y=310-15*4.5=242.5 → h≈21.5, x≈70+21.5*8.4≈251 -->
+  <line x1="70" y1="242.5" x2="251" y2="242.5" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="251" y1="242.5" x2="251" y2="310" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="68" y="239" text-anchor="end" font-size="11" fill="#f59e0b" font-weight="600">15</text>
+  <text x="251" y="325" text-anchor="middle" font-size="11" fill="#f59e0b" font-weight="600">~21.5</text>
+  <text x="257" y="234" font-size="11" fill="#f59e0b" font-weight="600">Q1</text>
+
+  <!-- Q3 line: 3n/4=45, y=310-45*4.5=107.5 → h≈36.5, x≈70+36.5*8.4≈377 -->
+  <line x1="70" y1="107.5" x2="377" y2="107.5" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="377" y1="107.5" x2="377" y2="310" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="68" y="104" text-anchor="end" font-size="11" fill="#16a34a" font-weight="600">45</text>
+  <text x="377" y="325" text-anchor="middle" font-size="11" fill="#16a34a" font-weight="600">~36.5</text>
+  <text x="383" y="98" font-size="11" fill="#16a34a" font-weight="600">Q3</text>
+</svg>
+
+<p>From the graph above: $Q1 \approx 21.5$, Median $\approx 28.5$, $Q3 \approx 36.5$, so $\text{IQR} = 36.5 - 21.5 = 15$ cm.</p>
+
+<div class="exam-tip">
+  Always plot cumulative frequency at the <strong>upper class boundary</strong> (not the midpoint). The curve must start at the lower boundary of the first class with CF = 0. Draw the S-curve smoothly — do not join points with ruled straight lines.
+</div>
+
+<!-- ============================================================ -->
+<h2>6.2.2 Box Plots (Box-and-Whisker Diagrams)</h2>
+
+<div class="definition">
+  A <strong>box plot</strong> displays the five-number summary of a dataset:<br><br>
+  <ul style="margin-bottom:0;">
+    <li><strong>Minimum</strong> — smallest value</li>
+    <li><strong>Lower Quartile (Q1)</strong> — 25th percentile</li>
+    <li><strong>Median (Q2)</strong> — 50th percentile (middle value)</li>
+    <li><strong>Upper Quartile (Q3)</strong> — 75th percentile</li>
+    <li><strong>Maximum</strong> — largest value</li>
+    <li><strong>IQR</strong> $= Q3 - Q1$ (the width of the box)</li>
+  </ul>
+</div>
+
+<!-- Box Plot SVG -->
+<svg width="580" height="160" viewBox="0 0 580 160" xmlns="http://www.w3.org/2000/svg" aria-label="Box plot showing all five-number summary">
+  <!-- Title -->
+  <text x="290" y="20" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">Box Plot — Heights of 60 Plants (cm)</text>
+
+  <!-- Scale axis: 0 to 50, mapped x = 60 + val*9.2 -->
+  <!-- 0→60, 10→152, 20→244, 30→336, 40→428, 50→520 -->
+  <line x1="60" y1="110" x2="530" y2="110" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Axis ticks and labels -->
+  <line x1="60"  y1="110" x2="60"  y2="117" stroke="#374151"/>
+  <text x="60"  y="130" text-anchor="middle" font-size="11" fill="#374151">0</text>
+  <line x1="152" y1="110" x2="152" y2="117" stroke="#374151"/>
+  <text x="152" y="130" text-anchor="middle" font-size="11" fill="#374151">10</text>
+  <line x1="244" y1="110" x2="244" y2="117" stroke="#374151"/>
+  <text x="244" y="130" text-anchor="middle" font-size="11" fill="#374151">20</text>
+  <line x1="336" y1="110" x2="336" y2="117" stroke="#374151"/>
+  <text x="336" y="130" text-anchor="middle" font-size="11" fill="#374151">30</text>
+  <line x1="428" y1="110" x2="428" y2="117" stroke="#374151"/>
+  <text x="428" y="130" text-anchor="middle" font-size="11" fill="#374151">40</text>
+  <line x1="520" y1="110" x2="520" y2="117" stroke="#374151"/>
+  <text x="520" y="130" text-anchor="middle" font-size="11" fill="#374151">50</text>
+
+  <!-- Five-number summary: Min=3, Q1=21.5, Median=28.5, Q3=36.5, Max=48 -->
+  <!-- x positions: min=60+3*9.2=87.6, Q1=60+21.5*9.2=257.8, Med=60+28.5*9.2=322.2, Q3=60+36.5*9.2=395.8, max=60+48*9.2=501.6 -->
+
+  <!-- Left whisker -->
+  <line x1="87.6" y1="75" x2="257.8" y2="75" stroke="#1e40af" stroke-width="2"/>
+  <!-- Min vertical tick -->
+  <line x1="87.6" y1="62" x2="87.6" y2="88" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Box from Q1 to Q3 -->
+  <rect x="257.8" y="55" width="138" height="40" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Median line -->
+  <line x1="322.2" y1="55" x2="322.2" y2="95" stroke="#dc2626" stroke-width="2.5"/>
+
+  <!-- Right whisker -->
+  <line x1="395.8" y1="75" x2="501.6" y2="75" stroke="#1e40af" stroke-width="2"/>
+  <!-- Max vertical tick -->
+  <line x1="501.6" y1="62" x2="501.6" y2="88" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Labels -->
+  <text x="87.6"  y="50" text-anchor="middle" font-size="10" fill="#374151">Min</text>
+  <text x="87.6"  y="42" text-anchor="middle" font-size="10" fill="#374151">3</text>
+  <text x="257.8" y="50" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">Q1</text>
+  <text x="257.8" y="42" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">21.5</text>
+  <text x="322.2" y="50" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="600">Med</text>
+  <text x="322.2" y="42" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="600">28.5</text>
+  <text x="395.8" y="50" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">Q3</text>
+  <text x="395.8" y="42" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">36.5</text>
+  <text x="501.6" y="50" text-anchor="middle" font-size="10" fill="#374151">Max</text>
+  <text x="501.6" y="42" text-anchor="middle" font-size="10" fill="#374151">48</text>
+
+  <!-- IQR brace annotation -->
+  <text x="326.9" y="150" text-anchor="middle" font-size="11" fill="#1e40af">IQR = Q3 − Q1 = 36.5 − 21.5 = 15 cm</text>
+</svg>
+
+<div class="worked-example">
+  <strong>Constructing a box plot</strong> from the plant height data (Min=3, Q1=21.5, Median=28.5, Q3=36.5, Max=48):<br><br>
+  <ol>
+    <li>Draw a scaled number line.</li>
+    <li>Draw a box from Q1 (21.5) to Q3 (36.5).</li>
+    <li>Draw a vertical line inside the box at the median (28.5).</li>
+    <li>Draw whiskers from Q1 to the minimum (3) and from Q3 to the maximum (48).</li>
+    <li>Add short vertical lines at the minimum and maximum.</li>
+  </ol>
+  <br>
+  $\text{IQR} = 36.5 - 21.5 = 15$ cm
+</div>
+
+<div class="exam-tip">
+  The whiskers go to the <strong>minimum and maximum</strong> values in the data (not to Q1 − 1.5×IQR as in some advanced statistics). In GCSE, always use the actual min and max for the whiskers unless told otherwise.
+</div>
+
+<!-- ============================================================ -->
+<h2>6.2.3 Histograms <span style="font-size:0.8em;color:#7e22ce;">[Higher]</span></h2>
+
+<div class="higher-only">
+  Histograms are used for <strong>grouped continuous data with unequal class widths</strong>. Unlike bar charts, the <strong>area</strong> of each bar (not the height) represents frequency.<br><br>
+  $$\text{Frequency Density} = \frac{\text{Frequency}}{\text{Class Width}}$$
+  <br>
+  Rearranged: $\text{Frequency} = \text{Frequency Density} \times \text{Class Width}$
+</div>
+
+<div class="worked-example">
+  The times taken (in minutes) by 80 students to complete a task are recorded.<br><br>
+  <table>
+    <tr><th>Time $t$ (min)</th><th>Frequency</th><th>Class Width</th><th>Frequency Density</th></tr>
+    <tr><td>$0 \leq t &lt; 10$</td><td>8</td><td>10</td><td>$8 \div 10 = 0.8$</td></tr>
+    <tr><td>$10 \leq t &lt; 20$</td><td>20</td><td>10</td><td>$20 \div 10 = 2.0$</td></tr>
+    <tr><td>$20 \leq t &lt; 30$</td><td>24</td><td>10</td><td>$24 \div 10 = 2.4$</td></tr>
+    <tr><td>$30 \leq t &lt; 50$</td><td>20</td><td>20</td><td>$20 \div 20 = 1.0$</td></tr>
+    <tr><td>$50 \leq t &lt; 80$</td><td>8</td><td>30</td><td>$8 \div 30 \approx 0.27$</td></tr>
+  </table>
+  <strong>Note</strong>: The last two classes have <em>wider</em> class widths. Without using frequency density, those bars would appear deceptively tall.
+</div>
+
+<!-- Histogram SVG -->
+<svg width="580" height="320" viewBox="0 0 580 320" xmlns="http://www.w3.org/2000/svg" aria-label="Histogram with unequal class widths showing frequency density on y-axis">
+  <!-- Title -->
+  <text x="290" y="20" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">Histogram — Time to Complete Task</text>
+
+  <!-- Axes -->
+  <line x1="70" y1="270" x2="530" y2="270" stroke="#374151" stroke-width="2"/>
+  <line x1="70" y1="270" x2="70"  y2="30"  stroke="#374151" stroke-width="2"/>
+  <polygon points="530,270 522,265 522,275" fill="#374151"/>
+  <polygon points="70,30 65,38 75,38" fill="#374151"/>
+
+  <!-- Axis labels -->
+  <text x="300" y="308" text-anchor="middle" font-size="13" fill="#374151">Time (minutes)</text>
+  <text x="18" y="155" text-anchor="middle" font-size="12" fill="#374151" transform="rotate(-90,18,155)">Frequency Density</text>
+
+  <!-- X-axis: 0,10,20,30,50,80 — scale: 1 min = 4.6px, origin x=70 -->
+  <!-- 0→70, 10→116, 20→162, 30→208, 50→300, 80→438 -->
+  <line x1="70"  y1="270" x2="70"  y2="277" stroke="#374151"/>
+  <text x="70"  y="290" text-anchor="middle" font-size="11" fill="#374151">0</text>
+  <line x1="116" y1="270" x2="116" y2="277" stroke="#374151"/>
+  <text x="116" y="290" text-anchor="middle" font-size="11" fill="#374151">10</text>
+  <line x1="162" y1="270" x2="162" y2="277" stroke="#374151"/>
+  <text x="162" y="290" text-anchor="middle" font-size="11" fill="#374151">20</text>
+  <line x1="208" y1="270" x2="208" y2="277" stroke="#374151"/>
+  <text x="208" y="290" text-anchor="middle" font-size="11" fill="#374151">30</text>
+  <line x1="300" y1="270" x2="300" y2="277" stroke="#374151"/>
+  <text x="300" y="290" text-anchor="middle" font-size="11" fill="#374151">50</text>
+  <line x1="438" y1="270" x2="438" y2="277" stroke="#374151"/>
+  <text x="438" y="290" text-anchor="middle" font-size="11" fill="#374151">80</text>
+
+  <!-- Y-axis: FD 0 to 2.5, scale: 1 FD unit = 80px, origin y=270 -->
+  <!-- 0→270, 0.5→230, 1→190, 1.5→150, 2→110, 2.5→70 -->
+  <line x1="70" y1="270" x2="63" y2="270" stroke="#374151"/>
+  <text x="60" y="274" text-anchor="end" font-size="11" fill="#374151">0</text>
+  <line x1="70" y1="230" x2="63" y2="230" stroke="#374151"/>
+  <text x="60" y="234" text-anchor="end" font-size="11" fill="#374151">0.5</text>
+  <line x1="70" y1="190" x2="63" y2="190" stroke="#374151"/>
+  <text x="60" y="194" text-anchor="end" font-size="11" fill="#374151">1.0</text>
+  <line x1="70" y1="150" x2="63" y2="150" stroke="#374151"/>
+  <text x="60" y="154" text-anchor="end" font-size="11" fill="#374151">1.5</text>
+  <line x1="70" y1="110" x2="63" y2="110" stroke="#374151"/>
+  <text x="60" y="114" text-anchor="end" font-size="11" fill="#374151">2.0</text>
+  <line x1="70" y1="70"  x2="63" y2="70"  stroke="#374151"/>
+  <text x="60" y="74"  text-anchor="end" font-size="11" fill="#374151">2.5</text>
+
+  <!-- Bars (FD × 80 = height in px, subtracted from 270):
+       0-10: FD=0.8 → h=64 → top y=206; x1=70, x2=116, width=46
+       10-20: FD=2.0 → h=160 → top y=110; x1=116, x2=162, width=46
+       20-30: FD=2.4 → h=192 → top y=78; x1=162, x2=208, width=46
+       30-50: FD=1.0 → h=80 → top y=190; x1=208, x2=300, width=92
+       50-80: FD≈0.267 → h=21.3 → top y=248.7; x1=300, x2=438, width=138 -->
+  <rect x="70"  y="206"   width="46"  height="64"    fill="#3b82f6" stroke="#1e40af" stroke-width="1.5"/>
+  <rect x="116" y="110"   width="46"  height="160"   fill="#3b82f6" stroke="#1e40af" stroke-width="1.5"/>
+  <rect x="162" y="78"    width="46"  height="192"   fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+  <rect x="208" y="190"   width="92"  height="80"    fill="#3b82f6" stroke="#1e40af" stroke-width="1.5"/>
+  <rect x="300" y="248.7" width="138" height="21.3"  fill="#93c5fd" stroke="#1e40af" stroke-width="1.5"/>
+
+  <!-- FD labels on bars -->
+  <text x="93"  y="200" text-anchor="middle" font-size="10" fill="#1e3a5f" font-weight="600">0.8</text>
+  <text x="139" y="104" text-anchor="middle" font-size="10" fill="#1e3a5f" font-weight="600">2.0</text>
+  <text x="185" y="72"  text-anchor="middle" font-size="10" fill="#1e3a5f" font-weight="600">2.4</text>
+  <text x="254" y="184" text-anchor="middle" font-size="10" fill="#1e3a5f" font-weight="600">1.0</text>
+  <text x="369" y="243" text-anchor="middle" font-size="10" fill="#1e3a5f" font-weight="600">0.27</text>
+</svg>
+
+<h3>Reading Frequency from a Histogram</h3>
+<div class="worked-example">
+  Using the histogram above: how many students took between 30 and 50 minutes?<br><br>
+  Bar from 30 to 50: class width = 20, frequency density = 1.0<br>
+  $\text{Frequency} = 1.0 \times 20 = 20$ students
+</div>
+
+<h3>Estimating the Number in Part of a Class</h3>
+<div class="worked-example">
+  How many students took between 20 and 25 minutes?<br><br>
+  Bar from 20 to 30: FD = 2.4, class width = 10<br>
+  We want only half the bar (20 to 25): class width = 5<br>
+  $\text{Frequency} = 2.4 \times 5 = 12$ students<br><br>
+  <em>This assumes the data is evenly spread within the class interval.</em>
+</div>
+
+<div class="exam-tip">
+  The y-axis of a histogram is always <strong>frequency density</strong>, never frequency. Never label it as frequency. Always calculate frequency density = frequency &divide; class width before drawing. The area of each bar = frequency.
+</div>
+
+<!-- ============================================================ -->
+<h2>6.2.4 Comparing Distributions</h2>
+
+<div class="definition">
+  To compare two distributions you must comment on <strong>both</strong>:<br><br>
+  <ul style="margin-bottom:0;">
+    <li>A measure of <strong>average</strong> (usually median when using box plots or cumulative frequency)</li>
+    <li>A measure of <strong>spread</strong> (usually IQR when using box plots; range if appropriate)</li>
+  </ul>
+  Always refer back to the <strong>context</strong> of the question.
+</div>
+
+<div class="worked-example">
+  Two classes took the same test. Their results (out of 100) are summarised below:<br><br>
+  <table>
+    <tr><th>Statistic</th><th>Class A</th><th>Class B</th></tr>
+    <tr><td>Minimum</td><td>30</td><td>20</td></tr>
+    <tr><td>Q1</td><td>52</td><td>45</td></tr>
+    <tr><td>Median</td><td>65</td><td>62</td></tr>
+    <tr><td>Q3</td><td>74</td><td>80</td></tr>
+    <tr><td>Maximum</td><td>90</td><td>98</td></tr>
+    <tr><td><strong>IQR</strong></td><td>$74-52=22$</td><td>$80-45=35$</td></tr>
+  </table>
+  <strong>Comparison:</strong><br><br>
+  <em>Average:</em> Class A has a higher median (65 vs 62), so Class A performed slightly better on average.<br><br>
+  <em>Spread:</em> Class A has a smaller IQR (22 vs 35), so Class A's scores were more consistent. Class B had more variation in performance.
+</div>
+
+<h3>Interpreting Skewness from a Box Plot</h3>
+<table>
+  <tr><th>Shape</th><th>Box Plot Feature</th><th>Meaning</th></tr>
+  <tr><td>Symmetric</td><td>Median in centre of box; whiskers roughly equal</td><td>Data evenly distributed around median</td></tr>
+  <tr><td>Positive skew</td><td>Median closer to Q1; longer upper whisker</td><td>Most data at lower end; a few high values pull the mean up</td></tr>
+  <tr><td>Negative skew</td><td>Median closer to Q3; longer lower whisker</td><td>Most data at upper end; a few low values pull the mean down</td></tr>
+</table>
+
+<div class="exam-tip">
+  In exam comparison questions, always make <strong>two separate statements</strong>: one about average and one about spread. Each statement must include the actual values (e.g. "The median for Class A is 65, which is higher than Class B's median of 62") and a conclusion in context. Vague answers such as "Class A did better" will not gain full marks.
+</div>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

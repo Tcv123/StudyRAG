@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 5.1 — Probability</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .katex-display { margin: 16px 0; }
+        .higher-only { background: #fdf4ff; border-left: 4px solid #a855f7; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-only::before { content: "Higher Tier Only: "; font-weight: 700; color: #7e22ce; }
+        svg { display: block; margin: 16px auto; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>5.1 Probability</h1>
+<p class="spec-ref">OCR GCSE Mathematics J560 &mdash; Unit 5 &mdash; Papers 1, 2 and 3 (Foundation and Higher)</p>
+
+<!-- ============================================================ -->
+<h2>5.1.1 Basic Probability Concepts</h2>
+
+<div class="definition">
+  <strong>Probability</strong> is a measure of how likely an event is to occur. It is always a value between 0 and 1 (inclusive).<br><br>
+  <ul style="margin-bottom:0;">
+    <li>Probability = 0 &rarr; <strong>impossible</strong> (cannot happen)</li>
+    <li>Probability = 1 &rarr; <strong>certain</strong> (will definitely happen)</li>
+    <li>Probability = 0.5 &rarr; <strong>equally likely</strong> to happen or not happen</li>
+  </ul>
+</div>
+
+<h3>The Probability Scale</h3>
+
+<!-- Probability Scale SVG -->
+<svg width="680" height="90" viewBox="0 0 680 90" xmlns="http://www.w3.org/2000/svg" aria-label="Probability scale from 0 to 1">
+  <!-- Arrow line -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1e40af"/>
+    </marker>
+  </defs>
+  <line x1="40" y1="45" x2="640" y2="45" stroke="#1e40af" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <!-- Tick marks -->
+  <line x1="40"  y1="38" x2="40"  y2="52" stroke="#1e40af" stroke-width="2"/>
+  <line x1="340" y1="38" x2="340" y2="52" stroke="#1e40af" stroke-width="2"/>
+  <line x1="630" y1="38" x2="630" y2="52" stroke="#1e40af" stroke-width="2"/>
+  <!-- Labels below line -->
+  <text x="40"  y="68" text-anchor="middle" font-size="14" fill="#1a1a2e" font-weight="600">0</text>
+  <text x="340" y="68" text-anchor="middle" font-size="14" fill="#1a1a2e" font-weight="600">0.5</text>
+  <text x="630" y="68" text-anchor="middle" font-size="14" fill="#1a1a2e" font-weight="600">1</text>
+  <!-- Labels above line -->
+  <text x="40"  y="28" text-anchor="middle" font-size="12" fill="#dc2626">Impossible</text>
+  <text x="195" y="28" text-anchor="middle" font-size="12" fill="#6b7280">Unlikely</text>
+  <text x="340" y="28" text-anchor="middle" font-size="12" fill="#d97706">Even chance</text>
+  <text x="490" y="28" text-anchor="middle" font-size="12" fill="#6b7280">Likely</text>
+  <text x="630" y="28" text-anchor="middle" font-size="12" fill="#16a34a">Certain</text>
+</svg>
+
+<h3>Theoretical Probability Formula</h3>
+<p>When all outcomes are equally likely:</p>
+$$P(\text{event}) = \frac{\text{number of favourable outcomes}}{\text{total number of possible outcomes}}$$
+
+<h3>Complementary Events</h3>
+<div class="definition">
+  The <strong>complement</strong> of event $A$, written $A'$ (or $\bar{A}$), is the event that $A$ does <em>not</em> happen.<br><br>
+  $$P(A') = 1 - P(A)$$
+  <br>
+  The probabilities of all mutually exclusive, exhaustive outcomes must sum to 1.
+</div>
+
+<div class="worked-example">
+  A bag contains 3 red, 5 blue and 2 green counters. A counter is chosen at random.<br><br>
+  <strong>(a)</strong> Find $P(\text{red})$.<br>
+  Total outcomes = $3 + 5 + 2 = 10$<br>
+  $P(\text{red}) = \dfrac{3}{10}$<br><br>
+  <strong>(b)</strong> Find $P(\text{not red})$.<br>
+  $P(\text{not red}) = 1 - \dfrac{3}{10} = \dfrac{7}{10}$<br><br>
+  <strong>(c)</strong> Find $P(\text{not blue})$.<br>
+  $P(\text{not blue}) = 1 - \dfrac{5}{10} = \dfrac{5}{10} = \dfrac{1}{2}$
+</div>
+
+<div class="exam-tip">
+  Probability can be written as a fraction, decimal or percentage. Fractions are usually preferred in exams unless a decimal or percentage is asked for. Never write probability as a ratio (e.g. 3:10).
+</div>
+
+<!-- ============================================================ -->
+<h2>5.1.2 Listing Outcomes</h2>
+
+<p>For experiments with multiple stages, you must list <strong>all</strong> possible outcomes systematically to avoid missing any.</p>
+
+<h3>Sample Space Diagrams</h3>
+<p>A <strong>sample space diagram</strong> (also called a possibility space) shows all outcomes of two events in a grid.</p>
+
+<div class="worked-example">
+  Two fair dice are rolled. Find the probability that the sum is 7.<br><br>
+  <strong>Sample space diagram (sum of two dice):</strong><br><br>
+  <table style="width:auto;font-size:0.9rem;margin:10px 0;">
+    <tr><th>Die 1 \ Die 2</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+    <tr><td><strong>1</strong></td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td style="background:#bbf7d0;font-weight:600;">7</td></tr>
+    <tr><td><strong>2</strong></td><td>3</td><td>4</td><td>5</td><td>6</td><td style="background:#bbf7d0;font-weight:600;">7</td><td>8</td></tr>
+    <tr><td><strong>3</strong></td><td>4</td><td>5</td><td>6</td><td style="background:#bbf7d0;font-weight:600;">7</td><td>8</td><td>9</td></tr>
+    <tr><td><strong>4</strong></td><td>5</td><td>6</td><td style="background:#bbf7d0;font-weight:600;">7</td><td>8</td><td>9</td><td>10</td></tr>
+    <tr><td><strong>5</strong></td><td>6</td><td style="background:#bbf7d0;font-weight:600;">7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+    <tr><td><strong>6</strong></td><td style="background:#bbf7d0;font-weight:600;">7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+  </table>
+  Total outcomes = 36. Outcomes giving sum of 7 (highlighted): 6.<br><br>
+  $$P(\text{sum} = 7) = \frac{6}{36} = \frac{1}{6}$$
+</div>
+
+<h3>Systematic Listing</h3>
+<div class="worked-example">
+  A coin is flipped and a spinner with sectors 1, 2, 3 is spun. List all outcomes.<br><br>
+  Using a tree or ordered list: H1, H2, H3, T1, T2, T3 — <strong>6 outcomes total</strong>.<br><br>
+  $P(\text{Head and even number}) = \dfrac{1}{6}$ (only H2)
+</div>
+
+<div class="exam-tip">
+  Always count the total number of outcomes carefully before writing any probability. Use a table or systematic list — never guess at the total.
+</div>
+
+<!-- ============================================================ -->
+<h2>5.1.3 Theoretical vs Experimental Probability</h2>
+
+<div class="definition">
+  <strong>Theoretical probability</strong> is calculated from equally likely outcomes using the formula above.<br><br>
+  <strong>Experimental probability</strong> (relative frequency) is calculated from the results of an actual experiment:<br><br>
+  $$P(\text{event}) \approx \frac{\text{number of times event occurred}}{\text{total number of trials}}$$
+</div>
+
+<h3>Expected Frequency</h3>
+$$\text{Expected frequency} = P(\text{event}) \times \text{number of trials}$$
+
+<div class="worked-example">
+  A biased coin is flipped 200 times. It lands on heads 130 times.<br><br>
+  <strong>(a)</strong> Estimate the probability of heads.<br>
+  $P(\text{heads}) \approx \dfrac{130}{200} = 0.65$<br><br>
+  <strong>(b)</strong> If the coin is flipped 500 more times, how many heads are expected?<br>
+  Expected heads $= 0.65 \times 500 = 325$
+</div>
+
+<h3>Increasing Reliability</h3>
+<p>The more trials carried out, the closer the experimental (relative) frequency gets to the true theoretical probability. This is the <strong>law of large numbers</strong>.</p>
+
+<table>
+  <tr><th>Feature</th><th>Theoretical Probability</th><th>Experimental Probability</th></tr>
+  <tr><td>Based on</td><td>Equally likely outcomes / logic</td><td>Actual results of an experiment</td></tr>
+  <tr><td>Exact?</td><td>Yes (for fair/ideal situations)</td><td>An estimate; varies each time</td></tr>
+  <tr><td>When to use</td><td>Fair coins, dice, known situations</td><td>Biased items, real-world data</td></tr>
+</table>
+
+<div class="exam-tip">
+  If you are asked to comment on whether a dice or spinner is fair, compare the experimental probability to the theoretical value $\frac{1}{6}$ (or whatever it should be). The more trials, the more reliable the comparison.
+</div>
+
+<!-- ============================================================ -->
+<h2>5.1.4 Venn Diagrams</h2>
+
+<div class="definition">
+  A <strong>Venn diagram</strong> uses overlapping circles within a rectangle (the universal set $\xi$) to show relationships between sets of outcomes.<br><br>
+  <ul style="margin-bottom:0;">
+    <li>$A \cup B$ — <strong>Union</strong>: outcomes in $A$ <em>or</em> $B$ (or both)</li>
+    <li>$A \cap B$ — <strong>Intersection</strong>: outcomes in both $A$ <em>and</em> $B$</li>
+    <li>$A'$ — <strong>Complement</strong>: outcomes <em>not</em> in $A$</li>
+  </ul>
+</div>
+
+<!-- Venn Diagram SVG -->
+<svg width="500" height="260" viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" aria-label="Venn diagram showing sets A and B with union and intersection">
+  <!-- Rectangle (universal set) -->
+  <rect x="10" y="10" width="480" height="240" rx="10" ry="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <!-- Circle A -->
+  <circle cx="185" cy="130" r="95" fill="rgba(59,130,246,0.18)" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Circle B -->
+  <circle cx="315" cy="130" r="95" fill="rgba(239,68,68,0.13)" stroke="#dc2626" stroke-width="2.5"/>
+  <!-- Labels for circles -->
+  <text x="130" y="115" font-size="20" font-weight="700" fill="#1e40af" text-anchor="middle">A</text>
+  <text x="370" y="115" font-size="20" font-weight="700" fill="#991b1b" text-anchor="middle">B</text>
+  <!-- Intersection label -->
+  <text x="250" y="118" font-size="13" font-weight="700" fill="#374151" text-anchor="middle">A ∩ B</text>
+  <!-- Only A label -->
+  <text x="130" y="140" font-size="12" fill="#1e40af" text-anchor="middle">only in A</text>
+  <!-- Only B label -->
+  <text x="370" y="140" font-size="12" fill="#991b1b" text-anchor="middle">only in B</text>
+  <!-- Outside label -->
+  <text x="460" y="30" font-size="13" font-weight="600" fill="#475569" text-anchor="end">ξ</text>
+  <!-- Union brace label -->
+  <text x="250" y="245" font-size="12" fill="#374151" text-anchor="middle">A ∪ B = everything inside either circle</text>
+</svg>
+
+<h3>Probability Notation from Venn Diagrams</h3>
+<p>If the Venn diagram shows frequencies (counts), convert to probabilities by dividing by the total.</p>
+
+<div class="worked-example">
+  In a class of 30 students: 18 study French (F), 12 study Spanish (S), 7 study both.<br><br>
+  <strong>Step 1 — Fill in the Venn diagram:</strong><br>
+  Only French: $18 - 7 = 11$ &nbsp;|&nbsp; Both: $7$ &nbsp;|&nbsp; Only Spanish: $12 - 7 = 5$ &nbsp;|&nbsp; Neither: $30 - 11 - 7 - 5 = 7$<br><br>
+  <strong>Step 2 — Find probabilities:</strong><br>
+  $P(F \cup S) = \dfrac{11 + 7 + 5}{30} = \dfrac{23}{30}$<br><br>
+  $P(F \cap S) = \dfrac{7}{30}$<br><br>
+  $P(\text{neither}) = \dfrac{7}{30}$<br><br>
+  $P(F \text{ only}) = \dfrac{11}{30}$
+</div>
+
+<h3>Mutually Exclusive Events</h3>
+<div class="definition">
+  Two events are <strong>mutually exclusive</strong> if they cannot both happen at the same time — their circles do not overlap.<br><br>
+  If $A$ and $B$ are mutually exclusive: $P(A \cap B) = 0$ and $P(A \cup B) = P(A) + P(B)$
+</div>
+
+<div class="exam-tip">
+  Always check your Venn diagram frequencies add up to the total before calculating probabilities. It is a very common error to double-count the intersection.
+</div>
+
+<!-- ============================================================ -->
+<h2>5.1.5 Tree Diagrams</h2>
+
+<div class="definition">
+  A <strong>tree diagram</strong> shows all possible outcomes of two or more successive events. <br><br>
+  <ul style="margin-bottom:0;">
+    <li><strong>Multiply</strong> along branches to find the probability of a combined outcome.</li>
+    <li><strong>Add</strong> the probabilities of branches that give the same overall outcome.</li>
+    <li>Probabilities on branches from each node must sum to 1.</li>
+  </ul>
+</div>
+
+<!-- Tree Diagram SVG — bag of counters, with and without replacement -->
+<svg width="680" height="320" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg" aria-label="Tree diagram for picking two counters from a bag with and without replacement">
+  <!-- Title -->
+  <text x="340" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">Tree Diagram: Without Replacement (3 Red, 2 Blue — 5 counters total)</text>
+
+  <!-- Root node -->
+  <circle cx="80" cy="160" r="8" fill="#1e40af"/>
+  <text x="80" y="185" text-anchor="middle" font-size="12" fill="#374151">Start</text>
+
+  <!-- First branches -->
+  <!-- Red branch -->
+  <line x1="88" y1="155" x2="270" y2="85" stroke="#374151" stroke-width="1.8"/>
+  <circle cx="278" cy="82" r="10" fill="#ef4444"/>
+  <text x="278" y="86" text-anchor="middle" font-size="10" fill="white" font-weight="700">R</text>
+  <text x="175" y="108" text-anchor="middle" font-size="12" fill="#1e40af">3/5</text>
+
+  <!-- Blue branch -->
+  <line x1="88" y1="165" x2="270" y2="235" stroke="#374151" stroke-width="1.8"/>
+  <circle cx="278" cy="238" r="10" fill="#3b82f6"/>
+  <text x="278" y="242" text-anchor="middle" font-size="10" fill="white" font-weight="700">B</text>
+  <text x="175" y="220" text-anchor="middle" font-size="12" fill="#1e40af">2/5</text>
+
+  <!-- Second branches from Red -->
+  <!-- R then R -->
+  <line x1="288" y1="77" x2="470" y2="40" stroke="#374151" stroke-width="1.8"/>
+  <circle cx="478" cy="37" r="10" fill="#ef4444"/>
+  <text x="478" y="41" text-anchor="middle" font-size="10" fill="white" font-weight="700">R</text>
+  <text x="380" y="50" text-anchor="middle" font-size="12" fill="#1e40af">2/4</text>
+  <text x="590" y="41" text-anchor="start" font-size="11" fill="#166534">P(RR)=6/20=3/10</text>
+
+  <!-- R then B -->
+  <line x1="288" y1="87" x2="470" y2="125" stroke="#374151" stroke-width="1.8"/>
+  <circle cx="478" cy="128" r="10" fill="#3b82f6"/>
+  <text x="478" y="132" text-anchor="middle" font-size="10" fill="white" font-weight="700">B</text>
+  <text x="380" y="98" text-anchor="middle" font-size="12" fill="#1e40af">2/4</text>
+  <text x="590" y="132" text-anchor="start" font-size="11" fill="#166534">P(RB)=6/20=3/10</text>
+
+  <!-- Second branches from Blue -->
+  <!-- B then R -->
+  <line x1="288" y1="233" x2="470" y2="195" stroke="#374151" stroke-width="1.8"/>
+  <circle cx="478" cy="192" r="10" fill="#ef4444"/>
+  <text x="478" y="196" text-anchor="middle" font-size="10" fill="white" font-weight="700">R</text>
+  <text x="380" y="207" text-anchor="middle" font-size="12" fill="#1e40af">3/4</text>
+  <text x="590" y="196" text-anchor="start" font-size="11" fill="#166534">P(BR)=6/20=3/10</text>
+
+  <!-- B then B -->
+  <line x1="288" y1="243" x2="470" y2="278" stroke="#374151" stroke-width="1.8"/>
+  <circle cx="478" cy="281" r="10" fill="#3b82f6"/>
+  <text x="478" y="285" text-anchor="middle" font-size="10" fill="white" font-weight="700">B</text>
+  <text x="380" y="275" text-anchor="middle" font-size="12" fill="#1e40af">1/4</text>
+  <text x="590" y="285" text-anchor="start" font-size="11" fill="#166534">P(BB)=2/20=1/10</text>
+
+  <!-- Check label -->
+  <text x="590" y="310" text-anchor="start" font-size="11" fill="#374151">Sum = 3/10+3/10+3/10+1/10 = 1 ✓</text>
+</svg>
+
+<div class="worked-example">
+  A bag has 3 red and 2 blue counters. Two are drawn <strong>without replacement</strong>.<br><br>
+  <strong>Find P(one of each colour).</strong><br><br>
+  $P(RB) = \dfrac{3}{5} \times \dfrac{2}{4} = \dfrac{6}{20}$ &nbsp;and&nbsp; $P(BR) = \dfrac{2}{5} \times \dfrac{3}{4} = \dfrac{6}{20}$<br><br>
+  $P(\text{one of each}) = \dfrac{6}{20} + \dfrac{6}{20} = \dfrac{12}{20} = \dfrac{3}{5}$
+</div>
+
+<h3>With Replacement vs Without Replacement</h3>
+<table>
+  <tr><th>With Replacement</th><th>Without Replacement</th></tr>
+  <tr><td>Item is returned before next draw</td><td>Item is NOT returned</td></tr>
+  <tr><td>Probabilities stay the same each stage</td><td>Probabilities change at each stage</td></tr>
+  <tr><td>Events are <strong>independent</strong></td><td>Events are <strong>dependent</strong></td></tr>
+  <tr><td>Denominator stays constant</td><td>Denominator decreases by 1 each time</td></tr>
+</table>
+
+<div class="exam-tip">
+  In tree diagrams, always check that the branches from each node sum to 1. Also check that all final outcome probabilities sum to 1 as a verification step.
+</div>
+
+<!-- ============================================================ -->
+<h2>5.1.6 Conditional Probability <span style="font-size:0.8em;color:#7e22ce;">[Higher]</span></h2>
+
+<div class="higher-only">
+  <strong>Conditional probability</strong> is the probability of event $A$ given that event $B$ has already occurred.<br><br>
+  $$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$$
+  <br>
+  This is particularly useful with Venn diagrams and two-way tables.
+</div>
+
+<div class="worked-example">
+  In a group of 50 people: 30 drink tea (T), 20 drink coffee (C), 10 drink both.<br><br>
+  <strong>Find P(drinks tea | drinks coffee).</strong><br><br>
+  $P(T \cap C) = \dfrac{10}{50} = \dfrac{1}{5}$<br><br>
+  $P(C) = \dfrac{20}{50} = \dfrac{2}{5}$<br><br>
+  $P(T \mid C) = \dfrac{P(T \cap C)}{P(C)} = \dfrac{1/5}{2/5} = \dfrac{1}{2}$<br><br>
+  <em>Alternative method:</em> Of the 20 coffee drinkers, 10 also drink tea: $\dfrac{10}{20} = \dfrac{1}{2}$ ✓
+</div>
+
+<h3>Two-Way Tables</h3>
+<p>Two-way tables allow you to read off conditional probabilities directly by restricting to the relevant row or column.</p>
+
+<div class="worked-example">
+  <table>
+    <tr><th></th><th>Passed</th><th>Failed</th><th>Total</th></tr>
+    <tr><td><strong>Revised</strong></td><td>24</td><td>6</td><td>30</td></tr>
+    <tr><td><strong>Did not revise</strong></td><td>8</td><td>12</td><td>20</td></tr>
+    <tr><td><strong>Total</strong></td><td>32</td><td>18</td><td>50</td></tr>
+  </table>
+  <strong>Find P(passed | revised).</strong><br><br>
+  Looking only at the "Revised" row: 24 out of 30 passed.<br>
+  $$P(\text{passed} \mid \text{revised}) = \frac{24}{30} = \frac{4}{5}$$
+</div>
+
+<div class="exam-tip">
+  For conditional probability from a two-way table, restrict your attention to only the relevant row or column — that becomes your new "total". Do not use the overall total.
+</div>
+
+<h3>Independent Events</h3>
+<div class="definition">
+  Events $A$ and $B$ are <strong>independent</strong> if $P(A \mid B) = P(A)$ — knowing $B$ occurred gives no information about $A$.<br><br>
+  For independent events: $P(A \cap B) = P(A) \times P(B)$
+</div>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

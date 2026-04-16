@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 3.2 — Rates of Change and Compound Measures</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .katex-display { margin: 16px 0; }
+        .diagram-label { font-size: 0.88rem; color: #6b7280; text-align: center; margin-top: 6px; margin-bottom: 16px; }
+        .triangles-row { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>3.2 Rates of Change and Compound Measures</h1>
+<p class="spec-ref">OCR GCSE Mathematics J560 &nbsp;|&nbsp; Component 3 (Ratio, Proportion and Rates of Change) &nbsp;|&nbsp; Papers 1, 2 &amp; 3</p>
+
+<!-- ===================== 3.2.1 ===================== -->
+<h2>3.2.1 Speed, Distance and Time</h2>
+
+<div class="definition">
+  <strong>Speed</strong> is a compound measure — it combines distance and time. <strong>Average speed</strong> is the total distance divided by the total time.
+</div>
+
+<div class="formula-box">
+  $$\text{Speed} = \frac{\text{Distance}}{\text{Time}} \qquad \text{Distance} = \text{Speed} \times \text{Time} \qquad \text{Time} = \frac{\text{Distance}}{\text{Speed}}$$
+</div>
+
+<!-- SDT triangle SVG -->
+<div class="triangles-row">
+  <div style="text-align:center;">
+    <svg viewBox="0 0 160 130" width="160" height="130" aria-label="Speed Distance Time triangle">
+      <!-- Triangle body -->
+      <polygon points="80,10 10,120 150,120" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <!-- Dividing line (horizontal) -->
+      <line x1="10" y1="120" x2="150" y2="120" stroke="#2563eb" stroke-width="2"/>
+      <line x1="45" y1="65" x2="115" y2="65" stroke="#2563eb" stroke-width="2"/>
+      <!-- Labels -->
+      <text x="80" y="48" font-size="15" fill="#1e40af" font-family="sans-serif" font-weight="700" text-anchor="middle">D</text>
+      <text x="38" y="105" font-size="15" fill="#1e40af" font-family="sans-serif" font-weight="700" text-anchor="middle">S</text>
+      <text x="122" y="105" font-size="15" fill="#1e40af" font-family="sans-serif" font-weight="700" text-anchor="middle">T</text>
+      <!-- Vertical divider in bottom half -->
+      <line x1="80" y1="65" x2="80" y2="120" stroke="#2563eb" stroke-width="2"/>
+    </svg>
+    <div class="diagram-label">SDT Triangle<br>Cover the required quantity</div>
+  </div>
+</div>
+
+<h3>Common Units</h3>
+<table>
+  <tr><th>Speed</th><th>Distance</th><th>Time</th></tr>
+  <tr><td>m/s (metres per second)</td><td>metres (m)</td><td>seconds (s)</td></tr>
+  <tr><td>km/h (kilometres per hour)</td><td>kilometres (km)</td><td>hours (h)</td></tr>
+  <tr><td>mph (miles per hour)</td><td>miles</td><td>hours (h)</td></tr>
+</table>
+
+<div class="exam-tip">
+  Convert time to a decimal (not minutes) before calculating. 1 hour 30 mins = 1.5 hours, NOT 1.3 hours.
+</div>
+
+<div class="worked-example">
+  A car travels 135 km in 1 hour 30 minutes. Find the average speed in km/h.<br><br>
+  Time = 1.5 h<br>
+  Speed = $135 \div 1.5 = \mathbf{90\,\text{km/h}}$
+</div>
+
+<div class="worked-example">
+  A train travels at 80 km/h for 45 minutes. How far does it travel?<br><br>
+  Time = $45 \div 60 = 0.75\,\text{h}$<br>
+  Distance = $80 \times 0.75 = \mathbf{60\,\text{km}}$
+</div>
+
+<div class="worked-example">
+  Convert 20 m/s to km/h.<br><br>
+  $20\,\text{m/s} \times 3600\,\text{s/h} = 72{,}000\,\text{m/h} = \mathbf{72\,\text{km/h}}$
+</div>
+
+<!-- ===================== 3.2.2 ===================== -->
+<h2>3.2.2 Density, Mass and Volume</h2>
+
+<div class="definition">
+  <strong>Density</strong> is the mass per unit volume of a substance. A denser material has more mass packed into the same volume.
+</div>
+
+<div class="formula-box">
+  $$\text{Density} = \frac{\text{Mass}}{\text{Volume}} \qquad \text{Mass} = \text{Density} \times \text{Volume} \qquad \text{Volume} = \frac{\text{Mass}}{\text{Density}}$$
+</div>
+
+<!-- DMV triangle SVG -->
+<div class="triangles-row">
+  <div style="text-align:center;">
+    <svg viewBox="0 0 160 130" width="160" height="130" aria-label="Density Mass Volume triangle">
+      <polygon points="80,10 10,120 150,120" fill="#d1fae5" stroke="#16a34a" stroke-width="2"/>
+      <line x1="45" y1="65" x2="115" y2="65" stroke="#16a34a" stroke-width="2"/>
+      <line x1="80" y1="65" x2="80" y2="120" stroke="#16a34a" stroke-width="2"/>
+      <text x="80" y="48" font-size="15" fill="#166534" font-family="sans-serif" font-weight="700" text-anchor="middle">M</text>
+      <text x="38" y="105" font-size="15" fill="#166534" font-family="sans-serif" font-weight="700" text-anchor="middle">D</text>
+      <text x="122" y="105" font-size="15" fill="#166534" font-family="sans-serif" font-weight="700" text-anchor="middle">V</text>
+    </svg>
+    <div class="diagram-label">DMV Triangle<br>Cover the required quantity</div>
+  </div>
+</div>
+
+<h3>Common Units</h3>
+<table>
+  <tr><th>Density</th><th>Mass</th><th>Volume</th></tr>
+  <tr><td>g/cm³ (grams per cm³)</td><td>grams (g)</td><td>cm³</td></tr>
+  <tr><td>kg/m³</td><td>kilograms (kg)</td><td>m³</td></tr>
+</table>
+
+<div class="worked-example">
+  A block of iron has mass 790 g and volume 100 cm³. Find its density.<br><br>
+  Density = $790 \div 100 = \mathbf{7.9\,\text{g/cm}^3}$
+</div>
+
+<div class="worked-example">
+  Gold has density 19.3 g/cm³. Find the volume of a 96.5 g gold bar.<br><br>
+  Volume = Mass $\div$ Density = $96.5 \div 19.3 = \mathbf{5\,\text{cm}^3}$
+</div>
+
+<!-- ===================== 3.2.3 ===================== -->
+<h2>3.2.3 Pressure, Force and Area</h2>
+
+<div class="definition">
+  <strong>Pressure</strong> is the force applied per unit area. The greater the force or the smaller the area, the higher the pressure.
+</div>
+
+<div class="formula-box">
+  $$\text{Pressure} = \frac{\text{Force}}{\text{Area}} \qquad \text{Force} = \text{Pressure} \times \text{Area} \qquad \text{Area} = \frac{\text{Force}}{\text{Pressure}}$$
+</div>
+
+<!-- PFA triangle SVG -->
+<div class="triangles-row">
+  <div style="text-align:center;">
+    <svg viewBox="0 0 160 130" width="160" height="130" aria-label="Pressure Force Area triangle">
+      <polygon points="80,10 10,120 150,120" fill="#fce7f3" stroke="#9d174d" stroke-width="2"/>
+      <line x1="45" y1="65" x2="115" y2="65" stroke="#9d174d" stroke-width="2"/>
+      <line x1="80" y1="65" x2="80" y2="120" stroke="#9d174d" stroke-width="2"/>
+      <text x="80" y="48" font-size="15" fill="#9d174d" font-family="sans-serif" font-weight="700" text-anchor="middle">F</text>
+      <text x="38" y="105" font-size="15" fill="#9d174d" font-family="sans-serif" font-weight="700" text-anchor="middle">P</text>
+      <text x="122" y="105" font-size="15" fill="#9d174d" font-family="sans-serif" font-weight="700" text-anchor="middle">A</text>
+    </svg>
+    <div class="diagram-label">Pressure–Force–Area Triangle</div>
+  </div>
+</div>
+
+<h3>Units</h3>
+<ul>
+  <li>Pressure: <strong>Pascals (Pa)</strong> = N/m² (Newtons per square metre)</li>
+  <li>Force: <strong>Newtons (N)</strong></li>
+  <li>Area: <strong>m²</strong> (or cm²)</li>
+</ul>
+
+<div class="worked-example">
+  A force of 600 N acts on an area of 0.3 m². Find the pressure.<br><br>
+  Pressure = $600 \div 0.3 = \mathbf{2000\,\text{Pa}}$
+</div>
+
+<div class="worked-example">
+  A box exerts a pressure of 250 Pa on the ground. The area of the base is 0.8 m². Find the force.<br><br>
+  Force = $250 \times 0.8 = \mathbf{200\,\text{N}}$
+</div>
+
+<div class="exam-tip">
+  Check units are consistent before substituting. If area is given in cm², convert to m² (divide by 10,000) if pressure is in Pa.
+</div>
+
+<!-- ===================== 3.2.4 ===================== -->
+<h2>3.2.4 Percentage Change and Growth/Decay</h2>
+
+<div class="definition">
+  A <strong>multiplier</strong> is the number you multiply by to apply a percentage change in one step.
+  <ul style="margin-top:8px;">
+    <li>Increase by $r$%: multiply by $\left(1 + \dfrac{r}{100}\right)$</li>
+    <li>Decrease by $r$%: multiply by $\left(1 - \dfrac{r}{100}\right)$</li>
+  </ul>
+</div>
+
+<table>
+  <tr><th>Change</th><th>Multiplier</th><th>Example</th></tr>
+  <tr><td>Increase by 20%</td><td>$1.20$</td><td>£50 → £60</td></tr>
+  <tr><td>Decrease by 15%</td><td>$0.85$</td><td>£200 → £170</td></tr>
+  <tr><td>Increase by 7.5%</td><td>$1.075$</td><td></td></tr>
+  <tr><td>Decrease by 3%</td><td>$0.97$</td><td></td></tr>
+</table>
+
+<h3>Repeated Percentage Change</h3>
+<p>Apply the multiplier $n$ times by raising it to the power $n$.</p>
+
+<div class="worked-example">
+  A car's value is £12,000. It depreciates by 8% each year. Find its value after 3 years.<br><br>
+  Multiplier = $1 - 0.08 = 0.92$<br>
+  Value = $12{,}000 \times 0.92^3 = 12{,}000 \times 0.778688 = \mathbf{£9{,}344.26}$ (2 d.p.)
+</div>
+
+<div class="worked-example">
+  A population of 5000 increases by 4% per year. What will the population be after 5 years?<br><br>
+  Multiplier = $1.04$<br>
+  Population = $5000 \times 1.04^5 = 5000 \times 1.21665\ldots \approx \mathbf{6083}$
+</div>
+
+<!-- ===================== 3.2.5 ===================== -->
+<h2>3.2.5 Compound Interest and Depreciation</h2>
+
+<div class="formula-box">
+  <strong>Compound Interest:</strong>
+  $$A = P\!\left(1 + \frac{r}{100}\right)^n$$
+  <strong>Depreciation:</strong>
+  $$A = P\!\left(1 - \frac{r}{100}\right)^n$$
+  where $P$ = principal (starting amount), $r$ = percentage rate per period, $n$ = number of periods, $A$ = final amount.
+</div>
+
+<div class="worked-example">
+  £5,000 is invested at 3.5% compound interest per year. Find the total amount after 4 years.<br><br>
+  $A = 5000 \times \left(1 + \dfrac{3.5}{100}\right)^4 = 5000 \times 1.035^4$<br><br>
+  $1.035^4 = 1.14752\ldots$<br>
+  $A = 5000 \times 1.14752 = \mathbf{£5{,}737.60}$ (2 d.p.)
+</div>
+
+<div class="worked-example">
+  A machine costs £24,000 and depreciates at 12% per year. Find its value after 6 years.<br><br>
+  $A = 24{,}000 \times (1 - 0.12)^6 = 24{,}000 \times 0.88^6$<br><br>
+  $0.88^6 = 0.46440\ldots$<br>
+  $A = 24{,}000 \times 0.46440 = \mathbf{£11{,}145.60}$ (2 d.p.)
+</div>
+
+<div class="worked-example">
+  Find the compound interest earned (not total amount) when £8,000 is invested at 2% per annum for 3 years.<br><br>
+  $A = 8000 \times 1.02^3 = 8000 \times 1.0612 = £8{,}489.60$<br>
+  Interest = $£8{,}489.60 - £8{,}000 = \mathbf{£489.60}$
+</div>
+
+<div class="exam-tip">
+  Compound interest means interest is calculated on the new total each period (interest on interest). Simple interest only applies the rate to the original principal each time.
+</div>
+
+<h3>Comparing Compound and Simple Interest</h3>
+<table>
+  <tr><th>Type</th><th>Formula</th><th>Comment</th></tr>
+  <tr><td>Simple interest</td><td>$I = \dfrac{P \times r \times t}{100}$</td><td>Interest same every period</td></tr>
+  <tr><td>Compound interest</td><td>$A = P(1+r/100)^n$</td><td>Interest grows each period</td></tr>
+</table>
+
+<!-- ===================== 3.2.6 ===================== -->
+<h2>3.2.6 Rates of Change from Graphs</h2>
+
+<h3>Distance–Time Graphs</h3>
+
+<div class="definition">
+  The <strong>gradient</strong> of a distance–time graph equals the <strong>speed</strong> at that point.
+  $$\text{Speed} = \frac{\text{change in distance}}{\text{change in time}} = \frac{\Delta d}{\Delta t}$$
+  A <strong>horizontal line</strong> means the object is stationary (speed = 0). A <strong>steeper line</strong> means faster speed. A <strong>negative gradient</strong> means the object is returning towards the start.
+</div>
+
+<!-- Distance-time graph SVG -->
+<svg viewBox="0 0 400 250" width="400" height="250" style="display:block;margin:16px auto;max-width:100%;" aria-label="Distance-time graph with annotations">
+  <!-- Axes -->
+  <line x1="50" y1="220" x2="380" y2="220" stroke="#374151" stroke-width="2"/>
+  <line x1="50" y1="220" x2="50" y2="20" stroke="#374151" stroke-width="2"/>
+  <polygon points="380,216 380,224 390,220" fill="#374151"/>
+  <polygon points="46,20 54,20 50,10" fill="#374151"/>
+  <!-- Axis labels -->
+  <text x="390" y="224" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">t</text>
+  <text x="38" y="12" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">d</text>
+  <text x="38" y="232" font-size="11" fill="#374151" font-family="sans-serif">O</text>
+  <!-- Tick marks on x axis -->
+  <line x1="120" y1="218" x2="120" y2="222" stroke="#374151" stroke-width="1.5"/>
+  <line x1="200" y1="218" x2="200" y2="222" stroke="#374151" stroke-width="1.5"/>
+  <line x1="280" y1="218" x2="280" y2="222" stroke="#374151" stroke-width="1.5"/>
+  <line x1="360" y1="218" x2="360" y2="222" stroke="#374151" stroke-width="1.5"/>
+  <text x="116" y="233" font-size="10" fill="#374151" font-family="sans-serif">1</text>
+  <text x="196" y="233" font-size="10" fill="#374151" font-family="sans-serif">2</text>
+  <text x="276" y="233" font-size="10" fill="#374151" font-family="sans-serif">3</text>
+  <text x="356" y="233" font-size="10" fill="#374151" font-family="sans-serif">4</text>
+  <!-- Segment 1: moving away (0 to 1 h, 0 to 80 km) -->
+  <!-- y_px = 220 - d*1.4 (scale: 0 km=220, 80 km=108, 100 km=80) -->
+  <line x1="50" y1="220" x2="120" y2="108" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Segment 2: stationary (1 h to 2 h, d = 80) -->
+  <line x1="120" y1="108" x2="200" y2="108" stroke="#dc2626" stroke-width="2.5"/>
+  <!-- Segment 3: moving further (2 h to 3 h, 80 to 120 km) -->
+  <line x1="200" y1="108" x2="280" y2="52" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Segment 4: returning (3 h to 4 h, 120 to 0 km) -->
+  <line x1="280" y1="52" x2="360" y2="220" stroke="#f59e0b" stroke-width="2.5"/>
+  <!-- Annotations -->
+  <text x="58" y="168" font-size="11" fill="#2563eb" font-family="sans-serif">Moving</text>
+  <text x="58" y="181" font-size="11" fill="#2563eb" font-family="sans-serif">away</text>
+  <text x="128" y="100" font-size="11" fill="#dc2626" font-family="sans-serif">Stationary</text>
+  <text x="207" y="80" font-size="11" fill="#2563eb" font-family="sans-serif">Faster</text>
+  <text x="290" y="130" font-size="11" fill="#f59e0b" font-family="sans-serif">Returning</text>
+  <!-- d axis ticks -->
+  <line x1="48" y1="108" x2="52" y2="108" stroke="#374151" stroke-width="1.5"/>
+  <line x1="48" y1="52" x2="52" y2="52" stroke="#374151" stroke-width="1.5"/>
+  <text x="24" y="112" font-size="10" fill="#374151" font-family="sans-serif">80</text>
+  <text x="18" y="56" font-size="10" fill="#374151" font-family="sans-serif">120</text>
+</svg>
+<p class="diagram-label">Fig 1 — Distance–time graph. Blue = moving, red = stationary, amber = returning. Gradient = speed.</p>
+
+<h3>Speed–Time Graphs</h3>
+
+<div class="definition">
+  <ul>
+    <li>The <strong>gradient</strong> of a speed–time graph = <strong>acceleration</strong> (change in speed per unit time).</li>
+    <li>The <strong>area under</strong> a speed–time graph = <strong>distance travelled</strong>.</li>
+    <li>A horizontal line means <strong>constant speed</strong> (zero acceleration).</li>
+    <li>A negative gradient means the object is decelerating (slowing down).</li>
+  </ul>
+</div>
+
+<!-- Speed-time graph SVG -->
+<svg viewBox="0 0 420 250" width="420" height="250" style="display:block;margin:16px auto;max-width:100%;" aria-label="Speed-time graph showing acceleration, constant speed, deceleration">
+  <!-- Axes -->
+  <line x1="50" y1="220" x2="390" y2="220" stroke="#374151" stroke-width="2"/>
+  <line x1="50" y1="220" x2="50" y2="20" stroke="#374151" stroke-width="2"/>
+  <polygon points="390,216 390,224 400,220" fill="#374151"/>
+  <polygon points="46,20 54,20 50,10" fill="#374151"/>
+  <text x="400" y="224" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">t</text>
+  <text x="38" y="12" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">v</text>
+  <text x="38" y="232" font-size="11" fill="#374151" font-family="sans-serif">O</text>
+  <!-- Grid lines -->
+  <line x1="50" y1="120" x2="390" y2="120" stroke="#e5e7eb" stroke-width="1"/>
+  <!-- Tick marks -->
+  <line x1="130" y1="218" x2="130" y2="222" stroke="#374151" stroke-width="1.5"/>
+  <line x1="250" y1="218" x2="250" y2="222" stroke="#374151" stroke-width="1.5"/>
+  <line x1="340" y1="218" x2="340" y2="222" stroke="#374151" stroke-width="1.5"/>
+  <text x="123" y="233" font-size="10" fill="#374151" font-family="sans-serif">t₁</text>
+  <text x="243" y="233" font-size="10" fill="#374151" font-family="sans-serif">t₂</text>
+  <text x="333" y="233" font-size="10" fill="#374151" font-family="sans-serif">t₃</text>
+  <line x1="48" y1="120" x2="52" y2="120" stroke="#374151" stroke-width="1.5"/>
+  <text x="28" y="124" font-size="10" fill="#374151" font-family="sans-serif">v₀</text>
+  <!-- Segment 1: Accelerating (0 to t1) -->
+  <line x1="50" y1="220" x2="130" y2="120" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Segment 2: Constant speed (t1 to t2) -->
+  <line x1="130" y1="120" x2="250" y2="120" stroke="#16a34a" stroke-width="2.5"/>
+  <!-- Segment 3: Decelerating (t2 to t3) -->
+  <line x1="250" y1="120" x2="340" y2="220" stroke="#dc2626" stroke-width="2.5"/>
+  <!-- Shaded area under constant speed segment -->
+  <polygon points="130,120 250,120 250,220 130,220" fill="#d1fae5" opacity="0.6"/>
+  <!-- Annotations -->
+  <text x="58" y="190" font-size="11" fill="#2563eb" font-family="sans-serif" transform="rotate(-50,70,185)">Accelerating</text>
+  <text x="163" y="112" font-size="11" fill="#16a34a" font-family="sans-serif">Constant speed</text>
+  <text x="270" y="165" font-size="11" fill="#dc2626" font-family="sans-serif">Decelerating</text>
+  <text x="163" y="185" font-size="10" fill="#166534" font-family="sans-serif">Area = distance</text>
+  <!-- Gradient annotation on accelerating segment -->
+  <line x1="50" y1="120" x2="130" y2="120" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="50" y1="120" x2="50" y2="220" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="55" y="118" font-size="10" fill="#b45309" font-family="sans-serif">grad = accel.</text>
+</svg>
+<p class="diagram-label">Fig 2 — Speed–time graph. Gradient = acceleration. Area under graph = distance.</p>
+
+<div class="worked-example">
+  A speed–time graph shows a vehicle accelerating from 0 to 20 m/s over 5 s, then travelling at constant 20 m/s for 10 s, then decelerating to rest in 4 s.<br>
+  Find: (a) the acceleration, (b) the total distance travelled.<br><br>
+  (a) Acceleration = gradient = $(20-0)/(5-0) = \mathbf{4\,\text{m/s}^2}$<br><br>
+  (b) Distance = area under graph<br>
+  — Accelerating: $\frac{1}{2} \times 5 \times 20 = 50\,\text{m}$ (triangle)<br>
+  — Constant: $10 \times 20 = 200\,\text{m}$ (rectangle)<br>
+  — Decelerating: $\frac{1}{2} \times 4 \times 20 = 40\,\text{m}$ (triangle)<br>
+  Total distance = $50 + 200 + 40 = \mathbf{290\,\text{m}}$
+</div>
+
+<div class="exam-tip">
+  For curved speed–time graphs, estimate the area by counting squares or by dividing into trapezoids.
+</div>
+
+<!-- ===================== Formula Summary ===================== -->
+<h2>Formula Summary</h2>
+
+<table>
+  <tr><th>Topic</th><th>Key Formula</th><th>Units</th></tr>
+  <tr><td>Speed</td><td>$S = D/T$</td><td>m/s, km/h, mph</td></tr>
+  <tr><td>Density</td><td>$\rho = m/V$</td><td>g/cm³, kg/m³</td></tr>
+  <tr><td>Pressure</td><td>$P = F/A$</td><td>Pa = N/m²</td></tr>
+  <tr><td>% increase multiplier</td><td>$\times (1 + r/100)$</td><td>—</td></tr>
+  <tr><td>% decrease multiplier</td><td>$\times (1 - r/100)$</td><td>—</td></tr>
+  <tr><td>Compound interest</td><td>$A = P(1+r/100)^n$</td><td>£, $, €</td></tr>
+  <tr><td>Depreciation</td><td>$A = P(1-r/100)^n$</td><td>£, $, €</td></tr>
+  <tr><td>Gradient of d–t graph</td><td>Speed</td><td>m/s, km/h</td></tr>
+  <tr><td>Gradient of v–t graph</td><td>Acceleration</td><td>m/s²</td></tr>
+  <tr><td>Area under v–t graph</td><td>Distance</td><td>m, km</td></tr>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

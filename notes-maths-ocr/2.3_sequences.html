@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 2.3 — Sequences</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .higher { background: #fdf4ff; border-left: 4px solid #9333ea; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-label { font-weight: 700; color: #7e22ce; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .step { margin-bottom: 8px; padding-left: 16px; border-left: 2px solid #86efac; }
+        .diff-table td, .diff-table th { text-align: center; padding: 8px 12px; }
+        .diff-row-1 { background: #eff6ff; }
+        .diff-row-2 { background: #fef9c3; }
+        .diff-row-3 { background: #fce7f3; }
+        .katex-display { margin: 16px 0; }
+        .diagram-container { text-align: center; margin: 20px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.3 Sequences</h1>
+<p class="spec-ref">OCR GCSE Mathematics (J560) &mdash; Paper 1, 2 &amp; 3 &mdash; Foundation and Higher</p>
+
+<!-- ============================================================ -->
+<h2>2.3.1 Describing Sequences</h2>
+
+<div class="definition">
+  A <strong>sequence</strong> is an ordered list of numbers (or objects) following a rule. Each number is a <strong>term</strong>, labelled $T_1, T_2, T_3, \ldots$ or $u_1, u_2, u_3, \ldots$<br><br>
+  A <strong>term-to-term rule</strong> describes how to get from one term to the next.<br>
+  A <strong>position-to-term rule</strong> (the $n$th term formula) gives any term directly from its position $n$.
+</div>
+
+<h3>Arithmetic (Linear) Sequences</h3>
+<p>Each term differs from the previous by a fixed amount called the <strong>common difference</strong> $d$.</p>
+<ul>
+  <li>If $d > 0$: the sequence is increasing.</li>
+  <li>If $d < 0$: the sequence is decreasing.</li>
+</ul>
+
+<table>
+  <thead><tr><th>Sequence</th><th>First differences</th><th>Common difference $d$</th><th>Type</th></tr></thead>
+  <tbody>
+    <tr><td>$3, 7, 11, 15, 19, \ldots$</td><td>$+4, +4, +4, +4$</td><td>$4$</td><td>Arithmetic</td></tr>
+    <tr><td>$20, 17, 14, 11, \ldots$</td><td>$-3, -3, -3$</td><td>$-3$</td><td>Arithmetic</td></tr>
+    <tr><td>$1, 4, 9, 16, 25, \ldots$</td><td>$+3, +5, +7, +9$</td><td>Not constant</td><td>Not arithmetic</td></tr>
+  </tbody>
+</table>
+
+<h3>Geometric Sequences</h3>
+<p>Each term is obtained by <strong>multiplying</strong> the previous term by a fixed value called the <strong>common ratio</strong> $r$.</p>
+
+<table>
+  <thead><tr><th>Sequence</th><th>Ratios</th><th>Common ratio $r$</th></tr></thead>
+  <tbody>
+    <tr><td>$2, 6, 18, 54, 162, \ldots$</td><td>$\times 3, \times 3, \times 3, \times 3$</td><td>$3$</td></tr>
+    <tr><td>$80, 40, 20, 10, 5, \ldots$</td><td>$\times 0.5, \times 0.5, \ldots$</td><td>$0.5$</td></tr>
+    <tr><td>$1, -2, 4, -8, 16, \ldots$</td><td>$\times(-2), \times(-2), \ldots$</td><td>$-2$</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">
+  To identify the type of sequence: check first differences. If they are constant, the sequence is arithmetic. If not constant, check second differences. If <em>those</em> are constant, it is quadratic. If terms have a constant ratio, it is geometric.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.3.2 The $n$th Term of Arithmetic Sequences</h2>
+
+<div class="definition">
+  For an arithmetic sequence with first term $a$ and common difference $d$:
+  $$T_n = a + (n-1)d$$
+  This can always be written in the form $T_n = dn + c$, where $d$ is the common difference and $c = a - d$.
+</div>
+
+<h3>Finding the $n$th Term Formula</h3>
+
+<p><strong>Method:</strong></p>
+<ol>
+  <li>Find the common difference $d$ — this is the coefficient of $n$.</li>
+  <li>Work out what $d \times 1$ gives and adjust to match the first term. The adjustment is $c = T_1 - d$.</li>
+  <li>Write the formula: $T_n = dn + c$.</li>
+</ol>
+
+<div class="worked-example">
+  Find the $n$th term of $5, 8, 11, 14, \ldots$<br><br>
+  <div class="step">Common difference: $d = 3$</div>
+  <div class="step">Using $n=1$: $3(1) + c = 5 \Rightarrow c = 2$</div>
+  <div class="step">$n$th term: $T_n = 3n + 2$</div>
+  <div class="step">Check: $T_3 = 3(3)+2 = 11$ ✓</div>
+</div>
+
+<div class="worked-example">
+  Find the $n$th term of $17, 13, 9, 5, \ldots$<br><br>
+  <div class="step">$d = -4$</div>
+  <div class="step">$-4(1) + c = 17 \Rightarrow c = 21$</div>
+  <div class="step">$T_n = -4n + 21$</div>
+  <div class="step">Check: $T_4 = -16 + 21 = 5$ ✓</div>
+</div>
+
+<h3>Using the Formula</h3>
+
+<div class="worked-example">
+  Is 100 a term in the sequence $7, 11, 15, 19, \ldots$?<br><br>
+  <div class="step">$n$th term: $T_n = 4n + 3$</div>
+  <div class="step">Set equal to 100: $4n + 3 = 100 \Rightarrow 4n = 97 \Rightarrow n = 24.25$</div>
+  <div class="step">Not a whole number, so 100 is <strong>not</strong> a term in this sequence.</div>
+</div>
+
+<div class="worked-example">
+  The $n$th term of a sequence is $5n - 3$. Which term equals 72?<br><br>
+  <div class="step">$5n - 3 = 72 \Rightarrow 5n = 75 \Rightarrow n = 15$</div>
+  <div class="step">72 is the <strong>15th term</strong>.</div>
+</div>
+
+<div class="exam-tip">
+  To check whether a value is in a sequence, set $T_n$ equal to that value and solve for $n$. If $n$ is a positive integer, the value is in the sequence.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.3.3 Quadratic Sequences <span style="font-size:0.8rem;color:#7e22ce;">[Higher]</span></h2>
+
+<div class="higher">
+<p><span class="higher-label">Higher only</span></p>
+
+<div class="definition">
+  A <strong>quadratic sequence</strong> has a constant <strong>second difference</strong>. The $n$th term formula contains $n^2$ as the highest power, i.e. $T_n = an^2 + bn + c$.
+</div>
+
+<h3>Identifying Quadratic Sequences Using Differences</h3>
+
+<!-- Difference table SVG / styled HTML table -->
+<table class="diff-table">
+  <thead>
+    <tr><th>Position $n$</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+  </thead>
+  <tbody>
+    <tr class="diff-row-1"><td><strong>Term $T_n$</strong></td><td>3</td><td>8</td><td>15</td><td>24</td><td>35</td></tr>
+    <tr class="diff-row-2"><td><strong>1st differences</strong></td><td></td><td>5</td><td>7</td><td>9</td><td>11</td></tr>
+    <tr class="diff-row-3"><td><strong>2nd differences</strong></td><td></td><td></td><td>2</td><td>2</td><td>2</td></tr>
+  </tbody>
+</table>
+
+<p>Second differences are constant at 2, confirming this is quadratic.</p>
+
+<h3>Finding the $n$th Term of a Quadratic Sequence</h3>
+<p><strong>Method:</strong></p>
+<ol>
+  <li>Find the second difference. The coefficient of $n^2$ is $a = \dfrac{\text{second difference}}{2}$.</li>
+  <li>Subtract the $an^2$ sequence from the original to get a <em>linear</em> remainder sequence.</li>
+  <li>Find the $n$th term of the remainder (it will be a linear expression $bn + c$).</li>
+  <li>Write the complete formula: $T_n = an^2 + bn + c$.</li>
+</ol>
+
+<div class="worked-example">
+  Find the $n$th term of $3, 8, 15, 24, 35, \ldots$<br><br>
+  <div class="step">Second difference = 2, so $a = 1$. The $n^2$ sequence is $1, 4, 9, 16, 25, \ldots$</div>
+  <div class="step">Subtract: $3-1=2,\ 8-4=4,\ 15-9=6,\ 24-16=8,\ 35-25=10$</div>
+  <div class="step">Remainder sequence: $2, 4, 6, 8, 10, \ldots$ This is linear with $n$th term $2n$.</div>
+  <div class="step">Complete formula: $T_n = n^2 + 2n$</div>
+  <div class="step">Check: $T_3 = 9 + 6 = 15$ ✓, $T_5 = 25 + 10 = 35$ ✓</div>
+</div>
+
+<div class="worked-example">
+  Find the $n$th term of $5, 14, 27, 44, 65, \ldots$<br><br>
+  <div class="step">1st differences: $9, 13, 17, 21$ — 2nd differences: $4, 4, 4$ — constant, so quadratic.</div>
+  <div class="step">$a = 4/2 = 2$. The $2n^2$ sequence: $2, 8, 18, 32, 50$</div>
+  <div class="step">Subtract: $5-2=3,\ 14-8=6,\ 27-18=9,\ 44-32=12,\ 65-50=15$</div>
+  <div class="step">Remainder: $3, 6, 9, 12, 15, \ldots$ &rarr; $n$th term = $3n$</div>
+  <div class="step">Complete: $T_n = 2n^2 + 3n$</div>
+  <div class="step">Check: $T_2 = 8 + 6 = 14$ ✓</div>
+</div>
+
+<div class="exam-tip">
+  For quadratic sequences: always calculate BOTH the first AND second differences in your working. Examiners award marks for this even if you make an arithmetic error later.
+</div>
+
+<h3>Summary Comparison: Arithmetic vs Quadratic Sequences</h3>
+<table>
+  <thead><tr><th>Feature</th><th>Arithmetic (linear)</th><th>Quadratic</th></tr></thead>
+  <tbody>
+    <tr><td>1st differences</td><td>Constant</td><td>Not constant (but increasing by fixed amount)</td></tr>
+    <tr><td>2nd differences</td><td>Zero</td><td>Constant (non-zero)</td></tr>
+    <tr><td>$n$th term form</td><td>$dn + c$</td><td>$an^2 + bn + c$</td></tr>
+    <tr><td>Coefficient of $n^2$</td><td>0</td><td>$a = \tfrac{\text{2nd difference}}{2}$</td></tr>
+    <tr><td>Graph of $T_n$ vs $n$</td><td>Straight line</td><td>Parabola (curve)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<h2>2.3.4 Special Sequences</h2>
+
+<h3>Square Numbers</h3>
+<p>$1, 4, 9, 16, 25, 36, 49, 64, 81, 100, \ldots$ &nbsp;&nbsp; $T_n = n^2$</p>
+<p>First differences: $3, 5, 7, 9, 11, \ldots$ (odd numbers); Second differences: all $2$.</p>
+
+<h3>Triangular Numbers</h3>
+<p>$1, 3, 6, 10, 15, 21, 28, 36, \ldots$ &nbsp;&nbsp; $T_n = \dfrac{n(n+1)}{2}$</p>
+
+<!-- SVG showing triangular number dots -->
+<div class="diagram-container">
+<svg viewBox="0 0 460 100" xmlns="http://www.w3.org/2000/svg" style="max-width:460px;width:100%;font-family:system-ui,sans-serif;">
+  <text x="230" y="16" text-anchor="middle" font-size="12" fill="#1e40af" font-weight="600">Triangular numbers as dot arrays</text>
+
+  <!-- T1 = 1 -->
+  <circle cx="35" cy="50" r="7" fill="#2563eb"/>
+  <text x="35" y="90" text-anchor="middle" font-size="11" fill="#374151">$T_1=1$</text>
+
+  <!-- T2 = 3 -->
+  <circle cx="85" cy="65" r="7" fill="#2563eb"/>
+  <circle cx="100" cy="65" r="7" fill="#2563eb"/>
+  <circle cx="92" cy="45" r="7" fill="#2563eb"/>
+  <text x="92" y="90" text-anchor="middle" font-size="11" fill="#374151">$T_2=3$</text>
+
+  <!-- T3 = 6 -->
+  <circle cx="145" cy="70" r="7" fill="#2563eb"/>
+  <circle cx="160" cy="70" r="7" fill="#2563eb"/>
+  <circle cx="175" cy="70" r="7" fill="#2563eb"/>
+  <circle cx="152" cy="52" r="7" fill="#2563eb"/>
+  <circle cx="167" cy="52" r="7" fill="#2563eb"/>
+  <circle cx="159" cy="34" r="7" fill="#2563eb"/>
+  <text x="160" y="90" text-anchor="middle" font-size="11" fill="#374151">$T_3=6$</text>
+
+  <!-- T4 = 10 -->
+  <circle cx="210" cy="72" r="6" fill="#2563eb"/>
+  <circle cx="223" cy="72" r="6" fill="#2563eb"/>
+  <circle cx="236" cy="72" r="6" fill="#2563eb"/>
+  <circle cx="249" cy="72" r="6" fill="#2563eb"/>
+  <circle cx="216" cy="57" r="6" fill="#2563eb"/>
+  <circle cx="229" cy="57" r="6" fill="#2563eb"/>
+  <circle cx="242" cy="57" r="6" fill="#2563eb"/>
+  <circle cx="222" cy="42" r="6" fill="#2563eb"/>
+  <circle cx="235" cy="42" r="6" fill="#2563eb"/>
+  <circle cx="229" cy="27" r="6" fill="#2563eb"/>
+  <text x="230" y="90" text-anchor="middle" font-size="11" fill="#374151">$T_4=10$</text>
+
+  <text x="340" y="55" font-size="13" fill="#374151">$T_n = \dfrac{n(n+1)}{2}$</text>
+</svg>
+</div>
+
+<h3>Cube Numbers</h3>
+<p>$1, 8, 27, 64, 125, 216, \ldots$ &nbsp;&nbsp; $T_n = n^3$</p>
+
+<h3>Powers of 2 (Geometric)</h3>
+<p>$1, 2, 4, 8, 16, 32, 64, \ldots$ &nbsp;&nbsp; $T_n = 2^{n-1}$, common ratio $r = 2$.</p>
+
+<h3>Fibonacci Sequence</h3>
+<p>$1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \ldots$</p>
+<p>Term-to-term rule: $T_{n+1} = T_n + T_{n-1}$ (each term is the sum of the two preceding terms). There is no simple closed-form $n$th term formula at GCSE level.</p>
+<ul>
+  <li>Fibonacci numbers appear in nature — spiral patterns on sunflowers, pinecones, and shells.</li>
+  <li>The ratio of consecutive Fibonacci terms approaches the golden ratio $\phi \approx 1.618$.</li>
+</ul>
+
+<h3>Other Common Special Sequences</h3>
+<table>
+  <thead><tr><th>Name</th><th>Sequence</th><th>$n$th term</th></tr></thead>
+  <tbody>
+    <tr><td>Natural numbers</td><td>$1, 2, 3, 4, 5, \ldots$</td><td>$n$</td></tr>
+    <tr><td>Even numbers</td><td>$2, 4, 6, 8, 10, \ldots$</td><td>$2n$</td></tr>
+    <tr><td>Odd numbers</td><td>$1, 3, 5, 7, 9, \ldots$</td><td>$2n-1$</td></tr>
+    <tr><td>Square numbers</td><td>$1, 4, 9, 16, 25, \ldots$</td><td>$n^2$</td></tr>
+    <tr><td>Triangular numbers</td><td>$1, 3, 6, 10, 15, \ldots$</td><td>$\dfrac{n(n+1)}{2}$</td></tr>
+    <tr><td>Cube numbers</td><td>$1, 8, 27, 64, 125, \ldots$</td><td>$n^3$</td></tr>
+    <tr><td>Powers of 2</td><td>$2, 4, 8, 16, 32, \ldots$</td><td>$2^n$</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  Show that 210 is a triangular number and find its position.<br><br>
+  <div class="step">Set $\dfrac{n(n+1)}{2} = 210$</div>
+  <div class="step">$n(n+1) = 420$</div>
+  <div class="step">Test: $n = 20$: $20 \times 21 = 420$ ✓</div>
+  <div class="step">So 210 is the <strong>20th</strong> triangular number.</div>
+</div>
+
+<div class="worked-example">
+  A geometric sequence has first term 5 and common ratio 3. Write the first five terms and find the $n$th term.<br><br>
+  <div class="step">Terms: $5, 15, 45, 135, 405$</div>
+  <div class="step">$n$th term: $T_n = 5 \times 3^{n-1}$</div>
+  <div class="step">Check: $T_3 = 5 \times 3^2 = 5 \times 9 = 45$ ✓</div>
+</div>
+
+<div class="exam-tip">
+  You may be asked to recognise a sequence as triangular, square, or Fibonacci — memorise these! Also be able to state the $n$th term formula for each.
+</div>
+
+<!-- ============================================================ -->
+<h2>Quick Reference Summary</h2>
+<table>
+  <thead><tr><th>Concept</th><th>Key fact / formula</th></tr></thead>
+  <tbody>
+    <tr><td>Arithmetic sequence</td><td>Constant 1st differences; $T_n = dn + c$</td></tr>
+    <tr><td>Geometric sequence</td><td>Constant ratio; $T_n = a \cdot r^{n-1}$</td></tr>
+    <tr><td>Finding $n$th term (linear)</td><td>$d$ = coefficient of $n$; $c = T_1 - d$</td></tr>
+    <tr><td>Is $k$ in sequence?</td><td>Solve $T_n = k$; $n$ must be a positive integer</td></tr>
+    <tr><td>Quadratic sequence [H]</td><td>Constant 2nd differences; $a = \frac{\text{2nd diff}}{2}$; subtract $an^2$ and solve remainder</td></tr>
+    <tr><td>Triangular numbers</td><td>$T_n = \frac{n(n+1)}{2}$: 1, 3, 6, 10, 15 …</td></tr>
+    <tr><td>Square numbers</td><td>$T_n = n^2$: 1, 4, 9, 16, 25 …</td></tr>
+    <tr><td>Fibonacci rule</td><td>Each term = sum of the two before it</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+</body>
+</html>
