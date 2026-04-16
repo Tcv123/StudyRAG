@@ -35,6 +35,7 @@
   <script src="questions/geography-edexcel/geography-edexcel-practice.js"></script>
   <script src="questions/geography-ocr/geography-ocr-practice.js"></script>
   <script src="questions/maths-aqa/maths-aqa-practice.js"></script>
+  <script src="questions/maths-ocr/maths-ocr-practice.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -562,6 +563,7 @@ const PRACTICE_MAP = {
   'Geography_Edexcel': () => typeof GEOGRAPHY_EDEXCEL_PRACTICE !== 'undefined' ? GEOGRAPHY_EDEXCEL_PRACTICE : null,
   'Geography_OCR': () => typeof GEOGRAPHY_OCR_PRACTICE !== 'undefined' ? GEOGRAPHY_OCR_PRACTICE : null,
   'Mathematics_AQA': () => typeof MATHS_AQA_PRACTICE !== 'undefined' ? MATHS_AQA_PRACTICE : null,
+  'Mathematics_OCR': () => typeof MATHS_OCR_PRACTICE !== 'undefined' ? MATHS_OCR_PRACTICE : null,
 };
 
 function getPracticeData(topicKey) {
@@ -955,6 +957,41 @@ const SUBJECT_TOPICS = {
         { id: '2.3', name: 'Global Migration', sub: 'Migration theories, push/pull, impacts' },
         { id: '2.4', name: 'Human Rights', sub: 'Development, health, gender, education' },
         { id: '2.5', name: 'Power & Borders', sub: 'Sovereignty, superpowers, global governance' },
+      ]},
+    ]
+  },
+  'Mathematics_OCR': {
+    sections: [
+      { label: 'Number', topics: [
+        { id: '1.1', name: 'Number: Arithmetic & Place Value', sub: 'Place value, four operations, BIDMAS, primes, HCF, LCM' },
+        { id: '1.2', name: 'Fractions, Decimals & Percentages', sub: 'FDP conversions, operations, reverse percentages, compound interest' },
+        { id: '1.3', name: 'Accuracy, Rounding & Estimation', sub: 'Rounding (dp/sf), estimation, error intervals, bounds' },
+        { id: '1.4', name: 'Powers, Roots & Standard Form', sub: 'Index laws, standard form, surds (Higher)' },
+      ]},
+      { label: 'Algebra', topics: [
+        { id: '2.1', name: 'Algebraic Expressions', sub: 'Simplifying, expanding, factorising, algebraic fractions' },
+        { id: '2.2', name: 'Equations & Inequalities', sub: 'Linear, simultaneous, quadratic, inequalities, proof' },
+        { id: '2.3', name: 'Sequences', sub: 'nth term, arithmetic, quadratic (Higher), geometric sequences' },
+        { id: '2.4', name: 'Graphs', sub: 'Straight lines, quadratics, cubics, real-life graphs, transformations' },
+      ]},
+      { label: 'Ratio, Proportion & Rates of Change', topics: [
+        { id: '3.1', name: 'Ratio & Proportion', sub: 'Simplifying ratios, dividing, direct/inverse proportion, similar shapes' },
+        { id: '3.2', name: 'Rates of Change & Compound Measures', sub: 'Speed/density/pressure, compound interest, growth & decay' },
+      ]},
+      { label: 'Geometry & Measures', topics: [
+        { id: '4.1', name: 'Properties of Shapes & Angles', sub: 'Angle rules, parallel lines, polygons, circle theorems (Higher)' },
+        { id: '4.2', name: 'Mensuration: Area, Perimeter & Volume', sub: 'All 2D areas, 3D volumes and surface areas, frustums (Higher)' },
+        { id: '4.3', name: 'Transformations', sub: 'Translation, reflection, rotation, enlargement, describing transformations' },
+        { id: '4.4', name: "Pythagoras' Theorem & Trigonometry", sub: 'Pythagoras, SOHCAHTOA, sine/cosine rule, area formula (Higher)' },
+        { id: '4.5', name: 'Circles & Constructions', sub: 'Arc length, sector area, circle theorems, loci and constructions' },
+        { id: '4.6', name: 'Vectors', sub: 'Vector notation, addition, scalar multiplication, vector proofs (Higher)' },
+      ]},
+      { label: 'Probability', topics: [
+        { id: '5.1', name: 'Probability', sub: 'Sample space, Venn diagrams, tree diagrams, conditional probability' },
+      ]},
+      { label: 'Statistics', topics: [
+        { id: '6.1', name: 'Statistical Diagrams & Measures', sub: 'Averages, range, bar charts, pie charts, scatter diagrams' },
+        { id: '6.2', name: 'Cumulative Frequency, Histograms & Box Plots', sub: 'Cumulative frequency curves, box plots, histograms, comparing data' },
       ]},
     ]
   },
