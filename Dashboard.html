@@ -895,7 +895,8 @@ function toggleExamDates() {
   if (!ex || !tog) return;
   const vis = ex.style.display === 'none';
   ex.style.display = vis ? 'block' : 'none';
-  tog.textContent = vis ? 'Show less ▴' : tog.getAttribute('data-more');
+  const remaining = tog.getAttribute('data-remaining');
+  tog.textContent = vis ? 'Show less ▴' : `+ ${remaining} more exams ▾`;
 }
 
 function renderExamDates(subjects) {
@@ -978,7 +979,7 @@ function renderExamDates(subjects) {
     wrapper += `<div id="examExtra" style="display:none;">${extraHtml}</div>`;
     const remaining = upcoming.length - SHOW_INITIAL;
     wrapper += `<div style="border-top:1px solid var(--border);padding:8px 0 2px;text-align:center;">
-      <button onclick="toggleExamDates()" id="examToggle" style="background:none;border:none;font-size:11px;font-weight:600;color:var(--accent-dark);cursor:pointer;font-family:var(--font-body);">+ ${remaining} more exams ▾</button>
+      <button onclick="toggleExamDates()" id="examToggle" data-remaining="${remaining}" style="background:none;border:none;font-size:11px;font-weight:600;color:var(--accent-dark);cursor:pointer;font-family:var(--font-body);">+ ${remaining} more exams ▾</button>
     </div>`;
   }
   wrapper += `</div>`;
