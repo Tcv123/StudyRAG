@@ -335,12 +335,6 @@
     <!-- Summary bar -->
     <div class="summary-bar" id="summaryBar"></div>
 
-    <!-- Upcoming exams -->
-    <div id="breakdownExamRow" style="margin-bottom:20px;display:none;">
-      <div style="font-size:11px;font-weight:600;color:var(--muted2);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">📅 Next exams</div>
-      <div id="breakdownExamCards" style="display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;"></div>
-    </div>
-
     <!-- Filter tabs -->
     <div class="filter-tabs">
       <button class="filter-tab active" onclick="setFilter('all', this)">All topics</button>
@@ -352,6 +346,12 @@
 
     <!-- Topic list -->
     <div id="topicList"></div>
+
+    <!-- Upcoming exams timeline -->
+    <div id="breakdownExamRow" style="margin-top:28px;display:none;">
+      <div style="font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;">📅 Upcoming exams</div>
+      <div id="breakdownExamGrid"></div>
+    </div>
   </main>
 
 </div>
@@ -1081,43 +1081,96 @@ const EXAM_DATES = {
 };
 
 function renderBreakdownExams(subjects) {
-  const row = document.getElementById('breakdownExamRow');
-  const cards = document.getElementById('breakdownExamCards');
-  if (!row || !cards) return;
+  const row  = document.getElementById('breakdownExamRow');
+  const grid = document.getElementById('breakdownExamGrid');
+  if (!row || !grid) return;
 
-  const now = new Date();
-  const emojis = { 'Computer Science':'💻', 'Mathematics':'🔢', 'Biology':'🧬', 'Chemistry':'🧪', 'Physics':'⚡', 'Economics':'📈', 'Geography':'🌍' };
+  const now   = new Date();
+  const EMOJI = { 'Computer Science':'💻','Mathematics':'🔢','Biology':'🧬','Chemistry':'🧪','Physics':'⚡','Economics':'📈','Geography':'🌍' };
+  const SUBJ_COLOR = {'Computer Science':'#6366F1','Mathematics':'#8B5CF6','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6'};
+  const BOARD_COLOR = {'AQA':'#7C3AED','OCR':'#0369A1','Edexcel':'#B45309','Edexcel A':'#B45309','Edexcel B':'#92400E','OCR A':'#0E7490','OCR B':'#0F766E'};
+  const BOARD_BG    = {'AQA':'rgba(124,58,237,0.1)','OCR':'rgba(3,105,161,0.1)','Edexcel':'rgba(180,83,9,0.1)','Edexcel A':'rgba(180,83,9,0.1)','Edexcel B':'rgba(146,64,14,0.1)','OCR A':'rgba(14,116,144,0.1)','OCR B':'rgba(15,118,110,0.1)'};
+
   const exams = [];
-
   (subjects || []).forEach(s => {
     const dates = EXAM_DATES[`${s.subject}_${s.exam_board}`];
     if (!dates) return;
+    const emoji = EMOJI[s.subject] || '📚';
     dates.forEach(d => {
-      const dt = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
-      const diff = Math.ceil((dt - now) / 86400000);
-      if (diff >= 0) exams.push({ ...d, subject: s.subject, emoji: emojis[s.subject] || '📚', dt, diff });
+      const examDate = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
+      const diffDays = Math.ceil((examDate - now) / 86400000);
+      exams.push({ ...d, subject: s.subject, board: s.exam_board, emoji, examDate, diffDays });
     });
   });
 
-  if (!exams.length) { row.style.display = 'none'; return; }
-  exams.sort((a, b) => a.dt - b.dt);
+  const upcoming = exams.filter(e => e.diffDays >= 0).sort((a, b) => a.examDate - b.examDate);
+  if (!upcoming.length) { row.style.display = 'none'; return; }
   row.style.display = '';
 
-  cards.innerHTML = exams.slice(0, 8).map(e => {
-    const dateStr = e.dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-    const col = e.diff <= 3 ? 'var(--red)' : e.diff <= 14 ? 'var(--amber)' : 'var(--accent-dark)';
-    const bg = e.diff <= 3 ? 'var(--red-bg)' : e.diff <= 14 ? 'var(--amber-bg)' : 'var(--surface)';
-    const bd = e.diff <= 3 ? 'var(--red-border)' : e.diff <= 14 ? 'var(--amber-border)' : 'var(--border)';
-    const label = e.diff === 0 ? 'Today' : e.diff === 1 ? 'Tomorrow' : e.diff + 'd';
-    return `<div style="min-width:150px;flex-shrink:0;background:${bg};border:1px solid ${bd};border-radius:10px;padding:10px 14px;">
-      <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
-        <span style="font-size:14px;">${e.emoji}</span>
-        <span style="font-size:12px;font-weight:600;flex:1;">${e.subject}</span>
-        <span style="font-size:11px;font-weight:700;color:${col};">${label}</span>
+  // Group by month
+  const byMonth = {};
+  upcoming.forEach(e => {
+    const key = e.examDate.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+    if (!byMonth[key]) byMonth[key] = [];
+    byMonth[key].push(e);
+  });
+
+  const SHOW_INITIAL = 6;
+  let visibleCount = 0;
+  let mainHtml = '';
+  let extraHtml = '';
+
+  function examRowHtml(e) {
+    const dateStr  = e.examDate.toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short' });
+    const timeStr  = e.time === 'AM' ? '9:00 AM' : '1:30 PM';
+    const urgency  = e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : 'var(--accent-dark)';
+    const urgBg    = e.diffDays <= 7 ? 'rgba(239,68,68,0.08)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.08)' : 'var(--accent-dim)';
+    const sc = SUBJ_COLOR[e.subject] || 'var(--accent)';
+    const bc = BOARD_COLOR[e.board] || '#374151';
+    const bb = BOARD_BG[e.board] || 'rgba(55,65,81,0.1)';
+    return `<div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--border);">
+      <div style="width:36px;height:36px;border-radius:10px;background:${sc}18;border:1px solid ${sc}33;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">${e.emoji}</div>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:13px;font-weight:600;color:var(--text);">${e.subject} <span style="color:${bc};font-size:11px;font-weight:600;background:${bb};border:1px solid ${bc}40;padding:1px 7px;border-radius:8px;margin-left:4px;">${e.board}</span></div>
+        <div style="font-size:11.5px;color:var(--muted);margin-top:2px;">
+          <span style="color:var(--text);font-weight:500;">${e.paper}</span>
+          &nbsp;·&nbsp;<span style="color:var(--accent-dark);">📅 ${dateStr}</span>
+          &nbsp;·&nbsp;<span>🕐 ${timeStr}</span>
+          ${e.duration ? `&nbsp;·&nbsp;<span>⏱ ${e.duration}</span>` : ''}
+        </div>
       </div>
-      <div style="font-size:11px;color:var(--muted);">${e.paper} · ${dateStr} · ${e.time}</div>
+      <span style="flex-shrink:0;font-size:13px;font-weight:700;color:${urgency};background:${urgBg};padding:4px 11px;border-radius:20px;border:1px solid ${urgency}33;">${e.diffDays}d</span>
     </div>`;
-  }).join('');
+  }
+
+  for (const [month, items] of Object.entries(byMonth)) {
+    const label = `<div style="font-size:10px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:0.1em;padding:10px 0 2px;">${month}</div>`;
+    let rows = '';
+    items.forEach(e => {
+      if (visibleCount < SHOW_INITIAL) { visibleCount++; rows += examRowHtml(e); }
+      else { extraHtml += examRowHtml(e); }
+    });
+    mainHtml += label + rows;
+  }
+
+  const remaining = upcoming.length - SHOW_INITIAL;
+  let html = `<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px 14px 6px;">${mainHtml}`;
+  if (remaining > 0) {
+    html += `<div id="bdExamExtra" style="display:none;">${extraHtml}</div>`;
+    html += `<div style="border-top:1px solid var(--border);padding:8px 0 2px;text-align:center;">
+      <button onclick="toggleBdExam(this)" data-remaining="${remaining}" style="background:none;border:none;font-size:11px;font-weight:600;color:var(--accent-dark);cursor:pointer;font-family:inherit;">+ ${remaining} more exams ▾</button>
+    </div>`;
+  }
+  html += `</div>`;
+  grid.innerHTML = html;
+}
+
+function toggleBdExam(btn) {
+  const ex = document.getElementById('bdExamExtra');
+  if (!ex) return;
+  const vis = ex.style.display === 'none';
+  ex.style.display = vis ? 'block' : 'none';
+  btn.textContent = vis ? 'Show less ▴' : `+ ${btn.getAttribute('data-remaining')} more exams ▾`;
 }
 
 async function load() {
