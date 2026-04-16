@@ -1287,13 +1287,20 @@ function renderSubjectsProgress(subjects, topicRows) {
     </div>`;
   }).join('');
 
-  // Fill empty grid cells with invisible spacers so last row doesn't stretch
+  // Inject exam dates into the grid to fill empty cells in last row
   const cols = 3;
   const remainder = subjects.length % cols;
   if (remainder !== 0) {
-    const needed = cols - remainder;
-    for (let i = 0; i < needed; i++) {
-      grid.innerHTML += `<div style="visibility:hidden;height:0;min-height:0;"></div>`;
+    const span = cols - remainder;
+    const examRow = document.getElementById('examDatesRow');
+    if (examRow) {
+      examRow.style.gridColumn = `span ${span}`;
+      examRow.style.margin = '0';
+      examRow.style.borderRadius = '14px';
+      examRow.style.background = 'var(--surface)';
+      examRow.style.border = '1px solid var(--border)';
+      examRow.style.padding = '14px';
+      grid.appendChild(examRow);
     }
   }
 }
