@@ -158,33 +158,6 @@
     .msg.error   { color: var(--red-text);   background: var(--red-bg);   border: 1px solid var(--red-border); }
     .msg.success { color: var(--green-text); background: var(--green-bg); border: 1px solid var(--green-border); }
 
-    /* ── email-sent confirmation screen ── */
-    .email-sent { display: none; text-align: center; }
-    .email-sent.show { display: block; }
-    .email-sent .icon-circle {
-      width: 72px; height: 72px; border-radius: 50%;
-      background: var(--green-bg); border: 1px solid var(--green-border);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px;
-    }
-    .email-sent .icon-circle svg { width: 32px; height: 32px; color: var(--green); }
-    .email-sent h2 {
-      font-family: var(--font-display);
-      font-size: 22px; color: var(--text); margin-bottom: 8px;
-    }
-    .email-sent p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 6px; }
-    .email-sent .sent-email { font-weight: 600; color: var(--text); }
-    .email-sent .hint {
-      font-size: 12px; color: var(--muted2); margin-top: 16px;
-      padding-top: 16px; border-top: 1px solid var(--border);
-    }
-    .email-sent .resend-link {
-      color: var(--accent-dark); font-weight: 500; cursor: pointer;
-      text-decoration: none; border: none; background: none;
-      font-family: var(--font-body); font-size: 12px;
-    }
-    .email-sent .resend-link:hover { text-decoration: underline; }
-
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -199,63 +172,42 @@
       <div class="logo-name">RAG Learning</div>
     </div>
 
-    <!-- ── signup form ── -->
-    <div id="formWrap">
-      <div class="card-title">Create your account</div>
-      <p class="card-sub">Already have one? <a href="login.html">Sign in</a></p>
+    <div class="card-title">Create your account</div>
+    <p class="card-sub">Already have one? <a href="login.html">Sign in</a></p>
 
-      <form id="form">
-        <div class="name-row">
-          <div class="field">
-            <label for="firstName">First name</label>
-            <input id="firstName" placeholder="Jane" required>
-          </div>
-          <div class="field">
-            <label for="lastName">Last name</label>
-            <input id="lastName" placeholder="Doe" required>
-          </div>
-        </div>
-
+    <form id="form">
+      <div class="name-row">
         <div class="field">
-          <label for="email">Email address</label>
-          <input id="email" type="email" placeholder="you@example.com" required>
+          <label for="firstName">First name</label>
+          <input id="firstName" placeholder="Jane" required>
         </div>
-
         <div class="field">
-          <label for="password">Password</label>
-          <input id="password" type="password" placeholder="At least 6 characters" required oninput="checkPw(this.value)">
-          <div class="pw-strength">
-            <div class="pw-bar" id="b1"></div>
-            <div class="pw-bar" id="b2"></div>
-            <div class="pw-bar" id="b3"></div>
-            <div class="pw-bar" id="b4"></div>
-          </div>
-          <div class="pw-label" id="pwLabel"></div>
+          <label for="lastName">Last name</label>
+          <input id="lastName" placeholder="Doe" required>
         </div>
-
-        <button class="btn btn-primary" id="registerBtn">Create Account</button>
-      </form>
-
-      <p id="msg" class="msg"></p>
-    </div>
-
-    <!-- ── email-sent confirmation ── -->
-    <div id="emailSent" class="email-sent">
-      <div class="icon-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
-        </svg>
       </div>
-      <h2>Check your email</h2>
-      <p>We sent a confirmation link to</p>
-      <p class="sent-email" id="sentEmail"></p>
-      <p>Click the link in the email to verify your account, then you can sign in.</p>
-      <div class="hint">
-        Didn't get it? Check your spam folder or
-        <button class="resend-link" id="resendBtn">resend the email</button>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
       </div>
-      <p id="resendMsg" class="msg" style="margin-top:12px;"></p>
-    </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="At least 6 characters" required oninput="checkPw(this.value)">
+        <div class="pw-strength">
+          <div class="pw-bar" id="b1"></div>
+          <div class="pw-bar" id="b2"></div>
+          <div class="pw-bar" id="b3"></div>
+          <div class="pw-bar" id="b4"></div>
+        </div>
+        <div class="pw-label" id="pwLabel"></div>
+      </div>
+
+      <button class="btn btn-primary" id="registerBtn">Create Account</button>
+    </form>
+
+    <p id="msg" class="msg"></p>
   </div>
 </div>
 
@@ -277,13 +229,6 @@ function checkPw(val) {
 const form        = document.getElementById('form');
 const msg         = document.getElementById('msg');
 const registerBtn = document.getElementById('registerBtn');
-const formWrap    = document.getElementById('formWrap');
-const emailSent   = document.getElementById('emailSent');
-const sentEmail   = document.getElementById('sentEmail');
-const resendBtn   = document.getElementById('resendBtn');
-const resendMsg   = document.getElementById('resendMsg');
-
-let signedUpEmail = '';
 
 form.onsubmit = async (e) => {
   e.preventDefault();
@@ -292,18 +237,15 @@ form.onsubmit = async (e) => {
   msg.className = 'msg';
   msg.innerText = '';
 
-  signedUpEmail = email.value.trim();
-
-  // 1 — Sign up (email confirmation is ON — Supabase sends a verification email)
+  // 1 — Sign up (email confirmation must be OFF in Supabase Auth settings)
   const { data, error } = await supabaseClient.auth.signUp({
-    email:    signedUpEmail,
+    email:    email.value.trim(),
     password: password.value,
     options: {
       data: {
         first_name: firstName.value.trim(),
         last_name:  lastName.value.trim()
-      },
-      emailRedirectTo: window.location.origin + '/auth/confirm.html'
+      }
     }
   });
 
@@ -315,45 +257,28 @@ form.onsubmit = async (e) => {
     return;
   }
 
-  // 2 — If email confirmation is off and we got a session, go straight to setup
+  // 2 — Create the profile row immediately (works when email confirm is off)
+  if (data.user) {
+    await supabaseClient.from('profiles').upsert({
+      id:             data.user.id,
+      first_name:     firstName.value.trim(),
+      last_name:      lastName.value.trim(),
+      email:          email.value.trim(),
+      setup_complete: false
+    });
+  }
+
+  // 3 — If we got a session straight away → go to setup
   if (data.session) {
-    if (data.user) {
-      await supabaseClient.from('profiles').upsert({
-        id:             data.user.id,
-        first_name:     firstName.value.trim(),
-        last_name:      lastName.value.trim(),
-        email:          signedUpEmail,
-        setup_complete: false
-      });
-    }
     window.location = 'setup.html';
     return;
   }
 
-  // 3 — Email confirmation is on — show the "check your email" screen
-  sentEmail.textContent = signedUpEmail;
-  formWrap.style.display = 'none';
-  emailSent.classList.add('show');
-};
-
-// ── Resend confirmation email ──
-resendBtn.onclick = async () => {
-  resendMsg.className = 'msg';
-  resendMsg.innerText = '';
-
-  const { error } = await supabaseClient.auth.resend({
-    type: 'signup',
-    email: signedUpEmail,
-    options: { emailRedirectTo: window.location.origin + '/auth/confirm.html' }
-  });
-
-  if (error) {
-    resendMsg.className = 'msg error';
-    resendMsg.innerText = error.message;
-  } else {
-    resendMsg.className = 'msg success';
-    resendMsg.innerText = 'Confirmation email resent!';
-  }
+  // 4 — Email confirmation is still on — ask them to sign in after confirming
+  msg.className   = 'msg success';
+  msg.innerText   = 'Account created! Check your email to confirm, then sign in.';
+  registerBtn.disabled    = false;
+  registerBtn.textContent = 'Create Account';
 };
 </script>
 </body>
