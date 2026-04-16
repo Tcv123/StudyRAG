@@ -303,6 +303,46 @@ For the normal, use gradient \(-\dfrac{1}{m}\) where \(m\) is the tangent gradie
   <text x="405" y="168" text-anchor="middle" fill="#64748b" font-size="10">Use discriminant</text>
 </svg>
 
+<h2>Circle Geometry Theorems in Coordinate Problems</h2>
+
+<p>Several circle geometry theorems are useful tools in A-Level coordinate geometry questions:</p>
+
+<div class="definition">
+<ul>
+  <li><strong>Angle in a semicircle:</strong> If AB is a diameter and P is any other point on the circle, then \(\angle APB = 90°\). This means \(\overrightarrow{PA} \cdot \overrightarrow{PB} = 0\) in coordinate terms.</li>
+  <li><strong>Perpendicular bisector of a chord:</strong> The perpendicular bisector of any chord passes through the centre of the circle. Use this to find the centre when given two chords.</li>
+  <li><strong>Tangent from external point:</strong> The two tangents drawn from an external point to a circle are equal in length.</li>
+</ul>
+</div>
+
+<div class="example">
+<h3>Example: The points \(A(1, 6)\) and \(B(7, -2)\) are the ends of a diameter. Find the equation of the circle and show that the point \(P(7, 6)\) lies on the circle. Verify that \(\angle APB = 90°\).</h3>
+<p><strong>Centre</strong> = midpoint of AB = \(\left(\dfrac{1+7}{2}, \dfrac{6-2}{2}\right) = (4, 2)\)</p>
+<p><strong>Radius</strong> = \(\dfrac{1}{2}|AB| = \dfrac{1}{2}\sqrt{(7-1)^2+(-2-6)^2} = \dfrac{1}{2}\sqrt{36+64} = \dfrac{10}{2} = 5\)</p>
+<p><strong>Equation:</strong> \((x-4)^2 + (y-2)^2 = 25\)</p>
+<p><strong>P on circle:</strong> \((7-4)^2 + (6-2)^2 = 9 + 16 = 25\) ✓</p>
+<p><strong>Check \(\angle APB = 90°\):</strong></p>
+<p>\(\overrightarrow{PA} = A - P = (1-7, 6-6) = (-6, 0)\)</p>
+<p>\(\overrightarrow{PB} = B - P = (7-7, -2-6) = (0, -8)\)</p>
+<p>\(\overrightarrow{PA} \cdot \overrightarrow{PB} = (-6)(0) + (0)(-8) = 0\) ✓ — confirms \(\angle APB = 90°\) (angle in semicircle). \(\square\)</p>
+</div>
+
+<div class="example">
+<h3>Example: A circle passes through \(A(2, 5)\), \(B(6, 1)\), and \(C(0, 3)\). Find the centre using perpendicular bisectors.</h3>
+<p>The centre lies on the perpendicular bisector of AB and of BC.</p>
+<p><strong>Perp bisector of AB:</strong> Midpoint = (4, 3). Gradient AB = \(\dfrac{1-5}{6-2} = -1\). Perp gradient = 1.</p>
+<p>Equation: \(y - 3 = 1(x - 4) \Rightarrow y = x - 1\) &ensp; ...(1)</p>
+<p><strong>Perp bisector of BC:</strong> Midpoint = (3, 2). Gradient BC = \(\dfrac{3-1}{0-6} = -\dfrac{1}{3}\). Perp gradient = 3.</p>
+<p>Equation: \(y - 2 = 3(x - 3) \Rightarrow y = 3x - 7\) &ensp; ...(2)</p>
+<p>Solve: \(x - 1 = 3x - 7 \Rightarrow 6 = 2x \Rightarrow x = 3\), \(y = 2\). <strong>Centre = (3, 2).</strong></p>
+<p>Radius = \(|CA| = \sqrt{(2-3)^2+(5-2)^2} = \sqrt{1+9} = \sqrt{10}\).</p>
+<p>Equation: \((x-3)^2 + (y-2)^2 = 10\).</p>
+</div>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> If a question gives three points on a circle, use perpendicular bisectors of two chords — their intersection is the centre. If it gives a diameter, the centre is the midpoint and you can use the "angle in semicircle = 90°" property directly.
+</div>
+
 <h2>Exam Strategy Summary</h2>
 
 <div class="exam-tip">
@@ -314,6 +354,8 @@ For the normal, use gradient \(-\dfrac{1}{m}\) where \(m\) is the tangent gradie
   <li>For parametric differentiation, always use \(\dfrac{dy}{dx} = \dfrac{dy/dt}{dx/dt}\), not the other way round.</li>
   <li>When converting parametric to Cartesian, look for identities you can use (e.g. \(\sin^2\theta + \cos^2\theta = 1\)).</li>
   <li>Check your answers by substituting back into the original equations.</li>
+  <li>Three points on a circle: find the centre by intersecting two perpendicular bisectors of chords.</li>
+  <li>Diameter endpoints given: use midpoint for centre, half-distance for radius, and \(\angle\) in semicircle = 90°.</li>
 </ul>
 </div>
 

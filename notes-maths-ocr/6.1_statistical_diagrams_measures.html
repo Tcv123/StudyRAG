@@ -333,6 +333,295 @@
   Moving averages are plotted at the mid-time point between the first and last data points in each group. For a 4-point MA, plot between the 2nd and 3rd point of each group of 4. The trend line is drawn through the moving average points.
 </div>
 
+<!-- ============================================================ -->
+<h2>6.1.7 Histograms</h2>
+
+<div class="definition">
+  A <strong>histogram</strong> is used for continuous grouped data. Unlike a bar chart, the <strong>area</strong> of each bar represents the frequency — not the height. This is necessary because class widths may vary.<br><br>
+  $$\text{Frequency density} = \frac{\text{Frequency}}{\text{Class width}}$$
+  $$\text{Frequency} = \text{Frequency density} \times \text{Class width}$$
+</div>
+
+<div class="worked-example">
+  The table shows the times (in minutes) students spent on homework. Draw a histogram.<br><br>
+  <table>
+    <tr><th>Time $t$ (min)</th><th>Frequency</th><th>Class width</th><th>Freq. density</th></tr>
+    <tr><td>$0 \leq t &lt; 10$</td><td>5</td><td>10</td><td>0.5</td></tr>
+    <tr><td>$10 \leq t &lt; 20$</td><td>12</td><td>10</td><td>1.2</td></tr>
+    <tr><td>$20 \leq t &lt; 40$</td><td>18</td><td>20</td><td>0.9</td></tr>
+    <tr><td>$40 \leq t &lt; 60$</td><td>10</td><td>20</td><td>0.5</td></tr>
+    <tr><td>$60 \leq t &lt; 100$</td><td>4</td><td>40</td><td>0.1</td></tr>
+  </table>
+  Note: the bar for $20 \leq t &lt; 40$ is twice as wide but has frequency density 0.9, giving area $20 \times 0.9 = 18$ — correctly representing a frequency of 18.
+</div>
+
+<!-- Histogram SVG -->
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;display:block;margin:16px auto;">
+  <!-- Axes -->
+  <line x1="60" y1="240" x2="520" y2="240" stroke="#374151" stroke-width="2"/>
+  <line x1="60" y1="20" x2="60" y2="250" stroke="#374151" stroke-width="2"/>
+  <!-- Y label -->
+  <text x="12" y="140" font-size="11" fill="#374151" font-family="sans-serif" transform="rotate(-90,12,140)">Frequency density</text>
+  <!-- X label -->
+  <text x="290" y="275" text-anchor="middle" font-size="12" fill="#374151" font-family="sans-serif">Time (minutes)</text>
+  <!-- X ticks: 0=60, 10=104, 20=148, 40=236, 60=324, 100=500 (scale: 1min = 4.4px, offset 60) -->
+  <!-- Let's use: x_px = 60 + t * 4.4 -->
+  <!-- 0→60, 10→104, 20→148, 40→236, 60→324, 100→500 -->
+  <text x="60" y="258" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">0</text>
+  <text x="104" y="258" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">10</text>
+  <text x="148" y="258" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">20</text>
+  <text x="236" y="258" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">40</text>
+  <text x="324" y="258" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">60</text>
+  <text x="500" y="258" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">100</text>
+  <!-- Y ticks: 0→240, 0.5→200, 1.0→160, 1.2→144 (scale: 1 fd unit = 80px) -->
+  <text x="52" y="244" text-anchor="end" font-size="10" fill="#374151" font-family="sans-serif">0</text>
+  <text x="52" y="204" text-anchor="end" font-size="10" fill="#374151" font-family="sans-serif">0.5</text>
+  <text x="52" y="164" text-anchor="end" font-size="10" fill="#374151" font-family="sans-serif">1.0</text>
+  <text x="52" y="148" text-anchor="end" font-size="10" fill="#374151" font-family="sans-serif">1.2</text>
+  <line x1="58" y1="240" x2="62" y2="240" stroke="#374151" stroke-width="1"/>
+  <line x1="58" y1="200" x2="62" y2="200" stroke="#374151" stroke-width="1"/>
+  <line x1="58" y1="160" x2="62" y2="160" stroke="#374151" stroke-width="1"/>
+  <!-- Bars: height in px = fd * 80 -->
+  <!-- 0-10: fd=0.5, height=40, x=60, width=44 -->
+  <rect x="60" y="200" width="44" height="40" fill="#3b82f6" stroke="#1e40af" stroke-width="1" opacity="0.85"/>
+  <!-- 10-20: fd=1.2, height=96, x=104, width=44 -->
+  <rect x="104" y="144" width="44" height="96" fill="#3b82f6" stroke="#1e40af" stroke-width="1" opacity="0.85"/>
+  <!-- 20-40: fd=0.9, height=72, x=148, width=88 -->
+  <rect x="148" y="168" width="88" height="72" fill="#3b82f6" stroke="#1e40af" stroke-width="1" opacity="0.85"/>
+  <!-- 40-60: fd=0.5, height=40, x=236, width=88 -->
+  <rect x="236" y="200" width="88" height="40" fill="#3b82f6" stroke="#1e40af" stroke-width="1" opacity="0.85"/>
+  <!-- 60-100: fd=0.1, height=8, x=324, width=176 -->
+  <rect x="324" y="232" width="176" height="8" fill="#3b82f6" stroke="#1e40af" stroke-width="1" opacity="0.85"/>
+  <!-- fd labels inside/above bars -->
+  <text x="82" y="196" text-anchor="middle" font-size="10" fill="#1e40af" font-family="sans-serif">0.5</text>
+  <text x="126" y="140" text-anchor="middle" font-size="10" fill="#1e40af" font-family="sans-serif">1.2</text>
+  <text x="192" y="164" text-anchor="middle" font-size="10" fill="#1e40af" font-family="sans-serif">0.9</text>
+  <text x="280" y="196" text-anchor="middle" font-size="10" fill="#1e40af" font-family="sans-serif">0.5</text>
+  <text x="412" y="228" text-anchor="middle" font-size="10" fill="#1e40af" font-family="sans-serif">0.1</text>
+</svg>
+<p style="text-align:center;font-size:0.88rem;color:#6b7280;margin-top:6px;">Histogram of homework times. Bar area = frequency. Note the wide bars for 20–40 and 60–100 min.</p>
+
+<div class="exam-tip">
+  The y-axis of a histogram must be labelled "Frequency density", not "Frequency". If a question gives a partly-drawn histogram and asks you to find a missing frequency, calculate: frequency = frequency density × class width using the scale on the y-axis.
+</div>
+
+<!-- ============================================================ -->
+<h2>6.1.8 Cumulative Frequency and Box Plots</h2>
+
+<h3>Cumulative Frequency</h3>
+<div class="definition">
+  <strong>Cumulative frequency</strong> is a running total of frequencies up to the end of each class. Plot cumulative frequency against the <strong>upper class boundary</strong> to draw a cumulative frequency curve (ogive).
+</div>
+
+<div class="worked-example">
+  Heights of 60 students:<br><br>
+  <table>
+    <tr><th>Height $h$ (cm)</th><th>Frequency</th><th>Cumulative frequency</th></tr>
+    <tr><td>$150 \leq h &lt; 160$</td><td>8</td><td>8</td></tr>
+    <tr><td>$160 \leq h &lt; 165$</td><td>14</td><td>22</td></tr>
+    <tr><td>$165 \leq h &lt; 170$</td><td>18</td><td>40</td></tr>
+    <tr><td>$170 \leq h &lt; 180$</td><td>12</td><td>52</td></tr>
+    <tr><td>$180 \leq h &lt; 200$</td><td>8</td><td>60</td></tr>
+  </table>
+  Plot points at: (150, 0), (160, 8), (165, 22), (170, 40), (180, 52), (200, 60) — join with a smooth curve.
+</div>
+
+<h3>Reading from a Cumulative Frequency Curve</h3>
+<p>From a cumulative frequency curve for $n$ data values, read off:</p>
+<ul>
+  <li><strong>Median</strong>: the value at cumulative frequency $\frac{n}{2}$</li>
+  <li><strong>Lower quartile (Q1)</strong>: the value at cumulative frequency $\frac{n}{4}$</li>
+  <li><strong>Upper quartile (Q3)</strong>: the value at cumulative frequency $\frac{3n}{4}$</li>
+  <li><strong>Interquartile range (IQR)</strong>: $\text{IQR} = Q_3 - Q_1$</li>
+  <li><strong>Percentiles</strong>: $p$th percentile is at cumulative frequency $\frac{pn}{100}$</li>
+</ul>
+
+<!-- Cumulative frequency curve SVG -->
+<svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;display:block;margin:16px auto;">
+  <!-- Axes -->
+  <line x1="60" y1="270" x2="490" y2="270" stroke="#374151" stroke-width="2"/>
+  <line x1="60" y1="20" x2="60" y2="280" stroke="#374151" stroke-width="2"/>
+  <text x="275" y="300" text-anchor="middle" font-size="12" fill="#374151" font-family="sans-serif">Height (cm)</text>
+  <text x="14" y="150" font-size="11" fill="#374151" font-family="sans-serif" transform="rotate(-90,14,150)">Cumulative frequency</text>
+  <!-- X ticks: 150=60, 160=146, 165=189, 170=232, 180=318, 200=490. Scale: 1cm = 4.3px, offset at 150 -->
+  <!-- Let x_px = 60 + (h - 150)*4.3 -->
+  <!-- 150→60, 160→103, 165→124.5≈125, 170→146, 180→189, 200→275 — hmm let me use 60 + (h-150)*3 for a better fit in 430px range for [150,200] -->
+  <!-- 430/(200-150)=8.6px per cm -->
+  <!-- 150→60, 160→146, 165→189, 170→232, 180→318, 200→490 — too wide for 520 SVG -->
+  <!-- Use 6px per cm: 150→60, 160→120, 165→150, 170→180, 180→240, 200→360 -->
+  <text x="60" y="285" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">150</text>
+  <text x="120" y="285" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">160</text>
+  <text x="150" y="285" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">165</text>
+  <text x="180" y="285" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">170</text>
+  <text x="240" y="285" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">180</text>
+  <text x="360" y="285" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">200</text>
+  <!-- Y ticks: 0→270, 15→243.25, 30→216.5, 45→189.75, 60→163 — scale: 60→y=20 so 1unit=4.167px -->
+  <!-- y_px = 270 - cf * (250/60) = 270 - cf*4.167 -->
+  <text x="52" y="274" text-anchor="end" font-size="10" fill="#374151" font-family="sans-serif">0</text>
+  <text x="52" y="240" text-anchor="end" font-size="10" fill="#374151" font-family="sans-serif">8</text>
+  <text x="52" y="178" text-anchor="end" font-size="10" fill="#374151" font-family="sans-serif">22</text>
+  <text x="52" y="103" text-anchor="end" font-size="10" fill="#374151" font-family="sans-serif">40</text>
+  <text x="52" y="53" text-anchor="end" font-size="10" fill="#374151" font-family="sans-serif">52</text>
+  <text x="52" y="20" text-anchor="end" font-size="10" fill="#374151" font-family="sans-serif">60</text>
+  <!-- Data points: (150,0)=(60,270), (160,8)=(120,240), (165,22)=(150,178), (170,40)=(180,103), (180,52)=(240,53), (200,60)=(360,20) -->
+  <polyline points="60,270 120,240 150,178 180,103 240,53 360,20" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <circle cx="60" cy="270" r="4" fill="#2563eb"/>
+  <circle cx="120" cy="240" r="4" fill="#2563eb"/>
+  <circle cx="150" cy="178" r="4" fill="#2563eb"/>
+  <circle cx="180" cy="103" r="4" fill="#2563eb"/>
+  <circle cx="240" cy="53" r="4" fill="#2563eb"/>
+  <circle cx="360" cy="20" r="4" fill="#2563eb"/>
+  <!-- Median line: n/2 = 30, y=270-30*4.167=145. Read x from curve ≈ between (165,22) and (170,40): interpolate -->
+  <!-- Q2=30: between cf=22 at x=150 and cf=40 at x=180. 30-22=8, range=18, fraction=8/18=0.444, x=150+0.444*30=163.3 -->
+  <line x1="60" y1="145" x2="167" y2="145" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="167" y1="145" x2="167" y2="270" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="50" y="141" text-anchor="end" font-size="10" fill="#dc2626" font-family="sans-serif" font-weight="600">30 (Q2)</text>
+  <text x="167" y="283" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif" font-weight="600">≈163</text>
+  <!-- Q1=15: between cf=8 at x=120 and cf=22 at x=150. 15-8=7,range=14,frac=0.5, x=120+15=135 -->
+  <line x1="60" y1="207" x2="135" y2="207" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="135" y1="207" x2="135" y2="270" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="50" y="203" text-anchor="end" font-size="10" fill="#16a34a" font-family="sans-serif" font-weight="600">15 (Q1)</text>
+  <text x="135" y="283" text-anchor="middle" font-size="10" fill="#16a34a" font-family="sans-serif" font-weight="600">≈161</text>
+  <!-- Q3=45: between cf=40 at x=180 and cf=52 at x=240. 45-40=5, range=12, frac=5/12=0.417, x=180+0.417*60=205 -->
+  <line x1="60" y1="82" x2="205" y2="82" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="205" y1="82" x2="205" y2="270" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="50" y="78" text-anchor="end" font-size="10" fill="#7c3aed" font-family="sans-serif" font-weight="600">45 (Q3)</text>
+  <text x="205" y="283" text-anchor="middle" font-size="10" fill="#7c3aed" font-family="sans-serif" font-weight="600">≈175</text>
+</svg>
+<p style="text-align:center;font-size:0.88rem;color:#6b7280;margin-top:6px;">Cumulative frequency curve. Red dashed: median (Q2). Green: lower quartile (Q1). Purple: upper quartile (Q3).</p>
+
+<h3>Box Plots (Box-and-Whisker Diagrams)</h3>
+<div class="definition">
+  A <strong>box plot</strong> shows the distribution of data using five key values:
+  <ul>
+    <li>Minimum value (or lower fence if outliers are excluded)</li>
+    <li>Lower quartile Q1</li>
+    <li>Median Q2</li>
+    <li>Upper quartile Q3</li>
+    <li>Maximum value (or upper fence if outliers are excluded)</li>
+  </ul>
+</div>
+
+<!-- Box plot SVG -->
+<svg viewBox="0 0 560 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;display:block;margin:16px auto;">
+  <!-- Scale: min=150 at x=40, max=200 at x=520. Scale: (520-40)/50 = 9.6 px/unit -->
+  <!-- 150→40, 161→145.6≈146, 163→172, 175→288, 200→520 -->
+  <!-- Actually let's place: min=150 x=40, Q1=161 x=146, Q2=163 x=165, Q3=175 x=282, max=200 x=520 -->
+  <!-- Manual positions: min=40, Q1=146, Q2=165, Q3=282, max=520... too spread. Let me use a subset of the scale. Use cm→px: px=40+(h-150)*9.6 -->
+  <!-- 150→40, 161→145.6, 163→164.8, 175→280, 200→520. OK -->
+  <!-- Box (Q1 to Q3) -->
+  <rect x="146" y="50" width="134" height="40" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <!-- Median line -->
+  <line x1="165" y1="50" x2="165" y2="90" stroke="#dc2626" stroke-width="3"/>
+  <!-- Left whisker: min to Q1 -->
+  <line x1="40" y1="70" x2="146" y2="70" stroke="#374151" stroke-width="2"/>
+  <line x1="40" y1="58" x2="40" y2="82" stroke="#374151" stroke-width="2"/>
+  <!-- Right whisker: Q3 to max -->
+  <line x1="280" y1="70" x2="520" y2="70" stroke="#374151" stroke-width="2"/>
+  <line x1="520" y1="58" x2="520" y2="82" stroke="#374151" stroke-width="2"/>
+  <!-- Labels -->
+  <text x="40" y="46" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">Min</text>
+  <text x="40" y="100" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">150</text>
+  <text x="146" y="100" text-anchor="middle" font-size="10" fill="#2563eb" font-family="sans-serif">Q1=161</text>
+  <text x="165" y="46" text-anchor="middle" font-size="10" fill="#dc2626" font-family="sans-serif" font-weight="700">Q2=163</text>
+  <text x="280" y="100" text-anchor="middle" font-size="10" fill="#2563eb" font-family="sans-serif">Q3=175</text>
+  <text x="520" y="100" text-anchor="middle" font-size="10" fill="#374151" font-family="sans-serif">Max=200</text>
+  <!-- IQR annotation -->
+  <line x1="146" y1="115" x2="280" y2="115" stroke="#7c3aed" stroke-width="1.5" marker-start="url(#iqrl)" marker-end="url(#iqrr)"/>
+  <text x="213" y="130" text-anchor="middle" font-size="11" fill="#7c3aed" font-family="sans-serif" font-weight="600">IQR = 14</text>
+  <defs>
+    <marker id="iqrl" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6" fill="none" stroke="#7c3aed" stroke-width="1.5"/></marker>
+    <marker id="iqrr" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#7c3aed" stroke-width="1.5"/></marker>
+  </defs>
+</svg>
+<p style="text-align:center;font-size:0.88rem;color:#6b7280;margin-top:6px;">Box plot for heights data. The box spans Q1 to Q3 (the IQR). The red line is the median. Whiskers extend to minimum and maximum.</p>
+
+<div class="exam-tip">
+  When comparing two box plots, comment on: (1) the <strong>median</strong> (typical value — which is higher?), (2) the <strong>IQR or range</strong> (spread — which is more consistent/variable?), (3) the <strong>skewness</strong> (if the median is closer to Q1, the data is positively skewed; closer to Q3, negatively skewed). Always use the context of the question in your comparison.
+</div>
+
+<!-- ============================================================ -->
+<h2>6.1.9 Outliers and Interquartile Range</h2>
+
+<div class="definition">
+  An <strong>outlier</strong> is a data value that is unusually far from the rest of the data. The standard definition used in GCSE/A-Level:
+  $$\text{Outlier if } x &lt; Q_1 - 1.5 \times \text{IQR} \quad \text{or} \quad x > Q_3 + 1.5 \times \text{IQR}$$
+  These limits are called the <strong>lower fence</strong> and <strong>upper fence</strong>.
+</div>
+
+<div class="worked-example">
+  Data set: 12, 15, 18, 21, 23, 25, 27, 30, 55.<br><br>
+  <strong>Step 1:</strong> Arrange in order (already done). $n = 9$.<br>
+  <strong>Q1</strong> = 18 (lower half: 12, 15, 18, 21; median = 16.5... actually Q1 = median of lower half = 15+18)/2=16.5)<br>
+  Let's compute properly: Q1 = $\frac{15+18}{2} = 16.5$, &ensp; Q2 = 23, &ensp; Q3 = $\frac{27+30}{2} = 28.5$<br>
+  <strong>IQR</strong> = 28.5 − 16.5 = 12<br>
+  <strong>Lower fence</strong> = 16.5 − 1.5(12) = 16.5 − 18 = −1.5<br>
+  <strong>Upper fence</strong> = 28.5 + 1.5(12) = 28.5 + 18 = 46.5<br>
+  <strong>Outlier check:</strong> 55 &gt; 46.5, so <strong>55 is an outlier</strong>. All other values are between −1.5 and 46.5.
+</div>
+
+<div class="exam-tip">
+  On a box plot, outliers are shown as individual crosses (×) or dots beyond the whiskers. The whiskers then extend only to the most extreme values that are <em>not</em> outliers (the fences). Always state the fence values when asked to identify outliers.
+</div>
+
+<!-- ============================================================ -->
+<h2>6.1.10 Standard Deviation</h2>
+
+<div class="definition">
+  <strong>Standard deviation</strong> measures the average spread of data around the mean. A larger standard deviation means data is more spread out.
+  $$\sigma = \sqrt{\frac{\sum(x - \bar{x})^2}{n}} = \sqrt{\frac{\sum x^2}{n} - \bar{x}^2}$$
+  The second formula (using $\sum x^2$) is usually easier to compute.
+</div>
+
+<div class="worked-example">
+  Find the mean and standard deviation of: 3, 5, 7, 8, 12.<br><br>
+  $\bar{x} = \dfrac{3+5+7+8+12}{5} = \dfrac{35}{5} = 7$<br><br>
+  $\sum x^2 = 9 + 25 + 49 + 64 + 144 = 291$<br><br>
+  $\sigma = \sqrt{\dfrac{291}{5} - 7^2} = \sqrt{58.2 - 49} = \sqrt{9.2} \approx 3.03$
+</div>
+
+<h3>Standard Deviation from a Frequency Table</h3>
+<div class="definition">
+  For data in a frequency table with values $x_i$ and frequencies $f_i$:
+  $$\bar{x} = \frac{\sum f_i x_i}{\sum f_i} \qquad \sigma = \sqrt{\frac{\sum f_i x_i^2}{\sum f_i} - \bar{x}^2}$$
+  For <strong>grouped data</strong>, use the midpoint of each class in place of $x_i$.
+</div>
+
+<div class="worked-example">
+  Find the standard deviation for the grouped height data (using midpoints):<br><br>
+  <table>
+    <tr><th>Class (cm)</th><th>Midpoint $x$</th><th>Freq $f$</th><th>$fx$</th><th>$fx^2$</th></tr>
+    <tr><td>$150 \leq h &lt; 160$</td><td>155</td><td>4</td><td>620</td><td>96,100</td></tr>
+    <tr><td>$160 \leq h &lt; 170$</td><td>165</td><td>11</td><td>1,815</td><td>299,475</td></tr>
+    <tr><td>$170 \leq h &lt; 180$</td><td>175</td><td>9</td><td>1,575</td><td>275,625</td></tr>
+    <tr><td>$180 \leq h &lt; 190$</td><td>185</td><td>6</td><td>1,110</td><td>205,350</td></tr>
+    <tr><td><strong>Total</strong></td><td></td><td><strong>30</strong></td><td><strong>5,120</strong></td><td><strong>876,550</strong></td></tr>
+  </table>
+  $\bar{x} = \dfrac{5120}{30} \approx 170.67$ cm<br><br>
+  $\sigma = \sqrt{\dfrac{876{,}550}{30} - 170.67^2} = \sqrt{29{,}218.3 - 29{,}128.5} = \sqrt{89.8} \approx 9.48$ cm<br><br>
+  This is an <em>estimate</em> because we used midpoints.
+</div>
+
+<div class="exam-tip">
+  Standard deviation is always non-negative. A standard deviation of 0 means all values are identical. For grouped data, always use midpoints and call the answer an estimate. On a calculator, use the $\sigma_n$ function (not $\sigma_{n-1}$, which is the sample standard deviation) unless told otherwise.
+</div>
+
+<h3>Comparing Distributions</h3>
+<table>
+  <thead><tr><th>Measure</th><th>What it tells you</th><th>Use when comparing</th></tr></thead>
+  <tbody>
+    <tr><td>Mean</td><td>Average (centre)</td><td>Which group has a higher typical value?</td></tr>
+    <tr><td>Median</td><td>Middle value (resistant to outliers)</td><td>When data is skewed or has outliers</td></tr>
+    <tr><td>Range</td><td>Total spread</td><td>Quick comparison; affected by outliers</td></tr>
+    <tr><td>IQR</td><td>Spread of middle 50%</td><td>More robust measure of spread; used with box plots</td></tr>
+    <tr><td>Standard deviation</td><td>Average distance from mean</td><td>Most detailed measure of spread</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">
+  Comparison questions always need two statements: one about <strong>average</strong> (median or mean) and one about <strong>spread</strong> (IQR or standard deviation). Both must use the data context — e.g. "Group A had a higher median score (45 vs 38), suggesting they performed better on average. Group A also had a smaller IQR (10 vs 18), suggesting their scores were more consistent."
+</div>
+
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {

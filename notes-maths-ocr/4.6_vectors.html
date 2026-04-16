@@ -327,6 +327,194 @@
   </tbody>
 </table>
 
+<!-- ===================== 4.6.6 3D VECTORS ===================== -->
+<h2>4.6.6 Vectors in Three Dimensions <span class="higher-tag">A-Level</span></h2>
+
+<div class="definition">
+  In 3D, a vector has three components — one for each axis ($x$, $y$, $z$):
+  $$\mathbf{a} = \begin{pmatrix}a_x\\a_y\\a_z\end{pmatrix} = a_x\,\mathbf{i} + a_y\,\mathbf{j} + a_z\,\mathbf{k}$$
+  where $\mathbf{i}, \mathbf{j}, \mathbf{k}$ are unit vectors along the $x$-, $y$-, $z$-axes respectively.<br><br>
+  <strong>Magnitude:</strong> $|\mathbf{a}| = \sqrt{a_x^2 + a_y^2 + a_z^2}$
+</div>
+
+<div class="formula-box">
+  All 2D vector rules (addition, subtraction, scalar multiplication, magnitude) extend directly to 3D — just include the third component throughout.
+</div>
+
+<div class="worked-example">
+  $\mathbf{a} = \begin{pmatrix}1\\-2\\3\end{pmatrix}$, $\mathbf{b} = \begin{pmatrix}4\\1\\-1\end{pmatrix}$.<br><br>
+  Find (a) $\mathbf{a} + \mathbf{b}$, &nbsp; (b) $2\mathbf{a} - \mathbf{b}$, &nbsp; (c) $|\mathbf{a}|$.<br><br>
+  <strong>(a)</strong> $\mathbf{a} + \mathbf{b} = \begin{pmatrix}5\\-1\\2\end{pmatrix}$<br><br>
+  <strong>(b)</strong> $2\mathbf{a} - \mathbf{b} = \begin{pmatrix}2\\-4\\6\end{pmatrix} - \begin{pmatrix}4\\1\\-1\end{pmatrix} = \begin{pmatrix}-2\\-5\\7\end{pmatrix}$<br><br>
+  <strong>(c)</strong> $|\mathbf{a}| = \sqrt{1+4+9} = \sqrt{14}$
+</div>
+
+<h3>Unit Vectors</h3>
+<div class="definition">
+  A <strong>unit vector</strong> has magnitude 1. The unit vector in the direction of $\mathbf{a}$ is:
+  $$\hat{\mathbf{a}} = \frac{\mathbf{a}}{|\mathbf{a}|}$$
+</div>
+
+<div class="worked-example">
+  Find the unit vector in the direction of $\mathbf{v} = \begin{pmatrix}3\\0\\4\end{pmatrix}$.<br><br>
+  $|\mathbf{v}| = \sqrt{9+0+16} = 5$<br><br>
+  $\hat{\mathbf{v}} = \dfrac{1}{5}\begin{pmatrix}3\\0\\4\end{pmatrix} = \begin{pmatrix}0.6\\0\\0.8\end{pmatrix}$<br><br>
+  Check: $|\hat{\mathbf{v}}| = \sqrt{0.36+0+0.64} = \sqrt{1} = 1$ ✓
+</div>
+
+<!-- ===================== 4.6.7 VECTOR EQUATION OF A LINE ===================== -->
+<h2>4.6.7 Vector Equation of a Line <span class="higher-tag">A-Level</span></h2>
+
+<div class="definition">
+  The <strong>vector equation of a straight line</strong> passing through point $A$ (with position vector $\mathbf{a}$) in the direction of vector $\mathbf{d}$ is:
+  $$\mathbf{r} = \mathbf{a} + \lambda\mathbf{d} \quad (\lambda \in \mathbb{R})$$
+  where $\lambda$ is a scalar parameter. Different values of $\lambda$ give different points on the line.
+</div>
+
+<p>The line can also be written as $\mathbf{r} = \mathbf{a} + \lambda(\mathbf{b} - \mathbf{a})$ if it passes through points $A$ and $B$, with direction vector $\overrightarrow{AB} = \mathbf{b} - \mathbf{a}$.</p>
+
+<!-- SVG: Vector equation of a line diagram -->
+<svg width="440" height="200" viewBox="0 0 440 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <defs>
+    <marker id="la1" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/></marker>
+    <marker id="la2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+    <marker id="la3" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/></marker>
+  </defs>
+  <!-- Origin -->
+  <circle cx="40" cy="160" r="4" fill="#374151"/>
+  <text x="28" y="175" font-size="13" font-family="sans-serif" fill="#374151" font-weight="700">O</text>
+  <!-- Point A -->
+  <circle cx="140" cy="100" r="5" fill="#dc2626"/>
+  <text x="125" y="95" font-size="13" font-family="sans-serif" fill="#dc2626" font-weight="700">A</text>
+  <!-- Point P on line -->
+  <circle cx="280" cy="60" r="5" fill="#16a34a"/>
+  <text x="285" y="55" font-size="13" font-family="sans-serif" fill="#16a34a" font-weight="700">P</text>
+  <!-- The line extending -->
+  <line x1="60" y1="130" x2="400" y2="30" stroke="#7c3aed" stroke-width="2" stroke-dasharray="none"/>
+  <!-- OA = a -->
+  <line x1="40" y1="160" x2="133" y2="103" stroke="#dc2626" stroke-width="2.5" marker-end="url(#la2)"/>
+  <text x="68" y="142" font-size="13" font-family="sans-serif" fill="#dc2626" font-weight="700" font-style="italic">a</text>
+  <!-- OR = r (to P) -->
+  <line x1="40" y1="160" x2="273" y2="63" stroke="#16a34a" stroke-width="2.5" marker-end="url(#la3)"/>
+  <text x="170" y="120" font-size="13" font-family="sans-serif" fill="#16a34a" font-weight="700" font-style="italic">r</text>
+  <!-- Direction vector d -->
+  <line x1="140" y1="100" x2="253" y2="68" stroke="#2563eb" stroke-width="2.5" marker-end="url(#la1)"/>
+  <text x="185" y="78" font-size="13" font-family="sans-serif" fill="#2563eb" font-weight="700">λd</text>
+  <!-- Equation label -->
+  <text x="10" y="195" font-size="12" font-family="sans-serif" fill="#374151" font-weight="600">r = a + λd &nbsp; (line through A, direction d)</text>
+</svg>
+
+<div class="worked-example">
+  Write the vector equation of the line passing through $A(1, 2, -1)$ and $B(3, -1, 4)$.<br><br>
+  <strong>Direction vector:</strong> $\mathbf{d} = \overrightarrow{AB} = \begin{pmatrix}3-1\\-1-2\\4-(-1)\end{pmatrix} = \begin{pmatrix}2\\-3\\5\end{pmatrix}$<br><br>
+  <strong>Equation:</strong> $\mathbf{r} = \begin{pmatrix}1\\2\\-1\end{pmatrix} + \lambda\begin{pmatrix}2\\-3\\5\end{pmatrix}$<br><br>
+  (Could equally use $B$ as the point: $\mathbf{r} = \begin{pmatrix}3\\-1\\4\end{pmatrix} + \lambda\begin{pmatrix}2\\-3\\5\end{pmatrix}$ — both equations represent the same line.)
+</div>
+
+<h3>Checking if a Point Lies on a Line</h3>
+<p>Substitute the coordinates of the point into the line equation and check whether the same value of $\lambda$ works for all three components.</p>
+
+<div class="worked-example">
+  Does the point $P(7, -7, 14)$ lie on the line $\mathbf{r} = \begin{pmatrix}1\\2\\-1\end{pmatrix} + \lambda\begin{pmatrix}2\\-3\\5\end{pmatrix}$?<br><br>
+  From $x$: $1 + 2\lambda = 7 \Rightarrow \lambda = 3$<br>
+  From $y$: $2 - 3(3) = 2 - 9 = -7$ ✓<br>
+  From $z$: $-1 + 5(3) = 14$ ✓<br><br>
+  All three components agree with $\lambda = 3$, so $P$ lies on the line.
+</div>
+
+<!-- ===================== 4.6.8 INTERSECTING, PARALLEL AND SKEW LINES ===================== -->
+<h2>4.6.8 Intersecting, Parallel and Skew Lines <span class="higher-tag">A-Level</span></h2>
+
+<div class="definition">
+  Two lines in 3D can be:
+  <ul>
+    <li><strong>Parallel</strong>: direction vectors are scalar multiples of each other; lines never meet.</li>
+    <li><strong>Intersecting</strong>: lines meet at exactly one point; direction vectors are not parallel.</li>
+    <li><strong>Skew</strong>: lines are not parallel and do not intersect (only possible in 3D); they lie in different planes.</li>
+  </ul>
+</div>
+
+<h3>Testing for Intersection</h3>
+<p>Use different parameters ($\lambda$ and $\mu$) for each line. Set the equations equal component by component to get three equations in two unknowns. If a consistent solution exists, the lines intersect.</p>
+
+<div class="worked-example">
+  Line $l_1$: $\mathbf{r} = \begin{pmatrix}1\\2\\3\end{pmatrix} + \lambda\begin{pmatrix}1\\1\\-1\end{pmatrix}$ &ensp; Line $l_2$: $\mathbf{r} = \begin{pmatrix}3\\4\\0\end{pmatrix} + \mu\begin{pmatrix}2\\1\\1\end{pmatrix}$<br><br>
+  Setting equal, component by component:<br>
+  $x$: $1 + \lambda = 3 + 2\mu$ &ensp; $\Rightarrow$ &ensp; $\lambda - 2\mu = 2$ &ensp; ...(i)<br>
+  $y$: $2 + \lambda = 4 + \mu$ &ensp; $\Rightarrow$ &ensp; $\lambda - \mu = 2$ &ensp; ...(ii)<br>
+  $z$: $3 - \lambda = 0 + \mu$ &ensp; $\Rightarrow$ &ensp; $\lambda + \mu = 3$ &ensp; ...(iii)<br><br>
+  From (ii): $\lambda = \mu + 2$. Substitute into (iii): $\mu + 2 + \mu = 3 \Rightarrow \mu = \frac{1}{2}$, $\lambda = \frac{5}{2}$.<br><br>
+  Check in (i): $\frac{5}{2} - 2 \times \frac{1}{2} = \frac{5}{2} - 1 = \frac{3}{2} \neq 2$. <strong>Inconsistent!</strong><br><br>
+  The lines are neither parallel (direction vectors $\begin{pmatrix}1\\1\\-1\end{pmatrix}$ and $\begin{pmatrix}2\\1\\1\end{pmatrix}$ are not scalar multiples) nor intersecting — they are <strong>skew</strong>.
+</div>
+
+<div class="worked-example">
+  Find the point of intersection of $l_1: \mathbf{r} = \begin{pmatrix}0\\1\\2\end{pmatrix} + \lambda\begin{pmatrix}1\\2\\1\end{pmatrix}$ and $l_2: \mathbf{r} = \begin{pmatrix}1\\3\\3\end{pmatrix} + \mu\begin{pmatrix}2\\1\\-1\end{pmatrix}$.<br><br>
+  $x$: $\lambda = 1 + 2\mu$ &ensp; ...(i)<br>
+  $y$: $1 + 2\lambda = 3 + \mu$ &ensp; ...(ii)<br>
+  $z$: $2 + \lambda = 3 - \mu$ &ensp; $\Rightarrow$ &ensp; $\lambda + \mu = 1$ &ensp; ...(iii)<br><br>
+  From (i) into (iii): $(1 + 2\mu) + \mu = 1 \Rightarrow 3\mu = 0 \Rightarrow \mu = 0$, $\lambda = 1$.<br><br>
+  Check in (ii): $1 + 2(1) = 3$ and $3 + 0 = 3$ ✓<br><br>
+  Intersection point: $\mathbf{r} = \begin{pmatrix}0\\1\\2\end{pmatrix} + 1\begin{pmatrix}1\\2\\1\end{pmatrix} = \begin{pmatrix}1\\3\\3\end{pmatrix}$ ✓
+</div>
+
+<div class="exam-tip">
+  When testing for intersection: (1) use $\lambda$ for line 1 and $\mu$ for line 2, (2) write three equations from the three components, (3) solve any two equations for $\lambda$ and $\mu$, (4) <em>check</em> these values satisfy the third equation. If the third equation fails, the lines are skew. Always state the conclusion clearly.
+</div>
+
+<!-- ===================== 4.6.9 ANGLE BETWEEN TWO LINES ===================== -->
+<h2>4.6.9 Angle Between Two Lines — The Scalar (Dot) Product <span class="higher-tag">A-Level</span></h2>
+
+<div class="definition">
+  The <strong>scalar product</strong> (dot product) of $\mathbf{a} = \begin{pmatrix}a_1\\a_2\\a_3\end{pmatrix}$ and $\mathbf{b} = \begin{pmatrix}b_1\\b_2\\b_3\end{pmatrix}$ is:
+  $$\mathbf{a} \cdot \mathbf{b} = a_1b_1 + a_2b_2 + a_3b_3$$
+  Geometrically: $\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos\theta$, where $\theta$ is the angle between the vectors.
+</div>
+
+<div class="formula-box">
+  <strong>Angle between two vectors:</strong>
+  $$\cos\theta = \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}||\mathbf{b}|}$$
+  <br>
+  <strong>Perpendicular vectors:</strong> $\mathbf{a} \perp \mathbf{b} \iff \mathbf{a} \cdot \mathbf{b} = 0$<br><br>
+  <strong>Angle between two lines:</strong> find the angle between their direction vectors. If the angle $\theta > 90°$, take the acute angle $180° - \theta$ (since lines have no fixed orientation).
+</div>
+
+<div class="worked-example">
+  Find the acute angle between the lines with direction vectors $\mathbf{d}_1 = \begin{pmatrix}1\\2\\2\end{pmatrix}$ and $\mathbf{d}_2 = \begin{pmatrix}2\\1\\-2\end{pmatrix}$.<br><br>
+  $\mathbf{d}_1 \cdot \mathbf{d}_2 = 1(2) + 2(1) + 2(-2) = 2 + 2 - 4 = 0$<br><br>
+  Since the dot product is 0, the lines are <strong>perpendicular</strong>. The angle between them is $90°$.
+</div>
+
+<div class="worked-example">
+  Find the acute angle between lines $l_1: \mathbf{r} = \begin{pmatrix}1\\0\\1\end{pmatrix} + \lambda\begin{pmatrix}2\\1\\1\end{pmatrix}$ and $l_2: \mathbf{r} = \begin{pmatrix}0\\2\\0\end{pmatrix} + \mu\begin{pmatrix}1\\2\\3\end{pmatrix}$.<br><br>
+  $\mathbf{d}_1 = \begin{pmatrix}2\\1\\1\end{pmatrix}$, $\mathbf{d}_2 = \begin{pmatrix}1\\2\\3\end{pmatrix}$<br><br>
+  $\mathbf{d}_1 \cdot \mathbf{d}_2 = 2 + 2 + 3 = 7$<br><br>
+  $|\mathbf{d}_1| = \sqrt{4+1+1} = \sqrt{6}$, &ensp; $|\mathbf{d}_2| = \sqrt{1+4+9} = \sqrt{14}$<br><br>
+  $\cos\theta = \dfrac{7}{\sqrt{6}\sqrt{14}} = \dfrac{7}{\sqrt{84}} = \dfrac{7}{2\sqrt{21}}$<br><br>
+  $\theta = \cos^{-1}\!\left(\dfrac{7}{2\sqrt{21}}\right) \approx 40.2°$
+</div>
+
+<div class="exam-tip">
+  Use $|\cos\theta|$ when finding the angle between two <em>lines</em> (to always get the acute angle between them). If you use $\cos\theta$ directly and get an obtuse angle, subtract from $180°$.
+</div>
+
+<h3>Complete Summary of Key Techniques</h3>
+<table>
+  <thead><tr><th>Task</th><th>Method / Formula</th></tr></thead>
+  <tbody>
+    <tr><td>3D magnitude</td><td>$|\mathbf{a}| = \sqrt{a_x^2 + a_y^2 + a_z^2}$</td></tr>
+    <tr><td>Unit vector</td><td>$\hat{\mathbf{a}} = \mathbf{a}/|\mathbf{a}|$</td></tr>
+    <tr><td>Vector equation of line</td><td>$\mathbf{r} = \mathbf{a} + \lambda\mathbf{d}$</td></tr>
+    <tr><td>Point on a line?</td><td>Solve for $\lambda$ from one component; check it satisfies the others</td></tr>
+    <tr><td>Parallel lines</td><td>Direction vectors are scalar multiples</td></tr>
+    <tr><td>Intersecting lines</td><td>Equate components (different params), solve 2 equations, verify in 3rd</td></tr>
+    <tr><td>Skew lines</td><td>Not parallel AND equations are inconsistent</td></tr>
+    <tr><td>Dot product</td><td>$\mathbf{a} \cdot \mathbf{b} = a_1b_1 + a_2b_2 + a_3b_3$</td></tr>
+    <tr><td>Angle between vectors/lines</td><td>$\cos\theta = \dfrac{|\mathbf{a}\cdot\mathbf{b}|}{|\mathbf{a}||\mathbf{b}|}$ (use modulus for lines)</td></tr>
+    <tr><td>Perpendicular vectors</td><td>$\mathbf{a} \cdot \mathbf{b} = 0$</td></tr>
+  </tbody>
+</table>
+
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {

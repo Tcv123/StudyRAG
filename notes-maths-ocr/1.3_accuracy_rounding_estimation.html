@@ -301,6 +301,84 @@ The upper bound is always <em>strictly less than</em> (&lt;), not &le;. A length
 When finding the maximum value of a division $a \div b$, you want the biggest top and the smallest bottom. When finding the minimum, you want the smallest top and the biggest bottom. Always think about which combination makes the result biggest or smallest.
 </div>
 
+<!-- ===================== 1.3.4 ===================== -->
+<h2>1.3.4 Truncation vs Rounding</h2>
+
+<p>There are two distinct ways a number can be approximated to a given number of digits:</p>
+
+<div class="definition">
+<ul>
+  <li><strong>Rounding</strong>: look at the next digit and round up if it is 5 or more, otherwise keep the last digit unchanged.</li>
+  <li><strong>Truncation</strong>: simply remove (chop off) all digits beyond the required position — regardless of what they are. There is no rounding up.</li>
+</ul>
+</div>
+
+<table>
+  <thead>
+    <tr><th>Number</th><th>Rounded to 2 d.p.</th><th>Truncated to 2 d.p.</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>3.7461</td><td>3.75</td><td>3.74</td></tr>
+    <tr><td>8.2950</td><td>8.30</td><td>8.29</td></tr>
+    <tr><td>1.9999</td><td>2.00</td><td>1.99</td></tr>
+    <tr><td>0.00583</td><td>0.01</td><td>0.00</td></tr>
+  </tbody>
+</table>
+
+<h3>Error Intervals for Truncated Values</h3>
+<p>When a value $x$ is truncated to $n$ decimal places, the error interval is <strong>one-sided</strong>: the true value is at least as large as the truncated value, but strictly less than one unit of the last place above it.</p>
+
+<div class="definition">
+  If $x$ is truncated to 1 decimal place to give 4.7:<br>
+  $$4.7 \leq x < 4.8$$
+  The lower bound <em>equals</em> the truncated value (no rounding means the value could be exactly 4.7).<br>
+  The upper bound is the next value at that precision (4.8), exclusive.
+</div>
+
+<div class="exam-tip">
+Truncation always gives a lower bound equal to the truncated value. Contrast with rounding, where the lower bound is below the given value (e.g. 4.7 rounded gives $4.65 \leq x &lt; 4.75$, whereas 4.7 truncated gives $4.7 \leq x &lt; 4.8$). If the question says "truncated", use the one-sided interval.
+</div>
+
+<div class="worked-example">
+<p>A calculator displays 7.3 after truncating to 1 decimal place. Write the error interval.</p>
+<p>Truncation: lower bound = 7.3 (exact), upper bound = 7.4 (exclusive)</p>
+$$7.3 \leq x < 7.4$$
+<p>Compare: if 7.3 had been <em>rounded</em> to 1 d.p., the interval would be $7.25 \leq x &lt; 7.35$.</p>
+</div>
+
+<!-- ===================== 1.3.5 ===================== -->
+<h2>1.3.5 Percentage Error</h2>
+
+<p>The <strong>percentage error</strong> (or relative error) compares the absolute error to the true value. It is used to judge how significant an error is in context.</p>
+
+<div class="definition">
+$$\text{Percentage error} = \frac{|\text{measured value} - \text{true value}|}{|\text{true value}|} \times 100\%$$
+<br>
+Or equivalently, using the maximum absolute error (half the unit of rounding):
+$$\text{Maximum percentage error} = \frac{\text{half unit of rounding}}{\text{measured value}} \times 100\%$$
+</div>
+
+<div class="worked-example">
+<p>A length is measured as 8 cm, rounded to the nearest centimetre. Find the maximum percentage error.</p>
+<p>Half unit of rounding = 0.5 cm</p>
+$$\text{Max \% error} = \frac{0.5}{8} \times 100\% = 6.25\%$$
+</div>
+
+<div class="worked-example">
+<p>A mass is given as 450 g, rounded to the nearest 10 g. Find the maximum percentage error to 3 s.f.</p>
+<p>Half unit = 5 g</p>
+$$\text{Max \% error} = \frac{5}{450} \times 100\% = 1.11\% \text{ (3 s.f.)}$$
+</div>
+
+<div class="worked-example">
+<p>The true length of a piece of wood is 12.4 cm. A student measures it as 12.6 cm. Find the percentage error.</p>
+$$\text{Percentage error} = \frac{|12.6 - 12.4|}{12.4} \times 100\% = \frac{0.2}{12.4} \times 100\% \approx 1.61\%$$
+</div>
+
+<div class="exam-tip">
+Percentage error questions often ask you to use the <em>measured</em> value in the denominator (as above), because the true value is unknown. Always use absolute values (ignore the sign of the error). A smaller percentage error means a more accurate measurement — this is more meaningful than the raw error alone.
+</div>
+
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {

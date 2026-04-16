@@ -311,6 +311,192 @@
 </div>
 
 <!-- ============================================================ -->
+<h2>2.3.5 Recurrence Relations <span style="font-size:0.8rem;color:#7e22ce;">[A-Level]</span></h2>
+
+<div class="definition">
+  A <strong>recurrence relation</strong> defines each term using one or more previous terms. The general form is:
+  $$u_{n+1} = f(u_n)$$
+  together with an <strong>initial condition</strong> (the first term $u_1$, or sometimes $u_0$).
+</div>
+
+<p>For example, $u_{n+1} = 2u_n + 3$ with $u_1 = 1$ generates the sequence $1, 5, 13, 29, \ldots$ — each term is found by doubling the previous term and adding 3.</p>
+
+<div class="worked-example">
+  A sequence is defined by $u_{n+1} = \dfrac{u_n + 6}{u_n + 1}$, with $u_1 = 2$.<br><br>
+  Find $u_2$, $u_3$, and $u_4$, giving values to 3 decimal places where necessary.<br><br>
+  <div class="step">$u_2 = \dfrac{2 + 6}{2 + 1} = \dfrac{8}{3} \approx 2.667$</div>
+  <div class="step">$u_3 = \dfrac{8/3 + 6}{8/3 + 1} = \dfrac{26/3}{11/3} = \dfrac{26}{11} \approx 2.364$</div>
+  <div class="step">$u_4 = \dfrac{26/11 + 6}{26/11 + 1} = \dfrac{92/11}{37/11} = \dfrac{92}{37} \approx 2.486$</div>
+  <div class="step">The sequence appears to be converging towards a limit.</div>
+</div>
+
+<h3>Finding a Fixed Point (Limit of a Convergent Recurrence)</h3>
+<p>If the sequence converges to a limit $L$, then as $n \to \infty$, both $u_{n+1}$ and $u_n$ approach $L$. Substitute $u_{n+1} = u_n = L$ into the recurrence relation and solve.</p>
+
+<div class="worked-example">
+  Find the limit of the sequence defined by $u_{n+1} = \dfrac{u_n + 6}{u_n + 1}$.<br><br>
+  <div class="step">Set $u_{n+1} = u_n = L$: &nbsp; $L = \dfrac{L + 6}{L + 1}$</div>
+  <div class="step">$L(L+1) = L + 6 \Rightarrow L^2 + L = L + 6 \Rightarrow L^2 = 6 \Rightarrow L = \sqrt{6} \approx 2.449$</div>
+  <div class="step">(Taking the positive root since $u_1 = 2 > 0$.)</div>
+</div>
+
+<div class="exam-tip">
+  When finding the limit of a recurrence relation, replace <em>both</em> $u_{n+1}$ and $u_n$ with $L$, then solve the resulting equation. Check the sign or value is consistent with the initial terms. A cobweb or staircase diagram (not required but helpful) shows graphically whether the sequence converges or diverges.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.3.6 Behaviour of Sequences <span style="font-size:0.8rem;color:#7e22ce;">[A-Level]</span></h2>
+
+<div class="definition">
+  Sequences can be classified by their long-term behaviour:
+  <ul>
+    <li><strong>Increasing</strong>: $u_{n+1} > u_n$ for all $n$</li>
+    <li><strong>Decreasing</strong>: $u_{n+1} &lt; u_n$ for all $n$</li>
+    <li><strong>Convergent</strong>: terms approach a fixed limit $L$ as $n \to \infty$</li>
+    <li><strong>Divergent</strong>: terms grow without bound (e.g. geometric with $|r| > 1$)</li>
+    <li><strong>Periodic</strong>: the sequence repeats after a fixed number of terms (the <strong>period</strong>)</li>
+    <li><strong>Oscillating</strong>: terms alternate between two or more values, often converging to a limit (e.g. geometric with $-1 &lt; r &lt; 0$) or diverging (e.g. $r &lt; -1$)</li>
+  </ul>
+</div>
+
+<table>
+  <thead><tr><th>Geometric ratio $r$</th><th>Behaviour</th><th>Example ($a=2$)</th></tr></thead>
+  <tbody>
+    <tr><td>$r > 1$</td><td>Diverges (increases without bound)</td><td>$2, 4, 8, 16, \ldots$&ensp;($r=2$)</td></tr>
+    <tr><td>$0 &lt; r &lt; 1$</td><td>Converges to 0</td><td>$2, 1, 0.5, 0.25, \ldots$&ensp;($r=0.5$)</td></tr>
+    <tr><td>$r = 1$</td><td>Constant (periodic with period 1)</td><td>$2, 2, 2, 2, \ldots$</td></tr>
+    <tr><td>$-1 &lt; r &lt; 0$</td><td>Oscillates and converges to 0</td><td>$2, -1, 0.5, -0.25, \ldots$&ensp;($r=-0.5$)</td></tr>
+    <tr><td>$r = -1$</td><td>Periodic with period 2</td><td>$2, -2, 2, -2, \ldots$</td></tr>
+    <tr><td>$r &lt; -1$</td><td>Oscillates and diverges</td><td>$2, -4, 8, -16, \ldots$&ensp;($r=-2$)</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  The sequence defined by $u_{n+1} = -u_n + 3$, $u_1 = 1$.<br><br>
+  <div class="step">$u_1=1,\ u_2=2,\ u_3=1,\ u_4=2,\ u_5=1, \ldots$</div>
+  <div class="step">This is a <strong>periodic sequence</strong> with period 2. It oscillates between 1 and 2 indefinitely.</div>
+  <div class="step">Fixed point: $L = -L+3 \Rightarrow 2L = 3 \Rightarrow L = 1.5$ — the sequence oscillates around 1.5 but never reaches it.</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>2.3.7 Sigma Notation <span style="font-size:0.8rem;color:#7e22ce;">[A-Level]</span></h2>
+
+<div class="definition">
+  The Greek letter $\Sigma$ (sigma) is used to write a sum compactly.
+  $$\sum_{r=1}^{n} u_r = u_1 + u_2 + u_3 + \cdots + u_n$$
+  The variable $r$ is the index of summation, running from the lower limit to the upper limit.
+</div>
+
+<table>
+  <thead><tr><th>Sigma expression</th><th>Expanded form</th><th>Sum</th></tr></thead>
+  <tbody>
+    <tr><td>$\displaystyle\sum_{r=1}^{4} r$</td><td>$1+2+3+4$</td><td>$10$</td></tr>
+    <tr><td>$\displaystyle\sum_{r=1}^{5} 2r$</td><td>$2+4+6+8+10$</td><td>$30$</td></tr>
+    <tr><td>$\displaystyle\sum_{r=1}^{n} r$</td><td>$1+2+\cdots+n$</td><td>$\dfrac{n(n+1)}{2}$</td></tr>
+    <tr><td>$\displaystyle\sum_{r=1}^{n} c$</td><td>$c+c+\cdots+c$ ($n$ times)</td><td>$cn$</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  Evaluate $\displaystyle\sum_{r=3}^{7} (2r - 1)$.<br><br>
+  <div class="step">Write out the terms: $r=3: 5$;&ensp;$r=4: 7$;&ensp;$r=5: 9$;&ensp;$r=6: 11$;&ensp;$r=7: 13$</div>
+  <div class="step">Sum $= 5+7+9+11+13 = 45$</div>
+  <div class="step">Alternatively: $\displaystyle\sum_{r=3}^{7}(2r-1) = \sum_{r=1}^{7}(2r-1) - \sum_{r=1}^{2}(2r-1) = 49 - 4 = 45$</div>
+</div>
+
+<div class="exam-tip">
+  To evaluate $\sum_{r=k}^{n}$, split it as $\sum_{r=1}^{n} - \sum_{r=1}^{k-1}$. This uses the standard results (see below) for sums starting at $r=1$.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.3.8 Sum of an Arithmetic Series <span style="font-size:0.8rem;color:#7e22ce;">[A-Level]</span></h2>
+
+<div class="definition">
+  The sum of the first $n$ terms of an arithmetic series with first term $a$ and common difference $d$:
+  $$S_n = \frac{n}{2}(2a + (n-1)d)$$
+  Equivalently, if the last term is $l = a + (n-1)d$:
+  $$S_n = \frac{n}{2}(a + l)$$
+</div>
+
+<h3>Derivation</h3>
+<p>Write the sum forwards and backwards, then add:</p>
+$$S_n = a + (a+d) + (a+2d) + \cdots + l$$
+$$S_n = l + (l-d) + (l-2d) + \cdots + a$$
+$$2S_n = n(a+l) \implies S_n = \frac{n}{2}(a+l)$$
+
+<div class="worked-example">
+  Find the sum of the first 20 terms of the arithmetic series $3 + 7 + 11 + 15 + \ldots$<br><br>
+  <div class="step">$a = 3$, $d = 4$, $n = 20$</div>
+  <div class="step">$S_{20} = \dfrac{20}{2}(2 \times 3 + 19 \times 4) = 10(6 + 76) = 10 \times 82 = 820$</div>
+</div>
+
+<div class="worked-example">
+  The sum of the first $n$ terms of an arithmetic series is $S_n = 3n^2 + 2n$. Find the first term and common difference.<br><br>
+  <div class="step">$T_1 = S_1 = 3 + 2 = 5$, so $a = 5$</div>
+  <div class="step">$T_2 = S_2 - S_1 = (12+4) - 5 = 11$</div>
+  <div class="step">$d = T_2 - T_1 = 11 - 5 = 6$</div>
+  <div class="step">Check: $T_n = S_n - S_{n-1} = (3n^2+2n) - (3(n-1)^2+2(n-1)) = 6n - 1$ &nbsp;✓ (gives $T_1=5, T_2=11$)</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>2.3.9 Sum of a Geometric Series <span style="font-size:0.8rem;color:#7e22ce;">[A-Level]</span></h2>
+
+<div class="definition">
+  The sum of the first $n$ terms of a geometric series with first term $a$ and common ratio $r$ ($r \neq 1$):
+  $$S_n = \frac{a(1 - r^n)}{1 - r} = \frac{a(r^n - 1)}{r - 1}$$
+  (Use whichever form avoids a negative denominator in context.)
+</div>
+
+<h3>Derivation</h3>
+$$S_n = a + ar + ar^2 + \cdots + ar^{n-1}$$
+$$rS_n = ar + ar^2 + \cdots + ar^{n-1} + ar^n$$
+$$S_n - rS_n = a - ar^n \implies S_n(1-r) = a(1-r^n) \implies S_n = \frac{a(1-r^n)}{1-r}$$
+
+<div class="worked-example">
+  Find the sum of the first 8 terms of $2 + 6 + 18 + 54 + \ldots$<br><br>
+  <div class="step">$a = 2$, $r = 3$, $n = 8$</div>
+  <div class="step">$S_8 = \dfrac{2(3^8 - 1)}{3 - 1} = \dfrac{2(6561-1)}{2} = 6560$</div>
+</div>
+
+<div class="worked-example">
+  A geometric series has first term 5 and sum to 6 terms equal to 315. Find the common ratio.<br><br>
+  <div class="step">$\dfrac{5(r^6 - 1)}{r - 1} = 315 \Rightarrow \dfrac{r^6 - 1}{r - 1} = 63$</div>
+  <div class="step">Try $r = 2$: $\dfrac{64 - 1}{1} = 63$ ✓ &nbsp; So $r = 2$.</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>2.3.10 Sum to Infinity of a Geometric Series <span style="font-size:0.8rem;color:#7e22ce;">[A-Level]</span></h2>
+
+<div class="definition">
+  When $|r| &lt; 1$, the terms of a geometric series get smaller and the sum approaches a finite limit as $n \to \infty$:
+  $$S_\infty = \frac{a}{1-r} \quad \text{provided } |r| &lt; 1$$
+  If $|r| \geq 1$, the series diverges and no sum to infinity exists.
+</div>
+
+<h3>Why the Formula Works</h3>
+<p>From $S_n = \dfrac{a(1 - r^n)}{1 - r}$: when $|r| &lt; 1$, $r^n \to 0$ as $n \to \infty$, so</p>
+$$S_\infty = \lim_{n\to\infty} S_n = \frac{a(1-0)}{1-r} = \frac{a}{1-r}$$
+
+<div class="worked-example">
+  Find the sum to infinity of $4 + 2 + 1 + 0.5 + \ldots$<br><br>
+  <div class="step">$a = 4$, $r = 0.5$ (since $|r| &lt; 1$, the sum to infinity exists)</div>
+  <div class="step">$S_\infty = \dfrac{4}{1 - 0.5} = \dfrac{4}{0.5} = 8$</div>
+</div>
+
+<div class="worked-example">
+  A geometric series has first term $a$ and common ratio $r$. The second term is 4 and the sum to infinity is 25. Find $a$ and $r$.<br><br>
+  <div class="step">Second term: $ar = 4$, so $a = \dfrac{4}{r}$</div>
+  <div class="step">Sum to infinity: $\dfrac{a}{1-r} = 25$</div>
+  <div class="step">Substitute: $\dfrac{4/r}{1-r} = 25 \Rightarrow 4 = 25r(1-r) = 25r - 25r^2$</div>
+  <div class="step">$25r^2 - 25r + 4 = 0 \Rightarrow (5r-1)(5r-4) = 0 \Rightarrow r = \dfrac{1}{5}$ or $r = \dfrac{4}{5}$</div>
+  <div class="step">Both satisfy $|r| &lt; 1$. If $r = \frac{1}{5}$: $a = 20$. If $r = \frac{4}{5}$: $a = 5$.</div>
+</div>
+
+<div class="exam-tip">
+  Always check $|r| &lt; 1$ before claiming a sum to infinity exists. If the question doesn't tell you the series converges, check the ratio first. For the sum to $n$ terms, use $S_n = \dfrac{a(1-r^n)}{1-r}$; for the sum to infinity use $S_\infty = \dfrac{a}{1-r}$.
+</div>
+
+<!-- ============================================================ -->
 <h2>Quick Reference Summary</h2>
 <table>
   <thead><tr><th>Concept</th><th>Key fact / formula</th></tr></thead>
@@ -323,6 +509,11 @@
     <tr><td>Triangular numbers</td><td>$T_n = \frac{n(n+1)}{2}$: 1, 3, 6, 10, 15 …</td></tr>
     <tr><td>Square numbers</td><td>$T_n = n^2$: 1, 4, 9, 16, 25 …</td></tr>
     <tr><td>Fibonacci rule</td><td>Each term = sum of the two before it</td></tr>
+    <tr><td>Recurrence relation [AL]</td><td>$u_{n+1} = f(u_n)$; find limit $L$ by setting $u_{n+1}=u_n=L$</td></tr>
+    <tr><td>Sum of arithmetic series [AL]</td><td>$S_n = \dfrac{n}{2}(2a + (n-1)d)$</td></tr>
+    <tr><td>Sum of geometric series [AL]</td><td>$S_n = \dfrac{a(1-r^n)}{1-r}$ &nbsp;$(r \neq 1)$</td></tr>
+    <tr><td>Sum to infinity [AL]</td><td>$S_\infty = \dfrac{a}{1-r}$, only if $|r| &lt; 1$</td></tr>
+    <tr><td>Periodic/oscillating [AL]</td><td>Geometric: periodic if $r=-1$; oscillating if $r &lt; 0$</td></tr>
   </tbody>
 </table>
 

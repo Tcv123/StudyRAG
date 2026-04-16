@@ -310,6 +310,228 @@ DELETE FROM Enrolment WHERE Grade = 'U';</pre>
 
 <div class="exam-tip">For concurrent access questions, explain the specific problem (e.g., lost update), then the solution (e.g., record locking), then the trade-off (e.g., deadlock risk). Know ACID properties and be able to explain each with an example. Deadlock = two transactions each holding a lock the other needs; resolved by aborting one transaction.</div>
 
+<!-- ============================================================ -->
+<h2>4.10.6 Full Worked Normalisation Example (Unnormalised &rarr; 3NF)</h2>
+
+<p>A school stores exam results in a single spreadsheet. Here is a sample of the raw data:</p>
+
+<h3>Step 0: Unnormalised Form (UNF)</h3>
+<pre>ExamRecord:
+StudentID | StudentName | StudentDOB | TutorID | TutorName | SubjectCode | SubjectName | Grade | ExamDate  | ExamBoard
+S001      | Alice Smith | 2007-03-12 | T01     | Mr Jones  | CS101       | Computing   | A     | 2026-05-14| AQA
+S001      | Alice Smith | 2007-03-12 | T01     | Mr Jones  | MA201       | Mathematics | B     | 2026-05-20| Edexcel
+S002      | Bob Lee     | 2006-11-05 | T02     | Ms Patel  | CS101       | Computing   | C     | 2026-05-14| AQA
+S002      | Bob Lee     | 2006-11-05 | T02     | Ms Patel  | EN301       | English Lit | A     | 2026-05-22| AQA
+
+Problems:
+- Repeating groups (each student has multiple exam rows)
+- Redundancy: StudentName, StudentDOB, TutorID, TutorName repeated for each exam
+- Update anomaly: change TutorName in one row, miss others
+- Delete anomaly: delete all of Bob's results and lose that he exists
+- Insert anomaly: cannot add a student who has not yet sat exams</pre>
+
+<h3>Step 1: First Normal Form (1NF)</h3>
+<p>Ensure all values are atomic, no repeating groups, and a primary key exists.</p>
+<pre>The table above already has atomic values (one value per cell).
+We need a composite PK to uniquely identify each row: (StudentID, SubjectCode)
+
+ExamRecord (StudentID, SubjectCode, StudentName, StudentDOB, TutorID,
+            TutorName, SubjectName, Grade, ExamDate, ExamBoard)
+PK: (StudentID, SubjectCode)
+
+Is 1NF? YES - atomic values, no repeating groups, PK exists.
+Still has partial and transitive dependencies &rarr; not yet 2NF.</pre>
+
+<h3>Step 2: Second Normal Form (2NF)</h3>
+<p>Remove attributes that depend on only <em>part</em> of the composite primary key.</p>
+<pre>PK is (StudentID, SubjectCode).
+
+Partial dependencies:
+  StudentName, StudentDOB, TutorID, TutorName &rarr; depend only on StudentID (not SubjectCode)
+  SubjectName, ExamBoard          &rarr; depend only on SubjectCode (not StudentID)
+  Grade, ExamDate                 &rarr; depend on BOTH StudentID AND SubjectCode (keep here)
+
+Solution: split into three tables:
+
+Student (StudentID PK, StudentName, StudentDOB, TutorID, TutorName)
+Subject (SubjectCode PK, SubjectName, ExamBoard)
+Result  (StudentID FK, SubjectCode FK, Grade, ExamDate)
+         -- Composite PK: (StudentID, SubjectCode)
+
+Now in 2NF. But Student table still has transitive dependency &rarr; not yet 3NF.</pre>
+
+<h3>Step 3: Third Normal Form (3NF)</h3>
+<p>Remove non-key attributes that depend on other non-key attributes (transitive dependencies).</p>
+<pre>In the Student table:
+  TutorName depends on TutorID (not StudentID directly).
+  This is a TRANSITIVE DEPENDENCY: StudentID &rarr; TutorID &rarr; TutorName
+
+Solution: extract Tutor data to its own table:
+
+Student (StudentID PK, StudentName, StudentDOB, TutorID FK)
+Tutor   (TutorID PK, TutorName)
+Subject (SubjectCode PK, SubjectName, ExamBoard)
+Result  (StudentID FK, SubjectCode FK, Grade, ExamDate)
+         -- PK: (StudentID, SubjectCode)
+
+Final schema is now in 3NF:
+- No repeating groups (1NF)
+- No partial dependencies (2NF)
+- No transitive dependencies (3NF)</pre>
+
+<h3>Final Schema Summary</h3>
+<table>
+    <tr><th>Table</th><th>Fields</th><th>PK</th><th>FK</th></tr>
+    <tr><td>Student</td><td>StudentID, StudentName, StudentDOB, TutorID</td><td>StudentID</td><td>TutorID &rarr; Tutor</td></tr>
+    <tr><td>Tutor</td><td>TutorID, TutorName</td><td>TutorID</td><td>&mdash;</td></tr>
+    <tr><td>Subject</td><td>SubjectCode, SubjectName, ExamBoard</td><td>SubjectCode</td><td>&mdash;</td></tr>
+    <tr><td>Result</td><td>StudentID, SubjectCode, Grade, ExamDate</td><td>(StudentID, SubjectCode)</td><td>StudentID &rarr; Student; SubjectCode &rarr; Subject</td></tr>
+</table>
+
+<!-- ER Diagram for the above schema -->
+<svg viewBox="0 0 560 130" style="width:100%;max-width:560px;display:block;margin:0 auto 18px auto;" xmlns="http://www.w3.org/2000/svg">
+  <text x="280" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a5f">ER Diagram: School Exam Results (3NF)</text>
+  <rect x="5" y="30" width="90" height="40" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="50" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">Tutor</text>
+  <rect x="120" y="30" width="90" height="40" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="165" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">Student</text>
+  <rect x="235" y="30" width="90" height="40" rx="5" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="280" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Result</text>
+  <rect x="350" y="30" width="90" height="40" rx="5" fill="#fdf4ff" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="395" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="#7e22ce">Subject</text>
+  <!-- Lines -->
+  <line x1="95" y1="50" x2="120" y2="50" stroke="#374151" stroke-width="1.5"/>
+  <text x="100" y="44" font-size="9" fill="#374151">1</text><text x="115" y="44" font-size="9" fill="#374151">*</text>
+  <line x1="210" y1="50" x2="235" y2="50" stroke="#374151" stroke-width="1.5"/>
+  <text x="215" y="44" font-size="9" fill="#374151">1</text><text x="228" y="44" font-size="9" fill="#374151">*</text>
+  <line x1="325" y1="50" x2="350" y2="50" stroke="#374151" stroke-width="1.5"/>
+  <text x="330" y="44" font-size="9" fill="#374151">*</text><text x="344" y="44" font-size="9" fill="#374151">1</text>
+  <text x="280" y="105" text-anchor="middle" font-size="9" fill="#6b7280">Tutor 1:* Student | Student 1:* Result *:1 Subject</text>
+</svg>
+
+<div class="exam-tip">Normalisation step-by-step is one of the most common database exam questions. Always: (1) identify the current primary key clearly, (2) name the type of dependency being removed at each step (partial or transitive), (3) show the resulting tables with PKs and FKs. Use arrows and labels. Do not skip steps &mdash; go UNF &rarr; 1NF &rarr; 2NF &rarr; 3NF.</div>
+
+<!-- ============================================================ -->
+<h2>4.10.7 SQL &mdash; Advanced Worked Examples</h2>
+
+<p>Using the 3NF school database: <strong>Student, Tutor, Subject, Result</strong></p>
+
+<h3>Example 1: All A-grade results with student names</h3>
+<pre>SELECT Student.StudentName, Subject.SubjectName, Result.Grade
+FROM Result
+INNER JOIN Student ON Result.StudentID = Student.StudentID
+INNER JOIN Subject ON Result.SubjectCode = Subject.SubjectCode
+WHERE Result.Grade = 'A'
+ORDER BY Student.StudentName ASC;</pre>
+
+<h3>Example 2: Count how many students each tutor has</h3>
+<pre>SELECT Tutor.TutorName, COUNT(Student.StudentID) AS NumberOfStudents
+FROM Tutor
+INNER JOIN Student ON Tutor.TutorID = Student.TutorID
+GROUP BY Tutor.TutorName
+ORDER BY NumberOfStudents DESC;</pre>
+
+<h3>Example 3: Find students who have NOT sat any exams (LEFT JOIN)</h3>
+<pre>SELECT Student.StudentName
+FROM Student
+LEFT JOIN Result ON Student.StudentID = Result.StudentID
+WHERE Result.StudentID IS NULL;</pre>
+
+<h3>Example 4: Average grade per subject (requires numeric grades)</h3>
+<pre>-- Assume Grade stored as integer (1=A*, 2=A, 3=B, etc.)
+SELECT Subject.SubjectName, AVG(Result.GradeNum) AS AverageGrade,
+       COUNT(*) AS Entries
+FROM Result
+INNER JOIN Subject ON Result.SubjectCode = Subject.SubjectCode
+GROUP BY Subject.SubjectName
+HAVING COUNT(*) >= 5
+ORDER BY AverageGrade ASC;</pre>
+
+<h3>Example 5: Insert, Update, and Delete</h3>
+<pre>-- Add a new student
+INSERT INTO Student (StudentID, StudentName, StudentDOB, TutorID)
+VALUES ('S003', 'Clara Diaz', '2007-06-22', 'T01');
+
+-- Record a new exam result
+INSERT INTO Result (StudentID, SubjectCode, Grade, ExamDate)
+VALUES ('S003', 'CS101', 'B', '2026-05-14');
+
+-- Correct a grade entry
+UPDATE Result
+SET Grade = 'A'
+WHERE StudentID = 'S003' AND SubjectCode = 'CS101';
+
+-- Remove a student's results (before removing the student)
+DELETE FROM Result WHERE StudentID = 'S003';
+DELETE FROM Student WHERE StudentID = 'S003';</pre>
+
+<h3>Example 6: CREATE TABLE with constraints</h3>
+<pre>CREATE TABLE Result (
+    StudentID   VARCHAR(10)  NOT NULL,
+    SubjectCode VARCHAR(10)  NOT NULL,
+    Grade       CHAR(2)      NOT NULL,
+    ExamDate    DATE,
+    PRIMARY KEY (StudentID, SubjectCode),
+    FOREIGN KEY (StudentID)   REFERENCES Student(StudentID)
+        ON DELETE CASCADE,
+    FOREIGN KEY (SubjectCode) REFERENCES Subject(SubjectCode)
+        ON DELETE RESTRICT
+);
+
+-- ON DELETE CASCADE: if a Student is deleted, their Results are also deleted.
+-- ON DELETE RESTRICT: cannot delete a Subject that still has Results.</pre>
+
+<h3>SQL Query Structure &mdash; Order of Clauses</h3>
+<table>
+    <tr><th>Clause</th><th>Purpose</th><th>Required?</th></tr>
+    <tr><td><code>SELECT</code></td><td>Specify columns to retrieve</td><td>Yes</td></tr>
+    <tr><td><code>FROM</code></td><td>Specify the table(s)</td><td>Yes</td></tr>
+    <tr><td><code>INNER/LEFT JOIN ... ON</code></td><td>Combine tables</td><td>If using multiple tables</td></tr>
+    <tr><td><code>WHERE</code></td><td>Filter rows (before grouping)</td><td>No</td></tr>
+    <tr><td><code>GROUP BY</code></td><td>Group rows for aggregation</td><td>With aggregate functions</td></tr>
+    <tr><td><code>HAVING</code></td><td>Filter groups (after aggregation)</td><td>With GROUP BY</td></tr>
+    <tr><td><code>ORDER BY</code></td><td>Sort results (ASC or DESC)</td><td>No</td></tr>
+    <tr><td><code>LIMIT</code></td><td>Restrict number of results</td><td>No</td></tr>
+</table>
+
+<div class="exam-tip">In SQL questions: (1) read the schema carefully and identify table names and column names exactly, (2) use table.column notation for joins to avoid ambiguity, (3) remember WHERE filters before aggregation, HAVING filters after, (4) LEFT JOIN returns all rows from the left table including those with no match (showing NULL). Never confuse DELETE (removes rows) with DROP (removes the whole table structure).</div>
+
+<!-- ============================================================ -->
+<h2>4.10.8 Database Management Systems (DBMS)</h2>
+
+<div class="definition">
+    A <strong>DBMS (Database Management System)</strong> is software that manages creation, access, updating, and administration of a database. Examples: MySQL, PostgreSQL, Microsoft SQL Server, Oracle, SQLite. It provides an interface between users/applications and the physical data storage.
+</div>
+
+<h3>Functions of a DBMS</h3>
+<table>
+    <tr><th>Function</th><th>Detail</th></tr>
+    <tr><td><strong>Data storage management</strong></td><td>Organises physical storage; manages file structure and indexing</td></tr>
+    <tr><td><strong>Data retrieval</strong></td><td>SQL query processing; query optimisation for efficiency</td></tr>
+    <tr><td><strong>Data integrity</strong></td><td>Enforces constraints (PK, FK, NOT NULL); validates data types</td></tr>
+    <tr><td><strong>Concurrent access control</strong></td><td>Manages simultaneous users via locking and transaction control</td></tr>
+    <tr><td><strong>Security and authorisation</strong></td><td>User accounts; permissions (SELECT, INSERT, UPDATE, DELETE, GRANT)</td></tr>
+    <tr><td><strong>Backup and recovery</strong></td><td>Transaction logs enable rollback; backup schedules for disaster recovery</td></tr>
+    <tr><td><strong>Data independence</strong></td><td>Physical storage can change without affecting application layer (logical view)</td></tr>
+</table>
+
+<h3>Transaction Processing</h3>
+<pre>-- A transaction bundles multiple SQL statements into an atomic unit.
+
+BEGIN TRANSACTION;
+    UPDATE Account SET Balance = Balance - 500 WHERE AccountID = 'A001';
+    UPDATE Account SET Balance = Balance + 500 WHERE AccountID = 'A002';
+COMMIT;  -- Both changes saved permanently
+
+-- If anything goes wrong between the UPDATEs:
+ROLLBACK;  -- Both changes are undone (atomicity preserved)
+
+-- This is essential for banking: money must not disappear or appear from nowhere.</pre>
+
+<p>This demonstrates <strong>Atomicity</strong>: either both transfers happen or neither does. Without transactions, a system crash between the two UPDATE statements would result in money being deducted but never credited.</p>
+
+<div class="exam-tip">Transaction questions nearly always link to ACID. For Atomicity: "all or nothing". For Durability: "committed changes survive a crash (written to non-volatile storage)". The banking transfer is the classic ACID example &mdash; learn it thoroughly. Know COMMIT (makes permanent) vs ROLLBACK (undoes).</div>
+
 </div>
 </body>
 </html>

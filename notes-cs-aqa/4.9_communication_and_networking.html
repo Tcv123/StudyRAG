@@ -289,6 +289,270 @@ Bit rate = baud rate ONLY when 1 bit per symbol.</pre>
 
 <div class="exam-tip">For security questions, always pair threats with specific countermeasures. Know SQL injection well: <code>'; DROP TABLE users; --</code> and explain why parameterised queries prevent it. For encryption, know how TLS secures HTTPS using both symmetric and asymmetric methods.</div>
 
+<!-- ====== NETWORK HARDWARE ====== -->
+<h2>4.9.9 Network Hardware</h2>
+
+<table>
+    <tr><th>Device</th><th>Layer</th><th>Function</th><th>Key Detail</th></tr>
+    <tr><td><strong>NIC (Network Interface Card)</strong></td><td>Link</td><td>Connects a device to a network; has a unique MAC address burned in</td><td>Every networked device has one. MAC = Media Access Control address (48-bit, e.g., AA:BB:CC:DD:EE:FF)</td></tr>
+    <tr><td><strong>Hub</strong></td><td>Link (physical)</td><td>Repeats all incoming data to ALL ports (broadcasts)</td><td>Obsolete &mdash; creates many collisions; replaced by switches</td></tr>
+    <tr><td><strong>Switch</strong></td><td>Link</td><td>Forwards frames only to the correct port using a <strong>MAC address table</strong></td><td>Eliminates collisions; each port is its own collision domain; intelligent hub</td></tr>
+    <tr><td><strong>Router</strong></td><td>Internet (Network)</td><td>Forwards packets between different networks using IP addresses and routing tables</td><td>Gateway between LAN and WAN; performs NAT; firewalls often built in</td></tr>
+    <tr><td><strong>Wireless Access Point (WAP)</strong></td><td>Link</td><td>Connects wireless devices to a wired network; broadcasts SSID</td><td>Can be standalone or built into routers; supports 802.11 standards</td></tr>
+    <tr><td><strong>Modem</strong></td><td>Link/Physical</td><td>MOdulates/DEModulates digital signals to/from analogue signals for transmission over telephone/cable lines</td><td>Needed for broadband (DSL, cable) connections; often combined with router</td></tr>
+    <tr><td><strong>Repeater</strong></td><td>Physical</td><td>Amplifies and retransmits signals to extend cable length</td><td>Regenerates signal to prevent attenuation over long distances</td></tr>
+    <tr><td><strong>Bridge</strong></td><td>Link</td><td>Connects two network segments; filters traffic using MAC addresses</td><td>More intelligent than a hub; less capable than a modern switch</td></tr>
+</table>
+
+<div class="definition">
+    <strong>MAC Address:</strong> A 48-bit (6-byte) hardware address permanently assigned to a NIC. Written as 6 pairs of hex digits (e.g., <code>3C:22:FB:A8:01:D9</code>). The first 3 bytes identify the manufacturer (OUI); the last 3 are the device identifier. Used at the Link layer for local network delivery.
+</div>
+
+<div class="exam-tip">Know the difference between a hub (broadcasts to all), a switch (sends only to correct port), and a router (routes between networks). Hubs = collisions. Switches = no collisions. Routers = different networks. This is a very common exam topic.</div>
+
+<!-- ====== ADDITIONAL TOPOLOGIES ====== -->
+<h2>4.9.10 Network Topologies &mdash; Extended (Ring and Mesh)</h2>
+
+<h3>Ring Topology</h3>
+<p>Each device is connected to exactly two other devices, forming a closed loop. Data travels in one direction (or both in dual-ring) around the ring until it reaches its destination.</p>
+
+<!-- Ring topology SVG -->
+<svg viewBox="0 0 300 260" style="width:100%;max-width:300px;display:block;margin:0 auto 18px auto;" xmlns="http://www.w3.org/2000/svg">
+  <text x="150" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a5f">Ring Topology</text>
+  <!-- Ring path (visual guideline) -->
+  <circle cx="150" cy="140" r="80" fill="none" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- 6 nodes on the ring -->
+  <circle cx="150" cy="60" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="150" y="64" text-anchor="middle" font-size="10" fill="#065f46">PC1</text>
+  <circle cx="220" cy="95" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="220" y="99" text-anchor="middle" font-size="10" fill="#065f46">PC2</text>
+  <circle cx="220" cy="185" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="220" y="189" text-anchor="middle" font-size="10" fill="#065f46">PC3</text>
+  <circle cx="150" cy="220" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="150" y="224" text-anchor="middle" font-size="10" fill="#065f46">PC4</text>
+  <circle cx="80" cy="185" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="80" y="189" text-anchor="middle" font-size="10" fill="#065f46">PC5</text>
+  <circle cx="80" cy="95" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="80" y="99" text-anchor="middle" font-size="10" fill="#065f46">PC6</text>
+  <!-- Connections (ring) -->
+  <line x1="160" y1="77" x2="210" y2="95" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="220" y1="113" x2="220" y2="167" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="210" y1="198" x2="163" y2="215" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="137" y1="215" x2="93" y2="198" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="80" y1="167" x2="80" y2="113" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="93" y1="85" x2="140" y2="68" stroke="#94a3b8" stroke-width="1.5"/>
+  <!-- Arrow to show direction -->
+  <text x="150" y="145" text-anchor="middle" font-size="10" fill="#6b7280">data flows</text>
+  <text x="150" y="160" text-anchor="middle" font-size="10" fill="#6b7280">around ring</text>
+</svg>
+
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>No collisions &mdash; token passing controls access (token ring)</td><td>One broken cable or device can break the entire ring</td></tr>
+    <tr><td>Equal access for all devices; no central point of failure</td><td>Difficult to add/remove devices without disrupting network</td></tr>
+    <tr><td>Predictable performance under heavy load</td><td>Troubleshooting is complex</td></tr>
+    <tr><td>Cheap to install initially</td><td>Largely obsolete; replaced by switched star networks</td></tr>
+</table>
+
+<h3>Mesh Topology</h3>
+<p>Each device connects directly to multiple (or all) other devices. In a <strong>full mesh</strong>, every node connects to every other node. A <strong>partial mesh</strong> has redundant links but not complete connectivity.</p>
+
+<!-- Mesh topology SVG -->
+<svg viewBox="0 0 300 220" style="width:100%;max-width:300px;display:block;margin:0 auto 18px auto;" xmlns="http://www.w3.org/2000/svg">
+  <text x="150" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a5f">Full Mesh (4 nodes)</text>
+  <!-- 4 nodes -->
+  <circle cx="75" cy="70" r="22" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="75" y="74" text-anchor="middle" font-size="10" fill="#92400e">A</text>
+  <circle cx="225" cy="70" r="22" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="225" y="74" text-anchor="middle" font-size="10" fill="#92400e">B</text>
+  <circle cx="75" cy="170" r="22" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="75" y="174" text-anchor="middle" font-size="10" fill="#92400e">C</text>
+  <circle cx="225" cy="170" r="22" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="225" y="174" text-anchor="middle" font-size="10" fill="#92400e">D</text>
+  <!-- All connections (6 links for full mesh of 4) -->
+  <line x1="97" y1="70" x2="203" y2="70" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="75" y1="92" x2="75" y2="148" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="225" y1="92" x2="225" y2="148" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="97" y1="170" x2="203" y2="170" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="95" y1="82" x2="208" y2="158" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="208" y1="82" x2="95" y2="158" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="150" y="205" text-anchor="middle" font-size="9" fill="#6b7280">n(n-1)/2 links: 4 nodes = 6 links</text>
+</svg>
+
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Highly resilient &mdash; data can reroute if a link fails</td><td>Very expensive: n(n-1)/2 links for n nodes (4 nodes = 6 links; 10 nodes = 45 links)</td></tr>
+    <tr><td>No single point of failure</td><td>Complex to set up and manage</td></tr>
+    <tr><td>High bandwidth: multiple simultaneous paths</td><td>Large amounts of cabling (or wireless channels)</td></tr>
+    <tr><td>Used in the internet backbone and WANs</td><td>Not practical for typical LANs</td></tr>
+</table>
+
+<!-- ====== IP ADDRESSING AND NAT ====== -->
+<h2>4.9.11 IP Addressing, Subnets, and NAT</h2>
+
+<h3>IPv4 vs IPv6</h3>
+<table>
+    <tr><th>Feature</th><th>IPv4</th><th>IPv6</th></tr>
+    <tr><td>Length</td><td>32 bits</td><td>128 bits</td></tr>
+    <tr><td>Format</td><td>4 decimal octets: <code>192.168.1.10</code></td><td>8 groups of 4 hex: <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code></td></tr>
+    <tr><td>Addresses</td><td>~4.3 billion (exhausted)</td><td>~3.4 &times; 10<sup>38</sup> (effectively unlimited)</td></tr>
+    <tr><td>NAT needed?</td><td>Yes (to conserve addresses)</td><td>No (enough for every device)</td></tr>
+    <tr><td>Header</td><td>Variable, complex</td><td>Fixed 40-byte, simpler</td></tr>
+    <tr><td>Security</td><td>Optional (add-on)</td><td>IPSec built-in</td></tr>
+    <tr><td>Adoption</td><td>Dominant currently</td><td>Growing; dual-stack transition</td></tr>
+</table>
+
+<h3>Subnet Masks</h3>
+<div class="definition">
+    A <strong>subnet mask</strong> divides an IP address into a <strong>network portion</strong> and a <strong>host portion</strong>. Devices with the same network portion are on the same subnet and can communicate directly without a router.
+</div>
+
+<pre>IP Address:   192.168.1.45    = 11000000.10101000.00000001.00101101
+Subnet Mask:  255.255.255.0   = 11111111.11111111.11111111.00000000
+
+Network:      192.168.1.0      (first 24 bits = /24 notation)
+Host range:   192.168.1.1  to  192.168.1.254
+Broadcast:    192.168.1.255
+
+/24 means 24 bits for network, 8 bits for hosts = 256 addresses (254 usable)</pre>
+
+<h3>NAT (Network Address Translation)</h3>
+<div class="definition">
+    <strong>NAT:</strong> Allows many devices on a private network (using private IP addresses: 192.168.x.x, 10.x.x.x, 172.16-31.x.x) to share a single public IP address when communicating with the internet. The router maintains a translation table mapping private IP:port to the public IP:port.
+</div>
+
+<ul>
+    <li><strong>Conserves IPv4 addresses</strong> &mdash; one household uses one public IP for all devices</li>
+    <li><strong>Security benefit</strong> &mdash; private addresses are hidden from the internet; direct inbound connections are blocked by default</li>
+    <li><strong>Disadvantage</strong> &mdash; breaks true end-to-end connectivity; complicates hosting servers or P2P applications from behind NAT</li>
+</ul>
+
+<h3>Private vs Public IP Addresses</h3>
+<table>
+    <tr><th>Range</th><th>Class</th><th>Use</th></tr>
+    <tr><td>10.0.0.0 &mdash; 10.255.255.255</td><td>A</td><td>Large private networks (enterprises)</td></tr>
+    <tr><td>172.16.0.0 &mdash; 172.31.255.255</td><td>B</td><td>Medium private networks</td></tr>
+    <tr><td>192.168.0.0 &mdash; 192.168.255.255</td><td>C</td><td>Home/small office networks</td></tr>
+    <tr><td>127.0.0.1</td><td>&mdash;</td><td>Loopback (localhost) &mdash; tests local stack</td></tr>
+</table>
+
+<div class="exam-tip">Private IP addresses (192.168.x.x, 10.x.x.x) are not routable on the internet &mdash; NAT converts them. IPv6 makes NAT unnecessary. Subnet masks identify which part of the IP is the network and which is the host &mdash; know how to determine the network address by applying a bitwise AND with the subnet mask.</div>
+
+<!-- ====== WIRELESS NETWORKING ====== -->
+<h2>4.9.12 Wireless Networking</h2>
+
+<h3>Wi-Fi Standards (IEEE 802.11)</h3>
+<table>
+    <tr><th>Standard</th><th>Max Speed</th><th>Frequency</th><th>Key Feature</th></tr>
+    <tr><td>802.11b</td><td>11 Mbps</td><td>2.4 GHz</td><td>Early standard (1999); long range; crowded frequency</td></tr>
+    <tr><td>802.11g</td><td>54 Mbps</td><td>2.4 GHz</td><td>Backward-compatible with 802.11b</td></tr>
+    <tr><td>802.11n (Wi-Fi 4)</td><td>600 Mbps</td><td>2.4 &amp; 5 GHz</td><td>MIMO (multiple antennas); dual-band</td></tr>
+    <tr><td>802.11ac (Wi-Fi 5)</td><td>3.5 Gbps</td><td>5 GHz</td><td>MU-MIMO; beamforming; much faster</td></tr>
+    <tr><td>802.11ax (Wi-Fi 6)</td><td>9.6 Gbps</td><td>2.4, 5, 6 GHz</td><td>Better performance in congested areas; OFDMA; improved battery for devices</td></tr>
+</table>
+
+<h3>2.4 GHz vs 5 GHz</h3>
+<table>
+    <tr><th>Feature</th><th>2.4 GHz</th><th>5 GHz</th></tr>
+    <tr><td>Range</td><td>Longer (penetrates walls better)</td><td>Shorter</td></tr>
+    <tr><td>Speed</td><td>Lower</td><td>Higher</td></tr>
+    <tr><td>Interference</td><td>More (shared with microwaves, Bluetooth, baby monitors)</td><td>Less</td></tr>
+    <tr><td>Channels</td><td>Fewer non-overlapping channels (3)</td><td>More non-overlapping channels (25+)</td></tr>
+    <tr><td>Best for</td><td>Long range, IoT devices, high penetration</td><td>High speed, streaming, gaming</td></tr>
+</table>
+
+<h3>Bluetooth</h3>
+<div class="definition">
+    <strong>Bluetooth:</strong> A short-range wireless technology (IEEE 802.15.1) for Personal Area Networks (PANs). Uses 2.4 GHz ISM band with frequency hopping to reduce interference. Range typically 1-100 metres depending on class.
+</div>
+
+<ul>
+    <li><strong>Bluetooth Classic</strong> &mdash; continuous data streams (audio, file transfer): headphones, speakers</li>
+    <li><strong>Bluetooth Low Energy (BLE)</strong> &mdash; short bursts, very low power: fitness trackers, smart home devices, beacons</li>
+    <li><strong>Pairing:</strong> devices exchange keys during pairing process to encrypt subsequent communication</li>
+    <li><strong>Piconet:</strong> one master device controlling up to 7 active slave devices</li>
+    <li><strong>Security concerns:</strong> Bluejacking (unsolicited messages), Bluesnarfing (unauthorized data access), Bluebugging (full device control)</li>
+</ul>
+
+<!-- ====== WIRELESS SECURITY ====== -->
+<h2>4.9.13 Wireless Network Security</h2>
+
+<table>
+    <tr><th>Security Measure</th><th>How It Works</th><th>Limitation</th></tr>
+    <tr><td><strong>WEP</strong> (Wired Equivalent Privacy)</td><td>RC4 encryption; 64/128-bit key. Early wireless encryption standard.</td><td>Severely broken &mdash; crackable in minutes. Never use.</td></tr>
+    <tr><td><strong>WPA</strong> (Wi-Fi Protected Access)</td><td>TKIP encryption; improved key management over WEP.</td><td>Superseded; TKIP has vulnerabilities.</td></tr>
+    <tr><td><strong>WPA2</strong></td><td>AES-CCMP encryption; much stronger. Personal (pre-shared key) or Enterprise (RADIUS server).</td><td>Vulnerable to KRACK attack; weak passwords can be cracked.</td></tr>
+    <tr><td><strong>WPA3</strong></td><td>SAE (Simultaneous Authentication of Equals); forward secrecy; protects against dictionary attacks even with weak passwords.</td><td>Some older devices incompatible.</td></tr>
+    <tr><td><strong>MAC Address Filtering</strong></td><td>WAP maintains whitelist of allowed MAC addresses; others are rejected.</td><td>MAC addresses can be spoofed; difficult to manage in large networks.</td></tr>
+    <tr><td><strong>SSID Hiding</strong></td><td>WAP does not broadcast its network name (SSID).</td><td>Security through obscurity only &mdash; SSID still visible in probe requests; easily bypassed with wireless analysis tools.</td></tr>
+    <tr><td><strong>VPN</strong> (Virtual Private Network)</td><td>Creates an encrypted tunnel over a public network. All traffic routed via a VPN server, masking IP and encrypting data.</td><td>Requires trust in the VPN provider; adds latency; free VPNs may log data.</td></tr>
+</table>
+
+<div class="definition">
+    <strong>VPN (Virtual Private Network):</strong> Establishes an encrypted, authenticated tunnel over the internet between a client and a VPN server. The client's real IP is hidden; all traffic appears to originate from the VPN server. Uses protocols such as OpenVPN, WireGuard, IPSec/L2TP, or PPTP.
+</div>
+
+<h3>Common Wireless Attacks</h3>
+<ul>
+    <li><strong>Evil twin attack</strong> &mdash; attacker sets up a rogue WAP with the same SSID as a legitimate network; victims connect unknowingly, traffic is intercepted</li>
+    <li><strong>Packet sniffing</strong> &mdash; capturing unencrypted wireless packets; countered by WPA2/3 and HTTPS</li>
+    <li><strong>Deauthentication attack</strong> &mdash; flooding a device with fake deauth frames forces it to disconnect and reconnect, capturing the WPA handshake for offline cracking</li>
+    <li><strong>Wardriving</strong> &mdash; driving around to find unsecured or poorly secured wireless networks</li>
+</ul>
+
+<div class="exam-tip">Always recommend WPA2 or WPA3 for wireless security &mdash; never WEP. Know that MAC filtering and SSID hiding are weak measures easily bypassed (MAC spoofing, passive scanning). For complete security, combine strong encryption (WPA3), complex passwords, firewall, and VPN on public networks. Know what a VPN does: encrypts all traffic and hides the user's IP address.</div>
+
+<!-- ====== ROUTING ====== -->
+<h2>4.9.14 Routing</h2>
+
+<h3>Routing Tables</h3>
+<p>A router maintains a <strong>routing table</strong> &mdash; a database of destination networks and how to reach them. When a packet arrives, the router looks up the destination IP in its table and forwards the packet to the next hop.</p>
+
+<pre>Example routing table:
+Destination Network | Subnet Mask     | Next Hop       | Interface
+--------------------|-----------------|----------------|----------
+192.168.1.0         | 255.255.255.0   | Direct         | eth0
+10.0.0.0            | 255.0.0.0       | 192.168.1.1    | eth0
+0.0.0.0             | 0.0.0.0         | 203.0.113.1    | eth1   &lt;- default gateway
+
+The 0.0.0.0/0 entry is the default route (gateway of last resort)
+used when no specific match is found.</pre>
+
+<h3>Routing Algorithms</h3>
+<ul>
+    <li><strong>Distance vector</strong> (e.g., RIP) &mdash; each router tells its neighbours its distance to all known networks. Simple but slow to converge; susceptible to routing loops.</li>
+    <li><strong>Link state</strong> (e.g., OSPF) &mdash; each router maps the entire network topology. Faster convergence; more efficient; used in most modern networks.</li>
+    <li><strong>BGP (Border Gateway Protocol)</strong> &mdash; the protocol used between autonomous systems on the internet backbone; policy-based routing.</li>
+</ul>
+
+<h3>How Packet Switching Works End-to-End</h3>
+<ol>
+    <li>Source device breaks message into <strong>packets</strong>; each packet gets a header with source/destination IP, sequence number, TTL</li>
+    <li>Packets forwarded by <strong>routers</strong> &mdash; each router makes an independent forwarding decision based on its routing table</li>
+    <li>Packets may travel <strong>different paths</strong> and arrive <strong>out of order</strong></li>
+    <li><strong>TTL (Time to Live)</strong> field decremented at each hop &mdash; packet discarded when TTL reaches 0 (prevents infinite loops)</li>
+    <li>Destination <strong>reassembles</strong> packets in correct order using sequence numbers (TCP handles retransmission of lost packets)</li>
+</ol>
+
+<div class="exam-tip">The routing table question is common: understand that routers use the <em>longest prefix match</em> (most specific route wins). Know what TTL does &mdash; prevents packets looping forever. Understand that the default gateway is the router a device sends packets to when the destination is on a different network.</div>
+
+<!-- ====== DNS AND HTTP IN DEPTH ====== -->
+<h2>4.9.15 How a Web Request Works &mdash; End-to-End</h2>
+
+<p>This ties together all the networking concepts in a realistic scenario: what happens when you type <code>https://www.bbc.co.uk</code> into a browser?</p>
+
+<ol>
+    <li><strong>DNS resolution:</strong> Browser checks local cache &rarr; OS cache &rarr; queries ISP recursive resolver &rarr; resolver queries root DNS &rarr; TLD DNS (.uk) &rarr; authoritative DNS for bbc.co.uk. Returns IP address (e.g., 151.101.0.81). Cached for TTL period.</li>
+    <li><strong>TCP connection:</strong> Browser opens a TCP connection to the server IP on port 443 (HTTPS). Three-way handshake: SYN &rarr; SYN-ACK &rarr; ACK.</li>
+    <li><strong>TLS handshake:</strong> Browser and server negotiate encryption. Server sends digital certificate (CA-verified, containing public key). Browser verifies certificate against trusted CAs. Asymmetric encryption used to exchange a symmetric session key. All subsequent data encrypted symmetrically (e.g., AES-256).</li>
+    <li><strong>HTTP request:</strong> Browser sends <code>GET /index.html HTTP/2</code> request over the encrypted channel.</li>
+    <li><strong>Server response:</strong> Web server sends back HTTP 200 OK with the HTML content.</li>
+    <li><strong>Rendering:</strong> Browser parses HTML, discovers CSS/JS/image references, makes further HTTP requests for each resource.</li>
+    <li><strong>TCP teardown:</strong> When done, connection closed gracefully: FIN &rarr; ACK &rarr; FIN &rarr; ACK.</li>
+</ol>
+
+<div class="exam-tip">This end-to-end scenario is often used in exam questions to test understanding of multiple topics together (DNS, TCP, TLS, HTTP). Practice explaining each step and naming the relevant protocol and layer. Be precise: "DNS resolves the domain name to an IP address" not just "finds the address".</div>
+
 </div>
 </body>
 </html>

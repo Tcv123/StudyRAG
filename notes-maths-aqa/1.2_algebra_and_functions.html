@@ -377,6 +377,144 @@ The <strong>modulus</strong> (absolute value) of \(x\), written \(|x|\), gives t
 <strong>Exam Tip:</strong> When solving \(|f(x)| = |g(x)|\), you can also square both sides: \(f(x)^2 = g(x)^2\), which avoids case work. For modulus inequalities like \(|f(x)| < a\), rewrite as \(-a < f(x) < a\).
 </div>
 
+<!-- ============================================ -->
+<h2>Functions: Domain and Range</h2>
+
+<div class="definition">
+<ul>
+  <li>The <strong>domain</strong> of a function is the set of all valid input values (\(x\)-values).</li>
+  <li>The <strong>range</strong> (codomain) is the set of all possible output values (\(f(x)\)-values).</li>
+  <li>A function maps each element of the domain to <strong>exactly one</strong> element of the range.</li>
+</ul>
+</div>
+
+<table>
+<tr><th>Function</th><th>Natural domain</th><th>Range</th></tr>
+<tr><td>\(f(x) = x^2\)</td><td>\(x \in \mathbb{R}\)</td><td>\(f(x) \geq 0\)</td></tr>
+<tr><td>\(f(x) = \sqrt{x}\)</td><td>\(x \geq 0\)</td><td>\(f(x) \geq 0\)</td></tr>
+<tr><td>\(f(x) = \dfrac{1}{x}\)</td><td>\(x \in \mathbb{R},\ x \neq 0\)</td><td>\(f(x) \in \mathbb{R},\ f(x) \neq 0\)</td></tr>
+<tr><td>\(f(x) = \ln x\)</td><td>\(x > 0\)</td><td>\(f(x) \in \mathbb{R}\)</td></tr>
+<tr><td>\(f(x) = \sqrt{9 - x^2}\)</td><td>\(-3 \leq x \leq 3\)</td><td>\(0 \leq f(x) \leq 3\)</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> Common restrictions on the domain:
+<ul>
+  <li>Cannot divide by zero: exclude values making the denominator zero.</li>
+  <li>Cannot take the square root of a negative number (over the reals): set the expression \(\geq 0\).</li>
+  <li>Cannot take \(\ln\) of a non-positive number: set the argument \(> 0\).</li>
+</ul>
+</div>
+
+<!-- ============================================ -->
+<h2>Composite Functions</h2>
+
+<div class="definition">
+The <strong>composite function</strong> \(fg(x)\) (read "\(f\) of \(g\) of \(x\)") means apply \(g\) first, then apply \(f\) to the result:
+\[fg(x) = f(g(x))\]
+In general, \(fg(x) \neq gf(x)\) — order matters.
+</div>
+
+<div class="example">
+<h3>Example: Given \(f(x) = 2x + 1\) and \(g(x) = x^2\), find \(fg(x)\) and \(gf(x)\).</h3>
+<p>\(fg(x) = f(g(x)) = f(x^2) = 2x^2 + 1\)</p>
+<p>\(gf(x) = g(f(x)) = g(2x+1) = (2x+1)^2 = 4x^2 + 4x + 1\)</p>
+<p>These are different functions.</p>
+</div>
+
+<div class="example">
+<h3>Example: \(f(x) = \sqrt{x-1}\) (domain \(x \geq 1\)) and \(g(x) = x^2 + 1\). Find \(fg(x)\) and its domain.</h3>
+<p>\(fg(x) = f(g(x)) = f(x^2+1) = \sqrt{(x^2+1)-1} = \sqrt{x^2} = |x|\)</p>
+<p>The domain of \(fg\) requires \(g(x) \geq 1\), i.e. \(x^2 + 1 \geq 1\), which is true for all \(x \in \mathbb{R}\).</p>
+<p>So \(fg(x) = |x|\), domain \(x \in \mathbb{R}\), range \(fg(x) \geq 0\).</p>
+</div>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> The domain of \(fg\) is restricted by two conditions: (1) \(x\) must be in the domain of \(g\), and (2) \(g(x)\) must be in the domain of \(f\). Apply both conditions and take the intersection.
+</div>
+
+<!-- ============================================ -->
+<h2>Inverse Functions</h2>
+
+<div class="definition">
+The <strong>inverse function</strong> \(f^{-1}(x)\) reverses the action of \(f\). It exists only when \(f\) is a <strong>one-to-one</strong> (injective) function — every output value corresponds to exactly one input value.<br><br>
+Key properties:
+<ul>
+  <li>\(f^{-1}(f(x)) = x\) and \(f(f^{-1}(x)) = x\)</li>
+  <li>The domain of \(f^{-1}\) is the range of \(f\), and vice versa.</li>
+  <li>The graph of \(y = f^{-1}(x)\) is the reflection of \(y = f(x)\) in the line \(y = x\).</li>
+</ul>
+</div>
+
+<h3>Finding an Inverse Function</h3>
+<ol>
+  <li>Write \(y = f(x)\).</li>
+  <li>Rearrange to make \(x\) the subject.</li>
+  <li>Replace \(x\) with \(f^{-1}(x)\) and \(y\) with \(x\).</li>
+  <li>State the domain of \(f^{-1}\) (= range of \(f\)).</li>
+</ol>
+
+<div class="example">
+<h3>Example: Find \(f^{-1}(x)\) for \(f(x) = 3x - 2\).</h3>
+<p>Let \(y = 3x - 2\). Rearrange: \(x = \dfrac{y + 2}{3}\).</p>
+<p>So \(f^{-1}(x) = \dfrac{x + 2}{3}\), domain \(x \in \mathbb{R}\).</p>
+<p>Check: \(f(f^{-1}(x)) = 3 \cdot \dfrac{x+2}{3} - 2 = x + 2 - 2 = x\) ✓</p>
+</div>
+
+<div class="example">
+<h3>Example: \(f(x) = \dfrac{2x + 1}{x - 3}\) (\(x \neq 3\)). Find \(f^{-1}(x)\).</h3>
+<p>Let \(y = \dfrac{2x+1}{x-3}\). Cross multiply: \(y(x-3) = 2x + 1\).</p>
+<p>\(xy - 3y = 2x + 1 \Rightarrow xy - 2x = 3y + 1 \Rightarrow x(y-2) = 3y + 1\).</p>
+<p>\(x = \dfrac{3y+1}{y-2}\)</p>
+<p>So \(f^{-1}(x) = \dfrac{3x+1}{x-2}\), domain \(x \neq 2\).</p>
+<p>Note: \(f^{-1}\) has the same algebraic form structure as \(f\) (a common feature of this type of function).</p>
+</div>
+
+<div class="example">
+<h3>Example: \(f(x) = x^2 + 2\), domain \(x \geq 0\). Find \(f^{-1}(x)\) and its domain.</h3>
+<p>The domain restriction \(x \geq 0\) makes \(f\) one-to-one (without it, \(f\) would not have an inverse).</p>
+<p>Let \(y = x^2 + 2\). Then \(x = \sqrt{y-2}\) (taking positive root since \(x \geq 0\)).</p>
+<p>\(f^{-1}(x) = \sqrt{x - 2}\), domain: \(x \geq 2\) (= range of \(f\)).</p>
+</div>
+
+<!-- SVG: Inverse function — reflection in y=x -->
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:480px;display:block;margin:20px auto;">
+  <defs>
+    <marker id="finvarrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <!-- Axes -->
+  <line x1="40" y1="320" x2="440" y2="320" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="40" y1="320" x2="40" y2="20" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="435" y="335" font-size="12" fill="#64748b" font-family="sans-serif">x</text>
+  <text x="25" y="25" font-size="12" fill="#64748b" font-family="sans-serif">y</text>
+  <!-- y = x line (dashed) -->
+  <line x1="40" y1="320" x2="420" y2="60" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="415" y="55" font-size="11" fill="#64748b" font-family="sans-serif">y=x</text>
+  <!-- f(x) = x^2+2 for x>=0: plot from x=0 to x=16 mapped to svg coords -->
+  <!-- x_svg = 40 + x*24, y_svg = 320 - (x^2+2)*14 -->
+  <!-- x=0: (40, 292), x=1: (64, 278), x=2: (88, 236), x=3: (112, 166), x=4: (136, 68) -->
+  <path d="M 40,292 C 55,282 70,260 88,236 S 110,180 136,68" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="140" y="60" font-size="12" fill="#2563eb" font-family="sans-serif" font-weight="600">y = f(x) = x²+2</text>
+  <!-- f⁻¹(x) = sqrt(x-2) for x>=2: it's the reflection of f in y=x -->
+  <!-- In svg: swap x and y of the f(x) curve points -->
+  <!-- (40,292)→(292,40) ... Let me compute the reflected curve: -->
+  <!-- f points: (40,292),(64,278),(88,236),(112,166),(136,68) -->
+  <!-- reflected: (292,40),(278,64),(236,88),(166,112),(68,136) -->
+  <path d="M 292,40 C 282,55 260,70 236,88 S 180,110 68,136" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="295" y="36" font-size="12" fill="#dc2626" font-family="sans-serif" font-weight="600">y = f⁻¹(x) = √(x−2)</text>
+  <!-- Reflection arrow annotation -->
+  <text x="200" y="200" font-size="11" fill="#64748b" font-family="sans-serif" text-anchor="middle">Reflection in y=x</text>
+</svg>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> A function only has an inverse if it is <strong>one-to-one</strong>. For many-to-one functions (like \(x^2\) on all reals), you must restrict the domain first. The examiner may give you a domain — use it. Always state the domain of the inverse function.
+</div>
+
+<h3>Self-Inverse Functions</h3>
+<p>A function is <strong>self-inverse</strong> if \(f^{-1}(x) = f(x)\), i.e. \(f(f(x)) = x\). Examples include \(f(x) = \dfrac{1}{x}\) and \(f(x) = \dfrac{a}{x}\). Their graphs are symmetric about \(y = x\).</p>
+
 </div>
 <script>
   renderMathInElement(document.body, {

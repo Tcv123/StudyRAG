@@ -259,6 +259,180 @@ REDUCE phase (aggregate each key):
 
 <div class="exam-tip">For big data ethics questions, always discuss specific privacy risks and link to legislation (DPA 2018, GDPR). Explain the tension between the benefits of data analysis (medical breakthroughs, efficiency gains, personalisation) and the risks (surveillance, discrimination, loss of autonomy). Name specific stakeholders and their differing perspectives.</div>
 
+<!-- ============================================================ -->
+<h2>4.11.7 Traditional Databases vs Big Data Approaches</h2>
+
+<table>
+    <tr><th>Aspect</th><th>Traditional Database (RDBMS)</th><th>Big Data Approach</th></tr>
+    <tr><td>Data volume</td><td>Gigabytes to terabytes</td><td>Petabytes to exabytes</td></tr>
+    <tr><td>Data type</td><td>Structured only (tables, rows, columns)</td><td>Structured, semi-structured, unstructured</td></tr>
+    <tr><td>Schema</td><td>Fixed schema defined before data entry</td><td>Schema-on-read (or schema-less)</td></tr>
+    <tr><td>Processing model</td><td>Single server; vertical scaling</td><td>Distributed cluster; horizontal scaling</td></tr>
+    <tr><td>Consistency model</td><td>Strong (ACID)</td><td>Eventual consistency (BASE)</td></tr>
+    <tr><td>Query language</td><td>SQL (standardised)</td><td>MapReduce, Spark, custom APIs, query languages per system</td></tr>
+    <tr><td>Data generation speed</td><td>Transactional (moderate rate)</td><td>Real-time streams (millions of events/second)</td></tr>
+    <tr><td>Examples</td><td>Banking system, school MIS, hospital records</td><td>Twitter feed analysis, genome sequencing, particle physics (CERN)</td></tr>
+    <tr><td>When to use</td><td>Complex transactions, complex queries, data integrity critical</td><td>Massive scale, diverse formats, real-time analysis, pattern discovery</td></tr>
+</table>
+
+<div class="definition">
+    <strong>BASE</strong> (Basically Available, Soft state, Eventually consistent): The consistency model used by many NoSQL/big data systems. Sacrifices immediate consistency for availability and partition tolerance. Contrast with <strong>ACID</strong> which guarantees strict consistency.
+</div>
+
+<div class="definition">
+    <strong>CAP Theorem:</strong> A distributed system can guarantee at most two of three properties simultaneously: <strong>Consistency</strong> (all nodes see the same data), <strong>Availability</strong> (every request receives a response), <strong>Partition tolerance</strong> (system works despite network failures). Big data systems typically choose availability + partition tolerance (AP), sacrificing strict consistency.
+</div>
+
+<!-- ============================================================ -->
+<h2>4.11.8 Graph Schema vs Relational Schema</h2>
+
+<h3>Relational Schema</h3>
+<p>Data is stored in <strong>tables with fixed columns</strong>. Relationships are expressed through foreign keys and joins. Works well for structured, consistent data.</p>
+
+<pre>-- Relational: Friend relationships require a join table
+Person (PersonID PK, Name, Age)
+Friendship (PersonID1 FK, PersonID2 FK, Since)
+
+-- Query: find all of Alice's friends
+SELECT p.Name
+FROM Person p
+INNER JOIN Friendship f ON p.PersonID = f.PersonID2
+WHERE f.PersonID1 = (SELECT PersonID FROM Person WHERE Name = 'Alice');
+
+-- For 6 degrees of separation queries, this requires complex recursive joins
+-- &mdash; relational databases struggle with highly connected graph data</pre>
+
+<h3>Graph Schema</h3>
+<p>Data is stored as <strong>nodes</strong> (entities) and <strong>edges</strong> (relationships). Relationships are first-class citizens &mdash; no join tables needed. Traversing relationships is fundamentally efficient.</p>
+
+<div class="definition">
+    <strong>Graph database:</strong> Stores data as nodes (entities) and edges (relationships), each with associated properties. Optimised for traversing relationships. Examples: Neo4j, Amazon Neptune, TigerGraph.
+</div>
+
+<pre>-- Graph query (Cypher language, Neo4j):
+-- Find Alice's friends
+MATCH (alice:Person {name: 'Alice'})-[:FRIEND_OF]->(friend:Person)
+RETURN friend.name;
+
+-- Find friends of friends (2 hops) -- trivial in graph, complex in SQL
+MATCH (alice:Person {name: 'Alice'})-[:FRIEND_OF*2]->(fof:Person)
+RETURN fof.name;
+
+-- Graph node: Person {name: 'Alice', age: 28}
+-- Graph edge: [:FRIEND_OF {since: 2020}]</pre>
+
+<table>
+    <tr><th>Feature</th><th>Relational (Table) Schema</th><th>Graph Schema</th></tr>
+    <tr><td>Data model</td><td>Tables, rows, columns</td><td>Nodes and edges with properties</td></tr>
+    <tr><td>Relationships</td><td>Foreign keys and join tables</td><td>Direct edges between nodes</td></tr>
+    <tr><td>Relationship traversal</td><td>Expensive (multiple JOINs)</td><td>Efficient (pointer-based)</td></tr>
+    <tr><td>Schema flexibility</td><td>Rigid (all rows have same columns)</td><td>Flexible (nodes can have different properties)</td></tr>
+    <tr><td>Best for</td><td>Transactional data, structured records</td><td>Social networks, recommendation engines, fraud detection, knowledge graphs</td></tr>
+    <tr><td>Query language</td><td>SQL</td><td>Cypher (Neo4j), Gremlin, SPARQL</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>4.11.9 MapReduce &mdash; Extended Detail</h2>
+
+<h3>Why MapReduce?</h3>
+<p>Traditional programs run on a single machine. Big data sets cannot fit on one machine or be processed in acceptable time by one CPU. MapReduce automatically distributes work across thousands of nodes in a cluster, handles node failures transparently, and aggregates results.</p>
+
+<h3>Detailed MapReduce Example: Log Analysis</h3>
+<pre>Problem: Analyse web server logs (100 TB) to count requests per country.
+
+INPUT (distributed across 1000 nodes, each with a portion of the logs):
+  Node 1 chunk: "195.229.241.100 GET /index.html ... UK"
+                "8.8.8.8 GET /about.html ... US"
+                "195.229.241.200 GET /index.html ... UK"
+
+MAP phase (each node processes its own chunk independently):
+  Mapper output: key = country, value = 1
+  ("UK", 1), ("US", 1), ("UK", 1)
+
+SHUFFLE/SORT phase (framework groups all same-key pairs together):
+  ("UK", [1, 1, 1, 1, ...])    -- all UK values from all nodes
+  ("US", [1, 1, 1, ...])
+
+REDUCE phase (one reducer per key, sums the values):
+  ("UK", 58423921)
+  ("US", 94821044)
+
+OUTPUT: sorted count of requests by country
+  -- Done in minutes across 1000 nodes vs weeks on one machine</pre>
+
+<h3>Fault Tolerance in MapReduce</h3>
+<ul>
+    <li>The <strong>master node</strong> (JobTracker in Hadoop) monitors all worker nodes</li>
+    <li>If a worker fails, its tasks are automatically <strong>reassigned</strong> to another node</li>
+    <li>Input data is stored in <strong>HDFS</strong> with multiple replicas (default: 3 copies) so data is not lost if a node fails</li>
+    <li>This enables <strong>commodity hardware</strong> (cheap, unreliable servers) to be used at scale &mdash; failures are expected and handled automatically</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>4.11.10 Real-World Big Data Applications</h2>
+
+<table>
+    <tr><th>Application</th><th>Volume</th><th>Velocity</th><th>Variety</th><th>Technique</th></tr>
+    <tr><td><strong>Netflix recommendations</strong></td><td>Viewing history of 260M+ subscribers</td><td>Real-time as you browse</td><td>Watch history, ratings, search, time of day, device</td><td>Collaborative filtering, deep learning, A/B testing</td></tr>
+    <tr><td><strong>Fraud detection</strong></td><td>Billions of transactions/day</td><td>Decision needed in &lt;100ms</td><td>Transaction history, location, device, merchant, time</td><td>Anomaly detection, supervised ML, rules engine</td></tr>
+    <tr><td><strong>Genomics</strong></td><td>Human genome = 3 billion base pairs; 100,000s of genomes</td><td>Sequencers generate data continuously</td><td>DNA sequences, clinical records, medical images</td><td>MapReduce, distributed computing, ML for disease prediction</td></tr>
+    <tr><td><strong>Climate modelling</strong></td><td>Terabytes of sensor data daily</td><td>Satellite, ocean, atmosphere sensors streaming</td><td>Temperature, humidity, CO2, wind, ocean salinity, ice thickness</td><td>Simulation, statistical modelling, distributed HPC</td></tr>
+    <tr><td><strong>Smart cities / IoT</strong></td><td>Millions of sensor readings/minute</td><td>Real-time traffic, energy, pollution</td><td>Traffic sensors, cameras, air quality, energy meters</td><td>Stream processing, edge computing, ML optimisation</td></tr>
+    <tr><td><strong>Social media analysis</strong></td><td>Twitter: 6,000 tweets/second</td><td>Trending topics updated in real-time</td><td>Text, images, video, location, likes, retweets</td><td>Sentiment analysis, NLP, clustering, graph analysis</td></tr>
+    <tr><td><strong>Astronomy / CERN</strong></td><td">LHC produces ~1 PB of collision data/second</td><td>Continuous high-speed particle collisions</td><td>Detector readings, simulations, images</td><td>Distributed computing grid (WLCG), filtering, pattern matching</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>4.11.11 Hadoop Ecosystem &mdash; Extended</h2>
+
+<h3>HDFS (Hadoop Distributed File System)</h3>
+<div class="definition">
+    <strong>HDFS</strong> splits large files into <strong>blocks</strong> (default 128MB), distributes blocks across <strong>DataNodes</strong>, and replicates each block on 3 different nodes. A <strong>NameNode</strong> stores metadata (which blocks belong to which file, and where each block is). If a DataNode fails, another replica is used transparently.
+</div>
+
+<pre>File: large_dataset.csv (500 MB)
+
+HDFS splits into blocks:
+  Block 1 (128MB) &rarr; stored on DataNode 1, 3, 7
+  Block 2 (128MB) &rarr; stored on DataNode 2, 5, 9
+  Block 3 (128MB) &rarr; stored on DataNode 4, 6, 8
+  Block 4 (116MB) &rarr; stored on DataNode 1, 2, 10
+
+NameNode knows: large_dataset.csv = [Block1, Block2, Block3, Block4]
+DataNodes fail? Replication means data still accessible.
+Map tasks scheduled close to the data (data locality &rarr; less network traffic).</pre>
+
+<h3>Apache Spark vs Hadoop MapReduce</h3>
+<table>
+    <tr><th>Feature</th><th>Hadoop MapReduce</th><th>Apache Spark</th></tr>
+    <tr><td>Storage</td><td>Writes intermediate results to disk after each step</td><td>Keeps data in-memory (RAM) between steps</td></tr>
+    <tr><td>Speed</td><td>Slower (disk I/O bottleneck)</td><td>Up to 100x faster for iterative tasks</td></tr>
+    <tr><td>Iterative algorithms</td><td>Poor (must re-read disk each iteration)</td><td>Excellent (ML algorithms run many iterations)</td></tr>
+    <tr><td>Programming model</td><td>Map and Reduce only</td><td>Rich API: map, filter, reduce, join, SQL, streaming</td></tr>
+    <tr><td>Streaming</td><td>Batch only</td><td>Near real-time streaming (Spark Streaming)</td></tr>
+    <tr><td>Languages</td><td>Java primarily</td><td>Python, Scala, Java, R</td></tr>
+    <tr><td>Use case</td><td>Simple batch processing</td><td>ML, real-time analytics, graph processing, SQL</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>4.11.12 Big Data &mdash; Exam Revision Summary</h2>
+
+<table>
+    <tr><th>Topic</th><th>Key Points</th></tr>
+    <tr><td>3 Vs</td><td>Volume (amount), Velocity (speed), Variety (formats). Also Veracity (quality) and Value.</td></tr>
+    <tr><td>Why traditional DBs fail</td><td>Cannot scale horizontally; rigid schema; too slow for real-time; cannot handle unstructured data</td></tr>
+    <tr><td>MapReduce</td><td>Map = distribute and transform; Reduce = aggregate. Massively parallel. Key-value pairs. Fault tolerant.</td></tr>
+    <tr><td>Hadoop</td><td>HDFS (distributed storage with replication) + MapReduce (processing). Open-source. Commodity hardware.</td></tr>
+    <tr><td>Spark</td><td>In-memory processing; faster than MapReduce; supports ML, streaming, SQL, graph.</td></tr>
+    <tr><td>NoSQL types</td><td>Key-value (Redis), Document (MongoDB), Column (Cassandra), Graph (Neo4j). Schema-flexible. Horizontally scalable.</td></tr>
+    <tr><td>Machine Learning</td><td>Supervised (labelled data, classification/regression), Unsupervised (unlabelled, clustering), Reinforcement (reward-based).</td></tr>
+    <tr><td>Graph schema</td><td>Nodes + edges. Best for relationship-heavy data (social networks, fraud rings, recommendations).</td></tr>
+    <tr><td>Data mining</td><td>Association rules, classification, clustering, regression, anomaly detection, sentiment analysis.</td></tr>
+    <tr><td>Ethics</td><td>Privacy, consent, bias, security, ownership, transparency, power imbalance. Link to DPA 2018/GDPR.</td></tr>
+</table>
+
+<div class="exam-tip">Big Data exam questions often ask you to: (1) identify which V applies to a scenario, (2) explain why MapReduce is appropriate (distribute, map, shuffle, reduce &mdash; use these exact steps), (3) compare NoSQL to relational (schema flexibility, horizontal scaling, eventual consistency vs ACID), (4) describe ethical implications with specific examples. Practice writing concise definitions of MapReduce, HDFS, and distributed computing &mdash; these terms carry marks.</div>
+
 </div>
 </body>
 </html>
