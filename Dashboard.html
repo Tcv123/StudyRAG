@@ -963,7 +963,7 @@ function renderExamDates(subjects) {
       <span style="font-size:16px;width:22px;text-align:center;flex-shrink:0;">${e.emoji}</span>
       <div style="flex:1;min-width:0;">
         <div style="font-size:13px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${e.subject} <span style="font-weight:400;color:var(--muted);font-size:11px;">${e.board}</span></div>
-        <div style="font-size:11.5px;color:var(--muted);margin-top:1px;">${e.paper} &middot; ${dateStr} &middot; ${timeStr}</div>
+        <div style="font-size:11.5px;color:var(--muted);margin-top:1px;">${e.paper} &middot; ${dateStr} &middot; ${timeStr}${e.duration ? ' &middot; ' + e.duration : ''}</div>
       </div>
       <span style="flex-shrink:0;font-size:12px;font-weight:700;color:${urgency};background:${urgBg};padding:3px 9px;border-radius:20px;">${e.diffDays}d</span>
     </div>`;
