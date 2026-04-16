@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 2.4 — Graphs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .higher { background: #fdf4ff; border-left: 4px solid #9333ea; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-label { font-weight: 700; color: #7e22ce; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .step { margin-bottom: 8px; padding-left: 16px; border-left: 2px solid #86efac; }
+        .diagram-container { text-align: center; margin: 20px 0; }
+        .katex-display { margin: 16px 0; }
+        .graphs-row { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.4 Graphs</h1>
+<p class="spec-ref">OCR GCSE Mathematics (J560) &mdash; Paper 1, 2 &amp; 3 &mdash; Foundation and Higher</p>
+
+<!-- ============================================================ -->
+<h2>2.4.1 Coordinates and Midpoints</h2>
+
+<div class="definition">
+  A point in 2D is given by its <strong>coordinates</strong> $(x, y)$, where $x$ is the horizontal displacement from the origin and $y$ is the vertical displacement.<br><br>
+  The <strong>midpoint</strong> of the line segment joining $(x_1, y_1)$ and $(x_2, y_2)$ is:
+  $$M = \left(\frac{x_1+x_2}{2},\ \frac{y_1+y_2}{2}\right)$$
+  The <strong>distance</strong> between two points (by Pythagoras):
+  $$d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$$
+</div>
+
+<div class="worked-example">
+  Find the midpoint and length of the line segment joining $A(1, 3)$ and $B(7, 11)$.<br><br>
+  <div class="step">Midpoint: $M = \left(\dfrac{1+7}{2}, \dfrac{3+11}{2}\right) = (4, 7)$</div>
+  <div class="step">Length: $d = \sqrt{(7-1)^2 + (11-3)^2} = \sqrt{36 + 64} = \sqrt{100} = 10$</div>
+</div>
+
+<div class="exam-tip">
+  The midpoint formula is an average of the two $x$-coordinates and an average of the two $y$-coordinates. You can think of it as "meet in the middle."
+</div>
+
+<!-- ============================================================ -->
+<h2>2.4.2 Straight Line Graphs</h2>
+
+<div class="definition">
+  Any straight line can be written in the form $y = mx + c$, where:<br>
+  &nbsp;&nbsp;&bull; $m$ = gradient (slope): how steep the line is = $\dfrac{\text{rise}}{\text{run}} = \dfrac{\Delta y}{\Delta x}$<br>
+  &nbsp;&nbsp;&bull; $c$ = $y$-intercept: where the line crosses the $y$-axis.
+</div>
+
+<h3>Gradient and Equation of a Straight Line</h3>
+
+<!-- SVG: straight line graph with gradient and y-intercept labelled -->
+<div class="diagram-container">
+<svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" style="max-width:360px;width:100%;font-family:system-ui,sans-serif;">
+  <text x="180" y="18" text-anchor="middle" font-size="13" fill="#1e40af" font-weight="600">y = 2x + 1</text>
+
+  <!-- Grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e5e7eb" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+  <rect x="40" y="30" width="280" height="240" fill="url(#grid)"/>
+
+  <!-- Axes -->
+  <line x1="40" y1="30" x2="40" y2="270" stroke="#374151" stroke-width="2"/>
+  <line x1="40" y1="190" x2="320" y2="190" stroke="#374151" stroke-width="2"/>
+  <!-- Arrow tips -->
+  <polygon points="40,30 35,44 45,44" fill="#374151"/>
+  <polygon points="320,190 306,185 306,195" fill="#374151"/>
+
+  <!-- Axis labels -->
+  <text x="328" y="194" font-size="13" fill="#374151" font-style="italic">x</text>
+  <text x="44" y="26" font-size="13" fill="#374151" font-style="italic">y</text>
+
+  <!-- Tick marks x -->
+  <line x1="80" y1="186" x2="80" y2="194" stroke="#374151" stroke-width="1.5"/>
+  <text x="80" y="207" text-anchor="middle" font-size="11" fill="#374151">1</text>
+  <line x1="120" y1="186" x2="120" y2="194" stroke="#374151" stroke-width="1.5"/>
+  <text x="120" y="207" text-anchor="middle" font-size="11" fill="#374151">2</text>
+  <line x1="160" y1="186" x2="160" y2="194" stroke="#374151" stroke-width="1.5"/>
+  <text x="160" y="207" text-anchor="middle" font-size="11" fill="#374151">3</text>
+  <line x1="200" y1="186" x2="200" y2="194" stroke="#374151" stroke-width="1.5"/>
+  <text x="200" y="207" text-anchor="middle" font-size="11" fill="#374151">4</text>
+  <!-- Tick marks y -->
+  <line x1="36" y1="150" x2="44" y2="150" stroke="#374151" stroke-width="1.5"/>
+  <text x="30" y="154" text-anchor="middle" font-size="11" fill="#374151">1</text>
+  <line x1="36" y1="110" x2="44" y2="110" stroke="#374151" stroke-width="1.5"/>
+  <text x="30" y="114" text-anchor="middle" font-size="11" fill="#374151">2</text>
+  <line x1="36" y1="70" x2="44" y2="70" stroke="#374151" stroke-width="1.5"/>
+  <text x="30" y="74" text-anchor="middle" font-size="11" fill="#374151">3</text>
+  <text x="30" y="194" text-anchor="middle" font-size="11" fill="#374151">0</text>
+
+  <!-- Line y = 2x + 1: at x=0 y=1 (190-40=150), at x=4 y=9 (190-360 off screen) — use x=0 to x=3 -->
+  <!-- y=1 at x=0: svg_y = 190 - 40*1 = 150; y=7 at x=3: svg_y = 190-40*7 off screen. Use x=0,y=1 to x=2.5,y=6 -->
+  <!-- svg_x = 40 + 40*x; svg_y = 190 - 40*y -->
+  <!-- (40, 150) to (140, 70) -->
+  <line x1="40" y1="150" x2="200" y2="30" stroke="#2563eb" stroke-width="2.5"/>
+
+  <!-- y-intercept dot and label -->
+  <circle cx="40" cy="150" r="5" fill="#dc2626"/>
+  <text x="48" y="148" font-size="11" fill="#dc2626" font-weight="600">y-intercept = 1</text>
+
+  <!-- Gradient triangle annotation -->
+  <!-- from (40,150) go right 40 (x+1) to (80,150), then up 80 (y+2) to (80,70) wait — y=2x+1 at x=1 is y=3, at x=2 is y=5 -->
+  <!-- Better: show gradient step at x=1 to x=2: (80,110) to (120,110) to (120,30+160=70) wait -->
+  <!-- At x=1: svg_x=80, svg_y=190-40*3=70... Let me recalculate. y=2(1)+1=3, svg_y=190-40*3=70 -->
+  <!-- At x=2: y=5, svg_y=190-200=-10 — too high. Let me rescale: each unit = 30px -->
+  <!-- Redo: svg_x = 40 + 40*x, svg_y = 190 - 30*y -->
+  <!-- y=1 at x=0: svg_y=190-30=160; y=3 at x=1: svg_y=190-90=100; y=5 at x=2: svg_y=190-150=40 -->
+  <!-- Better line: (40,160) to (200, 40) for y=2x+1, x=0 to x=4... at x=4 y=9, svg_y=190-270=-80 too far -->
+  <!-- Use: per unit x=40px, per unit y=20px to keep in range -->
+  <!-- x=0: y=1, svg=(40, 190-20)=(40,170); x=5: y=11, svg=(240,190-220=-30) — still off -->
+  <!-- SIMPLEST: scale y units = 20px, show x=0..5, y=0..6 in view -->
+  <!-- Redrawn with simpler scale. Let's just use two-point annotation with a rise/run triangle -->
+  <!-- Using the coordinates already drawn: the line goes from (40,150) toward upper-right. -->
+  <!-- Let me place the gradient triangle clearly. At x=1 (svg_x=80), y=3: but with 40px/unit y scale that's svg_y=190-3*40=70, which is above 70. At x=0,y=1: svg_y=150. At x=1, y=3: svg_y=70. That seems right for the drawn line. -->
+
+  <!-- Gradient triangle: from (80,150) right to (120,150), up to (120,70) -->
+  <line x1="80" y1="150" x2="120" y2="150" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4"/>
+  <line x1="120" y1="150" x2="120" y2="70" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4"/>
+  <text x="100" y="165" text-anchor="middle" font-size="10" fill="#16a34a">run = 1</text>
+  <text x="132" y="115" font-size="10" fill="#16a34a">rise = 2</text>
+  <text x="155" y="85" font-size="11" fill="#1e40af" font-weight="600">gradient m = 2/1 = 2</text>
+</svg>
+</div>
+
+<div class="worked-example">
+  Find the equation of the line through $(1, 3)$ and $(4, 9)$.<br><br>
+  <div class="step">Gradient: $m = \dfrac{9-3}{4-1} = \dfrac{6}{3} = 2$</div>
+  <div class="step">Using $y - y_1 = m(x - x_1)$ with point $(1,3)$: $y - 3 = 2(x-1)$</div>
+  <div class="step">Expand: $y = 2x - 2 + 3 = 2x + 1$</div>
+</div>
+
+<div class="worked-example">
+  A line has equation $3y - 6x = 12$. State the gradient and $y$-intercept.<br><br>
+  <div class="step">Rearrange into $y = mx + c$ form: $3y = 6x + 12 \Rightarrow y = 2x + 4$</div>
+  <div class="step">Gradient $m = 2$, $y$-intercept $= 4$ (i.e. the line crosses at $(0, 4)$).</div>
+</div>
+
+<div class="higher">
+<p><span class="higher-label">Higher — Parallel and Perpendicular Lines</span></p>
+<ul>
+  <li><strong>Parallel lines</strong> have the same gradient: $y = 3x + 1$ and $y = 3x - 5$ are parallel (both have $m=3$).</li>
+  <li><strong>Perpendicular lines</strong> have gradients that are negative reciprocals: if line 1 has gradient $m$, then any perpendicular line has gradient $-\dfrac{1}{m}$. Their product is $-1$: $m_1 \times m_2 = -1$.</li>
+</ul>
+<div class="worked-example">
+  Find the equation of the line perpendicular to $y = 3x - 2$ that passes through $(6, 1)$.<br><br>
+  <div class="step">Gradient of given line $= 3$. Perpendicular gradient $= -\dfrac{1}{3}$.</div>
+  <div class="step">$y - 1 = -\dfrac{1}{3}(x - 6)$</div>
+  <div class="step">$y = -\dfrac{1}{3}x + 2 + 1 = -\dfrac{1}{3}x + 3$</div>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>2.4.3 Quadratic, Cubic and Reciprocal Graphs</h2>
+
+<!-- SVG: shape diagrams for y=x², y=x³, y=1/x side by side -->
+<div class="graphs-row">
+
+<!-- y = x^2 -->
+<svg viewBox="0 0 170 180" xmlns="http://www.w3.org/2000/svg" style="width:170px;flex-shrink:0;">
+  <text x="85" y="14" text-anchor="middle" font-size="12" fill="#1e40af" font-weight="700">y = x²</text>
+  <!-- Axes -->
+  <line x1="85" y1="20" x2="85" y2="165" stroke="#374151" stroke-width="1.5"/>
+  <line x1="20" y1="120" x2="155" y2="120" stroke="#374151" stroke-width="1.5"/>
+  <polygon points="85,20 80,32 90,32" fill="#374151"/>
+  <polygon points="155,120 143,115 143,125" fill="#374151"/>
+  <text x="160" y="124" font-size="11" fill="#374151" font-style="italic">x</text>
+  <text x="89" y="18" font-size="11" fill="#374151" font-style="italic">y</text>
+  <!-- Parabola y=x²: scale 20px/unit, origin at (85,120) -->
+  <!-- Points: (-3,9),(-2,4),(-1,1),(0,0),(1,1),(2,4),(3,9) -->
+  <!-- svg: x=85+20t, y=120-20*t^2 -->
+  <polyline points="25,30 45,76 65,100 85,120 105,100 125,76 145,30" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Labels -->
+  <text x="85" y="133" text-anchor="middle" font-size="10" fill="#374151">0</text>
+  <text x="56" y="170" text-anchor="middle" font-size="10" fill="#6b7280">U-shaped parabola</text>
+  <text x="56" y="182" text-anchor="middle" font-size="10" fill="#6b7280">vertex at (0,0)</text>
+</svg>
+
+<!-- y = x^3 -->
+<svg viewBox="0 0 170 180" xmlns="http://www.w3.org/2000/svg" style="width:170px;flex-shrink:0;">
+  <text x="85" y="14" text-anchor="middle" font-size="12" fill="#1e40af" font-weight="700">y = x³</text>
+  <line x1="85" y1="20" x2="85" y2="165" stroke="#374151" stroke-width="1.5"/>
+  <line x1="20" y1="90" x2="155" y2="90" stroke="#374151" stroke-width="1.5"/>
+  <polygon points="85,20 80,32 90,32" fill="#374151"/>
+  <polygon points="155,90 143,85 143,95" fill="#374151"/>
+  <text x="160" y="94" font-size="11" fill="#374151" font-style="italic">x</text>
+  <text x="89" y="18" font-size="11" fill="#374151" font-style="italic">y</text>
+  <!-- Cubic y=x³: scale 10px/unit, origin at (85,90) -->
+  <!-- t=-3: -27, t=-2:-8, t=-1:-1, t=0:0, t=1:1, t=2:8, t=3:27 -->
+  <!-- svg: x=85+20t, y=90-4*t^3 (scale 4px per y unit to keep in view) -->
+  <polyline points="25,198 45,132 65,94 85,90 105,86 125,58 145,-18" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linejoin="round" clip-path="url(#clip-cubic)"/>
+  <defs><clipPath id="clip-cubic"><rect x="20" y="20" width="135" height="145"/></clipPath></defs>
+  <polyline points="35,162 55,122 75,94 85,90 95,86 115,58 135,22" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="85" y="103" text-anchor="middle" font-size="10" fill="#374151">0</text>
+  <text x="56" y="170" text-anchor="middle" font-size="10" fill="#6b7280">S-shaped curve</text>
+  <text x="56" y="182" text-anchor="middle" font-size="10" fill="#6b7280">passes through (0,0)</text>
+</svg>
+
+<!-- y = 1/x -->
+<svg viewBox="0 0 170 180" xmlns="http://www.w3.org/2000/svg" style="width:170px;flex-shrink:0;">
+  <text x="85" y="14" text-anchor="middle" font-size="12" fill="#1e40af" font-weight="700">y = 1/x</text>
+  <line x1="85" y1="20" x2="85" y2="165" stroke="#374151" stroke-width="1.5"/>
+  <line x1="20" y1="90" x2="155" y2="90" stroke="#374151" stroke-width="1.5"/>
+  <polygon points="85,20 80,32 90,32" fill="#374151"/>
+  <polygon points="155,90 143,85 143,95" fill="#374151"/>
+  <text x="160" y="94" font-size="11" fill="#374151" font-style="italic">x</text>
+  <text x="89" y="18" font-size="11" fill="#374151" font-style="italic">y</text>
+  <!-- Reciprocal: two branches. Origin at (85,90). Scale: 25px/unit -->
+  <!-- Positive branch: x=0.4->y=2.5; x=0.6->1.67; x=1->1; x=2->0.5; x=4->0.25 -->
+  <!-- svg_x=85+25x, svg_y=90-25/x -->
+  <!-- x=0.4: sx=95, sy=90-62.5=27.5 | x=0.6: sx=100, sy=90-41.7=48 | x=1: sx=110, sy=65 | x=2: sx=135, sy=77.5 | x=3: sx=160, sy=81.7 -->
+  <polyline points="95,27 100,48 110,65 135,77 152,82" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Negative branch: x=-0.4->y=-2.5; x=-1->-1; x=-2->-0.5 -->
+  <!-- svg_x=85+25x, svg_y=90-25/x -->
+  <!-- x=-0.4: sx=75, sy=90+62.5=152.5 | x=-1: sx=60, sy=115 | x=-2: sx=35, sy=102.5 | x=-3: sx=10, sy=98 -->
+  <polyline points="18,98 35,102 60,115 75,152" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="56" y="170" text-anchor="middle" font-size="10" fill="#6b7280">Two branches; never</text>
+  <text x="56" y="182" text-anchor="middle" font-size="10" fill="#6b7280">touches axes</text>
+</svg>
+
+</div>
+
+<h3>Key Features of Each Curve</h3>
+<table>
+  <thead><tr><th>Function</th><th>Shape</th><th>Key features</th></tr></thead>
+  <tbody>
+    <tr><td>$y = x^2$</td><td>Parabola (U-shape)</td><td>Minimum at $(0,0)$; symmetric about $y$-axis; always $\geq 0$</td></tr>
+    <tr><td>$y = -x^2$</td><td>Parabola (n-shape)</td><td>Maximum at $(0,0)$; always $\leq 0$</td></tr>
+    <tr><td>$y = x^3$</td><td>S-shaped cubic</td><td>Passes through $(0,0)$, $(-1,-1)$, $(1,1)$; rotational symmetry about origin</td></tr>
+    <tr><td>$y = \frac{1}{x}$</td><td>Reciprocal (hyperbola)</td><td>Two branches; asymptotes along both axes ($x=0$ and $y=0$); undefined at $x=0$</td></tr>
+  </tbody>
+</table>
+
+<h3>Plotting Quadratic Graphs: Table of Values</h3>
+<div class="worked-example">
+  Plot $y = x^2 - 3x + 2$ for $-1 \leq x \leq 4$.<br><br>
+  <table style="font-size:0.9rem;">
+    <thead><tr><th>$x$</th><th>$-1$</th><th>$0$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th></tr></thead>
+    <tbody>
+      <tr><td>$x^2$</td><td>1</td><td>0</td><td>1</td><td>4</td><td>9</td><td>16</td></tr>
+      <tr><td>$-3x$</td><td>3</td><td>0</td><td>$-3$</td><td>$-6$</td><td>$-9$</td><td>$-12$</td></tr>
+      <tr><td>$+2$</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td></tr>
+      <tr><td>$y$</td><td><strong>6</strong></td><td><strong>2</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>2</strong></td><td><strong>6</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="step">$y$-intercept: $(0, 2)$. $x$-intercepts (roots): $(1, 0)$ and $(2, 0)$.</div>
+  <div class="step">Minimum between $x=1$ and $x=2$, at $x = 1.5$ (axis of symmetry).</div>
+</div>
+
+<div class="exam-tip">
+  Always draw a smooth curve through plotted points — do not join with straight line segments. Plot at least 7 points for a quadratic.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.4.4 Real-Life Graphs</h2>
+
+<h3>Distance–Time Graphs</h3>
+<ul>
+  <li><strong>Gradient</strong> of a distance–time graph = <strong>speed</strong> $\left(\text{speed} = \dfrac{\text{distance}}{\text{time}}\right)$.</li>
+  <li>A horizontal line means the object is <strong>stationary</strong>.</li>
+  <li>A steeper line means greater speed.</li>
+  <li>A negative gradient means moving <em>back towards the start</em>.</li>
+</ul>
+
+<!-- SVG: Distance-time graph -->
+<div class="diagram-container">
+<svg viewBox="0 0 380 220" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;width:100%;font-family:system-ui,sans-serif;">
+  <text x="190" y="16" text-anchor="middle" font-size="13" fill="#1e40af" font-weight="600">Distance–Time Graph</text>
+  <!-- Axes -->
+  <line x1="50" y1="30" x2="50" y2="185" stroke="#374151" stroke-width="1.5"/>
+  <line x1="50" y1="185" x2="350" y2="185" stroke="#374151" stroke-width="1.5"/>
+  <polygon points="50,30 45,42 55,42" fill="#374151"/>
+  <polygon points="350,185 338,180 338,190" fill="#374151"/>
+  <text x="360" y="189" font-size="12" fill="#374151">Time (h)</text>
+  <text x="10" y="110" font-size="12" fill="#374151" writing-mode="vertical-lr" transform="rotate(-90,15,110)">Distance (km)</text>
+
+  <!-- Tick marks time -->
+  <line x1="110" y1="181" x2="110" y2="189" stroke="#374151" stroke-width="1.5"/>
+  <text x="110" y="200" text-anchor="middle" font-size="11" fill="#374151">1</text>
+  <line x1="170" y1="181" x2="170" y2="189" stroke="#374151" stroke-width="1.5"/>
+  <text x="170" y="200" text-anchor="middle" font-size="11" fill="#374151">2</text>
+  <line x1="230" y1="181" x2="230" y2="189" stroke="#374151" stroke-width="1.5"/>
+  <text x="230" y="200" text-anchor="middle" font-size="11" fill="#374151">3</text>
+  <line x1="290" y1="181" x2="290" y2="189" stroke="#374151" stroke-width="1.5"/>
+  <text x="290" y="200" text-anchor="middle" font-size="11" fill="#374151">4</text>
+  <!-- Tick marks distance -->
+  <line x1="46" y1="145" x2="54" y2="145" stroke="#374151" stroke-width="1.5"/>
+  <text x="40" y="149" text-anchor="middle" font-size="11" fill="#374151">20</text>
+  <line x1="46" y1="105" x2="54" y2="105" stroke="#374151" stroke-width="1.5"/>
+  <text x="40" y="109" text-anchor="middle" font-size="11" fill="#374151">40</text>
+  <line x1="46" y1="65" x2="54" y2="65" stroke="#374151" stroke-width="1.5"/>
+  <text x="40" y="69" text-anchor="middle" font-size="11" fill="#374151">60</text>
+  <text x="40" y="189" text-anchor="middle" font-size="11" fill="#374151">0</text>
+
+  <!-- Journey: 0-1h travel 40km; 1-2h stationary; 2-4h return -->
+  <!-- Point A(0,0)=svg(50,185); B(1,40)=svg(110,105); C(2,40)=svg(170,105); D(4,0)=svg(290,185) -->
+  <polyline points="50,185 110,105 170,105 290,185" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Annotations -->
+  <text x="75" y="138" font-size="10" fill="#16a34a" font-weight="600">speed = 40 km/h</text>
+  <text x="145" y="98" font-size="10" fill="#dc2626">stationary</text>
+  <text x="215" y="155" font-size="10" fill="#9333ea" font-weight="600">return: −20 km/h</text>
+</svg>
+</div>
+
+<h3>Speed–Time Graphs</h3>
+<ul>
+  <li><strong>Gradient</strong> of a speed–time graph = <strong>acceleration</strong> (in m/s²).</li>
+  <li>A horizontal line means <strong>constant speed</strong> (zero acceleration).</li>
+  <li><strong>Area under the graph</strong> = <strong>distance travelled</strong>.</li>
+</ul>
+
+<div class="worked-example">
+  A car accelerates from 0 to 20 m/s in 5 seconds, travels at 20 m/s for 10 seconds, then decelerates to 0 in 5 seconds. Find the total distance.<br><br>
+  <div class="step">The graph is a trapezium with parallel sides 10 s and 20 s, height 20 m/s.</div>
+  <div class="step">Area = $\dfrac{1}{2}(10 + 20) \times 20 = \dfrac{1}{2} \times 30 \times 20 = 300$ m</div>
+</div>
+
+<h3>Conversion Graphs</h3>
+<p>Straight-line graphs that convert between units (e.g. miles to km, £ to €). Read off values by locating one axis and reading across to the line, then down/up to the other axis.</p>
+
+<div class="exam-tip">
+  On distance–time graphs: steeper = faster. On speed–time graphs: steeper = greater acceleration. Area under speed–time graph = distance — and area under a velocity–time graph includes direction.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.4.5 Transformations of Graphs <span style="font-size:0.8rem;color:#7e22ce;">[Higher]</span></h2>
+
+<div class="higher">
+<p><span class="higher-label">Higher only</span></p>
+<p>If $y = f(x)$ is the original graph, the transformed graphs are:</p>
+
+<table>
+  <thead><tr><th>Transformation</th><th>Equation</th><th>Effect on graph</th></tr></thead>
+  <tbody>
+    <tr><td>Translation up by $a$</td><td>$y = f(x) + a$</td><td>Shift the graph $a$ units <strong>up</strong></td></tr>
+    <tr><td>Translation down by $a$</td><td>$y = f(x) - a$</td><td>Shift the graph $a$ units <strong>down</strong></td></tr>
+    <tr><td>Translation left by $a$</td><td>$y = f(x + a)$</td><td>Shift the graph $a$ units <strong>left</strong> (counter-intuitive!)</td></tr>
+    <tr><td>Translation right by $a$</td><td>$y = f(x - a)$</td><td>Shift the graph $a$ units <strong>right</strong></td></tr>
+    <tr><td>Reflection in $x$-axis</td><td>$y = -f(x)$</td><td>Reflect in the $x$-axis (negate all $y$ values)</td></tr>
+    <tr><td>Reflection in $y$-axis</td><td>$y = f(-x)$</td><td>Reflect in the $y$-axis (negate all $x$ values)</td></tr>
+    <tr><td>Stretch (vertical), scale factor $a$</td><td>$y = af(x)$</td><td>Multiply all $y$-coordinates by $a$</td></tr>
+    <tr><td>Stretch (horizontal), scale factor $\frac{1}{a}$</td><td>$y = f(ax)$</td><td>Multiply all $x$-coordinates by $\frac{1}{a}$ (compress if $a>1$)</td></tr>
+  </tbody>
+</table>
+
+<div class="definition">
+  <strong>Memory aid for horizontal shifts:</strong> $y = f(x + a)$ shifts LEFT by $a$ because the same $y$-value now occurs at a smaller $x$-value. Think "inside the bracket does the opposite."
+</div>
+
+<div class="worked-example">
+  The graph of $y = f(x)$ passes through $(2, 5)$. State the coordinates of the corresponding point on: (a) $y = f(x) + 3$; (b) $y = f(x-4)$; (c) $y = -f(x)$.<br><br>
+  <div class="step">(a) $y = f(x)+3$: add 3 to $y$-coordinate: $(2, 8)$</div>
+  <div class="step">(b) $y = f(x-4)$: add 4 to $x$-coordinate (shift right): $(6, 5)$</div>
+  <div class="step">(c) $y = -f(x)$: negate $y$-coordinate: $(2, -5)$</div>
+</div>
+
+<div class="exam-tip">
+  Transformation questions often ask you to apply a transformation to a sketch or to state coordinates of key points after transformation. Always think about what happens to a single point before drawing.
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>2.4.6 Equation of a Circle <span style="font-size:0.8rem;color:#7e22ce;">[Higher]</span></h2>
+
+<div class="higher">
+<p><span class="higher-label">Higher only</span></p>
+
+<div class="definition">
+  A circle with <strong>centre at the origin</strong> $(0,0)$ and radius $r$ has equation:
+  $$x^2 + y^2 = r^2$$
+  This follows directly from Pythagoras' theorem: for any point $(x, y)$ on the circle, the distance to the centre is $\sqrt{x^2+y^2} = r$.
+</div>
+
+<!-- SVG: circle diagram -->
+<div class="diagram-container">
+<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="max-width:280px;width:100%;font-family:system-ui,sans-serif;">
+  <text x="140" y="16" text-anchor="middle" font-size="13" fill="#1e40af" font-weight="600">x² + y² = r²</text>
+
+  <!-- Axes -->
+  <line x1="140" y1="25" x2="140" y2="260" stroke="#374151" stroke-width="1.5"/>
+  <line x1="25" y1="150" x2="255" y2="150" stroke="#374151" stroke-width="1.5"/>
+  <polygon points="140,25 135,37 145,37" fill="#374151"/>
+  <polygon points="255,150 243,145 243,155" fill="#374151"/>
+  <text x="262" y="154" font-size="12" fill="#374151" font-style="italic">x</text>
+  <text x="144" y="23" font-size="12" fill="#374151" font-style="italic">y</text>
+
+  <!-- Circle x²+y²=r², r=80px -->
+  <circle cx="140" cy="150" r="80" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+
+  <!-- Radius to a point -->
+  <line x1="140" y1="150" x2="196" y2="86" stroke="#dc2626" stroke-width="2"/>
+  <circle cx="196" cy="86" r="4" fill="#dc2626"/>
+  <text x="205" y="84" font-size="11" fill="#dc2626">$(x, y)$</text>
+
+  <!-- Label radius -->
+  <text x="153" y="118" font-size="11" fill="#dc2626" font-style="italic">r</text>
+
+  <!-- Origin label -->
+  <circle cx="140" cy="150" r="3" fill="#374151"/>
+  <text x="144" y="164" font-size="11" fill="#374151">O(0,0)</text>
+
+  <!-- r label on circle edge -->
+  <text x="215" y="155" font-size="11" fill="#1e40af">radius $= r$</text>
+  <text x="55" y="80" font-size="11" fill="#6b7280">$x^2 + y^2 = r^2$</text>
+</svg>
+</div>
+
+<div class="worked-example">
+  (a) Write the equation of the circle with centre $(0,0)$ and radius 7.<br>
+  (b) Does the point $(3, \sqrt{40})$ lie on, inside, or outside this circle?<br><br>
+  <div class="step">(a) $x^2 + y^2 = 49$</div>
+  <div class="step">(b) Compute $3^2 + (\sqrt{40})^2 = 9 + 40 = 49$. Since this equals $r^2 = 49$, the point lies <strong>on</strong> the circle.</div>
+</div>
+
+<h3>Tangent to a Circle at a Point</h3>
+
+<div class="definition">
+  A tangent to a circle at a point $P$ is perpendicular to the radius $OP$ at that point.
+</div>
+
+<div class="worked-example">
+  Find the equation of the tangent to the circle $x^2 + y^2 = 25$ at the point $(3, 4)$.<br><br>
+  <div class="step">Gradient of radius $OP$: $m_{OP} = \dfrac{4-0}{3-0} = \dfrac{4}{3}$</div>
+  <div class="step">Gradient of tangent (perpendicular): $m_t = -\dfrac{3}{4}$</div>
+  <div class="step">Equation using point $(3,4)$: $y - 4 = -\dfrac{3}{4}(x-3)$</div>
+  <div class="step">$y = -\dfrac{3}{4}x + \dfrac{9}{4} + 4 = -\dfrac{3}{4}x + \dfrac{25}{4}$</div>
+  <div class="step">Or in integer form: $3x + 4y = 25$</div>
+</div>
+
+<div class="exam-tip">
+  To verify a point is on a circle: substitute its coordinates into the equation and check. To find the tangent: find the gradient of the radius, then take the negative reciprocal.
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Quick Reference Summary</h2>
+<table>
+  <thead><tr><th>Topic</th><th>Key formula / fact</th></tr></thead>
+  <tbody>
+    <tr><td>Midpoint of $(x_1,y_1)$ and $(x_2,y_2)$</td><td>$\left(\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2}\right)$</td></tr>
+    <tr><td>Gradient of line</td><td>$m = \dfrac{y_2-y_1}{x_2-x_1}$</td></tr>
+    <tr><td>Straight line equation</td><td>$y = mx + c$; or $y - y_1 = m(x-x_1)$</td></tr>
+    <tr><td>Parallel lines [H]</td><td>Same gradient $m$</td></tr>
+    <tr><td>Perpendicular lines [H]</td><td>Gradients satisfy $m_1 \times m_2 = -1$</td></tr>
+    <tr><td>Distance–time graph</td><td>Gradient = speed; horizontal = stationary</td></tr>
+    <tr><td>Speed–time graph</td><td>Gradient = acceleration; area under = distance</td></tr>
+    <tr><td>$y = f(x)+a$ [H]</td><td>Translate up by $a$</td></tr>
+    <tr><td>$y = f(x+a)$ [H]</td><td>Translate left by $a$</td></tr>
+    <tr><td>$y = -f(x)$ [H]</td><td>Reflect in $x$-axis</td></tr>
+    <tr><td>Circle (centre origin) [H]</td><td>$x^2 + y^2 = r^2$</td></tr>
+    <tr><td>Tangent to circle [H]</td><td>Perpendicular to radius at the point of contact</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+</body>
+</html>
