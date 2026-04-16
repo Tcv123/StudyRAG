@@ -951,13 +951,19 @@ function renderExamDates(subjects) {
     const timeStr  = e.time === 'AM' ? '9:00 AM' : '1:30 PM';
     const urgency  = e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : 'var(--accent-dark)';
     const urgBg    = e.diffDays <= 7 ? 'rgba(239,68,68,0.08)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.08)' : 'var(--accent-dim)';
-    return `<div class="exam-tl-row${hidden ? ' exam-hidden' : ''}" style="display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px solid var(--border);">
-      <span style="font-size:16px;width:22px;text-align:center;flex-shrink:0;">${e.emoji}</span>
+    const subjectColor = {'Computer Science':'#6366F1','Mathematics':'#8B5CF6','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6'}[e.subject] || 'var(--accent)';
+    return `<div class="exam-tl-row${hidden ? ' exam-hidden' : ''}" style="display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--border);">
+      <div style="width:36px;height:36px;border-radius:10px;background:${subjectColor}18;border:1px solid ${subjectColor}33;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">${e.emoji}</div>
       <div style="flex:1;min-width:0;">
-        <div style="font-size:13px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${e.subject} <span style="font-weight:400;color:var(--muted);font-size:11px;">${e.board}</span></div>
-        <div style="font-size:11.5px;color:var(--muted);margin-top:1px;">${e.paper} &middot; ${dateStr} &middot; ${timeStr}${e.duration ? ' &middot; ' + e.duration : ''}</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);">${e.subject} <span style="color:${subjectColor};font-size:11px;font-weight:600;background:${subjectColor}15;padding:1px 6px;border-radius:8px;margin-left:2px;">${e.board}</span></div>
+        <div style="font-size:11.5px;color:var(--muted);margin-top:2px;">
+          <span style="color:var(--text);font-weight:500;">${e.paper}</span>
+          &nbsp;·&nbsp;<span style="color:var(--accent-dark);">📅 ${dateStr}</span>
+          &nbsp;·&nbsp;<span style="color:var(--muted);">🕐 ${timeStr}</span>
+          ${e.duration ? `&nbsp;·&nbsp;<span style="color:var(--muted);">⏱ ${e.duration}</span>` : ''}
+        </div>
       </div>
-      <span style="flex-shrink:0;font-size:12px;font-weight:700;color:${urgency};background:${urgBg};padding:3px 9px;border-radius:20px;">${e.diffDays}d</span>
+      <span style="flex-shrink:0;font-size:13px;font-weight:700;color:${urgency};background:${urgBg};padding:4px 11px;border-radius:20px;border:1px solid ${urgency}33;">${e.diffDays}d</span>
     </div>`;
   }
 
