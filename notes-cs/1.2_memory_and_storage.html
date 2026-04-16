@@ -119,20 +119,21 @@
 
 <p><strong>How virtual memory works (paging):</strong></p>
 <ol>
-    <li>RAM is divided into fixed-size blocks called <strong>pages</strong> (typically 4 KB each).</li>
-    <li>When RAM is full and a new page is needed, the OS identifies the <strong>least recently used</strong> page currently in RAM.</li>
-    <li>That page is <strong>swapped out</strong> &mdash; written to a designated area on the hard drive/SSD (the swap file or page file).</li>
-    <li>The newly needed page is <strong>swapped in</strong> &mdash; loaded from secondary storage into the freed RAM space.</li>
-    <li>If the swapped-out page is needed again later, it must be swapped back in, potentially displacing another page.</li>
+    <li>RAM is divided into fixed-size blocks called <strong>pages</strong> (typically 4 KB each). Every program's memory is split into pages.</li>
+    <li>The OS maintains a <strong>page table</strong> &mdash; a lookup table that maps each page of a program's <em>virtual</em> address space to either a physical RAM location or a location in the page file on disk.</li>
+    <li>When the CPU accesses a memory address, the OS checks the page table. If the required page is in RAM, the access proceeds normally.</li>
+    <li>If the required page is <strong>not</strong> in RAM (it has been swapped to disk), a <strong>page fault</strong> occurs. The OS pauses the program, loads the required page from the page file into RAM, updates the page table, and resumes the program. This is slow because it requires a disk access.</li>
+    <li>When RAM is full and a new page must be loaded, the OS identifies a page to evict (e.g., the least recently used page), <strong>swaps it out</strong> to the page file on disk, and loads the required page into the freed space.</li>
+    <li>If the evicted page is needed again later, another page fault occurs and the process repeats.</li>
 </ol>
 
 <ul>
-    <li>Virtual memory is <strong>much slower</strong> than RAM because secondary storage access is orders of magnitude slower (an HDD is roughly 100,000 times slower than RAM).</li>
-    <li>Heavy use of virtual memory causes <strong>thrashing</strong> &mdash; the system spends more time swapping pages between RAM and disk than doing useful work, causing severe slowdown. The hard drive light flickers constantly and the computer becomes almost unresponsive.</li>
-    <li>Virtual memory is a <strong>temporary solution</strong> &mdash; adding more physical RAM is the proper fix. If you regularly experience slowdown from virtual memory usage, you need more RAM.</li>
+    <li>Virtual memory is <strong>much slower</strong> than RAM because secondary storage access is orders of magnitude slower: an SSD page fault takes ~0.1 ms; an HDD page fault takes ~5-10 ms. RAM access takes ~50-100 ns. A single HDD page fault is roughly 100,000 times slower than a RAM access.</li>
+    <li>Heavy use of virtual memory causes <strong>thrashing</strong> &mdash; the system spends more time swapping pages between RAM and disk than doing useful work, causing severe slowdown. The hard drive activity light flickers constantly and the computer becomes almost unresponsive. Every program wants a page that another program currently has in RAM, so pages are constantly being swapped in and out.</li>
+    <li>Virtual memory is a <strong>temporary solution</strong> &mdash; adding more physical RAM is the proper fix. Closing unused programs also helps, as each open program consumes RAM pages.</li>
 </ul>
 
-<div class="exam-tip">A common exam question asks: "Explain why a computer with insufficient RAM runs slowly." The answer must explain the chain: RAM is full &rarr; OS must use virtual memory (section of HDD/SSD) &rarr; data is swapped between RAM and secondary storage &rarr; secondary storage is much slower than RAM &rarr; this swapping takes time &rarr; if excessive, causes thrashing &rarr; system becomes very slow. The solution is to add more RAM.</div>
+<div class="exam-tip">A common exam question asks: "Explain why a computer with insufficient RAM runs slowly." The answer must explain the full chain: RAM is full &rarr; OS uses virtual memory (page file on HDD/SSD) &rarr; program accesses a page not in RAM &rarr; page fault occurs &rarr; OS swaps a RAM page to disk and loads the required page from disk &rarr; disk access is ~100,000x slower than RAM &rarr; if this happens constantly, causes thrashing &rarr; system becomes very slow. The solution is to add more RAM or close programs to free RAM pages. Mentioning "page fault" and "page table" in your answer demonstrates precise knowledge and scores higher.</div>
 
 <h2>1.2.2 Secondary Storage</h2>
 
@@ -162,6 +163,8 @@
 
 <div class="exam-tip">When comparing storage types, structure your answer around: speed, capacity, cost per GB, durability, portability, and whether it has moving parts. For a specific scenario, recommend the most appropriate type and justify your choice. For example: "An SSD would be best for a laptop's main drive because it is shock-resistant (no moving parts, important for a portable device), fast (improves boot time and application loading), and silent." Always give reasons specific to the scenario.</div>
 
+<div class="exam-tip">Key HDD vs SSD distinctions that examiners test: (1) <strong>Fragmentation</strong> &mdash; HDDs become fragmented over time as files are written in non-contiguous sectors; the read/write head must physically move to different locations, slowing access. <strong>Defragmentation</strong> reorganises files into contiguous blocks. SSDs do not suffer from fragmentation because all memory cells are accessed at equal speed (no physical movement). (2) <strong>TRIM</strong> &mdash; SSDs use a TRIM command to pre-erase deleted blocks in the background, maintaining write performance over time. You should NEVER defragment an SSD: it causes unnecessary writes that wear out the flash cells without any performance benefit. (3) HDDs are vulnerable to damage from physical shocks (the read/write head can crash into the platter); SSDs have no moving parts and are much more shock-resistant, making them better for laptops and portable devices.</div>
+
 <h2>1.2.3 Units of Data and File Size Calculations</h2>
 
 <h3>Data Units</h3>
@@ -178,7 +181,19 @@
     <tr><td>Petabyte (PB)</td><td>1,000 TB</td><td>Large data centre scale; all of Netflix's video content is ~tens of PB.</td></tr>
 </table>
 
-<p><strong>Note:</strong> OCR uses decimal prefixes (1 KB = 1,000 bytes), not binary prefixes (1 KiB = 1,024 bytes). In exam calculations, always use 1,000 unless told otherwise.</p>
+<div class="definition">
+    <strong>SI (decimal) vs binary prefixes:</strong> In computing, two different definitions of "kilobyte" exist. The <strong>SI (International System) definition</strong> uses powers of 10: 1 KB = 1,000 bytes, 1 MB = 1,000,000 bytes, 1 GB = 1,000,000,000 bytes. The <strong>binary definition</strong> uses powers of 2: 1 KiB (kibibyte) = 1,024 bytes, 1 MiB = 1,048,576 bytes, 1 GiB = 1,073,741,824 bytes. Hard drive manufacturers use SI (makes drives look bigger); operating systems historically used binary (which is why a "500 GB" drive shows as ~465 GB in Windows).
+</div>
+
+<table>
+    <tr><th>Unit (SI/decimal)</th><th>Exact bytes (SI)</th><th>Binary equivalent</th><th>Exact bytes (binary)</th></tr>
+    <tr><td>1 KB (kilobyte)</td><td>1,000 bytes</td><td>1 KiB (kibibyte)</td><td>1,024 bytes</td></tr>
+    <tr><td>1 MB (megabyte)</td><td>1,000,000 bytes</td><td>1 MiB (mebibyte)</td><td>1,048,576 bytes</td></tr>
+    <tr><td>1 GB (gigabyte)</td><td>1,000,000,000 bytes</td><td>1 GiB (gibibyte)</td><td>1,073,741,824 bytes</td></tr>
+    <tr><td>1 TB (terabyte)</td><td>1,000,000,000,000 bytes</td><td>1 TiB (tebibyte)</td><td>1,099,511,627,776 bytes</td></tr>
+</table>
+
+<p><strong>Note:</strong> OCR uses decimal prefixes (1 KB = 1,000 bytes) in exam calculations. In exam questions, always use 1,000 unless the question specifies otherwise. The gap between SI and binary grows at larger scales: at the GB level the difference is about 7%, at the TB level it is about 10%.</p>
 
 <h3>File Size Formulae</h3>
 
@@ -187,18 +202,26 @@
 File size (bits) = sample rate (Hz) x duration (seconds) x bit depth (bits) x channels
 File size (bytes) = file size (bits) / 8
 
-Example 1: Mono recording
+Example 1: Short stereo clip (common exam format)
+  44,100 Hz sample rate, 10 seconds, 16-bit depth, 2 channels (stereo)
+  = 44,100 x 16 x 10 x 2 = 14,112,000 bits
+  = 14,112,000 / 8 = 1,764,000 bytes
+  = 1,764,000 / 1,000,000 = 1.764 MB uncompressed
+  (An MP3 version of the same clip would typically be ~0.16 MB at 128 kbps
+   — about 11x smaller, illustrating the impact of lossy compression)
+
+Example 2: Mono recording
   44,100 Hz sample rate, 60 seconds, 16-bit depth, 1 channel (mono)
   = 44,100 x 60 x 16 x 1 = 42,336,000 bits
   = 42,336,000 / 8 = 5,292,000 bytes
   = 5,292,000 / 1,000,000 = 5.29 MB
 
-Example 2: Stereo recording (same settings but 2 channels)
+Example 3: Stereo recording (same settings as Example 2 but 2 channels)
   = 44,100 x 60 x 16 x 2 = 84,672,000 bits
   = 84,672,000 / 8 = 10,584,000 bytes = 10.58 MB
   (Stereo is exactly double mono because there are 2 channels)
 
-Example 3: How long can you record on 100 MB at CD quality (stereo)?
+Example 4: How long can you record on 100 MB at CD quality (stereo)?
   100 MB = 100,000,000 bytes = 800,000,000 bits
   Duration = 800,000,000 / (44,100 x 16 x 2)
   Duration = 800,000,000 / 1,411,200
@@ -352,6 +375,29 @@ More shift examples:
     <tr><td><strong>Best for</strong></td><td>Media where slight quality loss is acceptable: streaming video, web images, music for portable players, social media</td><td>Data where accuracy is critical: text documents, executables, source code, medical images, archival, financial records</td></tr>
     <tr><td><strong>How it works</strong></td><td>Removes data humans cannot easily perceive: inaudible frequencies in audio, imperceptible colour differences in images, redundant information between video frames</td><td>Finds patterns and encodes them more efficiently without removing any data. Techniques include: <strong>Huffman coding</strong> (frequent characters get shorter codes), <strong>RLE</strong> (Run Length Encoding &mdash; "AAAA" becomes "4A"), <strong>dictionary compression</strong> (LZW &mdash; repeated sequences replaced with references)</td></tr>
 </table>
+
+<h3>Run-Length Encoding (RLE) &mdash; Worked Example</h3>
+<p>RLE is a simple lossless technique that replaces consecutive repeated values with a count and a value. It is particularly effective for images with large areas of the same colour (e.g., a blue sky, a white background).</p>
+<pre>
+Original pixel row (colour values): R R R R R B B B B G G R R
+Encoded with RLE:                   (R,5) (B,4) (G,2) (R,2)
+
+Original: 13 values stored
+Encoded:  4 pairs stored (8 values) — saves 38% of storage
+
+Less effective case (no repeated values):
+Original: R B G R B G R B G R B G
+Encoded:  (R,1)(B,1)(G,1)(R,1)(B,1)(G,1)(R,1)(B,1)(G,1)(R,1)(B,1)(G,1)
+Result:   Encoded is LARGER than original! RLE works poorly on
+          varied data — this is why complex photographs use JPEG
+          rather than purely RLE-based compression.
+
+Real-world use: RLE is used within fax transmission and BMP files
+for simple graphics. More advanced lossless codecs (ZIP, PNG) use
+RLE in combination with other techniques for better results.
+</pre>
+
+<div class="exam-tip">Run-length encoding is only effective when there are long runs of repeated data. For text or complex images with many different colours, RLE may actually <strong>increase</strong> the file size. This is why JPEG (lossy) is used for photographs and PNG (lossless, using a more sophisticated algorithm) is used for logos and diagrams rather than raw RLE. If an exam question asks you to apply RLE, write out each run as (value, count) or (count, value) — both are accepted; be consistent.</div>
 
 <h3>When to Use Each Type</h3>
 <pre>

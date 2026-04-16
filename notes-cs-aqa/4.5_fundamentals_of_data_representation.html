@@ -196,7 +196,40 @@ Verify: -128+32+16+4+2+1 = -128+55 = -73  correct</pre>
 
 <p><strong>Advantages over sign-and-magnitude:</strong> only one zero, addition/subtraction works identically for positive and negative numbers using the same hardware.</p>
 
-<div class="exam-tip">To convert negative denary to two's complement: write the positive version, invert, add 1. To find the denary value of a two's complement number with MSB=1: give MSB the negative weight (-128 for 8-bit), then add remaining positive place values.</div>
+<h4>Why Two's Complement is Used in Hardware</h4>
+<p>The most important practical advantage is that <strong>a single adder circuit handles both addition and subtraction</strong>. To compute A - B, the CPU computes A + (-B), where -B is the two's complement of B. There is no need for a separate subtractor circuit. This directly maps to the binary subtraction worked examples in section 4.5.2.</p>
+<ul>
+    <li>Range formula: for n bits, range is <strong>-2<sup>n-1</sup></strong> to <strong>2<sup>n-1</sup> - 1</strong></li>
+    <li>8 bits: -128 to +127; 16 bits: -32,768 to +32,767; 32 bits: -2,147,483,648 to +2,147,483,647</li>
+    <li>The asymmetry (one more negative than positive) arises because zero uses the "positive" slot</li>
+</ul>
+
+<h4>Overflow Detection in Two's Complement Arithmetic</h4>
+<p>Overflow occurs when the result of an operation cannot be represented in the available bits. Rules for detecting overflow:</p>
+<ul>
+    <li>Adding two <strong>positive</strong> numbers gives a <strong>negative</strong> result &rarr; overflow</li>
+    <li>Adding two <strong>negative</strong> numbers gives a <strong>positive</strong> result &rarr; overflow</li>
+    <li>Adding a positive and a negative number <strong>never</strong> overflows</li>
+</ul>
+<pre>Overflow example (8-bit signed):
+  0111 1111  (+127)
++ 0000 0001  (+1)
+-----------
+  1000 0000  (-128)   OVERFLOW: two positives gave a negative!
+
+No overflow example:
+  0110 0100  (+100)
++ 1100 1100  (-52)
+-----------
+1 0011 0000  (+48)    Carry out discarded; result is correct (+48)
+
+Overflow example (both negative):
+  1000 0000  (-128)
++ 1111 1111  (-1)
+-----------
+1 0111 1111  (+127)   OVERFLOW: two negatives gave a positive!</pre>
+
+<div class="exam-tip">To convert negative denary to two's complement: write the positive version, invert, add 1. To find the denary value of a two's complement number with MSB=1: give MSB the negative weight (-128 for 8-bit), then add remaining positive place values. Overflow detection: two positives &rarr; negative result, or two negatives &rarr; positive result. The CPU sets an overflow flag (V flag) in the status register when this occurs.</div>
 
 <!-- ============================================================ -->
 <h2>4.5.4 Fixed Point and Floating Point</h2>
@@ -208,7 +241,54 @@ Place values: 8  4  2  1 . 0.5  0.25  0.125  0.0625
 
 0101.1100 = 4 + 1 + 0.5 + 0.25 = 5.75
 1001.0010 = 8 + 1 + 0.125      = 9.125</pre>
+
+<h4>Representing Fractions in Binary</h4>
+<p>Each bit to the right of the binary point represents a negative power of 2:</p>
+<table>
+    <tr><th>Bit position</th><th>2<sup>-1</sup></th><th>2<sup>-2</sup></th><th>2<sup>-3</sup></th><th>2<sup>-4</sup></th></tr>
+    <tr><td>Value</td><td>0.5</td><td>0.25</td><td>0.125</td><td>0.0625</td></tr>
+</table>
+
+<h4>Converting Decimal Fraction to Binary (repeated doubling)</h4>
+<p>Multiply the fraction by 2 repeatedly. Each time, if the result &ge; 1, the bit is 1 (subtract 1 and continue); if &lt; 1, the bit is 0. Read bits top to bottom.</p>
+<pre>Convert 0.6875 to binary:
+0.6875 &times; 2 = 1.375  &rarr; bit = 1, carry 0.375
+0.375  &times; 2 = 0.75   &rarr; bit = 0, carry 0.75
+0.75   &times; 2 = 1.5    &rarr; bit = 1, carry 0.5
+0.5    &times; 2 = 1.0    &rarr; bit = 1, carry 0.0  (terminates)
+
+Result: 0.1011  &rarr; verify: 0.5+0.125+0.0625 = 0.6875 ✓
+
+Convert 0.1 to binary (a recurring fraction):
+0.1 &times; 2 = 0.2  &rarr; bit = 0
+0.2 &times; 2 = 0.4  &rarr; bit = 0
+0.4 &times; 2 = 0.8  &rarr; bit = 0
+0.8 &times; 2 = 1.6  &rarr; bit = 1, carry 0.6
+0.6 &times; 2 = 1.2  &rarr; bit = 1, carry 0.2
+0.2 &times; 2 = 0.4  &rarr; bit = 0  (repeats from here)
+Result: 0.000110011... (recurring) — cannot be stored exactly!</pre>
+
+<h4>Converting a Mixed Number to Fixed-Point Binary</h4>
+<pre>Convert 6.625 to 8-bit fixed point (4 integer + 4 fractional bits):
+Integer part: 6 = 0110
+Fraction part: 0.625
+  0.625 &times; 2 = 1.25  &rarr; 1
+  0.25  &times; 2 = 0.5   &rarr; 0
+  0.5   &times; 2 = 1.0   &rarr; 1
+
+Result: 0110.1010
+
+Verify: 4+2 + 0.5+0.125 = 6.625 ✓</pre>
+
+<h4>Fixed-Point Limitations</h4>
+<ul>
+    <li><strong>Limited range:</strong> with 4 integer bits, max value = 15. Cannot represent values outside this range.</li>
+    <li><strong>Limited precision:</strong> with 4 fractional bits, smallest step = 0.0625. Values between steps cause rounding errors.</li>
+    <li><strong>Fixed trade-off:</strong> moving the binary point right gives more precision but reduces range, and vice versa. This is why floating point was invented.</li>
+</ul>
 <p>Fixed point: simple, fast, but limited range and fixed precision. Used in embedded systems and financial calculations.</p>
+
+<div class="exam-tip">In fixed-point questions, always state the position of the binary point. For conversion to binary fraction, show each doubling step. If asked why 0.1 cannot be represented exactly: it is a recurring binary fraction, so a rounding error occurs.</div>
 
 <h3>Floating Point Representation</h3>
 <div class="definition">
@@ -268,6 +348,71 @@ Starts 1.0... = correctly normalised negative.</pre>
     <tr><td>Fewer mantissa bits</td><td>No change</td><td>Decreased</td></tr>
     <tr><td>Fewer exponent bits</td><td>Decreased</td><td>No change</td></tr>
 </table>
+
+<h3>IEEE 754 Floating-Point Standard</h3>
+<p>Real processors use the <strong>IEEE 754</strong> standard rather than the simple mantissa/exponent model above. It defines exact bit layouts for <strong>single precision</strong> (32-bit) and <strong>double precision</strong> (64-bit).</p>
+
+<table>
+    <tr><th>Format</th><th>Total bits</th><th>Sign</th><th>Exponent bits</th><th>Mantissa bits</th><th>Exponent bias</th></tr>
+    <tr><td><strong>Single (float)</strong></td><td>32</td><td>1</td><td>8</td><td>23</td><td>127</td></tr>
+    <tr><td><strong>Double (double)</strong></td><td>64</td><td>1</td><td>11</td><td>52</td><td>1023</td></tr>
+</table>
+
+<h4>IEEE 754 Single Precision Layout</h4>
+<pre>Bit 31     Bits 30-23        Bits 22-0
+[S]   [Exponent (8 bits)]  [Mantissa (23 bits)]
+
+Value = (-1)^S &times; 1.Mantissa &times; 2^(Exponent - 127)
+
+The leading "1." is IMPLICIT &mdash; it is never stored (saves one bit of precision).
+This is called the "hidden bit" or "implicit leading 1".</pre>
+
+<h4>Worked Example: Convert 13.5 to IEEE 754 Single Precision</h4>
+<pre>Step 1: Convert to binary
+13.5 = 1101.1 in binary
+
+Step 2: Normalise to 1.xxxxx form
+1101.1 = 1.1011 &times; 2^3   (shift point 3 places left)
+
+Step 3: Encode the fields
+Sign bit = 0  (positive)
+Exponent = 3 + 127 = 130 = 1000 0010 in binary
+Mantissa = 1011 followed by 19 zeros (drop the leading 1.)
+         = 10110000000000000000000
+
+Step 4: Assemble
+0  10000010  10110000000000000000000
+S  Exponent  Mantissa (23 bits)</pre>
+
+<h4>Worked Example: Decode IEEE 754 to Decimal</h4>
+<pre>Binary: 1  01111100  01000000000000000000000
+S=1, Exponent field = 01111100 = 124
+Actual exponent = 124 - 127 = -3
+Mantissa bits = 01, rest zeros
+Hidden bit restoration: 1.01000... = 1 + 0.25 = 1.25
+Value = -1^1 &times; 1.25 &times; 2^-3 = -1.25 / 8 = -0.15625</pre>
+
+<h4>Exponent Bias</h4>
+<p>The stored exponent is <strong>biased</strong> (excess-N notation): the actual exponent = stored value &minus; bias (127 for single, 1023 for double). This allows unsigned comparison of floating-point numbers and handles both positive and negative exponents without a separate sign bit for the exponent.</p>
+
+<h4>IEEE 754 Special Values</h4>
+<table>
+    <tr><th>Exponent field</th><th>Mantissa field</th><th>Meaning</th></tr>
+    <tr><td>All 0s (0)</td><td>All 0s</td><td>Zero (sign bit gives +0 or -0)</td></tr>
+    <tr><td>All 0s (0)</td><td>Non-zero</td><td>Denormalised (subnormal) number</td></tr>
+    <tr><td>All 1s (255)</td><td>All 0s</td><td>Infinity (+&infin; or -&infin;, e.g., divide by zero)</td></tr>
+    <tr><td>All 1s (255)</td><td>Non-zero</td><td>NaN (Not a Number, e.g., 0/0, sqrt(-1))</td></tr>
+</table>
+
+<h4>Precision vs Range Trade-off (IEEE 754)</h4>
+<ul>
+    <li><strong>Single precision (32-bit):</strong> ~7 significant decimal digits, range ~&plusmn;3.4 &times; 10<sup>38</sup></li>
+    <li><strong>Double precision (64-bit):</strong> ~15-16 significant decimal digits, range ~&plusmn;1.8 &times; 10<sup>308</sup></li>
+    <li>More mantissa bits &rarr; more significant figures (precision), same range</li>
+    <li>More exponent bits &rarr; larger/smaller values representable (range), same precision</li>
+</ul>
+
+<div class="exam-tip">AQA may ask you to convert to IEEE 754 or interpret a given bit pattern. Key steps: (1) identify sign bit, (2) convert exponent field to denary and subtract bias, (3) restore hidden leading 1 to mantissa, (4) apply exponent as a shift. Know the special values: all-1 exponent means infinity or NaN; all-0 means zero or denormalised.</div>
 
 <h3>Rounding Errors</h3>
 <p>Finite precision means many real numbers cannot be stored exactly. E.g., 0.1 in denary is recurring in binary (0.0001100110011...). This causes rounding errors.</p>
@@ -371,7 +516,32 @@ Left shift by 3:
     <tr><td>Compatibility</td><td>N/A</td><td>UTF-8 is backward compatible with ASCII</td></tr>
 </table>
 
+<h4>Code Point vs Encoding</h4>
+<p>These two concepts are frequently confused but are distinct:</p>
+<ul>
+    <li>A <strong>code point</strong> is the abstract number assigned to a character in the Unicode standard (e.g., U+0041 = Latin Capital A, U+4E2D = Chinese character 中). It tells you <em>what</em> character it is.</li>
+    <li>An <strong>encoding</strong> (UTF-8, UTF-16, UTF-32) defines <em>how</em> that code point is stored as bytes in memory or on disk. Different encodings store the same code point differently.</li>
+</ul>
+
+<h4>Unicode Encoding Schemes</h4>
+<table>
+    <tr><th>Encoding</th><th>Bytes per character</th><th>Notes</th></tr>
+    <tr><td><strong>UTF-8</strong></td><td>1&ndash;4 (variable)</td><td>Backward compatible with ASCII. 1 byte for U+0000&ndash;U+007F; 2 bytes for U+0080&ndash;U+07FF; 3 bytes for U+0800&ndash;U+FFFF; 4 bytes for higher. Most common on the internet.</td></tr>
+    <tr><td><strong>UTF-16</strong></td><td>2 or 4 (variable)</td><td>Most characters use 2 bytes. Characters above U+FFFF use 4 bytes (surrogate pairs). Used by Windows, Java, JavaScript internally.</td></tr>
+    <tr><td><strong>UTF-32</strong></td><td>4 (fixed)</td><td>Every character always 4 bytes. Simple indexing but wastes space. Used internally in some systems.</td></tr>
+</table>
+
+<p><strong>Why Unicode was needed:</strong> ASCII can only represent 128 characters &mdash; enough for English but not for Arabic, Chinese, Japanese, Russian, Hindi, emoji, mathematical symbols, etc. Each country had its own encoding (ISO 8859-1 for Western European, GB2312 for Chinese) causing incompatibility. Unicode provides one universal standard covering all scripts.</p>
+
+<h4>Byte Order Mark (BOM)</h4>
+<p>Multi-byte encodings (UTF-16, UTF-32) must specify whether the most significant byte comes first (<strong>big-endian</strong>) or last (<strong>little-endian</strong>). The <strong>BOM</strong> is a special marker (U+FEFF) placed at the start of a file to indicate byte order and encoding type. UTF-8 does not require a BOM but may have one for compatibility.</p>
+<pre>UTF-16 BOM values:
+FF FE = little-endian (UTF-16 LE, default on Windows)
+FE FF = big-endian (UTF-16 BE)</pre>
+
 <p><strong>UTF-8</strong> is variable-length: ASCII characters use 1 byte (identical to ASCII), other scripts use 2&ndash;4 bytes. Most widely used encoding on the internet.</p>
+
+<div class="exam-tip">Know the distinction: code point = the number assigned to a character (U+XXXX); encoding = how that number is stored in bytes. UTF-8 is backward compatible with ASCII. UTF-16 is used by Windows and Java. UTF-32 is fixed width (4 bytes per character). AQA often asks why Unicode replaced ASCII: ASCII only handles English/Latin characters; Unicode supports all world writing systems.</div>
 
 <!-- ============================================================ -->
 <h2>4.5.7 Analogue and Digital</h2>
@@ -455,8 +625,65 @@ Left shift by 3:
 
 <p>Vector graphics store drawing commands (e.g., "draw a circle at (100,200) with radius 50, fill red"). The image is re-rendered at any size from these instructions, which is why it scales without quality loss.</p>
 
+<h3>Resolution and PPI</h3>
+<p><strong>Resolution</strong> is used in two related but distinct senses:</p>
+<ul>
+    <li><strong>Image resolution</strong> &mdash; the total number of pixels (e.g., 1920 &times; 1080 = 2,073,600 pixels). This determines how much detail is stored.</li>
+    <li><strong>Display/print resolution</strong> &mdash; pixels per inch (<strong>ppi</strong>) or dots per inch (dpi). Determines how large the image appears on a screen or print. A 300 ppi image printed at 4 inches wide uses 1200 pixels horizontally.</li>
+</ul>
+<p>Higher ppi means the same number of pixels is packed into a smaller physical area, making the image appear sharper. Screens typically display at 72&ndash;96 ppi; print quality requires 300 ppi or more.</p>
+
+<h3>Image Metadata</h3>
+<p>Image files contain a <strong>header</strong> (metadata) before the pixel data. This typically includes:</p>
+<ul>
+    <li>Image width and height (in pixels)</li>
+    <li>Colour depth (bits per pixel)</li>
+    <li>File format identifier</li>
+    <li>Compression type used</li>
+    <li>Camera settings (EXIF data): shutter speed, aperture, GPS location, date/time taken</li>
+    <li>Colour profile (sRGB, Adobe RGB)</li>
+</ul>
+<p>The OS and image software read the metadata to know how to interpret the pixel data that follows.</p>
+
+<h3>Lossy vs Lossless Image Compression</h3>
+<table>
+    <tr><th>Format</th><th>Type</th><th>Method</th><th>Best for</th></tr>
+    <tr><td><strong>BMP</strong></td><td>None (uncompressed)</td><td>Raw pixel data</td><td>Lossless storage, large files</td></tr>
+    <tr><td><strong>PNG</strong></td><td>Lossless</td><td>DEFLATE (LZ77 + Huffman)</td><td>Screenshots, graphics with text, transparency needed</td></tr>
+    <tr><td><strong>GIF</strong></td><td>Lossless</td><td>LZW dictionary encoding</td><td>Simple animations, limited palette (max 256 colours)</td></tr>
+    <tr><td><strong>JPEG</strong></td><td>Lossy</td><td>DCT + quantisation + Huffman</td><td>Photographs; fine detail loss imperceptible</td></tr>
+    <tr><td><strong>WebP</strong></td><td>Both modes</td><td>Modern DCT/VP8</td><td>Web images; smaller than JPEG/PNG at same quality</td></tr>
+</table>
+<p><strong>JPEG compression works by:</strong> (1) converting to YCbCr colour space, (2) splitting into 8&times;8 pixel blocks, (3) applying Discrete Cosine Transform (DCT) to each block, (4) quantising (rounding) DCT coefficients — this is where data is permanently discarded, (5) using Huffman coding on the remaining coefficients. The quantisation step is adjusted by the quality setting.</p>
+
+<div class="exam-tip">For image questions: file size = width &times; height &times; colour depth &divide; 8 (to get bytes). Do not confuse image resolution (total pixels) with display resolution (ppi). JPEG is lossy — once compressed, original cannot be recovered. PNG is lossless — original pixel values perfectly preserved. AQA commonly asks which format to use and why: photographs &rarr; JPEG; diagrams/text/logos &rarr; PNG or vector.</div>
+
 <!-- ============================================================ -->
 <h2>4.5.9 Sound Representation</h2>
+
+<h3>Analogue to Digital Conversion (ADC)</h3>
+<p>Sound is a continuous analogue pressure wave. To store it digitally, an <strong>Analogue-to-Digital Converter (ADC)</strong> performs three steps:</p>
+<ol>
+    <li><strong>Sampling</strong> &mdash; the amplitude of the wave is measured at regular time intervals (the sampling rate).</li>
+    <li><strong>Quantisation</strong> &mdash; each measured amplitude is rounded to the nearest level available. The number of levels = 2<sup>bit depth</sup>. The rounding error is <strong>quantisation noise</strong>.</li>
+    <li><strong>Encoding</strong> &mdash; the rounded value is stored as a binary number with the given bit depth.</li>
+</ol>
+<p>To play back audio, a <strong>Digital-to-Analogue Converter (DAC)</strong> reconstructs the analogue wave from the stored samples.</p>
+
+<h3>Nyquist Theorem &mdash; Worked Example</h3>
+<div class="definition">
+    The <strong>Nyquist theorem</strong> states that to accurately reconstruct a signal, the sampling rate must be at least <strong>twice</strong> the highest frequency present in the signal. Minimum sample rate = 2 &times; f<sub>max</sub>.
+</div>
+<pre>Human hearing range: 20 Hz to 20,000 Hz (20 kHz)
+Nyquist minimum sample rate = 2 &times; 20,000 = 40,000 Hz
+
+CD standard: 44,100 Hz (provides safety margin above Nyquist minimum)
+
+Telephone audio (speech only up to ~3,400 Hz):
+Nyquist minimum = 2 &times; 3,400 = 6,800 Hz
+Telephone standard = 8,000 Hz (provides margin)</pre>
+
+<p>If sampling at below Nyquist rate, <strong>aliasing</strong> occurs: high-frequency components appear as false lower frequencies, distorting the reconstructed audio.</p>
 
 <h3>Sound File Size Calculation</h3>
 <div class="definition">
@@ -470,7 +697,32 @@ Left shift by 3:
 
 Example: Mono telephone, 60 seconds
 = 8,000 &times; 8 &times; 1 &times; 60 / 8
-= 480,000 bytes &approx; 469 KB</pre>
+= 480,000 bytes &approx; 469 KB
+
+Example: Studio quality, stereo, 5 minutes
+= 96,000 &times; 24 &times; 2 &times; 300 / 8
+= 1,382,400,000 / 8
+= 172,800,000 bytes &approx; 164.8 MB</pre>
+
+<h3>Quality vs File Size Trade-offs</h3>
+<table>
+    <tr><th>Parameter</th><th>Increase effect</th><th>Decrease effect</th></tr>
+    <tr><td><strong>Sample rate</strong></td><td>Captures higher frequencies; better accuracy; larger file</td><td>Loses high frequencies; aliasing risk; smaller file</td></tr>
+    <tr><td><strong>Bit depth</strong></td><td>More amplitude levels; less quantisation noise; larger file</td><td>Fewer levels; more quantisation noise; smaller file</td></tr>
+    <tr><td><strong>Channels</strong></td><td>Stereo (2) doubles size vs mono (1)</td><td>Mono halves size but loses stereo imaging</td></tr>
+</table>
+
+<h3>Lossy vs Lossless Audio Formats</h3>
+<table>
+    <tr><th>Format</th><th>Type</th><th>Method</th><th>Use case</th></tr>
+    <tr><td><strong>WAV</strong></td><td>Uncompressed</td><td>Raw PCM samples</td><td>Professional audio, editing; very large</td></tr>
+    <tr><td><strong>AIFF</strong></td><td>Uncompressed</td><td>Raw PCM (Apple)</td><td>Mac professional audio; very large</td></tr>
+    <tr><td><strong>FLAC</strong></td><td>Lossless</td><td>Lossless prediction + Rice coding</td><td>Archiving; ~50-60% size of WAV; perfect quality</td></tr>
+    <tr><td><strong>MP3</strong></td><td>Lossy</td><td>Psychoacoustic model removes inaudible frequencies</td><td>Music streaming; ~90% smaller than WAV</td></tr>
+    <tr><td><strong>AAC</strong></td><td>Lossy</td><td>Improved psychoacoustics over MP3</td><td>iTunes, streaming; better quality than MP3 at same bitrate</td></tr>
+    <tr><td><strong>OGG Vorbis</strong></td><td>Lossy</td><td>Open-source psychoacoustic</td><td>Games, streaming</td></tr>
+</table>
+<p><strong>Psychoacoustic model:</strong> MP3 exploits limitations of human hearing &mdash; frequencies masked by louder nearby sounds are removed, and very high or very low frequency content is discarded. The result is imperceptible to most listeners at high bitrates but audible at very low bitrates.</p>
 
 <h3>MIDI</h3>
 <p><strong>MIDI</strong> stores <strong>instructions</strong> (note, pitch, duration, velocity, instrument), not sampled sound. Very small files but quality depends on playback device/synthesiser.</p>
@@ -484,7 +736,7 @@ Example: Mono telephone, 60 seconds
     <tr><td>Quality</td><td>Fixed at recording</td><td>Depends on synthesiser</td></tr>
 </table>
 
-<div class="exam-tip">Check if the question says mono or stereo (stereo = 2 channels, doubles file size). Always divide by 8 to convert bits to bytes. Show units clearly. Know the difference between sampled audio and MIDI.</div>
+<div class="exam-tip">Check if the question says mono or stereo (stereo = 2 channels, doubles file size). Always divide by 8 to convert bits to bytes. Show units clearly. Nyquist: sample rate must be at least 2 &times; highest frequency. If sampling too slow, aliasing occurs. Lossy audio (MP3) removes frequencies inaudible to humans using a psychoacoustic model; lossless (FLAC) allows perfect reconstruction. Know the difference between sampled audio and MIDI.</div>
 
 <!-- ============================================================ -->
 <h2>4.5.10 Data Compression</h2>

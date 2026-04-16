@@ -110,28 +110,184 @@ print(math.factorial(5)) # 120</pre>
     <tr><td><strong>Interpreter</strong></td><td>High-level language (Python)</td><td>Translates and executes <strong>one line at a time</strong></td><td>No permanent object code</td></tr>
 </table>
 
+<h4>Assembler &mdash; Two-Pass Assembly</h4>
+<p>Assembly language uses <strong>mnemonics</strong> (human-readable operation names like <code>MOV</code>, <code>ADD</code>, <code>JMP</code>) that map one-to-one to machine code instructions. It also supports <strong>labels</strong> (symbolic names for memory addresses, used for jump targets and variable locations).</p>
+<p>A simple assembler cannot resolve labels in a single scan because a jump instruction may reference a label defined later in the code ("forward reference"). The solution is <strong>two-pass assembly</strong>:</p>
+<ul>
+    <li><strong>First pass:</strong> scan the entire source; assign an address to every instruction and data item; build a <strong>symbol table</strong> mapping each label name to its address. No machine code is produced yet.</li>
+    <li><strong>Second pass:</strong> translate each mnemonic to its machine code opcode; replace all label references with the actual addresses from the symbol table.</li>
+</ul>
+<pre>Assembly source              Symbol table (after pass 1)
+LOOP:  MOV R0, #0           LOOP  &rarr; address 100
+       ADD R0, R0, #1       END   &rarr; address 108
+       CMP R0, #10
+       BNE LOOP             Pass 2: BNE LOOP becomes BNE 100
+END:   HALT</pre>
+
+<h4>Interpreter &mdash; Additional Detail</h4>
+<p>An interpreter reads, translates, and immediately executes one statement at a time. No standalone executable is produced. Key characteristics:</p>
+<ul>
+    <li>Errors are reported at runtime when the faulty line is reached (not before)</li>
+    <li>Easier to debug interactively (Python's REPL: Read-Evaluate-Print Loop)</li>
+    <li>Source code must be distributed (unless obfuscated), reducing IP protection</li>
+    <li>Slower than compiled code because translation overhead occurs on every execution</li>
+    <li>Good for scripting, automation, rapid prototyping, and educational environments</li>
+</ul>
+<p>Examples of interpreted languages: Python, Ruby, PHP (traditional), JavaScript (originally), Bash.</p>
+
 <h4>Compiler vs Interpreter</h4>
 <table>
     <tr><th>Feature</th><th>Compiler</th><th>Interpreter</th></tr>
-    <tr><td>Translation</td><td>Whole program at once</td><td>Line by line during execution</td></tr>
+    <tr><td>Translation</td><td>Whole program at once, before execution</td><td>Line by line during execution</td></tr>
     <tr><td>Execution speed</td><td>Fast (native machine code)</td><td>Slower (re-translates each run)</td></tr>
-    <tr><td>Error reporting</td><td>Lists all errors after compilation</td><td>Stops at first error</td></tr>
-    <tr><td>Distribution</td><td>Distribute executable (source hidden)</td><td>Source code must be distributed</td></tr>
+    <tr><td>Error reporting</td><td>All errors listed after compilation (compile-time)</td><td>Stops at first runtime error</td></tr>
+    <tr><td>Distribution</td><td>Distribute executable; source can be kept private</td><td>Source code must be distributed</td></tr>
     <tr><td>Development</td><td>Slower cycle (edit-compile-run-debug)</td><td>Faster cycle (edit-run, immediate feedback)</td></tr>
-    <tr><td>Optimisation</td><td>Can optimise across whole program</td><td>Limited (sees one line at a time)</td></tr>
-    <tr><td>Dependency</td><td>Executable runs without compiler</td><td>Interpreter must be installed</td></tr>
+    <tr><td>Optimisation</td><td>Can optimise across entire program</td><td>Very limited (one statement visible)</td></tr>
+    <tr><td>Dependency</td><td>Executable runs without compiler</td><td>Interpreter must be installed on target</td></tr>
+    <tr><td>Platform</td><td>Compiled for specific CPU/OS</td><td>Portable if interpreter available</td></tr>
+    <tr><td>Examples</td><td>C, C++, Rust, Go, Pascal</td><td>Python, Ruby, Bash, PHP (classic)</td></tr>
 </table>
 
-<h4>Stages of Compilation</h4>
+<h4>JIT (Just-In-Time) Compilation</h4>
+<div class="definition">
+    <strong>JIT compilation</strong> combines portability of interpreted code with speed approaching compiled code. Source code is first compiled to portable <strong>intermediate bytecode</strong>. At runtime, a JIT compiler translates bytecode to native machine code on the fly, caching compiled sections for reuse.
+</div>
+<ul>
+    <li><strong>Java:</strong> Java source &rarr; Java bytecode (.class) &rarr; JVM JIT compiler &rarr; native machine code. The same bytecode runs on any platform with a JVM installed ("write once, run anywhere").</li>
+    <li><strong>C# / .NET:</strong> C# source &rarr; CIL (Common Intermediate Language) &rarr; CLR JIT &rarr; native machine code</li>
+    <li><strong>Python:</strong> Python source &rarr; CPython bytecode (.pyc) &rarr; CPython interpreter (traditionally interpreted, but PyPy uses JIT)</li>
+    <li><strong>JavaScript:</strong> Modern engines (V8, SpiderMonkey) JIT-compile hot code paths at runtime</li>
+</ul>
+<p>JIT is slower to start than compiled code (compilation overhead at launch) but faster than pure interpretation (compiled sections run at near-native speed).</p>
+
+<h4>Stages of Compilation &mdash; Full Pipeline</h4>
+<p>The five stages of a compiler form a pipeline:</p>
+<pre>Source code
+     |
+     v
+[1] LEXICAL ANALYSIS (Tokeniser / Lexer)
+    - Reads characters, groups into tokens
+    - Removes whitespace and comments
+    - Tokens: keywords (if, while), identifiers (x, total),
+      operators (+, =), literals (42, "hello"), punctuation
+    - Builds symbol table entries for identifiers
+     |
+     v
+Token stream
+     |
+     v
+[2] SYNTAX ANALYSIS (Parser)
+    - Checks token sequence against grammar rules (BNF/EBNF)
+    - Builds Abstract Syntax Tree (AST) representing structure
+    - Reports syntax errors (missing semicolons, unmatched brackets)
+     |
+     v
+Abstract Syntax Tree (AST)
+     |
+     v
+[3] SEMANTIC ANALYSIS
+    - Checks meaning, not just structure
+    - Type checking (adding string + integer = error)
+    - Undeclared variable use
+    - Wrong number of arguments to functions
+    - Produces annotated AST
+     |
+     v
+Annotated AST
+     |
+     v
+[4] CODE GENERATION
+    - Translates AST nodes to target machine code or bytecode
+    - Allocates registers to variables
+    - Handles function calls, stack frames
+     |
+     v
+Intermediate / target code
+     |
+     v
+[5] OPTIMISATION
+    - Dead code elimination (code that never executes)
+    - Constant folding (compute 3*4 at compile time = 12)
+    - Loop unrolling (reduce loop overhead)
+    - Register allocation (keep frequently used values in registers)
+     |
+     v
+Optimised machine code / executable</pre>
+
+<h4>Symbol Table</h4>
+<p>The symbol table is built and used throughout compilation. It stores information about every identifier (variable, function, class) in the program:</p>
+<table>
+    <tr><th>Identifier</th><th>Type</th><th>Scope</th><th>Memory address / register</th></tr>
+    <tr><td>total</td><td>integer</td><td>global</td><td>0x4000</td></tr>
+    <tr><td>count</td><td>integer</td><td>local (main)</td><td>R3</td></tr>
+    <tr><td>greet</td><td>function</td><td>global</td><td>0x1080</td></tr>
+</table>
+
+<div class="exam-tip">Know all five compilation stages and what each produces/checks. Lexical analysis produces tokens (not a tree). Syntax analysis produces the AST. Semantic analysis checks types and scope &mdash; it does NOT check grammar. AQA often asks: "at which stage would [specific error] be detected?" Type mismatch = semantic; missing semicolon = syntax; unknown variable = semantic. JIT: Java/C# compile to bytecode first, then JIT-compile to native code at runtime &mdash; this gives portability and near-native speed.</div>
+
+<!-- ============================================================ -->
+<h2>4.6.3b Linkers and Loaders</h2>
+
+<h3>Linker</h3>
+<div class="definition">
+    A <strong>linker</strong> takes one or more <strong>object files</strong> produced by a compiler or assembler, resolves cross-references between them, and combines them with required library code to produce a single executable file.
+</div>
+
+<p>When a large program is split into multiple source files, each file is compiled independently into its own object file. The linker's job is to:</p>
 <ol>
-    <li><strong>Lexical analysis</strong> &mdash; source code broken into <strong>tokens</strong> (keywords, identifiers, operators, literals). Whitespace and comments removed. <strong>Symbol table</strong> created.</li>
-    <li><strong>Syntax analysis (parsing)</strong> &mdash; tokens checked against grammar rules (BNF). <strong>Abstract Syntax Tree (AST)</strong> built. Syntax errors reported.</li>
-    <li><strong>Semantic analysis</strong> &mdash; checks for type mismatches, undeclared variables, incorrect arguments.</li>
-    <li><strong>Code generation</strong> &mdash; AST translated into machine code or intermediate code.</li>
-    <li><strong>Optimisation</strong> &mdash; code improved for speed or size (dead code removal, loop unrolling, register allocation).</li>
+    <li>Combine all object files into one</li>
+    <li>Resolve <strong>external references</strong> &mdash; when file A calls a function defined in file B, the linker fills in the correct memory address</li>
+    <li>Include required <strong>library code</strong> (either copying it in, or recording which external library to use at runtime)</li>
+    <li>Produce the final executable or shared library</li>
 </ol>
 
-<div class="exam-tip">Many modern languages use both: compile to intermediate bytecode, then interpret or JIT-compile at runtime. Java &rarr; bytecode &rarr; JVM; Python &rarr; bytecode &rarr; CPython interpreter; C# &rarr; CIL &rarr; .NET CLR. Know all five stages of compilation.</div>
+<h4>Static vs Dynamic Linking</h4>
+<table>
+    <tr><th>Feature</th><th>Static Linking</th><th>Dynamic Linking</th></tr>
+    <tr><td>Library code</td><td>Copied into the executable at link time</td><td>Referenced; loaded from DLL/SO at runtime</td></tr>
+    <tr><td>Executable size</td><td>Larger (contains all library code)</td><td>Smaller (library code not included)</td></tr>
+    <tr><td>Portability</td><td>Fully self-contained; runs without any library installed</td><td>Requires the correct library version on the target machine</td></tr>
+    <tr><td>Memory sharing</td><td>Each program has its own copy</td><td>One copy of library shared by all programs in RAM</td></tr>
+    <tr><td>Updates</td><td>Library update requires relinking and redistribution</td><td>Update the DLL/SO once; all programs benefit</td></tr>
+    <tr><td>Version conflicts</td><td>None (uses its own copy)</td><td>"DLL hell" &mdash; wrong version breaks programs</td></tr>
+    <tr><td>Examples</td><td>Embedded systems, safety-critical software</td><td>Windows DLLs (.dll), Linux shared objects (.so)</td></tr>
+</table>
+
+<pre>Static linking example (C):
+gcc -o myapp main.o utils.o -lm        # -lm links math library statically
+
+Dynamic linking example:
+myapp.exe loads kernel32.dll, msvcrt.dll at runtime from C:\Windows\System32\</pre>
+
+<h3>Loader</h3>
+<div class="definition">
+    The <strong>loader</strong> is an OS component that takes an executable file from disk, loads it into RAM, and prepares it for execution.
+</div>
+
+<p>The loader performs the following steps:</p>
+<ol>
+    <li><strong>Reads the executable</strong> from disk (the file header describes program structure)</li>
+    <li><strong>Allocates memory</strong> &mdash; creates a process address space with segments for code, data, stack, and heap</li>
+    <li><strong>Copies code and data</strong> from the file into allocated RAM</li>
+    <li><strong>Relocation</strong> &mdash; adjusts absolute addresses in the code if the program was not loaded at its expected address (modern systems use <strong>ASLR</strong> &mdash; Address Space Layout Randomisation, a security feature)</li>
+    <li><strong>Loads dynamic libraries</strong> if the program uses dynamic linking</li>
+    <li><strong>Sets up the stack and heap</strong></li>
+    <li><strong>Transfers control</strong> to the program's entry point (e.g., <code>main()</code>)</li>
+</ol>
+
+<h3>Library</h3>
+<div class="definition">
+    A <strong>library</strong> is a collection of pre-written, pre-compiled routines (functions, classes, modules) that programmers can use without writing the code themselves.
+</div>
+<ul>
+    <li><strong>Standard library</strong> &mdash; provided with the language/compiler (Python's <code>math</code>, <code>os</code>, <code>sys</code>; C's <code>stdio.h</code>)</li>
+    <li><strong>Third-party library</strong> &mdash; written by others, installed separately (NumPy, Requests, OpenSSL)</li>
+    <li><strong>Static library</strong> &mdash; file extension .lib (Windows) or .a (Linux); merged into executable at link time</li>
+    <li><strong>Dynamic library</strong> &mdash; file extension .dll (Windows) or .so (Linux); loaded at runtime</li>
+</ul>
+
+<div class="exam-tip">Know the pipeline: compiler produces object files; linker combines object files and libraries into an executable; loader puts the executable into RAM for execution. Static linking = library code inside the executable (self-contained, larger). Dynamic linking = library loaded at runtime (smaller executable, shared, but must be present). AQA may ask why programs use libraries: saves development time, pre-tested code, reduces errors, shared code reduces memory use.</div>
 
 <!-- ============================================================ -->
 <h2>4.6.4 Role of the Operating System</h2>

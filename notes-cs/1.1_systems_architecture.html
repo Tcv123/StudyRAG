@@ -150,6 +150,18 @@
     <li>The <strong>PC</strong>, <strong>ACC</strong>, and <strong>CIR</strong> are internal registers &mdash; they do not connect directly to external buses but communicate with other registers inside the CPU</li>
 </ul>
 
+<h3>Why Each Register Exists &mdash; The Architectural Reason</h3>
+<p>Understanding the <em>purpose</em> behind each register, rather than just its function, gives you a much stronger answer in 4- and 6-mark questions:</p>
+<ul>
+    <li><strong>PC exists</strong> because the CPU must always know the address of the <em>next</em> instruction to fetch. Without the PC, the CPU would have no way to keep track of where it is in a program. The PC is modified by branch instructions, which is the hardware mechanism behind IF statements, loops, and function calls.</li>
+    <li><strong>MAR exists</strong> to hold the address being sent on the address bus long enough for memory to respond. Memory access takes time (RAM takes ~50-100 ns); the MAR decouples the CPU from memory timing &mdash; the CPU can load the MAR and then do other internal work while waiting. Without the MAR, the address bus would need to be driven continuously, tying up the CPU.</li>
+    <li><strong>MDR exists</strong> as a buffer between the fast CPU and the relatively slow RAM. Data arriving from memory over the data bus is placed in the MDR first, then transferred internally within the CPU at CPU speed. This decoupling means the CPU does not have to wait at the exact moment data arrives on the bus. Without the MDR, every memory access would require the CPU to halt and hold the bus until the transfer was complete.</li>
+    <li><strong>CIR exists</strong> so that the instruction being decoded and executed is preserved while the MDR is reused. During the EXECUTE phase of a LOAD instruction, the MAR and MDR are needed again to access the data address. If the instruction were still in the MDR, it would be overwritten. Moving the instruction to the CIR during FETCH frees the MDR for data transfers during EXECUTE.</li>
+    <li><strong>ACC exists</strong> as the primary working register for the ALU. The ALU is wired to take input from the ACC and return results to the ACC. Without a dedicated accumulator, every intermediate calculation result would need to be written back to memory, which would be extremely slow. The ACC keeps intermediate results on-chip, inside the CPU, at register speed.</li>
+</ul>
+
+<div class="exam-tip">The MAR and MDR exist to <strong>decouple</strong> the CPU from memory timing. Memory is much slower than the CPU; these registers act as buffers so the CPU does not have to pause while memory responds. This is why the instruction is moved from MDR to CIR during fetch &mdash; to free the MDR for use during execute. This level of reasoning (not just "what" but "why") is what distinguishes a full-mark answer from a partial one.</div>
+
 <h2>1.1.3 The Fetch-Decode-Execute (FDE) Cycle</h2>
 
 <p>The CPU continuously repeats three stages for every instruction. This cycle runs billions of times per second and is the fundamental operation of every Von Neumann computer. Everything a computer does &mdash; from displaying text to playing games &mdash; is ultimately the result of billions of FDE cycles.</p>
@@ -321,6 +333,37 @@ multi-threaded and can effectively utilise all available cores.
 </pre>
 
 <div class="exam-tip">When explaining CPU performance, always state <em>how</em> the factor helps AND its <em>limitations</em>. For example: "More cores allow multiple threads to execute simultaneously, improving performance for multi-threaded applications such as video editing. However, if the software is single-threaded, additional cores provide no benefit." This balanced answer scores higher than just stating the positive effect. Also know that increasing one factor cannot compensate for all workloads &mdash; a high clock speed with one core is great for single-threaded tasks but poor for multi-tasking.</div>
+
+<div class="exam-tip">Cache holds copies of frequently accessed data and instructions from RAM. When the CPU requests data, it first checks the cache (<strong>cache hit</strong> = returned very quickly, ~1 ns). If not found (<strong>cache miss</strong>), the CPU must access slower RAM (~50-100 ns) and a copy is stored in cache for future use. Larger cache means more data stored close to the CPU, reducing the frequency of slow RAM accesses.</div>
+
+<div class="exam-tip">Common exam question: "Suggest two ways to increase CPU performance." Never just say "faster processor" &mdash; name specific factors and explain <em>how</em> they help. Strong answers: (1) "Increase the clock speed &mdash; more FDE cycles are completed per second, so each instruction is processed faster." (2) "Increase the cache size &mdash; more data is stored close to the CPU, reducing the number of slow main memory accesses." Saying "use a faster computer" or "upgrade the CPU" will score zero marks.</div>
+
+<h3>Worked Exam Question &mdash; CPU Performance</h3>
+<pre>
+Question: "A computer has a 3.2 GHz dual-core processor with 4 MB L3 cache.
+Explain two ways its performance could be improved." (4 marks)
+
+Answer:
+
+(1) Increase the clock speed (e.g., to 4.0 GHz).
+    The clock speed determines how many FDE cycles are completed per second.
+    At 4.0 GHz, each core completes 4 billion cycles per second compared to
+    3.2 billion — an increase of 25%. Each individual instruction is processed
+    faster, so the CPU completes more work in a given time.
+    Limitation: higher clock speed generates more heat and uses more power,
+    requiring better (and more expensive) cooling.
+
+(2) Increase the cache size (e.g., to 16 MB L3 cache).
+    Larger cache can store more frequently accessed data and instructions
+    from RAM. When the CPU needs data, it is more likely to find it in fast
+    cache (cache hit) rather than needing to access much slower RAM (cache
+    miss). Reducing RAM accesses reduces delays between instructions.
+    Limitation: cache is expensive per byte, and very large caches have
+    diminishing returns as they become physically slower to search.
+
+Alternative valid answers: add more cores (enables parallel execution of
+multiple threads); upgrade to faster RAM (reduces the penalty of a cache miss).
+</pre>
 
 <h2>1.1.5 Embedded Systems</h2>
 

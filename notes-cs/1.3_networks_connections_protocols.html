@@ -287,6 +287,235 @@
 
 <div class="exam-tip">HTTP vs HTTPS: always mention that HTTPS uses <strong>SSL/TLS encryption</strong> to protect data in transit, while HTTP sends data in <strong>plaintext</strong>. DNS converts <strong>domain names to IP addresses</strong> &mdash; examiners want both parts stated explicitly (domain names AND IP addresses). IMAP keeps emails on the server (synced across devices); POP downloads and usually deletes from server (single device). The internet is the infrastructure; the web is one service that runs on it &mdash; they are NOT the same thing.</div>
 
+
+<h2>The TCP/IP Protocol Stack</h2>
+
+<div class="definition">
+    The <strong>TCP/IP protocol stack</strong> is a set of communication protocols that govern how data is transmitted across the internet and other networks. It is arranged into four layers. Each layer adds its own header information as data travels down the stack (<strong>encapsulation</strong>) and strips it as data travels up (<strong>de-encapsulation</strong>). This layered approach means each layer only needs to worry about its own job — the layers above and below handle the rest.
+</div>
+
+<table>
+    <tr><th>Layer Number</th><th>Layer Name</th><th>Purpose</th><th>Protocols / Examples</th><th>Data Unit</th></tr>
+    <tr><td>4 (Top)</td><td><strong>Application</strong></td><td>Provides network services directly to user applications. Handles the meaning and format of data. This is the layer the user interacts with.</td><td>HTTP, HTTPS, FTP, SMTP, IMAP, POP3, DNS, SSH</td><td>Data / Message</td></tr>
+    <tr><td>3</td><td><strong>Transport</strong></td><td>Breaks data into segments; manages end-to-end communication. Uses <strong>port numbers</strong> to identify which application should receive data. TCP provides reliability; UDP provides speed.</td><td>TCP, UDP</td><td>Segment</td></tr>
+    <tr><td>2</td><td><strong>Internet (Network)</strong></td><td>Assigns and reads <strong>IP addresses</strong>; handles logical routing of packets across multiple networks. Each router at this layer examines the destination IP and decides the best next hop.</td><td>IP (IPv4, IPv6), ICMP</td><td>Packet</td></tr>
+    <tr><td>1 (Bottom)</td><td><strong>Link (Data Link / Network Access)</strong></td><td>Handles physical transmission of data on the local network. Uses <strong>MAC addresses</strong> for local device-to-device delivery within a single LAN segment.</td><td>Ethernet, Wi-Fi (802.11), ARP</td><td>Frame</td></tr>
+</table>
+
+<h3>Packet Structure</h3>
+<p>A <strong>packet</strong> is the fundamental unit of data transmitted across a network. Each packet has three main parts:</p>
+<ul>
+    <li><strong>Header</strong> — control information placed at the front of the packet. Contains:
+        <ul>
+            <li><strong>Source IP address</strong> — where the packet came from</li>
+            <li><strong>Destination IP address</strong> — where the packet is going</li>
+            <li><strong>Source port number</strong> — identifies the sending application (e.g., port 443 for HTTPS)</li>
+            <li><strong>Destination port number</strong> — identifies the receiving application</li>
+            <li><strong>Sequence number</strong> — allows the receiver to reassemble packets in the correct order</li>
+            <li><strong>TTL (Time to Live)</strong> — a counter decremented by 1 at each router hop; when it reaches 0, the packet is discarded, preventing it from looping forever</li>
+        </ul>
+    </li>
+    <li><strong>Payload</strong> — the actual data being transmitted (a fragment of the original file, web page, email, etc.)</li>
+    <li><strong>Trailer</strong> — placed at the end; includes a <strong>checksum</strong> (a calculated value used to detect errors in transmission; the receiver recalculates and compares — if they differ, the packet is corrupted and must be retransmitted)</li>
+</ul>
+
+<pre>
++------------------+-----------------------------+----------------+
+|     HEADER       |          PAYLOAD            |    TRAILER     |
+| (Src IP, Dst IP, |  (actual data fragment)     | (checksum)     |
+|  Ports, Seq, TTL)|                             |                |
++------------------+-----------------------------+----------------+
+</pre>
+
+<h3>TCP Three-Way Handshake</h3>
+<p>Before TCP transmits any data, it establishes a reliable connection using a <strong>three-way handshake</strong>. This ensures both sides are ready to communicate and agree on sequence numbers:</p>
+<ol>
+    <li><strong>SYN</strong> — the client sends a synchronise (SYN) packet to the server: "I want to connect; my sequence number starts at X."</li>
+    <li><strong>SYN-ACK</strong> — the server replies with a SYN-ACK: "Acknowledged your SYN (X+1). I want to connect too; my sequence number starts at Y."</li>
+    <li><strong>ACK</strong> — the client sends an acknowledgement (ACK): "Acknowledged your SYN (Y+1). Connection established."</li>
+</ol>
+<pre>
+Client                          Server
+  |-------- SYN (seq=X) -------->|
+  |<----- SYN-ACK (ack=X+1) ----|
+  |-------- ACK (ack=Y+1) ------>|
+          Connection open
+</pre>
+<p>After the handshake, data flows in both directions. TCP also uses a <strong>four-way termination</strong> (FIN, FIN-ACK, FIN, ACK) to close the connection cleanly.</p>
+
+<h3>TCP vs UDP</h3>
+<table>
+    <tr><th>Feature</th><th>TCP (Transmission Control Protocol)</th><th>UDP (User Datagram Protocol)</th></tr>
+    <tr><td><strong>Connection</strong></td><td>Connection-oriented — establishes a connection via handshake before sending data</td><td>Connectionless — sends data immediately without establishing a connection first</td></tr>
+    <tr><td><strong>Reliability</strong></td><td>Reliable — acknowledgements (ACKs) confirm receipt; lost packets are retransmitted; data arrives complete and correct</td><td>Unreliable — no acknowledgements; lost packets are NOT retransmitted; some data may be lost</td></tr>
+    <tr><td><strong>Ordering</strong></td><td>Guaranteed order — sequence numbers ensure data is reassembled in the correct order</td><td>No ordering guarantee — packets may arrive out of order</td></tr>
+    <tr><td><strong>Speed</strong></td><td>Slower — overhead of handshake, ACKs, and retransmission adds latency</td><td>Faster — no handshake, no ACKs, minimal overhead</td></tr>
+    <tr><td><strong>Error checking</strong></td><td>Full error checking and correction — corrupted packets are detected and resent</td><td>Basic checksum only — corrupted packets are discarded, not resent</td></tr>
+    <tr><td><strong>Use cases</strong></td><td>Web browsing (HTTP/HTTPS), email (SMTP/IMAP), file transfer (FTP), online banking — anywhere data accuracy is critical</td><td>Live video streaming, online gaming, VoIP (video calls), DNS queries — where speed matters more than perfection and a dropped frame is acceptable</td></tr>
+    <tr><td><strong>Analogy</strong></td><td>A tracked delivery service — you get confirmation the parcel arrived; if it is lost it is resent</td><td>Broadcasting on radio — listeners receive what they can; there is no way to request a retransmission of a missed word</td></tr>
+</table>
+
+<div class="exam-tip">TCP vs UDP: always tie your answer to a specific use case. TCP is used where every byte must arrive correctly (file download, web page, email). UDP is used where real-time delivery matters more than perfection (live stream, gaming, VoIP) — a dropped frame in a video call is better than pausing to wait for retransmission. Examiners want you to justify, not just identify.</div>
+
+<h2>Network Hardware — Detailed Comparison</h2>
+
+<div class="definition">
+    Network hardware devices operate at different layers of the TCP/IP stack. Understanding <strong>which layer each device operates at</strong> and <strong>what address type it uses</strong> is essential for explaining how data moves through a network.
+</div>
+
+<table>
+    <tr><th>Device</th><th>Layer</th><th>Address Used</th><th>Purpose and Key Details</th></tr>
+    <tr><td><strong>NIC (Network Interface Card)</strong></td><td>Link (Layer 1)</td><td>MAC address (burned in by manufacturer)</td><td>Every device needs a NIC to connect to a network. Each NIC has a globally unique <strong>48-bit MAC address</strong> (e.g., <code>A4:C3:F0:85:AC:2D</code>) assigned at manufacture and stored in hardware. Can be wired (RJ-45 Ethernet socket) or wireless (Wi-Fi antenna). Converts digital data from the CPU into electrical, optical, or radio signals for transmission.</td></tr>
+    <tr><td><strong>Hub</strong></td><td>Link (Layer 1)</td><td>None (dumb device)</td><td>A <strong>dumb repeater</strong> that broadcasts every incoming signal to <strong>all ports</strong> simultaneously. All connected devices receive every packet, even those not addressed to them. Creates a single <strong>collision domain</strong> — if two devices send at the same time, the signals collide and both must retransmit. Generates unnecessary network traffic. Now <strong>obsolete</strong> — replaced by switches in all modern networks.</td></tr>
+    <tr><td><strong>Switch</strong></td><td>Data Link (Layer 2)</td><td>MAC address</td><td>An <strong>intelligent device</strong> that learns which device is connected to which port by building a <strong>MAC address table</strong>. When a frame arrives, the switch looks up the destination MAC address and sends it <strong>only to the correct port</strong>. This eliminates unnecessary traffic, reduces collisions, and significantly improves network efficiency. Each port is its own collision domain. Standard device for wired LANs.</td></tr>
+    <tr><td><strong>Router</strong></td><td>Internet (Layer 3)</td><td>IP address</td><td>Connects <strong>different networks</strong> together (e.g., your home LAN to the internet). Reads the destination <strong>IP address</strong> in each packet and uses a <strong>routing table</strong> to determine the best next hop. Performs <strong>NAT</strong> (Network Address Translation) to map multiple private IP addresses to a single public IP. Also typically includes a built-in DHCP server, firewall, and WAP in home models.</td></tr>
+    <tr><td><strong>WAP (Wireless Access Point)</strong></td><td>Link (Layer 1/2)</td><td>MAC address (wireless)</td><td>Bridges wireless devices onto a wired LAN. Broadcasts an <strong>SSID</strong> (network name) that devices can see and connect to. Handles wireless encryption (WPA2/WPA3) to protect the wireless segment. A home router typically has a built-in WAP. Enterprise networks use multiple WAPs to provide full coverage across a building.</td></tr>
+    <tr><td><strong>Modem</strong></td><td>Link (Layer 1)</td><td>N/A</td><td><strong>Modulates</strong> digital signals from a computer into analogue signals suitable for transmission over a telephone line (ADSL) or cable, and <strong>demodulates</strong> incoming analogue signals back to digital. The word modem comes from <em>modulator-demodulator</em>. Required to connect to the internet via a telephone line. Modern fibre connections use an ONT (Optical Network Terminal) instead, as fibre carries digital signals natively.</td></tr>
+</table>
+
+<h3>Hub vs Switch vs Router — Key Distinctions</h3>
+<p>This comparison is one of the most frequently examined topics in the networks unit. Make sure you can clearly explain the difference between all three:</p>
+
+<table>
+    <tr><th></th><th>Hub</th><th>Switch</th><th>Router</th></tr>
+    <tr><td><strong>What it connects</strong></td><td>Devices within a LAN</td><td>Devices within a LAN</td><td>Different networks (LAN to WAN, LAN to internet)</td></tr>
+    <tr><td><strong>Address used</strong></td><td>None — broadcasts to all ports regardless</td><td>MAC address — sends to correct port only</td><td>IP address — routes between networks</td></tr>
+    <tr><td><strong>Layer</strong></td><td>Layer 1 (Physical)</td><td>Layer 2 (Data Link)</td><td>Layer 3 (Internet/Network)</td></tr>
+    <tr><td><strong>Intelligence</strong></td><td>None (dumb device)</td><td>Builds MAC address table; learns port locations</td><td>Builds routing table; calculates best path</td></tr>
+    <tr><td><strong>Traffic generated</strong></td><td>High — broadcasts all data to all ports</td><td>Low — sends data only to the intended recipient</td><td>Routes packets between networks efficiently</td></tr>
+    <tr><td><strong>Collisions</strong></td><td>One large collision domain — frequent collisions</td><td>Each port is a separate collision domain — no collisions between ports</td><td>Operates at a higher level — not concerned with collisions</td></tr>
+    <tr><td><strong>Status</strong></td><td>Obsolete — no longer used in modern networks</td><td>Standard LAN device</td><td>Essential for internet connectivity</td></tr>
+</table>
+
+<div class="exam-tip">Hub vs switch: a hub broadcasts to ALL ports; a switch sends only to the correct port using its MAC address table. In an exam, always say "reduces unnecessary network traffic" and "reduces collisions" as advantages of a switch over a hub. This single distinction accounts for a large share of marks in network hardware questions.</div>
+
+<div class="exam-tip">Know that MAC addresses are hardware addresses (fixed, burned into NIC, Layer 2) and IP addresses are logical addresses (assigned by DHCP or manually configured, Layer 3). A switch uses MAC addresses to forward frames within a LAN; a router uses IP addresses to route packets between different networks. Switches do not read IP addresses; routers do not typically build MAC address tables.</div>
+
+<h2>IP and MAC Addressing — In Depth</h2>
+
+<h3>IP Addresses</h3>
+<div class="definition">
+    An <strong>IP address</strong> (Internet Protocol address) is a <strong>logical address</strong> assigned to a device on a network. It identifies the device's location on the network and is used by routers to route packets to the correct destination. IP addresses can change — they are assigned by DHCP or configured manually.
+</div>
+
+<table>
+    <tr><th></th><th>IPv4</th><th>IPv6</th></tr>
+    <tr><td><strong>Bit length</strong></td><td>32 bits</td><td>128 bits</td></tr>
+    <tr><td><strong>Format</strong></td><td>Dotted decimal — four octets (0–255) separated by dots, e.g., <code>192.168.1.1</code></td><td>Hexadecimal — eight groups of four hex digits separated by colons, e.g., <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code> (can be shortened by omitting leading zeros)</td></tr>
+    <tr><td><strong>Address space</strong></td><td>Approximately 4.3 billion unique addresses — now exhausted</td><td>3.4 × 10<sup>38</sup> unique addresses — effectively limitless</td></tr>
+    <tr><td><strong>Why needed?</strong></td><td>Original internet addressing system</td><td>Introduced because IPv4 addresses have run out due to the explosion of connected devices (smartphones, IoT, etc.)</td></tr>
+</table>
+
+<h3>Private vs Public IP Addresses</h3>
+<table>
+    <tr><th></th><th>Private IP Address</th><th>Public IP Address</th></tr>
+    <tr><td><strong>Used where?</strong></td><td>Within a LAN (home, office, school) — not routable on the public internet</td><td>On the internet — visible to the outside world</td></tr>
+    <tr><td><strong>Assigned by</strong></td><td>Router's DHCP server automatically assigns from reserved private ranges</td><td>Assigned by ISP</td></tr>
+    <tr><td><strong>Ranges (IPv4)</strong></td><td><code>192.168.x.x</code>, <code>10.x.x.x</code>, <code>172.16.x.x – 172.31.x.x</code></td><td>All other ranges</td></tr>
+    <tr><td><strong>Uniqueness</strong></td><td>Only unique within the local network — the same private IP can exist in millions of different LANs simultaneously</td><td>Globally unique — no two devices on the internet share the same public IP at the same time</td></tr>
+    <tr><td><strong>Example</strong></td><td>Your laptop at home: <code>192.168.1.105</code></td><td>Your router's internet-facing address: <code>82.34.167.9</code></td></tr>
+</table>
+
+<h3>DHCP — Dynamic Host Configuration Protocol</h3>
+<div class="definition">
+    <strong>DHCP</strong> automatically assigns network configuration to devices when they join a network. Without DHCP, every device would need to be manually configured with an IP address — impractical in large networks or for guests.
+</div>
+<p>When a device joins a network, it broadcasts a DHCP request. The DHCP server (usually the router) responds with:</p>
+<ul>
+    <li><strong>IP address</strong> — a unique address for the device on this network (e.g., <code>192.168.1.15</code>)</li>
+    <li><strong>Subnet mask</strong> — defines which part of the IP address identifies the network vs the host (e.g., <code>255.255.255.0</code>)</li>
+    <li><strong>Default gateway</strong> — the router's IP address (used when sending data outside the LAN)</li>
+    <li><strong>DNS server address</strong> — the address of the DNS server to use for name resolution</li>
+</ul>
+<p>The IP address is leased for a set time. When the lease expires, the device must request a renewal — this is why your device's IP address can occasionally change.</p>
+
+<h3>DNS — Domain Name System (Detailed)</h3>
+<p>DNS is a hierarchical, distributed database that translates human-readable domain names into IP addresses. The hierarchy works as follows:</p>
+<ol>
+    <li><strong>Local cache</strong> — the device checks if it has recently resolved the domain and cached the result. If found, the cached IP is used immediately (fastest).</li>
+    <li><strong>ISP's recursive resolver</strong> — if not cached locally, the query goes to the ISP's DNS server, which searches its own cache.</li>
+    <li><strong>Root servers</strong> — if the ISP's server does not know, it queries one of the 13 root server clusters, which know the addresses of TLD servers.</li>
+    <li><strong>TLD (Top-Level Domain) server</strong> — the root server directs the query to the TLD server for the domain suffix (e.g., <code>.com</code>, <code>.co.uk</code>, <code>.org</code>).</li>
+    <li><strong>Authoritative name server</strong> — the TLD server points to the authoritative server for the specific domain (e.g., <code>google.com</code>), which holds the definitive IP address record and returns it.</li>
+</ol>
+<p>Each result is cached at every level with a <strong>TTL (Time to Live)</strong> value — this is how long it should be kept before re-querying. Caching dramatically speeds up future lookups for popular sites.</p>
+
+<h3>NAT — Network Address Translation</h3>
+<div class="definition">
+    <strong>NAT</strong> allows a router to map many private IP addresses (inside the LAN) to a single public IP address (facing the internet). This conserves the IPv4 address space and provides a basic layer of security (internal devices are not directly accessible from the internet).
+</div>
+<p>When a device inside the LAN sends a request to the internet: the router replaces the private source IP with its public IP and records the mapping. When the response arrives, the router looks up the mapping and forwards the packet to the correct internal device. From the internet's perspective, all traffic appears to come from one public IP address.</p>
+
+<div class="exam-tip">DHCP automatically assigns IP address, subnet mask, default gateway, and DNS server — know all four items. DNS translates domain names to IP addresses — examiners want both parts stated. NAT allows multiple devices to share one public IP address — it extends the usable life of IPv4 and provides a degree of security by hiding internal IP addresses from the internet.</div>
+
+<h2>Wireless Networks</h2>
+
+<h3>Wi-Fi Standards</h3>
+<table>
+    <tr><th>Standard</th><th>Common Name</th><th>Frequency</th><th>Max Theoretical Speed</th><th>Notes</th></tr>
+    <tr><td>802.11a</td><td>Wi-Fi (legacy)</td><td>5 GHz</td><td>54 Mbps</td><td>Early standard; limited range; now obsolete</td></tr>
+    <tr><td>802.11b</td><td>Wi-Fi (legacy)</td><td>2.4 GHz</td><td>11 Mbps</td><td>Slow; widely compatible; now obsolete</td></tr>
+    <tr><td>802.11g</td><td>Wi-Fi (legacy)</td><td>2.4 GHz</td><td>54 Mbps</td><td>Improved speed over 802.11b; still used in older devices</td></tr>
+    <tr><td>802.11n</td><td>Wi-Fi 4</td><td>2.4 GHz &amp; 5 GHz</td><td>600 Mbps</td><td>Dual-band; MIMO antennas; still common in homes</td></tr>
+    <tr><td>802.11ac</td><td>Wi-Fi 5</td><td>5 GHz (primarily)</td><td>3.5 Gbps</td><td>MU-MIMO; beamforming; dominant in current devices</td></tr>
+    <tr><td>802.11ax</td><td>Wi-Fi 6</td><td>2.4 GHz &amp; 5 GHz</td><td>9.6 Gbps</td><td>Improved performance in dense environments; OFDMA; lower latency; better battery efficiency for devices</td></tr>
+</table>
+
+<div class="definition">
+    <strong>SSID (Service Set Identifier)</strong> is the name of a wireless network that devices can discover and connect to. When you see a list of available Wi-Fi networks on your phone, each name is an SSID. SSIDs can be <strong>broadcast</strong> (visible to everyone nearby — easier to connect) or <strong>hidden</strong> (the network name is not advertised — devices must know the SSID in advance to connect). Hiding the SSID provides minimal security — network scanning tools can still detect it.
+</div>
+
+<h3>2.4 GHz vs 5 GHz</h3>
+<table>
+    <tr><th>Feature</th><th>2.4 GHz</th><th>5 GHz</th></tr>
+    <tr><td><strong>Range</strong></td><td>Greater range — lower frequency waves travel further and penetrate walls and obstacles better</td><td>Shorter range — higher frequency waves lose energy more quickly and are blocked more by walls</td></tr>
+    <tr><td><strong>Speed</strong></td><td>Slower maximum speeds</td><td>Faster maximum speeds</td></tr>
+    <tr><td><strong>Congestion</strong></td><td>More congested — only a few non-overlapping channels; shared with microwaves, Bluetooth, baby monitors, and many older devices</td><td>Less congested — more available channels; fewer competing devices</td></tr>
+    <tr><td><strong>Best for</strong></td><td>Devices far from the router; IoT devices that don't need high speed; devices in adjacent rooms</td><td>Devices close to the router requiring high speeds; streaming 4K video; gaming</td></tr>
+</table>
+
+<h3>Wireless Security</h3>
+<ul>
+    <li><strong>WPA2 (Wi-Fi Protected Access 2)</strong> — uses AES-CCMP encryption (128-bit key). The current standard for most home and business Wi-Fi. Replaced the weaker WEP and WPA standards. Can be vulnerable to offline dictionary attacks against weak passwords.</li>
+    <li><strong>WPA3</strong> — the latest standard, introduced in 2018. Uses SAE (Simultaneous Authentication of Equals) handshake instead of PSK, making offline dictionary attacks much harder. Forward secrecy means past sessions cannot be decrypted even if the password is later compromised. Increasingly required for new Wi-Fi certified devices.</li>
+    <li><strong>WEP (Wired Equivalent Privacy)</strong> — obsolete; broken encryption; must not be used. Can be cracked in minutes.</li>
+</ul>
+
+<h3>Ethernet (Wired) vs Wi-Fi (Wireless)</h3>
+<table>
+    <tr><th>Feature</th><th>Ethernet (Wired)</th><th>Wi-Fi (Wireless)</th></tr>
+    <tr><td><strong>Speed</strong></td><td>Generally faster and consistent — dedicated connection; modern Ethernet supports 1–10 Gbps</td><td>Variable — affected by distance, walls, interference, and number of users sharing the channel</td></tr>
+    <tr><td><strong>Reliability</strong></td><td>Very reliable — physical connection does not suffer from interference or signal drop</td><td>Less reliable — signal can be disrupted by walls, microwave ovens, other Wi-Fi networks, and interference</td></tr>
+    <tr><td><strong>Security</strong></td><td>More secure — attacker needs physical access to the cable or network hardware to intercept data</td><td>Less secure — signals broadcast through the air and can be intercepted if encryption is weak or absent; requires WPA2/WPA3</td></tr>
+    <tr><td><strong>Latency</strong></td><td>Lower and more consistent — important for gaming and real-time applications</td><td>Higher and more variable — wireless contention and signal processing add delay</td></tr>
+    <tr><td><strong>Convenience</strong></td><td>Device must be physically near a cable socket — limits mobility</td><td>Allows full mobility within the coverage area — ideal for laptops, phones, tablets</td></tr>
+    <tr><td><strong>Installation cost</strong></td><td>Higher — requires cabling infrastructure, wall sockets, and switches throughout the building</td><td>Lower — only requires a WAP; no cables to individual devices</td></tr>
+    <tr><td><strong>Best for</strong></td><td>Desktop computers, games consoles, servers, anywhere consistent speed and reliability matter</td><td>Mobile devices, laptops, smartphones, anywhere portability matters</td></tr>
+</table>
+
+<div class="exam-tip">When comparing wired and wireless, always address at least four of: speed, reliability, security, latency, convenience, and cost. Examiners expect comparisons, not just descriptions — always say "wired is faster than wireless because..." rather than just "wired is fast." For wireless security questions, name the protocol: WPA2 uses AES encryption; WPA3 improves resistance to offline attacks using SAE.</div>
+
+<h2>Network Protocols — Reference Table</h2>
+
+<div class="definition">
+    A <strong>protocol</strong> is a set of agreed rules that govern how data is formatted, transmitted, received, and acknowledged between devices. Protocols allow devices from different manufacturers running different software to communicate reliably. <strong>Port numbers</strong> identify which application or service a packet is destined for — like a door number in a building. The IP address gets the packet to the building (device); the port number directs it to the right room (application).
+</div>
+
+<table>
+    <tr><th>Protocol</th><th>Full Name</th><th>Port(s)</th><th>What It Does</th><th>Key Point</th></tr>
+    <tr><td><strong>HTTP</strong></td><td>HyperText Transfer Protocol</td><td>80</td><td>Transfers web pages (HTML, CSS, images) between a web server and browser</td><td>Data sent in <strong>plaintext</strong> — anyone who intercepts traffic can read it. Not suitable for sensitive information.</td></tr>
+    <tr><td><strong>HTTPS</strong></td><td>HyperText Transfer Protocol Secure</td><td>443</td><td>HTTP wrapped in TLS/SSL encryption — secure web browsing</td><td>Data is encrypted end-to-end. Uses a <strong>digital certificate</strong> from a Certificate Authority (CA) to verify the server is genuine. Always use HTTPS for banking, shopping, or login pages. Shown by padlock in browser.</td></tr>
+    <tr><td><strong>FTP</strong></td><td>File Transfer Protocol</td><td>20 (data), 21 (control)</td><td>Transfers files between a client and a server over a network</td><td>Uses two separate connections: port 21 for commands (control), port 20 for actual file data. Sends data in plaintext — SFTP (port 22) or FTPS encrypt the transfer.</td></tr>
+    <tr><td><strong>SMTP</strong></td><td>Simple Mail Transfer Protocol</td><td>25 (587 secure)</td><td>Sends outgoing email from client to mail server, and between mail servers</td><td>Push protocol — pushes emails out. Only handles <em>sending</em>; you need IMAP or POP3 to <em>receive</em> email. Think of SMTP as the postal worker who delivers letters.</td></tr>
+    <tr><td><strong>IMAP</strong></td><td>Internet Message Access Protocol</td><td>143 (993 secure)</td><td>Retrieves emails from the server; emails remain stored server-side</td><td>Emails <strong>stay on the server</strong> — all devices see the same mailbox. Read, delete, or move on one device and it is reflected everywhere. Best for users with multiple devices (phone, laptop, tablet).</td></tr>
+    <tr><td><strong>POP3</strong></td><td>Post Office Protocol version 3</td><td>110 (995 secure)</td><td>Downloads emails to the local device and typically deletes them from server</td><td>Emails <strong>downloaded to one device</strong> — not accessible from other devices. Useful where internet access is unreliable (work offline) or server storage is limited. Best for single-device use.</td></tr>
+    <tr><td><strong>SSH</strong></td><td>Secure Shell</td><td>22</td><td>Provides encrypted remote command-line access to another computer</td><td>Replaced Telnet (which sent commands in plaintext). Used by system administrators to manage servers remotely. All traffic is encrypted — commands and responses cannot be intercepted.</td></tr>
+    <tr><td><strong>DHCP</strong></td><td>Dynamic Host Configuration Protocol</td><td>67 (server), 68 (client)</td><td>Automatically assigns IP address, subnet mask, gateway, and DNS server to devices joining a network</td><td>Without DHCP, every device must be manually configured. DHCP assigns a <strong>lease</strong> — the IP is loaned for a set time and may change on renewal.</td></tr>
+    <tr><td><strong>DNS</strong></td><td>Domain Name System</td><td>53</td><td>Translates human-readable domain names (e.g., <code>www.bbc.co.uk</code>) into IP addresses (e.g., <code>151.101.0.81</code>)</td><td>Without DNS, you would need to memorise IP addresses for every website. DNS is often called the "phone book of the internet." Queries use UDP by default; TCP for large responses.</td></tr>
+</table>
+
+<div class="exam-tip">Know port numbers for: HTTP (80), HTTPS (443), FTP (20/21), SMTP (25), IMAP (143), POP3 (110), SSH (22), DNS (53). The most common exam question is IMAP vs POP3: IMAP stores emails on the server (syncs across all devices); POP3 downloads emails to one device and removes them from the server. HTTPS vs HTTP: HTTPS uses TLS/SSL encryption — always say "encrypted" and mention the certificate authority or padlock icon.</div>
+
 </div>
 </body>
 </html>

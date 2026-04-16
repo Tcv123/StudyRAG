@@ -269,6 +269,232 @@ This is actually XOR! Q = A XOR B
 
 <div class="exam-tip"><strong>AND</strong> needs BOTH inputs to be True. <strong>OR</strong> needs at least one. <strong>NOT</strong> flips the value. <strong>NAND</strong> and <strong>NOR</strong> are AND/OR with the output inverted. <strong>XOR</strong> is True only when inputs DIFFER. When constructing truth tables, <strong>always add intermediate columns</strong> for sub-expressions &mdash; this avoids mistakes and earns method marks even if the final answer has an error. For 2 inputs: 4 rows. For 3 inputs: 8 rows. Count up in binary to fill in the input columns systematically (never skip or repeat a combination).</div>
 
+<h2>2.4.3 De Morgan's Laws</h2>
+
+<div class="definition">
+    <strong>De Morgan's Laws</strong> are two fundamental rules for simplifying Boolean expressions involving NOT applied to AND or OR. They allow you to rewrite a NAND as a NOR (and vice versa), which is useful both in Boolean algebra and in logic circuit design.
+</div>
+
+<p>De Morgan's Laws state:</p>
+
+<table>
+    <tr><th>Law</th><th>Expression</th><th>In Words</th><th>Equivalent Gate</th></tr>
+    <tr>
+        <td><strong>First Law</strong></td>
+        <td style="text-align:left"><code>NOT (A AND B) = (NOT A) OR (NOT B)</code></td>
+        <td style="text-align:left">The negation of a conjunction is the disjunction of the negations</td>
+        <td style="text-align:left">NAND = NOT-A OR NOT-B</td>
+    </tr>
+    <tr>
+        <td><strong>Second Law</strong></td>
+        <td style="text-align:left"><code>NOT (A OR B) = (NOT A) AND (NOT B)</code></td>
+        <td style="text-align:left">The negation of a disjunction is the conjunction of the negations</td>
+        <td style="text-align:left">NOR = NOT-A AND NOT-B</td>
+    </tr>
+</table>
+
+<h3>Verifying De Morgan's First Law with a Truth Table</h3>
+<p style="text-align:left">Both sides of the equation must produce the same output for all input combinations:</p>
+<table>
+    <tr><th>A</th><th>B</th><th>A AND B</th><th>NOT(A AND B)</th><th>NOT A</th><th>NOT B</th><th>(NOT A) OR (NOT B)</th></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td><strong>1</strong></td><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td><strong>1</strong></td><td>1</td><td>0</td><td><strong>1</strong></td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td><strong>1</strong></td><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td><strong>0</strong></td><td>0</td><td>0</td><td><strong>0</strong></td></tr>
+</table>
+<p style="text-align:left">The two highlighted columns are <strong>identical</strong> for all four input combinations &mdash; confirming that <code>NOT(A AND B) = (NOT A) OR (NOT B)</code>.</p>
+
+<h3>Verifying De Morgan's Second Law with a Truth Table</h3>
+<table>
+    <tr><th>A</th><th>B</th><th>A OR B</th><th>NOT(A OR B)</th><th>NOT A</th><th>NOT B</th><th>(NOT A) AND (NOT B)</th></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td><strong>1</strong></td><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td><strong>0</strong></td><td>1</td><td>0</td><td><strong>0</strong></td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td><strong>0</strong></td><td>0</td><td>1</td><td><strong>0</strong></td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td><strong>0</strong></td><td>0</td><td>0</td><td><strong>0</strong></td></tr>
+</table>
+
+<h3>Using De Morgan's Laws to Simplify</h3>
+<p style="text-align:left">A key application is rewriting expressions to use fewer or simpler gate types:</p>
+<pre style="text-align:left">
+Example: Simplify NOT(A AND B) AND NOT(C OR D)
+
+Step 1: Apply De Morgan's First Law to NOT(A AND B):
+        = (NOT A OR NOT B) AND NOT(C OR D)
+
+Step 2: Apply De Morgan's Second Law to NOT(C OR D):
+        = (NOT A OR NOT B) AND (NOT C AND NOT D)
+
+This eliminates the NAND and NOR gates, replacing them with
+AND/OR gates plus NOT gates — which may be more practical depending
+on available components.
+
+Another example: Simplify NOT(NOT A AND NOT B)
+Step 1: Apply De Morgan's First Law (note: the "AND" inside has both inputs already NOTed):
+        NOT(NOT A AND NOT B) = NOT(NOT A) OR NOT(NOT B)
+Step 2: Double negation: NOT(NOT X) = X
+        = A OR B
+So NOT(NOT A AND NOT B) = A OR B — NAND gates with inverted inputs equal an OR gate!
+</pre>
+
+<h3>Memory Aid: "Break the bar, change the operator"</h3>
+<pre style="text-align:left">
+When moving NOT (the "bar" in overline notation) inside brackets:
+  1. NOT(A AND B)  →  NOT A  OR  NOT B     (AND becomes OR)
+  2. NOT(A OR B)   →  NOT A  AND  NOT B    (OR becomes AND)
+
+The rule: "break the NOT, change the AND/OR to its opposite."
+AND ↔ OR, NOT distributes to each variable.
+</pre>
+
+<div class="exam-tip">De Morgan's Laws appear on the OCR J277 spec and are examined directly. You must be able to: (1) state both laws; (2) verify them with a truth table; (3) use them to simplify an expression. The key phrase in the mark scheme is "NOT(A AND B) is equivalent to NOT A OR NOT B" and vice versa. A very common exam question is to "use De Morgan's Law to simplify NOT(A OR B)" &mdash; the answer is "(NOT A) AND (NOT B)". Do not confuse the two laws: NOT of AND gives OR; NOT of OR gives AND.</div>
+
+<h2>2.4.4 Boolean Algebra Simplification</h2>
+
+<p>Boolean algebra is a set of rules for simplifying Boolean expressions. A simpler expression needs fewer logic gates, which means cheaper, faster, and more energy-efficient circuits. The <strong>OCR J277 spec</strong> requires you to apply these laws to simplify expressions.</p>
+
+<h3>Core Boolean Algebra Laws</h3>
+<table style="text-align:left;">
+    <tr><th>Law</th><th>AND form</th><th>OR form</th><th>Meaning</th></tr>
+    <tr>
+        <td><strong>Identity</strong></td>
+        <td><code>A AND 1 = A</code></td>
+        <td><code>A OR 0 = A</code></td>
+        <td>AND with 1 / OR with 0 leaves A unchanged</td>
+    </tr>
+    <tr>
+        <td><strong>Null / Annihilator</strong></td>
+        <td><code>A AND 0 = 0</code></td>
+        <td><code>A OR 1 = 1</code></td>
+        <td>AND with 0 always gives 0; OR with 1 always gives 1</td>
+    </tr>
+    <tr>
+        <td><strong>Idempotent</strong></td>
+        <td><code>A AND A = A</code></td>
+        <td><code>A OR A = A</code></td>
+        <td>Repeating the same variable has no effect</td>
+    </tr>
+    <tr>
+        <td><strong>Complement</strong></td>
+        <td><code>A AND (NOT A) = 0</code></td>
+        <td><code>A OR (NOT A) = 1</code></td>
+        <td>A variable AND its complement is always 0; OR is always 1</td>
+    </tr>
+    <tr>
+        <td><strong>Double negation</strong></td>
+        <td colspan="2" style="text-align:center"><code>NOT(NOT A) = A</code></td>
+        <td>Two NOTs cancel each other out</td>
+    </tr>
+    <tr>
+        <td><strong>Commutative</strong></td>
+        <td><code>A AND B = B AND A</code></td>
+        <td><code>A OR B = B OR A</code></td>
+        <td>Order of inputs does not matter</td>
+    </tr>
+    <tr>
+        <td><strong>Associative</strong></td>
+        <td><code>(A AND B) AND C = A AND (B AND C)</code></td>
+        <td><code>(A OR B) OR C = A OR (B OR C)</code></td>
+        <td>Grouping does not matter for the same operator</td>
+    </tr>
+    <tr>
+        <td><strong>Distributive</strong></td>
+        <td><code>A AND (B OR C) = (A AND B) OR (A AND C)</code></td>
+        <td><code>A OR (B AND C) = (A OR B) AND (A OR C)</code></td>
+        <td>AND distributes over OR, and OR distributes over AND</td>
+    </tr>
+    <tr>
+        <td><strong>Absorption</strong></td>
+        <td><code>A AND (A OR B) = A</code></td>
+        <td><code>A OR (A AND B) = A</code></td>
+        <td>A "absorbs" the more complex expression</td>
+    </tr>
+    <tr>
+        <td><strong>De Morgan's</strong></td>
+        <td><code>NOT(A AND B) = NOT A OR NOT B</code></td>
+        <td><code>NOT(A OR B) = NOT A AND NOT B</code></td>
+        <td>Break the NOT, change the operator</td>
+    </tr>
+</table>
+
+<h3>Worked Simplification Examples</h3>
+<pre style="text-align:left">
+Example 1: Simplify A AND (A OR B)
+
+  A AND (A OR B)
+= A                     [Absorption law: A AND (A OR B) = A]
+
+Verify: if A=0, expression = 0 AND (0 OR B) = 0 AND B = 0 ✓ (matches A=0)
+        if A=1, expression = 1 AND (1 OR B) = 1 AND 1   = 1 ✓ (matches A=1)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Example 2: Simplify (A AND B) OR (A AND NOT B)
+
+  (A AND B) OR (A AND NOT B)
+= A AND (B OR NOT B)          [Distributive: factor out A]
+= A AND 1                     [Complement: B OR NOT B = 1]
+= A                           [Identity: A AND 1 = A]
+
+Meaning: A AND B, or A AND NOT-B — in both cases A must be true;
+         whether B is true or false is irrelevant. So the output is just A.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Example 3: Simplify NOT(NOT A OR NOT B)
+
+  NOT(NOT A OR NOT B)
+= NOT(NOT A) AND NOT(NOT B)   [De Morgan's Second Law: break NOT, change OR to AND]
+= A AND B                     [Double negation: NOT(NOT X) = X]
+
+So NOT(NOT A OR NOT B) = A AND B.
+A NOR gate with both inputs inverted is equivalent to an AND gate!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Example 4: Simplify A OR (A AND B) OR (NOT A AND B)
+
+Step 1: A OR (A AND B) = A                  [Absorption]
+Step 2: A OR (NOT A AND B)
+      = (A OR NOT A) AND (A OR B)           [Distributive]
+      = 1 AND (A OR B)                      [Complement]
+      = A OR B                              [Identity]
+
+Final result: A OR B
+</pre>
+
+<h3>Worked Example: Build a Logic Circuit from an Expression</h3>
+<p style="text-align:left">To draw a logic circuit diagram for <code>(A AND B) OR (NOT C)</code>:</p>
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 200" style="max-width:600px;width:100%;height:auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a2e">Logic Circuit: (A AND B) OR (NOT C)</text>
+  <!-- NOT gate for C -->
+  <polygon points="110,130 110,165 155,148" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <circle cx="162" cy="148" r="7" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
+  <line x1="60" y1="148" x2="110" y2="148" stroke="#374151" stroke-width="2"/>
+  <text x="50" y="152" text-anchor="end" font-size="12" fill="#374151" font-weight="bold">C</text>
+  <text x="130" y="145" text-anchor="middle" font-size="9" fill="#92400e">NOT</text>
+  <!-- AND gate for A, B -->
+  <path d="M 100 50 L 100 90 L 148 90 A 20 20 0 0 0 148 50 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <line x1="60" y1="63" x2="100" y2="63" stroke="#374151" stroke-width="2"/>
+  <line x1="60" y1="77" x2="100" y2="77" stroke="#374151" stroke-width="2"/>
+  <text x="50" y="67" text-anchor="end" font-size="12" fill="#374151" font-weight="bold">A</text>
+  <text x="50" y="81" text-anchor="end" font-size="12" fill="#374151" font-weight="bold">B</text>
+  <text x="122" y="74" text-anchor="middle" font-size="9" fill="#1e40af">AND</text>
+  <!-- AND output wire -->
+  <line x1="168" y1="70" x2="310" y2="70" stroke="#374151" stroke-width="2"/>
+  <!-- NOT output wire to OR -->
+  <line x1="169" y1="148" x2="310" y2="130" stroke="#374151" stroke-width="2"/>
+  <!-- OR gate -->
+  <path d="M 310 55 Q 345 100 310 145 Q 375 145 400 100 Q 375 55 310 55" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="360" y="104" text-anchor="middle" font-size="9" fill="#166534" font-weight="bold">OR</text>
+  <!-- OR output -->
+  <line x1="400" y1="100" x2="460" y2="100" stroke="#374151" stroke-width="2"/>
+  <text x="475" y="104" font-size="12" fill="#374151" font-weight="bold">Q</text>
+  <!-- Labels -->
+  <text x="300" y="185" text-anchor="middle" font-size="10" fill="#6b7280">Q = (A AND B) OR (NOT C)</text>
+</svg>
+</div>
+<p style="text-align:left">To draw a circuit: start at the inputs (right to left), draw each operation as a gate, connect with wires. The output of the AND gate and the NOT gate both feed into the OR gate, which produces Q.</p>
+
+<div class="exam-tip">For Boolean algebra simplification questions, <strong>show every step</strong> and name the law used at each step &mdash; these are method marks. The most useful laws to memorise for GCSE are: <strong>Complement</strong> (A AND NOT A = 0; A OR NOT A = 1), <strong>Absorption</strong> (A AND (A OR B) = A), <strong>Idempotent</strong> (A OR A = A), <strong>Double negation</strong> (NOT NOT A = A), and <strong>De Morgan's</strong>. When asked to draw a logic circuit: identify the operations in order (inner brackets first), draw gates for each, and connect them left-to-right from inputs to output. Always verify your simplified expression by plugging in test values.</div>
+
 </div>
 </body>
 </html>

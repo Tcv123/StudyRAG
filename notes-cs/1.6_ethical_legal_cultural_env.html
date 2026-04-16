@@ -176,6 +176,36 @@
     <tr><td><strong>Examples</strong></td><td>Linux, Firefox, LibreOffice, Python, VLC, Android (AOSP), WordPress, Apache, MySQL</td><td>Microsoft Windows, Microsoft Office, Adobe Photoshop, macOS, iOS, Final Cut Pro</td></tr>
 </table>
 
+<h3>Types of Software by Availability</h3>
+<table>
+    <tr><th>Type</th><th>Definition</th><th>Source Code?</th><th>Cost</th><th>Modify?</th><th>Example</th></tr>
+    <tr><td><strong>Open Source</strong></td><td>Source code is publicly available; anyone can view, modify, and distribute it (subject to licence terms)</td><td>Yes — publicly available</td><td>Usually free</td><td>Yes</td><td>Linux, Firefox, Python, LibreOffice, VLC</td></tr>
+    <tr><td><strong>Proprietary (Closed Source)</strong></td><td>Source code is kept secret; users receive only the compiled executable; terms of use set by the vendor</td><td>No</td><td>Usually paid (licence fee or subscription)</td><td>No</td><td>Microsoft Windows, Adobe Photoshop, macOS</td></tr>
+    <tr><td><strong>Freeware</strong></td><td>Software that is free to use but the source code is NOT available and modification is not permitted — "free as in beer, not free as in freedom"</td><td>No</td><td>Free to download and use</td><td>No</td><td>Skype (older versions), older versions of Adobe Reader, WinRAR (technically)</td></tr>
+    <tr><td><strong>Shareware</strong></td><td>Software distributed free on a trial basis — either time-limited (expires after 30 days) or feature-limited (full features unlocked after payment)</td><td>No</td><td>Free trial; paid for full version</td><td>No</td><td>WinZip, many antivirus products, older games (shareware episodes)</td></tr>
+</table>
+
+<h3>Open Source Licences</h3>
+<p>Not all open source software is identical — the licence determines what you can and cannot do with it:</p>
+<ul>
+    <li><strong>GPL (GNU General Public Licence)</strong> — "copyleft" licence. You can use, modify, and distribute the software, but any derivative work must also be released under the GPL. Ensures open source remains open source.</li>
+    <li><strong>MIT Licence</strong> — very permissive. You can use, modify, and even include the code in proprietary (closed source) products with minimal conditions. Only requires attribution. Popular in commercial software development.</li>
+    <li><strong>Apache 2.0</strong> — permissive; similar to MIT but also grants an explicit patent licence. Allows use in proprietary products.</li>
+</ul>
+
+<h3>Creative Commons Licensing</h3>
+<p>Creative Commons (CC) licences are used for creative works (images, music, text, video) rather than software. They let creators specify how their work may be used. The licences combine four conditions:</p>
+<table>
+    <tr><th>Symbol</th><th>Code</th><th>Condition</th><th>Meaning</th></tr>
+    <tr><td>BY</td><td>Attribution</td><td>Required in all CC licences</td><td>You must credit the original creator when using or sharing their work</td></tr>
+    <tr><td>SA</td><td>ShareAlike</td><td>Optional add-on</td><td>If you create a derivative work, you must release it under the same CC licence (like GPL for creative works)</td></tr>
+    <tr><td>NC</td><td>NonCommercial</td><td>Optional add-on</td><td>You may not use the work for commercial purposes (selling it or using it to make money)</td></tr>
+    <tr><td>ND</td><td>NoDerivatives</td><td>Optional add-on</td><td>You may share the work but may not modify or create derivative works from it</td></tr>
+</table>
+<p>Examples: <strong>CC BY</strong> = most permissive (credit only). <strong>CC BY-NC-SA</strong> = credit required, no commercial use, derivatives must use same licence. <strong>CC BY-ND</strong> = credit required, no modifications permitted.</p>
+
+<div class="exam-tip">Know the distinction: open source means source code is available and modifiable (under licence); freeware means free to use but source code is NOT available. A common exam trap is to confuse "free" (no cost) with "open source" (access to source code) — they are not the same thing. Always check what the question is actually asking: cost? Access to source code? Right to modify? Right to redistribute?</div>
+
 <h3>Recommending a Licence Type for a Scenario</h3>
 <pre>
 Scenario: A small charity with limited budget needs office software.
@@ -227,6 +257,94 @@ Scenario: A graphic design studio producing professional work.
 </table>
 
 <div class="exam-tip">Know all <strong>three sections of the Computer Misuse Act 1990</strong> with specific examples for each &mdash; this is one of the most frequently examined topics in this unit. Be able to <strong>recommend open source or proprietary software for a given scenario</strong> with clear justification. For impact questions, <strong>always give both sides</strong> (positive AND negative) with specific examples. Name legislation by its <strong>full name and year</strong> &mdash; saying just "the Data Protection Act" without the year loses marks. For ethical questions, structure your answer with clear paragraphs covering different perspectives.</div>
+
+<h2>Stakeholder Analysis</h2>
+
+<div class="definition">
+    A <strong>stakeholder</strong> is any person or group who has an interest in, or is affected by, a technology, system, or policy. In computing exam questions, you are often asked to discuss how a technology or issue affects <strong>different groups of people</strong>. The key skill is showing that the <em>same technology</em> can have <em>very different impacts</em> on different stakeholders.
+</div>
+
+<p>The main stakeholder groups you should be aware of for GCSE Computing:</p>
+<ul>
+    <li><strong>Users</strong> — individuals who directly use the technology (end-users, consumers, members of the public)</li>
+    <li><strong>Developers / Programmers</strong> — the people who design, build, and maintain the system</li>
+    <li><strong>Businesses / Organisations</strong> — companies that deploy or profit from the technology</li>
+    <li><strong>Government / Regulators</strong> — bodies that set laws and enforce rules (e.g., ICO, OFCOM, Parliament)</li>
+    <li><strong>Society as a whole</strong> — the broader public; communities; future generations</li>
+</ul>
+
+<h3>Stakeholder Analysis Example: Social Media Platform with Facial Recognition</h3>
+<table>
+    <tr><th>Stakeholder</th><th>Potential Benefits</th><th>Potential Harms / Concerns</th></tr>
+    <tr><td><strong>Users (individuals)</strong></td><td>Convenient auto-tagging in photos; faster account recovery; accessibility features (e.g., describing photos for visually impaired users)</td><td>Privacy invasion — facial data collected without full informed consent; risk of data breach exposing biometric data; potential for misidentification; permanent biometric data cannot be changed if stolen</td></tr>
+    <tr><td><strong>Developers</strong></td><td>Opportunity to build innovative features; high demand for AI/ML expertise; commercial opportunity; technical challenge and career development</td><td>Ethical responsibility for harmful uses of their technology; legal liability if system causes harm or breaches data protection law; pressure to build features management wants even if ethically questionable</td></tr>
+    <tr><td><strong>Businesses (the platform)</strong></td><td>Enhanced user experience drives engagement; richer data about users improves targeted advertising revenue; competitive advantage over rivals without the feature</td><td>Regulatory risk — GDPR/UK GDPR requires explicit consent for biometric data; risk of large fines from ICO; reputational damage if facial recognition misuse is publicised; cost of implementing system correctly</td></tr>
+    <tr><td><strong>Government / Regulators</strong></td><td>Potential law enforcement benefits (identifying criminals); ability to monitor use and regulate if harmful; opportunity to shape responsible AI policy</td><td>Must balance security benefits against civil liberties; enforcing compliance across global platforms is difficult; risk of authoritarian misuse of the technology if poorly regulated</td></tr>
+    <tr><td><strong>Society</strong></td><td>Can be used to find missing persons; increased security in some contexts; potential accessibility benefits at scale</td><td>Normalises mass surveillance; chilling effect on free expression (people behave differently if they know they are always identified); disproportionate false-positive rates for minority groups (algorithmic bias)</td></tr>
+</table>
+
+<div class="exam-tip">Always name at least 3–4 stakeholders and explain how the SAME technology affects them <em>differently</em>. Do not just say "it is bad for everyone" or "it is good for everyone" — that misses the point. The highest-mark answers acknowledge genuine trade-offs: a feature that benefits a business (increased engagement, ad revenue) may simultaneously harm the user (privacy loss) and concern regulators (compliance risk). Show you understand that technology creates winners and losers.</div>
+
+<h3>Stakeholder Analysis Example: Automation in a Supermarket (Self-Checkout)</h3>
+<table>
+    <tr><th>Stakeholder</th><th>Impact</th></tr>
+    <tr><td><strong>Customers (users)</strong></td><td>Faster checkout for small purchases; available 24/7; some find it difficult to use (older customers, those with disabilities, those with large trolleys)</td></tr>
+    <tr><td><strong>Checkout workers</strong></td><td>Job losses and reduced hours as machines replace roles; remaining workers may be redeployed to assist self-checkout bays, but often on lower wages; deskilling of workforce</td></tr>
+    <tr><td><strong>Supermarket (business)</strong></td><td>Reduced long-term labour costs; higher throughput during peak times; significant upfront capital investment in machines; liability for errors</td></tr>
+    <tr><td><strong>Government</strong></td><td>Reduced income tax and National Insurance revenue from lost jobs; potential increased social security spending; incentive to retrain displaced workers</td></tr>
+    <tr><td><strong>Society</strong></td><td>Reduced employment opportunities in retail (a common entry-level sector); town centre decline if combined with online shopping growth; concern about long-term employment levels</td></tr>
+</table>
+
+<h2>Cultural Issues — Digital Divide and Automation</h2>
+
+<h3>The Digital Divide — In Depth</h3>
+<div class="definition">
+    The <strong>digital divide</strong> is the gap between those who have meaningful access to digital technology (devices, reliable internet, digital literacy) and those who do not. It is not a single divide but a series of overlapping inequalities affecting different groups in different ways.
+</div>
+
+<p>The digital divide has multiple dimensions:</p>
+<table>
+    <tr><th>Dimension</th><th>Who is Affected</th><th>Specific Impact</th></tr>
+    <tr><td><strong>Economic</strong></td><td>Low-income households, people in poverty</td><td>Cannot afford devices (a smartphone or laptop can cost hundreds of pounds), broadband subscriptions (£30–£60/month), or mobile data plans. Children in these households struggled most when schools moved online during COVID-19 lockdowns.</td></tr>
+    <tr><td><strong>Geographic</strong></td><td>People in rural and remote areas</td><td>Broadband infrastructure (especially fibre) has been built in profitable urban areas first. Rural areas often have slow ADSL connections or rely on expensive satellite broadband. Poor mobile signal further limits access. This affects access to online services, remote working, and telehealth.</td></tr>
+    <tr><td><strong>Age</strong></td><td>Older adults, elderly people</td><td>Many older people lack digital literacy — they did not grow up with computers and may find technology confusing, intimidating, or inaccessible. Loss of physical bank branches and government services moving online can exclude them from essential services.</td></tr>
+    <tr><td><strong>Disability</strong></td><td>People with visual, hearing, motor, or cognitive impairments</td><td>Poorly designed websites and apps create barriers for users who rely on screen readers, voice control, or alternative input devices. WCAG (Web Content Accessibility Guidelines) set standards for accessible web design — but many sites do not comply.</td></tr>
+    <tr><td><strong>Language</strong></td><td>Non-English speakers</td><td>Much of the internet's most valuable content (educational resources, technical documentation, business tools) is in English. Non-English speakers may find fewer resources, less support, and greater difficulty navigating online systems.</td></tr>
+    <tr><td><strong>Global (North-South divide)</strong></td><td>People in developing nations</td><td>Internet penetration in some sub-Saharan African nations remains below 30%, compared to 90%+ in Western Europe. Lack of infrastructure, high device costs relative to incomes, and limited electricity access all contribute.</td></tr>
+</table>
+
+<h3>Consequences of the Digital Divide</h3>
+<ul>
+    <li><strong>Exclusion from services</strong> — banking, government benefits, job applications, healthcare appointments, and education are increasingly online-only. Those without access cannot participate on equal terms.</li>
+    <li><strong>Widening inequality</strong> — those with good digital access can upskill, work remotely, access better prices, and participate in the digital economy. Those without are left further behind, deepening existing social and economic inequality.</li>
+    <li><strong>Educational disadvantage</strong> — students without home internet or devices cannot complete homework, access online resources, or participate in remote learning, affecting academic outcomes.</li>
+    <li><strong>Social isolation</strong> — particularly for elderly people, lack of digital access cuts them off from communication (video calls with family), community resources, and social support networks that have moved online.</li>
+</ul>
+
+<h3>Mitigations — Addressing the Digital Divide</h3>
+<ul>
+    <li><strong>Government broadband investment</strong> — the UK Government's Project Gigabit aims to bring gigabit-capable broadband to at least 85% of the UK by 2025, prioritising rural areas that the market will not reach commercially.</li>
+    <li><strong>Digital skills training</strong> — free courses (e.g., delivered by libraries, adult education centres, charities like Age UK's digital inclusion programmes) help older and less confident users develop essential digital skills.</li>
+    <li><strong>Device loan schemes</strong> — some schools, councils, and charities loan devices to students and families who cannot afford their own.</li>
+    <li><strong>Accessibility standards</strong> — WCAG (Web Content Accessibility Guidelines) provide a framework for making websites usable by people with disabilities. Public sector websites in the UK are legally required to meet WCAG 2.1 AA standard.</li>
+    <li><strong>Low-cost tariffs</strong> — some ISPs offer social tariffs (discounted broadband for households receiving certain benefits), reducing the cost barrier.</li>
+</ul>
+
+<h3>Impact of Automation and AI on Employment</h3>
+<p>Advances in robotics, AI, and software are transforming the labour market. The impact is uneven across sectors and skill levels:</p>
+
+<table>
+    <tr><th>Aspect</th><th>Detail</th></tr>
+    <tr><td><strong>Jobs at highest risk of automation</strong></td><td>Routine, repetitive, and rule-based tasks are most easily automated. Examples: manufacturing assembly (industrial robots), data entry, basic customer service (chatbots), toll booth operation, supermarket checkout, some aspects of accounting and legal research, radiological image analysis.</td></tr>
+    <tr><td><strong>New jobs created</strong></td><td>New technology industries create roles that did not previously exist: AI/ML engineers, data scientists, cybersecurity analysts, cloud infrastructure engineers, drone operators, electric vehicle technicians, social media managers, app developers, robot maintenance technicians. Historically, technology has created more jobs than it has destroyed — but the transition is difficult.</td></tr>
+    <tr><td><strong>Retraining challenges</strong></td><td>Workers displaced from routine jobs often lack the qualifications and skills for new technical roles. Retraining takes time and money. Older workers may struggle to retrain for very different careers. The burden of retraining typically falls on individuals rather than employers or the state.</td></tr>
+    <tr><td><strong>Income inequality</strong></td><td>Benefits of automation (lower costs, higher productivity) accrue mainly to business owners and shareholders rather than workers. Workers in automated sectors face wage stagnation or job loss while profits increase. This can widen the gap between rich and poor.</td></tr>
+    <tr><td><strong>Changing nature of work</strong></td><td>Growth of the gig economy (Uber, Deliveroo, freelance platforms) — flexible but insecure work without employment rights, pensions, or sick pay. Automation may simultaneously create gig-economy demand while destroying stable employment.</td></tr>
+</table>
+
+<p><strong>Balanced perspective:</strong> Automation has historically raised living standards overall — industrial automation created prosperity that manual labour could not have achieved. But the transition period causes real hardship for individuals and communities. The question is not whether automation is good or bad, but how the benefits are distributed and how displaced workers are supported through the transition.</p>
+
+<div class="exam-tip">For digital divide questions, always address at least three different types of divide (economic, geographic, age are the safest three) with specific consequences for each. Do not just list the types — explain the real-world impact (e.g., "elderly people without internet access cannot book GP appointments online, which has moved away from phone booking in many practices"). For automation and employment, always present both sides: efficiency and new job creation on one side; job losses, retraining costs, and inequality on the other. The strongest answers acknowledge that both are true simultaneously.</div>
 
 </div>
 </body>
