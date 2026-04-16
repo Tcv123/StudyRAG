@@ -427,7 +427,8 @@
     .day-done  { background: var(--amber-bg);  border: 1px solid var(--amber-border); color: var(--amber-text); }
     .day-today { background: var(--amber);      color: #fff; }
     .day-done  { background: var(--green);      color: #fff; }
-    .day-empty { background: var(--surface2);   border: 1px solid var(--border);       color: var(--muted2); }
+    .day-empty  { background: var(--surface2);   border: 1px solid var(--border);       color: var(--muted2); }
+    .day-missed { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); color: #EF4444; }
 
     /* ── CTA ── */
     .cta-card { background: linear-gradient(135deg, rgba(91,173,207,0.12), rgba(61,149,188,0.06)); border: 1px solid rgba(91,173,207,0.25); border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; }
@@ -1686,43 +1687,96 @@ function renderRecentActivity(topicRows, medals, profile) {
 
   const ragLabel = { green: 'Green', amber: 'Amber', red: 'Red' };
   const ragColor = { green: 'var(--green)', amber: 'var(--amber)', red: 'var(--red)' };
-  const events = [];
+  const ragIcon  = { green: '🟢', amber: '🟡', red: '🔴' };
+  const events   = [];
 
-  // Diagnostic completions
+  // ── Diagnostic completions ──
   topicRows.forEach(t => {
     if (!t.updated_at) return;
-    const rag = t.rag_status || 'amber';
-    const topicName = (t.topic || '').replace(/_/g, ' ').replace(/^\d+\.\d+\s*/, '');
+    const rag       = t.rag_status || 'amber';
+    const topicId   = (t.topic || '');
+    const topicName = topicId.replace(/_/g, ' ');
+    const subject   = t.subject || '';
+    const board     = t.exam_board || '';
     events.push({
-      time: new Date(t.updated_at),
+      time:  new Date(t.updated_at),
       color: ragColor[rag] || 'var(--accent)',
-      text: `Diagnostic completed — <strong>${topicName}</strong> rated <span style="color:${ragColor[rag]};font-weight:600;">${ragLabel[rag] || rag}</span>`
+      icon:  ragIcon[rag] || '⚪',
+      text:  `Diagnostic — <strong>${topicName}</strong>`,
+      sub:   `${subject} · ${board} · Rated <span style="color:${ragColor[rag]};font-weight:600;">${ragLabel[rag] || rag}</span>`
     });
   });
 
-  // Medals earned
+  // ── Medals earned ──
   const medalMap = {};
   ALL_MEDALS.forEach(m => { medalMap[m.id] = m; });
   medals.forEach(m => {
     const def = medalMap[m.medal_id];
     if (!def) return;
     events.push({
-      time: m.created_at ? new Date(m.created_at) : new Date(0),
-      color: 'var(--amber)',
-      text: `Medal earned — ${def.icon} <strong>${def.name}</strong>`
+      time:  m.created_at ? new Date(m.created_at) : new Date(0),
+      color: '#F59E0B',
+      icon:  def.icon,
+      text:  `Medal unlocked — <strong>${def.name}</strong>`,
+      sub:   def.desc
     });
   });
 
-  // Account created
-  if (profile?.created_at) {
+  // ── Streak events derived from profile ──
+  const streak     = profile?.streak_count || 0;
+  const lastDate   = profile?.last_study_date;
+  const today      = new Date(); today.setHours(0,0,0,0);
+  let last = null;
+  if (lastDate) {
+    const p = String(lastDate).split(/[-T]/);
+    last = new Date(+p[0], +p[1]-1, +p[2]||1);
+    last.setHours(0,0,0,0);
+  }
+  const daysSinceLast = last ? Math.floor((today - last) / 86400000) : 999;
+  const streakBroken  = daysSinceLast > 1;
+
+  if (streak > 0 && last) {
+    if (!streakBroken) {
+      events.push({
+        time:  last,
+        color: '#F59E0B',
+        icon:  '🔥',
+        text:  `Streak extended — <strong>${streak} day${streak > 1 ? 's' : ''} in a row</strong>`,
+        sub:   'Keep it up! Study again tomorrow to continue your streak.'
+      });
+    }
+  }
+  if (streakBroken && last && streak > 0) {
+    const brokenDate = new Date(last.getTime() + 2 * 86400000);
     events.push({
-      time: new Date(profile.created_at),
-      color: 'var(--accent)',
-      text: 'Account created — welcome to RAG Learning!'
+      time:  brokenDate,
+      color: '#EF4444',
+      icon:  '💔',
+      text:  `Streak lost — was <strong>${streak} day${streak > 1 ? 's' : ''}</strong>`,
+      sub:   'Your streak was broken. Start a new one by studying today!'
+    });
+  }
+  if (streak >= 3 && !streakBroken) {
+    events.push({
+      time:  new Date(last.getTime() - (streak - 1) * 86400000),
+      color: '#F59E0B',
+      icon:  '🔥',
+      text:  `Streak started — <strong>${streak}-day streak</strong> begun`,
+      sub:   'You started a new study streak!'
     });
   }
 
-  // Sort newest first
+  // ── Account created ──
+  if (profile?.created_at) {
+    events.push({
+      time:  new Date(profile.created_at),
+      color: 'var(--accent)',
+      icon:  '👋',
+      text:  'Joined RAG Learning',
+      sub:   'Welcome! Your journey starts here.'
+    });
+  }
+
   events.sort((a, b) => b.time - a.time);
 
   if (events.length === 0) {
@@ -1733,32 +1787,32 @@ function renderRecentActivity(topicRows, medals, profile) {
   const now = new Date();
   function timeAgo(date) {
     const diff = Math.floor((now - date) / 1000);
-    if (diff < 60) return 'Just now';
-    if (diff < 3600) return `${Math.floor(diff / 60)} min ago`;
+    if (diff < 60)    return 'Just now';
+    if (diff < 3600)  return `${Math.floor(diff / 60)}m ago`;
     if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
-    const days = Math.floor(diff / 86400);
-    if (days === 1) return 'Yesterday';
-    if (days < 7) return `${days} days ago`;
+    const d = Math.floor(diff / 86400);
+    if (d === 1) return 'Yesterday';
+    if (d < 7)   return `${d} days ago`;
     return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
   }
 
   function renderItems(list) {
     return list.map(e => `
       <div class="activity-item">
-        <div class="activity-dot" style="background:${e.color};"></div>
-        <div>
+        <div class="activity-dot" style="background:${e.color};flex-shrink:0;"></div>
+        <div style="flex:1;min-width:0;">
           <div class="activity-text">${e.text}</div>
-          <div class="activity-time">${timeAgo(e.time)}</div>
+          ${e.sub ? `<div class="activity-time" style="margin-top:2px;">${e.sub}</div>` : ''}
+          <div class="activity-time" style="margin-top:2px;color:var(--muted2);">${timeAgo(e.time)}</div>
         </div>
-      </div>
-    `).join('');
+      </div>`).join('');
   }
 
   let expanded = false;
   function render() {
-    const shown = expanded ? events : events.slice(0, 5);
-    const btn = events.length > 5
-      ? `<button onclick="document.querySelector('#activityList')._toggle()" style="background:none;border:none;color:var(--accent);font-size:12px;font-weight:600;cursor:pointer;padding:8px 0 0;display:block;width:100%;">${expanded ? 'Show less' : `View all (${events.length})`}</button>`
+    const shown = expanded ? events : events.slice(0, 6);
+    const btn = events.length > 6
+      ? `<button onclick="document.querySelector('#activityList')._toggle()" style="background:none;border:none;color:var(--accent);font-size:12px;font-weight:600;cursor:pointer;padding:8px 0 0;display:block;width:100%;">${expanded ? 'Show less ▴' : `View all (${events.length}) ▾`}</button>`
       : '';
     container.innerHTML = renderItems(shown) + btn;
   }
@@ -1813,7 +1867,10 @@ function renderStreak(count, lastDate) {
     const label   = days[d.getDay()];
     const isToday = d.toDateString() === today.toDateString();
     const studied = studiedDates.has(d.toDateString());
-    const cls = studied ? 'day-dot day-done' : isToday ? 'day-dot day-today' : 'day-dot day-empty';
+    // A day is "missed" if: it's in the past (not today), streak was active at that point, and not studied
+    const isPast  = d < today;
+    const missed  = isPast && !studied && !isToday && last && d >= new Date(last.getTime() - validCount * 86400000);
+    const cls = studied ? 'day-dot day-done' : isToday ? 'day-dot day-today' : missed ? 'day-dot day-missed' : 'day-dot day-empty';
     return `<div class="${cls}">${label}</div>`;
   }).join('');
 
