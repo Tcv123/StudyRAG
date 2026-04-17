@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CP1.5: Volumes of Revolution — Edexcel Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-edexcel-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Further Maths</a>
+</div>
+
+<h1>CP1.5: Volumes of Revolution</h1>
+
+<h2>1. The Core Idea</h2>
+
+<p>When a region in the \(xy\)-plane is rotated through \(2\pi\) (360°) about the \(x\)-axis or \(y\)-axis, it sweeps out a solid of revolution. The volume of this solid can be found by integration.</p>
+
+<h3>Intuitive Derivation (Disc Method)</h3>
+<p>Imagine slicing the solid perpendicular to the axis of rotation. Each thin slice is approximately a disc (circle) with:</p>
+<ul>
+  <li>Radius \(y\) (when rotating about the \(x\)-axis)</li>
+  <li>Thickness \(\delta x\)</li>
+  <li>Volume \(\approx \pi y^2 \, \delta x\)</li>
+</ul>
+<p>Summing all discs and taking the limit gives the integral formula.</p>
+
+<!-- SVG: 3D rotation diagram -->
+<svg viewBox="0 0 400 200" width="400" height="200" style="display:block;margin:20px auto;border:1px solid #e2e8f0;border-radius:8px;background:#fafcff;">
+  <!-- x-axis -->
+  <line x1="30" y1="100" x2="370" y2="100" stroke="#888" stroke-width="1.5" marker-end="url(#varr)"/>
+  <defs>
+    <marker id="varr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#888"/></marker>
+  </defs>
+  <text x="374" y="104" font-size="12" fill="#888">x</text>
+  <!-- Curve y = f(x) from x=60 to x=300 -->
+  <path d="M 60,100 Q 120,30 180,55 Q 240,75 300,40" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+  <!-- Mirror: reflected curve below x-axis -->
+  <path d="M 60,100 Q 120,170 180,145 Q 240,125 300,160" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+  <!-- Ellipse to represent the 3D opening -->
+  <ellipse cx="300" cy="100" rx="8" ry="60" stroke="#e11d48" stroke-width="1.5" fill="#fee2e2" fill-opacity="0.4" stroke-dasharray="5,3"/>
+  <!-- Disc at some interior x -->
+  <ellipse cx="180" cy="100" rx="5" ry="45" stroke="#16a34a" stroke-width="1.5" fill="#dcfce7" fill-opacity="0.5"/>
+  <!-- Labels -->
+  <text x="65" y="93" font-size="11" fill="#555">a</text>
+  <text x="296" y="93" font-size="11" fill="#555">b</text>
+  <line x1="65" y1="100" x2="65" y2="100" stroke="#555" stroke-width="1"/>
+  <text x="185" y="65" font-size="11" fill="#16a34a">disc</text>
+  <text x="310" y="104" font-size="11" fill="#e11d48">solid</text>
+  <text x="140" y="20" font-size="12" fill="#2563eb">y = f(x) rotated about x-axis</text>
+</svg>
+
+<h2>2. Volume About the x-axis</h2>
+
+<div class="definition">
+  <strong>Volume of revolution about the x-axis:</strong>
+  $$V = \pi \int_a^b y^2 \, dx$$
+  where \(y = f(x)\) and the region is bounded by \(x = a\) and \(x = b\).
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> The formula involves \(y^2\), not \(y\). Never forget the \(\pi\) factor and the squaring. Also, make sure your limits are correct — the formula integrates with respect to \(x\), so the limits are \(x\)-values.
+</div>
+
+<div class="example">
+  <strong>Example 1:</strong> Find the volume generated when \(y = x^2 + 1\) is rotated \(360°\) about the \(x\)-axis between \(x=0\) and \(x=2\).<br><br>
+  $$V = \pi\int_0^2 (x^2+1)^2 \, dx = \pi\int_0^2 (x^4 + 2x^2 + 1) \, dx$$
+  $$= \pi\left[\frac{x^5}{5} + \frac{2x^3}{3} + x\right]_0^2$$
+  $$= \pi\left[\frac{32}{5} + \frac{16}{3} + 2 - 0\right]$$
+  $$= \pi\left[\frac{96}{15} + \frac{80}{15} + \frac{30}{15}\right] = \frac{206\pi}{15}$$
+</div>
+
+<div class="example">
+  <strong>Example 2 (Exponential):</strong> Find the volume generated when \(y = e^x\) is rotated about the \(x\)-axis between \(x=0\) and \(x=1\).<br><br>
+  $$V = \pi\int_0^1 e^{2x} \, dx = \pi\left[\frac{e^{2x}}{2}\right]_0^1 = \pi\left[\frac{e^2}{2} - \frac{1}{2}\right] = \frac{\pi(e^2-1)}{2}$$
+</div>
+
+<div class="example">
+  <strong>Example 3 (Trigonometric):</strong> Find the volume generated when \(y = \sin x\) is rotated about the \(x\)-axis between \(x=0\) and \(x=\pi\).<br><br>
+  $$V = \pi\int_0^\pi \sin^2 x \, dx$$
+  Use the identity: \(\sin^2 x = \frac{1-\cos 2x}{2}\)<br>
+  $$= \pi\int_0^\pi \frac{1-\cos 2x}{2} \, dx = \frac{\pi}{2}\left[x - \frac{\sin 2x}{2}\right]_0^\pi$$
+  $$= \frac{\pi}{2}\left[\pi - 0 - 0 + 0\right] = \frac{\pi^2}{2}$$
+</div>
+
+<h2>3. Volume About the y-axis</h2>
+
+<div class="definition">
+  <strong>Volume of revolution about the y-axis:</strong>
+  $$V = \pi \int_c^d x^2 \, dy$$
+  where \(x = g(y)\) and the region is bounded by \(y = c\) and \(y = d\). You need \(x\) expressed as a function of \(y\).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the volume generated when \(y = x^3\) is rotated \(360°\) about the \(y\)-axis between \(y=0\) and \(y=8\).<br><br>
+  Rearrange: \(x = y^{1/3}\), so \(x^2 = y^{2/3}\).<br><br>
+  $$V = \pi\int_0^8 y^{2/3} \, dy = \pi\left[\frac{y^{5/3}}{5/3}\right]_0^8 = \pi\left[\frac{3y^{5/3}}{5}\right]_0^8$$
+  $$= \pi\left[\frac{3 \cdot 32}{5} - 0\right] = \frac{96\pi}{5}$$
+</div>
+
+<h2>4. Region Between Two Curves</h2>
+
+<p>When the region between two curves \(y = f(x)\) (outer) and \(y = g(x)\) (inner) is rotated about the \(x\)-axis:</p>
+
+<div class="definition">
+  $$V = \pi\int_a^b \left[f(x)^2 - g(x)^2\right] dx$$
+  <em>Washer method</em>: subtract the volume of the inner solid (hole) from the outer solid.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> The washer formula is \(\pi\int(y_{\text{outer}}^2 - y_{\text{inner}}^2)\,dx\), NOT \(\pi\int(y_{\text{outer}} - y_{\text{inner}})^2\,dx\). This is one of the most common errors in this topic.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> The region bounded by \(y = \sqrt{x}\) and \(y = x\) (for \(0 \leq x \leq 1\)) is rotated \(360°\) about the \(x\)-axis. Find the volume.<br><br>
+  For \(0 \leq x \leq 1\): \(\sqrt{x} \geq x\), so outer curve is \(y = \sqrt{x}\).<br><br>
+  $$V = \pi\int_0^1 \left[(\sqrt{x})^2 - x^2\right]dx = \pi\int_0^1(x - x^2)\,dx$$
+  $$= \pi\left[\frac{x^2}{2} - \frac{x^3}{3}\right]_0^1 = \pi\left[\frac{1}{2} - \frac{1}{3}\right] = \frac{\pi}{6}$$
+</div>
+
+<div class="example">
+  <strong>Example (bounded region, not from 0):</strong> Find the volume when the region bounded by \(y = 4 - x^2\) and \(y = 3\) (for \(x \geq 0\)) is rotated about the \(x\)-axis.<br><br>
+  Find intersection: \(4 - x^2 = 3 \Rightarrow x = 1\). Region is for \(0 \leq x \leq 1\).<br>
+  Outer curve: \(y = 4 - x^2\); inner: \(y = 3\)<br><br>
+  $$V = \pi\int_0^1\left[(4-x^2)^2 - 9\right]dx = \pi\int_0^1(16 - 8x^2 + x^4 - 9)\,dx$$
+  $$= \pi\int_0^1(7 - 8x^2 + x^4)\,dx = \pi\left[7x - \frac{8x^3}{3} + \frac{x^5}{5}\right]_0^1$$
+  $$= \pi\left[7 - \frac{8}{3} + \frac{1}{5}\right] = \pi\left[\frac{105}{15} - \frac{40}{15} + \frac{3}{15}\right] = \frac{68\pi}{15}$$
+</div>
+
+<h2>5. Parametric Form</h2>
+
+<p>If the curve is given parametrically as \(x = f(t), y = g(t)\), use the chain rule:</p>
+<div class="equation">
+  $$V = \pi\int y^2 \, dx = \pi\int_{t_1}^{t_2} [g(t)]^2 \cdot f'(t) \, dt$$
+</div>
+<p>Be careful with the direction of integration — if \(x\) is decreasing as \(t\) increases, the integral will be negative. Ensure you account for this by checking the limits.</p>
+
+<h2>6. Summary Table</h2>
+
+<table>
+  <tr><th>Rotation axis</th><th>Formula</th><th>Variable of integration</th></tr>
+  <tr><td>\(x\)-axis</td><td>\(V = \pi\displaystyle\int_a^b y^2 \, dx\)</td><td>\(x\); limits are \(x\)-values</td></tr>
+  <tr><td>\(y\)-axis</td><td>\(V = \pi\displaystyle\int_c^d x^2 \, dy\)</td><td>\(y\); limits are \(y\)-values; need \(x = g(y)\)</td></tr>
+  <tr><td>Between two curves (x-axis)</td><td>\(V = \pi\displaystyle\int_a^b (y_{\text{out}}^2 - y_{\text{in}}^2) \, dx\)</td><td>Subtract inner from outer</td></tr>
+  <tr><td>Parametric (x-axis)</td><td>\(V = \pi\displaystyle\int_{t_1}^{t_2} y^2 \frac{dx}{dt} \, dt\)</td><td>Change limits to \(t\)-values</td></tr>
+</table>
+
+<h2>7. Common Errors and Exam Tips</h2>
+
+<div class="exam-tip">
+  <strong>Error 1:</strong> Writing \(V = \pi\int y\,dx\) instead of \(V = \pi\int y^2\,dx\). Always square the function.<br><br>
+  <strong>Error 2:</strong> For the between-curves formula: \((y_1 - y_2)^2 \neq y_1^2 - y_2^2\). Use the correct washer formula.<br><br>
+  <strong>Error 3:</strong> Forgetting to rearrange \(y = f(x)\) into \(x = g(y)\) when rotating about the \(y\)-axis.<br><br>
+  <strong>Error 4:</strong> Using the wrong limits. When rotating about the \(x\)-axis, limits are \(x\)-values. When rotating about \(y\)-axis, limits are \(y\)-values.<br><br>
+  <strong>Mark scheme note:</strong> Give your answer as an exact multiple of \(\pi\) unless told otherwise (e.g., \(\frac{68\pi}{15}\), not \(14.2\)).
+</div>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

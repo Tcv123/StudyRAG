@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CP2.7: Methods in Differential Equations — Edexcel Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  .warning { background: #fef2f2; border-left: 4px solid #dc2626; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-edexcel-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Further Maths</a>
+</div>
+
+<h1>CP2.7 — Methods in Differential Equations</h1>
+
+<h2>1. First-Order Linear ODEs — Integrating Factor Method</h2>
+
+<div class="definition">
+  A first-order linear ODE has the form:
+  $$\frac{dy}{dx} + P(x)\,y = Q(x)$$
+  The <strong>integrating factor</strong> is \(\mu(x) = e^{\int P(x)\,dx}\).
+  <br>
+  Multiplying both sides by \(\mu\): \(\dfrac{d}{dx}(\mu y) = \mu Q(x)\).
+  <br>
+  Integrate both sides to find \(y\).
+</div>
+
+<h3>1.1 Method Summary</h3>
+<ol>
+  <li>Write the ODE in standard form: \(\dfrac{dy}{dx} + P(x)y = Q(x)\)</li>
+  <li>Compute \(\mu = e^{\int P\,dx}\) (ignore the constant of integration here)</li>
+  <li>Multiply both sides by \(\mu\): \(\dfrac{d}{dx}(\mu y) = \mu Q\)</li>
+  <li>Integrate both sides: \(\mu y = \displaystyle\int \mu Q\,dx + C\)</li>
+  <li>Solve for \(y\)</li>
+</ol>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(\dfrac{dy}{dx} + \dfrac{2y}{x} = x^3\).
+  <br><br>
+  \(P(x) = 2/x\), so \(\mu = e^{\int 2/x\,dx} = e^{2\ln x} = x^2\).
+  <br>
+  Multiply: \(\dfrac{d}{dx}(x^2 y) = x^5\).
+  <br>
+  Integrate: \(x^2 y = \dfrac{x^6}{6} + C\).
+  <br>
+  Solution: \(y = \dfrac{x^4}{6} + Cx^{-2}\).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(\dfrac{dy}{dx} - 3y = e^{4x}\) with \(y(0) = 1\).
+  <br><br>
+  \(P = -3\), \(\mu = e^{-3x}\).
+  <br>
+  \(\dfrac{d}{dx}(e^{-3x}y) = e^x\).
+  <br>
+  \(e^{-3x}y = e^x + C\), so \(y = e^{4x} + Ce^{3x}\).
+  <br>
+  Apply \(y(0) = 1\): \(1 = 1 + C \Rightarrow C = 0\). Solution: \(y = e^{4x}\).
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Only omit the constant when computing \(\mu\). Always reintroduce \(+C\) when integrating the right-hand side.
+</div>
+
+<h2>2. Second-Order Homogeneous ODEs</h2>
+
+<div class="definition">
+  The general form is \(a\dfrac{d^2y}{dx^2} + b\dfrac{dy}{dx} + cy = 0\).
+  <br>
+  Try \(y = e^{rx}\). The <strong>auxiliary (characteristic) equation</strong> is:
+  $$ar^2 + br + c = 0$$
+</div>
+
+<h3>2.1 Three Cases</h3>
+
+<table>
+  <thead><tr><th>Discriminant \(b^2-4ac\)</th><th>Roots</th><th>General Solution</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>\(> 0\) (two distinct real roots \(\alpha, \beta\))</td>
+      <td>\(r = \alpha, \beta\)</td>
+      <td>\(y = Ae^{\alpha x} + Be^{\beta x}\)</td>
+    </tr>
+    <tr>
+      <td>\(= 0\) (repeated real root \(\alpha\))</td>
+      <td>\(r = \alpha\) (twice)</td>
+      <td>\(y = (A+Bx)e^{\alpha x}\)</td>
+    </tr>
+    <tr>
+      <td>\(< 0\) (complex roots \(\alpha \pm \beta i\))</td>
+      <td>\(r = \alpha \pm \beta i\)</td>
+      <td>\(y = e^{\alpha x}(A\cos\beta x + B\sin\beta x)\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="example">
+  <strong>Case 1 — Distinct real roots:</strong> Solve \(y'' - 5y' + 6y = 0\).
+  <br><br>
+  AE: \(r^2-5r+6=0 \Rightarrow (r-2)(r-3)=0 \Rightarrow r=2, 3\).
+  <br>
+  General solution: \(y = Ae^{2x}+Be^{3x}\).
+</div>
+
+<div class="example">
+  <strong>Case 2 — Repeated root:</strong> Solve \(y'' - 4y' + 4y = 0\).
+  <br><br>
+  AE: \(r^2-4r+4=0 \Rightarrow (r-2)^2=0 \Rightarrow r=2\) (repeated).
+  <br>
+  General solution: \(y = (A+Bx)e^{2x}\).
+</div>
+
+<div class="example">
+  <strong>Case 3 — Complex roots:</strong> Solve \(y'' - 4y' + 13y = 0\).
+  <br><br>
+  AE: \(r^2-4r+13=0 \Rightarrow r = \dfrac{4\pm\sqrt{16-52}}{2} = \dfrac{4\pm\sqrt{-36}}{2} = 2\pm 3i\).
+  <br>
+  \(\alpha = 2, \beta = 3\).
+  <br>
+  General solution: \(y = e^{2x}(A\cos 3x + B\sin 3x)\).
+</div>
+
+<h2>3. Second-Order Non-Homogeneous ODEs</h2>
+
+<div class="definition">
+  $$a\frac{d^2y}{dx^2}+b\frac{dy}{dx}+cy = f(x)$$
+  <strong>General solution = Complementary function (CF) + Particular integral (PI)</strong>
+  <br>
+  The CF is the general solution of the homogeneous equation (RHS = 0).
+  <br>
+  The PI is any specific solution of the full equation.
+</div>
+
+<h3>3.1 Finding Particular Integrals — Trial Function Table</h3>
+
+<table>
+  <thead><tr><th>Form of \(f(x)\)</th><th>Trial PI</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>\(k\) (constant)</td><td>\(y_p = a\)</td><td>Constant</td></tr>
+    <tr><td>\(kx + m\) (linear)</td><td>\(y_p = ax + b\)</td><td>Linear polynomial</td></tr>
+    <tr><td>\(kx^2+mx+n\)</td><td>\(y_p = ax^2+bx+c\)</td><td>Match degree</td></tr>
+    <tr><td>\(ke^{px}\)</td><td>\(y_p = ae^{px}\)</td><td>Unless \(p\) is a root of AE</td></tr>
+    <tr><td>\(k\cos px\) or \(k\sin px\)</td><td>\(y_p = a\cos px + b\sin px\)</td><td>Include both sin and cos</td></tr>
+    <tr><td>\(ke^{px}\cos qx\)</td><td>\(y_p = e^{px}(a\cos qx + b\sin qx)\)</td><td>Modulated oscillation</td></tr>
+  </tbody>
+</table>
+
+<div class="warning">
+  <strong>Resonance (failure) case:</strong> If the trial PI duplicates a term in the CF, multiply the trial by \(x\) (or \(x^2\) if still a duplicate).
+</div>
+
+<h3>3.2 Worked Examples</h3>
+
+<div class="example">
+  <strong>Example — polynomial RHS:</strong> Solve \(y''-3y'+2y = 4x\).
+  <br><br>
+  CF: AE \(r^2-3r+2=0 \Rightarrow (r-1)(r-2)=0\). CF: \(y_c = Ae^x + Be^{2x}\).
+  <br>
+  PI: Try \(y_p = ax+b\). Then \(y_p'' = 0\), \(y_p' = a\).
+  <br>
+  Substitute: \(0-3a+2(ax+b) = 4x \Rightarrow 2ax + (2b-3a) = 4x+0\).
+  <br>
+  Equate: \(2a = 4 \Rightarrow a = 2\), and \(2b-3a = 0 \Rightarrow b = 3\).
+  <br>
+  PI: \(y_p = 2x+3\).
+  <br>
+  General solution: \(y = Ae^x+Be^{2x}+2x+3\).
+</div>
+
+<div class="example">
+  <strong>Example — exponential RHS:</strong> Solve \(y''+y'-2y = 3e^{3x}\).
+  <br><br>
+  CF: AE \(r^2+r-2=0 \Rightarrow (r+2)(r-1)=0\). CF: \(y_c = Ae^{-2x}+Be^x\).
+  <br>
+  PI: Try \(y_p = ae^{3x}\). Then \(y_p'' = 9ae^{3x}\), \(y_p' = 3ae^{3x}\).
+  <br>
+  Substitute: \(9ae^{3x}+3ae^{3x}-2ae^{3x} = 3e^{3x} \Rightarrow 10a = 3 \Rightarrow a = 3/10\).
+  <br>
+  General solution: \(y = Ae^{-2x}+Be^x+\dfrac{3}{10}e^{3x}\).
+</div>
+
+<div class="example">
+  <strong>Example — trigonometric RHS:</strong> Solve \(y''+4y = \sin 2x\).
+  <br><br>
+  CF: AE \(r^2+4=0 \Rightarrow r = \pm 2i\). CF: \(y_c = A\cos 2x+B\sin 2x\).
+  <br>
+  <span style="color:#dc2626;font-weight:600;">Resonance!</span> Trial PI \(a\cos 2x+b\sin 2x\) is in the CF.
+  <br>
+  Try \(y_p = x(a\cos 2x+b\sin 2x)\).
+  <br>
+  \(y_p' = a\cos 2x+b\sin 2x + x(-2a\sin 2x+2b\cos 2x)\)
+  <br>
+  \(y_p'' = -4a\sin 2x+4b\cos 2x + x(-4a\cos 2x-4b\sin 2x)\)
+  <br>
+  \(y_p''+4y_p = (-4a\sin 2x+4b\cos 2x) = \sin 2x\)
+  <br>
+  Compare: \(-4a = 1 \Rightarrow a = -1/4\); \(4b = 0 \Rightarrow b = 0\).
+  <br>
+  PI: \(y_p = -\dfrac{x\cos 2x}{4}\).
+  <br>
+  General solution: \(y = A\cos 2x+B\sin 2x - \dfrac{x\cos 2x}{4}\).
+</div>
+
+<div class="example">
+  <strong>Example — repeated root resonance:</strong> Solve \(y''-4y'+4y = e^{2x}\).
+  <br><br>
+  CF: AE \((r-2)^2=0\). CF: \(y_c=(A+Bx)e^{2x}\).
+  <br>
+  Trial \(ae^{2x}\) duplicates CF. Trial \(axe^{2x}\) also duplicates CF.
+  <br>
+  Try \(y_p = ax^2e^{2x}\).
+  <br>
+  \(y_p' = (2ax+2ax^2)e^{2x}\), \(y_p'' = (2a+8ax+4ax^2)e^{2x}\).
+  <br>
+  Substitute: \((2a+8ax+4ax^2)e^{2x} - 4(2ax+2ax^2)e^{2x}+4ax^2e^{2x} = e^{2x}\)
+  <br>
+  \(2ae^{2x} = e^{2x} \Rightarrow a = 1/2\).
+  <br>
+  General solution: \(y = (A+Bx)e^{2x}+\dfrac{x^2}{2}e^{2x}\).
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Resonance occurs when the trial PI is already a solution of the homogeneous equation. Multiply by \(x\) once (or \(x^2\) for double resonance) to get a linearly independent PI.
+</div>
+
+<h2>4. Applying Initial and Boundary Conditions</h2>
+
+<p>After finding the general solution \(y = y_c + y_p\), apply conditions to find the arbitrary constants \(A\) and \(B\).</p>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(y''-5y'+6y=2\) with \(y(0)=1\), \(y'(0)=0\).
+  <br><br>
+  CF: \(Ae^{2x}+Be^{3x}\). PI: try \(y_p = a\): \(6a=2\Rightarrow a=1/3\). GS: \(y=Ae^{2x}+Be^{3x}+\frac{1}{3}\).
+  <br>
+  \(y(0)=1\): \(A+B+\frac{1}{3}=1 \Rightarrow A+B=\frac{2}{3}\). \quad (i)
+  <br>
+  \(y'=2Ae^{2x}+3Be^{3x}\). \(y'(0)=0\): \(2A+3B=0\). \quad (ii)
+  <br>
+  From (i): \(A=\frac{2}{3}-B\). Sub into (ii): \(\frac{4}{3}-2B+3B=0\Rightarrow B=-\frac{4}{3}\), \(A=2\).
+  <br>
+  Solution: \(y=2e^{2x}-\frac{4}{3}e^{3x}+\frac{1}{3}\).
+</div>
+
+<h2>5. Summary — Complete Method</h2>
+
+<table>
+  <thead><tr><th>Step</th><th>Action</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Write homogeneous equation and find auxiliary equation</td></tr>
+    <tr><td>2</td><td>Solve AE to classify roots, write CF</td></tr>
+    <tr><td>3</td><td>Choose trial PI based on form of \(f(x)\) — check for resonance</td></tr>
+    <tr><td>4</td><td>Differentiate PI, substitute, equate coefficients</td></tr>
+    <tr><td>5</td><td>GS = CF + PI</td></tr>
+    <tr><td>6</td><td>Apply ICs/BCs to find \(A\), \(B\)</td></tr>
+  </tbody>
+</table>
+
+<h2>6. Exam-Style Practice Questions</h2>
+<ol>
+  <li><strong>[1st order IF]</strong> Solve \(x\dfrac{dy}{dx}+2y = x^3\ln x\), \(x > 0\), given \(y(1)=0\).</li>
+  <li><strong>[2nd order homogeneous]</strong> Find the general solution of \(2y''+5y'+2y=0\). Describe the behaviour as \(x\to\infty\).</li>
+  <li><strong>[Complex roots]</strong> Solve \(y''+2y'+5y=0\) with \(y(0)=1\), \(y'(0)=0\).</li>
+  <li><strong>[Non-homogeneous poly]</strong> Find the general solution of \(y''-2y'-3y=x^2+1\).</li>
+  <li><strong>[Non-homogeneous exp]</strong> Solve \(y''-3y'+2y=e^x\) (resonance case). Apply \(y(0)=0\), \(y'(0)=1\).</li>
+  <li><strong>[Non-homogeneous trig]</strong> Find the general solution of \(y''+9y=4\cos 3x\) (resonance).</li>
+  <li><strong>[Mixed]</strong> Solve \(y''+4y'+4y=8e^{-2x}\). Apply \(y(0)=0\), \(y'(0)=4\).</li>
+</ol>
+
+<div class="exam-tip">
+  <strong>General exam tips for CP2.7:</strong>
+  <ul>
+    <li>Always find the CF first — then address the PI</li>
+    <li>For trig PI: always use both \(\cos\) AND \(\sin\) in the trial, even if only one appears in \(f(x)\)</li>
+    <li>Apply ICs after finding the full GS, not after finding the CF alone</li>
+    <li>Show all differentiation steps for the PI — examiners give method marks for substitution</li>
+    <li>Check: substituting your GS back into the ODE should give \(f(x)\) identically</li>
+  </ul>
+</div>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

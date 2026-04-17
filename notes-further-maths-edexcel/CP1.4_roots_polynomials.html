@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CP1.4: Roots of Polynomials — Edexcel Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-edexcel-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Further Maths</a>
+</div>
+
+<h1>CP1.4: Roots of Polynomials</h1>
+
+<h2>1. Vieta's Formulae — Quadratics</h2>
+
+<p>For the quadratic \(ax^2 + bx + c = 0\) with roots \(\alpha\) and \(\beta\):</p>
+
+<div class="definition">
+  $$\alpha + \beta = -\frac{b}{a} \qquad \alpha\beta = \frac{c}{a}$$
+</div>
+
+<p><strong>Derivation:</strong> \(ax^2 + bx + c = a(x-\alpha)(x-\beta) = a[x^2 - (\alpha+\beta)x + \alpha\beta]\). Comparing coefficients of \(x\) and the constant.</p>
+
+<h3>Derived Symmetric Functions for Quadratics</h3>
+
+<table>
+  <tr><th>Expression</th><th>Method / Formula</th></tr>
+  <tr><td>\(\alpha^2 + \beta^2\)</td><td>\((\alpha+\beta)^2 - 2\alpha\beta\)</td></tr>
+  <tr><td>\(\alpha^2\beta^2\)</td><td>\((\alpha\beta)^2\)</td></tr>
+  <tr><td>\(\alpha^3 + \beta^3\)</td><td>\((\alpha+\beta)^3 - 3\alpha\beta(\alpha+\beta)\)</td></tr>
+  <tr><td>\(\alpha^3\beta^3\)</td><td>\((\alpha\beta)^3\)</td></tr>
+  <tr><td>\(\alpha^2\beta + \alpha\beta^2\)</td><td>\(\alpha\beta(\alpha+\beta)\)</td></tr>
+  <tr><td>\(\dfrac{1}{\alpha}+\dfrac{1}{\beta}\)</td><td>\(\dfrac{\alpha+\beta}{\alpha\beta}\)</td></tr>
+  <tr><td>\(\dfrac{1}{\alpha^2}+\dfrac{1}{\beta^2}\)</td><td>\(\dfrac{\alpha^2+\beta^2}{(\alpha\beta)^2} = \dfrac{(\alpha+\beta)^2 - 2\alpha\beta}{(\alpha\beta)^2}\)</td></tr>
+  <tr><td>\(\left(\alpha-\beta\right)^2\)</td><td>\((\alpha+\beta)^2 - 4\alpha\beta\)</td></tr>
+</table>
+
+<div class="example">
+  <strong>Example:</strong> The roots of \(2x^2 - 5x + 3 = 0\) are \(\alpha\) and \(\beta\). Find \(\alpha^2 + \beta^2\) and \(\alpha^3 + \beta^3\).<br><br>
+  \(\alpha + \beta = \frac{5}{2}\), \(\quad \alpha\beta = \frac{3}{2}\)<br><br>
+  \(\alpha^2 + \beta^2 = (\alpha+\beta)^2 - 2\alpha\beta = \frac{25}{4} - 3 = \frac{13}{4}\)<br><br>
+  \(\alpha^3 + \beta^3 = (\alpha+\beta)^3 - 3\alpha\beta(\alpha+\beta) = \frac{125}{8} - \frac{45}{4} = \frac{125}{8} - \frac{90}{8} = \frac{35}{8}\)
+</div>
+
+<h2>2. Vieta's Formulae — Cubics</h2>
+
+<p>For the cubic \(ax^3 + bx^2 + cx + d = 0\) with roots \(\alpha, \beta, \gamma\):</p>
+
+<div class="definition">
+  $$\alpha + \beta + \gamma = -\frac{b}{a}$$
+  $$\alpha\beta + \beta\gamma + \alpha\gamma = \frac{c}{a}$$
+  $$\alpha\beta\gamma = -\frac{d}{a}$$
+</div>
+
+<p><strong>Memory aid:</strong> The coefficient pattern for the symmetric functions is \(-b/a\), \(+c/a\), \(-d/a\), \(+e/a\), ... (alternating signs).</p>
+
+<h3>Derived Expressions for Cubics</h3>
+
+<table>
+  <tr><th>Expression</th><th>Formula in terms of \(p = \alpha+\beta+\gamma\), \(q = \alpha\beta+\beta\gamma+\alpha\gamma\), \(r = \alpha\beta\gamma\)</th></tr>
+  <tr><td>\(\alpha^2+\beta^2+\gamma^2\)</td><td>\(p^2 - 2q\)</td></tr>
+  <tr><td>\(\alpha^2\beta^2 + \beta^2\gamma^2 + \alpha^2\gamma^2\)</td><td>\(q^2 - 2pr\)</td></tr>
+  <tr><td>\(\alpha^2\beta + \alpha^2\gamma + \beta^2\alpha + \beta^2\gamma + \gamma^2\alpha + \gamma^2\beta\)</td><td>\(pq - 3r\)</td></tr>
+  <tr><td>\(\alpha^3+\beta^3+\gamma^3\)</td><td>\(p^3 - 3pq + 3r\)</td></tr>
+  <tr><td>\(\frac{1}{\alpha}+\frac{1}{\beta}+\frac{1}{\gamma}\)</td><td>\(\dfrac{q}{r}\)</td></tr>
+  <tr><td>\(\frac{1}{\alpha\beta}+\frac{1}{\beta\gamma}+\frac{1}{\alpha\gamma}\)</td><td>\(\dfrac{p}{r}\)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> The formula \(\alpha^2+\beta^2+\gamma^2 = (\alpha+\beta+\gamma)^2 - 2(\alpha\beta+\beta\gamma+\alpha\gamma)\) is the most useful and most tested. Learn to derive it by expanding the square.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> The roots of \(x^3 - 6x^2 + 11x - 6 = 0\) are \(\alpha, \beta, \gamma\). Find \(\alpha^2+\beta^2+\gamma^2\).<br><br>
+  \(\alpha+\beta+\gamma = 6\), \(\alpha\beta+\beta\gamma+\alpha\gamma = 11\), \(\alpha\beta\gamma = 6\)<br><br>
+  \(\alpha^2+\beta^2+\gamma^2 = 6^2 - 2(11) = 36 - 22 = 14\)
+</div>
+
+<h2>3. Vieta's Formulae — Quartics</h2>
+
+<p>For the quartic \(ax^4 + bx^3 + cx^2 + dx + e = 0\) with roots \(\alpha, \beta, \gamma, \delta\):</p>
+
+<div class="definition">
+  $$\alpha+\beta+\gamma+\delta = -\frac{b}{a}$$
+  $$\alpha\beta+\alpha\gamma+\alpha\delta+\beta\gamma+\beta\delta+\gamma\delta = \frac{c}{a}$$
+  $$\alpha\beta\gamma+\alpha\beta\delta+\alpha\gamma\delta+\beta\gamma\delta = -\frac{d}{a}$$
+  $$\alpha\beta\gamma\delta = \frac{e}{a}$$
+</div>
+
+<p>The second symmetric function for the quartic sums all \(\binom{4}{2} = 6\) products of pairs of roots. The third sums all products of triples.</p>
+
+<h2>4. Forming New Equations with Transformed Roots</h2>
+
+<h3>Substitution Method</h3>
+
+<p>Given an equation with roots \(\alpha, \beta, \gamma\) and asked for the equation with roots \(f(\alpha), f(\beta), f(\gamma)\):</p>
+<ol>
+  <li>Let \(w = f(\alpha)\) (the transformation applied to a general root)</li>
+  <li>Rearrange to express \(\alpha\) in terms of \(w\)</li>
+  <li>Substitute into the original equation</li>
+  <li>Simplify to get the new equation in \(w\)</li>
+  <li>Replace \(w\) with \(x\) (or \(z\)) for the final answer</li>
+</ol>
+
+<div class="example">
+  <strong>Example:</strong> The equation \(x^3 - 3x^2 + 2x + 1 = 0\) has roots \(\alpha, \beta, \gamma\). Find the equation with roots \(\alpha+2, \beta+2, \gamma+2\).<br><br>
+  Let \(w = \alpha + 2\), so \(\alpha = w - 2\).<br>
+  Substitute \(x = w-2\) into the original equation:<br><br>
+  \((w-2)^3 - 3(w-2)^2 + 2(w-2) + 1 = 0\)<br><br>
+  Expand \((w-2)^3 = w^3 - 6w^2 + 12w - 8\)<br>
+  Expand \(-3(w-2)^2 = -3(w^2 - 4w + 4) = -3w^2 + 12w - 12\)<br>
+  Expand \(2(w-2) = 2w - 4\)<br><br>
+  Total: \(w^3 - 6w^2 + 12w - 8 - 3w^2 + 12w - 12 + 2w - 4 + 1 = 0\)<br>
+  \(w^3 - 9w^2 + 26w - 23 = 0\)<br><br>
+  The new equation is \(x^3 - 9x^2 + 26x - 23 = 0\).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> The equation \(2x^3 - x^2 + 3x - 5 = 0\) has roots \(\alpha, \beta, \gamma\). Find the equation with roots \(\frac{1}{\alpha}, \frac{1}{\beta}, \frac{1}{\gamma}\).<br><br>
+  Let \(w = \frac{1}{\alpha}\), so \(\alpha = \frac{1}{w}\). Substitute \(x = \frac{1}{w}\):<br><br>
+  \(\frac{2}{w^3} - \frac{1}{w^2} + \frac{3}{w} - 5 = 0\)<br><br>
+  Multiply through by \(w^3\):<br>
+  \(2 - w + 3w^2 - 5w^3 = 0\)<br>
+  \(5w^3 - 3w^2 + w - 2 = 0\)<br><br>
+  The new equation is \(5x^3 - 3x^2 + x - 2 = 0\).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> The equation \(x^3 - 4x + 7 = 0\) has roots \(\alpha, \beta, \gamma\). Find the equation with roots \(2\alpha-1, 2\beta-1, 2\gamma-1\).<br><br>
+  Let \(w = 2\alpha - 1\), so \(\alpha = \frac{w+1}{2}\). Substitute \(x = \frac{w+1}{2}\):<br><br>
+  \(\left(\frac{w+1}{2}\right)^3 - 4\left(\frac{w+1}{2}\right) + 7 = 0\)<br><br>
+  \(\frac{(w+1)^3}{8} - 2(w+1) + 7 = 0\)<br><br>
+  Multiply by 8:<br>
+  \((w+1)^3 - 16(w+1) + 56 = 0\)<br>
+  \(w^3 + 3w^2 + 3w + 1 - 16w - 16 + 56 = 0\)<br>
+  \(w^3 + 3w^2 - 13w + 41 = 0\)<br><br>
+  New equation: \(x^3 + 3x^2 - 13x + 41 = 0\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> There are two methods: (1) substitution (cleanest for most transformations), (2) computing the new symmetric functions directly using Vieta's formulae. For transformations like \(\alpha+k\), \(k\alpha\), or \(1/\alpha\), substitution is almost always faster. For \(\alpha^2\) or more complex transformations, computing new symmetric functions directly may be easier.
+</div>
+
+<h2>5. New Equations via Symmetric Functions</h2>
+
+<p>An alternative to substitution: compute the three symmetric functions of the new roots using the known values from the original equation, then write the new equation as \(x^3 - (\text{sum})x^2 + (\text{sum of pairs})x - (\text{product}) = 0\).</p>
+
+<div class="example">
+  <strong>Example:</strong> The equation \(x^3 + 2x^2 - 5x + 3 = 0\) has roots \(\alpha, \beta, \gamma\). Find the equation with roots \(\alpha^2, \beta^2, \gamma^2\).<br><br>
+  From Vieta's: \(\alpha+\beta+\gamma = -2\), \(\alpha\beta+\beta\gamma+\alpha\gamma = -5\), \(\alpha\beta\gamma = -3\).<br><br>
+  New roots: \(\alpha^2, \beta^2, \gamma^2\).<br>
+  Sum: \(\alpha^2+\beta^2+\gamma^2 = (\alpha+\beta+\gamma)^2 - 2(\alpha\beta+\beta\gamma+\alpha\gamma) = 4 + 10 = 14\)<br>
+  Sum of pairs: \(\alpha^2\beta^2+\beta^2\gamma^2+\alpha^2\gamma^2 = (\alpha\beta+\beta\gamma+\alpha\gamma)^2 - 2\alpha\beta\gamma(\alpha+\beta+\gamma) = 25 - 2(-3)(-2) = 25 - 12 = 13\)<br>
+  Product: \(\alpha^2\beta^2\gamma^2 = (\alpha\beta\gamma)^2 = 9\)<br><br>
+  New equation: \(x^3 - 14x^2 + 13x - 9 = 0\)
+</div>
+
+<h2>6. Key Identities Reference</h2>
+
+<table>
+  <tr><th>Identity</th><th>Expansion</th></tr>
+  <tr><td>\((\alpha+\beta)^2\)</td><td>\(\alpha^2 + 2\alpha\beta + \beta^2\)</td></tr>
+  <tr><td>\(\alpha^2+\beta^2\)</td><td>\((\alpha+\beta)^2 - 2\alpha\beta\)</td></tr>
+  <tr><td>\(\alpha^3+\beta^3\)</td><td>\((\alpha+\beta)(\alpha^2-\alpha\beta+\beta^2) = (\alpha+\beta)^3 - 3\alpha\beta(\alpha+\beta)\)</td></tr>
+  <tr><td>\((\alpha+\beta+\gamma)^2\)</td><td>\(\alpha^2+\beta^2+\gamma^2 + 2(\alpha\beta+\beta\gamma+\alpha\gamma)\)</td></tr>
+  <tr><td>\((\alpha\beta+\beta\gamma+\alpha\gamma)^2\)</td><td>\(\alpha^2\beta^2+\beta^2\gamma^2+\alpha^2\gamma^2 + 2\alpha\beta\gamma(\alpha+\beta+\gamma)\)</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

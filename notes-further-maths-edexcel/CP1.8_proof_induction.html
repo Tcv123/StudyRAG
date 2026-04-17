@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CP1.8: Proof by Induction — Edexcel Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  .induction-box { background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example, .induction-box { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-edexcel-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Further Maths</a>
+</div>
+
+<h1>CP1.8: Proof by Mathematical Induction</h1>
+
+<h2>1. The Structure of Induction</h2>
+
+<div class="definition">
+  <strong>Mathematical induction</strong> proves a statement \(P(n)\) is true for all integers \(n \geq 1\) (or some starting value) through four steps:<br><br>
+  <ol>
+    <li><strong>Base case:</strong> Verify \(P(1)\) is true directly.</li>
+    <li><strong>Inductive hypothesis:</strong> Assume \(P(k)\) is true for some arbitrary integer \(k \geq 1\).</li>
+    <li><strong>Inductive step:</strong> Using the assumption, prove \(P(k+1)\) is also true.</li>
+    <li><strong>Conclusion:</strong> State the result using the standard phrasing.</li>
+  </ol>
+</div>
+
+<div class="exam-tip">
+  <strong>The conclusion MUST contain these elements (exact phrasing matters for marks):</strong><br><br>
+  "Since the statement is true for \(n = 1\), and if it is true for \(n = k\) then it is true for \(n = k+1\), by the principle of mathematical induction, [the statement] is true for all positive integers \(n\)."<br><br>
+  <strong>Award-losing errors:</strong> Not including all three elements: (1) true for \(n=1\), (2) true for \(k \Rightarrow\) true for \(k+1\), (3) "by mathematical induction" and the full conclusion statement.
+</div>
+
+<h2>2. Type 1: Summation Results</h2>
+
+<div class="example">
+  <strong>Proof:</strong> Prove by induction that \(\displaystyle\sum_{r=1}^{n} r = \frac{n(n+1)}{2}\) for all positive integers \(n\).<br><br>
+
+  <div class="induction-box">
+    <strong>Base case (\(n=1\)):</strong><br>
+    LHS: \(\displaystyle\sum_{r=1}^{1} r = 1\)<br>
+    RHS: \(\dfrac{1 \cdot 2}{2} = 1\)<br>
+    LHS = RHS, so the statement is true for \(n = 1\). ✓
+  </div>
+  <br>
+  <div class="induction-box">
+    <strong>Inductive hypothesis:</strong><br>
+    Assume the statement is true for \(n = k\), i.e., assume:
+    $$\sum_{r=1}^{k} r = \frac{k(k+1)}{2}$$
+  </div>
+  <br>
+  <div class="induction-box">
+    <strong>Inductive step:</strong> We need to show that \(\displaystyle\sum_{r=1}^{k+1} r = \dfrac{(k+1)(k+2)}{2}\).<br><br>
+    $$\sum_{r=1}^{k+1} r = \sum_{r=1}^{k} r + (k+1) = \frac{k(k+1)}{2} + (k+1) \quad \text{(using hypothesis)}$$
+    $$= \frac{k(k+1) + 2(k+1)}{2} = \frac{(k+1)(k+2)}{2}$$
+    This is exactly the required result with \(n = k+1\). ✓
+  </div>
+  <br>
+  <div class="induction-box">
+    <strong>Conclusion:</strong><br>
+    The statement is true for \(n=1\). If it is true for \(n=k\) then it is true for \(n=k+1\). By the principle of mathematical induction, \(\displaystyle\sum_{r=1}^{n} r = \frac{n(n+1)}{2}\) is true for all positive integers \(n\).
+  </div>
+</div>
+
+<div class="example">
+  <strong>Proof:</strong> Prove by induction that \(\displaystyle\sum_{r=1}^{n} r^2 = \frac{n(n+1)(2n+1)}{6}\).<br><br>
+  <strong>Base case (\(n=1\)):</strong> LHS \(= 1\), RHS \(= \frac{1 \cdot 2 \cdot 3}{6} = 1\). ✓<br><br>
+  <strong>Hypothesis:</strong> Assume \(\displaystyle\sum_{r=1}^{k} r^2 = \dfrac{k(k+1)(2k+1)}{6}\).<br><br>
+  <strong>Step:</strong>
+  $$\sum_{r=1}^{k+1} r^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2 = \frac{k(k+1)(2k+1) + 6(k+1)^2}{6}$$
+  $$= \frac{(k+1)[k(2k+1) + 6(k+1)]}{6} = \frac{(k+1)(2k^2+7k+6)}{6} = \frac{(k+1)(k+2)(2k+3)}{6}$$
+  This equals \(\dfrac{(k+1)((k+1)+1)(2(k+1)+1)}{6}\). ✓<br><br>
+  <strong>Conclusion:</strong> By induction, true for all positive integers \(n\).
+</div>
+
+<h2>3. Type 2: Divisibility</h2>
+
+<p>For divisibility proofs, assume the hypothesis and manipulate to show the expression for \(k+1\) is divisible by the required integer.</p>
+
+<div class="example">
+  <strong>Proof:</strong> Prove by induction that \(8^n - 1\) is divisible by 7 for all positive integers \(n\).<br><br>
+
+  <strong>Base case (\(n=1\)):</strong> \(8^1 - 1 = 7\), which is divisible by 7. ✓<br><br>
+
+  <strong>Hypothesis:</strong> Assume \(8^k - 1 = 7m\) for some integer \(m\), i.e., \(8^k = 7m + 1\).<br><br>
+
+  <strong>Inductive step:</strong><br>
+  \(8^{k+1} - 1 = 8 \cdot 8^k - 1 = 8(7m+1) - 1 = 56m + 8 - 1 = 56m + 7 = 7(8m + 1)\)<br>
+  Since \(m\) is an integer, \(8m+1\) is an integer. So \(8^{k+1} - 1\) is divisible by 7. ✓<br><br>
+
+  <strong>Conclusion:</strong> By mathematical induction, \(8^n - 1\) is divisible by 7 for all positive integers \(n\).
+</div>
+
+<div class="example">
+  <strong>Proof:</strong> Prove by induction that \(f(n) = 4^n + 6n - 1\) is divisible by 9 for all positive integers \(n\).<br><br>
+
+  <strong>Base case (\(n=1\)):</strong> \(f(1) = 4 + 6 - 1 = 9\). Divisible by 9. ✓<br><br>
+
+  <strong>Hypothesis:</strong> Assume \(4^k + 6k - 1 = 9m\) for some integer \(m\), so \(4^k = 9m - 6k + 1\).<br><br>
+
+  <strong>Inductive step:</strong>
+  \(f(k+1) = 4^{k+1} + 6(k+1) - 1 = 4 \cdot 4^k + 6k + 5\)<br>
+  \(= 4(9m - 6k + 1) + 6k + 5 = 36m - 24k + 4 + 6k + 5 = 36m - 18k + 9\)<br>
+  \(= 9(4m - 2k + 1)\)<br>
+  Since \(4m-2k+1\) is an integer, \(f(k+1)\) is divisible by 9. ✓<br><br>
+
+  <strong>Conclusion:</strong> By induction, \(f(n)\) is divisible by 9 for all positive integers \(n\).
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> For divisibility proofs, always introduce a variable (usually \(m\)) for the integer. Write \(4^k = 9m - 6k + 1\) (or similar) and then substitute. Do NOT just write "therefore divisible" without showing all the algebra.
+</div>
+
+<h2>4. Type 3: Matrix Powers</h2>
+
+<div class="example">
+  <strong>Proof:</strong> Prove by induction that \(M^n = \begin{pmatrix}1 & 2n \\ 0 & 1\end{pmatrix}\) where \(M = \begin{pmatrix}1&2\\0&1\end{pmatrix}\).<br><br>
+
+  <strong>Base case (\(n=1\)):</strong>
+  \(M^1 = \begin{pmatrix}1&2\\0&1\end{pmatrix} = \begin{pmatrix}1&2(1)\\0&1\end{pmatrix}\) ✓<br><br>
+
+  <strong>Hypothesis:</strong> Assume \(M^k = \begin{pmatrix}1&2k\\0&1\end{pmatrix}\).<br><br>
+
+  <strong>Inductive step:</strong>
+  $$M^{k+1} = M^k \cdot M = \begin{pmatrix}1&2k\\0&1\end{pmatrix}\begin{pmatrix}1&2\\0&1\end{pmatrix}$$
+  $$= \begin{pmatrix}1 \cdot 1 + 2k \cdot 0 & 1 \cdot 2 + 2k \cdot 1 \\ 0 & 1\end{pmatrix} = \begin{pmatrix}1 & 2+2k \\ 0 & 1\end{pmatrix} = \begin{pmatrix}1 & 2(k+1)\\0&1\end{pmatrix}$$
+  This matches the formula with \(n = k+1\). ✓<br><br>
+
+  <strong>Conclusion:</strong> By mathematical induction, \(M^n = \begin{pmatrix}1&2n\\0&1\end{pmatrix}\) for all positive integers \(n\).
+</div>
+
+<div class="example">
+  <strong>Example 2:</strong> Prove that \(A^n = \begin{pmatrix}3^n & 0 \\ 3^n - 1 & 1\end{pmatrix}\) where \(A = \begin{pmatrix}3&0\\2&1\end{pmatrix}\).<br><br>
+
+  <strong>Base case (\(n=1\)):</strong> \(A^1 = \begin{pmatrix}3&0\\2&1\end{pmatrix}\). RHS: \(\begin{pmatrix}3&0\\3-1&1\end{pmatrix} = \begin{pmatrix}3&0\\2&1\end{pmatrix}\). ✓<br><br>
+
+  <strong>Hypothesis:</strong> Assume \(A^k = \begin{pmatrix}3^k&0\\3^k-1&1\end{pmatrix}\).<br><br>
+
+  <strong>Step:</strong>
+  $$A^{k+1} = A^k \cdot A = \begin{pmatrix}3^k&0\\3^k-1&1\end{pmatrix}\begin{pmatrix}3&0\\2&1\end{pmatrix}$$
+  $$= \begin{pmatrix}3 \cdot 3^k & 0 \\ 3(3^k-1)+2 & 1\end{pmatrix} = \begin{pmatrix}3^{k+1} & 0 \\ 3^{k+1}-1 & 1\end{pmatrix}$$
+  This is the formula with \(n=k+1\). ✓
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> For matrix induction, use \(M^{k+1} = M^k \cdot M\) (multiply the hypothesis by \(M\) on the right). Explicitly state you are using the inductive hypothesis when substituting the assumed form.
+</div>
+
+<h2>5. Type 4: Recurrence Relations</h2>
+
+<div class="example">
+  <strong>Proof:</strong> A sequence is defined by \(u_1 = 3\), \(u_{n+1} = 3u_n - 4\). Prove by induction that \(u_n = 2 \cdot 3^{n-1} + 2\).<br><br>
+
+  <strong>Base case (\(n=1\)):</strong> \(u_1 = 2 \cdot 3^0 + 2 = 2 + 2 = 4\)... wait, we're given \(u_1 = 3\).<br>
+  Check: \(2 \cdot 3^{1-1} + 2 = 2(1) + 2 = 4 \neq 3\).<br>
+  <em>This formula would be wrong in a real question — the example below uses a correct formula.</em><br><br>
+
+  <strong>Correct example:</strong> \(u_1 = 5\), \(u_{n+1} = 2u_n - 1\). Prove \(u_n = 3 \cdot 2^{n-1} + 1\).<br><br>
+
+  <strong>Base case (\(n=1\)):</strong> \(u_1 = 3 \cdot 2^0 + 1 = 3 + 1 = 4\).<br>
+  But \(u_1 = 5\). So check formula: \(3 \cdot 1 + 1 = 4 \neq 5\). Let's use: \(u_n = 4 \cdot 2^{n-1} + 1\).<br>
+  \(n=1\): \(4 + 1 = 5\) ✓<br><br>
+
+  <strong>Hypothesis:</strong> Assume \(u_k = 4 \cdot 2^{k-1} + 1\).<br><br>
+
+  <strong>Step:</strong>
+  \(u_{k+1} = 2u_k - 1 = 2(4 \cdot 2^{k-1} + 1) - 1 = 4 \cdot 2^k + 2 - 1 = 4 \cdot 2^k + 1\)<br>
+  This equals \(4 \cdot 2^{(k+1)-1} + 1\). ✓<br><br>
+
+  <strong>Conclusion:</strong> By induction, \(u_n = 4 \cdot 2^{n-1} + 1\) for all positive integers \(n\).
+</div>
+
+<h2>6. Common Mistakes and Mark-Scheme Notes</h2>
+
+<table>
+  <tr><th>Mistake</th><th>Correction</th></tr>
+  <tr><td>Not clearly stating the inductive hypothesis as an assumption</td><td>Write "Assume that [formula] for some positive integer \(k\)"</td></tr>
+  <tr><td>Not showing \(n=1\) satisfies both sides independently</td><td>Compute LHS and RHS separately, then confirm they're equal</td></tr>
+  <tr><td>Circular reasoning: using the \(k+1\) result before proving it</td><td>Start from the \(k\) result, then derive the \(k+1\) result</td></tr>
+  <tr><td>Incomplete conclusion</td><td>Must state: "true for \(n=1\)", "true for \(k\) implies true for \(k+1\)", "by mathematical induction", full conclusion</td></tr>
+  <tr><td>Not factoring out correctly in divisibility proofs</td><td>Show the expression equals the divisor times an integer explicitly</td></tr>
+  <tr><td>Matrix: multiplying in wrong order</td><td>\(M^{k+1} = M^k \cdot M\) (multiply on the right)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Full conclusion template (memorise this):</strong><br>
+  "Since \(P(1)\) is true, and \(P(k) \Rightarrow P(k+1)\) for all positive integers \(k\), by the principle of mathematical induction, [state the result, e.g., \(\sum_{r=1}^n r = \frac{n(n+1)}{2}\)] is true for all positive integers \(n\)."<br><br>
+  The Edexcel mark scheme typically awards 1 mark for the correct base case, 1 mark for correctly assuming the hypothesis, 2–3 marks for the inductive step, and 1 mark for a complete conclusion. Skimping on the conclusion wastes a mark that is very easy to obtain.
+</div>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

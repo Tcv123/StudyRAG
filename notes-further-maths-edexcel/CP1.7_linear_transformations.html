@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CP1.7: Linear Transformations — Edexcel Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  .svg-row { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-edexcel-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Further Maths</a>
+</div>
+
+<h1>CP1.7: Linear Transformations</h1>
+
+<h2>1. Representing Transformations as Matrices</h2>
+
+<div class="definition">
+  A <strong>linear transformation</strong> in 2D maps every point \(\mathbf{x} = \begin{pmatrix}x\\y\end{pmatrix}\) to \(\mathbf{x'} = M\mathbf{x}\) where \(M\) is a \(2 \times 2\) matrix.<br><br>
+  <strong>Key principle:</strong> The columns of the transformation matrix \(M\) are the images of the standard basis vectors:
+  $$M = \begin{pmatrix} T(\mathbf{e}_1) & T(\mathbf{e}_2) \end{pmatrix}$$
+  where \(\mathbf{e}_1 = \begin{pmatrix}1\\0\end{pmatrix}\) and \(\mathbf{e}_2 = \begin{pmatrix}0\\1\end{pmatrix}\).
+</div>
+
+<p>To find the matrix of any transformation: find where \((1,0)\) maps to — that gives column 1. Find where \((0,1)\) maps to — that gives column 2.</p>
+
+<h2>2. Standard Transformation Matrices</h2>
+
+<table>
+  <tr><th>Transformation</th><th>Matrix</th><th>Notes</th></tr>
+  <tr><td>Reflection in \(x\)-axis</td><td>\(\begin{pmatrix}1&0\\0&-1\end{pmatrix}\)</td><td>\(x \to x,\; y \to -y\)</td></tr>
+  <tr><td>Reflection in \(y\)-axis</td><td>\(\begin{pmatrix}-1&0\\0&1\end{pmatrix}\)</td><td>\(x \to -x,\; y \to y\)</td></tr>
+  <tr><td>Reflection in \(y = x\)</td><td>\(\begin{pmatrix}0&1\\1&0\end{pmatrix}\)</td><td>Swap \(x\) and \(y\)</td></tr>
+  <tr><td>Reflection in \(y = -x\)</td><td>\(\begin{pmatrix}0&-1\\-1&0\end{pmatrix}\)</td><td>Swap and negate</td></tr>
+  <tr><td>Rotation anticlockwise by \(\theta\)</td><td>\(\begin{pmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{pmatrix}\)</td><td>About the origin</td></tr>
+  <tr><td>Rotation by \(90°\) anticlockwise</td><td>\(\begin{pmatrix}0&-1\\1&0\end{pmatrix}\)</td><td>Special case \(\theta=90°\)</td></tr>
+  <tr><td>Rotation by \(180°\)</td><td>\(\begin{pmatrix}-1&0\\0&-1\end{pmatrix}\)</td><td>Half turn</td></tr>
+  <tr><td>Rotation by \(270°\) anticlockwise</td><td>\(\begin{pmatrix}0&1\\-1&0\end{pmatrix}\)</td><td>Same as \(90°\) clockwise</td></tr>
+  <tr><td>Enlargement, scale factor \(k\)</td><td>\(\begin{pmatrix}k&0\\0&k\end{pmatrix}\)</td><td>Centre at origin</td></tr>
+  <tr><td>Stretch by factor \(a\) in \(x\), \(b\) in \(y\)</td><td>\(\begin{pmatrix}a&0\\0&b\end{pmatrix}\)</td><td>Axis-aligned stretch</td></tr>
+  <tr><td>Shear in \(x\)-direction, factor \(k\)</td><td>\(\begin{pmatrix}1&k\\0&1\end{pmatrix}\)</td><td>\(y\) unchanged; \(x \to x + ky\)</td></tr>
+  <tr><td>Shear in \(y\)-direction, factor \(k\)</td><td>\(\begin{pmatrix}1&0\\k&1\end{pmatrix}\)</td><td>\(x\) unchanged; \(y \to kx + y\)</td></tr>
+</table>
+
+<div class="example">
+  <strong>Example:</strong> Find the matrix for reflection in the line \(y = x\tan\theta\) (a line through the origin at angle \(\theta\) to the \(x\)-axis).<br><br>
+  The general reflection matrix in the line at angle \(\theta\) is:
+  $$M = \begin{pmatrix}\cos 2\theta & \sin 2\theta\\\sin 2\theta & -\cos 2\theta\end{pmatrix}$$
+  Check: for \(\theta = 45°\) (line \(y=x\)): \(\cos 90° = 0\), \(\sin 90° = 1\), giving \(\begin{pmatrix}0&1\\1&0\end{pmatrix}\) ✓
+</div>
+
+<h2>3. Unit Square Under Transformation</h2>
+
+<p>A useful way to visualise a transformation is to track the unit square with vertices at \(O=(0,0)\), \(A=(1,0)\), \(B=(1,1)\), \(C=(0,1)\).</p>
+
+<div class="svg-row">
+<!-- Before -->
+<svg viewBox="0 0 160 160" width="160" height="160" style="border:1px solid #e2e8f0;border-radius:8px;background:#fafcff;">
+  <defs>
+    <marker id="ax7" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#888"/></marker>
+    <marker id="ax8" markerWidth="6" markerHeight="6" refX="3" refY="5" orient="auto"><path d="M0,6 L6,6 L3,0 z" fill="#888"/></marker>
+  </defs>
+  <line x1="20" y1="110" x2="145" y2="110" stroke="#888" stroke-width="1.5" marker-end="url(#ax7)"/>
+  <line x1="60" y1="145" x2="60" y2="20" stroke="#888" stroke-width="1.5" marker-end="url(#ax8)"/>
+  <rect x="60" y="70" width="40" height="40" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="60" cy="110" r="3" fill="#1e3a5f"/>
+  <circle cx="100" cy="110" r="3" fill="#1e3a5f"/>
+  <circle cx="100" cy="70" r="3" fill="#1e3a5f"/>
+  <circle cx="60" cy="70" r="3" fill="#1e3a5f"/>
+  <text x="55" y="127" font-size="10" fill="#555">O</text>
+  <text x="102" y="127" font-size="10" fill="#555">A</text>
+  <text x="102" y="68" font-size="10" fill="#555">B</text>
+  <text x="48" y="68" font-size="10" fill="#555">C</text>
+  <text x="55" y="16" font-size="11" fill="#2563eb">Before</text>
+</svg>
+<!-- Arrow -->
+<div style="display:flex;align-items:center;font-size:1.5rem;color:#2563eb;">&#8594;</div>
+<!-- After (shear) -->
+<svg viewBox="0 0 160 160" width="160" height="160" style="border:1px solid #e2e8f0;border-radius:8px;background:#fafcff;">
+  <defs>
+    <marker id="ax9" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#888"/></marker>
+    <marker id="ax10" markerWidth="6" markerHeight="6" refX="3" refY="5" orient="auto"><path d="M0,6 L6,6 L3,0 z" fill="#888"/></marker>
+  </defs>
+  <line x1="20" y1="110" x2="145" y2="110" stroke="#888" stroke-width="1.5" marker-end="url(#ax9)"/>
+  <line x1="60" y1="145" x2="60" y2="20" stroke="#888" stroke-width="1.5" marker-end="url(#ax10)"/>
+  <!-- Shear x by factor 1: O(0,0)->O, A(1,0)->A(1,0), B(1,1)->(2,1), C(0,1)->(1,1) -->
+  <!-- pixel mapping: x' = 60 + 40*px, y' = 110 - 40*py -->
+  <polygon points="60,110 100,110 140,70 100,70" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+  <circle cx="60" cy="110" r="3" fill="#1e3a5f"/>
+  <circle cx="100" cy="110" r="3" fill="#1e3a5f"/>
+  <circle cx="140" cy="70" r="3" fill="#1e3a5f"/>
+  <circle cx="100" cy="70" r="3" fill="#1e3a5f"/>
+  <text x="52" y="127" font-size="10" fill="#555">O'</text>
+  <text x="102" y="127" font-size="10" fill="#555">A'</text>
+  <text x="142" y="68" font-size="10" fill="#555">B'</text>
+  <text x="88" y="68" font-size="10" fill="#555">C'</text>
+  <text x="30" y="16" font-size="11" fill="#f59e0b">After (shear)</text>
+</svg>
+</div>
+
+<p>Notice that for the shear \(\begin{pmatrix}1&1\\0&1\end{pmatrix}\): the area of the parallelogram equals the area of the original square (determinant = 1). This illustrates the geometric meaning of the determinant.</p>
+
+<h2>4. Combining Transformations</h2>
+
+<div class="definition">
+  To apply transformation \(T_1\) <em>followed by</em> transformation \(T_2\), the combined matrix is \(M_2 M_1\) (multiply in <strong>reverse order</strong>).<br><br>
+  If \(T_1\) has matrix \(M_1\) and \(T_2\) has matrix \(M_2\), then the image of point \(\mathbf{x}\) under both transformations is:
+  $$\mathbf{x'} = M_2(M_1 \mathbf{x}) = (M_2 M_1)\mathbf{x}$$
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> The order of matrix multiplication is critical. "Apply \(T_1\) then \(T_2\)" means the combined matrix is \(M_2 M_1\), NOT \(M_1 M_2\). A very common error. The transformation applied FIRST goes on the RIGHT.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the matrix for "reflect in the \(x\)-axis, then rotate anticlockwise by \(90°\)".<br><br>
+  \(M_1\) (reflect in \(x\)-axis): \(\begin{pmatrix}1&0\\0&-1\end{pmatrix}\)<br>
+  \(M_2\) (rotate \(90°\) anticlockwise): \(\begin{pmatrix}0&-1\\1&0\end{pmatrix}\)<br><br>
+  Combined: \(M_2 M_1 = \begin{pmatrix}0&-1\\1&0\end{pmatrix}\begin{pmatrix}1&0\\0&-1\end{pmatrix} = \begin{pmatrix}0&1\\1&0\end{pmatrix}\)<br>
+  This is the reflection in \(y = x\)!
+</div>
+
+<h2>5. Finding Images of Points and Lines</h2>
+
+<h3>Image of a Point</h3>
+<p>To find where point \((a, b)\) maps to under transformation \(M\):</p>
+<div class="equation">
+  $$\begin{pmatrix}x'\\y'\end{pmatrix} = M\begin{pmatrix}a\\b\end{pmatrix}$$
+</div>
+
+<h3>Image of a Line</h3>
+<p>To find the image of a line \(y = mx + c\):</p>
+<ol>
+  <li>Let a general point on the line be \(\begin{pmatrix}x\\mx+c\end{pmatrix}\)</li>
+  <li>Apply the transformation: \(\begin{pmatrix}x'\\y'\end{pmatrix} = M\begin{pmatrix}x\\mx+c\end{pmatrix}\)</li>
+  <li>Express \(x\) and \(mx+c\) in terms of \(x'\) and \(y'\)</li>
+  <li>Eliminate \(x\) to find the equation of the image line</li>
+</ol>
+
+<div class="example">
+  <strong>Example:</strong> Find the image of the line \(y = 2x + 1\) under the transformation \(M = \begin{pmatrix}2&1\\0&3\end{pmatrix}\).<br><br>
+  A point on the line: \(\begin{pmatrix}t\\2t+1\end{pmatrix}\).<br>
+  Image: \(\begin{pmatrix}x'\\y'\end{pmatrix} = \begin{pmatrix}2&1\\0&3\end{pmatrix}\begin{pmatrix}t\\2t+1\end{pmatrix} = \begin{pmatrix}2t + 2t+1\\3(2t+1)\end{pmatrix} = \begin{pmatrix}4t+1\\6t+3\end{pmatrix}\)<br><br>
+  So \(x' = 4t+1\) and \(y' = 6t+3\).<br>
+  From \(x'\): \(t = \frac{x'-1}{4}\). Substitute: \(y' = 6 \cdot \frac{x'-1}{4} + 3 = \frac{3(x'-1)}{2} + 3 = \frac{3x'-3+6}{2} = \frac{3x'+3}{2}\)<br>
+  Image line: \(y = \frac{3}{2}x + \frac{3}{2}\)
+</div>
+
+<h2>6. Invariant Points and Lines</h2>
+
+<div class="definition">
+  An <strong>invariant point</strong> is a point that maps to itself under the transformation:<br>
+  \(M\mathbf{x} = \mathbf{x}\), i.e., \((M - I)\mathbf{x} = \mathbf{0}\)<br><br>
+  An <strong>invariant line</strong> is a line that maps to itself (as a whole line, not necessarily point by point). Every point on the line maps to another point on the same line.
+</div>
+
+<h3>Finding Invariant Points</h3>
+<p>Solve \(M\mathbf{x} = \mathbf{x}\), which is the same as finding the eigenvalue 1 eigenvectors (if they exist). For most transformations, the only invariant point is the origin.</p>
+
+<h3>Finding Invariant Lines</h3>
+<p>Assume the line has equation \(y = mx + c\). Apply the transformation to a general point, and require the image to also lie on \(y = mx + c\). Solve for \(m\) and \(c\).</p>
+
+<div class="example">
+  <strong>Example:</strong> Find the invariant lines (of the form \(y = mx\)) of the transformation \(M = \begin{pmatrix}3&1\\4&0\end{pmatrix}\).<br><br>
+  On the invariant line \(y = mx\), take point \(\begin{pmatrix}t\\mt\end{pmatrix}\).<br>
+  Image: \(M\begin{pmatrix}t\\mt\end{pmatrix} = \begin{pmatrix}3t+mt\\4t\end{pmatrix} = t\begin{pmatrix}3+m\\4\end{pmatrix}\)<br><br>
+  For the image to lie on \(y = mx\): \(\frac{4}{3+m} = m \Rightarrow 4 = m(3+m) = 3m + m^2\)<br>
+  \(m^2 + 3m - 4 = 0 \Rightarrow (m+4)(m-1) = 0 \Rightarrow m = -4\) or \(m = 1\)<br>
+  Invariant lines: \(y = x\) and \(y = -4x\).
+</div>
+
+<h2>7. 3D Transformations</h2>
+
+<p>In 3D, a linear transformation maps \(\mathbf{x} \in \mathbb{R}^3\) to \(M\mathbf{x}\) where \(M\) is a \(3 \times 3\) matrix. The same principles apply:</p>
+<ul>
+  <li>Rotation about the \(x\)-axis by \(\theta\): \(\begin{pmatrix}1&0&0\\0&\cos\theta&-\sin\theta\\0&\sin\theta&\cos\theta\end{pmatrix}\)</li>
+  <li>Rotation about the \(y\)-axis by \(\theta\): \(\begin{pmatrix}\cos\theta&0&\sin\theta\\0&1&0\\-\sin\theta&0&\cos\theta\end{pmatrix}\)</li>
+  <li>Rotation about the \(z\)-axis by \(\theta\): \(\begin{pmatrix}\cos\theta&-\sin\theta&0\\\sin\theta&\cos\theta&0\\0&0&1\end{pmatrix}\)</li>
+  <li>Reflection in the \(xy\)-plane: \(\begin{pmatrix}1&0&0\\0&1&0\\0&0&-1\end{pmatrix}\)</li>
+</ul>
+<p>The \(|\det(M)|\) gives the volume scale factor for 3D transformations.</p>
+
+<h2>8. Summary</h2>
+
+<table>
+  <tr><th>Task</th><th>Method</th></tr>
+  <tr><td>Find transformation matrix</td><td>Find images of \((1,0)\) and \((0,1)\) — these are the columns</td></tr>
+  <tr><td>Image of point \((a,b)\)</td><td>Compute \(M\begin{pmatrix}a\\b\end{pmatrix}\)</td></tr>
+  <tr><td>Image of a line</td><td>Parameterise, apply \(M\), eliminate parameter</td></tr>
+  <tr><td>Combine: \(T_1\) then \(T_2\)</td><td>Matrix: \(M_2 M_1\) (right to left)</td></tr>
+  <tr><td>Invariant points</td><td>Solve \(M\mathbf{x} = \mathbf{x}\)</td></tr>
+  <tr><td>Invariant lines \(y = mx\)</td><td>Apply \(M\), require image on same line; solve for \(m\)</td></tr>
+  <tr><td>Area scale factor</td><td>\(|\det(M)|\)</td></tr>
+</table>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

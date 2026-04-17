@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CP1.9: Vectors — Edexcel Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-edexcel-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Further Maths</a>
+</div>
+
+<h1>CP1.9: Vectors in 3D</h1>
+
+<h2>1. 3D Vector Basics</h2>
+
+<div class="definition">
+  A 3D vector is written as \(\mathbf{a} = \begin{pmatrix}a_1\\a_2\\a_3\end{pmatrix} = a_1\mathbf{i} + a_2\mathbf{j} + a_3\mathbf{k}\)<br><br>
+  <strong>Magnitude:</strong> \(|\mathbf{a}| = \sqrt{a_1^2 + a_2^2 + a_3^2}\)<br>
+  <strong>Unit vector:</strong> \(\hat{\mathbf{a}} = \dfrac{\mathbf{a}}{|\mathbf{a}|}\)
+</div>
+
+<h3>Direction Cosines</h3>
+<p>The direction cosines of a vector \(\mathbf{a} = (a_1, a_2, a_3)\) are:</p>
+<div class="equation">
+$$\cos\alpha = \frac{a_1}{|\mathbf{a}|}, \quad \cos\beta = \frac{a_2}{|\mathbf{a}|}, \quad \cos\gamma = \frac{a_3}{|\mathbf{a}|}, \quad \text{where } \cos^2\alpha + \cos^2\beta + \cos^2\gamma = 1$$
+</div>
+
+<h2>2. Scalar (Dot) Product</h2>
+
+<div class="definition">
+  <strong>Geometric definition:</strong>
+  $$\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos\theta$$
+  where \(\theta\) is the angle between the vectors \((0 \leq \theta \leq \pi)\).<br><br>
+  <strong>Component form:</strong>
+  $$\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3$$
+</div>
+
+<h3>Key Applications</h3>
+<ul>
+  <li><strong>Testing perpendicularity:</strong> \(\mathbf{a} \perp \mathbf{b} \iff \mathbf{a} \cdot \mathbf{b} = 0\)</li>
+  <li><strong>Finding angle:</strong> \(\cos\theta = \dfrac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}||\mathbf{b}|}\)</li>
+  <li><strong>Projection of \(\mathbf{a}\) onto \(\mathbf{b}\):</strong> \(\dfrac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{b}|}\)</li>
+</ul>
+
+<h3>Properties</h3>
+<ul>
+  <li>\(\mathbf{a} \cdot \mathbf{b} = \mathbf{b} \cdot \mathbf{a}\) (commutative)</li>
+  <li>\(\mathbf{a} \cdot (\mathbf{b} + \mathbf{c}) = \mathbf{a} \cdot \mathbf{b} + \mathbf{a} \cdot \mathbf{c}\) (distributive)</li>
+  <li>\(\mathbf{a} \cdot \mathbf{a} = |\mathbf{a}|^2\)</li>
+</ul>
+
+<h2>3. Cross (Vector) Product</h2>
+
+<div class="definition">
+  <strong>Geometric definition:</strong>
+  $$\mathbf{a} \times \mathbf{b} = |\mathbf{a}||\mathbf{b}|\sin\theta\,\hat{\mathbf{n}}$$
+  where \(\theta\) is the angle between them and \(\hat{\mathbf{n}}\) is the unit vector perpendicular to both, following the right-hand rule.<br><br>
+  <strong>Component form (determinant expansion):</strong>
+  $$\mathbf{a} \times \mathbf{b} = \begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\a_1&a_2&a_3\\b_1&b_2&b_3\end{vmatrix} = \mathbf{i}(a_2 b_3 - a_3 b_2) - \mathbf{j}(a_1 b_3 - a_3 b_1) + \mathbf{k}(a_1 b_2 - a_2 b_1)$$
+</div>
+
+<h3>Key Properties of Cross Product</h3>
+<ul>
+  <li>\(\mathbf{a} \times \mathbf{b} = -(\mathbf{b} \times \mathbf{a})\) (anti-commutative)</li>
+  <li>\(\mathbf{a} \times \mathbf{a} = \mathbf{0}\)</li>
+  <li>\(\mathbf{a} \parallel \mathbf{b} \iff \mathbf{a} \times \mathbf{b} = \mathbf{0}\)</li>
+  <li>\(\mathbf{i} \times \mathbf{j} = \mathbf{k}\), \(\mathbf{j} \times \mathbf{k} = \mathbf{i}\), \(\mathbf{k} \times \mathbf{i} = \mathbf{j}\)</li>
+</ul>
+
+<h3>Area Applications</h3>
+<div class="equation">
+$$\text{Area of parallelogram} = |\mathbf{a} \times \mathbf{b}|$$
+$$\text{Area of triangle} = \frac{1}{2}|\mathbf{a} \times \mathbf{b}|$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\mathbf{a} \times \mathbf{b}\) and hence the area of the triangle with vertices \(A, B, C\) where \(\overrightarrow{AB} = \begin{pmatrix}1\\2\\-1\end{pmatrix}\) and \(\overrightarrow{AC} = \begin{pmatrix}3\\0\\2\end{pmatrix}\).<br><br>
+  $$\mathbf{a} \times \mathbf{b} = \begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\1&2&-1\\3&0&2\end{vmatrix} = \mathbf{i}(4-0) - \mathbf{j}(2+3) + \mathbf{k}(0-6) = \begin{pmatrix}4\\-5\\-6\end{pmatrix}$$
+  \(|\mathbf{a}\times\mathbf{b}| = \sqrt{16+25+36} = \sqrt{77}\)<br>
+  Area of triangle \(= \frac{1}{2}\sqrt{77}\)
+</div>
+
+<h2>4. Equation of a Line in 3D</h2>
+
+<div class="definition">
+  A line through point \(A\) with position vector \(\mathbf{a}\) and direction vector \(\mathbf{b}\) has equation:<br><br>
+  <strong>Vector form:</strong> \(\mathbf{r} = \mathbf{a} + \lambda\mathbf{b}\), where \(\lambda \in \mathbb{R}\) is a parameter.<br><br>
+  <strong>Parametric form:</strong>
+  $$x = a_1 + \lambda b_1, \quad y = a_2 + \lambda b_2, \quad z = a_3 + \lambda b_3$$
+  <strong>Cartesian (symmetric) form:</strong>
+  $$\frac{x - a_1}{b_1} = \frac{y - a_2}{b_2} = \frac{z - a_3}{b_3} = \lambda$$
+  (provided all components of \(\mathbf{b}\) are non-zero)
+</div>
+
+<!-- SVG: Two lines in 3D space -->
+<svg viewBox="0 0 380 200" width="380" height="200" style="display:block;margin:20px auto;border:1px solid #e2e8f0;border-radius:8px;background:#fafcff;">
+  <!-- Axis lines suggesting 3D perspective -->
+  <line x1="100" y1="150" x2="300" y2="150" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="100" y1="150" x2="60" y2="100" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="100" y1="150" x2="100" y2="50" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="305" y="154" font-size="11" fill="#94a3b8">x</text>
+  <text x="48" y="98" font-size="11" fill="#94a3b8">y</text>
+  <text x="104" y="45" font-size="11" fill="#94a3b8">z</text>
+  <!-- Line 1 -->
+  <line x1="50" y1="130" x2="240" y2="80" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="243" y="78" font-size="12" fill="#2563eb">l₁: r = a + λb</text>
+  <!-- Direction arrow on line 1 -->
+  <polygon points="190,93 178,88 185,100" fill="#2563eb"/>
+  <!-- Line 2 -->
+  <line x1="160" y1="170" x2="340" y2="50" stroke="#e11d48" stroke-width="2.5"/>
+  <text x="343" y="48" font-size="12" fill="#e11d48">l₂: r = c + μd</text>
+  <!-- Direction arrow on line 2 -->
+  <polygon points="290,82 278,92 295,90" fill="#e11d48"/>
+  <!-- Point a on line 1 -->
+  <circle cx="120" cy="122" r="4" fill="#2563eb"/>
+  <text x="105" y="118" font-size="10" fill="#2563eb">a</text>
+  <!-- Point c on line 2 -->
+  <circle cx="200" cy="140" r="4" fill="#e11d48"/>
+  <text x="204" y="137" font-size="10" fill="#e11d48">c</text>
+  <!-- direction vector labels -->
+  <text x="165" y="70" font-size="10" fill="#2563eb">b</text>
+  <text x="330" y="95" font-size="10" fill="#e11d48">d</text>
+</svg>
+
+<div class="example">
+  <strong>Example:</strong> Write the line through \(A = (2,-1,3)\) and \(B = (5,1,-2)\) in all three forms.<br><br>
+  Direction vector: \(\overrightarrow{AB} = \begin{pmatrix}3\\2\\-5\end{pmatrix}\)<br><br>
+  Vector form: \(\mathbf{r} = \begin{pmatrix}2\\-1\\3\end{pmatrix} + \lambda\begin{pmatrix}3\\2\\-5\end{pmatrix}\)<br><br>
+  Parametric: \(x = 2+3\lambda,\; y = -1+2\lambda,\; z = 3-5\lambda\)<br><br>
+  Cartesian: \(\dfrac{x-2}{3} = \dfrac{y+1}{2} = \dfrac{z-3}{-5}\)
+</div>
+
+<h2>5. Equation of a Plane</h2>
+
+<div class="definition">
+  A plane with normal vector \(\mathbf{n} = \begin{pmatrix}a\\b\\c\end{pmatrix}\) passing through point \(A\) with position vector \(\mathbf{a}\):<br><br>
+  <strong>Scalar product form:</strong> \(\mathbf{r} \cdot \mathbf{n} = \mathbf{a} \cdot \mathbf{n} = d\)<br><br>
+  <strong>Cartesian form:</strong> \(ax + by + cz = d\)<br><br>
+  <strong>Parametric form:</strong> \(\mathbf{r} = \mathbf{a} + \lambda\mathbf{b} + \mu\mathbf{c}\)
+  where \(\mathbf{b}\) and \(\mathbf{c}\) are two non-parallel direction vectors in the plane.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the equation of the plane through \(A(1,0,2)\), \(B(3,1,0)\), \(C(0,2,1)\).<br><br>
+  Find two direction vectors: \(\overrightarrow{AB} = \begin{pmatrix}2\\1\\-2\end{pmatrix}\), \(\overrightarrow{AC} = \begin{pmatrix}-1\\2\\-1\end{pmatrix}\)<br><br>
+  Normal: \(\mathbf{n} = \overrightarrow{AB} \times \overrightarrow{AC} = \begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\2&1&-2\\-1&2&-1\end{vmatrix}\)<br>
+  \(= \mathbf{i}(-1+4) - \mathbf{j}(-2-2) + \mathbf{k}(4+1) = \begin{pmatrix}3\\4\\5\end{pmatrix}\)<br><br>
+  \(d = \mathbf{a} \cdot \mathbf{n} = 1(3) + 0(4) + 2(5) = 13\)<br>
+  Plane: \(3x + 4y + 5z = 13\)
+</div>
+
+<h2>6. Angles Between Lines and Planes</h2>
+
+<table>
+  <tr><th>Angle between</th><th>Formula</th><th>Notes</th></tr>
+  <tr><td>Two lines (direction \(\mathbf{b}_1, \mathbf{b}_2\))</td><td>\(\cos\theta = \dfrac{|\mathbf{b}_1 \cdot \mathbf{b}_2|}{|\mathbf{b}_1||\mathbf{b}_2|}\)</td><td>Use \(|\cdot|\) to get acute angle</td></tr>
+  <tr><td>Two planes (normals \(\mathbf{n}_1, \mathbf{n}_2\))</td><td>\(\cos\theta = \dfrac{|\mathbf{n}_1 \cdot \mathbf{n}_2|}{|\mathbf{n}_1||\mathbf{n}_2|}\)</td><td>Use \(|\cdot|\) to get acute angle</td></tr>
+  <tr><td>Line (direction \(\mathbf{b}\)) and plane (normal \(\mathbf{n}\))</td><td>\(\sin\theta = \dfrac{|\mathbf{b} \cdot \mathbf{n}|}{|\mathbf{b}||\mathbf{n}|}\)</td><td>Note: \(\sin\), not \(\cos\)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> For the angle between a line and a plane, the formula uses \(\sin\) (because the line makes an angle \(\theta\) with the plane but \(90°-\theta\) with the normal). This is the most common error in this section.
+</div>
+
+<h2>7. Intersections</h2>
+
+<h3>Line–Line Intersection (or Skew)</h3>
+<p>For two lines \(\mathbf{r} = \mathbf{a} + \lambda\mathbf{b}\) and \(\mathbf{r} = \mathbf{c} + \mu\mathbf{d}\):</p>
+<ol>
+  <li>Set the \(x\), \(y\), \(z\) components equal to get three equations in \(\lambda\) and \(\mu\)</li>
+  <li>Solve two of the equations for \(\lambda\) and \(\mu\)</li>
+  <li>Check if these values satisfy the third equation</li>
+  <li>If yes: lines intersect (substitute to find point). If no: lines are skew or parallel</li>
+</ol>
+<p><strong>Parallel lines:</strong> Direction vectors are parallel (\(\mathbf{b} = k\mathbf{d}\) for some scalar \(k\)).</p>
+<p><strong>Skew lines:</strong> Not parallel and do not intersect.</p>
+
+<h3>Line–Plane Intersection</h3>
+<p>Substitute the parametric equations of the line into the plane equation to find \(\lambda\), then find the point.</p>
+
+<div class="example">
+  <strong>Example:</strong> Find where \(\mathbf{r} = \begin{pmatrix}1\\2\\-1\end{pmatrix} + \lambda\begin{pmatrix}2\\1\\3\end{pmatrix}\) meets the plane \(x - 2y + z = 5\).<br><br>
+  Substitute parametric form: \((1+2\lambda) - 2(2+\lambda) + (-1+3\lambda) = 5\)<br>
+  \(1+2\lambda - 4 - 2\lambda - 1 + 3\lambda = 5\)<br>
+  \(3\lambda - 4 = 5 \Rightarrow \lambda = 3\)<br><br>
+  Point: \(x = 7, y = 5, z = 8\). Intersection at \((7, 5, 8)\).
+</div>
+
+<h3>Plane–Plane Intersection</h3>
+<p>Two non-parallel planes intersect in a line. Find the direction vector using the cross product of the two normals. Then find a specific point on the intersection (set one variable to 0 and solve the system of two equations).</p>
+
+<h2>8. Distance Formulae</h2>
+
+<div class="definition">
+  <strong>Distance from point \(P\) to plane \(\mathbf{r} \cdot \mathbf{n} = d\):</strong>
+  $$\text{Distance} = \frac{|\mathbf{p} \cdot \mathbf{n} - d|}{|\mathbf{n}|}$$
+  where \(\mathbf{p}\) is the position vector of \(P\).<br><br>
+  In Cartesian form (plane \(ax+by+cz = d\), point \((x_0, y_0, z_0)\)):
+  $$\text{Distance} = \frac{|ax_0 + by_0 + cz_0 - d|}{\sqrt{a^2+b^2+c^2}}$$
+</div>
+
+<div class="definition">
+  <strong>Distance from point \(A\) to line \(\mathbf{r} = \mathbf{b} + \lambda\mathbf{d}\):</strong>
+  $$\text{Distance} = \frac{|\overrightarrow{BA} \times \mathbf{d}|}{|\mathbf{d}|}$$
+  where \(B\) is any point on the line.
+</div>
+
+<div class="definition">
+  <strong>Shortest distance between two skew lines</strong> \(\mathbf{r} = \mathbf{a} + \lambda\mathbf{b}\) and \(\mathbf{r} = \mathbf{c} + \mu\mathbf{d}\):
+  $$\text{Distance} = \frac{|(\mathbf{c} - \mathbf{a}) \cdot (\mathbf{b} \times \mathbf{d})|}{|\mathbf{b} \times \mathbf{d}|}$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the shortest distance between the skew lines<br>
+  \(l_1: \mathbf{r} = \begin{pmatrix}1\\0\\-1\end{pmatrix} + \lambda\begin{pmatrix}2\\1\\0\end{pmatrix}\) and
+  \(l_2: \mathbf{r} = \begin{pmatrix}0\\2\\3\end{pmatrix} + \mu\begin{pmatrix}1\\-1\\2\end{pmatrix}\)<br><br>
+  \(\mathbf{b} \times \mathbf{d} = \begin{pmatrix}2\\1\\0\end{pmatrix} \times \begin{pmatrix}1\\-1\\2\end{pmatrix} = \begin{pmatrix}1\cdot2-0\cdot(-1)\\0\cdot1-2\cdot2\\2\cdot(-1)-1\cdot1\end{pmatrix} = \begin{pmatrix}2\\-4\\-3\end{pmatrix}\)<br><br>
+  \(|\mathbf{b}\times\mathbf{d}| = \sqrt{4+16+9} = \sqrt{29}\)<br><br>
+  \(\mathbf{c} - \mathbf{a} = \begin{pmatrix}-1\\2\\4\end{pmatrix}\)<br><br>
+  \((\mathbf{c}-\mathbf{a})\cdot(\mathbf{b}\times\mathbf{d}) = -2 - 8 - 12 = -22\)<br><br>
+  Shortest distance: \(\dfrac{|-22|}{\sqrt{29}} = \dfrac{22}{\sqrt{29}} = \dfrac{22\sqrt{29}}{29}\)
+</div>
+
+<h2>9. Summary of Key Vector Formulae</h2>
+
+<table>
+  <tr><th>Result</th><th>Formula</th></tr>
+  <tr><td>Dot product</td><td>\(\mathbf{a}\cdot\mathbf{b} = a_1b_1+a_2b_2+a_3b_3 = |\mathbf{a}||\mathbf{b}|\cos\theta\)</td></tr>
+  <tr><td>Cross product magnitude</td><td>\(|\mathbf{a}\times\mathbf{b}| = |\mathbf{a}||\mathbf{b}|\sin\theta\)</td></tr>
+  <tr><td>Area of triangle</td><td>\(\frac{1}{2}|\mathbf{a}\times\mathbf{b}|\)</td></tr>
+  <tr><td>Line equation</td><td>\(\mathbf{r} = \mathbf{a} + \lambda\mathbf{b}\)</td></tr>
+  <tr><td>Plane equation</td><td>\(\mathbf{r}\cdot\mathbf{n} = d\) or \(ax+by+cz=d\)</td></tr>
+  <tr><td>Angle between lines</td><td>\(\cos\theta = \frac{|\mathbf{b}_1\cdot\mathbf{b}_2|}{|\mathbf{b}_1||\mathbf{b}_2|}\)</td></tr>
+  <tr><td>Angle between planes</td><td>\(\cos\theta = \frac{|\mathbf{n}_1\cdot\mathbf{n}_2|}{|\mathbf{n}_1||\mathbf{n}_2|}\)</td></tr>
+  <tr><td>Angle: line and plane</td><td>\(\sin\theta = \frac{|\mathbf{b}\cdot\mathbf{n}|}{|\mathbf{b}||\mathbf{n}|}\)</td></tr>
+  <tr><td>Point to plane distance</td><td>\(\frac{|\mathbf{p}\cdot\mathbf{n}-d|}{|\mathbf{n}|}\)</td></tr>
+  <tr><td>Point to line distance</td><td>\(\frac{|\overrightarrow{BA}\times\mathbf{d}|}{|\mathbf{d}|}\)</td></tr>
+  <tr><td>Skew lines distance</td><td>\(\frac{|(\mathbf{c}-\mathbf{a})\cdot(\mathbf{b}\times\mathbf{d})|}{|\mathbf{b}\times\mathbf{d}|}\)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Common exam mistakes in vectors:</strong><br>
+  <ul>
+    <li><strong>Line–plane angle:</strong> Must use \(\sin\theta\) with the NORMAL, not \(\cos\theta\).</li>
+    <li><strong>Skew vs parallel:</strong> Always check both conditions. Skew means not parallel AND not intersecting.</li>
+    <li><strong>Normal to plane from parametric form:</strong> Take the cross product of the two direction vectors.</li>
+    <li><strong>Shortest distance:</strong> Always verify the lines are actually skew before applying the formula.</li>
+    <li><strong>Exact answers:</strong> Leave distances in surd form unless told to give a decimal.</li>
+  </ul>
+</div>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

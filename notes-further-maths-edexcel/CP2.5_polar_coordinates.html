@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CP2.5: Polar Coordinates — Edexcel Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  .diagram-row { display: flex; flex-wrap: wrap; gap: 16px; margin: 20px 0; }
+  .diagram-box { flex: 1; min-width: 160px; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-edexcel-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Further Maths</a>
+</div>
+
+<h1>CP2.5 — Polar Coordinates</h1>
+
+<h2>1. Introduction to Polar Coordinates</h2>
+
+<div class="definition">
+  A point \(P\) has <strong>polar coordinates</strong> \((r, \theta)\) where:
+  <ul>
+    <li>\(r\) = distance from origin (pole)</li>
+    <li>\(\theta\) = angle measured anticlockwise from initial line (positive x-axis)</li>
+  </ul>
+  Convention: \(r \geq 0\), \(-\pi < \theta \leq \pi\) (or \(0 \leq \theta < 2\pi\)).
+</div>
+
+<h3>1.1 Converting Between Polar and Cartesian</h3>
+<div class="equation">
+$$x = r\cos\theta, \quad y = r\sin\theta, \quad r^2 = x^2+y^2, \quad \tan\theta = \frac{y}{x}$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Convert \((3, \pi/3)\) to Cartesian.
+  <br>
+  \(x = 3\cos(\pi/3) = 3/2\), \(y = 3\sin(\pi/3) = 3\sqrt{3}/2\).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Convert \((-1, \sqrt{3})\) to polar.
+  <br>
+  \(r = \sqrt{1+3} = 2\), \(\theta = \arctan(\sqrt{3}/(-1))\). Point is in Q2, so \(\theta = \pi - \pi/3 = 2\pi/3\).
+</div>
+
+<h2>2. Sketching Polar Curves</h2>
+
+<h3>2.1 Key Polar Curves — Summary Table</h3>
+<table>
+  <thead><tr><th>Equation</th><th>Curve</th><th>Key features</th></tr></thead>
+  <tbody>
+    <tr><td>\(r = a\)</td><td>Circle</td><td>Centre at origin, radius \(a\)</td></tr>
+    <tr><td>\(r = 2a\cos\theta\)</td><td>Circle</td><td>Centre \((a,0)\), radius \(a\); passes through origin</td></tr>
+    <tr><td>\(r = 2a\sin\theta\)</td><td>Circle</td><td>Centre \((0,a)\), radius \(a\); passes through origin</td></tr>
+    <tr><td>\(r = a(1+\cos\theta)\)</td><td>Cardioid</td><td>Cusp at origin, max \(r = 2a\) at \(\theta=0\)</td></tr>
+    <tr><td>\(r = a\cos n\theta\)</td><td>Rose (\(n\) petals if odd, \(2n\) if even)</td><td>Each petal length \(a\)</td></tr>
+    <tr><td>\(r = a\theta\)</td><td>Archimedean spiral</td><td>Coils outward from origin</td></tr>
+    <tr><td>\(r^2 = a^2\cos 2\theta\)</td><td>Lemniscate</td><td>Figure-of-eight; exists only for \(|\theta| \leq \pi/4\)</td></tr>
+  </tbody>
+</table>
+
+<!-- Diagram row: key polar curves -->
+<div class="diagram-row">
+
+  <!-- Cardioid r = a(1+cosθ) -->
+  <div class="diagram-box">
+    <svg width="190" height="190" viewBox="-10 -10 200 200" style="border:1px solid #e2e8f0;border-radius:6px;background:#f8fafc;">
+      <line x1="0" y1="90" x2="190" y2="90" stroke="#94a3b8" stroke-width="1"/>
+      <line x1="90" y1="0" x2="90" y2="190" stroke="#94a3b8" stroke-width="1"/>
+      <!-- Cardioid a=45, r=45(1+cosθ) using parametric: x=(1+cosθ)cosθ·45, y=(1+cosθ)sinθ·45, centre offset 90,90 -->
+      <path d="M 180 90 C 180 45, 155 10, 120 18 C 90 25, 60 45, 45 70 C 30 90, 45 115, 60 130 C 75 145, 90 152, 120 162 C 155 170, 180 135, 180 90 Z" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="2"/>
+      <circle cx="90" cy="90" r="3" fill="#2563eb"/>
+      <text x="100" y="95" font-size="10" fill="#1e3a5f">O</text>
+      <text x="55" y="185" font-size="11" fill="#1e3a5f">r = a(1+cosθ)</text>
+      <text x="55" y="198" font-size="11" fill="#475569">Cardioid</text>
+    </svg>
+  </div>
+
+  <!-- Rose r = a cos 2θ (4 petals) -->
+  <div class="diagram-box">
+    <svg width="190" height="190" viewBox="-10 -10 200 200" style="border:1px solid #e2e8f0;border-radius:6px;background:#f8fafc;">
+      <line x1="0" y1="90" x2="190" y2="90" stroke="#94a3b8" stroke-width="1"/>
+      <line x1="90" y1="0" x2="90" y2="190" stroke="#94a3b8" stroke-width="1"/>
+      <!-- 4 petals, a=55 -->
+      <!-- Petal right -->
+      <path d="M 90 90 Q 130 65 145 90 Q 130 115 90 90" fill="rgba(37,99,235,0.18)" stroke="#2563eb" stroke-width="2"/>
+      <!-- Petal left -->
+      <path d="M 90 90 Q 50 65 35 90 Q 50 115 90 90" fill="rgba(37,99,235,0.18)" stroke="#2563eb" stroke-width="2"/>
+      <!-- Petal up -->
+      <path d="M 90 90 Q 65 50 90 35 Q 115 50 90 90" fill="rgba(37,99,235,0.18)" stroke="#2563eb" stroke-width="2"/>
+      <!-- Petal down -->
+      <path d="M 90 90 Q 65 130 90 145 Q 115 130 90 90" fill="rgba(37,99,235,0.18)" stroke="#2563eb" stroke-width="2"/>
+      <circle cx="90" cy="90" r="3" fill="#2563eb"/>
+      <text x="55" y="185" font-size="11" fill="#1e3a5f">r = a cos 2θ</text>
+      <text x="55" y="198" font-size="11" fill="#475569">4-petal rose</text>
+    </svg>
+  </div>
+
+  <!-- Lemniscate r² = a² cos2θ -->
+  <div class="diagram-box">
+    <svg width="190" height="190" viewBox="-10 -10 200 200" style="border:1px solid #e2e8f0;border-radius:6px;background:#f8fafc;">
+      <line x1="0" y1="90" x2="190" y2="90" stroke="#94a3b8" stroke-width="1"/>
+      <line x1="90" y1="0" x2="90" y2="190" stroke="#94a3b8" stroke-width="1"/>
+      <!-- Lemniscate approximation: figure-8 -->
+      <path d="M 90 90 Q 130 60 160 90 Q 130 120 90 90" fill="rgba(37,99,235,0.18)" stroke="#2563eb" stroke-width="2"/>
+      <path d="M 90 90 Q 50 60 20 90 Q 50 120 90 90" fill="rgba(37,99,235,0.18)" stroke="#2563eb" stroke-width="2"/>
+      <circle cx="90" cy="90" r="3" fill="#2563eb"/>
+      <text x="45" y="185" font-size="11" fill="#1e3a5f">r² = a² cos 2θ</text>
+      <text x="45" y="198" font-size="11" fill="#475569">Lemniscate</text>
+    </svg>
+  </div>
+
+</div>
+
+<h3>2.2 Sketching Technique</h3>
+<ol>
+  <li>Make a table of \(\theta\) values (e.g., \(0, \pi/6, \pi/4, \pi/3, \pi/2, \pi, \ldots\)) and compute \(r\)</li>
+  <li>Note symmetry: if \(r(\theta) = r(-\theta)\), symmetric about initial line; if \(r(\theta) = r(\pi-\theta)\), symmetric about \(\theta=\pi/2\)</li>
+  <li>Note where \(r = 0\) (curve passes through origin)</li>
+  <li>Note where \(r\) is maximum</li>
+  <li>Plot and connect smoothly</li>
+</ol>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> For rose curves \(r = a\cos n\theta\): the curve has \(n\) petals if \(n\) is odd, and \(2n\) petals if \(n\) is even. Each petal has maximum length \(a\).
+</div>
+
+<h2>3. Area Enclosed by a Polar Curve</h2>
+
+<div class="definition">
+  The area enclosed by \(r = f(\theta)\) between \(\theta = \alpha\) and \(\theta = \beta\) is:
+  $$A = \frac{1}{2}\int_{\alpha}^{\beta} r^2\,d\theta$$
+</div>
+
+<p><strong>Derivation:</strong> A small sector with angle \(d\theta\) and radius \(r\) has area \(\approx \frac{1}{2}r^2\,d\theta\). Summing gives the integral.</p>
+
+<div class="example">
+  <strong>Example:</strong> Find the area enclosed by the cardioid \(r = a(1+\cos\theta)\).
+  <br><br>
+  By symmetry about \(\theta = 0\):
+  $$A = 2 \cdot \frac{1}{2}\int_0^{\pi}a^2(1+\cos\theta)^2\,d\theta = a^2\int_0^{\pi}(1+2\cos\theta+\cos^2\theta)\,d\theta$$
+  Using \(\cos^2\theta = \frac{1+\cos 2\theta}{2}\):
+  $$= a^2\int_0^{\pi}\left(\frac{3}{2}+2\cos\theta+\frac{\cos 2\theta}{2}\right)\,d\theta$$
+  $$= a^2\left[\frac{3\theta}{2}+2\sin\theta+\frac{\sin 2\theta}{4}\right]_0^{\pi} = a^2\left(\frac{3\pi}{2}\right) = \frac{3\pi a^2}{2}$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the area of one petal of \(r = a\cos 2\theta\).
+  <br><br>
+  One petal in \(-\pi/4 \leq \theta \leq \pi/4\) (where \(\cos 2\theta \geq 0\)):
+  $$A = \frac{1}{2}\int_{-\pi/4}^{\pi/4}a^2\cos^2 2\theta\,d\theta = a^2\int_0^{\pi/4}\cos^2 2\theta\,d\theta$$
+  $$= a^2\int_0^{\pi/4}\frac{1+\cos 4\theta}{2}\,d\theta = a^2\left[\frac{\theta}{2}+\frac{\sin 4\theta}{8}\right]_0^{\pi/4} = a^2\cdot\frac{\pi}{8} = \frac{\pi a^2}{8}$$
+</div>
+
+<h2>4. Area Between Two Polar Curves</h2>
+
+<div class="definition">
+  The area between \(r = f(\theta)\) (outer) and \(r = g(\theta)\) (inner) for \(\alpha \leq \theta \leq \beta\):
+  $$A = \frac{1}{2}\int_{\alpha}^{\beta}\left[f(\theta)^2 - g(\theta)^2\right]\,d\theta = \frac{1}{2}\int_{\alpha}^{\beta}(r_1^2 - r_2^2)\,d\theta$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the area inside \(r = 2\cos\theta\) but outside \(r = 1\).
+  <br><br>
+  Curves intersect where \(2\cos\theta = 1\), i.e. \(\theta = \pm\pi/3\).
+  <br>
+  By symmetry:
+  $$A = 2\cdot\frac{1}{2}\int_0^{\pi/3}\left[(2\cos\theta)^2-1^2\right]\,d\theta = \int_0^{\pi/3}(4\cos^2\theta-1)\,d\theta$$
+  $$= \int_0^{\pi/3}(2+2\cos 2\theta-1)\,d\theta = \int_0^{\pi/3}(1+2\cos 2\theta)\,d\theta$$
+  $$= \left[\theta+\sin 2\theta\right]_0^{\pi/3} = \frac{\pi}{3}+\frac{\sqrt{3}}{2}$$
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Always find intersection points first by solving \(r_1 = r_2\) (and check \(r = 0\) cases). Sketch the curves to identify which is outer/inner and the correct range of \(\theta\).
+</div>
+
+<h2>5. Converting Polar Equations to Cartesian</h2>
+
+<div class="example">
+  <strong>Example:</strong> Show that \(r = 2a\cos\theta\) is a circle in Cartesian form.
+  <br><br>
+  Multiply both sides by \(r\): \(r^2 = 2ar\cos\theta\).
+  <br>
+  Substitute: \(x^2+y^2 = 2ax\), i.e. \((x-a)^2+y^2 = a^2\). Circle, centre \((a,0)\), radius \(a\). ✓
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Convert \(r = \dfrac{3}{2-\cos\theta}\) to Cartesian.
+  <br><br>
+  \(r(2-\cos\theta) = 3 \Rightarrow 2r - r\cos\theta = 3 \Rightarrow 2\sqrt{x^2+y^2} - x = 3\)
+  <br>
+  \(2\sqrt{x^2+y^2} = x+3 \Rightarrow 4(x^2+y^2) = (x+3)^2\)
+</div>
+
+<h2>6. Tangents to Polar Curves</h2>
+
+<p>Convert to parametric with \(\theta\) as parameter: \(x = r\cos\theta\), \(y = r\sin\theta\).</p>
+
+<div class="definition">
+  $$\frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta}$$
+  where:
+  $$\frac{dy}{d\theta} = \frac{dr}{d\theta}\sin\theta + r\cos\theta, \qquad \frac{dx}{d\theta} = \frac{dr}{d\theta}\cos\theta - r\sin\theta$$
+</div>
+
+<p><strong>Tangents parallel to initial line</strong> (\(y = 0\) direction, i.e. horizontal): set \(\dfrac{dy}{d\theta} = 0\) and \(\dfrac{dx}{d\theta} \neq 0\).</p>
+<p><strong>Tangents perpendicular to initial line</strong> (vertical): set \(\dfrac{dx}{d\theta} = 0\) and \(\dfrac{dy}{d\theta} \neq 0\).</p>
+
+<div class="example">
+  <strong>Example:</strong> For the cardioid \(r = a(1+\cos\theta)\), find \(\dfrac{dy}{dx}\) and the angles at which tangents are parallel to the initial line.
+  <br><br>
+  \(\dfrac{dr}{d\theta} = -a\sin\theta\).
+  <br>
+  \(\dfrac{dy}{d\theta} = -a\sin\theta\cdot\sin\theta + a(1+\cos\theta)\cos\theta = a(\cos\theta + \cos 2\theta)\)
+  <br>
+  Set \(\dfrac{dy}{d\theta} = 0\): \(\cos\theta + \cos 2\theta = 0\), i.e. \(\cos\theta + 2\cos^2\theta - 1 = 0\).
+  <br>
+  Let \(c = \cos\theta\): \(2c^2+c-1 = 0 \Rightarrow (2c-1)(c+1) = 0\).
+  <br>
+  \(c = 1/2\) (\(\theta = \pi/3, 5\pi/3\)) or \(c = -1\) (\(\theta = \pi\), but check \(dx/d\theta\) at this point).
+</div>
+
+<h2>7. Exam-Style Practice Questions</h2>
+<ol>
+  <li><strong>[Conversion]</strong> Convert the polar equation \(r = 4\sin\theta\) to Cartesian form and describe the curve.</li>
+  <li><strong>[Area]</strong> Find the total area enclosed by the curve \(r = 2 + 3\sin\theta\) between \(\theta = 0\) and \(\theta = 2\pi\).</li>
+  <li><strong>[Area — rose]</strong> Find the total area enclosed by all the petals of \(r = 4\cos 3\theta\).</li>
+  <li><strong>[Area between curves]</strong> Find the area of the region that is inside \(r = 3\cos\theta\) and outside \(r = 1 + \cos\theta\).</li>
+  <li><strong>[Tangent]</strong> For the curve \(r = 1 - \cos\theta\), find the Cartesian equation of the tangent at \(\theta = \pi/2\).</li>
+  <li><strong>[Sketch]</strong> Sketch the curve \(r = 2 + \cos\theta\), labelling key features. State the range of \(r\).</li>
+</ol>
+
+<div class="exam-tip">
+  <strong>General exam tips for CP2.5:</strong>
+  <ul>
+    <li>Area formula: \(\frac{1}{2}\int r^2\,d\theta\). The \(\frac{1}{2}\) is frequently forgotten — costs all subsequent marks.</li>
+    <li>Use symmetry where possible — halve the interval and double — saves integration work.</li>
+    <li>For tangent questions: differentiate \(y = r\sin\theta\) and \(x = r\cos\theta\) with respect to \(\theta\) using product rule.</li>
+    <li>Lemniscate: exists only for \(|\cos 2\theta| \leq 1\), i.e. only certain \(\theta\) ranges give real \(r\).</li>
+  </ul>
+</div>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>
