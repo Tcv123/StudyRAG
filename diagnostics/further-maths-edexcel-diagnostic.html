@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Further Maths Diagnostic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-config.js"></script>
+  <script src="../questions/further-maths-edexcel/fm-edexcel-mcq.js"></script>
+  <script src="../questions/further-maths-edexcel/fm-edexcel-written.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EEF5FC;
+      --surface: #FFFFFF;
+      --surface2: #F4F9FE;
+      --border: #D2E5F3;
+      --border-hover: #93C4E2;
+      --text: #1B2D4F;
+      --muted: #6B87A8;
+      --muted2: #A0B8CE;
+      --accent: #5BADCF;
+      --accent-dark: #3D95BC;
+      --green: #16A34A;
+      --green-bg: rgba(22,163,74,0.07);
+      --green-border: rgba(22,163,74,0.18);
+      --amber: #D97706;
+      --amber-bg: rgba(217,119,6,0.07);
+      --amber-border: rgba(217,119,6,0.18);
+      --red: #DC2626;
+      --red-bg: rgba(220,38,38,0.07);
+      --red-border: rgba(220,38,38,0.18);
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html, body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      height: 60px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 12px; }
+    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px rgba(91,173,207,0.6); }
+    .logo-text { font-family: var(--font-display); font-size: 19px; color: var(--text); }
+    .topbar-right { display: flex; align-items: center; gap: 10px; }
+    .topic-badge {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+      background: rgba(91,173,207,0.15); color: var(--accent);
+      padding: 5px 12px; border-radius: 20px;
+      border: 1px solid rgba(91,173,207,0.25);
+    }
+    .topbar-back {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 500; color: var(--muted);
+      text-decoration: none; padding: 7px 12px; border-radius: 8px;
+      border: 1px solid var(--border); transition: all 0.15s;
+    }
+    .topbar-back:hover { color: var(--text); border-color: var(--muted2); }
+
+    .page {
+      min-height: 100vh;
+      display: flex; align-items: flex-start; justify-content: center;
+      padding: 88px 20px 60px;
+    }
+    .card-wrapper { width: 100%; max-width: 700px; }
+
+    .progress-row { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+    .progress-track { flex: 1; height: 8px; background: var(--surface2); border-radius: 99px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--accent), #4FC3F7); transition: width 0.5s ease; }
+    .progress-label { font-size: 14px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+    .progress-dots { display: flex; gap: 6px; }
+    .progress-pip { width: 10px; height: 10px; border-radius: 50%; background: var(--surface2); border: 1px solid var(--border); transition: all 0.3s; }
+    .progress-pip.done-green { background: var(--green); border-color: var(--green); }
+    .progress-pip.done-amber { background: var(--amber); border-color: var(--amber); }
+    .progress-pip.done-red   { background: var(--red);   border-color: var(--red); }
+    .progress-pip.done-miss  { background: var(--muted2); border-color: var(--muted2); }
+    .progress-pip.current    { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 8px rgba(91,173,207,0.6); }
+
+    .q-card { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 40px; box-shadow: 0 8px 40px rgba(91,173,207,0.15); }
+    .q-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+    .q-type-badge { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; border: 1px solid; }
+    .q-type-badge.mcq     { background: rgba(91,173,207,0.12); color: var(--accent); border-color: rgba(91,173,207,0.3); }
+    .q-type-badge.written { background: rgba(245,158,11,0.12); color: var(--amber); border-color: rgba(245,158,11,0.3); }
+    .q-marks { font-size: 13px; font-weight: 600; color: var(--muted); }
+    .q-text { font-size: 22px; font-weight: 700; line-height: 1.5; color: var(--text); margin-bottom: 32px; }
+
+    .options { display: flex; flex-direction: column; gap: 14px; }
+    .option-btn { display: flex; align-items: flex-start; gap: 16px; padding: 18px 20px; background: var(--surface2); border: 2px solid var(--border); border-radius: 14px; cursor: pointer; text-align: left; font-family: var(--font-body); font-size: 16px; font-weight: 500; color: var(--text); line-height: 1.5; transition: all 0.15s; }
+    .option-btn:hover:not(:disabled):not(.selected) { border-color: var(--accent); background: rgba(91,173,207,0.08); }
+    .option-btn.selected { border-color: var(--accent); background: rgba(91,173,207,0.15); }
+    .option-btn.correct  { border-color: var(--green); background: var(--green-bg); }
+    .option-btn.wrong    { border-color: var(--red); background: var(--red-bg); }
+    .option-btn.reveal   { border-color: var(--green); background: var(--green-bg); opacity: 0.6; }
+    .option-btn:disabled { cursor: default; }
+    .option-letter { flex-shrink: 0; width: 32px; height: 32px; border-radius: 10px; background: var(--border); color: var(--muted); font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+    .option-btn.selected .option-letter { background: var(--accent); color: #fff; }
+    .option-btn.correct  .option-letter { background: var(--green); color: #fff; }
+    .option-btn.wrong    .option-letter { background: var(--red);   color: #fff; }
+    .option-btn.reveal   .option-letter { background: var(--green); color: #fff; }
+
+    .written-area { width: 100%; min-height: 160px; padding: 18px 20px; background: var(--surface2); border: 2px solid var(--border); border-radius: 14px; color: var(--text); font-family: var(--font-body); font-size: 16px; font-weight: 500; line-height: 1.6; resize: vertical; outline: none; transition: border-color 0.15s; }
+    .written-area::placeholder { color: var(--muted2); }
+    .written-area:focus { border-color: var(--accent); }
+    .diagram-area { margin: 16px 0; border: 2px solid var(--border); border-radius: 14px; overflow: hidden; background: #fff; }
+    .draw-toolbar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: var(--surface2); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .draw-toolbar .tool-group { display: flex; align-items: center; gap: 4px; padding-right: 10px; margin-right: 6px; border-right: 1px solid var(--border); }
+    .draw-toolbar .tool-group:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .draw-btn { width: 34px; height: 34px; border-radius: 8px; border: 2px solid var(--border); background: var(--surface); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: all 0.15s; padding: 0; }
+    .draw-btn:hover { border-color: var(--accent); background: rgba(91,173,207,0.08); }
+    .draw-btn.active { border-color: var(--accent); background: rgba(91,173,207,0.15); box-shadow: 0 0 0 2px rgba(91,173,207,0.2); }
+    .draw-btn-wide { height: 34px; padding: 0 12px; border-radius: 8px; border: 2px solid var(--border); background: var(--surface); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 12px; font-weight: 600; font-family: var(--font-body); color: var(--muted); transition: all 0.15s; }
+    .draw-btn-wide:hover { border-color: var(--accent); color: var(--accent); }
+    .color-swatch { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border); cursor: pointer; transition: all 0.15s; padding: 0; }
+    .color-swatch:hover, .color-swatch.active { border-color: var(--text); transform: scale(1.15); box-shadow: 0 0 0 2px rgba(91,173,207,0.3); }
+    .size-slider { width: 70px; height: 6px; -webkit-appearance: none; appearance: none; background: var(--border); border-radius: 3px; outline: none; cursor: pointer; }
+    .size-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); cursor: pointer; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+    .size-label { font-size: 11px; color: var(--muted); font-weight: 600; min-width: 22px; text-align: center; }
+    .diagram-canvas-wrap { position: relative; cursor: crosshair; }
+    .diagram-canvas-wrap canvas { display: block; width: 100%; }
+    .diagram-label { font-size: 12px; color: var(--muted); margin-top: 6px; font-style: italic; }
+    .written-hint { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+    .model-answer-wrap { margin-top: 20px; background: rgba(245,158,11,0.07); border: 1px solid var(--amber-border); border-radius: 14px; overflow: hidden; }
+    .model-answer-label { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--amber); padding: 12px 20px; border-bottom: 1px solid var(--amber-border); background: rgba(245,158,11,0.05); }
+    .model-answer-text { padding: 18px 20px; font-size: 15px; font-weight: 400; color: var(--text); line-height: 1.75; white-space: pre-line; }
+
+    .self-mark-row { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+    .self-mark-btn { flex: 1; min-width: 140px; padding: 14px 16px; border-radius: 12px; border: 2px solid; font-family: var(--font-body); font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.15s; }
+    .self-mark-btn.full    { background: var(--green-bg); border-color: var(--green-border); color: var(--green); }
+    .self-mark-btn.partial { background: var(--amber-bg); border-color: var(--amber-border); color: var(--amber); }
+    .self-mark-btn.miss    { background: var(--red-bg);   border-color: var(--red-border);   color: var(--red);   }
+    .self-mark-btn:hover   { filter: brightness(1.15); transform: translateY(-1px); }
+
+    .feedback-bar { margin-top: 20px; padding: 14px 18px; border-radius: 12px; font-size: 15px; font-weight: 600; display: none; line-height: 1.5; }
+    .feedback-bar.show { display: block; }
+    .feedback-bar.correct-fb { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+    .feedback-bar.wrong-fb   { background: var(--red-bg);   color: var(--red);   border: 1px solid var(--red-border); }
+
+    .btn-confirm { margin-top: 24px; width: 100%; padding: 18px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; font-family: var(--font-body); font-size: 17px; font-weight: 700; border: none; border-radius: 14px; cursor: pointer; transition: all 0.15s; display: none; box-shadow: 0 4px 20px rgba(91,173,207,0.3); }
+    .btn-confirm.show { display: block; }
+    .btn-confirm:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(91,173,207,0.4); }
+    .btn-reveal { margin-top: 20px; width: 100%; padding: 16px; background: rgba(245,158,11,0.1); color: var(--amber); font-family: var(--font-body); font-size: 16px; font-weight: 700; border: 2px solid var(--amber-border); border-radius: 14px; cursor: pointer; transition: all 0.15s; }
+    .btn-reveal:hover { background: rgba(245,158,11,0.18); }
+    .btn-next { margin-top: 24px; width: 100%; padding: 18px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; font-family: var(--font-body); font-size: 17px; font-weight: 700; border: none; border-radius: 14px; cursor: pointer; transition: all 0.15s; display: none; box-shadow: 0 4px 20px rgba(91,173,207,0.3); }
+    .btn-next.show { display: block; }
+    .btn-next:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(91,173,207,0.4); }
+
+    .result-card { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 56px 44px; text-align: center; box-shadow: 0 8px 40px rgba(91,173,207,0.15); }
+    .result-glow { width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 56px; margin: 0 auto 28px; border: 3px solid; }
+    .result-glow.green { background: var(--green-bg); border-color: var(--green-border); box-shadow: 0 0 40px rgba(34,197,94,0.25); }
+    .result-glow.amber { background: var(--amber-bg); border-color: var(--amber-border); box-shadow: 0 0 40px rgba(245,158,11,0.25); }
+    .result-glow.red   { background: var(--red-bg);   border-color: var(--red-border);   box-shadow: 0 0 40px rgba(239,68,68,0.25); }
+    .result-rag-label { font-size: 14px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+    .result-rag-label.green { color: var(--green); }
+    .result-rag-label.amber { color: var(--amber); }
+    .result-rag-label.red   { color: var(--red); }
+    .result-topic { font-family: var(--font-display); font-size: 30px; color: var(--text); margin-bottom: 14px; letter-spacing: -0.01em; }
+    .result-desc { font-size: 16px; font-weight: 400; color: var(--muted); line-height: 1.7; max-width: 440px; margin: 0 auto 36px; }
+    .result-breakdown { display: flex; gap: 10px; justify-content: center; margin-bottom: 36px; flex-wrap: wrap; }
+    .breakdown-chip { padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; border: 1px solid; }
+    .breakdown-chip.hit-green { background: var(--green-bg); color: var(--green); border-color: var(--green-border); }
+    .breakdown-chip.hit-amber { background: var(--amber-bg); color: var(--amber); border-color: var(--amber-border); }
+    .breakdown-chip.hit-red   { background: var(--red-bg);   color: var(--red);   border-color: var(--red-border); }
+    .breakdown-chip.miss      { background: var(--surface2); color: var(--muted); border-color: var(--border); }
+    .result-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { padding: 15px 32px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; font-family: var(--font-body); font-size: 16px; font-weight: 700; border: none; border-radius: 14px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(91,173,207,0.3); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(91,173,207,0.4); }
+    .btn-outline { padding: 15px 32px; background: transparent; color: var(--muted); font-family: var(--font-body); font-size: 16px; font-weight: 600; border: 2px solid var(--border); border-radius: 14px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-outline:hover { border-color: var(--muted2); color: var(--text); }
+
+    .saving-row { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+    .spinner { width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.6s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .screen-center { text-align: center; padding: 64px 24px; }
+    .screen-icon { font-size: 52px; margin-bottom: 16px; }
+    .screen-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .screen-sub { font-size: 15px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="logo-dot"></div>
+      <span class="logo-text">RAG Learning</span>
+    </div>
+    <div class="topbar-right">
+      <span class="topic-badge" id="topicBadge">—</span>
+      <a href="../Dashboard.html" class="topbar-back">← Dashboard</a>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="card-wrapper" id="cardWrapper">
+      <div class="screen-center">
+        <div class="screen-icon">⏳</div>
+        <div class="screen-title">Loading diagnostic…</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+const W = { green: 1, amber: 2, red: 3, written_full: 3, written_partial: 1.5 };
+const THRESHOLD = { green: 8, amber: 4 };
+
+const KATEX_DELIMITERS = [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}];
+function renderMath() {
+  setTimeout(() => renderMathInElement(document.getElementById('cardWrapper'), {delimiters: KATEX_DELIMITERS}), 50);
+}
+
+function buildQuestionSet(mcq, written) {
+  const w = written || { green: [], amber: [], red: [] };
+  const tiers = ['green', 'amber', 'red'];
+  const writtenTier = tiers[Math.floor(Math.random() * tiers.length)];
+  const need = { green: 2, amber: 2, red: 1 };
+  const selected = [];
+
+  for (const tier of tiers) {
+    const count = need[tier];
+    if (tier === writtenTier && w[tier] && w[tier].length > 0) {
+      const wq = pick(w[tier], 1).map(q => ({ ...q, type: 'written', tier }));
+      selected.push(...wq);
+      if (count > 1 && mcq[tier]) {
+        selected.push(...pick(mcq[tier], count - 1).map(q => ({ ...q, type: 'mcq', tier })));
+      }
+    } else {
+      if (mcq[tier]) {
+        selected.push(...pick(mcq[tier], count).map(q => ({ ...q, type: 'mcq', tier })));
+      }
+    }
+  }
+
+  if (!selected.some(q => q.type === 'written')) {
+    for (const tier of tiers) {
+      if (w[tier] && w[tier].length > 0) {
+        const wq = pick(w[tier], 1).map(q => ({ ...q, type: 'written', tier }))[0];
+        const idx = selected.findIndex(q => q.type === 'mcq' && q.tier === tier);
+        if (idx !== -1) { selected[idx] = wq; break; }
+      }
+    }
+  }
+
+  return shuffle(selected);
+}
+
+function computeRag(results) {
+  const score = results.reduce((s, r) => s + (r.pts || 0), 0);
+  if (score >= THRESHOLD.green) return 'green';
+  if (score >= THRESHOLD.amber) return 'amber';
+  return 'red';
+}
+
+function pick(arr, n) {
+  const a = [...arr], out = [];
+  while (out.length < n && a.length) {
+    const i = Math.floor(Math.random() * a.length);
+    out.push(a.splice(i, 1)[0]);
+  }
+  return out;
+}
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+const LETTERS = ['A','B','C','D'];
+
+const RAG = {
+  green: { emoji:'🟢', label:'Green — Strong Understanding', desc:'Excellent work. You handled both the recall and the harder questions well. Keep revisiting this topic periodically to stay sharp.' },
+  amber: { emoji:'🟡', label:'Amber — Developing', desc:'You have the foundations but the trickier questions need more work. Go back through the notes, focus on the areas you missed, then re-test.' },
+  red:   { emoji:'🔴', label:'Red — Needs Revision', desc:'This topic needs dedicated revision. Work carefully through the notes and make sure you understand the key concepts before testing again.' },
+};
+
+const params   = new URLSearchParams(location.search);
+const topicKey = params.get('topic') || '';
+const wrapper  = document.getElementById('cardWrapper');
+
+let user      = null;
+let questions = [];
+let qIndex    = 0;
+let results   = [];
+let selectedI = null;
+
+async function init() {
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if (!session) { location.href = '../auth/login.html'; return; }
+  user = session.user;
+
+  const mcqData     = FM_EDEXCEL_MCQ[topicKey];
+  const writtenData = FM_EDEXCEL_WRITTEN?.[topicKey];
+
+  if (!mcqData) { showError(`Topic "${topicKey}" not found.`); return; }
+
+  document.title = `RAG Learning — Diagnostic ${topicKey}`;
+  document.getElementById('topicBadge').textContent = `${topicKey} — ${mcqData.name}`;
+
+  const storeKey = `diag_fm_edexcel_${topicKey}`;
+  const saved = sessionStorage.getItem(storeKey);
+  if (saved) {
+    try { questions = JSON.parse(saved); } catch(e) { questions = null; }
+  }
+  if (!questions || !questions.length) {
+    questions = buildQuestionSet(mcqData, writtenData);
+    sessionStorage.setItem(storeKey, JSON.stringify(questions));
+  }
+  renderIntro(mcqData.name);
+}
+
+function renderIntro(topicName) {
+  wrapper.innerHTML = `
+    <div class="question-card" style="text-align:center;padding:48px 40px;">
+      <div style="font-size:48px;margin-bottom:20px;">◎</div>
+      <div style="font-family:var(--font-display);font-size:24px;margin-bottom:8px;">${topicKey} — ${topicName}</div>
+      <p style="color:var(--muted);font-size:15px;line-height:1.7;max-width:440px;margin:0 auto 28px;">
+        This diagnostic has <strong>5 questions</strong> to test your understanding of this topic.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto 32px;text-align:left;">
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
+          <span style="font-size:18px;">◎</span>
+          <span style="font-size:14px;"><strong>4 multiple choice</strong> — pick the correct answer</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
+          <span style="font-size:18px;">✏️</span>
+          <span style="font-size:14px;"><strong>1 written question</strong> — write your answer, then compare with the model answer</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
+          <span style="font-size:18px;">🎯</span>
+          <span style="font-size:14px;">Your <strong>RAG colour</strong> will update based on your score</span>
+        </div>
+      </div>
+      <button class="btn-confirm show" onclick="startDiagnostic()" style="display:inline-block;width:auto;padding:16px 48px;">Start Diagnostic →</button>
+    </div>
+  `;
+  renderMath();
+}
+
+function startDiagnostic() { renderQuestion(); }
+
+function buildPips() {
+  return questions.map((_, i) => {
+    let cls = 'progress-pip';
+    if (i < qIndex) {
+      const r = results[i];
+      if (r) {
+        if (r.pts >= W.green || r.pts >= W.amber) cls += ' done-green';
+        else cls += ' done-miss';
+      }
+    } else if (i === qIndex) {
+      cls += ' current';
+    }
+    return `<div class="${cls}"></div>`;
+  }).join('');
+}
+
+function renderQuestion() {
+  selectedI = null;
+  const q     = questions[qIndex];
+  const total = questions.length;
+  const pct   = (qIndex / total) * 100;
+
+  const typeBadge = q.type === 'written'
+    ? `<span class="q-type-badge written">✏️ Written</span>`
+    : `<span class="q-type-badge mcq">◎ Multiple Choice</span>`;
+
+  const marks = q.marks ? `<span class="q-marks">[${q.marks} marks]</span>` : '';
+
+  wrapper.innerHTML = `
+    <div class="progress-row">
+      <div class="progress-track">
+        <div class="progress-fill" style="width:${pct}%"></div>
+      </div>
+      <div class="progress-dots">${buildPips()}</div>
+      <span class="progress-label">${qIndex + 1} / ${total}</span>
+    </div>
+    <div class="q-card">
+      <div class="q-header">${typeBadge}${marks}</div>
+      <div class="q-text">${q.q}</div>
+      ${q.type === 'written' ? renderWritten(q) : renderMCQ(q)}
+    </div>
+  `;
+  setTimeout(initCanvas, 50);
+  renderMath();
+}
+
+function renderMCQ(q) {
+  return `
+    <div class="options" id="options">
+      ${q.options.map((opt, i) => `
+        <button class="option-btn" id="opt${i}" onclick="selectOption(${i})" data-idx="${i}">
+          <span class="option-letter">${LETTERS[i]}</span>
+          <span>${opt}</span>
+        </button>
+      `).join('')}
+    </div>
+    <div class="feedback-bar" id="feedbackBar"></div>
+    <button class="btn-confirm" id="btnConfirm" onclick="confirmMCQ()">Confirm Answer</button>
+    <button class="btn-next" id="btnNext" onclick="nextQuestion()">
+      ${qIndex + 1 < questions.length ? 'Next Question →' : 'See My Results →'}
+    </button>
+  `;
+}
+
+function renderWritten(q) {
+  return `
+    ${q.diagram ? `<div class="diagram-area">
+      <div class="draw-toolbar">
+        <div class="tool-group">
+          <button class="draw-btn active" id="toolPen" onclick="setTool('pen')" title="Pen">✏️</button>
+          <button class="draw-btn" id="toolLine" onclick="setTool('line')" title="Straight Line">📏</button>
+          <button class="draw-btn" id="toolRect" onclick="setTool('rect')" title="Rectangle">⬜</button>
+          <button class="draw-btn" id="toolCircle" onclick="setTool('circle')" title="Circle">⭕</button>
+          <button class="draw-btn" id="toolArrow" onclick="setTool('arrow')" title="Arrow">➡️</button>
+          <button class="draw-btn" id="toolText" onclick="setTool('text')" title="Text">🔤</button>
+          <button class="draw-btn" id="toolEraser" onclick="setTool('eraser')" title="Eraser">🧹</button>
+        </div>
+        <div class="tool-group">
+          <button class="color-swatch active" style="background:#1B2D4F" onclick="setColor('#1B2D4F')" data-color="#1B2D4F"></button>
+          <button class="color-swatch" style="background:#DC2626" onclick="setColor('#DC2626')" data-color="#DC2626"></button>
+          <button class="color-swatch" style="background:#16A34A" onclick="setColor('#16A34A')" data-color="#16A34A"></button>
+          <button class="color-swatch" style="background:#2563EB" onclick="setColor('#2563EB')" data-color="#2563EB"></button>
+          <button class="color-swatch" style="background:#D97706" onclick="setColor('#D97706')" data-color="#D97706"></button>
+          <button class="color-swatch" style="background:#7C3AED" onclick="setColor('#7C3AED')" data-color="#7C3AED"></button>
+          <button class="color-swatch" style="background:#000000" onclick="setColor('#000000')" data-color="#000000"></button>
+        </div>
+        <div class="tool-group">
+          <span class="size-label" id="sizeLabel">2</span>
+          <input type="range" class="size-slider" id="sizeSlider" min="1" max="12" value="2" oninput="setSize(this.value)">
+        </div>
+        <div class="tool-group">
+          <button class="draw-btn-wide" onclick="undoDraw()" title="Undo">↩️ Undo</button>
+          <button class="draw-btn-wide" onclick="redoDraw()" title="Redo">↪️ Redo</button>
+          <button class="draw-btn-wide" onclick="clearCanvas()" title="Clear All">🗑️ Clear</button>
+        </div>
+      </div>
+      <div class="diagram-canvas-wrap"><canvas id="drawCanvas" width="700" height="300"></canvas></div>
+    </div>
+    <p class="diagram-label" id="diagramLabel">Use the drawing tools above to sketch your diagram</p>` : ''}
+    <textarea class="written-area" id="writtenInput" placeholder="Write your answer here…"></textarea>
+    <p class="written-hint">${q.diagram ? 'Draw your diagram above and write your explanation below.' : 'Write your answer above, then reveal the model answer to compare.'}</p>
+    <button class="btn-reveal" id="btnReveal" onclick="revealModel()">Reveal Model Answer</button>
+    <div id="modelAnswerWrap" style="display:none">
+      <div class="model-answer-wrap">
+        <div class="model-answer-label">📋 Model Answer</div>
+        <div class="model-answer-text">${q.modelAnswer}</div>
+      </div>
+      <div class="self-mark-row">
+        <button class="self-mark-btn full"    onclick="selfMark('full')">✓ Full marks</button>
+        <button class="self-mark-btn partial" onclick="selfMark('partial')">~ Partially right</button>
+        <button class="self-mark-btn miss"    onclick="selfMark('miss')">✗ Missed it</button>
+      </div>
+    </div>
+    <button class="btn-next" id="btnNext" onclick="nextQuestion()">
+      ${qIndex + 1 < questions.length ? 'Next Question →' : 'See My Results →'}
+    </button>
+  `;
+}
+
+function selectOption(i) {
+  if (document.getElementById('btnNext').classList.contains('show')) return;
+  document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById(`opt${i}`).classList.add('selected');
+  selectedI = i;
+  document.getElementById('btnConfirm').classList.add('show');
+}
+
+function confirmMCQ() {
+  if (selectedI === null) return;
+  const q = questions[qIndex];
+  const correct = selectedI === q.answer;
+
+  document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+  document.getElementById('btnConfirm').style.display = 'none';
+
+  document.getElementById(`opt${selectedI}`).classList.remove('selected');
+  if (correct) {
+    document.getElementById(`opt${selectedI}`).classList.add('correct');
+  } else {
+    document.getElementById(`opt${selectedI}`).classList.add('wrong');
+    document.getElementById(`opt${q.answer}`).classList.add('reveal');
+  }
+
+  const fb = document.getElementById('feedbackBar');
+  fb.classList.add('show');
+  if (correct) {
+    fb.classList.add('correct-fb');
+    fb.textContent = '✓ Correct!';
+  } else {
+    fb.classList.add('wrong-fb');
+    fb.textContent = `✗ Incorrect — correct answer: ${q.options[q.answer]}`;
+  }
+
+  results.push({ type: 'mcq', tier: q.tier, pts: correct ? W[q.tier] : 0, correct });
+  document.getElementById('btnNext').classList.add('show');
+}
+
+function revealModel() {
+  document.getElementById('btnReveal').style.display = 'none';
+  document.getElementById('modelAnswerWrap').style.display = 'block';
+  renderMath();
+}
+
+// ═══ DRAWING ENGINE ═══
+let drawState = {
+  tool: 'pen', color: '#1B2D4F', size: 2,
+  drawing: false, canvas: null, ctx: null,
+  undoStack: [], redoStack: [], snapshot: null,
+  startX: 0, startY: 0, textMode: false
+};
+
+function initCanvas() {
+  const canvas = document.getElementById('drawCanvas');
+  if (!canvas) return;
+  const wrap = canvas.parentElement;
+  canvas.width = wrap.offsetWidth;
+  canvas.height = 300;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  drawState.canvas = canvas;
+  drawState.ctx = ctx;
+  drawState.undoStack = [];
+  drawState.redoStack = [];
+  drawState.drawing = false;
+  saveUndoState();
+
+  canvas.onmousedown = e => canvasDown(e.offsetX, e.offsetY);
+  canvas.onmousemove = e => canvasMove(e.offsetX, e.offsetY);
+  canvas.onmouseup = e => canvasUp(e.offsetX, e.offsetY);
+  canvas.onmouseleave = () => { if (drawState.drawing) canvasUp(0, 0); };
+  canvas.ontouchstart = e => { e.preventDefault(); const r = canvas.getBoundingClientRect(); canvasDown(e.touches[0].clientX - r.left, e.touches[0].clientY - r.top); };
+  canvas.ontouchmove = e => { e.preventDefault(); const r = canvas.getBoundingClientRect(); canvasMove(e.touches[0].clientX - r.left, e.touches[0].clientY - r.top); };
+  canvas.ontouchend = e => { e.preventDefault(); canvasUp(0, 0); };
+}
+
+function saveUndoState() {
+  if (!drawState.canvas) return;
+  drawState.undoStack.push(drawState.canvas.toDataURL());
+  if (drawState.undoStack.length > 30) drawState.undoStack.shift();
+  drawState.redoStack = [];
+}
+
+function hideDrawLabel() {
+  const lbl = document.getElementById('diagramLabel');
+  if (lbl) lbl.style.display = 'none';
+}
+
+function canvasDown(x, y) {
+  hideDrawLabel();
+  const s = drawState;
+  if (s.tool === 'text') {
+    const text = prompt('Enter label text:');
+    if (text) {
+      s.ctx.font = `${Math.max(s.size * 4, 14)}px 'DM Sans', sans-serif`;
+      s.ctx.fillStyle = s.color;
+      s.ctx.fillText(text, x, y);
+      saveUndoState();
+    }
+    return;
+  }
+  s.drawing = true;
+  s.startX = x;
+  s.startY = y;
+  s.snapshot = s.ctx.getImageData(0, 0, s.canvas.width, s.canvas.height);
+  if (s.tool === 'pen' || s.tool === 'eraser') {
+    s.ctx.beginPath();
+    s.ctx.moveTo(x, y);
+  }
+}
+
+function canvasMove(x, y) {
+  const s = drawState;
+  if (!s.drawing) return;
+  if (s.tool === 'pen' || s.tool === 'eraser') {
+    s.ctx.strokeStyle = s.tool === 'eraser' ? '#FFFFFF' : s.color;
+    s.ctx.lineWidth = s.tool === 'eraser' ? s.size * 6 : s.size;
+    s.ctx.lineTo(x, y);
+    s.ctx.stroke();
+  } else {
+    s.ctx.putImageData(s.snapshot, 0, 0);
+    s.ctx.strokeStyle = s.color;
+    s.ctx.lineWidth = s.size;
+    s.ctx.beginPath();
+    if (s.tool === 'line') {
+      s.ctx.moveTo(s.startX, s.startY);
+      s.ctx.lineTo(x, y);
+    } else if (s.tool === 'rect') {
+      s.ctx.rect(s.startX, s.startY, x - s.startX, y - s.startY);
+    } else if (s.tool === 'circle') {
+      const rx = Math.abs(x - s.startX) / 2, ry = Math.abs(y - s.startY) / 2;
+      const cx = s.startX + (x - s.startX) / 2, cy = s.startY + (y - s.startY) / 2;
+      s.ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
+    } else if (s.tool === 'arrow') {
+      s.ctx.moveTo(s.startX, s.startY);
+      s.ctx.lineTo(x, y);
+      s.ctx.stroke();
+      const angle = Math.atan2(y - s.startY, x - s.startX);
+      const headLen = 12 + s.size * 2;
+      s.ctx.beginPath();
+      s.ctx.moveTo(x, y);
+      s.ctx.lineTo(x - headLen * Math.cos(angle - 0.4), y - headLen * Math.sin(angle - 0.4));
+      s.ctx.moveTo(x, y);
+      s.ctx.lineTo(x - headLen * Math.cos(angle + 0.4), y - headLen * Math.sin(angle + 0.4));
+    }
+    s.ctx.stroke();
+  }
+}
+
+function canvasUp(x, y) {
+  if (!drawState.drawing) return;
+  drawState.drawing = false;
+  saveUndoState();
+}
+
+function setTool(t) {
+  drawState.tool = t;
+  document.querySelectorAll('.draw-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('tool' + t.charAt(0).toUpperCase() + t.slice(1));
+  if (btn) btn.classList.add('active');
+  if (drawState.canvas) drawState.canvas.style.cursor = t === 'text' ? 'text' : t === 'eraser' ? 'cell' : 'crosshair';
+}
+
+function setColor(c) {
+  drawState.color = c;
+  document.querySelectorAll('.color-swatch').forEach(s => s.classList.toggle('active', s.dataset.color === c));
+}
+
+function setSize(v) {
+  drawState.size = parseInt(v);
+  document.getElementById('sizeLabel').textContent = v;
+}
+
+function undoDraw() {
+  const s = drawState;
+  if (s.undoStack.length <= 1) return;
+  s.redoStack.push(s.undoStack.pop());
+  const img = new Image();
+  img.onload = () => { s.ctx.clearRect(0, 0, s.canvas.width, s.canvas.height); s.ctx.drawImage(img, 0, 0); };
+  img.src = s.undoStack[s.undoStack.length - 1];
+}
+
+function redoDraw() {
+  const s = drawState;
+  if (s.redoStack.length === 0) return;
+  const data = s.redoStack.pop();
+  s.undoStack.push(data);
+  const img = new Image();
+  img.onload = () => { s.ctx.clearRect(0, 0, s.canvas.width, s.canvas.height); s.ctx.drawImage(img, 0, 0); };
+  img.src = data;
+}
+
+function clearCanvas() {
+  const s = drawState;
+  if (!s.canvas) return;
+  s.ctx.fillStyle = '#fff';
+  s.ctx.fillRect(0, 0, s.canvas.width, s.canvas.height);
+  saveUndoState();
+}
+
+function selfMark(level) {
+  const q = questions[qIndex];
+  const pts = level === 'full' ? W.written_full : level === 'partial' ? W.written_partial : 0;
+  results.push({ type: 'written', tier: q.tier, pts, level });
+  document.querySelectorAll('.self-mark-btn').forEach(b => { b.disabled = true; b.style.opacity = '0.5'; });
+  document.getElementById('btnNext').classList.add('show');
+}
+
+function nextQuestion() {
+  qIndex++;
+  if (qIndex < questions.length) renderQuestion();
+  else renderResult();
+}
+
+async function renderResult() {
+  const rag      = computeRag(results);
+  const content  = RAG[rag];
+  const topicData = FM_EDEXCEL_MCQ[topicKey];
+
+  const chips = results.map((r, i) => {
+    const label = r.type === 'written'
+      ? (r.level === 'full' ? '✓ Written' : r.level === 'partial' ? '~ Written' : '✗ Written')
+      : (r.correct ? `✓ Q${i+1}` : `✗ Q${i+1}`);
+    const cls = r.pts > 0 ? (r.pts >= W.green && r.type !== 'written' ? 'hit-green' : 'hit-amber') : 'miss';
+    return `<span class="breakdown-chip ${cls}">${label}</span>`;
+  }).join('');
+
+  wrapper.innerHTML = `
+    <div class="result-card">
+      <div class="result-glow ${rag}">${content.emoji}</div>
+      <div class="result-rag-label ${rag}">${content.label}</div>
+      <div class="result-topic">${topicKey} — ${topicData.name}</div>
+      <p class="result-desc">${content.desc}</p>
+      <div class="result-breakdown">${chips}</div>
+      <div class="saving-row" id="savingRow">
+        <div class="spinner"></div> Saving result…
+      </div>
+      <div class="result-actions" id="resultActions" style="display:none">
+        <a class="btn-primary" href="../Dashboard.html">← Back to Dashboard</a>
+        <a class="btn-outline" href="../subject-notes/further-maths-edexcel-notes.html">Further Mathematics (Edexcel) Notes</a>
+      </div>
+    </div>
+  `;
+  renderMath();
+
+  await saveResult(rag, results);
+  sessionStorage.removeItem(`diag_fm_edexcel_${topicKey}`);
+  document.getElementById('savingRow').style.display = 'none';
+  document.getElementById('resultActions').style.display = 'flex';
+}
+
+async function saveResult(rag, results) {
+  if (!user) { console.error('SAVE: no user'); return; }
+  const now = new Date().toISOString();
+  console.log('SAVE: starting', { rag, topic: topicKey, user: user.id });
+
+  try {
+    // Delete existing row first
+    const { error: delErr } = await supabaseClient.from('topic_progress')
+      .delete()
+      .eq('user_id', user.id).eq('subject', 'Further Mathematics').eq('exam_board', 'Edexcel').eq('topic', topicKey);
+    if (delErr) console.warn('SAVE: delete old row', delErr);
+
+    // Insert fresh
+    const { error: e1 } = await supabaseClient.from('topic_progress')
+      .insert({ user_id: user.id, subject: 'Further Mathematics', exam_board: 'Edexcel', topic: topicKey, rag_status: rag, updated_at: now });
+
+    if (e1) console.error('SAVE: insert failed', e1);
+    else console.log('SAVE: insert success');
+
+    const { data: allTopics } = await supabaseClient
+      .from('topic_progress').select('rag_status')
+      .eq('user_id', user.id).eq('subject', 'Further Mathematics').eq('exam_board', 'Edexcel');
+
+    if (allTopics && allTopics.length > 0) {
+      const total = allTopics.length;
+      const green = allTopics.filter(t => t.rag_status === 'green').length;
+      const red   = allTopics.filter(t => t.rag_status === 'red').length;
+      const subjRag = (green / total) >= 0.7 ? 'green' : (red / total) >= 0.4 ? 'red' : 'amber';
+      await supabaseClient.from('user_subjects').update({ rag_status: subjRag })
+        .eq('user_id', user.id).eq('subject', 'Further Mathematics').eq('exam_board', 'Edexcel');
+    }
+
+    if (rag === 'green' && results.every(r => r.pts > 0)) {
+      const { data: medalExisting } = await supabaseClient.from('user_medals')
+        .select('id').eq('user_id', user.id).eq('medal_id', 'perfect_score').maybeSingle();
+      if (!medalExisting) {
+        await supabaseClient.from('user_medals').insert({ user_id: user.id, medal_id: 'perfect_score' });
+      }
+    }
+
+    console.log('SAVE: complete');
+  } catch (err) {
+    console.error('SAVE: exception', err);
+  }
+}
+
+function showError(msg) {
+  wrapper.innerHTML = `
+    <div class="screen-center">
+      <div class="screen-icon">⚠️</div>
+      <div class="screen-title">Something went wrong</div>
+      <p class="screen-sub" style="margin:8px 0 24px">${msg}</p>
+      <a class="btn-primary" href="../Dashboard.html">← Back to Dashboard</a>
+    </div>
+  `;
+}
+
+init();
+</script>
+</body>
+</html>
