@@ -887,6 +887,11 @@ const EXAM_DATES = {
     { paper: 'Paper 2 — Human Interactions', date: '2026-05-21', time: 'PM', duration: '2h 30m' },
     { paper: 'Paper 3 — Geographical Debates', date: '2026-06-08', time: 'PM', duration: '2h 30m' },
   ],
+  'Geography_Eduqas': [
+    { paper: 'Component 1 — Changing Physical World', date: '2026-05-13', time: 'AM', duration: '1h 45m' },
+    { paper: 'Component 2 — Changing Human World', date: '2026-05-22', time: 'PM', duration: '1h 45m' },
+    { paper: 'Component 3 — Environmental Challenges', date: '2026-06-09', time: 'AM', duration: '1h' },
+  ],
 };
 
 function toggleExamDates() {
@@ -1326,10 +1331,11 @@ const SUBJECT_TOPIC_KEY = {
   'Geography_AQA': 'geography-aqa',
   'Geography_Edexcel': 'geography-edexcel',
   'Geography_OCR': 'geography-ocr',
+  'Geography_Eduqas': 'geography-eduqas',
   'Mathematics_AQA': 'maths-aqa',
   'Mathematics_OCR': 'maths-ocr',
 };
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'maths-aqa': 17, 'maths-ocr': 19 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas': 12, 'maths-aqa': 17, 'maths-ocr': 19 };
 const SUBJECT_NOTES_PAGE = {
   'Computer Science_OCR': 'subject-notes/cs-notes.html',
   'Computer Science_AQA': 'subject-notes/cs-aqa-notes.html',
@@ -1353,6 +1359,7 @@ const SUBJECT_NOTES_PAGE = {
   'Geography_AQA': 'subject-notes/geography-aqa-notes.html',
   'Geography_Edexcel': 'subject-notes/geography-edexcel-notes.html',
   'Geography_OCR': 'subject-notes/geography-ocr-notes.html',
+  'Geography_Eduqas': 'subject-notes/geography-eduqas-notes.html',
   'Mathematics_AQA': 'subject-notes/maths-aqa-notes.html',
   'Mathematics_OCR': 'subject-notes/maths-ocr-notes.html',
 };
@@ -2344,6 +2351,25 @@ const DIAG_TOPICS = {
       { id: '2.3', name: 'Global Migration', sub: 'Migration theories, push/pull, impacts' },
       { id: '2.4', name: 'Human Rights', sub: 'Development, health, gender, education' },
       { id: '2.5', name: 'Power & Borders', sub: 'Sovereignty, superpowers, global governance' },
+    ],
+  },
+  'Geography_Eduqas': {
+    label: 'Geography — Eduqas',
+    emoji: '🌍',
+    page: 'diagnostics/geography-eduqas-diagnostic.html',
+    topics: [
+      { id: '1.1', name: 'Coastal Landscapes', sub: 'Waves, erosion, transport, landforms, management' },
+      { id: '1.2', name: 'River Landscapes', sub: 'Drainage basins, processes, landforms, flooding' },
+      { id: '1.3', name: 'Glaciated Landscapes', sub: 'Glacial processes, landforms, periglaciation' },
+      { id: '1.4', name: 'Weather and Climate', sub: 'UK climate, weather systems, climate change' },
+      { id: '1.5', name: 'Tropical Rainforests', sub: 'Climate, structure, biodiversity, deforestation' },
+      { id: '1.6', name: 'Hot Deserts', sub: 'Climate, adaptations, desertification, management' },
+      { id: '2.1', name: 'Urbanisation and Urban Change', sub: 'Global urbanisation, cities in LICs/NEEs' },
+      { id: '2.2', name: 'UK Cities', sub: 'Urban issues, regeneration, sustainable cities' },
+      { id: '2.3', name: 'Global Development', sub: 'Development indicators, inequality, strategies' },
+      { id: '3.1', name: 'Tectonic Hazards', sub: 'Plate tectonics, volcanoes, earthquakes, management' },
+      { id: '3.2', name: 'Climate Change', sub: 'Causes, impacts, mitigation, adaptation' },
+      { id: '3.3', name: 'Water Management', sub: 'Water demand, supply, management strategies' },
     ],
   },
   'Mathematics_OCR': {

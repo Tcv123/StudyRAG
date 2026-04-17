@@ -79,7 +79,8 @@
       "Bash(ls -lh \"C:/Users/tcvas/OneDrive/Desktop/Learning/questions/economics-edexcel-a\"/*)",
       "Bash(ls -lh \"C:/Users/tcvas/OneDrive/Desktop/Learning/questions/economics-edexcel-b\"/*)",
       "Bash(ls -lh \"C:/Users/tcvas/OneDrive/Desktop/Learning/questions/economics-ocr\"/*)",
-      "Bash(grep -E \"\\\\.\\(json|js|ts|toml|yml|yaml\\)$\")"
+      "Bash(grep -E \"\\\\.\\(json|js|ts|toml|yml|yaml\\)$\")",
+      "Bash(node -e ' *)"
     ]
   },
   "hooks": {
