@@ -43,6 +43,8 @@
   <script src="questions/maths-edexcel/w-M3-M4.js"></script>
   <script src="questions/maths-edexcel/w-M5-M7.js"></script>
   <script src="questions/maths-edexcel/maths-edexcel-practice.js"></script>
+  <script src="questions/further-maths-edexcel/fm-edexcel-written.js"></script>
+  <script src="questions/further-maths-edexcel/fm-edexcel-practice.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -572,6 +574,7 @@ const PRACTICE_MAP = {
   'Mathematics_AQA': () => typeof MATHS_AQA_PRACTICE !== 'undefined' ? MATHS_AQA_PRACTICE : null,
   'Mathematics_OCR': () => typeof MATHS_OCR_PRACTICE !== 'undefined' ? MATHS_OCR_PRACTICE : null,
   'Mathematics_Edexcel': () => typeof MATHS_EDEXCEL_PRACTICE !== 'undefined' ? MATHS_EDEXCEL_PRACTICE : null,
+  'Further Mathematics_Edexcel': () => typeof FM_EDEXCEL_PRACTICE !== 'undefined' ? FM_EDEXCEL_PRACTICE : null,
 };
 
 function getPracticeData(topicKey) {
@@ -1051,6 +1054,31 @@ const SUBJECT_TOPICS = {
       ]},
     ]
   },
+  'Further Mathematics_Edexcel': {
+    sections: [
+      { label: 'Edexcel — Core Pure 1 (Paper 1)', topics: [
+        { id: 'CP1.1', name: 'Complex Numbers',          sub: 'Arithmetic, modulus, argument, conjugate, solving equations' },
+        { id: 'CP1.2', name: 'Argand Diagrams',          sub: 'Polar form, loci — circles, half-lines, perpendicular bisectors' },
+        { id: 'CP1.3', name: 'Series',                   sub: 'Standard Σ results, method of differences, telescoping' },
+        { id: 'CP1.4', name: 'Roots of Polynomials',     sub: 'Symmetric functions, Vieta\'s formulas, new equations from roots' },
+        { id: 'CP1.5', name: 'Volumes of Revolution',    sub: 'V=π∫y²dx, V=π∫x²dy, regions between curves' },
+        { id: 'CP1.6', name: 'Matrices',                 sub: 'Operations, determinants (2×2, 3×3), inverse, singular' },
+        { id: 'CP1.7', name: 'Linear Transformations',   sub: 'Standard 2D matrices, invariant points/lines, compositions' },
+        { id: 'CP1.8', name: 'Proof by Induction',       sub: 'Summation, divisibility, matrix powers, recurrence' },
+        { id: 'CP1.9', name: 'Vectors',                  sub: 'Dot & cross product, lines/planes in 3D, angles, distances' },
+      ]},
+      { label: 'Edexcel — Core Pure 2 (Paper 2)', topics: [
+        { id: 'CP2.1', name: 'Complex Numbers (Further)',sub: 'de Moivre\'s theorem, nth roots, roots of unity, Euler form' },
+        { id: 'CP2.2', name: 'Maclaurin & Taylor Series',sub: 'Standard series, composite series, Taylor expansion' },
+        { id: 'CP2.3', name: 'Methods in Calculus',      sub: 'Improper integrals, mean value, inverse trig integration' },
+        { id: 'CP2.4', name: 'Volumes of Revolution (Further)', sub: 'Parametric volumes, surface area of revolution' },
+        { id: 'CP2.5', name: 'Polar Coordinates',        sub: 'Polar curves, area ½∫r²dθ, converting, tangents' },
+        { id: 'CP2.6', name: 'Hyperbolic Functions',     sub: 'cosh/sinh/tanh, identities, inverses, integration' },
+        { id: 'CP2.7', name: 'Methods in Differential Equations', sub: 'Integrating factor, 2nd order ODE, CF+PI' },
+        { id: 'CP2.8', name: 'Modelling with DEs',       sub: 'SHM, damped/forced oscillations, coupled DEs' },
+      ]},
+    ]
+  },
   'Mathematics_AQA': {
     sections: [
       { label: 'AQA — Pure Mathematics (Papers 1 & 2)', topics: [
@@ -1103,6 +1131,7 @@ const SUBJECT_EMOJIS = {
   'Computer Science': '💻',
   'Physics': '⚡',
   'Mathematics': '➗',
+  'Further Mathematics': '∑',
   'Chemistry': '⚗️',
   'Biology': '🧬',
   'Economics': '📈',

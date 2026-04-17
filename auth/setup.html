@@ -422,13 +422,14 @@
 <script>
 // ── Data ────────────────────────────────────────────────────────────────
 const SUBJECTS = [
-  { name: 'Mathematics',     emoji: '➗' },
-  { name: 'Chemistry',       emoji: '⚗️' },
-  { name: 'Biology',         emoji: '🧬' },
-  { name: 'Computer Science',emoji: '💻' },
-  { name: 'Physics',         emoji: '⚡' },
-  { name: 'Economics',       emoji: '📈' },
-  { name: 'Geography',       emoji: '🌍' },
+  { name: 'Mathematics',        emoji: '➗' },
+  { name: 'Further Mathematics',emoji: '∑' },
+  { name: 'Chemistry',          emoji: '⚗️' },
+  { name: 'Biology',            emoji: '🧬' },
+  { name: 'Computer Science',   emoji: '💻' },
+  { name: 'Physics',            emoji: '⚡' },
+  { name: 'Economics',          emoji: '📈' },
+  { name: 'Geography',          emoji: '🌍' },
 ];
 
 const BOARDS = ['AQA', 'OCR', 'Edexcel'];
@@ -441,6 +442,7 @@ const CUSTOM_BOARDS = {
   'Chemistry': ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
   'Biology': ['AQA', 'Edexcel A', 'Edexcel B', 'OCR A', 'OCR B'],
   'Geography': ['AQA', 'OCR', 'Edexcel', 'Eduqas'],
+  'Further Mathematics': ['Edexcel'],
 };
 function getBoardsFor(subjectName) {
   if (CUSTOM_BOARDS[subjectName]) return CUSTOM_BOARDS[subjectName];

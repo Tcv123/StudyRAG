@@ -788,6 +788,12 @@ const EXAM_DATES = {
     { paper: 'Paper 2 — Pure & Mechanics', date: '2026-06-11', time: 'PM', duration: '2h' },
     { paper: 'Paper 3 — Pure & Statistics', date: '2026-06-18', time: 'PM', duration: '2h' },
   ],
+  'Further Mathematics_Edexcel': [
+    { paper: 'Paper 1 — Core Pure 1', date: '2026-06-12', time: 'AM', duration: '1h 30m' },
+    { paper: 'Paper 2 — Core Pure 2', date: '2026-06-19', time: 'AM', duration: '1h 30m' },
+    { paper: 'Paper 3 — Option (FM1/FS1/FP1/FD1)', date: '2026-06-23', time: 'PM', duration: '1h 30m' },
+    { paper: 'Paper 4 — Option (FM2/FS2/FP2/FD2)', date: '2026-06-26', time: 'AM', duration: '1h 30m' },
+  ],
   'Biology_AQA': [
     { paper: 'Paper 1', date: '2026-06-04', time: 'PM', duration: '2h' },
     { paper: 'Paper 2', date: '2026-06-12', time: 'AM', duration: '2h' },
@@ -911,7 +917,7 @@ function renderExamDates(subjects) {
 
 
   const now   = new Date();
-  const EMOJI = { 'Computer Science':'💻','Mathematics':'🔢','Biology':'🧬','Chemistry':'🧪','Physics':'⚡','Economics':'📈','Geography':'🌍' };
+  const EMOJI = { 'Computer Science':'💻','Mathematics':'🔢','Further Mathematics':'∑','Biology':'🧬','Chemistry':'🧪','Physics':'⚡','Economics':'📈','Geography':'🌍' };
   const exams = [];
 
   (subjects || []).forEach(s => {
@@ -956,7 +962,7 @@ function renderExamDates(subjects) {
     const timeStr  = e.time === 'AM' ? '9:00 AM' : '1:30 PM';
     const urgency  = e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : 'var(--accent-dark)';
     const urgBg    = e.diffDays <= 7 ? 'rgba(239,68,68,0.08)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.08)' : 'var(--accent-dim)';
-    const subjectColor = {'Computer Science':'#6366F1','Mathematics':'#8B5CF6','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6'}[e.subject] || 'var(--accent)';
+    const subjectColor = {'Computer Science':'#6366F1','Mathematics':'#8B5CF6','Further Mathematics':'#7C3AED','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6'}[e.subject] || 'var(--accent)';
     return `<div class="exam-tl-row${hidden ? ' exam-hidden' : ''}" style="display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--border);">
       <div style="width:36px;height:36px;border-radius:10px;background:${subjectColor}18;border:1px solid ${subjectColor}33;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">${e.emoji}</div>
       <div style="flex:1;min-width:0;">
@@ -1334,8 +1340,9 @@ const SUBJECT_TOPIC_KEY = {
   'Geography_Eduqas': 'geography-eduqas',
   'Mathematics_AQA': 'maths-aqa',
   'Mathematics_OCR': 'maths-ocr',
+  'Further Mathematics_Edexcel': 'further-maths-edexcel',
 };
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas': 12, 'maths-aqa': 17, 'maths-ocr': 19 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas': 12, 'maths-aqa': 17, 'maths-ocr': 19, 'further-maths-edexcel': 17 };
 const SUBJECT_NOTES_PAGE = {
   'Computer Science_OCR': 'subject-notes/cs-notes.html',
   'Computer Science_AQA': 'subject-notes/cs-aqa-notes.html',
@@ -1362,6 +1369,7 @@ const SUBJECT_NOTES_PAGE = {
   'Geography_Eduqas': 'subject-notes/geography-eduqas-notes.html',
   'Mathematics_AQA': 'subject-notes/maths-aqa-notes.html',
   'Mathematics_OCR': 'subject-notes/maths-ocr-notes.html',
+  'Further Mathematics_Edexcel': 'subject-notes/further-maths-edexcel-notes.html',
 };
 
 // ── Medal checking ───────────────────────────────────────────────────────

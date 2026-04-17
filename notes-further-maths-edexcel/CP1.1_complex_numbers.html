@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CP1.1: Complex Numbers — Edexcel Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-edexcel-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Further Maths</a>
+</div>
+
+<h1>CP1.1: Complex Numbers</h1>
+
+<h2>1. Introduction and Definition</h2>
+
+<div class="definition">
+  <strong>Imaginary unit:</strong> The imaginary unit \(i\) is defined by \(i^2 = -1\), so \(i = \sqrt{-1}\).<br><br>
+  <strong>Complex number:</strong> A complex number has the form \(z = a + bi\) where \(a, b \in \mathbb{R}\). The set of all complex numbers is denoted \(\mathbb{C}\).<br><br>
+  <strong>Real part:</strong> \(\text{Re}(z) = a\)<br>
+  <strong>Imaginary part:</strong> \(\text{Im}(z) = b\) (note: this is the real number \(b\), not \(bi\))
+</div>
+
+<p>Every real number is also a complex number with imaginary part zero. Numbers of the form \(bi\) (where \(b \neq 0\)) are called <em>purely imaginary</em>.</p>
+
+<h3>Powers of i</h3>
+<p>The powers of \(i\) cycle with period 4:</p>
+<table>
+  <tr><th>Power</th><th>\(i^1\)</th><th>\(i^2\)</th><th>\(i^3\)</th><th>\(i^4\)</th><th>\(i^5\)</th></tr>
+  <tr><td>Value</td><td>\(i\)</td><td>\(-1\)</td><td>\(-i\)</td><td>\(1\)</td><td>\(i\)</td></tr>
+</table>
+<p>To evaluate \(i^n\): find the remainder when \(n\) is divided by 4 and use the table above.</p>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> When you see \(\sqrt{-k}\) for \(k > 0\), write it as \(i\sqrt{k}\). Never leave a negative under a square root in your final answer. For example: \(\sqrt{-9} = 3i\), not \(3\sqrt{-1}\).
+</div>
+
+<h2>2. Arithmetic with Complex Numbers</h2>
+
+<h3>Addition and Subtraction</h3>
+<p>Add or subtract real and imaginary parts separately:</p>
+<div class="equation">
+  $$(a + bi) \pm (c + di) = (a \pm c) + (b \pm d)i$$
+</div>
+
+<h3>Multiplication</h3>
+<p>Expand using FOIL (like with surds), then substitute \(i^2 = -1\):</p>
+<div class="equation">
+  $$(a + bi)(c + di) = ac + adi + bci + bdi^2 = (ac - bd) + (ad + bc)i$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find \((3 + 2i)(1 - 4i)\).<br><br>
+  \((3 + 2i)(1 - 4i) = 3(1) + 3(-4i) + 2i(1) + 2i(-4i)\)<br>
+  \(= 3 - 12i + 2i - 8i^2\)<br>
+  \(= 3 - 10i - 8(-1)\)<br>
+  \(= 3 - 10i + 8 = 11 - 10i\)
+</div>
+
+<h3>The Complex Conjugate</h3>
+
+<div class="definition">
+  <strong>Complex conjugate:</strong> If \(z = a + bi\), then the conjugate is \(z^* = a - bi\) (also written \(\bar{z}\)).<br><br>
+  Key properties:
+  <ul>
+    <li>\(z + z^* = 2a\) (always real)</li>
+    <li>\(z \cdot z^* = a^2 + b^2\) (always real and non-negative)</li>
+    <li>\((z^*)^* = z\)</li>
+    <li>\((z_1 z_2)^* = z_1^* z_2^*\)</li>
+    <li>\((z_1 + z_2)^* = z_1^* + z_2^*\)</li>
+  </ul>
+</div>
+
+<h3>Division</h3>
+<p>To divide complex numbers, multiply both numerator and denominator by the conjugate of the denominator:</p>
+<div class="equation">
+  $$\frac{a+bi}{c+di} = \frac{(a+bi)(c-di)}{(c+di)(c-di)} = \frac{(ac+bd) + (bc-ad)i}{c^2+d^2}$$
+</div>
+<p>The denominator \(c^2 + d^2\) is always real, giving a result in the form \(x + yi\).</p>
+
+<div class="example">
+  <strong>Example:</strong> Simplify \(\dfrac{3+5i}{1+2i}\).<br><br>
+  Multiply top and bottom by conjugate \((1-2i)\):<br><br>
+  \(\dfrac{(3+5i)(1-2i)}{(1+2i)(1-2i)} = \dfrac{3 - 6i + 5i - 10i^2}{1 - 4i^2} = \dfrac{3 - i + 10}{1 + 4} = \dfrac{13 - i}{5} = \dfrac{13}{5} - \dfrac{1}{5}i\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Always check your division: multiply your answer by the original denominator and verify you get the numerator back. Losing marks on arithmetic in division is very common.
+</div>
+
+<h2>3. Modulus and Argument</h2>
+
+<div class="definition">
+  <strong>Modulus:</strong> \(|z| = \sqrt{a^2 + b^2}\) — this is the distance of \(z\) from the origin in the Argand diagram.<br><br>
+  <strong>Argument:</strong> \(\arg(z) = \theta\) where \(\tan\theta = \dfrac{b}{a}\) — this is the angle measured anticlockwise from the positive real axis.<br><br>
+  The <strong>principal argument</strong> satisfies \(-\pi < \arg(z) \leq \pi\).
+</div>
+
+<h3>Argand Diagram</h3>
+<p>A complex number \(z = a + bi\) is represented as a point \((a, b)\) in the complex plane, where the horizontal axis is the real axis and the vertical axis is the imaginary axis.</p>
+
+<svg viewBox="0 0 300 260" width="300" height="260" style="display:block;margin:20px auto;">
+  <!-- Axes -->
+  <line x1="20" y1="130" x2="280" y2="130" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="150" y1="250" x2="150" y2="20" stroke="#555" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#555"/>
+    </marker>
+    <marker id="arrow2" markerWidth="8" markerHeight="8" refX="3" refY="6" orient="auto">
+      <path d="M0,8 L6,8 L3,0 z" fill="#555"/>
+    </marker>
+  </defs>
+  <!-- Labels -->
+  <text x="285" y="135" font-size="13" fill="#555">Re</text>
+  <text x="155" y="15" font-size="13" fill="#555">Im</text>
+  <!-- Point z = 3 + 2i -->
+  <circle cx="222" cy="90" r="5" fill="#2563eb"/>
+  <!-- Dashed lines -->
+  <line x1="150" y1="90" x2="222" y2="90" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="222" y1="130" x2="222" y2="90" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Line from origin to point -->
+  <line x1="150" y1="130" x2="222" y2="90" stroke="#e11d48" stroke-width="2"/>
+  <!-- Angle arc -->
+  <path d="M 170,130 A 20,20 0 0,0 164,114" stroke="#e11d48" stroke-width="1.5" fill="none"/>
+  <!-- Axis tick labels -->
+  <text x="218" y="148" font-size="12" fill="#555">a</text>
+  <text x="130" y="93" font-size="12" fill="#555">b</text>
+  <!-- z label -->
+  <text x="228" y="86" font-size="13" fill="#2563eb" font-weight="bold">z = a + bi</text>
+  <!-- modulus label -->
+  <text x="172" y="104" font-size="11" fill="#e11d48">|z|</text>
+  <!-- angle label -->
+  <text x="173" y="124" font-size="11" fill="#e11d48">θ</text>
+  <!-- Origin -->
+  <text x="135" y="148" font-size="12" fill="#555">O</text>
+</svg>
+
+<h3>Calculating the Argument Carefully</h3>
+<p>Use \(\tan\theta = b/a\) but you must place the angle in the correct quadrant. Always draw a sketch first:</p>
+
+<table>
+  <tr><th>Quadrant</th><th>Sign of \(a\), \(b\)</th><th>Principal argument range</th><th>Method</th></tr>
+  <tr><td>1st</td><td>\(a>0, b>0\)</td><td>\(0 < \theta \leq \frac{\pi}{2}\)</td><td>\(\theta = \arctan\!\left(\frac{b}{a}\right)\)</td></tr>
+  <tr><td>2nd</td><td>\(a<0, b>0\)</td><td>\(\frac{\pi}{2} < \theta \leq \pi\)</td><td>\(\theta = \pi - \arctan\!\left(\frac{b}{|a|}\right)\)</td></tr>
+  <tr><td>3rd</td><td>\(a<0, b<0\)</td><td>\(-\pi < \theta \leq -\frac{\pi}{2}\)</td><td>\(\theta = -\pi + \arctan\!\left(\frac{|b|}{|a|}\right)\)</td></tr>
+  <tr><td>4th</td><td>\(a>0, b<0\)</td><td>\(-\frac{\pi}{2} < \theta < 0\)</td><td>\(\theta = -\arctan\!\left(\frac{|b|}{a}\right)\)</td></tr>
+</table>
+
+<div class="example">
+  <strong>Example:</strong> Find \(|z|\) and \(\arg(z)\) for \(z = -1 + \sqrt{3}\,i\).<br><br>
+  \(|z| = \sqrt{(-1)^2 + (\sqrt{3})^2} = \sqrt{1+3} = 2\)<br><br>
+  \(z\) is in the second quadrant (\(a < 0, b > 0\)).<br>
+  Reference angle: \(\arctan\!\left(\frac{\sqrt{3}}{1}\right) = \frac{\pi}{3}\)<br>
+  Therefore \(\arg(z) = \pi - \frac{\pi}{3} = \dfrac{2\pi}{3}\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> The most common error is computing \(\arctan(b/a)\) and forgetting to adjust for quadrant. Always establish the quadrant FIRST, then compute the reference angle, then adjust.
+</div>
+
+<h3>Modulus-Argument Properties</h3>
+<div class="equation">
+  $$|z_1 z_2| = |z_1||z_2| \qquad \arg(z_1 z_2) = \arg(z_1) + \arg(z_2)$$
+</div>
+<div class="equation">
+  $$\left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|} \qquad \arg\!\left(\frac{z_1}{z_2}\right) = \arg(z_1) - \arg(z_2)$$
+</div>
+<p>(Arguments are taken modulo \(2\pi\) to keep them in the principal range \((-\pi, \pi]\).)</p>
+
+<h2>4. Solving Quadratic Equations with Complex Roots</h2>
+
+<p>When a quadratic \(az^2 + bz + c = 0\) has a negative discriminant (\(b^2 - 4ac < 0\)), the roots are complex conjugates of each other.</p>
+
+<div class="equation">
+  $$z = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+</div>
+
+<div class="example">
+  <strong>Worked Example:</strong> Solve \(z^2 + 4z + 13 = 0\).<br><br>
+  Using the quadratic formula with \(a=1, b=4, c=13\):<br><br>
+  $$z = \frac{-4 \pm \sqrt{16 - 52}}{2} = \frac{-4 \pm \sqrt{-36}}{2} = \frac{-4 \pm 6i}{2} = -2 \pm 3i$$<br>
+  So the roots are \(z = -2 + 3i\) and \(z = -2 - 3i\).<br><br>
+  <strong>Verification:</strong> Sum of roots \(= (-2+3i) + (-2-3i) = -4 = -b/a\) ✓<br>
+  Product of roots \(= (-2+3i)(-2-3i) = 4 + 9 = 13 = c/a\) ✓
+</div>
+
+<div class="definition">
+  <strong>Conjugate Root Theorem:</strong> If the coefficients of a polynomial are all real, then complex roots occur in conjugate pairs. That is, if \(z = p + qi\) is a root, then \(z^* = p - qi\) is also a root.
+</div>
+
+<h2>5. Solving Cubic and Quartic Equations</h2>
+
+<h3>Cubics with Complex Roots</h3>
+<p>A cubic with real coefficients has either:</p>
+<ul>
+  <li>Three real roots, or</li>
+  <li>One real root and one conjugate pair of complex roots</li>
+</ul>
+
+<p><strong>Strategy:</strong> If given one complex root \(\alpha\), immediately write down \(\alpha^*\) as another root. The factor \((z - \alpha)(z - \alpha^*)\) is a real quadratic. Divide the cubic by this quadratic (polynomial long division or compare coefficients) to find the third root.</p>
+
+<div class="example">
+  <strong>Example:</strong> Given that \(2 + i\) is a root of \(z^3 - 7z^2 + 17z - 15 = 0\), find all roots.<br><br>
+  Since coefficients are real, \(2 - i\) is also a root.<br><br>
+  Form the quadratic factor:
+  $$(z - (2+i))(z-(2-i)) = (z-2)^2 + 1 = z^2 - 4z + 5$$<br>
+  Divide: \(z^3 - 7z^2 + 17z - 15 \div (z^2 - 4z + 5)\)<br><br>
+  \(z^3 - 7z^2 + 17z - 15 = (z^2 - 4z + 5)(z - 3)\)<br><br>
+  So the three roots are \(z = 2+i,\; z = 2-i,\; z = 3\).
+</div>
+
+<h3>Quartics with Complex Roots</h3>
+<p>A quartic with real coefficients has either:</p>
+<ul>
+  <li>Four real roots</li>
+  <li>Two real roots and one conjugate pair</li>
+  <li>Two conjugate pairs of complex roots</li>
+</ul>
+
+<p><strong>Strategy:</strong> If given one complex root \(\alpha\), use \(\alpha^*\) to form one quadratic factor. Divide the quartic by it to get another quadratic, then solve that for the remaining roots.</p>
+
+<div class="example">
+  <strong>Example:</strong> Given that \(1 + 2i\) is a root of \(z^4 - 2z^3 + 6z^2 - 2z + 5 = 0\), find all roots.<br><br>
+  Conjugate pair: \(1+2i\) and \(1-2i\).<br>
+  Quadratic factor: \((z-1-2i)(z-1+2i) = (z-1)^2 + 4 = z^2 - 2z + 5\)<br><br>
+  Divide: \(z^4 - 2z^3 + 6z^2 - 2z + 5 = (z^2 - 2z + 5)(z^2 + 1)\)<br><br>
+  Solve \(z^2 + 1 = 0 \Rightarrow z^2 = -1 \Rightarrow z = \pm i\)<br><br>
+  All four roots: \(1+2i,\; 1-2i,\; i,\; -i\)
+</div>
+
+<h3>Finding a Root by Substitution</h3>
+<p>If asked to verify or find a complex root directly, substitute into the polynomial and set real and imaginary parts equal to zero. This gives a system of equations.</p>
+
+<div class="example">
+  <strong>Example:</strong> Find \(a\) and \(b\) if \(z = 1 + 2i\) is a root of \(z^2 + az + b = 0\) (where \(a, b \in \mathbb{R}\)).<br><br>
+  Sum of roots: \((1+2i) + (1-2i) = 2 = -a \Rightarrow a = -2\)<br>
+  Product of roots: \((1+2i)(1-2i) = 5 = b \Rightarrow b = 5\)
+</div>
+
+<h2>6. Equating Real and Imaginary Parts</h2>
+
+<p>Two complex numbers are equal if and only if their real parts are equal AND their imaginary parts are equal:</p>
+<div class="equation">
+  $$a + bi = c + di \iff a = c \text{ and } b = d$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(z^2 = 5 + 12i\).<br><br>
+  Let \(z = x + yi\). Then \((x+yi)^2 = x^2 - y^2 + 2xyi = 5 + 12i\).<br><br>
+  Equating real parts: \(x^2 - y^2 = 5\) ... (1)<br>
+  Equating imaginary parts: \(2xy = 12\), so \(y = \frac{6}{x}\) ... (2)<br><br>
+  Substituting (2) into (1): \(x^2 - \frac{36}{x^2} = 5\)<br>
+  \(x^4 - 5x^2 - 36 = 0 \Rightarrow (x^2 - 9)(x^2 + 4) = 0\)<br>
+  Since \(x \in \mathbb{R}\): \(x^2 = 9 \Rightarrow x = \pm 3\)<br><br>
+  When \(x = 3\): \(y = 2\) → \(z = 3 + 2i\)<br>
+  When \(x = -3\): \(y = -2\) → \(z = -3 - 2i\)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> When finding square roots of complex numbers by letting \(z = x + yi\) and equating parts, remember that you always get two answers (a conjugate pair). Both must be stated.
+</div>
+
+<h2>7. Key Results Summary</h2>
+
+<table>
+  <tr><th>Property</th><th>Formula</th></tr>
+  <tr><td>Definition of \(i\)</td><td>\(i^2 = -1\)</td></tr>
+  <tr><td>Conjugate</td><td>\(z^* = a - bi\) if \(z = a+bi\)</td></tr>
+  <tr><td>Modulus</td><td>\(|z| = \sqrt{a^2+b^2}\)</td></tr>
+  <tr><td>Product × Conjugate</td><td>\(zz^* = |z|^2 = a^2 + b^2\)</td></tr>
+  <tr><td>Argument (principal)</td><td>\(-\pi < \arg(z) \leq \pi\)</td></tr>
+  <tr><td>Modulus of product</td><td>\(|z_1 z_2| = |z_1||z_2|\)</td></tr>
+  <tr><td>Argument of product</td><td>\(\arg(z_1 z_2) = \arg z_1 + \arg z_2\)</td></tr>
+  <tr><td>Conjugate root theorem</td><td>Real-coefficient polynomials: complex roots in conjugate pairs</td></tr>
+</table>
+
+<h2>8. Practice Checklist</h2>
+<ul>
+  <li>Can you add, subtract, multiply, and divide complex numbers in \(a+bi\) form?</li>
+  <li>Can you find the modulus and principal argument of any complex number?</li>
+  <li>Can you solve quadratics with negative discriminant?</li>
+  <li>Given one complex root of a cubic/quartic, can you find all other roots?</li>
+  <li>Can you find square roots of complex numbers using the "let \(z=x+yi\)" method?</li>
+  <li>Can you use the conjugate root theorem to form factor pairs?</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

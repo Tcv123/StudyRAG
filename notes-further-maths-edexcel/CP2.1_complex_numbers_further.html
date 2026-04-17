@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CP2.1: Complex Numbers (Further) — Edexcel Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-edexcel-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">Edexcel Further Maths</a>
+</div>
+
+<h1>CP2.1 — Complex Numbers: Further Topics</h1>
+
+<h2>1. Exponential (Euler) Form</h2>
+
+<div class="definition">
+  <strong>Euler's Formula:</strong> For any real \(\theta\),
+  $$e^{i\theta} = \cos\theta + i\sin\theta$$
+  A complex number \(z = r(\cos\theta + i\sin\theta)\) can therefore be written in <em>exponential form</em> as \(z = re^{i\theta}\).
+</div>
+
+<p>Key special cases worth memorising:</p>
+<ul>
+  <li>\(e^{i\pi} + 1 = 0\) — Euler's identity</li>
+  <li>\(e^{i\pi/2} = i\), \(e^{i\pi} = -1\), \(e^{3i\pi/2} = -i\)</li>
+  <li>\(e^{-i\theta} = \cos\theta - i\sin\theta\)</li>
+</ul>
+
+<p>From Euler's formula we derive two extremely useful identities:</p>
+<div class="equation">
+  $$\cos\theta = \frac{e^{i\theta}+e^{-i\theta}}{2}, \qquad \sin\theta = \frac{e^{i\theta}-e^{-i\theta}}{2i}$$
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Exponential form makes multiplication and division trivial. \(z_1 z_2 = r_1 r_2 e^{i(\theta_1+\theta_2)}\) — just multiply moduli and add arguments.
+</div>
+
+<h2>2. De Moivre's Theorem</h2>
+
+<div class="definition">
+  <strong>De Moivre's Theorem:</strong> For any integer \(n\),
+  $$\bigl(r(\cos\theta + i\sin\theta)\bigr)^n = r^n(\cos n\theta + i\sin n\theta)$$
+  Equivalently, \(\left(re^{i\theta}\right)^n = r^n e^{in\theta}\).
+</div>
+
+<h3>2.1 Proof by Mathematical Induction (positive integers)</h3>
+
+<p><strong>Base case</strong> \(n=1\): \(r^1(\cos 1\cdot\theta + i\sin 1\cdot\theta) = r(\cos\theta+i\sin\theta)\). True.</p>
+
+<p><strong>Inductive step:</strong> Assume true for \(n=k\), i.e. \((r(\cos\theta+i\sin\theta))^k = r^k(\cos k\theta + i\sin k\theta)\). Then:</p>
+<div class="equation">
+$$\bigl(r(\cos\theta+i\sin\theta)\bigr)^{k+1} = r^k(\cos k\theta + i\sin k\theta)\cdot r(\cos\theta+i\sin\theta)$$
+</div>
+<div class="equation">
+$$= r^{k+1}\bigl[(\cos k\theta\cos\theta - \sin k\theta\sin\theta) + i(\cos k\theta\sin\theta + \sin k\theta\cos\theta)\bigr]$$
+</div>
+<div class="equation">
+$$= r^{k+1}\bigl(\cos(k+1)\theta + i\sin(k+1)\theta\bigr)$$
+</div>
+<p>using the compound angle formulas. So the result holds for \(n=k+1\). By induction, true for all positive integers.</p>
+
+<p><strong>Extension to negative integers:</strong> For \(n = -m\) where \(m > 0\):</p>
+<div class="equation">
+$$z^{-m} = \frac{1}{r^m(\cos m\theta + i\sin m\theta)} = \frac{\cos m\theta - i\sin m\theta}{r^m} = r^{-m}(\cos(-m\theta)+i\sin(-m\theta))$$
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> If asked to prove de Moivre's theorem, you must use induction for positive integers, then extend to negative integers by taking reciprocals. Don't skip the base case or the algebraic step using compound angles.
+</div>
+
+<h2>3. Applications — cos nθ and sin nθ in Terms of Powers</h2>
+
+<p>Using de Moivre, \(\cos n\theta + i\sin n\theta = (\cos\theta + i\sin\theta)^n\). Expand the RHS with the binomial theorem, then equate real and imaginary parts.</p>
+
+<div class="example">
+  <strong>Example:</strong> Express \(\cos 3\theta\) and \(\sin 3\theta\) in terms of \(\cos\theta\) and \(\sin\theta\).
+  <br><br>
+  Let \(c = \cos\theta\), \(s = \sin\theta\). Then:
+  $$(c+is)^3 = c^3 + 3c^2(is) + 3c(is)^2 + (is)^3 = c^3 + 3ic^2s - 3cs^2 - is^3$$
+  $$= (c^3 - 3cs^2) + i(3c^2s - s^3)$$
+  Therefore:
+  $$\cos 3\theta = \cos^3\theta - 3\cos\theta\sin^2\theta = 4\cos^3\theta - 3\cos\theta$$
+  $$\sin 3\theta = 3\cos^2\theta\sin\theta - \sin^3\theta = 3\sin\theta - 4\sin^3\theta$$
+</div>
+
+<h2>4. Expressing cosⁿθ and sinⁿθ in Terms of Multiple Angles</h2>
+
+<p>Let \(z = e^{i\theta} = \cos\theta + i\sin\theta\), so \(z^{-1} = e^{-i\theta} = \cos\theta - i\sin\theta\).</p>
+
+<div class="definition">
+  $$z + z^{-1} = 2\cos\theta, \qquad z - z^{-1} = 2i\sin\theta$$
+  $$z^n + z^{-n} = 2\cos n\theta, \qquad z^n - z^{-n} = 2i\sin n\theta$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Express \(\cos^4\theta\) in terms of multiple angles.
+  <br><br>
+  \((2\cos\theta)^4 = (z+z^{-1})^4\). Expand by binomial:
+  $$(z+z^{-1})^4 = z^4 + 4z^2 + 6 + 4z^{-2} + z^{-4} = (z^4+z^{-4}) + 4(z^2+z^{-2}) + 6$$
+  $$= 2\cos 4\theta + 8\cos 2\theta + 6$$
+  So \(16\cos^4\theta = 2\cos 4\theta + 8\cos 2\theta + 6\), giving:
+  $$\cos^4\theta = \frac{1}{8}\cos 4\theta + \frac{1}{2}\cos 2\theta + \frac{3}{8}$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Express \(\sin^5\theta\) in terms of multiple angles.
+  <br><br>
+  \((2i\sin\theta)^5 = (z-z^{-1})^5\). Note \((2i)^5 = 32i^5 = 32i\).
+  $$(z-z^{-1})^5 = z^5 - 5z^3 + 10z - 10z^{-1} + 5z^{-3} - z^{-5}$$
+  $$= (z^5-z^{-5}) - 5(z^3-z^{-3}) + 10(z-z^{-1})$$
+  $$= 2i\sin 5\theta - 10i\sin 3\theta + 20i\sin\theta$$
+  So \(32i\sin^5\theta = 2i(sin 5\theta - 5\sin 3\theta + 10\sin\theta)\), giving:
+  $$\sin^5\theta = \frac{1}{16}(\sin 5\theta - 5\sin 3\theta + 10\sin\theta)$$
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> These reductions are very useful for integrating powers of sin/cos. For \(\cos^n\theta\), use \((z+z^{-1})^n\). For \(\sin^n\theta\), use \((z-z^{-1})^n\). Remember the factor of \((2i)^n\) for sin.
+</div>
+
+<h2>5. nth Roots of a Complex Number</h2>
+
+<div class="definition">
+  <strong>Finding nth roots:</strong> To solve \(z^n = w\) where \(w = Re^{i\Phi}\):
+  <br>
+  Write \(z = re^{i\theta}\). Then \(r^n e^{in\theta} = Re^{i\Phi}\).
+  <br>
+  So \(r = R^{1/n}\) and \(n\theta = \Phi + 2k\pi\) for \(k = 0, 1, 2, \ldots, n-1\).
+  <br>
+  The \(n\) distinct roots are:
+  $$z_k = R^{1/n} \exp\!\left(i\frac{\Phi + 2k\pi}{n}\right), \quad k = 0, 1, \ldots, n-1$$
+</div>
+
+<p><strong>Key geometric fact:</strong> The \(n\) roots lie on a circle of radius \(R^{1/n}\) centred at the origin, equally spaced at angular intervals of \(\dfrac{2\pi}{n}\).</p>
+
+<div class="example">
+  <strong>Example:</strong> Find all cube roots of \(8i\).
+  <br><br>
+  Write \(8i = 8e^{i\pi/2}\). So \(R = 8\), \(\Phi = \pi/2\), \(n = 3\).
+  <br>
+  \(r = 8^{1/3} = 2\). Arguments: \(\theta_k = \dfrac{\pi/2 + 2k\pi}{3}\).
+  <ul>
+    <li>\(k=0\): \(\theta = \pi/6\), so \(z_0 = 2e^{i\pi/6} = 2(\frac{\sqrt{3}}{2}+\frac{i}{2}) = \sqrt{3}+i\)</li>
+    <li>\(k=1\): \(\theta = \pi/6 + 2\pi/3 = 5\pi/6\), so \(z_1 = 2e^{5i\pi/6} = -\sqrt{3}+i\)</li>
+    <li>\(k=2\): \(\theta = \pi/6 + 4\pi/3 = 3\pi/2\), so \(z_2 = 2e^{3i\pi/2} = -2i\)</li>
+  </ul>
+</div>
+
+<h2>6. nth Roots of Unity</h2>
+
+<div class="definition">
+  The <strong>nth roots of unity</strong> are the solutions of \(z^n = 1 = e^{0}\). They are:
+  $$\omega_k = e^{2\pi i k/n} = \cos\frac{2k\pi}{n} + i\sin\frac{2k\pi}{n}, \quad k = 0, 1, \ldots, n-1$$
+  Writing \(\omega = e^{2\pi i/n}\), the roots are \(1, \omega, \omega^2, \ldots, \omega^{n-1}\).
+</div>
+
+<h3>6.1 Key Properties of nth Roots of Unity</h3>
+<ul>
+  <li><strong>Sum is zero:</strong> \(1 + \omega + \omega^2 + \cdots + \omega^{n-1} = 0\)</li>
+  <li><strong>Product:</strong> \(\omega^n = 1\) for all roots</li>
+  <li><strong>Conjugate pairs:</strong> \(\overline{\omega^k} = \omega^{n-k}\)</li>
+  <li>The roots form a regular \(n\)-gon on the unit circle</li>
+</ul>
+
+<p><strong>Proof that sum = 0:</strong> The roots are a geometric series with first term 1 and ratio \(\omega \neq 1\):
+$$\sum_{k=0}^{n-1}\omega^k = \frac{1-\omega^n}{1-\omega} = \frac{1-1}{1-\omega} = 0$$</p>
+
+<div class="example">
+  <strong>Example:</strong> Find the 5th roots of unity and show their sum is zero.
+  <br><br>
+  \(\omega = e^{2\pi i/5}\). Roots: \(1, \omega, \omega^2, \omega^3, \omega^4\).
+  <br>
+  These lie on the unit circle at angles \(0°, 72°, 144°, 216°, 288°\).
+  <br>
+  Sum: \(1 + \omega + \omega^2 + \omega^3 + \omega^4 = 0\) (geometric series or from sum of roots of \(z^5-1=0\), coefficient of \(z^4\) is 0).
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> The sum of all nth roots of unity equals zero. This is because they are roots of \(z^n - 1 = 0\), and by Vieta's formulas, the sum of roots equals the negative of the coefficient of \(z^{n-1}\), which is 0.
+</div>
+
+<!-- SVG Diagram: 6th roots of unity on unit circle -->
+<h3>6.2 Diagram — 6th Roots of Unity</h3>
+<svg width="360" height="360" viewBox="-10 -10 380 380" style="display:block;margin:20px auto;border:1px solid #e2e8f0;border-radius:8px;background:#f8fafc;">
+  <!-- Axes -->
+  <line x1="20" y1="180" x2="340" y2="180" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="180" y1="20" x2="180" y2="340" stroke="#94a3b8" stroke-width="1.5"/>
+  <!-- Axis labels -->
+  <text x="345" y="185" font-size="13" fill="#64748b">Re</text>
+  <text x="182" y="15" font-size="13" fill="#64748b">Im</text>
+  <!-- Unit circle -->
+  <circle cx="180" cy="180" r="130" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- 6 roots at angles 0, 60, 120, 180, 240, 300 degrees -->
+  <!-- k=0: angle 0 → (130,0) from centre -->
+  <circle cx="310" cy="180" r="6" fill="#2563eb"/>
+  <text x="315" y="175" font-size="12" fill="#1e3a5f">1</text>
+  <!-- k=1: angle 60 → (65, -112.6) from centre -->
+  <circle cx="245" cy="67" r="6" fill="#2563eb"/>
+  <text x="250" y="62" font-size="12" fill="#1e3a5f">ω</text>
+  <!-- k=2: angle 120 → (-65, -112.6) from centre -->
+  <circle cx="115" cy="67" r="6" fill="#2563eb"/>
+  <text x="90" y="62" font-size="12" fill="#1e3a5f">ω²</text>
+  <!-- k=3: angle 180 → (-130,0) from centre -->
+  <circle cx="50" cy="180" r="6" fill="#2563eb"/>
+  <text x="20" y="175" font-size="12" fill="#1e3a5f">ω³=−1</text>
+  <!-- k=4: angle 240 → (-65, 112.6) from centre -->
+  <circle cx="115" cy="293" r="6" fill="#2563eb"/>
+  <text x="90" y="310" font-size="12" fill="#1e3a5f">ω⁴</text>
+  <!-- k=5: angle 300 → (65, 112.6) from centre -->
+  <circle cx="245" cy="293" r="6" fill="#2563eb"/>
+  <text x="250" y="310" font-size="12" fill="#1e3a5f">ω⁵</text>
+  <!-- Lines from origin to each root -->
+  <line x1="180" y1="180" x2="310" y2="180" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="180" y1="180" x2="245" y2="67" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="180" y1="180" x2="115" y2="67" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="180" y1="180" x2="50" y2="180" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="180" y1="180" x2="115" y2="293" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="180" y1="180" x2="245" y2="293" stroke="#93c5fd" stroke-width="1"/>
+  <!-- Angle indicator -->
+  <path d="M 210 180 A 30 30 0 0 0 195 154" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="216" y="162" font-size="11" fill="#d97706">60°</text>
+  <!-- Title -->
+  <text x="180" y="358" font-size="13" fill="#475569" text-anchor="middle">6th Roots of Unity: ω = e^(2πi/6), spaced 60° apart</text>
+</svg>
+
+<h2>7. Solving zⁿ = w — Method Summary</h2>
+
+<table>
+  <thead>
+    <tr><th>Step</th><th>Action</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Write \(w\) in modulus-argument form: \(w = Re^{i\Phi}\) where \(-\pi < \Phi \leq \pi\)</td></tr>
+    <tr><td>2</td><td>The modulus of each root: \(r = R^{1/n}\)</td></tr>
+    <tr><td>3</td><td>Arguments: \(\theta_k = \dfrac{\Phi + 2k\pi}{n}\) for \(k = 0, 1, \ldots, n-1\)</td></tr>
+    <tr><td>4</td><td>Write each root: \(z_k = r\left(\cos\theta_k + i\sin\theta_k\right)\)</td></tr>
+    <tr><td>5</td><td>Simplify, giving exact values where possible</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> Always choose \(k = 0, 1, \ldots, n-1\) (not negative values) to get \(n\) distinct roots. Keep arguments in \((-\pi, \pi]\) if asked for principal arguments by adjusting by \(2\pi\).
+</div>
+
+<h2>8. Geometric Applications of Roots</h2>
+
+<p>When the \(n\) roots of \(z^n = w\) are plotted on an Argand diagram they form a regular \(n\)-gon inscribed in a circle of radius \(|w|^{1/n}\) centred at the origin.</p>
+
+<div class="example">
+  <strong>Example:</strong> The 4th roots of \(-16\).
+  <br><br>
+  \(-16 = 16e^{i\pi}\). Radius \(= 16^{1/4} = 2\). Arguments \(= \dfrac{\pi + 2k\pi}{4}\) for \(k = 0,1,2,3\).
+  <br>
+  \(k=0\): \(\theta = \pi/4 \Rightarrow z_0 = 2e^{i\pi/4} = \sqrt{2}+i\sqrt{2}\)<br>
+  \(k=1\): \(\theta = 3\pi/4 \Rightarrow z_1 = -\sqrt{2}+i\sqrt{2}\)<br>
+  \(k=2\): \(\theta = 5\pi/4 \Rightarrow z_2 = -\sqrt{2}-i\sqrt{2}\)<br>
+  \(k=3\): \(\theta = 7\pi/4 \Rightarrow z_3 = \sqrt{2}-i\sqrt{2}\)<br>
+  These form a square of side \(2\sqrt{2}\), centred at the origin.
+</div>
+
+<h2>9. Using de Moivre for Trigonometric Identities</h2>
+
+<h3>9.1 Strategy for cos nθ or sin nθ in terms of cos/sin</h3>
+<ol>
+  <li>Write \(\cos n\theta + i\sin n\theta = (\cos\theta + i\sin\theta)^n\)</li>
+  <li>Expand RHS by binomial theorem</li>
+  <li>Equate real parts for \(\cos n\theta\), imaginary parts for \(\sin n\theta\)</li>
+  <li>Replace \(\sin^2\theta\) with \(1-\cos^2\theta\) if needed (or vice versa)</li>
+</ol>
+
+<h3>9.2 Strategy for cosⁿθ or sinⁿθ in terms of multiple angles</h3>
+<ol>
+  <li>Use \(2\cos\theta = z + z^{-1}\) or \(2i\sin\theta = z - z^{-1}\)</li>
+  <li>Raise to power \(n\) and expand by binomial</li>
+  <li>Group terms as \(z^k + z^{-k} = 2\cos k\theta\) or \(z^k - z^{-k} = 2i\sin k\theta\)</li>
+</ol>
+
+<div class="example">
+  <strong>Example (Integration application):</strong> Find \(\displaystyle\int \sin^4\theta\, d\theta\).
+  <br><br>
+  First express \(\sin^4\theta\) in multiple angles:
+  $$(2i\sin\theta)^4 = (z-z^{-1})^4 \Rightarrow 16\sin^4\theta = z^4 - 4z^2 + 6 - 4z^{-2} + z^{-4}$$
+  $$= 2\cos 4\theta - 8\cos 2\theta + 6$$
+  So \(\sin^4\theta = \dfrac{1}{8}(\cos 4\theta - 4\cos 2\theta + 3)\).
+  $$\int\sin^4\theta\,d\theta = \frac{1}{8}\left(\frac{\sin 4\theta}{4} - 2\sin 2\theta + 3\theta\right) + C$$
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> This technique is the key to integrating even powers of sin and cos — it reduces them to integrals of multiple angles which are trivial.
+</div>
+
+<h2>10. Summary Table</h2>
+
+<table>
+  <thead>
+    <tr><th>Concept</th><th>Formula</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Euler form</td><td>\(e^{i\theta} = \cos\theta + i\sin\theta\)</td></tr>
+    <tr><td>De Moivre (integer n)</td><td>\((r e^{i\theta})^n = r^n e^{in\theta}\)</td></tr>
+    <tr><td>cos from z</td><td>\(2\cos\theta = z + z^{-1}\), \(2\cos n\theta = z^n + z^{-n}\)</td></tr>
+    <tr><td>sin from z</td><td>\(2i\sin\theta = z - z^{-1}\), \(2i\sin n\theta = z^n - z^{-n}\)</td></tr>
+    <tr><td>nth roots of w</td><td>\(z_k = |w|^{1/n}e^{i(\arg w + 2k\pi)/n}\), \(k=0,\ldots,n-1\)</td></tr>
+    <tr><td>nth roots of unity</td><td>\(\omega^k\) where \(\omega = e^{2\pi i/n}\); sum = 0</td></tr>
+    <tr><td>Sum of roots of unity</td><td>\(1 + \omega + \omega^2 + \cdots + \omega^{n-1} = 0\)</td></tr>
+  </tbody>
+</table>
+
+<h2>11. Exam-Style Practice Questions</h2>
+
+<ol>
+  <li>
+    <strong>[Proof]</strong> Use mathematical induction to prove de Moivre's theorem for positive integers: \((\cos\theta + i\sin\theta)^n = \cos n\theta + i\sin n\theta\).
+  </li>
+  <li>
+    <strong>[Roots]</strong> Solve \(z^4 = -4\), giving your answers in the form \(a + bi\) where \(a, b \in \mathbb{R}\). Show the roots on an Argand diagram.
+  </li>
+  <li>
+    <strong>[Trig identity]</strong> (a) Using de Moivre's theorem, show that \(\cos 5\theta = 16\cos^5\theta - 20\cos^3\theta + 5\cos\theta\). (b) Hence solve \(16c^5 - 20c^3 + 5c = \frac{1}{\sqrt{2}}\) for \(c\) where \(0 < c < 1\).
+  </li>
+  <li>
+    <strong>[Multiple angles]</strong> Express \(\sin^6\theta\) in terms of cosines of multiples of \(\theta\). Hence evaluate \(\displaystyle\int_0^{\pi/2}\sin^6\theta\,d\theta\).
+  </li>
+  <li>
+    <strong>[Roots of unity]</strong> (a) Write down the 5th roots of unity \(1, \omega, \omega^2, \omega^3, \omega^4\). (b) Show that \(1 + \omega + \omega^2 + \omega^3 + \omega^4 = 0\). (c) Find the value of \((1+\omega)(1+\omega^2)(1+\omega^3)(1+\omega^4)\).
+  </li>
+</ol>
+
+<div class="exam-tip">
+  <strong>General exam tips for CP2.1:</strong>
+  <ul>
+    <li>Always quote/state de Moivre's theorem before using it</li>
+    <li>For root-finding, write the equation in form \(z^n = Re^{i\Phi}\) first — don't try to work in \(a+bi\) form</li>
+    <li>Diagrams: mark modulus of each root and angle spacing clearly</li>
+    <li>Check: if roots of unity sum to 0, your values are likely correct</li>
+    <li>Know Euler's identity \(e^{i\pi}=-1\) — it occasionally appears in "show that" questions</li>
+  </ul>
+</div>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>
