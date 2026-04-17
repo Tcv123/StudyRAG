@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Edexcel Maths Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #EEF5FC; --surface: #FFFFFF; --surface2: #F4F9FE; --border: #D2E5F3;
+      --border-hover: #93C4E2; --text: #1B2D4F; --muted: #6B87A8; --muted2: #A0B8CE;
+      --accent: #5BADCF; --accent-dark: #3D95BC;
+      --green: #16A34A; --green-bg: rgba(22,163,74,0.07); --green-border: rgba(22,163,74,0.18);
+      --amber: #D97706; --amber-bg: rgba(217,119,6,0.07); --amber-border: rgba(217,119,6,0.18);
+      --font-display: 'DM Serif Display', serif; --font-body: 'DM Sans', sans-serif;
+    }
+    html, body { min-height: 100vh; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; -webkit-font-smoothing: antialiased; }
+    .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 60px; background: var(--surface); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 28px; }
+    .topbar-left { display: flex; align-items: center; gap: 12px; }
+    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px rgba(91,173,207,0.6); }
+    .logo-text { font-family: var(--font-display); font-size: 19px; color: var(--text); }
+    .topbar-right { display: flex; align-items: center; gap: 10px; }
+    .topbar-back { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 7px 12px; border-radius: 8px; border: 1px solid var(--border); transition: all 0.15s; }
+    .topbar-back:hover { color: var(--text); border-color: var(--muted2); }
+    .page { padding: 80px 20px 60px; max-width: 1100px; margin: 0 auto; }
+    .page-header { text-align: center; padding: 48px 20px 40px; }
+    .page-header h1 { font-family: var(--font-display); font-size: 36px; color: var(--text); margin-bottom: 10px; letter-spacing: -0.02em; }
+    .page-header p { font-size: 16px; color: var(--muted); max-width: 480px; margin: 0 auto; line-height: 1.6; }
+    .board-badge { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: rgba(91,173,207,0.15); color: var(--accent); padding: 5px 14px; border-radius: 20px; border: 1px solid rgba(91,173,207,0.25); margin-bottom: 14px; }
+    .section { margin-bottom: 48px; }
+    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid var(--border); }
+    .section-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .section-icon.pure { background: rgba(91,173,207,0.15); }
+    .section-icon.stats { background: rgba(22,163,74,0.1); }
+    .section-icon.mechanics { background: rgba(217,119,6,0.1); }
+    .section-title { font-family: var(--font-display); font-size: 22px; color: var(--text); }
+    .section-count { font-size: 13px; font-weight: 600; color: var(--muted); margin-left: auto; }
+    .topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+    .topic-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; transition: all 0.15s; }
+    .topic-card:hover { border-color: var(--border-hover); box-shadow: 0 4px 20px rgba(91,173,207,0.12); transform: translateY(-1px); }
+    .topic-card-top { display: flex; align-items: center; gap: 12px; }
+    .topic-code { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 8px; border: 1px solid; flex-shrink: 0; }
+    .topic-code.pure { background: rgba(91,173,207,0.12); color: var(--accent); border-color: rgba(91,173,207,0.25); }
+    .topic-code.stats { background: rgba(22,163,74,0.1); color: var(--green); border-color: rgba(22,163,74,0.2); }
+    .topic-code.mechanics { background: rgba(217,119,6,0.1); color: var(--amber); border-color: rgba(217,119,6,0.2); }
+    .topic-name { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.4; }
+    .topic-actions { display: flex; gap: 8px; }
+    .btn-notes { flex: 1; padding: 9px 12px; background: var(--surface2); border: 1.5px solid var(--border); border-radius: 10px; font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.15s; }
+    .btn-notes:hover { border-color: var(--accent); color: var(--accent); background: rgba(91,173,207,0.06); }
+    .btn-diagnostic { flex: 1; padding: 9px 12px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); border: none; border-radius: 10px; font-family: var(--font-body); font-size: 13px; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.15s; cursor: pointer; }
+    .btn-diagnostic:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(91,173,207,0.35); }
+    .stats-strip { display: flex; gap: 20px; justify-content: center; padding: 28px 0 36px; flex-wrap: wrap; }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: var(--font-display); font-size: 32px; color: var(--text); }
+    .stat-label { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-top: 2px; }
+    .stat-divider { width: 1px; background: var(--border); align-self: stretch; }
+    @media (max-width: 600px) {
+      .page { padding: 76px 12px 40px; }
+      .page-header h1 { font-size: 28px; }
+      .topic-grid { grid-template-columns: 1fr; }
+      .stats-strip { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="logo-dot"></div>
+      <span class="logo-text">RAG Learning</span>
+    </div>
+    <div class="topbar-right">
+      <a href="../Dashboard.html" class="topbar-back">← Dashboard</a>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="page-header">
+      <div class="board-badge">Edexcel A-Level</div>
+      <h1>Mathematics Notes</h1>
+      <p>36 topics covering Pure, Statistics, and Mechanics. Open the notes to study, then run a diagnostic to update your RAG status.</p>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-num">36</div><div class="stat-label">Topics</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><div class="stat-num">21</div><div class="stat-label">Pure</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">Statistics</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Mechanics</div></div>
+    </div>
+
+    <!-- Pure Year 1 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon pure">📐</div>
+        <div>
+          <div class="section-title">Pure Mathematics — Year 1</div>
+        </div>
+        <div class="section-count">P1 – P11 &nbsp;·&nbsp; 11 topics</div>
+      </div>
+      <div class="topic-grid">
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P1</span>
+            <span class="topic-name">Algebraic Expressions</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P1-algebraic-expressions.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P1">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P2</span>
+            <span class="topic-name">Quadratics</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P2-quadratics.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P2">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P3</span>
+            <span class="topic-name">Equations and Inequalities</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P3-equations-inequalities.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P3">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P4</span>
+            <span class="topic-name">Graphs and Transformations</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P4-graphs-transformations.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P4">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P5</span>
+            <span class="topic-name">Straight Lines and Circles</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P5-straight-lines-circles.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P5">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P6</span>
+            <span class="topic-name">Trigonometric Ratios</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P6-trigonometric-ratios.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P6">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P7</span>
+            <span class="topic-name">Trigonometric Identities and Equations</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P7_trig_identities_equations.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P7">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P8</span>
+            <span class="topic-name">Exponentials and Logarithms</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P8_exponentials_logarithms.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P8">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P9</span>
+            <span class="topic-name">Differentiation (Year 1)</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P9_differentiation.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P9">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P10</span>
+            <span class="topic-name">Integration (Year 1)</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P10_integration.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P10">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P11</span>
+            <span class="topic-name">Vectors (Year 1)</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P11_vectors.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P11">◎ Diagnostic</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pure Year 2 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon pure">📗</div>
+        <div>
+          <div class="section-title">Pure Mathematics — Year 2</div>
+        </div>
+        <div class="section-count">P12 – P21 &nbsp;·&nbsp; 10 topics</div>
+      </div>
+      <div class="topic-grid">
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P12</span>
+            <span class="topic-name">Algebraic Methods</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P12_algebraic_methods.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P12">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P13</span>
+            <span class="topic-name">Functions and Graphs</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P13_functions_graphs.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P13">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P14</span>
+            <span class="topic-name">Sequences and Series</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P14_sequences_series.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P14">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P15</span>
+            <span class="topic-name">Radians</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P15_radians.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P15">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P16</span>
+            <span class="topic-name">Trigonometric Functions</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P16_trig_functions.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P16">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P17</span>
+            <span class="topic-name">Parametric Equations</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P17_parametric_equations.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P17">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P18</span>
+            <span class="topic-name">Differentiation (Year 2)</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P18_differentiation_y2.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P18">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P19</span>
+            <span class="topic-name">Numerical Methods</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P19_numerical_methods.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P19">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P20</span>
+            <span class="topic-name">Integration (Year 2)</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P20_integration_y2.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P20">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code pure">P21</span>
+            <span class="topic-name">Vectors (3D)</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="P21_vectors_3d.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=P21">◎ Diagnostic</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statistics -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon stats">📊</div>
+        <div>
+          <div class="section-title">Statistics</div>
+        </div>
+        <div class="section-count">S1 – S8 &nbsp;·&nbsp; 8 topics</div>
+      </div>
+      <div class="topic-grid">
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code stats">S1</span>
+            <span class="topic-name">Statistical Sampling</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="S1_statistical_sampling.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=S1">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code stats">S2</span>
+            <span class="topic-name">Data Presentation and Measures</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="S2_data_presentation_measures.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=S2">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code stats">S3</span>
+            <span class="topic-name">Probability</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="S3_probability.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=S3">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code stats">S4</span>
+            <span class="topic-name">Binomial Distribution</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="S4_binomial_distribution.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=S4">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code stats">S5</span>
+            <span class="topic-name">Hypothesis Testing (Binomial)</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="S5_hypothesis_testing_binomial.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=S5">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code stats">S6</span>
+            <span class="topic-name">Regression and Correlation</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="S6_regression_correlation.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=S6">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code stats">S7</span>
+            <span class="topic-name">Conditional Probability</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="S7_conditional_probability.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=S7">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code stats">S8</span>
+            <span class="topic-name">Normal Distribution</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="S8_normal_distribution.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=S8">◎ Diagnostic</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mechanics -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon mechanics">⚙️</div>
+        <div>
+          <div class="section-title">Mechanics</div>
+        </div>
+        <div class="section-count">M1 – M7 &nbsp;·&nbsp; 7 topics</div>
+      </div>
+      <div class="topic-grid">
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code mechanics">M1</span>
+            <span class="topic-name">Modelling in Mechanics</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="M1_modelling_mechanics.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=M1">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code mechanics">M2</span>
+            <span class="topic-name">Kinematics (SUVAT)</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="M2_kinematics_suvat.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=M2">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code mechanics">M3</span>
+            <span class="topic-name">Forces and Newton's Laws</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="M3_forces_newtons_laws.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=M3">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code mechanics">M4</span>
+            <span class="topic-name">Moments</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="M4_moments.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=M4">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code mechanics">M5</span>
+            <span class="topic-name">Variable Acceleration</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="M5_variable_acceleration.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=M5">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code mechanics">M6</span>
+            <span class="topic-name">Projectiles</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="M6_projectiles.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=M6">◎ Diagnostic</a>
+          </div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-top">
+            <span class="topic-code mechanics">M7</span>
+            <span class="topic-name">Further Forces</span>
+          </div>
+          <div class="topic-actions">
+            <a class="btn-notes" href="M7_further_forces.html">📖 Notes</a>
+            <a class="btn-diagnostic" href="../diagnostics/maths-edexcel-diagnostic.html?topic=M7">◎ Diagnostic</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
