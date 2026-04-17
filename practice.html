@@ -36,6 +36,13 @@
   <script src="questions/geography-ocr/geography-ocr-practice.js"></script>
   <script src="questions/maths-aqa/maths-aqa-practice.js"></script>
   <script src="questions/maths-ocr/maths-ocr-practice.js"></script>
+  <script src="questions/maths-edexcel/w-P1-P11.js"></script>
+  <script src="questions/maths-edexcel/w-P12-P21.js"></script>
+  <script src="questions/maths-edexcel/w-S1-S8.js"></script>
+  <script src="questions/maths-edexcel/w-M1-M2.js"></script>
+  <script src="questions/maths-edexcel/w-M3-M4.js"></script>
+  <script src="questions/maths-edexcel/w-M5-M7.js"></script>
+  <script src="questions/maths-edexcel/maths-edexcel-practice.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -564,6 +571,7 @@ const PRACTICE_MAP = {
   'Geography_OCR': () => typeof GEOGRAPHY_OCR_PRACTICE !== 'undefined' ? GEOGRAPHY_OCR_PRACTICE : null,
   'Mathematics_AQA': () => typeof MATHS_AQA_PRACTICE !== 'undefined' ? MATHS_AQA_PRACTICE : null,
   'Mathematics_OCR': () => typeof MATHS_OCR_PRACTICE !== 'undefined' ? MATHS_OCR_PRACTICE : null,
+  'Mathematics_Edexcel': () => typeof MATHS_EDEXCEL_PRACTICE !== 'undefined' ? MATHS_EDEXCEL_PRACTICE : null,
 };
 
 function getPracticeData(topicKey) {
@@ -992,6 +1000,54 @@ const SUBJECT_TOPICS = {
       { label: 'Statistics', topics: [
         { id: '6.1', name: 'Statistical Diagrams & Measures', sub: 'Averages, range, bar charts, pie charts, scatter diagrams' },
         { id: '6.2', name: 'Cumulative Frequency, Histograms & Box Plots', sub: 'Cumulative frequency curves, box plots, histograms, comparing data' },
+      ]},
+    ]
+  },
+  'Mathematics_Edexcel': {
+    sections: [
+      { label: 'Edexcel — Pure Mathematics Year 1', topics: [
+        { id: 'P1',  name: 'Algebraic Expressions',          sub: 'Indices, surds, expanding, factorising' },
+        { id: 'P2',  name: 'Quadratics',                     sub: 'Completing the square, discriminant, solving' },
+        { id: 'P3',  name: 'Equations and Inequalities',     sub: 'Simultaneous, quadratic inequalities, modulus' },
+        { id: 'P4',  name: 'Graphs and Transformations',     sub: 'Translations, stretches, reflections, combined' },
+        { id: 'P5',  name: 'Straight Lines and Circles',     sub: 'Distance, midpoint, tangent, circle equation' },
+        { id: 'P6',  name: 'Trigonometric Ratios',           sub: 'Sine/cosine rules, exact values, area formula' },
+        { id: 'P7',  name: 'Trigonometric Identities',       sub: 'sin²+cos²=1, tanθ, solving equations in range' },
+        { id: 'P8',  name: 'Exponentials and Logarithms',    sub: 'Log laws, ln, e^x, modelling, solving' },
+        { id: 'P9',  name: 'Differentiation',                sub: 'First principles, polynomials, tangents, stationary points' },
+        { id: 'P10', name: 'Integration',                    sub: 'Indefinite, definite, area under curve, trapezium rule' },
+        { id: 'P11', name: 'Vectors',                        sub: '2D vectors, magnitude, unit vectors, position vectors' },
+      ]},
+      { label: 'Edexcel — Pure Mathematics Year 2', topics: [
+        { id: 'P12', name: 'Algebraic Methods',              sub: 'Division, factor theorem, partial fractions, proof' },
+        { id: 'P13', name: 'Functions and Graphs',           sub: 'Composite, inverse, modulus, transformations' },
+        { id: 'P14', name: 'Sequences and Series',           sub: 'Binomial expansion, arithmetic, geometric, sigma' },
+        { id: 'P15', name: 'Radians',                        sub: 'Arc length, sector area, segment, small angle approx' },
+        { id: 'P16', name: 'Trigonometric Functions',        sub: 'Sec/cosec/cot, addition formulae, double angle, R-form' },
+        { id: 'P17', name: 'Parametric Equations',           sub: 'Converting, differentiating, integrating parametric curves' },
+        { id: 'P18', name: 'Differentiation (Year 2)',       sub: 'Chain/product/quotient, implicit, parametric, connected rates' },
+        { id: 'P19', name: 'Numerical Methods',              sub: 'Newton-Raphson, fixed-point iteration, sign change' },
+        { id: 'P20', name: 'Integration (Year 2)',           sub: 'By substitution, by parts, partial fractions, ODEs' },
+        { id: 'P21', name: 'Vectors (3D)',                   sub: 'Equation of line, dot product, angle between lines, skew' },
+      ]},
+      { label: 'Edexcel — Statistics (Paper 3A)', topics: [
+        { id: 'S1', name: 'Statistical Sampling',            sub: 'Population, sample, sampling methods, bias' },
+        { id: 'S2', name: 'Data Presentation & Measures',   sub: 'Mean, SD, variance, coding, box plots, histograms' },
+        { id: 'S3', name: 'Probability',                     sub: 'Venn diagrams, tree diagrams, independence, E(X), Var(X)' },
+        { id: 'S4', name: 'Binomial Distribution',           sub: 'B(n,p), mean, variance, calculator use' },
+        { id: 'S5', name: 'Hypothesis Testing — Binomial',  sub: 'H₀, H₁, critical region, p-value, conclusion in context' },
+        { id: 'S6', name: 'Regression and Correlation',      sub: 'PMCC, regression line, hypothesis test for ρ' },
+        { id: 'S7', name: 'Conditional Probability',         sub: 'Conditional probability, total probability, Bayes' },
+        { id: 'S8', name: 'Normal Distribution',             sub: 'N(μ,σ²), standardising, inverse normal, approx to binomial' },
+      ]},
+      { label: 'Edexcel — Mechanics (Paper 3B)', topics: [
+        { id: 'M1', name: 'Modelling in Mechanics',          sub: 'Particles, rods, smooth surfaces, assumptions, Newton\'s laws' },
+        { id: 'M2', name: 'Kinematics (SUVAT)',              sub: 'SUVAT equations, displacement-time, velocity-time graphs' },
+        { id: 'M3', name: 'Forces and Newton\'s Laws',       sub: 'F=ma, connected particles, Atwood machine, equilibrium' },
+        { id: 'M4', name: 'Moments',                         sub: 'Turning effect, equilibrium, non-uniform beams, ladders' },
+        { id: 'M5', name: 'Variable Acceleration',           sub: 'Calculus: v=ds/dt, a=dv/dt, integration for displacement' },
+        { id: 'M6', name: 'Projectiles',                     sub: 'Horizontal/vertical components, range, max height, trajectory' },
+        { id: 'M7', name: 'Further Forces',                  sub: 'Friction F≤μR, resolving on inclines, limiting equilibrium' },
       ]},
     ]
   },
