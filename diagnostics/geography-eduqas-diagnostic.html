@@ -367,7 +367,7 @@ function confirmMCQ() {
   const fb = document.getElementById('feedbackBar');
   fb.classList.add('show');
   if (correct) { fb.classList.add('correct-fb'); fb.textContent = '✓ Correct!'; }
-  else { fb.classList.add('wrong-fb'); fb.textContent = `✗ Incorrect — correct answer: ${q.options[q.answer]}`; }
+  else { fb.classList.add('wrong-fb'); fb.innerHTML = `✗ Incorrect — correct answer: <strong>${q.options[q.answer]}</strong>${q.explanation ? `<div style="margin-top:8px;font-size:13px;line-height:1.6;opacity:0.95;border-top:1px solid rgba(255,255,255,0.2);padding-top:8px"><strong>Working:</strong> ${q.explanation}</div>` : ""}`; }
   results.push({ type: 'mcq', tier: q.tier, pts: correct ? W[q.tier] : 0, correct });
   document.getElementById('btnNext').classList.add('show');
 }

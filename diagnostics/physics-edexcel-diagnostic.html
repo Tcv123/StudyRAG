@@ -427,7 +427,9 @@ function selectOption(i) {
 function confirmMCQ() {
   if (selectedI === null) return;
   const q = questions[qIndex];
-  const correct = selectedI === q.answer;
+  // Support both numeric (0,1,2,3) and letter ('A','B','C','D') answer formats
+  const answerIdx = typeof q.answer === 'string' ? q.answer.charCodeAt(0) - 65 : q.answer;
+  const correct = selectedI === answerIdx;
 
   document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
   document.getElementById('btnConfirm').style.display = 'none';
@@ -437,7 +439,7 @@ function confirmMCQ() {
     document.getElementById(`opt${selectedI}`).classList.add('correct');
   } else {
     document.getElementById(`opt${selectedI}`).classList.add('wrong');
-    document.getElementById(`opt${q.answer}`).classList.add('reveal');
+    document.getElementById(`opt${answerIdx}`).classList.add('reveal');
   }
 
   const fb = document.getElementById('feedbackBar');
@@ -447,7 +449,7 @@ function confirmMCQ() {
     fb.textContent = '✓ Correct!';
   } else {
     fb.classList.add('wrong-fb');
-    fb.textContent = `✗ Incorrect — correct answer: ${q.options[q.answer]}`;
+    fb.innerHTML = `✗ Incorrect — correct answer: <strong>${q.options[answerIdx]}</strong>${q.explanation ? `<div style="margin-top:8px;font-size:13px;line-height:1.6;opacity:0.95;border-top:1px solid rgba(255,255,255,0.2);padding-top:8px"><strong>Working:</strong> ${q.explanation}</div>` : ""}`;
   }
 
   results.push({ type: 'mcq', tier: q.tier, pts: correct ? W[q.tier] : 0, correct });

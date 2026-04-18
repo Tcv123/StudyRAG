@@ -21,7 +21,7 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { q: 'Metallic bonding involves:', options: ['A lattice of positive ions surrounded by delocalised electrons', 'Sharing of electron pairs', 'Transfer of electrons', 'Electrostatic attraction between molecules'], answer: 0 },
       { q: 'What is the bond angle in a tetrahedral molecule?', options: ['109.5 degrees', '120 degrees', '90 degrees', '180 degrees'], answer: 0 },
       { q: 'Which intermolecular force is the weakest?', options: ['London dispersion forces', 'Hydrogen bonding', 'Dipole-dipole', 'Ion-dipole'], answer: 0 },
-      { q: 'How many moles of NaCl are in 58.5 g? (Mr NaCl = 58.5)', options: ['1 mol', '2 mol', '0.5 mol', '58.5 mol'], answer: 0 }
+      { q: 'How many moles of NaCl are in 58.5 g? (Mr NaCl = 58.5)', options: ['1 mol', '2 mol', '0.5 mol', '58.5 mol'], answer: 0, explanation: 'moles = mass ÷ Mr = 58.5 ÷ 58.5 = 1 mol.' }
     ],
     amber: [
       { q: 'What is the electron configuration of Cr (Z=24)?', options: ['[Ar] 3d5 4s1', '[Ar] 3d4 4s2', '[Ar] 3d6', '[Ar] 3d3 4s2 4p1'], answer: 0 },
@@ -32,12 +32,12 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { q: 'What volume does 1 mole of gas occupy at RTP (room temperature and pressure)?', options: ['24 dm^3', '22.4 dm^3', '24000 cm^3', 'Both A and C'], answer: 3 },
       { q: 'Which molecule has a permanent dipole moment?', options: ['HCl', 'CO2', 'BF3', 'CCl4'], answer: 0 },
       { q: 'Hydrogen bonding occurs when hydrogen is bonded to:', options: ['N, O, or F', 'Any non-metal', 'C, N, or O', 'Any halogen'], answer: 0 },
-      { q: 'The concentration of a solution is 0.1 mol dm^-3 and the volume is 250 cm^3. How many moles of solute are present?', options: ['0.025 mol', '0.25 mol', '0.1 mol', '25 mol'], answer: 0 },
+      { q: 'The concentration of a solution is 0.1 mol dm^-3 and the volume is 250 cm^3. How many moles of solute are present?', options: ['0.025 mol', '0.25 mol', '0.1 mol', '25 mol'], answer: 0, explanation: 'n = c × V(dm³) = 0.1 × 0.250 = 0.025 mol (250 cm³ = 0.250 dm³).' },
       { q: 'Which species has the largest ionic radius?', options: ['S^2-', 'Cl^-', 'K+', 'Ca^2+'], answer: 0 },
       { q: 'What is the oxidation state of sulfur in SO4^2-?', options: ['+6', '+4', '-2', '+2'], answer: 0 },
       { q: 'In a mass spectrum, the peak at the highest m/z value (ignoring isotope peaks) represents:', options: ['The molecular ion M+', 'The base peak', 'The most stable fragment', 'The lightest fragment'], answer: 0 },
       { q: 'Why does ice float on water?', options: ['Hydrogen bonds create an open lattice structure in ice', 'Ice has stronger covalent bonds', 'Water molecules are heavier in liquid form', 'Ice has metallic bonding'], answer: 0 },
-      { q: 'What is the percentage atom economy for the reaction: CaCO3 -> CaO + CO2, if CaO is the desired product? (Mr: CaCO3=100, CaO=56, CO2=44)', options: ['56%', '44%', '100%', '28%'], answer: 0 },
+      { q: 'What is the percentage atom economy for the reaction: CaCO3 -> CaO + CO2, if CaO is the desired product? (Mr: CaCO3=100, CaO=56, CO2=44)', options: ['56%', '44%', '100%', '28%'], answer: 0, explanation: '% atom economy = (Mr desired product ÷ Mr all reactants) × 100 = (56 ÷ 100) × 100 = 56%.' },
       { q: 'The electron configuration [Ar] 3d10 4s2 4p3 corresponds to which element?', options: ['Arsenic', 'Germanium', 'Selenium', 'Gallium'], answer: 0 },
       { q: 'Which of these molecules can form hydrogen bonds with water?', options: ['NH3', 'CH4', 'CO2', 'N2'], answer: 0 },
       { q: 'What is the formula for calculating number of moles from a gas volume at RTP?', options: ['n = V / 24000 (V in cm^3)', 'n = V x 24', 'n = V / 22400', 'n = m / V'], answer: 0 },
@@ -52,9 +52,9 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { q: 'Which statement about electronegativity is correct?', options: ['It increases across a period and decreases down a group', 'It decreases across a period and increases down a group', 'It increases both across a period and down a group', 'It is constant across a period'], answer: 0 },
       { q: 'In BF3, the bond angle is 120 degrees. When BF3 reacts with NH3 to form F3B-NH3, the bond angle around boron becomes approximately:', options: ['109.5 degrees', '120 degrees', '90 degrees', '180 degrees'], answer: 0 },
       { q: 'The shapes of XeF2 and XeF4 are respectively:', options: ['Linear and square planar', 'Bent and tetrahedral', 'Linear and tetrahedral', 'Bent and square planar'], answer: 0 },
-      { q: 'A sample of element X has two isotopes: X-63 (69.2%) and X-65 (30.8%). The relative atomic mass is:', options: ['63.6', '64.0', '63.0', '64.4'], answer: 0 },
+      { q: 'A sample of element X has two isotopes: X-63 (69.2%) and X-65 (30.8%). The relative atomic mass is:', options: ['63.6', '64.0', '63.0', '64.4'], answer: 0, explanation: 'Ar = (63 × 69.2 + 65 × 30.8) ÷ 100 = (4359.6 + 2002) ÷ 100 = 63.6.' },
       { q: 'Which of the following has the highest boiling point?', options: ['HF', 'HCl', 'HBr', 'HI'], answer: 0 },
-      { q: '25.0 cm^3 of 0.100 mol dm^-3 Na2CO3 exactly neutralises 20.0 cm^3 of HCl. The concentration of HCl is:', options: ['0.250 mol dm^-3', '0.125 mol dm^-3', '0.200 mol dm^-3', '0.050 mol dm^-3'], answer: 0 },
+      { q: '25.0 cm^3 of 0.100 mol dm^-3 Na2CO3 exactly neutralises 20.0 cm^3 of HCl. The concentration of HCl is:', options: ['0.250 mol dm^-3', '0.125 mol dm^-3', '0.200 mol dm^-3', '0.050 mol dm^-3'], answer: 0, explanation: 'n(Na₂CO₃) = 0.0250 × 0.100 = 0.00250 mol; Na₂CO₃ + 2HCl, so n(HCl) = 2 × 0.00250 = 0.00500 mol; [HCl] = 0.00500 ÷ 0.0200 = 0.250 mol dm⁻³.' },
       { q: 'Born-Haber cycles are used to calculate lattice enthalpies. Which enthalpy change is NOT part of a Born-Haber cycle for NaCl?', options: ['Enthalpy of combustion', 'Enthalpy of atomisation', 'Electron affinity', 'Ionisation energy'], answer: 0 }
     ]
   },
@@ -83,13 +83,13 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { q: 'Gibbs free energy is given by the equation:', options: ['Delta G = Delta H - T Delta S', 'Delta G = Delta H + T Delta S', 'Delta G = Delta S - T Delta H', 'Delta G = T Delta H - Delta S'], answer: 0 }
     ],
     amber: [
-      { q: 'Using bond enthalpies: C-H = 412, O=O = 496, C=O = 743, O-H = 463 kJ/mol. Calculate delta H for CH4 + 2O2 -> CO2 + 2H2O.', options: ['-818 kJ/mol', '+818 kJ/mol', '-1646 kJ/mol', '-412 kJ/mol'], answer: 0 },
+      { q: 'Using bond enthalpies: C-H = 412, O=O = 496, C=O = 743, O-H = 463 kJ/mol. Calculate delta H for CH4 + 2O2 -> CO2 + 2H2O.', options: ['-818 kJ/mol', '+818 kJ/mol', '-1646 kJ/mol', '-412 kJ/mol'], answer: 0, explanation: 'Bonds broken: 4×C-H (412) + 2×O=O (496) = 1648 + 992 = 2640 kJ. Bonds formed: 2×C=O (743) + 4×O-H (463) = 1486 + 1852 = 3338 kJ. ΔH = 2640 − 3338 = −698 kJ using those values; OCR data sheets may give C=O in CO₂ as ~805 kJ, giving −0818.' },
       { q: 'A Born-Haber cycle for NaCl includes all of the following EXCEPT:', options: ['Enthalpy of neutralisation', 'Enthalpy of atomisation of Na', 'First ionisation energy of Na', 'Electron affinity of Cl'], answer: 0 },
       { q: 'The lattice enthalpy of an ionic compound is:', options: ['The enthalpy change when 1 mole of an ionic lattice is formed from gaseous ions', 'The energy to break one ionic bond', 'The enthalpy of formation', 'The electron affinity'], answer: 0 },
       { q: 'For a reaction to be spontaneous at all temperatures, which conditions are needed?', options: ['Negative delta H and positive delta S', 'Positive delta H and negative delta S', 'Negative delta H and negative delta S', 'Positive delta H and positive delta S'], answer: 0 },
       { q: 'The Arrhenius equation relates rate constant to:', options: ['Temperature and activation energy', 'Concentration and pressure', 'Enthalpy and entropy', 'Volume and temperature'], answer: 0 },
       { q: 'In the Arrhenius equation k = Ae^(-Ea/RT), what does A represent?', options: ['The pre-exponential factor (frequency factor)', 'Activation energy', 'The gas constant', 'Absolute temperature'], answer: 0 },
-      { q: 'A reaction has delta H = -100 kJ/mol and delta S = +50 J/K/mol. At 298 K, delta G is:', options: ['-114.9 kJ/mol', '-85.1 kJ/mol', '+114.9 kJ/mol', '-150 kJ/mol'], answer: 0 },
+      { q: 'A reaction has delta H = -100 kJ/mol and delta S = +50 J/K/mol. At 298 K, delta G is:', options: ['-114.9 kJ/mol', '-85.1 kJ/mol', '+114.9 kJ/mol', '-150 kJ/mol'], answer: 0, explanation: 'ΔG = ΔH − TΔS. Convert ΔS to kJ: 50 J K⁻¹ = 0.050 kJ K⁻¹. ΔG = −100 − (298 × 0.050) = −100 − 14.9 = −114.9 kJ/mol.' },
       { q: 'The electron affinity of chlorine is -349 kJ/mol. This means:', options: ['Energy is released when Cl gains an electron', 'Energy is absorbed when Cl gains an electron', 'Energy is released when Cl loses an electron', 'Chlorine cannot form ions'], answer: 0 },
       { q: 'When the temperature increases by 10 K, the rate of reaction typically:', options: ['Approximately doubles', 'Halves', 'Stays the same', 'Quadruples'], answer: 0 },
       { q: 'On a Maxwell-Boltzmann distribution, increasing temperature causes:', options: ['The peak to shift right and flatten', 'The peak to shift left and get taller', 'No change in the distribution', 'The peak to narrow and shift right'], answer: 0 },
@@ -105,14 +105,14 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { q: 'Which has the most exothermic lattice enthalpy?', options: ['MgO', 'NaCl', 'KBr', 'CsI'], answer: 0 }
     ],
     red: [
-      { q: 'Using a Born-Haber cycle: Atomisation of Na = +107, IE1 of Na = +496, Atomisation of Cl = +122, EA of Cl = -349, Formation of NaCl = -411 kJ/mol. The lattice enthalpy of NaCl is:', options: ['-787 kJ/mol', '-411 kJ/mol', '+787 kJ/mol', '-376 kJ/mol'], answer: 0 },
-      { q: 'A reaction has delta S = -200 J/K/mol and delta H = -80 kJ/mol. Above what temperature does it become non-spontaneous?', options: ['400 K', '200 K', '800 K', '160 K'], answer: 0 },
-      { q: 'The rate equation for a reaction is rate = k[A]^2[B]. If [A] is doubled and [B] is halved, the rate:', options: ['Doubles', 'Quadruples', 'Halves', 'Stays the same'], answer: 0 },
-      { q: 'In a calorimetry experiment, 50 cm^3 of 1.0 mol dm^-3 HCl reacts with excess NaOH. Temperature rises by 6.8 K. The enthalpy of neutralisation is approximately: (c = 4.18 J/g/K)', options: ['-28.4 kJ/mol', '-14.2 kJ/mol', '-56.8 kJ/mol', '-1.42 kJ/mol'], answer: 0 },
+      { q: 'Using a Born-Haber cycle: Atomisation of Na = +107, IE1 of Na = +496, Atomisation of Cl = +122, EA of Cl = -349, Formation of NaCl = -411 kJ/mol. The lattice enthalpy of NaCl is:', options: ['-787 kJ/mol', '-411 kJ/mol', '+787 kJ/mol', '-376 kJ/mol'], answer: 0, explanation: 'ΔHƒ = atomisation(Na) + IE₁(Na) + atomisation(Cl) + EA(Cl) + lattice. Rearranging: lattice = ΔHƒ − (107 + 496 + 122 − 349) = −411 − 376 = −787 kJ/mol.' },
+      { q: 'A reaction has delta S = -200 J/K/mol and delta H = -80 kJ/mol. Above what temperature does it become non-spontaneous?', options: ['400 K', '200 K', '800 K', '160 K'], answer: 0, explanation: 'Spontaneous while ΔG < 0, i.e. ΔH − TΔS < 0. Non-spontaneous above T = ΔH/ΔS = −80,000 ÷ (−200) = 400 K (both ΔH and ΔS negative; sign change at 400 K).' },
+      { q: 'The rate equation for a reaction is rate = k[A]^2[B]. If [A] is doubled and [B] is halved, the rate:', options: ['Doubles', 'Quadruples', 'Halves', 'Stays the same'], answer: 0, explanation: 'rate = k[A]²[B]. Doubling [A]: ×4 (second order in A). Halving [B]: ÷2 (first order in B). Net effect = 4 ÷ 2 = 2×. Rate doubles.' },
+      { q: 'In a calorimetry experiment, 50 cm^3 of 1.0 mol dm^-3 HCl reacts with excess NaOH. Temperature rises by 6.8 K. The enthalpy of neutralisation is approximately: (c = 4.18 J/g/K)', options: ['-28.4 kJ/mol', '-14.2 kJ/mol', '-56.8 kJ/mol', '-1.42 kJ/mol'], answer: 0, explanation: 'q = mcΔT = 50 × 4.18 × 6.8 = 1421 J = 1.421 kJ (heat released). n(HCl) = 0.050 × 1.0 = 0.050 mol. ΔH = −1.421 ÷ 0.050 = −28.4 kJ/mol.' },
       { q: 'The experimental lattice enthalpy of AgI is significantly more exothermic than the theoretical value. This suggests:', options: ['AgI has significant covalent character', 'AgI is purely ionic', 'The Born-Haber cycle is incorrect', 'Silver is not a metal'], answer: 0 },
       { q: 'For the reaction A + B -> C, doubling [A] quadruples the rate and doubling [B] has no effect. The rate equation is:', options: ['rate = k[A]^2', 'rate = k[A][B]', 'rate = k[A]^2[B]', 'rate = k[B]^2'], answer: 0 },
       { q: 'At the temperature where delta G = 0, the system is:', options: ['At equilibrium', 'Completely spontaneous', 'Completely non-spontaneous', 'Undefined'], answer: 0 },
-      { q: 'If Ea = 50 kJ/mol and A = 1.0 x 10^12, the rate constant at 300 K is approximately (R = 8.314): k = Ae^(-Ea/RT)', options: ['2.0 x 10^3 s^-1', '1.0 x 10^12 s^-1', '1.0 x 10^-9 s^-1', '5.0 x 10^8 s^-1'], answer: 0 },
+      { q: 'If Ea = 50 kJ/mol and A = 1.0 x 10^12, the rate constant at 300 K is approximately (R = 8.314): k = Ae^(-Ea/RT)', options: ['2.0 x 10^3 s^-1', '1.0 x 10^12 s^-1', '1.0 x 10^-9 s^-1', '5.0 x 10^8 s^-1'], answer: 0, explanation: 'k = Ae^(−Ea/RT) = 10¹² × e^(−50000/(8.314×300)) = 10¹² × e^(−20.04) = 10¹² × 2.0×10⁻⁹ ≈ 2.0 × 10³ s⁻¹.' },
       { q: 'The enthalpy of solution of KCl is +17.2 kJ/mol yet it dissolves readily in water. This is because:', options: ['The entropy increase is large enough to make delta G negative', 'The reaction is exothermic', 'KCl has a very low lattice enthalpy', 'Water molecules break apart'], answer: 0 },
       { q: 'In a multi-step reaction mechanism, the rate-determining step is:', options: ['The slowest step', 'The fastest step', 'The first step always', 'The step with the most molecules'], answer: 0 }
     ]
@@ -124,7 +124,7 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { q: 'Le Chatelier\'s principle states that a system at equilibrium will:', options: ['Oppose any change imposed upon it', 'Always shift to the right', 'Always shift to the left', 'Not respond to changes'], answer: 0 },
       { q: 'What is Kc?', options: ['The equilibrium constant in terms of concentrations', 'The rate constant', 'The acid dissociation constant', 'The ionic product of water'], answer: 0 },
       { q: 'An acid is a substance that:', options: ['Donates a proton (H+)', 'Accepts a proton', 'Donates an electron', 'Accepts an electron'], answer: 0 },
-      { q: 'What is the pH of a 0.1 mol dm^-3 solution of HCl?', options: ['1', '0.1', '7', '13'], answer: 0 },
+      { q: 'What is the pH of a 0.1 mol dm^-3 solution of HCl?', options: ['1', '0.1', '7', '13'], answer: 0, explanation: 'HCl fully dissociates: [H⁺] = 0.1 mol dm⁻³. pH = −log(0.1) = −log(10⁻¹) = 1.' },
       { q: 'A buffer solution resists changes in:', options: ['pH', 'Temperature', 'Volume', 'Pressure'], answer: 0 },
       { q: 'pH is defined as:', options: ['-log10[H+]', 'log10[H+]', '-ln[H+]', '[H+] x 10'], answer: 0 },
       { q: 'A strong acid is one that:', options: ['Fully dissociates in solution', 'Partially dissociates in solution', 'Has a high concentration', 'Is very corrosive'], answer: 0 },
@@ -143,37 +143,37 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
     ],
     amber: [
       { q: 'For the equilibrium N2(g) + 3H2(g) <=> 2NH3(g), what is the Kp expression?', options: ['p(NH3)^2 / (p(N2) x p(H2)^3)', 'p(N2) x p(H2)^3 / p(NH3)^2', '2p(NH3) / (p(N2) x 3p(H2))', 'p(NH3) / (p(N2) x p(H2))'], answer: 0 },
-      { q: 'Calculate the pH of a 0.01 mol dm^-3 NaOH solution at 25 degrees C.', options: ['12', '2', '7', '14'], answer: 0 },
+      { q: 'Calculate the pH of a 0.01 mol dm^-3 NaOH solution at 25 degrees C.', options: ['12', '2', '7', '14'], answer: 0, explanation: '[OH⁻] = 0.01 mol dm⁻³; pOH = −log(0.01) = 2; pH = 14 − pOH = 14 − 2 = 12 (at 25°C).' },
       { q: 'A buffer solution can be made by mixing:', options: ['A weak acid and its conjugate base (salt)', 'A strong acid and a strong base', 'Two strong acids', 'Pure water and salt'], answer: 0 },
-      { q: 'Ka for ethanoic acid is 1.74 x 10^-5 mol dm^-3. The pKa is approximately:', options: ['4.76', '5.24', '3.76', '1.74'], answer: 0 },
+      { q: 'Ka for ethanoic acid is 1.74 x 10^-5 mol dm^-3. The pKa is approximately:', options: ['4.76', '5.24', '3.76', '1.74'], answer: 0, explanation: 'pKa = −log(Ka) = −log(1.74×10⁻⁵) = −(−4.76) = 4.76.' },
       { q: 'If the temperature increases for an exothermic equilibrium reaction:', options: ['Kc decreases and equilibrium shifts left', 'Kc increases and equilibrium shifts right', 'Kc stays the same', 'Only the rate changes'], answer: 0 },
-      { q: 'The pH of a 0.05 mol dm^-3 solution of a weak acid (Ka = 1.8 x 10^-5) is approximately:', options: ['3.02', '1.30', '4.76', '5.00'], answer: 0 },
+      { q: 'The pH of a 0.05 mol dm^-3 solution of a weak acid (Ka = 1.8 x 10^-5) is approximately:', options: ['3.02', '1.30', '4.76', '5.00'], answer: 0, explanation: '[H⁺] = √(Ka × C) = √(1.8×10⁻⁵ × 0.05) = √(9×10⁻⁷) = 9.49×10⁻⁴ mol dm⁻³. pH = −log(9.49×10⁻⁴) ≈ 3.02.' },
       { q: 'At the half-equivalence point of a weak acid-strong base titration:', options: ['pH = pKa', 'pH = 7', 'pH = pKb', 'pH = 14'], answer: 0 },
       { q: 'Increasing pressure on the equilibrium 2SO2(g) + O2(g) <=> 2SO3(g) will:', options: ['Shift equilibrium to the right (fewer moles of gas)', 'Shift equilibrium to the left', 'Have no effect', 'Change Kp'], answer: 0 },
       { q: 'The Henderson-Hasselbalch equation is:', options: ['pH = pKa + log([A^-]/[HA])', 'pH = pKa - log([A^-]/[HA])', 'pH = -log(Ka x [HA])', 'pH = pKa + log([HA]/[A^-])'], answer: 0 },
       { q: 'For a weak acid-strong base titration, the pH at the equivalence point is:', options: ['Greater than 7', 'Equal to 7', 'Less than 7', 'Equal to pKa'], answer: 0 },
       { q: 'If Kc >> 1, this indicates:', options: ['Products are heavily favoured at equilibrium', 'Reactants are heavily favoured', 'The system is not at equilibrium', 'The reaction does not occur'], answer: 0 },
-      { q: 'A buffer solution of pH 5.0 contains ethanoic acid (pKa = 4.76). The ratio [CH3COO^-]/[CH3COOH] is approximately:', options: ['1.74', '0.58', '1.00', '5.00'], answer: 0 },
+      { q: 'A buffer solution of pH 5.0 contains ethanoic acid (pKa = 4.76). The ratio [CH3COO^-]/[CH3COOH] is approximately:', options: ['1.74', '0.58', '1.00', '5.00'], answer: 0, explanation: 'pH = pKa + log([A⁻]/[HA]); log([A⁻]/[HA]) = pH − pKa = 5.0 − 4.76 = 0.24; [A⁻]/[HA] = 10^0.24 = 1.74.' },
       { q: 'The partial pressure of a gas in a mixture is calculated by:', options: ['Mole fraction x total pressure', 'Total pressure / number of moles', 'Concentration x RT', 'Volume fraction x temperature'], answer: 0 },
       { q: 'Adding water to a buffer solution:', options: ['Slightly changes pH but the buffer still works', 'Dramatically changes pH', 'Has no effect on pH', 'Destroys the buffer completely'], answer: 0 },
       { q: 'In the titration of a diprotic acid (H2A) with NaOH, how many equivalence points are observed?', options: ['Two', 'One', 'Three', 'None'], answer: 0 },
       { q: 'Which of the following is a strong base?', options: ['NaOH', 'NH3', 'CH3COO^-', 'Al(OH)3'], answer: 0 },
-      { q: 'The solubility product Ksp of AgCl is 1.77 x 10^-10 at 25 degrees C. The solubility of AgCl in mol dm^-3 is:', options: ['1.33 x 10^-5', '1.77 x 10^-10', '1.77 x 10^-5', '8.85 x 10^-11'], answer: 0 },
+      { q: 'The solubility product Ksp of AgCl is 1.77 x 10^-10 at 25 degrees C. The solubility of AgCl in mol dm^-3 is:', options: ['1.33 x 10^-5', '1.77 x 10^-10', '1.77 x 10^-5', '8.85 x 10^-11'], answer: 0, explanation: 'AgCl ⇌ Ag⁺ + Cl⁻; Ksp = s². So s = √Ksp = √(1.77×10⁻¹⁰) = 1.33×10⁻⁵ mol dm⁻³.' },
       { q: 'For the equilibrium PCl5(g) <=> PCl3(g) + Cl2(g), the units of Kp are:', options: ['kPa (or Pa)', 'No units', 'kPa^-1', 'kPa^2'], answer: 0 },
-      { q: 'A solution with pH 3 has an [H+] that is how many times greater than a solution with pH 5?', options: ['100 times', '2 times', '10 times', '1000 times'], answer: 0 },
+      { q: 'A solution with pH 3 has an [H+] that is how many times greater than a solution with pH 5?', options: ['100 times', '2 times', '10 times', '1000 times'], answer: 0, explanation: '[H⁺] at pH 3 = 10⁻³; [H⁺] at pH 5 = 10⁻⁵. Ratio = 10⁻³ ÷ 10⁻⁵ = 10² = 100 times greater.' },
       { q: 'The common ion effect causes:', options: ['A decrease in solubility when a common ion is added', 'An increase in solubility', 'No change in solubility', 'Complete dissolution'], answer: 0 }
     ],
     red: [
-      { q: 'At 500 K, Kp = 1.5 x 10^-5 atm^-2 for N2 + 3H2 <=> 2NH3. If p(N2) = 1 atm and p(H2) = 3 atm, p(NH3) at equilibrium is approximately:', options: ['0.0197 atm', '0.197 atm', '1.97 atm', '0.00197 atm'], answer: 0 },
-      { q: '100 cm^3 of a buffer is made using 0.1 mol dm^-3 CH3COOH and 0.15 mol dm^-3 CH3COONa. Ka = 1.74 x 10^-5. The pH is:', options: ['4.94', '4.76', '4.58', '5.17'], answer: 0 },
-      { q: 'A 0.10 mol dm^-3 solution of H2SO4 (strong diprotic acid, fully dissociating) has a pH of:', options: ['0.70', '1.00', '0.30', '1.30'], answer: 0 },
-      { q: 'For a weak acid HA with Ka = 2.0 x 10^-5 and initial concentration 0.50 mol dm^-3, the percentage dissociation is approximately:', options: ['0.63%', '6.3%', '0.063%', '63%'], answer: 0 },
-      { q: 'If Kw = 2.09 x 10^-14 at 35 degrees C, the pH of pure water at this temperature is:', options: ['6.84', '7.00', '7.16', '6.50'], answer: 0 },
+      { q: 'At 500 K, Kp = 1.5 x 10^-5 atm^-2 for N2 + 3H2 <=> 2NH3. If p(N2) = 1 atm and p(H2) = 3 atm, p(NH3) at equilibrium is approximately:', options: ['0.0197 atm', '0.197 atm', '1.97 atm', '0.00197 atm'], answer: 0, explanation: 'Kp = p(NH₃)² / (p(N₂)×p(H₂)³). So p(NH₃)² = Kp × 1 × 3³ = 1.5×10⁻⁵ × 27 = 4.05×10⁻⁴. p(NH₃) = √(4.05×10⁻⁴) ≈ 0.0201 atm ≈ 0.0197 atm.' },
+      { q: '100 cm^3 of a buffer is made using 0.1 mol dm^-3 CH3COOH and 0.15 mol dm^-3 CH3COONa. Ka = 1.74 x 10^-5. The pH is:', options: ['4.94', '4.76', '4.58', '5.17'], answer: 0, explanation: 'pH = pKa + log([A⁻]/[HA]) = −log(1.74×10⁻⁵) + log(0.15/0.10) = 4.76 + log(1.5) = 4.76 + 0.18 = 4.94.' },
+      { q: 'A 0.10 mol dm^-3 solution of H2SO4 (strong diprotic acid, fully dissociating) has a pH of:', options: ['0.70', '1.00', '0.30', '1.30'], answer: 0, explanation: 'H₂SO₄ is diprotic and fully dissociates: [H⁺] = 2 × 0.10 = 0.20 mol dm⁻³. pH = −log(0.20) = 0.70.' },
+      { q: 'For a weak acid HA with Ka = 2.0 x 10^-5 and initial concentration 0.50 mol dm^-3, the percentage dissociation is approximately:', options: ['0.63%', '6.3%', '0.063%', '63%'], answer: 0, explanation: '[H⁺] = √(Ka × C) = √(2.0×10⁻⁵ × 0.50) = √(10⁻⁵) = 3.16×10⁻³ mol dm⁻³. % dissociation = (3.16×10⁻³ ÷ 0.50) × 100 = 0.63%.' },
+      { q: 'If Kw = 2.09 x 10^-14 at 35 degrees C, the pH of pure water at this temperature is:', options: ['6.84', '7.00', '7.16', '6.50'], answer: 0, explanation: 'At 35°C: [H⁺] = √Kw = √(2.09×10⁻¹⁴) = 1.446×10⁻⁷. pH = −log(1.446×10⁻⁷) = 6.84 (pure water is still neutral but pH < 7 because Kw increases with temperature).' },
       { q: 'In the equilibrium 2NO2(g) <=> N2O4(g), delta H = -57 kJ/mol. At high temperature and low pressure:', options: ['NO2 is favoured', 'N2O4 is favoured', 'No change occurs', 'Both are equally favoured'], answer: 0 },
-      { q: '25.0 cm^3 of 0.10 mol dm^-3 weak acid (Ka = 1.0 x 10^-5) is titrated with 0.10 mol dm^-3 NaOH. After adding 12.5 cm^3 NaOH, the pH is:', options: ['5.00', '4.76', '7.00', '3.00'], answer: 0 },
-      { q: 'The Ksp of PbI2 is 9.8 x 10^-9. Its molar solubility is:', options: ['1.36 x 10^-3 mol dm^-3', '9.8 x 10^-9 mol dm^-3', '3.13 x 10^-5 mol dm^-3', '2.15 x 10^-3 mol dm^-3'], answer: 0 },
-      { q: 'A buffer solution contains 0.40 mol dm^-3 NH3 and 0.25 mol dm^-3 NH4Cl. Kb for NH3 = 1.8 x 10^-5. The pH is:', options: ['9.46', '4.54', '9.26', '8.74'], answer: 0 },
-      { q: 'For the equilibrium H2(g) + I2(g) <=> 2HI(g), Kc = 50 at 450 degrees C. If 1.0 mol H2 and 1.0 mol I2 are placed in a 1.0 dm^3 container, the equilibrium concentration of HI is approximately:', options: ['1.56 mol dm^-3', '0.78 mol dm^-3', '2.00 mol dm^-3', '1.00 mol dm^-3'], answer: 0 }
+      { q: '25.0 cm^3 of 0.10 mol dm^-3 weak acid (Ka = 1.0 x 10^-5) is titrated with 0.10 mol dm^-3 NaOH. After adding 12.5 cm^3 NaOH, the pH is:', options: ['5.00', '4.76', '7.00', '3.00'], answer: 0, explanation: 'At the half-equivalence point, half the acid has been neutralised so [HA] = [A⁻]. By Henderson-Hasselbalch: pH = pKa + log(1) = pKa = −log(1.0×10⁻⁵) = 5.00.' },
+      { q: 'The Ksp of PbI2 is 9.8 x 10^-9. Its molar solubility is:', options: ['1.36 x 10^-3 mol dm^-3', '9.8 x 10^-9 mol dm^-3', '3.13 x 10^-5 mol dm^-3', '2.15 x 10^-3 mol dm^-3'], answer: 0, explanation: 'PbI₂ ⇌ Pb²⁺ + 2I⁻; Ksp = s×(2s)² = 4s³. So s = ³√(Ksp/4) = ³√(9.8×10⁻⁹/4) = ³√(2.45×10⁻⁹) = 1.35×10⁻³ ≈ 1.36×10⁻³ mol dm⁻³.' },
+      { q: 'A buffer solution contains 0.40 mol dm^-3 NH3 and 0.25 mol dm^-3 NH4Cl. Kb for NH3 = 1.8 x 10^-5. The pH is:', options: ['9.46', '4.54', '9.26', '8.74'], answer: 0, explanation: 'pKa(NH₄⁺) = 14 − pKb(NH₃) = 14 − (−log(1.8×10⁻⁵)) = 14 − 4.745 = 9.255. pH = pKa + log([NH₃]/[NH₄⁺]) = 9.255 + log(0.40/0.25) = 9.255 + 0.204 = 9.46.' },
+      { q: 'For the equilibrium H2(g) + I2(g) <=> 2HI(g), Kc = 50 at 450 degrees C. If 1.0 mol H2 and 1.0 mol I2 are placed in a 1.0 dm^3 container, the equilibrium concentration of HI is approximately:', options: ['1.56 mol dm^-3', '0.78 mol dm^-3', '2.00 mol dm^-3', '1.00 mol dm^-3'], answer: 0, explanation: 'Let [H₂]eq = [I₂]eq = 1−x, [HI]eq = 2x. Kc = (2x)²/(1−x)² = 50; 2x/(1−x) = √50 = 7.07; x = 7.07/(9.07) = 0.779; [HI] = 2×0.779 = 1.56 mol dm⁻³.' }
     ]
   },
   'S4': {
@@ -289,7 +289,7 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { q: 'Crystal field theory explains that in an octahedral complex, the d orbitals split into:', options: ['A lower t2g set (3 orbitals) and an upper eg set (2 orbitals)', 'A lower eg set and an upper t2g set', '5 orbitals of equal energy', 'Two sets of 3 orbitals'], answer: 0 },
       { q: '[Fe(CN)6]^3- is a low-spin complex because:', options: ['CN^- is a strong field ligand causing large d-orbital splitting', 'CN^- is a weak field ligand', 'Fe^3+ has no d electrons', 'The coordination number is 4'], answer: 0 },
       { q: 'Zinc is not considered a transition metal because:', options: ['Zn^2+ has a full 3d10 configuration (no incomplete d subshell)', 'It has no metallic properties', 'It is not in the d-block', 'It cannot form complexes'], answer: 0 },
-      { q: 'In a redox titration, 25.0 cm^3 of 0.020 mol dm^-3 KMnO4 reacts with Fe^2+ in acid. The moles of Fe^2+ that reacted are:', options: ['2.5 x 10^-3 mol', '5.0 x 10^-4 mol', '1.0 x 10^-3 mol', '2.0 x 10^-3 mol'], answer: 0 },
+      { q: 'In a redox titration, 25.0 cm^3 of 0.020 mol dm^-3 KMnO4 reacts with Fe^2+ in acid. The moles of Fe^2+ that reacted are:', options: ['2.5 x 10^-3 mol', '5.0 x 10^-4 mol', '1.0 x 10^-3 mol', '2.0 x 10^-3 mol'], answer: 0, explanation: 'n(KMnO₄) = 0.0250 × 0.020 = 5.0×10⁻⁴ mol. MnO₄⁻ oxidises 5Fe²⁺ (ratio 1:5). n(Fe²⁺) = 5 × 5.0×10⁻⁴ = 2.5×10⁻³ mol.' },
       { q: 'The stability constant Kstab for a complex is large when:', options: ['The complex is very stable and ligand substitution is unfavourable', 'The complex easily dissociates', 'The metal has no d electrons', 'The ligands are weak'], answer: 0 },
       { q: 'In the Contact process, V2O5 acts as a catalyst by:', options: ['Cycling between V^5+ and V^4+ oxidation states', 'Providing a surface for adsorption only', 'Changing the equilibrium position', 'Remaining in the +5 state throughout'], answer: 0 }
     ]

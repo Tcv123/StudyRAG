@@ -701,7 +701,7 @@ function confirmMCQ() {
     fb.textContent = '✓ Correct!';
   } else {
     fb.classList.add('wrong-fb');
-    fb.textContent = `✗ Incorrect — correct answer: ${q.options[q.answer]}`;
+    fb.innerHTML = `✗ Incorrect — correct answer: <strong>${q.options[q.answer]}</strong>${q.explanation ? `<div style="margin-top:8px;font-size:13px;line-height:1.6;opacity:0.95;border-top:1px solid rgba(255,255,255,0.2);padding-top:8px"><strong>Working:</strong> ${q.explanation}</div>` : ""}`;
   }
 
   // Record
