@@ -1,11 +1,10 @@
-package com.example.safecheck.model;
+package uk.edu.le.co2103.safecheck.model;
 
 import androidx.room.Embedded;
 import androidx.room.Relation;
 
 import java.util.List;
 
-// Helper POJO used by Room to load a SafetyCheck together with all its Defects
 public class SafetyCheckWithDefects {
 
     @Embedded

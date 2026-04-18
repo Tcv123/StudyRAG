@@ -1,9 +1,8 @@
-package com.example.safecheck.model;
+package uk.edu.le.co2103.safecheck.model;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-// Parent entity – one SafetyCheck can have many Defects
 @Entity(tableName = "safety_checks")
 public class SafetyCheck {
 

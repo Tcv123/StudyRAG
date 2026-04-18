@@ -1,4 +1,4 @@
-package com.example.safecheck.database;
+package uk.edu.le.co2103.safecheck.database;
 
 import android.content.Context;
 
@@ -6,8 +6,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.safecheck.model.Defect;
-import com.example.safecheck.model.SafetyCheck;
+import uk.edu.le.co2103.safecheck.model.Defect;
+import uk.edu.le.co2103.safecheck.model.SafetyCheck;
 
 @Database(entities = {SafetyCheck.class, Defect.class}, version = 1, exportSchema = false)
 public abstract class SafeCheckDatabase extends RoomDatabase {
@@ -17,7 +17,6 @@ public abstract class SafeCheckDatabase extends RoomDatabase {
     public abstract SafetyCheckDao safetyCheckDao();
     public abstract DefectDao defectDao();
 
-    // Singleton pattern so only one database connection is open at a time
     public static synchronized SafeCheckDatabase getInstance(Context context) {
         if (instance == null) {
             instance = Room.databaseBuilder(

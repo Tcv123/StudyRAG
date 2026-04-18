@@ -1,4 +1,4 @@
-package com.example.safecheck;
+package uk.edu.le.co2103.safecheck;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +8,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.safecheck.adapter.SafetyCheckAdapter;
-import com.example.safecheck.model.SafetyCheckWithDefects;
-import com.example.safecheck.viewmodel.MainViewModel;
+import uk.edu.le.co2103.safecheck.adapter.SafetyCheckAdapter;
+import uk.edu.le.co2103.safecheck.model.SafetyCheckWithDefects;
+import uk.edu.le.co2103.safecheck.viewmodel.MainViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         adapter = new SafetyCheckAdapter(new SafetyCheckAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(SafetyCheckWithDefects item) {
-                // Open detail screen with the selected check's ID
                 Intent intent = new Intent(MainActivity.this, DetailActivity.class);
                 intent.putExtra("CHECK_ID", item.safetyCheck.checkId);
                 startActivity(intent);
@@ -37,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onDeleteClick(SafetyCheckWithDefects item) {
-                // Cascade delete handled by @ForeignKey(onDelete = CASCADE) in Defect entity
                 viewModel.deleteCheck(item.safetyCheck);
             }
         });

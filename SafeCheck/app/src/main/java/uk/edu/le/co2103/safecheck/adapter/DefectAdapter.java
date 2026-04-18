@@ -1,4 +1,4 @@
-package com.example.safecheck.adapter;
+package uk.edu.le.co2103.safecheck.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.safecheck.R;
-import com.example.safecheck.model.Defect;
+import uk.edu.le.co2103.safecheck.R;
+import uk.edu.le.co2103.safecheck.model.Defect;
 
 import java.util.ArrayList;
 import java.util.List;

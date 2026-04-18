@@ -1,11 +1,9 @@
-package com.example.safecheck.model;
+package uk.edu.le.co2103.safecheck.model;
 
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-// Child entity – belongs to a SafetyCheck
-// onDelete = CASCADE means deleting a SafetyCheck auto-deletes its Defects
 @Entity(
     tableName = "defects",
     foreignKeys = @ForeignKey(
@@ -20,10 +18,9 @@ public class Defect {
     @PrimaryKey(autoGenerate = true)
     public int defectId;
 
-    public int checkId; // foreign key linking to SafetyCheck
-
-    public String description; // e.g. "Cracked Mirror"
-    public String severity;   // "Low" or "High"
+    public int checkId;
+    public String description;
+    public String severity; // "Low" or "High"
 
     public Defect(int checkId, String description, String severity) {
         this.checkId = checkId;

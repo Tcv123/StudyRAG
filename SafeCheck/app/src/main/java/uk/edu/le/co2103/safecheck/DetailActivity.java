@@ -1,4 +1,4 @@
-package com.example.safecheck;
+package uk.edu.le.co2103.safecheck;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,11 +10,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.safecheck.adapter.DefectAdapter;
-import com.example.safecheck.model.Defect;
-import com.example.safecheck.viewmodel.DetailViewModel;
-
-import java.util.List;
+import uk.edu.le.co2103.safecheck.adapter.DefectAdapter;
+import uk.edu.le.co2103.safecheck.model.Defect;
+import uk.edu.le.co2103.safecheck.viewmodel.DetailViewModel;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -25,11 +23,11 @@ public class DetailActivity extends AppCompatActivity {
 
         int checkId = getIntent().getIntExtra("CHECK_ID", -1);
 
-        TextView tvDate = findViewById(R.id.tvDetailDate);
+        TextView tvDate   = findViewById(R.id.tvDetailDate);
         TextView tvVehicle = findViewById(R.id.tvDetailVehicle);
-        TextView tvDriver = findViewById(R.id.tvDetailDriver);
-        TextView tvStatus = findViewById(R.id.tvDetailStatus);
-        Button btnEmail = findViewById(R.id.btnEmailReport);
+        TextView tvDriver  = findViewById(R.id.tvDetailDriver);
+        TextView tvStatus  = findViewById(R.id.tvDetailStatus);
+        Button btnEmail    = findViewById(R.id.btnEmailReport);
 
         RecyclerView recyclerView = findViewById(R.id.rvDefects);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -47,7 +45,6 @@ public class DetailActivity extends AppCompatActivity {
 
             defectAdapter.setDefects(data.defects);
 
-            // Implicit Intent – launches the device's email client pre-filled with report
             btnEmail.setOnClickListener(v -> {
                 StringBuilder body = new StringBuilder();
                 if (data.defects != null) {
@@ -56,7 +53,6 @@ public class DetailActivity extends AppCompatActivity {
                             .append(" [").append(d.severity).append("]\n");
                     }
                 }
-
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
                 emailIntent.setType("message/rfc822");
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT,

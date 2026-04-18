@@ -1,4 +1,4 @@
-package com.example.safecheck.viewmodel;
+package uk.edu.le.co2103.safecheck.viewmodel;
 
 import android.app.Application;
 
@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.safecheck.model.SafetyCheckWithDefects;
-import com.example.safecheck.repository.SafetyRepository;
+import uk.edu.le.co2103.safecheck.model.SafetyCheckWithDefects;
+import uk.edu.le.co2103.safecheck.repository.SafetyRepository;
 
 public class DetailViewModel extends AndroidViewModel {
 

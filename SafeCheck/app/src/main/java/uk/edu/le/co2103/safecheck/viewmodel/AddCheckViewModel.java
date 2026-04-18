@@ -1,4 +1,4 @@
-package com.example.safecheck.viewmodel;
+package uk.edu.le.co2103.safecheck.viewmodel;
 
 import android.app.Application;
 
@@ -6,9 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.safecheck.model.Defect;
-import com.example.safecheck.model.SafetyCheck;
-import com.example.safecheck.repository.SafetyRepository;
+import uk.edu.le.co2103.safecheck.model.Defect;
+import uk.edu.le.co2103.safecheck.model.SafetyCheck;
+import uk.edu.le.co2103.safecheck.repository.SafetyRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,6 @@ public class AddCheckViewModel extends AndroidViewModel {
 
     private final SafetyRepository repository;
 
-    // These survive rotation because they live in the ViewModel
     public MutableLiveData<List<Defect>> pendingDefects = new MutableLiveData<>(new ArrayList<>());
     public MutableLiveData<String> currentDefectText = new MutableLiveData<>("");
     public MutableLiveData<String> currentSeverity = new MutableLiveData<>("Low");
