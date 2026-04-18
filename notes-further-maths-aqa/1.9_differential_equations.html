@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.9: Differential Equations — AQA Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-aqa-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">AQA Further Maths</a>
+</div>
+
+<p class="spec-ref">AQA A-Level Further Mathematics (7367) — Topic 1.9</p>
+<h1>1.9: Differential Equations</h1>
+
+<h2>1. First Order Separable Differential Equations</h2>
+
+<div class="definition">
+  A differential equation is <strong>separable</strong> if it can be written as:
+  $$\frac{dy}{dx} = f(x)\,g(y)$$
+  Rearranging: \(\displaystyle\int \frac{1}{g(y)}\,dy = \int f(x)\,dx\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(\dfrac{dy}{dx} = xy\), with \(y(0) = 2\).<br><br>
+  \(\int\dfrac{1}{y}\,dy = \int x\,dx \Rightarrow \ln|y| = \dfrac{x^2}{2} + C\)<br>
+  \(|y| = Ae^{x^2/2}\), so \(y = Ae^{x^2/2}\) (where \(A\) can be positive or negative).<br><br>
+  Applying \(y(0) = 2\): \(2 = A\). Particular solution: \(y = 2e^{x^2/2}\).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(\dfrac{dy}{dx} = \dfrac{1+y^2}{1+x^2}\).<br><br>
+  \(\int\dfrac{dy}{1+y^2} = \int\dfrac{dx}{1+x^2}\)<br>
+  \(\arctan y = \arctan x + C\)<br>
+  \(y = \tan(\arctan x + C)\)
+</div>
+
+<h2>2. First Order Linear Differential Equations</h2>
+
+<div class="definition">
+  <strong>Standard form:</strong> \(\dfrac{dy}{dx} + P(x)\,y = Q(x)\)<br><br>
+  <strong>Integrating factor:</strong> \(\mu = e^{\int P(x)\,dx}\)<br><br>
+  Multiply through by \(\mu\): the left side becomes \(\dfrac{d}{dx}(\mu y)\), giving:
+  $$\mu y = \int \mu\,Q(x)\,dx$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(\dfrac{dy}{dx} + \dfrac{2y}{x} = x^2\).<br><br>
+  \(P(x) = 2/x\). Integrating factor: \(\mu = e^{\int 2/x\,dx} = e^{2\ln x} = x^2\).<br><br>
+  Multiply: \(\dfrac{d}{dx}(x^2 y) = x^4\)<br>
+  Integrate: \(x^2 y = \dfrac{x^5}{5} + C\)<br>
+  General solution: \(y = \dfrac{x^3}{5} + \dfrac{C}{x^2}\)
+</div>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> Always simplify the integrating factor \(\mu = e^{\int P\,dx}\) before multiplying through. A common error is forgetting to multiply \(Q(x)\) on the right-hand side.
+</div>
+
+<h2>3. Second Order Homogeneous Differential Equations</h2>
+
+<div class="definition">
+  <strong>Form:</strong> \(a\dfrac{d^2y}{dx^2} + b\dfrac{dy}{dx} + cy = 0\)<br><br>
+  <strong>Auxiliary equation:</strong> \(am^2 + bm + c = 0\)<br><br>
+  The general solution depends on the roots of the auxiliary equation:
+</div>
+
+<table>
+  <tr><th>Roots of auxiliary equation</th><th>General solution</th></tr>
+  <tr><td>Two distinct real roots \(m_1, m_2\)</td><td>\(y = Ae^{m_1 x} + Be^{m_2 x}\)</td></tr>
+  <tr><td>Repeated real root \(m\)</td><td>\(y = (A + Bx)e^{mx}\)</td></tr>
+  <tr><td>Complex roots \(\alpha \pm \beta i\)</td><td>\(y = e^{\alpha x}(A\cos\beta x + B\sin\beta x)\)</td></tr>
+</table>
+
+<div class="example">
+  <strong>Example (distinct real roots):</strong> Solve \(\dfrac{d^2y}{dx^2} - 5\dfrac{dy}{dx} + 6y = 0\).<br><br>
+  Auxiliary: \(m^2 - 5m + 6 = 0 \Rightarrow (m-2)(m-3) = 0 \Rightarrow m = 2, 3\)<br>
+  General solution: \(y = Ae^{2x} + Be^{3x}\)
+</div>
+
+<div class="example">
+  <strong>Example (repeated root):</strong> Solve \(\dfrac{d^2y}{dx^2} - 6\dfrac{dy}{dx} + 9y = 0\).<br><br>
+  Auxiliary: \(m^2 - 6m + 9 = (m-3)^2 = 0 \Rightarrow m = 3\) (repeated)<br>
+  General solution: \(y = (A + Bx)e^{3x}\)
+</div>
+
+<div class="example">
+  <strong>Example (complex roots):</strong> Solve \(\dfrac{d^2y}{dx^2} - 4\dfrac{dy}{dx} + 13y = 0\).<br><br>
+  Auxiliary: \(m^2 - 4m + 13 = 0 \Rightarrow m = \dfrac{4\pm\sqrt{16-52}}{2} = 2\pm 3i\)<br>
+  So \(\alpha = 2\), \(\beta = 3\).<br>
+  General solution: \(y = e^{2x}(A\cos 3x + B\sin 3x)\)
+</div>
+
+<h2>4. Second Order Non-Homogeneous Differential Equations</h2>
+
+<div class="definition">
+  <strong>Form:</strong> \(a y'' + by' + cy = f(x)\)<br><br>
+  <strong>General solution:</strong> \(y = y_{CF} + y_{PI}\)<br>
+  where \(y_{CF}\) is the complementary function (solution of the homogeneous equation) and \(y_{PI}\) is any particular integral satisfying the full equation.
+</div>
+
+<h3>Choosing a Particular Integral</h3>
+<table>
+  <tr><th>\(f(x)\)</th><th>Trial \(y_{PI}\)</th></tr>
+  <tr><td>\(ke^{px}\) (where \(e^{px}\) is not in CF)</td><td>\(\lambda e^{px}\)</td></tr>
+  <tr><td>\(ke^{px}\) (where \(e^{px}\) is in CF — simple root)</td><td>\(\lambda x e^{px}\)</td></tr>
+  <tr><td>\(ke^{px}\) (where \(e^{px}\) is in CF — repeated root)</td><td>\(\lambda x^2 e^{px}\)</td></tr>
+  <tr><td>\(k\sin(px)\) or \(k\cos(px)\)</td><td>\(\lambda\cos(px) + \mu\sin(px)\)</td></tr>
+  <tr><td>Polynomial of degree \(n\)</td><td>Polynomial of degree \(n\): \(a_n x^n + \cdots + a_0\)</td></tr>
+  <tr><td>Product: polynomial × exponential</td><td>Same product form with unknown coefficients</td></tr>
+</table>
+
+<div class="example">
+  <strong>Example:</strong> Find the general solution of \(\dfrac{d^2y}{dx^2} - 3\dfrac{dy}{dx} + 2y = 4e^{3x}\).<br><br>
+  <strong>CF:</strong> Auxiliary: \(m^2-3m+2=(m-1)(m-2)=0\), so \(y_{CF} = Ae^x + Be^{2x}\).<br><br>
+  <strong>PI:</strong> Try \(y_{PI} = \lambda e^{3x}\).<br>
+  \(y' = 3\lambda e^{3x}\), \(y'' = 9\lambda e^{3x}\)<br>
+  Substitute: \(9\lambda e^{3x} - 9\lambda e^{3x} + 2\lambda e^{3x} = 4e^{3x}\)<br>
+  \(2\lambda = 4 \Rightarrow \lambda = 2\)<br><br>
+  <strong>General solution:</strong> \(y = Ae^x + Be^{2x} + 2e^{3x}\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the general solution of \(y'' - 3y' + 2y = \sin x\).<br><br>
+  <strong>CF:</strong> \(y_{CF} = Ae^x + Be^{2x}\) (as before).<br><br>
+  <strong>PI:</strong> Try \(y_{PI} = \lambda\cos x + \mu\sin x\).<br>
+  \(y' = -\lambda\sin x + \mu\cos x\), \(y'' = -\lambda\cos x - \mu\sin x\)<br>
+  Substitute:<br>
+  \((-\lambda\cos x - \mu\sin x) - 3(-\lambda\sin x + \mu\cos x) + 2(\lambda\cos x+\mu\sin x) = \sin x\)<br>
+  Cosine: \(-\lambda - 3\mu + 2\lambda = \lambda - 3\mu = 0\)<br>
+  Sine: \(-\mu + 3\lambda + 2\mu = \mu + 3\lambda = 1\)<br>
+  From first: \(\lambda = 3\mu\). Substitute: \(\mu + 9\mu = 1 \Rightarrow \mu = \frac{1}{10}\), \(\lambda = \frac{3}{10}\).<br><br>
+  \(y = Ae^x + Be^{2x} + \dfrac{3}{10}\cos x + \dfrac{1}{10}\sin x\)
+</div>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> If your trial PI is part of the complementary function, you must multiply the trial by \(x\) (or \(x^2\) for repeated roots). Forgetting this gives a zero coefficient and no PI.
+</div>
+
+<h2>5. Applying Initial/Boundary Conditions</h2>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(y'' + 4y = 8\) with \(y(0) = 3\), \(y'(0) = 0\).<br><br>
+  <strong>CF:</strong> Auxiliary: \(m^2+4=0 \Rightarrow m = \pm 2i\). \(y_{CF} = A\cos 2x + B\sin 2x\)<br><br>
+  <strong>PI:</strong> Try \(y_{PI} = \lambda\) (constant). Then \(y'' = 0\): \(0 + 4\lambda = 8 \Rightarrow \lambda = 2\).<br><br>
+  General solution: \(y = A\cos 2x + B\sin 2x + 2\)<br><br>
+  Apply \(y(0)=3\): \(A + 2 = 3 \Rightarrow A = 1\)<br>
+  \(y' = -2A\sin 2x + 2B\cos 2x\); \(y'(0)=0\): \(2B = 0 \Rightarrow B = 0\)<br><br>
+  Particular solution: \(y = \cos 2x + 2\)
+</div>
+
+<h2>6. Coupled Differential Equations</h2>
+
+<p>A system of coupled first-order equations can often be reduced to a single second-order equation.</p>
+
+<div class="definition">
+  <strong>Method for coupled ODEs:</strong> Given \(\dfrac{dx}{dt} = ax + by\) and \(\dfrac{dy}{dt} = cx + dy\):<br>
+  <ol>
+    <li>Differentiate one equation to get \(\ddot{x}\)</li>
+    <li>Substitute the other equation to eliminate \(y\) (and \(\dot{y}\))</li>
+    <li>Solve the resulting second-order ODE for \(x(t)\)</li>
+    <li>Back-substitute to find \(y(t)\)</li>
+  </ol>
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(\dot{x} = 3x + 2y\), \(\dot{y} = x + 2y\), with \(x(0) = 1\), \(y(0) = 0\).<br><br>
+  Differentiate first equation: \(\ddot{x} = 3\dot{x} + 2\dot{y} = 3\dot{x} + 2(x + 2y)\)<br>
+  From first equation: \(y = \dfrac{\dot{x}-3x}{2}\)<br>
+  Substitute: \(\ddot{x} = 3\dot{x} + 2x + 2\cdot2\cdot\dfrac{\dot{x}-3x}{2} = 3\dot{x}+2x+2\dot{x}-6x = 5\dot{x}-4x\)<br>
+  \(\ddot{x} - 5\dot{x} + 4x = 0\)<br>
+  Auxiliary: \(m^2-5m+4=(m-1)(m-4)=0\)<br>
+  \(x = Ae^t + Be^{4t}\)<br>
+  \(y = \dfrac{\dot{x}-3x}{2} = \dfrac{Ae^t+4Be^{4t}-3Ae^t-3Be^{4t}}{2} = -Ae^t + \dfrac{Be^{4t}}{2}\)<br><br>
+  Applying IC: \(A+B=1\), \(-A+B/2=0 \Rightarrow B=2A\), so \(3A=1 \Rightarrow A=1/3\), \(B=2/3\).<br>
+  \(x = \dfrac{1}{3}e^t + \dfrac{2}{3}e^{4t}\), \(y = -\dfrac{1}{3}e^t + \dfrac{1}{3}e^{4t}\)
+</div>
+
+<h2>7. Equilibrium Points and Stability</h2>
+
+<p>For a first-order autonomous DE \(\dfrac{dy}{dx} = f(y)\), <strong>equilibrium points</strong> (or fixed points) satisfy \(f(y^*) = 0\).</p>
+
+<ul>
+  <li><strong>Stable equilibrium:</strong> If \(f'(y^*) < 0\), small perturbations decay back to \(y^*\)</li>
+  <li><strong>Unstable equilibrium:</strong> If \(f'(y^*) > 0\), perturbations grow away from \(y^*\)</li>
+</ul>
+
+<svg viewBox="0 0 340 160" width="340" height="160" style="display:block;margin:20px auto;">
+  <defs>
+    <marker id="de1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#555"/></marker>
+    <marker id="de2" markerWidth="8" markerHeight="8" refX="3" refY="6" orient="auto"><path d="M0,8 L6,8 L3,0 z" fill="#555"/></marker>
+  </defs>
+  <!-- Phase line for stable equilibrium -->
+  <line x1="20" y1="80" x2="150" y2="80" stroke="#555" stroke-width="1.5" marker-end="url(#de1)"/>
+  <circle cx="85" cy="80" r="7" fill="#16a34a"/>
+  <text x="82" y="84" font-size="9" fill="white" font-weight="bold">y*</text>
+  <!-- Arrows pointing toward y* -->
+  <line x1="40" y1="80" x2="65" y2="80" stroke="#16a34a" stroke-width="2" marker-end="url(#de1)"/>
+  <line x1="130" y1="80" x2="105" y2="80" stroke="#16a34a" stroke-width="2" marker-end="url(#de1)"/>
+  <text x="30" y="100" font-size="11" fill="#16a34a">Stable equilibrium</text>
+  <!-- Phase line for unstable equilibrium -->
+  <line x1="190" y1="80" x2="320" y2="80" stroke="#555" stroke-width="1.5" marker-end="url(#de1)"/>
+  <circle cx="255" cy="80" r="7" fill="#e11d48"/>
+  <text x="252" y="84" font-size="9" fill="white" font-weight="bold">y*</text>
+  <!-- Arrows pointing away from y* -->
+  <line x1="235" y1="80" x2="210" y2="80" stroke="#e11d48" stroke-width="2" marker-end="url(#de1)"/>
+  <line x1="275" y1="80" x2="300" y2="80" stroke="#e11d48" stroke-width="2" marker-end="url(#de1)"/>
+  <text x="195" y="100" font-size="11" fill="#e11d48">Unstable equilibrium</text>
+</svg>
+
+<h2>8. Summary of Key Methods</h2>
+
+<table>
+  <tr><th>Type</th><th>Method</th></tr>
+  <tr><td>Separable 1st order</td><td>Separate variables; integrate both sides</td></tr>
+  <tr><td>Linear 1st order</td><td>Integrating factor \(\mu = e^{\int P\,dx}\)</td></tr>
+  <tr><td>2nd order homogeneous</td><td>Auxiliary equation; CF depends on roots</td></tr>
+  <tr><td>2nd order non-homogeneous</td><td>General solution = CF + PI; choose PI from table</td></tr>
+  <tr><td>Coupled 1st order</td><td>Differentiate and eliminate to get 2nd order</td></tr>
+  <tr><td>Particular solution</td><td>Apply initial/boundary conditions to general solution</td></tr>
+</table>
+
+<h2>9. Practice Checklist</h2>
+<ul>
+  <li>Can you solve separable first-order ODEs?</li>
+  <li>Can you find and apply an integrating factor?</li>
+  <li>Can you solve second-order homogeneous ODEs for all three root types (distinct, repeated, complex)?</li>
+  <li>Can you select the correct trial function for a particular integral and find its coefficients?</li>
+  <li>Can you deal with the case where the trial PI is part of the CF?</li>
+  <li>Can you find a particular solution given initial conditions?</li>
+  <li>Can you reduce coupled first-order ODEs to a single second-order ODE?</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

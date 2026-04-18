@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.7: Polar Coordinates — AQA Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-aqa-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">AQA Further Maths</a>
+</div>
+
+<p class="spec-ref">AQA A-Level Further Mathematics (7367) — Topic 1.7</p>
+<h1>1.7: Polar Coordinates</h1>
+
+<h2>1. Definition and Conversion</h2>
+
+<div class="definition">
+  <strong>Polar coordinates:</strong> A point \(P\) is described by \((r, \theta)\) where:
+  <ul>
+    <li>\(r \geq 0\) is the distance from the origin (pole)</li>
+    <li>\(\theta\) is the angle measured anticlockwise from the initial line (positive \(x\)-axis)</li>
+  </ul>
+  <strong>Conversion formulae:</strong>
+  $$x = r\cos\theta, \quad y = r\sin\theta$$
+  $$r^2 = x^2 + y^2, \quad \tan\theta = \frac{y}{x}$$
+</div>
+
+<svg viewBox="0 0 280 200" width="280" height="200" style="display:block;margin:20px auto;">
+  <defs>
+    <marker id="pa1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#555"/></marker>
+    <marker id="pa2" markerWidth="8" markerHeight="8" refX="3" refY="6" orient="auto"><path d="M0,8 L6,8 L3,0 z" fill="#555"/></marker>
+    <marker id="pa3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#e11d48"/></marker>
+  </defs>
+  <!-- Axes -->
+  <line x1="20" y1="130" x2="260" y2="130" stroke="#555" stroke-width="1.5" marker-end="url(#pa1)"/>
+  <line x1="130" y1="185" x2="130" y2="20" stroke="#555" stroke-width="1.5" marker-end="url(#pa2)"/>
+  <text x="263" y="134" font-size="11" fill="#555">x</text>
+  <text x="133" y="16" font-size="11" fill="#555">y</text>
+  <text x="118" y="148" font-size="11" fill="#555">O</text>
+  <!-- Concentric circles -->
+  <circle cx="130" cy="130" r="50" stroke="#cbd5e1" stroke-width="1" fill="none" stroke-dasharray="3,3"/>
+  <circle cx="130" cy="130" r="90" stroke="#cbd5e1" stroke-width="1" fill="none" stroke-dasharray="3,3"/>
+  <!-- Point P at r=70, theta=40 degrees -->
+  <circle cx="184" cy="85" r="5" fill="#2563eb"/>
+  <!-- r line -->
+  <line x1="130" y1="130" x2="184" y2="85" stroke="#e11d48" stroke-width="2" marker-end="url(#pa3)"/>
+  <!-- angle arc -->
+  <path d="M 160,130 A 30,30 0 0,0 153,107" stroke="#e11d48" stroke-width="1.5" fill="none"/>
+  <!-- Dashed x-projection -->
+  <line x1="130" y1="130" x2="184" y2="130" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="184" y1="85" x2="184" y2="130" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Labels -->
+  <text x="148" y="103" font-size="11" fill="#e11d48">r</text>
+  <text x="163" y="123" font-size="11" fill="#e11d48">θ</text>
+  <text x="190" y="82" font-size="11" fill="#2563eb">P(r,θ)</text>
+  <text x="157" y="143" font-size="11" fill="#2563eb">r cosθ</text>
+  <text x="188" y="112" font-size="11" fill="#2563eb">r sinθ</text>
+</svg>
+
+<h2>2. Common Polar Curves</h2>
+
+<table>
+  <tr><th>Equation</th><th>Curve</th><th>Notes</th></tr>
+  <tr><td>\(r = a\)</td><td>Circle, centre O, radius \(a\)</td><td>Cartesian: \(x^2+y^2=a^2\)</td></tr>
+  <tr><td>\(r = a\theta\)</td><td>Archimedean spiral</td><td>Spacing proportional to \(\theta\)</td></tr>
+  <tr><td>\(r = a(1+\cos\theta)\)</td><td>Cardioid</td><td>Heart-shaped; passes through origin at \(\theta=\pi\)</td></tr>
+  <tr><td>\(r = a(1+\cos\theta)\)</td><td>Lima\(\c{c}\)on</td><td>Dimpled or looped depending on parameter</td></tr>
+  <tr><td>\(r = a\cos(n\theta)\)</td><td>Rose curve</td><td>\(n\) petals if \(n\) odd; \(2n\) petals if \(n\) even</td></tr>
+  <tr><td>\(r^2 = a^2\cos(2\theta)\)</td><td>Lemniscate of Bernoulli</td><td>Figure-8 shape; \(r\) real only when \(\cos2\theta\geq0\)</td></tr>
+  <tr><td>\(r = a\sec\theta\)</td><td>Vertical line \(x=a\)</td><td>Since \(r\cos\theta=a\)</td></tr>
+</table>
+
+<h3>Cardioid — SVG Illustration</h3>
+
+<svg viewBox="0 0 280 240" width="280" height="240" style="display:block;margin:20px auto;">
+  <defs>
+    <marker id="ca1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#555"/></marker>
+    <marker id="ca2" markerWidth="8" markerHeight="8" refX="3" refY="6" orient="auto"><path d="M0,8 L6,8 L3,0 z" fill="#555"/></marker>
+  </defs>
+  <!-- Axes -->
+  <line x1="20" y1="120" x2="260" y2="120" stroke="#555" stroke-width="1.5" marker-end="url(#ca1)"/>
+  <line x1="140" y1="220" x2="140" y2="20" stroke="#555" stroke-width="1.5" marker-end="url(#ca2)"/>
+  <text x="263" y="124" font-size="11" fill="#555">x</text>
+  <text x="143" y="16" font-size="11" fill="#555">y</text>
+  <!-- Cardioid r = 70(1+cosθ), centre at (140,120), a=70 -->
+  <!-- Path computed: x = r cosθ + 140, y = -r sinθ + 120, r=70(1+cosθ) -->
+  <path d="M 140,120
+    C 200,60 250,80 220,120
+    C 250,160 200,180 140,120
+    C 140,120 90,75 80,120
+    C 70,165 90,170 140,120 Z"
+    fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="2"/>
+  <!-- Label -->
+  <text x="195" y="118" font-size="11" fill="#2563eb">r = a(1+cosθ)</text>
+  <text x="195" y="131" font-size="11" fill="#2563eb">Cardioid</text>
+  <!-- Origin marker -->
+  <circle cx="140" cy="120" r="3" fill="#555"/>
+  <text x="127" y="136" font-size="11" fill="#555">O</text>
+</svg>
+
+<h2>3. Sketching Polar Curves</h2>
+
+<p><strong>Method:</strong></p>
+<ol>
+  <li>Find where \(r = 0\) (curve passes through pole)</li>
+  <li>Find maximum and minimum values of \(r\)</li>
+  <li>Check symmetry: curve is symmetric about initial line if \(r(-\theta) = r(\theta)\); about \(\theta = \pi/2\) if \(r(\pi-\theta)=r(\theta)\)</li>
+  <li>Build a table of values for key angles: \(0, \pi/6, \pi/4, \pi/3, \pi/2, \pi, \ldots\)</li>
+  <li>Sketch, noting the direction of tracing as \(\theta\) increases</li>
+</ol>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> AQA mark schemes for sketching award marks for: shape (1), correct intercepts on initial line (1), correct behaviour at pole/origin (1), and any labelled maximum values. Always label the maximum value of \(r\) on your sketch.
+</div>
+
+<h2>4. Area in Polar Coordinates</h2>
+
+<div class="definition">
+  <strong>Area swept out by the radius vector:</strong>
+  $$A = \frac{1}{2}\int_{\alpha}^{\beta} r^2\,d\theta$$
+  (the area of the sector from angle \(\alpha\) to \(\beta\)).<br><br>
+  <strong>Area between two polar curves:</strong>
+  $$A = \frac{1}{2}\int_{\alpha}^{\beta} (r_1^2 - r_2^2)\,d\theta$$
+  where \(r_1 > r_2\) in \([\alpha, \beta]\).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the total area enclosed by the cardioid \(r = a(1+\cos\theta)\).<br><br>
+  The cardioid is traced out for \(\theta \in [0, 2\pi]\), but using symmetry about the initial line:<br>
+  \(A = 2 \times \dfrac{1}{2}\int_0^{\pi} a^2(1+\cos\theta)^2\,d\theta = a^2\int_0^{\pi}(1+2\cos\theta+\cos^2\theta)\,d\theta\)<br><br>
+  Using \(\cos^2\theta = \dfrac{1+\cos2\theta}{2}\):<br>
+  \(= a^2\int_0^{\pi}\left(\dfrac{3}{2} + 2\cos\theta + \dfrac{\cos2\theta}{2}\right)d\theta\)<br>
+  \(= a^2\left[\dfrac{3\theta}{2} + 2\sin\theta + \dfrac{\sin2\theta}{4}\right]_0^{\pi} = a^2\!\left(\dfrac{3\pi}{2}\right) = \dfrac{3\pi a^2}{2}\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the area of one loop of the rose curve \(r = 2\cos(2\theta)\).<br><br>
+  One petal exists where \(r \geq 0\), e.g. \(-\pi/4 \leq \theta \leq \pi/4\):<br>
+  \(A = \dfrac{1}{2}\int_{-\pi/4}^{\pi/4} 4\cos^2(2\theta)\,d\theta = 2\int_0^{\pi/4}(1+\cos4\theta)\,d\theta\)<br>
+  \(= 2\left[\theta + \dfrac{\sin4\theta}{4}\right]_0^{\pi/4} = 2\left(\dfrac{\pi}{4} + 0\right) = \dfrac{\pi}{2}\)
+</div>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> Always identify the correct limits carefully. For a cardioid or lima\c{c}on, the full curve is \([0, 2\pi]\). For one loop of a rose, find where \(r = 0\) to determine limits. Write down your limits explicitly — AQA marks this.
+</div>
+
+<h2>5. Tangents to Polar Curves</h2>
+
+<p>To find \(\dfrac{dy}{dx}\) for a polar curve:</p>
+<div class="equation">
+  $$\frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} \quad \text{where } x = r\cos\theta,\ y = r\sin\theta$$
+</div>
+<div class="equation">
+  $$\frac{dy}{d\theta} = \frac{dr}{d\theta}\sin\theta + r\cos\theta, \qquad \frac{dx}{d\theta} = \frac{dr}{d\theta}\cos\theta - r\sin\theta$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the tangent at the pole for \(r = a(1+\cos\theta)\).<br><br>
+  At the pole, \(r = 0 \Rightarrow 1 + \cos\theta = 0 \Rightarrow \theta = \pi\).<br><br>
+  \(\dfrac{dr}{d\theta} = -a\sin\theta\)<br>
+  At \(\theta = \pi\): \(\dfrac{dy}{d\theta} = (-a\sin\pi)(\sin\pi) + 0\cdot\cos\pi = 0\)<br>
+  \(\dfrac{dx}{d\theta} = (-a\sin\pi)(\cos\pi) - 0 = 0\)<br><br>
+  Indeterminate — use L'Hopital or note the tangent direction is \(\theta = \pi\), i.e. horizontal.
+</div>
+
+<h2>6. Summary of Key Results</h2>
+
+<table>
+  <tr><th>Result</th><th>Formula</th></tr>
+  <tr><td>Cartesian conversion</td><td>\(x=r\cos\theta\), \(y=r\sin\theta\)</td></tr>
+  <tr><td>Polar conversion</td><td>\(r=\sqrt{x^2+y^2}\), \(\tan\theta=y/x\)</td></tr>
+  <tr><td>Area (polar)</td><td>\(A = \frac{1}{2}\int r^2\,d\theta\)</td></tr>
+  <tr><td>dy/dx in polar</td><td>\(\dfrac{r'\sin\theta+r\cos\theta}{r'\cos\theta-r\sin\theta}\)</td></tr>
+  <tr><td>Cardioid area</td><td>\(\frac{3\pi a^2}{2}\) for \(r=a(1+\cos\theta)\)</td></tr>
+</table>
+
+<h2>7. Practice Checklist</h2>
+<ul>
+  <li>Can you convert between Cartesian and polar coordinates?</li>
+  <li>Can you sketch standard polar curves (circle, cardioid, rose, lemniscate)?</li>
+  <li>Can you find the area enclosed by a polar curve?</li>
+  <li>Can you find the area between two polar curves?</li>
+  <li>Can you find the gradient \(dy/dx\) at a given point on a polar curve?</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

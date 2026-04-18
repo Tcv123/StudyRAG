@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.8: Hyperbolic Functions — AQA Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-aqa-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">AQA Further Maths</a>
+</div>
+
+<p class="spec-ref">AQA A-Level Further Mathematics (7367) — Topic 1.8</p>
+<h1>1.8: Hyperbolic Functions</h1>
+
+<h2>1. Definitions</h2>
+
+<div class="definition">
+  $$\sinh x = \frac{e^x - e^{-x}}{2}, \qquad \cosh x = \frac{e^x + e^{-x}}{2}, \qquad \tanh x = \frac{\sinh x}{\cosh x} = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
+  <br>
+  The reciprocal functions: \(\text{cosech}\,x = \dfrac{1}{\sinh x}\), \(\text{sech}\,x = \dfrac{1}{\cosh x}\), \(\coth x = \dfrac{1}{\tanh x}\)
+</div>
+
+<h2>2. Graphs of Hyperbolic Functions</h2>
+
+<svg viewBox="0 0 540 200" width="540" height="200" style="display:block;margin:20px auto;max-width:100%;">
+  <defs>
+    <marker id="hx1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#555"/></marker>
+    <marker id="hx2" markerWidth="8" markerHeight="8" refX="3" refY="6" orient="auto"><path d="M0,8 L6,8 L3,0 z" fill="#555"/></marker>
+    <marker id="hx3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#555"/></marker>
+    <marker id="hx4" markerWidth="8" markerHeight="8" refX="3" refY="6" orient="auto"><path d="M0,8 L6,8 L3,0 z" fill="#555"/></marker>
+    <marker id="hx5" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#555"/></marker>
+    <marker id="hx6" markerWidth="8" markerHeight="8" refX="3" refY="6" orient="auto"><path d="M0,8 L6,8 L3,0 z" fill="#555"/></marker>
+  </defs>
+
+  <!-- sinh graph (left panel) -->
+  <line x1="10" y1="100" x2="170" y2="100" stroke="#888" stroke-width="1" marker-end="url(#hx1)"/>
+  <line x1="90" y1="185" x2="90" y2="15" stroke="#888" stroke-width="1" marker-end="url(#hx2)"/>
+  <!-- sinh curve: S-shaped, passing through origin -->
+  <path d="M 30,185 Q 60,165 90,100 Q 120,35 150,15" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <circle cx="90" cy="100" r="4" fill="#2563eb"/>
+  <text x="155" y="14" font-size="10" fill="#2563eb">sinh</text>
+  <text x="77" y="193" font-size="10" fill="#888">sinh x</text>
+  <text x="22" y="98" font-size="9" fill="#888">odd function</text>
+  <text x="22" y="110" font-size="9" fill="#888">domain: ℝ</text>
+
+  <!-- cosh graph (middle panel) -->
+  <line x1="190" y1="140" x2="360" y2="140" stroke="#888" stroke-width="1" marker-end="url(#hx3)"/>
+  <line x1="275" y1="185" x2="275" y2="15" stroke="#888" stroke-width="1" marker-end="url(#hx4)"/>
+  <!-- cosh curve: U-shaped, min at (275, 140-30=110), i.e. min value 1 -->
+  <path d="M 210,20 Q 245,110 275,110 Q 305,110 340,20" fill="none" stroke="#e11d48" stroke-width="2.5"/>
+  <circle cx="275" cy="110" r="4" fill="#e11d48"/>
+  <text x="280" y="113" font-size="9" fill="#e11d48">min=1</text>
+  <text x="342" y="17" font-size="10" fill="#e11d48">cosh</text>
+  <text x="205" y="193" font-size="10" fill="#888">cosh x</text>
+  <text x="205" y="132" font-size="9" fill="#888">even function</text>
+  <text x="205" y="144" font-size="9" fill="#888">min value: 1</text>
+
+  <!-- tanh graph (right panel) -->
+  <line x1="375" y1="100" x2="535" y2="100" stroke="#888" stroke-width="1" marker-end="url(#hx5)"/>
+  <line x1="455" y1="185" x2="455" y2="15" stroke="#888" stroke-width="1" marker-end="url(#hx6)"/>
+  <!-- tanh: S-shaped bounded between -1 and 1 -->
+  <path d="M 385,135 Q 420,120 455,100 Q 490,80 525,65" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+  <line x1="375" y1="70" x2="535" y2="70" stroke="#16a34a" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="375" y1="130" x2="535" y2="130" stroke="#16a34a" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="536" y="73" font-size="9" fill="#16a34a">1</text>
+  <text x="530" y="133" font-size="9" fill="#16a34a">-1</text>
+  <circle cx="455" cy="100" r="4" fill="#16a34a"/>
+  <text x="526" y="62" font-size="10" fill="#16a34a">tanh</text>
+  <text x="380" y="193" font-size="10" fill="#888">tanh x</text>
+  <text x="382" y="155" font-size="9" fill="#888">−1&lt;tanh&lt;1</text>
+</svg>
+
+<h3>Key Properties Summary</h3>
+<table>
+  <tr><th>Function</th><th>Domain</th><th>Range</th><th>Parity</th><th>Key values</th></tr>
+  <tr><td>\(\sinh x\)</td><td>\(\mathbb{R}\)</td><td>\(\mathbb{R}\)</td><td>Odd</td><td>\(\sinh 0 = 0\)</td></tr>
+  <tr><td>\(\cosh x\)</td><td>\(\mathbb{R}\)</td><td>\([1,\infty)\)</td><td>Even</td><td>\(\cosh 0 = 1\), min at \(x=0\)</td></tr>
+  <tr><td>\(\tanh x\)</td><td>\(\mathbb{R}\)</td><td>\((-1,1)\)</td><td>Odd</td><td>\(\tanh 0 = 0\); asymptotes \(y=\pm1\)</td></tr>
+</table>
+
+<h2>3. Hyperbolic Identities</h2>
+
+<div class="definition">
+  <strong>Fundamental identity:</strong> \(\cosh^2 x - \sinh^2 x = 1\)<br><br>
+  <strong>Proof:</strong> \(\cosh^2 x - \sinh^2 x = \left(\dfrac{e^x+e^{-x}}{2}\right)^2 - \left(\dfrac{e^x-e^{-x}}{2}\right)^2 = \dfrac{(e^{2x}+2+e^{-2x})-(e^{2x}-2+e^{-2x})}{4} = \dfrac{4}{4} = 1\)
+</div>
+
+<h3>Further Identities</h3>
+<table>
+  <tr><th>Hyperbolic identity</th><th>Compare with trig identity</th></tr>
+  <tr><td>\(\cosh^2 x - \sinh^2 x = 1\)</td><td>\(\cos^2 x + \sin^2 x = 1\)</td></tr>
+  <tr><td>\(\sinh(2x) = 2\sinh x\cosh x\)</td><td>\(\sin(2x) = 2\sin x\cos x\)</td></tr>
+  <tr><td>\(\cosh(2x) = \cosh^2 x + \sinh^2 x = 2\cosh^2 x - 1 = 1 + 2\sinh^2 x\)</td><td>\(\cos(2x) = \cos^2 x - \sin^2 x\)</td></tr>
+  <tr><td>\(\sinh(x\pm y) = \sinh x\cosh y \pm \cosh x\sinh y\)</td><td>\(\sin(x\pm y) = \sin x\cos y \pm \cos x\sin y\)</td></tr>
+  <tr><td>\(\cosh(x\pm y) = \cosh x\cosh y \pm \sinh x\sinh y\)</td><td>\(\cos(x\pm y) = \cos x\cos y \mp \sin x\sin y\)</td></tr>
+  <tr><td>\(1 - \tanh^2 x = \text{sech}^2\,x\)</td><td>\(1 + \tan^2 x = \sec^2 x\)</td></tr>
+</table>
+
+<h3>Osborne's Rule</h3>
+<div class="definition">
+  <strong>Osborne's rule:</strong> To convert a trigonometric identity to the corresponding hyperbolic identity:<br>
+  Replace \(\cos\) with \(\cosh\), replace \(\sin\) with \(\sinh\), <strong>but replace every product \(\sin^2\)</strong> (or any product of two sines) with \(-\sinh^2\) (negate).<br><br>
+  Note the sign change: \(\cos^2\theta + \sin^2\theta = 1\) becomes \(\cosh^2 x - \sinh^2 x = 1\) (the product \(\sin\cdot\sin\) picks up a minus sign).
+</div>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> Osborne's rule is a memory aid, not a proof. AQA may ask you to "prove" an identity — use the exponential definitions directly rather than citing Osborne's rule.
+</div>
+
+<h2>4. Inverse Hyperbolic Functions</h2>
+
+<div class="definition">
+  <strong>Logarithmic forms:</strong>
+  $$\text{arcsinh}\,x = \ln\!\left(x + \sqrt{x^2+1}\right), \quad x \in \mathbb{R}$$
+  $$\text{arccosh}\,x = \ln\!\left(x + \sqrt{x^2-1}\right), \quad x \geq 1$$
+  $$\text{arctanh}\,x = \frac{1}{2}\ln\!\left(\frac{1+x}{1-x}\right), \quad |x| < 1$$
+</div>
+
+<div class="example">
+  <strong>Derivation of \(\text{arcsinh}\,x\):</strong> Let \(y = \sinh^{-1}x\), so \(\sinh y = x\), i.e. \(\dfrac{e^y-e^{-y}}{2} = x\).<br><br>
+  \(e^{2y} - 2xe^y - 1 = 0\). Quadratic in \(e^y\):<br>
+  \(e^y = \dfrac{2x \pm \sqrt{4x^2+4}}{2} = x \pm \sqrt{x^2+1}\)<br><br>
+  Since \(e^y > 0\) for all \(y\), take the positive root: \(e^y = x + \sqrt{x^2+1}\)<br>
+  \(y = \ln(x + \sqrt{x^2+1})\). ✓
+</div>
+
+<h2>5. Derivatives</h2>
+
+<div class="definition">
+  <strong>Derivatives of hyperbolic functions:</strong>
+  $$\frac{d}{dx}(\sinh x) = \cosh x, \qquad \frac{d}{dx}(\cosh x) = \sinh x, \qquad \frac{d}{dx}(\tanh x) = \text{sech}^2\,x$$
+  <strong>Derivatives of inverse hyperbolic functions:</strong>
+  $$\frac{d}{dx}(\text{arcsinh}\,x) = \frac{1}{\sqrt{x^2+1}}, \qquad \frac{d}{dx}(\text{arccosh}\,x) = \frac{1}{\sqrt{x^2-1}}, \qquad \frac{d}{dx}(\text{arctanh}\,x) = \frac{1}{1-x^2}$$
+</div>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> Note \(\dfrac{d}{dx}(\cosh x) = \sinh x\) (positive), unlike \(\dfrac{d}{dx}(\cos x) = -\sin x\). This difference catches many students out.
+</div>
+
+<h2>6. Integration Using Hyperbolic Functions</h2>
+
+<div class="definition">
+  <strong>Standard integrals (inverse hyperbolic):</strong>
+  $$\int \frac{1}{\sqrt{x^2+a^2}}\,dx = \text{arcsinh}\!\left(\frac{x}{a}\right) + C = \ln\!\left(x+\sqrt{x^2+a^2}\right) + C$$
+  $$\int \frac{1}{\sqrt{x^2-a^2}}\,dx = \text{arccosh}\!\left(\frac{x}{a}\right) + C = \ln\!\left(x+\sqrt{x^2-a^2}\right) + C, \quad x > a$$
+  $$\int \frac{1}{a^2-x^2}\,dx = \frac{1}{a}\text{arctanh}\!\left(\frac{x}{a}\right) + C = \frac{1}{2a}\ln\!\left(\frac{a+x}{a-x}\right)+C, \quad |x|<a$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\displaystyle\int \dfrac{1}{\sqrt{x^2+4}}\,dx\).<br><br>
+  Using formula with \(a = 2\): \(\text{arcsinh}\!\left(\dfrac{x}{2}\right) + C = \ln\!\left(x+\sqrt{x^2+4}\right) + C\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\displaystyle\int \sinh^2 x\,dx\).<br><br>
+  Use identity: \(\sinh^2 x = \dfrac{\cosh 2x - 1}{2}\)<br>
+  \(\int \dfrac{\cosh 2x - 1}{2}\,dx = \dfrac{\sinh 2x}{4} - \dfrac{x}{2} + C\)
+</div>
+
+<h3>Hyperbolic Substitutions</h3>
+<p>For integrals involving \(\sqrt{x^2+a^2}\), use the substitution \(x = a\sinh t\) (since \(a^2\sinh^2 t + a^2 = a^2\cosh^2 t\)).</p>
+<p>For integrals involving \(\sqrt{x^2-a^2}\), use \(x = a\cosh t\).</p>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\displaystyle\int \sqrt{x^2+1}\,dx\) using \(x = \sinh t\).<br><br>
+  \(dx = \cosh t\,dt\), \(\sqrt{x^2+1} = \sqrt{\sinh^2 t+1} = \cosh t\)<br>
+  \(\int \cosh^2 t\,dt = \int \dfrac{\cosh 2t + 1}{2}\,dt = \dfrac{\sinh 2t}{4} + \dfrac{t}{2} + C\)<br>
+  \(= \dfrac{\sinh t\cosh t}{2} + \dfrac{t}{2} + C = \dfrac{x\sqrt{x^2+1}}{2} + \dfrac{1}{2}\text{arcsinh}\,x + C\)
+</div>
+
+<h2>7. Solving Hyperbolic Equations</h2>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(5\cosh x - 3\sinh x = 7\).<br><br>
+  Substitute definitions: \(5\cdot\dfrac{e^x+e^{-x}}{2} - 3\cdot\dfrac{e^x-e^{-x}}{2} = 7\)<br>
+  \(\dfrac{5e^x+5e^{-x}-3e^x+3e^{-x}}{2} = 7\)<br>
+  \(2e^x + 8e^{-x} = 14\)<br>
+  \(e^{2x} - 7e^x + 4 = 0\) (multiply by \(e^x/2\))<br>
+  \(e^x = \dfrac{7\pm\sqrt{49-16}}{2} = \dfrac{7\pm\sqrt{33}}{2}\)<br>
+  \(x = \ln\!\left(\dfrac{7+\sqrt{33}}{2}\right)\) or \(x = \ln\!\left(\dfrac{7-\sqrt{33}}{2}\right)\)
+</div>
+
+<h2>8. Summary of Key Results</h2>
+
+<table>
+  <tr><th>Result</th><th>Formula</th></tr>
+  <tr><td>Fundamental identity</td><td>\(\cosh^2 x - \sinh^2 x = 1\)</td></tr>
+  <tr><td>\(\text{arcsinh}\,x\)</td><td>\(\ln(x+\sqrt{x^2+1})\)</td></tr>
+  <tr><td>\(\text{arccosh}\,x\)</td><td>\(\ln(x+\sqrt{x^2-1})\), \(x\geq1\)</td></tr>
+  <tr><td>\(\text{arctanh}\,x\)</td><td>\(\frac{1}{2}\ln\frac{1+x}{1-x}\), \(|x|<1\)</td></tr>
+  <tr><td>\(\frac{d}{dx}\sinh x\)</td><td>\(\cosh x\)</td></tr>
+  <tr><td>\(\frac{d}{dx}\cosh x\)</td><td>\(\sinh x\)</td></tr>
+  <tr><td>\(\frac{d}{dx}\tanh x\)</td><td>\(\text{sech}^2 x\)</td></tr>
+  <tr><td>\(\int 1/\sqrt{x^2+a^2}\,dx\)</td><td>\(\text{arcsinh}(x/a)+C\)</td></tr>
+  <tr><td>\(\int 1/\sqrt{x^2-a^2}\,dx\)</td><td>\(\text{arccosh}(x/a)+C\)</td></tr>
+</table>
+
+<h2>9. Practice Checklist</h2>
+<ul>
+  <li>Can you define \(\sinh\), \(\cosh\), \(\tanh\) in terms of exponentials?</li>
+  <li>Can you prove the identity \(\cosh^2 x - \sinh^2 x = 1\) from the definitions?</li>
+  <li>Can you state and use the double-angle hyperbolic identities?</li>
+  <li>Can you derive the logarithmic forms of the inverse functions?</li>
+  <li>Can you differentiate and integrate hyperbolic and inverse hyperbolic functions?</li>
+  <li>Can you solve equations like \(a\cosh x + b\sinh x = c\) by substituting exponential definitions?</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

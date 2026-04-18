@@ -49,6 +49,7 @@
   <script src="questions/further-maths-edexcel/fm-edexcel-written-cp2b.js"></script>
   <script src="questions/further-maths-edexcel/fm-edexcel-written.js"></script>
   <script src="questions/further-maths-edexcel/fm-edexcel-practice.js"></script>
+  <script src="questions/further-maths-aqa/fm-aqa-practice.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -579,6 +580,7 @@ const PRACTICE_MAP = {
   'Mathematics_OCR': () => typeof MATHS_OCR_PRACTICE !== 'undefined' ? MATHS_OCR_PRACTICE : null,
   'Mathematics_Edexcel': () => typeof MATHS_EDEXCEL_PRACTICE !== 'undefined' ? MATHS_EDEXCEL_PRACTICE : null,
   'Further Mathematics_Edexcel': () => typeof FM_EDEXCEL_PRACTICE !== 'undefined' ? FM_EDEXCEL_PRACTICE : null,
+  'Further Mathematics_AQA': () => typeof FM_AQA_PRACTICE !== 'undefined' ? FM_AQA_PRACTICE : null,
 };
 
 function getPracticeData(topicKey) {

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.6: Further Vectors — AQA Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-aqa-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">AQA Further Maths</a>
+</div>
+
+<p class="spec-ref">AQA A-Level Further Mathematics (7367) — Topic 1.6</p>
+<h1>1.6: Further Vectors</h1>
+
+<h2>1. Scalar (Dot) Product — Review</h2>
+
+<div class="definition">
+  <strong>Dot product:</strong> For vectors \(\mathbf{a}\) and \(\mathbf{b}\):
+  $$\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos\theta$$
+  where \(\theta\) is the angle between them. In component form (3D):
+  $$\mathbf{a}\cdot\mathbf{b} = a_1b_1 + a_2b_2 + a_3b_3$$
+  Vectors are <strong>perpendicular</strong> iff \(\mathbf{a}\cdot\mathbf{b} = 0\).
+</div>
+
+<h2>2. Vector (Cross) Product</h2>
+
+<div class="definition">
+  <strong>Cross product:</strong> For vectors \(\mathbf{a}\) and \(\mathbf{b}\) in 3D:
+  $$\mathbf{a} \times \mathbf{b} = |\mathbf{a}||\mathbf{b}|\sin\theta\,\hat{\mathbf{n}}$$
+  where \(\hat{\mathbf{n}}\) is the unit vector perpendicular to both \(\mathbf{a}\) and \(\mathbf{b}\) (right-hand rule).<br><br>
+  <strong>Component formula:</strong>
+  $$\mathbf{a}\times\mathbf{b} = \begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\a_1&a_2&a_3\\b_1&b_2&b_3\end{vmatrix} = (a_2b_3-a_3b_2)\mathbf{i} - (a_1b_3-a_3b_1)\mathbf{j} + (a_1b_2-a_2b_1)\mathbf{k}$$
+</div>
+
+<h3>Properties of the Cross Product</h3>
+<ul>
+  <li>\(\mathbf{a}\times\mathbf{b} = -(\mathbf{b}\times\mathbf{a})\) — anti-commutative</li>
+  <li>\(\mathbf{a}\times\mathbf{a} = \mathbf{0}\)</li>
+  <li>\(\mathbf{a}\times\mathbf{b} = \mathbf{0}\) iff \(\mathbf{a}\) and \(\mathbf{b}\) are parallel</li>
+  <li>\(|\mathbf{i}\times\mathbf{j}| = |\mathbf{j}\times\mathbf{k}| = |\mathbf{k}\times\mathbf{i}| = 1\); \(\mathbf{i}\times\mathbf{j} = \mathbf{k}\), \(\mathbf{j}\times\mathbf{k} = \mathbf{i}\), \(\mathbf{k}\times\mathbf{i} = \mathbf{j}\)</li>
+  <li>Distributive: \(\mathbf{a}\times(\mathbf{b}+\mathbf{c}) = \mathbf{a}\times\mathbf{b} + \mathbf{a}\times\mathbf{c}\)</li>
+</ul>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\mathbf{a}\times\mathbf{b}\) where \(\mathbf{a} = \begin{pmatrix}1\\2\\3\end{pmatrix}\) and \(\mathbf{b} = \begin{pmatrix}4\\5\\6\end{pmatrix}\).<br><br>
+  \(\mathbf{a}\times\mathbf{b} = \begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\1&2&3\\4&5&6\end{vmatrix}\)<br>
+  \(= (2\cdot6-3\cdot5)\mathbf{i} - (1\cdot6-3\cdot4)\mathbf{j} + (1\cdot5-2\cdot4)\mathbf{k}\)<br>
+  \(= (12-15)\mathbf{i} - (6-12)\mathbf{j} + (5-8)\mathbf{k} = -3\mathbf{i}+6\mathbf{j}-3\mathbf{k} = \begin{pmatrix}-3\\6\\-3\end{pmatrix}\)
+</div>
+
+<h3>Area Using the Cross Product</h3>
+<div class="equation">
+  $$\text{Area of parallelogram} = |\mathbf{a}\times\mathbf{b}|$$
+  $$\text{Area of triangle} = \frac{1}{2}|\mathbf{a}\times\mathbf{b}|$$
+</div>
+
+<h2>3. Scalar Triple Product</h2>
+
+<div class="definition">
+  <strong>Scalar triple product:</strong>
+  $$[\mathbf{a},\mathbf{b},\mathbf{c}] = \mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) = \begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}$$
+  The <strong>volume of a parallelepiped</strong> with edges \(\mathbf{a}\), \(\mathbf{b}\), \(\mathbf{c}\) is \(|\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})|\).<br><br>
+  Vectors \(\mathbf{a}\), \(\mathbf{b}\), \(\mathbf{c}\) are <strong>coplanar</strong> iff \(\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) = 0\).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the volume of the parallelepiped with edges \(\mathbf{a} = \mathbf{i}+2\mathbf{j}\), \(\mathbf{b} = 3\mathbf{j}+\mathbf{k}\), \(\mathbf{c} = \mathbf{i}+\mathbf{j}+\mathbf{k}\).<br><br>
+  \(\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) = \begin{vmatrix}1&2&0\\0&3&1\\1&1&1\end{vmatrix} = 1(3-1)-2(0-1)+0 = 2+2 = 4\)<br>
+  Volume \(= |4| = 4\).
+</div>
+
+<h2>4. Equations of Lines in 3D</h2>
+
+<div class="definition">
+  <strong>Vector equation of a line:</strong>
+  $$\mathbf{r} = \mathbf{a} + \lambda\mathbf{d}$$
+  where \(\mathbf{a}\) is a position vector of a point on the line and \(\mathbf{d}\) is the direction vector.<br><br>
+  <strong>Cartesian (symmetric) form:</strong>
+  $$\frac{x-a_1}{d_1} = \frac{y-a_2}{d_2} = \frac{z-a_3}{d_3}$$
+</div>
+
+<h3>Angle Between Two Lines</h3>
+<p>The acute angle \(\theta\) between lines with directions \(\mathbf{d}_1\) and \(\mathbf{d}_2\):</p>
+<div class="equation">
+  $$\cos\theta = \frac{|\mathbf{d}_1\cdot\mathbf{d}_2|}{|\mathbf{d}_1||\mathbf{d}_2|}$$
+</div>
+
+<h2>5. Equations of Planes</h2>
+
+<div class="definition">
+  <strong>Vector equation of a plane:</strong> \(\mathbf{r}\cdot\mathbf{n} = d\), where \(\mathbf{n}\) is the normal vector and \(d = \mathbf{a}\cdot\mathbf{n}\) for any point \(\mathbf{a}\) on the plane.<br><br>
+  <strong>Cartesian equation:</strong> \(n_1 x + n_2 y + n_3 z = d\)
+</div>
+
+<svg viewBox="0 0 340 220" width="340" height="220" style="display:block;margin:20px auto;">
+  <defs>
+    <marker id="v1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#555"/></marker>
+    <marker id="v2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/></marker>
+    <marker id="v3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#e11d48"/></marker>
+  </defs>
+  <!-- 3D axes -->
+  <line x1="100" y1="180" x2="250" y2="180" stroke="#555" stroke-width="1.5" marker-end="url(#v1)"/>
+  <line x1="100" y1="180" x2="100" y2="30" stroke="#555" stroke-width="1.5" marker-end="url(#v1)"/>
+  <line x1="100" y1="180" x2="30" y2="220" stroke="#555" stroke-width="1.5" marker-end="url(#v1)"/>
+  <text x="255" y="184" font-size="12" fill="#555">x</text>
+  <text x="103" y="26" font-size="12" fill="#555">z</text>
+  <text x="22" y="225" font-size="12" fill="#555">y</text>
+  <!-- Plane as parallelogram -->
+  <polygon points="160,80 280,100 260,170 140,150" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="205" y="135" font-size="11" fill="#2563eb">plane: n·r = d</text>
+  <!-- Normal vector -->
+  <line x1="210" y1="125" x2="210" y2="60" stroke="#e11d48" stroke-width="2" marker-end="url(#v3)"/>
+  <text x="215" y="60" font-size="11" fill="#e11d48">n</text>
+  <!-- A point on the plane -->
+  <circle cx="210" cy="125" r="4" fill="#e11d48"/>
+  <text x="215" y="130" font-size="11" fill="#e11d48">A</text>
+  <!-- Line through plane -->
+  <line x1="145" y1="200" x2="235" y2="70" stroke="#16a34a" stroke-width="1.5" marker-end="url(#v2)" stroke-dasharray="5,3"/>
+  <text x="237" y="68" font-size="11" fill="#16a34a">line</text>
+</svg>
+
+<h3>Angle Between a Line and a Plane</h3>
+<p>The angle \(\phi\) between a line with direction \(\mathbf{d}\) and a plane with normal \(\mathbf{n}\):</p>
+<div class="equation">
+  $$\sin\phi = \frac{|\mathbf{d}\cdot\mathbf{n}|}{|\mathbf{d}||\mathbf{n}|}$$
+</div>
+<p>(Note: the angle between a line and a plane is the complement of the angle between the line and the normal.)</p>
+
+<h3>Angle Between Two Planes</h3>
+<p>The angle between two planes equals the angle between their normals \(\mathbf{n}_1\) and \(\mathbf{n}_2\):</p>
+<div class="equation">
+  $$\cos\theta = \frac{|\mathbf{n}_1\cdot\mathbf{n}_2|}{|\mathbf{n}_1||\mathbf{n}_2|}$$
+</div>
+
+<h2>6. Distance Formulae</h2>
+
+<h3>Distance from a Point to a Plane</h3>
+<div class="equation">
+  $$d = \frac{|n_1 x_0 + n_2 y_0 + n_3 z_0 - D|}{|\mathbf{n}|}$$
+where \((x_0, y_0, z_0)\) is the point and \(n_1 x + n_2 y + n_3 z = D\) is the plane.
+</div>
+
+<h3>Distance Between Two Parallel Lines</h3>
+<p>Let \(\ell_1: \mathbf{r} = \mathbf{a} + \lambda\mathbf{d}\) and \(\ell_2: \mathbf{r} = \mathbf{b} + \mu\mathbf{d}\). The distance is:</p>
+<div class="equation">
+  $$d = \frac{|(\mathbf{b}-\mathbf{a})\times\mathbf{d}|}{|\mathbf{d}|}$$
+</div>
+
+<h3>Shortest Distance Between Two Skew Lines</h3>
+<p>For skew lines \(\ell_1: \mathbf{r} = \mathbf{a} + \lambda\mathbf{d}_1\) and \(\ell_2: \mathbf{r} = \mathbf{b} + \mu\mathbf{d}_2\):</p>
+<div class="equation">
+  $$d = \frac{|(\mathbf{b}-\mathbf{a})\cdot(\mathbf{d}_1\times\mathbf{d}_2)|}{|\mathbf{d}_1\times\mathbf{d}_2|}$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the shortest distance between the skew lines<br>
+  \(\ell_1: \mathbf{r} = \begin{pmatrix}1\\0\\0\end{pmatrix} + \lambda\begin{pmatrix}1\\0\\1\end{pmatrix}\) and \(\ell_2: \mathbf{r} = \begin{pmatrix}0\\1\\0\end{pmatrix} + \mu\begin{pmatrix}0\\1\\1\end{pmatrix}\).<br><br>
+  \(\mathbf{d}_1\times\mathbf{d}_2 = \begin{pmatrix}1\\0\\1\end{pmatrix}\times\begin{pmatrix}0\\1\\1\end{pmatrix} = \begin{pmatrix}0-1\\0-1\\1-0\end{pmatrix} = \begin{pmatrix}-1\\-1\\1\end{pmatrix}\)<br>
+  \(|\mathbf{d}_1\times\mathbf{d}_2| = \sqrt{3}\)<br><br>
+  \(\mathbf{b}-\mathbf{a} = \begin{pmatrix}-1\\1\\0\end{pmatrix}\)<br>
+  \((\mathbf{b}-\mathbf{a})\cdot\begin{pmatrix}-1\\-1\\1\end{pmatrix} = 1 - 1 + 0 = 0\)<br><br>
+  Shortest distance \(= 0/\sqrt{3} = 0\). (Lines actually intersect — check if skew by testing for solution to \(\ell_1 = \ell_2\).)
+</div>
+
+<h2>7. Intersections</h2>
+
+<h3>Line and Plane</h3>
+<p>Substitute the line equation \(\mathbf{r} = \mathbf{a} + \lambda\mathbf{d}\) into the plane equation \(\mathbf{r}\cdot\mathbf{n} = D\) and solve for \(\lambda\).</p>
+
+<h3>Two Planes</h3>
+<p>Two non-parallel planes intersect in a line. Find the direction as \(\mathbf{n}_1\times\mathbf{n}_2\); find a point by setting one variable to a convenient value and solving the system.</p>
+
+<h3>Three Planes — Analysis</h3>
+<p>A system of 3 planes can have:</p>
+<ul>
+  <li><strong>Unique intersection point:</strong> \(\det(\text{coefficient matrix}) \neq 0\)</li>
+  <li><strong>A line of intersection:</strong> Two planes intersect in a line that lies on the third</li>
+  <li><strong>No intersection (inconsistent):</strong> Various configurations — triangular prism, or all parallel, etc.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> For 3-plane systems, AQA often gives a parameter \(k\) in one equation and asks for the value(s) of \(k\) that give different types of intersection. Use \(\det A = 0\) for the singular case, then test consistency.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the point of intersection of the line \(\mathbf{r} = \begin{pmatrix}1\\2\\-1\end{pmatrix}+\lambda\begin{pmatrix}1\\-1\\2\end{pmatrix}\) and the plane \(2x+y-z=3\).<br><br>
+  Substitute: \(2(1+\lambda)+(2-\lambda)-(-1+2\lambda) = 3\)<br>
+  \(2+2\lambda+2-\lambda+1-2\lambda = 3\)<br>
+  \(5 - \lambda = 3 \Rightarrow \lambda = 2\)<br><br>
+  Point: \(\begin{pmatrix}1+2\\2-2\\-1+4\end{pmatrix} = \begin{pmatrix}3\\0\\3\end{pmatrix}\)
+</div>
+
+<h2>8. Summary of Key Results</h2>
+
+<table>
+  <tr><th>Result</th><th>Formula</th></tr>
+  <tr><td>Dot product</td><td>\(\mathbf{a}\cdot\mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos\theta\)</td></tr>
+  <tr><td>Cross product magnitude</td><td>\(|\mathbf{a}\times\mathbf{b}| = |\mathbf{a}||\mathbf{b}|\sin\theta\)</td></tr>
+  <tr><td>Area of parallelogram</td><td>\(|\mathbf{a}\times\mathbf{b}|\)</td></tr>
+  <tr><td>Volume of parallelepiped</td><td>\(|\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})|\)</td></tr>
+  <tr><td>Equation of line</td><td>\(\mathbf{r} = \mathbf{a}+\lambda\mathbf{d}\)</td></tr>
+  <tr><td>Equation of plane</td><td>\(\mathbf{r}\cdot\mathbf{n} = d\)</td></tr>
+  <tr><td>Point to plane distance</td><td>\(|n_1x_0+n_2y_0+n_3z_0-d|/|\mathbf{n}|\)</td></tr>
+  <tr><td>Skew lines distance</td><td>\(|(\mathbf{b}-\mathbf{a})\cdot(\mathbf{d}_1\times\mathbf{d}_2)|/|\mathbf{d}_1\times\mathbf{d}_2|\)</td></tr>
+</table>
+
+<h2>9. Practice Checklist</h2>
+<ul>
+  <li>Can you compute dot products and cross products in component form?</li>
+  <li>Can you find the area of a triangle given three vertices using the cross product?</li>
+  <li>Can you find and use the scalar triple product?</li>
+  <li>Can you find angles between lines, between a line and a plane, and between two planes?</li>
+  <li>Can you find the distance from a point to a plane?</li>
+  <li>Can you find the intersection of a line with a plane?</li>
+  <li>Can you analyse when a 3-plane system has no solution, a line of solutions, or a unique solution?</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

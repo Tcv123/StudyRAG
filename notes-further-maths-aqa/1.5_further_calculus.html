@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.5: Further Calculus — AQA Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-aqa-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">AQA Further Maths</a>
+</div>
+
+<p class="spec-ref">AQA A-Level Further Mathematics (7367) — Topic 1.5</p>
+<h1>1.5: Further Calculus</h1>
+
+<h2>1. Arc Length</h2>
+
+<div class="definition">
+  <strong>Arc length (Cartesian):</strong> The length of the curve \(y = f(x)\) from \(x = a\) to \(x = b\):
+  $$L = \int_a^b \sqrt{1 + \left(\frac{dy}{dx}\right)^2}\,dx$$
+  <strong>Arc length (parametric):</strong> If \(x = x(t)\), \(y = y(t)\), from \(t = t_1\) to \(t = t_2\):
+  $$L = \int_{t_1}^{t_2} \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}\,dt$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the arc length of \(y = \dfrac{2}{3}x^{3/2}\) from \(x = 0\) to \(x = 3\).<br><br>
+  \(\dfrac{dy}{dx} = x^{1/2}\), so \(1 + \left(\dfrac{dy}{dx}\right)^2 = 1 + x\)<br><br>
+  \(L = \int_0^3 \sqrt{1+x}\,dx = \left[\dfrac{2}{3}(1+x)^{3/2}\right]_0^3 = \dfrac{2}{3}(4^{3/2}) - \dfrac{2}{3}(1) = \dfrac{2}{3}(8) - \dfrac{2}{3} = \dfrac{14}{3}\)
+</div>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> AQA often chooses curves where \(1 + (dy/dx)^2\) simplifies to a perfect square. If your integrand doesn't simplify nicely, recheck your differentiation.
+</div>
+
+<h2>2. Surface Area of Revolution</h2>
+
+<div class="definition">
+  <strong>Surface area of revolution about the \(x\)-axis:</strong>
+  $$S = 2\pi \int_a^b y\sqrt{1+\left(\frac{dy}{dx}\right)^2}\,dx$$
+  <strong>Parametric form:</strong>
+  $$S = 2\pi \int_{t_1}^{t_2} y\sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}\,dt$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the surface area generated when the curve \(y = x^2\) from \(x = 0\) to \(x = 1\) is rotated \(2\pi\) about the \(x\)-axis.<br><br>
+  \(\dfrac{dy}{dx} = 2x\), so \(1 + (2x)^2 = 1 + 4x^2\)<br><br>
+  \(S = 2\pi\int_0^1 x^2\sqrt{1+4x^2}\,dx\)<br>
+  (This integral requires substitution \(x = \frac{1}{2}\tan\theta\) — see integration section for technique.)<br><br>
+  Result after full working: \(S = \dfrac{\pi}{6}\!\left(5\sqrt{5}-1\right)\)
+</div>
+
+<h2>3. Mean Value of a Function</h2>
+
+<div class="definition">
+  <strong>Mean value:</strong> The mean value of \(f(x)\) over \([a, b]\) is:
+  $$\bar{f} = \frac{1}{b-a}\int_a^b f(x)\,dx$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the mean value of \(f(x) = x^2 + 1\) over \([0, 3]\).<br><br>
+  \(\bar{f} = \dfrac{1}{3}\int_0^3 (x^2+1)\,dx = \dfrac{1}{3}\left[\dfrac{x^3}{3}+x\right]_0^3 = \dfrac{1}{3}(9+3) = 4\)
+</div>
+
+<h2>4. Reduction Formulae</h2>
+
+<p>A reduction formula expresses an integral \(I_n\) in terms of \(I_{n-1}\) (or \(I_{n-2}\)), allowing evaluation by repeatedly reducing the index.</p>
+
+<div class="example">
+  <strong>Example:</strong> Derive a reduction formula for \(I_n = \displaystyle\int_0^{\pi/2} \sin^n x\,dx\).<br><br>
+  Write \(\sin^n x = \sin^{n-1}x \cdot \sin x\) and integrate by parts:<br>
+  Let \(u = \sin^{n-1}x\), \(dv = \sin x\,dx \Rightarrow v = -\cos x\)<br><br>
+  \(I_n = \left[-\cos x\,\sin^{n-1}x\right]_0^{\pi/2} + (n-1)\int_0^{\pi/2}\cos^2 x\,\sin^{n-2}x\,dx\)<br>
+  \(= 0 + (n-1)\int_0^{\pi/2}(1-\sin^2 x)\sin^{n-2}x\,dx = (n-1)(I_{n-2} - I_n)\)<br><br>
+  \(I_n + (n-1)I_n = (n-1)I_{n-2} \Rightarrow \boxed{I_n = \dfrac{n-1}{n}I_{n-2}}\)<br><br>
+  With: \(I_0 = \dfrac{\pi}{2}\), \(I_1 = 1\).<br><br>
+  So: \(I_2 = \dfrac{1}{2}\cdot\dfrac{\pi}{2} = \dfrac{\pi}{4}\), \(I_4 = \dfrac{3}{4}\cdot\dfrac{\pi}{4} = \dfrac{3\pi}{16}\), \(I_3 = \dfrac{2}{3}\), \(I_5 = \dfrac{8}{15}\), etc.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Derive a reduction formula for \(I_n = \displaystyle\int x^n e^x\,dx\).<br><br>
+  Integrate by parts: \(u = x^n\), \(dv = e^x dx\)<br>
+  \(I_n = x^n e^x - n\int x^{n-1}e^x\,dx = x^n e^x - n\,I_{n-1}\)<br><br>
+  Reduction formula: \(I_n = x^n e^x - n\,I_{n-1}\)<br>
+  Starting from \(I_0 = e^x + C\).
+</div>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> When asked to "prove" a reduction formula, show integration by parts in full. When asked to "use" it, apply it repeatedly, citing the formula each time. AQA often asks for a specific value like \(I_4\) or \(I_5\) — make sure you track the base cases.
+</div>
+
+<h2>5. Improper Integrals</h2>
+
+<div class="definition">
+  An integral is <strong>improper</strong> if:
+  <ul>
+    <li>The interval of integration is infinite: \(\displaystyle\int_a^{\infty} f(x)\,dx = \lim_{t\to\infty}\int_a^t f(x)\,dx\)</li>
+    <li>The integrand has a discontinuity in \([a,b]\): \(\displaystyle\int_a^b f(x)\,dx = \lim_{\epsilon\to 0^+}\int_{a+\epsilon}^b f(x)\,dx\)</li>
+  </ul>
+  The integral <strong>converges</strong> if the limit exists and is finite; otherwise it <strong>diverges</strong>.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Determine whether \(\displaystyle\int_1^{\infty} \dfrac{1}{x^2}\,dx\) converges.<br><br>
+  \(\int_1^t x^{-2}\,dx = \left[-x^{-1}\right]_1^t = -\dfrac{1}{t} + 1\)<br><br>
+  As \(t \to \infty\): \(1 - \dfrac{1}{t} \to 1\). Converges to 1.
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Show that \(\displaystyle\int_1^{\infty} \dfrac{1}{x}\,dx\) diverges.<br><br>
+  \(\int_1^t \dfrac{1}{x}\,dx = [\ln x]_1^t = \ln t \to \infty\) as \(t \to \infty\). Diverges.
+</div>
+
+<div class="definition">
+  <strong>p-test:</strong> \(\displaystyle\int_1^{\infty} x^{-p}\,dx\) converges if and only if \(p > 1\). Similarly, \(\displaystyle\int_0^1 x^{-p}\,dx\) converges if and only if \(p < 1\).
+</div>
+
+<h2>6. Integration Techniques</h2>
+
+<h3>Integration by Partial Fractions</h3>
+<p>Decompose the rational function into partial fractions, then integrate each term.</p>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\displaystyle\int \dfrac{3}{(x-1)(x+2)}\,dx\).<br><br>
+  \(\dfrac{3}{(x-1)(x+2)} = \dfrac{1}{x-1} - \dfrac{1}{x+2}\)<br><br>
+  \(\int = \ln|x-1| - \ln|x+2| + C = \ln\left|\dfrac{x-1}{x+2}\right| + C\)
+</div>
+
+<h3>Inverse Trigonometric Integrals</h3>
+<div class="equation">
+  $$\int \frac{1}{\sqrt{a^2-x^2}}\,dx = \arcsin\!\left(\frac{x}{a}\right) + C, \quad |x| < a$$
+  $$\int \frac{1}{a^2+x^2}\,dx = \frac{1}{a}\arctan\!\left(\frac{x}{a}\right) + C$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\displaystyle\int \dfrac{1}{\sqrt{9-x^2}}\,dx\).<br><br>
+  Using the formula with \(a = 3\): \(\arcsin\!\left(\dfrac{x}{3}\right) + C\)
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\displaystyle\int_0^2 \dfrac{1}{4+x^2}\,dx\).<br><br>
+  \(= \left[\dfrac{1}{2}\arctan\!\left(\dfrac{x}{2}\right)\right]_0^2 = \dfrac{1}{2}\arctan(1) - 0 = \dfrac{1}{2}\cdot\dfrac{\pi}{4} = \dfrac{\pi}{8}\)
+</div>
+
+<h3>Completing the Square for Integration</h3>
+<p>Integrals of the form \(\dfrac{1}{ax^2+bx+c}\) or \(\dfrac{1}{\sqrt{ax^2+bx+c}}\) require completing the square to match standard forms.</p>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\displaystyle\int \dfrac{1}{x^2+6x+13}\,dx\).<br><br>
+  Complete the square: \(x^2+6x+13 = (x+3)^2 + 4\)<br><br>
+  \(\int\dfrac{1}{(x+3)^2+4}\,dx = \dfrac{1}{2}\arctan\!\left(\dfrac{x+3}{2}\right) + C\)
+</div>
+
+<h2>7. Summary of Key Results</h2>
+
+<table>
+  <tr><th>Result</th><th>Formula</th></tr>
+  <tr><td>Arc length (Cartesian)</td><td>\(\displaystyle\int\sqrt{1+(dy/dx)^2}\,dx\)</td></tr>
+  <tr><td>Arc length (parametric)</td><td>\(\displaystyle\int\sqrt{(dx/dt)^2+(dy/dt)^2}\,dt\)</td></tr>
+  <tr><td>Surface area (x-axis)</td><td>\(2\pi\displaystyle\int y\sqrt{1+(dy/dx)^2}\,dx\)</td></tr>
+  <tr><td>Mean value</td><td>\(\dfrac{1}{b-a}\displaystyle\int_a^b f(x)\,dx\)</td></tr>
+  <tr><td>\(\int 1/\sqrt{a^2-x^2}\,dx\)</td><td>\(\arcsin(x/a)+C\)</td></tr>
+  <tr><td>\(\int 1/(a^2+x^2)\,dx\)</td><td>\(\frac{1}{a}\arctan(x/a)+C\)</td></tr>
+  <tr><td>Wallis reduction</td><td>\(I_n = \dfrac{n-1}{n}I_{n-2}\) for \(\int_0^{\pi/2}\sin^n x\,dx\)</td></tr>
+</table>
+
+<h2>8. Practice Checklist</h2>
+<ul>
+  <li>Can you calculate arc length and surface area for both Cartesian and parametric curves?</li>
+  <li>Can you find the mean value of a function over an interval?</li>
+  <li>Can you derive and apply reduction formulae for \(\int \sin^n x\,dx\), \(\int \cos^n x\,dx\), and \(\int x^n e^x\,dx\)?</li>
+  <li>Can you evaluate improper integrals and determine convergence/divergence?</li>
+  <li>Can you integrate using inverse trigonometric functions and completing the square?</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

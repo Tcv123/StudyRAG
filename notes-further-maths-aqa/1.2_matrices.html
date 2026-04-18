@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.2: Matrices — AQA Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  @media print { body { padding: 20px; } .exam-tip, .definition, .example { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-aqa-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">AQA Further Maths</a>
+</div>
+
+<p class="spec-ref">AQA A-Level Further Mathematics (7367) — Topic 1.2</p>
+<h1>1.2: Matrices</h1>
+
+<h2>1. Introduction to Matrices</h2>
+
+<div class="definition">
+  <strong>Matrix:</strong> A matrix is a rectangular array of numbers arranged in rows and columns. An \(m \times n\) matrix has \(m\) rows and \(n\) columns. The entry in row \(i\), column \(j\) is denoted \(a_{ij}\).<br><br>
+  $$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}$$
+</div>
+
+<h3>Special Matrices</h3>
+<ul>
+  <li><strong>Identity matrix \(I\):</strong> Square matrix with 1s on the diagonal, 0s elsewhere. \(AI = IA = A\).</li>
+  <li><strong>Zero matrix \(O\):</strong> All entries are 0. \(A + O = A\).</li>
+  <li><strong>Transpose \(A^T\):</strong> Rows and columns swapped. \((A^T)_{ij} = A_{ji}\).</li>
+  <li><strong>Symmetric matrix:</strong> \(A^T = A\).</li>
+</ul>
+
+<h2>2. Matrix Operations</h2>
+
+<h3>Addition and Scalar Multiplication</h3>
+<p>Matrices must be the same size to add. Add corresponding entries. Scalar multiplication multiplies every entry:</p>
+<div class="equation">
+  $$(A + B)_{ij} = a_{ij} + b_{ij} \qquad (kA)_{ij} = k\,a_{ij}$$
+</div>
+
+<h3>Matrix Multiplication</h3>
+<p>For \(A\) of size \(m \times p\) and \(B\) of size \(p \times n\), the product \(AB\) is \(m \times n\):</p>
+<div class="equation">
+  $$(AB)_{ij} = \sum_{k=1}^{p} a_{ik}\,b_{kj}$$
+</div>
+<p>Row \(i\) of \(A\) dotted with column \(j\) of \(B\).</p>
+
+<div class="example">
+  <strong>Example:</strong> Compute \(AB\) where \(A = \begin{pmatrix}1&2\\3&4\end{pmatrix}\), \(B = \begin{pmatrix}5&6\\7&8\end{pmatrix}\).<br><br>
+  \(AB = \begin{pmatrix}1\cdot5+2\cdot7 & 1\cdot6+2\cdot8 \\ 3\cdot5+4\cdot7 & 3\cdot6+4\cdot8\end{pmatrix} = \begin{pmatrix}19&22\\43&50\end{pmatrix}\)
+</div>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> Matrix multiplication is NOT commutative: \(AB \neq BA\) in general. Always check the order. AQA may test this explicitly.
+</div>
+
+<h3>Properties of Matrix Multiplication</h3>
+<ul>
+  <li>Associativity: \((AB)C = A(BC)\)</li>
+  <li>Distributivity: \(A(B+C) = AB + AC\)</li>
+  <li>\((AB)^T = B^T A^T\)</li>
+  <li>\(AI = IA = A\)</li>
+</ul>
+
+<h2>3. Determinants</h2>
+
+<h3>2×2 Determinant</h3>
+<div class="equation">
+  $$\det\!\begin{pmatrix}a&b\\c&d\end{pmatrix} = ad - bc$$
+</div>
+
+<h3>3×3 Determinant (Cofactor Expansion)</h3>
+<p>Expanding along the first row:</p>
+<div class="equation">
+  $$\det\begin{pmatrix}a&b&c\\d&e&f\\g&h&i\end{pmatrix} = a(ei-fh) - b(di-fg) + c(dh-eg)$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find \(\det\begin{pmatrix}2&1&3\\0&-1&4\\1&2&-2\end{pmatrix}\).<br><br>
+  \(= 2[(-1)(-2) - (4)(2)] - 1[(0)(-2) - (4)(1)] + 3[(0)(2) - (-1)(1)]\)<br>
+  \(= 2[2 - 8] - 1[0 - 4] + 3[0 + 1]\)<br>
+  \(= 2(-6) - 1(-4) + 3(1) = -12 + 4 + 3 = -5\)
+</div>
+
+<h3>Properties of Determinants</h3>
+<ul>
+  <li>\(\det(AB) = \det(A)\det(B)\)</li>
+  <li>\(\det(A^T) = \det(A)\)</li>
+  <li>\(\det(kA) = k^n \det(A)\) for an \(n\times n\) matrix</li>
+  <li>Swapping two rows changes the sign of the determinant</li>
+  <li>If two rows are identical, \(\det = 0\)</li>
+</ul>
+
+<h2>4. Inverse Matrices</h2>
+
+<h3>2×2 Inverse</h3>
+<div class="equation">
+  $$A^{-1} = \frac{1}{\det A}\begin{pmatrix}d&-b\\-c&a\end{pmatrix} \quad \text{where } A = \begin{pmatrix}a&b\\c&d\end{pmatrix},\ \det A \neq 0$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the inverse of \(A = \begin{pmatrix}3&1\\5&2\end{pmatrix}\).<br><br>
+  \(\det A = 6 - 5 = 1\)<br>
+  \(A^{-1} = \dfrac{1}{1}\begin{pmatrix}2&-1\\-5&3\end{pmatrix} = \begin{pmatrix}2&-1\\-5&3\end{pmatrix}\)
+</div>
+
+<h3>3×3 Inverse via Cofactors</h3>
+<p>The inverse of a \(3\times 3\) matrix \(A\) with \(\det A \neq 0\) is:</p>
+<div class="equation">
+  $$A^{-1} = \frac{1}{\det A}\,(\text{adj}\,A) \quad \text{where adj}\,A = (C_{ij})^T$$
+</div>
+<p>Here \(C_{ij} = (-1)^{i+j} M_{ij}\) is the cofactor (signed minor) of element \(a_{ij}\).</p>
+
+<div class="example">
+  <strong>Example:</strong> Find \(A^{-1}\) for \(A = \begin{pmatrix}1&2&1\\0&1&3\\1&1&0\end{pmatrix}\).<br><br>
+  \(\det A = 1(0-3) - 2(0-3) + 1(0-1) = -3 + 6 - 1 = 2\)<br><br>
+  Cofactors: \(C_{11} = +(0-3)=-3\), \(C_{12} = -(0-3)=3\), \(C_{13} = +(0-1)=-1\),<br>
+  \(C_{21} = -(0-1)=1\), \(C_{22} = +(0-1)=-1\), \(C_{23} = -(1-2)=1\),<br>
+  \(C_{31} = +(6-1)=5\), \(C_{32} = -(3-0)=-3\), \(C_{33} = +(1-0)=1\)<br><br>
+  \(\text{adj}\,A = \begin{pmatrix}-3&1&5\\3&-1&-3\\-1&1&1\end{pmatrix}\), so \(A^{-1} = \dfrac{1}{2}\begin{pmatrix}-3&1&5\\3&-1&-3\\-1&1&1\end{pmatrix}\)
+</div>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> The sign pattern for cofactors is \(\begin{pmatrix}+&-&+\\-&+&-\\+&-&+\end{pmatrix}\). Always verify your inverse by checking \(AA^{-1} = I\) if time permits.
+</div>
+
+<h2>5. Solving Simultaneous Equations with Matrices</h2>
+
+<p>The system \(A\mathbf{x} = \mathbf{b}\) has solution \(\mathbf{x} = A^{-1}\mathbf{b}\) when \(\det A \neq 0\).</p>
+
+<div class="example">
+  <strong>Example:</strong> Solve \(\begin{cases} 2x + y = 5 \\ x - y = 1 \end{cases}\).<br><br>
+  \(A = \begin{pmatrix}2&1\\1&-1\end{pmatrix}\), \(\det A = -2-1 = -3\)<br>
+  \(A^{-1} = -\dfrac{1}{3}\begin{pmatrix}-1&-1\\-1&2\end{pmatrix} = \dfrac{1}{3}\begin{pmatrix}1&1\\1&-2\end{pmatrix}\)<br><br>
+  \(\mathbf{x} = \dfrac{1}{3}\begin{pmatrix}1&1\\1&-2\end{pmatrix}\begin{pmatrix}5\\1\end{pmatrix} = \dfrac{1}{3}\begin{pmatrix}6\\3\end{pmatrix} = \begin{pmatrix}2\\1\end{pmatrix}\)<br><br>
+  So \(x = 2\), \(y = 1\).
+</div>
+
+<h3>Singular Matrices and System Analysis</h3>
+<p>When \(\det A = 0\), the matrix is <strong>singular</strong> and has no inverse. The system \(A\mathbf{x} = \mathbf{b}\) is either:</p>
+<ul>
+  <li><strong>Inconsistent</strong> — no solutions (parallel planes that don't all meet)</li>
+  <li><strong>Consistent with infinitely many solutions</strong> — the equations are dependent</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> For a \(3\times 3\) system, if \(\det A = 0\), you must determine whether the system is inconsistent or has infinitely many solutions. Substitute a general value (e.g. let \(z = t\)) and check consistency of the remaining equations.
+</div>
+
+<h2>6. Linear Transformations in 2D</h2>
+
+<p>A \(2\times 2\) matrix \(A\) represents a linear transformation of the plane. The columns of \(A\) are the images of the standard basis vectors \(\mathbf{e}_1 = \begin{pmatrix}1\\0\end{pmatrix}\) and \(\mathbf{e}_2 = \begin{pmatrix}0\\1\end{pmatrix}\).</p>
+
+<h3>Standard 2D Transformations</h3>
+<table>
+  <tr><th>Transformation</th><th>Matrix</th><th>Notes</th></tr>
+  <tr><td>Rotation by \(\theta\) (anticlockwise about origin)</td><td>\(\begin{pmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{pmatrix}\)</td><td>det \(= 1\)</td></tr>
+  <tr><td>Reflection in \(x\)-axis</td><td>\(\begin{pmatrix}1&0\\0&-1\end{pmatrix}\)</td><td>det \(= -1\)</td></tr>
+  <tr><td>Reflection in \(y\)-axis</td><td>\(\begin{pmatrix}-1&0\\0&1\end{pmatrix}\)</td><td>det \(= -1\)</td></tr>
+  <tr><td>Reflection in \(y=x\)</td><td>\(\begin{pmatrix}0&1\\1&0\end{pmatrix}\)</td><td>det \(= -1\)</td></tr>
+  <tr><td>Reflection in \(y=-x\)</td><td>\(\begin{pmatrix}0&-1\\-1&0\end{pmatrix}\)</td><td>det \(= -1\)</td></tr>
+  <tr><td>Enlargement, scale factor \(k\)</td><td>\(\begin{pmatrix}k&0\\0&k\end{pmatrix}\)</td><td>det \(= k^2\)</td></tr>
+  <tr><td>Stretch, factor \(k\) in \(x\)-direction</td><td>\(\begin{pmatrix}k&0\\0&1\end{pmatrix}\)</td><td>det \(= k\)</td></tr>
+  <tr><td>Shear, factor \(k\) parallel to \(x\)-axis</td><td>\(\begin{pmatrix}1&k\\0&1\end{pmatrix}\)</td><td>det \(= 1\)</td></tr>
+</table>
+
+<div class="definition">
+  <strong>Area scale factor:</strong> Under the transformation represented by matrix \(A\), areas scale by \(|\det A|\). Orientation is preserved if \(\det A > 0\) and reversed if \(\det A < 0\).
+</div>
+
+<h3>Composition of Transformations</h3>
+<p>Applying transformation \(B\) first, then transformation \(A\): the combined matrix is \(AB\) (NOT \(BA\)). Read from right to left.</p>
+
+<div class="example">
+  <strong>Example:</strong> The unit square has vertices at \((0,0)\), \((1,0)\), \((1,1)\), \((0,1)\). Under the transformation \(A = \begin{pmatrix}2&1\\0&3\end{pmatrix}\), find the image vertices and the area of the image.<br><br>
+  Images: \(\begin{pmatrix}0\\0\end{pmatrix}\to\begin{pmatrix}0\\0\end{pmatrix}\), \(\begin{pmatrix}1\\0\end{pmatrix}\to\begin{pmatrix}2\\0\end{pmatrix}\), \(\begin{pmatrix}1\\1\end{pmatrix}\to\begin{pmatrix}3\\3\end{pmatrix}\), \(\begin{pmatrix}0\\1\end{pmatrix}\to\begin{pmatrix}1\\3\end{pmatrix}\)<br><br>
+  \(\det A = 6 - 0 = 6\). Area of image \(= |\det A| \times 1 = 6\).
+</div>
+
+<svg viewBox="0 0 340 200" width="340" height="200" style="display:block;margin:20px auto;">
+  <defs>
+    <marker id="ax1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#555"/></marker>
+    <marker id="ax2" markerWidth="8" markerHeight="8" refX="3" refY="6" orient="auto"><path d="M0,8 L6,8 L3,0 z" fill="#555"/></marker>
+  </defs>
+  <!-- Axes left diagram -->
+  <line x1="20" y1="160" x2="130" y2="160" stroke="#555" stroke-width="1.5" marker-end="url(#ax1)"/>
+  <line x1="30" y1="170" x2="30" y2="20" stroke="#555" stroke-width="1.5" marker-end="url(#ax2)"/>
+  <text x="132" y="164" font-size="11" fill="#555">x</text>
+  <text x="33" y="16" font-size="11" fill="#555">y</text>
+  <!-- Unit square -->
+  <rect x="30" y="110" width="60" height="60" fill="rgba(37,99,235,0.15)" stroke="#2563eb" stroke-width="2"/>
+  <text x="55" y="145" font-size="11" fill="#2563eb">Unit</text>
+  <text x="52" y="158" font-size="11" fill="#2563eb">Square</text>
+  <!-- Arrow -->
+  <text x="148" y="105" font-size="22" fill="#16a34a" font-weight="bold">→</text>
+  <text x="145" y="90" font-size="10" fill="#16a34a">Apply A</text>
+  <!-- Axes right diagram -->
+  <line x1="180" y1="175" x2="320" y2="175" stroke="#555" stroke-width="1.5" marker-end="url(#ax1)"/>
+  <line x1="190" y1="180" x2="190" y2="20" stroke="#555" stroke-width="1.5" marker-end="url(#ax2)"/>
+  <text x="322" y="179" font-size="11" fill="#555">x</text>
+  <text x="193" y="16" font-size="11" fill="#555">y</text>
+  <!-- Transformed parallelogram (example shape) -->
+  <polygon points="190,175 250,175 280,105 220,105" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="2"/>
+  <text x="220" y="150" font-size="10" fill="#16a34a">Image</text>
+  <text x="214" y="162" font-size="9" fill="#16a34a">Area = |det A|</text>
+</svg>
+
+<h2>7. Linear Transformations in 3D</h2>
+
+<p>A \(3\times 3\) matrix represents a linear transformation in 3D space. Key examples:</p>
+<table>
+  <tr><th>Transformation</th><th>Matrix</th></tr>
+  <tr><td>Rotation by \(\theta\) about \(z\)-axis</td><td>\(\begin{pmatrix}\cos\theta&-\sin\theta&0\\\sin\theta&\cos\theta&0\\0&0&1\end{pmatrix}\)</td></tr>
+  <tr><td>Reflection in \(xy\)-plane (\(z\to-z\))</td><td>\(\begin{pmatrix}1&0&0\\0&1&0\\0&0&-1\end{pmatrix}\)</td></tr>
+  <tr><td>Enlargement, scale factor \(k\)</td><td>\(k\,I_3\)</td></tr>
+</table>
+
+<p>For 3D transformations, volumes scale by \(|\det A|\).</p>
+
+<h2>8. Eigenvalues and Eigenvectors</h2>
+
+<div class="definition">
+  <strong>Eigenvalue and eigenvector:</strong> A non-zero vector \(\mathbf{v}\) is an <em>eigenvector</em> of matrix \(A\) with corresponding <em>eigenvalue</em> \(\lambda\) if:
+  $$A\mathbf{v} = \lambda\mathbf{v}$$
+  Geometrically: the transformation \(A\) maps \(\mathbf{v}\) to a scalar multiple of itself (same or opposite direction).
+</div>
+
+<h3>Finding Eigenvalues: Characteristic Equation</h3>
+<p>Rearranging: \((A - \lambda I)\mathbf{v} = \mathbf{0}\). For non-zero \(\mathbf{v}\), the matrix \((A - \lambda I)\) must be singular:</p>
+<div class="equation">
+  $$\det(A - \lambda I) = 0 \quad \text{(characteristic equation)}$$
+</div>
+
+<div class="example">
+  <strong>Example:</strong> Find the eigenvalues of \(A = \begin{pmatrix}4&1\\2&3\end{pmatrix}\).<br><br>
+  \(\det(A - \lambda I) = \det\begin{pmatrix}4-\lambda&1\\2&3-\lambda\end{pmatrix} = (4-\lambda)(3-\lambda) - 2 = \lambda^2 - 7\lambda + 10 = 0\)<br><br>
+  \((\lambda - 2)(\lambda - 5) = 0 \Rightarrow \lambda = 2\) or \(\lambda = 5\).
+</div>
+
+<h3>Finding Eigenvectors</h3>
+<p>For each eigenvalue \(\lambda\), solve \((A - \lambda I)\mathbf{v} = \mathbf{0}\).</p>
+
+<div class="example">
+  <strong>Example (continued):</strong> Find eigenvectors of \(A = \begin{pmatrix}4&1\\2&3\end{pmatrix}\).<br><br>
+  For \(\lambda = 2\): \((A - 2I)\mathbf{v} = \begin{pmatrix}2&1\\2&1\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix} = \mathbf{0}\)<br>
+  \(2x + y = 0 \Rightarrow y = -2x\). Eigenvector: \(\begin{pmatrix}1\\-2\end{pmatrix}\) (or any scalar multiple).<br><br>
+  For \(\lambda = 5\): \((A - 5I)\mathbf{v} = \begin{pmatrix}-1&1\\2&-2\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix} = \mathbf{0}\)<br>
+  \(-x + y = 0 \Rightarrow y = x\). Eigenvector: \(\begin{pmatrix}1\\1\end{pmatrix}\).
+</div>
+
+<div class="exam-tip">
+  <strong>AQA Exam Tip:</strong> Eigenvectors are not unique — any non-zero scalar multiple is equally valid. AQA mark schemes accept any correct scalar multiple. State clearly which eigenvalue corresponds to which eigenvector.
+</div>
+
+<h3>Eigenvalues and Diagonalisation (Further Context)</h3>
+<p>If \(A\) has linearly independent eigenvectors \(\mathbf{v}_1, \mathbf{v}_2, \ldots\) with eigenvalues \(\lambda_1, \lambda_2, \ldots\), then forming \(P = [\mathbf{v}_1\ \mathbf{v}_2\ \ldots]\) gives \(P^{-1}AP = D\) (diagonal), where \(D = \text{diag}(\lambda_1, \lambda_2, \ldots)\). This is used in solving certain differential equations and computing matrix powers.</p>
+
+<h2>9. Cayley-Hamilton Theorem</h2>
+
+<div class="definition">
+  <strong>Cayley-Hamilton Theorem:</strong> Every square matrix satisfies its own characteristic equation. That is, if \(\det(\lambda I - A) = \lambda^2 + p\lambda + q\) (for a \(2\times 2\) matrix), then \(A^2 + pA + qI = O\).
+</div>
+
+<div class="example">
+  <strong>Example:</strong> For \(A = \begin{pmatrix}4&1\\2&3\end{pmatrix}\), the characteristic equation is \(\lambda^2 - 7\lambda + 10 = 0\).<br><br>
+  By Cayley-Hamilton: \(A^2 - 7A + 10I = O\).<br><br>
+  Verify: \(A^2 = \begin{pmatrix}18&7\\14&11\end{pmatrix}\), \(7A = \begin{pmatrix}28&7\\14&21\end{pmatrix}\)<br>
+  \(A^2 - 7A + 10I = \begin{pmatrix}18-28+10 & 7-7+0 \\ 14-14+0 & 11-21+10\end{pmatrix} = \begin{pmatrix}0&0\\0&0\end{pmatrix}\) ✓
+</div>
+
+<p>The Cayley-Hamilton theorem can be used to find \(A^{-1}\) or to express higher powers of \(A\) in terms of lower powers.</p>
+
+<div class="example">
+  <strong>Using Cayley-Hamilton to find \(A^{-1}\):</strong> From \(A^2 - 7A + 10I = O\), rearranging:<br>
+  \(10I = 7A - A^2 = A(7I - A)\)<br>
+  \(A^{-1} = \dfrac{1}{10}(7I - A) = \dfrac{1}{10}\begin{pmatrix}3&-1\\-2&4\end{pmatrix}\)
+</div>
+
+<h2>10. Summary of Key Results</h2>
+
+<table>
+  <tr><th>Result</th><th>Formula / Statement</th></tr>
+  <tr><td>2×2 determinant</td><td>\(\det\begin{pmatrix}a&b\\c&d\end{pmatrix} = ad - bc\)</td></tr>
+  <tr><td>2×2 inverse</td><td>\(A^{-1} = \frac{1}{\det A}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}\)</td></tr>
+  <tr><td>\(\det(AB)\)</td><td>\(\det(A)\det(B)\)</td></tr>
+  <tr><td>Area scale factor</td><td>\(|\det A|\)</td></tr>
+  <tr><td>Characteristic equation</td><td>\(\det(A - \lambda I) = 0\)</td></tr>
+  <tr><td>Eigenvector equation</td><td>\(A\mathbf{v} = \lambda\mathbf{v}\)</td></tr>
+  <tr><td>Cayley-Hamilton</td><td>Matrix satisfies its own characteristic equation</td></tr>
+  <tr><td>Rotation matrix</td><td>\(\begin{pmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{pmatrix}\)</td></tr>
+</table>
+
+<h2>11. Practice Checklist</h2>
+<ul>
+  <li>Can you multiply two \(3\times 3\) matrices without errors?</li>
+  <li>Can you compute the determinant of a \(3\times 3\) matrix by cofactor expansion?</li>
+  <li>Can you find the inverse of a \(2\times 2\) and \(3\times 3\) matrix?</li>
+  <li>Can you use matrices to solve \(3\times 3\) simultaneous equations?</li>
+  <li>Can you identify and write down the standard 2D transformation matrices?</li>
+  <li>Can you find eigenvalues and eigenvectors of a \(2\times 2\) or \(3\times 3\) matrix?</li>
+  <li>Can you apply the Cayley-Hamilton theorem to find \(A^{-1}\) or simplify matrix expressions?</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+</body>
+</html>
