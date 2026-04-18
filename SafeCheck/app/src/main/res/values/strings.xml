@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SafeCheck</string>
+
+    <string-array name="severity_options">
+        <item>Low</item>
+        <item>High</item>
+    </string-array>
+</resources>
