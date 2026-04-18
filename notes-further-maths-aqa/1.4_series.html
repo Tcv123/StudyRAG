@@ -230,6 +230,375 @@
   <li>Can you find a Taylor series about a general point \(x = a\)?</li>
 </ul>
 
+<h2>Proof by Induction — Detailed Examples</h2>
+
+<h3>Divisibility induction</h3>
+
+<div class="example">
+<strong>Prove that \(7^n - 1\) is divisible by 6 for all \(n \geq 1\).</strong>
+
+<strong>Base case (\(n=1\)):</strong> \(7^1-1=6\), which is divisible by 6. ✓
+
+<strong>Inductive hypothesis:</strong> Assume \(7^k-1 = 6m\) for some integer \(m\).
+
+<strong>Inductive step:</strong> Show the result holds for \(n=k+1\):
+$$7^{k+1}-1 = 7\cdot 7^k - 1 = 7(6m+1)-1 = 42m+7-1 = 42m+6 = 6(7m+1)$$
+This is divisible by 6. ✓
+
+<strong>Conclusion:</strong> By the principle of mathematical induction, \(7^n-1\) is divisible by 6 for all \(n\geq1\).
+</div>
+
+<h3>Matrix power induction</h3>
+
+<div class="example">
+<strong>Prove \(\begin{pmatrix}2&1\\0&1\end{pmatrix}^n = \begin{pmatrix}2^n&2^n-1\\0&1\end{pmatrix}\) for all \(n\geq1\).</strong>
+
+<strong>Base (\(n=1\)):</strong> LHS \(=\begin{pmatrix}2&1\\0&1\end{pmatrix}\), RHS \(=\begin{pmatrix}2&1\\0&1\end{pmatrix}\). ✓
+
+<strong>Hypothesis:</strong> Assume \(M^k = \begin{pmatrix}2^k&2^k-1\\0&1\end{pmatrix}\).
+
+<strong>Step:</strong> \(M^{k+1} = M^k \cdot M = \begin{pmatrix}2^k&2^k-1\\0&1\end{pmatrix}\begin{pmatrix}2&1\\0&1\end{pmatrix} = \begin{pmatrix}2^{k+1}&2^k+(2^k-1)\\0&1\end{pmatrix} = \begin{pmatrix}2^{k+1}&2^{k+1}-1\\0&1\end{pmatrix}\). ✓
+</div>
+
+<div class="exam-tip">
+<strong>Induction structure (every time):</strong> Base case → State hypothesis for \(n=k\) → Add/multiply to reach \(n=k+1\) → Conclude by PMI. Always write the conclusion sentence.
+</div>
+
+<h2>Maclaurin Series — Products and Quotients</h2>
+
+<p>When we need the Maclaurin series of a product \(f(x)g(x)\), multiply the known series term by term. Only keep terms up to the required degree.</p>
+
+<div class="example">
+<strong>Find the series for \(e^x\cos x\) up to \(x^4\).</strong>
+
+$$e^x = 1+x+\frac{x^2}{2}+\frac{x^3}{6}+\frac{x^4}{24}+\cdots, \quad \cos x = 1-\frac{x^2}{2}+\frac{x^4}{24}-\cdots$$
+
+Multiply, keeping only terms up to degree 4:
+$$e^x\cos x = 1+x+\frac{x^2}{2}-\frac{x^2}{2}+\frac{x^3}{6}-\frac{x^3}{2}+\frac{x^4}{24}-\frac{x^4}{4}+\frac{x^4}{24}+\cdots$$
+$$= 1+x - \frac{x^3}{3}-\frac{x^4}{6}+\cdots$$
+</div>
+
+<div class="example">
+<strong>Quotient: Find the series for \(\tan x\) up to \(x^5\) using \(\sin x / \cos x\).</strong>
+
+Perform the division \(\sin x \div \cos x\):
+$$(x-\tfrac{x^3}{6}+\tfrac{x^5}{120}) \div (1-\tfrac{x^2}{2}+\tfrac{x^4}{24})$$
+Using long division: \(\tan x = x + \frac{x^3}{3}+\frac{2x^5}{15}+\cdots\)
+</div>
+
+<h2>Taylor Series — Worked Examples</h2>
+
+<p>The Taylor series of \(f(x)\) about \(x=a\) is:</p>
+$$f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n$$
+
+<div class="example">
+<strong>Find the Taylor series of \(\cos x\) about \(x = \pi/2\) up to the \((x-\pi/2)^3\) term.</strong>
+
+\(f(x)=\cos x\): \(f(\pi/2)=0\), \(f'(\pi/2)=-\sin(\pi/2)=-1\), \(f''(\pi/2)=-\cos(\pi/2)=0\), \(f'''(\pi/2)=\sin(\pi/2)=1\).
+
+$$\cos x = -(x-\tfrac{\pi}{2})+0+\frac{1}{6}(x-\tfrac{\pi}{2})^3 - \cdots$$
+</div>
+
+<div class="example">
+<strong>Find the Taylor series of \(\ln x\) about \(x=1\) up to \((x-1)^3\).</strong>
+
+\(f(1)=0\), \(f'(1)=1\), \(f''(1)=-1\), \(f'''(1)=2\).
+
+$$\ln x = (x-1)-\frac{(x-1)^2}{2}+\frac{(x-1)^3}{3}-\cdots$$
+</div>
+
+<h2>Error Estimation in Series Approximations</h2>
+
+<p>For an alternating series \(\sum (-1)^n a_n\) where \(a_n\) is decreasing to zero, the error after \(n\) terms is bounded by the first omitted term \(|a_{n+1}|\) (the <strong>alternating series estimation theorem</strong>).</p>
+
+<div class="example">
+<strong>Example:</strong> Use \(\ln(1+x)=x-x^2/2+x^3/3-\cdots\) to estimate \(\ln(1.2)\) correct to 3 decimal places.
+
+At \(x=0.2\): \(0.2-0.02+0.00267-0.0004+\ldots\)
+First omitted term (5th term): \(0.2^5/5 = 0.000064\), which is less than 0.0001.
+\(\ln(1.2)\approx0.2-0.02+0.00267-0.0004=0.18227\approx0.182\).
+</div>
+
+<h2>AQA Exam Technique — Series</h2>
+
+<div class="exam-tip">
+<strong>Key tips:</strong>
+<ul>
+  <li><strong>Induction:</strong> The conclusion sentence is compulsory for full marks: "By the principle of mathematical induction, the result holds for all \(n\geq1\)."</li>
+  <li><strong>Maclaurin series:</strong> State the range of validity if asked. For \(\ln(1+x)\) it is \(-1&lt;x\leq1\); for \((1+x)^n\) it is \(|x|&lt;1\).</li>
+  <li><strong>Taylor series:</strong> Compute derivatives at the centre point \(x=a\), not at \(x=0\).</li>
+  <li><strong>Limits via series:</strong> If asked to evaluate a limit as \(x\to0\), expand the numerator and denominator separately, then cancel the lowest power.</li>
+  <li><strong>Standard results:</strong> You must know \(\sum r = n(n+1)/2\), \(\sum r^2 = n(n+1)(2n+1)/6\), \(\sum r^3 = [n(n+1)/2]^2\) without derivation.</li>
+</ul>
+</div>
+
+<table>
+  <tr><th>Series</th><th>Expansion</th><th>Valid for</th></tr>
+  <tr><td>\(e^x\)</td><td>\(1+x+x^2/2!+x^3/3!+\cdots\)</td><td>All \(x\)</td></tr>
+  <tr><td>\(\sin x\)</td><td>\(x-x^3/6+x^5/120-\cdots\)</td><td>All \(x\)</td></tr>
+  <tr><td>\(\cos x\)</td><td>\(1-x^2/2+x^4/24-\cdots\)</td><td>All \(x\)</td></tr>
+  <tr><td>\(\ln(1+x)\)</td><td>\(x-x^2/2+x^3/3-\cdots\)</td><td>\(-1&lt;x\leq1\)</td></tr>
+  <tr><td>\((1+x)^n\)</td><td>\(1+nx+n(n-1)x^2/2!+\cdots\)</td><td>\(|x|&lt;1\) (non-integer \(n\))</td></tr>
+</table>
+
+<h2>Method of Differences — Further Examples</h2>
+
+<p>The method of differences works when each term can be written as \(f(r+1)-f(r)\) or \(f(r)-f(r+k)\) for some function \(f\). The sum then telescopes.</p>
+
+<div class="example">
+<strong>Example 1:</strong> Find \(\displaystyle\sum_{r=1}^n \dfrac{2}{r(r+2)}\).
+
+Partial fractions: \(\dfrac{2}{r(r+2)} = \dfrac{1}{r}-\dfrac{1}{r+2}\).
+
+This is a "gap-2" telescoping. Writing out the first few and last few terms:
+$$\left(1-\frac{1}{3}\right)+\left(\frac{1}{2}-\frac{1}{4}\right)+\left(\frac{1}{3}-\frac{1}{5}\right)+\cdots+\left(\frac{1}{n}-\frac{1}{n+2}\right)$$
+
+Terms that survive: \(\frac{1}{1}+\frac{1}{2}-\frac{1}{n+1}-\frac{1}{n+2} = \frac{3}{2}-\frac{1}{n+1}-\frac{1}{n+2}\).
+</div>
+
+<div class="example">
+<strong>Example 2:</strong> Use the identity \(r(r+1)(r+2)-(r-1)r(r+1)=3r(r+1)\) to find \(\sum_{r=1}^n r(r+1)\).
+
+$$3\sum_{r=1}^n r(r+1) = \sum_{r=1}^n[r(r+1)(r+2)-(r-1)r(r+1)] = n(n+1)(n+2)-0$$
+$$\sum_{r=1}^n r(r+1) = \frac{n(n+1)(n+2)}{3}$$
+</div>
+
+<h2>Summation Formulae — Derivation of \(\sum r^3\)</h2>
+
+<div class="example">
+<strong>Prove \(\displaystyle\sum_{r=1}^n r^3 = \left[\dfrac{n(n+1)}{2}\right]^2\) by induction.</strong>
+
+<strong>Base:</strong> \(n=1\): LHS=1, RHS=1. ✓
+
+<strong>Hypothesis:</strong> \(\sum_{r=1}^k r^3 = \frac{k^2(k+1)^2}{4}\).
+
+<strong>Step:</strong> Add \((k+1)^3\):
+$$\frac{k^2(k+1)^2}{4}+(k+1)^3 = \frac{(k+1)^2}{4}[k^2+4(k+1)] = \frac{(k+1)^2(k+2)^2}{4}$$
+This is the formula with \(n=k+1\). ✓
+</div>
+
+<h2>Using Maclaurin Series to Approximate Integrals</h2>
+
+<div class="example">
+<strong>Approximate \(\displaystyle\int_0^{0.3} e^{-x^2}\,dx\) to 4 d.p.</strong>
+
+Replace \(x\) by \(-x^2\) in \(e^x = 1+x+x^2/2+\cdots\):
+$$e^{-x^2} = 1-x^2+\frac{x^4}{2}-\frac{x^6}{6}+\cdots$$
+
+Integrate term by term:
+$$\int_0^{0.3}\left(1-x^2+\frac{x^4}{2}-\frac{x^6}{6}\right)dx = \left[x-\frac{x^3}{3}+\frac{x^5}{10}-\frac{x^7}{42}\right]_0^{0.3}$$
+$$= 0.3-0.009+0.000243-0.0000052\approx0.2911$$
+
+Error bound: next term \(\approx0.3^9/216\approx 5\times10^{-8}\). Accurate to 4 d.p.
+</div>
+
+<h2>Binomial Series — Applications</h2>
+
+<div class="example">
+<strong>Example:</strong> Find the first three terms of \(\dfrac{1}{\sqrt{4+x}}\) for small \(x\).
+
+$$\frac{1}{\sqrt{4+x}} = \frac{1}{2}(1+x/4)^{-1/2} = \frac{1}{2}\left[1+\left(-\frac{1}{2}\right)\frac{x}{4}+\frac{(-1/2)(-3/2)}{2}\cdot\frac{x^2}{16}+\cdots\right]$$
+$$= \frac{1}{2}\left[1-\frac{x}{8}+\frac{3x^2}{128}+\cdots\right] = \frac{1}{2}-\frac{x}{16}+\frac{3x^2}{256}+\cdots$$
+
+Valid for \(|x/4|&lt;1\), i.e.\ \(|x|&lt;4\).
+</div>
+
+<h2>Standard Sum Results Summary</h2>
+
+<table>
+  <tr><th>Sum</th><th>Formula</th></tr>
+  <tr><td>\(\displaystyle\sum_{r=1}^n 1\)</td><td>\(n\)</td></tr>
+  <tr><td>\(\displaystyle\sum_{r=1}^n r\)</td><td>\(\dfrac{n(n+1)}{2}\)</td></tr>
+  <tr><td>\(\displaystyle\sum_{r=1}^n r^2\)</td><td>\(\dfrac{n(n+1)(2n+1)}{6}\)</td></tr>
+  <tr><td>\(\displaystyle\sum_{r=1}^n r^3\)</td><td>\(\left[\dfrac{n(n+1)}{2}\right]^2\)</td></tr>
+  <tr><td>\(\displaystyle\sum_{r=1}^n r(r+1)\)</td><td>\(\dfrac{n(n+1)(n+2)}{3}\)</td></tr>
+  <tr><td>\(\displaystyle\sum_{r=1}^n r(r+1)(r+2)\)</td><td>\(\dfrac{n(n+1)(n+2)(n+3)}{4}\)</td></tr>
+</table>
+
+</div>
+
+<h2>Proof by Induction — More Examples</h2>
+<div class="example">
+  <strong>Example 1 — Prove \(\displaystyle\sum_{r=1}^n r = \dfrac{n(n+1)}{2}\):</strong><br>
+  <strong>Base:</strong> \(n=1\): LHS\(=1\), RHS\(=\tfrac{1\cdot 2}{2}=1\). ✓<br>
+  <strong>Inductive step:</strong> Assume true for \(n=k\). Then:<br>
+  \(\displaystyle\sum_{r=1}^{k+1}r = \dfrac{k(k+1)}{2}+(k+1) = \dfrac{k(k+1)+2(k+1)}{2} = \dfrac{(k+1)(k+2)}{2}\).<br>
+  This is the formula for \(n=k+1\). By induction, true for all \(n\ge 1\). ✓
+</div>
+<div class="example">
+  <strong>Example 2 — Prove \(7^n - 1\) is divisible by 6:</strong><br>
+  <strong>Base:</strong> \(n=1\): \(7-1=6\), divisible by 6. ✓<br>
+  <strong>Inductive step:</strong> Assume \(7^k-1=6m\) for some integer \(m\). Then:<br>
+  \(7^{k+1}-1 = 7\cdot 7^k - 1 = 7(7^k-1)+7-1 = 7\cdot 6m+6 = 6(7m+1)\).<br>
+  This is divisible by 6. By induction, true for all \(n\ge 1\). ✓
+</div>
+
+<h2>Maclaurin Series — Derivation from Scratch</h2>
+<div class="definition">
+  The Maclaurin series is a Taylor series about \(x=0\):
+  \[f(x) = f(0)+f'(0)x+\dfrac{f''(0)}{2!}x^2+\dfrac{f'''(0)}{3!}x^3+\cdots\]
+</div>
+<div class="example">
+  <strong>Derive the series for \(\sin x\):</strong><br>
+  \(f(x)=\sin x\): \(f(0)=0\). \(f'(x)=\cos x\): \(f'(0)=1\). \(f''(x)=-\sin x\): \(f''(0)=0\).<br>
+  \(f'''(x)=-\cos x\): \(f'''(0)=-1\). \(f^{(4)}(x)=\sin x\): \(f^{(4)}(0)=0\). Cycle repeats.<br>
+  \(\sin x = x - \dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\dfrac{x^7}{7!}+\cdots\)
+</div>
+<div class="example">
+  <strong>Derive series for \(\ln(1+x)\):</strong><br>
+  \(f(x)=\ln(1+x)\): \(f(0)=0\). \(f'(x)=\dfrac{1}{1+x}\): \(f'(0)=1\).<br>
+  \(f''(x)=-\dfrac{1}{(1+x)^2}\): \(f''(0)=-1\). \(f'''(x)=\dfrac{2}{(1+x)^3}\): \(f'''(0)=2\).<br>
+  In general: \(f^{(n)}(0) = (-1)^{n+1}(n-1)!\).<br>
+  \(\ln(1+x) = x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\dfrac{x^4}{4}+\cdots\quad(-1<x\le 1)\)
+</div>
+
+<h2>Taylor Series and Approximations</h2>
+<div class="definition">
+  Taylor series about \(x=a\):
+  \[f(x) = f(a)+f'(a)(x-a)+\dfrac{f''(a)}{2!}(x-a)^2+\cdots\]
+  <strong>Linear approximation:</strong> \(f(x) \approx f(a)+f'(a)(x-a)\) (tangent line at \(a\)).<br>
+  <strong>Quadratic approximation:</strong> Include the second-order term for better accuracy.
+</div>
+<div class="example">
+  <strong>Example — Approximate \(\sqrt{1.1}\):</strong><br>
+  Let \(f(x)=\sqrt{x}\), \(a=1\). \(f(1)=1,\; f'(1)=\tfrac{1}{2},\; f''(1)=-\tfrac{1}{4}\).<br>
+  \(\sqrt{1.1} \approx 1+\tfrac{1}{2}(0.1)-\tfrac{1}{8}(0.1)^2 = 1+0.05-0.00125 = 1.04875\).<br>
+  (Exact: \(1.04881...\))
+</div>
+
+<h2>Method of Differences — Full Examples</h2>
+<div class="example">
+  <strong>Example 1:</strong> Find \(\displaystyle\sum_{r=1}^n \dfrac{1}{r(r+1)}\).<br>
+  Write \(\dfrac{1}{r(r+1)}=\dfrac{1}{r}-\dfrac{1}{r+1}\) (partial fractions).<br>
+  Telescoping: \(\left(1-\tfrac{1}{2}\right)+\left(\tfrac{1}{2}-\tfrac{1}{3}\right)+\cdots+\left(\tfrac{1}{n}-\tfrac{1}{n+1}\right) = 1-\dfrac{1}{n+1} = \dfrac{n}{n+1}\).
+</div>
+<div class="example">
+  <strong>Example 2:</strong> Find \(\displaystyle\sum_{r=1}^n r(r+1)(r+2) - r(r+1)(r+2)(r+3)\)... actually, use a difference form.<br>
+  <strong>Alternative:</strong> Sum \(\displaystyle\sum_{r=1}^n \dfrac{1}{(2r-1)(2r+1)}\).<br>
+  \(\dfrac{1}{(2r-1)(2r+1)} = \dfrac{1}{2}\left(\dfrac{1}{2r-1}-\dfrac{1}{2r+1}\right)\).<br>
+  Sum \(= \dfrac{1}{2}\left(1-\dfrac{1}{2n+1}\right) = \dfrac{n}{2n+1}\).
+</div>
+
+<h2>Convergence and Limits of Series</h2>
+<div class="definition">
+  A series \(\sum_{r=1}^\infty a_r\) <strong>converges</strong> if the partial sums \(S_n\to L\) as \(n\to\infty\).<br>
+  <strong>Geometric series:</strong> \(\sum_{r=0}^\infty ar^n = \dfrac{a}{1-r}\) for \(|r|<1\); diverges for \(|r|\ge 1\).<br>
+  <strong>Necessary condition:</strong> If \(\sum a_r\) converges, then \(a_r\to 0\). But the converse fails (e.g. harmonic series \(\sum 1/r\) diverges even though \(1/r\to 0\)).
+</div>
+<div class="example">
+  <strong>Example — Sum to infinity:</strong> \(\displaystyle\sum_{r=2}^\infty \dfrac{3}{r(r-1)}\).<br>
+  \(\dfrac{3}{r(r-1)} = 3\left(\dfrac{1}{r-1}-\dfrac{1}{r}\right)\). Sum from 2 to \(\infty\):<br>
+  \(S = 3\left(1 - \lim_{r\to\infty}\dfrac{1}{r}\right) = 3\cdot 1 = 3\).
+</div>
+
+<h2>Induction — Inequality Proof</h2>
+<div class="example">
+  <strong>Example — Prove \(2^n > 2n\) for \(n \ge 3\):</strong><br>
+  <strong>Base:</strong> \(n=3\): \(8>6\). ✓<br>
+  <strong>Inductive step:</strong> Assume \(2^k > 2k\) for some \(k\ge 3\). Then:<br>
+  \(2^{k+1} = 2\cdot 2^k > 2\cdot 2k = 4k = 2(k+1)+2(k-1) > 2(k+1)\) since \(k\ge 3>1\).<br>
+  So \(2^{k+1}>2(k+1)\). By induction, true for all \(n\ge 3\). ✓
+</div>
+
+
+<h2>Proof by Induction — Divisibility Examples</h2>
+<div class="definition">
+  <strong>Structure of an induction proof:</strong><br>
+  1. <em>Basis step:</em> Verify the statement for the smallest value (usually \(n=1\) or \(n=0\)).<br>
+  2. <em>Inductive hypothesis:</em> Assume the statement holds for \(n=k\).<br>
+  3. <em>Inductive step:</em> Using the assumption, prove it holds for \(n=k+1\).<br>
+  4. <em>Conclusion:</em> By the principle of mathematical induction, the result holds for all \(n\ge n_0\).
+</div>
+<div class="example">
+  <strong>Example — Prove \(5^n - 1\) is divisible by 4 for all \(n \ge 1\):</strong><br>
+  <strong>Base:</strong> \(n=1\): \(5^1 - 1 = 4 = 4\times 1\). ✓<br>
+  <strong>Hypothesis:</strong> Assume \(4 \mid 5^k - 1\), i.e. \(5^k - 1 = 4m\) for some integer \(m\).<br>
+  <strong>Step:</strong> \(5^{k+1} - 1 = 5 \cdot 5^k - 1 = 5(4m+1) - 1 = 20m + 4 = 4(5m+1)\).<br>
+  So \(4 \mid 5^{k+1}-1\). By induction, true for all \(n\ge 1\). ✓
+</div>
+<div class="example">
+  <strong>Example — Prove \(\begin{pmatrix}3&1\\0&1\end{pmatrix}^n = \begin{pmatrix}3^n & \frac{3^n-1}{2}\\0&1\end{pmatrix}\) for \(n\ge 1\):</strong><br>
+  <strong>Base:</strong> \(n=1\): LHS\(=\begin{pmatrix}3&1\\0&1\end{pmatrix}\), RHS\(=\begin{pmatrix}3&1\\0&1\end{pmatrix}\). ✓<br>
+  <strong>Step:</strong> Assume true for \(n=k\). Multiply by \(\begin{pmatrix}3&1\\0&1\end{pmatrix}\):<br>
+  \(\begin{pmatrix}3^k & \frac{3^k-1}{2}\\0&1\end{pmatrix}\begin{pmatrix}3&1\\0&1\end{pmatrix} = \begin{pmatrix}3^{k+1} & 3^k + \frac{3^k-1}{2}\\0&1\end{pmatrix} = \begin{pmatrix}3^{k+1} & \frac{3^{k+1}-1}{2}\\0&1\end{pmatrix}\). ✓
+</div>
+<div class="exam-tip">
+  For divisibility proofs, write \(f(k+1) = \alpha \cdot f(k) + \text{(multiple of }d\text{)}\) to make it clear \(d\) divides \(f(k+1)\). Do not just say "therefore divisible" — show the algebra.
+</div>
+
+<h2>Maclaurin Series — Combining Series</h2>
+<p>You can multiply, divide, substitute into, and add known Maclaurin series to get new ones without differentiating from scratch.</p>
+<div class="example">
+  <strong>Example 1 — Find the Maclaurin series for \(e^x \cos x\) up to \(x^3\):</strong><br>
+  \(e^x = 1+x+\tfrac{x^2}{2}+\tfrac{x^3}{6}+\cdots\)<br>
+  \(\cos x = 1-\tfrac{x^2}{2}+\cdots\)<br>
+  Multiply (keeping terms up to \(x^3\)):<br>
+  \(e^x\cos x = \left(1+x+\tfrac{x^2}{2}+\tfrac{x^3}{6}\right)\left(1-\tfrac{x^2}{2}\right)+\cdots\)<br>
+  \(= 1+x+\tfrac{x^2}{2}+\tfrac{x^3}{6} - \tfrac{x^2}{2} - \tfrac{x^3}{2}+\cdots = 1+x-\tfrac{x^3}{3}+\cdots\)
+</div>
+<div class="example">
+  <strong>Example 2 — Find the Maclaurin series for \(\sin(\ln(1+x))\) up to \(x^2\):</strong><br>
+  Let \(u = \ln(1+x) = x - \tfrac{x^2}{2} + \cdots\)<br>
+  \(\sin u = u - \tfrac{u^3}{6}+\cdots \approx u\) to order \(x^2\).<br>
+  So \(\sin(\ln(1+x)) \approx x - \tfrac{x^2}{2} + \cdots\)
+</div>
+<div class="exam-tip">
+  When finding series for composite functions, substitute the inner series into the outer one. Only keep terms up to the required power — drop any term with degree higher than needed early to reduce working.
+</div>
+
+<h2>Taylor Series — Further Examples</h2>
+<div class="example">
+  <strong>Example — Expand \(\tan x\) about \(x=0\) up to \(x^5\):</strong><br>
+  \(f(x)=\tan x\): \(f(0)=0\), \(f'(0)=\sec^2 0=1\), \(f''(0)=2\sec^2 0\tan 0=0\),<br>
+  \(f'''(0)=2\), \(f^{(4)}(0)=0\), \(f^{(5)}(0)=16\).<br>
+  \(\tan x = x + \dfrac{x^3}{3} + \dfrac{2x^5}{15}+\cdots\)
+</div>
+<div class="example">
+  <strong>Example — Expand \(\ln\cos x\) about \(x=0\) up to \(x^4\):</strong><br>
+  Use \(\cos x = 1 - \tfrac{x^2}{2}+\tfrac{x^4}{24}-\cdots\), so \(\cos x = 1 + u\) where \(u=-\tfrac{x^2}{2}+\tfrac{x^4}{24}-\cdots\)<br>
+  \(\ln(1+u) = u - \tfrac{u^2}{2}+\cdots\)<br>
+  \(u = -\tfrac{x^2}{2}+\tfrac{x^4}{24}\), \(\tfrac{u^2}{2} = \tfrac{x^4}{8}+\cdots\)<br>
+  \(\ln\cos x = -\tfrac{x^2}{2}+\tfrac{x^4}{24}-\tfrac{x^4}{8}+\cdots = -\tfrac{x^2}{2}-\tfrac{x^4}{12}+\cdots\)
+</div>
+
+<h2>Error Estimation in Series</h2>
+<div class="definition">
+  When you truncate a series, the <strong>remainder</strong> \(R_n\) is the sum of all omitted terms.<br>
+  For alternating series: \(|R_n| \le |a_{n+1}|\) (the first omitted term gives an upper bound for the error).<br>
+  For power series within their radius of convergence, use the Lagrange remainder:<br>
+  \[R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!}x^{n+1}\quad\text{for some }c\text{ between }0\text{ and }x.\]
+</div>
+<div class="example">
+  <strong>Example — Estimate the error in using \(\sin x \approx x - \tfrac{x^3}{6}\) for \(x=0.1\):</strong><br>
+  Next term: \(\tfrac{x^5}{120} = \tfrac{(0.1)^5}{120} = \dfrac{10^{-5}}{120} \approx 8.3\times10^{-8}\).<br>
+  So the error is less than \(10^{-7}\) — an excellent approximation.
+</div>
+
+<h2>Standard Results Summary</h2>
+<table>
+  <tr><th>Series</th><th>Expansion</th><th>Validity</th></tr>
+  <tr><td>\(e^x\)</td><td>\(1+x+\dfrac{x^2}{2!}+\dfrac{x^3}{3!}+\cdots\)</td><td>All \(x\)</td></tr>
+  <tr><td>\(\sin x\)</td><td>\(x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots\)</td><td>All \(x\)</td></tr>
+  <tr><td>\(\cos x\)</td><td>\(1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\cdots\)</td><td>All \(x\)</td></tr>
+  <tr><td>\(\ln(1+x)\)</td><td>\(x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\cdots\)</td><td>\(-1 < x \le 1\)</td></tr>
+  <tr><td>\((1+x)^n\)</td><td>\(1+nx+\dfrac{n(n-1)}{2!}x^2+\cdots\)</td><td>\(|x|<1\) (non-integer \(n\))</td></tr>
+  <tr><td>\(\arctan x\)</td><td>\(x-\dfrac{x^3}{3}+\dfrac{x^5}{5}-\cdots\)</td><td>\(|x|\le 1\)</td></tr>
+</table>
+
+<h2>AQA Exam Technique</h2>
+<div class="exam-tip">
+  <strong>Induction proofs:</strong> You must use the <em>exact</em> wording prescribed by AQA. The conclusion must state "by the principle of mathematical induction, the result is true for all \(n\ge n_0\)". Never skip the base case, and always write the inductive hypothesis explicitly.
+</div>
+<div class="exam-tip">
+  <strong>Method of differences:</strong> Always write out at least 4 rows of the telescoping sum, then write the last 2 rows. State clearly which terms cancel and which survive. Don't forget to simplify the final answer.
+</div>
+<div class="exam-tip">
+  <strong>Maclaurin series validity:</strong> AQA will often ask you to <em>state</em> the range of validity. For \(\ln(1+x)\) the range is \(-1<x\le 1\); do not write \(|x|<1\) (this misses \(x=1\)). For \((1+x)^n\) with integer \(n\), the series terminates and is valid for all \(x\).
+</div>
+<div class="exam-tip">
+  <strong>Standard result sums:</strong> The formulae \(\sum r\), \(\sum r^2\), \(\sum r^3\) are given in the formula booklet. Always quote the formula, substitute, then simplify step by step showing the factorisation. Leaving an unexpanded polynomial will lose accuracy marks.
+</div>
+
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", function() {

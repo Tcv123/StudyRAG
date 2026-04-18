@@ -201,6 +201,396 @@
   <li>Can you integrate using inverse trigonometric functions and completing the square?</li>
 </ul>
 
+<h2>Arc Length — Parametric Examples</h2>
+
+<p>For a parametric curve \(x=f(t)\), \(y=g(t)\), the arc length from \(t=a\) to \(t=b\) is:</p>
+$$L = \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}\,dt$$
+
+<div class="example">
+<strong>Example:</strong> Find the arc length of \(x=t^3/3\), \(y=t^2/2\) from \(t=0\) to \(t=2\).
+
+\(\dfrac{dx}{dt}=t^2\), \(\dfrac{dy}{dt}=t\). Then:
+$$\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2 = t^4+t^2 = t^2(t^2+1)$$
+$$L = \int_0^2 t\sqrt{t^2+1}\,dt$$
+Let \(u=t^2+1\), \(du=2t\,dt\):
+$$L = \frac{1}{2}\int_1^5 \sqrt{u}\,du = \frac{1}{2}\cdot\frac{2}{3}\left[u^{3/2}\right]_1^5 = \frac{1}{3}(5\sqrt{5}-1)$$
+</div>
+
+<div class="example">
+<strong>Cartesian example:</strong> For \(y=\cosh x\), \(0\leq x\leq 1\): \(\dfrac{dy}{dx}=\sinh x\), and \(1+\sinh^2x=\cosh^2x\), so:
+$$L = \int_0^1\cosh x\,dx = \sinh 1$$
+</div>
+
+<h2>Surface of Revolution — Full Example</h2>
+
+<p>When \(y=f(x)\) is rotated about the \(x\)-axis from \(x=a\) to \(x=b\):</p>
+$$S = 2\pi\int_a^b y\sqrt{1+\left(\frac{dy}{dx}\right)^2}\,dx$$
+
+<div class="example">
+<strong>Example:</strong> Find the surface area when \(y=\sqrt{x}\), \(1\leq x\leq4\), is rotated about the \(x\)-axis.
+
+\(\dfrac{dy}{dx}=\dfrac{1}{2\sqrt{x}}\), so \(1+\left(\dfrac{dy}{dx}\right)^2 = \dfrac{4x+1}{4x}\).
+
+$$S = 2\pi\int_1^4\sqrt{x}\cdot\frac{\sqrt{4x+1}}{2\sqrt{x}}\,dx = \pi\int_1^4\sqrt{4x+1}\,dx$$
+
+Let \(u=4x+1\): \(S = \dfrac{\pi}{4}\cdot\dfrac{2}{3}\left[u^{3/2}\right]_5^{17} = \dfrac{\pi}{6}(17\sqrt{17}-5\sqrt{5})\).
+</div>
+
+<h2>Reduction Formulae and Wallis's Formula</h2>
+
+<p>Let \(I_n = \displaystyle\int_0^{\pi/2}\sin^n x\,dx\). The reduction formula (derived by IBP) is:</p>
+$$I_n = \frac{n-1}{n}I_{n-2}, \qquad I_0 = \frac{\pi}{2},\quad I_1 = 1$$
+
+<p>Applying repeatedly gives <strong>Wallis's formula</strong>:</p>
+$$\frac{\pi}{2} = \frac{2\cdot2\cdot4\cdot4\cdot6\cdot6\cdots}{1\cdot3\cdot3\cdot5\cdot5\cdot7\cdots}$$
+
+<div class="example">
+<strong>Values:</strong>
+$$I_6 = \frac{5}{6}\cdot\frac{3}{4}\cdot\frac{1}{2}\cdot\frac{\pi}{2} = \frac{5\pi}{32}, \qquad I_5 = \frac{4}{5}\cdot\frac{2}{3}\cdot1 = \frac{8}{15}$$
+</div>
+
+<h2>Integration Using Hyperbolic Substitution</h2>
+
+<table>
+  <tr><th>Integrand form</th><th>Substitution</th><th>Result</th></tr>
+  <tr><td>\(\dfrac{1}{\sqrt{a^2+x^2}}\)</td><td>\(x=a\sinh t\)</td><td>\(\text{arcsinh}(x/a)+C = \ln\!\left(\frac{x}{a}+\sqrt{1+\frac{x^2}{a^2}}\right)+C\)</td></tr>
+  <tr><td>\(\dfrac{1}{\sqrt{x^2-a^2}}\)</td><td>\(x=a\cosh t\)</td><td>\(\text{arccosh}(x/a)+C = \ln\!\left(x+\sqrt{x^2-a^2}\right)+C\)</td></tr>
+  <tr><td>\(\sqrt{a^2+x^2}\)</td><td>\(x=a\sinh t\)</td><td>\(\dfrac{x\sqrt{a^2+x^2}}{2}+\dfrac{a^2}{2}\text{arcsinh}(x/a)+C\)</td></tr>
+</table>
+
+<div class="example">
+<strong>Example:</strong> Find \(\displaystyle\int_0^1\dfrac{1}{\sqrt{x^2+3}}\,dx\).
+
+Let \(x=\sqrt{3}\sinh t\): result is \(\bigl[\text{arcsinh}(x/\sqrt{3})\bigr]_0^1 = \text{arcsinh}(1/\sqrt{3}) = \ln(1/\sqrt{3}+\sqrt{4/3}) = \ln(\sqrt{3}/\sqrt{3}\cdot\sqrt{3})=\ln\sqrt{3}\).
+</div>
+
+<h2>AQA Exam Technique — Further Calculus</h2>
+
+<div class="exam-tip">
+<strong>Key tips:</strong>
+<ul>
+  <li><strong>Arc length:</strong> Remember the \(\sqrt{\phantom{x}}\) around \(1+(y')^2\). Simplify inside before integrating.</li>
+  <li><strong>Surface area:</strong> Has \(2\pi\) and \(y\) (radius), not \(y^2\). Check you are rotating about the correct axis.</li>
+  <li><strong>Reduction formulae:</strong> Derive by IBP unless told to assume. Show boundary terms vanish.</li>
+  <li><strong>Improper integrals:</strong> Write as a limit explicitly: \(\displaystyle\lim_{t\to\infty}\int_a^t f(x)\,dx\).</li>
+  <li><strong>Convergence:</strong> \(\int_1^\infty x^{-p}\,dx\) converges iff \(p>1\).</li>
+  <li><strong>Mean value:</strong> Mean \(= \dfrac{1}{b-a}\int_a^b f(x)\,dx\). Don't omit the \(\frac{1}{b-a}\) factor.</li>
+</ul>
+</div>
+
+<h2>Volume of Revolution — Full Examples</h2>
+<div class="definition">
+  <strong>Volume about the x-axis:</strong> \(\displaystyle V = \pi\int_a^b y^2\,dx\)<br>
+  <strong>Volume about the y-axis:</strong> \(\displaystyle V = \pi\int_c^d x^2\,dy\)<br>
+  <strong>Parametric form (x-axis):</strong> \(\displaystyle V = \pi\int_{t_1}^{t_2} y^2\,\dfrac{dx}{dt}\,dt\)
+</div>
+<div class="example">
+  <strong>Example 1:</strong> Find the volume generated when the region bounded by \(y=\sqrt{x}\), \(x=0\), \(x=4\) is rotated \(2\pi\) about the x-axis.<br>
+  \(V = \pi\displaystyle\int_0^4 (\sqrt{x})^2\,dx = \pi\int_0^4 x\,dx = \pi\left[\dfrac{x^2}{2}\right]_0^4 = \pi\cdot 8 = 8\pi\)
+</div>
+<div class="example">
+  <strong>Example 2:</strong> The curve \(x = t^2,\; y = t^3\) for \(0\le t\le 1\) is rotated about the x-axis. Find the volume.<br>
+  \(\dfrac{dx}{dt} = 2t\), so \(V = \pi\displaystyle\int_0^1 (t^3)^2\cdot 2t\,dt = 2\pi\int_0^1 t^7\,dt = 2\pi\left[\dfrac{t^8}{8}\right]_0^1 = \dfrac{\pi}{4}\)
+</div>
+<div class="example">
+  <strong>Example 3:</strong> The region bounded by \(y = e^x\), \(y=0\), \(x=0\), \(x=1\) is rotated about the x-axis. Find the volume.<br>
+  \(V = \pi\displaystyle\int_0^1 e^{2x}\,dx = \pi\left[\dfrac{e^{2x}}{2}\right]_0^1 = \dfrac{\pi}{2}(e^2-1)\)
+</div>
+
+<h2>Integration by Parts — Advanced Techniques</h2>
+<div class="definition">
+  Integration by parts: \(\displaystyle\int u\,\dfrac{dv}{dx}\,dx = uv - \int v\,\dfrac{du}{dx}\,dx\)<br>
+  Use the <strong>LIATE</strong> priority for \(u\): Logarithm, Inverse trig, Algebraic, Trigonometric, Exponential.
+</div>
+<div class="example">
+  <strong>Example 1: \(\int x^2 e^x\,dx\)</strong><br>
+  Apply IBP twice. Let \(u=x^2,\; dv=e^x\,dx\). Then \(\int x^2 e^x\,dx = x^2 e^x - 2\int xe^x\,dx\).<br>
+  For \(\int xe^x\,dx\): \(u=x,\; dv=e^x\,dx \Rightarrow xe^x - e^x\).<br>
+  So \(\int x^2 e^x\,dx = x^2 e^x - 2(xe^x - e^x) + C = e^x(x^2-2x+2)+C\).
+</div>
+<div class="example">
+  <strong>Example 2: \(\int e^x \sin x\,dx\)</strong> (cyclic IBP)<br>
+  Let \(I = \int e^x\sin x\,dx\). IBP: \(u=\sin x,\;dv=e^x\,dx\):<br>
+  \(I = e^x\sin x - \int e^x\cos x\,dx\).<br>
+  IBP again on \(\int e^x\cos x\,dx\): \(u=\cos x,\;dv=e^x\,dx\):<br>
+  \(\int e^x\cos x\,dx = e^x\cos x + \int e^x\sin x\,dx = e^x\cos x + I\).<br>
+  So \(I = e^x\sin x - e^x\cos x - I \Rightarrow 2I = e^x(\sin x-\cos x) \Rightarrow I = \dfrac{e^x(\sin x-\cos x)}{2}+C\).
+</div>
+<div class="example">
+  <strong>Example 3: \(\int \ln x\,dx\)</strong><br>
+  Let \(u=\ln x,\; dv=1\,dx \Rightarrow du=\tfrac{1}{x}\,dx,\; v=x\).<br>
+  \(\int\ln x\,dx = x\ln x - \int x\cdot\tfrac{1}{x}\,dx = x\ln x - x + C\).
+</div>
+
+<h2>Improper Integrals — Full Worked Examples</h2>
+<div class="definition">
+  An integral is <strong>improper</strong> if:
+  <ul>
+    <li>One or both limits are infinite: \(\displaystyle\int_a^\infty f(x)\,dx = \lim_{t\to\infty}\int_a^t f(x)\,dx\)</li>
+    <li>The integrand has a singularity in \([a,b]\): \(\displaystyle\int_0^1 x^{-1/2}\,dx = \lim_{\varepsilon\to 0^+}\int_\varepsilon^1 x^{-1/2}\,dx\)</li>
+  </ul>
+  The integral <strong>converges</strong> if the limit exists and is finite; otherwise it <strong>diverges</strong>.
+</div>
+<div class="example">
+  <strong>Example 1:</strong> \(\displaystyle\int_1^\infty \dfrac{1}{x^2}\,dx\)<br>
+  \(= \lim_{t\to\infty}\left[-\dfrac{1}{x}\right]_1^t = \lim_{t\to\infty}\left(-\dfrac{1}{t}+1\right) = 1\). Converges to \(1\).
+</div>
+<div class="example">
+  <strong>Example 2:</strong> \(\displaystyle\int_1^\infty \dfrac{1}{x}\,dx\)<br>
+  \(= \lim_{t\to\infty}[\ln x]_1^t = \lim_{t\to\infty}\ln t = \infty\). <strong>Diverges.</strong>
+</div>
+<div class="example">
+  <strong>Example 3:</strong> \(\displaystyle\int_0^1 \dfrac{1}{\sqrt{x}}\,dx\)<br>
+  \(= \lim_{\varepsilon\to 0^+}\left[2\sqrt{x}\right]_\varepsilon^1 = \lim_{\varepsilon\to 0^+}(2-2\sqrt{\varepsilon}) = 2\). Converges to \(2\).
+</div>
+
+<h2>Inverse Trigonometric and Hyperbolic Integrals</h2>
+<div class="definition">
+  Standard results (must know):
+  <table border="1" style="border-collapse:collapse;width:100%;">
+    <tr><th>Integral</th><th>Result</th></tr>
+    <tr><td>\(\displaystyle\int\dfrac{1}{\sqrt{a^2-x^2}}\,dx\)</td><td>\(\arcsin\!\dfrac{x}{a}+C\)</td></tr>
+    <tr><td>\(\displaystyle\int\dfrac{1}{a^2+x^2}\,dx\)</td><td>\(\dfrac{1}{a}\arctan\!\dfrac{x}{a}+C\)</td></tr>
+    <tr><td>\(\displaystyle\int\dfrac{1}{\sqrt{x^2+a^2}}\,dx\)</td><td>\(\text{arcsinh}\!\dfrac{x}{a}+C = \ln\!\left(x+\sqrt{x^2+a^2}\right)+C\)</td></tr>
+    <tr><td>\(\displaystyle\int\dfrac{1}{\sqrt{x^2-a^2}}\,dx\)</td><td>\(\text{arccosh}\!\dfrac{x}{a}+C = \ln\!\left(x+\sqrt{x^2-a^2}\right)+C\quad(x>a)\)</td></tr>
+    <tr><td>\(\displaystyle\int\dfrac{1}{a^2-x^2}\,dx\)</td><td>\(\dfrac{1}{2a}\ln\!\left|\dfrac{a+x}{a-x}\right|+C\)</td></tr>
+  </table>
+</div>
+<div class="example">
+  <strong>Example 1:</strong> \(\displaystyle\int\dfrac{1}{\sqrt{9-x^2}}\,dx = \arcsin\!\dfrac{x}{3}+C\)
+</div>
+<div class="example">
+  <strong>Example 2:</strong> \(\displaystyle\int_0^2\dfrac{1}{4+x^2}\,dx = \left[\dfrac{1}{2}\arctan\!\dfrac{x}{2}\right]_0^2 = \dfrac{1}{2}\cdot\dfrac{\pi}{4} = \dfrac{\pi}{8}\)
+</div>
+<div class="example">
+  <strong>Example 3 (completing the square):</strong> \(\displaystyle\int\dfrac{1}{\sqrt{x^2+4x+5}}\,dx\)<br>
+  \(x^2+4x+5 = (x+2)^2+1\). Let \(u=x+2\):<br>
+  \(\displaystyle\int\dfrac{1}{\sqrt{u^2+1}}\,du = \text{arcsinh}\,u + C = \ln\!\left(x+2+\sqrt{x^2+4x+5}\right)+C\)
+</div>
+
+<h2>Mean Value of a Function</h2>
+<div class="definition">
+  The <strong>mean value</strong> of \(f(x)\) on \([a,b]\) is:
+  \[\bar{f} = \dfrac{1}{b-a}\int_a^b f(x)\,dx\]
+</div>
+<div class="example">
+  <strong>Example:</strong> Find the mean value of \(f(x)=x^2+1\) on \([0,3]\).<br>
+  \(\bar{f} = \dfrac{1}{3}\displaystyle\int_0^3(x^2+1)\,dx = \dfrac{1}{3}\left[\dfrac{x^3}{3}+x\right]_0^3 = \dfrac{1}{3}(9+3) = 4\)
+</div>
+<div class="example">
+  <strong>Example 2:</strong> Find the mean value of \(\sin x\) on \([0,\pi]\).<br>
+  \(\bar{f} = \dfrac{1}{\pi}\displaystyle\int_0^\pi \sin x\,dx = \dfrac{1}{\pi}[-\cos x]_0^\pi = \dfrac{1}{\pi}(1+1) = \dfrac{2}{\pi}\)
+</div>
+
+<h2>Further Reduction Formula Examples</h2>
+<div class="example">
+  <strong>Derive \(I_n = \int_0^{\pi/2}\cos^n x\,dx\)</strong><br>
+  Write \(\cos^n x = \cos^{n-1}x\cdot\cos x\). IBP with \(u=\cos^{n-1}x,\;dv=\cos x\,dx\):<br>
+  \(I_n = [\cos^{n-1}x\sin x]_0^{\pi/2} + (n-1)\displaystyle\int_0^{\pi/2}\cos^{n-2}x\sin^2 x\,dx\)<br>
+  \(= 0 + (n-1)\displaystyle\int_0^{\pi/2}\cos^{n-2}x(1-\cos^2 x)\,dx = (n-1)(I_{n-2}-I_n)\)<br>
+  \(\Rightarrow nI_n = (n-1)I_{n-2} \Rightarrow \boxed{I_n = \dfrac{n-1}{n}I_{n-2}}\)<br>
+  With \(I_0=\dfrac{\pi}{2},\; I_1=1\): e.g. \(I_4 = \dfrac{3}{4}\cdot\dfrac{1}{2}\cdot\dfrac{\pi}{2} = \dfrac{3\pi}{16}\).
+</div>
+<div class="example">
+  <strong>Derive \(J_n = \int x^n e^x\,dx\)</strong><br>
+  IBP: \(u=x^n,\;dv=e^x\,dx\):<br>
+  \(J_n = x^n e^x - n\displaystyle\int x^{n-1}e^x\,dx = x^n e^x - nJ_{n-1}\)<br>
+  So \(J_0 = e^x+C,\; J_1 = xe^x-e^x+C,\; J_2 = x^2e^x-2xe^x+2e^x+C = e^x(x^2-2x+2)+C\).
+</div>
+
+<h2>Parametric Differentiation and Applications</h2>
+<div class="definition">
+  For a curve \(x=f(t),\; y=g(t)\):
+  \[\dfrac{dy}{dx} = \dfrac{dy/dt}{dx/dt}\qquad \dfrac{d^2y}{dx^2} = \dfrac{\tfrac{d}{dt}\!\left(\tfrac{dy}{dx}\right)}{dx/dt}\]
+</div>
+<div class="example">
+  <strong>Example:</strong> \(x = t^2,\; y = t^3 - 3t\). Find \(\dfrac{dy}{dx}\) and stationary points.<br>
+  \(\dfrac{dy}{dx} = \dfrac{3t^2-3}{2t}\). Stationary points where \(3t^2-3=0 \Rightarrow t=\pm 1\).<br>
+  \(t=1\): \((1,-2)\); \(t=-1\): \((1,2)\).
+</div>
+<div class="example">
+  <strong>Example 2 — Area under parametric curve:</strong><br>
+  Area \(= \displaystyle\int y\,dx = \int y\,\dfrac{dx}{dt}\,dt\). For astroid \(x=a\cos^3 t,\; y=a\sin^3 t\):<br>
+  Area \(= 4\displaystyle\int_0^{\pi/2}a\sin^3 t\cdot 3a\cos^2 t(-\sin t)\cdot(-1)\,dt = 12a^2\int_0^{\pi/2}\sin^4 t\cos^2 t\,dt = \dfrac{3\pi a^2}{8}\)
+</div>
+
+<h2>Standard Substitutions — Quick Reference</h2>
+<div class="definition">
+  Choose a substitution to simplify the integrand:
+  <table border="1" style="border-collapse:collapse;width:100%;">
+    <tr><th>Integrand contains</th><th>Try substitution</th><th>Useful identity</th></tr>
+    <tr><td>\(\sqrt{a^2-x^2}\)</td><td>\(x=a\sin\theta\)</td><td>\(1-\sin^2\theta=\cos^2\theta\)</td></tr>
+    <tr><td>\(\sqrt{a^2+x^2}\)</td><td>\(x=a\tan\theta\) or \(x=a\sinh u\)</td><td>\(1+\tan^2\theta=\sec^2\theta\)</td></tr>
+    <tr><td>\(\sqrt{x^2-a^2}\)</td><td>\(x=a\sec\theta\) or \(x=a\cosh u\)</td><td>\(\cosh^2 u-\sinh^2 u=1\)</td></tr>
+    <tr><td>\(e^{ax}\) with trig</td><td>Complex exponentials or cyclic IBP</td><td>—</td></tr>
+    <tr><td>Rational in \(\sin\theta,\cos\theta\)</td><td>\(t=\tan(\theta/2)\)</td><td>\(\sin\theta=\dfrac{2t}{1+t^2},\;\cos\theta=\dfrac{1-t^2}{1+t^2}\)</td></tr>
+  </table>
+</div>
+<div class="example">
+  <strong>Example — \(t=\tan(\theta/2)\) substitution:</strong> \(\displaystyle\int\dfrac{1}{1+\cos\theta}\,d\theta\)<br>
+  \(\cos\theta = \dfrac{1-t^2}{1+t^2},\; d\theta = \dfrac{2}{1+t^2}\,dt\).<br>
+  Integrand: \(\dfrac{1}{1+\frac{1-t^2}{1+t^2}}\cdot\dfrac{2}{1+t^2} = \dfrac{1+t^2}{2}\cdot\dfrac{2}{1+t^2} = 1\).<br>
+  So \(\displaystyle\int 1\,dt = t + C = \tan\!\dfrac{\theta}{2}+C\).
+</div>
+
+<h2>Arc Length — Cartesian and Polar</h2>
+<div class="definition">
+  <strong>Cartesian arc length:</strong> \(\displaystyle L = \int_a^b\sqrt{1+\left(\dfrac{dy}{dx}\right)^2}\,dx\)<br>
+  <strong>Parametric arc length:</strong> \(\displaystyle L = \int_{t_1}^{t_2}\sqrt{\left(\dfrac{dx}{dt}\right)^2+\left(\dfrac{dy}{dt}\right)^2}\,dt\)<br>
+  <strong>Polar arc length:</strong> \(\displaystyle L = \int_\alpha^\beta\sqrt{r^2+\left(\dfrac{dr}{d\theta}\right)^2}\,d\theta\)
+</div>
+<div class="example">
+  <strong>Example 1 — Cartesian:</strong> \(y = \dfrac{2}{3}x^{3/2}\) from \(x=0\) to \(x=3\).<br>
+  \(\dfrac{dy}{dx} = x^{1/2}\), so \(1+(y')^2 = 1+x\).<br>
+  \(L = \displaystyle\int_0^3\sqrt{1+x}\,dx = \left[\tfrac{2}{3}(1+x)^{3/2}\right]_0^3 = \tfrac{2}{3}(8-1) = \dfrac{14}{3}\)
+</div>
+<div class="example">
+  <strong>Example 2 — Parametric:</strong> Cycloid \(x=a(t-\sin t),\; y=a(1-\cos t)\), one arch \(0\le t\le 2\pi\).<br>
+  \(\dot{x}=a(1-\cos t),\; \dot{y}=a\sin t\).<br>
+  \(\dot{x}^2+\dot{y}^2 = a^2(1-2\cos t+\cos^2 t+\sin^2 t) = a^2\cdot 2(1-\cos t) = 4a^2\sin^2\!\tfrac{t}{2}\).<br>
+  \(L = \displaystyle\int_0^{2\pi}2a\left|\sin\tfrac{t}{2}\right|\,dt = 4a\int_0^{\pi}\sin u\,du\cdot 2 = 8a\).
+</div>
+
+<h2>Surface Area of Revolution — Examples</h2>
+<div class="definition">
+  <strong>About x-axis (Cartesian):</strong> \(\displaystyle S = 2\pi\int_a^b y\sqrt{1+(y')^2}\,dx\)<br>
+  <strong>About x-axis (Parametric):</strong> \(\displaystyle S = 2\pi\int_{t_1}^{t_2} y\sqrt{\dot{x}^2+\dot{y}^2}\,dt\)
+</div>
+<div class="example">
+  <strong>Example:</strong> The arc of \(y=\sqrt{x}\) from \(x=0\) to \(x=1\) is rotated about the x-axis. Find the surface area.<br>
+  \(y'=\dfrac{1}{2\sqrt{x}}\), so \(1+(y')^2 = 1+\dfrac{1}{4x} = \dfrac{4x+1}{4x}\).<br>
+  \(S = 2\pi\displaystyle\int_0^1\sqrt{x}\cdot\dfrac{\sqrt{4x+1}}{2\sqrt{x}}\,dx = \pi\int_0^1\sqrt{4x+1}\,dx\)<br>
+  \(= \pi\left[\dfrac{(4x+1)^{3/2}}{6}\right]_0^1 = \dfrac{\pi}{6}(5^{3/2}-1) = \dfrac{\pi}{6}(5\sqrt{5}-1)\)
+</div>
+
+<h2>Numerical Integration — Reminder</h2>
+<div class="definition">
+  <strong>Trapezium Rule:</strong> \(\displaystyle\int_a^b f(x)\,dx \approx \dfrac{h}{2}\left[f(x_0)+2f(x_1)+\cdots+2f(x_{n-1})+f(x_n)\right]\), where \(h=\dfrac{b-a}{n}\).<br>
+  <strong>Error:</strong> proportional to \(h^2\). Halving the step size quarters the error.
+</div>
+<div class="exam-tip">
+  <strong>Exam-tip — Further Calculus AQA:</strong>
+  <ul>
+    <li>Volume: \(\pi\int y^2\,dx\) not \(\pi\int y\,dx\). The \(\pi\) is outside the integral.</li>
+    <li>Surface area: has \(2\pi y\) (circumference of strip), plus the arc-length element — distinguish from arc length itself.</li>
+    <li>Substitution integrals: change limits when using definite integrals, OR change back to \(x\) before substituting limits.</li>
+    <li>Reduction formulae in AQA: usually derived on the paper — show IBP clearly, collect \(I_n\) terms.</li>
+    <li>Improper integrals: never write \(\infty - \infty\); always take the limit first, then subtract.</li>
+    <li>\(\int\sec^2 x\,dx = \tan x + C\) and \(\int\text{sech}^2 x\,dx = \tanh x + C\) are both standard.</li>
+  </ul>
+</div>
+
+<h2>Complete Standard Integrals — AQA Further Calculus</h2>
+<div class="definition">
+  <table border="1" style="border-collapse:collapse;width:100%;">
+    <tr><th>Integral</th><th>Result</th></tr>
+    <tr><td>\(\int\sec^2 ax\,dx\)</td><td>\(\dfrac{\tan ax}{a}+C\)</td></tr>
+    <tr><td>\(\int\sec x\tan x\,dx\)</td><td>\(\sec x+C\)</td></tr>
+    <tr><td>\(\int\csc^2 x\,dx\)</td><td>\(-\cot x+C\)</td></tr>
+    <tr><td>\(\int\cosh ax\,dx\)</td><td>\(\dfrac{\sinh ax}{a}+C\)</td></tr>
+    <tr><td>\(\int\sinh ax\,dx\)</td><td>\(\dfrac{\cosh ax}{a}+C\)</td></tr>
+    <tr><td>\(\int\text{sech}^2 x\,dx\)</td><td>\(\tanh x+C\)</td></tr>
+    <tr><td>\(\int\dfrac{1}{\sqrt{a^2-x^2}}\,dx\)</td><td>\(\arcsin\dfrac{x}{a}+C\)</td></tr>
+    <tr><td>\(\int\dfrac{1}{a^2+x^2}\,dx\)</td><td>\(\dfrac{1}{a}\arctan\dfrac{x}{a}+C\)</td></tr>
+    <tr><td>\(\int\dfrac{1}{\sqrt{x^2+a^2}}\,dx\)</td><td>\(\ln\!\left|x+\sqrt{x^2+a^2}\right|+C\)</td></tr>
+    <tr><td>\(\int\dfrac{1}{\sqrt{x^2-a^2}}\,dx\)</td><td>\(\ln\!\left|x+\sqrt{x^2-a^2}\right|+C\quad(x>a)\)</td></tr>
+  </table>
+</div>
+
+<h2>Maclaurin Series — Revision and Applications to Integration</h2>
+<div class="definition">
+  Key Maclaurin expansions valid for all \(x\) unless stated:
+  <table border="1" style="border-collapse:collapse;width:100%;">
+    <tr><th>Function</th><th>Expansion</th><th>Valid</th></tr>
+    <tr><td>\(e^x\)</td><td>\(1+x+\dfrac{x^2}{2!}+\dfrac{x^3}{3!}+\cdots\)</td><td>all \(x\)</td></tr>
+    <tr><td>\(\sin x\)</td><td>\(x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots\)</td><td>all \(x\)</td></tr>
+    <tr><td>\(\cos x\)</td><td>\(1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\cdots\)</td><td>all \(x\)</td></tr>
+    <tr><td>\(\ln(1+x)\)</td><td>\(x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\cdots\)</td><td>\(-1&lt;x\le 1\)</td></tr>
+    <tr><td>\((1+x)^n\)</td><td>\(1+nx+\dfrac{n(n-1)}{2!}x^2+\cdots\)</td><td>\(|x|&lt;1\) (non-integer \(n\))</td></tr>
+    <tr><td>\(\arctan x\)</td><td>\(x-\dfrac{x^3}{3}+\dfrac{x^5}{5}-\cdots\)</td><td>\(|x|\le 1\)</td></tr>
+  </table>
+</div>
+<div class="example">
+  <strong>Example — Approximate an integral using series:</strong><br>
+  Estimate \(\displaystyle\int_0^{0.5}\dfrac{\sin x}{x}\,dx\) to 4 d.p.<br>
+  \(\dfrac{\sin x}{x} = 1 - \dfrac{x^2}{6}+\dfrac{x^4}{120}-\cdots\)<br>
+  \(\displaystyle\int_0^{0.5}\!\left(1-\dfrac{x^2}{6}+\dfrac{x^4}{120}\right)dx = \left[x-\dfrac{x^3}{18}+\dfrac{x^5}{600}\right]_0^{0.5}\)<br>
+  \(= 0.5 - \dfrac{0.125}{18}+\dfrac{0.03125}{600} \approx 0.5 - 0.00694 + 0.000052 \approx 0.4931\)
+</div>
+<div class="example">
+  <strong>Example — Series for a composite function:</strong> Find the first 3 non-zero terms of \(e^{\sin x}\).<br>
+  \(\sin x = x - \dfrac{x^3}{6}+\cdots\), so \(e^{\sin x} = e^{x-x^3/6+\cdots}\).<br>
+  \(= 1 + \left(x-\dfrac{x^3}{6}\right) + \dfrac{1}{2}\left(x-\dfrac{x^3}{6}\right)^2 + \dfrac{1}{6}x^3+\cdots\)<br>
+  \(= 1 + x + \dfrac{x^2}{2} + \dfrac{x^3}{6} - \dfrac{x^3}{6} + \cdots = 1 + x + \dfrac{x^2}{2} + 0\cdot x^3 + \cdots\)
+</div>
+
+<h2>Partial Fractions and Integration — Combined Examples</h2>
+<div class="example">
+  <strong>Example 1:</strong> \(\displaystyle\int\dfrac{3x+5}{(x+1)(x+2)}\,dx\)<br>
+  Partial fractions: \(\dfrac{3x+5}{(x+1)(x+2)} = \dfrac{A}{x+1}+\dfrac{B}{x+2}\).<br>
+  \(A = 2,\; B = 1\). So \(\displaystyle\int\!\left(\dfrac{2}{x+1}+\dfrac{1}{x+2}\right)dx = 2\ln|x+1|+\ln|x+2|+C\).
+</div>
+<div class="example">
+  <strong>Example 2 (repeated root):</strong> \(\displaystyle\int\dfrac{x}{(x-1)^2(x+2)}\,dx\)<br>
+  Write \(\dfrac{x}{(x-1)^2(x+2)} = \dfrac{A}{x-1}+\dfrac{B}{(x-1)^2}+\dfrac{C}{x+2}\).<br>
+  Solving: \(A = \tfrac{2}{3}, B=\tfrac{1}{3}, C=-\tfrac{2}{3}\).<br>
+  \(\displaystyle\int = \tfrac{2}{3}\ln|x-1|-\tfrac{1}{3(x-1)}-\tfrac{2}{3}\ln|x+2|+C\)
+</div>
+
+<h2>Integration of Trigonometric Powers</h2>
+<div class="definition">
+  Use identities to reduce powers:
+  <ul>
+    <li>\(\cos^2 x = \dfrac{1+\cos 2x}{2}\), \(\quad\sin^2 x = \dfrac{1-\cos 2x}{2}\)</li>
+    <li>\(\sin x\cos x = \dfrac{\sin 2x}{2}\)</li>
+    <li>\(\tan^2 x = \sec^2 x - 1\)</li>
+    <li>For odd powers of \(\sin\) or \(\cos\): peel off one factor and substitute.</li>
+  </ul>
+</div>
+<div class="example">
+  <strong>Example 1:</strong> \(\displaystyle\int\cos^4 x\,dx\)<br>
+  \(\cos^4 x = \left(\dfrac{1+\cos 2x}{2}\right)^2 = \dfrac{1+2\cos 2x+\cos^2 2x}{4} = \dfrac{1+2\cos 2x+\frac{1+\cos 4x}{2}}{4}\)<br>
+  \(= \dfrac{3}{8}+\dfrac{\cos 2x}{2}+\dfrac{\cos 4x}{8}\)<br>
+  \(\displaystyle\int\cos^4 x\,dx = \dfrac{3x}{8}+\dfrac{\sin 2x}{4}+\dfrac{\sin 4x}{32}+C\)
+</div>
+<div class="example">
+  <strong>Example 2:</strong> \(\displaystyle\int\sin^3 x\,dx\)<br>
+  Write \(\sin^3 x = \sin^2 x\cdot\sin x = (1-\cos^2 x)\sin x\). Let \(u=\cos x,\; du=-\sin x\,dx\):<br>
+  \(\displaystyle\int(1-u^2)(-du) = -u+\dfrac{u^3}{3}+C = -\cos x+\dfrac{\cos^3 x}{3}+C\)
+</div>
+<div class="example">
+  <strong>Example 3:</strong> \(\displaystyle\int\tan^3 x\,dx\)<br>
+  \(\tan^3 x = \tan x(\sec^2 x-1) = \tan x\sec^2 x - \tan x\)<br>
+  \(\displaystyle\int\tan^3 x\,dx = \dfrac{\tan^2 x}{2}-\ln|\sec x|+C\)
+</div>
+
+<h2>Wallis's Formula and Applications</h2>
+<div class="definition">
+  From the reduction formula \(I_n = \dfrac{n-1}{n}I_{n-2}\):
+  \[\int_0^{\pi/2}\sin^n x\,dx = \int_0^{\pi/2}\cos^n x\,dx = \begin{cases} \dfrac{(n-1)!!}{n!!}\cdot\dfrac{\pi}{2} & n \text{ even} \\[6pt] \dfrac{(n-1)!!}{n!!} & n \text{ odd} \end{cases}\]
+  where \(n!! = n(n-2)(n-4)\cdots\). So \(\int_0^{\pi/2}\sin^6 x\,dx = \dfrac{5\cdot 3\cdot 1}{6\cdot 4\cdot 2}\cdot\dfrac{\pi}{2} = \dfrac{5\pi}{32}\).
+</div>
+<div class="example">
+  <strong>Wallis's product for \(\pi\):</strong> Setting \(n=2m\) and comparing even and odd reduction chains:<br>
+  \(\dfrac{\pi}{2} = \dfrac{2\cdot 2\cdot 4\cdot 4\cdot 6\cdot 6\cdots}{1\cdot 3\cdot 3\cdot 5\cdot 5\cdot 7\cdots}\) (Wallis's product).<br>
+  This arises directly from comparing \(I_{2n}\) and \(I_{2n+1}\) as \(n\to\infty\).
+</div>
+<div class="exam-tip">
+  <strong>Exam note — using Wallis:</strong> You will not be expected to quote Wallis's formula, but the reduction formula is examinable. Show each IBP step and collect terms carefully. The formula \(I_n = \dfrac{n-1}{n}I_{n-2}\) with correct base cases \(I_0=\dfrac{\pi}{2},\;I_1=1\) is sufficient to evaluate all definite integrals of this type.
+</div>
+
+<h2>Quick Differentiation Reminders</h2>
+<div class="definition">
+  Derivatives that arise frequently in Further Calculus questions:
+  <ul>
+    <li>\(\dfrac{d}{dx}(\arcsin x) = \dfrac{1}{\sqrt{1-x^2}}\)</li>
+    <li>\(\dfrac{d}{dx}(\arctan x) = \dfrac{1}{1+x^2}\)</li>
+    <li>\(\dfrac{d}{dx}(\text{arcsinh}\,x) = \dfrac{1}{\sqrt{1+x^2}}\)</li>
+    <li>\(\dfrac{d}{dx}(\text{arccosh}\,x) = \dfrac{1}{\sqrt{x^2-1}}\quad(x>1)\)</li>
+    <li>\(\dfrac{d}{dx}(\sec x) = \sec x\tan x\)</li>
+  </ul>
+</div>
+
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", function() {

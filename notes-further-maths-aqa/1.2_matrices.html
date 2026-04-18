@@ -329,6 +329,266 @@
   <li>Can you apply the Cayley-Hamilton theorem to find \(A^{-1}\) or simplify matrix expressions?</li>
 </ul>
 
+<h2>Eigenvalues and Eigenvectors — Full 3×3 Worked Example</h2>
+
+<p>For a \(3\times3\) matrix, the process is the same as \(2\times2\): find \(\det(A-\lambda I)=0\), then solve \((A-\lambda I)\mathbf{v}=\mathbf{0}\) for each eigenvalue.</p>
+
+<div class="example">
+<strong>Example:</strong> Find the eigenvalues and eigenvectors of \(A = \begin{pmatrix}2&1&0\\1&2&0\\0&0&3\end{pmatrix}\).
+
+<p><strong>Step 1 — Characteristic equation:</strong></p>
+$$\det(A-\lambda I) = \det\begin{pmatrix}2-\lambda&1&0\\1&2-\lambda&0\\0&0&3-\lambda\end{pmatrix}$$
+Expanding along the third column: \((3-\lambda)\det\begin{pmatrix}2-\lambda&1\\1&2-\lambda\end{pmatrix} = (3-\lambda)[(2-\lambda)^2-1]\).
+$$= (3-\lambda)(\lambda^2-4\lambda+3) = (3-\lambda)(\lambda-1)(\lambda-3) = -((\lambda-3)^2(\lambda-1))$$
+Eigenvalues: \(\lambda_1 = 1\), \(\lambda_2 = 3\) (repeated).
+
+<p><strong>Step 2 — Eigenvectors:</strong></p>
+<em>\(\lambda=1\):</em> \(A - I = \begin{pmatrix}1&1&0\\1&1&0\\0&0&2\end{pmatrix}\). Row reduce: gives \(x+y=0\), \(z=0\). Eigenvector: \(\mathbf{v}_1 = \begin{pmatrix}1\\-1\\0\end{pmatrix}\).
+
+<em>\(\lambda=3\):</em> \(A - 3I = \begin{pmatrix}-1&1&0\\1&-1&0\\0&0&0\end{pmatrix}\). Row reduce: gives \(x=y\), \(z\) free. Two linearly independent eigenvectors: \(\mathbf{v}_2 = \begin{pmatrix}1\\1\\0\end{pmatrix}\), \(\mathbf{v}_3 = \begin{pmatrix}0\\0\\1\end{pmatrix}\).
+</div>
+
+<h2>Cayley-Hamilton Theorem</h2>
+
+<div class="definition">
+<strong>Cayley-Hamilton Theorem:</strong> Every square matrix satisfies its own characteristic equation. If \(p(\lambda) = \det(\lambda I - A)\), then \(p(A) = 0\) (the zero matrix).
+</div>
+
+<p><strong>Proof sketch (2×2):</strong> For \(A = \begin{pmatrix}a&b\\c&d\end{pmatrix}\), the characteristic polynomial is \(p(\lambda)=\lambda^2-(a+d)\lambda+(ad-bc)\). Compute \(A^2-(a+d)A+(ad-bc)I\) directly to verify it equals \(\mathbf{0}\). [Full proof uses the adjugate matrix.]</p>
+
+<p><strong>Applications:</strong></p>
+<ul>
+  <li>Finding \(A^{-1}\): if \(A^2 - \text{tr}(A)\cdot A + \det(A)\cdot I = 0\), then \(A^{-1} = \frac{1}{\det A}(\text{tr}(A)\cdot I - A)\).</li>
+  <li>Reducing powers: express \(A^n\) as a linear combination of \(I\) and \(A\) (for \(2\times2\)) using the characteristic equation repeatedly.</li>
+</ul>
+
+<div class="example">
+<strong>Example:</strong> \(A = \begin{pmatrix}3&1\\2&2\end{pmatrix}\). Char poly: \(\lambda^2-5\lambda+4=0\). By Cayley-Hamilton: \(A^2-5A+4I=0\), so \(A^2=5A-4I\). Then \(A^3=A\cdot A^2=5A^2-4A=5(5A-4I)-4A=21A-20I\), etc.
+</div>
+
+<h2>Diagonalisation</h2>
+
+<p>If an \(n\times n\) matrix \(A\) has \(n\) linearly independent eigenvectors \(\mathbf{v}_1,\ldots,\mathbf{v}_n\) with eigenvalues \(\lambda_1,\ldots,\lambda_n\), then \(A\) is <strong>diagonalisable</strong>:</p>
+
+$$P^{-1}AP = D = \begin{pmatrix}\lambda_1&&0\\&\ddots&\\0&&\lambda_n\end{pmatrix}$$
+
+<p>where \(P = [\mathbf{v}_1|\mathbf{v}_2|\cdots|\mathbf{v}_n]\) (columns are eigenvectors).</p>
+
+<p><strong>Computing \(A^n\):</strong> From \(A = PDP^{-1}\) it follows that \(A^n = PD^nP^{-1}\), and \(D^n = \text{diag}(\lambda_1^n,\ldots,\lambda_n^n)\) is trivial to compute.</p>
+
+<div class="example">
+<strong>Example:</strong> \(A = \begin{pmatrix}1&2\\0&3\end{pmatrix}\). Eigenvalues \(\lambda=1,3\); eigenvectors \(\begin{pmatrix}1\\0\end{pmatrix}\), \(\begin{pmatrix}1\\1\end{pmatrix}\).
+$$P = \begin{pmatrix}1&1\\0&1\end{pmatrix},\quad P^{-1}=\begin{pmatrix}1&-1\\0&1\end{pmatrix}$$
+$$A^n = P\begin{pmatrix}1^n&0\\0&3^n\end{pmatrix}P^{-1} = \begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}1&0\\0&3^n\end{pmatrix}\begin{pmatrix}1&-1\\0&1\end{pmatrix} = \begin{pmatrix}1&3^n-1\\0&3^n\end{pmatrix}$$
+</div>
+
+<h2>Geometric Interpretation of the Determinant</h2>
+
+<p>For a \(2\times2\) matrix \(A\):</p>
+<ul>
+  <li>The <strong>signed area</strong> of the image of the unit square under \(A\) equals \(\det(A)\).</li>
+  <li>If \(\det(A) > 0\), orientation is preserved; if \(\det(A) < 0\), orientation is reversed (reflected).</li>
+  <li>If \(\det(A) = 0\), the transformation collapses the plane to a line or point (rank \(\leq 1\)).</li>
+</ul>
+
+<p>For a \(3\times3\) matrix, \(|\det(A)|\) gives the factor by which volumes are scaled. The scalar triple product \(\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) = \det[\mathbf{a}\,\mathbf{b}\,\mathbf{c}]\) gives the signed volume of the parallelepiped.</p>
+
+<div class="exam-tip">
+<strong>AQA Exam Technique — Matrices:</strong>
+<ul>
+  <li><strong>Eigenvalues:</strong> Always fully factorise the characteristic polynomial. For \(3\times3\), try \(\lambda = \text{tr}(A)/3\) as a first guess, or look for a row that gives a factor.</li>
+  <li><strong>Eigenvectors:</strong> After finding \(\lambda\), row-reduce \(A-\lambda I\) carefully — set one variable as the parameter.</li>
+  <li><strong>Cayley-Hamilton:</strong> Show explicitly that \(p(A) = \mathbf{0}\) by computing \(A^2\), then combining.</li>
+  <li><strong>Diagonalisation:</strong> State \(P\), \(D\), and confirm the order matches (column \(k\) of \(P\) corresponds to diagonal entry \(k\) of \(D\)).</li>
+  <li><strong>Transformation composition:</strong> \(ST\) means apply \(T\) first, then \(S\). Read right to left.</li>
+  <li><strong>Mark scheme:</strong> Correct \(A^{-1}\) \([M1]\), correct solution \([A1]\); wrong method but correct determinant \([M1]\) if using Cramer's rule.</li>
+</ul>
+</div>
+
+<h2>Standard Transformation Matrices (2D)</h2>
+
+<table>
+  <tr><th>Transformation</th><th>Matrix</th><th>Notes</th></tr>
+  <tr><td>Rotation by \(\theta\) anticlockwise</td><td>\(\begin{pmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{pmatrix}\)</td><td>det = 1, preserves area</td></tr>
+  <tr><td>Reflection in \(x\)-axis</td><td>\(\begin{pmatrix}1&0\\0&-1\end{pmatrix}\)</td><td>det = −1</td></tr>
+  <tr><td>Reflection in \(y\)-axis</td><td>\(\begin{pmatrix}-1&0\\0&1\end{pmatrix}\)</td><td>det = −1</td></tr>
+  <tr><td>Reflection in \(y=x\)</td><td>\(\begin{pmatrix}0&1\\1&0\end{pmatrix}\)</td><td>det = −1</td></tr>
+  <tr><td>Reflection in \(y=-x\)</td><td>\(\begin{pmatrix}0&-1\\-1&0\end{pmatrix}\)</td><td>det = −1</td></tr>
+  <tr><td>Reflection in \(y=x\tan\alpha\)</td><td>\(\begin{pmatrix}\cos2\alpha&\sin2\alpha\\\sin2\alpha&-\cos2\alpha\end{pmatrix}\)</td><td>det = −1</td></tr>
+  <tr><td>Stretch by \(a\) in \(x\), \(b\) in \(y\)</td><td>\(\begin{pmatrix}a&0\\0&b\end{pmatrix}\)</td><td>det = \(ab\)</td></tr>
+  <tr><td>Enlargement scale factor \(k\)</td><td>\(\begin{pmatrix}k&0\\0&k\end{pmatrix}\)</td><td>det = \(k^2\)</td></tr>
+  <tr><td>Shear: \(x\)-direction, factor \(k\)</td><td>\(\begin{pmatrix}1&k\\0&1\end{pmatrix}\)</td><td>det = 1</td></tr>
+</table>
+
+<h2>Solving \(3\times3\) Systems — Row Reduction</h2>
+
+<p>Given \(A\mathbf{x}=\mathbf{b}\), form the augmented matrix \([A|\mathbf{b}]\) and row reduce to echelon form.</p>
+
+<div class="example">
+<strong>Example:</strong> Solve \(x+2y+z=4\), \(2x+y-z=1\), \(3x-y+2z=5\).
+
+$$\begin{pmatrix}1&2&1&|&4\\2&1&-1&|&1\\3&-1&2&|&5\end{pmatrix}$$
+\(R_2\to R_2-2R_1\): \((0,-3,-3|-7)\). \(R_3\to R_3-3R_1\): \((0,-7,-1|-7)\).
+\(R_3\to 3R_3-7R_2\): \((0,0,20|0)\). So \(z=0\).
+From \(R_2\): \(-3y-3(0)=-7 \Rightarrow y=7/3\). From \(R_1\): \(x=4-2(7/3)-0=4-14/3=2/3\).
+
+Solution: \(x=2/3\), \(y=7/3\), \(z=0\).
+</div>
+
+<h2>The Three Inconsistency Cases for \(3\times3\) Systems</h2>
+
+<p>After row reduction, the augmented matrix reveals the nature of the solution:</p>
+
+<table>
+  <tr><th>Reduced form</th><th>Interpretation</th></tr>
+  <tr><td>Full rank 3: \(\begin{pmatrix}*&*&*&|&*\\0&*&*&|&*\\0&0&*&|&*\end{pmatrix}\)</td><td>Unique solution</td></tr>
+  <tr><td>Rank 2, consistent: bottom row \((0,0,0|0)\)</td><td>Infinite solutions — line in \(\mathbb{R}^3\)</td></tr>
+  <tr><td>Rank 2, inconsistent: bottom row \((0,0,0|k)\) with \(k\neq0\)</td><td>No solution (triangular prism)</td></tr>
+  <tr><td>Two rows proportional (rank 1 only): but inconsistent</td><td>No solution (parallel planes)</td></tr>
+</table>
+
+<h2>Properties of Eigenvalues</h2>
+
+<ul>
+  <li><strong>Trace:</strong> \(\text{tr}(A) = \lambda_1+\lambda_2+\cdots+\lambda_n\) (sum of eigenvalues = sum of diagonal entries)</li>
+  <tr><td>\(\det(A) = \lambda_1\lambda_2\cdots\lambda_n\) (product of eigenvalues)</td></tr>
+  <li><strong>Powers:</strong> If \(A\mathbf{v}=\lambda\mathbf{v}\), then \(A^k\mathbf{v}=\lambda^k\mathbf{v}\)</li>
+  <li><strong>Inverse:</strong> If \(A\) is invertible with eigenvalue \(\lambda\), then \(A^{-1}\) has eigenvalue \(1/\lambda\)</li>
+  <li><strong>Transpose:</strong> \(A\) and \(A^T\) have the same eigenvalues (but generally different eigenvectors)</li>
+  <li><strong>Symmetric matrices:</strong> Always have real eigenvalues and orthogonal eigenvectors</li>
+</ul>
+
+<div class="example">
+<strong>Using trace and determinant to find eigenvalues of a \(2\times2\):</strong>
+
+For \(A=\begin{pmatrix}5&2\\1&4\end{pmatrix}\): \(\text{tr}(A)=9\), \(\det(A)=20-2=18\).
+
+Characteristic equation: \(\lambda^2-9\lambda+18=0 \Rightarrow (\lambda-3)(\lambda-6)=0\).
+
+So \(\lambda_1=3\), \(\lambda_2=6\). Check: \(3+6=9=\text{tr}(A)\) ✓, \(3\times6=18=\det(A)\) ✓.
+</div>
+
+<h2>Worked Cayley-Hamilton Application</h2>
+
+<div class="example">
+<strong>Find \(A^{-1}\) using Cayley-Hamilton for \(A=\begin{pmatrix}3&1\\2&4\end{pmatrix}\).</strong>
+
+Characteristic polynomial: \(\lambda^2-7\lambda+10=0\).
+
+By Cayley-Hamilton: \(A^2-7A+10I=0\).
+
+Rearranging: \(10I=7A-A^2 \Rightarrow I=\frac{1}{10}(7A-A^2) = A\cdot\frac{1}{10}(7I-A)\).
+
+Therefore: \(A^{-1}=\frac{1}{10}(7I-A)=\frac{1}{10}\begin{pmatrix}4&-1\\-2&3\end{pmatrix}=\begin{pmatrix}2/5&-1/10\\-1/5&3/10\end{pmatrix}\).
+
+Verify: \(\det(A)=12-2=10\), so \(A^{-1}=\frac{1}{10}\begin{pmatrix}4&-1\\-2&3\end{pmatrix}\) ✓.
+</div>
+
+<h2>Matrix Multiplication — Properties and Examples</h2>
+<div class="definition">
+  Key properties:
+  <ul>
+    <li>Matrix multiplication is <strong>not</strong> commutative in general: \(AB \ne BA\).</li>
+    <li>Associative: \((AB)C = A(BC)\).</li>
+    <li>Distributive: \(A(B+C) = AB+AC\).</li>
+    <li>\((AB)^T = B^T A^T\), \((AB)^{-1} = B^{-1}A^{-1}\).</li>
+    <li>For square \(A\): \(\det(AB) = \det(A)\det(B)\).</li>
+  </ul>
+</div>
+<div class="example">
+  <strong>Example:</strong> Let \(A=\begin{pmatrix}1&2\\3&4\end{pmatrix},\; B=\begin{pmatrix}0&1\\2&3\end{pmatrix}\). Find \(AB\) and \(BA\) to show they differ.<br>
+  \(AB = \begin{pmatrix}4&7\\8&15\end{pmatrix},\quad BA = \begin{pmatrix}3&4\\11&16\end{pmatrix}\). Indeed \(AB\ne BA\).
+</div>
+
+<h2>Matrix Powers Using Diagonalisation</h2>
+<div class="example">
+  <strong>Example:</strong> \(A = \begin{pmatrix}3&1\\0&2\end{pmatrix}\). Find \(A^n\).<br>
+  Eigenvalues: \(\lambda=3,\lambda=2\).<br>
+  For \(\lambda=3\): \(\begin{pmatrix}0&1\\0&-1\end{pmatrix}\mathbf{v}=\mathbf{0} \Rightarrow \mathbf{v}=\begin{pmatrix}1\\0\end{pmatrix}\).<br>
+  For \(\lambda=2\): \(\begin{pmatrix}1&1\\0&0\end{pmatrix}\mathbf{v}=\mathbf{0} \Rightarrow \mathbf{v}=\begin{pmatrix}-1\\1\end{pmatrix}\).<br>
+  \(P = \begin{pmatrix}1&-1\\0&1\end{pmatrix},\; D=\begin{pmatrix}3&0\\0&2\end{pmatrix},\; P^{-1}=\begin{pmatrix}1&1\\0&1\end{pmatrix}\).<br>
+  \(A^n = PD^nP^{-1} = \begin{pmatrix}1&-1\\0&1\end{pmatrix}\begin{pmatrix}3^n&0\\0&2^n\end{pmatrix}\begin{pmatrix}1&1\\0&1\end{pmatrix} = \begin{pmatrix}3^n&3^n-2^n\\0&2^n\end{pmatrix}\).
+</div>
+
+<h2>Inverse of a 3×3 Matrix</h2>
+<div class="definition">
+  For a 3×3 matrix \(A\): \(A^{-1} = \dfrac{1}{\det A}\,\text{adj}(A)\) where \(\text{adj}(A)\) is the transpose of the matrix of cofactors.<br>
+  Cofactor \(C_{ij} = (-1)^{i+j}M_{ij}\) where \(M_{ij}\) is the minor (determinant of the 2×2 matrix with row \(i\) and column \(j\) removed).
+</div>
+<div class="example">
+  <strong>Example:</strong> \(A=\begin{pmatrix}1&2&0\\-1&1&3\\2&0&1\end{pmatrix}\).<br>
+  \(\det A = 1(1\cdot1-3\cdot0) - 2((-1)\cdot1-3\cdot2) + 0 = 1+14 = 15\).<br>
+  Cofactors \(C_{11}=1,\; C_{12}=7,\; C_{13}=-2,\; C_{21}=-2,\; C_{22}=1,\; C_{23}=4,\; C_{31}=6,\; C_{32}=-3,\; C_{33}=3\).<br>
+  \(\text{adj}(A) = \begin{pmatrix}1&-2&6\\7&1&-3\\-2&4&3\end{pmatrix}\),\quad \(A^{-1}=\dfrac{1}{15}\begin{pmatrix}1&-2&6\\7&1&-3\\-2&4&3\end{pmatrix}\).
+</div>
+
+<h2>Linear Transformations — Composition</h2>
+<div class="definition">
+  Applying transformation \(T_1\) (matrix \(A\)) then \(T_2\) (matrix \(B\)) is represented by \(BA\) (note the reversed order).<br>
+  The image of point \(\mathbf{x}\) under transformation \(T\) is \(A\mathbf{x}\).
+</div>
+<div class="example">
+  <strong>Example:</strong> Reflect in the \(x\)-axis (\(A=\begin{pmatrix}1&0\\0&-1\end{pmatrix}\)) then rotate \(90°\) anticlockwise (\(B=\begin{pmatrix}0&-1\\1&0\end{pmatrix}\)). Combined transformation:<br>
+  \(BA = \begin{pmatrix}0&-1\\1&0\end{pmatrix}\begin{pmatrix}1&0\\0&-1\end{pmatrix} = \begin{pmatrix}0&1\\1&0\end{pmatrix}\) — reflection in \(y=x\).
+</div>
+<div class="example">
+  <strong>Example — Stretch and rotate:</strong> Scale by 2 then rotate \(45°\):<br>
+  \(A = \begin{pmatrix}2&0\\0&2\end{pmatrix},\quad B = \begin{pmatrix}1/\sqrt{2}&-1/\sqrt{2}\\1/\sqrt{2}&1/\sqrt{2}\end{pmatrix}\).<br>
+  \(BA = \begin{pmatrix}\sqrt{2}&-\sqrt{2}\\\sqrt{2}&\sqrt{2}\end{pmatrix}\). This represents an enlargement by 2 combined with a rotation.
+</div>
+
+<h2>Matrices — AQA Quick Reference</h2>
+<div class="definition">
+  <table border="1" style="border-collapse:collapse;width:100%;">
+    <tr><th>Transformation</th><th>Matrix</th></tr>
+    <tr><td>Rotation by \(\theta\) (anticlockwise)</td><td>\(\begin{pmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{pmatrix}\)</td></tr>
+    <tr><td>Reflection in \(y=x\tan\alpha\)</td><td>\(\begin{pmatrix}\cos 2\alpha&\sin 2\alpha\\\sin 2\alpha&-\cos 2\alpha\end{pmatrix}\)</td></tr>
+    <tr><td>Enlargement scale factor \(k\)</td><td>\(k\begin{pmatrix}1&0\\0&1\end{pmatrix}\)</td></tr>
+    <tr><td>Stretch in \(x\) by \(a\), \(y\) by \(b\)</td><td>\(\begin{pmatrix}a&0\\0&b\end{pmatrix}\)</td></tr>
+    <tr><td>Shear (parallel to \(x\)-axis)</td><td>\(\begin{pmatrix}1&k\\0&1\end{pmatrix}\)</td></tr>
+  </table>
+</div>
+
+<h2>Characteristic Polynomial and Minimal Polynomial</h2>
+<div class="definition">
+  The <strong>characteristic polynomial</strong> of \(A\) is \(\chi_A(\lambda) = \det(\lambda I - A)\).<br>
+  The <strong>minimal polynomial</strong> \(m_A(\lambda)\) is the monic polynomial of lowest degree such that \(m_A(A)=O\).<br>
+  By Cayley-Hamilton: \(\chi_A(A) = O\). The minimal polynomial divides the characteristic polynomial.
+</div>
+<div class="example">
+  <strong>Example:</strong> For \(A = \begin{pmatrix}1&1\\0&1\end{pmatrix}\).<br>
+  Characteristic polynomial: \((\lambda-1)^2\). Both eigenvalues are 1.<br>
+  Is \(m_A = (\lambda-1)\)? Test: \(A-I = \begin{pmatrix}0&1\\0&0\end{pmatrix} \ne O\). So minimal polynomial is \((\lambda-1)^2\).
+</div>
+<div class="example">
+  <strong>Example 2:</strong> For \(A = \begin{pmatrix}2&0\\0&2\end{pmatrix} = 2I\).<br>
+  Characteristic polynomial: \((\lambda-2)^2\). But \(A-2I = O\), so minimal polynomial is \((\lambda-2)\).
+</div>
+<div class="exam-tip">
+  <strong>AQA Matrices Exam Technique:</strong>
+  <ul>
+    <li>For eigenvalue/eigenvector questions: always verify by computing \(A\mathbf{v} = \lambda\mathbf{v}\) for your final answer.</li>
+    <li>For Cayley-Hamilton: substitute \(A\) for \(\lambda\) in the characteristic equation — be careful with \(\lambda^0=I\) (not 1).</li>
+    <li>To find \(A^{-1}\) via Cayley-Hamilton: rearrange so that \(I = f(A)\) and read off \(A^{-1}\).</li>
+    <li>Diagonalisation: \(A^n = PD^nP^{-1}\) only works when \(A\) has \(n\) linearly independent eigenvectors (i.e. is diagonalisable).</li>
+    <li>For a \(2\times 2\) matrix: if \(\text{tr}(A)=\lambda_1+\lambda_2\) and \(\det(A)=\lambda_1\lambda_2\), these give a quick check on your eigenvalues.</li>
+    <li>Eigenvectors are not unique — any non-zero scalar multiple is also an eigenvector. In AQA, state the direction clearly or write the general form \(k\mathbf{v}\).</li>
+    <li>Row operations: when solving \((A-\lambda I)\mathbf{v}=\mathbf{0}\), use row reduction. The rows should be linearly dependent (since \(\det=0\)), so one equation is redundant — use the remaining equation to express components in terms of a free parameter.</li>
+  </ul>
+</div>
+
+<h2>Determinant Properties — Reminder</h2>
+<div class="definition">
+  <ul>
+    <li>\(\det(AB) = \det(A)\det(B)\)</li>
+    <li>\(\det(A^{-1}) = 1/\det(A)\)</li>
+    <li>\(\det(A^T) = \det(A)\)</li>
+    <li>\(\det(kA) = k^n\det(A)\) for an \(n\times n\) matrix</li>
+    <li>Swapping two rows (or columns) multiplies the determinant by \(-1\).</li>
+    <li>Adding a multiple of one row to another does not change the determinant.</li>
+  </ul>
+</div>
+
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", function() {

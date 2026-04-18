@@ -246,6 +246,344 @@ where \((x_0, y_0, z_0)\) is the point and \(n_1 x + n_2 y + n_3 z = D\) is the 
   <li>Can you analyse when a 3-plane system has no solution, a line of solutions, or a unique solution?</li>
 </ul>
 
+<h2>Vector Product — Full Properties and Applications</h2>
+
+<p>For vectors \(\mathbf{a}\) and \(\mathbf{b}\), the vector (cross) product \(\mathbf{a}\times\mathbf{b}\) is a vector perpendicular to both, with magnitude \(|\mathbf{a}||\mathbf{b}|\sin\theta\).</p>
+
+<p><strong>Properties:</strong></p>
+<ul>
+  <li>\(\mathbf{a}\times\mathbf{b} = -\mathbf{b}\times\mathbf{a}\) (anti-commutative)</li>
+  <li>\(\mathbf{a}\times(\mathbf{b}+\mathbf{c}) = \mathbf{a}\times\mathbf{b}+\mathbf{a}\times\mathbf{c}\) (distributive)</li>
+  <li>\(\mathbf{a}\times\mathbf{a} = \mathbf{0}\) (parallel vectors)</li>
+  <li>\(\mathbf{i}\times\mathbf{j}=\mathbf{k}\), \(\mathbf{j}\times\mathbf{k}=\mathbf{i}\), \(\mathbf{k}\times\mathbf{i}=\mathbf{j}\)</li>
+</ul>
+
+<p><strong>Area applications:</strong></p>
+<ul>
+  <li>Area of parallelogram with sides \(\mathbf{a}\) and \(\mathbf{b}\): \(|\mathbf{a}\times\mathbf{b}|\)</li>
+  <li>Area of triangle with sides \(\mathbf{a}\) and \(\mathbf{b}\): \(\frac{1}{2}|\mathbf{a}\times\mathbf{b}|\)</li>
+  <li>Volume of parallelepiped: \(|\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})|\)</li>
+  <li>Volume of tetrahedron \(OABC\): \(\frac{1}{6}|\overrightarrow{OA}\cdot(\overrightarrow{OB}\times\overrightarrow{OC})|\)</li>
+</ul>
+
+<div class="example">
+<strong>Example:</strong> Find the area of triangle \(OAB\) with \(O=(0,0,0)\), \(A=(2,1,0)\), \(B=(1,3,1)\).
+
+\(\mathbf{a}=(2,1,0)\), \(\mathbf{b}=(1,3,1)\).
+$$\mathbf{a}\times\mathbf{b} = \begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\2&1&0\\1&3&1\end{vmatrix} = (1-0)\mathbf{i}-(2-0)\mathbf{j}+(6-1)\mathbf{k} = (1,-2,5)$$
+Area \(= \frac{1}{2}\sqrt{1+4+25} = \frac{\sqrt{30}}{2}\).
+</div>
+
+<h2>Lines and Planes — Distance Calculations</h2>
+
+<h3>Distance from a point to a plane</h3>
+<p>The perpendicular distance from point \(P(x_1,y_1,z_1)\) to the plane \(ax+by+cz=d\) is:</p>
+$$\text{dist} = \frac{|ax_1+by_1+cz_1-d|}{\sqrt{a^2+b^2+c^2}}$$
+
+<h3>Distance between skew lines</h3>
+<p>For skew lines \(\mathbf{r}_1 = \mathbf{a}_1 + s\mathbf{d}_1\) and \(\mathbf{r}_2 = \mathbf{a}_2 + t\mathbf{d}_2\):</p>
+$$\text{dist} = \frac{|(\mathbf{a}_2-\mathbf{a}_1)\cdot(\mathbf{d}_1\times\mathbf{d}_2)|}{|\mathbf{d}_1\times\mathbf{d}_2|}$$
+
+<div class="example">
+<strong>Example:</strong> Find the distance from \(P(1,2,3)\) to the plane \(2x-y+2z=5\).
+
+$$d = \frac{|2(1)-1(2)+2(3)-5|}{\sqrt{4+1+4}} = \frac{|2-2+6-5|}{3} = \frac{1}{3}$$
+</div>
+
+<h3>Distance from a point to a line</h3>
+<p>For point \(P\) and line through \(A\) with direction \(\hat{\mathbf{d}}\) (unit vector):</p>
+$$\text{dist} = |\overrightarrow{AP} - (\overrightarrow{AP}\cdot\hat{\mathbf{d}})\hat{\mathbf{d}}| = \frac{|\overrightarrow{AP}\times\mathbf{d}|}{|\mathbf{d}|}$$
+
+<h2>Three Planes — Cases of Consistency</h2>
+
+<p>Consider three planes \(\Pi_1,\Pi_2,\Pi_3\). The system of equations may have:</p>
+
+<table>
+  <tr><th>Case</th><th>Geometric picture</th><th>Algebraic test</th></tr>
+  <tr><td><strong>Unique solution</strong></td><td>Three planes meeting at a single point</td><td>\(\det(A)\neq0\) for the coefficient matrix</td></tr>
+  <tr><td><strong>Line of intersection</strong></td><td>Three planes sharing a common line (sheaf)</td><td>\(\det(A)=0\), system consistent, one free variable</td></tr>
+  <tr><td><strong>No solution — triangular prism</strong></td><td>Three planes forming a prism (no common point)</td><td>\(\det(A)=0\), system inconsistent</td></tr>
+  <tr><td><strong>No solution — parallel planes</strong></td><td>Two (or more) planes parallel but not coincident</td><td>Parallel normals, different constants</td></tr>
+</table>
+
+<div class="example">
+<strong>Determining the type (row reduction method):</strong>
+
+Given: \(\Pi_1: x+y+z=6\), \(\Pi_2: 2x+y-z=3\), \(\Pi_3: x-y+2z=4\).
+
+Augmented matrix:
+$$\begin{pmatrix}1&1&1&|&6\\2&1&-1&|&3\\1&-1&2&|&4\end{pmatrix}$$
+\(R_2\to R_2-2R_1\): \((0,-1,-3|-9)\). \(R_3\to R_3-R_1\): \((0,-2,1|-2)\).
+\(R_3\to R_3-2R_2\): \((0,0,7|16)\).
+
+\(\det \neq 0\) (rank 3) → unique solution. From \(7z=16\): \(z=16/7\), etc.
+</div>
+
+<h2>AQA Exam Technique — Further Vectors</h2>
+
+<div class="exam-tip">
+<strong>Common errors and how to avoid them:</strong>
+<ul>
+  <li><strong>Cross product sign:</strong> Use the determinant formula carefully. A common error is the sign on the \(\mathbf{j}\) component — it has a minus: \(-\det\begin{pmatrix}a_1&a_3\\b_1&b_3\end{pmatrix}\).</li>
+  <li><strong>Angle between planes:</strong> Use \(\cos\theta = \dfrac{|\mathbf{n}_1\cdot\mathbf{n}_2|}{|\mathbf{n}_1||\mathbf{n}_2|}\) (absolute value to get acute angle). Angle between a line and plane uses \(\sin\alpha = \dfrac{|\mathbf{d}\cdot\mathbf{n}|}{|\mathbf{d}||\mathbf{n}|}\).</li>
+  <li><strong>Skew lines:</strong> To prove skew, show: (1) not parallel (direction vectors not scalar multiples), and (2) the system from setting them equal is inconsistent.</li>
+  <li><strong>Foot of perpendicular:</strong> Parameterise the line, substitute into the plane equation to find \(t\), then evaluate the point.</li>
+  <li><strong>Scalar triple product:</strong> \(\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) = \det[\mathbf{a}\;\mathbf{b}\;\mathbf{c}]\). Zero means coplanar.</li>
+</ul>
+</div>
+
+<h2>Vector Equation of a Plane — Forms and Conversions</h2>
+<div class="definition">
+  Three equivalent forms of a plane with normal \(\mathbf{n} = (a,b,c)\):
+  <ol>
+    <li><strong>Vector form:</strong> \(\mathbf{r}\cdot\mathbf{n} = d\)</li>
+    <li><strong>Cartesian form:</strong> \(ax+by+cz = d\)</li>
+    <li><strong>Parametric form:</strong> \(\mathbf{r} = \mathbf{a} + s\mathbf{b} + t\mathbf{c}\) where \(\mathbf{b},\mathbf{c}\) lie in the plane</li>
+  </ol>
+  To convert parametric → Cartesian: find \(\mathbf{n} = \mathbf{b}\times\mathbf{c}\), then \(d = \mathbf{a}\cdot\mathbf{n}\).
+</div>
+<div class="example">
+  <strong>Example — Convert to Cartesian:</strong><br>
+  \(\mathbf{r} = (1,0,2) + s(1,2,0) + t(0,1,3)\)<br>
+  \(\mathbf{n} = (1,2,0)\times(0,1,3) = (6-0, 0-3, 1-0) = (6,-3,1)\)<br>
+  \(d = (1,0,2)\cdot(6,-3,1) = 6+0+2 = 8\)<br>
+  Cartesian: \(6x - 3y + z = 8\)
+</div>
+
+<h2>Intersection of Lines and Planes — Full Worked Examples</h2>
+<div class="example">
+  <strong>Example 1 — Line meets plane:</strong><br>
+  Line: \(\mathbf{r} = (1,2,0)+t(1,-1,2)\). Plane: \(2x+y-z=3\).<br>
+  Sub: \(2(1+t)+(2-t)-(2t)=3 \Rightarrow 2+2t+2-t-2t=3 \Rightarrow 4-t=3 \Rightarrow t=1\).<br>
+  Point: \((2,1,2)\).
+</div>
+<div class="example">
+  <strong>Example 2 — Two planes intersect in a line:</strong><br>
+  Plane 1: \(x+y-z=2\). Plane 2: \(2x-y+z=1\).<br>
+  Add: \(3x=3 \Rightarrow x=1\). Sub: \(1+y-z=2 \Rightarrow y-z=1\). Let \(z=t\): \(y=1+t\).<br>
+  Line: \(\mathbf{r} = (1,1,0)+t(0,1,1)\).
+</div>
+<div class="example">
+  <strong>Example 3 — Angle between line and plane:</strong><br>
+  Line direction: \(\mathbf{d}=(1,2,2)\). Plane normal: \(\mathbf{n}=(2,1,-2)\).<br>
+  \(\sin\alpha = \dfrac{|\mathbf{d}\cdot\mathbf{n}|}{|\mathbf{d}||\mathbf{n}|} = \dfrac{|2+2-4|}{3\cdot 3} = \dfrac{0}{9} = 0\).<br>
+  So \(\alpha=0°\): the line is parallel to the plane (or lies in it). Check: sub a point on the line into the plane equation to distinguish.
+</div>
+
+<h2>Skew Lines — Distance Formula</h2>
+<div class="definition">
+  Distance between skew lines \(\mathbf{r}=\mathbf{a}+s\mathbf{b}\) and \(\mathbf{r}=\mathbf{c}+t\mathbf{d}\):
+  \[D = \dfrac{|(\mathbf{c}-\mathbf{a})\cdot(\mathbf{b}\times\mathbf{d})|}{|\mathbf{b}\times\mathbf{d}|}\]
+</div>
+<div class="example">
+  <strong>Example:</strong> Lines \(\ell_1: \mathbf{r}=(0,0,0)+s(1,2,3)\) and \(\ell_2: \mathbf{r}=(1,0,0)+t(1,1,0)\).<br>
+  \(\mathbf{b}\times\mathbf{d} = (1,2,3)\times(1,1,0) = (0-3, 3-0, 1-2) = (-3,3,-1)\). \(|\mathbf{b}\times\mathbf{d}| = \sqrt{9+9+1}=\sqrt{19}\).<br>
+  \(\mathbf{c}-\mathbf{a} = (1,0,0)\). \((1,0,0)\cdot(-3,3,-1) = -3\).<br>
+  \(D = \dfrac{3}{\sqrt{19}}\)
+</div>
+
+<h2>Vector Product — Scalar Triple Product Applications</h2>
+<div class="definition">
+  The <strong>scalar triple product</strong> \([\mathbf{a},\mathbf{b},\mathbf{c}] = \mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})\) gives the signed volume of the parallelepiped with edges \(\mathbf{a}, \mathbf{b}, \mathbf{c}\).<br>
+  Volume of tetrahedron \(OABC = \dfrac{1}{6}|[\mathbf{a},\mathbf{b},\mathbf{c}]|\).
+</div>
+<div class="example">
+  <strong>Example — Volume of tetrahedron:</strong> \(A=(1,0,0),\; B=(0,2,0),\; C=(0,0,3)\), \(O\) origin.<br>
+  \(\mathbf{a}=(1,0,0),\;\mathbf{b}=(0,2,0),\;\mathbf{c}=(0,0,3)\).<br>
+  \([\mathbf{a},\mathbf{b},\mathbf{c}] = \det\begin{pmatrix}1&0&0\\0&2&0\\0&0&3\end{pmatrix} = 6\).<br>
+  Volume of tetrahedron \(= \dfrac{1}{6}\cdot 6 = 1\).
+</div>
+<div class="example">
+  <strong>Coplanarity test:</strong> Points \(A,B,C,D\) are coplanar iff \(\overrightarrow{AB}\cdot(\overrightarrow{AC}\times\overrightarrow{AD}) = 0\).
+</div>
+
+<h2>Reflection of a Point in a Plane</h2>
+<div class="definition">
+  To reflect point \(P\) in plane \(\Pi\):
+  <ol>
+    <li>Find foot of perpendicular \(F\) from \(P\) to \(\Pi\): parameterise the normal through \(P\) as \(\mathbf{r}=\mathbf{p}+t\mathbf{n}\), sub into plane equation to find \(t\).</li>
+    <li>Reflection \(P' = 2F - P\).</li>
+  </ol>
+</div>
+<div class="example">
+  <strong>Example:</strong> Reflect \(P=(3,1,0)\) in the plane \(x+2y-z=5\).<br>
+  Normal: \(\mathbf{n}=(1,2,-1)\). Line through \(P\): \((3+t, 1+2t, -t)\).<br>
+  Sub into plane: \((3+t)+2(1+2t)-(-t)=5 \Rightarrow 5+6t=5 \Rightarrow t=0\).<br>
+  So \(P\) already lies in the plane! Reflection is \(P\) itself.
+</div>
+<div class="example">
+  <strong>Example 2:</strong> Reflect \(P=(1,1,1)\) in the plane \(x+y+z=0\).<br>
+  Normal \(\mathbf{n}=(1,1,1)\). Line: \((1+t,1+t,1+t)\). Sub: \(3+3t=0 \Rightarrow t=-1\). \(F=(0,0,0)\).<br>
+  \(P'=2(0,0,0)-(1,1,1) = (-1,-1,-1)\).
+</div>
+
+<h2>Closest Point on a Line to a Given Point</h2>
+<div class="definition">
+  Given line \(\mathbf{r} = \mathbf{a}+t\mathbf{b}\) and external point \(P\):<br>
+  The foot of perpendicular \(F\) has parameter \(t = \dfrac{(\mathbf{p}-\mathbf{a})\cdot\mathbf{b}}{|\mathbf{b}|^2}\).<br>
+  Distance from \(P\) to line: \(d = |\mathbf{p}-\mathbf{a} - t\mathbf{b}|\), or \(d = \dfrac{|(\mathbf{p}-\mathbf{a})\times\mathbf{b}|}{|\mathbf{b}|}\).
+</div>
+<div class="example">
+  <strong>Example:</strong> \(P=(4,0,0)\), line \(\mathbf{r}=(0,0,0)+t(1,1,1)\).<br>
+  \(t = \dfrac{(4,0,0)\cdot(1,1,1)}{3} = \dfrac{4}{3}\). \(F=\left(\tfrac{4}{3},\tfrac{4}{3},\tfrac{4}{3}\right)\).<br>
+  \(\overrightarrow{FP} = \left(\tfrac{8}{3},-\tfrac{4}{3},-\tfrac{4}{3}\right)\). Distance \(= \sqrt{\tfrac{64}{9}+\tfrac{16}{9}+\tfrac{16}{9}} = \sqrt{\tfrac{96}{9}} = \dfrac{4\sqrt{6}}{3}\).
+</div>
+
+<h2>Cross Product — Full Properties and Applications</h2>
+<div class="definition">
+  For vectors \(\mathbf{a} = (a_1,a_2,a_3)\) and \(\mathbf{b}=(b_1,b_2,b_3)\):
+  \[\mathbf{a}\times\mathbf{b} = \begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\a_1&a_2&a_3\\b_1&b_2&b_3\end{vmatrix} = (a_2b_3-a_3b_2,\;a_3b_1-a_1b_3,\;a_1b_2-a_2b_1)\]
+  Properties:
+  <ul>
+    <li>\(\mathbf{a}\times\mathbf{b} = -\mathbf{b}\times\mathbf{a}\) (anti-commutative)</li>
+    <li>\(|\mathbf{a}\times\mathbf{b}| = |\mathbf{a}||\mathbf{b}|\sin\theta\) where \(\theta\) is the angle between them</li>
+    <li>\(\mathbf{a}\times\mathbf{a} = \mathbf{0}\)</li>
+    <li>Area of parallelogram with sides \(\mathbf{a},\mathbf{b}\): \(|\mathbf{a}\times\mathbf{b}|\)</li>
+    <li>Area of triangle \(OAB\): \(\tfrac{1}{2}|\mathbf{a}\times\mathbf{b}|\)</li>
+  </ul>
+</div>
+<div class="example">
+  <strong>Example — Area of triangle:</strong> \(A=(1,0,0),\; B=(0,2,0),\; C=(0,0,3)\).<br>
+  \(\overrightarrow{AB}=(-1,2,0),\;\overrightarrow{AC}=(-1,0,3)\).<br>
+  \(\overrightarrow{AB}\times\overrightarrow{AC} = (6-0, 0-(-3), 0-(-2)) = (6,3,2)\).<br>
+  Area of \(\triangle ABC = \tfrac{1}{2}|(6,3,2)| = \tfrac{1}{2}\sqrt{36+9+4} = \dfrac{7}{2}\).
+</div>
+
+<h2>Angles Between Lines and Between Planes</h2>
+<div class="definition">
+  <strong>Angle between two lines</strong> with direction vectors \(\mathbf{d}_1, \mathbf{d}_2\):
+  \[\cos\theta = \dfrac{|\mathbf{d}_1\cdot\mathbf{d}_2|}{|\mathbf{d}_1||\mathbf{d}_2|}\quad\text{(take acute angle)}\]
+  <strong>Angle between two planes</strong> with normals \(\mathbf{n}_1, \mathbf{n}_2\):
+  \[\cos\theta = \dfrac{|\mathbf{n}_1\cdot\mathbf{n}_2|}{|\mathbf{n}_1||\mathbf{n}_2|}\]
+</div>
+<div class="example">
+  <strong>Example:</strong> Find the angle between planes \(x+y+z=1\) and \(2x-y+z=3\).<br>
+  \(\mathbf{n}_1=(1,1,1),\;\mathbf{n}_2=(2,-1,1)\).<br>
+  \(\cos\theta = \dfrac{|2-1+1|}{\sqrt{3}\cdot\sqrt{6}} = \dfrac{2}{\sqrt{18}} = \dfrac{2}{3\sqrt{2}} = \dfrac{\sqrt{2}}{3}\).<br>
+  \(\theta = \arccos\!\left(\dfrac{\sqrt{2}}{3}\right) \approx 61.9°\).
+</div>
+
+<h2>Parametric Lines — Worked Problems</h2>
+<div class="example">
+  <strong>Example 1 — Intersection of two lines:</strong><br>
+  \(\ell_1: \mathbf{r}=(1,2,3)+s(1,0,1)\) and \(\ell_2: \mathbf{r}=(2,3,4)+t(0,1,1)\).<br>
+  From components: \(1+s=2 \Rightarrow s=1\); \(2=3+t \Rightarrow t=-1\); \(3+s=4+t \Rightarrow 4=3\). Inconsistent — lines are <strong>skew</strong>.
+</div>
+<div class="example">
+  <strong>Example 2 — Lines that intersect:</strong><br>
+  \(\ell_1: \mathbf{r}=(0,0,0)+s(1,1,0)\) and \(\ell_2: \mathbf{r}=(1,0,1)+t(0,1,-1)\).<br>
+  \(s=1,\; s=t,\; 0=1-t \Rightarrow t=1,\; s=1\). Check all three: consistent ✓. Intersection: \((1,1,0)\).
+</div>
+
+<h2>Section Formula and Ratio Division</h2>
+<div class="definition">
+  Point dividing \(AB\) in ratio \(m:n\) internally: \(\mathbf{r} = \dfrac{n\mathbf{a}+m\mathbf{b}}{m+n}\).<br>
+  Midpoint (\(m:n=1:1\)): \(\mathbf{r} = \dfrac{\mathbf{a}+\mathbf{b}}{2}\).
+</div>
+<div class="example">
+  <strong>Example:</strong> \(A=(1,2,3),\; B=(4,5,6)\). Point \(P\) divides \(AB\) in ratio \(2:1\).<br>
+  \(\mathbf{p} = \dfrac{1\cdot(1,2,3)+2\cdot(4,5,6)}{3} = \dfrac{(9,12,15)}{3} = (3,4,5)\).
+</div>
+
+<h2>Vector Identities and Triple Products</h2>
+<div class="definition">
+  Vector triple product: \(\mathbf{a}\times(\mathbf{b}\times\mathbf{c}) = (\mathbf{a}\cdot\mathbf{c})\mathbf{b} - (\mathbf{a}\cdot\mathbf{b})\mathbf{c}\)<br>
+  Lagrange's identity: \(|\mathbf{a}\times\mathbf{b}|^2 = |\mathbf{a}|^2|\mathbf{b}|^2 - (\mathbf{a}\cdot\mathbf{b})^2\)
+</div>
+<div class="exam-tip">
+  <strong>Further Vectors AQA Exam Technique:</strong>
+  <ul>
+    <li>Always convert between forms of plane equation smoothly — show the cross product computation clearly.</li>
+    <li>For skew lines proof: show non-parallel (directions not scalar multiples) <em>then</em> show inconsistency of simultaneous equations.</li>
+    <li>Distance formulas: don't confuse point-to-line (\(\dfrac{|(\mathbf{p}-\mathbf{a})\times\mathbf{b}|}{|\mathbf{b}|}\)) and point-to-plane (\(\dfrac{|\mathbf{n}\cdot\mathbf{p}-d|}{|\mathbf{n}|}\)).</li>
+    <li>Scalar triple product = 0 is the coplanarity condition — useful for checking answers.</li>
+    <li>AQA may ask you to find a line of intersection of two planes — always use elimination then introduce a parameter.</li>
+  </ul>
+</div>
+
+<h2>Summary of Key Vector Formulae</h2>
+<div class="definition">
+  <table border="1" style="border-collapse:collapse;width:100%;">
+    <tr><th>Quantity</th><th>Formula</th></tr>
+    <tr><td>Dot product</td><td>\(\mathbf{a}\cdot\mathbf{b} = a_1b_1+a_2b_2+a_3b_3 = |\mathbf{a}||\mathbf{b}|\cos\theta\)</td></tr>
+    <tr><td>Cross product magnitude</td><td>\(|\mathbf{a}\times\mathbf{b}| = |\mathbf{a}||\mathbf{b}|\sin\theta\)</td></tr>
+    <tr><td>Unit vector</td><td>\(\hat{\mathbf{a}} = \dfrac{\mathbf{a}}{|\mathbf{a}|}\)</td></tr>
+    <tr><td>Distance point to line</td><td>\(\dfrac{|(\mathbf{p}-\mathbf{a})\times\mathbf{d}|}{|\mathbf{d}|}\)</td></tr>
+    <tr><td>Distance point to plane \(\mathbf{n}\cdot\mathbf{r}=d\)</td><td>\(\dfrac{|\mathbf{n}\cdot\mathbf{p}-d|}{|\mathbf{n}|}\)</td></tr>
+    <tr><td>Distance between skew lines</td><td>\(\dfrac{|(\mathbf{c}-\mathbf{a})\cdot(\mathbf{b}\times\mathbf{d})|}{|\mathbf{b}\times\mathbf{d}|}\)</td></tr>
+    <tr><td>Volume of parallelepiped</td><td>\(|[\mathbf{a},\mathbf{b},\mathbf{c}]| = |\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})|\)</td></tr>
+    <tr><td>Area of triangle \(ABC\)</td><td>\(\tfrac{1}{2}|\overrightarrow{AB}\times\overrightarrow{AC}|\)</td></tr>
+    <tr><td>Angle between lines</td><td>\(\cos\theta = \dfrac{|\mathbf{d}_1\cdot\mathbf{d}_2|}{|\mathbf{d}_1||\mathbf{d}_2|}\)</td></tr>
+    <tr><td>Angle between planes</td><td>\(\cos\theta = \dfrac{|\mathbf{n}_1\cdot\mathbf{n}_2|}{|\mathbf{n}_1||\mathbf{n}_2|}\)</td></tr>
+  </table>
+</div>
+
+<h2>Position Vectors and Geometry</h2>
+<div class="example">
+  <strong>Example — Proving a quadrilateral is a parallelogram:</strong><br>
+  \(A=(1,0,1),\; B=(3,1,2),\; C=(4,3,3),\; D=(2,2,2)\).<br>
+  \(\overrightarrow{AB}=(2,1,1),\; \overrightarrow{DC}=(2,1,1)\). Equal, so \(AB \parallel DC\) and \(|AB|=|DC|\).<br>
+  \(\overrightarrow{AD}=(1,2,1),\; \overrightarrow{BC}=(1,2,1)\). Equal. So \(ABCD\) is a parallelogram.
+</div>
+<div class="example">
+  <strong>Example — Centroid of a triangle:</strong><br>
+  The centroid \(G\) of triangle \(ABC\) has position vector \(\mathbf{g} = \dfrac{\mathbf{a}+\mathbf{b}+\mathbf{c}}{3}\).<br>
+  For \(A=(2,4,0),\; B=(0,2,6),\; C=(4,0,3)\): \(G = \left(\dfrac{6}{3},\dfrac{6}{3},\dfrac{9}{3}\right) = (2,2,3)\).
+</div>
+<div class="example">
+  <strong>Example — Verify four points are coplanar:</strong><br>
+  \(A=(1,1,0),\; B=(2,0,1),\; C=(0,2,-1),\; D=(3,1,2)\).<br>
+  \(\overrightarrow{AB}=(1,-1,1),\;\overrightarrow{AC}=(-1,1,-1),\;\overrightarrow{AD}=(2,0,2)\).<br>
+  \([\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD}] = \overrightarrow{AB}\cdot(\overrightarrow{AC}\times\overrightarrow{AD})\).<br>
+  \(\overrightarrow{AC}\times\overrightarrow{AD} = (1\cdot 2-(-1)\cdot 0,\;(-1)\cdot 2-(-1)\cdot 2,\;(-1)\cdot 0-1\cdot 2) = (2,0,-2)\).<br>
+  \(\overrightarrow{AB}\cdot(2,0,-2) = 2+0-2=0\). Coplanar. ✓
+</div>
+
+<h2>Lines in 3D — All Forms</h2>
+<div class="definition">
+  A line through point \(\mathbf{a}\) in direction \(\mathbf{d}\) can be written as:
+  <ul>
+    <li><strong>Vector form:</strong> \(\mathbf{r} = \mathbf{a}+t\mathbf{d}\)</li>
+    <li><strong>Cartesian/symmetric form:</strong> \(\dfrac{x-a_1}{d_1} = \dfrac{y-a_2}{d_2} = \dfrac{z-a_3}{d_3} = t\)</li>
+    <li><strong>Parametric equations:</strong> \(x = a_1+td_1,\; y=a_2+td_2,\; z=a_3+td_3\)</li>
+  </ul>
+</div>
+<div class="example">
+  <strong>Example — Convert to symmetric form:</strong><br>
+  Line \(\mathbf{r}=(2,-1,3)+t(1,2,-2)\) becomes:<br>
+  \(\dfrac{x-2}{1} = \dfrac{y+1}{2} = \dfrac{z-3}{-2}\)
+</div>
+<div class="example">
+  <strong>Example — Find direction from symmetric form:</strong><br>
+  \(\dfrac{x-1}{3} = \dfrac{y-2}{-1} = \dfrac{z}{4}\) gives point \((1,2,0)\) and direction \((3,-1,4)\).
+</div>
+<div class="example">
+  <strong>Example — Nearest points on two skew lines:</strong><br>
+  For \(\ell_1: \mathbf{r}=(1,0,0)+s(1,1,0)\) and \(\ell_2: \mathbf{r}=(0,1,0)+t(0,0,1)\):<br>
+  Connecting vector: \((1+s, -1+s, -t)\). Perpendicular to both directions:<br>
+  \(\cdot(1,1,0)\): \((1+s)+(-1+s)=0 \Rightarrow 2s=0 \Rightarrow s=0\).<br>
+  \(\cdot(0,0,1)\): \(-t=0 \Rightarrow t=0\).<br>
+  Nearest points: \((1,0,0)\) on \(\ell_1\) and \((0,1,0)\) on \(\ell_2\). Distance \(= \sqrt{1+1} = \sqrt{2}\).
+</div>
+
+<h2>Projections</h2>
+<div class="definition">
+  <strong>Projection of \(\mathbf{a}\) onto \(\mathbf{b}\):</strong>
+  \[\text{proj}_\mathbf{b}\mathbf{a} = \dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{b}|^2}\mathbf{b},\qquad \text{scalar projection} = \dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{b}|}\]
+  The component of \(\mathbf{a}\) perpendicular to \(\mathbf{b}\): \(\mathbf{a} - \text{proj}_\mathbf{b}\mathbf{a}\).
+</div>
+<div class="example">
+  <strong>Example:</strong> Project \(\mathbf{a}=(3,1,2)\) onto \(\mathbf{b}=(1,0,1)\).<br>
+  \(\dfrac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{b}|^2} = \dfrac{3+0+2}{2} = \dfrac{5}{2}\). Projection: \(\dfrac{5}{2}(1,0,1) = \left(\dfrac{5}{2},0,\dfrac{5}{2}\right)\).<br>
+  Perpendicular component: \((3,1,2)-\left(\dfrac{5}{2},0,\dfrac{5}{2}\right) = \left(\dfrac{1}{2},1,-\dfrac{1}{2}\right)\).
+</div>
+<div class="exam-tip">
+  <strong>Projection tip:</strong> The foot of perpendicular from point \(P\) to a line is the projection of \(\overrightarrow{AP}\) onto the direction \(\mathbf{d}\), added back to \(A\). This gives \(F = A + \dfrac{(P-A)\cdot\mathbf{d}}{|\mathbf{d}|^2}\mathbf{d}\). Check: \(\overrightarrow{FP}\cdot\mathbf{d}=0\).<br>
+  <strong>Note:</strong> The Gram–Schmidt process uses repeated projection to build an orthogonal basis; this concept underpins many of the distance and perpendicularity calculations in this topic.<br>
+  <strong>Remember:</strong> Two vectors are perpendicular iff their dot product is zero. Two lines are parallel iff their direction vectors are scalar multiples. These two facts underpin nearly every vector question.<br>
+  <strong>Cross product direction:</strong> Use the right-hand rule — curl fingers from \(\mathbf{a}\) to \(\mathbf{b}\); thumb points in direction of \(\mathbf{a}\times\mathbf{b}\).
+</div>
+
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", function() {

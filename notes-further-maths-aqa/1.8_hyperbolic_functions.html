@@ -236,6 +236,354 @@
   <li>Can you solve equations like \(a\cosh x + b\sinh x = c\) by substituting exponential definitions?</li>
 </ul>
 
+<h2>Inverse Hyperbolic Functions — Graphs and Domains</h2>
+
+<table>
+  <tr><th>Function</th><th>Domain</th><th>Range</th><th>Logarithmic form</th></tr>
+  <tr><td>\(\text{arcsinh}\,x\)</td><td>\(\mathbb{R}\)</td><td>\(\mathbb{R}\)</td><td>\(\ln(x+\sqrt{x^2+1})\)</td></tr>
+  <tr><td>\(\text{arccosh}\,x\)</td><td>\(x\geq1\)</td><td>\(y\geq0\)</td><td>\(\ln(x+\sqrt{x^2-1})\)</td></tr>
+  <tr><td>\(\text{arctanh}\,x\)</td><td>\(|x|&lt;1\)</td><td>\(\mathbb{R}\)</td><td>\(\frac{1}{2}\ln\frac{1+x}{1-x}\)</td></tr>
+</table>
+
+<svg viewBox="-160 -130 320 260" width="280" height="230" style="display:block;margin:15px auto;">
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="0" y1="-120" x2="0" y2="120" stroke="#94a3b8" stroke-width="1"/>
+  <!-- arcsinh: passes through origin, looks like log but odd -->
+  <path d="M -130,-80 C -80,-60 -40,-35 0,0 C 40,35 80,60 130,80" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="105" y="85" font-size="12" fill="#2563eb">arcsinh</text>
+  <!-- arccosh: starts at (1,0), increasing -->
+  <path d="M 15,0 C 30,25 55,45 80,60 C 100,70 125,80 145,88" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="105" y="78" font-size="12" fill="#16a34a" transform="translate(0,-8)">arccosh</text>
+  <!-- point (1,0) -->
+  <circle cx="15" cy="0" r="3" fill="#16a34a"/>
+  <text x="17" y="12" font-size="10" fill="#16a34a">(1,0)</text>
+  <text x="-148" y="-110" font-size="11" fill="#64748b">Inverse hyperbolic functions</text>
+  <text x="-10" y="-110" font-size="11" fill="#64748b">Im</text>
+  <text x="132" y="14" font-size="11" fill="#64748b">Re</text>
+</svg>
+
+<div class="exam-tip">
+<strong>Derivatives of inverse hyperbolics:</strong>
+$$\frac{d}{dx}\text{arcsinh}\,x = \frac{1}{\sqrt{x^2+1}}, \qquad \frac{d}{dx}\text{arccosh}\,x = \frac{1}{\sqrt{x^2-1}}, \qquad \frac{d}{dx}\text{arctanh}\,x = \frac{1}{1-x^2}$$
+</div>
+
+<h2>Integration Using Hyperbolic Functions</h2>
+
+<p>Hyperbolic substitutions and direct standard forms:</p>
+
+<div class="example">
+<strong>Example 1:</strong> \(\displaystyle\int\dfrac{1}{\sqrt{x^2+4}}\,dx\).
+
+Let \(x=2\sinh t\), \(dx=2\cosh t\,dt\), \(\sqrt{x^2+4}=2\cosh t\):
+$$\int\frac{2\cosh t}{2\cosh t}\,dt = t+C = \text{arcsinh}(x/2)+C = \ln\!\left(\frac{x}{2}+\sqrt{\frac{x^2}{4}+1}\right)+C$$
+</div>
+
+<div class="example">
+<strong>Example 2:</strong> \(\displaystyle\int\dfrac{1}{4-x^2}\,dx\) for \(|x|&lt;2\).
+
+Let \(x=2\tanh t\), \(dx=2\text{sech}^2t\,dt\), \(4-x^2=4\text{sech}^2t\):
+$$\int\frac{2\text{sech}^2t}{4\text{sech}^2t}\,dt = \frac{t}{2}+C = \frac{1}{2}\text{arctanh}(x/2)+C = \frac{1}{4}\ln\frac{2+x}{2-x}+C$$
+</div>
+
+<div class="example">
+<strong>Example 3:</strong> \(\displaystyle\int_0^1\sqrt{1+x^2}\,dx\).
+
+Let \(x=\sinh t\): \(dx=\cosh t\,dt\), limits \(0\) to \(\text{arcsinh}(1)=\ln(1+\sqrt{2})\):
+$$\int_0^{\ln(1+\sqrt{2})}\cosh^2 t\,dt = \left[\frac{\sinh 2t}{4}+\frac{t}{2}\right]_0^{\ln(1+\sqrt{2})} = \frac{\sqrt{2}}{2}+\frac{\ln(1+\sqrt{2})}{2}$$
+</div>
+
+<h2>The Catenary — Application of \(\cosh\)</h2>
+
+<p>A uniform flexible chain hanging under gravity takes the shape of a <strong>catenary</strong>:</p>
+$$y = a\cosh\!\left(\frac{x}{a}\right)$$
+<p>where \(a\) is the height of the lowest point above the \(x\)-axis direction. Properties:</p>
+<ul>
+  <li>Minimum at \((0,a)\) with \(y'(0)=0\).</li>
+  <li>\(y'' = \frac{1}{a}\cosh(x/a) = \frac{y}{a^2}\) — curvature is proportional to \(y\).</li>
+  <li>Arc length from \(-L\) to \(L\): \(2a\sinh(L/a)\).</li>
+  <li>The Gateway Arch in St Louis is (approximately) an inverted catenary.</li>
+</ul>
+
+<div class="example">
+<strong>Surface area of a catenary:</strong> When \(y=\cosh x\) is rotated about the \(x\)-axis from \(-a\) to \(a\):
+$$S = 2\pi\int_{-a}^a\cosh x\sqrt{1+\sinh^2 x}\,dx = 2\pi\int_{-a}^a\cosh^2 x\,dx = \pi\left[\sinh(2a)/2 + 2a\right]$$
+(using the double-angle identity \(\cosh^2 x = (1+\cosh2x)/2\)).
+</div>
+
+<h2>AQA Exam Technique — Hyperbolic Functions</h2>
+
+<div class="exam-tip">
+<strong>Key tips:</strong>
+<ul>
+  <li><strong>Identity proofs:</strong> Start from exponential definitions. Don't try to prove by analogy with trig — show the working explicitly.</li>
+  <li><strong>Osborne's rule:</strong> Replace \(\cos\to\cosh\), \(\sin\to\sinh\), but replace \(\sin^2\to -\sinh^2\) (change sign when \(\sin^2\) appears). This gives the correct hyperbolic identities.</li>
+  <li><strong>Inverse forms:</strong> For the logarithmic derivation, set \(y=\sinh^{-1}x\) so \(\sinh y = x\), write as exponential, solve the quadratic in \(e^y\), discard the negative root.</li>
+  <li><strong>Integration:</strong> Recognise \(\dfrac{1}{\sqrt{a^2+x^2}}\to\text{arcsinh}(x/a)\) and \(\dfrac{1}{\sqrt{x^2-a^2}}\to\text{arccosh}(x/a)\) as standard forms.</li>
+  <li><strong>Equations \(a\cosh x + b\sinh x = c\):</strong> Substitute exponential forms and rearrange to a quadratic in \(e^x\). Discard solutions where \(e^x\leq0\).</li>
+</ul>
+</div>
+
+<table>
+  <tr><th>Standard integral</th><th>Result</th></tr>
+  <tr><td>\(\displaystyle\int\sinh x\,dx\)</td><td>\(\cosh x+C\)</td></tr>
+  <tr><td>\(\displaystyle\int\cosh x\,dx\)</td><td>\(\sinh x+C\)</td></tr>
+  <tr><td>\(\displaystyle\int\tanh x\,dx\)</td><td>\(\ln(\cosh x)+C\)</td></tr>
+  <tr><td>\(\displaystyle\int\dfrac{1}{\sqrt{x^2+a^2}}\,dx\)</td><td>\(\text{arcsinh}(x/a)+C\)</td></tr>
+  <tr><td>\(\displaystyle\int\dfrac{1}{\sqrt{x^2-a^2}}\,dx\)</td><td>\(\text{arccosh}(x/a)+C\)</td></tr>
+  <tr><td>\(\displaystyle\int\dfrac{1}{a^2-x^2}\,dx\)</td><td>\(\dfrac{1}{a}\text{arctanh}(x/a)+C = \dfrac{1}{2a}\ln\dfrac{a+x}{a-x}+C\)</td></tr>
+</table>
+
+</div>
+
+<h2>Hyperbolic Identities — Proofs</h2>
+<div class="definition">
+  All hyperbolic identities follow from the definitions \(\cosh x = \dfrac{e^x+e^{-x}}{2}\), \(\sinh x = \dfrac{e^x-e^{-x}}{2}\).
+</div>
+<div class="example">
+  <strong>Proof of \(\cosh^2 x - \sinh^2 x = 1\):</strong><br>
+  \(\cosh^2 x = \dfrac{e^{2x}+2+e^{-2x}}{4},\quad \sinh^2 x = \dfrac{e^{2x}-2+e^{-2x}}{4}\).<br>
+  \(\cosh^2 x - \sinh^2 x = \dfrac{4}{4} = 1\). ✓
+</div>
+<div class="example">
+  <strong>Proof of \(\sinh(A+B) = \sinh A\cosh B + \cosh A\sinh B\):</strong><br>
+  \(\sinh A\cosh B = \dfrac{e^A-e^{-A}}{2}\cdot\dfrac{e^B+e^{-B}}{2} = \dfrac{e^{A+B}+e^{A-B}-e^{-A+B}-e^{-(A+B)}}{4}\)<br>
+  \(\cosh A\sinh B = \dfrac{e^{A+B}-e^{A-B}+e^{-A+B}-e^{-(A+B)}}{4}\)<br>
+  Adding: \(\dfrac{2e^{A+B}-2e^{-(A+B)}}{4} = \dfrac{e^{A+B}-e^{-(A+B)}}{2} = \sinh(A+B)\). ✓
+</div>
+<div class="example">
+  <strong>Proof of double angle formula \(\cosh 2x = 2\cosh^2 x - 1\):</strong><br>
+  \(\cosh 2x = \cosh(x+x) = \cosh^2 x + \sinh^2 x = \cosh^2 x + \cosh^2 x - 1 = 2\cosh^2 x - 1\). ✓
+</div>
+
+<h2>Solving Hyperbolic Equations</h2>
+<div class="example">
+  <strong>Example 1 — Solve \(\cosh x = 2\):</strong><br>
+  \(\dfrac{e^x+e^{-x}}{2}=2 \Rightarrow e^x+e^{-x}=4\). Let \(u=e^x>0\): \(u+\tfrac{1}{u}=4 \Rightarrow u^2-4u+1=0\).<br>
+  \(u = 2\pm\sqrt{3}\). Both positive: \(x = \ln(2+\sqrt{3})\) or \(x=\ln(2-\sqrt{3})=-\ln(2+\sqrt{3})\).<br>
+  So \(x = \pm\ln(2+\sqrt{3}) = \pm\text{arccosh}\,2\). ✓
+</div>
+<div class="example">
+  <strong>Example 2 — Solve \(3\sinh x - \cosh x = 1\):</strong><br>
+  Write in terms of exponentials: \(\dfrac{3(e^x-e^{-x})}{2} - \dfrac{e^x+e^{-x}}{2} = 1\).<br>
+  \(\dfrac{3e^x-3e^{-x}-e^x-e^{-x}}{2} = 1 \Rightarrow 2e^x - 4e^{-x} = 2 \Rightarrow e^x - 2e^{-x} = 1\).<br>
+  Let \(u=e^x\): \(u-\tfrac{2}{u}=1 \Rightarrow u^2-u-2=0 \Rightarrow (u-2)(u+1)=0\).<br>
+  \(u=2\) (since \(u>0\)), so \(x=\ln 2\).
+</div>
+<div class="example">
+  <strong>Example 3 — Solve \(\tanh x = \frac{1}{2}\):</strong><br>
+  \(\text{arctanh}\!\left(\tfrac{1}{2}\right) = \dfrac{1}{2}\ln\dfrac{1+\frac{1}{2}}{1-\frac{1}{2}} = \dfrac{1}{2}\ln 3\).
+</div>
+
+<h2>Inverse Hyperbolic Functions — Log Forms and Proofs</h2>
+<div class="definition">
+  <table border="1" style="border-collapse:collapse;width:100%;">
+    <tr><th>Function</th><th>Domain</th><th>Log form</th></tr>
+    <tr><td>\(\text{arcsinh}\,x\)</td><td>\(x\in\mathbb{R}\)</td><td>\(\ln\!\left(x+\sqrt{x^2+1}\right)\)</td></tr>
+    <tr><td>\(\text{arccosh}\,x\)</td><td>\(x\ge 1\)</td><td>\(\ln\!\left(x+\sqrt{x^2-1}\right)\)</td></tr>
+    <tr><td>\(\text{arctanh}\,x\)</td><td>\(|x|<1\)</td><td>\(\dfrac{1}{2}\ln\!\dfrac{1+x}{1-x}\)</td></tr>
+  </table>
+</div>
+<div class="example">
+  <strong>Proof that \(\text{arcsinh}\,x = \ln(x+\sqrt{x^2+1})\):</strong><br>
+  Let \(y = \text{arcsinh}\,x\), so \(\sinh y = x\), i.e. \(\dfrac{e^y - e^{-y}}{2} = x\).<br>
+  \(e^{2y}-2xe^y-1=0\). Quadratic in \(e^y\): \(e^y = \dfrac{2x\pm\sqrt{4x^2+4}}{2} = x\pm\sqrt{x^2+1}\).<br>
+  Since \(e^y>0\) and \(\sqrt{x^2+1}>|x|\), take \(+\): \(e^y = x+\sqrt{x^2+1}\), so \(y=\ln(x+\sqrt{x^2+1})\). ✓
+</div>
+
+<h2>Differentiation of Inverse Hyperbolic Functions</h2>
+<div class="definition">
+  <table border="1" style="border-collapse:collapse;width:100%;">
+    <tr><th>Function</th><th>Derivative</th></tr>
+    <tr><td>\(\text{arcsinh}\,x\)</td><td>\(\dfrac{1}{\sqrt{1+x^2}}\)</td></tr>
+    <tr><td>\(\text{arccosh}\,x\)</td><td>\(\dfrac{1}{\sqrt{x^2-1}}\quad(x>1)\)</td></tr>
+    <tr><td>\(\text{arctanh}\,x\)</td><td>\(\dfrac{1}{1-x^2}\quad(|x|<1)\)</td></tr>
+    <tr><td>\(\text{arcsinh}\!\dfrac{x}{a}\)</td><td>\(\dfrac{1}{\sqrt{a^2+x^2}}\)</td></tr>
+    <tr><td>\(\text{arccosh}\!\dfrac{x}{a}\)</td><td>\(\dfrac{1}{\sqrt{x^2-a^2}}\quad(x>a)\)</td></tr>
+  </table>
+</div>
+<div class="example">
+  <strong>Proof that \(\dfrac{d}{dx}(\text{arcsinh}\,x) = \dfrac{1}{\sqrt{1+x^2}}\):</strong><br>
+  Using log form: \(\dfrac{d}{dx}\ln(x+\sqrt{x^2+1}) = \dfrac{1+\frac{x}{\sqrt{x^2+1}}}{x+\sqrt{x^2+1}} = \dfrac{\frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}}}{x+\sqrt{x^2+1}} = \dfrac{1}{\sqrt{x^2+1}}\). ✓
+</div>
+
+<h2>Hyperbolic Substitution Integrals — Further Examples</h2>
+<div class="example">
+  <strong>Example 1:</strong> \(\displaystyle\int\sqrt{x^2+4}\,dx\). Let \(x=2\sinh u\), \(dx=2\cosh u\,du\).<br>
+  \(\sqrt{x^2+4}=\sqrt{4\sinh^2 u+4}=2\cosh u\).<br>
+  \(\displaystyle\int 2\cosh u\cdot 2\cosh u\,du = 4\int\cosh^2 u\,du = 4\int\dfrac{1+\cosh 2u}{2}\,du = 2u+\sinh 2u+C\)<br>
+  \(= 2u+2\sinh u\cosh u+C = 2\text{arcsinh}\!\dfrac{x}{2} + \dfrac{x\sqrt{x^2+4}}{2}+C\)
+</div>
+<div class="example">
+  <strong>Example 2:</strong> \(\displaystyle\int_2^3\dfrac{1}{\sqrt{x^2-1}}\,dx\). Let \(x=\cosh u\), \(dx=\sinh u\,du\).<br>
+  \(\sqrt{x^2-1}=\sinh u\). So \(\displaystyle\int\dfrac{\sinh u}{\sinh u}\,du = u+C = \text{arccosh}\,x+C\).<br>
+  \(\left[\text{arccosh}\,x\right]_2^3 = \text{arccosh}\,3-\text{arccosh}\,2 = \ln(3+2\sqrt{2})-\ln(2+\sqrt{3})\)
+</div>
+
+<h2>Osborn's Rule</h2>
+<div class="definition">
+  <strong>Osborn's Rule:</strong> To convert a trigonometric identity to the corresponding hyperbolic identity, replace \(\cos\theta\) with \(\cosh\theta\), \(\sin\theta\) with \(i\sinh\theta\) (or equivalently: replace any product of two \(\sin\) terms with minus the corresponding \(\sinh\) product).<br>
+  For example: \(\cos^2\theta+\sin^2\theta=1 \rightarrow \cosh^2\theta - \sinh^2\theta=1\).<br>
+  \(\cos^2\theta-\sin^2\theta=\cos 2\theta \rightarrow \cosh^2\theta+\sinh^2\theta=\cosh 2\theta\).
+</div>
+<div class="exam-tip">
+  <strong>Osborn's Rule caveat:</strong> It applies to basic identities, not to integrals or derivatives. Don't blindly apply it to results like \(\int\sin^2\theta\,d\theta\).
+</div>
+
+<h2>Graphs of Hyperbolic Functions</h2>
+<div class="definition">
+  Key features:
+  <ul>
+    <li>\(\cosh x\): even function; minimum value 1 at \(x=0\); \(\cosh x \to\infty\) as \(x\to\pm\infty\). Graph is a catenary.</li>
+    <li>\(\sinh x\): odd function; passes through origin; strictly increasing; \(\sinh x \approx x\) near 0.</li>
+    <li>\(\tanh x\): odd function; range \((-1,1)\); horizontal asymptotes \(y=\pm 1\); passes through origin with slope 1.</li>
+    <li>\(\text{sech}\,x = 1/\cosh x\): even; max value 1 at \(x=0\); bell-shaped.</li>
+    <li>\(\text{arcsinh}\,x\): odd; defined for all \(x\); looks like \(\ln(2x)\) for large \(x\).</li>
+    <li>\(\text{arccosh}\,x\): defined for \(x\ge 1\); starts at \((1,0)\).</li>
+    <li>\(\text{arctanh}\,x\): odd; defined for \(|x|<1\); vertical asymptotes at \(x=\pm 1\).</li>
+  </ul>
+</div>
+
+<h2>Applications of Hyperbolic Functions — Mechanics</h2>
+<div class="definition">
+  <strong>The Catenary:</strong> A flexible chain or cable hanging under gravity takes the shape \(y = a\cosh\!\dfrac{x}{a}\).
+  The arc length of the catenary from \(x=0\) to \(x=L\) is:
+  \[s = a\sinh\!\dfrac{L}{a}\]
+  The tension at a point is \(T = T_0\cosh\!\dfrac{x}{a}\) where \(T_0\) is the tension at the lowest point.
+</div>
+<div class="example">
+  <strong>Example — Chain of length 20 m with lowest point 4 m below endpoints:</strong><br>
+  The chain hangs between poles distance \(2d\) apart. With \(y=a\cosh(x/a)\):<br>
+  At \(x=d\): \(y = a+4\) (4 m above lowest). Arc length \(= 2a\sinh(d/a) = 20\), so \(a\sinh(d/a)=10\).<br>
+  Also \(a\cosh(d/a) = a+4\). Dividing: \(\tanh(d/a) = 10/(a+4)\). Solve numerically.
+</div>
+
+<h2>Series Expansions of Hyperbolic Functions</h2>
+<div class="definition">
+  Maclaurin series (all valid for all \(x\)):
+  \[\cosh x = 1 + \dfrac{x^2}{2!} + \dfrac{x^4}{4!} + \cdots = \sum_{n=0}^\infty \dfrac{x^{2n}}{(2n)!}\]
+  \[\sinh x = x + \dfrac{x^3}{3!} + \dfrac{x^5}{5!} + \cdots = \sum_{n=0}^\infty \dfrac{x^{2n+1}}{(2n+1)!}\]
+  Compare with: \(\cos x = 1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\cdots\) and \(\sin x = x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots\).<br>
+  The hyperbolic functions have all positive signs — consistent with \(\cosh x = \cos(ix)\) and \(\sinh x = -i\sin(ix)\).
+</div>
+<div class="example">
+  <strong>Example — Approximate \(\cosh(0.1)\):</strong><br>
+  \(\cosh(0.1) \approx 1 + \dfrac{0.01}{2} + \dfrac{0.0001}{24} = 1 + 0.005 + 0.0000042 \approx 1.0050042\).<br>
+  (Exact to 7 d.p.: \(1.0050042\).)
+</div>
+
+<h2>Connection: Trigonometric and Hyperbolic Functions</h2>
+<div class="definition">
+  Using complex numbers (\(i=\sqrt{-1}\)):
+  \[\cos(ix) = \cosh x,\qquad \sin(ix) = i\sinh x\]
+  \[\cosh(ix) = \cos x,\qquad \sinh(ix) = i\sin x\]
+  This means: all hyperbolic identities follow from trig identities by the substitution \(\theta \to ix\).
+</div>
+<div class="example">
+  <strong>Example:</strong> Derive \(\cosh(A+B) = \cosh A\cosh B + \sinh A\sinh B\) from \(\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta\).<br>
+  Set \(\alpha=iA, \beta=iB\): \(\cos(i(A+B)) = \cos(iA)\cos(iB)-\sin(iA)\sin(iB)\).<br>
+  \(\cosh(A+B) = \cosh A\cosh B - (i\sinh A)(i\sinh B) = \cosh A\cosh B + \sinh A\sinh B\). ✓
+</div>
+
+<h2>Complete Identities Summary</h2>
+<div class="definition">
+  <table border="1" style="border-collapse:collapse;width:100%;">
+    <tr><th>Identity</th><th>Value</th></tr>
+    <tr><td>\(\cosh^2 x - \sinh^2 x\)</td><td>\(1\)</td></tr>
+    <tr><td>\(\text{sech}^2 x + \tanh^2 x\)</td><td>\(1\)</td></tr>
+    <tr><td>\(\coth^2 x - \text{csch}^2 x\)</td><td>\(1\)</td></tr>
+    <tr><td>\(\cosh 2x\)</td><td>\(\cosh^2 x + \sinh^2 x = 2\cosh^2 x-1 = 1+2\sinh^2 x\)</td></tr>
+    <tr><td>\(\sinh 2x\)</td><td>\(2\sinh x\cosh x\)</td></tr>
+    <tr><td>\(\tanh 2x\)</td><td>\(\dfrac{2\tanh x}{1+\tanh^2 x}\)</td></tr>
+    <tr><td>\(\cosh(A+B)\)</td><td>\(\cosh A\cosh B+\sinh A\sinh B\)</td></tr>
+    <tr><td>\(\sinh(A+B)\)</td><td>\(\sinh A\cosh B+\cosh A\sinh B\)</td></tr>
+    <tr><td>\(\tanh(A+B)\)</td><td>\(\dfrac{\tanh A+\tanh B}{1+\tanh A\tanh B}\)</td></tr>
+  </table>
+</div>
+
+<h2>Integration by Parts Using Hyperbolic Functions</h2>
+<div class="example">
+  <strong>Example 1: \(\int x\sinh x\,dx\)</strong><br>
+  IBP: \(u=x,\; dv=\sinh x\,dx \Rightarrow v=\cosh x\).<br>
+  \(= x\cosh x - \int\cosh x\,dx = x\cosh x - \sinh x + C\)
+</div>
+<div class="example">
+  <strong>Example 2: \(\int x\cosh x\,dx\)</strong><br>
+  IBP: \(u=x,\; dv=\cosh x\,dx \Rightarrow v=\sinh x\).<br>
+  \(= x\sinh x - \int\sinh x\,dx = x\sinh x - \cosh x + C\)
+</div>
+<div class="example">
+  <strong>Example 3: \(\int\sinh^2 x\,dx\)</strong><br>
+  Use \(\sinh^2 x = \dfrac{\cosh 2x - 1}{2}\):<br>
+  \(\displaystyle\int\sinh^2 x\,dx = \dfrac{\sinh 2x}{4} - \dfrac{x}{2} + C = \dfrac{\sinh x\cosh x}{2} - \dfrac{x}{2} + C\)
+</div>
+<div class="example">
+  <strong>Example 4: \(\int\cosh^2 x\,dx\)</strong><br>
+  Use \(\cosh^2 x = \dfrac{\cosh 2x+1}{2}\):<br>
+  \(\displaystyle\int\cosh^2 x\,dx = \dfrac{\sinh 2x}{4}+\dfrac{x}{2}+C = \dfrac{\sinh x\cosh x}{2}+\dfrac{x}{2}+C\)
+</div>
+
+<h2>Further Worked Differentiation Examples</h2>
+<div class="example">
+  <strong>Example 1 — Chain rule:</strong> \(\dfrac{d}{dx}\cosh(3x^2+1)\)<br>
+  \(= \sinh(3x^2+1)\cdot 6x = 6x\sinh(3x^2+1)\)
+</div>
+<div class="example">
+  <strong>Example 2 — Product rule:</strong> \(\dfrac{d}{dx}[x^2\sinh x]\)<br>
+  \(= 2x\sinh x + x^2\cosh x\)
+</div>
+<div class="example">
+  <strong>Example 3 — Implicit differentiation:</strong> Given \(\cosh y = x\), find \(\dfrac{dy}{dx}\).<br>
+  \(\sinh y\,\dfrac{dy}{dx} = 1 \Rightarrow \dfrac{dy}{dx} = \dfrac{1}{\sinh y}\).<br>
+  Since \(\cosh y = x\): \(\sinh y = \sqrt{x^2-1}\) (for \(y\ge 0\)).<br>
+  So \(\dfrac{dy}{dx} = \dfrac{1}{\sqrt{x^2-1}}\) — confirming the derivative of \(\text{arccosh}\,x\).
+</div>
+
+<h2>Hyperbolic Functions — AQA Exam Technique</h2>
+<div class="exam-tip">
+  <ul>
+    <li><strong>Equations:</strong> If given \(\cosh x = k\) with \(k>1\), write \(\pm\text{arccosh}\,k = \pm\ln(k+\sqrt{k^2-1})\). Both signs are valid unless domain restricted.</li>
+    <li><strong>Integration:</strong> Recognise \(\dfrac{1}{\sqrt{x^2\pm a^2}}\) and use arcsinh/arccosh. For \(\dfrac{1}{a^2-x^2}\), use arctanh (when \(|x|<a\)) or partial fractions.</li>
+    <li><strong>Completing the square:</strong> If the denominator is \(\sqrt{x^2+4x+8} = \sqrt{(x+2)^2+4}\), substitute \(u=x+2\) first.</li>
+    <li><strong>Identity derivation:</strong> Always go back to definitions \(e^x\) if unsure — expand both sides from scratch.</li>
+    <li><strong>Log form answers:</strong> AQA often accepts both arcsinh/arccosh notation and the logarithmic form. Show they are equivalent for full marks.</li>
+    <li><strong>Osborn's Rule:</strong> Useful for guessing identities, but always verify from definitions for a proof question.</li>
+  </ul>
+</div>
+
+<h2>Completing the Square and Hyperbolic Integration</h2>
+<div class="example">
+  <strong>Example 1:</strong> \(\displaystyle\int\dfrac{1}{\sqrt{x^2+6x+10}}\,dx\)<br>
+  \(x^2+6x+10 = (x+3)^2+1\). Let \(u=x+3\):<br>
+  \(\displaystyle\int\dfrac{1}{\sqrt{u^2+1}}\,du = \text{arcsinh}\,u + C = \ln\!\left(x+3+\sqrt{x^2+6x+10}\right)+C\)
+</div>
+<div class="example">
+  <strong>Example 2:</strong> \(\displaystyle\int\dfrac{1}{\sqrt{x^2-4x+3}}\,dx\)<br>
+  \(x^2-4x+3 = (x-2)^2-1\). Let \(u=x-2\):<br>
+  \(\displaystyle\int\dfrac{1}{\sqrt{u^2-1}}\,du = \text{arccosh}\,u+C = \ln\!\left(x-2+\sqrt{x^2-4x+3}\right)+C\quad(x>3)\)
+</div>
+<div class="example">
+  <strong>Example 3:</strong> \(\displaystyle\int\dfrac{1}{3-x^2}\,dx\quad(|x|<\sqrt{3})\)<br>
+  Write as \(\dfrac{1}{(\sqrt{3})^2-x^2}\). Use \(\text{arctanh}\) formula:<br>
+  \(= \dfrac{1}{2\sqrt{3}}\ln\dfrac{\sqrt{3}+x}{\sqrt{3}-x}+C = \dfrac{1}{\sqrt{3}}\text{arctanh}\!\dfrac{x}{\sqrt{3}}+C\)
+</div>
+
+<h2>Hyperbolic Functions — Numerical Values</h2>
+<div class="definition">
+  Useful values to remember or compute quickly:
+  <ul>
+    <li>\(\cosh 0 = 1,\; \sinh 0 = 0,\; \tanh 0 = 0\)</li>
+    <li>\(\cosh 1 \approx 1.543,\; \sinh 1 \approx 1.175,\; \tanh 1 \approx 0.762\)</li>
+    <li>\(\text{arcsinh}\,1 = \ln(1+\sqrt{2}) \approx 0.881\)</li>
+    <li>\(\text{arccosh}\,2 = \ln(2+\sqrt{3}) \approx 1.317\)</li>
+    <li>\(\text{arctanh}\!\tfrac{1}{2} = \tfrac{1}{2}\ln 3 \approx 0.549\)</li>
+    <li>As \(x\to\infty\): \(\cosh x \approx \sinh x \approx \dfrac{e^x}{2}\), \;\tanh x\to 1\).</li>
+    <li>The parametric equations \(x=\cosh t,\; y=\sinh t\) satisfy \(x^2-y^2=1\), tracing the right branch of the unit hyperbola — this is the geometric origin of the name "hyperbolic functions".</li>
+    <li>Compare with circular functions: \(x=\cos t,\; y=\sin t\) satisfies \(x^2+y^2=1\) (unit circle). The parameter \(t\) in the hyperbolic case represents twice the area swept out, not an angle.</li>
+    <li>For AQA, you must know: all basic derivatives and integrals of \(\sinh\), \(\cosh\), \(\tanh\) and their inverses; how to prove identities from \(e^x\) definitions; and how to solve equations using the quadratic-in-\(e^x\) technique.</li>
+    <li>The identity \(\cosh^2 x - \sinh^2 x = 1\) is the hyperbolic analogue of \(\cos^2\theta+\sin^2\theta=1\). Use it whenever you need to simplify \(\cosh^2\) or \(\sinh^2\) — analogous to how \(\sin^2+\cos^2=1\) is used in trigonometry.</li>
+  </ul>
+</div>
+
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", function() {

@@ -260,6 +260,330 @@
   <li>Can you reduce coupled first-order ODEs to a single second-order ODE?</li>
 </ul>
 
+<h2>Particular Integrals — Complete Table</h2>
+
+<p>For \(ay''+by'+cy=f(x)\), choose a trial particular integral based on \(f(x)\):</p>
+
+<table>
+  <tr><th>\(f(x)\)</th><th>Trial PI (standard case)</th><th>Trial PI (resonance: trial is in CF)</th></tr>
+  <tr><td>\(ke^{\alpha x}\)</td><td>\(\lambda e^{\alpha x}\)</td><td>\(\lambda x e^{\alpha x}\)</td></tr>
+  <tr><td>\(k\cos\omega x\) or \(k\sin\omega x\)</td><td>\(\lambda\cos\omega x+\mu\sin\omega x\)</td><td>\(x(\lambda\cos\omega x+\mu\sin\omega x)\)</td></tr>
+  <tr><td>\(kx^n\) (polynomial deg \(n\))</td><td>\(\lambda_n x^n+\cdots+\lambda_0\) (full deg \(n\))</td><td>\(x(\lambda_n x^n+\cdots+\lambda_0)\)</td></tr>
+  <tr><td>\(ke^{\alpha x}\cos\omega x\)</td><td>\(e^{\alpha x}(\lambda\cos\omega x+\mu\sin\omega x)\)</td><td>\(xe^{\alpha x}(\lambda\cos\omega x+\mu\sin\omega x)\)</td></tr>
+  <tr><td>\(k e^{\alpha x}\cdot x^n\)</td><td>\(e^{\alpha x}(\lambda_n x^n+\cdots+\lambda_0)\)</td><td>\(xe^{\alpha x}(\lambda_n x^n+\cdots+\lambda_0)\)</td></tr>
+</table>
+
+<div class="definition">
+<strong>Resonance rule:</strong> If the trial PI for \(f(x)=ke^{\alpha x}\) (or \(\sin/\cos\)) is already a term in the CF, multiply the trial by \(x\). If it is still in the CF, multiply by \(x^2\).
+</div>
+
+<div class="example">
+<strong>Example — resonance:</strong> Solve \(y''+4y=8\sin 2x\).
+
+CF: \(y_c=A\cos 2x+B\sin2x\) (roots \(\pm 2i\)). Since \(\sin2x\) is in CF, resonance applies.
+
+Trial PI: \(y_p = x(a\cos2x+b\sin2x)\).
+$$y_p' = (a+2bx)\cos2x+(b-2ax)\sin2x$$
+$$y_p'' = (4b-4ax)\cos2x+(-4a-4bx)\sin2x$$
+$$y_p''+4y_p = 4b\cos2x-4a\sin2x = 8\sin2x$$
+So \(a=-2\), \(b=0\). PI: \(y_p=-2x\cos2x\).
+
+General solution: \(y=A\cos2x+B\sin2x-2x\cos2x\).
+</div>
+
+<h2>Coupled Differential Equations — Worked Example</h2>
+
+<p>To solve a pair of coupled first-order ODEs, use the <strong>elimination method</strong>:</p>
+<ol>
+  <li>Express one variable in terms of the other and its derivative from the first equation.</li>
+  <li>Differentiate and substitute into the second equation to get a single second-order ODE.</li>
+  <li>Solve the second-order ODE, then back-substitute for the second variable.</li>
+</ol>
+
+<div class="example">
+<strong>Example:</strong> Solve \(\dot{x}=3x-y\), \(\dot{y}=x+y\).
+
+Step 1: From the first equation, \(y=3x-\dot{x}\).
+
+Step 2: Differentiate: \(\dot{y}=3\dot{x}-\ddot{x}\). Substitute into second: \(3\dot{x}-\ddot{x}=x+(3x-\dot{x})=4x-\dot{x}\).
+$$\ddot{x}-4\dot{x}+4x=0$$
+
+Step 3: Auxiliary equation: \((m-2)^2=0\), so \(m=2\) (repeated root).
+$$x=(At+B)e^{2t}$$
+
+Step 4: \(y=3x-\dot{x}\). Compute \(\dot{x}=(A+2At+2B)e^{2t}\). Then:
+$$y=3(At+B)e^{2t}-(A+2At+2B)e^{2t}=(At-A+B)e^{2t}$$
+</div>
+
+<div class="exam-tip">
+<strong>Check:</strong> Always verify by substituting back into <em>both</em> original equations.
+</div>
+
+<h2>Second Order ODE — Physical Interpretation</h2>
+
+<p>The equation \(m\ddot{x}+c\dot{x}+kx=F(t)\) models a mass-spring-damper system:</p>
+<ul>
+  <li>\(m\): mass, \(c\): damping coefficient, \(k\): spring constant, \(F(t)\): forcing function.</li>
+  <li>Dividing by \(m\): \(\ddot{x}+2\beta\dot{x}+\omega_0^2 x = F(t)/m\) where \(\omega_0=\sqrt{k/m}\) is the natural frequency and \(\beta=c/(2m)\) is the damping ratio.</li>
+</ul>
+
+<table>
+  <tr><th>Condition</th><th>Root type</th><th>Motion type</th></tr>
+  <tr><td>\(c^2&lt;4mk\) (i.e.\ \(\beta&lt;\omega_0\))</td><td>Complex conjugates \(-\beta\pm i\omega_d\)</td><td><strong>Underdamped</strong>: damped oscillation \(e^{-\beta t}\sin(\omega_d t+\phi)\)</td></tr>
+  <tr><td>\(c^2=4mk\)</td><td>Repeated real root \(-\beta\)</td><td><strong>Critically damped</strong>: fastest decay without oscillation \((A+Bt)e^{-\beta t}\)</td></tr>
+  <tr><td>\(c^2&gt;4mk\)</td><td>Two distinct real negative roots</td><td><strong>Overdamped</strong>: slow exponential decay \(Ae^{-\alpha_1 t}+Be^{-\alpha_2 t}\)</td></tr>
+  <tr><td>\(c=0\)</td><td>Pure imaginary \(\pm i\omega_0\)</td><td><strong>Simple harmonic motion</strong>: \(A\cos\omega_0 t+B\sin\omega_0 t\)</td></tr>
+</table>
+
+<div class="example">
+<strong>Resonance:</strong> When the forcing frequency equals the natural frequency (\(F(t)=F_0\cos\omega_0 t\), \(c=0\)), the response grows without bound: \(x_p = \dfrac{F_0 t}{2m\omega_0}\sin\omega_0 t\). This is why resonance is physically dangerous.
+</div>
+
+<h2>AQA Exam Technique — Differential Equations</h2>
+
+<div class="exam-tip">
+<strong>Key tips:</strong>
+<ul>
+  <li><strong>Second-order CF:</strong> Always factorise the auxiliary equation. Three cases: two distinct real roots; repeated root; complex roots \(\alpha\pm\beta i\) giving \(e^{\alpha x}(A\cos\beta x+B\sin\beta x)\).</li>
+  <li><strong>PI selection:</strong> Check whether the trial PI is already in the CF before choosing. If it is, multiply by \(x\).</li>
+  <li><strong>Initial conditions:</strong> Apply to the <em>general solution</em> (CF + PI), not just the CF. Differentiate \(y_{\text{GS}}\) for the second condition.</li>
+  <li><strong>Coupled equations:</strong> After elimination, solve the resulting ODE first, then back-substitute for the other variable — do not guess its form independently.</li>
+  <li><strong>Integrating factor:</strong> For \(y'+P(x)y=Q(x)\), the IF is \(e^{\int P\,dx}\). Multiply both sides and recognise the left-hand side as \(\frac{d}{dx}[y\cdot\text{IF}]\).</li>
+</ul>
+</div>
+
+<table>
+  <tr><th>Type</th><th>CF</th><th>Typical PI form</th></tr>
+  <tr><td>\(y''+by'+cy=ke^{\alpha x}\)</td><td>Depends on roots</td><td>\(\lambda e^{\alpha x}\) (or \(\lambda xe^{\alpha x}\) if resonant)</td></tr>
+  <tr><td>\(y''+by'+cy=k\sin\omega x\)</td><td>Depends on roots</td><td>\(\lambda\cos\omega x+\mu\sin\omega x\) (or \(x\cdot\) if resonant)</td></tr>
+  <tr><td>\(y''+by'+cy=kx^n\)</td><td>Depends on roots</td><td>Full polynomial of degree \(n\)</td></tr>
+  <tr><td>Euler equation \(x^2y''+xy'+ny=0\)</td><td>Via \(x=e^t\)</td><td>Reduce to constant-coefficient</td></tr>
+</table>
+
+</div>
+
+<h2>First-Order ODEs — Full Methods</h2>
+<div class="definition">
+  <strong>Method 1 — Separable equations:</strong> \(\dfrac{dy}{dx} = f(x)g(y)\).<br>
+  Separate: \(\dfrac{1}{g(y)}\,dy = f(x)\,dx\). Integrate both sides.
+</div>
+<div class="example">
+  <strong>Example:</strong> \(\dfrac{dy}{dx} = xy\). Separate: \(\dfrac{1}{y}\,dy = x\,dx\).<br>
+  \(\ln|y| = \dfrac{x^2}{2}+C \Rightarrow y = Ae^{x^2/2}\) where \(A=\pm e^C\).
+</div>
+<div class="definition">
+  <strong>Method 2 — Integrating factor (linear first-order):</strong> \(\dfrac{dy}{dx}+P(x)y = Q(x)\).<br>
+  Multiply by integrating factor \(\mu = e^{\int P\,dx}\):<br>
+  \(\dfrac{d}{dx}(\mu y) = \mu Q \Rightarrow \mu y = \int\mu Q\,dx\).
+</div>
+<div class="example">
+  <strong>Example:</strong> \(\dfrac{dy}{dx} + 2y = e^{-x}\).<br>
+  \(\mu = e^{\int 2\,dx} = e^{2x}\). Multiply: \(\dfrac{d}{dx}(e^{2x}y) = e^{2x}\cdot e^{-x} = e^x\).<br>
+  Integrate: \(e^{2x}y = e^x + C \Rightarrow y = e^{-x}+Ce^{-2x}\).
+</div>
+<div class="example">
+  <strong>Example 2 (non-constant \(P\)):</strong> \(x\dfrac{dy}{dx}+y = x^2\), i.e. \(\dfrac{dy}{dx}+\dfrac{1}{x}y=x\).<br>
+  \(\mu = e^{\int(1/x)dx} = e^{\ln x} = x\). Multiply: \(\dfrac{d}{dx}(xy) = x^2\).<br>
+  Integrate: \(xy = \dfrac{x^3}{3}+C \Rightarrow y = \dfrac{x^2}{3}+\dfrac{C}{x}\).
+</div>
+
+<h2>Second-Order ODEs — Complementary Function Cases</h2>
+<div class="definition">
+  For \(\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy=0\), the auxiliary equation is \(m^2+bm+c=0\).
+  <table border="1" style="border-collapse:collapse;width:100%;">
+    <tr><th>Roots</th><th>CF</th><th>Behaviour</th></tr>
+    <tr><td>Real distinct: \(m=\alpha,\beta\)</td><td>\(Ae^{\alpha x}+Be^{\beta x}\)</td><td>Overdamped</td></tr>
+    <tr><td>Real equal: \(m=\alpha\) (repeated)</td><td>\((A+Bx)e^{\alpha x}\)</td><td>Critically damped</td></tr>
+    <tr><td>Complex: \(m=p\pm qi\)</td><td>\(e^{px}(A\cos qx+B\sin qx)\)</td><td>Underdamped / oscillatory</td></tr>
+    <tr><td>Pure imaginary: \(m=\pm qi\)</td><td>\(A\cos qx+B\sin qx\)</td><td>Simple harmonic / undamped</td></tr>
+  </table>
+</div>
+<div class="example">
+  <strong>Example 1 (real distinct):</strong> \(\dfrac{d^2y}{dx^2}-5\dfrac{dy}{dx}+6y=0\).<br>
+  AE: \(m^2-5m+6=0 \Rightarrow (m-2)(m-3)=0 \Rightarrow m=2,3\).<br>
+  CF: \(y = Ae^{2x}+Be^{3x}\).
+</div>
+<div class="example">
+  <strong>Example 2 (repeated root):</strong> \(\dfrac{d^2y}{dx^2}-4\dfrac{dy}{dx}+4y=0\).<br>
+  AE: \((m-2)^2=0 \Rightarrow m=2\) (repeated).<br>
+  CF: \(y = (A+Bx)e^{2x}\).
+</div>
+<div class="example">
+  <strong>Example 3 (complex roots):</strong> \(\dfrac{d^2y}{dx^2}+2\dfrac{dy}{dx}+5y=0\).<br>
+  AE: \(m^2+2m+5=0 \Rightarrow m = \dfrac{-2\pm\sqrt{4-20}}{2} = -1\pm 2i\).<br>
+  CF: \(y = e^{-x}(A\cos 2x+B\sin 2x)\).
+</div>
+
+<h2>Particular Integrals — Worked Examples</h2>
+<div class="example">
+  <strong>Example 1 — Polynomial RHS:</strong> \(\dfrac{d^2y}{dx^2}+3\dfrac{dy}{dx}+2y = 4x+1\).<br>
+  Try PI: \(y_p = ax+b\). \(y_p''=0,\;y_p'=a\).<br>
+  Sub: \(0+3a+2(ax+b)=4x+1 \Rightarrow 2ax+(3a+2b)=4x+1\).<br>
+  \(2a=4 \Rightarrow a=2\). \(3(2)+2b=1 \Rightarrow b=-\tfrac{5}{2}\). PI: \(y_p = 2x-\tfrac{5}{2}\).
+</div>
+<div class="example">
+  <strong>Example 2 — Exponential RHS:</strong> \(\dfrac{d^2y}{dx^2}-3\dfrac{dy}{dx}+2y = e^{4x}\).<br>
+  Try \(y_p=\lambda e^{4x}\). Sub: \(16\lambda-12\lambda+2\lambda=1 \Rightarrow 6\lambda=1 \Rightarrow \lambda=\tfrac{1}{6}\). PI: \(y_p=\tfrac{1}{6}e^{4x}\).
+</div>
+<div class="example">
+  <strong>Example 3 — Trigonometric RHS:</strong> \(\dfrac{d^2y}{dx^2}+4y = \sin 3x\).<br>
+  Try \(y_p = A\cos 3x+B\sin 3x\). \(y_p''=-9A\cos 3x-9B\sin 3x\).<br>
+  Sub: \(-9A\cos 3x-9B\sin 3x + 4A\cos 3x+4B\sin 3x = \sin 3x\).<br>
+  \(-5A=0 \Rightarrow A=0\). \(-5B=1 \Rightarrow B=-\tfrac{1}{5}\). PI: \(y_p = -\tfrac{1}{5}\sin 3x\).
+</div>
+
+<h2>Boundary Conditions and Initial Value Problems</h2>
+<div class="example">
+  <strong>Full Example:</strong> Solve \(\dfrac{d^2y}{dx^2}-4\dfrac{dy}{dx}+3y=6\) with \(y(0)=2,\; y'(0)=3\).<br>
+  AE: \(m^2-4m+3=0 \Rightarrow (m-1)(m-3)=0\). CF: \(y_c = Ae^x+Be^{3x}\).<br>
+  PI: Try \(y_p=k\) (constant). \(0-0+3k=6 \Rightarrow k=2\). PI: \(y_p=2\).<br>
+  GS: \(y = Ae^x+Be^{3x}+2\).<br>
+  \(y(0)=A+B+2=2 \Rightarrow A+B=0\).<br>
+  \(y'=Ae^x+3Be^{3x}\). \(y'(0)=A+3B=3\).<br>
+  Solving: \(B=3/2,\; A=-3/2\).<br>
+  \(y = \dfrac{3}{2}e^{3x}-\dfrac{3}{2}e^x+2\)
+</div>
+
+<h2>Substitution Methods for ODEs</h2>
+<div class="definition">
+  Some ODEs are not standard form; a substitution reduces them.
+</div>
+<div class="example">
+  <strong>Bernoulli's equation:</strong> \(\dfrac{dy}{dx}+P(x)y = Q(x)y^n\).<br>
+  Substitute \(v=y^{1-n}\). Then \(\dfrac{dv}{dx}=(1-n)y^{-n}\dfrac{dy}{dx}\), giving a linear equation in \(v\).
+</div>
+<div class="example">
+  <strong>Example:</strong> \(\dfrac{dy}{dx}-y = y^2\). Here \(n=2\). Let \(v=y^{-1}\).<br>
+  \(\dfrac{dv}{dx}=-y^{-2}\dfrac{dy}{dx}\). Divide original by \(y^2\): \(y^{-2}\dfrac{dy}{dx}-y^{-1}=1\).<br>
+  So \(-\dfrac{dv}{dx}-v=1 \Rightarrow \dfrac{dv}{dx}+v=-1\). Integrating factor \(e^x\):<br>
+  \(\dfrac{d}{dx}(ve^x)=-e^x \Rightarrow ve^x=-e^x+C \Rightarrow v=-1+Ce^{-x}\).<br>
+  \(y = \dfrac{1}{v} = \dfrac{1}{Ce^{-x}-1}\).
+</div>
+
+<h2>AQA Differential Equations — Exam Technique</h2>
+<div class="exam-tip">
+  <ul>
+    <li><strong>Always write GS = CF + PI</strong> clearly. Examiners look for this structure.</li>
+    <li><strong>Resonance:</strong> If the PI trial form already appears in the CF, multiply by \(x\). If it appears as a double root, multiply by \(x^2\).</li>
+    <li><strong>First-order linear:</strong> Always multiply through by IF before integrating; do not try to separate unless it genuinely is separable.</li>
+    <li><strong>CF check:</strong> Verify your CF satisfies the homogeneous equation by substituting back.</li>
+    <li><strong>PI check:</strong> Verify your PI satisfies the full equation by substituting back.</li>
+    <li><strong>IVP:</strong> Apply both initial conditions to GS to get two equations for \(A\) and \(B\); solve simultaneously.</li>
+    <li><strong>Coupled ODEs:</strong> Eliminate one variable by differentiating one equation and substituting the other; this gives a second-order ODE in one variable.</li>
+  </ul>
+</div>
+
+<h2>Modelling with Differential Equations</h2>
+<div class="definition">
+  Common models:
+  <ul>
+    <li><strong>Exponential growth/decay:</strong> \(\dfrac{dN}{dt} = kN\) gives \(N = N_0 e^{kt}\). If \(k>0\): growth; \(k<0\): decay.</li>
+    <li><strong>Newton's law of cooling:</strong> \(\dfrac{d\theta}{dt} = -k(\theta-\theta_{\rm amb})\). Solution: \(\theta - \theta_{\rm amb} = Ae^{-kt}\).</li>
+    <li><strong>Logistic growth:</strong> \(\dfrac{dN}{dt} = kN\!\left(1-\dfrac{N}{L}\right)\) where \(L\) is the carrying capacity.</li>
+    <li><strong>Harmonic oscillator:</strong> \(\dfrac{d^2x}{dt^2}+\omega^2 x=0\) gives \(x=A\cos\omega t+B\sin\omega t\).</li>
+    <li><strong>Damped oscillator:</strong> \(\dfrac{d^2x}{dt^2}+2k\dfrac{dx}{dt}+\omega^2 x=0\).</li>
+  </ul>
+</div>
+<div class="example">
+  <strong>Example — Newton's cooling:</strong> A body at \(80°C\) cools in a room at \(20°C\). After 10 minutes it is \(60°C\). Find its temperature after 20 minutes.<br>
+  \(\theta-20 = Ae^{-kt}\). At \(t=0\): \(A=60\). At \(t=10\): \(40=60e^{-10k} \Rightarrow e^{-10k}=\tfrac{2}{3}\).<br>
+  At \(t=20\): \(\theta-20 = 60\cdot\left(\tfrac{2}{3}\right)^2 = \tfrac{160}{3}\). \(\theta = 20+\tfrac{160}{3} \approx 73.3°C\).
+</div>
+
+<h2>Resonance — Full Worked Example</h2>
+<div class="example">
+  <strong>Example:</strong> Solve \(\dfrac{d^2y}{dx^2}+4y = \sin 2x\) (resonance case).<br>
+  CF: AE \(m^2+4=0 \Rightarrow m=\pm 2i\). CF: \(y_c=A\cos 2x+B\sin 2x\).<br>
+  PI: Since \(\sin 2x\) is in CF, try \(y_p = x(C\cos 2x+D\sin 2x)\).<br>
+  \(y_p' = C\cos 2x+D\sin 2x+x(-2C\sin 2x+2D\cos 2x)\)<br>
+  \(y_p'' = -2C\sin 2x+2D\cos 2x + (-2C\sin 2x+2D\cos 2x) + x(-4C\cos 2x-4D\sin 2x)\)<br>
+  \(= -4C\sin 2x+4D\cos 2x - 4x(C\cos 2x+D\sin 2x)\)<br>
+  Sub into \(y_p''+4y_p\): \(-4C\sin 2x+4D\cos 2x = \sin 2x\).<br>
+  \(4D=0 \Rightarrow D=0\). \(-4C=1 \Rightarrow C=-\tfrac{1}{4}\).<br>
+  PI: \(y_p = -\tfrac{x}{4}\cos 2x\). GS: \(y = A\cos 2x+B\sin 2x - \dfrac{x}{4}\cos 2x\).
+</div>
+
+<h2>Coupled ODEs — Full Worked Example</h2>
+<div class="example">
+  <strong>Solve:</strong> \(\dfrac{dx}{dt} = x+2y,\quad\dfrac{dy}{dt} = 3x+2y\) with \(x(0)=1,\; y(0)=0\).<br>
+  Differentiate first equation: \(\ddot{x} = \dot{x}+2\dot{y} = \dot{x}+2(3x+2y) = \dot{x}+6x+4y\).<br>
+  From first equation: \(2y = \dot{x}-x \Rightarrow y = \tfrac{1}{2}(\dot{x}-x)\).<br>
+  Sub: \(\ddot{x} = \dot{x}+6x+2(\dot{x}-x) = 3\dot{x}+4x\).<br>
+  \(\ddot{x}-3\dot{x}-4x=0\). AE: \(m^2-3m-4=0 \Rightarrow (m-4)(m+1)=0\). \(m=4,-1\).<br>
+  \(x = Ae^{4t}+Be^{-t}\). Then \(y = \tfrac{1}{2}(\dot{x}-x) = \tfrac{1}{2}(4Ae^{4t}-Be^{-t}-Ae^{4t}-Be^{-t}) = \tfrac{3A}{2}e^{4t}-Be^{-t}\).<br>
+  Conditions: \(x(0)=A+B=1\); \(y(0)=\tfrac{3A}{2}-B=0 \Rightarrow B=\tfrac{3A}{2}\).<br>
+  \(A+\tfrac{3A}{2}=1 \Rightarrow \tfrac{5A}{2}=1 \Rightarrow A=\tfrac{2}{5},\; B=\tfrac{3}{5}\).<br>
+  \(x=\tfrac{2}{5}e^{4t}+\tfrac{3}{5}e^{-t},\quad y=\tfrac{3}{5}e^{4t}-\tfrac{3}{5}e^{-t}\).
+</div>
+
+<h2>Second-Order ODE Applications — SHM and Damping</h2>
+<div class="definition">
+  A mass-spring system with damping satisfies:
+  \[m\ddot{x} + c\dot{x} + kx = F(t)\]
+  where \(m\) = mass, \(c\) = damping coefficient, \(k\) = spring constant, \(F(t)\) = external force.
+  <ul>
+    <li><strong>Underdamped:</strong> \(c^2 < 4mk\) — complex roots, oscillatory decay.</li>
+    <li><strong>Critically damped:</strong> \(c^2 = 4mk\) — repeated real roots, fastest return to equilibrium.</li>
+    <li><strong>Overdamped:</strong> \(c^2 > 4mk\) — real distinct roots, exponential decay, no oscillations.</li>
+  </ul>
+</div>
+<div class="example">
+  <strong>Example (underdamped):</strong> \(\ddot{x}+2\dot{x}+5x=0\), \(x(0)=1,\;\dot{x}(0)=0\).<br>
+  AE: \(m^2+2m+5=0 \Rightarrow m=-1\pm 2i\). CF: \(x = e^{-t}(A\cos 2t+B\sin 2t)\).<br>
+  \(x(0)=A=1\). \(\dot{x}=-e^{-t}(A\cos 2t+B\sin 2t)+e^{-t}(-2A\sin 2t+2B\cos 2t)\).<br>
+  \(\dot{x}(0)=-A+2B=0 \Rightarrow B=\tfrac{1}{2}\).<br>
+  \(x = e^{-t}\!\left(\cos 2t+\tfrac{1}{2}\sin 2t\right)\).
+</div>
+
+<h2>Key Formulae Summary — Differential Equations</h2>
+<div class="definition">
+  <table border="1" style="border-collapse:collapse;width:100%;">
+    <tr><th>Equation type</th><th>Method</th><th>Key step</th></tr>
+    <tr><td>Separable: \(\dfrac{dy}{dx}=f(x)g(y)\)</td><td>Separate variables</td><td>\(\displaystyle\int\dfrac{1}{g}\,dy = \int f\,dx\)</td></tr>
+    <tr><td>Linear 1st order: \(y'+Py=Q\)</td><td>Integrating factor</td><td>\(\mu=e^{\int P\,dx}\)</td></tr>
+    <tr><td>2nd order homogeneous</td><td>Auxiliary equation</td><td>Solve \(m^2+bm+c=0\)</td></tr>
+    <tr><td>2nd order inhomogeneous</td><td>CF + PI</td><td>Match PI form to RHS</td></tr>
+    <tr><td>Coupled 1st order</td><td>Elimination</td><td>Differentiate one, sub other</td></tr>
+  </table>
+</div>
+<div class="example">
+  <strong>Summary of PI forms:</strong>
+  <table border="1" style="border-collapse:collapse;width:100%;">
+    <tr><th>RHS</th><th>PI trial form</th><th>If resonance</th></tr>
+    <tr><td>\(ke^{\alpha x}\)</td><td>\(\lambda e^{\alpha x}\)</td><td>\(\lambda xe^{\alpha x}\)</td></tr>
+    <tr><td>\(k\cos\omega x\) or \(k\sin\omega x\)</td><td>\(\lambda\cos\omega x+\mu\sin\omega x\)</td><td>Multiply by \(x\)</td></tr>
+    <tr><td>\(kx^n\)</td><td>\(\lambda_nx^n+\cdots+\lambda_1 x+\lambda_0\)</td><td>N/A (unless \(c=0\))</td></tr>
+    <tr><td>\(ke^{\alpha x}\cos\omega x\)</td><td>\(e^{\alpha x}(\lambda\cos\omega x+\mu\sin\omega x)\)</td><td>Multiply by \(x\)</td></tr>
+  </table>
+</div>
+
+<h2>Euler–Cauchy Equations</h2>
+<div class="definition">
+  The Euler–Cauchy equation \(x^2\dfrac{d^2y}{dx^2}+px\dfrac{dy}{dx}+qy = 0\) is solved by the substitution \(x = e^t\) (i.e. \(t=\ln x\)), which transforms it into a constant-coefficient ODE in \(t\).
+</div>
+<div class="example">
+  <strong>Example:</strong> Solve \(x^2y''-2y=0\).<br>
+  With \(x=e^t\): \(x^2\dfrac{d^2y}{dx^2} = \dfrac{d^2y}{dt^2}-\dfrac{dy}{dt}\).<br>
+  Equation becomes: \(\dfrac{d^2y}{dt^2}-\dfrac{dy}{dt}-2y=0\).<br>
+  AE: \(m^2-m-2=0 \Rightarrow (m-2)(m+1)=0 \Rightarrow m=2,-1\).<br>
+  GS in \(t\): \(y=Ae^{2t}+Be^{-t}\). Back-substitute \(t=\ln x\): \(y=Ax^2+Bx^{-1}\).
+</div>
+<div class="exam-tip">
+  <strong>Note for AQA:</strong> Euler–Cauchy equations may appear in AQA Further Pure papers. The substitution \(x=e^t\) reduces them to constant-coefficient form. Try a power-law solution \(y=x^m\) directly: substituting gives the indicial equation \(m(m-1)+pm+q=0\).
+</div>
+
+<h2>Superposition Principle</h2>
+<div class="definition">
+  For a linear ODE \(Ly = f(x)\), if \(y_1\) is a solution when \(f=f_1\) and \(y_2\) when \(f=f_2\), then \(y_1+y_2\) is a solution when \(f=f_1+f_2\).<br>
+  This allows complex RHS functions to be split into simpler parts, each solved separately.
+</div>
+<div class="example">
+  <strong>Example:</strong> To solve \(y''+y = \sin x + e^x\), find PI for \(\sin x\) and PI for \(e^x\) separately, then add.<br>
+  PI\(_1\) for \(\sin x\): since \(m=\pm i\) are roots of AE, there is resonance. Try \(y_{p1}=x(A\cos x+B\sin x)\).<br>
+  PI\(_2\) for \(e^x\): try \(y_{p2}=\lambda e^x\). \(\lambda e^x+\lambda e^x = e^x \Rightarrow \lambda=\tfrac{1}{2}\).<br>
+  GS: \(y = A\cos x+B\sin x + y_{p1} + \tfrac{1}{2}e^x\).
+</div>
+
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", function() {

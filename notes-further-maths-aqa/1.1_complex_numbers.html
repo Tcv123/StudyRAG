@@ -407,6 +407,183 @@
   <li>Given one complex root of a polynomial with real coefficients, can you find all other roots?</li>
 </ul>
 
+<h2>De Moivre's Theorem — Applications</h2>
+
+<p>De Moivre's theorem states: \((\cos\theta + i\sin\theta)^n = \cos n\theta + i\sin n\theta\) for all integers \(n\). This allows us to express trigonometric functions of multiple angles in terms of powers of single-angle functions.</p>
+
+<h3>Deriving \(\cos 3\theta = 4\cos^3\theta - 3\cos\theta\)</h3>
+
+<div class="example">
+<strong>Method:</strong> Expand \((\cos\theta + i\sin\theta)^3\) by the binomial theorem, then apply De Moivre.
+$$(\cos\theta + i\sin\theta)^3 = \cos^3\theta + 3i\cos^2\theta\sin\theta - 3\cos\theta\sin^2\theta - i\sin^3\theta$$
+By De Moivre: \((\cos\theta + i\sin\theta)^3 = \cos 3\theta + i\sin 3\theta\).
+Equating real parts:
+$$\cos 3\theta = \cos^3\theta - 3\cos\theta\sin^2\theta = \cos^3\theta - 3\cos\theta(1-\cos^2\theta)$$
+$$\boxed{\cos 3\theta = 4\cos^3\theta - 3\cos\theta}$$
+Equating imaginary parts gives: \(\sin 3\theta = 3\sin\theta - 4\sin^3\theta\).
+</div>
+
+<h3>Expressing powers in terms of multiple angles</h3>
+<p>Using \(z = e^{i\theta}\): \(z + z^{-1} = 2\cos\theta\) and \(z - z^{-1} = 2i\sin\theta\). Therefore:</p>
+<ul>
+  <li>\((2\cos\theta)^n = (z+z^{-1})^n\) — expand with binomial theorem, then regroup pairs</li>
+  <li>\((2i\sin\theta)^n = (z-z^{-1})^n\) — similarly</li>
+</ul>
+<div class="example">
+<strong>Example:</strong> \(\cos^4\theta = \frac{1}{8}(\cos 4\theta + 4\cos 2\theta + 3)\).
+$(2\cos\theta)^4 = (z+z^{-1})^4 = z^4 + 4z^2 + 6 + 4z^{-2} + z^{-4}$
+$= 2\cos 4\theta + 8\cos 2\theta + 6$
+So \(\cos^4\theta = \frac{1}{8}(2\cos 4\theta + 8\cos 2\theta + 6) = \frac{1}{8}(\cos 4\theta + 4\cos 2\theta + 3)^*\)... wait: divide by 16: $\cos^4\theta = \frac{1}{16}(2\cos4\theta+8\cos2\theta+6) = \frac{1}{8}(\cos 4\theta+4\cos 2\theta+3)$. ✓
+</div>
+
+<h2>nth Roots of Complex Numbers</h2>
+
+<p>The \(n\) distinct \(n\)th roots of \(w = r e^{i\alpha}\) are:</p>
+$$z_k = r^{1/n}\exp\!\left(i\,\frac{\alpha + 2\pi k}{n}\right), \quad k = 0, 1, \ldots, n-1$$
+<p>These lie equally spaced on a circle of radius \(r^{1/n}\) centred at the origin.</p>
+
+<h3>Cube roots of unity</h3>
+<p>The three cube roots of \(1 = e^{i\cdot 0}\) are \(1,\ \omega,\ \omega^2\) where \(\omega = e^{2\pi i/3}\).</p>
+
+<svg viewBox="-160 -160 320 320" width="260" height="260" style="display:block;margin:15px auto;">
+  <circle cx="0" cy="0" r="120" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="-140" y1="0" x2="140" y2="0" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="0" y1="-140" x2="0" y2="140" stroke="#94a3b8" stroke-width="1"/>
+  <!-- z0 = 1 -->
+  <circle cx="120" cy="0" r="6" fill="#2563eb"/>
+  <text x="128" y="5" font-size="13" fill="#1e3a5f">z₀=1</text>
+  <!-- z1 = cos(120°)+i sin(120°) = (-0.5, 0.866) -->
+  <circle cx="-60" cy="-104" r="6" fill="#2563eb"/>
+  <text x="-100" y="-110" font-size="13" fill="#1e3a5f">z₁=ω</text>
+  <!-- z2 = cos(240°)+i sin(240°) = (-0.5, -0.866) -->
+  <circle cx="-60" cy="104" r="6" fill="#2563eb"/>
+  <text x="-100" y="118" font-size="13" fill="#1e3a5f">z₂=ω²</text>
+  <!-- lines from origin -->
+  <line x1="0" y1="0" x2="120" y2="0" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="0" y1="0" x2="-60" y2="-104" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="0" y1="0" x2="-60" y2="104" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="-15" y="-125" font-size="12" fill="#64748b">Im</text>
+  <text x="125" y="15" font-size="12" fill="#64748b">Re</text>
+  <text x="-5" y="-135" font-size="11" fill="#64748b">Cube roots of unity on |z|=1</text>
+</svg>
+
+<p>Key properties: \(1 + \omega + \omega^2 = 0\) and \(\omega^3 = 1\). More generally, the sum of all \(n\)th roots of unity equals zero for \(n \geq 2\).</p>
+
+<h2>Loci in the Argand Diagram</h2>
+
+<p>Three fundamental types of locus appear in AQA Further Maths:</p>
+
+<h3>1. Circle: \(|z - a| = r\)</h3>
+<p>The set of points at distance \(r\) from the fixed point \(a = p + qi\). In Cartesian form: \((x-p)^2 + (y-q)^2 = r^2\).</p>
+<svg viewBox="-10 -10 200 160" width="220" height="180" style="display:block;margin:10px auto;">
+  <line x1="0" y1="80" x2="190" y2="80" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="90" y1="0" x2="90" y2="155" stroke="#94a3b8" stroke-width="1"/>
+  <circle cx="120" cy="50" r="55" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="120" cy="50" r="4" fill="#dc2626"/>
+  <text x="125" y="47" font-size="12" fill="#dc2626">a=2+2i</text>
+  <line x1="120" y1="50" x2="120" y2="105" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="122" y="82" font-size="11" fill="#16a34a">r</text>
+  <text x="5" y="15" font-size="11" fill="#64748b">|z−a|=r: circle</text>
+  <text x="5" y="145" font-size="11" fill="#64748b">Re</text>
+  <text x="92" y="12" font-size="11" fill="#64748b">Im</text>
+</svg>
+
+<h3>2. Perpendicular bisector: \(|z - a| = |z - b|\)</h3>
+<p>The set of points equidistant from \(a\) and \(b\). This is the perpendicular bisector of the line segment \(AB\).</p>
+<svg viewBox="-10 -10 220 140" width="240" height="150" style="display:block;margin:10px auto;">
+  <line x1="0" y1="70" x2="210" y2="70" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="100" y1="0" x2="100" y2="135" stroke="#94a3b8" stroke-width="1"/>
+  <circle cx="60" cy="70" r="5" fill="#dc2626"/>
+  <circle cx="150" cy="70" r="5" fill="#dc2626"/>
+  <text x="48" y="65" font-size="12" fill="#dc2626">A</text>
+  <text x="155" y="65" font-size="12" fill="#dc2626">B</text>
+  <line x1="105" y1="10" x2="105" y2="130" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="108" y="20" font-size="11" fill="#2563eb">⊥ bisector</text>
+  <text x="5" y="15" font-size="11" fill="#64748b">|z−A|=|z−B|</text>
+</svg>
+
+<h3>3. Half-line: \(\arg(z - a) = \theta\)</h3>
+<p>The ray starting at \(a\) (excluded) at angle \(\theta\) to the positive real direction.</p>
+<svg viewBox="-10 -10 220 150" width="240" height="160" style="display:block;margin:10px auto;">
+  <line x1="0" y1="110" x2="210" y2="110" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="50" y1="0" x2="50" y2="145" stroke="#94a3b8" stroke-width="1"/>
+  <circle cx="80" cy="100" r="5" fill="#dc2626"/>
+  <text x="85" y="97" font-size="12" fill="#dc2626">a</text>
+  <line x1="80" y1="100" x2="195" y2="20" stroke="#2563eb" stroke-width="2.5"/>
+  <circle cx="80" cy="100" r="3" fill="white" stroke="#2563eb" stroke-width="2"/>
+  <path d="M 100 100 A 20 20 0 0 0 91 83" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="105" y="88" font-size="11" fill="#f59e0b">θ</text>
+  <text x="5" y="15" font-size="11" fill="#64748b">arg(z−a)=θ: half-line</text>
+</svg>
+
+<div class="exam-tip">
+<strong>Key technique:</strong> For loci of the form \(|z-a|=k|z-b|\), square both sides and expand to get a circle equation. For \(\arg\left(\frac{z-a}{z-b}\right)=\theta\), this typically gives an arc of a circle.
+</div>
+
+<h2>Complex Transformations \(w = f(z)\)</h2>
+
+<p>A complex transformation maps a set of points in the \(z\)-plane to a set of points in the \(w\)-plane.</p>
+
+<h3>\(w = iz\) — Rotation</h3>
+<p>Multiplying by \(i = e^{i\pi/2}\) rotates every point by \(\frac{\pi}{2}\) anticlockwise about the origin. The image of the line \(\text{Re}(z) = 1\) (i.e.\ \(x=1\)) under \(w=iz\): set \(z = 1+iy\), then \(w = i(1+iy) = -y+i\), so \(\text{Re}(w) = -y\), \(\text{Im}(w) = 1\) — this is the line \(\text{Im}(w) = 1\).</p>
+
+<h3>\(w = z + a\) — Translation</h3>
+<p>Each point is shifted by the vector \(a\). Circles map to circles of the same radius; lines map to parallel lines.</p>
+
+<h3>\(w = \dfrac{1}{z}\) — Inversion</h3>
+<p>This maps circles and lines to circles and lines (in general). Key fact: \(\frac{1}{z} = \frac{\bar{z}}{|z|^2}\), so points on \(|z|=1\) map to themselves.</p>
+
+<div class="example">
+<strong>Example:</strong> Find the image of \(|z| = 2\) under \(w = \frac{1}{z}\).<br>
+Set \(w = \frac{1}{z}\), so \(z = \frac{1}{w}\). The condition \(|z|=2\) becomes \(\left|\frac{1}{w}\right| = 2\), i.e.\ \(|w| = \frac{1}{2}\). The image is the circle \(|w| = \frac{1}{2}\).
+</div>
+
+<div class="example">
+<strong>Example:</strong> Find the image of the line \(\text{Re}(z) = 1\) under \(w = \frac{1}{z}\).<br>
+Let \(z = x+iy\) with \(x=1\). Then \(w = \frac{1}{1+iy} = \frac{1-iy}{1+y^2}\), so \(u = \frac{1}{1+y^2}\), \(v = \frac{-y}{1+y^2}\).<br>
+Note \(u^2+v^2 = \frac{1}{(1+y^2)^2}(1+y^2) = \frac{1}{1+y^2} = u\). So \(u^2+v^2 = u\), i.e.\ \(\left(u-\frac{1}{2}\right)^2+v^2 = \frac{1}{4}\) — a circle.
+</div>
+
+<h2>AQA Exam Technique</h2>
+
+<div class="exam-tip">
+<strong>Common mistakes:</strong>
+<ul>
+  <li><strong>Argument range:</strong> AQA usually requires \(-\pi < \arg z \leq \pi\). Always check the quadrant before computing.</li>
+  <li><strong>Square roots:</strong> \((a+bi)^2 = (a^2-b^2) + 2abi\): set up two simultaneous equations.</li>
+  <li><strong>Real coefficients:</strong> If a polynomial has real coefficients, complex roots come in conjugate pairs — use this immediately.</li>
+  <li><strong>Loci:</strong> Always check whether boundary points are included (open vs closed circle on Argand diagram).</li>
+  <li><strong>De Moivre:</strong> When asked for \(\sin^n\theta\) or \(\cos^n\theta\) in multiple angles, use \(z \pm z^{-1}\) and expand the binomial.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Mark scheme patterns:</strong>
+<ul>
+  <li>Modulus-argument form: \([M1]\) for finding both \(r\) and \(\theta\) (two B marks if straightforward).</li>
+  <li>For transformation questions: show your substitution clearly (\(z = \frac{1}{w}\) or similar) then algebraically simplify.</li>
+  <li>For locus proofs: state the equation, then confirm it represents the named curve.</li>
+  <li>If asked to <em>sketch</em> a locus, mark key points (centre, radius, or endpoints) for method marks.</li>
+</ul>
+</div>
+
+<table>
+  <tr><th>Topic</th><th>Key formula</th><th>Common error</th></tr>
+  <tr><td>Modulus</td><td>\(|a+bi| = \sqrt{a^2+b^2}\)</td><td>Forgetting to square root</td></tr>
+  <tr><td>Argument</td><td>\(\arg z = \arctan(b/a)\) adjusted for quadrant</td><td>Using \(\arctan\) without checking quadrant</td></tr>
+  <tr><td>De Moivre</td><td>\((re^{i\theta})^n = r^n e^{in\theta}\)</td><td>Forgetting to raise \(r\) to the power \(n\)</td></tr>
+  <tr><td>\(n\)th roots</td><td>Divide argument by \(n\), add \(2\pi k/n\)</td><td>Finding only one root, not all \(n\)</td></tr>
+  <tr><td>Circle locus</td><td>\(|z-a|=r\): centre \(a\), radius \(r\)</td><td>Wrong centre (sign error in \(a\))</td></tr>
+  <tr><td>Half-line locus</td><td>\(\arg(z-a)=\theta\): starts at \(a\) (not included), at angle \(\theta\)</td><td>Including the starting point \(a\); wrong direction</td></tr>
+  <tr><td>Perpendicular bisector</td><td>\(|z-a|=|z-b|\): locus midway between \(a\) and \(b\)</td><td>Not finding midpoint; confusing with circle</td></tr>
+  <tr><td>Conjugate roots</td><td>For real coefficients, complex roots come in conjugate pairs</td><td>Forgetting to include conjugate in factorisation</td></tr>
+</table>
+<p>Remember: in AQA, the principal argument is \(-\pi < \arg z \le \pi\). Angles outside this range must be adjusted. For loci sketches, clearly mark any excluded points (open circles) and indicate the direction of half-lines with an arrow.</p>
+<div class="example">
+  <strong>Quick reminder — Euler's formula:</strong> \(e^{i\theta} = \cos\theta+i\sin\theta\), so \(e^{i\pi}+1=0\) (Euler's identity).<br>
+  Useful: \(\cos\theta = \text{Re}(e^{i\theta})\) and \(\sin\theta = \text{Im}(e^{i\theta})\). Summing geometric series with ratio \(e^{i\theta}\) gives sums of \(\cos n\theta\) and \(\sin n\theta\).
+</div>
+
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
