@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S1.5: Non-parametric Tests — OCR B (MEI) Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+.container { max-width: 820px; margin: 0 auto; }
+h1 { font-size: 2rem; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+p { margin-bottom: 12px; } ul, ol { margin: 10px 0 15px 25px; } li { margin-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+th { background: #e8eef6; color: #1e3a5f; font-weight: 600; } tr:nth-child(even) { background: #f8fafc; }
+.definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+.exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+.example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+.equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+.spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style></head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-b-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR B Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR B A-Level Further Mathematics (MEI, H645) — Statistics Minor Section S1.5</p>
+<h1>S1.5: Non-parametric Tests</h1>
+
+<h2>1. What Are Non-parametric Tests?</h2>
+<div class="definition">
+  Tests that make few or no assumptions about the underlying population distribution. Useful when data is ordinal, when parametric assumptions (e.g., normality) fail, or sample size is small.
+</div>
+
+<h2>2. Sign Test (Paired Data)</h2>
+<p>Null \(H_0\): median of differences = 0.</p>
+<ol>
+  <li>For each pair, note sign of difference (+, −, or 0: discard zeros).</li>
+  <li>Let \(n'\)=number of non-zero differences. Under \(H_0\), number of positives \(\sim B(n',0.5)\).</li>
+  <li>Compute \(p\)-value (tail probability of observed count).</li>
+  <li>Compare with \(\alpha\).</li>
+</ol>
+
+<div class="example">
+  <strong>10 pairs, 7 positive, 0 zero. One-tailed 5%:</strong><br>
+  \(P(X\ge7|B(10,0.5))=0.172\). Not significant.
+</div>
+
+<h2>3. Wilcoxon Signed-Rank Test (Paired)</h2>
+<p>Uses magnitude information as well as signs.</p>
+<ol>
+  <li>Compute differences \(d_i\). Discard zeros.</li>
+  <li>Rank \(|d_i|\) (average ties).</li>
+  <li>Attach signs back; sum the positive ranks (\(T_+\)) and negative (\(T_-\)).</li>
+  <li>Test statistic \(T=\min(T_+,T_-)\).</li>
+  <li>Compare with critical value from Wilcoxon tables.</li>
+</ol>
+
+<h3>Under \(H_0\)</h3>
+<div class="equation">\(E(T_+) = \tfrac{n(n+1)}{4},\quad \operatorname{Var}(T_+) = \tfrac{n(n+1)(2n+1)}{24}\)</div>
+<p>For large \(n\), \(T_+\) is approximately normal.</p>
+
+<h2>4. Wilcoxon Rank-Sum (Mann–Whitney) Test</h2>
+<p>For two <strong>independent</strong> samples of sizes \(n_1,n_2\).</p>
+<ol>
+  <li>Combine all \(n_1+n_2\) observations; rank 1 to \(n_1+n_2\).</li>
+  <li>Let \(R_1\) = sum of ranks in sample 1.</li>
+  <li>\(U=R_1-\tfrac{n_1(n_1+1)}{2}\); use tables for critical \(U\).</li>
+</ol>
+
+<h2>5. When to Use Which</h2>
+<table>
+<tr><th>Test</th><th>Data</th><th>Uses</th></tr>
+<tr><td>Sign</td><td>Paired ordinal</td><td>Only direction of difference</td></tr>
+<tr><td>Wilcoxon Signed-Rank</td><td>Paired numerical</td><td>Magnitudes of differences (assumes symmetric distribution)</td></tr>
+<tr><td>Mann–Whitney</td><td>Two independent samples</td><td>All ranks</td></tr>
+</table>
+
+<h2>6. Comparison with Parametric Tests</h2>
+<ul>
+  <li>Non-parametric are robust to outliers, non-normality.</li>
+  <li>Usually less powerful than \(t\)-tests when parametric assumptions hold.</li>
+  <li>Ties handled with average ranks.</li>
+</ul>
+
+<h2>7. Exam Strategy</h2>
+<ul>
+  <li>State hypotheses in terms of medians (not means) for non-parametric tests.</li>
+  <li>Show calculation of ranks/signs clearly.</li>
+  <li>Use correct table: Wilcoxon signed-rank, Mann–Whitney, or sign-test via Binomial.</li>
+  <li>Decide: reject iff test statistic \(\le\) critical value (tables give lower tail).</li>
+</ul>
+
+</div>
+<script>document.addEventListener('DOMContentLoaded', () => { renderMathInElement(document.body, { delimiters: [{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}] }); });</script>
+</body></html>

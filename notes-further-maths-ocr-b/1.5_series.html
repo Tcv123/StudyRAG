@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.5: Series — OCR B (MEI) Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+.container { max-width: 820px; margin: 0 auto; }
+h1 { font-size: 2rem; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+p { margin-bottom: 12px; } ul, ol { margin: 10px 0 15px 25px; } li { margin-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+th { background: #e8eef6; color: #1e3a5f; font-weight: 600; } tr:nth-child(even) { background: #f8fafc; }
+.definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+.exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+.example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+.equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+.spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style></head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-b-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR B Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR B A-Level Further Mathematics (MEI, H645) — Core Pure Section 1.5</p>
+<h1>1.5: Series</h1>
+
+<h2>1. Summation Notation</h2>
+<p>\(\displaystyle\sum_{r=a}^{b}f(r)=f(a)+f(a+1)+\cdots+f(b)\). Summation is linear:</p>
+<div class="equation">\(\displaystyle\sum[\lambda f(r)+\mu g(r)]=\lambda\sum f(r)+\mu\sum g(r)\)</div>
+
+<h2>2. Standard Sums</h2>
+<div class="equation">\(\displaystyle\sum_{r=1}^{n}1=n,\quad \sum_{r=1}^{n}r=\tfrac{n(n+1)}{2}\)</div>
+<div class="equation">\(\displaystyle\sum_{r=1}^{n}r^2=\tfrac{n(n+1)(2n+1)}{6},\quad \sum_{r=1}^{n}r^3=\left[\tfrac{n(n+1)}{2}\right]^2\)</div>
+
+<div class="example">
+  <strong>Find \(\sum_{r=1}^{n}(2r^2-3r+1)\).</strong><br>
+  \(=\tfrac{n(n+1)(2n+1)}{3}-\tfrac{3n(n+1)}{2}+n=\tfrac{n(4n^2-3n-1)}{6}\) (simplify) [factor and check]
+</div>
+
+<h3>Shifting Limits</h3>
+<div class="equation">\(\displaystyle\sum_{r=a}^{b}f(r)=\sum_{r=1}^{b}f(r)-\sum_{r=1}^{a-1}f(r)\)</div>
+
+<h2>3. Method of Differences</h2>
+<div class="definition">
+  If \(f(r)=g(r+1)-g(r)\), then \(\sum_{r=1}^{n}f(r)=g(n+1)-g(1)\) (telescoping).
+</div>
+
+<div class="example">
+  <strong>Show \(\dfrac{1}{r(r+1)}=\dfrac{1}{r}-\dfrac{1}{r+1}\). Hence \(\sum_{r=1}^{n}\dfrac{1}{r(r+1)}\).</strong><br>
+  Partial fractions give the identity. Telescoping: \(1-\tfrac{1}{n+1}=\tfrac{n}{n+1}\).
+</div>
+
+<h3>Using an Identity Provided</h3>
+<p>Exam questions often give a useful identity like \(r(r+1)(r+2)-(r-1)r(r+1)=3r(r+1)\), and ask you to use it to find \(\sum r(r+1)\).</p>
+
+<h2>4. Maclaurin Series</h2>
+<div class="definition">
+  \(f(x)=\displaystyle\sum_{n=0}^{\infty}\dfrac{f^{(n)}(0)}{n!}x^n\).
+</div>
+
+<h3>Standard Series</h3>
+<table>
+<tr><th>Function</th><th>Expansion</th><th>Valid for</th></tr>
+<tr><td>\(e^x\)</td><td>\(1+x+\tfrac{x^2}{2!}+\tfrac{x^3}{3!}+\cdots\)</td><td>All \(x\)</td></tr>
+<tr><td>\(\sin x\)</td><td>\(x-\tfrac{x^3}{3!}+\tfrac{x^5}{5!}-\cdots\)</td><td>All \(x\)</td></tr>
+<tr><td>\(\cos x\)</td><td>\(1-\tfrac{x^2}{2!}+\tfrac{x^4}{4!}-\cdots\)</td><td>All \(x\)</td></tr>
+<tr><td>\(\ln(1+x)\)</td><td>\(x-\tfrac{x^2}{2}+\tfrac{x^3}{3}-\cdots\)</td><td>\(-1<x\le1\)</td></tr>
+<tr><td>\((1+x)^n\)</td><td>\(1+nx+\tfrac{n(n-1)}{2!}x^2+\cdots\)</td><td>\(|x|<1\) if \(n\notin\mathbb{N}\)</td></tr>
+</table>
+
+<h3>Building New Series</h3>
+<ul>
+  <li><strong>Substitute:</strong> \(e^{-2x}\) from \(e^x\) by replacing \(x\to-2x\).</li>
+  <li><strong>Multiply:</strong> truncate and multiply products (e.g. \(e^x\cos x\)).</li>
+  <li><strong>Differentiate / integrate</strong> term-by-term within the radius.</li>
+</ul>
+
+<h2>5. Taylor Series</h2>
+<p>Expansion of \(f\) about \(x=a\):</p>
+<div class="equation">\(f(x)=\sum_{n=0}^{\infty}\dfrac{f^{(n)}(a)}{n!}(x-a)^n\)</div>
+
+<h2>6. Applications</h2>
+<h3>Approximations</h3>
+<p>Small-\(x\): \(\sin x\approx x\); \(\cos x\approx1-\tfrac{x^2}{2}\); \(e^x\approx1+x\).</p>
+<h3>Limits</h3>
+<div class="example">
+  <strong>\(\displaystyle\lim_{x\to0}\dfrac{1-\cos x}{x^2}=\dfrac{1}{2}\)</strong>, by substituting series.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Note convergence explicitly (especially for \(\ln\), \((1+x)^n\) with non-integer \(n\)). When building products, keep only the terms up to the requested order.
+</div>
+
+</div>
+<script>document.addEventListener('DOMContentLoaded', () => { renderMathInElement(document.body, { delimiters: [{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}] }); });</script>
+</body></html>

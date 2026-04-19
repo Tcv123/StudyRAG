@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.1: Proof — OCR B (MEI) Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; } li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; } tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-b-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR B Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR B (MEI) A-Level Further Mathematics (H645) — Core Pure Section 1.1</p>
+<h1>1.1: Proof</h1>
+
+<h2>1. Types of Proof</h2>
+<div class="definition">
+  A <strong>proof</strong> is a sequence of valid deductions from known premises, leading to the conclusion of a theorem.<br>
+  Main strategies in the A-Level syllabus:
+  <ul style="margin-top:6px;">
+    <li><strong>Direct proof (deduction):</strong> a chain of implications.</li>
+    <li><strong>Proof by contradiction:</strong> assume the negation of what you want to prove, reach a contradiction.</li>
+    <li><strong>Proof by exhaustion:</strong> split the domain into finitely many cases and check each.</li>
+    <li><strong>Counter-example:</strong> disprove "\(\forall x, P(x)\)" by exhibiting one \(x\) with \(\neg P(x)\).</li>
+    <li><strong>Mathematical induction:</strong> prove \(P(1)\) then \(P(k)\Rightarrow P(k+1)\) (see §3).</li>
+  </ul>
+</div>
+
+<h2>2. Direct Proof and Contrapositive</h2>
+<p>To prove \(P\Rightarrow Q\) directly, assume \(P\), deduce \(Q\) using known facts.</p>
+<p>The <strong>contrapositive</strong> of "\(P\Rightarrow Q\)" is "\(\neg Q\Rightarrow\neg P\)". They are logically equivalent, so one can prove the contrapositive instead.</p>
+<div class="example">
+  <strong>Prove: if \(n^2\) is even, then \(n\) is even.</strong><br>
+  Use contrapositive: if \(n\) is odd, then \(n^2\) is odd.<br>
+  Let \(n=2k+1\). Then \(n^2=4k^2+4k+1=2(2k^2+2k)+1\), odd ∎
+</div>
+
+<h2>3. Proof by Induction</h2>
+<div class="definition">
+  To prove \(P(n)\) for all integers \(n\ge n_0\):
+  <ol style="margin-top:6px;">
+    <li><strong>Base case:</strong> show \(P(n_0)\) holds.</li>
+    <li><strong>Inductive step:</strong> assume \(P(k)\) (inductive hypothesis), prove \(P(k+1)\).</li>
+    <li><strong>Conclusion:</strong> by induction, \(P(n)\) holds for all \(n\ge n_0\).</li>
+  </ol>
+</div>
+
+<h3>Series Induction</h3>
+<div class="example">
+  <strong>Prove \(\displaystyle\sum_{r=1}^{n}r=\tfrac{n(n+1)}{2}\).</strong><br>
+  Base \(n=1\): LHS=1, RHS=1 ✓.<br>
+  Assume true for \(n=k\): \(\sum_{r=1}^{k}r=\tfrac{k(k+1)}{2}\).<br>
+  Add \((k+1)\): \(\tfrac{k(k+1)}{2}+(k+1)=\tfrac{(k+1)(k+2)}{2}\), i.e. \(P(k+1)\) ✓.<br>
+  By induction, \(P(n)\) true for all \(n\ge1\) ∎
+</div>
+
+<h3>Divisibility Induction</h3>
+<p>Pattern: write \(f(k+1)=f(k)+(\text{term obviously divisible by }d)\) to show \(d\mid f(k+1)\).</p>
+
+<div class="example">
+  <strong>Prove \(7^n-1\) is divisible by 6 for all \(n\ge1\).</strong><br>
+  Base \(n=1\): \(7-1=6\) ✓.<br>
+  Assume \(7^k-1=6m\). Then \(7^{k+1}-1=7\cdot7^k-1=7(6m+1)-1=42m+6=6(7m+1)\), divisible by 6 ✓ ∎
+</div>
+
+<h3>Matrix Induction</h3>
+<div class="example">
+  <strong>Prove \(\begin{pmatrix}1&1\\0&1\end{pmatrix}^n=\begin{pmatrix}1&n\\0&1\end{pmatrix}\).</strong><br>
+  Base \(n=1\) ✓. Assume \(M^k=\begin{pmatrix}1&k\\0&1\end{pmatrix}\). Then \(M^{k+1}=M^k\cdot M=\begin{pmatrix}1&k+1\\0&1\end{pmatrix}\) ✓ ∎
+</div>
+
+<h3>Inequality Induction</h3>
+<div class="example">
+  <strong>Prove \(2^n>n\) for all \(n\ge1\).</strong><br>
+  Base \(n=1\): \(2>1\) ✓. Assume \(2^k>k\). Then \(2^{k+1}=2\cdot2^k>2k\ge k+1\) for \(k\ge1\) ✓ ∎
+</div>
+
+<h2>4. Proof by Contradiction</h2>
+<div class="definition">
+  To prove \(P\) by contradiction: assume \(\neg P\), derive a logical contradiction, conclude \(P\) is true.
+</div>
+
+<div class="example">
+  <strong>Prove \(\sqrt{2}\) is irrational.</strong><br>
+  Suppose \(\sqrt{2}=a/b\) in lowest terms. Then \(a^2=2b^2\), so \(a^2\) even \(\Rightarrow a\) even. Let \(a=2c\): \(4c^2=2b^2\), so \(b^2=2c^2\), hence \(b\) even. But then \(\gcd(a,b)\ge2\), contradicting lowest terms ∎
+</div>
+
+<h2>5. Common Pitfalls</h2>
+<ul>
+  <li>Forgetting the base case — induction proves nothing without it.</li>
+  <li>Not explicitly stating the inductive hypothesis.</li>
+  <li>Omitting the concluding sentence — OCR typically awards a mark for it.</li>
+  <li>Using what you wish to prove (circular reasoning).</li>
+  <li>Believing that many examples constitute a proof — they don't (counter-example: \(n^2+n+41\) is prime for \(n=0,\dots,39\) but not for \(n=40\)).</li>
+</ul>
+
+<h2>6. Template for OCR Induction Questions</h2>
+<div class="definition">
+  <strong>1. Base:</strong> for \(n=n_0\), LHS=\(\cdots\), RHS=\(\cdots\), so \(P(n_0)\) true.<br>
+  <strong>2. Assume:</strong> \(P(k)\) true, i.e. \(\cdots\).<br>
+  <strong>3. Step:</strong> consider \(P(k+1)\). Using the assumption, \(\cdots=\) RHS with \(n=k+1\), so \(P(k+1)\) true.<br>
+  <strong>4. Conclusion:</strong> since \(P(n_0)\) is true and \(P(k)\Rightarrow P(k+1)\), by induction \(P(n)\) is true for all \(n\ge n_0\).
+</div>
+
+</div>
+<script>document.addEventListener('DOMContentLoaded', () => { renderMathInElement(document.body, { delimiters: [{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}] }); });</script>
+</body>
+</html>

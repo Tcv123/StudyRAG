@@ -50,6 +50,13 @@
   <script src="questions/further-maths-edexcel/fm-edexcel-written.js"></script>
   <script src="questions/further-maths-edexcel/fm-edexcel-practice.js"></script>
   <script src="questions/further-maths-aqa/fm-aqa-practice.js"></script>
+  <script src="questions/further-maths-ocr-b/fm-ocr-b-written-cp1.js"></script>
+  <script src="questions/further-maths-ocr-b/fm-ocr-b-written-cp2.js"></script>
+  <script src="questions/further-maths-ocr-b/fm-ocr-b-written-m.js"></script>
+  <script src="questions/further-maths-ocr-b/fm-ocr-b-written-s.js"></script>
+  <script src="questions/further-maths-ocr-b/fm-ocr-b-written-a.js"></script>
+  <script src="questions/further-maths-ocr-b/fm-ocr-b-written.js"></script>
+  <script src="questions/further-maths-ocr-b/fm-ocr-b-practice.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -581,6 +588,7 @@ const PRACTICE_MAP = {
   'Mathematics_Edexcel': () => typeof MATHS_EDEXCEL_PRACTICE !== 'undefined' ? MATHS_EDEXCEL_PRACTICE : null,
   'Further Mathematics_Edexcel': () => typeof FM_EDEXCEL_PRACTICE !== 'undefined' ? FM_EDEXCEL_PRACTICE : null,
   'Further Mathematics_AQA': () => typeof FM_AQA_PRACTICE !== 'undefined' ? FM_AQA_PRACTICE : null,
+  'Further Mathematics_OCR B': () => typeof FM_OCR_B_PRACTICE !== 'undefined' ? FM_OCR_B_PRACTICE : null,
 };
 
 function getPracticeData(topicKey) {

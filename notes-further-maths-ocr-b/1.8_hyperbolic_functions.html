@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.8: Hyperbolic Functions — OCR B Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-b-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR B Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR B A-Level Further Mathematics (MEI, H645) — Core Pure Section 1.8</p>
+<h1>1.8: Hyperbolic Functions</h1>
+
+<h2>1. Definitions</h2>
+
+<div class="definition">
+  \[\cosh x = \dfrac{e^x + e^{-x}}{2}, \quad \sinh x = \dfrac{e^x - e^{-x}}{2}, \quad \tanh x = \dfrac{\sinh x}{\cosh x} = \dfrac{e^x - e^{-x}}{e^x + e^{-x}}.\]
+</div>
+
+<p>Reciprocals: \(\operatorname{sech} x = 1/\cosh x\), \(\operatorname{cosech} x = 1/\sinh x\), \(\coth x = 1/\tanh x\).</p>
+
+<h3>Key Values and Parity</h3>
+<ul>
+  <li>\(\cosh 0 = 1\), \(\sinh 0 = 0\), \(\tanh 0 = 0\).</li>
+  <li>\(\cosh\) is <strong>even</strong>, \(\sinh\) and \(\tanh\) are <strong>odd</strong>.</li>
+  <li>\(\cosh x \ge 1\) for all real \(x\); range of \(\tanh x\) is \((-1, 1)\).</li>
+  <li>As \(x \to \infty\): \(\cosh x, \sinh x \to \tfrac{e^x}{2}\); \(\tanh x \to 1\).</li>
+</ul>
+
+<h2>2. Fundamental Identities</h2>
+
+<div class="equation">\(\cosh^2 x - \sinh^2 x = 1\)</div>
+<p>(Hyperbolic Pythagorean identity — the minus sign is the key difference from trig.)</p>
+
+<div class="equation">\(1 - \tanh^2 x = \operatorname{sech}^2 x\)</div>
+<div class="equation">\(\coth^2 x - 1 = \operatorname{cosech}^2 x\)</div>
+
+<h3>Addition Formulae</h3>
+<div class="equation">\(\sinh(A \pm B) = \sinh A\cosh B \pm \cosh A \sinh B\)</div>
+<div class="equation">\(\cosh(A \pm B) = \cosh A\cosh B \pm \sinh A \sinh B\)</div>
+
+<h3>Double-Angle Formulae</h3>
+<div class="equation">\(\sinh 2x = 2\sinh x \cosh x\)</div>
+<div class="equation">\(\cosh 2x = \cosh^2 x + \sinh^2 x = 2\cosh^2 x - 1 = 1 + 2\sinh^2 x\)</div>
+
+<h3>Osborn's Rule</h3>
+<div class="definition">
+  To convert a trig identity to its hyperbolic analogue: keep the form but change the sign of any term that is (or contains) a product of two \(\sinh\)s.
+</div>
+<p>e.g. \(\cos 2A = 1 - 2\sin^2 A\) becomes \(\cosh 2A = 1 + 2\sinh^2 A\) (sign flipped because of \(\sin^2 A\)).</p>
+
+<h2>3. Derivatives</h2>
+
+<div class="equation">\(\dfrac{d}{dx}\sinh x = \cosh x\), &nbsp; \(\dfrac{d}{dx}\cosh x = \sinh x\)</div>
+<div class="equation">\(\dfrac{d}{dx}\tanh x = \operatorname{sech}^2 x\)</div>
+
+<p>(The derivative of \(\cosh\) is \(+\sinh\) — no minus sign, unlike \(\cos\).)</p>
+
+<h2>4. Integrals</h2>
+
+<div class="equation">\(\int \cosh x\,dx = \sinh x + C\), &nbsp;\(\int \sinh x\,dx = \cosh x + C\)</div>
+<div class="equation">\(\int \operatorname{sech}^2 x\,dx = \tanh x + C\)</div>
+
+<p>For products like \(\int\sinh^2 x\,dx\), use the double-angle identity:</p>
+<div class="equation">\(\sinh^2 x = \tfrac{1}{2}(\cosh 2x - 1), \qquad \cosh^2 x = \tfrac{1}{2}(\cosh 2x + 1).\)</div>
+
+<h2>5. Inverse Hyperbolic Functions</h2>
+
+<h3>Logarithmic Forms</h3>
+<div class="equation">\(\operatorname{arsinh} x = \ln\!\left(x + \sqrt{x^2 + 1}\right), \quad x \in \mathbb{R}\)</div>
+<div class="equation">\(\operatorname{arcosh} x = \ln\!\left(x + \sqrt{x^2 - 1}\right), \quad x \ge 1\)</div>
+<div class="equation">\(\operatorname{artanh} x = \tfrac{1}{2}\ln\!\left(\dfrac{1 + x}{1 - x}\right), \quad |x| < 1\)</div>
+
+<h3>Derivation of arsinh</h3>
+<p>If \(y = \operatorname{arsinh} x\), then \(x = \sinh y = \tfrac{1}{2}(e^y - e^{-y})\). Let \(u = e^y\): \(u^2 - 2xu - 1 = 0 \Rightarrow u = x + \sqrt{x^2 + 1}\) (positive root). Take logs.</p>
+
+<h3>Derivatives of Inverses</h3>
+<div class="equation">\(\dfrac{d}{dx}\operatorname{arsinh} x = \dfrac{1}{\sqrt{x^2 + 1}}\)</div>
+<div class="equation">\(\dfrac{d}{dx}\operatorname{arcosh} x = \dfrac{1}{\sqrt{x^2 - 1}}\)</div>
+<div class="equation">\(\dfrac{d}{dx}\operatorname{artanh} x = \dfrac{1}{1 - x^2}\)</div>
+
+<h2>6. Standard Integrals (via Hyperbolic Substitutions)</h2>
+
+<table>
+  <tr><th>Integrand</th><th>Substitution</th><th>Result</th></tr>
+  <tr><td>\(\dfrac{1}{\sqrt{x^2 + a^2}}\)</td><td>\(x = a\sinh u\)</td><td>\(\operatorname{arsinh}(x/a) + C\)</td></tr>
+  <tr><td>\(\dfrac{1}{\sqrt{x^2 - a^2}}\)</td><td>\(x = a\cosh u\)</td><td>\(\operatorname{arcosh}(x/a) + C\) &nbsp;(for \(x \ge a\))</td></tr>
+  <tr><td>\(\sqrt{x^2 + a^2}\)</td><td>\(x = a\sinh u\), use \(\cosh^2 u = \tfrac{1}{2}(\cosh 2u + 1)\)</td><td>Quadrature formula</td></tr>
+</table>
+
+<div class="example">
+  <strong>\(\int \dfrac{dx}{\sqrt{x^2 + 9}}\)</strong><br>
+  Let \(x = 3\sinh u\). Then \(\sqrt{x^2 + 9} = 3\cosh u\), \(dx = 3\cosh u\,du\).<br>
+  Integrand becomes \(du\), so integral \(= u + C = \operatorname{arsinh}(x/3) + C\) (or equivalent log form).
+</div>
+
+<h2>7. Solving Equations with Hyperbolic Functions</h2>
+
+<div class="example">
+  <strong>Solve \(2\cosh x - \sinh x = 3\).</strong><br>
+  Sub \(\cosh x = \tfrac{1}{2}(e^x + e^{-x})\), \(\sinh x = \tfrac{1}{2}(e^x - e^{-x})\):<br>
+  \(2\cdot\tfrac{1}{2}(e^x + e^{-x}) - \tfrac{1}{2}(e^x - e^{-x}) = 3\)<br>
+  \(\tfrac{1}{2}e^x + \tfrac{3}{2}e^{-x} = 3\). Multiply by \(2e^x\): \(e^{2x} + 3 = 6e^x \Rightarrow e^{2x} - 6e^x + 3 = 0\).<br>
+  \(e^x = 3 \pm \sqrt{6}\). Both positive, so \(x = \ln(3 \pm \sqrt{6})\).
+</div>
+
+<h2>8. Exam Style Strategy</h2>
+<ul>
+  <li>Convert to exponentials early for solving equations.</li>
+  <li>Use Osborn's rule to translate trig identities — but always double-check by direct expansion.</li>
+  <li>Hyperbolic substitutions often make "root of \(x^2 + a^2\)" integrals cleaner than trig substitutions.</li>
+  <li>Know when arcosh gives \(\pm\) — the logarithmic form picks the positive branch; think about whether both signs are wanted.</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]
+    });
+  });
+</script>
+</body>
+</html>

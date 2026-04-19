@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S1.2: Poisson Distribution — OCR B (MEI) Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+.container { max-width: 820px; margin: 0 auto; }
+h1 { font-size: 2rem; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+p { margin-bottom: 12px; } ul, ol { margin: 10px 0 15px 25px; } li { margin-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+th { background: #e8eef6; color: #1e3a5f; font-weight: 600; } tr:nth-child(even) { background: #f8fafc; }
+.definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+.exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+.example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+.equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+.spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style></head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-b-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR B Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR B A-Level Further Mathematics (MEI, H645) — Statistics Minor Section S1.2</p>
+<h1>S1.2: Poisson Distribution</h1>
+
+<h2>1. Definition</h2>
+<div class="definition">
+  \(X\sim\operatorname{Po}(\lambda)\) if \(P(X=r)=\dfrac{e^{-\lambda}\lambda^r}{r!}\), \(r=0,1,2,\ldots\)
+</div>
+
+<h2>2. Conditions for Poisson Model</h2>
+<ul>
+  <li>Events occur independently.</li>
+  <li>Constant mean rate over time/space.</li>
+  <li>Events occur singly.</li>
+  <li>Probability of event in short interval \(\propto\) interval length.</li>
+</ul>
+
+<h2>3. Mean and Variance</h2>
+<div class="equation">\(E(X)=\lambda,\quad \operatorname{Var}(X)=\lambda\)</div>
+<p>Mean equals variance — characteristic feature. In data, variance much different from mean suggests Poisson is inappropriate.</p>
+
+<h2>4. Sum of Independent Poissons</h2>
+<div class="definition">
+  Independent \(X\sim\operatorname{Po}(\lambda_1)\), \(Y\sim\operatorname{Po}(\lambda_2)\) \(\Rightarrow\) \(X+Y\sim\operatorname{Po}(\lambda_1+\lambda_2)\).
+</div>
+
+<h2>5. Scaling the Rate</h2>
+<p>If events occur at rate \(\lambda\) per unit time, count in \(t\) units \(\sim\operatorname{Po}(\lambda t)\).</p>
+
+<div class="example">
+  <strong>Calls at 3/min. Probability of at least 5 calls in 2 minutes.</strong><br>
+  \(\lambda t=6\). \(P(Y\ge5)=1-P(Y\le4)\) from tables.
+</div>
+
+<h2>6. Poisson Approximation to Binomial</h2>
+<p>\(B(n,p)\approx\operatorname{Po}(np)\) when \(n\) large and \(p\) small. Rule: \(n>50, np<10\).</p>
+
+<h2>7. Hypothesis Tests on \(\lambda\)</h2>
+<ol>
+  <li>State \(H_0:\lambda=\lambda_0\), \(H_1\) (1- or 2-tailed).</li>
+  <li>Under \(H_0\), compute \(P(X\ge\text{observed})\) (or \(\le\)).</li>
+  <li>Compare with significance level \(\alpha\).</li>
+  <li>Conclude in context.</li>
+</ol>
+
+<div class="example">
+  <strong>Newsagent averages 5 enquiries/hour. Today he records 12. Significant at 5%?</strong><br>
+  \(H_0:\lambda=5\), \(H_1:\lambda>5\). \(P(X\ge12|\lambda=5)=0.0055<0.05\). Reject \(H_0\).
+</div>
+
+<h2>8. Poisson Process (Context)</h2>
+<p>Inter-arrival times are exponential with parameter \(\lambda\). Mean wait between events \(=1/\lambda\).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always state distribution under \(H_0\) explicitly (e.g. "Under \(H_0\), \(X\sim\operatorname{Po}(5)\)") and give the p-value — not just "significant/not significant".
+</div>
+
+</div>
+<script>document.addEventListener('DOMContentLoaded', () => { renderMathInElement(document.body, { delimiters: [{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}] }); });</script>
+</body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.7: Polar Coordinates — OCR B Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+  .diagram { display: flex; justify-content: center; margin: 20px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-b-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR B Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR B A-Level Further Mathematics (MEI, H645) — Core Pure Section 1.7</p>
+<h1>1.7: Polar Coordinates</h1>
+
+<h2>1. The Polar Coordinate System</h2>
+
+<div class="definition">
+  In polar coordinates a point is given by \((r, \theta)\) where
+  <ul style="margin-top:8px;">
+    <li>\(r\) is the distance from the pole (origin),</li>
+    <li>\(\theta\) is the angle measured anticlockwise from the initial line (positive \(x\)-axis).</li>
+  </ul>
+  OCR convention: \(r \ge 0\).
+</div>
+
+<h3>Conversion Cartesian ↔ Polar</h3>
+<div class="equation">\(x = r\cos\theta, \quad y = r\sin\theta\)</div>
+<div class="equation">\(r = \sqrt{x^2 + y^2}, \quad \tan\theta = \dfrac{y}{x}\) &nbsp;(choose \(\theta\) in the correct quadrant)</div>
+
+<h2>2. Sketching Polar Curves</h2>
+
+<p>To sketch \(r = f(\theta)\), tabulate key \(\theta\) values (\(0, \pi/6, \pi/4, \pi/3, \pi/2, \ldots\)) and plot. Some useful standard curves:</p>
+
+<table>
+  <tr><th>Equation</th><th>Shape</th></tr>
+  <tr><td>\(r = a\)</td><td>Circle, radius \(a\), centre origin</td></tr>
+  <tr><td>\(r = 2a\cos\theta\)</td><td>Circle, radius \(a\), centre \((a, 0)\)</td></tr>
+  <tr><td>\(r = 2a\sin\theta\)</td><td>Circle, radius \(a\), centre \((0, a)\)</td></tr>
+  <tr><td>\(r = a(1 + \cos\theta)\)</td><td>Cardioid (heart-shaped)</td></tr>
+  <tr><td>\(r = a(1 + k\cos\theta)\), \(0<k<1\)</td><td>Dimpled limaçon</td></tr>
+  <tr><td>\(r = a + b\cos\theta\), \(a<b\)</td><td>Limaçon with inner loop</td></tr>
+  <tr><td>\(r = a\cos n\theta\) or \(r=a\sin n\theta\)</td><td>Rose curve — \(n\) petals if odd, \(2n\) if even</td></tr>
+  <tr><td>\(r = a\theta\)</td><td>Archimedean spiral</td></tr>
+  <tr><td>\(r^2 = a^2\cos 2\theta\)</td><td>Lemniscate (figure of eight)</td></tr>
+</table>
+
+<h3>Worked Sketch — The Cardioid \(r = 1 + \cos\theta\)</h3>
+<p>Key points: \(\theta = 0 \Rightarrow r = 2\); \(\theta = \pi/2 \Rightarrow r = 1\); \(\theta = \pi \Rightarrow r = 0\) (the pole).</p>
+
+<div class="diagram">
+<svg width="260" height="240" viewBox="0 0 260 240">
+  <!-- axes -->
+  <line x1="10" y1="120" x2="250" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="130" y1="10" x2="130" y2="230" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- cardioid r = 1 + cos theta, scale 40 -->
+  <path d="M 210,120 Q 200,60 130,60 Q 60,60 85,140 Q 100,180 130,180 Q 160,180 170,160 Q 175,150 210,120 Z"
+        fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="234" y="115" font-size="10">(2,0)</text>
+  <text x="120" y="52" font-size="10">(1, π/2)</text>
+  <text x="112" y="195" font-size="10">(1, −π/2)</text>
+  <text x="244" y="134" font-size="10">x</text>
+</svg>
+<p style="text-align:center;font-size:12px;color:#64748b;margin-top:-8px;">Cardioid \(r = 1 + \cos\theta\).</p>
+</div>
+
+<h2>3. Tangents at the Pole</h2>
+
+<p>If \(r = 0\) when \(\theta = \alpha\), then the line \(\theta = \alpha\) is tangent to the curve at the pole.</p>
+
+<div class="example">
+  <strong>Tangents at the pole for \(r = \sin 2\theta\).</strong><br>
+  \(r = 0\) when \(\sin 2\theta = 0\), i.e. \(\theta = 0, \pi/2, \pi, 3\pi/2\). These four half-lines are the pole tangents — the curve is a four-petal rose.
+</div>
+
+<h2>4. Area Enclosed by a Polar Curve</h2>
+
+<div class="definition">
+  The area bounded by \(r = f(\theta)\), \(\theta = \alpha\), and \(\theta = \beta\) is
+  \[A = \dfrac{1}{2}\int_{\alpha}^{\beta} r^2\,d\theta = \dfrac{1}{2}\int_{\alpha}^{\beta} [f(\theta)]^2\,d\theta.\]
+</div>
+
+<div class="example">
+  <strong>Area enclosed by the cardioid \(r = 1 + \cos\theta\).</strong><br>
+  Symmetry: compute area for \(\theta \in [0, \pi]\) and double.<br>
+  \(A = \tfrac{1}{2} \cdot 2\int_0^{\pi}(1 + \cos\theta)^2\,d\theta = \int_0^{\pi}(1 + 2\cos\theta + \cos^2\theta)\,d\theta\)<br>
+  \(= \int_0^{\pi}(1 + 2\cos\theta + \tfrac{1 + \cos 2\theta}{2})\,d\theta\)<br>
+  \(= \left[\tfrac{3}{2}\theta + 2\sin\theta + \tfrac{1}{4}\sin 2\theta\right]_0^{\pi} = \tfrac{3\pi}{2}.\)
+</div>
+
+<div class="exam-tip">
+  <strong>OCR Exam Tip:</strong> Be careful about the limits of integration — they should trace out the region <em>once</em>. For symmetric curves, use symmetry to simplify.
+</div>
+
+<h2>5. Tangents in Cartesian Form</h2>
+
+<p>From \(x = r\cos\theta\), \(y = r\sin\theta\), the gradient is:</p>
+<div class="equation">\(\dfrac{dy}{dx} = \dfrac{dy/d\theta}{dx/d\theta} = \dfrac{\dot{r}\sin\theta + r\cos\theta}{\dot{r}\cos\theta - r\sin\theta}\)</div>
+
+<p>Horizontal tangents: \(dy/d\theta = 0\). Vertical tangents: \(dx/d\theta = 0\).</p>
+
+<h2>6. Areas Between Two Polar Curves</h2>
+
+<p>For the region inside \(r = g(\theta)\) and outside \(r = f(\theta)\), with \(g \ge f\) on \([\alpha, \beta]\):</p>
+<div class="equation">\(A = \tfrac{1}{2}\int_{\alpha}^{\beta} \left(g(\theta)^2 - f(\theta)^2\right)d\theta.\)</div>
+
+<p>Find intersection points by solving \(f(\theta) = g(\theta)\) — remember to consider the pole separately.</p>
+
+<h2>7. Exam Style Strategy</h2>
+<ul>
+  <li>Always sketch first — it reveals symmetry and tells you whether the region is traced once.</li>
+  <li>State your limits carefully (e.g. "for \(-\pi/2 \le \theta \le \pi/2\) the full cardioid is covered").</li>
+  <li>For "area between two curves", find all intersection angles, including the pole.</li>
+  <li>Standard integrals you will need: \(\int \cos^2\theta\,d\theta\), \(\int \sin^2\theta\,d\theta\), \(\int \cos n\theta\,d\theta\) — memorise or derive via double-angle formulas.</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]
+    });
+  });
+</script>
+</body>
+</html>

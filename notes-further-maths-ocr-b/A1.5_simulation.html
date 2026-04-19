@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A1.5: Simulation — OCR B (MEI) Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+.container { max-width: 820px; margin: 0 auto; }
+h1 { font-size: 2rem; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+p { margin-bottom: 12px; } ul, ol { margin: 10px 0 15px 25px; } li { margin-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+th { background: #e8eef6; color: #1e3a5f; font-weight: 600; } tr:nth-child(even) { background: #f8fafc; }
+.definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+.exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+.example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+.equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+.spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style></head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-b-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR B Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR B A-Level Further Mathematics (MEI, H645) — Modelling with Algorithms Section A1.5</p>
+<h1>A1.5: Simulation</h1>
+
+<h2>1. Why Simulate?</h2>
+<div class="definition">
+  Simulation models real-world processes using random sampling, when analytical solutions are intractable or when the system involves randomness (queues, arrivals, breakdowns).
+</div>
+
+<h2>2. Random Numbers</h2>
+<p>Computers generate <strong>pseudo-random</strong> numbers \(U\sim U(0,1)\). These drive the simulation via transformations.</p>
+
+<h3>Inverse Transform Method</h3>
+<p>If \(F\) is the CDF of target distribution and \(U\sim U(0,1)\), then \(X=F^{-1}(U)\) has CDF \(F\).</p>
+
+<div class="example">
+  <strong>Simulate \(\text{Exp}(\lambda)\).</strong><br>
+  \(F(x)=1-e^{-\lambda x}\). \(X=-\ln(U)/\lambda\).
+</div>
+
+<div class="example">
+  <strong>Simulate Bernoulli(\(p\)).</strong><br>
+  Return 1 if \(U<p\), else 0.
+</div>
+
+<div class="example">
+  <strong>Simulate discrete distribution (e.g., dice roll).</strong><br>
+  \(X=\lceil 6U\rceil\) for fair die.
+</div>
+
+<h2>3. Monte Carlo Methods</h2>
+<div class="definition">
+  Estimate a quantity by repeated random sampling. Error scales as \(O(1/\sqrt{n})\).
+</div>
+
+<div class="example">
+  <strong>Estimate \(\pi\) by throwing darts.</strong><br>
+  Generate \((U_1,U_2)\in[0,1]^2\). Check \(U_1^2+U_2^2<1\). Ratio \(\times 4 \approx \pi\).
+</div>
+
+<h2>4. Event-Driven Simulation (Queues)</h2>
+<p>Model queue via two event types:</p>
+<ul>
+  <li><strong>Arrival:</strong> customer enters at time \(t\), sampled from inter-arrival distribution.</li>
+  <li><strong>Departure:</strong> server finishes at time \(t\), sampled from service-time distribution.</li>
+</ul>
+
+<p>Advance simulation clock to next event, update queue state, record statistics, repeat.</p>
+
+<h3>Little's Law</h3>
+<div class="equation">\(L=\lambda W\)</div>
+<p>Mean number in system = arrival rate × mean time in system.</p>
+
+<h3>M/M/1 Queue</h3>
+<p>Poisson arrivals rate \(\lambda\), exponential service rate \(\mu\). Utilisation \(\rho=\lambda/\mu\). Steady-state (if \(\rho<1\)):</p>
+<div class="equation">\(L=\dfrac{\rho}{1-\rho},\quad W=\dfrac{1}{\mu-\lambda}\)</div>
+
+<h2>5. Variance Reduction</h2>
+<ul>
+  <li><strong>Antithetic variates:</strong> use pairs \((U,1-U)\) to reduce estimator variance.</li>
+  <li><strong>Common random numbers:</strong> reuse same draws across scenarios.</li>
+  <li><strong>Control variates:</strong> adjust using correlated variable with known mean.</li>
+</ul>
+
+<h2>6. Validation and Verification</h2>
+<ul>
+  <li><strong>Verification:</strong> does the code do what it should?</li>
+  <li><strong>Validation:</strong> does the model reflect reality?</li>
+  <li><strong>Warm-up:</strong> discard initial transient before measuring steady-state.</li>
+</ul>
+
+<h2>7. Exam Strategy</h2>
+<ul>
+  <li>State clearly the random variable distribution and how to sample from it via \(U\sim U(0,1)\).</li>
+  <li>For Monte Carlo estimation, include approximate standard error or confidence interval.</li>
+  <li>Queue simulations: tabulate event times and queue state step by step.</li>
+</ul>
+
+</div>
+<script>document.addEventListener('DOMContentLoaded', () => { renderMathInElement(document.body, { delimiters: [{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}] }); });</script>
+</body></html>

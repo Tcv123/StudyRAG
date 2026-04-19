@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M1.3: Circular Motion — OCR B Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-b-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR B Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR B A-Level Further Mathematics (MEI, H645) — Mechanics Option Section M1.4</p>
+<h1>M1.4: Circular Motion</h1>
+
+<h2>1. Angular Measure and Angular Velocity</h2>
+
+<div class="definition">
+  For a particle moving on a circle of radius \(r\):
+  <ul style="margin-top:6px;">
+    <li>Arc length \(s = r\theta\) (with \(\theta\) in radians).</li>
+    <li>Angular velocity \(\omega = \dot{\theta}\) (rad/s).</li>
+    <li>Linear speed \(v = r\omega\).</li>
+    <li>Period \(T = 2\pi/\omega\), frequency \(f = 1/T = \omega/(2\pi)\).</li>
+  </ul>
+</div>
+
+<h2>2. Centripetal Acceleration and Force</h2>
+
+<p>A particle moving in a circle at constant speed \(v\) has acceleration directed towards the centre:</p>
+<div class="equation">\(a = \dfrac{v^2}{r} = r\omega^2, \quad v\omega\) &nbsp;(equivalent forms)</div>
+
+<p>The force required to produce this acceleration is the <strong>centripetal force</strong>, always directed towards the centre:</p>
+<div class="equation">\(F = \dfrac{mv^2}{r} = mr\omega^2.\)</div>
+
+<div class="exam-tip">
+  <strong>OCR Exam Tip:</strong> "Centripetal force" is not a separate force — it's the <em>net</em> inward force. For a conical pendulum, that's the horizontal component of tension; for a car on a banked track, the horizontal component of the normal reaction (plus friction).
+</div>
+
+<h2>3. Horizontal Circular Motion Examples</h2>
+
+<h3>Object on a Horizontal Turntable</h3>
+<p>Friction provides the centripetal force. For slipping not to occur: \(\mu_s\, mg \ge mr\omega^2\), giving \(\omega_{\max} = \sqrt{\mu_s g/r}\).</p>
+
+<h3>Conical Pendulum</h3>
+<p>A particle on a string of length \(\ell\) moves in a horizontal circle of radius \(r = \ell\sin\theta\), where \(\theta\) is the angle from the vertical. Resolving vertically and horizontally:</p>
+<div class="equation">\(T\cos\theta = mg, \quad T\sin\theta = mr\omega^2 = m\ell\sin\theta\,\omega^2.\)</div>
+<p>Divide: \(\tan\theta = r\omega^2/g = \ell\omega^2\sin\theta/g\), i.e. \(\cos\theta = g/(\ell\omega^2)\).</p>
+
+<h3>Car on a Banked Track</h3>
+<p>On a track banked at angle \(\alpha\), with no friction the "design speed" is given by</p>
+<div class="equation">\(\tan\alpha = \dfrac{v^2}{rg}.\)</div>
+
+<h2>4. Vertical Circular Motion</h2>
+
+<p>Now speed is <em>not</em> constant — there's a tangential component of gravity. Use <strong>conservation of energy</strong> to find \(v\) at any point:</p>
+<div class="equation">\(\tfrac{1}{2}m v^2 + mgh = \text{constant}.\)</div>
+
+<p>The centripetal equation still holds, using the instantaneous speed:</p>
+<div class="equation">\(F_{\text{centripetal}} = \dfrac{mv^2}{r}.\)</div>
+
+<h3>Particle on the Inside of a Smooth Vertical Circle</h3>
+<p>At angle \(\theta\) from the lowest point, the inward forces are the tension/normal \(T\) and a component of gravity:</p>
+<div class="equation">\(T - mg\cos\theta = \dfrac{mv^2}{r}\) &nbsp;(below the horizontal)</div>
+<div class="equation">\(T + mg\cos(\pi - \theta) = \dfrac{mv^2}{r}\) &nbsp;(above the horizontal, adjusting signs)</div>
+
+<p>At the top: \(T + mg = mv_{\text{top}}^2 / r\). For the string/normal not to go slack: \(v_{\text{top}}^2 \ge gr\).</p>
+
+<div class="example">
+  <strong>A particle of mass \(m\) is attached to a string of length \(r\) and projected horizontally from the lowest point with speed \(u\). Find the minimum \(u\) for it to complete a full vertical circle.</strong><br>
+  Energy at top: \(\tfrac{1}{2}mv^2 + mg(2r) = \tfrac{1}{2}mu^2\).<br>
+  Condition at top: \(v^2 \ge gr\).<br>
+  So \(u^2 \ge gr + 4gr = 5gr\), i.e. \(u \ge \sqrt{5gr}\).
+</div>
+
+<h3>Particle on Outside of a Smooth Sphere</h3>
+<p>Normal reaction acts outward. At angle \(\theta\) from the top:</p>
+<div class="equation">\(mg\cos\theta - R = \dfrac{mv^2}{r}.\)</div>
+<p>Particle leaves the sphere when \(R = 0\), i.e. when \(v^2 = gr\cos\theta\). Combined with energy conservation, this gives the angle of departure.</p>
+
+<h2>5. Three Common Questions</h2>
+
+<ol>
+  <li>Given the speed/angular speed, find tension/normal (set up the radial equation).</li>
+  <li>Given a condition (string slack, particle leaves surface), find the critical speed/angle.</li>
+  <li>Use energy conservation between two positions to find speed at the second.</li>
+</ol>
+
+<h2>6. Exam Style Strategy</h2>
+<ul>
+  <li>Always sketch showing forces acting at the point of interest.</li>
+  <li>Choose axes along and perpendicular to the radial direction.</li>
+  <li>For vertical motion, use energy for speed, force equation for tension/normal.</li>
+  <li>For "just complete" a circle: set \(T = 0\) (or \(R = 0\)) at the top; don't set \(v = 0\).</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]
+    });
+  });
+</script>
+</body>
+</html>

@@ -804,6 +804,11 @@ const EXAM_DATES = {
     { paper: 'Paper 2 — Option A (Y541 Stats / Y542 Mech / Y543 Discrete)', date: '2026-06-18', time: 'AM', duration: '2h 15m' },
     { paper: 'Paper 3 — Option B (Y541 Stats / Y542 Mech / Y543 Discrete)', date: '2026-06-24', time: 'PM', duration: '2h 15m' },
   ],
+  'Further Mathematics_OCR B': [
+    { paper: 'Paper 1 (Y420) — Core Pure', date: '2026-06-12', time: 'AM', duration: '2h 40m' },
+    { paper: 'Paper 2 (Y421) — Core Pure', date: '2026-06-19', time: 'AM', duration: '2h 40m' },
+    { paper: 'Paper 3 — Option (Y432/Y433/Y434)', date: '2026-06-25', time: 'PM', duration: '1h 45m' },
+  ],
   'Biology_AQA': [
     { paper: 'Paper 1', date: '2026-06-04', time: 'PM', duration: '2h' },
     { paper: 'Paper 2', date: '2026-06-12', time: 'AM', duration: '2h' },
@@ -1353,8 +1358,9 @@ const SUBJECT_TOPIC_KEY = {
   'Further Mathematics_Edexcel': 'further-maths-edexcel',
   'Further Mathematics_AQA': 'further-maths-aqa',
   'Further Mathematics_OCR': 'further-maths-ocr',
+  'Further Mathematics_OCR B': 'further-maths-ocr-b',
 };
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas': 12, 'maths-aqa': 17, 'maths-ocr': 19, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas': 12, 'maths-aqa': 17, 'maths-ocr': 19, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25 };
 const SUBJECT_NOTES_PAGE = {
   'Computer Science_OCR': 'subject-notes/cs-notes.html',
   'Computer Science_AQA': 'subject-notes/cs-aqa-notes.html',
@@ -1384,6 +1390,7 @@ const SUBJECT_NOTES_PAGE = {
   'Further Mathematics_Edexcel': 'subject-notes/further-maths-edexcel-notes.html',
   'Further Mathematics_AQA': 'subject-notes/further-maths-aqa-notes.html',
   'Further Mathematics_OCR': 'subject-notes/further-maths-ocr-notes.html',
+  'Further Mathematics_OCR B': 'subject-notes/further-maths-ocr-b-notes.html',
 };
 
 // ── Medal checking ───────────────────────────────────────────────────────
@@ -2490,6 +2497,38 @@ const DIAG_TOPICS = {
       { id: 'D1.3', name: 'Linear Programming',          sub: 'Formulation, graphical, Simplex method' },
       { id: 'D1.4', name: 'Game Theory',                 sub: 'Pay-off matrices, dominance, mixed strategies, LP' },
       { id: 'D1.5', name: 'Recurrence Relations',        sub: '1st & 2nd order linear, homogeneous & particular solutions' },
+    ],
+  },
+  'Further Mathematics_OCR B': {
+    label: 'Further Mathematics — OCR B (MEI)',
+    emoji: '∑',
+    page: 'diagnostics/further-maths-ocr-b-diagnostic.html',
+    topics: [
+      { id: '1.1',  name: 'Proof',                         sub: 'Direct, contradiction, induction (series, divisibility, matrices)' },
+      { id: '1.2',  name: 'Complex Numbers',               sub: 'Cartesian & mod-arg form, de Moivre, loci, nth roots of unity' },
+      { id: '1.3',  name: 'Matrices',                      sub: 'Operations, determinants, inverses, eigenvalues, diagonalisation' },
+      { id: '1.4',  name: 'Vectors',                       sub: 'Cross product, scalar triple, lines & planes in 3D, distances' },
+      { id: '1.5',  name: 'Series',                        sub: 'Standard sums, method of differences, Maclaurin series' },
+      { id: '1.6',  name: 'Roots of Polynomials',          sub: 'Vieta formulae, symmetric functions, substitution' },
+      { id: '1.7',  name: 'Polar Coordinates',             sub: 'Polar curves, tangents, area integrals, intersection' },
+      { id: '1.8',  name: 'Hyperbolic Functions',          sub: 'Definitions, identities, inverse hyp, integration techniques' },
+      { id: '1.9',  name: 'Further Calculus',              sub: 'Reduction formulae, arc length, surface area, improper integrals' },
+      { id: '1.10', name: 'Differential Equations',        sub: 'Integrating factor, 2nd-order linear, coupled systems, modelling' },
+      { id: 'M1.1', name: 'Dimensional Analysis',          sub: 'Base units, derived units, checking formulae, scaling' },
+      { id: 'M1.2', name: 'Work, Energy & Power',          sub: 'Work-energy theorem, GPE, EPE, conservation, P = Fv' },
+      { id: 'M1.3', name: 'Impulse & Momentum',            sub: 'Conservation, collisions, coefficient of restitution' },
+      { id: 'M1.4', name: 'Circular Motion',               sub: 'Angular speed, centripetal acceleration, vertical circles' },
+      { id: 'M1.5', name: 'Centres of Mass',               sub: 'Laminae, composites, volumes, equilibrium, toppling' },
+      { id: 'S1.1', name: 'Discrete Random Variables',     sub: 'E(X), Var(X), linear combinations, joint distributions' },
+      { id: 'S1.2', name: 'Poisson Distribution',          sub: 'Poisson approximation, hypothesis tests on λ' },
+      { id: 'S1.3', name: 'Bivariate Data & Correlation',  sub: 'PMCC, Spearman rank, hypothesis tests, regression' },
+      { id: 'S1.4', name: 'Chi-squared Tests',             sub: 'Goodness-of-fit, contingency tables, Yates\' correction' },
+      { id: 'S1.5', name: 'Non-parametric Tests',          sub: 'Sign test, Wilcoxon signed-rank, Wilcoxon rank-sum' },
+      { id: 'A1.1', name: 'Graphs & Networks',             sub: 'Degree, Eulerian/Hamiltonian, trees, planarity' },
+      { id: 'A1.2', name: 'Network Algorithms',            sub: 'Prim, Kruskal, Dijkstra, route inspection, TSP bounds' },
+      { id: 'A1.3', name: 'Linear Programming',            sub: 'Formulation, graphical, Simplex method' },
+      { id: 'A1.4', name: 'Critical Path Analysis',        sub: 'Activity networks, forward/backward pass, float, Gantt charts' },
+      { id: 'A1.5', name: 'Simulation',                    sub: 'Random number generation, event simulation, queues' },
     ],
   },
 };
