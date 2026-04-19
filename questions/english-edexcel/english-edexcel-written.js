@@ -25,4 +25,72 @@ const ENGLISH_EDEXCEL_WRITTEN = {
     ],
   },
 
+  '1.2': {
+    green: [
+      { q: 'Name the four main periods of English with approximate dates.', marks: 4, tier: 'green', modelAnswer: '• Old English (c. 450–1066) (1)\n• Middle English (1066–c. 1500) (1)\n• Early Modern English (c. 1500–1700) (1)\n• Modern English (1700–present) (1)' },
+      { q: 'Identify four influences on English lexis historically.', marks: 4, tier: 'green', modelAnswer: '• Latin + Greek (learned borrowings) (1)\n• Norman French (post-1066) (1)\n• Old Norse (Viking settlement) (1)\n• Modern contact — colonisation, globalisation, technology, migration (1)' },
+      { q: 'Define and exemplify broadening, narrowing, amelioration and pejoration.', marks: 8, tier: 'green', modelAnswer: '• Broadening — "dog" (once a specific breed) now any canine (2)\n• Narrowing — "meat" (once any food) now flesh (2)\n• Amelioration — "nice" (once "foolish") now pleasant (2)\n• Pejoration — "silly" (once "blessed") now foolish (2)' },
+    ],
+    amber: [
+      { q: 'Describe Aitchison\'s three metaphors for language change and her purpose in using them.', marks: 4, tier: 'amber', modelAnswer: '• "Damp spoon" — change caused by laziness (1)\n• "Crumbling castle" — language was once pure and is decaying (1)\n• "Infectious disease" — change spreads harmfully (1)\n• Aitchison REJECTS all three — change is natural, systematic, functional, not decay (1)' },
+      { q: 'Explain the "S-curve" model of language change and an example it fits.', marks: 4, tier: 'amber', modelAnswer: '• New forms slowly adopted by innovators (1)\n• Rapid spread through the community (steep middle) (1)\n• Plateau as form approaches universal use (1)\n• Fits sound changes (GVS) and lexical innovations (e.g. "selfie", adoption of singular they) (1)' },
+      { q: 'Identify three ways technology has affected English in the last 30 years.', marks: 3, tier: 'amber', modelAnswer: '• New lexis ("tweet", "selfie", "doomscroll") (1)\n• Conversion — noun "text" → verb "to text" (1)\n• New genres/registers (tweet, meme, chat) with orthographic innovation (emoji) (1)' },
+    ],
+    red: [
+      { q: 'Evaluate: "English is in decline." Discuss, using at least two theorists. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Descriptivist consensus (Crystal, Aitchison): no — change is continuous, natural and not decay (1)\n• Aitchison\'s metaphors critique the "crumbling castle" view (1)\n• Crystal shows many "declines" (e.g. "literally") have 18th-century precedents (1)\n• Complaints often reflect social anxiety (Cameron\'s verbal hygiene) not linguistic fact (1)\n• Grammatical simplification in some areas is matched by lexical and generic expansion (1)\n• Therefore the claim is rhetorically common but linguistically unsupported (1)' },
+      { q: 'Discuss how globalisation has shaped English over the last century. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Mobility + media accelerate diffusion of new forms (1)\n• Loanwords from multiple languages enter everyday lexis rapidly (tsunami, barista, hijab) (1)\n• Pluricentric development — new Englishes with distinct norms (Crystal) (1)\n• Contact varieties (MLE) emerge in cosmopolitan cities (1)\n• Levelling occurs in parallel, but new varieties emerge alongside (1)\n• Therefore globalisation has diversified AND accelerated English change (1)' },
+    ],
+  },
+
+  '1.3': {
+    green: [
+      { q: 'Name Kachru\'s three circles of World Englishes with an example country for each.', marks: 3, tier: 'green', modelAnswer: '• Inner — native English (UK, US, Australia) (1)\n• Outer — institutionalised second language (India, Nigeria, Singapore) (1)\n• Expanding — foreign/international (China, Russia, Brazil) (1)' },
+      { q: 'Describe two features commonly identified in MLE.', marks: 2, tier: 'green', modelAnswer: '• Fronted GOOSE vowel; distinctive FACE / GOAT vowels (1)\n• Lexis from Caribbean, South Asian, vernacular London sources — "ting", "mandem" (1)' },
+      { q: 'Define "pidgin" and "creole" with an example relation between them.', marks: 3, tier: 'green', modelAnswer: '• Pidgin — simplified contact language, no native speakers (1)\n• Creole — a pidgin acquired as a native language with expanded grammar and lexis (1)\n• Example: Jamaican Creole from earlier Caribbean pidgins (1)' },
+    ],
+    amber: [
+      { q: 'Explain Labov\'s argument that AAVE is rule-governed, with an example.', marks: 4, tier: 'amber', modelAnswer: '• Labov (1972) studied AAVE in Harlem (1)\n• Copula deletion ("she happy") follows specific grammatical constraints (1)\n• Habitual "be" ("she be working") expresses an aspect Standard English lacks (1)\n• Concluded AAVE is systematic — claims of "broken English" are social, not linguistic (1)' },
+      { q: 'Describe Jenkins\'s Lingua Franca Core and why it matters.', marks: 4, tier: 'amber', modelAnswer: '• For ELF speakers, only certain phonological features are essential for intelligibility (1)\n• Consonant clusters must be preserved; exact RP vowels are not required (1)\n• Implication: Inner-Circle norms are not the only legitimate targets for ELF (1)\n• Supports pluricentric view of English (1)' },
+      { q: 'Explain translanguaging (García) with an example.', marks: 3, tier: 'amber', modelAnswer: '• Multilingual speakers use their full linguistic repertoire flexibly (1)\n• Example: a bilingual student using English in essays, Spanish in discussion, mixed at home (1)\n• Challenges the view that languages are discrete bounded systems (1)' },
+    ],
+    red: [
+      { q: 'Evaluate: "The global spread of English threatens linguistic diversity." Discuss. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• English\'s role has contributed to language endangerment in some contexts (1)\n• But colonisation, policy and economics often do more work than English itself (1)\n• Crystal argues English has pluralised (2–3 billion speakers, new norms) (1)\n• Translanguaging and hybrid varieties show local agency and adaptation (1)\n• Educational and economic inequalities around English access matter (1)\n• Balanced: spread is mixed — not purely threat, not purely benign (1)' },
+      { q: 'Discuss media representations of MLE as an example of language ideology. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Tabloids label MLE "jafaican" or "street slang" — pejorative (1)\n• Cheshire et al.\'s research shows MLE is a rule-governed variety from multiethnic peer networks (1)\n• Framing tracks earlier patterns (fears about Cockney, AAVE) — racialised standard-language ideology (Milroy) (1)\n• Such texts are themselves useful language-discourse data (1)\n• The claim "MLE is lazy English" is not linguistically supported (1)\n• Top-band answers critique the framing AND analyse why it resonates socially (1)' },
+    ],
+  },
+
+  '2.1': {
+    green: [
+      { q: 'Name the four main stages of spoken language development with age guidance.', marks: 4, tier: 'green', modelAnswer: '• Pre-verbal (0–12m): cooing, babbling (1)\n• Holophrastic (12–18m): single words (1)\n• Two-word (18–24m) (1)\n• Telegraphic / post-telegraphic (2–5y) (1)' },
+      { q: 'Explain Halliday\'s seven functions of language, with brief examples.', marks: 7, tier: 'green', modelAnswer: '• Instrumental — "want juice" (1)\n• Regulatory — "no bed" (1)\n• Interactional — "hi nanny" (1)\n• Personal — "me happy" (1)\n• Heuristic — "what\'s that?" (1)\n• Imaginative — "I\'m a dragon" (1)\n• Representational — "doggy barking" (1)' },
+      { q: 'Describe three features of child-directed speech (CDS).', marks: 3, tier: 'green', modelAnswer: '• Higher pitch + exaggerated intonation (1)\n• Slower tempo, clearer articulation (1)\n• Simplified vocabulary + repetition + questions to invite turns (1)' },
+    ],
+    amber: [
+      { q: 'Using an example, explain what a virtuous error is and why it matters theoretically.', marks: 4, tier: 'amber', modelAnswer: '• Grammatical overgeneralisation of a rule, e.g. "I goed" (1 + 1)\n• The child has applied the regular past tense "-ed" to an irregular verb (1)\n• Shows RULE-LEARNING rather than imitation — supports nativist (Chomsky) over pure behaviourism (Skinner) (1)' },
+      { q: 'Compare Skinner\'s behaviourism and Chomsky\'s nativism.', marks: 4, tier: 'amber', modelAnswer: '• Skinner: imitation, reinforcement, conditioning (1)\n• Chomsky: innate LAD + Universal Grammar (1)\n• Nativist evidence: speed of acquisition, virtuous errors, poverty of the stimulus (1)\n• Criticism of Skinner: children produce novel utterances never heard and rarely receive explicit correction (1)' },
+      { q: 'Explain Bruner\'s LASS with one example.', marks: 4, tier: 'amber', modelAnswer: '• Language Acquisition Support System — social scaffolding by caregivers (1)\n• Joint attention, recasting, expansion, routines (1)\n• Example: picture-book routine — parent points, names, pauses, waits for child (1)\n• Complements Chomsky\'s LAD (1)' },
+    ],
+    red: [
+      { q: 'Evaluate the extent to which Chomsky\'s nativism can explain all aspects of child language acquisition. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Nativism explains rapid acquisition, creativity, virtuous errors (1)\n• But downplays social environment — Genie\'s case, Jim case show input is essential (1)\n• Halliday shows language serves functions — a pragmatic/social motivation (1)\n• Tomasello\'s usage-based theory challenges strong nativism (1)\n• A balanced account integrates innate capacity + input + interaction (1)\n• Therefore nativism is a partial explanation; complementary theories are needed for lexical, pragmatic and functional development (1)' },
+      { q: 'Discuss: how useful is Halliday\'s framework for analysing a child\'s transcript? [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Seven functions give a PRAGMATIC lens — what is the child DOING with language? (1)\n• Complements purely structural analyses (1)\n• Example: "no bed" = regulatory + personal — one utterance, two functions (1)\n• Limitation: categories can overlap; subjective classification (1)\n• Useful for showing pragmatic sophistication before grammatical maturity (1)\n• Strong in combination with stage frameworks and Bruner/Vygotsky (1)' },
+    ],
+  },
+
+  '2.2': {
+    green: [
+      { q: 'Name Kroll\'s four stages of writing development.', marks: 4, tier: 'green', modelAnswer: '• Preparation — up to age 6 (1)\n• Consolidation — around 7–8 (1)\n• Differentiation — around 9–10 (1)\n• Integration — teenage years onwards (1)' },
+      { q: 'Identify Britton\'s three functions of children\'s writing.', marks: 3, tier: 'green', modelAnswer: '• Expressive — writing close to personal voice (1)\n• Transactional — writing to inform or persuade (1)\n• Poetic — crafted stylised writing (1)' },
+      { q: 'State Rothery\'s four genre categories with one-sentence descriptions.', marks: 4, tier: 'green', modelAnswer: '• Recount — chronological retelling (1)\n• Report — factual generalised information (1)\n• Narrative — orientation + complication + resolution (1)\n• Observation / comment — observation plus evaluation (1)' },
+    ],
+    amber: [
+      { q: 'A Year 3 child writes: "we went to the zoo and I saw a lion and I had ice cream." Analyse at two linguistic levels and link to a framework.', marks: 4, tier: 'amber', modelAnswer: '• Grammar: heavy coordination with "and" — typical of Kroll\'s consolidation stage (1)\n• Lexis: concrete, first-person, high-frequency — expressive function (Britton) (1)\n• Genre: recount (Rothery) (1)\n• Suggests the child is securely in consolidation; target: introduce subordination for differentiation stage (1)' },
+      { q: 'Explain how Vygotsky\'s ZPD applies to teaching a Year 6 pupil to write a formal letter.', marks: 4, tier: 'amber', modelAnswer: '• ZPD = gap between independent competence and with-guidance competence (1)\n• Teacher models a formal letter highlighting features (formality, address, conventions) (1)\n• Shared writing and peer examples scaffold within ZPD (1)\n• Support fades as competence grows (Bruner\'s extension) (1)' },
+      { q: 'Identify two features that distinguish Kroll\'s integration stage from consolidation.', marks: 4, tier: 'amber', modelAnswer: '• Integration: varied sentence types, non-finite clauses for effect (1)\n• Integration: conscious register shifts across genres (1)\n• Consolidation: heavy coordination, limited cohesion, speech-like register (1)\n• Move reflects growing control of the textual metafunction (Halliday) and genre awareness (Rothery) (1)' },
+    ],
+    red: [
+      { q: 'Evaluate: "Children\'s writing follows fixed stages." Discuss. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Kroll\'s stages describe tendencies, not fixed sequences (1)\n• Individual variation — cultural, SES, education influence trajectories (1)\n• Britton shows children can be advanced in some functions, developing in others (1)\n• Rothery shows that less familiar genres (report, argument) must be taught explicitly (1)\n• Therefore stages are descriptive, not deterministic (1)\n• Top-band answers acknowledge BOTH value and limits (1)' },
+      { q: 'Discuss the role of digital communication in children\'s written development. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Digital mode introduces new orthography — abbreviations, emoji, creative capitalisation (1)\n• Prescriptivists argue this harms standard writing (1)\n• Research (Crystal, Tagg, Wood) shows that educated children switch registers — adding a register, not replacing (1)\n• Digital writing develops audience awareness and rapid composition (1)\n• Equity of access and explicit school teaching remain important (1)\n• Balanced: digital literacy is an ADDITIONAL register within integration stage, not a threat (1)' },
+    ],
+  },
+
 };
