@@ -378,7 +378,7 @@
   const { data: rows } = await supabaseClient
     .from('topic_progress')
     .select('topic, rag_status')
-    .eq('user_id', user.id).eq('subject', 'Further Mathematics').eq('exam_board', 'OCR');
+    .eq('user_id', user.id).eq('subject', 'Further Mathematics').eq('exam_board', 'OCR A');
 
   if (rows) {
     rows.forEach(row => {

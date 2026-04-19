@@ -740,19 +740,19 @@ async function saveResult(rag, results) {
     // Delete existing row first
     const { error: delErr } = await supabaseClient.from('topic_progress')
       .delete()
-      .eq('user_id', user.id).eq('subject', 'Further Mathematics').eq('exam_board', 'OCR').eq('topic', topicKey);
+      .eq('user_id', user.id).eq('subject', 'Further Mathematics').eq('exam_board', 'OCR A').eq('topic', topicKey);
     if (delErr) console.warn('SAVE: delete old row', delErr);
 
     // Insert fresh
     const { error: e1 } = await supabaseClient.from('topic_progress')
-      .insert({ user_id: user.id, subject: 'Further Mathematics', exam_board: 'OCR', topic: topicKey, rag_status: rag, updated_at: now });
+      .insert({ user_id: user.id, subject: 'Further Mathematics', exam_board: 'OCR A', topic: topicKey, rag_status: rag, updated_at: now });
 
     if (e1) console.error('SAVE: insert failed', e1);
     else console.log('SAVE: insert success');
 
     const { data: allTopics } = await supabaseClient
       .from('topic_progress').select('rag_status')
-      .eq('user_id', user.id).eq('subject', 'Further Mathematics').eq('exam_board', 'OCR');
+      .eq('user_id', user.id).eq('subject', 'Further Mathematics').eq('exam_board', 'OCR A');
 
     if (allTopics && allTopics.length > 0) {
       const total = allTopics.length;
@@ -760,7 +760,7 @@ async function saveResult(rag, results) {
       const red   = allTopics.filter(t => t.rag_status === 'red').length;
       const subjRag = (green / total) >= 0.7 ? 'green' : (red / total) >= 0.4 ? 'red' : 'amber';
       await supabaseClient.from('user_subjects').update({ rag_status: subjRag })
-        .eq('user_id', user.id).eq('subject', 'Further Mathematics').eq('exam_board', 'OCR');
+        .eq('user_id', user.id).eq('subject', 'Further Mathematics').eq('exam_board', 'OCR A');
     }
 
     if (rag === 'green' && results.every(r => r.pts > 0)) {
