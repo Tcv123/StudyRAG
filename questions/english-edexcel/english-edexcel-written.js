@@ -178,4 +178,21 @@ const ENGLISH_EDEXCEL_WRITTEN = {
     ],
   },
 
+  '4.1': {
+    green: [
+      { q: 'State the structure of the Edexcel NEA.', marks: 3, tier: 'green', modelAnswer: '• Two original texts (1)\n• In the same genre, for different audiences/purposes (1)\n• Plus a reflective commentary analysing linguistic choices, supported by research/bibliography (1)' },
+      { q: 'Name four possible genres you could use for the Edexcel NEA.', marks: 4, tier: 'green', modelAnswer: '• Journalism / feature articles (1)\n• Short stories / narrative fiction (1)\n• Speeches (1)\n• Travel writing; investigative journalism; blogs — any valid (1)' },
+      { q: 'What is a "style model" and how should it be treated in the NEA?', marks: 3, tier: 'green', modelAnswer: '• A published text used as reference for your own writing (1)\n• Study it for genre conventions + specific techniques (1)\n• Reference it explicitly in the commentary to demonstrate informed craft (1)' },
+    ],
+    amber: [
+      { q: 'Explain why the two NEA texts must share a genre but differ in audience / purpose.', marks: 4, tier: 'amber', modelAnswer: '• Shared genre ensures you demonstrate control of its conventions (1)\n• Different audience/purpose forces deliberate variation in register, lexis, grammar, graphology (1)\n• The commentary evidences your AO5 creativity through these variations (1)\n• This is a more subtle skill than writing two separate genres — tests deeper craft (1)' },
+      { q: 'Describe three linguistic features that a STRONG NEA commentary paragraph would include.', marks: 4, tier: 'amber', modelAnswer: '• Quotation from the original piece showing the feature (1)\n• Precise framework terminology naming the feature (lexis, grammar, etc.) (1)\n• Explanation of effect on the target audience (1)\n• Link to the style model — adoption or adaptation (1)' },
+      { q: 'Discuss how research informs the NEA, giving two examples.', marks: 4, tier: 'amber', modelAnswer: '• Genre research — reading published examples in the target genre; noting conventions (1)\n• Audience research — identifying lexical and graphological features appropriate to the intended audience (1)\n• Theoretical reading — applying concepts like synthetic personalisation (Fairclough) or narrative craft (Propp) (1)\n• Research underpins informed choice rather than instinct (1)' },
+    ],
+    red: [
+      { q: 'Evaluate: "Creative writing does not need linguistic theory." Discuss for the Edexcel NEA. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• The original pieces are assessed on creativity (AO5), which rewards intuition (1)\n• But the commentary requires analytical framework use (AO1) and critical understanding (AO2) (1)\n• Theory-informed writing produces deliberate, defensible choices (1)\n• Without framework vocabulary, the commentary cannot reach top bands (1)\n• Strong NEAs show theory and craft enriching each other (1)\n• Therefore the claim under-values the commentary component — which assesses reflection, not more writing (1)' },
+      { q: 'Discuss how the Edexcel NEA develops skills complementary to the three exam papers. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Paper 1: analyses variation in others\' texts; NEA requires you to produce controlled variation yourself (1)\n• Paper 2: analyses children\'s acquisition; the NEA develops your own craft conscious of audience (1)\n• Paper 3: in-depth analysis of one research area; the NEA often draws on similar research for style models (1)\n• Commentary uses the frameworks developed across all three papers (1)\n• Together: the NEA applies critical understanding to creative production (1)\n• Therefore the NEA is not separate from the exams — it EXTENDS them (1)' },
+    ],
+  },
+
 };
