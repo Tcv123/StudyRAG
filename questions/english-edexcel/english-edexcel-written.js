@@ -93,4 +93,89 @@ const ENGLISH_EDEXCEL_WRITTEN = {
     ],
   },
 
+  '3.1': {
+    green: [
+      { q: 'Name Kachru\'s three circles with an example country for each.', marks: 3, tier: 'green', modelAnswer: '• Inner — native English (UK, US, Australia) (1)\n• Outer — institutionalised L2 (India, Nigeria, Singapore) (1)\n• Expanding — foreign/international (China, Brazil, Russia) (1)' },
+      { q: 'Define ELF and name its key theorist.', marks: 2, tier: 'green', modelAnswer: '• English as a Lingua Franca — English used mostly between non-native speakers (1)\n• Jennifer Jenkins; proposed the Lingua Franca Core (1)' },
+      { q: 'Define "pidgin", "creole" and "lectal continuum".', marks: 3, tier: 'green', modelAnswer: '• Pidgin — simplified contact language, no native speakers (1)\n• Creole — pidgin acquired natively, expanded grammar (1)\n• Lectal continuum — range from basilect (furthest) to acrolect (closest to standard) (1)' },
+    ],
+    amber: [
+      { q: 'Describe Jenkins\'s Lingua Franca Core and explain one pedagogical implication.', marks: 4, tier: 'amber', modelAnswer: '• Certain phonological features are essential for ELF intelligibility (1)\n• Consonant clusters must be preserved; exact RP vowels are not required (1)\n• Pedagogical implication: learners do not need to sound like Inner-Circle speakers for communication (1)\n• Shifts teaching focus from native-like accent to intelligibility (1)' },
+      { q: 'Describe Schneider\'s Dynamic Model of post-colonial Englishes.', marks: 4, tier: 'amber', modelAnswer: '• Five stages: foundation → exonormative stabilisation → nativisation → endonormative stabilisation → differentiation (1 + 1)\n• Tracks how post-colonial Englishes evolve from imported to locally owned (1)\n• Political and linguistic drivers at each stage (1)' },
+      { q: 'Explain "translanguaging" (García) with an example.', marks: 3, tier: 'amber', modelAnswer: '• Multilingual speakers draw on their full repertoire flexibly (1)\n• Example: a bilingual student using English in essays, Spanish in peer discussion, mixed at home (1)\n• Rejects the view of languages as bounded systems (1)' },
+    ],
+    red: [
+      { q: 'Evaluate: "Inner-Circle Englishes should remain the norm-provider for the world." Discuss. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Traditional Kachru framing gives Inner Circle norm-providing status (1)\n• But reality is fluid — many Expanding-Circle speakers are highly proficient (1)\n• Jenkins\'s LFC shows intelligibility does not depend on imitating RP/GA (1)\n• Crystal argues pluricentric norms are legitimate (1)\n• Insisting on Inner-Circle norms carries colonial baggage and restricts ELF users (1)\n• Conclusion: Inner-Circle norms are one legitimate option among several, not THE standard (1)' },
+      { q: 'Discuss: "The global spread of English is politically neutral." [6 marks]', marks: 6, tier: 'red', modelAnswer: '• It is not neutral — it reflects colonial history, economic power and cultural hegemony (1)\n• However local speakers also shape English to serve their needs (nativisation) (1)\n• Translanguaging reclaims multilingual practice (1)\n• Policy decisions in Outer-Circle contexts show linguistic choice is always political (1)\n• However English\'s role as a lingua franca enables communication that benefits many (1)\n• Balanced: spread is a mixed phenomenon — not neutral, but not uniformly coercive (1)' },
+    ],
+  },
+
+  '3.2': {
+    green: [
+      { q: 'State three features Lakoff (1975) proposed as typical of "women\'s language".', marks: 3, tier: 'green', modelAnswer: '• Hedges (1)\n• Tag questions (1)\n• Polite forms, rising intonation, empty adjectives — any (1)' },
+      { q: 'Define the deficit, dominance and difference models.', marks: 3, tier: 'green', modelAnswer: '• Deficit (Lakoff) — women\'s language is less powerful (1)\n• Dominance (Zimmerman &amp; West; Fishman) — male dominance in mixed talk (1)\n• Difference (Tannen) — men and women socialised into different subcultures (1)' },
+      { q: 'State what Butler means by "performativity".', marks: 2, tier: 'green', modelAnswer: '• Gender is not something we HAVE but something we DO through repeated acts (1)\n• Language is one such act: we "do" gender through linguistic choices (1)' },
+    ],
+    amber: [
+      { q: 'Explain how O\'Barr and Atkins\' courtroom study challenges Lakoff.', marks: 4, tier: 'amber', modelAnswer: '• Studied courtroom witnesses (1)\n• Features Lakoff labelled "women\'s language" correlated with POWER status, not gender (1)\n• Renamed "powerless language" (1)\n• Implication: deficit model confounds gender with power (1)' },
+      { q: 'Describe Cameron\'s argument in "The Myth of Mars and Venus" (2007).', marks: 4, tier: 'amber', modelAnswer: '• Gender differences in language are overstated (1)\n• Meta-analyses show small differences + large overlap (1)\n• The binary risks excusing sexism as misunderstanding (1)\n• Differences emerge from context, power and community of practice (1)' },
+      { q: 'Explain, with an example, what "lexical asymmetry" is in gender studies.', marks: 3, tier: 'amber', modelAnswer: '• Word pairs whose female form has narrower/negative connotations (1)\n• Example: "master" (positive: expert) vs "mistress" (sexualised) (1)\n• Illustrates how lexis historically encodes patriarchal values (1)' },
+    ],
+    red: [
+      { q: 'Evaluate: "Gender differences in language are real but overstated." Discuss using at least two theorists. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Real: Lakoff, Zimmerman &amp; West and Fishman document patterns (1)\n• Overstated: Cameron shows small average differences and large overlap (1)\n• Tannen\'s binary critiqued for essentialism (1)\n• Butler reframes gender as performance (1)\n• Eckert\'s community-of-practice allows intersectional analysis (1)\n• Balanced answer engages with both sides (1)' },
+      { q: 'Using a workplace transcript, how would you analyse gender without essentialism? [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Consider power/role (seniority) alongside gender (1)\n• Identify specific features and their contextual functions (1)\n• Apply multiple theorists, acknowledging alternative readings (1)\n• Use Butler: ask what KIND of gender is being performed (1)\n• Consider intra-gender variation and intersection with class/ethnicity/age (1)\n• Avoid "feature X by speaker Y = women\'s language" (1)' },
+    ],
+  },
+
+  '3.3': {
+    green: [
+      { q: 'Distinguish "tabloid" and "broadsheet" with two features of each.', marks: 4, tier: 'green', modelAnswer: '• Tabloid — smaller format, popular audience; short emotive headlines, monosyllabic lexis (1 + 1)\n• Broadsheet — larger format, educated audience; balanced syntax, Latinate lexis, detailed quotation (1 + 1)' },
+      { q: 'State four of Galtung &amp; Ruge\'s news values.', marks: 4, tier: 'green', modelAnswer: '• Frequency / recency (1)\n• Negativity (1)\n• Elitism (important people/countries) (1)\n• Meaningfulness / cultural relevance — also: unambiguity, consonance, personalisation, continuity (1 for any valid additional)' },
+      { q: 'Explain the "inverted pyramid" structure in news reports.', marks: 3, tier: 'green', modelAnswer: '• Most important information first (1)\n• Progressively less important detail (1)\n• Allows readers to stop at any point without losing the main story (1)' },
+    ],
+    amber: [
+      { q: 'Describe Fairclough\'s "synthetic personalisation" and give an example from news/advertising.', marks: 4, tier: 'amber', modelAnswer: '• Use of intimate/inclusive language to construct a simulated personal relationship with a mass audience (1)\n• Example: headline "WE all want safer streets" — inclusive "we" positioning reader (1)\n• Common in charity appeals and political columns (1)\n• Manufactures intimacy where none exists (1)' },
+      { q: 'Explain how lexical choice shapes representation. Use "migrants" / "invaders" as an example.', marks: 4, tier: 'amber', modelAnswer: '• Both denote people arriving in a country (1)\n• "Migrants" is neutral/factual (1)\n• "Invaders" carries aggression and illegitimacy (1)\n• Lexical choice encodes ideological stance without explicit evaluation (1)' },
+      { q: 'Explain three features of a typical tabloid front page.', marks: 3, tier: 'amber', modelAnswer: '• Large emotive headline in caps with red banner (1)\n• Single striking photograph with emotional appeal (1)\n• Puns or alliteration in strap-line; monosyllabic Anglo-Saxon lexis (1)' },
+    ],
+    red: [
+      { q: 'Evaluate: "News is a neutral reflection of reality." Discuss. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• News selection reflects news values (Galtung &amp; Ruge) — not all events are equally reported (1)\n• Lexical choice encodes stance ("migrants" vs "invaders") (1)\n• Grammar (passive/nominalisation) redistributes agency (1)\n• Graphology and image selection frame meaning (1)\n• Fairclough\'s CDA shows discourse = social practice encoding ideology (1)\n• Therefore news is never neutral — the best it can do is TRANSPARENT about its choices (1)' },
+      { q: 'Analyse a hypothetical tabloid headline: "MIGRANT TIDE: Britain under siege." Identify features and their effects. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• "Tide" / "siege" — semantic fields of natural disaster + warfare (1)\n• Capitalisation — graphological foregrounding and emotional amplification (1)\n• Noun-phrase fragment "MIGRANT TIDE" — minor sentence for impact (1)\n• "Under siege" — passive positioning Britain as victim (1)\n• Presupposes that migration = attack — representational ideology (1)\n• Top-band analysis evaluates alternative lexical choices a neutral report might use (1)' },
+    ],
+  },
+
+  '3.4': {
+    green: [
+      { q: 'Distinguish "instrumental" and "influential" power with an example of each.', marks: 4, tier: 'green', modelAnswer: '• Instrumental — authority enforced by institutions (law, government, contracts) (1)\n• Example: court summons (1)\n• Influential — persuasion via media, advertising, political rhetoric (1)\n• Example: political speech or advert (1)' },
+      { q: 'Define "synthetic personalisation" (Fairclough).', marks: 2, tier: 'green', modelAnswer: '• Use of intimate/inclusive language to create a simulated personal relationship with a mass audience (1)\n• Example: supermarket email using first name + inclusive "we" (1)' },
+      { q: 'State Brown &amp; Levinson\'s two aspects of "face".', marks: 2, tier: 'green', modelAnswer: '• Positive face — the desire to be liked, approved of, included (1)\n• Negative face — the desire not to be imposed on, to have autonomy (1)' },
+    ],
+    amber: [
+      { q: 'Explain how passive voice and nominalisation obscure agency, using "Mistakes were made" as an example.', marks: 4, tier: 'amber', modelAnswer: '• Passive construction — "were made" — removes agent (1)\n• Nominalisation — "mistakes" turns a process into a thing (1)\n• Together: responsibility is acknowledged but agent is concealed (1)\n• Grammar encodes ideology — not merely stylistic (1)' },
+      { q: 'Describe the Sinclair &amp; Coulthard IRF model and explain what it reveals.', marks: 4, tier: 'amber', modelAnswer: '• Teacher Initiation → pupil Response → teacher Feedback (1 + 1)\n• Teacher controls two of the three turns (1)\n• Grammatical structure enacts institutional power (1)' },
+      { q: 'Explain three features of advertising language that construct influential power.', marks: 3, tier: 'amber', modelAnswer: '• Imperative call to action ("Buy now") (1)\n• Inclusive "we" creating rapport with audience (1)\n• Emotive/evaluative lexis + rhetorical questions (1)' },
+    ],
+    red: [
+      { q: 'Evaluate: "Powerful language is always formal and Latinate." Discuss. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Legal and governmental texts use formal/Latinate lexis enacting instrumental power (1)\n• But power can also be enacted through informality — synthetic personalisation in advertising (1)\n• Silence, gatekeeping and interruption also enact power (1)\n• Form alone does not determine power — CONTEXT matters (Fairclough) (1)\n• Analysing power requires looking at how form interacts with ideology and institutional role (1)\n• Therefore the claim oversimplifies — top-band answer rejects it with examples (1)' },
+      { q: 'Analyse how a politician might use modality, inclusive pronouns and passive voice to manage representation. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Modality: "we must", "we will" — strong obligation/prediction signals leadership (1)\n• Inclusive "we" — positions speaker alongside audience (1)\n• Passive when discussing unpopular action: "reforms were introduced" — obscures agency (1)\n• Together: constructs a decisive, unifying leader distanced from negatives (1)\n• Integrated across grammar + pragmatics — encodes ideology (1)\n• Top-band answer links features explicitly to CDA (Fairclough) (1)' },
+    ],
+  },
+
+  '3.5': {
+    green: [
+      { q: 'Define "accent", "dialect" and "idiolect" with a one-word example of each.', marks: 3, tier: 'green', modelAnswer: '• Accent — pronunciation patterns (e.g. Cockney) (1)\n• Dialect — lexis + grammar + often pronunciation (e.g. Geordie) (1)\n• Idiolect — an individual\'s unique linguistic profile (1)' },
+      { q: 'Describe Labov\'s New York department store study and its main finding.', marks: 3, tier: 'green', modelAnswer: '• Labov elicited /r/ in "fourth floor" across three stores of different social prestige (1)\n• /r/ increased with store prestige and speech formality (1)\n• Established linguistic variables correlate with social variables (1)' },
+      { q: 'Describe Trudgill\'s Norwich study and state two findings.', marks: 4, tier: 'green', modelAnswer: '• Trudgill studied variables across five social classes (1)\n• Finding 1: standard forms increased with class/formality (1)\n• Finding 2: women used more standard forms than men of same class (1)\n• Finding 3: men over-reported non-standard use (covert prestige) (1)' },
+    ],
+    amber: [
+      { q: 'Describe Milroy\'s Belfast study and the concept of network density.', marks: 4, tier: 'amber', modelAnswer: '• Milroy measured network density and multiplexity (1)\n• Dense, multiplex networks correlated with higher vernacular use (1)\n• Loose networks showed more standard forms (1)\n• Shifted explanation from class to social network (1)' },
+      { q: 'Explain Paul Kerswill\'s work on dialect levelling and MLE.', marks: 4, tier: 'amber', modelAnswer: '• Kerswill showed mobility, media and education reduce distinctive local features (1)\n• However new varieties emerge — MLE in inner London (1)\n• Levelling does not equal uniformity — identity still drives variation (1)\n• Shows UK sociolinguistics is dynamic, not linear decline (1)' },
+      { q: 'Apply Giles\'s Accommodation Theory to a regional-variation scenario.', marks: 4, tier: 'amber', modelAnswer: '• Accommodation: speakers adjust style in interaction (1)\n• Convergence — moving towards listener\'s dialect to build rapport (1)\n• Divergence — emphasising local dialect to assert identity (1)\n• Example: a Yorkshire migrant to London converging at work, diverging with family visits (1)' },
+    ],
+    red: [
+      { q: 'Evaluate: "Standard English is objectively better than regional dialects." Discuss. [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Linguistically, all varieties are rule-governed; Standard English is not superior (1)\n• Its status is SOCIAL — historically tied to education, media, power (1)\n• Labov\'s AAVE research shows vernacular varieties have complex grammar (1)\n• "Superiority" confuses prestige (social) with correctness (linguistic) (1)\n• However Standard English is pragmatically important for access to formal domains (1)\n• Top-band answer distinguishes linguistic fact from sociohistorical prestige (1)' },
+      { q: 'Discuss: "Network density, not class, predicts variation." [6 marks]', marks: 6, tier: 'red', modelAnswer: '• Milroy\'s Belfast work supports the network claim (1)\n• But Trudgill, Petyt, Labov show class-patterned variation independent of network (1)\n• In reality networks and class interact (1)\n• Eckert\'s community-of-practice unifies the two (1)\n• Neither alone is sufficient (1)\n• Both describe aspects of the same social fabric (1)' },
+    ],
+  },
+
 };
