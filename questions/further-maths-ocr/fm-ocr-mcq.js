@@ -128,41 +128,6 @@ const FM_OCR_MCQ = {
 },
 
 '1.4': {
-  name: 'Series',
-  green: [
-    { q: '\\(\\displaystyle\\sum_{r=1}^{n}r=\\)', options: ['\\(n^2\\)', '\\(\\frac{n(n+1)(2n+1)}{6}\\)', '\\(\\frac{n^2(n+1)^2}{4}\\)', '\\(\\frac{n(n+1)}{2}\\)'], answer: 3 },
-    { q: '\\(\\displaystyle\\sum_{r=1}^{n}r^2=\\)', options: ['\\(\\frac{n(n+1)}{2}\\)', '\\(\\frac{n^2(n+1)^2}{4}\\)', '\\(\\left(\\frac{n(n+1)}{2}\\right)^2\\)', '\\(\\frac{n(n+1)(2n+1)}{6}\\)'], answer: 3 },
-    { q: '\\(\\displaystyle\\sum_{r=1}^{n}r^3=\\)', options: ['\\(\\frac{n^2(n+1)}{2}\\)', '\\(\\frac{n(n+1)(2n+1)}{6}\\)', '\\(\\frac{n(n+1)}{2}\\)', '\\(\\frac{n^2(n+1)^2}{4}\\)'], answer: 3 },
-    { q: '\\(\\displaystyle\\sum_{r=1}^{n}1=\\)', options: ['\\(n+1\\)', '\\(\\frac{n(n+1)}{2}\\)', '\\(0\\)', '\\(n\\)'], answer: 3 },
-    { q: 'In the method of differences, \\(\\sum_{r=1}^{n}(f(r+1)-f(r))\\) telescopes to:', options: ['\\(f(1)-f(n+1)\\)', '\\(2f(n)\\)', '\\(f(n)-f(1)\\)', '\\(f(n+1)-f(1)\\)'], answer: 3 },
-    { q: 'The Maclaurin series for \\(e^x\\) is:', options: ['\\(1-x+\\frac{x^2}{2!}-\\cdots\\)', '\\(x-\\frac{x^3}{3!}+\\frac{x^5}{5!}-\\cdots\\)', '\\(1-\\frac{x^2}{2!}+\\frac{x^4}{4!}-\\cdots\\)', '\\(1+x+\\frac{x^2}{2!}+\\frac{x^3}{3!}+\\cdots\\)'], answer: 3 },
-    { q: 'The Maclaurin series for \\(\\sin x\\) is:', options: ['\\(1+x+\\frac{x^2}{2}+\\cdots\\)', '\\(1-\\frac{x^2}{2!}+\\frac{x^4}{4!}-\\cdots\\)', '\\(x+\\frac{x^3}{3!}+\\cdots\\)', '\\(x-\\frac{x^3}{3!}+\\frac{x^5}{5!}-\\cdots\\)'], answer: 3 },
-    { q: 'The Maclaurin series for \\(\\cos x\\) starts:', options: ['\\(x-\\frac{x^3}{6}+\\cdots\\)', '\\(1+x-\\frac{x^2}{2}+\\cdots\\)', '\\(1+\\frac{x^2}{2!}+\\cdots\\)', '\\(1-\\frac{x^2}{2!}+\\frac{x^4}{4!}-\\cdots\\)'], answer: 3 },
-    { q: '\\(\\displaystyle\\sum_{r=1}^{4}(r^2+1)=\\)', options: ['\\(34\\)', '\\(30\\)', '\\(20\\)', '\\(34\\)'], answer: 0, explanation: '(2)+(5)+(10)+(17)=34' },
-    { q: '\\((1+x)^n=1+nx+\\frac{n(n-1)}{2!}x^2+\\cdots\\) is valid for:', options: ['All \\(x\\)', '\\(0<x<1\\)', '\\(x>-1\\)', '\\(|x|<1\\) (if \\(n\\) not a positive integer)'], answer: 3 },
-  ],
-  amber: [
-    { q: '\\(\\displaystyle\\sum_{r=1}^{10}r(r+1)=\\)', options: ['\\(330\\)', '\\(385\\)', '\\(330\\)', '\\(440\\)'], answer: 3, explanation: 'Σr²+Σr=385+55=440' },
-    { q: 'Using \\(\\frac{1}{r(r+1)}=\\frac{1}{r}-\\frac{1}{r+1}\\), \\(\\sum_{r=1}^{n}\\frac{1}{r(r+1)}=\\)', options: ['\\(\\frac{n}{n+2}\\)', '\\(1\\)', '\\(\\frac{n+1}{n}\\)', '\\(\\frac{n}{n+1}\\)'], answer: 3 },
-    { q: 'The coeff of \\(x^3\\) in the Maclaurin expansion of \\(e^{2x}\\) is:', options: ['\\(\\frac{2}{3}\\)', '\\(\\frac{1}{6}\\)', '\\(\\frac{8}{3}\\)', '\\(\\frac{4}{3}\\)'], answer: 3, explanation: '(2x)³/3!=8/6=4/3' },
-    { q: 'The first 3 terms of the Maclaurin series for \\(\\ln(1+x)\\) are:', options: ['\\(x-\\frac{x^2}{2}-\\frac{x^3}{3}-\\cdots\\)', '\\(x+\\frac{x^2}{2}+\\frac{x^3}{3}+\\cdots\\)', '\\(1+x+\\frac{x^2}{2}+\\cdots\\)', '\\(x-\\frac{x^2}{2}+\\frac{x^3}{3}-\\cdots\\)'], answer: 3 },
-    { q: '\\(\\displaystyle\\sum_{r=1}^{n}(2r+1)=\\)', options: ['\\(n^2\\)', '\\(n^2+n+1\\)', '\\(n(n+2)\\)', '\\(n^2+2n\\)'], answer: 3, explanation: '2Σr+n=n(n+1)+n=n²+2n' },
-    { q: 'The method of differences works when \\(f(r)\\) can be written as \\(g(r+1)-g(r)\\). This makes the sum:', options: ['A product', 'A geometric series', 'Non-convergent', 'Telescoping'], answer: 3 },
-    { q: 'Using \\(r(r+1)(r+2)-(r-1)r(r+1)=3r(r+1)\\), \\(\\sum r(r+1)=\\)', options: ['\\(\\frac{n(n+1)(n+2)}{6}\\)', '\\(\\frac{n(n+1)(n+2)(n+3)}{4}\\)', '\\(\\frac{n(n+1)}{2}\\)', '\\(\\frac{n(n+1)(n+2)}{3}\\)'], answer: 3 },
-    { q: 'The mean value of \\(\\sin x\\) over \\([0,\\pi]\\) is:', options: ['\\(0\\)', '\\(\\pi/2\\)', '\\(2\\)', '\\(2/\\pi\\)'], answer: 3, explanation: '(1/π)∫₀^π sinx dx = 2/π' },
-    { q: 'For \\(\\sum_{r=1}^{n}(4r^3-r)\\), the result is:', options: ['\\(n^2(n+1)^2-\\frac{n(n+1)}{2}\\)', '\\(n^2(n+1)^2+\\frac{n(n+1)}{2}\\)', '\\(4n^2(n+1)^2\\)', '\\(\\frac{n(n+1)(2n^2+2n-1)}{2}\\)'], answer: 3, explanation: '4·n²(n+1)²/4 − n(n+1)/2 = n(n+1)[n(n+1)−½] = n(n+1)(2n²+2n−1)/2' },
-    { q: 'The \\(n\\)th Maclaurin coefficient is \\(\\frac{f^{(n)}(0)}{n!}\\). For \\(f(x)=\\cos x\\), \\(f^{(4)}(0)=\\)', options: ['\\(-1\\)', '\\(0\\)', '\\(-24\\)', '\\(1\\)'], answer: 3 },
-  ],
-  red: [
-    { q: 'The inductive step to prove \\(\\sum r=\\frac{n(n+1)}{2}\\) requires showing:', options: ['The formula holds for \\(n=1\\)', '\\(\\frac{k(k+1)}{2}+(k+1)=\\frac{(k+1)(k+2)}{2}\\)', '\\(\\sum r=n^2/2\\)', '\\(k(k+1)/2+(k+1)=k(k+3)/2\\)'], answer: 1 },
-    { q: '\\(\\displaystyle\\sum_{r=1}^{n}r\\cdot r!\\) equals:', options: ['\\((n+1)!\\)', '\\(n\\cdot n!\\)', '\\((n+1)!-1\\)', '\\(n!+1\\)'], answer: 2, explanation: 'r·r!=(r+1)!−r! telescopes to (n+1)!−1' },
-    { q: 'As \\(n\\to\\infty\\), \\(\\sum_{r=1}^{n}\\frac{1}{r(r+1)}\\to\\)', options: ['\\(\\ln2\\)', '\\(\\infty\\)', '\\(2\\)', '\\(1\\)'], answer: 3, explanation: 'n/(n+1)→1' },
-    { q: 'The coeff of \\(x^3\\) in \\((1+x)^{1/2}\\) is:', options: ['\\(\\frac{1}{16}\\)', '\\(-\\frac{1}{48}\\)', '\\(\\frac{1}{48}\\)', '\\(\\frac{1}{16}\\)'], answer: 0, explanation: '(½)(−½)(−3/2)/3! = 3/8/6 = 1/16' },
-    { q: 'Which correctly describes when a Maclaurin series converges to \\(f(x)\\)?', options: ['Always for all \\(x\\)', 'Only at \\(x=0\\)', 'Only if \\(f\\) is a polynomial', 'Within the radius of convergence of the series'], answer: 3 },
-  ],
-},
-
-'1.5': {
   name: 'Further Calculus',
   green: [
     { q: 'Volume of revolution of \\(y=f(x)\\) about the \\(x\\)-axis from \\(a\\) to \\(b\\):', options: ['\\(2\\pi\\int_a^b f(x)\\,dx\\)', '\\(\\pi\\int_a^b [f(x)]^2\\,dx\\)', '\\(\\int_a^b [f(x)]^2\\,dx\\)', '\\(2\\pi\\int_a^b xf(x)\\,dx\\)'], answer: 1 },
@@ -197,7 +162,7 @@ const FM_OCR_MCQ = {
   ],
 },
 
-'1.6': {
+'1.5': {
   name: 'Further Vectors',
   green: [
     { q: 'Vector equation of line through \\(\\mathbf{a}\\) in direction \\(\\mathbf{d}\\):', options: ['\\(\\mathbf{r}=\\mathbf{a}\\cdot\\mathbf{d}\\)', '\\(\\mathbf{r}=\\mathbf{d}+t\\mathbf{a}\\)', '\\(\\mathbf{r}=\\mathbf{a}+\\mathbf{d}\\)', '\\(\\mathbf{r}=\\mathbf{a}+t\\mathbf{d}\\)'], answer: 3 },
@@ -233,7 +198,7 @@ const FM_OCR_MCQ = {
   ],
 },
 
-'1.7': {
+'1.6': {
   name: 'Polar Coordinates',
   green: [
     { q: 'Convert polar \\((2,\\pi/3)\\) to Cartesian \\((x,y)\\):', options: ['\\((\\sqrt{3},1)\\)', '\\((2,2)\\)', '\\((2,\\sqrt{3})\\)', '\\((1,\\sqrt{3})\\)'], answer: 3, explanation: 'x=2cos(π/3)=1, y=2sin(π/3)=√3' },
@@ -264,7 +229,7 @@ const FM_OCR_MCQ = {
   ],
 },
 
-'1.8': {
+'1.7': {
   name: 'Hyperbolic Functions',
   green: [
     { q: '\\(\\cosh x=\\)', options: ['\\(\\frac{e^x-e^{-x}}{2}\\)', '\\(\\frac{2}{e^x+e^{-x}}\\)', '\\(\\frac{1}{\\cosh x}\\)', '\\(\\frac{e^x+e^{-x}}{2}\\)'], answer: 3 },
@@ -300,38 +265,68 @@ const FM_OCR_MCQ = {
   ],
 },
 
-'1.9': {
+'1.8': {
   name: 'Differential Equations',
   green: [
     { q: 'A separable ODE \\(\\frac{dy}{dx}=f(x)g(y)\\) is solved by:', options: ['Differentiating', 'Substituting \\(y=vx\\)', 'Finding an integrating factor', '\\(\\int\\frac{dy}{g(y)}=\\int f(x)\\,dx\\)'], answer: 3 },
     { q: 'Integrating factor for \\(\\frac{dy}{dx}+P(x)y=Q(x)\\):', options: ['\\(e^{-\\int P\\,dx}\\)', '\\(\\int P\\,dx\\)', '\\(P(x)\\)', '\\(e^{\\int P\\,dx}\\)'], answer: 3 },
-    { q: 'Auxiliary equation for \\(a y\\'\\'+by\\'+cy=0\\):', options: ['\\(ax^2+bx+c=0\\)', '\\(a+b+c=0\\)', '\\(am^2+bm+c=y\\)', '\\(am^2+bm+c=0\\)'], answer: 3 },
+    { q: 'Auxiliary equation for \\(a y\'\'+by\'+cy=0\\):', options: ['\\(ax^2+bx+c=0\\)', '\\(a+b+c=0\\)', '\\(am^2+bm+c=y\\)', '\\(am^2+bm+c=0\\)'], answer: 3 },
     { q: 'Aux equation roots \\(m=\\alpha\\pm\\beta i\\) give CF:', options: ['\\(Ae^{\\alpha x}+Be^{\\beta x}\\)', '\\(A\\cos\\alpha x+B\\sin\\alpha x\\)', '\\((Ax+B)e^{\\alpha x}\\)', '\\(e^{\\alpha x}(A\\cos\\beta x+B\\sin\\beta x)\\)'], answer: 3 },
     { q: 'Repeated real root \\(m=k\\) gives CF:', options: ['\\(Ae^{kx}+Be^{kx}\\)', '\\(Ak e^{kx}\\)', '\\((Ax+B)e^{2kx}\\)', '\\((Ax+B)e^{kx}\\)'], answer: 3 },
-    { q: 'For \\(y\\'\\'+4y=0\\), aux roots are:', options: ['\\(m=\\pm2\\)', '\\(m=2,2\\)', '\\(m=-4\\)', '\\(m=\\pm2i\\)'], answer: 3 },
+    { q: 'For \\(y\'\'+4y=0\\), aux roots are:', options: ['\\(m=\\pm2\\)', '\\(m=2,2\\)', '\\(m=-4\\)', '\\(m=\\pm2i\\)'], answer: 3 },
     { q: 'General solution of 2nd order ODE = CF \\(+\\)', options: ['PI only', '\\(A\\cos x+B\\sin x\\)', 'CF', 'PI (particular integral)'], answer: 3 },
     { q: 'Solve \\(\\frac{dy}{dx}=2xy\\):', options: ['\\(y=2xe^{x^2}\\)', '\\(y=x^2+C\\)', '\\(y=Ce^{x^2}\\)', '\\(y=Ae^{x^2}\\)'], answer: 3 },
     { q: 'IF for \\(\\frac{dy}{dx}+\\frac{y}{x}=x^2\\):', options: ['\\(x^2\\)', '\\(e^x\\)', '\\(1/x\\)', '\\(x\\)'], answer: 3, explanation: 'IF=e^{∫1/x dx}=e^{ln x}=x' },
-    { q: 'PI for \\(y\\'\\'+y=3x\\) is tried as:', options: ['\\(y=ae^x\\)', '\\(y=a\\sin x\\)', '\\(y=ae^{3x}\\)', '\\(y=ax+b\\)'], answer: 3 },
+    { q: 'PI for \\(y\'\'+y=3x\\) is tried as:', options: ['\\(y=ae^x\\)', '\\(y=a\\sin x\\)', '\\(y=ae^{3x}\\)', '\\(y=ax+b\\)'], answer: 3 },
   ],
   amber: [
-    { q: 'Solve \\(y\\'+2y=e^x\\) (IF=\\(e^{2x}\\)):', options: ['\\(y=e^x+Ce^{-2x}\\)', '\\(y=\\frac{1}{3}e^x+Ce^{2x}\\)', '\\(y=e^x+Ce^{2x}\\)', '\\(y=\\frac{1}{3}e^x+Ce^{-2x}\\)'], answer: 3 },
-    { q: 'General solution of \\(y\\'\\'-5y\\'+6y=0\\):', options: ['\\(Ae^{-2x}+Be^{-3x}\\)', '\\((Ax+B)e^{3x}\\)', '\\(e^{5x/2}(A\\cos x+B\\sin x)\\)', '\\(Ae^{2x}+Be^{3x}\\)'], answer: 3 },
-    { q: 'General solution of \\(y\\'\\'+4y\\'+4y=0\\):', options: ['\\(Ae^{2x}+Be^{-2x}\\)', '\\(e^{-2x}(A\\cos2x+B\\sin2x)\\)', '\\(Ae^{-2x}+Be^{2x}\\)', '\\((Ax+B)e^{-2x}\\)'], answer: 3, explanation: '(m+2)²=0, repeated root m=−2' },
-    { q: 'PI of \\(y\\'\\'-3y\\'+2y=4\\):', options: ['\\(y_p=2x\\)', '\\(y_p=4e^x\\)', '\\(y_p=4\\)', '\\(y_p=2\\)'], answer: 3, explanation: 'Try y_p=a: 2a=4→a=2' },
-    { q: 'The ODE \\(y\\'\\'+y=\\cos x\\): the PI must use \\(x\\cos x\\) because:', options: ['cos x grows', 'To simplify the CF', 'CF contains sinh x', '\\(\\cos x\\) is in the CF (aux roots \\(\\pm i\\))'], answer: 3 },
-    { q: 'General solution of \\(y\\'\\'+\\omega^2y=0\\) (SHM equation):', options: ['\\(Ae^{\\omega x}+Be^{-\\omega x}\\)', '\\(A\\cosh\\omega x+B\\sinh\\omega x\\)', '\\(Ae^{\\omega ix}\\)', '\\(A\\cos\\omega x+B\\sin\\omega x\\)'], answer: 3 },
+    { q: 'Solve \\(y\'+2y=e^x\\) (IF=\\(e^{2x}\\)):', options: ['\\(y=e^x+Ce^{-2x}\\)', '\\(y=\\frac{1}{3}e^x+Ce^{2x}\\)', '\\(y=e^x+Ce^{2x}\\)', '\\(y=\\frac{1}{3}e^x+Ce^{-2x}\\)'], answer: 3 },
+    { q: 'General solution of \\(y\'\'-5y\'+6y=0\\):', options: ['\\(Ae^{-2x}+Be^{-3x}\\)', '\\((Ax+B)e^{3x}\\)', '\\(e^{5x/2}(A\\cos x+B\\sin x)\\)', '\\(Ae^{2x}+Be^{3x}\\)'], answer: 3 },
+    { q: 'General solution of \\(y\'\'+4y\'+4y=0\\):', options: ['\\(Ae^{2x}+Be^{-2x}\\)', '\\(e^{-2x}(A\\cos2x+B\\sin2x)\\)', '\\(Ae^{-2x}+Be^{2x}\\)', '\\((Ax+B)e^{-2x}\\)'], answer: 3, explanation: '(m+2)²=0, repeated root m=−2' },
+    { q: 'PI of \\(y\'\'-3y\'+2y=4\\):', options: ['\\(y_p=2x\\)', '\\(y_p=4e^x\\)', '\\(y_p=4\\)', '\\(y_p=2\\)'], answer: 3, explanation: 'Try y_p=a: 2a=4→a=2' },
+    { q: 'The ODE \\(y\'\'+y=\\cos x\\): the PI must use \\(x\\cos x\\) because:', options: ['cos x grows', 'To simplify the CF', 'CF contains sinh x', '\\(\\cos x\\) is in the CF (aux roots \\(\\pm i\\))'], answer: 3 },
+    { q: 'General solution of \\(y\'\'+\\omega^2y=0\\) (SHM equation):', options: ['\\(Ae^{\\omega x}+Be^{-\\omega x}\\)', '\\(A\\cosh\\omega x+B\\sinh\\omega x\\)', '\\(Ae^{\\omega ix}\\)', '\\(A\\cos\\omega x+B\\sin\\omega x\\)'], answer: 3 },
     { q: 'Apply \\(y(0)=1, y\'(0)=0\\) to \\(y=Ae^{2x}+Be^{3x}\\): \\(A=\\)', options: ['\\(-2\\)', '\\(2\\)', '\\(-1\\)', '\\(3\\)'], answer: 3, explanation: 'A+B=1, 2A+3B=0 → A=3,B=−2' },
     { q: 'Substitution to solve homogeneous ODE \\(\\frac{dy}{dx}=F(y/x)\\):', options: ['\\(y=x+v\\)', '\\(x=e^t\\)', '\\(v=x/y\\)', '\\(y=vx\\)'], answer: 3 },
     { q: 'A 2nd order ODE requires how many arbitrary constants?', options: ['0', '1', '3', '2'], answer: 3 },
-    { q: 'Bernoulli equation \\(y\\'+P(x)y=Q(x)y^n\\) is linearised by \\(v=\\)', options: ['\\(y^n\\)', '\\(y^{1-n}\\)', '\\(y/P\\)', '\\(1/y^{n-1}\\)'], answer: 1, explanation: 'v=y^{1-n} linearises the equation' },
+    { q: 'Bernoulli equation \\(y\'+P(x)y=Q(x)y^n\\) is linearised by \\(v=\\)', options: ['\\(y^n\\)', '\\(y^{1-n}\\)', '\\(y/P\\)', '\\(1/y^{n-1}\\)'], answer: 1, explanation: 'v=y^{1-n} linearises the equation' },
   ],
   red: [
-    { q: '\\(y\\'\\'-2y\\'+y=e^x\\): CF is \\((Ax+B)e^x\\). PI must be:', options: ['\\(ae^x\\)', '\\(axe^x\\)', '\\(ax^2e^x+bxe^x\\)', '\\(ax^2e^x\\)'], answer: 3, explanation: 'e^x and xe^x both appear in CF, so try x²e^x' },
+    { q: '\\(y\'\'-2y\'+y=e^x\\): CF is \\((Ax+B)e^x\\). PI must be:', options: ['\\(ae^x\\)', '\\(axe^x\\)', '\\(ax^2e^x+bxe^x\\)', '\\(ax^2e^x\\)'], answer: 3, explanation: 'e^x and xe^x both appear in CF, so try x²e^x' },
     { q: 'Eigenvalues of \\(\\begin{pmatrix}1&1\\\\4&-2\\end{pmatrix}\\):', options: ['\\(1,-2\\)', '\\(-1,2\\)', '\\(-3,2\\)', '\\(2,-3\\)'], answer: 3, explanation: 'λ²+λ−6=0 → (λ+3)(λ−2)=0' },
     { q: 'The Wronskian \\(W\\neq0\\) implies the two solutions are:', options: ['Both zero', 'The same', 'Proportional', 'Linearly independent'], answer: 3 },
     { q: 'For resonance in \\(m\\ddot{x}+kx=F_0\\cos\\omega t\\) (\\(c=0\\)):', options: ['\\(\\omega=\\sqrt{k/m}+c/m\\)', 'Any \\(\\omega\\)', '\\(\\omega=2k/m\\)', '\\(\\omega=\\sqrt{k/m}\\)'], answer: 3 },
-    { q: 'PI for \\(y\\'\\'-2y\\'+2y=e^x\\sin x\\): must be tried as \\(xe^x(\\cdots)\\) because:', options: ['\\(e^x\\sin x\\) is large', 'PI always uses \\(x\\)', 'The CF is polynomial', '\\(e^x\\sin x\\) appears in CF (roots \\(1\\pm i\\))'], answer: 3 },
+    { q: 'PI for \\(y\'\'-2y\'+2y=e^x\\sin x\\): must be tried as \\(xe^x(\\cdots)\\) because:', options: ['\\(e^x\\sin x\\) is large', 'PI always uses \\(x\\)', 'The CF is polynomial', '\\(e^x\\sin x\\) appears in CF (roots \\(1\\pm i\\))'], answer: 3 },
+  ],
+},
+
+'1.9': {
+  name: 'Numerical Methods',
+  green: [
+    { q: 'The Newton–Raphson iteration for \\(f(x)=0\\) is:', options: ['\\(x_{n+1}=x_n+f(x_n)f\'(x_n)\\)', '\\(x_{n+1}=f(x_n)/f\'(x_n)\\)', '\\(x_{n+1}=x_n\\cdot f(x_n)\\)', '\\(x_{n+1}=x_n-\\dfrac{f(x_n)}{f\'(x_n)}\\)'], answer: 3 },
+    { q: 'If \\(f(a)f(b)<0\\) with \\(f\\) continuous on \\([a,b]\\), then there is a root in:', options: ['\\([a,a]\\)', 'Outside \\([a,b]\\)', 'Nowhere', '\\((a,b)\\)'], answer: 3 },
+    { q: 'Simpson\'s rule requires the number of strips \\(n\\) to be:', options: ['Prime', 'A power of 2', 'Any integer', 'Even'], answer: 3 },
+    { q: 'The trapezium rule approximates the area under a curve by summing:', options: ['Circles', 'Sinusoidal fits', 'Rectangles', 'Trapezia'], answer: 3 },
+    { q: 'Bisection halves the interval each step. After \\(k\\) steps the interval width is:', options: ['\\(k(b-a)\\)', '\\(\\frac{b-a}{k}\\)', '\\(b-a\\) unchanged', '\\(\\frac{b-a}{2^k}\\)'], answer: 3 },
+    { q: 'Euler\'s method updates \\(y_{n+1}=\\)', options: ['\\(y_n+hy_n\\)', '\\(y_n+h\\)', '\\(hy_n\\)', '\\(y_n+h\\,f(x_n,y_n)\\)'], answer: 3 },
+    { q: 'Newton–Raphson converges...near a simple root.', options: ['Linearly', 'Exponentially', 'Not at all', 'Quadratically'], answer: 3 },
+    { q: 'The Simpson\'s rule approximation uses the weighting pattern:', options: ['2,1,2,1,...', '1,1,1,1,...', '1,3,3,1', '1,4,2,4,2,...,4,1'], answer: 3 },
+    { q: 'For the trapezium rule with \\(n\\) strips, the step size \\(h=\\)', options: ['\\(b-a\\)', '\\(n(b-a)\\)', '\\(1/n\\)', '\\((b-a)/n\\)'], answer: 3 },
+    { q: 'Fixed-point iteration \\(x_{n+1}=g(x_n)\\) converges near root \\(\\alpha\\) if:', options: ['\\(g(\\alpha)<0\\)', '\\(g\'(\\alpha)=1\\)', '\\(|g\'(\\alpha)|>1\\)', '\\(|g\'(\\alpha)|<1\\)'], answer: 3 },
+  ],
+  amber: [
+    { q: 'Apply Newton–Raphson to \\(f(x)=x^2-2\\) from \\(x_0=1.5\\). Then \\(x_1=\\)', options: ['\\(1.3\\)', '\\(1.5\\)', '\\(1.414\\)', '\\(\\frac{17}{12}\\approx1.417\\)'], answer: 3, explanation: 'x₁=1.5−0.25/3=1.5−1/12=17/12' },
+    { q: 'Simpson\'s rule with \\(n=2\\) on \\(\\int_0^2 x^3\\,dx\\) gives:', options: ['\\(2\\)', '\\(6\\)', '\\(8\\)', '\\(4\\)'], answer: 3, explanation: 'h=1; (1/3)(0+4·1+8)=4 (exact)' },
+    { q: 'After 1 step of bisection on \\(f(x)=x^2-3\\) starting from \\([1,2]\\), the new interval is:', options: ['\\([1.5,2.0]\\)', '\\([1,1.5]\\)', '\\([1.25,1.75]\\)', '\\([1.5,2]\\)'], answer: 0, explanation: 'f(1.5)=−0.75<0, f(2)=1>0 → root in [1.5,2]' },
+    { q: 'Euler with \\(h=0.1\\) on \\(y\'=y\\), \\(y(0)=1\\) gives \\(y(0.1)\\approx\\)', options: ['\\(1\\)', '\\(1.105\\)', '\\(1.01\\)', '\\(1.1\\)'], answer: 3, explanation: 'y₁=1+0.1·1=1.1 (true e^{0.1}≈1.105)' },
+    { q: 'Newton–Raphson may fail if:', options: ['The function is linear', 'The function is polynomial', 'Starting value is close to root', '\\(f\'(x_n)\\) is very small or zero'], answer: 3 },
+    { q: 'Trapezium rule for \\(\\int_0^1 e^{-x^2}\\,dx\\) with \\(n=2\\) gives approximately:', options: ['\\(0.64\\)', '\\(0.80\\)', '\\(0.85\\)', '\\(0.73\\)'], answer: 3, explanation: 'h=0.5; (0.5/2)(1+2·e^{−0.25}+e^{−1})≈0.731' },
+  ],
+  red: [
+    { q: 'The local truncation error of Euler\'s method is:', options: ['\\(O(h)\\)', '\\(O(h^3)\\)', '\\(O(h^4)\\)', '\\(O(h^2)\\)'], answer: 3 },
+    { q: 'The global truncation error of Simpson\'s rule is:', options: ['\\(O(h^2)\\)', '\\(O(h)\\)', '\\(O(h^6)\\)', '\\(O(h^4)\\)'], answer: 3 },
+    { q: 'If Newton–Raphson\'s iteration satisfies \\(e_{n+1}\\approx Ce_n^2\\), convergence is described as:', options: ['Linear', 'Cubic', 'Sublinear', 'Quadratic'], answer: 3 },
+    { q: 'Fixed-point iteration \\(x_{n+1}=\\cos x_n\\) converges to \\(\\alpha\\) with \\(\\alpha\\approx 0.739\\); this is consistent with \\(|g\'(\\alpha)|=\\)', options: ['\\(1\\)', '\\(>1\\)', '\\(2\\)', '\\(|\\sin(0.739)|<1\\)'], answer: 3 },
   ],
 },
 
@@ -401,32 +396,6 @@ const FM_OCR_MCQ = {
 },
 
 'S1.2': {
-  name: 'Poisson Distribution',
-  green: [
-    { q: '\\(X\\sim\\text{Po}(\\lambda)\\): \\(P(X=r)=\\)', options: ['\\(\\binom{n}{r}p^r(1-p)^{n-r}\\)', '\\(e^r\\lambda/r!\\)', '\\(r!e^{-\\lambda}\\lambda^r\\)', '\\(\\frac{e^{-\\lambda}\\lambda^r}{r!}\\)'], answer: 3 },
-    { q: 'For \\(X\\sim\\text{Po}(\\lambda)\\): \\(E(X)=\\)', options: ['\\(\\lambda^2\\)', '\\(1/\\lambda\\)', '\\(\\sqrt{\\lambda}\\)', '\\(\\lambda\\)'], answer: 3 },
-    { q: 'For \\(X\\sim\\text{Po}(\\lambda)\\): \\(\\text{Var}(X)=\\)', options: ['\\(\\lambda^2\\)', '\\(1/\\lambda\\)', '\\(\\sqrt{\\lambda}\\)', '\\(\\lambda\\)'], answer: 3 },
-    { q: 'The Poisson distribution models events that are:', options: ['Always exactly \\(\\lambda\\)', 'Clustered', 'Normally distributed', 'Rare, independent, and happening at constant average rate'], answer: 3 },
-    { q: 'If \\(X_1\\sim\\text{Po}(\\lambda_1)\\) and \\(X_2\\sim\\text{Po}(\\lambda_2)\\) independently, then \\(X_1+X_2\\sim\\)', options: ['\\(\\text{Po}(\\lambda_1\\lambda_2)\\)', '\\(\\text{Po}(\\lambda_1-\\lambda_2)\\)', '\\(\\text{Po}(\\lambda_1/\\lambda_2)\\)', '\\(\\text{Po}(\\lambda_1+\\lambda_2)\\)'], answer: 3 },
-    { q: 'When is Poisson a good approximation to Binomial?', options: ['\\(n\\) small, \\(p\\) large', '\\(n=p\\)', '\\(np>1\\) only', '\\(n\\) large, \\(p\\) small (\\(\\lambda=np\\) fixed)'], answer: 3 },
-    { q: 'PGF of \\(\\text{Po}(\\lambda)\\) is:', options: ['\\((q+pt)^n\\)', '\\(\\frac{pt}{1-qt}\\)', '\\(\\lambda t\\)', '\\(e^{\\lambda(t-1)}\\)'], answer: 3 },
-    { q: 'For \\(\\text{Po}(\\lambda)\\), \\(P(X=0)=\\)', options: ['\\(\\lambda\\)', '\\(1-e^{-\\lambda}\\)', '\\(0\\)', '\\(e^{-\\lambda}\\)'], answer: 3 },
-  ],
-  amber: [
-    { q: 'For \\(X\\sim\\text{Po}(2)\\), \\(P(X=3)=\\)', options: ['\\(\\frac{8e^{-2}}{6}\\)', '\\(\\frac{2^3}{3}e^{-2}\\)', '\\(\\frac{8e^2}{6}\\)', '\\(\\frac{8e^{-2}}{6}\\)'], answer: 0, explanation: 'e^{−2}·2³/3!=8e^{−2}/6' },
-    { q: 'A Poisson hypothesis test: \\(H_0:\\lambda=3\\), one-tailed (lower). You observe \\(X=0\\). \\(P(X\\leq0)=\\)', options: ['\\(3e^{-3}\\)', '\\(1-e^{-3}\\)', '\\(3\\)', '\\(e^{-3}\\)'], answer: 3 },
-    { q: 'Events happen at rate 4 per hour. Prob of exactly 2 in 30 mins:', options: ['\\(e^{-4}\\cdot4^2/2\\)', '\\(e^{-8}\\cdot4^2/2\\)', '\\(e^{-2}\\cdot4^2/2\\)', '\\(e^{-2}\\cdot2^2/2\\)'], answer: 3, explanation: 'Rate in 30 min = 2. P(X=2)=e^{−2}·4/2=2e^{−2}' },
-    { q: 'Combining two independent \\(\\text{Po}(3)\\) and \\(\\text{Po}(5)\\), \\(P(\\text{total}=2)=\\)', options: ['\\(\\frac{3^2e^{-3}}{2}\\)', '\\(\\frac{5^2e^{-5}}{2}\\)', '\\(\\frac{8^2e^{-8}}{2}\\)', '\\(\\frac{64e^{-8}}{2}\\)'], answer: 3, explanation: 'Sum~Po(8): e^{-8}·64/2=32e^{-8}' },
-    { q: 'The Poisson approximation to \\(B(200,0.02)\\) uses \\(\\lambda=\\)', options: ['\\(0.02\\)', '\\(200\\)', '\\(100\\)', '\\(4\\)'], answer: 3 },
-  ],
-  red: [
-    { q: 'Derive \\(E(X)\\) for \\(\\text{Po}(\\lambda)\\) by differentiating the PGF \\(G(t)=e^{\\lambda(t-1)}\\) at \\(t=1\\):', options: ['\\(G\'(1)=e^0=1\\)', '\\(G\'(1)=0\\)', '\\(G\'(1)=e^{-\\lambda}\\)', '\\(G\'(1)=\\lambda e^{\\lambda(t-1)}|_{t=1}=\\lambda\\)'], answer: 3 },
-    { q: 'For a 2-sided Poisson test \\(H_0:\\lambda=5\\), critical region at 5% uses both tails. If \\(P(X\\leq c_1)\\leq0.025\\) and \\(P(X\\geq c_2)\\leq0.025\\), the critical region is:', options: ['\\(X\\leq c_1\\) only', '\\(X\\geq c_2\\) only', '\\(c_1<X<c_2\\)', '\\(X\\leq c_1\\) or \\(X\\geq c_2\\)'], answer: 3 },
-    { q: 'A Poisson process with rate \\(\\lambda\\) has inter-arrival times that follow an \\(\\text{Exp}(\\lambda)\\) distribution. \\(E(\\text{waiting time})=\\)', options: ['\\(\\lambda\\)', '\\(\\lambda^2\\)', '\\(\\sqrt{\\lambda}\\)', '\\(1/\\lambda\\)'], answer: 3 },
-  ],
-},
-
-'S1.3': {
   name: 'Continuous Random Variables',
   green: [
     { q: 'For a continuous RV, \\(P(X=x)=\\)', options: ['\\(f(x)\\)', '\\(F(x)\\)', '\\(f\'(x)\\)', '\\(0\\)'], answer: 3 },
@@ -453,8 +422,34 @@ const FM_OCR_MCQ = {
   ],
 },
 
+'S1.3': {
+  name: 'Statistical Inference',
+  green: [
+    { q: 'The Central Limit Theorem says \\(\\bar{X}\\) is approximately:', options: ['Uniform', 'Poisson', 'Exponential', 'Normal with mean \\(\\mu\\) and variance \\(\\sigma^2/n\\)'], answer: 3 },
+    { q: 'The standard error of the sample mean is:', options: ['\\(\\sigma\\)', '\\(\\sigma n\\)', '\\(\\sigma/n\\)', '\\(\\sigma/\\sqrt{n}\\)'], answer: 3 },
+    { q: 'A 95% confidence interval for \\(\\mu\\) (\\(\\sigma\\) known, large \\(n\\)) uses:', options: ['\\(\\bar{x}\\pm2.58\\cdot\\sigma/\\sqrt n\\)', '\\(\\bar{x}\\pm\\sigma\\)', '\\(\\bar{x}\\pm\\sigma/n\\)', '\\(\\bar{x}\\pm1.96\\cdot\\sigma/\\sqrt n\\)'], answer: 3 },
+    { q: 'A Type I error is:', options: ['Correct acceptance of \\(H_1\\)', 'Failure to reject a true \\(H_0\\)', 'Failure to reject a false \\(H_0\\)', 'Rejecting a true \\(H_0\\)'], answer: 3 },
+    { q: 'A Type II error is:', options: ['Always worse than Type I', 'Rejecting a true \\(H_0\\)', 'The same as \\(\\alpha\\)', 'Failing to reject a false \\(H_0\\)'], answer: 3 },
+    { q: 'Power of a test equals:', options: ['\\(1-\\alpha\\)', '\\(\\beta\\)', '\\(\\alpha\\)', '\\(1-\\beta\\)'], answer: 3 },
+    { q: 'The value \\(z_{0.025}\\) (two-tailed 5%) is approximately:', options: ['\\(1.645\\)', '\\(2.326\\)', '\\(2.576\\)', '\\(1.96\\)'], answer: 3 },
+    { q: '\\(\\alpha\\) (significance level) equals:', options: ['P(Type II)', 'Power', '\\(1-\\beta\\)', 'P(Type I)'], answer: 3 },
+  ],
+  amber: [
+    { q: 'Sample of \\(n=100\\), \\(\\bar{x}=50\\), \\(\\sigma=10\\). 95% CI:', options: ['\\((48,52)\\)', '\\((45,55)\\)', '\\((49,51)\\)', '\\((48.04,51.96)\\)'], answer: 3, explanation: '50±1.96·1=±1.96' },
+    { q: '\\(H_0:\\mu=10\\) vs \\(H_1:\\mu>10\\), \\(\\sigma=2\\), \\(n=25\\), \\(\\alpha=0.05\\). Critical value \\(\\bar{x}>\\)', options: ['\\(10.4\\)', '\\(10.8\\)', '\\(11\\)', '\\(10+1.645\\cdot2/5=10.658\\)'], answer: 3 },
+    { q: 'To halve the width of a CI, sample size should be:', options: ['Doubled', 'Halved', 'Same', 'Quadrupled'], answer: 3, explanation: 'Width ∝ 1/√n' },
+    { q: 'As \\(\\alpha\\) decreases, the probability of Type II error:', options: ['Stays the same', 'Decreases', 'Is zero', 'Increases'], answer: 3 },
+    { q: 'If the true \\(\\mu\\) is far from \\(\\mu_0\\), the test\'s power:', options: ['Is low', 'Equals \\(\\alpha\\)', 'Is undefined', 'Is high'], answer: 3 },
+  ],
+  red: [
+    { q: 'Doubling sample size, with \\(\\alpha\\) and the alternative unchanged, the power:', options: ['Stays constant', 'Drops', 'Doubles exactly', 'Increases'], answer: 3 },
+    { q: 'For a one-tailed \\(Z\\)-test \\(H_0:\\mu=10\\) vs \\(\\mu>10\\), \\(\\sigma=2, n=16, \\alpha=0.05\\), and true \\(\\mu=11\\), \\(\\beta\\approx\\)', options: ['\\(0\\)', '\\(0.1\\)', '\\(0.5\\)', 'About \\(0.36\\)'], answer: 3, explanation: 'Crit x̄>10.823; P(x̄≤10.823|μ=11)=Φ(−0.354)≈0.36' },
+    { q: 'To achieve margin of error \\(E\\) at 95%: \\(n\\geq\\)', options: ['\\((\\sigma/E)^2\\)', '\\(1.96\\sigma E\\)', '\\((\\sigma E/1.96)^2\\)', '\\((1.96\\sigma/E)^2\\)'], answer: 3 },
+  ],
+},
+
 'S1.4': {
-  name: 'Chi-Squared Tests',
+  name: 'Chi-squared Tests',
   green: [
     { q: 'The \\(\\chi^2\\) test statistic is \\(X^2=\\)', options: ['\\(\\sum\\frac{O-E}{E}\\)', '\\(\\sum\\frac{(O-E)^2}{O}\\)', '\\(\\sum(O-E)^2\\)', '\\(\\sum\\frac{(O-E)^2}{E}\\)'], answer: 3 },
     { q: 'Degrees of freedom for goodness-of-fit with \\(k\\) groups and \\(p\\) estimated parameters:', options: ['\\(k\\)', '\\(k-p\\)', '\\(k+p-1\\)', '\\(k-p-1\\)'], answer: 3 },
@@ -478,26 +473,27 @@ const FM_OCR_MCQ = {
 },
 
 'S1.5': {
-  name: 't-tests and Confidence Intervals',
+  name: 'Probability Generating Functions',
   green: [
-    { q: 'The \\(t\\)-distribution is used when:', options: ['\\(n>30\\) always', 'The variance is known', 'Using a Poisson model', 'The population variance is unknown and \\(n\\) is small'], answer: 3 },
-    { q: 'The \\(t\\)-statistic for a one-sample test is:', options: ['\\(\\frac{\\bar{x}-\\mu}{\\sigma/\\sqrt{n}}\\)', '\\(\\frac{\\bar{x}-\\mu}{s}\\)', '\\(\\frac{\\bar{x}}{s^2}\\)', '\\(\\frac{\\bar{x}-\\mu}{s/\\sqrt{n}}\\)'], answer: 3 },
-    { q: 'Degrees of freedom for a one-sample \\(t\\)-test with \\(n\\) observations:', options: ['\\(n\\)', '\\(n+1\\)', '\\(n-2\\)', '\\(n-1\\)'], answer: 3 },
-    { q: 'The \\(t\\)-distribution approaches the \\(z\\)-distribution as:', options: ['\\(\\mu\\to0\\)', '\\(\\sigma\\to0\\)', '\\(n\\to1\\)', '\\(n\\to\\infty\\)'], answer: 3 },
-    { q: 'A 95% confidence interval for \\(\\mu\\) using \\(t\\) is:', options: ['\\(\\bar{x}\\pm1.96\\sigma/\\sqrt{n}\\)', '\\(\\bar{x}\\pm2s\\)', '\\(\\bar{x}\\pm s/\\sqrt{n}\\)', '\\(\\bar{x}\\pm t^*\\cdot s/\\sqrt{n}\\)'], answer: 3 },
-    { q: 'The unbiased sample variance \\(s^2\\) uses denominator:', options: ['\\(n^2\\)', '\\(n+1\\)', '\\(n\\)', '\\(n-1\\)'], answer: 3 },
+    { q: 'The pgf of \\(X\\) is defined as:', options: ['\\(E(X^t)\\)', '\\(E(X)t\\)', '\\(\\sum r^t p_r\\)', '\\(G_X(t)=E(t^X)=\\sum p_r t^r\\)'], answer: 3 },
+    { q: '\\(G_X(1)=\\)', options: ['\\(0\\)', '\\(\\mu\\)', '\\(\\sigma^2\\)', '\\(1\\)'], answer: 3 },
+    { q: '\\(E(X)\\) from the pgf:', options: ['\\(G(1)\\)', '\\(G(0)\\)', '\\(G\'\'(1)\\)', '\\(G\'(1)\\)'], answer: 3 },
+    { q: 'For \\(X\\sim\\text{Po}(\\lambda)\\), \\(G_X(t)=\\)', options: ['\\(\\lambda t\\)', '\\(\\frac{\\lambda}{t}\\)', '\\((1+\\lambda)^t\\)', '\\(e^{\\lambda(t-1)}\\)'], answer: 3 },
+    { q: 'For \\(X\\sim B(n,p)\\), \\(G_X(t)=\\)', options: ['\\(p^t\\)', '\\(npt\\)', '\\(1+npt\\)', '\\((1-p+pt)^n\\)'], answer: 3 },
+    { q: 'If \\(X\\perp Y\\), \\(G_{X+Y}(t)=\\)', options: ['\\(G_X(t)+G_Y(t)\\)', '\\(G_X(t)-G_Y(t)\\)', '\\(G_X(t)/G_Y(t)\\)', '\\(G_X(t)\\,G_Y(t)\\)'], answer: 3 },
+    { q: 'For \\(X\\sim\\text{Geom}(p)\\) (on \\(1,2,\\ldots\\)), \\(G_X(t)=\\)', options: ['\\(p+qt\\)', '\\((pt)^n\\)', '\\(\\frac{p}{1-qt}\\)', '\\(\\dfrac{pt}{1-(1-p)t}\\)'], answer: 3 },
   ],
   amber: [
-    { q: 'Two-sample \\(t\\)-test: df for equal variances (pooled), sample sizes \\(n_1\\) and \\(n_2\\):', options: ['\\(n_1+n_2\\)', '\\(\\min(n_1,n_2)-1\\)', '\\(n_1-n_2\\)', '\\(n_1+n_2-2\\)'], answer: 3 },
-    { q: 'A paired \\(t\\)-test is used when:', options: ['Samples are large', 'Two samples are independent', 'Variance is known', 'Two measurements come from the same subject (matched pairs)'], answer: 3 },
-    { q: 'Wider confidence interval implies:', options: ['More precise estimate', 'Larger sample', 'Smaller \\(t^*\\)', 'Less precision or higher confidence level'], answer: 3 },
-    { q: 'If the 95% CI for \\(\\mu-\\mu_0\\) does NOT contain 0, we:', options: ['Accept \\(H_0\\) at 5%', 'Conclude variance is zero', 'Use a different test', 'Reject \\(H_0:\\mu=\\mu_0\\) at 5% significance'], answer: 3 },
-    { q: 'Pooled variance estimate \\(s_p^2=\\)', options: ['\\(\\frac{s_1^2+s_2^2}{2}\\)', '\\(\\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2}\\)', '\\((n_1s_1^2+n_2s_2^2)/(n_1+n_2-1)\\)', '\\(\\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}\\)'], answer: 3 },
+    { q: '\\(\\text{Var}(X)\\) in terms of the pgf:', options: ['\\(G\'(1)^2\\)', '\\(G\'\'(1)\\)', '\\(G\'(1)-G\'\'(1)\\)', '\\(G\'\'(1)+G\'(1)-[G\'(1)]^2\\)'], answer: 3 },
+    { q: 'Sum of IID \\(\\text{Po}(\\lambda_1)\\) and \\(\\text{Po}(\\lambda_2)\\) has pgf:', options: ['\\(e^{\\lambda_1\\lambda_2(t-1)}\\)', '\\(e^{\\lambda_1(t-1)}+e^{\\lambda_2(t-1)}\\)', '\\(e^{(\\lambda_1-\\lambda_2)(t-1)}\\)', '\\(e^{(\\lambda_1+\\lambda_2)(t-1)}\\)'], answer: 3 },
+    { q: 'Sum of \\(n\\) IID Bernoulli(\\(p\\)) has pgf:', options: ['\\((1-p+pt)\\)', '\\(n(1-p+pt)\\)', '\\(e^{np(t-1)}\\)', '\\((1-p+pt)^n\\)'], answer: 3 },
+    { q: 'For \\(Y=aX+b\\), pgf is:', options: ['\\(G_X(at)+b\\)', '\\(aG_X(t)+b\\)', '\\(G_X(t)^a\\)', '\\(t^b G_X(t^a)\\)'], answer: 3 },
+    { q: '\\(X\\) has pgf \\(G(t)=\\tfrac{1}{4}(1+t)^2\\). Then \\(P(X=1)=\\)', options: ['\\(1/4\\)', '\\(1\\)', '\\(1/3\\)', '\\(1/2\\)'], answer: 3, explanation: 'G(t)=¼+½t+¼t² → coeff of t is ½' },
   ],
   red: [
-    { q: 'The \\(t\\)-test requires the population to be:', options: ['Binomially distributed', 'Uniform', 'Poisson distributed', 'Approximately normally distributed'], answer: 3 },
-    { q: 'A Welch \\(t\\)-test (unequal variances) uses which df?', options: ['\\(n_1+n_2\\)', '\\(n_1n_2\\)', '\\(n_1-n_2-2\\)', 'The Welch–Satterthwaite approximation'], answer: 3 },
-    { q: 'Increasing sample size from \\(n\\) to \\(4n\\) reduces the CI width by factor:', options: ['\\(4\\)', '\\(2\\sqrt{2}\\)', '\\(\\sqrt{2}\\)', '\\(2\\)'], answer: 3, explanation: 'Width ∝ 1/√n: 1/√(4n) = (1/2)·(1/√n)' },
+    { q: 'Using the pgf of \\(\\text{Po}(\\lambda)\\), \\(\\text{Var}(X)=\\)', options: ['\\(\\lambda^2\\)', '\\(\\lambda+1\\)', '\\(2\\lambda\\)', '\\(\\lambda\\)'], answer: 3 },
+    { q: 'If \\(G(t)=\\frac{pt}{1-(1-p)t}\\) (geom), then \\(E(X)=\\)', options: ['\\(p\\)', '\\((1-p)/p\\)', '\\(1/(1-p)\\)', '\\(1/p\\)'], answer: 3 },
+    { q: 'For a branching process with common pgf \\(G\\), the pgf of generation \\(n\\) is:', options: ['\\(nG(t)\\)', '\\(G(t)^n\\)', '\\(G(nt)\\)', '\\(G\\circ G\\circ\\cdots\\circ G\\) (\\(n\\) times)'], answer: 3 },
   ],
 },
 
@@ -530,7 +526,33 @@ const FM_OCR_MCQ = {
 },
 
 'M1.2': {
-  name: 'Momentum and Collisions',
+  name: 'Work, Energy and Power',
+  green: [
+    { q: 'Work done by a constant force: \\(W=\\)', options: ['\\(mv^2\\)', '\\(m\\mathbf{F}\\)', '\\(\\mathbf{F}+\\mathbf{s}\\)', '\\(\\mathbf{F}\\cdot\\mathbf{s}=Fs\\cos\\theta\\)'], answer: 3 },
+    { q: 'Kinetic energy:', options: ['\\(mv\\)', '\\(\\tfrac{1}{2}m^2v\\)', '\\(mg h\\)', '\\(\\tfrac{1}{2}mv^2\\)'], answer: 3 },
+    { q: 'Gravitational PE (near Earth):', options: ['\\(\\tfrac{1}{2}mgh\\)', '\\(m/h\\)', '\\(gh\\)', '\\(mgh\\)'], answer: 3 },
+    { q: 'SI unit of power:', options: ['newton', 'joule', 'pascal', 'watt'], answer: 3 },
+    { q: 'Power = ...', options: ['\\(Fs\\)', '\\(mv^2\\)', '\\(F/v\\)', '\\(Fv\\)'], answer: 3 },
+    { q: 'Work-energy theorem: \\(W_{\\text{total}}=\\)', options: ['\\(PE\\) change', '\\(\\Delta p\\)', '\\(mgh\\)', '\\(\\Delta(KE)\\)'], answer: 3 },
+    { q: 'Elastic PE of a spring extended by \\(x\\) (stiffness \\(k\\)):', options: ['\\(kx\\)', '\\(k/x\\)', '\\(kx^2\\)', '\\(\\tfrac{1}{2}kx^2\\)'], answer: 3 },
+    { q: 'If only conservative forces act, KE + PE is:', options: ['Zero', 'Increasing', 'Decreasing', 'Constant'], answer: 3 },
+  ],
+  amber: [
+    { q: '2 kg block, 20 N force along 5 m floor (frictionless). Final KE:', options: ['\\(20\\) J', '\\(40\\) J', '\\(50\\) J', '\\(100\\) J'], answer: 3, explanation: 'W=20·5=100 J = ΔKE' },
+    { q: 'Ball dropped from 5 m (\\(g=9.8\\)). Speed just before impact:', options: ['\\(7\\) m/s', '\\(9.8\\) m/s', '\\(5\\) m/s', '\\(\\sqrt{98}\\approx9.90\\) m/s'], answer: 3, explanation: 'v²=2gh=98' },
+    { q: 'A car\'s engine (15 kW) travelling 20 m/s. Driving force:', options: ['\\(15\\) N', '\\(300\\) N', '\\(3000\\) N', '\\(750\\) N'], answer: 3, explanation: 'P=Fv → F=15000/20=750' },
+    { q: 'Object pushed up 5 m rough slope (\\(\\theta=30°\\), \\(\\mu=0.2\\), \\(m=10\\)kg). Work against friction:', options: ['\\(84.9\\) J', '\\(196\\) J', '\\(245\\) J', '\\(\\mu mg\\cos\\theta\\cdot 5 = 0.2\\cdot 98\\cdot\\cos30°\\cdot5\\approx84.9\\) J'], answer: 3 },
+    { q: 'A 1000 kg car reaches top speed when acceleration = 0. At top speed \\(v\\), with constant resistance 500 N, engine power:', options: ['\\(500v\\)', '\\(1000v^2\\)', '\\(1000/v\\)', '\\(500v\\) W'], answer: 0 },
+  ],
+  red: [
+    { q: 'Car \\(m=1200\\) kg, engine \\(P=30\\) kW, resistance 600 N. Acceleration at 20 m/s:', options: ['\\(0\\) m/s²', '\\(1\\) m/s²', '\\(2\\) m/s²', '\\(0.75\\) m/s²'], answer: 3, explanation: 'F=30000/20=1500; net=900; a=900/1200=0.75' },
+    { q: 'Elastic string modulus \\(\\lambda\\), natural length \\(\\ell_0\\), extension \\(x\\). EPE:', options: ['\\(\\lambda x\\)', '\\(\\lambda x/\\ell_0\\)', '\\(\\tfrac{\\lambda x^2}{\\ell_0}\\)', '\\(\\dfrac{\\lambda x^2}{2\\ell_0}\\)'], answer: 3 },
+    { q: 'Roller-coaster car (\\(m\\), negligible friction) descends \\(h_1\\), then rises \\(h_2<h_1\\). Speed at top of rise:', options: ['\\(\\sqrt{2gh_1}\\)', '\\(\\sqrt{2g(h_1+h_2)}\\)', '\\(\\sqrt{2gh_2}\\)', '\\(\\sqrt{2g(h_1-h_2)}\\)'], answer: 3 },
+  ],
+},
+
+'M1.3': {
+  name: 'Impulse and Momentum',
   green: [
     { q: 'Impulse = \\(F\\Delta t\\) = change in:', options: ['kinetic energy', 'acceleration', 'displacement', 'momentum'], answer: 3 },
     { q: 'Conservation of momentum requires:', options: ['Energy to be conserved', 'No gravity', 'External forces present', 'No external forces (closed system)'], answer: 3 },
@@ -555,7 +577,7 @@ const FM_OCR_MCQ = {
   ],
 },
 
-'M1.3': {
+'M1.4': {
   name: 'Circular Motion',
   green: [
     { q: 'Angular velocity \\(\\omega\\) relates to speed \\(v\\) and radius \\(r\\) by:', options: ['\\(v=r/\\omega\\)', '\\(v=\\omega/r\\)', '\\(v=\\omega^2r\\)', '\\(v=\\omega r\\)'], answer: 3 },
@@ -578,30 +600,6 @@ const FM_OCR_MCQ = {
     { q: 'A bead on a smooth circular hoop of radius \\(a\\) in a vertical plane. At bottom, speed \\(v_0\\). Speed at angle \\(\\theta\\) from bottom:', options: ['\\(v_0^2-2ga(1-\\cos\\theta)\\)', '\\(v_0+ga\\sin\\theta\\)', '\\(v_0^2+2ga\\cos\\theta\\)', '\\(\\sqrt{v_0^2-2ga(1-\\cos\\theta)}\\)'], answer: 3, explanation: 'Energy: ½mv²=½mv₀²-mga(1-cosθ)' },
     { q: 'For circular motion in a vertical plane, the particle loses contact with the surface when:', options: ['Speed is maximum', 'Speed equals \\(\\sqrt{gr}\\)', 'Normal reaction equals gravity', 'Normal reaction = 0'], answer: 3 },
     { q: 'A satellite in circular orbit: gravitational force provides centripetal force. If radius doubles, orbital speed:', options: ['Doubles', 'Quadruples', 'Stays same', 'Decreases by factor \\(\\sqrt{2}\\)'], answer: 3, explanation: 'v=√(GM/r); v∝1/√r; double r → v/√2' },
-  ],
-},
-
-'M1.4': {
-  name: 'Centres of Mass',
-  green: [
-    { q: 'For a system of particles, \\(\\bar{x}=\\)', options: ['\\(\\sum m_i/\\sum x_i\\)', '\\(\\frac{\\sum x_i}{n}\\)', '\\(n\\sum m_i x_i\\)', '\\(\\frac{\\sum m_i x_i}{\\sum m_i}\\)'], answer: 3 },
-    { q: 'CoM of uniform rod of length \\(L\\):', options: ['At one end', 'At \\(L/4\\)', 'At \\(L/3\\)', 'At \\(L/2\\)'], answer: 3 },
-    { q: 'CoM of a uniform triangle is at the:', options: ['Midpoint of base', 'Orthocentre', 'Circumcentre', 'Centroid (intersection of medians)'], answer: 3 },
-    { q: 'CoM of a solid uniform hemisphere of radius \\(r\\) from flat face:', options: ['\\(3r/8\\)', '\\(r/2\\)', '\\(3r/4\\)', '\\(3r/8\\)'], answer: 0, explanation: 'CoM of solid hemisphere = 3r/8 from flat face' },
-    { q: 'When a uniform lamina is suspended freely, it hangs with the CoM:', options: ['At the top', 'At the edge', 'At the geometric centre', 'Directly below the point of suspension'], answer: 3 },
-    { q: 'CoM of uniform circular disc of radius \\(r\\):', options: ['At edge', 'At \\(r/2\\) from centre', 'At \\(2r/3\\)', 'At the centre'], answer: 3 },
-  ],
-  amber: [
-    { q: 'A composite lamina: rectangle minus a circular hole. CoM is found by:', options: ['Adding CoMs', 'Taking the product of CoMs', 'Ignoring the hole', 'Treating the hole as a negative mass'], answer: 3 },
-    { q: 'L-shaped lamina: two rectangles. CoM of whole = CoM of sum of:', options: ['Perimeters', 'Areas only', 'Lengths', 'Each part weighted by its area (mass)'], answer: 3 },
-    { q: 'A uniform lamina hangs in equilibrium from a point. The angle of tilt depends on:', options: ['The total mass only', 'The area only', 'The attachment point only', 'The position of the CoM relative to the suspension point'], answer: 3 },
-    { q: 'CoM of hollow (thin-walled) hemisphere of radius \\(r\\) from flat face:', options: ['\\(3r/8\\)', '\\(r/3\\)', '\\(r/4\\)', '\\(r/2\\)'], answer: 3 },
-    { q: 'For a composite solid of parts with masses \\(m_1,m_2\\) and CoMs \\(\\bar{x}_1,\\bar{x}_2\\):', options: ['\\(\\bar{x}=\\frac{\\bar{x}_1+\\bar{x}_2}{2}\\)', '\\(\\bar{x}=\\bar{x}_1\\bar{x}_2\\)', '\\(\\bar{x}=\\bar{x}_1-\\bar{x}_2\\)', '\\(\\bar{x}=\\frac{m_1\\bar{x}_1+m_2\\bar{x}_2}{m_1+m_2}\\)'], answer: 3 },
-  ],
-  red: [
-    { q: 'A lamina will topple rather than slide when tilted if:', options: ['Friction is high', 'Mass is large', 'Normal reaction is large', 'The vertical line through CoM falls outside the base'], answer: 3 },
-    { q: 'CoM of a solid cone (height \\(h\\)) from base:', options: ['\\(h/2\\)', '\\(h/3\\)', '\\(2h/3\\)', '\\(h/4\\)'], answer: 3, explanation: 'CoM of solid cone = h/4 from base' },
-    { q: 'Pappus\' theorem: volume of solid of revolution = \\(2\\pi\\bar{y}\\cdot A\\), where \\(\\bar{y}\\) is the \\(y\\)-coordinate of the CoM of the:', options: ['Solid', 'Boundary curve', 'Axis', 'Lamina (2D region)'], answer: 3 },
   ],
 },
 
@@ -662,7 +660,7 @@ const FM_OCR_MCQ = {
 },
 
 'D1.2': {
-  name: 'Networks and Algorithms',
+  name: 'Networks',
   green: [
     { q: 'Kruskal\'s algorithm builds a minimum spanning tree by:', options: ['Adding heaviest edges', 'Starting at a specific vertex', 'Removing cycles', 'Adding lightest edges that don\'t form a cycle'], answer: 3 },
     { q: 'Prim\'s algorithm builds a minimum spanning tree by:', options: ['Sorting all edges', 'Starting anywhere and repeatedly adding cheapest edge to new vertex', 'Removing heavy edges', 'Adding cheapest edge not forming a cycle'], answer: 1, explanation: 'Prim\'s grows a tree by adding cheapest edges from the current tree to a new vertex' },
