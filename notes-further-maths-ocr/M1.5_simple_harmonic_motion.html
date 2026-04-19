@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M1.5: Simple Harmonic Motion — OCR A Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR A Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR A-Level Further Mathematics (H245) — Mechanics Option Section M1.5</p>
+<h1>M1.5: Simple Harmonic Motion</h1>
+
+<h2>1. Defining Equation</h2>
+
+<div class="definition">
+  A particle undergoes <strong>simple harmonic motion (SHM)</strong> about the origin if its acceleration is proportional to displacement and directed towards the origin:
+  \[\ddot{x} = -\omega^2 x.\]
+  The positive constant \(\omega\) is the <strong>angular frequency</strong>.
+</div>
+
+<p>The general solution is</p>
+<div class="equation">\(x(t) = A\cos(\omega t + \phi) = C\cos\omega t + D\sin\omega t\)</div>
+
+<p>with amplitude \(A\) (\(|x|\) max), phase \(\phi\), period \(T = 2\pi/\omega\), and frequency \(f = \omega/(2\pi)\).</p>
+
+<h2>2. Velocity and Energy Relations</h2>
+
+<div class="equation">\(v^2 = \omega^2(A^2 - x^2)\)</div>
+<p>This follows by integration: max speed \(v_{\max} = A\omega\) at \(x = 0\), zero speed at \(x = \pm A\).</p>
+
+<h3>Energy</h3>
+<div class="equation">\(\text{KE} = \tfrac{1}{2}m v^2 = \tfrac{1}{2}m\omega^2(A^2 - x^2)\)</div>
+<div class="equation">\(\text{PE} = \tfrac{1}{2}m\omega^2 x^2\) &nbsp;(relative to equilibrium)</div>
+<div class="equation">\(\text{Total} = \tfrac{1}{2}m\omega^2 A^2\) &nbsp;(constant).</div>
+
+<h2>3. Springs (Hooke's Law)</h2>
+
+<p>A particle of mass \(m\) attached to a light spring of natural length \(\ell_0\) and stiffness \(k\) (force constant). At extension \(x\) from natural length, spring force = \(-kx\) (restoring).</p>
+
+<p>If the system is displaced from equilibrium by \(y\), Newton's second law gives \(m\ddot{y} = -ky\), so SHM with</p>
+<div class="equation">\(\omega = \sqrt{k/m}, \quad T = 2\pi\sqrt{m/k}.\)</div>
+
+<h3>Spring Hanging Vertically</h3>
+<p>Equilibrium extension \(e\) satisfies \(ke = mg\). Displacement from equilibrium \(y\) satisfies \(m\ddot{y} = -ky\) — same SHM as horizontal. Gravity shifts the equilibrium but does not affect the period.</p>
+
+<h3>Elastic Strings (Modulus of Elasticity \(\lambda\))</h3>
+<p>For a string of natural length \(\ell_0\) and modulus \(\lambda\), the tension at extension \(x\) is \(T = \lambda x/\ell_0\). The effective stiffness is \(k = \lambda/\ell_0\).</p>
+
+<p><em>Caveat:</em> strings cannot be compressed — tension is zero when "extension" would be negative. SHM applies only while the string is taut.</p>
+
+<div class="example">
+  <strong>A particle of mass 2 kg hangs from a spring of natural length 0.5 m and modulus 20 N extended to 1 m equilibrium. Find the period of small oscillations.</strong><br>
+  Stiffness: \(k = \lambda/\ell_0 = 20/0.5 = 40\) N/m.<br>
+  \(\omega = \sqrt{40/2} = \sqrt{20}\). \(T = 2\pi/\omega = 2\pi/\sqrt{20} \approx 1.40\) s.
+</div>
+
+<h2>4. Simple Pendulum</h2>
+
+<p>For small-angle oscillations of a simple pendulum of length \(\ell\):</p>
+<div class="equation">\(\ddot{\theta} = -\dfrac{g}{\ell}\sin\theta \approx -\dfrac{g}{\ell}\theta\) &nbsp;(for small \(\theta\))</div>
+
+<p>SHM with \(\omega = \sqrt{g/\ell}\), \(T = 2\pi\sqrt{\ell/g}\). Period is independent of amplitude (for small swings) and mass.</p>
+
+<h2>5. Time, Position, Velocity</h2>
+
+<p>Given \(x = A\cos(\omega t)\) with \(x_0 = A\), \(\dot{x}_0 = 0\):</p>
+<ul>
+  <li>Time to first zero: \(\omega t = \pi/2\), so \(t = T/4\).</li>
+  <li>Time from \(x = A\) to \(x = A/2\): \(\cos\omega t = 1/2\), so \(\omega t = \pi/3\), \(t = T/6\).</li>
+</ul>
+
+<p>If the particle starts at \(x = 0\) moving in the positive direction with speed \(v_0 = A\omega\), use \(x = A\sin(\omega t)\) instead.</p>
+
+<h2>6. Combining Conditions</h2>
+
+<p>Questions often give you two data points (e.g. \(v\) at a specific \(x\), or position at a specific \(t\)). Use:</p>
+<ul>
+  <li>\(v^2 = \omega^2(A^2 - x^2)\) to link \(v, x, \omega, A\).</li>
+  <li>Initial conditions to fix the phase \(\phi\) in \(x(t) = A\cos(\omega t + \phi)\).</li>
+</ul>
+
+<div class="example">
+  <strong>Particle executes SHM with period 4 s and amplitude 5 cm. Find its speed when \(x = 3\) cm.</strong><br>
+  \(\omega = 2\pi/4 = \pi/2\) rad/s. \(v^2 = (\pi/2)^2 (5^2 - 3^2) = (\pi^2/4)\cdot 16 = 4\pi^2\).<br>
+  \(|v| = 2\pi \approx 6.28\) cm/s.
+</div>
+
+<h2>7. Damped SHM (Contextual)</h2>
+
+<p>Real springs have damping. A linear damping force \(-c\dot{x}\) gives</p>
+<div class="equation">\(m\ddot{x} + c\dot{x} + kx = 0.\)</div>
+
+<p>This is a second-order DE (see §1.9) and exhibits under-, critical-, or over-damping depending on \(c^2\) vs. \(4mk\). Only the undamped case is classical SHM.</p>
+
+<h2>8. Exam Style Strategy</h2>
+<ul>
+  <li>Always identify \(\omega\) first — from the differential equation or from \(T\).</li>
+  <li>Choose an appropriate parametrisation (\(\cos\) if starting at max displacement, \(\sin\) if starting at equilibrium moving).</li>
+  <li>Use energy / \(v^2 = \omega^2(A^2 - x^2)\) for "speed at this \(x\)" questions.</li>
+  <li>For elastic strings, check whether the string is taut throughout — SHM may break down if the particle overshoots.</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]
+    });
+  });
+</script>
+</body>
+</html>

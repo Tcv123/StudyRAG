@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.10: Proof by Induction — OCR A Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR A Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR A-Level Further Mathematics (H245) — Core Pure Section 1.10</p>
+<h1>1.10: Proof by Induction</h1>
+
+<h2>1. The Principle of Mathematical Induction</h2>
+
+<div class="definition">
+  To prove a statement \(P(n)\) holds for all integers \(n \ge n_0\):
+  <ol style="margin-top:6px;">
+    <li><strong>Base case:</strong> show \(P(n_0)\) is true.</li>
+    <li><strong>Inductive step:</strong> assume \(P(k)\) is true for some \(k \ge n_0\), and prove \(P(k+1)\) follows.</li>
+    <li><strong>Conclusion:</strong> by the principle of induction, \(P(n)\) holds for all \(n \ge n_0\).</li>
+  </ol>
+</div>
+
+<p>Think of it as toppling a line of dominoes: (1) push the first one, (2) every domino knocks over the next.</p>
+
+<h2>2. Structure and Marking</h2>
+
+<p>The OCR mark scheme usually awards marks for each of:</p>
+<ul>
+  <li>Establishing the base case (\(n = 1\) or equivalent).</li>
+  <li>Assuming the result for \(n = k\) (state this explicitly).</li>
+  <li>Correctly manipulating the \(n = k+1\) expression.</li>
+  <li>Writing a clear concluding sentence.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>OCR Exam Tip:</strong> The concluding sentence is worth one mark. Aim for something like: <em>"Since \(P(1)\) is true, and \(P(k) \Rightarrow P(k+1)\), by the principle of induction \(P(n)\) is true for all \(n \ge 1\)."</em>
+</div>
+
+<h2>3. Induction with Series</h2>
+
+<div class="example">
+  <strong>Prove that \(\displaystyle \sum_{r=1}^{n} r^2 = \tfrac{1}{6}n(n+1)(2n+1)\) for all \(n \ge 1\).</strong><br><br>
+  <strong>Base \(n=1\):</strong> LHS = 1. RHS = \(\tfrac{1}{6}(1)(2)(3) = 1\). ✓<br><br>
+  <strong>Assume \(n = k\):</strong> \(\sum_{r=1}^{k} r^2 = \tfrac{1}{6}k(k+1)(2k+1)\).<br><br>
+  <strong>Show \(n = k+1\):</strong><br>
+  \(\sum_{r=1}^{k+1} r^2 = \tfrac{1}{6}k(k+1)(2k+1) + (k+1)^2\)<br>
+  \(= \tfrac{1}{6}(k+1)\big[k(2k+1) + 6(k+1)\big]\)<br>
+  \(= \tfrac{1}{6}(k+1)(2k^2 + 7k + 6) = \tfrac{1}{6}(k+1)(k+2)(2k+3)\).<br>
+  This is the RHS with \(n = k+1\). ✓<br><br>
+  <strong>Conclusion:</strong> by induction, the result holds for all \(n \ge 1\). ∎
+</div>
+
+<h2>4. Induction with Divisibility</h2>
+
+<p>To show \(f(n)\) is divisible by \(d\), write</p>
+<div class="equation">\(f(k+1) = f(k) + \text{(something obviously divisible by } d\text{)}\).</div>
+
+<div class="example">
+  <strong>Prove \(4^n + 5^n - 1\) is divisible by 4 for all \(n \ge 1\).</strong><br>
+  Base \(n = 1\): \(4 + 5 - 1 = 8 = 4\cdot 2\). ✓<br>
+  Assume \(4^k + 5^k - 1 = 4m\) for some integer \(m\).<br>
+  Consider \(4^{k+1} + 5^{k+1} - 1 = 4\cdot 4^k + 5\cdot 5^k - 1\).<br>
+  Write \(5\cdot 5^k = 5^k + 4\cdot 5^k\):<br>
+  \(= 4\cdot 4^k + 5^k + 4\cdot 5^k - 1\)<br>
+  \(= (4^k + 5^k - 1) + 3\cdot 4^k + 4\cdot 5^k\)<br>
+  \(= 4m + 3\cdot 4^k + 4\cdot 5^k\)<br>
+  The last two terms: \(3\cdot 4^k = 4(3\cdot 4^{k-1})\), divisible by 4 for \(k \ge 1\). And \(4\cdot 5^k\) is obviously divisible by 4.<br>
+  So \(4^{k+1} + 5^{k+1} - 1\) is divisible by 4. Conclusion: result holds for all \(n \ge 1\). ∎
+</div>
+
+<h2>5. Induction with Matrices</h2>
+
+<div class="example">
+  <strong>Prove that \(\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}^n = \begin{pmatrix} 1 & n \\ 0 & 1 \end{pmatrix}\) for all \(n \ge 1\).</strong><br>
+  <strong>Base \(n=1\):</strong> matches directly. ✓<br>
+  <strong>Assume \(n = k\):</strong> \(\mathbf{M}^k = \begin{pmatrix} 1 & k \\ 0 & 1 \end{pmatrix}\).<br>
+  <strong>Inductive step:</strong> \(\mathbf{M}^{k+1} = \mathbf{M}^k \mathbf{M} = \begin{pmatrix} 1 & k \\ 0 & 1 \end{pmatrix}\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & k+1 \\ 0 & 1 \end{pmatrix}\). ✓<br>
+  Conclusion: the result holds for all \(n \ge 1\). ∎
+</div>
+
+<h2>6. Induction with de Moivre</h2>
+
+<p>The inductive proof of \((\cos\theta + i\sin\theta)^n = \cos n\theta + i\sin n\theta\) for positive integers \(n\) is classical:</p>
+<ul>
+  <li>Base \(n = 1\) trivial.</li>
+  <li>Assume for \(n = k\). Multiply both sides by \((\cos\theta + i\sin\theta)\) and use the compound-angle formulae to simplify to \(\cos(k+1)\theta + i\sin(k+1)\theta\).</li>
+</ul>
+
+<h2>7. Induction with Inequalities</h2>
+
+<div class="example">
+  <strong>Prove \(2^n > n^2\) for all \(n \ge 5\).</strong><br>
+  Base \(n = 5\): \(32 > 25\). ✓<br>
+  Assume \(2^k > k^2\) for some \(k \ge 5\).<br>
+  Then \(2^{k+1} = 2\cdot 2^k > 2k^2\). We want to show \(2k^2 \ge (k+1)^2\).<br>
+  \(2k^2 - (k+1)^2 = 2k^2 - k^2 - 2k - 1 = k^2 - 2k - 1\).<br>
+  For \(k \ge 5\): \(k^2 - 2k - 1 \ge 25 - 10 - 1 = 14 > 0\). ✓<br>
+  So \(2^{k+1} > 2k^2 \ge (k+1)^2\). Conclusion: true for all \(n \ge 5\). ∎
+</div>
+
+<h2>8. Common Mistakes</h2>
+<ul>
+  <li><strong>Forgetting the base case.</strong> The inductive step alone proves nothing.</li>
+  <li><strong>Not stating the assumption clearly.</strong> Always write "assume \(P(k)\) is true".</li>
+  <li><strong>Skipping the concluding sentence.</strong> It's worth a mark.</li>
+  <li><strong>Bad algebra in the inductive step</strong> — factor carefully.</li>
+  <li><strong>Using what you're trying to prove</strong> — use only the assumption \(P(k)\), not \(P(k+1)\).</li>
+</ul>
+
+<h2>9. Template to Copy</h2>
+<div class="definition">
+  <strong>1. Base:</strong> for \(n = 1\), LHS = …, RHS = …, so \(P(1)\) is true.<br>
+  <strong>2. Assume:</strong> \(P(k)\) is true, i.e. …<br>
+  <strong>3. Step:</strong> consider \(P(k+1)\). Using the assumption, … = RHS with \(n = k+1\), so \(P(k+1)\) is true.<br>
+  <strong>4. Conclusion:</strong> since \(P(1)\) is true and \(P(k) \Rightarrow P(k+1)\), by the principle of mathematical induction, \(P(n)\) is true for all \(n \ge 1\).
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]
+    });
+  });
+</script>
+</body>
+</html>

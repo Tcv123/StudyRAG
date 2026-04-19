@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.5: Further Calculus — OCR A Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR A Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR A-Level Further Mathematics (H245) — Core Pure Section 1.5</p>
+<h1>1.5: Further Calculus</h1>
+
+<h2>1. Improper Integrals</h2>
+
+<div class="definition">
+  An integral is <strong>improper</strong> if either (a) a limit is \(\pm\infty\), or (b) the integrand is unbounded at a point in the interval.
+</div>
+
+<p>Evaluate by replacing the problem point by a parameter, then taking a limit:</p>
+<div class="equation">\(\displaystyle \int_{a}^{\infty} f(x)\,dx = \lim_{R\to\infty} \int_{a}^{R} f(x)\,dx\)</div>
+<div class="equation">\(\displaystyle \int_{0}^{1} \dfrac{dx}{\sqrt{x}} = \lim_{\varepsilon\to 0^+}\int_{\varepsilon}^{1} x^{-1/2}\,dx = \lim_{\varepsilon\to 0^+} \left[2\sqrt{x}\right]_{\varepsilon}^{1} = 2.\)</div>
+
+<p>If the limit is finite, the integral <strong>converges</strong>; otherwise it <strong>diverges</strong>.</p>
+
+<h3>Key \(p\)-Integrals</h3>
+<table>
+  <tr><th>Integral</th><th>Converges when</th></tr>
+  <tr><td>\(\int_1^{\infty} x^{-p}\,dx\)</td><td>\(p > 1\)</td></tr>
+  <tr><td>\(\int_0^1 x^{-p}\,dx\)</td><td>\(p < 1\)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>OCR Exam Tip:</strong> Always set up with a limit and show the work — simply writing \(\int_0^{\infty}\) and substituting \(\infty\) directly loses marks.
+</div>
+
+<h2>2. The Mean Value of a Function</h2>
+
+<div class="definition">
+  The mean (average) value of \(f\) on \([a, b]\) is
+  \[\bar{f} = \dfrac{1}{b - a}\int_a^b f(x)\,dx.\]
+</div>
+
+<div class="example">
+  <strong>Mean of \(f(x) = \sin x\) on \([0, \pi]\):</strong><br>
+  \(\bar{f} = \dfrac{1}{\pi}\int_0^{\pi}\sin x\,dx = \dfrac{1}{\pi}[-\cos x]_0^{\pi} = \dfrac{1}{\pi}(1 + 1) = \dfrac{2}{\pi}.\)
+</div>
+
+<h2>3. Integration by Partial Fractions</h2>
+
+<p>Once a rational function is split into partial fractions (see §1.3), each piece integrates as:</p>
+<ul>
+  <li>\(\int \dfrac{A}{ax + b}\,dx = \dfrac{A}{a}\ln|ax + b| + C\)</li>
+  <li>\(\int \dfrac{A}{(ax+b)^n}\,dx = \dfrac{A}{a(1-n)(ax+b)^{n-1}} + C\) &nbsp;(for \(n \ne 1\))</li>
+  <li>For \(\dfrac{Ax + B}{x^2 + c^2}\), split into \(\tfrac{A}{2}\ln|x^2 + c^2|\) (from \(d/dx\) of denominator) + \(\tfrac{B}{c}\arctan(x/c)\).</li>
+</ul>
+
+<h2>4. Integration Using Trig Substitution</h2>
+
+<table>
+  <tr><th>Integrand contains</th><th>Substitution</th><th>Derivation</th></tr>
+  <tr><td>\(\sqrt{a^2 - x^2}\)</td><td>\(x = a\sin\theta\)</td><td>\(dx = a\cos\theta\,d\theta\)</td></tr>
+  <tr><td>\(\dfrac{1}{a^2 + x^2}\)</td><td>\(x = a\tan\theta\)</td><td>\(dx = a\sec^2\theta\,d\theta\)</td></tr>
+  <tr><td>\(\sqrt{x^2 - a^2}\)</td><td>\(x = a\sec\theta\) or \(x = a\cosh u\)</td><td>Hyperbolic often easier</td></tr>
+</table>
+
+<h3>Standard Results (Formula Booklet)</h3>
+<div class="equation">\(\displaystyle \int \dfrac{dx}{\sqrt{a^2 - x^2}} = \arcsin\left(\dfrac{x}{a}\right) + C\)</div>
+<div class="equation">\(\displaystyle \int \dfrac{dx}{a^2 + x^2} = \dfrac{1}{a}\arctan\left(\dfrac{x}{a}\right) + C\)</div>
+<div class="equation">\(\displaystyle \int \dfrac{dx}{\sqrt{x^2 + a^2}} = \operatorname{arsinh}\left(\dfrac{x}{a}\right) + C\)</div>
+<div class="equation">\(\displaystyle \int \dfrac{dx}{\sqrt{x^2 - a^2}} = \operatorname{arcosh}\left(\dfrac{x}{a}\right) + C\) &nbsp;(for \(x \ge a\))</div>
+
+<h2>5. Reduction Formulae</h2>
+
+<div class="definition">
+  A <strong>reduction formula</strong> expresses an integral \(I_n\) (depending on integer \(n\)) in terms of \(I_{n-1}\) or earlier values, allowing successive calculation.
+</div>
+
+<p>Usually derived by <strong>integration by parts</strong>.</p>
+
+<div class="example">
+  <strong>Derive a reduction formula for \(I_n = \int_0^{\pi/2} \sin^n x\,dx\).</strong><br>
+  Let \(u = \sin^{n-1}x\), \(dv = \sin x\,dx\), so \(du = (n-1)\sin^{n-2}x \cos x\,dx\), \(v = -\cos x\).<br>
+  \(I_n = [-\sin^{n-1}x \cos x]_0^{\pi/2} + (n-1)\int_0^{\pi/2}\sin^{n-2}x \cos^2 x\,dx\)<br>
+  The boundary term vanishes (both endpoints give zero). Use \(\cos^2 x = 1 - \sin^2 x\):<br>
+  \(I_n = (n-1)(I_{n-2} - I_n)\) &nbsp;\(\Rightarrow\) &nbsp;\(nI_n = (n-1)I_{n-2}\) &nbsp;\(\Rightarrow\) &nbsp;\(I_n = \dfrac{n-1}{n}I_{n-2}\).
+</div>
+
+<div class="example">
+  <strong>Hence find \(\int_0^{\pi/2}\sin^6 x\,dx\).</strong><br>
+  \(I_0 = \pi/2\). \(I_2 = \tfrac{1}{2}I_0 = \pi/4\). \(I_4 = \tfrac{3}{4}I_2 = 3\pi/16\). \(I_6 = \tfrac{5}{6}I_4 = \dfrac{15\pi}{96} = \dfrac{5\pi}{32}\).
+</div>
+
+<div class="exam-tip">
+  <strong>OCR Exam Tip:</strong> State the substitution or choice of \(u\) and \(dv\) clearly. When the boundary terms vanish, <em>say so</em> and give the values — don't just drop them silently.
+</div>
+
+<h2>6. Arc Length</h2>
+
+<p>The length of the curve \(y = f(x)\) from \(x = a\) to \(x = b\) is</p>
+<div class="equation">\(\displaystyle L = \int_a^b \sqrt{1 + \left(\dfrac{dy}{dx}\right)^2}\,dx.\)</div>
+
+<p>For parametric curves \(x = x(t)\), \(y = y(t)\):</p>
+<div class="equation">\(\displaystyle L = \int_{t_1}^{t_2} \sqrt{\left(\dfrac{dx}{dt}\right)^2 + \left(\dfrac{dy}{dt}\right)^2}\,dt.\)</div>
+
+<div class="example">
+  <strong>Arc length of \(y = \tfrac{2}{3}x^{3/2}\) from \(x=0\) to \(x=3\).</strong><br>
+  \(\dfrac{dy}{dx} = x^{1/2}\), so integrand \(= \sqrt{1 + x}\).<br>
+  \(L = \int_0^3 \sqrt{1+x}\,dx = \left[\tfrac{2}{3}(1+x)^{3/2}\right]_0^3 = \tfrac{2}{3}(8 - 1) = \tfrac{14}{3}.\)
+</div>
+
+<h2>7. Surface Area of Revolution</h2>
+
+<p>Rotating \(y = f(x)\), \(a \le x \le b\), about the \(x\)-axis produces a surface of area</p>
+<div class="equation">\(\displaystyle S = 2\pi\int_a^b y\,\sqrt{1 + \left(\dfrac{dy}{dx}\right)^2}\,dx.\)</div>
+
+<p>About the \(y\)-axis (if \(x \ge 0\) throughout):</p>
+<div class="equation">\(\displaystyle S = 2\pi\int_a^b x\,\sqrt{1 + \left(\dfrac{dy}{dx}\right)^2}\,dx.\)</div>
+
+<p>Parametric form: replace \(\sqrt{1 + (dy/dx)^2}\,dx\) by \(\sqrt{(dx/dt)^2 + (dy/dt)^2}\,dt\) and \(y\) (or \(x\)) by its parametric expression.</p>
+
+<h2>8. Polar and Parametric Forms (Support)</h2>
+<p>Polar arc length and area are covered in §1.7; here we note that calculus on curves in any representation comes down to arc length element \(ds\):</p>
+<div class="equation">\(ds^2 = dx^2 + dy^2\)</div>
+
+<h2>9. Exam Style Strategy</h2>
+<ul>
+  <li>For improper integrals, show the limit explicitly.</li>
+  <li>For reduction formulae, establish the base case(s) \(I_0\) or \(I_1\) cleanly.</li>
+  <li>Arc length and surface integrals are sensitive to the <em>axis</em> of rotation — reread the question.</li>
+  <li>Trig / hyperbolic substitutions: write down both the substitution and \(dx\); update limits if definite.</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]
+    });
+  });
+</script>
+</body>
+</html>

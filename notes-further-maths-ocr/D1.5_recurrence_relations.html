@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D1.5: Recurrence Relations — OCR A Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR A Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR A-Level Further Mathematics (H245) — Discrete Option Section D1.5</p>
+<h1>D1.5: Recurrence Relations</h1>
+
+<h2>1. What Is a Recurrence Relation?</h2>
+
+<div class="definition">
+  A <strong>recurrence relation</strong> defines a sequence \(u_0, u_1, u_2, \ldots\) by expressing each term as a function of earlier terms. The <strong>order</strong> is the largest gap between the current term and the earliest term referenced.
+</div>
+
+<ul>
+  <li>First-order linear: \(u_{n+1} = au_n + b\).</li>
+  <li>Second-order linear: \(u_{n+2} + pu_{n+1} + qu_n = f(n)\).</li>
+  <li>Homogeneous if \(f(n) = 0\) on the RHS.</li>
+</ul>
+
+<h2>2. First-Order Linear Recurrence</h2>
+
+<p>For \(u_{n+1} = au_n + b\):</p>
+
+<h3>Case \(a = 1\):</h3>
+<p>\(u_{n+1} = u_n + b\) — arithmetic; \(u_n = u_0 + nb\).</p>
+
+<h3>Case \(a \ne 1\):</h3>
+<p>General solution:</p>
+<div class="equation">\(u_n = Aa^n + \dfrac{b}{1 - a}\) &nbsp;(constant particular solution).</div>
+
+<p>Apply the initial condition \(u_0\) to find \(A\).</p>
+
+<div class="example">
+  <strong>Solve \(u_{n+1} = 3u_n - 4\) with \(u_0 = 5\).</strong><br>
+  CF: \(Aa^n = A\cdot 3^n\). PI: try \(u_n = k\) constant: \(k = 3k - 4 \Rightarrow k = 2\).<br>
+  \(u_n = A\cdot 3^n + 2\). \(u_0 = 5 \Rightarrow A = 3\). So \(u_n = 3\cdot 3^n + 2 = 3^{n+1} + 2\).
+</div>
+
+<h2>3. Second-Order Linear Homogeneous Recurrence</h2>
+
+<p>For \(u_{n+2} + pu_{n+1} + qu_n = 0\), try \(u_n = m^n\):</p>
+<div class="equation">m^2 + pm + q = 0 \quad \text{(auxiliary equation)}.</div>
+
+<table>
+  <tr><th>Roots</th><th>General solution</th></tr>
+  <tr><td>Distinct real \(m_1, m_2\)</td><td>\(u_n = A m_1^n + B m_2^n\)</td></tr>
+  <tr><td>Repeated real \(m\)</td><td>\(u_n = (A + Bn)m^n\)</td></tr>
+  <tr><td>Complex \(m = r e^{\pm i\theta}\)</td><td>\(u_n = r^n(A\cos n\theta + B\sin n\theta)\)</td></tr>
+</table>
+
+<div class="example">
+  <strong>Solve the Fibonacci recurrence \(F_{n+2} = F_{n+1} + F_n\) with \(F_0 = 0, F_1 = 1\).</strong><br>
+  Auxiliary: \(m^2 - m - 1 = 0 \Rightarrow m = \phi = \tfrac{1 + \sqrt{5}}{2}\) or \(\psi = \tfrac{1 - \sqrt{5}}{2}\).<br>
+  \(F_n = A\phi^n + B\psi^n\). ICs: \(A + B = 0\), \(A\phi + B\psi = 1\).<br>
+  Solve: \(A = 1/\sqrt{5}\), \(B = -1/\sqrt{5}\). Binet's formula:
+  \[F_n = \dfrac{\phi^n - \psi^n}{\sqrt{5}}.\]
+</div>
+
+<h2>4. Non-Homogeneous: Particular Solution (PI)</h2>
+
+<p>For \(u_{n+2} + pu_{n+1} + qu_n = f(n)\):</p>
+<div class="equation">\(u_n = u_{n,CF} + u_{n,PI}.\)</div>
+
+<table>
+  <tr><th>\(f(n)\)</th><th>Trial PI</th></tr>
+  <tr><td>Constant \(c\)</td><td>\(u_n = k\) constant</td></tr>
+  <tr><td>Polynomial of degree \(d\)</td><td>Polynomial of the same degree</td></tr>
+  <tr><td>\(c k^n\)</td><td>\(A k^n\) if \(k\) is not a root of the aux eqn; \(An k^n\) if it's a simple root; \(An^2 k^n\) if double root</td></tr>
+</table>
+
+<div class="example">
+  <strong>Solve \(u_{n+2} - 3u_{n+1} + 2u_n = 4\) with \(u_0 = 1, u_1 = 2\).</strong><br>
+  Aux: \(m^2 - 3m + 2 = 0 \Rightarrow m = 1, 2\). \(u_{n,CF} = A + B\cdot 2^n\).<br>
+  But 1 is a root (so constant \(k\) alone doesn't work); try \(u_n = kn\): substitute<br>
+  \(k(n+2) - 3k(n+1) + 2kn = 4 \Rightarrow -k = 4 \Rightarrow k = -4\). PI: \(-4n\).<br>
+  GS: \(u_n = A + B\cdot 2^n - 4n\). ICs: \(A + B = 1\), \(A + 2B - 4 = 2 \Rightarrow A + 2B = 6\).<br>
+  Subtract: \(B = 5, A = -4\). So \(u_n = -4 + 5\cdot 2^n - 4n\).
+</div>
+
+<h2>5. Applications</h2>
+
+<h3>Compound Interest (First Order)</h3>
+<p>\(B_{n+1} = (1 + r)B_n + D\) (balance after \(n\)th period; \(D\) is any monthly deposit).</p>
+
+<h3>Population with Immigration (First Order)</h3>
+<p>\(P_{n+1} = kP_n + I\), where \(k\) is the growth rate and \(I\) is a constant influx.</p>
+
+<h3>Tower of Hanoi</h3>
+<p>\(T_n = 2T_{n-1} + 1\), \(T_1 = 1\), giving \(T_n = 2^n - 1\).</p>
+
+<h3>Counting Combinatorial Structures</h3>
+<p>The number of binary strings of length \(n\) without consecutive 1s satisfies \(a_{n} = a_{n-1} + a_{n-2}\) — Fibonacci-like.</p>
+
+<h2>6. Behaviour as \(n \to \infty\)</h2>
+
+<ul>
+  <li>If \(|m_i| < 1\) for all aux roots, \(u_n \to\) PI (decaying transient).</li>
+  <li>If some \(|m_i| > 1\), \(u_n\) grows without bound.</li>
+  <li>If \(|m_i| = 1\), behaviour depends on multiplicity and other roots.</li>
+</ul>
+
+<h2>7. Exam Style Strategy</h2>
+<ul>
+  <li>For first-order linear: find CF + PI, apply initial condition.</li>
+  <li>For second-order: solve aux, identify CF form, then PI using the right trial.</li>
+  <li>Always check with \(u_0\) and \(u_1\) that your formula reproduces them.</li>
+  <li>If the trial form clashes with CF, multiply by \(n\) (or \(n^2\) for double clash) — exactly parallels DEs in §1.9.</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.9: Differential Equations — OCR A Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR A Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR A-Level Further Mathematics (H245) — Core Pure Section 1.9</p>
+<h1>1.9: Differential Equations</h1>
+
+<h2>1. Terminology and Classification</h2>
+
+<div class="definition">
+  A differential equation (DE) relates a function to its derivatives. The <strong>order</strong> is the highest derivative. A DE is <strong>linear</strong> if the unknown and its derivatives appear only to the first power and not multiplied together. Linear DEs are <strong>homogeneous</strong> if the RHS is zero.
+</div>
+
+<p>OCR A covers first-order linear DEs, second-order linear DEs with constant coefficients, and coupled first-order systems.</p>
+
+<h2>2. First-Order Linear DEs — Integrating Factor</h2>
+
+<p>For a DE of the form</p>
+<div class="equation">\(\dfrac{dy}{dx} + P(x)\,y = Q(x),\)</div>
+
+<p>multiply through by the <strong>integrating factor</strong></p>
+<div class="equation">\(\mu(x) = e^{\int P(x)\,dx}.\)</div>
+
+<p>The left side becomes \(\dfrac{d}{dx}(\mu y)\), so</p>
+<div class="equation">\(\mu y = \int \mu(x)\,Q(x)\,dx + C.\)</div>
+
+<div class="example">
+  <strong>Solve \(\dfrac{dy}{dx} + \dfrac{2y}{x} = x\).</strong><br>
+  Here \(P = 2/x\), so \(\mu = e^{\int 2/x\,dx} = e^{2\ln x} = x^2\).<br>
+  Multiply: \(x^2 y' + 2xy = x^3 \Rightarrow \tfrac{d}{dx}(x^2 y) = x^3\).<br>
+  Integrate: \(x^2 y = \tfrac{x^4}{4} + C \Rightarrow y = \tfrac{x^2}{4} + \tfrac{C}{x^2}\).
+</div>
+
+<h2>3. Second-Order Linear Homogeneous DEs with Constant Coefficients</h2>
+
+<p>For</p>
+<div class="equation">\(a\dfrac{d^2 y}{dx^2} + b\dfrac{dy}{dx} + cy = 0,\)</div>
+
+<p>try \(y = e^{mx}\) to obtain the <strong>auxiliary equation</strong> \(am^2 + bm + c = 0\).</p>
+
+<table>
+  <tr><th>Roots</th><th>General solution</th></tr>
+  <tr><td>Two distinct real \(m_1, m_2\)</td><td>\(y = Ae^{m_1 x} + Be^{m_2 x}\)</td></tr>
+  <tr><td>Repeated real \(m\)</td><td>\(y = (A + Bx)e^{mx}\)</td></tr>
+  <tr><td>Complex \(m = p \pm iq\)</td><td>\(y = e^{px}(A\cos qx + B\sin qx)\)</td></tr>
+</table>
+
+<div class="example">
+  <strong>Solve \(y'' - 4y' + 13y = 0\).</strong><br>
+  Auxiliary: \(m^2 - 4m + 13 = 0 \Rightarrow m = 2 \pm 3i\).<br>
+  GS: \(y = e^{2x}(A\cos 3x + B\sin 3x)\).
+</div>
+
+<h2>4. Non-Homogeneous Second-Order DEs</h2>
+
+<p>For \(ay'' + by' + cy = f(x)\) the general solution is</p>
+<div class="equation">\(y = y_{CF} + y_{PI}\)</div>
+
+<ul>
+  <li>\(y_{CF}\) (complementary function): the GS of the <em>homogeneous</em> version (§3).</li>
+  <li>\(y_{PI}\) (particular integral): any single function satisfying the full DE.</li>
+</ul>
+
+<h3>Trial Functions for PI</h3>
+
+<table>
+  <tr><th>\(f(x)\)</th><th>Trial \(y_{PI}\)</th></tr>
+  <tr><td>Polynomial of degree \(n\)</td><td>General polynomial of degree \(n\)</td></tr>
+  <tr><td>\(e^{\lambda x}\)</td><td>\(Pe^{\lambda x}\) (unless \(\lambda\) is already a root of the aux eqn)</td></tr>
+  <tr><td>\(\sin\omega x\) or \(\cos\omega x\)</td><td>\(P\cos\omega x + Q\sin\omega x\)</td></tr>
+  <tr><td>Combination</td><td>Sum of the corresponding trials</td></tr>
+</table>
+
+<div class="warning" style="background:#fee2e2;border-left:4px solid #dc2626;padding:14px 18px;border-radius:6px;margin:15px 0;">
+  If the chosen trial form is already part of \(y_{CF}\), multiply by \(x\) (or \(x^2\) for a repeated root) before substituting.
+</div>
+
+<div class="example">
+  <strong>Solve \(y'' - 3y' + 2y = 4e^{3x}\).</strong><br>
+  CF: \(m^2 - 3m + 2 = 0 \Rightarrow m = 1, 2\). \(y_{CF} = Ae^x + Be^{2x}\).<br>
+  PI: try \(y = Pe^{3x}\). \(y' = 3Pe^{3x}\), \(y'' = 9Pe^{3x}\).<br>
+  Substitute: \((9P - 9P + 2P)e^{3x} = 4e^{3x} \Rightarrow 2P = 4 \Rightarrow P = 2\).<br>
+  GS: \(y = Ae^x + Be^{2x} + 2e^{3x}\).
+</div>
+
+<h3>Boundary/Initial Conditions</h3>
+<p>Use to pin down \(A, B\). Apply after writing the GS.</p>
+
+<h2>5. Coupled First-Order Linear Systems</h2>
+
+<p>A pair like</p>
+<div class="equation">\(\dfrac{dx}{dt} = 3x + y, \qquad \dfrac{dy}{dt} = -2x + y\)</div>
+
+<p>can be solved by <strong>elimination</strong>: differentiate one equation and substitute to get a second-order DE in a single variable.</p>
+
+<div class="example">
+  <strong>From the system above:</strong><br>
+  Differentiate the first: \(x'' = 3x' + y'\). Substitute \(y' = -2x + y\) and \(y = x' - 3x\):<br>
+  \(x'' = 3x' + (-2x) + (x' - 3x) = 4x' - 5x\).<br>
+  So \(x'' - 4x' + 5x = 0\). Aux: \(m^2 - 4m + 5 = 0 \Rightarrow m = 2 \pm i\).<br>
+  \(x = e^{2t}(A\cos t + B\sin t)\), and \(y = x' - 3x\).
+</div>
+
+<p>Alternatively (richer option — FP2 level): write as a matrix system \(\dot{\mathbf{z}} = \mathbf{A}\mathbf{z}\) and diagonalise (see §1.2).</p>
+
+<h2>6. Modelling with Differential Equations</h2>
+
+<h3>Newton's Law of Cooling</h3>
+<div class="equation">\(\dfrac{dT}{dt} = -k(T - T_{\text{env}})\)</div>
+<p>Separable: \(T = T_{\text{env}} + Ce^{-kt}\).</p>
+
+<h3>Exponential Growth/Decay</h3>
+<div class="equation">\(\dfrac{dN}{dt} = kN \Rightarrow N = N_0 e^{kt}\)</div>
+
+<h3>Mechanical Oscillators (Damped Harmonic Motion)</h3>
+<div class="equation">\(m\ddot{x} + c\dot{x} + kx = F(t)\)</div>
+<ul>
+  <li><strong>Underdamped</strong> (\(c^2 < 4mk\)): complex roots — oscillation with decaying amplitude.</li>
+  <li><strong>Critically damped</strong> (\(c^2 = 4mk\)): repeated real root — fastest non-oscillating decay.</li>
+  <li><strong>Overdamped</strong> (\(c^2 > 4mk\)): two real negative roots — slow decay without oscillation.</li>
+</ul>
+
+<h3>Resonance</h3>
+<p>When the driving frequency matches the natural frequency of an undamped oscillator, the PI trial \(P\cos\omega t + Q\sin\omega t\) fails because it's already in \(y_{CF}\). Multiplying by \(t\) gives unbounded growth — <em>resonance</em>.</p>
+
+<h2>7. Exam Style Strategy</h2>
+<ul>
+  <li>First-order linear: identify \(P(x)\), compute \(\mu\), <em>don't forget</em> the constant of integration.</li>
+  <li>Second-order: always write the auxiliary equation and classify its roots before the PI trial.</li>
+  <li>If your PI trial clashes with the CF, multiply by \(x\) — this is the single most common mistake.</li>
+  <li>Always apply initial conditions <em>after</em> writing the GS, and simplify.</li>
+  <li>In modelling questions, interpret constants physically (e.g. "\(k > 0\) represents the cooling rate").</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]
+    });
+  });
+</script>
+</body>
+</html>

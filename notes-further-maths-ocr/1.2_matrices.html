@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.2: Matrices — OCR A Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+  .warning { background: #fee2e2; border-left: 4px solid #dc2626; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+  .diagram { display: flex; justify-content: center; margin: 20px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR A Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR A-Level Further Mathematics (H245) — Core Pure Section 1.2</p>
+<h1>1.2: Matrices</h1>
+
+<h2>1. What Is a Matrix?</h2>
+
+<div class="definition">
+  A <strong>matrix</strong> is a rectangular array of numbers arranged in rows and columns. A matrix with \(m\) rows and \(n\) columns has <strong>order</strong> \(m \times n\).
+</div>
+
+<p>We write \(\mathbf{A} = (a_{ij})\) where \(a_{ij}\) is the entry in row \(i\), column \(j\). A <strong>square matrix</strong> has \(m = n\). A <strong>column vector</strong> is \(n \times 1\); a <strong>row vector</strong> is \(1 \times n\).</p>
+
+<h2>2. Matrix Arithmetic</h2>
+
+<h3>Addition and Scalar Multiplication</h3>
+<p>Two matrices of the same order are added element-wise. Scalar multiplication multiplies every entry.</p>
+<div class="equation">\((\mathbf{A} + \mathbf{B})_{ij} = a_{ij} + b_{ij}, \quad (k\mathbf{A})_{ij} = k\,a_{ij}\)</div>
+
+<h3>Matrix Multiplication</h3>
+<div class="definition">
+  If \(\mathbf{A}\) is \(m \times n\) and \(\mathbf{B}\) is \(n \times p\), then the product \(\mathbf{AB}\) is \(m \times p\) with entries
+  \[(\mathbf{AB})_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}.\]
+  The inner dimensions must match.
+</div>
+
+<div class="warning">
+  Matrix multiplication is <strong>not commutative</strong>: in general \(\mathbf{AB} \neq \mathbf{BA}\). It <em>is</em> associative: \(\mathbf{(AB)C} = \mathbf{A(BC)}\).
+</div>
+
+<div class="example">
+  \(\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} = \begin{pmatrix} 1\cdot5+2\cdot7 & 1\cdot6+2\cdot8 \\ 3\cdot5+4\cdot7 & 3\cdot6+4\cdot8 \end{pmatrix} = \begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix}\).
+</div>
+
+<h3>Identity and Zero Matrices</h3>
+<p>The \(n \times n\) identity matrix \(\mathbf{I}\) has ones on the main diagonal and zeros elsewhere, satisfying \(\mathbf{AI} = \mathbf{IA} = \mathbf{A}\). The zero matrix \(\mathbf{0}\) has all entries zero.</p>
+
+<h2>3. Determinants</h2>
+
+<h3>\(2\times2\) Determinant</h3>
+<div class="equation">\(\det \begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc\)</div>
+
+<h3>\(3\times3\) Determinant (Expansion Along the First Row)</h3>
+<div class="equation">
+\(\det \begin{pmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{pmatrix}
+  = a_1\!\begin{vmatrix} b_2 & b_3 \\ c_2 & c_3 \end{vmatrix}
+  - a_2\!\begin{vmatrix} b_1 & b_3 \\ c_1 & c_3 \end{vmatrix}
+  + a_3\!\begin{vmatrix} b_1 & b_2 \\ c_1 & c_2 \end{vmatrix}\)
+</div>
+
+<p>Signs alternate \((+,-,+,\ldots)\) across the row. Expansion along any row or column gives the same answer — choose a row/column with zeros to make life easier.</p>
+
+<h3>Key Properties</h3>
+<ul>
+  <li>\(\det(\mathbf{AB}) = \det(\mathbf{A})\det(\mathbf{B})\)</li>
+  <li>\(\det(\mathbf{A}^T) = \det(\mathbf{A})\)</li>
+  <li>\(\det(k\mathbf{A}) = k^n \det(\mathbf{A})\) for an \(n \times n\) matrix</li>
+  <li>\(\det(\mathbf{A}^{-1}) = 1/\det(\mathbf{A})\)</li>
+  <li>If \(\det(\mathbf{A}) = 0\), \(\mathbf{A}\) is <strong>singular</strong> (no inverse exists).</li>
+</ul>
+
+<h3>Geometric Meaning</h3>
+<p>\(|\det(\mathbf{A})|\) is the scale factor for areas (2D) or volumes (3D) under the linear transformation \(\mathbf{x} \mapsto \mathbf{A}\mathbf{x}\). Negative determinant signifies a reflection (reverses orientation).</p>
+
+<h2>4. Inverse Matrices</h2>
+
+<h3>\(2\times2\) Inverse</h3>
+<div class="equation">
+\(\mathbf{A} = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \implies \mathbf{A}^{-1} = \dfrac{1}{ad - bc} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}\) &nbsp;(provided \(ad - bc \ne 0\)).
+</div>
+
+<h3>\(3\times3\) Inverse (Adjugate Formula)</h3>
+<p>For a \(3\times3\) matrix \(\mathbf{A}\) with \(\det\mathbf{A} \ne 0\):</p>
+<div class="equation">\(\mathbf{A}^{-1} = \dfrac{1}{\det\mathbf{A}}\, \operatorname{adj}(\mathbf{A})\)</div>
+
+<p>The adjugate (adjoint) is the <em>transpose of the cofactor matrix</em>:</p>
+<ol>
+  <li>Compute the cofactor \(C_{ij} = (-1)^{i+j} M_{ij}\), where \(M_{ij}\) is the determinant of the \(2\times2\) minor obtained by deleting row \(i\) and column \(j\).</li>
+  <li>Form the cofactor matrix \(\mathbf{C} = (C_{ij})\).</li>
+  <li>Transpose: \(\operatorname{adj}(\mathbf{A}) = \mathbf{C}^T\).</li>
+</ol>
+
+<h3>Inverse Properties</h3>
+<ul>
+  <li>\((\mathbf{AB})^{-1} = \mathbf{B}^{-1}\mathbf{A}^{-1}\) — <em>note the reversed order</em>.</li>
+  <li>\((\mathbf{A}^{-1})^{-1} = \mathbf{A}\), \((\mathbf{A}^T)^{-1} = (\mathbf{A}^{-1})^T\).</li>
+</ul>
+
+<h2>5. Solving Simultaneous Equations with Matrices</h2>
+
+<p>A system \(a_{11}x + a_{12}y + a_{13}z = d_1\), etc., becomes \(\mathbf{A}\mathbf{x} = \mathbf{d}\), with solution</p>
+<div class="equation">\(\mathbf{x} = \mathbf{A}^{-1}\mathbf{d}\) &nbsp;(when \(\mathbf{A}\) is invertible).</div>
+
+<h3>Geometric Interpretation of \(3\times3\) Systems</h3>
+
+<table>
+  <tr><th>\(\det \mathbf{A}\)</th><th>Geometry</th><th>Number of solutions</th></tr>
+  <tr><td>\(\neq 0\)</td><td>Three planes meet at a single point</td><td>Unique solution</td></tr>
+  <tr><td>\(= 0\), consistent</td><td>Three planes share a line (sheaf) or coincide</td><td>Infinitely many solutions</td></tr>
+  <tr><td>\(= 0\), inconsistent</td><td>Three planes form a prism (no common point)</td><td>No solution</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>OCR Exam Tip:</strong> When \(\det \mathbf{A} = 0\), you must investigate further by elimination to decide between the "sheaf" and "prism" cases.
+</div>
+
+<h2>6. Linear Transformations</h2>
+
+<p>A \(2\times2\) (or \(3\times3\)) matrix \(\mathbf{M}\) represents a linear transformation \(\mathbf{x} \mapsto \mathbf{M}\mathbf{x}\). Linear transformations fix the origin and preserve straight lines.</p>
+
+<h3>Standard 2D Transformations</h3>
+<table>
+  <tr><th>Transformation</th><th>Matrix</th></tr>
+  <tr><td>Rotation by \(\theta\) anticlockwise</td><td>\(\begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}\)</td></tr>
+  <tr><td>Reflection in \(y = x\tan\theta\)</td><td>\(\begin{pmatrix} \cos 2\theta & \sin 2\theta \\ \sin 2\theta & -\cos 2\theta \end{pmatrix}\)</td></tr>
+  <tr><td>Reflection in \(x\)-axis</td><td>\(\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\)</td></tr>
+  <tr><td>Reflection in \(y\)-axis</td><td>\(\begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}\)</td></tr>
+  <tr><td>Enlargement, scale factor \(k\)</td><td>\(\begin{pmatrix} k & 0 \\ 0 & k \end{pmatrix}\)</td></tr>
+  <tr><td>Stretch parallel to \(x\)-axis, factor \(k\)</td><td>\(\begin{pmatrix} k & 0 \\ 0 & 1 \end{pmatrix}\)</td></tr>
+  <tr><td>Shear parallel to \(x\)-axis by \(k\)</td><td>\(\begin{pmatrix} 1 & k \\ 0 & 1 \end{pmatrix}\)</td></tr>
+</table>
+
+<h3>Composing Transformations</h3>
+<p>If you first apply \(\mathbf{P}\) then \(\mathbf{Q}\), the combined matrix is \(\mathbf{QP}\) — the <em>second</em> transformation is on the <em>left</em>.</p>
+
+<div class="example">
+  <strong>Find the matrix for a rotation \(90°\) anticlockwise followed by reflection in the \(x\)-axis.</strong><br>
+  \(\mathbf{R} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\), \(\mathbf{F} = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\).<br>
+  Combined: \(\mathbf{F}\mathbf{R} = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ -1 & 0 \end{pmatrix}\).<br>
+  This is reflection in the line \(y = -x\).
+</div>
+
+<h2>7. Invariant Points and Lines</h2>
+
+<div class="definition">
+  <strong>Invariant point:</strong> a point \(\mathbf{p}\) with \(\mathbf{M}\mathbf{p} = \mathbf{p}\).<br>
+  <strong>Invariant line:</strong> a line mapped to itself (as a set of points — individual points may move along the line).<br>
+  <strong>Line of invariant points:</strong> a line on which every point is invariant.
+</div>
+
+<p>Solve \((\mathbf{M} - \mathbf{I})\mathbf{p} = \mathbf{0}\) to find invariant points. For invariant lines, set up a generic point on the line, transform it, and require the image to lie on the line.</p>
+
+<h2>8. Eigenvalues and Eigenvectors</h2>
+
+<div class="definition">
+  A non-zero vector \(\mathbf{v}\) is an <strong>eigenvector</strong> of \(\mathbf{A}\) with <strong>eigenvalue</strong> \(\lambda\) if
+  \[\mathbf{A}\mathbf{v} = \lambda \mathbf{v}.\]
+</div>
+
+<h3>Finding Eigenvalues — the Characteristic Equation</h3>
+<p>\(\mathbf{Av} = \lambda\mathbf{v} \Leftrightarrow (\mathbf{A} - \lambda\mathbf{I})\mathbf{v} = \mathbf{0}\) with \(\mathbf{v} \ne \mathbf{0}\), which requires:</p>
+<div class="equation">\(\det(\mathbf{A} - \lambda \mathbf{I}) = 0\)</div>
+
+<p>For a \(2\times2\) matrix this is a quadratic in \(\lambda\); for \(3\times3\) it is a cubic.</p>
+
+<h3>Finding Eigenvectors</h3>
+<p>For each eigenvalue \(\lambda\), solve \((\mathbf{A} - \lambda\mathbf{I})\mathbf{v} = \mathbf{0}\) — you always get an infinite family (the solution is a line/plane). Pick a convenient non-zero representative.</p>
+
+<div class="example">
+  <strong>Find eigenvalues and eigenvectors of \(\mathbf{A} = \begin{pmatrix} 4 & 1 \\ 2 & 3 \end{pmatrix}\).</strong><br>
+  \(\det(\mathbf{A} - \lambda\mathbf{I}) = (4 - \lambda)(3 - \lambda) - 2 = \lambda^2 - 7\lambda + 10 = 0\).<br>
+  Eigenvalues: \(\lambda = 2, 5\).<br>
+  \(\lambda = 5\): \(\begin{pmatrix} -1 & 1 \\ 2 & -2 \end{pmatrix}\mathbf{v} = 0 \Rightarrow \mathbf{v} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}\).<br>
+  \(\lambda = 2\): \(\begin{pmatrix} 2 & 1 \\ 2 & 1 \end{pmatrix}\mathbf{v} = 0 \Rightarrow \mathbf{v} = \begin{pmatrix} 1 \\ -2 \end{pmatrix}\).
+</div>
+
+<h2>9. Diagonalisation</h2>
+
+<div class="definition">
+  If an \(n \times n\) matrix \(\mathbf{A}\) has \(n\) linearly independent eigenvectors, it can be written as
+  \[\mathbf{A} = \mathbf{P}\mathbf{D}\mathbf{P}^{-1}\]
+  where \(\mathbf{D}\) is diagonal with eigenvalues on the diagonal, and \(\mathbf{P}\) has the corresponding eigenvectors as columns (in the same order).
+</div>
+
+<h3>Why It Matters</h3>
+<p>Powers and exponentials become easy:</p>
+<div class="equation">\(\mathbf{A}^n = \mathbf{P}\mathbf{D}^n\mathbf{P}^{-1}\)</div>
+<p>where \(\mathbf{D}^n\) just raises each diagonal entry to the \(n\)th power.</p>
+
+<div class="example">
+  <strong>Using the previous example, compute \(\mathbf{A}^{10}\).</strong><br>
+  \(\mathbf{P} = \begin{pmatrix} 1 & 1 \\ 1 & -2 \end{pmatrix}\), \(\mathbf{D} = \begin{pmatrix} 5 & 0 \\ 0 & 2 \end{pmatrix}\).<br>
+  \(\det\mathbf{P} = -3\), \(\mathbf{P}^{-1} = -\tfrac{1}{3}\begin{pmatrix} -2 & -1 \\ -1 & 1 \end{pmatrix} = \tfrac{1}{3}\begin{pmatrix} 2 & 1 \\ 1 & -1 \end{pmatrix}\).<br>
+  \(\mathbf{A}^{10} = \mathbf{P}\begin{pmatrix} 5^{10} & 0 \\ 0 & 2^{10} \end{pmatrix}\mathbf{P}^{-1}\).
+</div>
+
+<div class="exam-tip">
+  <strong>OCR Exam Tip:</strong> Diagonalisation questions are usually structured: part (a) find eigenvalues and eigenvectors, part (b) hence find \(\mathbf{A}^n\) or solve a coupled recurrence. Lay out \(\mathbf{P}\), \(\mathbf{D}\), \(\mathbf{P}^{-1}\) clearly.
+</div>
+
+<h2>10. Cayley–Hamilton Theorem (Support)</h2>
+
+<p>Every square matrix satisfies its own characteristic equation. If \(\det(\mathbf{A} - \lambda\mathbf{I}) = \lambda^n + c_{n-1}\lambda^{n-1} + \cdots + c_0\), then</p>
+<div class="equation">\(\mathbf{A}^n + c_{n-1}\mathbf{A}^{n-1} + \cdots + c_0\mathbf{I} = \mathbf{0}\).</div>
+<p>Use this to express higher powers of \(\mathbf{A}\) in terms of lower ones, or to find \(\mathbf{A}^{-1}\).</p>
+
+<h2>11. Exam Style Strategy</h2>
+<ul>
+  <li>Write determinants out carefully — sign errors in cofactor expansions are the single most common mistake.</li>
+  <li>For \(3\times 3\) systems, start with the determinant; only do elimination when \(\det = 0\).</li>
+  <li>For composite transformations, multiply in the order <em>last first</em> (the last transformation goes on the left).</li>
+  <li>Always verify an eigenvector by computing \(\mathbf{A}\mathbf{v}\) and checking it equals \(\lambda\mathbf{v}\).</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ]
+    });
+  });
+</script>
+</body>
+</html>

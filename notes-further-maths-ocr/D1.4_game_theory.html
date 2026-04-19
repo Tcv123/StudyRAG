@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D1.4: Game Theory — OCR A Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR A Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR A-Level Further Mathematics (H245) — Discrete Option Section D1.4</p>
+<h1>D1.4: Game Theory</h1>
+
+<h2>1. Zero-Sum Two-Player Games</h2>
+
+<div class="definition">
+  A <strong>zero-sum two-player game</strong> has two players (R and C) whose gains sum to zero at every outcome. A <strong>pay-off matrix</strong> \(\mathbf{A}\) shows the pay-offs to player R: if R plays row \(i\) and C plays column \(j\), R wins \(a_{ij}\) (and C wins \(-a_{ij}\)).
+</div>
+
+<p>Each player chooses a <em>strategy</em> — we'll first look for a deterministic (pure) solution, then mixed strategies.</p>
+
+<h2>2. Play-Safe (Maximin / Minimax)</h2>
+
+<h3>Row Player's Analysis</h3>
+<p>For each row, find the minimum (worst case for R), then choose the row with the <em>largest</em> such minimum. This is the <strong>maximin</strong> value.</p>
+
+<h3>Column Player's Analysis</h3>
+<p>For each column, find the maximum (worst case for C), then choose the column with the <em>smallest</em> such maximum. This is the <strong>minimax</strong> value.</p>
+
+<h3>Saddle Point and Stable Solution</h3>
+<div class="definition">
+  A <strong>saddle point</strong> occurs when maximin = minimax. The game has a <strong>stable solution</strong> with a pure strategy for each player, and the <strong>value of the game</strong> equals this common number.
+</div>
+
+<div class="example">
+  <strong>Pay-off matrix (to R):</strong>
+  <table>
+    <tr><th></th><th>C1</th><th>C2</th><th>C3</th></tr>
+    <tr><td>R1</td><td>4</td><td>1</td><td>3</td></tr>
+    <tr><td>R2</td><td>2</td><td>5</td><td>2</td></tr>
+    <tr><td>R3</td><td>3</td><td>4</td><td>1</td></tr>
+  </table>
+  Row minima: 1, 2, 1. Maximin = 2 (row R2). Column maxima: 4, 5, 3. Minimax = 3 (col C3).<br>
+  \(2 \ne 3\), so there is no saddle point — the game needs a mixed strategy.
+</div>
+
+<h2>3. Dominance</h2>
+
+<div class="definition">
+  Row \(i\) <strong>dominates</strong> row \(k\) (for R) if every entry of row \(i\) is \(\ge\) the corresponding entry of row \(k\). R will never play a dominated row — remove it.
+</div>
+
+<p>Similarly for columns (from C's point of view — but C wants <em>small</em> values, so column \(j\) dominates column \(k\) if every entry of \(j\) is \(\le\) the corresponding entry of \(k\)).</p>
+
+<p>Iteratively remove dominated rows and columns to simplify.</p>
+
+<h2>4. Mixed Strategies for a \(2\times 2\) Game</h2>
+
+<p>Suppose the reduced matrix is</p>
+<div class="equation">\(\begin{pmatrix} a & b \\ c & d \end{pmatrix}\)</div>
+
+<p>R plays row 1 with probability \(p\), row 2 with probability \(1 - p\). For R's expected pay-off to be independent of C's choice:</p>
+<div class="equation">\(pa + (1-p)c = pb + (1-p)d,\)</div>
+
+<p>giving \(p = \dfrac{d - c}{(a - b) + (d - c)}\) and value \(V = pa + (1 - p)c\).</p>
+
+<p>Similarly for C's probability \(q\) of playing column 1.</p>
+
+<div class="example">
+  <strong>Reduced to a \(2\times 2\) game after dominance:</strong>
+  <table>
+    <tr><th></th><th>C1</th><th>C2</th></tr>
+    <tr><td>R1</td><td>3</td><td>6</td></tr>
+    <tr><td>R2</td><td>5</td><td>2</td></tr>
+  </table>
+  \(p(3) + (1-p)(5) = p(6) + (1-p)(2)\)<br>
+  \(5 - 2p = 2 + 4p \Rightarrow p = 1/2\). Value: \(3(1/2) + 5(1/2) = 4\).<br>
+  For C: \(3q + 6(1-q) = 5q + 2(1-q) \Rightarrow q = 2/3\).
+</div>
+
+<h2>5. Larger Games via Linear Programming</h2>
+
+<p>For \(m \times n\) games with no pure-strategy solution and no reduction to \(2\times 2\), we use LP.</p>
+
+<h3>LP Formulation (Row Player)</h3>
+<p>R chooses \(p_1, \ldots, p_m \ge 0\) with \(\sum p_i = 1\). R wants to maximise the minimum expected gain \(V\):</p>
+
+<div class="equation">\(\text{Maximise } V \text{ subject to } \sum_i p_i a_{ij} \ge V \text{ for each } j, \quad \sum p_i = 1.\)</div>
+
+<p>After a shift to ensure positivity, this becomes a standard LP — solve with the Simplex method.</p>
+
+<h3>Trick: Positive Payoffs</h3>
+<p>If any pay-off is \(\le 0\), add a constant \(k\) to all entries so they are all positive. This shifts the value of the game by \(k\) but does not change the optimal strategies.</p>
+
+<h2>6. Interpretation and Context</h2>
+
+<p>Typical questions ask you to:</p>
+<ul>
+  <li>Identify a saddle point (if any) and state the value.</li>
+  <li>Reduce via dominance and check.</li>
+  <li>Find mixed strategies if no saddle point.</li>
+  <li>Formulate the LP for a larger game (but not necessarily solve it fully in exam time).</li>
+</ul>
+
+<h2>7. Exam Style Strategy</h2>
+<ul>
+  <li>Always start with play-safe strategies — if maximin = minimax, you're done.</li>
+  <li>Try dominance before anything else — it often shrinks the problem to \(2 \times 2\).</li>
+  <li>For \(2 \times 2\) mixed, solve for \(p\) by equating the two possible expected pay-offs.</li>
+  <li>Express the value in exact form (fractions, not decimals) when possible.</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]
+    });
+  });
+</script>
+</body>
+</html>

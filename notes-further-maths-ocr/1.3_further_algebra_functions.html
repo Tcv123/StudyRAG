@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.3: Further Algebra and Functions — OCR A Further Maths</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.05rem; text-align: center; overflow-x: auto; }
+  .warning { background: #fee2e2; border-left: 4px solid #dc2626; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { font-size: 0.85rem; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning
+  </a>
+  <span style="color:#999;font-size:14px;">›</span>
+  <a href="../subject-notes/further-maths-ocr-notes.html" style="text-decoration:none;color:#1B2D4F;font-size:14px;font-weight:500;">OCR A Further Maths</a>
+</div>
+
+<p class="spec-ref">OCR A-Level Further Mathematics (H245) — Core Pure Section 1.3</p>
+<h1>1.3: Further Algebra and Functions</h1>
+
+<h2>1. Roots of Polynomials</h2>
+
+<p>For a polynomial with real (or complex) coefficients, we can relate <em>the roots</em> to <em>the coefficients</em> directly — useful when you know the roots satisfy a certain relation but the polynomial itself is messy.</p>
+
+<h3>Quadratic: \(ax^2 + bx + c = 0\) with roots \(\alpha, \beta\)</h3>
+<div class="equation">\(\alpha + \beta = -\dfrac{b}{a}, \qquad \alpha\beta = \dfrac{c}{a}\)</div>
+
+<h3>Cubic: \(ax^3 + bx^2 + cx + d = 0\) with roots \(\alpha, \beta, \gamma\)</h3>
+<div class="equation">\(\sum \alpha = -\dfrac{b}{a}, \quad \sum \alpha\beta = \dfrac{c}{a}, \quad \alpha\beta\gamma = -\dfrac{d}{a}\)</div>
+
+<h3>Quartic: \(ax^4 + bx^3 + cx^2 + dx + e = 0\) with roots \(\alpha, \beta, \gamma, \delta\)</h3>
+<div class="equation">\(\sum \alpha = -\dfrac{b}{a}, \;\; \sum \alpha\beta = \dfrac{c}{a}, \;\; \sum \alpha\beta\gamma = -\dfrac{d}{a}, \;\; \alpha\beta\gamma\delta = \dfrac{e}{a}\)</div>
+
+<p>The sign pattern is \(-,+,-,+,\ldots\). Symbols \(\sum \alpha\), \(\sum \alpha\beta\) denote the elementary symmetric polynomials (sums over distinct pairs, triples, etc.).</p>
+
+<h3>Useful Symmetric Function Identities</h3>
+<p>For quadratic roots:</p>
+<ul>
+  <li>\(\alpha^2 + \beta^2 = (\alpha+\beta)^2 - 2\alpha\beta\)</li>
+  <li>\(\dfrac{1}{\alpha} + \dfrac{1}{\beta} = \dfrac{\alpha+\beta}{\alpha\beta}\)</li>
+  <li>\(\alpha^3 + \beta^3 = (\alpha+\beta)^3 - 3\alpha\beta(\alpha+\beta)\)</li>
+  <li>\((\alpha-\beta)^2 = (\alpha+\beta)^2 - 4\alpha\beta\)</li>
+</ul>
+
+<p>For cubic roots:</p>
+<ul>
+  <li>\(\sum \alpha^2 = (\sum\alpha)^2 - 2\sum\alpha\beta\)</li>
+  <li>\(\sum \alpha^3 = (\sum\alpha)^3 - 3(\sum\alpha)(\sum\alpha\beta) + 3\alpha\beta\gamma\)</li>
+</ul>
+
+<h2>2. Forming a Polynomial with Transformed Roots</h2>
+
+<p>If \(\alpha, \beta, \gamma\) are roots of \(P(x) = 0\), we often need the polynomial whose roots are \(f(\alpha), f(\beta), f(\gamma)\).</p>
+
+<h3>Substitution Method</h3>
+<p>Let \(y = f(x)\) and solve for \(x\) in terms of \(y\). Substitute \(x = f^{-1}(y)\) into \(P(x) = 0\) and tidy up.</p>
+
+<div class="example">
+  <strong>\(\alpha, \beta\) are the roots of \(x^2 - 5x + 6 = 0\). Find a quadratic whose roots are \(\alpha+2\) and \(\beta+2\).</strong><br>
+  Let \(y = x + 2\), so \(x = y - 2\). Substitute: \((y-2)^2 - 5(y-2) + 6 = 0\).<br>
+  Expand: \(y^2 - 4y + 4 - 5y + 10 + 6 = y^2 - 9y + 20 = 0\).
+</div>
+
+<div class="example">
+  <strong>\(\alpha, \beta\) are roots of \(x^2 - 3x + 2 = 0\). Find the quadratic with roots \(1/\alpha\) and \(1/\beta\).</strong><br>
+  Sub \(x = 1/y\): \(1/y^2 - 3/y + 2 = 0\). Multiply by \(y^2\): \(1 - 3y + 2y^2 = 0 \Rightarrow 2y^2 - 3y + 1 = 0\).
+</div>
+
+<div class="exam-tip">
+  <strong>OCR Exam Tip:</strong> The substitution approach is fast and reliable. Alternative: compute the new sum and product of roots using the identities above, then write down the new polynomial.
+</div>
+
+<h2>3. Partial Fractions</h2>
+
+<p>A rational function \(\dfrac{P(x)}{Q(x)}\) with \(\deg P < \deg Q\) can be split into a sum of simpler fractions.</p>
+
+<h3>Standard Forms</h3>
+<table>
+  <tr><th>Factor in denominator</th><th>Partial fraction</th></tr>
+  <tr><td>Linear \((ax+b)\)</td><td>\(\dfrac{A}{ax+b}\)</td></tr>
+  <tr><td>Repeated linear \((ax+b)^2\)</td><td>\(\dfrac{A}{ax+b} + \dfrac{B}{(ax+b)^2}\)</td></tr>
+  <tr><td>Repeated linear \((ax+b)^3\)</td><td>\(\dfrac{A}{ax+b} + \dfrac{B}{(ax+b)^2} + \dfrac{C}{(ax+b)^3}\)</td></tr>
+  <tr><td>Irreducible quadratic \((ax^2+bx+c)\)</td><td>\(\dfrac{Ax+B}{ax^2+bx+c}\)</td></tr>
+</table>
+
+<div class="warning">
+  If \(\deg P \ge \deg Q\), <em>first</em> do polynomial long division to reduce to a proper fraction plus a quotient.
+</div>
+
+<div class="example">
+  <strong>Express \(\dfrac{3x + 5}{(x-1)(x+2)^2}\) in partial fractions.</strong><br>
+  Write \(\dfrac{A}{x-1} + \dfrac{B}{x+2} + \dfrac{C}{(x+2)^2}\). Multiply through:<br>
+  \(3x + 5 = A(x+2)^2 + B(x-1)(x+2) + C(x-1)\).<br>
+  \(x=1\): \(8 = 9A \Rightarrow A = 8/9\). \(x=-2\): \(-1 = -3C \Rightarrow C = 1/3\).<br>
+  Compare \(x^2\): \(0 = A + B \Rightarrow B = -8/9\).<br>
+  Answer: \(\dfrac{8/9}{x-1} - \dfrac{8/9}{x+2} + \dfrac{1/3}{(x+2)^2}\).
+</div>
+
+<h2>4. Rational Inequalities</h2>
+
+<p>Solving \(\dfrac{P(x)}{Q(x)} < k\) (or \(>, \le, \ge\)) requires care — you cannot simply multiply by \(Q(x)\) since its sign may vary.</p>
+
+<h3>Method 1: Multiply by \([Q(x)]^2\)</h3>
+<p>Always positive (except at roots of \(Q\)), so preserves the direction of the inequality:</p>
+<div class="equation">\(\dfrac{P(x)}{Q(x)} < k \iff (P(x) - kQ(x))\,Q(x) < 0\) &nbsp;(and \(Q(x) \ne 0\)).</div>
+
+<h3>Method 2: Rearrange to \(\dfrac{R(x)}{Q(x)} < 0\) and Use a Sign Diagram</h3>
+<p>Bring everything to one side over a common denominator, then analyse where each factor is positive/negative between its roots.</p>
+
+<div class="example">
+  <strong>Solve \(\dfrac{x+1}{x-3} \le 2\).</strong><br>
+  Rearrange: \(\dfrac{x+1}{x-3} - 2 \le 0 \Rightarrow \dfrac{x+1 - 2(x-3)}{x-3} \le 0 \Rightarrow \dfrac{-x+7}{x-3} \le 0\).<br>
+  Or: \(\dfrac{x - 7}{x - 3} \ge 0\) (flip sign when multiplying by \(-1\)).<br>
+  Critical values: \(x = 3\) (excluded) and \(x = 7\). Sign diagram: positive for \(x < 3\), negative for \(3 < x < 7\), positive for \(x > 7\).<br>
+  Solution: \(x < 3\) or \(x \ge 7\).
+</div>
+
+<h2>5. Modulus Function Equations and Inequalities</h2>
+
+<p>Solutions of \(|f(x)| = g(x)\) require \(g(x) \ge 0\). Then split into \(f(x) = g(x)\) or \(f(x) = -g(x)\) and check each solution satisfies the original equation.</p>
+
+<p>For \(|f(x)| < k\) with \(k > 0\): \(-k < f(x) < k\). For \(|f(x)| > k\): \(f(x) > k\) or \(f(x) < -k\).</p>
+
+<h2>6. Graph Sketching and Rational Functions</h2>
+
+<p>Key features when sketching \(y = \dfrac{P(x)}{Q(x)}\):</p>
+<ul>
+  <li><strong>Vertical asymptotes</strong> at zeros of \(Q(x)\) (that are not shared with \(P\)).</li>
+  <li><strong>Horizontal asymptote</strong>: from \(\lim_{x\to\pm\infty}\). Compare degrees of \(P\) and \(Q\).</li>
+  <li><strong>Oblique (slant) asymptote</strong>: if \(\deg P = \deg Q + 1\), do polynomial division; the quotient is the oblique asymptote.</li>
+  <li><strong>\(x\)-intercepts:</strong> zeros of \(P\). <strong>\(y\)-intercept:</strong> value at \(x = 0\).</li>
+  <li><strong>Sign behaviour</strong> between consecutive roots/asymptotes.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>OCR Exam Tip:</strong> For "sketch" questions, always label: axis intercepts, asymptotes (with equations), and stationary points if asked. Use a dashed line for asymptotes.
+</div>
+
+<h2>7. Inverse Functions and Graph Transformations</h2>
+
+<p>A function has an inverse only if it is <em>one-to-one</em> (injective). You may need to restrict the domain to make \(f\) one-to-one.</p>
+
+<p>The graph of \(y = f^{-1}(x)\) is the reflection of \(y = f(x)\) in the line \(y = x\).</p>
+
+<h3>Transformations Recap</h3>
+<table>
+  <tr><th>Transformation</th><th>Replace</th><th>Effect on graph</th></tr>
+  <tr><td>\(y = f(x) + a\)</td><td>—</td><td>Vertical translation by \(a\)</td></tr>
+  <tr><td>\(y = f(x - a)\)</td><td>\(x \to x - a\)</td><td>Horizontal translation by \(a\)</td></tr>
+  <tr><td>\(y = a f(x)\)</td><td>—</td><td>Vertical stretch, factor \(a\)</td></tr>
+  <tr><td>\(y = f(ax)\)</td><td>\(x \to ax\)</td><td>Horizontal stretch, factor \(1/a\)</td></tr>
+  <tr><td>\(y = |f(x)|\)</td><td>—</td><td>Reflect parts below \(x\)-axis upwards</td></tr>
+  <tr><td>\(y = f(|x|)\)</td><td>—</td><td>Reflect \(x \ge 0\) part in the \(y\)-axis</td></tr>
+</table>
+
+<h2>8. Summary</h2>
+<ul>
+  <li>Roots-coefficient relations come from expanding \(a(x-\alpha)(x-\beta)\cdots\).</li>
+  <li>Transformed-root polynomials via substitution.</li>
+  <li>Partial fractions: linear, repeated, and irreducible quadratic factors each have their own form.</li>
+  <li>Rational inequalities: multiply by \([Q(x)]^2\) or use sign diagrams — never by \(Q(x)\) directly.</li>
+</ul>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]
+    });
+  });
+</script>
+</body>
+</html>
