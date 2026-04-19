@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.1 Methods of Language Analysis — AQA A-Level English Language</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 820px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        h4 { font-size: 1.02rem; color: #1e3a5f; margin-top: 20px; margin-bottom: 8px; }
+        p  { margin-bottom: 14px; }
+        ul, ol { margin-bottom: 14px; padding-left: 24px; }
+        li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .case { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .case::before { content: "Applied Example: "; font-weight: 700; color: #15803d; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .ipa { font-family: 'Doulos SIL', 'Charis SIL', serif; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .case { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.1 Methods of Language Analysis</h1>
+<p class="spec-ref">AQA A-Level English Language (7702) &mdash; Paper 1: Language, the Individual and Society &mdash; Section 3.1.2</p>
+
+<div class="definition">
+    The <strong>six linguistic frameworks</strong> (also called <strong>levels of analysis</strong>) are the toolkit AQA expects you to apply to any text. They are: <strong>phonetics, phonology &amp; prosodics</strong>; <strong>graphology</strong>; <strong>lexis &amp; semantics</strong>; <strong>grammar &amp; morphology</strong>; <strong>pragmatics</strong>; <strong>discourse</strong>. Top-band answers integrate levels rather than listing features at each level in isolation.
+</div>
+
+<!-- Frameworks diagram -->
+<svg viewBox="0 0 780 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:780px;margin:18px auto;display:block;">
+    <defs>
+        <linearGradient id="grL" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#bfdbfe"/></linearGradient>
+    </defs>
+    <text x="390" y="22" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">The Six Linguistic Frameworks &mdash; How They Interlock</text>
+
+    <!-- Central text box -->
+    <rect x="290" y="140" width="200" height="80" rx="10" fill="#1e40af" />
+    <text x="390" y="175" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">TEXT / DISCOURSE</text>
+    <text x="390" y="196" text-anchor="middle" font-size="11" fill="#dbeafe">meaning emerges from</text>
+    <text x="390" y="210" text-anchor="middle" font-size="11" fill="#dbeafe">interaction of levels</text>
+
+    <!-- 6 framework bubbles -->
+    <g>
+        <circle cx="110" cy="90"  r="58" fill="url(#grL)" stroke="#2563eb" stroke-width="1.5"/>
+        <text x="110" y="84"  text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="bold">Phonetics /</text>
+        <text x="110" y="100" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="bold">Phonology</text>
+        <text x="110" y="116" text-anchor="middle" font-size="10" fill="#374151">sounds &amp; prosody</text>
+    </g>
+    <g>
+        <circle cx="390" cy="60"  r="58" fill="url(#grL)" stroke="#2563eb" stroke-width="1.5"/>
+        <text x="390" y="56"  text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="bold">Graphology</text>
+        <text x="390" y="74"  text-anchor="middle" font-size="10" fill="#374151">layout, typography,</text>
+        <text x="390" y="88"  text-anchor="middle" font-size="10" fill="#374151">images, colour</text>
+    </g>
+    <g>
+        <circle cx="670" cy="90"  r="58" fill="url(#grL)" stroke="#2563eb" stroke-width="1.5"/>
+        <text x="670" y="86"  text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="bold">Lexis &amp;</text>
+        <text x="670" y="102" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="bold">Semantics</text>
+        <text x="670" y="118" text-anchor="middle" font-size="10" fill="#374151">words &amp; meaning</text>
+    </g>
+    <g>
+        <circle cx="110" cy="270" r="58" fill="url(#grL)" stroke="#2563eb" stroke-width="1.5"/>
+        <text x="110" y="262" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="bold">Grammar &amp;</text>
+        <text x="110" y="280" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="bold">Morphology</text>
+        <text x="110" y="296" text-anchor="middle" font-size="10" fill="#374151">structure &amp; word form</text>
+    </g>
+    <g>
+        <circle cx="390" cy="300" r="58" fill="url(#grL)" stroke="#2563eb" stroke-width="1.5"/>
+        <text x="390" y="296" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="bold">Pragmatics</text>
+        <text x="390" y="314" text-anchor="middle" font-size="10" fill="#374151">contextual meaning,</text>
+        <text x="390" y="328" text-anchor="middle" font-size="10" fill="#374151">implicature, face</text>
+    </g>
+    <g>
+        <circle cx="670" cy="270" r="58" fill="url(#grL)" stroke="#2563eb" stroke-width="1.5"/>
+        <text x="670" y="266" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="bold">Discourse</text>
+        <text x="670" y="284" text-anchor="middle" font-size="10" fill="#374151">organisation beyond</text>
+        <text x="670" y="298" text-anchor="middle" font-size="10" fill="#374151">the sentence</text>
+    </g>
+
+    <!-- Connecting lines to centre -->
+    <line x1="168" y1="90"  x2="290" y2="160" stroke="#93c5fd" stroke-width="1.5"/>
+    <line x1="390" y1="118" x2="390" y2="140" stroke="#93c5fd" stroke-width="1.5"/>
+    <line x1="612" y1="90"  x2="490" y2="160" stroke="#93c5fd" stroke-width="1.5"/>
+    <line x1="168" y1="270" x2="290" y2="200" stroke="#93c5fd" stroke-width="1.5"/>
+    <line x1="390" y1="242" x2="390" y2="220" stroke="#93c5fd" stroke-width="1.5"/>
+    <line x1="612" y1="270" x2="490" y2="200" stroke="#93c5fd" stroke-width="1.5"/>
+</svg>
+
+<h2>1.1.1 Phonetics, Phonology and Prosodics</h2>
+
+<div class="definition">
+    <strong>Phonetics</strong> is the study of how speech sounds are physically produced (articulated) and perceived. <strong>Phonology</strong> is the study of how sounds function within the system of a particular language &mdash; which sound contrasts carry meaning. <strong>Prosodics</strong> concerns the suprasegmental features of speech: stress, intonation, tempo, rhythm, pause and volume.
+</div>
+
+<p>The smallest unit phonology works with is the <strong>phoneme</strong> &mdash; a sound that distinguishes meaning. English has around 44 phonemes (numbers vary by dialect). A <strong>minimal pair</strong> is two words differing by only one phoneme, proving that the two sounds are distinct units: <em>pit</em> <span class="ipa">/p&#618;t/</span> vs <em>bit</em> <span class="ipa">/b&#618;t/</span>. Only the initial consonant differs, yet the meanings are different.</p>
+
+<h3>Consonant classification</h3>
+<p>Consonants are classified by three features:</p>
+<ol>
+    <li><strong>Place of articulation</strong> &mdash; where in the mouth the airflow is obstructed (e.g. <em>bilabial</em> both lips, <em>alveolar</em> tongue against the alveolar ridge, <em>velar</em> back of tongue against the soft palate).</li>
+    <li><strong>Manner of articulation</strong> &mdash; how the airflow is obstructed (<em>plosive/stop</em>, <em>fricative</em>, <em>affricate</em>, <em>nasal</em>, <em>approximant</em>, <em>lateral</em>).</li>
+    <li><strong>Voicing</strong> &mdash; whether the vocal folds vibrate (<em>voiced</em>) or not (<em>voiceless</em>).</li>
+</ol>
+
+<table>
+    <tr><th>Sound</th><th>IPA</th><th>Example</th><th>Classification</th></tr>
+    <tr><td>p</td><td><span class="ipa">/p/</span></td><td>pit</td><td>Voiceless bilabial plosive</td></tr>
+    <tr><td>b</td><td><span class="ipa">/b/</span></td><td>bit</td><td>Voiced bilabial plosive</td></tr>
+    <tr><td>f</td><td><span class="ipa">/f/</span></td><td>fan</td><td>Voiceless labiodental fricative</td></tr>
+    <tr><td>v</td><td><span class="ipa">/v/</span></td><td>van</td><td>Voiced labiodental fricative</td></tr>
+    <tr><td>sh</td><td><span class="ipa">/&#643;/</span></td><td>ship</td><td>Voiceless post-alveolar fricative</td></tr>
+    <tr><td>ch</td><td><span class="ipa">/t&#643;/</span></td><td>chip</td><td>Voiceless post-alveolar affricate</td></tr>
+    <tr><td>m</td><td><span class="ipa">/m/</span></td><td>man</td><td>Voiced bilabial nasal</td></tr>
+    <tr><td>ng</td><td><span class="ipa">/&#331;/</span></td><td>sing</td><td>Voiced velar nasal</td></tr>
+</table>
+
+<h3>Vowels</h3>
+<p>Vowels are made without obstruction of airflow and are classified by tongue height (high/close vs low/open), tongue position (front vs back), and lip rounding. English has <strong>monophthongs</strong> (single vowel sounds: <span class="ipa">/&#618;/</span> in <em>bit</em>) and <strong>diphthongs</strong> (two vowel qualities glided together: <span class="ipa">/a&#618;/</span> in <em>time</em>). Regional variation is often concentrated in vowels &mdash; the <em>bath</em>/<em>trap</em> split distinguishes Northern and Southern British English.</p>
+
+<h3>Prosodic features you should recognise</h3>
+<table>
+    <tr><th>Feature</th><th>Definition</th><th>Why it matters</th></tr>
+    <tr><td><strong>Stress</strong></td><td>Emphasis placed on a syllable or word</td><td>Changes word class (<em>RE</em>cord vs re<em>CORD</em>) and focuses meaning within a sentence.</td></tr>
+    <tr><td><strong>Intonation</strong></td><td>Pitch pattern across an utterance</td><td>Rising intonation typically marks questions or checks; falling intonation signals completion or authority.</td></tr>
+    <tr><td><strong>Tempo</strong></td><td>Speed of delivery</td><td>Fast speech can signal excitement or nervousness; slow speech can convey gravity, hesitation or emphasis.</td></tr>
+    <tr><td><strong>Volume</strong></td><td>Loudness</td><td>Shouting vs whispering encodes emotion and power relations.</td></tr>
+    <tr><td><strong>Pause</strong></td><td>Silence within speech (micro <em>(.)</em> or timed <em>(2.0)</em>)</td><td>Marks planning time, face-saving, turn-giving or dramatic effect.</td></tr>
+    <tr><td><strong>Rhythm</strong></td><td>Temporal patterning of stressed/unstressed syllables</td><td>English is a stress-timed language &mdash; triadic rhythm ("blood, sweat, tears") is rhetorically powerful.</td></tr>
+</table>
+
+<div class="exam-tip">You are not expected to be a trained phonetician. What examiners want is that you can identify and comment on the <em>effect</em> of sound features &mdash; alliteration, assonance, onomatopoeia, sibilance, plosiveness &mdash; and of prosodic choices in transcripts (stress, intonation, pauses). Always link the feature to meaning or audience effect.</div>
+
+<h2>1.1.2 Graphology</h2>
+
+<div class="definition">
+    <strong>Graphology</strong> is the visual appearance and organisation of a written text. It includes typography, font choice, colour, layout, spacing, images, punctuation as visual feature, and the relationship between text and non-textual elements on the page or screen.
+</div>
+
+<p>Historically, graphology was sometimes dismissed as secondary to "real" linguistic analysis. At A-level, you must treat graphological choices as meaningful. A tabloid front page, a perfume advert, a Government leaflet and a personal text message all rely heavily on graphology to position the reader.</p>
+
+<h3>Key graphological features</h3>
+<ul>
+    <li><strong>Typography</strong> &mdash; font family (serif vs sans-serif), weight (bold), style (italic), size, case.</li>
+    <li><strong>Colour</strong> &mdash; foreground/background contrast, brand colours, symbolic associations (red = urgency/passion, blue = trust/calm).</li>
+    <li><strong>Layout</strong> &mdash; columns, alignment, hierarchy (headlines, subheads, body), use of white space.</li>
+    <li><strong>Images</strong> &mdash; photographs, illustrations, icons; relationship to surrounding text (anchoring, relay).</li>
+    <li><strong>Visual punctuation</strong> &mdash; bullet points, dashes, exclamation marks used decoratively.</li>
+    <li><strong>Orthographic play</strong> &mdash; deliberate mis-spelling for effect (e.g. <em>Krispy Kreme</em>), use of emoji, capitals as shouting in digital writing.</li>
+</ul>
+
+<div class="case">A news website uses a large bold serif headline in black, a single colour photograph, and a short Anglo-Saxon, monosyllabic strap-line. The serif font connotes authority and tradition; the black-on-white contrast signals seriousness; the photograph anchors meaning emotionally. Graphology works <em>with</em> lexis and syntax to construct a particular register and position the reader as a thoughtful citizen rather than an entertainment-seeker.</div>
+
+<h2>1.1.3 Lexis and Semantics</h2>
+
+<div class="definition">
+    <strong>Lexis</strong> refers to the vocabulary of a language &mdash; the set of words available to speakers. <strong>Semantics</strong> is the study of meaning conveyed by lexis and by larger linguistic units.
+</div>
+
+<h3>Lexical classifications</h3>
+<table>
+    <tr><th>Classification</th><th>Details</th><th>Example / Effect</th></tr>
+    <tr><td><strong>Word class</strong></td><td>Noun, verb, adjective, adverb, pronoun, preposition, conjunction, determiner, interjection</td><td>Distribution of word classes indicates register &mdash; heavy nouns + adjectives = descriptive; heavy verbs + adverbs = dynamic narrative.</td></tr>
+    <tr><td><strong>Etymological origin</strong></td><td>Anglo-Saxon (Germanic), Latinate, Greek, French-Norman, borrowings</td><td>Anglo-Saxon "home", "dog", "work" feels direct and everyday; Latinate "residence", "canine", "occupation" feels formal, elevated.</td></tr>
+    <tr><td><strong>Register</strong></td><td>Formal, informal, colloquial, slang, taboo, archaic, technical/jargon</td><td>A text\'s register positions the reader as insider or outsider of a social group.</td></tr>
+    <tr><td><strong>Frequency</strong></td><td>High-frequency (everyday) vs low-frequency (specialist / literary)</td><td>Low-frequency lexis reduces accessibility but can signal prestige or expertise.</td></tr>
+    <tr><td><strong>Field</strong></td><td>Topic or domain (sport, medicine, finance, warfare, religion)</td><td>A semantic field frames the subject ideologically &mdash; describing a political debate in the semantic field of warfare ("attack", "defend") is not neutral.</td></tr>
+</table>
+
+<h3>Semantic relations</h3>
+<ul>
+    <li><strong>Synonyms</strong> &mdash; similar meanings (<em>brave</em>, <em>courageous</em>, <em>valiant</em>). Near-synonyms differ in register or connotation.</li>
+    <li><strong>Antonyms</strong> &mdash; opposite meanings. <em>Gradable</em> (hot/cold), <em>complementary</em> (alive/dead), <em>relational</em> (buy/sell).</li>
+    <li><strong>Hyponymy</strong> &mdash; hierarchical relationships. <em>Rose</em> is a hyponym of <em>flower</em>; <em>flower</em> is the hypernym.</li>
+    <li><strong>Meronymy</strong> &mdash; part-whole relationships. <em>Wheel</em> is a meronym of <em>car</em>.</li>
+    <li><strong>Polysemy</strong> &mdash; one word, multiple related meanings (<em>foot</em> of a mountain / of a person).</li>
+    <li><strong>Homonymy</strong> &mdash; one form, unrelated meanings: <em>bank</em> (river) / <em>bank</em> (financial).</li>
+</ul>
+
+<h3>Denotation vs Connotation</h3>
+<p><strong>Denotation</strong> is the dictionary definition. <strong>Connotation</strong> is the bundle of associations a word carries &mdash; often cultural, emotional or ideological. Writers exploit connotation: describing a politician as "<em>stubborn</em>" rather than "<em>determined</em>" signals different evaluation even if denotationally similar.</p>
+
+<h3>Figurative language &mdash; key tropes</h3>
+<ul>
+    <li><strong>Metaphor</strong> &mdash; implicit comparison: <em>time is a thief</em>.</li>
+    <li><strong>Simile</strong> &mdash; explicit comparison using <em>like</em> or <em>as</em>: <em>quick as a flash</em>.</li>
+    <li><strong>Personification</strong> &mdash; giving human attributes to non-human: <em>the wind howled</em>.</li>
+    <li><strong>Metonymy</strong> &mdash; using one thing to stand for a related thing: <em>the Crown</em> for the monarchy.</li>
+    <li><strong>Synecdoche</strong> &mdash; part for whole or whole for part: <em>all hands on deck</em>.</li>
+    <li><strong>Hyperbole</strong> &mdash; exaggeration: <em>I\'ve told you a thousand times</em>.</li>
+    <li><strong>Understatement / litotes</strong> &mdash; deliberate downplay: <em>not bad</em> (= very good).</li>
+    <li><strong>Euphemism</strong> &mdash; softened substitute: <em>passed away</em> for <em>died</em>.</li>
+    <li><strong>Dysphemism</strong> &mdash; deliberately harsh substitute for polite form.</li>
+</ul>
+
+<div class="exam-tip">Avoid feature-spotting. "The writer uses a metaphor" is AO1 at its weakest. "The metaphor <em>time is a thief</em> constructs time as an antagonist who takes from us, framing ageing in a semantic field of theft and loss" links feature to meaning &mdash; this is what AO1 and AO3 together reward.</div>
+
+<h2>1.1.4 Grammar and Morphology</h2>
+
+<div class="definition">
+    <strong>Grammar</strong> is the system of rules describing how words combine into phrases, clauses and sentences. <strong>Morphology</strong> is the study of word formation &mdash; how morphemes combine to build words.
+</div>
+
+<h3>Morphemes</h3>
+<p>A <strong>morpheme</strong> is the smallest unit of meaning. Morphemes are classed as:</p>
+<ul>
+    <li><strong>Free morphemes</strong> &mdash; stand alone: <em>cat, run, happy</em>.</li>
+    <li><strong>Bound morphemes</strong> &mdash; must attach: <em>-s, -ed, un-, re-, -able, -ness</em>.</li>
+    <li><strong>Inflectional morphemes</strong> &mdash; mark grammatical information without changing word class (<em>cats, walked, taller</em>).</li>
+    <li><strong>Derivational morphemes</strong> &mdash; create new words, often changing class (<em>happy</em> → <em>happiness</em>; <em>teach</em> → <em>teacher</em>).</li>
+</ul>
+
+<p>Example breakdown: <code>un-forget-able</code> = <em>un-</em> (bound, negating) + <em>forget</em> (free) + <em>-able</em> (bound, converting to adjective) &mdash; three morphemes.</p>
+
+<h3>Word classes</h3>
+<table>
+    <tr><th>Class</th><th>Function</th><th>Examples</th></tr>
+    <tr><td><strong>Noun</strong></td><td>Names people, places, things, ideas. Counts as common/proper, concrete/abstract, count/mass.</td><td><em>tree, London, freedom, water</em></td></tr>
+    <tr><td><strong>Verb</strong></td><td>Describes action, process or state. Main / auxiliary (be, have, do) / modal (can, must, should).</td><td><em>run, is, have, should</em></td></tr>
+    <tr><td><strong>Adjective</strong></td><td>Modifies nouns. Can be gradable (comparative/superlative).</td><td><em>small, smaller, smallest</em></td></tr>
+    <tr><td><strong>Adverb</strong></td><td>Modifies verbs, adjectives or other adverbs. Express manner, time, place, degree, frequency.</td><td><em>quickly, yesterday, very, often</em></td></tr>
+    <tr><td><strong>Pronoun</strong></td><td>Replaces noun phrases. Personal / possessive / reflexive / demonstrative / relative / interrogative.</td><td><em>I, mine, myself, this, who</em></td></tr>
+    <tr><td><strong>Preposition</strong></td><td>Relates a noun phrase to another element (time, place, manner).</td><td><em>in, on, after, despite</em></td></tr>
+    <tr><td><strong>Conjunction</strong></td><td>Joins words, phrases, clauses. Coordinating (and, but, or) / subordinating (although, because, when).</td><td><em>and, although</em></td></tr>
+    <tr><td><strong>Determiner</strong></td><td>Specifies a noun phrase. Articles (a, the), demonstratives, possessives, quantifiers, numerals.</td><td><em>the, my, three</em></td></tr>
+    <tr><td><strong>Interjection</strong></td><td>Expressive exclamation, grammatically detached.</td><td><em>oh!, wow, hey</em></td></tr>
+</table>
+
+<h3>Phrases, clauses and sentences</h3>
+<ul>
+    <li><strong>Noun phrase (NP)</strong> &mdash; determiner + (pre-modifiers) + head noun + (post-modifier). E.g. <em>[the three small red boxes on the table]</em>.</li>
+    <li><strong>Verb phrase (VP)</strong> &mdash; main verb, optionally with auxiliaries: <em>[has been working]</em>.</li>
+    <li><strong>Clause</strong> &mdash; contains a subject and a finite verb. A main clause stands alone; a subordinate clause depends on another.</li>
+    <li><strong>Sentence types:</strong>
+        <ul>
+            <li><strong>Simple</strong> &mdash; one main clause: <em>The dog barked.</em></li>
+            <li><strong>Compound</strong> &mdash; two main clauses joined by coordinator: <em>The dog barked and the cat ran.</em></li>
+            <li><strong>Complex</strong> &mdash; main clause + subordinate clause: <em>The dog barked when the doorbell rang.</em></li>
+            <li><strong>Compound-complex</strong> &mdash; multiple main + subordinate.</li>
+            <li><strong>Minor</strong> &mdash; lacks finite verb: <em>Fantastic.</em> / <em>Why?</em></li>
+        </ul>
+    </li>
+</ul>
+
+<h3>Sentence functions</h3>
+<ul>
+    <li><strong>Declarative</strong> &mdash; statement (<em>It\'s raining.</em>)</li>
+    <li><strong>Interrogative</strong> &mdash; question (<em>Is it raining?</em>)</li>
+    <li><strong>Imperative</strong> &mdash; command (<em>Take an umbrella.</em>)</li>
+    <li><strong>Exclamatory</strong> &mdash; exclamation (<em>What a downpour!</em>)</li>
+</ul>
+
+<h3>Voice: active vs passive</h3>
+<p>Active: <em>The council demolished the building.</em> Passive: <em>The building was demolished (by the council).</em> The passive lets the writer foreground the patient and optionally hide the agent &mdash; a frequent device in news reports ("Mistakes were made") and scientific writing (impersonal objectivity).</p>
+
+<h3>Clause-structure elements (SPOCA)</h3>
+<ul>
+    <li><strong>S</strong> &mdash; Subject (who/what the clause is about)</li>
+    <li><strong>P</strong> &mdash; Predicator (main verb)</li>
+    <li><strong>O</strong> &mdash; Object (direct / indirect)</li>
+    <li><strong>C</strong> &mdash; Complement (follows a linking verb; describes subject or object)</li>
+    <li><strong>A</strong> &mdash; Adverbial (information about time, place, manner, reason)</li>
+</ul>
+<p>Example: <em>[She]<sub>S</sub> [gave]<sub>P</sub> [him]<sub>O</sub> [a book]<sub>O</sub> [yesterday]<sub>A</sub>.</em></p>
+
+<div class="exam-tip">Top-band AO1 always labels grammatical features precisely <em>and</em> connects them to meaning. "The writer front-loads the temporal adverbial <em>Yesterday</em> to foreground when the event happened" is worth more than "the writer uses an adverbial".</div>
+
+<h2>1.1.5 Pragmatics</h2>
+
+<div class="definition">
+    <strong>Pragmatics</strong> is the study of meaning in context &mdash; how listeners and readers infer what a speaker or writer <em>intends</em> beyond what is literally said. It draws on shared knowledge, social relationships, politeness norms and cultural expectations.
+</div>
+
+<h3>Speech acts (Austin, Searle)</h3>
+<ul>
+    <li><strong>Locutionary act</strong> &mdash; the literal utterance.</li>
+    <li><strong>Illocutionary force</strong> &mdash; the intended function (request, promise, apology, warning…).</li>
+    <li><strong>Perlocutionary effect</strong> &mdash; the actual effect on the hearer.</li>
+</ul>
+<p><em>"Could you pass the salt?"</em> is literally a question about ability (locutionary) but functions as a polite request (illocutionary). Its perlocutionary effect is, hopefully, the salt being passed.</p>
+
+<p>Speech acts can be <strong>direct</strong> (form matches function: <em>Give me the salt.</em>) or <strong>indirect</strong> (form differs from function: <em>Could you pass the salt?</em>). Indirect speech acts are a key politeness resource.</p>
+
+<h3>Grice\'s Cooperative Principle</h3>
+<p>H.P. Grice proposed that conversation is cooperative, governed by four <strong>maxims</strong>:</p>
+<table>
+    <tr><th>Maxim</th><th>Principle</th><th>Flouting example</th></tr>
+    <tr><td><strong>Quantity</strong></td><td>Give the right amount of information &mdash; not more, not less.</td><td>A: "How was the party?" B: "There was food." &mdash; implies the party was underwhelming.</td></tr>
+    <tr><td><strong>Quality</strong></td><td>Be truthful; don\'t say what you believe to be false.</td><td>Sarcasm: "What a lovely day!" in a thunderstorm.</td></tr>
+    <tr><td><strong>Relation</strong></td><td>Be relevant.</td><td>A: "Are you coming?" B: "It\'s raining." &mdash; flouts relation to communicate refusal.</td></tr>
+    <tr><td><strong>Manner</strong></td><td>Be clear, brief and orderly; avoid ambiguity.</td><td>Deliberately vague language in politics; hedging in bad news.</td></tr>
+</table>
+<p>When a maxim is <strong>flouted</strong>, the hearer infers an <strong>implicature</strong> &mdash; the extra meaning the speaker intends.</p>
+
+<h3>Politeness theory (Brown &amp; Levinson)</h3>
+<p>Every speaker has two aspects of <strong>face</strong>:</p>
+<ul>
+    <li><strong>Positive face</strong> &mdash; the desire to be liked, approved of, included.</li>
+    <li><strong>Negative face</strong> &mdash; the desire not to be imposed on, to have autonomy.</li>
+</ul>
+<p>A <strong>face-threatening act (FTA)</strong> (e.g. a request, criticism, refusal) risks one or both. Politeness strategies mitigate:</p>
+<ul>
+    <li><strong>Positive politeness</strong> &mdash; attending to positive face: compliments, inclusive "we", shared jokes.</li>
+    <li><strong>Negative politeness</strong> &mdash; attending to negative face: hedges ("sort of", "maybe"), indirect requests, apologies, modalised forms ("Could you possibly…").</li>
+    <li><strong>Off-record</strong> &mdash; hinting rather than asserting ("It\'s freezing in here" = close the window).</li>
+</ul>
+
+<h3>Deixis</h3>
+<p><strong>Deictic</strong> expressions take their reference from the context of utterance:</p>
+<ul>
+    <li><strong>Personal deixis</strong> &mdash; <em>I, you, we</em>.</li>
+    <li><strong>Spatial deixis</strong> &mdash; <em>here, there, this, that</em>.</li>
+    <li><strong>Temporal deixis</strong> &mdash; <em>now, then, yesterday, tomorrow</em>.</li>
+    <li><strong>Social deixis</strong> &mdash; honorifics, address forms (<em>sir</em>, <em>mate</em>).</li>
+</ul>
+<p>Deixis is economical but utterly context-bound. A transcript read out of context is often uninterpretable.</p>
+
+<h2>1.1.6 Discourse</h2>
+
+<div class="definition">
+    <strong>Discourse</strong> is language beyond the sentence. Discourse analysis considers how whole texts are organised, how they cohere, how conversations unfold, and how genre conventions shape expectations.
+</div>
+
+<h3>Cohesion and coherence</h3>
+<p><strong>Cohesion</strong> is the set of grammatical and lexical ties that link sentences. <strong>Coherence</strong> is the overall sense that a text hangs together logically. A cohesive text is not automatically coherent, but coherence usually requires cohesion.</p>
+
+<table>
+    <tr><th>Cohesive device</th><th>Explanation</th><th>Example</th></tr>
+    <tr><td><strong>Reference</strong></td><td>Pronouns, demonstratives that point to other parts of the text.</td><td><em>Harriet bought a phone. <u>It</u> had a large screen.</em> (anaphoric — points back)</td></tr>
+    <tr><td><strong>Substitution</strong></td><td>Replacing one item with another to avoid repetition.</td><td><em>I need a pen. Do you have <u>one</u>?</em></td></tr>
+    <tr><td><strong>Ellipsis</strong></td><td>Omitting words understood from context.</td><td>A: "Coming?" B: "[I am coming,] Yes."</td></tr>
+    <tr><td><strong>Conjunction</strong></td><td>Logical connectors between sentences/clauses.</td><td><em>However, Furthermore, Therefore, Although</em>.</td></tr>
+    <tr><td><strong>Lexical cohesion</strong></td><td>Repetition, synonyms, semantic field.</td><td><em>phone &hellip; screen &hellip; battery &hellip; camera</em> (field of mobile technology).</td></tr>
+</table>
+
+<h3>Turn-taking and conversation analysis</h3>
+<p>Sacks, Schegloff and Jefferson proposed that conversation proceeds through <strong>turn-construction units</strong>. Key concepts:</p>
+<ul>
+    <li><strong>Adjacency pairs</strong> &mdash; two-part exchanges: greeting/greeting, question/answer, invitation/acceptance.</li>
+    <li><strong>Preferred vs dispreferred responses</strong> &mdash; a refusal is usually delayed, mitigated, and accompanied by explanation.</li>
+    <li><strong>Transition-relevance places</strong> &mdash; points where a listener may take a turn without being considered rude.</li>
+    <li><strong>Overlaps vs interruptions</strong> &mdash; overlaps are brief and usually cooperative; interruptions violate the current speaker\'s turn.</li>
+    <li><strong>Back-channelling</strong> &mdash; minimal responses ("mm", "yeah") that show continued engagement.</li>
+</ul>
+
+<h3>Non-fluency features of spontaneous speech</h3>
+<ul>
+    <li><strong>Fillers</strong>: <em>er, um, erm</em> &mdash; planning time.</li>
+    <li><strong>False starts</strong> &mdash; speaker begins, then restarts.</li>
+    <li><strong>Repetitions</strong> &mdash; "I was &mdash; I was going to say".</li>
+    <li><strong>Self-repairs</strong> &mdash; correcting mid-sentence.</li>
+    <li><strong>Discourse markers</strong> &mdash; <em>well, like, you know, so, anyway</em> &mdash; organise the flow of talk.</li>
+    <li><strong>Uptalk</strong> (HRT &mdash; high rising terminal) &mdash; rising intonation on declaratives, often signals tentativeness.</li>
+</ul>
+
+<h3>Halliday\'s metafunctions</h3>
+<p>M.A.K. Halliday argued that every utterance simultaneously performs three functions:</p>
+<ul>
+    <li><strong>Ideational</strong> &mdash; representing experience (content, processes, participants).</li>
+    <li><strong>Interpersonal</strong> &mdash; enacting relationships (stance, politeness, authority).</li>
+    <li><strong>Textual</strong> &mdash; organising the message into coherent discourse (cohesion, theme/rheme, graphology).</li>
+</ul>
+
+<p>This is a hugely useful essay framework: for any text, ask <em>what does it represent? how does it position the reader? how is it organised?</em> Each of these maps onto several of the six levels.</p>
+
+<div class="exam-tip">For the exam, integrate frameworks. A single paragraph might analyse an extract\'s <em>lexis</em> (emotive monosyllabic Anglo-Saxon), <em>grammar</em> (declaratives + fronted adverbials), <em>pragmatics</em> (inclusive "we" creating positive face), and <em>graphology</em> (bold headlines) to show a coordinated persuasive register. That joined-up analysis distinguishes the top bands.</div>
+
+<h2>1.1.7 Applying the Frameworks &mdash; Structured Method</h2>
+
+<p>A reliable way to approach any Paper 1 Section A analysis is the <strong>AFPM</strong> planning acronym. For every text:</p>
+<ol>
+    <li><strong>Audience</strong> &mdash; who is this for? How is the audience positioned?</li>
+    <li><strong>Function/Purpose</strong> &mdash; to inform, persuade, entertain, instruct, express, build rapport?</li>
+    <li><strong>Purpose effects</strong> &mdash; which frameworks foreground that purpose?</li>
+    <li><strong>Mode</strong> &mdash; spoken, written, electronic, multimodal? What conventions apply?</li>
+</ol>
+
+<p>Then write analytical paragraphs that integrate two or more frameworks per point, <em>always</em> linked to audience, purpose and effect. Use precise terminology; use quotations; use comparative structure when paired texts are given.</p>
+
+<div class="case">Opening sentence of an analytical paragraph: <em>"The writer constructs a register of intimate authority by juxtaposing low-frequency Latinate lexis ('unprecedented', 'epistemology') with inclusive first-person-plural pronouns ('we', 'our'), a strategy which flatters the reader\'s intellect while positioning them alongside the speaker on matters of public importance."</em> &mdash; notice the integration of lexis + grammar + pragmatics + effect on audience, all in one sentence.</div>
+
+<h2>Key Terms Checklist</h2>
+<p>Make sure you can define and give an example of each: <strong>phoneme, minimal pair, prosodic feature, graphology, lexis, semantic field, register, denotation, connotation, morpheme (free/bound, inflectional/derivational), noun phrase, modal auxiliary, declarative / interrogative / imperative / exclamatory, active vs passive, subordinate clause, cohesion, deixis, speech act (direct/indirect), Grice\'s maxims, implicature, face (positive/negative), politeness strategies, adjacency pair, turn-taking, back-channel, non-fluency features, Halliday\'s metafunctions, idiolect, sociolect.</strong></p>
+
+</div>
+</body>
+</html>

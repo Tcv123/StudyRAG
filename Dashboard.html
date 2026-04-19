@@ -913,6 +913,10 @@ const EXAM_DATES = {
     { paper: 'Component 2 — Changing Human World', date: '2026-05-22', time: 'PM', duration: '1h 45m' },
     { paper: 'Component 3 — Environmental Challenges', date: '2026-06-09', time: 'AM', duration: '1h' },
   ],
+  'English Language_AQA': [
+    { paper: 'Paper 1 — Language, the Individual and Society', date: '2026-06-02', time: 'AM', duration: '2h 30m' },
+    { paper: 'Paper 2 — Language Diversity and Change', date: '2026-06-11', time: 'AM', duration: '2h 30m' },
+  ],
 };
 
 function toggleExamDates() {
@@ -932,7 +936,7 @@ function renderExamDates(subjects) {
 
 
   const now   = new Date();
-  const EMOJI = { 'Computer Science':'💻','Mathematics':'🔢','Further Mathematics':'∑','Biology':'🧬','Chemistry':'🧪','Physics':'⚡','Economics':'📈','Geography':'🌍' };
+  const EMOJI = { 'Computer Science':'💻','Mathematics':'🔢','Further Mathematics':'∑','Biology':'🧬','Chemistry':'🧪','Physics':'⚡','Economics':'📈','Geography':'🌍','English Language':'📝' };
   const exams = [];
 
   (subjects || []).forEach(s => {
@@ -977,7 +981,7 @@ function renderExamDates(subjects) {
     const timeStr  = e.time === 'AM' ? '9:00 AM' : '1:30 PM';
     const urgency  = e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : 'var(--accent-dark)';
     const urgBg    = e.diffDays <= 7 ? 'rgba(239,68,68,0.08)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.08)' : 'var(--accent-dim)';
-    const subjectColor = {'Computer Science':'#6366F1','Mathematics':'#8B5CF6','Further Mathematics':'#7C3AED','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6'}[e.subject] || 'var(--accent)';
+    const subjectColor = {'Computer Science':'#6366F1','Mathematics':'#8B5CF6','Further Mathematics':'#7C3AED','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6','English Language':'#DC2626'}[e.subject] || 'var(--accent)';
     return `<div class="exam-tl-row${hidden ? ' exam-hidden' : ''}" style="display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--border);">
       <div style="width:36px;height:36px;border-radius:10px;background:${subjectColor}18;border:1px solid ${subjectColor}33;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">${e.emoji}</div>
       <div style="flex:1;min-width:0;">
@@ -1359,8 +1363,9 @@ const SUBJECT_TOPIC_KEY = {
   'Further Mathematics_AQA': 'further-maths-aqa',
   'Further Mathematics_OCR A': 'further-maths-ocr',
   'Further Mathematics_OCR B': 'further-maths-ocr-b',
+  'English Language_AQA': 'english-aqa',
 };
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas': 12, 'maths-aqa': 17, 'maths-ocr': 19, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas': 12, 'maths-aqa': 17, 'maths-ocr': 19, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11 };
 const SUBJECT_NOTES_PAGE = {
   'Computer Science_OCR': 'subject-notes/cs-notes.html',
   'Computer Science_AQA': 'subject-notes/cs-aqa-notes.html',
@@ -1391,6 +1396,7 @@ const SUBJECT_NOTES_PAGE = {
   'Further Mathematics_AQA': 'subject-notes/further-maths-aqa-notes.html',
   'Further Mathematics_OCR A': 'subject-notes/further-maths-ocr-notes.html',
   'Further Mathematics_OCR B': 'subject-notes/further-maths-ocr-b-notes.html',
+  'English Language_AQA': 'subject-notes/english-aqa-notes.html',
 };
 
 // ── Medal checking ───────────────────────────────────────────────────────

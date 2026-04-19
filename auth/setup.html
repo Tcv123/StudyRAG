@@ -430,11 +430,12 @@ const SUBJECTS = [
   { name: 'Physics',            emoji: '⚡' },
   { name: 'Economics',          emoji: '📈' },
   { name: 'Geography',          emoji: '🌍' },
+  { name: 'English Language',   emoji: '📝' },
 ];
 
 const BOARDS = ['AQA', 'OCR', 'Edexcel'];
 // Subjects where Edexcel is NOT available at A-Level / AS
-const NO_EDEXCEL_ALEVEL = ['Computer Science'];
+const NO_EDEXCEL_ALEVEL = ['Computer Science', 'English Language'];
 // Subjects with custom board lists
 const CUSTOM_BOARDS = {
   'Economics': ['AQA', 'Edexcel A', 'OCR', 'Edexcel B'],
@@ -443,6 +444,7 @@ const CUSTOM_BOARDS = {
   'Biology': ['AQA', 'Edexcel A', 'Edexcel B', 'OCR A', 'OCR B'],
   'Geography': ['AQA', 'OCR', 'Edexcel', 'Eduqas'],
   'Further Mathematics': ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
+  'English Language': ['AQA'],
 };
 function getBoardsFor(subjectName) {
   if (CUSTOM_BOARDS[subjectName]) return CUSTOM_BOARDS[subjectName];
