@@ -435,7 +435,7 @@ const SUBJECTS = [
 
 const BOARDS = ['AQA', 'OCR', 'Edexcel'];
 // Subjects where Edexcel is NOT available at A-Level / AS
-const NO_EDEXCEL_ALEVEL = ['Computer Science', 'English Language'];
+const NO_EDEXCEL_ALEVEL = ['Computer Science'];
 // Subjects with custom board lists
 const CUSTOM_BOARDS = {
   'Economics': ['AQA', 'Edexcel A', 'OCR', 'Edexcel B'],
@@ -444,7 +444,7 @@ const CUSTOM_BOARDS = {
   'Biology': ['AQA', 'Edexcel A', 'Edexcel B', 'OCR A', 'OCR B'],
   'Geography': ['AQA', 'OCR', 'Edexcel', 'Eduqas'],
   'Further Mathematics': ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
-  'English Language': ['AQA'],
+  'English Language': ['AQA', 'Edexcel'],
 };
 function getBoardsFor(subjectName) {
   if (CUSTOM_BOARDS[subjectName]) return CUSTOM_BOARDS[subjectName];
