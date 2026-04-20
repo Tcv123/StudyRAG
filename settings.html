@@ -164,6 +164,68 @@
     .toggle.on { background: var(--accent); }
     .toggle.on::after { transform: translateX(18px); }
 
+    /* ── AVATAR PICKER ── */
+    .avatar-current {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 18px;
+    }
+    .avatar-current-img {
+      width: 68px; height: 68px; border-radius: 50%;
+      background: var(--accent-dim); border: 2px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 600; color: var(--accent-dark);
+      overflow: hidden; flex-shrink: 0;
+    }
+    .avatar-current-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .avatar-current-meta { flex: 1; min-width: 0; }
+    .avatar-current-label { font-size: 13px; font-weight: 600; color: var(--text); }
+    .avatar-current-hint { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.5; }
+
+    .avatar-style-tabs {
+      display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap;
+    }
+    .avatar-style-tab {
+      padding: 7px 14px; border-radius: 20px;
+      font-size: 12px; font-weight: 600; cursor: pointer;
+      border: 1.5px solid var(--border); background: var(--surface);
+      color: var(--muted); transition: all 0.15s; user-select: none;
+    }
+    .avatar-style-tab:hover { border-color: var(--border-hover); color: var(--text); }
+    .avatar-style-tab.active {
+      background: var(--accent); border-color: var(--accent);
+      color: #fff; box-shadow: 0 2px 8px var(--accent-glow);
+    }
+
+    .avatar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));
+      gap: 10px;
+    }
+    .avatar-option {
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--surface2);
+      cursor: pointer; overflow: hidden;
+      transition: all 0.15s;
+      padding: 0;
+    }
+    .avatar-option:hover { border-color: var(--border-hover); transform: scale(1.05); }
+    .avatar-option.selected {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+    .avatar-option img { width: 100%; height: 100%; display: block; }
+
+    .avatar-remove-btn {
+      margin-top: 12px;
+      background: none; border: 1px solid var(--border);
+      color: var(--muted); padding: 7px 14px;
+      border-radius: 8px; font-size: 12px; font-weight: 600;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .avatar-remove-btn:hover { border-color: var(--red-border); color: var(--red-text); }
+    .avatar-remove-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
     /* ── STUDY GOAL ── */
     .goal-pills { display: flex; gap: 8px; flex-wrap: wrap; }
     .goal-pill {
@@ -295,6 +357,25 @@
           <div style="font-size:13px;color:var(--text);">🚫 Ad-free experience</div>
         </div>
       </div>
+    </div>
+
+    <!-- ── AVATAR ── -->
+    <div class="settings-section">
+      <div class="section-title"><span class="section-icon">🖼️</span> Avatar</div>
+
+      <div class="avatar-current">
+        <div class="avatar-current-img" id="avatarCurrent">?</div>
+        <div class="avatar-current-meta">
+          <div class="avatar-current-label">Your avatar</div>
+          <div class="avatar-current-hint">Pick one from the styles below. Saves automatically.</div>
+        </div>
+      </div>
+
+      <div class="avatar-style-tabs" id="avatarStyleTabs"></div>
+      <div class="avatar-grid" id="avatarGrid"></div>
+
+      <button class="avatar-remove-btn" id="avatarRemoveBtn" onclick="removeAvatar()" style="display:none;">Remove avatar</button>
+      <div class="msg" id="avatarMsg"></div>
     </div>
 
     <!-- ── PROFILE ── -->
@@ -436,6 +517,19 @@
 <script>
 let currentUser = null;
 let studyGoal = 30;
+let currentAvatarUrl = null;
+let currentAvatarStyle = 'fun-emoji';
+
+const AVATAR_STYLES = [
+  { id: 'fun-emoji', name: 'Fun Emoji' },
+  { id: 'bottts',    name: 'Bottts' },
+  { id: 'thumbs',    name: 'Thumbs' },
+];
+const AVATAR_SEEDS = ['Aria','Max','Luna','Zoe','Felix','Nova','Kai','Mia','Leo','Ivy','Owen','Sage','Remy','Juno','Elio','Poppy'];
+
+function avatarUrlFor(style, seed) {
+  return `https://api.dicebear.com/9.x/${style}/svg?seed=${encodeURIComponent(seed)}`;
+}
 
 // ── Load ──
 function showUpgrade() {
@@ -462,6 +556,12 @@ async function load() {
   document.getElementById('lastName').value   = lastName;
   document.getElementById('emailField').value = user.email;
 
+  // Avatar picker — detect the saved style so its tab is pre-selected
+  currentAvatarUrl = profile?.avatar_url || null;
+  const guessedStyle = AVATAR_STYLES.find(s => currentAvatarUrl?.includes(`/${s.id}/svg`));
+  currentAvatarStyle = guessedStyle ? guessedStyle.id : 'fun-emoji';
+  renderAvatarPicker(((firstName[0] || '') + (lastName[0] || '')).toUpperCase());
+
   // Study goal from localStorage
   studyGoal = parseInt(localStorage.getItem('study_goal') || '30');
   renderGoalPills();
@@ -473,6 +573,81 @@ async function load() {
     document.getElementById('toggleStreak').classList.add('on');
   if (localStorage.getItem('notif_content') === 'true')
     document.getElementById('toggleContent').classList.add('on');
+}
+
+// ── Avatar ──
+function renderAvatarPicker(initials) {
+  const tabsEl = document.getElementById('avatarStyleTabs');
+  const gridEl = document.getElementById('avatarGrid');
+  const currentEl = document.getElementById('avatarCurrent');
+  const removeBtn = document.getElementById('avatarRemoveBtn');
+
+  tabsEl.innerHTML = AVATAR_STYLES.map(s =>
+    `<div class="avatar-style-tab ${s.id === currentAvatarStyle ? 'active' : ''}" onclick="pickAvatarStyle('${s.id}', '${initials || '?'}')">${s.name}</div>`
+  ).join('');
+
+  gridEl.innerHTML = AVATAR_SEEDS.map(seed => {
+    const url = avatarUrlFor(currentAvatarStyle, seed);
+    const sameStyle = currentAvatarUrl?.includes(`/${currentAvatarStyle}/svg`);
+    const sameSeed  = currentAvatarUrl?.includes(`seed=${encodeURIComponent(seed)}`);
+    const selected = (sameStyle && sameSeed) ? 'selected' : '';
+    return `<button type="button" class="avatar-option ${selected}" onclick="pickAvatar('${url}')"><img src="${url}" alt="" loading="lazy"></button>`;
+  }).join('');
+
+  if (currentAvatarUrl) {
+    currentEl.innerHTML = `<img src="${currentAvatarUrl}" alt="">`;
+    removeBtn.style.display = 'inline-block';
+  } else {
+    currentEl.textContent = initials || '?';
+    removeBtn.style.display = 'none';
+  }
+}
+
+function pickAvatarStyle(styleId, initials) {
+  currentAvatarStyle = styleId;
+  renderAvatarPicker(initials);
+}
+
+async function pickAvatar(url) {
+  currentAvatarUrl = url;
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName  = document.getElementById('lastName').value.trim();
+  const initials = ((firstName[0] || '') + (lastName[0] || '')).toUpperCase();
+  renderAvatarPicker(initials);
+
+  const msg = document.getElementById('avatarMsg');
+  const { error } = await supabaseClient.from('profiles')
+    .update({ avatar_url: url })
+    .eq('id', currentUser.id);
+
+  if (error) {
+    showMsg(msg, 'error', 'Failed: ' + error.message);
+    return;
+  }
+  showMsg(msg, 'success', 'Avatar saved.');
+  // Update sidebar chip immediately
+  document.getElementById('avatarInitials').innerHTML =
+    '<img src="' + url + '" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;">';
+}
+
+async function removeAvatar() {
+  currentAvatarUrl = null;
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName  = document.getElementById('lastName').value.trim();
+  const initials = ((firstName[0] || '') + (lastName[0] || '')).toUpperCase();
+
+  const { error } = await supabaseClient.from('profiles')
+    .update({ avatar_url: null })
+    .eq('id', currentUser.id);
+
+  const msg = document.getElementById('avatarMsg');
+  if (error) {
+    showMsg(msg, 'error', 'Failed: ' + error.message);
+    return;
+  }
+  renderAvatarPicker(initials);
+  document.getElementById('avatarInitials').textContent = initials || '?';
+  showMsg(msg, 'success', 'Avatar removed.');
 }
 
 // ── Profile ──
