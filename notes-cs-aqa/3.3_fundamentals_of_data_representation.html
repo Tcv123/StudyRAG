@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 3.3 &mdash; Fundamentals of Data Representation</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>3.3 Fundamentals of Data Representation</h1>
+<p class="spec-ref">AQA GCSE Computer Science (8525) &mdash; Paper 2</p>
+
+<p>Computers store <strong>everything</strong> &mdash; text, numbers, images, sound, programs &mdash; as patterns of binary digits (0s and 1s). This topic explains how those patterns are organised into useful information: how numbers are written in different bases, how text, pictures and sound are encoded, and how files can be made smaller without (or with) losing detail. Understanding these ideas is essential because every later topic (networks, CPUs, storage) manipulates the same raw binary data.</p>
+
+<h2>3.3.1 Number Bases</h2>
+
+<div class="definition">
+    A <strong>number base</strong> (or <strong>radix</strong>) is the number of distinct digits used by a number system, including 0. The place value of each digit is a power of the base. AQA requires you to know three bases: <strong>denary</strong> (base 10, the everyday number system), <strong>binary</strong> (base 2, used inside every digital computer), and <strong>hexadecimal</strong> (base 16, used as a shorter, human-readable form of binary).
+</div>
+
+<h3>Denary (Base 10)</h3>
+
+<p>Denary (also called <strong>decimal</strong>) is the system humans use every day. It has 10 digits: <code>0, 1, 2, 3, 4, 5, 6, 7, 8, 9</code>. The place values are powers of 10: units, tens, hundreds, thousands, and so on. The number <code>3 472</code> means <code>3&times;1000 + 4&times;100 + 7&times;10 + 2&times;1</code>.</p>
+
+<h3>Binary (Base 2)</h3>
+
+<p>Binary has only <strong>two digits</strong>: <code>0</code> and <code>1</code>. Each digit is called a <strong>bit</strong> (short for <em>binary digit</em>). Computers use binary because every component inside the processor and memory can be in one of two physical states &mdash; for example, a capacitor charged or empty, a voltage high or low, a switch on or off. Two-state systems are cheap, reliable and easy to build; a system with 10 distinct voltage levels for denary would be far more error-prone.</p>
+
+<p>Place values in binary are powers of 2. Reading an 8-bit binary number from left to right, the place values are:</p>
+
+<table>
+    <tr><th>Bit position</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr>
+    <tr><th>Place value</th><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+    <tr><th>Power of 2</th><td>2<sup>7</sup></td><td>2<sup>6</sup></td><td>2<sup>5</sup></td><td>2<sup>4</sup></td><td>2<sup>3</sup></td><td>2<sup>2</sup></td><td>2<sup>1</sup></td><td>2<sup>0</sup></td></tr>
+</table>
+
+<!-- Diagram 1: 8-bit binary place-value table -->
+<svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">8-bit Binary Place-Value Columns</text>
+  <text x="360" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Each column doubles as you move left. Maximum value of 8 bits = 128+64+32+16+8+4+2+1 = 255.</text>
+  <g font-family="Consolas, monospace">
+    <!-- Place value row -->
+    <g>
+      <rect x="40"  y="60" width="80" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <rect x="125" y="60" width="80" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <rect x="210" y="60" width="80" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <rect x="295" y="60" width="80" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <rect x="380" y="60" width="80" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <rect x="465" y="60" width="80" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <rect x="550" y="60" width="80" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <rect x="635" y="60" width="80" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <text x="80"  y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e3a5f">128</text>
+      <text x="165" y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e3a5f">64</text>
+      <text x="250" y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e3a5f">32</text>
+      <text x="335" y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e3a5f">16</text>
+      <text x="420" y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e3a5f">8</text>
+      <text x="505" y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e3a5f">4</text>
+      <text x="590" y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e3a5f">2</text>
+      <text x="675" y="86" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e3a5f">1</text>
+    </g>
+    <!-- Example number row: 10110101 = 181 -->
+    <g>
+      <rect x="40"  y="110" width="80" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <rect x="125" y="110" width="80" height="40" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+      <rect x="210" y="110" width="80" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <rect x="295" y="110" width="80" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <rect x="380" y="110" width="80" height="40" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+      <rect x="465" y="110" width="80" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <rect x="550" y="110" width="80" height="40" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+      <rect x="635" y="110" width="80" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <text x="80"  y="137" text-anchor="middle" font-size="20" font-weight="bold" fill="#b45309">1</text>
+      <text x="165" y="137" text-anchor="middle" font-size="20" font-weight="bold" fill="#9ca3af">0</text>
+      <text x="250" y="137" text-anchor="middle" font-size="20" font-weight="bold" fill="#b45309">1</text>
+      <text x="335" y="137" text-anchor="middle" font-size="20" font-weight="bold" fill="#b45309">1</text>
+      <text x="420" y="137" text-anchor="middle" font-size="20" font-weight="bold" fill="#9ca3af">0</text>
+      <text x="505" y="137" text-anchor="middle" font-size="20" font-weight="bold" fill="#b45309">1</text>
+      <text x="590" y="137" text-anchor="middle" font-size="20" font-weight="bold" fill="#9ca3af">0</text>
+      <text x="675" y="137" text-anchor="middle" font-size="20" font-weight="bold" fill="#b45309">1</text>
+    </g>
+    <!-- Totals -->
+    <text x="40"  y="180" font-size="12" fill="#1e3a5f">128 + 32 + 16 + 4 + 1 = <tspan font-weight="bold" fill="#b45309">181</tspan> &#8594; the binary pattern <tspan font-weight="bold">10110101</tspan> equals denary <tspan font-weight="bold" fill="#b45309">181</tspan></text>
+  </g>
+</svg>
+
+<h3>Hexadecimal (Base 16)</h3>
+
+<p>Hexadecimal (usually shortened to <strong>hex</strong>) has 16 digits. The digits 0&ndash;9 have their usual values; the letters A, B, C, D, E, F represent the extra digits for 10, 11, 12, 13, 14, 15.</p>
+
+<table>
+    <tr><th>Hex</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td></tr>
+    <tr><th>Denary</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+    <tr><th>Binary</th><td>0000</td><td>0001</td><td>0010</td><td>0011</td><td>0100</td><td>0101</td><td>0110</td><td>0111</td><td>1000</td><td>1001</td><td>1010</td><td>1011</td><td>1100</td><td>1101</td><td>1110</td><td>1111</td></tr>
+</table>
+
+<h3>Why is Hexadecimal Used?</h3>
+
+<p>Hexadecimal is not used because computers work in base 16 &mdash; they do not. Hex is used by <em>humans</em> when they need to read or write binary values. The reasons are:</p>
+
+<ul>
+    <li><strong>Shorter to write:</strong> a long 8-bit binary number like <code>11110011</code> becomes just <code>F3</code> in hex &mdash; four times fewer characters.</li>
+    <li><strong>Easier to read and less error-prone:</strong> a programmer is far more likely to mis-type or mis-read <code>10111010 11011110</code> than <code>BADE</code>.</li>
+    <li><strong>Direct mapping to binary:</strong> because 16 = 2<sup>4</sup>, exactly 4 bits (a <em>nibble</em>) correspond to one hex digit, so you can convert between binary and hex without any arithmetic &mdash; just look up each nibble.</li>
+    <li><strong>Compactness:</strong> two hex digits fit in one byte, which matches how memory is organised.</li>
+</ul>
+
+<p>Hex appears anywhere binary data must be shown to a human: memory addresses (<code>0x7FFE0A14</code>), HTML colour codes (<code>#1E40AF</code>), MAC addresses (<code>00:1B:44:11:3A:B7</code>), error codes, and the contents of a file viewed in a "hex editor".</p>
+
+<div class="exam-tip">When an exam asks "state one reason hexadecimal is used instead of binary", aim for a <em>specific</em> reason plus a <em>consequence</em>: "Hex is shorter &mdash; 4 binary digits become 1 hex digit &mdash; so programmers can read and write long binary values more quickly and with fewer mistakes." Avoid vague answers such as "it is easier".</div>
+
+<h2>3.3.2 Converting Between Number Bases</h2>
+
+<h3>Binary &rarr; Denary</h3>
+
+<p>Write the 8-bit place-value columns above the binary number, then add up the place values that have a <code>1</code> beneath them.</p>
+
+<p><strong>Worked example:</strong> convert <code>10110110</code> to denary.</p>
+
+<table>
+    <tr><th>Place value</th><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+    <tr><th>Binary</th><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><th>Contribution</th><td>128</td><td>0</td><td>32</td><td>16</td><td>0</td><td>4</td><td>2</td><td>0</td></tr>
+</table>
+
+<p>Total: <code>128 + 32 + 16 + 4 + 2 = <strong>182</strong></code>. So <code>10110110</code><sub>2</sub> = 182<sub>10</sub>.</p>
+
+<h3>Denary &rarr; Binary (Repeated Halving / Subtraction)</h3>
+
+<p>Two reliable methods work at GCSE. The <strong>subtraction method</strong> is usually quicker by hand.</p>
+
+<p><strong>Subtraction method &mdash; convert 181 to 8-bit binary.</strong> Go from the largest place value (128) downwards. At each column, ask: does the remaining number fit? If yes, write <code>1</code> and subtract; if no, write <code>0</code>.</p>
+
+<table>
+    <tr><th>Place value</th><th>Fits in remainder?</th><th>Bit</th><th>New remainder</th></tr>
+    <tr><td>128</td><td>181 &ge; 128 &mdash; yes</td><td><strong>1</strong></td><td>181 &minus; 128 = 53</td></tr>
+    <tr><td>64</td><td>53 &ge; 64 &mdash; no</td><td><strong>0</strong></td><td>53</td></tr>
+    <tr><td>32</td><td>53 &ge; 32 &mdash; yes</td><td><strong>1</strong></td><td>53 &minus; 32 = 21</td></tr>
+    <tr><td>16</td><td>21 &ge; 16 &mdash; yes</td><td><strong>1</strong></td><td>21 &minus; 16 = 5</td></tr>
+    <tr><td>8</td><td>5 &ge; 8 &mdash; no</td><td><strong>0</strong></td><td>5</td></tr>
+    <tr><td>4</td><td>5 &ge; 4 &mdash; yes</td><td><strong>1</strong></td><td>5 &minus; 4 = 1</td></tr>
+    <tr><td>2</td><td>1 &ge; 2 &mdash; no</td><td><strong>0</strong></td><td>1</td></tr>
+    <tr><td>1</td><td>1 &ge; 1 &mdash; yes</td><td><strong>1</strong></td><td>0</td></tr>
+</table>
+
+<p>Reading top to bottom: <code>181 = <strong>10110101</strong></code><sub>2</sub>. Always check your answer by converting back.</p>
+
+<p><strong>Repeated division method &mdash; convert 45 to binary.</strong> Divide by 2 repeatedly, writing the remainder each time. Read the remainders <em>upwards</em>.</p>
+
+<table>
+    <tr><th>Step</th><th>Division</th><th>Quotient</th><th>Remainder</th></tr>
+    <tr><td>1</td><td>45 &divide; 2</td><td>22</td><td>1</td></tr>
+    <tr><td>2</td><td>22 &divide; 2</td><td>11</td><td>0</td></tr>
+    <tr><td>3</td><td>11 &divide; 2</td><td>5</td><td>1</td></tr>
+    <tr><td>4</td><td>5 &divide; 2</td><td>2</td><td>1</td></tr>
+    <tr><td>5</td><td>2 &divide; 2</td><td>1</td><td>0</td></tr>
+    <tr><td>6</td><td>1 &divide; 2</td><td>0</td><td>1</td></tr>
+</table>
+
+<p>Read remainders bottom-to-top: <code>101101</code>. Pad to 8 bits with leading zeros: <code><strong>00101101</strong></code><sub>2</sub> = 45.</p>
+
+<h3>Range of 8-bit Binary</h3>
+
+<p>An 8-bit number has 2<sup>8</sup> = 256 possible patterns, from <code>00000000</code> (0) to <code>11111111</code> (255). The <strong>range is 0 to 255 inclusive</strong>. In an AQA exam, if you are asked to convert a denary number greater than 255 to 8 bits, it cannot be done &mdash; the value has <em>overflowed</em>.</p>
+
+<h3>Denary &harr; Hexadecimal</h3>
+
+<p><strong>Denary &rarr; hex.</strong> For a value in the range 0&ndash;255 it is easiest to go via binary: split the 8 bits into two 4-bit nibbles and look up each nibble in the hex table. Alternatively, divide by 16: the quotient is the first hex digit, the remainder is the second.</p>
+
+<p><strong>Worked example:</strong> convert 181 to hex.</p>
+
+<ol>
+    <li>We already showed 181 = <code>10110101</code><sub>2</sub>.</li>
+    <li>Split into nibbles: <code>1011 | 0101</code>.</li>
+    <li>Look up each nibble: <code>1011</code> = B; <code>0101</code> = 5.</li>
+    <li>Result: <code>181 = <strong>B5</strong></code><sub>16</sub>.</li>
+</ol>
+
+<p><strong>Division method:</strong> 181 &divide; 16 = 11 remainder 5. 11 is B, the remainder 5 is 5, so the result is <code>B5</code>.</p>
+
+<p><strong>Hex &rarr; denary.</strong> Multiply each hex digit by its place value (powers of 16) and add.</p>
+
+<p><strong>Worked example:</strong> convert <code>2F</code> to denary.</p>
+
+<table>
+    <tr><th>Place value</th><td>16</td><td>1</td></tr>
+    <tr><th>Hex digit</th><td>2</td><td>F (= 15)</td></tr>
+    <tr><th>Contribution</th><td>2 &times; 16 = 32</td><td>15 &times; 1 = 15</td></tr>
+</table>
+
+<p>Total = 32 + 15 = <strong>47</strong>. So <code>2F</code><sub>16</sub> = 47<sub>10</sub>.</p>
+
+<h3>Binary &harr; Hexadecimal</h3>
+
+<p>This is the <strong>easiest</strong> conversion because 1 hex digit = 4 binary bits. No arithmetic is needed &mdash; just group and look up.</p>
+
+<p><strong>Binary &rarr; hex.</strong> Group the bits into nibbles of 4, starting from the <em>right</em>. Pad the leftmost group with leading zeros if needed. Convert each nibble to its hex digit.</p>
+
+<p><strong>Worked example:</strong> convert <code>11011110</code><sub>2</sub> to hex.</p>
+
+<table>
+    <tr><th>Nibble</th><td>1101</td><td>1110</td></tr>
+    <tr><th>Denary</th><td>13</td><td>14</td></tr>
+    <tr><th>Hex</th><td>D</td><td>E</td></tr>
+</table>
+
+<p>Result: <code>11011110</code><sub>2</sub> = <code><strong>DE</strong></code><sub>16</sub>. (This value, 222 in denary, is how the word "DEAD" and "BEEF" in hex got famous as programmer memory markers.)</p>
+
+<p><strong>Hex &rarr; binary.</strong> Replace each hex digit with its 4-bit binary nibble.</p>
+
+<p><strong>Worked example:</strong> convert <code>A7</code><sub>16</sub> to 8-bit binary.</p>
+
+<table>
+    <tr><th>Hex</th><td>A</td><td>7</td></tr>
+    <tr><th>Binary nibble</th><td>1010</td><td>0111</td></tr>
+</table>
+
+<p>Result: <code>A7</code><sub>16</sub> = <code><strong>10100111</strong></code><sub>2</sub>.</p>
+
+<div class="exam-tip">Always <strong>pad</strong> binary answers to the full number of bits requested (normally 8). Writing <code>101101</code> when an 8-bit answer is asked for loses marks; the correct answer is <code>00101101</code>. Similarly, always group binary into nibbles <em>from the right</em> when converting to hex, not from the left.</div>
+
+<h2>3.3.3 Units of Information</h2>
+
+<div class="definition">
+    A <strong>bit</strong> is a single binary digit &mdash; 0 or 1 &mdash; and is the smallest possible unit of data in a computer. Larger amounts of data are measured in bytes and multiples of bytes. The AQA specification uses the <strong>decimal (SI) prefixes</strong>: 1 kB = 1000 B (not 1024 B). Some textbooks still use the older binary definition (1 KB = 1024 B), so read the question carefully.
+</div>
+
+<h3>Hierarchy of Units</h3>
+
+<table>
+    <tr><th>Unit</th><th>Symbol</th><th>Size</th><th>Notes</th></tr>
+    <tr><td>Bit</td><td>b</td><td>1 binary digit (0 or 1)</td><td>The smallest unit. Represents one of two possible values.</td></tr>
+    <tr><td>Nibble</td><td>&mdash;</td><td>4 bits</td><td>Half a byte. Represents 16 values. Maps directly to 1 hexadecimal digit.</td></tr>
+    <tr><td>Byte</td><td>B</td><td>8 bits</td><td>Represents 256 values. Historically enough to hold one character of text (ASCII).</td></tr>
+    <tr><td>Kilobyte</td><td>kB</td><td>1 000 B = 10<sup>3</sup> B</td><td>A short text document. (AQA uses 1 kB = 1000 B.)</td></tr>
+    <tr><td>Megabyte</td><td>MB</td><td>1 000 kB = 10<sup>6</sup> B</td><td>A high-quality photo, several minutes of MP3 audio.</td></tr>
+    <tr><td>Gigabyte</td><td>GB</td><td>1 000 MB = 10<sup>9</sup> B</td><td>A DVD film, a large game install.</td></tr>
+    <tr><td>Terabyte</td><td>TB</td><td>1 000 GB = 10<sup>12</sup> B</td><td>A typical external hard drive.</td></tr>
+</table>
+
+<div class="exam-tip">To go from a smaller unit to a larger one, <strong>divide by 1000</strong>; to go from larger to smaller, <strong>multiply by 1000</strong>. For example: 4 500 000 B &divide; 1000 = 4500 kB &divide; 1000 = 4.5 MB. Do not mix bits and bytes &mdash; 8 bits = 1 byte, so "500 Mb" (megabits) is only 62.5 MB (megabytes). Network speeds are usually quoted in bits per second; file sizes in bytes.</div>
+
+<h3>Estimating File Sizes</h3>
+
+<p>Working out how many bytes, kilobytes or megabytes a file occupies is a common exam question. The general method is always:</p>
+
+<ol>
+    <li>Work out the total number of <strong>bits</strong> needed, using the appropriate formula (character code, image or sound).</li>
+    <li>Divide by 8 to convert bits to bytes.</li>
+    <li>Divide by 1000 once to get kB, twice to get MB, three times to get GB.</li>
+</ol>
+
+<p><strong>Quick example:</strong> a plain text message of 400 ASCII characters. Each character is 7 bits in standard ASCII (often padded to 8 bits = 1 byte). Size = 400 &times; 1 byte = <strong>400 B = 0.4 kB</strong>.</p>
+
+<h2>3.3.4 Binary Arithmetic</h2>
+
+<p>AQA requires you to be able to <strong>add two 8-bit binary numbers</strong>, handling carries correctly, and to recognise when an addition causes <strong>overflow</strong>.</p>
+
+<h3>Rules of Binary Addition</h3>
+
+<table>
+    <tr><th>A</th><th>B</th><th>Sum bit</th><th>Carry out</th></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td><strong>1</strong> (carry to the next column)</td></tr>
+    <tr><td colspan="4" style="text-align:center;">Plus, with a carry in: 1 + 1 + 1 = <strong>1 sum, 1 carry</strong>.</td></tr>
+</table>
+
+<p>So the only rule to remember is that <strong>1 + 1 = 10</strong> in binary (like 9 + 1 = 10 in denary). Any time two <code>1</code>s combine in a column, you write <code>0</code> and carry <code>1</code> to the next column on the left.</p>
+
+<h3>Worked Example 1 &mdash; No Overflow</h3>
+
+<p>Add <code>01011010</code> (90) and <code>00110101</code> (53).</p>
+
+<pre>
+  Carries:    0 1 1 0 0 0 0 0
+              -----------------
+   01011010   (90)
+ + 00110101   (53)
+   -----------------
+   10001111   (143)   &#8592; expected: 90 + 53 = 143 &#10004;
+</pre>
+
+<p>Working column-by-column from the right:</p>
+<ul>
+    <li>Column 0: 0 + 1 = 1, no carry.</li>
+    <li>Column 1: 1 + 0 = 1, no carry.</li>
+    <li>Column 2: 0 + 1 = 1, no carry.</li>
+    <li>Column 3: 1 + 0 = 1, no carry.</li>
+    <li>Column 4: 1 + 1 = 10 &rarr; write 0, carry 1.</li>
+    <li>Column 5: 0 + 1 + carry 1 = 10 &rarr; write 0, carry 1.</li>
+    <li>Column 6: 1 + 0 + carry 1 = 10 &rarr; write 0, carry 1.</li>
+    <li>Column 7: 0 + 0 + carry 1 = 1, no carry out of the byte.</li>
+</ul>
+
+<p>Result: <code>10001111</code><sub>2</sub> = 143<sub>10</sub>. &#10004;</p>
+
+<h3>Worked Example 2 &mdash; Overflow</h3>
+
+<div class="definition">
+    <strong>Overflow</strong> happens when the result of an arithmetic operation is too large to fit in the number of bits available. For 8-bit unsigned addition, overflow occurs whenever the correct answer is greater than 255, i.e. a final carry-out is generated from the leftmost column. The hardware will either <em>truncate</em> the extra bit (giving a wrong answer) or raise an overflow <em>flag</em> that the program can check.
+</div>
+
+<p>Add <code>11010110</code> (214) and <code>01011001</code> (89). The correct denary total is 303, which is greater than 255 and so does not fit in 8 bits.</p>
+
+<pre>
+  Carries:  1 1 1 1 0 1 1 0
+            -----------------
+ (carry out) 1
+   11010110   (214)
+ + 01011001   ( 89)
+   -----------------
+   00101111   ( 47)   &#10008; wrong! 214 + 89 = 303, which needs 9 bits.
+</pre>
+
+<p>The 9th bit is the <strong>carry-out</strong> of the byte. Because only 8 bits are stored, the final pattern is <code>00101111</code> (47) &mdash; this is 303 &minus; 256 = 47. An overflow flag would be set to signal that the arithmetic was incorrect.</p>
+
+<div class="exam-tip">A question asking "has overflow occurred?" can be answered by checking two things: (1) is there a final carry-out beyond the leftmost bit? If yes, overflow has occurred. (2) Does the denary answer exceed 255 (for unsigned 8-bit)? If yes, overflow has occurred. State both checks if space allows.</div>
+
+<h2>3.3.5 Binary Shifts</h2>
+
+<div class="definition">
+    A <strong>binary shift</strong> moves every bit in a binary number a fixed number of positions to the left or to the right. AQA requires you to understand <strong>logical</strong> shifts only: a logical left shift inserts a 0 on the right and discards the leftmost bit; a logical right shift inserts a 0 on the left and discards the rightmost bit.
+</div>
+
+<h3>Logical Left Shift (Multiplication by 2)</h3>
+
+<p>Each left shift by one position <strong>multiplies the number by 2</strong>. Shifting left by <em>n</em> places multiplies by 2<sup>n</sup>. This is because each bit that moves left is now in a column worth twice as much.</p>
+
+<p><strong>Worked example:</strong> shift <code>00010110</code> (22) left by 2 places.</p>
+
+<table>
+    <tr><th>Step</th><th>Binary</th><th>Denary</th></tr>
+    <tr><td>Before</td><td><code>00010110</code></td><td>22</td></tr>
+    <tr><td>After 1 left shift</td><td><code>00101100</code></td><td>44 (= 22 &times; 2)</td></tr>
+    <tr><td>After 2 left shifts</td><td><code>01011000</code></td><td>88 (= 22 &times; 4)</td></tr>
+</table>
+
+<h3>Logical Right Shift (Integer Division by 2)</h3>
+
+<p>Each right shift by one position <strong>divides the number by 2</strong>, discarding any remainder (integer division). Shifting right by <em>n</em> places divides by 2<sup>n</sup>.</p>
+
+<p><strong>Worked example:</strong> shift <code>01100100</code> (100) right by 3 places.</p>
+
+<table>
+    <tr><th>Step</th><th>Binary</th><th>Denary</th></tr>
+    <tr><td>Before</td><td><code>01100100</code></td><td>100</td></tr>
+    <tr><td>After 1 right shift</td><td><code>00110010</code></td><td>50</td></tr>
+    <tr><td>After 2 right shifts</td><td><code>00011001</code></td><td>25</td></tr>
+    <tr><td>After 3 right shifts</td><td><code>00001100</code></td><td>12 (not 12.5 &mdash; remainder lost)</td></tr>
+</table>
+
+<h3>Risks of Binary Shifts &mdash; Lost Bits</h3>
+
+<p>Because shifts push bits off the end of the byte, <strong>information can be lost</strong>:</p>
+
+<ul>
+    <li><strong>Left shift:</strong> if a <code>1</code> bit is pushed off the left end, the value has overflowed and the result is wrong. Example: <code>10000001</code> (129) shifted left by 1 becomes <code>00000010</code> (2), not 258. The top bit was lost.</li>
+    <li><strong>Right shift:</strong> any <code>1</code>s pushed off the right are discarded, so the shift acts as <em>integer</em> division, not exact division. Example: <code>00000111</code> (7) shifted right by 1 becomes <code>00000011</code> (3), not 3.5.</li>
+</ul>
+
+<div class="exam-tip">When asked "what is the effect of a logical left/right shift by n?" give <em>both</em> the mathematical effect ("multiplies / divides by 2<sup>n</sup>") and the risk ("bits shifted off the end are lost, which can cause overflow or loss of precision"). Two clear points typically score both marks.</div>
+
+<h2>3.3.6 Character Encoding</h2>
+
+<div class="definition">
+    A <strong>character set</strong> is the agreed list of characters that a system can represent, each paired with a unique <strong>character code</strong> (or <strong>code point</strong>) &mdash; the binary number used to store that character. Without an agreed character set, text typed on one computer could not be read correctly on another.
+</div>
+
+<h3>ASCII (American Standard Code for Information Interchange)</h3>
+
+<p>Standard ASCII uses <strong>7 bits</strong> per character, giving 2<sup>7</sup> = 128 possible codes (0 to 127). These codes cover:</p>
+
+<ul>
+    <li>The uppercase letters A&ndash;Z (codes 65&ndash;90)</li>
+    <li>The lowercase letters a&ndash;z (codes 97&ndash;122)</li>
+    <li>The digit characters 0&ndash;9 (codes 48&ndash;57)</li>
+    <li>Common punctuation and symbols (space, . , ! ? @ # etc.)</li>
+    <li>Non-printing <em>control</em> characters for early teletypes (codes 0&ndash;31 and 127) &mdash; e.g. carriage return (13), line feed (10), tab (9).</li>
+</ul>
+
+<p>In practice each character is stored in one full <strong>byte</strong> (8 bits), with the top bit set to 0. This is sometimes called "7-bit ASCII stored in 8 bits".</p>
+
+<h3>ASCII Table Extract</h3>
+
+<table>
+    <tr><th>Char</th><th>Denary</th><th>Binary (8-bit)</th><th>Hex</th></tr>
+    <tr><td>(space)</td><td>32</td><td>00100000</td><td>20</td></tr>
+    <tr><td>'0'</td><td>48</td><td>00110000</td><td>30</td></tr>
+    <tr><td>'1'</td><td>49</td><td>00110001</td><td>31</td></tr>
+    <tr><td>'9'</td><td>57</td><td>00111001</td><td>39</td></tr>
+    <tr><td>'A'</td><td>65</td><td>01000001</td><td>41</td></tr>
+    <tr><td>'B'</td><td>66</td><td>01000010</td><td>42</td></tr>
+    <tr><td>'M'</td><td>77</td><td>01001101</td><td>4D</td></tr>
+    <tr><td>'Z'</td><td>90</td><td>01011010</td><td>5A</td></tr>
+    <tr><td>'a'</td><td>97</td><td>01100001</td><td>61</td></tr>
+    <tr><td>'b'</td><td>98</td><td>01100010</td><td>62</td></tr>
+    <tr><td>'m'</td><td>109</td><td>01101101</td><td>6D</td></tr>
+    <tr><td>'z'</td><td>122</td><td>01111010</td><td>7A</td></tr>
+</table>
+
+<h3>Relationships Between Character Codes</h3>
+
+<p>The codes are deliberately arranged so that common operations are easy:</p>
+
+<ul>
+    <li><strong>Letters run in order.</strong> 'A' = 65, 'B' = 66, 'C' = 67 &hellip; 'Z' = 90. So to jump <em>n</em> letters along the alphabet, add <em>n</em> to the code. This makes alphabetical sorting straightforward &mdash; just compare character codes.</li>
+    <li><strong>Lowercase sits 32 higher than uppercase.</strong> 'a' = 97 = 65 + 32. Adding 32 converts an uppercase letter's code to its lowercase equivalent; subtracting 32 goes the other way.</li>
+    <li><strong>Digit codes are not the same as digit values.</strong> '7' has code 55, not 7. To turn a digit <em>character</em> into its numeric value, subtract the code of '0' (48): <code>'7' &minus; '0' = 55 &minus; 48 = 7</code>.</li>
+</ul>
+
+<h3>Extended ASCII (8-bit)</h3>
+
+<p>Using all 8 bits of a byte doubles the range to 256 codes. The extra 128 codes (128&ndash;255) were used for accented letters (&eacute;, &uuml;, &ntilde;), basic box-drawing graphics and currency symbols. Different manufacturers chose different encodings, which caused compatibility problems; the ISO-8859 family standardised several variants for different European languages.</p>
+
+<h3>Unicode</h3>
+
+<div class="definition">
+    <strong>Unicode</strong> is a character set that aims to represent <em>every</em> character in <em>every</em> writing system, plus mathematical symbols, emoji and historic scripts. It uses up to <strong>16 bits (and beyond)</strong> per code point, giving at least 65 536 possible characters; the full Unicode standard defines over a million code points. Common storage formats include UTF-8 (variable-width, ASCII-compatible) and UTF-16.
+</div>
+
+<p>Unicode was created because ASCII (even extended) could not cover languages like Chinese, Arabic, Hindi or Japanese, which use thousands of characters. In Unicode, the first 128 code points are deliberately identical to ASCII, so existing English text is still valid.</p>
+
+<h3>ASCII vs Unicode</h3>
+
+<table>
+    <tr><th>Feature</th><th>ASCII (7-bit)</th><th>Unicode</th></tr>
+    <tr><td>Bits per character</td><td>7 (often stored in 8)</td><td>16 or more (variable in UTF-8)</td></tr>
+    <tr><td>Number of characters</td><td>128</td><td>&gt; 1 000 000 code points defined</td></tr>
+    <tr><td>Languages covered</td><td>English only</td><td>All major world scripts + emoji + symbols</td></tr>
+    <tr><td>Bytes for plain English text</td><td>1 byte per character</td><td>1 byte per ASCII character in UTF-8</td></tr>
+    <tr><td>Bytes for non-Latin scripts</td><td>Not supported</td><td>2&ndash;4 bytes per character</td></tr>
+    <tr><td>Typical use</td><td>Legacy text files, configuration files</td><td>Web pages, modern operating systems, databases</td></tr>
+</table>
+
+<div class="exam-tip">A common exam question is "state one advantage and one disadvantage of Unicode over ASCII". Advantage: supports almost every writing system in the world, so a single file can contain English, Chinese, Arabic and emoji together. Disadvantage: each character usually takes more bytes than ASCII, so plain English text files are larger.</div>
+
+<h2>3.3.7 Representing Images</h2>
+
+<h3>Bitmap Images and Pixels</h3>
+
+<div class="definition">
+    A <strong>bitmap</strong> image is a rectangular grid of tiny coloured squares called <strong>pixels</strong> (short for <em>picture elements</em>). Each pixel is stored as a binary number representing its colour. When displayed at a small enough size, the grid of coloured pixels looks like a smooth image to the human eye.
+</div>
+
+<p>Two measurements describe the quality of a bitmap image:</p>
+
+<ul>
+    <li><strong>Resolution</strong> &mdash; the <em>width &times; height</em> of the grid, e.g. 1920 &times; 1080. Higher resolution means more pixels and therefore more detail, but also a larger file.</li>
+    <li><strong>Colour depth</strong> (also called <em>bit depth</em>) &mdash; the number of bits used to store the colour of <em>each</em> pixel.</li>
+</ul>
+
+<h3>Colour Depth</h3>
+
+<p>With <em>n</em> bits per pixel, you can represent 2<sup>n</sup> distinct colours.</p>
+
+<table>
+    <tr><th>Colour depth</th><th>Number of colours (2<sup>n</sup>)</th><th>Typical use</th></tr>
+    <tr><td>1 bit</td><td>2</td><td>Monochrome (black &amp; white) &mdash; e.g. fax images.</td></tr>
+    <tr><td>2 bit</td><td>4</td><td>Very simple palette, early arcade graphics.</td></tr>
+    <tr><td>4 bit</td><td>16</td><td>Early VGA / icon palettes.</td></tr>
+    <tr><td>8 bit</td><td>256</td><td>Simple web graphics (GIF), indexed-colour images.</td></tr>
+    <tr><td>16 bit</td><td>65 536</td><td>"High colour" &mdash; near-photographic quality.</td></tr>
+    <tr><td>24 bit (True Colour)</td><td>16 777 216</td><td>Standard photographic images. 8 bits each for Red, Green, Blue.</td></tr>
+</table>
+
+<!-- Diagram 3: Bitmap pixel grid -->
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;margin:20px auto;display:block;">
+  <text x="280" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Bitmap Pixel Grid &mdash; Resolution and Colour Depth</text>
+  <text x="280" y="40" text-anchor="middle" font-size="11" fill="#6b7280">An 8 &times; 6 image with 2-bit colour depth (4 shades).</text>
+  <!-- Pixel grid 8 wide x 6 tall, 30px cells, start at 100,60 -->
+  <g stroke="#1e3a5f" stroke-width="1">
+    <!-- Row 0 -->
+    <rect x="100" y="60" width="30" height="30" fill="#1a1a2e"/>
+    <rect x="130" y="60" width="30" height="30" fill="#1a1a2e"/>
+    <rect x="160" y="60" width="30" height="30" fill="#6b7280"/>
+    <rect x="190" y="60" width="30" height="30" fill="#d1d5db"/>
+    <rect x="220" y="60" width="30" height="30" fill="#d1d5db"/>
+    <rect x="250" y="60" width="30" height="30" fill="#6b7280"/>
+    <rect x="280" y="60" width="30" height="30" fill="#1a1a2e"/>
+    <rect x="310" y="60" width="30" height="30" fill="#1a1a2e"/>
+    <!-- Row 1 -->
+    <rect x="100" y="90" width="30" height="30" fill="#1a1a2e"/>
+    <rect x="130" y="90" width="30" height="30" fill="#6b7280"/>
+    <rect x="160" y="90" width="30" height="30" fill="#d1d5db"/>
+    <rect x="190" y="90" width="30" height="30" fill="#ffffff"/>
+    <rect x="220" y="90" width="30" height="30" fill="#ffffff"/>
+    <rect x="250" y="90" width="30" height="30" fill="#d1d5db"/>
+    <rect x="280" y="90" width="30" height="30" fill="#6b7280"/>
+    <rect x="310" y="90" width="30" height="30" fill="#1a1a2e"/>
+    <!-- Row 2 -->
+    <rect x="100" y="120" width="30" height="30" fill="#6b7280"/>
+    <rect x="130" y="120" width="30" height="30" fill="#d1d5db"/>
+    <rect x="160" y="120" width="30" height="30" fill="#ffffff"/>
+    <rect x="190" y="120" width="30" height="30" fill="#ffffff"/>
+    <rect x="220" y="120" width="30" height="30" fill="#ffffff"/>
+    <rect x="250" y="120" width="30" height="30" fill="#ffffff"/>
+    <rect x="280" y="120" width="30" height="30" fill="#d1d5db"/>
+    <rect x="310" y="120" width="30" height="30" fill="#6b7280"/>
+    <!-- Row 3 -->
+    <rect x="100" y="150" width="30" height="30" fill="#6b7280"/>
+    <rect x="130" y="150" width="30" height="30" fill="#d1d5db"/>
+    <rect x="160" y="150" width="30" height="30" fill="#ffffff"/>
+    <rect x="190" y="150" width="30" height="30" fill="#ffffff"/>
+    <rect x="220" y="150" width="30" height="30" fill="#ffffff"/>
+    <rect x="250" y="150" width="30" height="30" fill="#ffffff"/>
+    <rect x="280" y="150" width="30" height="30" fill="#d1d5db"/>
+    <rect x="310" y="150" width="30" height="30" fill="#6b7280"/>
+    <!-- Row 4 -->
+    <rect x="100" y="180" width="30" height="30" fill="#1a1a2e"/>
+    <rect x="130" y="180" width="30" height="30" fill="#6b7280"/>
+    <rect x="160" y="180" width="30" height="30" fill="#d1d5db"/>
+    <rect x="190" y="180" width="30" height="30" fill="#ffffff"/>
+    <rect x="220" y="180" width="30" height="30" fill="#ffffff"/>
+    <rect x="250" y="180" width="30" height="30" fill="#d1d5db"/>
+    <rect x="280" y="180" width="30" height="30" fill="#6b7280"/>
+    <rect x="310" y="180" width="30" height="30" fill="#1a1a2e"/>
+    <!-- Row 5 -->
+    <rect x="100" y="210" width="30" height="30" fill="#1a1a2e"/>
+    <rect x="130" y="210" width="30" height="30" fill="#1a1a2e"/>
+    <rect x="160" y="210" width="30" height="30" fill="#6b7280"/>
+    <rect x="190" y="210" width="30" height="30" fill="#d1d5db"/>
+    <rect x="220" y="210" width="30" height="30" fill="#d1d5db"/>
+    <rect x="250" y="210" width="30" height="30" fill="#6b7280"/>
+    <rect x="280" y="210" width="30" height="30" fill="#1a1a2e"/>
+    <rect x="310" y="210" width="30" height="30" fill="#1a1a2e"/>
+  </g>
+  <!-- Dimensions labels -->
+  <text x="220" y="260" text-anchor="middle" font-size="12" fill="#1e3a5f">Width = 8 pixels</text>
+  <line x1="100" y1="250" x2="340" y2="250" stroke="#2563eb" stroke-width="1" marker-end="url(#arrImg1)" marker-start="url(#arrImg1)"/>
+  <text x="82" y="150" text-anchor="end" font-size="12" fill="#1e3a5f">Height</text>
+  <text x="82" y="164" text-anchor="end" font-size="12" fill="#1e3a5f">= 6 px</text>
+  <!-- Legend -->
+  <g font-size="11" fill="#1e3a5f">
+    <rect x="380" y="70" width="20" height="20" fill="#ffffff" stroke="#1e3a5f"/><text x="406" y="85">00 &rarr; white</text>
+    <rect x="380" y="100" width="20" height="20" fill="#d1d5db" stroke="#1e3a5f"/><text x="406" y="115">01 &rarr; light grey</text>
+    <rect x="380" y="130" width="20" height="20" fill="#6b7280" stroke="#1e3a5f"/><text x="406" y="145">10 &rarr; dark grey</text>
+    <rect x="380" y="160" width="20" height="20" fill="#1a1a2e" stroke="#1e3a5f"/><text x="406" y="175">11 &rarr; black</text>
+    <text x="380" y="210" font-weight="bold" fill="#1e40af">Size: 8 &times; 6 &times; 2 =</text>
+    <text x="380" y="228" font-weight="bold" fill="#1e40af">96 bits = 12 bytes</text>
+  </g>
+  <defs>
+    <marker id="arrImg1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb"/></marker>
+  </defs>
+</svg>
+
+<h3>File Size of a Bitmap Image</h3>
+
+<p>The uncompressed file size (in bits) of a pure bitmap image is:</p>
+
+<pre>
+File size (bits) = width &times; height &times; colour depth
+</pre>
+
+<p>To convert to bytes, divide by 8. To convert to kilobytes, divide by 1000 more.</p>
+
+<h3>Worked File Size Example</h3>
+
+<p>A photograph has a resolution of 800 &times; 600 pixels and a colour depth of 24 bits.</p>
+
+<table>
+    <tr><th>Step</th><th>Calculation</th><th>Result</th></tr>
+    <tr><td>Total pixels</td><td>800 &times; 600</td><td>480 000 pixels</td></tr>
+    <tr><td>Total bits</td><td>480 000 &times; 24</td><td>11 520 000 bits</td></tr>
+    <tr><td>Bytes</td><td>11 520 000 &divide; 8</td><td>1 440 000 B</td></tr>
+    <tr><td>Kilobytes</td><td>1 440 000 &divide; 1000</td><td>1440 kB</td></tr>
+    <tr><td>Megabytes</td><td>1440 &divide; 1000</td><td><strong>1.44 MB</strong></td></tr>
+</table>
+
+<h3>Metadata</h3>
+
+<div class="definition">
+    <strong>Metadata</strong> is "data about the data". For a bitmap image this is extra information stored alongside the pixel data that tells a program how to interpret the file. It does not include the pixel colours themselves.
+</div>
+
+<p>Typical image metadata:</p>
+
+<ul>
+    <li>Width and height in pixels (resolution)</li>
+    <li>Colour depth (bits per pixel)</li>
+    <li>File format / version</li>
+    <li>Date and time the photo was taken</li>
+    <li>Camera make, model and lens settings (EXIF data)</li>
+    <li>GPS coordinates (if the camera had a GPS sensor)</li>
+    <li>Compression method used</li>
+</ul>
+
+<p>Without metadata the file would just be a long stream of bits and the computer would have no way of knowing, for example, whether a 48 000-bit block was a 100 &times; 60 image at 8 bpp or a 40 &times; 30 image at 40 bpp.</p>
+
+<div class="exam-tip">Be ready to <strong>rearrange</strong> the size formula. "A 1-bit bitmap file is 3000 B. If its height is 150 pixels, what is its width?" Size in bits = 3000 &times; 8 = 24 000. Width = 24 000 / (150 &times; 1) = 160 pixels. In exam answers always show the working step-by-step &mdash; method marks are available even if the arithmetic goes wrong.</div>
+
+<h2>3.3.8 Representing Sound</h2>
+
+<h3>Analogue vs Digital</h3>
+
+<div class="definition">
+    A <strong>sound wave</strong> is a continuous, analogue vibration of air pressure. A computer cannot store an infinite continuous wave; it must convert the wave into a series of discrete numbers &mdash; a process called <strong>sampling</strong> or <strong>analogue-to-digital conversion</strong>.
+</div>
+
+<h3>Sampling</h3>
+
+<p>At regular intervals, the height (amplitude) of the wave is <em>measured</em> and the result stored as a binary number. Each measurement is called a <strong>sample</strong>. When the samples are played back in order by a digital-to-analogue converter, they reconstruct an approximation of the original wave.</p>
+
+<!-- Diagram 2: Sampling of a sound wave -->
+<svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:20px auto;display:block;">
+  <text x="320" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Sampling a Continuous Sound Wave</text>
+  <text x="320" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Vertical dashed lines mark each sample time. Dots are the stored values.</text>
+  <!-- Axes -->
+  <line x1="60" y1="160" x2="620" y2="160" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="60" y1="60" x2="60" y2="260" stroke="#9ca3af" stroke-width="1"/>
+  <text x="50" y="65" text-anchor="end" font-size="10" fill="#6b7280">Amplitude</text>
+  <text x="620" y="180" text-anchor="end" font-size="10" fill="#6b7280">Time &rarr;</text>
+  <!-- Sine wave: y = 160 - 70*sin((x-60)/50) -->
+  <path d="M60,160 Q85,60 110,60 Q135,60 160,160 Q185,260 210,260 Q235,260 260,160 Q285,60 310,60 Q335,60 360,160 Q385,260 410,260 Q435,260 460,160 Q485,60 510,60 Q535,60 560,160 Q585,260 610,260" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Sample vertical dashes + dots (approximate sine values) -->
+  <g stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3">
+    <line x1="85" y1="60" x2="85" y2="160"/>
+    <line x1="110" y1="60" x2="110" y2="160"/>
+    <line x1="160" y1="160" x2="160" y2="260" stroke-dasharray="0"/>
+    <line x1="185" y1="260" x2="185" y2="160" stroke-dasharray="0"/>
+    <line x1="235" y1="260" x2="235" y2="160" stroke-dasharray="0"/>
+    <line x1="285" y1="60" x2="285" y2="160"/>
+    <line x1="310" y1="60" x2="310" y2="160"/>
+    <line x1="360" y1="160" x2="360" y2="260" stroke-dasharray="0"/>
+    <line x1="410" y1="260" x2="410" y2="160" stroke-dasharray="0"/>
+    <line x1="460" y1="160" x2="460" y2="160" stroke-dasharray="0"/>
+    <line x1="485" y1="60" x2="485" y2="160"/>
+    <line x1="535" y1="60" x2="535" y2="160"/>
+    <line x1="585" y1="260" x2="585" y2="160" stroke-dasharray="0"/>
+  </g>
+  <!-- Sample dots -->
+  <g fill="#b45309" stroke="#b45309">
+    <circle cx="60"  cy="160" r="5"/>
+    <circle cx="85"  cy="85" r="5"/>
+    <circle cx="110" cy="60" r="5"/>
+    <circle cx="135" cy="85" r="5"/>
+    <circle cx="160" cy="160" r="5"/>
+    <circle cx="185" cy="235" r="5"/>
+    <circle cx="210" cy="260" r="5"/>
+    <circle cx="235" cy="235" r="5"/>
+    <circle cx="260" cy="160" r="5"/>
+    <circle cx="285" cy="85" r="5"/>
+    <circle cx="310" cy="60" r="5"/>
+    <circle cx="335" cy="85" r="5"/>
+    <circle cx="360" cy="160" r="5"/>
+    <circle cx="385" cy="235" r="5"/>
+    <circle cx="410" cy="260" r="5"/>
+    <circle cx="435" cy="235" r="5"/>
+    <circle cx="460" cy="160" r="5"/>
+    <circle cx="485" cy="85" r="5"/>
+    <circle cx="510" cy="60" r="5"/>
+    <circle cx="535" cy="85" r="5"/>
+    <circle cx="560" cy="160" r="5"/>
+    <circle cx="585" cy="235" r="5"/>
+    <circle cx="610" cy="260" r="5"/>
+  </g>
+  <!-- Legend -->
+  <g font-size="11">
+    <rect x="70" y="200" width="18" height="2" fill="#2563eb"/><text x="96" y="204" fill="#1e3a5f">Original analogue wave</text>
+    <circle cx="79" cy="220" r="4" fill="#b45309"/><text x="96" y="224" fill="#1e3a5f">Stored digital sample</text>
+  </g>
+</svg>
+
+<h3>Sample Rate</h3>
+
+<div class="definition">
+    <strong>Sample rate</strong> is the number of samples taken per second of audio. It is measured in <strong>hertz (Hz)</strong>. Example rates: telephone speech 8000 Hz (8 kHz); CD quality 44 100 Hz (44.1 kHz); professional audio 96 000 Hz.
+</div>
+
+<p>A <em>higher</em> sample rate captures more detail of the original wave (especially high-frequency sounds) and produces a more faithful recording, but the file is larger.</p>
+
+<h3>Sample Resolution (Bit Depth)</h3>
+
+<div class="definition">
+    <strong>Sample resolution</strong> (or <strong>bit depth</strong>) is the number of bits used to store each sample. CD audio uses 16 bits, giving 2<sup>16</sup> = 65 536 possible amplitude levels. A higher bit depth records the amplitude more accurately, reducing "quantisation noise", but also increases file size.
+</div>
+
+<h3>File Size of a Sound File</h3>
+
+<pre>
+File size (bits) = sample rate &times; bit depth &times; duration (s) &times; channels
+</pre>
+
+<p><strong>Channels</strong>: 1 for mono, 2 for stereo. Divide by 8 for bytes, then by 1000 for kB.</p>
+
+<h3>Worked Sound File Size Example</h3>
+
+<p>Calculate the uncompressed file size of a 30-second stereo recording at CD quality (44 100 Hz, 16 bits per sample).</p>
+
+<table>
+    <tr><th>Step</th><th>Calculation</th><th>Result</th></tr>
+    <tr><td>Bits per second</td><td>44 100 &times; 16 &times; 2 channels</td><td>1 411 200 bits/s</td></tr>
+    <tr><td>Total bits</td><td>1 411 200 &times; 30</td><td>42 336 000 bits</td></tr>
+    <tr><td>Bytes</td><td>42 336 000 &divide; 8</td><td>5 292 000 B</td></tr>
+    <tr><td>Kilobytes</td><td>5 292 000 &divide; 1000</td><td>5292 kB</td></tr>
+    <tr><td>Megabytes</td><td>5292 &divide; 1000</td><td><strong>5.292 MB</strong></td></tr>
+</table>
+
+<h3>Effect of Increasing Sample Rate or Bit Depth</h3>
+
+<table>
+    <tr><th>Change</th><th>Effect on quality</th><th>Effect on file size</th></tr>
+    <tr><td>Double the sample rate</td><td>Captures higher-frequency content more accurately &mdash; recording sounds closer to the original.</td><td>File size doubles.</td></tr>
+    <tr><td>Double the bit depth</td><td>Each sample's amplitude is stored to higher precision &mdash; less quantisation noise, greater dynamic range.</td><td>File size doubles (per sample).</td></tr>
+    <tr><td>Halve sample rate / bit depth</td><td>Lower quality, may sound muffled or "grainy".</td><td>File is half the size.</td></tr>
+</table>
+
+<div class="exam-tip">If an exam question asks "why does a higher sample rate give better quality?", explain the mechanism: "Taking more samples per second means the digital recording follows the shape of the original analogue wave more closely, so fewer high-frequency details are lost when it is played back". This is worth more than simply stating "more detail".</div>
+
+<h2>3.3.9 Data Compression</h2>
+
+<div class="definition">
+    <strong>Compression</strong> is the process of re-encoding data so that it takes fewer bits to store or transmit. It is needed because files (especially images, audio and video) are often very large, and smaller files mean less <strong>storage space</strong> is used and less <strong>bandwidth</strong> is consumed when sending them over a network.
+</div>
+
+<h3>Why Compress?</h3>
+
+<ul>
+    <li><strong>Storage:</strong> more files fit on a disk, phone or cloud drive.</li>
+    <li><strong>Bandwidth:</strong> smaller files download and stream faster over slow or mobile networks.</li>
+    <li><strong>Cost:</strong> cloud providers and mobile networks charge by the gigabyte; smaller files cost less to send and host.</li>
+    <li><strong>Responsiveness:</strong> a compressed web page loads quickly, improving user experience and SEO.</li>
+</ul>
+
+<p>There are two fundamentally different approaches: <strong>lossy</strong> and <strong>lossless</strong>.</p>
+
+<h3>Lossy Compression</h3>
+
+<p><strong>Lossy</strong> compression permanently discards data that is considered less important &mdash; for example, high-frequency sounds a human cannot easily hear, or fine colour variations the eye struggles to distinguish. The original file cannot be reconstructed exactly; decompressing a lossy file always returns a slightly different version.</p>
+
+<ul>
+    <li>Can achieve very large size reductions (a JPEG photo is often 10&times; smaller than the original).</li>
+    <li>The quality loss is <strong>irreversible</strong> &mdash; save-as-JPEG-again and information is lost each time.</li>
+    <li>Common formats: JPEG (photos), MP3 (music), MP4 / H.264 (video).</li>
+</ul>
+
+<h3>Lossless Compression</h3>
+
+<p><strong>Lossless</strong> compression encodes the data so that it is smaller, but every original bit can be perfectly recovered when the file is decompressed. This is essential for text documents, executable code, spreadsheets and archives &mdash; any data where losing a bit would corrupt it.</p>
+
+<ul>
+    <li>Typical size reduction is more modest (maybe 40&ndash;70% for text).</li>
+    <li>Decompression produces an <strong>identical</strong> copy of the original.</li>
+    <li>Common formats: PNG (images), FLAC (music), ZIP, GZIP (archives).</li>
+</ul>
+
+<h3>Lossy vs Lossless Comparison</h3>
+
+<table>
+    <tr><th>Feature</th><th>Lossy</th><th>Lossless</th></tr>
+    <tr><td>Original file perfectly recoverable?</td><td>No &mdash; data is discarded</td><td>Yes &mdash; identical copy</td></tr>
+    <tr><td>Typical size reduction</td><td>Very large (e.g. 90%)</td><td>Smaller (e.g. 30&ndash;60%)</td></tr>
+    <tr><td>Quality after decompression</td><td>Lower than original</td><td>Identical to original</td></tr>
+    <tr><td>Used for</td><td>Photos, music, video streaming</td><td>Text, code, spreadsheets, archives</td></tr>
+    <tr><td>Example formats</td><td>JPEG, MP3, MP4, AAC</td><td>PNG, FLAC, ZIP, GIF</td></tr>
+    <tr><td>Repeat compression safe?</td><td>No &mdash; quality degrades each time</td><td>Yes &mdash; no further loss</td></tr>
+</table>
+
+<div class="exam-tip">A very common exam question is "should the company use lossy or lossless, and why?" Always link your answer to the <em>type of data</em> and what the user does with it. Source code or spreadsheets must be lossless (even one wrong bit can corrupt the file). Streaming music or uploading holiday photos to social media is usually lossy, because a small drop in quality is imperceptible and saves a lot of bandwidth.</div>
+
+<h3>Huffman Coding</h3>
+
+<div class="definition">
+    <strong>Huffman coding</strong> is a lossless compression technique that gives <em>short</em> binary codes to characters that appear <em>frequently</em> and <em>longer</em> binary codes to characters that appear rarely. On average, the total number of bits needed is less than if every character used the same fixed number of bits (e.g. 8 bits in ASCII).
+</div>
+
+<h3>How Huffman Coding Works</h3>
+
+<ol>
+    <li>Count how often each character appears in the text (its <strong>frequency</strong>).</li>
+    <li>Put each character in its own single-node tree, labelled with its frequency.</li>
+    <li>Repeatedly take the two trees with the <em>smallest</em> frequencies and combine them into a new tree whose root frequency is their sum. Put this new tree back in the pool.</li>
+    <li>Stop when only one tree remains &mdash; this is the <strong>Huffman tree</strong>.</li>
+    <li>Label every left branch <code>0</code> and every right branch <code>1</code>. The code for each character is the sequence of 0s and 1s from the root to its leaf.</li>
+</ol>
+
+<h3>Worked Huffman Example &mdash; the word "MISSISSIPPI"</h3>
+
+<p>The word has 11 letters. Count the frequency of each character:</p>
+
+<table>
+    <tr><th>Character</th><td>I</td><td>S</td><td>P</td><td>M</td></tr>
+    <tr><th>Frequency</th><td>4</td><td>4</td><td>2</td><td>1</td></tr>
+</table>
+
+<p>Building the Huffman tree:</p>
+
+<ol>
+    <li>Combine M(1) + P(2) &rarr; internal node MP(3).</li>
+    <li>Combine MP(3) + I(4) &rarr; internal node MPI(7).</li>
+    <li>Combine MPI(7) + S(4) &rarr; root(11). Done.</li>
+</ol>
+
+<!-- Diagram 4: Huffman tree for MISSISSIPPI -->
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:20px auto;display:block;">
+  <text x="320" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Huffman Tree for "MISSISSIPPI"</text>
+  <text x="320" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Left branch = 0, right branch = 1. Characters sit at the leaves.</text>
+  <!-- Root (11) -->
+  <circle cx="320" cy="80" r="28" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="320" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e3a5f">11</text>
+  <!-- Level 1: S(4) left, MPI(7) right -->
+  <circle cx="180" cy="180" r="28" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="180" y="178" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">S</text>
+  <text x="180" y="196" text-anchor="middle" font-size="11" fill="#b45309">(4)</text>
+  <circle cx="460" cy="180" r="28" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="460" y="185" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e3a5f">7</text>
+  <!-- Edges root to level 1 -->
+  <line x1="300" y1="100" x2="200" y2="160" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="340" y1="100" x2="440" y2="160" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="240" y="130" font-size="13" font-weight="bold" fill="#2563eb">0</text>
+  <text x="395" y="130" font-size="13" font-weight="bold" fill="#2563eb">1</text>
+  <!-- Level 2: under MPI: I(4) left, MP(3) right -->
+  <circle cx="380" cy="280" r="28" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="380" y="278" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">I</text>
+  <text x="380" y="296" text-anchor="middle" font-size="11" fill="#b45309">(4)</text>
+  <circle cx="540" cy="280" r="28" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="540" y="285" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e3a5f">3</text>
+  <!-- Edges MPI to I and MP -->
+  <line x1="443" y1="200" x2="395" y2="258" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="477" y1="200" x2="525" y2="258" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="410" y="234" font-size="13" font-weight="bold" fill="#2563eb">0</text>
+  <text x="505" y="234" font-size="13" font-weight="bold" fill="#2563eb">1</text>
+  <!-- Level 3: under MP: M(1) left, P(2) right -->
+  <circle cx="495" cy="340" r="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="495" y="338" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309">M</text>
+  <text x="495" y="353" text-anchor="middle" font-size="10" fill="#b45309">(1)</text>
+  <circle cx="590" cy="340" r="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="590" y="338" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309">P</text>
+  <text x="590" y="353" text-anchor="middle" font-size="10" fill="#b45309">(2)</text>
+  <line x1="528" y1="298" x2="505" y2="324" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="555" y1="298" x2="580" y2="324" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="505" y="315" font-size="11" font-weight="bold" fill="#2563eb">0</text>
+  <text x="570" y="315" font-size="11" font-weight="bold" fill="#2563eb">1</text>
+</svg>
+
+<p>Reading codes from root to leaf:</p>
+
+<table>
+    <tr><th>Character</th><th>Frequency</th><th>Huffman code</th><th>Code length (bits)</th></tr>
+    <tr><td>S</td><td>4</td><td><code>0</code></td><td>1</td></tr>
+    <tr><td>I</td><td>4</td><td><code>10</code></td><td>2</td></tr>
+    <tr><td>M</td><td>1</td><td><code>110</code></td><td>3</td></tr>
+    <tr><td>P</td><td>2</td><td><code>111</code></td><td>3</td></tr>
+</table>
+
+<p>Encoded "MISSISSIPPI":</p>
+
+<pre>
+M I S S I S S I P P I
+110 10 0 0 10 0 0 10 111 111 10   &rarr;   11010 00100 01011 11111 0
+</pre>
+
+<p>Total bits = 3+2+1+1+2+1+1+2+3+3+2 = <strong>21 bits</strong>.</p>
+
+<p>Compare to fixed-length coding: with 4 different characters, 2 bits per character would be needed (2<sup>2</sup> = 4), giving 11 &times; 2 = <strong>22 bits</strong>. With 7-bit ASCII, it would be 11 &times; 7 = <strong>77 bits</strong>. Huffman beats both because the most common characters use the shortest codes.</p>
+
+<p><strong>Prefix-free property.</strong> Notice that no code is a prefix of another (<code>0</code>, <code>10</code>, <code>110</code>, <code>111</code>). This means the decoder can read the bit stream left-to-right without punctuation and know exactly when each character ends &mdash; a property called <em>prefix-free</em> or <em>instantaneous</em> decoding.</p>
+
+<h3>Run-Length Encoding (RLE)</h3>
+
+<div class="definition">
+    <strong>Run-length encoding</strong> (RLE) is a simple lossless compression technique that replaces <em>runs</em> of identical consecutive values with a single pair of numbers: the <strong>count</strong> and the <strong>value</strong>. It is highly effective when the data contains long repeated sequences, and useless (or worse) when the data is very varied.
+</div>
+
+<h3>Worked RLE Example &mdash; Text</h3>
+
+<p>Compress the string <code>AAAAABBBCCDAAA</code> using RLE.</p>
+
+<ul>
+    <li>5 As, 3 Bs, 2 Cs, 1 D, 3 As</li>
+    <li>Encoded: <code>5A3B2C1D3A</code></li>
+</ul>
+
+<p>The original needs 14 characters; the encoded form needs only 10 &mdash; about a 29% saving. Decoding simply expands each count/value pair back out.</p>
+
+<h3>Worked RLE Example &mdash; Image</h3>
+
+<p>Consider one scanline of a black-and-white image: <code>WWWWWWWBBBWWWWWWWWWWWBBBBW</code> (26 pixels).</p>
+
+<ul>
+    <li>7 W, 3 B, 11 W, 4 B, 1 W</li>
+    <li>Encoded: <code>(7,W)(3,B)(11,W)(4,B)(1,W)</code> &mdash; 10 values instead of 26.</li>
+</ul>
+
+<p>RLE works brilliantly on images with large solid blocks of one colour (scanned forms, simple icons, faxes) but poorly on detailed photos where almost every pixel differs from its neighbour.</p>
+
+<h3>Comparing Huffman and RLE</h3>
+
+<table>
+    <tr><th>Aspect</th><th>Huffman coding</th><th>Run-Length Encoding</th></tr>
+    <tr><td>Type</td><td>Lossless</td><td>Lossless</td></tr>
+    <tr><td>Idea</td><td>Frequent symbols get short codes</td><td>Runs of repeats are replaced by count + value</td></tr>
+    <tr><td>Best when</td><td>Some characters appear much more often than others (e.g. English text)</td><td>Data contains long sequences of the same value (e.g. simple bitmaps)</td></tr>
+    <tr><td>Works poorly when</td><td>All characters equally frequent</td><td>Data is varied with few repeats (can even increase size)</td></tr>
+    <tr><td>Requires extra data?</td><td>Yes &mdash; the code table / tree must be stored with the file</td><td>No extra table, but the count/value scheme must be agreed</td></tr>
+</table>
+
+<div class="exam-tip">When asked to encode a word with Huffman, always show: (1) the frequency table, (2) the tree, (3) the codes, and (4) the total bit count with a sensible comparison (e.g. vs ASCII). Accept any <em>valid</em> tree &mdash; there can be more than one correct Huffman tree for the same data, because ties may be broken in different ways. As long as the codes are prefix-free and the total bit count is minimal, full marks are usually awarded.</div>
+
+<h3>Summary</h3>
+
+<p>Topic 3.3 is really about one big idea: <strong>every kind of information can be reduced to binary</strong>. Numbers use place values; text uses character codes; images are grids of pixel codes; sound is a sequence of sampled amplitudes; and files can be compressed by removing redundancy (lossless) or unnecessary detail (lossy). Being fluent in the conversions, the size formulae, and the trade-offs is the key to scoring well on Paper 2 data-representation questions.</p>
+
+</div>
+</body>
+</html>
