@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <title>RAG Learning — Sign In</title>
+  <title>RAG Learning — Verify Email</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -17,7 +17,6 @@
       --surface: #FFFFFF;
       --surface2: #F4F9FE;
       --border: #D2E5F3;
-      --border-hover: #93C4E2;
       --text: #1B2D4F;
       --muted: #6B87A8;
       --muted2: #A0B8CE;
@@ -96,58 +95,19 @@
     }
 
     .card-sub {
-      font-size: 14px; color: var(--muted); margin-bottom: 28px;
+      font-size: 14px; color: var(--muted); margin-bottom: 28px; line-height: 1.5;
     }
 
     .card-sub a { color: var(--accent-dark); text-decoration: none; font-weight: 500; }
     .card-sub a:hover { text-decoration: underline; }
 
-    .back-home-wrap {
-      margin-top: 24px; padding-top: 20px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-    .back-home {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 13px; color: var(--muted); text-decoration: none;
-      font-weight: 500;
-      padding: 6px 12px; border-radius: 8px;
-      transition: all 0.2s;
-    }
-    .back-home:hover { color: var(--accent-dark); background: var(--accent-dim); }
-    .back-home svg { width: 14px; height: 14px; }
-
     .field { margin-bottom: 14px; }
-
-    .input-wrap { position: relative; }
-
-    .toggle-pw {
-      position: absolute; top: 50%; right: 38px;
-      transform: translateY(-50%);
-      background: none; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      padding: 6px; border-radius: 6px;
-      color: var(--muted2); transition: color 0.2s, background 0.2s;
-    }
-    .toggle-pw:hover { color: var(--accent-dark); background: var(--accent-dim); }
-    .toggle-pw svg { width: 18px; height: 18px; }
-    .input-wrap input { padding-right: 70px; }
-
-    .field-row {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-bottom: 6px;
-    }
 
     label {
       display: block; font-size: 12px; font-weight: 600;
       color: var(--muted); margin-bottom: 6px;
       letter-spacing: 0.04em; text-transform: uppercase;
     }
-
-    .field-row label { margin-bottom: 0; }
-
-    .forgot { font-size: 12px; color: var(--accent-dark); text-decoration: none; font-weight: 500; }
-    .forgot:hover { text-decoration: underline; }
 
     input {
       width: 100%; padding: 12px 14px;
@@ -161,14 +121,20 @@
 
     input::placeholder { color: var(--muted2); }
 
-    input::-ms-reveal,
-    input::-ms-clear { display: none; }
-
     input:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 3px var(--accent-dim);
       background: #fff;
     }
+
+    .otp-input {
+      padding: 16px;
+      font-size: 26px;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.35em;
+    }
+    .otp-input::placeholder { color: var(--muted2); letter-spacing: 0.25em; font-weight: 400; }
 
     .btn {
       width: 100%; padding: 13px; border: none; border-radius: 10px;
@@ -185,13 +151,18 @@
     .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px var(--accent-glow); }
     .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
-    .divider {
-      display: flex; align-items: center; gap: 12px;
-      margin: 20px 0; color: var(--muted2); font-size: 12px;
+    .link-btn {
+      background: none; border: none; padding: 0;
+      color: var(--accent-dark); font-family: var(--font-body);
+      font-size: 13px; font-weight: 500; cursor: pointer;
+      text-decoration: none;
     }
+    .link-btn:hover { text-decoration: underline; }
+    .link-btn:disabled { color: var(--muted2); cursor: not-allowed; text-decoration: none; }
 
-    .divider::before, .divider::after {
-      content: ''; flex: 1; height: 1px; background: var(--border);
+    .otp-actions {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 14px; font-size: 13px; color: var(--muted);
     }
 
     .msg {
@@ -203,6 +174,21 @@
     .msg:not(:empty) { padding: 10px 14px; }
     .msg.error   { color: var(--red-text);   background: var(--red-bg);   border: 1px solid var(--red-border); }
     .msg.success { color: var(--green-text); background: var(--green-bg); border: 1px solid var(--green-border); }
+
+    .back-home-wrap {
+      margin-top: 24px; padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .back-home {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--muted); text-decoration: none;
+      font-weight: 500;
+      padding: 6px 12px; border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .back-home:hover { color: var(--accent-dark); background: var(--accent-dim); }
+    .back-home svg { width: 14px; height: 14px; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
@@ -218,8 +204,8 @@
       <div class="logo-name">RAG Learning</div>
     </div>
 
-    <div class="card-title">Welcome back</div>
-    <p class="card-sub">Don't have an account? <a href="register.html">Sign up free</a></p>
+    <div class="card-title">Verify your email</div>
+    <p class="card-sub">Enter the 8-digit code we sent you. Wrong account? <a href="register.html">Start over</a></p>
 
     <form id="form">
       <div class="field">
@@ -228,28 +214,20 @@
       </div>
 
       <div class="field">
-        <div class="field-row">
-          <label for="password">Password</label>
-          <a href="#" class="forgot">Forgot password?</a>
-        </div>
-        <div class="input-wrap">
-          <input id="password" type="password" placeholder="Enter your password" required autocomplete="current-password">
-          <button type="button" class="toggle-pw" id="togglePw" aria-label="Show password" aria-pressed="false">
-            <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-          </button>
-        </div>
+        <label for="otp">Verification code</label>
+        <input id="otp" class="otp-input" type="text" inputmode="numeric" autocomplete="one-time-code"
+               maxlength="8" pattern="[0-9]{8}" placeholder="00000000" required>
       </div>
 
-      <button class="btn btn-primary" id="loginBtn">Sign In</button>
+      <button class="btn btn-primary" id="verifyBtn">Verify & Continue</button>
+
+      <div class="otp-actions">
+        <span>Didn't get it?</span>
+        <button type="button" class="link-btn" id="resendBtn">Resend code</button>
+      </div>
     </form>
 
     <p id="msg" class="msg"></p>
-
-    <div class="divider">or</div>
-
-    <div style="text-align:center; font-size:13px; color:var(--muted);">
-      New here? <a href="register.html" style="color:var(--accent-dark);font-weight:500;text-decoration:none;">Create a free account</a>
-    </div>
 
     <div class="back-home-wrap">
       <a href="../index.html" class="back-home" aria-label="Back to homepage">
@@ -261,65 +239,93 @@
 </div>
 
 <script>
-const form     = document.getElementById('form');
-const msg      = document.getElementById('msg');
-const loginBtn = document.getElementById('loginBtn');
-const togglePw = document.getElementById('togglePw');
-const pwInput  = document.getElementById('password');
-const eyeIcon  = document.getElementById('eyeIcon');
+const form      = document.getElementById('form');
+const msg       = document.getElementById('msg');
+const emailEl   = document.getElementById('email');
+const otpInput  = document.getElementById('otp');
+const verifyBtn = document.getElementById('verifyBtn');
+const resendBtn = document.getElementById('resendBtn');
 
-const EYE_OPEN  = '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>';
-const EYE_CLOSED = '<path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/>';
-
-togglePw.addEventListener('click', () => {
-  const showing = pwInput.type === 'text';
-  pwInput.type = showing ? 'password' : 'text';
-  togglePw.setAttribute('aria-pressed', String(!showing));
-  togglePw.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
-  eyeIcon.innerHTML = showing ? EYE_OPEN : EYE_CLOSED;
-});
-
-// Show a success banner when the user arrives from the confirmation email link
-if (new URLSearchParams(window.location.search).get('confirmed') === '1') {
-  msg.className = 'msg success';
-  msg.innerText = 'Email confirmed! You can now sign in.';
+// Pre-fill email from ?email= URL param
+const params = new URLSearchParams(window.location.search);
+const preEmail = params.get('email');
+if (preEmail) {
+  emailEl.value = preEmail;
+  otpInput.focus();
 }
+
+otpInput.addEventListener('input', () => {
+  otpInput.value = otpInput.value.replace(/\D/g, '').slice(0, 8);
+});
 
 form.onsubmit = async (e) => {
   e.preventDefault();
-  loginBtn.disabled    = true;
-  loginBtn.textContent = 'Signing in…';
+  verifyBtn.disabled    = true;
+  verifyBtn.textContent = 'Verifying…';
   msg.className = 'msg';
   msg.innerText = '';
 
-  // 1 — Authenticate
-  const { data, error } = await supabaseClient.auth.signInWithPassword({
-    email:    email.value.trim(),
-    password: password.value
+  const { error } = await supabaseClient.auth.verifyOtp({
+    email: emailEl.value.trim(),
+    token: otpInput.value.trim(),
+    type:  'signup'
   });
 
   if (error) {
-    if (/confirm/i.test(error.message) || error.code === 'email_not_confirmed') {
-      window.location = `verify.html?email=${encodeURIComponent(email.value.trim())}`;
-      return;
-    }
-    msg.className        = 'msg error';
-    msg.innerText        = error.message;
-    loginBtn.disabled    = false;
-    loginBtn.textContent = 'Sign In';
+    msg.className = 'msg error';
+    msg.innerText = /expired|invalid/i.test(error.message)
+      ? 'That code is invalid or expired. Request a new one.'
+      : error.message;
+    verifyBtn.disabled    = false;
+    verifyBtn.textContent = 'Verify & Continue';
     return;
   }
 
-  // 2 — Create profile row only if it doesn't already exist (preserve user edits)
-  await supabaseClient.from('profiles').upsert({
-    id:         data.user.id,
-    first_name: data.user.user_metadata?.first_name || '',
-    last_name:  data.user.user_metadata?.last_name  || '',
-    email:      data.user.email
-  }, { onConflict: 'id', ignoreDuplicates: true });
-
-  window.location = '../Dashboard.html';
+  window.location = 'setup.html';
 };
+
+let resendCooldown = 0;
+resendBtn.addEventListener('click', async () => {
+  if (resendCooldown > 0) return;
+  if (!emailEl.value.trim()) {
+    msg.className = 'msg error';
+    msg.innerText = 'Enter your email first.';
+    emailEl.focus();
+    return;
+  }
+
+  resendBtn.disabled = true;
+  msg.className = 'msg';
+  msg.innerText = '';
+
+  const { error } = await supabaseClient.auth.resend({
+    type:  'signup',
+    email: emailEl.value.trim()
+  });
+
+  if (error) {
+    msg.className = 'msg error';
+    msg.innerText = error.message;
+    resendBtn.disabled = false;
+    return;
+  }
+
+  msg.className = 'msg success';
+  msg.innerText = 'New code sent. Check your inbox.';
+
+  resendCooldown = 30;
+  const tick = () => {
+    if (resendCooldown <= 0) {
+      resendBtn.textContent = 'Resend code';
+      resendBtn.disabled    = false;
+      return;
+    }
+    resendBtn.textContent = `Resend code (${resendCooldown}s)`;
+    resendCooldown--;
+    setTimeout(tick, 1000);
+  };
+  tick();
+});
 </script>
 </body>
 </html>
