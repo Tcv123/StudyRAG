@@ -10,11 +10,34 @@
  *     last_name      TEXT,
  *     email          TEXT,
  *     level          TEXT CHECK (level IN ('gcse','as','a-level')),
+ *     avatar_url     TEXT,
  *     setup_complete BOOLEAN DEFAULT FALSE,
  *     created_at     TIMESTAMPTZ DEFAULT NOW()
  *   );
  *   ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
  *   CREATE POLICY "own profile" ON profiles FOR ALL USING (auth.uid() = id);
+ *
+ *   -- If the profiles table already exists, add the avatar column:
+ *   ALTER TABLE profiles ADD COLUMN IF NOT EXISTS avatar_url TEXT;
+ *
+ *   -- 1b. Avatars storage bucket (run this in the SQL editor too)
+ *   INSERT INTO storage.buckets (id, name, public)
+ *     VALUES ('avatars', 'avatars', true)
+ *     ON CONFLICT (id) DO NOTHING;
+ *
+ *   -- Storage policies: anyone can read, only the owner can write their own file
+ *   CREATE POLICY "avatars are publicly readable"
+ *     ON storage.objects FOR SELECT
+ *     USING (bucket_id = 'avatars');
+ *   CREATE POLICY "users can upload their own avatar"
+ *     ON storage.objects FOR INSERT
+ *     WITH CHECK (bucket_id = 'avatars' AND auth.uid()::text = (storage.foldername(name))[1]);
+ *   CREATE POLICY "users can update their own avatar"
+ *     ON storage.objects FOR UPDATE
+ *     USING (bucket_id = 'avatars' AND auth.uid()::text = (storage.foldername(name))[1]);
+ *   CREATE POLICY "users can delete their own avatar"
+ *     ON storage.objects FOR DELETE
+ *     USING (bucket_id = 'avatars' AND auth.uid()::text = (storage.foldername(name))[1]);
  *
  *   -- 2. Subjects table
  *   CREATE TABLE IF NOT EXISTS user_subjects (
