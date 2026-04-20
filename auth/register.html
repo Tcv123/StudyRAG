@@ -189,14 +189,14 @@
       border-radius: 10px;
       color: var(--text);
       font-family: 'DM Sans', sans-serif;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 600;
       text-align: center;
-      letter-spacing: 0.5em;
+      letter-spacing: 0.35em;
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .otp-input::placeholder { color: var(--muted2); letter-spacing: 0.3em; font-weight: 400; }
+    .otp-input::placeholder { color: var(--muted2); letter-spacing: 0.25em; font-weight: 400; }
     .otp-input:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 3px var(--accent-dim);
@@ -305,7 +305,7 @@
       <div class="field">
         <label for="otp">Verification code</label>
         <input id="otp" class="otp-input" type="text" inputmode="numeric" autocomplete="one-time-code"
-               maxlength="6" pattern="[0-9]{6}" placeholder="000000" required autofocus>
+               maxlength="8" pattern="[0-9]{8}" placeholder="00000000" required autofocus>
       </div>
 
       <button class="btn btn-primary" id="verifyBtn">Verify & Continue</button>
@@ -369,7 +369,7 @@ const resendBtn = document.getElementById('resendBtn');
 let signupEmail = '';
 
 otpInput.addEventListener('input', () => {
-  otpInput.value = otpInput.value.replace(/\D/g, '').slice(0, 6);
+  otpInput.value = otpInput.value.replace(/\D/g, '').slice(0, 8);
 });
 
 form.onsubmit = async (e) => {
