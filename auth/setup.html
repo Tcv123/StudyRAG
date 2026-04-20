@@ -977,6 +977,9 @@ async function save() {
     // Re-render so selections are visible
     renderGrid();
     renderSelected();
+
+    // Returning user — skip the Avatar step and land on Study level
+    goToStep1();
   }
 })();
 </script>
