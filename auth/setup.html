@@ -677,6 +677,17 @@ async function save() {
     return;
   }
 
+  const missing = selectedSubjects.filter(s =>
+    subjectCurrentGrade[s.name] == null || subjectTargetGrade[s.name] == null
+  );
+  if (missing.length) {
+    msg.className = 'msg error';
+    msg.innerText = missing.length === selectedSubjects.length
+      ? 'Please set a current and target grade for each subject.'
+      : `Please set current and target grades for: ${missing.map(s => s.name).join(', ')}.`;
+    return;
+  }
+
   saveBtn.disabled    = true;
   saveBtn.textContent = 'Saving…';
   msg.className = 'msg';

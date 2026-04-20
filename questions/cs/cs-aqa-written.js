@@ -123,7 +123,64 @@ const CS_AQA_WRITTEN = {
       },
     ],
   },
-  '3.3': { green: [], amber: [], red: [] },
+  '3.3': {
+    green: [
+      {
+        q: 'State what is meant by a bit, a nibble and a byte.',
+        marks: 3, tier: 'green',
+        modelAnswer: `\u2022 A bit is a single binary digit (0 or 1) (1).\n\u2022 A nibble is a group of 4 bits (half a byte) (1).\n\u2022 A byte is a group of 8 bits, which can represent 256 different values (1).`
+      },
+      {
+        q: 'State two reasons why programmers use hexadecimal instead of binary to display values such as memory addresses or colour codes.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 Hex is much shorter \u2014 4 binary digits become 1 hex digit, so values take one-quarter the space to write (1).\n\u2022 Hex is easier for humans to read and less error-prone, because long strings of 0s and 1s are hard to tell apart at a glance (1).\n(Accept also: direct mapping 1 nibble = 1 hex digit, so conversion needs no arithmetic.)`
+      },
+      {
+        q: 'State the difference between lossy and lossless compression.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 Lossy compression permanently discards some of the data, so the original file cannot be perfectly reconstructed from the compressed version (1).\n\u2022 Lossless compression encodes the data more efficiently so that the original file can be reconstructed exactly when decompressed (1).`
+      },
+      {
+        q: 'State what is meant by the sample rate and the sample resolution (bit depth) of a digital sound recording.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 Sample rate is the number of samples taken per second, measured in hertz (Hz) (1).\n\u2022 Sample resolution / bit depth is the number of bits used to store each individual sample (1).`
+      },
+    ],
+    amber: [
+      {
+        q: 'Convert the denary number 181 to an 8-bit binary number and then to hexadecimal. Show your working.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 Place values 128 64 32 16 8 4 2 1: 181 \u2212 128 = 53, 53 \u2212 32 = 21, 21 \u2212 16 = 5, 5 \u2212 4 = 1, 1 \u2212 1 = 0 (1).\n\u2022 Binary = 10110101 (1).\n\u2022 Split into nibbles: 1011 | 0101 (1).\n\u2022 1011 = B, 0101 = 5, so hex = B5 (1).`
+      },
+      {
+        q: 'Explain how a logical left shift by 2 places affects an 8-bit binary number, including any risks.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 Each bit is moved 2 places to the left, and two 0s are inserted on the right (1).\n\u2022 The effect on the value is to multiply it by 2\u00B2 = 4 (1).\n\u2022 Any bits that are pushed off the leftmost column are lost (1).\n\u2022 If a 1 bit is pushed off the left, the value has overflowed and the result is incorrect \u2014 e.g. 10000001 (129) shifted left by 1 becomes 00000010 (2), not 258 (1).`
+      },
+      {
+        q: 'Describe how sampling converts an analogue sound wave into a digital audio file, and explain the effect of using a higher sample rate.',
+        marks: 5, tier: 'amber',
+        modelAnswer: `\u2022 The analogue sound wave is a continuous variation of air pressure with time (1).\n\u2022 At regular intervals the amplitude of the wave is measured and stored as a binary number (this is a sample) (1).\n\u2022 The sample rate is the number of samples taken per second (in hertz) (1).\n\u2022 A higher sample rate takes more measurements per second, so the digital recording more closely matches the original wave, capturing higher-frequency detail (1).\n\u2022 However, more samples per second means a larger file size and more bandwidth/storage needed (1).`
+      },
+      {
+        q: 'Calculate the uncompressed file size, in kilobytes, of a bitmap image that is 640 pixels wide by 480 pixels tall with a colour depth of 24 bits. Show your working. (Use 1 kB = 1000 B.)',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 Total pixels = 640 \u00D7 480 = 307 200 (1).\n\u2022 Total bits = 307 200 \u00D7 24 = 7 372 800 bits (1).\n\u2022 Bytes = 7 372 800 \u00F7 8 = 921 600 B (1).\n\u2022 Kilobytes = 921 600 \u00F7 1000 = 921.6 kB (\u2248 922 kB) (1).`
+      },
+    ],
+    red: [
+      {
+        q: 'Discuss whether a company that produces online teaching videos should use lossy or lossless compression for the videos. Refer to file size, quality, bandwidth, and the needs of the users in your answer.',
+        marks: 6, tier: 'red',
+        modelAnswer: `\u2022 Lossy compression permanently discards data that the human eye/ear notices less, producing much smaller files (1).\n\u2022 Lossless compression reconstructs the exact original, but typically achieves much smaller size reductions than lossy methods (1).\n\u2022 Video files are very large, so uncompressed or lossless video would be slow to download / stream, especially on mobile networks with limited bandwidth (1).\n\u2022 The small drop in visual/audio quality from lossy compression (e.g. H.264 / MP4) is usually imperceptible to a student watching a lesson, so quality concerns are minimal (1).\n\u2022 Smaller files also mean lower hosting and bandwidth costs for the company, and faster playback / less buffering for users (1).\n\u2022 Conclusion: lossy compression is the correct choice because the tiny loss in quality is more than offset by the substantial savings in size, bandwidth and cost (1).`
+      },
+      {
+        q: 'Explain how Huffman coding compresses text. Illustrate your answer by building a Huffman code for the word "MISSISSIPPI" and compare the number of bits needed with standard 7-bit ASCII.',
+        marks: 8, tier: 'red',
+        modelAnswer: `\u2022 Huffman coding is a lossless compression technique that assigns shorter binary codes to the most frequent characters and longer codes to rarer ones (1).\n\u2022 Frequencies in MISSISSIPPI: I=4, S=4, P=2, M=1 (1).\n\u2022 Build tree by repeatedly combining the two lowest-frequency trees: combine M(1)+P(2)=MP(3); then combine MP(3)+I(4)=MPI(7); then combine MPI(7)+S(4)=root(11) (1).\n\u2022 Label left branches 0 and right branches 1 and read the code off the path from root to each leaf (1).\n\u2022 A valid set of codes is S=0, I=10, M=110, P=111 (accept any valid prefix-free assignment with same total bit length) (1).\n\u2022 Total bits for MISSISSIPPI = (3)M + (2)I + (1)S + (1)S + (2)I + (1)S + (1)S + (2)I + (3)P + (3)P + (2)I = 21 bits (1).\n\u2022 In 7-bit ASCII, 11 characters \u00D7 7 bits = 77 bits (1).\n\u2022 Huffman uses only 21 bits vs 77 bits for ASCII \u2014 a saving of about 73% \u2014 because the most common characters (I, S) use only 1 or 2 bits each, and the rare letters (M, P) take more bits but appear few times (1).`
+      },
+    ],
+  },
   '3.4': { green: [], amber: [], red: [] },
   '3.5': { green: [], amber: [], red: [] },
   '3.6': { green: [], amber: [], red: [] },
