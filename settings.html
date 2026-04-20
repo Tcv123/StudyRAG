@@ -688,7 +688,8 @@ async function sendPasswordReset() {
   if (error) {
     showMsg(msg, 'error', 'Failed: ' + error.message);
   } else {
-    showMsg(msg, 'success', `Reset link sent to ${currentUser.email}. Check your inbox.`);
+    showMsg(msg, 'success', `Reset link sent to ${currentUser.email}. Redirecting…`);
+    setTimeout(() => { window.location = 'index.html'; }, 1200);
   }
 }
 
