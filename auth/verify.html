@@ -165,6 +165,58 @@
       margin-top: 14px; font-size: 13px; color: var(--muted);
     }
 
+    /* ── SUCCESS STEP ── */
+    .success-step { text-align: center; }
+
+    .check-circle {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(22,163,74,0.08);
+      border: 2px solid rgba(22,163,74,0.25);
+      margin: 0 auto 24px;
+      display: flex; align-items: center; justify-content: center;
+      animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    .check-circle svg {
+      width: 40px; height: 40px;
+      color: var(--green);
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: draw 0.5s ease 0.3s forwards;
+    }
+
+    .success-step h2 {
+      font-family: var(--font-display);
+      font-size: 26px; color: var(--text);
+      letter-spacing: -0.02em; margin-bottom: 10px;
+    }
+
+    .success-step p {
+      font-size: 14px; color: var(--muted);
+      line-height: 1.55; margin-bottom: 28px;
+    }
+
+    .email-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 13px; color: var(--text);
+      margin-bottom: 24px;
+    }
+    .email-pill svg { width: 14px; height: 14px; color: var(--green); }
+
+    @keyframes pop {
+      0%   { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+
     .msg {
       margin-top: 14px; font-size: 13px; text-align: center;
       border-radius: 8px; min-height: 18px; padding: 0;
@@ -227,6 +279,26 @@
       </div>
     </form>
 
+    <div id="successStep" class="success-step" style="display:none;">
+      <div class="check-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+
+      <h2>Email verified</h2>
+      <p>Your account is all set. Let's get your profile set up so you can start learning.</p>
+
+      <div class="email-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        <span id="successEmail"></span>
+      </div>
+
+      <a href="setup.html" class="btn btn-primary" style="display:block;text-decoration:none;text-align:center;">Set up your profile</a>
+    </div>
+
     <p id="msg" class="msg"></p>
 
     <div class="back-home-wrap">
@@ -281,7 +353,9 @@ form.onsubmit = async (e) => {
     return;
   }
 
-  window.location = 'setup.html';
+  form.style.display = 'none';
+  document.getElementById('successEmail').textContent = emailEl.value.trim();
+  document.getElementById('successStep').style.display = 'block';
 };
 
 let resendCooldown = 0;
