@@ -1114,7 +1114,7 @@ const ALL_MEDALS = [
   { id: 'lunch_learner',     icon: '🍽️', name: 'Lunch Learner',     desc: 'Study between 12pm and 1pm' },
   { id: 'dawn_grinder',      icon: '🌄', name: 'Dawn Grinder',      desc: 'Study before 6am' },
   { id: 'night_owl',         icon: '🦉', name: 'Night Owl',         desc: 'Study after 10pm' },
-  { id: 'after_school',      icon: '🎒', name: 'After School',      desc: 'Study between 3pm and 5pm' },
+  { id: 'after_school',      icon: '🎒', name: 'After School',      desc: 'Study between 4pm and 7pm' },
   { id: 'weekend_scholar',   icon: '🌞', name: 'Weekend Scholar',   desc: 'Study on a Saturday or Sunday' },
 
   // ── Comeback & Recovery ──
@@ -1553,7 +1553,7 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   if (currentHour >= 12 && currentHour < 13) award('lunch_learner');
   if (currentHour < 6) award('dawn_grinder');
   if (currentHour >= 22) award('night_owl');
-  if (currentHour >= 15 && currentHour < 17) award('after_school');
+  if (currentHour >= 16 && currentHour < 19) award('after_school');
   const currentDay = new Date().getDay();
   if (currentDay === 0 || currentDay === 6) award('weekend_scholar');
   if (currentDay === 1) award('monday_motivation');
