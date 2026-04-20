@@ -346,6 +346,12 @@
         <div class="pw-label" id="pwLabel"></div>
       </div>
 
+      <div class="field">
+        <label for="confirmPassword">Confirm password</label>
+        <input id="confirmPassword" type="password" placeholder="Re-enter password" required>
+        <div class="pw-label" id="confirmLabel"></div>
+      </div>
+
       <button class="btn btn-primary" id="registerBtn">Create Account</button>
     </form>
 
@@ -418,12 +424,28 @@ function checkPw(val) {
   pwLabel.style.color  = score > 0 ? colors[score - 1] : 'var(--muted)';
 }
 
-const form        = document.getElementById('form');
-const msg         = document.getElementById('msg');
-const registerBtn = document.getElementById('registerBtn');
-const togglePw    = document.getElementById('togglePw');
-const pwInput     = document.getElementById('password');
-const eyeIcon     = document.getElementById('eyeIcon');
+const form            = document.getElementById('form');
+const msg             = document.getElementById('msg');
+const registerBtn     = document.getElementById('registerBtn');
+const togglePw        = document.getElementById('togglePw');
+const pwInput         = document.getElementById('password');
+const confirmPassword = document.getElementById('confirmPassword');
+const confirmLabel    = document.getElementById('confirmLabel');
+const eyeIcon         = document.getElementById('eyeIcon');
+
+function updateConfirmFeedback() {
+  const cv = confirmPassword.value;
+  if (!cv) { confirmLabel.textContent = ''; return; }
+  if (cv === pwInput.value) {
+    confirmLabel.textContent = '✓ Passwords match';
+    confirmLabel.style.color = '#16A34A';
+  } else {
+    confirmLabel.textContent = 'Passwords do not match';
+    confirmLabel.style.color = '#DC2626';
+  }
+}
+confirmPassword.addEventListener('input', updateConfirmFeedback);
+pwInput.addEventListener('input', updateConfirmFeedback);
 
 const EYE_OPEN   = '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>';
 const EYE_CLOSED = '<path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/>';
@@ -450,10 +472,22 @@ otpInput.addEventListener('input', () => {
 
 form.onsubmit = async (e) => {
   e.preventDefault();
-  registerBtn.disabled    = true;
-  registerBtn.textContent = 'Creating account…';
   msg.className = 'msg';
   msg.innerText = '';
+
+  if (password.value.length < 6) {
+    msg.className = 'msg error';
+    msg.innerText = 'Password must be at least 6 characters.';
+    return;
+  }
+  if (password.value !== confirmPassword.value) {
+    msg.className = 'msg error';
+    msg.innerText = 'Passwords do not match.';
+    return;
+  }
+
+  registerBtn.disabled    = true;
+  registerBtn.textContent = 'Creating account…';
 
   signupEmail = email.value.trim();
 
