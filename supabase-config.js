@@ -41,16 +41,22 @@
  *
  *   -- 2. Subjects table
  *   CREATE TABLE IF NOT EXISTS user_subjects (
- *     id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
- *     user_id    UUID REFERENCES profiles(id) ON DELETE CASCADE,
- *     subject    TEXT NOT NULL,
- *     exam_board TEXT NOT NULL,
- *     emoji      TEXT DEFAULT '📚',
- *     rag_status TEXT DEFAULT 'pending',
- *     created_at TIMESTAMPTZ DEFAULT NOW()
+ *     id            UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+ *     user_id       UUID REFERENCES profiles(id) ON DELETE CASCADE,
+ *     subject       TEXT NOT NULL,
+ *     exam_board    TEXT NOT NULL,
+ *     emoji         TEXT DEFAULT '📚',
+ *     rag_status    TEXT DEFAULT 'pending',
+ *     current_grade TEXT,
+ *     target_grade  TEXT,
+ *     created_at    TIMESTAMPTZ DEFAULT NOW()
  *   );
  *   ALTER TABLE user_subjects ENABLE ROW LEVEL SECURITY;
  *   CREATE POLICY "own subjects" ON user_subjects FOR ALL USING (auth.uid() = user_id);
+ *
+ *   -- If user_subjects already exists, add the grade columns:
+ *   ALTER TABLE user_subjects ADD COLUMN IF NOT EXISTS current_grade TEXT;
+ *   ALTER TABLE user_subjects ADD COLUMN IF NOT EXISTS target_grade  TEXT;
  *
  *   -- 3. Topic progress table
  *   CREATE TABLE IF NOT EXISTS topic_progress (
