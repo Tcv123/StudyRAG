@@ -12,54 +12,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
   <script src="study-tracker.js"></script>
-  <script src="questions/cs/cs-ocr-practice.js"></script>
-  <script src="questions/cs/cs-aqa-practice.js"></script>
-  <script src="questions/physics/physics-edexcel-practice.js"></script>
-  <script src="questions/physics/physics-aqa-practice.js"></script>
-  <script src="questions/physics/physics-ocr-a-practice.js"></script>
-  <script src="questions/physics/physics-ocr-b-practice.js"></script>
-  <script src="questions/economics-aqa/economics-aqa-practice.js"></script>
-  <script src="questions/economics-edexcel-a/economics-edexcel-a-practice.js"></script>
-  <script src="questions/economics-ocr/economics-ocr-practice.js"></script>
-  <script src="questions/economics-edexcel-b/economics-edexcel-b-practice.js"></script>
-  <script src="questions/chemistry/chemistry-aqa-practice.js"></script>
-  <script src="questions/chemistry/chemistry-edexcel-practice.js"></script>
-  <script src="questions/chemistry/chemistry-ocr-a-practice.js"></script>
-  <script src="questions/chemistry/chemistry-ocr-b-practice.js"></script>
-  <script src="questions/biology/biology-aqa-practice.js"></script>
-  <script src="questions/biology/biology-edexcel-a-practice.js"></script>
-  <script src="questions/biology/biology-edexcel-b-practice.js"></script>
-  <script src="questions/biology/biology-ocr-a-practice.js"></script>
-  <script src="questions/biology/biology-ocr-b-practice.js"></script>
-  <script src="questions/geography-aqa/geography-aqa-practice.js"></script>
-  <script src="questions/geography-edexcel/geography-edexcel-practice.js"></script>
-  <script src="questions/geography-ocr/geography-ocr-practice.js"></script>
-  <script src="questions/maths-aqa/maths-aqa-practice.js"></script>
-  <script src="questions/maths-ocr/maths-ocr-practice.js"></script>
-  <script src="questions/maths-edexcel/w-P1-P11.js"></script>
-  <script src="questions/maths-edexcel/w-P12-P21.js"></script>
-  <script src="questions/maths-edexcel/w-S1-S8.js"></script>
-  <script src="questions/maths-edexcel/w-M1-M2.js"></script>
-  <script src="questions/maths-edexcel/w-M3-M4.js"></script>
-  <script src="questions/maths-edexcel/w-M5-M7.js"></script>
-  <script src="questions/maths-edexcel/maths-edexcel-practice.js"></script>
-  <script src="questions/further-maths-edexcel/fm-edexcel-written-cp1a.js"></script>
-  <script src="questions/further-maths-edexcel/fm-edexcel-written-cp1b.js"></script>
-  <script src="questions/further-maths-edexcel/fm-edexcel-written-cp2a.js"></script>
-  <script src="questions/further-maths-edexcel/fm-edexcel-written-cp2b.js"></script>
-  <script src="questions/further-maths-edexcel/fm-edexcel-written.js"></script>
-  <script src="questions/further-maths-edexcel/fm-edexcel-practice.js"></script>
-  <script src="questions/further-maths-aqa/fm-aqa-practice.js"></script>
-  <script src="questions/further-maths-ocr/fm-ocr-practice.js"></script>
-  <script src="questions/further-maths-ocr-b/fm-ocr-b-written-cp1.js"></script>
-  <script src="questions/further-maths-ocr-b/fm-ocr-b-written-cp2.js"></script>
-  <script src="questions/further-maths-ocr-b/fm-ocr-b-written-m.js"></script>
-  <script src="questions/further-maths-ocr-b/fm-ocr-b-written-s.js"></script>
-  <script src="questions/further-maths-ocr-b/fm-ocr-b-written-a.js"></script>
-  <script src="questions/further-maths-ocr-b/fm-ocr-b-written.js"></script>
-  <script src="questions/further-maths-ocr-b/fm-ocr-b-practice.js"></script>
-  <script src="questions/english-aqa/english-aqa-practice.js"></script>
-  <script src="questions/english-edexcel/english-edexcel-practice.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -562,6 +514,94 @@
 let currentUser = null;
 let activeTopic = null;
 let activeSubjectKey = null;
+
+/* ═══════════════════════════════════════
+   LAZY QUESTION-BANK LOADER
+   Scripts load on-demand the first time a subject is opened.
+   Dependency-aware: subjects with split files load them in order.
+═══════════════════════════════════════ */
+const BUNDLE_MAP = {
+  'Computer Science_OCR':         ['questions/cs/cs-ocr-practice.js'],
+  'Computer Science_AQA':         ['questions/cs/cs-aqa-practice.js'],
+  'Physics_Edexcel':              ['questions/physics/physics-edexcel-practice.js'],
+  'Physics_AQA':                  ['questions/physics/physics-aqa-practice.js'],
+  'Physics_OCR A':                ['questions/physics/physics-ocr-a-practice.js'],
+  'Physics_OCR B':                ['questions/physics/physics-ocr-b-practice.js'],
+  'Economics_AQA':                ['questions/economics-aqa/economics-aqa-practice.js'],
+  'Economics_Edexcel A':          ['questions/economics-edexcel-a/economics-edexcel-a-practice.js'],
+  'Economics_OCR':                ['questions/economics-ocr/economics-ocr-practice.js'],
+  'Economics_Edexcel B':          ['questions/economics-edexcel-b/economics-edexcel-b-practice.js'],
+  'Chemistry_AQA':                ['questions/chemistry/chemistry-aqa-practice.js'],
+  'Chemistry_Edexcel':            ['questions/chemistry/chemistry-edexcel-practice.js'],
+  'Chemistry_OCR A':              ['questions/chemistry/chemistry-ocr-a-practice.js'],
+  'Chemistry_OCR B':              ['questions/chemistry/chemistry-ocr-b-practice.js'],
+  'Biology_AQA':                  ['questions/biology/biology-aqa-practice.js'],
+  'Biology_Edexcel A':            ['questions/biology/biology-edexcel-a-practice.js'],
+  'Biology_Edexcel B':            ['questions/biology/biology-edexcel-b-practice.js'],
+  'Biology_OCR A':                ['questions/biology/biology-ocr-a-practice.js'],
+  'Biology_OCR B':                ['questions/biology/biology-ocr-b-practice.js'],
+  'Geography_AQA':                ['questions/geography-aqa/geography-aqa-practice.js'],
+  'Geography_Edexcel':            ['questions/geography-edexcel/geography-edexcel-practice.js'],
+  'Geography_OCR':                ['questions/geography-ocr/geography-ocr-practice.js'],
+  'Mathematics_AQA':              ['questions/maths-aqa/maths-aqa-practice.js'],
+  'Mathematics_OCR':              ['questions/maths-ocr/maths-ocr-practice.js'],
+  'Mathematics_Edexcel': [
+    'questions/maths-edexcel/w-P1-P11.js',
+    'questions/maths-edexcel/w-P12-P21.js',
+    'questions/maths-edexcel/w-S1-S8.js',
+    'questions/maths-edexcel/w-M1-M2.js',
+    'questions/maths-edexcel/w-M3-M4.js',
+    'questions/maths-edexcel/w-M5-M7.js',
+    'questions/maths-edexcel/maths-edexcel-practice.js',
+  ],
+  'Further Mathematics_Edexcel': [
+    'questions/further-maths-edexcel/fm-edexcel-written-cp1a.js',
+    'questions/further-maths-edexcel/fm-edexcel-written-cp1b.js',
+    'questions/further-maths-edexcel/fm-edexcel-written-cp2a.js',
+    'questions/further-maths-edexcel/fm-edexcel-written-cp2b.js',
+    'questions/further-maths-edexcel/fm-edexcel-written.js',
+    'questions/further-maths-edexcel/fm-edexcel-practice.js',
+  ],
+  'Further Mathematics_AQA':      ['questions/further-maths-aqa/fm-aqa-practice.js'],
+  'Further Mathematics_OCR A':    ['questions/further-maths-ocr/fm-ocr-practice.js'],
+  'Further Mathematics_OCR B': [
+    'questions/further-maths-ocr-b/fm-ocr-b-written-cp1.js',
+    'questions/further-maths-ocr-b/fm-ocr-b-written-cp2.js',
+    'questions/further-maths-ocr-b/fm-ocr-b-written-m.js',
+    'questions/further-maths-ocr-b/fm-ocr-b-written-s.js',
+    'questions/further-maths-ocr-b/fm-ocr-b-written-a.js',
+    'questions/further-maths-ocr-b/fm-ocr-b-written.js',
+    'questions/further-maths-ocr-b/fm-ocr-b-practice.js',
+  ],
+  'English Language_AQA':         ['questions/english-aqa/english-aqa-practice.js'],
+  'English Language_Edexcel':     ['questions/english-edexcel/english-edexcel-practice.js'],
+};
+
+const _loadedScripts = new Set();
+const _bundlePromises = {};
+
+function loadScriptOnce(src) {
+  if (_loadedScripts.has(src)) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload  = () => { _loadedScripts.add(src); resolve(); };
+    s.onerror = () => reject(new Error('Failed to load ' + src));
+    document.head.appendChild(s);
+  });
+}
+
+function loadBundle(subjectKey) {
+  if (_bundlePromises[subjectKey]) return _bundlePromises[subjectKey];
+  const files = BUNDLE_MAP[subjectKey];
+  if (!files) return Promise.resolve();
+  // Sequential load — later files in the list depend on earlier ones (e.g. maths-edexcel-practice reads w-*.js globals)
+  _bundlePromises[subjectKey] = files.reduce(
+    (chain, src) => chain.then(() => loadScriptOnce(src)),
+    Promise.resolve()
+  );
+  return _bundlePromises[subjectKey];
+}
 
 const PRACTICE_MAP = {
   'Computer Science_OCR': () => typeof CS_OCR_PRACTICE !== 'undefined' ? CS_OCR_PRACTICE : null,
@@ -1320,7 +1360,7 @@ function showSubjectCards() {
   }).join('');
 }
 
-function selectSubject(key) {
+async function selectSubject(key) {
   const config = SUBJECT_TOPICS[key];
   if (!config) return;
   activeSubjectKey = key;
@@ -1337,6 +1377,16 @@ function selectSubject(key) {
 
   document.getElementById('panelSubject').textContent = subject;
   document.getElementById('panelBoard').textContent = `${SUBJECT_EMOJIS[subject] || '📚'} ${board} · Exam-Style Questions`;
+
+  // Show a lightweight loading state while the question bank loads
+  list.innerHTML = `<div style="padding:24px 16px;color:var(--muted);font-size:13px;text-align:center;">Loading questions…</div>`;
+  try {
+    await loadBundle(key);
+  } catch (err) {
+    console.error('Bundle load failed:', err);
+    list.innerHTML = `<div style="padding:24px 16px;color:var(--red);font-size:13px;text-align:center;">Couldn't load questions. Check your connection and try again.</div>`;
+    return;
+  }
 
   // Build topic buttons (keep the back button)
   let html = `<button onclick="showSubjectCards()" style="background:none;border:none;cursor:pointer;padding:8px 16px;color:var(--accent-dark);font-size:13px;font-weight:500;text-align:left;display:flex;align-items:center;gap:6px;">← Back to subjects</button>`;

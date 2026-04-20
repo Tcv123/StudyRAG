@@ -413,6 +413,63 @@ const CS_AQA_WRITTEN = {
       },
     ],
   },
-  '3.8': { green: [], amber: [], red: [] },
+  '3.8': {
+    green: [
+      {
+        q: 'State the name and year of the UK Act that controls how personal data is collected, stored and used.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 The Data Protection Act 2018 (1 for correct name, 1 for correct year).\n\u2022 It implements the UK version of the General Data Protection Regulation (UK-GDPR).`
+      },
+      {
+        q: 'State three principles of the Data Protection Act 2018.',
+        marks: 3, tier: 'green',
+        modelAnswer: `Any three of (1 mark each):\n\u2022 Lawful, fair and transparent \u2014 data collected with a valid legal basis and clear information to the person.\n\u2022 Purpose limitation \u2014 data used only for the specific purpose stated at collection.\n\u2022 Data minimisation \u2014 collect only what is necessary.\n\u2022 Accuracy \u2014 keep data accurate and up to date.\n\u2022 Storage limitation \u2014 keep data no longer than necessary.\n\u2022 Integrity and confidentiality (security) \u2014 protect data from unauthorised access or loss.\n\u2022 Accountability \u2014 be able to demonstrate compliance.`
+      },
+      {
+        q: 'State what is meant by the "digital divide" and give one example of a group commonly affected by it.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 The gap between those who have good access to digital technology (devices, fast internet, the skills to use them) and those who do not (1).\n\u2022 Example (any one): low-income households; older people; people in rural areas with poor broadband; disabled users; people without home internet (1).`
+      },
+      {
+        q: 'State four offences defined by the Computer Misuse Act 1990.',
+        marks: 4, tier: 'green',
+        modelAnswer: `\u2022 s.1: Unauthorised access to computer material (1).\n\u2022 s.2: Unauthorised access with intent to commit or facilitate further offences (1).\n\u2022 s.3: Unauthorised acts with intent to impair the operation of a computer (including modification / DDoS / malware) (1).\n\u2022 s.3A: Making, supplying or obtaining articles (e.g. hacking tools / malware) for use in s.1 or s.3 offences (1).`
+      },
+    ],
+    amber: [
+      {
+        q: 'Describe three environmental impacts of the widespread use of digital technology. For each, suggest one way the impact can be reduced.',
+        marks: 6, tier: 'amber',
+        modelAnswer: `\u2022 High energy and water use by data centres for running and cooling servers (1). Mitigation: use renewable-sourced electricity, site in cool climates, reuse waste heat (1).\n\u2022 Manufacturing footprint: mining, chip fabrication and assembly produce large carbon emissions before a device is even used (1). Mitigation: keep devices in service longer (reuse, refurbishment), choose repairable designs (1).\n\u2022 E-waste: discarded electronics contain toxic chemicals (lead, mercury, cadmium) that contaminate landfill and are often sent to unsafe informal recycling overseas (1). Mitigation: formal recycling, take-back schemes, circular-economy policies such as right-to-repair (1).`
+      },
+      {
+        q: 'Explain, with reference to the correct UK Act, how an employee who (a) logs in with a colleague\'s stolen password and then (b) copies a database of customer records for a rival firm has potentially broken the law.',
+        marks: 6, tier: 'amber',
+        modelAnswer: `\u2022 (a) Accessing the system with someone else\'s credentials is unauthorised access under section 1 of the Computer Misuse Act 1990 (1 for Act name and year, 1 for s.1 and reason).\n\u2022 Because the access was carried out with the intent of committing a further offence (theft of customer data / breach of confidence), it also falls under section 2 of the Computer Misuse Act 1990 (1).\n\u2022 (b) Copying customer records without a lawful basis processes personal data contrary to the Data Protection Act 2018 (1 for Act name and year).\n\u2022 Specifically the principles of lawful, fair and transparent processing and purpose limitation are broken, and the company\'s duty of integrity/confidentiality to its customers is breached (1).\n\u2022 The employer may also have a civil claim for breach of contract and confidentiality; the ICO may fine the company if it had inadequate controls (1).`
+      },
+      {
+        q: 'Explain what is meant by "informed consent" in a data-privacy context. Give two reasons why it can be difficult to achieve in practice.',
+        marks: 5, tier: 'amber',
+        modelAnswer: `\u2022 Informed consent means the data subject has been clearly told what data will be collected, why, by whom, how long it will be kept and who it will be shared with, and has agreed on that basis \u2014 freely, specifically and unambiguously (1 + 1).\n\u2022 UK-GDPR additionally requires that consent must be as easy to withdraw as to give (1).\n\u2022 Reason 1 \u2014 privacy policies are long and written in legalese, so users rarely read them fully (1).\n\u2022 Reason 2 \u2014 apps bundle many purposes behind a single "I agree" button and use dark patterns that push users to accept rather than decline (also accept: pre-ticked boxes; consent fatigue from daily cookie banners; users may have no practical alternative if a service is essential) (1).`
+      },
+      {
+        q: 'Describe how Creative Commons licensing helps creators and users of digital content, and give an example of what a "CC BY-NC" licence permits and forbids.',
+        marks: 5, tier: 'amber',
+        modelAnswer: `\u2022 Creative Commons is a family of free, standard licences under the Copyright, Designs and Patents Act 1988 that lets creators grant permissions to use their work in advance (1).\n\u2022 Users benefit because they can reuse content (images, music, text) without individually contacting the creator, knowing exactly what is allowed (1).\n\u2022 Creators benefit because their work reaches a wider audience while they retain chosen rights (e.g. attribution, non-commercial only) (1).\n\u2022 CC BY-NC permits any reuse, including adaptation, as long as the creator is credited (BY) and the use is non-commercial (NC) (1).\n\u2022 It forbids using the work for commercial purposes (e.g. selling T-shirts printed with the image) without a separate licence from the creator (1).`
+      },
+    ],
+    red: [
+      {
+        q: 'A UK secondary school plans to introduce AI-based software that automatically marks students\' written homework and detects plagiarism. Discuss the ethical, legal, privacy and environmental issues the school should consider, and make a recommendation.',
+        marks: 8, tier: 'red',
+        modelAnswer: `\u2022 Ethical: AI-marking may be biased against students whose writing style differs from the training data (e.g. EAL learners); automated plagiarism flags can unfairly damage reputations; teachers\' professional judgement is partly replaced by a "black box" algorithm (1 + 1).\n\u2022 Legal (DPA 2018): student homework is personal data about children, so the school must identify a lawful basis, conduct a Data Protection Impact Assessment, observe data minimisation, and ensure a right to human review for significant decisions (1 for DPA name & year + 1 for the reasoning).\n\u2022 Legal (Copyright, Designs and Patents Act 1988): if student work is used to train the supplier\'s future AI models, that is a further use that requires consent and a clear contractual licence (1).\n\u2022 Privacy: homework may reveal personal information; cloud storage increases breach risk; parental consent is needed for under-16s and consent must be genuinely informed (1).\n\u2022 Environmental: extra compute in a data centre adds to carbon footprint, though this may be offset by less paper printing \u2014 likely a small net impact (1).\n\u2022 Stakeholders: students (benefit from instant feedback; risk of unfair marking), teachers (workload reduced but role changed), parents (consent and transparency), the school (legal duties), the supplier (contract terms) (1).\n\u2022 Balanced recommendation: proceed ONLY with a DPIA under the Data Protection Act 2018, a written contract forbidding the supplier from reusing student work for training, a clear process for human review of AI grades or plagiarism flags, and an opt-out for families with limited home internet (1).\n(Award up to 8 marks for any valid combination covering at least three of the impact areas with specific mitigations and a conditional conclusion.)`
+      },
+      {
+        q: 'A ransomware attack on a UK hospital encrypts patient records and appointment systems for four days, forcing surgeries to be cancelled. Discuss the legal and ethical consequences, identifying all relevant UK Acts by name and year and weighing the impact on different stakeholders.',
+        marks: 8, tier: 'red',
+        modelAnswer: `\u2022 Computer Misuse Act 1990 section 1 (unauthorised access) and section 3 (unauthorised acts with intent to impair the operation of a computer) are committed by the attacker (1 for Act name and year, 1 for both relevant sections).\n\u2022 If the attacker provided or sold the ransomware tooling, section 3A (making/supplying articles for use in offences) also applies (1).\n\u2022 Data Protection Act 2018: the hospital is the data controller and has a duty to protect patient data under the integrity and confidentiality principle; a serious breach must be reported to the Information Commissioner\'s Office within 72 hours; affected patients may need to be notified (1 for Act + 1 for duties).\n\u2022 Stakeholders and impact: patients \u2014 cancelled operations and potential harm to health, loss of confidentiality of sensitive medical records (1); staff \u2014 must revert to paper, overwork, stress (1); hospital management \u2014 regulatory fines, reputational damage, ransom decision (1); attackers \u2014 criminal liability; wider NHS \u2014 pressure to fund better cyber security; regulators \u2014 may need to update guidance (1).\n\u2022 Ethical dimension: the hospital faces a serious dilemma about whether to pay the ransom (paying restores services quickly but funds future attacks); transparency to patients is an ethical as well as a legal duty.\n\u2022 Conclusion: the event triggers multiple UK Acts simultaneously (CMA 1990, DPA 2018) and the strongest mitigations are preventative \u2014 robust offline backups, patching, staff training \u2014 combined with a clear incident-response plan; the hospital should cooperate fully with the ICO and the National Cyber Security Centre (1).\n(Award up to 8 marks for any valid combination.)`
+      },
+    ],
+  },
 
 };
