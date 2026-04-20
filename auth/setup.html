@@ -539,11 +539,23 @@ function setCurrentGrade(name, grade) {
   const tgtIdx = GRADES.indexOf(subjectTargetGrade[name]);
   if (subjectTargetGrade[name] != null && tgtIdx > curIdx) subjectTargetGrade[name] = grade;
   renderGrades();
+  updateSaveBtn();
 }
 
 function setTargetGrade(name, grade) {
   subjectTargetGrade[name] = grade;
   renderGrades();
+  updateSaveBtn();
+}
+
+function updateSaveBtn() {
+  const btn = document.getElementById('saveBtn');
+  if (!btn) return;
+  const allSet = selectedSubjects.length > 0 && selectedSubjects.every(s =>
+    subjectCurrentGrade[s.name] != null && subjectTargetGrade[s.name] != null
+  );
+  btn.disabled = !allSet;
+  btn.title = allSet ? '' : 'Set current and target grade for each subject to continue';
 }
 
 function goToStep3() {
@@ -560,6 +572,7 @@ function goToStep3() {
   document.getElementById('pl2').classList.add('done');
   document.getElementById('ps3').classList.add('active');
   renderGrades();
+  updateSaveBtn();
 }
 
 function backToStep2() {
