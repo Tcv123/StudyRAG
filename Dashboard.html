@@ -262,35 +262,38 @@
       box-shadow: 0 1px 4px rgba(91,173,207,0.07);
     }
 
-    .medals-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
-      gap: 8px;
+    .medals-summary {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 10px; margin-bottom: 14px;
+    }
+    .medal-stat {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 10px 14px;
+      display: flex; align-items: baseline; gap: 8px;
+    }
+    .medal-stat-num {
+      font-family: var(--font-display); font-size: 22px;
+      color: var(--text); letter-spacing: -0.02em; line-height: 1;
+    }
+    .medal-stat-label {
+      font-size: 11px; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.06em;
     }
 
-    .medal-card {
-      border: 1px solid var(--border);
-      border-radius: 10px; padding: 8px 6px;
-      text-align: center; transition: all 0.15s;
-      position: relative;
+    .medal-progress { display: flex; flex-direction: column; gap: 6px; }
+    .medal-progress-bar {
+      height: 8px; border-radius: 4px;
+      background: var(--surface2); border: 1px solid var(--border);
+      overflow: hidden;
     }
-    .medal-card[title] { cursor: help; }
-
-    .medal-card.earned {
-      background: linear-gradient(135deg, rgba(217,119,6,0.06), rgba(245,158,11,0.04));
-      border-color: rgba(217,119,6,0.25);
+    .medal-progress-fill {
+      height: 100%; border-radius: 3px;
+      background: linear-gradient(90deg, #D97706, #F59E0B);
+      transition: width 0.5s ease;
     }
-
-    .medal-card.locked {
-      background: var(--surface2);
-      opacity: 0.55;
-      filter: grayscale(0.4);
+    .medal-progress-text {
+      font-size: 11px; color: var(--muted); font-weight: 500;
     }
-
-    .medal-card.earned:hover { box-shadow: 0 4px 14px rgba(217,119,6,0.12); transform: translateY(-2px); border-color: rgba(217,119,6,0.35); }
-
-    .medal-icon  { font-size: 22px; margin-bottom: 4px; }
-    .medal-name  { font-size: 10px; font-weight: 600; color: var(--text); line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
     /* ── STAT CARDS ── */
     .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
@@ -445,7 +448,6 @@
 
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-    @media (max-width: 1200px) { .medals-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 1100px) { .content-grid { grid-template-columns: 1fr; } .stats-row { grid-template-columns: repeat(2, 1fr); } }
 
     @media (max-width: 768px) {
@@ -459,10 +461,9 @@
       .level-stats { width: 100%; justify-content: space-around; margin-top: 4px; }
       .stats-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
       .subjects-progress-grid { grid-template-columns: 1fr; }
-      .medals-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-      .medal-card { padding: 8px 6px; }
-      .medal-icon { font-size: 22px; }
-      .medal-name { font-size: 10px; }
+      .medals-summary { gap: 6px; }
+      .medal-stat { padding: 8px 10px; }
+      .medal-stat-num { font-size: 18px; }
       .content-grid { grid-template-columns: 1fr; }
       .subj-card { padding: 14px; }
       .diag-subj-card { padding: 16px 14px; min-height: auto; }
@@ -482,7 +483,7 @@
       .stats-row { grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px; }
       .stat-card { padding: 10px; }
       .stat-value { font-size: 20px; }
-      .medals-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+      .medals-summary { grid-template-columns: repeat(3, 1fr); gap: 6px; }
       .section-hd { margin-bottom: 8px; }
       .section-title { font-size: 13px; }
     }
@@ -614,19 +615,20 @@
         </div>
       </div>
 
-      <!-- ROW 3 — Medals -->
+      <!-- ROW 3 — Medals summary -->
       <div class="medals-row-wrap">
         <div class="section-hd">
           <div class="section-title">🏅 Your medals</div>
           <a href="medals.html" class="section-link">View all →</a>
         </div>
-        <div class="medals-grid" id="medalsGrid">
-          <div class="shimmer" style="height:100px;"></div>
-          <div class="shimmer" style="height:100px;"></div>
-          <div class="shimmer" style="height:100px;"></div>
-          <div class="shimmer" style="height:100px;"></div>
-          <div class="shimmer" style="height:100px;"></div>
-          <div class="shimmer" style="height:100px;"></div>
+        <div class="medals-summary">
+          <div class="medal-stat"><div class="medal-stat-num" id="medalEarned">–</div><div class="medal-stat-label">Earned</div></div>
+          <div class="medal-stat"><div class="medal-stat-num" id="medalLocked">–</div><div class="medal-stat-label">Locked</div></div>
+          <div class="medal-stat"><div class="medal-stat-num" id="medalTotal">–</div><div class="medal-stat-label">Total</div></div>
+        </div>
+        <div class="medal-progress">
+          <div class="medal-progress-bar"><div class="medal-progress-fill" id="medalProgressFill" style="width:0%"></div></div>
+          <div class="medal-progress-text" id="medalProgressText">0% unlocked</div>
         </div>
       </div>
 
@@ -1194,24 +1196,16 @@ function renderSubjectsRow(subjects) {
 }
 
 function renderMedals(earnedIds) {
-  const grid = document.getElementById('medalsGrid');
-  const count = earnedIds.size;
+  const earned = earnedIds.size;
+  const total  = ALL_MEDALS.length;
+  const locked = total - earned;
+  const pct    = total > 0 ? Math.round((earned / total) * 100) : 0;
 
-  const sorted = [...ALL_MEDALS].sort((a, b) => {
-    const ae = earnedIds.has(a.id) ? 0 : 1;
-    const be = earnedIds.has(b.id) ? 0 : 1;
-    return ae - be;
-  });
-
-  grid.innerHTML = sorted.map(m => {
-    const earned = earnedIds.has(m.id);
-    const title = earned ? `${m.name} — ${m.desc}` : `${m.name} (locked) — ${m.desc}`;
-    return `
-      <div class="medal-card ${earned ? 'earned' : 'locked'}" title="${title.replace(/"/g, '&quot;')}">
-        <div class="medal-icon">${m.icon}</div>
-        <div class="medal-name">${m.name}</div>
-      </div>`;
-  }).join('');
+  document.getElementById('medalEarned').textContent = earned;
+  document.getElementById('medalLocked').textContent = locked;
+  document.getElementById('medalTotal').textContent  = total;
+  document.getElementById('medalProgressFill').style.width = pct + '%';
+  document.getElementById('medalProgressText').textContent = `${pct}% unlocked`;
 }
 
 // ── Render ───────────────────────────────────────────────────────────────
