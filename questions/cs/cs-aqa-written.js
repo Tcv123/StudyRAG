@@ -239,7 +239,64 @@ const CS_AQA_WRITTEN = {
       },
     ],
   },
-  '3.5': { green: [], amber: [], red: [] },
+  '3.5': {
+    green: [
+      {
+        q: 'State two differences between a LAN and a WAN.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 A LAN covers a single geographical site (e.g. one building or campus) while a WAN covers a large geographical area such as a country or the world (1).\n\u2022 A LAN\u2019s hardware is owned by a single organisation, whereas a WAN typically uses leased infrastructure from third-party telecoms providers (1).\n(Accept also: LAN is usually faster than a WAN; LAN is cheaper to run once built.)`
+      },
+      {
+        q: 'State the name of the device that (a) forwards packets between different networks, and (b) connects wireless devices to a wired network.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 (a) Router (1).\n\u2022 (b) Wireless access point (WAP) (1).`
+      },
+      {
+        q: 'State the purpose of DNS and give an example of what it does.',
+        marks: 3, tier: 'green',
+        modelAnswer: `\u2022 DNS (Domain Name System) translates human-readable domain names into the IP addresses that computers use to route packets (1).\n\u2022 Without DNS, users would have to remember numerical IP addresses for every website they wanted to visit (1).\n\u2022 Example: DNS translates bbc.co.uk into an IP address such as 151.101.0.81 so the browser can open a connection to the web server (1).`
+      },
+      {
+        q: 'State the four layers of the TCP/IP model in order from highest to lowest.',
+        marks: 4, tier: 'green',
+        modelAnswer: `\u2022 Application (1).\n\u2022 Transport (1).\n\u2022 Internet (Network) (1).\n\u2022 Link (1).`
+      },
+    ],
+    amber: [
+      {
+        q: 'Describe how a star topology works and give two advantages of using one instead of a bus topology.',
+        marks: 5, tier: 'amber',
+        modelAnswer: `\u2022 In a star topology every device is connected by its own cable to a central device, usually a switch (1).\n\u2022 All traffic between nodes passes through the central switch, which forwards each frame only out of the port leading to the destination (1).\n\u2022 Advantage 1: if one cable or one node fails, only that node is affected; the rest of the network keeps working (1).\n\u2022 Advantage 2: each node has a dedicated link to the switch, so there are no collisions between nodes sharing a cable (1).\n\u2022 (Also accept: easier to add/remove nodes, easier to locate faults, better security.) (1).`
+      },
+      {
+        q: 'Describe the difference between an IP address and a MAC address, including an example format of each.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 An IP address is a logical address assigned to a device on a network by the network administrator or a DHCP server, and it can change when the device joins a different network (1).\n\u2022 Example format (IPv4): 192.168.0.10 \u2014 four decimal bytes separated by dots (1).\n\u2022 A MAC address is a physical hardware address burned into the device\u2019s Network Interface Card (NIC) at the factory; it is unique and does not change (1).\n\u2022 Example format: 00:1A:2B:3C:4D:5E \u2014 six pairs of hexadecimal digits separated by colons (1).`
+      },
+      {
+        q: 'Explain the role of TCP and IP at their respective layers when a web page is loaded.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 TCP (Transmission Control Protocol) works at the Transport layer: it splits the web page data into numbered packets and opens a reliable connection between client and server (1).\n\u2022 TCP retransmits any packets that are lost and reassembles the packets in the correct order at the destination (1).\n\u2022 IP (Internet Protocol) works at the Internet/Network layer: it adds a source and destination IP address to each packet (1).\n\u2022 Routers along the way read the destination IP address and forward each packet towards the correct destination network, so the packets reach the web server (1).`
+      },
+      {
+        q: 'Explain two advantages and two disadvantages of using cloud storage rather than a local hard disk.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 Advantage: files can be accessed from any device with an internet connection, which makes collaboration and working from multiple devices easy (1).\n\u2022 Advantage: automatic backup on the provider\u2019s servers means a lost, stolen or broken device does not cause data loss (1).\n\u2022 Disadvantage: needs a reliable internet connection; without one, non-cached files may be unavailable, and uploading/downloading large files can be slow (1).\n\u2022 Disadvantage: ongoing subscription cost, and sensitive data sits on a third party\u2019s servers which may be breached or outaged (1).`
+      },
+    ],
+    red: [
+      {
+        q: 'Compare the star, bus and mesh topologies. Your answer should refer to how each works, reliability, cost and when each would be appropriate to use.',
+        marks: 8, tier: 'red',
+        modelAnswer: `\u2022 Star: every node has its own cable to a central switch, which forwards frames only to the intended recipient (1).\n\u2022 Bus: every node shares a single backbone cable; only one device can transmit at a time (1).\n\u2022 Mesh (full): every node has a direct link to every other node, so data can take many alternative paths (1).\n\u2022 Reliability \u2014 star: one cable fault affects only that node, but the switch is a single point of failure; bus: one break in the backbone brings the whole network down; mesh: no single point of failure, self-healing (1).\n\u2022 Cost \u2014 bus is cheapest (one cable, no switch); star is moderate (needs a switch and a cable per node); full mesh is most expensive, needing n(n\u22121)/2 links (1).\n\u2022 Scalability \u2014 star scales easily up to the switch size; bus becomes slow as more devices cause more collisions; mesh is costly to scale because each new node needs many new links (1).\n\u2022 Uses \u2014 star is used in almost all modern LANs (schools, offices, homes); bus is now legacy, rarely used; mesh is used in the internet backbone and in critical or wireless-mesh Wi-Fi systems (1).\n\u2022 Conclusion: for a typical LAN, star is the best trade-off; mesh is chosen when reliability justifies the extra cost; bus is obsolete (1).`
+      },
+      {
+        q: 'Discuss why encryption is used on modern networks. Your answer should include how data travels across a network, what encryption does, and at least one everyday example.',
+        marks: 6, tier: 'red',
+        modelAnswer: `\u2022 When data travels across a network it passes through many pieces of equipment owned by different parties (home router, ISP routers, internet backbone routers, the destination network), any of which could, in principle, read the packets passing through (1).\n\u2022 If the data is unencrypted (plaintext), sensitive information such as passwords, messages, bank details and files can be read by anyone with access to that equipment or the cable (1).\n\u2022 Encryption scrambles the plaintext into ciphertext using a key; only someone with the matching key can decrypt the ciphertext back to the original data (1).\n\u2022 Symmetric encryption (e.g. AES) uses a single shared key for both encryption and decryption and is used for the bulk of the data because it is fast (1).\n\u2022 Everyday example: HTTPS wraps HTTP in a TLS tunnel, so that when a user logs in to a banking site, their username, password and traffic cannot be read by any router between them and the server (1).\n\u2022 Other examples: Wi-Fi encryption (WPA2/WPA3) protects traffic between a device and the wireless access point so neighbours cannot read it out of the air; VPNs encrypt all traffic to a VPN server (1).`
+      },
+    ],
+  },
   '3.6': { green: [], amber: [], red: [] },
   '3.7': { green: [], amber: [], red: [] },
   '3.8': { green: [], amber: [], red: [] },
