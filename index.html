@@ -379,6 +379,7 @@
 
     /* ── SECTIONS ── */
     .section { position: relative; z-index: 1; padding: 88px 0; }
+    .section-first { padding-top: 120px; padding-bottom: 72px; background: linear-gradient(180deg, var(--accent-dim), transparent); border-bottom: 1px solid var(--border); }
     .section-white { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
     .section-tag {
@@ -610,6 +611,67 @@
   </div>
 </nav>
 
+<!-- How it works (moved to top so it's the first thing new users see) -->
+<section id="how" class="section section-first">
+  <div class="wrap">
+    <div class="section-tag">New here? Start with this</div>
+    <div class="section-h">From sign-up to exam ready</div>
+    <p class="section-p">Six steps to take you from zero to confident — every topic in the green.</p>
+    <div class="steps-grid">
+      <div class="step-col">
+        <div class="step">
+          <div class="step-n">1</div>
+          <div class="step-body">
+            <h4>Create your account</h4>
+            <p>Sign up and choose your level — GCSE, AS Level, or A Level.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <div class="step-body">
+            <h4>Pick subjects &amp; exam board</h4>
+            <p>Select your subjects and your UK board — AQA, OCR, Edexcel, WJEC and more.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">3</div>
+          <div class="step-body">
+            <h4>Take the diagnostic</h4>
+            <p>10 questions per topic: <span style="color:var(--green-text);font-weight:500">3 green</span>, <span style="color:var(--amber-text);font-weight:500">3 amber</span>, <span style="color:var(--red-text);font-weight:500">4 red</span> level.</p>
+          </div>
+        </div>
+      </div>
+      <div class="step-col">
+        <div class="step">
+          <div class="step-n">4</div>
+          <div class="step-body">
+            <h4>Get your RAG rating</h4>
+            <p>The algorithm places each topic automatically — no self-reporting needed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">5</div>
+          <div class="step-body">
+            <h4>Study &amp; improve</h4>
+            <p>Use notes, flashcards and practice questions to move topics up a colour.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">6</div>
+          <div class="step-body">
+            <h4>Get everything green</h4>
+            <p>Full green dashboard = fully confident and ready for your exam.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="auth/register.html" class="btn btn-blue">Create free account</a>
+      <a href="auth/login.html" class="btn btn-white" style="margin-left:10px;">Sign in</a>
+    </div>
+  </div>
+</section>
+
 <!-- Hero -->
 <section class="hero">
   <div class="hero-wrap">
@@ -659,63 +721,6 @@
         <div class="rag-emoji">🟢</div>
         <h3>Green — Confident</h3>
         <p>You've got this covered. Keep reviewing to keep it green — it'll drop to amber if you ignore it too long.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- How it works -->
-<section id="how" class="section">
-  <div class="wrap">
-    <div class="section-tag">How it works</div>
-    <div class="section-h">From sign-up to exam ready</div>
-    <p class="section-p">Six steps to take you from zero to confident — every topic in the green.</p>
-    <div class="steps-grid">
-      <div class="step-col">
-        <div class="step">
-          <div class="step-n">1</div>
-          <div class="step-body">
-            <h4>Create your account</h4>
-            <p>Sign up and choose your level — GCSE, AS Level, or A Level.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-n">2</div>
-          <div class="step-body">
-            <h4>Pick subjects &amp; exam board</h4>
-            <p>Select your subjects and your UK board — AQA, OCR, Edexcel, WJEC and more.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-n">3</div>
-          <div class="step-body">
-            <h4>Take the diagnostic</h4>
-            <p>10 questions per topic: <span style="color:var(--green-text);font-weight:500">3 green</span>, <span style="color:var(--amber-text);font-weight:500">3 amber</span>, <span style="color:var(--red-text);font-weight:500">4 red</span> level.</p>
-          </div>
-        </div>
-      </div>
-      <div class="step-col">
-        <div class="step">
-          <div class="step-n">4</div>
-          <div class="step-body">
-            <h4>Get your RAG rating</h4>
-            <p>The algorithm places each topic automatically — no self-reporting needed.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-n">5</div>
-          <div class="step-body">
-            <h4>Study &amp; improve</h4>
-            <p>Use notes, flashcards and practice questions to move topics up a colour.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-n">6</div>
-          <div class="step-body">
-            <h4>Get everything green</h4>
-            <p>Full green dashboard = fully confident and ready for your exam.</p>
-          </div>
-        </div>
       </div>
     </div>
   </div>
