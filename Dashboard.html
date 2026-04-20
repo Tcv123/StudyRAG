@@ -126,6 +126,8 @@
     .help-step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.2); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: var(--accent-dark); flex-shrink: 0; }
     .help-step-text { font-size: 14px; line-height: 1.6; padding-top: 5px; }
     .help-goal { font-size: 14px; color: var(--accent-dark); font-weight: 600; text-align: center; padding: 14px; background: var(--accent-dim); border-radius: 12px; }
+    .help-cta { display: block; width: 100%; margin-top: 18px; padding: 13px 20px; border: none; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; font-family: var(--font-body); font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 14px rgba(91,173,207,0.22); transition: transform 0.15s, box-shadow 0.15s; }
+    .help-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(91,173,207,0.3); }
 
     .settings-link { display: flex; align-items: center; gap: 6px; padding: 7px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; font-size: 13px; color: var(--muted); text-decoration: none; transition: all 0.15s; }
     .settings-link:hover { border-color: var(--border-hover); color: var(--text); }
@@ -599,33 +601,6 @@
             <div class="level-stat-lbl">Red</div>
           </div>
         </div>
-      </div>
-
-      <!-- GETTING STARTED -->
-      <div class="getting-started-wrap" id="gettingStarted">
-        <div class="section-hd" style="margin-bottom:14px;">
-          <div class="section-title">🎯 Getting Started</div>
-          <button class="section-link" onclick="dismissGettingStarted()" style="border:none;background:none;cursor:pointer;font-family:var(--font-body);font-size:13px;color:var(--muted);">Dismiss ✕</button>
-        </div>
-        <div class="gs-steps">
-          <div class="gs-step">
-            <div class="gs-num">1</div>
-            <div class="gs-text">Pick a topic from the <strong>Diagnostic</strong> tab and complete a quiz — this sets your RAG colour for that topic.</div>
-          </div>
-          <div class="gs-step">
-            <div class="gs-num">2</div>
-            <div class="gs-text">Check your <strong>Breakdown</strong> page to see which topics need the most work.</div>
-          </div>
-          <div class="gs-step">
-            <div class="gs-num">3</div>
-            <div class="gs-text">Use <strong>Practice Questions</strong> and <strong>Notes</strong> to drill exam-style questions on your weak areas.</div>
-          </div>
-          <div class="gs-step">
-            <div class="gs-num">4</div>
-            <div class="gs-text">Re-do diagnostics to update your colours as you improve.</div>
-          </div>
-        </div>
-        <div class="gs-goal">The goal is to get every topic green and feel confident heading into your exams.</div>
       </div>
 
       <!-- ROW 2 — Subjects & boards + exam dates -->
@@ -2671,22 +2646,15 @@ document.addEventListener('click', e => {
   }
 });
 
-// ── Getting Started dismiss ──────────────────────────────────────────────
-if (localStorage.getItem('rag_gs_dismissed')) {
-  const gs = document.getElementById('gettingStarted');
-  if (gs) gs.style.display = 'none';
+// ── Getting Started: auto-open modal on first visit ─────────────────────
+if (!localStorage.getItem('rag_welcome_seen')) {
+  const overlay = document.getElementById('helpOverlay');
+  if (overlay) overlay.classList.add('active');
 }
 
-function dismissGettingStarted() {
-  localStorage.setItem('rag_gs_dismissed', '1');
-  const gs = document.getElementById('gettingStarted');
-  gs.style.transition = 'opacity 0.25s ease, max-height 0.3s ease';
-  gs.style.opacity = '0';
-  gs.style.maxHeight = '0';
-  gs.style.overflow = 'hidden';
-  gs.style.marginBottom = '0';
-  gs.style.padding = '0';
-  setTimeout(() => gs.remove(), 300);
+function dismissWelcome() {
+  localStorage.setItem('rag_welcome_seen', '1');
+  document.getElementById('helpOverlay').classList.remove('active');
 }
 
 function checkDiagnosticHash() {
@@ -2711,11 +2679,11 @@ load().then(() => {
 <div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
 
 <!-- Help Panel Overlay -->
-<div class="help-overlay" id="helpOverlay" onclick="if(event.target===this)this.classList.remove('active')">
+<div class="help-overlay" id="helpOverlay" onclick="if(event.target===this)dismissWelcome()">
   <div class="help-panel">
-    <button class="help-panel-close" onclick="document.getElementById('helpOverlay').classList.remove('active')">✕</button>
-    <div class="help-panel-title">🎯 How RAG Learning Works</div>
-    <div class="help-panel-sub">Follow these four steps to get the most out of your revision.</div>
+    <button class="help-panel-close" onclick="dismissWelcome()">✕</button>
+    <div class="help-panel-title">👋 Welcome to RAG Learning</div>
+    <div class="help-panel-sub">Here's exactly what to do — follow these four steps to get the most out of your revision.</div>
     <div class="help-steps">
       <div class="help-step">
         <div class="help-step-num">1</div>
@@ -2735,6 +2703,7 @@ load().then(() => {
       </div>
     </div>
     <div class="help-goal">The goal is to get every topic green and feel confident heading into your exams. 💪</div>
+    <button class="help-cta" onclick="dismissWelcome()">Got it — let's go →</button>
   </div>
 </div>
 
