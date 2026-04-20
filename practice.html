@@ -50,6 +50,7 @@
   <script src="questions/further-maths-edexcel/fm-edexcel-written.js"></script>
   <script src="questions/further-maths-edexcel/fm-edexcel-practice.js"></script>
   <script src="questions/further-maths-aqa/fm-aqa-practice.js"></script>
+  <script src="questions/further-maths-ocr/fm-ocr-practice.js"></script>
   <script src="questions/further-maths-ocr-b/fm-ocr-b-written-cp1.js"></script>
   <script src="questions/further-maths-ocr-b/fm-ocr-b-written-cp2.js"></script>
   <script src="questions/further-maths-ocr-b/fm-ocr-b-written-m.js"></script>
@@ -590,6 +591,7 @@ const PRACTICE_MAP = {
   'Mathematics_Edexcel': () => typeof MATHS_EDEXCEL_PRACTICE !== 'undefined' ? MATHS_EDEXCEL_PRACTICE : null,
   'Further Mathematics_Edexcel': () => typeof FM_EDEXCEL_PRACTICE !== 'undefined' ? FM_EDEXCEL_PRACTICE : null,
   'Further Mathematics_AQA': () => typeof FM_AQA_PRACTICE !== 'undefined' ? FM_AQA_PRACTICE : null,
+  'Further Mathematics_OCR A': () => typeof FM_OCR_PRACTICE !== 'undefined' ? FM_OCR_PRACTICE : null,
   'Further Mathematics_OCR B': () => typeof FM_OCR_B_PRACTICE !== 'undefined' ? FM_OCR_B_PRACTICE : null,
   'English Language_AQA': () => typeof ENGLISH_AQA_PRACTICE !== 'undefined' ? ENGLISH_AQA_PRACTICE : null,
   'English Language_Edexcel': () => typeof ENGLISH_EDEXCEL_PRACTICE !== 'undefined' ? ENGLISH_EDEXCEL_PRACTICE : null,
@@ -1090,6 +1092,95 @@ const SUBJECT_TOPICS = {
         { id: 'CP2.6', name: 'Hyperbolic Functions',     sub: 'cosh/sinh/tanh, identities, inverses, integration' },
         { id: 'CP2.7', name: 'Methods in Differential Equations', sub: 'Integrating factor, 2nd order ODE, CF+PI' },
         { id: 'CP2.8', name: 'Modelling with DEs',       sub: 'SHM, damped/forced oscillations, coupled DEs' },
+      ]},
+    ]
+  },
+  'Further Mathematics_AQA': {
+    sections: [
+      { label: 'AQA — Core Pure (Papers 1 & 2)', topics: [
+        { id: '1.1', name: 'Complex Numbers',             sub: 'Arithmetic, modulus, argument, de Moivre, roots of unity' },
+        { id: '1.2', name: 'Matrices',                    sub: 'Operations, determinants, inverses, transformations' },
+        { id: '1.3', name: 'Further Algebra and Functions', sub: 'Roots of polynomials, Vieta, partial fractions, inequalities' },
+        { id: '1.4', name: 'Series',                      sub: 'Standard Σ results, method of differences, Maclaurin' },
+        { id: '1.5', name: 'Further Calculus',            sub: 'Improper integrals, volumes of revolution, mean value' },
+        { id: '1.6', name: 'Further Vectors',             sub: 'Cross product, lines/planes in 3D, scalar triple product' },
+        { id: '1.7', name: 'Polar Coordinates',           sub: 'Curves, area ½∫r²dθ, tangents, conversions' },
+        { id: '1.8', name: 'Hyperbolic Functions',        sub: 'cosh/sinh/tanh, identities, inverses, integration' },
+        { id: '1.9', name: 'Differential Equations',      sub: 'Integrating factor, 2nd order ODE, CF+PI, modelling' },
+      ]},
+    ]
+  },
+  'Further Mathematics_OCR A': {
+    sections: [
+      { label: 'OCR A — Core Pure (Paper 1)', topics: [
+        { id: '1.1',  name: 'Complex Numbers',            sub: 'Arithmetic, modulus, argument, conjugate, solving' },
+        { id: '1.2',  name: 'Matrices',                   sub: 'Operations, determinants, inverses, transformations' },
+        { id: '1.3',  name: 'Further Algebra and Functions', sub: 'Roots of polynomials, Vieta, partial fractions' },
+        { id: '1.4',  name: 'Further Calculus',           sub: 'Improper integrals, volumes of revolution, mean value' },
+        { id: '1.5',  name: 'Further Vectors',            sub: 'Cross product, lines/planes in 3D, distances' },
+        { id: '1.6',  name: 'Polar Coordinates',          sub: 'Curves, area ½∫r²dθ, tangents, conversions' },
+        { id: '1.7',  name: 'Hyperbolic Functions',       sub: 'cosh/sinh/tanh, identities, inverses, integration' },
+        { id: '1.8',  name: 'Differential Equations',     sub: 'Integrating factor, 2nd order ODE, CF+PI' },
+        { id: '1.9',  name: 'Numerical Methods',          sub: 'Newton-Raphson, Euler, Simpson\'s rule' },
+        { id: '1.10', name: 'Proof by Induction',         sub: 'Summation, divisibility, matrix powers' },
+      ]},
+      { label: 'OCR A — Statistics (Optional Paper)', topics: [
+        { id: 'S1.1', name: 'Discrete Random Variables',  sub: 'E(X), Var(X), linear combinations' },
+        { id: 'S1.2', name: 'Continuous Random Variables', sub: 'pdf, cdf, expectation, variance' },
+        { id: 'S1.3', name: 'Statistical Inference',      sub: 'CLT, confidence intervals, t-tests' },
+        { id: 'S1.4', name: 'Chi-squared Tests',          sub: 'Goodness of fit, contingency tables' },
+        { id: 'S1.5', name: 'Probability Generating Functions', sub: 'PGFs, sums of independent RVs' },
+      ]},
+      { label: 'OCR A — Mechanics (Optional Paper)', topics: [
+        { id: 'M1.1', name: 'Dimensional Analysis',       sub: 'Dimensions of physical quantities, checking equations' },
+        { id: 'M1.2', name: 'Work, Energy and Power',     sub: 'Work-energy theorem, variable forces' },
+        { id: 'M1.3', name: 'Impulse and Momentum',       sub: '1D and 2D collisions, elastic/inelastic' },
+        { id: 'M1.4', name: 'Circular Motion',            sub: 'Uniform and non-uniform, vertical circles' },
+        { id: 'M1.5', name: 'Simple Harmonic Motion',     sub: 'SHM equations, pendulums, springs' },
+      ]},
+      { label: 'OCR A — Discrete (Optional Paper)', topics: [
+        { id: 'D1.1', name: 'Graph Theory',               sub: 'Graphs, trees, planarity, Euler/Hamilton' },
+        { id: 'D1.2', name: 'Networks (Shortest Paths)',  sub: 'Dijkstra, Floyd, minimum spanning tree' },
+        { id: 'D1.3', name: 'Linear Programming',         sub: 'Graphical, Simplex method' },
+        { id: 'D1.4', name: 'Game Theory',                sub: 'Zero-sum games, saddle points, mixed strategies' },
+        { id: 'D1.5', name: 'Recurrence Relations',       sub: 'First/second order, characteristic equations' },
+      ]},
+    ]
+  },
+  'Further Mathematics_OCR B': {
+    sections: [
+      { label: 'OCR B (MEI) — Core Pure (Papers Y420/Y421)', topics: [
+        { id: '1.1',  name: 'Proof',                      sub: 'Induction, contradiction, direct, counter-example' },
+        { id: '1.2',  name: 'Complex Numbers',            sub: 'Arithmetic, modulus, argument, de Moivre' },
+        { id: '1.3',  name: 'Matrices',                   sub: 'Operations, determinants, inverses, transformations' },
+        { id: '1.4',  name: 'Vectors',                    sub: 'Cross product, lines/planes in 3D, distances' },
+        { id: '1.5',  name: 'Series',                     sub: 'Standard Σ results, method of differences, Maclaurin' },
+        { id: '1.6',  name: 'Roots of Polynomials',       sub: 'Vieta\'s formulas, symmetric functions, new equations' },
+        { id: '1.7',  name: 'Polar Coordinates',          sub: 'Curves, area ½∫r²dθ, tangents' },
+        { id: '1.8',  name: 'Hyperbolic Functions',       sub: 'cosh/sinh/tanh, identities, inverses' },
+        { id: '1.9',  name: 'Further Calculus',           sub: 'Improper integrals, volumes, arc length' },
+        { id: '1.10', name: 'Differential Equations',     sub: 'Integrating factor, 2nd order ODE, CF+PI' },
+      ]},
+      { label: 'OCR B (MEI) — Mechanics Major (Y422)', topics: [
+        { id: 'M1.1', name: 'Dimensional Analysis',       sub: 'Dimensions, checking equations, scaling' },
+        { id: 'M1.2', name: 'Work, Energy & Power',       sub: 'Work-energy theorem, variable forces' },
+        { id: 'M1.3', name: 'Impulse & Momentum',         sub: '1D and 2D collisions, elastic/inelastic' },
+        { id: 'M1.4', name: 'Circular Motion',            sub: 'Uniform and non-uniform, vertical circles' },
+        { id: 'M1.5', name: 'Centres of Mass',            sub: 'Uniform bodies, composite laminae, solids of revolution' },
+      ]},
+      { label: 'OCR B (MEI) — Statistics Major (Y423)', topics: [
+        { id: 'S1.1', name: 'Discrete Random Variables',  sub: 'E(X), Var(X), linear combinations' },
+        { id: 'S1.2', name: 'Poisson Distribution',       sub: 'pmf, mean, variance, Poisson approximation' },
+        { id: 'S1.3', name: 'Bivariate Data & Correlation', sub: 'Product-moment, Spearman\'s rank, regression' },
+        { id: 'S1.4', name: 'Chi-squared Tests',          sub: 'Goodness of fit, contingency tables' },
+        { id: 'S1.5', name: 'Non-parametric Tests',       sub: 'Sign test, Wilcoxon signed-rank' },
+      ]},
+      { label: 'OCR B (MEI) — Modelling with Algorithms (Y424)', topics: [
+        { id: 'A1.1', name: 'Graphs & Networks',          sub: 'Graphs, trees, planarity, Euler/Hamilton' },
+        { id: 'A1.2', name: 'Network Algorithms',         sub: 'Dijkstra, Prim, Kruskal, Floyd' },
+        { id: 'A1.3', name: 'Linear Programming',         sub: 'Graphical, Simplex method, Big-M' },
+        { id: 'A1.4', name: 'Critical Path Analysis',     sub: 'Activity networks, floats, cascade charts' },
+        { id: 'A1.5', name: 'Simulation',                 sub: 'Random numbers, Monte Carlo, queueing' },
       ]},
     ]
   },
