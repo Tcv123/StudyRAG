@@ -436,6 +436,75 @@
     .step-body h4 { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
     .step-body p { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
+    /* Pro plan */
+    .pro-wrap { display: flex; justify-content: center; }
+    .pro-card {
+      width: 100%; max-width: 620px;
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(91,173,207,0.12) 0%, transparent 55%),
+        linear-gradient(155deg, var(--surface) 0%, #F6FBFE 100%);
+      border: 1px solid var(--border-hover);
+      border-radius: 20px;
+      padding: 36px 34px 30px;
+      position: relative; overflow: hidden;
+      box-shadow: 0 16px 48px rgba(91,173,207,0.18);
+    }
+    .pro-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    }
+    .pro-header {
+      display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+      gap: 14px; margin-bottom: 24px; padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+    .pro-heading-group { display: flex; flex-direction: column; gap: 10px; }
+    .pro-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      padding: 4px 11px; border-radius: 20px;
+      box-shadow: 0 2px 10px var(--accent-glow); align-self: flex-start;
+    }
+    .pro-name {
+      font-family: var(--font-display);
+      font-size: 30px; letter-spacing: -0.02em; line-height: 1;
+    }
+    .pro-name em { color: var(--accent); font-style: normal; }
+    .pro-price-wrap { text-align: right; }
+    .pro-price { display: flex; align-items: baseline; gap: 4px; justify-content: flex-end; }
+    .pro-price-amount {
+      font-family: var(--font-display);
+      font-size: 40px; color: var(--text); line-height: 1;
+    }
+    .pro-price-period { font-size: 14px; color: var(--muted); }
+    .pro-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .pro-features {
+      list-style: none;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px 22px;
+      margin-bottom: 26px;
+    }
+    .pro-features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13px; color: var(--text); line-height: 1.5;
+    }
+    .pro-check {
+      width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+      background: var(--accent-dim); color: var(--accent-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700;
+      margin-top: 1px;
+    }
+    .pro-btn { width: 100%; justify-content: center; }
+    .pro-foot { font-size: 12px; color: var(--muted); text-align: center; margin-top: 12px; }
+
+    @media (max-width: 640px) {
+      .pro-features { grid-template-columns: 1fr; }
+      .pro-header { flex-direction: column; align-items: flex-start; }
+      .pro-price-wrap { text-align: left; }
+      .pro-price { justify-content: flex-start; }
+    }
+
     /* Medals */
     .medals-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
     .medal-card {
@@ -750,8 +819,47 @@
   </div>
 </section>
 
+<!-- Pro plan -->
+<section id="pro" class="section section-white">
+  <div class="wrap">
+    <div class="section-tag">Go further</div>
+    <div class="section-h">Unlock <em style="color:var(--accent);font-style:normal">Pro</em> for exam-ready students</div>
+    <p class="section-p">Everything in the free plan, plus advanced tools for students who want every possible edge before exam day.</p>
+
+    <div class="pro-wrap">
+      <div class="pro-card">
+        <div class="pro-header">
+          <div class="pro-heading-group">
+            <span class="pro-badge">Most popular</span>
+            <div class="pro-name">RAG <em>Pro</em></div>
+          </div>
+          <div class="pro-price-wrap">
+            <div class="pro-price">
+              <span class="pro-price-amount">£4.99</span>
+              <span class="pro-price-period">/month</span>
+            </div>
+            <div class="pro-sub">or £39/year · save 35%</div>
+          </div>
+        </div>
+        <ul class="pro-features">
+          <li><span class="pro-check">✓</span> Unlimited practice questions across every topic</li>
+          <li><span class="pro-check">✓</span> AI tutor — instant explanations on any question</li>
+          <li><span class="pro-check">✓</span> Full past-paper archive with examiner-style marking</li>
+          <li><span class="pro-check">✓</span> Predicted grade tracker &amp; weekly progress insights</li>
+          <li><span class="pro-check">✓</span> Custom study plans built around your exam timetable</li>
+          <li><span class="pro-check">✓</span> Downloadable PDF notes for offline revision</li>
+          <li><span class="pro-check">✓</span> Exclusive exam-technique masterclasses</li>
+          <li><span class="pro-check">✓</span> Priority support &amp; ad-free experience</li>
+        </ul>
+        <a href="auth/register.html" class="btn btn-blue pro-btn">Start 7-day free trial</a>
+        <div class="pro-foot">Cancel any time · No card charged during trial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Medals -->
-<section class="section section-white">
+<section class="section">
   <div class="wrap">
     <div class="section-tag">Milestones</div>
     <div class="section-h">Earn medals along the way</div>

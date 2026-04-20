@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 3.7 &mdash; Relational Databases and SQL</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        h4 { font-size: 1.02rem; color: #1e3a5f; margin-top: 22px; margin-bottom: 8px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>3.7 Relational Databases and SQL</h1>
+<p class="spec-ref">AQA GCSE Computer Science (8525) &mdash; Paper 2</p>
+
+<h2>3.7.1 Flat-File vs Relational Databases</h2>
+
+<div class="definition">
+    A <strong>database</strong> is an organised collection of data, structured so that it can be easily stored, searched, updated and related together. Modern databases are almost always held on a computer and managed by a <em>database management system (DBMS)</em>.
+</div>
+
+<p>Before talking about relational databases, it is easier to see the problems if we start with the simpler approach: the <strong>flat file</strong>. A flat-file database stores all its data in a single table &mdash; often a spreadsheet or a CSV file &mdash; with one row per item and one column per piece of data. It works well for tiny amounts of simple data, but it rapidly breaks down when the data is even slightly more complex.</p>
+
+<h3>A Flat-File Example</h3>
+
+<p>Imagine a school that keeps a single spreadsheet of every class a student is in. Each row records one enrolment &mdash; a student in a class &mdash; and copies in all the student's details and all the class's details side by side:</p>
+
+<table>
+    <tr><th>StudentID</th><th>StudentName</th><th>Form</th><th>ClassCode</th><th>Subject</th><th>Teacher</th><th>Room</th></tr>
+    <tr><td>S001</td><td>Amelia Khan</td><td>10B</td><td>CS10A</td><td>Computing</td><td>Mr Patel</td><td>G14</td></tr>
+    <tr><td>S001</td><td>Amelia Khan</td><td>10B</td><td>MA10A</td><td>Maths</td><td>Mrs Chen</td><td>M02</td></tr>
+    <tr><td>S002</td><td>Ben Okafor</td><td>10B</td><td>CS10A</td><td>Computing</td><td>Mr Patel</td><td>G14</td></tr>
+    <tr><td>S003</td><td>Chloe Smith</td><td>10C</td><td>CS10A</td><td>Computing</td><td>Mr Patel</td><td>G14</td></tr>
+    <tr><td>S003</td><td>Chloe Smith</td><td>10C</td><td>MA10A</td><td>Maths</td><td>Mrs Chen</td><td>M02</td></tr>
+</table>
+
+<p>Look at how much data is copied. Amelia's name and form appear on every row where she is enrolled. Mr Patel's name and room G14 appear on every row for CS10A. This wasted duplication is called <strong>redundancy</strong>, and it causes the three classic flat-file problems.</p>
+
+<h3>Problems With Flat Files</h3>
+
+<ul>
+    <li><strong>Data redundancy.</strong> The same data is stored more than once. Each extra copy wastes storage space and, more importantly, creates opportunities for inconsistency.</li>
+    <li><strong>Data inconsistency.</strong> Because the same fact is written in many rows, it is easy for copies to disagree. One row says <em>Chloe Smith</em>, another says <em>Cloe Smith</em>; one row has room G14, another has G14a. A search for &ldquo;Chloe Smith&rdquo; now misses half her enrolments.</li>
+    <li><strong>Update anomalies.</strong> If Mr Patel moves from room G14 to G22, every single row that mentions him has to be changed. Miss one row and the database is broken. If you delete Ben Okafor's only enrolment row, you lose not just the enrolment but also Ben's name and form &mdash; they were only stored there.</li>
+    <li><strong>Difficulty searching and reporting.</strong> To count the number of students in 10B you must scan the whole table, because the form is repeated instead of stored once.</li>
+    <li><strong>Poor data integrity.</strong> Nothing stops someone typing <code>10B</code> on one row and <code>10b</code> on another, or entering a class code that does not exist.</li>
+</ul>
+
+<h3>The Relational Alternative</h3>
+
+<div class="definition">
+    A <strong>relational database</strong> stores data in several <em>linked tables</em>, each holding one kind of thing. Tables are connected by <strong>keys</strong> rather than by copying data across, so every fact is stored in just one place.
+</div>
+
+<p>The same school data can be split into three small tables: one for students, one for classes and one that links them (who is enrolled in what):</p>
+
+<table>
+    <tr><th colspan="3" style="text-align:center;">Student</th></tr>
+    <tr><th>StudentID (PK)</th><th>Name</th><th>Form</th></tr>
+    <tr><td>S001</td><td>Amelia Khan</td><td>10B</td></tr>
+    <tr><td>S002</td><td>Ben Okafor</td><td>10B</td></tr>
+    <tr><td>S003</td><td>Chloe Smith</td><td>10C</td></tr>
+</table>
+
+<table>
+    <tr><th colspan="4" style="text-align:center;">Class</th></tr>
+    <tr><th>ClassCode (PK)</th><th>Subject</th><th>Teacher</th><th>Room</th></tr>
+    <tr><td>CS10A</td><td>Computing</td><td>Mr Patel</td><td>G14</td></tr>
+    <tr><td>MA10A</td><td>Maths</td><td>Mrs Chen</td><td>M02</td></tr>
+</table>
+
+<table>
+    <tr><th colspan="2" style="text-align:center;">Enrolment</th></tr>
+    <tr><th>StudentID (FK)</th><th>ClassCode (FK)</th></tr>
+    <tr><td>S001</td><td>CS10A</td></tr>
+    <tr><td>S001</td><td>MA10A</td></tr>
+    <tr><td>S002</td><td>CS10A</td></tr>
+    <tr><td>S003</td><td>CS10A</td></tr>
+    <tr><td>S003</td><td>MA10A</td></tr>
+</table>
+
+<p>Amelia's name now appears <em>once</em> in the whole database. Mr Patel appears <em>once</em>. To change his room you change a single cell. To find all of Chloe's classes you look up her StudentID in Enrolment, then use the class codes to look up the subject and teacher in Class. The two tables are linked by the shared values.</p>
+
+<h3>Benefits of a Relational Database</h3>
+
+<ul>
+    <li><strong>Less redundancy.</strong> Each fact is stored once. Storage is used efficiently and there are no wasted duplicates.</li>
+    <li><strong>Better data integrity and consistency.</strong> Because a value is only stored in one place, it cannot disagree with itself. A name or room cannot be spelled two different ways in two different rows.</li>
+    <li><strong>Easier updates.</strong> Change a value once and every report or query automatically sees the new value. Update anomalies are eliminated.</li>
+    <li><strong>Referential integrity.</strong> The DBMS can stop someone entering an enrolment for a class code that does not exist, or deleting a student who still has enrolments, because it understands the foreign-key links between tables.</li>
+    <li><strong>Easier searching and reporting.</strong> A query language (SQL) can combine data from multiple tables on demand, producing any report without having to store it in advance.</li>
+    <li><strong>Scalability and multi-user access.</strong> Relational DBMSs are designed to handle thousands of concurrent users, automatic backups, recovery and security &mdash; far beyond what a shared spreadsheet can do safely.</li>
+</ul>
+
+<!-- Diagram 1: Flat-file redundancy vs normalised tables -->
+<svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <text x="380" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Flat-File (redundant) vs Relational (split into linked tables)</text>
+
+  <!-- Flat file box -->
+  <g>
+    <rect x="20" y="40" width="720" height="140" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+    <text x="380" y="62" text-anchor="middle" font-size="12" font-weight="bold" fill="#7f1d1d">FLAT FILE &mdash; one big table, data repeated on every row</text>
+    <line x1="30" y1="72" x2="730" y2="72" stroke="#b91c1c" stroke-width="1"/>
+    <text x="40"  y="90"  font-size="10" font-weight="bold" fill="#1a1a2e">StudentID | Name | Form | Class | Subject | Teacher | Room</text>
+    <text x="40"  y="108" font-size="10" fill="#1a1a2e">S001 | Amelia Khan | 10B | CS10A | Computing | Mr Patel | G14</text>
+    <text x="40"  y="124" font-size="10" fill="#b91c1c">S001 | <tspan font-weight="bold">Amelia Khan | 10B</tspan> | MA10A | Maths | Mrs Chen | M02  &larr; name/form repeated</text>
+    <text x="40"  y="140" font-size="10" fill="#b91c1c">S002 | Ben Okafor | 10B | <tspan font-weight="bold">CS10A | Computing | Mr Patel | G14</tspan>  &larr; class details repeated</text>
+    <text x="40"  y="156" font-size="10" fill="#b91c1c">S003 | Chloe Smith | 10C | <tspan font-weight="bold">CS10A | Computing | Mr Patel | G14</tspan>  &larr; repeated again!</text>
+    <text x="40"  y="172" font-size="10" fill="#7f1d1d" font-style="italic">Redundancy &rarr; inconsistency &rarr; update anomalies.</text>
+  </g>
+
+  <!-- Arrow down -->
+  <g>
+    <line x1="380" y1="185" x2="380" y2="215" stroke="#1e3a5f" stroke-width="2"/>
+    <polygon points="380,220 374,210 386,210" fill="#1e3a5f"/>
+    <text x="395" y="205" font-size="11" fill="#1e3a5f" font-style="italic">split into separate tables &mdash; each fact stored once</text>
+  </g>
+
+  <!-- Student table -->
+  <g>
+    <rect x="20" y="240" width="230" height="140" rx="6" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+    <text x="135" y="260" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Student</text>
+    <line x1="30" y1="268" x2="240" y2="268" stroke="#1e40af" stroke-width="1"/>
+    <text x="30" y="285" font-size="10" font-weight="bold" fill="#1a1a2e">StudentID (PK) | Name | Form</text>
+    <text x="30" y="305" font-size="10" fill="#1a1a2e">S001 | Amelia Khan | 10B</text>
+    <text x="30" y="321" font-size="10" fill="#1a1a2e">S002 | Ben Okafor | 10B</text>
+    <text x="30" y="337" font-size="10" fill="#1a1a2e">S003 | Chloe Smith | 10C</text>
+    <text x="30" y="365" font-size="10" fill="#065f46" font-style="italic">name stored once</text>
+  </g>
+
+  <!-- Class table -->
+  <g>
+    <rect x="510" y="240" width="230" height="140" rx="6" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+    <text x="625" y="260" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Class</text>
+    <line x1="520" y1="268" x2="730" y2="268" stroke="#1e40af" stroke-width="1"/>
+    <text x="520" y="285" font-size="10" font-weight="bold" fill="#1a1a2e">ClassCode (PK) | Subject | Teacher | Room</text>
+    <text x="520" y="305" font-size="10" fill="#1a1a2e">CS10A | Computing | Mr Patel | G14</text>
+    <text x="520" y="321" font-size="10" fill="#1a1a2e">MA10A | Maths    | Mrs Chen | M02</text>
+    <text x="520" y="365" font-size="10" fill="#065f46" font-style="italic">class details stored once</text>
+  </g>
+
+  <!-- Enrolment table in the middle -->
+  <g>
+    <rect x="275" y="240" width="210" height="200" rx="6" fill="#f0fdf4" stroke="#065f46" stroke-width="2"/>
+    <text x="380" y="260" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46">Enrolment (link)</text>
+    <line x1="285" y1="268" x2="475" y2="268" stroke="#065f46" stroke-width="1"/>
+    <text x="285" y="285" font-size="10" font-weight="bold" fill="#1a1a2e">StudentID (FK) | ClassCode (FK)</text>
+    <text x="285" y="305" font-size="10" fill="#1a1a2e">S001 | CS10A</text>
+    <text x="285" y="321" font-size="10" fill="#1a1a2e">S001 | MA10A</text>
+    <text x="285" y="337" font-size="10" fill="#1a1a2e">S002 | CS10A</text>
+    <text x="285" y="353" font-size="10" fill="#1a1a2e">S003 | CS10A</text>
+    <text x="285" y="369" font-size="10" fill="#1a1a2e">S003 | MA10A</text>
+    <text x="285" y="400" font-size="10" fill="#065f46" font-style="italic">only the IDs are repeated,</text>
+    <text x="285" y="415" font-size="10" fill="#065f46" font-style="italic">not the details</text>
+  </g>
+
+  <!-- Link lines -->
+  <g stroke="#065f46" stroke-width="1.5" fill="none" stroke-dasharray="4,3">
+    <line x1="250" y1="310" x2="275" y2="310"/>
+    <line x1="485" y1="310" x2="510" y2="310"/>
+  </g>
+
+  <text x="380" y="480" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46">Each fact stored in one place &rarr; no redundancy, no update anomalies.</text>
+</svg>
+
+<div class="exam-tip">A common 4-mark question is &ldquo;Give two problems with storing the data in a flat file and explain how a relational database solves them.&rdquo; Always name the problem (<em>redundancy</em>, <em>inconsistency</em>, <em>update anomaly</em>) and then say what the relational version does (<em>stores each fact once, uses keys to link tables</em>).</div>
+
+<h2>3.7.2 Relational Database Terminology</h2>
+
+<p>AQA expects you to know the following vocabulary precisely. The words in brackets are the formal mathematical names you sometimes meet; you can use either, but be consistent within an answer.</p>
+
+<table>
+    <tr><th>Term</th><th>Meaning</th></tr>
+    <tr><td><strong>Database</strong></td><td>An organised collection of related data, typically stored in one or more tables, managed by a DBMS.</td></tr>
+    <tr><td><strong>Table</strong> (relation)</td><td>A two-dimensional structure that stores all the data about one kind of entity &mdash; for example, one Student table stores every student.</td></tr>
+    <tr><td><strong>Record</strong> (row / tuple)</td><td>A single complete entry in a table: all the data about one student, one class, one book. One row of the table.</td></tr>
+    <tr><td><strong>Field</strong> (column / attribute)</td><td>A single piece of information held about every record: <em>Name</em>, <em>Form</em>, <em>DateOfBirth</em>. One column of the table.</td></tr>
+    <tr><td><strong>Primary key (PK)</strong></td><td>A field (or combination of fields) that <em>uniquely identifies</em> each record in its table. Every table has exactly one primary key.</td></tr>
+    <tr><td><strong>Foreign key (FK)</strong></td><td>A field in one table whose value is the primary key of a different table. Foreign keys are how tables are linked to form relationships.</td></tr>
+    <tr><td><strong>Composite key</strong></td><td>A primary key made up of <em>two or more</em> fields combined, used when no single field is unique. Common in linking tables.</td></tr>
+</table>
+
+<h3>Primary Keys</h3>
+
+<div class="definition">
+    A <strong>primary key</strong> is a field (or combination of fields) whose value uniquely identifies every record in a table. Two records can never share the same primary-key value, and the value can never be NULL (empty).
+</div>
+
+<p>A good primary key is:</p>
+
+<ul>
+    <li><strong>Unique</strong> &mdash; no two records have the same value.</li>
+    <li><strong>Stable</strong> &mdash; the value does not change over time. Names and email addresses often change; IDs should not.</li>
+    <li><strong>Concise</strong> &mdash; a short value (an integer or a short code) makes comparisons and indexing fast.</li>
+</ul>
+
+<p>Names are usually a bad primary key (two students may share a name). Instead, a school assigns every student a unique <code>StudentID</code> such as <code>S001</code>, a library gives each book a unique <code>BookID</code>, and an online shop assigns every customer a <code>CustomerID</code>. If a natural candidate key does not exist, the designer invents one &mdash; often an auto-incrementing integer (1, 2, 3, ...) called a <em>surrogate key</em>.</p>
+
+<h3>Foreign Keys</h3>
+
+<div class="definition">
+    A <strong>foreign key</strong> is a field in one table whose values match primary-key values in a <em>different</em> table. It is how relational databases represent relationships between entities.
+</div>
+
+<p>In the school example, <code>Enrolment.StudentID</code> is a foreign key that references <code>Student.StudentID</code>. The value <code>S001</code> in Enrolment is meaningful because it matches Amelia Khan's record in the Student table. A foreign key does not have to be unique in its own table &mdash; Amelia can appear many times in Enrolment, once for each class she takes &mdash; but every value it holds <em>must</em> exist as a primary-key value in the referenced table. That rule is called <strong>referential integrity</strong>.</p>
+
+<h3>Composite Keys</h3>
+
+<div class="definition">
+    A <strong>composite key</strong> is a primary key made up of two or more fields combined. It is used when no single field is unique on its own. Linking tables (like Enrolment) almost always use a composite key made from two foreign keys.
+</div>
+
+<p>In Enrolment, neither StudentID nor ClassCode is unique on its own &mdash; a student is in several classes, and a class has several students &mdash; but the <em>combination</em> is unique (each student&ndash;class pair appears only once). So the primary key of Enrolment is the composite <code>(StudentID, ClassCode)</code>. This also stops a student being accidentally enrolled in the same class twice.</p>
+
+<h3>A Quick Visual Summary</h3>
+
+<p>The Student table, with five records and three fields, illustrates all the words at once:</p>
+
+<table>
+    <tr><th>StudentID <em>(primary key)</em></th><th>Name</th><th>Form</th></tr>
+    <tr><td>S001</td><td>Amelia Khan</td><td>10B</td></tr>
+    <tr><td>S002</td><td>Ben Okafor</td><td>10B</td></tr>
+    <tr><td>S003</td><td>Chloe Smith</td><td>10C</td></tr>
+    <tr><td>S004</td><td>Daniel Gray</td><td>10A</td></tr>
+    <tr><td>S005</td><td>Eva Novak</td><td>10C</td></tr>
+</table>
+
+<ul>
+    <li>The whole grid is a <strong>table</strong>.</li>
+    <li>Each row (e.g. <code>S002, Ben Okafor, 10B</code>) is one <strong>record</strong>.</li>
+    <li>Each column (e.g. <em>Name</em>) is one <strong>field</strong>.</li>
+    <li><em>StudentID</em> is the <strong>primary key</strong>: every value is unique, non-null and does not change.</li>
+    <li>If another table contains a column called <em>StudentID</em> whose values come from this one, that column is a <strong>foreign key</strong> to Student.</li>
+</ul>
+
+<div class="exam-tip">Do not confuse &ldquo;record&rdquo; and &ldquo;field&rdquo; in the exam. A record is a complete row (everything about one student); a field is a single column (one piece of information about every student). A very common exam question is &ldquo;State the difference between a record and a field.&rdquo;</div>
+
+<h2>3.7.3 Relationships</h2>
+
+<p>A <strong>relationship</strong> is a link between two tables. For AQA GCSE you only need to handle the most common case, the <strong>one-to-many</strong> relationship, plus the classic technique of using a linking table to represent a many-to-many relationship.</p>
+
+<h3>One-to-Many (1:M)</h3>
+
+<div class="definition">
+    In a <strong>one-to-many</strong> relationship, one record in table A is linked to many records in table B, but each record in B links to exactly one record in A.
+</div>
+
+<p>Everyday examples of one-to-many relationships:</p>
+
+<ul>
+    <li><strong>Customer &rarr; Orders.</strong> One customer places many orders, but each order belongs to exactly one customer.</li>
+    <li><strong>Teacher &rarr; Classes.</strong> One teacher teaches many classes, but each class has one assigned teacher.</li>
+    <li><strong>Author &rarr; Books.</strong> (Assuming a book has one author.) One author writes many books, but each book has one author.</li>
+    <li><strong>Artist &rarr; Songs.</strong> One artist records many songs, but each song belongs to one artist.</li>
+</ul>
+
+<p>A one-to-many relationship is implemented by adding a foreign key to the table on the &ldquo;many&rdquo; side. For <em>Customer &rarr; Orders</em>, the Order table has a <code>CustomerID</code> column whose values match primary keys in the Customer table:</p>
+
+<table>
+    <tr><th colspan="3" style="text-align:center;">Customer (the &ldquo;one&rdquo; side)</th></tr>
+    <tr><th>CustomerID (PK)</th><th>Name</th><th>Email</th></tr>
+    <tr><td>C100</td><td>Ravi Shah</td><td>ravi@example.com</td></tr>
+    <tr><td>C101</td><td>Amelia Khan</td><td>amelia@example.com</td></tr>
+</table>
+
+<table>
+    <tr><th colspan="4" style="text-align:center;">Order (the &ldquo;many&rdquo; side)</th></tr>
+    <tr><th>OrderID (PK)</th><th>CustomerID (FK)</th><th>OrderDate</th><th>Total</th></tr>
+    <tr><td>O500</td><td>C100</td><td>2026-03-04</td><td>42.90</td></tr>
+    <tr><td>O501</td><td>C100</td><td>2026-03-09</td><td>15.50</td></tr>
+    <tr><td>O502</td><td>C101</td><td>2026-03-09</td><td>9.99</td></tr>
+    <tr><td>O503</td><td>C100</td><td>2026-04-01</td><td>27.30</td></tr>
+</table>
+
+<p>Ravi Shah (C100) has three orders; Amelia Khan (C101) has one; each order belongs to exactly one customer.</p>
+
+<h3>Many-to-Many (M:M) Using a Linking Table</h3>
+
+<p>A many-to-many relationship &mdash; many students take many classes, many customers buy many products &mdash; cannot be represented by adding a foreign key to one of the two tables. Instead, we add a <strong>third table</strong> (a <em>linking table</em>) that has one row for each pairing. The linking table contains two foreign keys and they together form its composite primary key.</p>
+
+<p>The Student &harr; Class example from earlier is exactly this pattern. Amelia is in many classes; CS10A has many students; so Enrolment stores the pairs. Every many-to-many becomes two one-to-many relationships via the linking table.</p>
+
+<!-- Diagram 2: ER diagram -->
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Entity-Relationship Diagram &mdash; Student, Enrolment, Class</text>
+  <text x="360" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Many-to-many between Student and Class, implemented as two one-to-many relationships through Enrolment.</text>
+
+  <!-- Student entity -->
+  <g>
+    <rect x="30" y="90" width="170" height="160" rx="6" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+    <text x="115" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Student</text>
+    <line x1="40" y1="122" x2="190" y2="122" stroke="#1e40af"/>
+    <text x="40" y="142" font-size="11" fill="#1a1a2e" font-weight="bold">StudentID (PK)</text>
+    <text x="40" y="162" font-size="11" fill="#1a1a2e">Name</text>
+    <text x="40" y="182" font-size="11" fill="#1a1a2e">Form</text>
+    <text x="40" y="202" font-size="11" fill="#1a1a2e">DateOfBirth</text>
+    <text x="40" y="222" font-size="11" fill="#1a1a2e">Email</text>
+  </g>
+
+  <!-- Enrolment entity (linking) -->
+  <g>
+    <rect x="275" y="110" width="170" height="120" rx="6" fill="#f0fdf4" stroke="#065f46" stroke-width="2"/>
+    <text x="360" y="132" text-anchor="middle" font-size="13" font-weight="bold" fill="#065f46">Enrolment</text>
+    <line x1="285" y1="142" x2="435" y2="142" stroke="#065f46"/>
+    <text x="285" y="162" font-size="11" fill="#1a1a2e" font-weight="bold">StudentID (FK, PK)</text>
+    <text x="285" y="182" font-size="11" fill="#1a1a2e" font-weight="bold">ClassCode (FK, PK)</text>
+    <text x="285" y="202" font-size="11" fill="#1a1a2e">EnrolmentDate</text>
+    <text x="360" y="222" text-anchor="middle" font-size="10" fill="#065f46" font-style="italic">(composite key)</text>
+  </g>
+
+  <!-- Class entity -->
+  <g>
+    <rect x="520" y="90" width="170" height="160" rx="6" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+    <text x="605" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Class</text>
+    <line x1="530" y1="122" x2="680" y2="122" stroke="#1e40af"/>
+    <text x="530" y="142" font-size="11" fill="#1a1a2e" font-weight="bold">ClassCode (PK)</text>
+    <text x="530" y="162" font-size="11" fill="#1a1a2e">Subject</text>
+    <text x="530" y="182" font-size="11" fill="#1a1a2e">Teacher</text>
+    <text x="530" y="202" font-size="11" fill="#1a1a2e">Room</text>
+    <text x="530" y="222" font-size="11" fill="#1a1a2e">Level</text>
+  </g>
+
+  <!-- Line Student to Enrolment with crow's foot -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="200" y1="170" x2="275" y2="170"/>
+    <!-- '1' on Student side -->
+    <line x1="215" y1="162" x2="215" y2="178"/>
+    <text x="210" y="158" font-size="11" fill="#1e3a5f">1</text>
+    <!-- crow's foot on Enrolment side -->
+    <line x1="270" y1="170" x2="262" y2="162"/>
+    <line x1="270" y1="170" x2="262" y2="170"/>
+    <line x1="270" y1="170" x2="262" y2="178"/>
+    <text x="255" y="158" font-size="11" fill="#1e3a5f">M</text>
+  </g>
+
+  <!-- Line Class to Enrolment with crow's foot -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="445" y1="170" x2="520" y2="170"/>
+    <!-- crow's foot on Enrolment side -->
+    <line x1="450" y1="170" x2="458" y2="162"/>
+    <line x1="450" y1="170" x2="458" y2="170"/>
+    <line x1="450" y1="170" x2="458" y2="178"/>
+    <text x="460" y="158" font-size="11" fill="#1e3a5f">M</text>
+    <!-- '1' on Class side -->
+    <line x1="505" y1="162" x2="505" y2="178"/>
+    <text x="500" y="158" font-size="11" fill="#1e3a5f">1</text>
+  </g>
+
+  <text x="360" y="290" text-anchor="middle" font-size="12" fill="#1e3a5f">Read as: one Student has many Enrolments; one Class has many Enrolments.</text>
+  <text x="360" y="310" text-anchor="middle" font-size="12" fill="#1e3a5f">&rarr; students and classes have a many-to-many relationship via Enrolment.</text>
+</svg>
+
+<div class="exam-tip">In an ER diagram the side marked &ldquo;1&rdquo; holds the primary key; the side marked &ldquo;M&rdquo; (or shown with a crow's foot) holds the foreign key. When you design, always ask: &ldquo;one X has many Ys?&rdquo; and add the FK to the Y table.</div>
+
+<h2>3.7.4 SQL &mdash; Querying Data With SELECT</h2>
+
+<div class="definition">
+    <strong>SQL</strong> (Structured Query Language) is the standard language used to communicate with a relational database. SQL statements can <em>query</em> data (SELECT), <em>insert</em> new records (INSERT), <em>change</em> existing records (UPDATE) and <em>remove</em> records (DELETE).
+</div>
+
+<p>SQL keywords are traditionally written in UPPERCASE and statements end with a semicolon. The DBMS is not case-sensitive about the keywords themselves but <em>is</em> sensitive to string comparisons (more on that below).</p>
+
+<h3>The SELECT Statement</h3>
+
+<p>SELECT retrieves records from one or more tables and displays them as a <em>result set</em> &mdash; another table. The basic structure is:</p>
+
+<pre><code>SELECT  column_list
+FROM    table_name
+WHERE   condition
+ORDER BY column [ASC | DESC];</code></pre>
+
+<p>Only <code>SELECT</code> and <code>FROM</code> are required; <code>WHERE</code> and <code>ORDER BY</code> are optional filters / sorts. All our examples use this Book table from a small library:</p>
+
+<table>
+    <tr><th>BookID (PK)</th><th>Title</th><th>Author</th><th>Genre</th><th>Year</th><th>Copies</th></tr>
+    <tr><td>B001</td><td>Holes</td><td>Louis Sachar</td><td>Fiction</td><td>1998</td><td>3</td></tr>
+    <tr><td>B002</td><td>The Hobbit</td><td>J.R.R. Tolkien</td><td>Fantasy</td><td>1937</td><td>5</td></tr>
+    <tr><td>B003</td><td>A Brief History of Time</td><td>Stephen Hawking</td><td>Science</td><td>1988</td><td>2</td></tr>
+    <tr><td>B004</td><td>Northern Lights</td><td>Philip Pullman</td><td>Fantasy</td><td>1995</td><td>4</td></tr>
+    <tr><td>B005</td><td>Matilda</td><td>Roald Dahl</td><td>Fiction</td><td>1988</td><td>6</td></tr>
+    <tr><td>B006</td><td>The BFG</td><td>Roald Dahl</td><td>Fiction</td><td>1982</td><td>3</td></tr>
+    <tr><td>B007</td><td>Stargazing</td><td>Jen Campbell</td><td>Science</td><td>2020</td><td>1</td></tr>
+</table>
+
+<h3>Selecting All Columns</h3>
+
+<p>The asterisk <code>*</code> means &ldquo;every column&rdquo;. This query returns every book with every field:</p>
+
+<pre><code>SELECT * FROM Book;</code></pre>
+
+<p>Result: all seven rows shown in the table above.</p>
+
+<h3>Selecting Specific Columns</h3>
+
+<p>List only the columns you want. Order them however you like:</p>
+
+<pre><code>SELECT Title, Author FROM Book;</code></pre>
+
+<table>
+    <tr><th>Title</th><th>Author</th></tr>
+    <tr><td>Holes</td><td>Louis Sachar</td></tr>
+    <tr><td>The Hobbit</td><td>J.R.R. Tolkien</td></tr>
+    <tr><td>A Brief History of Time</td><td>Stephen Hawking</td></tr>
+    <tr><td>Northern Lights</td><td>Philip Pullman</td></tr>
+    <tr><td>Matilda</td><td>Roald Dahl</td></tr>
+    <tr><td>The BFG</td><td>Roald Dahl</td></tr>
+    <tr><td>Stargazing</td><td>Jen Campbell</td></tr>
+</table>
+
+<h3>Filtering With WHERE</h3>
+
+<p>The <code>WHERE</code> clause keeps only the rows that satisfy a condition. The comparison operators are:</p>
+
+<table>
+    <tr><th>Operator</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td><code>=</code></td><td>Equal to</td><td><code>Genre = 'Fiction'</code></td></tr>
+    <tr><td><code>&lt;&gt;</code></td><td>Not equal to</td><td><code>Genre &lt;&gt; 'Fiction'</code></td></tr>
+    <tr><td><code>&lt;</code>, <code>&gt;</code></td><td>Less / greater than</td><td><code>Year &lt; 1990</code></td></tr>
+    <tr><td><code>&lt;=</code>, <code>&gt;=</code></td><td>Less / greater than or equal to</td><td><code>Copies &gt;= 3</code></td></tr>
+    <tr><td><code>AND</code></td><td>Both conditions true</td><td><code>Genre = 'Fiction' AND Year &gt; 1990</code></td></tr>
+    <tr><td><code>OR</code></td><td>Either condition true</td><td><code>Genre = 'Fantasy' OR Genre = 'Science'</code></td></tr>
+    <tr><td><code>LIKE</code></td><td>Pattern match (see wildcards below)</td><td><code>Title LIKE 'The %'</code></td></tr>
+</table>
+
+<p>Strings must be enclosed in single quotes: <code>'Fiction'</code>. Numbers are written without quotes.</p>
+
+<h4>Example 1 &mdash; simple equality</h4>
+
+<pre><code>SELECT Title, Author
+FROM   Book
+WHERE  Genre = 'Fantasy';</code></pre>
+
+<table>
+    <tr><th>Title</th><th>Author</th></tr>
+    <tr><td>The Hobbit</td><td>J.R.R. Tolkien</td></tr>
+    <tr><td>Northern Lights</td><td>Philip Pullman</td></tr>
+</table>
+
+<h4>Example 2 &mdash; AND combining two conditions</h4>
+
+<pre><code>SELECT Title, Year, Copies
+FROM   Book
+WHERE  Genre = 'Fiction' AND Copies &gt;= 4;</code></pre>
+
+<table>
+    <tr><th>Title</th><th>Year</th><th>Copies</th></tr>
+    <tr><td>Matilda</td><td>1988</td><td>6</td></tr>
+</table>
+
+<h4>Example 3 &mdash; OR listing alternatives</h4>
+
+<pre><code>SELECT Title, Genre
+FROM   Book
+WHERE  Genre = 'Fantasy' OR Genre = 'Science';</code></pre>
+
+<table>
+    <tr><th>Title</th><th>Genre</th></tr>
+    <tr><td>The Hobbit</td><td>Fantasy</td></tr>
+    <tr><td>A Brief History of Time</td><td>Science</td></tr>
+    <tr><td>Northern Lights</td><td>Fantasy</td></tr>
+    <tr><td>Stargazing</td><td>Science</td></tr>
+</table>
+
+<h3>Pattern Matching With LIKE</h3>
+
+<p>The <code>LIKE</code> operator compares a text field against a <em>pattern</em>. Two wildcards are used in AQA pseudo-SQL:</p>
+
+<ul>
+    <li><code>%</code> matches any sequence of characters (including none).</li>
+    <li><code>_</code> matches exactly one character.</li>
+</ul>
+
+<table>
+    <tr><th>Pattern</th><th>Matches</th></tr>
+    <tr><td><code>'The %'</code></td><td>Any title starting with &ldquo;The &rdquo;</td></tr>
+    <tr><td><code>'%lights'</code></td><td>Any title ending with &ldquo;lights&rdquo;</td></tr>
+    <tr><td><code>'%time%'</code></td><td>Any title containing &ldquo;time&rdquo; anywhere</td></tr>
+    <tr><td><code>'_ole%'</code></td><td>Any title where the second, third and fourth characters are &ldquo;ole&rdquo;</td></tr>
+</table>
+
+<h4>Example 4 &mdash; LIKE with a leading wildcard</h4>
+
+<pre><code>SELECT Title, Author
+FROM   Book
+WHERE  Author LIKE '%Dahl';</code></pre>
+
+<table>
+    <tr><th>Title</th><th>Author</th></tr>
+    <tr><td>Matilda</td><td>Roald Dahl</td></tr>
+    <tr><td>The BFG</td><td>Roald Dahl</td></tr>
+</table>
+
+<h4>Example 5 &mdash; LIKE with wildcards on both sides</h4>
+
+<pre><code>SELECT Title
+FROM   Book
+WHERE  Title LIKE '%the%';</code></pre>
+
+<p>Note: SQL string comparisons are usually case-insensitive in school systems, so &ldquo;<em>The</em>&rdquo; also matches. In AQA exam answers, treat comparisons as case-insensitive unless told otherwise.</p>
+
+<table>
+    <tr><th>Title</th></tr>
+    <tr><td>The Hobbit</td></tr>
+    <tr><td>A Brief History of Time</td></tr>
+    <tr><td>Northern Lights</td></tr>
+    <tr><td>The BFG</td></tr>
+</table>
+
+<h3>Sorting With ORDER BY</h3>
+
+<p>Results are not guaranteed to come back in any particular order unless you ask. <code>ORDER BY</code> sorts the result set; <code>ASC</code> is ascending (A&ndash;Z, smallest first) and is the default, <code>DESC</code> is descending (Z&ndash;A, largest first).</p>
+
+<h4>Example 6 &mdash; alphabetical sort</h4>
+
+<pre><code>SELECT Title, Author
+FROM   Book
+ORDER BY Title ASC;</code></pre>
+
+<table>
+    <tr><th>Title</th><th>Author</th></tr>
+    <tr><td>A Brief History of Time</td><td>Stephen Hawking</td></tr>
+    <tr><td>Holes</td><td>Louis Sachar</td></tr>
+    <tr><td>Matilda</td><td>Roald Dahl</td></tr>
+    <tr><td>Northern Lights</td><td>Philip Pullman</td></tr>
+    <tr><td>Stargazing</td><td>Jen Campbell</td></tr>
+    <tr><td>The BFG</td><td>Roald Dahl</td></tr>
+    <tr><td>The Hobbit</td><td>J.R.R. Tolkien</td></tr>
+</table>
+
+<h4>Example 7 &mdash; largest number of copies first, combined with WHERE</h4>
+
+<pre><code>SELECT Title, Copies
+FROM   Book
+WHERE  Genre = 'Fiction'
+ORDER BY Copies DESC;</code></pre>
+
+<table>
+    <tr><th>Title</th><th>Copies</th></tr>
+    <tr><td>Matilda</td><td>6</td></tr>
+    <tr><td>Holes</td><td>3</td></tr>
+    <tr><td>The BFG</td><td>3</td></tr>
+</table>
+
+<h4>Example 8 &mdash; sorting by two columns</h4>
+
+<pre><code>SELECT Title, Genre, Year
+FROM   Book
+ORDER BY Genre ASC, Year DESC;</code></pre>
+
+<table>
+    <tr><th>Title</th><th>Genre</th><th>Year</th></tr>
+    <tr><td>Matilda</td><td>Fiction</td><td>1988</td></tr>
+    <tr><td>The BFG</td><td>Fiction</td><td>1982</td></tr>
+    <tr><td>Holes</td><td>Fiction</td><td>1998</td></tr>
+    <tr><td>Northern Lights</td><td>Fantasy</td><td>1995</td></tr>
+    <tr><td>The Hobbit</td><td>Fantasy</td><td>1937</td></tr>
+    <tr><td>Stargazing</td><td>Science</td><td>2020</td></tr>
+    <tr><td>A Brief History of Time</td><td>Science</td><td>1988</td></tr>
+</table>
+
+<p>(Within each genre the newest year comes first because Year is DESC; genres come in alphabetical order because Genre is ASC. Ignoring alphabetical ties is fine for AQA.)</p>
+
+<!-- Diagram 3: SELECT flow -->
+<svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">How a SELECT query produces its result</text>
+  <text x="380" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Table(s) &rarr; WHERE filter &rarr; SELECT columns &rarr; ORDER BY sort &rarr; result set.</text>
+
+  <!-- Step 1: table -->
+  <g>
+    <rect x="20" y="80" width="140" height="120" rx="6" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+    <text x="90" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">1. FROM</text>
+    <text x="90" y="125" text-anchor="middle" font-size="11" fill="#1a1a2e">read the</text>
+    <text x="90" y="140" text-anchor="middle" font-size="11" fill="#1a1a2e">source table</text>
+    <text x="90" y="170" text-anchor="middle" font-size="10" fill="#6b7280">Book: 7 rows</text>
+  </g>
+
+  <!-- Step 2: WHERE -->
+  <g>
+    <rect x="180" y="80" width="140" height="120" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+    <text x="250" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">2. WHERE</text>
+    <text x="250" y="125" text-anchor="middle" font-size="11" fill="#1a1a2e">keep only</text>
+    <text x="250" y="140" text-anchor="middle" font-size="11" fill="#1a1a2e">rows matching</text>
+    <text x="250" y="155" text-anchor="middle" font-size="11" fill="#1a1a2e">the condition</text>
+    <text x="250" y="180" text-anchor="middle" font-size="10" fill="#6b7280">e.g. Genre = 'Fiction'</text>
+  </g>
+
+  <!-- Step 3: SELECT -->
+  <g>
+    <rect x="340" y="80" width="140" height="120" rx="6" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+    <text x="410" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="#0369a1">3. SELECT</text>
+    <text x="410" y="125" text-anchor="middle" font-size="11" fill="#1a1a2e">keep only</text>
+    <text x="410" y="140" text-anchor="middle" font-size="11" fill="#1a1a2e">the requested</text>
+    <text x="410" y="155" text-anchor="middle" font-size="11" fill="#1a1a2e">columns</text>
+    <text x="410" y="180" text-anchor="middle" font-size="10" fill="#6b7280">e.g. Title, Copies</text>
+  </g>
+
+  <!-- Step 4: ORDER BY -->
+  <g>
+    <rect x="500" y="80" width="140" height="120" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+    <text x="570" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="#6d28d9">4. ORDER BY</text>
+    <text x="570" y="125" text-anchor="middle" font-size="11" fill="#1a1a2e">sort the rows</text>
+    <text x="570" y="140" text-anchor="middle" font-size="11" fill="#1a1a2e">ASC or DESC</text>
+    <text x="570" y="170" text-anchor="middle" font-size="10" fill="#6b7280">e.g. Copies DESC</text>
+  </g>
+
+  <!-- Step 5: result -->
+  <g>
+    <rect x="660" y="80" width="90" height="120" rx="6" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+    <text x="705" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46">5. RESULT</text>
+    <text x="705" y="125" text-anchor="middle" font-size="11" fill="#1a1a2e">the final</text>
+    <text x="705" y="140" text-anchor="middle" font-size="11" fill="#1a1a2e">result set</text>
+    <text x="705" y="170" text-anchor="middle" font-size="10" fill="#6b7280">(a table)</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="#1e3a5f">
+    <line x1="160" y1="140" x2="178" y2="140"/><polygon points="178,140 172,136 172,144"/>
+    <line x1="320" y1="140" x2="338" y2="140"/><polygon points="338,140 332,136 332,144"/>
+    <line x1="480" y1="140" x2="498" y2="140"/><polygon points="498,140 492,136 492,144"/>
+    <line x1="640" y1="140" x2="658" y2="140"/><polygon points="658,140 652,136 652,144"/>
+  </g>
+
+  <text x="380" y="235" text-anchor="middle" font-size="11" fill="#1e3a5f" font-style="italic">The DBMS may reorder these steps for efficiency, but the logical result is the same.</text>
+</svg>
+
+<div class="exam-tip">When reading a SELECT query in an exam, work through it in the order: <em>FROM</em> (which table), <em>WHERE</em> (which rows), <em>SELECT</em> (which columns), <em>ORDER BY</em> (in what order). Candidates who rush straight to SELECT often pick the wrong columns.</div>
+
+<h2>3.7.5 SQL &mdash; INSERT, UPDATE, DELETE</h2>
+
+<p>SELECT reads; the three other commands <em>change</em> the stored data. Each has one job, and each has a form so simple that AQA expects you to know it by heart.</p>
+
+<h3>INSERT &mdash; adding a new record</h3>
+
+<pre><code>INSERT INTO table_name (column1, column2, ..., columnN)
+VALUES               (value1,  value2,  ..., valueN);</code></pre>
+
+<p>The columns in the first list line up with the values in the second list, in the same order. Strings go in single quotes; numbers do not. Auto-incremented columns can be left out.</p>
+
+<h4>Example 9 &mdash; adding a new book</h4>
+
+<pre><code>INSERT INTO Book (BookID, Title, Author, Genre, Year, Copies)
+VALUES           ('B008', 'Coraline', 'Neil Gaiman', 'Fantasy', 2002, 2);</code></pre>
+
+<p>After running this, the Book table has an eighth row:</p>
+
+<table>
+    <tr><th>BookID</th><th>Title</th><th>Author</th><th>Genre</th><th>Year</th><th>Copies</th></tr>
+    <tr><td>B008</td><td>Coraline</td><td>Neil Gaiman</td><td>Fantasy</td><td>2002</td><td>2</td></tr>
+</table>
+
+<p>If you list every column in the table's natural order, you can also write the shorter form <code>INSERT INTO Book VALUES ('B008', 'Coraline', 'Neil Gaiman', 'Fantasy', 2002, 2);</code>. Naming the columns is safer because it still works if the table's structure changes.</p>
+
+<h3>UPDATE &mdash; changing existing records</h3>
+
+<pre><code>UPDATE table_name
+SET    column1 = newvalue1, column2 = newvalue2, ...
+WHERE  condition;</code></pre>
+
+<p>The <code>SET</code> clause lists the new values; the <code>WHERE</code> clause specifies which rows to change. <strong>Always use a WHERE clause</strong> &mdash; forgetting it updates <em>every</em> row in the table.</p>
+
+<h4>Example 10 &mdash; adding a copy of Holes</h4>
+
+<pre><code>UPDATE Book
+SET    Copies = Copies + 1
+WHERE  BookID = 'B001';</code></pre>
+
+<p>The Copies value for B001 changes from 3 to 4; all other rows are untouched.</p>
+
+<h4>Example 11 &mdash; changing multiple fields in one row</h4>
+
+<pre><code>UPDATE Book
+SET    Genre = 'Science Fiction', Copies = 3
+WHERE  Title = 'The Hobbit';</code></pre>
+
+<p>Result: the Genre of The Hobbit becomes <em>Science Fiction</em> and the number of Copies becomes 3 (up from 5).</p>
+
+<h4>Example 12 &mdash; changing many rows at once</h4>
+
+<pre><code>UPDATE Book
+SET    Genre = 'Children''s Fiction'
+WHERE  Author = 'Roald Dahl';</code></pre>
+
+<p>Both Dahl books (Matilda and The BFG) have their Genre changed. Notice that the apostrophe in &ldquo;Children's&rdquo; is escaped by doubling it (<code>''</code>). This is how SQL handles a single quote inside a string.</p>
+
+<h3>DELETE &mdash; removing records</h3>
+
+<pre><code>DELETE FROM table_name
+WHERE        condition;</code></pre>
+
+<p>Deletes every row that matches the condition. Again, <strong>forgetting the WHERE clause deletes every row in the table</strong>.</p>
+
+<h4>Example 13 &mdash; deleting a specific book</h4>
+
+<pre><code>DELETE FROM Book
+WHERE       BookID = 'B007';</code></pre>
+
+<p>The row for &ldquo;Stargazing&rdquo; is removed. Other rows are untouched.</p>
+
+<h4>Example 14 &mdash; deleting all books with no copies</h4>
+
+<pre><code>DELETE FROM Book
+WHERE       Copies = 0;</code></pre>
+
+<p>If any books have Copies = 0 they are all removed. If there are none, the query runs but changes nothing.</p>
+
+<div class="exam-tip">In a 2 or 3-mark question you will often be asked to write ONE SQL statement. Read the question carefully: &ldquo;add&rdquo; = INSERT, &ldquo;change&rdquo; / &ldquo;increase&rdquo; / &ldquo;amend&rdquo; = UPDATE, &ldquo;remove&rdquo; = DELETE, &ldquo;find&rdquo; / &ldquo;list&rdquo; / &ldquo;display&rdquo; = SELECT. Also: <em>always</em> include the WHERE clause for UPDATE and DELETE unless the question says &ldquo;every&rdquo;.</div>
+
+<h2>3.7.6 Joining Tables</h2>
+
+<p>Because relational databases split data across tables, most useful queries need to combine data from two tables at once. AQA does not require the <code>JOIN</code> keyword; it expects you to use the simpler &ldquo;two tables in the FROM clause&rdquo; syntax with a WHERE clause that matches the foreign key to the primary key.</p>
+
+<h3>The Basic Two-Table Pattern</h3>
+
+<pre><code>SELECT  columns_from_either_table
+FROM    tableA, tableB
+WHERE   tableA.primary_key = tableB.foreign_key
+   AND  other_conditions;</code></pre>
+
+<p>If you do not include the linking condition (<code>tableA.pk = tableB.fk</code>), the DBMS returns every combination of rows from the two tables &mdash; which is almost always nonsense.</p>
+
+<h3>Example Data &mdash; Customer and Order</h3>
+
+<table>
+    <tr><th colspan="3" style="text-align:center;">Customer</th></tr>
+    <tr><th>CustomerID (PK)</th><th>Name</th><th>Email</th></tr>
+    <tr><td>C100</td><td>Ravi Shah</td><td>ravi@example.com</td></tr>
+    <tr><td>C101</td><td>Amelia Khan</td><td>amelia@example.com</td></tr>
+    <tr><td>C102</td><td>Ben Okafor</td><td>ben@example.com</td></tr>
+</table>
+
+<table>
+    <tr><th colspan="4" style="text-align:center;">`Order`</th></tr>
+    <tr><th>OrderID (PK)</th><th>CustomerID (FK)</th><th>OrderDate</th><th>Total</th></tr>
+    <tr><td>O500</td><td>C100</td><td>2026-03-04</td><td>42.90</td></tr>
+    <tr><td>O501</td><td>C100</td><td>2026-03-09</td><td>15.50</td></tr>
+    <tr><td>O502</td><td>C101</td><td>2026-03-09</td><td>9.99</td></tr>
+    <tr><td>O503</td><td>C100</td><td>2026-04-01</td><td>27.30</td></tr>
+    <tr><td>O504</td><td>C102</td><td>2026-04-05</td><td>62.00</td></tr>
+</table>
+
+<h4>Example 15 &mdash; list every order with the customer's name</h4>
+
+<pre><code>SELECT   Customer.Name, `Order`.OrderID, `Order`.Total
+FROM     Customer, `Order`
+WHERE    Customer.CustomerID = `Order`.CustomerID
+ORDER BY Customer.Name ASC;</code></pre>
+
+<table>
+    <tr><th>Name</th><th>OrderID</th><th>Total</th></tr>
+    <tr><td>Amelia Khan</td><td>O502</td><td>9.99</td></tr>
+    <tr><td>Ben Okafor</td><td>O504</td><td>62.00</td></tr>
+    <tr><td>Ravi Shah</td><td>O500</td><td>42.90</td></tr>
+    <tr><td>Ravi Shah</td><td>O501</td><td>15.50</td></tr>
+    <tr><td>Ravi Shah</td><td>O503</td><td>27.30</td></tr>
+</table>
+
+<p>When a column name exists in more than one table (here <em>CustomerID</em>) you must write <code>tablename.columnname</code>. If the column is unique you can just write the column name on its own, but fully qualifying is safer.</p>
+
+<h4>Example 16 &mdash; filtering the joined result</h4>
+
+<p>Find every order placed by Ravi Shah, showing only the date and total:</p>
+
+<pre><code>SELECT   OrderDate, Total
+FROM     Customer, `Order`
+WHERE    Customer.CustomerID = `Order`.CustomerID
+   AND   Customer.Name = 'Ravi Shah';</code></pre>
+
+<table>
+    <tr><th>OrderDate</th><th>Total</th></tr>
+    <tr><td>2026-03-04</td><td>42.90</td></tr>
+    <tr><td>2026-03-09</td><td>15.50</td></tr>
+    <tr><td>2026-04-01</td><td>27.30</td></tr>
+</table>
+
+<h4>Example 17 &mdash; three tables</h4>
+
+<p>The same idea scales to three tables. Combining our school Student, Class and Enrolment:</p>
+
+<pre><code>SELECT   Student.Name, Class.Subject, Class.Teacher
+FROM     Student, Enrolment, Class
+WHERE    Student.StudentID   = Enrolment.StudentID
+   AND   Enrolment.ClassCode = Class.ClassCode
+   AND   Student.Form        = '10B'
+ORDER BY Student.Name, Class.Subject;</code></pre>
+
+<p>This lists every subject that every 10B student is taking, along with who teaches it. With <em>n</em> tables you need <em>n&nbsp;&minus;&nbsp;1</em> linking conditions.</p>
+
+<div class="exam-tip">A very common AQA mark-scheme check-list for a join question is: (1) correct tables in <code>FROM</code> (1 mark), (2) correct linking condition in <code>WHERE</code> (1 mark), (3) correct filter condition (1 mark), (4) correct columns in <code>SELECT</code> (1 mark). Missing the linking condition is the single most common reason candidates lose marks.</div>
+
+<h2>3.7.7 Designing a Database</h2>
+
+<p>Database design is one of the few topics where the AQA exam routinely asks you to <em>produce</em> something, not just describe it. You will be given a scenario and asked to identify entities, attributes and keys, or to draw a simple schema. The process below always works.</p>
+
+<h3>Step 1: Identify the Entities</h3>
+
+<p>An <strong>entity</strong> is a real-world thing about which we store data &mdash; usually a noun in the scenario description. Each entity becomes a table. Pick nouns that have their own set of facts, not attributes of other things.</p>
+
+<p>For a scenario &ldquo;A vet's surgery treats pets. Each pet is owned by an owner, and each visit to the surgery is recorded&rdquo; the entities are:</p>
+
+<ul>
+    <li><strong>Owner</strong> (a person who owns pets)</li>
+    <li><strong>Pet</strong> (an animal registered at the surgery)</li>
+    <li><strong>Visit</strong> (one appointment)</li>
+</ul>
+
+<h3>Step 2: Identify the Attributes</h3>
+
+<p>An <strong>attribute</strong> is a single fact about an entity &mdash; the fields in the table. Look for the information the scenario mentions, and add obvious extras:</p>
+
+<ul>
+    <li>Owner: OwnerID, Name, Address, Phone.</li>
+    <li>Pet: PetID, Name, Species, Breed, DateOfBirth, OwnerID (FK).</li>
+    <li>Visit: VisitID, Date, PetID (FK), Reason, Vet.</li>
+</ul>
+
+<h3>Step 3: Pick the Primary Keys</h3>
+
+<p>For each table, choose a field that uniquely identifies a record and never changes. If no natural key exists, invent an ID.</p>
+
+<ul>
+    <li><strong>Owner.OwnerID</strong> &mdash; unique integer or code.</li>
+    <li><strong>Pet.PetID</strong> &mdash; unique; Name is a bad choice because two pets can be called Lucky.</li>
+    <li><strong>Visit.VisitID</strong> &mdash; unique; Date + PetID might also work but an ID is simpler.</li>
+</ul>
+
+<h3>Step 4: Work Out the Relationships and Add Foreign Keys</h3>
+
+<p>For each pair of entities ask &ldquo;one X has many Ys, or the other way round?&rdquo;. Put the foreign key on the &ldquo;many&rdquo; side:</p>
+
+<ul>
+    <li>One Owner has many Pets &rarr; add <code>OwnerID</code> to Pet.</li>
+    <li>One Pet has many Visits &rarr; add <code>PetID</code> to Visit.</li>
+</ul>
+
+<p>If the relationship is many-to-many, add a linking table (as in the school example).</p>
+
+<h3>Step 5: Draw the Schema</h3>
+
+<p>A <em>database schema</em> is a diagram showing every table, every field, the primary key of each table, and the foreign keys that link tables together. A simple text-style schema looks like this:</p>
+
+<pre><code>Owner ( <u>OwnerID</u>, Name, Address, Phone )
+Pet   ( <u>PetID</u>,   Name, Species, Breed, DateOfBirth, *OwnerID )
+Visit ( <u>VisitID</u>, Date, *PetID, Reason, Vet )</code></pre>
+
+<p>(Underlining marks the primary key; a leading asterisk marks a foreign key. AQA accepts any clear convention as long as you explain it.)</p>
+
+<p>Or drawn as entity boxes linked with 1:M lines:</p>
+
+<table>
+    <tr>
+        <td><strong>Owner</strong><br><u>OwnerID</u><br>Name<br>Address<br>Phone</td>
+        <td style="text-align:center;vertical-align:middle;">1 &rarr; M</td>
+        <td><strong>Pet</strong><br><u>PetID</u><br>Name<br>Species<br>Breed<br>DateOfBirth<br>*OwnerID</td>
+        <td style="text-align:center;vertical-align:middle;">1 &rarr; M</td>
+        <td><strong>Visit</strong><br><u>VisitID</u><br>Date<br>*PetID<br>Reason<br>Vet</td>
+    </tr>
+</table>
+
+<h3>Checklist for Exam Schemas</h3>
+
+<ul>
+    <li>Every table has exactly one primary key (or a clearly indicated composite key).</li>
+    <li>Every one-to-many relationship has a foreign key on the &ldquo;many&rdquo; side, matching the type and name of the primary key it references.</li>
+    <li>No attribute is repeated across tables except foreign keys.</li>
+    <li>Attributes belong in the table they are <em>about</em>: the owner's name goes in Owner, not Pet.</li>
+    <li>Many-to-many relationships have a linking table with a composite primary key of the two foreign keys.</li>
+</ul>
+
+<div class="exam-tip">When you are asked to &ldquo;draw a database schema&rdquo; for 4&ndash;6 marks, always show: (1) at least two tables, (2) the primary key of each (underlined or marked PK), (3) at least one foreign key, (4) a line linking the PK and FK. Missing the link line is the most common reason students drop a mark.</div>
+
+<h2>3.7.8 Applying to Scenarios</h2>
+
+<p>The last section pulls every skill together on small realistic scenarios. Every GCSE 8525 paper includes at least one multi-part database question of this form: &ldquo;here is a scenario, here are some tables, write the SQL to &hellip; &rdquo;. The questions nearly always use a library, a school or an online shop.</p>
+
+<h3>Scenario A &mdash; A Small Library</h3>
+
+<p>The library keeps two tables:</p>
+
+<table>
+    <tr><th colspan="6" style="text-align:center;">Book</th></tr>
+    <tr><th>BookID (PK)</th><th>Title</th><th>Author</th><th>Genre</th><th>Year</th><th>Copies</th></tr>
+    <tr><td>B001</td><td>Holes</td><td>Louis Sachar</td><td>Fiction</td><td>1998</td><td>3</td></tr>
+    <tr><td>B002</td><td>The Hobbit</td><td>J.R.R. Tolkien</td><td>Fantasy</td><td>1937</td><td>5</td></tr>
+    <tr><td>B003</td><td>A Brief History of Time</td><td>Stephen Hawking</td><td>Science</td><td>1988</td><td>2</td></tr>
+    <tr><td>B004</td><td>Matilda</td><td>Roald Dahl</td><td>Fiction</td><td>1988</td><td>6</td></tr>
+</table>
+
+<table>
+    <tr><th colspan="4" style="text-align:center;">Loan</th></tr>
+    <tr><th>LoanID (PK)</th><th>BookID (FK)</th><th>MemberName</th><th>DateOut</th></tr>
+    <tr><td>L01</td><td>B002</td><td>Priya Patel</td><td>2026-04-10</td></tr>
+    <tr><td>L02</td><td>B004</td><td>Ben Okafor</td><td>2026-04-12</td></tr>
+    <tr><td>L03</td><td>B001</td><td>Priya Patel</td><td>2026-04-14</td></tr>
+</table>
+
+<h4>Task A1: list the titles of every Fiction book, alphabetically.</h4>
+
+<pre><code>SELECT   Title
+FROM     Book
+WHERE    Genre = 'Fiction'
+ORDER BY Title ASC;</code></pre>
+
+<p>Result: Holes, Matilda.</p>
+
+<h4>Task A2: list every book published before 1990 with 3 or more copies.</h4>
+
+<pre><code>SELECT Title, Year, Copies
+FROM   Book
+WHERE  Year &lt; 1990 AND Copies &gt;= 3;</code></pre>
+
+<p>Result: The Hobbit (1937, 5 copies); Matilda (1988, 6 copies).</p>
+
+<h4>Task A3: add a new book.</h4>
+
+<pre><code>INSERT INTO Book (BookID, Title, Author, Genre, Year, Copies)
+VALUES           ('B005', 'Northern Lights', 'Philip Pullman', 'Fantasy', 1995, 4);</code></pre>
+
+<h4>Task A4: a book has been damaged; reduce its Copies by one.</h4>
+
+<pre><code>UPDATE Book
+SET    Copies = Copies - 1
+WHERE  BookID = 'B002';</code></pre>
+
+<h4>Task A5: a book has been written off entirely; remove it.</h4>
+
+<pre><code>DELETE FROM Book
+WHERE       BookID = 'B003';</code></pre>
+
+<h4>Task A6: list the titles of every book currently on loan, with the member's name.</h4>
+
+<pre><code>SELECT Book.Title, Loan.MemberName, Loan.DateOut
+FROM   Book, Loan
+WHERE  Book.BookID = Loan.BookID
+ORDER BY Loan.DateOut ASC;</code></pre>
+
+<p>Result: The Hobbit / Priya Patel / 2026-04-10; Matilda / Ben Okafor / 2026-04-12; Holes / Priya Patel / 2026-04-14.</p>
+
+<h3>Scenario B &mdash; An Online Shop</h3>
+
+<p>The shop has three tables: Customer, `Order`, and OrderLine (because each order can contain several products &mdash; a many-to-many between `Order` and Product):</p>
+
+<pre><code>Customer  ( <u>CustomerID</u>, Name, Email, Postcode )
+Product   ( <u>ProductID</u>,  Name, Category, Price, Stock )
+`Order`   ( <u>OrderID</u>,    *CustomerID, OrderDate )
+OrderLine ( <u>*OrderID</u>, <u>*ProductID</u>, Quantity )</code></pre>
+
+<p>OrderLine has a composite primary key <code>(OrderID, ProductID)</code>: each product appears at most once per order.</p>
+
+<h4>Task B1: list every product in the category &ldquo;Games&rdquo; priced &pound;20 or less.</h4>
+
+<pre><code>SELECT Name, Price
+FROM   Product
+WHERE  Category = 'Games' AND Price &lt;= 20
+ORDER BY Price ASC;</code></pre>
+
+<h4>Task B2: add a new customer.</h4>
+
+<pre><code>INSERT INTO Customer (CustomerID, Name, Email, Postcode)
+VALUES               ('C250', 'Grace Thomas', 'grace@example.com', 'AB1 2CD');</code></pre>
+
+<h4>Task B3: a product's price is being reduced by 10%.</h4>
+
+<pre><code>UPDATE Product
+SET    Price = Price * 0.9
+WHERE  ProductID = 'P404';</code></pre>
+
+<h4>Task B4: list the names of all customers who have placed an order.</h4>
+
+<pre><code>SELECT Customer.Name
+FROM   Customer, `Order`
+WHERE  Customer.CustomerID = `Order`.CustomerID
+ORDER BY Customer.Name ASC;</code></pre>
+
+<p>(This may list the same name more than once if a customer has several orders. Removing duplicates uses <code>SELECT DISTINCT</code>, which is beyond the GCSE spec.)</p>
+
+<h4>Task B5: remove a customer's account.</h4>
+
+<pre><code>DELETE FROM Customer
+WHERE       CustomerID = 'C250';</code></pre>
+
+<p>In a real DBMS, referential integrity may prevent this delete if the customer still has orders &mdash; the DBMS will reject the DELETE rather than leave orphaned order rows.</p>
+
+<h3>Scenario C &mdash; A School Music Service</h3>
+
+<p>One last practice scenario to pull everything together. A music service records which <em>instruments</em> each <em>pupil</em> is learning, and which <em>teacher</em> teaches which instrument lesson each week.</p>
+
+<p>Entities: <strong>Pupil</strong>, <strong>Instrument</strong>, <strong>Teacher</strong>, <strong>Lesson</strong>. Relationships: each pupil has many lessons, each teacher gives many lessons, each lesson is for one instrument.</p>
+
+<pre><code>Pupil      ( <u>PupilID</u>,      Name, YearGroup )
+Instrument ( <u>InstrumentID</u>, Name )
+Teacher    ( <u>TeacherID</u>,    Name )
+Lesson     ( <u>LessonID</u>,     *PupilID, *InstrumentID, *TeacherID, DayOfWeek, StartTime )</code></pre>
+
+<p>Lesson is a <em>single</em> table that joins three others through three foreign keys. A lesson belongs to one pupil, one instrument and one teacher &mdash; three one-to-many relationships, so three foreign keys but a single primary key (LessonID).</p>
+
+<h4>Task C1: list every lesson on Monday, with the pupil's name and the instrument.</h4>
+
+<pre><code>SELECT   Pupil.Name, Instrument.Name, Lesson.StartTime
+FROM     Pupil, Instrument, Lesson
+WHERE    Pupil.PupilID       = Lesson.PupilID
+   AND   Instrument.InstrumentID = Lesson.InstrumentID
+   AND   Lesson.DayOfWeek   = 'Monday'
+ORDER BY Lesson.StartTime ASC;</code></pre>
+
+<h4>Task C2: move every Tuesday piano lesson to Wednesday.</h4>
+
+<pre><code>UPDATE Lesson
+SET    DayOfWeek = 'Wednesday'
+WHERE  DayOfWeek = 'Tuesday'
+  AND  InstrumentID = (SELECT InstrumentID FROM Instrument WHERE Name = 'Piano');</code></pre>
+
+<p>(The subquery is beyond the spec but included here to show how the same task is done in practice; a GCSE-level answer would assume the piano's InstrumentID is known, e.g. <code>AND InstrumentID = 'I03'</code>.)</p>
+
+<h3>Putting It All Together &mdash; The Exam Approach</h3>
+
+<ol>
+    <li>Read the scenario and <strong>underline the nouns</strong> (potential entities) and the facts about them (attributes).</li>
+    <li>For each entity, pick or invent a <strong>primary key</strong>.</li>
+    <li>Work out <strong>relationships</strong>: &ldquo;one X has many Ys&rdquo;. Add foreign keys on the many side.</li>
+    <li>If a many-to-many exists, add a <strong>linking table</strong> with a composite primary key.</li>
+    <li>Draw the schema &mdash; boxes with PK underlined and FK starred, lines between PK and FK pairs.</li>
+    <li>For SQL questions, write the keyword first, check quotes around strings, include the <strong>WHERE</strong> clause for UPDATE/DELETE, and for joins always include the <em>linking condition</em> alongside any other filters.</li>
+    <li>Finally, for evaluate questions comparing flat files and relational databases, always name at least two problems the flat file has (<em>redundancy</em>, <em>inconsistency</em>, <em>update anomaly</em>) and at least two benefits the relational database delivers (<em>each fact stored once</em>, <em>referential integrity</em>, <em>easier updates</em>, <em>easier querying</em>).</li>
+</ol>
+
+<div class="exam-tip">If you remember just one thing from this topic, make it this: <em>a relational database splits data into tables so that every fact is stored in one place, and uses primary keys and foreign keys to link tables</em>. That one sentence, well placed, unlocks the majority of the marks in any 3.7 question.</div>
+
+</div>
+</body>
+</html>
