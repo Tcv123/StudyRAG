@@ -311,6 +311,59 @@
 
     .hidden { display: none !important; }
 
+    /* ── AVATAR PICKER ── */
+    .avatar-current {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+    }
+    .avatar-current-img {
+      width: 76px; height: 76px; border-radius: 50%;
+      background: var(--accent-dim); border: 2px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; font-weight: 600; color: var(--accent-dark);
+      overflow: hidden; flex-shrink: 0;
+    }
+    .avatar-current-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .avatar-current-meta { flex: 1; min-width: 0; }
+    .avatar-current-label { font-size: 14px; font-weight: 600; color: var(--text); }
+    .avatar-current-hint  { font-size: 12px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
+
+    .avatar-style-tabs {
+      display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap;
+    }
+    .avatar-style-tab {
+      padding: 7px 14px; border-radius: 20px;
+      font-size: 12px; font-weight: 600; cursor: pointer;
+      border: 1.5px solid var(--border); background: var(--surface);
+      color: var(--muted); transition: all 0.15s; user-select: none;
+    }
+    .avatar-style-tab:hover { border-color: var(--border-hover); color: var(--text); }
+    .avatar-style-tab.active {
+      background: var(--accent); border-color: var(--accent);
+      color: #fff; box-shadow: 0 2px 8px var(--accent-glow);
+    }
+
+    .avatar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .avatar-option {
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--surface2);
+      cursor: pointer; overflow: hidden;
+      transition: all 0.15s;
+      padding: 0;
+    }
+    .avatar-option:hover { border-color: var(--border-hover); transform: scale(1.05); }
+    .avatar-option.selected {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+    .avatar-option img { width: 100%; height: 100%; display: block; }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(8px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -335,18 +388,23 @@
   <!-- Progress -->
   <div class="progress-wrap">
     <div class="progress-steps">
-      <div class="p-step active" id="ps1">
+      <div class="p-step active" id="ps0">
         <div class="p-num">1</div>
+        <div class="p-label">Avatar</div>
+      </div>
+      <div class="p-line" id="pl0"></div>
+      <div class="p-step" id="ps1">
+        <div class="p-num">2</div>
         <div class="p-label">Study level</div>
       </div>
       <div class="p-line" id="pl1"></div>
       <div class="p-step" id="ps2">
-        <div class="p-num">2</div>
+        <div class="p-num">3</div>
         <div class="p-label">Your subjects</div>
       </div>
       <div class="p-line" id="pl2"></div>
       <div class="p-step" id="ps3">
-        <div class="p-num">3</div>
+        <div class="p-num">4</div>
         <div class="p-label">Your grades</div>
       </div>
     </div>
@@ -355,8 +413,29 @@
   <!-- Card -->
   <div class="card">
 
+    <!-- ── STEP 0: AVATAR ── -->
+    <div id="stepAvatar">
+      <div class="step-title">Pick your avatar</div>
+      <p class="step-sub">Choose a character to represent you. You can change it anytime from settings.</p>
+
+      <div class="avatar-current">
+        <div class="avatar-current-img" id="avatarCurrent">?</div>
+        <div class="avatar-current-meta">
+          <div class="avatar-current-label">Your avatar</div>
+          <div class="avatar-current-hint">Pick a style, then tap one of the characters below.</div>
+        </div>
+      </div>
+
+      <div class="avatar-style-tabs" id="avatarStyleTabs"></div>
+      <div class="avatar-grid" id="avatarGrid"></div>
+
+      <div class="footer-row">
+        <button class="btn btn-primary" onclick="goToStep1()">Next — Study level →</button>
+      </div>
+    </div>
+
     <!-- ── STEP 1 ── -->
-    <div id="step1">
+    <div id="step1" class="hidden">
       <div class="step-title">What are you studying?</div>
       <p class="step-sub">Choose your current study level. This helps us load the right topics and exam content for you.</p>
 
@@ -382,6 +461,7 @@
       </div>
 
       <div class="footer-row">
+        <button class="btn btn-back" onclick="backToAvatar()">← Back</button>
         <button class="btn btn-primary" onclick="goToStep2()">Next — Choose subjects →</button>
       </div>
     </div>
@@ -461,6 +541,54 @@ let subjectBoards    = {};   // { name: board }
 let subjectCurrentGrade = {};  // { name: grade }
 let subjectTargetGrade  = {};  // { name: grade }
 let showGradeValidation = false;
+let selectedAvatarUrl = null;
+let selectedAvatarStyle = 'fun-emoji';
+
+const AVATAR_STYLES = [
+  { id: 'fun-emoji', name: 'Fun Emoji' },
+  { id: 'bottts',    name: 'Bottts' },
+  { id: 'thumbs',    name: 'Thumbs' },
+];
+const AVATAR_SEEDS = ['Aria','Max','Luna','Zoe','Felix','Nova','Kai','Mia','Leo','Ivy','Owen','Sage','Remy','Juno','Elio','Poppy'];
+
+function avatarUrlFor(style, seed) {
+  return `https://api.dicebear.com/9.x/${style}/svg?seed=${encodeURIComponent(seed)}`;
+}
+
+// ── Avatar picker ────────────────────────────────────────────────────────
+function renderAvatarPicker() {
+  const tabsEl = document.getElementById('avatarStyleTabs');
+  const gridEl = document.getElementById('avatarGrid');
+  const currentEl = document.getElementById('avatarCurrent');
+
+  tabsEl.innerHTML = AVATAR_STYLES.map(s =>
+    `<div class="avatar-style-tab ${s.id === selectedAvatarStyle ? 'active' : ''}" onclick="pickAvatarStyle('${s.id}')">${s.name}</div>`
+  ).join('');
+
+  gridEl.innerHTML = AVATAR_SEEDS.map(seed => {
+    const url = avatarUrlFor(selectedAvatarStyle, seed);
+    const sameStyle = selectedAvatarUrl?.includes(`/${selectedAvatarStyle}/svg`);
+    const sameSeed  = selectedAvatarUrl?.includes(`seed=${encodeURIComponent(seed)}`);
+    const sel = (sameStyle && sameSeed) ? 'selected' : '';
+    return `<button type="button" class="avatar-option ${sel}" onclick="pickAvatar('${url}')"><img src="${url}" alt="" loading="lazy"></button>`;
+  }).join('');
+
+  if (selectedAvatarUrl) {
+    currentEl.innerHTML = `<img src="${selectedAvatarUrl}" alt="">`;
+  } else {
+    currentEl.textContent = '?';
+  }
+}
+
+function pickAvatarStyle(styleId) {
+  selectedAvatarStyle = styleId;
+  renderAvatarPicker();
+}
+
+function pickAvatar(url) {
+  selectedAvatarUrl = url;
+  renderAvatarPicker();
+}
 
 // ── Step navigation ──────────────────────────────────────────────────────
 function selectLevel(val, el) {
@@ -490,12 +618,26 @@ function goToStep2() {
 }
 
 function goToStep1() {
+  document.getElementById('stepAvatar').classList.add('hidden');
   document.getElementById('step2').classList.add('hidden');
   document.getElementById('step1').classList.remove('hidden');
+  // Progress: Avatar done, Level active, rest neutral
+  document.getElementById('ps0').classList.remove('active');
+  document.getElementById('ps0').classList.add('done');
+  document.getElementById('pl0').classList.add('done');
   document.getElementById('ps1').classList.add('active');
   document.getElementById('ps1').classList.remove('done');
   document.getElementById('pl1').classList.remove('done');
   document.getElementById('ps2').classList.remove('active');
+}
+
+function backToAvatar() {
+  document.getElementById('step1').classList.add('hidden');
+  document.getElementById('stepAvatar').classList.remove('hidden');
+  document.getElementById('ps0').classList.add('active');
+  document.getElementById('ps0').classList.remove('done');
+  document.getElementById('pl0').classList.remove('done');
+  document.getElementById('ps1').classList.remove('active');
 }
 
 // ── Subject grid ─────────────────────────────────────────────────────────
@@ -729,7 +871,7 @@ async function save() {
   // Try update first (row already exists)
   const { error: updateErr, count } = await supabaseClient
     .from('profiles')
-    .update({ level: selectedLevel, setup_complete: true })
+    .update({ level: selectedLevel, setup_complete: true, avatar_url: selectedAvatarUrl })
     .eq('id', user.id);
 
   // If update failed or row didn't exist, fall back to insert
@@ -742,7 +884,8 @@ async function save() {
         first_name: user.user_metadata?.first_name || '',
         last_name: user.user_metadata?.last_name || '',
         level: selectedLevel,
-        setup_complete: true
+        setup_complete: true,
+        avatar_url: selectedAvatarUrl
       });
 
     if (insertErr) {
@@ -798,9 +941,17 @@ async function save() {
 
   // Load existing profile and subjects
   const [{ data: profile }, { data: existingSubjects }] = await Promise.all([
-    supabaseClient.from('profiles').select('level').eq('id', user.id).single(),
+    supabaseClient.from('profiles').select('level, avatar_url').eq('id', user.id).single(),
     supabaseClient.from('user_subjects').select('*').eq('user_id', user.id)
   ]);
+
+  // Avatar — pre-populate if saved, otherwise show the picker with no selection
+  if (profile?.avatar_url) {
+    selectedAvatarUrl = profile.avatar_url;
+    const matchedStyle = AVATAR_STYLES.find(s => selectedAvatarUrl.includes(`/${s.id}/svg`));
+    if (matchedStyle) selectedAvatarStyle = matchedStyle.id;
+  }
+  renderAvatarPicker();
 
   if (existingSubjects && existingSubjects.length > 0) {
     // Pre-select the level
