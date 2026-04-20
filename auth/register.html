@@ -309,8 +309,8 @@
       <div class="logo-name">RAG Learning</div>
     </div>
 
-    <div class="card-title">Create your account</div>
-    <p class="card-sub">Already have one? <a href="login.html">Sign in</a></p>
+    <div class="card-title" id="cardTitle">Create your account</div>
+    <p class="card-sub" id="cardSub">Already have one? <a href="login.html">Sign in</a></p>
 
     <form id="form">
       <div class="name-row">
@@ -392,7 +392,7 @@
     <p id="msg" class="msg"></p>
 
     <div class="back-home-wrap">
-      <div style="font-size:13px;color:var(--muted);margin-bottom:14px;">
+      <div id="verifyCodeHint" style="font-size:13px;color:var(--muted);margin-bottom:14px;">
         Already signed up but didn't verify? <a href="verify.html" style="color:var(--accent-dark);text-decoration:none;font-weight:500;">Enter your code</a>
       </div>
       <a href="../index.html" class="back-home" aria-label="Back to homepage">
@@ -509,6 +509,9 @@ otpForm.onsubmit = async (e) => {
   otpForm.style.display    = 'none';
   document.getElementById('successEmail').textContent = signupEmail;
   document.getElementById('successStep').style.display = 'block';
+  document.getElementById('cardTitle').style.display = 'none';
+  document.getElementById('cardSub').style.display = 'none';
+  document.getElementById('verifyCodeHint').style.display = 'none';
 };
 
 let resendCooldown = 0;
