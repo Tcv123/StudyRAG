@@ -721,7 +721,6 @@ async function renderResult() {
 async function saveResult(rag, results) {
   if (!user) { console.error('SAVE: no user'); return; }
   const now = new Date().toISOString();
-  console.log('SAVE: starting', { rag, topic: topicKey, user: user.id });
 
   try {
     // Delete existing row first
@@ -735,7 +734,7 @@ async function saveResult(rag, results) {
       .insert({ user_id: user.id, subject: 'Geography', exam_board: 'OCR', topic: topicKey, rag_status: rag, updated_at: now });
 
     if (e1) console.error('SAVE: insert failed', e1);
-    else console.log('SAVE: insert success');
+
 
     const { data: allTopics } = await supabaseClient
       .from('topic_progress').select('rag_status')
@@ -758,7 +757,6 @@ async function saveResult(rag, results) {
       }
     }
 
-    console.log('SAVE: complete');
   } catch (err) {
     console.error('SAVE: exception', err);
   }

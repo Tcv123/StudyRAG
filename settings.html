@@ -506,7 +506,6 @@ async function saveProfile() {
     .eq('id', currentUser.id)
     .select();
 
-  console.log('Profile save result:', { error, data, count });
 
   btn.disabled = false; btn.textContent = 'Save changes';
   if (error) {

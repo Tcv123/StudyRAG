@@ -785,7 +785,6 @@ async function renderResult() {
 async function saveResult(rag, results) {
   if (!user) { console.error('SAVE: no user'); return; }
   const now = new Date().toISOString();
-  console.log('SAVE: starting', { rag, topic: topicKey, user: user.id });
 
   // Check if a row already exists
   const { data: existing } = await supabaseClient
