@@ -550,12 +550,23 @@ function setTargetGrade(name, grade) {
 
 function updateSaveBtn() {
   const btn = document.getElementById('saveBtn');
+  const msg = document.getElementById('msg');
   if (!btn) return;
-  const allSet = selectedSubjects.length > 0 && selectedSubjects.every(s =>
-    subjectCurrentGrade[s.name] != null && subjectTargetGrade[s.name] != null
+  const missing = selectedSubjects.filter(s =>
+    subjectCurrentGrade[s.name] == null || subjectTargetGrade[s.name] == null
   );
+  const allSet = selectedSubjects.length > 0 && missing.length === 0;
   btn.disabled = !allSet;
   btn.title = allSet ? '' : 'Set current and target grade for each subject to continue';
+  if (msg) {
+    if (!allSet && selectedSubjects.length) {
+      msg.className = 'msg error';
+      msg.innerText = `Set grades for: ${missing.map(s => s.name).join(', ')}`;
+    } else {
+      msg.className = 'msg';
+      msg.innerText = '';
+    }
+  }
 }
 
 function goToStep3() {
@@ -645,8 +656,9 @@ function renderGrades() {
       const maxed = isMaxGrade(cur);
       const curIdx = gradeIndex(cur);
       const validTargets = cur != null ? GRADES.filter((g, i) => i <= curIdx) : GRADES;
+      const incomplete = cur == null || tgt == null;
       return `
-      <div class="selected-row">
+      <div class="selected-row" style="${incomplete ? 'border:1.5px solid var(--red-border);background:var(--red-bg);' : ''}">
         <div class="selected-row-top" style="margin-bottom:14px;">
           <span class="selected-emoji">${s.emoji}</span>
           <span class="selected-name">${s.name}</span>
