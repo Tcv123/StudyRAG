@@ -364,20 +364,6 @@
           <div class="form-hint">Used for your daily streak progress bar</div>
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-label">Study level</div>
-        <div class="form-value">
-          <select class="form-select" id="studyLevel">
-            <option value="gcse">GCSE</option>
-            <option value="as">AS Level</option>
-            <option value="a-level">A Level</option>
-          </select>
-        </div>
-      </div>
-      <div class="btn-row">
-        <button class="btn btn-primary" onclick="savePreferences()">Save preferences</button>
-      </div>
-      <div class="msg" id="prefsMsg"></div>
     </div>
 
     <!-- ── NOTIFICATIONS ── -->
@@ -477,9 +463,6 @@ async function load() {
   document.getElementById('lastName').value   = lastName;
   document.getElementById('emailField').value = user.email;
 
-  // Study level
-  document.getElementById('studyLevel').value = profile?.level || 'as';
-
   // Study goal from localStorage
   studyGoal = parseInt(localStorage.getItem('study_goal') || '30');
   renderGoalPills();
@@ -558,22 +541,6 @@ function renderGoalPills() {
       : val;
     p.classList.toggle('active', mins === studyGoal);
   });
-}
-
-// ── Preferences ──
-async function savePreferences() {
-  const msg = document.getElementById('prefsMsg');
-  const level = document.getElementById('studyLevel').value;
-
-  const { error } = await supabaseClient.from('profiles')
-    .update({ level: level })
-    .eq('id', currentUser.id);
-
-  if (error) {
-    showMsg(msg, 'error', 'Failed: ' + error.message);
-  } else {
-    showMsg(msg, 'success', 'Preferences saved.');
-  }
 }
 
 // ── Toggles ──
