@@ -355,7 +355,64 @@ const CS_AQA_WRITTEN = {
       },
     ],
   },
-  '3.7': { green: [], amber: [], red: [] },
+  '3.7': {
+    green: [
+      {
+        q: 'State what is meant by a "relational database" and give one advantage of using one instead of a single flat file.',
+        marks: 3, tier: 'green',
+        modelAnswer: `\u2022 A relational database is a database that stores data in two or more linked tables, connected by primary-key/foreign-key relationships (1).\n\u2022 Each fact about the data is stored only once, in one table (1).\n\u2022 Advantage (any one): reduced data redundancy; better data integrity / consistency; easier to update because a change is made in only one place; easier to search across tables using SQL (1).`
+      },
+      {
+        q: 'State the difference between a record and a field in a database table.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 A record is a single row of the table that holds all the data about one item (e.g. one student) (1).\n\u2022 A field is a single column of the table that holds one piece of information held about every record (e.g. the student\'s name) (1).`
+      },
+      {
+        q: 'State what is meant by a primary key and give one example suitable for a Student table.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 A primary key is a field (or combination of fields) whose value uniquely identifies every record in the table; it cannot be NULL and no two rows share the same value (1).\n\u2022 Example: StudentID (e.g. \'S001\'), because it is unique, short and does not change over the student\'s time at the school (also accept: UPN, an auto-increment integer) (1).`
+      },
+      {
+        q: 'State what is meant by a foreign key and give an example from a Customer/Order database.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 A foreign key is a field in one table whose values match the primary-key values of a different table, and is used to link the two tables together (1).\n\u2022 Example: CustomerID in the Order table is a foreign key referring to CustomerID (the primary key) in the Customer table; each order row is linked to the customer that placed it (1).`
+      },
+    ],
+    amber: [
+      {
+        q: 'Describe three problems with storing data in a flat file rather than a relational database.',
+        marks: 6, tier: 'amber',
+        modelAnswer: `\u2022 Data redundancy: the same fact is stored many times (e.g. a teacher\'s name on every row of a student-class spreadsheet), wasting storage (1 for naming + 1 for explanation).\n\u2022 Data inconsistency: because the same value is typed repeatedly, copies can disagree (e.g. "Chloe Smith" and "Cloe Smith"), so searches and reports become unreliable (1 + 1).\n\u2022 Update anomalies: to change one fact (e.g. a room number) every row must be updated; missing one leaves the data inconsistent, and deleting the last row that mentioned something deletes the information entirely (1 + 1).\n(Also accept: difficulty searching; poor data integrity; no enforcement of referential links.)`
+      },
+      {
+        q: 'Explain the structure of a one-to-many relationship, using Customer and Order as the example. State where the foreign key is placed and why.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 One customer can place many orders, but each order is placed by exactly one customer &mdash; a one-to-many relationship (1).\n\u2022 The Customer table has CustomerID as its primary key; the Order table has OrderID as its primary key (1).\n\u2022 The foreign key is placed in the Order table (the "many" side) as a field called CustomerID; every order row stores the ID of the customer who placed it (1).\n\u2022 Putting the foreign key on the many side allows many orders to reference the same customer without duplicating the customer\'s details on each row (1).`
+      },
+      {
+        q: 'The library uses a table Book(BookID, Title, Author, Genre, Year, Copies). Write SQL for each of the following. (a) List the titles and years of every Fiction book, alphabetically by title. (b) Add a new book B010 "Coraline" by Neil Gaiman, Fantasy, 2002, with 2 copies. (c) Reduce the Copies of BookID B002 by 1.',
+        marks: 6, tier: 'amber',
+        modelAnswer: `\u2022 (a) SELECT Title, Year FROM Book WHERE Genre = \'Fiction\' ORDER BY Title ASC; &mdash; 1 mark SELECT/FROM correct columns, 1 mark WHERE/ORDER BY correct.\n\u2022 (b) INSERT INTO Book (BookID, Title, Author, Genre, Year, Copies) VALUES (\'B010\', \'Coraline\', \'Neil Gaiman\', \'Fantasy\', 2002, 2); &mdash; 1 mark INSERT INTO and column list, 1 mark correct VALUES with quotes on strings.\n\u2022 (c) UPDATE Book SET Copies = Copies - 1 WHERE BookID = \'B002\'; &mdash; 1 mark UPDATE/SET, 1 mark correct WHERE clause.`
+      },
+      {
+        q: 'Given Customer(CustomerID PK, Name, Email) and Order(OrderID PK, CustomerID FK, OrderDate, Total), write SQL to list the Name of every customer and the OrderDate and Total of each of their orders, sorted alphabetically by name. Explain what would happen if you omitted the linking condition in the WHERE clause.',
+        marks: 5, tier: 'amber',
+        modelAnswer: `\u2022 SELECT Customer.Name, Order.OrderDate, Order.Total FROM Customer, Order WHERE Customer.CustomerID = Order.CustomerID ORDER BY Customer.Name ASC; (1 for correct FROM with two tables, 1 for the linking condition, 1 for correct SELECT and ORDER BY) (3).\n\u2022 If the linking condition Customer.CustomerID = Order.CustomerID were omitted, the result would be a Cartesian product: every customer paired with every order, not just with their own orders (1).\n\u2022 This would produce nonsense rows (e.g. Ravi Shah paired with another customer\'s order), so the linking condition is essential (1).`
+      },
+    ],
+    red: [
+      {
+        q: 'A small school currently stores all student-enrolment data in a single spreadsheet with columns: StudentID, Name, Form, ClassCode, Subject, Teacher, Room. Discuss the problems with this design and describe in detail the relational schema that should replace it, including primary keys, foreign keys and relationships. Give at least one SQL query that would be harder to write against the flat file than against the relational design.',
+        marks: 8, tier: 'red',
+        modelAnswer: `\u2022 Problem 1 &mdash; redundancy: on the flat file, each student\'s name and form appear on every row where they are enrolled, and each class\'s details (subject, teacher, room) appear on every row where the class is taken, wasting storage (1).\n\u2022 Problem 2 &mdash; inconsistency and update anomalies: changing a teacher\'s room requires updating many rows; missing one leaves the data inconsistent, and misspellings between rows make reliable searching impossible (1).\n\u2022 Relational replacement: split into three tables. Student(StudentID [PK], Name, Form). Class(ClassCode [PK], Subject, Teacher, Room). Enrolment(StudentID [FK &amp; part of PK], ClassCode [FK &amp; part of PK]) &mdash; a linking table with a composite primary key (1 for naming all three tables + 1 for identifying PKs and FKs correctly) (2).\n\u2022 Relationships: one Student has many Enrolments; one Class has many Enrolments &mdash; i.e. Student and Class are in a many-to-many relationship via Enrolment (1).\n\u2022 Each fact is stored in one place: a teacher\'s room is changed by updating a single cell in Class; a student\'s name is changed in one row of Student. There are no update anomalies or orphaned records (1).\n\u2022 Example query harder on flat file: "change the room for CS10A from G14 to G22". On the flat file every row with CS10A must be updated; on the relational version it is a single UPDATE: UPDATE Class SET Room = \'G22\' WHERE ClassCode = \'CS10A\'; (1).\n\u2022 Overall evaluation: the relational design is clearly superior for any non-trivial school data &mdash; less storage, no inconsistency, easier updates and powerful SQL querying across all three tables via joins (1).\n(Award up to 8 marks for any valid combination of the above.)`
+      },
+      {
+        q: 'An online shop needs a database. The shop sells many products; each customer can place many orders, and each order can contain many products (with a quantity for each). Design a relational schema for this scenario. Name each table, its fields, its primary key and any foreign keys. Explain why your design needs a linking table and write TWO SQL queries that demonstrate the design working. (One query should retrieve data from more than one table.)',
+        marks: 8, tier: 'red',
+        modelAnswer: `\u2022 Tables and keys: Customer(CustomerID [PK], Name, Email, Postcode) &mdash; stores customer details once (1). Product(ProductID [PK], Name, Category, Price, Stock) &mdash; stores product details once (1). Order(OrderID [PK], CustomerID [FK to Customer], OrderDate) &mdash; one Customer has many Orders so the FK is here (1). OrderLine(OrderID [FK to Order], ProductID [FK to Product], Quantity) with composite primary key (OrderID, ProductID) (1).\n\u2022 Why the linking table: the relationship between Order and Product is many-to-many (one order can contain many products; one product can appear on many orders). A many-to-many relationship cannot be expressed with a single foreign key, so a linking table OrderLine is needed with two foreign keys, whose combination is the primary key (1).\n\u2022 Query 1 (single table, SELECT with filter and sort): SELECT Name, Price FROM Product WHERE Category = \'Games\' AND Price &lt;= 20 ORDER BY Price ASC; (1).\n\u2022 Query 2 (cross-table join): SELECT Customer.Name, Order.OrderDate, Order.OrderID FROM Customer, Order WHERE Customer.CustomerID = Order.CustomerID AND Order.OrderDate = \'2026-04-01\' ORDER BY Customer.Name ASC; (1 for correct FROM &amp; linking condition + 1 for correct SELECT/ORDER BY) (2).\n(Alternative query 2: list every product and its quantity on order O500 by joining Order, OrderLine and Product on their IDs. Award full marks for any valid cross-table query showing correct linking conditions.)`
+      },
+    ],
+  },
   '3.8': { green: [], amber: [], red: [] },
 
 };
