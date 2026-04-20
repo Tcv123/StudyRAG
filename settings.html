@@ -409,20 +409,11 @@
     <!-- ── CHANGE PASSWORD ── -->
     <div class="settings-section">
       <div class="section-title"><span class="section-icon">🔒</span> Change password</div>
-      <div class="form-row">
-        <div class="form-label">New password</div>
-        <div class="form-value">
-          <input class="form-input" id="newPassword" type="password" placeholder="Min 6 characters">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-label">Confirm password</div>
-        <div class="form-value">
-          <input class="form-input" id="confirmPassword" type="password" placeholder="Repeat new password">
-        </div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px;">
+        For security, we'll email you a link to set a new password. The link expires in 1 hour.
       </div>
       <div class="btn-row">
-        <button class="btn btn-primary" id="savePasswordBtn" onclick="changePassword()">Update password</button>
+        <button class="btn btn-primary" id="sendResetBtn" onclick="sendPasswordReset()">Email me a reset link</button>
       </div>
       <div class="msg" id="passwordMsg"></div>
     </div>
@@ -677,26 +668,27 @@ async function saveProfile() {
   }
 }
 
-// ── Password ──
-async function changePassword() {
-  const btn = document.getElementById('savePasswordBtn');
+// ── Password reset ──
+async function sendPasswordReset() {
+  const btn = document.getElementById('sendResetBtn');
   const msg = document.getElementById('passwordMsg');
-  const pw  = document.getElementById('newPassword').value;
-  const pw2 = document.getElementById('confirmPassword').value;
+  if (!currentUser) return;
 
-  if (pw.length < 6) { showMsg(msg, 'error', 'Password must be at least 6 characters.'); return; }
-  if (pw !== pw2)     { showMsg(msg, 'error', 'Passwords do not match.'); return; }
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
 
-  btn.disabled = true; btn.textContent = 'Updating…';
-  const { error } = await supabaseClient.auth.updateUser({ password: pw });
-  btn.disabled = false; btn.textContent = 'Update password';
+  const redirectTo = window.location.origin +
+    window.location.pathname.replace(/[^/]*$/, '') + 'auth/reset-password.html';
+
+  const { error } = await supabaseClient.auth.resetPasswordForEmail(currentUser.email, { redirectTo });
+
+  btn.disabled = false;
+  btn.textContent = 'Email me a reset link';
 
   if (error) {
     showMsg(msg, 'error', 'Failed: ' + error.message);
   } else {
-    showMsg(msg, 'success', 'Password updated successfully.');
-    document.getElementById('newPassword').value = '';
-    document.getElementById('confirmPassword').value = '';
+    showMsg(msg, 'success', `Reset link sent to ${currentUser.email}. Check your inbox.`);
   }
 }
 
