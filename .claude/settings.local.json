@@ -81,7 +81,8 @@
       "Bash(ls -lh \"C:/Users/tcvas/OneDrive/Desktop/Learning/questions/economics-ocr\"/*)",
       "Bash(grep -E \"\\\\.\\(json|js|ts|toml|yml|yaml\\)$\")",
       "Bash(node -e ' *)",
-      "Bash(echo \"exit: $?\")"
+      "Bash(echo \"exit: $?\")",
+      "Bash(node -e \"require\\('./questions/further-maths-aqa/fm-aqa-practice.js'\\); console.log\\('AQA OK', Object.keys\\(FM_AQA_PRACTICE || {}\\).length\\);\")"
     ]
   },
   "hooks": {

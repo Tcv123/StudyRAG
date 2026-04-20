@@ -65,7 +65,64 @@ const CS_AQA_WRITTEN = {
       },
     ],
   },
-  '3.2': { green: [], amber: [], red: [] },
+  '3.2': {
+    green: [
+      {
+        q: 'State the five basic data types required by the AQA specification and give one example value of each.',
+        marks: 5, tier: 'green',
+        modelAnswer: `\u2022 Integer \u2014 a whole number, e.g. 42 (1).\n\u2022 Real / float \u2014 a number with a decimal point, e.g. 3.14 (1).\n\u2022 Boolean \u2014 True or False (1).\n\u2022 Character \u2014 a single symbol, e.g. 'A' (1).\n\u2022 String \u2014 a sequence of characters, e.g. "Hello" (1).`
+      },
+      {
+        q: 'State the difference between a variable and a constant.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 A variable is a named memory location whose value can change while the program runs (1).\n\u2022 A constant is a named memory location whose value is fixed and cannot change after it is first set (1).`
+      },
+      {
+        q: 'State the three basic programming constructs used in structured programming.',
+        marks: 3, tier: 'green',
+        modelAnswer: `\u2022 Sequence \u2014 statements executed one after another from top to bottom (1).\n\u2022 Selection \u2014 choosing between blocks of code using IF/ELSE (1).\n\u2022 Iteration \u2014 repeating a block of code using FOR or WHILE loops (1).`
+      },
+      {
+        q: 'State what is meant by casting and give one example of why it is needed.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 Casting is converting a value from one data type to another (e.g. int("42") converts the string "42" to the integer 42) (1).\n\u2022 It is needed because USERINPUT returns a string, so numeric input must be cast to an int or float before it can be used in arithmetic (1).`
+      },
+    ],
+    amber: [
+      {
+        q: 'Explain the difference between a FOR loop and a WHILE loop, and give one example of when each would be the better choice.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 A FOR loop is count-controlled: it repeats a known, fixed number of times (1).\n\u2022 A WHILE loop is condition-controlled: it repeats while a condition is True, for an unknown number of iterations (1).\n\u2022 FOR is better when you know how many iterations are needed, e.g. processing every item of a 30-element array (1).\n\u2022 WHILE is better when repetition depends on input, e.g. keep asking until the user enters a valid password (1).`
+      },
+      {
+        q: 'Explain the difference between DIV and MOD. Include an example of each using the numbers 23 and 5.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 DIV is integer division \u2014 it gives the whole-number part of a division, discarding the remainder (1).\n\u2022 MOD gives the remainder after integer division (1).\n\u2022 23 DIV 5 = 4, because 5 goes into 23 four whole times (1).\n\u2022 23 MOD 5 = 3, because 4 \u00D7 5 = 20 leaves a remainder of 3 (1).`
+      },
+      {
+        q: 'Describe how the four standard text-file operations (open, read, write, close) are used to read every line of a text file called "data.txt" and display each line on the screen.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 Open the file for reading: f \u2190 openRead("data.txt") (1).\n\u2022 Use a WHILE NOT f.endOfFile() loop so reading stops at the end of the file (1).\n\u2022 Inside the loop, read the next line with line \u2190 f.readLine() and OUTPUT line (1).\n\u2022 After the loop, close the file with f.close() to release the resource and ensure data is flushed (1).`
+      },
+      {
+        q: 'Explain the difference between a local variable and a global variable, and explain why local variables are generally preferred.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 A local variable is declared inside a subroutine and exists only while that subroutine is running; it is not visible outside (1).\n\u2022 A global variable is declared outside subroutines and is visible throughout the whole program (1).\n\u2022 Local variables make subroutines self-contained: changes made inside cannot accidentally affect code elsewhere (1).\n\u2022 This reduces the chance of unintended side-effects and makes subroutines easier to test, reuse and debug (1).`
+      },
+    ],
+    red: [
+      {
+        q: 'Compare procedures and functions. Include how they differ, how parameters and return values are used, and give one example of when each is the appropriate choice.',
+        marks: 6, tier: 'red',
+        modelAnswer: `\u2022 A procedure is a named block of code that performs a task but does not return a value to the caller (1).\n\u2022 A function is a named block of code that returns a value using a RETURN statement (1).\n\u2022 Both may take parameters \u2014 named variables that receive the argument values supplied at the call site (1).\n\u2022 Functions can be used inside expressions (e.g. total \u2190 area(r) + 10) because they evaluate to a value; procedures cannot (1).\n\u2022 A procedure is appropriate when the action itself is the goal, e.g. displayMenu() or saveScore() (1).\n\u2022 A function is appropriate when a value must be computed and returned, e.g. circle_area(radius) or is_prime(n) (1).`
+      },
+      {
+        q: 'Discuss the advantages of structured programming. Your answer should refer to at least three specific benefits and explain how each arises from the approach.',
+        marks: 8, tier: 'red',
+        modelAnswer: `\u2022 Structured programming uses only three constructs \u2014 sequence, selection and iteration \u2014 and organises code into self-contained subroutines (1).\n\u2022 Readability: because control flow follows the three structured constructs and each subroutine has a clear purpose, another programmer can follow the logic without tracing unexpected jumps (1 for the point + 1 for explanation).\n\u2022 Maintainability: changes (e.g. updating the VAT rate) are localised to the relevant subroutine rather than spread through the whole program, so the risk of new bugs is reduced (1 + 1).\n\u2022 Easier debugging and testing: each small subroutine can be tested individually with specific inputs; when a bug is found, the area to search is small (1 + 1).\n\u2022 Code reuse: well-designed subroutines can be called from many places and even reused in later programs, reducing duplication and development time (1).\n\u2022 Teamwork: different developers can work on different subroutines in parallel as long as their parameters and return values are agreed in advance (1).\n(Award up to 8 marks for any combination: 3 benefits each with a clear explanation scores full marks.)`
+      },
+    ],
+  },
   '3.3': { green: [], amber: [], red: [] },
   '3.4': { green: [], amber: [], red: [] },
   '3.5': { green: [], amber: [], red: [] },
