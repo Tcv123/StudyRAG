@@ -181,7 +181,64 @@ const CS_AQA_WRITTEN = {
       },
     ],
   },
-  '3.4': { green: [], amber: [], red: [] },
+  '3.4': {
+    green: [
+      {
+        q: 'State what is meant by "hardware" and "software", giving one example of each.',
+        marks: 4, tier: 'green',
+        modelAnswer: `\u2022 Hardware is the physical components of a computer system, e.g. the CPU, RAM, hard disk, monitor, or keyboard (1 for definition + 1 for example).\n\u2022 Software is the set of programs and data that tell the hardware what to do, e.g. an operating system, a web browser, or a word processor (1 for definition + 1 for example).`
+      },
+      {
+        q: 'State the output of each of the four logic gates when both inputs (where relevant) are 1: AND, OR, NOT, XOR.',
+        marks: 4, tier: 'green',
+        modelAnswer: `\u2022 AND: output = 1 when both inputs are 1 (1).\n\u2022 OR: output = 1 when at least one input is 1, so with both 1 the output is 1 (1).\n\u2022 NOT: takes a single input \u2014 NOT 1 = 0 (1).\n\u2022 XOR: output = 1 only when the inputs differ, so 1 XOR 1 = 0 (1).`
+      },
+      {
+        q: 'State the difference between RAM and ROM.',
+        marks: 2, tier: 'green',
+        modelAnswer: `\u2022 RAM is volatile (loses its contents when power is off) and is read/write; it stores the currently running programs and data (1).\n\u2022 ROM is non-volatile (keeps its contents without power) and is read-only; it stores the boot-up / BIOS instructions (1).`
+      },
+      {
+        q: 'State the name of each of the three main components inside a CPU and the role of each.',
+        marks: 3, tier: 'green',
+        modelAnswer: `\u2022 Arithmetic Logic Unit (ALU) \u2014 performs arithmetic and logic operations (1).\n\u2022 Control Unit (CU) \u2014 fetches and decodes instructions and coordinates the CPU by sending control signals (1).\n\u2022 Registers \u2014 small, very fast storage inside the CPU used to hold data and instructions currently being worked on (accept: cache \u2014 fast on-chip memory caching frequently used data) (1).`
+      },
+    ],
+    amber: [
+      {
+        q: 'Describe the three stages of the fetch-execute cycle, naming at least three registers used.',
+        marks: 5, tier: 'amber',
+        modelAnswer: `\u2022 Fetch: the address of the next instruction in the Program Counter (PC) is copied into the Memory Address Register (MAR) and sent on the address bus (1).\n\u2022 The instruction at that address is returned on the data bus into the Memory Data Register (MDR), then copied into the Current Instruction Register (CIR); the PC is incremented (1).\n\u2022 Decode: the Control Unit examines the instruction in the CIR to work out the operation and any operands (1).\n\u2022 Execute: the operation is carried out \u2014 e.g. the ALU performs arithmetic and stores the result in the ACC, or data is transferred between a register and memory (1).\n\u2022 The cycle repeats for the next instruction (1).`
+      },
+      {
+        q: 'Explain the difference between system software and application software, giving two examples of each.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 System software manages the hardware and provides services for other software to run on \u2014 the user does not usually interact with it directly (1).\n\u2022 Examples of system software: operating system (e.g. Windows, macOS, Linux); utility software such as antivirus, disk defragmenter, backup, file compression (1).\n\u2022 Application software is designed to perform a specific useful task for the end user; the user interacts with it directly (1).\n\u2022 Examples of application software: word processors (Microsoft Word), web browsers (Chrome), games, media players (1).`
+      },
+      {
+        q: 'Describe how clock speed, cache size and the number of cores each affect the performance of a CPU.',
+        marks: 6, tier: 'amber',
+        modelAnswer: `\u2022 Clock speed is the number of clock cycles per second (measured in Hz/GHz); each instruction takes one or more cycles (1).\n\u2022 A higher clock speed means more instructions can be processed per second, so programs run faster (1).\n\u2022 Cache is a small, very fast memory on the CPU chip that stores recently-used instructions and data (1).\n\u2022 A larger cache reduces how often the CPU has to access slower main memory, so programs run faster (1).\n\u2022 A core is a complete processing unit; more cores allow multiple instructions/threads to be processed in parallel (1).\n\u2022 More cores improve performance for multi-threaded workloads but give little benefit to single-threaded programs (1).`
+      },
+      {
+        q: 'Complete the truth table below for the Boolean expression Q = A AND (B OR NOT C), for inputs A, B, C where every binary combination is listed in the order 000, 001, 010, 011, 100, 101, 110, 111.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 Build the intermediate column NOT C: 1, 0, 1, 0, 1, 0, 1, 0 (1).\n\u2022 Build B OR NOT C: 1, 0, 1, 1, 1, 0, 1, 1 (1).\n\u2022 AND with A (rows 0-3 give 0 because A = 0): Q rows 0-3 = 0, 0, 0, 0 (1).\n\u2022 For rows 4-7 where A = 1, Q = B OR NOT C: 1, 0, 1, 1 (1).\n(Complete Q column: 0 0 0 0 1 0 1 1.)`
+      },
+    ],
+    red: [
+      {
+        q: 'Compare the Von Neumann architecture to an architecture with separate memories for instructions and data. Refer to the stored-program concept, memory access, and the practical reasons Von Neumann has dominated real computers.',
+        marks: 6, tier: 'red',
+        modelAnswer: `\u2022 Von Neumann uses a single shared main memory for both program instructions and data (1).\n\u2022 The stored-program concept means a program is stored in memory like data and fetched one instruction at a time by the CPU (1).\n\u2022 An alternative (Harvard) architecture uses physically separate memories and buses for instructions and data, which can be faster because instruction and data fetches happen in parallel (1).\n\u2022 However, Von Neumann is simpler and cheaper to build \u2014 only one memory and one bus system is needed (1).\n\u2022 It is also more flexible: any free memory can be used for either code or data, so machines run any program loaded into them without redesign (1).\n\u2022 These practical advantages have made Von Neumann the dominant architecture for general-purpose computers \u2014 desktops, laptops, smartphones and servers \u2014 despite the potential speed benefits of Harvard designs in embedded systems (1).`
+      },
+      {
+        q: 'A media company is choosing secondary storage for three separate needs: (a) the editing workstation needs a fast drive to edit 4K video files; (b) the company needs 40 TB of cheap storage for a long-term archive; (c) finished films must be distributed to customers in shops. Recommend an appropriate storage type for each need and justify your choice. Refer to speed, capacity, cost per GB, durability and portability.',
+        marks: 8, tier: 'red',
+        modelAnswer: `\u2022 (a) Editing workstation \u2014 choose an SSD (1).\n\u2022 Justification: SSDs have very fast read/write speeds with no mechanical seek time, which is essential when scrubbing through huge 4K video files; they are also durable and quiet (1).\n\u2022 Higher cost per GB is acceptable because the drive only needs to hold the current project, not a huge archive (1).\n\u2022 (b) Long-term archive \u2014 choose magnetic HDDs (or a RAID array / magnetic tape) (1).\n\u2022 Justification: HDDs offer very high capacity at a low cost per GB, which is ideal for 40 TB of rarely accessed data (1).\n\u2022 Speed is not critical for archival reads, and the extra cost of SSDs would be wasted (1).\n\u2022 (c) Distribution to customers in shops \u2014 choose optical media such as Blu-ray (or DVD) (1).\n\u2022 Justification: optical discs are very cheap to mass-produce, robust, widely compatible with consumer players, and the modest capacity (25 GB for Blu-ray) is enough for a full-length feature with extras (1).\n(Accept a well-argued alternative such as digital download, provided the candidate addresses the same factors.)`
+      },
+    ],
+  },
   '3.5': { green: [], amber: [], red: [] },
   '3.6': { green: [], amber: [], red: [] },
   '3.7': { green: [], amber: [], red: [] },
