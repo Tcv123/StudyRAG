@@ -160,6 +160,9 @@
 
     input::placeholder { color: var(--muted2); }
 
+    input::-ms-reveal,
+    input::-ms-clear { display: none; }
+
     input:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 3px var(--accent-dim);
