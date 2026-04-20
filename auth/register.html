@@ -166,6 +166,57 @@
     .pw-bar { flex: 1; height: 3px; border-radius: 2px; background: var(--border); transition: background 0.3s; }
     .pw-label { font-size: 11px; color: var(--muted); margin-top: 4px; }
 
+    /* ── OTP STEP ── */
+    .otp-intro {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .otp-intro h2 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .otp-intro p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+    .otp-intro b { color: var(--text); }
+
+    .otp-input {
+      width: 100%;
+      padding: 16px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.5em;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .otp-input::placeholder { color: var(--muted2); letter-spacing: 0.3em; font-weight: 400; }
+    .otp-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+      background: #fff;
+    }
+
+    .link-btn {
+      background: none; border: none; padding: 0;
+      color: var(--accent-dark); font-family: var(--font-body);
+      font-size: 13px; font-weight: 500; cursor: pointer;
+      text-decoration: none;
+    }
+    .link-btn:hover { text-decoration: underline; }
+    .link-btn:disabled { color: var(--muted2); cursor: not-allowed; text-decoration: none; }
+
+    .otp-actions {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 14px; font-size: 13px; color: var(--muted);
+    }
+
     .btn {
       width: 100%; padding: 13px; border: none; border-radius: 10px;
       font-family: var(--font-body); font-size: 15px; font-weight: 600;
@@ -245,6 +296,26 @@
       <button class="btn btn-primary" id="registerBtn">Create Account</button>
     </form>
 
+    <form id="otpForm" style="display:none;">
+      <div class="otp-intro">
+        <h2>Check your inbox</h2>
+        <p>We emailed a 6-digit code to <b id="otpEmail"></b>.<br>Enter it below to finish creating your account.</p>
+      </div>
+
+      <div class="field">
+        <label for="otp">Verification code</label>
+        <input id="otp" class="otp-input" type="text" inputmode="numeric" autocomplete="one-time-code"
+               maxlength="6" pattern="[0-9]{6}" placeholder="000000" required autofocus>
+      </div>
+
+      <button class="btn btn-primary" id="verifyBtn">Verify & Continue</button>
+
+      <div class="otp-actions">
+        <span>Didn't get it?</span>
+        <button type="button" class="link-btn" id="resendBtn">Resend code</button>
+      </div>
+    </form>
+
     <p id="msg" class="msg"></p>
 
     <div class="back-home-wrap">
@@ -289,6 +360,18 @@ togglePw.addEventListener('click', () => {
   eyeIcon.innerHTML = showing ? EYE_OPEN : EYE_CLOSED;
 });
 
+const otpForm   = document.getElementById('otpForm');
+const otpInput  = document.getElementById('otp');
+const otpEmail  = document.getElementById('otpEmail');
+const verifyBtn = document.getElementById('verifyBtn');
+const resendBtn = document.getElementById('resendBtn');
+
+let signupEmail = '';
+
+otpInput.addEventListener('input', () => {
+  otpInput.value = otpInput.value.replace(/\D/g, '').slice(0, 6);
+});
+
 form.onsubmit = async (e) => {
   e.preventDefault();
   registerBtn.disabled    = true;
@@ -296,15 +379,16 @@ form.onsubmit = async (e) => {
   msg.className = 'msg';
   msg.innerText = '';
 
-  const { data, error } = await supabaseClient.auth.signUp({
-    email:    email.value.trim(),
+  signupEmail = email.value.trim();
+
+  const { error } = await supabaseClient.auth.signUp({
+    email:    signupEmail,
     password: password.value,
     options: {
       data: {
         first_name: firstName.value.trim(),
         last_name:  lastName.value.trim()
-      },
-      emailRedirectTo: `${window.location.origin}/auth/confirmed.html`
+      }
     }
   });
 
@@ -316,15 +400,74 @@ form.onsubmit = async (e) => {
     return;
   }
 
-  // Email confirmation flow — no session returned; profile row is created on first login
-  form.style.display = 'none';
-  msg.className = 'msg success';
-  msg.innerHTML = `
-    <strong>Check your inbox</strong><br>
-    We sent a confirmation link to <b>${email.value.trim()}</b>.<br>
-    Click the link to activate your account, then sign in.
-  `;
+  form.style.display    = 'none';
+  otpForm.style.display = 'block';
+  otpEmail.textContent  = signupEmail;
+  otpInput.focus();
 };
+
+otpForm.onsubmit = async (e) => {
+  e.preventDefault();
+  verifyBtn.disabled    = true;
+  verifyBtn.textContent = 'Verifying…';
+  msg.className = 'msg';
+  msg.innerText = '';
+
+  const { error } = await supabaseClient.auth.verifyOtp({
+    email: signupEmail,
+    token: otpInput.value.trim(),
+    type:  'signup'
+  });
+
+  if (error) {
+    msg.className         = 'msg error';
+    msg.innerText         = error.message.includes('expired') || error.message.includes('invalid')
+      ? 'That code is invalid or expired. Request a new one.'
+      : error.message;
+    verifyBtn.disabled    = false;
+    verifyBtn.textContent = 'Verify & Continue';
+    return;
+  }
+
+  // Session created — profile row is created on first load of setup.html
+  window.location = 'setup.html';
+};
+
+let resendCooldown = 0;
+resendBtn.addEventListener('click', async () => {
+  if (resendCooldown > 0) return;
+  resendBtn.disabled = true;
+  msg.className = 'msg';
+  msg.innerText = '';
+
+  const { error } = await supabaseClient.auth.resend({
+    type:  'signup',
+    email: signupEmail
+  });
+
+  if (error) {
+    msg.className = 'msg error';
+    msg.innerText = error.message;
+    resendBtn.disabled = false;
+    return;
+  }
+
+  msg.className = 'msg success';
+  msg.innerText = 'New code sent. Check your inbox.';
+
+  resendCooldown = 30;
+  const tick = () => {
+    if (resendCooldown <= 0) {
+      resendBtn.textContent = 'Resend code';
+      resendBtn.disabled    = false;
+      return;
+    }
+    resendBtn.textContent = `Resend code (${resendCooldown}s)`;
+    resendCooldown--;
+    setTimeout(tick, 1000);
+  };
+  tick();
+});
 </script>
 </body>
 </html>
