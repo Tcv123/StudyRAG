@@ -78,7 +78,13 @@
       background: var(--accent); box-shadow: 0 0 10px var(--accent-glow);
     }
     .logo-name { font-family: var(--font-display); font-size: 18px; color: var(--text); }
-    .nav-links { display: flex; gap: 8px; }
+    .nav-links { display: flex; gap: 8px; align-items: center; }
+    .nav-anchors { display: flex; gap: 4px; margin-right: 6px; }
+    .nav-anchor {
+      padding: 6px 12px; border-radius: 7px; font-size: 13px; font-weight: 500;
+      color: var(--muted); text-decoration: none; transition: all 0.15s;
+    }
+    .nav-anchor:hover { color: var(--text); background: var(--surface2); }
     .nav-btn {
       padding: 7px 15px; border-radius: 8px; font-size: 13px; font-weight: 500;
       text-decoration: none; border: 1px solid transparent; transition: all 0.15s;
@@ -182,6 +188,112 @@
       font-size: 11px; color: var(--muted);
       background: var(--surface2); border: 1px solid var(--border);
       padding: 2px 7px; border-radius: 5px;
+    }
+    /* Live pulse ring on tracked row */
+    .subj-row.live { position: relative; }
+    .subj-row.live .subj-dot { position: relative; }
+    .subj-row.live .subj-dot::before {
+      content: ''; position: absolute; inset: -4px; border-radius: 50%;
+      border: 2px solid currentColor; opacity: 0; animation: ring 2.4s ease-out infinite;
+    }
+    .subj-row.live.r .subj-dot::before { color: var(--red); }
+    .subj-row.live.a .subj-dot::before { color: var(--amber); }
+    .subj-row.live.g .subj-dot::before { color: var(--green); }
+    @keyframes ring {
+      0%   { transform: scale(0.6); opacity: 0.9; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+    /* Morph one row up through the RAG scale */
+    .subj-morph {
+      animation: morph 9s ease-in-out infinite;
+    }
+    .subj-morph .subj-dot { animation: morphDot 9s ease-in-out infinite; }
+    .subj-morph .subj-name { animation: morphName 9s ease-in-out infinite; }
+    @keyframes morph {
+      0%, 28%   { background: var(--red-bg);   border-color: var(--red-border); }
+      38%, 62%  { background: var(--amber-bg); border-color: var(--amber-border); }
+      72%, 100% { background: var(--green-bg); border-color: var(--green-border); }
+    }
+    @keyframes morphDot {
+      0%, 28%   { background: var(--red); }
+      38%, 62%  { background: var(--amber); }
+      72%, 100% { background: var(--green); }
+    }
+    @keyframes morphName {
+      0%, 28%   { color: var(--red-text); }
+      38%, 62%  { color: var(--amber-text); }
+      72%, 100% { color: var(--green-text); }
+    }
+
+    /* Stats / Subjects / Features / FAQ shared */
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+    /* Subject tiles */
+    .subject-tile {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 18px 16px;
+      display: flex; flex-direction: column; gap: 8px;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .section-white .subject-tile { background: var(--surface2); }
+    .subject-tile:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .subject-icon { font-size: 22px; }
+    .subject-name { font-size: 14px; font-weight: 600; color: var(--text); }
+    .subject-boards { font-size: 11px; color: var(--muted); line-height: 1.5; }
+    .board-chip-row {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 28px;
+      justify-content: center;
+    }
+    .board-chip {
+      font-size: 12px; font-weight: 500; color: var(--muted);
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 6px 12px; border-radius: 18px;
+    }
+    .section-white .board-chip { background: var(--surface2); }
+
+    /* Feature cards */
+    .feature-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .section-white .feature-card { background: var(--surface2); }
+    .feature-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .feature-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: var(--accent-dim); color: var(--accent-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; margin-bottom: 14px;
+    }
+    .feature-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    .feature-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+      transition: border-color 0.15s;
+    }
+    .section-white .faq-item { background: var(--surface2); }
+    .faq-item[open] { border-color: var(--border-hover); }
+    .faq-item summary {
+      padding: 16px 20px; cursor: pointer; list-style: none;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 14px; font-weight: 600; color: var(--text);
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-icon {
+      width: 22px; height: 22px; border-radius: 6px;
+      background: var(--accent-dim); color: var(--accent-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 600; line-height: 1;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .faq-item[open] .faq-icon { transform: rotate(45deg); background: var(--accent); color: #fff; }
+    .faq-body {
+      padding: 0 20px 18px; font-size: 13px; color: var(--muted); line-height: 1.7;
     }
 
     /* ── SECTIONS ── */
@@ -289,16 +401,21 @@
       0%,100% { opacity: 1; } 50% { opacity: 0.35; }
     }
 
+    @media (max-width: 900px) {
+      .nav-anchors { display: none; }
+    }
     @media (max-width: 840px) {
       .hero-wrap { grid-template-columns: 1fr; }
       .hero-right { display: none; }
-      .three-grid { grid-template-columns: 1fr 1fr; }
+      .three-grid, .grid-3 { grid-template-columns: 1fr 1fr; }
+      .grid-4 { grid-template-columns: repeat(3, 1fr); }
       .steps-grid { grid-template-columns: 1fr; }
       .step-col::before { display: none; }
       .medals-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 520px) {
-      .three-grid, .medals-grid { grid-template-columns: 1fr; }
+      .three-grid, .medals-grid, .grid-3 { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: 1fr 1fr; }
       .hero-btns, .cta-btns { flex-direction: column; }
       .wrap { padding: 0 20px; }
       .nav-wrap, .hero-wrap { padding: 0 20px; }
@@ -319,6 +436,12 @@
       <div class="logo-name">RAG Learning</div>
     </a>
     <div class="nav-links">
+      <div class="nav-anchors">
+        <a href="#rag" class="nav-anchor">How RAG works</a>
+        <a href="#subjects" class="nav-anchor">Subjects</a>
+        <a href="#features" class="nav-anchor">Features</a>
+        <a href="#faq" class="nav-anchor">FAQ</a>
+      </div>
       <a href="auth/login.html" class="nav-btn nav-ghost">Sign in</a>
       <a href="auth/register.html" class="nav-btn nav-fill">Get started free</a>
     </div>
@@ -343,9 +466,9 @@
           <div class="preview-title">Your subjects</div>
           <div class="preview-badge">A Level</div>
         </div>
-        <div class="subj-row g"><div class="subj-dot"></div><div class="subj-name">Biology</div><div class="subj-board">AQA</div></div>
+        <div class="subj-row g live"><div class="subj-dot"></div><div class="subj-name">Biology</div><div class="subj-board">AQA</div></div>
         <div class="subj-row a"><div class="subj-dot"></div><div class="subj-name">Chemistry</div><div class="subj-board">Edexcel</div></div>
-        <div class="subj-row r"><div class="subj-dot"></div><div class="subj-name">Maths</div><div class="subj-board">OCR</div></div>
+        <div class="subj-row r subj-morph"><div class="subj-dot"></div><div class="subj-name">Maths</div><div class="subj-board">OCR</div></div>
         <div class="subj-row a"><div class="subj-dot"></div><div class="subj-name">Physics</div><div class="subj-board">AQA</div></div>
         <div class="subj-row g"><div class="subj-dot"></div><div class="subj-name">Computer Science</div><div class="subj-board">OCR</div></div>
       </div>
@@ -354,7 +477,7 @@
 </section>
 
 <!-- RAG System -->
-<section class="section section-white">
+<section id="rag" class="section section-white">
   <div class="wrap">
     <div class="section-tag">The RAG System</div>
     <div class="section-h">Three colours. Total clarity.</div>
@@ -380,7 +503,7 @@
 </section>
 
 <!-- How it works -->
-<section class="section">
+<section id="how" class="section">
   <div class="wrap">
     <div class="section-tag">How it works</div>
     <div class="section-h">From sign-up to exam ready</div>
@@ -436,6 +559,105 @@
   </div>
 </section>
 
+<!-- Subjects -->
+<section id="subjects" class="section section-white">
+  <div class="wrap">
+    <div class="section-tag">Subjects &amp; boards</div>
+    <div class="section-h">Every major UK subject, every major board</div>
+    <p class="section-p">Content is built board-by-board so specifications, terminology and past-paper style match exactly what you'll sit in the exam hall.</p>
+    <div class="grid-4">
+      <div class="subject-tile">
+        <div class="subject-icon">🧬</div>
+        <div class="subject-name">Biology</div>
+        <div class="subject-boards">AQA · Edexcel A · Edexcel B · OCR A · OCR B</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon">⚗️</div>
+        <div class="subject-name">Chemistry</div>
+        <div class="subject-boards">AQA · Edexcel · OCR A · OCR B</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon">⚛️</div>
+        <div class="subject-name">Physics</div>
+        <div class="subject-boards">AQA · Edexcel · OCR A · OCR B</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon">📐</div>
+        <div class="subject-name">Maths</div>
+        <div class="subject-boards">AQA · Edexcel · OCR</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon">∫</div>
+        <div class="subject-name">Further Maths</div>
+        <div class="subject-boards">AQA · Edexcel · OCR · OCR B</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon">💻</div>
+        <div class="subject-name">Computer Science</div>
+        <div class="subject-boards">AQA · OCR</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon">💰</div>
+        <div class="subject-name">Economics</div>
+        <div class="subject-boards">AQA · Edexcel A · Edexcel B · OCR</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon">🌍</div>
+        <div class="subject-name">Geography</div>
+        <div class="subject-boards">AQA · Edexcel · OCR · Eduqas</div>
+      </div>
+    </div>
+    <div class="board-chip-row">
+      <div class="board-chip">AQA</div>
+      <div class="board-chip">Edexcel</div>
+      <div class="board-chip">OCR</div>
+      <div class="board-chip">Eduqas</div>
+      <div class="board-chip">+ more being added</div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features" class="section">
+  <div class="wrap">
+    <div class="section-tag">What you get</div>
+    <div class="section-h">Everything you need in one place</div>
+    <p class="section-p">Notes, questions, diagnostics and tracking — designed to work together so revision feels directed instead of overwhelming.</p>
+    <div class="grid-3">
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <h3>Spec-matched notes</h3>
+        <p>Topic-by-topic notes that follow your exam board's specification line for line — with worked examples and clean diagrams.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h3>Smart diagnostics</h3>
+        <p>10 calibrated questions per topic — easy, medium and hard — quickly pinpoint what you actually know vs. what you think you know.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Practice questions</h3>
+        <p>Exam-style questions with mark schemes. Prioritised so the ones you're weakest at show up first.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Progress dashboard</h3>
+        <p>One view of every subject and topic, colour-coded so you always know where to spend your next hour of revision.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔔</div>
+        <h3>Decay-aware tracking</h3>
+        <p>Topics drop from green back to amber if you haven't touched them in a while — so nothing slips through the cracks before exams.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏅</div>
+        <h3>Streaks &amp; medals</h3>
+        <p>Hit milestones, keep a study streak, and collect medals — small wins that make daily revision feel worth showing up for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Medals -->
 <section class="section section-white">
   <div class="wrap">
@@ -473,6 +695,49 @@
         <div class="medal-name">All Clear</div>
         <div class="medal-desc">Every topic across all subjects is green</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="wrap">
+    <div class="section-tag">Frequently asked</div>
+    <div class="section-h">Questions, answered</div>
+    <p class="section-p">If something isn't covered here, create a free account — most things make more sense once you've seen the dashboard.</p>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Is RAG Learning really free?<div class="faq-icon">+</div></summary>
+        <div class="faq-body">Yes. The full set of notes, diagnostics, practice questions and progress tracking is free for UK students. No trial, no credit card, no paywall gating the core content.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Which exam boards do you support?<div class="faq-icon">+</div></summary>
+        <div class="faq-body">AQA, Edexcel (A and B where applicable), OCR (A and B where applicable) and Eduqas. Content is written separately per board — the notes for AQA Physics aren't the same file as OCR Physics, because the specifications aren't the same.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Does it cover GCSE, AS and A Level?<div class="faq-icon">+</div></summary>
+        <div class="faq-body">Yes. You choose your level when you sign up, and the topic list, diagnostics and question pool adjust accordingly. You can switch level later from your settings without losing progress on shared topics.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How is my RAG rating calculated?<div class="faq-icon">+</div></summary>
+        <div class="faq-body">Each topic starts with a 10-question diagnostic covering three difficulty bands. Your score, the difficulty of the questions you got right, and how recently you last practiced the topic all feed into the rating. There's no self-reporting — the algorithm places it for you.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I change subjects later?<div class="faq-icon">+</div></summary>
+        <div class="faq-body">Absolutely — add, remove or swap subjects any time from Settings. Your progress on each subject is preserved if you add it back later.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Why does a green topic sometimes drop back to amber?<div class="faq-icon">+</div></summary>
+        <div class="faq-body">Because that reflects reality. If you haven't revisited a topic in a couple of weeks, your recall has almost certainly decayed. The app nudges you back to it before exams, so nothing silently slips off your radar.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Does it work on phones and tablets?<div class="faq-icon">+</div></summary>
+        <div class="faq-body">Yes. Everything — notes, diagnostics, practice, dashboard — is responsive and works well on mobile. Most students use it on a laptop for study sessions and a phone for quick reviews on the bus.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need an account?<div class="faq-icon">+</div></summary>
+        <div class="faq-body">Yes — an account is the only way to track your RAG ratings, streaks, medals and progress over time. Sign-up takes about 20 seconds.</div>
+      </details>
     </div>
   </div>
 </section>

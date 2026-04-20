@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 3.5 &mdash; Fundamentals of Computer Networks</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        h4 { font-size: 1.02rem; color: #1e3a5f; margin-top: 22px; margin-bottom: 8px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>3.5 Fundamentals of Computer Networks</h1>
+<p class="spec-ref">AQA GCSE Computer Science (8525) &mdash; Paper 2</p>
+
+<h2>3.5.1 Types of Network</h2>
+
+<div class="definition">
+    A <strong>computer network</strong> is two or more computers (or other digital devices) connected together so that they can <em>share data and resources</em>. "Resources" can mean printers, an internet connection, files on a server, or even processing power. Without a network each computer is a standalone island.
+</div>
+
+<p>The two types of network you must know for the AQA specification are the <strong>Local Area Network (LAN)</strong> and the <strong>Wide Area Network (WAN)</strong>. They are distinguished mainly by the <em>geographical area</em> they cover and by <em>who owns the infrastructure</em> &mdash; the cables, switches, routers and wireless equipment that carry the data.</p>
+
+<h3>Local Area Network (LAN)</h3>
+
+<div class="definition">
+    A <strong>LAN</strong> is a computer network confined to a <em>single geographical site</em> &mdash; typically a single building or group of adjacent buildings such as a school campus, a hospital, an office block or a family home. All of the network hardware is owned and managed by the <em>same organisation</em> (or individual).
+</div>
+
+<p>The classic example is a secondary-school network: every classroom PC, the printers in the library, the teachers' laptops and the cashless-catering tills are all connected to a set of switches and wireless access points that live on site, and the whole lot is run by the school's own IT department. Because the school owns the cables and the wireless hardware, it controls the entire network end-to-end.</p>
+
+<p>LANs are usually <strong>fast</strong> because they use short, high-quality cables (gigabit Ethernet or faster) or high-speed Wi-Fi, and they are <strong>cheap</strong> to operate once built because no third-party lines are rented. They are also relatively <strong>secure</strong> because all the hardware is physically controlled by the owner.</p>
+
+<h3>Wide Area Network (WAN)</h3>
+
+<div class="definition">
+    A <strong>WAN</strong> is a computer network that connects devices over a <em>large geographical area</em> &mdash; a city, a country, a continent or the whole world. A WAN usually relies on infrastructure (cables, fibre, satellites, microwave links) that is rented from or owned by <em>third parties</em> such as telecoms companies, because no single organisation owns enough of the land and the sea-bed to lay their own wires everywhere.
+</div>
+
+<p>The largest WAN of all is the <strong>internet</strong>, which is a worldwide interconnection of millions of smaller networks. A supermarket chain whose branches in Leeds, Glasgow and Plymouth can all access the same central database is another example of a WAN: each branch has its own small LAN, and the branches are joined together by leased lines provided by a telecoms company to form one wide network.</p>
+
+<p>Because WANs span long distances and use third-party infrastructure, they are generally <strong>slower</strong> than LANs, <strong>more expensive</strong> to operate (monthly line-rental fees), <strong>less secure</strong> (data travels through equipment not owned by the organisation), and <strong>harder to maintain</strong> (the organisation does not own most of the cables).</p>
+
+<h3>LAN vs WAN &mdash; Comparison</h3>
+
+<table>
+    <tr><th>Feature</th><th>LAN</th><th>WAN</th></tr>
+    <tr><td>Geographical area</td><td>Single site &mdash; a building or campus</td><td>Large area &mdash; city, country, worldwide</td></tr>
+    <tr><td>Ownership of hardware</td><td>Owned entirely by one organisation</td><td>Usually uses leased third-party infrastructure</td></tr>
+    <tr><td>Typical speed</td><td>High (1 Gbps and above)</td><td>Lower (limited by the leased link)</td></tr>
+    <tr><td>Cost</td><td>Cheap to run once built (no line rental)</td><td>Expensive &mdash; monthly rental of lines / satellite time</td></tr>
+    <tr><td>Security</td><td>Easier to control because hardware is on-site</td><td>Harder &mdash; data crosses hardware not owned by the organisation</td></tr>
+    <tr><td>Example</td><td>School, office, home network</td><td>The internet, multi-branch bank network</td></tr>
+</table>
+
+<h3>Personal Area Network (PAN)</h3>
+
+<p>A <strong>PAN</strong> is a very small network around one person &mdash; typically using Bluetooth to connect a phone to a smartwatch, wireless earbuds and a fitness tracker, all within a couple of metres. PANs are optional in the AQA GCSE specification but are worth knowing because they come up in everyday life.</p>
+
+<h3>Typical Uses</h3>
+
+<table>
+    <tr><th>Type</th><th>Typical examples</th><th>Typical use</th></tr>
+    <tr><td>LAN</td><td>School, home, small office</td><td>Sharing files and printers, giving devices internet access via a single shared connection, using a centralised login (e.g. Active Directory) and storing pupil work on a shared server.</td></tr>
+    <tr><td>WAN</td><td>A bank with 200 branches; a university with campuses in different cities; the internet</td><td>Linking sites together so that every branch can access a central database of customers, sending email between staff in distant offices, and sharing applications hosted at a central data centre.</td></tr>
+    <tr><td>PAN</td><td>Phone + smartwatch + wireless earbuds + fitness tracker</td><td>Personal devices communicating over Bluetooth; typical range under 10 metres.</td></tr>
+</table>
+
+<div class="exam-tip">A common 2-mark question is "State one difference between a LAN and a WAN." A safe answer is: "A LAN is confined to a single site and is owned by one organisation, whereas a WAN spans a wide geographical area and uses infrastructure rented from third parties." Do not say a LAN is "just small" &mdash; a school network covering several buildings and hundreds of devices is still a LAN.</div>
+
+<h3>Advantages and Disadvantages of Networks</h3>
+
+<p>Connecting computers together brings real benefits &mdash; but it is not free. A fair comparison:</p>
+
+<p><strong>Benefits of networking computers:</strong></p>
+<ul>
+    <li><strong>Shared resources:</strong> one printer between 30 classrooms, a single internet line shared by the whole office, central file storage accessible by every device.</li>
+    <li><strong>Shared data:</strong> files on a server are available to any user with the right permissions, from any device on the network.</li>
+    <li><strong>Centralised management:</strong> software updates, user accounts and backups can be handled once for all devices rather than machine by machine.</li>
+    <li><strong>Communication:</strong> email, instant messaging, video calls, collaborative editing.</li>
+</ul>
+
+<p><strong>Drawbacks:</strong></p>
+<ul>
+    <li><strong>Cost:</strong> cables, switches, routers, wireless access points and (for WANs) leased lines all cost money to install and maintain.</li>
+    <li><strong>Security risks:</strong> malware can spread along the network; an attacker on one machine may reach many others.</li>
+    <li><strong>Dependence on the network:</strong> if the central server or internet link fails, every user is affected.</li>
+    <li><strong>Management overhead:</strong> administrators must maintain the network, monitor it and handle user accounts.</li>
+</ul>
+
+<h2>3.5.2 Wired and Wireless Networks</h2>
+
+<p>Every connection on a network is either <strong>wired</strong> (data travels along a physical cable) or <strong>wireless</strong> (data travels through the air as radio waves). Both have strengths and weaknesses, and most real networks use a mix of the two &mdash; for example, a wired backbone joining a set of switches, with Wi-Fi access points providing wireless coverage to mobile devices.</p>
+
+<h3>Wired Networks</h3>
+
+<p>Wired networks send data down physical cables. The two types you should know are:</p>
+
+<ul>
+    <li><strong>Copper Ethernet cable</strong> (often called <em>twisted pair</em> or Cat5e/Cat6). Carries data as pulses of electrical signal. Cheap, flexible, easy to terminate with an RJ-45 connector, and typically supports 1 Gbps over short runs (up to about 100 m per cable segment). Signals weaken (<em>attenuate</em>) and can suffer from <em>electromagnetic interference</em> from nearby mains wiring, motors and fluorescent lights.</li>
+    <li><strong>Fibre-optic cable.</strong> Carries data as pulses of <em>light</em> down a thin glass or plastic strand. Immune to electromagnetic interference, supports much higher speeds (10 Gbps, 100 Gbps and beyond) and longer distances (kilometres without a booster) than copper. It is more expensive, more fragile, and needs specialist equipment to terminate. Fibre is used for the internet's long-distance backbone (and across ocean floors), and increasingly for the last hop into homes ("full fibre" broadband).</li>
+</ul>
+
+<h3>Wireless Networks</h3>
+
+<p>Wireless networks send data as <em>radio waves</em> through the air. The two you must know are:</p>
+
+<ul>
+    <li><strong>Wi-Fi</strong> (IEEE 802.11) &mdash; the standard used to give computers, phones and tablets wireless LAN access through a <em>wireless access point (WAP)</em>. Typical range indoors is tens of metres. Modern Wi-Fi supports hundreds of Mbps in good conditions, but actual speed drops sharply with distance, walls and interference from other networks on the same channel.</li>
+    <li><strong>Bluetooth</strong> &mdash; a short-range (typically under 10 m) low-power wireless standard used for PANs: wireless headphones, game controllers, keyboards, smartwatches, and file transfers between phones. Speeds are much lower than Wi-Fi (typically 1&ndash;3 Mbps, or up to 24 Mbps for Bluetooth 3.0+HS).</li>
+</ul>
+
+<h3>Wired vs Wireless &mdash; Comparison</h3>
+
+<table>
+    <tr><th>Factor</th><th>Wired (Ethernet / fibre)</th><th>Wireless (Wi-Fi / Bluetooth)</th></tr>
+    <tr><td>Speed</td><td>Higher and more consistent (1 Gbps+ typical; fibre far more)</td><td>Lower and variable; drops with distance and interference</td></tr>
+    <tr><td>Range per link</td><td>Up to 100 m (copper), km (fibre)</td><td>Tens of metres (Wi-Fi); under 10 m (Bluetooth)</td></tr>
+    <tr><td>Reliability</td><td>Very reliable &mdash; fixed physical link</td><td>Can drop out due to walls, interference, crowded channels</td></tr>
+    <tr><td>Security</td><td>Harder to eavesdrop &mdash; attacker needs physical access to the cable</td><td>Easier to eavesdrop &mdash; signal leaks out of buildings; must be encrypted (WPA2/WPA3)</td></tr>
+    <tr><td>Interference</td><td>Fibre: none; copper: susceptible to EMI</td><td>Radio interference from other networks, microwaves, walls</td></tr>
+    <tr><td>Cost &amp; install</td><td>Higher up-front &mdash; cables must be routed and terminated</td><td>Lower up-front &mdash; just install an access point</td></tr>
+    <tr><td>Mobility</td><td>Device is tied to the cable</td><td>Devices can move around freely</td></tr>
+</table>
+
+<h3>Why Fibre Beats Copper Over Long Distances</h3>
+
+<p>Copper carries data as electrical signals, which <em>attenuate</em> (weaken) quickly and pick up <em>noise</em> from nearby electrical fields. Over hundreds of metres the signal becomes too weak or too noisy to be decoded reliably, so repeaters are needed. Fibre uses light in a glass strand: the signal can travel many kilometres before repeating, is immune to electromagnetic interference, and can be modulated at far higher frequencies &mdash; giving dramatically higher bandwidth. That is why undersea cables and the internet's national backbones are fibre.</p>
+
+<h3>Bandwidth and Latency</h3>
+
+<p>Two quantities describe how good a connection is:</p>
+<ul>
+    <li><strong>Bandwidth</strong> is the amount of data the connection can carry per second, usually measured in megabits per second (Mbps) or gigabits per second (Gbps). A "fast" connection has a high bandwidth.</li>
+    <li><strong>Latency</strong> is the delay between sending a packet and the reply being received, measured in milliseconds (ms). A "responsive" connection has a low latency. A satellite link can have a high bandwidth but a latency of 500+ ms because the signal has to bounce up to orbit and back.</li>
+</ul>
+
+<p>Fibre wins on both: high bandwidth (the medium supports huge bit rates) and low latency (light moves at roughly two-thirds the speed of light in vacuum, faster than electrical signals in copper over long distances).</p>
+
+<div class="exam-tip">If a question asks "Give one advantage of a wired connection over a wireless connection", stick to concrete technical answers &mdash; "higher speed", "more reliable", "less prone to interference" or "more secure because a cable cannot be intercepted from outside the building" &mdash; rather than vague answers like "it's better."</div>
+
+<h2>3.5.3 Network Topologies</h2>
+
+<div class="definition">
+    A <strong>network topology</strong> is the <em>shape</em> of a network &mdash; the pattern in which the cables (or wireless links) connect the devices together. The AQA specification requires you to know the <strong>star</strong>, <strong>bus</strong> and <strong>mesh</strong> topologies.
+</div>
+
+<h3>Star Topology</h3>
+
+<p>In a <strong>star topology</strong>, every device (<em>node</em>) is connected by its own cable to a <em>central device</em> &mdash; usually a <strong>switch</strong>. All traffic between two devices passes through the central switch, which forwards the data only to the intended recipient.</p>
+
+<!-- Star topology diagram -->
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Star Topology</text>
+  <text x="360" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Every node has its own cable to a central switch.</text>
+
+  <!-- Central switch -->
+  <rect x="320" y="160" width="80" height="40" rx="6" fill="#1e40af" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="360" y="185" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">SWITCH</text>
+
+  <!-- Links -->
+  <line x1="360" y1="160" x2="180" y2="90" stroke="#2563eb" stroke-width="2"/>
+  <line x1="360" y1="160" x2="360" y2="80" stroke="#2563eb" stroke-width="2"/>
+  <line x1="360" y1="160" x2="540" y2="90" stroke="#2563eb" stroke-width="2"/>
+  <line x1="360" y1="200" x2="180" y2="280" stroke="#2563eb" stroke-width="2"/>
+  <line x1="360" y1="200" x2="360" y2="310" stroke="#2563eb" stroke-width="2"/>
+  <line x1="360" y1="200" x2="540" y2="280" stroke="#2563eb" stroke-width="2"/>
+
+  <!-- Nodes -->
+  <g>
+    <rect x="150" y="65" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="180" y="92" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">PC 1</text>
+  </g>
+  <g>
+    <rect x="330" y="55" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="360" y="82" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">PC 2</text>
+  </g>
+  <g>
+    <rect x="510" y="65" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="540" y="92" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">PC 3</text>
+  </g>
+  <g>
+    <rect x="150" y="260" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="180" y="287" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">PC 4</text>
+  </g>
+  <g>
+    <rect x="330" y="290" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="360" y="317" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">PC 5</text>
+  </g>
+  <g>
+    <rect x="510" y="260" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="540" y="287" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">PC 6</text>
+  </g>
+</svg>
+
+<h4>Advantages of a star topology</h4>
+<ul>
+    <li><strong>Fault-tolerant for node/cable failure.</strong> If one cable or one PC fails, only that one PC is affected &mdash; the rest of the network keeps working.</li>
+    <li><strong>High performance.</strong> Each node has a dedicated link to the switch, so there are no collisions between nodes sharing a cable.</li>
+    <li><strong>Easy to add/remove nodes.</strong> Just plug a new cable into the switch; no need to bring the whole network down.</li>
+    <li><strong>Easy to locate faults.</strong> A broken link shows up as one silent port on the switch.</li>
+</ul>
+
+<h4>Disadvantages of a star topology</h4>
+<ul>
+    <li><strong>Central point of failure.</strong> If the switch fails, the entire network goes down.</li>
+    <li><strong>Needs extra hardware.</strong> A switch (or several) must be bought and powered, which adds cost compared with a bus.</li>
+    <li><strong>Cabling cost.</strong> A separate cable is needed per device, which can mean a lot of cable in a large office.</li>
+</ul>
+
+<p>The star topology is by far the most common choice in modern LANs &mdash; schools, offices and homes almost always use it because the benefits outweigh the cost of a switch.</p>
+
+<h3>Bus Topology</h3>
+
+<p>In a <strong>bus topology</strong>, every device shares a <em>single backbone cable</em> that runs through the network. Devices tap into the backbone at intervals, and both ends of the cable are fitted with a <em>terminator</em> to stop the signal reflecting. Only one device can transmit at a time; if two devices transmit simultaneously, their signals collide and must be retransmitted.</p>
+
+<!-- Bus topology diagram -->
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Bus Topology</text>
+  <text x="360" y="40" text-anchor="middle" font-size="11" fill="#6b7280">All nodes share a single backbone cable; both ends are terminated.</text>
+
+  <!-- Backbone -->
+  <line x1="60" y1="180" x2="660" y2="180" stroke="#1e40af" stroke-width="4"/>
+
+  <!-- Terminators -->
+  <rect x="40" y="168" width="20" height="24" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>
+  <text x="50" y="215" text-anchor="middle" font-size="10" fill="#7f1d1d">Term.</text>
+  <rect x="660" y="168" width="20" height="24" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>
+  <text x="670" y="215" text-anchor="middle" font-size="10" fill="#7f1d1d">Term.</text>
+
+  <!-- Drop cables + nodes -->
+  <g>
+    <line x1="150" y1="180" x2="150" y2="120" stroke="#2563eb" stroke-width="2"/>
+    <rect x="120" y="75" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="150" y="102" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">PC 1</text>
+  </g>
+  <g>
+    <line x1="270" y1="180" x2="270" y2="240" stroke="#2563eb" stroke-width="2"/>
+    <rect x="240" y="240" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="270" y="267" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">PC 2</text>
+  </g>
+  <g>
+    <line x1="390" y1="180" x2="390" y2="120" stroke="#2563eb" stroke-width="2"/>
+    <rect x="360" y="75" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="390" y="102" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">PC 3</text>
+  </g>
+  <g>
+    <line x1="510" y1="180" x2="510" y2="240" stroke="#2563eb" stroke-width="2"/>
+    <rect x="480" y="240" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="510" y="267" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">PC 4</text>
+  </g>
+  <g>
+    <line x1="600" y1="180" x2="600" y2="120" stroke="#2563eb" stroke-width="2"/>
+    <rect x="570" y="75" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="600" y="102" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">PC 5</text>
+  </g>
+</svg>
+
+<h4>Advantages of a bus topology</h4>
+<ul>
+    <li><strong>Cheap.</strong> Uses one long backbone cable and no central switch.</li>
+    <li><strong>Simple</strong> to set up for a small network.</li>
+</ul>
+
+<h4>Disadvantages of a bus topology</h4>
+<ul>
+    <li><strong>Single point of failure.</strong> If the backbone cable is cut or damaged, the <em>whole</em> network goes down.</li>
+    <li><strong>Collisions.</strong> Only one device can transmit at a time; as more devices are added, collisions become frequent and throughput drops sharply.</li>
+    <li><strong>Poor scalability.</strong> Performance worsens as nodes are added.</li>
+    <li><strong>Security.</strong> Every node can see all traffic on the backbone, making eavesdropping easy.</li>
+</ul>
+
+<p>Bus topologies were common in the 1980s but are now considered <strong>legacy</strong>. Modern LANs almost always use a star.</p>
+
+<h3>Mesh Topology</h3>
+
+<p>In a <strong>mesh topology</strong>, devices have <em>multiple direct links</em> to other devices. In a <strong>full mesh</strong>, every node is connected directly to every other node &mdash; no central device is needed at all. In a <strong>partial mesh</strong>, only the most important nodes have many links, while less critical nodes have one or two.</p>
+
+<!-- Mesh topology diagram -->
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Full Mesh Topology (5 nodes)</text>
+  <text x="360" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Every node has a direct link to every other node &mdash; 10 links for 5 nodes.</text>
+
+  <!-- All edges between 5 nodes -->
+  <g stroke="#2563eb" stroke-width="1.5">
+    <line x1="360" y1="90" x2="570" y2="170"/>
+    <line x1="360" y1="90" x2="510" y2="340"/>
+    <line x1="360" y1="90" x2="210" y2="340"/>
+    <line x1="360" y1="90" x2="150" y2="170"/>
+    <line x1="570" y1="170" x2="510" y2="340"/>
+    <line x1="570" y1="170" x2="210" y2="340"/>
+    <line x1="570" y1="170" x2="150" y2="170"/>
+    <line x1="510" y1="340" x2="210" y2="340"/>
+    <line x1="510" y1="340" x2="150" y2="170"/>
+    <line x1="210" y1="340" x2="150" y2="170"/>
+  </g>
+
+  <!-- Nodes on top of edges -->
+  <g>
+    <circle cx="360" cy="90" r="30" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="360" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">A</text>
+  </g>
+  <g>
+    <circle cx="570" cy="170" r="30" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="570" y="175" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">B</text>
+  </g>
+  <g>
+    <circle cx="510" cy="340" r="30" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="510" y="345" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">C</text>
+  </g>
+  <g>
+    <circle cx="210" cy="340" r="30" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="210" y="345" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">D</text>
+  </g>
+  <g>
+    <circle cx="150" cy="170" r="30" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="150" y="175" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">E</text>
+  </g>
+</svg>
+
+<h4>Number of links in a full mesh</h4>
+
+<p>The number of direct links in a full mesh of <em>n</em> nodes is <code>n &times; (n &minus; 1) / 2</code>. Each of the <em>n</em> nodes must connect to the other <em>n &minus; 1</em>, and dividing by 2 avoids counting each link twice.</p>
+
+<ul>
+    <li>3 nodes &rarr; 3 links</li>
+    <li>4 nodes &rarr; 6 links</li>
+    <li>5 nodes &rarr; 10 links</li>
+    <li>6 nodes &rarr; 15 links</li>
+    <li>10 nodes &rarr; 45 links</li>
+</ul>
+
+<h4>Advantages of a mesh topology</h4>
+<ul>
+    <li><strong>Highly fault-tolerant / self-healing.</strong> If one link or node fails, data simply takes an alternative route.</li>
+    <li><strong>No bottleneck.</strong> Multiple messages can be sent at once along different links.</li>
+    <li><strong>Scalable</strong> (especially a partial mesh) because adding a node does not overload any central device.</li>
+</ul>
+
+<h4>Disadvantages of a mesh topology</h4>
+<ul>
+    <li><strong>Expensive.</strong> Many cables and many network cards are required &mdash; a full mesh of 10 nodes needs 45 separate links.</li>
+    <li><strong>Complex to install and maintain.</strong> Routing must be managed across many possible paths.</li>
+</ul>
+
+<p>Full mesh networks are common in the backbone of the internet, where reliability and redundancy are worth the cost. Wireless mesh (partial mesh) is used for city-wide public Wi-Fi and for "whole-home Wi-Fi" systems where several access points hand devices between themselves.</p>
+
+<h4>Partial vs Full Mesh</h4>
+<p>A <strong>full mesh</strong> connects every node to every other node &mdash; maximum redundancy but extremely expensive. A <strong>partial mesh</strong> connects only some nodes directly &mdash; still gives alternative routes for the most critical paths while keeping the number of cables manageable. Most real-world "mesh" networks (including the internet's inter-ISP backbone) are partial meshes in practice.</p>
+
+<h4>Examples of Where Each Topology Is Used</h4>
+
+<ul>
+    <li><strong>Star:</strong> your school network, most home networks, the typical office LAN.</li>
+    <li><strong>Bus:</strong> very old small networks; still sometimes seen in industrial or cheap legacy deployments. Rare in new installations.</li>
+    <li><strong>Mesh:</strong> the internet's inter-ISP backbone (partial mesh), military networks, whole-home mesh Wi-Fi systems, and wireless sensor networks.</li>
+</ul>
+
+<h3>Topology Comparison</h3>
+
+<table>
+    <tr><th>Feature</th><th>Star</th><th>Bus</th><th>Mesh (full)</th></tr>
+    <tr><td>Cabling cost</td><td>One cable per node + switch</td><td>One shared backbone &mdash; cheapest</td><td>Many cables &mdash; most expensive</td></tr>
+    <tr><td>Needs central hardware?</td><td>Yes &mdash; a switch</td><td>No &mdash; just terminators</td><td>No central device</td></tr>
+    <tr><td>Effect of one cable failure</td><td>Only that one node is affected</td><td>Whole network fails</td><td>Data re-routes &mdash; no effect</td></tr>
+    <tr><td>Collisions?</td><td>No &mdash; each node has its own link to the switch</td><td>Yes &mdash; shared medium</td><td>No &mdash; many independent links</td></tr>
+    <tr><td>Scalability</td><td>Good &mdash; limited by switch size</td><td>Poor &mdash; collisions rise with node count</td><td>Very good but expensive</td></tr>
+    <tr><td>Typical use</td><td>Most modern LANs</td><td>Legacy &mdash; obsolete for new LANs</td><td>Internet backbone, critical systems, mesh Wi-Fi</td></tr>
+</table>
+
+<div class="exam-tip">"State the number of links in a full mesh of 6 computers" is a typical exam question. Use <code>n(n&minus;1)/2</code>: 6 &times; 5 / 2 = 15 links. Learn this formula; it comes up in questions of all colours.</div>
+
+<h2>3.5.4 Network Protocols</h2>
+
+<div class="definition">
+    A <strong>protocol</strong> is a set of <em>rules</em> that govern how two devices communicate. It defines things like the exact format of each message, the order in which messages are exchanged, how errors are detected and handled, and how the start and end of a message are identified. Without agreed protocols, two devices would simply not understand each other.
+</div>
+
+<p>A real-world analogy: when two people make a phone call there is an implicit protocol &mdash; one person says "hello", then the other identifies themselves, they take it in turns to speak, and one of them says "goodbye" at the end. Break any of those rules and the conversation becomes confusing. Computer protocols are the same idea written down as exact rules.</p>
+
+<h3>Protocols You Must Know</h3>
+
+<table>
+    <tr><th>Protocol</th><th>Full name</th><th>Purpose</th></tr>
+    <tr><td><strong>Ethernet</strong></td><td>Ethernet (IEEE 802.3)</td><td>Governs how data is sent over a <em>wired LAN</em>: frame format, MAC addressing, collision handling.</td></tr>
+    <tr><td><strong>Wi-Fi</strong></td><td>Wi-Fi (IEEE 802.11)</td><td>Governs how data is sent over a <em>wireless LAN</em>: frame format, channels, encryption (WPA2/WPA3).</td></tr>
+    <tr><td><strong>TCP</strong></td><td>Transmission Control Protocol</td><td>Splits data into numbered <em>packets</em>, ensures they arrive, in order, and re-sends any that are lost. Provides a reliable end-to-end connection.</td></tr>
+    <tr><td><strong>IP</strong></td><td>Internet Protocol</td><td>Addresses each packet with a source and destination <em>IP address</em> and routes it across networks so it reaches the right host.</td></tr>
+    <tr><td><strong>HTTP</strong></td><td>HyperText Transfer Protocol</td><td>Rules for transferring web pages (and other resources) between a web browser and a web server. Unencrypted.</td></tr>
+    <tr><td><strong>HTTPS</strong></td><td>HTTP Secure</td><td>HTTP over an encrypted TLS connection: all traffic between the browser and the server is encrypted so it cannot be read or tampered with in transit.</td></tr>
+    <tr><td><strong>FTP</strong></td><td>File Transfer Protocol</td><td>Used to upload and download whole files between a client and a server, e.g. uploading a website to a hosting provider.</td></tr>
+    <tr><td><strong>SMTP</strong></td><td>Simple Mail Transfer Protocol</td><td>Used to <em>send</em> email from a client to a mail server, and between mail servers.</td></tr>
+    <tr><td><strong>POP</strong></td><td>Post Office Protocol (v3)</td><td>Used to <em>retrieve</em> email from a mail server: emails are normally downloaded to the device and then deleted from the server.</td></tr>
+    <tr><td><strong>IMAP</strong></td><td>Internet Message Access Protocol</td><td>Used to <em>retrieve</em> email from a mail server: emails stay on the server, and the server is kept in sync across multiple devices.</td></tr>
+</table>
+
+<h4>POP vs IMAP</h4>
+
+<p>POP and IMAP both let you collect email, but they behave very differently:</p>
+
+<ul>
+    <li><strong>POP</strong> downloads messages to one device and (by default) removes them from the server. Good if you only check email from one computer and want to save server space.</li>
+    <li><strong>IMAP</strong> keeps all messages on the server and mirrors your folders back to any device. Good if you check email from a phone, a laptop and a work PC &mdash; a message read or filed on one device is marked read or filed on the others.</li>
+</ul>
+
+<table>
+    <tr><th>Feature</th><th>POP3</th><th>IMAP</th></tr>
+    <tr><td>Where the mail is stored</td><td>On the local device after download</td><td>On the server, synced to devices</td></tr>
+    <tr><td>Works well with multiple devices?</td><td>Poorly &mdash; each device has its own copy</td><td>Yes &mdash; every device sees the same folders</td></tr>
+    <tr><td>Server storage used</td><td>Small &mdash; messages are removed after download</td><td>Larger &mdash; all messages stay on the server</td></tr>
+    <tr><td>Offline reading</td><td>Easy &mdash; mail is already on the device</td><td>Possible if the client caches messages</td></tr>
+</table>
+
+<h4>HTTP vs HTTPS</h4>
+
+<p>Both protocols do the same job (transfer web resources), but HTTPS adds a layer of encryption:</p>
+
+<ul>
+    <li><strong>HTTP</strong> sends requests and replies in plaintext. Anyone between the browser and the server can read them.</li>
+    <li><strong>HTTPS</strong> wraps HTTP inside an encrypted TLS connection. Only the browser and the server can read the traffic; an attacker on the network sees only ciphertext.</li>
+</ul>
+
+<p>Modern browsers treat plain HTTP as unsafe for logins and card payments, so essentially every site that matters uses HTTPS.</p>
+
+<div class="exam-tip">Questions often ask you to pair a protocol with a task: "Which protocol is used to download a web page?" &rarr; HTTP (or HTTPS for a secure site). "Which protocol is used to send email?" &rarr; SMTP. "Which protocol is used to receive email and keep it in sync across devices?" &rarr; IMAP. Learn the pairs rather than just the names.</div>
+
+<h2>3.5.5 The 4-layer TCP/IP Model</h2>
+
+<p>Networking is hugely complex &mdash; there are physical signals, routing, reliability, applications and more. To manage the complexity, protocols are grouped into <strong>layers</strong>. Each layer does one well-defined job and uses the services of the layer below, so problems can be solved one level at a time. The AQA specification uses the <strong>4-layer TCP/IP model</strong>.</p>
+
+<!-- TCP/IP 4-layer diagram -->
+<svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">The 4-Layer TCP/IP Model</text>
+  <text x="360" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Each layer does one job and uses the layer below. Data travels down the stack on send, up on receive.</text>
+
+  <!-- Application layer -->
+  <rect x="140" y="60" width="440" height="70" rx="8" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+  <text x="160" y="88" font-size="13" font-weight="bold" fill="#1e3a5f">4. Application Layer</text>
+  <text x="160" y="108" font-size="11" fill="#374151">What users see. Turns user actions (load a page, send email) into protocol messages.</text>
+  <text x="160" y="124" font-size="11" font-family="Consolas, monospace" fill="#1e40af">HTTP &bull; HTTPS &bull; FTP &bull; SMTP &bull; POP &bull; IMAP</text>
+
+  <!-- Transport layer -->
+  <rect x="140" y="140" width="440" height="70" rx="8" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+  <text x="160" y="168" font-size="13" font-weight="bold" fill="#1e3a5f">3. Transport Layer</text>
+  <text x="160" y="188" font-size="11" fill="#374151">Splits data into numbered packets; ensures they arrive in order; re-sends lost packets.</text>
+  <text x="160" y="204" font-size="11" font-family="Consolas, monospace" fill="#1e40af">TCP &bull; UDP</text>
+
+  <!-- Internet / Network layer -->
+  <rect x="140" y="220" width="440" height="70" rx="8" fill="#93c5fd" stroke="#1e40af" stroke-width="2"/>
+  <text x="160" y="248" font-size="13" font-weight="bold" fill="#1e3a5f">2. Internet (Network) Layer</text>
+  <text x="160" y="268" font-size="11" fill="#374151">Adds IP addresses to packets and routes them across the internet to the destination host.</text>
+  <text x="160" y="284" font-size="11" font-family="Consolas, monospace" fill="#1e40af">IP &bull; ICMP</text>
+
+  <!-- Link layer -->
+  <rect x="140" y="300" width="440" height="70" rx="8" fill="#60a5fa" stroke="#1e40af" stroke-width="2"/>
+  <text x="160" y="328" font-size="13" font-weight="bold" fill="#fff">1. Link Layer</text>
+  <text x="160" y="348" font-size="11" fill="#0f172a">Handles the physical connection: framing bits onto the cable or airwaves.</text>
+  <text x="160" y="364" font-size="11" font-family="Consolas, monospace" fill="#1e3a5f">Ethernet &bull; Wi-Fi</text>
+
+  <!-- Arrows on sides -->
+  <g>
+    <text x="80" y="95" font-size="11" font-weight="bold" fill="#374151">SEND</text>
+    <line x1="100" y1="100" x2="100" y2="340" stroke="#374151" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <polygon points="96,335 104,335 100,345" fill="#374151"/>
+  </g>
+  <g>
+    <text x="630" y="350" font-size="11" font-weight="bold" fill="#374151">RECV</text>
+    <line x1="620" y1="340" x2="620" y2="100" stroke="#374151" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <polygon points="616,105 624,105 620,95" fill="#374151"/>
+  </g>
+
+  <!-- Footer -->
+  <rect x="40" y="385" width="640" height="25" rx="4" fill="#f0f9ff" stroke="#2563eb"/>
+  <text x="360" y="402" text-anchor="middle" font-size="11" fill="#1e40af">Memory aid: "All Teachers Ignore Lunch" (Application, Transport, Internet, Link).</text>
+</svg>
+
+<h3>What Each Layer Does</h3>
+
+<h4>4. Application Layer (top)</h4>
+<p>The layer the user's program talks to. It defines rules for the high-level job &mdash; fetching a web page (HTTP/HTTPS), sending a file (FTP), sending an email (SMTP) or retrieving one (POP/IMAP). The application layer formats the user's data into a protocol message and hands it down to the transport layer.</p>
+
+<h4>3. Transport Layer</h4>
+<p>Breaks large messages into numbered <em>packets</em> and looks after <em>end-to-end reliability</em>. The main protocol is <strong>TCP</strong>, which acknowledges every packet, re-sends any that go missing, and re-orders packets that arrive out of sequence. (UDP is a simpler alternative used by streaming applications that prefer speed over reliability.)</p>
+
+<h4>2. Internet (Network) Layer</h4>
+<p>Handles <em>addressing and routing</em>. The <strong>Internet Protocol (IP)</strong> adds a source and destination IP address to each packet and sends it on its way. Routers on the internet look at the destination IP address and forward the packet towards the right network.</p>
+
+<h4>1. Link Layer (bottom)</h4>
+<p>The lowest layer &mdash; the actual bits on the wire or radio signal. Responsible for the physical connection between a device and the next hop on the network, and for MAC-level addressing within that local segment. <strong>Ethernet</strong> and <strong>Wi-Fi</strong> sit here.</p>
+
+<h3>Layers in Action &mdash; Loading a Web Page</h3>
+
+<ol>
+    <li><strong>Application:</strong> the browser prepares an HTTP GET request for the page.</li>
+    <li><strong>Transport:</strong> TCP breaks it into numbered packets and opens a reliable connection to the server.</li>
+    <li><strong>Internet:</strong> IP adds the client's and the server's IP addresses to each packet and dispatches them through the local router.</li>
+    <li><strong>Link:</strong> Ethernet/Wi-Fi puts the packets as bits onto the cable / airwaves to the router.</li>
+    <li>Each packet is routed across the internet and travels back up the identical layers on the server, which then sends the page back in the reverse direction.</li>
+</ol>
+
+<h3>Why Layering is Useful</h3>
+
+<p>Splitting the problem into layers has several real engineering advantages:</p>
+<ul>
+    <li><strong>Independent change.</strong> A new wireless standard can be added at the link layer without touching HTTP or TCP. A new application-layer protocol (say, a video-streaming protocol) can be built on top without rewriting IP.</li>
+    <li><strong>Manageable complexity.</strong> Each layer's designer has to think only about one job &mdash; addressing, reliability, application formatting, etc.</li>
+    <li><strong>Interoperability.</strong> Any two devices that implement the same layers can communicate, even if they were made by different manufacturers or run different operating systems.</li>
+    <li><strong>Easier troubleshooting.</strong> A fault can often be narrowed down to a specific layer (a cable fault is link-layer, a routing problem is internet-layer, and an HTTP 404 is application-layer).</li>
+</ul>
+
+<h3>Quick Protocol-to-Layer Reference</h3>
+
+<table>
+    <tr><th>Layer</th><th>Job</th><th>Protocols</th></tr>
+    <tr><td>Application</td><td>Format messages for the user's program</td><td>HTTP, HTTPS, FTP, SMTP, POP, IMAP</td></tr>
+    <tr><td>Transport</td><td>Reliable delivery, packet ordering, retransmission</td><td>TCP, UDP</td></tr>
+    <tr><td>Internet (Network)</td><td>Logical addressing and routing across networks</td><td>IP (IPv4, IPv6)</td></tr>
+    <tr><td>Link</td><td>Physical framing on the medium + MAC addressing on the local segment</td><td>Ethernet, Wi-Fi</td></tr>
+</table>
+
+<div class="exam-tip">If a question asks "At which layer does HTTPS operate?" the answer is the <em>Application</em> layer (it is an application-level protocol, encrypted or not). "At which layer does IP operate?" &rarr; the <em>Internet/Network</em> layer. "At which layer does Ethernet operate?" &rarr; the <em>Link</em> layer. The classic trap is confusing HTTP with TCP/IP &mdash; HTTP is always application layer.</div>
+
+<h2>3.5.6 IP Addressing and MAC Addressing</h2>
+
+<p>Every device on a network needs a way to be identified. There are two very different kinds of address at work: the <strong>IP address</strong> (logical, network-level, can change) and the <strong>MAC address</strong> (physical, hardware-level, fixed).</p>
+
+<h3>IP Address</h3>
+
+<div class="definition">
+    An <strong>IP address</strong> is a <em>logical</em> address assigned to a device on a network. It identifies the device's <em>network location</em> so packets can be routed to it. IP addresses can <em>change</em> &mdash; if you take a laptop from home to school it will get a different IP on the school network.
+</div>
+
+<p>IP addresses are assigned automatically by a server on the network (via <em>DHCP</em>) or set by the network administrator. The AQA specification expects you to know <strong>IPv4</strong>, which uses 32 bits written as four decimal numbers separated by dots (the <em>dotted-decimal</em> notation):</p>
+
+<pre>192.168.0.10
+172.16.5.1
+8.8.8.8</pre>
+
+<p>Each of the four numbers is an 8-bit byte, so can be 0 to 255. The total number of IPv4 addresses is 2<sup>32</sup> &asymp; 4.3 billion &mdash; not enough to give every device in the world a unique public address, which is why <strong>IPv6</strong> (128-bit, written as eight groups of four hex digits) is being rolled out.</p>
+
+<h3>MAC Address</h3>
+
+<div class="definition">
+    A <strong>MAC (Media Access Control) address</strong> is a <em>hardware</em> address burned into a device's network interface card (NIC) at the factory. It is unique to that piece of hardware and is used to identify the device on its <em>local</em> network segment. MAC addresses do <em>not</em> change.
+</div>
+
+<p>A MAC address is 48 bits long, written as six pairs of hexadecimal digits separated by colons or hyphens:</p>
+
+<pre>00:1A:2B:3C:4D:5E
+AA-BB-CC-11-22-33</pre>
+
+<p>The first half (three pairs) identifies the manufacturer of the NIC (the <em>OUI</em>, "organisationally unique identifier"), and the second half is a serial number within that manufacturer. Because manufacturers coordinate their allocations, every NIC shipped has a globally unique MAC.</p>
+
+<h3>IP vs MAC &mdash; Comparison</h3>
+
+<table>
+    <tr><th>Feature</th><th>IP address</th><th>MAC address</th></tr>
+    <tr><td>Type</td><td>Logical (software-assigned)</td><td>Physical (hardware-burned)</td></tr>
+    <tr><td>Assigned by</td><td>Network administrator / DHCP server</td><td>NIC manufacturer at the factory</td></tr>
+    <tr><td>Changes?</td><td>Yes &mdash; different on each network the device joins</td><td>No &mdash; fixed for the life of the NIC</td></tr>
+    <tr><td>Length (IPv4)</td><td>32 bits &mdash; four decimal bytes</td><td>48 bits &mdash; six hex pairs</td></tr>
+    <tr><td>Format</td><td><code>192.168.0.10</code></td><td><code>00:1A:2B:3C:4D:5E</code></td></tr>
+    <tr><td>Scope</td><td>Global &mdash; used to route across the whole internet</td><td>Local &mdash; used within one network segment</td></tr>
+    <tr><td>Layer in TCP/IP</td><td>Internet / Network layer</td><td>Link layer</td></tr>
+</table>
+
+<h4>How They Work Together</h4>
+<p>When your computer sends data to <code>bbc.co.uk</code>, the packet is addressed with the <em>destination's IP</em> so that routers across the internet know where to send it. But at each hop, the actual frame that travels down a specific cable is addressed with the <em>MAC</em> of the next device on that cable. IP gets the packet across the world; MAC gets it across the room.</p>
+
+<h3>Spotting IP vs MAC Addresses</h3>
+
+<p>In an exam you may be given a list of addresses and asked to classify each one. Rules:</p>
+<ul>
+    <li>Four decimal numbers separated by dots, each 0&ndash;255 &rarr; <strong>IPv4 address</strong> (e.g. <code>192.168.1.1</code>).</li>
+    <li>Six pairs of hex digits (0&ndash;9, A&ndash;F) separated by colons or hyphens &rarr; <strong>MAC address</strong> (e.g. <code>00:1A:2B:3C:4D:5E</code>).</li>
+    <li>Eight groups of four hex digits separated by colons &rarr; <strong>IPv6 address</strong> (e.g. <code>2001:0db8::1</code>).</li>
+</ul>
+
+<p>A quick way to remember: <em>dots = IP, colons with only hex = MAC</em>. If the "address" would have a byte larger than 255 (e.g. 999.1.2.3), it cannot be a valid IPv4 address.</p>
+
+<div class="exam-tip">A typical 2-mark question: "Describe one difference between an IP address and a MAC address." Safe answer: "An IP address is a logical address, assigned by the network and can change when the device joins a different network; a MAC address is a physical address burned into the NIC at manufacture and does not change." Always include <em>both</em> features &mdash; what each is, and the consequence (changes vs fixed).</div>
+
+<h2>3.5.7 Routers, Switches and Wireless Access Points</h2>
+
+<p>Three pieces of network hardware are named on the AQA specification. Each one operates at a different layer and does a different job.</p>
+
+<h3>Switch</h3>
+
+<p>A <strong>switch</strong> is the central device in a wired star LAN. It has many Ethernet ports (typically 8, 24 or 48). When a frame arrives on one port, the switch reads its <em>destination MAC address</em> and forwards the frame <em>only</em> out of the port that leads to that device. This is more efficient than a hub (which would flood every port) and keeps traffic private.</p>
+
+<p>Switches work at the <strong>link layer</strong>. They do not understand IP addresses or the internet &mdash; they only move frames between devices on the same LAN.</p>
+
+<h3>Router</h3>
+
+<p>A <strong>router</strong> joins <em>different networks</em> together. A home router, for example, joins the home LAN to the internet (a WAN). A router reads the <em>destination IP address</em> on each packet and looks up in its <em>routing table</em> which neighbouring router to forward the packet to, step by step, until the packet reaches its destination network.</p>
+
+<p>Routers work at the <strong>internet/network layer</strong>. A typical home "router" is actually a combined device that includes a router, a small Ethernet switch, a wireless access point and often a modem &mdash; all in one box.</p>
+
+<h3>Wireless Access Point (WAP)</h3>
+
+<p>A <strong>wireless access point</strong> lets wireless devices (phones, laptops, tablets) join the wired network. It turns the radio signal from a Wi-Fi device into an Ethernet frame on the wire, and vice versa. Large buildings have many WAPs scattered around to give full coverage; the WAPs are all wired back to the main switches.</p>
+
+<h3>Hardware Comparison</h3>
+
+<table>
+    <tr><th>Device</th><th>Layer</th><th>Reads which address?</th><th>Joins&hellip;</th></tr>
+    <tr><td>Switch</td><td>Link</td><td>MAC address</td><td>Devices on the same LAN</td></tr>
+    <tr><td>Router</td><td>Internet</td><td>IP address</td><td>Different networks (e.g. LAN &harr; internet)</td></tr>
+    <tr><td>Wireless access point</td><td>Link</td><td>MAC address (and radio addressing)</td><td>Wireless devices to the wired network</td></tr>
+</table>
+
+<h3>Other Networking Hardware You May Meet</h3>
+
+<p>Not on the AQA spec as named items, but commonly encountered:</p>
+<ul>
+    <li><strong>Network Interface Card (NIC).</strong> The hardware in a computer that physically connects to the network &mdash; either an Ethernet socket or a Wi-Fi adapter. Each NIC has its own MAC address.</li>
+    <li><strong>Modem.</strong> Converts the digital signal from a router into a form suited to the wire used by the ISP (telephone line, coaxial cable or fibre) and vice versa. Most home "routers" include a modem.</li>
+    <li><strong>Hub</strong> (legacy). A hub is like a switch but dumber: it simply copies any incoming signal out of every port, leading to lots of wasted bandwidth and collisions. Switches replaced hubs in modern networks.</li>
+</ul>
+
+<div class="exam-tip">"Explain the difference between a switch and a router" is a frequent 4-marker. Safe answer: a switch forwards frames within one LAN using MAC addresses, whereas a router forwards packets between different networks (e.g. LAN to internet) using IP addresses. Mention the address type and the scope (one network vs between networks).</div>
+
+<h2>3.5.8 The Internet and DNS</h2>
+
+<h3>What is the Internet?</h3>
+
+<div class="definition">
+    The <strong>internet</strong> is a global, interconnected Wide Area Network &mdash; a network of networks. Millions of LANs, WANs, data centres and home networks are joined together by a backbone of long-distance fibre links and routers, all running the same <strong>TCP/IP</strong> protocol suite so that any two devices can exchange packets.
+</div>
+
+<p>The internet is <em>not</em> the same as the <strong>World Wide Web</strong>. The web (made of web pages accessed with HTTP/HTTPS) is just one service that runs <em>on top of</em> the internet. Email, video-calling, online gaming, file sharing, DNS, streaming and software updates are other services that all run on top of the same underlying internet.</p>
+
+<table>
+    <tr><th>Service</th><th>Runs on</th><th>Typical protocol(s)</th></tr>
+    <tr><td>World Wide Web</td><td>Internet</td><td>HTTP, HTTPS</td></tr>
+    <tr><td>Email</td><td>Internet</td><td>SMTP (send), POP/IMAP (receive)</td></tr>
+    <tr><td>File transfer</td><td>Internet</td><td>FTP</td></tr>
+    <tr><td>Name lookups</td><td>Internet</td><td>DNS</td></tr>
+    <tr><td>Video streaming / calls</td><td>Internet</td><td>HTTPS, specialised streaming protocols</td></tr>
+</table>
+
+<h3>Domain Name System (DNS)</h3>
+
+<div class="definition">
+    <strong>DNS</strong> (the <em>Domain Name System</em>) is the internet's "phone book". It translates human-friendly <em>domain names</em> (like <code>bbc.co.uk</code>) into the <em>IP addresses</em> (like <code>151.101.0.81</code>) that routers actually need in order to deliver packets.
+</div>
+
+<p>Without DNS you would have to remember a numerical IP address for every website you visit, and every time a site moved server you would have to learn a new number. DNS gives the internet a layer of <em>abstraction</em> between names and the underlying network addresses.</p>
+
+<!-- DNS lookup diagram -->
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">How a DNS Lookup Works</text>
+  <text x="360" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Typing bbc.co.uk into a browser triggers these steps.</text>
+
+  <!-- Boxes -->
+  <rect x="40" y="170" width="120" height="60" rx="8" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+  <text x="100" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Client</text>
+  <text x="100" y="213" text-anchor="middle" font-size="10" fill="#1e3a5f">(browser)</text>
+
+  <rect x="210" y="170" width="140" height="60" rx="8" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+  <text x="280" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">DNS Resolver</text>
+  <text x="280" y="213" text-anchor="middle" font-size="10" fill="#1e3a5f">(at ISP)</text>
+
+  <rect x="400" y="170" width="160" height="60" rx="8" fill="#93c5fd" stroke="#1e40af" stroke-width="2"/>
+  <text x="480" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Authoritative</text>
+  <text x="480" y="213" text-anchor="middle" font-size="10" fill="#1e3a5f">DNS Server</text>
+
+  <rect x="600" y="170" width="100" height="60" rx="8" fill="#60a5fa" stroke="#1e40af" stroke-width="2"/>
+  <text x="650" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Web Server</text>
+  <text x="650" y="213" text-anchor="middle" font-size="10" fill="#0f172a">(bbc.co.uk)</text>
+
+  <!-- Step 1: client -> resolver -->
+  <line x1="160" y1="185" x2="210" y2="185" stroke="#2563eb" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="185" y="175" text-anchor="middle" font-size="9" fill="#1e3a5f">1. Lookup?</text>
+
+  <!-- Step 2: resolver -> authoritative -->
+  <line x1="350" y1="185" x2="400" y2="185" stroke="#2563eb" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="375" y="175" text-anchor="middle" font-size="9" fill="#1e3a5f">2. Lookup?</text>
+
+  <!-- Step 3: authoritative -> resolver -->
+  <line x1="400" y1="215" x2="350" y2="215" stroke="#16a34a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="375" y="238" text-anchor="middle" font-size="9" fill="#166534">3. 151.101.0.81</text>
+
+  <!-- Step 4: resolver -> client -->
+  <line x1="210" y1="215" x2="160" y2="215" stroke="#16a34a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="185" y="238" text-anchor="middle" font-size="9" fill="#166534">4. 151.101.0.81</text>
+
+  <!-- Step 5: client -> web server (curved below) -->
+  <path d="M 100 230 Q 100 330 650 330 Q 650 260 650 230" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrR)"/>
+  <text x="375" y="350" text-anchor="middle" font-size="10" fill="#991b1b" font-weight="bold">5. HTTP GET / &mdash; client connects directly to the IP returned by DNS</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0,0 8,4 0,8" fill="#2563eb"/>
+    </marker>
+    <marker id="arrR" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0,0 8,4 0,8" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <!-- Legend box -->
+  <rect x="40" y="65" width="640" height="90" rx="6" fill="#f0f9ff" stroke="#2563eb"/>
+  <text x="55" y="85" font-size="11" font-weight="bold" fill="#1e40af">Step-by-step:</text>
+  <text x="55" y="103" font-size="11" fill="#374151">1. Browser asks the <tspan font-weight="bold">DNS resolver</tspan> for the IP of <tspan font-family="Consolas, monospace">bbc.co.uk</tspan>.</text>
+  <text x="55" y="119" font-size="11" fill="#374151">2. Resolver asks the <tspan font-weight="bold">authoritative DNS server</tspan> that owns the domain (via root/TLD servers).</text>
+  <text x="55" y="135" font-size="11" fill="#374151">3 &amp; 4. The IP address is returned up the chain back to the browser.</text>
+  <text x="55" y="150" font-size="11" fill="#374151">5. Browser opens an HTTP/HTTPS connection to that IP and fetches the web page.</text>
+</svg>
+
+<h3>Behind the Scenes &mdash; Routing Across the Internet</h3>
+
+<p>Once your browser has the destination IP, the packets travel through a series of routers on their way to the server. Each router:</p>
+<ol>
+    <li>Receives the packet on one of its interfaces.</li>
+    <li>Looks at the destination IP address.</li>
+    <li>Consults its routing table to decide which neighbouring router is the best next hop.</li>
+    <li>Forwards the packet out of the matching interface.</li>
+</ol>
+<p>A typical packet from a home in the UK to a server in the USA might pass through 10&ndash;20 routers. You can see them using the <code>tracert</code> command (Windows) or <code>traceroute</code> (macOS/Linux).</p>
+
+<h3>Web Hosting and Web Servers</h3>
+
+<div class="definition">
+    <strong>Web hosting</strong> is the service of making a website available on the internet. A <strong>web server</strong> is a computer (with web-server software such as Apache or nginx) that stores the site's files and responds to HTTP/HTTPS requests from browsers.
+</div>
+
+<p>Most people and small businesses rent space from a <strong>hosting company</strong> rather than buy and maintain their own server. The hosting company runs server computers in a data centre and sells a slice of that computer (or a whole computer) to the website owner. This means:</p>
+
+<ul>
+    <li>The website is online 24/7 without the owner having to run a computer at home.</li>
+    <li>The hosting company looks after the hardware, internet connection, power and cooling.</li>
+    <li>The owner typically pays a monthly fee and uses a control panel or FTP to upload the site's files.</li>
+</ul>
+
+<p>A DNS record at the domain registrar points the domain name (e.g. <code>mysite.com</code>) to the hosting server's IP address, so visitors worldwide reach the site when they type the name.</p>
+
+<h3>The URL &mdash; Anatomy</h3>
+
+<p>A URL (Uniform Resource Locator) is the full address of a resource on the web. For example:</p>
+
+<pre>https://www.example.co.uk:443/path/page.html</pre>
+
+<ul>
+    <li><code>https</code> &mdash; the <em>scheme/protocol</em> used to fetch the resource.</li>
+    <li><code>www.example.co.uk</code> &mdash; the <em>domain name</em>, which DNS translates into an IP address.</li>
+    <li><code>443</code> &mdash; the <em>port number</em> on the server (443 is the default for HTTPS, so is usually omitted).</li>
+    <li><code>/path/page.html</code> &mdash; the <em>path</em> telling the server which file or resource to return.</li>
+</ul>
+
+<p>When you type a URL, DNS handles only the domain part. The rest is used by HTTP/HTTPS once your browser has opened the connection.</p>
+
+<h2>3.5.9 Cloud Storage</h2>
+
+<div class="definition">
+    <strong>Cloud storage</strong> is storing files on remote servers (in a data centre operated by a third party) that are accessed over the internet, rather than on a local hard disk. Examples include Google Drive, iCloud, OneDrive and Dropbox.
+</div>
+
+<p>To the user, cloud storage looks like a folder on their computer &mdash; but the files actually live on servers elsewhere. A local <em>sync</em> client keeps copies on the device and on the cloud server in step, so that edits made on one device appear on the others once they are online.</p>
+
+<h3>Advantages of Cloud Storage</h3>
+
+<ul>
+    <li><strong>Access anywhere.</strong> Files can be reached from any device with an internet connection &mdash; home PC, phone, friend's laptop.</li>
+    <li><strong>Automatic backup.</strong> Because a copy is on the cloud server, losing or breaking the local device does not lose the files.</li>
+    <li><strong>Easy sharing and collaboration.</strong> A link can be sent so other users can view or co-edit the document in real time.</li>
+    <li><strong>Scalable capacity.</strong> Extra space can be bought as needed without having to buy a bigger disk.</li>
+    <li><strong>Maintenance handled by the provider.</strong> The user does not need to worry about server hardware, power or cooling.</li>
+</ul>
+
+<h3>Disadvantages of Cloud Storage</h3>
+
+<ul>
+    <li><strong>Requires an internet connection.</strong> Without one, files that are not cached locally may be unavailable.</li>
+    <li><strong>Ongoing cost.</strong> Paying monthly or yearly can become expensive over time, compared with a one-off purchase of a local disk.</li>
+    <li><strong>Security and privacy concerns.</strong> Sensitive data sits on someone else's computer; a breach of the provider could expose it, and the provider must be trusted.</li>
+    <li><strong>Dependence on the provider.</strong> If the company goes bankrupt, changes terms or suffers an outage, the user may lose access to their data.</li>
+    <li><strong>Upload/download speed.</strong> Moving very large files to or from the cloud can be slow, limited by the user's internet speed.</li>
+</ul>
+
+<h3>How Cloud Storage Works Under the Hood</h3>
+
+<p>When you drag a file into a cloud folder on your desktop:</p>
+<ol>
+    <li>A sync client on your device notices the new file.</li>
+    <li>It splits the file into blocks and uploads them (typically over HTTPS) to the provider's servers.</li>
+    <li>The provider stores the blocks, often duplicated across several physical disks and several geographical data centres for redundancy.</li>
+    <li>When another one of your devices syncs, the provider sends the new blocks down so the file appears there too.</li>
+</ol>
+<p>The user experience feels like "files in a folder" but behind the scenes many servers, many hard disks and a lot of software are involved.</p>
+
+<h3>Cloud vs Local Storage &mdash; Comparison</h3>
+
+<table>
+    <tr><th>Factor</th><th>Cloud storage</th><th>Local storage (e.g. SSD/HDD)</th></tr>
+    <tr><td>Access from different devices</td><td>Easy &mdash; just sign in from any device</td><td>Only from the device holding the disk</td></tr>
+    <tr><td>Backup</td><td>Automatic on the provider's servers</td><td>User must set up their own backups</td></tr>
+    <tr><td>Needs internet?</td><td>Yes, for non-cached files</td><td>No</td></tr>
+    <tr><td>Cost model</td><td>Recurring subscription</td><td>One-off purchase of a disk</td></tr>
+    <tr><td>Security / privacy</td><td>Relies on the provider &mdash; data breaches possible</td><td>User fully controls the disk</td></tr>
+    <tr><td>Speed of access</td><td>Limited by internet speed</td><td>Full speed of the local disk</td></tr>
+    <tr><td>Collaboration</td><td>Built-in sharing and co-editing</td><td>Requires manual file transfer</td></tr>
+</table>
+
+<div class="exam-tip">Evaluate questions often ask "Discuss the advantages and disadvantages of cloud storage for a small business." Good answers <em>balance</em> pros (access anywhere, automatic backup, scalable) with cons (ongoing cost, internet dependence, security of sensitive customer data) and end with a conclusion linked to the scenario (e.g. "cloud is a good fit if staff work from multiple sites, provided encryption is used").</div>
+
+<h2>3.5.10 Network Security Overview</h2>
+
+<p>Topic 3.6 covers cyber security in detail. This section introduces the single most important networking idea: data travelling across networks is visible to the hardware along the way, so it must be <em>encrypted</em> to stay private.</p>
+
+<h3>Why Encryption is Needed</h3>
+
+<p>When you send a packet from your laptop to a bank, it travels through your home router, your ISP's routers, several internet backbone routers and finally the bank's own routers. Any of that equipment &mdash; and anyone with physical access to a cable along the way &mdash; can, in principle, read the contents of every packet that passes through. If the data is in <strong>plaintext</strong> (unencrypted), login details, messages and files are all readable.</p>
+
+<h3>Encryption in Transit</h3>
+
+<div class="definition">
+    <strong>Encryption</strong> scrambles the plaintext into <em>ciphertext</em> using a <em>key</em>. Only someone with the matching key can decrypt the ciphertext back to the original data. Encryption used to protect data moving across a network is called <em>encryption in transit</em>.
+</div>
+
+<p>In <strong>symmetric encryption</strong>, the sender and the receiver share the <em>same</em> secret key: the sender uses it to encrypt, and the receiver uses it to decrypt. Symmetric algorithms (such as AES) are fast and are used to scramble the bulk of the data once the two ends have agreed on a key.</p>
+
+<p>Everyday examples of encryption in transit:</p>
+<ul>
+    <li><strong>HTTPS</strong> &mdash; web traffic is encrypted inside a TLS tunnel between your browser and the web server.</li>
+    <li><strong>WPA2 / WPA3</strong> &mdash; the Wi-Fi traffic between your device and the wireless access point is encrypted, so a neighbour cannot read your traffic out of the air.</li>
+    <li><strong>VPNs</strong> &mdash; all your network traffic is wrapped inside an encrypted tunnel to a VPN server, hiding it from your ISP and any network between you and the VPN.</li>
+</ul>
+
+<h3>Recognising HTTPS in a Browser</h3>
+
+<p>You can tell HTTPS is in use because:</p>
+<ul>
+    <li>The URL starts with <code>https://</code> rather than <code>http://</code>.</li>
+    <li>A padlock icon appears in the browser's address bar.</li>
+    <li>The browser may block or warn against sending a login form to a plain-HTTP site.</li>
+</ul>
+
+<p>Behind the padlock is a <strong>digital certificate</strong> that proves to the browser that the server really is who it claims to be; TLS then uses the certificate to agree a shared symmetric key for the session. This is why banks, shopping sites, email providers and social networks all use HTTPS by default.</p>
+
+<div class="exam-tip">A good 3-mark answer to "Explain why encryption is used to protect data sent across a network": (1) data travels through equipment owned by many different parties; (2) anyone with access to that equipment or the cable could read it; (3) encryption scrambles the data with a key so only the intended recipient (who has the matching key) can read it.</div>
+
+<h2>3.5 &mdash; Summary Big Picture</h2>
+
+<p>Networking is the glue that joins every computer you have ever used. The core ideas in 3.5 fit together like this:</p>
+
+<ul>
+    <li><strong>Networks</strong> come in sizes: LAN (one site), WAN (many sites, including the internet).</li>
+    <li><strong>Topology</strong> describes their shape: star (common today), bus (legacy), mesh (robust but expensive).</li>
+    <li><strong>Media</strong> are either wired (Ethernet copper, fibre) or wireless (Wi-Fi, Bluetooth).</li>
+    <li><strong>Protocols</strong> are rules: HTTP(S) for web, SMTP/POP/IMAP for email, FTP for files, TCP/IP for reliability and addressing, Ethernet/Wi-Fi at the link layer.</li>
+    <li><strong>The 4-layer TCP/IP model</strong> organises protocols into Application, Transport, Internet and Link layers.</li>
+    <li><strong>IP addresses</strong> identify devices logically (and change), while <strong>MAC addresses</strong> identify them physically (and don't).</li>
+    <li><strong>Hardware</strong>: switches move frames within a LAN (MAC, link layer); routers move packets between networks (IP, internet layer); wireless access points bridge wireless devices to the wired network.</li>
+    <li><strong>The internet</strong> uses <strong>DNS</strong> to turn names into IP addresses so that browsers can find servers.</li>
+    <li><strong>Cloud storage</strong> trades convenience and automatic backup for recurring cost and internet dependence.</li>
+    <li><strong>Encryption</strong> (often symmetric AES inside TLS or WPA2/WPA3) protects data moving across networks that are not under the user's control.</li>
+</ul>
+
+<p>If you can explain each of these bullet points in two sentences, you can answer almost anything 3.5 can throw at you.</p>
+
+<h3>A Worked Example &mdash; What Actually Happens When You Type bbc.co.uk</h3>
+
+<p>Tie everything together with a single request. When you enter <code>bbc.co.uk</code> in your browser:</p>
+
+<ol>
+    <li>Your browser needs an IP address for the domain. It sends a <strong>DNS</strong> query to your configured DNS resolver (usually at your ISP).</li>
+    <li>The resolver (via root and TLD servers if needed) reaches an <strong>authoritative</strong> DNS server that owns <code>bbc.co.uk</code> and gets back the site's current IP address, say <code>151.101.0.81</code>.</li>
+    <li>Your browser opens a <strong>TCP</strong> connection to that IP on port 443 (HTTPS). TCP guarantees the packets arrive in order.</li>
+    <li>TLS is negotiated: the server presents a certificate, and the two sides agree on a shared <strong>symmetric key</strong> for the session.</li>
+    <li>Inside this encrypted channel, the browser sends an <strong>HTTP</strong> GET request for the page.</li>
+    <li>Each outgoing request is wrapped in TCP, addressed with IP, framed by <strong>Ethernet/Wi-Fi</strong> and sent to your home <strong>router</strong>.</li>
+    <li>The router forwards it to your ISP, which routes it through a chain of internet routers towards the server's network, each reading the destination IP.</li>
+    <li>At the destination data centre, the final router delivers the packets to the correct <strong>web server</strong>, which passes them up through Link &rarr; Internet &rarr; Transport &rarr; Application.</li>
+    <li>The web server returns the requested HTML, which travels back down the same stack, across the internet and back up to your browser.</li>
+    <li>Your browser decrypts it, parses the HTML and displays the page &mdash; probably issuing follow-up requests for images, CSS and JavaScript.</li>
+</ol>
+
+<p>That entire sequence happens in well under a second. Every single topic in 3.5 plays a role in it &mdash; protocols, layers, addressing, DNS, routers, switches, encryption &mdash; which is why 3.5 is so heavily examined.</p>
+
+</div>
+</body>
+</html>
