@@ -158,7 +158,29 @@
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 18px; padding: 22px;
       box-shadow: 0 12px 48px rgba(91,173,207,0.14);
+      position: relative; overflow: hidden;
+      animation: cardBreathe 5s ease-in-out infinite;
     }
+    @keyframes cardBreathe {
+      0%,100% { box-shadow: 0 12px 48px rgba(91,173,207,0.14); }
+      50%     { box-shadow: 0 18px 64px rgba(91,173,207,0.28); }
+    }
+    /* Aurora shimmer sweep across the card */
+    .preview-card::before {
+      content: ''; position: absolute; inset: -1px; border-radius: 18px;
+      background: linear-gradient(115deg,
+        transparent 0%, transparent 42%,
+        rgba(91,173,207,0.10) 50%,
+        transparent 58%, transparent 100%);
+      background-size: 250% 100%;
+      animation: cardShimmer 7s linear infinite;
+      pointer-events: none; z-index: 0;
+    }
+    @keyframes cardShimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .preview-header, .subj-row { position: relative; z-index: 1; }
     .preview-header {
       display: flex; align-items: center; justify-content: space-between;
       margin-bottom: 16px;
@@ -167,6 +189,11 @@
     .preview-badge {
       font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 20px;
       background: var(--green-bg); border: 1px solid var(--green-border); color: var(--green-text);
+      animation: badgePulse 3.2s ease-in-out infinite;
+    }
+    @keyframes badgePulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(22,163,74,0); }
+      50%     { box-shadow: 0 0 0 5px rgba(22,163,74,0.14); }
     }
     .subj-row {
       display: flex; align-items: center; gap: 10px;
@@ -207,16 +234,20 @@
       background: var(--surface2); border: 1px solid var(--border);
       padding: 2px 7px; border-radius: 5px;
     }
-    /* Live pulse ring on tracked row */
-    .subj-row.live { position: relative; }
-    .subj-row.live .subj-dot { position: relative; }
-    .subj-row.live .subj-dot::before {
+    /* Live pulse ring on every row, staggered so activity ripples through */
+    .subj-row .subj-dot { position: relative; }
+    .subj-row .subj-dot::before {
       content: ''; position: absolute; inset: -4px; border-radius: 50%;
-      border: 2px solid currentColor; opacity: 0; animation: ring 2.4s ease-out infinite;
+      border: 2px solid currentColor; opacity: 0; animation: ring 2.6s ease-out infinite;
     }
-    .subj-row.live.r .subj-dot::before { color: var(--red); }
-    .subj-row.live.a .subj-dot::before { color: var(--amber); }
-    .subj-row.live.g .subj-dot::before { color: var(--green); }
+    .subj-row.r .subj-dot::before { color: var(--red); }
+    .subj-row.a .subj-dot::before { color: var(--amber); }
+    .subj-row.g .subj-dot::before { color: var(--green); }
+    .subj-row:nth-child(2) .subj-dot::before { animation-delay: 0.4s; }
+    .subj-row:nth-child(3) .subj-dot::before { animation-delay: 0.8s; }
+    .subj-row:nth-child(4) .subj-dot::before { animation-delay: 1.2s; }
+    .subj-row:nth-child(5) .subj-dot::before { animation-delay: 1.6s; }
+    .subj-row:nth-child(6) .subj-dot::before { animation-delay: 2.0s; }
     @keyframes ring {
       0%   { transform: scale(0.6); opacity: 0.9; }
       100% { transform: scale(2.4); opacity: 0; }
@@ -246,6 +277,32 @@
       0%, 28%   { color: var(--red-text); }
       38%, 62%  { color: var(--amber-text); }
       72%, 100% { color: var(--green-text); }
+    }
+    /* Secondary morph — amber ↔ green, offset phase so two rows shift out of sync */
+    .subj-row.subj-morph2 {
+      animation-name: subjSlideIn, morph2;
+      animation-duration: 0.55s, 11s;
+      animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1), ease-in-out;
+      animation-delay: 0.55s, 2.8s;
+      animation-fill-mode: forwards, none;
+      animation-iteration-count: 1, infinite;
+    }
+    .subj-morph2 .subj-dot { animation: morph2Dot 11s ease-in-out 2.8s infinite; }
+    .subj-morph2 .subj-name { animation: morph2Name 11s ease-in-out 2.8s infinite; }
+    @keyframes morph2 {
+      0%, 40%   { background: var(--amber-bg); border-color: var(--amber-border); }
+      55%, 95%  { background: var(--green-bg); border-color: var(--green-border); }
+      100%      { background: var(--amber-bg); border-color: var(--amber-border); }
+    }
+    @keyframes morph2Dot {
+      0%, 40%   { background: var(--amber); }
+      55%, 95%  { background: var(--green); }
+      100%      { background: var(--amber); }
+    }
+    @keyframes morph2Name {
+      0%, 40%   { color: var(--amber-text); }
+      55%, 95%  { color: var(--green-text); }
+      100%      { color: var(--amber-text); }
     }
 
     /* Stats / Subjects / Features / FAQ shared */
@@ -424,14 +481,16 @@
       0%,100% { opacity: 1; } 50% { opacity: 0.35; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .subj-row, .subj-row.subj-morph {
+      .subj-row, .subj-row.subj-morph, .subj-row.subj-morph2 {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
       }
       .subj-row:hover { transform: none; box-shadow: none; }
-      .subj-morph .subj-dot, .subj-morph .subj-name { animation: none !important; }
-      .subj-row.live .subj-dot::before { animation: none !important; }
+      .subj-morph .subj-dot, .subj-morph .subj-name,
+      .subj-morph2 .subj-dot, .subj-morph2 .subj-name { animation: none !important; }
+      .subj-row .subj-dot::before { animation: none !important; }
+      .preview-card, .preview-card::before, .preview-badge { animation: none !important; }
     }
 
     @media (max-width: 900px) {
@@ -499,10 +558,10 @@
           <div class="preview-title">Your subjects</div>
           <div class="preview-badge">A Level</div>
         </div>
-        <div class="subj-row g live"><div class="subj-dot"></div><div class="subj-name">Biology</div><div class="subj-board">AQA</div></div>
+        <div class="subj-row g"><div class="subj-dot"></div><div class="subj-name">Biology</div><div class="subj-board">AQA</div></div>
         <div class="subj-row a"><div class="subj-dot"></div><div class="subj-name">Chemistry</div><div class="subj-board">Edexcel</div></div>
         <div class="subj-row r subj-morph"><div class="subj-dot"></div><div class="subj-name">Maths</div><div class="subj-board">OCR</div></div>
-        <div class="subj-row a"><div class="subj-dot"></div><div class="subj-name">Physics</div><div class="subj-board">AQA</div></div>
+        <div class="subj-row a subj-morph2"><div class="subj-dot"></div><div class="subj-name">Physics</div><div class="subj-board">AQA</div></div>
         <div class="subj-row g"><div class="subj-dot"></div><div class="subj-name">Computer Science</div><div class="subj-board">OCR</div></div>
       </div>
     </div>
