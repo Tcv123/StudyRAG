@@ -1122,9 +1122,6 @@ const ALL_MEDALS = [
   { id: 'clean_sweep',       icon: '🧹', name: 'Clean Sweep',       desc: 'Clear all reds in a subject' },
 
   // ── Multi-Subject ──
-  { id: 'three_subjects',    icon: '3️⃣', name: 'Triple Threat',     desc: 'Add 3 subjects' },
-  { id: 'four_subjects',     icon: '4️⃣', name: 'Quad Scholar',      desc: 'Add 4 subjects' },
-  { id: 'five_subjects',     icon: '5️⃣', name: 'Overachiever',      desc: 'Add 5 or more subjects' },
   { id: 'cross_subject_green', icon: '🌈', name: 'Renaissance',     desc: 'Get a green topic in 3 different subjects' },
   { id: 'all_subjects_tested', icon: '🗺️', name: 'Well Rounded',   desc: 'Test at least one topic in every subject' },
 
@@ -1581,9 +1578,6 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   if (totalTested >= 4 && redTopics <= Math.floor(totalTested / 4)) award('red_halved');
 
   // ── Multi-Subject ──
-  if (subjects.length >= 3) award('three_subjects');
-  if (subjects.length >= 4) award('four_subjects');
-  if (subjects.length >= 5) award('five_subjects');
 
   // cross_subject_green — green topics in 3+ different subjects
   const greenSubjects = new Set(topicRows.filter(t => t.rag_status === 'green').map(t => t.subject));
