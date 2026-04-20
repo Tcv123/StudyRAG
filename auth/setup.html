@@ -460,6 +460,7 @@ let selectedSubjects = [];   // [{ name, emoji }]
 let subjectBoards    = {};   // { name: board }
 let subjectCurrentGrade = {};  // { name: grade }
 let subjectTargetGrade  = {};  // { name: grade }
+let showGradeValidation = false;
 
 // ── Step navigation ──────────────────────────────────────────────────────
 function selectLevel(val, el) {
@@ -559,7 +560,7 @@ function updateSaveBtn() {
   btn.disabled = !allSet;
   btn.title = allSet ? '' : 'Set current and target grade for each subject to continue';
   if (msg) {
-    if (!allSet && selectedSubjects.length) {
+    if (showGradeValidation && !allSet && selectedSubjects.length) {
       msg.className = 'msg error';
       msg.innerText = `Set grades for: ${missing.map(s => s.name).join(', ')}`;
     } else {
@@ -582,6 +583,7 @@ function goToStep3() {
   document.getElementById('ps2').classList.add('done');
   document.getElementById('pl2').classList.add('done');
   document.getElementById('ps3').classList.add('active');
+  showGradeValidation = false;
   renderGrades();
   updateSaveBtn();
 }
@@ -657,8 +659,9 @@ function renderGrades() {
       const curIdx = gradeIndex(cur);
       const validTargets = cur != null ? GRADES.filter((g, i) => i <= curIdx) : GRADES;
       const incomplete = cur == null || tgt == null;
+      const flagRed = incomplete && showGradeValidation;
       return `
-      <div class="selected-row" style="${incomplete ? 'border:1.5px solid var(--red-border);background:var(--red-bg);' : ''}">
+      <div class="selected-row" style="${flagRed ? 'border:1.5px solid var(--red-border);background:var(--red-bg);' : ''}">
         <div class="selected-row-top" style="margin-bottom:14px;">
           <span class="selected-emoji">${s.emoji}</span>
           <span class="selected-name">${s.name}</span>
@@ -706,6 +709,8 @@ async function save() {
     subjectCurrentGrade[s.name] == null || subjectTargetGrade[s.name] == null
   );
   if (missing.length) {
+    showGradeValidation = true;
+    renderGrades();
     msg.className = 'msg error';
     msg.innerText = missing.length === selectedSubjects.length
       ? 'Please set a current and target grade for each subject.'
