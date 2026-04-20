@@ -55,40 +55,50 @@
 
     if (typeof supabaseClient === 'undefined') return;
 
-    const { data: { user } } = await supabaseClient.auth.getUser();
-    if (!user) return;
+    try {
+      const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
+      if (authErr || !user) return;
 
-    const { data: profile } = await supabaseClient
-      .from('profiles')
-      .select('streak_count, last_study_date')
-      .eq('id', user.id)
-      .single();
+      const { data: profile, error: profileErr } = await supabaseClient
+        .from('profiles')
+        .select('streak_count, last_study_date')
+        .eq('id', user.id)
+        .single();
+      if (profileErr) { console.error('streak: profile read failed', profileErr); return; }
 
-    const last  = profile?.last_study_date;
-    const count = profile?.streak_count || 0;
+      const last  = profile?.last_study_date;
+      const count = profile?.streak_count || 0;
 
-    let newStreak;
-    if      (last === today)     newStreak = count;         // already counted
-    else if (last === yesterday) newStreak = count + 1;     // continuing
-    else                         newStreak = 1;             // reset
+      let newStreak;
+      if      (last === today)     newStreak = count;         // already counted
+      else if (last === yesterday) newStreak = count + 1;     // continuing
+      else                         newStreak = 1;             // reset
 
-    await supabaseClient.from('profiles').update({
-      streak_count:    newStreak,
-      last_study_date: today
-    }).eq('id', user.id);
+      const { error: updateErr } = await supabaseClient.from('profiles').update({
+        streak_count:    newStreak,
+        last_study_date: today
+      }).eq('id', user.id);
+      if (updateErr) { console.error('streak: profile update failed', updateErr); return; }
 
-    // Award On Fire medal at 7 days
-    if (newStreak >= 7) {
-      await supabaseClient.from('user_medals')
-        .upsert({ user_id: user.id, medal_id: 'on_fire' }, { onConflict: 'user_id,medal_id' });
+      // Award On Fire medal at 7 days
+      if (newStreak >= 7) {
+        const { error: medalErr } = await supabaseClient.from('user_medals')
+          .upsert({ user_id: user.id, medal_id: 'on_fire' }, { onConflict: 'user_id,medal_id' });
+        if (medalErr) console.error('streak: medal upsert failed', medalErr);
+      }
+
+      // Update dashboard streak display if on that page
+      if (typeof renderStreak === 'function') {
+        renderStreak(newStreak, today);
+      }
+
+      showToast(`🔥 30 min studied! Streak: ${newStreak} day${newStreak !== 1 ? 's' : ''}`);
+    } catch (err) {
+      console.error('streak: unexpected error', err);
+      // Allow retry on next tick — roll back the guard
+      streakMarked = false;
+      localStorage.setItem('streak_marked', 'false');
     }
-
-    // Update dashboard streak display if on that page
-    if (typeof renderStreak === 'function') {
-      renderStreak(newStreak, today);
-    }
-
-    showToast(`🔥 30 min studied! Streak: ${newStreak} day${newStreak !== 1 ? 's' : ''}`);
   }
 
   // ── Progress bar (subtle, bottom of screen) ───────────────────────────────

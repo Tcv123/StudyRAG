@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 3.8 &mdash; Ethical, Legal and Environmental Impacts of Digital Technology</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        h4 { font-size: 1.02rem; color: #1e3a5f; margin-top: 22px; margin-bottom: 8px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .case-study { background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .case-study::before { content: "Case Study: "; font-weight: 700; color: #6d28d9; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .case-study { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>3.8 Ethical, Legal and Environmental Impacts of Digital Technology on Wider Society</h1>
+<p class="spec-ref">AQA GCSE Computer Science (8525) &mdash; Paper 2</p>
+
+<p>Every topic you have studied so far has explained <em>how</em> digital technology works &mdash; algorithms, programming, data representation, hardware, networks, security and databases. Topic 3.8 asks a bigger question: <strong>what happens when this technology meets society?</strong> Technology does not exist in a vacuum. Every new system creates winners and losers, raises questions about privacy, consumes resources, and forces lawmakers to decide what is and is not acceptable. This topic is about those <em>impacts</em> &mdash; ethical, legal, environmental, privacy, and cultural &mdash; and about how you can weigh them against each other to evaluate a technology.</p>
+
+<p>The AQA specification groups the issues into five overlapping areas, all of which can come up in exam scenarios:</p>
+
+<ul>
+    <li><strong>Ethical</strong> &mdash; what is the <em>right</em> thing to do? (AI, automation, digital divide, surveillance, social-media harms, censorship, cyber-bullying)</li>
+    <li><strong>Legal</strong> &mdash; what does <em>UK law</em> require? (Data Protection Act 2018, Computer Misuse Act 1990, Copyright, Designs and Patents Act 1988, Freedom of Information Act 2000)</li>
+    <li><strong>Environmental</strong> &mdash; what is the <em>impact on the planet</em>? (data-centre energy, manufacturing footprint, e-waste, recycling, conflict minerals)</li>
+    <li><strong>Privacy</strong> &mdash; what happens to our <em>personal data</em>? (tracking, cookies, data brokers, facial recognition, IoT microphones, informed consent)</li>
+    <li><strong>Cultural</strong> &mdash; how has technology <em>changed how we live</em>? (streaming, social media, remote work, gig economy, globalisation, accessibility)</li>
+</ul>
+
+<div class="exam-tip">The word <em>discuss</em> or <em>evaluate</em> is a big clue. Mark schemes for 6&ndash;8 mark questions reward candidates who (1) identify stakeholders, (2) give at least one advantage and one disadvantage, (3) refer to at least one piece of UK legislation by <em>name and year</em>, and (4) reach a balanced conclusion. Memorise the Acts exactly: <strong>Data Protection Act 2018</strong>, <strong>Computer Misuse Act 1990</strong>, <strong>Copyright, Designs and Patents Act 1988</strong>, <strong>Freedom of Information Act 2000</strong>.</div>
+
+<h2>3.8.1 Ethical Issues</h2>
+
+<div class="definition">
+    An <strong>ethical issue</strong> is one that concerns <em>right and wrong</em> &mdash; what a person, organisation or society <em>ought</em> to do, as opposed to what they are <em>allowed</em> to do by law. An action can be legal but unethical (e.g. selling someone&rsquo;s data with their consent but in a way that exploits them), or ethical but illegal (e.g. whistle-blowing in some cases).
+</div>
+
+<p>Ethical questions rarely have a single right answer &mdash; they involve balancing the interests of different groups (<em>stakeholders</em>) and accepting that reasonable people may disagree. In exam answers you are expected to identify the conflict, give reasoning on both sides, and reach a conclusion.</p>
+
+<h3>Artificial Intelligence and Algorithmic Decision-Making</h3>
+
+<p>Artificial intelligence (AI) and machine-learning systems are increasingly used to make or support decisions that used to be made by humans: who gets a mortgage, which CVs a recruiter looks at, whether a patient is likely to have a certain disease, how likely a criminal is to re-offend, whether a social-media post should be removed. Because these systems work quickly and consistently, they can process huge numbers of decisions &mdash; but they bring ethical problems of their own.</p>
+
+<ul>
+    <li><strong>Algorithmic bias.</strong> An AI model is only as fair as the data it was trained on. If the training data reflects historical prejudice &mdash; for example, past loan applications that disproportionately rejected people from certain postcodes &mdash; the AI will reproduce that bias and present it as objective mathematics. In 2018 a major online retailer scrapped a CV-screening AI after discovering it had learned to downgrade CVs containing the word &ldquo;women&rsquo;s&rdquo; (e.g. &ldquo;women&rsquo;s chess club captain&rdquo;) because the training data consisted of past CVs from a male-dominated industry.</li>
+    <li><strong>Accountability (the &ldquo;black box&rdquo; problem).</strong> When a human turns you down for a loan, you can ask why. When a neural network with millions of parameters turns you down, no one may be able to give a meaningful reason. If an AI-controlled vehicle causes a fatal accident, who is responsible: the driver, the manufacturer, the software engineer, or the regulator who approved the model?</li>
+    <li><strong>Scale and speed.</strong> A biased human recruiter might affect a few hundred candidates per year. A biased AI can affect millions in a day. The ethical cost of a bad model is therefore enormous.</li>
+    <li><strong>Transparency and consent.</strong> Users often do not know that an AI has made a decision about them, nor what data was used.</li>
+</ul>
+
+<table>
+    <tr><th>Potential benefits of AI decision-making</th><th>Potential harms of AI decision-making</th></tr>
+    <tr><td>Fast, consistent decisions at large scale</td><td>Bias learned from historical data is reproduced and scaled up</td></tr>
+    <tr><td>Can find patterns humans miss (e.g. early cancer detection on scans)</td><td>&ldquo;Black box&rdquo; models cannot easily be audited or challenged</td></tr>
+    <tr><td>Tireless &mdash; no fatigue, no bad days, no favouritism</td><td>No empathy or contextual common sense</td></tr>
+    <tr><td>Frees human experts for higher-value work</td><td>Unclear accountability when things go wrong</td></tr>
+    <tr><td>Can translate languages and support disabled users</td><td>May be used for mass surveillance, deepfakes, misinformation</td></tr>
+</table>
+
+<div class="case-study"><strong>Automated welfare decisions.</strong> In the Netherlands the &ldquo;SyRI&rdquo; system used machine learning to flag citizens suspected of benefits fraud. In 2020 a Dutch court ruled the system unlawful because it operated without transparency, disproportionately targeted poorer neighbourhoods, and violated privacy rights. Thousands of families were falsely accused, lost benefits, and suffered serious mental-health consequences. The case is now a landmark warning about deploying AI in high-stakes public-sector decisions without human oversight.</div>
+
+<h3>Automation and the Effect on Employment</h3>
+
+<p>Automation &mdash; using software and robotics to do work that used to be done by people &mdash; is not new (cash machines, self-checkouts), but AI has widened its reach into jobs that were traditionally thought safe, such as driving, translating, drafting legal letters, and producing marketing copy.</p>
+
+<ul>
+    <li><strong>Jobs displaced.</strong> Routine, predictable tasks are the first to go: data entry, assembly-line work, call-centre scripts, simple translation, cashier work, and increasingly, basic drafting and summarising tasks once done by junior office staff.</li>
+    <li><strong>Jobs created.</strong> Automation also creates new roles &mdash; AI engineers, data scientists, robotics technicians, user-experience designers, prompt engineers, cyber-security analysts &mdash; but these usually require different skills from the jobs being lost, meaning workers cannot always move sideways easily.</li>
+    <li><strong>Inequality.</strong> Benefits tend to flow to capital owners (the companies that own the robots) and to highly-skilled workers, while lower-skilled workers bear the cost. Without re-training programmes, automation can increase wealth inequality.</li>
+    <li><strong>Quality of work.</strong> Some roles are augmented rather than replaced &mdash; a radiographer with AI assistance may read more scans more accurately than either alone &mdash; but other roles (e.g. warehouse pickers) have been intensified by algorithmic management, with humans working <em>for</em> the software.</li>
+</ul>
+
+<h3>The Digital Divide</h3>
+
+<div class="definition">
+    The <strong>digital divide</strong> is the gap between those who have good access to digital technology (fast internet, up-to-date devices, the skills to use them) and those who do not. It applies at several levels: <em>between countries</em> (developing vs developed nations), <em>within a country</em> (rich vs poor, urban vs rural, young vs old), and <em>by situation</em> (homeless, disabled, in care).
+</div>
+
+<p>When essential services move online (banking, benefit applications, job searches, GP appointments, school homework) people without access are cut off. During the 2020&ndash;21 COVID-19 school closures, Ofcom estimated around 9% of UK households with children had no home internet suitable for learning, and many more had only a mobile phone shared between several children &mdash; directly widening the attainment gap.</p>
+
+<p><strong>Causes</strong> include cost of devices and data, rural infrastructure gaps, age-related unfamiliarity, disability-related access problems, and low digital literacy. <strong>Mitigations</strong> include public Wi-Fi, device-donation schemes, subsidised &ldquo;social tariffs&rdquo; from internet providers, libraries offering free access, and accessible design (screen readers, captions, simple language).</p>
+
+<h3>Surveillance and Monitoring</h3>
+
+<p>Digital technology has made large-scale surveillance cheap and easy:</p>
+
+<ul>
+    <li><strong>State surveillance</strong> &mdash; CCTV with facial recognition, mass interception of internet traffic (the UK Investigatory Powers Act 2016 gives significant powers here), automatic number-plate recognition, phone-location logging from mobile operators.</li>
+    <li><strong>Workplace surveillance</strong> &mdash; keystroke loggers, screen-recording software, webcam monitoring of remote workers, email content scanning, productivity-score dashboards.</li>
+    <li><strong>Commercial surveillance</strong> &mdash; cookies, web trackers and ad networks that follow you between sites; loyalty-card schemes that link every purchase to an identity.</li>
+    <li><strong>Peer surveillance</strong> &mdash; always-on doorbell cameras that record neighbours, smartphones used to film members of the public and post the footage online.</li>
+</ul>
+
+<p>Surveillance is defended on grounds of crime prevention, national security, child protection, workplace safety and service personalisation. Critics argue that <em>ubiquitous</em> surveillance chills free speech (people behave differently when watched), breeds a presumption of guilt, and gives disproportionate power to governments and corporations. Even &ldquo;innocent&rdquo; people have a strong interest in privacy &mdash; it is the default condition of a free society.</p>
+
+<h3>Social Media Effects: Mental Health, Misinformation, Addiction</h3>
+
+<p>Social-media platforms are engineered to maximise the time users spend on them, because attention is what is sold to advertisers. That goal shapes the product in ways that can harm individuals and societies.</p>
+
+<ul>
+    <li><strong>Mental health.</strong> Extensive use of image-heavy platforms is associated with increased anxiety, depression and poor body image among teenagers, particularly girls. Internal research leaked in 2021 from a major social network showed the company was aware of the negative impact of its products on teenage mental health but continued to prioritise engagement.</li>
+    <li><strong>Addiction.</strong> Infinite scroll, autoplay, variable-reward notifications and streaks borrow techniques from gambling-machine design to keep users hooked. &ldquo;Just one more video&rdquo; at midnight is not an accident; it is a design goal.</li>
+    <li><strong>Misinformation and disinformation.</strong> Algorithms that reward engagement tend to amplify emotionally extreme content &mdash; which is often misleading or outright false. False news spreads significantly faster than corrections, and fact-checks reach a small fraction of the audience of the original post.</li>
+    <li><strong>Filter bubbles and echo chambers.</strong> Personalisation feeds users more of what they already agree with, narrowing their view of the world and polarising political debate.</li>
+    <li><strong>Deepfakes.</strong> AI-generated audio and video convincingly impersonate real people, enabling fraud, reputation-damage, and fabricated news clips.</li>
+</ul>
+
+<h3>Censorship</h3>
+
+<p><strong>Censorship</strong> is the suppression of information, speech or media. In a digital context it can be carried out by governments (blocking whole websites or categories of content at national level), by platforms (removing posts or banning users), or by algorithmic &ldquo;shadow-banning&rdquo; (reducing the reach of content without notifying its author).</p>
+
+<p>Censorship has <em>defensible</em> uses: removing child-abuse material, terrorist content, or direct incitement to violence; enforcing court orders against libel. It also has serious risks: suppressing political dissent, silencing minority voices, and allowing the powerful to set what counts as &ldquo;truth.&rdquo; Mechanisms used include DNS blocking (the UK&rsquo;s blocking of copyright-infringing sites under court order), content-ID systems, legally-mandated take-downs, and fully state-controlled national internets.</p>
+
+<h3>Cyber-Bullying</h3>
+
+<div class="definition">
+    <strong>Cyber-bullying</strong> is the use of digital technology (messaging, social media, games, forums) to harass, threaten, humiliate or exclude another person.
+</div>
+
+<p>Unlike traditional bullying, cyber-bullying (a) follows the victim home and can continue 24 hours a day, (b) can be anonymous or pseudonymous, (c) can be seen by very large audiences, and (d) can be archived and re-shared indefinitely. It is linked to significant mental-health harms and, in severe cases, self-harm.</p>
+
+<p>Defences are a mix of technical (reporting and blocking tools, age-verification, AI content moderation), legal (harassment offences under UK law, the Online Safety Act 2023 placing duties on platforms to tackle illegal and harmful content) and social (school policies, parental awareness, bystander education).</p>
+
+<div class="exam-tip">If an ethical-issues question gives you a <em>scenario</em>, name at least two issues from this section and tie them to the scenario (&ldquo;For a social-media app aimed at teenagers, <em>mental-health impact</em> and <em>data privacy</em> are the most important issues because&hellip;&rdquo;). Vague answers score poorly.</div>
+
+<h2>3.8.2 Legal Issues &mdash; UK Computing Legislation</h2>
+
+<p>You must know the <strong>names and years</strong> of the four main UK Acts and be able to describe what each covers. Examiners are strict here: &ldquo;the data act&rdquo; is not good enough; &ldquo;the Data Protection Act 2018&rdquo; is. You will be expected to pick the correct Act in a scenario and explain why.</p>
+
+<h3>Overview of the Main UK Computing Laws</h3>
+
+<table>
+    <tr><th>Act</th><th>Year</th><th>Protects</th><th>Typical offence / use</th></tr>
+    <tr><td>Data Protection Act (alongside UK-GDPR)</td><td>2018</td><td>Personal data of individuals</td><td>Company loses customer data through a breach; fails to let a user see their data on request</td></tr>
+    <tr><td>Computer Misuse Act</td><td>1990</td><td>Computer systems from hacking and malware</td><td>Unauthorised access to a system; writing or selling hacking tools; introducing a virus</td></tr>
+    <tr><td>Copyright, Designs and Patents Act</td><td>1988</td><td>Creative and intellectual work</td><td>Piracy of music/film/software; using a photo on a website without permission</td></tr>
+    <tr><td>Freedom of Information Act</td><td>2000</td><td>Citizens&rsquo; right to see <em>public-body</em> records</td><td>Member of the public requests council spending data</td></tr>
+</table>
+
+<h3>Data Protection Act 2018 / UK-GDPR</h3>
+
+<div class="definition">
+    The <strong>Data Protection Act 2018</strong> is the UK law that controls how <em>personal data</em> (any information that can identify a living person) is collected, stored, used and shared. It implements the UK version of the EU General Data Protection Regulation (UK-GDPR). The regulator is the <strong>Information Commissioner&rsquo;s Office (ICO)</strong>, which can issue fines of up to &pound;17.5 million or 4% of global annual turnover, whichever is greater.
+</div>
+
+<p>The Act applies to any organisation that handles personal data of people in the UK, whether a multinational company, a local council, a school, or a small club. Personal data includes names, addresses, photos, IP addresses, location data, cookies linked to an account, and anything that can be combined with other information to identify a person.</p>
+
+<h4>The Six (sometimes listed as seven) Data Protection Principles</h4>
+
+<p>Every organisation handling personal data must comply with these principles. Remember them for the exam &mdash; a favourite question is &ldquo;State the principle being broken in the following scenario.&rdquo;</p>
+
+<table>
+    <tr><th>Principle</th><th>What it means</th><th>Example of breach</th></tr>
+    <tr><td>Lawful, fair and transparent</td><td>Data must be collected with a valid legal basis, in a fair way, and people must be told what is happening</td><td>A website silently records your location without any notice or consent</td></tr>
+    <tr><td>Purpose limitation</td><td>Data is collected for a specified, explicit purpose and not reused for a different one</td><td>Email addresses collected for order confirmations are sold to a marketing list</td></tr>
+    <tr><td>Data minimisation</td><td>Only the data that is actually needed is collected</td><td>A fitness app demands your full address and date of birth to track a run</td></tr>
+    <tr><td>Accuracy</td><td>Data must be accurate and kept up to date; errors must be corrected or erased</td><td>A credit-reference agency keeps reporting a debt that has already been paid off</td></tr>
+    <tr><td>Storage limitation</td><td>Data is kept no longer than is necessary for the purpose</td><td>A shop still holds card details of customers who bought something 15 years ago and asked to leave</td></tr>
+    <tr><td>Integrity and confidentiality (security)</td><td>Data is protected against unauthorised access, loss and damage</td><td>A laptop with unencrypted patient records is left on a train</td></tr>
+    <tr><td>Accountability</td><td>The organisation must be able to demonstrate how it complies with the other principles (records, policies, training)</td><td>When the ICO asks, the company has no record of what data it holds or why</td></tr>
+</table>
+
+<h4>Rights of the Data Subject</h4>
+
+<p>The Act gives the individual (the &ldquo;data subject&rdquo;) a set of rights that the organisation (the &ldquo;data controller&rdquo;) must honour, usually within one month and usually for free.</p>
+
+<ul>
+    <li><strong>Right of access</strong> &mdash; to ask what data an organisation holds about you and receive a copy (a &ldquo;subject access request&rdquo;).</li>
+    <li><strong>Right to rectification</strong> &mdash; to have inaccurate data corrected and incomplete data completed.</li>
+    <li><strong>Right to erasure (&ldquo;right to be forgotten&rdquo;)</strong> &mdash; to have data deleted where there is no good reason to keep it.</li>
+    <li><strong>Right to restrict processing</strong> &mdash; to freeze use of your data while you contest it.</li>
+    <li><strong>Right to data portability</strong> &mdash; to receive your data in a common format so you can move it to another service.</li>
+    <li><strong>Right to object</strong> &mdash; to direct marketing, and in some cases to other processing based on legitimate interests.</li>
+    <li><strong>Rights about automated decision-making and profiling</strong> &mdash; not to be subject to a purely automated decision with a legal or similarly significant effect, without human review.</li>
+</ul>
+
+<!-- Data lifecycle diagram with DPA principles -->
+<svg viewBox="0 0 760 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Data Lifecycle &mdash; Where the DPA 2018 Principles Apply</text>
+  <text x="380" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Every stage has legal duties under the Data Protection Act 2018 / UK-GDPR.</text>
+
+  <!-- Collection -->
+  <g>
+    <rect x="30" y="80" width="130" height="70" rx="10" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="95" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a5f">1. COLLECT</text>
+    <text x="95" y="126" text-anchor="middle" font-size="10" fill="#1e3a5f">forms, cookies,</text>
+    <text x="95" y="140" text-anchor="middle" font-size="10" fill="#1e3a5f">sensors, sign-up</text>
+  </g>
+  <text x="95" y="175" text-anchor="middle" font-size="10" fill="#065f46" font-weight="bold">Lawful, fair &amp;</text>
+  <text x="95" y="188" text-anchor="middle" font-size="10" fill="#065f46" font-weight="bold">transparent</text>
+  <text x="95" y="202" text-anchor="middle" font-size="10" fill="#065f46" font-weight="bold">+ Data minimisation</text>
+
+  <!-- arrow -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="160" y1="115" x2="205" y2="115"/>
+    <polygon points="205,115 199,111 199,119" fill="#1e3a5f"/>
+  </g>
+
+  <!-- Process -->
+  <g>
+    <rect x="210" y="80" width="130" height="70" rx="10" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="275" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a5f">2. PROCESS</text>
+    <text x="275" y="126" text-anchor="middle" font-size="10" fill="#1e3a5f">analyse, decide,</text>
+    <text x="275" y="140" text-anchor="middle" font-size="10" fill="#1e3a5f">personalise</text>
+  </g>
+  <text x="275" y="175" text-anchor="middle" font-size="10" fill="#065f46" font-weight="bold">Purpose limitation</text>
+  <text x="275" y="188" text-anchor="middle" font-size="10" fill="#065f46" font-weight="bold">+ Accuracy</text>
+
+  <!-- arrow -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="340" y1="115" x2="385" y2="115"/>
+    <polygon points="385,115 379,111 379,119" fill="#1e3a5f"/>
+  </g>
+
+  <!-- Store -->
+  <g>
+    <rect x="390" y="80" width="130" height="70" rx="10" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="455" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a5f">3. STORE</text>
+    <text x="455" y="126" text-anchor="middle" font-size="10" fill="#1e3a5f">databases,</text>
+    <text x="455" y="140" text-anchor="middle" font-size="10" fill="#1e3a5f">backups, cloud</text>
+  </g>
+  <text x="455" y="175" text-anchor="middle" font-size="10" fill="#065f46" font-weight="bold">Integrity &amp;</text>
+  <text x="455" y="188" text-anchor="middle" font-size="10" fill="#065f46" font-weight="bold">confidentiality</text>
+  <text x="455" y="202" text-anchor="middle" font-size="10" fill="#065f46" font-weight="bold">+ Storage limitation</text>
+
+  <!-- arrow -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="520" y1="115" x2="565" y2="115"/>
+    <polygon points="565,115 559,111 559,119" fill="#1e3a5f"/>
+  </g>
+
+  <!-- Share -->
+  <g>
+    <rect x="570" y="80" width="160" height="70" rx="10" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="650" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a5f">4. SHARE</text>
+    <text x="650" y="126" text-anchor="middle" font-size="10" fill="#1e3a5f">partners, processors,</text>
+    <text x="650" y="140" text-anchor="middle" font-size="10" fill="#1e3a5f">third countries</text>
+  </g>
+  <text x="650" y="175" text-anchor="middle" font-size="10" fill="#065f46" font-weight="bold">Lawful basis for sharing</text>
+  <text x="650" y="188" text-anchor="middle" font-size="10" fill="#065f46" font-weight="bold">+ Transfer safeguards</text>
+
+  <!-- down arrow to deletion -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="650" y1="215" x2="650" y2="260"/>
+    <polygon points="650,260 646,254 654,254" fill="#1e3a5f"/>
+  </g>
+
+  <!-- Delete -->
+  <g>
+    <rect x="545" y="265" width="200" height="70" rx="10" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+    <text x="645" y="293" text-anchor="middle" font-size="13" font-weight="bold" fill="#7f1d1d">5. DELETE / ARCHIVE</text>
+    <text x="645" y="311" text-anchor="middle" font-size="10" fill="#7f1d1d">secure erase when</text>
+    <text x="645" y="325" text-anchor="middle" font-size="10" fill="#7f1d1d">no longer needed</text>
+  </g>
+  <text x="645" y="357" text-anchor="middle" font-size="10" fill="#065f46" font-weight="bold">Storage limitation</text>
+  <text x="645" y="370" text-anchor="middle" font-size="10" fill="#065f46" font-weight="bold">+ Right to erasure</text>
+
+  <!-- Accountability runs underneath all stages -->
+  <rect x="30" y="395" width="700" height="65" rx="10" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <text x="380" y="418" text-anchor="middle" font-size="13" font-weight="bold" fill="#78350f">ACCOUNTABILITY</text>
+  <text x="380" y="438" text-anchor="middle" font-size="11" fill="#78350f">Keep records, train staff, enable subject-access requests, notify the ICO of breaches within 72 hours.</text>
+  <text x="380" y="452" text-anchor="middle" font-size="10" fill="#78350f">Applies to every stage of the lifecycle above.</text>
+</svg>
+
+<div class="case-study"><strong>British Airways data breach (2018).</strong> Poor website security let attackers redirect about 400,000 customers&rsquo; card details and personal data to an attacker-controlled server. The ICO fined BA &pound;20 million under the Data Protection Act 2018 &mdash; at the time, the largest UK data-protection penalty. Key principles breached: <em>integrity and confidentiality</em> (inadequate security) and <em>accountability</em> (insufficient testing and monitoring). The case is a standard exam example of why &ldquo;it was only data&rdquo; is never an acceptable excuse.</div>
+
+<h3>Computer Misuse Act 1990</h3>
+
+<div class="definition">
+    The <strong>Computer Misuse Act 1990</strong> makes it a criminal offence to access or modify computer systems <em>without permission</em>. It was introduced after the case of <em>R v Gold &amp; Schifreen</em> in 1988, where two journalists who hacked a British Telecom computer could only be charged with forgery because no hacking law existed.
+</div>
+
+<p>The Act defines four main offences. You should be able to name and explain each one.</p>
+
+<table>
+    <tr><th>Section</th><th>Offence</th><th>Example</th><th>Maximum penalty (indictment)</th></tr>
+    <tr><td>s.1</td><td>Unauthorised access to computer material</td><td>Guessing a classmate&rsquo;s password and reading their messages</td><td>2 years&rsquo; imprisonment and/or a fine</td></tr>
+    <tr><td>s.2</td><td>Unauthorised access with intent to commit or facilitate further offences</td><td>Hacking a company network as a first step to committing fraud</td><td>5 years&rsquo; imprisonment</td></tr>
+    <tr><td>s.3</td><td>Unauthorised acts with intent to impair the operation of a computer (including modification)</td><td>Writing and releasing a virus; launching a DDoS attack</td><td>10 years&rsquo; imprisonment (life if it endangers lives)</td></tr>
+    <tr><td>s.3A</td><td>Making, supplying or obtaining articles for use in offences under s.1 or s.3</td><td>Selling a hacking tool kit or a malware-as-a-service subscription</td><td>2 years&rsquo; imprisonment</td></tr>
+</table>
+
+<p>Key points the exam likes:</p>
+
+<ul>
+    <li>The key word is <strong>unauthorised</strong>. Looking at data you <em>are</em> allowed to see is never a Computer Misuse Act offence. The Act turns on <em>permission</em>, not on the data itself.</li>
+    <li>You <em>do</em> commit the s.1 offence even if you do no damage &mdash; merely accessing the system without authority is enough.</li>
+    <li>Running a denial-of-service attack is a s.3 offence even if no data is read or altered &mdash; it impairs operation.</li>
+    <li>Writing a virus and giving it away, or running a &ldquo;stresser&rdquo; booter-for-hire service, is a s.3A offence.</li>
+</ul>
+
+<div class="case-study"><strong>WannaCry and the NHS (2017).</strong> The WannaCry ransomware worm infected about 40 NHS trusts in a weekend, cancelling thousands of appointments. The attacker, a North-Korean-linked group, committed offences that would fall under sections 1 and 3 of the Computer Misuse Act 1990 &mdash; unauthorised access and deliberate impairment. The case also illustrates how <em>one</em> attack triggers several legal frameworks at once: Computer Misuse Act (the attack itself), Data Protection Act (loss of patient data), and potentially the Health and Social Care Act (duty of care). Mark schemes reward candidates who spot this overlap.</div>
+
+<h3>Copyright, Designs and Patents Act 1988</h3>
+
+<div class="definition">
+    The <strong>Copyright, Designs and Patents Act 1988</strong> protects the <em>creators</em> of original work &mdash; books, music, films, photographs, software, databases, designs &mdash; by giving them exclusive rights to copy, distribute, perform and adapt their work for a set period (typically the creator&rsquo;s lifetime + 70 years for most creative works; 50 years for sound recordings).
+</div>
+
+<p>Copyright is automatic in the UK &mdash; you do not have to register it; as soon as original work is recorded in some permanent form, it is protected. The rights belong by default to the creator, though they are commonly transferred by contract (e.g. to an employer for work done in the job, or to a publisher).</p>
+
+<h4>What Copyright Covers in Computing</h4>
+
+<ul>
+    <li><strong>Software source code and object code</strong> are treated as literary works. Copying a program&rsquo;s source, or distributing a cracked copy, infringes copyright.</li>
+    <li><strong>Databases</strong> can be protected both by copyright (if the arrangement is original) and by a separate database right.</li>
+    <li><strong>Images, music, video</strong> used on websites or in games need a licence from the rights holder, or must be used under a specific exception (fair dealing, Creative Commons, public domain).</li>
+    <li><strong>User-generated content</strong> is owned by the user, but most platform terms of service grant the platform a broad licence to use it.</li>
+</ul>
+
+<h4>Issues Around Piracy and Fair Use</h4>
+
+<p>Digital technology has made perfect copies trivial and sharing them global, so copyright infringement (&ldquo;piracy&rdquo;) is widespread. Examples: downloading films from torrent sites, sharing textbooks as PDFs, pirated software key-generators, re-uploading someone else&rsquo;s YouTube video. Penalties range from civil damages (paying the rights holder for lost sales) to criminal prosecution for large-scale commercial infringement.</p>
+
+<p>UK law recognises some <strong>fair dealing</strong> exceptions (roughly equivalent to US &ldquo;fair use&rdquo;): limited copying for criticism and review, news reporting, quotation, caricature and parody, and private non-commercial research and study. The copying must be genuinely minor and fair &mdash; not a substitute for buying the work.</p>
+
+<h4>Permissions and Licences</h4>
+
+<p>Rights holders can <em>license</em> their work instead of selling it outright. A licence sets out what a user may and may not do:</p>
+
+<ul>
+    <li><strong>Proprietary commercial licence</strong> &mdash; the buyer pays for limited rights (one user, no redistribution, no modification). Typical for shrink-wrapped software such as the big office suites.</li>
+    <li><strong>Open-source licences</strong> (GPL, MIT, Apache) &mdash; the source code is published; users may read, modify and redistribute it, subject to conditions (e.g. preserving the copyright notice, or requiring derivative works to remain open).</li>
+    <li><strong>Creative Commons</strong> licences &mdash; a standard, human-readable way for creators of images, text, music and video to grant permissions in advance. See below.</li>
+</ul>
+
+<h4>Creative Commons Licensing (Extension)</h4>
+
+<p><strong>Creative Commons (CC)</strong> is a family of free, standard licences that let creators say &ldquo;yes, you may use my work, as long as you follow these rules.&rdquo; The rules are built from four simple conditions:</p>
+
+<ul>
+    <li><strong>BY</strong> &mdash; you must credit the author.</li>
+    <li><strong>SA (Share-Alike)</strong> &mdash; derivative works must use the same licence.</li>
+    <li><strong>NC (Non-Commercial)</strong> &mdash; you may not use it for commercial purposes.</li>
+    <li><strong>ND (No Derivatives)</strong> &mdash; you may distribute the original but not modified versions.</li>
+</ul>
+
+<p>The most permissive is <code>CC0</code> (public domain); the most restrictive is <code>CC BY-NC-ND</code>. A huge volume of work is available under CC licences &mdash; Wikipedia is <code>CC BY-SA</code>, for example. CC licences are enforceable under the Copyright, Designs and Patents Act 1988 just like any other licence.</p>
+
+<h3>Freedom of Information Act 2000</h3>
+
+<div class="definition">
+    The <strong>Freedom of Information Act 2000</strong> gives any person the right to request recorded information held by <em>UK public authorities</em> (government departments, councils, the NHS, police, state schools and universities, the BBC). The authority must normally respond within 20 working days and either provide the information or justify withholding it.
+</div>
+
+<p>The Act applies only to <em>public bodies</em>, not to private companies. Exemptions allow authorities to withhold information for reasons such as national security, commercial confidentiality, personal data (covered separately by the DPA), and where the cost of compliance would be excessive. The Act is the main tool used by journalists, campaigners and the public to hold government to account &mdash; for example, discovering how public money has been spent or what advice ministers received.</p>
+
+<div class="exam-tip">A common &ldquo;name the Act&rdquo; trap: a question about a <em>citizen wanting to see what data a council holds about that citizen personally</em> is covered by the <strong>Data Protection Act 2018</strong> (right of access). A question about a <em>journalist wanting to see general council spending records</em> is covered by the <strong>Freedom of Information Act 2000</strong>. The Acts are related but not the same.</div>
+
+<h2>3.8.3 Environmental Issues</h2>
+
+<p>Digital technology is often sold as &ldquo;clean&rdquo; &mdash; no smoke, no noise, no visible waste. In reality, the hardware has to be manufactured, powered, and eventually thrown away, and all three stages have significant environmental costs.</p>
+
+<h3>Energy Consumption of Data Centres</h3>
+
+<p>Every time you stream a film, run a web search, train an AI model, or send a message, the work is done on physical servers in large <strong>data centres</strong>. Estimates from the International Energy Agency put global data-centre electricity use at around 1&ndash;2% of total world electricity, roughly comparable to the airline industry and rising fast as AI workloads grow. A single large hyperscale data centre can draw tens of megawatts &mdash; enough to power a small town.</p>
+
+<p>Data centres also use very large volumes of <strong>water</strong> for evaporative cooling, which has become controversial in drought-prone regions. Carbon footprint depends on the local electricity mix &mdash; a data centre in Iceland (geothermal/hydro) is far cleaner than one running on coal.</p>
+
+<p>Industry responses include (a) building in cold climates that need less cooling, (b) using renewable-sourced electricity, (c) raising operating temperatures so less cooling is needed, (d) reusing waste heat (e.g. to heat local homes in Nordic countries), and (e) designing more energy-efficient chips. These help but do not eliminate the impact.</p>
+
+<h3>Manufacturing Footprint of Devices</h3>
+
+<p>Producing a smartphone, laptop or server involves mining and refining dozens of materials, manufacturing chips in extremely energy-intensive fabrication plants, and shipping components around the world. For many devices, <em>over 70% of the lifetime carbon emissions occur before the device is even switched on</em>. Keeping a phone for four years instead of two roughly halves its per-year carbon footprint.</p>
+
+<p>Manufacture also uses large amounts of water and generates toxic by-products, and the social cost can be high &mdash; long hours, low wages, and hazardous chemicals in some electronics-assembly plants.</p>
+
+<h3>Electronic Waste (E-Waste)</h3>
+
+<div class="definition">
+    <strong>E-waste</strong> is discarded electrical and electronic equipment &mdash; phones, laptops, TVs, printers, fridges, vapes, children&rsquo;s toys with batteries, and everything in between. The UN estimates the world generates around 60 million tonnes of e-waste every year, only a small fraction of which is properly recycled.
+</div>
+
+<p>E-waste is harmful because it contains:</p>
+
+<ul>
+    <li><strong>Toxic chemicals</strong> &mdash; lead in solder, mercury in older screens, cadmium in batteries, brominated flame retardants in plastics. In landfill these leach into groundwater; when burned, they enter the air.</li>
+    <li><strong>Valuable materials</strong> &mdash; gold, copper, silver, palladium, lithium, cobalt &mdash; that are lost if the device goes to landfill and must then be mined again at high environmental cost.</li>
+    <li><strong>Unfairly distributed harms</strong> &mdash; significant amounts of e-waste from Europe and North America are exported (often illegally) to informal recycling yards in parts of West Africa and South Asia, where workers including children extract metals in dangerous conditions.</li>
+</ul>
+
+<h3>Recycling and the Circular Economy</h3>
+
+<p>The &ldquo;linear&rdquo; model of technology &mdash; <em>mine &rarr; make &rarr; use &rarr; throw away</em> &mdash; is unsustainable. A <strong>circular economy</strong> aims to keep resources in use for as long as possible through re-use, repair, refurbishment and recycling:</p>
+
+<!-- Circular economy / e-waste flow diagram -->
+<svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Linear vs Circular Economy for Electronics</text>
+  <text x="380" y="40" text-anchor="middle" font-size="11" fill="#6b7280">The more loops we close, the less raw material we mine and the less e-waste ends up in landfill.</text>
+
+  <!-- Raw materials -->
+  <g>
+    <rect x="40" y="80" width="130" height="70" rx="10" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+    <text x="105" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#78350f">RAW MATERIALS</text>
+    <text x="105" y="126" text-anchor="middle" font-size="10" fill="#78350f">mine metals,</text>
+    <text x="105" y="140" text-anchor="middle" font-size="10" fill="#78350f">plastics, silicon</text>
+  </g>
+
+  <!-- arrow -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="170" y1="115" x2="215" y2="115"/>
+    <polygon points="215,115 209,111 209,119" fill="#1e3a5f"/>
+  </g>
+
+  <!-- Manufacture -->
+  <g>
+    <rect x="220" y="80" width="130" height="70" rx="10" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="285" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a5f">MANUFACTURE</text>
+    <text x="285" y="126" text-anchor="middle" font-size="10" fill="#1e3a5f">fab chips,</text>
+    <text x="285" y="140" text-anchor="middle" font-size="10" fill="#1e3a5f">assemble devices</text>
+  </g>
+
+  <!-- arrow -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="350" y1="115" x2="395" y2="115"/>
+    <polygon points="395,115 389,111 389,119" fill="#1e3a5f"/>
+  </g>
+
+  <!-- Use -->
+  <g>
+    <rect x="400" y="80" width="130" height="70" rx="10" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+    <text x="465" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#065f46">USE</text>
+    <text x="465" y="126" text-anchor="middle" font-size="10" fill="#065f46">owner runs</text>
+    <text x="465" y="140" text-anchor="middle" font-size="10" fill="#065f46">the device</text>
+  </g>
+
+  <!-- arrow -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="530" y1="115" x2="575" y2="115"/>
+    <polygon points="575,115 569,111 569,119" fill="#1e3a5f"/>
+  </g>
+
+  <!-- Discard -->
+  <g>
+    <rect x="580" y="80" width="140" height="70" rx="10" fill="#fecaca" stroke="#b91c1c" stroke-width="2"/>
+    <text x="650" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#7f1d1d">END OF LIFE</text>
+    <text x="650" y="126" text-anchor="middle" font-size="10" fill="#7f1d1d">device no</text>
+    <text x="650" y="140" text-anchor="middle" font-size="10" fill="#7f1d1d">longer wanted</text>
+  </g>
+
+  <!-- Branch down: landfill (linear) -->
+  <g stroke="#b91c1c" stroke-width="2" fill="none">
+    <line x1="650" y1="155" x2="650" y2="210"/>
+    <polygon points="650,210 646,204 654,204" fill="#b91c1c"/>
+  </g>
+  <g>
+    <rect x="555" y="215" width="190" height="70" rx="10" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+    <text x="650" y="242" text-anchor="middle" font-size="13" font-weight="bold" fill="#7f1d1d">LANDFILL / DUMPING</text>
+    <text x="650" y="260" text-anchor="middle" font-size="10" fill="#7f1d1d">toxic leaching,</text>
+    <text x="650" y="274" text-anchor="middle" font-size="10" fill="#7f1d1d">lost resources</text>
+  </g>
+  <text x="650" y="302" text-anchor="middle" font-size="10" fill="#7f1d1d" font-weight="bold">(the LINEAR model)</text>
+
+  <!-- Loop back curves: reuse, refurbish, recycle -->
+  <!-- REUSE loop: from End of Life back to Use -->
+  <path d="M 580 115 Q 650 20 465 60 L 465 75" stroke="#065f46" stroke-width="2" fill="none"/>
+  <polygon points="465,80 461,72 469,72" fill="#065f46"/>
+  <text x="540" y="22" font-size="10" fill="#065f46" font-weight="bold">REUSE (sell / give)</text>
+
+  <!-- REFURBISH loop: End of Life back to Manufacture -->
+  <path d="M 620 155 Q 500 260 320 160 L 310 155" stroke="#065f46" stroke-width="2" fill="none"/>
+  <polygon points="310,155 315,148 319,156" fill="#065f46"/>
+  <text x="430" y="250" font-size="10" fill="#065f46" font-weight="bold">REFURBISH (repair &amp; resell)</text>
+
+  <!-- RECYCLE loop: End of Life back to Raw Materials -->
+  <path d="M 620 155 Q 400 400 105 180 L 105 160" stroke="#065f46" stroke-width="2" fill="none"/>
+  <polygon points="105,160 101,168 109,168" fill="#065f46"/>
+  <text x="300" y="400" font-size="10" fill="#065f46" font-weight="bold">RECYCLE (recover metals &amp; plastics)</text>
+
+  <!-- Key -->
+  <g>
+    <rect x="40" y="340" width="330" height="100" rx="8" fill="#f9fafb" stroke="#6b7280" stroke-width="1"/>
+    <text x="55" y="360" font-size="11" font-weight="bold" fill="#1e3a5f">Key (circular economy priorities)</text>
+    <text x="55" y="380" font-size="10" fill="#065f46">&#x2022; Reuse &mdash; sell or donate a working device (best)</text>
+    <text x="55" y="396" font-size="10" fill="#065f46">&#x2022; Refurbish &mdash; replace battery/screen; resell at lower cost</text>
+    <text x="55" y="412" font-size="10" fill="#065f46">&#x2022; Recycle &mdash; break down into raw materials</text>
+    <text x="55" y="428" font-size="10" fill="#7f1d1d">&#x2022; Landfill &mdash; worst outcome, avoid where possible</text>
+  </g>
+</svg>
+
+<h3>Responsible Sourcing and Conflict Minerals</h3>
+
+<p>Smartphones and laptops contain small amounts of <strong>tin, tungsten, tantalum and gold</strong> (the &ldquo;3TG&rdquo; conflict minerals), plus <strong>cobalt</strong> and <strong>lithium</strong> for batteries. A significant share of world cobalt comes from the Democratic Republic of the Congo, where some is mined by children in unsafe artisanal pits. UK and EU rules now require larger companies to audit their supply chains and report on conflict-minerals risk, and many manufacturers publish annual <em>supply-chain responsibility</em> reports. Consumer pressure &mdash; choosing brands with better track records, or demanding repair-friendly designs &mdash; reinforces this.</p>
+
+<h3>Reuse and Refurbishment</h3>
+
+<p>Reuse is nearly always better than recycling: it keeps a working device in service and avoids the energy needed to break it down and rebuild a new one. Ways to reuse and refurbish:</p>
+
+<ul>
+    <li>Sell or donate a phone or laptop you no longer use (after wiping the data).</li>
+    <li>Buy refurbished devices instead of new ones &mdash; often fraction of the price and with a warranty.</li>
+    <li>Replace batteries and screens rather than whole devices; support &ldquo;right to repair&rdquo; legislation that makes spare parts available.</li>
+    <li>Return devices to the manufacturer through trade-in or take-back schemes.</li>
+    <li>For organisations: keep laptops in service for 4&ndash;6 years where practical, wipe and redeploy rather than scrap.</li>
+</ul>
+
+<div class="case-study"><strong>Right to repair in the UK (2021 onwards).</strong> New regulations require some manufacturers of large appliances to supply spare parts and repair information for up to 10 years. Campaigners and MPs continue to push for similar rules for smartphones and laptops. The driver is the environmental argument: if a fridge, washing machine or phone can be repaired instead of replaced, both raw-material extraction and e-waste fall, and consumers save money. Opponents point to the cost of stocking parts and to intellectual-property concerns, illustrating how environmental issues intersect with legal and commercial ones.</div>
+
+<h3>Summary Table &mdash; Environmental Impacts</h3>
+
+<table>
+    <tr><th>Stage</th><th>Main impact</th><th>Mitigations</th></tr>
+    <tr><td>Raw materials</td><td>Mining (land, water, pollution), conflict minerals, child labour risk</td><td>Supply-chain auditing, recycled materials, certified sources</td></tr>
+    <tr><td>Manufacture</td><td>High energy and water use; toxic by-products; shipping emissions</td><td>Renewable-energy factories; clean-tech processes; local assembly</td></tr>
+    <tr><td>Use</td><td>Electricity consumption of devices and data centres; cooling water</td><td>Efficient chips, renewable electricity, heat reuse, user power-saving settings</td></tr>
+    <tr><td>End of life</td><td>Toxic e-waste in landfill; lost valuable metals; unsafe informal recycling overseas</td><td>Legal take-back, formal recycling, reuse and refurbishment, right-to-repair</td></tr>
+</table>
+
+<h2>3.8.4 Privacy Issues</h2>
+
+<div class="definition">
+    <strong>Privacy</strong> in a digital context is the ability of an individual to control what information about them is collected, who can see it, how it is used, and for how long it is kept. Privacy is closely linked to &mdash; but broader than &mdash; data protection law: something can be legal and still feel like a serious privacy intrusion.
+</div>
+
+<h3>Tracking: Cookies, Analytics and Fingerprinting</h3>
+
+<p>Almost every website you visit tries to identify and track you. Mechanisms include:</p>
+
+<ul>
+    <li><strong>Cookies.</strong> Small files a site asks your browser to store. <em>First-party</em> cookies (set by the site you visit) can be essential for login and shopping-basket functions. <em>Third-party</em> cookies (set by ad networks embedded on many sites) let an advertiser follow you across sites. UK/EU law (the Privacy and Electronic Communications Regulations, PECR, alongside UK-GDPR) requires meaningful consent for non-essential cookies &mdash; hence the cookie banners you see everywhere.</li>
+    <li><strong>Web analytics.</strong> Services that record your browsing behaviour on a site (pages visited, time on page, scroll depth, clicks).</li>
+    <li><strong>Device fingerprinting.</strong> Combining signals such as screen size, fonts installed, browser version, time zone and installed plug-ins to produce an identifier unique to a particular device, without needing cookies at all.</li>
+    <li><strong>Cross-device tracking.</strong> Linking a phone, laptop and smart TV to a single profile, typically through a logged-in account or IP address and behaviour patterns.</li>
+</ul>
+
+<h3>Data Brokers</h3>
+
+<p><strong>Data brokers</strong> are companies that collect personal data from many sources (public records, loyalty schemes, app developers, credit-reference data, website trackers), combine it into detailed profiles, and sell access to advertisers, insurers, political campaigns and even law-enforcement. Profiles can include likely income, health conditions, political views, and religion &mdash; all inferred rather than volunteered. Under UK-GDPR, brokers must identify a lawful basis and honour data-subject rights, but enforcement is patchy and many people have no idea which brokers hold data about them.</p>
+
+<h3>Facial Recognition</h3>
+
+<p>Software can now identify a face from CCTV, social media, or police body-worn video with high (but not perfect) accuracy. Deployments include:</p>
+
+<ul>
+    <li>Phone and laptop unlock (private, usually on-device, low privacy risk).</li>
+    <li>Airport and border control.</li>
+    <li>Retailers spotting known shop-lifters.</li>
+    <li>Live facial recognition by UK police at public events, matched against watchlists.</li>
+</ul>
+
+<p>Concerns include the risk of false matches (studies have found higher error rates for women and people of colour), the chilling effect of being identifiable in public, and the breadth of image databases built by scraping social media without consent. The UK ICO and other regulators have warned that specific deployments can breach the Data Protection Act 2018 if they are disproportionate or lack a clear lawful basis.</p>
+
+<h3>Location Data</h3>
+
+<p>Your phone knows where you are within a few metres, through a combination of GPS, Wi-Fi fingerprints and cell-tower triangulation. Every app with location permission can potentially log this and share it. Location data is extremely sensitive because it can reveal where you live, where you work, who you visit, what clinics you attend, and where you worship &mdash; even when &ldquo;anonymised,&rdquo; location traces are notoriously easy to re-identify.</p>
+
+<h3>Smart Devices and Always-On Microphones</h3>
+
+<p>The <strong>Internet of Things (IoT)</strong> fills homes with internet-connected devices: smart speakers, doorbell cameras, smart TVs, fridges, thermostats, toys, fitness bands. Many listen continuously for a &ldquo;wake word&rdquo; and stream audio to the cloud when triggered; some accidentally record private conversations. Smart TVs have been found to use automatic content recognition (ACR) to log what you are watching. Badly-secured IoT devices are also a cybersecurity risk &mdash; the Mirai botnet (2016) hijacked home cameras and routers for DDoS attacks.</p>
+
+<h3>Informed Consent</h3>
+
+<div class="definition">
+    <strong>Informed consent</strong> means that the data subject has been told, in clear language, <em>what</em> data will be collected, <em>why</em>, <em>who</em> will receive it, and <em>how long</em> it will be kept &mdash; and has agreed on that basis, freely and specifically, before the collection starts. Silence, pre-ticked boxes and &ldquo;continued use of this site&rdquo; banners do not count.
+</div>
+
+<p>Informed consent is the gold standard for processing but is difficult in practice: privacy policies are often long, vague and written in legalese; apps bundle many purposes into a single &ldquo;I agree&rdquo; button; dark-pattern designs steer users towards giving consent without reading. UK-GDPR states that consent must be <em>freely given, specific, informed, and unambiguous</em> &mdash; and that it must be as easy to withdraw as to give.</p>
+
+<div class="case-study"><strong>Clearview AI.</strong> This US company scraped billions of photos from social media and other public websites to build a facial-recognition search engine sold to law-enforcement and private customers. In 2022 the UK&rsquo;s Information Commissioner fined Clearview AI over &pound;7.5 million and ordered it to delete data on UK residents, on the basis that it had processed personal data without a lawful basis or the knowledge of the individuals involved &mdash; a clear breach of the Data Protection Act 2018. The case is a textbook example of how legality, ethics and privacy interact: just because images are on the public internet does not mean they can be harvested and reused for any purpose.</div>
+
+<h2>3.8.5 Cultural Issues</h2>
+
+<p>Technology also reshapes culture &mdash; how we communicate, work, entertain ourselves and relate to one another. Cultural effects are often harder to measure than legal or environmental ones, but equally important.</p>
+
+<h3>How We Communicate</h3>
+
+<p>Within a generation, messaging has moved from paper letters and landline calls to instant messaging, video calls, voice notes and group chats. Positives: staying in touch across continents, free international video calls, support communities for people with rare conditions, sign-language and captioning tools that make communication accessible. Negatives: fewer face-to-face interactions, pressure to reply instantly, blurred work/home boundaries, and the rise of short-form content displacing longer-form reading.</p>
+
+<h3>How We Work</h3>
+
+<ul>
+    <li><strong>Remote and hybrid working.</strong> Driven by the pandemic and then normalised, remote work saves commuting time and opens jobs to people outside major cities. It also risks isolating workers, reducing informal learning, and creating a two-tier workforce (those who can work remotely and those whose jobs physically cannot).</li>
+    <li><strong>Gig economy.</strong> Platforms like food-delivery and ride-hailing apps match short-term tasks to self-employed workers. Flexibility is a genuine benefit, but workers often lack sick pay, pensions and minimum-wage protection. Recent UK Supreme Court cases (<em>Uber BV v Aslam</em>, 2021) have forced some gig platforms to treat drivers as &ldquo;workers&rdquo; with basic employment rights.</li>
+    <li><strong>Algorithmic management.</strong> Workers are hired, assigned tasks, rated and even fired by software. Raises fairness and transparency concerns similar to those around AI decision-making.</li>
+</ul>
+
+<h3>How We Consume Media</h3>
+
+<p>Streaming services (video, music, games) have largely replaced physical media; in music alone streaming provides more than 80% of UK revenue. Effects:</p>
+
+<ul>
+    <li>Enormous choice and personalised recommendations.</li>
+    <li>Traditional retailers (record shops, video-rental chains, newsagents) have declined sharply.</li>
+    <li>Artists and creators face a different economic model &mdash; micro-payments per stream rather than album sales &mdash; which is controversial for smaller artists.</li>
+    <li>Ownership is replaced by <em>access</em>: you no longer &ldquo;own&rdquo; the music or film, and can lose access if licences change or the service shuts down.</li>
+</ul>
+
+<h3>Effects on Traditional Industries</h3>
+
+<p>Retail high streets, print newspapers, travel agents, taxi firms and banks all look very different from 25 years ago. In some cases digital competitors have replaced the old model entirely; in others the two coexist with the older form reduced in scale. The cultural cost &mdash; empty high streets, loss of local newspapers &mdash; is part of the story, alongside the gains in choice and convenience.</p>
+
+<h3>Globalisation and Accessibility</h3>
+
+<p>The internet allows a small UK business to sell to customers in Japan, and a disabled user in a rural village to access university lectures recorded in London. For people with disabilities, technology can be transformative &mdash; screen readers, speech-to-text, eye-tracking input, customisable fonts and colours, real-time captions and sign-language avatars. UK law (the Equality Act 2010 and the Public Sector Bodies Accessibility Regulations 2018) requires public-sector websites to be accessible. On the other side of the same coin, globalisation also means local cultural content competes with dominant global platforms, potentially eroding regional languages and traditions.</p>
+
+<div class="case-study"><strong>Streaming and the UK high street.</strong> In 2013 a once-dominant UK video-rental chain closed its last stores as Netflix and similar services took over. The cultural impact went beyond a few shops &mdash; Saturday-afternoon rental trips disappeared, casual employment for students vanished, and the role of the shop as a local hub for film recommendations shifted to algorithmic recommendation. Similar stories apply to music shops and bookstores. The benefits (choice, price, convenience) are real, but so are the losses (local jobs, human curation, shared cultural space) &mdash; a good evaluation answer acknowledges both.</div>
+
+<h2>3.8.6 Evaluating Impacts: Stakeholders</h2>
+
+<p>The final and most important skill in this topic is <strong>evaluation</strong> &mdash; weighing competing impacts against each other. The mark-scheme-friendly way to do this is to think in terms of <em>stakeholders</em>.</p>
+
+<div class="definition">
+    A <strong>stakeholder</strong> is any person or group affected by &mdash; or affecting &mdash; a technology, system or decision. Identifying stakeholders is the first step of any good evaluation because different stakeholders usually have different priorities, and a &ldquo;good&rdquo; outcome for one may be a &ldquo;bad&rdquo; outcome for another.
+</div>
+
+<h3>Who are the Stakeholders?</h3>
+
+<p>Common stakeholder categories:</p>
+
+<ul>
+    <li><strong>Users / customers</strong> &mdash; the people directly using the technology.</li>
+    <li><strong>Non-users affected</strong> &mdash; bystanders, pedestrians, neighbours, the general public.</li>
+    <li><strong>Employees</strong> &mdash; staff whose jobs change or disappear, who must learn new tools, or who are monitored by them.</li>
+    <li><strong>The organisation / business</strong> &mdash; shareholders, owners, managers responsible for profits and reputation.</li>
+    <li><strong>Suppliers and partners</strong> &mdash; manufacturers of components, hosting providers, developers.</li>
+    <li><strong>Regulators and government</strong> &mdash; the ICO, Ofcom, competition regulators, local councils, lawmakers.</li>
+    <li><strong>Wider society</strong> &mdash; effects on employment, equality, culture, democracy.</li>
+    <li><strong>Future generations / the environment</strong> &mdash; the planet is a stakeholder too.</li>
+</ul>
+
+<!-- Stakeholder map for self-driving cars -->
+<svg viewBox="0 0 760 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Stakeholder Map &mdash; Self-Driving Cars</text>
+  <text x="380" y="40" text-anchor="middle" font-size="11" fill="#6b7280">A single technology creates winners, losers and uncertainties across many groups at once.</text>
+
+  <!-- Central tech -->
+  <g>
+    <circle cx="380" cy="240" r="70" fill="#1e40af" stroke="#1e3a5f" stroke-width="3"/>
+    <text x="380" y="232" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">SELF-DRIVING</text>
+    <text x="380" y="250" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">CAR</text>
+    <text x="380" y="268" text-anchor="middle" font-size="10" fill="#dbeafe">(AI + sensors)</text>
+  </g>
+
+  <!-- Driver / owner -->
+  <g>
+    <rect x="80" y="70" width="160" height="70" rx="10" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+    <text x="160" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46">DRIVER / OWNER</text>
+    <text x="160" y="112" text-anchor="middle" font-size="10" fill="#065f46">+ safer, productive commute</text>
+    <text x="160" y="126" text-anchor="middle" font-size="10" fill="#065f46">- high purchase cost</text>
+    <text x="160" y="138" text-anchor="middle" font-size="10" fill="#7f1d1d">? liable if car crashes?</text>
+  </g>
+  <line x1="240" y1="140" x2="320" y2="220" stroke="#1e3a5f" stroke-width="1.5"/>
+
+  <!-- Pedestrians -->
+  <g>
+    <rect x="80" y="180" width="160" height="70" rx="10" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+    <text x="160" y="205" text-anchor="middle" font-size="12" font-weight="bold" fill="#78350f">PEDESTRIANS /</text>
+    <text x="160" y="221" text-anchor="middle" font-size="12" font-weight="bold" fill="#78350f">OTHER ROAD USERS</text>
+    <text x="160" y="236" text-anchor="middle" font-size="10" fill="#065f46">+ fewer human-error accidents</text>
+    <text x="160" y="248" text-anchor="middle" font-size="10" fill="#7f1d1d">- edge-case AI failures</text>
+  </g>
+  <line x1="240" y1="215" x2="310" y2="240" stroke="#1e3a5f" stroke-width="1.5"/>
+
+  <!-- Manufacturer -->
+  <g>
+    <rect x="80" y="295" width="160" height="70" rx="10" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="160" y="320" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">MANUFACTURER</text>
+    <text x="160" y="337" text-anchor="middle" font-size="10" fill="#1e3a5f">+ new market / data</text>
+    <text x="160" y="351" text-anchor="middle" font-size="10" fill="#1e3a5f">- liability, recalls</text>
+  </g>
+  <line x1="240" y1="320" x2="320" y2="260" stroke="#1e3a5f" stroke-width="1.5"/>
+
+  <!-- Insurers -->
+  <g>
+    <rect x="520" y="70" width="170" height="70" rx="10" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/>
+    <text x="605" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#7c2d12">INSURERS</text>
+    <text x="605" y="112" text-anchor="middle" font-size="10" fill="#7c2d12">+ fewer claims on average</text>
+    <text x="605" y="126" text-anchor="middle" font-size="10" fill="#7c2d12">- who is liable &mdash; driver</text>
+    <text x="605" y="138" text-anchor="middle" font-size="10" fill="#7c2d12">  or software maker?</text>
+  </g>
+  <line x1="520" y1="140" x2="445" y2="220" stroke="#1e3a5f" stroke-width="1.5"/>
+
+  <!-- Regulators / government -->
+  <g>
+    <rect x="520" y="180" width="170" height="70" rx="10" fill="#fce7f3" stroke="#9d174d" stroke-width="2"/>
+    <text x="605" y="205" text-anchor="middle" font-size="12" font-weight="bold" fill="#831843">REGULATORS /</text>
+    <text x="605" y="221" text-anchor="middle" font-size="12" font-weight="bold" fill="#831843">GOVERNMENT</text>
+    <text x="605" y="236" text-anchor="middle" font-size="10" fill="#831843">safety standards,</text>
+    <text x="605" y="248" text-anchor="middle" font-size="10" fill="#831843">licensing, ethics</text>
+  </g>
+  <line x1="520" y1="215" x2="450" y2="240" stroke="#1e3a5f" stroke-width="1.5"/>
+
+  <!-- Displaced drivers -->
+  <g>
+    <rect x="520" y="295" width="170" height="70" rx="10" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+    <text x="605" y="318" text-anchor="middle" font-size="12" font-weight="bold" fill="#7f1d1d">TAXI / HGV DRIVERS</text>
+    <text x="605" y="337" text-anchor="middle" font-size="10" fill="#7f1d1d">- potential job losses</text>
+    <text x="605" y="351" text-anchor="middle" font-size="10" fill="#7f1d1d">need re-training support</text>
+  </g>
+  <line x1="520" y1="320" x2="445" y2="260" stroke="#1e3a5f" stroke-width="1.5"/>
+
+  <!-- Environment -->
+  <g>
+    <rect x="250" y="390" width="260" height="70" rx="10" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+    <text x="380" y="413" text-anchor="middle" font-size="12" font-weight="bold" fill="#075985">ENVIRONMENT / SOCIETY</text>
+    <text x="380" y="432" text-anchor="middle" font-size="10" fill="#075985">+ smoother traffic, fewer emissions (with EVs)</text>
+    <text x="380" y="446" text-anchor="middle" font-size="10" fill="#075985">- more miles driven overall, more e-waste sensors</text>
+  </g>
+  <line x1="380" y1="390" x2="380" y2="310" stroke="#1e3a5f" stroke-width="1.5"/>
+</svg>
+
+<h3>A Stakeholder Impact Matrix</h3>
+
+<p>For any scenario, build a quick table listing each stakeholder, their main interest, and the positive and negative impacts of the technology on them. The matrix for self-driving cars illustrates the approach:</p>
+
+<table>
+    <tr><th>Stakeholder</th><th>Main interest</th><th>Positive impact</th><th>Negative impact / risk</th></tr>
+    <tr><td>Driver/owner</td><td>Convenience, cost, safety</td><td>Safer, productive commute; accessibility for disabled or elderly users</td><td>High purchase price; unclear liability in crashes; loss of driving skill</td></tr>
+    <tr><td>Pedestrians and other road users</td><td>Personal safety</td><td>Fewer human-error collisions overall</td><td>Edge-case AI failures (misidentified pedestrian, unusual weather)</td></tr>
+    <tr><td>Manufacturer</td><td>Profit, reputation</td><td>New market; valuable driving-data assets</td><td>Product-liability claims; expensive recalls; regulatory hurdles</td></tr>
+    <tr><td>Insurers</td><td>Risk and premiums</td><td>Fewer claims per vehicle on average</td><td>Difficulty apportioning blame between driver, software, manufacturer</td></tr>
+    <tr><td>Taxi/HGV drivers</td><td>Employment</td><td>New roles in monitoring, fleet management</td><td>Mass job displacement; retraining needed</td></tr>
+    <tr><td>Regulators/government</td><td>Safety, fair market</td><td>Cleaner, safer roads possible</td><td>Must write new laws faster than technology evolves</td></tr>
+    <tr><td>Environment/society</td><td>Sustainability</td><td>Smoother traffic reduces fuel use; shared fleets could cut car ownership</td><td>Extra sensors mean more e-waste; &ldquo;cheap&rdquo; rides may increase total miles driven</td></tr>
+</table>
+
+<h3>A Structured Framework for Evaluation Answers</h3>
+
+<p>Longer exam questions often ask you to <em>discuss, evaluate</em> or <em>assess</em> a technology scenario. A reliable structure:</p>
+
+<ol>
+    <li><strong>State the technology and the context</strong> in one sentence.</li>
+    <li><strong>Identify the key stakeholders</strong> (three to five is usually enough).</li>
+    <li><strong>Consider each of the five issue areas</strong> &mdash; ethical, legal, environmental, privacy, cultural &mdash; and pick those that apply. Name specific UK Acts by year where relevant.</li>
+    <li><strong>Give at least one advantage and one disadvantage</strong> for the main stakeholders.</li>
+    <li><strong>Reach a balanced conclusion</strong> &mdash; often &ldquo;the technology is beneficial overall provided that [specific mitigation]&rdquo; rather than a simple yes/no.</li>
+</ol>
+
+<div class="exam-tip">A reliable 8-mark sentence skeleton: &ldquo;For [stakeholder X] the main benefit is&hellip; because&hellip;; however, [stakeholder Y] faces&hellip; which is regulated under the [Act NAME YEAR]; on balance,&hellip;&rdquo;. Mark schemes award marks for each distinct stakeholder, each impact, each correct legal reference and a final judgement &mdash; five separate hooks per paragraph.</div>
+
+<h3>Worked Example &mdash; A School Introduces AI-Marked Homework</h3>
+
+<p><em>Scenario:</em> A secondary school plans to use an AI system that automatically marks students&rsquo; written homework and spots possible plagiarism. Answers are uploaded by students on their phones; the system trains on historical marked work.</p>
+
+<p><strong>Stakeholders:</strong> students, teachers, parents, the school management, the AI supplier, the ICO (regulator).</p>
+
+<table>
+    <tr><th>Issue area</th><th>Key points</th></tr>
+    <tr><td>Ethical</td><td>AI bias against particular writing styles (e.g. EAL learners); algorithmic marking may lack context a teacher would spot; plagiarism-detector false positives can unfairly damage a student&rsquo;s reputation.</td></tr>
+    <tr><td>Legal (DPA 2018)</td><td>Personal data of children is being processed &mdash; lawful basis needed, parental awareness, data minimisation (why upload photo metadata?), right to human review of significant decisions; a Data Protection Impact Assessment is required.</td></tr>
+    <tr><td>Legal (Copyright, Designs and Patents Act 1988)</td><td>If student work is used to train the AI supplier&rsquo;s future models, that is a use beyond the original purpose &mdash; need explicit permission.</td></tr>
+    <tr><td>Environmental</td><td>Extra compute in a data centre for marking; balanced by reduced paper printing. Likely net small impact.</td></tr>
+    <tr><td>Privacy</td><td>Homework can reveal personal information; cloud storage raises risk of breach; informed consent for under-16s means parental consent is required.</td></tr>
+    <tr><td>Cultural</td><td>Frees teachers from marking and can give instant feedback, but may erode trust between students and teachers if the AI is felt to be a black box. Students without home internet are disadvantaged.</td></tr>
+</table>
+
+<p><strong>Balanced conclusion:</strong> The system has clear benefits (teacher workload, faster feedback) but should only be used with (a) a formal Data Protection Impact Assessment under the Data Protection Act 2018, (b) a written agreement with the supplier forbidding the reuse of student work for training, (c) a clear right to human review of any significant grade or plagiarism finding, and (d) an opt-out route for families without reliable home internet. That pattern &mdash; benefit plus named-law conditions plus named-stakeholder protection &mdash; is what turns a B-grade answer into an A*.</p>
+
+<h3>Worked Example &mdash; A City Deploys Live Facial Recognition</h3>
+
+<p><em>Scenario:</em> A UK city council proposes live facial-recognition cameras in the main shopping district, matching passers-by against a watchlist of persons wanted for theft.</p>
+
+<ul>
+    <li><strong>Stakeholders:</strong> shoppers, shop owners, watchlisted individuals, ethnic-minority community groups (who historically see higher false-match rates), the ICO, the council itself.</li>
+    <li><strong>Ethical:</strong> mass surveillance of innocent people is a profound ethical step even if intended for crime prevention; false matches disproportionately affect women and people of colour.</li>
+    <li><strong>Legal:</strong> the Data Protection Act 2018 applies because biometric data is being processed &mdash; a lawful basis is required, proportionality tests must be met, and a Data Protection Impact Assessment is mandatory. The Human Rights Act 1998 also protects the right to a private life.</li>
+    <li><strong>Environmental:</strong> cameras and ever-running classifiers consume electricity and create e-waste at end of life.</li>
+    <li><strong>Privacy:</strong> the whole point is to identify individuals in public; no meaningful consent is possible.</li>
+    <li><strong>Cultural:</strong> a &ldquo;chilling effect&rdquo; on lawful public behaviour (protest, religious practice) if people feel constantly watched.</li>
+    <li><strong>Conclusion:</strong> deploy only with strict, published criteria, short retention periods, independent oversight, measurable accuracy testing across demographics, and an option for the public to be informed when the system is active &mdash; and reconsider entirely if less-intrusive alternatives would work.</li>
+</ul>
+
+<h2>3.8.7 Summary &mdash; The Five Impact Areas at a Glance</h2>
+
+<p>If you remember nothing else from this topic, remember this grid and which UK Acts belong where:</p>
+
+<table>
+    <tr><th>Impact area</th><th>Key questions</th><th>Main UK law</th></tr>
+    <tr><td>Ethical</td><td>Is it fair? Who benefits and who is harmed? Is it accountable?</td><td>No single Act &mdash; informed by ethics, professional codes, codes of practice</td></tr>
+    <tr><td>Legal (data)</td><td>Is personal data handled lawfully?</td><td>Data Protection Act 2018 / UK-GDPR</td></tr>
+    <tr><td>Legal (security)</td><td>Is system access authorised?</td><td>Computer Misuse Act 1990</td></tr>
+    <tr><td>Legal (creative work)</td><td>Is intellectual property respected?</td><td>Copyright, Designs and Patents Act 1988</td></tr>
+    <tr><td>Legal (public info)</td><td>Can the public see public-body records?</td><td>Freedom of Information Act 2000</td></tr>
+    <tr><td>Environmental</td><td>What is the energy, water, materials and waste cost across the lifecycle?</td><td>Various environmental and WEEE (e-waste) regulations</td></tr>
+    <tr><td>Privacy</td><td>What personal data is collected, by whom, for what, and with what consent?</td><td>Data Protection Act 2018 / UK-GDPR; PECR for cookies and marketing</td></tr>
+    <tr><td>Cultural</td><td>How does the technology change behaviour, work, relationships, traditional industries?</td><td>No single Act &mdash; often discussed in policy, accessibility (Equality Act 2010) and competition law</td></tr>
+</table>
+
+<h3>Five Things to Take into the Exam</h3>
+
+<ol>
+    <li>Learn the four main Acts by <strong>name and year</strong>: Data Protection Act 2018, Computer Misuse Act 1990, Copyright Designs and Patents Act 1988, Freedom of Information Act 2000.</li>
+    <li>Be able to state the <strong>six DPA principles</strong> and the <strong>four CMA offences</strong> in outline.</li>
+    <li>Always <strong>name stakeholders</strong> in evaluation answers and give at least one benefit and one harm per stakeholder.</li>
+    <li>For any environmental question, think in <strong>lifecycle stages</strong>: raw materials, manufacture, use, end of life.</li>
+    <li>End an evaluation with a <strong>conditional conclusion</strong> (&ldquo;beneficial, provided&hellip;&rdquo;) &mdash; not an absolute yes or no.</li>
+</ol>
+
+<p>If you can do those five things confidently and back them up with a real example (British Airways, WannaCry, Clearview AI, SyRI, right-to-repair), you will be able to answer almost anything Topic 3.8 can throw at you &mdash; and you will finish the AQA GCSE Computer Science course ready for Paper 2.</p>
+
+</div>
+</body>
+</html>
