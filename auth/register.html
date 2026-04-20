@@ -435,13 +435,11 @@ const eyeIcon         = document.getElementById('eyeIcon');
 
 function updateConfirmFeedback() {
   const cv = confirmPassword.value;
-  if (!cv) { confirmLabel.textContent = ''; return; }
-  if (cv === pwInput.value) {
+  if (cv && cv === pwInput.value) {
     confirmLabel.textContent = '✓ Passwords match';
     confirmLabel.style.color = '#16A34A';
   } else {
-    confirmLabel.textContent = 'Passwords do not match';
-    confirmLabel.style.color = '#DC2626';
+    confirmLabel.textContent = '';
   }
 }
 confirmPassword.addEventListener('input', updateConfirmFeedback);
