@@ -793,10 +793,14 @@ function renderGrades() {
   function isMaxGrade(g) { return g === GRADES[0]; }
   function gradeVal(g) { return typeof g === 'string' ? `'${g}'` : g; }
 
+  // Grades come back from the DB as strings; for GCSE the list holds numbers.
+  // Normalise so === comparisons work both ways.
+  const norm = v => (isGCSE && typeof v === 'string' && v !== '' && !isNaN(v)) ? parseInt(v, 10) : v;
+
   sec.innerHTML = `<div class="selected-list">
     ${selectedSubjects.map(s => {
-      const cur = subjectCurrentGrade[s.name];
-      const tgt = subjectTargetGrade[s.name];
+      const cur = norm(subjectCurrentGrade[s.name]);
+      const tgt = norm(subjectTargetGrade[s.name]);
       const maxed = isMaxGrade(cur);
       const curIdx = gradeIndex(cur);
       const validTargets = cur != null ? GRADES.filter((g, i) => i <= curIdx) : GRADES;
