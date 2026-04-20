@@ -53,9 +53,11 @@
  *   ALTER TABLE user_medals ENABLE ROW LEVEL SECURITY;
  *   CREATE POLICY "own medals" ON user_medals FOR ALL USING (auth.uid() = user_id);
  *
- * IMPORTANT — disable email confirmation:
+ * IMPORTANT — enable email confirmation:
  *   Supabase dashboard → Authentication → Providers → Email
- *   → turn off "Confirm email"
+ *   → turn ON "Confirm email"
+ *   Also set Site URL + Redirect URLs under Authentication → URL Configuration
+ *   so the confirmation email link points back to your app.
  *
  * ────────────────────────────────────────────────────────────────────────
  */

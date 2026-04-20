@@ -279,6 +279,12 @@ togglePw.addEventListener('click', () => {
   eyeIcon.innerHTML = showing ? EYE_OPEN : EYE_CLOSED;
 });
 
+// Show a success banner when the user arrives from the confirmation email link
+if (new URLSearchParams(window.location.search).get('confirmed') === '1') {
+  msg.className = 'msg success';
+  msg.innerText = 'Email confirmed! You can now sign in.';
+}
+
 form.onsubmit = async (e) => {
   e.preventDefault();
   loginBtn.disabled    = true;
@@ -293,8 +299,12 @@ form.onsubmit = async (e) => {
   });
 
   if (error) {
-    msg.className       = 'msg error';
-    msg.innerText       = error.message;
+    msg.className = 'msg error';
+    if (/confirm/i.test(error.message) || error.code === 'email_not_confirmed') {
+      msg.innerText = 'Please confirm your email first — check your inbox for the confirmation link.';
+    } else {
+      msg.innerText = error.message;
+    }
     loginBtn.disabled    = false;
     loginBtn.textContent = 'Sign In';
     return;

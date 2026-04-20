@@ -296,7 +296,6 @@ form.onsubmit = async (e) => {
   msg.className = 'msg';
   msg.innerText = '';
 
-  // 1 — Sign up (email confirmation must be OFF in Supabase Auth settings)
   const { data, error } = await supabaseClient.auth.signUp({
     email:    email.value.trim(),
     password: password.value,
@@ -304,40 +303,27 @@ form.onsubmit = async (e) => {
       data: {
         first_name: firstName.value.trim(),
         last_name:  lastName.value.trim()
-      }
+      },
+      emailRedirectTo: `${window.location.origin}/auth/login.html?confirmed=1`
     }
   });
 
   if (error) {
-    msg.className       = 'msg error';
-    msg.innerText       = error.message;
-    registerBtn.disabled    = false;
+    msg.className        = 'msg error';
+    msg.innerText        = error.message;
+    registerBtn.disabled = false;
     registerBtn.textContent = 'Create Account';
     return;
   }
 
-  // 2 — Create the profile row immediately (works when email confirm is off)
-  if (data.user) {
-    await supabaseClient.from('profiles').upsert({
-      id:             data.user.id,
-      first_name:     firstName.value.trim(),
-      last_name:      lastName.value.trim(),
-      email:          email.value.trim(),
-      setup_complete: false
-    });
-  }
-
-  // 3 — If we got a session straight away → go to setup
-  if (data.session) {
-    window.location = 'setup.html';
-    return;
-  }
-
-  // 4 — Email confirmation is still on — ask them to sign in after confirming
-  msg.className   = 'msg success';
-  msg.innerText   = 'Account created! Check your email to confirm, then sign in.';
-  registerBtn.disabled    = false;
-  registerBtn.textContent = 'Create Account';
+  // Email confirmation flow — no session returned; profile row is created on first login
+  form.style.display = 'none';
+  msg.className = 'msg success';
+  msg.innerHTML = `
+    <strong>Check your inbox</strong><br>
+    We sent a confirmation link to <b>${email.value.trim()}</b>.<br>
+    Click the link to activate your account, then sign in.
+  `;
 };
 </script>
 </body>
