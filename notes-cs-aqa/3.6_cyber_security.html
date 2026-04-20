@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 3.6 &mdash; Cyber Security</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        h4 { font-size: 1.02rem; color: #1e3a5f; margin-top: 22px; margin-bottom: 8px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>3.6 Cyber Security</h1>
+<p class="spec-ref">AQA GCSE Computer Science (8525) &mdash; Paper 2</p>
+
+<h2>3.6.1 What is Cyber Security?</h2>
+
+<div class="definition">
+    <strong>Cyber security</strong> is the practice of protecting computer systems, networks, programs and data from <em>unauthorised access, theft, damage or disruption</em>. It involves technical controls (firewalls, encryption, anti-malware), procedural controls (policies, training, backups) and physical controls (locked rooms, biometric doors) working together.
+</div>
+
+<p>Everything you have studied so far in the AQA course &mdash; algorithms, programs, data representation, computer systems and networks &mdash; creates value because it stores and moves <em>information</em>. That information has worth: personal data, banking details, medical records, exam scripts, intellectual property, national infrastructure. Whenever something has worth, someone will try to steal it, alter it, or stop the rightful owner using it. <strong>Cyber security is the set of defences that stops them.</strong></p>
+
+<p>Examiners expect you to be able to discuss cyber security in three overlapping groups:</p>
+
+<ul>
+    <li><strong>Threats</strong> &mdash; the things that can go wrong (malware, phishing, DDoS, insider attacks, etc.).</li>
+    <li><strong>Vulnerabilities</strong> &mdash; weaknesses in the system that a threat can exploit (weak passwords, unpatched software, untrained users, misconfigured permissions).</li>
+    <li><strong>Defences</strong> &mdash; the technical and human measures taken to prevent, detect and recover from attacks (firewalls, anti-malware, encryption, policies, backups, training).</li>
+</ul>
+
+<h3>The CIA Triad</h3>
+
+<p>Cyber security professionals summarise what they are protecting using the <strong>CIA triad</strong>. You do not need this by name for AQA, but it is a useful way to organise your thinking and to write evaluation answers:</p>
+
+<table>
+    <tr><th>Goal</th><th>Meaning</th><th>Example of a failure</th></tr>
+    <tr><td><strong>Confidentiality</strong></td><td>Only authorised people can read the data</td><td>A leak of customer passwords to the public</td></tr>
+    <tr><td><strong>Integrity</strong></td><td>Data is accurate and has not been altered without permission</td><td>An attacker changes exam marks in the school database</td></tr>
+    <tr><td><strong>Availability</strong></td><td>Data and services are accessible when needed</td><td>A ransomware attack locks a hospital out of patient records</td></tr>
+</table>
+
+<h3>Why Cyber Security Matters</h3>
+
+<p>The consequences of poor cyber security fall into predictable categories, and exam mark schemes reward candidates who list more than one:</p>
+
+<ul>
+    <li><strong>Financial loss.</strong> Direct theft (bank transfers, stolen card details), ransom payments, lost sales during an outage, fines from data-protection regulators (ICO fines under the UK GDPR can reach tens of millions of pounds), and the cost of recovery and forensic investigation.</li>
+    <li><strong>Reputational damage.</strong> Customers move to a competitor after a breach; stock prices fall; contracts are cancelled. Trust is slow to rebuild.</li>
+    <li><strong>Operational disruption.</strong> A hospital with locked patient records cancels operations; a factory with disabled control systems stops the production line; a school with wiped servers cannot deliver lessons.</li>
+    <li><strong>Legal and regulatory consequences.</strong> Organisations have legal duties (GDPR, Computer Misuse Act 1990, Data Protection Act 2018); breaches can trigger investigations, prosecutions, and large fines.</li>
+    <li><strong>Harm to individuals.</strong> Identity theft, fraud against personal accounts, stalking, blackmail, and psychological distress. A leak of medical records or private messages is extremely damaging even if no money changes hands.</li>
+    <li><strong>National-security and safety risks.</strong> Attacks on energy grids, transport networks, water systems and hospitals can endanger lives, not just data.</li>
+</ul>
+
+<div class="exam-tip">A common 6&ndash;8 mark question is &ldquo;Discuss the impact of a successful cyber attack on a small business.&rdquo; Aim for <em>at least three distinct impact categories</em> from the list above, each developed with a sentence of explanation. Writing five lines about &ldquo;they lose money&rdquo; will cap you at 2 marks.</div>
+
+<h3>Attackers &mdash; Who Would Bother?</h3>
+
+<p>It is useful to have a mental model of who carries out cyber attacks, because defences differ depending on the attacker. You will not be tested on the labels, but the <em>motives</em> are fair game:</p>
+
+<ul>
+    <li><strong>Cyber criminals</strong> &mdash; motivated by money. They run phishing operations, ransomware gangs, credit-card theft, and fraud.</li>
+    <li><strong>Hacktivists</strong> &mdash; motivated by a political or social cause. They deface websites, leak documents, or launch DDoS attacks on organisations they oppose.</li>
+    <li><strong>State-sponsored attackers</strong> &mdash; motivated by intelligence gathering or sabotage. Well-funded and persistent; attack government, military, infrastructure and major companies.</li>
+    <li><strong>Insiders</strong> &mdash; employees or contractors with legitimate access who steal, damage or leak information, either deliberately (disgruntled, bribed) or accidentally (clicking a phishing link).</li>
+    <li><strong>Script kiddies</strong> &mdash; inexperienced attackers using pre-written tools for status, curiosity or mischief. Less skilled but still a threat to poorly defended systems.</li>
+</ul>
+
+<h2>3.6.2 Social Engineering</h2>
+
+<div class="definition">
+    <strong>Social engineering</strong> is any attack that manipulates <em>people</em> into breaking normal security procedures, rather than attacking the technology directly. Instead of trying to guess a password or crack encryption, the attacker persuades the user to hand the password over.
+</div>
+
+<p>Social engineering is the most successful category of attack in the real world, for one simple reason: <strong>people are easier to fool than computers are to break</strong>. A modern firewall, a strong encryption algorithm and a fully patched operating system can be bypassed in seconds by an employee who enters their password into a fake login page because an email told them to.</p>
+
+<p>Social engineering exploits predictable human behaviour:</p>
+
+<ul>
+    <li><strong>Authority.</strong> People do what they are told by an apparent manager, IT helpdesk, police officer or bank.</li>
+    <li><strong>Urgency.</strong> Under time pressure, people skip the usual checks (&ldquo;your account will be locked in 24 hours&rdquo;).</li>
+    <li><strong>Fear.</strong> A threatening message (fines, account suspension, legal trouble) panics people into complying.</li>
+    <li><strong>Trust / familiarity.</strong> A message that appears to come from a colleague, friend or supplier is rarely questioned.</li>
+    <li><strong>Helpfulness.</strong> Staff trained to be polite and helpful will hold a door open, read out an account number, or reset a password for a &ldquo;colleague&rdquo;.</li>
+    <li><strong>Reward.</strong> The promise of a prize, refund, gift card, or &ldquo;free&rdquo; thing is a classic lure.</li>
+</ul>
+
+<h3>Blagging (Pretexting)</h3>
+
+<div class="definition">
+    <strong>Blagging</strong> (also called <em>pretexting</em>) is a social-engineering attack in which the attacker <em>invents a scenario (a pretext)</em> to persuade the victim to reveal information or perform an action. It is usually carried out in person or by phone.
+</div>
+
+<p>A classic example: an attacker phones a company switchboard, claims to be &ldquo;Tom from head-office IT,&rdquo; and says he needs the receptionist&rsquo;s network password to fix a critical server fault before the director&rsquo;s meeting in 10 minutes. The pretext combines <em>authority</em> (IT, head office), <em>urgency</em> (10 minutes) and <em>fear</em> (the director will be angry). Well-trained staff refuse; untrained staff often hand the password over.</p>
+
+<p>Another example: an attacker calls a bank impersonating a customer, claims to have lost their card, and uses publicly available details (birthday from social media, address from the electoral roll) to answer the security questions and have a replacement card posted to a new address under their control.</p>
+
+<h3>Phishing</h3>
+
+<div class="definition">
+    <strong>Phishing</strong> is a social-engineering attack in which the attacker sends a <em>fraudulent message</em> (typically an email, but also SMS, messaging apps or phone calls) pretending to be from a trusted organisation, tricking the victim into clicking a link, opening an attachment, or revealing credentials.
+</div>
+
+<p>Phishing is by far the most common first stage of a real-world cyber attack. The attacker casts a wide net: millions of emails sent pretending to be from a bank, HMRC, Amazon, Microsoft 365, PayPal or similar. Even a tiny click-through rate (0.1%) yields thousands of victims.</p>
+
+<h4>A Typical Phishing Email</h4>
+
+<p>The message pretends to be from &ldquo;Barclays Security&rdquo;, warns that the victim&rsquo;s account has been locked, and provides a link: <code>https://barclays-secure-login.co.uk/verify</code>. The link <em>looks</em> like Barclays but actually leads to a domain controlled by the attacker. The page is a pixel-perfect copy of the real login form; when the victim types their username and password, the attacker records them and uses them to log in to the real bank.</p>
+
+<!-- Phishing attack flow -->
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Phishing Attack Flow</text>
+  <text x="360" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Attacker sends fake email &rarr; user clicks link &rarr; enters credentials into fake site &rarr; attacker logs in to the real service.</text>
+
+  <!-- Attacker -->
+  <g>
+    <rect x="30" y="70" width="120" height="70" rx="8" fill="#fecaca" stroke="#b91c1c" stroke-width="2"/>
+    <text x="90" y="100" text-anchor="middle" font-size="13" font-weight="bold" fill="#7f1d1d">ATTACKER</text>
+    <text x="90" y="120" text-anchor="middle" font-size="11" fill="#7f1d1d">sends forged</text>
+    <text x="90" y="134" text-anchor="middle" font-size="11" fill="#7f1d1d">email</text>
+  </g>
+
+  <!-- Fake email -->
+  <g>
+    <rect x="220" y="70" width="140" height="70" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+    <text x="290" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">FAKE EMAIL</text>
+    <text x="290" y="112" text-anchor="middle" font-size="10" fill="#92400e">"Your account is</text>
+    <text x="290" y="126" text-anchor="middle" font-size="10" fill="#92400e">locked - click here"</text>
+  </g>
+
+  <!-- Victim -->
+  <g>
+    <rect x="430" y="70" width="120" height="70" rx="8" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+    <text x="490" y="100" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a5f">USER</text>
+    <text x="490" y="120" text-anchor="middle" font-size="11" fill="#1e3a5f">reads email,</text>
+    <text x="490" y="134" text-anchor="middle" font-size="11" fill="#1e3a5f">clicks link</text>
+  </g>
+
+  <!-- arrows top row -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="150" y1="105" x2="215" y2="105"/>
+    <polygon points="215,105 209,101 209,109" fill="#1e3a5f"/>
+    <line x1="360" y1="105" x2="425" y2="105"/>
+    <polygon points="425,105 419,101 419,109" fill="#1e3a5f"/>
+  </g>
+
+  <!-- Fake site -->
+  <g>
+    <rect x="430" y="200" width="200" height="80" rx="8" fill="#fde2e2" stroke="#b91c1c" stroke-width="2"/>
+    <text x="530" y="224" text-anchor="middle" font-size="12" font-weight="bold" fill="#7f1d1d">FAKE LOGIN PAGE</text>
+    <text x="530" y="244" text-anchor="middle" font-size="10" fill="#7f1d1d">barclays-secure-login.co.uk</text>
+    <text x="530" y="260" text-anchor="middle" font-size="10" fill="#7f1d1d">(looks real; owned by attacker)</text>
+    <text x="530" y="274" text-anchor="middle" font-size="10" fill="#7f1d1d">user enters username + password</text>
+  </g>
+
+  <!-- Arrow from user down to fake site -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="490" y1="140" x2="490" y2="195"/>
+    <polygon points="490,200 486,192 494,192" fill="#1e3a5f"/>
+  </g>
+
+  <!-- Arrow from fake site back to attacker (credentials) -->
+  <path d="M 430 260 Q 250 260 90 150" stroke="#b91c1c" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
+  <polygon points="90,150 94,142 102,146" fill="#b91c1c"/>
+  <text x="250" y="230" font-size="10" fill="#b91c1c" font-weight="bold">credentials sent to attacker</text>
+
+  <!-- Real bank -->
+  <g>
+    <rect x="260" y="340" width="200" height="80" rx="8" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+    <text x="360" y="364" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46">REAL BANK</text>
+    <text x="360" y="384" text-anchor="middle" font-size="10" fill="#065f46">barclays.co.uk</text>
+    <text x="360" y="400" text-anchor="middle" font-size="10" fill="#065f46">attacker logs in with stolen</text>
+    <text x="360" y="414" text-anchor="middle" font-size="10" fill="#065f46">credentials &rarr; drains account</text>
+  </g>
+
+  <!-- Arrow attacker -> real bank -->
+  <path d="M 90 145 Q 90 400 255 380" stroke="#b91c1c" stroke-width="2" fill="none"/>
+  <polygon points="255,380 248,376 250,384" fill="#b91c1c"/>
+  <text x="70" y="300" font-size="10" fill="#b91c1c" font-weight="bold" transform="rotate(-90 70 300)">attacker logs in</text>
+</svg>
+
+<h4>Tell-tale Signs of a Phishing Email</h4>
+
+<ul>
+    <li><strong>Generic greeting</strong> (&ldquo;Dear customer&rdquo;) rather than your actual name.</li>
+    <li><strong>Spelling and grammar errors</strong> &mdash; professional organisations proof-read their messages.</li>
+    <li><strong>Urgent or threatening tone</strong> pushing you to act immediately (&ldquo;your account will be closed in 24 hours&rdquo;).</li>
+    <li><strong>Suspicious sender address</strong> &mdash; <code>security@barclays-online.co</code> is not Barclays; the real domain is <code>barclays.co.uk</code>.</li>
+    <li><strong>Suspicious links</strong> &mdash; hover over the link; the text and the actual URL do not match.</li>
+    <li><strong>Unexpected attachments</strong>, especially <code>.zip</code>, <code>.exe</code>, <code>.js</code>, or macro-enabled Office documents.</li>
+    <li><strong>Request for sensitive information</strong> (passwords, PINs, card numbers) that a real bank would never ask for by email.</li>
+</ul>
+
+<h4>Spear-Phishing</h4>
+
+<p><strong>Spear-phishing</strong> is a <em>targeted</em> phishing attack. Instead of millions of generic emails, the attacker researches one individual or small group and crafts a message just for them. A finance clerk at a law firm might receive an email that appears to come from a named senior partner they know, referencing a real client, and asking them to approve a bank transfer &ldquo;urgently, before the deal closes.&rdquo; Spear-phishing is harder to spot because the details check out; it is used heavily in attacks on wealthy individuals, senior executives (&ldquo;whaling&rdquo;) and government staff.</p>
+
+<h3>Pharming</h3>
+
+<div class="definition">
+    <strong>Pharming</strong> is an attack that redirects a user to a fraudulent website <em>without their knowledge</em>, even when they type the correct URL. This is usually done by poisoning the DNS system or altering the victim&rsquo;s local hosts file, so that <code>barclays.co.uk</code> resolves to an attacker&rsquo;s IP address.
+</div>
+
+<p>Pharming is subtle because it does not rely on a phishing email. The victim types the correct address, the browser shows the correct address, and the page looks correct &mdash; but the DNS lookup has been tampered with, so the connection actually goes to a server controlled by the attacker. The victim enters their credentials as normal, and they are stolen. Pharming is defeated in practice by correctly validated HTTPS certificates: if the attacker cannot present a valid certificate for the real domain, the browser shows a security warning.</p>
+
+<h3>Shouldering (Shoulder Surfing)</h3>
+
+<div class="definition">
+    <strong>Shouldering</strong> (or <em>shoulder surfing</em>) is observing a person&rsquo;s screen or keyboard from nearby, in order to read a password, PIN, or confidential information as they type it.
+</div>
+
+<p>Examples: someone standing behind you at a cash machine reading your PIN as you key it in; a commuter glancing at your laptop on a train and photographing the document on your screen; a CCTV camera positioned to see a checkout operator&rsquo;s login. Low-tech, but very effective. Defences include PIN shields on keypads, privacy screens on monitors, situational awareness (don&rsquo;t type passwords in public view), and multi-factor authentication (a stolen password alone is not enough).</p>
+
+<h3>Comparison of Social-Engineering Attacks</h3>
+
+<table>
+    <tr><th>Attack</th><th>Channel</th><th>How it tricks the victim</th><th>Typical defence</th></tr>
+    <tr><td>Blagging</td><td>Phone / in person</td><td>Attacker invents a plausible pretext using authority or urgency</td><td>Staff training, call-back procedures, never give credentials over the phone</td></tr>
+    <tr><td>Phishing</td><td>Mass email / SMS</td><td>Fake message from a trusted brand with a link to a fake login page</td><td>User education, email filters, link checking, MFA</td></tr>
+    <tr><td>Spear-phishing</td><td>Targeted email</td><td>Personalised message referring to the victim&rsquo;s real context</td><td>Training for high-value targets, verified sender, MFA, callback on unusual requests</td></tr>
+    <tr><td>Pharming</td><td>Network (DNS) / hosts file</td><td>DNS tampering silently redirects real URLs to fake servers</td><td>HTTPS with valid certificates, secure DNS, anti-malware on endpoints</td></tr>
+    <tr><td>Shouldering</td><td>Physical proximity</td><td>Watching the screen or keyboard as the victim types</td><td>Privacy screens, PIN shields, awareness, MFA</td></tr>
+</table>
+
+<div class="exam-tip">If a scenario mentions anything that relies on <em>manipulating a person</em> (ringing up pretending to be someone, clicking an email link, tricking a helpdesk, watching over a shoulder) the attack is <strong>social engineering</strong>. Do not write &ldquo;hacking&rdquo; &mdash; mark schemes reward the specific term.</div>
+
+<h2>3.6.3 Malicious Code (Malware)</h2>
+
+<div class="definition">
+    <strong>Malware</strong> (malicious software) is any program written to damage, disrupt, gain unauthorised access to, or steal information from a computer system. It is the technical counterpart to social engineering: instead of persuading a person, the attacker runs code on a target machine.
+</div>
+
+<p>AQA expects you to know the main families of malware, how each spreads, and the typical impact of an infection. The spec is strict about the <strong>defining property</strong> of each: a virus attaches to a host file, a worm self-replicates across a network, a Trojan hides inside a legitimate-looking program. Lose those properties in your answer and you will lose the mark.</p>
+
+<h3>Virus</h3>
+
+<p>A <strong>virus</strong> is a piece of malicious code that <em>attaches itself to a legitimate host file or program</em> and is activated when that host is run. Modern viruses attach to executables, Office documents with macros, scripts, or boot records. Once running, the virus executes its payload (deleting files, corrupting data, logging keystrokes) and attempts to infect further files on the same machine and on shared storage.</p>
+
+<p>Key features: (a) requires a host, (b) requires human action to spread (the user must run the infected file or open the infected document), (c) can damage, corrupt or steal data when the payload triggers.</p>
+
+<h3>Worm</h3>
+
+<p>A <strong>worm</strong> is self-replicating malware that <em>spreads by itself across a network</em> without needing a host file or user action. It exploits a software vulnerability (for example, an unpatched bug in the operating system&rsquo;s network services) to copy itself to other machines on the same network, each of which then scans for more vulnerable targets. Because a worm spreads automatically, it can infect thousands of machines in minutes.</p>
+
+<p>Real-world example: <em>WannaCry</em> (2017) was a ransomware worm that hit the NHS and thousands of other organisations within hours by exploiting an unpatched Windows SMB vulnerability.</p>
+
+<h3>Trojan (Trojan Horse)</h3>
+
+<p>A <strong>Trojan</strong> is malware that <em>pretends to be a legitimate and useful program</em>, so that the user is tricked into running it. It does not self-replicate, but once run, it delivers a hidden payload &mdash; often opening a &ldquo;back door&rdquo; that lets the attacker control the machine remotely. Trojans are commonly distributed as cracked games, fake &ldquo;video player&rdquo; updates, fake invoices, or free utilities downloaded from untrusted websites.</p>
+
+<h3>Ransomware</h3>
+
+<p><strong>Ransomware</strong> is malware that <em>encrypts the victim&rsquo;s files with a key only the attacker knows</em> and then displays a ransom demand (usually in cryptocurrency) offering to restore access. Modern strains also threaten to publish the stolen data if payment is refused (&ldquo;double extortion&rdquo;). A single successful ransomware infection can put a hospital, council or school out of action for weeks. The best defence is <em>good offline backups</em> (so you can restore the data instead of paying) combined with rapid patching, anti-malware and user education to prevent the initial infection.</p>
+
+<h3>Spyware</h3>
+
+<p><strong>Spyware</strong> is malware that <em>secretly monitors the user&rsquo;s activity</em> and sends the information back to the attacker. It can log keystrokes, capture screenshots, steal saved passwords from browsers, watch webcam feeds, and track browsing history. It usually installs quietly as part of a Trojan or as a drive-by download from a malicious website.</p>
+
+<h3>Adware</h3>
+
+<p><strong>Adware</strong> is software that <em>displays unwanted adverts</em> (pop-ups, injected banners, redirected searches) to make money for the attacker. Mild adware is merely annoying; serious adware tracks browsing behaviour to build a profile and often comes bundled with spyware.</p>
+
+<h3>Keylogger</h3>
+
+<p>A <strong>keylogger</strong> is a specific type of spyware that <em>records every keystroke</em> the user makes and sends the log to the attacker. Passwords, card numbers, private messages and emails all pass through the keyboard, so a keylogger on a single workstation can compromise everything the user does. Keyloggers can be software (installed by other malware) or hardware (a small device plugged in between the keyboard and the computer, used in physical attacks).</p>
+
+<h3>Comparison Table of Malware Types</h3>
+
+<table>
+    <tr><th>Type</th><th>Defining feature</th><th>How it spreads</th><th>Typical impact</th></tr>
+    <tr><td>Virus</td><td>Attaches to a host file or program</td><td>User runs the infected file (email attachment, USB, shared drive)</td><td>Corrupts or deletes data; spreads to other files</td></tr>
+    <tr><td>Worm</td><td>Self-replicating; needs no host</td><td>Automatically across a network via a software vulnerability</td><td>Huge, fast outbreaks; network congestion; delivers further payloads</td></tr>
+    <tr><td>Trojan</td><td>Disguised as a useful program</td><td>User is tricked into installing it</td><td>Creates a back door; lets attacker control the machine remotely</td></tr>
+    <tr><td>Ransomware</td><td>Encrypts files and demands payment</td><td>Phishing email / worm / Trojan drops the payload</td><td>Files inaccessible; business halted; ransom demand; data leak threat</td></tr>
+    <tr><td>Spyware</td><td>Silently monitors user activity</td><td>Bundled with Trojans / drive-by downloads</td><td>Passwords, messages and documents stolen</td></tr>
+    <tr><td>Adware</td><td>Displays unwanted adverts</td><td>Bundled with free software or via malicious websites</td><td>Annoyance, slowdown, possible tracking, possible spyware bundle</td></tr>
+    <tr><td>Keylogger</td><td>Records every keystroke</td><td>Software (via other malware) or hardware (physical device)</td><td>Every password, message or card number typed is captured</td></tr>
+</table>
+
+<div class="exam-tip">For a 2-mark &ldquo;State one difference between a virus and a worm&rdquo; question, give the <em>defining property</em>: &ldquo;A virus attaches to a host file and needs a user to run it, whereas a worm is standalone and spreads automatically across a network.&rdquo; That answer will score both marks every time.</div>
+
+<h2>3.6.4 Other Threats</h2>
+
+<p>Not all threats involve social engineering or malware. The AQA specification also covers attacks on passwords, attacks on availability, attacks via input data, attacks on data in transit, and attacks from inside the organisation.</p>
+
+<h3>Brute-Force Attacks</h3>
+
+<div class="definition">
+    A <strong>brute-force attack</strong> systematically tries <em>every possible password or key</em> until the correct one is found. For a 4-digit PIN that is only 10 000 attempts; for a good password it is astronomically many more.
+</div>
+
+<p>Brute force works well against weak passwords and short PINs, especially if the system does not limit how many attempts can be made per second. It is defeated by (a) long, complex passwords, (b) locking an account after a small number of failed attempts, (c) rate-limiting and CAPTCHA on login forms, and (d) multi-factor authentication, which makes the password alone useless even if it is eventually guessed.</p>
+
+<h3>Dictionary Attacks</h3>
+
+<p>A <strong>dictionary attack</strong> is a smarter brute-force attack that tries <em>common passwords and words from a dictionary</em> first (plus predictable variants such as &ldquo;Password1&rdquo;, &ldquo;qwerty&rdquo;, &ldquo;Liverpool!&rdquo;, seasons and years). Real attackers use dictionaries of millions of leaked passwords. A brute-force attack that tried <code>aaaa</code>, <code>aaab</code>, <code>aaac</code>&hellip; would take forever to reach &ldquo;password&rdquo; &mdash; a dictionary attack tries it on iteration 1.</p>
+
+<table>
+    <tr><th>Attack</th><th>Tries</th><th>Speed</th><th>Defences</th></tr>
+    <tr><td>Brute force</td><td>Every possible combination</td><td>Slow against long passwords</td><td>Long passwords, account lockout, rate limit, MFA</td></tr>
+    <tr><td>Dictionary</td><td>Common words / leaked passwords first</td><td>Very fast against weak or reused passwords</td><td>Forbid common passwords, enforce complexity, MFA</td></tr>
+</table>
+
+<h3>Denial of Service (DoS)</h3>
+
+<div class="definition">
+    A <strong>denial-of-service (DoS) attack</strong> aims to make a computer system or network <em>unavailable to legitimate users</em> by overwhelming it with traffic or requests. The target does not have its data stolen &mdash; it is simply stopped from working.
+</div>
+
+<p>Common techniques include flooding a web server with so many requests per second that it cannot respond to genuine users, sending malformed packets that crash the server, or exhausting a resource such as database connections or bandwidth.</p>
+
+<h3>Distributed Denial of Service (DDoS)</h3>
+
+<div class="definition">
+    A <strong>distributed denial-of-service (DDoS) attack</strong> is a DoS attack in which the flooding traffic comes from <em>many different compromised machines at once</em> &mdash; a <strong>botnet</strong> of computers, routers and IoT devices that the attacker secretly controls.
+</div>
+
+<p>DDoS is far harder to block than DoS because the malicious traffic is spread across thousands of IP addresses, many of which look like ordinary home users. A DDoS attack on an e-commerce site during a big sale can cost hundreds of thousands of pounds per hour in lost revenue. Defences include DDoS-protection services that absorb and filter traffic upstream, rate limiting at the firewall, and over-provisioning of bandwidth.</p>
+
+<!-- DDoS diagram -->
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">DDoS Attack &mdash; Botnet Floods a Target</text>
+  <text x="360" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Attacker controls many infected machines (the botnet) that all send traffic to the same server.</text>
+
+  <!-- Attacker -->
+  <rect x="30" y="60" width="110" height="60" rx="8" fill="#fecaca" stroke="#b91c1c" stroke-width="2"/>
+  <text x="85" y="86" text-anchor="middle" font-size="12" font-weight="bold" fill="#7f1d1d">ATTACKER</text>
+  <text x="85" y="104" text-anchor="middle" font-size="10" fill="#7f1d1d">command &amp; control</text>
+
+  <!-- Botnet (8 machines) -->
+  <g font-size="10" fill="#7f1d1d" font-weight="bold">
+    <g>
+      <rect x="200" y="40" width="70" height="40" rx="4" fill="#fde2e2" stroke="#b91c1c" stroke-width="2"/>
+      <text x="235" y="64" text-anchor="middle">Bot 1</text>
+    </g>
+    <g>
+      <rect x="200" y="100" width="70" height="40" rx="4" fill="#fde2e2" stroke="#b91c1c" stroke-width="2"/>
+      <text x="235" y="124" text-anchor="middle">Bot 2</text>
+    </g>
+    <g>
+      <rect x="200" y="160" width="70" height="40" rx="4" fill="#fde2e2" stroke="#b91c1c" stroke-width="2"/>
+      <text x="235" y="184" text-anchor="middle">Bot 3</text>
+    </g>
+    <g>
+      <rect x="200" y="220" width="70" height="40" rx="4" fill="#fde2e2" stroke="#b91c1c" stroke-width="2"/>
+      <text x="235" y="244" text-anchor="middle">Bot 4</text>
+    </g>
+    <g>
+      <rect x="200" y="280" width="70" height="40" rx="4" fill="#fde2e2" stroke="#b91c1c" stroke-width="2"/>
+      <text x="235" y="304" text-anchor="middle">Bot 5</text>
+    </g>
+    <g>
+      <rect x="200" y="340" width="70" height="40" rx="4" fill="#fde2e2" stroke="#b91c1c" stroke-width="2"/>
+      <text x="235" y="364" text-anchor="middle">Bot 6</text>
+    </g>
+    <g>
+      <rect x="200" y="400" width="70" height="40" rx="4" fill="#fde2e2" stroke="#b91c1c" stroke-width="2"/>
+      <text x="235" y="424" text-anchor="middle">Bot 7</text>
+    </g>
+  </g>
+
+  <!-- Attacker -> bots (command) -->
+  <g stroke="#7f1d1d" stroke-width="1.5" stroke-dasharray="4,3" fill="none">
+    <line x1="140" y1="90" x2="200" y2="60"/>
+    <line x1="140" y1="90" x2="200" y2="120"/>
+    <line x1="140" y1="90" x2="200" y2="180"/>
+    <line x1="140" y1="90" x2="200" y2="240"/>
+    <line x1="140" y1="90" x2="200" y2="300"/>
+    <line x1="140" y1="90" x2="200" y2="360"/>
+    <line x1="140" y1="90" x2="200" y2="420"/>
+  </g>
+
+  <!-- Target -->
+  <g>
+    <rect x="540" y="180" width="150" height="100" rx="10" fill="#dbeafe" stroke="#1e40af" stroke-width="3"/>
+    <text x="615" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e3a5f">TARGET</text>
+    <text x="615" y="240" text-anchor="middle" font-size="11" fill="#1e3a5f">web server</text>
+    <text x="615" y="258" text-anchor="middle" font-size="10" fill="#b91c1c" font-weight="bold">overwhelmed!</text>
+  </g>
+
+  <!-- Bots -> target (flood) -->
+  <g stroke="#b91c1c" stroke-width="2" fill="none">
+    <line x1="270" y1="60" x2="540" y2="220"/>
+    <line x1="270" y1="120" x2="540" y2="225"/>
+    <line x1="270" y1="180" x2="540" y2="230"/>
+    <line x1="270" y1="240" x2="540" y2="235"/>
+    <line x1="270" y1="300" x2="540" y2="240"/>
+    <line x1="270" y1="360" x2="540" y2="245"/>
+    <line x1="270" y1="420" x2="540" y2="250"/>
+  </g>
+
+  <text x="400" y="160" text-anchor="middle" font-size="11" fill="#b91c1c" font-weight="bold">millions of requests per second</text>
+
+  <!-- Legitimate user blocked -->
+  <g>
+    <rect x="540" y="340" width="150" height="70" rx="8" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+    <text x="615" y="365" text-anchor="middle" font-size="11" font-weight="bold" fill="#4b5563">Legit user</text>
+    <text x="615" y="382" text-anchor="middle" font-size="10" fill="#6b7280">cannot reach site</text>
+    <text x="615" y="398" text-anchor="middle" font-size="10" fill="#6b7280">(service denied)</text>
+  </g>
+</svg>
+
+<h3>SQL Injection</h3>
+
+<div class="definition">
+    <strong>SQL injection</strong> is an attack in which the attacker enters <em>SQL code into a form or URL field</em> on a badly-written website. If the website pastes the user&rsquo;s input directly into a database query without checking it, the attacker&rsquo;s SQL is executed on the database &mdash; allowing them to read, change or delete data they were never supposed to see.
+</div>
+
+<p>Example: a login form builds the query <code>SELECT * FROM users WHERE name = '&lt;input&gt;' AND password = '&lt;input&gt;'</code>. If the attacker types <code>' OR '1'='1</code> in the name field, the query becomes <code>SELECT * FROM users WHERE name = '' OR '1'='1' AND password = ''</code>, which matches every user and logs the attacker in as the first account. You will meet SQL properly in topic 3.7 &mdash; for now just remember <strong>validated / sanitised input and parameterised queries</strong> prevent injection.</p>
+
+<h3>Data Interception and Theft</h3>
+
+<p><strong>Data interception</strong> (also called <em>eavesdropping</em> or a <em>man-in-the-middle attack</em>) is an attack in which the attacker captures data as it travels across a network. On an open Wi-Fi network in a caf&eacute;, unencrypted traffic can be read by anyone with free tools. If the data is sent over plain HTTP, sent in an unencrypted email, or typed into a login page that isn&rsquo;t using HTTPS, the attacker can read or modify it. The countermeasure is <strong>encryption in transit</strong> (HTTPS/TLS for the web, WPA2/WPA3 for Wi-Fi, VPNs for public networks).</p>
+
+<h3>Insider Threats</h3>
+
+<p>An <strong>insider threat</strong> comes from someone who already has legitimate access to the system &mdash; an employee, contractor, volunteer or ex-employee whose credentials have not been revoked. They are especially dangerous because they can bypass perimeter defences without raising alarms. Insider threats can be <em>malicious</em> (a disgruntled employee stealing client data to take to a competitor) or <em>accidental</em> (a busy nurse clicking a phishing link). Defences include the <em>principle of least privilege</em> (users get only the access they need), separation of duties, access logging and auditing, prompt account deactivation when people leave, and user education.</p>
+
+<h2>3.6.5 Identifying Vulnerabilities</h2>
+
+<div class="definition">
+    A <strong>vulnerability</strong> is a weakness in a system that can be exploited by a threat. Threats exist regardless &mdash; vulnerabilities are the open doors that let threats succeed.
+</div>
+
+<p>Many successful attacks do not rely on exotic techniques; they walk through open doors. The AQA spec lists the vulnerabilities you must be able to identify and explain.</p>
+
+<h3>Weak and Default Passwords</h3>
+
+<p>Many users still choose obvious passwords (&ldquo;123456&rdquo;, &ldquo;password&rdquo;, their pet&rsquo;s name) or reuse the same password across many sites. Many networked devices (routers, IP cameras, printers, IoT doorbells) ship with <em>default credentials</em> such as <code>admin</code> / <code>admin</code> that users never change. The Mirai botnet famously recruited hundreds of thousands of IoT devices simply by trying a list of default usernames and passwords.</p>
+
+<h3>Unpatched Software</h3>
+
+<p>Every piece of software has bugs, some of which are security vulnerabilities. Once the vendor publishes a patch, attackers race to exploit machines that have not yet applied it. WannaCry (2017) spread mainly through Windows machines that had not applied a patch released two months earlier. Keeping operating systems, applications and firmware up to date &mdash; preferably using <em>automatic updates</em> &mdash; is one of the single most effective defences.</p>
+
+<h3>Misconfigured Access Rights</h3>
+
+<p>A user, share or database is given more access than they need &mdash; for example, every employee being a local administrator, a public-facing cloud storage bucket being left open to the internet, or a shared folder that should be read-only being writable by all staff. The <em>principle of least privilege</em> says each user or process should have <em>only</em> the permissions required for its job, so that if one account is compromised, the damage is limited.</p>
+
+<h3>Removable Media</h3>
+
+<p>USB flash drives, external hard drives and memory cards bypass perimeter defences by travelling physically. Malware can be copied onto a USB stick, which an unaware employee plugs into a company computer, infecting it. Famously, researchers showed that a large proportion of USB sticks &ldquo;dropped&rdquo; in a car park were picked up and plugged in by finders. Defences: disable USB ports where not needed, automatic scanning of removable media, and staff policies that forbid using unknown devices.</p>
+
+<h3>Unsecured Wireless Networks</h3>
+
+<p>Wireless signals leak out of buildings. An open or poorly-secured Wi-Fi network can be joined by anyone nearby, who can then attack the internal LAN, intercept traffic, or use the network as a launchpad for further attacks. Using the outdated WEP standard, or WPA2 with a weak pre-shared key, gives only a thin veneer of security. Modern networks should use WPA2 or WPA3 with a strong key, hide the admin interface, disable WPS, and ideally separate guest devices onto their own isolated VLAN.</p>
+
+<h3>Other Common Vulnerabilities</h3>
+
+<ul>
+    <li><strong>Untrained users</strong> who fall for phishing or share passwords.</li>
+    <li><strong>No backups or untested backups</strong> that cannot be restored when needed.</li>
+    <li><strong>No logging or monitoring</strong> so attacks go unnoticed.</li>
+    <li><strong>Shared or orphaned accounts</strong> that continue to work after staff leave.</li>
+    <li><strong>Physical security gaps</strong> &mdash; unlocked server rooms, unattended workstations, unshredded documents.</li>
+</ul>
+
+<div class="exam-tip">&ldquo;State two vulnerabilities&hellip;&rdquo; questions want <em>specific</em> weaknesses, not threats. &ldquo;Weak passwords&rdquo; or &ldquo;unpatched OS&rdquo; is a vulnerability; &ldquo;malware&rdquo; is a threat. A threat-and-vulnerability pair is the heart of many mark schemes: <em>a brute-force attack (threat) succeeds because the user chose a weak password (vulnerability)</em>.</div>
+
+<h2>3.6.6 Methods of Protection (Technical)</h2>
+
+<p>Technical protection is everything you can enforce with hardware and software. No single measure is enough &mdash; a well-defended system layers several.</p>
+
+<h3>Passwords and Password Policies</h3>
+
+<p>Passwords remain the most common form of authentication. A good <strong>password policy</strong> tells users and systems what a valid password must look like and how to manage it:</p>
+
+<table>
+    <tr><th>Rule</th><th>Why</th></tr>
+    <tr><td>Minimum length (typically 12&ndash;16+ characters)</td><td>Makes brute-force attacks impractical</td></tr>
+    <tr><td>Mixture of upper, lower, digits, symbols</td><td>Increases the size of the search space</td></tr>
+    <tr><td>No dictionary words or obvious personal data</td><td>Defeats dictionary attacks</td></tr>
+    <tr><td>Different password per site</td><td>One breach does not compromise every account</td></tr>
+    <tr><td>Account lockout after failed attempts</td><td>Stops brute-force attacks in their tracks</td></tr>
+    <tr><td>Stored as salted hashes, never plain text</td><td>A database leak does not reveal the passwords</td></tr>
+    <tr><td>Password managers encouraged</td><td>Lets users have long, unique, random passwords without memorising them</td></tr>
+</table>
+
+<p>Modern guidance (e.g. NCSC) now <em>discourages</em> forced periodic changes because they tend to produce weaker, predictable passwords (&ldquo;Summer2024!&rdquo; &rarr; &ldquo;Autumn2024!&rdquo;). Strong, unique passwords combined with <strong>multi-factor authentication</strong> are preferred.</p>
+
+<h3>Biometric Authentication</h3>
+
+<div class="definition">
+    <strong>Biometric authentication</strong> identifies a user by a <em>physical characteristic</em>: fingerprint, face, iris, retina, voice or typing rhythm.
+</div>
+
+<p>Biometrics are convenient (nothing to remember), hard to share, and hard to copy at a distance. Most modern phones and laptops use a fingerprint or face scanner for unlock. Drawbacks include: false positives / false negatives, privacy concerns about storing biometric templates, inability to change your fingerprint if the database is stolen, and the fact that a determined attacker can sometimes fake biometrics (latex fingerprints, photos). Biometrics are usually combined with a PIN or password for stronger authentication.</p>
+
+<h3>CAPTCHA</h3>
+
+<p>A <strong>CAPTCHA</strong> (&ldquo;Completely Automated Public Turing test to tell Computers and Humans Apart&rdquo;) is a challenge designed to be easy for humans and hard for bots &mdash; such as &ldquo;click all the traffic lights&rdquo; or reading distorted text. CAPTCHAs are placed on login pages, sign-up forms and comment forms to prevent automated brute-force attacks, automated account creation and automated spam.</p>
+
+<h3>Email Confirmation</h3>
+
+<p><strong>Email confirmation</strong> requires a new user to click a link sent to the email address they signed up with, before the account becomes active. It verifies that the user actually owns that email address, cuts down on fake accounts, and means that the site has a working address for password-reset links. Two-factor codes sent by email are a weaker (but still useful) form of MFA.</p>
+
+<h3>Automatic Software Updates</h3>
+
+<p><strong>Automatic software updates</strong> mean the operating system and applications apply security patches as soon as they are released, without waiting for the user to act. This is the simplest and most effective single defence against worms, because the vulnerability the worm relies on is patched before the user even hears about it. Critical on laptops, phones, servers <em>and</em> IoT devices.</p>
+
+<h3>Firewalls</h3>
+
+<div class="definition">
+    A <strong>firewall</strong> is a hardware or software barrier that sits between a trusted network and an untrusted one (typically the LAN and the internet). It inspects every packet that tries to cross and <em>allows or blocks</em> it according to a set of rules.
+</div>
+
+<p>A typical home router includes a firewall that, by default, allows connections initiated from inside the LAN out to the internet but blocks all connections initiated from the internet into the LAN. This means a user&rsquo;s web browser can fetch a page, but a random attacker on the internet cannot reach their PC directly. Corporate firewalls have much richer rules, filtering by IP address, port, protocol and time of day.</p>
+
+<!-- Firewall positioning -->
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Firewall Positioning</text>
+  <text x="360" y="40" text-anchor="middle" font-size="11" fill="#6b7280">The firewall sits between the untrusted internet and the trusted LAN, inspecting every packet.</text>
+
+  <!-- Internet cloud -->
+  <g>
+    <ellipse cx="90" cy="175" rx="70" ry="45" fill="#e5e7eb" stroke="#4b5563" stroke-width="2"/>
+    <text x="90" y="172" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a2e">INTERNET</text>
+    <text x="90" y="190" text-anchor="middle" font-size="10" fill="#4b5563">(untrusted)</text>
+  </g>
+
+  <!-- Arrow -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="165" y1="175" x2="230" y2="175"/>
+    <polygon points="230,175 224,171 224,179" fill="#1e3a5f"/>
+  </g>
+
+  <!-- Firewall -->
+  <g>
+    <rect x="235" y="120" width="120" height="110" rx="8" fill="#fde68a" stroke="#b45309" stroke-width="3"/>
+    <text x="295" y="152" text-anchor="middle" font-size="13" font-weight="bold" fill="#78350f">FIREWALL</text>
+    <!-- brick pattern -->
+    <g fill="#fbbf24" stroke="#b45309" stroke-width="1">
+      <rect x="245" y="165" width="30" height="12"/>
+      <rect x="280" y="165" width="30" height="12"/>
+      <rect x="315" y="165" width="30" height="12"/>
+      <rect x="260" y="180" width="30" height="12"/>
+      <rect x="295" y="180" width="30" height="12"/>
+      <rect x="245" y="195" width="30" height="12"/>
+      <rect x="280" y="195" width="30" height="12"/>
+      <rect x="315" y="195" width="30" height="12"/>
+    </g>
+    <text x="295" y="222" text-anchor="middle" font-size="10" fill="#78350f">allow/block by rules</text>
+  </g>
+
+  <!-- Arrow to LAN -->
+  <g stroke="#1e3a5f" stroke-width="2" fill="none">
+    <line x1="360" y1="175" x2="420" y2="175"/>
+    <polygon points="420,175 414,171 414,179" fill="#1e3a5f"/>
+  </g>
+
+  <!-- LAN box -->
+  <g>
+    <rect x="425" y="70" width="270" height="220" rx="8" fill="#eff6ff" stroke="#1e40af" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="560" y="94" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a5f">LAN (trusted)</text>
+
+    <!-- Switch -->
+    <rect x="515" y="130" width="90" height="30" rx="4" fill="#1e40af" stroke="#1e3a5f" stroke-width="2"/>
+    <text x="560" y="150" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">SWITCH</text>
+
+    <!-- devices -->
+    <g>
+      <rect x="445" y="200" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+      <text x="475" y="227" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">PC 1</text>
+    </g>
+    <g>
+      <rect x="530" y="200" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+      <text x="560" y="227" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">PC 2</text>
+    </g>
+    <g>
+      <rect x="615" y="200" width="60" height="45" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+      <text x="645" y="227" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">Printer</text>
+    </g>
+
+    <line x1="560" y1="160" x2="475" y2="200" stroke="#2563eb" stroke-width="1.5"/>
+    <line x1="560" y1="160" x2="560" y2="200" stroke="#2563eb" stroke-width="1.5"/>
+    <line x1="560" y1="160" x2="645" y2="200" stroke="#2563eb" stroke-width="1.5"/>
+  </g>
+
+  <text x="200" y="270" font-size="10" fill="#b91c1c" font-weight="bold">blocked: unsolicited incoming</text>
+  <text x="200" y="284" font-size="10" fill="#065f46" font-weight="bold">allowed: replies to our requests</text>
+</svg>
+
+<h3>Anti-Malware Software</h3>
+
+<p><strong>Anti-malware</strong> (often still called <em>antivirus</em>) software scans files, memory and network traffic for known malware. It uses:</p>
+
+<ul>
+    <li><strong>Signature matching</strong> &mdash; comparing files against a database of known malware fingerprints. Fast and accurate but only catches known threats.</li>
+    <li><strong>Heuristic analysis</strong> &mdash; looking for suspicious behaviour (a program encrypting many files, modifying system settings, or connecting to unusual servers). Can catch unknown malware but may false-positive.</li>
+    <li><strong>Real-time protection</strong> &mdash; scanning every file as it is opened, downloaded, or attached.</li>
+</ul>
+
+<p>Anti-malware must be <strong>kept up to date</strong> &mdash; new malware appears by the thousand every day, so an unpatched antivirus database is almost useless. This is one of the big advantages of cloud-based scanning: lookups happen against an up-to-the-minute shared database.</p>
+
+<h3>User Access Levels and Permissions</h3>
+
+<p>A good system grants users only the access they need (<em>principle of least privilege</em>). In a school:</p>
+
+<ul>
+    <li>Students can log in, save to their own home folder, read shared resources, and nothing else.</li>
+    <li>Teachers can additionally read class folders and upload to them.</li>
+    <li>Office staff can read (but not write) student records.</li>
+    <li>Only one or two IT administrators can create accounts, install software, or change system settings.</li>
+</ul>
+
+<p>If a student&rsquo;s password is stolen, the attacker can only access a student-level account &mdash; the damage is contained. This is a defence against both external attackers and insider threats.</p>
+
+<h3>Encryption</h3>
+
+<div class="definition">
+    <strong>Encryption</strong> scrambles plaintext into ciphertext using a key. Only someone with the correct decryption key can recover the plaintext. Encryption protects data <em>in transit</em> (moving across a network) and <em>at rest</em> (stored on a disk).
+</div>
+
+<p><strong>Encryption in transit</strong> stops interception by attackers on intermediate networks. Everyday examples: HTTPS / TLS for web pages (indicated by the padlock icon and <code>https://</code>); WPA2/WPA3 for Wi-Fi; VPNs that encrypt everything between a device and a VPN server.</p>
+
+<p><strong>Encryption at rest</strong> stops stolen disks from yielding readable data. Everyday examples: full-disk encryption on laptops (BitLocker, FileVault) so a stolen laptop is useless without the password; database encryption; encrypted backups. Without at-rest encryption, a stolen laptop or lost backup tape can leak everything it contained.</p>
+
+<h3>Penetration Testing</h3>
+
+<div class="definition">
+    <strong>Penetration testing</strong> (&ldquo;pen testing&rdquo;) is the authorised practice of <em>attempting to break into an organisation&rsquo;s own systems</em>, using the same techniques a real attacker would, in order to find vulnerabilities before the real attackers do.
+</div>
+
+<p>Penetration tests are carried out by professionals (in-house or hired consultants), produce a report of findings, and are followed up with a plan to fix the weaknesses. Types include <em>black-box</em> (tester knows nothing about the target, simulating an external attacker), <em>white-box</em> (tester has full information, simulating an insider), and <em>grey-box</em> (mixture). Regular pen-testing is a key part of being &ldquo;secure by design&rdquo; and is often required by regulators and by large customers.</p>
+
+<h3>Technical Protections &mdash; Summary Table</h3>
+
+<table>
+    <tr><th>Protection</th><th>Protects against</th><th>Limitation</th></tr>
+    <tr><td>Strong password policy</td><td>Brute-force and dictionary attacks</td><td>Users reuse or write down complex passwords</td></tr>
+    <tr><td>Biometrics</td><td>Shouldering, stolen passwords</td><td>Cannot be changed if compromised; false accept/reject rates</td></tr>
+    <tr><td>CAPTCHA</td><td>Automated brute-force, spam accounts</td><td>Poor accessibility; modern AI can often solve them</td></tr>
+    <tr><td>Email confirmation</td><td>Fake accounts</td><td>Only as secure as the email account itself</td></tr>
+    <tr><td>Automatic updates</td><td>Worms, known vulnerabilities</td><td>Occasional bad update can break systems; doesn&rsquo;t help against zero-days</td></tr>
+    <tr><td>Firewall</td><td>Unsolicited external connections</td><td>Does not stop attacks that use allowed channels (e.g. HTTPS to a compromised site)</td></tr>
+    <tr><td>Anti-malware</td><td>Known malware, suspicious behaviour</td><td>Misses very new or highly targeted malware; needs frequent updates</td></tr>
+    <tr><td>Access levels</td><td>Insider misuse, privilege escalation</td><td>Useless if everyone is an admin; overhead to manage</td></tr>
+    <tr><td>Encryption</td><td>Interception in transit; theft at rest</td><td>Useless if keys are poorly managed or leaked</td></tr>
+    <tr><td>Penetration testing</td><td>Unknown vulnerabilities</td><td>Only a snapshot; expensive; findings must actually be fixed</td></tr>
+</table>
+
+<h2>3.6.7 Methods of Protection (Human and Procedural)</h2>
+
+<p>No technology can save a system whose users hand over their passwords, whose staff leave laptops on trains, or whose backup tapes have never been tested. Security is at least half a <em>human</em> problem, and the AQA spec requires you to be able to discuss human and procedural defences as well as technical ones.</p>
+
+<h3>User Education and Training</h3>
+
+<p>Regular, relevant training teaches staff to:</p>
+
+<ul>
+    <li>Recognise phishing emails and report them rather than click.</li>
+    <li>Create strong, unique passwords (ideally with a password manager).</li>
+    <li>Lock their screens when they leave their desks.</li>
+    <li>Never plug in unknown USB devices.</li>
+    <li>Challenge strangers in restricted areas (&ldquo;tailgating&rdquo;).</li>
+    <li>Report security incidents quickly and without fear of blame.</li>
+</ul>
+
+<p>Training is most effective when it is short, frequent, role-specific, and reinforced by simulated phishing tests rather than a one-off annual presentation.</p>
+
+<h3>Regular Backups</h3>
+
+<div class="definition">
+    A <strong>backup</strong> is a copy of data kept separately from the live system, so that the data can be restored after loss, corruption or ransomware. Good backups are the single most important defence against ransomware.
+</div>
+
+<p>The widely-used <strong>3-2-1 rule</strong> says: keep at least <em>3</em> copies of the data, on at least <em>2</em> different types of media, with at least <em>1</em> copy <em>off-site</em> (or offline/air-gapped). Backups should be tested regularly by actually restoring from them &mdash; a backup that has never been restored should not be trusted.</p>
+
+<table>
+    <tr><th>Backup type</th><th>What is copied</th><th>Pros</th><th>Cons</th></tr>
+    <tr><td>Full</td><td>Everything</td><td>Simple to restore &mdash; single backup contains all data</td><td>Slow to create; uses most storage</td></tr>
+    <tr><td>Incremental</td><td>Only changes since the last backup (any type)</td><td>Small, fast</td><td>Restore needs the last full plus every incremental in order</td></tr>
+    <tr><td>Differential</td><td>Changes since the last <em>full</em> backup</td><td>Restore needs only last full + last differential</td><td>Grows over time; more storage than incremental</td></tr>
+</table>
+
+<h3>Separation of Duties</h3>
+
+<p><strong>Separation of duties</strong> means no one person has complete control over a sensitive process. For example, one employee can raise a payment request but a second employee must approve it; the database administrator cannot also audit the database logs for their own activity. This prevents fraud and means that an insider attacker needs to collude with at least one other person, which is much less likely.</p>
+
+<h3>Acceptable Use Policy (AUP)</h3>
+
+<p>An <strong>acceptable use policy</strong> is a document all staff and students sign that sets out what they are and are not allowed to do with the organisation&rsquo;s IT. Typical clauses: no personal use during work hours, no installing unauthorised software, no sharing accounts, no accessing inappropriate content, reporting lost devices within a stated time. A signed AUP gives management a basis for disciplinary action and makes expectations explicit.</p>
+
+<h3>Secure by Design</h3>
+
+<p><strong>Secure by design</strong> means building security in from the start of a project, not bolting it on afterwards. Practices include: threat modelling early in the design, choosing safe defaults (encryption on, ports closed), validating all inputs, writing tests for security cases, using tried-and-tested libraries rather than hand-rolling cryptography, and carrying out penetration testing before release. Systems designed this way have far fewer vulnerabilities than those where security was an afterthought.</p>
+
+<h3>Defence in Depth</h3>
+
+<p>The overall philosophy is <strong>defence in depth</strong>: use several independent layers of protection, so that if one fails, others stand. A layered model looks like the onion diagram below: each layer protects different assets against different threats, and an attacker must break through all of them to reach the crown jewels (the data). This is why it is a weak answer to say &ldquo;a firewall will stop all cyber attacks&rdquo; &mdash; a firewall is one layer, and every serious attacker has techniques to bypass it.</p>
+
+<!-- Defence in Depth onion -->
+<svg viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Defence in Depth</text>
+  <text x="360" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Multiple independent layers &mdash; attacker must defeat every layer to reach the data.</text>
+
+  <!-- Layer 1: Physical (outer) -->
+  <ellipse cx="360" cy="260" rx="310" ry="180" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text x="360" y="105" text-anchor="middle" font-size="12" font-weight="bold" fill="#7f1d1d">PHYSICAL</text>
+  <text x="360" y="122" text-anchor="middle" font-size="10" fill="#7f1d1d">locked rooms, CCTV, guards, shredders</text>
+
+  <!-- Layer 2: Network -->
+  <ellipse cx="360" cy="270" rx="250" ry="150" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/>
+  <text x="360" y="148" text-anchor="middle" font-size="12" font-weight="bold" fill="#7c2d12">NETWORK</text>
+  <text x="360" y="164" text-anchor="middle" font-size="10" fill="#7c2d12">firewall, VPN, segmentation, IDS/IPS</text>
+
+  <!-- Layer 3: Host -->
+  <ellipse cx="360" cy="280" rx="195" ry="120" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <text x="360" y="190" text-anchor="middle" font-size="12" font-weight="bold" fill="#78350f">HOST</text>
+  <text x="360" y="206" text-anchor="middle" font-size="10" fill="#78350f">anti-malware, patching, access levels</text>
+
+  <!-- Layer 4: Application -->
+  <ellipse cx="360" cy="290" rx="140" ry="90" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+  <text x="360" y="232" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">APPLICATION</text>
+  <text x="360" y="248" text-anchor="middle" font-size="10" fill="#1e3a5f">input validation, auth, secure code</text>
+
+  <!-- Layer 5: Data (core) -->
+  <ellipse cx="360" cy="310" rx="75" ry="50" fill="#d1fae5" stroke="#065f46" stroke-width="3"/>
+  <text x="360" y="305" text-anchor="middle" font-size="13" font-weight="bold" fill="#065f46">DATA</text>
+  <text x="360" y="322" text-anchor="middle" font-size="10" fill="#065f46">encryption, backups</text>
+
+  <!-- Attacker arrow -->
+  <g>
+    <text x="30" y="460" font-size="11" font-weight="bold" fill="#7f1d1d">attacker must break every layer</text>
+    <line x1="40" y1="440" x2="320" y2="310" stroke="#7f1d1d" stroke-width="2" stroke-dasharray="4,3"/>
+    <polygon points="320,310 312,310 316,317" fill="#7f1d1d"/>
+  </g>
+</svg>
+
+<h2>3.6.8 Applying Protection: Worked Scenarios</h2>
+
+<p>Exam papers (especially Paper 2) love scenario questions where you must read a short description of an organisation, identify the threats, and recommend layered defences. The mark scheme always rewards candidates who tie specific defences to specific threats and who include <em>both</em> technical and human measures. Three worked examples follow.</p>
+
+<h3>Scenario 1 &mdash; A Secondary School Network</h3>
+
+<p><em>Context:</em> A secondary school has around 1 400 students and 150 staff. The network holds student records, exam marks, safeguarding files, parent contact details, and all teaching materials. Students bring their own phones; staff use school-issued laptops at home; the school also has public Wi-Fi for visitors.</p>
+
+<p><strong>Likely threats:</strong></p>
+<ul>
+    <li>Students attempting unauthorised access to exam results, teacher files or each other&rsquo;s accounts.</li>
+    <li>Phishing emails targeting staff for payroll or safeguarding data.</li>
+    <li>Ransomware spreading from an infected USB stick or email attachment.</li>
+    <li>Weak or shared passwords among students and staff.</li>
+    <li>Guest Wi-Fi users pivoting onto the internal network.</li>
+    <li>Staff laptops lost or stolen outside school.</li>
+</ul>
+
+<p><strong>Recommended defences:</strong></p>
+<ul>
+    <li><em>User access levels</em> &mdash; separate student, teacher and admin roles; students cannot see each other&rsquo;s files or any staff area.</li>
+    <li><em>Strong password policy</em> combined with multi-factor authentication for staff, especially for remote access.</li>
+    <li><em>Firewall</em> at the school&rsquo;s internet connection and a separate VLAN for guest Wi-Fi isolated from the staff network.</li>
+    <li><em>Automatic software updates</em> pushed to every managed laptop and server.</li>
+    <li><em>Anti-malware</em> on every endpoint, with real-time scanning of downloads and USB devices.</li>
+    <li><em>Full-disk encryption</em> on staff laptops so that a lost or stolen machine does not leak safeguarding data.</li>
+    <li><em>Regular backups</em> using the 3-2-1 rule, with at least one copy off-site, tested termly by actually restoring a sample.</li>
+    <li><em>Acceptable use policy</em> signed by staff and students; <em>training</em> in phishing awareness for all staff.</li>
+</ul>
+
+<h3>Scenario 2 &mdash; A Small Online Shop</h3>
+
+<p><em>Context:</em> A small family-run online shop sells handmade craft goods, processing about 200 orders a week. The website takes names, addresses and card details (via a third-party payment processor), and the business stores an order history, a customer mailing list, and a stock database.</p>
+
+<p><strong>Likely threats:</strong></p>
+<ul>
+    <li>Phishing emails to the owners requesting fake &ldquo;supplier&rdquo; bank-transfer changes.</li>
+    <li>SQL injection on the website&rsquo;s search and login forms.</li>
+    <li>Brute-force / credential-stuffing attacks on customer accounts using leaked passwords from elsewhere.</li>
+    <li>DDoS attack during a seasonal sale.</li>
+    <li>Data interception on unsecured Wi-Fi if the shop&rsquo;s owners work in cafes.</li>
+    <li>Ransomware that encrypts product photos and the order database.</li>
+</ul>
+
+<p><strong>Recommended defences:</strong></p>
+<ul>
+    <li><em>HTTPS/TLS</em> across the whole site (not just the checkout page) to defeat interception.</li>
+    <li><em>Input validation and parameterised database queries</em> to block SQL injection.</li>
+    <li><em>CAPTCHA</em> and <em>account lockout</em> on login to block brute-force attacks.</li>
+    <li><em>MFA</em> on the admin account used to manage the store and on the business email.</li>
+    <li><em>DDoS protection</em> via the hosting provider or a service such as Cloudflare.</li>
+    <li><em>VPN</em> for the owners when working on public Wi-Fi.</li>
+    <li><em>Regular backups</em> of the product database and order history, stored off-site.</li>
+    <li><em>Email confirmation</em> and <em>strong password policy</em> for customers to reduce fake accounts.</li>
+    <li><em>Use a reputable payment processor</em> so the shop never stores raw card numbers itself &mdash; reducing the scope of any breach.</li>
+</ul>
+
+<h3>Scenario 3 &mdash; A Hospital</h3>
+
+<p><em>Context:</em> A hospital network holds patient medical records, prescribing systems, diagnostic imaging, staff rosters, and links to regional NHS services. An outage can affect patient safety &mdash; not just data.</p>
+
+<p><strong>Likely threats:</strong></p>
+<ul>
+    <li>Ransomware attacks that disable patient-record access.</li>
+    <li>Targeted phishing aimed at senior clinicians with administrative access.</li>
+    <li>Insider threats from thousands of staff with varying access needs.</li>
+    <li>Unpatched medical devices that cannot easily be updated.</li>
+    <li>Data theft leading to GDPR breaches on highly sensitive health data.</li>
+    <li>Shouldering on busy wards where screens are in public view.</li>
+</ul>
+
+<p><strong>Recommended defences:</strong></p>
+<ul>
+    <li><em>Network segmentation</em> to keep medical devices, administrative systems and guest Wi-Fi strictly apart.</li>
+    <li><em>Least-privilege access</em> &mdash; nurses, doctors, admin and IT each get the minimum access their role needs, with <em>auditing</em> on every access to sensitive records.</li>
+    <li><em>MFA</em> for every remote and administrative login.</li>
+    <li><em>Automatic patching</em> for everything patchable, and isolation of devices that cannot be patched.</li>
+    <li><em>Encryption at rest</em> on all patient databases and <em>encryption in transit</em> for all data moving between systems.</li>
+    <li><em>Regular, tested, offline backups</em> that ransomware cannot reach.</li>
+    <li><em>Privacy screens</em> and automatic screen lock for ward workstations; <em>staff training</em> in shouldering awareness.</li>
+    <li><em>Separation of duties</em> between clinical, administrative and IT-admin roles; prompt account deactivation when staff leave.</li>
+    <li><em>Incident-response plan</em> with drills, so the hospital can switch to paper procedures and continue to treat patients if systems go down.</li>
+</ul>
+
+<div class="exam-tip">In scenario questions the mark scheme typically requires at least one <em>technical</em> defence (e.g. encryption, MFA) <em>and</em> at least one <em>human/procedural</em> defence (e.g. staff training, backups, acceptable use policy). Write your answer as pairs: &ldquo;Threat X is countered by Defence Y because&hellip;&rdquo; &mdash; it maps neatly onto the marking grid.</div>
+
+<h3>Threat &rarr; Defence Matrix</h3>
+
+<table>
+    <tr><th>Threat</th><th>Main technical defences</th><th>Main human / procedural defences</th></tr>
+    <tr><td>Phishing / spear-phishing</td><td>Email filters, browser warnings, MFA, DMARC/SPF</td><td>Staff training, reporting culture, simulated phishing</td></tr>
+    <tr><td>Malware (virus, worm, Trojan)</td><td>Anti-malware, firewall, automatic updates, least privilege</td><td>Training (don&rsquo;t run unknown files), USB policy, AUP</td></tr>
+    <tr><td>Ransomware</td><td>Anti-malware, patching, MFA on remote access, network segmentation</td><td>3-2-1 tested offline backups, incident-response drills</td></tr>
+    <tr><td>Brute-force / dictionary attacks</td><td>Strong password policy, account lockout, CAPTCHA, MFA</td><td>Password-manager training, password audit</td></tr>
+    <tr><td>DoS / DDoS</td><td>DDoS-mitigation service, rate limiting, over-provisioned bandwidth</td><td>Incident plan, communication template for outages</td></tr>
+    <tr><td>SQL injection</td><td>Input validation, parameterised queries, WAF</td><td>Developer training, code review, penetration testing</td></tr>
+    <tr><td>Data interception</td><td>HTTPS/TLS, WPA2/WPA3, VPN, end-to-end encryption</td><td>Training (avoid public Wi-Fi for sensitive tasks)</td></tr>
+    <tr><td>Insider threat</td><td>Least-privilege access, auditing, separation of duties, DLP tools</td><td>Vetting, leavers process, AUP, culture of reporting</td></tr>
+    <tr><td>Shouldering</td><td>Screen auto-lock, privacy filters, PIN shields, MFA</td><td>Awareness training, workspace layout</td></tr>
+    <tr><td>Lost / stolen device</td><td>Full-disk encryption, remote wipe, strong login</td><td>Policy for reporting losses promptly</td></tr>
+</table>
+
+<h3>The Four-Word Summary of 3.6</h3>
+
+<p>If you only remember four things from this topic:</p>
+
+<ol>
+    <li><strong>Threats</strong> combine <em>social engineering</em> (phishing, blagging, pharming, shouldering) and <em>technical attacks</em> (malware families, brute force, DoS/DDoS, SQL injection, interception, insider threats).</li>
+    <li><strong>Vulnerabilities</strong> are the open doors: weak passwords, unpatched software, misconfigured access, removable media, unsecured wireless, untrained users.</li>
+    <li><strong>Defences</strong> come in two halves &mdash; <em>technical</em> (firewalls, encryption, MFA, anti-malware, updates, access levels, CAPTCHA, pen-testing, email confirmation, biometrics) and <em>human / procedural</em> (training, backups, separation of duties, AUP, secure-by-design).</li>
+    <li>No single defence is enough &mdash; layer them (<strong>defence in depth</strong>), and expect the exam to ask you to map specific defences to specific threats.</li>
+</ol>
+
+<p>If you can confidently explain each of those bullet points with a one-sentence example, you can answer almost anything 3.6 can throw at you.</p>
+
+</div>
+</body>
+</html>
