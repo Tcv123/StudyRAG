@@ -101,9 +101,33 @@
     .card-sub a { color: var(--accent-dark); text-decoration: none; font-weight: 500; }
     .card-sub a:hover { text-decoration: underline; }
 
+    .back-home {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--muted); text-decoration: none;
+      font-weight: 500; margin-bottom: 20px;
+      padding: 6px 10px 6px 6px; border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .back-home:hover { color: var(--accent-dark); background: var(--accent-dim); }
+    .back-home svg { width: 14px; height: 14px; }
+
     .name-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
     .field { margin-bottom: 14px; }
+
+    .input-wrap { position: relative; }
+
+    .toggle-pw {
+      position: absolute; top: 50%; right: 10px;
+      transform: translateY(-50%);
+      background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      padding: 6px; border-radius: 6px;
+      color: var(--muted2); transition: color 0.2s, background 0.2s;
+    }
+    .toggle-pw:hover { color: var(--accent-dark); background: var(--accent-dim); }
+    .toggle-pw svg { width: 18px; height: 18px; }
+    .input-wrap input { padding-right: 42px; }
 
     label {
       display: block; font-size: 12px; font-weight: 600;
@@ -167,6 +191,11 @@
 <body>
 <div class="layout">
   <div class="card">
+    <a href="../index.html" class="back-home" aria-label="Back to homepage">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+      Back to homepage
+    </a>
+
     <div class="logo">
       <div class="logo-dot"></div>
       <div class="logo-name">RAG Learning</div>
@@ -194,7 +223,12 @@
 
       <div class="field">
         <label for="password">Password</label>
-        <input id="password" type="password" placeholder="At least 6 characters" required oninput="checkPw(this.value)">
+        <div class="input-wrap">
+          <input id="password" type="password" placeholder="At least 6 characters" required oninput="checkPw(this.value)">
+          <button type="button" class="toggle-pw" id="togglePw" aria-label="Show password" aria-pressed="false">
+            <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
         <div class="pw-strength">
           <div class="pw-bar" id="b1"></div>
           <div class="pw-bar" id="b2"></div>
@@ -229,6 +263,20 @@ function checkPw(val) {
 const form        = document.getElementById('form');
 const msg         = document.getElementById('msg');
 const registerBtn = document.getElementById('registerBtn');
+const togglePw    = document.getElementById('togglePw');
+const pwInput     = document.getElementById('password');
+const eyeIcon     = document.getElementById('eyeIcon');
+
+const EYE_OPEN   = '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>';
+const EYE_CLOSED = '<path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/>';
+
+togglePw.addEventListener('click', () => {
+  const showing = pwInput.type === 'text';
+  pwInput.type = showing ? 'password' : 'text';
+  togglePw.setAttribute('aria-pressed', String(!showing));
+  togglePw.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
+  eyeIcon.innerHTML = showing ? EYE_OPEN : EYE_CLOSED;
+});
 
 form.onsubmit = async (e) => {
   e.preventDefault();
