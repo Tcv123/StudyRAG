@@ -297,7 +297,64 @@ const CS_AQA_WRITTEN = {
       },
     ],
   },
-  '3.6': { green: [], amber: [], red: [] },
+  '3.6': {
+    green: [
+      {
+        q: 'State what is meant by "cyber security" and give two reasons why it is important to organisations.',
+        marks: 3, tier: 'green',
+        modelAnswer: `\u2022 Cyber security is the practice of protecting computer systems, networks, programs and data from unauthorised access, theft, damage or disruption (1).\n\u2022 Reason 1: to prevent financial loss from theft, fraud, ransom payments, fines, or downtime costs (1).\n\u2022 Reason 2: to protect reputation, customer trust and comply with legal duties such as the UK GDPR; attacks can also disrupt operations or endanger safety (e.g. hospitals) (1).\n(Also accept: protecting confidentiality, integrity and availability of data.)`
+      },
+      {
+        q: 'State the difference between a virus, a worm and a Trojan.',
+        marks: 3, tier: 'green',
+        modelAnswer: `\u2022 A virus is malicious code that attaches itself to a host file and runs when the host is opened/executed (1).\n\u2022 A worm is self-replicating malware that spreads automatically across a network without needing a host file or user action (1).\n\u2022 A Trojan is malware disguised as a legitimate program that the user is tricked into running; it does not self-replicate (1).`
+      },
+      {
+        q: 'State what is meant by phishing and give two features of a typical phishing email that might help a user spot it.',
+        marks: 3, tier: 'green',
+        modelAnswer: `\u2022 Phishing is a social-engineering attack that uses a fraudulent email (or other message) pretending to be from a trusted organisation, to trick the user into clicking a link or giving away information (1).\n\u2022 Feature 1: a generic greeting (e.g. "Dear Customer") and/or spelling and grammar errors (1).\n\u2022 Feature 2: urgent or threatening language; a suspicious sender address or link whose URL does not match the claimed organisation (1).\n(Also accept: unexpected attachments; requests for passwords or card numbers.)`
+      },
+      {
+        q: 'State four common vulnerabilities that attackers exploit in computer systems.',
+        marks: 4, tier: 'green',
+        modelAnswer: `\u2022 Weak or default passwords (1).\n\u2022 Unpatched / out-of-date software (1).\n\u2022 Misconfigured access rights (users given more permission than they need) (1).\n\u2022 Removable media (USB sticks) and/or unsecured wireless networks bringing malware onto the network (1).\n(Also accept: untrained users, lack of backups.)`
+      },
+    ],
+    amber: [
+      {
+        q: 'Describe how a DDoS attack works and explain why it is harder to stop than a simple DoS attack.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 An attacker controls a large number of compromised machines (a botnet) that have been infected with malware (1).\n\u2022 On command, every bot sends large volumes of traffic or requests to the same target server at once, overwhelming its bandwidth, CPU or connection limits (1).\n\u2022 Legitimate users can no longer get a reply from the server, so the service is "denied" (1).\n\u2022 It is harder to stop than a single-source DoS because the traffic comes from many different IP addresses (often ordinary-looking home users), so simple IP blocking is ineffective \u2014 defence needs upstream filtering and rate-limiting services (1).`
+      },
+      {
+        q: 'Explain what a firewall does and describe one limitation of relying on a firewall alone to secure a network.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 A firewall is hardware or software that sits between a trusted network and an untrusted one (typically the internet) and inspects every packet that tries to cross (1).\n\u2022 It allows or blocks each packet according to a set of rules \u2014 for example blocking unsolicited inbound connections while allowing outgoing web traffic and its replies (1).\n\u2022 Limitation: a firewall does not stop attacks that arrive through channels the rules already allow \u2014 e.g. a phishing email, a malicious download through HTTPS, a user plugging in an infected USB, or an insider abusing legitimate access (1).\n\u2022 Therefore a firewall must be combined with anti-malware, training, updates and access controls to form layered defences (1).`
+      },
+      {
+        q: 'Describe four features of a good password policy and explain why each helps security.',
+        marks: 5, tier: 'amber',
+        modelAnswer: `\u2022 Minimum length (e.g. 12+ characters) \u2014 makes brute-force attacks take far too long to succeed (1).\n\u2022 Mixture of upper, lower, digits and symbols (or long passphrases) \u2014 greatly increases the number of possible passwords (1).\n\u2022 Forbid common/dictionary words and previously leaked passwords \u2014 defeats dictionary attacks that try common passwords first (1).\n\u2022 Different password per site (supported by a password manager) \u2014 so a breach of one service does not compromise every account (1).\n\u2022 Account lockout or rate-limiting after failed attempts and multi-factor authentication \u2014 so even a correctly guessed password alone is not enough (1).`
+      },
+      {
+        q: 'Explain the difference between encryption "in transit" and encryption "at rest", giving one example of each.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `\u2022 Encryption in transit scrambles data as it moves across a network so that someone intercepting the traffic cannot read it (1).\n\u2022 Example in transit: HTTPS/TLS protects web traffic between a browser and a server (so passwords and card numbers can\u2019t be read by routers in between) (1).\n\u2022 Encryption at rest scrambles data stored on a disk or backup so that a stolen device or backup tape yields no readable information (1).\n\u2022 Example at rest: full-disk encryption on a laptop (e.g. BitLocker/FileVault) means a lost laptop does not leak the files on it (1).`
+      },
+    ],
+    red: [
+      {
+        q: 'Discuss why human factors are often the weakest link in cyber security. Your answer should include at least three specific examples and explain how each is countered.',
+        marks: 8, tier: 'red',
+        modelAnswer: `\u2022 Technology alone cannot compensate for user behaviour \u2014 attackers often bypass strong technical defences by tricking a person (1).\n\u2022 Example 1 \u2014 phishing: a convincing email persuades an employee to click a link and enter their password into a fake site; no firewall or anti-malware is certain to block this (1).\n\u2022 Counter: regular training, simulated phishing tests, email filters and MFA so a stolen password alone is not enough (1).\n\u2022 Example 2 \u2014 blagging: an attacker rings the helpdesk pretending to be an employee and persuades staff to reset a password; again, technical controls are not triggered (1).\n\u2022 Counter: call-back procedures, verification policies, staff training, separation of duties (1).\n\u2022 Example 3 \u2014 weak/reused passwords or clicking on a malicious USB: users pick easy-to-remember passwords or plug in unknown drives found in the car park, bypassing perimeter defences (1).\n\u2022 Counter: password managers, strong password policy, disabled USB autorun, and AUPs forbidding use of unknown media (1).\n\u2022 Because most breaches begin with a human mistake, security must combine technical and procedural controls \u2014 training, clear policies, reporting culture, least-privilege access and tested backups \u2014 all of which build a culture where mistakes are less likely and more quickly recovered from (1).\n(Award up to 8 marks for any valid combination.)`
+      },
+      {
+        q: 'A small online retailer asks you to recommend how to defend its website and customer data. Discuss a layered set of defences, covering at least TWO technical measures and TWO human/procedural measures, and briefly explaining how each addresses a specific threat.',
+        marks: 8, tier: 'red',
+        modelAnswer: `\u2022 Threat: data interception on public Wi-Fi or between browser and server. Defence (technical): serve the entire site over HTTPS with a valid TLS certificate so all traffic is encrypted in transit (1).\n\u2022 Threat: SQL injection through search or login forms. Defence (technical): use parameterised queries and input validation so attacker-supplied text cannot be executed as SQL (1).\n\u2022 Threat: brute-force attacks on customer accounts using leaked passwords. Defence (technical): require strong passwords, CAPTCHA and account lockout, and offer MFA for staff and customers (1).\n\u2022 Threat: ransomware encrypting product photos, orders and the database. Defence (technical): regularly patched systems plus anti-malware; offline/immutable backups following the 3-2-1 rule, tested by occasional restore (1).\n\u2022 Threat: phishing targeting the owners for credentials or fake supplier changes. Defence (human): regular training on phishing awareness; a policy that any change to bank details is verified by callback on a known number (1).\n\u2022 Threat: insider misuse or mistakes. Defence (human/procedural): principle of least privilege \u2014 each account only has the permissions it needs; leavers\u2019 accounts disabled promptly; acceptable use policy signed by staff (1).\n\u2022 Threat: DDoS during peak sale periods. Defence: upstream DDoS-mitigation (e.g. Cloudflare), rate limiting, incident-response plan with comms templates (1).\n\u2022 Overall: the defences operate at different layers \u2014 physical, network, host, application and data \u2014 so that a failure of any single control does not hand the attacker full access. This is the principle of defence in depth (1).\n(Award marks for any sensible threat-defence pair with a valid explanation, up to 8.)`
+      },
+    ],
+  },
   '3.7': { green: [], amber: [], red: [] },
   '3.8': { green: [], amber: [], red: [] },
 
