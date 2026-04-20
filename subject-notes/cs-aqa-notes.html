@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAG Learning — AQA Computer Science Notes</title>
+  <title>RAG Learning — AQA GCSE Computer Science Notes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -242,144 +242,100 @@
     <div class="topics-header">
       <div class="topics-subject">Computer Science</div>
       <div class="topics-title">Revision Notes</div>
-      <div class="topics-board">💻 AQA · A-Level</div>
+      <div class="topics-board">💻 AQA · GCSE (8525)</div>
     </div>
 
     <div class="topics-body">
 
-      <div class="paper-label">Paper 1 — Programming &amp; Theory</div>
+      <div class="paper-label">Paper 1 — Computational Thinking &amp; Programming</div>
 
-      <button class="topic-btn" id="topicBtn-4.1" onclick="openTopic(this, '4.1', 'Fundamentals of Programming', '../notes-cs-aqa/4.1_fundamentals_of_programming.html')">
+      <button class="topic-btn" id="topicBtn-3.1" onclick="openTopic(this, '3.1', 'Fundamentals of Algorithms', '../notes-cs-aqa/3.1_fundamentals_of_algorithms.html')">
         <div class="topic-main">
-          <div class="topic-num">4.1</div>
-          <div class="topic-info">
-            <div class="topic-name">Fundamentals of Programming</div>
-            <div class="topic-sub">Data types, OOP, recursion, exception handling</div>
-          </div>
-          <span class="rag-dot" id="rag-4.1"></span>
-        </div>
-      </button>
-
-      <button class="topic-btn" id="topicBtn-4.2" onclick="openTopic(this, '4.2', 'Fundamentals of Data Structures', '../notes-cs-aqa/4.2_fundamentals_of_data_structures.html')">
-        <div class="topic-main">
-          <div class="topic-num">4.2</div>
-          <div class="topic-info">
-            <div class="topic-name">Fundamentals of Data Structures</div>
-            <div class="topic-sub">Stacks, queues, trees, graphs, hash tables</div>
-          </div>
-          <span class="rag-dot" id="rag-4.2"></span>
-        </div>
-      </button>
-
-      <button class="topic-btn" id="topicBtn-4.3" onclick="openTopic(this, '4.3', 'Fundamentals of Algorithms', '../notes-cs-aqa/4.3_fundamentals_of_algorithms.html')">
-        <div class="topic-main">
-          <div class="topic-num">4.3</div>
+          <div class="topic-num">3.1</div>
           <div class="topic-info">
             <div class="topic-name">Fundamentals of Algorithms</div>
-            <div class="topic-sub">Sorting, searching, graph traversal, Big-O</div>
+            <div class="topic-sub">Decomposition, abstraction, searching, sorting, trace tables</div>
           </div>
-          <span class="rag-dot" id="rag-4.3"></span>
+          <span class="rag-dot" id="rag-3.1"></span>
         </div>
       </button>
 
-      <button class="topic-btn" id="topicBtn-4.4" onclick="openTopic(this, '4.4', 'Theory of Computation', '../notes-cs-aqa/4.4_theory_of_computation.html')">
+      <button class="topic-btn" id="topicBtn-3.2" onclick="openTopic(this, '3.2', 'Programming', '../notes-cs-aqa/3.2_programming.html')">
         <div class="topic-main">
-          <div class="topic-num">4.4</div>
+          <div class="topic-num">3.2</div>
           <div class="topic-info">
-            <div class="topic-name">Theory of Computation</div>
-            <div class="topic-sub">FSMs, regex, Turing machines, halting problem</div>
+            <div class="topic-name">Programming</div>
+            <div class="topic-sub">Data types, selection, iteration, subroutines, arrays, strings</div>
           </div>
-          <span class="rag-dot" id="rag-4.4"></span>
+          <span class="rag-dot" id="rag-3.2"></span>
         </div>
       </button>
 
-      <div class="paper-label">Paper 2 — Computer Systems &amp; Data</div>
+      <div class="paper-label">Paper 2 — Computing Concepts</div>
 
-      <button class="topic-btn" id="topicBtn-4.5" onclick="openTopic(this, '4.5', 'Fundamentals of Data Representation', '../notes-cs-aqa/4.5_fundamentals_of_data_representation.html')">
+      <button class="topic-btn" id="topicBtn-3.3" onclick="openTopic(this, '3.3', 'Fundamentals of Data Representation', '../notes-cs-aqa/3.3_fundamentals_of_data_representation.html')">
         <div class="topic-main">
-          <div class="topic-num">4.5</div>
+          <div class="topic-num">3.3</div>
           <div class="topic-info">
-            <div class="topic-name">Fundamentals of Data Representation</div>
-            <div class="topic-sub">Number systems, floating point, compression</div>
+            <div class="topic-name">Data Representation</div>
+            <div class="topic-sub">Binary, hex, characters, images, sound, compression</div>
           </div>
-          <span class="rag-dot" id="rag-4.5"></span>
+          <span class="rag-dot" id="rag-3.3"></span>
         </div>
       </button>
 
-      <button class="topic-btn" id="topicBtn-4.6" onclick="openTopic(this, '4.6', 'Fundamentals of Computer Systems', '../notes-cs-aqa/4.6_fundamentals_of_computer_systems.html')">
+      <button class="topic-btn" id="topicBtn-3.4" onclick="openTopic(this, '3.4', 'Computer Systems', '../notes-cs-aqa/3.4_computer_systems.html')">
         <div class="topic-main">
-          <div class="topic-num">4.6</div>
+          <div class="topic-num">3.4</div>
           <div class="topic-info">
-            <div class="topic-name">Fundamentals of Computer Systems</div>
-            <div class="topic-sub">OS, Boolean algebra, logic gates, Karnaugh maps</div>
+            <div class="topic-name">Computer Systems</div>
+            <div class="topic-sub">Hardware, software, Boolean logic, CPU, memory, storage</div>
           </div>
-          <span class="rag-dot" id="rag-4.6"></span>
+          <span class="rag-dot" id="rag-3.4"></span>
         </div>
       </button>
 
-      <button class="topic-btn" id="topicBtn-4.7" onclick="openTopic(this, '4.7', 'Computer Organisation & Architecture', '../notes-cs-aqa/4.7_computer_organisation_and_architecture.html')">
+      <button class="topic-btn" id="topicBtn-3.5" onclick="openTopic(this, '3.5', 'Fundamentals of Computer Networks', '../notes-cs-aqa/3.5_fundamentals_of_computer_networks.html')">
         <div class="topic-main">
-          <div class="topic-num">4.7</div>
+          <div class="topic-num">3.5</div>
           <div class="topic-info">
-            <div class="topic-name">Computer Organisation &amp; Architecture</div>
-            <div class="topic-sub">Von Neumann, FDE cycle, CISC/RISC, pipelining</div>
+            <div class="topic-name">Computer Networks</div>
+            <div class="topic-sub">LAN, WAN, topologies, protocols, TCP/IP, layers</div>
           </div>
-          <span class="rag-dot" id="rag-4.7"></span>
+          <span class="rag-dot" id="rag-3.5"></span>
         </div>
       </button>
 
-      <button class="topic-btn" id="topicBtn-4.8" onclick="openTopic(this, '4.8', 'Consequences of Uses of Computing', '../notes-cs-aqa/4.8_consequences_of_uses_of_computing.html')">
+      <button class="topic-btn" id="topicBtn-3.6" onclick="openTopic(this, '3.6', 'Cyber Security', '../notes-cs-aqa/3.6_cyber_security.html')">
         <div class="topic-main">
-          <div class="topic-num">4.8</div>
+          <div class="topic-num">3.6</div>
           <div class="topic-info">
-            <div class="topic-name">Consequences of Uses of Computing</div>
-            <div class="topic-sub">Ethics, legislation, environmental impact</div>
+            <div class="topic-name">Cyber Security</div>
+            <div class="topic-sub">Threats, social engineering, malware, prevention</div>
           </div>
-          <span class="rag-dot" id="rag-4.8"></span>
+          <span class="rag-dot" id="rag-3.6"></span>
         </div>
       </button>
 
-      <button class="topic-btn" id="topicBtn-4.9" onclick="openTopic(this, '4.9', 'Communication & Networking', '../notes-cs-aqa/4.9_communication_and_networking.html')">
+      <button class="topic-btn" id="topicBtn-3.7" onclick="openTopic(this, '3.7', 'Relational Databases & SQL', '../notes-cs-aqa/3.7_relational_databases_and_sql.html')">
         <div class="topic-main">
-          <div class="topic-num">4.9</div>
+          <div class="topic-num">3.7</div>
           <div class="topic-info">
-            <div class="topic-name">Communication &amp; Networking</div>
-            <div class="topic-sub">TCP/IP, topologies, encryption, protocols</div>
+            <div class="topic-name">Relational Databases &amp; SQL</div>
+            <div class="topic-sub">Tables, keys, SQL queries, normalisation</div>
           </div>
-          <span class="rag-dot" id="rag-4.9"></span>
+          <span class="rag-dot" id="rag-3.7"></span>
         </div>
       </button>
 
-      <button class="topic-btn" id="topicBtn-4.10" onclick="openTopic(this, '4.10', 'Fundamentals of Databases', '../notes-cs-aqa/4.10_fundamentals_of_databases.html')">
+      <button class="topic-btn" id="topicBtn-3.8" onclick="openTopic(this, '3.8', 'Ethical, Legal & Environmental Impacts', '../notes-cs-aqa/3.8_ethical_legal_environmental_impacts.html')">
         <div class="topic-main">
-          <div class="topic-num">4.10</div>
+          <div class="topic-num">3.8</div>
           <div class="topic-info">
-            <div class="topic-name">Fundamentals of Databases</div>
-            <div class="topic-sub">SQL, normalisation, ER modelling, ACID</div>
+            <div class="topic-name">Ethical, Legal &amp; Environmental</div>
+            <div class="topic-sub">Privacy, laws, environmental impact, AI ethics</div>
           </div>
-          <span class="rag-dot" id="rag-4.10"></span>
-        </div>
-      </button>
-
-      <button class="topic-btn" id="topicBtn-4.11" onclick="openTopic(this, '4.11', 'Big Data', '../notes-cs-aqa/4.11_big_data.html')">
-        <div class="topic-main">
-          <div class="topic-num">4.11</div>
-          <div class="topic-info">
-            <div class="topic-name">Big Data</div>
-            <div class="topic-sub">Machine learning, MapReduce, data mining</div>
-          </div>
-          <span class="rag-dot" id="rag-4.11"></span>
-        </div>
-      </button>
-
-      <button class="topic-btn" id="topicBtn-4.12" onclick="openTopic(this, '4.12', 'Fundamentals of Functional Programming', '../notes-cs-aqa/4.12_fundamentals_of_functional_programming.html')">
-        <div class="topic-main">
-          <div class="topic-num">4.12</div>
-          <div class="topic-info">
-            <div class="topic-name">Functional Programming</div>
-            <div class="topic-sub">Map, filter, fold, higher-order functions</div>
-          </div>
-          <span class="rag-dot" id="rag-4.12"></span>
+          <span class="rag-dot" id="rag-3.8"></span>
         </div>
       </button>
 
@@ -399,7 +355,7 @@
       <div class="viewer-header">
         <div>
           <div class="viewer-title" id="viewerTitle">Topic</div>
-          <div class="viewer-sub" id="viewerSub">AQA A-Level Computer Science</div>
+          <div class="viewer-sub" id="viewerSub">AQA GCSE Computer Science</div>
         </div>
         <div class="viewer-actions">
           <a id="downloadBtn" href="#" download class="viewer-btn">⬇ Download</a>
@@ -452,7 +408,7 @@ function openTopic(btn, num, name, path) {
   document.getElementById('viewerContent').style.display = 'flex';
 
   document.getElementById('viewerTitle').textContent = `${num} — ${name}`;
-  document.getElementById('viewerSub').textContent   = 'AQA A-Level Computer Science';
+  document.getElementById('viewerSub').textContent   = 'AQA GCSE Computer Science';
 
   document.getElementById('pdfFrame').src     = path;
   document.getElementById('downloadBtn').href = path;

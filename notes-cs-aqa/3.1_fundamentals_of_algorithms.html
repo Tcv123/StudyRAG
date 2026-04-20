@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 3.1 — Fundamentals of Algorithms</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>3.1 Fundamentals of Algorithms</h1>
+<p class="spec-ref">AQA GCSE Computer Science (8525) &mdash; Paper 1</p>
+
+<h2>3.1.1 Representing Algorithms</h2>
+
+<div class="definition">
+    An <strong>algorithm</strong> is a precise, step-by-step sequence of instructions for solving a problem or completing a task in a finite amount of time. Algorithms are <strong>language-independent</strong> &mdash; they describe <em>what</em> has to be done, not <em>how</em> a particular programming language expresses it. A <strong>program</strong> is the implementation of an algorithm in a specific programming language that a computer can execute.
+</div>
+
+<p>Think of a cooking recipe. The recipe itself (the list of steps: chop onions, add oil, heat pan, stir for 5 minutes&hellip;) is the algorithm. Rewriting the same recipe in French, or reading it aloud, or printing it in a book does not change the algorithm &mdash; it only changes the <em>representation</em>. A program is like that recipe written out in a language the kitchen staff can follow precisely, such as Python, C#, or AQA pseudo-code.</p>
+
+<p>Every algorithm must have certain properties to be valid. It must be <strong>precise</strong> (each step is unambiguous), <strong>finite</strong> (it eventually terminates rather than running forever), and must produce the same correct output whenever it is given the same input (it is <strong>deterministic</strong>). These properties are what distinguish an algorithm from a vague plan &mdash; for example, "make tea" is a plan, but "boil 200 ml of water, add one teabag, wait 2 minutes, remove the teabag, add 20 ml of milk" is an algorithm.</p>
+
+<h3>Algorithm vs Program &mdash; The Key Distinction</h3>
+
+<table>
+    <tr><th>Algorithm</th><th>Program</th></tr>
+    <tr><td>A logical sequence of steps to solve a problem</td><td>The algorithm written in a specific programming language</td></tr>
+    <tr><td>Language-independent &mdash; can be shown as flowchart, pseudo-code, English, or structured diagram</td><td>Language-dependent &mdash; written in Python, Java, C#, etc.</td></tr>
+    <tr><td>Cannot be run directly by a computer</td><td>Can be run (after translation by an interpreter or compiler)</td></tr>
+    <tr><td>Focuses on the <strong>logic</strong> of the solution</td><td>Focuses on the <strong>implementation</strong> (syntax, data types, libraries)</td></tr>
+    <tr><td>Example: "Keep asking the user for a number until they enter 0, then output the total."</td><td>Example: 12 lines of Python that read inputs, accumulate a total, and print it.</td></tr>
+</table>
+
+<div class="exam-tip">A very common exam question is to "state the difference between an algorithm and a program." The mark-winning phrase is: an algorithm is a <em>language-independent set of steps</em> to solve a problem, whereas a program is the <em>implementation of an algorithm in a specific programming language</em>. The same algorithm can be implemented as many different programs.</div>
+
+<h3>Flowcharts</h3>
+
+<p>A <strong>flowchart</strong> is a visual way of representing an algorithm using a set of standardised symbols connected by arrows. The arrows show the order (flow) in which the steps are carried out. Flowcharts are useful because they make the structure of a program easy to see at a glance &mdash; decisions, loops, and parallel paths are obvious.</p>
+
+<p>AQA requires that you know and can use the following four standard flowchart symbols:</p>
+
+<table>
+    <tr><th>Symbol</th><th>Shape</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td><strong>Terminator</strong></td><td>Rounded rectangle (stadium / oval)</td><td>Marks the <strong>start</strong> or <strong>end</strong> of an algorithm. Every flowchart has exactly one Start and at least one End.</td><td><code>START</code>, <code>END</code>, <code>STOP</code></td></tr>
+    <tr><td><strong>Process</strong></td><td>Rectangle</td><td>A single step of <strong>processing</strong> &mdash; an assignment, a calculation, or any action that transforms data.</td><td><code>total &larr; total + price</code></td></tr>
+    <tr><td><strong>Decision</strong></td><td>Diamond (rhombus)</td><td>A <strong>question</strong> with a Yes/No (or True/False) answer. Two arrows leave the diamond, one for each outcome.</td><td><code>is x &gt; 10?</code></td></tr>
+    <tr><td><strong>Input/Output</strong></td><td>Parallelogram</td><td>Data being <strong>read in</strong> (from the user/a file/a sensor) or <strong>output</strong> (to the screen/a printer/a file).</td><td><code>INPUT age</code>, <code>OUTPUT total</code></td></tr>
+</table>
+
+<!-- Flowchart example diagram -->
+<svg viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrowFC" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="280" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Flowchart: Is a Number Positive, Negative or Zero?</text>
+  <!-- Start -->
+  <rect x="210" y="40" width="140" height="44" rx="22" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="280" y="68" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">START</text>
+  <!-- Input -->
+  <polygon points="190,110 370,110 350,160 170,160" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="270" y="140" text-anchor="middle" font-size="12" fill="#92400e" font-weight="bold">INPUT number</text>
+  <!-- Decision 1: number > 0 -->
+  <polygon points="280,185 400,245 280,305 160,245" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="280" y="240" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="bold">number &gt; 0 ?</text>
+  <text x="280" y="258" text-anchor="middle" font-size="10" fill="#1e3a5f">(decision)</text>
+  <!-- Process: positive -->
+  <rect x="400" y="225" width="140" height="40" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="470" y="250" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="bold">OUTPUT "Positive"</text>
+  <!-- Decision 2: number < 0 -->
+  <polygon points="280,335 400,395 280,455 160,395" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="280" y="390" text-anchor="middle" font-size="12" fill="#1e3a5f" font-weight="bold">number &lt; 0 ?</text>
+  <text x="280" y="408" text-anchor="middle" font-size="10" fill="#1e3a5f">(decision)</text>
+  <!-- Process: negative -->
+  <rect x="400" y="375" width="140" height="40" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="470" y="400" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="bold">OUTPUT "Negative"</text>
+  <!-- Process: zero -->
+  <rect x="20" y="375" width="140" height="40" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="90" y="400" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="bold">OUTPUT "Zero"</text>
+  <!-- End -->
+  <rect x="210" y="490" width="140" height="44" rx="22" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="280" y="518" text-anchor="middle" font-size="13" font-weight="bold" fill="#991b1b">END</text>
+  <!-- Arrows -->
+  <line x1="280" y1="84" x2="280" y2="108" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowFC)"/>
+  <line x1="280" y1="160" x2="280" y2="183" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowFC)"/>
+  <line x1="400" y1="245" x2="398" y2="245" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowFC)"/>
+  <text x="395" y="220" font-size="11" fill="#16a34a" font-weight="bold">YES</text>
+  <line x1="280" y1="305" x2="280" y2="333" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowFC)"/>
+  <text x="290" y="325" font-size="11" fill="#dc2626" font-weight="bold">NO</text>
+  <line x1="400" y1="395" x2="398" y2="395" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowFC)"/>
+  <text x="395" y="370" font-size="11" fill="#16a34a" font-weight="bold">YES</text>
+  <line x1="160" y1="395" x2="162" y2="395" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowFC)"/>
+  <text x="140" y="370" font-size="11" fill="#dc2626" font-weight="bold">NO</text>
+  <!-- Converge to END -->
+  <path d="M 470 265 L 470 478 L 350 478" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrowFC)"/>
+  <path d="M 470 415 L 470 478" stroke="#2563eb" stroke-width="2" fill="none"/>
+  <path d="M 90 415 L 90 478 L 210 478" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrowFC)"/>
+  <!-- Legend -->
+  <rect x="20" y="40" width="130" height="60" fill="#f9fafb" stroke="#d1d5db"/>
+  <text x="85" y="55" text-anchor="middle" font-size="10" font-weight="bold" fill="#374151">Symbol key</text>
+  <rect x="26" y="62" width="14" height="8" rx="4" fill="#dcfce7" stroke="#16a34a"/><text x="46" y="70" font-size="9" fill="#374151">Terminator</text>
+  <rect x="26" y="74" width="14" height="8" fill="#eff6ff" stroke="#2563eb"/><text x="46" y="82" font-size="9" fill="#374151">Process</text>
+  <polygon points="26,86 33,92 26,98 19,92" fill="#dbeafe" stroke="#2563eb"/><text x="46" y="94" font-size="9" fill="#374151">Decision</text>
+</svg>
+
+<h3>Pseudo-code</h3>
+
+<p><strong>Pseudo-code</strong> is a structured, language-like way of writing an algorithm in plain English. It looks a bit like a programming language (with keywords such as IF, WHILE, FOR) but does not follow the strict syntax rules of any real language. Pseudo-code is useful because it expresses the <em>logic</em> of an algorithm without the student having to worry about missing semicolons or indentation errors.</p>
+
+<p>AQA provides a <strong>standard pseudo-code reference</strong> for its exams. Candidates do not have to use exactly AQA's style, but the style used must be <em>clear and consistent</em>. Below are the main conventions used in AQA pseudo-code and in this guide:</p>
+
+<ul>
+    <li><strong>Assignment</strong>: <code>x &larr; 5</code> or <code>x = 5</code> (a value is assigned to a variable)</li>
+    <li><strong>Input / output</strong>: <code>INPUT name</code> or <code>USERINPUT</code>, and <code>OUTPUT total</code></li>
+    <li><strong>Selection</strong>: <code>IF condition THEN &hellip; ELSE &hellip; ENDIF</code></li>
+    <li><strong>Iteration</strong>: <code>WHILE &hellip; ENDWHILE</code>, <code>REPEAT &hellip; UNTIL</code>, <code>FOR i &larr; 1 TO n &hellip; ENDFOR</code></li>
+    <li><strong>Comments</strong>: <code># this is a comment</code></li>
+    <li><strong>Array access</strong>: <code>list[0]</code>, <code>list[i]</code> (AQA uses zero-based indexing)</li>
+</ul>
+
+<pre>
+# Pseudo-code for the same algorithm as the flowchart above
+INPUT number
+IF number &gt; 0 THEN
+    OUTPUT "Positive"
+ELSE
+    IF number &lt; 0 THEN
+        OUTPUT "Negative"
+    ELSE
+        OUTPUT "Zero"
+    ENDIF
+ENDIF
+</pre>
+
+<h3>Hand-Tracing with Trace Tables</h3>
+
+<div class="definition">
+    <strong>Hand-tracing</strong> (or "dry running") an algorithm means stepping through it line by line with specific example inputs, recording how each variable changes at every step. A <strong>trace table</strong> is a table with one column per variable and one row per step, used to record those changes. Trace tables are used to find logic errors, to predict the output of an algorithm, and to verify that an algorithm works as intended.
+</div>
+
+<p>A trace table has:</p>
+<ul>
+    <li>One <strong>column for each variable</strong> whose value changes (plus often a column for any OUTPUT).</li>
+    <li>One <strong>row for each change</strong> (each time a variable is updated).</li>
+    <li>An optional <strong>line number</strong> column showing which line of the algorithm caused the change.</li>
+</ul>
+
+<p>To complete a trace table, you start at the top of the algorithm and write down each variable's starting value. As you work through each line, you update the values, adding a new row only when a value actually changes. Unchanged columns are left blank on subsequent rows (you do not repeat a value that did not change). At every INPUT, record the given input; at every OUTPUT, record the value printed.</p>
+
+<h4>Worked Example &mdash; Trace Table</h4>
+
+<pre>
+# Algorithm: sum the numbers 1 + 2 + 3 + 4 + 5
+total &larr; 0
+FOR i &larr; 1 TO 5
+    total &larr; total + i
+ENDFOR
+OUTPUT total
+</pre>
+
+<table>
+    <tr><th>Line</th><th>i</th><th>total</th><th>OUTPUT</th></tr>
+    <tr><td>1 (initialise)</td><td>&mdash;</td><td>0</td><td></td></tr>
+    <tr><td>2 (FOR start)</td><td>1</td><td></td><td></td></tr>
+    <tr><td>3 (total + i)</td><td></td><td>1</td><td></td></tr>
+    <tr><td>2 (next i)</td><td>2</td><td></td><td></td></tr>
+    <tr><td>3 (total + i)</td><td></td><td>3</td><td></td></tr>
+    <tr><td>2 (next i)</td><td>3</td><td></td><td></td></tr>
+    <tr><td>3 (total + i)</td><td></td><td>6</td><td></td></tr>
+    <tr><td>2 (next i)</td><td>4</td><td></td><td></td></tr>
+    <tr><td>3 (total + i)</td><td></td><td>10</td><td></td></tr>
+    <tr><td>2 (next i)</td><td>5</td><td></td><td></td></tr>
+    <tr><td>3 (total + i)</td><td></td><td>15</td><td></td></tr>
+    <tr><td>5 (OUTPUT)</td><td></td><td></td><td>15</td></tr>
+</table>
+
+<div class="exam-tip">In a trace-table question, always include a column for every variable <em>and</em> a column for OUTPUT if the algorithm produces one. Only add a new row when a value actually changes &mdash; do not repeat unchanged values. If there is an INPUT instruction, the question will tell you what the user entered &mdash; write it in the matching variable column. A neat, complete trace table is often worth 4+ marks on its own.</div>
+
+<h2>3.1.2 Efficiency of Algorithms</h2>
+
+<div class="definition">
+    The <strong>efficiency</strong> of an algorithm is a measure of how much resource it uses to solve a problem &mdash; usually either <strong>time</strong> (how long it takes) or <strong>space</strong> (how much memory it uses). Two algorithms can solve exactly the same problem but differ enormously in efficiency: one might take a fraction of a second, the other might take hours on the same data.
+</div>
+
+<p>There is almost always more than one way to solve a problem. For example, to find a name in a contact list you could: scan the list from top to bottom; jump to a known index; use the first letter as a hint; or, if the list is sorted, use a clever halving strategy. Every one of these is a valid algorithm, but they are not equally <em>efficient</em>. Comparing algorithms by efficiency is how computer scientists choose the best one for a given situation.</p>
+
+<p>At GCSE level, we compare time efficiency <em>informally</em> &mdash; usually by counting the <strong>number of basic steps</strong> (or <strong>comparisons</strong>) an algorithm performs on inputs of different sizes. We do not use formal Big-O notation in AQA 8525, but you must be able to reason in the same spirit: if doubling the input size doubles the work, that is a linear relationship; if doubling the input size adds only one extra step, that is much better; if doubling the input size quadruples the work, that is much worse.</p>
+
+<h3>Counting Steps &mdash; A Worked Comparison</h3>
+
+<p>Suppose we want to find the largest number in a list of <strong>n</strong> items. Here are two algorithms that both work:</p>
+
+<pre>
+# Algorithm A: compare every pair of items
+largest &larr; list[0]
+FOR i &larr; 0 TO n-1
+    FOR j &larr; 0 TO n-1
+        IF list[j] &gt; largest THEN
+            largest &larr; list[j]
+        ENDIF
+    ENDFOR
+ENDFOR
+OUTPUT largest
+</pre>
+
+<pre>
+# Algorithm B: one pass through the list
+largest &larr; list[0]
+FOR i &larr; 1 TO n-1
+    IF list[i] &gt; largest THEN
+        largest &larr; list[i]
+    ENDIF
+ENDFOR
+OUTPUT largest
+</pre>
+
+<table>
+    <tr><th>List length (n)</th><th>Comparisons in A (n&times;n)</th><th>Comparisons in B (n&minus;1)</th></tr>
+    <tr><td>10</td><td>100</td><td>9</td></tr>
+    <tr><td>100</td><td>10,000</td><td>99</td></tr>
+    <tr><td>1,000</td><td>1,000,000</td><td>999</td></tr>
+    <tr><td>1,000,000</td><td>1,000,000,000,000</td><td>999,999</td></tr>
+</table>
+
+<p>Algorithm A does the same comparisons over and over again in an unnecessary nested loop. Algorithm B goes through the list only once. Both produce the correct answer, but B is <strong>enormously more time-efficient</strong>. For a list of a million items, Algorithm A might take minutes; Algorithm B finishes in a fraction of a second.</p>
+
+<div class="exam-tip">When a question asks you to "compare the efficiency" of two algorithms, don't just say "one is faster". Give a reason tied to the number of steps or comparisons on an input of size <em>n</em>. For example: "Algorithm B performs <em>n</em> comparisons whereas Algorithm A performs roughly <em>n</em>&sup2;. On a list of 1000 items A does 1,000,000 comparisons but B only does 999, so B is much faster for large lists."</div>
+
+<h2>3.1.3 Searching Algorithms</h2>
+
+<p>A <strong>search algorithm</strong> finds whether a given item exists in a collection of data, and usually where it is. AQA requires you to know two searches: <strong>linear search</strong> and <strong>binary search</strong>.</p>
+
+<h3>Linear Search</h3>
+
+<div class="definition">
+    <strong>Linear search</strong> checks each item in the list <strong>one at a time, from start to end</strong>, comparing each with the target value. It stops as soon as it finds a match (or when it has checked every item without finding one). Linear search works on <strong>any</strong> list &mdash; the data does <em>not</em> have to be sorted.
+</div>
+
+<p>Imagine searching for a friend's phone number in an un-sorted pile of business cards: you have no choice but to flip through the cards one by one. That is linear search.</p>
+
+<pre>
+# Linear search pseudo-code
+FUNCTION linearSearch(list, target)
+    FOR i &larr; 0 TO length(list) - 1
+        IF list[i] = target THEN
+            RETURN i          # found &mdash; return the index
+        ENDIF
+    ENDFOR
+    RETURN -1                 # not found
+ENDFUNCTION
+</pre>
+
+<h4>When to Use Linear Search</h4>
+<ul>
+    <li>The list is <strong>unsorted</strong> (binary search requires sorted data).</li>
+    <li>The list is <strong>small</strong> &mdash; with only a handful of items, the speed difference is negligible.</li>
+    <li>You only need to run the search <strong>once or twice</strong> &mdash; sorting first would take longer than simply scanning.</li>
+    <li>The data is stored in a structure that does not allow random access (e.g. a linked list, a stream of sensor data), where jumping to the middle element is not possible.</li>
+</ul>
+
+<h4>Efficiency of Linear Search</h4>
+
+<p>For a list of <strong>n</strong> items, linear search performs:</p>
+<ul>
+    <li><strong>Best case:</strong> 1 comparison (the item is at position 0).</li>
+    <li><strong>Worst case:</strong> <em>n</em> comparisons (item is last, or not present).</li>
+    <li><strong>Average case:</strong> about <em>n</em>/2 comparisons.</li>
+</ul>
+
+<p>The number of comparisons grows <strong>linearly</strong> with the size of the list &mdash; doubling the list doubles the worst-case work. In informal terms, linear search has <strong>O(n)</strong> time complexity, but you are not required to write it that way at GCSE.</p>
+
+<h3>Binary Search</h3>
+
+<div class="definition">
+    <strong>Binary search</strong> repeatedly <strong>divides the search space in half</strong>. It looks at the middle item of the list; if that is the target, it has found it; if the target is smaller, it discards the right half and searches only the left half; if the target is larger, it discards the left half and searches only the right half. This halving continues until the target is found or the search space is empty. <strong>Binary search only works on a list that is already sorted.</strong>
+</div>
+
+<p>Imagine looking up a word in a paper dictionary. You do not start at page 1 and read every word &mdash; you open the dictionary roughly in the middle, see whether your word would come before or after, and then repeat the same process on just that half. Binary search is the computer-science version of this highly efficient strategy.</p>
+
+<pre>
+# Binary search pseudo-code (iterative)
+FUNCTION binarySearch(list, target)
+    low &larr; 0
+    high &larr; length(list) - 1
+    WHILE low &le; high
+        mid &larr; (low + high) DIV 2
+        IF list[mid] = target THEN
+            RETURN mid
+        ELSE IF list[mid] &lt; target THEN
+            low &larr; mid + 1        # target must be in the right half
+        ELSE
+            high &larr; mid - 1       # target must be in the left half
+        ENDIF
+    ENDWHILE
+    RETURN -1                         # not found
+ENDFUNCTION
+</pre>
+
+<!-- Binary search visualisation -->
+<svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Binary Search: Find 23 in a Sorted List</text>
+  <text x="350" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Each pass halves the search space until the target is found</text>
+  <!-- Pass 1 -->
+  <text x="30" y="78" font-size="11" font-weight="bold" fill="#1e3a5f">Pass 1</text>
+  <g font-family="Consolas, monospace" font-size="12">
+    <rect x="80"  y="60" width="50" height="30" fill="#e0e7ff" stroke="#4338ca"/><text x="105" y="80" text-anchor="middle" fill="#1e3a5f">4</text>
+    <rect x="130" y="60" width="50" height="30" fill="#e0e7ff" stroke="#4338ca"/><text x="155" y="80" text-anchor="middle" fill="#1e3a5f">8</text>
+    <rect x="180" y="60" width="50" height="30" fill="#e0e7ff" stroke="#4338ca"/><text x="205" y="80" text-anchor="middle" fill="#1e3a5f">15</text>
+    <rect x="230" y="60" width="50" height="30" fill="#fde68a" stroke="#b45309" stroke-width="2"/><text x="255" y="80" text-anchor="middle" fill="#92400e" font-weight="bold">16</text>
+    <rect x="280" y="60" width="50" height="30" fill="#e0e7ff" stroke="#4338ca"/><text x="305" y="80" text-anchor="middle" fill="#1e3a5f">23</text>
+    <rect x="330" y="60" width="50" height="30" fill="#e0e7ff" stroke="#4338ca"/><text x="355" y="80" text-anchor="middle" fill="#1e3a5f">42</text>
+    <rect x="380" y="60" width="50" height="30" fill="#e0e7ff" stroke="#4338ca"/><text x="405" y="80" text-anchor="middle" fill="#1e3a5f">55</text>
+  </g>
+  <text x="460" y="80" font-size="11" fill="#374151">mid = 16. 23 &gt; 16, so discard the left half.</text>
+  <!-- Pass 2 -->
+  <text x="30" y="148" font-size="11" font-weight="bold" fill="#1e3a5f">Pass 2</text>
+  <g font-family="Consolas, monospace" font-size="12">
+    <rect x="80"  y="130" width="50" height="30" fill="#f3f4f6" stroke="#d1d5db"/><text x="105" y="150" text-anchor="middle" fill="#9ca3af">4</text>
+    <rect x="130" y="130" width="50" height="30" fill="#f3f4f6" stroke="#d1d5db"/><text x="155" y="150" text-anchor="middle" fill="#9ca3af">8</text>
+    <rect x="180" y="130" width="50" height="30" fill="#f3f4f6" stroke="#d1d5db"/><text x="205" y="150" text-anchor="middle" fill="#9ca3af">15</text>
+    <rect x="230" y="130" width="50" height="30" fill="#f3f4f6" stroke="#d1d5db"/><text x="255" y="150" text-anchor="middle" fill="#9ca3af">16</text>
+    <rect x="280" y="130" width="50" height="30" fill="#e0e7ff" stroke="#4338ca"/><text x="305" y="150" text-anchor="middle" fill="#1e3a5f">23</text>
+    <rect x="330" y="130" width="50" height="30" fill="#fde68a" stroke="#b45309" stroke-width="2"/><text x="355" y="150" text-anchor="middle" fill="#92400e" font-weight="bold">42</text>
+    <rect x="380" y="130" width="50" height="30" fill="#e0e7ff" stroke="#4338ca"/><text x="405" y="150" text-anchor="middle" fill="#1e3a5f">55</text>
+  </g>
+  <text x="460" y="150" font-size="11" fill="#374151">mid = 42. 23 &lt; 42, so discard the right half.</text>
+  <!-- Pass 3 -->
+  <text x="30" y="218" font-size="11" font-weight="bold" fill="#1e3a5f">Pass 3</text>
+  <g font-family="Consolas, monospace" font-size="12">
+    <rect x="80"  y="200" width="50" height="30" fill="#f3f4f6" stroke="#d1d5db"/><text x="105" y="220" text-anchor="middle" fill="#9ca3af">4</text>
+    <rect x="130" y="200" width="50" height="30" fill="#f3f4f6" stroke="#d1d5db"/><text x="155" y="220" text-anchor="middle" fill="#9ca3af">8</text>
+    <rect x="180" y="200" width="50" height="30" fill="#f3f4f6" stroke="#d1d5db"/><text x="205" y="220" text-anchor="middle" fill="#9ca3af">15</text>
+    <rect x="230" y="200" width="50" height="30" fill="#f3f4f6" stroke="#d1d5db"/><text x="255" y="220" text-anchor="middle" fill="#9ca3af">16</text>
+    <rect x="280" y="200" width="50" height="30" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="305" y="220" text-anchor="middle" fill="#166534" font-weight="bold">23</text>
+    <rect x="330" y="200" width="50" height="30" fill="#f3f4f6" stroke="#d1d5db"/><text x="355" y="220" text-anchor="middle" fill="#9ca3af">42</text>
+    <rect x="380" y="200" width="50" height="30" fill="#f3f4f6" stroke="#d1d5db"/><text x="405" y="220" text-anchor="middle" fill="#9ca3af">55</text>
+  </g>
+  <text x="460" y="220" font-size="11" fill="#166534" font-weight="bold">mid = 23. Found!</text>
+
+  <!-- Summary -->
+  <rect x="80" y="255" width="540" height="85" rx="8" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="95" y="278" font-size="12" font-weight="bold" fill="#1e40af">Why it's so fast:</text>
+  <text x="95" y="298" font-size="11" fill="#374151">Each pass halves the list. A list of 7 items needs at most 3 passes (2&sup3; = 8).</text>
+  <text x="95" y="314" font-size="11" fill="#374151">A list of 1,000,000 items needs at most 20 passes (2&sup2;&#8304; &asymp; 1 million).</text>
+  <text x="95" y="330" font-size="11" fill="#374151">Linear search would need up to 1,000,000 comparisons on the same list.</text>
+</svg>
+
+<h4>Efficiency of Binary Search</h4>
+
+<p>Each pass halves the remaining search space. If the list has <em>n</em> items, the maximum number of comparisons needed is roughly <strong>log&#8322;(n)</strong> (the number of times you can halve <em>n</em> before reaching 1):</p>
+
+<table>
+    <tr><th>List size (n)</th><th>Max comparisons (linear search)</th><th>Max comparisons (binary search)</th></tr>
+    <tr><td>8</td><td>8</td><td>3</td></tr>
+    <tr><td>100</td><td>100</td><td>7</td></tr>
+    <tr><td>1,000</td><td>1,000</td><td>10</td></tr>
+    <tr><td>1,000,000</td><td>1,000,000</td><td>20</td></tr>
+    <tr><td>1,000,000,000</td><td>1,000,000,000</td><td>30</td></tr>
+</table>
+
+<p>The difference is dramatic for large lists: even a billion-item list needs only around 30 comparisons! Informally, binary search has <strong>O(log n)</strong> time complexity &mdash; growth is logarithmic rather than linear.</p>
+
+<h3>Linear vs Binary Search &mdash; Comparison</h3>
+
+<table>
+    <tr><th>Feature</th><th>Linear Search</th><th>Binary Search</th></tr>
+    <tr><td>Data must be sorted?</td><td>No &mdash; works on any list</td><td><strong>Yes</strong> &mdash; only works on a sorted list</td></tr>
+    <tr><td>How it works</td><td>Checks every item in order from start to end</td><td>Repeatedly halves the search space by comparing to the middle item</td></tr>
+    <tr><td>Best case</td><td>1 comparison (first item)</td><td>1 comparison (middle item is the target)</td></tr>
+    <tr><td>Worst case</td><td><em>n</em> comparisons</td><td>log&#8322;(n) comparisons (about 20 for a million items)</td></tr>
+    <tr><td>Speed on large lists</td><td>Slow &mdash; grows linearly</td><td>Very fast &mdash; grows logarithmically</td></tr>
+    <tr><td>Simplicity</td><td>Very simple to write</td><td>A little more complex (need low/high/mid pointers)</td></tr>
+    <tr><td>Best used when</td><td>List is small or unsorted, or search is done once</td><td>List is large and already sorted, or many searches are needed</td></tr>
+</table>
+
+<div class="exam-tip">Two absolute must-remember facts about binary search: (1) the list <strong>must be sorted</strong> first &mdash; this is worth a mark on almost every binary-search question; (2) it is efficient because each step <strong>halves</strong> the remaining search space. Examiners love candidates who explicitly say "halves" rather than vaguely "reduces" or "narrows down".</div>
+
+<h2>3.1.4 Sorting Algorithms</h2>
+
+<p>A <strong>sorting algorithm</strong> puts the items in a list into order (usually ascending). Sorted data is easier to search (binary search requires it), easier to present to users, and often easier to process. AQA requires you to know <strong>bubble sort</strong> and <strong>merge sort</strong>.</p>
+
+<h3>Bubble Sort</h3>
+
+<div class="definition">
+    <strong>Bubble sort</strong> works by repeatedly going through the list, <strong>comparing adjacent pairs</strong> of items and <strong>swapping them</strong> if they are in the wrong order. Each complete left-to-right scan is called a <strong>pass</strong>. After each pass, the largest remaining unsorted item has "bubbled" to the end of the list and is in its correct final position. The algorithm finishes when a complete pass is made with <em>no swaps</em>, meaning the list is sorted.
+</div>
+
+<pre>
+# Bubble sort pseudo-code
+FUNCTION bubbleSort(list)
+    n &larr; length(list)
+    REPEAT
+        swapped &larr; False
+        FOR i &larr; 0 TO n - 2
+            IF list[i] &gt; list[i + 1] THEN
+                # swap
+                temp &larr; list[i]
+                list[i] &larr; list[i + 1]
+                list[i + 1] &larr; temp
+                swapped &larr; True
+            ENDIF
+        ENDFOR
+        n &larr; n - 1                  # optimisation: last item is now in place
+    UNTIL swapped = False
+    RETURN list
+ENDFUNCTION
+</pre>
+
+<!-- Bubble sort pass diagram -->
+<svg viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:20px auto;display:block;">
+  <text x="320" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Bubble Sort: One Complete Pass over [5, 2, 8, 1, 4]</text>
+  <text x="320" y="40" text-anchor="middle" font-size="11" fill="#6b7280">Each step compares an adjacent pair and swaps if the left is greater. After one pass, the largest value (8) has bubbled to the end.</text>
+
+  <g font-family="Consolas, monospace" font-size="14">
+    <!-- Step 0: start -->
+    <text x="40" y="80" font-size="11" font-weight="bold" fill="#1e3a5f">Start</text>
+    <g transform="translate(100 62)">
+      <rect x="0"   y="0" width="40" height="30" fill="#fde68a" stroke="#b45309" stroke-width="2"/><text x="20" y="20" text-anchor="middle">5</text>
+      <rect x="40"  y="0" width="40" height="30" fill="#fde68a" stroke="#b45309" stroke-width="2"/><text x="60" y="20" text-anchor="middle">2</text>
+      <rect x="80"  y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="100" y="20" text-anchor="middle">8</text>
+      <rect x="120" y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="140" y="20" text-anchor="middle">1</text>
+      <rect x="160" y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="180" y="20" text-anchor="middle">4</text>
+    </g>
+    <text x="320" y="80" font-size="11" fill="#374151">Compare 5 and 2. 5 &gt; 2 so swap.</text>
+
+    <!-- Step 1 -->
+    <text x="40" y="130" font-size="11" font-weight="bold" fill="#1e3a5f">Step 1</text>
+    <g transform="translate(100 112)">
+      <rect x="0"   y="0" width="40" height="30" fill="#dcfce7" stroke="#16a34a"/><text x="20" y="20" text-anchor="middle">2</text>
+      <rect x="40"  y="0" width="40" height="30" fill="#fde68a" stroke="#b45309" stroke-width="2"/><text x="60" y="20" text-anchor="middle">5</text>
+      <rect x="80"  y="0" width="40" height="30" fill="#fde68a" stroke="#b45309" stroke-width="2"/><text x="100" y="20" text-anchor="middle">8</text>
+      <rect x="120" y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="140" y="20" text-anchor="middle">1</text>
+      <rect x="160" y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="180" y="20" text-anchor="middle">4</text>
+    </g>
+    <text x="320" y="130" font-size="11" fill="#374151">Compare 5 and 8. 5 &lt; 8, no swap.</text>
+
+    <!-- Step 2 -->
+    <text x="40" y="180" font-size="11" font-weight="bold" fill="#1e3a5f">Step 2</text>
+    <g transform="translate(100 162)">
+      <rect x="0"   y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="20" y="20" text-anchor="middle">2</text>
+      <rect x="40"  y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="60" y="20" text-anchor="middle">5</text>
+      <rect x="80"  y="0" width="40" height="30" fill="#fde68a" stroke="#b45309" stroke-width="2"/><text x="100" y="20" text-anchor="middle">8</text>
+      <rect x="120" y="0" width="40" height="30" fill="#fde68a" stroke="#b45309" stroke-width="2"/><text x="140" y="20" text-anchor="middle">1</text>
+      <rect x="160" y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="180" y="20" text-anchor="middle">4</text>
+    </g>
+    <text x="320" y="180" font-size="11" fill="#374151">Compare 8 and 1. 8 &gt; 1 so swap.</text>
+
+    <!-- Step 3 -->
+    <text x="40" y="230" font-size="11" font-weight="bold" fill="#1e3a5f">Step 3</text>
+    <g transform="translate(100 212)">
+      <rect x="0"   y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="20" y="20" text-anchor="middle">2</text>
+      <rect x="40"  y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="60" y="20" text-anchor="middle">5</text>
+      <rect x="80"  y="0" width="40" height="30" fill="#dcfce7" stroke="#16a34a"/><text x="100" y="20" text-anchor="middle">1</text>
+      <rect x="120" y="0" width="40" height="30" fill="#fde68a" stroke="#b45309" stroke-width="2"/><text x="140" y="20" text-anchor="middle">8</text>
+      <rect x="160" y="0" width="40" height="30" fill="#fde68a" stroke="#b45309" stroke-width="2"/><text x="180" y="20" text-anchor="middle">4</text>
+    </g>
+    <text x="320" y="230" font-size="11" fill="#374151">Compare 8 and 4. 8 &gt; 4 so swap.</text>
+
+    <!-- Step 4 (end of pass) -->
+    <text x="40" y="280" font-size="11" font-weight="bold" fill="#1e3a5f">End of Pass 1</text>
+    <g transform="translate(100 262)">
+      <rect x="0"   y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="20" y="20" text-anchor="middle">2</text>
+      <rect x="40"  y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="60" y="20" text-anchor="middle">5</text>
+      <rect x="80"  y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="100" y="20" text-anchor="middle">1</text>
+      <rect x="120" y="0" width="40" height="30" fill="#eff6ff" stroke="#2563eb"/><text x="140" y="20" text-anchor="middle">4</text>
+      <rect x="160" y="0" width="40" height="30" fill="#fde68a" stroke="#b45309" stroke-width="3"/><text x="180" y="20" text-anchor="middle" font-weight="bold">8</text>
+    </g>
+    <text x="320" y="280" font-size="11" fill="#374151">The largest value (8) is now at the end.</text>
+
+    <!-- Footer note -->
+    <rect x="40" y="310" width="560" height="60" rx="6" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="52" y="330" font-size="11" font-weight="bold" fill="#1e40af">Pass 1 complete:</text>
+    <text x="52" y="348" font-size="11" fill="#374151">4 comparisons, 3 swaps. Largest (8) now in its final position.</text>
+    <text x="52" y="362" font-size="11" fill="#374151">The algorithm repeats with the remaining unsorted 4 items. After 4 passes the list is fully sorted.</text>
+  </g>
+</svg>
+
+<h4>Efficiency of Bubble Sort</h4>
+
+<p>For a list of <strong>n</strong> items:</p>
+<ul>
+    <li>Pass 1 makes up to <strong>n&minus;1</strong> comparisons.</li>
+    <li>Pass 2 makes up to <strong>n&minus;2</strong> comparisons (the last item is now sorted).</li>
+    <li>&hellip; and so on, down to 1 comparison in the final pass.</li>
+    <li>Total maximum comparisons = (n&minus;1) + (n&minus;2) + &hellip; + 1 = <strong>n(n&minus;1)/2</strong>, roughly <strong>n&sup2;/2</strong>.</li>
+</ul>
+
+<p>Doubling the list size quadruples the work. Informally this is <strong>O(n&sup2;)</strong>. That makes bubble sort <strong>slow on large lists</strong>. On a list of 10 items it does at most 45 comparisons &mdash; fine. On a list of 10,000 items it does around 50,000,000 comparisons &mdash; very slow.</p>
+
+<h3>Merge Sort</h3>
+
+<div class="definition">
+    <strong>Merge sort</strong> is a <strong>divide-and-conquer</strong> sorting algorithm. It repeatedly divides the list in half until every sub-list contains just one item (a list of one is by definition sorted). It then <strong>merges</strong> the sub-lists back together in the correct order, two at a time, producing a single fully sorted list. Merge sort is naturally <strong>recursive</strong> &mdash; each half is sorted by calling merge sort on it.
+</div>
+
+<p>Merge sort has two phases:</p>
+
+<ol>
+    <li><strong>Divide:</strong> split the list in half, then split each half in half, and keep going until every piece is a list of size 1.</li>
+    <li><strong>Conquer (merge):</strong> take two already-sorted adjacent pieces and combine them into one larger sorted piece. Keep merging pairs until only one list remains.</li>
+</ol>
+
+<h4>How Merging Works</h4>
+
+<p>Given two sorted sub-lists (say <code>[2, 5, 8]</code> and <code>[1, 4, 7]</code>), compare the first item of each. Take the smaller one and put it in the output, and move the pointer on that sub-list forward. Repeat until one sub-list is empty, then copy across whatever is left of the other sub-list.</p>
+
+<pre>
+# Merging two sorted sub-lists into a single sorted list
+left  = [2, 5, 8]
+right = [1, 4, 7]
+
+compare 2 and 1 &rarr; take 1 &rarr; [1]
+compare 2 and 4 &rarr; take 2 &rarr; [1, 2]
+compare 5 and 4 &rarr; take 4 &rarr; [1, 2, 4]
+compare 5 and 7 &rarr; take 5 &rarr; [1, 2, 4, 5]
+compare 8 and 7 &rarr; take 7 &rarr; [1, 2, 4, 5, 7]
+right is empty &rarr; copy rest of left &rarr; [1, 2, 4, 5, 7, 8]
+</pre>
+
+<pre>
+# Merge sort pseudo-code
+FUNCTION mergeSort(list)
+    IF length(list) &le; 1 THEN
+        RETURN list                              # already sorted
+    ENDIF
+    mid   &larr; length(list) DIV 2
+    left  &larr; mergeSort(list[0 : mid])          # recursive call on left half
+    right &larr; mergeSort(list[mid : length(list)]) # recursive call on right half
+    RETURN merge(left, right)                    # combine the two sorted halves
+ENDFUNCTION
+
+FUNCTION merge(left, right)
+    result &larr; []
+    i &larr; 0
+    j &larr; 0
+    WHILE i &lt; length(left) AND j &lt; length(right)
+        IF left[i] &le; right[j] THEN
+            result.append(left[i])
+            i &larr; i + 1
+        ELSE
+            result.append(right[j])
+            j &larr; j + 1
+        ENDIF
+    ENDWHILE
+    # append whatever is left
+    WHILE i &lt; length(left)
+        result.append(left[i])
+        i &larr; i + 1
+    ENDWHILE
+    WHILE j &lt; length(right)
+        result.append(right[j])
+        j &larr; j + 1
+    ENDWHILE
+    RETURN result
+ENDFUNCTION
+</pre>
+
+<h4>Worked Example: Merge Sort on [6, 3, 8, 1, 5, 2]</h4>
+
+<pre>
+DIVIDE phase (keep splitting until size = 1):
+    [6, 3, 8, 1, 5, 2]
+      /             \
+   [6, 3, 8]       [1, 5, 2]
+    /    \          /    \
+  [6]   [3, 8]    [1]   [5, 2]
+         /  \            /  \
+       [3]  [8]         [5]  [2]
+
+MERGE phase (combine pairs in order):
+  [3] + [8]  &rarr; [3, 8]
+  [5] + [2]  &rarr; [2, 5]
+  [6] + [3, 8]  &rarr; [3, 6, 8]
+  [1] + [2, 5]  &rarr; [1, 2, 5]
+  [3, 6, 8] + [1, 2, 5]  &rarr; [1, 2, 3, 5, 6, 8]   (SORTED)
+</pre>
+
+<h4>Efficiency of Merge Sort</h4>
+
+<p>Merge sort has <strong>log&#8322;(n)</strong> levels of division (because the list is halved each time), and each level of merging takes roughly <strong>n</strong> steps (every item has to be placed into its merged list). The total work is therefore proportional to <strong>n &times; log&#8322;(n)</strong> &mdash; informally <strong>O(n log n)</strong>. That is enormously faster than bubble sort's n&sup2; on large lists:</p>
+
+<table>
+    <tr><th>List size (n)</th><th>Bubble sort (&asymp; n&sup2;/2)</th><th>Merge sort (&asymp; n log&#8322; n)</th></tr>
+    <tr><td>10</td><td>45</td><td>33</td></tr>
+    <tr><td>100</td><td>4,950</td><td>~664</td></tr>
+    <tr><td>1,000</td><td>499,500</td><td>~9,966</td></tr>
+    <tr><td>1,000,000</td><td>~500,000,000,000</td><td>~19,931,569</td></tr>
+</table>
+
+<h3>Bubble vs Merge Sort &mdash; Comparison</h3>
+
+<table>
+    <tr><th>Feature</th><th>Bubble Sort</th><th>Merge Sort</th></tr>
+    <tr><td>How it works</td><td>Repeatedly compares and swaps adjacent pairs</td><td>Divides list in half recursively, then merges sorted sub-lists</td></tr>
+    <tr><td>Design style</td><td>Iterative (loops)</td><td>Recursive (divide and conquer)</td></tr>
+    <tr><td>Simplicity to implement</td><td>Very simple (a nested loop and a swap)</td><td>More complex &mdash; needs recursion and a separate merge function</td></tr>
+    <tr><td>Speed on small lists</td><td>Fine &mdash; overhead is low</td><td>Also fine, but recursion adds slight overhead</td></tr>
+    <tr><td>Speed on large lists</td><td>Very slow (n&sup2;)</td><td>Much faster (n log n)</td></tr>
+    <tr><td>Memory usage</td><td>Very low &mdash; sorts "in place"</td><td>Higher &mdash; temporary lists are created during the merge step</td></tr>
+    <tr><td>Best case</td><td>Fast if list is already sorted (a single pass with no swaps)</td><td>Always n log n &mdash; no short-cut for already-sorted lists</td></tr>
+    <tr><td>Best used when</td><td>Lists are small, or the data is nearly sorted</td><td>Lists are large and time efficiency is important</td></tr>
+</table>
+
+<div class="exam-tip">If an exam asks "which sort is more efficient for a large list" the answer is almost always merge sort (n log n versus bubble sort's n&sup2;). But if it asks "which is simpler to implement" or "which uses less memory", the answer is bubble sort. Read the question carefully &mdash; both sorts have situations where they are the right choice.</div>
+
+<div class="exam-tip">Remember: merge sort is recursive &mdash; it calls itself on each half of the list. The base case (stopping condition) is a list of 0 or 1 items, which is already sorted. Missing or wrong base cases are a common programming mistake with recursion.</div>
+
+<h2>3.1.5 Decomposition and Abstraction</h2>
+
+<p>Real-world problems are often far too complex to solve in one go. Professional programmers use two key mental tools to tackle big problems: <strong>decomposition</strong> and <strong>abstraction</strong>. Both are fundamental computational-thinking skills and are tested on every AQA paper.</p>
+
+<h3>Decomposition</h3>
+
+<div class="definition">
+    <strong>Decomposition</strong> is breaking a large, complex problem down into smaller, more manageable sub-problems. Each sub-problem can then be solved individually, tested independently, and finally combined to solve the original problem. Decomposition makes a big problem tractable and allows a team of people to work on different sub-problems in parallel.
+</div>
+
+<p>Suppose you are asked to design a computer game. "Write a game" is far too big a task to start on all at once &mdash; there are a thousand things to consider. But if you decompose it, you can split the problem into sub-problems such as: player input, game logic, graphics/rendering, sound, high-score saving, menu screens. Each of these is a smaller, well-defined problem that can be solved on its own.</p>
+
+<h4>Example of Decomposition &mdash; Designing an Online Shop</h4>
+
+<ul>
+    <li><strong>Sub-problem 1:</strong> Display product catalogue (with categories, search, images).</li>
+    <li><strong>Sub-problem 2:</strong> Manage user accounts (register, log in, view order history).</li>
+    <li><strong>Sub-problem 3:</strong> Shopping cart (add/remove items, update quantities, total calculation).</li>
+    <li><strong>Sub-problem 4:</strong> Payment processing (verify card, communicate with payment gateway).</li>
+    <li><strong>Sub-problem 5:</strong> Order fulfilment (generate packing slip, email confirmation, update stock).</li>
+</ul>
+
+<p>Each of those sub-problems can itself be decomposed further &mdash; for example "Shopping cart" can be broken into "add item function", "remove item function", "update quantity function", "calculate total function", and so on. This hierarchical breakdown continues until every sub-problem is simple enough to be coded as a single function.</p>
+
+<h3>Abstraction</h3>
+
+<div class="definition">
+    <strong>Abstraction</strong> is the process of removing or hiding unnecessary details from a problem so you can focus on the key features that matter for the solution. An abstraction is a simpler model of something complex that keeps only the information you need for the task at hand.
+</div>
+
+<p>Think of the London Underground map. The actual geography of London is enormously complicated &mdash; stations are at specific latitudes and longitudes, tracks curve between them, and the true distances vary. But when you are travelling, you only need to know: which line goes to which station, and where the interchanges are. The famous Tube map <em>abstracts away</em> real distances, real angles and real geography, keeping only the information a passenger needs. It is useless as a street map, but perfect as a travel map.</p>
+
+<p>Good abstractions:</p>
+<ul>
+    <li>Keep only the <strong>relevant details</strong> for the task being solved.</li>
+    <li>Hide details that would be <strong>distracting or overwhelming</strong>.</li>
+    <li>Allow the problem to be <strong>understood more easily</strong> and solved more cleanly.</li>
+</ul>
+
+<h4>Example of Abstraction &mdash; Representing a Student</h4>
+
+<p>For a school register program, a "Student" might be represented with only the fields <code>name</code>, <code>form</code>, <code>present</code>. Their favourite food, hair colour, height, favourite band &mdash; all irrelevant to taking a register. They are abstracted away. The same student in a medical records system would have a totally different abstraction: <code>NHS_number</code>, <code>allergies</code>, <code>date_of_birth</code>, <code>medical_history</code>. Name is still relevant, but "favourite band" is not. Abstraction is always relative to <em>what you are trying to do</em>.</p>
+
+<h4>Example of Abstraction &mdash; Driving a Car</h4>
+
+<p>You learn to drive by learning the steering wheel, the pedals, and the gear stick. You don't need to know how the fuel injectors meter fuel, how the differential works, or how the engine control unit adjusts ignition timing. The controls are an <em>abstraction</em> of the mechanical reality of the car, simple enough for anyone to use.</p>
+
+<h3>Decomposition vs Abstraction &mdash; The Difference</h3>
+
+<table>
+    <tr><th>Decomposition</th><th>Abstraction</th></tr>
+    <tr><td>Breaks a problem into smaller sub-problems</td><td>Removes unnecessary detail so you can focus on what matters</td></tr>
+    <tr><td>Answers: "What are the parts of this problem?"</td><td>Answers: "What details can I ignore?"</td></tr>
+    <tr><td>Produces a list/tree of sub-tasks</td><td>Produces a simpler model of the problem</td></tr>
+    <tr><td>Makes a big task more manageable</td><td>Makes a complex task simpler to reason about</td></tr>
+    <tr><td>Example: an online shop split into cart, login, payment, stock modules</td><td>Example: a Tube map showing station connections but not real distances</td></tr>
+</table>
+
+<h4>Putting Them Together &mdash; Designing a Sat-Nav</h4>
+
+<p>Imagine designing a satellite-navigation program.</p>
+<ul>
+    <li><strong>Decomposition</strong> splits the task into sub-problems: GPS signal reading, map rendering, route calculation, turn-by-turn voice instructions, user-interface.</li>
+    <li><strong>Abstraction</strong> removes unnecessary detail: the map does not need to show every building or tree. The route calculator treats the road network as a simple graph of junctions connected by roads with a "cost" (time or distance) &mdash; the actual physical road surface, traffic lights, and so on are abstracted away.</li>
+</ul>
+
+<p>Decomposition and abstraction work together: you decompose to split the problem up, and abstract within each part to keep it simple. Together they are the foundation of almost all modern software design.</p>
+
+<div class="exam-tip">Students often confuse decomposition and abstraction. The quickest mnemonic: decomposition splits a problem <em>horizontally</em> (into smaller sibling sub-problems); abstraction simplifies a problem <em>vertically</em> (by removing detail). A question that says "break down a problem" is about decomposition. A question that says "remove unnecessary detail" or "simplify" is about abstraction. Giving a clear example is usually worth a mark on its own.</div>
+
+<div class="exam-tip">When asked to apply decomposition to a scenario (e.g. a school timetable system), list at least three concrete sub-problems and briefly say what each does. When asked to apply abstraction, explicitly name <em>which details are kept</em> and <em>which are ignored</em>, and why that is sensible for the task.</div>
+
+</div>
+</body>
+</html>
