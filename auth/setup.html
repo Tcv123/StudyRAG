@@ -689,7 +689,7 @@ function renderGrid() {
     const sel = selectedSubjects.some(x => x.name === s.name);
     return `
       <div class="subj-card ${sel ? 'selected' : ''}" onclick="toggleSubject('${s.name}','${s.emoji}',this)">
-        <div class="subj-card-emoji">${s.emoji}</div>
+        <div class="subj-card-emoji">${window.SUBJECTS_CONFIG.iconHtml(s.name)}</div>
         <div class="subj-card-name">${s.name}</div>
         <div class="subj-check">✓</div>
       </div>`;

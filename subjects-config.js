@@ -95,6 +95,23 @@
     return s ? s.emoji : '📚';
   }
 
+  // Flag emojis fall back to regional-indicator letters on Windows, so
+  // MFL subjects use a real flag image instead. Other subjects keep the
+  // text emoji — callers that render via innerHTML can drop this in
+  // directly; plain-text consumers should stick with emojiFor().
+  const flagCodes = {
+    'French':  'fr',
+    'German':  'de',
+    'Spanish': 'es',
+  };
+  function iconHtml(subjectName) {
+    const code = flagCodes[subjectName];
+    if (code) {
+      return `<img src="https://flagcdn.com/${code}.svg" alt="" style="width:1.35em;height:1em;display:inline-block;vertical-align:middle;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,0.06);">`;
+    }
+    return emojiFor(subjectName);
+  }
+
   function isSupported(subjectName, board) {
     return (boards[subjectName] || []).includes(board);
   }
@@ -108,6 +125,7 @@
     getSubjectsFor,
     getBoardsFor,
     emojiFor,
+    iconHtml,
     isSupported,
   };
 })();
