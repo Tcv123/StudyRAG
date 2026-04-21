@@ -1342,43 +1342,44 @@ const SUBJECT_EMOJIS = Object.fromEntries(
   (window.SUBJECTS_CONFIG?.subjects || []).map(s => [s.name, s.emoji])
 );
 
-// Maps "Subject_Board" (plus optional "_Board|alevel" variant) → {url, total}.
-// `total` is the number of topics in the diagnostic — practice unlocks only
-// when the user has recorded that many topic_progress rows for the subject.
+// Maps "Subject_Board" (+ optional "_Board|alevel") → diagnostic info.
+// `url`   — diagnostic page (one page per subject, takes ?topic=<id>)
+// `total` — number of topics the user must test before practice unlocks
+// `first` — topic ID to land on when entering from a locked card
 const DIAG_PAGE = {
-  'Computer Science_OCR':         { url: 'diagnostics/cs-ocr-gcse-diagnostic.html',      total: 11 },
-  'Computer Science_OCR|alevel':  { url: 'diagnostics/cs-ocr-alevel-diagnostic.html',    total: 8  },
-  'Computer Science_AQA':         { url: 'diagnostics/cs-aqa-diagnostic.html',           total: 8  },
-  'Physics_Edexcel':              { url: 'diagnostics/physics-edexcel-diagnostic.html',  total: 13 },
-  'Physics_AQA':                  { url: 'diagnostics/physics-aqa-diagnostic.html',      total: 8  },
-  'Physics_OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6  },
-  'Physics_OCR B':                { url: 'diagnostics/physics-ocr-b-diagnostic.html',    total: 6  },
-  'Economics_AQA':                { url: 'diagnostics/economics-aqa-diagnostic.html',         total: 10 },
-  'Economics_Edexcel A':          { url: 'diagnostics/economics-edexcel-a-diagnostic.html',   total: 8  },
-  'Economics_Edexcel B':          { url: 'diagnostics/economics-edexcel-b-diagnostic.html',   total: 8  },
-  'Economics_OCR':                { url: 'diagnostics/economics-ocr-diagnostic.html',         total: 8  },
-  'Chemistry_AQA':                { url: 'diagnostics/chemistry-aqa-diagnostic.html',         total: 6  },
-  'Chemistry_Edexcel':            { url: 'diagnostics/chemistry-edexcel-diagnostic.html',     total: 6  },
-  'Chemistry_OCR A':              { url: 'diagnostics/chemistry-ocr-a-diagnostic.html',       total: 6  },
-  'Chemistry_OCR B':              { url: 'diagnostics/chemistry-ocr-b-diagnostic.html',       total: 6  },
-  'Biology_AQA':                  { url: 'diagnostics/biology-aqa-diagnostic.html',           total: 8  },
-  'Biology_Edexcel A':            { url: 'diagnostics/biology-edexcel-a-diagnostic.html',     total: 8  },
-  'Biology_Edexcel B':            { url: 'diagnostics/biology-edexcel-b-diagnostic.html',     total: 8  },
-  'Biology_OCR A':                { url: 'diagnostics/biology-ocr-a-diagnostic.html',         total: 6  },
-  'Biology_OCR B':                { url: 'diagnostics/biology-ocr-b-diagnostic.html',         total: 6  },
-  'Geography_AQA':                { url: 'diagnostics/geography-aqa-diagnostic.html',         total: 8  },
-  'Geography_Edexcel':            { url: 'diagnostics/geography-edexcel-diagnostic.html',     total: 8  },
-  'Geography_OCR':                { url: 'diagnostics/geography-ocr-diagnostic.html',         total: 8  },
-  'Geography_Eduqas':             { url: 'diagnostics/geography-eduqas-diagnostic.html',      total: 12 },
-  'Mathematics_AQA':              { url: 'diagnostics/maths-aqa-diagnostic.html',             total: 17 },
-  'Mathematics_OCR':              { url: 'diagnostics/maths-ocr-diagnostic.html',             total: 19 },
-  'Mathematics_Edexcel':          { url: 'diagnostics/maths-edexcel-diagnostic.html',         total: 19 },
-  'Further Mathematics_AQA':      { url: 'diagnostics/further-maths-aqa-diagnostic.html',     total: 9  },
-  'Further Mathematics_Edexcel':  { url: 'diagnostics/further-maths-edexcel-diagnostic.html', total: 17 },
-  'Further Mathematics_OCR A':    { url: 'diagnostics/further-maths-ocr-diagnostic.html',     total: 25 },
-  'Further Mathematics_OCR B':    { url: 'diagnostics/further-maths-ocr-b-diagnostic.html',   total: 25 },
-  'English Language_AQA':         { url: 'diagnostics/english-aqa-diagnostic.html',           total: 11 },
-  'English Language_Edexcel':     { url: 'diagnostics/english-edexcel-diagnostic.html',       total: 11 },
+  'Computer Science_OCR':         { url: 'diagnostics/cs-ocr-gcse-diagnostic.html',      total: 11, first: '1.1' },
+  'Computer Science_OCR|alevel':  { url: 'diagnostics/cs-ocr-alevel-diagnostic.html',    total: 8,  first: '1.1' },
+  'Computer Science_AQA':         { url: 'diagnostics/cs-aqa-diagnostic.html',           total: 8,  first: '3.1' },
+  'Physics_Edexcel':              { url: 'diagnostics/physics-edexcel-diagnostic.html',  total: 13, first: 'T1'  },
+  'Physics_AQA':                  { url: 'diagnostics/physics-aqa-diagnostic.html',      total: 8,  first: '3.1' },
+  'Physics_OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6,  first: 'M1'  },
+  'Physics_OCR B':                { url: 'diagnostics/physics-ocr-b-diagnostic.html',    total: 6,  first: 'B1'  },
+  'Economics_AQA':                { url: 'diagnostics/economics-aqa-diagnostic.html',         total: 10, first: '3.1.1' },
+  'Economics_Edexcel A':          { url: 'diagnostics/economics-edexcel-a-diagnostic.html',   total: 8,  first: '1.1' },
+  'Economics_Edexcel B':          { url: 'diagnostics/economics-edexcel-b-diagnostic.html',   total: 8,  first: '1.1' },
+  'Economics_OCR':                { url: 'diagnostics/economics-ocr-diagnostic.html',         total: 8,  first: '1.1' },
+  'Chemistry_AQA':                { url: 'diagnostics/chemistry-aqa-diagnostic.html',         total: 6,  first: 'P1'  },
+  'Chemistry_Edexcel':            { url: 'diagnostics/chemistry-edexcel-diagnostic.html',     total: 6,  first: 'T1'  },
+  'Chemistry_OCR A':              { url: 'diagnostics/chemistry-ocr-a-diagnostic.html',       total: 6,  first: 'M1'  },
+  'Chemistry_OCR B':              { url: 'diagnostics/chemistry-ocr-b-diagnostic.html',       total: 6,  first: 'S1'  },
+  'Biology_AQA':                  { url: 'diagnostics/biology-aqa-diagnostic.html',           total: 8,  first: 'T1'  },
+  'Biology_Edexcel A':            { url: 'diagnostics/biology-edexcel-a-diagnostic.html',     total: 8,  first: 'T1'  },
+  'Biology_Edexcel B':            { url: 'diagnostics/biology-edexcel-b-diagnostic.html',     total: 8,  first: 'S1'  },
+  'Biology_OCR A':                { url: 'diagnostics/biology-ocr-a-diagnostic.html',         total: 6,  first: 'M1'  },
+  'Biology_OCR B':                { url: 'diagnostics/biology-ocr-b-diagnostic.html',         total: 6,  first: 'B1'  },
+  'Geography_AQA':                { url: 'diagnostics/geography-aqa-diagnostic.html',         total: 8,  first: '1.1' },
+  'Geography_Edexcel':            { url: 'diagnostics/geography-edexcel-diagnostic.html',     total: 8,  first: 'T1'  },
+  'Geography_OCR':                { url: 'diagnostics/geography-ocr-diagnostic.html',         total: 8,  first: '1.1' },
+  'Geography_Eduqas':             { url: 'diagnostics/geography-eduqas-diagnostic.html',      total: 12, first: '1.1' },
+  'Mathematics_AQA':              { url: 'diagnostics/maths-aqa-diagnostic.html',             total: 17, first: '1.1' },
+  'Mathematics_OCR':              { url: 'diagnostics/maths-ocr-diagnostic.html',             total: 19, first: '1.1' },
+  'Mathematics_Edexcel':          { url: 'diagnostics/maths-edexcel-diagnostic.html',         total: 19, first: 'P1'  },
+  'Further Mathematics_AQA':      { url: 'diagnostics/further-maths-aqa-diagnostic.html',     total: 9,  first: '1.1' },
+  'Further Mathematics_Edexcel':  { url: 'diagnostics/further-maths-edexcel-diagnostic.html', total: 17, first: 'CP1.1' },
+  'Further Mathematics_OCR A':    { url: 'diagnostics/further-maths-ocr-diagnostic.html',     total: 25, first: '1.1' },
+  'Further Mathematics_OCR B':    { url: 'diagnostics/further-maths-ocr-b-diagnostic.html',   total: 25, first: '1.1' },
+  'English Language_AQA':         { url: 'diagnostics/english-aqa-diagnostic.html',           total: 11, first: '1.1' },
+  'English Language_Edexcel':     { url: 'diagnostics/english-edexcel-diagnostic.html',       total: 11, first: '1.1' },
 };
 
 async function init() {
@@ -1468,8 +1469,9 @@ function showSubjectCards() {
       const gateMsg = tested === 0
         ? `Take the ${diag.total}-topic diagnostic to unlock practice`
         : `${tested}/${diag.total} done — ${remaining} topic${remaining === 1 ? '' : 's'} left to unlock`;
+      const diagUrl = `${diag.url}?topic=${encodeURIComponent(diag.first)}`;
       return `
-        <a href="${diag.url}" class="subj-pick needs-diag" style="text-decoration:none;color:inherit;" title="Finish the diagnostic to unlock practice questions.">
+        <a href="${diagUrl}" class="subj-pick needs-diag" style="text-decoration:none;color:inherit;" title="Finish the diagnostic to unlock practice questions.">
           <div class="subj-pick-emoji">${emoji}</div>
           <div class="subj-pick-info">
             <div class="subj-pick-name">${s.subject}<span class="subj-pick-diag-tag">◎ Finish diagnostic</span></div>

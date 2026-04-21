@@ -1,7 +1,8 @@
 /*
  * OCR A-Level Computer Science (H446) — Written / Short-Answer Question Bank
  * Keyed by H446 top-level topic (1.1–2.3).
- * Each entry: { green: [], amber: [], red: [] } of { q, marks, answer } objects.
+ * Each entry: { green: [], amber: [], red: [] } of { q, marks, tier, modelAnswer } objects.
+ * 10 questions per topic: 4 green + 4 amber + 2 red.
  * tier: green (state/identify 2-3 marks), amber (explain/describe 4-6 marks), red (evaluate/discuss 7-10 marks)
  * Student self-marks against model answer: Full / Partial / Missed.
  */
@@ -25,6 +26,11 @@ const CS_OCR_WRITTEN = {
         marks: 3, tier: 'green',
         modelAnswer: `Locality of reference is the tendency of a processor to repeatedly access a small range of memory over a short period of time, which is what makes caching effective.\n• Temporal locality — if a memory location is accessed, it is likely to be accessed again soon (e.g. loop counters).\n• Spatial locality — if a memory location is accessed, nearby addresses are likely to be accessed soon (e.g. elements of an array).`
       },
+      {
+        q: 'State two differences between RAM and ROM, and identify whether each is volatile.',
+        marks: 3, tier: 'green',
+        modelAnswer: `• RAM (Random Access Memory) is read/write and is volatile — its contents are lost when power is removed. It holds the currently running programs and data.\n• ROM (Read-Only Memory) is (typically) read-only and is non-volatile — its contents persist without power. It commonly holds firmware / the bootloader / BIOS.\n• Further differences: RAM has much higher capacity in a modern system and is usually faster to write; ROM content is fixed (or only reprogrammed with special procedures, e.g. EEPROM/flash).`
+      },
     ],
     amber: [
       {
@@ -41,6 +47,11 @@ const CS_OCR_WRITTEN = {
         q: 'Explain the difference between CISC and RISC processor architectures, and describe one typical use case for each.',
         marks: 6, tier: 'amber',
         modelAnswer: `CISC (Complex Instruction Set Computer):\n• Large instruction set with many specialised, variable-length instructions.\n• A single instruction can perform multi-step operations (e.g. memory-to-memory move with arithmetic).\n• Uses microcode to break complex instructions into micro-operations — hardware is more complex.\n• Example: Intel/AMD x86 processors used in desktops, laptops and servers, where backward compatibility and code density matter.\nRISC (Reduced Instruction Set Computer):\n• Small set of simple, fixed-length instructions that each typically complete in one clock cycle.\n• Load/store architecture: only load and store instructions access memory.\n• Simpler hardware enables efficient pipelining and lower power consumption; the compiler does more work.\n• Example: ARM processors in smartphones, tablets and embedded/IoT systems, where power efficiency and predictable timing are essential.`
+      },
+      {
+        q: 'Compare HDDs and SSDs as secondary storage devices. Describe how each stores data and explain two factors a user would consider when choosing between them.',
+        marks: 6, tier: 'amber',
+        modelAnswer: `How data is stored:\n• HDD (Hard Disk Drive) — data is stored as magnetised regions on rapidly spinning platters. A moving read/write head on an actuator arm flies over tracks and sectors to access data. Access time is dominated by seek time and rotational latency (typically several ms).\n• SSD (Solid-State Drive) — data is stored as trapped charge in floating-gate transistors in NAND flash memory cells, organised in pages and blocks. There are no moving parts; an SSD controller maps logical addresses to physical cells (wear-levelling) and performs garbage collection on erase blocks.\nFactors a user would weigh up:\n• Performance — SSDs have far lower random-access latency and higher IOPS than HDDs, giving faster boot, application load and database performance. If speed matters (OS drive, random I/O), SSD is preferred.\n• Capacity and £/GB — HDDs still offer much larger capacities at a lower cost per gigabyte, so for large bulk or archival storage HDDs can be more economical.\n• (Also accept: durability/shock resistance — SSDs have no moving parts so are more robust in laptops; endurance — flash cells have a finite write/erase cycle count, though wear-levelling extends lifetime; power consumption — SSDs use less power, improving battery life; noise — SSDs are silent.)`
       },
     ],
     red: [
