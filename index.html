@@ -71,40 +71,66 @@
     }
     .nav-wrap {
       max-width: none; margin: 0; padding: 0 40px;
-      height: 58px; display: flex; align-items: center; justify-content: space-between;
+      height: 64px; display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center; gap: 24px;
     }
-    .logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
-    .logo-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--accent); box-shadow: 0 0 10px var(--accent-glow);
+    .logo {
+      display: flex; align-items: center; gap: 10px; text-decoration: none;
+      justify-self: start;
     }
-    .logo-name { font-family: var(--font-display); font-size: 18px; color: var(--text); }
-    .nav-links { display: flex; gap: 8px; align-items: center; }
-    .nav-anchors { display: flex; gap: 6px; margin-right: 6px; }
-    .nav-anchor {
-      padding: 6px 12px; border-radius: 7px; font-size: 13px; font-weight: 500;
-      color: var(--muted); text-decoration: none; transition: all 0.15s;
+    .logo-bar {
+      width: 3px; height: 22px; border-radius: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+    .logo-name {
+      font-family: var(--font-display); font-size: 20px;
+      color: var(--text); letter-spacing: 0.02em;
+    }
+    .nav-anchors {
+      display: flex; gap: 4px; align-items: center;
+      background: var(--surface);
       border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px;
+      box-shadow: 0 2px 10px rgba(91,173,207,0.06);
+      justify-self: center;
     }
-    .nav-anchor:hover { color: var(--text); background: var(--surface2); border-color: var(--border-hover); }
+    .nav-anchor {
+      padding: 8px 18px; border-radius: 999px;
+      font-size: 12.5px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: all 0.15s;
+    }
+    .nav-anchor:hover { color: var(--text); background: var(--surface2); }
+    .nav-anchor.active {
+      color: var(--accent-dark);
+      background: var(--accent-dim);
+    }
+    .nav-right { justify-self: end; display: flex; align-items: center; gap: 10px; }
     .nav-btn {
-      padding: 7px 15px; border-radius: 8px; font-size: 13px; font-weight: 500;
-      text-decoration: none; border: 1px solid transparent; transition: all 0.15s;
+      padding: 9px 22px; border-radius: 10px;
+      font-size: 12.5px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; border: 1px solid transparent;
+      transition: all 0.15s;
     }
-    .nav-ghost { color: var(--accent); border-color: var(--accent); }
-    .nav-ghost:hover { color: #fff; border-color: var(--accent); background: var(--accent); }
+    .nav-ghost { color: var(--muted); }
+    .nav-ghost:hover { color: var(--text); }
     .nav-fill {
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
       color: #fff; box-shadow: 0 2px 10px var(--accent-glow);
     }
-    .nav-fill:hover { filter: brightness(1.05); }
+    .nav-fill:hover { filter: brightness(1.05); transform: translateY(-1px); }
 
     /* ── HERO ── */
     .hero {
       position: relative; z-index: 1;
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
-      padding-top: 58px;
+      padding-top: 64px;
     }
     .hero-wrap {
       max-width: 960px; margin: 0 auto; padding: 0 32px;
@@ -594,19 +620,19 @@
 <nav>
   <div class="nav-wrap">
     <a class="logo" href="#">
-      <div class="logo-dot"></div>
-      <div class="logo-name">RAG Learning</div>
+      <div class="logo-bar"></div>
+      <div class="logo-name">RAG LEARNING</div>
     </a>
-    <div class="nav-links">
-      <div class="nav-anchors">
-        <a href="#rag" class="nav-anchor">How RAG works</a>
-        <a href="#subjects" class="nav-anchor">Subjects</a>
-        <a href="#features" class="nav-anchor">Features</a>
-        <a href="#pro" class="nav-anchor">Pro</a>
-        <a href="#faq" class="nav-anchor">FAQ</a>
-      </div>
+    <div class="nav-anchors">
+      <a href="#" class="nav-anchor active">Home</a>
+      <a href="#features" class="nav-anchor">Features</a>
+      <a href="#subjects" class="nav-anchor">Subjects</a>
+      <a href="#pro" class="nav-anchor">Pricing</a>
+      <a href="#faq" class="nav-anchor">Support</a>
+    </div>
+    <div class="nav-right">
       <a href="auth/login.html" class="nav-btn nav-ghost">Sign in</a>
-      <a href="auth/register.html" class="nav-btn nav-fill">Get started free</a>
+      <a href="auth/register.html" class="nav-btn nav-fill">Register</a>
     </div>
   </div>
 </nav>
