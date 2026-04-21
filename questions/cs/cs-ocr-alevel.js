@@ -206,64 +206,64 @@ const CS_OCR_QUESTIONS = {
   '1.4': {
     name: 'Data Types, Data Structures & (Boolean) Algorithms',
     green: [
-      // 1.4.1 Data Types — primitives, bases, two's complement, floating-point, character sets (8)
+      // 1.4.1 Data Types — primitives, bases, signed, floating-point, bitwise, character sets (8)
       { q: 'Which of the following is a primitive data type in OCR H446?', options: ['Array','Integer','Linked list','Record'], answer: 1 },
-      { q: 'What is the denary value of the binary number 1011?', options: ['9','10','11','13'], answer: 2 },
+      { q: 'What is the denary value of the 8-bit unsigned binary number 00101101?', options: ['43','45','47','53'], answer: 1 },
       { q: 'What is the hexadecimal equivalent of the 8-bit binary number 11111111?', options: ['F0','FF','EE','0F'], answer: 1 },
-      { q: 'The hexadecimal digit A represents which denary value?', options: ['9','10','11','15'], answer: 1 },
-      { q: 'Which representation supports negative integers by flipping every bit and adding 1?', options: ['Sign-and-magnitude','Two\'s complement','Binary-coded decimal','Excess-3'], answer: 1 },
-      { q: 'A floating-point number is stored as which two components?', options: ['Mantissa and exponent','Sign and checksum','Base and index','Numerator and denominator'], answer: 0 },
-      { q: 'Which character set allocates the first 128 code points identically to ASCII but can extend to over a million code points?', options: ['EBCDIC','Unicode','Baudot','Morse'], answer: 1 },
+      { q: 'The hexadecimal digit C represents which denary value?', options: ['10','11','12','15'], answer: 2 },
+      { q: 'What is the range of an n-bit unsigned binary integer?', options: ['0 to 2ⁿ','0 to 2ⁿ−1','−2ⁿ⁻¹ to 2ⁿ⁻¹−1','1 to 2ⁿ'], answer: 1 },
+      { q: 'On a Karnaugh map (K-map), what does a group of four adjacent 1s forming a 2×2 square allow you to eliminate?', options: ['One variable','Two variables','Three variables','No variables — all four must stay'], answer: 1 },
+      { q: 'A floating-point number is stored as which three components?', options: ['Sign, mantissa, exponent','Sign, base, index','Mantissa, divisor, quotient','Numerator, denominator, sign'], answer: 0 },
+      { q: 'Each hexadecimal digit represents exactly how many binary digits (bits)?', options: ['2','3','4','8'], answer: 2 },
+      { q: 'Each octal digit represents exactly how many binary digits?', options: ['2','3','4','8'], answer: 1 },
+      { q: 'Which character set allocates the first 128 code points identically to ASCII but extends to over a million code points?', options: ['EBCDIC','Unicode','Baudot','Morse'], answer: 1 },
       { q: 'How many bits does a standard (non-extended) ASCII character occupy?', options: ['4','7','8','16'], answer: 1 },
-      // 1.4.2 Data Structures (8)
+      // 1.4.2 Data Structures (6)
       { q: 'A stack operates on which principle?', options: ['FIFO','LIFO','Random access','Sorted access'], answer: 1 },
       { q: 'A queue operates on which principle?', options: ['LIFO','FIFO','Random access','Sorted access'], answer: 1 },
-      { q: 'Which structure best represents the hierarchical file system of an operating system?', options: ['Stack','Queue','Tree','Hash table'], answer: 2 },
       { q: 'Each node in a singly-linked list stores:', options: ['Only its value','A value and a pointer to the next node','Two pointers but no value','An index and a hash'], answer: 1 },
       { q: 'In a hash table the index of a key is determined by:', options: ['Alphabetical order','Applying a hash function to the key','Time of insertion','The memory address of the value'], answer: 1 },
-      { q: 'A graph consists of:', options: ['Only nodes','Vertices connected by edges','Only edges','Sorted values in an array'], answer: 1 },
       { q: 'A tuple is best described as:', options: ['An unordered set of unique values','An ordered, immutable sequence of values, possibly of different types','A hash table key','A binary tree node'], answer: 1 },
       { q: 'Which operation returns the top value of a stack WITHOUT removing it?', options: ['push','pop','peek','enqueue'], answer: 2 },
-      // 1.4.3 Boolean Algebra (4)
+      // 1.4.3 Boolean Algebra (3)
       { q: 'What is the output of the Boolean expression A AND (NOT A)?', options: ['Always 1','Always 0','Always A','Undefined'], answer: 1 },
-      { q: 'Which law of Boolean algebra states NOT(A AND B) = (NOT A) OR (NOT B)?', options: ['Associative','De Morgan\'s','Commutative','Distributive'], answer: 1 },
       { q: 'Which gate outputs 1 only when its two inputs differ?', options: ['AND','OR','XOR','NAND'], answer: 2 },
-      { q: 'A D-type flip-flop:', options: ['Has no clock input','Stores 1 bit and updates on a clock edge','Is purely combinational','Performs arithmetic only'], answer: 1 },
+      { q: 'A D-type flip-flop is best described as:', options: ['A combinational circuit with no memory','A 1-bit memory element that captures its input on a clock edge','A 2-input AND gate','A multi-bit adder'], answer: 1 },
     ],
     amber: [
-      // 1.4.1 (8)
+      // 1.4.1 (8) — conversions, 2's complement, addition/overflow, floating-point, bitwise, Unicode
       { q: 'Convert the denary number −13 to an 8-bit two\'s complement binary number.', options: ['10001101','11110010','11110011','01111101'], answer: 2 },
-      { q: 'Perform the 4-bit binary addition 1011 + 0110 (give the 5-bit result):', options: ['10001','10010','10011','01101'], answer: 0 },
       { q: 'Convert the 8-bit two\'s complement number 11010110 to denary.', options: ['−42','−41','−43','214'], answer: 0 },
       { q: 'Convert the hexadecimal number 2AF to denary.', options: ['687','688','2015','2047'], answer: 0 },
+      { q: 'Convert the binary number 110101111₂ into octal.', options: ['527₈','657₈','657₁₀','647₈'], answer: 1 },
       { q: 'What is the result of the bitwise operation 11001010 AND 10110110?', options: ['11111110','10000010','10001000','10000000'], answer: 1 },
       { q: 'An arithmetic shift right by 1 applied to the 8-bit two\'s complement number 11110000 gives:', options: ['01111000','11111000','00000111','01110000'], answer: 1 },
       { q: 'Normalise the positive floating-point value with 8-bit mantissa 0.0011010 and 4-bit exponent 0101. The normalised form is:', options: ['mantissa 0.1101000, exponent 0011','mantissa 0.0011010, exponent 0101','mantissa 1.1010000, exponent 0111','mantissa 0.0110100, exponent 0100'], answer: 0 },
-      { q: 'Which encoding uses 1–4 bytes per character and is backwards-compatible with the first 128 ASCII code points?', options: ['UTF-32','UTF-16','UTF-8','EBCDIC'], answer: 2 },
-      // 1.4.2 (8)
+      { q: 'Adding the 8-bit two\'s complement numbers 01100100 (+100) and 00110010 (+50) produces a result of 10010110. What flag condition best describes this?', options: ['No error — the sum is +150','Unsigned carry only','Overflow (V flag set) — two positives gave a negative','Underflow'], answer: 2 },
+      // 1.4.2 (6)
       { q: 'Which traversal of a binary tree visits left subtree, root, right subtree?', options: ['Pre-order','In-order','Post-order','Level-order'], answer: 1 },
       { q: 'A hash table of size 10 uses linear probing. If a collision occurs at index 5, the next index probed is:', options: ['0','6','Random','4'], answer: 1 },
       { q: 'A directed weighted graph most naturally models:', options: ['A Facebook friendship network','A road network with one-way streets and travel times','A list of ASCII characters','A fixed-size stack'], answer: 1 },
       { q: 'A 2-dimensional array arr[3][4] of integers holds how many integer elements in total?', options: ['3','4','7','12'], answer: 3 },
       { q: 'A circular queue of size 8 has front = 5 and rear = 2 (rear points one past the last item). How many items are currently stored?', options: ['3','5','6','7'], answer: 1 },
-      { q: 'Which operation is O(1) in a doubly-linked list given a pointer to the node, but O(n) in a singly-linked list?', options: ['Inserting after the given node','Deleting the given node without traversing from the head','Traversing the whole list','Computing the length'], answer: 1 },
       { q: 'Inserting the keys 50, 30, 70, 20, 40 into an empty BST gives which in-order traversal?', options: ['50 30 70 20 40','20 30 40 50 70','20 40 30 70 50','50 30 20 40 70'], answer: 1 },
-      { q: 'A function uses recursion, pushing each activation record as it calls itself. Which structure underlies this?', options: ['Queue','Stack','Hash table','Graph'], answer: 1 },
-      // 1.4.3 (4)
+      // 1.4.3 (6)
       { q: 'Simplify: A AND (A OR B).', options: ['A','B','A AND B','A OR B'], answer: 0 },
       { q: 'Apply De Morgan\'s law: NOT(A OR B) is equivalent to:', options: ['(NOT A) AND (NOT B)','(NOT A) OR (NOT B)','A AND B','A OR B'], answer: 0 },
+      { q: 'Apply De Morgan\'s law: NOT(A AND B) is equivalent to:', options: ['(NOT A) AND (NOT B)','(NOT A) OR (NOT B)','A OR B','NOT A OR B'], answer: 1 },
       { q: 'A full adder has inputs A, B, Cin. Its outputs are:', options: ['Sum only','Sum and Carry-out','Carry-out only','Product and Sum'], answer: 1 },
+      { q: 'A half adder produces which two outputs from inputs A and B?', options: ['Sum = A AND B, Carry = A OR B','Sum = A XOR B, Carry = A AND B','Sum = A OR B, Carry = A AND B','Sum = A XOR B, Carry = A OR B'], answer: 1 },
       { q: 'On a 2-variable K-map, a pair of adjacent 1s in the column where A=1 (covering both B=0 and B=1) simplifies to:', options: ['A AND B','A','B','A OR B'], answer: 1 },
     ],
     red: [
-      { q: 'An application needs both fast key lookup AND range queries ("all keys between A and M"). The MOST suitable structure is:', options: ['Hash table with separate chaining','Self-balancing BST (e.g. red-black tree)','Unsorted singly-linked list','Stack'], answer: 1 },
-      { q: 'A stack-based evaluator processes the postfix expression "5 1 2 + 4 * + 3 −". The final result is:', options: ['11','14','15','16'], answer: 1 },
+      { q: 'An application needs both fast key lookup AND ordered range queries ("all keys between A and M"). The MOST suitable structure is:', options: ['Hash table with separate chaining','Self-balancing BST (e.g. red-black tree)','Unsorted singly-linked list','Stack'], answer: 1 },
+      { q: 'A stack-based evaluator processes the postfix (RPN) expression "5 1 2 + 4 * + 3 −". The final result is:', options: ['11','14','15','16'], answer: 1 },
       { q: 'Using only NAND gates, NOT A is implemented as:', options: ['A NAND A','A NAND 0','A NAND 1','(A NAND A) NAND 0'], answer: 0 },
       { q: 'A hash table with 10 slots holds 9 keys (load factor 0.9) and insertion is running slowly. Which mitigation yields the GREATEST average-case improvement?', options: ['Switch to a deliberately worse hash function','Resize the table (e.g. double capacity and rehash) to lower the load factor','Remove collision handling entirely','Store keys in insertion order'], answer: 1 },
       { q: 'A sparse graph with 10,000 vertices and 5,000 edges is stored as an adjacency matrix. Versus an adjacency list, the MAIN disadvantage is:', options: ['Matrices cannot store weighted edges','Memory use is O(V²) ≈ 10⁸ cells, almost all zero, versus O(V+E) for a list','Matrices cannot represent directed graphs','Edge lookup is O(V) in the matrix'], answer: 1 },
       { q: 'Two\'s complement is preferred over sign-and-magnitude MAINLY because:', options: ['It has twice as many positive values','It has a single zero and subtraction uses the same adder as addition','It requires fewer bits for the same range','Sign-and-magnitude cannot represent zero'], answer: 1 },
-      { q: 'A 4-variable K-map has 1s ONLY at minterms m0, m2, m8, m10 (variables A,B,C,D). The minimal SoP is:', options: ['B\'D\'','A\'C\'','AC','BD'], answer: 0 },
-      { q: 'A browser back-button, an undo stack and recursive function return-address handling all share which underlying abstract data type?', options: ['Queue','Stack','Graph','Hash table'], answer: 1 },
+      { q: 'A 4-variable K-map (A,B,C,D) has 1s ONLY at minterms m0, m2, m8, m10. The minimal Sum-of-Products is:', options: ['B\'.D\'','A\'.C\'','A.C','B.D'], answer: 0 },
+      { q: 'A browser back-button, a text-editor undo stack and recursive function return-address handling all share which underlying abstract data type?', options: ['Queue','Stack','Graph','Hash table'], answer: 1 },
       { q: 'Edge-triggered D-type flip-flops are used in a pipelined CPU\'s register file rather than level-sensitive latches because:', options: ['Latches have no clock input','Each bit is captured at the active clock edge, giving synchronous race-free storage across the whole register','Flip-flops use fewer transistors than a latch','They consume no power'], answer: 1 },
       { q: 'A floating-point system has 6-bit mantissa and 4-bit exponent (both two\'s complement). Compared to a 5-bit mantissa, 5-bit exponent split for the same total width, the 6/4 split gives:', options: ['Wider range, same precision','Smaller range but greater precision','Wider range and greater precision','Smaller range and smaller precision'], answer: 1 },
     ],

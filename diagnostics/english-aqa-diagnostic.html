@@ -372,7 +372,27 @@ function confirmMCQ() {
   document.getElementById('btnNext').classList.add('show');
 }
 
-function revealModel() { document.getElementById('btnReveal').style.display = 'none'; document.getElementById('modelAnswerWrap').style.display = 'block'; }
+function revealModel() {
+  document.getElementById('btnReveal').style.display = 'none';
+  document.getElementById('modelAnswerWrap').style.display = 'block';
+
+  const input = document.getElementById('writtenInput');
+  const answerEmpty = !input || !input.value.trim();
+
+  if (answerEmpty) {
+    const q = questions[qIndex];
+    results.push({ type: 'written', tier: q.tier, pts: 0, level: 'miss' });
+    document.querySelectorAll('.self-mark-btn').forEach(b => { b.disabled = true; b.style.opacity = '0.5'; });
+    const row = document.querySelector('.self-mark-row');
+    if (row) {
+      const note = document.createElement('p');
+      note.style.cssText = 'font-size:13px;color:var(--red);margin-top:12px;text-align:center;width:100%;';
+      note.textContent = 'No answer written — auto-marked 0. Review the model answer above.';
+      row.parentNode.insertBefore(note, row.nextSibling);
+    }
+    document.getElementById('btnNext').classList.add('show');
+  }
+}
 
 function selfMark(level) {
   const q = questions[qIndex];
