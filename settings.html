@@ -750,16 +750,12 @@ async function confirmDeleteAccount() {
   if (!confirm('This will PERMANENTLY delete your account and all data. Are you absolutely sure?')) return;
   if (!confirm('Last chance — this cannot be undone. Delete everything?')) return;
 
-  // Delete user data
-  await supabaseClient.from('topic_progress').delete().eq('user_id', currentUser.id);
-  await supabaseClient.from('user_medals').delete().eq('user_id', currentUser.id);
-  await supabaseClient.from('user_subjects').delete().eq('user_id', currentUser.id);
-  await supabaseClient.from('profiles').delete().eq('id', currentUser.id);
-
-  // Delete the auth.users row itself (requires the delete_user RPC — see supabase-config.js)
+  // Deleting the auth.users row cascades to profiles, user_subjects, topic_progress,
+  // practice_attempts and user_medals via their ON DELETE CASCADE foreign keys.
+  // (Requires the delete_user RPC — see supabase-config.js.)
   const { error: authErr } = await supabaseClient.rpc('delete_user');
   if (authErr) {
-    alert('Your data was deleted but the auth account could not be removed: ' + authErr.message);
+    alert('Could not delete your account: ' + authErr.message);
     return;
   }
 
