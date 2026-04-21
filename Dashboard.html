@@ -2626,9 +2626,19 @@ function dismissWelcome() {
 }
 
 function checkDiagnosticHash() {
-  if (location.hash === '#diagnostic') {
-    const diagNav = document.querySelector('.nav-item[onclick*="Diagnostic"]');
-    if (diagNav) switchView('Diagnostic', diagNav);
+  const hash = location.hash || '';
+  if (!hash.startsWith('#diagnostic')) return;
+
+  const diagNav = document.querySelector('.nav-item[onclick*="Diagnostic"]');
+  if (diagNav) switchView('Diagnostic', diagNav);
+
+  // Deep-link form: #diagnostic=<Subject_Board> — auto-open that subject's
+  // topic list so users coming from a gated notes/practice card land on
+  // the right place.
+  const m = hash.match(/^#diagnostic=(.+)$/);
+  if (m && diagSubjectList.length) {
+    const key = decodeURIComponent(m[1]);
+    if (_lvLookup(DIAG_TOPICS, key)) showDiagTopics(key);
   }
 }
 
