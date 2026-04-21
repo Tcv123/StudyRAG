@@ -87,19 +87,6 @@
       border: 1px solid var(--border);
     }
     .nav-anchor:hover { color: var(--text); background: var(--surface2); border-color: var(--border-hover); }
-    .nav-anchor.nav-pro {
-      color: var(--accent);
-      border-color: var(--accent-glow);
-      background: var(--accent-glow);
-      font-weight: 600;
-      display: inline-flex; align-items: center; gap: 5px;
-    }
-    .nav-anchor.nav-pro::before {
-      content: "★"; font-size: 11px; line-height: 1;
-    }
-    .nav-anchor.nav-pro:hover {
-      color: #fff; background: var(--accent); border-color: var(--accent);
-    }
     .nav-btn {
       padding: 7px 15px; border-radius: 8px; font-size: 13px; font-weight: 500;
       text-decoration: none; border: 1px solid transparent; transition: all 0.15s;
@@ -615,7 +602,7 @@
         <a href="#rag" class="nav-anchor">How RAG works</a>
         <a href="#subjects" class="nav-anchor">Subjects</a>
         <a href="#features" class="nav-anchor">Features</a>
-        <a href="#pro" class="nav-anchor nav-pro">Pro</a>
+        <a href="#pro" class="nav-anchor">Pro</a>
         <a href="#faq" class="nav-anchor">FAQ</a>
       </div>
       <a href="auth/login.html" class="nav-btn nav-ghost">Sign in</a>
