@@ -82,7 +82,8 @@
       "Bash(grep -E \"\\\\.\\(json|js|ts|toml|yml|yaml\\)$\")",
       "Bash(node -e ' *)",
       "Bash(echo \"exit: $?\")",
-      "Bash(node -e \"require\\('./questions/further-maths-aqa/fm-aqa-practice.js'\\); console.log\\('AQA OK', Object.keys\\(FM_AQA_PRACTICE || {}\\).length\\);\")"
+      "Bash(node -e \"require\\('./questions/further-maths-aqa/fm-aqa-practice.js'\\); console.log\\('AQA OK', Object.keys\\(FM_AQA_PRACTICE || {}\\).length\\);\")",
+      "Bash(awk 'NR==1006 || NR==1155' \"C:/Users/tcvas/OneDrive/Desktop/Learning/Dashboard.html\")"
     ]
   },
   "hooks": {
