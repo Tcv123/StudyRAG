@@ -481,7 +481,7 @@
       </div>
 
       <div class="footer-row">
-        <button class="btn btn-back" onclick="backToAvatar()">← Back</button>
+        <button class="btn btn-back" id="step1BackBtn" onclick="backToAvatar()">← Back</button>
         <button class="btn btn-primary" onclick="goToStep2()">Next — Choose subjects →</button>
       </div>
       <p id="msg1" class="msg"></p>
@@ -542,6 +542,7 @@ let showGradeValidation = false;
 let currentGradeIndex   = 0;   // which subject in selectedSubjects is currently visible on step 3
 let selectedAvatarUrl = null;
 let selectedAvatarStyle = 'fun-emoji';
+let isEditMode = false;
 
 const AVATAR_STYLES = [
   { id: 'fun-emoji', name: 'Fun Emoji' },
@@ -640,6 +641,10 @@ function goToStep1() {
   document.getElementById('ps1').classList.remove('done');
   document.getElementById('pl1').classList.remove('done');
   document.getElementById('ps2').classList.remove('active');
+  // Edit-subjects entry skips the Avatar step, so hide the Back button
+  // here — otherwise users can walk back into avatar picking unexpectedly.
+  const backBtn = document.getElementById('step1BackBtn');
+  if (backBtn) backBtn.style.display = isEditMode ? 'none' : '';
 }
 
 function backToAvatar() {
@@ -1066,6 +1071,7 @@ async function save() {
     renderSelected();
 
     // Returning user — skip the Avatar step and land on Study level
+    isEditMode = true;
     goToStep1();
   }
 })();
