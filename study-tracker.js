@@ -135,9 +135,9 @@
       bar.id = 'studyProgressBar';
       bar.style.cssText = `
         position: fixed; bottom: 0; left: 0; height: 3px;
-        background: linear-gradient(90deg, #5BADCF, #3D95BC);
+        background: linear-gradient(90deg, #2563EB, #1D4ED8);
         z-index: 9999; transition: width 0.5s ease;
-        box-shadow: 0 0 6px rgba(91,173,207,0.5);
+        box-shadow: 0 0 6px rgba(37,99,235,0.5);
       `;
       document.body.appendChild(bar);
     }

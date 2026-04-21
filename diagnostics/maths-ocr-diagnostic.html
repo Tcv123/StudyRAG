@@ -18,16 +18,16 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #EEF5FC;
+      --bg: #EAF2FC;
       --surface: #FFFFFF;
-      --surface2: #F4F9FE;
-      --border: #D2E5F3;
-      --border-hover: #93C4E2;
-      --text: #1B2D4F;
-      --muted: #6B87A8;
-      --muted2: #A0B8CE;
-      --accent: #5BADCF;
-      --accent-dark: #3D95BC;
+      --surface2: #F0F6FD;
+      --border: #B8D0E8;
+      --border-hover: #2563EB;
+      --text: #0B1E3F;
+      --muted: #445F85;
+      --muted2: #7891B0;
+      --accent: #2563EB;
+      --accent-dark: #1D4ED8;
       --green: #16A34A;
       --green-bg: rgba(22,163,74,0.07);
       --green-border: rgba(22,163,74,0.18);
@@ -59,14 +59,14 @@
       padding: 0 28px;
     }
     .topbar-left { display: flex; align-items: center; gap: 12px; }
-    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px rgba(91,173,207,0.6); }
+    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px rgba(37,99,235,0.6); }
     .logo-text { font-family: var(--font-display); font-size: 19px; color: var(--text); }
     .topbar-right { display: flex; align-items: center; gap: 10px; }
     .topic-badge {
       font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
-      background: rgba(91,173,207,0.15); color: var(--accent);
+      background: rgba(37,99,235,0.15); color: var(--accent);
       padding: 5px 12px; border-radius: 20px;
-      border: 1px solid rgba(91,173,207,0.25);
+      border: 1px solid rgba(37,99,235,0.25);
     }
     .topbar-back {
       display: flex; align-items: center; gap: 6px;
@@ -93,20 +93,20 @@
     .progress-pip.done-amber { background: var(--amber); border-color: var(--amber); }
     .progress-pip.done-red   { background: var(--red);   border-color: var(--red); }
     .progress-pip.done-miss  { background: var(--muted2); border-color: var(--muted2); }
-    .progress-pip.current    { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 8px rgba(91,173,207,0.6); }
+    .progress-pip.current    { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 8px rgba(37,99,235,0.6); }
 
-    .q-card { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 40px; box-shadow: 0 8px 40px rgba(91,173,207,0.15); }
+    .q-card { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 40px; box-shadow: 0 8px 40px rgba(37,99,235,0.15); }
     .q-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
     .q-type-badge { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; border: 1px solid; }
-    .q-type-badge.mcq     { background: rgba(91,173,207,0.12); color: var(--accent); border-color: rgba(91,173,207,0.3); }
+    .q-type-badge.mcq     { background: rgba(37,99,235,0.12); color: var(--accent); border-color: rgba(37,99,235,0.3); }
     .q-type-badge.written { background: rgba(245,158,11,0.12); color: var(--amber); border-color: rgba(245,158,11,0.3); }
     .q-marks { font-size: 13px; font-weight: 600; color: var(--muted); }
     .q-text { font-size: 22px; font-weight: 700; line-height: 1.5; color: var(--text); margin-bottom: 32px; }
 
     .options { display: flex; flex-direction: column; gap: 14px; }
     .option-btn { display: flex; align-items: flex-start; gap: 16px; padding: 18px 20px; background: var(--surface2); border: 2px solid var(--border); border-radius: 14px; cursor: pointer; text-align: left; font-family: var(--font-body); font-size: 16px; font-weight: 500; color: var(--text); line-height: 1.5; transition: all 0.15s; }
-    .option-btn:hover:not(:disabled):not(.selected) { border-color: var(--accent); background: rgba(91,173,207,0.08); }
-    .option-btn.selected { border-color: var(--accent); background: rgba(91,173,207,0.15); }
+    .option-btn:hover:not(:disabled):not(.selected) { border-color: var(--accent); background: rgba(37,99,235,0.08); }
+    .option-btn.selected { border-color: var(--accent); background: rgba(37,99,235,0.15); }
     .option-btn.correct  { border-color: var(--green); background: var(--green-bg); }
     .option-btn.wrong    { border-color: var(--red); background: var(--red-bg); }
     .option-btn.reveal   { border-color: var(--green); background: var(--green-bg); opacity: 0.6; }
@@ -125,12 +125,12 @@
     .draw-toolbar .tool-group { display: flex; align-items: center; gap: 4px; padding-right: 10px; margin-right: 6px; border-right: 1px solid var(--border); }
     .draw-toolbar .tool-group:last-child { border-right: none; margin-right: 0; padding-right: 0; }
     .draw-btn { width: 34px; height: 34px; border-radius: 8px; border: 2px solid var(--border); background: var(--surface); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: all 0.15s; padding: 0; }
-    .draw-btn:hover { border-color: var(--accent); background: rgba(91,173,207,0.08); }
-    .draw-btn.active { border-color: var(--accent); background: rgba(91,173,207,0.15); box-shadow: 0 0 0 2px rgba(91,173,207,0.2); }
+    .draw-btn:hover { border-color: var(--accent); background: rgba(37,99,235,0.08); }
+    .draw-btn.active { border-color: var(--accent); background: rgba(37,99,235,0.15); box-shadow: 0 0 0 2px rgba(37,99,235,0.2); }
     .draw-btn-wide { height: 34px; padding: 0 12px; border-radius: 8px; border: 2px solid var(--border); background: var(--surface); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 12px; font-weight: 600; font-family: var(--font-body); color: var(--muted); transition: all 0.15s; }
     .draw-btn-wide:hover { border-color: var(--accent); color: var(--accent); }
     .color-swatch { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border); cursor: pointer; transition: all 0.15s; padding: 0; }
-    .color-swatch:hover, .color-swatch.active { border-color: var(--text); transform: scale(1.15); box-shadow: 0 0 0 2px rgba(91,173,207,0.3); }
+    .color-swatch:hover, .color-swatch.active { border-color: var(--text); transform: scale(1.15); box-shadow: 0 0 0 2px rgba(37,99,235,0.3); }
     .size-slider { width: 70px; height: 6px; -webkit-appearance: none; appearance: none; background: var(--border); border-radius: 3px; outline: none; cursor: pointer; }
     .size-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); cursor: pointer; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
     .size-label { font-size: 11px; color: var(--muted); font-weight: 600; min-width: 22px; text-align: center; }
@@ -155,16 +155,16 @@
     .feedback-bar.correct-fb { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
     .feedback-bar.wrong-fb   { background: var(--red-bg);   color: var(--red);   border: 1px solid var(--red-border); }
 
-    .btn-confirm { margin-top: 24px; width: 100%; padding: 18px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; font-family: var(--font-body); font-size: 17px; font-weight: 700; border: none; border-radius: 14px; cursor: pointer; transition: all 0.15s; display: none; box-shadow: 0 4px 20px rgba(91,173,207,0.3); }
+    .btn-confirm { margin-top: 24px; width: 100%; padding: 18px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; font-family: var(--font-body); font-size: 17px; font-weight: 700; border: none; border-radius: 14px; cursor: pointer; transition: all 0.15s; display: none; box-shadow: 0 4px 20px rgba(37,99,235,0.3); }
     .btn-confirm.show { display: block; }
-    .btn-confirm:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(91,173,207,0.4); }
+    .btn-confirm:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(37,99,235,0.4); }
     .btn-reveal { margin-top: 20px; width: 100%; padding: 16px; background: rgba(245,158,11,0.1); color: var(--amber); font-family: var(--font-body); font-size: 16px; font-weight: 700; border: 2px solid var(--amber-border); border-radius: 14px; cursor: pointer; transition: all 0.15s; }
     .btn-reveal:hover { background: rgba(245,158,11,0.18); }
-    .btn-next { margin-top: 24px; width: 100%; padding: 18px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; font-family: var(--font-body); font-size: 17px; font-weight: 700; border: none; border-radius: 14px; cursor: pointer; transition: all 0.15s; display: none; box-shadow: 0 4px 20px rgba(91,173,207,0.3); }
+    .btn-next { margin-top: 24px; width: 100%; padding: 18px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; font-family: var(--font-body); font-size: 17px; font-weight: 700; border: none; border-radius: 14px; cursor: pointer; transition: all 0.15s; display: none; box-shadow: 0 4px 20px rgba(37,99,235,0.3); }
     .btn-next.show { display: block; }
-    .btn-next:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(91,173,207,0.4); }
+    .btn-next:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(37,99,235,0.4); }
 
-    .result-card { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 56px 44px; text-align: center; box-shadow: 0 8px 40px rgba(91,173,207,0.15); }
+    .result-card { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 56px 44px; text-align: center; box-shadow: 0 8px 40px rgba(37,99,235,0.15); }
     .result-glow { width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 56px; margin: 0 auto 28px; border: 3px solid; }
     .result-glow.green { background: var(--green-bg); border-color: var(--green-border); box-shadow: 0 0 40px rgba(34,197,94,0.25); }
     .result-glow.amber { background: var(--amber-bg); border-color: var(--amber-border); box-shadow: 0 0 40px rgba(245,158,11,0.25); }
@@ -182,8 +182,8 @@
     .breakdown-chip.hit-red   { background: var(--red-bg);   color: var(--red);   border-color: var(--red-border); }
     .breakdown-chip.miss      { background: var(--surface2); color: var(--muted); border-color: var(--border); }
     .result-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { padding: 15px 32px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; font-family: var(--font-body); font-size: 16px; font-weight: 700; border: none; border-radius: 14px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(91,173,207,0.3); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(91,173,207,0.4); }
+    .btn-primary { padding: 15px 32px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; font-family: var(--font-body); font-size: 16px; font-weight: 700; border: none; border-radius: 14px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(37,99,235,0.3); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(37,99,235,0.4); }
     .btn-outline { padding: 15px 32px; background: transparent; color: var(--muted); font-family: var(--font-body); font-size: 16px; font-weight: 600; border: 2px solid var(--border); border-radius: 14px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
     .btn-outline:hover { border-color: var(--muted2); color: var(--text); }
 
@@ -442,7 +442,7 @@ function renderWritten(q) {
           <button class="draw-btn" id="toolEraser" onclick="setTool('eraser')" title="Eraser">🧹</button>
         </div>
         <div class="tool-group">
-          <button class="color-swatch active" style="background:#1B2D4F" onclick="setColor('#1B2D4F')" data-color="#1B2D4F"></button>
+          <button class="color-swatch active" style="background:#0B1E3F" onclick="setColor('#0B1E3F')" data-color="#0B1E3F"></button>
           <button class="color-swatch" style="background:#DC2626" onclick="setColor('#DC2626')" data-color="#DC2626"></button>
           <button class="color-swatch" style="background:#16A34A" onclick="setColor('#16A34A')" data-color="#16A34A"></button>
           <button class="color-swatch" style="background:#2563EB" onclick="setColor('#2563EB')" data-color="#2563EB"></button>
@@ -546,7 +546,7 @@ function revealModel() {
 
 // ═══ DRAWING ENGINE ═══
 let drawState = {
-  tool: 'pen', color: '#1B2D4F', size: 2,
+  tool: 'pen', color: '#0B1E3F', size: 2,
   drawing: false, canvas: null, ctx: null,
   undoStack: [], redoStack: [], snapshot: null,
   startX: 0, startY: 0

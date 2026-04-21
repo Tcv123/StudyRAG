@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 2.3 &mdash; Algorithms</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>2.3 Algorithms</h1>
+<p class="spec-ref">Computer Science &mdash; OCR &mdash; Component 02 (Algorithms and Programming)</p>
+
+<p>This is one of the <strong>largest and most heavily examined</strong> topics on H446. You must be able to <em>describe, trace, and analyse</em> every algorithm on this list, as well as compare them using <strong>big-O notation</strong>. Long-answer questions frequently require you to write pseudocode, trace a worked example, and justify a choice of algorithm for a given scenario.</p>
+
+<h2>2.3.1 Algorithm Analysis and Design</h2>
+
+<h3>What is an Algorithm?</h3>
+
+<div class="definition">
+    An <strong>algorithm</strong> is a finite, ordered sequence of unambiguous, executable instructions that transforms one or more inputs into one or more well-defined outputs in a finite amount of time.
+</div>
+
+<p>The four essential properties of a formal algorithm are:</p>
+
+<ul>
+    <li><strong>Finiteness</strong> &mdash; the algorithm must terminate after a finite number of steps. An infinite loop is therefore <em>not</em> an algorithm.</li>
+    <li><strong>Definiteness (determinism)</strong> &mdash; each step must be precisely and unambiguously defined; given the same input it produces the same output.</li>
+    <li><strong>Clearly defined inputs</strong> &mdash; the algorithm takes zero or more specified inputs drawn from a specified set.</li>
+    <li><strong>Clearly defined outputs</strong> &mdash; it produces one or more outputs that have a specified relationship to the inputs.</li>
+    <li><strong>Effectiveness</strong> &mdash; each step must be basic enough that it can in principle be carried out exactly by a person using paper and pencil.</li>
+</ul>
+
+<div class="exam-tip">In a "define algorithm" question, do <em>not</em> just write "a set of steps". Mention <strong>finite</strong>, <strong>unambiguous</strong>, and <strong>inputs produce outputs</strong> for full marks.</div>
+
+<h3>Why Analyse Algorithms?</h3>
+
+<p>Two algorithms may both solve the same problem correctly, but have radically different <strong>performance</strong>. Analysing algorithms lets us:</p>
+
+<ul>
+    <li>Predict how running time and memory usage will scale as the input size grows.</li>
+    <li>Compare competing algorithms <em>before</em> implementing them.</li>
+    <li>Identify bottlenecks and guarantees for worst-case behaviour (critical in real-time, medical or safety-critical systems).</li>
+    <li>Choose the right algorithm for the constraints of a particular platform (embedded, mobile, server).</li>
+</ul>
+
+<p>There are two resources we usually measure:</p>
+
+<ul>
+    <li><strong>Time complexity</strong> &mdash; how the number of basic operations grows with input size <code>n</code>.</li>
+    <li><strong>Space complexity</strong> &mdash; how the memory used grows with input size <code>n</code>, excluding the input itself (i.e. the <em>auxiliary</em> space).</li>
+</ul>
+
+<p>We do <em>not</em> measure raw wall-clock time, because that depends on the CPU, language, compiler and competing load. Counting operations and expressing the count as a function of <code>n</code> gives a platform-independent comparison.</p>
+
+<h3>Big-O Notation</h3>
+
+<div class="definition">
+    <strong>Big-O notation</strong> describes an <strong>asymptotic upper bound</strong> on the growth of a function. We say <code>f(n) = O(g(n))</code> if there exist constants <code>c &gt; 0</code> and <code>n<sub>0</sub> &gt; 0</code> such that <code>0 &le; f(n) &le; c &middot; g(n)</code> for all <code>n &ge; n<sub>0</sub></code>. Intuitively, <code>g(n)</code> is a ceiling that <code>f(n)</code> never rises above (up to a constant factor) once <code>n</code> is large enough.
+</div>
+
+<p>Two key simplifications follow from this definition:</p>
+
+<ul>
+    <li><strong>Drop constants</strong>: <code>O(3n)</code> = <code>O(n)</code>; <code>O(n/2)</code> = <code>O(n)</code>. Constant factors reflect hardware, not the algorithm.</li>
+    <li><strong>Keep only the dominant term</strong>: <code>O(n<sup>2</sup> + 5n + 9)</code> = <code>O(n<sup>2</sup>)</code>. For large <code>n</code> the highest-order term overwhelms everything else.</li>
+</ul>
+
+<p>We care primarily about the <strong>worst case</strong> because it provides a <em>guarantee</em>: no matter what input arrives, the algorithm will never be slower than this. Average-case analysis is also used but usually requires assumptions about input distribution that may not hold in practice.</p>
+
+<div class="exam-tip">Big-O is an <em>upper</em> bound; Big-&Omega; (Omega) is a <em>lower</em> bound; Big-&Theta; (Theta) is a tight bound. OCR questions use Big-O, but knowing it is specifically the <em>worst-case upper bound</em> will stop you losing marks for saying "the algorithm runs in O(n)" when you mean on average.</div>
+
+<h3>Complexity Classes</h3>
+
+<p>The following table lists, in order of increasing growth, the eight complexity classes you must recognise.</p>
+
+<table>
+    <tr><th>Class</th><th>Name</th><th>Characteristic behaviour</th><th>Example algorithms</th></tr>
+    <tr><td><code>O(1)</code></td><td>Constant</td><td>Runtime does not depend on <code>n</code> at all. Doubling <code>n</code> has no effect.</td><td>Array index lookup <code>a[i]</code>, hash-table insert/lookup (average), pushing onto a stack.</td></tr>
+    <tr><td><code>O(log n)</code></td><td>Logarithmic</td><td>Runtime grows by a fixed amount every time <code>n</code> doubles. Problem size halves each step.</td><td>Binary search on a sorted array, balanced BST lookup / insert, binary-heap insert.</td></tr>
+    <tr><td><code>O(n)</code></td><td>Linear</td><td>Runtime grows proportionally to <code>n</code>. Doubling <code>n</code> doubles the time.</td><td>Linear search, computing a sum, finding max in unsorted array, a single pass through a list.</td></tr>
+    <tr><td><code>O(n log n)</code></td><td>Linearithmic</td><td>Slightly worse than linear; the provable lower bound for comparison-based sorting.</td><td>Merge sort, heap sort, average-case quick sort, FFT.</td></tr>
+    <tr><td><code>O(n<sup>2</sup>)</code></td><td>Quadratic</td><td>Two nested loops over <code>n</code>. Doubling <code>n</code> quadruples the time.</td><td>Bubble sort, insertion sort, selection sort, simple nested-loop duplicate check.</td></tr>
+    <tr><td><code>O(n<sup>3</sup>)</code></td><td>Cubic</td><td>Three nested loops over <code>n</code>.</td><td>Naive matrix multiplication (for <code>n&times;n</code> matrices), Floyd&ndash;Warshall all-pairs shortest paths.</td></tr>
+    <tr><td><code>O(2<sup>n</sup>)</code></td><td>Exponential</td><td>Runtime doubles for each extra element. Infeasible beyond roughly <code>n = 30</code>.</td><td>Naive recursive Fibonacci, brute-force subset sum, brute-force satisfiability (SAT).</td></tr>
+    <tr><td><code>O(n!)</code></td><td>Factorial</td><td>Grows faster than any exponential. Infeasible beyond roughly <code>n = 12</code>.</td><td>Brute-force travelling salesman, generating all permutations of a list.</td></tr>
+</table>
+
+<p>To make the numbers concrete, suppose each operation takes 1 nanosecond. For <code>n = 60</code>:</p>
+
+<table>
+    <tr><th>Complexity</th><th>Operations</th><th>Time at 1&nbsp;ns each</th></tr>
+    <tr><td>O(1)</td><td>1</td><td>~1 ns</td></tr>
+    <tr><td>O(log n)</td><td>~6</td><td>~6 ns</td></tr>
+    <tr><td>O(n)</td><td>60</td><td>60 ns</td></tr>
+    <tr><td>O(n log n)</td><td>~355</td><td>~355 ns</td></tr>
+    <tr><td>O(n<sup>2</sup>)</td><td>3 600</td><td>3.6 &micro;s</td></tr>
+    <tr><td>O(n<sup>3</sup>)</td><td>216 000</td><td>0.22 ms</td></tr>
+    <tr><td>O(2<sup>n</sup>)</td><td>~1.15 &times; 10<sup>18</sup></td><td>~36 years</td></tr>
+    <tr><td>O(n!)</td><td>~8.3 &times; 10<sup>81</sup></td><td>longer than the age of the universe many times over</td></tr>
+</table>
+
+<div class="exam-tip">Learn the ordering: <code>O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n<sup>2</sup>) &lt; O(n<sup>3</sup>) &lt; O(2<sup>n</sup>) &lt; O(n!)</code>. OCR examiners frequently ask candidates to rank algorithms by efficiency.</div>
+
+<h3>Growth Comparison Graph</h3>
+
+<!-- SVG 1: Big-O growth comparison -->
+<svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Comparison of Big-O Growth Rates</text>
+  <!-- axes -->
+  <line x1="70" y1="370" x2="690" y2="370" stroke="#374151" stroke-width="1.5"/>
+  <line x1="70" y1="40" x2="70" y2="370" stroke="#374151" stroke-width="1.5"/>
+  <!-- axis labels -->
+  <text x="380" y="400" text-anchor="middle" font-size="12" fill="#374151">Input size n</text>
+  <text x="30" y="205" text-anchor="middle" font-size="12" fill="#374151" transform="rotate(-90 30 205)">Operations</text>
+  <!-- x ticks -->
+  <text x="70" y="386" text-anchor="middle" font-size="10" fill="#6b7280">0</text>
+  <text x="225" y="386" text-anchor="middle" font-size="10" fill="#6b7280">n/4</text>
+  <text x="380" y="386" text-anchor="middle" font-size="10" fill="#6b7280">n/2</text>
+  <text x="535" y="386" text-anchor="middle" font-size="10" fill="#6b7280">3n/4</text>
+  <text x="690" y="386" text-anchor="middle" font-size="10" fill="#6b7280">n</text>
+  <!-- gridlines -->
+  <line x1="225" y1="40" x2="225" y2="370" stroke="#e5e7eb" stroke-dasharray="3,3"/>
+  <line x1="380" y1="40" x2="380" y2="370" stroke="#e5e7eb" stroke-dasharray="3,3"/>
+  <line x1="535" y1="40" x2="535" y2="370" stroke="#e5e7eb" stroke-dasharray="3,3"/>
+  <!-- O(1) horizontal -->
+  <line x1="70" y1="360" x2="690" y2="360" stroke="#16a34a" stroke-width="2"/>
+  <text x="695" y="360" font-size="11" fill="#16a34a" font-weight="bold">O(1)</text>
+  <!-- O(log n) -->
+  <path d="M 70,360 Q 200,320 380,305 T 690,290" stroke="#0891b2" stroke-width="2" fill="none"/>
+  <text x="695" y="292" font-size="11" fill="#0891b2" font-weight="bold">O(log n)</text>
+  <!-- O(n) linear -->
+  <line x1="70" y1="360" x2="690" y2="220" stroke="#2563eb" stroke-width="2"/>
+  <text x="695" y="222" font-size="11" fill="#2563eb" font-weight="bold">O(n)</text>
+  <!-- O(n log n) -->
+  <path d="M 70,360 Q 300,290 500,200 T 690,150" stroke="#7c3aed" stroke-width="2" fill="none"/>
+  <text x="695" y="152" font-size="11" fill="#7c3aed" font-weight="bold">O(n log n)</text>
+  <!-- O(n^2) -->
+  <path d="M 70,360 Q 400,340 600,150 T 690,80" stroke="#f59e0b" stroke-width="2" fill="none"/>
+  <text x="605" y="135" font-size="11" fill="#f59e0b" font-weight="bold">O(n&sup2;)</text>
+  <!-- O(2^n) -->
+  <path d="M 70,360 L 300,355 Q 450,340 520,250 Q 560,150 570,55" stroke="#dc2626" stroke-width="2" fill="none"/>
+  <text x="525" y="70" font-size="11" fill="#dc2626" font-weight="bold">O(2&#8319;)</text>
+  <!-- legend note -->
+  <text x="380" y="55" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">For large n, higher-order curves overwhelm lower-order ones regardless of constants.</text>
+</svg>
+
+<h3>Best, Average and Worst Case</h3>
+
+<p>The running time of most algorithms depends not just on the <em>size</em> of the input but also on its <em>shape</em>. We therefore distinguish three cases:</p>
+
+<ul>
+    <li><strong>Best case</strong> &mdash; the input arrangement that makes the algorithm finish fastest (e.g. target at position 0 for linear search).</li>
+    <li><strong>Average case</strong> &mdash; the expected running time over all "typical" inputs. Often requires a probabilistic assumption.</li>
+    <li><strong>Worst case</strong> &mdash; the input that maximises running time (e.g. target not in the list at all for linear search).</li>
+</ul>
+
+<p>A classic example where the three differ dramatically is <strong>quick sort</strong>:</p>
+
+<table>
+    <tr><th>Case</th><th>Input shape</th><th>Complexity</th></tr>
+    <tr><td>Best</td><td>Pivot always splits list roughly in half</td><td>O(n log n)</td></tr>
+    <tr><td>Average</td><td>Random input, random or median-of-three pivot</td><td>O(n log n)</td></tr>
+    <tr><td>Worst</td><td>Already sorted (or reverse-sorted) list with first-element pivot</td><td>O(n<sup>2</sup>)</td></tr>
+</table>
+
+<div class="exam-tip">When asked "why is bubble sort best-case O(n)?", your answer must mention the <strong>early-termination flag</strong>: if no swap happens on a pass, the list is sorted and the algorithm terminates after one linear pass.</div>
+
+<h3>Space Complexity</h3>
+
+<div class="definition">
+    <strong>Space complexity</strong> measures the amount of auxiliary memory an algorithm uses as a function of the input size <code>n</code>, excluding the memory required for the input itself.
+</div>
+
+<p>Two useful distinctions:</p>
+
+<ul>
+    <li><strong>In-place</strong> algorithms use O(1) or O(log n) extra memory &mdash; they rearrange data within the original array without needing a large second copy. Quick sort and insertion sort are in-place.</li>
+    <li><strong>Out-of-place</strong> algorithms need O(n) or more auxiliary space. Merge sort is out-of-place because merging two halves requires a temporary buffer of length <code>n</code>.</li>
+</ul>
+
+<p>On memory-constrained devices (microcontrollers, mobile, embedded) a slightly slower in-place algorithm is often preferred over a faster out-of-place one.</p>
+
+<h3>Analysing a Simple Code Fragment</h3>
+
+<p>To practise extracting a big-O from code, count the number of times the innermost statement executes as a function of <code>n</code>.</p>
+
+<pre>FOR i := 0 TO n - 1          // outer loop runs n times
+    FOR j := 0 TO n - 1      // inner loop runs n times
+        x := x + 1           // executes n * n = n&sup2; times
+    ENDFOR
+ENDFOR</pre>
+
+<p>Total work: <code>n &times; n = n<sup>2</sup></code>, hence O(n<sup>2</sup>).</p>
+
+<pre>i := 1
+WHILE i &lt; n
+    print(i)
+    i := i * 2              // i doubles each pass
+ENDWHILE</pre>
+
+<p>The value of <code>i</code> goes 1, 2, 4, 8, &hellip;, and the loop exits when <code>i &ge; n</code>. That takes <code>log<sub>2</sub> n</code> iterations, giving O(log n).</p>
+
+<pre>FOR i := 1 TO n
+    j := 1
+    WHILE j &lt; n
+        j := j * 2
+    ENDWHILE
+ENDFOR</pre>
+
+<p>Outer loop n times, inner loop log n times per iteration, so O(n log n) overall. This pattern is exactly what happens in merge sort and heap sort.</p>
+
+<div class="exam-tip">When asked to "find the complexity" of a code fragment, state clearly: (1) identify the innermost statement; (2) count how many times it runs as a function of <code>n</code>; (3) simplify (drop constants and lower-order terms).</div>
+
+<h2>2.3.2 Searching Algorithms</h2>
+
+<h3>Linear Search</h3>
+
+<div class="definition">
+    <strong>Linear (sequential) search</strong> examines each element of a list in turn from the start until either the target value is found or the end of the list is reached.
+</div>
+
+<p>Linear search works on any list &mdash; the list does <em>not</em> need to be sorted. This is its only real advantage.</p>
+
+<pre>FUNCTION linearSearch(list, target)
+    FOR i := 0 TO length(list) - 1
+        IF list[i] = target THEN
+            RETURN i                 // found &mdash; return index
+        ENDIF
+    ENDFOR
+    RETURN -1                        // not found
+ENDFUNCTION</pre>
+
+<p><strong>Worked example.</strong> Searching for <code>17</code> in <code>[4, 22, 17, 11, 8]</code>:</p>
+<ol>
+    <li>i=0: compare 4 vs 17 &mdash; no match.</li>
+    <li>i=1: compare 22 vs 17 &mdash; no match.</li>
+    <li>i=2: compare 17 vs 17 &mdash; match! Return <code>2</code>.</li>
+</ol>
+
+<table>
+    <tr><th>Case</th><th>Input description</th><th>Complexity</th></tr>
+    <tr><td>Best</td><td>Target is the first element</td><td>O(1)</td></tr>
+    <tr><td>Average</td><td>Target equally likely at any position</td><td>O(n)</td></tr>
+    <tr><td>Worst</td><td>Target is last or not present</td><td>O(n)</td></tr>
+    <tr><td>Space</td><td>Uses a single index variable</td><td>O(1)</td></tr>
+</table>
+
+<p><strong>When to use:</strong> unsorted data; very short lists where the constant overhead of binary search is not worth it; data held in a structure that does not support random access (e.g. a linked list).</p>
+
+<h4>Linear search on a linked list</h4>
+
+<p>Because a linked list does not provide O(1) random access, binary search cannot be used on it directly &mdash; finding the middle element takes O(n) in itself. For linked lists, linear search is therefore the default:</p>
+
+<pre>FUNCTION linearSearchLinkedList(head, target)
+    current := head
+    position := 0
+    WHILE current != NULL
+        IF current.value = target THEN
+            RETURN position
+        ENDIF
+        current := current.next
+        position := position + 1
+    ENDWHILE
+    RETURN -1
+ENDFUNCTION</pre>
+
+<p>Average performance of linear search (expected number of comparisons) is about <code>n / 2</code> when the target is present and uniformly distributed, which still simplifies to O(n).</p>
+
+<h3>Binary Search</h3>
+
+<div class="definition">
+    <strong>Binary search</strong> finds a value in a <strong>sorted</strong> list by repeatedly halving the search space. At each step the middle element is compared to the target; the half that cannot contain the target is discarded.
+</div>
+
+<div class="exam-tip">Binary search <strong>requires sorted data</strong>. Every long-answer question must state this assumption. If the data is not sorted, you must sort it first (costing O(n log n)) or use linear search.</div>
+
+<p>Three pointers are maintained: <code>low</code>, <code>high</code>, and the midpoint <code>mid = (low + high) DIV 2</code>.</p>
+
+<h4>Iterative version</h4>
+
+<pre>FUNCTION binarySearchIter(list, target)
+    low  := 0
+    high := length(list) - 1
+    WHILE low &lt;= high
+        mid := (low + high) DIV 2
+        IF list[mid] = target THEN
+            RETURN mid
+        ELSEIF list[mid] &lt; target THEN
+            low := mid + 1
+        ELSE
+            high := mid - 1
+        ENDIF
+    ENDWHILE
+    RETURN -1
+ENDFUNCTION</pre>
+
+<h4>Recursive version</h4>
+
+<pre>FUNCTION binarySearchRec(list, target, low, high)
+    IF low &gt; high THEN
+        RETURN -1                    // base case &mdash; not found
+    ENDIF
+    mid := (low + high) DIV 2
+    IF list[mid] = target THEN
+        RETURN mid
+    ELSEIF list[mid] &lt; target THEN
+        RETURN binarySearchRec(list, target, mid + 1, high)
+    ELSE
+        RETURN binarySearchRec(list, target, low, mid - 1)
+    ENDIF
+ENDFUNCTION</pre>
+
+<h4>Why O(log n)?</h4>
+
+<p>After 1 comparison we have <code>n/2</code> elements left, after 2 we have <code>n/4</code>, after <code>k</code> comparisons we have <code>n/2<sup>k</sup></code>. The search finishes when only one element remains: <code>n/2<sup>k</sup> = 1</code>, i.e. <code>k = log<sub>2</sub> n</code>. Doubling the list size adds only <strong>one more comparison</strong>.</p>
+
+<h4>Worked example &mdash; find 17 in [1, 4, 7, 11, 14, 17, 22, 28, 31, 35]</h4>
+
+<table>
+    <tr><th>Step</th><th>low</th><th>high</th><th>mid</th><th>list[mid]</th><th>Comparison</th><th>Action</th></tr>
+    <tr><td>1</td><td>0</td><td>9</td><td>4</td><td>14</td><td>14 &lt; 17</td><td>low := 5</td></tr>
+    <tr><td>2</td><td>5</td><td>9</td><td>7</td><td>28</td><td>28 &gt; 17</td><td>high := 6</td></tr>
+    <tr><td>3</td><td>5</td><td>6</td><td>5</td><td>17</td><td>17 = 17</td><td>return 5</td></tr>
+</table>
+
+<p>Found after just 3 comparisons. Linear search would have needed 6.</p>
+
+<!-- SVG 2: Binary search progression -->
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Binary Search: find 17 in sorted array</text>
+  <!-- helper function-style drawing rows -->
+  <!-- Step 1 -->
+  <text x="40" y="70" font-size="12" font-weight="bold" fill="#1e3a5f">Step 1</text>
+  <g font-size="12" font-family="Consolas, monospace">
+    <rect x="100" y="50" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="125" y="72" text-anchor="middle">1</text>
+    <rect x="150" y="50" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="175" y="72" text-anchor="middle">4</text>
+    <rect x="200" y="50" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="225" y="72" text-anchor="middle">7</text>
+    <rect x="250" y="50" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="275" y="72" text-anchor="middle">11</text>
+    <rect x="300" y="50" width="50" height="32" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="325" y="72" text-anchor="middle" font-weight="bold">14</text>
+    <rect x="350" y="50" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="375" y="72" text-anchor="middle">17</text>
+    <rect x="400" y="50" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="425" y="72" text-anchor="middle">22</text>
+    <rect x="450" y="50" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="475" y="72" text-anchor="middle">28</text>
+    <rect x="500" y="50" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="525" y="72" text-anchor="middle">31</text>
+    <rect x="550" y="50" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="575" y="72" text-anchor="middle">35</text>
+  </g>
+  <text x="125" y="100" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="bold">low</text>
+  <text x="325" y="100" text-anchor="middle" font-size="10" fill="#b45309" font-weight="bold">mid=4</text>
+  <text x="575" y="100" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">high</text>
+  <text x="620" y="70" font-size="11" fill="#374151">14 &lt; 17</text>
+
+  <!-- Step 2 -->
+  <text x="40" y="170" font-size="12" font-weight="bold" fill="#1e3a5f">Step 2</text>
+  <g font-size="12" font-family="Consolas, monospace">
+    <rect x="100" y="150" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="125" y="172" text-anchor="middle" fill="#9ca3af">1</text>
+    <rect x="150" y="150" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="175" y="172" text-anchor="middle" fill="#9ca3af">4</text>
+    <rect x="200" y="150" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="225" y="172" text-anchor="middle" fill="#9ca3af">7</text>
+    <rect x="250" y="150" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="275" y="172" text-anchor="middle" fill="#9ca3af">11</text>
+    <rect x="300" y="150" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="325" y="172" text-anchor="middle" fill="#9ca3af">14</text>
+    <rect x="350" y="150" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="375" y="172" text-anchor="middle">17</text>
+    <rect x="400" y="150" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="425" y="172" text-anchor="middle">22</text>
+    <rect x="450" y="150" width="50" height="32" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="475" y="172" text-anchor="middle" font-weight="bold">28</text>
+    <rect x="500" y="150" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="525" y="172" text-anchor="middle">31</text>
+    <rect x="550" y="150" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="575" y="172" text-anchor="middle">35</text>
+  </g>
+  <text x="375" y="200" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="bold">low</text>
+  <text x="475" y="200" text-anchor="middle" font-size="10" fill="#b45309" font-weight="bold">mid=7</text>
+  <text x="575" y="200" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">high</text>
+  <text x="620" y="170" font-size="11" fill="#374151">28 &gt; 17</text>
+
+  <!-- Step 3 -->
+  <text x="40" y="270" font-size="12" font-weight="bold" fill="#1e3a5f">Step 3</text>
+  <g font-size="12" font-family="Consolas, monospace">
+    <rect x="100" y="250" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="125" y="272" text-anchor="middle" fill="#9ca3af">1</text>
+    <rect x="150" y="250" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="175" y="272" text-anchor="middle" fill="#9ca3af">4</text>
+    <rect x="200" y="250" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="225" y="272" text-anchor="middle" fill="#9ca3af">7</text>
+    <rect x="250" y="250" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="275" y="272" text-anchor="middle" fill="#9ca3af">11</text>
+    <rect x="300" y="250" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="325" y="272" text-anchor="middle" fill="#9ca3af">14</text>
+    <rect x="350" y="250" width="50" height="32" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="375" y="272" text-anchor="middle" font-weight="bold">17</text>
+    <rect x="400" y="250" width="50" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="425" y="272" text-anchor="middle">22</text>
+    <rect x="450" y="250" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="475" y="272" text-anchor="middle" fill="#9ca3af">28</text>
+    <rect x="500" y="250" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="525" y="272" text-anchor="middle" fill="#9ca3af">31</text>
+    <rect x="550" y="250" width="50" height="32" fill="#f3f4f6" stroke="#9ca3af"/><text x="575" y="272" text-anchor="middle" fill="#9ca3af">35</text>
+  </g>
+  <text x="375" y="300" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="bold">low, mid=5</text>
+  <text x="425" y="300" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">high</text>
+  <text x="620" y="270" font-size="11" fill="#16a34a" font-weight="bold">17 = 17: return 5</text>
+
+  <text x="360" y="340" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Each step halves the remaining search space &rarr; log&#8322;(10) &asymp; 3 comparisons</text>
+</svg>
+
+<table>
+    <tr><th>Case</th><th>Complexity</th></tr>
+    <tr><td>Best (target at mid)</td><td>O(1)</td></tr>
+    <tr><td>Average</td><td>O(log n)</td></tr>
+    <tr><td>Worst (target absent)</td><td>O(log n)</td></tr>
+    <tr><td>Space (iterative)</td><td>O(1)</td></tr>
+    <tr><td>Space (recursive)</td><td>O(log n) call stack</td></tr>
+</table>
+
+<h3>Binary Tree Search</h3>
+
+<p>A <strong>binary search tree (BST)</strong> is a binary tree with the property that for every node, all values in the left subtree are smaller and all values in the right subtree are larger. Searching a BST resembles binary search but on a linked structure rather than an array.</p>
+
+<pre>FUNCTION bstSearch(node, target)
+    IF node = NULL THEN
+        RETURN NULL                  // not found
+    ENDIF
+    IF target = node.value THEN
+        RETURN node
+    ELSEIF target &lt; node.value THEN
+        RETURN bstSearch(node.left, target)
+    ELSE
+        RETURN bstSearch(node.right, target)
+    ENDIF
+ENDFUNCTION</pre>
+
+<table>
+    <tr><th>Case</th><th>Tree shape</th><th>Complexity</th></tr>
+    <tr><td>Best / Average</td><td>Balanced tree (height &asymp; log n)</td><td>O(log n)</td></tr>
+    <tr><td>Worst</td><td>Degenerate tree &mdash; values inserted in sorted order, height = n (effectively a linked list)</td><td>O(n)</td></tr>
+</table>
+
+<div class="exam-tip">Explain <strong>why</strong> the worst case is O(n): if nodes are inserted in already-sorted order (e.g. 1, 2, 3, 4, ...), every insertion goes right, producing a tree of height n where search degenerates to linear search. Self-balancing trees (AVL, red&ndash;black) are designed to prevent this.</div>
+
+<h2>2.3.3 Sorting Algorithms</h2>
+
+<p>For each sort we cover: the idea, pseudocode, a worked example, best/average/worst time, space, <strong>stability</strong> (does equal-key order survive?), and <strong>adaptivity</strong> (does it run faster on nearly-sorted data?).</p>
+
+<h3>Bubble Sort</h3>
+
+<div class="definition">
+    <strong>Bubble sort</strong> makes repeated passes through a list, comparing each adjacent pair and swapping them if they are out of order. Larger elements "bubble up" to the end of the list one position per pass.
+</div>
+
+<pre>PROCEDURE bubbleSort(list)
+    n := length(list)
+    FOR i := 0 TO n - 2
+        swapped := FALSE
+        FOR j := 0 TO n - 2 - i      // last i items already sorted
+            IF list[j] &gt; list[j + 1] THEN
+                swap(list[j], list[j + 1])
+                swapped := TRUE
+            ENDIF
+        ENDFOR
+        IF NOT swapped THEN
+            RETURN                   // early termination &mdash; already sorted
+        ENDIF
+    ENDFOR
+ENDPROCEDURE</pre>
+
+<h4>Worked example &mdash; one full pass through [5, 2, 8, 1, 9]</h4>
+
+<table>
+    <tr><th>Compare</th><th>Before</th><th>Swap?</th><th>After</th></tr>
+    <tr><td>5 vs 2</td><td>[<strong>5, 2</strong>, 8, 1, 9]</td><td>Yes (5&gt;2)</td><td>[2, 5, 8, 1, 9]</td></tr>
+    <tr><td>5 vs 8</td><td>[2, <strong>5, 8</strong>, 1, 9]</td><td>No</td><td>[2, 5, 8, 1, 9]</td></tr>
+    <tr><td>8 vs 1</td><td>[2, 5, <strong>8, 1</strong>, 9]</td><td>Yes (8&gt;1)</td><td>[2, 5, 1, 8, 9]</td></tr>
+    <tr><td>1 vs 9 (was 8 vs 9)</td><td>[2, 5, 1, <strong>8, 9</strong>]</td><td>No</td><td>[2, 5, 1, 8, 9]</td></tr>
+</table>
+
+<p>After one pass the largest value (9) is in its final position. Subsequent passes will bubble 8 into position, then 5, and so on.</p>
+
+<!-- SVG 3: Bubble sort pass -->
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Bubble Sort &mdash; one full pass through [5, 2, 8, 1, 9]</text>
+
+  <g font-family="Consolas, monospace" font-size="14">
+    <!-- Row 0: initial -->
+    <text x="40" y="72" font-size="11" font-weight="bold" fill="#1e3a5f">Start</text>
+    <g><rect x="100" y="50" width="60" height="36" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="130" y="74" text-anchor="middle" font-weight="bold">5</text></g>
+    <g><rect x="160" y="50" width="60" height="36" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="190" y="74" text-anchor="middle" font-weight="bold">2</text></g>
+    <g><rect x="220" y="50" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="250" y="74" text-anchor="middle">8</text></g>
+    <g><rect x="280" y="50" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="310" y="74" text-anchor="middle">1</text></g>
+    <g><rect x="340" y="50" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="370" y="74" text-anchor="middle">9</text></g>
+    <text x="430" y="74" font-size="11" fill="#dc2626">5&gt;2 swap</text>
+
+    <!-- Row 1 -->
+    <text x="40" y="132" font-size="11" font-weight="bold" fill="#1e3a5f">After</text>
+    <g><rect x="100" y="110" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="130" y="134" text-anchor="middle">2</text></g>
+    <g><rect x="160" y="110" width="60" height="36" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="190" y="134" text-anchor="middle" font-weight="bold">5</text></g>
+    <g><rect x="220" y="110" width="60" height="36" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="250" y="134" text-anchor="middle" font-weight="bold">8</text></g>
+    <g><rect x="280" y="110" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="310" y="134" text-anchor="middle">1</text></g>
+    <g><rect x="340" y="110" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="370" y="134" text-anchor="middle">9</text></g>
+    <text x="430" y="134" font-size="11" fill="#16a34a">5&lt;8 no swap</text>
+
+    <!-- Row 2 -->
+    <text x="40" y="192" font-size="11" font-weight="bold" fill="#1e3a5f">Next</text>
+    <g><rect x="100" y="170" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="130" y="194" text-anchor="middle">2</text></g>
+    <g><rect x="160" y="170" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="190" y="194" text-anchor="middle">5</text></g>
+    <g><rect x="220" y="170" width="60" height="36" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="250" y="194" text-anchor="middle" font-weight="bold">8</text></g>
+    <g><rect x="280" y="170" width="60" height="36" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="310" y="194" text-anchor="middle" font-weight="bold">1</text></g>
+    <g><rect x="340" y="170" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="370" y="194" text-anchor="middle">9</text></g>
+    <text x="430" y="194" font-size="11" fill="#dc2626">8&gt;1 swap</text>
+
+    <!-- Row 3 -->
+    <text x="40" y="252" font-size="11" font-weight="bold" fill="#1e3a5f">After</text>
+    <g><rect x="100" y="230" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="130" y="254" text-anchor="middle">2</text></g>
+    <g><rect x="160" y="230" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="190" y="254" text-anchor="middle">5</text></g>
+    <g><rect x="220" y="230" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="250" y="254" text-anchor="middle">1</text></g>
+    <g><rect x="280" y="230" width="60" height="36" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="310" y="254" text-anchor="middle" font-weight="bold">8</text></g>
+    <g><rect x="340" y="230" width="60" height="36" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="370" y="254" text-anchor="middle" font-weight="bold">9</text></g>
+    <text x="430" y="254" font-size="11" fill="#16a34a">8&lt;9 no swap</text>
+
+    <!-- Row 4 final -->
+    <text x="40" y="312" font-size="11" font-weight="bold" fill="#1e3a5f">End of pass</text>
+    <g><rect x="100" y="290" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="130" y="314" text-anchor="middle">2</text></g>
+    <g><rect x="160" y="290" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="190" y="314" text-anchor="middle">5</text></g>
+    <g><rect x="220" y="290" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="250" y="314" text-anchor="middle">1</text></g>
+    <g><rect x="280" y="290" width="60" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="310" y="314" text-anchor="middle">8</text></g>
+    <g><rect x="340" y="290" width="60" height="36" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="370" y="314" text-anchor="middle" font-weight="bold">9</text></g>
+    <text x="430" y="314" font-size="11" fill="#16a34a" font-weight="bold">9 in final position</text>
+  </g>
+</svg>
+
+<table>
+    <tr><th>Property</th><th>Value</th></tr>
+    <tr><td>Best case</td><td>O(n) &mdash; sorted input, one pass, flag catches it</td></tr>
+    <tr><td>Average</td><td>O(n<sup>2</sup>)</td></tr>
+    <tr><td>Worst</td><td>O(n<sup>2</sup>) &mdash; reverse-sorted input</td></tr>
+    <tr><td>Space</td><td>O(1) in-place</td></tr>
+    <tr><td>Stable?</td><td>Yes &mdash; only swaps strictly out-of-order pairs</td></tr>
+    <tr><td>Adaptive?</td><td>Yes (with early-termination flag)</td></tr>
+</table>
+
+<p><strong>When to use:</strong> teaching, very small or nearly-sorted data. In practice bubble sort is almost never the right choice in production software.</p>
+
+<h3>Insertion Sort</h3>
+
+<div class="definition">
+    <strong>Insertion sort</strong> builds a sorted sub-array at the start of the list. For each subsequent element it shuffles that element leftwards past larger values until it sits in the correct position of the sorted prefix.
+</div>
+
+<pre>PROCEDURE insertionSort(list)
+    FOR i := 1 TO length(list) - 1
+        key := list[i]
+        j   := i - 1
+        WHILE j &ge; 0 AND list[j] &gt; key
+            list[j + 1] := list[j]   // shift right
+            j := j - 1
+        ENDWHILE
+        list[j + 1] := key           // insert into gap
+    ENDFOR
+ENDPROCEDURE</pre>
+
+<h4>Worked example &mdash; sort [5, 2, 8, 1, 9]</h4>
+
+<table>
+    <tr><th>Pass</th><th>key</th><th>Sorted prefix before</th><th>Array after insert</th></tr>
+    <tr><td>i=1</td><td>2</td><td>[5]</td><td>[2, 5, 8, 1, 9]</td></tr>
+    <tr><td>i=2</td><td>8</td><td>[2, 5]</td><td>[2, 5, 8, 1, 9]</td></tr>
+    <tr><td>i=3</td><td>1</td><td>[2, 5, 8]</td><td>[1, 2, 5, 8, 9]</td></tr>
+    <tr><td>i=4</td><td>9</td><td>[1, 2, 5, 8]</td><td>[1, 2, 5, 8, 9]</td></tr>
+</table>
+
+<!-- SVG 4: Insertion sort steps -->
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Insertion Sort &mdash; [5, 2, 8, 1, 9]</text>
+  <g font-family="Consolas, monospace" font-size="14">
+    <!-- initial -->
+    <text x="40" y="72" font-size="11" font-weight="bold" fill="#1e3a5f">Start</text>
+    <rect x="110" y="50" width="50" height="36" fill="#dcfce7" stroke="#16a34a"/><text x="135" y="74" text-anchor="middle">5</text>
+    <rect x="160" y="50" width="50" height="36" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="185" y="74" text-anchor="middle" font-weight="bold">2</text>
+    <rect x="210" y="50" width="50" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="235" y="74" text-anchor="middle">8</text>
+    <rect x="260" y="50" width="50" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="285" y="74" text-anchor="middle">1</text>
+    <rect x="310" y="50" width="50" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="335" y="74" text-anchor="middle">9</text>
+    <text x="400" y="74" font-size="11" fill="#374151">key=2, insert before 5</text>
+
+    <!-- after pass 1 -->
+    <text x="40" y="122" font-size="11" font-weight="bold" fill="#1e3a5f">Pass 1</text>
+    <rect x="110" y="100" width="50" height="36" fill="#dcfce7" stroke="#16a34a"/><text x="135" y="124" text-anchor="middle">2</text>
+    <rect x="160" y="100" width="50" height="36" fill="#dcfce7" stroke="#16a34a"/><text x="185" y="124" text-anchor="middle">5</text>
+    <rect x="210" y="100" width="50" height="36" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="235" y="124" text-anchor="middle" font-weight="bold">8</text>
+    <rect x="260" y="100" width="50" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="285" y="124" text-anchor="middle">1</text>
+    <rect x="310" y="100" width="50" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="335" y="124" text-anchor="middle">9</text>
+    <text x="400" y="124" font-size="11" fill="#374151">key=8, already in place</text>
+
+    <!-- after pass 2 -->
+    <text x="40" y="172" font-size="11" font-weight="bold" fill="#1e3a5f">Pass 2</text>
+    <rect x="110" y="150" width="50" height="36" fill="#dcfce7" stroke="#16a34a"/><text x="135" y="174" text-anchor="middle">2</text>
+    <rect x="160" y="150" width="50" height="36" fill="#dcfce7" stroke="#16a34a"/><text x="185" y="174" text-anchor="middle">5</text>
+    <rect x="210" y="150" width="50" height="36" fill="#dcfce7" stroke="#16a34a"/><text x="235" y="174" text-anchor="middle">8</text>
+    <rect x="260" y="150" width="50" height="36" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="285" y="174" text-anchor="middle" font-weight="bold">1</text>
+    <rect x="310" y="150" width="50" height="36" fill="#eff6ff" stroke="#2563eb"/><text x="335" y="174" text-anchor="middle">9</text>
+    <text x="400" y="174" font-size="11" fill="#374151">key=1, shift 2,5,8 right</text>
+
+    <!-- after pass 3 -->
+    <text x="40" y="222" font-size="11" font-weight="bold" fill="#1e3a5f">Pass 3</text>
+    <rect x="110" y="200" width="50" height="36" fill="#dcfce7" stroke="#16a34a"/><text x="135" y="224" text-anchor="middle">1</text>
+    <rect x="160" y="200" width="50" height="36" fill="#dcfce7" stroke="#16a34a"/><text x="185" y="224" text-anchor="middle">2</text>
+    <rect x="210" y="200" width="50" height="36" fill="#dcfce7" stroke="#16a34a"/><text x="235" y="224" text-anchor="middle">5</text>
+    <rect x="260" y="200" width="50" height="36" fill="#dcfce7" stroke="#16a34a"/><text x="285" y="224" text-anchor="middle">8</text>
+    <rect x="310" y="200" width="50" height="36" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="335" y="224" text-anchor="middle" font-weight="bold">9</text>
+    <text x="400" y="224" font-size="11" fill="#374151">key=9, already in place</text>
+
+    <!-- done -->
+    <text x="40" y="272" font-size="11" font-weight="bold" fill="#1e3a5f">Done</text>
+    <rect x="110" y="250" width="50" height="36" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="135" y="274" text-anchor="middle">1</text>
+    <rect x="160" y="250" width="50" height="36" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="185" y="274" text-anchor="middle">2</text>
+    <rect x="210" y="250" width="50" height="36" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="235" y="274" text-anchor="middle">5</text>
+    <rect x="260" y="250" width="50" height="36" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="285" y="274" text-anchor="middle">8</text>
+    <rect x="310" y="250" width="50" height="36" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="335" y="274" text-anchor="middle">9</text>
+    <text x="400" y="274" font-size="11" fill="#16a34a" font-weight="bold">sorted</text>
+  </g>
+  <text x="360" y="305" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Green = sorted prefix; yellow = key being inserted</text>
+</svg>
+
+<table>
+    <tr><th>Property</th><th>Value</th></tr>
+    <tr><td>Best case</td><td>O(n) &mdash; already sorted; inner loop never runs</td></tr>
+    <tr><td>Average</td><td>O(n<sup>2</sup>)</td></tr>
+    <tr><td>Worst</td><td>O(n<sup>2</sup>) &mdash; reverse-sorted</td></tr>
+    <tr><td>Space</td><td>O(1) in-place</td></tr>
+    <tr><td>Stable?</td><td>Yes</td></tr>
+    <tr><td>Adaptive?</td><td>Yes &mdash; very fast on nearly-sorted data</td></tr>
+</table>
+
+<p><strong>When to use:</strong> small data (up to ~20 elements), nearly sorted data, online sorting (each new element arrives one at a time). Production sort libraries often fall back to insertion sort for small sub-arrays inside quick sort or merge sort.</p>
+
+<h3>Merge Sort</h3>
+
+<div class="definition">
+    <strong>Merge sort</strong> is a <strong>divide-and-conquer</strong> algorithm: the list is recursively split in half until sub-lists contain one element; pairs of sorted sub-lists are then merged back together to produce longer sorted sub-lists.
+</div>
+
+<pre>FUNCTION mergeSort(list)
+    IF length(list) &le; 1 THEN
+        RETURN list                  // base case &mdash; already sorted
+    ENDIF
+    mid   := length(list) DIV 2
+    left  := mergeSort(list[0 .. mid - 1])
+    right := mergeSort(list[mid .. length(list) - 1])
+    RETURN merge(left, right)
+ENDFUNCTION
+
+FUNCTION merge(left, right)
+    result := []
+    i := 0
+    j := 0
+    WHILE i &lt; length(left) AND j &lt; length(right)
+        IF left[i] &le; right[j] THEN
+            append result, left[i]
+            i := i + 1
+        ELSE
+            append result, right[j]
+            j := j + 1
+        ENDIF
+    ENDWHILE
+    append result, remaining elements of left
+    append result, remaining elements of right
+    RETURN result
+ENDFUNCTION</pre>
+
+<h4>Why O(n log n)?</h4>
+
+<p>Splitting halves the sub-list size each recursion, giving <code>log<sub>2</sub> n</code> levels of recursion. At <em>each</em> level the merge step does O(n) work in total (the sub-lists at a level together cover all n elements). Total: <code>n &times; log n</code>.</p>
+
+<h4>Worked example &mdash; sort [5, 2, 8, 1, 9, 3, 7, 4]</h4>
+
+<p>Recursion tree (split phase):</p>
+<ul>
+    <li>[5, 2, 8, 1, 9, 3, 7, 4]</li>
+    <li>[5, 2, 8, 1] and [9, 3, 7, 4]</li>
+    <li>[5, 2], [8, 1], [9, 3], [7, 4]</li>
+    <li>[5], [2], [8], [1], [9], [3], [7], [4]</li>
+</ul>
+
+<p>Merge phase (bottom-up):</p>
+<ul>
+    <li>[5]+[2]&rarr;[2,5];&nbsp; [8]+[1]&rarr;[1,8];&nbsp; [9]+[3]&rarr;[3,9];&nbsp; [7]+[4]&rarr;[4,7]</li>
+    <li>[2,5]+[1,8]&rarr;[1,2,5,8];&nbsp; [3,9]+[4,7]&rarr;[3,4,7,9]</li>
+    <li>[1,2,5,8]+[3,4,7,9]&rarr;[1,2,3,4,5,7,8,9]</li>
+</ul>
+
+<!-- SVG 5: Merge sort recursion tree -->
+<svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Merge Sort &mdash; recursion + merge</text>
+  <text x="100" y="50" font-size="11" font-weight="bold" fill="#dc2626">Split (divide)</text>
+  <text x="600" y="50" font-size="11" font-weight="bold" fill="#16a34a">Merge (combine)</text>
+
+  <!-- Split tree level 0 -->
+  <rect x="240" y="60" width="240" height="28" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="360" y="79" text-anchor="middle" font-size="12" font-family="Consolas, monospace">[5, 2, 8, 1, 9, 3, 7, 4]</text>
+
+  <line x1="320" y1="88" x2="180" y2="110" stroke="#f59e0b"/>
+  <line x1="400" y1="88" x2="540" y2="110" stroke="#f59e0b"/>
+
+  <!-- Level 1 -->
+  <rect x="100" y="110" width="160" height="28" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="180" y="129" text-anchor="middle" font-size="11" font-family="Consolas, monospace">[5, 2, 8, 1]</text>
+  <rect x="460" y="110" width="160" height="28" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="540" y="129" text-anchor="middle" font-size="11" font-family="Consolas, monospace">[9, 3, 7, 4]</text>
+
+  <line x1="150" y1="138" x2="90" y2="160" stroke="#f59e0b"/>
+  <line x1="210" y1="138" x2="270" y2="160" stroke="#f59e0b"/>
+  <line x1="510" y1="138" x2="450" y2="160" stroke="#f59e0b"/>
+  <line x1="570" y1="138" x2="630" y2="160" stroke="#f59e0b"/>
+
+  <!-- Level 2 -->
+  <rect x="40" y="160" width="100" height="28" fill="#fef3c7" stroke="#f59e0b"/><text x="90" y="179" text-anchor="middle" font-size="11" font-family="Consolas, monospace">[5, 2]</text>
+  <rect x="220" y="160" width="100" height="28" fill="#fef3c7" stroke="#f59e0b"/><text x="270" y="179" text-anchor="middle" font-size="11" font-family="Consolas, monospace">[8, 1]</text>
+  <rect x="400" y="160" width="100" height="28" fill="#fef3c7" stroke="#f59e0b"/><text x="450" y="179" text-anchor="middle" font-size="11" font-family="Consolas, monospace">[9, 3]</text>
+  <rect x="580" y="160" width="100" height="28" fill="#fef3c7" stroke="#f59e0b"/><text x="630" y="179" text-anchor="middle" font-size="11" font-family="Consolas, monospace">[7, 4]</text>
+
+  <line x1="70" y1="188" x2="50" y2="210" stroke="#f59e0b"/><line x1="110" y1="188" x2="130" y2="210" stroke="#f59e0b"/>
+  <line x1="250" y1="188" x2="230" y2="210" stroke="#f59e0b"/><line x1="290" y1="188" x2="310" y2="210" stroke="#f59e0b"/>
+  <line x1="430" y1="188" x2="410" y2="210" stroke="#f59e0b"/><line x1="470" y1="188" x2="490" y2="210" stroke="#f59e0b"/>
+  <line x1="610" y1="188" x2="590" y2="210" stroke="#f59e0b"/><line x1="650" y1="188" x2="670" y2="210" stroke="#f59e0b"/>
+
+  <!-- Level 3 (singletons) -->
+  <g font-family="Consolas, monospace" font-size="11">
+    <rect x="30" y="210" width="40" height="28" fill="#fee2e2" stroke="#dc2626"/><text x="50" y="229" text-anchor="middle">[5]</text>
+    <rect x="110" y="210" width="40" height="28" fill="#fee2e2" stroke="#dc2626"/><text x="130" y="229" text-anchor="middle">[2]</text>
+    <rect x="210" y="210" width="40" height="28" fill="#fee2e2" stroke="#dc2626"/><text x="230" y="229" text-anchor="middle">[8]</text>
+    <rect x="290" y="210" width="40" height="28" fill="#fee2e2" stroke="#dc2626"/><text x="310" y="229" text-anchor="middle">[1]</text>
+    <rect x="390" y="210" width="40" height="28" fill="#fee2e2" stroke="#dc2626"/><text x="410" y="229" text-anchor="middle">[9]</text>
+    <rect x="470" y="210" width="40" height="28" fill="#fee2e2" stroke="#dc2626"/><text x="490" y="229" text-anchor="middle">[3]</text>
+    <rect x="570" y="210" width="40" height="28" fill="#fee2e2" stroke="#dc2626"/><text x="590" y="229" text-anchor="middle">[7]</text>
+    <rect x="650" y="210" width="40" height="28" fill="#fee2e2" stroke="#dc2626"/><text x="670" y="229" text-anchor="middle">[4]</text>
+  </g>
+
+  <!-- Merge phase upward -->
+  <g font-family="Consolas, monospace" font-size="11">
+    <rect x="40" y="260" width="100" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="90" y="279" text-anchor="middle">[2, 5]</text>
+    <rect x="220" y="260" width="100" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="270" y="279" text-anchor="middle">[1, 8]</text>
+    <rect x="400" y="260" width="100" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="450" y="279" text-anchor="middle">[3, 9]</text>
+    <rect x="580" y="260" width="100" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="630" y="279" text-anchor="middle">[4, 7]</text>
+
+    <rect x="100" y="310" width="160" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="180" y="329" text-anchor="middle">[1, 2, 5, 8]</text>
+    <rect x="460" y="310" width="160" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="540" y="329" text-anchor="middle">[3, 4, 7, 9]</text>
+
+    <rect x="240" y="360" width="240" height="32" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="360" y="381" text-anchor="middle" font-weight="bold">[1, 2, 3, 4, 5, 7, 8, 9]</text>
+  </g>
+
+  <!-- vertical arrows showing merge direction -->
+  <line x1="90" y1="242" x2="90" y2="258" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <line x1="270" y1="242" x2="270" y2="258" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="450" y1="242" x2="450" y2="258" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="630" y1="242" x2="630" y2="258" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="180" y1="292" x2="180" y2="308" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="540" y1="292" x2="540" y2="308" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="360" y1="342" x2="360" y2="358" stroke="#16a34a" stroke-width="1.5"/>
+
+  <text x="360" y="420" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">log&#8322; 8 = 3 levels of merging &times; O(n) work per level = O(n log n)</text>
+</svg>
+
+<table>
+    <tr><th>Property</th><th>Value</th></tr>
+    <tr><td>Best case</td><td>O(n log n)</td></tr>
+    <tr><td>Average</td><td>O(n log n)</td></tr>
+    <tr><td>Worst</td><td>O(n log n)</td></tr>
+    <tr><td>Space</td><td>O(n) auxiliary &mdash; not in-place</td></tr>
+    <tr><td>Stable?</td><td>Yes</td></tr>
+    <tr><td>Adaptive?</td><td>No &mdash; does the same work regardless of input</td></tr>
+</table>
+
+<p><strong>When to use:</strong> large data sets where a guaranteed O(n log n) worst case matters (avionics, financial systems); external sorting (data that does not fit in RAM) &mdash; merges work beautifully with streaming; linked lists (no random access needed).</p>
+
+<div class="exam-tip">Merge sort trades <strong>O(n) extra memory</strong> for its guaranteed O(n log n) bound. If memory is tight, prefer quick sort (in-place).</div>
+
+<h4>Why merge sort is stable</h4>
+
+<p>During the merge step, the comparison <code>left[i] &le; right[j]</code> (note the "&le;", not "&lt;") prefers the left element when values are equal. Because the left sub-list came from earlier in the original array, equal keys keep their original relative order. This is exactly what <em>stability</em> means &mdash; and it is why many database and spreadsheet sorts are based on merge sort, since users often sort by one column and then another, relying on the earlier sort to survive the later one.</p>
+
+<h4>External sorting</h4>
+
+<p>"External" sorting means sorting data that is too large to fit in main memory, e.g. a 500&nbsp;GB log file on a machine with 16&nbsp;GB of RAM. Merge sort is the algorithm of choice: split the file into chunks each small enough to fit in RAM, sort each chunk with an in-memory sort, write back to disk, then <em>k-way merge</em> the sorted chunks by streaming from each file and repeatedly picking the smallest current element. This minimises disk seeks and respects the streaming nature of the data.</p>
+
+<h3>Quick Sort</h3>
+
+<div class="definition">
+    <strong>Quick sort</strong> is a divide-and-conquer algorithm. A <strong>pivot</strong> element is chosen and the list is <strong>partitioned</strong> into elements &lt; pivot, the pivot itself, and elements &ge; pivot. Quick sort is then applied recursively to the two sub-lists.
+</div>
+
+<h4>Lomuto partition scheme</h4>
+
+<pre>FUNCTION quickSort(list, low, high)
+    IF low &lt; high THEN
+        p := partition(list, low, high)
+        quickSort(list, low, p - 1)
+        quickSort(list, p + 1, high)
+    ENDIF
+ENDFUNCTION
+
+FUNCTION partition(list, low, high)
+    pivot := list[high]              // Lomuto: pivot = last element
+    i := low - 1
+    FOR j := low TO high - 1
+        IF list[j] &le; pivot THEN
+            i := i + 1
+            swap(list[i], list[j])
+        ENDIF
+    ENDFOR
+    swap(list[i + 1], list[high])    // place pivot in final position
+    RETURN i + 1
+ENDFUNCTION</pre>
+
+<p><strong>Hoare scheme</strong> (briefly): two pointers move inward from opposite ends, swapping elements they find on the wrong side of the pivot until they cross. Hoare does fewer swaps on average but is trickier to code correctly.</p>
+
+<h4>Pivot selection strategies</h4>
+
+<ul>
+    <li><strong>First or last element</strong> &mdash; simplest; degenerates to O(n<sup>2</sup>) on already-sorted input.</li>
+    <li><strong>Random element</strong> &mdash; expected O(n log n) regardless of input shape; eliminates adversarial inputs.</li>
+    <li><strong>Median-of-three</strong> &mdash; pick the median of first, middle, last element. Cheap, usually good, used in most production implementations (e.g. C++ <code>std::sort</code>).</li>
+    <li><strong>Middle element</strong> &mdash; simple and works well on sorted input.</li>
+</ul>
+
+<h4>Worked example &mdash; sort [7, 2, 8, 1, 6, 3]; pivot = last</h4>
+
+<table>
+    <tr><th>Step</th><th>List</th><th>Pivot</th><th>Result</th></tr>
+    <tr><td>1</td><td>[7, 2, 8, 1, 6, 3]</td><td>3</td><td>Partition &rarr; [2, 1, 3, 7, 6, 8]; pivot index 2</td></tr>
+    <tr><td>2a</td><td>Left: [2, 1]</td><td>1</td><td>Partition &rarr; [1, 2]; pivot index 0</td></tr>
+    <tr><td>2b</td><td>Right: [7, 6, 8]</td><td>8</td><td>Partition &rarr; [7, 6, 8]; pivot index 2</td></tr>
+    <tr><td>3</td><td>[7, 6]</td><td>6</td><td>Partition &rarr; [6, 7]</td></tr>
+    <tr><td>Final</td><td colspan="3">[1, 2, 3, 6, 7, 8]</td></tr>
+</table>
+
+<!-- SVG 6: Quick sort partition + recursion -->
+<svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Quick Sort &mdash; partition with Lomuto (pivot = last)</text>
+
+  <g font-family="Consolas, monospace" font-size="12">
+    <!-- Level 0 original -->
+    <text x="40" y="72" font-size="11" font-weight="bold" fill="#1e3a5f">Initial</text>
+    <rect x="110" y="50" width="40" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="130" y="72" text-anchor="middle">7</text>
+    <rect x="150" y="50" width="40" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="170" y="72" text-anchor="middle">2</text>
+    <rect x="190" y="50" width="40" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="210" y="72" text-anchor="middle">8</text>
+    <rect x="230" y="50" width="40" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="250" y="72" text-anchor="middle">1</text>
+    <rect x="270" y="50" width="40" height="32" fill="#eff6ff" stroke="#2563eb"/><text x="290" y="72" text-anchor="middle">6</text>
+    <rect x="310" y="50" width="40" height="32" fill="#fecaca" stroke="#dc2626" stroke-width="2"/><text x="330" y="72" text-anchor="middle" font-weight="bold">3</text>
+    <text x="390" y="72" font-size="11" fill="#dc2626">pivot = 3</text>
+
+    <!-- After partition -->
+    <text x="40" y="132" font-size="11" font-weight="bold" fill="#1e3a5f">After partition</text>
+    <rect x="110" y="110" width="40" height="32" fill="#dcfce7" stroke="#16a34a"/><text x="130" y="132" text-anchor="middle">2</text>
+    <rect x="150" y="110" width="40" height="32" fill="#dcfce7" stroke="#16a34a"/><text x="170" y="132" text-anchor="middle">1</text>
+    <rect x="190" y="110" width="40" height="32" fill="#fecaca" stroke="#dc2626" stroke-width="2"/><text x="210" y="132" text-anchor="middle" font-weight="bold">3</text>
+    <rect x="230" y="110" width="40" height="32" fill="#fed7aa" stroke="#ea580c"/><text x="250" y="132" text-anchor="middle">7</text>
+    <rect x="270" y="110" width="40" height="32" fill="#fed7aa" stroke="#ea580c"/><text x="290" y="132" text-anchor="middle">6</text>
+    <rect x="310" y="110" width="40" height="32" fill="#fed7aa" stroke="#ea580c"/><text x="330" y="132" text-anchor="middle">8</text>
+    <text x="390" y="132" font-size="11" fill="#374151">3 fixed; recurse left/right</text>
+
+    <!-- Recurse left [2,1] pivot 1 -->
+    <text x="40" y="202" font-size="11" font-weight="bold" fill="#16a34a">Left [2,1]</text>
+    <rect x="110" y="180" width="40" height="32" fill="#dcfce7" stroke="#16a34a"/><text x="130" y="202" text-anchor="middle">2</text>
+    <rect x="150" y="180" width="40" height="32" fill="#fecaca" stroke="#dc2626" stroke-width="2"/><text x="170" y="202" text-anchor="middle" font-weight="bold">1</text>
+    <text x="220" y="202" font-size="11" fill="#dc2626">pivot = 1</text>
+    <rect x="290" y="180" width="40" height="32" fill="#dcfce7" stroke="#16a34a"/><text x="310" y="202" text-anchor="middle">1</text>
+    <rect x="330" y="180" width="40" height="32" fill="#dcfce7" stroke="#16a34a"/><text x="350" y="202" text-anchor="middle">2</text>
+    <text x="410" y="202" font-size="11" fill="#16a34a">&rarr; [1, 2]</text>
+
+    <!-- Recurse right [7,6,8] pivot 8 -->
+    <text x="40" y="262" font-size="11" font-weight="bold" fill="#ea580c">Right [7,6,8]</text>
+    <rect x="110" y="240" width="40" height="32" fill="#fed7aa" stroke="#ea580c"/><text x="130" y="262" text-anchor="middle">7</text>
+    <rect x="150" y="240" width="40" height="32" fill="#fed7aa" stroke="#ea580c"/><text x="170" y="262" text-anchor="middle">6</text>
+    <rect x="190" y="240" width="40" height="32" fill="#fecaca" stroke="#dc2626" stroke-width="2"/><text x="210" y="262" text-anchor="middle" font-weight="bold">8</text>
+    <text x="260" y="262" font-size="11" fill="#dc2626">pivot = 8</text>
+    <rect x="330" y="240" width="40" height="32" fill="#fed7aa" stroke="#ea580c"/><text x="350" y="262" text-anchor="middle">7</text>
+    <rect x="370" y="240" width="40" height="32" fill="#fed7aa" stroke="#ea580c"/><text x="390" y="262" text-anchor="middle">6</text>
+    <rect x="410" y="240" width="40" height="32" fill="#dcfce7" stroke="#16a34a"/><text x="430" y="262" text-anchor="middle">8</text>
+
+    <!-- Recurse [7,6] pivot 6 -->
+    <text x="40" y="322" font-size="11" font-weight="bold" fill="#ea580c">[7, 6]</text>
+    <rect x="110" y="300" width="40" height="32" fill="#fed7aa" stroke="#ea580c"/><text x="130" y="322" text-anchor="middle">7</text>
+    <rect x="150" y="300" width="40" height="32" fill="#fecaca" stroke="#dc2626" stroke-width="2"/><text x="170" y="322" text-anchor="middle" font-weight="bold">6</text>
+    <text x="220" y="322" font-size="11" fill="#dc2626">pivot = 6</text>
+    <rect x="290" y="300" width="40" height="32" fill="#dcfce7" stroke="#16a34a"/><text x="310" y="322" text-anchor="middle">6</text>
+    <rect x="330" y="300" width="40" height="32" fill="#dcfce7" stroke="#16a34a"/><text x="350" y="322" text-anchor="middle">7</text>
+    <text x="410" y="322" font-size="11" fill="#16a34a">&rarr; [6, 7]</text>
+
+    <!-- Final -->
+    <text x="40" y="382" font-size="11" font-weight="bold" fill="#16a34a">Final</text>
+    <rect x="110" y="360" width="40" height="32" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="130" y="382" text-anchor="middle">1</text>
+    <rect x="150" y="360" width="40" height="32" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="170" y="382" text-anchor="middle">2</text>
+    <rect x="190" y="360" width="40" height="32" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="210" y="382" text-anchor="middle">3</text>
+    <rect x="230" y="360" width="40" height="32" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="250" y="382" text-anchor="middle">6</text>
+    <rect x="270" y="360" width="40" height="32" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="290" y="382" text-anchor="middle">7</text>
+    <rect x="310" y="360" width="40" height="32" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="330" y="382" text-anchor="middle">8</text>
+    <text x="390" y="382" font-size="11" fill="#16a34a" font-weight="bold">sorted</text>
+  </g>
+</svg>
+
+<table>
+    <tr><th>Property</th><th>Value</th></tr>
+    <tr><td>Best case</td><td>O(n log n) &mdash; balanced partitions</td></tr>
+    <tr><td>Average</td><td>O(n log n)</td></tr>
+    <tr><td>Worst</td><td>O(n<sup>2</sup>) &mdash; sorted input with first/last pivot</td></tr>
+    <tr><td>Space</td><td>O(log n) recursion stack (average)</td></tr>
+    <tr><td>Stable?</td><td>No &mdash; swaps can cross equal keys</td></tr>
+    <tr><td>Adaptive?</td><td>Not naturally; worst case occurs on sorted data with naive pivot</td></tr>
+</table>
+
+<div class="exam-tip">If you are asked <em>why</em> quick sort is usually preferred over merge sort in practice, mention: (1) in-place &mdash; only O(log n) space, (2) better cache locality from contiguous swaps, (3) smaller hidden constants. Merge sort wins only when worst-case guarantees or stability are required.</div>
+
+<h4>Why the O(n<sup>2</sup>) worst case happens</h4>
+
+<p>If the pivot is always the smallest (or largest) element of the current sub-array &mdash; which happens with a "first element" or "last element" pivot when the input is already sorted or reverse-sorted &mdash; then each partition shaves just one element off the sub-array. Instead of halving the work at every step we decrement by one, giving a recursion depth of <code>n</code> rather than <code>log n</code>. Total work becomes <code>n + (n-1) + (n-2) + &hellip; + 1 = n(n+1)/2</code>, i.e. O(n<sup>2</sup>).</p>
+
+<p>Randomised pivot selection or median-of-three makes this worst case vanishingly unlikely. Production libraries such as the C++ STL's <code>std::sort</code> use <strong>introsort</strong>, which starts as quick sort but falls back to heap sort if recursion goes too deep &mdash; giving the best of both worlds (quick sort's speed with an O(n log n) worst-case guarantee).</p>
+
+<h4>Tail-call optimisation and stack depth</h4>
+
+<p>A naive recursive implementation of quick sort can use O(n) stack space in the worst case. Production implementations recurse only on the smaller sub-array and iterate over the larger one (or use <em>tail-call optimisation</em> where available). This bounds the stack depth at O(log n) even in adverse cases.</p>
+
+<h3>Sorting Comparison Summary</h3>
+
+<table>
+    <tr><th>Algorithm</th><th>Best</th><th>Average</th><th>Worst</th><th>Space</th><th>Stable?</th><th>In-place?</th><th>Best use case</th></tr>
+    <tr><td>Bubble sort</td><td>O(n)</td><td>O(n<sup>2</sup>)</td><td>O(n<sup>2</sup>)</td><td>O(1)</td><td>Yes</td><td>Yes</td><td>Teaching; tiny / nearly-sorted lists</td></tr>
+    <tr><td>Insertion sort</td><td>O(n)</td><td>O(n<sup>2</sup>)</td><td>O(n<sup>2</sup>)</td><td>O(1)</td><td>Yes</td><td>Yes</td><td>Small (&lt;20) or nearly-sorted data; online sort</td></tr>
+    <tr><td>Merge sort</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n)</td><td>Yes</td><td>No</td><td>Large data; guaranteed worst-case; linked lists; external sort</td></tr>
+    <tr><td>Quick sort</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n<sup>2</sup>)</td><td>O(log n)</td><td>No</td><td>Yes</td><td>General-purpose in-memory sorting</td></tr>
+</table>
+
+<h3>Choosing the Right Sort</h3>
+
+<p>A surprisingly common exam question gives you a scenario and asks which sort you would choose. A good way to reason:</p>
+
+<table>
+    <tr><th>Scenario</th><th>Best choice</th><th>Reason</th></tr>
+    <tr><td>Teacher demonstrating sorting in a Year 7 classroom</td><td>Bubble sort</td><td>Easy to explain; visually obvious.</td></tr>
+    <tr><td>Sorting 12 numbers from a dice-game</td><td>Insertion sort</td><td>Simple, fast on tiny arrays, no hidden constants.</td></tr>
+    <tr><td>Sorting a million records in memory on a desktop PC</td><td>Quick sort (or introsort)</td><td>Fast average case, in-place, cache-friendly.</td></tr>
+    <tr><td>Sorting a 500&nbsp;GB file on a server with 16&nbsp;GB of RAM</td><td>External merge sort</td><td>Streams data, minimises disk seeks.</td></tr>
+    <tr><td>Sorting by surname then by forename (preserving surname ties)</td><td>Merge sort (or any stable sort)</td><td>Stability preserves the first-pass order on ties.</td></tr>
+    <tr><td>Embedded system with 2&nbsp;KB RAM, small data</td><td>Insertion sort</td><td>O(1) space and simple machine code footprint.</td></tr>
+    <tr><td>Safety-critical avionics where a worst-case guarantee is mandatory</td><td>Merge sort or heap sort</td><td>Deterministic O(n log n) worst case.</td></tr>
+</table>
+
+<h2>2.3.4 Graph Algorithms</h2>
+
+<h3>Graph Recap</h3>
+
+<p>(See 1.4.2 for internals.) A <strong>graph</strong> is a set of <em>vertices</em> (nodes) connected by <em>edges</em>. Edges can be <strong>directed</strong> or <strong>undirected</strong>, and <strong>weighted</strong> (edges carry a cost, e.g. distance, travel time, bandwidth). Two common representations:</p>
+
+<ul>
+    <li><strong>Adjacency matrix</strong> &mdash; a V&times;V grid; fast edge lookup, O(V<sup>2</sup>) space even if sparse.</li>
+    <li><strong>Adjacency list</strong> &mdash; each vertex stores a list of neighbours; space-efficient for sparse graphs.</li>
+</ul>
+
+<p>Traversal algorithms (<strong>BFS</strong>, <strong>DFS</strong>) visit every reachable vertex in a specific order, running in O(V + E) time. OCR treats these in 1.4; here we focus on <strong>weighted-graph</strong> shortest-path algorithms.</p>
+
+<h3>Dijkstra's Shortest-Path Algorithm</h3>
+
+<div class="definition">
+    <strong>Dijkstra's algorithm</strong> (1956) finds the shortest path from a single <em>source</em> vertex to every other vertex in a graph with <strong>non-negative</strong> edge weights. It is a greedy algorithm that repeatedly extracts the unvisited vertex with the smallest known distance and relaxes all its outgoing edges.
+</div>
+
+<div class="exam-tip">Dijkstra's algorithm <strong>requires non-negative edge weights</strong>. If negative weights are present, use <strong>Bellman&ndash;Ford</strong> instead. This is a favourite exam gotcha.</div>
+
+<h4>The algorithm</h4>
+
+<ol>
+    <li>Assign every vertex a tentative distance: 0 for the source, &infin; for every other vertex.</li>
+    <li>Mark all vertices unvisited; put the source into a priority queue keyed by distance.</li>
+    <li>Loop while the priority queue is non-empty:
+        <ol>
+            <li>Extract the vertex <code>u</code> with the smallest tentative distance.</li>
+            <li>Mark <code>u</code> as visited (its distance is now final).</li>
+            <li>For each unvisited neighbour <code>v</code> of <code>u</code>:
+                <ul>
+                    <li>Compute <code>alt = dist[u] + weight(u, v)</code>.</li>
+                    <li>If <code>alt &lt; dist[v]</code>, set <code>dist[v] := alt</code>, set <code>prev[v] := u</code>, and add/update <code>v</code> in the priority queue. This step is called <strong>relaxation</strong>.</li>
+                </ul>
+            </li>
+        </ol>
+    </li>
+    <li>When the queue is empty, <code>dist[]</code> holds the shortest distance from source to every vertex, and <code>prev[]</code> lets you reconstruct the path.</li>
+</ol>
+
+<pre>FUNCTION dijkstra(graph, source)
+    FOR each vertex v IN graph
+        dist[v] := INFINITY
+        prev[v] := UNDEFINED
+    ENDFOR
+    dist[source] := 0
+    pq := new PriorityQueue()
+    pq.insert(source, 0)
+
+    WHILE pq is not empty
+        u := pq.extractMin()
+        FOR each neighbour v OF u
+            alt := dist[u] + weight(u, v)
+            IF alt &lt; dist[v] THEN
+                dist[v] := alt
+                prev[v] := u
+                pq.insertOrDecreaseKey(v, alt)
+            ENDIF
+        ENDFOR
+    ENDWHILE
+    RETURN dist, prev
+ENDFUNCTION</pre>
+
+<h4>Worked example &mdash; 6-node weighted graph, source = A</h4>
+
+<p>Edges (undirected, non-negative weights): A&ndash;B=7, A&ndash;C=9, A&ndash;F=14, B&ndash;C=10, B&ndash;D=15, C&ndash;D=11, C&ndash;F=2, D&ndash;E=6, E&ndash;F=9.</p>
+
+<!-- SVG 7: Dijkstra 6-node graph + table -->
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Dijkstra's Algorithm &mdash; 6-node weighted graph</text>
+
+  <!-- nodes: A B C D E F -->
+  <g font-family="sans-serif" font-size="13" font-weight="bold">
+    <!-- edges first so they appear behind -->
+    <line x1="120" y1="180" x2="270" y2="90" stroke="#374151" stroke-width="1.5"/>
+    <text x="180" y="125" font-size="11" fill="#dc2626">7</text>
+    <line x1="120" y1="180" x2="270" y2="260" stroke="#374151" stroke-width="1.5"/>
+    <text x="180" y="235" font-size="11" fill="#dc2626">9</text>
+    <line x1="120" y1="180" x2="360" y2="180" stroke="#374151" stroke-width="1.5"/>
+    <text x="240" y="172" font-size="11" fill="#dc2626">14</text>
+    <line x1="270" y1="90" x2="270" y2="260" stroke="#374151" stroke-width="1.5"/>
+    <text x="280" y="180" font-size="11" fill="#dc2626">10</text>
+    <line x1="270" y1="90" x2="470" y2="90" stroke="#374151" stroke-width="1.5"/>
+    <text x="360" y="82" font-size="11" fill="#dc2626">15</text>
+    <line x1="270" y1="260" x2="470" y2="260" stroke="#374151" stroke-width="1.5"/>
+    <text x="360" y="278" font-size="11" fill="#dc2626">11</text>
+    <line x1="270" y1="260" x2="360" y2="180" stroke="#374151" stroke-width="1.5"/>
+    <text x="325" y="225" font-size="11" fill="#dc2626">2</text>
+    <line x1="470" y1="90" x2="570" y2="180" stroke="#374151" stroke-width="1.5"/>
+    <text x="535" y="125" font-size="11" fill="#dc2626">6</text>
+    <line x1="570" y1="180" x2="360" y2="180" stroke="#374151" stroke-width="1.5"/>
+    <text x="460" y="172" font-size="11" fill="#dc2626">9</text>
+
+    <!-- nodes (circles + labels) -->
+    <circle cx="120" cy="180" r="22" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="120" y="185" text-anchor="middle" fill="#14532d">A</text>
+    <circle cx="270" cy="90"  r="22" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><text x="270" y="95" text-anchor="middle" fill="#1e3a5f">B</text>
+    <circle cx="270" cy="260" r="22" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><text x="270" y="265" text-anchor="middle" fill="#1e3a5f">C</text>
+    <circle cx="470" cy="90"  r="22" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><text x="470" y="95" text-anchor="middle" fill="#1e3a5f">D</text>
+    <circle cx="570" cy="180" r="22" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><text x="570" y="185" text-anchor="middle" fill="#1e3a5f">E</text>
+    <circle cx="360" cy="180" r="22" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><text x="360" y="185" text-anchor="middle" fill="#1e3a5f">F</text>
+  </g>
+  <text x="360" y="320" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Green A = source. Red numbers are edge weights.</text>
+</svg>
+
+<p>Step-by-step distance table (&infin; means "no path found yet"; bold = distance now finalised):</p>
+
+<table>
+    <tr><th>Iter.</th><th>Visited vertex</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>Priority queue after step</th></tr>
+    <tr><td>0</td><td>&mdash; init</td><td><strong>0</strong></td><td>&infin;</td><td>&infin;</td><td>&infin;</td><td>&infin;</td><td>&infin;</td><td>{A:0}</td></tr>
+    <tr><td>1</td><td>A (dist 0)</td><td><strong>0</strong></td><td>7</td><td>9</td><td>&infin;</td><td>&infin;</td><td>14</td><td>{B:7, C:9, F:14}</td></tr>
+    <tr><td>2</td><td>B (dist 7)</td><td><strong>0</strong></td><td><strong>7</strong></td><td>9</td><td>22</td><td>&infin;</td><td>14</td><td>{C:9, F:14, D:22}</td></tr>
+    <tr><td>3</td><td>C (dist 9)</td><td><strong>0</strong></td><td><strong>7</strong></td><td><strong>9</strong></td><td>20</td><td>&infin;</td><td>11</td><td>{F:11, D:20}</td></tr>
+    <tr><td>4</td><td>F (dist 11)</td><td><strong>0</strong></td><td><strong>7</strong></td><td><strong>9</strong></td><td>20</td><td>20</td><td><strong>11</strong></td><td>{D:20, E:20}</td></tr>
+    <tr><td>5</td><td>D (dist 20)</td><td><strong>0</strong></td><td><strong>7</strong></td><td><strong>9</strong></td><td><strong>20</strong></td><td>20</td><td><strong>11</strong></td><td>{E:20}</td></tr>
+    <tr><td>6</td><td>E (dist 20)</td><td><strong>0</strong></td><td><strong>7</strong></td><td><strong>9</strong></td><td><strong>20</strong></td><td><strong>20</strong></td><td><strong>11</strong></td><td>{} &mdash; done</td></tr>
+</table>
+
+<p>Shortest distances from A: A=0, B=7, C=9, F=11, D=20, E=20. Shortest path A&rarr;E follows <code>prev[]</code>: E&larr;F&larr;C&larr;A, length 9+2+9 = 20.</p>
+
+<h4>Complexity</h4>
+
+<table>
+    <tr><th>Implementation</th><th>Time complexity</th></tr>
+    <tr><td>Array / scan for min</td><td>O(V<sup>2</sup>)</td></tr>
+    <tr><td>Binary heap (typical)</td><td>O((V + E) log V)</td></tr>
+    <tr><td>Fibonacci heap</td><td>O(E + V log V)</td></tr>
+</table>
+
+<h3>Reconstructing the Shortest Path</h3>
+
+<p>Dijkstra produces a <code>prev[]</code> array where <code>prev[v]</code> is the predecessor of <code>v</code> on the best-known path from source. To recover the actual vertex sequence, start at the destination and follow <code>prev</code> pointers back to the source, then reverse.</p>
+
+<pre>FUNCTION reconstructPath(prev, destination)
+    path := []
+    current := destination
+    WHILE current != UNDEFINED
+        prepend path, current
+        current := prev[current]
+    ENDWHILE
+    RETURN path
+ENDFUNCTION</pre>
+
+<p>In the worked example above, starting from E: prev[E]=F, prev[F]=C, prev[C]=A, prev[A]=undefined. Reversed: A&rarr;C&rarr;F&rarr;E, total distance 20.</p>
+
+<h3>A* (A-Star) Algorithm</h3>
+
+<div class="definition">
+    <strong>A*</strong> is an informed search algorithm that extends Dijkstra with a <strong>heuristic</strong> <code>h(n)</code> that estimates the remaining cost from node <code>n</code> to the goal. Instead of selecting the node with the smallest <code>g(n)</code>, it selects the one with the smallest <code>f(n) = g(n) + h(n)</code>. A* directs search towards the goal rather than exploring outward uniformly.
+</div>
+
+<ul>
+    <li><code>g(n)</code> &mdash; the known cost of the shortest path from start to <code>n</code>.</li>
+    <li><code>h(n)</code> &mdash; the estimated remaining cost from <code>n</code> to the goal (problem-specific).</li>
+    <li><code>f(n) = g(n) + h(n)</code> &mdash; the estimated total path cost through <code>n</code>.</li>
+</ul>
+
+<h4>Heuristic properties</h4>
+
+<ul>
+    <li><strong>Admissible</strong> &mdash; <code>h(n)</code> <em>never overestimates</em> the true remaining cost. Admissibility guarantees A* returns an <strong>optimal</strong> path.</li>
+    <li><strong>Consistent (monotonic)</strong> &mdash; satisfies the triangle inequality: for every edge from <code>n</code> to <code>m</code>, <code>h(n) &le; weight(n,m) + h(m)</code>. Consistency implies admissibility and lets A* settle each node's <code>g</code> the first time it is expanded (no re-expansion needed).</li>
+</ul>
+
+<h4>Common heuristics</h4>
+
+<ul>
+    <li><strong>Straight-line (Euclidean) distance</strong> &mdash; <code>&radic;((x&#8321;-x&#8322;)<sup>2</sup> + (y&#8321;-y&#8322;)<sup>2</sup>)</code>. Admissible in continuous 2D space.</li>
+    <li><strong>Manhattan distance</strong> &mdash; <code>|x&#8321;-x&#8322;| + |y&#8321;-y&#8322;|</code>. Admissible on a grid where you can only move up/down/left/right.</li>
+    <li><strong>Chebyshev distance</strong> &mdash; <code>max(|dx|, |dy|)</code>. Admissible when diagonal moves cost the same as orthogonal.</li>
+    <li><strong>Zero heuristic</strong> &mdash; <code>h(n) = 0</code> for all <code>n</code>. Always admissible; reduces A* exactly to Dijkstra.</li>
+</ul>
+
+<div class="exam-tip">The standard marking point is: "When <code>h(n) = 0</code>, A* is equivalent to Dijkstra's algorithm." If the heuristic is a poor estimate (large overestimate) A* can return a sub-optimal path.</div>
+
+<h4>Pseudocode</h4>
+
+<pre>FUNCTION aStar(graph, start, goal, h)
+    openSet  := PriorityQueue()
+    openSet.insert(start, h(start))
+    gScore[start] := 0
+    fScore[start] := h(start)
+
+    WHILE openSet is not empty
+        current := openSet.extractMin()        // lowest f-score
+        IF current = goal THEN
+            RETURN reconstructPath(prev, current)
+        ENDIF
+        FOR each neighbour n OF current
+            tentativeG := gScore[current] + weight(current, n)
+            IF tentativeG &lt; gScore[n] THEN
+                prev[n]   := current
+                gScore[n] := tentativeG
+                fScore[n] := tentativeG + h(n)
+                IF n NOT IN openSet THEN
+                    openSet.insert(n, fScore[n])
+                ENDIF
+            ENDIF
+        ENDFOR
+    ENDWHILE
+    RETURN FAILURE                             // no path
+ENDFUNCTION</pre>
+
+<h4>Worked example &mdash; same 6-node graph with heuristic values</h4>
+
+<p>Suppose the goal is <strong>E</strong> and the heuristic (straight-line estimates) are:</p>
+
+<table>
+    <tr><th>Node</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>
+    <tr><td>h(n)</td><td>20</td><td>17</td><td>12</td><td>6</td><td>0</td><td>9</td></tr>
+</table>
+
+<p>Expansion order (lowest <code>f = g + h</code> first):</p>
+
+<table>
+    <tr><th>Step</th><th>Expand</th><th>Reasoning</th></tr>
+    <tr><td>1</td><td>A</td><td>f(A) = 0 + 20 = 20. Relax neighbours: B (f=7+17=24), C (f=9+12=21), F (f=14+9=23).</td></tr>
+    <tr><td>2</td><td>C</td><td>Lowest f=21. Relax: D via C f=(9+11)+6=26, F via C f=(9+2)+9=20.</td></tr>
+    <tr><td>3</td><td>F</td><td>Lowest f=20. Relax: E via F f=(11+9)+0=20.</td></tr>
+    <tr><td>4</td><td>E</td><td>E = goal &mdash; return path A&rarr;C&rarr;F&rarr;E, cost 20.</td></tr>
+</table>
+
+<p>Notice A* never expanded B or D because better options were always at the front of the open set &mdash; the heuristic <em>pruned</em> those branches. Dijkstra, with no heuristic, would have expanded B before finding E.</p>
+
+<!-- SVG 8: A* on a grid -->
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">A* on a grid &mdash; Manhattan heuristic, wall in middle</text>
+
+  <!-- 8x5 grid, cell size 60, offset x=80 y=50 -->
+  <g font-family="sans-serif" font-size="10">
+    <!-- row 0 -->
+    <g><rect x="80" y="50" width="60" height="60" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="110" y="78" text-anchor="middle" font-weight="bold" fill="#14532d">S</text><text x="110" y="95" text-anchor="middle" font-size="8">start</text></g>
+    <g><rect x="140" y="50" width="60" height="60" fill="#e0e7ff" stroke="#6366f1"/><text x="170" y="74" text-anchor="middle" font-size="8">g=1</text><text x="170" y="86" text-anchor="middle" font-size="8">h=5</text><text x="170" y="100" text-anchor="middle" font-weight="bold">f=6</text></g>
+    <g><rect x="200" y="50" width="60" height="60" fill="#e0e7ff" stroke="#6366f1"/><text x="230" y="74" text-anchor="middle" font-size="8">g=2</text><text x="230" y="86" text-anchor="middle" font-size="8">h=4</text><text x="230" y="100" text-anchor="middle" font-weight="bold">f=6</text></g>
+    <g><rect x="260" y="50" width="60" height="60" fill="#e0e7ff" stroke="#6366f1"/><text x="290" y="74" text-anchor="middle" font-size="8">g=3</text><text x="290" y="86" text-anchor="middle" font-size="8">h=3</text><text x="290" y="100" text-anchor="middle" font-weight="bold">f=6</text></g>
+    <g><rect x="320" y="50" width="60" height="60" fill="#e0e7ff" stroke="#6366f1"/><text x="350" y="74" text-anchor="middle" font-size="8">g=4</text><text x="350" y="86" text-anchor="middle" font-size="8">h=2</text><text x="350" y="100" text-anchor="middle" font-weight="bold">f=6</text></g>
+    <g><rect x="380" y="50" width="60" height="60" fill="#e0e7ff" stroke="#6366f1"/><text x="410" y="74" text-anchor="middle" font-size="8">g=5</text><text x="410" y="86" text-anchor="middle" font-size="8">h=1</text><text x="410" y="100" text-anchor="middle" font-weight="bold">f=6</text></g>
+    <g><rect x="440" y="50" width="60" height="60" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="470" y="78" text-anchor="middle" font-weight="bold" fill="#14532d">G</text><text x="470" y="95" text-anchor="middle" font-size="8">goal</text></g>
+
+    <!-- row 1 -->
+    <g><rect x="80" y="110" width="60" height="60" fill="#f3f4f6" stroke="#9ca3af"/></g>
+    <g><rect x="140" y="110" width="60" height="60" fill="#f3f4f6" stroke="#9ca3af"/></g>
+    <g><rect x="200" y="110" width="60" height="60" fill="#374151" stroke="#1f2937"/><text x="230" y="145" text-anchor="middle" fill="#fff">wall</text></g>
+    <g><rect x="260" y="110" width="60" height="60" fill="#f3f4f6" stroke="#9ca3af"/></g>
+    <g><rect x="320" y="110" width="60" height="60" fill="#f3f4f6" stroke="#9ca3af"/></g>
+    <g><rect x="380" y="110" width="60" height="60" fill="#f3f4f6" stroke="#9ca3af"/></g>
+    <g><rect x="440" y="110" width="60" height="60" fill="#f3f4f6" stroke="#9ca3af"/></g>
+
+    <!-- row 2 -->
+    <g><rect x="80" y="170" width="60" height="60" fill="#f3f4f6" stroke="#9ca3af"/></g>
+    <g><rect x="140" y="170" width="60" height="60" fill="#fef3c7" stroke="#f59e0b"/><text x="170" y="194" text-anchor="middle" font-size="8">g=1</text><text x="170" y="206" text-anchor="middle" font-size="8">h=7</text><text x="170" y="220" text-anchor="middle" font-weight="bold">f=8</text></g>
+    <g><rect x="200" y="170" width="60" height="60" fill="#374151" stroke="#1f2937"/><text x="230" y="205" text-anchor="middle" fill="#fff">wall</text></g>
+    <g><rect x="260" y="170" width="60" height="60" fill="#f3f4f6" stroke="#9ca3af"/></g>
+    <g><rect x="320" y="170" width="60" height="60" fill="#f3f4f6" stroke="#9ca3af"/></g>
+    <g><rect x="380" y="170" width="60" height="60" fill="#f3f4f6" stroke="#9ca3af"/></g>
+    <g><rect x="440" y="170" width="60" height="60" fill="#f3f4f6" stroke="#9ca3af"/></g>
+
+    <!-- legend -->
+    <rect x="520" y="110" width="170" height="230" fill="#ffffff" stroke="#d1d5db"/>
+    <text x="605" y="132" text-anchor="middle" font-weight="bold" fill="#1e3a5f" font-size="11">Key</text>
+    <rect x="530" y="145" width="20" height="20" fill="#dcfce7" stroke="#16a34a"/><text x="558" y="160" font-size="10">Start / Goal</text>
+    <rect x="530" y="175" width="20" height="20" fill="#e0e7ff" stroke="#6366f1"/><text x="558" y="190" font-size="10">On optimal path</text>
+    <rect x="530" y="205" width="20" height="20" fill="#fef3c7" stroke="#f59e0b"/><text x="558" y="220" font-size="10">Explored (rejected)</text>
+    <rect x="530" y="235" width="20" height="20" fill="#374151" stroke="#1f2937"/><text x="558" y="250" font-size="10">Wall</text>
+    <text x="605" y="280" text-anchor="middle" font-size="10" fill="#374151">h(n) = Manhattan</text>
+    <text x="605" y="295" text-anchor="middle" font-size="10" fill="#374151">dist. to G.</text>
+    <text x="605" y="320" text-anchor="middle" font-size="10" fill="#374151">Expand lowest f.</text>
+  </g>
+  <text x="360" y="370" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">A* prefers cells with f=6 along the direct route; the f=8 detour is only considered if blocked.</text>
+</svg>
+
+<h4>When to use A*</h4>
+
+<ul>
+    <li><strong>Video games</strong> &mdash; pathfinding for NPCs and units on tile/grid maps.</li>
+    <li><strong>Robotics</strong> &mdash; motion planning through obstacle fields.</li>
+    <li><strong>GPS / satnav</strong> &mdash; routing through road networks with distance/time heuristics.</li>
+    <li><strong>Puzzle solving</strong> &mdash; 8-puzzle, 15-puzzle (heuristic: Manhattan distance of each tile from its goal position).</li>
+</ul>
+
+<h3>Trade-offs of A*</h3>
+
+<ul>
+    <li><strong>Memory</strong> &mdash; A* stores every expanded node in the open and closed sets; this can balloon in large search spaces. Memory-bounded variants (IDA*, SMA*) exist.</li>
+    <li><strong>Heuristic quality</strong> &mdash; a tight, accurate admissible heuristic dramatically reduces the number of expansions. A loose heuristic (e.g. <code>h = 0</code>) makes A* no better than Dijkstra.</li>
+    <li><strong>Inadmissible heuristics</strong> &mdash; sometimes faster but may return a sub-optimal path. Games often use a scaled-up heuristic (<code>h' = 1.5 h</code>) to trade off a little optimality for much faster searches.</li>
+    <li><strong>Dynamic environments</strong> &mdash; if edge costs change (e.g. traffic updates), the path must be re-planned. <strong>D*</strong> (dynamic A*) and <strong>D* Lite</strong> incrementally repair the existing solution rather than re-running from scratch.</li>
+</ul>
+
+<h3>Dijkstra vs A* Summary</h3>
+
+<table>
+    <tr><th>Aspect</th><th>Dijkstra</th><th>A*</th></tr>
+    <tr><td>Heuristic used?</td><td>No &mdash; uniform-cost</td><td>Yes &mdash; <code>h(n)</code> estimates cost to goal</td></tr>
+    <tr><td>Finds</td><td>Shortest paths to <em>every</em> vertex</td><td>Shortest path to a <em>single</em> goal</td></tr>
+    <tr><td>Optimal?</td><td>Yes (if weights &ge; 0)</td><td>Yes (if heuristic is admissible)</td></tr>
+    <tr><td>Speed</td><td>Explores outward in all directions</td><td>Usually faster &mdash; heuristic directs search</td></tr>
+    <tr><td>Typical use</td><td>Network routing, all-pairs pre-computation</td><td>Games, robotics, GPS single-destination routing</td></tr>
+    <tr><td>Negative edges?</td><td>No &mdash; needs non-negative weights</td><td>No</td></tr>
+</table>
+
+<h2>2.3.5 OCR Pseudocode Conventions</h2>
+
+<p>OCR exam pseudocode follows a fairly consistent style. You do <em>not</em> lose marks for slight syntax variations as long as your intent is clear and the code runs on paper.</p>
+
+<ul>
+    <li><strong>Assignment</strong>: <code>x := 5</code> or <code>x = 5</code>.</li>
+    <li><strong>Indentation</strong>: used to show block structure.</li>
+    <li><strong>Selection</strong>: <code>IF condition THEN</code> &hellip; <code>ELSEIF</code> &hellip; <code>ELSE</code> &hellip; <code>ENDIF</code>.</li>
+    <li><strong>Count loop</strong>: <code>FOR i := 0 TO n - 1</code> &hellip; <code>ENDFOR</code>.</li>
+    <li><strong>Condition loop</strong>: <code>WHILE condition</code> &hellip; <code>ENDWHILE</code>; or <code>REPEAT</code> &hellip; <code>UNTIL condition</code>.</li>
+    <li><strong>Subroutines</strong>: <code>PROCEDURE name(params)</code> &hellip; <code>ENDPROCEDURE</code>; <code>FUNCTION name(params)</code> &hellip; <code>RETURN value</code> &hellip; <code>ENDFUNCTION</code>.</li>
+    <li><strong>Integer division</strong>: <code>DIV</code>; <strong>remainder</strong>: <code>MOD</code>.</li>
+    <li><strong>Output / input</strong>: <code>print(x)</code>, <code>input()</code>.</li>
+    <li><strong>Arrays</strong>: zero-indexed, e.g. <code>list[0]</code>, <code>length(list)</code>.</li>
+</ul>
+
+<h4>A small worked template</h4>
+
+<pre>PROCEDURE printEvens(n)
+    FOR i := 0 TO n
+        IF i MOD 2 = 0 THEN
+            print(i)
+        ENDIF
+    ENDFOR
+ENDPROCEDURE</pre>
+
+<h2>Worked Mini-Questions</h2>
+
+<h3>Q1. State the time complexity of the following algorithm in Big-O notation, and justify.</h3>
+
+<pre>FUNCTION mystery(n)
+    total := 0
+    FOR i := 1 TO n
+        FOR j := i TO n
+            total := total + 1
+        ENDFOR
+    ENDFOR
+    RETURN total
+ENDFUNCTION</pre>
+
+<p><em>Answer:</em> The inner loop runs <code>n</code> times when <code>i = 1</code>, <code>n-1</code> times when <code>i = 2</code>, &hellip;, 1 time when <code>i = n</code>. Total iterations = <code>n + (n-1) + &hellip; + 1 = n(n+1)/2</code>. Dropping constants and lower-order terms: <strong>O(n<sup>2</sup>)</strong>.</p>
+
+<h3>Q2. An unsorted list of 1&nbsp;024 integers is searched for a value. On average, how many comparisons does a linear search make? What about binary search?</h3>
+
+<p><em>Answer:</em> Linear search performs on average about <code>n/2 = 512</code> comparisons. Binary search cannot be used on an unsorted list &mdash; it would have to be sorted first (O(n log n) = ~10&nbsp;000 operations) before achieving <code>log<sub>2</sub>(1024) = 10</code> comparisons per search. Binary search only pays off if many searches are performed against the same list.</p>
+
+<h3>Q3. Name <strong>one</strong> scenario where quick sort's worst case occurs and suggest a mitigation.</h3>
+
+<p><em>Answer:</em> Sorting an already-sorted (or reverse-sorted) list with a first-element or last-element pivot produces maximally unbalanced partitions, giving O(n<sup>2</sup>). Mitigations: random pivot, median-of-three pivot, or switching to introsort (quick sort + heap sort fallback).</p>
+
+<h3>Q4. Explain briefly why A* returns an optimal path when the heuristic is admissible.</h3>
+
+<p><em>Answer:</em> An admissible heuristic never overestimates the true remaining cost, so <code>f(n) = g(n) + h(n)</code> is always a lower bound on the cost of any path through <code>n</code>. A* expands the node with the smallest f-value first; the first time it expands the goal, no unexplored node can possibly improve on that f-value, so the path found is optimal.</p>
+
+<h3>Q5. Trace one pass of bubble sort on [4, 1, 3, 2].</h3>
+
+<p><em>Answer:</em></p>
+<ul>
+    <li>Compare 4 vs 1 &rarr; swap &rarr; [1, 4, 3, 2]</li>
+    <li>Compare 4 vs 3 &rarr; swap &rarr; [1, 3, 4, 2]</li>
+    <li>Compare 4 vs 2 &rarr; swap &rarr; [1, 3, 2, 4]</li>
+</ul>
+<p>After one pass the maximum (4) is in its final position. The list still requires more passes to finish (swap 3 and 2).</p>
+
+<h2>Exam Preparation &mdash; Priority Checklist</h2>
+
+<p>Focus your revision on these high-frequency items:</p>
+
+<ul>
+    <li><strong>Big-O ordering and examples</strong> &mdash; be ready to rank algorithms and justify with one sentence.</li>
+    <li><strong>Binary search vs linear search</strong> &mdash; always state the <em>sorted</em> precondition for binary search.</li>
+    <li><strong>Trace a sort by hand</strong> &mdash; practise writing out each pass/step of bubble, insertion, merge and quick sort on arrays of length 5&ndash;8.</li>
+    <li><strong>Sorting comparison table</strong> &mdash; memorise best/average/worst for all four sorts; memorise stable/in-place status.</li>
+    <li><strong>Dijkstra trace</strong> &mdash; draw the distance table and update it row-by-row. State that weights must be non-negative.</li>
+    <li><strong>A* essentials</strong> &mdash; <code>f = g + h</code>; admissible heuristic; A* = Dijkstra when <code>h = 0</code>; applications (games, GPS, robotics).</li>
+    <li><strong>Pseudocode</strong> &mdash; be fluent enough to write a binary search, a bubble-sort pass and an insertion sort without the slide in front of you.</li>
+</ul>
+
+<div class="exam-tip">Classic long-answer question: "Compare merge sort and quick sort. Explain which you would use and why." A great answer contrasts <em>guarantees</em> (merge sort: O(n log n) always; quick sort: O(n<sup>2</sup>) worst), <em>memory</em> (merge: O(n); quick: O(log n) in-place), <em>stability</em> (merge yes, quick no), then justifies by scenario (embedded: quick; safety-critical: merge; external storage: merge).</div>
+
+<h2>Common Pitfalls and How to Avoid Them</h2>
+
+<table>
+    <tr><th>Pitfall</th><th>Fix</th></tr>
+    <tr><td>Saying binary search works on "any list"</td><td>Always state the list must be <strong>sorted</strong>.</td></tr>
+    <tr><td>Quoting big-O with constants (e.g. "O(2n)")</td><td>Drop constants &mdash; write O(n).</td></tr>
+    <tr><td>Forgetting the early-termination flag in bubble sort best case</td><td>Write the flag; state that O(n) best case depends on it.</td></tr>
+    <tr><td>Confusing stability with in-place</td><td>Stability = equal keys keep their relative order; in-place = O(1) auxiliary space. Independent properties.</td></tr>
+    <tr><td>Claiming Dijkstra works on any graph</td><td>Add: edge weights must be non-negative.</td></tr>
+    <tr><td>Forgetting <code>f = g + h</code> in A*</td><td>Always define both terms: <em>g</em> = known cost from start; <em>h</em> = estimated cost to goal.</td></tr>
+    <tr><td>Saying merge sort is O(n)</td><td>It is O(n log n). O(n) refers to its <em>space</em>.</td></tr>
+    <tr><td>Claiming quick sort is always faster than merge sort</td><td>On average, yes; worst case it is O(n<sup>2</sup>). Mention both.</td></tr>
+</table>
+
+<h2>Cross-Topic Links</h2>
+
+<ul>
+    <li><strong>1.4 Data structures</strong> &mdash; sorted arrays enable binary search; binary search trees offer O(log n) insert/search when balanced; priority queues (binary heaps) underpin Dijkstra and A*.</li>
+    <li><strong>2.1 Computational thinking</strong> &mdash; divide-and-conquer (merge and quick sort) and abstraction (choosing a heuristic in A*) are core computational-thinking patterns.</li>
+    <li><strong>2.2 Programming techniques</strong> &mdash; recursion appears in merge sort, quick sort, binary tree search and the recursive form of binary search.</li>
+    <li><strong>1.3 Exchanging data</strong> &mdash; searching and sorting are fundamental to databases and networks; many SQL operations are essentially sorts and searches over indexed B-trees.</li>
+</ul>
+
+<h2>Quick-Reference &mdash; "Which algorithm do I reach for?"</h2>
+
+<table>
+    <tr><th>Problem</th><th>Algorithm</th><th>Complexity</th></tr>
+    <tr><td>Find a value in an unsorted array</td><td>Linear search</td><td>O(n)</td></tr>
+    <tr><td>Find a value in a sorted array</td><td>Binary search</td><td>O(log n)</td></tr>
+    <tr><td>Find a value in a balanced BST</td><td>Binary tree search</td><td>O(log n)</td></tr>
+    <tr><td>Sort a small array</td><td>Insertion sort</td><td>O(n<sup>2</sup>), fast for small n</td></tr>
+    <tr><td>Sort a large array in memory</td><td>Quick sort (introsort)</td><td>O(n log n) avg</td></tr>
+    <tr><td>Sort with a guaranteed worst case</td><td>Merge sort / heap sort</td><td>O(n log n)</td></tr>
+    <tr><td>Sort with stability required</td><td>Merge sort</td><td>O(n log n)</td></tr>
+    <tr><td>Sort data too big to fit in RAM</td><td>External merge sort</td><td>O(n log n) with disk I/O</td></tr>
+    <tr><td>Shortest path from one vertex to all others</td><td>Dijkstra's algorithm</td><td>O((V+E) log V)</td></tr>
+    <tr><td>Shortest path to a single goal with a heuristic</td><td>A*</td><td>O((V+E) log V), usually faster in practice</td></tr>
+    <tr><td>Graph with negative edges</td><td>Bellman&ndash;Ford</td><td>O(V E)</td></tr>
+</table>
+
+<h2>Glossary</h2>
+
+<table>
+    <tr><th>Term</th><th>Meaning</th></tr>
+    <tr><td>Algorithm</td><td>Finite, unambiguous sequence of steps turning inputs into outputs.</td></tr>
+    <tr><td>Big-O</td><td>Asymptotic upper bound on growth of running time or space.</td></tr>
+    <tr><td>Stable sort</td><td>Preserves the relative order of equal keys.</td></tr>
+    <tr><td>In-place sort</td><td>Uses O(1) or O(log n) auxiliary memory.</td></tr>
+    <tr><td>Adaptive sort</td><td>Runs faster on nearly-sorted input.</td></tr>
+    <tr><td>Relaxation</td><td>Step of updating a shorter known distance to a vertex.</td></tr>
+    <tr><td>Admissible heuristic</td><td>Never overestimates the true remaining cost.</td></tr>
+    <tr><td>Consistent heuristic</td><td>Satisfies the triangle inequality (implies admissibility).</td></tr>
+</table>
+
+<h2>Summary</h2>
+
+<ul>
+    <li>An algorithm is a finite, unambiguous procedure that transforms inputs into outputs.</li>
+    <li>Big-O notation expresses asymptotic worst-case upper bounds on time or space.</li>
+    <li>Linear search is O(n) and works on any list; binary search is O(log n) but <em>requires sorted data</em>.</li>
+    <li>Bubble and insertion sort are O(n<sup>2</sup>) quadratic sorts; merge sort guarantees O(n log n) at the cost of O(n) extra memory; quick sort is O(n log n) on average, O(n<sup>2</sup>) worst, but in-place and usually fastest in practice.</li>
+    <li>Dijkstra's algorithm finds shortest paths in graphs with non-negative weights by greedy relaxation.</li>
+    <li>A* extends Dijkstra with a heuristic <code>h(n)</code>; when <code>h = 0</code>, A* reduces to Dijkstra. A* is widely used in games, robotics and GPS.</li>
+    <li>Space/time trade-offs, stability and adaptivity are all legitimate criteria when choosing between algorithms.</li>
+</ul>
+
+</div>
+</body>
+</html>
