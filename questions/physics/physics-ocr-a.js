@@ -40,7 +40,7 @@ const PHYSICS_OCR_A_QUESTIONS = {
       { q: 'A log-log graph of y against x gives a straight line with gradient 2 and y-intercept ln(3). What is the relationship?', options: ['y = 2x + 3','y = 3x²','y = 3e^(2x)','y = 2 ln(x) + 3'], answer: 1 },
       { q: 'An experiment to measure the speed of sound gives results: 338, 342, 340, 339, 341 m s⁻¹. The true value is 343 m s⁻¹. What can be said about the data?', options: ['High accuracy, low precision','Low accuracy, high precision','High accuracy, high precision','Low accuracy, low precision'], answer: 1 },
       { q: 'In an experiment, the percentage uncertainty in radius r is 3%. If the quantity being calculated is V = (4/3)πr³, what is the percentage uncertainty in V?', options: ['9%','27%','3%','6%'], answer: 0 },
-      { q: 'A student evaluates an experiment and finds the percentage difference from the accepted value is 1.5%, but the total percentage uncertainty is 5%. What should they conclude?', options: ['The random error is 5%','The experiment is invalid','The systematic error is 1.5%','The result is consistent with the accepted value since the percentage difference is within the total uncertainty'], answer: 3 },
+      { q: 'A student evaluates an experiment and finds the percentage difference from the accepted value is 1.5%, but the total percentage uncertainty is 5%. What should they conclude?', options: ['The random error is 5%','The experiment is invalid','The systematic error is 1.5%','The result is consistent with the accepted value since the'], answer: 3 },
     ],
   },
 
@@ -93,7 +93,7 @@ const PHYSICS_OCR_A_QUESTIONS = {
     ],
     red: [
       { q: 'The equation F = Aρv² relates force F to area A, density ρ and speed v. Show this is homogeneous by checking units. Which units does the right-hand side give?', options: ['kg m s⁻²','kg m⁻¹ s⁻²','kg m² s⁻²','kg m⁻² s⁻¹'], answer: 0 },
-      { q: 'An equation is given as v = 2πr/T. A student claims this proves the equation must be correct. Why is this claim invalid?', options: ['Homogeneity checks can show an equation is wrong, but cannot prove it is correct — the equation could be missing a dimensionless constant','The equation is actually incorrect','The equation has the wrong units','The student has not checked the dimensions'], answer: 0 },
+      { q: 'An equation is given as v = 2πr/T. A student claims this proves the equation must be correct. Why is this claim invalid?', options: ['Homogeneity checks can show an equation is wrong','The equation is actually incorrect','The equation has the wrong units','The student has not checked the dimensions'], answer: 0 },
       { q: 'Estimate the number of atoms in a human body (mass ~70 kg, average atomic mass ~10⁻²⁶ kg). Which order of magnitude is closest?', options: ['10²⁰','10²⁵','10²⁸','10³⁵'], answer: 2 },
       { q: 'Three coplanar forces of 5 N, 8 N, and 10 N act on a point. The 5 N and 8 N forces are perpendicular. The 10 N force acts at 180° to the resultant of the other two. What is the net force?', options: ['0.6 N away from the 10 N direction','0.6 N in the direction of the resultant of 5 N and 8 N','9.4 N in the direction of the 10 N force','23 N'], answer: 0 },
       { q: 'The drag force on a sphere is given by F = kηrv, where η is viscosity (Pa s), r is radius, and v is speed. What are the units of the dimensionless constant k?', options: ['m⁻¹ s','No units — k is dimensionless','Pa s m','kg m s⁻¹'], answer: 1 },

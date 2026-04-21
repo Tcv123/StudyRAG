@@ -225,7 +225,7 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
     red: [
       { q: 'In the SN2 reaction of (R)-2-bromobutane with NaOH, the product is:', options: ['But-2-ene','(S)-butan-2-ol (inversion of configuration)','(R)-butan-2-ol','A racemic mixture'], answer: 1 },
       { q: 'The SN1 reaction of a chiral halogenoalkane produces a racemic mixture because:', options: ['The nucleophile attacks from one side only','The planar carbocation intermediate can be attacked from either side','No bonds are broken','The reaction is concerted'], answer: 1 },
-      { q: 'When but-1-ene reacts with HBr, the major product is 2-bromobutane. This is because:', options: ['The primary carbocation is more stable','The reaction is SN2','The secondary carbocation intermediate is more stable due to inductive effects','Br- attacks the terminal carbon'], answer: 2 },
+      { q: 'When but-1-ene reacts with HBr, the major product is 2-bromobutane. This is because:', options: ['The primary carbocation is more stable','The reaction is SN2','The secondary carbocation intermediate is more stable due to','Br- attacks the terminal carbon'], answer: 2 },
       { q: 'Cahn-Ingold-Prelog priority rules assign priority based on:', options: ['Atomic mass','Electronegativity','Atomic number of directly attached atoms','Bond length'], answer: 2 },
       { q: 'A compound with one chiral centre has how many optical isomers?', options: ['4','1','3','2'], answer: 3 },
       { q: 'Which factor most affects the rate of nucleophilic substitution in halogenoalkanes?', options: ['The boiling point','The C-X bond enthalpy','The colour of the halogenoalkane','The molecular mass'], answer: 1 },
@@ -289,7 +289,7 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
       { q: 'A polyprotic acid like H2SO4 has:', options: ['Two Ka values (Ka1 >> Ka2)','One Ka value','No Ka values as it is strong','Equal Ka1 and Ka2'], answer: 0 },
       { q: 'The pH of a 0.05 mol dm-3 solution of Ba(OH)2 is:', options: ['1','12','13','13.0'], answer: 2 },
       { q: 'In a Born-Haber cycle, the most endothermic step for NaCl is typically:', options: ['First ionisation energy of Na','Atomisation of Na','Bond dissociation of Cl2','Electron affinity of Cl'], answer: 0 },
-      { q: 'The enthalpy of hydration of Mg2+ is more exothermic than Na+ because:', options: ['Mg2+ is larger','Mg2+ has a higher charge density attracting water molecules more strongly','Na+ is more electronegative','Mg2+ has a smaller charge'], answer: 1 },
+      { q: 'The enthalpy of hydration of Mg2+ is more exothermic than Na+ because:', options: ['Mg2+ is larger','Mg2+ has a higher charge density attracting water molecules','Na+ is more electronegative','Mg2+ has a smaller charge'], answer: 1 },
       { q: 'For the dissolution of a salt, deltaG(solution) = lattice enthalpy + sum of hydration enthalpies. If lattice enthalpy = +780 kJ/mol and hydration enthalpies sum to -790 kJ/mol, then deltaH(solution) is:', options: ['+10 kJ/mol','+1570 kJ/mol','-10 kJ/mol','-1570 kJ/mol'], answer: 2 },
       { q: 'In a titration of 25.0 cm3 of 0.1 mol dm-3 CH3COOH with 0.1 mol dm-3 NaOH, the volume of NaOH at the equivalence point is:', options: ['12.5 cm3','25.0 cm3','50.0 cm3','100 cm3'], answer: 1 }
     ]
@@ -344,8 +344,8 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
       { q: 'In the 1H NMR spectrum of ethanol (CH3CH2OH), without exchange, the OH peak appears as a:', options: ['Singlet','Triplet','Quartet','Doublet'], answer: 1 },
       { q: 'The chemical shift of an aldehyde proton (-CHO) in 1H NMR is approximately:', options: ['0-1 ppm','6-8 ppm','9-10 ppm','2-3 ppm'], answer: 2 },
       { q: 'A compound C4H8O2 shows a broad O-H at 2500-3300 cm-1 and C=O at 1710 cm-1 in IR. In 1H NMR it shows a triplet and a quartet. The compound is:', options: ['Propanoic acid (incorrect formula)','Butanoic acid','Ethyl ethanoate','Methyl propanoate'], answer: 1 },
-      { q: 'Benzene reacts with Br2 only in the presence of AlBr3 (not without a catalyst) because:', options: ['The delocalised ring is very stable and requires generation of the Br+ electrophile','Br2 is too small to react','Benzene is too reactive','AlBr3 provides energy'], answer: 0 },
-      { q: 'The mechanism of electrophilic substitution on benzene involves:', options: ['Homolytic fission then radical attack','The electrophile attacking the pi system, forming a Wheland intermediate, then loss of H+','Nucleophilic attack on carbon','Addition across a double bond'], answer: 1 },
+      { q: 'Benzene reacts with Br2 only in the presence of AlBr3 (not without a catalyst) because:', options: ['The delocalised ring is very stable and requires generation','Br2 is too small to react','Benzene is too reactive','AlBr3 provides energy'], answer: 0 },
+      { q: 'The mechanism of electrophilic substitution on benzene involves:', options: ['Homolytic fission then radical attack','The electrophile attacking the pi system','Nucleophilic attack on carbon','Addition across a double bond'], answer: 1 },
       { q: 'A compound has molecular formula C3H7NO. It shows an N-H stretch and C=O at 1680 cm-1. It is most likely:', options: ['N-methylethanamide','Propanamide','An amino acid','Propanenitrile'], answer: 1 },
       { q: 'In 13C NMR, the number of peaks for propanone (CH3COCH3) is:', options: ['2','1','6','3'], answer: 0 },
       { q: 'The coupling constant J in NMR:', options: ['Is measured in ppm','Changes with temperature','Is independent of field strength and indicates the type of coupling','Depends on the magnetic field strength'], answer: 2 },

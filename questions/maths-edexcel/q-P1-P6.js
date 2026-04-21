@@ -110,13 +110,13 @@ const EDEXCEL_MCQ_P1_P6 = {
       { q: 'If \\(|x - a| < b\\), the solution is:', options: ['\\(a - b < x < a + b\\)', '\\(x < a - b\\) or \\(x > a + b\\)', '\\(-b < x < b\\)', '\\(a < x < b\\)'], answer: 0 },
     ],
     red: [
-      { q: 'Solve \\(|x^2 - 3x - 4| = 4\\).', options: ['\\(x = 0, 4, \\frac{3\\pm\\sqrt{17}}{2}\\) combined as \\(x=0, x=4, x=\\frac{3+\\sqrt{17}}{2}, x=\\frac{3-\\sqrt{17}}{2}\\)','\\(x=0\\) or \\(x=4\\)','\\(x=4\\) or \\(x=-1\\)','\\(x = \\pm 4\\)'], answer: 0 },
+      { q: 'Solve \\(|x^2 - 3x - 4| = 4\\).', options: ['\\(x = 0, 4, \\frac{3\\pm\\sqrt{17}}{2}\\) combined as \\(x=0, x=4','\\(x=0\\) or \\(x=4\\)','\\(x=4\\) or \\(x=-1\\)','\\(x = \\pm 4\\)'], answer: 0 },
       { q: 'For \\(f(x) = \\dfrac{x+3}{x-1}\\), solve \\(f(x) > 2\\).', options: ['\\(1 < x < 5\\)','\\(x > 5\\) or \\(x < 1\\)','\\(x > 5\\)','\\(x < 5\\)'], answer: 0 },
       { q: 'Find all solutions to \\(x^2 + y^2 = 25\\) and \\(y = x + 1\\) where both coordinates are integers.', options: ['\\((3,4)\\) and \\((-4,-3)\\)','\\((3,4)\\) only','\\((4,3)\\) and \\((-3,-4)\\)','\\((3,4)\\) and \\((-3,-4)\\)'], answer: 0 },
       { q: 'Solve \\(|2x-1| + |x+1| = 4\\).', options: ['\\(x = 1\\) or \\(x = -\\frac{5}{3}\\)','\\(x = \\frac{4}{3}\\) or \\(x = -2\\)','\\(x = 2\\) or \\(x = -2\\)','\\(x = \\frac{4}{3}\\) or \\(x = -\\frac{4}{3}\\)'], answer: 1 },
       { q: 'The system \\(y = x^2 - k\\) and \\(y = 3x\\) has no real intersection. The range of \\(k\\) is:', options: ['\\(k < -\\frac{9}{4}\\)','\\(k > -\\frac{9}{4}\\)','\\(k < \\frac{9}{4}\\)','\\(k > \\frac{9}{4}\\)'], answer: 0 },
       { q: 'Find the set of values of \\(x\\) satisfying \\(x^2 < 9\\) and \\(x^2 - x - 6 \\geq 0\\).', options: ['\\(x \\leq -2\\) or \\(x \\geq 3\\)','\\(-3 < x < -2\\)','\\(-3 < x \\leq -2\\)','\\(-2 \\leq x < 3\\)'], answer: 2 },
-      { q: 'Solve \\(\\dfrac{1}{|x|} < 2\\).', options: ['\\(|x| > \\frac{1}{2}\\), i.e., \\(x > \\frac{1}{2}\\) or \\(x < -\\frac{1}{2}\\)','\\(-\\frac{1}{2} < x < \\frac{1}{2}\\)','\\(x > \\frac{1}{2}\\)','\\(x < \\frac{1}{2}\\)'], answer: 0 },
+      { q: 'Solve \\(\\dfrac{1}{|x|} < 2\\).', options: ['\\(|x| > \\frac{1}{2}\\), i.e., \\(x > \\frac{1}{2}\\) or \\(x <','\\(-\\frac{1}{2} < x < \\frac{1}{2}\\)','\\(x > \\frac{1}{2}\\)','\\(x < \\frac{1}{2}\\)'], answer: 0 },
     ]
   },
 

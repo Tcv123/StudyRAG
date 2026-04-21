@@ -101,7 +101,7 @@ const FM_OCR_B_MCQ = {
   ],
   red: [
     { q: 'Shortest distance from point \\(\\mathbf{p}\\) to line \\(\\mathbf{r}=\\mathbf{a}+\\lambda\\mathbf{d}\\):', options: ['\\(|\\mathbf{p}-\\mathbf{a}|\\)','\\(|(\\mathbf{p}-\\mathbf{a})\\cdot\\mathbf{d}|\\)','\\(|\\mathbf{d}|\\)','\\(|(\\mathbf{p}-\\mathbf{a})\\times\\mathbf{d}|/|\\mathbf{d}|\\)'], answer: 3 },
-    { q: 'Two skew lines: shortest distance uses:', options: ['\\(|(\\mathbf{a}_2-\\mathbf{a}_1)\\cdot(\\mathbf{d}_1\\times\\mathbf{d}_2)|/|\\mathbf{d}_1\\times\\mathbf{d}_2|\\)','\\(|\\mathbf{a}_2-\\mathbf{a}_1|\\)','Distance from midpoint','\\(|\\mathbf{d}_1\\times\\mathbf{d}_2|\\)'], answer: 0 },
+    { q: 'Two skew lines: shortest distance uses:', options: ['\\(|(\\mathbf{a}_2-\\mathbf{a}_1)\\cdot(\\mat','\\(|\\mathbf{a}_2-\\mathbf{a}_1|\\)','Distance from midpoint','\\(|\\mathbf{d}_1\\times\\mathbf{d}_2|\\)'], answer: 0 },
     { q: 'Area of triangle with vertices \\(\\mathbf{A},\\mathbf{B},\\mathbf{C}\\):', options: ['\\(\\mathbf{A}+\\mathbf{B}+\\mathbf{C}\\)','\\(\\tfrac{1}{2}|\\overrightarrow{AB}\\times\\overrightarrow{AC}|\\)','\\(\\tfrac{1}{2}|\\overrightarrow{AB}|\\)','\\(|\\overrightarrow{AB}\\times\\overrightarrow{AC}|\\)'], answer: 1 },
     { q: 'The equation of plane through 3 non-collinear points uses:', options: ['Average of points','Normal = (B−A) × (C−A)','Sum of vectors','Dot product of sides'], answer: 1 },
   ],

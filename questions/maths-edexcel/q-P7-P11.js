@@ -31,7 +31,7 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'Prove: which step correctly starts \\(\\dfrac{\\cos^2\\theta}{1 + \\sin\\theta}\\)?', options: ['\\(\\dfrac{1-\\sin^2\\theta}{1+\\sin\\theta}\\)', '\\(\\dfrac{\\sin^2\\theta-1}{1+\\sin\\theta}\\)', '\\(\\dfrac{1-\\cos^2\\theta}{1+\\sin\\theta}\\)', '\\(\\dfrac{1+\\sin^2\\theta}{1+\\sin\\theta}\\)'], answer: 0 },
     ],
     red: [
-      { q: 'The general solution of \\(\\sin\\theta = k\\) (in degrees) is:', options: ['\\(\\theta = \\pm \\sin^{-1}(k) + 360n\\)','\\(\\theta = \\sin^{-1}(k) + 180n\\)','\\(\\theta = \\sin^{-1}(k) + 360n\\) or \\(\\theta = 180 - \\sin^{-1}(k) + 360n\\)','\\(\\theta = \\sin^{-1}(k) + 90n\\)'], answer: 2 },
+      { q: 'The general solution of \\(\\sin\\theta = k\\) (in degrees) is:', options: ['\\(\\theta = \\pm \\sin^{-1}(k) + 360n\\)','\\(\\theta = \\sin^{-1}(k) + 180n\\)','\\(\\theta = \\sin^{-1}(k) + 360n\\) or \\(\\theta = 180 -','\\(\\theta = \\sin^{-1}(k) + 90n\\)'], answer: 2 },
       { q: 'Express \\(5\\sin x - 12\\cos x\\) in the form \\(R\\sin(x - \\alpha)\\). What is \\(R\\)?', options: ['13','17','\\(\\sqrt{119}\\)','7'], answer: 0 },
       { q: 'Solve \\(2\\sin^2 x + 3\\cos x - 3 = 0\\) for \\(0 \\leq x \\leq 2\\pi\\). The number of solutions is:', options: ['2','3','1','4'], answer: 1 },
       { q: 'If \\(\\cos 2x = 1 - 2\\sin^2 x\\), which quadratic in \\(\\sin x\\) is equivalent to \\(\\cos 2x + \\sin x = 0\\)?', options: ['\\(2\\sin^2 x - \\sin x - 1 = 0\\)','\\(2\\sin^2 x + \\sin x - 1 = 0\\)','\\(2\\sin^2 x - \\sin x + 1 = 0\\)','\\(\\sin^2 x - \\sin x - 1 = 0\\)'], answer: 0 },
