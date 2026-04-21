@@ -543,6 +543,7 @@ const BUNDLE_MAP = {
   'Biology_OCR B':                ['questions/biology/biology-ocr-b-practice.js'],
   'Geography_AQA':                ['questions/geography-aqa/geography-aqa-practice.js'],
   'Geography_Edexcel':            ['questions/geography-edexcel/geography-edexcel-practice.js'],
+  'Geography_Eduqas':             ['questions/geography-eduqas/geography-eduqas-practice.js'],
   'Geography_OCR':                ['questions/geography-ocr/geography-ocr-practice.js'],
   'Mathematics_AQA':              ['questions/maths-aqa/maths-aqa-practice.js'],
   'Mathematics_OCR':              ['questions/maths-ocr/maths-ocr-practice.js'],
@@ -626,6 +627,7 @@ const PRACTICE_MAP = {
   'Biology_OCR B': () => typeof BIOLOGY_OCR_B_PRACTICE !== 'undefined' ? BIOLOGY_OCR_B_PRACTICE : null,
   'Geography_AQA': () => typeof GEOGRAPHY_AQA_PRACTICE !== 'undefined' ? GEOGRAPHY_AQA_PRACTICE : null,
   'Geography_Edexcel': () => typeof GEOGRAPHY_EDEXCEL_PRACTICE !== 'undefined' ? GEOGRAPHY_EDEXCEL_PRACTICE : null,
+  'Geography_Eduqas': () => typeof GEOGRAPHY_EDUQAS_PRACTICE !== 'undefined' ? GEOGRAPHY_EDUQAS_PRACTICE : null,
   'Geography_OCR': () => typeof GEOGRAPHY_OCR_PRACTICE !== 'undefined' ? GEOGRAPHY_OCR_PRACTICE : null,
   'Mathematics_AQA': () => typeof MATHS_AQA_PRACTICE !== 'undefined' ? MATHS_AQA_PRACTICE : null,
   'Mathematics_OCR': () => typeof MATHS_OCR_PRACTICE !== 'undefined' ? MATHS_OCR_PRACTICE : null,
@@ -1009,6 +1011,28 @@ const SUBJECT_TOPICS = {
         { id: 'T6', name: 'Diverse Places', sub: 'Demographics, identity, regeneration' },
         { id: 'T7', name: 'Superpowers', sub: 'Characteristics, shifts in power, geopolitics' },
         { id: 'T8', name: 'Health, Human Rights & Intervention', sub: 'Global health, development, intervention' },
+      ]},
+    ]
+  },
+  'Geography_Eduqas': {
+    sections: [
+      { label: 'Eduqas — Physical Landscapes & Environments', topics: [
+        { id: '1.1', name: 'Coastal Landscapes', sub: 'Waves, erosion, transport, landforms, management' },
+        { id: '1.2', name: 'River Landscapes', sub: 'Long profile, erosion, deposition, flooding' },
+        { id: '1.3', name: 'Glaciated Landscapes', sub: 'Glacial processes, landforms, land use' },
+        { id: '1.4', name: 'Weather & Climate', sub: 'UK weather, extreme weather, climate factors' },
+        { id: '1.5', name: 'Tropical Rainforests', sub: 'Climate, nutrient cycle, adaptations, deforestation' },
+        { id: '1.6', name: 'Hot Deserts', sub: 'Climate, adaptations, challenges, opportunities' },
+      ]},
+      { label: 'Eduqas — Urbanisation & Development', topics: [
+        { id: '2.1', name: 'Urbanisation & Urban Change', sub: 'Global urbanisation, megacities, issues, solutions' },
+        { id: '2.2', name: 'UK Cities', sub: 'UK urban growth, regeneration, sustainability' },
+        { id: '2.3', name: 'Global Development', sub: 'Measuring development, DTM, aid, globalisation' },
+      ]},
+      { label: 'Eduqas — Environmental Challenges', topics: [
+        { id: '3.1', name: 'Tectonic Hazards', sub: 'Plate tectonics, volcanoes, earthquakes, management' },
+        { id: '3.2', name: 'Climate Change', sub: 'Causes, evidence, impacts, mitigation' },
+        { id: '3.3', name: 'Water Management', sub: 'Water supply, demand, security, sustainable use' },
       ]},
     ]
   },

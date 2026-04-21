@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../supabase-config.js"></script>
+  <script src="../study-tracker.js"></script>
   <script src="../questions/geography-eduqas/geography-eduqas.js"></script>
   <script src="../questions/geography-eduqas/geography-eduqas-written.js"></script>
   <style>
@@ -474,7 +475,7 @@ async function saveResult(rag, results) {
       const subjRag = (green/total) >= 0.7 ? 'green' : (red/total) >= 0.4 ? 'red' : 'amber';
       await supabaseClient.from('user_subjects').update({ rag_status: subjRag }).eq('user_id', user.id).eq('subject', 'Geography').eq('exam_board', 'Eduqas');
     }
-  } catch (err) { console.error('SAVE error', err); }
+  } catch (err) { console.error('SAVE error', err); if (window.notifyError) window.notifyError('Progress not saved — please check your connection and try again.'); }
 }
 
 function showError(msg) {

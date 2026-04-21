@@ -28,7 +28,7 @@
     'Computer Science':    ['AQA', 'OCR'],
     'Physics':             ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
     'Economics':           ['AQA', 'Edexcel A', 'Edexcel B', 'OCR'],
-    'Geography':           ['AQA', 'Edexcel', 'OCR'],
+    'Geography':           ['AQA', 'Edexcel', 'Eduqas', 'OCR'],
     'English Language':    ['AQA', 'Edexcel'],
   };
 

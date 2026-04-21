@@ -10,8 +10,11 @@
   const TICK_MS           = 30000;    // tick every 30 seconds
   const IDLE_TIMEOUT_MS   = 60000;    // inactive after 60s of no interaction
 
-  const today     = new Date().toISOString().split('T')[0];
-  const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+  // Local-date helper — 'en-CA' gives YYYY-MM-DD in user's local timezone,
+  // so a user studying at 11pm doesn't accidentally get credited to tomorrow.
+  const localDate = d => d.toLocaleDateString('en-CA');
+  const today     = localDate(new Date());
+  const yesterday = localDate(new Date(Date.now() - 86400000));
 
   // Reset counters if it's a new day
   if (localStorage.getItem('study_date') !== today) {
@@ -142,4 +145,46 @@
 
   // Expose seconds for any page that wants to show progress
   window.getStudySeconds = () => parseInt(localStorage.getItem('study_seconds') || '0');
+
+  // ── Global error UI ───────────────────────────────────────────────────────
+  // Shared red toast for failures — exposed so pages can report errors
+  // from Supabase writes, network issues, etc.
+  let _errToastActive = false;  // avoid stacking multiple toasts
+  function notifyError(msg) {
+    if (_errToastActive) return;
+    _errToastActive = true;
+    const toast = document.createElement('div');
+    toast.setAttribute('role', 'alert');
+    toast.style.cssText = `
+      position: fixed; bottom: 28px; right: 28px; z-index: 10000;
+      background: #DC2626; color: #fff; padding: 13px 20px;
+      border-radius: 12px; font-family: 'DM Sans', sans-serif;
+      font-size: 14px; font-weight: 600; max-width: 360px;
+      box-shadow: 0 4px 20px rgba(220,38,38,0.35);
+      animation: _toastIn 0.3s ease both;
+    `;
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => { toast.remove(); _errToastActive = false; }, 5000);
+  }
+  window.notifyError = notifyError;
+
+  // Safety net: surface any unhandled promise rejection as a toast so
+  // failed Supabase calls / network errors don't disappear silently.
+  window.addEventListener('unhandledrejection', (event) => {
+    console.error('Unhandled rejection:', event.reason);
+    const msg = (event.reason && event.reason.message) || '';
+    // Ignore benign auth-session-missing errors on public pages
+    if (/auth session missing/i.test(msg)) return;
+    notifyError('Something went wrong — please try again.');
+  });
+
+  // Tell the user when they go offline so actions don't vanish into the void
+  window.addEventListener('offline', () => {
+    notifyError("You're offline — changes won't save until you reconnect.");
+  });
+  window.addEventListener('online', () => {
+    // Reuse the green toast for the reconnect message
+    showToast('Back online ✓');
+  });
 })();
