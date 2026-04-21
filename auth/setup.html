@@ -395,9 +395,14 @@
       .level-grid { grid-template-columns: 1fr; }
       .subjects-grid { grid-template-columns: repeat(2, 1fr); }
     }
+
+    /* Hide the card + progress until we know whether this is a fresh
+       setup or an edit — otherwise the Avatar step flashes in first. */
+    body.booting .progress-wrap,
+    body.booting .card { visibility: hidden; }
   </style>
 </head>
-<body>
+<body class="booting">
 <div class="page">
 
   <!-- Logo -->
@@ -1090,6 +1095,8 @@ async function save() {
     document.querySelector('#ps3 .p-num').textContent = '3';
     goToStep1();
   }
+
+  document.body.classList.remove('booting');
 })();
 </script>
 </body>
