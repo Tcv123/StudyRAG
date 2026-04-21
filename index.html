@@ -630,9 +630,11 @@
       <a href="pricing.html" class="nav-anchor">Pricing</a>
       <a href="support.html" class="nav-anchor">Support</a>
     </div>
-    <div class="nav-right">
-      <a href="auth/login.html" class="nav-btn nav-ghost">Sign in</a>
-      <a href="auth/register.html" class="nav-btn nav-fill">Register</a>
+    <div class="nav-right" id="navRight">
+      <a href="auth/login.html" class="nav-btn nav-ghost" data-auth="out">Sign in</a>
+      <a href="auth/register.html" class="nav-btn nav-fill" data-auth="out">Register</a>
+      <a href="Dashboard.html" class="nav-btn nav-ghost" data-auth="in" style="display:none">Dashboard</a>
+      <a href="#" id="signOutBtn" class="nav-btn nav-fill" data-auth="in" style="display:none">Sign out</a>
     </div>
   </div>
 </nav>
@@ -645,8 +647,9 @@
       <h1>Know exactly what<br>to <em>study next</em></h1>
       <p class="hero-sub">RAG Learning tracks your confidence across every topic using a Red–Amber–Green system, so you always know what needs your attention.</p>
       <div class="hero-btns">
-        <a href="auth/register.html" class="btn btn-blue">Create free account</a>
-        <a href="auth/login.html" class="btn btn-white">Sign in</a>
+        <a href="auth/register.html" class="btn btn-blue" data-auth="out">Create free account</a>
+        <a href="auth/login.html" class="btn btn-white" data-auth="out">Sign in</a>
+        <a href="Dashboard.html" class="btn btn-blue" data-auth="in" style="display:none">Go to Dashboard</a>
       </div>
     </div>
     <div class="hero-right">
@@ -977,12 +980,35 @@
       <h2>Ready to revise smarter?</h2>
       <p>Create a free account and know exactly what to study — no guessing, no wasted time.</p>
       <div class="cta-btns">
-        <a href="auth/register.html" class="btn btn-blue">Create free account</a>
-        <a href="auth/login.html" class="btn btn-white">Sign in</a>
+        <a href="auth/register.html" class="btn btn-blue" data-auth="out">Create free account</a>
+        <a href="auth/login.html" class="btn btn-white" data-auth="out">Sign in</a>
+        <a href="Dashboard.html" class="btn btn-blue" data-auth="in" style="display:none">Go to Dashboard</a>
       </div>
     </div>
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script>
+  (async () => {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    const loggedIn = !!session;
+    document.querySelectorAll('[data-auth="in"]').forEach(el => {
+      el.style.display = loggedIn ? '' : 'none';
+    });
+    document.querySelectorAll('[data-auth="out"]').forEach(el => {
+      el.style.display = loggedIn ? 'none' : '';
+    });
+    const signOutBtn = document.getElementById('signOutBtn');
+    if (signOutBtn) {
+      signOutBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        await supabaseClient.auth.signOut();
+        window.location.reload();
+      });
+    }
+  })();
+</script>
 </body>
 </html>
