@@ -1137,10 +1137,12 @@ function renderSubjectsProgress(subjects, topicRows) {
       ? `${tested}/${total} topics tested`
       : (cardRag === 'pending' ? 'Not yet diagnosed' : cardRag);
 
-    const curGrade = s.current_grade;
+    // 'none' = user flagged "no grade yet" during setup; show target only.
+    const curGrade = s.current_grade === 'none' ? null : s.current_grade;
     const tgtGrade = s.target_grade;
     const gradeStr = curGrade && tgtGrade
       ? `Grade ${curGrade} → ${tgtGrade}`
+      : tgtGrade ? `Target ${tgtGrade}`
       : curGrade ? `Grade ${curGrade}` : '';
 
     return `

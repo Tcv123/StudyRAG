@@ -693,11 +693,14 @@ function getGradeList() {
 
 function setCurrentGrade(name, grade) {
   subjectCurrentGrade[name] = grade;
-  const GRADES = getGradeList();
-  if (grade === GRADES[0]) subjectTargetGrade[name] = GRADES[0];
-  const curIdx = GRADES.indexOf(grade);
-  const tgtIdx = GRADES.indexOf(subjectTargetGrade[name]);
-  if (subjectTargetGrade[name] != null && tgtIdx > curIdx) subjectTargetGrade[name] = grade;
+  // 'none' = user hasn't sat an exam yet; don't clamp the target against it.
+  if (grade !== 'none') {
+    const GRADES = getGradeList();
+    if (grade === GRADES[0]) subjectTargetGrade[name] = GRADES[0];
+    const curIdx = GRADES.indexOf(grade);
+    const tgtIdx = GRADES.indexOf(subjectTargetGrade[name]);
+    if (subjectTargetGrade[name] != null && tgtIdx > curIdx) subjectTargetGrade[name] = grade;
+  }
   renderGrades();
   updateSaveBtn();
 }
@@ -863,9 +866,11 @@ function renderGrades() {
   const s      = selectedSubjects[currentGradeIndex];
   const cur    = norm(subjectCurrentGrade[s.name]);
   const tgt    = norm(subjectTargetGrade[s.name]);
-  const maxed  = isMaxGrade(cur);
+  const noCur  = cur === 'none';
+  const maxed  = !noCur && isMaxGrade(cur);
   const curIdx = gradeIndex(cur);
-  const validTargets = cur != null ? GRADES.filter((g, i) => i <= curIdx) : GRADES;
+  // No current grade ⇒ any target is fair game; otherwise cap at the current.
+  const validTargets = noCur ? GRADES : (cur != null ? GRADES.filter((g, i) => i <= curIdx) : GRADES);
   const incomplete   = cur == null || tgt == null;
   const flagRed      = incomplete && showGradeValidation;
 
@@ -894,6 +899,10 @@ function renderGrades() {
                    onclick="setCurrentGrade('${s.name}',${gradeVal(g)})">
                 ${g}
               </div>`).join('')}
+            <div class="board-pill ${noCur ? 'active' : ''}" style="padding:6px 12px;"
+                 onclick="setCurrentGrade('${s.name}','none')">
+              No grade yet
+            </div>
           </div>
         </div>
         <div style="flex:1;min-width:140px;">
