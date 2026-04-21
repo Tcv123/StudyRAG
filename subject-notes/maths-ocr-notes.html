@@ -375,7 +375,7 @@
   const first = profile?.first_name || '';
   const last  = profile?.last_name  || '';
   document.getElementById('sidebarName').textContent    = `${first} ${last}`.trim() || user.email;
-  queueMicrotask(() => { if (profile?.avatar_url) document.getElementById('avatarInitials').innerHTML = '<img src="' + profile.avatar_url + '" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;">'; });
+  queueMicrotask(() => { if (profile?.avatar_url) { const _av = document.getElementById('avatarInitials'), _img = document.createElement('img'); _img.src = profile.avatar_url; _img.alt = ''; _img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;'; _av.replaceChildren(_img); } });
   document.getElementById('avatarInitials').textContent = ((first[0]||'')+(last[0]||'')).toUpperCase() || '?';
   const { data: rows } = await supabaseClient.from('topic_progress').select('topic, rag_status')
     .eq('user_id', user.id).eq('subject', 'Mathematics').eq('exam_board', 'OCR');

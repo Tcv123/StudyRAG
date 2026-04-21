@@ -724,7 +724,7 @@ async function load() {
   const firstName = profile?.first_name || '';
   const lastName  = profile?.last_name  || '';
   document.getElementById('sidebarName').textContent    = `${firstName} ${lastName}`.trim();
-  queueMicrotask(() => { if (profile?.avatar_url) document.getElementById('avatarInitials').innerHTML = '<img src="' + profile.avatar_url + '" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;">'; });
+  queueMicrotask(() => { if (profile?.avatar_url) { const _av = document.getElementById('avatarInitials'), _img = document.createElement('img'); _img.src = profile.avatar_url; _img.alt = ''; _img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;'; _av.replaceChildren(_img); } });
   document.getElementById('avatarInitials').textContent = ((firstName[0]||'')+(lastName[0]||'')).toUpperCase() || '?';
 
   const list = subjects || [];
