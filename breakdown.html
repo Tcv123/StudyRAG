@@ -125,6 +125,36 @@
     .subject-summary-pill.amber { background: var(--amber-bg); color: var(--amber); }
     .subject-summary-pill.red { background: var(--red-bg); color: var(--red); }
     .subject-summary-pill.pending { background: var(--surface2); color: var(--muted2); }
+    .subject-summary-pill.practice { background: var(--accent-dim); color: var(--accent-dark); }
+
+    /* ── PAST PRACTICE TESTS ── */
+    .past-tests {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 14px 16px; margin-bottom: 8px;
+    }
+    .past-tests-title { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .past-tests-count { font-weight: 500; color: var(--muted2); text-transform: none; letter-spacing: 0; }
+    .past-test-row {
+      display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 12px;
+      padding: 8px 4px; border-top: 1px solid var(--border); font-size: 13px;
+    }
+    .past-test-row:first-of-type { border-top: none; }
+    .past-test-score {
+      font-family: var(--font-display); font-size: 15px; min-width: 46px; text-align: center;
+      padding: 4px 8px; border-radius: 8px;
+    }
+    .past-test-score.green { background: var(--green-bg); color: var(--green); }
+    .past-test-score.amber { background: var(--amber-bg); color: var(--amber); }
+    .past-test-score.red { background: var(--red-bg); color: var(--red); }
+    .past-test-topic { font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .past-test-meta { font-size: 11px; color: var(--muted); }
+    .past-test-date { font-size: 11px; color: var(--muted2); white-space: nowrap; }
+    .past-tests-more {
+      display: block; margin-top: 10px; text-align: center; font-size: 12px;
+      color: var(--accent-dark); cursor: pointer; background: none; border: none; font-family: var(--font-body);
+      padding: 4px; width: 100%;
+    }
+    .past-tests-more:hover { text-decoration: underline; }
     .subject-toggle {
       width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--border);
       background: var(--surface2); display: flex; align-items: center; justify-content: center;
@@ -929,6 +959,7 @@ function toggleSection(idx) {
 
 let allTopicData = [];
 let allSubjectData = [];
+let practiceHistory = [];
 let activeFilter = 'all';
 let activeSubject = null;
 
@@ -1078,7 +1109,7 @@ function renderTopics() {
   // Group by subject
   const groups = {};
   filtered.forEach(t => {
-    if (!groups[t.subjectLabel]) groups[t.subjectLabel] = { emoji: t.subjectEmoji, topics: [] };
+    if (!groups[t.subjectLabel]) groups[t.subjectLabel] = { emoji: t.subjectEmoji, subject: t.subject, board: t.board, topics: [] };
     groups[t.subjectLabel].topics.push(t);
   });
 
@@ -1090,11 +1121,18 @@ function renderTopics() {
     const r = group.topics.filter(t => t.rag === 'red').length;
     const p = group.topics.filter(t => t.rag === 'pending').length;
 
+    const subjAttempts = practiceHistory.filter(h => h.subject === group.subject && h.board === group.board);
+    const practiceCount = subjAttempts.length;
+    const avgPct = practiceCount
+      ? Math.round(subjAttempts.reduce((s, h) => s + (h.pct || 0), 0) / practiceCount)
+      : 0;
+
     const pills = [
       g ? `<span class="subject-summary-pill green">${g} green</span>` : '',
       a ? `<span class="subject-summary-pill amber">${a} amber</span>` : '',
       r ? `<span class="subject-summary-pill red">${r} red</span>` : '',
       p ? `<span class="subject-summary-pill pending">${p} not tested</span>` : '',
+      practiceCount ? `<span class="subject-summary-pill practice" title="Average score across past practice tests">✦ ${practiceCount} test${practiceCount === 1 ? '' : 's'} · ${avgPct}%</span>` : '',
     ].filter(Boolean).join('');
 
     html += `<div class="subject-section">
@@ -1106,6 +1144,10 @@ function renderTopics() {
         </div>
       </div>
       <div class="subject-topics collapsed" id="topics${sIdx}">`;
+
+    if (practiceCount) {
+      html += renderPastTests(sIdx, subjAttempts);
+    }
 
     group.topics.forEach(t => {
       const showTip = t.rag !== 'pending';
@@ -1127,6 +1169,54 @@ function renderTopics() {
   }
 
   list.innerHTML = html;
+}
+
+function renderPastTests(sIdx, attempts) {
+  const sorted = attempts.slice().sort((x, y) => y.dateISO.localeCompare(x.dateISO));
+  const initialLimit = 5;
+  const shown = sorted.slice(0, initialLimit);
+  const extra = sorted.slice(initialLimit);
+  const total = sorted.length;
+
+  const rowHtml = h => {
+    const cls = h.pct >= 70 ? 'green' : h.pct >= 40 ? 'amber' : 'red';
+    const dt = new Date(h.dateISO);
+    const dateStr = dt.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+    const timeMin = Math.round((h.timeUsedSec || 0) / 60);
+    return `<div class="past-test-row">
+      <div class="past-test-score ${cls}">${h.pct}%</div>
+      <div>
+        <div class="past-test-topic">${h.topic} — ${h.topicName}</div>
+        <div class="past-test-meta">${h.earned}/${h.total} marks · ${h.answered}/${h.questions} answered · ${timeMin} min${h.timedOut ? ' · ⏱ ran out' : ''}</div>
+      </div>
+      <div class="past-test-date">${dateStr}</div>
+    </div>`;
+  };
+
+  const hiddenRows = extra.length
+    ? `<div id="pastTestsExtra${sIdx}" style="display:none;">${extra.map(rowHtml).join('')}</div>
+       <button class="past-tests-more" id="pastTestsMore${sIdx}" onclick="togglePastTests(${sIdx})">Show ${extra.length} older test${extra.length === 1 ? '' : 's'}</button>`
+    : '';
+
+  return `<div class="past-tests">
+    <div class="past-tests-title">✦ Past practice tests <span class="past-tests-count">· ${total}</span></div>
+    ${shown.map(rowHtml).join('')}
+    ${hiddenRows}
+  </div>`;
+}
+
+function togglePastTests(sIdx) {
+  const extra = document.getElementById('pastTestsExtra' + sIdx);
+  const btn = document.getElementById('pastTestsMore' + sIdx);
+  if (!extra || !btn) return;
+  const wasHidden = extra.style.display === 'none';
+  extra.style.display = wasHidden ? 'block' : 'none';
+  if (wasHidden) {
+    btn.textContent = 'Show less';
+  } else {
+    const count = extra.children.length;
+    btn.textContent = `Show ${count} older test${count === 1 ? '' : 's'}`;
+  }
 }
 
 function renderSummaryBar(green, amber, red, pending) {
@@ -1504,12 +1594,19 @@ async function load() {
       allTopicData.push({
         ...t,
         rag,
+        subject: s.subject,
+        board: s.exam_board,
         subjectLabel: diagData.label,
         subjectEmoji: diagData.emoji,
         page: diagData.page
       });
     });
   });
+
+  practiceHistory = [];
+  try {
+    practiceHistory = JSON.parse(localStorage.getItem(`practice_history_${user.id}`) || '[]');
+  } catch (e) { practiceHistory = []; }
 
   // Stats
   const tested = allTopicData.filter(t => t.rag !== 'pending').length;

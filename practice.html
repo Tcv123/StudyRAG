@@ -1853,6 +1853,32 @@ function renderResults(timedOut) {
   const answered = results.filter(r => r.level !== 'skip' && r.level !== 'miss' || r.earned > 0).length;
   const timeUsed = timeLimitSec - secondsLeft;
 
+  try {
+    if (currentUser && activeSubjectKey && activeTopic) {
+      const parts = activeSubjectKey.split('_');
+      const subject = parts[0];
+      const board = parts.slice(1).join('_');
+      const data = getPracticeData(activeTopic);
+      const key = `practice_history_${currentUser.id}`;
+      const list = JSON.parse(localStorage.getItem(key) || '[]');
+      list.push({
+        subject, board,
+        topic: activeTopic,
+        topicName: data?.name || activeTopic,
+        earned: earnedMarks,
+        total: totalMarks,
+        pct,
+        questions: questions.length,
+        answered,
+        timeUsedSec: timeUsed,
+        timedOut: !!timedOut,
+        dateISO: new Date().toISOString(),
+      });
+      if (list.length > 200) list.splice(0, list.length - 200);
+      localStorage.setItem(key, JSON.stringify(list));
+    }
+  } catch (e) { console.warn('Practice history save failed', e); }
+
   const chips = results.map((r, i) => {
     if (r.level === 'skip') return `<span class="result-chip wrong">— Q${i+1} skipped</span>`;
     const cls = r.level === 'full' ? 'correct' : r.level === 'partial' ? 'partial' : 'wrong';
