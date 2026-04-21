@@ -1568,6 +1568,8 @@ async function load() {
 
   const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
   if (authErr || !user) { window.location = 'auth/login.html'; return; }
+  window.currentUserId = user.id;
+  maybeShowWelcome();
 
   // Load all data in parallel
   const [
@@ -2575,16 +2577,21 @@ document.addEventListener('click', e => {
   }
 });
 
-// ── Getting Started: auto-open modal on first visit ─────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  if (!localStorage.getItem('rag_welcome_seen')) {
-    const overlay = document.getElementById('helpOverlay');
-    if (overlay) overlay.classList.add('active');
-  }
-});
+// ── Getting Started: auto-open modal on first visit per user ───────────
+function welcomeKey() {
+  return window.currentUserId ? `rag_welcome_seen_${window.currentUserId}` : null;
+}
+
+function maybeShowWelcome() {
+  const key = welcomeKey();
+  if (!key || localStorage.getItem(key)) return;
+  const overlay = document.getElementById('helpOverlay');
+  if (overlay) overlay.classList.add('active');
+}
 
 function dismissWelcome() {
-  localStorage.setItem('rag_welcome_seen', '1');
+  const key = welcomeKey();
+  if (key) localStorage.setItem(key, '1');
   document.getElementById('helpOverlay').classList.remove('active');
 }
 
