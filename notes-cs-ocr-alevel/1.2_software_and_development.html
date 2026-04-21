@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 1.2 — Software and Software Development</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>1.2 Software and Software Development</h1>
+<p class="spec-ref">OCR A-Level Computer Science (H446) &mdash; Component 01 (Computer Systems)</p>
+
+<h2>1.2.1 Systems Software</h2>
+
+<h3>Purpose of an Operating System</h3>
+
+<div class="definition">
+    An <strong>operating system (OS)</strong> is a collection of system software that manages hardware resources, provides common services for application programs, and acts as an <strong>abstraction layer</strong> between user software and the underlying machine. Examples: Windows, macOS, Linux, Android, iOS.
+</div>
+
+<p>At A-Level, an OS's purpose is usually described under three umbrella ideas:</p>
+<ul>
+    <li><strong>Abstraction</strong> &mdash; hides hardware complexity behind uniform interfaces (e.g. a single <code>open()</code> call works for any file on any disk).</li>
+    <li><strong>Resource management</strong> &mdash; arbitrates access to CPU, memory, storage and peripherals between competing processes.</li>
+    <li><strong>Security &amp; user management</strong> &mdash; authenticates users, enforces file permissions, isolates processes, controls I/O privileges.</li>
+</ul>
+
+<p>Secondary purposes include providing a <strong>user interface</strong> (CLI or GUI), maintaining a <strong>file system</strong>, handling <strong>error detection and recovery</strong>, and providing <strong>utilities</strong> for housekeeping tasks such as disk management.</p>
+
+<h3>Components of an Operating System</h3>
+
+<table>
+    <tr><th>Component</th><th>Role</th></tr>
+    <tr><td><strong>Kernel</strong></td><td>The core of the OS. Runs in privileged (kernel) mode; manages processes, memory, interrupts, and I/O. All other components rely on it.</td></tr>
+    <tr><td><strong>Shell</strong></td><td>Outer layer that communicates with the user &mdash; CLI (Bash, PowerShell, cmd) or GUI (Explorer, Finder, GNOME). Translates user commands into kernel calls.</td></tr>
+    <tr><td><strong>Device drivers</strong></td><td>Small programs that translate generic OS I/O requests into the specific commands a particular piece of hardware understands. One driver per device class (printer driver, NIC driver, GPU driver).</td></tr>
+    <tr><td><strong>HAL (Hardware Abstraction Layer)</strong></td><td>A thin layer between the kernel and device drivers that presents a uniform hardware interface. Lets the same kernel binary run on different motherboards/CPUs.</td></tr>
+    <tr><td><strong>Utilities</strong></td><td>Support programs bundled with the OS (defrag, antivirus, file manager). See 1.2.1 Utility Software.</td></tr>
+</table>
+
+<!-- OS Layers Diagram -->
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrOS" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="24" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Operating System Layers</text>
+  <!-- Applications -->
+  <rect x="90" y="50" width="540" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="360" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">Applications</text>
+  <text x="360" y="90" text-anchor="middle" font-size="10" fill="#374151">Word, Chrome, games, user programs (run in user mode)</text>
+  <!-- System calls -->
+  <rect x="150" y="115" width="420" height="40" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="360" y="139" text-anchor="middle" font-size="12" font-weight="bold" fill="#5b21b6">System calls / API (user &rarr; kernel boundary)</text>
+  <!-- Kernel -->
+  <rect x="90" y="170" width="540" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="192" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a5f">OS Kernel</text>
+  <text x="360" y="210" text-anchor="middle" font-size="10" fill="#374151">Process scheduler, memory manager, file system, IPC, interrupt handler</text>
+  <text x="360" y="224" text-anchor="middle" font-size="9" fill="#6b7280" font-style="italic">(privileged / kernel mode)</text>
+  <!-- Drivers -->
+  <rect x="90" y="245" width="540" height="45" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+  <text x="360" y="266" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46">Device Drivers &amp; HAL</text>
+  <text x="360" y="282" text-anchor="middle" font-size="10" fill="#374151">Translate generic requests into device-specific commands</text>
+  <!-- Hardware -->
+  <rect x="90" y="305" width="540" height="40" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="360" y="329" text-anchor="middle" font-size="13" font-weight="bold" fill="#991b1b">Hardware (CPU, RAM, Disks, Peripherals)</text>
+  <!-- arrows between layers -->
+  <line x1="360" y1="100" x2="360" y2="113" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrOS)"/>
+  <line x1="360" y1="155" x2="360" y2="168" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrOS)"/>
+  <line x1="360" y1="230" x2="360" y2="243" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrOS)"/>
+  <line x1="360" y1="290" x2="360" y2="303" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrOS)"/>
+</svg>
+
+<div class="exam-tip">A common misconception is that "the OS" and "the kernel" are synonymous. The <strong>kernel</strong> is only the core component; the OS is the kernel <em>plus</em> the shell, drivers, libraries and utilities. Saying "the kernel handles everything" in an exam will lose nuance marks.</div>
+
+<h3>Memory Management</h3>
+
+<p>Most modern OSes give every process its own <strong>virtual address space</strong> &mdash; the process sees a flat, contiguous region of memory, but physically its bytes are scattered across RAM (and possibly disk). The three key techniques are <strong>paging</strong>, <strong>segmentation</strong> and <strong>virtual memory</strong>.</p>
+
+<h4>Paging</h4>
+
+<div class="definition">
+    <strong>Paging</strong> divides physical RAM into fixed-size blocks called <strong>frames</strong> (typically 4&nbsp;KiB) and divides each process's virtual address space into equally sized <strong>pages</strong>. A <strong>page table</strong> per process maps virtual pages to physical frames.
+</div>
+
+<ul>
+    <li>Fixed-size &rarr; easy to allocate, no external fragmentation.</li>
+    <li>Suffers from <strong>internal fragmentation</strong> (last page usually partially filled).</li>
+    <li>Page table is consulted on every memory access; caches called <strong>TLBs</strong> speed this up (not examinable detail, but useful context).</li>
+</ul>
+
+<h4>Segmentation</h4>
+
+<div class="definition">
+    <strong>Segmentation</strong> divides a program into <strong>variable-size logical segments</strong> that correspond to program structure (code, stack, heap, individual procedures). Each segment has a base address and a length.
+</div>
+
+<ul>
+    <li>Matches the programmer's view &mdash; protect the code segment as read-only, the stack as non-executable.</li>
+    <li>Suffers from <strong>external fragmentation</strong> because segments are different sizes and leave awkward gaps when freed.</li>
+</ul>
+
+<h4>Virtual Memory</h4>
+
+<div class="definition">
+    <strong>Virtual memory</strong> extends apparent RAM by using part of secondary storage (a <strong>swap file</strong> / <strong>page file</strong>) to hold pages that do not fit in physical RAM. When a process accesses a page that is on disk, a <strong>page fault</strong> is raised; the OS suspends the process, pages in the needed block (evicting another via e.g. LRU), then resumes execution.
+</div>
+
+<ul>
+    <li>Lets programs exceed installed RAM and lets many processes coexist.</li>
+    <li>If the working set is much bigger than RAM, the system spends most of its time paging &mdash; this pathological state is called <strong>thrashing</strong>.</li>
+    <li>Disk access is ~10<sup>5</sup>&times; slower than RAM, so frequent page faults devastate performance.</li>
+</ul>
+
+<div class="exam-tip">Do not confuse <strong>virtual memory</strong> (swap-to-disk technique) with <strong>virtual address space</strong> (the logical view each process has of memory). Exam answers often demand all three terms: <em>paging</em>, <em>page fault</em>, <em>page table</em>.</div>
+
+<h3>Interrupts and Interrupt Handling</h3>
+
+<div class="definition">
+    An <strong>interrupt</strong> is a signal to the CPU from hardware or software indicating that an event needs immediate attention. The CPU suspends what it is doing, saves its state, runs an <strong>Interrupt Service Routine (ISR)</strong>, then resumes the interrupted program.
+</div>
+
+<table>
+    <tr><th>Type</th><th>Source</th><th>Example</th></tr>
+    <tr><td><strong>Hardware interrupt</strong></td><td>Raised by a device via the control bus (IRQ line)</td><td>Key press, mouse move, disk-transfer complete, clock tick, power failure</td></tr>
+    <tr><td><strong>Software interrupt (trap)</strong></td><td>Raised by an executing instruction</td><td>System call, divide-by-zero, page fault, illegal instruction</td></tr>
+</table>
+
+<h4>The Interrupt Cycle</h4>
+<ol>
+    <li>At the end of every FDE cycle the CPU <strong>checks the interrupt register</strong> for pending interrupts.</li>
+    <li>If one is present and its <strong>priority</strong> exceeds that of the current task, the CPU pushes the PC, registers and flags onto the <strong>stack</strong>.</li>
+    <li>The PC is loaded with the address of the relevant <strong>ISR</strong> (from the interrupt vector table).</li>
+    <li>The ISR executes, communicating with the device.</li>
+    <li>On <code>RTI</code> (return from interrupt), the saved state is popped back and the original task resumes transparently.</li>
+</ol>
+
+<h4>Interrupt Priority</h4>
+<p>Each interrupt source is assigned a priority level. A low-priority ISR can itself be interrupted by a higher-priority one (nested interrupts), but not by an equal or lower one. This ensures critical events (e.g. power fail) always get serviced first.</p>
+
+<h4>Polling vs Interrupt-Driven I/O</h4>
+
+<table>
+    <tr><th>Approach</th><th>How it works</th><th>Pros</th><th>Cons</th></tr>
+    <tr><td><strong>Polling</strong></td><td>CPU repeatedly checks the device's status register in a loop</td><td>Simple, deterministic</td><td>Wastes CPU cycles when device is idle; poor for many devices</td></tr>
+    <tr><td><strong>Interrupt-driven</strong></td><td>Device raises an IRQ; CPU only services it when signalled</td><td>CPU can do useful work while waiting; scales to many devices</td><td>More complex hardware; ISR must be short</td></tr>
+</table>
+
+<div class="exam-tip">For "why are interrupts used?" questions, always contrast with polling: interrupts free the CPU to do other work, whereas polling wastes cycles constantly checking a status flag.</div>
+
+<h3>Scheduling</h3>
+
+<div class="definition">
+    <strong>Scheduling</strong> is the mechanism by which the OS decides which ready process gets the CPU next, and for how long. The aim is to maximise throughput, minimise response time, and keep the system fair.
+</div>
+
+<table>
+    <tr><th>Algorithm</th><th>How it works</th><th>Notes</th></tr>
+    <tr><td><strong>Round Robin (RR)</strong></td><td>Each process gets a fixed time slice (<em>quantum</em>) in turn; preempted when the quantum expires.</td><td>Fair, good response time; needs a well-chosen quantum (too short &rarr; overhead; too long &rarr; sluggish).</td></tr>
+    <tr><td><strong>First Come First Served (FCFS)</strong></td><td>Runs processes in arrival order to completion; non-preemptive.</td><td>Simple but suffers from the <em>convoy effect</em> &mdash; one long job blocks many short ones.</td></tr>
+    <tr><td><strong>Shortest Job First (SJF)</strong></td><td>Picks the ready process with the shortest expected CPU burst; non-preemptive.</td><td>Minimises average waiting time but can starve long jobs; burst length must be estimated.</td></tr>
+    <tr><td><strong>Shortest Remaining Time (SRT)</strong></td><td>Preemptive SJF &mdash; if a newly arrived job is shorter than what's left of the current job, switch.</td><td>Even better throughput than SJF but higher overhead and still can starve long jobs.</td></tr>
+    <tr><td><strong>Priority scheduling</strong></td><td>Each process has a priority; highest-priority ready process runs.</td><td>Good for real-time. Low-priority jobs can starve &mdash; mitigated by <em>aging</em> (gradually raise priority of waiting jobs).</td></tr>
+    <tr><td><strong>Multi-level Feedback Queues (MLFQ)</strong></td><td>Multiple queues at different priorities; a job that uses its full quantum drops to a lower queue; a job that blocks on I/O stays high.</td><td>Adaptive &mdash; favours interactive jobs, penalises CPU hogs. Used (in practice) by most modern OSes.</td></tr>
+</table>
+
+<div class="exam-tip">If a question asks which scheduler is best for a desktop OS, the answer is usually <strong>multi-level feedback queues</strong> or <strong>round robin</strong> &mdash; both give good response time to interactive users.</div>
+
+<h3>Types of Operating System</h3>
+
+<table>
+    <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+    <tr><td><strong>Distributed</strong></td><td>A single OS spanning many networked machines, sharing workload and presenting a unified image to the user.</td><td>Google's internal clusters, Plan 9, some supercomputers</td></tr>
+    <tr><td><strong>Multi-user</strong></td><td>Allows many users to log in and share resources simultaneously, each isolated from the others.</td><td>Linux servers, mainframes, UNIX</td></tr>
+    <tr><td><strong>Multi-tasking</strong></td><td>Allows a single user to run many programs apparently simultaneously by rapid CPU switching.</td><td>Windows, macOS, most desktop/mobile OSes</td></tr>
+    <tr><td><strong>Real-time (RTOS)</strong></td><td>Guarantees a response within a strict time limit; correctness depends on <em>when</em> as well as <em>what</em>.</td><td>Car ABS controllers, pacemakers, industrial robots (VxWorks, FreeRTOS)</td></tr>
+    <tr><td><strong>Embedded</strong></td><td>Specialised OS on a device with fixed function and limited resources; often real-time.</td><td>Washing machine firmware, router OS, smart meters</td></tr>
+</table>
+
+<h3>Virtual Machines</h3>
+
+<div class="definition">
+    A <strong>virtual machine (VM)</strong> is a software emulation of a computer system that runs programs as if on a physical machine. Two common forms: <strong>system VMs</strong> (emulate a whole PC &mdash; e.g. VirtualBox, VMware, Hyper-V) and <strong>process VMs</strong> (execute <em>intermediate code</em> &mdash; e.g. JVM, .NET CLR).
+</div>
+
+<h4>Intermediate Code and JIT</h4>
+
+<p>Process VMs run programs compiled to a platform-neutral <strong>intermediate code</strong> (also called <strong>bytecode</strong> or p-code). The VM then either <strong>interprets</strong> the bytecode or uses a <strong>just-in-time (JIT) compiler</strong> to translate hot methods into native machine code at runtime, blending interpreted portability with compiled speed.</p>
+
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Portability &mdash; "write once, run anywhere" via intermediate code</td><td>Performance overhead vs native code (mitigated but not eliminated by JIT)</td></tr>
+    <tr><td>Isolation &mdash; a crashing VM cannot corrupt the host</td><td>VM and guest OS need memory/CPU themselves</td></tr>
+    <tr><td>Legacy software support &mdash; run old OSes on modern hardware</td><td>Hardware acceleration (GPUs, peripherals) may be restricted</td></tr>
+    <tr><td>Safer testing / sandboxing of untrusted code</td><td>Setup complexity; licensing complications for guest OS</td></tr>
+    <tr><td>Server consolidation &mdash; many logical servers on one physical box</td><td>Debugging is harder (extra translation layer)</td></tr>
+</table>
+
+<div class="exam-tip">In H446 "intermediate code" usually refers to <strong>bytecode</strong> in a process VM context (Java, Python .pyc, C# IL). If the question says "intermediate representation", it can also mean the internal form produced during compilation &mdash; see 1.2.2.</div>
+
+<h3>Utility Software</h3>
+
+<div class="definition">
+    <strong>Utility software</strong> performs housekeeping tasks that maintain, optimise or protect the computer system. It is classed as <em>systems software</em> because it manages the machine itself rather than solving user problems directly.
+</div>
+
+<table>
+    <tr><th>Utility</th><th>Purpose</th></tr>
+    <tr><td><strong>Defragmenter</strong></td><td>Rearranges file blocks on a magnetic disk so each file occupies contiguous sectors &rarr; fewer head movements &rarr; faster read. Not needed (and harmful) on SSDs.</td></tr>
+    <tr><td><strong>Disk cleanup</strong></td><td>Removes temporary files, cached installers, obsolete system logs to reclaim space.</td></tr>
+    <tr><td><strong>Compression</strong></td><td>Reduces file size using lossless algorithms (ZIP, 7z, gzip) for storage or transfer.</td></tr>
+    <tr><td><strong>Backup</strong></td><td>Creates copies of files on separate media. May be <em>full</em>, <em>incremental</em> (only changes since last backup) or <em>differential</em> (all changes since last full backup).</td></tr>
+    <tr><td><strong>Antivirus / antimalware</strong></td><td>Scans storage and memory for known malware signatures and suspicious behaviour; quarantines or deletes threats.</td></tr>
+    <tr><td><strong>Encryption</strong></td><td>Converts data to ciphertext (e.g. BitLocker, FileVault, VeraCrypt) so it is unreadable without the key.</td></tr>
+    <tr><td><strong>File manager</strong></td><td>Provides a UI for browsing, copying, renaming, searching files (Windows Explorer, Finder, Nautilus).</td></tr>
+    <tr><td><strong>Device drivers</strong></td><td>Supply the OS with the code needed to communicate with specific hardware.</td></tr>
+</table>
+
+<h3>Open Source vs Closed (Proprietary) Source Software</h3>
+
+<div class="definition">
+    <strong>Open source software</strong> is distributed under a licence that gives users the right to <em>view, modify and redistribute</em> the source code (e.g. GPL, MIT, Apache). <strong>Closed source (proprietary)</strong> software ships only as a compiled binary; the source is a trade secret and the licence restricts modification and redistribution.
+</div>
+
+<table>
+    <tr><th></th><th>Open source</th><th>Closed source</th></tr>
+    <tr><td><strong>Cost</strong></td><td>Usually free to obtain</td><td>Usually paid; licence fees per seat/user</td></tr>
+    <tr><td><strong>Source access</strong></td><td>Full source code available</td><td>No source; binary only</td></tr>
+    <tr><td><strong>Modification</strong></td><td>Permitted (and often required to be shared back)</td><td>Forbidden by licence / impossible without source</td></tr>
+    <tr><td><strong>Support</strong></td><td>Community forums, optional paid support (Red Hat model)</td><td>Dedicated vendor support, SLAs</td></tr>
+    <tr><td><strong>Security</strong></td><td>"Many eyes" argue more secure; but bugs are also public</td><td>Security through obscurity; patches rely on vendor</td></tr>
+    <tr><td><strong>Quality &amp; features</strong></td><td>Variable &mdash; depends on community size</td><td>Professional QA, coordinated UX</td></tr>
+    <tr><td><strong>Examples</strong></td><td>Linux kernel, Firefox, LibreOffice, Python, Blender</td><td>Windows, macOS, Microsoft Office, Adobe Photoshop</td></tr>
+</table>
+
+<div class="exam-tip">Do not equate "open source" with "free" (as in price). Open source licences grant <em>freedom</em> (the 4 freedoms: run, study, modify, redistribute). Some commercial open-source products (Red Hat Enterprise Linux) are sold for money while remaining open source.</div>
+
+<h2>1.2.2 Applications Generation</h2>
+
+<p>Turning human-readable source code into an executable program involves a toolchain: <strong>translators</strong>, <strong>linkers</strong>, <strong>loaders</strong> and <strong>libraries</strong>. This section examines each in A-Level depth.</p>
+
+<h3>Translators: Compilers, Interpreters, Assemblers</h3>
+
+<div class="definition">
+    A <strong>translator</strong> is a program that converts code from one language to another. The three types are <strong>assembler</strong> (assembly &rarr; machine code, 1:1), <strong>compiler</strong> (high-level &rarr; machine/intermediate code, ahead of time) and <strong>interpreter</strong> (reads and executes source line by line).
+</div>
+
+<table>
+    <tr><th></th><th>Compiler</th><th>Interpreter</th><th>Assembler</th></tr>
+    <tr><td><strong>Input</strong></td><td>High-level language</td><td>High-level (or bytecode) language</td><td>Assembly mnemonics</td></tr>
+    <tr><td><strong>Output</strong></td><td>Executable object/machine code (produced once)</td><td>None &mdash; interpreter <em>executes</em> as it reads</td><td>Object/machine code (1 asm instruction &rarr; 1 machine instruction)</td></tr>
+    <tr><td><strong>Speed of execution</strong></td><td>Fast &mdash; native code, optimised</td><td>Slow &mdash; re-parsed each run</td><td>Very fast</td></tr>
+    <tr><td><strong>Error reporting</strong></td><td>Full list after compile; program will not run if any error</td><td>Stops at first error; useful for development</td><td>Line-by-line</td></tr>
+    <tr><td><strong>Portability</strong></td><td>Must recompile for each target</td><td>Source runs anywhere with the interpreter</td><td>Target-specific</td></tr>
+    <tr><td><strong>Source distribution</strong></td><td>Can ship compiled binary only (protects IP)</td><td>Must ship source (or bytecode)</td><td>Binary distribution</td></tr>
+    <tr><td><strong>Memory usage at run-time</strong></td><td>Just the executable</td><td>Executable + interpreter in memory</td><td>Just the executable</td></tr>
+    <tr><td><strong>Typical examples</strong></td><td>C, C++, Rust, Go</td><td>Python, JavaScript, PHP, BASIC</td><td>GNU as, MASM, NASM</td></tr>
+</table>
+
+<div class="exam-tip">A favourite exam trap: candidates confuse an <strong>interpreter</strong> with a <strong>compiler</strong>. The distinction is: an <em>interpreter translates AND executes line by line</em>; a <em>compiler only translates</em> &mdash; a separate step runs the result. Always state both jobs of the interpreter to secure marks.</div>
+
+<h3>Stages of Compilation</h3>
+
+<p>A compiler is not a monolith &mdash; it is a pipeline of distinct phases. The H446 specification explicitly names four: <strong>lexical analysis</strong>, <strong>syntax analysis</strong>, <strong>semantic analysis / code generation</strong> and <strong>optimisation</strong>.</p>
+
+<!-- Compilation Pipeline Diagram -->
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrC" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Compilation Pipeline</text>
+  <!-- Source -->
+  <rect x="20" y="55" width="110" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="75" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">Source code</text>
+  <text x="75" y="98" text-anchor="middle" font-size="9" fill="#374151">e.g. .c, .java</text>
+  <!-- Lexer -->
+  <rect x="155" y="55" width="110" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="210" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Lexical</text>
+  <text x="210" y="94" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">analysis</text>
+  <text x="210" y="108" text-anchor="middle" font-size="8" fill="#374151">&rarr; tokens</text>
+  <!-- Parser -->
+  <rect x="290" y="55" width="110" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="345" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Syntax</text>
+  <text x="345" y="94" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">analysis</text>
+  <text x="345" y="108" text-anchor="middle" font-size="8" fill="#374151">&rarr; AST</text>
+  <!-- Semantic -->
+  <rect x="425" y="55" width="110" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="480" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Semantic</text>
+  <text x="480" y="94" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">analysis</text>
+  <text x="480" y="108" text-anchor="middle" font-size="8" fill="#374151">&rarr; IR</text>
+  <!-- Code gen -->
+  <rect x="560" y="55" width="130" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="625" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Code</text>
+  <text x="625" y="94" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">generation</text>
+  <text x="625" y="108" text-anchor="middle" font-size="8" fill="#374151">&rarr; assembly</text>
+  <!-- Arrows top row -->
+  <line x1="130" y1="85" x2="153" y2="85" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrC)"/>
+  <line x1="265" y1="85" x2="288" y2="85" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrC)"/>
+  <line x1="400" y1="85" x2="423" y2="85" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrC)"/>
+  <line x1="535" y1="85" x2="558" y2="85" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrC)"/>
+  <!-- Second row: Optimisation -->
+  <rect x="230" y="160" width="130" height="55" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="295" y="182" text-anchor="middle" font-size="12" font-weight="bold" fill="#5b21b6">Optimisation</text>
+  <text x="295" y="200" text-anchor="middle" font-size="9" fill="#374151">on IR and/or asm</text>
+  <rect x="395" y="160" width="130" height="55" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+  <text x="460" y="182" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46">Machine code</text>
+  <text x="460" y="200" text-anchor="middle" font-size="9" fill="#374151">object .o / .obj</text>
+  <!-- curve from code-gen down to optimisation/machine -->
+  <path d="M 625 120 Q 625 150 460 160" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrC)"/>
+  <line x1="360" y1="188" x2="392" y2="188" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrC)"/>
+  <!-- Linker + loader -->
+  <rect x="160" y="245" width="180" height="55" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="250" y="267" text-anchor="middle" font-size="12" font-weight="bold" fill="#991b1b">Linker</text>
+  <text x="250" y="284" text-anchor="middle" font-size="9" fill="#374151">resolves external refs</text>
+  <rect x="380" y="245" width="180" height="55" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="470" y="267" text-anchor="middle" font-size="12" font-weight="bold" fill="#991b1b">Loader</text>
+  <text x="470" y="284" text-anchor="middle" font-size="9" fill="#374151">brings exe into RAM</text>
+  <line x1="460" y1="215" x2="400" y2="245" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrC)"/>
+  <line x1="340" y1="272" x2="378" y2="272" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrC)"/>
+</svg>
+
+<h4>1. Lexical Analysis (the lexer / tokenizer)</h4>
+
+<div class="definition">
+    <strong>Lexical analysis</strong> reads the raw source character by character and groups characters into <strong>tokens</strong> &mdash; keywords, identifiers, literals, operators, punctuation. Whitespace and comments are discarded. Identifiers are entered into the <strong>symbol table</strong>.
+</div>
+
+<pre>
+Source:    total = price * 1.2   // add VAT
+
+Tokens:    IDENT("total")  ASSIGN  IDENT("price")  MUL  NUMBER(1.2)
+Symbols:   total &rarr; (type: real, scope: local)
+           price &rarr; (type: real, scope: local)
+</pre>
+
+<ul>
+    <li>Output: a stream of tokens plus a partially-built symbol table.</li>
+    <li>Detects errors such as <em>invalid characters</em> or <em>malformed numeric literals</em>.</li>
+</ul>
+
+<h4>2. Syntax Analysis (the parser)</h4>
+
+<div class="definition">
+    <strong>Syntax analysis</strong> takes the token stream and verifies it matches the language's grammar (usually expressed in BNF). It builds an <strong>Abstract Syntax Tree (AST)</strong> &mdash; a tree representing the hierarchical structure of the program.
+</div>
+
+<pre>
+Tokens for:  total = price * 1.2
+
+AST:
+                   ASSIGN
+                  /      \
+            IDENT(total)  MUL
+                         /   \
+                 IDENT(price) NUM(1.2)
+</pre>
+
+<ul>
+    <li>Detects <strong>syntax errors</strong> (missing semicolons, unmatched brackets, illegal expressions).</li>
+    <li>The AST is the canonical input to all later phases.</li>
+</ul>
+
+<h4>3. Semantic Analysis</h4>
+
+<div class="definition">
+    <strong>Semantic analysis</strong> walks the AST and checks it makes <em>sense</em> &mdash; type compatibility, variable declared before use, correct number of arguments, scope rules. It annotates the tree with type information and produces an <strong>intermediate representation (IR)</strong>, a simplified, machine-independent form.
+</div>
+
+<p>Semantic errors (e.g. adding a string to an integer, calling an undeclared function) are reported here. The IR is typically a linear three-address-code form such as <code>t1 = price * 1.2; total = t1;</code> which is easy to optimise.</p>
+
+<h4>4. Code Generation &amp; Optimisation</h4>
+
+<div class="definition">
+    <strong>Code generation</strong> converts the IR into target <strong>machine code</strong> (or assembly, then assembled). <strong>Optimisation</strong> improves the code without changing its behaviour &mdash; faster, smaller, or less power-hungry.
+</div>
+
+<p>Common optimisations include:</p>
+<ul>
+    <li><strong>Constant folding</strong> &mdash; evaluate constant expressions at compile time (<code>2*3.14*r</code> &rarr; <code>6.28*r</code>).</li>
+    <li><strong>Dead code elimination</strong> &mdash; remove code that cannot affect output.</li>
+    <li><strong>Loop unrolling</strong> &mdash; replicate the loop body to reduce branch overhead.</li>
+    <li><strong>Register allocation</strong> &mdash; keep hot variables in CPU registers rather than RAM.</li>
+    <li><strong>Common sub-expression elimination</strong> &mdash; compute <code>a*b</code> once if it appears twice.</li>
+</ul>
+
+<div class="exam-tip">H446 markschemes expect you to name the stages <em>in order</em> and describe the output of each: lexical &rarr; tokens; syntax &rarr; AST; semantic &rarr; IR / type-checked tree; code-gen &rarr; machine code. A useful mnemonic: <strong>"Lexer Parses Semantics then Generates"</strong>.</div>
+
+<h3>Linkers and Loaders</h3>
+
+<div class="definition">
+    A <strong>linker</strong> combines one or more <strong>object files</strong> (the compiled output of each source file) together with library code to produce a single executable, resolving symbolic references between them. A <strong>loader</strong> is the OS component that copies that executable from disk into RAM and hands control to its entry point when you run the program.
+</div>
+
+<h4>Static vs Dynamic Linking</h4>
+
+<table>
+    <tr><th></th><th>Static linking</th><th>Dynamic linking</th></tr>
+    <tr><td><strong>When it happens</strong></td><td>At compile-time: library code is copied into the executable</td><td>At load/run-time: the OS maps the library into the process's address space</td></tr>
+    <tr><td><strong>Executable size</strong></td><td>Large &mdash; contains all library code</td><td>Small &mdash; only references to external DLL/.so</td></tr>
+    <tr><td><strong>RAM usage</strong></td><td>Each process has its own copy of the library</td><td>One shared copy in RAM used by all processes (shared libraries)</td></tr>
+    <tr><td><strong>Updates</strong></td><td>Must recompile/relink whole program to get new library version</td><td>Replace the DLL/.so &mdash; all programs benefit immediately</td></tr>
+    <tr><td><strong>Portability</strong></td><td>Self-contained &mdash; just ship the executable</td><td>Missing / wrong-version libraries cause "DLL hell"</td></tr>
+    <tr><td><strong>Typical extension</strong></td><td><code>.a</code> (UNIX), <code>.lib</code> (Windows)</td><td><code>.so</code> (UNIX), <code>.dll</code> (Windows), <code>.dylib</code> (macOS)</td></tr>
+</table>
+
+<h3>Libraries</h3>
+
+<div class="definition">
+    A <strong>library</strong> is a pre-written, pre-compiled collection of procedures, classes or data used by programs. Libraries promote code reuse and let developers stand on well-tested foundations rather than reinventing common algorithms.
+</div>
+
+<p><strong>Benefits</strong>: faster development, fewer bugs (mature code), consistent behaviour across programs, smaller source codebase.</p>
+<p><strong>Tradeoffs</strong>: dependency on third-party code (licensing, abandonment risk), compatibility problems between versions, potentially unused code bloats the final binary (if statically linked), security surface grows (log4shell-style vulnerabilities).</p>
+
+<h2>1.2.3 Software Development Methodologies</h2>
+
+<div class="definition">
+    A <strong>software development methodology</strong> is a structured framework used to plan, manage and control the creation of software systems. The choice of methodology affects how requirements are gathered, how work is divided, how risks are managed, and how (and when) the customer sees progress.
+</div>
+
+<h3>Waterfall</h3>
+
+<p>The <strong>Waterfall</strong> model is a linear, sequential approach. Each stage is fully completed and signed off before the next begins, and (in its strict form) you do not revisit earlier stages.</p>
+
+<ol>
+    <li><strong>Requirements</strong> &mdash; gather and document what the system must do.</li>
+    <li><strong>Analysis</strong> &mdash; model the problem domain; produce formal specifications.</li>
+    <li><strong>Design</strong> &mdash; system and detailed design documents; architecture, data structures.</li>
+    <li><strong>Implementation</strong> &mdash; programmers write the code.</li>
+    <li><strong>Testing</strong> &mdash; verify against requirements (unit, integration, system, acceptance).</li>
+    <li><strong>Maintenance</strong> &mdash; fix bugs and adapt to changing environment after release.</li>
+</ol>
+
+<!-- Waterfall Diagram -->
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrW" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Waterfall Model</text>
+  <rect x="40" y="50" width="160" height="45" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="120" y="77" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Requirements</text>
+  <rect x="140" y="100" width="160" height="45" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="220" y="127" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Analysis</text>
+  <rect x="240" y="150" width="160" height="45" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="320" y="177" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Design</text>
+  <rect x="340" y="200" width="160" height="45" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="420" y="227" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Implementation</text>
+  <rect x="440" y="250" width="160" height="45" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="520" y="277" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Testing</text>
+  <rect x="500" y="300" width="160" height="35" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="580" y="322" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">Maintenance</text>
+  <line x1="200" y1="95" x2="160" y2="100" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrW)"/>
+  <line x1="300" y1="145" x2="260" y2="150" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrW)"/>
+  <line x1="400" y1="195" x2="360" y2="200" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrW)"/>
+  <line x1="500" y1="245" x2="460" y2="250" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrW)"/>
+  <line x1="600" y1="295" x2="560" y2="300" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrW)"/>
+</svg>
+
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Simple to understand and manage; clear milestones</td><td>Very inflexible &mdash; late changes are expensive</td></tr>
+    <tr><td>Documentation heavy &mdash; good for handover</td><td>Customer only sees software near the end</td></tr>
+    <tr><td>Works well when requirements are fixed and well known</td><td>Bugs found late (in testing) can force major rework</td></tr>
+    <tr><td>Easy to contract and bill &mdash; each stage has deliverables</td><td>Assumes requirements can be fully known up front &mdash; often false</td></tr>
+</table>
+
+<p>Best suited to: safety-critical, well-understood, regulated projects (medical devices, aerospace firmware, government systems) where requirements are frozen early.</p>
+
+<h3>Agile</h3>
+
+<div class="definition">
+    <strong>Agile</strong> is an umbrella term for iterative methodologies (Scrum, XP, Kanban, etc.) that break development into short cycles (<strong>sprints</strong>, typically 1&ndash;4 weeks), each producing potentially shippable software. Requirements evolve through continuous collaboration with the customer.
+</div>
+
+<p>Core Agile ideas from the Agile Manifesto:</p>
+<ul>
+    <li><strong>Individuals and interactions</strong> over processes and tools.</li>
+    <li><strong>Working software</strong> over comprehensive documentation.</li>
+    <li><strong>Customer collaboration</strong> over contract negotiation.</li>
+    <li><strong>Responding to change</strong> over following a plan.</li>
+</ul>
+
+<p><strong>User stories</strong> describe features from the user's viewpoint (<em>"As a [role] I want [goal] so that [benefit]"</em>). The <strong>product backlog</strong> is the prioritised list of all stories; each sprint pulls from the top of the backlog. <strong>Continuous delivery</strong> means the software is always in a releasable state.</p>
+
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Handles changing requirements gracefully</td><td>Less predictable cost/time &mdash; hard to fix-price</td></tr>
+    <tr><td>Customer sees working software early and often</td><td>Light documentation complicates handover and audit</td></tr>
+    <tr><td>Defects caught within each sprint</td><td>Needs a highly engaged customer &mdash; not always available</td></tr>
+    <tr><td>High team morale, responsive to feedback</td><td>Scope creep risk if backlog is not managed</td></tr>
+</table>
+
+<h3>Extreme Programming (XP)</h3>
+
+<div class="definition">
+    <strong>Extreme Programming (XP)</strong> is an Agile methodology that stresses engineering practices for code quality: <strong>pair programming</strong>, <strong>test-driven development (TDD)</strong>, continuous integration, refactoring, collective ownership, small releases.
+</div>
+
+<ul>
+    <li><strong>Pair programming</strong> &mdash; two developers on one machine: one "driver" types, one "navigator" reviews and thinks strategically. Knowledge shared, fewer defects.</li>
+    <li><strong>TDD</strong> &mdash; write a failing unit test <em>before</em> writing code; implement just enough code to pass; then refactor. Cycle known as "red &mdash; green &mdash; refactor".</li>
+    <li><strong>Continuous integration</strong> &mdash; code is merged into mainline many times per day and built/tested automatically.</li>
+</ul>
+
+<p>Best for: small co-located teams working on changing, poorly-understood requirements where code quality matters.</p>
+
+<h3>Spiral Model</h3>
+
+<div class="definition">
+    The <strong>Spiral model</strong> (Boehm, 1986) is a <strong>risk-driven</strong>, iterative approach. Each loop through four quadrants (plan, analyse risks, engineer, evaluate) produces a more complete prototype. Expensive or risky issues are flushed out early by explicit risk analysis.
+</div>
+
+<!-- Spiral Model Diagram -->
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrSp" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Spiral Model</text>
+  <!-- axes -->
+  <line x1="360" y1="50" x2="360" y2="360" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="80" y1="200" x2="640" y2="200" stroke="#9ca3af" stroke-width="1"/>
+  <!-- quadrant labels -->
+  <rect x="120" y="55" width="200" height="50" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="220" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">1. Planning</text>
+  <text x="220" y="95" text-anchor="middle" font-size="9" fill="#374151">objectives, constraints, alternatives</text>
+  <rect x="400" y="55" width="220" height="50" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+  <text x="510" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="#991b1b">2. Risk analysis</text>
+  <text x="510" y="95" text-anchor="middle" font-size="9" fill="#374151">identify + resolve risks; prototype</text>
+  <rect x="400" y="295" width="220" height="50" rx="6" fill="#d1fae5" stroke="#059669" stroke-width="1.2"/>
+  <text x="510" y="318" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46">3. Engineering</text>
+  <text x="510" y="335" text-anchor="middle" font-size="9" fill="#374151">design, code, test this iteration's product</text>
+  <rect x="120" y="295" width="200" height="50" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="220" y="318" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">4. Evaluation</text>
+  <text x="220" y="335" text-anchor="middle" font-size="9" fill="#374151">customer review, plan next spiral</text>
+  <!-- spiral path (approximate) -->
+  <path d="M 360 200
+           C 360 170, 330 170, 330 200
+           C 330 230, 390 230, 390 180
+           C 390 130, 310 130, 310 210
+           C 310 270, 420 270, 420 160
+           C 420 90, 260 90, 260 230
+           C 260 320, 470 320, 470 140" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrSp)"/>
+  <text x="360" y="380" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Each loop = one iteration; radius grows with project maturity</text>
+</svg>
+
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Explicit risk management &mdash; good for large, unknown projects</td><td>Overkill for small projects</td></tr>
+    <tr><td>Customer involved throughout</td><td>Expensive &mdash; repeated risk analysis, prototypes</td></tr>
+    <tr><td>Flexible &mdash; requirements can change between spirals</td><td>Requires skilled risk assessors; process is complex</td></tr>
+</table>
+
+<p>Best for: large, complex, high-risk, long-term projects (defence, aerospace, novel research systems).</p>
+
+<h3>Rapid Application Development (RAD)</h3>
+
+<div class="definition">
+    <strong>RAD</strong> emphasises <strong>prototyping</strong> and <strong>user involvement</strong> to deliver working software quickly. Developers build throw-away or evolutionary prototypes, show them to users, refine and repeat. Heavy use of 4GL tools, code generators and pre-built components keeps the cycle short.
+</div>
+
+<ul>
+    <li>Particularly suited to UI-driven, data-centric business applications where look-and-feel needs rapid iteration.</li>
+    <li>Less suitable for systems with strict performance or correctness requirements (real-time, safety-critical).</li>
+    <li>Requires committed, available users who can give continuous feedback.</li>
+</ul>
+
+<h3>Comparison of Methodologies</h3>
+
+<table>
+    <tr><th>Methodology</th><th>Style</th><th>Best when...</th><th>Weakness</th></tr>
+    <tr><td>Waterfall</td><td>Linear, document-led</td><td>Requirements are fixed and regulated</td><td>Inflexible; customer sees software late</td></tr>
+    <tr><td>Agile (Scrum)</td><td>Iterative, short sprints</td><td>Requirements evolve; engaged customer</td><td>Hard to fix-price; light docs</td></tr>
+    <tr><td>XP</td><td>Engineering-practice-heavy Agile</td><td>Quality critical; small, co-located team</td><td>Pair programming demands discipline</td></tr>
+    <tr><td>Spiral</td><td>Risk-driven, iterative</td><td>Large, risky, novel systems</td><td>Expensive; needs risk expertise</td></tr>
+    <tr><td>RAD</td><td>Prototyping-led</td><td>UI-heavy business apps; quick turnaround</td><td>Unsuitable for performance-critical work</td></tr>
+</table>
+
+<div class="exam-tip">A common 6-mark question asks you to <em>justify</em> a methodology for a given scenario. Always match the scenario cues (changing requirements, safety-critical, short deadline, novel problem) to a methodology and explicitly explain why &mdash; don't just pick one and describe it.</div>
+
+<h3>Testing</h3>
+
+<div class="definition">
+    <strong>Testing</strong> is the process of evaluating software to find defects and verify it meets its specification. A-Level H446 asks about <em>who</em> tests (alpha vs beta), <em>how</em> they test (black-box vs white-box), and <em>what granularity</em> (unit, integration, system, acceptance).
+</div>
+
+<table>
+    <tr><th>Type</th><th>Description</th></tr>
+    <tr><td><strong>Alpha testing</strong></td><td>Performed <em>internally</em> by the development organisation, often by staff who are not developers. Finds obvious bugs before external release.</td></tr>
+    <tr><td><strong>Beta testing</strong></td><td>Performed <em>externally</em> by a subset of real end-users on real hardware. Finds problems only visible at scale or across many configurations.</td></tr>
+    <tr><td><strong>Black-box testing</strong></td><td>Testers see only the specification &mdash; they choose inputs based on what the software <em>should</em> do. Good for validation against requirements.</td></tr>
+    <tr><td><strong>White-box (glass-box) testing</strong></td><td>Testers see the source code &mdash; choose inputs to exercise every branch, loop, condition. Measures coverage.</td></tr>
+    <tr><td><strong>Destructive testing</strong></td><td>Deliberately feeds invalid, extreme or malicious inputs to try to crash the software. Probes robustness.</td></tr>
+    <tr><td><strong>Unit testing</strong></td><td>Tests individual functions/classes in isolation, usually automated (JUnit, pytest).</td></tr>
+    <tr><td><strong>Integration testing</strong></td><td>Tests combined units to catch interface mismatches between modules.</td></tr>
+</table>
+
+<p>Testing is typically layered: unit tests during implementation, integration tests as modules are combined, system tests on the whole build, then alpha &rarr; beta &rarr; release.</p>
+
+<h2>1.2.4 Types of Programming Language</h2>
+
+<h3>Low-Level vs High-Level Languages</h3>
+
+<table>
+    <tr><th></th><th>Machine code</th><th>Assembly</th><th>High-level</th></tr>
+    <tr><td><strong>Form</strong></td><td>Binary opcodes executed directly by CPU</td><td>Mnemonic 1:1 with machine instructions</td><td>English-like, abstract</td></tr>
+    <tr><td><strong>Translation needed</strong></td><td>None</td><td>Assembler (1:1)</td><td>Compiler or interpreter (1:many)</td></tr>
+    <tr><td><strong>Portability</strong></td><td>None &mdash; tied to CPU family</td><td>None &mdash; tied to CPU family</td><td>Good &mdash; recompile for target</td></tr>
+    <tr><td><strong>Productivity</strong></td><td>Extremely low</td><td>Very low</td><td>High</td></tr>
+    <tr><td><strong>Hardware control</strong></td><td>Total</td><td>Total</td><td>Limited (needs libraries or inline asm)</td></tr>
+    <tr><td><strong>Examples</strong></td><td>Hex dumps, firmware</td><td>x86 asm, ARM asm, MIPS</td><td>Python, Java, C#, C++</td></tr>
+</table>
+
+<div class="definition">
+    <strong>Low-level languages</strong> (machine code, assembly) are close to hardware &mdash; each instruction maps (nearly) 1:1 to a CPU operation. They give maximum control and speed but are unreadable, unportable, and slow to write. <strong>High-level languages</strong> abstract away the CPU, giving readable, portable, expressive code at the cost of some run-time performance and hardware control.
+</div>
+
+<h3>Assembly Language</h3>
+
+<p>Assembly uses <strong>mnemonics</strong> &mdash; short human-readable codes for each machine instruction. The H446 specification requires familiarity with a small teaching ISA (e.g. LMC or the OCR assembly card):</p>
+
+<table>
+    <tr><th>Mnemonic</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td><code>MOV</code></td><td>Move / load immediate into register</td><td><code>MOV R1, #5</code> &mdash; put literal 5 in R1</td></tr>
+    <tr><td><code>LDR</code></td><td>Load from memory</td><td><code>LDR R1, 100</code> &mdash; load value at address 100 into R1</td></tr>
+    <tr><td><code>STR</code></td><td>Store to memory</td><td><code>STR R1, 100</code> &mdash; store R1's value at address 100</td></tr>
+    <tr><td><code>ADD</code></td><td>Add</td><td><code>ADD R1, R2, #3</code> &mdash; R1 = R2 + 3</td></tr>
+    <tr><td><code>SUB</code></td><td>Subtract</td><td><code>SUB R1, R2, R3</code> &mdash; R1 = R2 &minus; R3</td></tr>
+    <tr><td><code>CMP</code></td><td>Compare (sets SR flags)</td><td><code>CMP R1, #0</code> &mdash; compare R1 with 0</td></tr>
+    <tr><td><code>BEQ</code></td><td>Branch if equal (Z flag set)</td><td><code>BEQ end</code></td></tr>
+    <tr><td><code>BNE</code></td><td>Branch if not equal</td><td><code>BNE loop</code></td></tr>
+    <tr><td><code>B</code></td><td>Unconditional branch</td><td><code>B main</code></td></tr>
+    <tr><td><code>HALT</code></td><td>Stop execution</td><td><code>HALT</code></td></tr>
+</table>
+
+<p><strong>Labels</strong> are symbolic names for memory addresses, used as branch targets or data locations. <strong>Operands</strong> can be registers, memory addresses or literal constants &mdash; the form they take defines the <em>addressing mode</em>.</p>
+
+<pre>
+; Count from 10 down to 0
+        MOV   R1, #10        ; R1 = 10
+loop:   CMP   R1, #0         ; compare R1 with 0
+        BEQ   end            ; if zero, branch to end
+        SUB   R1, R1, #1     ; R1 = R1 - 1
+        B     loop           ; branch back
+end:    HALT
+</pre>
+
+<h3>Addressing Modes</h3>
+
+<div class="definition">
+    An <strong>addressing mode</strong> specifies how the operand of an instruction is interpreted &mdash; whether it is a literal value, a memory address, a register holding an address, or a calculated address. H446 requires four modes: <strong>immediate</strong>, <strong>direct</strong>, <strong>indirect</strong> and <strong>indexed</strong>.
+</div>
+
+<table>
+    <tr><th>Mode</th><th>Notation</th><th>Meaning</th><th>Worked example (assume memory shown below)</th></tr>
+    <tr><td><strong>Immediate</strong></td><td><code>#n</code></td><td>Operand <em>is</em> the value</td><td><code>LDR R1, #4</code> &rarr; R1 = 4</td></tr>
+    <tr><td><strong>Direct</strong></td><td><code>addr</code></td><td>Operand is the memory address holding the value</td><td><code>LDR R1, 100</code> &rarr; R1 = memory[100] = 42</td></tr>
+    <tr><td><strong>Indirect</strong></td><td><code>[Rn]</code> or <code>(addr)</code></td><td>Operand is an address whose <em>contents</em> are the address of the value</td><td><code>LDR R1, (100)</code>: memory[100]=200, so R1 = memory[200] = 99</td></tr>
+    <tr><td><strong>Indexed</strong></td><td><code>base, Rx</code></td><td>Effective address = base + index register's contents</td><td><code>LDR R1, 100, R2</code> with R2=2 &rarr; R1 = memory[102] = 7</td></tr>
+</table>
+
+<!-- Addressing Modes Diagram -->
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrAM" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+    <marker id="arrAMr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+    <marker id="arrAMg" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#059669"/></marker>
+    <marker id="arrAMp" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Addressing Modes (Memory &amp; Register Grid)</text>
+  <!-- Memory grid -->
+  <text x="480" y="52" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Memory</text>
+  <text x="430" y="70" font-size="10" fill="#6b7280">Addr</text>
+  <text x="510" y="70" font-size="10" fill="#6b7280">Value</text>
+  <rect x="400" y="75" width="160" height="30" fill="#f9fafb" stroke="#9ca3af"/>
+  <text x="430" y="95" font-size="11" fill="#1a1a2e">100</text>
+  <text x="510" y="95" font-size="11" fill="#1a1a2e">200</text>
+  <rect x="400" y="105" width="160" height="30" fill="#fff" stroke="#9ca3af"/>
+  <text x="430" y="125" font-size="11" fill="#1a1a2e">101</text>
+  <text x="510" y="125" font-size="11" fill="#1a1a2e">42</text>
+  <rect x="400" y="135" width="160" height="30" fill="#f9fafb" stroke="#9ca3af"/>
+  <text x="430" y="155" font-size="11" fill="#1a1a2e">102</text>
+  <text x="510" y="155" font-size="11" fill="#1a1a2e">7</text>
+  <rect x="400" y="165" width="160" height="30" fill="#fff" stroke="#9ca3af"/>
+  <text x="430" y="185" font-size="11" fill="#1a1a2e">...</text>
+  <rect x="400" y="195" width="160" height="30" fill="#f9fafb" stroke="#9ca3af"/>
+  <text x="430" y="215" font-size="11" fill="#1a1a2e">200</text>
+  <text x="510" y="215" font-size="11" fill="#1a1a2e">99</text>
+  <!-- Register box -->
+  <rect x="570" y="75" width="130" height="60" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="635" y="95" text-anchor="middle" font-size="11" font-weight="bold" fill="#5b21b6">R2 (index)</text>
+  <text x="635" y="115" text-anchor="middle" font-size="11" fill="#1a1a2e">value = 2</text>
+  <!-- Instructions / modes on the left -->
+  <text x="20" y="70" font-size="11" font-weight="bold" fill="#2563eb">Immediate #4</text>
+  <text x="20" y="86" font-size="10" fill="#374151">operand is value itself</text>
+  <rect x="20" y="95" width="60" height="22" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="50" y="111" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">4</text>
+  <text x="90" y="111" font-size="10" fill="#6b7280">&rarr; R1 = 4</text>
+  <text x="20" y="150" font-size="11" font-weight="bold" fill="#dc2626">Direct 100</text>
+  <text x="20" y="166" font-size="10" fill="#374151">operand is address of value</text>
+  <line x1="20" y1="180" x2="398" y2="90" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrAMr)"/>
+  <text x="20" y="200" font-size="10" fill="#dc2626">R1 = mem[100] = 200</text>
+  <text x="20" y="230" font-size="11" font-weight="bold" fill="#059669">Indirect (100)</text>
+  <text x="20" y="246" font-size="10" fill="#374151">address points to address</text>
+  <line x1="130" y1="242" x2="398" y2="90" stroke="#059669" stroke-width="1.5" marker-end="url(#arrAMg)"/>
+  <line x1="560" y1="90" x2="560" y2="210" stroke="#059669" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrAMg)"/>
+  <text x="20" y="268" font-size="10" fill="#059669">mem[100]=200 &rarr; R1 = mem[200] = 99</text>
+  <text x="20" y="300" font-size="11" font-weight="bold" fill="#7c3aed">Indexed 100, R2</text>
+  <text x="20" y="316" font-size="10" fill="#374151">base + index register</text>
+  <line x1="140" y1="312" x2="398" y2="150" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrAMp)"/>
+  <text x="20" y="340" font-size="10" fill="#7c3aed">R1 = mem[100+2] = mem[102] = 7</text>
+  <text x="360" y="370" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Same instruction bits, different meaning depending on mode flag</text>
+</svg>
+
+<div class="exam-tip">Indirect addressing is the most misremembered mode. Phrase it as "the operand is the address of a location that itself <em>contains</em> the address of the data" &mdash; two hops through memory. Indexed addressing is how arrays are implemented: <code>arr[i]</code> becomes <em>base + i*element_size</em>.</div>
+
+<h3>Paradigms</h3>
+
+<div class="definition">
+    A <strong>programming paradigm</strong> is a style of organising a program and its data. Languages often support multiple paradigms, but each paradigm makes certain patterns easier to express and optimise for.
+</div>
+
+<h4>Procedural</h4>
+
+<p><strong>Procedural programming</strong> organises code as a sequence of <strong>procedures</strong> (functions) that operate on <strong>variables</strong>. Control flows through <strong>sequence, selection (if / case) and iteration (while / for)</strong>. Structured programming banishes <code>goto</code> in favour of nested block structures; each routine has one entry and (ideally) one exit.</p>
+
+<pre>
+FUNCTION area_of_circle(radius)
+    pi = 3.14159
+    RETURN pi * radius * radius
+ENDFUNCTION
+
+a = area_of_circle(10)   ; call the procedure; it has no "owner"
+PRINT a
+</pre>
+
+<p>Best for: small-to-medium programs with straightforward data flow &mdash; scripts, utilities, algorithmic code.</p>
+
+<h4>Object-Oriented</h4>
+
+<div class="definition">
+    In <strong>object-oriented programming (OOP)</strong>, data and the code that acts on it are bundled into <strong>objects</strong>, instances of <strong>classes</strong>. Four pillars: <strong>encapsulation</strong>, <strong>inheritance</strong>, <strong>polymorphism</strong>, <strong>abstraction</strong>.
+</div>
+
+<table>
+    <tr><th>Pillar</th><th>Meaning</th></tr>
+    <tr><td><strong>Encapsulation</strong></td><td>Data (attributes) and behaviour (methods) bundled together; attributes made private and accessed via getters/setters. Protects invariants.</td></tr>
+    <tr><td><strong>Inheritance</strong></td><td>A subclass reuses and extends a parent class, inheriting its attributes and methods. "Is-a" relationship.</td></tr>
+    <tr><td><strong>Polymorphism</strong></td><td>The same method name behaves differently depending on the object's class (override) or argument types (overload).</td></tr>
+    <tr><td><strong>Abstraction</strong></td><td>Expose only the essential interface; hide implementation details behind it.</td></tr>
+</table>
+
+<pre>
+CLASS Animal
+    PRIVATE name
+    PRIVATE sound
+
+    PUBLIC PROCEDURE NEW(n, s)       ; constructor
+        name = n
+        sound = s
+    ENDPROCEDURE
+
+    PUBLIC FUNCTION get_name()
+        RETURN name
+    ENDFUNCTION
+
+    PUBLIC PROCEDURE speak()
+        PRINT name + " says " + sound
+    ENDPROCEDURE
+ENDCLASS
+
+CLASS Dog INHERITS Animal            ; subclass
+    PUBLIC PROCEDURE NEW(n)
+        SUPER.NEW(n, "Woof")         ; call parent constructor
+    ENDPROCEDURE
+
+    PUBLIC PROCEDURE fetch()         ; new method only on Dog
+        PRINT get_name() + " fetches the stick"
+    ENDPROCEDURE
+ENDCLASS
+
+rex = NEW Dog("Rex")
+rex.speak()    ; "Rex says Woof"   &mdash; inherited
+rex.fetch()    ; "Rex fetches the stick"  &mdash; own method
+</pre>
+
+<p>Best for: large systems with many entity types and evolving domain logic (games, business applications, GUIs, simulations).</p>
+
+<div class="exam-tip">In OCR pseudo-code, use <code>INHERITS</code>, <code>SUPER</code>, <code>PRIVATE</code>/<code>PUBLIC</code> to flag visibility, and a <code>NEW</code> procedure as the constructor. Examiners credit the <em>concept</em> (encapsulation of name, inheritance of speak) &mdash; exact syntax is flexible.</div>
+
+<h4>Functional</h4>
+
+<div class="definition">
+    <strong>Functional programming</strong> treats computation as the evaluation of mathematical functions. Emphasises <strong>pure functions</strong> (no side-effects), <strong>immutability</strong> (values are never changed, only new values created), <strong>first-class functions</strong> (functions passed as data), <strong>higher-order functions</strong> (map, filter, reduce), and <strong>recursion</strong> instead of loops.
+</div>
+
+<pre>
+; Sum of squares of even numbers, functional style:
+nums        = [1, 2, 3, 4, 5, 6]
+evens       = filter(lambda x: x MOD 2 == 0, nums)     ; [2, 4, 6]
+squares     = map(lambda x: x * x, evens)              ; [4, 16, 36]
+result      = reduce(lambda a, b: a + b, squares, 0)   ; 56
+</pre>
+
+<p>Best for: data transformation pipelines, concurrent/parallel code (no shared mutable state), symbolic computation. Examples: Haskell, F#, Lisp, Scheme. Full treatment lives in 2.1/2.2.</p>
+
+<h4>Declarative</h4>
+
+<p><strong>Declarative programming</strong> describes <em>what</em> you want, not <em>how</em> to compute it. The runtime decides the execution strategy. Examples:</p>
+<ul>
+    <li><strong>SQL</strong> &mdash; <code>SELECT name FROM pupils WHERE grade = 'A'</code>. You specify the desired result set; the DBMS chooses indexes and join order.</li>
+    <li><strong>Prolog</strong> &mdash; logic-based. You declare facts (<code>parent(alice, bob).</code>) and rules (<code>ancestor(X,Y) :- parent(X,Y).</code>); Prolog's inference engine answers queries.</li>
+</ul>
+
+<p>Best for: querying databases, theorem proving, constraint satisfaction, expert systems.</p>
+
+<h4>Event-Driven</h4>
+
+<div class="definition">
+    In <strong>event-driven programming</strong>, program flow is determined by <strong>events</strong> (button clicks, key presses, network packets, timer ticks). The program sits in an <strong>event loop</strong> and dispatches each event to a registered <strong>event handler</strong> (callback).
+</div>
+
+<p>Underpins almost all GUI frameworks (Windows Forms, WPF, Swing, JavaFX, Qt, Tkinter) and JavaScript in the browser. Best for: user interfaces and reactive systems. Easy to combine with OOP (each widget is an object with event handlers).</p>
+
+<h3>Choosing a Paradigm</h3>
+
+<table>
+    <tr><th>Paradigm</th><th>Best suited to...</th></tr>
+    <tr><td>Procedural</td><td>Small algorithmic tasks, scripts, embedded firmware</td></tr>
+    <tr><td>Object-oriented</td><td>Large, extensible systems with rich domain models (games, business apps, GUIs)</td></tr>
+    <tr><td>Functional</td><td>Data transformation pipelines, concurrent processing, symbolic maths</td></tr>
+    <tr><td>Declarative</td><td>Database queries, rule-based inference, constraint solving</td></tr>
+    <tr><td>Event-driven</td><td>GUIs, games, real-time systems reacting to inputs</td></tr>
+</table>
+
+<div class="exam-tip">Modern languages are <em>multi-paradigm</em> &mdash; Python supports procedural, OOP and functional styles. In exam scenarios, justify the paradigm by citing a feature that matches the problem: "OOP because the system has many customer-like entities sharing behaviour that can be inherited".</div>
+
+<h2>Key Terms Recap</h2>
+
+<table>
+    <tr><th>Term</th><th>One-line definition</th></tr>
+    <tr><td>Kernel</td><td>Core of the OS running in privileged mode, handling processes, memory, I/O, interrupts</td></tr>
+    <tr><td>Paging</td><td>Fixed-size division of virtual memory mapped to physical frames via a page table</td></tr>
+    <tr><td>Page fault</td><td>Exception raised when a process accesses a page not in physical RAM</td></tr>
+    <tr><td>ISR</td><td>Interrupt Service Routine &mdash; code that handles a specific interrupt</td></tr>
+    <tr><td>Virtual machine</td><td>Software emulation of a computer (system VM) or abstract machine executing intermediate code (process VM)</td></tr>
+    <tr><td>JIT</td><td>Just-in-time compilation &mdash; translating intermediate code to native at runtime</td></tr>
+    <tr><td>Compiler</td><td>Translator producing target code once; program then runs natively</td></tr>
+    <tr><td>Interpreter</td><td>Translator that reads and executes source line by line</td></tr>
+    <tr><td>AST</td><td>Abstract Syntax Tree &mdash; hierarchical output of the parser</td></tr>
+    <tr><td>Linker</td><td>Combines object files and libraries into one executable</td></tr>
+    <tr><td>Loader</td><td>OS component that loads the executable into RAM at run time</td></tr>
+    <tr><td>Waterfall</td><td>Sequential methodology &mdash; requirements &rarr; analysis &rarr; design &rarr; implement &rarr; test &rarr; maintain</td></tr>
+    <tr><td>Agile</td><td>Iterative methodologies delivering working software in short sprints</td></tr>
+    <tr><td>TDD</td><td>Test-Driven Development &mdash; write failing test, make it pass, refactor</td></tr>
+    <tr><td>Addressing mode</td><td>How an instruction's operand should be interpreted (immediate / direct / indirect / indexed)</td></tr>
+    <tr><td>Encapsulation</td><td>Bundling data and methods and restricting direct data access</td></tr>
+    <tr><td>Polymorphism</td><td>One interface, many implementations (override / overload)</td></tr>
+</table>
+
+<h2>Worked Scenarios</h2>
+
+<h3>Scenario: Choosing between a compiler and an interpreter</h3>
+<p>A development team is building an embedded temperature-control firmware that will ship on thousands of identical microcontrollers with 32&nbsp;KiB of flash memory and no screen. Which translator should they use?</p>
+<ul>
+    <li>A <strong>compiler</strong> is strongly preferred. Embedded flash is tight, so the overhead of shipping an interpreter with each device is unacceptable.</li>
+    <li>Native machine code runs faster and uses less power &mdash; important for battery-backed sensors.</li>
+    <li>The source is proprietary &mdash; shipping a compiled binary protects IP.</li>
+    <li>The firmware is rarely changed; there is no need for the interactive development benefits of an interpreter.</li>
+</ul>
+
+<h3>Scenario: Choosing a methodology for a hospital triage system</h3>
+<p>A hospital trust is commissioning a new patient triage system. Requirements must be fully documented for regulatory audit, and the system must be highly reliable. The Waterfall or Spiral models are both reasonable: Waterfall if the requirements can be frozen early (documentation and audit trail are natural deliverables); Spiral if there is significant risk of novel integration issues, because each loop explicitly analyses and resolves risks before coding. Agile would be a poor fit on its own because of the light documentation and difficulty of fix-pricing a regulated project.</p>
+
+<h3>Scenario: Choosing an OS type for a smart thermostat</h3>
+<p>A smart thermostat needs to sample temperature every second and drive a boiler relay within 100&nbsp;ms of a setpoint change. A full desktop OS (Windows, Linux) is overkill and cannot guarantee response time. The correct choice is an <strong>embedded real-time OS</strong> (FreeRTOS, Zephyr) running on a microcontroller: low RAM footprint, deterministic scheduler, interrupts for the button panel, and no unnecessary background processes competing for CPU.</p>
+
+<h2>Exam Technique for 1.2</h2>
+
+<ul>
+    <li><strong>Define before discussing.</strong> Any term named in the spec is worth a 1-mark definition; write it before analysing.</li>
+    <li><strong>Name the stages.</strong> For compilation, methodologies and FDE, sequence matters &mdash; lost if you swap stages.</li>
+    <li><strong>Contrast pairs.</strong> Questions love to pit compiler vs interpreter, static vs dynamic linking, Waterfall vs Agile, polling vs interrupts. Learn these side-by-side.</li>
+    <li><strong>Apply to scenarios.</strong> Long-answer questions give a context (a start-up, a hospital, a games company). Pick the methodology/paradigm/OS type that matches and justify against scenario cues.</li>
+    <li><strong>Use proper terminology.</strong> "Kernel", "ISR", "AST", "intermediate representation", "abstraction" &mdash; examiners reward precise vocabulary.</li>
+    <li><strong>Show the tradeoff.</strong> Most H446 1.2 questions are not asking for "which is best", but for <em>balanced discussion</em>. Always give at least one pro <em>and</em> one con.</li>
+    <li><strong>Don't confuse layers.</strong> Translators (lexer/parser/...) sit inside a compiler, the compiler is invoked by the toolchain, the toolchain runs on the OS, the OS sits on the hardware. Mixing these layers loses marks.</li>
+</ul>
+
+</div>
+</body>
+</html>

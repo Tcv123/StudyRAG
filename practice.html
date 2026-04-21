@@ -1469,7 +1469,9 @@ function showSubjectCards() {
       const gateMsg = tested === 0
         ? `Take the ${diag.total}-topic diagnostic to unlock practice`
         : `${tested}/${diag.total} done — ${remaining} topic${remaining === 1 ? '' : 's'} left to unlock`;
-      const diagUrl = `${diag.url}?topic=${encodeURIComponent(diag.first)}`;
+      // Route to the Dashboard's diagnostic topic picker for this subject
+      // so the user can see all topics and pick which to tackle.
+      const diagUrl = `Dashboard.html#diagnostic=${encodeURIComponent(key)}`;
       return `
         <a href="${diagUrl}" class="subj-pick needs-diag" style="text-decoration:none;color:inherit;" title="Finish the diagnostic to unlock practice questions.">
           <div class="subj-pick-emoji">${emoji}</div>

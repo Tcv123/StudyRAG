@@ -862,11 +862,11 @@ async function load() {
     const diagTotal = diag?.total || 0;
     const tested    = diagCount[key] || 0;
     const diagDone  = !diag || tested >= diagTotal;
-    // Deep-link straight into the diagnostic's first topic so the user
-    // can start immediately. Re-visiting the card after finishing a topic
-    // brings them back to topic 1 — a small trade-off for not needing a
-    // per-subject topic picker outside the Dashboard.
-    const diagUrl   = diag ? `${diag.url}?topic=${encodeURIComponent(diag.first)}` : '#';
+    // Route locked cards to the Dashboard's diagnostic topic picker for
+    // this subject — the user sees the full list of topics (with their
+    // RAG colours) and picks which one to tackle next, rather than being
+    // dropped straight onto topic 1.
+    const diagUrl   = `Dashboard.html#diagnostic=${encodeURIComponent(`${s.subject}_${s.exam_board}`)}`;
 
     if (!available) {
       return `<div class="subject-card locked">

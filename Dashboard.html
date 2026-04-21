@@ -1166,6 +1166,13 @@ function renderSubjectsProgress(subjects, topicRows) {
     const green   = topics.filter(t => t.rag_status === 'green').length;
     const amber   = topics.filter(t => t.rag_status === 'amber').length;
     const red     = topics.filter(t => t.rag_status === 'red').length;
+    // Diagnostic gate — if the user hasn't tested every topic yet, the
+    // subject's notes/practice are locked. The card routes to the
+    // Diagnostic topic picker for this subject so they can finish it.
+    const diagComplete = total && tested >= total;
+    const cardHref = diagComplete
+      ? (_lvLookup(SUBJECT_NOTES_PAGE, sbKey) || 'notes.html')
+      : `Dashboard.html#diagnostic=${encodeURIComponent(sbKey)}`;
 
     // Overall card RAG — use topic data if available, else fall back to stored status
     let cardRag = s.rag_status || 'pending';
@@ -1194,12 +1201,13 @@ function renderSubjectsProgress(subjects, topicRows) {
       : curGrade ? `Grade ${curGrade}` : '';
 
     return `
-    <div class="subj-card ${ragClass(cardRag)}" onclick="window.location='${_lvLookup(SUBJECT_NOTES_PAGE, `${s.subject}_${s.exam_board}`) || 'notes.html'}'">
+    <div class="subj-card ${ragClass(cardRag)}" onclick="window.location='${cardHref}'">
       <span class="subj-emoji">${s.emoji || '📚'}</span>
       <div class="subj-name">${s.subject}</div>
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
         <span class="subj-board-tag" style="margin-bottom:0;">${s.exam_board}</span>
         ${gradeStr ? `<span style="font-size:11px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-dark));padding:2px 8px;border-radius:20px;box-shadow:0 2px 6px var(--accent-glow);letter-spacing:0.01em;">${gradeStr}</span>` : ''}
+        ${!diagComplete && total ? `<span style="font-size:10px;font-weight:600;color:#B45309;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.25);padding:2px 8px;border-radius:20px;">🔒 Diagnostic ${tested}/${total}</span>` : ''}
       </div>
       <div class="subj-progress" style="display:flex;">
         ${greenPct ? `<div class="subj-fill fill-green" style="width:${greenPct}%"></div>` : ''}
@@ -2644,6 +2652,11 @@ function checkDiagnosticHash() {
 
 // Switch to diagnostic view immediately if hash is present (before data loads)
 checkDiagnosticHash();
+
+// Handle in-page hash changes too — e.g. clicking a Dashboard subject card
+// while already on the Dashboard doesn't reload the page, it just updates
+// the hash, so we need to react to `hashchange` as well.
+window.addEventListener('hashchange', checkDiagnosticHash);
 
 load().then(() => {
   checkDiagnosticHash();
