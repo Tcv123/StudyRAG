@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>RAG Learning — Test History</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="subjects-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EEF5FC;
+      --surface: #FFFFFF;
+      --surface2: #F4F9FE;
+      --surface3: #E6F1FA;
+      --border: #D2E5F3;
+      --border-hover: #93C4E2;
+      --text: #1B2D4F;
+      --muted: #6B87A8;
+      --muted2: #A0B8CE;
+      --accent: #5BADCF;
+      --accent-dark: #3D95BC;
+      --accent-dim: rgba(91,173,207,0.1);
+      --accent-glow: rgba(91,173,207,0.2);
+      --red: #DC2626; --red-bg: rgba(220,38,38,0.07); --red-border: rgba(220,38,38,0.18);
+      --amber: #D97706; --amber-bg: rgba(217,119,6,0.07); --amber-border: rgba(217,119,6,0.18);
+      --green: #16A34A; --green-bg: rgba(22,163,74,0.07); --green-border: rgba(22,163,74,0.18);
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    .app { display: flex; height: 100vh; overflow: hidden; }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: var(--sidebar-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      padding: 24px 0; flex-shrink: 0;
+      box-shadow: 2px 0 16px rgba(91,173,207,0.08);
+    }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted);
+      cursor: pointer; transition: all 0.15s; text-decoration: none;
+      border: none; background: none; width: 100%; text-align: left; font-family: var(--font-body);
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name  { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; flex-shrink: 0; }
+    .logout-btn:hover { color: #DC2626; }
+
+    /* ── MAIN ── */
+    .main { flex: 1; overflow-y: auto; padding: 36px 40px; }
+    .main::-webkit-scrollbar { width: 6px; }
+    .main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    .page-title { font-family: var(--font-display); font-size: 26px; letter-spacing: -0.01em; margin-bottom: 4px; display: flex; align-items: center; gap: 12px; }
+    .pro-pill { font-size: 10px; font-weight: 700; color: var(--amber); background: var(--amber-bg); border: 1px solid var(--amber-border); padding: 3px 10px; border-radius: 20px; letter-spacing: 0.05em; font-family: var(--font-body); }
+    .page-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; max-width: 760px; line-height: 1.5; }
+
+    /* ── STAT CARDS ── */
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px; }
+    .stat-card {
+      background: var(--surface); border: 2px solid var(--border); border-radius: 14px;
+      padding: 18px 20px; transition: all 0.2s; box-shadow: 0 1px 4px rgba(91,173,207,0.07);
+    }
+    .stat-card:hover { border-color: var(--border-hover); box-shadow: 0 4px 14px rgba(91,173,207,0.12); }
+    .stat-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .stat-value { font-family: var(--font-display); font-size: 28px; color: var(--text); letter-spacing: -0.02em; }
+    .stat-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* ── FILTERS ── */
+    .filter-row { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+    .filter-select {
+      padding: 9px 14px; border-radius: 10px; font-size: 13px;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+      font-family: var(--font-body); cursor: pointer; transition: all 0.15s;
+    }
+    .filter-select:hover { border-color: var(--border-hover); }
+    .filter-select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+    .filter-search {
+      flex: 1; min-width: 200px; max-width: 320px;
+      padding: 9px 14px; border-radius: 10px; font-size: 13px;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+      font-family: var(--font-body); transition: all 0.15s;
+    }
+    .filter-search:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+
+    /* ── ATTEMPT CARD ── */
+    .attempt-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; margin-bottom: 10px;
+      transition: all 0.15s; overflow: hidden;
+    }
+    .attempt-card:hover { border-color: var(--border-hover); box-shadow: 0 4px 14px rgba(91,173,207,0.12); }
+    .attempt-card.open { border-color: var(--accent); box-shadow: 0 4px 14px rgba(91,173,207,0.14); }
+
+    .attempt-header {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 18px; cursor: pointer;
+    }
+    .attempt-emoji {
+      width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+      background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.2);
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
+    }
+    .attempt-info { flex: 1; min-width: 0; }
+    .attempt-topic { font-size: 14px; font-weight: 500; color: var(--text); }
+    .attempt-meta { font-size: 12px; color: var(--muted); margin-top: 3px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .attempt-score {
+      display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+    }
+    .score-pill {
+      font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 99px;
+      border: 1px solid transparent;
+    }
+    .score-pill.green { background: var(--green-bg); color: var(--green); border-color: var(--green-border); }
+    .score-pill.amber { background: var(--amber-bg); color: var(--amber); border-color: var(--amber-border); }
+    .score-pill.red { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+    .score-fraction { font-size: 11px; color: var(--muted); }
+    .attempt-toggle {
+      width: 26px; height: 26px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--surface2); display: flex; align-items: center; justify-content: center;
+      font-size: 10px; color: var(--muted); transition: transform 0.2s, color 0.15s; margin-left: 4px;
+    }
+    .attempt-card.open .attempt-toggle { transform: rotate(180deg); color: var(--accent-dark); border-color: var(--accent); }
+
+    /* ── DETAIL ── */
+    .attempt-detail {
+      display: none;
+      border-top: 1px solid var(--border);
+      background: var(--surface2);
+      padding: 20px 22px;
+    }
+    .attempt-card.open .attempt-detail { display: block; animation: slideIn 0.2s ease-out; }
+    @keyframes slideIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .q-review {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px 18px; margin-bottom: 12px;
+    }
+    .q-review:last-child { margin-bottom: 0; }
+    .q-review-top {
+      display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;
+    }
+    .q-num {
+      width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; border: 1px solid;
+    }
+    .q-num.full { background: var(--green-bg); color: var(--green); border-color: var(--green-border); }
+    .q-num.partial { background: var(--amber-bg); color: var(--amber); border-color: var(--amber-border); }
+    .q-num.miss, .q-num.skip { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+    .q-text { flex: 1; font-size: 14px; line-height: 1.5; color: var(--text); }
+    .q-marks-tag {
+      font-size: 10px; font-weight: 700; color: var(--muted);
+      background: var(--surface2); border: 1px solid var(--border);
+      padding: 3px 9px; border-radius: 10px; flex-shrink: 0; white-space: nowrap;
+    }
+
+    .q-section {
+      margin-top: 10px; padding: 12px 14px; border-radius: 10px;
+      font-size: 13px; line-height: 1.55;
+    }
+    .q-section-label {
+      font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 6px; display: flex; align-items: center; gap: 6px;
+    }
+    .q-user-answer { background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.25); }
+    .q-user-answer .q-section-label { color: var(--accent-dark); }
+    .q-user-answer.empty { background: var(--red-bg); border-color: var(--red-border); }
+    .q-user-answer.empty .q-section-label { color: var(--red); }
+    .q-mark-scheme { background: var(--green-bg); border: 1px solid var(--green-border); margin-top: 10px; }
+    .q-mark-scheme .q-section-label { color: var(--green); }
+    .q-answer-text { color: var(--text); white-space: pre-wrap; word-wrap: break-word; }
+    .q-answer-text.muted { color: var(--muted); font-style: italic; }
+
+    .q-status-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border);
+      font-size: 12px;
+    }
+    .q-status-badge { font-weight: 600; padding: 3px 10px; border-radius: 99px; font-size: 11px; }
+    .q-status-badge.full { background: var(--green-bg); color: var(--green); }
+    .q-status-badge.partial { background: var(--amber-bg); color: var(--amber); }
+    .q-status-badge.miss, .q-status-badge.skip { background: var(--red-bg); color: var(--red); }
+
+    /* ── EMPTY ── */
+    .empty-state {
+      text-align: center; padding: 60px 20px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    }
+    .empty-icon { font-size: 42px; margin-bottom: 12px; opacity: 0.5; }
+    .empty-title { font-family: var(--font-display); font-size: 18px; color: var(--text); margin-bottom: 6px; }
+    .empty-sub { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+    .empty-cta {
+      display: inline-block; padding: 10px 22px; border-radius: 10px;
+      background: var(--accent); color: #fff; font-size: 13px; font-weight: 500;
+      text-decoration: none; transition: all 0.15s;
+    }
+    .empty-cta:hover { background: var(--accent-dark); }
+
+    .loading { padding: 40px 20px; text-align: center; color: var(--muted); font-size: 14px; }
+
+    /* ── MOBILE ── */
+    .mobile-menu-btn {
+      display: none; width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      align-items: center; justify-content: center; cursor: pointer;
+      font-size: 18px; box-shadow: 0 1px 4px rgba(91,173,207,0.1); margin-bottom: 16px;
+    }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
+    .mobile-overlay.active { display: block; }
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+      .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; height: 100vh; }
+      .sidebar.open { transform: translateX(0); }
+      .main { padding: 16px 14px; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .attempt-header { flex-wrap: wrap; }
+      .attempt-score { width: 100%; justify-content: flex-end; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <a href="Dashboard.html" class="sidebar-logo" style="text-decoration:none;color:inherit;cursor:pointer;">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </a>
+
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item active" href="test-history.html"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='settings.html'" style="cursor:pointer" title="Account settings">–</div>
+        <div class="user-info" onclick="location.href='settings.html'" style="cursor:pointer" title="Account settings">
+          <div class="user-name" id="sidebarName">Loading…</div>
+        </div>
+        <button class="logout-btn" onclick="logout()" title="Log out">⏻</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
+    <div class="page-title">Test History <span class="pro-pill">PRO</span></div>
+    <div class="page-sub">Every practice test you've taken, with the exact questions you got, the answer you wrote, and the mark scheme side-by-side. Click an attempt to see the full review and learn from what you missed.</div>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">Tests taken</div>
+        <div class="stat-value" id="statTotal">–</div>
+        <div class="stat-sub" id="statTotalSub">all time</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Average score</div>
+        <div class="stat-value" id="statAvg">–</div>
+        <div class="stat-sub">across all tests</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Best score</div>
+        <div class="stat-value" id="statBest" style="color:var(--green);">–</div>
+        <div class="stat-sub" id="statBestSub">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Latest</div>
+        <div class="stat-value" id="statLatest">–</div>
+        <div class="stat-sub" id="statLatestSub">—</div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filter-row">
+      <select class="filter-select" id="filterSubject" onchange="renderList()">
+        <option value="">All subjects</option>
+      </select>
+      <select class="filter-select" id="filterSort" onchange="renderList()">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="best">Best score first</option>
+        <option value="worst">Worst score first</option>
+      </select>
+      <input type="text" class="filter-search" id="filterSearch" placeholder="Search topic…" oninput="renderList()">
+    </div>
+
+    <!-- List -->
+    <div id="listWrap"><div class="loading">Loading your test history…</div></div>
+  </main>
+</div>
+
+<div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
+
+<script>
+let allAttempts = [];
+let openId = null;
+
+async function load() {
+  const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
+  if (authErr || !user) { window.location = 'auth/login.html'; return; }
+
+  const [{ data: profile }, { data: attempts, error: attErr }] = await Promise.all([
+    supabaseClient.from('profiles').select('first_name, last_name, avatar_url').eq('id', user.id).single(),
+    supabaseClient.from('practice_attempts').select('id, subject, exam_board, topic, topic_name, earned, total_marks, pct, questions, answered, time_used_sec, timed_out, details, taken_at').eq('user_id', user.id).order('taken_at', { ascending: false })
+  ]);
+
+  const firstName = profile?.first_name || '';
+  const lastName = profile?.last_name || '';
+  document.getElementById('sidebarName').textContent = `${firstName} ${lastName}`.trim() || 'Student';
+  queueMicrotask(() => {
+    if (profile?.avatar_url) {
+      const av = document.getElementById('avatarInitials');
+      const img = document.createElement('img');
+      img.src = profile.avatar_url; img.alt = '';
+      img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+      av.replaceChildren(img);
+    }
+  });
+  document.getElementById('avatarInitials').textContent = ((firstName[0] || '') + (lastName[0] || '')).toUpperCase() || '?';
+
+  if (attErr) {
+    console.warn('Failed to load practice attempts', attErr);
+    document.getElementById('listWrap').innerHTML = `<div class="empty-state">
+      <div class="empty-icon">⚠️</div>
+      <div class="empty-title">Couldn't load your history</div>
+      <div class="empty-sub">There was a problem reading your saved tests. Check your connection and reload the page.</div>
+    </div>`;
+    return;
+  }
+
+  allAttempts = (attempts || []);
+  renderStats();
+  populateSubjectFilter();
+  renderList();
+}
+
+function renderStats() {
+  const total = allAttempts.length;
+  document.getElementById('statTotal').textContent = total;
+  if (!total) {
+    document.getElementById('statAvg').textContent = '–';
+    document.getElementById('statBest').textContent = '–';
+    document.getElementById('statLatest').textContent = '–';
+    return;
+  }
+  const pcts = allAttempts.map(a => a.pct || 0);
+  const avg = Math.round(pcts.reduce((s, p) => s + p, 0) / pcts.length);
+  const best = Math.max(...pcts);
+  const bestAtt = allAttempts.find(a => (a.pct || 0) === best);
+  const latest = allAttempts[0];
+
+  document.getElementById('statAvg').textContent = avg + '%';
+  document.getElementById('statBest').textContent = best + '%';
+  document.getElementById('statBestSub').textContent = bestAtt ? (bestAtt.topic_name || bestAtt.topic) : '—';
+  document.getElementById('statLatest').textContent = (latest.pct || 0) + '%';
+  document.getElementById('statLatestSub').textContent = relativeDate(latest.taken_at);
+}
+
+function populateSubjectFilter() {
+  const sel = document.getElementById('filterSubject');
+  const seen = new Set();
+  const opts = [];
+  allAttempts.forEach(a => {
+    const key = `${a.subject}|${a.exam_board}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      opts.push({ key, label: `${a.subject} · ${a.exam_board}` });
+    }
+  });
+  opts.sort((a, b) => a.label.localeCompare(b.label));
+  sel.innerHTML = '<option value="">All subjects</option>' +
+    opts.map(o => `<option value="${escapeAttr(o.key)}">${escapeHtml(o.label)}</option>`).join('');
+}
+
+function renderList() {
+  const subjectFilter = document.getElementById('filterSubject').value;
+  const sort = document.getElementById('filterSort').value;
+  const q = document.getElementById('filterSearch').value.trim().toLowerCase();
+
+  let list = allAttempts.slice();
+
+  if (subjectFilter) {
+    list = list.filter(a => `${a.subject}|${a.exam_board}` === subjectFilter);
+  }
+  if (q) {
+    list = list.filter(a =>
+      (a.topic_name || '').toLowerCase().includes(q) ||
+      (a.topic || '').toLowerCase().includes(q) ||
+      (a.subject || '').toLowerCase().includes(q)
+    );
+  }
+
+  switch (sort) {
+    case 'oldest': list.sort((a, b) => (a.taken_at || '').localeCompare(b.taken_at || '')); break;
+    case 'best':   list.sort((a, b) => (b.pct || 0) - (a.pct || 0)); break;
+    case 'worst':  list.sort((a, b) => (a.pct || 0) - (b.pct || 0)); break;
+    default:       list.sort((a, b) => (b.taken_at || '').localeCompare(a.taken_at || ''));
+  }
+
+  const wrap = document.getElementById('listWrap');
+
+  if (!list.length) {
+    if (!allAttempts.length) {
+      wrap.innerHTML = `<div class="empty-state">
+        <div class="empty-icon">📜</div>
+        <div class="empty-title">No practice tests yet</div>
+        <div class="empty-sub">Take a practice test and it'll appear here with the full question-by-question breakdown.</div>
+        <a class="empty-cta" href="practice.html">Start a practice test →</a>
+      </div>`;
+    } else {
+      wrap.innerHTML = `<div class="empty-state">
+        <div class="empty-icon">🔎</div>
+        <div class="empty-title">No tests match that filter</div>
+        <div class="empty-sub">Try clearing the search or picking a different subject.</div>
+      </div>`;
+    }
+    return;
+  }
+
+  wrap.innerHTML = list.map(a => renderAttemptCard(a)).join('');
+}
+
+function renderAttemptCard(a) {
+  const pct = a.pct || 0;
+  const scoreClass = pct >= 70 ? 'green' : pct >= 40 ? 'amber' : 'red';
+  const emoji = (window.SUBJECTS_CONFIG && SUBJECTS_CONFIG.emojiFor)
+    ? SUBJECTS_CONFIG.emojiFor(a.subject) : '📘';
+  const topicLabel = a.topic_name || a.topic || 'Practice test';
+  const isOpen = openId === a.id;
+  const detail = isOpen ? renderDetail(a) : '';
+
+  return `
+    <div class="attempt-card ${isOpen ? 'open' : ''}" data-id="${escapeAttr(a.id)}">
+      <div class="attempt-header" onclick="toggleAttempt('${escapeAttr(a.id)}')">
+        <div class="attempt-emoji">${emoji}</div>
+        <div class="attempt-info">
+          <div class="attempt-topic">${escapeHtml(topicLabel)}</div>
+          <div class="attempt-meta">
+            <span>${escapeHtml(a.subject)} · ${escapeHtml(a.exam_board)}</span>
+            <span>📅 ${formatDate(a.taken_at)}</span>
+            <span>📝 ${a.questions || 0} question${a.questions === 1 ? '' : 's'}</span>
+            <span>⏱ ${fmtTime(a.time_used_sec || 0)}</span>
+            ${a.timed_out ? '<span style="color:var(--red);font-weight:600;">⏱ Timed out</span>' : ''}
+          </div>
+        </div>
+        <div class="attempt-score">
+          <div class="score-pill ${scoreClass}">${pct}%</div>
+          <div class="score-fraction">${a.earned || 0} / ${a.total_marks || 0}</div>
+          <div class="attempt-toggle">▼</div>
+        </div>
+      </div>
+      <div class="attempt-detail">${detail}</div>
+    </div>
+  `;
+}
+
+function renderDetail(a) {
+  const details = Array.isArray(a.details) ? a.details : [];
+  if (!details.length) {
+    return `<div style="padding:20px;text-align:center;color:var(--muted);font-size:13px;">
+      <div style="font-size:28px;margin-bottom:8px;opacity:0.5;">📝</div>
+      This test was taken before answer-review was available, so we don't have the per-question data for it. Future tests will be saved with full detail.
+    </div>`;
+  }
+
+  return details.map((d, i) => {
+    const level = d.level || 'miss';
+    const label = level === 'full' ? 'Full marks' : level === 'partial' ? 'Partial' : level === 'skip' ? 'Skipped' : 'Missed';
+    const userAnsEmpty = !d.userAnswer || !d.userAnswer.trim();
+    return `
+      <div class="q-review">
+        <div class="q-review-top">
+          <div class="q-num ${level}">${i + 1}</div>
+          <div class="q-text">${escapeHtml(d.question || '(question text missing)')}</div>
+          <div class="q-marks-tag">${d.marks || 0} mark${d.marks === 1 ? '' : 's'}</div>
+        </div>
+        <div class="q-section q-user-answer ${userAnsEmpty ? 'empty' : ''}">
+          <div class="q-section-label">✏️ Your answer</div>
+          <div class="q-answer-text ${userAnsEmpty ? 'muted' : ''}">${userAnsEmpty ? 'No answer written.' : escapeHtml(d.userAnswer)}</div>
+        </div>
+        <div class="q-section q-mark-scheme">
+          <div class="q-section-label">📋 Mark scheme</div>
+          <div class="q-answer-text">${escapeHtml(d.markScheme || '')}</div>
+        </div>
+        <div class="q-status-row">
+          <span class="q-status-badge ${level}">${label}</span>
+          <span style="color:var(--muted);">${d.earned || 0} / ${d.marks || 0} marks</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function toggleAttempt(id) {
+  openId = (openId === id) ? null : id;
+  renderList();
+}
+
+/* ── UTILS ── */
+function fmtTime(sec) {
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+function formatDate(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return '—';
+  return d.toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+}
+function relativeDate(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return '—';
+  const diffMs = Date.now() - d.getTime();
+  const day = 86400000;
+  if (diffMs < day) return 'today';
+  if (diffMs < 2 * day) return 'yesterday';
+  const days = Math.floor(diffMs / day);
+  if (days < 7) return `${days} days ago`;
+  if (days < 30) return `${Math.floor(days / 7)} weeks ago`;
+  return formatDate(iso);
+}
+function escapeHtml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+function escapeAttr(s) { return escapeHtml(s); }
+
+async function logout() {
+  await supabaseClient.auth.signOut();
+  window.location = 'auth/login.html';
+}
+
+load();
+</script>
+</body>
+</html>
