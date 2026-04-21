@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Edexcel Mathematics Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-config.js"></script>
+  <script src="../study-tracker.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #EEF5FC; --surface: #FFFFFF; --surface2: #F4F9FE;
+      --border: #D2E5F3; --border-hover: #93C4E2;
+      --text: #1B2D4F; --muted: #6B87A8; --muted2: #A0B8CE;
+      --accent: #5BADCF; --accent-dark: #3D95BC;
+      --accent-dim: rgba(91,173,207,0.1); --accent-glow: rgba(91,173,207,0.2);
+      --font-display: 'DM Serif Display', serif; --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px; --topics-w: 300px;
+    }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+    .app { display: flex; height: 100vh; overflow: hidden; }
+    .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 24px 0; flex-shrink: 0; box-shadow: 2px 0 16px rgba(91,173,207,0.08); }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted); cursor: pointer; transition: all 0.15s; text-decoration: none; border: none; background: none; width: 100%; text-align: left; font-family: var(--font-body); }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .user-email { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; flex-shrink: 0; }
+    .logout-btn:hover { color: #DC2626; }
+    .topics-panel { width: var(--topics-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; overflow: hidden; }
+    .topics-header { padding: 28px 22px 20px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+    .topics-subject { font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+    .topics-title { font-family: var(--font-display); font-size: 21px; letter-spacing: -0.01em; }
+    .topics-board { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; padding: 4px 12px; border-radius: 20px; background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.25); font-size: 11px; font-weight: 600; color: var(--accent-dark); }
+    .topics-body { flex: 1; overflow-y: auto; padding: 14px; }
+    .topics-body::-webkit-scrollbar { width: 4px; }
+    .topics-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .paper-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 10px 10px 6px; margin-top: 10px; }
+    .paper-label:first-child { margin-top: 0; }
+    .topic-btn { display: flex; flex-direction: column; width: 100%; padding: 12px 14px; border: 1px solid transparent; border-radius: 12px; background: none; cursor: pointer; text-align: left; font-family: var(--font-body); transition: all 0.15s; margin-bottom: 6px; }
+    .topic-btn:hover { background: var(--surface2); border-color: var(--border); }
+    .topic-btn.active { background: var(--accent-dim); border-color: rgba(91,173,207,0.3); }
+    .topic-main { display: flex; align-items: center; gap: 12px; width: 100%; }
+    .topic-num { width: 30px; height: 30px; border-radius: 9px; flex-shrink: 0; background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: var(--muted); }
+    .topic-btn.active .topic-num { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .topic-info { flex: 1; min-width: 0; }
+    .topic-name { font-size: 13.5px; font-weight: 500; color: var(--text); line-height: 1.4; }
+    .topic-btn.active .topic-name { color: var(--accent-dark); font-weight: 600; }
+    .topic-sub { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+    .rag-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; background: var(--border); transition: background 0.3s; }
+    .rag-dot.green { background: #22C55E; box-shadow: 0 0 6px rgba(34,197,94,0.4); }
+    .rag-dot.amber { background: #F59E0B; box-shadow: 0 0 6px rgba(245,158,11,0.4); }
+    .rag-dot.red { background: #EF4444; box-shadow: 0 0 6px rgba(239,68,68,0.4); }
+    .viewer { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+    .viewer-header { padding: 20px 32px; border-bottom: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+    .viewer-title { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.01em; }
+    .viewer-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
+    .viewer-actions { display: flex; gap: 8px; }
+    .viewer-btn { display: flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.15s; border: 1px solid var(--border); background: var(--surface2); color: var(--muted); font-family: var(--font-body); }
+    .viewer-btn:hover { border-color: var(--border-hover); color: var(--text); }
+    .viewer-btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; border-color: var(--accent); box-shadow: 0 2px 8px var(--accent-glow); }
+    .viewer-btn.primary:hover { filter: brightness(1.05); }
+    .pdf-frame { flex: 1; border: none; display: block; }
+    .empty-state { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 48px; text-align: center; }
+    .empty-icon { font-size: 52px; opacity: 0.5; }
+    .empty-title { font-family: var(--font-display); font-size: 22px; color: var(--text); }
+    .empty-sub { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 320px; }
+
+    .mobile-menu-btn {
+      display: none; width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      align-items: center; justify-content: center; cursor: pointer;
+      font-size: 18px;
+    }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
+    .mobile-overlay.active { display: block; }
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+      .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; top: 0; left: 0; bottom: 0; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0 !important; padding: 16px 14px !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="../Dashboard.html" class="sidebar-logo" style="text-decoration:none;color:inherit;cursor:pointer;">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </a>
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="../Dashboard.html"><span class="nav-icon">&#x229E;</span> Dashboard</a>
+      <a class="nav-item" href="../breakdown.html"><span class="nav-icon">&#x1F4CA;</span> Breakdown</a>
+      <a class="nav-item active" href="../notes.html"><span class="nav-icon">&#x1F4C4;</span> Notes</a>
+      <a class="nav-item" href="../Dashboard.html#diagnostic"><span class="nav-icon">&#x25CE;</span> Diagnostic</a>
+      <a class="nav-item" href="../medals.html"><span class="nav-icon">&#x1F3C5;</span> Medals</a>
+      <a class="nav-item" href="../practice.html"><span class="nav-icon">&#x2726;</span> Practice questions</a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">&#x1F4C4;</span> Past papers <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">&#x1F4CB;</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">&#x1F916;</span> AI feedback <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="../auth/setup.html"><span class="nav-icon">&#x270F;&#xFE0F;</span> Edit subjects</a>
+      <a class="nav-item" href="../settings.html"><span class="nav-icon">&#x2699;</span> Settings</a>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='../settings.html'" style="cursor:pointer" title="Account settings">?</div>
+        <div class="user-info" onclick="location.href='../settings.html'" style="cursor:pointer" title="Account settings">
+          <div class="user-name" id="sidebarName">Loading&#x2026;</div>
+        </div>
+        <button class="logout-btn" onclick="logout()" title="Sign out">&#x23FB;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topics panel -->
+  <div class="topics-panel">
+    <div class="topics-header">
+      <div class="topics-subject">Mathematics</div>
+      <div class="topics-title">Revision Notes</div>
+      <div class="topics-board">&#x1F522; Edexcel &#xB7; A-Level</div>
+    </div>
+    <div class="topics-body">
+      <div class="paper-label">Papers 1 &amp; 2 &#x2014; Pure Mathematics (Year 1)</div>
+      <button class="topic-btn" id="topicBtn-P1" onclick="openTopic(this, 'P1', 'Algebraic Expressions', '../notes-maths-edexcel/P1-algebraic-expressions.html')">
+        <div class="topic-main">
+          <div class="topic-num">P1</div>
+          <div class="topic-info">
+            <div class="topic-name">Algebraic Expressions</div>
+            <div class="topic-sub">Indices, surds, expanding, factorising</div>
+          </div>
+          <span class="rag-dot" id="rag-P1"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P2" onclick="openTopic(this, 'P2', 'Quadratics', '../notes-maths-edexcel/P2-quadratics.html')">
+        <div class="topic-main">
+          <div class="topic-num">P2</div>
+          <div class="topic-info">
+            <div class="topic-name">Quadratics</div>
+            <div class="topic-sub">Completing the square, discriminant, solving</div>
+          </div>
+          <span class="rag-dot" id="rag-P2"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P3" onclick="openTopic(this, 'P3', 'Equations &amp; Inequalities', '../notes-maths-edexcel/P3-equations-inequalities.html')">
+        <div class="topic-main">
+          <div class="topic-num">P3</div>
+          <div class="topic-info">
+            <div class="topic-name">Equations &amp; Inequalities</div>
+            <div class="topic-sub">Simultaneous, quadratic inequalities, modulus</div>
+          </div>
+          <span class="rag-dot" id="rag-P3"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P4" onclick="openTopic(this, 'P4', 'Graphs &amp; Transformations', '../notes-maths-edexcel/P4-graphs-transformations.html')">
+        <div class="topic-main">
+          <div class="topic-num">P4</div>
+          <div class="topic-info">
+            <div class="topic-name">Graphs &amp; Transformations</div>
+            <div class="topic-sub">Translations, stretches, reflections, combined</div>
+          </div>
+          <span class="rag-dot" id="rag-P4"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P5" onclick="openTopic(this, 'P5', 'Straight Lines &amp; Circles', '../notes-maths-edexcel/P5-straight-lines-circles.html')">
+        <div class="topic-main">
+          <div class="topic-num">P5</div>
+          <div class="topic-info">
+            <div class="topic-name">Straight Lines &amp; Circles</div>
+            <div class="topic-sub">Distance, midpoint, tangent, circle equation</div>
+          </div>
+          <span class="rag-dot" id="rag-P5"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P6" onclick="openTopic(this, 'P6', 'Trigonometric Ratios', '../notes-maths-edexcel/P6-trigonometric-ratios.html')">
+        <div class="topic-main">
+          <div class="topic-num">P6</div>
+          <div class="topic-info">
+            <div class="topic-name">Trigonometric Ratios</div>
+            <div class="topic-sub">Sine/cosine rules, exact values, area formula</div>
+          </div>
+          <span class="rag-dot" id="rag-P6"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P7" onclick="openTopic(this, 'P7', 'Trig Identities &amp; Equations', '../notes-maths-edexcel/P7_trig_identities_equations.html')">
+        <div class="topic-main">
+          <div class="topic-num">P7</div>
+          <div class="topic-info">
+            <div class="topic-name">Trig Identities &amp; Equations</div>
+            <div class="topic-sub">sin²+cos²=1, tanθ, solving in range</div>
+          </div>
+          <span class="rag-dot" id="rag-P7"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P8" onclick="openTopic(this, 'P8', 'Exponentials &amp; Logarithms', '../notes-maths-edexcel/P8_exponentials_logarithms.html')">
+        <div class="topic-main">
+          <div class="topic-num">P8</div>
+          <div class="topic-info">
+            <div class="topic-name">Exponentials &amp; Logarithms</div>
+            <div class="topic-sub">Log laws, ln, e^x, modelling, solving</div>
+          </div>
+          <span class="rag-dot" id="rag-P8"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P9" onclick="openTopic(this, 'P9', 'Differentiation (Year 1)', '../notes-maths-edexcel/P9_differentiation.html')">
+        <div class="topic-main">
+          <div class="topic-num">P9</div>
+          <div class="topic-info">
+            <div class="topic-name">Differentiation (Year 1)</div>
+            <div class="topic-sub">First principles, polynomials, tangents, stationary points</div>
+          </div>
+          <span class="rag-dot" id="rag-P9"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P10" onclick="openTopic(this, 'P10', 'Integration (Year 1)', '../notes-maths-edexcel/P10_integration.html')">
+        <div class="topic-main">
+          <div class="topic-num">P10</div>
+          <div class="topic-info">
+            <div class="topic-name">Integration (Year 1)</div>
+            <div class="topic-sub">Indefinite, definite, area under curve, trapezium rule</div>
+          </div>
+          <span class="rag-dot" id="rag-P10"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P11" onclick="openTopic(this, 'P11', 'Vectors (Year 1)', '../notes-maths-edexcel/P11_vectors.html')">
+        <div class="topic-main">
+          <div class="topic-num">P11</div>
+          <div class="topic-info">
+            <div class="topic-name">Vectors (Year 1)</div>
+            <div class="topic-sub">2D vectors, magnitude, unit vectors, position</div>
+          </div>
+          <span class="rag-dot" id="rag-P11"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Papers 1 &amp; 2 &#x2014; Pure Mathematics (Year 2)</div>
+      <button class="topic-btn" id="topicBtn-P12" onclick="openTopic(this, 'P12', 'Algebraic Methods', '../notes-maths-edexcel/P12_algebraic_methods.html')">
+        <div class="topic-main">
+          <div class="topic-num">P12</div>
+          <div class="topic-info">
+            <div class="topic-name">Algebraic Methods</div>
+            <div class="topic-sub">Division, factor theorem, partial fractions, proof</div>
+          </div>
+          <span class="rag-dot" id="rag-P12"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P13" onclick="openTopic(this, 'P13', 'Functions &amp; Graphs', '../notes-maths-edexcel/P13_functions_graphs.html')">
+        <div class="topic-main">
+          <div class="topic-num">P13</div>
+          <div class="topic-info">
+            <div class="topic-name">Functions &amp; Graphs</div>
+            <div class="topic-sub">Composite, inverse, modulus, transformations</div>
+          </div>
+          <span class="rag-dot" id="rag-P13"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P14" onclick="openTopic(this, 'P14', 'Sequences &amp; Series', '../notes-maths-edexcel/P14_sequences_series.html')">
+        <div class="topic-main">
+          <div class="topic-num">P14</div>
+          <div class="topic-info">
+            <div class="topic-name">Sequences &amp; Series</div>
+            <div class="topic-sub">Binomial expansion, arithmetic, geometric, sigma</div>
+          </div>
+          <span class="rag-dot" id="rag-P14"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P15" onclick="openTopic(this, 'P15', 'Radians', '../notes-maths-edexcel/P15_radians.html')">
+        <div class="topic-main">
+          <div class="topic-num">P15</div>
+          <div class="topic-info">
+            <div class="topic-name">Radians</div>
+            <div class="topic-sub">Arc length, sector area, segment, small angle approx</div>
+          </div>
+          <span class="rag-dot" id="rag-P15"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P16" onclick="openTopic(this, 'P16', 'Trigonometric Functions', '../notes-maths-edexcel/P16_trig_functions.html')">
+        <div class="topic-main">
+          <div class="topic-num">P16</div>
+          <div class="topic-info">
+            <div class="topic-name">Trigonometric Functions</div>
+            <div class="topic-sub">Sec/cosec/cot, addition formulae, double angle, R-form</div>
+          </div>
+          <span class="rag-dot" id="rag-P16"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P17" onclick="openTopic(this, 'P17', 'Parametric Equations', '../notes-maths-edexcel/P17_parametric_equations.html')">
+        <div class="topic-main">
+          <div class="topic-num">P17</div>
+          <div class="topic-info">
+            <div class="topic-name">Parametric Equations</div>
+            <div class="topic-sub">Converting, differentiating, integrating parametric curves</div>
+          </div>
+          <span class="rag-dot" id="rag-P17"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P18" onclick="openTopic(this, 'P18', 'Differentiation (Year 2)', '../notes-maths-edexcel/P18_differentiation_y2.html')">
+        <div class="topic-main">
+          <div class="topic-num">P18</div>
+          <div class="topic-info">
+            <div class="topic-name">Differentiation (Year 2)</div>
+            <div class="topic-sub">Chain/product/quotient, implicit, parametric, connected rates</div>
+          </div>
+          <span class="rag-dot" id="rag-P18"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P19" onclick="openTopic(this, 'P19', 'Numerical Methods', '../notes-maths-edexcel/P19_numerical_methods.html')">
+        <div class="topic-main">
+          <div class="topic-num">P19</div>
+          <div class="topic-info">
+            <div class="topic-name">Numerical Methods</div>
+            <div class="topic-sub">Newton-Raphson, fixed-point iteration, sign change</div>
+          </div>
+          <span class="rag-dot" id="rag-P19"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P20" onclick="openTopic(this, 'P20', 'Integration (Year 2)', '../notes-maths-edexcel/P20_integration_y2.html')">
+        <div class="topic-main">
+          <div class="topic-num">P20</div>
+          <div class="topic-info">
+            <div class="topic-name">Integration (Year 2)</div>
+            <div class="topic-sub">By substitution, by parts, partial fractions, ODEs</div>
+          </div>
+          <span class="rag-dot" id="rag-P20"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-P21" onclick="openTopic(this, 'P21', 'Vectors (3D)', '../notes-maths-edexcel/P21_vectors_3d.html')">
+        <div class="topic-main">
+          <div class="topic-num">P21</div>
+          <div class="topic-info">
+            <div class="topic-name">Vectors (3D)</div>
+            <div class="topic-sub">Equation of line, dot product, angle between lines, skew</div>
+          </div>
+          <span class="rag-dot" id="rag-P21"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Paper 3 &#x2014; Statistics</div>
+      <button class="topic-btn" id="topicBtn-S1" onclick="openTopic(this, 'S1', 'Statistical Sampling', '../notes-maths-edexcel/S1_statistical_sampling.html')">
+        <div class="topic-main">
+          <div class="topic-num">S1</div>
+          <div class="topic-info">
+            <div class="topic-name">Statistical Sampling</div>
+            <div class="topic-sub">Population, sample, sampling methods, bias</div>
+          </div>
+          <span class="rag-dot" id="rag-S1"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-S2" onclick="openTopic(this, 'S2', 'Data Presentation &amp; Measures', '../notes-maths-edexcel/S2_data_presentation_measures.html')">
+        <div class="topic-main">
+          <div class="topic-num">S2</div>
+          <div class="topic-info">
+            <div class="topic-name">Data Presentation &amp; Measures</div>
+            <div class="topic-sub">Mean, SD, variance, coding, box plots, histograms</div>
+          </div>
+          <span class="rag-dot" id="rag-S2"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-S3" onclick="openTopic(this, 'S3', 'Probability', '../notes-maths-edexcel/S3_probability.html')">
+        <div class="topic-main">
+          <div class="topic-num">S3</div>
+          <div class="topic-info">
+            <div class="topic-name">Probability</div>
+            <div class="topic-sub">Venn, tree diagrams, independence, E(X), Var(X)</div>
+          </div>
+          <span class="rag-dot" id="rag-S3"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-S4" onclick="openTopic(this, 'S4', 'Binomial Distribution', '../notes-maths-edexcel/S4_binomial_distribution.html')">
+        <div class="topic-main">
+          <div class="topic-num">S4</div>
+          <div class="topic-info">
+            <div class="topic-name">Binomial Distribution</div>
+            <div class="topic-sub">B(n,p), mean, variance, calculator use</div>
+          </div>
+          <span class="rag-dot" id="rag-S4"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-S5" onclick="openTopic(this, 'S5', 'Hypothesis Testing &#x2014; Binomial', '../notes-maths-edexcel/S5_hypothesis_testing_binomial.html')">
+        <div class="topic-main">
+          <div class="topic-num">S5</div>
+          <div class="topic-info">
+            <div class="topic-name">Hypothesis Testing &#x2014; Binomial</div>
+            <div class="topic-sub">H&#x2080;, H&#x2081;, critical region, p-value, conclusion in context</div>
+          </div>
+          <span class="rag-dot" id="rag-S5"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-S6" onclick="openTopic(this, 'S6', 'Regression &amp; Correlation', '../notes-maths-edexcel/S6_regression_correlation.html')">
+        <div class="topic-main">
+          <div class="topic-num">S6</div>
+          <div class="topic-info">
+            <div class="topic-name">Regression &amp; Correlation</div>
+            <div class="topic-sub">PMCC, regression line, hypothesis test for &#x3C1;</div>
+          </div>
+          <span class="rag-dot" id="rag-S6"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-S7" onclick="openTopic(this, 'S7', 'Conditional Probability', '../notes-maths-edexcel/S7_conditional_probability.html')">
+        <div class="topic-main">
+          <div class="topic-num">S7</div>
+          <div class="topic-info">
+            <div class="topic-name">Conditional Probability</div>
+            <div class="topic-sub">Conditional probability, total probability, Bayes</div>
+          </div>
+          <span class="rag-dot" id="rag-S7"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-S8" onclick="openTopic(this, 'S8', 'Normal Distribution', '../notes-maths-edexcel/S8_normal_distribution.html')">
+        <div class="topic-main">
+          <div class="topic-num">S8</div>
+          <div class="topic-info">
+            <div class="topic-name">Normal Distribution</div>
+            <div class="topic-sub">N(&#x3BC;,&#x3C3;&#xB2;), standardising, inverse normal, approx to binomial</div>
+          </div>
+          <span class="rag-dot" id="rag-S8"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Paper 3 &#x2014; Mechanics</div>
+      <button class="topic-btn" id="topicBtn-M1" onclick="openTopic(this, 'M1', 'Modelling in Mechanics', '../notes-maths-edexcel/M1_modelling_mechanics.html')">
+        <div class="topic-main">
+          <div class="topic-num">M1</div>
+          <div class="topic-info">
+            <div class="topic-name">Modelling in Mechanics</div>
+            <div class="topic-sub">Particles, rods, smooth surfaces, assumptions</div>
+          </div>
+          <span class="rag-dot" id="rag-M1"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-M2" onclick="openTopic(this, 'M2', 'Kinematics (SUVAT)', '../notes-maths-edexcel/M2_kinematics_suvat.html')">
+        <div class="topic-main">
+          <div class="topic-num">M2</div>
+          <div class="topic-info">
+            <div class="topic-name">Kinematics (SUVAT)</div>
+            <div class="topic-sub">SUVAT equations, displacement-time, velocity-time graphs</div>
+          </div>
+          <span class="rag-dot" id="rag-M2"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-M3" onclick="openTopic(this, 'M3', 'Forces &amp; Newton&#x2019;s Laws', '../notes-maths-edexcel/M3_forces_newtons_laws.html')">
+        <div class="topic-main">
+          <div class="topic-num">M3</div>
+          <div class="topic-info">
+            <div class="topic-name">Forces &amp; Newton&#x2019;s Laws</div>
+            <div class="topic-sub">F=ma, connected particles, Atwood machine, equilibrium</div>
+          </div>
+          <span class="rag-dot" id="rag-M3"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-M4" onclick="openTopic(this, 'M4', 'Moments', '../notes-maths-edexcel/M4_moments.html')">
+        <div class="topic-main">
+          <div class="topic-num">M4</div>
+          <div class="topic-info">
+            <div class="topic-name">Moments</div>
+            <div class="topic-sub">Turning effect, equilibrium, non-uniform beams, ladders</div>
+          </div>
+          <span class="rag-dot" id="rag-M4"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-M5" onclick="openTopic(this, 'M5', 'Variable Acceleration', '../notes-maths-edexcel/M5_variable_acceleration.html')">
+        <div class="topic-main">
+          <div class="topic-num">M5</div>
+          <div class="topic-info">
+            <div class="topic-name">Variable Acceleration</div>
+            <div class="topic-sub">Calculus: v=ds/dt, a=dv/dt, integration for displacement</div>
+          </div>
+          <span class="rag-dot" id="rag-M5"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-M6" onclick="openTopic(this, 'M6', 'Projectiles', '../notes-maths-edexcel/M6_projectiles.html')">
+        <div class="topic-main">
+          <div class="topic-num">M6</div>
+          <div class="topic-info">
+            <div class="topic-name">Projectiles</div>
+            <div class="topic-sub">Horizontal/vertical components, range, max height, trajectory</div>
+          </div>
+          <span class="rag-dot" id="rag-M6"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-M7" onclick="openTopic(this, 'M7', 'Further Forces', '../notes-maths-edexcel/M7_further_forces.html')">
+        <div class="topic-main">
+          <div class="topic-num">M7</div>
+          <div class="topic-info">
+            <div class="topic-name">Further Forces</div>
+            <div class="topic-sub">Friction F&#x2264;&#x3BC;R, resolving on inclines, limiting equilibrium</div>
+          </div>
+          <span class="rag-dot" id="rag-M7"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Viewer -->
+  <div class="viewer" id="viewer">
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">&#x1F522;</div>
+      <div class="empty-title">Select a topic</div>
+      <div class="empty-sub">Choose a topic from the list on the left to open your revision notes.</div>
+    </div>
+    <div id="viewerContent" style="display:none; flex:1; flex-direction:column; overflow:hidden;">
+      <div class="viewer-header">
+        <div>
+          <div class="viewer-title" id="viewerTitle">Topic</div>
+          <div class="viewer-sub" id="viewerSub">Edexcel A-Level Mathematics</div>
+        </div>
+        <div class="viewer-actions">
+          <a id="downloadBtn" href="#" download class="viewer-btn">&#x2B07; Download</a>
+          <a id="openBtn" href="#" target="_blank" class="viewer-btn primary">&#x2197; Open full screen</a>
+        </div>
+      </div>
+      <iframe id="pdfFrame" class="pdf-frame" src=""></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+(async () => {
+  const { data: { user } } = await supabaseClient.auth.getUser();
+  if (!user) { window.location = '../auth/login.html'; return; }
+  const { data: profile } = await supabaseClient.from('profiles').select('first_name, last_name, avatar_url').eq('id', user.id).single();
+  const first = profile?.first_name || '';
+  const last = profile?.last_name || '';
+  document.getElementById('sidebarName').textContent = `${first} ${last}`.trim() || user.email;
+  queueMicrotask(() => { if (profile?.avatar_url) { const _av = document.getElementById('avatarInitials'), _img = document.createElement('img'); _img.src = profile.avatar_url; _img.alt = ''; _img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;'; _av.replaceChildren(_img); } });
+  document.getElementById('avatarInitials').textContent = ((first[0]||'')+(last[0]||'')).toUpperCase() || '?';
+  const { data: rows } = await supabaseClient.from('topic_progress').select('topic, rag_status')
+    .eq('user_id', user.id).eq('subject', 'Mathematics').eq('exam_board', 'Edexcel');
+  if (rows) { rows.forEach(row => { const dot = document.getElementById(`rag-${row.topic}`); if (dot) dot.className = `rag-dot ${row.rag_status}`; }); }
+})();
+async function logout() { await supabaseClient.auth.signOut(); window.location = '../auth/login.html'; }
+function openTopic(btn, num, name, path) {
+  document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('viewerContent').style.display = 'flex';
+  document.getElementById('viewerTitle').textContent = `${num} — ${name}`;
+  document.getElementById('viewerSub').textContent = 'Edexcel A-Level Mathematics';
+  document.getElementById('pdfFrame').src = path;
+  document.getElementById('downloadBtn').href = path;
+  document.getElementById('openBtn').href = path;
+}
+</script>
+<div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
+</body>
+</html>
