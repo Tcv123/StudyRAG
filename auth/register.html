@@ -349,7 +349,12 @@
 
       <div class="field">
         <label for="confirmPassword">Confirm password</label>
-        <input id="confirmPassword" type="password" placeholder="Re-enter password" required>
+        <div class="input-wrap">
+          <input id="confirmPassword" type="password" placeholder="Re-enter password" required>
+          <button type="button" class="toggle-pw" id="toggleConfirmPw" aria-label="Show password" aria-pressed="false">
+            <svg id="eyeIconConfirm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
         <div class="pw-label" id="confirmLabel"></div>
       </div>
 
@@ -455,6 +460,16 @@ togglePw.addEventListener('click', () => {
   togglePw.setAttribute('aria-pressed', String(!showing));
   togglePw.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
   eyeIcon.innerHTML = showing ? EYE_OPEN : EYE_CLOSED;
+});
+
+const toggleConfirmPw = document.getElementById('toggleConfirmPw');
+const eyeIconConfirm  = document.getElementById('eyeIconConfirm');
+toggleConfirmPw.addEventListener('click', () => {
+  const showing = confirmPassword.type === 'text';
+  confirmPassword.type = showing ? 'password' : 'text';
+  toggleConfirmPw.setAttribute('aria-pressed', String(!showing));
+  toggleConfirmPw.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
+  eyeIconConfirm.innerHTML = showing ? EYE_OPEN : EYE_CLOSED;
 });
 
 const otpForm   = document.getElementById('otpForm');
