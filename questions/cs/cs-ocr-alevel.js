@@ -206,28 +206,28 @@ const CS_OCR_QUESTIONS = {
   '1.4': {
     name: 'Data Types, Data Structures & (Boolean) Algorithms',
     green: [
-      // 1.4.1 Data Types — primitives, bases, signed, floating-point, bitwise, character sets (8)
+      // 1.4.1 Data Types — primitives, bases, signed, floating-point, character sets (10)
       { q: 'Which of the following is a primitive data type in OCR H446?', options: ['Array','Integer','Linked list','Record'], answer: 1 },
       { q: 'What is the denary value of the 8-bit unsigned binary number 00101101?', options: ['43','45','47','53'], answer: 1 },
       { q: 'What is the hexadecimal equivalent of the 8-bit binary number 11111111?', options: ['F0','FF','EE','0F'], answer: 1 },
       { q: 'The hexadecimal digit C represents which denary value?', options: ['10','11','12','15'], answer: 2 },
       { q: 'What is the range of an n-bit unsigned binary integer?', options: ['0 to 2ⁿ','0 to 2ⁿ−1','−2ⁿ⁻¹ to 2ⁿ⁻¹−1','1 to 2ⁿ'], answer: 1 },
-      { q: 'On a Karnaugh map (K-map), what does a group of four adjacent 1s forming a 2×2 square allow you to eliminate?', options: ['One variable','Two variables','Three variables','No variables — all four must stay'], answer: 1 },
+      { q: 'In two\'s complement, how many bit patterns represent zero?', options: ['Zero','Exactly one','Exactly two (+0 and −0)','Depends on word length'], answer: 1 },
       { q: 'A floating-point number is stored as which three components?', options: ['Sign, mantissa, exponent','Sign, base, index','Mantissa, divisor, quotient','Numerator, denominator, sign'], answer: 0 },
       { q: 'Each hexadecimal digit represents exactly how many binary digits (bits)?', options: ['2','3','4','8'], answer: 2 },
-      { q: 'Each octal digit represents exactly how many binary digits?', options: ['2','3','4','8'], answer: 1 },
       { q: 'Which character set allocates the first 128 code points identically to ASCII but extends to over a million code points?', options: ['EBCDIC','Unicode','Baudot','Morse'], answer: 1 },
       { q: 'How many bits does a standard (non-extended) ASCII character occupy?', options: ['4','7','8','16'], answer: 1 },
       // 1.4.2 Data Structures (6)
+      { q: 'A tuple is best described as:', options: ['An unordered set of unique values','An ordered, immutable sequence of values, possibly of different types','A hash table key','A binary tree node'], answer: 1 },
       { q: 'A stack operates on which principle?', options: ['FIFO','LIFO','Random access','Sorted access'], answer: 1 },
       { q: 'A queue operates on which principle?', options: ['LIFO','FIFO','Random access','Sorted access'], answer: 1 },
       { q: 'Each node in a singly-linked list stores:', options: ['Only its value','A value and a pointer to the next node','Two pointers but no value','An index and a hash'], answer: 1 },
       { q: 'In a hash table the index of a key is determined by:', options: ['Alphabetical order','Applying a hash function to the key','Time of insertion','The memory address of the value'], answer: 1 },
-      { q: 'A tuple is best described as:', options: ['An unordered set of unique values','An ordered, immutable sequence of values, possibly of different types','A hash table key','A binary tree node'], answer: 1 },
       { q: 'Which operation returns the top value of a stack WITHOUT removing it?', options: ['push','pop','peek','enqueue'], answer: 2 },
-      // 1.4.3 Boolean Algebra (3)
+      // 1.4.3 Boolean Algebra (4)
       { q: 'What is the output of the Boolean expression A AND (NOT A)?', options: ['Always 1','Always 0','Always A','Undefined'], answer: 1 },
       { q: 'Which gate outputs 1 only when its two inputs differ?', options: ['AND','OR','XOR','NAND'], answer: 2 },
+      { q: 'On a Karnaugh map (K-map), what does a group of four adjacent 1s forming a 2×2 square allow you to eliminate?', options: ['One variable','Two variables','Three variables','No variables — all four must stay'], answer: 1 },
       { q: 'A D-type flip-flop is best described as:', options: ['A combinational circuit with no memory','A 1-bit memory element that captures its input on a clock edge','A 2-input AND gate','A multi-bit adder'], answer: 1 },
     ],
     amber: [
