@@ -50,13 +50,8 @@
     'Spanish':             ['AQA', 'Edexcel', 'Eduqas'],
   };
 
-  // Subject/board combinations that are GCSE-only — hide at A-Level / AS
-  // because no A-Level notes/diagnostics exist yet for these boards.
-  const gcseOnlyBoards = {
-    'Computer Science': ['Edexcel', 'AQA'],
-    'Mathematics':      ['OCR'],
-    'Geography':        ['Eduqas'],
-  };
+  // Subject names where Edexcel is not offered at A-Level / AS.
+  const noEdexcelAlevel = ['Computer Science'];
 
   // Subject set restricted to GCSE. Further Maths and Economics are not
   // offered at GCSE on this platform; English Literature, History and the
@@ -97,9 +92,8 @@
 
   function getBoardsFor(subjectName, level) {
     const list = boards[subjectName] || [];
-    if (level === 'a-level' || level === 'as') {
-      const hidden = gcseOnlyBoards[subjectName] || [];
-      return list.filter(b => !hidden.includes(b));
+    if ((level === 'a-level' || level === 'as') && noEdexcelAlevel.includes(subjectName)) {
+      return list.filter(b => b !== 'Edexcel');
     }
     return list;
   }
@@ -133,7 +127,7 @@
   window.SUBJECTS_CONFIG = {
     subjects,
     boards,
-    gcseOnlyBoards,
+    noEdexcelAlevel,
     gcseSubjectNames,
     gcseOnlySubjectNames,
     getSubjectsFor,
