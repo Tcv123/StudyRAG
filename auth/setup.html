@@ -1073,6 +1073,12 @@ async function save() {
 
     // Returning user — skip the Avatar step and land on Study level
     isEditMode = true;
+    // Drop the Avatar pill from the progress bar and renumber 1/2/3
+    document.getElementById('ps0').style.display = 'none';
+    document.getElementById('pl0').style.display = 'none';
+    document.querySelector('#ps1 .p-num').textContent = '1';
+    document.querySelector('#ps2 .p-num').textContent = '2';
+    document.querySelector('#ps3 .p-num').textContent = '3';
     goToStep1();
   }
 })();
