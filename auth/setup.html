@@ -484,6 +484,7 @@
         <button class="btn btn-back" onclick="backToAvatar()">← Back</button>
         <button class="btn btn-primary" onclick="goToStep2()">Next — Choose subjects →</button>
       </div>
+      <p id="msg1" class="msg"></p>
     </div>
 
     <!-- ── STEP 2 ── -->
@@ -530,7 +531,9 @@ function getBoardsFor(subjectName) {
 }
 
 // ── State ────────────────────────────────────────────────────────────────
-let selectedLevel    = 'as';
+// selectedLevel starts as null so the user must make an explicit choice.
+// Returning users have it populated from profile.level in load() below.
+let selectedLevel    = null;
 let selectedSubjects = [];   // [{ name, emoji }]
 let subjectBoards    = {};   // { name: board }
 let subjectCurrentGrade = {};  // { name: grade }
@@ -600,9 +603,21 @@ function selectLevel(val, el) {
   selectedLevel = val;
   document.querySelectorAll('.level-card').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
+  const msg1 = document.getElementById('msg1');
+  if (msg1) { msg1.className = 'msg'; msg1.innerText = ''; }
 }
 
 function goToStep2() {
+  const msg1 = document.getElementById('msg1');
+  if (!selectedLevel) {
+    if (msg1) {
+      msg1.className = 'msg error';
+      msg1.innerText = 'Please pick your study level to continue.';
+    }
+    return;
+  }
+  if (msg1) { msg1.className = 'msg'; msg1.innerText = ''; }
+
   document.getElementById('step1').classList.add('hidden');
   document.getElementById('step2').classList.remove('hidden');
   document.getElementById('ps1').classList.remove('active');
