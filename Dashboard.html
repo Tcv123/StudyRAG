@@ -312,7 +312,7 @@
     }
 
     /* ── STAT CARDS ── */
-    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+    .stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 16px; }
 
     .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; transition: border-color 0.15s, box-shadow 0.15s; box-shadow: 0 1px 4px rgba(37,99,235,0.07); }
     .stat-card:hover { border-color: var(--border-hover); box-shadow: 0 4px 14px rgba(37,99,235,0.12); }
@@ -691,6 +691,11 @@
         <div class="stat-label">Red topics</div>
         <div class="stat-value" id="statRed" style="color:var(--red);">–</div>
         <div class="stat-sub">need attention</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Not tested</div>
+        <div class="stat-value" id="statPending" style="color:var(--muted2);">–</div>
+        <div class="stat-sub">not yet diagnosed</div>
       </div>
     </div>
 
@@ -1677,6 +1682,14 @@ async function load() {
   const tRed       = topicRows.filter(t => t.rag_status === 'red').length;
   const tTotal     = topicRows.length;
 
+  // Total topics across all subscribed subjects (for "not tested" count)
+  let tAllTopics = 0;
+  (subjects || []).forEach(s => {
+    const diagData = _lvLookup(DIAG_TOPICS, `${s.subject}_${s.exam_board}`);
+    if (diagData) tAllTopics += diagData.topics.length;
+  });
+  const tPending = Math.max(0, tAllTopics - tTotal);
+
   // Subject-level counts for level banner
   const subjectList = subjects || [];
   document.getElementById('statSubjectCount').textContent = subjectList.length;
@@ -1691,6 +1704,7 @@ async function load() {
   document.getElementById('statGreen').textContent     = tGreen;
   document.getElementById('statAmber').textContent     = tAmber;
   document.getElementById('statRed').textContent       = tRed;
+  document.getElementById('statPending').textContent   = tPending;
 
 
   // Rows
