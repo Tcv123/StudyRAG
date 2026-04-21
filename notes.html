@@ -297,7 +297,7 @@ function _lvLookup(map, base) {
 }
 // Maps "Subject|Board" (+ optional "|alevel" variant) → diagnostic info.
 // `url`   — diagnostic page (one page per subject, takes ?topic=<id>)
-// `total` — number of topics the user must test before notes unlock
+// `total` — number of topics in the subject's diagnostic (for the nudge chip)
 // `first` — the topic ID to land on when entering from a locked card
 // Keep `total` and `first` in sync with each diagnostic page's topic list.
 const DIAG_PAGE = {
@@ -867,11 +867,8 @@ async function load() {
   const { data: subjects } = await supabaseClient.from('user_subjects').select('*').eq('user_id', user.id).order('created_at');
   const { data: progress } = await supabaseClient.from('topic_progress').select('subject, exam_board').eq('user_id', user.id);
 
-  // Build set of subject|board keys that have at least one diagnostic topic
-  // recorded — the diagnostic-started gate for unlocking notes.
-  const diagStarted = new Set(
-    (progress || []).map(p => `${p.subject}|${p.exam_board}`)
-  );
+  // Per-subject count of tested diagnostic topics — powers the
+  // "◎ Diagnostic X/Y" nudge chip on each notes card.
   const diagCount = {};
   (progress || []).forEach(p => {
     const k = `${p.subject}|${p.exam_board}`;
@@ -885,19 +882,8 @@ async function load() {
   document.getElementById('avatarInitials').textContent = ((firstName[0]||'')+(lastName[0]||'')).toUpperCase() || '?';
 
   const list = subjects || [];
-  function diagComplete(key) {
-    const diag = _lvLookup(DIAG_PAGE, key);
-    if (!diag) return true; // no diagnostic defined → nothing to gate on
-    return (diagCount[key] || 0) >= diag.total;
-  }
-  const lockedCount = list.filter(s => {
-    const key = `${s.subject}|${s.exam_board}`;
-    return !!_lvLookup(NOTES_AVAILABLE, key) && !diagComplete(key);
-  }).length;
   document.getElementById('pageSubTitle').textContent =
-    lockedCount > 0
-      ? `${list.length} subject${list.length !== 1 ? 's' : ''} — ${lockedCount} need${lockedCount === 1 ? 's' : ''} the full diagnostic before notes unlock`
-      : `${list.length} subject${list.length !== 1 ? 's' : ''} — click one to open its notes`;
+    `${list.length} subject${list.length !== 1 ? 's' : ''} — click one to open its notes`;
 
   const grid = document.getElementById('subjectsGrid');
 
@@ -920,11 +906,6 @@ async function load() {
     const diagTotal = diag?.total || 0;
     const tested    = diagCount[key] || 0;
     const diagDone  = !diag || tested >= diagTotal;
-    // Route locked cards to the Dashboard's diagnostic topic picker for
-    // this subject — the user sees the full list of topics (with their
-    // RAG colours) and picks which one to tackle next, rather than being
-    // dropped straight onto topic 1.
-    const diagUrl   = `Dashboard.html#diagnostic=${encodeURIComponent(`${s.subject}_${s.exam_board}`)}`;
 
     if (!available) {
       return `<div class="subject-card locked">
@@ -942,31 +923,9 @@ async function load() {
         </div>`;
     }
 
-    // Notes exist but diagnostic hasn't been fully completed — require all
-    // topics tested before notes unlock.
-    if (!diagDone && diagTotal > 0) {
-      const remaining = Math.max(0, diagTotal - tested);
-      const progressLine = tested > 0
-        ? `You've tested <strong>${tested} of ${diagTotal}</strong> topics — ${remaining} left to unlock notes.`
-        : `Covers all <strong>${diagTotal} topics</strong> in this subject — complete it to unlock your notes.`;
-      return `<a href="${diagUrl}" class="subject-card needs-diag">
-          <div class="card-top">
-            <div class="card-emoji">${s.emoji || '📚'}</div>
-            <div class="card-info">
-              <div class="card-name">${s.subject}</div>
-              <div class="card-board">${s.exam_board}</div>
-            </div>
-          </div>
-          <div class="diag-cta-box">
-            <span class="diag-cta-icon">◎</span>
-            <span><strong>Finish the diagnostic first.</strong> ${progressLine}</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-status status-diag">🔒 Notes locked — ${tested}/${diagTotal} topics done</span>
-            <span class="card-arrow" style="color:#D97706;">→</span>
-          </div>
-        </a>`;
-    }
+    const diagChip = (!diagDone && diagTotal > 0)
+      ? `<span class="card-status status-diag" title="Take the diagnostic to get your personalised weak-topic list">◎ Diagnostic ${tested}/${diagTotal}</span>`
+      : '';
 
     return `<a href="${notes.url}" class="subject-card available">
         <div class="card-top">
@@ -986,6 +945,7 @@ async function load() {
         </div>
         <div class="card-footer">
           <span class="card-status status-available">✓ Notes available</span>
+          ${diagChip}
           <span class="card-arrow">→</span>
         </div>
       </a>`;

@@ -1361,7 +1361,7 @@ const SUBJECT_EMOJIS = Object.fromEntries(
 
 // Maps "Subject_Board" (+ optional "_Board|alevel") → diagnostic info.
 // `url`   — diagnostic page (one page per subject, takes ?topic=<id>)
-// `total` — number of topics the user must test before practice unlocks
+// `total` — number of topics in the subject's diagnostic (for the nudge chip)
 // `first` — topic ID to land on when entering from a locked card
 const DIAG_PAGE = {
   'Computer Science_OCR':         { url: 'diagnostics/cs-ocr-gcse-diagnostic.html',      total: 11, first: '1.1' },
@@ -1478,27 +1478,11 @@ function showSubjectCards() {
     const red = subjProgress.filter(p => p.rag_status === 'red').length;
     const tested = green + amber + red;
 
-    // Diagnostic gate — require the full diagnostic (all topics) before
-    // practice questions unlock for this subject+board.
     const diag = _lvLookup(DIAG_PAGE, key);
-    if (diag && tested < diag.total) {
-      const remaining = diag.total - tested;
-      const gateMsg = tested === 0
-        ? `Take the ${diag.total}-topic diagnostic to unlock practice`
-        : `${tested}/${diag.total} done — ${remaining} topic${remaining === 1 ? '' : 's'} left to unlock`;
-      // Route to the Dashboard's diagnostic topic picker for this subject
-      // so the user can see all topics and pick which to tackle.
-      const diagUrl = `Dashboard.html#diagnostic=${encodeURIComponent(key)}`;
-      return `
-        <a href="${diagUrl}" class="subj-pick needs-diag" style="text-decoration:none;color:inherit;" title="Finish the diagnostic to unlock practice questions.">
-          <div class="subj-pick-emoji">${emoji}</div>
-          <div class="subj-pick-info">
-            <div class="subj-pick-name">${s.subject}<span class="subj-pick-diag-tag">◎ Finish diagnostic</span></div>
-            <div class="subj-pick-board">${s.exam_board} · <span style="font-size:11px;color:#B45309;">${gateMsg}</span></div>
-          </div>
-          <div class="subj-pick-arrow" style="color:#D97706;">→</div>
-        </a>`;
-    }
+    const diagIncomplete = diag && tested < diag.total;
+    const diagTag = diagIncomplete
+      ? `<span class="subj-pick-diag-tag" title="Take the diagnostic to find your weak topics">◎ Diagnostic ${tested}/${diag.total}</span>`
+      : '';
 
     const ragSummary = tested > 0
       ? `<span style="font-size:11px;color:var(--muted);">${tested}/${totalTopics} tested</span>`
@@ -1508,7 +1492,7 @@ function showSubjectCards() {
       <div class="subj-pick" onclick="selectSubject('${key}')">
         <div class="subj-pick-emoji">${emoji}</div>
         <div class="subj-pick-info">
-          <div class="subj-pick-name">${s.subject}</div>
+          <div class="subj-pick-name">${s.subject}${diagTag}</div>
           <div class="subj-pick-board">${s.exam_board} · ${ragSummary}</div>
         </div>
         <div class="subj-pick-arrow">→</div>

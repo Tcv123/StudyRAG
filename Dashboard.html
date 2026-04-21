@@ -1187,13 +1187,10 @@ function renderSubjectsProgress(subjects, topicRows) {
     const green   = topics.filter(t => t.rag_status === 'green').length;
     const amber   = topics.filter(t => t.rag_status === 'amber').length;
     const red     = topics.filter(t => t.rag_status === 'red').length;
-    // Diagnostic gate — if the user hasn't tested every topic yet, the
-    // subject's notes/practice are locked. The card routes to the
-    // Diagnostic topic picker for this subject so they can finish it.
+    // Card routes to the subject's notes. A diagnostic progress chip
+    // (below) nudges users who haven't finished their diagnostic.
     const diagComplete = total && tested >= total;
-    const cardHref = diagComplete
-      ? (_lvLookup(SUBJECT_NOTES_PAGE, sbKey) || 'notes.html')
-      : `Dashboard.html#diagnostic=${encodeURIComponent(sbKey)}`;
+    const cardHref = _lvLookup(SUBJECT_NOTES_PAGE, sbKey) || 'notes.html';
 
     // Overall card RAG — use topic data if available, else fall back to stored status
     let cardRag = s.rag_status || 'pending';
@@ -1228,7 +1225,7 @@ function renderSubjectsProgress(subjects, topicRows) {
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
         <span class="subj-board-tag" style="margin-bottom:0;">${s.exam_board}</span>
         ${gradeStr ? `<span style="font-size:11px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-dark));padding:2px 8px;border-radius:20px;box-shadow:0 2px 6px var(--accent-glow);letter-spacing:0.01em;">${gradeStr}</span>` : ''}
-        ${!diagComplete && total ? `<span style="font-size:10px;font-weight:600;color:#B45309;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.25);padding:2px 8px;border-radius:20px;">🔒 Diagnostic ${tested}/${total}</span>` : ''}
+        ${!diagComplete && total ? `<span onclick="event.stopPropagation();window.location='Dashboard.html#diagnostic=${encodeURIComponent(sbKey)}';" title="Take the diagnostic to get your personalised weak-topic list" style="font-size:10px;font-weight:600;color:#B45309;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.25);padding:2px 8px;border-radius:20px;cursor:pointer;">◎ Diagnostic ${tested}/${total}</span>` : ''}
       </div>
       <div class="subj-progress" style="display:flex;">
         ${greenPct ? `<div class="subj-fill fill-green" style="width:${greenPct}%"></div>` : ''}
@@ -2746,11 +2743,11 @@ load().then(() => {
   <div class="help-panel">
     <button class="help-panel-close" onclick="dismissWelcome()">✕</button>
     <div class="help-panel-title">👋 Welcome to RAG Learning</div>
-    <div class="help-panel-sub">Start here — finish all of your diagnostics first, then your notes and practice questions will unlock.</div>
+    <div class="help-panel-sub">Start with a diagnostic — it'll pinpoint your weak topics so your revision targets what actually matters.</div>
     <div class="help-steps">
       <div class="help-step">
         <div class="help-step-num">1</div>
-        <div class="help-step-text"><strong>Complete every diagnostic first</strong> — open the <strong>Diagnostic</strong> tab and work through every topic for each of your subjects. Until a subject's diagnostic is finished, its notes and practice questions stay locked.</div>
+        <div class="help-step-text"><strong>Take a diagnostic (highly recommended)</strong> — open the <strong>Diagnostic</strong> tab and work through the topics for each subject. It gives you a personalised red/amber/green map of what to prioritise. Your notes and practice questions are unlocked from day one, but skipping the diagnostic means revising blind.</div>
       </div>
       <div class="help-step">
         <div class="help-step-num">2</div>
@@ -2758,7 +2755,7 @@ load().then(() => {
       </div>
       <div class="help-step">
         <div class="help-step-num">3</div>
-        <div class="help-step-text">With your diagnostics done, <strong>Notes</strong> and <strong>Practice Questions</strong> unlock — use them to drill your weak topics.</div>
+        <div class="help-step-text">Use <strong>Notes</strong> and <strong>Practice Questions</strong> to drill your weak topics — they're available anytime, but the diagnostic tells you where to start.</div>
       </div>
       <div class="help-step">
         <div class="help-step-num">4</div>
