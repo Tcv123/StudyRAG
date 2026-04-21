@@ -1159,7 +1159,7 @@ function renderSubjectsProgress(subjects, topicRows) {
 
   grid.innerHTML = subjects.map(s => {
     const sbKey   = `${s.subject}_${s.exam_board}`;
-    const key     = SUBJECT_TOPIC_KEY[sbKey];
+    const key     = _lvLookup(SUBJECT_TOPIC_KEY, sbKey);
     const topics  = bySubjKey[sbKey] || [];
     const total   = TOTAL_TOPICS_FOR(key);
     const tested  = topics.length;
@@ -1194,7 +1194,7 @@ function renderSubjectsProgress(subjects, topicRows) {
       : curGrade ? `Grade ${curGrade}` : '';
 
     return `
-    <div class="subj-card ${ragClass(cardRag)}" onclick="window.location='${SUBJECT_NOTES_PAGE[`${s.subject}_${s.exam_board}`] || 'notes.html'}'">
+    <div class="subj-card ${ragClass(cardRag)}" onclick="window.location='${_lvLookup(SUBJECT_NOTES_PAGE, `${s.subject}_${s.exam_board}`) || 'notes.html'}'">
       <span class="subj-emoji">${s.emoji || '📚'}</span>
       <div class="subj-name">${s.subject}</div>
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
@@ -1224,10 +1224,24 @@ function TOTAL_TOPICS_FOR(key) {
   return TOPIC_TOTAL[key] || null;
 }
 
+// Level-aware lookup helpers. GCSE is the default; A-Level/AS get a
+// '|alevel' key suffix when a subject has distinct A-level content
+// (currently only Computer Science OCR — H446). Falls back to the base
+// key so non-level-split subjects continue to work.
+function _lvSuffix() {
+  const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
+  return (l === 'a-level' || l === 'as') ? 'alevel' : 'gcse';
+}
+function _lvLookup(map, base) {
+  const keyed = map[`${base}|${_lvSuffix()}`];
+  return keyed !== undefined ? keyed : map[base];
+}
+
 // ── Subject → topic key mapping ──────────────────────────────────────────
 // Key format: "SubjectName_Board"  →  topic_progress.subject value
 const SUBJECT_TOPIC_KEY = {
   'Computer Science_OCR': 'cs-ocr',
+  'Computer Science_OCR|alevel': 'cs-ocr-alevel',
   'Computer Science_AQA': 'cs-aqa',
   'Physics_Edexcel': 'physics-edexcel',
   'Physics_AQA': 'physics-aqa',
@@ -1259,9 +1273,10 @@ const SUBJECT_TOPIC_KEY = {
   'English Language_AQA': 'english-aqa',
   'English Language_Edexcel': 'english-edexcel',
 };
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas': 12, 'maths-aqa': 17, 'maths-ocr': 19, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas': 12, 'maths-aqa': 17, 'maths-ocr': 19, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
 const SUBJECT_NOTES_PAGE = {
   'Computer Science_OCR': 'subject-notes/cs-ocr-gcse-notes.html',
+  'Computer Science_OCR|alevel': 'subject-notes/cs-ocr-alevel-notes.html',
   'Computer Science_AQA': 'subject-notes/cs-aqa-notes.html',
   'Physics_Edexcel': 'subject-notes/physics-edexcel-notes.html',
   'Physics_AQA': 'subject-notes/physics-aqa-notes.html',
@@ -1310,7 +1325,7 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   // so that they're achievable for users with fewer topics in their curriculum.
   let totalCurriculumTopics = 0;
   for (const s of subjects) {
-    const key = SUBJECT_TOPIC_KEY[`${s.subject}_${s.exam_board}`];
+    const key = _lvLookup(SUBJECT_TOPIC_KEY, `${s.subject}_${s.exam_board}`);
     totalCurriculumTopics += TOPIC_TOTAL[key] || 0;
   }
   // Scaled threshold: never require more than the user actually has
@@ -1345,7 +1360,7 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   // ── Subject Mastery ──
   let masteredCount = 0;
   for (const s of subjects) {
-    const key = SUBJECT_TOPIC_KEY[`${s.subject}_${s.exam_board}`];
+    const key = _lvLookup(SUBJECT_TOPIC_KEY, `${s.subject}_${s.exam_board}`);
     const total = TOPIC_TOTAL[key];
     if (!key || !total) continue;
     const gCount = topicRows.filter(t =>
@@ -1360,7 +1375,7 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   // all_clear — every topic green
   let allGreen = subjects.length > 0;
   for (const s of subjects) {
-    const key = SUBJECT_TOPIC_KEY[`${s.subject}_${s.exam_board}`];
+    const key = _lvLookup(SUBJECT_TOPIC_KEY, `${s.subject}_${s.exam_board}`);
     const total = TOPIC_TOTAL[key];
     if (!key || !total) { allGreen = false; break; }
     const gCount = topicRows.filter(t =>
@@ -1455,7 +1470,7 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   if (greenTopics >= scale(100)) award('green_100');
   // green_all_one_board — check if any single subject has all topics green
   for (const s of subjects) {
-    const key = SUBJECT_TOPIC_KEY[`${s.subject}_${s.exam_board}`];
+    const key = _lvLookup(SUBJECT_TOPIC_KEY, `${s.subject}_${s.exam_board}`);
     const total = TOPIC_TOTAL[key];
     if (!key || !total) continue;
     const gCount = topicRows.filter(t =>
@@ -1975,7 +1990,7 @@ function toggleStatDropdown(filter) {
 // ── Topic definitions per subject for diagnostic list ────────────────────
 const DIAG_TOPICS = {
   'Computer Science_OCR': {
-    label: 'Computer Science — OCR',
+    label: 'Computer Science — OCR (GCSE)',
     emoji: '💻',
     page: 'diagnostics/cs-ocr-gcse-diagnostic.html',
     topics: [
@@ -1990,6 +2005,21 @@ const DIAG_TOPICS = {
       { id: '2.3', name: 'Producing Robust Programs', sub: 'Validation, testing, maintainability' },
       { id: '2.4', name: 'Boolean Logic', sub: 'Logic gates, truth tables' },
       { id: '2.5', name: 'Languages and IDEs', sub: 'High/low level, compilers, IDEs' },
+    ]
+  },
+  'Computer Science_OCR|alevel': {
+    label: 'Computer Science — OCR (A-Level H446)',
+    emoji: '💻',
+    page: 'diagnostics/cs-ocr-alevel-diagnostic.html',
+    topics: [
+      { id: '1.1', name: 'Characteristics of Processors, I/O & Storage', sub: 'Pipelining, cache, RISC/CISC, buses' },
+      { id: '1.2', name: 'Software and Software Development', sub: 'OS, translators, paradigms, methodologies' },
+      { id: '1.3', name: 'Exchanging Data', sub: 'Compression, encryption, databases, networks' },
+      { id: '1.4', name: 'Data Types, Structures & Algorithms', sub: 'Primitives, structures, Boolean algebra' },
+      { id: '1.5', name: 'Legal, Moral, Cultural & Ethical', sub: 'Legislation, AI, surveillance' },
+      { id: '2.1', name: 'Elements of Computational Thinking', sub: 'Abstraction, decomposition, logic' },
+      { id: '2.2', name: 'Problem Solving and Programming', sub: 'OOP, recursion, stacks, trees' },
+      { id: '2.3', name: 'Algorithms', sub: 'Big-O, Dijkstra, A*, analysis' },
     ]
   },
   'Computer Science_AQA': {
@@ -2483,7 +2513,7 @@ function showDiagSubjectCards() {
 
   cardsEl.innerHTML = diagSubjectList.map(s => {
     const key = `${s.subject}_${s.exam_board}`;
-    const diagData = DIAG_TOPICS[key];
+    const diagData = _lvLookup(DIAG_TOPICS, key);
     const emoji = diagData?.emoji || s.emoji || '📚';
     const totalTopics = diagData ? diagData.topics.length : 0;
 
@@ -2540,7 +2570,7 @@ function showDiagTopics(key) {
   topicView.style.display = 'block';
 
   const s = diagSubjectList.find(s => `${s.subject}_${s.exam_board}` === key);
-  const diagData = DIAG_TOPICS[key];
+  const diagData = _lvLookup(DIAG_TOPICS, key);
   if (!diagData || !s) return;
 
   let html = `<div style="font-size:15px;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:8px;">

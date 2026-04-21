@@ -245,6 +245,16 @@
 <script>
 // Which subjects have notes available and where they link
 // Key is "Subject|Board" — notes are board-specific
+// Subjects with distinct A-Level content add a "|alevel" suffix variant
+// (currently only Computer Science OCR).
+function _lvSuffix() {
+  const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
+  return (l === 'a-level' || l === 'as') ? 'alevel' : 'gcse';
+}
+function _lvLookup(map, base) {
+  const keyed = map[`${base}|${_lvSuffix()}`];
+  return keyed !== undefined ? keyed : map[base];
+}
 const NOTES_AVAILABLE = {
   'Computer Science|OCR': {
     url: 'subject-notes/cs-ocr-gcse-notes.html',
@@ -260,6 +270,19 @@ const NOTES_AVAILABLE = {
       { num: '2.3', name: 'Producing Robust Programs' },
       { num: '2.4', name: 'Boolean Logic' },
       { num: '2.5', name: 'Languages and IDEs' },
+    ]
+  },
+  'Computer Science|OCR|alevel': {
+    url: 'subject-notes/cs-ocr-alevel-notes.html',
+    topics: [
+      { num: '1.1', name: 'Characteristics of Processors, I/O & Storage' },
+      { num: '1.2', name: 'Software and Software Development' },
+      { num: '1.3', name: 'Exchanging Data' },
+      { num: '1.4', name: 'Data Types, Structures & Algorithms' },
+      { num: '1.5', name: 'Legal, Moral, Cultural & Ethical' },
+      { num: '2.1', name: 'Elements of Computational Thinking' },
+      { num: '2.2', name: 'Problem Solving and Programming' },
+      { num: '2.3', name: 'Algorithms' },
     ]
   },
   'Computer Science|AQA': {
@@ -743,7 +766,7 @@ async function load() {
   }
 
   grid.innerHTML = list.map(s => {
-    const notes    = NOTES_AVAILABLE[`${s.subject}|${s.exam_board}`];
+    const notes    = _lvLookup(NOTES_AVAILABLE, `${s.subject}|${s.exam_board}`);
     const available = !!notes;
     const topics   = notes?.topics || [];
     const preview  = topics.slice(0, 3);

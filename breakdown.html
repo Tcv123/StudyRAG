@@ -437,9 +437,17 @@
 </div>
 
 <script>
+function _lvSuffix() {
+  const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
+  return (l === 'a-level' || l === 'as') ? 'alevel' : 'gcse';
+}
+function _lvLookup(map, base) {
+  const keyed = map[`${base}|${_lvSuffix()}`];
+  return keyed !== undefined ? keyed : map[base];
+}
 const DIAG_TOPICS = {
   'Computer Science_OCR': {
-    label: 'Computer Science — OCR',
+    label: 'Computer Science — OCR (GCSE)',
     emoji: '💻',
     page: 'diagnostics/cs-ocr-gcse-diagnostic.html',
     topics: [
@@ -454,6 +462,21 @@ const DIAG_TOPICS = {
       { id: '2.3', name: 'Producing Robust Programs', sub: 'Validation, testing, maintainability' },
       { id: '2.4', name: 'Boolean Logic', sub: 'Logic gates, truth tables' },
       { id: '2.5', name: 'Languages and IDEs', sub: 'High/low level, compilers, IDEs' },
+    ]
+  },
+  'Computer Science_OCR|alevel': {
+    label: 'Computer Science — OCR (A-Level H446)',
+    emoji: '💻',
+    page: 'diagnostics/cs-ocr-alevel-diagnostic.html',
+    topics: [
+      { id: '1.1', name: 'Characteristics of Processors, I/O & Storage', sub: 'Pipelining, cache, RISC/CISC, buses' },
+      { id: '1.2', name: 'Software and Software Development', sub: 'OS, translators, paradigms, methodologies' },
+      { id: '1.3', name: 'Exchanging Data', sub: 'Compression, encryption, databases, networks' },
+      { id: '1.4', name: 'Data Types, Structures & Algorithms', sub: 'Primitives, structures, Boolean algebra' },
+      { id: '1.5', name: 'Legal, Moral, Cultural & Ethical', sub: 'Legislation, AI, surveillance' },
+      { id: '2.1', name: 'Elements of Computational Thinking', sub: 'Abstraction, decomposition, logic' },
+      { id: '2.2', name: 'Problem Solving and Programming', sub: 'OOP, recursion, stacks, trees' },
+      { id: '2.3', name: 'Algorithms', sub: 'Big-O, Dijkstra, A*, analysis' },
     ]
   },
   'Computer Science_AQA': {
@@ -1651,7 +1674,7 @@ async function load() {
   allSubjectData = [];
   (subjects || []).forEach(s => {
     const key = `${s.subject}_${s.exam_board}`;
-    const diagData = DIAG_TOPICS[key];
+    const diagData = _lvLookup(DIAG_TOPICS, key);
     if (!diagData) return;
 
     allSubjectData.push({
