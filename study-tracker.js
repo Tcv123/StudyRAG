@@ -16,19 +16,42 @@
   const today     = localDate(new Date());
   const yesterday = localDate(new Date(Date.now() - 86400000));
 
+  // Safe localStorage wrappers — private-browsing mode and quota-exceeded
+  // errors throw, which would otherwise kill the entire tracker silently.
+  // Fall back to an in-memory store so tracking still works for this session.
+  const _memFallback = {};
+  const lsGet = (k) => {
+    try { return localStorage.getItem(k); }
+    catch (_) { return _memFallback[k] ?? null; }
+  };
+  const lsSet = (k, v) => {
+    try { localStorage.setItem(k, v); }
+    catch (_) { _memFallback[k] = v; }
+  };
+
   // Reset counters if it's a new day
-  if (localStorage.getItem('study_date') !== today) {
-    localStorage.setItem('study_date',     today);
-    localStorage.setItem('study_seconds',  '0');
-    localStorage.setItem('streak_marked',  'false');
+  if (lsGet('study_date') !== today) {
+    lsSet('study_date',     today);
+    lsSet('study_seconds',  '0');
+    lsSet('streak_marked',  'false');
   }
 
   let lastActivity = Date.now();
-  let streakMarked = localStorage.getItem('streak_marked') === 'true';
+  let streakMarked = lsGet('streak_marked') === 'true';
 
   // Listen for any user interaction to track activity
   ['mousemove', 'keydown', 'scroll', 'click', 'touchstart'].forEach(ev => {
     document.addEventListener(ev, () => { lastActivity = Date.now(); }, { passive: true });
+  });
+
+  // Cross-tab sync: the `storage` event fires in OTHER tabs when one tab
+  // writes to localStorage. If another tab marks the streak, stop ticking
+  // here so we don't double-write to Supabase and inflate the count.
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'streak_marked' && e.newValue === 'true') {
+      streakMarked = true;
+      clearInterval(ticker);
+    }
   });
 
   // Tick every 30 seconds — only count if user is active
@@ -38,8 +61,8 @@
     const idle = Date.now() - lastActivity > IDLE_TIMEOUT_MS;
     if (idle) return;
 
-    const secs = parseInt(localStorage.getItem('study_seconds') || '0') + 30;
-    localStorage.setItem('study_seconds', String(secs));
+    const secs = parseInt(lsGet('study_seconds') || '0') + 30;
+    lsSet('study_seconds', String(secs));
 
     // Update progress indicator if it exists on this page
     updateProgressBar(secs);
@@ -54,7 +77,7 @@
   async function markStreak() {
     if (streakMarked) return;
     streakMarked = true;
-    localStorage.setItem('streak_marked', 'true');
+    lsSet('streak_marked', 'true');
 
     if (typeof supabaseClient === 'undefined') return;
 
@@ -100,7 +123,7 @@
       console.error('streak: unexpected error', err);
       // Allow retry on next tick — roll back the guard
       streakMarked = false;
-      localStorage.setItem('streak_marked', 'false');
+      lsSet('streak_marked', 'false');
     }
   }
 
@@ -144,7 +167,7 @@
   }
 
   // Expose seconds for any page that wants to show progress
-  window.getStudySeconds = () => parseInt(localStorage.getItem('study_seconds') || '0');
+  window.getStudySeconds = () => parseInt(lsGet('study_seconds') || '0');
 
   // ── Global error UI ───────────────────────────────────────────────────────
   // Shared red toast for failures — exposed so pages can report errors
