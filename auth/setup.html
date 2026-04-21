@@ -541,6 +541,9 @@
 // setup and practice.html never drift apart. Editing the list in one
 // place used to leave the other broken.
 const SUBJECTS = window.SUBJECTS_CONFIG.subjects;
+function getSubjectsForLevel() {
+  return window.SUBJECTS_CONFIG.getSubjectsFor(selectedLevel);
+}
 function getBoardsFor(subjectName) {
   return window.SUBJECTS_CONFIG.getBoardsFor(subjectName, selectedLevel);
 }
@@ -610,9 +613,16 @@ function selectLevel(val, el) {
   if (selectedLevel !== val) {
     subjectCurrentGrade = {};
     subjectTargetGrade = {};
+    // Drop any selected subjects that aren't offered at the new level
+    // (e.g. Further Maths / Economics aren't offered at GCSE).
+    const allowedNames = window.SUBJECTS_CONFIG.getSubjectsFor(val).map(s => s.name);
+    selectedSubjects = selectedSubjects.filter(s => allowedNames.includes(s.name));
+    Object.keys(subjectBoards).forEach(name => {
+      if (!allowedNames.includes(name)) delete subjectBoards[name];
+    });
     // Reset Edexcel for subjects that don't offer it at this level
     Object.keys(subjectBoards).forEach(name => {
-      const available = getBoardsFor(name);
+      const available = window.SUBJECTS_CONFIG.getBoardsFor(name, val);
       if (!available.includes(subjectBoards[name])) subjectBoards[name] = available[0];
     });
   }
@@ -674,7 +684,8 @@ function backToAvatar() {
 // ── Subject grid ─────────────────────────────────────────────────────────
 function renderGrid() {
   const grid = document.getElementById('subjectsGrid');
-  grid.innerHTML = SUBJECTS.map(s => {
+  const list = getSubjectsForLevel();
+  grid.innerHTML = list.map(s => {
     const sel = selectedSubjects.some(x => x.name === s.name);
     return `
       <div class="subj-card ${sel ? 'selected' : ''}" onclick="toggleSubject('${s.name}','${s.emoji}',this)">
