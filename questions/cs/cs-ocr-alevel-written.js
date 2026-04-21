@@ -67,7 +67,64 @@ const CS_OCR_WRITTEN = {
       },
     ],
   },
-  '1.2': { green: [], amber: [], red: [] },
+  '1.2': {
+    green: [
+      {
+        q: 'State the role of the kernel within an operating system.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• The kernel is the central part of the OS that runs in privileged/supervisor mode with direct access to hardware.\n• It manages core services: process/CPU scheduling, memory management, file systems, device drivers/I/O and inter-process communication, acting as the bridge between applications and hardware.`
+      },
+      {
+        q: 'Identify the three main types of translator and state one characteristic of each.',
+        marks: 3, tier: 'green',
+        modelAnswer: `• Compiler — translates the entire high-level source program into machine code (an executable) before execution; compilation is slow but execution is fast.\n• Interpreter — translates and executes source code one line/statement at a time; slower overall execution but good for development/testing as there is no separate compile step.\n• Assembler — translates assembly language (mnemonics) into machine code on a (largely) one-to-one basis.`
+      },
+      {
+        q: 'State three stages of the compilation process in the order they are performed.',
+        marks: 3, tier: 'green',
+        modelAnswer: `• Lexical analysis — the source is broken into tokens (keywords, identifiers, operators, literals); whitespace/comments are removed and a symbol table is started.\n• Syntax analysis (parsing) — tokens are checked against the grammar of the language and a parse/abstract syntax tree is built; syntax errors are reported.\n• Semantic analysis — meaning is checked (e.g. type compatibility, undeclared variables, scope rules) before code generation and optimisation produce the final object/machine code.`
+      },
+      {
+        q: 'State what is meant by an "addressing mode" in a low-level language and name two examples.',
+        marks: 3, tier: 'green',
+        modelAnswer: `• An addressing mode is the method used by an instruction to specify where its operand is located — it determines how the operand part of the instruction is interpreted.\n• Immediate addressing — the operand value is contained directly within the instruction (e.g. MOV R1, #5).\n• Direct addressing — the operand part contains the memory address of the data (e.g. LDR R1, 200).\n• (Also accept: indirect addressing — operand is the address of a register/location holding the address of the data; indexed addressing — effective address = base register + offset.)`
+      },
+    ],
+    amber: [
+      {
+        q: 'Describe how an interrupt is handled by a processor, including the role of the Interrupt Service Routine (ISR) and the interrupt priority.',
+        marks: 6, tier: 'amber',
+        modelAnswer: `• At the end of each fetch-decode-execute cycle the CPU checks the interrupt register for pending interrupts.\n• If an interrupt of higher priority than the current task is present, the CPU completes the current instruction and then responds.\n• The current state (PC, registers, status flags) is pushed onto a stack so execution can resume later.\n• The CPU looks up the address of the appropriate Interrupt Service Routine (ISR) in the interrupt vector table and loads that address into the PC.\n• The ISR runs, servicing the device/event (e.g. reading a key-press, handling a clock tick).\n• On completion the saved state is popped from the stack and execution resumes from where it left off.\n• Priority — each interrupt has an assigned priority; lower-priority interrupts are deferred (or themselves interrupted) so that urgent events (e.g. power failure, hardware faults) are serviced first.`
+      },
+      {
+        q: 'Compare compilers and interpreters, giving two points in favour of each and one situation where each is the better choice.',
+        marks: 6, tier: 'amber',
+        modelAnswer: `Compilers:\n• Produce a standalone executable in machine code that runs very quickly, because translation is a one-off cost.\n• Source code is not distributed — protects intellectual property and reduces tampering.\n• Best for production/shipping software where performance and deployment size matter (e.g. a commercial game engine).\nInterpreters:\n• No separate compile step — edits run immediately, giving a fast develop-test cycle and easier debugging (errors stop execution at the relevant line).\n• Portable — the same source can run anywhere an interpreter exists, without recompilation per architecture.\n• Best for rapid prototyping, scripting, teaching programming or short-lived scripts where execution speed is not critical (e.g. a Python data-analysis script).\n(Also accept hybrid approaches: bytecode + JIT combines compiler speed with interpreter portability.)`
+      },
+      {
+        q: 'Describe three CPU scheduling algorithms used by an operating system.',
+        marks: 6, tier: 'amber',
+        modelAnswer: `• First-Come-First-Served (FCFS) — processes run in the order they arrive on a single queue; simple and fair but a long job at the front blocks everything behind it (convoy effect).\n• Shortest Job First (SJF) — the process with the shortest estimated CPU burst runs next; minimises average waiting time but requires knowledge of burst length and can starve long jobs.\n• Round Robin — each process gets a fixed time quantum in turn; pre-emptive, gives good interactive response but too small a quantum wastes CPU on context switching, too large approaches FCFS.\n• (Also accept: Shortest Remaining Time — pre-emptive form of SJF; Priority scheduling — priority value decides order, risks starvation without aging; Multi-Level Feedback Queue — multiple queues with different quanta/priorities, dynamically demotes CPU-bound processes and favours interactive ones.)`
+      },
+      {
+        q: 'Explain what is meant by "virtual memory" and describe how paging is used to implement it.',
+        marks: 5, tier: 'amber',
+        modelAnswer: `• Virtual memory is a memory-management technique in which an area of secondary storage (the page/swap file) is used alongside physical RAM to give each process a large apparent address space.\n• The virtual address space of each process and physical RAM are divided into fixed-size pages (and page frames), e.g. 4 KB.\n• A page table maps each virtual page to a physical frame; accesses go via this table (assisted by a TLB cache in hardware).\n• If a required page is not currently in RAM a page fault occurs — the OS suspends the process, loads the page from disk into a free (or evicted) frame, updates the page table, then resumes the process.\n• A replacement policy such as LRU chooses which resident page to evict when RAM is full.\n• Benefits: programs can exceed physical RAM, multitasking is isolated via separate address spaces.\n• Drawback: if the working set exceeds RAM the system thrashes — most CPU time is spent paging rather than executing.`
+      },
+    ],
+    red: [
+      {
+        q: 'Discuss the suitability of Waterfall, Agile and Extreme Programming for a safety-critical railway-signalling project. Evaluate which approach (or combination) is most appropriate and justify your answer.',
+        marks: 10, tier: 'red',
+        modelAnswer: `Waterfall:\n• Sequential stages (requirements → design → implementation → testing → maintenance) with sign-off at each phase.\n• Strengths for safety-critical: exhaustive written specification, formal reviews, full traceability from hazards to tests — auditable and aligned with standards such as EN 50128.\n• Weaknesses: inflexible if requirements change; late discovery of integration problems; big-bang delivery raises late risk.\nAgile:\n• Iterative, incremental sprints with close customer involvement and working software each iteration.\n• Strengths: responsive to change, continuous integration, early discovery of defects; user stories make priorities explicit.\n• Weaknesses for safety-critical: light documentation is at odds with regulatory expectations; verification and validation evidence can lag; difficult to demonstrate whole-system safety with partial deliveries.\nExtreme Programming (XP):\n• Specific Agile variant with pair programming, continuous refactoring, TDD and very short release cycles.\n• Strengths: high code quality, strong test coverage (automated tests for every change), knowledge shared through pairs.\n• Weaknesses: XP\'s preference for minimal design up front and frequent change is risky when formal hazard analysis must feed into every design decision.\nEvaluation for railway signalling:\n• Safety standards require documented requirements, formal hazard analysis, V-model verification and independent assessment. Pure Agile/XP rarely satisfies these on their own.\n• A Waterfall/V-model structure is most defensible at the system level — each phase maps to a verification activity, ensuring traceable, auditable evidence.\n• Within each phase, XP-style practices (TDD, pair programming, continuous integration, automated regression) can be adopted to improve code quality and reduce defects without breaking the outer Waterfall structure.\n• Therefore a hybrid — Waterfall/V-model governance with disciplined XP engineering practices inside each phase — offers the best balance of rigour, auditability and modern engineering efficiency for a safety-critical railway-signalling project.`
+      },
+      {
+        q: 'Evaluate the use of immediate, direct, indirect and indexed addressing modes. In each case give a short example and state one situation in which that mode is the most appropriate choice.',
+        marks: 8, tier: 'red',
+        modelAnswer: `Immediate addressing:\n• The operand is encoded inside the instruction itself, e.g. MOV R1, #5 — the value 5 goes into R1.\n• No memory access needed for the operand, so it is very fast.\n• Best for loading small, known constants such as loop counter initialisation or bit masks.\n• Limitation: restricted to the bit-width available in the instruction format.\nDirect addressing:\n• The operand field holds the actual memory address of the data, e.g. LDR R1, 200 — load R1 from memory location 200.\n• One memory access per operand; address is fixed at assembly time.\n• Best for accessing a specific named global variable or I/O register.\n• Limitation: inflexible — the address cannot change, so unsuited to dynamic structures.\nIndirect addressing (register indirect):\n• The operand field identifies a register whose contents are the address of the data, e.g. LDR R1, [R2].\n• Allows addresses to be computed at runtime.\n• Best for pointer-based access (e.g. dereferencing a pointer passed as a function argument) and data structures such as linked lists.\nIndexed addressing:\n• Effective address = contents of a base register + a displacement, e.g. LDR R1, [R2, #4].\n• Supports systematic stepping through contiguous data.\n• Best for accessing elements of arrays and records/structs — the base register holds the start address and the offset selects the element.\nEvaluation:\n• Each mode trades generality against cost: immediate is fastest but least flexible; direct is simple but inflexible; indirect enables pointers but needs an extra step; indexed is powerful for structured data.\n• A modern compiler selects the mode that minimises instruction count and memory accesses while correctly modelling the source program\'s semantics — most real programs use a mixture, e.g. immediate constants, indexed array accesses and indirect dereferences for pointers.`
+      },
+    ],
+  },
   '1.3': { green: [], amber: [], red: [] },
   '1.4': { green: [], amber: [], red: [] },
   '1.5': { green: [], amber: [], red: [] },
