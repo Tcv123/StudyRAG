@@ -301,6 +301,10 @@ async function init() {
     questions = buildQuestionSet(mcqData, writtenData);
     sessionStorage.setItem(storeKey, JSON.stringify(questions));
   }
+  if (!questions || !questions.length) {
+    showError(`Questions for "${topicKey} — ${mcqData.name}" aren't available yet. Try another topic or come back later.`);
+    return;
+  }
   renderIntro(mcqData.name);
 }
 
