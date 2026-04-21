@@ -30,12 +30,12 @@ const EDEXCEL_MCQ_P1_P6 = {
       { q: 'If \\(\\sqrt{a} \\times \\sqrt{b} = \\sqrt{72}\\) and \\(a = 8\\), what is \\(b\\)?', options: ['9', '8', '18', '64'], answer: 0 },
     ],
     red: [
-      { q: 'Show that \\(\\dfrac{\\sqrt{5}+1}{\\sqrt{5}-1} = \\dfrac{3+\\sqrt{5}}{2}\\). Which step is correct?', options: ['Multiply by \\(\\dfrac{\\sqrt{5}+1}{\\sqrt{5}+1}\\) to get \\(\\dfrac{6+2\\sqrt{5}}{4}\\)', 'Multiply by \\(\\dfrac{\\sqrt{5}-1}{\\sqrt{5}-1}\\)', 'Multiply by \\(\\dfrac{1}{\\sqrt{5}}\\)', 'Multiply by \\(\\dfrac{\\sqrt{5}}{\\sqrt{5}}\\)'], answer: 0 },
-      { q: 'Find the value of \\(k\\) such that \\(\\sqrt{k} \\times k^{1/3} = k^{5/6}\\). This holds for all \\(k > 0\\). The exponent on the left is:', options: ['\\(\\dfrac{5}{6}\\)', '\\(\\dfrac{1}{2} \\times \\dfrac{1}{3}\\)', '\\(\\dfrac{5}{3}\\)', '\\(\\dfrac{2}{3}\\)'], answer: 0 },
-      { q: 'After rationalising \\(\\dfrac{2}{3-\\sqrt{7}}\\), the result is:', options: ['\\(3+\\sqrt{7}\\)', '\\(\\dfrac{6+2\\sqrt{7}}{2}\\)', '\\(\\dfrac{2}{3+\\sqrt{7}}\\)', '\\(6+2\\sqrt{7}\\)'], answer: 0 },
-      { q: 'Expand \\((1+\\sqrt{2})^4\\).', options: ['\\(17 + 12\\sqrt{2}\\)', '\\(9 + 4\\sqrt{2}\\)', '\\(1 + 4\\sqrt{2} + 8\\)', '\\(9 + 12\\sqrt{2}\\)'], answer: 0 },
-      { q: 'Which expression is equivalent to \\(\\dfrac{x^{3/2} - x^{1/2}}{x^{1/2}}\\)?', options: ['\\(x - 1\\)', '\\(x^3 - x\\)', '\\(\\sqrt{x} - 1\\)', '\\(x^2 - 1\\)'], answer: 0 },
-      { q: 'Simplify \\(\\dfrac{(4a^2 b^{-1})^{3/2}}{2a^2 b^{-2}}\\).', options: ['\\(4a b^{1/2}\\)', '\\(4a^{3/2} b^{-3/2}\\)', '\\(8a^3 b^{-3/2}\\)', '\\(2a b\\)'], answer: 0 },
+      { q: 'Show that \\(\\dfrac{\\sqrt{5}+1}{\\sqrt{5}-1} = \\dfrac{3+\\sqrt{5}}{2}\\). Which step is correct?', options: ['Multiply by \\(\\dfrac{\\sqrt{5}+1}{\\sqrt{5}+1}\\) to get \\(\\dfrac{6+2\\sqrt{5}}{4}\\)','Multiply by \\(\\dfrac{\\sqrt{5}-1}{\\sqrt{5}-1}\\)','Multiply by \\(\\dfrac{1}{\\sqrt{5}}\\)','Multiply by \\(\\dfrac{\\sqrt{5}}{\\sqrt{5}}\\)'], answer: 0 },
+      { q: 'Find the value of \\(k\\) such that \\(\\sqrt{k} \\times k^{1/3} = k^{5/6}\\). This holds for all \\(k > 0\\). The exponent on the left is:', options: ['\\(\\dfrac{5}{3}\\)','\\(\\dfrac{1}{2} \\times \\dfrac{1}{3}\\)','\\(\\dfrac{2}{3}\\)','\\(\\dfrac{5}{6}\\)'], answer: 3 },
+      { q: 'After rationalising \\(\\dfrac{2}{3-\\sqrt{7}}\\), the result is:', options: ['\\(3+\\sqrt{7}\\)','\\(\\dfrac{6+2\\sqrt{7}}{2}\\)','\\(\\dfrac{2}{3+\\sqrt{7}}\\)','\\(6+2\\sqrt{7}\\)'], answer: 0 },
+      { q: 'Expand \\((1+\\sqrt{2})^4\\).', options: ['\\(1 + 4\\sqrt{2} + 8\\)','\\(17 + 12\\sqrt{2}\\)','\\(9 + 4\\sqrt{2}\\)','\\(9 + 12\\sqrt{2}\\)'], answer: 1 },
+      { q: 'Which expression is equivalent to \\(\\dfrac{x^{3/2} - x^{1/2}}{x^{1/2}}\\)?', options: ['\\(x^3 - x\\)','\\(x - 1\\)','\\(x^2 - 1\\)','\\(\\sqrt{x} - 1\\)'], answer: 1 },
+      { q: 'Simplify \\(\\dfrac{(4a^2 b^{-1})^{3/2}}{2a^2 b^{-2}}\\).', options: ['\\(4a b^{1/2}\\)','\\(4a^{3/2} b^{-3/2}\\)','\\(8a^3 b^{-3/2}\\)','\\(2a b\\)'], answer: 0 },
     ]
   },
 
@@ -70,12 +70,12 @@ const EDEXCEL_MCQ_P1_P6 = {
       { q: 'For the quadratic \\(y = ax^2 + bx + c\\) with \\(a>0\\), the graph lies entirely above the x-axis when:', options: ['\\(b^2 - 4ac < 0\\)', '\\(b^2 - 4ac > 0\\)', '\\(b^2 - 4ac = 0\\)', '\\(b^2 + 4ac < 0\\)'], answer: 0 },
     ],
     red: [
-      { q: 'The curve \\(y = x^2 + kx + 4\\) is tangent to the x-axis. The value(s) of \\(k\\) are:', options: ['\\(k = \\pm 4\\)', '\\(k = \\pm 2\\)', '\\(k = 4\\) only', '\\(k = \\pm 8\\)'], answer: 0 },
-      { q: 'The line \\(y = mx + 1\\) intersects \\(y = x^2 - 3x + 4\\) at two points. The range of \\(m\\) is:', options: ['\\(m < -1\\) or \\(m > 5\\)', '\\(-1 < m < 5\\)', '\\(m > 1\\)', '\\(m < 5\\)'], answer: 0 },
-      { q: 'Find the range of \\(f(x) = 2x^2 - 8x + 9\\) for \\(x \\in \\mathbb{R}\\).', options: ['\\(f(x) \\geq 1\\)', '\\(f(x) \\geq 9\\)', '\\(f(x) \\geq -1\\)', '\\(f(x) \\geq 2\\)'], answer: 0 },
-      { q: 'How many points of intersection do \\(y = x^2\\) and \\(y = 4x - 4\\) have?', options: ['Exactly 1', '2', '0', 'Infinitely many'], answer: 0 },
-      { q: 'Given roots \\(\\alpha, \\beta\\) of \\(2x^2 - 5x + 1 = 0\\), find the equation with roots \\(2\\alpha\\) and \\(2\\beta\\).', options: ['\\(2x^2 - 10x + 4 = 0\\)', '\\(x^2 - 5x + 2 = 0\\)', '\\(2x^2 + 10x + 4 = 0\\)', '\\(x^2 - 10x + 4 = 0\\)'], answer: 0 },
-      { q: 'The quadratic \\(ax^2 + bx + c = 0\\) has roots that are reciprocals of each other. This means:', options: ['\\(a = c\\)', '\\(b = 0\\)', '\\(a = -c\\)', '\\(b = a + c\\)'], answer: 0 },
+      { q: 'The curve \\(y = x^2 + kx + 4\\) is tangent to the x-axis. The value(s) of \\(k\\) are:', options: ['\\(k = \\pm 4\\)','\\(k = \\pm 2\\)','\\(k = 4\\) only','\\(k = \\pm 8\\)'], answer: 0 },
+      { q: 'The line \\(y = mx + 1\\) intersects \\(y = x^2 - 3x + 4\\) at two points. The range of \\(m\\) is:', options: ['\\(m < 5\\)','\\(-1 < m < 5\\)','\\(m < -1\\) or \\(m > 5\\)','\\(m > 1\\)'], answer: 2 },
+      { q: 'Find the range of \\(f(x) = 2x^2 - 8x + 9\\) for \\(x \\in \\mathbb{R}\\).', options: ['\\(f(x) \\geq 1\\)','\\(f(x) \\geq 9\\)','\\(f(x) \\geq -1\\)','\\(f(x) \\geq 2\\)'], answer: 0 },
+      { q: 'How many points of intersection do \\(y = x^2\\) and \\(y = 4x - 4\\) have?', options: ['2','Infinitely many','0','Exactly 1'], answer: 3 },
+      { q: 'Given roots \\(\\alpha, \\beta\\) of \\(2x^2 - 5x + 1 = 0\\), find the equation with roots \\(2\\alpha\\) and \\(2\\beta\\).', options: ['\\(x^2 - 10x + 4 = 0\\)','\\(2x^2 + 10x + 4 = 0\\)','\\(x^2 - 5x + 2 = 0\\)','\\(2x^2 - 10x + 4 = 0\\)'], answer: 3 },
+      { q: 'The quadratic \\(ax^2 + bx + c = 0\\) has roots that are reciprocals of each other. This means:', options: ['\\(a = -c\\)','\\(b = a + c\\)','\\(a = c\\)','\\(b = 0\\)'], answer: 2 },
     ]
   },
 
@@ -110,13 +110,13 @@ const EDEXCEL_MCQ_P1_P6 = {
       { q: 'If \\(|x - a| < b\\), the solution is:', options: ['\\(a - b < x < a + b\\)', '\\(x < a - b\\) or \\(x > a + b\\)', '\\(-b < x < b\\)', '\\(a < x < b\\)'], answer: 0 },
     ],
     red: [
-      { q: 'Solve \\(|x^2 - 3x - 4| = 4\\).', options: ['\\(x = 0, 4, \\frac{3\\pm\\sqrt{17}}{2}\\) combined as \\(x=0, x=4, x=\\frac{3+\\sqrt{17}}{2}, x=\\frac{3-\\sqrt{17}}{2}\\)', '\\(x=0\\) or \\(x=4\\)', '\\(x=4\\) or \\(x=-1\\)', '\\(x = \\pm 4\\)'], answer: 0 },
-      { q: 'For \\(f(x) = \\dfrac{x+3}{x-1}\\), solve \\(f(x) > 2\\).', options: ['\\(1 < x < 5\\)', '\\(x > 5\\) or \\(x < 1\\)', '\\(x > 5\\)', '\\(x < 5\\)'], answer: 0 },
-      { q: 'Find all solutions to \\(x^2 + y^2 = 25\\) and \\(y = x + 1\\) where both coordinates are integers.', options: ['\\((3,4)\\) and \\((-4,-3)\\)', '\\((3,4)\\) only', '\\((4,3)\\) and \\((-3,-4)\\)', '\\((3,4)\\) and \\((-3,-4)\\)'], answer: 0 },
-      { q: 'Solve \\(|2x-1| + |x+1| = 4\\).', options: ['\\(x = \\frac{4}{3}\\) or \\(x = -\\frac{4}{3}\\)', '\\(x = 2\\) or \\(x = -2\\)', '\\(x = \\frac{4}{3}\\) or \\(x = -2\\)', '\\(x = 1\\) or \\(x = -\\frac{5}{3}\\)'], answer: 2 },
-      { q: 'The system \\(y = x^2 - k\\) and \\(y = 3x\\) has no real intersection. The range of \\(k\\) is:', options: ['\\(k < -\\frac{9}{4}\\)', '\\(k > -\\frac{9}{4}\\)', '\\(k < \\frac{9}{4}\\)', '\\(k > \\frac{9}{4}\\)'], answer: 0 },
-      { q: 'Find the set of values of \\(x\\) satisfying \\(x^2 < 9\\) and \\(x^2 - x - 6 \\geq 0\\).', options: ['\\(-3 < x \\leq -2\\)', '\\(x \\leq -2\\) or \\(x \\geq 3\\)', '\\(-3 < x < -2\\)', '\\(-2 \\leq x < 3\\)'], answer: 0 },
-      { q: 'Solve \\(\\dfrac{1}{|x|} < 2\\).', options: ['\\(|x| > \\frac{1}{2}\\), i.e., \\(x > \\frac{1}{2}\\) or \\(x < -\\frac{1}{2}\\)', '\\(-\\frac{1}{2} < x < \\frac{1}{2}\\)', '\\(x > \\frac{1}{2}\\)', '\\(x < \\frac{1}{2}\\)'], answer: 0 },
+      { q: 'Solve \\(|x^2 - 3x - 4| = 4\\).', options: ['\\(x = 0, 4, \\frac{3\\pm\\sqrt{17}}{2}\\) combined as \\(x=0, x=4, x=\\frac{3+\\sqrt{17}}{2}, x=\\frac{3-\\sqrt{17}}{2}\\)','\\(x=0\\) or \\(x=4\\)','\\(x=4\\) or \\(x=-1\\)','\\(x = \\pm 4\\)'], answer: 0 },
+      { q: 'For \\(f(x) = \\dfrac{x+3}{x-1}\\), solve \\(f(x) > 2\\).', options: ['\\(1 < x < 5\\)','\\(x > 5\\) or \\(x < 1\\)','\\(x > 5\\)','\\(x < 5\\)'], answer: 0 },
+      { q: 'Find all solutions to \\(x^2 + y^2 = 25\\) and \\(y = x + 1\\) where both coordinates are integers.', options: ['\\((3,4)\\) and \\((-4,-3)\\)','\\((3,4)\\) only','\\((4,3)\\) and \\((-3,-4)\\)','\\((3,4)\\) and \\((-3,-4)\\)'], answer: 0 },
+      { q: 'Solve \\(|2x-1| + |x+1| = 4\\).', options: ['\\(x = 1\\) or \\(x = -\\frac{5}{3}\\)','\\(x = \\frac{4}{3}\\) or \\(x = -2\\)','\\(x = 2\\) or \\(x = -2\\)','\\(x = \\frac{4}{3}\\) or \\(x = -\\frac{4}{3}\\)'], answer: 1 },
+      { q: 'The system \\(y = x^2 - k\\) and \\(y = 3x\\) has no real intersection. The range of \\(k\\) is:', options: ['\\(k < -\\frac{9}{4}\\)','\\(k > -\\frac{9}{4}\\)','\\(k < \\frac{9}{4}\\)','\\(k > \\frac{9}{4}\\)'], answer: 0 },
+      { q: 'Find the set of values of \\(x\\) satisfying \\(x^2 < 9\\) and \\(x^2 - x - 6 \\geq 0\\).', options: ['\\(x \\leq -2\\) or \\(x \\geq 3\\)','\\(-3 < x < -2\\)','\\(-3 < x \\leq -2\\)','\\(-2 \\leq x < 3\\)'], answer: 2 },
+      { q: 'Solve \\(\\dfrac{1}{|x|} < 2\\).', options: ['\\(|x| > \\frac{1}{2}\\), i.e., \\(x > \\frac{1}{2}\\) or \\(x < -\\frac{1}{2}\\)','\\(-\\frac{1}{2} < x < \\frac{1}{2}\\)','\\(x > \\frac{1}{2}\\)','\\(x < \\frac{1}{2}\\)'], answer: 0 },
     ]
   },
 
@@ -151,12 +151,12 @@ const EDEXCEL_MCQ_P1_P6 = {
       { q: 'The range of \\(y = 3\\sin x + 1\\) is:', options: ['\\(-2 \\leq y \\leq 4\\)', '\\(-3 \\leq y \\leq 3\\)', '\\(0 \\leq y \\leq 4\\)', '\\(-1 \\leq y \\leq 3\\)'], answer: 0 },
     ],
     red: [
-      { q: 'A curve has equation \\(y = f(x)\\). After applying \\(y = af(x+b) + c\\), the point \\((1,2)\\) maps to \\((3, 7)\\). If \\(b = -2\\) and \\(c = 3\\), find \\(a\\).', options: ['2', '\\(\\frac{1}{2}\\)', '4', '1'], answer: 0 },
-      { q: 'The graph \\(y = x^2 - 4x + 3\\) is reflected in \\(y = 0\\) then translated by \\(\\begin{pmatrix}0\\\\-1\\end{pmatrix}\\). Its equation is:', options: ['\\(y = -x^2 + 4x - 4\\)', '\\(y = x^2 - 4x + 4\\)', '\\(y = -x^2 + 4x - 3\\)', '\\(y = -x^2 + 4x - 2\\)'], answer: 0 },
-      { q: 'The function \\(f(x) = \\dfrac{1}{(x-2)^2} + 1\\) has range:', options: ['\\(y > 1\\)', '\\(y \\geq 1\\)', '\\(y > 0\\)', '\\(y \\geq 0\\)'], answer: 0 },
-      { q: 'The transformations that map \\(y = x^3\\) to \\(y = 8x^3 + 1\\) are:', options: ['Vertical stretch by 8, translate up 1', 'Horizontal stretch by \\(\\frac{1}{2}\\), translate up 1', 'Both A and B give the same curve', 'Vertical stretch by 8, horizontal stretch by \\(\\frac{1}{2}\\)'], answer: 2 },
-      { q: 'Given \\(y = f(x)\\) has exactly 3 roots and \\(y = f(|x|)\\) has exactly 5 roots, what can be deduced?', options: ['Exactly one root of \\(f\\) is positive and non-zero', 'All roots of \\(f\\) are positive', 'Exactly one root of \\(f\\) is zero', 'Two roots of \\(f\\) are equal'], answer: 0 },
-      { q: 'The graph of \\(y = \\sin x\\) is stretched horizontally by factor 2 then translated right by \\(\\frac{\\pi}{4}\\). The resulting equation is:', options: ['\\(y = \\sin\\!\\left(\\frac{x}{2} - \\frac{\\pi}{4}\\right)\\)', '\\(y = \\sin\\!\\left(2x - \\frac{\\pi}{4}\\right)\\)', '\\(y = \\sin\\!\\left(\\frac{x}{2} - \\frac{\\pi}{8}\\right)\\)', '\\(y = \\sin\\!\\left(\\frac{x-\\pi/4}{2}\\right)\\)'], answer: 3 },
+      { q: 'A curve has equation \\(y = f(x)\\). After applying \\(y = af(x+b) + c\\), the point \\((1,2)\\) maps to \\((3, 7)\\). If \\(b = -2\\) and \\(c = 3\\), find \\(a\\).', options: ['1','4','\\(\\frac{1}{2}\\)','2'], answer: 3 },
+      { q: 'The graph \\(y = x^2 - 4x + 3\\) is reflected in \\(y = 0\\) then translated by \\(\\begin{pmatrix}0\\\\-1\\end{pmatrix}\\). Its equation is:', options: ['\\(y = -x^2 + 4x - 4\\)','\\(y = -x^2 + 4x - 2\\)','\\(y = x^2 - 4x + 4\\)','\\(y = -x^2 + 4x - 3\\)'], answer: 0 },
+      { q: 'The function \\(f(x) = \\dfrac{1}{(x-2)^2} + 1\\) has range:', options: ['\\(y > 1\\)','\\(y \\geq 1\\)','\\(y > 0\\)','\\(y \\geq 0\\)'], answer: 0 },
+      { q: 'The transformations that map \\(y = x^3\\) to \\(y = 8x^3 + 1\\) are:', options: ['Vertical stretch by 8, horizontal stretch by \\(\\frac{1}{2}\\)','Vertical stretch by 8, translate up 1','Both A and B give the same curve','Horizontal stretch by \\(\\frac{1}{2}\\), translate up 1'], answer: 2 },
+      { q: 'Given \\(y = f(x)\\) has exactly 3 roots and \\(y = f(|x|)\\) has exactly 5 roots, what can be deduced?', options: ['Exactly one root of \\(f\\) is positive and non-zero','Two roots of \\(f\\) are equal','All roots of \\(f\\) are positive','Exactly one root of \\(f\\) is zero'], answer: 0 },
+      { q: 'The graph of \\(y = \\sin x\\) is stretched horizontally by factor 2 then translated right by \\(\\frac{\\pi}{4}\\). The resulting equation is:', options: ['\\(y = \\sin\\!\\left(\\frac{x}{2} - \\frac{\\pi}{4}\\right)\\)','\\(y = \\sin\\!\\left(2x - \\frac{\\pi}{4}\\right)\\)','\\(y = \\sin\\!\\left(\\frac{x}{2} - \\frac{\\pi}{8}\\right)\\)','\\(y = \\sin\\!\\left(\\frac{x-\\pi/4}{2}\\right)\\)'], answer: 3 },
     ]
   },
 
@@ -191,12 +191,12 @@ const EDEXCEL_MCQ_P1_P6 = {
       { q: 'The point \\((a, a^2)\\) lies on the circle \\(x^2 + y^2 = 20\\). Find \\(a\\).', options: ['\\(a = 2\\) (since \\(4+16=20\\))', '\\(a = \\pm\\sqrt{10}\\)', '\\(a = 4\\)', '\\(a = \\pm 2\\)'], answer: 0 },
     ],
     red: [
-      { q: 'The circles \\(x^2+y^2=25\\) and \\((x-7)^2+y^2=4\\) do not intersect because:', options: ['Distance between centres (7) > sum of radii (7) — they are externally tangent, actually equal, so they touch', 'Distance between centres = 7, sum of radii = 7, so they are externally tangent', 'Distance < difference of radii', 'They overlap'], answer: 1 },
-      { q: 'Find the equation of the circle passing through \\((0,0)\\), \\((4,0)\\) and \\((0,6)\\).', options: ['\\((x-2)^2+(y-3)^2=13\\)', '\\((x-2)^2+(y-3)^2=25\\)', '\\(x^2+y^2=52\\)', '\\((x+2)^2+(y+3)^2=13\\)'], answer: 0 },
-      { q: 'Two tangents are drawn from the point \\(P(5,0)\\) to the circle \\(x^2+y^2=9\\). The angle between the tangents is:', options: ['\\(2\\arcsin\\dfrac{3}{5}\\)', '\\(\\arctan\\dfrac{4}{3}\\)', '\\(2\\arctan\\dfrac{3}{4}\\)', '\\(60°\\)'], answer: 2 },
-      { q: 'The locus of points equidistant from \\(A(0,0)\\) and \\(B(4,6)\\) is the line:', options: ['\\(2x + 3y = 13\\)', '\\(3x + 2y = 13\\)', '\\(2x - 3y = 13\\)', '\\(x + y = 5\\)'], answer: 0 },
-      { q: 'Prove that \\(A(1,1)\\), \\(B(5,3)\\) and \\(C(3,7)\\) form a right-angled triangle by checking dot products. The right angle is at:', options: ['B', 'A', 'C', 'Not right-angled'], answer: 0 },
-      { q: 'The radical axis of circles \\(x^2+y^2=16\\) and \\((x-5)^2+y^2=9\\) is the line on which tangents from external points are equal. Its equation is:', options: ['\\(10x = 32\\), i.e., \\(x = 3.2\\)', '\\(x = 5\\)', '\\(5x = 16\\)', '\\(x = 2\\)'], answer: 0 },
+      { q: 'The circles \\(x^2+y^2=25\\) and \\((x-7)^2+y^2=4\\) do not intersect because:', options: ['They overlap','Distance < difference of radii','Distance between centres = 7, sum of radii = 7, so they are externally tangent','Distance between centres (7) > sum of radii (7) — they are externally tangent, actually equal, so they touch'], answer: 2 },
+      { q: 'Find the equation of the circle passing through \\((0,0)\\), \\((4,0)\\) and \\((0,6)\\).', options: ['\\((x-2)^2+(y-3)^2=13\\)','\\((x-2)^2+(y-3)^2=25\\)','\\(x^2+y^2=52\\)','\\((x+2)^2+(y+3)^2=13\\)'], answer: 0 },
+      { q: 'Two tangents are drawn from the point \\(P(5,0)\\) to the circle \\(x^2+y^2=9\\). The angle between the tangents is:', options: ['\\(2\\arctan\\dfrac{3}{4}\\)','\\(60°\\)','\\(2\\arcsin\\dfrac{3}{5}\\)','\\(\\arctan\\dfrac{4}{3}\\)'], answer: 0 },
+      { q: 'The locus of points equidistant from \\(A(0,0)\\) and \\(B(4,6)\\) is the line:', options: ['\\(2x + 3y = 13\\)','\\(3x + 2y = 13\\)','\\(2x - 3y = 13\\)','\\(x + y = 5\\)'], answer: 0 },
+      { q: 'Prove that \\(A(1,1)\\), \\(B(5,3)\\) and \\(C(3,7)\\) form a right-angled triangle by checking dot products. The right angle is at:', options: ['C','B','A','Not right-angled'], answer: 1 },
+      { q: 'The radical axis of circles \\(x^2+y^2=16\\) and \\((x-5)^2+y^2=9\\) is the line on which tangents from external points are equal. Its equation is:', options: ['\\(10x = 32\\), i.e., \\(x = 3.2\\)','\\(x = 5\\)','\\(5x = 16\\)','\\(x = 2\\)'], answer: 0 },
     ]
   },
 
@@ -231,12 +231,12 @@ const EDEXCEL_MCQ_P1_P6 = {
       { q: 'The maximum value of \\(3\\cos(2x) - 1\\) is:', options: ['2', '4', '3', '-4'], answer: 0 },
     ],
     red: [
-      { q: 'Solve \\(\\sin 2\\theta = \\cos\\theta\\) for \\(0° \\leq \\theta \\leq 360°\\).', options: ['\\(\\theta = 30°, 90°, 150°, 270°\\)', '\\(\\theta = 90°, 270°\\)', '\\(\\theta = 30°, 150°\\)', '\\(\\theta = 45°, 135°, 225°, 315°\\)'], answer: 0 },
-      { q: 'Triangle ABC has \\(a = 5\\), \\(b = 8\\), \\(A = 30°\\). How many triangles are possible?', options: ['Two (ambiguous case)', 'One', 'None', 'Cannot determine'], answer: 0 },
-      { q: 'Find the exact value of \\(\\sin 75°\\).', options: ['\\(\\dfrac{\\sqrt{6}+\\sqrt{2}}{4}\\)', '\\(\\dfrac{\\sqrt{3}+1}{4}\\)', '\\(\\dfrac{\\sqrt{6}-\\sqrt{2}}{4}\\)', '\\(\\dfrac{\\sqrt{2}+1}{2}\\)'], answer: 0 },
-      { q: 'In triangle ABC, \\(\\angle A = 120°\\), \\(b = 5\\), \\(c = 7\\). Find \\(a\\).', options: ['\\(\\sqrt{109}\\)', '\\(\\sqrt{25+49+35} = \\sqrt{109}\\)', '\\(\\sqrt{74}\\)', '\\(\\sqrt{109-35} = \\sqrt{74}\\)'], answer: 0 },
-      { q: 'Solve \\(4\\sin^2\\theta - 1 = 0\\) for \\(0 \\leq \\theta < 2\\pi\\), giving all solutions.', options: ['\\(\\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}, \\dfrac{7\\pi}{6}, \\dfrac{11\\pi}{6}\\)', '\\(\\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}\\)', '\\(\\dfrac{\\pi}{3}, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}, \\dfrac{5\\pi}{3}\\)', '\\(\\dfrac{\\pi}{6}, \\dfrac{7\\pi}{6}\\)'], answer: 0 },
-      { q: 'The area of a regular hexagon with side length \\(a\\) is:', options: ['\\(\\dfrac{3\\sqrt{3}}{2}a^2\\)', '\\(6a^2\\)', '\\(3a^2\\)', '\\(\\dfrac{3a^2}{2}\\)'], answer: 0 },
+      { q: 'Solve \\(\\sin 2\\theta = \\cos\\theta\\) for \\(0° \\leq \\theta \\leq 360°\\).', options: ['\\(\\theta = 30°, 150°\\)','\\(\\theta = 30°, 90°, 150°, 270°\\)','\\(\\theta = 90°, 270°\\)','\\(\\theta = 45°, 135°, 225°, 315°\\)'], answer: 1 },
+      { q: 'Triangle ABC has \\(a = 5\\), \\(b = 8\\), \\(A = 30°\\). How many triangles are possible?', options: ['Cannot determine','None','One','Two (ambiguous case)'], answer: 3 },
+      { q: 'Find the exact value of \\(\\sin 75°\\).', options: ['\\(\\dfrac{\\sqrt{6}+\\sqrt{2}}{4}\\)','\\(\\dfrac{\\sqrt{3}+1}{4}\\)','\\(\\dfrac{\\sqrt{6}-\\sqrt{2}}{4}\\)','\\(\\dfrac{\\sqrt{2}+1}{2}\\)'], answer: 0 },
+      { q: 'In triangle ABC, \\(\\angle A = 120°\\), \\(b = 5\\), \\(c = 7\\). Find \\(a\\).', options: ['\\(\\sqrt{109-35} = \\sqrt{74}\\)','\\(\\sqrt{74}\\)','\\(\\sqrt{25+49+35} = \\sqrt{109}\\)','\\(\\sqrt{109}\\)'], answer: 3 },
+      { q: 'Solve \\(4\\sin^2\\theta - 1 = 0\\) for \\(0 \\leq \\theta < 2\\pi\\), giving all solutions.', options: ['\\(\\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}, \\dfrac{7\\pi}{6}, \\dfrac{11\\pi}{6}\\)','\\(\\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}\\)','\\(\\dfrac{\\pi}{3}, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}, \\dfrac{5\\pi}{3}\\)','\\(\\dfrac{\\pi}{6}, \\dfrac{7\\pi}{6}\\)'], answer: 0 },
+      { q: 'The area of a regular hexagon with side length \\(a\\) is:', options: ['\\(\\dfrac{3a^2}{2}\\)','\\(3a^2\\)','\\(6a^2\\)','\\(\\dfrac{3\\sqrt{3}}{2}a^2\\)'], answer: 3 },
     ]
   }
 };

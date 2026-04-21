@@ -26,10 +26,10 @@ const FM_OCR_B_MCQ = {
     { q: 'The conclusion of a valid induction must state:', options: ['The result is obvious', 'P(n) depends on \\(k\\)', 'Assume P(k) true', 'By induction, P(n) holds for all required \\(n\\)'], answer: 3 },
   ],
   red: [
-    { q: 'Which statement is NOT proved by induction alone?', options: ['\\(\\sum r=n(n+1)/2\\)', '\\(2^n>n\\) for \\(n\\ge1\\)', '\\(7^n-1\\) divisible by 6', 'The set \\(\\mathbb{R}\\) is uncountable'], answer: 3 },
-    { q: 'Strong induction differs from ordinary induction by:', options: ['Using contradiction', 'Skipping base case', 'Being weaker', 'Assuming \\(P(1),\\ldots,P(k)\\) all true in the step'], answer: 3 },
-    { q: 'Proof by exhaustion is valid when:', options: ['The domain is infinite', 'We find one example', 'We use contradiction', 'The number of cases is finite'], answer: 3 },
-    { q: 'De Moivre\'s theorem for negative \\(n\\) is proved using:', options: ['Binomial theorem only', 'Exhaustion', 'Direct expansion', 'The result for positive \\(n\\) plus \\(z^{-1}=\\bar{z}/|z|^2\\)'], answer: 3 },
+    { q: 'Which statement is NOT proved by induction alone?', options: ['\\(2^n>n\\) for \\(n\\ge1\\)','\\(7^n-1\\) divisible by 6','\\(\\sum r=n(n+1)/2\\)','The set \\(\\mathbb{R}\\) is uncountable'], answer: 3 },
+    { q: 'Strong induction differs from ordinary induction by:', options: ['Being weaker','Using contradiction','Skipping base case','Assuming \\(P(1),\\ldots,P(k)\\) all true in the step'], answer: 3 },
+    { q: 'Proof by exhaustion is valid when:', options: ['The domain is infinite','We use contradiction','The number of cases is finite','We find one example'], answer: 2 },
+    { q: 'De Moivre\'s theorem for negative \\(n\\) is proved using:', options: ['Binomial theorem only','Exhaustion','Direct expansion','The result for positive \\(n\\) plus \\(z^{-1}=\\bar{z}/|z|^2\\)'], answer: 3 },
   ],
 },
 
@@ -50,11 +50,11 @@ const FM_OCR_B_MCQ = {
     { q: 'If \\(2+3i\\) is a root of a real polynomial, another root is:', options: ['\\(-2-3i\\)', '\\(-2+3i\\)', '\\(3+2i\\)', '\\(2-3i\\)'], answer: 3 },
   ],
   red: [
-    { q: 'How many distinct 5th roots of unity are there?', options: ['1', '4', '10', '5'], answer: 3 },
-    { q: 'The sum of all \\(n\\)th roots of unity (\\(n\\ge2\\)) equals:', options: ['\\(1\\)', '\\(n\\)', '\\(-1\\)', '\\(0\\)'], answer: 3 },
-    { q: 'Locus \\(|z-2|=|z+2i|\\) is:', options: ['Circle', 'Half-line', 'Ellipse', 'Perpendicular bisector of the segment from \\((2,0)\\) to \\((0,-2)\\)'], answer: 3 },
-    { q: 'Use de Moivre to express \\(\\cos 3\\theta\\):', options: ['\\(3\\cos\\theta-4\\cos^3\\theta\\)', '\\(3\\cos\\theta+\\cos 3\\theta\\)', '\\(\\cos^3\\theta\\) only', '\\(4\\cos^3\\theta-3\\cos\\theta\\)'], answer: 3 },
-    { q: 'Transformation \\(w=iz\\) represents:', options: ['Reflection', 'Dilation', 'Identity', 'Rotation \\(\\pi/2\\) anticlockwise about origin'], answer: 3 },
+    { q: 'How many distinct 5th roots of unity are there?', options: ['5','10','4','1'], answer: 0 },
+    { q: 'The sum of all \\(n\\)th roots of unity (\\(n\\ge2\\)) equals:', options: ['\\(1\\)','\\(n\\)','\\(-1\\)','\\(0\\)'], answer: 3 },
+    { q: 'Locus \\(|z-2|=|z+2i|\\) is:', options: ['Half-line','Perpendicular bisector of the segment from \\((2,0)\\) to \\((0,-2)\\)','Ellipse','Circle'], answer: 1 },
+    { q: 'Use de Moivre to express \\(\\cos 3\\theta\\):', options: ['\\(3\\cos\\theta-4\\cos^3\\theta\\)','\\(\\cos^3\\theta\\) only','\\(4\\cos^3\\theta-3\\cos\\theta\\)','\\(3\\cos\\theta+\\cos 3\\theta\\)'], answer: 2 },
+    { q: 'Transformation \\(w=iz\\) represents:', options: ['Reflection','Dilation','Identity','Rotation \\(\\pi/2\\) anticlockwise about origin'], answer: 3 },
   ],
 },
 
@@ -75,11 +75,11 @@ const FM_OCR_B_MCQ = {
     { q: 'If \\(A\\) is \\(3\\times3\\) and \\(\\det A=0\\), then the system \\(Ax=0\\) has:', options: ['A unique solution \\(x=0\\)', 'No solution', 'Exactly two solutions', 'A line or plane of solutions'], answer: 3 },
   ],
   red: [
-    { q: 'An eigenvector \\(v\\) of \\(A\\) corresponding to eigenvalue \\(\\lambda\\) satisfies:', options: ['\\(Av=v\\)', '\\(Av=\\lambda^2 v\\)', '\\(\\det(A-v)=0\\)', '\\(Av=\\lambda v,\\; v\\ne0\\)'], answer: 3 },
-    { q: 'Diagonalisation: \\(A=PDP^{-1}\\) where:', options: ['\\(P\\) is diagonal, \\(D\\) has eigenvectors', '\\(P\\) is always orthogonal', '\\(D=I\\)', '\\(D\\) is diagonal with eigenvalues; \\(P\\) has eigenvectors as columns'], answer: 3 },
-    { q: '\\(A^n\\) where \\(A=PDP^{-1}\\) equals:', options: ['\\(P^nDP^{-n}\\)', '\\(PD^nP^{-n}\\)', '\\(P^nD^nP^{-n}\\)', '\\(PD^nP^{-1}\\)'], answer: 3 },
-    { q: 'Cayley–Hamilton theorem states that every matrix:', options: ['Is symmetric', 'Has a unique inverse', 'Equals its transpose', 'Satisfies its own characteristic equation'], answer: 3 },
-    { q: 'The characteristic polynomial of \\(\\begin{pmatrix}4&1\\\\2&3\\end{pmatrix}\\) is:', options: ['\\(\\lambda^2-10\\)', '\\(\\lambda^2-7\\lambda+12\\)', '\\(\\lambda^2+5\\lambda+6\\)', '\\(\\lambda^2-7\\lambda+10\\)'], answer: 3 },
+    { q: 'An eigenvector \\(v\\) of \\(A\\) corresponding to eigenvalue \\(\\lambda\\) satisfies:', options: ['\\(Av=\\lambda v,\\; v\\ne0\\)','\\(\\det(A-v)=0\\)','\\(Av=\\lambda^2 v\\)','\\(Av=v\\)'], answer: 0 },
+    { q: 'Diagonalisation: \\(A=PDP^{-1}\\) where:', options: ['\\(P\\) is diagonal, \\(D\\) has eigenvectors','\\(P\\) is always orthogonal','\\(D=I\\)','\\(D\\) is diagonal with eigenvalues; \\(P\\) has eigenvectors as columns'], answer: 3 },
+    { q: '\\(A^n\\) where \\(A=PDP^{-1}\\) equals:', options: ['\\(P^nD^nP^{-n}\\)','\\(PD^nP^{-1}\\)','\\(P^nDP^{-n}\\)','\\(PD^nP^{-n}\\)'], answer: 1 },
+    { q: 'Cayley–Hamilton theorem states that every matrix:', options: ['Has a unique inverse','Is symmetric','Satisfies its own characteristic equation','Equals its transpose'], answer: 2 },
+    { q: 'The characteristic polynomial of \\(\\begin{pmatrix}4&1\\\\2&3\\end{pmatrix}\\) is:', options: ['\\(\\lambda^2-10\\)','\\(\\lambda^2-7\\lambda+12\\)','\\(\\lambda^2+5\\lambda+6\\)','\\(\\lambda^2-7\\lambda+10\\)'], answer: 3 },
   ],
 },
 
@@ -100,10 +100,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Two lines are skew when:', options: ['They are parallel', 'They intersect', 'Directions are equal', 'They do not intersect and are not parallel'], answer: 3 },
   ],
   red: [
-    { q: 'Shortest distance from point \\(\\mathbf{p}\\) to line \\(\\mathbf{r}=\\mathbf{a}+\\lambda\\mathbf{d}\\):', options: ['\\(|\\mathbf{p}-\\mathbf{a}|\\)', '\\(|(\\mathbf{p}-\\mathbf{a})\\cdot\\mathbf{d}|\\)', '\\(|\\mathbf{d}|\\)', '\\(|(\\mathbf{p}-\\mathbf{a})\\times\\mathbf{d}|/|\\mathbf{d}|\\)'], answer: 3 },
-    { q: 'Two skew lines: shortest distance uses:', options: ['\\(|\\mathbf{a}_2-\\mathbf{a}_1|\\)', '\\(|\\mathbf{d}_1\\times\\mathbf{d}_2|\\)', 'Distance from midpoint', '\\(|(\\mathbf{a}_2-\\mathbf{a}_1)\\cdot(\\mathbf{d}_1\\times\\mathbf{d}_2)|/|\\mathbf{d}_1\\times\\mathbf{d}_2|\\)'], answer: 3 },
-    { q: 'Area of triangle with vertices \\(\\mathbf{A},\\mathbf{B},\\mathbf{C}\\):', options: ['\\(\\tfrac{1}{2}|\\overrightarrow{AB}|\\)', '\\(|\\overrightarrow{AB}\\times\\overrightarrow{AC}|\\)', '\\(\\mathbf{A}+\\mathbf{B}+\\mathbf{C}\\)', '\\(\\tfrac{1}{2}|\\overrightarrow{AB}\\times\\overrightarrow{AC}|\\)'], answer: 3 },
-    { q: 'The equation of plane through 3 non-collinear points uses:', options: ['Dot product of sides', 'Average of points', 'Sum of vectors', 'Normal = (B−A) × (C−A)'], answer: 3 },
+    { q: 'Shortest distance from point \\(\\mathbf{p}\\) to line \\(\\mathbf{r}=\\mathbf{a}+\\lambda\\mathbf{d}\\):', options: ['\\(|\\mathbf{p}-\\mathbf{a}|\\)','\\(|(\\mathbf{p}-\\mathbf{a})\\cdot\\mathbf{d}|\\)','\\(|\\mathbf{d}|\\)','\\(|(\\mathbf{p}-\\mathbf{a})\\times\\mathbf{d}|/|\\mathbf{d}|\\)'], answer: 3 },
+    { q: 'Two skew lines: shortest distance uses:', options: ['\\(|(\\mathbf{a}_2-\\mathbf{a}_1)\\cdot(\\mathbf{d}_1\\times\\mathbf{d}_2)|/|\\mathbf{d}_1\\times\\mathbf{d}_2|\\)','\\(|\\mathbf{a}_2-\\mathbf{a}_1|\\)','Distance from midpoint','\\(|\\mathbf{d}_1\\times\\mathbf{d}_2|\\)'], answer: 0 },
+    { q: 'Area of triangle with vertices \\(\\mathbf{A},\\mathbf{B},\\mathbf{C}\\):', options: ['\\(\\mathbf{A}+\\mathbf{B}+\\mathbf{C}\\)','\\(\\tfrac{1}{2}|\\overrightarrow{AB}\\times\\overrightarrow{AC}|\\)','\\(\\tfrac{1}{2}|\\overrightarrow{AB}|\\)','\\(|\\overrightarrow{AB}\\times\\overrightarrow{AC}|\\)'], answer: 1 },
+    { q: 'The equation of plane through 3 non-collinear points uses:', options: ['Average of points','Normal = (B−A) × (C−A)','Sum of vectors','Dot product of sides'], answer: 1 },
   ],
 },
 
@@ -124,10 +124,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Radius of convergence of \\(\\ln(1+x)\\):', options: ['All \\(x\\)', '\\(|x|<2\\)', '\\(|x|<\\infty\\)', '\\(|x|<1\\) (with \\(x=1\\) included)'], answer: 3 },
   ],
   red: [
-    { q: 'Evaluate \\(\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}\\) using series:', options: ['\\(0\\)', '\\(1\\)', '\\(2\\)', '\\(1/2\\)'], answer: 3 },
-    { q: '\\(\\sum_{r=1}^{\\infty}\\frac{1}{r(r+1)}\\) telescopes to:', options: ['\\(\\infty\\)', '\\(\\ln 2\\)', '\\(1/2\\)', '\\(1\\)'], answer: 3 },
-    { q: 'The Taylor expansion of \\(f\\) about \\(x=a\\):', options: ['\\(\\sum f^{(n)}(a)x^n/n!\\)', '\\(\\sum f(a)/n!\\)', '\\(f(a)+x\\)', '\\(\\sum f^{(n)}(a)(x-a)^n/n!\\)'], answer: 3 },
-    { q: '\\(e^{ix}\\) = ', options: ['\\(e^x\\cos 1\\)', '\\(ix+e^x\\)', '\\(i\\cos x+\\sin x\\)', '\\(\\cos x+i\\sin x\\)'], answer: 3 },
+    { q: 'Evaluate \\(\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}\\) using series:', options: ['\\(2\\)','\\(0\\)','\\(1\\)','\\(1/2\\)'], answer: 3 },
+    { q: '\\(\\sum_{r=1}^{\\infty}\\frac{1}{r(r+1)}\\) telescopes to:', options: ['\\(1/2\\)','\\(\\ln 2\\)','\\(1\\)','\\(\\infty\\)'], answer: 2 },
+    { q: 'The Taylor expansion of \\(f\\) about \\(x=a\\):', options: ['\\(\\sum f^{(n)}(a)x^n/n!\\)','\\(\\sum f(a)/n!\\)','\\(f(a)+x\\)','\\(\\sum f^{(n)}(a)(x-a)^n/n!\\)'], answer: 3 },
+    { q: '\\(e^{ix}\\) = ', options: ['\\(\\cos x+i\\sin x\\)','\\(i\\cos x+\\sin x\\)','\\(ix+e^x\\)','\\(e^x\\cos 1\\)'], answer: 0 },
   ],
 },
 
@@ -148,10 +148,10 @@ const FM_OCR_B_MCQ = {
     { q: 'For \\(\\alpha\\beta\\) given roots \\(2,3,4\\): \\(\\sum\\alpha\\beta=\\)', options: ['\\(9\\)', '\\(24\\)', '\\(12\\)', '\\(26\\)'], answer: 3, explanation: '2·3+3·4+2·4=6+12+8=26' },
   ],
   red: [
-    { q: 'If \\(\\alpha,\\beta,\\gamma\\) are roots of cubic \\(x^3+px+q=0\\), then \\(\\alpha+\\beta+\\gamma=\\)', options: ['\\(-p\\)', '\\(p\\)', '\\(-q\\)', '\\(0\\)'], answer: 3 },
-    { q: 'For \\(ax^n+\\cdots+c=0\\), the constant term \\(c/a\\) equals:', options: ['Sum of roots', 'Sum of pairs', 'Always 1', '\\((-1)^n\\) times product of roots'], answer: 3 },
-    { q: 'Substitution \\(y=x+k\\) transforms roots by:', options: ['Scaling by \\(k\\)', 'Negating', 'Inverting', 'Shifting by \\(k\\)'], answer: 3 },
-    { q: 'Finding cubic with roots \\(1/\\alpha,1/\\beta,1/\\gamma\\) uses substitution:', options: ['\\(y=\\alpha\\)', '\\(y=x+1\\)', '\\(y=-x\\)', '\\(y=1/x\\)'], answer: 3 },
+    { q: 'If \\(\\alpha,\\beta,\\gamma\\) are roots of cubic \\(x^3+px+q=0\\), then \\(\\alpha+\\beta+\\gamma=\\)', options: ['\\(-q\\)','\\(0\\)','\\(-p\\)','\\(p\\)'], answer: 1 },
+    { q: 'For \\(ax^n+\\cdots+c=0\\), the constant term \\(c/a\\) equals:', options: ['Sum of pairs','Always 1','Sum of roots','\\((-1)^n\\) times product of roots'], answer: 3 },
+    { q: 'Substitution \\(y=x+k\\) transforms roots by:', options: ['Scaling by \\(k\\)','Negating','Inverting','Shifting by \\(k\\)'], answer: 3 },
+    { q: 'Finding cubic with roots \\(1/\\alpha,1/\\beta,1/\\gamma\\) uses substitution:', options: ['\\(y=\\alpha\\)','\\(y=x+1\\)','\\(y=-x\\)','\\(y=1/x\\)'], answer: 3 },
   ],
 },
 
@@ -172,10 +172,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Area enclosed by \\(r=2\\) (a circle of radius 2):', options: ['\\(2\\pi\\)', '\\(\\pi\\)', '\\(8\\pi\\)', '\\(4\\pi\\)'], answer: 3 },
   ],
   red: [
-    { q: 'The number of petals of rose \\(r=a\\sin 4\\theta\\):', options: ['4', '2', '16', '8'], answer: 3 },
-    { q: 'Petals of \\(r=a\\sin 3\\theta\\):', options: ['6', '2', '12', '3'], answer: 3 },
-    { q: 'Horizontal tangents of polar curve occur when \\(dy/d\\theta=\\)', options: ['undefined', '\\(\\infty\\)', '\\(r\\cos\\theta\\)', '0'], answer: 3 },
-    { q: 'Area of one petal of \\(r=\\sin 2\\theta\\):', options: ['\\(\\pi/4\\)', '\\(\\pi/2\\)', '\\(\\pi\\)', '\\(\\pi/8\\)'], answer: 3 },
+    { q: 'The number of petals of rose \\(r=a\\sin 4\\theta\\):', options: ['4','16','8','2'], answer: 2 },
+    { q: 'Petals of \\(r=a\\sin 3\\theta\\):', options: ['3','12','2','6'], answer: 0 },
+    { q: 'Horizontal tangents of polar curve occur when \\(dy/d\\theta=\\)', options: ['undefined','\\(\\infty\\)','\\(r\\cos\\theta\\)','0'], answer: 3 },
+    { q: 'Area of one petal of \\(r=\\sin 2\\theta\\):', options: ['\\(\\pi/4\\)','\\(\\pi\\)','\\(\\pi/8\\)','\\(\\pi/2\\)'], answer: 2 },
   ],
 },
 
@@ -196,10 +196,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Integration \\(\\int\\dfrac{dx}{\\sqrt{x^2+4}}=\\)', options: ['\\(\\operatorname{arcosh}(x/2)\\)', '\\(\\arcsin(x/2)\\)', '\\(\\arctan(x/2)\\)', '\\(\\operatorname{arsinh}(x/2)+C\\)'], answer: 3 },
   ],
   red: [
-    { q: 'Range of \\(\\tanh x\\):', options: ['\\([-1,1]\\)', '\\(\\mathbb{R}\\)', '\\([0,1]\\)', '\\((-1,1)\\)'], answer: 3 },
-    { q: '\\(\\cosh\\) is:', options: ['Odd', 'Decreasing', 'Unbounded below', 'Even'], answer: 3 },
-    { q: 'For all real \\(x\\), \\(\\cosh x\\ge\\)', options: ['\\(0\\)', '\\(e^x\\)', '\\(-1\\)', '\\(1\\)'], answer: 3 },
-    { q: '\\(\\sinh 2x=\\)', options: ['\\(\\sinh^2 x-\\cosh^2 x\\)', '\\(\\cosh^2 x+\\sinh^2 x\\)', '\\(2\\cosh^2 x\\)', '\\(2\\sinh x\\cosh x\\)'], answer: 3 },
+    { q: 'Range of \\(\\tanh x\\):', options: ['\\([-1,1]\\)','\\(\\mathbb{R}\\)','\\([0,1]\\)','\\((-1,1)\\)'], answer: 3 },
+    { q: '\\(\\cosh\\) is:', options: ['Odd','Decreasing','Unbounded below','Even'], answer: 3 },
+    { q: 'For all real \\(x\\), \\(\\cosh x\\ge\\)', options: ['\\(0\\)','\\(-1\\)','\\(1\\)','\\(e^x\\)'], answer: 2 },
+    { q: '\\(\\sinh 2x=\\)', options: ['\\(\\cosh^2 x+\\sinh^2 x\\)','\\(\\sinh^2 x-\\cosh^2 x\\)','\\(2\\sinh x\\cosh x\\)','\\(2\\cosh^2 x\\)'], answer: 2 },
   ],
 },
 
@@ -220,10 +220,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Mean of \\(\\sin x\\) on \\([0,\\pi]\\):', options: ['\\(0\\)', '\\(\\pi/2\\)', '\\(1\\)', '\\(2/\\pi\\)'], answer: 3 },
   ],
   red: [
-    { q: '\\(\\int_0^{\\infty}e^{-x}\\,dx\\) equals:', options: ['\\(0\\)', '\\(e\\)', '\\(\\infty\\)', '\\(1\\)'], answer: 3 },
-    { q: '\\(\\int_0^{\\infty}xe^{-x}\\,dx\\) equals:', options: ['\\(0\\)', '\\(e\\)', '\\(2\\)', '\\(1\\)'], answer: 3 },
-    { q: 'Volume of revolution about \\(x\\)-axis of \\(y=\\sqrt{x}\\) from 0 to 4:', options: ['\\(4\\pi\\)', '\\(\\pi\\)', '\\(16\\pi\\)', '\\(8\\pi\\)'], answer: 3 },
-    { q: 'The integrand \\(\\sqrt{1+(y\')^2}\\) arises because:', options: ['Chain rule', 'Formula conversion', 'Pythagoras in polar', 'Pythagoras applied to \\(ds^2=dx^2+dy^2\\)'], answer: 3 },
+    { q: '\\(\\int_0^{\\infty}e^{-x}\\,dx\\) equals:', options: ['\\(0\\)','\\(e\\)','\\(\\infty\\)','\\(1\\)'], answer: 3 },
+    { q: '\\(\\int_0^{\\infty}xe^{-x}\\,dx\\) equals:', options: ['\\(2\\)','\\(1\\)','\\(0\\)','\\(e\\)'], answer: 1 },
+    { q: 'Volume of revolution about \\(x\\)-axis of \\(y=\\sqrt{x}\\) from 0 to 4:', options: ['\\(\\pi\\)','\\(4\\pi\\)','\\(8\\pi\\)','\\(16\\pi\\)'], answer: 2 },
+    { q: 'The integrand \\(\\sqrt{1+(y\')^2}\\) arises because:', options: ['Chain rule','Formula conversion','Pythagoras in polar','Pythagoras applied to \\(ds^2=dx^2+dy^2\\)'], answer: 3 },
   ],
 },
 
@@ -244,10 +244,10 @@ const FM_OCR_B_MCQ = {
     { q: 'For coupled system \\(x\'=x+y, y\'=x-y\\), eliminate to get:', options: ['1st order ODE', '\\(x\'\'+x=0\\)', '\\(x\'=0\\)', '\\(x\'\'-2x=0\\)'], answer: 3 },
   ],
   red: [
-    { q: 'If PI trial is in CF, multiply trial by:', options: ['\\(e^x\\)', 'Nothing', '\\(x^2\\) always', '\\(x\\) (or \\(x^2\\) if repeated clash)'], answer: 3 },
-    { q: 'Newton\'s Law of Cooling \\(dT/dt=-k(T-T_{env})\\) has solution:', options: ['\\(T=T_{env}+kt\\)', '\\(T=T_0+kt\\)', '\\(T=e^{-kt}\\)', '\\(T=T_{env}+Ce^{-kt}\\)'], answer: 3 },
-    { q: 'Underdamped oscillator has aux roots:', options: ['Real distinct', 'Real repeated', 'Real positive', 'Complex with negative real part'], answer: 3 },
-    { q: 'Resonance occurs when:', options: ['Damping is high', 'Frequency is zero', 'CF is a polynomial', 'Driving frequency matches natural frequency'], answer: 3 },
+    { q: 'If PI trial is in CF, multiply trial by:', options: ['\\(x\\) (or \\(x^2\\) if repeated clash)','\\(x^2\\) always','Nothing','\\(e^x\\)'], answer: 0 },
+    { q: 'Newton\'s Law of Cooling \\(dT/dt=-k(T-T_{env})\\) has solution:', options: ['\\(T=T_{env}+kt\\)','\\(T=T_0+kt\\)','\\(T=e^{-kt}\\)','\\(T=T_{env}+Ce^{-kt}\\)'], answer: 3 },
+    { q: 'Underdamped oscillator has aux roots:', options: ['Real positive','Real distinct','Real repeated','Complex with negative real part'], answer: 3 },
+    { q: 'Resonance occurs when:', options: ['Frequency is zero','Damping is high','Driving frequency matches natural frequency','CF is a polynomial'], answer: 2 },
   ],
 },
 
@@ -270,10 +270,10 @@ const FM_OCR_B_MCQ = {
     { q: 'If \\(E\\propto m^a v^b\\), dimensional analysis gives \\(a,b=\\)', options: ['\\(1,1\\)', '\\(2,1\\)', '\\(0,2\\)', '\\(1,2\\)'], answer: 3 },
   ],
   red: [
-    { q: 'Dimensional analysis can find:', options: ['Exact constants', 'Dimensionless scaling factors', 'Numerical prefactors', 'Form of dependence on variables'], answer: 3 },
-    { q: 'Dimensional analysis cannot:', options: ['Find dimensions', 'Check formulas', 'Find power dependencies', 'Determine dimensionless constants'], answer: 3 },
-    { q: 'Angular frequency has dimensions:', options: ['\\(L\\)', '\\(T\\)', 'Dimensionless', '\\(T^{-1}\\)'], answer: 3 },
-    { q: 'Trig/log/exp arguments must be:', options: ['Integers', 'In SI units', 'Small', 'Dimensionless'], answer: 3 },
+    { q: 'Dimensional analysis can find:', options: ['Exact constants','Numerical prefactors','Form of dependence on variables','Dimensionless scaling factors'], answer: 2 },
+    { q: 'Dimensional analysis cannot:', options: ['Find dimensions','Check formulas','Find power dependencies','Determine dimensionless constants'], answer: 3 },
+    { q: 'Angular frequency has dimensions:', options: ['\\(L\\)','\\(T\\)','Dimensionless','\\(T^{-1}\\)'], answer: 3 },
+    { q: 'Trig/log/exp arguments must be:', options: ['Dimensionless','Integers','Small','In SI units'], answer: 0 },
   ],
 },
 
@@ -294,10 +294,10 @@ const FM_OCR_B_MCQ = {
     { q: 'If \\(P=Fv\\) and \\(F=ma+R\\), on level track:', options: ['\\(a=v\\)', '\\(P=\\text{const}\\)', '\\(R=0\\)', '\\(P/v-R=ma\\)'], answer: 3 },
   ],
   red: [
-    { q: 'Car mass \\(m=1000\\), power \\(P=20\\) kW, resistance \\(R=500\\) N. At \\(v=20\\) m/s, acceleration:', options: ['\\(0\\) m/s²', '\\(1\\) m/s²', '\\(0.5\\) m/s²', '\\(0.5\\) m/s²'], answer: 2, explanation: 'F=1000 N, net=500, a=0.5' },
-    { q: 'Elastic string modulus \\(\\lambda\\), natural length \\(\\ell_0\\), extension \\(x\\). EPE:', options: ['\\(\\lambda x\\)', '\\(\\lambda x/\\ell_0\\)', '\\(\\lambda x^2/\\ell_0\\)', '\\(\\lambda x^2/(2\\ell_0)\\)'], answer: 3 },
-    { q: 'Energy lost to friction = ', options: ['Friction × acceleration', '0 (always)', '\\(\\mu R\\)', 'Friction force × distance traveled'], answer: 3 },
-    { q: 'Pulling with force at angle \\(\\theta\\) above horizontal: horizontal work:', options: ['\\(F\\sin\\theta\\cdot s\\)', '\\(Fs\\)', '\\(Fs/\\cos\\theta\\)', '\\(F\\cos\\theta\\cdot s\\)'], answer: 3 },
+    { q: 'Car mass \\(m=1000\\), power \\(P=20\\) kW, resistance \\(R=500\\) N. At \\(v=20\\) m/s, acceleration:', options: ['\\(1\\) m/s²','\\(0\\) m/s²','\\(0.5\\) m/s²','\\(0.5\\) m/s²'], answer: 3, explanation: 'F=1000 N, net=500, a=0.5' },
+    { q: 'Elastic string modulus \\(\\lambda\\), natural length \\(\\ell_0\\), extension \\(x\\). EPE:', options: ['\\(\\lambda x\\)','\\(\\lambda x/\\ell_0\\)','\\(\\lambda x^2/\\ell_0\\)','\\(\\lambda x^2/(2\\ell_0)\\)'], answer: 3 },
+    { q: 'Energy lost to friction = ', options: ['Friction × acceleration','0 (always)','\\(\\mu R\\)','Friction force × distance traveled'], answer: 3 },
+    { q: 'Pulling with force at angle \\(\\theta\\) above horizontal: horizontal work:', options: ['\\(F\\sin\\theta\\cdot s\\)','\\(Fs\\)','\\(Fs/\\cos\\theta\\)','\\(F\\cos\\theta\\cdot s\\)'], answer: 3 },
   ],
 },
 
@@ -318,10 +318,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Oblique impact with smooth wall: parallel component of velocity is:', options: ['Zero', 'Reversed', '\\(e\\times\\) original', 'Unchanged'], answer: 3 },
   ],
   red: [
-    { q: 'KE lost in collision = ', options: ['0', '\\(m_1+m_2\\)', 'Momentum', '\\(\\tfrac{1}{2}\\frac{m_1m_2}{m_1+m_2}(u_1-u_2)^2(1-e^2)\\)'], answer: 3 },
-    { q: 'For successive bounces with \\(e<1\\), total distance converges because:', options: ['Gravity decreases', 'No friction', '\\(e^2>1\\)', 'Geometric series with ratio \\(e^2<1\\)'], answer: 3 },
-    { q: 'Impulse as vector equals:', options: ['\\(m\\cdot\\Delta v_x\\) only', '\\(|v|m\\)', '\\(\\Delta(m)\\)', 'Vector change in momentum'], answer: 3 },
-    { q: 'Elastic collision (\\(e=1\\)) between equal masses, one at rest:', options: ['Both stop', 'Both continue', 'First speeds up', 'Moving ball stops; other moves off with same velocity'], answer: 3 },
+    { q: 'KE lost in collision = ', options: ['\\(m_1+m_2\\)','\\(\\tfrac{1}{2}\\frac{m_1m_2}{m_1+m_2}(u_1-u_2)^2(1-e^2)\\)','Momentum','0'], answer: 1 },
+    { q: 'For successive bounces with \\(e<1\\), total distance converges because:', options: ['Gravity decreases','\\(e^2>1\\)','Geometric series with ratio \\(e^2<1\\)','No friction'], answer: 2 },
+    { q: 'Impulse as vector equals:', options: ['Vector change in momentum','\\(m\\cdot\\Delta v_x\\) only','\\(\\Delta(m)\\)','\\(|v|m\\)'], answer: 0 },
+    { q: 'Elastic collision (\\(e=1\\)) between equal masses, one at rest:', options: ['Both stop','Both continue','First speeds up','Moving ball stops; other moves off with same velocity'], answer: 3 },
   ],
 },
 
@@ -342,10 +342,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Car rounding curve at \\(v\\), radius \\(r\\): min coefficient of friction \\(\\mu=\\)', options: ['\\(v\\)', '\\(v^2/r\\)', '\\(rg\\)', '\\(v^2/(rg)\\)'], answer: 3 },
   ],
   red: [
-    { q: 'At top of vertical loop, tension is 0 when:', options: ['\\(v=0\\)', 'Always', 'Never', '\\(v^2=gr\\)'], answer: 3 },
-    { q: 'Conservation of energy in vertical circle gives:', options: ['No constraint', 'KE stays constant', 'Energy is lost to friction', '\\(\\tfrac{1}{2}v^2+gh=\\) const'], answer: 3 },
-    { q: 'A string/rod: at top of circle, string goes slack when:', options: ['Tension positive', 'Speed is zero', 'Always', 'Speed drops below \\(\\sqrt{gr}\\)'], answer: 3 },
-    { q: 'For "just completes circle" on a light rod (not string): speed at top:', options: ['\\(\\sqrt{gr}\\)', 'Must be \\(>\\sqrt{gr}\\)', 'Infinity', 'Can be 0'], answer: 3 },
+    { q: 'At top of vertical loop, tension is 0 when:', options: ['\\(v=0\\)','Always','Never','\\(v^2=gr\\)'], answer: 3 },
+    { q: 'Conservation of energy in vertical circle gives:', options: ['\\(\\tfrac{1}{2}v^2+gh=\\) const','No constraint','Energy is lost to friction','KE stays constant'], answer: 0 },
+    { q: 'A string/rod: at top of circle, string goes slack when:', options: ['Speed drops below \\(\\sqrt{gr}\\)','Tension positive','Always','Speed is zero'], answer: 0 },
+    { q: 'For "just completes circle" on a light rod (not string): speed at top:', options: ['\\(\\sqrt{gr}\\)','Must be \\(>\\sqrt{gr}\\)','Infinity','Can be 0'], answer: 3 },
   ],
 },
 
@@ -366,10 +366,10 @@ const FM_OCR_B_MCQ = {
     { q: 'CoM of hollow hemispherical shell radius \\(r\\):', options: ['\\(r/3\\)', '\\(r/4\\)', '\\(3r/8\\)', '\\(r/2\\)'], answer: 3 },
   ],
   red: [
-    { q: 'Body topples when:', options: ['Mass is large', 'Friction is low', 'Centre is high', 'Vertical through CoM falls outside the base'], answer: 3 },
-    { q: 'Body slides before toppling if \\(\\mu < a/h\\) where \\(a\\) is half-base, \\(h\\) is CoM height — slide vs. topple angle:', options: ['Depends on mass', 'Always topples', 'Always slides', 'Compare \\(\\mu\\) with \\(a/h\\)'], answer: 3 },
-    { q: 'For a region with \\(y=f(x)\\): \\(\\bar{x}=\\)', options: ['Same as \\(\\bar{y}\\)', '0', 'Average', '\\(\\int xf\\,dx/\\int f\\,dx\\)'], answer: 3 },
-    { q: 'Solid of revolution \\(y=f(x)\\) about \\(x\\)-axis: \\(\\bar{x}=\\)', options: ['\\(\\int f\\,dx\\)', 'Same as lamina', 'Centroid of curve', '\\(\\int x\\cdot y^2\\,dx / \\int y^2\\,dx\\)'], answer: 3 },
+    { q: 'Body topples when:', options: ['Friction is low','Mass is large','Vertical through CoM falls outside the base','Centre is high'], answer: 2 },
+    { q: 'Body slides before toppling if \\(\\mu < a/h\\) where \\(a\\) is half-base, \\(h\\) is CoM height — slide vs. topple angle:', options: ['Depends on mass','Always topples','Always slides','Compare \\(\\mu\\) with \\(a/h\\)'], answer: 3 },
+    { q: 'For a region with \\(y=f(x)\\): \\(\\bar{x}=\\)', options: ['Average','0','\\(\\int xf\\,dx/\\int f\\,dx\\)','Same as \\(\\bar{y}\\)'], answer: 2 },
+    { q: 'Solid of revolution \\(y=f(x)\\) about \\(x\\)-axis: \\(\\bar{x}=\\)', options: ['Same as lamina','\\(\\int f\\,dx\\)','\\(\\int x\\cdot y^2\\,dx / \\int y^2\\,dx\\)','Centroid of curve'], answer: 2 },
   ],
 },
 
@@ -392,10 +392,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Uniform on \\(\\{1,\\ldots,n\\}\\): \\(\\operatorname{Var}(X)=\\)', options: ['\\(n/2\\)', '\\((n+1)/12\\)', '\\(n^2/12\\)', '\\((n^2-1)/12\\)'], answer: 3 },
   ],
   red: [
-    { q: 'Joint pmf: \\(X\\) and \\(Y\\) independent iff:', options: ['Always', '\\(P(X,Y)=P(X)+P(Y)\\)', 'Marginals equal', '\\(P(X=x,Y=y)=P(X=x)P(Y=y)\\) for all \\(x,y\\)'], answer: 3 },
-    { q: 'Covariance \\(\\operatorname{Cov}(X,Y)=\\)', options: ['\\(E(X)E(Y)\\)', '\\(\\operatorname{Var}(X+Y)/2\\)', '\\(\\sqrt{\\operatorname{Var}(X)\\operatorname{Var}(Y)}\\)', '\\(E(XY)-E(X)E(Y)\\)'], answer: 3 },
-    { q: '\\(\\operatorname{Var}(X+Y)=\\operatorname{Var}(X)+\\operatorname{Var}(Y)+\\)', options: ['\\(\\mu_X\\mu_Y\\)', '\\(\\operatorname{Cov}(X,Y)\\)', '0', '\\(2\\operatorname{Cov}(X,Y)\\)'], answer: 3 },
-    { q: 'If \\(X\\perp Y\\) then \\(\\operatorname{Cov}(X,Y)=\\)', options: ['1', '\\(\\mu_X\\)', 'Undefined', '\\(0\\)'], answer: 3 },
+    { q: 'Joint pmf: \\(X\\) and \\(Y\\) independent iff:', options: ['Marginals equal','\\(P(X=x,Y=y)=P(X=x)P(Y=y)\\) for all \\(x,y\\)','Always','\\(P(X,Y)=P(X)+P(Y)\\)'], answer: 1 },
+    { q: 'Covariance \\(\\operatorname{Cov}(X,Y)=\\)', options: ['\\(\\sqrt{\\operatorname{Var}(X)\\operatorname{Var}(Y)}\\)','\\(\\operatorname{Var}(X+Y)/2\\)','\\(E(XY)-E(X)E(Y)\\)','\\(E(X)E(Y)\\)'], answer: 2 },
+    { q: '\\(\\operatorname{Var}(X+Y)=\\operatorname{Var}(X)+\\operatorname{Var}(Y)+\\)', options: ['\\(\\mu_X\\mu_Y\\)','\\(\\operatorname{Cov}(X,Y)\\)','0','\\(2\\operatorname{Cov}(X,Y)\\)'], answer: 3 },
+    { q: 'If \\(X\\perp Y\\) then \\(\\operatorname{Cov}(X,Y)=\\)', options: ['\\(\\mu_X\\)','1','\\(0\\)','Undefined'], answer: 2 },
   ],
 },
 
@@ -416,10 +416,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Testing \\(H_0:\\lambda=5\\), \\(H_1:\\lambda>5\\), observe \\(X=10\\). The p-value is:', options: ['\\(P(X=10)\\)', '\\(P(X\\le 10|\\lambda=5)\\)', 'Not defined', '\\(P(X\\ge 10|\\lambda=5)\\)'], answer: 3 },
   ],
   red: [
-    { q: 'Rare-events rule: \\(B(n,p)\\approx\\operatorname{Po}(np)\\) requires:', options: ['\\(n\\) small', '\\(p\\) close to 1', 'Always', '\\(n\\) large, \\(p\\) small'], answer: 3 },
-    { q: 'For a Poisson test 2-tailed, we compare:', options: ['Mean of test', 'Observed to \\(\\lambda\\)', 'Just upper tail', 'The smaller tail probability to \\(\\alpha/2\\)'], answer: 3 },
-    { q: 'Poisson process waiting times follow:', options: ['Uniform', 'Normal', 'Poisson', 'Exponential'], answer: 3 },
-    { q: 'Between arrivals with rate \\(\\lambda\\), mean wait:', options: ['\\(\\lambda\\)', '\\(\\lambda^2\\)', '0', '\\(1/\\lambda\\)'], answer: 3 },
+    { q: 'Rare-events rule: \\(B(n,p)\\approx\\operatorname{Po}(np)\\) requires:', options: ['\\(n\\) large, \\(p\\) small','\\(n\\) small','Always','\\(p\\) close to 1'], answer: 0 },
+    { q: 'For a Poisson test 2-tailed, we compare:', options: ['Mean of test','Observed to \\(\\lambda\\)','Just upper tail','The smaller tail probability to \\(\\alpha/2\\)'], answer: 3 },
+    { q: 'Poisson process waiting times follow:', options: ['Poisson','Normal','Exponential','Uniform'], answer: 2 },
+    { q: 'Between arrivals with rate \\(\\lambda\\), mean wait:', options: ['\\(\\lambda\\)','\\(\\lambda^2\\)','0','\\(1/\\lambda\\)'], answer: 3 },
   ],
 },
 
@@ -440,10 +440,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Slope \\(b\\) in regression \\(y=a+bx\\):', options: ['\\(S_{xy}+S_{xx}\\)', '\\(S_{xx}/S_{yy}\\)', 'PMCC', '\\(S_{xy}/S_{xx}\\)'], answer: 3 },
   ],
   red: [
-    { q: 'Correlation does not imply:', options: ['Association', 'Positive slope', 'Linearity', 'Causation'], answer: 3 },
-    { q: 'If \\(r\\) is close to 0, data:', options: ['Is linear', 'Is noisy', 'Has outliers', 'May have no linear relation (possible nonlinear pattern)'], answer: 3 },
-    { q: 'PMCC is unchanged under:', options: ['Absolute value', 'Negating \\(y\\)', 'Adding outliers', 'Linear transformations of \\(x\\) and \\(y\\) (sign preserved)'], answer: 3 },
-    { q: 'Spearman detects:', options: ['Only linear', 'Only quadratic', 'Causation', 'Monotonic relationships'], answer: 3 },
+    { q: 'Correlation does not imply:', options: ['Association','Causation','Positive slope','Linearity'], answer: 1 },
+    { q: 'If \\(r\\) is close to 0, data:', options: ['Is linear','Is noisy','Has outliers','May have no linear relation (possible nonlinear pattern)'], answer: 3 },
+    { q: 'PMCC is unchanged under:', options: ['Absolute value','Linear transformations of \\(x\\) and \\(y\\) (sign preserved)','Negating \\(y\\)','Adding outliers'], answer: 1 },
+    { q: 'Spearman detects:', options: ['Only linear','Only quadratic','Causation','Monotonic relationships'], answer: 3 },
   ],
 },
 
@@ -464,10 +464,10 @@ const FM_OCR_B_MCQ = {
     { q: '\\(\\chi^2\\) test is:', options: ['Two-tailed', 'Small-sample', 'Normal-based', 'Always one-tailed (upper)'], answer: 3 },
   ],
   red: [
-    { q: 'For \\(2\\times 2\\) table with Yates:', options: ['\\(\\sum(O-E)^2/E\\)', 'Same as large', 'Subtract 1', '\\(\\sum(|O-E|-0.5)^2/E\\)'], answer: 3 },
-    { q: 'If observed = expected everywhere, \\(\\chi^2=\\)', options: ['1', '\\(\\infty\\)', 'Critical value', '0'], answer: 3 },
-    { q: '\\(\\chi^2\\) is approximately chi-squared distribution because:', options: ['It is Poisson', 'It sums squares', 'By symmetry', 'CLT: \\((O-E)/\\sqrt{E}\\approx N(0,1)\\)'], answer: 3 },
-    { q: 'A very small \\(\\chi^2\\) (much smaller than expected) might indicate:', options: ['Obviously correct', 'Test failure', 'Too many d.f.', 'Data too good a fit — possibly fudged'], answer: 3 },
+    { q: 'For \\(2\\times 2\\) table with Yates:', options: ['\\(\\sum(O-E)^2/E\\)','Subtract 1','\\(\\sum(|O-E|-0.5)^2/E\\)','Same as large'], answer: 2 },
+    { q: 'If observed = expected everywhere, \\(\\chi^2=\\)', options: ['1','\\(\\infty\\)','Critical value','0'], answer: 3 },
+    { q: '\\(\\chi^2\\) is approximately chi-squared distribution because:', options: ['It is Poisson','It sums squares','By symmetry','CLT: \\((O-E)/\\sqrt{E}\\approx N(0,1)\\)'], answer: 3 },
+    { q: 'A very small \\(\\chi^2\\) (much smaller than expected) might indicate:', options: ['Too many d.f.','Data too good a fit — possibly fudged','Obviously correct','Test failure'], answer: 1 },
   ],
 },
 
@@ -488,10 +488,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Non-parametric tests are:', options: ['Always more powerful', 'Assumption-heavy', 'Faster', 'Less powerful than \\(t\\)-test when assumptions hold, but robust'], answer: 3 },
   ],
   red: [
-    { q: 'Use sign test rather than Wilcoxon signed-rank when:', options: ['Data is normal', 'Small \\(n\\)', 'Paired data', 'Only ordinal data (cannot rank differences)'], answer: 3 },
-    { q: 'Wilcoxon rank-sum ranks all observations from both groups together, then:', options: ['Counts ties', 'Averages', 'Compares means', 'Sums the ranks in one group and compares'], answer: 3 },
-    { q: 'Advantages of non-parametric tests:', options: ['Always more powerful', 'Simpler computation', 'Smaller \\(\\alpha\\)', 'Robust to outliers and non-normality'], answer: 3 },
-    { q: 'Ties are handled in Wilcoxon by:', options: ['Ignoring', 'Random assignment', 'Rank 0', 'Assigning average of tied ranks'], answer: 3 },
+    { q: 'Use sign test rather than Wilcoxon signed-rank when:', options: ['Small \\(n\\)','Data is normal','Only ordinal data (cannot rank differences)','Paired data'], answer: 2 },
+    { q: 'Wilcoxon rank-sum ranks all observations from both groups together, then:', options: ['Counts ties','Averages','Compares means','Sums the ranks in one group and compares'], answer: 3 },
+    { q: 'Advantages of non-parametric tests:', options: ['Robust to outliers and non-normality','Smaller \\(\\alpha\\)','Simpler computation','Always more powerful'], answer: 0 },
+    { q: 'Ties are handled in Wilcoxon by:', options: ['Random assignment','Rank 0','Ignoring','Assigning average of tied ranks'], answer: 3 },
   ],
 },
 
@@ -514,10 +514,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Number of spanning trees in \\(K_3\\):', options: ['1', '2', '9', '3'], answer: 3 },
   ],
   red: [
-    { q: 'Hamiltonian cycle visits:', options: ['Every edge once', 'Every vertex twice', 'Only adjacent', 'Every vertex exactly once, returning to start'], answer: 3 },
-    { q: 'No simple test for Hamiltonicity — problem is:', options: ['Polynomial', 'Trivial', 'Solvable always', 'NP-complete'], answer: 3 },
-    { q: 'Planar graph satisfies \\(E\\le\\)', options: ['\\(V\\)', '\\(V^2\\)', '\\(V-1\\)', '\\(3V-6\\)'], answer: 3 },
-    { q: 'Smallest non-planar graphs:', options: ['\\(K_4\\)', '\\(K_3\\)', 'Tree', '\\(K_5\\) and \\(K_{3,3}\\)'], answer: 3 },
+    { q: 'Hamiltonian cycle visits:', options: ['Every vertex exactly once, returning to start','Every vertex twice','Every edge once','Only adjacent'], answer: 0 },
+    { q: 'No simple test for Hamiltonicity — problem is:', options: ['Solvable always','Trivial','NP-complete','Polynomial'], answer: 2 },
+    { q: 'Planar graph satisfies \\(E\\le\\)', options: ['\\(V\\)','\\(V^2\\)','\\(V-1\\)','\\(3V-6\\)'], answer: 3 },
+    { q: 'Smallest non-planar graphs:', options: ['\\(K_3\\)','\\(K_5\\) and \\(K_{3,3}\\)','Tree','\\(K_4\\)'], answer: 1 },
   ],
 },
 
@@ -538,10 +538,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Dijkstra labels: each vertex gets a:', options: ['Color', 'Two sublabels', 'Predecessor only', 'Temporary label updated until made permanent'], answer: 3 },
   ],
   red: [
-    { q: 'Prim vs Kruskal: results are:', options: ['Always different', 'Depend on weights', 'Prim is faster', 'Always same MST weight (tree may differ if ties)'], answer: 3 },
-    { q: 'TSP upper bound via nearest-neighbour is:', options: ['Exact', 'Lower bound', 'Meaningless', 'Heuristic, may not be optimal'], answer: 3 },
-    { q: 'Dijkstra\'s complexity is typically:', options: ['\\(O(1)\\)', '\\(O(V)\\)', '\\(O(2^V)\\)', '\\(O(E\\log V)\\) or \\(O(V^2)\\)'], answer: 3 },
-    { q: 'Route inspection needs:', options: ['Planarity', 'MST', 'Hamiltonicity', 'Connected graph'], answer: 3 },
+    { q: 'Prim vs Kruskal: results are:', options: ['Always different','Depend on weights','Prim is faster','Always same MST weight (tree may differ if ties)'], answer: 3 },
+    { q: 'TSP upper bound via nearest-neighbour is:', options: ['Exact','Lower bound','Meaningless','Heuristic, may not be optimal'], answer: 3 },
+    { q: 'Dijkstra\'s complexity is typically:', options: ['\\(O(2^V)\\)','\\(O(1)\\)','\\(O(V)\\)','\\(O(E\\log V)\\) or \\(O(V^2)\\)'], answer: 3 },
+    { q: 'Route inspection needs:', options: ['Connected graph','MST','Planarity','Hamiltonicity'], answer: 0 },
   ],
 },
 
@@ -562,10 +562,10 @@ const FM_OCR_B_MCQ = {
     { q: 'A tight constraint has slack:', options: ['Positive', 'Infinite', 'Negative', 'Zero'], answer: 3 },
   ],
   red: [
-    { q: 'Graphical method works for:', options: ['Any LP', 'Simplex only', '3 variables', '2 variables'], answer: 3 },
-    { q: 'LP may have:', options: ['Only one solution', 'Always finite optimum', 'Negative infeasible', 'No feasible region, unbounded optimum, or infinitely many solutions'], answer: 3 },
-    { q: 'Integer Programming (LP with integer constraints) is:', options: ['Same as LP', 'Easier', 'Always solvable by graphical', 'Harder (NP-hard in general)'], answer: 3 },
-    { q: 'Artificial variables are used for:', options: ['\\(\\le\\) constraints', 'Slack', 'Linear only', '\\(\\geq\\) or \\(=\\) constraints (Big-M method)'], answer: 3 },
+    { q: 'Graphical method works for:', options: ['2 variables','Any LP','3 variables','Simplex only'], answer: 0 },
+    { q: 'LP may have:', options: ['No feasible region, unbounded optimum, or infinitely many solutions','Negative infeasible','Always finite optimum','Only one solution'], answer: 0 },
+    { q: 'Integer Programming (LP with integer constraints) is:', options: ['Same as LP','Easier','Always solvable by graphical','Harder (NP-hard in general)'], answer: 3 },
+    { q: 'Artificial variables are used for:', options: ['\\(\\geq\\) or \\(=\\) constraints (Big-M method)','Slack','\\(\\le\\) constraints','Linear only'], answer: 0 },
   ],
 },
 
@@ -586,10 +586,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Precedence table describes:', options: ['Durations only', 'Resources', 'Events', 'Which activities must precede others'], answer: 3 },
   ],
   red: [
-    { q: 'PERT uses:', options: ['Uniform', 'Normal', 'Deterministic only', 'Three-point (optimistic, most likely, pessimistic) estimates'], answer: 3 },
-    { q: 'Crashing an activity:', options: ['Delays project', 'Has no cost', 'Reduces float only', 'Shortens duration at extra cost'], answer: 3 },
-    { q: 'Independent float is:', options: ['Always positive', 'Same as total', 'Greater than total', 'Float usable without affecting successors'], answer: 3 },
-    { q: 'A project\'s duration equals:', options: ['Sum of all durations', 'Shortest path', 'Mean duration', 'The critical-path length'], answer: 3 },
+    { q: 'PERT uses:', options: ['Uniform','Normal','Deterministic only','Three-point (optimistic, most likely, pessimistic) estimates'], answer: 3 },
+    { q: 'Crashing an activity:', options: ['Reduces float only','Shortens duration at extra cost','Delays project','Has no cost'], answer: 1 },
+    { q: 'Independent float is:', options: ['Always positive','Same as total','Greater than total','Float usable without affecting successors'], answer: 3 },
+    { q: 'A project\'s duration equals:', options: ['The critical-path length','Shortest path','Sum of all durations','Mean duration'], answer: 0 },
   ],
 },
 
@@ -610,10 +610,10 @@ const FM_OCR_B_MCQ = {
     { q: 'Poisson arrivals can be simulated via:', options: ['Uniform directly', 'Normal approximation', 'Sum of Bernoullis', 'Exponential inter-arrival times'], answer: 3 },
   ],
   red: [
-    { q: 'Convergence of Monte Carlo estimate:', options: ['\\(O(1)\\)', '\\(O(1/n)\\)', '\\(O(\\log n)\\)', '\\(O(1/\\sqrt{n})\\)'], answer: 3 },
-    { q: 'Queue with single server: Little\'s law \\(L=\\lambda W\\) relates:', options: ['Only service times', 'Time and cost', 'Space and rate', 'Mean queue length, arrival rate, mean wait'], answer: 3 },
-    { q: 'A deterministic queue system has:', options: ['Same results', 'Random outputs', 'Exponential arrivals', 'Fixed arrival and service times'], answer: 3 },
-    { q: 'Simulation cannot:', options: ['Give bounds', 'Help design', 'Use random data', 'Replace a proven theorem'], answer: 3 },
+    { q: 'Convergence of Monte Carlo estimate:', options: ['\\(O(1/n)\\)','\\(O(1/\\sqrt{n})\\)','\\(O(\\log n)\\)','\\(O(1)\\)'], answer: 1 },
+    { q: 'Queue with single server: Little\'s law \\(L=\\lambda W\\) relates:', options: ['Only service times','Time and cost','Space and rate','Mean queue length, arrival rate, mean wait'], answer: 3 },
+    { q: 'A deterministic queue system has:', options: ['Exponential arrivals','Same results','Random outputs','Fixed arrival and service times'], answer: 3 },
+    { q: 'Simulation cannot:', options: ['Give bounds','Help design','Use random data','Replace a proven theorem'], answer: 3 },
   ],
 },
 

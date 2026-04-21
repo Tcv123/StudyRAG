@@ -137,33 +137,27 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
     red: [
       {
         q: 'For \\(n = 7\\), \\(\\sum x = 35\\), \\(\\sum y = 56\\), \\(\\sum x^2 = 203\\), \\(\\sum y^2 = 480\\), \\(\\sum xy = 312\\). Calculate \\(r\\) correct to 3 s.f.',
-        options: ['\\(0.951\\)', '\\(0.820\\)', '\\(-0.951\\)', '\\(0.904\\)'],
-        answer: 0
+        options: ['\\(0.820\\)','\\(0.904\\)','\\(0.951\\)','\\(-0.951\\)'], answer: 2
       },
       {
         q: 'Data coded as \\(p = \\frac{x-3}{2}\\), \\(q = \\frac{y-10}{5}\\). Regression line of q on p: \\(q = 0.4 + 1.6p\\). Find the regression line of y on x.',
-        options: ['\\(y = 22 + 16x\\)', '\\(y = 12 + 8x\\)', '\\(y = 0.4 + 1.6x\\)', '\\(y = 2 + 1.6x\\)'],
-        answer: 0
+        options: ['\\(y = 2 + 1.6x\\)','\\(y = 0.4 + 1.6x\\)','\\(y = 22 + 16x\\)','\\(y = 12 + 8x\\)'], answer: 2
       },
       {
         q: 'Test \\(H_0: \\rho = 0\\) vs \\(H_1: \\rho \\neq 0\\) at 1% significance, \\(n = 15\\), \\(r = 0.60\\). Critical value is 0.6411. Conclusion:',
-        options: ['Do not reject \\(H_0\\); insufficient evidence of linear correlation', 'Reject \\(H_0\\); significant positive correlation', 'Reject \\(H_0\\); significant negative correlation', 'Accept \\(H_1\\) since \\(r > 0.5\\)'],
-        answer: 0
+        options: ['Do not reject \\(H_0\\); insufficient evidence of linear correlation','Reject \\(H_0\\); significant negative correlation','Accept \\(H_1\\) since \\(r > 0.5\\)','Reject \\(H_0\\); significant positive correlation'], answer: 0
       },
       {
         q: 'The least squares regression minimises which quantity?',
-        options: ['The sum of squared vertical residuals \\(\\sum (y_i - \\hat{y}_i)^2\\)', 'The sum of absolute residuals \\(\\sum |y_i - \\hat{y}_i|\\)', 'The sum of squared horizontal residuals', 'The variance of x'],
-        answer: 0
+        options: ['The sum of squared vertical residuals \\(\\sum (y_i - \\hat{y}_i)^2\\)','The sum of squared horizontal residuals','The variance of x','The sum of absolute residuals \\(\\sum |y_i - \\hat{y}_i|\\)'], answer: 0
       },
       {
         q: 'For a bivariate dataset, \\(S_{xx} = 50\\), \\(S_{yy} = 72\\), \\(r = 0.6\\). Find \\(S_{xy}\\).',
-        options: ['\\(25.46\\)', '\\(2160\\)', '\\(\\sqrt{3600}\\)', '\\(30\\)'],
-        answer: 0
+        options: ['\\(\\sqrt{3600}\\)','\\(2160\\)','\\(25.46\\)','\\(30\\)'], answer: 2
       },
       {
         q: 'A student claims that because a regression line fits the data well (\\(r = 0.95\\)), the x-variable causes changes in y. Which response is correct?',
-        options: ['High \\(r\\) indicates strong correlation, but causation cannot be inferred from correlation alone', 'The student is correct: strong correlation always implies causation', '\\(r = 0.95\\) is not strong enough to make any conclusion', 'Only \\(r = 1\\) proves causation'],
-        answer: 0
+        options: ['Only \\(r = 1\\) proves causation','\\(r = 0.95\\) is not strong enough to make any conclusion','High \\(r\\) indicates strong correlation, but causation cannot be inferred from correlation alone','The student is correct: strong correlation always implies causation'], answer: 2
       }
     ]
   },
@@ -299,33 +293,27 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
     red: [
       {
         q: '\\(P(A) = 0.4\\), \\(P(B) = 0.35\\), \\(P(A \\cup B) = 0.58\\). Test whether A and B are independent.',
-        options: ['Not independent since \\(P(A \\cap B) = 0.17 \\neq 0.14 = P(A)P(B)\\)', 'Independent since \\(P(A \\cup B) \\neq 0\\)', 'Independent since \\(P(A \\cap B) = P(A) \\times P(B)\\)', 'Cannot be determined from this information'],
-        answer: 0
+        options: ['Independent since \\(P(A \\cap B) = P(A) \\times P(B)\\)','Independent since \\(P(A \\cup B) \\neq 0\\)','Cannot be determined from this information','Not independent since \\(P(A \\cap B) = 0.17 \\neq 0.14 = P(A)P(B)\\)'], answer: 3
       },
       {
         q: 'Machine M1 makes 55% of items (1% defective); M2 makes 45% (3% defective). Given item is defective, find \\(P(M2|\\text{defective})\\).',
-        options: ['\\(0.711\\)', '\\(0.289\\)', '\\(0.03\\)', '\\(0.45\\)'],
-        answer: 0
+        options: ['\\(0.711\\)','\\(0.289\\)','\\(0.45\\)','\\(0.03\\)'], answer: 0
       },
       {
         q: '3 events A, B, C are mutually independent with \\(P(A)=0.3\\), \\(P(B)=0.4\\), \\(P(C)=0.5\\). Find \\(P(A \\cup B \\cup C)\\).',
-        options: ['\\(0.79\\)', '\\(1.2\\)', '\\(0.06\\)', '\\(0.94\\)'],
-        answer: 0
+        options: ['\\(0.06\\)','\\(0.94\\)','\\(1.2\\)','\\(0.79\\)'], answer: 3
       },
       {
         q: 'A box has 4 red (R), 3 blue (B), 2 green (G) balls. Two drawn without replacement. Find \\(P(\\text{both different colours})\\).',
-        options: ['\\(\\frac{52}{72}\\)', '\\(\\frac{24}{72}\\)', '\\(\\frac{29}{72}\\)', '\\(\\frac{48}{72}\\)'],
-        answer: 0
+        options: ['\\(\\frac{48}{72}\\)','\\(\\frac{29}{72}\\)','\\(\\frac{24}{72}\\)','\\(\\frac{52}{72}\\)'], answer: 3
       },
       {
         q: 'Given \\(P(A|B) = 2P(A|B\')\\), \\(P(B) = 0.6\\), \\(P(A) = 0.44\\). Find \\(P(A|B)\\).',
-        options: ['\\(0.55\\)', '\\(0.44\\)', '\\(0.30\\)', '\\(0.275\\)'],
-        answer: 0
+        options: ['\\(0.30\\)','\\(0.275\\)','\\(0.44\\)','\\(0.55\\)'], answer: 3
       },
       {
         q: 'Using total probability: \\(P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2) + P(A|B_3)P(B_3)\\). This requires \\(B_1, B_2, B_3\\) to be:',
-        options: ['Mutually exclusive and exhaustive (partition of sample space)', 'Independent', 'All with equal probability', 'Subsets of A'],
-        answer: 0
+        options: ['All with equal probability','Subsets of A','Mutually exclusive and exhaustive (partition of sample space)','Independent'], answer: 2
       }
     ]
   },
@@ -461,33 +449,27 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
     red: [
       {
         q: '\\(X \\sim N(\\mu, \\sigma^2)\\). \\(P(X < 18) = 0.1\\) and \\(P(X < 30) = 0.85\\). Find \\(\\mu\\) and \\(\\sigma\\). [\\(z_{0.1} = -1.282\\), \\(z_{0.85} = 1.036\\)]',
-        options: ['\\(\\mu \\approx 24.7, \\sigma \\approx 5.24\\)', '\\(\\mu = 24, \\sigma = 6\\)', '\\(\\mu = 25, \\sigma = 5\\)', '\\(\\mu \\approx 22.3, \\sigma \\approx 3.7\\)'],
-        answer: 0
+        options: ['\\(\\mu \\approx 22.3, \\sigma \\approx 3.7\\)','\\(\\mu = 25, \\sigma = 5\\)','\\(\\mu = 24, \\sigma = 6\\)','\\(\\mu \\approx 24.7, \\sigma \\approx 5.24\\)'], answer: 3
       },
       {
         q: '\\(X \\sim B(150, 0.3)\\). Using normal approximation, find \\(P(40 \\leq X \\leq 50)\\) (set up the z-scores correctly).',
-        options: ['\\(P\\left(\\frac{39.5-45}{\\sqrt{31.5}} < Z < \\frac{50.5-45}{\\sqrt{31.5}}\\right)\\)', '\\(P\\left(\\frac{40-45}{\\sqrt{31.5}} < Z < \\frac{50-45}{\\sqrt{31.5}}\\right)\\)', '\\(P\\left(\\frac{40.5-45}{\\sqrt{31.5}} < Z < \\frac{49.5-45}{\\sqrt{31.5}}\\right)\\)', '\\(P\\left(\\frac{40-45}{5.5} < Z < \\frac{50-45}{5.5}\\right)\\)'],
-        answer: 0
+        options: ['\\(P\\left(\\frac{40-45}{\\sqrt{31.5}} < Z < \\frac{50-45}{\\sqrt{31.5}}\\right)\\)','\\(P\\left(\\frac{40.5-45}{\\sqrt{31.5}} < Z < \\frac{49.5-45}{\\sqrt{31.5}}\\right)\\)','\\(P\\left(\\frac{40-45}{5.5} < Z < \\frac{50-45}{5.5}\\right)\\)','\\(P\\left(\\frac{39.5-45}{\\sqrt{31.5}} < Z < \\frac{50.5-45}{\\sqrt{31.5}}\\right)\\)'], answer: 3
       },
       {
         q: 'A machine fills bottles. Volume \\(X \\sim N(500, 25)\\). A bottle is rejected if it contains less than 493 ml. What proportion of bottles are rejected? [\\(\\Phi(1.4)=0.9192\\)]',
-        options: ['\\(0.0808\\)', '\\(0.9192\\)', '\\(0.1587\\)', '\\(0.9772\\)'],
-        answer: 0
+        options: ['\\(0.9192\\)','\\(0.1587\\)','\\(0.0808\\)','\\(0.9772\\)'], answer: 2
       },
       {
         q: 'For \\(X \\sim N(\\mu, \\sigma^2)\\), if \\(P(X < a) = 1 - P(X < a)\\), then \\(a =\\)',
-        options: ['\\(\\mu\\)', '\\(0\\)', '\\(\\sigma\\)', '\\(\\mu + \\sigma\\)'],
-        answer: 0
+        options: ['\\(0\\)','\\(\\sigma\\)','\\(\\mu + \\sigma\\)','\\(\\mu\\)'], answer: 3
       },
       {
         q: 'Test \\(H_0: \\mu = 200\\) vs \\(H_1: \\mu \\neq 200\\) at 5% level. Sample of \\(n=25\\), \\(\\bar{x} = 194\\), \\(\\sigma = 15\\). Is \\(H_0\\) rejected?',
-        options: ['No; \\(z = -2\\), critical value \\(\\pm 1.960\\), so \\(|z| > 1.960\\), reject \\(H_0\\)', 'No; \\(z = -2\\) and critical value is \\(\\pm 1.960\\), do not reject', 'Yes; z = -2 is in critical region since \\(|{-2}| > 1.645\\)', 'Yes; any negative z-value leads to rejection'],
-        answer: 0
+        options: ['Yes; z = -2 is in critical region since \\(|{-2}| > 1.645\\)','No; \\(z = -2\\), critical value \\(\\pm 1.960\\), so \\(|z| > 1.960\\), reject \\(H_0\\)','No; \\(z = -2\\) and critical value is \\(\\pm 1.960\\), do not reject','Yes; any negative z-value leads to rejection'], answer: 1
       },
       {
         q: 'IQ scores follow \\(N(100, 225)\\). What percentage of people have IQ above 130? [\\(\\Phi(2) = 0.9772\\)]',
-        options: ['\\(2.28\\%\\)', '\\(97.72\\%\\)', '\\(5\\%\\)', '\\(15.87\\%\\)'],
-        answer: 0
+        options: ['\\(97.72\\%\\)','\\(5\\%\\)','\\(15.87\\%\\)','\\(2.28\\%\\)'], answer: 3
       }
     ]
   },
@@ -623,33 +605,27 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
     red: [
       {
         q: 'A 10 kg block on a rough slope at 40° is on the point of sliding. Find \\(\\mu\\). (\\(g = 9.8\\))',
-        options: ['\\(\\mu = \\tan 40° \\approx 0.839\\)', '\\(\\mu = \\cos 40° \\approx 0.766\\)', '\\(\\mu = \\sin 40° \\approx 0.643\\)', '\\(\\mu = 0.5\\)'],
-        answer: 0
+        options: ['\\(\\mu = \\tan 40° \\approx 0.839\\)','\\(\\mu = \\cos 40° \\approx 0.766\\)','\\(\\mu = 0.5\\)','\\(\\mu = \\sin 40° \\approx 0.643\\)'], answer: 0
       },
       {
         q: 'A 4 kg particle is connected to a 7 kg particle by a string over a smooth pulley. Find the tension in the string.',
-        options: ['\\(50.9 \\text{ N}\\)', '\\(68.6 \\text{ N}\\)', '\\(39.2 \\text{ N}\\)', '\\(24.9 \\text{ N}\\)'],
-        answer: 0
+        options: ['\\(24.9 \\text{ N}\\)','\\(39.2 \\text{ N}\\)','\\(68.6 \\text{ N}\\)','\\(50.9 \\text{ N}\\)'], answer: 3
       },
       {
         q: 'A particle of mass 5 kg rests in equilibrium on a rough plane at 25° under a force of P N up the slope. \\(\\mu = 0.4\\). Find P.',
-        options: ['\\(P = 5g\\sin25° - 0.4 \\times 5g\\cos25° \\approx 2.54 \\text{ N}\\)', '\\(P = 5g\\sin25° + 0.4 \\times 5g\\cos25° \\approx 38.5 \\text{ N}\\)', '\\(P = 5g\\cos25° \\approx 44.4 \\text{ N}\\)', '\\(P = 0.4 \\times 5g \\approx 19.6 \\text{ N}\\)'],
-        answer: 0
+        options: ['\\(P = 5g\\sin25° - 0.4 \\times 5g\\cos25° \\approx 2.54 \\text{ N}\\)','\\(P = 5g\\sin25° + 0.4 \\times 5g\\cos25° \\approx 38.5 \\text{ N}\\)','\\(P = 5g\\cos25° \\approx 44.4 \\text{ N}\\)','\\(P = 0.4 \\times 5g \\approx 19.6 \\text{ N}\\)'], answer: 0
       },
       {
         q: 'A car engine exerts 3000 N driving force. Mass of car = 900 kg. Resistance = 600 N. Find acceleration.',
-        options: ['\\(2.67 \\text{ m s}^{-2}\\)', '\\(3.33 \\text{ m s}^{-2}\\)', '\\(2.33 \\text{ m s}^{-2}\\)', '\\(4.0 \\text{ m s}^{-2}\\)'],
-        answer: 0
+        options: ['\\(3.33 \\text{ m s}^{-2}\\)','\\(2.33 \\text{ m s}^{-2}\\)','\\(2.67 \\text{ m s}^{-2}\\)','\\(4.0 \\text{ m s}^{-2}\\)'], answer: 2
       },
       {
         q: 'Masses 3 kg (on rough table, \\(\\mu=0.25\\)) and 5 kg (hanging) connected by string over pulley. Find acceleration.',
-        options: ['\\(5.15 \\text{ m s}^{-2}\\)', '\\(6.125 \\text{ m s}^{-2}\\)', '\\(4.9 \\text{ m s}^{-2}\\)', '\\(7.35 \\text{ m s}^{-2}\\)'],
-        answer: 0
+        options: ['\\(4.9 \\text{ m s}^{-2}\\)','\\(7.35 \\text{ m s}^{-2}\\)','\\(5.15 \\text{ m s}^{-2}\\)','\\(6.125 \\text{ m s}^{-2}\\)'], answer: 2
       },
       {
         q: 'State the assumption that makes the tension the same throughout a string over a pulley.',
-        options: ['The string is light and inextensible; the pulley is smooth and light', 'The pulley is heavy', 'The string is elastic', 'The surfaces are rough'],
-        answer: 0
+        options: ['The string is elastic','The string is light and inextensible; the pulley is smooth and light','The pulley is heavy','The surfaces are rough'], answer: 1
       }
     ]
   },
@@ -785,33 +761,27 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
     red: [
       {
         q: 'A particle is projected from a height of 30 m with upward velocity 10 m/s. Find its velocity when it hits the ground. (\\(g=9.8\\))',
-        options: ['\\(\\approx 27.1 \\text{ m s}^{-1}\\) downward', '\\(\\approx 24.2 \\text{ m s}^{-1}\\) downward', '\\(\\approx 10 \\text{ m s}^{-1}\\) downward', '\\(\\approx 19.8 \\text{ m s}^{-1}\\) downward'],
-        answer: 0
+        options: ['\\(\\approx 24.2 \\text{ m s}^{-1}\\) downward','\\(\\approx 27.1 \\text{ m s}^{-1}\\) downward','\\(\\approx 10 \\text{ m s}^{-1}\\) downward','\\(\\approx 19.8 \\text{ m s}^{-1}\\) downward'], answer: 1
       },
       {
         q: 'A particle moves with \\(s = 3t^2 - 12t + 9\\) (metres, seconds). At what time(s) is the particle at rest?',
-        options: ['\\(t = 2 \\text{ s}\\)', '\\(t = 0 \\text{ s}\\) and \\(t = 4 \\text{ s}\\)', '\\(t = 1 \\text{ s}\\) and \\(t = 3 \\text{ s}\\)', '\\(t = 3 \\text{ s}\\) only'],
-        answer: 0
+        options: ['\\(t = 2 \\text{ s}\\)','\\(t = 3 \\text{ s}\\) only','\\(t = 1 \\text{ s}\\) and \\(t = 3 \\text{ s}\\)','\\(t = 0 \\text{ s}\\) and \\(t = 4 \\text{ s}\\)'], answer: 0
       },
       {
         q: 'Train A leaves station at rest with acceleration 0.4 m/s². Train B passes the same point 30 s later at constant 12 m/s. When and where do they meet?',
-        options: ['\\(t \\approx 60 \\text{ s after A departs; } s \\approx 720 \\text{ m}\\)', '\\(t \\approx 30 \\text{ s after A departs; } s = 360 \\text{ m}\\)', '\\(t \\approx 90 \\text{ s after A departs; } s = 1080 \\text{ m}\\)', '\\(t = 45 \\text{ s after A departs; } s = 405 \\text{ m}\\)'],
-        answer: 0
+        options: ['\\(t \\approx 60 \\text{ s after A departs; } s \\approx 720 \\text{ m}\\)','\\(t = 45 \\text{ s after A departs; } s = 405 \\text{ m}\\)','\\(t \\approx 30 \\text{ s after A departs; } s = 360 \\text{ m}\\)','\\(t \\approx 90 \\text{ s after A departs; } s = 1080 \\text{ m}\\)'], answer: 0
       },
       {
         q: 'A particle decelerates at 2.5 m/s² and has \\(v = 0\\) after 8 s. Find its initial velocity and total displacement.',
-        options: ['\\(u = 20 \\text{ m s}^{-1}\\), \\(s = 80 \\text{ m}\\)', '\\(u = 20 \\text{ m s}^{-1}\\), \\(s = 160 \\text{ m}\\)', '\\(u = 10 \\text{ m s}^{-1}\\), \\(s = 40 \\text{ m}\\)', '\\(u = 25 \\text{ m s}^{-1}\\), \\(s = 100 \\text{ m}\\)'],
-        answer: 0
+        options: ['\\(u = 25 \\text{ m s}^{-1}\\), \\(s = 100 \\text{ m}\\)','\\(u = 20 \\text{ m s}^{-1}\\), \\(s = 160 \\text{ m}\\)','\\(u = 10 \\text{ m s}^{-1}\\), \\(s = 40 \\text{ m}\\)','\\(u = 20 \\text{ m s}^{-1}\\), \\(s = 80 \\text{ m}\\)'], answer: 3
       },
       {
         q: 'Two particles P and Q are at positions 0 and 80 m respectively on the same line. P moves at 6 m/s toward Q; Q moves at 2 m/s away. How long until they meet?',
-        options: ['\\(20 \\text{ s}\\)', '\\(10 \\text{ s}\\)', '\\(40 \\text{ s}\\)', '\\(16 \\text{ s}\\)'],
-        answer: 0
+        options: ['\\(10 \\text{ s}\\)','\\(20 \\text{ s}\\)','\\(16 \\text{ s}\\)','\\(40 \\text{ s}\\)'], answer: 1
       },
       {
         q: 'A vehicle accelerates from rest for \\(t_1\\) seconds to top speed \\(V\\), travels at \\(V\\) for 120 s, then decelerates uniformly to rest in 40 s. Total distance 3600 m; total time 200 s. Find \\(V\\) and \\(t_1\\).',
-        options: ['\\(V = 20 \\text{ m s}^{-1}\\), \\(t_1 = 40 \\text{ s}\\)', '\\(V = 18 \\text{ m s}^{-1}\\), \\(t_1 = 40 \\text{ s}\\)', '\\(V = 20 \\text{ m s}^{-1}\\), \\(t_1 = 60 \\text{ s}\\)', '\\(V = 24 \\text{ m s}^{-1}\\), \\(t_1 = 40 \\text{ s}\\)'],
-        answer: 0
+        options: ['\\(V = 24 \\text{ m s}^{-1}\\), \\(t_1 = 40 \\text{ s}\\)','\\(V = 20 \\text{ m s}^{-1}\\), \\(t_1 = 40 \\text{ s}\\)','\\(V = 18 \\text{ m s}^{-1}\\), \\(t_1 = 40 \\text{ s}\\)','\\(V = 20 \\text{ m s}^{-1}\\), \\(t_1 = 60 \\text{ s}\\)'], answer: 1
       }
     ]
   }

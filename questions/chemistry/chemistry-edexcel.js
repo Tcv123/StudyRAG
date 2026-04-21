@@ -46,16 +46,16 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
       { q: 'The second ionisation energy of sodium is much higher than the first because:', options: ['The electron is removed from a full inner shell', 'Sodium has a large atomic radius', 'There is less nuclear charge', 'Shielding increases'], answer: 0 }
     ],
     red: [
-      { q: 'The successive ionisation energies of an element are: 578, 1817, 2745, 11578, 14831 kJ/mol. The element is in Group:', options: ['1', '2', '3', '4'], answer: 2 },
-      { q: 'Which statement about Born-Haber cycles is correct?', options: ['They only apply to covalent compounds', 'They use Hess\'s law to calculate lattice enthalpy', 'They cannot include electron affinity', 'They only work for elements in Period 2'], answer: 1 },
-      { q: 'The lattice enthalpy of NaCl is more exothermic than NaBr because:', options: ['Na+ is larger than Br-', 'Cl- is smaller than Br- giving stronger electrostatic attraction', 'NaCl has covalent character', 'Br has more protons'], answer: 1 },
-      { q: 'A dative covalent bond is found in:', options: ['NaCl', 'NH4+', 'CH4', 'MgO'], answer: 1 },
-      { q: 'The enthalpy of atomisation of chlorine is +122 kJ/mol. The Cl-Cl bond enthalpy is:', options: ['122 kJ/mol', '244 kJ/mol', '61 kJ/mol', '366 kJ/mol'], answer: 1 },
-      { q: 'Which of the following best explains why ice is less dense than liquid water?', options: ['Hydrogen bonds are shorter in ice', 'The open lattice structure of ice has molecules further apart on average', 'Ice has stronger London forces', 'Water molecules are smaller in the liquid phase'], answer: 1 },
-      { q: 'The electron affinity of an element becomes more negative (more exothermic) when:', options: ['The atom is larger', 'There is more shielding', 'The nuclear charge is higher with similar shielding', 'The atom already has a full outer shell'], answer: 2 },
-      { q: 'In the XeF4 molecule, the shape is square planar because:', options: ['There are 4 bonding pairs and no lone pairs', 'There are 4 bonding pairs and 2 lone pairs arranged to minimise repulsion', 'Xenon cannot have more than 8 electrons', 'The bond angles are 120°'], answer: 1 },
-      { q: 'Using the relationship deltaH = sum of bonds broken - sum of bonds formed, a positive result indicates:', options: ['An exothermic reaction', 'An endothermic reaction', 'A spontaneous reaction', 'No reaction occurs'], answer: 1 },
-      { q: 'The theoretical lattice enthalpy (from ionic model) of AgI differs significantly from the experimental value. This suggests:', options: ['AgI is purely ionic', 'AgI has significant covalent character', 'The Born-Haber cycle is invalid', 'Silver has a low ionisation energy'], answer: 1 }
+      { q: 'The successive ionisation energies of an element are: 578, 1817, 2745, 11578, 14831 kJ/mol. The element is in Group:', options: ['2','3','1','4'], answer: 1 },
+      { q: 'Which statement about Born-Haber cycles is correct?', options: ['They only apply to covalent compounds','They cannot include electron affinity','They only work for elements in Period 2','They use Hess\'s law to calculate lattice enthalpy'], answer: 3 },
+      { q: 'The lattice enthalpy of NaCl is more exothermic than NaBr because:', options: ['NaCl has covalent character','Br has more protons','Na+ is larger than Br-','Cl- is smaller than Br- giving stronger electrostatic attraction'], answer: 3 },
+      { q: 'A dative covalent bond is found in:', options: ['NaCl','NH4+','CH4','MgO'], answer: 1 },
+      { q: 'The enthalpy of atomisation of chlorine is +122 kJ/mol. The Cl-Cl bond enthalpy is:', options: ['122 kJ/mol','244 kJ/mol','61 kJ/mol','366 kJ/mol'], answer: 1 },
+      { q: 'Which of the following best explains why ice is less dense than liquid water?', options: ['Ice has stronger London forces','Hydrogen bonds are shorter in ice','The open lattice structure of ice has molecules further apart on average','Water molecules are smaller in the liquid phase'], answer: 2 },
+      { q: 'The electron affinity of an element becomes more negative (more exothermic) when:', options: ['The nuclear charge is higher with similar shielding','The atom already has a full outer shell','The atom is larger','There is more shielding'], answer: 0 },
+      { q: 'In the XeF4 molecule, the shape is square planar because:', options: ['There are 4 bonding pairs and no lone pairs','There are 4 bonding pairs and 2 lone pairs arranged to minimise repulsion','Xenon cannot have more than 8 electrons','The bond angles are 120°'], answer: 1 },
+      { q: 'Using the relationship deltaH = sum of bonds broken - sum of bonds formed, a positive result indicates:', options: ['An endothermic reaction','A spontaneous reaction','An exothermic reaction','No reaction occurs'], answer: 0 },
+      { q: 'The theoretical lattice enthalpy (from ionic model) of AgI differs significantly from the experimental value. This suggests:', options: ['AgI is purely ionic','AgI has significant covalent character','The Born-Haber cycle is invalid','Silver has a low ionisation energy'], answer: 1 }
     ]
   },
   'T2': {
@@ -105,16 +105,16 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
       { q: 'In a concentration-time graph for a first-order reaction, the curve shows:', options: ['Linear decrease', 'Exponential decay', 'Linear increase', 'No change'], answer: 1 }
     ],
     red: [
-      { q: 'The Arrhenius equation is k = Ae^(-Ea/RT). A graph of ln k against 1/T gives a straight line with gradient:', options: ['Ea/R', '-Ea/R', 'Ea', '-Ea'], answer: 1 },
-      { q: 'For the reaction A + 2B -> C, experiments show rate = k[A][B]. A possible mechanism consistent with this is:', options: ['A + B -> X (slow), X + B -> C (fast)', 'A + 2B -> C (one step)', '2B -> X (slow), X + A -> C (fast)', 'A -> X (slow), X + 2B -> C (fast)'], answer: 0 },
-      { q: 'The cell potential for the reaction Zn + Cu2+ -> Zn2+ + Cu is +1.10V. This means:', options: ['The reaction is not feasible', 'The reaction is feasible under standard conditions', 'Zinc is reduced', 'Copper is oxidised'], answer: 1 },
-      { q: 'If E°cell is positive, the Gibbs free energy change is:', options: ['Positive', 'Negative', 'Zero', 'Cannot be determined'], answer: 1 },
-      { q: 'For the equilibrium PCl5(g) <=> PCl3(g) + Cl2(g), Kp = 1.8 atm at 250°C. If total pressure is 2.0 atm and p(PCl3) = p(Cl2) = x, then x is approximately:', options: ['0.6 atm', '0.9 atm', '1.0 atm', '1.2 atm'], answer: 2 },
-      { q: 'In the iodine clock reaction, the order with respect to persulfate can be determined by:', options: ['Varying persulfate concentration while keeping iodide constant', 'Changing the temperature only', 'Adding a catalyst', 'Using excess iodide only'], answer: 0 },
-      { q: 'A reaction has the rate equation rate = k[X]^2. When [X] = 0.1 mol dm-3, rate = 3.0 x 10-3 mol dm-3 s-1. The value of k is:', options: ['0.03 dm3 mol-1 s-1', '0.3 dm3 mol-1 s-1', '3.0 dm3 mol-1 s-1', '30 dm3 mol-1 s-1'], answer: 1 },
-      { q: 'Which conditions would give the greatest yield of ammonia: N2 + 3H2 <=> 2NH3, deltaH = -92 kJ/mol?', options: ['High temperature, high pressure', 'Low temperature, high pressure', 'High temperature, low pressure', 'Low temperature, low pressure'], answer: 1 },
-      { q: 'In a fuel cell, hydrogen is oxidised at the anode. The half-equation is:', options: ['H2 -> 2H+ + 2e-', '2H+ + 2e- -> H2', 'O2 + 4H+ + 4e- -> 2H2O', 'H2 + 2OH- -> 2H2O + 2e-'], answer: 0 },
-      { q: 'The relationship between Kp and Kc is Kp = Kc(RT)^(delta n). For N2O4(g) <=> 2NO2(g), delta n is:', options: ['-1', '0', '1', '2'], answer: 2 }
+      { q: 'The Arrhenius equation is k = Ae^(-Ea/RT). A graph of ln k against 1/T gives a straight line with gradient:', options: ['Ea','-Ea','Ea/R','-Ea/R'], answer: 3 },
+      { q: 'For the reaction A + 2B -> C, experiments show rate = k[A][B]. A possible mechanism consistent with this is:', options: ['A + B -> X (slow), X + B -> C (fast)','A + 2B -> C (one step)','2B -> X (slow), X + A -> C (fast)','A -> X (slow), X + 2B -> C (fast)'], answer: 0 },
+      { q: 'The cell potential for the reaction Zn + Cu2+ -> Zn2+ + Cu is +1.10V. This means:', options: ['The reaction is not feasible','The reaction is feasible under standard conditions','Zinc is reduced','Copper is oxidised'], answer: 1 },
+      { q: 'If E°cell is positive, the Gibbs free energy change is:', options: ['Positive','Negative','Zero','Cannot be determined'], answer: 1 },
+      { q: 'For the equilibrium PCl5(g) <=> PCl3(g) + Cl2(g), Kp = 1.8 atm at 250°C. If total pressure is 2.0 atm and p(PCl3) = p(Cl2) = x, then x is approximately:', options: ['0.6 atm','0.9 atm','1.0 atm','1.2 atm'], answer: 2 },
+      { q: 'In the iodine clock reaction, the order with respect to persulfate can be determined by:', options: ['Varying persulfate concentration while keeping iodide constant','Changing the temperature only','Adding a catalyst','Using excess iodide only'], answer: 0 },
+      { q: 'A reaction has the rate equation rate = k[X]^2. When [X] = 0.1 mol dm-3, rate = 3.0 x 10-3 mol dm-3 s-1. The value of k is:', options: ['3.0 dm3 mol-1 s-1','0.3 dm3 mol-1 s-1','30 dm3 mol-1 s-1','0.03 dm3 mol-1 s-1'], answer: 1 },
+      { q: 'Which conditions would give the greatest yield of ammonia: N2 + 3H2 <=> 2NH3, deltaH = -92 kJ/mol?', options: ['Low temperature, low pressure','High temperature, high pressure','High temperature, low pressure','Low temperature, high pressure'], answer: 3 },
+      { q: 'In a fuel cell, hydrogen is oxidised at the anode. The half-equation is:', options: ['H2 -> 2H+ + 2e-','2H+ + 2e- -> H2','O2 + 4H+ + 4e- -> 2H2O','H2 + 2OH- -> 2H2O + 2e-'], answer: 0 },
+      { q: 'The relationship between Kp and Kc is Kp = Kc(RT)^(delta n). For N2O4(g) <=> 2NO2(g), delta n is:', options: ['-1','0','1','2'], answer: 2 }
     ]
   },
   'T3': {
@@ -164,16 +164,16 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
       { q: 'Silver iodide precipitate is what colour?', options: ['White', 'Cream', 'Yellow', 'No precipitate'], answer: 2 }
     ],
     red: [
-      { q: 'In hot concentrated NaOH, chlorine disproportionates differently. The products include:', options: ['NaCl + NaClO', 'NaCl + NaClO3', 'NaCl + NaClO4', 'NaCl only'], answer: 1 },
-      { q: 'The complex [CuCl4]2- is tetrahedral and has what colour?', options: ['Blue', 'Green', 'Yellow', 'Colourless'], answer: 2 },
-      { q: 'Ligand substitution in [Cu(H2O)6]2+ with excess NH3 gives:', options: ['[Cu(NH3)4(H2O)2]2+', '[Cu(NH3)6]2+', '[Cu(NH3)4]2+', 'Cu(OH)2'], answer: 0 },
-      { q: 'The d-d transition in transition metal complexes involves:', options: ['Electrons moving between s and p orbitals', 'Electrons being promoted between split d orbitals', 'Electrons being lost from d orbitals', 'Ligands absorbing light'], answer: 1 },
-      { q: 'The colour of a transition metal complex depends on:', options: ['The metal ion only', 'The ligand only', 'The metal ion, oxidation state, coordination number, and ligand', 'Temperature only'], answer: 2 },
-      { q: 'Which of the following explains why Zn2+ compounds are white/colourless?', options: ['Zn2+ has no 3d electrons', 'Zn2+ has a full 3d10 configuration so no d-d transitions are possible', 'Zn is not a transition metal because it forms coloured compounds', 'Zn2+ absorbs all visible light'], answer: 1 },
-      { q: 'Cisplatin [PtCl2(NH3)2] is used as an anti-cancer drug. Its shape is:', options: ['Tetrahedral', 'Square planar', 'Octahedral', 'Linear'], answer: 1 },
-      { q: 'When concentrated HCl is added to [Co(H2O)6]2+ (pink), the solution turns blue. This is because:', options: ['Co is oxidised', 'A ligand substitution occurs forming [CoCl4]2-', 'Water is removed by evaporation', 'HCl acts as a reducing agent'], answer: 1 },
-      { q: 'A heterogeneous catalyst works by:', options: ['Dissolving in the reaction mixture', 'Adsorbing reactants on its surface, weakening bonds', 'Increasing the temperature locally', 'Changing the enthalpy of reaction'], answer: 1 },
-      { q: 'Vanadium can exist in oxidation states +2, +3, +4, +5. The colours are respectively:', options: ['Yellow, blue, green, violet', 'Violet, green, blue, yellow', 'Green, blue, yellow, violet', 'Blue, green, violet, yellow'], answer: 1 }
+      { q: 'In hot concentrated NaOH, chlorine disproportionates differently. The products include:', options: ['NaCl + NaClO','NaCl + NaClO3','NaCl + NaClO4','NaCl only'], answer: 1 },
+      { q: 'The complex [CuCl4]2- is tetrahedral and has what colour?', options: ['Colourless','Yellow','Green','Blue'], answer: 1 },
+      { q: 'Ligand substitution in [Cu(H2O)6]2+ with excess NH3 gives:', options: ['Cu(OH)2','[Cu(NH3)4]2+','[Cu(NH3)6]2+','[Cu(NH3)4(H2O)2]2+'], answer: 3 },
+      { q: 'The d-d transition in transition metal complexes involves:', options: ['Electrons being lost from d orbitals','Ligands absorbing light','Electrons moving between s and p orbitals','Electrons being promoted between split d orbitals'], answer: 3 },
+      { q: 'The colour of a transition metal complex depends on:', options: ['The metal ion, oxidation state, coordination number, and ligand','Temperature only','The metal ion only','The ligand only'], answer: 0 },
+      { q: 'Which of the following explains why Zn2+ compounds are white/colourless?', options: ['Zn2+ has a full 3d10 configuration so no d-d transitions are possible','Zn2+ absorbs all visible light','Zn is not a transition metal because it forms coloured compounds','Zn2+ has no 3d electrons'], answer: 0 },
+      { q: 'Cisplatin [PtCl2(NH3)2] is used as an anti-cancer drug. Its shape is:', options: ['Square planar','Linear','Octahedral','Tetrahedral'], answer: 0 },
+      { q: 'When concentrated HCl is added to [Co(H2O)6]2+ (pink), the solution turns blue. This is because:', options: ['Co is oxidised','A ligand substitution occurs forming [CoCl4]2-','Water is removed by evaporation','HCl acts as a reducing agent'], answer: 1 },
+      { q: 'A heterogeneous catalyst works by:', options: ['Dissolving in the reaction mixture','Adsorbing reactants on its surface, weakening bonds','Increasing the temperature locally','Changing the enthalpy of reaction'], answer: 1 },
+      { q: 'Vanadium can exist in oxidation states +2, +3, +4, +5. The colours are respectively:', options: ['Green, blue, yellow, violet','Yellow, blue, green, violet','Violet, green, blue, yellow','Blue, green, violet, yellow'], answer: 2 }
     ]
   },
   'T4': {
@@ -223,16 +223,16 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
       { q: 'Cracking of long-chain alkanes produces:', options: ['Only alkanes', 'Shorter alkanes and alkenes', 'Only alkenes', 'Alcohols'], answer: 1 }
     ],
     red: [
-      { q: 'In the SN2 reaction of (R)-2-bromobutane with NaOH, the product is:', options: ['(R)-butan-2-ol', '(S)-butan-2-ol (inversion of configuration)', 'A racemic mixture', 'But-2-ene'], answer: 1 },
-      { q: 'The SN1 reaction of a chiral halogenoalkane produces a racemic mixture because:', options: ['The nucleophile attacks from one side only', 'The planar carbocation intermediate can be attacked from either side', 'No bonds are broken', 'The reaction is concerted'], answer: 1 },
-      { q: 'When but-1-ene reacts with HBr, the major product is 2-bromobutane. This is because:', options: ['The primary carbocation is more stable', 'The secondary carbocation intermediate is more stable due to inductive effects', 'Br- attacks the terminal carbon', 'The reaction is SN2'], answer: 1 },
-      { q: 'Cahn-Ingold-Prelog priority rules assign priority based on:', options: ['Atomic mass', 'Atomic number of directly attached atoms', 'Bond length', 'Electronegativity'], answer: 1 },
-      { q: 'A compound with one chiral centre has how many optical isomers?', options: ['1', '2', '3', '4'], answer: 1 },
-      { q: 'Which factor most affects the rate of nucleophilic substitution in halogenoalkanes?', options: ['The C-X bond enthalpy', 'The colour of the halogenoalkane', 'The boiling point', 'The molecular mass'], answer: 0 },
-      { q: 'The termination step in free radical substitution could be:', options: ['Cl + CH4 -> HCl + CH3', 'CH3 + CH3 -> C2H6', 'Cl2 -> 2Cl', 'CH4 + Cl2 -> CH3Cl + HCl'], answer: 1 },
-      { q: 'Why do branched alkanes have lower boiling points than straight-chain isomers?', options: ['They have stronger intermolecular forces', 'They have a smaller surface area so weaker London forces', 'They are more polar', 'They have hydrogen bonds'], answer: 1 },
-      { q: 'In the presence of UV light, cyclohexane reacts with Br2. The mechanism is:', options: ['Electrophilic addition', 'Nucleophilic substitution', 'Free radical substitution', 'Electrophilic substitution'], answer: 2 },
-      { q: 'The reaction of 2-bromopropane with ethanolic KOH at high temperature favours:', options: ['Substitution (SN1)', 'Substitution (SN2)', 'Elimination (E2)', 'No reaction'], answer: 2 }
+      { q: 'In the SN2 reaction of (R)-2-bromobutane with NaOH, the product is:', options: ['But-2-ene','(S)-butan-2-ol (inversion of configuration)','(R)-butan-2-ol','A racemic mixture'], answer: 1 },
+      { q: 'The SN1 reaction of a chiral halogenoalkane produces a racemic mixture because:', options: ['The nucleophile attacks from one side only','The planar carbocation intermediate can be attacked from either side','No bonds are broken','The reaction is concerted'], answer: 1 },
+      { q: 'When but-1-ene reacts with HBr, the major product is 2-bromobutane. This is because:', options: ['The primary carbocation is more stable','The reaction is SN2','The secondary carbocation intermediate is more stable due to inductive effects','Br- attacks the terminal carbon'], answer: 2 },
+      { q: 'Cahn-Ingold-Prelog priority rules assign priority based on:', options: ['Atomic mass','Electronegativity','Atomic number of directly attached atoms','Bond length'], answer: 2 },
+      { q: 'A compound with one chiral centre has how many optical isomers?', options: ['4','1','3','2'], answer: 3 },
+      { q: 'Which factor most affects the rate of nucleophilic substitution in halogenoalkanes?', options: ['The boiling point','The C-X bond enthalpy','The colour of the halogenoalkane','The molecular mass'], answer: 1 },
+      { q: 'The termination step in free radical substitution could be:', options: ['CH4 + Cl2 -> CH3Cl + HCl','Cl2 -> 2Cl','CH3 + CH3 -> C2H6','Cl + CH4 -> HCl + CH3'], answer: 2 },
+      { q: 'Why do branched alkanes have lower boiling points than straight-chain isomers?', options: ['They have stronger intermolecular forces','They have a smaller surface area so weaker London forces','They are more polar','They have hydrogen bonds'], answer: 1 },
+      { q: 'In the presence of UV light, cyclohexane reacts with Br2. The mechanism is:', options: ['Electrophilic substitution','Free radical substitution','Nucleophilic substitution','Electrophilic addition'], answer: 1 },
+      { q: 'The reaction of 2-bromopropane with ethanolic KOH at high temperature favours:', options: ['Elimination (E2)','No reaction','Substitution (SN1)','Substitution (SN2)'], answer: 0 }
     ]
   },
   'T5': {
@@ -282,16 +282,16 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
       { q: 'If Kw increases at higher temperatures, this means the dissociation of water is:', options: ['Exothermic', 'Endothermic', 'Unchanged', 'Impossible'], answer: 1 }
     ],
     red: [
-      { q: 'Calculate the pH of a 0.1 mol dm-3 solution of ethanoic acid (Ka = 1.8 x 10-5).', options: ['1.00', '2.87', '4.74', '5.00'], answer: 1 },
-      { q: 'A buffer is made from 0.1 mol dm-3 CH3COOH and 0.2 mol dm-3 CH3COONa (Ka = 1.8 x 10-5). The pH is:', options: ['4.44', '4.74', '5.04', '5.74'], answer: 2 },
-      { q: 'The theoretical lattice enthalpy of NaCl (from the ionic model) is -770 kJ/mol and the experimental value (Born-Haber) is -787 kJ/mol. This small difference suggests:', options: ['NaCl is purely covalent', 'NaCl is almost purely ionic with slight covalent character', 'The ionic model is completely wrong', 'NaCl has metallic bonding'], answer: 1 },
-      { q: 'For the reaction CaCO3(s) -> CaO(s) + CO2(g), deltaH = +178 kJ/mol and deltaS = +165 J/K/mol. The minimum temperature for spontaneity is:', options: ['178 K', '1079 K', '1079 °C', '165 K'], answer: 1 },
-      { q: 'A polyprotic acid like H2SO4 has:', options: ['One Ka value', 'Two Ka values (Ka1 >> Ka2)', 'Equal Ka1 and Ka2', 'No Ka values as it is strong'], answer: 1 },
-      { q: 'The pH of a 0.05 mol dm-3 solution of Ba(OH)2 is:', options: ['1', '12', '13', '13.0'], answer: 2 },
-      { q: 'In a Born-Haber cycle, the most endothermic step for NaCl is typically:', options: ['Atomisation of Na', 'First ionisation energy of Na', 'Electron affinity of Cl', 'Bond dissociation of Cl2'], answer: 1 },
-      { q: 'The enthalpy of hydration of Mg2+ is more exothermic than Na+ because:', options: ['Mg2+ has a smaller charge', 'Mg2+ has a higher charge density attracting water molecules more strongly', 'Mg2+ is larger', 'Na+ is more electronegative'], answer: 1 },
-      { q: 'For the dissolution of a salt, deltaG(solution) = lattice enthalpy + sum of hydration enthalpies. If lattice enthalpy = +780 kJ/mol and hydration enthalpies sum to -790 kJ/mol, then deltaH(solution) is:', options: ['+1570 kJ/mol', '-1570 kJ/mol', '-10 kJ/mol', '+10 kJ/mol'], answer: 2 },
-      { q: 'In a titration of 25.0 cm3 of 0.1 mol dm-3 CH3COOH with 0.1 mol dm-3 NaOH, the volume of NaOH at the equivalence point is:', options: ['12.5 cm3', '25.0 cm3', '50.0 cm3', '100 cm3'], answer: 1 }
+      { q: 'Calculate the pH of a 0.1 mol dm-3 solution of ethanoic acid (Ka = 1.8 x 10-5).', options: ['5.00','1.00','4.74','2.87'], answer: 3 },
+      { q: 'A buffer is made from 0.1 mol dm-3 CH3COOH and 0.2 mol dm-3 CH3COONa (Ka = 1.8 x 10-5). The pH is:', options: ['5.04','5.74','4.44','4.74'], answer: 0 },
+      { q: 'The theoretical lattice enthalpy of NaCl (from the ionic model) is -770 kJ/mol and the experimental value (Born-Haber) is -787 kJ/mol. This small difference suggests:', options: ['NaCl is purely covalent','NaCl is almost purely ionic with slight covalent character','The ionic model is completely wrong','NaCl has metallic bonding'], answer: 1 },
+      { q: 'For the reaction CaCO3(s) -> CaO(s) + CO2(g), deltaH = +178 kJ/mol and deltaS = +165 J/K/mol. The minimum temperature for spontaneity is:', options: ['165 K','1079 K','178 K','1079 °C'], answer: 1 },
+      { q: 'A polyprotic acid like H2SO4 has:', options: ['Two Ka values (Ka1 >> Ka2)','One Ka value','No Ka values as it is strong','Equal Ka1 and Ka2'], answer: 0 },
+      { q: 'The pH of a 0.05 mol dm-3 solution of Ba(OH)2 is:', options: ['1','12','13','13.0'], answer: 2 },
+      { q: 'In a Born-Haber cycle, the most endothermic step for NaCl is typically:', options: ['First ionisation energy of Na','Atomisation of Na','Bond dissociation of Cl2','Electron affinity of Cl'], answer: 0 },
+      { q: 'The enthalpy of hydration of Mg2+ is more exothermic than Na+ because:', options: ['Mg2+ is larger','Mg2+ has a higher charge density attracting water molecules more strongly','Na+ is more electronegative','Mg2+ has a smaller charge'], answer: 1 },
+      { q: 'For the dissolution of a salt, deltaG(solution) = lattice enthalpy + sum of hydration enthalpies. If lattice enthalpy = +780 kJ/mol and hydration enthalpies sum to -790 kJ/mol, then deltaH(solution) is:', options: ['+10 kJ/mol','+1570 kJ/mol','-10 kJ/mol','-1570 kJ/mol'], answer: 2 },
+      { q: 'In a titration of 25.0 cm3 of 0.1 mol dm-3 CH3COOH with 0.1 mol dm-3 NaOH, the volume of NaOH at the equivalence point is:', options: ['12.5 cm3','25.0 cm3','50.0 cm3','100 cm3'], answer: 1 }
     ]
   },
   'T6': {
@@ -341,16 +341,16 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
       { q: 'Which of the following can be hydrolysed?', options: ['Alkanes', 'Esters', 'Alkenes', 'Noble gases'], answer: 1 }
     ],
     red: [
-      { q: 'In the 1H NMR spectrum of ethanol (CH3CH2OH), without exchange, the OH peak appears as a:', options: ['Singlet', 'Triplet', 'Quartet', 'Doublet'], answer: 1 },
-      { q: 'The chemical shift of an aldehyde proton (-CHO) in 1H NMR is approximately:', options: ['0-1 ppm', '2-3 ppm', '6-8 ppm', '9-10 ppm'], answer: 3 },
-      { q: 'A compound C4H8O2 shows a broad O-H at 2500-3300 cm-1 and C=O at 1710 cm-1 in IR. In 1H NMR it shows a triplet and a quartet. The compound is:', options: ['Butanoic acid', 'Propanoic acid (incorrect formula)', 'Methyl propanoate', 'Ethyl ethanoate'], answer: 0 },
-      { q: 'Benzene reacts with Br2 only in the presence of AlBr3 (not without a catalyst) because:', options: ['Benzene is too reactive', 'The delocalised ring is very stable and requires generation of the Br+ electrophile', 'Br2 is too small to react', 'AlBr3 provides energy'], answer: 1 },
-      { q: 'The mechanism of electrophilic substitution on benzene involves:', options: ['Homolytic fission then radical attack', 'The electrophile attacking the pi system, forming a Wheland intermediate, then loss of H+', 'Nucleophilic attack on carbon', 'Addition across a double bond'], answer: 1 },
-      { q: 'A compound has molecular formula C3H7NO. It shows an N-H stretch and C=O at 1680 cm-1. It is most likely:', options: ['Propanamide', 'N-methylethanamide', 'Propanenitrile', 'An amino acid'], answer: 0 },
-      { q: 'In 13C NMR, the number of peaks for propanone (CH3COCH3) is:', options: ['1', '2', '3', '6'], answer: 1 },
-      { q: 'The coupling constant J in NMR:', options: ['Depends on the magnetic field strength', 'Is independent of field strength and indicates the type of coupling', 'Changes with temperature', 'Is measured in ppm'], answer: 1 },
-      { q: 'A compound with M+ = 78 and an intense peak at m/z = 77 (loss of 1) is likely:', options: ['Benzene', 'Cyclohexane', 'Pyridine', 'Phenol'], answer: 0 },
-      { q: 'An organic synthesis to convert benzene to phenylamine (aniline) requires the steps:', options: ['Nitration then reduction (e.g., Sn/HCl)', 'Halogenation then hydrolysis', 'Friedel-Crafts then oxidation', 'Direct amination with NH3'], answer: 0 }
+      { q: 'In the 1H NMR spectrum of ethanol (CH3CH2OH), without exchange, the OH peak appears as a:', options: ['Singlet','Triplet','Quartet','Doublet'], answer: 1 },
+      { q: 'The chemical shift of an aldehyde proton (-CHO) in 1H NMR is approximately:', options: ['0-1 ppm','6-8 ppm','9-10 ppm','2-3 ppm'], answer: 2 },
+      { q: 'A compound C4H8O2 shows a broad O-H at 2500-3300 cm-1 and C=O at 1710 cm-1 in IR. In 1H NMR it shows a triplet and a quartet. The compound is:', options: ['Propanoic acid (incorrect formula)','Butanoic acid','Ethyl ethanoate','Methyl propanoate'], answer: 1 },
+      { q: 'Benzene reacts with Br2 only in the presence of AlBr3 (not without a catalyst) because:', options: ['The delocalised ring is very stable and requires generation of the Br+ electrophile','Br2 is too small to react','Benzene is too reactive','AlBr3 provides energy'], answer: 0 },
+      { q: 'The mechanism of electrophilic substitution on benzene involves:', options: ['Homolytic fission then radical attack','The electrophile attacking the pi system, forming a Wheland intermediate, then loss of H+','Nucleophilic attack on carbon','Addition across a double bond'], answer: 1 },
+      { q: 'A compound has molecular formula C3H7NO. It shows an N-H stretch and C=O at 1680 cm-1. It is most likely:', options: ['N-methylethanamide','Propanamide','An amino acid','Propanenitrile'], answer: 1 },
+      { q: 'In 13C NMR, the number of peaks for propanone (CH3COCH3) is:', options: ['2','1','6','3'], answer: 0 },
+      { q: 'The coupling constant J in NMR:', options: ['Is measured in ppm','Changes with temperature','Is independent of field strength and indicates the type of coupling','Depends on the magnetic field strength'], answer: 2 },
+      { q: 'A compound with M+ = 78 and an intense peak at m/z = 77 (loss of 1) is likely:', options: ['Benzene','Cyclohexane','Pyridine','Phenol'], answer: 0 },
+      { q: 'An organic synthesis to convert benzene to phenylamine (aniline) requires the steps:', options: ['Nitration then reduction (e.g., Sn/HCl)','Direct amination with NH3','Halogenation then hydrolysis','Friedel-Crafts then oxidation'], answer: 0 }
     ]
   }
 };

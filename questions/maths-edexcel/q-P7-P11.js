@@ -31,12 +31,12 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'Prove: which step correctly starts \\(\\dfrac{\\cos^2\\theta}{1 + \\sin\\theta}\\)?', options: ['\\(\\dfrac{1-\\sin^2\\theta}{1+\\sin\\theta}\\)', '\\(\\dfrac{\\sin^2\\theta-1}{1+\\sin\\theta}\\)', '\\(\\dfrac{1-\\cos^2\\theta}{1+\\sin\\theta}\\)', '\\(\\dfrac{1+\\sin^2\\theta}{1+\\sin\\theta}\\)'], answer: 0 },
     ],
     red: [
-      { q: 'The general solution of \\(\\sin\\theta = k\\) (in degrees) is:', options: ['\\(\\theta = \\sin^{-1}(k) + 360n\\) or \\(\\theta = 180 - \\sin^{-1}(k) + 360n\\)', '\\(\\theta = \\pm \\sin^{-1}(k) + 360n\\)', '\\(\\theta = \\sin^{-1}(k) + 180n\\)', '\\(\\theta = \\sin^{-1}(k) + 90n\\)'], answer: 0 },
-      { q: 'Express \\(5\\sin x - 12\\cos x\\) in the form \\(R\\sin(x - \\alpha)\\). What is \\(R\\)?', options: ['13', '17', '\\(\\sqrt{119}\\)', '7'], answer: 0 },
-      { q: 'Solve \\(2\\sin^2 x + 3\\cos x - 3 = 0\\) for \\(0 \\leq x \\leq 2\\pi\\). The number of solutions is:', options: ['3', '2', '4', '1'], answer: 0 },
-      { q: 'If \\(\\cos 2x = 1 - 2\\sin^2 x\\), which quadratic in \\(\\sin x\\) is equivalent to \\(\\cos 2x + \\sin x = 0\\)?', options: ['\\(2\\sin^2 x - \\sin x - 1 = 0\\)', '\\(2\\sin^2 x + \\sin x - 1 = 0\\)', '\\(2\\sin^2 x - \\sin x + 1 = 0\\)', '\\(\\sin^2 x - \\sin x - 1 = 0\\)'], answer: 0 },
-      { q: 'The maximum value of \\(3\\sin x - 4\\cos x\\) is:', options: ['5', '7', '1', '\\(\\sqrt{7}\\)'], answer: 0 },
-      { q: 'Solve \\(\\sin\\theta = \\cos\\theta\\) for \\(0° \\leq \\theta \\leq 360°\\). The solutions are:', options: ['45° and 225°', '45° and 135°', '0° and 180°', '135° and 315°'], answer: 0 },
+      { q: 'The general solution of \\(\\sin\\theta = k\\) (in degrees) is:', options: ['\\(\\theta = \\pm \\sin^{-1}(k) + 360n\\)','\\(\\theta = \\sin^{-1}(k) + 180n\\)','\\(\\theta = \\sin^{-1}(k) + 360n\\) or \\(\\theta = 180 - \\sin^{-1}(k) + 360n\\)','\\(\\theta = \\sin^{-1}(k) + 90n\\)'], answer: 2 },
+      { q: 'Express \\(5\\sin x - 12\\cos x\\) in the form \\(R\\sin(x - \\alpha)\\). What is \\(R\\)?', options: ['13','17','\\(\\sqrt{119}\\)','7'], answer: 0 },
+      { q: 'Solve \\(2\\sin^2 x + 3\\cos x - 3 = 0\\) for \\(0 \\leq x \\leq 2\\pi\\). The number of solutions is:', options: ['2','3','1','4'], answer: 1 },
+      { q: 'If \\(\\cos 2x = 1 - 2\\sin^2 x\\), which quadratic in \\(\\sin x\\) is equivalent to \\(\\cos 2x + \\sin x = 0\\)?', options: ['\\(2\\sin^2 x - \\sin x - 1 = 0\\)','\\(2\\sin^2 x + \\sin x - 1 = 0\\)','\\(2\\sin^2 x - \\sin x + 1 = 0\\)','\\(\\sin^2 x - \\sin x - 1 = 0\\)'], answer: 0 },
+      { q: 'The maximum value of \\(3\\sin x - 4\\cos x\\) is:', options: ['1','5','7','\\(\\sqrt{7}\\)'], answer: 1 },
+      { q: 'Solve \\(\\sin\\theta = \\cos\\theta\\) for \\(0° \\leq \\theta \\leq 360°\\). The solutions are:', options: ['45° and 225°','45° and 135°','0° and 180°','135° and 315°'], answer: 0 },
     ]
   },
 
@@ -71,12 +71,12 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'Solve \\(\\ln(3x+1) = 2\\). The solution is:', options: ['\\(x = \\dfrac{e^2-1}{3}\\)', '\\(x = \\dfrac{e^2}{3}\\)', '\\(x = \\dfrac{e-1}{3}\\)', '\\(x = e^2 - 1\\)'], answer: 0 },
     ],
     red: [
-      { q: 'A population satisfies \\(P = 500e^{kt}\\). After 20 years, \\(P = 1500\\). Find \\(k\\) exactly:', options: ['\\(k = \\dfrac{\\ln 3}{20}\\)', '\\(k = \\dfrac{3}{20}\\)', '\\(k = \\dfrac{\\ln 1500}{20}\\)', '\\(k = \\dfrac{20}{\\ln 3}\\)'], answer: 0 },
-      { q: 'Solve \\(e^{2x} - 3e^x - 4 = 0\\) exactly. The only valid solution is:', options: ['\\(x = \\ln 4\\)', '\\(x = 4\\)', '\\(x = \\ln(-1)\\)', '\\(x = \\ln 4\\) and \\(x = \\ln(-1)\\)'], answer: 0 },
-      { q: 'The curve \\(y = 3 + 2e^{-x}\\) has which asymptote?', options: ['\\(y = 3\\)', '\\(y = 0\\)', '\\(x = 0\\)', '\\(y = 2\\)'], answer: 0 },
-      { q: 'Solve \\(2^{x+1} = 3^{x-1}\\) exactly for \\(x\\):', options: ['\\(x = \\dfrac{\\ln 3 + \\ln 2}{\\ln 2 - \\ln 3}\\)', '\\(x = \\dfrac{\\ln 3 - \\ln 2}{\\ln 2 + \\ln 3}\\)', '\\(x = \\dfrac{\\ln 6}{\\ln(2/3)}\\)', '\\(x = \\ln\\!\\left(\\dfrac{3}{2}\\right)\\)'], answer: 0 },
-      { q: 'The graph of \\(y = e^x + e^{-x}\\) is symmetric about:', options: ['the \\(y\\)-axis', 'the \\(x\\)-axis', 'the line \\(y=x\\)', 'the origin'], answer: 0 },
-      { q: 'If \\(\\log_a b = p\\) and \\(\\log_a c = q\\), then \\(\\log_a\\!\\left(\\dfrac{a^2 b}{c^3}\\right)\\) equals:', options: ['\\(2 + p - 3q\\)', '\\(p - 3q + a^2\\)', '\\(2p - 3q\\)', '\\(2 + p + 3q\\)'], answer: 0 },
+      { q: 'A population satisfies \\(P = 500e^{kt}\\). After 20 years, \\(P = 1500\\). Find \\(k\\) exactly:', options: ['\\(k = \\dfrac{\\ln 3}{20}\\)','\\(k = \\dfrac{3}{20}\\)','\\(k = \\dfrac{\\ln 1500}{20}\\)','\\(k = \\dfrac{20}{\\ln 3}\\)'], answer: 0 },
+      { q: 'Solve \\(e^{2x} - 3e^x - 4 = 0\\) exactly. The only valid solution is:', options: ['\\(x = \\ln(-1)\\)','\\(x = \\ln 4\\) and \\(x = \\ln(-1)\\)','\\(x = \\ln 4\\)','\\(x = 4\\)'], answer: 2 },
+      { q: 'The curve \\(y = 3 + 2e^{-x}\\) has which asymptote?', options: ['\\(y = 3\\)','\\(y = 0\\)','\\(x = 0\\)','\\(y = 2\\)'], answer: 0 },
+      { q: 'Solve \\(2^{x+1} = 3^{x-1}\\) exactly for \\(x\\):', options: ['\\(x = \\dfrac{\\ln 3 + \\ln 2}{\\ln 2 - \\ln 3}\\)','\\(x = \\dfrac{\\ln 3 - \\ln 2}{\\ln 2 + \\ln 3}\\)','\\(x = \\dfrac{\\ln 6}{\\ln(2/3)}\\)','\\(x = \\ln\\!\\left(\\dfrac{3}{2}\\right)\\)'], answer: 0 },
+      { q: 'The graph of \\(y = e^x + e^{-x}\\) is symmetric about:', options: ['the \\(x\\)-axis','the origin','the line \\(y=x\\)','the \\(y\\)-axis'], answer: 3 },
+      { q: 'If \\(\\log_a b = p\\) and \\(\\log_a c = q\\), then \\(\\log_a\\!\\left(\\dfrac{a^2 b}{c^3}\\right)\\) equals:', options: ['\\(2p - 3q\\)','\\(2 + p + 3q\\)','\\(2 + p - 3q\\)','\\(p - 3q + a^2\\)'], answer: 2 },
     ]
   },
 
@@ -111,12 +111,12 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'The point \\((2, 5)\\) lies on \\(y = x^2 + 1\\). The equation of the normal at this point is:', options: ['\\(y = -\\frac{1}{4}x + \\frac{11}{2}\\)', '\\(y = 4x - 3\\)', '\\(y = -4x + 13\\)', '\\(y = \\frac{1}{4}x + \\frac{11}{2}\\)'], answer: 0 },
     ],
     red: [
-      { q: 'Using first principles, differentiate \\(f(x) = \\dfrac{1}{x}\\). The answer is:', options: ['\\(-\\dfrac{1}{x^2}\\)', '\\(\\dfrac{1}{x^2}\\)', '\\(\\ln x\\)', '\\(-x^{-1}\\)'], answer: 0 },
-      { q: 'A cylinder has volume \\(V = 500\\) cm³. Express the total surface area \\(S\\) in terms of radius \\(r\\) only, then find \\(r\\) for minimum \\(S\\):', options: ['\\(r = \\left(\\dfrac{250}{\\pi}\\right)^{1/3}\\)', '\\(r = 5\\)', '\\(r = \\left(\\dfrac{500}{\\pi}\\right)^{1/3}\\)', '\\(r = \\dfrac{250}{\\pi}\\)'], answer: 0 },
-      { q: 'A curve \\(C\\) has equation \\(y = x^3 - 3x + 2\\). The tangent at \\((-1, 4)\\) has equation:', options: ['\\(y = 0\\cdot x + 4\\)', '\\(y = -3x + 1\\)', '\\(y = 4\\)', '\\(y = 3x + 7\\)'], answer: 0 },
-      { q: 'A function has \\(f\'\'(a) = 0\\) at a stationary point. What additional test is needed?', options: ['Check the sign of \\(f\'(x)\\) either side of \\(x = a\\)', 'Check \\(f(a)\\)', 'Compute \\(f\'\'\'(a)\\)', 'No further test needed — it is a point of inflection'], answer: 0 },
-      { q: 'The curve \\(y = ax^3 + bx\\) passes through \\((1, -2)\\) and has gradient 0 at \\(x = 1\\). Find \\(a\\) and \\(b\\):', options: ['\\(a = 2, b = -4\\)', '\\(a = -2, b = 0\\)', '\\(a = 1, b = -3\\)', '\\(a = 2, b = 4\\)'], answer: 0 },
-      { q: 'The rate of change of \\(y = x^3 - 5x^2 + 6x\\) is equal to 2 when:', options: ['\\(x = 1\\) or \\(x = 3\\)', '\\(x = 0\\) or \\(x = 2\\)', '\\(x = 2\\) or \\(x = 4\\)', '\\(x = 1\\) only'], answer: 0 },
+      { q: 'Using first principles, differentiate \\(f(x) = \\dfrac{1}{x}\\). The answer is:', options: ['\\(-\\dfrac{1}{x^2}\\)','\\(\\dfrac{1}{x^2}\\)','\\(\\ln x\\)','\\(-x^{-1}\\)'], answer: 0 },
+      { q: 'A cylinder has volume \\(V = 500\\) cm³. Express the total surface area \\(S\\) in terms of radius \\(r\\) only, then find \\(r\\) for minimum \\(S\\):', options: ['\\(r = \\left(\\dfrac{250}{\\pi}\\right)^{1/3}\\)','\\(r = 5\\)','\\(r = \\left(\\dfrac{500}{\\pi}\\right)^{1/3}\\)','\\(r = \\dfrac{250}{\\pi}\\)'], answer: 0 },
+      { q: 'A curve \\(C\\) has equation \\(y = x^3 - 3x + 2\\). The tangent at \\((-1, 4)\\) has equation:', options: ['\\(y = 0\\cdot x + 4\\)','\\(y = -3x + 1\\)','\\(y = 4\\)','\\(y = 3x + 7\\)'], answer: 0 },
+      { q: 'A function has \\(f\'\'(a) = 0\\) at a stationary point. What additional test is needed?', options: ['Check the sign of \\(f\'(x)\\) either side of \\(x = a\\)','Check \\(f(a)\\)','Compute \\(f\'\'\'(a)\\)','No further test needed — it is a point of inflection'], answer: 0 },
+      { q: 'The curve \\(y = ax^3 + bx\\) passes through \\((1, -2)\\) and has gradient 0 at \\(x = 1\\). Find \\(a\\) and \\(b\\):', options: ['\\(a = 2, b = -4\\)','\\(a = -2, b = 0\\)','\\(a = 1, b = -3\\)','\\(a = 2, b = 4\\)'], answer: 0 },
+      { q: 'The rate of change of \\(y = x^3 - 5x^2 + 6x\\) is equal to 2 when:', options: ['\\(x = 1\\) only','\\(x = 2\\) or \\(x = 4\\)','\\(x = 0\\) or \\(x = 2\\)','\\(x = 1\\) or \\(x = 3\\)'], answer: 3 },
     ]
   },
 
@@ -151,12 +151,12 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'The area between \\(y = x^2\\) and \\(y = 2x\\) is:', options: ['\\(\\dfrac{4}{3}\\)', '2', '\\(\\dfrac{8}{3}\\)', '\\(\\dfrac{2}{3}\\)'], answer: 0 },
     ],
     red: [
-      { q: 'Find the total area bounded by \\(y = x^3 - x\\) and the x-axis:', options: ['\\(\\dfrac{1}{2}\\)', '0', '\\(\\dfrac{1}{4}\\)', '\\(\\dfrac{1}{6}\\)'], answer: 0 },
-      { q: 'Using the trapezium rule with 4 strips to estimate \\(\\displaystyle\\int_0^1 x^2 \\, dx\\), the estimate minus the exact value is:', options: ['Positive (overestimate)', 'Negative (underestimate)', 'Zero (exact)', 'Cannot determine'], answer: 0 },
-      { q: 'Find the area between \\(y = x^3 - 3x^2\\) and \\(y = 0\\) from \\(x = 0\\) to \\(x = 3\\):', options: ['\\(\\dfrac{27}{4}\\)', '0', '\\(-\\dfrac{27}{4}\\)', '27'], answer: 0 },
-      { q: 'The area enclosed between \\(y = x^3\\) and \\(y = x\\) is:', options: ['\\(\\dfrac{1}{2}\\)', '\\(\\dfrac{1}{4}\\)', '1', '0'], answer: 0 },
-      { q: 'Find the value of \\(k\\) such that \\(\\displaystyle\\int_0^k (2x - 3) \\, dx = 4\\):', options: ['\\(k = 1 + \\sqrt{5}\\)', '\\(k = 4\\)', '\\(k = \\dfrac{7}{2}\\)', '\\(k = 2\\)'], answer: 0 },
-      { q: 'The region R is bounded by \\(y = e^x\\), \\(y = 1\\), and \\(x = 2\\). The area of R is:', options: ['\\(e^2 - 2\\)', '\\(e^2 - 1\\)', '\\(e^2 + 1\\)', '\\(e^2 - 3\\)'], answer: 0 },
+      { q: 'Find the total area bounded by \\(y = x^3 - x\\) and the x-axis:', options: ['\\(\\dfrac{1}{2}\\)','\\(\\dfrac{1}{4}\\)','\\(\\dfrac{1}{6}\\)','0'], answer: 0 },
+      { q: 'Using the trapezium rule with 4 strips to estimate \\(\\displaystyle\\int_0^1 x^2 \\, dx\\), the estimate minus the exact value is:', options: ['Positive (overestimate)','Negative (underestimate)','Zero (exact)','Cannot determine'], answer: 0 },
+      { q: 'Find the area between \\(y = x^3 - 3x^2\\) and \\(y = 0\\) from \\(x = 0\\) to \\(x = 3\\):', options: ['\\(\\dfrac{27}{4}\\)','0','\\(-\\dfrac{27}{4}\\)','27'], answer: 0 },
+      { q: 'The area enclosed between \\(y = x^3\\) and \\(y = x\\) is:', options: ['\\(\\dfrac{1}{2}\\)','\\(\\dfrac{1}{4}\\)','1','0'], answer: 0 },
+      { q: 'Find the value of \\(k\\) such that \\(\\displaystyle\\int_0^k (2x - 3) \\, dx = 4\\):', options: ['\\(k = 1 + \\sqrt{5}\\)','\\(k = 4\\)','\\(k = \\dfrac{7}{2}\\)','\\(k = 2\\)'], answer: 0 },
+      { q: 'The region R is bounded by \\(y = e^x\\), \\(y = 1\\), and \\(x = 2\\). The area of R is:', options: ['\\(e^2 - 2\\)','\\(e^2 - 1\\)','\\(e^2 + 1\\)','\\(e^2 - 3\\)'], answer: 0 },
     ]
   },
 
@@ -191,12 +191,12 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'Point X divides AB in ratio 1:2 from A. \\(\\vec{OX} =\\)', options: ['\\(\\dfrac{2\\mathbf{a}+\\mathbf{b}}{3}\\)', '\\(\\dfrac{\\mathbf{a}+2\\mathbf{b}}{3}\\)', '\\(\\dfrac{\\mathbf{a}+\\mathbf{b}}{2}\\)', '\\(\\dfrac{\\mathbf{a}-\\mathbf{b}}{3}\\)'], answer: 0 },
     ],
     red: [
-      { q: 'Triangle OAB has \\(\\vec{OA} = \\mathbf{a}\\) and \\(\\vec{OB} = \\mathbf{b}\\). P is on OA with OP:PA = 1:2. Q is the midpoint of AB. Show PQ is parallel to OB. \\(\\vec{PQ} =\\)', options: ['\\(\\dfrac{1}{2}\\mathbf{b} - \\dfrac{1}{6}\\mathbf{a}\\)', '\\(\\dfrac{1}{2}\\mathbf{b}\\)', '\\(\\dfrac{2}{3}\\mathbf{b}\\)', '\\(\\mathbf{b} - \\dfrac{1}{3}\\mathbf{a}\\)'], answer: 0 },
-      { q: 'Prove: \\(\\vec{OA} = 3\\mathbf{i} + 2\\mathbf{j}\\), \\(\\vec{OB} = 7\\mathbf{i} + 6\\mathbf{j}\\), \\(\\vec{OC} = 11\\mathbf{i} + 10\\mathbf{j}\\) — are A, B, C collinear?', options: ['Yes: \\(\\vec{AC} = 2\\vec{AB}\\)', 'No: \\(\\vec{AB} \\neq \\vec{BC}\\)', 'Yes: \\(|AC| = |AB| + |BC|\\)', 'Cannot determine from given information'], answer: 0 },
-      { q: 'In quadrilateral OABC, \\(\\vec{OA} = \\mathbf{a}\\), \\(\\vec{OC} = \\mathbf{c}\\), \\(\\vec{CB} = \\mathbf{a}\\). The midpoint M of OB has position vector:', options: ['\\(\\dfrac{1}{2}(\\mathbf{a}+\\mathbf{c})\\)', '\\(\\mathbf{a}+\\mathbf{c}\\)', '\\(\\dfrac{1}{2}\\mathbf{c}\\)', '\\(\\dfrac{1}{2}(2\\mathbf{a}+\\mathbf{c})\\)'], answer: 0 },
-      { q: 'If \\(\\mathbf{p} = \\lambda\\mathbf{a} + \\mu\\mathbf{b}\\) and P lies on the line through A parallel to OB, then:', options: ['\\(\\lambda = 1\\)', '\\(\\mu = 1\\)', '\\(\\lambda = \\mu\\)', '\\(\\lambda = 0\\)'], answer: 0 },
-      { q: 'A ship sails from port with velocity \\(\\mathbf{v} = 3\\mathbf{i} + 4\\mathbf{j}\\) km/h. Its speed is 5 km/h. After 2 hours, its displacement from port is:', options: ['\\(6\\mathbf{i} + 8\\mathbf{j}\\) km', '\\(3\\mathbf{i} + 4\\mathbf{j}\\) km', '10 km in direction \\(\\mathbf{v}\\)', '\\(9\\mathbf{i} + 16\\mathbf{j}\\) km'], answer: 0 },
-      { q: 'G is the centroid of triangle OAB (where \\(\\vec{OA}=\\mathbf{a}\\), \\(\\vec{OB}=\\mathbf{b}\\)). \\(\\vec{OG} =\\)', options: ['\\(\\dfrac{1}{3}(\\mathbf{a}+\\mathbf{b})\\)', '\\(\\dfrac{1}{2}(\\mathbf{a}+\\mathbf{b})\\)', '\\(\\mathbf{a}+\\mathbf{b}\\)', '\\(\\dfrac{2}{3}(\\mathbf{a}+\\mathbf{b})\\)'], answer: 0 },
+      { q: 'Triangle OAB has \\(\\vec{OA} = \\mathbf{a}\\) and \\(\\vec{OB} = \\mathbf{b}\\). P is on OA with OP:PA = 1:2. Q is the midpoint of AB. Show PQ is parallel to OB. \\(\\vec{PQ} =\\)', options: ['\\(\\dfrac{1}{2}\\mathbf{b}\\)','\\(\\mathbf{b} - \\dfrac{1}{3}\\mathbf{a}\\)','\\(\\dfrac{2}{3}\\mathbf{b}\\)','\\(\\dfrac{1}{2}\\mathbf{b} - \\dfrac{1}{6}\\mathbf{a}\\)'], answer: 3 },
+      { q: 'Prove: \\(\\vec{OA} = 3\\mathbf{i} + 2\\mathbf{j}\\), \\(\\vec{OB} = 7\\mathbf{i} + 6\\mathbf{j}\\), \\(\\vec{OC} = 11\\mathbf{i} + 10\\mathbf{j}\\) — are A, B, C collinear?', options: ['Yes: \\(\\vec{AC} = 2\\vec{AB}\\)','No: \\(\\vec{AB} \\neq \\vec{BC}\\)','Yes: \\(|AC| = |AB| + |BC|\\)','Cannot determine from given information'], answer: 0 },
+      { q: 'In quadrilateral OABC, \\(\\vec{OA} = \\mathbf{a}\\), \\(\\vec{OC} = \\mathbf{c}\\), \\(\\vec{CB} = \\mathbf{a}\\). The midpoint M of OB has position vector:', options: ['\\(\\dfrac{1}{2}(2\\mathbf{a}+\\mathbf{c})\\)','\\(\\dfrac{1}{2}\\mathbf{c}\\)','\\(\\mathbf{a}+\\mathbf{c}\\)','\\(\\dfrac{1}{2}(\\mathbf{a}+\\mathbf{c})\\)'], answer: 3 },
+      { q: 'If \\(\\mathbf{p} = \\lambda\\mathbf{a} + \\mu\\mathbf{b}\\) and P lies on the line through A parallel to OB, then:', options: ['\\(\\lambda = 0\\)','\\(\\lambda = 1\\)','\\(\\lambda = \\mu\\)','\\(\\mu = 1\\)'], answer: 1 },
+      { q: 'A ship sails from port with velocity \\(\\mathbf{v} = 3\\mathbf{i} + 4\\mathbf{j}\\) km/h. Its speed is 5 km/h. After 2 hours, its displacement from port is:', options: ['\\(6\\mathbf{i} + 8\\mathbf{j}\\) km','\\(3\\mathbf{i} + 4\\mathbf{j}\\) km','10 km in direction \\(\\mathbf{v}\\)','\\(9\\mathbf{i} + 16\\mathbf{j}\\) km'], answer: 0 },
+      { q: 'G is the centroid of triangle OAB (where \\(\\vec{OA}=\\mathbf{a}\\), \\(\\vec{OB}=\\mathbf{b}\\)). \\(\\vec{OG} =\\)', options: ['\\(\\dfrac{1}{3}(\\mathbf{a}+\\mathbf{b})\\)','\\(\\dfrac{1}{2}(\\mathbf{a}+\\mathbf{b})\\)','\\(\\mathbf{a}+\\mathbf{b}\\)','\\(\\dfrac{2}{3}(\\mathbf{a}+\\mathbf{b})\\)'], answer: 0 },
     ]
   }
 

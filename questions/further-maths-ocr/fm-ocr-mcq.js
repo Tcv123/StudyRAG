@@ -43,12 +43,12 @@ const FM_OCR_MCQ = {
     { q: '\\(\\arg(z_1/z_2)\\) equals:', options: ['\\(\\arg z_1\\cdot\\arg z_2\\)', '\\(\\arg z_1/\\arg z_2\\)', '\\(\\arg z_1+\\arg z_2\\)', '\\(\\arg z_1-\\arg z_2\\)'], answer: 3 },
   ],
   red: [
-    { q: 'For non-zero \\(z\\), \\(z+\\frac{1}{z}\\) is real if and only if:', options: ['\\(|z|=1\\) only', '\\(z\\) is real only', '\\(z\\) is purely imaginary', '\\(z\\) is real or \\(|z|=1\\)'], answer: 3, explanation: 'Let z=re^{iθ}: z+1/z=re^{iθ}+(1/r)e^{-iθ}. Imaginary part: (r−1/r)sinθ=0 → r=1 or sinθ=0 (z real)' },
-    { q: 'The sum of all \\(n\\)th roots of unity (\\(n\\geq2\\)) equals:', options: ['\\(1\\)', '\\(n\\)', '\\(-1\\)', '\\(0\\)'], answer: 3 },
-    { q: "By de Moivre's theorem, \\(\\cos^3\\theta\\) equals:", options: ['\\(\\frac{3\\cos\\theta-\\cos3\\theta}{4}\\)', '\\(\\frac{\\cos3\\theta-3\\cos\\theta}{4}\\)', '\\(\\cos^3\\theta\\) unchanged', '\\(\\frac{3\\cos\\theta+\\cos3\\theta}{4}\\)'], answer: 3, explanation: 'Let z=e^{iθ}: (z+z⁻¹)³=2³cos³θ. Expand and use de Moivre.' },
-    { q: 'The four solutions of \\(z^4=-4\\) are:', options: ['\\(\\pm1,\\pm i\\)', '\\(\\pm\\sqrt{2}\\)', '\\(\\pm2,\\pm2i\\)', '\\(1\\pm i,\\,-1\\pm i\\)'], answer: 3, explanation: 'z⁴=4e^{iπ}, |z|=√2, arguments π/4,3π/4,5π/4,7π/4 → ±1±i' },
-    { q: 'The transformation \\(w=iz\\) represents:', options: ['Reflection in the real axis', 'Rotation \\(\\pi/2\\) clockwise', 'Reflection in \\(y=x\\)', 'Rotation \\(\\pi/2\\) anticlockwise about origin'], answer: 3 },
-    { q: 'If \\(|z_1|=|z_2|=1\\), then \\(|z_1z_2|=\\)', options: ['\\(2\\)', '\\(0\\)', '\\(4\\)', '\\(1\\)'], answer: 3 },
+    { q: 'For non-zero \\(z\\), \\(z+\\frac{1}{z}\\) is real if and only if:', options: ['\\(z\\) is real or \\(|z|=1\\)','\\(z\\) is purely imaginary','\\(z\\) is real only','\\(|z|=1\\) only'], answer: 0, explanation: 'Let z=re^{iθ}: z+1/z=re^{iθ}+(1/r)e^{-iθ}. Imaginary part: (r−1/r)sinθ=0 → r=1 or sinθ=0 (z real)' },
+    { q: 'The sum of all \\(n\\)th roots of unity (\\(n\\geq2\\)) equals:', options: ['\\(1\\)','\\(0\\)','\\(n\\)','\\(-1\\)'], answer: 1 },
+    { q: "By de Moivre's theorem, \\(\\cos^3\\theta\\) equals:", options: ['\\(\\frac{3\\cos\\theta-\\cos3\\theta}{4}\\)','\\(\\frac{\\cos3\\theta-3\\cos\\theta}{4}\\)','\\(\\cos^3\\theta\\) unchanged','\\(\\frac{3\\cos\\theta+\\cos3\\theta}{4}\\)'], answer: 3, explanation: 'Let z=e^{iθ}: (z+z⁻¹)³=2³cos³θ. Expand and use de Moivre.' },
+    { q: 'The four solutions of \\(z^4=-4\\) are:', options: ['\\(\\pm\\sqrt{2}\\)','\\(\\pm2,\\pm2i\\)','\\(\\pm1,\\pm i\\)','\\(1\\pm i,\\,-1\\pm i\\)'], answer: 3, explanation: 'z⁴=4e^{iπ}, |z|=√2, arguments π/4,3π/4,5π/4,7π/4 → ±1±i' },
+    { q: 'The transformation \\(w=iz\\) represents:', options: ['Reflection in the real axis','Rotation \\(\\pi/2\\) clockwise','Reflection in \\(y=x\\)','Rotation \\(\\pi/2\\) anticlockwise about origin'], answer: 3 },
+    { q: 'If \\(|z_1|=|z_2|=1\\), then \\(|z_1z_2|=\\)', options: ['\\(2\\)','\\(0\\)','\\(4\\)','\\(1\\)'], answer: 3 },
   ],
 },
 
@@ -83,12 +83,12 @@ const FM_OCR_MCQ = {
     { q: 'If \\(A\\) and \\(B\\) represent reflections, \\(AB\\) is:', options: ['Another reflection', 'The identity only', 'A shear', 'A rotation (or identity)'], answer: 3, explanation: 'det(A)=det(B)=−1, so det(AB)=1 → rotation' },
   ],
   red: [
-    { q: '\\(\\det(A)=0\\) geometrically means the \\(2\\times2\\) transformation:', options: ['Doubles areas', 'Is a rotation', 'Produces a circle', 'Maps all of \\(\\mathbb{R}^2\\) to a line (or point); not invertible'], answer: 3 },
-    { q: 'If \\(\\lambda\\) is an eigenvalue of \\(A\\), an eigenvalue of \\(A^3-2A\\) is:', options: ['\\(3\\lambda-2\\)', '\\(\\lambda^3\\)', '\\(3\\lambda^2-2\\)', '\\(\\lambda^3-2\\lambda\\)'], answer: 3 },
-    { q: 'By Cayley–Hamilton, if char poly is \\(\\lambda^2-5\\lambda+6=0\\), then:', options: ['\\(A^2+5A-6I=0\\)', '\\(A^2+5A+6I=0\\)', '\\(A^2+6=0\\)', '\\(A^2-5A+6I=0\\)'], answer: 3 },
-    { q: 'Eigenvectors corresponding to \\(\\textit{distinct}\\) eigenvalues are always:', options: ['Identical', 'Orthogonal', 'Zero vectors', 'Linearly independent'], answer: 3 },
-    { q: 'For a \\(3\\times3\\) matrix, the char poly is degree:', options: ['1', '2', '6', '3'], answer: 3 },
-    { q: 'If \\(\\mathbf{v}\\) is an eigenvector of \\(A\\) for \\(\\lambda\\), then \\(A^n\\mathbf{v}=\\)', options: ['\\(n\\lambda\\mathbf{v}\\)', '\\(A^n\\lambda\\)', '\\(\\lambda^n A\\mathbf{v}\\)', '\\(\\lambda^n\\mathbf{v}\\)'], answer: 3 },
+    { q: '\\(\\det(A)=0\\) geometrically means the \\(2\\times2\\) transformation:', options: ['Doubles areas','Is a rotation','Produces a circle','Maps all of \\(\\mathbb{R}^2\\) to a line (or point); not invertible'], answer: 3 },
+    { q: 'If \\(\\lambda\\) is an eigenvalue of \\(A\\), an eigenvalue of \\(A^3-2A\\) is:', options: ['\\(3\\lambda-2\\)','\\(\\lambda^3\\)','\\(3\\lambda^2-2\\)','\\(\\lambda^3-2\\lambda\\)'], answer: 3 },
+    { q: 'By Cayley–Hamilton, if char poly is \\(\\lambda^2-5\\lambda+6=0\\), then:', options: ['\\(A^2+6=0\\)','\\(A^2-5A+6I=0\\)','\\(A^2+5A-6I=0\\)','\\(A^2+5A+6I=0\\)'], answer: 1 },
+    { q: 'Eigenvectors corresponding to \\(\\textit{distinct}\\) eigenvalues are always:', options: ['Orthogonal','Linearly independent','Zero vectors','Identical'], answer: 1 },
+    { q: 'For a \\(3\\times3\\) matrix, the char poly is degree:', options: ['1','3','2','6'], answer: 1 },
+    { q: 'If \\(\\mathbf{v}\\) is an eigenvector of \\(A\\) for \\(\\lambda\\), then \\(A^n\\mathbf{v}=\\)', options: ['\\(n\\lambda\\mathbf{v}\\)','\\(A^n\\lambda\\)','\\(\\lambda^n A\\mathbf{v}\\)','\\(\\lambda^n\\mathbf{v}\\)'], answer: 3 },
   ],
 },
 
@@ -119,11 +119,11 @@ const FM_OCR_MCQ = {
     { q: 'If \\(\\alpha+\\beta+\\gamma=0\\), \\(\\alpha\\beta+\\beta\\gamma+\\gamma\\alpha=-3\\), \\(\\alpha\\beta\\gamma=2\\), then \\(\\alpha^3+\\beta^3+\\gamma^3=\\)', options: ['\\(-6\\)', '\\(0\\)', '\\(2\\)', '\\(6\\)'], answer: 3, explanation: 'α³+β³+γ³−3αβγ=(α+β+γ)(…)=0 → α³+β³+γ³=3αβγ=6' },
   ],
   red: [
-    { q: 'Roots of \\(x^3-3x-2=0\\): factoring gives roots:', options: ['\\(-1,1,2\\)', '\\(1,2,3\\)', '\\(-1,2,3\\)', '\\(-1,-1,2\\)'], answer: 3, explanation: '(x−2)(x+1)²=0' },
-    { q: 'Using the cubic formula substitution \\(x=y+k\\) to eliminate the \\(x^2\\) term from \\(x^3+px^2+qx+r=0\\), \\(k=\\)', options: ['\\(-p\\)', '\\(p/3\\)', '\\(-q/3\\)', '\\(-p/3\\)'], answer: 3 },
-    { q: 'The number of sign changes in \\(f(x)=x^4-x^2-1\\) (for positive roots) by Descartes Rule is:', options: ['0', '3', '2', '1'], answer: 3, explanation: '+−− has one sign change → 1 positive root' },
-    { q: 'For roots \\(\\alpha,\\beta,\\gamma,\\delta\\) of a quartic, \\(\\sum\\alpha^2=(\\sum\\alpha)^2-2\\sum\\alpha\\beta\\). This uses:', options: ['The Remainder Theorem', 'The binomial theorem directly', 'Maclaurin series', "Newton's identities (or expansion of (Σα)²)"], answer: 3 },
-    { q: 'A cubic with real coefficients has exactly one real root. The other two roots are:', options: ['Both real and equal', 'Both zero', 'Both purely imaginary', 'A complex conjugate pair'], answer: 3 },
+    { q: 'Roots of \\(x^3-3x-2=0\\): factoring gives roots:', options: ['\\(-1,1,2\\)','\\(1,2,3\\)','\\(-1,2,3\\)','\\(-1,-1,2\\)'], answer: 3, explanation: '(x−2)(x+1)²=0' },
+    { q: 'Using the cubic formula substitution \\(x=y+k\\) to eliminate the \\(x^2\\) term from \\(x^3+px^2+qx+r=0\\), \\(k=\\)', options: ['\\(-p\\)','\\(p/3\\)','\\(-q/3\\)','\\(-p/3\\)'], answer: 3 },
+    { q: 'The number of sign changes in \\(f(x)=x^4-x^2-1\\) (for positive roots) by Descartes Rule is:', options: ['3','0','1','2'], answer: 2, explanation: '+−− has one sign change → 1 positive root' },
+    { q: 'For roots \\(\\alpha,\\beta,\\gamma,\\delta\\) of a quartic, \\(\\sum\\alpha^2=(\\sum\\alpha)^2-2\\sum\\alpha\\beta\\). This uses:', options: ['The binomial theorem directly','The Remainder Theorem','Newton\'s identities (or expansion of (Σα)²)','Maclaurin series'], answer: 2 },
+    { q: 'A cubic with real coefficients has exactly one real root. The other two roots are:', options: ['Both real and equal','Both zero','Both purely imaginary','A complex conjugate pair'], answer: 3 },
   ],
 },
 
@@ -154,11 +154,11 @@ const FM_OCR_MCQ = {
     { q: '\\(\\int_{-\\infty}^{\\infty}\\frac{1}{1+x^2}\\,dx=\\)', options: ['\\(1\\)', '\\(2\\)', 'Diverges', '\\(\\pi\\)'], answer: 3 },
   ],
   red: [
-    { q: '\\(\\int_0^{\\infty}\\frac{1}{\\sqrt{x}}\\,dx\\) is improper for which reason(s)?', options: ['Upper limit only', 'Neither', 'Integrand only', 'Both: singularity at 0 AND infinite upper limit'], answer: 3 },
-    { q: 'The Wallis product relates to:', options: ['\\(I_n/I_{n+1}\\) as \\(n\\to0\\)', '\\(I_n+I_{n+2}\\)', '\\(nI_n\\)', '\\(I_{2n}/I_{2n+1}\\) as \\(n\\to\\infty\\), giving \\(\\pi/2\\)'], answer: 3 },
-    { q: 'Volume of revolution of \\(y=f(x)\\) about \\(y=k\\):', options: ['\\(\\pi\\int[f(x)]^2\\,dx\\)', '\\(2\\pi k\\int f(x)\\,dx\\)', '\\(\\pi k\\int[f(x)-k]^2\\,dx\\)', '\\(\\pi\\int[f(x)-k]^2\\,dx\\)'], answer: 3 },
-    { q: 'The \\(\\int_0^{\\infty}e^{-x^2}\\,dx=\\)', options: ['\\(\\pi\\)', '\\(2\\sqrt{\\pi}\\)', '\\(1\\)', '\\(\\frac{\\sqrt{\\pi}}{2}\\)'], answer: 3 },
-    { q: 'Variation of parameters for \\(y\'\'+ y=\\sec x\\) involves integrating:', options: ['\\(\\sec x\\) directly', '\\(\\int\\sec x\\cos x\\,dx\\) and \\(\\int\\sec x\\sin x\\,dx\\)', '\\(\\sec^2 x\\)', '\\(\\tan x\\)'], answer: 1 },
+    { q: '\\(\\int_0^{\\infty}\\frac{1}{\\sqrt{x}}\\,dx\\) is improper for which reason(s)?', options: ['Upper limit only','Neither','Integrand only','Both: singularity at 0 AND infinite upper limit'], answer: 3 },
+    { q: 'The Wallis product relates to:', options: ['\\(nI_n\\)','\\(I_{2n}/I_{2n+1}\\) as \\(n\\to\\infty\\), giving \\(\\pi/2\\)','\\(I_n/I_{n+1}\\) as \\(n\\to0\\)','\\(I_n+I_{n+2}\\)'], answer: 1 },
+    { q: 'Volume of revolution of \\(y=f(x)\\) about \\(y=k\\):', options: ['\\(\\pi\\int[f(x)]^2\\,dx\\)','\\(\\pi\\int[f(x)-k]^2\\,dx\\)','\\(2\\pi k\\int f(x)\\,dx\\)','\\(\\pi k\\int[f(x)-k]^2\\,dx\\)'], answer: 1 },
+    { q: 'The \\(\\int_0^{\\infty}e^{-x^2}\\,dx=\\)', options: ['\\(\\pi\\)','\\(2\\sqrt{\\pi}\\)','\\(1\\)','\\(\\frac{\\sqrt{\\pi}}{2}\\)'], answer: 3 },
+    { q: 'Variation of parameters for \\(y\'\'+ y=\\sec x\\) involves integrating:', options: ['\\(\\sec x\\) directly','\\(\\int\\sec x\\cos x\\,dx\\) and \\(\\int\\sec x\\sin x\\,dx\\)','\\(\\sec^2 x\\)','\\(\\tan x\\)'], answer: 1 },
   ],
 },
 
@@ -190,11 +190,11 @@ const FM_OCR_MCQ = {
     { q: 'Volume of parallelepiped spanned by \\(\\mathbf{a},\\mathbf{b},\\mathbf{c}\\):', options: ['\\(|\\mathbf{a}+\\mathbf{b}+\\mathbf{c}|\\)', '\\(|\\mathbf{a}\\times\\mathbf{b}|\\cdot|\\mathbf{c}|\\)', '\\(\\mathbf{a}\\cdot\\mathbf{b}\\cdot\\mathbf{c}\\)', '\\(|\\mathbf{a}\\cdot(\\mathbf{b}\\times\\mathbf{c})|\\)'], answer: 3 },
   ],
   red: [
-    { q: 'Direction of line of intersection of two planes:', options: ['\\(\\mathbf{n}_1+\\mathbf{n}_2\\)', '\\(\\mathbf{n}_1\\cdot\\mathbf{n}_2\\)', '\\(\\mathbf{n}_1-\\mathbf{n}_2\\)', '\\(\\mathbf{n}_1\\times\\mathbf{n}_2\\)'], answer: 3 },
-    { q: '\\(\\mathbf{a}\\times(\\mathbf{b}\\times\\mathbf{c})\\) (BAC–CAB rule):', options: ['\\((\\mathbf{a}\\cdot\\mathbf{c})\\mathbf{b}+(\\mathbf{a}\\cdot\\mathbf{b})\\mathbf{c}\\)', '\\((\\mathbf{a}\\times\\mathbf{b})\\times\\mathbf{c}\\)', '\\((\\mathbf{a}\\cdot\\mathbf{b})\\mathbf{c}+(\\mathbf{a}\\cdot\\mathbf{c})\\mathbf{b}\\)', '\\((\\mathbf{a}\\cdot\\mathbf{b})\\mathbf{c}-(\\mathbf{a}\\cdot\\mathbf{c})\\mathbf{b}\\)'], answer: 3 },
-    { q: 'Angle \\(\\phi\\) between a line (direction \\(\\mathbf{d}\\)) and a plane (normal \\(\\mathbf{n}\\)):', options: ['\\(\\cos\\phi=\\frac{|\\mathbf{d}\\cdot\\mathbf{n}|}{|\\mathbf{d}||\\mathbf{n}|}\\)', '\\(\\tan\\phi=\\frac{|\\mathbf{d}\\times\\mathbf{n}|}{|\\mathbf{d}||\\mathbf{n}|}\\)', '\\(\\cos\\phi=\\frac{\\mathbf{d}\\cdot\\mathbf{n}}{|\\mathbf{d}||\\mathbf{n}|}\\)', '\\(\\sin\\phi=\\frac{|\\mathbf{d}\\cdot\\mathbf{n}|}{|\\mathbf{d}||\\mathbf{n}|}\\)'], answer: 3 },
-    { q: 'Three planes form a triangular prism (no common point) when:', options: ['All normals parallel', 'Two planes parallel', 'Normals independent', 'Normals coplanar but not parallel, system inconsistent'], answer: 3 },
-    { q: 'If \\(\\mathbf{a}\\cdot(\\mathbf{b}\\times\\mathbf{c})=0\\), this means:', options: ['\\(\\mathbf{a}\\perp\\mathbf{b}\\)', '\\(\\mathbf{b}\\parallel\\mathbf{c}\\)', '\\(\\mathbf{a}\\perp\\mathbf{c}\\)', '\\(\\mathbf{a},\\mathbf{b},\\mathbf{c}\\) are coplanar'], answer: 3 },
+    { q: 'Direction of line of intersection of two planes:', options: ['\\(\\mathbf{n}_1+\\mathbf{n}_2\\)','\\(\\mathbf{n}_1\\cdot\\mathbf{n}_2\\)','\\(\\mathbf{n}_1-\\mathbf{n}_2\\)','\\(\\mathbf{n}_1\\times\\mathbf{n}_2\\)'], answer: 3 },
+    { q: '\\(\\mathbf{a}\\times(\\mathbf{b}\\times\\mathbf{c})\\) (BAC–CAB rule):', options: ['\\((\\mathbf{a}\\cdot\\mathbf{c})\\mathbf{b}+(\\mathbf{a}\\cdot\\mathbf{b})\\mathbf{c}\\)','\\((\\mathbf{a}\\times\\mathbf{b})\\times\\mathbf{c}\\)','\\((\\mathbf{a}\\cdot\\mathbf{b})\\mathbf{c}+(\\mathbf{a}\\cdot\\mathbf{c})\\mathbf{b}\\)','\\((\\mathbf{a}\\cdot\\mathbf{b})\\mathbf{c}-(\\mathbf{a}\\cdot\\mathbf{c})\\mathbf{b}\\)'], answer: 3 },
+    { q: 'Angle \\(\\phi\\) between a line (direction \\(\\mathbf{d}\\)) and a plane (normal \\(\\mathbf{n}\\)):', options: ['\\(\\cos\\phi=\\frac{\\mathbf{d}\\cdot\\mathbf{n}}{|\\mathbf{d}||\\mathbf{n}|}\\)','\\(\\cos\\phi=\\frac{|\\mathbf{d}\\cdot\\mathbf{n}|}{|\\mathbf{d}||\\mathbf{n}|}\\)','\\(\\tan\\phi=\\frac{|\\mathbf{d}\\times\\mathbf{n}|}{|\\mathbf{d}||\\mathbf{n}|}\\)','\\(\\sin\\phi=\\frac{|\\mathbf{d}\\cdot\\mathbf{n}|}{|\\mathbf{d}||\\mathbf{n}|}\\)'], answer: 3 },
+    { q: 'Three planes form a triangular prism (no common point) when:', options: ['All normals parallel','Two planes parallel','Normals independent','Normals coplanar but not parallel, system inconsistent'], answer: 3 },
+    { q: 'If \\(\\mathbf{a}\\cdot(\\mathbf{b}\\times\\mathbf{c})=0\\), this means:', options: ['\\(\\mathbf{a},\\mathbf{b},\\mathbf{c}\\) are coplanar','\\(\\mathbf{a}\\perp\\mathbf{c}\\)','\\(\\mathbf{b}\\parallel\\mathbf{c}\\)','\\(\\mathbf{a}\\perp\\mathbf{b}\\)'], answer: 0 },
   ],
 },
 
@@ -222,10 +222,10 @@ const FM_OCR_MCQ = {
     { q: 'To find intersections of two polar curves, besides setting \\(f(\\theta)=g(\\theta)\\), we must also check:', options: ['Where \\(r=1\\)', 'The origin only', 'That \\(r>0\\)', 'The pole and values differing by \\(2k\\pi\\)'], answer: 3 },
   ],
   red: [
-    { q: 'For \\(r=\\frac{l}{1+e\\cos\\theta}\\), \\(e=1\\) gives:', options: ['Ellipse', 'Hyperbola', 'Circle', 'Parabola'], answer: 3 },
-    { q: 'The maximum of \\(r=2+3\\sin\\theta\\) is 5. Since \\(r\\) can be negative:', options: ['Only \\(r\\geq0\\) exists', 'It is an ellipse', 'Curve degenerates when \\(r=0\\)', 'A loop appears inside the outer loop when \\(r<0\\)'], answer: 3 },
-    { q: 'The curves \\(r=\\sin\\theta\\) and \\(r=\\cos\\theta\\) intersect (besides the pole) at:', options: ['\\((\\sqrt{2},\\pi/2)\\)', '\\((1/2,\\pi/4)\\)', '\\((1,\\pi/4)\\)', '\\((1/\\sqrt{2},\\pi/4)\\)'], answer: 3 },
-    { q: 'The gradient of tangent to \\(r=f(\\theta)\\) uses \\(y=r\\sin\\theta, x=r\\cos\\theta\\) and \\(dy/dx\\) is found by:', options: ['\\(dy/d\\theta\\) only', '\\(dr/d\\theta\\)', '\\(\\tan\\theta\\)', '\\(\\frac{dy/d\\theta}{dx/d\\theta}\\)'], answer: 3 },
+    { q: 'For \\(r=\\frac{l}{1+e\\cos\\theta}\\), \\(e=1\\) gives:', options: ['Ellipse','Hyperbola','Circle','Parabola'], answer: 3 },
+    { q: 'The maximum of \\(r=2+3\\sin\\theta\\) is 5. Since \\(r\\) can be negative:', options: ['Curve degenerates when \\(r=0\\)','A loop appears inside the outer loop when \\(r<0\\)','Only \\(r\\geq0\\) exists','It is an ellipse'], answer: 1 },
+    { q: 'The curves \\(r=\\sin\\theta\\) and \\(r=\\cos\\theta\\) intersect (besides the pole) at:', options: ['\\((\\sqrt{2},\\pi/2)\\)','\\((1/2,\\pi/4)\\)','\\((1,\\pi/4)\\)','\\((1/\\sqrt{2},\\pi/4)\\)'], answer: 3 },
+    { q: 'The gradient of tangent to \\(r=f(\\theta)\\) uses \\(y=r\\sin\\theta, x=r\\cos\\theta\\) and \\(dy/dx\\) is found by:', options: ['\\(dy/d\\theta\\) only','\\(dr/d\\theta\\)','\\(\\tan\\theta\\)','\\(\\frac{dy/d\\theta}{dx/d\\theta}\\)'], answer: 3 },
   ],
 },
 
@@ -257,11 +257,11 @@ const FM_OCR_MCQ = {
     { q: 'Solve \\(3\\sinh x-\\cosh x=1\\):', options: ['\\(x=0\\) only', '\\(x=\\ln3\\) or \\(x=0\\)', '\\(x=\\ln(1/2)\\) or \\(\\ln2\\)', '\\(x=\\ln2\\)'], answer: 3, explanation: 'Multiply by 2: 3(e^x−e^{-x})−(e^x+e^{-x})=2 → 2e^x−4e^{-x}=2 → e^{2x}−e^x−2=0 → (e^x−2)(e^x+1)=0 → x=ln2' },
   ],
   red: [
-    { q: 'To prove \\(\\tanh^2x+\\text{sech}^2x=1\\), divide \\(\\cosh^2x-\\sinh^2x=1\\) by:', options: ['\\(\\sinh^2x\\)', '\\(1\\)', '\\(\\tanh x\\)', '\\(\\cosh^2x\\)'], answer: 3 },
-    { q: '\\(\\cosh x\\) is:', options: ['Bijective on \\(\\mathbb{R}\\)', 'Odd', 'Neither even nor odd', 'Even, minimum 1, not bijective on \\(\\mathbb{R}\\)'], answer: 3 },
-    { q: 'Domain of \\(\\cosh^{-1}x\\):', options: ['\\(\\mathbb{R}\\)', '\\(-1\\leq x\\leq1\\)', '\\(x>0\\)', '\\(x\\geq1\\)'], answer: 3 },
-    { q: '\\(\\int\\frac{1}{\\sqrt{x^2-1}}\\,dx=\\)', options: ['\\(\\arcsin x+C\\)', '\\(\\arctan x+C\\)', '\\(-\\cosh^{-1}x+C\\)', '\\(\\cosh^{-1}x+C\\)'], answer: 3 },
-    { q: 'Key difference between \\(\\cosh x\\) and \\(\\cos x\\):', options: ['\\(\\cosh x\\) is periodic', '\\(\\cosh x\\) is bounded', '\\(\\cos x\\) is unbounded', '\\(\\cosh x\\geq1\\) for all \\(x\\) and is unbounded above'], answer: 3 },
+    { q: 'To prove \\(\\tanh^2x+\\text{sech}^2x=1\\), divide \\(\\cosh^2x-\\sinh^2x=1\\) by:', options: ['\\(\\sinh^2x\\)','\\(1\\)','\\(\\tanh x\\)','\\(\\cosh^2x\\)'], answer: 3 },
+    { q: '\\(\\cosh x\\) is:', options: ['Bijective on \\(\\mathbb{R}\\)','Neither even nor odd','Even, minimum 1, not bijective on \\(\\mathbb{R}\\)','Odd'], answer: 2 },
+    { q: 'Domain of \\(\\cosh^{-1}x\\):', options: ['\\(\\mathbb{R}\\)','\\(-1\\leq x\\leq1\\)','\\(x>0\\)','\\(x\\geq1\\)'], answer: 3 },
+    { q: '\\(\\int\\frac{1}{\\sqrt{x^2-1}}\\,dx=\\)', options: ['\\(\\arctan x+C\\)','\\(\\arcsin x+C\\)','\\(\\cosh^{-1}x+C\\)','\\(-\\cosh^{-1}x+C\\)'], answer: 2 },
+    { q: 'Key difference between \\(\\cosh x\\) and \\(\\cos x\\):', options: ['\\(\\cosh x\\) is periodic','\\(\\cosh x\\) is bounded','\\(\\cos x\\) is unbounded','\\(\\cosh x\\geq1\\) for all \\(x\\) and is unbounded above'], answer: 3 },
   ],
 },
 
@@ -292,11 +292,11 @@ const FM_OCR_MCQ = {
     { q: 'Bernoulli equation \\(y\'+P(x)y=Q(x)y^n\\) is linearised by \\(v=\\)', options: ['\\(y^n\\)', '\\(y^{1-n}\\)', '\\(y/P\\)', '\\(1/y^{n-1}\\)'], answer: 1, explanation: 'v=y^{1-n} linearises the equation' },
   ],
   red: [
-    { q: '\\(y\'\'-2y\'+y=e^x\\): CF is \\((Ax+B)e^x\\). PI must be:', options: ['\\(ae^x\\)', '\\(axe^x\\)', '\\(ax^2e^x+bxe^x\\)', '\\(ax^2e^x\\)'], answer: 3, explanation: 'e^x and xe^x both appear in CF, so try x²e^x' },
-    { q: 'Eigenvalues of \\(\\begin{pmatrix}1&1\\\\4&-2\\end{pmatrix}\\):', options: ['\\(1,-2\\)', '\\(-1,2\\)', '\\(-3,2\\)', '\\(2,-3\\)'], answer: 3, explanation: 'λ²+λ−6=0 → (λ+3)(λ−2)=0' },
-    { q: 'The Wronskian \\(W\\neq0\\) implies the two solutions are:', options: ['Both zero', 'The same', 'Proportional', 'Linearly independent'], answer: 3 },
-    { q: 'For resonance in \\(m\\ddot{x}+kx=F_0\\cos\\omega t\\) (\\(c=0\\)):', options: ['\\(\\omega=\\sqrt{k/m}+c/m\\)', 'Any \\(\\omega\\)', '\\(\\omega=2k/m\\)', '\\(\\omega=\\sqrt{k/m}\\)'], answer: 3 },
-    { q: 'PI for \\(y\'\'-2y\'+2y=e^x\\sin x\\): must be tried as \\(xe^x(\\cdots)\\) because:', options: ['\\(e^x\\sin x\\) is large', 'PI always uses \\(x\\)', 'The CF is polynomial', '\\(e^x\\sin x\\) appears in CF (roots \\(1\\pm i\\))'], answer: 3 },
+    { q: '\\(y\'\'-2y\'+y=e^x\\): CF is \\((Ax+B)e^x\\). PI must be:', options: ['\\(ax^2e^x\\)','\\(ax^2e^x+bxe^x\\)','\\(axe^x\\)','\\(ae^x\\)'], answer: 0, explanation: 'e^x and xe^x both appear in CF, so try x²e^x' },
+    { q: 'Eigenvalues of \\(\\begin{pmatrix}1&1\\\\4&-2\\end{pmatrix}\\):', options: ['\\(-3,2\\)','\\(2,-3\\)','\\(1,-2\\)','\\(-1,2\\)'], answer: 1, explanation: 'λ²+λ−6=0 → (λ+3)(λ−2)=0' },
+    { q: 'The Wronskian \\(W\\neq0\\) implies the two solutions are:', options: ['Both zero','The same','Proportional','Linearly independent'], answer: 3 },
+    { q: 'For resonance in \\(m\\ddot{x}+kx=F_0\\cos\\omega t\\) (\\(c=0\\)):', options: ['\\(\\omega=\\sqrt{k/m}+c/m\\)','Any \\(\\omega\\)','\\(\\omega=2k/m\\)','\\(\\omega=\\sqrt{k/m}\\)'], answer: 3 },
+    { q: 'PI for \\(y\'\'-2y\'+2y=e^x\\sin x\\): must be tried as \\(xe^x(\\cdots)\\) because:', options: ['The CF is polynomial','\\(e^x\\sin x\\) appears in CF (roots \\(1\\pm i\\))','\\(e^x\\sin x\\) is large','PI always uses \\(x\\)'], answer: 1 },
   ],
 },
 
@@ -323,10 +323,10 @@ const FM_OCR_MCQ = {
     { q: 'Trapezium rule for \\(\\int_0^1 e^{-x^2}\\,dx\\) with \\(n=2\\) gives approximately:', options: ['\\(0.64\\)', '\\(0.80\\)', '\\(0.85\\)', '\\(0.73\\)'], answer: 3, explanation: 'h=0.5; (0.5/2)(1+2·e^{−0.25}+e^{−1})≈0.731' },
   ],
   red: [
-    { q: 'The local truncation error of Euler\'s method is:', options: ['\\(O(h)\\)', '\\(O(h^3)\\)', '\\(O(h^4)\\)', '\\(O(h^2)\\)'], answer: 3 },
-    { q: 'The global truncation error of Simpson\'s rule is:', options: ['\\(O(h^2)\\)', '\\(O(h)\\)', '\\(O(h^6)\\)', '\\(O(h^4)\\)'], answer: 3 },
-    { q: 'If Newton–Raphson\'s iteration satisfies \\(e_{n+1}\\approx Ce_n^2\\), convergence is described as:', options: ['Linear', 'Cubic', 'Sublinear', 'Quadratic'], answer: 3 },
-    { q: 'Fixed-point iteration \\(x_{n+1}=\\cos x_n\\) converges to \\(\\alpha\\) with \\(\\alpha\\approx 0.739\\); this is consistent with \\(|g\'(\\alpha)|=\\)', options: ['\\(1\\)', '\\(>1\\)', '\\(2\\)', '\\(|\\sin(0.739)|<1\\)'], answer: 3 },
+    { q: 'The local truncation error of Euler\'s method is:', options: ['\\(O(h)\\)','\\(O(h^3)\\)','\\(O(h^4)\\)','\\(O(h^2)\\)'], answer: 3 },
+    { q: 'The global truncation error of Simpson\'s rule is:', options: ['\\(O(h^2)\\)','\\(O(h^4)\\)','\\(O(h)\\)','\\(O(h^6)\\)'], answer: 1 },
+    { q: 'If Newton–Raphson\'s iteration satisfies \\(e_{n+1}\\approx Ce_n^2\\), convergence is described as:', options: ['Linear','Cubic','Sublinear','Quadratic'], answer: 3 },
+    { q: 'Fixed-point iteration \\(x_{n+1}=\\cos x_n\\) converges to \\(\\alpha\\) with \\(\\alpha\\approx 0.739\\); this is consistent with \\(|g\'(\\alpha)|=\\)', options: ['\\(>1\\)','\\(1\\)','\\(|\\sin(0.739)|<1\\)','\\(2\\)'], answer: 2 },
   ],
 },
 
@@ -353,11 +353,11 @@ const FM_OCR_MCQ = {
     { q: 'For sequence \\(u_{n+1}=3u_n-2, u_1=5\\), conjecture \\(u_n=4\\cdot3^{n-1}+1\\). Check \\(n=1\\):', options: ['\\(u_1=4\\cdot3+1=13\\neq5\\)', '\\(u_1=0+1=1\\neq5\\)', '\\(u_1=4\\cdot3^2+1=37\\)', '\\(u_1=4\\cdot1+1=5\\) ✓'], answer: 3 },
   ],
   red: [
-    { q: 'The "all horses same colour" fallacy fails at:', options: ['\\(n=1\\)', '\\(n>2\\)', 'All \\(n\\)', '\\(n=2\\) (transition fails)'], answer: 3 },
-    { q: 'Prove \\(2^n>n^2\\) for \\(n\\geq5\\). Need \\(2k^2\\geq(k+1)^2=k^2+2k+1\\), i.e., \\(k^2-2k-1\\geq0\\), for \\(k\\geq\\)', options: ['\\(k\\geq1\\)', '\\(k\\geq2\\)', '\\(k\\leq5\\)', '\\(k\\geq3\\) (so \\(k\\geq5\\) certainly works)'], answer: 3 },
-    { q: 'Prove \\(\\prod_{r=2}^{n}(1-1/r^2)=\\frac{n+1}{2n}\\). The inductive step multiplies by:', options: ['\\(\\frac{k+1}{2k}\\)', '\\((1-1/k^2)\\)', '\\(1-1/(k+1)^2\\) (the next factor)', '\\((1-1/(k+1)^2)\\)'], answer: 3 },
-    { q: 'Proof by induction on \\(n\\)-element subsets: going from \\(k\\) to \\(k+1\\) elements doubles the count because each subset:', options: ['Has size \\(\\leq k\\)', 'Is a subset of the \\(k\\)-set', 'Contains all \\(k+1\\) elements', 'Includes or excludes the \\((k+1)\\)th element'], answer: 3 },
-    { q: 'Prove \\(n!>2^n\\) for \\(n\\geq4\\). Step: \\((k+1)!=(k+1)k!>(k+1)2^k\\geq2^{k+1}\\) requires:', options: ['\\(k+1=2\\)', '\\(k<2\\)', '\\(k+1\\leq2\\)', '\\(k+1\\geq2\\), satisfied since \\(k\\geq4\\)'], answer: 3 },
+    { q: 'The "all horses same colour" fallacy fails at:', options: ['\\(n>2\\)','\\(n=1\\)','\\(n=2\\) (transition fails)','All \\(n\\)'], answer: 2 },
+    { q: 'Prove \\(2^n>n^2\\) for \\(n\\geq5\\). Need \\(2k^2\\geq(k+1)^2=k^2+2k+1\\), i.e., \\(k^2-2k-1\\geq0\\), for \\(k\\geq\\)', options: ['\\(k\\geq2\\)','\\(k\\geq1\\)','\\(k\\geq3\\) (so \\(k\\geq5\\) certainly works)','\\(k\\leq5\\)'], answer: 2 },
+    { q: 'Prove \\(\\prod_{r=2}^{n}(1-1/r^2)=\\frac{n+1}{2n}\\). The inductive step multiplies by:', options: ['\\((1-1/k^2)\\)','\\(\\frac{k+1}{2k}\\)','\\((1-1/(k+1)^2)\\)','\\(1-1/(k+1)^2\\) (the next factor)'], answer: 2 },
+    { q: 'Proof by induction on \\(n\\)-element subsets: going from \\(k\\) to \\(k+1\\) elements doubles the count because each subset:', options: ['Includes or excludes the \\((k+1)\\)th element','Contains all \\(k+1\\) elements','Is a subset of the \\(k\\)-set','Has size \\(\\leq k\\)'], answer: 0 },
+    { q: 'Prove \\(n!>2^n\\) for \\(n\\geq4\\). Step: \\((k+1)!=(k+1)k!>(k+1)2^k\\geq2^{k+1}\\) requires:', options: ['\\(k+1=2\\)','\\(k+1\\geq2\\), satisfied since \\(k\\geq4\\)','\\(k<2\\)','\\(k+1\\leq2\\)'], answer: 1 },
   ],
 },
 
@@ -388,10 +388,10 @@ const FM_OCR_MCQ = {
     { q: 'For \\(X\\sim B(n,p)\\), the PGF is:', options: ['\\((p t+q)^n\\) where \\(q=1-p\\)... wait \\((q+pt)^n\\)', '\\(e^{\\lambda(t-1)}\\)', '\\(\\frac{pt}{1-qt}\\)', '\\((q+pt)^n\\)'], answer: 3 },
   ],
   red: [
-    { q: 'If \\(G(t)=(0.4+0.6t)^5\\), identify the distribution:', options: ['Geometric', 'Poisson', 'Continuous uniform', 'Binomial \\(B(5,0.6)\\)'], answer: 3 },
-    { q: '\\(G\'\'(1)+G\'(1)-[G\'(1)]^2\\) gives:', options: ['\\(E(X)\\)', '\\(E(X^2)\\)', '\\([E(X)]^2\\)', '\\(\\text{Var}(X)\\)'], answer: 3, explanation: 'Var(X)=G\'\'(1)+G\'(1)−[G\'(1)]²' },
-    { q: 'For independent \\(X,Y\\) with PGFs \\(G_X,G_Y\\): PGF of \\(X+Y\\):', options: ['\\(G_X(t)+G_Y(t)\\)', '\\(G_X(t)-G_Y(t)\\)', '\\(G_X(t)/G_Y(t)\\)', '\\(G_X(t)\\cdot G_Y(t)\\)'], answer: 3 },
-    { q: 'Chebyshev\'s inequality states \\(P(|X-\\mu|\\geq k\\sigma)\\leq\\)', options: ['\\(k^2\\)', '\\(1/k\\)', '\\(1/k^2\\sigma^2\\)', '\\(1/k^2\\)'], answer: 3 },
+    { q: 'If \\(G(t)=(0.4+0.6t)^5\\), identify the distribution:', options: ['Poisson','Geometric','Binomial \\(B(5,0.6)\\)','Continuous uniform'], answer: 2 },
+    { q: '\\(G\'\'(1)+G\'(1)-[G\'(1)]^2\\) gives:', options: ['\\(E(X^2)\\)','\\(E(X)\\)','\\(\\text{Var}(X)\\)','\\([E(X)]^2\\)'], answer: 2, explanation: 'Var(X)=G\'\'(1)+G\'(1)−[G\'(1)]²' },
+    { q: 'For independent \\(X,Y\\) with PGFs \\(G_X,G_Y\\): PGF of \\(X+Y\\):', options: ['\\(G_X(t)\\cdot G_Y(t)\\)','\\(G_X(t)/G_Y(t)\\)','\\(G_X(t)-G_Y(t)\\)','\\(G_X(t)+G_Y(t)\\)'], answer: 0 },
+    { q: 'Chebyshev\'s inequality states \\(P(|X-\\mu|\\geq k\\sigma)\\leq\\)', options: ['\\(1/k^2\\sigma^2\\)','\\(k^2\\)','\\(1/k\\)','\\(1/k^2\\)'], answer: 3 },
   ],
 },
 
@@ -416,9 +416,9 @@ const FM_OCR_MCQ = {
     { q: 'If \\(f(x)=\\frac{1}{2}\\sin x\\) on \\([0,\\pi]\\), the median satisfies \\(\\int_0^m\\frac{1}{2}\\sin x\\,dx=\\frac{1}{2}\\). So \\(m=\\)', options: ['\\(\\pi/4\\)', '\\(\\pi/3\\)', '\\(2\\pi/3\\)', '\\(\\pi/2\\)'], answer: 3, explanation: '[-½cos x]₀^m = ½(1−cos m)=½ → cos m=0 → m=π/2' },
   ],
   red: [
-    { q: 'For \\(Y=g(X)\\), \\(f_Y(y)=f_X(g^{-1}(y))\\cdot|\\frac{d}{dy}g^{-1}(y)|\\). This is the:', options: ['Bayes theorem', 'Central limit theorem', 'Chebyshev inequality', 'Transformation (change of variable) formula for pdfs'], answer: 3 },
-    { q: 'The exponential distribution is memoryless: \\(P(X>s+t|X>s)=\\)', options: ['\\(P(X>s)\\)', '\\(P(X>t+s)\\)', '\\(1\\)', '\\(P(X>t)\\)'], answer: 3 },
-    { q: '\\(\\text{Var}(X)=E[X(X-1)]+E(X)-[E(X)]^2\\). This rearranges to:', options: ['\\(E(X^2+X)-E(X)^2\\)', '\\(E(X^2-1)\\)', '\\(E(X)^2-E(X^2)\\)', '\\(E(X^2)-[E(X)]^2\\)'], answer: 3 },
+    { q: 'For \\(Y=g(X)\\), \\(f_Y(y)=f_X(g^{-1}(y))\\cdot|\\frac{d}{dy}g^{-1}(y)|\\). This is the:', options: ['Bayes theorem','Central limit theorem','Chebyshev inequality','Transformation (change of variable) formula for pdfs'], answer: 3 },
+    { q: 'The exponential distribution is memoryless: \\(P(X>s+t|X>s)=\\)', options: ['\\(P(X>t+s)\\)','\\(P(X>s)\\)','\\(P(X>t)\\)','\\(1\\)'], answer: 2 },
+    { q: '\\(\\text{Var}(X)=E[X(X-1)]+E(X)-[E(X)]^2\\). This rearranges to:', options: ['\\(E(X^2+X)-E(X)^2\\)','\\(E(X^2-1)\\)','\\(E(X)^2-E(X^2)\\)','\\(E(X^2)-[E(X)]^2\\)'], answer: 3 },
   ],
 },
 
@@ -442,9 +442,9 @@ const FM_OCR_MCQ = {
     { q: 'If the true \\(\\mu\\) is far from \\(\\mu_0\\), the test\'s power:', options: ['Is low', 'Equals \\(\\alpha\\)', 'Is undefined', 'Is high'], answer: 3 },
   ],
   red: [
-    { q: 'Doubling sample size, with \\(\\alpha\\) and the alternative unchanged, the power:', options: ['Stays constant', 'Drops', 'Doubles exactly', 'Increases'], answer: 3 },
-    { q: 'For a one-tailed \\(Z\\)-test \\(H_0:\\mu=10\\) vs \\(\\mu>10\\), \\(\\sigma=2, n=16, \\alpha=0.05\\), and true \\(\\mu=11\\), \\(\\beta\\approx\\)', options: ['\\(0\\)', '\\(0.1\\)', '\\(0.5\\)', 'About \\(0.36\\)'], answer: 3, explanation: 'Crit x̄>10.823; P(x̄≤10.823|μ=11)=Φ(−0.354)≈0.36' },
-    { q: 'To achieve margin of error \\(E\\) at 95%: \\(n\\geq\\)', options: ['\\((\\sigma/E)^2\\)', '\\(1.96\\sigma E\\)', '\\((\\sigma E/1.96)^2\\)', '\\((1.96\\sigma/E)^2\\)'], answer: 3 },
+    { q: 'Doubling sample size, with \\(\\alpha\\) and the alternative unchanged, the power:', options: ['Stays constant','Drops','Doubles exactly','Increases'], answer: 3 },
+    { q: 'For a one-tailed \\(Z\\)-test \\(H_0:\\mu=10\\) vs \\(\\mu>10\\), \\(\\sigma=2, n=16, \\alpha=0.05\\), and true \\(\\mu=11\\), \\(\\beta\\approx\\)', options: ['\\(0\\)','\\(0.5\\)','About \\(0.36\\)','\\(0.1\\)'], answer: 2, explanation: 'Crit x̄>10.823; P(x̄≤10.823|μ=11)=Φ(−0.354)≈0.36' },
+    { q: 'To achieve margin of error \\(E\\) at 95%: \\(n\\geq\\)', options: ['\\((\\sigma/E)^2\\)','\\(1.96\\sigma E\\)','\\((\\sigma E/1.96)^2\\)','\\((1.96\\sigma/E)^2\\)'], answer: 3 },
   ],
 },
 
@@ -466,9 +466,9 @@ const FM_OCR_MCQ = {
     { q: 'A chi-squared test for independence \\(H_0\\): row and column variables are independent. Rejecting \\(H_0\\) implies:', options: ['Perfect correlation', 'Causation', 'No relationship', 'Evidence of an association between the variables'], answer: 3 },
   ],
   red: [
-    { q: 'The \\(\\chi^2\\) distribution with \\(\\nu\\) degrees of freedom has mean:', options: ['\\(\\nu^2\\)', '\\(2\\nu\\)', '\\(\\nu/2\\)', '\\(\\nu\\)'], answer: 3 },
-    { q: 'Yates\' continuity correction adjusts \\((O-E)^2/E\\) to:', options: ['\\((O-E-1)^2/E\\)', '\\((O+E-0.5)^2/E\\)', '\\((O-E)^2/E-0.5\\)', '\\((|O-E|-0.5)^2/E\\)'], answer: 3 },
-    { q: 'A goodness-of-fit test for a Poisson distribution with unknown \\(\\lambda\\) estimated from data: df =', options: ['\\(k-1\\)', '\\(k\\)', '\\(k+1\\)', '\\(k-2\\)'], answer: 3, explanation: 'k groups, 2 constraints (sum of freq and estimated λ) → k−1−1=k−2' },
+    { q: 'The \\(\\chi^2\\) distribution with \\(\\nu\\) degrees of freedom has mean:', options: ['\\(\\nu^2\\)','\\(2\\nu\\)','\\(\\nu/2\\)','\\(\\nu\\)'], answer: 3 },
+    { q: 'Yates\' continuity correction adjusts \\((O-E)^2/E\\) to:', options: ['\\((O-E)^2/E-0.5\\)','\\((|O-E|-0.5)^2/E\\)','\\((O-E-1)^2/E\\)','\\((O+E-0.5)^2/E\\)'], answer: 1 },
+    { q: 'A goodness-of-fit test for a Poisson distribution with unknown \\(\\lambda\\) estimated from data: df =', options: ['\\(k-1\\)','\\(k\\)','\\(k+1\\)','\\(k-2\\)'], answer: 3, explanation: 'k groups, 2 constraints (sum of freq and estimated λ) → k−1−1=k−2' },
   ],
 },
 
@@ -491,9 +491,9 @@ const FM_OCR_MCQ = {
     { q: '\\(X\\) has pgf \\(G(t)=\\tfrac{1}{4}(1+t)^2\\). Then \\(P(X=1)=\\)', options: ['\\(1/4\\)', '\\(1\\)', '\\(1/3\\)', '\\(1/2\\)'], answer: 3, explanation: 'G(t)=¼+½t+¼t² → coeff of t is ½' },
   ],
   red: [
-    { q: 'Using the pgf of \\(\\text{Po}(\\lambda)\\), \\(\\text{Var}(X)=\\)', options: ['\\(\\lambda^2\\)', '\\(\\lambda+1\\)', '\\(2\\lambda\\)', '\\(\\lambda\\)'], answer: 3 },
-    { q: 'If \\(G(t)=\\frac{pt}{1-(1-p)t}\\) (geom), then \\(E(X)=\\)', options: ['\\(p\\)', '\\((1-p)/p\\)', '\\(1/(1-p)\\)', '\\(1/p\\)'], answer: 3 },
-    { q: 'For a branching process with common pgf \\(G\\), the pgf of generation \\(n\\) is:', options: ['\\(nG(t)\\)', '\\(G(t)^n\\)', '\\(G(nt)\\)', '\\(G\\circ G\\circ\\cdots\\circ G\\) (\\(n\\) times)'], answer: 3 },
+    { q: 'Using the pgf of \\(\\text{Po}(\\lambda)\\), \\(\\text{Var}(X)=\\)', options: ['\\(2\\lambda\\)','\\(\\lambda^2\\)','\\(\\lambda+1\\)','\\(\\lambda\\)'], answer: 3 },
+    { q: 'If \\(G(t)=\\frac{pt}{1-(1-p)t}\\) (geom), then \\(E(X)=\\)', options: ['\\(p\\)','\\((1-p)/p\\)','\\(1/(1-p)\\)','\\(1/p\\)'], answer: 3 },
+    { q: 'For a branching process with common pgf \\(G\\), the pgf of generation \\(n\\) is:', options: ['\\(G(t)^n\\)','\\(G(nt)\\)','\\(nG(t)\\)','\\(G\\circ G\\circ\\cdots\\circ G\\) (\\(n\\) times)'], answer: 3 },
   ],
 },
 
@@ -519,9 +519,9 @@ const FM_OCR_MCQ = {
     { q: 'Power = Force × velocity. Dimensions of power:', options: ['\\(MLT^{-2}\\)', '\\(ML^2T^{-3}\\)', '\\(ML^2T^{-2}\\)', '\\(ML^2T^{-3}\\)'], answer: 1, explanation: '[P]=[F][v]=MLT^{-2}·LT^{-1}=ML^2T^{-3}' },
   ],
   red: [
-    { q: 'A formula \\(v^2=u^2+2as\\) is dimensionally consistent because:', options: ['All numbers are equal', 'Speed and distance have same dims', 'LHS and RHS both have dims \\(M\\)', 'Both sides have dimensions \\(L^2T^{-2}\\)'], answer: 3 },
-    { q: 'Buckingham \\(\\Pi\\) theorem: if a physical law involves \\(n\\) variables with \\(k\\) independent dimensions, the number of dimensionless groups is:', options: ['\\(n+k\\)', '\\(n\\cdot k\\)', '\\(k\\)', '\\(n-k\\)'], answer: 3 },
-    { q: 'The gravitational constant \\(G\\) has dimensions:', options: ['\\(M^{-1}L^3T^{-2}\\)', '\\(ML^3T^{-2}\\)', '\\(M^{-2}LT^{-1}\\)', '\\(M^{-1}L^2T^{-1}\\)'], answer: 0, explanation: 'F=Gm₁m₂/r² → [G]=FL²/M²=MLT^{-2}·L²/M²=M^{-1}L^3T^{-2}' },
+    { q: 'A formula \\(v^2=u^2+2as\\) is dimensionally consistent because:', options: ['All numbers are equal','Speed and distance have same dims','LHS and RHS both have dims \\(M\\)','Both sides have dimensions \\(L^2T^{-2}\\)'], answer: 3 },
+    { q: 'Buckingham \\(\\Pi\\) theorem: if a physical law involves \\(n\\) variables with \\(k\\) independent dimensions, the number of dimensionless groups is:', options: ['\\(n\\cdot k\\)','\\(n+k\\)','\\(n-k\\)','\\(k\\)'], answer: 2 },
+    { q: 'The gravitational constant \\(G\\) has dimensions:', options: ['\\(ML^3T^{-2}\\)','\\(M^{-1}L^3T^{-2}\\)','\\(M^{-1}L^2T^{-1}\\)','\\(M^{-2}LT^{-1}\\)'], answer: 1, explanation: 'F=Gm₁m₂/r² → [G]=FL²/M²=MLT^{-2}·L²/M²=M^{-1}L^3T^{-2}' },
   ],
 },
 
@@ -545,9 +545,9 @@ const FM_OCR_MCQ = {
     { q: 'A 1000 kg car reaches top speed when acceleration = 0. At top speed \\(v\\), with constant resistance 500 N, engine power:', options: ['\\(500v\\)', '\\(1000v^2\\)', '\\(1000/v\\)', '\\(500v\\) W'], answer: 0 },
   ],
   red: [
-    { q: 'Car \\(m=1200\\) kg, engine \\(P=30\\) kW, resistance 600 N. Acceleration at 20 m/s:', options: ['\\(0\\) m/s²', '\\(1\\) m/s²', '\\(2\\) m/s²', '\\(0.75\\) m/s²'], answer: 3, explanation: 'F=30000/20=1500; net=900; a=900/1200=0.75' },
-    { q: 'Elastic string modulus \\(\\lambda\\), natural length \\(\\ell_0\\), extension \\(x\\). EPE:', options: ['\\(\\lambda x\\)', '\\(\\lambda x/\\ell_0\\)', '\\(\\tfrac{\\lambda x^2}{\\ell_0}\\)', '\\(\\dfrac{\\lambda x^2}{2\\ell_0}\\)'], answer: 3 },
-    { q: 'Roller-coaster car (\\(m\\), negligible friction) descends \\(h_1\\), then rises \\(h_2<h_1\\). Speed at top of rise:', options: ['\\(\\sqrt{2gh_1}\\)', '\\(\\sqrt{2g(h_1+h_2)}\\)', '\\(\\sqrt{2gh_2}\\)', '\\(\\sqrt{2g(h_1-h_2)}\\)'], answer: 3 },
+    { q: 'Car \\(m=1200\\) kg, engine \\(P=30\\) kW, resistance 600 N. Acceleration at 20 m/s:', options: ['\\(0\\) m/s²','\\(1\\) m/s²','\\(2\\) m/s²','\\(0.75\\) m/s²'], answer: 3, explanation: 'F=30000/20=1500; net=900; a=900/1200=0.75' },
+    { q: 'Elastic string modulus \\(\\lambda\\), natural length \\(\\ell_0\\), extension \\(x\\). EPE:', options: ['\\(\\lambda x\\)','\\(\\lambda x/\\ell_0\\)','\\(\\tfrac{\\lambda x^2}{\\ell_0}\\)','\\(\\dfrac{\\lambda x^2}{2\\ell_0}\\)'], answer: 3 },
+    { q: 'Roller-coaster car (\\(m\\), negligible friction) descends \\(h_1\\), then rises \\(h_2<h_1\\). Speed at top of rise:', options: ['\\(\\sqrt{2gh_2}\\)','\\(\\sqrt{2g(h_1-h_2)}\\)','\\(\\sqrt{2gh_1}\\)','\\(\\sqrt{2g(h_1+h_2)}\\)'], answer: 1 },
   ],
 },
 
@@ -571,9 +571,9 @@ const FM_OCR_MCQ = {
     { q: 'For 3 spheres A, B, C in a line, after A→B, B→C, is it possible for A to hit B again?', options: ['Always', 'Never', 'Only if e=1', 'Only if \\(e_1>e_2\\) (first coefficient > second)'], answer: 3 },
   ],
   red: [
-    { q: 'In an oblique collision with a smooth wall, the component of velocity \\(\\perp\\) to wall changes by factor \\(-e\\). The component \\(\\parallel\\) to wall:', options: ['Also multiplies by \\(-e\\)', 'Doubles', 'Reverses', 'Is unchanged'], answer: 3 },
-    { q: 'Loss of KE in a direct collision between masses \\(m_1,m_2\\) with initial relative speed \\(u_1-u_2\\) is \\(\\frac{m_1 m_2(1-e^2)(u_1-u_2)^2}{2(m_1+m_2)}\\). For \\(e=1\\), loss =', options: ['\\(\\frac{m_1m_2(u_1-u_2)^2}{2(m_1+m_2)}\\)', 'Total KE', 'Double KE', '\\(0\\)'], answer: 3 },
-    { q: 'Jerk = rate of change of acceleration. Its dimensions are:', options: ['\\(LT^{-1}\\)', '\\(LT^{-2}\\)', '\\(ML T^{-2}\\)', '\\(LT^{-3}\\)'], answer: 3 },
+    { q: 'In an oblique collision with a smooth wall, the component of velocity \\(\\perp\\) to wall changes by factor \\(-e\\). The component \\(\\parallel\\) to wall:', options: ['Also multiplies by \\(-e\\)','Doubles','Reverses','Is unchanged'], answer: 3 },
+    { q: 'Loss of KE in a direct collision between masses \\(m_1,m_2\\) with initial relative speed \\(u_1-u_2\\) is \\(\\frac{m_1 m_2(1-e^2)(u_1-u_2)^2}{2(m_1+m_2)}\\). For \\(e=1\\), loss =', options: ['Total KE','\\(\\frac{m_1m_2(u_1-u_2)^2}{2(m_1+m_2)}\\)','\\(0\\)','Double KE'], answer: 2 },
+    { q: 'Jerk = rate of change of acceleration. Its dimensions are:', options: ['\\(ML T^{-2}\\)','\\(LT^{-3}\\)','\\(LT^{-1}\\)','\\(LT^{-2}\\)'], answer: 1 },
   ],
 },
 
@@ -597,9 +597,9 @@ const FM_OCR_MCQ = {
     { q: 'For circular motion: work done by centripetal force in one complete revolution:', options: ['\\(2\\pi r F\\)', '\\(\\pi r^2 F\\)', '\\(rF\\)', '\\(0\\) (force perpendicular to displacement)'], answer: 3 },
   ],
   red: [
-    { q: 'A bead on a smooth circular hoop of radius \\(a\\) in a vertical plane. At bottom, speed \\(v_0\\). Speed at angle \\(\\theta\\) from bottom:', options: ['\\(v_0^2-2ga(1-\\cos\\theta)\\)', '\\(v_0+ga\\sin\\theta\\)', '\\(v_0^2+2ga\\cos\\theta\\)', '\\(\\sqrt{v_0^2-2ga(1-\\cos\\theta)}\\)'], answer: 3, explanation: 'Energy: ½mv²=½mv₀²-mga(1-cosθ)' },
-    { q: 'For circular motion in a vertical plane, the particle loses contact with the surface when:', options: ['Speed is maximum', 'Speed equals \\(\\sqrt{gr}\\)', 'Normal reaction equals gravity', 'Normal reaction = 0'], answer: 3 },
-    { q: 'A satellite in circular orbit: gravitational force provides centripetal force. If radius doubles, orbital speed:', options: ['Doubles', 'Quadruples', 'Stays same', 'Decreases by factor \\(\\sqrt{2}\\)'], answer: 3, explanation: 'v=√(GM/r); v∝1/√r; double r → v/√2' },
+    { q: 'A bead on a smooth circular hoop of radius \\(a\\) in a vertical plane. At bottom, speed \\(v_0\\). Speed at angle \\(\\theta\\) from bottom:', options: ['\\(\\sqrt{v_0^2-2ga(1-\\cos\\theta)}\\)','\\(v_0+ga\\sin\\theta\\)','\\(v_0^2-2ga(1-\\cos\\theta)\\)','\\(v_0^2+2ga\\cos\\theta\\)'], answer: 0, explanation: 'Energy: ½mv²=½mv₀²-mga(1-cosθ)' },
+    { q: 'For circular motion in a vertical plane, the particle loses contact with the surface when:', options: ['Speed is maximum','Speed equals \\(\\sqrt{gr}\\)','Normal reaction equals gravity','Normal reaction = 0'], answer: 3 },
+    { q: 'A satellite in circular orbit: gravitational force provides centripetal force. If radius doubles, orbital speed:', options: ['Quadruples','Decreases by factor \\(\\sqrt{2}\\)','Stays same','Doubles'], answer: 1, explanation: 'v=√(GM/r); v∝1/√r; double r → v/√2' },
   ],
 },
 
@@ -623,9 +623,9 @@ const FM_OCR_MCQ = {
     { q: 'A particle performing SHM passes through equilibrium with speed 4 m/s and has period 2s. Amplitude =', options: ['\\(4/\\pi\\) m', '\\(2/\\pi\\) m', '\\(\\pi\\) m', '\\(4/\\pi\\) m'], answer: 0, explanation: 'v_max=aω=a(2π/2)=aπ=4 → a=4/π' },
   ],
   red: [
-    { q: 'Damped SHM: \\(\\ddot{x}+2k\\dot{x}+\\omega_0^2x=0\\). For underdamping (\\(k<\\omega_0\\)), solution is:', options: ['\\(e^{-kt}(A\\cos\\beta t+B\\sin\\beta t)\\)', '\\(e^{-kt}(Ax+B)\\)', '\\((Ax+B)e^{\\omega_0 t}\\)', '\\(Ae^{-k_1t}+Be^{-k_2t}\\) with real \\(k_1,k_2\\)'], answer: 0, explanation: 'β=√(ω₀²−k²)' },
-    { q: 'Resonance in forced SHM occurs when driving frequency equals:', options: ['Zero', 'Twice natural frequency', 'Half natural frequency', 'The natural frequency \\(\\omega_0\\)'], answer: 3 },
-    { q: 'For critically damped motion (\\(k=\\omega_0\\)), solution is of the form:', options: ['\\(e^{-kt}(A\\cos\\beta t+B\\sin\\beta t)\\)', '\\(Ae^{-k_1t}+Be^{-k_2t}\\)', '\\(A\\cos\\omega_0t+B\\sin\\omega_0t\\)', '\\((A+Bt)e^{-kt}\\)'], answer: 3 },
+    { q: 'Damped SHM: \\(\\ddot{x}+2k\\dot{x}+\\omega_0^2x=0\\). For underdamping (\\(k<\\omega_0\\)), solution is:', options: ['\\(e^{-kt}(A\\cos\\beta t+B\\sin\\beta t)\\)','\\(e^{-kt}(Ax+B)\\)','\\((Ax+B)e^{\\omega_0 t}\\)','\\(Ae^{-k_1t}+Be^{-k_2t}\\) with real \\(k_1,k_2\\)'], answer: 0, explanation: 'β=√(ω₀²−k²)' },
+    { q: 'Resonance in forced SHM occurs when driving frequency equals:', options: ['The natural frequency \\(\\omega_0\\)','Half natural frequency','Twice natural frequency','Zero'], answer: 0 },
+    { q: 'For critically damped motion (\\(k=\\omega_0\\)), solution is of the form:', options: ['\\(e^{-kt}(A\\cos\\beta t+B\\sin\\beta t)\\)','\\(Ae^{-k_1t}+Be^{-k_2t}\\)','\\(A\\cos\\omega_0t+B\\sin\\omega_0t\\)','\\((A+Bt)e^{-kt}\\)'], answer: 3 },
   ],
 },
 
@@ -653,9 +653,9 @@ const FM_OCR_MCQ = {
     { q: 'For any planar graph: \\(\\chi(G)\\leq\\)', options: ['3', '5', '6', '4'], answer: 3, explanation: 'Four colour theorem: χ≤4 for planar graphs' },
   ],
   red: [
-    { q: 'Dirac\'s theorem: if every vertex of \\(G\\) (\\(n\\geq3\\)) has degree \\(\\geq n/2\\), then \\(G\\):', options: ['Is bipartite', 'Has no cycles', 'Is planar', 'Has a Hamiltonian cycle'], answer: 3 },
-    { q: 'The adjacency matrix \\(A\\) of a graph: \\((A^k)_{ij}\\) counts:', options: ['Spanning trees from \\(i\\) to \\(j\\)', 'Edges between \\(i\\) and \\(j\\)', 'Shortest paths', 'Number of walks of length \\(k\\) from \\(i\\) to \\(j\\)'], answer: 3 },
-    { q: 'A graph has an Eulerian path (not circuit) iff it has:', options: ['All even degrees', 'No edges', 'All odd degrees', 'Exactly 2 vertices of odd degree'], answer: 3 },
+    { q: 'Dirac\'s theorem: if every vertex of \\(G\\) (\\(n\\geq3\\)) has degree \\(\\geq n/2\\), then \\(G\\):', options: ['Has no cycles','Is bipartite','Has a Hamiltonian cycle','Is planar'], answer: 2 },
+    { q: 'The adjacency matrix \\(A\\) of a graph: \\((A^k)_{ij}\\) counts:', options: ['Number of walks of length \\(k\\) from \\(i\\) to \\(j\\)','Shortest paths','Edges between \\(i\\) and \\(j\\)','Spanning trees from \\(i\\) to \\(j\\)'], answer: 0 },
+    { q: 'A graph has an Eulerian path (not circuit) iff it has:', options: ['Exactly 2 vertices of odd degree','All odd degrees','No edges','All even degrees'], answer: 0 },
   ],
 },
 
@@ -678,9 +678,9 @@ const FM_OCR_MCQ = {
     { q: 'Lower bound for TSP can be found by:', options: ['Nearest neighbour', 'Kruskal\'s algorithm', 'DFS traversal', 'Deleting a vertex, finding MST + two shortest edges from that vertex'], answer: 3 },
   ],
   red: [
-    { q: 'Dijkstra\'s algorithm has time complexity (with adjacency matrix):', options: ['\\(O(n)\\)', '\\(O(n\\log n)\\)', '\\(O(n^3)\\)', '\\(O(n^2)\\)'], answer: 3 },
-    { q: 'A problem is NP-hard if:', options: ['It can be solved in polynomial time', 'It has no solution', 'It is easy to verify but not known to solve in polynomial time', 'It is impossible to verify'], answer: 2, explanation: 'NP: solutions verifiable in poly time; NP-hard: at least as hard as hardest NP problems' },
-    { q: 'Ford-Fulkerson algorithm solves:', options: ['Shortest path', 'Minimum spanning tree', 'Vertex colouring', 'Maximum flow in a network'], answer: 3 },
+    { q: 'Dijkstra\'s algorithm has time complexity (with adjacency matrix):', options: ['\\(O(n\\log n)\\)','\\(O(n)\\)','\\(O(n^2)\\)','\\(O(n^3)\\)'], answer: 2 },
+    { q: 'A problem is NP-hard if:', options: ['It can be solved in polynomial time','It has no solution','It is easy to verify but not known to solve in polynomial time','It is impossible to verify'], answer: 2, explanation: 'NP: solutions verifiable in poly time; NP-hard: at least as hard as hardest NP problems' },
+    { q: 'Ford-Fulkerson algorithm solves:', options: ['Shortest path','Minimum spanning tree','Vertex colouring','Maximum flow in a network'], answer: 3 },
   ],
 },
 
@@ -702,9 +702,9 @@ const FM_OCR_MCQ = {
     { q: 'The dual of a maximisation LP is a \\(\\rule{0.5cm}{0.4pt}\\) LP:', options: ['Quadratic', 'Infeasible', 'Maximisation', 'Minimisation'], answer: 3 },
   ],
   red: [
-    { q: 'Strong duality theorem: if primal LP has optimal value \\(z^*\\), dual has:', options: ['Optimal value \\(0\\)', 'No solution', 'Optimal value \\(z^*+1\\)', 'Optimal value \\(z^*\\) (same)'], answer: 3 },
-    { q: 'A basic feasible solution in the simplex method has how many non-zero variables (with \\(m\\) constraints)?', options: ['\\(n\\) (all variables)', '\\(m+n\\)', '\\(0\\)', 'At most \\(m\\)'], answer: 3 },
-    { q: 'The simplex method is not guaranteed to be polynomial time because of:', options: ['Rounding errors', 'Integer constraints', 'Unbounded problems', 'Cycling (though rare in practice; Bland\'s rule prevents it)'], answer: 3 },
+    { q: 'Strong duality theorem: if primal LP has optimal value \\(z^*\\), dual has:', options: ['Optimal value \\(z^*\\) (same)','Optimal value \\(0\\)','Optimal value \\(z^*+1\\)','No solution'], answer: 0 },
+    { q: 'A basic feasible solution in the simplex method has how many non-zero variables (with \\(m\\) constraints)?', options: ['\\(0\\)','At most \\(m\\)','\\(n\\) (all variables)','\\(m+n\\)'], answer: 1 },
+    { q: 'The simplex method is not guaranteed to be polynomial time because of:', options: ['Unbounded problems','Rounding errors','Integer constraints','Cycling (though rare in practice; Bland\'s rule prevents it)'], answer: 3 },
   ],
 },
 
@@ -726,9 +726,9 @@ const FM_OCR_MCQ = {
     { q: 'Dominant strategy equilibrium: if one strategy dominates another regardless of opponent\'s choice, rational player:', options: ['Randomises equally', 'Plays dominated strategy', 'Plays randomly', 'Eliminates dominated strategies'], answer: 3 },
   ],
   red: [
-    { q: 'The Prisoner\'s Dilemma is an example of a game where the Nash equilibrium is:', options: ['Both cooperate', 'Pareto optimal', 'Saddle point', 'Pareto inefficient (both defect, worse for both)'], answer: 3 },
-    { q: 'A Nash equilibrium is a strategy profile where no player can:', options: ['Lose less', 'Change payoff matrix', 'Add strategies', 'Improve by unilaterally deviating'], answer: 3 },
-    { q: 'For large zero-sum games, the value of the game and optimal strategies can be found by solving a:', options: ['Differential equation', 'Matrix equation only', 'Graph problem', 'Linear programming problem'], answer: 3 },
+    { q: 'The Prisoner\'s Dilemma is an example of a game where the Nash equilibrium is:', options: ['Both cooperate','Saddle point','Pareto inefficient (both defect, worse for both)','Pareto optimal'], answer: 2 },
+    { q: 'A Nash equilibrium is a strategy profile where no player can:', options: ['Lose less','Change payoff matrix','Add strategies','Improve by unilaterally deviating'], answer: 3 },
+    { q: 'For large zero-sum games, the value of the game and optimal strategies can be found by solving a:', options: ['Linear programming problem','Graph problem','Matrix equation only','Differential equation'], answer: 0 },
   ],
 },
 
@@ -751,10 +751,10 @@ const FM_OCR_MCQ = {
     { q: 'The recurrence \\(u_{n+2}-4u_{n+1}+4u_n=0\\) has repeated root \\(m=2\\). General solution:', options: ['\\(A\\cdot2^{n+1}+B\\cdot4^n\\)', '\\(A+B\\cdot2^n\\)', '\\(An\\cdot2^n\\)', '\\((An+B)\\cdot2^n\\)'], answer: 3 },
   ],
   red: [
-    { q: 'For non-homogeneous \\(u_{n+2}+pu_{n+1}+qu_n=f(n)\\), the particular solution trial for \\(f(n)=k^n\\) (where \\(k\\) is not a root of aux eqn) is:', options: ['\\(An^2k^n\\)', '\\(Ank^n\\)', '\\(A\\)', '\\(Ak^n\\)'], answer: 3 },
-    { q: 'If \\(k\\) is a simple root of the aux eqn, PI trial for \\(f(n)=k^n\\) becomes:', options: ['\\(Ak^n\\)', '\\(Ak^{2n}\\)', '\\(An^2k^n\\)', '\\(Ank^n\\)'], answer: 3 },
-    { q: 'The \\(Z\\)-transform is to recurrence relations as the \\(\\rule{0.5cm}{0.4pt}\\) is to differential equations:', options: ['Taylor series', 'Fourier transform', 'Remainder theorem', 'Laplace transform'], answer: 3 },
-    { q: 'Tower of Hanoi recurrence: \\(T_n=2T_{n-1}+1, T_1=1\\). Solving gives \\(T_n=\\)', options: ['\\(2^n\\)', '\\(n^2\\)', '\\(n\\cdot2^n\\)', '\\(2^n-1\\)'], answer: 3 },
+    { q: 'For non-homogeneous \\(u_{n+2}+pu_{n+1}+qu_n=f(n)\\), the particular solution trial for \\(f(n)=k^n\\) (where \\(k\\) is not a root of aux eqn) is:', options: ['\\(An^2k^n\\)','\\(Ank^n\\)','\\(A\\)','\\(Ak^n\\)'], answer: 3 },
+    { q: 'If \\(k\\) is a simple root of the aux eqn, PI trial for \\(f(n)=k^n\\) becomes:', options: ['\\(Ank^n\\)','\\(Ak^n\\)','\\(An^2k^n\\)','\\(Ak^{2n}\\)'], answer: 0 },
+    { q: 'The \\(Z\\)-transform is to recurrence relations as the \\(\\rule{0.5cm}{0.4pt}\\) is to differential equations:', options: ['Fourier transform','Taylor series','Laplace transform','Remainder theorem'], answer: 2 },
+    { q: 'Tower of Hanoi recurrence: \\(T_n=2T_{n-1}+1, T_1=1\\). Solving gives \\(T_n=\\)', options: ['\\(n^2\\)','\\(n\\cdot2^n\\)','\\(2^n\\)','\\(2^n-1\\)'], answer: 3 },
   ],
 },
 
