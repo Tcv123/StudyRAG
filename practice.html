@@ -1342,43 +1342,43 @@ const SUBJECT_EMOJIS = Object.fromEntries(
   (window.SUBJECTS_CONFIG?.subjects || []).map(s => [s.name, s.emoji])
 );
 
-// Maps "Subject_Board" (plus optional "_Board|alevel" variant) → diagnostic URL.
-// Used to gate practice behind diagnostic completion so users start with a
-// RAG baseline before drilling questions.
+// Maps "Subject_Board" (plus optional "_Board|alevel" variant) → {url, total}.
+// `total` is the number of topics in the diagnostic — practice unlocks only
+// when the user has recorded that many topic_progress rows for the subject.
 const DIAG_PAGE = {
-  'Computer Science_OCR':         'diagnostics/cs-ocr-gcse-diagnostic.html',
-  'Computer Science_OCR|alevel':  'diagnostics/cs-ocr-alevel-diagnostic.html',
-  'Computer Science_AQA':         'diagnostics/cs-aqa-diagnostic.html',
-  'Physics_Edexcel':              'diagnostics/physics-edexcel-diagnostic.html',
-  'Physics_AQA':                  'diagnostics/physics-aqa-diagnostic.html',
-  'Physics_OCR A':                'diagnostics/physics-ocr-a-diagnostic.html',
-  'Physics_OCR B':                'diagnostics/physics-ocr-b-diagnostic.html',
-  'Economics_AQA':                'diagnostics/economics-aqa-diagnostic.html',
-  'Economics_Edexcel A':          'diagnostics/economics-edexcel-a-diagnostic.html',
-  'Economics_Edexcel B':          'diagnostics/economics-edexcel-b-diagnostic.html',
-  'Economics_OCR':                'diagnostics/economics-ocr-diagnostic.html',
-  'Chemistry_AQA':                'diagnostics/chemistry-aqa-diagnostic.html',
-  'Chemistry_Edexcel':            'diagnostics/chemistry-edexcel-diagnostic.html',
-  'Chemistry_OCR A':              'diagnostics/chemistry-ocr-a-diagnostic.html',
-  'Chemistry_OCR B':              'diagnostics/chemistry-ocr-b-diagnostic.html',
-  'Biology_AQA':                  'diagnostics/biology-aqa-diagnostic.html',
-  'Biology_Edexcel A':            'diagnostics/biology-edexcel-a-diagnostic.html',
-  'Biology_Edexcel B':            'diagnostics/biology-edexcel-b-diagnostic.html',
-  'Biology_OCR A':                'diagnostics/biology-ocr-a-diagnostic.html',
-  'Biology_OCR B':                'diagnostics/biology-ocr-b-diagnostic.html',
-  'Geography_AQA':                'diagnostics/geography-aqa-diagnostic.html',
-  'Geography_Edexcel':            'diagnostics/geography-edexcel-diagnostic.html',
-  'Geography_OCR':                'diagnostics/geography-ocr-diagnostic.html',
-  'Geography_Eduqas':             'diagnostics/geography-eduqas-diagnostic.html',
-  'Mathematics_AQA':              'diagnostics/maths-aqa-diagnostic.html',
-  'Mathematics_OCR':              'diagnostics/maths-ocr-diagnostic.html',
-  'Mathematics_Edexcel':          'diagnostics/maths-edexcel-diagnostic.html',
-  'Further Mathematics_AQA':      'diagnostics/further-maths-aqa-diagnostic.html',
-  'Further Mathematics_Edexcel':  'diagnostics/further-maths-edexcel-diagnostic.html',
-  'Further Mathematics_OCR A':    'diagnostics/further-maths-ocr-diagnostic.html',
-  'Further Mathematics_OCR B':    'diagnostics/further-maths-ocr-b-diagnostic.html',
-  'English Language_AQA':         'diagnostics/english-aqa-diagnostic.html',
-  'English Language_Edexcel':     'diagnostics/english-edexcel-diagnostic.html',
+  'Computer Science_OCR':         { url: 'diagnostics/cs-ocr-gcse-diagnostic.html',      total: 11 },
+  'Computer Science_OCR|alevel':  { url: 'diagnostics/cs-ocr-alevel-diagnostic.html',    total: 8  },
+  'Computer Science_AQA':         { url: 'diagnostics/cs-aqa-diagnostic.html',           total: 8  },
+  'Physics_Edexcel':              { url: 'diagnostics/physics-edexcel-diagnostic.html',  total: 13 },
+  'Physics_AQA':                  { url: 'diagnostics/physics-aqa-diagnostic.html',      total: 8  },
+  'Physics_OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6  },
+  'Physics_OCR B':                { url: 'diagnostics/physics-ocr-b-diagnostic.html',    total: 6  },
+  'Economics_AQA':                { url: 'diagnostics/economics-aqa-diagnostic.html',         total: 10 },
+  'Economics_Edexcel A':          { url: 'diagnostics/economics-edexcel-a-diagnostic.html',   total: 8  },
+  'Economics_Edexcel B':          { url: 'diagnostics/economics-edexcel-b-diagnostic.html',   total: 8  },
+  'Economics_OCR':                { url: 'diagnostics/economics-ocr-diagnostic.html',         total: 8  },
+  'Chemistry_AQA':                { url: 'diagnostics/chemistry-aqa-diagnostic.html',         total: 6  },
+  'Chemistry_Edexcel':            { url: 'diagnostics/chemistry-edexcel-diagnostic.html',     total: 6  },
+  'Chemistry_OCR A':              { url: 'diagnostics/chemistry-ocr-a-diagnostic.html',       total: 6  },
+  'Chemistry_OCR B':              { url: 'diagnostics/chemistry-ocr-b-diagnostic.html',       total: 6  },
+  'Biology_AQA':                  { url: 'diagnostics/biology-aqa-diagnostic.html',           total: 8  },
+  'Biology_Edexcel A':            { url: 'diagnostics/biology-edexcel-a-diagnostic.html',     total: 8  },
+  'Biology_Edexcel B':            { url: 'diagnostics/biology-edexcel-b-diagnostic.html',     total: 8  },
+  'Biology_OCR A':                { url: 'diagnostics/biology-ocr-a-diagnostic.html',         total: 6  },
+  'Biology_OCR B':                { url: 'diagnostics/biology-ocr-b-diagnostic.html',         total: 6  },
+  'Geography_AQA':                { url: 'diagnostics/geography-aqa-diagnostic.html',         total: 8  },
+  'Geography_Edexcel':            { url: 'diagnostics/geography-edexcel-diagnostic.html',     total: 8  },
+  'Geography_OCR':                { url: 'diagnostics/geography-ocr-diagnostic.html',         total: 8  },
+  'Geography_Eduqas':             { url: 'diagnostics/geography-eduqas-diagnostic.html',      total: 12 },
+  'Mathematics_AQA':              { url: 'diagnostics/maths-aqa-diagnostic.html',             total: 17 },
+  'Mathematics_OCR':              { url: 'diagnostics/maths-ocr-diagnostic.html',             total: 19 },
+  'Mathematics_Edexcel':          { url: 'diagnostics/maths-edexcel-diagnostic.html',         total: 19 },
+  'Further Mathematics_AQA':      { url: 'diagnostics/further-maths-aqa-diagnostic.html',     total: 9  },
+  'Further Mathematics_Edexcel':  { url: 'diagnostics/further-maths-edexcel-diagnostic.html', total: 17 },
+  'Further Mathematics_OCR A':    { url: 'diagnostics/further-maths-ocr-diagnostic.html',     total: 25 },
+  'Further Mathematics_OCR B':    { url: 'diagnostics/further-maths-ocr-b-diagnostic.html',   total: 25 },
+  'English Language_AQA':         { url: 'diagnostics/english-aqa-diagnostic.html',           total: 11 },
+  'English Language_Edexcel':     { url: 'diagnostics/english-edexcel-diagnostic.html',       total: 11 },
 };
 
 async function init() {
@@ -1460,21 +1460,23 @@ function showSubjectCards() {
     const red = subjProgress.filter(p => p.rag_status === 'red').length;
     const tested = green + amber + red;
 
-    // Diagnostic gate — push users to diagnostic before practice if they
-    // haven't recorded any RAG data for this subject+board yet.
-    if (tested === 0) {
-      const diagUrl = _lvLookup(DIAG_PAGE, key);
-      if (diagUrl) {
-        return `
-          <a href="${diagUrl}" class="subj-pick needs-diag" style="text-decoration:none;color:inherit;" title="Start with the diagnostic to unlock practice questions.">
-            <div class="subj-pick-emoji">${emoji}</div>
-            <div class="subj-pick-info">
-              <div class="subj-pick-name">${s.subject}<span class="subj-pick-diag-tag">◎ Diagnostic first</span></div>
-              <div class="subj-pick-board">${s.exam_board} · <span style="font-size:11px;color:#B45309;">Take the diagnostic to unlock practice</span></div>
-            </div>
-            <div class="subj-pick-arrow" style="color:#D97706;">→</div>
-          </a>`;
-      }
+    // Diagnostic gate — require the full diagnostic (all topics) before
+    // practice questions unlock for this subject+board.
+    const diag = _lvLookup(DIAG_PAGE, key);
+    if (diag && tested < diag.total) {
+      const remaining = diag.total - tested;
+      const gateMsg = tested === 0
+        ? `Take the ${diag.total}-topic diagnostic to unlock practice`
+        : `${tested}/${diag.total} done — ${remaining} topic${remaining === 1 ? '' : 's'} left to unlock`;
+      return `
+        <a href="${diag.url}" class="subj-pick needs-diag" style="text-decoration:none;color:inherit;" title="Finish the diagnostic to unlock practice questions.">
+          <div class="subj-pick-emoji">${emoji}</div>
+          <div class="subj-pick-info">
+            <div class="subj-pick-name">${s.subject}<span class="subj-pick-diag-tag">◎ Finish diagnostic</span></div>
+            <div class="subj-pick-board">${s.exam_board} · <span style="font-size:11px;color:#B45309;">${gateMsg}</span></div>
+          </div>
+          <div class="subj-pick-arrow" style="color:#D97706;">→</div>
+        </a>`;
     }
 
     const ragSummary = tested > 0
