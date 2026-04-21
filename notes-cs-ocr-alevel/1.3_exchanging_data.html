@@ -210,6 +210,15 @@
 
 <p>Reversing the roles of the key pair gives a <strong>digital signature</strong>. The sender hashes the message, encrypts the hash with their <strong>private</strong> key and sends both message and signature. The receiver decrypts the signature with the sender's <strong>public</strong> key and compares the result with a freshly computed hash. If they match, the message is authentic (only the holder of the private key could have signed it) and untampered (any change would alter the hash).</p>
 
+<p>Digital signatures provide three guarantees at once:</p>
+<ul>
+    <li><strong>Authenticity</strong> &mdash; the message really came from the claimed sender.</li>
+    <li><strong>Integrity</strong> &mdash; the message has not been altered in transit.</li>
+    <li><strong>Non-repudiation</strong> &mdash; the sender cannot later plausibly deny having sent it, because only they hold the private key.</li>
+</ul>
+
+<p>This is why HTTPS certificates (issued by a Certificate Authority) are digitally signed: your browser trusts <code>www.ocr.org.uk</code> because it can verify the CA's signature on OCR's certificate against the CA's public key, which is built into the operating system.</p>
+
 <h3>Hashing</h3>
 
 <div class="definition">
@@ -228,6 +237,8 @@
     <li><strong>Hash tables</strong> &mdash; the hash of a key picks a bucket (covered in 2.2). A <strong>collision</strong> is when two distinct inputs hash to the same bucket; handled by chaining or open addressing.</li>
     <li><strong>Digital signatures / blockchains</strong> &mdash; hashes chain blocks and authenticate messages.</li>
 </ul>
+
+<p><strong>Forward reference to 2.2:</strong> a hash table uses a hash function to map a key directly to an array index, giving average O(1) insert and lookup. If two keys hash to the same index (a <strong>collision</strong>), the table resolves it via <em>separate chaining</em> (a linked list at each bucket) or <em>open addressing</em> (probing the next bucket). For this to work well, the hash function must spread keys evenly; a poor hash degrades lookup to O(n). Password hashing uses a slow, salted cryptographic hash (bcrypt, scrypt, Argon2) deliberately &mdash; the opposite of what you want for a hash table &mdash; to make offline brute-force attacks expensive.</p>
 
 <div class="exam-tip">Encryption and hashing are frequently confused. <strong>Encryption is two-way</strong>: the ciphertext can be decrypted back to plaintext using a key. <strong>Hashing is one-way</strong>: there is no decrypt operation. You store passwords as hashes (not encrypted) precisely because even a full database leak should not reveal the originals.</div>
 
@@ -386,6 +397,17 @@
 
 <div class="exam-tip">Students often confuse normalisation with compression. They are unrelated. <strong>Normalisation</strong> removes logical redundancy in a relational database so each fact is stored once. <strong>Compression</strong> is a separate, lower-level process that reduces the physical number of bits needed to represent a file on disk or transmit it over a network.</div>
 
+<h3>Update, Insert and Delete Anomalies</h3>
+
+<p>Poorly normalised databases are prone to three kinds of anomaly, each of which is removed by progressing to a higher normal form.</p>
+
+<table>
+    <tr><th>Anomaly</th><th>What goes wrong</th><th>Example</th></tr>
+    <tr><td><strong>Update anomaly</strong></td><td>The same fact is stored in many rows, so an update must find and change them all or else leave the database inconsistent.</td><td>A tutor's room number is duplicated against every student they teach. If the tutor changes room, every row must be updated.</td></tr>
+    <tr><td><strong>Insertion anomaly</strong></td><td>You cannot record a fact because some required related fact is missing.</td><td>You cannot add a new course until at least one student has enrolled, because the course details live inside the student table.</td></tr>
+    <tr><td><strong>Deletion anomaly</strong></td><td>Deleting one record accidentally destroys unrelated information.</td><td>Removing the last student of a particular course also removes the only record of that course's existence.</td></tr>
+</table>
+
 <h3>Referential Integrity</h3>
 
 <div class="definition">
@@ -438,6 +460,23 @@ ORDER BY S.Surname;</pre>
 
 <p><code>WHERE</code> filters <em>rows</em> before grouping. <code>HAVING</code> filters <em>groups</em> after <code>GROUP BY</code> has done its work. Mixing them up is a classic exam error.</p>
 
+<h3>JOIN types</h3>
+
+<table>
+    <tr><th>Join</th><th>Meaning</th></tr>
+    <tr><td><strong>INNER JOIN</strong></td><td>Rows appearing in both tables where the ON condition matches. Non-matching rows are omitted.</td></tr>
+    <tr><td><strong>LEFT (OUTER) JOIN</strong></td><td>All rows from the left table; matching rows from the right if any, otherwise NULLs. Useful for &ldquo;list all students including those not on a course&rdquo;.</td></tr>
+    <tr><td><strong>RIGHT (OUTER) JOIN</strong></td><td>Mirror image &mdash; all rows from the right table.</td></tr>
+    <tr><td><strong>FULL OUTER JOIN</strong></td><td>All rows from both tables; missing sides filled with NULLs.</td></tr>
+    <tr><td><strong>CROSS JOIN</strong></td><td>Cartesian product &mdash; every row in A paired with every row in B. Rarely what you want; often a mistake.</td></tr>
+</table>
+
+<pre>-- LEFT JOIN: include students who are not yet assigned a course
+SELECT   S.Forename, S.Surname, C.Title
+FROM     Student S
+LEFT JOIN Course  C ON S.CourseID = C.CourseID
+ORDER BY S.Surname;</pre>
+
 <div class="exam-tip">Remember the SQL keyword order: <code>SELECT &hellip; FROM &hellip; JOIN &hellip; WHERE &hellip; GROUP BY &hellip; HAVING &hellip; ORDER BY</code>. The DBMS executes them roughly in the order FROM &rarr; WHERE &rarr; GROUP BY &rarr; HAVING &rarr; SELECT &rarr; ORDER BY.</div>
 
 <h3>Transaction Processing and ACID</h3>
@@ -482,6 +521,8 @@ COMMIT;</pre>
     <li><strong>Data exchange formats</strong> &mdash; CSV, XML and JSON for passing data between systems. Mainstream web APIs use JSON.</li>
 </ul>
 
+<p>Automated capture methods matter because they reduce transcription errors and increase throughput. A supermarket till scanning a barcode takes milliseconds and cannot make a typo; a human keying the same number takes seconds and may get one digit wrong. Validating data at the point of capture (check digits on barcodes, format rules on online forms) catches errors before they enter the database, where they are expensive to fix.</p>
+
 <h2>1.3.3 Networks</h2>
 
 <h3>Types and Characteristics</h3>
@@ -500,6 +541,18 @@ COMMIT;</pre>
 <h3>Protocols and Why They Matter</h3>
 
 <p>A <strong>protocol</strong> is an agreed set of rules governing communication: format, timing, error handling, sequencing. Without shared protocols, machines from different vendors could not interoperate.</p>
+
+<p><strong>Real-world example of the bandwidth/latency distinction:</strong> a satellite broadband link may offer 100&nbsp;Mbps of bandwidth but adds 600&nbsp;ms of latency because of the 36,000&nbsp;km round-trip to geostationary orbit. Bulk downloads still complete quickly, but interactive applications (video calls, online gaming, SSH) feel laggy because each request must wait a full round-trip. A fibre link at 50&nbsp;Mbps and 5&nbsp;ms latency would feel far more responsive despite its lower &ldquo;headline&rdquo; speed.</p>
+
+<h3>Data Transmission Modes</h3>
+
+<ul>
+    <li><strong>Simplex</strong> &mdash; data flows in one direction only (TV broadcast, old serial printers).</li>
+    <li><strong>Half-duplex</strong> &mdash; data flows in both directions but not simultaneously (walkie-talkie).</li>
+    <li><strong>Full-duplex</strong> &mdash; data flows in both directions at the same time (modern Ethernet, Wi-Fi).</li>
+</ul>
+
+<p>Within a LAN, devices may be connected via a <strong>switch</strong>, which learns the MAC addresses of each attached device and forwards frames only to the correct port, or a (now mostly historical) <strong>hub</strong> which broadcast every frame to every port. Routers operate at the Internet/Network layer, forwarding packets between different networks on the basis of IP addresses.</p>
 
 <h3>The Internet, ISPs and DNS</h3>
 
@@ -568,6 +621,16 @@ COMMIT;</pre>
 <p><strong>Subnetting</strong> splits a large IP block into smaller networks by extending the number of bits reserved for the network portion of the address, e.g. <code>192.168.1.0/24</code> reserves 24 bits for network and leaves 8 bits (256 addresses) for hosts.</p>
 
 <p>A <strong>URL</strong> has the form <code>scheme://host:port/path?query#fragment</code>, for example <code>https://www.ocr.org.uk:443/qualifications/as-and-a-level/computer-science-h446/?year=2024#overview</code>.</p>
+
+<table>
+    <tr><th>URL Component</th><th>Example</th><th>Role</th></tr>
+    <tr><td>Scheme</td><td><code>https</code></td><td>Protocol used to fetch the resource.</td></tr>
+    <tr><td>Host</td><td><code>www.ocr.org.uk</code></td><td>Domain name resolved by DNS.</td></tr>
+    <tr><td>Port</td><td><code>443</code></td><td>Logical endpoint on the host (omitted if default).</td></tr>
+    <tr><td>Path</td><td><code>/qualifications/&hellip;/h446/</code></td><td>Identifies the resource on the server.</td></tr>
+    <tr><td>Query</td><td><code>?year=2024</code></td><td>Parameters passed to server-side code.</td></tr>
+    <tr><td>Fragment</td><td><code>#overview</code></td><td>Client-side anchor within the document.</td></tr>
+</table>
 
 <h3>TCP/IP and OSI Models</h3>
 
@@ -674,6 +737,22 @@ COMMIT;</pre>
 
 <p><strong>TLS handshake (simplified):</strong> client sends &ldquo;ClientHello&rdquo; with supported ciphers; server replies with its X.509 certificate and chosen cipher; client verifies the certificate chain against trusted root CAs; client and server perform a key-exchange (RSA or Diffie-Hellman) to derive a shared symmetric session key; the rest of the session is encrypted with AES (or similar).</p>
 
+<p><strong>TCP vs UDP in context:</strong> if you are downloading a spreadsheet, losing a single byte would corrupt the file, so TCP is ideal &mdash; it will retransmit anything lost and deliver bytes in order. If you are on a video call, a lost frame is better ignored than redelivered a second late, so UDP is preferred: the application handles loss by skipping or concealing. TCP's three-way handshake (SYN, SYN-ACK, ACK) establishes a connection and synchronises sequence numbers before any data flows.</p>
+
+<h3>Encapsulation as Data Descends the Stack</h3>
+
+<p>When an application sends data, each layer adds its own header (and possibly trailer) before passing the unit down. At the destination, each layer strips its corresponding header before passing the payload up. This nesting is called <strong>encapsulation</strong>.</p>
+
+<table>
+    <tr><th>Layer</th><th>Unit of data</th><th>Added by the layer</th></tr>
+    <tr><td>Application</td><td>Message (e.g. HTTP request)</td><td>Application-specific fields (URL, headers)</td></tr>
+    <tr><td>Transport</td><td>Segment (TCP) / Datagram (UDP)</td><td>Source + destination <strong>port</strong>, sequence #, checksum</td></tr>
+    <tr><td>Internet</td><td>Packet</td><td>Source + destination <strong>IP</strong>, TTL</td></tr>
+    <tr><td>Network Access</td><td>Frame</td><td>Source + destination <strong>MAC</strong>, CRC trailer</td></tr>
+</table>
+
+<div class="exam-tip">Ports identify <em>applications</em> on a host (80 for HTTP, 443 for HTTPS, 25 for SMTP, 53 for DNS). IP addresses identify <em>hosts</em> on a network. MAC addresses identify <em>network interfaces</em> on a local link. An examiner may ask which part of the stack each is associated with.</div>
+
 <h3>Client-Server vs Peer-to-Peer</h3>
 
 <table>
@@ -685,6 +764,10 @@ COMMIT;</pre>
     <tr><td>Security / control</td><td>Centralised administration, easier to secure</td><td>Harder to police, easier to abuse (piracy, malware)</td></tr>
     <tr><td>Cost</td><td>High server + hosting costs</td><td>Very low infrastructure cost</td></tr>
 </table>
+
+<h3>Peer-to-Peer: How BitTorrent Actually Works</h3>
+
+<p>A concrete case of P2P architecture: a BitTorrent user downloading a file does not contact a single central server. Instead, a small <code>.torrent</code> metadata file or magnet link describes the content and lists a <strong>tracker</strong> (or uses DHT, a distributed hash table, as a decentralised replacement). The tracker returns a list of peers already holding chunks of the file. The client simultaneously downloads different chunks from different peers and, as soon as it has any chunk, starts uploading it to others. The more popular the file, the faster it downloads &mdash; the opposite of a central server, which gets overloaded by popularity. The cost to the content publisher is near zero: they only need enough initial seed bandwidth to push each chunk out once, after which the swarm distributes it.</p>
 
 <h3>Firewalls</h3>
 
@@ -706,6 +789,8 @@ COMMIT;</pre>
     <li><strong>MAC filtering</strong> &mdash; only devices whose MAC addresses appear in an allow-list may join. Trivially bypassed by spoofing MAC addresses.</li>
     <li><strong>WPA</strong> replaced the broken WEP in 2003. <strong>WPA2</strong> uses AES-CCMP and has been the standard since 2006. <strong>WPA3</strong> (2018) adds individualised data encryption (SAE) and protects against offline dictionary attacks on the handshake.</li>
 </ul>
+
+<p>Wireless networks are inherently broadcast media &mdash; anyone within range can receive the radio signal, so encryption is not optional. A home router typically offers WPA2-PSK (pre-shared key) where all devices share one passphrase; an enterprise deployment uses WPA2/3-Enterprise with 802.1X authentication so each user has individual credentials that can be revoked.</p>
 
 <div class="exam-tip">Hiding an SSID and using MAC filtering are not substitutes for strong encryption. Examiners expect you to recognise these as weak, "security by obscurity" measures and recommend WPA2 or WPA3 as the real defence.</div>
 
@@ -771,6 +856,8 @@ document.getElementById('btn').addEventListener('click', () =&gt; {
 
 <p>PageRank is just one input to modern ranking, which also considers content quality, query intent, personalisation and machine-learned signals (RankBrain, BERT-based relevance).</p>
 
+<p><strong>Why PageRank was revolutionary:</strong> early search engines (AltaVista, Lycos) ranked results by counting keyword matches on each page, which was easy to game &mdash; a spam page could stuff keywords into hidden text. PageRank shifted the basis of trust from what a page says about itself to what <em>other pages</em> say about it by linking. A link from an established authority (a university, a newspaper, another widely cited site) confers far more rank than a link from a freshly created spam site, because those authorities themselves have high PageRank. This feedback structure makes PageRank robust to single-source manipulation.</p>
+
 <h3>Server-Side Scripting</h3>
 
 <p>Server-side scripts run on the web server in response to each request, producing HTML (or JSON, for APIs) dynamically. Common stacks:</p>
@@ -786,6 +873,42 @@ document.getElementById('btn').addEventListener('click', () =&gt; {
 
 <div class="exam-tip">If a question asks "why use server-side scripting instead of just more JavaScript in the browser?", focus on three ideas: (1) access to private databases and secret keys which must never reach the client; (2) centralised business logic &mdash; one source of truth for every client, including mobile apps; (3) security &mdash; the user cannot tamper with code they cannot see.</div>
 
+<h2>Worked Case Studies</h2>
+
+<h3>Case Study 0: Login and Password Storage</h3>
+
+<p>When you sign up for an account the server does <em>not</em> save your password. Instead, it generates a random salt, concatenates it with your password, runs the result through a slow cryptographic hash (bcrypt, Argon2) and stores the pair <code>(salt, hash)</code>. When you log in next time, the server retrieves the salt, hashes <em>your</em> entered password with that salt, and compares the result to the stored hash. A match authenticates you. An attacker who steals the database gets only hashes &mdash; they cannot log in as any user without brute-forcing each password, and the salt ensures that pre-computed rainbow tables are useless. This is why reputable websites can never &ldquo;send you your password&rdquo;: they do not have it.</p>
+
+<h3>Case Study 1: Online Shop Checkout</h3>
+
+<p>A customer clicks &ldquo;Buy&rdquo; on an online shop. The touch-point exercises almost every concept in 1.3:</p>
+<ol>
+    <li>The browser resolves the shop's domain via <strong>DNS</strong> and opens a <strong>TCP</strong> connection to port 443.</li>
+    <li>A <strong>TLS handshake</strong> verifies the server's certificate and establishes a symmetric <strong>AES</strong> session key using <strong>asymmetric</strong> crypto.</li>
+    <li>The browser sends an <strong>HTTPS</strong> POST with order details. The payload is split into multiple <strong>packets</strong>, each carrying a <strong>header</strong> with source/destination IPs and sequence numbers, and routed independently.</li>
+    <li>The server-side script (<strong>PHP</strong>, <strong>Node</strong>&hellip;) queries a <strong>relational database</strong> inside a single <strong>ACID transaction</strong>: decrement stock, create an order, charge the payment processor. All four steps must succeed together or all roll back.</li>
+    <li>The user's password is never transmitted in the clear; only a <strong>salted hash</strong> is stored on the server for authentication.</li>
+    <li>The response HTML is returned, optionally <strong>GZIP compressed</strong> (LZ77 + Huffman) to save bandwidth.</li>
+</ol>
+
+<h3>Case Study 2: Streaming a Song</h3>
+
+<p>A music streaming service uses <strong>lossy compression</strong> (typically AAC) so that a 50&nbsp;MB studio file shrinks to ~5&nbsp;MB. Delivery uses <strong>HTTPS</strong> over <strong>TCP</strong> (for reliability) with adaptive bitrate so quality is downgraded when throughput drops. Metadata (track, artist, album art) is kept in a <strong>relational database</strong> indexed by track ID. Play counts are written asynchronously to avoid blocking the audio stream, illustrating the trade-off between strict ACID and high throughput.</p>
+
+<h2>Common Exam Pitfalls &mdash; Recap</h2>
+
+<ul>
+    <li><strong>Encryption vs hashing</strong> &mdash; encryption is reversible with a key; hashing is one-way.</li>
+    <li><strong>Normalisation vs compression</strong> &mdash; normalisation is logical (removes data redundancy); compression is physical (reduces bits).</li>
+    <li><strong>Bandwidth vs latency vs throughput</strong> &mdash; bandwidth is capacity, latency is delay, throughput is actually achieved rate.</li>
+    <li><strong>WHERE vs HAVING</strong> &mdash; WHERE filters rows; HAVING filters groups after <code>GROUP BY</code>.</li>
+    <li><strong>Client-side vs server-side validation</strong> &mdash; client-side is for UX; server-side is the only real security boundary.</li>
+    <li><strong>Symmetric vs asymmetric</strong> &mdash; asymmetric solves key distribution but is slow; real systems use it only to establish a symmetric session key.</li>
+    <li><strong>TCP vs UDP</strong> &mdash; TCP reliable and ordered; UDP fast and loss-tolerant.</li>
+    <li><strong>Circuit vs packet switching</strong> &mdash; circuit reserves a dedicated path (old phones); packet shares the network dynamically (the Internet).</li>
+    <li><strong>1:1, 1:M, M:N</strong> cardinalities &mdash; M:N must be resolved with a linking table.</li>
+</ul>
+
 <h2>Quick-Recall Summary</h2>
 
 <ul>
@@ -800,6 +923,27 @@ document.getElementById('btn').addEventListener('click', () =&gt; {
     <li><strong>Web</strong>: HTML = structure, CSS = style, JavaScript = behaviour. Server-side for trust and databases; client-side for responsiveness.</li>
     <li><strong>Search</strong>: crawl &rarr; index &rarr; rank. PageRank ranks by weighted incoming links.</li>
 </ul>
+
+<h2>Key Definitions At-a-Glance</h2>
+
+<table>
+    <tr><th>Term</th><th>Definition</th></tr>
+    <tr><td>Lossy compression</td><td>Discards data the human eye/ear cannot easily perceive; file cannot be restored to its original.</td></tr>
+    <tr><td>Lossless compression</td><td>Encodes data using fewer bits so the original can be perfectly reconstructed.</td></tr>
+    <tr><td>Huffman coding</td><td>Variable-length prefix code where frequent symbols get shorter codes.</td></tr>
+    <tr><td>Symmetric encryption</td><td>Single secret key used for both encryption and decryption (e.g. AES).</td></tr>
+    <tr><td>Asymmetric encryption</td><td>Public/private key pair; public key encrypts, private key decrypts (e.g. RSA).</td></tr>
+    <tr><td>Hash function</td><td>One-way function mapping arbitrary-length input to a fixed-length digest.</td></tr>
+    <tr><td>Primary key</td><td>Attribute (or combination) uniquely identifying each record.</td></tr>
+    <tr><td>Foreign key</td><td>Attribute referring to the primary key of another table.</td></tr>
+    <tr><td>Normalisation</td><td>Restructuring a database to eliminate redundancy and anomalies.</td></tr>
+    <tr><td>ACID</td><td>Atomicity, Consistency, Isolation, Durability &mdash; the guarantees a transaction must provide.</td></tr>
+    <tr><td>Protocol</td><td>Agreed set of rules governing communication between systems.</td></tr>
+    <tr><td>DNS</td><td>Distributed system translating domain names to IP addresses.</td></tr>
+    <tr><td>Packet switching</td><td>Technique of splitting data into packets routed independently across a shared network.</td></tr>
+    <tr><td>Firewall</td><td>Network device filtering traffic according to security rules.</td></tr>
+    <tr><td>PageRank</td><td>Algorithm ranking pages by the weighted count of incoming links.</td></tr>
+</table>
 
 </div>
 </body>
