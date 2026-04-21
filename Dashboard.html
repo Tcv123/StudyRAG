@@ -947,6 +947,11 @@ const EXAM_DATES = {
     { paper: 'Component 2 — Changing Human World', date: '2026-05-22', time: 'PM', duration: '1h 45m' },
     { paper: 'Component 3 — Environmental Challenges', date: '2026-06-09', time: 'AM', duration: '1h' },
   ],
+  'Geography_Eduqas|alevel': [
+    { paper: 'Component 1 — Changing Landscapes & Changing Places', date: '2026-05-19', time: 'AM', duration: '1h 45m' },
+    { paper: 'Component 2 — Global Systems & Global Governance', date: '2026-05-27', time: 'PM', duration: '2h' },
+    { paper: 'Component 3 — Contemporary Themes', date: '2026-06-04', time: 'AM', duration: '2h 15m' },
+  ],
   'English Language_AQA': [
     { paper: 'Paper 1 — Language, the Individual and Society', date: '2026-06-02', time: 'AM', duration: '2h 30m' },
     { paper: 'Paper 2 — Language Diversity and Change', date: '2026-06-11', time: 'AM', duration: '2h 30m' },
@@ -1300,6 +1305,7 @@ const SUBJECT_TOPIC_KEY = {
   'Geography_Edexcel': 'geography-edexcel',
   'Geography_OCR': 'geography-ocr',
   'Geography_Eduqas|gcse': 'geography-eduqas-gcse',
+  'Geography_Eduqas|alevel': 'geography-eduqas-alevel',
   'Mathematics_AQA': 'maths-aqa',
   'Mathematics_OCR|gcse': 'maths-ocr-gcse',
   'Mathematics_OCR|alevel': 'maths-ocr-alevel',
@@ -1311,7 +1317,7 @@ const SUBJECT_TOPIC_KEY = {
   'English Language_AQA': 'english-aqa',
   'English Language_Edexcel': 'english-edexcel',
 };
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'geography-eduqas-alevel': 10, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
 const SUBJECT_NOTES_PAGE = {
   'Computer Science_OCR': 'subject-notes/cs-ocr-gcse-notes.html',
   'Computer Science_OCR|alevel': 'subject-notes/cs-ocr-alevel-notes.html',
@@ -1338,6 +1344,7 @@ const SUBJECT_NOTES_PAGE = {
   'Geography_Edexcel': 'subject-notes/geography-edexcel-notes.html',
   'Geography_OCR': 'subject-notes/geography-ocr-notes.html',
   'Geography_Eduqas|gcse': 'subject-notes/geography-eduqas-gcse-notes.html',
+  'Geography_Eduqas|alevel': 'subject-notes/geography-eduqas-alevel-notes.html',
   'Mathematics_AQA': 'subject-notes/maths-aqa-notes.html',
   'Mathematics_OCR|gcse': 'subject-notes/maths-ocr-gcse-notes.html',
   'Mathematics_OCR|alevel': 'subject-notes/maths-ocr-alevel-notes.html',
@@ -2385,6 +2392,23 @@ const DIAG_TOPICS = {
       { id: '2.4', name: 'Human Rights', sub: 'Development, health, gender, education' },
       { id: '2.5', name: 'Power & Borders', sub: 'Sovereignty, superpowers, global governance' },
     ],
+  },
+  'Geography_Eduqas|alevel': {
+    label: 'Geography — Eduqas',
+    emoji: '🌍',
+    page: 'diagnostics/geography-eduqas-alevel-diagnostic.html',
+    topics: [
+      { id: '1.1', name: 'Coastal Landscapes', sub: 'Coastal systems, processes, landforms, SMPs, case studies' },
+      { id: '1.2', name: 'Glaciated Landscapes', sub: 'Glacial systems, processes, landforms, periglacial' },
+      { id: '1.3', name: 'Changing Places', sub: 'Place concept, representation, identity, connections' },
+      { id: '2.1', name: 'Water Cycle & Water Insecurity', sub: 'Hydrological cycle, drainage basins, water budgets' },
+      { id: '2.2', name: 'Carbon Cycle & Energy Security', sub: 'Carbon stores, fluxes, fossil fuels, renewables' },
+      { id: '2.3', name: 'Global Migration', sub: 'Drivers, flows, impacts, policies, case studies' },
+      { id: '2.4', name: 'Global Governance of Oceans', sub: 'UNCLOS, sovereignty, fishing, pollution' },
+      { id: '2.5', name: '21st Century Challenges', sub: 'Synoptic: development, inequality, interdependence' },
+      { id: '3.1', name: 'Tectonic Hazards', sub: 'Plate tectonics, volcanoes, earthquakes, risk management' },
+      { id: '3.2', name: 'Ecosystems', sub: 'Biomes, biodiversity, succession, human impact' },
+    ]
   },
   'Geography_Eduqas|gcse': {
     label: 'Geography — Eduqas',

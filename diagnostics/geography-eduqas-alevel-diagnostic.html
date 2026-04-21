@@ -9,8 +9,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../supabase-config.js"></script>
   <script src="../study-tracker.js"></script>
-  <script src="../questions/geography-aqa/geography-aqa.js"></script>
-  <script src="../questions/geography-aqa/geography-aqa-written.js"></script>
+  <script src="../questions/geography-eduqas-alevel/geography-eduqas-alevel.js"></script>
+  <script src="../questions/geography-eduqas-alevel/geography-eduqas-alevel-written.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -301,15 +301,15 @@ async function init() {
   if (!session) { location.href = '../auth/login.html'; return; }
   user = session.user;
 
-  const mcqData     = GEOGRAPHY_AQA_QUESTIONS[topicKey];
-  const writtenData = GEOGRAPHY_AQA_WRITTEN?.[topicKey];
+  const mcqData     = GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS[topicKey];
+  const writtenData = GEOGRAPHY_EDUQAS_ALEVEL_WRITTEN?.[topicKey];
 
   if (!mcqData) { showError(`Topic "${topicKey}" not found.`); return; }
 
   document.title = `RAG Learning — Diagnostic ${topicKey}`;
   document.getElementById('topicBadge').textContent = `${topicKey} — ${mcqData.name}`;
 
-  const storeKey = `diag_geography_aqa_${topicKey}`;
+  const storeKey = `diag_geography_eduqas_alevel_${topicKey}`;
   const saved = sessionStorage.getItem(storeKey);
   if (saved) {
     try { questions = JSON.parse(saved); } catch(e) { questions = null; }
@@ -708,7 +708,7 @@ function nextQuestion() {
 async function renderResult() {
   const rag     = computeRag(results);
   const content = RAG[rag];
-  const topicData = GEOGRAPHY_AQA_QUESTIONS[topicKey];
+  const topicData = GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS[topicKey];
 
   const chips = results.map((r, i) => {
     const label = r.type === 'written'
@@ -729,14 +729,14 @@ async function renderResult() {
         <div class="spinner"></div> Saving result…
       </div>
       <div class="result-actions" id="resultActions" style="display:none">
-        <a class="btn-primary" href="../Dashboard.html#diagnostic=Geography_AQA">← Back to diagnostics</a>
+        <a class="btn-primary" href="../Dashboard.html#diagnostic=Geography_Eduqas">← Back to diagnostics</a>
         <a class="btn-outline" href="../Dashboard.html">Back to Dashboard</a>
       </div>
     </div>
   `;
 
   await saveResult(rag, results);
-  sessionStorage.removeItem(`diag_geography_aqa_${topicKey}`);
+  sessionStorage.removeItem(`diag_geography_eduqas_alevel_${topicKey}`);
   document.getElementById('savingRow').style.display = 'none';
   document.getElementById('resultActions').style.display = 'flex';
 }
@@ -749,19 +749,19 @@ async function saveResult(rag, results) {
     // Delete existing row first
     const { error: delErr } = await supabaseClient.from('topic_progress')
       .delete()
-      .eq('user_id', user.id).eq('subject', 'Geography').eq('exam_board', 'AQA').eq('topic', topicKey);
+      .eq('user_id', user.id).eq('subject', 'Geography').eq('exam_board', 'Eduqas').eq('topic', topicKey);
     if (delErr) console.warn('SAVE: delete old row', delErr);
 
     // Insert fresh
     const { error: e1 } = await supabaseClient.from('topic_progress')
-      .insert({ user_id: user.id, subject: 'Geography', exam_board: 'AQA', topic: topicKey, rag_status: rag, updated_at: now });
+      .insert({ user_id: user.id, subject: 'Geography', exam_board: 'Eduqas', topic: topicKey, rag_status: rag, updated_at: now });
 
     if (e1) console.error('SAVE: insert failed', e1);
 
 
     const { data: allTopics } = await supabaseClient
       .from('topic_progress').select('rag_status')
-      .eq('user_id', user.id).eq('subject', 'Geography').eq('exam_board', 'AQA');
+      .eq('user_id', user.id).eq('subject', 'Geography').eq('exam_board', 'Eduqas');
 
     if (allTopics && allTopics.length > 0) {
       const total = allTopics.length;
@@ -769,7 +769,7 @@ async function saveResult(rag, results) {
       const red   = allTopics.filter(t => t.rag_status === 'red').length;
       const subjRag = (green / total) >= 0.7 ? 'green' : (red / total) >= 0.4 ? 'red' : 'amber';
       await supabaseClient.from('user_subjects').update({ rag_status: subjRag })
-        .eq('user_id', user.id).eq('subject', 'Geography').eq('exam_board', 'AQA');
+        .eq('user_id', user.id).eq('subject', 'Geography').eq('exam_board', 'Eduqas');
     }
 
     if (rag === 'green' && results.every(r => r.pts > 0)) {

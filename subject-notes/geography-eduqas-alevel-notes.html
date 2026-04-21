@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAG Learning — AQA Geography Notes</title>
+  <title>RAG Learning — Eduqas A-Level Geography Notes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -158,92 +158,112 @@
     <div class="topics-header">
       <div class="topics-subject">Geography</div>
       <div class="topics-title">Revision Notes</div>
-      <div class="topics-board">&#x1F30D; AQA &#xB7; A-Level</div>
+      <div class="topics-board">&#x1F30D; Eduqas &#xB7; A-Level (A110QS)</div>
     </div>
     <div class="topics-body">
-      <div class="paper-label">Paper 1 &#x2014; Physical Geography</div>
-      <button class="topic-btn" id="topicBtn-1.1" onclick="openTopic(this, '1.1', 'Water &amp; Carbon Cycles', '../notes-geography-aqa-alevel/1.1_water_and_carbon_cycles.html')">
+      <div class="paper-label">Component 1 &#x2014; Changing Landscapes &amp; Changing Places</div>
+      <button class="topic-btn" id="topicBtn-1.1" onclick="openTopic(this, '1.1', 'Coastal Landscapes', '../notes-geography-eduqas-alevel/1.1_coastal_landscapes.html')">
         <div class="topic-main">
           <div class="topic-num">1.1</div>
           <div class="topic-info">
-            <div class="topic-name">Water &amp; Carbon Cycles</div>
-            <div class="topic-sub">Global water cycle, carbon stores, drainage basins</div>
+            <div class="topic-name">Coastal Landscapes</div>
+            <div class="topic-sub">Coastal systems, processes, landforms, SMPs, case studies</div>
           </div>
           <span class="rag-dot" id="rag-1.1"></span>
         </div>
       </button>
-      <button class="topic-btn" id="topicBtn-1.2" onclick="openTopic(this, '1.2', 'Coastal Systems &amp; Landscapes', '../notes-geography-aqa-alevel/1.2_coastal_systems_and_landscapes.html')">
+      <button class="topic-btn" id="topicBtn-1.2" onclick="openTopic(this, '1.2', 'Glaciated Landscapes', '../notes-geography-eduqas-alevel/1.2_glaciated_landscapes.html')">
         <div class="topic-main">
           <div class="topic-num">1.2</div>
           <div class="topic-info">
-            <div class="topic-name">Coastal Systems &amp; Landscapes</div>
-            <div class="topic-sub">Waves, erosion, transport, landforms, management</div>
+            <div class="topic-name">Glaciated Landscapes</div>
+            <div class="topic-sub">Glacial systems, processes, landforms, periglacial, management</div>
           </div>
           <span class="rag-dot" id="rag-1.2"></span>
         </div>
       </button>
-      <button class="topic-btn" id="topicBtn-1.3" onclick="openTopic(this, '1.3', 'Hazards', '../notes-geography-aqa-alevel/1.3_hazards.html')">
+      <button class="topic-btn" id="topicBtn-1.3" onclick="openTopic(this, '1.3', 'Changing Places', '../notes-geography-eduqas-alevel/1.3_changing_places.html')">
         <div class="topic-main">
           <div class="topic-num">1.3</div>
           <div class="topic-info">
-            <div class="topic-name">Hazards</div>
-            <div class="topic-sub">Plate tectonics, volcanoes, earthquakes, tropical storms</div>
+            <div class="topic-name">Changing Places</div>
+            <div class="topic-sub">Place concept, representation, identity, connections, local studies</div>
           </div>
           <span class="rag-dot" id="rag-1.3"></span>
         </div>
       </button>
 
-      <div class="paper-label">Paper 2 &#x2014; Human Geography</div>
-      <button class="topic-btn" id="topicBtn-2.1" onclick="openTopic(this, '2.1', 'Changing Places', '../notes-geography-aqa-alevel/2.1_changing_places.html')">
+      <div class="paper-label">Component 2 &#x2014; Global Systems &amp; Global Governance</div>
+      <button class="topic-btn" id="topicBtn-2.1" onclick="openTopic(this, '2.1', 'Water Cycle &amp; Water Insecurity', '../notes-geography-eduqas-alevel/2.1_water_cycle_and_water_insecurity.html')">
         <div class="topic-main">
           <div class="topic-num">2.1</div>
           <div class="topic-info">
-            <div class="topic-name">Changing Places</div>
-            <div class="topic-sub">Place meaning, identity, representation</div>
+            <div class="topic-name">Water Cycle &amp; Water Insecurity</div>
+            <div class="topic-sub">Hydrological cycle, drainage basins, water budgets, insecurity, conflict</div>
           </div>
           <span class="rag-dot" id="rag-2.1"></span>
         </div>
       </button>
-      <button class="topic-btn" id="topicBtn-2.2" onclick="openTopic(this, '2.2', 'Contemporary Urban Environments', '../notes-geography-aqa-alevel/2.2_contemporary_urban_environments.html')">
+      <button class="topic-btn" id="topicBtn-2.2" onclick="openTopic(this, '2.2', 'Carbon Cycle &amp; Energy Security', '../notes-geography-eduqas-alevel/2.2_carbon_cycle_and_energy_security.html')">
         <div class="topic-main">
           <div class="topic-num">2.2</div>
           <div class="topic-info">
-            <div class="topic-name">Contemporary Urban Environments</div>
-            <div class="topic-sub">Urbanisation, urban forms, sustainability</div>
+            <div class="topic-name">Carbon Cycle &amp; Energy Security</div>
+            <div class="topic-sub">Carbon stores, fluxes, fossil fuels, renewables, mitigation</div>
           </div>
           <span class="rag-dot" id="rag-2.2"></span>
         </div>
       </button>
-      <button class="topic-btn" id="topicBtn-2.3" onclick="openTopic(this, '2.3', 'Population &amp; the Environment', '../notes-geography-aqa-alevel/2.3_population_and_the_environment.html')">
+      <button class="topic-btn" id="topicBtn-2.3" onclick="openTopic(this, '2.3', 'Global Migration', '../notes-geography-eduqas-alevel/2.3_global_migration.html')">
         <div class="topic-main">
           <div class="topic-num">2.3</div>
           <div class="topic-info">
-            <div class="topic-name">Population &amp; the Environment</div>
-            <div class="topic-sub">DTM, migration, resource management</div>
+            <div class="topic-name">Processes &amp; Patterns of Global Migration</div>
+            <div class="topic-sub">Drivers, flows, impacts, policies, case studies</div>
           </div>
           <span class="rag-dot" id="rag-2.3"></span>
         </div>
       </button>
-      <button class="topic-btn" id="topicBtn-2.4" onclick="openTopic(this, '2.4', 'Resource Security', '../notes-geography-aqa-alevel/2.4_resource_security.html')">
+      <button class="topic-btn" id="topicBtn-2.4" onclick="openTopic(this, '2.4', 'Global Governance of Oceans', '../notes-geography-eduqas-alevel/2.4_global_governance_of_oceans.html')">
         <div class="topic-main">
           <div class="topic-num">2.4</div>
           <div class="topic-info">
-            <div class="topic-name">Resource Security</div>
-            <div class="topic-sub">Energy, water, food security</div>
+            <div class="topic-name">Global Governance of Earth&#x2019;s Oceans</div>
+            <div class="topic-sub">UNCLOS, sovereignty, fishing, pollution, management</div>
           </div>
           <span class="rag-dot" id="rag-2.4"></span>
         </div>
       </button>
+      <button class="topic-btn" id="topicBtn-2.5" onclick="openTopic(this, '2.5', '21st Century Challenges', '../notes-geography-eduqas-alevel/2.5_21st_century_challenges.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.5</div>
+          <div class="topic-info">
+            <div class="topic-name">21st Century Challenges</div>
+            <div class="topic-sub">Synoptic: development, inequality, interdependence, futures</div>
+          </div>
+          <span class="rag-dot" id="rag-2.5"></span>
+        </div>
+      </button>
 
-      <div class="paper-label">Paper 3 &#x2014; Fieldwork</div>
-      <button class="topic-btn" id="topicBtn-3.1" onclick="openTopic(this, '3.1', 'Fieldwork &amp; Investigation', '../notes-geography-aqa-alevel/3.1_fieldwork_and_investigation.html')">
+      <div class="paper-label">Component 3 &#x2014; Contemporary Themes (Optional)</div>
+      <button class="topic-btn" id="topicBtn-3.1" onclick="openTopic(this, '3.1', 'Tectonic Hazards', '../notes-geography-eduqas-alevel/3.1_tectonic_hazards.html')">
         <div class="topic-main">
           <div class="topic-num">3.1</div>
           <div class="topic-info">
-            <div class="topic-name">Fieldwork &amp; Investigation</div>
-            <div class="topic-sub">Methodology, sampling, data presentation</div>
+            <div class="topic-name">Tectonic Hazards</div>
+            <div class="topic-sub">Plate tectonics, volcanoes, earthquakes, risk management</div>
           </div>
           <span class="rag-dot" id="rag-3.1"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-3.2" onclick="openTopic(this, '3.2', 'Ecosystems', '../notes-geography-eduqas-alevel/3.2_ecosystems.html')">
+        <div class="topic-main">
+          <div class="topic-num">3.2</div>
+          <div class="topic-info">
+            <div class="topic-name">Ecosystems</div>
+            <div class="topic-sub">Biomes, biodiversity, succession, human impact, management</div>
+          </div>
+          <span class="rag-dot" id="rag-3.2"></span>
         </div>
       </button>
     </div>
@@ -260,7 +280,7 @@
       <div class="viewer-header">
         <div>
           <div class="viewer-title" id="viewerTitle">Topic</div>
-          <div class="viewer-sub" id="viewerSub">AQA A-Level Geography</div>
+          <div class="viewer-sub" id="viewerSub">Eduqas A-Level Geography</div>
         </div>
         <div class="viewer-actions">
           <a id="downloadBtn" href="#" download class="viewer-btn">&#x2B07; Download</a>
@@ -283,7 +303,7 @@
   queueMicrotask(() => { if (profile?.avatar_url) { const _av = document.getElementById('avatarInitials'), _img = document.createElement('img'); _img.src = profile.avatar_url; _img.alt = ''; _img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;'; _av.replaceChildren(_img); } });
   document.getElementById('avatarInitials').textContent = ((first[0]||'')+(last[0]||'')).toUpperCase() || '?';
   const { data: rows } = await supabaseClient.from('topic_progress').select('topic, rag_status')
-    .eq('user_id', user.id).eq('subject', 'Geography').eq('exam_board', 'AQA');
+    .eq('user_id', user.id).eq('subject', 'Geography').eq('exam_board', 'Eduqas');
   if (rows) { rows.forEach(row => { const dot = document.getElementById(`rag-${row.topic}`); if (dot) dot.className = `rag-dot ${row.rag_status}`; }); }
 })();
 function confirmSignOut(){document.getElementById('signoutOverlay').classList.add('active');}
@@ -295,7 +315,7 @@ function openTopic(btn, num, name, path) {
   document.getElementById('emptyState').style.display = 'none';
   document.getElementById('viewerContent').style.display = 'flex';
   document.getElementById('viewerTitle').textContent = `${num} — ${name}`;
-  document.getElementById('viewerSub').textContent = 'AQA A-Level Geography';
+  document.getElementById('viewerSub').textContent = 'Eduqas A-Level Geography';
   document.getElementById('pdfFrame').src = path;
   document.getElementById('downloadBtn').href = path;
   document.getElementById('openBtn').href = path;
