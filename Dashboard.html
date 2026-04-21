@@ -741,7 +741,11 @@
             <div class="streak-label" id="streakLabel">days in a row</div>
           </div>
           <div class="streak-days" id="streakDots"></div>
-          <div id="streakProgress" style="margin-top:14px;padding:10px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
+          <div id="streakGoalLabel" style="text-align:center;margin-top:8px;font-size:11px;color:var(--muted);">
+            <span style="opacity:0.8;">Session:</span> <span id="streakGoalValue" style="color:var(--accent-dark);font-weight:600;">30 min</span>
+            <a href="settings.html" style="margin-left:6px;color:var(--muted);text-decoration:none;opacity:0.6;" title="Change in settings">⚙</a>
+          </div>
+          <div id="streakProgress" style="margin-top:10px;padding:10px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
               <span style="font-size:12px;font-weight:600;color:var(--muted);">Today's study time</span>
               <span id="streakProgressLabel" style="font-size:12px;font-weight:600;color:var(--accent-dark);">0 / 30 min</span>
@@ -1904,12 +1908,30 @@ function renderStreak(count, lastDate) {
   updateStreakProgress();
 }
 
+function formatGoalMins(goalMins) {
+  if (goalMins >= 60 && goalMins % 60 === 0) {
+    const h = goalMins / 60;
+    return h === 1 ? '1 hour' : `${h} hours`;
+  }
+  if (goalMins > 60) {
+    const h = Math.floor(goalMins / 60);
+    const m = goalMins % 60;
+    return `${h}h ${m}m`;
+  }
+  return `${goalMins} min`;
+}
+
 function updateStreakProgress() {
-  const secs  = parseInt(localStorage.getItem('study_seconds') || '0');
-  const total = 30 * 60;
-  const mins  = Math.floor(secs / 60);
-  const pct   = Math.min((secs / total) * 100, 100);
-  const done  = secs >= total;
+  const secs     = parseInt(localStorage.getItem('study_seconds') || '0');
+  const goalMins = parseInt(localStorage.getItem('study_goal') || '30');
+  const total    = goalMins * 60;
+  const mins     = Math.floor(secs / 60);
+  const pct      = Math.min((secs / total) * 100, 100);
+  const done     = secs >= total;
+  const goalText = formatGoalMins(goalMins);
+
+  const goalValue = document.getElementById('streakGoalValue');
+  if (goalValue) goalValue.textContent = goalText;
 
   const fill  = document.getElementById('streakProgressFill');
   const label = document.getElementById('streakProgressLabel');
@@ -1919,7 +1941,7 @@ function updateStreakProgress() {
   fill.style.background = done
     ? 'linear-gradient(90deg,#16A34A,#15803D)'
     : 'linear-gradient(90deg,var(--accent),var(--accent-dark))';
-  label.textContent     = done ? '✅ Done for today!' : `${mins} / 30 min`;
+  label.textContent     = done ? '✅ Done for today!' : `${mins} / ${goalText}`;
   label.style.color     = done ? 'var(--green-text)' : 'var(--accent-dark)';
 }
 
