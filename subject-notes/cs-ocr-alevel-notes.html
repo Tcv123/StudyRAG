@@ -240,7 +240,7 @@
 
     <div class="nav-section" style="margin-top:8px;">
       <div class="nav-label">Premium</div>
-      <a class="nav-item" href="../test-history.html"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
       <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
       <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
       <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
@@ -270,7 +270,7 @@
     <div class="topics-header">
       <div class="topics-subject">Computer Science</div>
       <div class="topics-title">Revision Notes</div>
-      <div class="topics-board">💻 OCR · A-Level</div>
+      <div class="topics-board">💻 OCR</div>
     </div>
 
     <div class="topics-body">
@@ -383,7 +383,7 @@
       <div class="viewer-header">
         <div>
           <div class="viewer-title" id="viewerTitle">Topic</div>
-          <div class="viewer-sub" id="viewerSub">OCR A-Level Computer Science</div>
+          <div class="viewer-sub" id="viewerSub">Computer Science — OCR</div>
         </div>
         <div class="viewer-actions">
           <a id="downloadBtn" href="#" download class="viewer-btn">⬇ Download PDF</a>
@@ -440,7 +440,7 @@ function openTopic(btn, num, name, path) {
   document.getElementById('viewerContent').style.display = 'flex';
 
   document.getElementById('viewerTitle').textContent = `${num} — ${name}`;
-  document.getElementById('viewerSub').textContent   = 'OCR A-Level Computer Science';
+  document.getElementById('viewerSub').textContent   = 'Computer Science — OCR';
 
   document.getElementById('pdfFrame').src     = path;
   document.getElementById('downloadBtn').href = path;
