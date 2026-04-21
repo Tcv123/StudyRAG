@@ -113,7 +113,6 @@ const ALL_MEDALS = [
   { id: 'one_year',          icon: '🎊', name: 'Year One',          desc: 'Use RAG Learning for 365 days',             cat: 'Time Champions' },
   { id: 'lunch_learner',     icon: '🍽️', name: 'Lunch Learner',     desc: 'Study between 12pm and 1pm',                cat: 'Time Champions' },
   { id: 'dawn_grinder',      icon: '🌄', name: 'Dawn Grinder',      desc: 'Study before 6am',                          cat: 'Time Champions' },
-  { id: 'night_owl',         icon: '🦉', name: 'Night Owl',         desc: 'Study after 10pm',                          cat: 'Time Champions' },
   { id: 'after_school',      icon: '🎒', name: 'After School',      desc: 'Study between 4pm and 7pm',                 cat: 'Time Champions' },
   { id: 'weekend_scholar',   icon: '🌞', name: 'Weekend Scholar',   desc: 'Study on a Saturday or Sunday',             cat: 'Time Champions' },
 
