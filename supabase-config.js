@@ -104,13 +104,20 @@
  *   ALTER TABLE user_medals ENABLE ROW LEVEL SECURITY;
  *   CREATE POLICY "own medals" ON user_medals FOR ALL USING (auth.uid() = user_id);
  *
- *   -- 5. Self-service account deletion with a 7-day grace period.
- *   -- Clicking "Delete account" sets profiles.deletion_requested_at to now();
- *   -- the data stays put for 7 days, then a pg_cron job deletes the auth.users
- *   -- row (which cascades through every user-scoped table via ON DELETE CASCADE).
+ *   -- 5. Self-service account deletion (immediate, trigger-driven).
+ *   -- Clicking "Delete account" calls request_account_deletion(), which stamps
+ *   -- profiles.deletion_requested_at. An AFTER UPDATE trigger on that column
+ *   -- immediately deletes the matching auth.users row; ON DELETE CASCADE fans
+ *   -- out to every user-scoped table so nothing is left behind.
  *
- *   -- 5a. Flag column on profiles. NULL = account active; a timestamp = deletion scheduled.
+ *   -- 5a. Flag column + generated boolean mirror for easy filtering in the dashboard.
+ *   -- account_active = TRUE while deletion_requested_at IS NULL; flips to FALSE the
+ *   -- moment deletion is requested (and only stays FALSE for microseconds before the
+ *   -- trigger cascades the row away).
  *   ALTER TABLE profiles ADD COLUMN IF NOT EXISTS deletion_requested_at TIMESTAMPTZ;
+ *   ALTER TABLE profiles
+ *     ADD COLUMN IF NOT EXISTS account_active BOOLEAN
+ *     GENERATED ALWAYS AS (deletion_requested_at IS NULL) STORED;
  *
  *   -- 5b. RPC the client calls to schedule deletion. SECURITY DEFINER is safe
  *   -- because the UPDATE is pinned to auth.uid().
@@ -132,21 +139,31 @@
  *   REVOKE ALL ON FUNCTION public.request_account_deletion() FROM PUBLIC, anon;
  *   GRANT EXECUTE ON FUNCTION public.request_account_deletion() TO authenticated;
  *
- *   -- 5c. Purge job — runs hourly, deletes any auth.users whose scheduled window has elapsed.
- *   -- Enable pg_cron once per project: Dashboard → Database → Extensions → pg_cron.
- *   CREATE EXTENSION IF NOT EXISTS pg_cron;
- *   SELECT cron.schedule(
- *     'purge-deleted-accounts',
- *     '0 * * * *',   -- every hour on the hour
- *     $$
- *       DELETE FROM auth.users
- *        WHERE id IN (
- *          SELECT id FROM public.profiles
- *           WHERE deletion_requested_at IS NOT NULL
- *             AND deletion_requested_at < now() - interval '7 days'
- *        );
- *     $$
- *   );
+ *   -- 5c. Trigger: the moment deletion_requested_at transitions from NULL to a
+ *   -- timestamp, delete the auth.users row. The CASCADE foreign keys on profiles,
+ *   -- user_subjects, topic_progress, practice_attempts, and user_medals then wipe
+ *   -- every trace of the account in the same transaction.
+ *   CREATE OR REPLACE FUNCTION public.purge_auth_when_inactive()
+ *   RETURNS TRIGGER
+ *   LANGUAGE plpgsql
+ *   SECURITY DEFINER
+ *   SET search_path = public
+ *   AS $$
+ *   BEGIN
+ *     DELETE FROM auth.users WHERE id = NEW.id;
+ *     RETURN NULL;
+ *   END;
+ *   $$;
+ *   DROP TRIGGER IF EXISTS trg_purge_auth_when_inactive ON public.profiles;
+ *   CREATE TRIGGER trg_purge_auth_when_inactive
+ *     AFTER UPDATE OF deletion_requested_at ON public.profiles
+ *     FOR EACH ROW
+ *     WHEN (OLD.deletion_requested_at IS NULL AND NEW.deletion_requested_at IS NOT NULL)
+ *     EXECUTE FUNCTION public.purge_auth_when_inactive();
+ *
+ *   -- 5d. If you previously ran the pg_cron version, unschedule it — the trigger
+ *   -- supersedes it. Safe to run even if the job was never created.
+ *   -- SELECT cron.unschedule('purge-deleted-accounts');
  *
  * IMPORTANT — enable email confirmation:
  *   Supabase dashboard → Authentication → Providers → Email
