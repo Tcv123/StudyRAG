@@ -16,6 +16,10 @@
     { name: 'Geography',           emoji: '🌍' },
     { name: 'English Language',    emoji: '📝' },
     { name: 'English Literature',  emoji: '📖' },
+    { name: 'History',             emoji: '📜' },
+    { name: 'French',              emoji: '🇫🇷' },
+    { name: 'German',              emoji: '🇩🇪' },
+    { name: 'Spanish',             emoji: '🇪🇸' },
   ];
 
   // Boards each subject is offered under. Every entry listed here should
@@ -32,14 +36,18 @@
     'Geography':           ['AQA', 'Edexcel', 'Eduqas', 'OCR'],
     'English Language':    ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
     'English Literature':  ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
+    'History':             ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
+    'French':              ['AQA', 'Edexcel', 'Eduqas'],
+    'German':              ['AQA', 'Edexcel', 'Eduqas'],
+    'Spanish':             ['AQA', 'Edexcel', 'Eduqas'],
   };
 
   // Subject names where Edexcel is not offered at A-Level / AS.
   const noEdexcelAlevel = ['Computer Science'];
 
   // Subject set restricted to GCSE. Further Maths and Economics are not
-  // offered at GCSE on this platform; English Literature is GCSE-only
-  // for now (no A-Level content yet).
+  // offered at GCSE on this platform; English Literature, History and the
+  // MFL subjects are GCSE-only for now (no A-Level content yet).
   const gcseSubjectNames = [
     'Mathematics',
     'Physics',
@@ -49,6 +57,19 @@
     'Computer Science',
     'English Literature',
     'English Language',
+    'History',
+    'French',
+    'German',
+    'Spanish',
+  ];
+
+  // Subjects that only have GCSE content — hidden at AS / A-Level.
+  const gcseOnlySubjectNames = [
+    'English Literature',
+    'History',
+    'French',
+    'German',
+    'Spanish',
   ];
 
   function getSubjectsFor(level) {
@@ -58,7 +79,7 @@
         .filter(Boolean);
     }
     // A-Level / AS: hide GCSE-only subjects until content is ready.
-    return subjects.filter(s => s.name !== 'English Literature');
+    return subjects.filter(s => !gcseOnlySubjectNames.includes(s.name));
   }
 
   function getBoardsFor(subjectName, level) {
@@ -83,6 +104,7 @@
     boards,
     noEdexcelAlevel,
     gcseSubjectNames,
+    gcseOnlySubjectNames,
     getSubjectsFor,
     getBoardsFor,
     emojiFor,
