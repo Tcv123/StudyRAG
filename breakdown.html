@@ -152,18 +152,6 @@
     .subject-summary-pill.amber { background: var(--amber-bg); color: var(--amber); }
     .subject-summary-pill.red { background: var(--red-bg); color: var(--red); }
     .subject-summary-pill.pending { background: var(--surface2); color: var(--muted2); }
-    .subject-summary-pill.practice { background: var(--accent-dim); color: var(--accent-dark); }
-
-    /* ── SPARKLINE (subject header) ── */
-    .spark-wrap { display: inline-flex; align-items: center; gap: 8px; padding: 2px 8px; border-radius: 10px; background: var(--accent-dim); }
-    .spark-wrap .spark-label { font-size: 10px; font-weight: 600; color: var(--accent-dark); font-family: var(--font-body); }
-    .sparkline { display: block; overflow: visible; }
-    .sparkline .spark-line { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-    .sparkline .spark-area { fill: var(--accent); opacity: 0.12; }
-    .sparkline .spark-dot { stroke: var(--surface); stroke-width: 1; }
-    .sparkline .spark-dot.green { fill: var(--green); }
-    .sparkline .spark-dot.amber { fill: var(--amber); }
-    .sparkline .spark-dot.red   { fill: var(--red); }
 
     /* ── TREND CHART (expanded) ── */
     .trend-chart {
@@ -1173,18 +1161,11 @@ function renderTopics() {
     const r = group.topics.filter(t => t.rag === 'red').length;
     const p = group.topics.filter(t => t.rag === 'pending').length;
 
-    const subjAttempts = practiceHistory.filter(h => h.subject === group.subject && h.board === group.board);
-    const practiceCount = subjAttempts.length;
-    const avgPct = practiceCount
-      ? Math.round(subjAttempts.reduce((s, h) => s + (h.pct || 0), 0) / practiceCount)
-      : 0;
-
     const pills = [
       g ? `<span class="subject-summary-pill green">${g} green</span>` : '',
       a ? `<span class="subject-summary-pill amber">${a} amber</span>` : '',
       r ? `<span class="subject-summary-pill red">${r} red</span>` : '',
       p ? `<span class="subject-summary-pill pending">${p} not tested</span>` : '',
-      practiceCount ? renderSparkline(subjAttempts, avgPct) : '',
     ].filter(Boolean).join('');
 
     html += `<div class="subject-section">
@@ -1221,42 +1202,6 @@ function renderTopics() {
 
 function sparkClass(pct) {
   return pct >= 70 ? 'green' : pct >= 40 ? 'amber' : 'red';
-}
-
-function renderSparkline(attempts, avgPct) {
-  if (!attempts.length) return '';
-  const sorted = attempts.slice().sort((a, b) => a.dateISO.localeCompare(b.dateISO));
-  const n = sorted.length;
-  const w = 64, h = 22, pad = 3;
-
-  if (n === 1) {
-    const pct = sorted[0].pct;
-    return `<span class="spark-wrap" title="${n} test · ${avgPct}% avg">
-      <svg class="sparkline" width="20" height="${h}" viewBox="0 0 20 ${h}">
-        <circle cx="10" cy="${h/2}" r="3" class="spark-dot ${sparkClass(pct)}"/>
-      </svg>
-      <span class="spark-label">1 test · ${avgPct}%</span>
-    </span>`;
-  }
-
-  const xStep = (w - 2 * pad) / (n - 1);
-  const pts = sorted.map((a, i) => ({
-    x: pad + i * xStep,
-    y: h - pad - ((a.pct / 100) * (h - 2 * pad)),
-    pct: a.pct,
-  }));
-  const pathD = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
-  const areaD = `${pathD} L${pts[n-1].x.toFixed(1)},${h - pad} L${pts[0].x.toFixed(1)},${h - pad} Z`;
-  const dots = pts.map(p => `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="1.8" class="spark-dot ${sparkClass(p.pct)}"/>`).join('');
-
-  return `<span class="spark-wrap" title="${n} tests · ${avgPct}% avg">
-    <svg class="sparkline" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
-      <path d="${areaD}" class="spark-area"/>
-      <path d="${pathD}" class="spark-line"/>
-      ${dots}
-    </svg>
-    <span class="spark-label">${n} · ${avgPct}%</span>
-  </span>`;
 }
 
 function renderTrendChart(sorted, avgPct) {
