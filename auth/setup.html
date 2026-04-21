@@ -924,6 +924,8 @@ function renderGrades() {
                    onclick="setCurrentGrade('${s.name}',${gradeVal(g)})">
                 ${g}
               </div>`).join('')}
+          </div>
+          <div class="board-pills" style="margin-top:8px;">
             <div class="board-pill ${noCur ? 'active' : ''}" style="padding:6px 12px;"
                  onclick="setCurrentGrade('${s.name}','none')">
               No grade yet
