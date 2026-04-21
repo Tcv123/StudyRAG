@@ -494,12 +494,12 @@
         </div>
         <button class="btn btn-outline" onclick="logout()">Sign out</button>
       </div>
-      <div class="toggle-row">
+      <div class="toggle-row" id="deleteAccountRow">
         <div class="toggle-info">
-          <div class="toggle-label">Delete account</div>
-          <div class="toggle-desc">Permanently delete your account and all data</div>
+          <div class="toggle-label" id="deleteAccountLabel">Delete account</div>
+          <div class="toggle-desc" id="deleteAccountDesc">Permanently delete your account and all data 7 days after you confirm</div>
         </div>
-        <button class="btn btn-danger" onclick="confirmDeleteAccount()">Delete account</button>
+        <button class="btn btn-danger" id="deleteAccountBtn" onclick="confirmDeleteAccount()">Delete account</button>
       </div>
     </div>
 
@@ -535,6 +535,9 @@ async function load() {
   currentUser = user;
 
   const { data: profile } = await supabaseClient.from('profiles').select('*').eq('id', user.id).single();
+
+  // Pending-deletion state
+  renderDeleteRow(profile?.deletion_requested_at);
 
   // Sidebar
   const firstName = profile?.first_name || '';
@@ -746,21 +749,62 @@ async function confirmResetStreak() {
 }
 
 // ── Delete account ──
-async function confirmDeleteAccount() {
-  if (!confirm('This will PERMANENTLY delete your account and all data. Are you absolutely sure?')) return;
-  if (!confirm('Last chance — this cannot be undone. Delete everything?')) return;
+// Clicking Delete schedules deletion: profiles.deletion_requested_at is set to now().
+// A pg_cron job (see supabase-config.js) purges auth.users 7 days later, and cascading
+// foreign keys remove everything else. Until then the data is kept and a countdown is shown.
+const DELETION_GRACE_DAYS = 7;
 
-  // Deleting the auth.users row cascades to profiles, user_subjects, topic_progress,
-  // practice_attempts and user_medals via their ON DELETE CASCADE foreign keys.
-  // (Requires the delete_user RPC — see supabase-config.js.)
-  const { error: authErr } = await supabaseClient.rpc('delete_user');
-  if (authErr) {
-    alert('Could not delete your account: ' + authErr.message);
+async function confirmDeleteAccount() {
+  if (!confirm(`This will permanently delete your account and all data in ${DELETION_GRACE_DAYS} days. Continue?`)) return;
+  if (!confirm('Last chance — once scheduled this cannot be undone. Schedule deletion?')) return;
+
+  const { error } = await supabaseClient.rpc('request_account_deletion');
+  if (error) {
+    alert('Could not schedule account deletion: ' + error.message);
     return;
   }
 
-  await supabaseClient.auth.signOut();
-  window.location = 'auth/login.html';
+  // Re-fetch the row to pick up the server-side timestamp and render the countdown
+  const { data: profile } = await supabaseClient.from('profiles').select('deletion_requested_at').eq('id', currentUser.id).single();
+  renderDeleteRow(profile?.deletion_requested_at);
+}
+
+function renderDeleteRow(deletionRequestedAt) {
+  const label = document.getElementById('deleteAccountLabel');
+  const desc  = document.getElementById('deleteAccountDesc');
+  const btn   = document.getElementById('deleteAccountBtn');
+
+  if (!deletionRequestedAt) {
+    label.textContent = 'Delete account';
+    desc.textContent  = `Permanently delete your account and all data ${DELETION_GRACE_DAYS} days after you confirm`;
+    btn.textContent   = 'Delete account';
+    btn.disabled      = false;
+    btn.style.display = '';
+    return;
+  }
+
+  const requestedAt = new Date(deletionRequestedAt);
+  const deleteAt    = new Date(requestedAt.getTime() + DELETION_GRACE_DAYS * 24 * 60 * 60 * 1000);
+
+  label.textContent = 'Account scheduled for deletion';
+  btn.style.display = 'none';
+
+  const tick = () => {
+    const ms = deleteAt - new Date();
+    if (ms <= 0) {
+      desc.textContent = 'Deletion is being processed…';
+      return;
+    }
+    const days    = Math.floor(ms / (24 * 60 * 60 * 1000));
+    const hours   = Math.floor((ms / (60 * 60 * 1000)) % 24);
+    const minutes = Math.floor((ms / (60 * 1000)) % 60);
+    const seconds = Math.floor((ms / 1000) % 60);
+    const when = deleteAt.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+    desc.textContent = `Your account and all data will be deleted on ${when} — ${days}d ${hours}h ${minutes}m ${seconds}s remaining.`;
+  };
+  tick();
+  clearInterval(renderDeleteRow._timer);
+  renderDeleteRow._timer = setInterval(tick, 1000);
 }
 
 // ── Logout ──

@@ -104,22 +104,49 @@
  *   ALTER TABLE user_medals ENABLE ROW LEVEL SECURITY;
  *   CREATE POLICY "own medals" ON user_medals FOR ALL USING (auth.uid() = user_id);
  *
- *   -- 5. Self-service account deletion
- *   -- Lets a signed-in user delete their own auth.users row from the client.
- *   -- SECURITY DEFINER runs with the function owner's rights, but the WHERE
- *   -- clause restricts it to the caller's own uid so no one can delete others.
- *   CREATE OR REPLACE FUNCTION public.delete_user()
- *   RETURNS void
+ *   -- 5. Self-service account deletion with a 7-day grace period.
+ *   -- Clicking "Delete account" sets profiles.deletion_requested_at to now();
+ *   -- the data stays put for 7 days, then a pg_cron job deletes the auth.users
+ *   -- row (which cascades through every user-scoped table via ON DELETE CASCADE).
+ *
+ *   -- 5a. Flag column on profiles. NULL = account active; a timestamp = deletion scheduled.
+ *   ALTER TABLE profiles ADD COLUMN IF NOT EXISTS deletion_requested_at TIMESTAMPTZ;
+ *
+ *   -- 5b. RPC the client calls to schedule deletion. SECURITY DEFINER is safe
+ *   -- because the UPDATE is pinned to auth.uid().
+ *   CREATE OR REPLACE FUNCTION public.request_account_deletion()
+ *   RETURNS TIMESTAMPTZ
  *   LANGUAGE plpgsql
  *   SECURITY DEFINER
  *   SET search_path = public
  *   AS $$
+ *   DECLARE
+ *     ts TIMESTAMPTZ := now();
  *   BEGIN
- *     DELETE FROM auth.users WHERE id = auth.uid();
+ *     UPDATE public.profiles
+ *        SET deletion_requested_at = COALESCE(deletion_requested_at, ts)
+ *      WHERE id = auth.uid();
+ *     RETURN (SELECT deletion_requested_at FROM public.profiles WHERE id = auth.uid());
  *   END;
  *   $$;
- *   REVOKE ALL ON FUNCTION public.delete_user() FROM PUBLIC, anon;
- *   GRANT EXECUTE ON FUNCTION public.delete_user() TO authenticated;
+ *   REVOKE ALL ON FUNCTION public.request_account_deletion() FROM PUBLIC, anon;
+ *   GRANT EXECUTE ON FUNCTION public.request_account_deletion() TO authenticated;
+ *
+ *   -- 5c. Purge job — runs hourly, deletes any auth.users whose scheduled window has elapsed.
+ *   -- Enable pg_cron once per project: Dashboard → Database → Extensions → pg_cron.
+ *   CREATE EXTENSION IF NOT EXISTS pg_cron;
+ *   SELECT cron.schedule(
+ *     'purge-deleted-accounts',
+ *     '0 * * * *',   -- every hour on the hour
+ *     $$
+ *       DELETE FROM auth.users
+ *        WHERE id IN (
+ *          SELECT id FROM public.profiles
+ *           WHERE deletion_requested_at IS NOT NULL
+ *             AND deletion_requested_at < now() - interval '7 days'
+ *        );
+ *     $$
+ *   );
  *
  * IMPORTANT — enable email confirmation:
  *   Supabase dashboard → Authentication → Providers → Email
