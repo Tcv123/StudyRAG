@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../supabase-config.js"></script>
+  <script src="../subjects-config.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -501,37 +502,12 @@
 
 <script>
 // ── Data ────────────────────────────────────────────────────────────────
-const SUBJECTS = [
-  { name: 'Mathematics',        emoji: '➗' },
-  { name: 'Further Mathematics',emoji: '∑' },
-  { name: 'Chemistry',          emoji: '⚗️' },
-  { name: 'Biology',            emoji: '🧬' },
-  { name: 'Computer Science',   emoji: '💻' },
-  { name: 'Physics',            emoji: '⚡' },
-  { name: 'Economics',          emoji: '📈' },
-  { name: 'Geography',          emoji: '🌍' },
-  { name: 'English Language',   emoji: '📝' },
-];
-
-const BOARDS = ['AQA', 'OCR', 'Edexcel'];
-// Subjects where Edexcel is NOT available at A-Level / AS
-const NO_EDEXCEL_ALEVEL = ['Computer Science'];
-// Subjects with custom board lists
-const CUSTOM_BOARDS = {
-  'Economics': ['AQA', 'Edexcel A', 'OCR', 'Edexcel B'],
-  'Physics': ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
-  'Chemistry': ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
-  'Biology': ['AQA', 'Edexcel A', 'Edexcel B', 'OCR A', 'OCR B'],
-  'Geography': ['AQA', 'OCR', 'Edexcel', 'Eduqas'],
-  'Further Mathematics': ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
-  'English Language': ['AQA', 'Edexcel'],
-};
+// Subjects and board lists come from the shared subjects-config.js so
+// setup and practice.html never drift apart. Editing the list in one
+// place used to leave the other broken.
+const SUBJECTS = window.SUBJECTS_CONFIG.subjects;
 function getBoardsFor(subjectName) {
-  if (CUSTOM_BOARDS[subjectName]) return CUSTOM_BOARDS[subjectName];
-  if ((selectedLevel === 'a-level' || selectedLevel === 'as') && NO_EDEXCEL_ALEVEL.includes(subjectName)) {
-    return BOARDS.filter(b => b !== 'Edexcel');
-  }
-  return BOARDS;
+  return window.SUBJECTS_CONFIG.getBoardsFor(subjectName, selectedLevel);
 }
 
 // ── State ────────────────────────────────────────────────────────────────
@@ -972,7 +948,11 @@ async function save() {
       const match = SUBJECTS.find(sub => sub.name === s.subject);
       if (match) {
         selectedSubjects.push({ name: match.name, emoji: match.emoji });
-        subjectBoards[match.name] = s.exam_board || 'AQA';
+        // Normalise against the shared config so a legacy row (e.g. a
+        // board that's since been removed) doesn't re-save a broken value.
+        const allowed = getBoardsFor(match.name);
+        const savedBoard = s.exam_board || 'AQA';
+        subjectBoards[match.name] = allowed.includes(savedBoard) ? savedBoard : (allowed[0] || 'AQA');
         if (s.current_grade != null) subjectCurrentGrade[match.name] = s.current_grade;
         if (s.target_grade != null) subjectTargetGrade[match.name] = s.target_grade;
       }

@@ -12,6 +12,7 @@
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
+  <script src="subjects-config.js"></script>
   <script src="study-tracker.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1272,16 +1273,12 @@ const MODES = [
 let enrolledSubjects = [];
 let progressData = [];
 
-const SUBJECT_EMOJIS = {
-  'Computer Science': '💻',
-  'Physics': '⚡',
-  'Mathematics': '➗',
-  'Further Mathematics': '∑',
-  'Chemistry': '⚗️',
-  'Biology': '🧬',
-  'Economics': '📈',
-  'Geography': '🌍',
-};
+// Fallback emoji lookup when user_subjects row has no emoji column set.
+// Sourced from the shared subjects-config so new subjects flow through
+// automatically without editing this file.
+const SUBJECT_EMOJIS = Object.fromEntries(
+  (window.SUBJECTS_CONFIG?.subjects || []).map(s => [s.name, s.emoji])
+);
 
 async function init() {
   const { data: { session } } = await supabaseClient.auth.getSession();
@@ -1304,7 +1301,10 @@ async function init() {
     .from('user_subjects').select('subject, exam_board, emoji')
     .eq('user_id', currentUser.id);
 
-  enrolledSubjects = (subjects || []).filter(s => SUBJECT_TOPICS[`${s.subject}_${s.exam_board}`]);
+  // Keep every enrolled subject — even if SUBJECT_TOPICS has no entry yet.
+  // We render a "Topics coming soon" card instead of silently hiding it,
+  // so the user can see what they picked in setup and spot data gaps.
+  enrolledSubjects = subjects || [];
 
   /* ── Load RAG progress ── */
   const { data: progress } = await supabaseClient
@@ -1335,6 +1335,21 @@ function showSubjectCards() {
     const key = `${s.subject}_${s.exam_board}`;
     const config = SUBJECT_TOPICS[key];
     const emoji = s.emoji || SUBJECT_EMOJIS[s.subject] || '📚';
+
+    // Graceful fallback when no topic config exists for this subject+board
+    // combo yet (e.g. new board added in setup before practice data shipped).
+    if (!config) {
+      return `
+        <div class="subj-pick" style="opacity:0.65;cursor:not-allowed;" title="Practice questions for this exam board are not available yet.">
+          <div class="subj-pick-emoji">${emoji}</div>
+          <div class="subj-pick-info">
+            <div class="subj-pick-name">${s.subject}</div>
+            <div class="subj-pick-board">${s.exam_board} · <span style="font-size:11px;color:var(--muted);font-style:italic;">Topics coming soon</span></div>
+          </div>
+          <div class="subj-pick-arrow" style="opacity:0.4;">→</div>
+        </div>`;
+    }
+
     const totalTopics = config.sections.reduce((sum, sec) => sum + sec.topics.length, 0);
 
     // Count RAG for this subject
