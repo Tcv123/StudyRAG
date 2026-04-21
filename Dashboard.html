@@ -2576,10 +2576,12 @@ document.addEventListener('click', e => {
 });
 
 // ── Getting Started: auto-open modal on first visit ─────────────────────
-if (!localStorage.getItem('rag_welcome_seen')) {
-  const overlay = document.getElementById('helpOverlay');
-  if (overlay) overlay.classList.add('active');
-}
+document.addEventListener('DOMContentLoaded', () => {
+  if (!localStorage.getItem('rag_welcome_seen')) {
+    const overlay = document.getElementById('helpOverlay');
+    if (overlay) overlay.classList.add('active');
+  }
+});
 
 function dismissWelcome() {
   localStorage.setItem('rag_welcome_seen', '1');
