@@ -3,6 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        if (params.has('stay') || params.has('signedout')) return;
+        var raw = localStorage.getItem('sb-tfpnagnjnzmlgbnqeiwr-auth-token');
+        if (!raw) return;
+        var session = JSON.parse(raw);
+        var lastSignIn = session && session.user && session.user.last_sign_in_at;
+        if (!lastSignIn) return;
+        var hoursSince = (Date.now() - new Date(lastSignIn).getTime()) / 36e5;
+        if (hoursSince < 24) {
+          document.documentElement.style.visibility = 'hidden';
+          window.location.replace('Dashboard.html');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>RAG Learning — Revise Smarter</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -984,22 +1002,5 @@
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-config.js"></script>
-<script>
-  (async () => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.has('stay') || params.has('signedout')) return;
-
-    const { data: { session } } = await supabaseClient.auth.getSession();
-    if (!session) return;
-
-    const lastSignIn = session.user?.last_sign_in_at;
-    if (!lastSignIn) return;
-
-    const hoursSince = (Date.now() - new Date(lastSignIn).getTime()) / 36e5;
-    if (hoursSince < 24) window.location.replace('Dashboard.html');
-  })();
-</script>
 </body>
 </html>
