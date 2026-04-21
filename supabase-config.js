@@ -104,6 +104,23 @@
  *   ALTER TABLE user_medals ENABLE ROW LEVEL SECURITY;
  *   CREATE POLICY "own medals" ON user_medals FOR ALL USING (auth.uid() = user_id);
  *
+ *   -- 5. Self-service account deletion
+ *   -- Lets a signed-in user delete their own auth.users row from the client.
+ *   -- SECURITY DEFINER runs with the function owner's rights, but the WHERE
+ *   -- clause restricts it to the caller's own uid so no one can delete others.
+ *   CREATE OR REPLACE FUNCTION public.delete_user()
+ *   RETURNS void
+ *   LANGUAGE plpgsql
+ *   SECURITY DEFINER
+ *   SET search_path = public
+ *   AS $$
+ *   BEGIN
+ *     DELETE FROM auth.users WHERE id = auth.uid();
+ *   END;
+ *   $$;
+ *   REVOKE ALL ON FUNCTION public.delete_user() FROM PUBLIC, anon;
+ *   GRANT EXECUTE ON FUNCTION public.delete_user() TO authenticated;
+ *
  * IMPORTANT — enable email confirmation:
  *   Supabase dashboard → Authentication → Providers → Email
  *   → turn ON "Confirm email"

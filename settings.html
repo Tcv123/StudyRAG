@@ -756,6 +756,13 @@ async function confirmDeleteAccount() {
   await supabaseClient.from('user_subjects').delete().eq('user_id', currentUser.id);
   await supabaseClient.from('profiles').delete().eq('id', currentUser.id);
 
+  // Delete the auth.users row itself (requires the delete_user RPC — see supabase-config.js)
+  const { error: authErr } = await supabaseClient.rpc('delete_user');
+  if (authErr) {
+    alert('Your data was deleted but the auth account could not be removed: ' + authErr.message);
+    return;
+  }
+
   await supabaseClient.auth.signOut();
   window.location = 'auth/login.html';
 }
