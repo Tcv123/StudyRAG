@@ -1,5 +1,5 @@
 /*
- * OCR A-Level Computer Science — Question Bank
+ * OCR GCSE Computer Science (J277) — Question Bank
  * 50 questions per topic: 20 green (recall/basic), 20 amber (application), 10 red (analysis/evaluate)
  * Diagnostic picks 2 green + 2 amber + 1 red = 5 questions at random.
  * answer: 0-based index of correct option.

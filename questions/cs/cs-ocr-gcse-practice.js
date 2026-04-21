@@ -1,5 +1,5 @@
 /*
- * OCR GCSE/A-Level Computer Science — Exam Practice Question Bank
+ * OCR GCSE Computer Science (J277) — Exam Practice Question Bank
  * All written/exam-style questions with OCR command words and mark schemes.
  * 20 questions per topic, varying from 2-mark to 8-mark questions.
  */

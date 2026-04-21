@@ -1,5 +1,5 @@
 /*
- * OCR A-Level Computer Science — Written / Short-Answer Question Bank
+ * OCR GCSE Computer Science (J277) — Written / Short-Answer Question Bank
  * 10 questions per topic: 4 green + 4 amber + 2 red
  * tier: 'green' (state/identify 2-3 marks), 'amber' (explain/describe 4-5 marks), 'red' (evaluate/discuss 6-8 marks)
  * Student self-marks against model answer: Full / Partial / Missed

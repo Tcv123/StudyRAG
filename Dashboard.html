@@ -1261,7 +1261,7 @@ const SUBJECT_TOPIC_KEY = {
 };
 const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas': 12, 'maths-aqa': 17, 'maths-ocr': 19, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
 const SUBJECT_NOTES_PAGE = {
-  'Computer Science_OCR': 'subject-notes/cs-notes.html',
+  'Computer Science_OCR': 'subject-notes/cs-ocr-gcse-notes.html',
   'Computer Science_AQA': 'subject-notes/cs-aqa-notes.html',
   'Physics_Edexcel': 'subject-notes/physics-edexcel-notes.html',
   'Physics_AQA': 'subject-notes/physics-aqa-notes.html',
@@ -1331,7 +1331,7 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   if (totalTested >= Math.max(scale(50), frac(0.5)))  award('diag_50');
   if (totalTested >= scale(100))              award('diag_100');
 
-  // perfect_score, perfect_3, perfect_10 — awarded from cs-diagnostic.html
+  // perfect_score, perfect_3, perfect_10 — awarded from cs-ocr-gcse-diagnostic.html
   // We check the count of perfect_score medals stored (they get inserted per-perfect)
   // These are handled by the diagnostic page
 
@@ -1977,7 +1977,7 @@ const DIAG_TOPICS = {
   'Computer Science_OCR': {
     label: 'Computer Science — OCR',
     emoji: '💻',
-    page: 'diagnostics/cs-diagnostic.html',
+    page: 'diagnostics/cs-ocr-gcse-diagnostic.html',
     topics: [
       { id: '1.1', name: 'Systems Architecture', sub: 'CPU, fetch-execute, performance' },
       { id: '1.2', name: 'Memory and Storage', sub: 'RAM, ROM, secondary storage' },
