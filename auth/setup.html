@@ -274,6 +274,24 @@
       border-radius: 10px; margin-bottom: 28px;
     }
 
+    .grade-progress {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 8px; margin-bottom: 18px;
+    }
+    .grade-progress-label {
+      font-size: 12px; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .grade-dots {
+      display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;
+    }
+    .grade-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--border); transition: background 0.2s, transform 0.2s;
+    }
+    .grade-dot.done { background: var(--accent); opacity: 0.55; }
+    .grade-dot.active { background: var(--accent); transform: scale(1.4); }
+
     /* ── FOOTER BUTTONS ── */
     .footer-row {
       display: flex; gap: 12px; align-items: center;
@@ -492,8 +510,8 @@
       <div id="gradesSection"></div>
 
       <div class="footer-row">
-        <button class="btn btn-back" onclick="backToStep2()">← Back</button>
-        <button class="btn btn-primary" id="saveBtn" onclick="save()">Start Learning →</button>
+        <button class="btn btn-back" id="gradesBackBtn" onclick="gradesBack()">← Back</button>
+        <button class="btn btn-primary" id="saveBtn" onclick="gradesNext()">Next →</button>
       </div>
       <p id="msg" class="msg"></p>
     </div>
@@ -518,6 +536,7 @@ let subjectBoards    = {};   // { name: board }
 let subjectCurrentGrade = {};  // { name: grade }
 let subjectTargetGrade  = {};  // { name: grade }
 let showGradeValidation = false;
+let currentGradeIndex   = 0;   // which subject in selectedSubjects is currently visible on step 3
 let selectedAvatarUrl = null;
 let selectedAvatarStyle = 'fun-emoji';
 
@@ -669,24 +688,64 @@ function setTargetGrade(name, grade) {
 }
 
 function updateSaveBtn() {
-  const btn = document.getElementById('saveBtn');
-  const msg = document.getElementById('msg');
+  const btn     = document.getElementById('saveBtn');
+  const backBtn = document.getElementById('gradesBackBtn');
+  const msg     = document.getElementById('msg');
   if (!btn) return;
-  const missing = selectedSubjects.filter(s =>
-    subjectCurrentGrade[s.name] == null || subjectTargetGrade[s.name] == null
-  );
-  const allSet = selectedSubjects.length > 0 && missing.length === 0;
-  btn.disabled = !allSet;
-  btn.title = allSet ? '' : 'Set current and target grade for each subject to continue';
+  if (!selectedSubjects.length) { btn.disabled = true; return; }
+
+  if (currentGradeIndex >= selectedSubjects.length) currentGradeIndex = selectedSubjects.length - 1;
+  if (currentGradeIndex < 0) currentGradeIndex = 0;
+
+  const s            = selectedSubjects[currentGradeIndex];
+  const thisComplete = s && subjectCurrentGrade[s.name] != null && subjectTargetGrade[s.name] != null;
+  const isLast       = currentGradeIndex === selectedSubjects.length - 1;
+
+  btn.disabled    = !thisComplete;
+  btn.textContent = isLast ? 'Start Learning →' : 'Next →';
+  btn.title       = thisComplete ? '' : 'Set a current and target grade to continue';
+
+  if (backBtn) backBtn.textContent = currentGradeIndex === 0 ? '← Back' : '← Previous';
+
   if (msg) {
-    if (showGradeValidation && !allSet && selectedSubjects.length) {
+    if (showGradeValidation && !thisComplete) {
       msg.className = 'msg error';
-      msg.innerText = `Set grades for: ${missing.map(s => s.name).join(', ')}`;
+      msg.innerText = `Please set both a current and target grade for ${s.name}.`;
     } else {
       msg.className = 'msg';
       msg.innerText = '';
     }
   }
+}
+
+function gradesBack() {
+  if (currentGradeIndex === 0) {
+    backToStep2();
+    return;
+  }
+  currentGradeIndex--;
+  showGradeValidation = false;
+  renderGrades();
+  updateSaveBtn();
+}
+
+function gradesNext() {
+  if (!selectedSubjects.length) return;
+  const s = selectedSubjects[currentGradeIndex];
+  if (!s || subjectCurrentGrade[s.name] == null || subjectTargetGrade[s.name] == null) {
+    showGradeValidation = true;
+    renderGrades();
+    updateSaveBtn();
+    return;
+  }
+  if (currentGradeIndex === selectedSubjects.length - 1) {
+    save();
+    return;
+  }
+  currentGradeIndex++;
+  showGradeValidation = false;
+  renderGrades();
+  updateSaveBtn();
 }
 
 function goToStep3() {
@@ -702,6 +761,7 @@ function goToStep3() {
   document.getElementById('ps2').classList.add('done');
   document.getElementById('pl2').classList.add('done');
   document.getElementById('ps3').classList.add('active');
+  currentGradeIndex = 0;
   showGradeValidation = false;
   renderGrades();
   updateSaveBtn();
@@ -774,47 +834,61 @@ function renderGrades() {
   // Normalise so === comparisons work both ways.
   const norm = v => (isGCSE && typeof v === 'string' && v !== '' && !isNaN(v)) ? parseInt(v, 10) : v;
 
-  sec.innerHTML = `<div class="selected-list">
-    ${selectedSubjects.map(s => {
-      const cur = norm(subjectCurrentGrade[s.name]);
-      const tgt = norm(subjectTargetGrade[s.name]);
-      const maxed = isMaxGrade(cur);
-      const curIdx = gradeIndex(cur);
-      const validTargets = cur != null ? GRADES.filter((g, i) => i <= curIdx) : GRADES;
-      const incomplete = cur == null || tgt == null;
-      const flagRed = incomplete && showGradeValidation;
-      return `
-      <div class="selected-row" style="${flagRed ? 'border:1.5px solid var(--red-border);background:var(--red-bg);' : ''}">
-        <div class="selected-row-top" style="margin-bottom:14px;">
-          <span class="selected-emoji">${s.emoji}</span>
-          <span class="selected-name">${s.name}</span>
-        </div>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;">
-          <div style="flex:1;min-width:140px;">
-            <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Current grade</div>
-            <div class="board-pills">
-              ${GRADES.map(g => `
-                <div class="board-pill ${cur === g ? 'active' : ''}" style="min-width:28px;text-align:center;padding:6px 10px;"
-                     onclick="setCurrentGrade('${s.name}',${gradeVal(g)})">
-                  ${g}
-                </div>`).join('')}
-            </div>
+  if (!selectedSubjects.length) { sec.innerHTML = ''; return; }
+  if (currentGradeIndex >= selectedSubjects.length) currentGradeIndex = selectedSubjects.length - 1;
+  if (currentGradeIndex < 0) currentGradeIndex = 0;
+
+  const total  = selectedSubjects.length;
+  const s      = selectedSubjects[currentGradeIndex];
+  const cur    = norm(subjectCurrentGrade[s.name]);
+  const tgt    = norm(subjectTargetGrade[s.name]);
+  const maxed  = isMaxGrade(cur);
+  const curIdx = gradeIndex(cur);
+  const validTargets = cur != null ? GRADES.filter((g, i) => i <= curIdx) : GRADES;
+  const incomplete   = cur == null || tgt == null;
+  const flagRed      = incomplete && showGradeValidation;
+
+  const dots = selectedSubjects.map((sub, i) => {
+    const done = subjectCurrentGrade[sub.name] != null && subjectTargetGrade[sub.name] != null;
+    const cls  = i === currentGradeIndex ? 'active' : (done && i < currentGradeIndex ? 'done' : '');
+    return `<span class="grade-dot ${cls}"></span>`;
+  }).join('');
+
+  sec.innerHTML = `
+    <div class="grade-progress">
+      <div class="grade-progress-label">Subject ${currentGradeIndex + 1} of ${total}</div>
+      <div class="grade-dots">${dots}</div>
+    </div>
+    <div class="selected-row" style="${flagRed ? 'border:1.5px solid var(--red-border);background:var(--red-bg);' : ''}">
+      <div class="selected-row-top" style="margin-bottom:14px;">
+        <span class="selected-emoji">${s.emoji}</span>
+        <span class="selected-name">${s.name}</span>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:140px;">
+          <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Current grade</div>
+          <div class="board-pills">
+            ${GRADES.map(g => `
+              <div class="board-pill ${cur === g ? 'active' : ''}" style="min-width:28px;text-align:center;padding:6px 10px;"
+                   onclick="setCurrentGrade('${s.name}',${gradeVal(g)})">
+                ${g}
+              </div>`).join('')}
           </div>
-          <div style="flex:1;min-width:140px;">
-            <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Target grade</div>
-            <div class="board-pills">
-              ${maxed ? `<div class="board-pill active" style="min-width:28px;text-align:center;padding:6px 10px;">${GRADES[0]}</div>` :
-                validTargets.map(g => `
-                <div class="board-pill ${tgt === g ? 'active' : ''}" style="min-width:28px;text-align:center;padding:6px 10px;"
-                     onclick="setTargetGrade('${s.name}',${gradeVal(g)})">
-                  ${g}
-                </div>`).join('')}
-            </div>
+        </div>
+        <div style="flex:1;min-width:140px;">
+          <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Target grade</div>
+          <div class="board-pills">
+            ${maxed ? `<div class="board-pill active" style="min-width:28px;text-align:center;padding:6px 10px;">${GRADES[0]}</div>` :
+              validTargets.map(g => `
+              <div class="board-pill ${tgt === g ? 'active' : ''}" style="min-width:28px;text-align:center;padding:6px 10px;"
+                   onclick="setTargetGrade('${s.name}',${gradeVal(g)})">
+                ${g}
+              </div>`).join('')}
           </div>
         </div>
-      </div>`;
-    }).join('')}
-  </div>`;
+      </div>
+    </div>
+  `;
 }
 
 // ── Save ─────────────────────────────────────────────────────────────────
