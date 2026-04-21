@@ -534,7 +534,24 @@ async function load() {
   if (error || !user) { window.location = 'auth/login.html'; return; }
   currentUser = user;
 
-  const { data: profile } = await supabaseClient.from('profiles').select('*').eq('id', user.id).single();
+  let { data: profile } = await supabaseClient.from('profiles').select('*').eq('id', user.id).maybeSingle();
+
+  // If the profile row is missing or still has empty name fields, fall back to
+  // the name the user typed at registration (stored in auth user_metadata) and
+  // persist it so subsequent loads don't need the fallback.
+  const metaFirst = user.user_metadata?.first_name || '';
+  const metaLast  = user.user_metadata?.last_name  || '';
+  const needsSeed = !profile || (!profile.first_name && metaFirst) || (!profile.last_name && metaLast);
+  if (needsSeed) {
+    const seeded = {
+      id:         user.id,
+      email:      user.email,
+      first_name: profile?.first_name || metaFirst,
+      last_name:  profile?.last_name  || metaLast
+    };
+    await supabaseClient.from('profiles').upsert(seeded, { onConflict: 'id' });
+    profile = { ...(profile || {}), ...seeded };
+  }
 
   // Sidebar
   const firstName = profile?.first_name || '';

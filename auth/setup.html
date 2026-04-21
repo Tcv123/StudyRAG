@@ -938,15 +938,27 @@ async function save() {
   const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
   if (authErr || !user) { window.location = 'login.html'; return; }
 
-  // Try update first (row already exists)
-  const { error: updateErr, count } = await supabaseClient
+  // Check whether a profile row already exists so we can choose update vs insert.
+  // .update() with no matching rows doesn't raise an error, so the old `count === 0`
+  // fallback never triggered — fresh users ended up with no profile row at all,
+  // losing their name (from user_metadata) and avatar.
+  const { data: existingProfile } = await supabaseClient
     .from('profiles')
-    .update({ level: selectedLevel, setup_complete: true, avatar_url: selectedAvatarUrl })
-    .eq('id', user.id);
+    .select('id')
+    .eq('id', user.id)
+    .maybeSingle();
 
-  // If update failed or row didn't exist, fall back to insert
-  if (updateErr || count === 0) {
-    const { error: insertErr } = await supabaseClient
+  let writeErr = null;
+  if (existingProfile) {
+    // Row exists — update setup fields only, don't clobber name edits from settings.
+    const { error } = await supabaseClient
+      .from('profiles')
+      .update({ level: selectedLevel, setup_complete: true, avatar_url: selectedAvatarUrl })
+      .eq('id', user.id);
+    writeErr = error;
+  } else {
+    // No row yet — insert one and seed name/email from the signup metadata.
+    const { error } = await supabaseClient
       .from('profiles')
       .insert({
         id: user.id,
@@ -957,14 +969,15 @@ async function save() {
         setup_complete: true,
         avatar_url: selectedAvatarUrl
       });
+    writeErr = error;
+  }
 
-    if (insertErr) {
-      msg.className       = 'msg error';
-      msg.innerText       = 'Could not save profile: ' + insertErr.message;
-      saveBtn.disabled    = false;
-      saveBtn.textContent = 'Start Learning →';
-      return;
-    }
+  if (writeErr) {
+    msg.className       = 'msg error';
+    msg.innerText       = 'Could not save profile: ' + writeErr.message;
+    saveBtn.disabled    = false;
+    saveBtn.textContent = 'Start Learning →';
+    return;
   }
 
   // Delete old subjects and their topic progress, then insert new ones
