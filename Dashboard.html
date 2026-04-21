@@ -583,6 +583,24 @@
           <div class="level-value" id="levelValue">AS Level</div>
           <div class="level-desc-text" id="levelDesc">Year 12 · Ages 16–17 · UK curriculum</div>
         </div>
+        <script>
+          // Apply cached level synchronously during parse so returning users never see the default flash
+          (function () {
+            var cfgs = {
+              gcse:      { label: 'GCSE',    icon: '📘', desc: 'Year 10–11 · Ages 14–16 · UK curriculum' },
+              as:        { label: 'AS Level', icon: '📗', desc: 'Year 12 · Ages 16–17 · UK curriculum' },
+              'a-level': { label: 'A Level', icon: '📙', desc: 'Year 13 · Ages 17–18 · UK curriculum' }
+            };
+            try {
+              var c = cfgs[localStorage.getItem('cached_level')];
+              if (c) {
+                document.getElementById('levelIcon').textContent  = c.icon;
+                document.getElementById('levelValue').textContent = c.label;
+                document.getElementById('levelDesc').textContent  = c.desc;
+              }
+            } catch (e) {}
+          })();
+        </script>
         <div class="level-stats">
           <div class="level-stat">
             <div class="level-stat-num" id="statSubjectCount">–</div>
@@ -1494,6 +1512,10 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
 
 // ── Main load ─────────────────────────────────────────────────────────────
 async function load() {
+  // Apply cached level instantly so returning users don't see the default flash
+  const cachedLevel = localStorage.getItem('cached_level');
+  if (cachedLevel && LEVEL_CONFIG[cachedLevel]) renderLevel(cachedLevel);
+
   const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
   if (authErr || !user) { window.location = 'auth/login.html'; return; }
 
@@ -1523,8 +1545,9 @@ async function load() {
     ((firstName[0] || '') + (lastName[0] || '')).toUpperCase() || '?';
   if (profile?.avatar_url) document.getElementById('avatarInitials').innerHTML = `<img src="${profile.avatar_url}" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;">`;
 
-  // Level banner
+  // Level banner (also cache for next visit so there's no default flash)
   renderLevel(level);
+  try { localStorage.setItem('cached_level', level); } catch (e) {}
 
   // Build set of current subject keys to filter old data
   const currentSubjectKeys = new Set((subjects || []).map(s => `${s.subject}_${s.exam_board}`));
