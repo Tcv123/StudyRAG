@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCR 2.2 — Mechanics</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.2 Mechanics</h1>
+<p class="spec-ref">Mathematics — OCR A-Level (H240) — Paper 3: Statistics &amp; Mechanics</p>
+
+<p>Mechanics is the branch of applied mathematics concerned with how and why objects move. It is, in many ways, the oldest and most successful application of mathematics: Newton's <em>Principia</em> (1687) showed that three simple laws of motion, together with a law of gravitation, are enough to predict the orbit of the moon, the fall of an apple, the swing of a pendulum, and the flight of a cannonball. At A-level the syllabus treats a pared-down, idealised version of that programme — particles rather than extended bodies for the most part, no air resistance unless stated, strings that are light and inextensible, pulleys that are smooth — but the reasoning style is authentically Newtonian. You will set up a coordinate system, draw a <em>free-body diagram</em>, write down Newton's second law in component form, and solve. Alongside the dynamics you will need kinematics (the mathematics of motion without reference to its cause), including the <strong>SUVAT</strong> equations for constant acceleration, calculus for variable acceleration, the geometry of projectile motion, and the statics of rigid bodies in equilibrium. This chapter covers the OCR H240 Mechanics content at full A-level depth.</p>
+
+<h2>1. Quantities and Units</h2>
+
+<p>Mechanics is built on a small number of physical quantities, each with a defined unit in the International System (SI). Getting units right is not cosmetic: a dimensionally wrong answer is wrong. The base SI units you will meet are the <em>metre</em> (m) for length, the <em>kilogram</em> (kg) for mass, the <em>second</em> (s) for time. All mechanical units are derived from these.</p>
+
+<table>
+<tr><th>Quantity</th><th>Symbol</th><th>SI unit</th><th>Type</th></tr>
+<tr><td>Mass</td><td>\(m\)</td><td>kg</td><td>Scalar</td></tr>
+<tr><td>Time</td><td>\(t\)</td><td>s</td><td>Scalar</td></tr>
+<tr><td>Displacement</td><td>\(s, \mathbf{r}\)</td><td>m</td><td>Vector</td></tr>
+<tr><td>Velocity</td><td>\(v, \mathbf{v}\)</td><td>m s\(^{-1}\)</td><td>Vector</td></tr>
+<tr><td>Acceleration</td><td>\(a, \mathbf{a}\)</td><td>m s\(^{-2}\)</td><td>Vector</td></tr>
+<tr><td>Force</td><td>\(F, \mathbf{F}\)</td><td>N = kg m s\(^{-2}\)</td><td>Vector</td></tr>
+<tr><td>Weight</td><td>\(W\)</td><td>N</td><td>Vector (downward)</td></tr>
+<tr><td>Momentum</td><td>\(p\)</td><td>kg m s\(^{-1}\)</td><td>Vector</td></tr>
+<tr><td>Moment of a force</td><td>\(M\)</td><td>N m</td><td>Scalar (with sense)</td></tr>
+</table>
+
+<div class="definition">
+<strong>Scalar vs vector.</strong> A <em>scalar</em> is fully described by a single real number (with units): mass, time, speed, distance, energy. A <em>vector</em> has both magnitude and direction: displacement, velocity, acceleration, force, momentum. Two vectors are equal only if both their magnitudes and directions agree. Vectors may be added by the triangle (or parallelogram) rule, or component-wise in a chosen coordinate system.
+</div>
+
+<div class="definition">
+<strong>Displacement and velocity.</strong> <em>Displacement</em> \(s\) is the vector from a fixed origin to the current position — it has a sign (in 1D) or components (in 2D/3D). <em>Distance</em> is the scalar length of the path travelled. <em>Velocity</em> \(v = \mathrm{d}s/\mathrm{d}t\) is the rate of change of displacement; <em>speed</em> is its magnitude \(|v|\).
+</div>
+
+<div class="definition">
+<strong>Acceleration.</strong> Acceleration is the rate of change of velocity: \(a = \mathrm{d}v/\mathrm{d}t = \mathrm{d}^2 s/\mathrm{d}t^2\). It is a vector. A body "decelerating" in everyday English is one whose acceleration vector is opposite in direction to its velocity.
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — dimensional consistency.</strong> Every equation in mechanics must balance dimensionally. If you have written "m s\(^{-1}\) + m s\(^{-2}\)" on the two sides of an equals sign, stop and find the slip. A quick unit check at the end of a question catches many algebra errors.
+</div>
+
+<h2>2. Kinematics of Rectilinear Motion (SUVAT)</h2>
+
+<p>We begin with the simplest case: motion in a straight line under <em>constant</em> acceleration. Five quantities describe such a motion: initial velocity \(u\), final velocity \(v\), constant acceleration \(a\), time elapsed \(t\), and displacement \(s\) from the starting point. The famous <strong>SUVAT</strong> equations relate these, with each equation omitting one of the five quantities. Any problem with constant acceleration can be solved by listing what you know, spotting the missing variable, and picking the SUVAT equation that ignores it.</p>
+
+<div class="equation">
+\( v = u + at \qquad s = ut + \tfrac{1}{2}at^2 \qquad s = \tfrac{1}{2}(u+v)t \qquad v^2 = u^2 + 2as \qquad s = vt - \tfrac{1}{2}at^2 \)
+</div>
+
+<table>
+<tr><th>Equation</th><th>Variables used</th><th>Variable omitted</th></tr>
+<tr><td>\(v = u + at\)</td><td>\(u, v, a, t\)</td><td>\(s\)</td></tr>
+<tr><td>\(s = ut + \tfrac{1}{2}at^2\)</td><td>\(u, a, t, s\)</td><td>\(v\)</td></tr>
+<tr><td>\(s = \tfrac{1}{2}(u+v)t\)</td><td>\(u, v, t, s\)</td><td>\(a\)</td></tr>
+<tr><td>\(v^2 = u^2 + 2as\)</td><td>\(u, v, a, s\)</td><td>\(t\)</td></tr>
+<tr><td>\(s = vt - \tfrac{1}{2}at^2\)</td><td>\(v, a, t, s\)</td><td>\(u\)</td></tr>
+</table>
+
+<h3>2.1 Derivation from first principles</h3>
+
+<p>Under constant acceleration \(a\), \(\mathrm{d}v/\mathrm{d}t = a\). Integrating once with \(v(0)=u\) gives</p>
+
+<div class="equation">
+\( v(t) = u + at. \)
+</div>
+
+<p>Integrating again with \(s(0)=0\) gives</p>
+
+<div class="equation">
+\( s(t) = ut + \tfrac{1}{2}at^2. \)
+</div>
+
+<p>Eliminating \(t\) between the first two yields \(v^2 = u^2 + 2as\); using \(t = (v-u)/a\) in \(s = ut + \tfrac{1}{2}at^2\) and rearranging gives the averaging form \(s = \tfrac{1}{2}(u+v)t\). The last equation is the mirror image of the second with \(u\) eliminated via \(u = v - at\).</p>
+
+<div class="definition">
+<strong>When SUVAT applies.</strong> The five equations are only valid if the acceleration is <em>constant</em> throughout the interval considered — constant in both magnitude and direction. Non-uniform acceleration, or a change in direction (bouncing, reversing), requires splitting the motion into phases or using calculus (Section 3).
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — list knowns first.</strong> Before writing any equation, list which of \(s, u, v, a, t\) you know, what you want, and what is missing. Then pick the equation that involves all knowns plus the unknown and skips the missing letter. This habit turns confused multi-line working into one clean calculation.
+</div>
+
+<div class="example">
+<h3>Worked Example 1 — Accelerating from rest</h3>
+<p>A car accelerates from rest at a constant \(3\) m s\(^{-2}\) for \(8\) s. Find (a) the final velocity, (b) the distance travelled.</p>
+<p>Knowns: \(u = 0\), \(a = 3\), \(t = 8\). Unknowns: \(v\) and \(s\).</p>
+<p>(a) Use \(v = u + at\): \(v = 0 + 3\times 8 = 24\) m s\(^{-1}\).</p>
+<p>(b) Use \(s = ut + \tfrac{1}{2}at^2\): \(s = 0 + \tfrac{1}{2}\times 3\times 64 = 96\) m.</p>
+</div>
+
+<div class="example">
+<h3>Worked Example 2 — Stopping distance</h3>
+<p>A car travelling at \(25\) m s\(^{-1}\) brakes uniformly and stops in \(50\) m. Find (a) the deceleration, (b) the time taken to stop.</p>
+<p>Knowns: \(u = 25\), \(v = 0\), \(s = 50\). Unknown: \(a\), then \(t\).</p>
+<p>(a) \(v^2 = u^2 + 2as \Rightarrow 0 = 625 + 100a \Rightarrow a = -6.25\) m s\(^{-2}\) (i.e. deceleration of \(6.25\) m s\(^{-2}\)).</p>
+<p>(b) \(v = u + at \Rightarrow 0 = 25 - 6.25t \Rightarrow t = 4\) s.</p>
+</div>
+
+<h2>3. Motion with Non-Constant Acceleration</h2>
+
+<p>When acceleration varies, SUVAT fails and we must go back to calculus. The definitions \(v = \mathrm{d}s/\mathrm{d}t\) and \(a = \mathrm{d}v/\mathrm{d}t = \mathrm{d}^2 s/\mathrm{d}t^2\) still hold. Integrating:</p>
+
+<div class="equation">
+\( v(t) = v(0) + \int_0^t a(\tau)\,\mathrm{d}\tau, \qquad s(t) = s(0) + \int_0^t v(\tau)\,\mathrm{d}\tau. \)
+</div>
+
+<p>If acceleration is given as a function of position, \(a = a(x)\), the trick is to use the chain rule:</p>
+
+<div class="equation">
+\( a = \dfrac{\mathrm{d}v}{\mathrm{d}t} = \dfrac{\mathrm{d}v}{\mathrm{d}x}\cdot\dfrac{\mathrm{d}x}{\mathrm{d}t} = v\,\dfrac{\mathrm{d}v}{\mathrm{d}x}. \)
+</div>
+
+<p>This turns an equation in \(x\) and \(v\) into a separable ODE: \(v\,\mathrm{d}v = a(x)\,\mathrm{d}x\).</p>
+
+<div class="example">
+<h3>Worked Example 3 — Variable acceleration from a time-dependent formula</h3>
+<p>A particle moves along a straight line with acceleration \(a = 3t^2\) m s\(^{-2}\). At \(t=0\) it is at the origin and has velocity \(2\) m s\(^{-1}\). Find \(v(t)\) and \(s(t)\).</p>
+<p>\( v = \int 3t^2\,\mathrm{d}t = t^3 + C_1 \). At \(t=0\), \(v=2\), so \(C_1=2\). Thus \(v(t) = t^3 + 2\).</p>
+<p>\( s = \int (t^3 + 2)\,\mathrm{d}t = \tfrac{1}{4}t^4 + 2t + C_2 \). At \(t=0\), \(s=0\), so \(C_2 = 0\). Thus \(s(t) = \tfrac{1}{4}t^4 + 2t\).</p>
+<p>At \(t=2\), \(v = 8+2 = 10\) m s\(^{-1}\) and \(s = 4+4 = 8\) m.</p>
+</div>
+
+<div class="example">
+<h3>Worked Example 3b — Position-dependent acceleration</h3>
+<p>A particle moves along the \(x\)-axis with \(a = -4x\) (a simple-harmonic acceleration). At \(x = 0\) the particle has velocity \(v = 6\) m s\(^{-1}\). Find the speed of the particle as a function of \(x\), and the maximum displacement.</p>
+<p>Use \(a = v\,\mathrm{d}v/\mathrm{d}x\): \(v\,\mathrm{d}v = -4x\,\mathrm{d}x\). Integrating: \(\tfrac{1}{2}v^2 = -2x^2 + C\).</p>
+<p>At \(x = 0\), \(v = 6\): \(\tfrac{1}{2}(36) = C\), so \(C = 18\). Hence \(v^2 = 36 - 4x^2\).</p>
+<p>Maximum displacement is where \(v = 0\): \(x^2 = 9 \Rightarrow x = \pm 3\) m.</p>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — never apply SUVAT when \(a\) varies.</strong> If the question gives acceleration as a function of \(t\) (or \(x\), or \(v\)), treat it as a calculus problem from the outset. Using SUVAT on a non-constant acceleration is one of the most common "zero marks" mistakes on Paper 3.
+</div>
+
+<h2>4. Kinematic Graphs</h2>
+
+<p>Graphs of motion turn calculus into geometry. Three graphs are fundamental: displacement-time, velocity-time, and acceleration-time.</p>
+
+<ul>
+  <li><strong>Displacement-time (\(s\)-\(t\)):</strong> the gradient at any point equals the velocity \(\mathrm{d}s/\mathrm{d}t\). A horizontal line means the body is at rest; a straight slope means constant velocity.</li>
+  <li><strong>Velocity-time (\(v\)-\(t\)):</strong> the gradient equals the acceleration. The area between the curve and the time-axis equals the displacement, since \(s = \int v\,\mathrm{d}t\). Area below the axis counts as negative displacement.</li>
+  <li><strong>Acceleration-time (\(a\)-\(t\)):</strong> the area under the curve equals the change in velocity.</li>
+</ul>
+
+<svg viewBox="0 0 500 220" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <line x1="50" y1="180" x2="470" y2="180" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="50" y1="20"  x2="50"  y2="180" stroke="#1e3a5f" stroke-width="1.5"/>
+  <polyline points="50,180 150,80 300,80 400,180" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <polygon points="50,180 150,80 300,80 400,180" fill="#93c5fd" fill-opacity="0.4"/>
+  <text x="100" y="140" font-size="11" fill="#1e3a5f">accel.</text>
+  <text x="220" y="70"  font-size="11" fill="#1e3a5f">cruise (a=0)</text>
+  <text x="350" y="140" font-size="11" fill="#1e3a5f">decel.</text>
+  <text x="260" y="205" font-size="11" fill="#1e3a5f" text-anchor="middle">time t (s)</text>
+  <text x="20"  y="100" font-size="11" fill="#1e3a5f" transform="rotate(-90 20,100)">velocity v</text>
+  <text x="250" y="130" font-size="10" fill="#1e3a5f" text-anchor="middle">area = displacement</text>
+</svg>
+
+<div class="example">
+<h3>Worked Example 4 — Trapezium velocity-time graph</h3>
+<p>An object starts from rest, accelerates uniformly for \(5\) s at \(2\) m s\(^{-2}\), cruises at constant velocity for \(10\) s, then decelerates uniformly to rest in \(5\) s. Sketch the \(v\)-\(t\) graph and find the total distance.</p>
+<p>After the acceleration phase, \(v = 0 + 2\times 5 = 10\) m s\(^{-1}\). The graph is a trapezium with parallel sides of length \(10\) s (top, cruise) and \(20\) s (bottom, total), and height \(10\) m s\(^{-1}\).</p>
+<p>Total distance = area of trapezium = \(\tfrac{1}{2}(10 + 20)\times 10 = 150\) m.</p>
+<p>Alternatively, phase by phase: accel \(\tfrac{1}{2}\cdot 5\cdot 10 = 25\); cruise \(10\cdot 10 = 100\); decel \(\tfrac{1}{2}\cdot 5\cdot 10 = 25\); total \(150\) m.</p>
+</div>
+
+<h3>4.1 Reading features from a graph</h3>
+
+<p>A great deal of information can be extracted from a velocity-time graph without ever writing a SUVAT equation. The table summarises the dictionary between motion-features and graph-features.</p>
+
+<table>
+<tr><th>Motion feature</th><th>On \(s\)-\(t\) graph</th><th>On \(v\)-\(t\) graph</th></tr>
+<tr><td>At rest (momentarily)</td><td>Horizontal tangent</td><td>Curve crosses time-axis</td></tr>
+<tr><td>Constant velocity</td><td>Straight non-horizontal segment</td><td>Horizontal segment</td></tr>
+<tr><td>Constant acceleration</td><td>Parabolic arc</td><td>Straight non-horizontal segment</td></tr>
+<tr><td>Reversing direction</td><td>Local max or min</td><td>Curve crosses the axis and changes sign</td></tr>
+<tr><td>Distance travelled</td><td>Sum of \(|\Delta s|\)</td><td>Total area between curve and axis (counting below as positive)</td></tr>
+<tr><td>Displacement</td><td>Final minus initial \(s\)</td><td>Signed area (below-axis subtracts)</td></tr>
+</table>
+
+<h2>5. Vertical Motion Under Gravity</h2>
+
+<p>Near the Earth's surface, a freely falling body (air resistance neglected) accelerates downward at the gravitational acceleration \(g\), independent of mass. OCR uses \(g = 9.8\) m s\(^{-2}\) by default, sometimes \(9.81\) or a "take \(g = 10\)" simplification; always state which value you are using. The motion is rectilinear and constant-acceleration, so SUVAT applies with \(a = g\) (downward).</p>
+
+<p>This famous "universality" of free fall — that a feather and a hammer fall at the same rate in a vacuum — was first argued convincingly by Galileo and dramatically demonstrated on the Moon by Apollo 15 astronaut David Scott in 1971. For a body of mass \(m\), gravity exerts a force \(mg\) downward, so Newton's second law gives \(ma = mg\) and the \(m\) cancels: \(a = g\), independent of mass.</p>
+
+<div class="exam-tip">
+<strong>Exam tip — sign convention for vertical motion.</strong> Choose up OR down as positive at the start of a question, and stick with it. If up is positive then \(a = -g\), an upward launch gives \(u &gt; 0\), and the ball returns to its start when \(s = 0\). If down is positive, \(a = +g\) and all downward displacements are positive. Mixing conventions halfway through is a reliable source of sign errors.
+</div>
+
+<div class="example">
+<h3>Worked Example 5 — Ball thrown vertically upwards</h3>
+<p>A ball is thrown vertically upwards from the ground with speed \(20\) m s\(^{-1}\). Take \(g = 9.8\) m s\(^{-2}\) and upward as positive. Find (a) the time to maximum height, (b) the maximum height, (c) the time to return to the point of projection.</p>
+<p>Here \(u = 20\), \(a = -9.8\).</p>
+<p>(a) At max height \(v = 0\). Use \(v = u + at\): \(0 = 20 - 9.8 t \Rightarrow t = 20/9.8 \approx 2.04\) s.</p>
+<p>(b) Use \(v^2 = u^2 + 2as\): \(0 = 400 - 19.6 s \Rightarrow s = 400/19.6 \approx 20.4\) m.</p>
+<p>(c) By symmetry the total time is \(2\times 2.04 \approx 4.08\) s. (Check by \(s = ut + \tfrac{1}{2}at^2 = 0\): \(t(20 - 4.9 t)=0\), \(t = 0\) or \(t = 20/4.9 \approx 4.08\) s.)</p>
+</div>
+
+<h2>6. Projectile Motion</h2>
+
+<p>A projectile is a particle launched into the air and thereafter subject only to gravity (air resistance ignored). Its motion is two-dimensional, but the horizontal and vertical components <em>decouple</em>: horizontally there is no force, so horizontal velocity is constant; vertically, the acceleration is \(-g\). Treating the two components separately, with a shared time \(t\), is the master technique.</p>
+
+<p>Let the initial speed be \(u\) at angle \(\alpha\) above the horizontal, measured from the launch point (taken as origin). Then:</p>
+
+<div class="equation">
+\( v_x = u\cos\alpha, \quad x(t) = (u\cos\alpha)\,t \)
+</div>
+
+<div class="equation">
+\( v_y = u\sin\alpha - gt, \quad y(t) = (u\sin\alpha)\,t - \tfrac{1}{2}g t^2 \)
+</div>
+
+<svg viewBox="0 0 500 200" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <line x1="40" y1="170" x2="470" y2="170" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="40" y1="20"  x2="40"  y2="170" stroke="#1e3a5f" stroke-width="1.5"/>
+  <path d="M 40 170 Q 240 -20 440 170" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="40" y1="170" x2="95" y2="125" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="95,125 85,130 90,120" fill="#dc2626"/>
+  <text x="75"  y="120" font-size="11" fill="#dc2626">u</text>
+  <text x="105" y="162" font-size="11" fill="#dc2626">α</text>
+  <text x="240" y="60"  font-size="11" fill="#1e3a5f" text-anchor="middle">max height H</text>
+  <line x1="240" y1="70" x2="240" y2="170" stroke="#64748b" stroke-dasharray="3,3"/>
+  <text x="440" y="185" font-size="11" fill="#1e3a5f" text-anchor="middle">range R</text>
+  <text x="460" y="165" font-size="11" fill="#1e3a5f">x</text>
+  <text x="30"  y="30"  font-size="11" fill="#1e3a5f">y</text>
+</svg>
+
+<h3>6.1 Key projectile quantities</h3>
+
+<p>On level ground (projectile lands at the same height as launch), setting \(y = 0\) gives \(t(u\sin\alpha - \tfrac{1}{2}gt) = 0\), so the time of flight is</p>
+
+<div class="equation">
+\( T = \dfrac{2u\sin\alpha}{g}. \)
+</div>
+
+<p>Substituting into \(x = (u\cos\alpha)T\) and using \(2\sin\alpha\cos\alpha = \sin 2\alpha\) gives the horizontal range</p>
+
+<div class="equation">
+\( R = \dfrac{u^2 \sin 2\alpha}{g}. \)
+</div>
+
+<p>Maximum range on level ground occurs when \(\sin 2\alpha = 1\), i.e. \(\alpha = 45°\), giving \(R_{\max} = u^2/g\). The maximum height, where \(v_y = 0\), is</p>
+
+<div class="equation">
+\( H = \dfrac{u^2 \sin^2\alpha}{2g}. \)
+</div>
+
+<p>Eliminating \(t\) between \(x = (u\cos\alpha)t\) and \(y = (u\sin\alpha)t - \tfrac{1}{2}gt^2\) gives the trajectory as a function of \(x\) alone, a parabola:</p>
+
+<div class="equation">
+\( y = x\tan\alpha - \dfrac{g x^2}{2u^2 \cos^2\alpha}. \)
+</div>
+
+<table>
+<tr><th>Quantity</th><th>Formula (level ground)</th><th>Derivation summary</th></tr>
+<tr><td>Time of flight \(T\)</td><td>\(2u\sin\alpha/g\)</td><td>Set \(y=0\), solve for \(t\).</td></tr>
+<tr><td>Range \(R\)</td><td>\(u^2 \sin 2\alpha / g\)</td><td>\(R = (u\cos\alpha)T\).</td></tr>
+<tr><td>Max height \(H\)</td><td>\(u^2 \sin^2\alpha /(2g)\)</td><td>Set \(v_y = 0\), substitute back.</td></tr>
+<tr><td>Time to max height</td><td>\(u\sin\alpha / g\)</td><td>\(v_y = u\sin\alpha - gt = 0\).</td></tr>
+<tr><td>Trajectory \(y(x)\)</td><td>\(x\tan\alpha - \dfrac{g x^2}{2u^2 \cos^2\alpha}\)</td><td>Eliminate \(t\) between \(x(t)\) and \(y(t)\).</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — keep the two components separate.</strong> Write two parallel columns on your page, "horizontal" and "vertical", and fill in \(u, v, a, s, t\) for each. Gravity only affects the vertical column; time \(t\) is the link. Merging components in a single equation is where most projectile errors arise.
+</div>
+
+<div class="example">
+<h3>Worked Example 6 — Projectile at 30° (short)</h3>
+<p>A ball is launched from ground level at \(20\) m s\(^{-1}\) at \(30°\) above the horizontal. Take \(g = 9.8\) m s\(^{-2}\). Find the range and maximum height.</p>
+<p>\(u\sin\alpha = 20\times 0.5 = 10\); \(u\cos\alpha = 20\times (\sqrt{3}/2) \approx 17.32\).</p>
+<p>\(T = 2\times 10/9.8 \approx 2.041\) s. \(R = 17.32 \times 2.041 \approx 35.3\) m (or use \(u^2 \sin 60°/g = 400\times 0.866/9.8 \approx 35.3\) m).</p>
+<p>\(H = u^2 \sin^2\alpha /(2g) = 400\times 0.25 /19.6 \approx 5.10\) m.</p>
+</div>
+
+<div class="example">
+<h3>Worked Example 7 — Projectile at 40°</h3>
+<p>A stone is projected from a flat field at \(30\) m s\(^{-1}\) at \(40°\) to the horizontal. Take \(g = 9.8\). Find the range and maximum height.</p>
+<p>\(R = u^2 \sin 2\alpha /g = 900 \sin 80° / 9.8 = 900\times 0.9848 / 9.8 \approx 90.4\) m.</p>
+<p>\(H = u^2 \sin^2\alpha /(2g) = 900 \sin^2 40° /19.6 = 900\times 0.4132 /19.6 \approx 19.0\) m.</p>
+<p>\(T = 2u\sin\alpha/g = 60\sin 40°/9.8 \approx 3.93\) s.</p>
+</div>
+
+<h3>6.2 Projectile symmetry and the velocity at landing</h3>
+
+<p>On level ground (projectile lands at the same height as it was launched), the motion is symmetric about the highest point. The speed at landing equals the launch speed \(u\), the angle below horizontal at landing equals \(\alpha\) above horizontal at launch, and the time to rise equals the time to fall. This symmetry is often the quickest way to tackle a "find the speed when it lands" question.</p>
+
+<p>When the launch and landing heights differ — a projectile shot from a cliff, say, or into a raised net — the symmetry breaks and you must return to the two-column method. Set up vertical displacement with a clear sign convention (usually "up positive", launch at \(y=0\), landing point at \(y = -h\) if the ground is below, or \(y = +h\) if above), and solve the resulting quadratic in \(t\).</p>
+
+<div class="example">
+<h3>Worked Example 6b — Projectile from a cliff</h3>
+<p>A stone is thrown horizontally (i.e. \(\alpha = 0\)) from the top of a \(45\) m cliff at \(15\) m s\(^{-1}\). Take \(g = 9.8\). Find (a) the time to reach the sea below, (b) the horizontal distance from the foot of the cliff, (c) the speed and angle of impact.</p>
+<p>Take up as positive, origin at the launch point.</p>
+<p>(a) Vertical: \(y = -\tfrac{1}{2}gt^2 = -45 \Rightarrow t^2 = 90/9.8 \Rightarrow t \approx 3.03\) s.</p>
+<p>(b) Horizontal: \(x = 15 \times 3.03 \approx 45.5\) m.</p>
+<p>(c) At impact \(v_x = 15\), \(v_y = -gt = -29.7\) m s\(^{-1}\). Speed \(= \sqrt{15^2 + 29.7^2} \approx 33.3\) m s\(^{-1}\). Angle below horizontal \(= \arctan(29.7/15) \approx 63.2°\).</p>
+</div>
+
+<h2>7. Forces and Newton's Laws</h2>
+
+<p>Kinematics describes motion; dynamics explains it. Newton's three laws are the foundation of A-level mechanics.</p>
+
+<div class="definition">
+<strong>Newton's First Law (inertia).</strong> A body continues in its state of rest, or of uniform motion in a straight line, unless acted upon by a resultant external force. "Uniform motion" means constant velocity — constant speed <em>and</em> constant direction. Rest is just the special case with zero velocity.
+</div>
+
+<div class="definition">
+<strong>Newton's Second Law.</strong> The resultant force on a body equals the product of its mass and its acceleration, and points in the same direction as the acceleration:
+\[ \mathbf{F}_{\text{net}} = m\mathbf{a}. \]
+This is a vector equation — in two dimensions it amounts to two scalar equations, one per axis. The units work out: N = kg m s\(^{-2}\).
+</div>
+
+<div class="definition">
+<strong>Newton's Third Law.</strong> If body A exerts a force \(\mathbf{F}\) on body B, then body B simultaneously exerts a force \(-\mathbf{F}\) (equal in magnitude, opposite in direction) on body A. The two forces act on <em>different</em> bodies, so they never cancel on a single free-body diagram.
+</div>
+
+<h3>7.1 Free-body diagrams</h3>
+
+<p>The single most valuable habit in mechanics is to draw a <em>free-body diagram</em> for every body in the problem. Strip away everything that is not a force on that body, and draw every force as an arrow with its direction and a label. Then resolve into chosen axes and apply \(\mathbf{F} = m\mathbf{a}\).</p>
+
+<div class="exam-tip">
+<strong>Exam tip — always draw a free-body diagram.</strong> Before writing any equation, sketch the body as a dot or rectangle and draw every force acting on it: weight, normal contact, tension, friction, applied forces. Label magnitudes and directions. This diagram <em>is</em> half the solution; examiners reward it and marks are often explicitly allocated to it.
+</div>
+
+<h2>8. Types of Forces</h2>
+
+<table>
+<tr><th>Force</th><th>Symbol</th><th>Direction</th><th>Notes</th></tr>
+<tr><td>Weight</td><td>\(W = mg\)</td><td>Vertically downward</td><td>Gravitational pull of the Earth on the body.</td></tr>
+<tr><td>Normal contact</td><td>\(N\) or \(R\)</td><td>Perpendicular to surface, away from it</td><td>Surface cannot pull — \(N \ge 0\).</td></tr>
+<tr><td>Friction</td><td>\(F\)</td><td>Along surface, opposing relative motion or tendency</td><td>\(F \le \mu N\); \(F = \mu N\) only at the point of slipping.</td></tr>
+<tr><td>Tension</td><td>\(T\)</td><td>Along the string, away from the body</td><td>In a light string, tension is the same at both ends.</td></tr>
+<tr><td>Thrust</td><td>\(T\)</td><td>Along a rod or spring, pushing the body away</td><td>A rigid rod can push as well as pull; a string cannot.</td></tr>
+<tr><td>Applied force</td><td>\(P, F\)</td><td>As described</td><td>External push or pull.</td></tr>
+<tr><td>Air resistance</td><td>—</td><td>Opposite to velocity</td><td>Normally neglected at A-level unless stated.</td></tr>
+</table>
+
+<div class="definition">
+<strong>Weight.</strong> Weight is the gravitational force on a body of mass \(m\), with magnitude \(W = mg\) directed vertically downward. <em>Mass</em> (kg) measures inertia and is the same everywhere; <em>weight</em> (N) depends on local \(g\). On the Moon (\(g \approx 1.6\) m s\(^{-2}\)) your mass is unchanged but your weight is about 1/6 of its Earth value.
+</div>
+
+<div class="definition">
+<strong>Tension in a light string.</strong> A "light" string has negligible mass; an "inextensible" string has fixed length. Such a string transmits force without stretching or accelerating itself, so the tension is the same at every point. A smooth (frictionless) pulley simply redirects the string without changing the tension.
+</div>
+
+<h2>9. Resolving Forces on an Inclined Plane</h2>
+
+<p>When a body sits on a slope tilted at angle \(\theta\) to the horizontal, it is more convenient to choose axes <em>parallel</em> and <em>perpendicular</em> to the slope rather than horizontal and vertical. Gravity, still vertical, is then decomposed:</p>
+
+<ul>
+  <li>Component along slope (down the slope): \(mg\sin\theta\).</li>
+  <li>Component perpendicular to slope (into the surface): \(mg\cos\theta\).</li>
+</ul>
+
+<svg viewBox="0 0 500 220" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <polygon points="60,180 440,180 440,80" fill="#e8eef6" stroke="#1e3a5f" stroke-width="1.5"/>
+  <rect x="260" y="110" width="50" height="30" fill="#93c5fd" stroke="#1e3a5f" transform="rotate(-15 285 125)"/>
+  <line x1="285" y1="125" x2="285" y2="185" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="285,185 280,178 290,178" fill="#dc2626"/>
+  <text x="295" y="175" font-size="11" fill="#dc2626">mg</text>
+  <line x1="285" y1="125" x2="330" y2="150" stroke="#16a34a" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="340" y="152" font-size="11" fill="#16a34a">mg sin θ</text>
+  <line x1="285" y1="125" x2="260" y2="165" stroke="#16a34a" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="200" y="165" font-size="11" fill="#16a34a">mg cos θ</text>
+  <path d="M 420 180 A 30 30 0 0 1 410 165" fill="none" stroke="#1e3a5f"/>
+  <text x="405" y="175" font-size="11" fill="#1e3a5f">θ</text>
+</svg>
+
+<p>Perpendicular equilibrium gives \(N = mg\cos\theta\). Along the slope, Newton's second law gives</p>
+
+<div class="equation">
+\( m a = mg\sin\theta - F_{\text{friction}} - (\text{other forces up the slope}). \)
+</div>
+
+<p>On a <em>frictionless</em> slope the acceleration down the slope is simply \(a = g\sin\theta\), independent of mass — a fact first established by Galileo.</p>
+
+<div class="exam-tip">
+<strong>Exam tip — resolve in two perpendicular directions.</strong> Pick axes that make the problem easy: for an inclined plane, choose along and perpendicular to the slope. Equilibrium (or \(ma\)) must hold in each direction separately. This decouples the algebra and keeps signs transparent.
+</div>
+
+<h3>9.1 Slope with a pushing or pulling force</h3>
+
+<p>Many problems add an applied force along or parallel to the slope. The routine is unchanged: draw the free-body diagram, resolve along and perpendicular to the slope, and write Newton's second law along the slope and equilibrium (or \(ma\) if the body is free to lift) perpendicular.</p>
+
+<div class="example">
+<h3>Worked Example 8b — Block on a rough incline</h3>
+<p>A block of mass \(6\) kg rests on a slope at \(25°\) to the horizontal. The coefficient of friction between block and slope is \(\mu = 0.3\). Take \(g = 9.8\). Determine whether the block slides, and if so, find its acceleration.</p>
+<p>Perpendicular to slope: \(N = mg\cos 25° = 6(9.8)(0.9063) = 53.29\) N.</p>
+<p>Maximum friction: \(F_{\max} = \mu N = 0.3 \times 53.29 = 15.99\) N.</p>
+<p>Component of gravity along slope (down): \(mg\sin 25° = 6(9.8)(0.4226) = 24.85\) N.</p>
+<p>Since \(24.85 &gt; 15.99\), gravity overcomes limiting friction; the block slides. Taking down the slope as positive, Newton's second law gives</p>
+<p>\( ma = mg\sin\theta - \mu N = 24.85 - 15.99 = 8.86 \text{ N} \Rightarrow a = 8.86/6 \approx 1.48 \text{ m s}^{-2}. \)</p>
+</div>
+
+<h2>10. Friction</h2>
+
+<p>Two surfaces in contact exert on each other a reactive <em>normal</em> force (perpendicular) and a <em>frictional</em> force (tangential). Friction opposes the relative motion between the surfaces or, if there is no motion yet, the tendency of relative motion.</p>
+
+<div class="definition">
+<strong>Coefficient of friction and the friction inequality.</strong> The frictional force \(F\) satisfies
+\[ F \le \mu N, \]
+where \(N\) is the normal contact force and \(\mu\) (≥ 0) is the coefficient of friction between the two surfaces. Equality holds at the point of slipping (<em>limiting friction</em>): \(F_{\max} = \mu N\). Once the body is moving, kinetic friction acts at the value \(\mu N\) opposing motion. At A-level OCR uses a single \(\mu\) without distinguishing static and kinetic.
+</div>
+
+<table>
+<tr><th>Situation</th><th>Friction force</th><th>Notes</th></tr>
+<tr><td>Body at rest, no applied tangential force</td><td>\(F = 0\)</td><td>No tendency to slip.</td></tr>
+<tr><td>Body at rest, applied tangential force \(P &lt; \mu N\)</td><td>\(F = P\) (opposing \(P\))</td><td>Static friction adjusts to cancel \(P\).</td></tr>
+<tr><td>Body on point of slipping</td><td>\(F = \mu N\)</td><td>Limiting friction.</td></tr>
+<tr><td>Body sliding</td><td>\(F = \mu N\) opposing motion</td><td>Kinetic friction — independent of speed at A-level.</td></tr>
+</table>
+
+<div class="example">
+<h3>Worked Example 8 — Block pulled by an angled force</h3>
+<p>A block of mass \(4\) kg rests on a rough horizontal surface with \(\mu = 0.2\). It is pulled by a force \(P = 20\) N at \(30°\) above horizontal. Take \(g = 9.8\). Find the acceleration.</p>
+<p>Free-body diagram: weight \(4g = 39.2\) N down; normal \(N\) up; applied force \(20\) N at \(30°\) (horizontal component \(20\cos 30° \approx 17.32\) N; vertical component \(20\sin 30° = 10\) N up); friction \(F\) horizontal, opposing motion.</p>
+<p><em>Vertical equilibrium:</em> \(N + 10 = 39.2 \Rightarrow N = 29.2\) N.</p>
+<p><em>Friction:</em> \(F = \mu N = 0.2\times 29.2 = 5.84\) N.</p>
+<p><em>Horizontal:</em> \(m a = 20\cos 30° - F = 17.32 - 5.84 = 11.48\) N, so \(a = 11.48/4 \approx 2.87\) m s\(^{-2}\).</p>
+</div>
+
+<h2>11. Connected Particles</h2>
+
+<p>Two (or more) bodies connected by a light inextensible string over a smooth pulley move with the same <em>magnitude</em> of acceleration (strings don't stretch), and the string carries a single <em>tension</em> throughout. Each body is analysed with its own free-body diagram, and the two Newton's-second-law equations are solved simultaneously.</p>
+
+<svg viewBox="0 0 500 240" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <circle cx="250" cy="40" r="18" fill="#cbd5e1" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="232" y1="40" x2="160" y2="140" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="268" y1="40" x2="340" y2="140" stroke="#1e3a5f" stroke-width="1.5"/>
+  <rect x="130" y="140" width="60" height="50" fill="#93c5fd" stroke="#1e3a5f"/>
+  <rect x="310" y="140" width="60" height="50" fill="#60a5fa" stroke="#1e3a5f"/>
+  <text x="160" y="172" font-size="13" fill="#1e3a5f" text-anchor="middle">3 kg</text>
+  <text x="340" y="172" font-size="13" fill="#1e3a5f" text-anchor="middle">5 kg</text>
+  <line x1="160" y1="195" x2="160" y2="225" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="160,225 154,218 166,218" fill="#dc2626"/>
+  <text x="155" y="220" font-size="10" fill="#dc2626" text-anchor="end">3g</text>
+  <line x1="340" y1="195" x2="340" y2="225" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="340,225 334,218 346,218" fill="#dc2626"/>
+  <text x="350" y="220" font-size="10" fill="#dc2626">5g</text>
+  <line x1="160" y1="140" x2="160" y2="110" stroke="#16a34a" stroke-width="2"/>
+  <polygon points="160,110 154,117 166,117" fill="#16a34a"/>
+  <text x="135" y="125" font-size="10" fill="#16a34a">T</text>
+  <line x1="340" y1="140" x2="340" y2="110" stroke="#16a34a" stroke-width="2"/>
+  <polygon points="340,110 334,117 346,117" fill="#16a34a"/>
+  <text x="350" y="125" font-size="10" fill="#16a34a">T</text>
+</svg>
+
+<div class="example">
+<h3>Worked Example 9 — Atwood machine (3 kg and 5 kg)</h3>
+<p>Masses of \(3\) kg and \(5\) kg are connected by a light inextensible string over a smooth pulley and released from rest. Take \(g = 9.8\) m s\(^{-2}\). Find the acceleration and the tension.</p>
+<p>Let \(a\) be the magnitude of acceleration (with the 5 kg mass descending) and \(T\) the tension.</p>
+<p><em>For the 5 kg (down as positive):</em> \(5g - T = 5a\).</p>
+<p><em>For the 3 kg (up as positive):</em> \(T - 3g = 3a\).</p>
+<p>Adding: \((5-3)g = 8a \Rightarrow a = 2g/8 = g/4 = 2.45\) m s\(^{-2}\).</p>
+<p>Substituting: \(T = 3g + 3a = 3(9.8) + 3(2.45) = 29.4 + 7.35 = 36.75\) N.</p>
+<p>Check with the other equation: \(5g - T = 49 - 36.75 = 12.25 = 5 \times 2.45\). Correct.</p>
+</div>
+
+<h2>12. Moments and Rigid-Body Equilibrium</h2>
+
+<p>Up to this point every body has been treated as a <em>particle</em> — a point with mass but no extent. Real extended bodies also rotate, and a force can cause rotation as well as translation. The tendency of a force to cause rotation about a point is the <em>moment</em> (or torque) of the force.</p>
+
+<div class="definition">
+<strong>Moment of a force.</strong> The moment of a force \(F\) about a point \(P\) is
+\[ M = F \times d, \]
+where \(d\) is the perpendicular distance from \(P\) to the line of action of the force. Units: N m. Moments have a sense (clockwise or anticlockwise); sum algebraically with one sign for each. For a force applied at distance \(r\) from \(P\) at angle \(\theta\) to the line \(rP\), \(M = Fr\sin\theta\).
+</div>
+
+<div class="definition">
+<strong>Equilibrium of a rigid body.</strong> A rigid body is in static equilibrium if and only if
+\[ \sum \mathbf{F} = \mathbf{0} \quad\text{AND}\quad \sum M_P = 0 \]
+for <em>any</em> chosen point \(P\). The first condition prevents translation; the second prevents rotation. In 2D this is three scalar equations: \(\sum F_x = 0\), \(\sum F_y = 0\), \(\sum M = 0\).
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — choose the moment point cleverly.</strong> Because \(\sum M = 0\) about any point, pick the point through which the most unknown forces act. Those forces then have zero moment and drop out of the equation, leaving an equation you can solve. A ladder problem typically takes moments about the foot of the ladder to eliminate the ground reaction and friction in one step.
+</div>
+
+<h3>12.1 Seesaw / plank problems</h3>
+
+<div class="example">
+<h3>Worked Example 10 — Plank balancing</h3>
+<p>A uniform plank of length \(4\) m and mass \(10\) kg rests on a single pivot \(1.5\) m from the left end. A child of mass \(25\) kg stands on the left end. How far from the pivot on the right must an adult of mass \(70\) kg stand for the plank to balance? Take \(g = 9.8\).</p>
+<p>The weight of the plank acts at its centre, \(2\) m from the left end, which is \(0.5\) m to the right of the pivot.</p>
+<p>Take moments about the pivot (so the reaction drops out), with anticlockwise positive.</p>
+<p>Child (left end, \(1.5\) m from pivot, clockwise when viewed from the right — treat as anticlockwise side): \(+25 g \times 1.5 = 37.5 g\).</p>
+<p>Plank weight (\(0.5\) m to the right of pivot, clockwise): \(-10 g \times 0.5 = -5 g\).</p>
+<p>Adult (\(x\) m to the right of pivot, clockwise): \(-70 g \times x\).</p>
+<p>Equilibrium: \(37.5 g - 5 g - 70 g x = 0 \Rightarrow 70 x = 32.5 \Rightarrow x = 0.464\) m.</p>
+</div>
+
+<h3>12.2 Ladder against a wall</h3>
+
+<svg viewBox="0 0 500 260" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <line x1="60" y1="240" x2="460" y2="240" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="120" y1="20" x2="120" y2="240" stroke="#1e3a5f" stroke-width="2"/>
+  <line x1="120" y1="60" x2="340" y2="240" stroke="#2563eb" stroke-width="3"/>
+  <line x1="120" y1="60" x2="155" y2="60" stroke="#16a34a" stroke-width="2"/>
+  <polygon points="155,60 148,56 148,64" fill="#16a34a"/>
+  <text x="160" y="55" font-size="11" fill="#16a34a">N_wall</text>
+  <line x1="340" y1="240" x2="340" y2="205" stroke="#16a34a" stroke-width="2"/>
+  <polygon points="340,205 336,212 344,212" fill="#16a34a"/>
+  <text x="345" y="215" font-size="11" fill="#16a34a">N_g</text>
+  <line x1="340" y1="240" x2="305" y2="240" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="305,240 312,236 312,244" fill="#dc2626"/>
+  <text x="275" y="255" font-size="11" fill="#dc2626">F (friction)</text>
+  <line x1="230" y1="150" x2="230" y2="195" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="230,195 225,188 235,188" fill="#dc2626"/>
+  <text x="238" y="180" font-size="11" fill="#dc2626">mg</text>
+  <path d="M 320 240 A 25 25 0 0 0 325 220" fill="none" stroke="#1e3a5f"/>
+  <text x="310" y="230" font-size="11" fill="#1e3a5f">θ</text>
+</svg>
+
+<div class="example">
+<h3>Worked Example 11 — Ladder against a smooth wall</h3>
+<p>A uniform ladder of length \(5\) m and mass \(20\) kg leans against a smooth vertical wall. The coefficient of friction between the foot of the ladder and the rough horizontal ground is \(\mu = 0.4\). Find the minimum angle \(\theta\) (between ladder and ground) for which the ladder rests in equilibrium. Take \(g = 9.8\).</p>
+<p>Forces on the ladder: weight \(mg = 20g\) at the midpoint; normal reaction \(N_w\) from the wall (horizontal, away from wall, since the wall is smooth there is no friction there); normal reaction \(N_g\) from the ground (vertical); friction \(F\) at the foot (along the ground, toward the wall, preventing the foot from slipping outward).</p>
+<p><em>Vertical equilibrium:</em> \(N_g = mg\).</p>
+<p><em>Horizontal equilibrium:</em> \(F = N_w\).</p>
+<p><em>Moments about the foot of the ladder</em> (eliminates \(N_g\) and \(F\)). Take anticlockwise positive. The wall reaction \(N_w\) acts at the top at perpendicular distance \(L\sin\theta\) above the foot; the weight acts at the midpoint at perpendicular horizontal distance \((L/2)\cos\theta\) from the foot.</p>
+<p>\( N_w \cdot L\sin\theta - mg\cdot (L/2)\cos\theta = 0 \Rightarrow N_w = \tfrac{1}{2} mg \cot\theta. \)</p>
+<p>At the minimum angle the ladder is on the point of slipping outward, so friction is limiting: \(F = \mu N_g = \mu mg\). But \(F = N_w = \tfrac{1}{2} mg \cot\theta\), so</p>
+<p>\( \mu mg = \tfrac{1}{2} mg \cot\theta \Rightarrow \cot\theta = 2\mu \Rightarrow \tan\theta = 1/(2\mu) = 1/0.8 = 1.25. \)</p>
+<p>\( \theta = \arctan 1.25 \approx 51.3°. \) Below this angle the required friction exceeds \(\mu N_g\) and the ladder slips.</p>
+</div>
+
+<h3>12.3 Resolving a force into components</h3>
+
+<div class="example">
+<h3>Worked Example 12 — Force resolution</h3>
+<p>A \(50\) N force acts at \(60°\) above the horizontal. Find its horizontal and vertical components.</p>
+<p>Horizontal: \(50 \cos 60° = 50 \times 0.5 = 25\) N.</p>
+<p>Vertical: \(50 \sin 60° = 50 \times (\sqrt 3 /2) \approx 43.30\) N.</p>
+<p>Check magnitudes: \(\sqrt{25^2 + 43.30^2} = \sqrt{625 + 1874.9} \approx \sqrt{2500} = 50\) N.</p>
+</div>
+
+<h3>12.4 Connected particles on a table and over the edge</h3>
+
+<p>A variant of the pulley problem: one mass sits on a horizontal (rough or smooth) table while the other hangs vertically over a smooth pulley at the edge. Treat each body separately with its own free-body diagram.</p>
+
+<div class="example">
+<h3>Worked Example 12b — Mass on table, mass hanging</h3>
+<p>A block of mass \(4\) kg sits on a rough horizontal table, coefficient of friction \(\mu = 0.25\), connected by a light inextensible string over a smooth pulley at the edge of the table to a hanging mass of \(3\) kg. The system is released from rest. Take \(g = 9.8\). Find the acceleration and the tension.</p>
+<p><em>Free body, \(3\) kg hanging (down positive):</em> \(3g - T = 3a\).</p>
+<p><em>Free body, \(4\) kg on table (toward pulley positive):</em> Normal \(N = 4g\); friction \(F = \mu N = 0.25\times 4g = g\); Newton's second law \(T - g = 4a\).</p>
+<p>Adding: \(3g - g = 7a \Rightarrow a = 2g/7 = 2.8\) m s\(^{-2}\).</p>
+<p>Tension: \(T = 3g - 3a = 3(9.8) - 3(2.8) = 21\) N.</p>
+</div>
+
+<h2>13. Kinematics Using Vectors</h2>
+
+<p>In two (or three) dimensions, position is a vector \(\mathbf{r}(t)\) with components \((x(t), y(t))\). Velocity and acceleration are obtained by component-wise differentiation:</p>
+
+<div class="equation">
+\( \mathbf{v}(t) = \dfrac{\mathrm{d}\mathbf{r}}{\mathrm{d}t} = (\dot x, \dot y), \qquad \mathbf{a}(t) = \dfrac{\mathrm{d}\mathbf{v}}{\mathrm{d}t} = (\ddot x, \ddot y). \)
+</div>
+
+<p>Similarly, \(\mathbf{r}(t) = \mathbf{r}(0) + \int_0^t \mathbf{v}(\tau)\,\mathrm{d}\tau\), and for a constant acceleration \(\mathbf{a}\) the vector SUVAT equations hold:</p>
+
+<div class="equation">
+\( \mathbf{v} = \mathbf{u} + \mathbf{a} t, \qquad \mathbf{r} = \mathbf{r}_0 + \mathbf{u} t + \tfrac{1}{2}\mathbf{a} t^2. \)
+</div>
+
+<p>Speed at time \(t\) is \(|\mathbf{v}(t)| = \sqrt{\dot x^2 + \dot y^2}\). Direction of motion is \(\arctan(\dot y / \dot x)\) (taking care of the quadrant).</p>
+
+<div class="example">
+<h3>Worked Example 13 — 2D motion from vectors</h3>
+<p>A particle has position vector \(\mathbf{r}(t) = (t^2 - 2t)\,\mathbf{i} + (3t)\,\mathbf{j}\) metres, where \(t\) is in seconds. Find the velocity, acceleration, speed at \(t=2\), and direction of motion at \(t=2\).</p>
+<p>\( \mathbf{v}(t) = (2t - 2)\,\mathbf{i} + 3\,\mathbf{j}. \)</p>
+<p>\( \mathbf{a}(t) = 2\,\mathbf{i}. \) (Constant, along \(\mathbf{i}\).)</p>
+<p>At \(t=2\): \(\mathbf{v} = 2\,\mathbf{i} + 3\,\mathbf{j}\), \(|\mathbf{v}| = \sqrt{4 + 9} = \sqrt{13} \approx 3.61\) m s\(^{-1}\).</p>
+<p>Direction above the \(x\)-axis: \(\arctan(3/2) \approx 56.3°\).</p>
+</div>
+
+<h3>13.1 Vectors and relative motion</h3>
+
+<p>Given two bodies \(A\) and \(B\) with velocity vectors \(\mathbf{v}_A\) and \(\mathbf{v}_B\), the <em>velocity of \(A\) relative to \(B\)</em> is</p>
+
+<div class="equation">
+\( \mathbf{v}_{A/B} = \mathbf{v}_A - \mathbf{v}_B. \)
+</div>
+
+<p>This is the velocity \(A\) would appear to have to an observer moving with \(B\). The same rule applies to positions and accelerations. Relative-motion arguments give elegant solutions to interception and collision problems.</p>
+
+<div class="example">
+<h3>Worked Example 14 — Closest approach</h3>
+<p>Ship A moves with constant velocity \((4, 3)\) m s\(^{-1}\) from initial position \((0, 0)\). Ship B moves with constant velocity \((-2, 1)\) m s\(^{-1}\) from initial position \((60, -20)\). Find the time at which the ships are closest together, and the minimum distance between them.</p>
+<p>Relative velocity of B with respect to A: \(\mathbf{v}_{B/A} = (-2, 1) - (4, 3) = (-6, -2)\).</p>
+<p>Relative position of B from A: \(\mathbf{r}_{B/A}(t) = (60 - 6t,\; -20 - 2t)\).</p>
+<p>Squared distance: \(D^2 = (60-6t)^2 + (20+2t)^2\). Differentiate with respect to \(t\): \(\mathrm{d}(D^2)/\mathrm{d}t = 2(60-6t)(-6) + 2(20+2t)(2) = -12(60-6t) + 4(20+2t)\).</p>
+<p>Setting to zero: \(-720 + 72t + 80 + 8t = 0 \Rightarrow 80t = 640 \Rightarrow t = 8\) s.</p>
+<p>At \(t = 8\): \(\mathbf{r}_{B/A} = (60-48, -20-16) = (12, -36)\). Minimum distance \(= \sqrt{144 + 1296} = \sqrt{1440} \approx 37.9\) m.</p>
+</div>
+
+<h2>14. Summary</h2>
+
+<p>Mechanics at A-level rests on three pillars: <em>kinematics</em> (describing motion), <em>dynamics</em> (explaining motion via Newton's laws), and <em>statics</em> (equilibrium of rigid bodies). The routines are by now familiar: set up axes; draw a free-body diagram; resolve; apply \(\mathbf{F} = m\mathbf{a}\) (or \(\sum \mathbf{F} = 0\) and \(\sum M = 0\)); solve; sanity-check units and signs. Nothing more than this machinery is needed, and with steady practice the nominally varied problems — inclined planes, pulleys, projectiles, ladders — all become variations on the same theme.</p>
+
+<div class="exam-tip">
+<strong>Exam tip — state your value of g.</strong> OCR expects candidates to state whichever value of gravitational acceleration they use (usually \(g = 9.8\), occasionally \(g = 9.81\) or \(g = 10\) if the question stipulates). Stating it explicitly at the start of working avoids ambiguity and is sometimes worth a mark in its own right.
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — use the whole SUVAT toolkit.</strong> Students often memorise only the first two equations (\(v = u+at\) and \(s = ut + \tfrac{1}{2}at^2\)) and try to force every problem into them. When \(t\) is not asked and not given, \(v^2 = u^2 + 2as\) is almost always faster; when \(a\) is not asked, \(s = \tfrac{1}{2}(u+v)t\) saves a line of algebra. Choosing the right equation is the main saving in a timed paper.
+</div>
+
+<h3>14.1 Common pitfalls</h3>
+
+<table>
+<tr><th>Pitfall</th><th>What goes wrong</th><th>How to avoid</th></tr>
+<tr><td>Applying SUVAT with variable \(a\)</td><td>Wrong answer — SUVAT assumes constant \(a\).</td><td>Whenever \(a\) depends on \(t\), \(x\), or \(v\), integrate.</td></tr>
+<tr><td>Forgetting weight on the free-body diagram</td><td>Misses \(mg\) in the force balance.</td><td>Always draw weight first on every body before adding other forces.</td></tr>
+<tr><td>Using \(F = \mu N\) when not at slipping</td><td>Over-estimates the friction that is actually acting.</td><td>Only use \(F = \mu N\) when the problem states "on the point of slipping" or the body is moving.</td></tr>
+<tr><td>Treating two connected bodies as one particle</td><td>Tension vanishes, so the equations lose information.</td><td>Separate free-body diagram for each body; link via common acceleration and tension.</td></tr>
+<tr><td>Sign inconsistency in vertical motion</td><td>Max-height or return-time signs come out wrong.</td><td>Commit to up-positive (or down-positive) and use that throughout.</td></tr>
+<tr><td>Mixing components in projectile motion</td><td>Puts horizontal speed into a vertical equation.</td><td>Use two explicit columns labelled horizontal/vertical.</td></tr>
+</table>
+
+<h3>14.2 Modelling assumptions — what "light, smooth, inextensible, rigid, particle" really mean</h3>
+
+<p>A-level mechanics questions depend on a handful of stock idealisations. Knowing precisely what each assumption lets you ignore — and what it hides — makes you both faster and more accurate in writing down equations.</p>
+
+<ul>
+  <li><strong>Particle:</strong> a point with mass but no size; cannot rotate; all forces act at that point. Assumes the body is small compared with the distances involved.</li>
+  <li><strong>Light string/rod:</strong> negligible mass; the string or rod does not contribute to weight or to \(ma\). Tension is therefore the same at both ends.</li>
+  <li><strong>Inextensible string:</strong> fixed length; the two ends have equal speeds along the string. Connected bodies share the magnitude of acceleration.</li>
+  <li><strong>Smooth surface / pulley:</strong> coefficient of friction zero; no tangential contact force. A smooth pulley simply redirects a string without changing its tension.</li>
+  <li><strong>Rough surface:</strong> friction is present, obeying \(F \le \mu N\).</li>
+  <li><strong>Rigid body:</strong> does not deform under load; geometry is preserved, so moments can be taken about any point.</li>
+  <li><strong>Uniform body:</strong> mass distributed evenly; centre of mass at the geometric centre (midpoint for a uniform rod, centroid for a uniform lamina).</li>
+</ul>
+
+<h3>14.3 Exam-technique checklist</h3>
+
+<ol>
+  <li>Read the whole question before starting; identify whether it is constant or variable acceleration, one or two bodies, straight line or 2D.</li>
+  <li>State the value of \(g\) and any sign convention.</li>
+  <li>Draw a free-body diagram with every force labelled by symbol and value.</li>
+  <li>Choose axes (horizontal/vertical, or along/perpendicular to slope) and resolve every force onto those axes.</li>
+  <li>Write Newton's second law in each direction, or the equilibrium equations if the body is not accelerating.</li>
+  <li>For rigid bodies add a moments equation about a well-chosen point.</li>
+  <li>Solve the simultaneous equations; quote answers to an appropriate precision (usually 3 significant figures).</li>
+  <li>Sanity-check units and magnitudes.</li>
+</ol>
+
+<div class="exam-tip">
+<strong>Exam tip — sanity-check your numerical answers.</strong> A projectile launched at \(20\) m s\(^{-1}\) should travel of order \(10\)–\(40\) m, not \(400\). An ordinary mass on an ordinary slope should accelerate at a few m s\(^{-2}\), not at \(300\). Before writing down the final number, ask yourself "is this roughly the right size?" — orders of magnitude catch most algebra and calculator slips.
+</div>
+
+<div class="definition">
+<strong>Quick-reference formula sheet.</strong>
+<ul>
+  <li><strong>SUVAT:</strong> \(v = u + at\); \(s = ut + \tfrac{1}{2}at^2\); \(s = \tfrac{1}{2}(u+v)t\); \(v^2 = u^2 + 2as\); \(s = vt - \tfrac{1}{2}at^2\).</li>
+  <li><strong>Variable accel.:</strong> \(v = \int a\,\mathrm{d}t\); \(s = \int v\,\mathrm{d}t\); \(a = v\,\mathrm{d}v/\mathrm{d}x\).</li>
+  <li><strong>Projectile (launch \(u\) at \(\alpha\)):</strong> \(T = 2u\sin\alpha/g\); \(R = u^2 \sin 2\alpha /g\); \(H = u^2 \sin^2\alpha /(2g)\); trajectory \(y = x\tan\alpha - gx^2/(2u^2\cos^2\alpha)\).</li>
+  <li><strong>Newton's 2nd law:</strong> \(\mathbf{F}_{\text{net}} = m\mathbf{a}\).</li>
+  <li><strong>Weight:</strong> \(W = mg\).</li>
+  <li><strong>Friction:</strong> \(F \le \mu N\), with equality at slipping.</li>
+  <li><strong>Inclined plane:</strong> along-slope component of gravity \(= mg\sin\theta\); perpendicular \(= mg\cos\theta\).</li>
+  <li><strong>Moment of a force:</strong> \(M = F \times d_\perp\).</li>
+  <li><strong>Rigid body equilibrium:</strong> \(\sum \mathbf{F} = \mathbf{0}\) AND \(\sum M_P = 0\).</li>
+  <li><strong>Vector kinematics:</strong> \(\mathbf{v} = \mathrm{d}\mathbf{r}/\mathrm{d}t\); \(\mathbf{a} = \mathrm{d}\mathbf{v}/\mathrm{d}t\).</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

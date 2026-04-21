@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCR 1.9 — Numerical Methods</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.9 Numerical Methods</h1>
+<p class="spec-ref">Mathematics — OCR A-Level (H240) — Paper 1: Pure Mathematics</p>
+
+<p>Numerical methods are techniques for producing <em>approximate</em> answers when an exact closed-form solution is impossible, impractical, or unknown. Many equations and integrals that arise naturally in applied mathematics — from orbital mechanics, to finance, to machine learning — simply cannot be solved with the algebraic toolkit of A-level. For example, the transcendental equation \(x = \cos x\) has a real root, but no combination of elementary functions expresses it; the integral \(\int e^{-x^2}\, dx\) appears in statistics everywhere (normal distribution) but has no elementary antiderivative. In such cases we fall back on iterative procedures that generate sequences of better and better approximations, together with rigorous methods to bound the error. This chapter develops the three main root-finding techniques on the OCR H240 specification — change of sign, fixed-point iteration, and Newton-Raphson — and introduces numerical quadrature via the trapezium rule.</p>
+
+<h2>1. Why Numerical Methods?</h2>
+
+<p>Analytic algebra handles polynomial equations up to degree four and a small handful of other cases. Beyond that, most equations cannot be solved exactly in closed form. Classic examples:</p>
+
+<ul>
+  <li><strong>Transcendental equations</strong> mix polynomial and transcendental functions: \(x = \cos x\), \(e^x = 3x\), \(\ln x = 1 - x\). No finite combination of radicals and elementary functions solves these.</li>
+  <li><strong>Quintic and higher polynomials</strong> are, in general, not solvable by radicals (Abel-Ruffini theorem, 1824).</li>
+  <li><strong>Integrals without elementary antiderivatives</strong>: \(\int e^{-x^2}\, dx\), \(\int \sin(x^2)\, dx\), \(\int \frac{\sin x}{x}\, dx\) — all well-defined but no elementary closed form.</li>
+</ul>
+
+<p>When exact methods fail, we design an algorithm that generates a sequence of approximations \(x_0, x_1, x_2, \ldots\) converging to the true answer. Two kinds of error inevitably creep in:</p>
+
+<div class="definition">
+<strong>Truncation error vs rounding error.</strong>
+<ul>
+  <li><em>Truncation error</em> (sometimes called <em>method error</em>) is the error built into the algorithm itself — e.g. stopping a convergent sequence after finitely many steps, or approximating a curve by straight lines. It depends on the method and on how many iterations / strips you use.</li>
+  <li><em>Rounding error</em> is the error introduced by representing numbers with finitely many digits (e.g. a calculator keeping 10 significant figures). It accumulates with every arithmetic operation.</li>
+</ul>
+Both must be kept under control. A good numerical method reduces truncation error quickly enough that rounding error stays dominated by it.
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — state the degree of accuracy.</strong> Every numerical answer in an OCR exam should carry an explicit statement of accuracy: "to 3 decimal places", "to 3 significant figures", or "correct to 4 d.p.". Marks are routinely lost by quoting an answer to too few or too many figures, or by failing to say which. If the question specifies the accuracy, round at the very end — never mid-calculation — and keep at least one extra guard digit throughout the working.
+</div>
+
+<h2>2. Locating Roots — The Change of Sign Method</h2>
+
+<p>The simplest way to show that an equation \(f(x) = 0\) has a root in an interval is to use the <em>Intermediate Value Theorem</em>.</p>
+
+<div class="definition">
+<strong>Root of an equation.</strong> A <em>root</em> of \(f(x) = 0\) is a value \(\alpha\) such that \(f(\alpha) = 0\). Graphically, it is a value of \(x\) where the curve \(y = f(x)\) crosses (or touches) the x-axis.
+</div>
+
+<div class="definition">
+<strong>Change of sign (Intermediate Value Theorem).</strong> If \(f\) is <em>continuous</em> on the closed interval \([a, b]\) and \(f(a)\) and \(f(b)\) have opposite signs (that is, \(f(a) \cdot f(b) < 0\)), then there exists at least one root \(\alpha \in (a, b)\) with \(f(\alpha) = 0\).
+</div>
+
+<p>The reasoning is geometric: a continuous curve cannot jump from a positive value at \(x = a\) to a negative value at \(x = b\) without passing through \(y = 0\) somewhere in between. The theorem is an <em>existence</em> statement only — it guarantees at least one root, not a unique one, and says nothing about its exact location.</p>
+
+<div class="example">
+<h3>Worked Example 1 — Locate a root of \(f(x) = x^3 - 2x - 5\)</h3>
+<p>Show that the equation \(x^3 - 2x - 5 = 0\) has a root between \(x = 2\) and \(x = 3\).</p>
+<pre>
+<span class="ln">1.</span>  f(x) = x³ − 2x − 5 is a polynomial, therefore continuous on ℝ.
+<span class="ln">2.</span>  Evaluate at the endpoints:
+<span class="ln">3.</span>     f(2) = 8  − 4 − 5 = −1     (negative).
+<span class="ln">4.</span>     f(3) = 27 − 6 − 5 = 16     (positive).
+<span class="ln">5.</span>  Since f(2) &lt; 0 and f(3) &gt; 0, there is a change of sign.
+<span class="ln">6.</span>  By the Intermediate Value Theorem, there is at least one root
+<span class="ln">7.</span>  α ∈ (2, 3) with f(α) = 0.                                   ∎
+
+<span class="cm">// This equation was used by Wallis and Newton in the 1600s to introduce</span>
+<span class="cm">// iterative methods — the "root between 2 and 3" is α ≈ 2.0946.</span>
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — always quote f(a) and f(b) and the word "continuous".</strong> A fully-marked change-of-sign argument has four parts: (i) state that \(f\) is continuous on \([a, b]\); (ii) compute \(f(a)\) with sign; (iii) compute \(f(b)\) with sign; (iv) conclude "since there is a change of sign, there is a root in \((a, b)\)". Skipping any of these — particularly the continuity clause — costs method marks.
+</div>
+
+<p>Two important cautions apply to change-of-sign arguments:</p>
+
+<ul>
+  <li><strong>Continuity is essential.</strong> The function \(f(x) = 1/x\) satisfies \(f(-1) = -1 &lt; 0\) and \(f(1) = 1 &gt; 0\), but has no root in \((-1, 1)\) — because it is discontinuous at \(x = 0\), where it diverges to \(\pm\infty\). The change of sign happens across a vertical asymptote, not through the axis.</li>
+  <li><strong>Sign change detects only an odd number of roots.</strong> If \(f(a)\) and \(f(b)\) have the <em>same</em> sign, there could still be zero, two, four, or any even number of roots in \((a, b)\). A change of sign finds at least one, but not the total count.</li>
+</ul>
+
+<div class="example">
+<h3>Worked Example 2 — Missing a double root</h3>
+<pre>
+<span class="ln">1.</span>  Consider f(x) = (x − 1)² on the interval [0, 2].
+<span class="ln">2.</span>  f(0) = 1 &gt; 0;  f(2) = 1 &gt; 0.   No sign change.
+<span class="ln">3.</span>  Yet f(1) = 0, so there IS a root at x = 1.
+<span class="ln">4.</span>  Conclusion: change-of-sign is sufficient but not necessary for a root.
+<span class="ln">5.</span>  Touching the axis (repeated root) is invisible to sign-change tests.
+</pre>
+</div>
+
+<h2>3. Interval Bisection</h2>
+
+<p>Once a sign change locates a root in \([a, b]\), we can narrow down its position by repeatedly halving the interval — the <em>bisection method</em>.</p>
+
+<div class="definition">
+<strong>Interval bisection algorithm.</strong> Given a continuous \(f\) and an interval \([a, b]\) with \(f(a)\cdot f(b) < 0\):
+<ol>
+  <li>Compute the midpoint \(c = (a + b)/2\).</li>
+  <li>Evaluate \(f(c)\). If \(f(c) = 0\), the root is \(c\); stop.</li>
+  <li>If \(f(a)\cdot f(c) < 0\), the sign change is in \([a, c]\); set \(b \leftarrow c\).</li>
+  <li>Otherwise the sign change is in \([c, b]\); set \(a \leftarrow c\).</li>
+  <li>Repeat until the interval width \(b - a\) is below the required tolerance.</li>
+</ol>
+</div>
+
+<p>Because each pass halves the bracket width, after \(n\) iterations the remaining interval has width</p>
+
+<div class="equation">
+\( \displaystyle w_n = \frac{b - a}{2^n}, \)
+</div>
+
+<p>and the root \(\alpha\) lies within \(w_n/2\) of the current midpoint. This gives a guaranteed error bound — a rare luxury among numerical methods. Convergence is <em>linear</em>: each step wins one bit of accuracy, about 0.3 of a decimal digit per iteration. It is steady but slow.</p>
+
+<div class="example">
+<h3>Worked Example 3 — Three bisection steps on \(f(x) = x^3 - 2x - 5\) in [2, 3]</h3>
+<pre>
+<span class="ln">1.</span>  Start with a = 2, b = 3.  f(2) = −1, f(3) = 16.
+<span class="ln">2.</span>  Step 1: c₁ = (2 + 3)/2 = 2.5.
+<span class="ln">3.</span>     f(2.5) = 15.625 − 5 − 5 = 5.625 (positive).
+<span class="ln">4.</span>     f(2) &lt; 0, f(2.5) &gt; 0  ⇒ sign change in [2, 2.5].  b ← 2.5.
+<span class="ln">5.</span>  Step 2: c₂ = (2 + 2.5)/2 = 2.25.
+<span class="ln">6.</span>     f(2.25) = 11.390625 − 4.5 − 5 = 1.890625 (positive).
+<span class="ln">7.</span>     f(2) &lt; 0, f(2.25) &gt; 0  ⇒ sign change in [2, 2.25]. b ← 2.25.
+<span class="ln">8.</span>  Step 3: c₃ = (2 + 2.25)/2 = 2.125.
+<span class="ln">9.</span>     f(2.125) = 9.5957... − 4.25 − 5 = 0.3457... (positive).
+<span class="ln">10.</span>    f(2) &lt; 0, f(2.125) &gt; 0 ⇒ sign change in [2, 2.125]. b ← 2.125.
+<span class="ln">11.</span>
+<span class="ln">12.</span> After 3 iterations the root is known to lie in [2, 2.125],
+<span class="ln">13.</span> width = 0.125, midpoint estimate α ≈ 2.0625 ± 0.0625.
+<span class="ln">14.</span> (True root is α ≈ 2.0946 — consistent with the bracket.)
+
+<span class="cm">// After n iterations the bracket width is (b − a)/2ⁿ = 1/2ⁿ.</span>
+<span class="cm">// To reach 3 decimal places (error &lt; 0.0005) need 2ⁿ &gt; 2000, so n ≥ 11.</span>
+</pre>
+</div>
+
+<table>
+<tr><th>Iteration \(n\)</th><th>Left \(a\)</th><th>Right \(b\)</th><th>Midpoint \(c\)</th><th>\(f(c)\)</th><th>Keep half</th></tr>
+<tr><td>0</td><td>2.0000</td><td>3.0000</td><td>2.5000</td><td>+5.6250</td><td>[2.0, 2.5]</td></tr>
+<tr><td>1</td><td>2.0000</td><td>2.5000</td><td>2.2500</td><td>+1.8906</td><td>[2.0, 2.25]</td></tr>
+<tr><td>2</td><td>2.0000</td><td>2.2500</td><td>2.1250</td><td>+0.3457</td><td>[2.0, 2.125]</td></tr>
+<tr><td>3</td><td>2.0000</td><td>2.1250</td><td>2.0625</td><td>\(-0.3513\)</td><td>[2.0625, 2.125]</td></tr>
+<tr><td>4</td><td>2.0625</td><td>2.1250</td><td>2.0938</td><td>\(-0.0089\)</td><td>[2.0938, 2.125]</td></tr>
+<tr><td>5</td><td>2.0938</td><td>2.1250</td><td>2.1094</td><td>+0.1668</td><td>[2.0938, 2.1094]</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — state the sign of every evaluation.</strong> In bisection work, the examiner needs to see that you have checked the sign of \(f\) at each new midpoint and correctly decided which half retains the sign change. Writing "\(f(2.5) = 5.625 > 0\)" (with the inequality) earns both the computation mark and the decision mark in one line.
+</div>
+
+<h2>4. Fixed-Point Iteration</h2>
+
+<p>A second family of root-finding techniques works by rewriting \(f(x) = 0\) in the form \(x = g(x)\) — so that a root \(\alpha\) of \(f\) is a <em>fixed point</em> of \(g\), meaning \(g(\alpha) = \alpha\). We then iterate:</p>
+
+<div class="equation">
+\( x_{n+1} = g(x_n), \qquad n = 0, 1, 2, \ldots \)
+</div>
+
+<p>starting from some initial guess \(x_0\). If the sequence \(\{x_n\}\) converges, its limit must be a fixed point of \(g\) (and therefore a root of \(f\)).</p>
+
+<div class="definition">
+<strong>Fixed-point iteration.</strong> To solve \(f(x) = 0\) by fixed-point iteration:
+<ol>
+  <li>Rearrange the equation into the form \(x = g(x)\). There are usually several ways to do so.</li>
+  <li>Choose a starting value \(x_0\) close to the suspected root.</li>
+  <li>Compute successive terms \(x_{n+1} = g(x_n)\) until the difference between consecutive values is below a chosen tolerance.</li>
+</ol>
+</div>
+
+<div class="definition">
+<strong>Convergence criterion.</strong> Let \(\alpha\) be a fixed point of \(g\) (so \(g(\alpha) = \alpha\)), and suppose \(g\) is differentiable near \(\alpha\). The iteration \(x_{n+1} = g(x_n)\) converges locally to \(\alpha\) if and only if
+\[ |g'(\alpha)| < 1. \]
+If \(|g'(\alpha)| > 1\), the iteration diverges away from \(\alpha\) no matter how good the starting guess (unless you happen to start exactly on \(\alpha\)). The case \(|g'(\alpha)| = 1\) is borderline.
+</div>
+
+<p>Visually, the iteration corresponds to bouncing between the line \(y = x\) and the curve \(y = g(x)\):</p>
+
+<ul>
+  <li><strong>Staircase diagram</strong>: when \(0 < g'(\alpha) < 1\), successive iterates approach \(\alpha\) monotonically from one side, tracing a staircase pattern.</li>
+  <li><strong>Cobweb diagram</strong>: when \(-1 < g'(\alpha) < 0\), iterates alternate about \(\alpha\), producing a spiral (cobweb) pattern that closes in on the fixed point.</li>
+  <li><strong>Divergence</strong>: if \(|g'(\alpha)| > 1\), the staircase or cobweb walks outward, running away from \(\alpha\).</li>
+</ul>
+
+<svg viewBox="0 0 500 260" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <line x1="50" y1="220" x2="470" y2="220" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="80" y1="20"  x2="80" y2="240"  stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="465" y="235" font-size="11" fill="#1e3a5f">x</text>
+  <text x="85"  y="25"  font-size="11" fill="#1e3a5f">y</text>
+  <line x1="80" y1="220" x2="440" y2="40" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="445" y="44" font-size="11" fill="#94a3b8">y = x</text>
+  <path d="M 80,180 Q 220,120 420,90" stroke="#2563eb" stroke-width="2" fill="none"/>
+  <text x="410" y="80" font-size="12" fill="#2563eb">y = g(x)</text>
+  <polyline points="130,220 130,195 195,195 195,165 245,165 245,145 285,145 285,130" stroke="#16a34a" stroke-width="1.5" fill="none"/>
+  <text x="120" y="235" font-size="11" fill="#16a34a">x₀</text>
+  <text x="185" y="235" font-size="11" fill="#16a34a">x₁</text>
+  <text x="235" y="235" font-size="11" fill="#16a34a">x₂</text>
+  <text x="275" y="235" font-size="11" fill="#16a34a">x₃</text>
+  <text x="300" y="125" font-size="11" fill="#16a34a">→ α</text>
+</svg>
+
+<div class="example">
+<h3>Worked Example 4 — Solve \(x = \cos x\) by fixed-point iteration</h3>
+<pre>
+<span class="ln">1.</span>  Here g(x) = cos x. Take x₀ = 0.5 (in radians).
+<span class="ln">2.</span>  g'(x) = −sin x, and at the root α ≈ 0.739 we have
+<span class="ln">3.</span>     |g'(α)| = |sin 0.739| ≈ 0.674 &lt; 1.
+<span class="ln">4.</span>  So the iteration converges (with alternating signs — cobweb pattern).
+<span class="ln">5.</span>
+<span class="ln">6.</span>  n   xₙ          xₙ₊₁ = cos xₙ
+<span class="ln">7.</span>  0   0.50000     cos(0.5)       = 0.87758
+<span class="ln">8.</span>  1   0.87758     cos(0.87758)   = 0.63901
+<span class="ln">9.</span>  2   0.63901     cos(0.63901)   = 0.80269
+<span class="ln">10.</span> 3   0.80269     cos(0.80269)   = 0.69478
+<span class="ln">11.</span> 4   0.69478     cos(0.69478)   = 0.76820
+<span class="ln">12.</span> 5   0.76820     cos(0.76820)   = 0.71917
+<span class="ln">13.</span> 6   0.71917     cos(0.71917)   = 0.75236
+<span class="ln">14.</span> ...
+<span class="ln">15.</span> After ~25 iterations: α ≈ 0.73909  (to 5 d.p.).
+
+<span class="cm">// Because g'(α) is negative, the iterates ALTERNATE above and below α —</span>
+<span class="cm">// classic cobweb. Convergence is linear with rate ≈ 0.674 per step.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 5 — A divergent rearrangement</h3>
+<p>Consider solving \(x^3 - 2x - 5 = 0\). One rearrangement is \(x = (x^3 - 5)/2\). Show this iteration diverges near the root \(\alpha \approx 2.09\).</p>
+<pre>
+<span class="ln">1.</span>  g(x) = (x³ − 5)/2.
+<span class="ln">2.</span>  g'(x) = 3x²/2.
+<span class="ln">3.</span>  At α ≈ 2.09: |g'(α)| ≈ 3(2.09)²/2 ≈ 6.55.
+<span class="ln">4.</span>  Since |g'(α)| &gt; 1, the iteration DIVERGES.
+<span class="ln">5.</span>
+<span class="ln">6.</span>  Confirm: x₀ = 2.
+<span class="ln">7.</span>     x₁ = (2³ − 5)/2 = 1.5.
+<span class="ln">8.</span>     x₂ = (1.5³ − 5)/2 = (3.375 − 5)/2 = −0.8125.
+<span class="ln">9.</span>     x₃ = (−0.8125³ − 5)/2 = (−0.5364 − 5)/2 = −2.7682.
+<span class="ln">10.</span>    x₄ = (−2.7682³ − 5)/2 ≈ (−21.23 − 5)/2 ≈ −13.1  (!!)
+<span class="ln">11.</span> Iterates fly off to −∞. The rearrangement is USELESS for this root.
+<span class="ln">12.</span>
+<span class="ln">13.</span> A better rearrangement: x = (2x + 5)^(1/3). Then
+<span class="ln">14.</span>    g'(x) = (2/3)(2x + 5)^(−2/3); at α ≈ 2.09  |g'(α)| ≈ 0.152 &lt; 1.  ✓
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — check \(|g'(\alpha)| < 1\) before iterating.</strong> A common OCR question gives two or three rearrangements of the same equation and asks which one converges. The answer is always the one whose \(|g'|\) is smallest at the root. Differentiate, substitute the approximate root, and report the absolute value — state whether it is less than or greater than 1, and conclude convergent/divergent.
+</div>
+
+<h2>5. Newton-Raphson Method</h2>
+
+<p>Newton-Raphson is a powerful, fast-converging root finder that uses the local tangent line to the curve \(y = f(x)\) at the current estimate.</p>
+
+<div class="definition">
+<strong>Newton-Raphson iteration.</strong> Given a differentiable \(f\) and a starting estimate \(x_0\) near a root \(\alpha\),
+\[ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}. \]
+Geometrically, the next estimate \(x_{n+1}\) is the x-intercept of the tangent line to \(y = f(x)\) at the point \((x_n, f(x_n))\).
+</div>
+
+<p><strong>Derivation</strong>: the tangent at \(x_n\) has equation \(y - f(x_n) = f'(x_n)(x - x_n)\). Setting \(y = 0\) and solving for \(x\) gives the intercept \(x = x_n - f(x_n)/f'(x_n)\) — which we call \(x_{n+1}\).</p>
+
+<svg viewBox="0 0 500 260" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <line x1="50" y1="180" x2="470" y2="180" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="80" y1="20"  x2="80" y2="240"  stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="465" y="195" font-size="11" fill="#1e3a5f">x</text>
+  <text x="85"  y="25"  font-size="11" fill="#1e3a5f">y</text>
+  <path d="M 80,230 Q 200,200 330,90 T 440,40" stroke="#2563eb" stroke-width="2" fill="none"/>
+  <text x="430" y="32" font-size="12" fill="#2563eb">y = f(x)</text>
+  <circle cx="360" cy="70" r="3" fill="#0f172a"/>
+  <text x="365" y="65" font-size="11" fill="#0f172a">(xₙ, f(xₙ))</text>
+  <line x1="310" y1="180" x2="400" y2="40" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="410" y="50" font-size="11" fill="#dc2626">tangent</text>
+  <circle cx="310" cy="180" r="3" fill="#16a34a"/>
+  <text x="295" y="200" font-size="11" fill="#16a34a">xₙ₊₁</text>
+  <line x1="360" y1="70" x2="360" y2="180" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="355" y="200" font-size="11" fill="#1e3a5f">xₙ</text>
+  <circle cx="265" cy="180" r="3" fill="#dc2626"/>
+  <text x="245" y="200" font-size="11" fill="#dc2626">α (root)</text>
+</svg>
+
+<div class="definition">
+<strong>Quadratic convergence.</strong> Near a <em>simple</em> root \(\alpha\) (where \(f'(\alpha) \neq 0\)), Newton-Raphson converges <em>quadratically</em>: the error \(e_n = x_n - \alpha\) satisfies \(|e_{n+1}| \approx K |e_n|^2\) for some constant \(K\). Practically, this means the number of correct decimal places roughly <em>doubles</em> with each iteration once you are close enough.
+</div>
+
+<div class="example">
+<h3>Worked Example 6 — Approximate \(\sqrt{7}\) by solving \(x^2 - 7 = 0\)</h3>
+<pre>
+<span class="ln">1.</span>  f(x) = x² − 7,   f'(x) = 2x.
+<span class="ln">2.</span>  Newton-Raphson:
+<span class="ln">3.</span>     x_(n+1) = x_n − (x_n² − 7)/(2x_n)
+<span class="ln">4.</span>             = (x_n + 7/x_n) / 2.             (the "Babylonian" formula)
+<span class="ln">5.</span>  Start x₀ = 3 (since 3² = 9 is close to 7).
+<span class="ln">6.</span>
+<span class="ln">7.</span>  n   x_n              x_(n+1) = (x_n + 7/x_n)/2
+<span class="ln">8.</span>  0   3.00000000       (3 + 7/3)/2       = (3 + 2.3333)/2    = 2.66667
+<span class="ln">9.</span>  1   2.66666667       (2.6667 + 2.625)/2                     = 2.64583
+<span class="ln">10.</span> 2   2.64583333       (2.6458 + 2.64567)/2                   = 2.64575
+<span class="ln">11.</span> 3   2.64575131       (2.64575131 + 2.64575131)/2            = 2.64575131
+<span class="ln">12.</span>
+<span class="ln">13.</span> Converged to x ≈ 2.6457513 (which equals √7 to 7 d.p.).
+<span class="ln">14.</span> Notice how the accuracy roughly doubles each step — quadratic convergence.
+
+<span class="cm">// This is the 4000-year-old "Babylonian method" for square roots —</span>
+<span class="cm">// but it is exactly Newton-Raphson applied to x² − N = 0.</span>
+</pre>
+</div>
+
+<h3>5.1 When Newton-Raphson fails</h3>
+
+<p>Despite its speed, Newton-Raphson is not foolproof. It can fail or misbehave in several situations:</p>
+
+<ul>
+  <li><strong>Zero derivative (\(f'(x_n) = 0\)):</strong> the formula divides by zero. Geometrically, the tangent at \(x_n\) is horizontal, so it never meets the x-axis. Choose a different starting value.</li>
+  <li><strong>Poor initial guess:</strong> far from \(\alpha\), the tangent line's x-intercept can be far worse than \(x_n\), and subsequent iterates can run away to infinity or hop to a different root.</li>
+  <li><strong>Inflection points:</strong> if \(f''\) changes sign near the root, the iteration may oscillate.</li>
+  <li><strong>Repeated roots:</strong> if \(\alpha\) is a double root (\(f'(\alpha) = 0\)), quadratic convergence is lost and the method becomes only linearly convergent.</li>
+</ul>
+
+<div class="example">
+<h3>Worked Example 7 — A starting value that fails</h3>
+<pre>
+<span class="ln">1.</span>  Apply Newton-Raphson to f(x) = x³ − 2x + 2 with x₀ = 0.
+<span class="ln">2.</span>  f'(x) = 3x² − 2.
+<span class="ln">3.</span>  x₁ = 0 − f(0)/f'(0) = 0 − 2/(−2) = 1.
+<span class="ln">4.</span>  f(1) = 1 − 2 + 2 = 1;   f'(1) = 3 − 2 = 1.
+<span class="ln">5.</span>  x₂ = 1 − 1/1 = 0.
+<span class="ln">6.</span>  x₃ = 0 − (2)/(−2) = 1.
+<span class="ln">7.</span>  x₄ = 1 − 1 = 0.
+<span class="ln">8.</span>  The iteration CYCLES between 0 and 1 — it never converges.
+<span class="ln">9.</span>  The actual root is near α ≈ −1.7693, far from the cycle.
+
+<span class="cm">// Lesson: even a well-behaved cubic can trap Newton-Raphson in a 2-cycle.</span>
+<span class="cm">// A sketch of y = f(x) BEFORE choosing x₀ is always a good idea.</span>
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — Newton-Raphson can diverge if the starting value is poor.</strong> Questions often ask "explain why this iteration fails when \(x_0 = \ldots\)". The standard answers are: (i) \(f'(x_0) = 0\), so the tangent is horizontal and \(x_1\) is undefined; (ii) the tangent at \(x_0\) misses the neighbourhood of the root entirely; (iii) the starting value is on the "wrong" side of a turning point. Always sketch \(y = f(x)\) before applying the method.
+</div>
+
+<h2>6. The Trapezium Rule</h2>
+
+<p>Moving from roots to integrals: when an antiderivative is unavailable (or prohibitively hard), we can still estimate the definite integral \(\int_a^b f(x)\, dx\) by approximating the area under the curve with a collection of trapezia.</p>
+
+<div class="definition">
+<strong>Trapezium rule.</strong> Divide \([a, b]\) into \(n\) strips of equal width \(h = (b - a)/n\). Label the endpoints \(x_0 = a, x_1 = a + h, \ldots, x_n = b\) and let \(y_i = f(x_i)\). Then
+\[ \int_a^b f(x)\, dx \;\approx\; \frac{h}{2}\Big[y_0 + 2(y_1 + y_2 + \cdots + y_{n-1}) + y_n\Big]. \]
+The end ordinates \(y_0\) and \(y_n\) are counted once; every interior ordinate is counted twice.
+</div>
+
+<p>The formula comes from approximating each strip by a trapezium of parallel sides \(y_i\) and \(y_{i+1}\) and height \(h\). The area of one trapezium is \(\tfrac{h}{2}(y_i + y_{i+1})\); summing and collecting repeated terms gives the formula above.</p>
+
+<svg viewBox="0 0 500 240" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <line x1="50" y1="200" x2="470" y2="200" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="80" y1="20"  x2="80" y2="220"  stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="465" y="215" font-size="11" fill="#1e3a5f">x</text>
+  <text x="85"  y="25"  font-size="11" fill="#1e3a5f">y</text>
+  <path d="M 100,170 Q 220,60 400,140" stroke="#2563eb" stroke-width="2" fill="none"/>
+  <text x="400" y="55" font-size="12" fill="#2563eb">y = f(x)</text>
+  <g stroke="#16a34a" stroke-width="1.2" fill="#dcfce7" fill-opacity="0.5">
+    <polygon points="100,200 100,170 175,115 175,200"/>
+    <polygon points="175,200 175,115 250,85 250,200"/>
+    <polygon points="250,200 250,85 325,100 325,200"/>
+    <polygon points="325,200 325,100 400,140 400,200"/>
+  </g>
+  <text x="96" y="215" font-size="10" fill="#1e3a5f">x₀</text>
+  <text x="171" y="215" font-size="10" fill="#1e3a5f">x₁</text>
+  <text x="246" y="215" font-size="10" fill="#1e3a5f">x₂</text>
+  <text x="321" y="215" font-size="10" fill="#1e3a5f">x₃</text>
+  <text x="396" y="215" font-size="10" fill="#1e3a5f">x₄</text>
+  <text x="200" y="230" font-size="10" fill="#16a34a">4 trapezia, width h each</text>
+</svg>
+
+<div class="example">
+<h3>Worked Example 8 — Approximate \(\int_0^1 \dfrac{1}{1+x^2}\, dx\) with 4 strips</h3>
+<p>The exact value is \([\arctan x]_0^1 = \pi/4 \approx 0.78540\).</p>
+<pre>
+<span class="ln">1.</span>  n = 4, a = 0, b = 1, so h = 1/4 = 0.25.
+<span class="ln">2.</span>  Tabulate y_i = 1/(1 + x_i²):
+<span class="ln">3.</span>     x₀ = 0.00  →  y₀ = 1/1       = 1.00000
+<span class="ln">4.</span>     x₁ = 0.25  →  y₁ = 1/1.0625  = 0.94118
+<span class="ln">5.</span>     x₂ = 0.50  →  y₂ = 1/1.25    = 0.80000
+<span class="ln">6.</span>     x₃ = 0.75  →  y₃ = 1/1.5625  = 0.64000
+<span class="ln">7.</span>     x₄ = 1.00  →  y₄ = 1/2       = 0.50000
+<span class="ln">8.</span>
+<span class="ln">9.</span>  Apply the formula:
+<span class="ln">10.</span>    I ≈ (h/2) [y₀ + 2(y₁ + y₂ + y₃) + y₄]
+<span class="ln">11.</span>      = (0.25/2) [1.00000 + 2(0.94118 + 0.80000 + 0.64000) + 0.50000]
+<span class="ln">12.</span>      = 0.125   [1.00000 + 2(2.38118) + 0.50000]
+<span class="ln">13.</span>      = 0.125   [1.00000 + 4.76236 + 0.50000]
+<span class="ln">14.</span>      = 0.125 × 6.26236
+<span class="ln">15.</span>      ≈ 0.78280.
+<span class="ln">16.</span>
+<span class="ln">17.</span> Compare with exact π/4 ≈ 0.78540  →  error ≈ 0.00260  (about 0.3 %).
+
+<span class="cm">// The integrand is concave on [0, 1], so the trapezia lie BELOW the curve,</span>
+<span class="cm">// giving an under-estimate of the true area. This matches our 0.78280 &lt; 0.78540.</span>
+</pre>
+</div>
+
+<h3>6.1 Error behaviour of the trapezium rule</h3>
+
+<p>The error in the trapezium rule shrinks as the number of strips increases:</p>
+
+<div class="definition">
+<strong>Trapezium rule — error.</strong> For a twice-differentiable integrand, the total error \(E_n\) in approximating \(\int_a^b f(x)\, dx\) with \(n\) equal strips satisfies
+\[ E_n = -\frac{(b - a)^3}{12 n^2}\, f''(\xi) \quad \text{for some } \xi \in (a, b). \]
+In particular \(E_n = O(h^2)\), so doubling the number of strips divides the error by roughly 4.
+</div>
+
+<table>
+<tr><th>Strips \(n\)</th><th>Estimate of \(\pi/4\)</th><th>Error</th><th>Ratio to previous</th></tr>
+<tr><td>2</td><td>0.77500</td><td>0.01040</td><td>—</td></tr>
+<tr><td>4</td><td>0.78280</td><td>0.00260</td><td>\(\approx 1/4\)</td></tr>
+<tr><td>8</td><td>0.78475</td><td>0.00065</td><td>\(\approx 1/4\)</td></tr>
+<tr><td>16</td><td>0.78524</td><td>0.00016</td><td>\(\approx 1/4\)</td></tr>
+<tr><td>32</td><td>0.78536</td><td>0.00004</td><td>\(\approx 1/4\)</td></tr>
+</table>
+
+<p>The fourfold improvement per doubling is the hallmark of an \(O(h^2)\) method.</p>
+
+<h3>6.2 Over- vs under-estimate (concavity)</h3>
+
+<p>The trapezia used in the rule are straight-line chords between consecutive points on the curve. Whether they lie above or below the true curve depends on the concavity of \(f\) on the strip:</p>
+
+<ul>
+  <li>If \(f''(x) > 0\) (curve is convex / "cup up"), each chord lies <em>above</em> the curve — the trapezium rule <strong>over-estimates</strong> the integral.</li>
+  <li>If \(f''(x) < 0\) (curve is concave / "cap down"), each chord lies <em>below</em> the curve — the trapezium rule <strong>under-estimates</strong>.</li>
+  <li>If \(f\) is linear (\(f'' = 0\)) the rule is exact.</li>
+</ul>
+
+<div class="exam-tip">
+<strong>Exam tip — state the number of strips (or ordinates) and \(h\).</strong> Whenever you apply the trapezium rule, write down: (i) the number of strips \(n\) (beware — \(n\) strips means \(n+1\) ordinates); (ii) the strip width \(h = (b-a)/n\); (iii) a neat table of \(x_i\) and \(y_i\) values; (iv) the substitution into the formula. OCR examiners report that missed marks most often come from confusing "strips" with "ordinates", or from dropping an interior term.
+</div>
+
+<h2>7. Simpson's Rule (Brief Mention)</h2>
+
+<p>Beyond the trapezium rule lies <em>Simpson's rule</em>, which fits a parabola (quadratic) through every three consecutive ordinates rather than a straight line. The formula (for an <em>even</em> number \(n\) of strips) is</p>
+
+<div class="equation">
+\( \displaystyle\int_a^b f(x)\, dx \approx \frac{h}{3}\Big[y_0 + 4(y_1 + y_3 + \cdots) + 2(y_2 + y_4 + \cdots) + y_n\Big]. \)
+</div>
+
+<p>It is much more accurate than the trapezium rule (error is \(O(h^4)\) rather than \(O(h^2)\)), so doubling the strips divides the error by 16 instead of 4. <strong>Simpson's rule is not on the core OCR H240 specification</strong> — it sits on some other specifications (MEI, Edexcel Further) — but you may meet it informally. For standard OCR A-level pure, the trapezium rule is the only quadrature method you are expected to apply.</p>
+
+<h2>8. Error Analysis and Convergence</h2>
+
+<p>Every numerical algorithm generates a sequence of approximations; the key questions are <em>how fast</em> and <em>how accurately</em>.</p>
+
+<div class="definition">
+<strong>Order of convergence.</strong> A sequence \(\{x_n\} \to \alpha\) is said to converge with order \(p\) if there is a constant \(K > 0\) with
+\[ |x_{n+1} - \alpha| \leq K\, |x_n - \alpha|^p \]
+for all sufficiently large \(n\).
+<ul>
+  <li>\(p = 1\) — <em>linear</em> convergence. Each step multiplies the error by a fixed constant less than 1 (bisection, fixed-point iteration).</li>
+  <li>\(p = 2\) — <em>quadratic</em> convergence. The number of correct digits roughly doubles per step (Newton-Raphson at a simple root).</li>
+</ul>
+</div>
+
+<p>In practice, you cannot know \(\alpha\) exactly — so you cannot measure the error directly. A standard proxy is the gap between successive iterates: iterate until</p>
+
+<div class="equation">
+\( |x_{n+1} - x_n| < \varepsilon \)
+</div>
+
+<p>for a chosen tolerance \(\varepsilon\). For a rapidly convergent method this is a safe indicator of accuracy; for a slowly convergent one it may overstate progress. A more reliable check for a root-finding problem is to evaluate \(f(x_n)\) — if \(|f(x_n)|\) is small and \(|f'(x_n)|\) is not tiny, then \(x_n\) is close to a root.</p>
+
+<div class="exam-tip">
+<strong>Exam tip — include units and the degree of accuracy.</strong> When a numerical method produces an answer with physical meaning (velocity in m s\(^{-1}\), area in m\(^2\), etc.), always write the units on the final line. For pure-number answers, state the accuracy: "to 3 decimal places" or "correct to 4 significant figures". Keep one extra guard digit in the working, then round only at the very end.
+</div>
+
+<h2>9. Choice of Method</h2>
+
+<table>
+<tr><th>Method</th><th>Speed (order of convergence)</th><th>Reliability</th><th>Prerequisites</th><th>Best when…</th></tr>
+<tr><td>Change of sign / bisection</td><td>Linear, very slow (1 bit per step)</td><td>Extremely robust — never diverges if started with a sign change</td><td>\(f\) continuous, known sign change</td><td>You need a guaranteed bracket and don't mind the slow rate.</td></tr>
+<tr><td>Fixed-point iteration \(x = g(x)\)</td><td>Linear (rate \(|g'(\alpha)|\))</td><td>Works only if \(|g'(\alpha)| < 1\); divergent otherwise</td><td>A good rearrangement of \(f(x) = 0\)</td><td>A neat rearrangement exists and you don't need quadratic speed.</td></tr>
+<tr><td>Newton-Raphson</td><td>Quadratic (very fast near a simple root)</td><td>Can diverge, cycle, or hit \(f'(x_n) = 0\); needs a decent start</td><td>\(f\) differentiable, \(f'\) easy to evaluate</td><td>You need high accuracy quickly and the derivative is cheap.</td></tr>
+<tr><td>Trapezium rule</td><td>\(O(h^2)\) — halving \(h\) quarters the error</td><td>Always returns an answer; accuracy bounded by concavity of \(f\)</td><td>Integrand tabulated at equally-spaced points</td><td>Integrating by hand when no antiderivative is available.</td></tr>
+</table>
+
+<h2>10. Applied Worked Examples</h2>
+
+<div class="example">
+<h3>Worked Example 9 — Bisection to 3 d.p. for \(x^3 - 2x - 5 = 0\)</h3>
+<pre>
+<span class="ln">1.</span>  f(x) = x³ − 2x − 5;  f(2) = −1, f(3) = 16  ⇒ root in (2, 3).
+<span class="ln">2.</span>  Bisect until the bracket width &lt; 0.0005 (half of 10⁻³).
+<span class="ln">3.</span>
+<span class="ln">4.</span>  n   a         b         c=(a+b)/2   f(c)            keep
+<span class="ln">5.</span>  0   2.00000   3.00000   2.50000     +5.6250         [2, 2.5]
+<span class="ln">6.</span>  1   2.00000   2.50000   2.25000     +1.8906         [2, 2.25]
+<span class="ln">7.</span>  2   2.00000   2.25000   2.12500     +0.3457         [2, 2.125]
+<span class="ln">8.</span>  3   2.00000   2.12500   2.06250     −0.3513         [2.0625, 2.125]
+<span class="ln">9.</span>  4   2.06250   2.12500   2.09375     −0.0089         [2.0938, 2.125]
+<span class="ln">10.</span> 5   2.09375   2.12500   2.10938     +0.1668         [2.0938, 2.1094]
+<span class="ln">11.</span> 6   2.09375   2.10938   2.10156     +0.0785         [2.0938, 2.1016]
+<span class="ln">12.</span> 7   2.09375   2.10156   2.09766     +0.0347         [2.0938, 2.0977]
+<span class="ln">13.</span> 8   2.09375   2.09766   2.09570     +0.0129         [2.0938, 2.0957]
+<span class="ln">14.</span> 9   2.09375   2.09570   2.09473     +0.0020         [2.0938, 2.0947]
+<span class="ln">15.</span> 10  2.09375   2.09473   2.09424     −0.0034         [2.0942, 2.0947]
+<span class="ln">16.</span> 11  2.09424   2.09473   2.09448     −0.0007         [2.0945, 2.0947]
+<span class="ln">17.</span>
+<span class="ln">18.</span> Bracket width = 0.00025 &lt; 0.0005, so we stop.
+<span class="ln">19.</span> Root α ≈ 2.094 (to 3 d.p.).
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 10 — Fixed-point iteration \(x = (2x+5)^{1/3}\) from \(x_0 = 2\)</h3>
+<pre>
+<span class="ln">1.</span>  Rearrange x³ − 2x − 5 = 0 as x³ = 2x + 5, so x = (2x + 5)^(1/3).
+<span class="ln">2.</span>  g(x) = (2x + 5)^(1/3);  g'(x) = (2/3)(2x + 5)^(−2/3).
+<span class="ln">3.</span>  At α ≈ 2.095:  g'(α) ≈ (2/3)(9.19)^(−2/3) ≈ 0.152 &lt; 1.  ✓ CONVERGES.
+<span class="ln">4.</span>
+<span class="ln">5.</span>  n     x_n              x_(n+1) = (2x_n + 5)^(1/3)
+<span class="ln">6.</span>  0     2.00000000       (9)^(1/3)          = 2.08008
+<span class="ln">7.</span>  1     2.08008382       (9.16017)^(1/3)    = 2.09235
+<span class="ln">8.</span>  2     2.09235450       (9.18471)^(1/3)    = 2.09421
+<span class="ln">9.</span>  3     2.09421117       (9.18842)^(1/3)    = 2.09450
+<span class="ln">10.</span> 4     2.09449430       (9.18899)^(1/3)    = 2.09454
+<span class="ln">11.</span> 5     2.09453743       (9.18907)^(1/3)    = 2.09455
+<span class="ln">12.</span> 6     2.09454399       (9.18909)^(1/3)    = 2.09455
+<span class="ln">13.</span>
+<span class="ln">14.</span> Converged: α ≈ 2.0946 (to 4 d.p.).
+<span class="ln">15.</span> Note the linear convergence rate ≈ 0.15 per step — consistent with |g'(α)|.
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 11 — Newton-Raphson on \(x^2 = 7\), first three iterations</h3>
+<pre>
+<span class="ln">1.</span>  f(x) = x² − 7,  f'(x) = 2x.
+<span class="ln">2.</span>  Iteration: x_(n+1) = x_n − (x_n² − 7)/(2 x_n).
+<span class="ln">3.</span>  x₀ = 3.
+<span class="ln">4.</span>
+<span class="ln">5.</span>  x₁ = 3 − (9 − 7)/6       = 3 − 2/6       = 3 − 0.33333 = 2.66667
+<span class="ln">6.</span>  x₂ = 2.66667 − (7.11111 − 7)/5.33333
+<span class="ln">7.</span>     = 2.66667 − 0.02083    = 2.64583
+<span class="ln">8.</span>  x₃ = 2.64583 − (7.00043 − 7)/5.29167
+<span class="ln">9.</span>     = 2.64583 − 0.00008    = 2.64575
+<span class="ln">10.</span>
+<span class="ln">11.</span> True value √7 = 2.64575131…, so x₃ is already correct to 5 d.p.
+<span class="ln">12.</span> Errors:  e₀ = 0.354,  e₁ = 0.021,  e₂ = 0.00008,  e₃ &lt; 10⁻⁷.
+<span class="ln">13.</span> Each step squares the previous error (quadratic convergence).
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 12 — Trapezium rule, 5 strips, for \(\int_1^3 \sqrt{x}\, dx\)</h3>
+<p>The exact value is \(\big[\tfrac{2}{3} x^{3/2}\big]_1^3 = \tfrac{2}{3}(3\sqrt{3} - 1) = 2\sqrt{3} - \tfrac{2}{3} \approx 2.79743\).</p>
+<pre>
+<span class="ln">1.</span>  n = 5, a = 1, b = 3, h = (3 − 1)/5 = 0.4.
+<span class="ln">2.</span>  Tabulate y_i = √x_i:
+<span class="ln">3.</span>     x₀ = 1.0  →  y₀ = 1.00000
+<span class="ln">4.</span>     x₁ = 1.4  →  y₁ = 1.18322
+<span class="ln">5.</span>     x₂ = 1.8  →  y₂ = 1.34164
+<span class="ln">6.</span>     x₃ = 2.2  →  y₃ = 1.48324
+<span class="ln">7.</span>     x₄ = 2.6  →  y₄ = 1.61245
+<span class="ln">8.</span>     x₅ = 3.0  →  y₅ = 1.73205
+<span class="ln">9.</span>
+<span class="ln">10.</span> Apply the formula:
+<span class="ln">11.</span>    I ≈ (h/2) [y₀ + 2(y₁ + y₂ + y₃ + y₄) + y₅]
+<span class="ln">12.</span>      = (0.4/2) [1.00000 + 2(1.18322 + 1.34164 + 1.48324 + 1.61245) + 1.73205]
+<span class="ln">13.</span>      = 0.2 [1.00000 + 2(5.62055) + 1.73205]
+<span class="ln">14.</span>      = 0.2 [1.00000 + 11.24110 + 1.73205]
+<span class="ln">15.</span>      = 0.2 × 13.97315
+<span class="ln">16.</span>      ≈ 2.79463.
+<span class="ln">17.</span>
+<span class="ln">18.</span> Compare with exact 2.79743 — error ≈ 0.00280 (about 0.1 %).
+<span class="ln">19.</span> √x is concave (f''(x) = −(1/4)x^(−3/2) &lt; 0), so the rule UNDER-estimates ✓.
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 13 — Convergence check for \(x_{n+1} = \cos(x_n)\) from \(x_0 = 1\)</h3>
+<pre>
+<span class="ln">1.</span>  Here g(x) = cos x, g'(x) = −sin x.
+<span class="ln">2.</span>  The fixed point α of cos satisfies α = cos α, with α ≈ 0.7391.
+<span class="ln">3.</span>  At α:  |g'(α)| = |sin(0.7391)| ≈ 0.6736 &lt; 1.
+<span class="ln">4.</span>  Since |g'(α)| &lt; 1, the iteration converges to α. ✓
+<span class="ln">5.</span>
+<span class="ln">6.</span>  Verify starting from x₀ = 1:
+<span class="ln">7.</span>  x₁ = cos 1       = 0.54030
+<span class="ln">8.</span>  x₂ = cos 0.54030 = 0.85755
+<span class="ln">9.</span>  x₃ = cos 0.85755 = 0.65429
+<span class="ln">10.</span> x₄ = cos 0.65429 = 0.79348
+<span class="ln">11.</span> x₅ = cos 0.79348 = 0.70137
+<span class="ln">12.</span> x₆ = cos 0.70137 = 0.76396
+<span class="ln">13.</span> ...
+<span class="ln">14.</span> x₃₀ ≈ 0.73909        (converging, alternating above/below α).
+<span class="ln">15.</span>
+<span class="ln">16.</span> Convergence rate = 0.6736 per step — linear. It takes about 15 iterations
+<span class="ln">17.</span> to reach 4 d.p. (since 0.6736¹⁵ ≈ 0.00002).
+</pre>
+</div>
+
+<h2>11. Formula Reference</h2>
+
+<table>
+<tr><th>Method</th><th>Formula</th><th>Notes</th></tr>
+<tr><td>Change of sign</td><td>\(f(a) \cdot f(b) < 0 \Rightarrow \exists\, \alpha \in (a, b)\)</td><td>\(f\) continuous; existence only.</td></tr>
+<tr><td>Bisection</td><td>\(c = (a + b)/2\); retain half containing sign change</td><td>Width after \(n\) steps: \((b-a)/2^n\).</td></tr>
+<tr><td>Fixed-point iteration</td><td>\(x_{n+1} = g(x_n)\)</td><td>Converges locally iff \(|g'(\alpha)| < 1\).</td></tr>
+<tr><td>Newton-Raphson</td><td>\(x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}\)</td><td>Quadratic near simple root; fails if \(f'(x_n) = 0\).</td></tr>
+<tr><td>Trapezium rule</td><td>\(\dfrac{h}{2}[y_0 + 2(y_1 + \cdots + y_{n-1}) + y_n]\)</td><td>\(h = (b-a)/n\); error \(O(h^2)\).</td></tr>
+</table>
+
+<h2>12. Chapter Summary and Examiner's Checklist</h2>
+
+<div class="exam-tip">
+<strong>Chapter-wide checklist for Numerical Methods.</strong>
+<ul>
+  <li><strong>Change of sign:</strong> state continuity, quote \(f(a)\) and \(f(b)\) with signs, conclude root in \((a, b)\).</li>
+  <li><strong>Bisection:</strong> tabulate \(a_n, b_n, c_n, f(c_n)\) and the retained half at every step.</li>
+  <li><strong>Fixed-point iteration:</strong> before iterating, check \(|g'(\alpha)| < 1\). After iterating, stop when \(|x_{n+1} - x_n|\) is below tolerance.</li>
+  <li><strong>Newton-Raphson:</strong> write down \(f'(x)\) and the iteration formula explicitly; beware \(f'(x_n) = 0\) and poor starting values.</li>
+  <li><strong>Trapezium rule:</strong> state \(n\) strips and \(h\); build a clean table of \(x_i, y_i\); substitute carefully, with interior terms doubled.</li>
+  <li><strong>Always quote the degree of accuracy</strong> — "correct to 3 d.p." etc. — at the end.</li>
+  <li><strong>Concavity check:</strong> for the trapezium rule, decide over/under-estimate from the sign of \(f''\).</li>
+  <li><strong>Sketch the function</strong> before choosing a starting value for any iterative method.</li>
+  <li><strong>Verify</strong> the final root by substituting back and checking \(f(\alpha) \approx 0\).</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Typical OCR examiner complaints (from mark reports).</strong>
+<ul>
+  <li>Omitting the statement "\(f\) is continuous" when applying the change-of-sign test.</li>
+  <li>Stating that a sign change in \([a, b]\) means <em>exactly</em> one root, rather than <em>at least</em> one.</li>
+  <li>In fixed-point iteration, failing to verify \(|g'(\alpha)| < 1\), or giving only the final answer with no iteration table.</li>
+  <li>Claiming a Newton-Raphson iteration "diverges because the function is not differentiable", when the real reason is \(f'(x_0) = 0\) or a poor starting value.</li>
+  <li>Confusing "number of strips" with "number of ordinates" in the trapezium rule — \(n\) strips produces \(n+1\) ordinates.</li>
+  <li>Doubling the end ordinates \(y_0\) and \(y_n\) (should be counted once) or failing to double the interior ordinates (should be counted twice).</li>
+  <li>Rounding intermediate results to 3 d.p. and then quoting the final answer to 5 d.p. — rounding error propagates.</li>
+  <li>Giving no explicit statement of accuracy ("to 3 d.p.") on the final line.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Formula snapshot (memorise).</strong>
+<ul>
+  <li><strong>Change of sign:</strong> \(f\) continuous on \([a,b]\), \(f(a)f(b) < 0 \Rightarrow\) at least one root in \((a,b)\).</li>
+  <li><strong>Bisection width:</strong> \(w_n = (b-a)/2^n\); midpoint error \(\le w_n / 2\).</li>
+  <li><strong>Fixed-point iteration:</strong> \(x_{n+1} = g(x_n)\); converges iff \(|g'(\alpha)| < 1\).</li>
+  <li><strong>Newton-Raphson:</strong> \(x_{n+1} = x_n - f(x_n)/f'(x_n)\); quadratic near a simple root.</li>
+  <li><strong>Trapezium rule:</strong> \(\int_a^b f\, dx \approx \tfrac{h}{2}[y_0 + 2(y_1 + \cdots + y_{n-1}) + y_n]\), \(h = (b-a)/n\).</li>
+  <li><strong>Trapezium error:</strong> \(O(h^2)\); doubling \(n\) divides error by 4.</li>
+  <li><strong>Concavity:</strong> \(f'' > 0 \Rightarrow\) over-estimate; \(f'' < 0 \Rightarrow\) under-estimate.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

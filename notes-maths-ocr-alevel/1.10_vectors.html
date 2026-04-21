@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCR 1.10 — Vectors</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.10 Vectors</h1>
+<p class="spec-ref">Mathematics — OCR A-Level (H240) — Paper 1: Pure Mathematics</p>
+
+<p>Vectors are the mathematical language of direction. Where an ordinary number — a <em>scalar</em> — answers the question "how much?", a vector additionally answers "which way?". Every displacement, every velocity, every force, every magnetic field is a vector; modern physics, computer graphics, machine learning and engineering are unthinkable without them. At A-level the scope is deliberately concrete: two- and three-dimensional vectors expressed in Cartesian components, the scalar (dot) product, and the vector equation of a straight line. Once these ideas are secure, geometric problems that would otherwise require lengthy coordinate algebra — "are these three points collinear?", "what is the angle between these two lines?", "do these lines intersect, and if so where?" — collapse into a few lines of vector arithmetic.</p>
+
+<h2>1. Introduction: Scalars vs Vectors</h2>
+
+<p>A <em>scalar</em> quantity is described by a single real number: temperature (20°C), mass (3 kg), speed (60 mph), time (5 s). A <em>vector</em> quantity requires both a magnitude (a positive real number) and a direction: displacement (5 m north), velocity (60 mph due east), force (10 N downwards).</p>
+
+<div class="definition">
+<strong>Vector.</strong> A <em>vector</em> is a quantity that has both a <em>magnitude</em> (a non-negative size) and a <em>direction</em>. Two vectors are equal if and only if they have the same magnitude <em>and</em> the same direction — their position in space is irrelevant. Vectors that differ only by a translation are considered the same vector.
+</div>
+
+<p>Three common ways of writing a vector in print and by hand:</p>
+
+<ul>
+  <li><strong>Bold face:</strong> \(\mathbf{a}\), \(\mathbf{v}\), \(\mathbf{F}\) — standard in textbooks.</li>
+  <li><strong>Arrow (handwritten):</strong> \(\vec{a}\), or \(\overrightarrow{AB}\) for the directed line segment from \(A\) to \(B\).</li>
+  <li><strong>Underline (handwritten):</strong> \(\underline{a}\) — examiner-friendly and unmistakeable.</li>
+</ul>
+
+<p>A vector in 2D or 3D is most easily specified by its <em>components</em> relative to a chosen set of perpendicular axes. Two notations are in constant use:</p>
+
+<div class="equation">
+\( \mathbf{a} = \begin{pmatrix} x \\ y \end{pmatrix} = x\,\mathbf{i} + y\,\mathbf{j} \qquad \text{(2D)} \)
+</div>
+<div class="equation">
+\( \mathbf{a} = \begin{pmatrix} x \\ y \\ z \end{pmatrix} = x\,\mathbf{i} + y\,\mathbf{j} + z\,\mathbf{k} \qquad \text{(3D)} \)
+</div>
+
+<p>Here \(\mathbf{i}, \mathbf{j}, \mathbf{k}\) are the <em>base unit vectors</em> of unit length along the \(x\)-, \(y\)- and \(z\)-axes respectively. The column form and the \(\mathbf{i}/\mathbf{j}/\mathbf{k}\) form are interchangeable; you should be fluent in both because examiners switch between them without warning.</p>
+
+<div class="definition">
+<strong>Position vector.</strong> Fix an origin \(O\). The <em>position vector</em> of a point \(P\) is the directed line segment from \(O\) to \(P\), written \(\overrightarrow{OP}\) or simply \(\mathbf{p}\). If \(P\) has Cartesian coordinates \((x, y, z)\) then
+\[ \mathbf{p} = \overrightarrow{OP} = \begin{pmatrix} x \\ y \\ z \end{pmatrix} = x\mathbf{i} + y\mathbf{j} + z\mathbf{k}. \]
+Position vectors live on a fixed tail (the origin); arbitrary "free" vectors do not.
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — mark vectors clearly.</strong> In handwritten work, <em>always</em> indicate that a symbol stands for a vector: underline it (\(\underline{a}\)) or draw an arrow (\(\vec{a}\)). A naked letter \(a\) reads as a scalar and may cost method marks. For named segments write the arrow explicitly: \(\overrightarrow{AB}\), not just \(AB\) (which is the length of the segment — a scalar).
+</div>
+
+<h2>2. Magnitude and Unit Vectors</h2>
+
+<p>The <em>magnitude</em> (or <em>modulus</em>, or <em>length</em>) of a vector is the length of the directed segment that represents it. In components it is given directly by Pythagoras:</p>
+
+<div class="definition">
+<strong>Magnitude of a vector.</strong> For \(\mathbf{a} = x\mathbf{i} + y\mathbf{j}\) in 2D,
+\[ |\mathbf{a}| = \sqrt{x^2 + y^2}. \]
+For \(\mathbf{a} = x\mathbf{i} + y\mathbf{j} + z\mathbf{k}\) in 3D,
+\[ |\mathbf{a}| = \sqrt{x^2 + y^2 + z^2}. \]
+The magnitude is a non-negative scalar; \(|\mathbf{a}| = 0\) if and only if \(\mathbf{a}\) is the zero vector \(\mathbf{0}\).
+</div>
+
+<div class="definition">
+<strong>Unit vector.</strong> A <em>unit vector</em> is any vector of magnitude 1. For a non-zero vector \(\mathbf{a}\), the unit vector in the same direction as \(\mathbf{a}\) is
+\[ \hat{\mathbf{a}} = \frac{\mathbf{a}}{|\mathbf{a}|}. \]
+Every non-zero vector can be written as \(\mathbf{a} = |\mathbf{a}|\,\hat{\mathbf{a}}\) — the product of its magnitude and a pure direction. The three base vectors \(\mathbf{i}, \mathbf{j}, \mathbf{k}\) are unit vectors along the coordinate axes, with \(|\mathbf{i}| = |\mathbf{j}| = |\mathbf{k}| = 1\).
+</div>
+
+<div class="example">
+<h3>Worked Example 1 — Magnitude and unit vector</h3>
+<p>Find the magnitude of \(\mathbf{a} = 2\mathbf{i} + 3\mathbf{j} - \mathbf{k}\) and the unit vector in the same direction.</p>
+<pre>
+<span class="ln">1.</span>  Components: (x, y, z) = (2, 3, −1).
+<span class="ln">2.</span>  |a| = √(2² + 3² + (−1)²) = √(4 + 9 + 1) = √14.
+<span class="ln">3.</span>  â = a / |a| = (1/√14)(2i + 3j − k)
+<span class="ln">4.</span>      = (2/√14) i + (3/√14) j − (1/√14) k.
+<span class="ln">5.</span>  Check: |â|² = (4 + 9 + 1)/14 = 14/14 = 1  ✓
+<span class="ln">6.</span>
+<span class="ln">7.</span>  Numerically: |a| ≈ 3.742, so â ≈ 0.535 i + 0.802 j − 0.267 k.
+
+<span class="cm">// Rationalising the denominator is optional — examiners accept (2/√14) i etc.</span>
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — leave magnitudes in surd form.</strong> Unless the question specifically asks for a decimal, leave \(|\mathbf{a}| = \sqrt{14}\) rather than \(3.742\ldots\). Surd form is exact, shorter to write, and is what the mark scheme usually shows. Rounding early compounds error.
+</div>
+
+<h2>3. Addition, Subtraction and Scalar Multiplication</h2>
+
+<p>Vectors behave algebraically much like ordinary numbers — except that we always work <em>component-wise</em>.</p>
+
+<div class="equation">
+\( \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix} + \begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix} = \begin{pmatrix} a_1 + b_1 \\ a_2 + b_2 \\ a_3 + b_3 \end{pmatrix}, \qquad \lambda \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix} = \begin{pmatrix} \lambda a_1 \\ \lambda a_2 \\ \lambda a_3 \end{pmatrix}. \)
+</div>
+
+<p>Geometrically these operations are visualised by the classic diagrams:</p>
+
+<ul>
+  <li><strong>Triangle law of addition.</strong> To add \(\mathbf{a} + \mathbf{b}\), place the tail of \(\mathbf{b}\) at the head of \(\mathbf{a}\); the sum is the vector from the start of \(\mathbf{a}\) to the end of \(\mathbf{b}\).</li>
+  <li><strong>Parallelogram law.</strong> Placing \(\mathbf{a}\) and \(\mathbf{b}\) tail-to-tail, \(\mathbf{a} + \mathbf{b}\) is the diagonal of the parallelogram with sides \(\mathbf{a}\) and \(\mathbf{b}\). The other diagonal represents \(\mathbf{b} - \mathbf{a}\).</li>
+  <li><strong>Scalar multiplication.</strong> \(\lambda \mathbf{a}\) has magnitude \(|\lambda|\cdot|\mathbf{a}|\). If \(\lambda > 0\) it points the same way as \(\mathbf{a}\); if \(\lambda < 0\) it points in the opposite direction; if \(\lambda = 0\) it is the zero vector.</li>
+</ul>
+
+<svg viewBox="0 0 500 220" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <line x1="60" y1="180" x2="460" y2="180" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="80" y1="20"  x2="80" y2="200"  stroke="#cbd5e1" stroke-width="1"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrowR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <!-- triangle law -->
+  <line x1="100" y1="160" x2="220" y2="100" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="140" y="120" font-size="13" fill="#2563eb">a</text>
+  <line x1="220" y1="100" x2="300" y2="60"  stroke="#16a34a" stroke-width="2" marker-end="url(#arrowG)"/>
+  <text x="260" y="75"  font-size="13" fill="#16a34a">b</text>
+  <line x1="100" y1="160" x2="300" y2="60"  stroke="#dc2626" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrowR)"/>
+  <text x="185" y="95"  font-size="13" fill="#dc2626">a + b</text>
+  <text x="140" y="195" font-size="11" fill="#1e3a5f">Triangle law</text>
+  <!-- parallelogram law -->
+  <line x1="330" y1="170" x2="410" y2="110" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="360" y="155" font-size="13" fill="#2563eb">a</text>
+  <line x1="330" y1="170" x2="400" y2="150" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowG)"/>
+  <text x="360" y="170" font-size="13" fill="#16a34a">b</text>
+  <line x1="410" y1="110" x2="480" y2="90"  stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <line x1="400" y1="150" x2="480" y2="90"  stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <line x1="330" y1="170" x2="480" y2="90"  stroke="#dc2626" stroke-width="2" marker-end="url(#arrowR)"/>
+  <text x="395" y="125" font-size="13" fill="#dc2626">a + b</text>
+  <text x="365" y="195" font-size="11" fill="#1e3a5f">Parallelogram law</text>
+</svg>
+
+<div class="example">
+<h3>Worked Example 2 — Adding and scaling vectors</h3>
+<p>Given \(\mathbf{a} = 2\mathbf{i} + 3\mathbf{j} - \mathbf{k}\) and \(\mathbf{b} = \mathbf{i} - \mathbf{j} + 4\mathbf{k}\), find \(\mathbf{a} + \mathbf{b}\), \(\mathbf{a} - \mathbf{b}\), \(3\mathbf{a} - 2\mathbf{b}\) and \(|\mathbf{a} + \mathbf{b}|\).</p>
+<pre>
+<span class="ln">1.</span>  a + b = (2 + 1)i + (3 + (−1))j + (−1 + 4)k
+<span class="ln">2.</span>        = 3 i + 2 j + 3 k.
+<span class="ln">3.</span>  a − b = (2 − 1)i + (3 − (−1))j + (−1 − 4)k
+<span class="ln">4.</span>        = i + 4 j − 5 k.
+<span class="ln">5.</span>  3a    = 6 i + 9 j − 3 k.
+<span class="ln">6.</span>  2b    = 2 i − 2 j + 8 k.
+<span class="ln">7.</span>  3a − 2b = (6 − 2)i + (9 − (−2))j + (−3 − 8)k
+<span class="ln">8.</span>          = 4 i + 11 j − 11 k.
+<span class="ln">9.</span>
+<span class="ln">10.</span> |a + b| = √(3² + 2² + 3²) = √(9 + 4 + 9) = √22  ≈ 4.690.
+</pre>
+</div>
+
+<h2>4. The Vector Between Two Points</h2>
+
+<p>Once every point has a position vector, the directed segment between any two points is just the difference:</p>
+
+<div class="definition">
+<strong>Vector between two points.</strong> Let \(A\) and \(B\) have position vectors \(\mathbf{a}\) and \(\mathbf{b}\) respectively. Then the displacement from \(A\) to \(B\) is
+\[ \overrightarrow{AB} = \mathbf{b} - \mathbf{a}. \]
+(Think "finish minus start", or "head minus tail".) In particular \(\overrightarrow{BA} = \mathbf{a} - \mathbf{b} = -\overrightarrow{AB}\).
+</div>
+
+<p>This single identity is the backbone of almost every A-level vector problem. From it follow:</p>
+
+<ul>
+  <li><strong>Distance between points:</strong> \(AB = |\overrightarrow{AB}| = |\mathbf{b} - \mathbf{a}|\).</li>
+  <li><strong>Midpoint.</strong> The midpoint \(M\) of \(AB\) has position vector
+    \(\displaystyle \mathbf{m} = \tfrac{1}{2}(\mathbf{a} + \mathbf{b}).\)</li>
+  <li><strong>Point dividing \(AB\) in ratio \(\lambda : \mu\):</strong> position vector \(\dfrac{\mu \mathbf{a} + \lambda \mathbf{b}}{\lambda + \mu}.\)</li>
+</ul>
+
+<div class="example">
+<h3>Worked Example 3 — Distance, midpoint and displacement</h3>
+<p>Points \(A(1, -2, 4)\) and \(B(4, 2, 0)\). Find \(\overrightarrow{AB}\), the distance \(AB\) and the midpoint of \(AB\).</p>
+<pre>
+<span class="ln">1.</span>  a = i − 2j + 4k,   b = 4i + 2j + 0k.
+<span class="ln">2.</span>  AB = b − a = (4 − 1)i + (2 − (−2))j + (0 − 4)k
+<span class="ln">3.</span>             = 3 i + 4 j − 4 k.
+<span class="ln">4.</span>  |AB| = √(3² + 4² + (−4)²) = √(9 + 16 + 16) = √41  ≈ 6.403.
+<span class="ln">5.</span>  Midpoint m = (a + b)/2
+<span class="ln">6.</span>             = ( (1+4)/2 ) i + ( (−2+2)/2 ) j + ( (4+0)/2 ) k
+<span class="ln">7.</span>             = 2.5 i + 0 j + 2 k.
+<span class="ln">8.</span>  So M = (2.5, 0, 2).
+</pre>
+</div>
+
+<h2>5. Parallel, Equal and Collinear</h2>
+
+<div class="definition">
+<strong>Parallel vectors.</strong> Two non-zero vectors \(\mathbf{a}\) and \(\mathbf{b}\) are <em>parallel</em> if and only if there exists a scalar \(k \neq 0\) with
+\[ \mathbf{b} = k\,\mathbf{a}. \]
+If \(k > 0\) they point the same way; if \(k < 0\) they point in opposite directions — <em>anti-parallel</em>. The zero vector \(\mathbf{0}\) is conventionally considered parallel to every vector.
+</div>
+
+<p>To test whether \(\mathbf{a}\) and \(\mathbf{b}\) are parallel in practice, check whether the component ratios are equal: in 3D, \(a_1/b_1 = a_2/b_2 = a_3/b_3\) (with the usual care if any \(b_i = 0\)).</p>
+
+<p>This test extends to collinearity of three points. \(A\), \(B\), \(C\) are <em>collinear</em> (they lie on one straight line) exactly when \(\overrightarrow{AB}\) and \(\overrightarrow{AC}\) are parallel:</p>
+
+<div class="equation">
+\( \overrightarrow{AC} = k\,\overrightarrow{AB} \quad\text{for some scalar } k. \)
+</div>
+
+<div class="example">
+<h3>Worked Example 4 — Showing three points are collinear</h3>
+<p>Show that \(A(1, 2, 3)\), \(B(3, 5, 7)\) and \(C(7, 11, 15)\) are collinear.</p>
+<pre>
+<span class="ln">1.</span>  AB = b − a = (3−1, 5−2, 7−3)  = (2, 3, 4).
+<span class="ln">2.</span>  AC = c − a = (7−1, 11−2, 15−3) = (6, 9, 12).
+<span class="ln">3.</span>  Notice AC = 3·(2, 3, 4) = 3·AB.
+<span class="ln">4.</span>  So AC is a (positive) scalar multiple of AB — the two vectors are parallel,
+<span class="ln">5.</span>  and they share the point A. Hence A, B, C lie on one straight line.   ∎
+<span class="ln">6.</span>  (Since k = 3 &gt; 1, C lies beyond B on the ray from A through B.)
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — reduce direction vectors to simplest form.</strong> A vector \((4, 6, 8)\) and \((2, 3, 4)\) describe the same direction — one is exactly twice the other. When writing a line or comparing directions, factor out any common integer factor. Cleaner numbers make the comparison "are these parallel?" obvious and make arithmetic less error-prone.
+</div>
+
+<h2>6. The Scalar (Dot) Product</h2>
+
+<p>Addition and scalar multiplication tell us about vectors <em>alongside</em> each other; the <em>scalar product</em> is how we quantify the angle between them. It is the single most useful tool in vector geometry at A-level.</p>
+
+<div class="definition">
+<strong>Scalar (dot) product — algebraic definition.</strong> For \(\mathbf{a} = a_1\mathbf{i} + a_2\mathbf{j} + a_3\mathbf{k}\) and \(\mathbf{b} = b_1\mathbf{i} + b_2\mathbf{j} + b_3\mathbf{k}\),
+\[ \mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3. \]
+In 2D the third term is simply absent. The result is a <em>scalar</em> (a real number), not a vector.
+</div>
+
+<div class="definition">
+<strong>Scalar product — geometric definition.</strong> If \(\theta\) is the angle between \(\mathbf{a}\) and \(\mathbf{b}\) when they are placed tail-to-tail (with \(0 \le \theta \le \pi\)), then
+\[ \mathbf{a} \cdot \mathbf{b} = |\mathbf{a}|\,|\mathbf{b}|\,\cos\theta. \]
+The two definitions are equivalent — they always give the same number — and together they let us compute angles directly from components.
+</div>
+
+<p>From the geometric form we can read off three immediate and very useful facts:</p>
+
+<ul>
+  <li>\(\mathbf{a} \cdot \mathbf{a} = |\mathbf{a}|^2\) (setting \(\mathbf{b} = \mathbf{a}\), so \(\theta = 0\) and \(\cos\theta = 1\)).</li>
+  <li>\(\mathbf{a} \cdot \mathbf{b} = 0\) exactly when \(\mathbf{a}\) and \(\mathbf{b}\) are perpendicular (or one is \(\mathbf{0}\)), because \(\cos(\pi/2) = 0\).</li>
+  <li>\(\mathbf{a} \cdot \mathbf{b} > 0\) when \(\theta\) is acute, \(\mathbf{a} \cdot \mathbf{b} < 0\) when \(\theta\) is obtuse.</li>
+</ul>
+
+<div class="definition">
+<strong>Algebraic properties of the dot product.</strong>
+<ul>
+  <li>Commutative: \(\mathbf{a} \cdot \mathbf{b} = \mathbf{b} \cdot \mathbf{a}\).</li>
+  <li>Distributive over addition: \(\mathbf{a} \cdot (\mathbf{b} + \mathbf{c}) = \mathbf{a} \cdot \mathbf{b} + \mathbf{a} \cdot \mathbf{c}\).</li>
+  <li>Compatible with scalar multiplication: \((\lambda \mathbf{a}) \cdot \mathbf{b} = \lambda(\mathbf{a} \cdot \mathbf{b}) = \mathbf{a} \cdot (\lambda \mathbf{b})\).</li>
+  <li>Self-product: \(\mathbf{a} \cdot \mathbf{a} = |\mathbf{a}|^2 \ge 0\), with equality iff \(\mathbf{a} = \mathbf{0}\).</li>
+  <li>Base vectors: \(\mathbf{i}\cdot\mathbf{i} = \mathbf{j}\cdot\mathbf{j} = \mathbf{k}\cdot\mathbf{k} = 1\); \(\mathbf{i}\cdot\mathbf{j} = \mathbf{j}\cdot\mathbf{k} = \mathbf{k}\cdot\mathbf{i} = 0\).</li>
+</ul>
+</div>
+
+<table>
+<tr><th>Property</th><th>Statement</th><th>In words</th></tr>
+<tr><td>Symmetry</td><td>\(\mathbf{a}\cdot\mathbf{b} = \mathbf{b}\cdot\mathbf{a}\)</td><td>Order does not matter.</td></tr>
+<tr><td>Linearity</td><td>\(\mathbf{a}\cdot(\lambda\mathbf{b} + \mu\mathbf{c}) = \lambda(\mathbf{a}\cdot\mathbf{b}) + \mu(\mathbf{a}\cdot\mathbf{c})\)</td><td>Dot product distributes like multiplication.</td></tr>
+<tr><td>Self-product</td><td>\(\mathbf{a}\cdot\mathbf{a} = |\mathbf{a}|^2\)</td><td>Dotting a vector with itself gives its squared length.</td></tr>
+<tr><td>Zero product</td><td>\(\mathbf{a}\cdot\mathbf{b} = 0 \Leftrightarrow \mathbf{a} \perp \mathbf{b}\) (for non-zero vectors)</td><td>Orthogonality criterion.</td></tr>
+<tr><td>Sign of angle</td><td>\(\mathbf{a}\cdot\mathbf{b}\) positive \(\Rightarrow\) acute; negative \(\Rightarrow\) obtuse</td><td>Sign reveals the type of angle.</td></tr>
+</table>
+
+<div class="example">
+<h3>Worked Example 5 — Computing a scalar product</h3>
+<p>For \(\mathbf{a} = 2\mathbf{i} + 3\mathbf{j} - \mathbf{k}\) and \(\mathbf{b} = \mathbf{i} - \mathbf{j} + 4\mathbf{k}\), evaluate \(\mathbf{a} \cdot \mathbf{b}\) and determine whether the angle between them is acute, right, or obtuse.</p>
+<pre>
+<span class="ln">1.</span>  a · b = (2)(1) + (3)(−1) + (−1)(4)
+<span class="ln">2.</span>        = 2 − 3 − 4
+<span class="ln">3.</span>        = −5.
+<span class="ln">4.</span>  Since a · b &lt; 0, the angle between a and b is OBTUSE.
+<span class="ln">5.</span>  (Had it been 0, the vectors would be perpendicular.
+<span class="ln">6.</span>   Had it been positive, the angle would be acute.)
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — dot product is a scalar, not a vector.</strong> Watch your units: \(\mathbf{a}\cdot\mathbf{b}\) is a single number, written <em>without</em> bold face or underline. A frequent slip is to write "\(\mathbf{a}\cdot\mathbf{b} = 5\mathbf{i}\)" or to leave it in bold — both cost marks. Similarly, \(|\mathbf{a}|\) is a scalar.
+</div>
+
+<h2>7. Angle Between Vectors</h2>
+
+<p>Rearranging the geometric definition of the scalar product gives a direct formula for the angle between two non-zero vectors:</p>
+
+<div class="definition">
+<strong>Angle between two vectors.</strong> For non-zero vectors \(\mathbf{a}\) and \(\mathbf{b}\), the angle \(\theta \in [0, \pi]\) between them satisfies
+\[ \cos\theta = \frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}|\,|\mathbf{b}|}. \]
+Perpendicularity is the case \(\mathbf{a}\cdot\mathbf{b} = 0\); parallel (same direction) is \(\cos\theta = 1\); anti-parallel is \(\cos\theta = -1\).
+</div>
+
+<svg viewBox="0 0 500 200" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <line x1="80" y1="160" x2="420" y2="160" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="100" y1="160" x2="330" y2="50" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="340" y="48" font-size="13" fill="#2563eb">a</text>
+  <line x1="100" y1="160" x2="380" y2="130" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowG)"/>
+  <text x="390" y="130" font-size="13" fill="#16a34a">b</text>
+  <path d="M 140,160 A 40,40 0 0,0 135,135" stroke="#dc2626" stroke-width="1.5" fill="none"/>
+  <text x="145" y="148" font-size="13" fill="#dc2626">θ</text>
+  <text x="185" y="185" font-size="11" fill="#1e3a5f">cos θ = (a · b) / (|a| |b|)</text>
+</svg>
+
+<div class="example">
+<h3>Worked Example 6 — Angle between two 3D vectors</h3>
+<p>Find, to the nearest degree, the angle between \(\mathbf{a} = 2\mathbf{i} + 3\mathbf{j} - \mathbf{k}\) and \(\mathbf{b} = \mathbf{i} - \mathbf{j} + 4\mathbf{k}\).</p>
+<pre>
+<span class="ln">1.</span>  a · b = 2(1) + 3(−1) + (−1)(4) = 2 − 3 − 4 = −5   (from WE 5).
+<span class="ln">2.</span>  |a|   = √(4 + 9 + 1)  = √14.
+<span class="ln">3.</span>  |b|   = √(1 + 1 + 16) = √18 = 3√2.
+<span class="ln">4.</span>  cos θ = (a · b)/(|a| |b|) = −5 / (√14 · 3√2) = −5 / (3√28).
+<span class="ln">5.</span>  Simplify:  3√28 = 3·2√7 = 6√7.
+<span class="ln">6.</span>             cos θ = −5 / (6√7) ≈ −0.31497.
+<span class="ln">7.</span>  θ = arccos(−0.31497) ≈ 108.36°.
+<span class="ln">8.</span>
+<span class="ln">9.</span>  Answer:  θ ≈ 108° (to the nearest degree).   Obtuse, as predicted.
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 7 — Angle in 2D</h3>
+<p>Find the angle between \(\mathbf{d}_1 = \mathbf{i} + 2\mathbf{j}\) and \(\mathbf{d}_2 = 3\mathbf{i} - \mathbf{j}\).</p>
+<pre>
+<span class="ln">1.</span>  d₁ · d₂ = (1)(3) + (2)(−1) = 3 − 2 = 1.
+<span class="ln">2.</span>  |d₁|    = √(1 + 4) = √5.
+<span class="ln">3.</span>  |d₂|    = √(9 + 1) = √10.
+<span class="ln">4.</span>  cos θ   = 1 / (√5 · √10) = 1/√50 = 1/(5√2) ≈ 0.1414.
+<span class="ln">5.</span>  θ       = arccos(0.1414) ≈ 81.87°.
+<span class="ln">6.</span>
+<span class="ln">7.</span>  Answer:  θ ≈ 81.9°  (acute, as expected since d₁·d₂ &gt; 0).
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — use |cos θ| for the acute angle between lines.</strong> For two <em>vectors</em> the angle \(\theta \in [0, \pi]\) is uniquely determined by \(\cos\theta\); a negative cosine gives an obtuse angle. But for two <em>lines</em> (which are not oriented), the convention is to quote the <em>acute</em> angle. Take the absolute value: \(\cos\theta = |\mathbf{d}_1 \cdot \mathbf{d}_2| / (|\mathbf{d}_1|\,|\mathbf{d}_2|)\), so that \(\theta \in [0, \pi/2]\). Always read the question carefully — "angle between vectors" vs "angle between lines".
+</div>
+
+<h2>8. Vector Equation of a Line</h2>
+
+<p>A straight line in space is completely determined by (i) one point on it, and (ii) a direction.</p>
+
+<div class="definition">
+<strong>Vector equation of a line.</strong> The line passing through the point with position vector \(\mathbf{a}\), in the direction of the non-zero vector \(\mathbf{d}\), is the set of points \(P\) with position vector
+\[ \mathbf{r} = \mathbf{a} + t\,\mathbf{d}, \qquad t \in \mathbb{R}. \]
+The parameter \(t\) sweeps out the whole line: at \(t = 0\) we are at \(\mathbf{a}\); positive \(t\) moves in the direction of \(\mathbf{d}\), negative \(t\) moves the other way.
+</div>
+
+<p>The direction vector \(\mathbf{d}\) is not unique — any non-zero scalar multiple \(\lambda \mathbf{d}\) describes the same line (one simply reparameterises the \(t\)). Similarly, <em>any</em> point on the line can serve as \(\mathbf{a}\).</p>
+
+<p>Equating components gives the <em>parametric Cartesian form</em>:</p>
+
+<div class="equation">
+\( x = a_1 + t\,d_1, \qquad y = a_2 + t\,d_2, \qquad z = a_3 + t\,d_3. \)
+</div>
+
+<p>Eliminating \(t\) (where all \(d_i \neq 0\)) yields the <em>symmetric Cartesian form</em> of the line:</p>
+
+<div class="equation">
+\( \dfrac{x - a_1}{d_1} = \dfrac{y - a_2}{d_2} = \dfrac{z - a_3}{d_3}. \)
+</div>
+
+<div class="example">
+<h3>Worked Example 8 — Vector equation through a given point</h3>
+<p>Find the vector equation of the straight line through \(A(1, 2, 3)\) parallel to the direction \(2\mathbf{i} - \mathbf{j} + \mathbf{k}\).</p>
+<pre>
+<span class="ln">1.</span>  Take a = i + 2j + 3k   and  d = 2i − j + k.
+<span class="ln">2.</span>  Vector equation:
+<span class="ln">3.</span>      r = (1)i + (2)j + (3)k + t[(2)i + (−1)j + (1)k]
+<span class="ln">4.</span>        = (1 + 2t) i + (2 − t) j + (3 + t) k,       t ∈ ℝ.
+<span class="ln">5.</span>  Parametric form:  x = 1 + 2t,  y = 2 − t,  z = 3 + t.
+<span class="ln">6.</span>  Cartesian form:   (x − 1)/2 = (y − 2)/(−1) = (z − 3)/1.
+<span class="ln">7.</span>
+<span class="ln">8.</span>  Check: t = 0 gives (1, 2, 3) = A.   ✓
+<span class="ln">9.</span>         t = 1 gives (3, 1, 4) — another point on the line.
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 9 — Does a point lie on a given line?</h3>
+<p>Show that the point \(C(4, 5, 7)\) lies on the line \(\mathbf{r} = (1, 2, 1) + t(1, 1, 2)\).</p>
+<pre>
+<span class="ln">1.</span>  If C lies on the line, there is a single value of t for which
+<span class="ln">2.</span>     1 + t = 4,   2 + t = 5,   1 + 2t = 7.
+<span class="ln">3.</span>  From the x-equation: t = 3.
+<span class="ln">4.</span>  Check y:  2 + 3 = 5.  ✓
+<span class="ln">5.</span>  Check z:  1 + 2(3) = 1 + 6 = 7.  ✓
+<span class="ln">6.</span>  All three equations are satisfied with t = 3, so C is on the line.   ∎
+<span class="ln">7.</span>
+<span class="ln">8.</span>  (If any one component had disagreed, C would not have been on the line.)
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — check all three components.</strong> To verify a point lies on a 3D line, solving one component gives a candidate \(t\); you <em>must</em> substitute it into the remaining two components to confirm. Stopping after matching one or two is a classic error — and invites the examiner to set a question where exactly two components agree but the third does not.
+</div>
+
+<h2>9. Intersection of Two Lines</h2>
+
+<p>In 2D any two lines are either parallel (no intersection, unless they coincide) or meet in a single point. In 3D there is a richer set of possibilities.</p>
+
+<div class="definition">
+<strong>Skew lines.</strong> Two lines in 3D are <em>skew</em> if they are neither parallel nor intersecting — that is, they do not meet and are not going in the same direction. Skew lines are unique to three (or more) dimensions; they cannot exist in a plane.
+</div>
+
+<table>
+<tr><th>Case</th><th>Directions</th><th>Intersect?</th><th>Description</th></tr>
+<tr><td>Identical / coincident</td><td>Parallel</td><td>Infinitely many common points</td><td>Same line; every point of one is a point of the other.</td></tr>
+<tr><td>Parallel (not coincident)</td><td>Parallel</td><td>No</td><td>Same direction, different lines; never meet.</td></tr>
+<tr><td>Intersecting</td><td>Non-parallel</td><td>Exactly one common point</td><td>The lines cross at a single point.</td></tr>
+<tr><td>Skew</td><td>Non-parallel</td><td>No</td><td>Lines miss each other in 3D; no common point.</td></tr>
+</table>
+
+<p>To classify two lines in 3D, first compare their direction vectors:</p>
+
+<ul>
+  <li>If the directions are parallel (\(\mathbf{d}_2 = \lambda \mathbf{d}_1\)), either the lines are the same (any point on one is on the other) or they are parallel-but-not-equal.</li>
+  <li>If the directions are not parallel, the lines are either intersecting or skew. Set the two vector equations equal and try to solve.</li>
+</ul>
+
+<div class="definition">
+<strong>Algorithm for testing intersection of two lines in 3D.</strong> Given lines
+\(\mathbf{r}_1 = \mathbf{a}_1 + s\,\mathbf{d}_1\) and \(\mathbf{r}_2 = \mathbf{a}_2 + t\,\mathbf{d}_2\) with non-parallel directions:
+<ol>
+  <li>Write \(\mathbf{a}_1 + s\,\mathbf{d}_1 = \mathbf{a}_2 + t\,\mathbf{d}_2\); this gives three scalar equations in the two unknowns \(s\) and \(t\).</li>
+  <li>Solve any two of the equations (usually the \(x\) and \(y\) components) for \(s\) and \(t\).</li>
+  <li>Substitute these values into the third equation. If it is satisfied, the lines intersect; substitute \(s\) back into \(\mathbf{r}_1\) to find the common point. If not, the lines are <em>skew</em>.</li>
+</ol>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — a skew test requires two conclusions.</strong> To prove two lines are skew you must state <em>both</em> (a) the directions are not parallel, and (b) there is no simultaneous solution for the parameters. Missing either half (for example, concluding "skew" just because the parameters don't match) is an incomplete answer. Parallel-but-non-intersecting is not the same as skew.
+</div>
+
+<div class="example">
+<h3>Worked Example 10 — Do two lines intersect?</h3>
+<p>Determine whether the lines \(\mathbf{r}_1 = (1, 0, 2) + s(2, 1, -1)\) and \(\mathbf{r}_2 = (3, 1, 1) + t(1, -1, 2)\) intersect. If they do, find the point.</p>
+<pre>
+<span class="ln">1.</span>  Directions:  d₁ = (2, 1, −1),  d₂ = (1, −1, 2).
+<span class="ln">2.</span>  These are NOT parallel — no scalar λ gives d₂ = λ d₁
+<span class="ln">3.</span>      (would need 1 = 2λ ⇒ λ = 1/2, but then −1 ≠ 1/2).
+<span class="ln">4.</span>  So the lines are either intersecting or skew.
+<span class="ln">5.</span>
+<span class="ln">6.</span>  Set r₁ = r₂ component-wise:
+<span class="ln">7.</span>     x:   1 + 2s = 3 + t          ... (i)
+<span class="ln">8.</span>     y:   0 + s  = 1 − t          ... (ii)
+<span class="ln">9.</span>     z:   2 − s  = 1 + 2t         ... (iii)
+<span class="ln">10.</span>
+<span class="ln">11.</span> Solve (i) and (ii):
+<span class="ln">12.</span>    (i):   2s − t = 2.
+<span class="ln">13.</span>    (ii):  s + t  = 1.
+<span class="ln">14.</span>    Add:   3s = 3     ⇒  s = 1,  then t = 0.
+<span class="ln">15.</span>
+<span class="ln">16.</span> Check with (iii):  LHS = 2 − 1 = 1,  RHS = 1 + 2(0) = 1.   ✓
+<span class="ln">17.</span> All three satisfied, so the lines DO intersect.
+<span class="ln">18.</span>
+<span class="ln">19.</span> Point of intersection:  sub s = 1 into r₁:
+<span class="ln">20.</span>    r₁(1) = (1, 0, 2) + 1·(2, 1, −1) = (3, 1, 1).
+<span class="ln">21.</span> (Consistent: same point as r₂(0) = (3, 1, 1).)
+<span class="ln">22.</span>
+<span class="ln">23.</span> Answer: the lines meet at P(3, 1, 1).
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 11 — A pair of skew lines</h3>
+<p>Show that \(\mathbf{r}_1 = (0, 0, 0) + s(1, 1, 0)\) and \(\mathbf{r}_2 = (0, 1, 1) + t(1, 0, 1)\) are skew.</p>
+<pre>
+<span class="ln">1.</span>  Directions d₁ = (1, 1, 0),  d₂ = (1, 0, 1).
+<span class="ln">2.</span>  Not parallel: d₂ is not a scalar multiple of d₁ (components disagree).
+<span class="ln">3.</span>
+<span class="ln">4.</span>  Set r₁ = r₂:
+<span class="ln">5.</span>     x:  s      = 0 + t          ⇒  s = t      ... (i)
+<span class="ln">6.</span>     y:  s      = 1 + 0           ⇒  s = 1      ... (ii)
+<span class="ln">7.</span>     z:  0      = 1 + t           ⇒  t = −1     ... (iii)
+<span class="ln">8.</span>
+<span class="ln">9.</span>  From (ii) and (iii):  s = 1, t = −1. But (i) requires s = t.
+<span class="ln">10.</span>    1 ≠ −1, so the system is INCONSISTENT — no common (s, t).
+<span class="ln">11.</span>
+<span class="ln">12.</span> Conclusion: directions not parallel AND no intersection ⇒ lines are SKEW.  ∎
+</pre>
+</div>
+
+<h2>10. Applications: Perpendicular Distance and Foot of Perpendicular</h2>
+
+<p>The dot product combines naturally with the vector equation of a line to solve classic geometric problems.</p>
+
+<h3>10.1 Angle between two lines</h3>
+
+<p>The angle between two lines is the acute angle between their direction vectors:</p>
+
+<div class="equation">
+\( \cos\theta = \dfrac{|\mathbf{d}_1 \cdot \mathbf{d}_2|}{|\mathbf{d}_1|\,|\mathbf{d}_2|}, \qquad \theta \in [0, \pi/2]. \)
+</div>
+
+<p>Two lines are perpendicular iff \(\mathbf{d}_1 \cdot \mathbf{d}_2 = 0\) and parallel iff \(\mathbf{d}_1 = \lambda \mathbf{d}_2\) for some \(\lambda\).</p>
+
+<h3>10.2 Foot of perpendicular from a point to a line</h3>
+
+<p>Let \(\ell: \mathbf{r} = \mathbf{a} + t\mathbf{d}\) be a line and \(P\) a point (with position vector \(\mathbf{p}\)). The <em>foot of the perpendicular</em> \(F\) from \(P\) to \(\ell\) is the unique point of \(\ell\) closest to \(P\). Two equivalent methods:</p>
+
+<ul>
+  <li><strong>Orthogonality condition.</strong> \(F = \mathbf{a} + t\mathbf{d}\) for some \(t\), and \(\overrightarrow{FP}\) is perpendicular to the line, i.e. \(\overrightarrow{FP} \cdot \mathbf{d} = 0\). This gives a linear equation in \(t\).</li>
+  <li><strong>Minimising distance.</strong> Let \(\mathbf{r}(t) = \mathbf{a} + t\mathbf{d}\); the squared distance from \(P\) to \(\mathbf{r}(t)\) is \(|\mathbf{p} - \mathbf{r}(t)|^2\), a quadratic in \(t\). Differentiate and set equal to zero to find the minimising \(t\) — you get the same condition as above.</li>
+</ul>
+
+<p>The <em>perpendicular distance</em> from \(P\) to \(\ell\) is then \(|\overrightarrow{FP}| = |\mathbf{p} - \mathbf{a} - t\mathbf{d}|\) evaluated at the optimal \(t\).</p>
+
+<div class="example">
+<h3>Worked Example 12 — Foot of perpendicular and shortest distance</h3>
+<p>Find the foot of the perpendicular from \(P(5, 2, 3)\) to the line \(\ell: \mathbf{r} = (1, 0, 1) + t(2, 1, 2)\). Hence find the shortest distance from \(P\) to \(\ell\).</p>
+<pre>
+<span class="ln">1.</span>  Let F = a + t d = (1 + 2t, 0 + t, 1 + 2t).
+<span class="ln">2.</span>  Then FP = p − F = (5 − (1+2t), 2 − t, 3 − (1+2t))
+<span class="ln">3.</span>             = (4 − 2t, 2 − t, 2 − 2t).
+<span class="ln">4.</span>
+<span class="ln">5.</span>  Orthogonality:  FP · d = 0,  where d = (2, 1, 2).
+<span class="ln">6.</span>     (4 − 2t)(2) + (2 − t)(1) + (2 − 2t)(2) = 0
+<span class="ln">7.</span>     (8 − 4t)    + (2 − t)    + (4 − 4t)    = 0
+<span class="ln">8.</span>     14 − 9t = 0
+<span class="ln">9.</span>     t = 14/9.
+<span class="ln">10.</span>
+<span class="ln">11.</span> Foot F = (1 + 2(14/9), 14/9, 1 + 2(14/9))
+<span class="ln">12.</span>         = (1 + 28/9, 14/9, 1 + 28/9)
+<span class="ln">13.</span>         = (37/9, 14/9, 37/9).
+<span class="ln">14.</span>
+<span class="ln">15.</span> FP at t = 14/9:
+<span class="ln">16.</span>     FP = (4 − 28/9, 2 − 14/9, 2 − 28/9)
+<span class="ln">17.</span>        = (8/9, 4/9, −10/9).
+<span class="ln">18.</span>
+<span class="ln">19.</span> |FP|² = (8/9)² + (4/9)² + (10/9)² = (64 + 16 + 100)/81 = 180/81 = 20/9.
+<span class="ln">20.</span> |FP|  = √(20/9) = (2√5)/3 ≈ 1.491.
+<span class="ln">21.</span>
+<span class="ln">22.</span> Answers:  F = (37/9, 14/9, 37/9),   shortest distance = 2√5 / 3.
+<span class="ln">23.</span>
+<span class="ln">24.</span> Check: FP · d = (8/9)(2) + (4/9)(1) + (−10/9)(2)
+<span class="ln">25.</span>              = (16 + 4 − 20)/9 = 0.   ✓  (FP ⟂ d as required.)
+</pre>
+</div>
+
+<h2>11. 2D vs 3D: Side-by-Side Summary</h2>
+
+<table>
+<tr><th>Concept</th><th>2D formula</th><th>3D formula</th></tr>
+<tr><td>Component form</td><td>\(x\mathbf{i} + y\mathbf{j}\)</td><td>\(x\mathbf{i} + y\mathbf{j} + z\mathbf{k}\)</td></tr>
+<tr><td>Magnitude</td><td>\(\sqrt{x^2 + y^2}\)</td><td>\(\sqrt{x^2 + y^2 + z^2}\)</td></tr>
+<tr><td>Dot product</td><td>\(a_1 b_1 + a_2 b_2\)</td><td>\(a_1 b_1 + a_2 b_2 + a_3 b_3\)</td></tr>
+<tr><td>Line equation</td><td>\(\mathbf{r} = \mathbf{a} + t\mathbf{d}\)</td><td>\(\mathbf{r} = \mathbf{a} + t\mathbf{d}\)</td></tr>
+<tr><td>Intersection cases</td><td>Parallel (no/∞) or meet at a point</td><td>Parallel, coincident, intersecting, or skew</td></tr>
+<tr><td>Angle between lines</td><td>\(\cos\theta = |\mathbf{d}_1\cdot\mathbf{d}_2|/(|\mathbf{d}_1||\mathbf{d}_2|)\)</td><td>Same formula</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — skew lines only exist in 3D.</strong> In two dimensions every pair of lines either meets or is parallel — "skew" is impossible. Any OCR 3D vectors question that asks you to classify a pair of lines expects you to consider all four cases: coincident, parallel, intersecting, skew.
+</div>
+
+<h2>12. Unit Vectors and Base Vectors — Summary</h2>
+
+<table>
+<tr><th>Vector</th><th>Components</th><th>Magnitude</th><th>Role</th></tr>
+<tr><td>\(\mathbf{i}\)</td><td>(1, 0, 0)</td><td>1</td><td>Unit vector along \(x\)-axis.</td></tr>
+<tr><td>\(\mathbf{j}\)</td><td>(0, 1, 0)</td><td>1</td><td>Unit vector along \(y\)-axis.</td></tr>
+<tr><td>\(\mathbf{k}\)</td><td>(0, 0, 1)</td><td>1</td><td>Unit vector along \(z\)-axis.</td></tr>
+<tr><td>\(\mathbf{0}\)</td><td>(0, 0, 0)</td><td>0</td><td>Zero vector — direction undefined.</td></tr>
+<tr><td>\(\hat{\mathbf{a}}\)</td><td>\(\mathbf{a}/|\mathbf{a}|\)</td><td>1</td><td>Unit vector in the direction of a given \(\mathbf{a} \neq \mathbf{0}\).</td></tr>
+</table>
+
+<h2>13. Pulling It Together: Worked Mini-Paper</h2>
+
+<p>The following short sequence of parts mirrors the structure of a typical OCR H240 exam vector question, weaving together the main techniques of this chapter.</p>
+
+<div class="example">
+<h3>Worked Example 13 — Mini-paper on vectors</h3>
+<p>The points \(A\), \(B\) and \(C\) have position vectors
+\(\mathbf{a} = \mathbf{i} + 2\mathbf{j} + 3\mathbf{k}\),
+\(\mathbf{b} = 3\mathbf{i} + 5\mathbf{j} + 7\mathbf{k}\),
+\(\mathbf{c} = 7\mathbf{i} + 11\mathbf{j} + 15\mathbf{k}\).
+<br>(a) Show that \(A\), \(B\), \(C\) are collinear.
+<br>(b) Find the vector equation of the line \(\ell\) through \(A\) and \(B\).
+<br>(c) Find the angle between \(\ell\) and the vector \(\mathbf{v} = \mathbf{i} - \mathbf{j} + \mathbf{k}\).
+<br>(d) Find the shortest distance from the point \(D(0, 0, 0)\) to \(\ell\).</p>
+<pre>
+<span class="ln">1.</span>  (a)  AB = b − a = (2, 3, 4).
+<span class="ln">2.</span>       AC = c − a = (6, 9, 12) = 3(2, 3, 4) = 3 AB.
+<span class="ln">3.</span>       AB and AC are parallel and share point A ⇒ A, B, C collinear. ∎
+<span class="ln">4.</span>
+<span class="ln">5.</span>  (b)  Line through A with direction AB = (2, 3, 4):
+<span class="ln">6.</span>          r = (1, 2, 3) + t(2, 3, 4),   t ∈ ℝ.
+<span class="ln">7.</span>
+<span class="ln">8.</span>  (c)  Angle between ℓ and v uses d = (2, 3, 4), v = (1, −1, 1).
+<span class="ln">9.</span>          d · v = 2 − 3 + 4 = 3.
+<span class="ln">10.</span>         |d|   = √(4 + 9 + 16) = √29.
+<span class="ln">11.</span>         |v|   = √(1 + 1 + 1)   = √3.
+<span class="ln">12.</span>         cos θ = 3 / (√29 · √3) = 3 / √87  ≈ 0.3216.
+<span class="ln">13.</span>         θ     ≈ 71.2°  (acute, so this is the angle required).
+<span class="ln">14.</span>
+<span class="ln">15.</span> (d)  Let F = a + t d = (1 + 2t, 2 + 3t, 3 + 4t) be the foot from D = (0,0,0).
+<span class="ln">16.</span>      DF = F − d_origin = (1 + 2t, 2 + 3t, 3 + 4t).
+<span class="ln">17.</span>      Require DF · d = 0:
+<span class="ln">18.</span>        (1 + 2t)(2) + (2 + 3t)(3) + (3 + 4t)(4) = 0
+<span class="ln">19.</span>        (2 + 4t)   + (6 + 9t)    + (12 + 16t)   = 0
+<span class="ln">20.</span>        20 + 29t = 0  ⇒  t = −20/29.
+<span class="ln">21.</span>
+<span class="ln">22.</span>      F = (1 − 40/29, 2 − 60/29, 3 − 80/29)
+<span class="ln">23.</span>        = (−11/29, −2/29, 7/29).
+<span class="ln">24.</span>      |DF|² = (11/29)² + (2/29)² + (7/29)²
+<span class="ln">25.</span>            = (121 + 4 + 49)/841 = 174/841 = 6/29.
+<span class="ln">26.</span>      |DF|  = √(6/29) ≈ 0.455.
+<span class="ln">27.</span>
+<span class="ln">28.</span>      Shortest distance from D to ℓ ≈ 0.455.
+</pre>
+</div>
+
+<h2>14. Formula Reference</h2>
+
+<table>
+<tr><th>Topic</th><th>Formula</th><th>Notes</th></tr>
+<tr><td>Magnitude</td><td>\(|\mathbf{a}| = \sqrt{x^2 + y^2 + z^2}\)</td><td>Drop \(z\) in 2D.</td></tr>
+<tr><td>Unit vector</td><td>\(\hat{\mathbf{a}} = \mathbf{a}/|\mathbf{a}|\)</td><td>Has magnitude 1.</td></tr>
+<tr><td>Vector between points</td><td>\(\overrightarrow{AB} = \mathbf{b} - \mathbf{a}\)</td><td>"Head minus tail".</td></tr>
+<tr><td>Midpoint</td><td>\(\mathbf{m} = \tfrac{1}{2}(\mathbf{a} + \mathbf{b})\)</td><td>Midpoint of segment \(AB\).</td></tr>
+<tr><td>Dot product</td><td>\(\mathbf{a}\cdot\mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3\)</td><td>Scalar output.</td></tr>
+<tr><td>Dot product (geometric)</td><td>\(\mathbf{a}\cdot\mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos\theta\)</td><td>\(\theta \in [0, \pi]\).</td></tr>
+<tr><td>Angle between vectors</td><td>\(\cos\theta = (\mathbf{a}\cdot\mathbf{b})/(|\mathbf{a}||\mathbf{b}|)\)</td><td>Take \(|\cdot|\) for angle between <em>lines</em>.</td></tr>
+<tr><td>Perpendicular test</td><td>\(\mathbf{a}\cdot\mathbf{b} = 0\)</td><td>Vectors non-zero.</td></tr>
+<tr><td>Parallel test</td><td>\(\mathbf{b} = k\mathbf{a}\)</td><td>Some scalar \(k \neq 0\).</td></tr>
+<tr><td>Line equation</td><td>\(\mathbf{r} = \mathbf{a} + t\mathbf{d}\)</td><td>\(\mathbf{a}\) a point, \(\mathbf{d}\) direction.</td></tr>
+<tr><td>Foot of perpendicular</td><td>\(\overrightarrow{FP}\cdot\mathbf{d} = 0\)</td><td>Solve for \(t\) then read off \(F\).</td></tr>
+</table>
+
+<h2>15. Chapter Summary and Examiner's Checklist</h2>
+
+<div class="exam-tip">
+<strong>Chapter-wide checklist for Vectors.</strong>
+<ul>
+  <li><strong>Notation:</strong> always underline or bold handwritten vectors; distinguish \(\overrightarrow{AB}\) (a vector) from \(AB\) (a length).</li>
+  <li><strong>Magnitude:</strong> \(|\mathbf{a}| = \sqrt{\sum a_i^2}\) — leave in surd form unless asked otherwise.</li>
+  <li><strong>Unit vector:</strong> \(\hat{\mathbf{a}} = \mathbf{a}/|\mathbf{a}|\); always verify \(|\hat{\mathbf{a}}| = 1\).</li>
+  <li><strong>Dot product:</strong> component sum \(a_1 b_1 + a_2 b_2 + a_3 b_3\); remember it is a scalar.</li>
+  <li><strong>Angle:</strong> \(\cos\theta = (\mathbf{a}\cdot\mathbf{b})/(|\mathbf{a}||\mathbf{b}|)\); take \(|\cdot|\) for the acute angle between lines.</li>
+  <li><strong>Perpendicular:</strong> \(\mathbf{a}\cdot\mathbf{b} = 0\). Parallel: \(\mathbf{b} = k\mathbf{a}\).</li>
+  <li><strong>Line equation:</strong> \(\mathbf{r} = \mathbf{a} + t\mathbf{d}\); reduce \(\mathbf{d}\) to simplest integer form.</li>
+  <li><strong>Point on a line:</strong> check all three components produce the same \(t\).</li>
+  <li><strong>Intersection of lines in 3D:</strong> solve two equations, check the third; mismatch means skew (provided directions not parallel).</li>
+  <li><strong>Skew lines:</strong> state both "not parallel" and "don't intersect" to score full marks.</li>
+  <li><strong>Foot of perpendicular:</strong> parameterise the foot, use \(\overrightarrow{FP}\cdot\mathbf{d} = 0\), solve for \(t\).</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Typical OCR examiner complaints (from mark reports).</strong>
+<ul>
+  <li>Omitting the vector notation (no bold, underline or arrow), so components read as ordinary variables.</li>
+  <li>Confusing "angle between vectors" (\(\theta \in [0, \pi]\)) with "angle between lines" (\(\theta \in [0, \pi/2]\)); giving an obtuse answer for a line angle.</li>
+  <li>Declaring "lines are parallel" as the reason they don't meet, without checking whether they are in fact coincident.</li>
+  <li>Concluding "skew" after merely failing to find a \(t\) — without first confirming the directions are not parallel.</li>
+  <li>For a line question, solving one component for \(t\) and not substituting into the others — missing the consistency check.</li>
+  <li>Rounding \(\cos\theta\) early to 3 d.p. and then quoting \(\theta\) to 5 d.p. — rounding error propagates in \(\arccos\).</li>
+  <li>Losing the minus sign when computing \(\mathbf{b} - \mathbf{a}\); write each component as a bracketed subtraction.</li>
+  <li>Forgetting that the dot product is a scalar — writing answers like "\(\mathbf{a}\cdot\mathbf{b} = 3\mathbf{i}\)".</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Formula snapshot (memorise).</strong>
+<ul>
+  <li><strong>Magnitude:</strong> \(|\mathbf{a}| = \sqrt{x^2 + y^2 + z^2}\).</li>
+  <li><strong>Unit vector:</strong> \(\hat{\mathbf{a}} = \mathbf{a}/|\mathbf{a}|\).</li>
+  <li><strong>Vector between points:</strong> \(\overrightarrow{AB} = \mathbf{b} - \mathbf{a}\).</li>
+  <li><strong>Dot product:</strong> \(\mathbf{a}\cdot\mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3 = |\mathbf{a}||\mathbf{b}|\cos\theta\).</li>
+  <li><strong>Angle:</strong> \(\cos\theta = (\mathbf{a}\cdot\mathbf{b})/(|\mathbf{a}||\mathbf{b}|)\).</li>
+  <li><strong>Perpendicular:</strong> \(\mathbf{a}\cdot\mathbf{b} = 0\).</li>
+  <li><strong>Line:</strong> \(\mathbf{r} = \mathbf{a} + t\mathbf{d}\).</li>
+  <li><strong>Foot of perpendicular:</strong> \((\mathbf{p} - \mathbf{a} - t\mathbf{d})\cdot\mathbf{d} = 0 \Rightarrow t\).</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

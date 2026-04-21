@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCR 2.1 — Statistics</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.1 Statistics</h1>
+<p class="spec-ref">Mathematics — OCR A-Level (H240) — Paper 3: Statistics &amp; Mechanics</p>
+
+<p>Statistics is the mathematics of <em>uncertain data</em>. Where pure mathematics trades in exact statements — "the derivative of \(\sin x\) is \(\cos x\)" — statistics asks the softer but more practical question: given a noisy, partial observation of the world, what can we reasonably conclude? The OCR H240 Statistics content splits into three strands that build on one another. First, <strong>data handling</strong>: how to collect a sample honestly, summarise it numerically, and visualise it. Second, <strong>probability</strong>: the calculus of chance that lets us reason about randomness, culminating in two named distributions — the discrete Binomial and the continuous Normal — which between them describe an astonishing slice of real phenomena. Third, <strong>statistical inference</strong>: formal hypothesis testing, where we put a claim about a population on trial and use sample data to decide whether the evidence against it is strong enough to reject it. Every paper 3 Statistics section rests on these three pillars; this chapter treats them at full A-level depth.</p>
+
+<h2>1. Populations, Samples and Sampling Methods</h2>
+
+<p>The very first decision any statistician faces is what to count. A <em>population</em> is the entire set of individuals (people, machines, measurements, events, …) about which we want to draw a conclusion; a <em>sample</em> is a subset of that population actually inspected. Because populations are usually too large, too expensive, or simply impossible to examine in full, nearly all real-world statistics is sample-based.</p>
+
+<div class="definition">
+<strong>Population and sample.</strong> A <em>population</em> is the complete collection of items of interest — every registered voter, every bolt manufactured on a shift, every egg laid by a flock. A <em>sample</em> is any subset of the population actually observed. A statistic computed from a sample (e.g. the sample mean \(\bar{x}\)) is an <em>estimate</em> of the corresponding population quantity (e.g. the population mean \(\mu\)).
+</div>
+
+<p>A sample is only useful if it is <em>representative</em>: the characteristics of the sample mirror those of the population. A sample that systematically over- or under-represents some group is called <em>biased</em>. Good sampling design minimises bias; poor design produces numbers that, no matter how carefully analysed, describe something other than the population of interest.</p>
+
+<div class="definition">
+<strong>Bias and sampling error.</strong> <em>Bias</em> is a systematic tendency for a sampling method to favour certain kinds of outcome, producing estimates that are wrong on average. <em>Sampling error</em> is the random variation between one sample and another drawn by the same method from the same population — even a perfect method will not give identical samples each time. Bias is structural and does not shrink with larger samples; sampling error does.
+</div>
+
+<h3>1.1 Simple random sampling</h3>
+
+<p>The gold standard: every member of the population is equally likely to be selected, and every sample of a given size is equally likely to arise. In practice one numbers the population 1 to \(N\), then uses a random-number generator (or table) to pick \(n\) distinct numbers without replacement.</p>
+
+<div class="definition">
+<strong>Simple random sample.</strong> A sample of size \(n\) from a population of size \(N\) such that every possible sample of size \(n\) has the same probability, \(1\big/\binom{N}{n}\), of being chosen. Equivalently, each individual has probability \(n/N\) of being in the sample, and selections are made without replacement.
+</div>
+
+<h3>1.2 Systematic sampling</h3>
+
+<p>Order the population 1 to \(N\) (e.g. by a list), choose a starting point at random in the first \(k\) items, then select every \(k\)th item thereafter. Typically \(k = \lfloor N/n \rfloor\).</p>
+
+<h3>1.3 Stratified sampling</h3>
+
+<p>Divide the population into non-overlapping <em>strata</em> (e.g. age bands, school year groups, male/female). Take a simple random sample from each stratum, sized in proportion to the stratum's share of the population: from a stratum of size \(N_i\) in a population of size \(N\), take \(n_i = n\cdot N_i/N\).</p>
+
+<div class="definition">
+<strong>Stratified sampling.</strong> The population is partitioned into mutually exclusive strata. Independent simple random samples are drawn from each stratum, with sample sizes proportional to stratum sizes. Stratified sampling reduces sampling error whenever the strata are internally homogeneous but differ between one another.
+</div>
+
+<h3>1.4 Cluster sampling</h3>
+
+<p>The population is split into <em>clusters</em> (e.g. schools, neighbourhoods); a random selection of clusters is taken, and every individual within the chosen clusters is surveyed (or a further sample is taken within each). Cheap in time and travel but usually gives a larger sampling error than a simple random sample of the same size.</p>
+
+<h3>1.5 Opportunity and quota sampling</h3>
+
+<p><em>Opportunity sampling</em> (also called convenience sampling) takes whoever is readily available — the first 30 people out of the school gate, say. <em>Quota sampling</em> sets targets for sub-groups (e.g. "20 men, 20 women") and fills each quota by convenience. Both are <em>non-random</em>, quick, and cheap, but notoriously prone to bias because the interviewer (consciously or not) selects the sample.</p>
+
+<table>
+<tr><th>Method</th><th>How it works</th><th>Advantages</th><th>Disadvantages</th></tr>
+<tr><td>Simple random</td><td>Each unit equally likely, chosen by random numbers.</td><td>Unbiased; simple theory.</td><td>Requires full sampling frame; may miss small strata by chance.</td></tr>
+<tr><td>Systematic</td><td>Every \(k\)th unit after a random start.</td><td>Easy to implement; spreads sample across the list.</td><td>Periodicity in the list can bias results.</td></tr>
+<tr><td>Stratified</td><td>Proportional random samples from each stratum.</td><td>Guarantees coverage of subgroups; reduces sampling error.</td><td>Strata must be identified; more planning needed.</td></tr>
+<tr><td>Cluster</td><td>Random clusters chosen; all (or a sample) within.</td><td>Cheap when population is geographically spread.</td><td>Larger sampling error; clusters may be atypical.</td></tr>
+<tr><td>Opportunity</td><td>Take whoever is to hand.</td><td>Fast, cheap, minimal planning.</td><td>Highly biased; no valid inferences about the population.</td></tr>
+<tr><td>Quota</td><td>Fill targets by convenience within sub-groups.</td><td>Balanced sub-groups; quick.</td><td>Interviewer selects — non-random, biased.</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — justify the choice of sampling method.</strong> OCR frequently asks "state one advantage and one disadvantage" of a named method, or "explain why this sample may not be representative". Good answers identify the <em>mechanism</em> of bias: e.g. "asking shoppers at 10 am on a Tuesday over-represents retirees and stay-at-home parents". Do not simply write "it's biased" — say <em>how</em>.
+</div>
+
+<h2>2. Types of Data and Presentation</h2>
+
+<p>Before choosing a statistical technique we must classify the data. The basic split is <em>qualitative</em> (categorical — colour, brand, response "yes/no/maybe") versus <em>quantitative</em> (numerical), with numerical data further split into <em>discrete</em> (counts; values in a separate list, e.g. number of siblings) and <em>continuous</em> (measurements; any real value in an interval, e.g. height in cm).</p>
+
+<table>
+<tr><th>Type</th><th>Examples</th><th>Typical display</th></tr>
+<tr><td>Qualitative (categorical)</td><td>Blood type, car colour, brand preference.</td><td>Bar chart; pie chart.</td></tr>
+<tr><td>Discrete numerical</td><td>Number of children; dice score; goals scored.</td><td>Bar chart; vertical line chart.</td></tr>
+<tr><td>Continuous numerical</td><td>Height, mass, reaction time, temperature.</td><td>Histogram; cumulative frequency curve; box plot.</td></tr>
+</table>
+
+<h3>2.1 Frequency tables</h3>
+
+<p>An <em>ungrouped</em> frequency table lists each distinct value against the number of times it occurs. A <em>grouped</em> frequency table bundles continuous values (or discrete values with a wide range) into class intervals such as \(10 \le x < 15\).</p>
+
+<h3>2.2 Histograms</h3>
+
+<p>For continuous grouped data, a <em>histogram</em> displays frequency so that <strong>area is proportional to frequency</strong>. When class widths differ, plotting raw frequency distorts the picture; instead plot <em>frequency density</em>:</p>
+
+<div class="definition">
+<strong>Frequency density.</strong> For a class of frequency \(f\) and width \(w\),
+\[ \text{frequency density} = \frac{f}{w}. \]
+The area of each bar (density \(\times\) width) equals the frequency of the class. Total area equals total frequency.
+</div>
+
+<svg viewBox="0 0 500 220" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <line x1="60" y1="180" x2="470" y2="180" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="60" y1="20"  x2="60"  y2="180" stroke="#1e3a5f" stroke-width="1.5"/>
+  <rect x="60"  y="130" width="60"  height="50"  fill="#93c5fd" stroke="#1e3a5f"/>
+  <rect x="120" y="70"  width="60"  height="110" fill="#60a5fa" stroke="#1e3a5f"/>
+  <rect x="180" y="40"  width="90"  height="140" fill="#3b82f6" stroke="#1e3a5f"/>
+  <rect x="270" y="100" width="120" height="80"  fill="#2563eb" stroke="#1e3a5f"/>
+  <rect x="390" y="150" width="60"  height="30"  fill="#1d4ed8" stroke="#1e3a5f"/>
+  <text x="220" y="205" font-size="11" fill="#1e3a5f" text-anchor="middle">class boundaries (unequal widths)</text>
+  <text x="30"  y="100" font-size="11" fill="#1e3a5f" transform="rotate(-90 30,100)">frequency density</text>
+</svg>
+
+<h3>2.3 Cumulative frequency curves</h3>
+
+<p>Plot the <em>upper</em> class boundary (horizontal) against <em>cumulative frequency</em> (vertical); join with a smooth curve. From the curve one reads off the median (at \(N/2\)), quartiles (at \(N/4\) and \(3N/4\)) and any percentile.</p>
+
+<h3>2.4 Box-and-whisker plots</h3>
+
+<p>A compact summary of a distribution in five numbers.</p>
+
+<div class="definition">
+<strong>Five-number summary.</strong> For a data set ordered from smallest to largest:
+<ul>
+  <li>Minimum \(x_{\min}\);</li>
+  <li>Lower quartile \(Q_1\) (25th percentile);</li>
+  <li>Median \(Q_2\) (50th percentile);</li>
+  <li>Upper quartile \(Q_3\) (75th percentile);</li>
+  <li>Maximum \(x_{\max}\).</li>
+</ul>
+A <em>box plot</em> draws a box from \(Q_1\) to \(Q_3\) with a line at the median and "whiskers" extending to the extreme non-outlier values; outliers are shown as isolated points.
+</div>
+
+<svg viewBox="0 0 500 120" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <line x1="40" y1="90" x2="460" y2="90" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="70"  y1="60" x2="70"  y2="80" stroke="#1e3a5f"/>
+  <line x1="70"  y1="70" x2="170" y2="70" stroke="#1e3a5f"/>
+  <rect x="170" y="45" width="180" height="50" fill="#93c5fd" stroke="#1e3a5f"/>
+  <line x1="250" y1="45" x2="250" y2="95" stroke="#dc2626" stroke-width="2"/>
+  <line x1="350" y1="70" x2="430" y2="70" stroke="#1e3a5f"/>
+  <line x1="430" y1="60" x2="430" y2="80" stroke="#1e3a5f"/>
+  <text x="70"  y="115" font-size="11" fill="#1e3a5f" text-anchor="middle">min</text>
+  <text x="170" y="115" font-size="11" fill="#1e3a5f" text-anchor="middle">Q1</text>
+  <text x="250" y="115" font-size="11" fill="#dc2626" text-anchor="middle">median</text>
+  <text x="350" y="115" font-size="11" fill="#1e3a5f" text-anchor="middle">Q3</text>
+  <text x="430" y="115" font-size="11" fill="#1e3a5f" text-anchor="middle">max</text>
+</svg>
+
+<h3>2.5 Scatter diagrams and bivariate data</h3>
+
+<p>Bivariate data records two variables \(x\) and \(y\) for each observation. A <em>scatter diagram</em> plots one point per observation; the overall pattern reveals <em>correlation</em> — the tendency for \(y\) to increase or decrease with \(x\).</p>
+
+<h2>3. Measures of Location</h2>
+
+<p>A <em>measure of location</em> (or measure of central tendency) summarises a distribution by a single typical value.</p>
+
+<div class="definition">
+<strong>Mean, median, mode.</strong>
+<ul>
+  <li><strong>Mean</strong> \(\bar{x} = \dfrac{1}{n}\sum x_i\). Uses every value; sensitive to outliers.</li>
+  <li><strong>Median</strong>: the middle value when data are ordered (for \(n\) odd) or the mean of the two middle values (for \(n\) even). Robust to outliers.</li>
+  <li><strong>Mode</strong>: the most frequent value (for grouped data, the <em>modal class</em>). A distribution may have no mode, one mode, or several.</li>
+</ul>
+</div>
+
+<p>For grouped frequency data with class midpoints \(x_i\) and frequencies \(f_i\), the mean is estimated by</p>
+
+<div class="equation">
+\( \bar{x} = \dfrac{\sum f_i x_i}{\sum f_i}. \)
+</div>
+
+<p>The median of grouped data is found from a cumulative frequency curve or by linear interpolation within the median class. The modal class is simply the class of highest frequency density (use density, not raw frequency, when class widths differ).</p>
+
+<div class="example">
+<h3>Worked Example 1 — Mean and median of grouped data</h3>
+<p>The table shows the mass (kg) of 60 parcels.</p>
+<table>
+<tr><th>Mass \(m\) (kg)</th><th>\(0 \le m < 2\)</th><th>\(2 \le m < 4\)</th><th>\(4 \le m < 6\)</th><th>\(6 \le m < 10\)</th></tr>
+<tr><td>Frequency</td><td>12</td><td>20</td><td>18</td><td>10</td></tr>
+</table>
+<p>Estimate the mean mass and the median mass.</p>
+<pre>
+<span class="ln">1.</span>  Midpoints x: 1, 3, 5, 8.    Frequencies f: 12, 20, 18, 10.
+<span class="ln">2.</span>  Σf  = 12 + 20 + 18 + 10 = 60.
+<span class="ln">3.</span>  Σfx = 12·1 + 20·3 + 18·5 + 10·8
+<span class="ln">4.</span>      = 12 + 60 + 90 + 80 = 242.
+<span class="ln">5.</span>  Mean  x̄ = Σfx / Σf = 242 / 60 ≈ 4.03 kg.
+<span class="ln">6.</span>
+<span class="ln">7.</span>  Median: N/2 = 30; cumulative frequencies are 12, 32, 50, 60.
+<span class="ln">8.</span>  The 30th value lies in the class 2 ≤ m &lt; 4  (where cum.freq jumps 12 → 32).
+<span class="ln">9.</span>  Linear interpolation in that class:
+<span class="ln">10.</span>   median ≈ 2 + ( (30 − 12)/20 )·(4 − 2)
+<span class="ln">11.</span>          = 2 + (18/20)·2
+<span class="ln">12.</span>          = 2 + 1.8 = 3.8 kg.
+</pre>
+</div>
+
+<h2>4. Measures of Spread</h2>
+
+<p>A measure of location is only half the story: two samples can share the same mean yet have very different variability. Measures of spread quantify how stretched-out a distribution is.</p>
+
+<div class="definition">
+<strong>Range, interquartile range, variance, standard deviation.</strong>
+<ul>
+  <li><strong>Range</strong> \(= x_{\max} - x_{\min}\). Very sensitive to outliers.</li>
+  <li><strong>Interquartile range</strong> \(\text{IQR} = Q_3 - Q_1\). Contains the middle 50%; robust.</li>
+  <li><strong>Variance</strong> \(\sigma^2 = \dfrac{1}{n}\sum (x_i - \mu)^2 = \dfrac{\sum x_i^2}{n} - \mu^2\). Average squared deviation.</li>
+  <li><strong>Standard deviation</strong> \(\sigma = \sqrt{\sigma^2}\). Same units as the data.</li>
+</ul>
+</div>
+
+<p>The identity \(\sum(x_i - \mu)^2 = \sum x_i^2 - n\mu^2\) underpins the calculator-friendly formulae</p>
+
+<div class="equation">
+\( \sigma^2 = \dfrac{\sum x_i^2}{n} - \bar{x}^2, \qquad \sigma^2_{\text{grouped}} = \dfrac{\sum f_i x_i^2}{\sum f_i} - \bar{x}^2. \)
+</div>
+
+<p>Modern A-level students rarely compute \(\sigma\) by hand: enter the data in a calculator's statistics mode and read \(\sigma_n\) (population standard deviation) or \(\sigma_{n-1} = s\) (sample standard deviation, divides by \(n-1\)). OCR questions specify which is required.</p>
+
+<div class="example">
+<h3>Worked Example 2 — Standard deviation from raw data</h3>
+<p>Seven reaction times (seconds): 0.28, 0.31, 0.29, 0.35, 0.27, 0.33, 0.30. Find the mean and standard deviation.</p>
+<pre>
+<span class="ln">1.</span>  n = 7.
+<span class="ln">2.</span>  Σx  = 0.28 + 0.31 + 0.29 + 0.35 + 0.27 + 0.33 + 0.30 = 2.13.
+<span class="ln">3.</span>  x̄   = 2.13 / 7 = 0.30428... ≈ 0.3043 s.
+<span class="ln">4.</span>  Σx² = 0.0784 + 0.0961 + 0.0841 + 0.1225 + 0.0729 + 0.1089 + 0.0900
+<span class="ln">5.</span>      = 0.6529.
+<span class="ln">6.</span>  σ²  = Σx²/n − x̄²
+<span class="ln">7.</span>      = 0.6529/7 − (0.30428...)²
+<span class="ln">8.</span>      = 0.09327 − 0.09259
+<span class="ln">9.</span>      = 0.000679 (approx).
+<span class="ln">10.</span> σ  = √0.000679 ≈ 0.0261 s.
+<span class="ln">11.</span>
+<span class="ln">12.</span> Answer: mean ≈ 0.304 s, standard deviation ≈ 0.026 s.
+</pre>
+</div>
+
+<h2>5. Outliers</h2>
+
+<div class="definition">
+<strong>Outlier (1.5 &times; IQR rule).</strong> A data value is flagged as an outlier if it lies more than \(1.5\) IQRs beyond the quartiles:
+\[ x < Q_1 - 1.5\cdot\text{IQR} \quad \text{or} \quad x > Q_3 + 1.5\cdot\text{IQR}. \]
+An alternative convention (sometimes used with approximately Normal data) is "more than 2 standard deviations from the mean", but OCR's default is the IQR rule unless otherwise stated.
+</div>
+
+<div class="example">
+<h3>Worked Example 3 — Identifying outliers</h3>
+<p>A data set has \(Q_1 = 18\), \(Q_3 = 30\). Which of the values 5, 12, 40, 52 are outliers?</p>
+<pre>
+<span class="ln">1.</span>  IQR = 30 − 18 = 12.
+<span class="ln">2.</span>  1.5·IQR = 18.
+<span class="ln">3.</span>  Lower fence = Q1 − 18 = 18 − 18 = 0.
+<span class="ln">4.</span>  Upper fence = Q3 + 18 = 30 + 18 = 48.
+<span class="ln">5.</span>  Flag values outside [0, 48]:
+<span class="ln">6.</span>      5   — inside [0, 48], not an outlier.
+<span class="ln">7.</span>      12  — inside, not an outlier.
+<span class="ln">8.</span>      40  — inside, not an outlier.
+<span class="ln">9.</span>      52  — above 48, IS an outlier.
+<span class="ln">10.</span> Conclusion: 52 is the only outlier.
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — outliers are flagged, not deleted.</strong> Identifying a point as an outlier does not authorise you to discard it. Outliers may be genuine extreme observations (record floods, stellar athletes). Remove only when there is external evidence of an error (miscounting, faulty instrument); otherwise report the value and comment.
+</div>
+
+<h2>6. Correlation and Regression</h2>
+
+<p>Given paired data \((x_i, y_i)\), how strongly are the variables related? The <em>product-moment correlation coefficient</em> (PMCC), denoted \(r\), measures the strength and direction of a linear relationship.</p>
+
+<div class="definition">
+<strong>Product-moment correlation coefficient.</strong> For paired data \((x_1, y_1), \ldots, (x_n, y_n)\),
+\[ r = \dfrac{S_{xy}}{\sqrt{S_{xx}\,S_{yy}}}, \qquad \text{where } S_{xy} = \sum(x_i - \bar{x})(y_i - \bar{y}), \]
+and \(S_{xx}, S_{yy}\) are defined analogously. The value \(r\) lies in \([-1, +1]\). \(r = +1\) indicates perfect positive linear relationship, \(r = -1\) perfect negative, \(r = 0\) no linear relationship.
+</div>
+
+<table>
+<tr><th>Value of \(r\)</th><th>Interpretation</th></tr>
+<tr><td>\(|r| \gtrsim 0.8\)</td><td>Strong linear correlation.</td></tr>
+<tr><td>\(0.5 \lesssim |r| \lesssim 0.8\)</td><td>Moderate linear correlation.</td></tr>
+<tr><td>\(0.2 \lesssim |r| \lesssim 0.5\)</td><td>Weak linear correlation.</td></tr>
+<tr><td>\(|r| \lesssim 0.2\)</td><td>Little or no linear correlation.</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — correlation is not causation.</strong> A high \(|r|\) shows an association, not that \(x\) causes \(y\) or \(y\) causes \(x\). There may be a hidden third (confounding) variable, or the relationship may be coincidental. Always state the <em>direction</em> and <em>strength</em> of correlation in words, and resist claims of causation.
+</div>
+
+<p>When a linear relationship is present, the <em>least-squares regression line</em> of \(y\) on \(x\) is the straight line that minimises the sum of squared vertical residuals \(\sum (y_i - \hat{y}_i)^2\):</p>
+
+<div class="equation">
+\( y = a + b x, \qquad b = \dfrac{S_{xy}}{S_{xx}}, \qquad a = \bar{y} - b\bar{x}. \)
+</div>
+
+<p>The regression line is <em>asymmetric</em> in \(x\) and \(y\): the line of \(y\) on \(x\) is designed to predict \(y\) from \(x\), not vice versa. It is appropriate when (i) the scatter diagram suggests a linear relationship, (ii) \(x\) is the controlled or explanatory variable, and (iii) predictions are <em>within</em> the range of observed \(x\) (interpolation). Predictions outside that range (extrapolation) are unreliable.</p>
+
+<div class="example">
+<h3>Worked Example 4 — Regression line and prediction</h3>
+<p>Summary statistics for 10 paired observations: \(\bar{x} = 5\), \(\bar{y} = 12\), \(S_{xx} = 40\), \(S_{yy} = 90\), \(S_{xy} = 54\). Find \(r\) and the regression line of \(y\) on \(x\), and use it to predict \(y\) when \(x = 6\).</p>
+<pre>
+<span class="ln">1.</span>  r = S_xy / √(S_xx · S_yy)
+<span class="ln">2.</span>    = 54 / √(40·90) = 54 / √3600 = 54/60 = 0.90.
+<span class="ln">3.</span>  Strong positive linear correlation.
+<span class="ln">4.</span>
+<span class="ln">5.</span>  b = S_xy / S_xx = 54 / 40 = 1.35.
+<span class="ln">6.</span>  a = ȳ − b·x̄ = 12 − 1.35·5 = 12 − 6.75 = 5.25.
+<span class="ln">7.</span>  Regression line:  y = 5.25 + 1.35 x.
+<span class="ln">8.</span>
+<span class="ln">9.</span>  At x = 6:  ŷ = 5.25 + 1.35·6 = 5.25 + 8.10 = 13.35.
+<span class="ln">10.</span> (6 is within the x-range, so this is interpolation — reasonable.)
+</pre>
+</div>
+
+<h2>7. Probability: Axioms and Basic Rules</h2>
+
+<p>A <em>random experiment</em> has an outcome that is not known in advance but is drawn from a known <em>sample space</em> \(S\). An <em>event</em> \(A\) is any subset of \(S\); its <em>probability</em> \(P(A)\) is a number satisfying Kolmogorov's axioms:</p>
+
+<div class="definition">
+<strong>Probability axioms.</strong>
+<ul>
+  <li>\(0 \le P(A) \le 1\) for every event \(A\).</li>
+  <li>\(P(S) = 1\) (something in the sample space is certain to happen).</li>
+  <li>For mutually exclusive events \(A, B\): \(P(A \cup B) = P(A) + P(B)\).</li>
+</ul>
+Consequences: \(P(\varnothing) = 0\); \(P(A') = 1 - P(A)\); for any \(A, B\), \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\).
+</div>
+
+<div class="definition">
+<strong>Independence and conditional probability.</strong> Events \(A\) and \(B\) are <em>independent</em> iff \(P(A \cap B) = P(A)\,P(B)\). The <em>conditional probability</em> of \(A\) given \(B\) (with \(P(B) > 0\)) is
+\[ P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}. \]
+Independence is equivalent to \(P(A \mid B) = P(A)\): knowing \(B\) does not change the probability of \(A\).
+</div>
+
+<table>
+<tr><th>Relationship</th><th>Key identity</th></tr>
+<tr><td>Complement</td><td>\(P(A') = 1 - P(A)\)</td></tr>
+<tr><td>Union (general)</td><td>\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</td></tr>
+<tr><td>Union (mutually exclusive)</td><td>\(P(A \cup B) = P(A) + P(B)\)</td></tr>
+<tr><td>Intersection (independent)</td><td>\(P(A \cap B) = P(A)\,P(B)\)</td></tr>
+<tr><td>Conditional</td><td>\(P(A \mid B) = P(A \cap B)/P(B)\)</td></tr>
+<tr><td>Multiplicative</td><td>\(P(A \cap B) = P(B)\,P(A \mid B)\)</td></tr>
+</table>
+
+<p>Tree diagrams organise sequential experiments (e.g. two draws without replacement) and Venn diagrams organise set-theoretic combinations of events. Both are part of the A-level toolkit and frequently appear in OCR papers.</p>
+
+<div class="example">
+<h3>Worked Example 5 — Conditional probability from a table</h3>
+<p>A school has 100 students. 60 study Maths (M), 45 study Physics (P), 30 study both. A student is chosen at random.</p>
+<ol>
+  <li>Find \(P(M \cup P)\).</li>
+  <li>Find \(P(M \mid P)\).</li>
+  <li>Are \(M\) and \(P\) independent?</li>
+</ol>
+<pre>
+<span class="ln">1.</span>  P(M) = 60/100 = 0.60.
+<span class="ln">2.</span>  P(P) = 45/100 = 0.45.
+<span class="ln">3.</span>  P(M ∩ P) = 30/100 = 0.30.
+<span class="ln">4.</span>
+<span class="ln">5.</span>  (a)  P(M ∪ P) = P(M) + P(P) − P(M ∩ P)
+<span class="ln">6.</span>               = 0.60 + 0.45 − 0.30 = 0.75.
+<span class="ln">7.</span>  (b)  P(M | P) = P(M ∩ P)/P(P) = 0.30/0.45 = 2/3 ≈ 0.667.
+<span class="ln">8.</span>  (c)  If independent, P(M ∩ P) would equal P(M)·P(P) = 0.60·0.45 = 0.27.
+<span class="ln">9.</span>       Observed P(M ∩ P) = 0.30 ≠ 0.27.
+<span class="ln">10.</span>      So M and P are NOT independent; knowing a student studies Physics raises
+<span class="ln">11.</span>      the chance they also study Maths.
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 6 — Tree diagram, drawing without replacement</h3>
+<p>A bag contains 5 red and 3 blue balls. Two balls are drawn at random without replacement. Find the probability that (a) both are red, (b) exactly one is red.</p>
+<pre>
+<span class="ln">1.</span>  First draw:  P(R) = 5/8,  P(B) = 3/8.
+<span class="ln">2.</span>  Second draw is conditional on first:
+<span class="ln">3.</span>     If first R:  P(R|R) = 4/7,  P(B|R) = 3/7.
+<span class="ln">4.</span>     If first B:  P(R|B) = 5/7,  P(B|B) = 2/7.
+<span class="ln">5.</span>
+<span class="ln">6.</span>  (a)  P(R, R) = (5/8)·(4/7) = 20/56 = 5/14.
+<span class="ln">7.</span>
+<span class="ln">8.</span>  (b)  P(exactly one R) = P(R, B) + P(B, R)
+<span class="ln">9.</span>                        = (5/8)(3/7) + (3/8)(5/7)
+<span class="ln">10.</span>                       = 15/56 + 15/56 = 30/56 = 15/28.
+</pre>
+</div>
+
+<h2>8. Discrete Random Variables and the Binomial Distribution</h2>
+
+<p>A <em>random variable</em> is a numerical quantity whose value depends on the outcome of a random experiment. A <em>discrete</em> random variable \(X\) takes values in a countable set; its <em>probability function</em> \(P(X = x)\) gives the probability of each possible value, with \(\sum_x P(X = x) = 1\).</p>
+
+<div class="definition">
+<strong>Expectation and variance of a discrete random variable.</strong> For \(X\) with values \(x_1, x_2, \ldots\) and probabilities \(p_i = P(X = x_i)\),
+\[ E(X) = \mu = \sum_i x_i\,p_i, \qquad \text{Var}(X) = \sigma^2 = E(X^2) - [E(X)]^2 = \sum_i x_i^2\,p_i - \mu^2. \]
+Expectation is a weighted average of possible values; variance is the expected squared deviation from the mean.
+</div>
+
+<h3>8.1 The binomial distribution</h3>
+
+<p>Many experiments consist of \(n\) independent repetitions of a <em>Bernoulli trial</em> — a single trial with just two outcomes, "success" (probability \(p\)) or "failure" (probability \(1 - p\)). The number of successes \(X\) in the \(n\) trials is then a <em>binomial</em> random variable.</p>
+
+<div class="definition">
+<strong>Binomial distribution \(X \sim B(n, p)\).</strong> \(X\) is the number of successes in \(n\) independent Bernoulli trials, each with success probability \(p\). The probability mass function is
+\[ P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \qquad k = 0, 1, 2, \ldots, n. \]
+Mean \(E(X) = np\); variance \(\text{Var}(X) = np(1-p)\). Valid when: fixed \(n\); each trial independent; constant \(p\); only two possible outcomes per trial.
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — check all four binomial conditions.</strong> OCR loves a question that looks binomial but isn't. Sampling without replacement from a small population violates the "constant \(p\)" condition (each draw changes the remaining probabilities); a variable number of trials violates "fixed \(n\)". Always state the conditions \(B(n,p)\) assumes and justify each.
+</div>
+
+<div class="example">
+<h3>Worked Example 7 — Binomial probabilities</h3>
+<p>A biased coin has \(P(\text{head}) = 0.3\). It is tossed 10 times. Let \(X\) be the number of heads.</p>
+<ol>
+  <li>Find \(P(X = 3)\).</li>
+  <li>Find \(P(X \le 2)\).</li>
+  <li>Find \(P(X \ge 4)\).</li>
+  <li>State the mean and variance of \(X\).</li>
+</ol>
+<pre>
+<span class="ln">1.</span>  X ~ B(10, 0.3).
+<span class="ln">2.</span>
+<span class="ln">3.</span>  (a)  P(X = 3) = C(10, 3)·(0.3)^3·(0.7)^7
+<span class="ln">4.</span>              = 120 · 0.027 · 0.0823543
+<span class="ln">5.</span>              ≈ 0.2668.
+<span class="ln">6.</span>
+<span class="ln">7.</span>  (b)  P(X ≤ 2) = P(0) + P(1) + P(2).
+<span class="ln">8.</span>      P(0) = C(10,0)·(0.3)^0·(0.7)^10 = 1·1·0.028248 ≈ 0.0282.
+<span class="ln">9.</span>      P(1) = C(10,1)·(0.3)^1·(0.7)^9  = 10·0.3·0.040354 ≈ 0.1211.
+<span class="ln">10.</span>     P(2) = C(10,2)·(0.3)^2·(0.7)^8  = 45·0.09·0.057648 ≈ 0.2335.
+<span class="ln">11.</span>     P(X ≤ 2) ≈ 0.0282 + 0.1211 + 0.2335 ≈ 0.3828.
+<span class="ln">12.</span>
+<span class="ln">13.</span> (c)  P(X ≥ 4) = 1 − P(X ≤ 3) = 1 − (0.3828 + 0.2668) ≈ 1 − 0.6496 = 0.3504.
+<span class="ln">14.</span>
+<span class="ln">15.</span> (d)  E(X) = np = 10·0.3 = 3.   Var(X) = np(1 − p) = 10·0.3·0.7 = 2.1.
+<span class="ln">16.</span>      SD(X) = √2.1 ≈ 1.449.
+</pre>
+</div>
+
+<h2>9. The Normal Distribution</h2>
+
+<p>Continuous random variables take values in an interval; probabilities are given by <em>areas</em> under a probability density function (pdf). The most important continuous distribution — and an indispensable A-level tool — is the Normal.</p>
+
+<div class="definition">
+<strong>Normal distribution \(X \sim N(\mu, \sigma^2)\).</strong> A continuous random variable with the bell-shaped density
+\[ f(x) = \dfrac{1}{\sigma\sqrt{2\pi}}\exp\!\left(-\dfrac{(x - \mu)^2}{2\sigma^2}\right), \qquad x \in \mathbb{R}. \]
+It is symmetric about \(\mu\) (so mean = median = mode = \(\mu\)) and has variance \(\sigma^2\). Probabilities are computed by standardising to the standard Normal \(Z = (X - \mu)/\sigma \sim N(0, 1)\) and using tables or calculator functions.
+</div>
+
+<div class="equation">
+\( Z = \dfrac{X - \mu}{\sigma} \sim N(0, 1). \)
+</div>
+
+<svg viewBox="0 0 500 200" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <line x1="40"  y1="170" x2="470" y2="170" stroke="#1e3a5f" stroke-width="1.5"/>
+  <path d="M 40,170 C 120,170 180,40 255,40 C 330,40 390,170 470,170" stroke="#2563eb" stroke-width="2" fill="#dbeafe"/>
+  <line x1="255" y1="170" x2="255" y2="40" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="255" y="190" font-size="12" fill="#dc2626" text-anchor="middle">μ</text>
+  <text x="185" y="190" font-size="11" fill="#1e3a5f" text-anchor="middle">μ − σ</text>
+  <text x="325" y="190" font-size="11" fill="#1e3a5f" text-anchor="middle">μ + σ</text>
+  <text x="115" y="190" font-size="11" fill="#1e3a5f" text-anchor="middle">μ − 2σ</text>
+  <text x="395" y="190" font-size="11" fill="#1e3a5f" text-anchor="middle">μ + 2σ</text>
+  <text x="255" y="30"  font-size="11" fill="#1e3a5f" text-anchor="middle">N(μ, σ²)</text>
+</svg>
+
+<p>The <em>empirical rule</em> (or 68-95-99.7 rule) gives quick benchmarks for a Normal distribution:</p>
+
+<ul>
+  <li>Approximately <strong>68%</strong> of values lie within \(\pm 1\sigma\) of the mean.</li>
+  <li>Approximately <strong>95%</strong> lie within \(\pm 2\sigma\).</li>
+  <li>Approximately <strong>99.7%</strong> lie within \(\pm 3\sigma\).</li>
+</ul>
+
+<p>The <em>inverse Normal</em> goes the other way: given a probability \(p\), find the value \(x\) such that \(P(X \le x) = p\). Calculators have a dedicated function; by hand one uses the standard-Normal tables backwards, then unstandardises with \(x = \mu + \sigma z\).</p>
+
+<div class="example">
+<h3>Worked Example 8 — Normal probability and inverse Normal</h3>
+<p>The heights of adult males in a population are modelled by \(H \sim N(178, 7^2)\) cm. Find:</p>
+<ol>
+  <li>\(P(H > 185)\);</li>
+  <li>\(P(170 < H < 190)\);</li>
+  <li>the height exceeded by only 5% of men.</li>
+</ol>
+<pre>
+<span class="ln">1.</span>  Standardise:  Z = (H − 178)/7.
+<span class="ln">2.</span>
+<span class="ln">3.</span>  (a)  P(H &gt; 185) = P(Z &gt; (185 − 178)/7) = P(Z &gt; 1).
+<span class="ln">4.</span>       From tables Φ(1) = 0.8413, so P(Z &gt; 1) = 1 − 0.8413 = 0.1587.
+<span class="ln">5.</span>
+<span class="ln">6.</span>  (b)  P(170 &lt; H &lt; 190) = P( (170−178)/7 &lt; Z &lt; (190−178)/7 )
+<span class="ln">7.</span>                        = P(−1.143 &lt; Z &lt; 1.714).
+<span class="ln">8.</span>       Φ(1.714) ≈ 0.9567;  Φ(−1.143) = 1 − Φ(1.143) ≈ 1 − 0.8735 = 0.1265.
+<span class="ln">9.</span>       Probability ≈ 0.9567 − 0.1265 = 0.8302.
+<span class="ln">10.</span>
+<span class="ln">11.</span> (c)  Want h such that P(H &gt; h) = 0.05, i.e. Φ((h − 178)/7) = 0.95.
+<span class="ln">12.</span>      Inverse Normal: z = 1.6449.
+<span class="ln">13.</span>      h = 178 + 7·1.6449 ≈ 178 + 11.51 ≈ 189.5 cm.
+</pre>
+</div>
+
+<h3>9.1 Normal approximation to the binomial</h3>
+
+<p>For large \(n\) with \(p\) not too close to 0 or 1 (rule of thumb: \(np > 5\) and \(n(1-p) > 5\)), the binomial is very nearly bell-shaped, and</p>
+
+<div class="equation">
+\( B(n, p) \approx N\!\left(np,\, np(1-p)\right). \)
+</div>
+
+<p>Because we are approximating a discrete variable (integer values) by a continuous one, apply a <em>continuity correction</em>: widen each integer \(k\) to the interval \([k - 0.5, k + 0.5]\). For example \(P(X \ge 12)\) becomes \(P(Y > 11.5)\) where \(Y\) is the approximating Normal.</p>
+
+<h2>10. Hypothesis Testing</h2>
+
+<p>Hypothesis testing is a formal procedure for using sample data to decide between two competing claims about a population parameter. The logical structure is the same no matter which distribution is involved.</p>
+
+<div class="definition">
+<strong>Null and alternative hypotheses.</strong> The <em>null hypothesis</em> \(H_0\) states a specific value for the unknown parameter — typically the "status quo" or "no effect" position. The <em>alternative hypothesis</em> \(H_1\) states what we suspect is true instead: either a specific inequality (<em>one-tailed</em>: \(p > p_0\) or \(p < p_0\)) or merely difference (<em>two-tailed</em>: \(p \ne p_0\)). We test whether the data are consistent with \(H_0\).
+</div>
+
+<div class="definition">
+<strong>Significance level, critical region, p-value.</strong> The <em>significance level</em> \(\alpha\) (commonly 5%, 1%, 10%) is the maximum tolerable probability of rejecting a true \(H_0\) (a <em>Type I error</em>). The <em>critical region</em> is the set of test-statistic values that would lead to rejection of \(H_0\). The <em>p-value</em> is the probability, assuming \(H_0\), of observing a test statistic at least as extreme as the one obtained. Reject \(H_0\) iff the p-value is less than \(\alpha\) (equivalently, the test statistic falls in the critical region).
+</div>
+
+<div class="definition">
+<strong>Type I and Type II errors.</strong>
+<ul>
+  <li><em>Type I error</em> — rejecting \(H_0\) when it is true. Probability \(= \alpha\), the significance level.</li>
+  <li><em>Type II error</em> — failing to reject \(H_0\) when it is false. Probability denoted \(\beta\); depends on the true parameter value and is generally unknown.</li>
+</ul>
+Lowering \(\alpha\) makes Type I errors rarer but raises \(\beta\) (other things equal).
+</div>
+
+<table>
+<tr><th>Step</th><th>Action</th></tr>
+<tr><td>1</td><td>State \(H_0\) and \(H_1\) in terms of a population parameter.</td></tr>
+<tr><td>2</td><td>Decide one-tailed or two-tailed; state significance level \(\alpha\).</td></tr>
+<tr><td>3</td><td>Identify the distribution of the test statistic under \(H_0\).</td></tr>
+<tr><td>4</td><td>Compute the test statistic (or the p-value) from the sample.</td></tr>
+<tr><td>5</td><td>Compare with the critical region (or compare p-value with \(\alpha\)).</td></tr>
+<tr><td>6</td><td>State the decision: reject or do not reject \(H_0\).</td></tr>
+<tr><td>7</td><td>Write a conclusion <em>in context</em> answering the original question.</td></tr>
+</table>
+
+<h3>10.1 Binomial hypothesis test</h3>
+
+<p>We test a claim about a population proportion \(p\). Under \(H_0: p = p_0\), the number of successes \(X\) in \(n\) independent trials is \(B(n, p_0)\). Compute the "tail" probability at least as extreme as the observation, and compare with \(\alpha\).</p>
+
+<div class="example">
+<h3>Worked Example 9 — Binomial test: is the coin fair?</h3>
+<p>A coin is tossed 20 times and lands heads 15 times. Test at the 5% level whether the coin is biased towards heads.</p>
+<pre>
+<span class="ln">1.</span>  Let p = P(head).
+<span class="ln">2.</span>  H0: p = 0.5      (coin is fair).
+<span class="ln">3.</span>  H1: p &gt; 0.5      (biased towards heads — one-tailed).
+<span class="ln">4.</span>  Significance level:  α = 0.05.
+<span class="ln">5.</span>
+<span class="ln">6.</span>  Under H0, X ~ B(20, 0.5).   Observed x = 15.
+<span class="ln">7.</span>  Compute P(X ≥ 15) = 1 − P(X ≤ 14).
+<span class="ln">8.</span>      From binomial tables:  P(X ≤ 14) = 0.9793.
+<span class="ln">9.</span>      So P(X ≥ 15) = 1 − 0.9793 = 0.0207.
+<span class="ln">10.</span>
+<span class="ln">11.</span> Compare with α = 0.05:  0.0207 &lt; 0.05.
+<span class="ln">12.</span> ⇒  Reject H0.
+<span class="ln">13.</span>
+<span class="ln">14.</span> Conclusion (in context):  There is evidence at the 5% significance level that
+<span class="ln">15.</span> the coin is biased in favour of heads.
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — always conclude in context.</strong> Exam mark schemes reserve a mark for the contextual conclusion. "Reject \(H_0\)" scores the statistical conclusion; you must also say what it means in the real problem: "the coin is biased towards heads", "the drug does increase the cure rate", etc. Use tentative language ("evidence that", "suggests that") — we never <em>prove</em> the alternative.
+</div>
+
+<h3>10.2 Normal test for a sample mean</h3>
+
+<p>Suppose \(X \sim N(\mu, \sigma^2)\) with known \(\sigma\); we have a random sample of size \(n\) with mean \(\bar{x}\) and wish to test \(H_0: \mu = \mu_0\). Under \(H_0\) the sample mean is distributed as \(\bar{X} \sim N(\mu_0, \sigma^2/n)\), so the test statistic</p>
+
+<div class="equation">
+\( z = \dfrac{\bar{x} - \mu_0}{\sigma/\sqrt{n}} \sim N(0, 1) \text{ under } H_0. \)
+</div>
+
+<p>Compare \(z\) with critical values \(\pm 1.645\) (one-tailed 5%), \(\pm 1.96\) (two-tailed 5%), \(\pm 2.326\) (one-tailed 1%), etc.</p>
+
+<div class="example">
+<h3>Worked Example 10 — Normal test on a sample mean</h3>
+<p>Cans of drink are supposed to contain 330 ml with standard deviation 3 ml. A sample of 40 cans has mean 328.5 ml. Test at the 5% significance level whether the machine is under-filling.</p>
+<pre>
+<span class="ln">1.</span>  H0:  μ = 330    (machine fills correctly).
+<span class="ln">2.</span>  H1:  μ &lt; 330    (machine under-fills — one-tailed).
+<span class="ln">3.</span>  α = 0.05,  σ = 3,  n = 40,  x̄ = 328.5.
+<span class="ln">4.</span>
+<span class="ln">5.</span>  Test statistic:
+<span class="ln">6.</span>      z = (x̄ − μ0) / (σ/√n)
+<span class="ln">7.</span>        = (328.5 − 330) / (3/√40)
+<span class="ln">8.</span>        = −1.5 / 0.4743
+<span class="ln">9.</span>        ≈ −3.162.
+<span class="ln">10.</span>
+<span class="ln">11.</span> Critical value (lower-tail, 5%):  z_crit = −1.645.
+<span class="ln">12.</span> Since −3.162 &lt; −1.645, test statistic is in the critical region.
+<span class="ln">13.</span> ⇒  Reject H0.
+<span class="ln">14.</span>
+<span class="ln">15.</span> p-value:  P(Z &lt; −3.162) ≈ 0.00078 &lt; 0.05,  same decision.
+<span class="ln">16.</span>
+<span class="ln">17.</span> Conclusion: there is strong evidence at the 5% level that the machine is
+<span class="ln">18.</span> under-filling the cans (mean &lt; 330 ml).
+</pre>
+</div>
+
+<h3>10.3 Hypothesis test for the PMCC</h3>
+
+<p>Given paired data \((x_i, y_i)\), \(i = 1, \ldots, n\), with computed sample PMCC \(r\), we test \(H_0: \rho = 0\) (no linear correlation in the population) against \(H_1: \rho \ne 0\), \(\rho > 0\) or \(\rho < 0\). OCR formula booklets provide critical values of \(|r|\) for each \(n\) and each significance level; reject \(H_0\) when the sample \(|r|\) exceeds the tabulated critical value.</p>
+
+<table>
+<tr><th>Sample size \(n\)</th><th>5% one-tailed</th><th>5% two-tailed (2.5% each tail)</th><th>1% two-tailed</th></tr>
+<tr><td>5</td><td>0.805</td><td>0.878</td><td>0.959</td></tr>
+<tr><td>10</td><td>0.549</td><td>0.632</td><td>0.765</td></tr>
+<tr><td>15</td><td>0.441</td><td>0.514</td><td>0.641</td></tr>
+<tr><td>20</td><td>0.378</td><td>0.444</td><td>0.561</td></tr>
+<tr><td>30</td><td>0.306</td><td>0.361</td><td>0.463</td></tr>
+</table>
+
+<p>(Values illustrative — always use the table provided in the OCR formula booklet.)</p>
+
+<div class="example">
+<h3>Worked Example 11 — Hypothesis test for correlation</h3>
+<p>For \(n = 10\) pairs of observations, the sample PMCC is \(r = 0.68\). Test at the 5% level whether there is positive correlation between the variables.</p>
+<pre>
+<span class="ln">1.</span>  H0:  ρ = 0     (no correlation in population).
+<span class="ln">2.</span>  H1:  ρ &gt; 0     (positive correlation — one-tailed).
+<span class="ln">3.</span>  α = 0.05,  n = 10.
+<span class="ln">4.</span>
+<span class="ln">5.</span>  Critical value (one-tailed, 5%, n = 10):  r_crit = 0.549.
+<span class="ln">6.</span>  Sample r = 0.68 &gt; 0.549.
+<span class="ln">7.</span>  ⇒  r is in the critical region;  reject H0.
+<span class="ln">8.</span>
+<span class="ln">9.</span>  Conclusion: there is evidence at the 5% significance level of positive
+<span class="ln">10.</span> correlation between the two variables.
+</pre>
+</div>
+
+<h3>10.4 Distribution summary</h3>
+
+<table>
+<tr><th>Distribution</th><th>Use</th><th>Mean</th><th>Variance</th><th>Key form</th></tr>
+<tr><td>\(B(n, p)\)</td><td>Number of successes in \(n\) Bernoulli trials</td><td>\(np\)</td><td>\(np(1-p)\)</td><td>\(P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}\)</td></tr>
+<tr><td>\(N(\mu, \sigma^2)\)</td><td>Continuous symmetric data; Central Limit Theorem</td><td>\(\mu\)</td><td>\(\sigma^2\)</td><td>\(Z = (X-\mu)/\sigma \sim N(0,1)\)</td></tr>
+<tr><td>\(N(np, np(1-p))\)</td><td>Approximation to \(B(n,p)\) for large \(n\)</td><td>\(np\)</td><td>\(np(1-p)\)</td><td>Apply continuity correction</td></tr>
+<tr><td>Sample mean</td><td>Distribution of \(\bar X\) when \(X \sim N(\mu, \sigma^2)\)</td><td>\(\mu\)</td><td>\(\sigma^2/n\)</td><td>\(\bar X \sim N(\mu, \sigma^2/n)\)</td></tr>
+</table>
+
+<table>
+<tr><th>Test</th><th>\(H_0\)</th><th>Test statistic</th><th>Null distribution</th></tr>
+<tr><td>Binomial proportion</td><td>\(p = p_0\)</td><td>Observed \(X\)</td><td>\(B(n, p_0)\)</td></tr>
+<tr><td>Normal sample mean</td><td>\(\mu = \mu_0\)</td><td>\(z = (\bar x - \mu_0)/(\sigma/\sqrt n)\)</td><td>\(N(0, 1)\)</td></tr>
+<tr><td>PMCC</td><td>\(\rho = 0\)</td><td>Sample \(r\)</td><td>Tabulated critical \(|r|\)</td></tr>
+</table>
+
+<h2>11. A Full Worked Example: Testing Whether a Die is Biased</h2>
+
+<div class="example">
+<h3>Worked Example 12 — Binomial test, full write-up</h3>
+<p>A six-sided die is suspected of being biased in favour of showing a six. The die is rolled 50 times, and a six is observed on 14 rolls. Test at the 5% significance level whether the die is biased towards sixes.</p>
+<pre>
+<span class="ln">1.</span>  STEP 1 — Define the parameter.
+<span class="ln">2.</span>     Let p = P(six on a single roll).
+<span class="ln">3.</span>
+<span class="ln">4.</span>  STEP 2 — State hypotheses.
+<span class="ln">5.</span>     H0:  p = 1/6   (die fair with respect to sixes).
+<span class="ln">6.</span>     H1:  p &gt; 1/6   (biased towards sixes — one-tailed test).
+<span class="ln">7.</span>
+<span class="ln">8.</span>  STEP 3 — State significance level and distribution.
+<span class="ln">9.</span>     α = 0.05.
+<span class="ln">10.</span>    Under H0, X = number of sixes in 50 rolls  ~  B(50, 1/6).
+<span class="ln">11.</span>    Observed x = 14.
+<span class="ln">12.</span>
+<span class="ln">13.</span> STEP 4 — Compute p-value.
+<span class="ln">14.</span>    Mean under H0:  np = 50·(1/6) ≈ 8.333.
+<span class="ln">15.</span>    P(X ≥ 14) = 1 − P(X ≤ 13).
+<span class="ln">16.</span>    Using a calculator (or binomcdf):
+<span class="ln">17.</span>        P(X ≤ 13) ≈ 0.9696.
+<span class="ln">18.</span>        P(X ≥ 14) ≈ 1 − 0.9696 = 0.0304.
+<span class="ln">19.</span>
+<span class="ln">20.</span> STEP 5 — Compare with α.
+<span class="ln">21.</span>    p-value 0.0304 &lt; 0.05 = α.
+<span class="ln">22.</span>    ⇒ Reject H0.
+<span class="ln">23.</span>
+<span class="ln">24.</span> STEP 6 — Conclusion in context.
+<span class="ln">25.</span>    There is evidence at the 5% significance level that the die is biased
+<span class="ln">26.</span>    in favour of sixes.  (Had α been 1%, we would NOT reject, since
+<span class="ln">27.</span>    0.0304 &gt; 0.01 — the strength of evidence is moderate.)
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — pick the correct tail carefully.</strong> "Biased towards sixes" means \(H_1: p > p_0\) (upper tail — compute \(P(X \ge \text{obs})\)). "Biased against sixes" means \(p < p_0\) (lower tail — \(P(X \le \text{obs})\)). "Biased" (no direction) is two-tailed — compute the smaller tail and double, and compare with \(\alpha\). Mis-reading the direction of \(H_1\) is the single most common marks-loser in binomial tests.
+</div>
+
+<h2>12. Formula Reference</h2>
+
+<table>
+<tr><th>Topic</th><th>Formula</th><th>Notes</th></tr>
+<tr><td>Mean (grouped)</td><td>\(\bar x = \sum f_i x_i / \sum f_i\)</td><td>\(x_i\) are class midpoints.</td></tr>
+<tr><td>Variance</td><td>\(\sigma^2 = \sum f_i x_i^2 / \sum f_i - \bar x^2\)</td><td>Calculator-friendly form.</td></tr>
+<tr><td>Frequency density</td><td>\(f/w\)</td><td>Width unequal ⇒ use density.</td></tr>
+<tr><td>IQR</td><td>\(Q_3 - Q_1\)</td><td>Robust measure of spread.</td></tr>
+<tr><td>Outlier rule</td><td>\(x < Q_1 - 1.5\cdot\text{IQR}\) or \(x > Q_3 + 1.5\cdot\text{IQR}\)</td><td>Default OCR convention.</td></tr>
+<tr><td>PMCC</td><td>\(r = S_{xy}/\sqrt{S_{xx}S_{yy}}\)</td><td>\(-1 \le r \le 1\).</td></tr>
+<tr><td>Regression line</td><td>\(y = a + bx,\ b = S_{xy}/S_{xx},\ a = \bar y - b\bar x\)</td><td>Of \(y\) on \(x\).</td></tr>
+<tr><td>Conditional</td><td>\(P(A\mid B) = P(A\cap B)/P(B)\)</td><td>Requires \(P(B) > 0\).</td></tr>
+<tr><td>Independence</td><td>\(P(A\cap B) = P(A)P(B)\)</td><td>Equivalently \(P(A\mid B) = P(A)\).</td></tr>
+<tr><td>Binomial pmf</td><td>\(P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}\)</td><td>Mean \(np\), variance \(np(1-p)\).</td></tr>
+<tr><td>Standardise Normal</td><td>\(Z = (X - \mu)/\sigma\)</td><td>\(Z \sim N(0,1)\).</td></tr>
+<tr><td>Sample mean (normal)</td><td>\(\bar X \sim N(\mu, \sigma^2/n)\)</td><td>For random sample of size \(n\).</td></tr>
+<tr><td>z-statistic</td><td>\(z = (\bar x - \mu_0)/(\sigma/\sqrt n)\)</td><td>Known \(\sigma\); test of mean.</td></tr>
+</table>
+
+<h2>13. Chapter Summary and Examiner's Checklist</h2>
+
+<div class="exam-tip">
+<strong>Chapter-wide checklist for Statistics.</strong>
+<ul>
+  <li><strong>Sampling:</strong> state method, one advantage, one disadvantage; distinguish bias (structural) from sampling error (random).</li>
+  <li><strong>Data display:</strong> for unequal class widths, plot frequency density; box plots need the five-number summary.</li>
+  <li><strong>Outliers:</strong> use the 1.5-IQR rule; flag rather than automatically delete.</li>
+  <li><strong>Correlation:</strong> quote strength (strong/moderate/weak) and direction; remember "correlation \(\ne\) causation".</li>
+  <li><strong>Regression:</strong> \(y\) on \(x\) predicts \(y\) from \(x\); do not extrapolate beyond the data range.</li>
+  <li><strong>Probability:</strong> draw tree/Venn diagrams when useful; check independence against \(P(A\cap B) = P(A)P(B)\).</li>
+  <li><strong>Binomial:</strong> verify all four conditions (fixed \(n\), two outcomes, independence, constant \(p\)).</li>
+  <li><strong>Normal:</strong> always standardise to \(Z\); distinguish "less than" (lower tail) from "more than" (upper tail); state the inverse Normal use when finding quantiles.</li>
+  <li><strong>Hypothesis tests:</strong> state \(H_0\), \(H_1\), \(\alpha\); compute test statistic or p-value; compare; reject or not; conclude in context.</li>
+  <li><strong>One- vs two-tailed:</strong> decided by the wording of \(H_1\); for two-tailed at level \(\alpha\) each tail has area \(\alpha/2\).</li>
+  <li><strong>Type I error:</strong> probability \(\alpha\) of rejecting a true \(H_0\); this is what we control directly.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Typical OCR examiner complaints (from mark reports).</strong>
+<ul>
+  <li>Stating hypotheses without specifying the parameter — e.g. "\(H_0\): 0.5" without saying what 0.5 refers to.</li>
+  <li>Using \(>\) in \(H_1\) when "biased" requires a two-tailed \(\ne\).</li>
+  <li>Computing \(P(X = k)\) rather than the tail \(P(X \ge k)\) or \(P(X \le k)\) for a binomial test.</li>
+  <li>Forgetting the continuity correction when using the Normal approximation to the binomial.</li>
+  <li>Using \(\sigma\) where the sample version \(s\) (divisor \(n-1\)) is required, or vice versa.</li>
+  <li>Quoting a conclusion as "\(H_0\) is true" (never correct — we only fail to reject it) or as "proves" (we never prove an alternative).</li>
+  <li>Mixing up one-tailed and two-tailed critical values: e.g. using \(1.96\) for a one-tailed 5% test instead of \(1.645\).</li>
+  <li>Reading frequency (not frequency density) off a histogram with unequal class widths.</li>
+  <li>Omitting the contextual conclusion — "reject \(H_0\)" alone does not fully answer the question.</li>
+  <li>Extrapolating a regression line far outside the observed \(x\)-range and quoting the prediction with full confidence.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Formula snapshot (memorise).</strong>
+<ul>
+  <li><strong>Mean, variance (grouped):</strong> \(\bar x = \sum fx/\sum f\), \(\sigma^2 = \sum fx^2/\sum f - \bar x^2\).</li>
+  <li><strong>Outlier:</strong> more than \(1.5\cdot\text{IQR}\) beyond the quartiles.</li>
+  <li><strong>PMCC:</strong> \(r = S_{xy}/\sqrt{S_{xx}S_{yy}} \in [-1, 1]\).</li>
+  <li><strong>Regression:</strong> \(b = S_{xy}/S_{xx}\), \(a = \bar y - b\bar x\).</li>
+  <li><strong>Conditional:</strong> \(P(A\mid B) = P(A\cap B)/P(B)\).</li>
+  <li><strong>Binomial:</strong> \(P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}\), mean \(np\), variance \(np(1-p)\).</li>
+  <li><strong>Standard Normal:</strong> \(Z = (X-\mu)/\sigma \sim N(0,1)\).</li>
+  <li><strong>Sample mean:</strong> \(\bar X \sim N(\mu, \sigma^2/n)\); \(z = (\bar x - \mu_0)/(\sigma/\sqrt n)\).</li>
+  <li><strong>Common critical z-values:</strong> one-tailed 5% \(= 1.645\); two-tailed 5% \(= 1.960\); one-tailed 1% \(= 2.326\).</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>
