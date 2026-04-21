@@ -40,6 +40,22 @@
     .user-email { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; flex-shrink: 0; }
     .logout-btn:hover { color: #DC2626; }
+
+    /* ── SIGN-OUT CONFIRM MODAL ── */
+    .signout-overlay { position: fixed; inset: 0; background: rgba(27,45,79,0.45); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .signout-overlay.active { display: flex; }
+    .signout-modal { background: var(--surface, #fff); border: 1px solid var(--border, #D2E5F3); border-radius: 16px; padding: 28px; width: 90%; max-width: 400px; box-shadow: 0 20px 60px rgba(27,45,79,0.25); text-align: center; animation: signoutPop 0.22s cubic-bezier(0.16,1,0.3,1) both; }
+    @keyframes signoutPop { from { opacity: 0; transform: scale(0.94) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .signout-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--red-bg, rgba(220,38,38,0.07)); border: 1px solid var(--red-border, rgba(220,38,38,0.18)); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--red-text, #B91C1C); margin: 0 auto 14px; }
+    .signout-title { font-family: var(--font-display, 'DM Serif Display', serif); font-size: 22px; color: var(--text, #1B2D4F); margin-bottom: 6px; }
+    .signout-msg { font-size: 14px; color: var(--muted, #6B87A8); margin-bottom: 22px; line-height: 1.5; }
+    .signout-actions { display: flex; gap: 10px; }
+    .signout-btn { flex: 1; padding: 11px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; font-family: var(--font-body, 'DM Sans', sans-serif); cursor: pointer; transition: all 0.15s; border: 1px solid transparent; }
+    .signout-btn.cancel { background: var(--surface2, #F4F9FE); color: var(--text, #1B2D4F); border-color: var(--border, #D2E5F3); }
+    .signout-btn.cancel:hover { background: var(--surface3, #E6F1FA); border-color: var(--border-hover, #93C4E2); }
+    .signout-btn.confirm { background: var(--red, #DC2626); color: #fff; }
+    .signout-btn.confirm:hover { background: var(--red-text, #B91C1C); }
+
     .topics-panel { width: var(--topics-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; overflow: hidden; }
     .topics-header { padding: 28px 22px 20px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
     .topics-subject { font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
@@ -126,7 +142,7 @@
         <div class="user-info" onclick="location.href='../settings.html'" style="cursor:pointer" title="Account settings">
           <div class="user-name" id="sidebarName">Loading&#x2026;</div>
         </div>
-        <button class="logout-btn" onclick="logout()" title="Sign out">&#x23FB;</button>
+        <button class="logout-btn" onclick="confirmSignOut()" title="Sign out">&#x23FB;</button>
       </div>
     </div>
   </div>
@@ -382,6 +398,8 @@
     .eq('user_id', user.id).eq('subject', 'Mathematics').eq('exam_board', 'OCR');
   if (rows) { rows.forEach(row => { const dot = document.getElementById(`rag-${row.topic}`); if (dot) dot.className = `rag-dot ${row.rag_status}`; }); }
 })();
+function confirmSignOut(){document.getElementById('signoutOverlay').classList.add('active');}
+function cancelSignOut(){document.getElementById('signoutOverlay').classList.remove('active');}
 async function logout() { await supabaseClient.auth.signOut(); window.location = '../auth/login.html'; }
 function openTopic(btn, num, name, path) {
   document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
@@ -396,5 +414,19 @@ function openTopic(btn, num, name, path) {
 }
 </script>
 <div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
+
+<!-- ── SIGN-OUT CONFIRM MODAL ── -->
+<div class="signout-overlay" id="signoutOverlay" onclick="if(event.target===this)cancelSignOut()">
+  <div class="signout-modal" role="dialog" aria-modal="true" aria-labelledby="signoutTitle">
+    <div class="signout-icon">&#x23FB;</div>
+    <div class="signout-title" id="signoutTitle">Sign out?</div>
+    <div class="signout-msg">Are you sure you want to sign out? You'll need to log back in to access your notes, diagnostics and practice.</div>
+    <div class="signout-actions">
+      <button class="signout-btn cancel" onclick="cancelSignOut()">Cancel</button>
+      <button class="signout-btn confirm" onclick="logout()">Sign out</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

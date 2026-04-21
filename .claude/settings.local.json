@@ -84,7 +84,8 @@
       "Bash(echo \"exit: $?\")",
       "Bash(node -e \"require\\('./questions/further-maths-aqa/fm-aqa-practice.js'\\); console.log\\('AQA OK', Object.keys\\(FM_AQA_PRACTICE || {}\\).length\\);\")",
       "Bash(awk 'NR==1006 || NR==1155' \"C:/Users/tcvas/OneDrive/Desktop/Learning/Dashboard.html\")",
-      "Bash(grep -n \"^\\\\s*'.*':\\\\s*{$\\\\|SUBJECT_TOPICS\\\\s*=\" \"C:/Users/tcvas/OneDrive/Desktop/Learning/practice.html\")"
+      "Bash(grep -n \"^\\\\s*'.*':\\\\s*{$\\\\|SUBJECT_TOPICS\\\\s*=\" \"C:/Users/tcvas/OneDrive/Desktop/Learning/practice.html\")",
+      "Bash(node _apply_signout_modal.js)"
     ]
   },
   "hooks": {
