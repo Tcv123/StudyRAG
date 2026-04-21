@@ -78,7 +78,34 @@
     .main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
     .page-title { font-family: var(--font-display); font-size: 26px; letter-spacing: -0.01em; margin-bottom: 4px; }
-    .page-sub { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+    .page-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+
+    /* ── SECTION JUMP NAV ── */
+    .section-nav { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
+    .section-nav-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px; border-radius: 10px; font-size: 13px; font-weight: 500;
+      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+      cursor: pointer; transition: all 0.15s; font-family: var(--font-body);
+      box-shadow: 0 1px 3px rgba(91,173,207,0.08);
+    }
+    .section-nav-btn:hover {
+      border-color: var(--accent); background: var(--accent-dim);
+      color: var(--accent-dark); transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(91,173,207,0.15);
+    }
+    .section-nav-btn span { font-size: 14px; }
+
+    /* ── CAROUSEL DOTS ── */
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--border); cursor: pointer;
+      transition: all 0.15s; border: none; padding: 0;
+    }
+    .carousel-dot:hover { background: var(--border-hover); }
+    .carousel-dot.active { background: var(--accent); transform: scale(1.3); }
+    .carousel-dot.has-data { background: var(--accent-dim); border: 1px solid var(--accent); }
+    .carousel-dot.has-data.active { background: var(--accent); }
 
     /* ── STAT CARDS ── */
     .stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 28px; }
@@ -142,8 +169,8 @@
     .trend-chart {
       padding: 12px 4px 4px;
       margin-bottom: 12px;
-      border-bottom: 1px solid var(--border);
     }
+    .past-tests .trend-chart { border-bottom: 1px solid var(--border); }
     .trend-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: baseline; }
     .trend-avg { font-family: var(--font-display); font-size: 18px; color: var(--text); letter-spacing: -0.01em; text-transform: none; }
     .trend-avg span { font-size: 11px; font-weight: 500; color: var(--muted); margin-left: 4px; letter-spacing: 0; font-family: var(--font-body); }
@@ -365,8 +392,16 @@
     <div class="page-title">Breakdown</div>
     <div class="page-sub">See how you're doing across every topic. Each one is colour-coded — green means you're confident, amber means you're getting there, and red means it needs more work. Use this to decide what to revise next.</div>
 
+    <!-- Section jump nav -->
+    <div class="section-nav">
+      <button class="section-nav-btn" onclick="jumpTo('sec-summary')"><span>📊</span> Summary</button>
+      <button class="section-nav-btn" onclick="jumpTo('sec-topics')"><span>📚</span> Topics</button>
+      <button class="section-nav-btn" onclick="jumpTo('practiceCarousel')"><span>✦</span> Practice progress</button>
+      <button class="section-nav-btn" onclick="jumpTo('breakdownExamRow')"><span>📅</span> Upcoming exams</button>
+    </div>
+
     <!-- Summary stats -->
-    <div style="font-family:var(--font-display);font-size:18px;margin-bottom:14px;">Summary</div>
+    <div id="sec-summary" style="font-family:var(--font-display);font-size:18px;margin-bottom:14px;scroll-margin-top:20px;">Summary</div>
     <div class="stats-row">
       <div class="stat-card">
         <div class="stat-label">Topics covered</div>
@@ -408,10 +443,24 @@
     </div>
 
     <!-- Topic list -->
+    <div id="sec-topics" style="scroll-margin-top:20px;"></div>
     <div id="topicList"></div>
 
+    <!-- Practice progress carousel -->
+    <div id="practiceCarousel" style="margin-top:28px;display:none;scroll-margin-top:20px;">
+      <div style="font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">✦ Practice progress</div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+        <button id="practicePrev" onclick="shiftPracticeSubject(-1)" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--border-hover);background:var(--surface);cursor:pointer;font-size:20px;font-weight:700;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(91,173,207,0.15);transition:all 0.15s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='var(--surface)'">‹</button>
+        <div id="practiceSubjectLabel" style="font-family:var(--font-display);font-size:20px;flex:1;text-align:center;letter-spacing:-0.01em;color:var(--text);"></div>
+        <button id="practiceNext" onclick="shiftPracticeSubject(1)" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--border-hover);background:var(--surface);cursor:pointer;font-size:20px;font-weight:700;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(91,173,207,0.15);transition:all 0.15s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='var(--surface)'">›</button>
+      </div>
+      <div id="practiceCarouselCard" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;"></div>
+      <div id="practiceCarouselDots" style="display:flex;justify-content:center;gap:6px;margin-top:12px;"></div>
+    </div>
+
     <!-- Exam calendar -->
-    <div id="breakdownExamRow" style="margin-top:28px;display:none;">
+    <div id="sec-exams"></div>
+    <div id="breakdownExamRow" style="margin-top:28px;display:none;scroll-margin-top:20px;">
       <div style="font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">📅 Upcoming exams</div>
       <!-- Month nav -->
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
@@ -1798,6 +1847,73 @@ async function load() {
   renderSummaryBar(green, amber, red, pending);
   renderBreakdownExams(subjects || []);
   renderTopics();
+  renderPracticeCarousel();
+}
+
+function jumpTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+let practiceCarouselIdx = 0;
+
+function shiftPracticeSubject(delta) {
+  if (!allSubjectData.length) return;
+  practiceCarouselIdx = (practiceCarouselIdx + delta + allSubjectData.length) % allSubjectData.length;
+  renderPracticeCarousel();
+}
+
+function jumpPracticeSubject(idx) {
+  practiceCarouselIdx = idx;
+  renderPracticeCarousel();
+}
+
+function renderPracticeCarousel() {
+  const wrap = document.getElementById('practiceCarousel');
+  if (!wrap) return;
+  if (!allSubjectData.length) { wrap.style.display = 'none'; return; }
+  wrap.style.display = 'block';
+
+  practiceCarouselIdx = ((practiceCarouselIdx % allSubjectData.length) + allSubjectData.length) % allSubjectData.length;
+  const subj = allSubjectData[practiceCarouselIdx];
+  const attempts = practiceHistory.filter(h => h.subject === subj.subject && h.board === subj.board);
+
+  document.getElementById('practiceSubjectLabel').innerHTML =
+    `<span style="font-size:22px;margin-right:8px;vertical-align:-2px;">${subj.emoji}</span>${subj.subject} <span style="color:var(--muted);font-size:14px;font-family:var(--font-body);">· ${subj.board}</span>`;
+
+  const card = document.getElementById('practiceCarouselCard');
+  if (!attempts.length) {
+    card.innerHTML = `<div style="padding:48px 20px;text-align:center;color:var(--muted);">
+      <div style="font-size:40px;margin-bottom:10px;opacity:0.5;">✦</div>
+      <div style="font-family:var(--font-display);font-size:17px;color:var(--text);margin-bottom:4px;">No practice tests yet</div>
+      <div style="font-size:13px;margin-bottom:14px;">Complete a practice test for ${subj.subject} to see your progress here.</div>
+      <a href="practice.html" style="display:inline-block;padding:8px 18px;border-radius:10px;background:var(--accent-dim);color:var(--accent-dark);font-size:13px;font-weight:500;text-decoration:none;border:1px solid var(--accent);">Start practising →</a>
+    </div>`;
+  } else {
+    const sorted = attempts.slice().sort((a, b) => a.dateISO.localeCompare(b.dateISO));
+    const avgPct = Math.round(sorted.reduce((s, h) => s + (h.pct || 0), 0) / sorted.length);
+    const best = Math.max(...sorted.map(h => h.pct));
+    const latest = sorted[sorted.length - 1].pct;
+    const trend = sorted.length >= 2 ? latest - sorted[sorted.length - 2].pct : 0;
+    const trendBadge = sorted.length >= 2
+      ? `<span style="font-size:12px;color:${trend >= 0 ? 'var(--green)' : 'var(--red)'};font-weight:600;">${trend >= 0 ? '▲' : '▼'} ${Math.abs(trend)}%</span>`
+      : '';
+    card.innerHTML = `
+      <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border);">
+        <div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">Tests taken</div><div style="font-family:var(--font-display);font-size:22px;">${sorted.length}</div></div>
+        <div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">Average</div><div style="font-family:var(--font-display);font-size:22px;">${avgPct}%</div></div>
+        <div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">Best</div><div style="font-family:var(--font-display);font-size:22px;color:var(--green);">${best}%</div></div>
+        <div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">Latest</div><div style="font-family:var(--font-display);font-size:22px;">${latest}% ${trendBadge}</div></div>
+      </div>
+      ${renderTrendChart(sorted, avgPct)}
+    `;
+  }
+
+  const dotsEl = document.getElementById('practiceCarouselDots');
+  dotsEl.innerHTML = allSubjectData.map((s, i) => {
+    const has = practiceHistory.some(h => h.subject === s.subject && h.board === s.board);
+    return `<button class="carousel-dot ${has ? 'has-data' : ''} ${i === practiceCarouselIdx ? 'active' : ''}" onclick="jumpPracticeSubject(${i})" title="${s.label}"></button>`;
+  }).join('');
 }
 
 async function logout() {
