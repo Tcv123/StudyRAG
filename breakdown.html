@@ -1546,18 +1546,52 @@ function renderCalendar() {
 }
 
 
+// One-time migration of per-device localStorage history into Supabase
+// so users who already took tests before the table existed keep their data.
+async function migrateLocalPracticeHistory(userId) {
+  const key = `practice_history_${userId}`;
+  let raw;
+  try { raw = localStorage.getItem(key); } catch (e) { return; }
+  if (!raw) return;
+  let list;
+  try { list = JSON.parse(raw); } catch (e) { localStorage.removeItem(key); return; }
+  if (!Array.isArray(list) || !list.length) { localStorage.removeItem(key); return; }
+  const rows = list.map(h => ({
+    user_id: userId,
+    subject: h.subject,
+    exam_board: h.board,
+    topic: h.topic,
+    topic_name: h.topicName || h.topic,
+    earned: h.earned | 0,
+    total_marks: h.total | 0,
+    pct: h.pct | 0,
+    questions: h.questions | 0,
+    answered: h.answered | 0,
+    time_used_sec: h.timeUsedSec | 0,
+    timed_out: !!h.timedOut,
+    taken_at: h.dateISO || new Date().toISOString(),
+  }));
+  const { error } = await supabaseClient.from('practice_attempts').insert(rows);
+  if (!error) localStorage.removeItem(key);
+  else console.warn('Practice history migration failed', error);
+}
+
 async function load() {
   const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
   if (authErr || !user) { window.location = 'auth/login.html'; return; }
 
+  await migrateLocalPracticeHistory(user.id);
+
   const [
     { data: profile },
     { data: subjects },
-    { data: topicProgress }
+    { data: topicProgress },
+    { data: attempts }
   ] = await Promise.all([
     supabaseClient.from('profiles').select('*').eq('id', user.id).single(),
     supabaseClient.from('user_subjects').select('*').eq('user_id', user.id),
-    supabaseClient.from('topic_progress').select('subject, exam_board, topic, rag_status').eq('user_id', user.id)
+    supabaseClient.from('topic_progress').select('subject, exam_board, topic, rag_status').eq('user_id', user.id),
+    supabaseClient.from('practice_attempts').select('subject, exam_board, topic, topic_name, earned, total_marks, pct, questions, answered, time_used_sec, timed_out, taken_at').eq('user_id', user.id).order('taken_at', { ascending: false })
   ]);
 
   // Sidebar user info
@@ -1603,10 +1637,20 @@ async function load() {
     });
   });
 
-  practiceHistory = [];
-  try {
-    practiceHistory = JSON.parse(localStorage.getItem(`practice_history_${user.id}`) || '[]');
-  } catch (e) { practiceHistory = []; }
+  practiceHistory = (attempts || []).map(a => ({
+    subject: a.subject,
+    board: a.exam_board,
+    topic: a.topic,
+    topicName: a.topic_name || a.topic,
+    earned: a.earned,
+    total: a.total_marks,
+    pct: a.pct,
+    questions: a.questions,
+    answered: a.answered,
+    timeUsedSec: a.time_used_sec,
+    timedOut: a.timed_out,
+    dateISO: a.taken_at,
+  }));
 
   // Stats
   const tested = allTopicData.filter(t => t.rag !== 'pending').length;

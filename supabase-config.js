@@ -71,6 +71,28 @@
  *   ALTER TABLE topic_progress ENABLE ROW LEVEL SECURITY;
  *   CREATE POLICY "own progress" ON topic_progress FOR ALL USING (auth.uid() = user_id);
  *
+ *   -- 3b. Practice attempts (past tests history)
+ *   CREATE TABLE IF NOT EXISTS practice_attempts (
+ *     id            UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+ *     user_id       UUID REFERENCES profiles(id) ON DELETE CASCADE,
+ *     subject       TEXT NOT NULL,
+ *     exam_board    TEXT NOT NULL,
+ *     topic         TEXT NOT NULL,
+ *     topic_name    TEXT,
+ *     earned        INTEGER NOT NULL,
+ *     total_marks   INTEGER NOT NULL,
+ *     pct           INTEGER NOT NULL,
+ *     questions     INTEGER NOT NULL,
+ *     answered      INTEGER NOT NULL,
+ *     time_used_sec INTEGER NOT NULL,
+ *     timed_out     BOOLEAN DEFAULT FALSE,
+ *     taken_at      TIMESTAMPTZ DEFAULT NOW()
+ *   );
+ *   ALTER TABLE practice_attempts ENABLE ROW LEVEL SECURITY;
+ *   CREATE POLICY "own attempts" ON practice_attempts FOR ALL USING (auth.uid() = user_id);
+ *   CREATE INDEX IF NOT EXISTS idx_practice_attempts_user_subject
+ *     ON practice_attempts (user_id, subject, exam_board, taken_at DESC);
+ *
  *   -- 4. Medals table
  *   CREATE TABLE IF NOT EXISTS user_medals (
  *     id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
