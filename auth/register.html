@@ -489,29 +489,73 @@ form.onsubmit = async (e) => {
   msg.className = 'msg';
   msg.innerText = '';
 
-  if (password.value.length < 8) {
+  const firstNameVal = firstName.value.trim();
+  const lastNameVal  = lastName.value.trim();
+  const emailVal     = email.value.trim();
+  const pwVal        = password.value;
+  const confirmVal   = confirmPassword.value;
+
+  if (!firstNameVal) {
     msg.className = 'msg error';
-    msg.innerText = 'Password must be at least 8 characters.';
+    msg.innerText = 'First name is required.';
+    firstName.focus();
     return;
   }
-  if (password.value !== confirmPassword.value) {
+  if (!lastNameVal) {
+    msg.className = 'msg error';
+    msg.innerText = 'Last name is required.';
+    lastName.focus();
+    return;
+  }
+  if (!emailVal) {
+    msg.className = 'msg error';
+    msg.innerText = 'Email is required.';
+    email.focus();
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+    msg.className = 'msg error';
+    msg.innerText = 'Please enter a valid email address.';
+    email.focus();
+    return;
+  }
+  if (!pwVal) {
+    msg.className = 'msg error';
+    msg.innerText = 'Password is required.';
+    password.focus();
+    return;
+  }
+  if (pwVal.length < 8) {
+    msg.className = 'msg error';
+    msg.innerText = 'Password must be at least 8 characters.';
+    password.focus();
+    return;
+  }
+  if (!confirmVal) {
+    msg.className = 'msg error';
+    msg.innerText = 'Please confirm your password.';
+    confirmPassword.focus();
+    return;
+  }
+  if (pwVal !== confirmVal) {
     msg.className = 'msg error';
     msg.innerText = 'Passwords do not match.';
+    confirmPassword.focus();
     return;
   }
 
   registerBtn.disabled    = true;
   registerBtn.textContent = 'Creating account…';
 
-  signupEmail = email.value.trim();
+  signupEmail = emailVal;
 
   const { error } = await supabaseClient.auth.signUp({
     email:    signupEmail,
-    password: password.value,
+    password: pwVal,
     options: {
       data: {
-        first_name: firstName.value.trim(),
-        last_name:  lastName.value.trim()
+        first_name: firstNameVal,
+        last_name:  lastNameVal
       }
     }
   });
