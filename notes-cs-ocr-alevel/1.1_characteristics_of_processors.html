@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 1.1 — Characteristics of Processors, Input, Output and Storage Devices</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>1.1 Characteristics of Contemporary Processors, Input, Output and Storage Devices</h1>
+<p class="spec-ref">OCR A-Level Computer Science (H446) &mdash; Component 01 (Computer Systems)</p>
+
+<h2>1.1.1 Structure and Function of the Processor</h2>
+
+<h3>Von Neumann vs Harvard Architecture</h3>
+
+<div class="definition">
+    The <strong>Von Neumann architecture</strong> stores both <strong>program instructions and data in the same memory</strong>, accessed through a <strong>single shared bus</strong>. Instructions are fetched and executed <strong>sequentially</strong> using the stored program concept (1945). Virtually all general-purpose computers (PCs, servers, smartphones running application code) use this model.
+</div>
+
+<div class="definition">
+    The <strong>Harvard architecture</strong> uses <strong>physically separate memories</strong> for instructions and data, connected by <strong>separate buses</strong>. This allows the CPU to fetch an instruction and read data <strong>simultaneously</strong>, improving throughput. It is common in embedded systems, microcontrollers (PIC, AVR, ARM Cortex-M) and digital signal processors (DSPs).</div>
+
+<p>Modern high-performance CPUs (x86, ARM Cortex-A) are said to be <strong>modified Harvard</strong>: the main memory is unified (Von Neumann), but the on-chip L1 cache is split into a separate <strong>instruction cache (L1i)</strong> and <strong>data cache (L1d)</strong>. This gives Harvard-style simultaneous fetch at cache level while retaining Von Neumann's programming flexibility.</p>
+
+<table>
+    <tr><th>Feature</th><th>Von Neumann</th><th>Harvard</th></tr>
+    <tr><td>Memory</td><td>Single unified memory for instructions + data</td><td>Separate instruction memory and data memory</td></tr>
+    <tr><td>Buses</td><td>One shared bus (address + data + control)</td><td>Separate buses for instructions and data</td></tr>
+    <tr><td>Simultaneous fetch/read?</td><td>No &mdash; one at a time (Von Neumann bottleneck)</td><td>Yes &mdash; instruction and data accessed in parallel</td></tr>
+    <tr><td>Flexibility</td><td>High &mdash; instructions and data interchangeable (self-modifying code possible)</td><td>Lower &mdash; instruction memory often read-only</td></tr>
+    <tr><td>Complexity / cost</td><td>Simpler, cheaper hardware</td><td>More complex, higher hardware cost</td></tr>
+    <tr><td>Typical use</td><td>General-purpose computers (desktops, laptops, servers)</td><td>Embedded systems, microcontrollers, DSPs (audio, radio, motor control)</td></tr>
+    <tr><td>Example</td><td>x86 PC running Windows</td><td>ATmega328 (Arduino Uno), TI C6000 DSP</td></tr>
+</table>
+
+<div class="exam-tip">The <strong>Von Neumann bottleneck</strong> is the fact that instructions and data share a single bus, so only one can be transferred at a time. Mentioning this by name earns marks in compare/contrast questions. Harvard architecture removes this bottleneck by duplicating the bus.</div>
+
+<h3>CPU Internal Structure</h3>
+
+<p>The CPU contains the ALU, Control Unit, registers, cache, and an internal clock, all connected by internal buses. These communicate with main memory and I/O via the external system bus.</p>
+
+<p>At A-Level it is essential to understand not just what each component does, but <em>why</em> each component exists and how they co-operate. The ALU performs the arithmetic and logic, but it needs operands to be placed where it can access them (registers) and a sequence of steps to be coordinated (CU, clock). The CU sequences those steps by issuing control signals, but it needs to know what to sequence (CIR) and where to find the next step (PC). Each component is therefore only useful in the context of the others &mdash; this tightly coupled interaction is what makes a processor a processor rather than a collection of parts.</p>
+
+<!-- CPU Internal Structure Diagram -->
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrA" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+    <marker id="arrAb" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto"><polygon points="10 0, 0 3.5, 10 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">CPU Internal Structure</text>
+  <!-- CPU outer box -->
+  <rect x="30" y="40" width="470" height="340" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="265" y="62" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">CPU</text>
+  <!-- Control Unit -->
+  <rect x="50" y="80" width="180" height="70" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="140" y="105" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Control Unit (CU)</text>
+  <text x="140" y="123" text-anchor="middle" font-size="9" fill="#374151">Decodes instructions,</text>
+  <text x="140" y="137" text-anchor="middle" font-size="9" fill="#374151">issues control signals</text>
+  <!-- ALU -->
+  <rect x="260" y="80" width="180" height="70" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="350" y="105" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">ALU</text>
+  <text x="350" y="123" text-anchor="middle" font-size="9" fill="#374151">Arithmetic + logic,</text>
+  <text x="350" y="137" text-anchor="middle" font-size="9" fill="#374151">sets status flags</text>
+  <!-- Registers -->
+  <rect x="50" y="165" width="180" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="140" y="188" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Registers</text>
+  <text x="140" y="206" text-anchor="middle" font-size="9" fill="#374151">PC, ACC, MAR, MDR,</text>
+  <text x="140" y="220" text-anchor="middle" font-size="9" fill="#374151">CIR, SR + general</text>
+  <text x="140" y="234" text-anchor="middle" font-size="9" fill="#374151">purpose registers</text>
+  <!-- Cache -->
+  <rect x="260" y="165" width="180" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="350" y="188" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Cache</text>
+  <text x="350" y="206" text-anchor="middle" font-size="9" fill="#374151">L1 (split i/d)</text>
+  <text x="350" y="220" text-anchor="middle" font-size="9" fill="#374151">L2 per core</text>
+  <text x="350" y="234" text-anchor="middle" font-size="9" fill="#374151">L3 shared</text>
+  <!-- Clock -->
+  <rect x="50" y="260" width="180" height="55" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="140" y="283" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">Clock</text>
+  <text x="140" y="300" text-anchor="middle" font-size="9" fill="#374151">Synchronises all stages (GHz)</text>
+  <!-- Internal bus -->
+  <rect x="260" y="260" width="180" height="55" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="350" y="283" text-anchor="middle" font-size="12" font-weight="bold" fill="#5b21b6">Internal Buses</text>
+  <text x="350" y="300" text-anchor="middle" font-size="9" fill="#374151">Connect CU, ALU, regs</text>
+  <!-- Main Memory -->
+  <rect x="540" y="100" width="150" height="220" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="615" y="125" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Main Memory</text>
+  <text x="615" y="150" text-anchor="middle" font-size="10" fill="#374151">RAM (DRAM)</text>
+  <text x="615" y="170" text-anchor="middle" font-size="10" fill="#374151">ROM</text>
+  <text x="615" y="200" text-anchor="middle" font-size="9" fill="#6b7280">Stores instructions</text>
+  <text x="615" y="215" text-anchor="middle" font-size="9" fill="#6b7280">and data together</text>
+  <text x="615" y="245" text-anchor="middle" font-size="9" fill="#6b7280">(Von Neumann)</text>
+  <!-- System bus arrows -->
+  <line x1="500" y1="155" x2="540" y2="155" stroke="#2563eb" stroke-width="2" marker-end="url(#arrA)" marker-start="url(#arrAb)"/>
+  <text x="520" y="148" text-anchor="middle" font-size="8" fill="#2563eb" font-weight="bold">Data</text>
+  <line x1="500" y1="205" x2="540" y2="205" stroke="#dc2626" stroke-width="2" marker-end="url(#arrA)"/>
+  <text x="520" y="198" text-anchor="middle" font-size="8" fill="#dc2626" font-weight="bold">Address</text>
+  <line x1="500" y1="255" x2="540" y2="255" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrA)" marker-start="url(#arrAb)"/>
+  <text x="520" y="248" text-anchor="middle" font-size="8" fill="#7c3aed" font-weight="bold">Control</text>
+  <text x="360" y="345" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">All components synchronised by the system clock</text>
+  <text x="360" y="365" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">External system bus = data bus + address bus + control bus</text>
+</svg>
+
+<h3>Key CPU Components</h3>
+
+<table>
+    <tr><th>Component</th><th>Function</th><th>A-Level detail</th></tr>
+    <tr><td><strong>ALU (Arithmetic Logic Unit)</strong></td><td>Performs all arithmetic and logical operations</td><td>Arithmetic (ADD, SUB, MUL, DIV, shifts), logic (AND, OR, NOT, XOR) and comparisons. Reads operands from registers, writes result back to a register (typically ACC) and updates <strong>status register flags</strong> (zero, negative, carry, overflow).</td></tr>
+    <tr><td><strong>Control Unit (CU)</strong></td><td>Orchestrates execution of instructions</td><td>Fetches instructions, decodes the opcode, and issues <strong>micro-operations</strong> / control signals on the control bus to direct data flow between registers, ALU, cache and memory. Can be <strong>hardwired</strong> (fast, fixed logic) or <strong>microcoded</strong> (flexible, uses a small program in ROM).</td></tr>
+    <tr><td><strong>Registers</strong></td><td>Tiny, extremely fast on-die storage</td><td>Accessed in a single clock cycle. Include dedicated special-purpose registers (PC, MAR, MDR, CIR, ACC, SR) plus a bank of general-purpose registers (e.g. R0&ndash;R15 on ARM, RAX/RBX/... on x86-64) used to hold operands and intermediate results.</td></tr>
+    <tr><td><strong>Cache</strong></td><td>Fast SRAM buffer between CPU and RAM</td><td>Keeps copies of recently used instructions/data. Organised as L1 (split i/d, per-core), L2 (per-core), L3 (shared). Reduces average memory access time by exploiting <strong>locality of reference</strong>.</td></tr>
+    <tr><td><strong>Clock</strong></td><td>Synchronises operations</td><td>Crystal oscillator produces a square-wave signal at a fixed frequency (e.g. 3.5&nbsp;GHz = 3.5&times;10<sup>9</sup> cycles/sec). Each micro-operation takes one or more clock cycles.</td></tr>
+    <tr><td><strong>Buses</strong></td><td>Communication pathways</td><td>See next section &mdash; address, data and control buses.</td></tr>
+</table>
+
+<h3>Registers in Detail</h3>
+
+<p>A-Level requires you to know <strong>six special-purpose registers</strong> and the <strong>status register flags</strong>.</p>
+
+<table>
+    <tr><th>Register</th><th>Name</th><th>Holds</th><th>Role</th></tr>
+    <tr><td><strong>PC</strong></td><td>Program Counter</td><td>Address</td><td>Address of the <em>next</em> instruction to fetch. Incremented each fetch; overwritten by branch instructions.</td></tr>
+    <tr><td><strong>MAR</strong></td><td>Memory Address Register</td><td>Address</td><td>Holds the address currently being placed on the address bus for a read or write.</td></tr>
+    <tr><td><strong>MDR</strong></td><td>Memory Data Register</td><td>Data/Instruction</td><td>Buffer for the data going to/returning from memory on the data bus. Also called MBR.</td></tr>
+    <tr><td><strong>CIR</strong></td><td>Current Instruction Register</td><td>Instruction</td><td>Holds the instruction currently being decoded and executed. Split into opcode + operand by the CU.</td></tr>
+    <tr><td><strong>ACC</strong></td><td>Accumulator</td><td>Data</td><td>Default destination for ALU results; primary working register in LMC-style architectures.</td></tr>
+    <tr><td><strong>SR</strong></td><td>Status Register (flags register)</td><td>Bit flags</td><td>Individual bits set by the ALU to record properties of the last operation. Drives conditional branches.</td></tr>
+</table>
+
+<h4>Typical Status Register Flags</h4>
+<table>
+    <tr><th>Flag</th><th>Set when...</th><th>Used by</th></tr>
+    <tr><td><strong>Z</strong> (Zero)</td><td>Result of last operation is zero</td><td>BEQ / BNE (branch if equal/not-equal to zero)</td></tr>
+    <tr><td><strong>N</strong> (Negative / Sign)</td><td>Result has MSB = 1 (negative in two's complement)</td><td>BMI / BPL (branch if minus / plus)</td></tr>
+    <tr><td><strong>C</strong> (Carry)</td><td>Unsigned arithmetic generated a carry/borrow out of MSB</td><td>Multi-word arithmetic, unsigned comparisons</td></tr>
+    <tr><td><strong>V</strong> (Overflow)</td><td>Signed arithmetic overflowed the representable range</td><td>Signed comparisons, arithmetic error detection</td></tr>
+    <tr><td><strong>I</strong> (Interrupt enable)</td><td>Interrupts currently enabled</td><td>OS interrupt handling</td></tr>
+</table>
+
+<div class="exam-tip">Common exam mistake: confusing <strong>MAR and MDR</strong>. Memorise: <strong>MAR = Memory Address Register (addresses, connects to address bus)</strong>; <strong>MDR = Memory Data Register (data/instructions, connects to data bus)</strong>. Another common error is forgetting the PC is incremented <em>during</em> fetch (not after execute). State PC &larr; PC + 1 as the second step.</div>
+
+<h3>Buses &mdash; Function and Typical Widths</h3>
+
+<table>
+    <tr><th>Bus</th><th>Carries</th><th>Direction</th><th>Typical width</th><th>Effect of wider bus</th></tr>
+    <tr><td><strong>Address Bus</strong></td><td>Memory addresses specifying the location to read/write</td><td>Unidirectional (CPU &rarr; memory)</td><td>32 or 64 bits (some embedded: 16&ndash;24)</td><td>More addressable memory: <em>n</em>-bit bus &rarr; 2<sup><em>n</em></sup> locations. 32-bit = 4&nbsp;GiB; 64-bit = 16&nbsp;EiB (theoretical).</td></tr>
+    <tr><td><strong>Data Bus</strong></td><td>Actual data and instructions being transferred</td><td>Bidirectional</td><td>64 bits (modern desktop); 128/256/512 in memory channels</td><td>More data per transfer &rarr; higher throughput, fewer memory cycles for wide values.</td></tr>
+    <tr><td><strong>Control Bus</strong></td><td>Control signals: <code>READ</code>, <code>WRITE</code>, clock, interrupt request (IRQ), bus request/grant, reset</td><td>Bidirectional (mix of CPU-out and device-in signals)</td><td>Typically ~10&ndash;20 individual lines</td><td>More lines = more control signals &rarr; richer behaviour (e.g. DMA, multiple IRQs).</td></tr>
+</table>
+
+<div class="definition">
+    <strong>Bus width</strong> = the number of parallel wires in the bus, i.e. how many bits can be transmitted simultaneously. The <strong>address bus width</strong> determines the <strong>maximum addressable memory</strong>; the <strong>data bus width</strong> determines <strong>how much data is transferred per cycle</strong>.
+</div>
+
+<h3>The Fetch-Decode-Execute (FDE) Cycle</h3>
+
+<p>The FDE cycle is the fundamental execution loop of a Von Neumann CPU. At A-Level you must be able to describe each step using <strong>register transfer notation (RTN)</strong>, e.g. <code>MAR &larr; [PC]</code> means "the contents of PC are copied into MAR".</p>
+
+<h4>Fetch</h4>
+<pre>
+1.  MAR   &larr; [PC]                  ; address of next instruction into MAR
+2.  PC    &larr; [PC] + 1              ; increment PC (ready for next fetch)
+3.  MDR   &larr; [Memory[MAR]]         ; CU issues READ; data bus returns value
+4.  CIR   &larr; [MDR]                 ; copy instruction into CIR, freeing MDR
+</pre>
+
+<h4>Decode</h4>
+<pre>
+5.  CU splits [CIR] into opcode and operand
+6.  CU selects the appropriate micro-operations for this opcode
+</pre>
+
+<h4>Execute</h4>
+<pre>
+7a. (Arithmetic)   ACC &larr; [ACC] OP [operand]     ; ALU sets SR flags
+7b. (Load)         MAR &larr; operand
+                    MDR &larr; [Memory[MAR]]
+                    ACC &larr; [MDR]
+7c. (Store)        MAR &larr; operand
+                    MDR &larr; [ACC]
+                    Memory[MAR] &larr; [MDR]         ; CU issues WRITE
+7d. (Branch taken) PC  &larr; operand                ; changes next fetch address
+</pre>
+
+<p>After the execute phase the cycle repeats &mdash; step 1 begins again using the new PC.</p>
+
+<!-- FDE cycle with register transfers diagram -->
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrF" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Fetch-Decode-Execute Cycle &mdash; Data Flow</text>
+  <!-- PC -->
+  <rect x="30" y="60" width="100" height="50" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="80" y="82" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">PC</text>
+  <text x="80" y="99" text-anchor="middle" font-size="9" fill="#374151">next addr</text>
+  <!-- MAR -->
+  <rect x="180" y="60" width="100" height="50" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="230" y="82" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">MAR</text>
+  <text x="230" y="99" text-anchor="middle" font-size="9" fill="#374151">address bus</text>
+  <!-- Memory -->
+  <rect x="330" y="40" width="110" height="90" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="385" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">Memory</text>
+  <text x="385" y="85" text-anchor="middle" font-size="9" fill="#374151">RAM</text>
+  <text x="385" y="100" text-anchor="middle" font-size="9" fill="#374151">data + instr</text>
+  <text x="385" y="115" text-anchor="middle" font-size="9" fill="#374151">stored together</text>
+  <!-- MDR -->
+  <rect x="490" y="60" width="100" height="50" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="540" y="82" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">MDR</text>
+  <text x="540" y="99" text-anchor="middle" font-size="9" fill="#374151">data bus</text>
+  <!-- CIR -->
+  <rect x="490" y="150" width="100" height="50" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="540" y="172" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">CIR</text>
+  <text x="540" y="189" text-anchor="middle" font-size="9" fill="#374151">instruction</text>
+  <!-- CU -->
+  <rect x="330" y="160" width="110" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="385" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">Control Unit</text>
+  <text x="385" y="203" text-anchor="middle" font-size="9" fill="#374151">decode + signals</text>
+  <!-- ALU -->
+  <rect x="330" y="250" width="110" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="385" y="275" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">ALU</text>
+  <text x="385" y="293" text-anchor="middle" font-size="9" fill="#374151">execute, set SR</text>
+  <!-- ACC -->
+  <rect x="180" y="250" width="100" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="230" y="275" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">ACC</text>
+  <text x="230" y="293" text-anchor="middle" font-size="9" fill="#374151">working register</text>
+  <!-- arrows -->
+  <line x1="130" y1="85" x2="178" y2="85" stroke="#2563eb" stroke-width="2" marker-end="url(#arrF)"/>
+  <text x="154" y="78" text-anchor="middle" font-size="8" fill="#2563eb">MAR&larr;[PC]</text>
+  <line x1="280" y1="85" x2="328" y2="85" stroke="#dc2626" stroke-width="2" marker-end="url(#arrF)"/>
+  <text x="304" y="78" text-anchor="middle" font-size="8" fill="#dc2626">addr bus</text>
+  <line x1="440" y1="85" x2="488" y2="85" stroke="#2563eb" stroke-width="2" marker-end="url(#arrF)"/>
+  <text x="464" y="78" text-anchor="middle" font-size="8" fill="#2563eb">data bus</text>
+  <line x1="540" y1="110" x2="540" y2="148" stroke="#2563eb" stroke-width="2" marker-end="url(#arrF)"/>
+  <text x="560" y="132" text-anchor="middle" font-size="8" fill="#2563eb">CIR&larr;[MDR]</text>
+  <line x1="488" y1="175" x2="442" y2="185" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrF)"/>
+  <line x1="385" y1="220" x2="385" y2="248" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrF)"/>
+  <text x="405" y="238" text-anchor="middle" font-size="8" fill="#7c3aed">ctrl signals</text>
+  <line x1="330" y1="280" x2="282" y2="280" stroke="#2563eb" stroke-width="2" marker-end="url(#arrF)"/>
+  <text x="306" y="273" text-anchor="middle" font-size="8" fill="#2563eb">result</text>
+  <line x1="230" y1="248" x2="230" y2="115" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="360" y="340" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Blue = data path &middot; Red = address path &middot; Purple = control path</text>
+</svg>
+
+<div class="exam-tip">At A-Level you are expected to use <strong>register transfer notation</strong>. Write <code>MAR &larr; [PC]</code> rather than prose. Square brackets mean "the contents of"; the arrow means "copy into". Always show the PC increment on its own line: <code>PC &larr; [PC] + 1</code>.</div>
+
+<h4>Worked FDE Trace &mdash; Three Instructions</h4>
+<pre>
+Memory layout:
+  0:  LOAD  10     (load value at addr 10 into ACC)
+  1:  ADD   11     (add value at addr 11 to ACC)
+  2:  STORE 12     (store ACC into addr 12)
+  10: 7              (data)
+  11: 5              (data)
+  12: ?              (result destination)
+
+Cycle 1  LOAD 10
+  FETCH    MAR &larr; [PC]=0     PC &larr; 1
+           MDR &larr; Memory[0]="LOAD 10"
+           CIR &larr; [MDR]
+  DECODE   opcode=LOAD, operand=10
+  EXECUTE  MAR &larr; 10
+           MDR &larr; Memory[10]=7
+           ACC &larr; [MDR]=7
+
+Cycle 2  ADD 11
+  FETCH    MAR &larr; [PC]=1     PC &larr; 2
+           MDR &larr; Memory[1]="ADD 11"
+           CIR &larr; [MDR]
+  DECODE   opcode=ADD, operand=11
+  EXECUTE  MAR &larr; 11
+           MDR &larr; Memory[11]=5
+           ALU:  ACC &larr; [ACC]+[MDR] = 7+5 = 12
+           SR: Z=0, N=0, C=0, V=0
+
+Cycle 3  STORE 12
+  FETCH    MAR &larr; [PC]=2     PC &larr; 3
+           MDR &larr; Memory[2]="STORE 12"
+           CIR &larr; [MDR]
+  DECODE   opcode=STORE, operand=12
+  EXECUTE  MAR &larr; 12
+           MDR &larr; [ACC]=12
+           Memory[12] &larr; [MDR]   (CU asserts WRITE on control bus)
+</pre>
+
+<h3>Factors Affecting Processor Performance</h3>
+
+<p>Four factors are named explicitly in the H446 specification: <strong>clock speed, number of cores, cache, and pipelining</strong>.</p>
+
+<h4>Clock Speed</h4>
+<p>The clock is an electronic oscillator generating a square wave at a fixed frequency measured in <strong>hertz</strong>. Each pulse drives one or more stages of an instruction. Doubling the clock speed approximately doubles the number of cycles per second, which increases throughput for sequential, single-threaded code.</p>
+<ul>
+    <li><strong>Limits:</strong> heat output scales roughly with frequency<sup>3</sup> (dynamic power &prop; C&middot;V<sup>2</sup>&middot;f, and V must rise with f). Above ~5&nbsp;GHz the chip cannot be cooled with air.</li>
+    <li><strong>Overclocking</strong> raises the clock manually at the cost of heat, power and chip lifespan.</li>
+</ul>
+
+<h4>Number of Cores</h4>
+<p>A <strong>core</strong> is an independent processor with its own ALU, CU and registers on a single chip. <em>n</em> cores can execute up to <em>n</em> threads truly simultaneously (true parallelism, not just concurrency).</p>
+<ul>
+    <li>Useful for multi-threaded software (video encoders, web servers, compilers, games) and multi-tasking.</li>
+    <li><strong>Amdahl's Law</strong>: speed-up is limited by the <em>sequential</em> portion of the program. If 20% of a task is inherently sequential, maximum speed-up is 1 / 0.2 = 5&times; no matter how many cores.</li>
+    <li>Overhead: synchronisation, locks, and cache coherence between cores eats into the gain.</li>
+</ul>
+
+<h4>Cache</h4>
+<p>Fast on-chip SRAM that stores copies of recently used instructions and data. Drastically reduces <strong>average</strong> memory access time.</p>
+
+<table>
+    <tr><th>Level</th><th>Typical size</th><th>Access time</th><th>Shared?</th><th>Notes</th></tr>
+    <tr><td>Registers</td><td>~1&nbsp;KB total</td><td>&lt; 1 cycle</td><td>Per core</td><td>Referenced for comparison &mdash; fastest possible storage.</td></tr>
+    <tr><td><strong>L1</strong></td><td>32&ndash;64&nbsp;KB per core (usually split i/d)</td><td>~1&ndash;4 cycles</td><td>Per core</td><td>Fastest cache; Harvard-style split instruction/data.</td></tr>
+    <tr><td><strong>L2</strong></td><td>256&nbsp;KB&ndash;1&nbsp;MB per core</td><td>~10&ndash;12 cycles</td><td>Per core (usually)</td><td>Larger, slightly slower; acts as a buffer for L1 misses.</td></tr>
+    <tr><td><strong>L3</strong></td><td>4&ndash;64&nbsp;MB</td><td>~30&ndash;50 cycles</td><td>Shared across all cores</td><td>Victim cache of L2; also speeds inter-core data sharing.</td></tr>
+    <tr><td>Main RAM</td><td>8&ndash;64&nbsp;GB</td><td>~150&ndash;300 cycles (~50&ndash;100&nbsp;ns)</td><td>System-wide</td><td>For comparison &mdash; the cost of a cache <em>miss</em>.</td></tr>
+</table>
+
+<div class="definition">
+    <strong>Locality of reference</strong> is the empirical observation that programs tend to re-use the same memory locations, or locations near each other, over short time periods.
+    <ul>
+        <li><strong>Temporal locality</strong>: a location accessed now is likely to be accessed again soon (e.g. loop counter, accumulator).</li>
+        <li><strong>Spatial locality</strong>: a location accessed now means nearby locations are likely to be accessed soon (e.g. traversing an array, sequential instructions).</li>
+    </ul>
+    Caches exploit both: when a miss occurs, a whole <strong>cache line</strong> (typically 64&nbsp;bytes) is loaded, not just the requested word.
+</div>
+
+<p>A <strong>cache hit</strong> is when the requested data is already in cache (fast). A <strong>cache miss</strong> forces a slower lookup in the next level down (L1 miss &rarr; L2 &rarr; L3 &rarr; RAM). <strong>Hit rate</strong> = hits / total accesses; modern CPUs achieve &gt;95% L1 hit rates on typical code.</p>
+
+<h4>Worked Performance Calculation &mdash; Cache Effectiveness</h4>
+<pre>
+Given: L1 access = 2 ns     L1 hit rate = 95%
+       RAM access = 100 ns  (on a miss the access falls through to RAM)
+
+Average access time = 0.95 &times; 2 + 0.05 &times; 100
+                    = 1.9 + 5.0
+                    = 6.9 ns per access
+
+Without any cache, every access is 100 ns.
+Speed-up from L1 cache = 100 / 6.9 &approx; 14.5&times;
+
+Observation: even though the miss penalty is 50&times; worse than a hit,
+the 95% hit rate means the average access time is dominated by the
+fast case. This is exactly why cache is so effective &mdash; combined
+with locality of reference, hit rates in the high 90s mean the
+slow RAM is rarely touched.
+</pre>
+
+<h4>Pipelining</h4>
+
+<div class="definition">
+    <strong>Pipelining</strong> is a performance technique where the FDE cycle is broken into stages, and multiple instructions are worked on <em>simultaneously</em> &mdash; each at a different stage. While instruction <em>n</em> is being executed, instruction <em>n</em>+1 is being decoded, and instruction <em>n</em>+2 is being fetched. It increases <strong>throughput</strong> (instructions completed per second) without increasing the clock speed.
+</div>
+
+<p>In a simple 3-stage pipeline (Fetch / Decode / Execute), after the pipeline fills up, one instruction <strong>completes every cycle</strong> rather than every three cycles. Modern CPUs have much deeper pipelines (14&ndash;20+ stages).</p>
+
+<!-- Pipelining timing diagram -->
+<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">3-Stage Pipeline &mdash; Timing Diagram</text>
+  <!-- Time axis -->
+  <line x1="140" y1="60" x2="680" y2="60" stroke="#6b7280" stroke-width="1"/>
+  <text x="110" y="55" font-size="11" font-weight="bold" fill="#1e40af">Cycle</text>
+  <text x="170" y="55" text-anchor="middle" font-size="11" fill="#1e40af">1</text>
+  <text x="260" y="55" text-anchor="middle" font-size="11" fill="#1e40af">2</text>
+  <text x="350" y="55" text-anchor="middle" font-size="11" fill="#1e40af">3</text>
+  <text x="440" y="55" text-anchor="middle" font-size="11" fill="#1e40af">4</text>
+  <text x="530" y="55" text-anchor="middle" font-size="11" fill="#1e40af">5</text>
+  <text x="620" y="55" text-anchor="middle" font-size="11" fill="#1e40af">6</text>
+  <!-- Instruction 1 -->
+  <text x="20" y="95" font-size="11" font-weight="bold" fill="#1e40af">Instr 1</text>
+  <rect x="130" y="75" width="80" height="30" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="170" y="94" text-anchor="middle" font-size="10" fill="#1e3a5f">Fetch</text>
+  <rect x="220" y="75" width="80" height="30" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="260" y="94" text-anchor="middle" font-size="10" fill="#92400e">Decode</text>
+  <rect x="310" y="75" width="80" height="30" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="350" y="94" text-anchor="middle" font-size="10" fill="#166534">Execute</text>
+  <!-- Instruction 2 -->
+  <text x="20" y="140" font-size="11" font-weight="bold" fill="#1e40af">Instr 2</text>
+  <rect x="220" y="120" width="80" height="30" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="260" y="139" text-anchor="middle" font-size="10" fill="#1e3a5f">Fetch</text>
+  <rect x="310" y="120" width="80" height="30" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="350" y="139" text-anchor="middle" font-size="10" fill="#92400e">Decode</text>
+  <rect x="400" y="120" width="80" height="30" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="440" y="139" text-anchor="middle" font-size="10" fill="#166534">Execute</text>
+  <!-- Instruction 3 -->
+  <text x="20" y="185" font-size="11" font-weight="bold" fill="#1e40af">Instr 3</text>
+  <rect x="310" y="165" width="80" height="30" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="350" y="184" text-anchor="middle" font-size="10" fill="#1e3a5f">Fetch</text>
+  <rect x="400" y="165" width="80" height="30" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="440" y="184" text-anchor="middle" font-size="10" fill="#92400e">Decode</text>
+  <rect x="490" y="165" width="80" height="30" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="530" y="184" text-anchor="middle" font-size="10" fill="#166534">Execute</text>
+  <!-- Key -->
+  <text x="20" y="230" font-size="10" fill="#374151">After cycle 3 the pipeline is full:</text>
+  <text x="20" y="248" font-size="10" fill="#374151">one instruction completes every cycle, not every 3 cycles.</text>
+  <text x="20" y="266" font-size="10" fill="#374151">Non-pipelined: 3 instrs &times; 3 cycles = 9 cycles.</text>
+  <text x="380" y="266" font-size="10" fill="#374151">Pipelined: 3 instrs = 5 cycles &mdash; 1.8&times; speed-up.</text>
+</svg>
+
+<h4>Pipeline Hazards</h4>
+<p>Pipelines break down when an instruction cannot proceed because of its relationship with another instruction in flight. These are called <strong>hazards</strong>.</p>
+
+<table>
+    <tr><th>Hazard</th><th>Cause</th><th>Example</th><th>Mitigation</th></tr>
+    <tr><td><strong>Data hazard</strong></td><td>Instruction needs a result not yet produced by an earlier one still in the pipeline</td><td><code>ADD R1,R2,R3 ; SUB R4,R1,R5</code> &mdash; SUB needs R1 before ADD finishes writing it</td><td><strong>Forwarding</strong> (feed ALU output directly to next ALU input) or <strong>pipeline stall</strong> (bubble)</td></tr>
+    <tr><td><strong>Control hazard</strong> (branch)</td><td>Conditional branch &mdash; next instruction's address isn't known until execute completes</td><td><code>BEQ loop</code> &mdash; should the pipeline fetch the instruction after BEQ or at <code>loop</code>?</td><td><strong>Branch prediction</strong>: guess the outcome and speculatively fetch. If wrong, flush the pipeline.</td></tr>
+    <tr><td><strong>Structural hazard</strong></td><td>Two instructions need the same hardware at the same time</td><td>A Von Neumann single-memory machine fetching an instruction while another instruction reads data</td><td>Duplicate hardware (split cache, Harvard-style) or stall one instruction</td></tr>
+</table>
+
+<div class="definition">
+    <strong>Branch prediction</strong> is a technique where the CPU guesses whether a conditional branch will be taken and speculatively fetches from the predicted address. <strong>Static prediction</strong> always predicts the same way (e.g. backward branches taken &mdash; usually correct for loops). <strong>Dynamic prediction</strong> uses a history table recording past outcomes of each branch. Modern predictors exceed 95% accuracy. A wrong prediction means the speculatively fetched instructions must be discarded (pipeline flush), wasting cycles.
+</div>
+
+<div class="exam-tip">When asked "why does pipelining improve performance?", do not just say "it goes faster". State it precisely: <em>"Pipelining increases instruction throughput by overlapping the fetch, decode and execute stages of consecutive instructions so that one instruction completes per clock cycle once the pipeline is full, rather than once every three cycles."</em> Then mention a hazard (e.g. branch) to show depth.</div>
+
+<h2>1.1.2 Types of Processor</h2>
+
+<h3>CISC vs RISC</h3>
+
+<div class="definition">
+    <strong>CISC (Complex Instruction Set Computer)</strong> uses a large set of complex, variable-length instructions, each of which may perform several low-level operations (e.g. load-modify-store in one instruction). Originated when memory was scarce and expensive. Example: <strong>x86 / x86-64</strong> (Intel, AMD).
+</div>
+
+<div class="definition">
+    <strong>RISC (Reduced Instruction Set Computer)</strong> uses a small set of simple, fixed-length instructions, each executing in ideally one clock cycle. Only <strong>load</strong> and <strong>store</strong> instructions access memory (load-store architecture); everything else works register-to-register. Example: <strong>ARM</strong> (phones, Raspberry Pi, Apple M-series), <strong>RISC-V</strong>, <strong>MIPS</strong>.
+</div>
+
+<table>
+    <tr><th>Feature</th><th>CISC (e.g. x86)</th><th>RISC (e.g. ARM)</th></tr>
+    <tr><td>Instruction set size</td><td>Large (1000+ instructions)</td><td>Small (&lt;100 core instructions)</td></tr>
+    <tr><td>Instruction length</td><td>Variable (1&ndash;15 bytes on x86)</td><td>Fixed (usually 4 bytes)</td></tr>
+    <tr><td>Cycles per instruction (CPI)</td><td>Variable, often many</td><td>Usually 1 (ideally)</td></tr>
+    <tr><td>Instruction complexity</td><td>High &mdash; can perform memory access + arithmetic in one instr</td><td>Low &mdash; each instruction does one simple thing</td></tr>
+    <tr><td>Registers</td><td>Fewer (historically 8&ndash;16 GPRs)</td><td>Many (16&ndash;32 GPRs)</td></tr>
+    <tr><td>Memory access</td><td>Most instructions can access memory directly</td><td>Only dedicated LOAD / STORE &mdash; load-store architecture</td></tr>
+    <tr><td>Code size</td><td>Smaller (dense instructions)</td><td>Larger (more instructions needed for same task)</td></tr>
+    <tr><td>Pipelining friendliness</td><td>Harder (variable length, complex decoding)</td><td>Easier (fixed length, uniform &mdash; ideal for deep pipelines)</td></tr>
+    <tr><td>Power consumption</td><td>Higher (more complex hardware)</td><td>Lower (simpler hardware) &mdash; dominant in mobile</td></tr>
+    <tr><td>Decode hardware</td><td>Complex (often microcoded)</td><td>Simple (hardwired)</td></tr>
+    <tr><td>Typical use</td><td>Desktops, laptops, servers</td><td>Phones, tablets, embedded, IoT, Apple Silicon Macs</td></tr>
+</table>
+
+<p>Modern reality: the lines are blurred. Modern x86 CPUs internally translate CISC instructions into simpler RISC-like micro-operations (&mu;ops) which are then pipelined. ARM has added complex SIMD and cryptography instructions. The categories remain conceptually useful but no current high-performance CPU is purely one or the other.</p>
+
+<div class="exam-tip">When asked to compare CISC and RISC, do not just list features &mdash; <strong>justify the trade-off</strong>. CISC makes each instruction do more, which saves memory and simplifies compiler work at the cost of complex decode hardware and harder pipelining. RISC makes the hardware simpler and more pipelineable at the cost of larger code size and more work for the compiler. Naming real examples (x86 / ARM) earns marks.</div>
+
+<h3>Worked Exam Question &mdash; CISC vs RISC</h3>
+<pre>
+Q: "A smartphone manufacturer chooses a RISC processor over a CISC
+    processor for their latest device. Justify this decision." [6 marks]
+
+Model answer:
+
+(1) RISC instructions are simple and fixed-length, each ideally executing
+    in one clock cycle. This makes the pipeline easier to keep full and
+    allows deeper pipelines &mdash; higher instruction throughput per GHz.
+
+(2) RISC has simpler decode hardware (hardwired, not microcoded). This
+    reduces the number of transistors on the chip, which directly reduces
+    dynamic power consumption (P &prop; C&middot;V&sup2;&middot;f). Lower power = longer
+    battery life and less heat, both critical for a phone.
+
+(3) RISC architectures (e.g. ARM) provide many general-purpose registers,
+    so compilers can keep intermediate values on-chip rather than in RAM.
+    This reduces energy-expensive memory accesses &mdash; again improving
+    battery life.
+
+(4) The trade-off is larger code size: each RISC instruction does less
+    work, so programs contain more instructions than their CISC
+    equivalents. On a phone with gigabytes of RAM this is a minor concern
+    compared to power and heat.
+
+Conclusion: RISC delivers better performance-per-watt, which is the
+decisive metric in a battery-powered handheld device.
+</pre>
+
+<h3>Multicore and Parallel Systems</h3>
+
+<div class="definition">
+    A <strong>multicore processor</strong> contains two or more independent processing cores on a single chip, each with its own ALU, CU, registers and usually private L1 and L2 caches, sharing L3 cache and the memory controller. Cores can execute different threads <strong>truly in parallel</strong>.
+</div>
+
+<p>Related terms:</p>
+<ul>
+    <li><strong>Multi-processor</strong>: multiple physically separate CPU chips in one system (used in servers).</li>
+    <li><strong>Simultaneous Multithreading (SMT / Hyper-Threading)</strong>: a single core appears as 2 logical cores to the OS by duplicating register files and running two threads interleaved through the pipeline. Gives ~20&ndash;30% extra throughput, not 2&times;.</li>
+    <li><strong>SIMD (Single Instruction, Multiple Data)</strong>: one instruction operates on a vector of values simultaneously (e.g. x86 SSE/AVX, ARM NEON). The core principle behind GPUs.</li>
+    <li><strong>MIMD (Multiple Instruction, Multiple Data)</strong>: what general-purpose multicore CPUs are &mdash; each core can run different code on different data.</li>
+</ul>
+
+<p><strong>Parallel processing</strong> is only effective if the task can be decomposed into independent sub-tasks. Tasks with heavy data dependencies or sequential logic gain little. Overheads of synchronisation (locks, cache coherency, communication) reduce real-world speed-up below the theoretical maximum (Amdahl's Law).</p>
+
+<h3>GPU &mdash; Graphics Processing Unit</h3>
+
+<div class="definition">
+    A <strong>GPU</strong> is a highly parallel processor originally designed for rendering graphics. Architecturally it is massively <strong>SIMD</strong>: <strong>thousands</strong> of simple cores (NVIDIA: "CUDA cores") execute the same instruction on different data items simultaneously. A modern GPU might have 5,000&ndash;16,000 cores vs a CPU's 8&ndash;32.
+</div>
+
+<p>GPUs excel at <strong>data-parallel</strong> workloads &mdash; the same operation performed independently on huge quantities of data:</p>
+<ul>
+    <li><strong>Graphics</strong> &mdash; shading and texturing millions of pixels per frame.</li>
+    <li><strong>Machine learning</strong> &mdash; training neural networks, which are almost entirely large matrix multiplications (vastly accelerated by SIMD). This is why GPUs dominate AI.</li>
+    <li><strong>Scientific simulation</strong> &mdash; fluid dynamics, climate modelling, molecular dynamics.</li>
+    <li><strong>Cryptography and cryptocurrency mining</strong> &mdash; e.g. SHA-256 hashing.</li>
+    <li><strong>Video encoding/decoding</strong> &mdash; parallel processing of blocks within each frame.</li>
+</ul>
+
+<p>GPUs are <em>poor</em> at tasks with lots of branching, sequential logic, or irregular memory access &mdash; the CPU remains far better at single-threaded work, operating system tasks and control logic.</p>
+
+<table>
+    <tr><th>Feature</th><th>CPU</th><th>GPU</th></tr>
+    <tr><td>Cores</td><td>Few (4&ndash;64), complex</td><td>Thousands, simple</td></tr>
+    <tr><td>Clock speed</td><td>High (3&ndash;5 GHz)</td><td>Lower (1&ndash;2 GHz)</td></tr>
+    <tr><td>Design philosophy</td><td>Low latency, complex control</td><td>High throughput, mass SIMD</td></tr>
+    <tr><td>Cache</td><td>Large, hierarchical (L1/L2/L3)</td><td>Small per core, large shared memory</td></tr>
+    <tr><td>Branch handling</td><td>Excellent (branch predictors)</td><td>Poor (cores run in lockstep)</td></tr>
+    <tr><td>Best at</td><td>Sequential logic, OS, varied tasks</td><td>Data-parallel maths, ML, graphics</td></tr>
+</table>
+
+<h3>Co-processors</h3>
+
+<div class="definition">
+    A <strong>co-processor</strong> is a dedicated processor that assists the main CPU by performing a specialised class of operations more efficiently. The CPU offloads tasks to it, freeing the CPU for other work.
+</div>
+
+<p>Examples:</p>
+<ul>
+    <li><strong>FPU (Floating-Point Unit)</strong> &mdash; handles floating-point arithmetic. Historically a separate chip (e.g. Intel 8087); now integrated inside modern CPUs.</li>
+    <li><strong>GPU</strong> &mdash; acts as a co-processor for graphics and SIMD data-parallel work.</li>
+    <li><strong>DSP (Digital Signal Processor)</strong> &mdash; specialised for audio, radio, modem signal processing; optimised for the multiply-accumulate operation.</li>
+    <li><strong>Cryptographic co-processors</strong> &mdash; e.g. AES-NI hardware on x86, TPM chip for key storage.</li>
+    <li><strong>NPU / AI accelerator</strong> &mdash; neural network co-processor in modern phones (Apple Neural Engine, Google Tensor).</li>
+</ul>
+
+<h2>1.1.3 Input, Output and Storage Devices</h2>
+
+<h3>Classifying Devices</h3>
+
+<table>
+    <tr><th>Category</th><th>Direction of data</th><th>Examples</th></tr>
+    <tr><td><strong>Input</strong></td><td>Into the computer</td><td>Keyboard, mouse, scanner, microphone, sensors</td></tr>
+    <tr><td><strong>Output</strong></td><td>Out of the computer</td><td>Monitor, printer, speakers, actuators</td></tr>
+    <tr><td><strong>Storage</strong></td><td>Both (read + write), persistent</td><td>HDD, SSD, optical disc, magnetic tape</td></tr>
+</table>
+
+<p>Devices can also be classified by how humans interact with them:</p>
+<ul>
+    <li><strong>Manual input</strong>: a human deliberately provides data (keyboard, mouse, touchscreen).</li>
+    <li><strong>Automatic input</strong>: data is captured by sensors or readers without human keying &mdash; RFID tag at a warehouse, temperature sensor on a boiler, barcode on a product. Eliminates human transcription error and works continuously.</li>
+</ul>
+
+<h3>Input Devices</h3>
+
+<table>
+    <tr><th>Device</th><th>How it works</th><th>Typical use</th></tr>
+    <tr><td><strong>Keyboard</strong></td><td>Matrix of switches; microcontroller scans the matrix, sends scan codes over USB/Bluetooth.</td><td>Text input, command entry</td></tr>
+    <tr><td><strong>Mouse</strong></td><td>Optical sensor (LED + tiny camera) tracks surface texture; changes sent as dx/dy deltas.</td><td>GUI pointing</td></tr>
+    <tr><td><strong>Scanner</strong></td><td>Strip of CCD/CIS sensors illuminated by LED; captures reflected light to produce a bitmap. OCR software may then convert the image to text.</td><td>Digitising documents and photos</td></tr>
+    <tr><td><strong>Microphone</strong></td><td>Diaphragm vibrates with sound waves, producing an analogue voltage; ADC samples at e.g. 44.1&nbsp;kHz to produce digital audio.</td><td>Voice input, recording, calls</td></tr>
+    <tr><td><strong>Barcode reader</strong></td><td>Laser or CCD reads the widths of black/white stripes representing a number; software looks the code up in a database.</td><td>Retail, inventory, libraries</td></tr>
+    <tr><td><strong>RFID reader</strong></td><td>Reader emits a radio field; a passive tag (with no battery) uses that energy to transmit its unique ID back. Active tags have batteries and longer range.</td><td>Contactless cards, warehouse tracking, passports, livestock tagging</td></tr>
+    <tr><td><strong>Biometric sensors</strong></td><td>Capture a physical or behavioural characteristic: fingerprint (capacitive/optical), iris pattern, face geometry, voice. Converted to a template and compared to a stored one.</td><td>Authentication, border control, phone unlock</td></tr>
+    <tr><td><strong>Sensors</strong> (automatic input)</td><td>Transducers convert a physical quantity to an electrical signal; ADC digitises it. Examples: <strong>temperature</strong> (thermistor, thermocouple), <strong>pressure</strong> (piezoelectric), <strong>light</strong> (LDR, photodiode), <strong>humidity</strong>, <strong>proximity</strong>, <strong>accelerometer/gyro</strong>.</td><td>Embedded/control systems, IoT, cars, weather stations, factory automation</td></tr>
+    <tr><td><strong>Touchscreen</strong></td><td>Capacitive: detects change in electric field when a finger touches the glass. Resistive: two conductive layers pressed together.</td><td>Phones, kiosks, tablets</td></tr>
+</table>
+
+<h3>Output Devices</h3>
+
+<h4>Monitors</h4>
+
+<table>
+    <tr><th>Type</th><th>How it works</th><th>Pros / cons</th></tr>
+    <tr><td><strong>LCD</strong> (Liquid Crystal Display)</td><td>A fluorescent backlight (historically CCFL) shines through a sheet of liquid crystal cells. Each cell twists light by an amount controlled by voltage, and a colour filter and polariser determine which colours reach the viewer.</td><td>Thin, cheap, energy-efficient vs CRT; but requires separate backlight and has limited contrast (blacks are grey).</td></tr>
+    <tr><td><strong>LED</strong> (LED-backlit LCD)</td><td>Same LCD panel, but backlit with <strong>LEDs</strong> instead of a fluorescent tube. The LCD still forms the image; "LED TV" is a marketing term for LED-backlit LCD.</td><td>Thinner, more energy-efficient, better contrast than CCFL (local dimming possible), longer lifetime.</td></tr>
+    <tr><td><strong>OLED</strong> (Organic LED)</td><td>Each pixel is a tiny organic LED that emits its own light when current is applied &mdash; <strong>no backlight</strong>. Black pixels are completely off.</td><td>Perfect blacks, infinite contrast, very thin, flexible, wide viewing angle. Drawbacks: more expensive, organic materials degrade (especially blue pixels) causing possible <strong>burn-in</strong>.</td></tr>
+</table>
+
+<h4>Printers</h4>
+
+<table>
+    <tr><th>Type</th><th>How it works</th><th>Typical use</th></tr>
+    <tr><td><strong>Inkjet</strong></td><td>Print head sprays microscopic droplets of liquid ink onto paper. Droplets are formed by thermal (heating ink to create a bubble) or piezoelectric methods.</td><td>Home printing, photos. Cheap hardware, expensive ink.</td></tr>
+    <tr><td><strong>Laser</strong></td><td>Laser draws the page image as an electrostatic charge pattern on a rotating drum. Charged toner (powdered plastic/pigment) sticks to those areas, is transferred to paper, and fused by heat/pressure from the fuser unit.</td><td>Office, high-volume text. Fast, high quality, lower cost per page.</td></tr>
+    <tr><td><strong>3D printer</strong></td><td>Additive manufacturing &mdash; builds an object layer by layer from a digital model. <strong>FDM</strong>: extrudes molten plastic filament. <strong>SLA</strong>: uses a UV laser to cure liquid resin. <strong>SLS</strong>: sintered powder with a laser.</td><td>Prototyping, custom parts, medical implants, small-run manufacturing.</td></tr>
+</table>
+
+<h4>Speakers and Actuators</h4>
+<ul>
+    <li><strong>Speakers</strong>: DAC converts digital audio to an analogue voltage, amplified and sent to a coil. The coil in a magnetic field moves a diaphragm, producing sound waves.</li>
+    <li><strong>Actuators</strong> are output devices used in control systems to <em>physically act on the environment</em>: motors (rotation), solenoids (linear push/pull), servo motors (precise angular position), relays (switch high-current circuits), heaters, valves, speakers. Essential in embedded/robotic systems &mdash; the output that closes the feedback loop started by sensors.</li>
+</ul>
+
+<h3>Storage Devices</h3>
+
+<h4>Primary Storage</h4>
+
+<div class="definition">
+    <strong>Primary storage</strong> is memory the CPU can access <em>directly</em> via the memory bus: RAM, ROM, cache and registers. Characterised by fast access and relatively small capacity.
+</div>
+
+<table>
+    <tr><th>Type</th><th>Technology</th><th>Volatile?</th><th>Properties</th><th>Use</th></tr>
+    <tr><td><strong>DRAM</strong> (Dynamic RAM)</td><td>Each bit stored as charge on a tiny capacitor with one transistor per cell (1T1C). Charge leaks and must be <strong>refreshed</strong> every few milliseconds.</td><td>Volatile</td><td>High density, low cost per bit, relatively slow. Needs refresh circuitry.</td><td>Main memory (RAM) &mdash; GB-scale capacity.</td></tr>
+    <tr><td><strong>SRAM</strong> (Static RAM)</td><td>Each bit stored in a flip-flop made from 6 transistors. Holds state as long as power is applied &mdash; no refresh.</td><td>Volatile</td><td>Very fast, very expensive per bit, lower density than DRAM.</td><td>CPU caches (L1, L2, L3).</td></tr>
+    <tr><td><strong>ROM</strong> (Read-Only Memory)</td><td>Contents fixed at manufacture or programmed permanently (PROM / EPROM / EEPROM / flash variants).</td><td>Non-volatile</td><td>Read only (or rarely written), retains contents without power.</td><td>Boot firmware (BIOS/UEFI), embedded system program code.</td></tr>
+</table>
+
+<h4>Volatile vs Non-Volatile</h4>
+<ul>
+    <li><strong>Volatile</strong>: contents are lost when power is removed (RAM, cache, registers).</li>
+    <li><strong>Non-volatile</strong>: contents are retained without power (ROM, HDD, SSD, optical, tape).</li>
+</ul>
+
+<h4>Secondary Storage</h4>
+
+<div class="definition">
+    <strong>Secondary storage</strong> is non-volatile storage the CPU accesses indirectly (via I/O controllers). Data must be loaded into RAM before the CPU can process it. Used for long-term retention of OS, applications and user data.
+</div>
+
+<h4>HDD (Hard Disk Drive)</h4>
+
+<p>Stores data as <strong>magnetic patterns</strong> on the surface of spinning aluminium or glass <strong>platters</strong> coated with a thin ferromagnetic film. A <strong>read/write head</strong> floats nanometres above the platter, detecting (read) or altering (write) the magnetisation of tiny regions. Data is organised in concentric <strong>tracks</strong>, subdivided into <strong>sectors</strong> (typically 512&nbsp;B or 4&nbsp;KB). The <strong>spindle</strong> spins platters at 5,400&ndash;15,000&nbsp;RPM; the <strong>actuator arm</strong> positions the head over the correct track.</p>
+
+<!-- HDD Diagram -->
+<svg viewBox="0 0 620 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:620px;margin:20px auto;display:block;">
+  <text x="310" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">HDD Internal Structure</text>
+  <!-- enclosure -->
+  <rect x="20" y="40" width="580" height="260" rx="8" fill="#f9fafb" stroke="#6b7280" stroke-width="1"/>
+  <!-- Platter -->
+  <circle cx="220" cy="170" r="110" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <circle cx="220" cy="170" r="85" fill="none" stroke="#9ca3af" stroke-width="0.7" stroke-dasharray="3,2"/>
+  <circle cx="220" cy="170" r="60" fill="none" stroke="#9ca3af" stroke-width="0.7" stroke-dasharray="3,2"/>
+  <circle cx="220" cy="170" r="35" fill="none" stroke="#9ca3af" stroke-width="0.7" stroke-dasharray="3,2"/>
+  <!-- Spindle -->
+  <circle cx="220" cy="170" r="18" fill="#6b7280" stroke="#374151" stroke-width="1.5"/>
+  <circle cx="220" cy="170" r="6" fill="#111827"/>
+  <!-- Sector wedge -->
+  <path d="M 220 170 L 220 60 A 110 110 0 0 1 299 97 Z" fill="#fef3c7" opacity="0.7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="258" y="78" font-size="10" fill="#92400e" font-weight="bold">sector</text>
+  <!-- Actuator arm -->
+  <circle cx="480" cy="180" r="14" fill="#6b7280" stroke="#374151" stroke-width="1.5"/>
+  <circle cx="480" cy="180" r="5" fill="#111827"/>
+  <polygon points="475,170 485,170 360,140 350,160" fill="#9ca3af" stroke="#374151" stroke-width="1"/>
+  <!-- Head -->
+  <polygon points="350,160 360,140 335,150" fill="#dc2626" stroke="#7f1d1d" stroke-width="1"/>
+  <!-- Labels -->
+  <text x="220" y="298" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Platter</text>
+  <text x="130" y="100" font-size="10" fill="#374151">Tracks</text>
+  <line x1="148" y1="105" x2="170" y2="120" stroke="#374151" stroke-width="0.7"/>
+  <text x="260" y="172" font-size="10" fill="#fff" font-weight="bold">Spindle</text>
+  <text x="480" y="215" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">Pivot</text>
+  <text x="420" y="120" font-size="10" fill="#374151">Actuator arm</text>
+  <line x1="430" y1="125" x2="430" y2="155" stroke="#374151" stroke-width="0.7"/>
+  <text x="330" y="130" font-size="10" fill="#dc2626" font-weight="bold">Read/write head</text>
+  <line x1="348" y1="135" x2="348" y2="148" stroke="#dc2626" stroke-width="0.7"/>
+  <!-- Notes -->
+  <text x="560" y="250" text-anchor="end" font-size="9" fill="#6b7280">Seek time = time to position head over track</text>
+  <text x="560" y="266" text-anchor="end" font-size="9" fill="#6b7280">Rotational latency = wait for sector to pass</text>
+  <text x="560" y="282" text-anchor="end" font-size="9" fill="#6b7280">Spin 5,400&ndash;15,000 RPM</text>
+</svg>
+
+<ul>
+    <li><strong>Pros</strong>: very high capacity (1&ndash;20&nbsp;TB), extremely cheap per GB.</li>
+    <li><strong>Cons</strong>: mechanical parts &rarr; slow (~5&ndash;10&nbsp;ms seek), fragile (shock-sensitive), noisy, higher power.</li>
+</ul>
+
+<h4>SSD (Solid State Drive)</h4>
+
+<p>Stores data in <strong>NAND flash memory</strong> &mdash; grids of floating-gate transistors where trapped electrical charge represents a bit (or multiple bits in MLC/TLC/QLC cells). A controller manages reads, writes and <strong>wear levelling</strong> (spreading writes across all cells since each cell can only be erased a finite number of times &mdash; typically 1,000&ndash;100,000).</p>
+
+<ul>
+    <li><strong>Pros</strong>: no moving parts &rarr; near-instant access (&lt;0.1&nbsp;ms), silent, shock-resistant, low power. NVMe SSDs reach 7,000+&nbsp;MB/s.</li>
+    <li><strong>Cons</strong>: more expensive per GB than HDD; <strong>finite write endurance</strong> (TBW rating); data retention without power degrades slowly over years.</li>
+</ul>
+
+<h4>Optical Discs (CD / DVD / Blu-ray)</h4>
+
+<p>Data is stored as microscopic <strong>pits</strong> and <strong>lands</strong> on a reflective spiral track. A laser shines onto the track: light reflects differently from pits and lands, and the reflected intensity is detected as binary data.</p>
+
+<ul>
+    <li><strong>CD</strong>: infrared laser (780&nbsp;nm), ~700&nbsp;MB.</li>
+    <li><strong>DVD</strong>: red laser (650&nbsp;nm) &mdash; shorter wavelength allows smaller pits, ~4.7&nbsp;GB (single-layer).</li>
+    <li><strong>Blu-ray</strong>: blue-violet laser (405&nbsp;nm) &mdash; even smaller pits, 25&nbsp;GB single-layer, 50&nbsp;GB dual-layer.</li>
+    <li>Writable: R discs use a heat-sensitive dye that the laser burns (permanent); RW discs use a phase-change alloy that can be reset.</li>
+</ul>
+
+<h4>Magnetic Tape</h4>
+
+<p>Thin plastic tape coated in ferromagnetic material, wound in a cartridge. A head magnetises tracks along the tape as it winds from one reel to another. LTO-9 cartridges store up to 18&nbsp;TB native (45&nbsp;TB compressed).</p>
+<ul>
+    <li><strong>Sequential access only</strong> &mdash; random access requires winding the tape to the correct position (can take minutes).</li>
+    <li>Cheapest storage per GB; used for long-term archival (broadcast archives, cold cloud storage, disaster recovery).</li>
+</ul>
+
+<h3>Secondary Storage Comparison</h3>
+
+<table>
+    <tr><th>Type</th><th>Capacity</th><th>Speed</th><th>Cost/GB</th><th>Durability</th><th>Typical use</th></tr>
+    <tr><td>HDD</td><td>1&ndash;20&nbsp;TB</td><td>~100&ndash;200&nbsp;MB/s, 5&ndash;10&nbsp;ms seek</td><td>Very low (~£0.02/GB)</td><td>Fragile (shock); magnetic patterns stable for decades if undisturbed</td><td>Bulk desktop / NAS / servers</td></tr>
+    <tr><td>SSD</td><td>128&nbsp;GB&ndash;8&nbsp;TB</td><td>500&ndash;7,000&nbsp;MB/s, &lt;0.1&nbsp;ms</td><td>Medium (~£0.08/GB)</td><td>Shock-resistant; finite write cycles</td><td>OS drive, laptops, gaming, performance-critical</td></tr>
+    <tr><td>Optical</td><td>700&nbsp;MB (CD) &ndash; 50&nbsp;GB (BD)</td><td>Slow (~1&ndash;72&nbsp;MB/s)</td><td>Very low per disc</td><td>Scratch-sensitive; 50&ndash;100&nbsp;yr if kept properly</td><td>Distribution, archival, read-only media</td></tr>
+    <tr><td>Magnetic tape</td><td>Up to 18&nbsp;TB/cartridge</td><td>Fast sequential (~400&nbsp;MB/s); very slow random</td><td>Extremely low (~£0.003/GB)</td><td>Excellent 30+ year shelf life if stored properly</td><td>Long-term archival, cold backup</td></tr>
+</table>
+
+<h3>Choosing the Right Storage &mdash; Worked Scenarios</h3>
+<pre>
+Scenario 1: A data centre provider stores legal archive data that is
+            almost never read but must be retained for 10+ years.
+Answer:     Magnetic tape. Cheapest cost/GB by orders of magnitude;
+            sequential-only access is acceptable because data is
+            rarely retrieved; excellent shelf life if stored correctly.
+
+Scenario 2: A YouTuber edits 4K video on a laptop and needs fast
+            project loading and scrubbing.
+Answer:     NVMe SSD. Random 4K read/write speed matters for video
+            scrubbing; no moving parts suits a portable device; the
+            higher cost/GB is acceptable at moderate capacities.
+
+Scenario 3: A software company ships a boxed consumer product to
+            high-street retailers.
+Answer:     Optical disc (DVD or Blu-ray). Very cheap per unit,
+            universally readable, tamper-evident, easy to distribute
+            physically. Read-only media suits the use case.
+
+Scenario 4: A photographer wants to store 50 TB of RAW photos at
+            home with the best cost/GB.
+Answer:     HDD (ideally in a RAID NAS). Capacities of 16&ndash;20 TB
+            per drive are cheap; the photographer rarely needs
+            millisecond random access so the HDD's speed limitation
+            is not a problem.
+
+Scenario 5: A car's engine ECU needs to store its firmware.
+Answer:     Flash / ROM. Non-volatile so firmware survives power-off;
+            small capacity but very reliable; no moving parts handles
+            the engine bay's vibration environment.
+</pre>
+
+<h3>Memory Hierarchy</h3>
+
+<p>Storage forms a hierarchy, trading speed for capacity and cost. The CPU first looks in registers, then L1, L2, L3, RAM, and only finally in secondary storage if necessary.</p>
+
+<!-- Memory hierarchy pyramid -->
+<svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">The Memory Hierarchy</text>
+  <!-- Pyramid levels (wider as we go down) -->
+  <polygon points="320,50 400,50 420,90 300,90" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="75" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Registers</text>
+  <polygon points="300,92 420,92 445,138 275,138" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="120" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">L1 Cache</text>
+  <polygon points="275,140 445,140 475,186 245,186" fill="#93c5fd" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="168" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">L2 Cache</text>
+  <polygon points="245,188 475,188 510,234 210,234" fill="#60a5fa" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="216" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">L3 Cache</text>
+  <polygon points="210,236 510,236 550,286 170,286" fill="#3b82f6" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="360" y="266" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">Main Memory (RAM)</text>
+  <polygon points="170,288 550,288 590,338 130,338" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="360" y="318" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">SSD</text>
+  <polygon points="130,340 590,340 630,390 90,390" fill="#1e40af" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="360" y="370" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">HDD / Magnetic Tape</text>
+  <!-- Left axis label: speed -->
+  <text x="60" y="70" font-size="10" fill="#dc2626" font-weight="bold">Faster</text>
+  <text x="60" y="385" font-size="10" fill="#16a34a" font-weight="bold">Slower</text>
+  <line x1="70" y1="75" x2="70" y2="378" stroke="#6b7280" stroke-width="1" marker-start="url(#arrF)"/>
+  <text x="50" y="230" font-size="10" fill="#6b7280" transform="rotate(-90 50 230)">Speed</text>
+  <!-- Right labels -->
+  <text x="650" y="70" font-size="10" fill="#dc2626" font-weight="bold">Costlier</text>
+  <text x="650" y="385" font-size="10" fill="#16a34a" font-weight="bold">Cheaper</text>
+  <text x="690" y="75" font-size="10" fill="#6b7280">Smaller</text>
+  <text x="690" y="385" font-size="10" fill="#6b7280">Bigger</text>
+  <!-- approx figures -->
+  <text x="470" y="75" font-size="9" fill="#374151">~1 KB, &lt;1 cycle</text>
+  <text x="490" y="120" font-size="9" fill="#374151">~64 KB, 1&ndash;4 cyc</text>
+  <text x="510" y="168" font-size="9" fill="#374151">~1 MB, ~10 cyc</text>
+  <text x="540" y="216" font-size="9" fill="#fff">~32 MB, ~40 cyc</text>
+  <text x="580" y="266" font-size="9" fill="#fff">~16 GB, ~200 cyc</text>
+  <text x="610" y="318" font-size="9" fill="#fff">~1 TB, ~100 &micro;s</text>
+  <text x="650" y="370" font-size="9" fill="#fff">~8 TB, ~10 ms</text>
+  <text x="360" y="418" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Each level acts as a cache for the level below it</text>
+</svg>
+
+<h3>RAM vs ROM vs Flash</h3>
+
+<table>
+    <tr><th>Property</th><th>RAM (DRAM)</th><th>ROM</th><th>Flash</th></tr>
+    <tr><td>Volatile?</td><td>Yes</td><td>No</td><td>No</td></tr>
+    <tr><td>Read/write?</td><td>Read and write freely</td><td>Read only (or rarely rewriteable)</td><td>Read freely; write in blocks, limited cycles</td></tr>
+    <tr><td>Typical use</td><td>Working memory for the OS and running programs</td><td>Firmware (BIOS/UEFI); boot code</td><td>SSDs, USB sticks, SD cards, phone storage, embedded firmware</td></tr>
+    <tr><td>Speed</td><td>Fast</td><td>Slow (often read-only lookups)</td><td>Medium (faster read than write)</td></tr>
+    <tr><td>Endurance</td><td>Unlimited writes</td><td>Fixed at manufacture or limited</td><td>Limited erase/write cycles (wear)</td></tr>
+    <tr><td>Example</td><td>16&nbsp;GB DDR4/DDR5 stick</td><td>UEFI firmware chip on motherboard</td><td>NVMe SSD, SD card, eMMC on a phone</td></tr>
+</table>
+
+<div class="exam-tip">A very common question: <em>"Why does a computer need both RAM and ROM?"</em> Answer: <strong>ROM is non-volatile</strong> and holds the bootstrap firmware needed immediately on power-on &mdash; before any OS is loaded. <strong>RAM is volatile</strong> but fast and rewritable, providing working memory for the OS, applications and data once running. You cannot replace RAM with ROM (ROM is slower and not writable for working data) or ROM with RAM (RAM loses its contents at power-off, so the boot code would be gone).</div>
+
+<h3>Virtual Storage</h3>
+
+<div class="definition">
+    <strong>Virtual storage</strong> is storage that <em>appears</em> local to the user or system but is physically provided by one or more remote/distributed servers, typically over a network. Examples: Google Drive, OneDrive, Dropbox, iCloud, Amazon S3, network-attached storage (NAS), SAN (Storage Area Network). The storage hardware is abstracted away behind a uniform interface.
+</div>
+
+<p>Characteristics and benefits:</p>
+<ul>
+    <li><strong>Scalable</strong> &mdash; capacity can grow on demand without changing local hardware.</li>
+    <li><strong>Access from anywhere</strong> &mdash; the same files are available on multiple devices over the internet.</li>
+    <li><strong>Pooled and abstracted</strong> &mdash; multiple physical devices (HDDs, SSDs, tapes) are presented as one logical volume; the user does not see which physical disk their data lives on.</li>
+    <li><strong>Redundancy</strong> &mdash; providers replicate data across drives / data centres, improving durability and availability.</li>
+    <li><strong>Offsite backup</strong> &mdash; protects against local disasters (fire, theft, flood).</li>
+</ul>
+<p>Drawbacks:</p>
+<ul>
+    <li>Requires a reliable <strong>internet connection</strong> &mdash; offline access is limited.</li>
+    <li>Ongoing <strong>subscription cost</strong> rather than one-off hardware purchase.</li>
+    <li><strong>Security / privacy</strong> concerns &mdash; data is held on third-party servers (encryption and trust become critical).</li>
+    <li><strong>Latency</strong> &mdash; slower than local SSD for large transfers.</li>
+</ul>
+
+<div class="exam-tip">"Virtual storage" in H446 means the <em>abstraction</em> of storage over a network or pool &mdash; do not confuse it with <strong>virtual memory</strong> (the OS technique of using a page file on disk to extend apparent RAM). Virtual memory is a 1.2.1 topic; virtual storage is a 1.1.3 topic.</div>
+
+<h3>Key Definitions &mdash; Quick Reference</h3>
+
+<div class="definition"><strong>Throughput</strong> &mdash; the number of instructions completed per unit time. Pipelining and multiple cores improve throughput; clock speed improves both throughput and per-instruction latency.</div>
+
+<div class="definition"><strong>Latency</strong> &mdash; the time from starting a single operation to its completion. A deep pipeline may <em>increase</em> the latency of one instruction (it passes through more stages) while increasing overall throughput.</div>
+
+<div class="definition"><strong>Clock cycle</strong> &mdash; one tick of the CPU's clock. Each cycle one (or more) micro-operations happen. A 3&nbsp;GHz CPU has a cycle time of 1/(3&times;10<sup>9</sup>) s = ~0.33&nbsp;ns.</div>
+
+<div class="definition"><strong>Cache line</strong> &mdash; the unit of data moved between cache and memory on a miss. Typically 64&nbsp;bytes. Loading a whole line at once is how hardware exploits spatial locality.</div>
+
+<div class="definition"><strong>Word size</strong> &mdash; the natural unit of data handled by a CPU (e.g. 64-bit CPUs operate on 64-bit words). Equal to the size of most general-purpose registers and typically the data bus width.</div>
+
+<div class="definition"><strong>Parallelism</strong> &mdash; multiple computations happening at literally the same instant (requires multiple cores, SIMD units, or GPUs). Distinct from <strong>concurrency</strong> (multiple tasks in progress, possibly time-sliced on one core).</div>
+
+<h2>Exam Technique &mdash; Summary Checklist</h2>
+
+<ul>
+    <li>Use <strong>register transfer notation</strong> for FDE questions: <code>MAR &larr; [PC]</code>, not prose.</li>
+    <li>Always state the PC increment as a separate step during fetch.</li>
+    <li>Distinguish clearly between <strong>MAR (address)</strong> and <strong>MDR (data)</strong>.</li>
+    <li>When comparing CISC vs RISC, quote <strong>examples</strong> (x86, ARM) and explain the <strong>trade-off</strong>, not just features.</li>
+    <li>Name the <strong>Von Neumann bottleneck</strong> in architecture-comparison questions.</li>
+    <li>For pipelining, mention that throughput improves because stages overlap, and cite <strong>a named hazard</strong> (data / control / structural) for depth.</li>
+    <li>For cache, mention <strong>locality of reference</strong> (temporal + spatial) and <strong>hit/miss</strong>.</li>
+    <li>For storage recommendations, justify using a property of the technology: moving parts vs none, sequential vs random access, cost/GB vs speed.</li>
+    <li>For GPU questions, emphasise <strong>SIMD</strong> and <strong>thousands of simple cores</strong>, and mention non-graphics uses (ML, simulation, crypto).</li>
+    <li>For virtual storage, do not confuse it with virtual memory.</li>
+</ul>
+
+</div>
+</body>
+</html>

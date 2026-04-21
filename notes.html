@@ -105,6 +105,29 @@
       opacity: 0.6; cursor: default;
     }
 
+    /* Diagnostic-required state — less faded, has a clear CTA */
+    .subject-card.needs-diag {
+      cursor: pointer;
+      border-style: dashed;
+      background: linear-gradient(180deg, var(--surface) 0%, rgba(217,119,6,0.04) 100%);
+    }
+    .subject-card.needs-diag:hover {
+      border-color: #D97706;
+      box-shadow: 0 6px 24px rgba(217,119,6,0.15);
+      transform: translateY(-2px);
+    }
+    .status-diag      { background: rgba(217,119,6,0.1); border: 1px solid rgba(217,119,6,0.25); color: #B45309; }
+    .diag-cta-box {
+      background: rgba(217,119,6,0.06); border: 1px solid rgba(217,119,6,0.18);
+      border-radius: 10px; padding: 10px 12px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 12.5px; color: #B45309; line-height: 1.45;
+    }
+    .diag-cta-box strong { color: #92400E; font-weight: 600; }
+    .diag-cta-icon {
+      font-size: 18px; flex-shrink: 0;
+    }
+
     .card-top { display: flex; align-items: center; gap: 14px; }
 
     .card-emoji {
@@ -255,6 +278,44 @@ function _lvLookup(map, base) {
   const keyed = map[`${base}|${_lvSuffix()}`];
   return keyed !== undefined ? keyed : map[base];
 }
+// Maps "Subject|Board" (plus optional "|alevel" variant) → diagnostic URL.
+// Used to route users to the diagnostic before they can open notes.
+const DIAG_PAGE = {
+  'Computer Science|OCR':         'diagnostics/cs-ocr-gcse-diagnostic.html',
+  'Computer Science|OCR|alevel':  'diagnostics/cs-ocr-alevel-diagnostic.html',
+  'Computer Science|AQA':         'diagnostics/cs-aqa-diagnostic.html',
+  'Physics|Edexcel':              'diagnostics/physics-edexcel-diagnostic.html',
+  'Physics|AQA':                  'diagnostics/physics-aqa-diagnostic.html',
+  'Physics|OCR A':                'diagnostics/physics-ocr-a-diagnostic.html',
+  'Physics|OCR B':                'diagnostics/physics-ocr-b-diagnostic.html',
+  'Economics|AQA':                'diagnostics/economics-aqa-diagnostic.html',
+  'Economics|Edexcel A':          'diagnostics/economics-edexcel-a-diagnostic.html',
+  'Economics|Edexcel B':          'diagnostics/economics-edexcel-b-diagnostic.html',
+  'Economics|OCR':                'diagnostics/economics-ocr-diagnostic.html',
+  'Chemistry|AQA':                'diagnostics/chemistry-aqa-diagnostic.html',
+  'Chemistry|Edexcel':            'diagnostics/chemistry-edexcel-diagnostic.html',
+  'Chemistry|OCR A':              'diagnostics/chemistry-ocr-a-diagnostic.html',
+  'Chemistry|OCR B':              'diagnostics/chemistry-ocr-b-diagnostic.html',
+  'Biology|AQA':                  'diagnostics/biology-aqa-diagnostic.html',
+  'Biology|Edexcel A':            'diagnostics/biology-edexcel-a-diagnostic.html',
+  'Biology|Edexcel B':            'diagnostics/biology-edexcel-b-diagnostic.html',
+  'Biology|OCR A':                'diagnostics/biology-ocr-a-diagnostic.html',
+  'Biology|OCR B':                'diagnostics/biology-ocr-b-diagnostic.html',
+  'Geography|AQA':                'diagnostics/geography-aqa-diagnostic.html',
+  'Geography|Edexcel':            'diagnostics/geography-edexcel-diagnostic.html',
+  'Geography|OCR':                'diagnostics/geography-ocr-diagnostic.html',
+  'Geography|Eduqas':             'diagnostics/geography-eduqas-diagnostic.html',
+  'Mathematics|AQA':              'diagnostics/maths-aqa-diagnostic.html',
+  'Mathematics|OCR':              'diagnostics/maths-ocr-diagnostic.html',
+  'Mathematics|Edexcel':          'diagnostics/maths-edexcel-diagnostic.html',
+  'Further Mathematics|AQA':      'diagnostics/further-maths-aqa-diagnostic.html',
+  'Further Mathematics|Edexcel':  'diagnostics/further-maths-edexcel-diagnostic.html',
+  'Further Mathematics|OCR A':    'diagnostics/further-maths-ocr-diagnostic.html',
+  'Further Mathematics|OCR B':    'diagnostics/further-maths-ocr-b-diagnostic.html',
+  'English Language|AQA':         'diagnostics/english-aqa-diagnostic.html',
+  'English Language|Edexcel':     'diagnostics/english-edexcel-diagnostic.html',
+};
+
 const NOTES_AVAILABLE = {
   'Computer Science|OCR': {
     url: 'subject-notes/cs-ocr-gcse-notes.html',
@@ -743,6 +804,18 @@ async function load() {
 
   const { data: profile  } = await supabaseClient.from('profiles').select('*').eq('id', user.id).single();
   const { data: subjects } = await supabaseClient.from('user_subjects').select('*').eq('user_id', user.id).order('created_at');
+  const { data: progress } = await supabaseClient.from('topic_progress').select('subject, exam_board').eq('user_id', user.id);
+
+  // Build set of subject|board keys that have at least one diagnostic topic
+  // recorded — the diagnostic-started gate for unlocking notes.
+  const diagStarted = new Set(
+    (progress || []).map(p => `${p.subject}|${p.exam_board}`)
+  );
+  const diagCount = {};
+  (progress || []).forEach(p => {
+    const k = `${p.subject}|${p.exam_board}`;
+    diagCount[k] = (diagCount[k] || 0) + 1;
+  });
 
   const firstName = profile?.first_name || '';
   const lastName  = profile?.last_name  || '';
@@ -751,8 +824,16 @@ async function load() {
   document.getElementById('avatarInitials').textContent = ((firstName[0]||'')+(lastName[0]||'')).toUpperCase() || '?';
 
   const list = subjects || [];
+  const lockedCount = list.filter(s => {
+    const key = `${s.subject}|${s.exam_board}`;
+    return !!_lvLookup(NOTES_AVAILABLE, key)
+        && !diagStarted.has(key)
+        && !!_lvLookup(DIAG_PAGE, key);
+  }).length;
   document.getElementById('pageSubTitle').textContent =
-    `${list.length} subject${list.length !== 1 ? 's' : ''} — click one to open its notes`;
+    lockedCount > 0
+      ? `${list.length} subject${list.length !== 1 ? 's' : ''} — ${lockedCount} need${lockedCount === 1 ? 's' : ''} a diagnostic before notes unlock`
+      : `${list.length} subject${list.length !== 1 ? 's' : ''} — click one to open its notes`;
 
   const grid = document.getElementById('subjectsGrid');
 
@@ -766,34 +847,18 @@ async function load() {
   }
 
   grid.innerHTML = list.map(s => {
-    const notes    = _lvLookup(NOTES_AVAILABLE, `${s.subject}|${s.exam_board}`);
+    const key      = `${s.subject}|${s.exam_board}`;
+    const notes    = _lvLookup(NOTES_AVAILABLE, key);
     const available = !!notes;
     const topics   = notes?.topics || [];
     const preview  = topics.slice(0, 3);
+    const hasDiag  = diagStarted.has(key);
+    const diagUrl  = _lvLookup(DIAG_PAGE, key);
+    const tested   = diagCount[key] || 0;
+    const total    = topics.length;
 
-    return available
-      ? `<a href="${notes.url}" class="subject-card available">
-          <div class="card-top">
-            <div class="card-emoji">${s.emoji || '📚'}</div>
-            <div class="card-info">
-              <div class="card-name">${s.subject}</div>
-              <div class="card-board">${s.exam_board}</div>
-            </div>
-          </div>
-          <div class="card-topics">
-            ${preview.map(t => `
-              <div class="card-topic-row">
-                <span class="card-topic-num">${t.num}</span>
-                <span>${t.name}</span>
-              </div>`).join('')}
-            ${topics.length > 3 ? `<div class="card-topic-row" style="color:var(--accent-dark);font-weight:500;">+ ${topics.length - 3} more topics</div>` : ''}
-          </div>
-          <div class="card-footer">
-            <span class="card-status status-available">✓ Notes available</span>
-            <span class="card-arrow">→</span>
-          </div>
-        </a>`
-      : `<div class="subject-card locked">
+    if (!available) {
+      return `<div class="subject-card locked">
           <div class="card-top">
             <div class="card-emoji">${s.emoji || '📚'}</div>
             <div class="card-info">
@@ -806,6 +871,57 @@ async function load() {
             <span class="card-arrow">—</span>
           </div>
         </div>`;
+    }
+
+    // Notes exist but diagnostic hasn't been started — gate behind diagnostic.
+    if (!hasDiag && diagUrl) {
+      return `<a href="${diagUrl}" class="subject-card needs-diag">
+          <div class="card-top">
+            <div class="card-emoji">${s.emoji || '📚'}</div>
+            <div class="card-info">
+              <div class="card-name">${s.subject}</div>
+              <div class="card-board">${s.exam_board}</div>
+            </div>
+          </div>
+          <div class="diag-cta-box">
+            <span class="diag-cta-icon">◎</span>
+            <span><strong>Take the diagnostic first</strong> — it gives you a RAG colour on each topic so your notes can be prioritised. ${total ? `${total} topics` : ''}</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-status status-diag">🔒 Notes locked — diagnostic required</span>
+            <span class="card-arrow" style="color:#D97706;">→</span>
+          </div>
+        </a>`;
+    }
+
+    // Fully unlocked state. Show tested / total if partly tested so the
+    // diagnostic still feels worth finishing.
+    const progressHint = (tested > 0 && total > 0 && tested < total)
+      ? `<span class="card-status status-diag" style="margin-left:8px;">◎ ${tested}/${total} tested</span>`
+      : '';
+
+    return `<a href="${notes.url}" class="subject-card available">
+        <div class="card-top">
+          <div class="card-emoji">${s.emoji || '📚'}</div>
+          <div class="card-info">
+            <div class="card-name">${s.subject}</div>
+            <div class="card-board">${s.exam_board}</div>
+          </div>
+        </div>
+        <div class="card-topics">
+          ${preview.map(t => `
+            <div class="card-topic-row">
+              <span class="card-topic-num">${t.num}</span>
+              <span>${t.name}</span>
+            </div>`).join('')}
+          ${topics.length > 3 ? `<div class="card-topic-row" style="color:var(--accent-dark);font-weight:500;">+ ${topics.length - 3} more topics</div>` : ''}
+        </div>
+        <div class="card-footer">
+          <span class="card-status status-available">✓ Notes available</span>
+          ${progressHint}
+          <span class="card-arrow">→</span>
+        </div>
+      </a>`;
   }).join('');
 }
 

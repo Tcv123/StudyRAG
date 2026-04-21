@@ -96,6 +96,17 @@
       cursor: pointer; transition: all 0.15s;
     }
     .subj-pick:hover { border-color: var(--border-hover); background: var(--surface2); }
+    .subj-pick.needs-diag {
+      border-style: dashed; border-color: rgba(217,119,6,0.35);
+      background: linear-gradient(180deg, var(--surface) 0%, rgba(217,119,6,0.04) 100%);
+    }
+    .subj-pick.needs-diag:hover { border-color: #D97706; background: rgba(217,119,6,0.06); }
+    .subj-pick-diag-tag {
+      display: inline-block; font-size: 10px; font-weight: 600;
+      background: rgba(217,119,6,0.1); border: 1px solid rgba(217,119,6,0.25);
+      color: #B45309; padding: 2px 7px; border-radius: 12px;
+      margin-left: 6px; vertical-align: middle;
+    }
     .subj-pick-emoji {
       width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
       background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.2);
@@ -1331,6 +1342,45 @@ const SUBJECT_EMOJIS = Object.fromEntries(
   (window.SUBJECTS_CONFIG?.subjects || []).map(s => [s.name, s.emoji])
 );
 
+// Maps "Subject_Board" (plus optional "_Board|alevel" variant) → diagnostic URL.
+// Used to gate practice behind diagnostic completion so users start with a
+// RAG baseline before drilling questions.
+const DIAG_PAGE = {
+  'Computer Science_OCR':         'diagnostics/cs-ocr-gcse-diagnostic.html',
+  'Computer Science_OCR|alevel':  'diagnostics/cs-ocr-alevel-diagnostic.html',
+  'Computer Science_AQA':         'diagnostics/cs-aqa-diagnostic.html',
+  'Physics_Edexcel':              'diagnostics/physics-edexcel-diagnostic.html',
+  'Physics_AQA':                  'diagnostics/physics-aqa-diagnostic.html',
+  'Physics_OCR A':                'diagnostics/physics-ocr-a-diagnostic.html',
+  'Physics_OCR B':                'diagnostics/physics-ocr-b-diagnostic.html',
+  'Economics_AQA':                'diagnostics/economics-aqa-diagnostic.html',
+  'Economics_Edexcel A':          'diagnostics/economics-edexcel-a-diagnostic.html',
+  'Economics_Edexcel B':          'diagnostics/economics-edexcel-b-diagnostic.html',
+  'Economics_OCR':                'diagnostics/economics-ocr-diagnostic.html',
+  'Chemistry_AQA':                'diagnostics/chemistry-aqa-diagnostic.html',
+  'Chemistry_Edexcel':            'diagnostics/chemistry-edexcel-diagnostic.html',
+  'Chemistry_OCR A':              'diagnostics/chemistry-ocr-a-diagnostic.html',
+  'Chemistry_OCR B':              'diagnostics/chemistry-ocr-b-diagnostic.html',
+  'Biology_AQA':                  'diagnostics/biology-aqa-diagnostic.html',
+  'Biology_Edexcel A':            'diagnostics/biology-edexcel-a-diagnostic.html',
+  'Biology_Edexcel B':            'diagnostics/biology-edexcel-b-diagnostic.html',
+  'Biology_OCR A':                'diagnostics/biology-ocr-a-diagnostic.html',
+  'Biology_OCR B':                'diagnostics/biology-ocr-b-diagnostic.html',
+  'Geography_AQA':                'diagnostics/geography-aqa-diagnostic.html',
+  'Geography_Edexcel':            'diagnostics/geography-edexcel-diagnostic.html',
+  'Geography_OCR':                'diagnostics/geography-ocr-diagnostic.html',
+  'Geography_Eduqas':             'diagnostics/geography-eduqas-diagnostic.html',
+  'Mathematics_AQA':              'diagnostics/maths-aqa-diagnostic.html',
+  'Mathematics_OCR':              'diagnostics/maths-ocr-diagnostic.html',
+  'Mathematics_Edexcel':          'diagnostics/maths-edexcel-diagnostic.html',
+  'Further Mathematics_AQA':      'diagnostics/further-maths-aqa-diagnostic.html',
+  'Further Mathematics_Edexcel':  'diagnostics/further-maths-edexcel-diagnostic.html',
+  'Further Mathematics_OCR A':    'diagnostics/further-maths-ocr-diagnostic.html',
+  'Further Mathematics_OCR B':    'diagnostics/further-maths-ocr-b-diagnostic.html',
+  'English Language_AQA':         'diagnostics/english-aqa-diagnostic.html',
+  'English Language_Edexcel':     'diagnostics/english-edexcel-diagnostic.html',
+};
+
 async function init() {
   const { data: { session } } = await supabaseClient.auth.getSession();
   if (!session) { location.href = 'auth/login.html'; return; }
@@ -1409,6 +1459,23 @@ function showSubjectCards() {
     const amber = subjProgress.filter(p => p.rag_status === 'amber').length;
     const red = subjProgress.filter(p => p.rag_status === 'red').length;
     const tested = green + amber + red;
+
+    // Diagnostic gate — push users to diagnostic before practice if they
+    // haven't recorded any RAG data for this subject+board yet.
+    if (tested === 0) {
+      const diagUrl = _lvLookup(DIAG_PAGE, key);
+      if (diagUrl) {
+        return `
+          <a href="${diagUrl}" class="subj-pick needs-diag" style="text-decoration:none;color:inherit;" title="Start with the diagnostic to unlock practice questions.">
+            <div class="subj-pick-emoji">${emoji}</div>
+            <div class="subj-pick-info">
+              <div class="subj-pick-name">${s.subject}<span class="subj-pick-diag-tag">◎ Diagnostic first</span></div>
+              <div class="subj-pick-board">${s.exam_board} · <span style="font-size:11px;color:#B45309;">Take the diagnostic to unlock practice</span></div>
+            </div>
+            <div class="subj-pick-arrow" style="color:#D97706;">→</div>
+          </a>`;
+      }
+    }
 
     const ragSummary = tested > 0
       ? `<span style="font-size:11px;color:var(--muted);">${tested}/${totalTopics} tested</span>`
