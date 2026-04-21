@@ -175,8 +175,9 @@
       margin-bottom: 12px;
     }
     .trend-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: baseline; }
-    .trend-avg { font-family: var(--font-display); font-size: 18px; color: var(--text); letter-spacing: -0.01em; text-transform: none; }
+    .trend-avg { font-family: var(--font-display); font-size: 18px; color: var(--text); letter-spacing: -0.01em; text-transform: none; display: inline-flex; flex-wrap: wrap; align-items: baseline; justify-content: flex-end; gap: 0 4px; }
     .trend-avg span { font-size: 11px; font-weight: 500; color: var(--muted); margin-left: 4px; letter-spacing: 0; font-family: var(--font-body); }
+    .trend-avg .trend-grade { flex-basis: 100%; margin-left: 0; text-align: right; font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--accent-dark, var(--text)); margin-top: 2px; }
     .trend-svg { width: 100%; height: 140px; display: block; }
     .trend-svg .grid-line { stroke: var(--border); stroke-width: 1; stroke-dasharray: 2 3; }
     .trend-svg .grid-label { font-size: 9px; fill: var(--muted2); font-family: var(--font-body); }
@@ -1287,6 +1288,28 @@ function sparkClass(pct) {
   return pct >= 70 ? 'green' : pct >= 40 ? 'amber' : 'red';
 }
 
+function pctToGrade(pct) {
+  if (_lvSuffix() === 'alevel') {
+    if (pct >= 80) return 'A*';
+    if (pct >= 70) return 'A';
+    if (pct >= 60) return 'B';
+    if (pct >= 50) return 'C';
+    if (pct >= 40) return 'D';
+    if (pct >= 30) return 'E';
+    return 'U';
+  }
+  if (pct >= 85) return '9';
+  if (pct >= 75) return '8';
+  if (pct >= 65) return '7';
+  if (pct >= 55) return '6';
+  if (pct >= 45) return '5';
+  if (pct >= 35) return '4';
+  if (pct >= 25) return '3';
+  if (pct >= 15) return '2';
+  if (pct >= 5)  return '1';
+  return 'U';
+}
+
 function renderTrendChart(sorted, avgPct) {
   const n = sorted.length;
   const W = 600, H = 140;
@@ -1328,7 +1351,7 @@ function renderTrendChart(sorted, avgPct) {
   return `<div class="trend-chart">
     <div class="trend-title">
       <span>Score trend</span>
-      <span class="trend-avg">${avgPct}%<span>average over ${n} test${n === 1 ? '' : 's'}</span></span>
+      <span class="trend-avg">${avgPct}%<span>average over ${n} test${n === 1 ? '' : 's'}</span><span class="trend-grade">Grade ${pctToGrade(avgPct)}</span></span>
     </div>
     <svg class="trend-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">
       ${grid}
