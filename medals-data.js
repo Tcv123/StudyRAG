@@ -10,11 +10,11 @@ const ALL_MEDALS = [
   { id: 'profile_complete',  icon: '👤', name: 'Identity',          desc: 'Set your name and details',                 cat: 'Getting Started' },
 
   // ── Diagnostic Milestones ──
-  { id: 'diag_5',            icon: '📝', name: 'Warming Up',        desc: 'Complete 5 diagnostics',                    cat: 'Diagnostic Milestones' },
-  { id: 'diag_10',           icon: '📋', name: 'Getting Serious',   desc: 'Complete 10 diagnostics',                   cat: 'Diagnostic Milestones' },
-  { id: 'diag_25',           icon: '📊', name: 'Dedicated',         desc: 'Complete 25 diagnostics',                   cat: 'Diagnostic Milestones' },
-  { id: 'diag_50',           icon: '🗂️', name: 'Half Century',      desc: 'Complete 50 diagnostics',                   cat: 'Diagnostic Milestones' },
-  { id: 'diag_100',          icon: '💯', name: 'Century',           desc: 'Complete 100 diagnostics',                  cat: 'Diagnostic Milestones' },
+  { id: 'diag_5',            icon: '📝', name: 'Warming Up',        desc: 'Test 5 topics (or all of yours)',           cat: 'Diagnostic Milestones' },
+  { id: 'diag_10',           icon: '📋', name: 'Getting Serious',   desc: 'Test 10 topics (or all of yours)',          cat: 'Diagnostic Milestones' },
+  { id: 'diag_25',           icon: '📊', name: 'Dedicated',         desc: 'Test 25 topics (or all of yours)',          cat: 'Diagnostic Milestones' },
+  { id: 'diag_50',           icon: '🗂️', name: 'Half Century',      desc: 'Test half your topics (up to 50)',          cat: 'Diagnostic Milestones' },
+  { id: 'diag_100',          icon: '💯', name: 'Century',           desc: 'Test 100 topics (or every topic you study)', cat: 'Diagnostic Milestones' },
 
   // ── Perfect Scores ──
   { id: 'perfect_score',     icon: '⚡', name: 'Perfect Score',     desc: 'Get every question right in a diagnostic',  cat: 'Perfect Scores' },
@@ -24,9 +24,9 @@ const ALL_MEDALS = [
   // ── Green Topics ──
   { id: 'green_3',           icon: '🌱', name: 'Sprouting',         desc: 'Get 3 topics to green',                     cat: 'Green Topics' },
   { id: 'green_5',           icon: '🌿', name: 'Growing',           desc: 'Get 5 topics to green',                     cat: 'Green Topics' },
-  { id: 'green_10',          icon: '🌳', name: 'Flourishing',       desc: 'Get 10 topics to green',                    cat: 'Green Topics' },
-  { id: 'green_20',          icon: '🏕️', name: 'Forest',            desc: 'Get 20 topics to green',                    cat: 'Green Topics' },
-  { id: 'green_50',          icon: '🌍', name: 'Green Planet',      desc: 'Get 50 topics to green',                    cat: 'Green Topics' },
+  { id: 'green_10',          icon: '🌳', name: 'Flourishing',       desc: 'Get 10 topics to green (or all of yours)',  cat: 'Green Topics' },
+  { id: 'green_20',          icon: '🏕️', name: 'Forest',            desc: 'Get 20 topics to green (or a quarter)',     cat: 'Green Topics' },
+  { id: 'green_50',          icon: '🌍', name: 'Green Planet',      desc: 'Get half your topics to green (up to 50)',  cat: 'Green Topics' },
 
   // ── Subject Mastery ──
   { id: 'subject_master',    icon: '📚', name: 'Subject Master',    desc: 'Get all topics green in one subject',       cat: 'Subject Mastery' },
@@ -89,15 +89,15 @@ const ALL_MEDALS = [
   { id: 'amber_to_green_3',  icon: '🔀', name: 'Levelling Up',      desc: 'Move 3 topics from amber to green',         cat: 'Amber Milestones' },
 
   // ── Diagnostic Depth ──
-  { id: 'diag_150',          icon: '📚', name: 'Bookworm',          desc: 'Complete 150 diagnostics',                  cat: 'Diagnostic Depth' },
-  { id: 'diag_200',          icon: '🏛️', name: 'Academic',          desc: 'Complete 200 diagnostics',                  cat: 'Diagnostic Depth' },
+  { id: 'diag_150',          icon: '📚', name: 'Bookworm',          desc: 'Test every single topic in your curriculum', cat: 'Diagnostic Depth' },
+  { id: 'diag_200',          icon: '🏛️', name: 'Academic',          desc: 'Reach amber or green on every topic',       cat: 'Diagnostic Depth' },
   { id: 'daily_10_diag',     icon: '💪', name: 'Marathon Runner',   desc: 'Complete 10 diagnostics in one day',        cat: 'Diagnostic Depth' },
   { id: 'all_boards_tested', icon: '🌐', name: 'Board Explorer',    desc: 'Test topics from every exam board you study', cat: 'Diagnostic Depth' },
   { id: 'daily_7_diag',      icon: '🏋️', name: 'Heavy Lifter',      desc: 'Complete 7 diagnostics in one day',         cat: 'Diagnostic Depth' },
 
   // ── Green Topics Extended ──
-  { id: 'green_75',          icon: '🌲', name: 'Evergreen',         desc: 'Get 75 topics to green',                    cat: 'Green Topics' },
-  { id: 'green_100',         icon: '💚', name: 'Green Machine',     desc: 'Get 100 topics to green',                   cat: 'Green Topics' },
+  { id: 'green_75',          icon: '🌲', name: 'Evergreen',         desc: 'Get 75% of your topics to green',           cat: 'Green Topics' },
+  { id: 'green_100',         icon: '💚', name: 'Green Machine',     desc: 'Get 100 topics to green (or every topic you study)', cat: 'Green Topics' },
   { id: 'green_all_one_board', icon: '🎪', name: 'Board Master',    desc: 'All green in one exam board',               cat: 'Green Topics' },
 
   // ── Practice Questions ──

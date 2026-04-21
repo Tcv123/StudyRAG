@@ -1238,6 +1238,17 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   const totalTested = topicRows.length;
   const nonRed      = greenTopics + amberTopics;
 
+  // Total topics across all the user's subjects — used to scale medal thresholds
+  // so that they're achievable for users with fewer topics in their curriculum.
+  let totalCurriculumTopics = 0;
+  for (const s of subjects) {
+    const key = SUBJECT_TOPIC_KEY[`${s.subject}_${s.exam_board}`];
+    totalCurriculumTopics += TOPIC_TOTAL[key] || 0;
+  }
+  // Scaled threshold: never require more than the user actually has
+  const scale = (n) => Math.min(n, Math.max(1, totalCurriculumTopics));
+  const frac  = (p) => Math.max(1, Math.ceil(totalCurriculumTopics * p));
+
   // ── Getting Started ──
   if (totalTested >= 1)       award('first_diagnostic');
   if (greenTopics >= 1)       award('first_green');
@@ -1246,11 +1257,11 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   // profile_complete checked below with profile data
 
   // ── Diagnostic Milestones ──
-  if (totalTested >= 5)   award('diag_5');
-  if (totalTested >= 10)  award('diag_10');
-  if (totalTested >= 25)  award('diag_25');
-  if (totalTested >= 50)  award('diag_50');
-  if (totalTested >= 100) award('diag_100');
+  if (totalTested >= Math.min(5, scale(5)))   award('diag_5');
+  if (totalTested >= Math.min(10, scale(10))) award('diag_10');
+  if (totalTested >= scale(25))               award('diag_25');
+  if (totalTested >= Math.max(scale(50), frac(0.5)))  award('diag_50');
+  if (totalTested >= scale(100))              award('diag_100');
 
   // perfect_score, perfect_3, perfect_10 — awarded from cs-diagnostic.html
   // We check the count of perfect_score medals stored (they get inserted per-perfect)
@@ -1259,9 +1270,9 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   // ── Green Topics ──
   if (greenTopics >= 3)  award('green_3');
   if (greenTopics >= 5)  award('green_5');
-  if (greenTopics >= 10) award('green_10');
-  if (greenTopics >= 20) award('green_20');
-  if (greenTopics >= 50) award('green_50');
+  if (greenTopics >= Math.min(10, scale(10))) award('green_10');
+  if (greenTopics >= Math.min(20, Math.max(scale(20), frac(0.25)))) award('green_20');
+  if (greenTopics >= Math.max(scale(50), frac(0.5))) award('green_50');
 
   // ── Subject Mastery ──
   let masteredCount = 0;
@@ -1329,11 +1340,7 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   if (dayOfWeek === 0 || dayOfWeek === 6) award('weekend_warrior');
 
   // ── Coverage ──
-  let totalAllTopics = 0;
-  for (const s of subjects) {
-    const key = SUBJECT_TOPIC_KEY[`${s.subject}_${s.exam_board}`];
-    totalAllTopics += TOPIC_TOTAL[key] || 0;
-  }
+  const totalAllTopics = totalCurriculumTopics;
   if (totalAllTopics > 0 && totalTested >= Math.ceil(totalAllTopics / 2)) award('half_topics');
   if (totalAllTopics > 0 && totalTested >= totalAllTopics) award('all_topics_tested');
 
@@ -1355,8 +1362,11 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   if (greenTopics >= 3) award('amber_to_green_3');
 
   // ── Diagnostic Depth ──
-  if (totalTested >= 150) award('diag_150');
-  if (totalTested >= 200) award('diag_200');
+  // These used to demand 150/200 distinct topics tested, impossible for most
+  // curricula. Repurposed: diag_150 awards once every topic has been tested,
+  // diag_200 once every topic is non-red (green or amber).
+  if (totalTested >= totalCurriculumTopics && totalCurriculumTopics > 0) award('diag_150');
+  if (totalCurriculumTopics > 0 && nonRed >= totalCurriculumTopics) award('diag_200');
 
   // daily diagnostics — count today's entries
   const today = new Date().toISOString().slice(0, 10);
@@ -1373,8 +1383,8 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   if (allBoardsTested && subjects.length > 0) award('all_boards_tested');
 
   // ── Green Topics Extended ──
-  if (greenTopics >= 75)  award('green_75');
-  if (greenTopics >= 100) award('green_100');
+  if (greenTopics >= Math.max(scale(75),  frac(0.75))) award('green_75');
+  if (greenTopics >= scale(100)) award('green_100');
   // green_all_one_board — check if any single subject has all topics green
   for (const s of subjects) {
     const key = SUBJECT_TOPIC_KEY[`${s.subject}_${s.exam_board}`];
@@ -1403,7 +1413,6 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   if (currentHour >= 16 && currentHour < 19) award('after_school');
   const currentDay = new Date().getDay();
   if (currentDay === 0 || currentDay === 6) award('weekend_scholar');
-  if (currentDay === 1) award('monday_motivation');
   if (currentHour >= 0 && currentHour < 3) award('midnight_oil');
 
   // ── Comeback & Recovery ──
