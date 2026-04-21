@@ -992,20 +992,36 @@
 <script src="supabase-config.js"></script>
 <script>
   (async () => {
+    const params = new URLSearchParams(window.location.search);
+    const skipAutoRedirect = params.has('stay') || params.has('signedout');
+
     const { data: { session } } = await supabaseClient.auth.getSession();
     const loggedIn = !!session;
+
+    if (loggedIn && !skipAutoRedirect) {
+      const lastSignIn = session.user?.last_sign_in_at;
+      if (lastSignIn) {
+        const hoursSince = (Date.now() - new Date(lastSignIn).getTime()) / 36e5;
+        if (hoursSince < 24) {
+          window.location.replace('Dashboard.html');
+          return;
+        }
+      }
+    }
+
     document.querySelectorAll('[data-auth="in"]').forEach(el => {
       el.style.display = loggedIn ? '' : 'none';
     });
     document.querySelectorAll('[data-auth="out"]').forEach(el => {
       el.style.display = loggedIn ? 'none' : '';
     });
+
     const signOutBtn = document.getElementById('signOutBtn');
     if (signOutBtn) {
       signOutBtn.addEventListener('click', async (e) => {
         e.preventDefault();
         await supabaseClient.auth.signOut();
-        window.location.reload();
+        window.location.replace('index.html?signedout=1');
       });
     }
   })();
