@@ -694,10 +694,19 @@
         </div>
 
         <div id="examDatesRow" style="margin-top:10px;">
-          <div class="section-hd" style="margin-bottom:8px;">
+          <div class="section-hd" style="margin-bottom:12px;">
             <div class="section-title">📅 Upcoming exams</div>
           </div>
-          <div id="examDatesGrid"></div>
+          <!-- Month nav -->
+          <div id="examCalNav" style="display:none;align-items:center;gap:12px;margin-bottom:14px;">
+            <button id="examCalPrev" onclick="shiftExamCalMonth(-1)" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--border-hover);background:var(--surface);cursor:pointer;font-size:20px;font-weight:700;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(91,173,207,0.15);transition:all 0.15s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='var(--surface)'">‹</button>
+            <div id="examCalMonthLabel" style="font-family:var(--font-display);font-size:20px;flex:1;text-align:center;letter-spacing:-0.01em;color:var(--text);"></div>
+            <button id="examCalNext" onclick="shiftExamCalMonth(1)" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--border-hover);background:var(--surface);cursor:pointer;font-size:20px;font-weight:700;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(91,173,207,0.15);transition:all 0.15s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='var(--surface)'">›</button>
+          </div>
+          <!-- Calendar grid -->
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
+            <div id="examDatesGrid"></div>
+          </div>
         </div>
       </div>
 
@@ -919,107 +928,146 @@ const EXAM_DATES = {
   ],
 };
 
-function toggleExamDates() {
-  const ex = document.getElementById('examExtra');
-  const tog = document.getElementById('examToggle');
-  if (!ex || !tog) return;
-  const vis = ex.style.display === 'none';
-  ex.style.display = vis ? 'block' : 'none';
-  const remaining = tog.getAttribute('data-remaining');
-  tog.textContent = vis ? 'Show less ▴' : `+ ${remaining} more exams ▾`;
-}
+// ── Exam calendar (matches breakdown.html so the two views don't drift) ──
+const DASH_SUBJ_COLOR  = {'Computer Science':'#6366F1','Mathematics':'#8B5CF6','Further Mathematics':'#7C3AED','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6','English Language':'#DC2626'};
+const DASH_BOARD_COLOR = {'AQA':'#7C3AED','OCR':'#0369A1','Edexcel':'#B45309','Edexcel A':'#B45309','Edexcel B':'#92400E','OCR A':'#0E7490','OCR B':'#0F766E','Eduqas':'#047857'};
+const DASH_BOARD_BG    = {'AQA':'rgba(124,58,237,0.1)','OCR':'rgba(3,105,161,0.1)','Edexcel':'rgba(180,83,9,0.1)','Edexcel A':'rgba(180,83,9,0.1)','Edexcel B':'rgba(146,64,14,0.1)','OCR A':'rgba(14,116,144,0.1)','OCR B':'rgba(15,118,110,0.1)','Eduqas':'rgba(4,120,87,0.1)'};
+const DASH_SUBJ_EMOJI  = {'Computer Science':'💻','Mathematics':'🔢','Further Mathematics':'∑','Biology':'🧬','Chemistry':'🧪','Physics':'⚡','Economics':'📈','Geography':'🌍','English Language':'📝'};
+
+let _dashCalExams  = [];
+let _dashCalMonths = [];
+let _dashCalYear;
+let _dashCalMonth;
 
 function renderExamDates(subjects) {
   const grid = document.getElementById('examDatesGrid');
   const row  = document.getElementById('examDatesRow');
+  const nav  = document.getElementById('examCalNav');
   if (!grid) return;
 
-
-  const now   = new Date();
-  const EMOJI = { 'Computer Science':'💻','Mathematics':'🔢','Further Mathematics':'∑','Biology':'🧬','Chemistry':'🧪','Physics':'⚡','Economics':'📈','Geography':'🌍','English Language':'📝' };
-  const exams = [];
+  const now = new Date();
+  _dashCalExams = [];
 
   (subjects || []).forEach(s => {
-    const key   = `${s.subject}_${s.exam_board}`;
-    const dates = EXAM_DATES[key];
+    const dates = EXAM_DATES[`${s.subject}_${s.exam_board}`];
     if (!dates) return;
-    const emoji = EMOJI[s.subject] || '📚';
     dates.forEach(d => {
       const examDate = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
       const diffDays = Math.ceil((examDate - now) / 86400000);
-      exams.push({ ...d, subject: s.subject, board: s.exam_board, emoji, examDate, diffDays });
+      if (diffDays >= 0) _dashCalExams.push({ ...d, subject: s.subject, board: s.exam_board, emoji: DASH_SUBJ_EMOJI[s.subject] || '📚', examDate, diffDays });
     });
   });
 
-  const upcoming = exams.filter(e => e.diffDays >= 0).sort((a, b) => a.examDate - b.examDate);
+  if (!_dashCalExams.length) { if (row) row.style.display = 'none'; return; }
+  if (row) row.style.display = '';
+  if (nav) nav.style.display = 'flex';
 
-  if (!upcoming.length) { if (row) row.style.display = 'none'; return; }
+  _dashCalExams.sort((a, b) => a.examDate - b.examDate);
 
-  // Group by month
-  const byMonth = {};
-  upcoming.forEach(e => {
-    const key = e.examDate.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
-    if (!byMonth[key]) byMonth[key] = [];
-    byMonth[key].push(e);
+  const seen = new Set();
+  _dashCalMonths = [];
+  _dashCalExams.forEach(e => {
+    const key = `${e.examDate.getFullYear()}-${e.examDate.getMonth()}`;
+    if (!seen.has(key)) { seen.add(key); _dashCalMonths.push({ year: e.examDate.getFullYear(), month: e.examDate.getMonth() }); }
   });
 
-  const SHOW_INITIAL = 6;
-  let count = 0;
-  let html = '';
+  _dashCalYear  = _dashCalMonths[0].year;
+  _dashCalMonth = _dashCalMonths[0].month;
+  renderExamCalendar();
+}
 
-  const allRows = [];
-  for (const [month, items] of Object.entries(byMonth)) {
-    allRows.push({ type: 'month', month });
-    items.forEach(e => allRows.push({ type: 'exam', e }));
+function shiftExamCalMonth(dir) {
+  const idx = _dashCalMonths.findIndex(m => m.year === _dashCalYear && m.month === _dashCalMonth);
+  const next = _dashCalMonths[idx + dir];
+  if (!next) return;
+  _dashCalYear  = next.year;
+  _dashCalMonth = next.month;
+  renderExamCalendar();
+}
+
+function renderExamCalendar() {
+  const label = document.getElementById('examCalMonthLabel');
+  const grid  = document.getElementById('examDatesGrid');
+  if (!label || !grid) return;
+
+  label.textContent = new Date(_dashCalYear, _dashCalMonth, 1).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+
+  const idx = _dashCalMonths.findIndex(m => m.year === _dashCalYear && m.month === _dashCalMonth);
+  const prevBtn = document.getElementById('examCalPrev');
+  const nextBtn = document.getElementById('examCalNext');
+  if (prevBtn) { prevBtn.disabled = idx <= 0; prevBtn.style.opacity = idx <= 0 ? '0.3' : '1'; prevBtn.style.cursor = idx <= 0 ? 'default' : 'pointer'; }
+  if (nextBtn) { nextBtn.disabled = idx >= _dashCalMonths.length - 1; nextBtn.style.opacity = idx >= _dashCalMonths.length - 1 ? '0.3' : '1'; nextBtn.style.cursor = idx >= _dashCalMonths.length - 1 ? 'default' : 'pointer'; }
+
+  const examMap = {};
+  _dashCalExams.forEach(e => {
+    const key = `${e.examDate.getFullYear()}-${e.examDate.getMonth()}-${e.examDate.getDate()}`;
+    if (!examMap[key]) examMap[key] = [];
+    examMap[key].push(e);
+  });
+
+  const today     = new Date(); today.setHours(0, 0, 0, 0);
+  const firstDay  = new Date(_dashCalYear, _dashCalMonth, 1);
+  const lastDay   = new Date(_dashCalYear, _dashCalMonth + 1, 0);
+  const startDow  = (firstDay.getDay() + 6) % 7;
+  const totalDays = lastDay.getDate();
+
+  const DAY_LABELS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  let html = `<div style="display:grid;grid-template-columns:repeat(7,1fr);border-bottom:1px solid var(--border);">`;
+  DAY_LABELS.forEach(d => {
+    html += `<div style="text-align:center;font-size:11px;font-weight:600;color:var(--muted2);padding:10px 0;text-transform:uppercase;letter-spacing:0.05em;">${d}</div>`;
+  });
+  html += `</div><div style="display:grid;grid-template-columns:repeat(7,1fr);">`;
+
+  for (let i = 0; i < startDow; i++) {
+    html += `<div style="min-height:70px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface2);"></div>`;
   }
 
-  const visible = allRows.slice(0, SHOW_INITIAL + Object.keys(byMonth).length); // account for headers
-  const hasMore = upcoming.length > SHOW_INITIAL;
+  for (let day = 1; day <= totalDays; day++) {
+    const key        = `${_dashCalYear}-${_dashCalMonth}-${day}`;
+    const dayDate    = new Date(_dashCalYear, _dashCalMonth, day);
+    const isToday    = dayDate.toDateString() === today.toDateString();
+    const isPast     = dayDate < today;
+    const examsOnDay = examMap[key] || [];
+    const dow        = (dayDate.getDay() + 6) % 7;
+    const isWeekend  = dow >= 5;
+    const isLast     = (startDow + day - 1) % 7 === 6;
 
-  function examRowHtml(e, hidden) {
-    const dateStr  = e.examDate.toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short' });
-    const timeStr  = e.time === 'AM' ? '9:00 AM' : '1:30 PM';
-    const urgency  = e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : 'var(--accent-dark)';
-    const urgBg    = e.diffDays <= 7 ? 'rgba(239,68,68,0.08)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.08)' : 'var(--accent-dim)';
-    const subjectColor = {'Computer Science':'#6366F1','Mathematics':'#8B5CF6','Further Mathematics':'#7C3AED','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6','English Language':'#DC2626'}[e.subject] || 'var(--accent)';
-    return `<div class="exam-tl-row${hidden ? ' exam-hidden' : ''}" style="display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--border);">
-      <div style="width:36px;height:36px;border-radius:10px;background:${subjectColor}18;border:1px solid ${subjectColor}33;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">${e.emoji}</div>
-      <div style="flex:1;min-width:0;">
-        <div style="font-size:13px;font-weight:600;color:var(--text);">${e.subject} <span style="color:${{'AQA':'#7C3AED','OCR':'#0369A1','Edexcel':'#B45309','Edexcel A':'#B45309','Edexcel B':'#92400E','OCR A':'#0E7490','OCR B':'#0F766E'}[e.board]||'#374151'};font-size:11px;font-weight:600;background:${{'AQA':'rgba(124,58,237,0.1)','OCR':'rgba(3,105,161,0.1)','Edexcel':'rgba(180,83,9,0.1)','Edexcel A':'rgba(180,83,9,0.1)','Edexcel B':'rgba(146,64,14,0.1)','OCR A':'rgba(14,116,144,0.1)','OCR B':'rgba(15,118,110,0.1)'}[e.board]||'rgba(55,65,81,0.1)'};border:1px solid ${{'AQA':'rgba(124,58,237,0.25)','OCR':'rgba(3,105,161,0.25)','Edexcel':'rgba(180,83,9,0.25)','Edexcel A':'rgba(180,83,9,0.25)','Edexcel B':'rgba(146,64,14,0.25)','OCR A':'rgba(14,116,144,0.25)','OCR B':'rgba(15,118,110,0.25)'}[e.board]||'rgba(55,65,81,0.25)'};padding:1px 7px;border-radius:8px;margin-left:4px;">${e.board}</span></div>
-        <div style="font-size:11.5px;color:var(--muted);margin-top:2px;">
-          <span style="color:var(--text);font-weight:500;">${e.paper}</span>
-          &nbsp;·&nbsp;<span style="color:var(--accent-dark);">📅 ${dateStr}</span>
-          &nbsp;·&nbsp;<span style="color:var(--muted);">🕐 ${timeStr}</span>
-          ${e.duration ? `&nbsp;·&nbsp;<span style="color:var(--muted);">⏱ ${e.duration}</span>` : ''}
+    const inlineEvents = examsOnDay.map(e => {
+      const sc      = DASH_SUBJ_COLOR[e.subject] || 'var(--accent)';
+      const bc      = DASH_BOARD_COLOR[e.board]  || '#374151';
+      const bb      = DASH_BOARD_BG[e.board]     || 'rgba(55,65,81,0.1)';
+      const timeStr = e.time === 'AM' ? '9:00 AM' : '1:30 PM';
+      const urgency = e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : '#059669';
+      const urgBg   = e.diffDays <= 7 ? 'rgba(239,68,68,0.1)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.1)' : 'rgba(5,150,105,0.1)';
+      return `<div style="background:${sc}15;border:1px solid ${sc}40;border-left:4px solid ${sc};border-radius:8px;padding:8px 10px;margin-top:5px;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:4px;">
+          <div style="font-size:13px;font-weight:700;color:var(--text);line-height:1.2;">${e.emoji} ${e.subject}</div>
+          <span style="font-size:11.5px;font-weight:700;color:${urgency};background:${urgBg};padding:2px 8px;border-radius:10px;border:1px solid ${urgency}40;flex-shrink:0;white-space:nowrap;">${e.diffDays}d</span>
         </div>
-      </div>
-      <span style="flex-shrink:0;font-size:13px;font-weight:700;color:${urgency};background:${urgBg};padding:4px 11px;border-radius:20px;border:1px solid ${urgency}33;">${e.diffDays}d</span>
-    </div>`;
-  }
-
-  // Build per-month sections
-  let visibleCount = 0;
-  let extraHtml = '';
-  for (const [month, items] of Object.entries(byMonth)) {
-    const monthLabel = `<div style="font-size:10px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:0.1em;padding:10px 0 2px;">${month}</div>`;
-    const rowsHtml   = items.map(e => {
-      if (visibleCount < SHOW_INITIAL) { visibleCount++; return examRowHtml(e, false); }
-      else { extraHtml += examRowHtml(e, false); return ''; }
+        <div style="margin-bottom:3px;"><span style="color:${bc};font-size:11px;font-weight:600;background:${bb};border:1px solid ${bc}40;padding:1px 7px;border-radius:6px;">${e.board}</span></div>
+        <div style="font-size:12px;font-weight:600;color:var(--text);margin-top:3px;line-height:1.3;">${e.paper}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:3px;">🕐 ${timeStr}${e.duration ? ' &nbsp;·&nbsp; ⏱ ' + e.duration : ''}</div>
+      </div>`;
     }).join('');
-    html += monthLabel + rowsHtml;
-  }
 
-  let wrapper = `<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px 14px 6px;">`;
-  wrapper += html;
-  if (extraHtml) {
-    wrapper += `<div id="examExtra" style="display:none;">${extraHtml}</div>`;
-    const remaining = upcoming.length - SHOW_INITIAL;
-    wrapper += `<div style="border-top:1px solid var(--border);padding:8px 0 2px;text-align:center;">
-      <button onclick="toggleExamDates()" id="examToggle" data-remaining="${remaining}" style="background:none;border:none;font-size:11px;font-weight:600;color:var(--accent-dark);cursor:pointer;font-family:var(--font-body);">+ ${remaining} more exams ▾</button>
+    const hasExams = examsOnDay.length > 0;
+    html += `<div style="min-height:${hasExams ? '120' : '70'}px;padding:8px 7px;border-right:${isLast ? 'none' : '1px solid var(--border)'};border-bottom:1px solid var(--border);background:${isToday ? 'var(--accent-dim)' : isPast ? 'var(--surface2)' : isWeekend ? 'rgba(248,251,254,0.6)' : 'var(--surface)'};">
+      <div style="font-size:${isToday ? '14' : '13'}px;font-weight:${isToday ? '800' : '500'};color:${isToday ? 'var(--accent-dark)' : isPast ? 'var(--muted2)' : 'var(--text)'};${isToday ? 'background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;' : ''}">${day}</div>
+      ${inlineEvents}
     </div>`;
   }
-  wrapper += `</div>`;
-  grid.innerHTML = wrapper;
+
+  const totalCells = startDow + totalDays;
+  const remainder  = totalCells % 7;
+  if (remainder !== 0) {
+    for (let i = 0; i < 7 - remainder; i++) {
+      const isLast = i === (7 - remainder - 1);
+      html += `<div style="min-height:70px;border-right:${isLast ? 'none' : '1px solid var(--border)'};background:var(--surface2);"></div>`;
+    }
+  }
+
+  html += `</div>`;
+  grid.innerHTML = html;
 }
 // ── Medal definitions ────────────────────────────────────────────────────
 // ALL_MEDALS is loaded from medals-data.js (shared source of truth with medals.html)
