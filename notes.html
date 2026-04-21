@@ -303,7 +303,7 @@ function _lvLookup(map, base) {
 const DIAG_PAGE = {
   'Computer Science|OCR':         { url: 'diagnostics/cs-ocr-gcse-diagnostic.html',      total: 11, first: '1.1' },
   'Computer Science|OCR|alevel':  { url: 'diagnostics/cs-ocr-alevel-diagnostic.html',    total: 8,  first: '1.1' },
-  'Computer Science|AQA':         { url: 'diagnostics/cs-aqa-diagnostic.html',           total: 8,  first: '3.1' },
+  'Computer Science|AQA|gcse':    { url: 'diagnostics/cs-aqa-gcse-diagnostic.html',      total: 8,  first: '3.1' },
   'Physics|Edexcel':              { url: 'diagnostics/physics-edexcel-diagnostic.html',  total: 13, first: 'T1'  },
   'Physics|AQA':                  { url: 'diagnostics/physics-aqa-diagnostic.html',      total: 8,  first: '3.1' },
   'Physics|OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6,  first: 'M1'  },
@@ -324,9 +324,9 @@ const DIAG_PAGE = {
   'Geography|AQA':                { url: 'diagnostics/geography-aqa-diagnostic.html',         total: 8,  first: '1.1' },
   'Geography|Edexcel':            { url: 'diagnostics/geography-edexcel-diagnostic.html',     total: 8,  first: 'T1'  },
   'Geography|OCR':                { url: 'diagnostics/geography-ocr-diagnostic.html',         total: 8,  first: '1.1' },
-  'Geography|Eduqas':             { url: 'diagnostics/geography-eduqas-diagnostic.html',      total: 12, first: '1.1' },
+  'Geography|Eduqas|gcse':        { url: 'diagnostics/geography-eduqas-gcse-diagnostic.html', total: 12, first: '1.1' },
   'Mathematics|AQA':              { url: 'diagnostics/maths-aqa-diagnostic.html',             total: 17, first: '1.1' },
-  'Mathematics|OCR':              { url: 'diagnostics/maths-ocr-diagnostic.html',             total: 19, first: '1.1' },
+  'Mathematics|OCR|gcse':         { url: 'diagnostics/maths-ocr-gcse-diagnostic.html',        total: 19, first: '1.1' },
   'Mathematics|Edexcel':          { url: 'diagnostics/maths-edexcel-diagnostic.html',         total: 36, first: 'P1'  },
   'Further Mathematics|AQA':      { url: 'diagnostics/further-maths-aqa-diagnostic.html',     total: 9,  first: '1.1' },
   'Further Mathematics|Edexcel':  { url: 'diagnostics/further-maths-edexcel-diagnostic.html', total: 17, first: 'CP1.1' },
@@ -366,8 +366,8 @@ const NOTES_AVAILABLE = {
       { num: '2.3', name: 'Algorithms' },
     ]
   },
-  'Computer Science|AQA': {
-    url: 'subject-notes/cs-aqa-notes.html',
+  'Computer Science|AQA|gcse': {
+    url: 'subject-notes/cs-aqa-gcse-notes.html',
     topics: [
       { num: '3.1', name: 'Fundamentals of Algorithms' },
       { num: '3.2', name: 'Programming' },
@@ -604,8 +604,8 @@ const NOTES_AVAILABLE = {
       { num: '3.1', name: 'Fieldwork & Investigation' },
     ],
   },
-  'Mathematics|OCR': {
-    url: 'subject-notes/maths-ocr-notes.html',
+  'Mathematics|OCR|gcse': {
+    url: 'subject-notes/maths-ocr-gcse-notes.html',
     topics: [
       { num: '1.1', name: 'Number: Arithmetic & Place Value' },
       { num: '1.2', name: 'Fractions, Decimals & Percentages' },
@@ -808,8 +808,8 @@ const NOTES_AVAILABLE = {
       { num: '2.5', name: 'Power & Borders' },
     ],
   },
-  'Geography|Eduqas': {
-    url: 'subject-notes/geography-eduqas-notes.html',
+  'Geography|Eduqas|gcse': {
+    url: 'subject-notes/geography-eduqas-gcse-notes.html',
     topics: [
       { num: '1.1', name: 'Coastal Landscapes' },
       { num: '1.2', name: 'River Landscapes' },

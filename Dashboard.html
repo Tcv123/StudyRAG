@@ -794,11 +794,11 @@ const EXAM_DATES = {
     { paper: 'Paper 1 — Computer Systems', date: '2026-06-10', time: 'PM', duration: '2h 30m' },
     { paper: 'Paper 2 — Algorithms & Programming', date: '2026-06-17', time: 'AM', duration: '2h 30m' },
   ],
-  'Computer Science_AQA': [
+  'Computer Science_AQA|gcse': [
     { paper: 'Paper 1 — On-screen', date: '2026-06-10', time: 'PM', duration: '2h 30m' },
     { paper: 'Paper 2 — Written', date: '2026-06-17', time: 'AM', duration: '2h' },
   ],
-  'Mathematics_OCR': [
+  'Mathematics_OCR|gcse': [
     { paper: 'Paper 1 — Non-Calculator', date: '2026-06-04', time: 'AM', duration: '1h 30m' },
     { paper: 'Paper 2 — Calculator', date: '2026-06-09', time: 'PM', duration: '1h 30m' },
     { paper: 'Paper 3 — Calculator', date: '2026-06-18', time: 'AM', duration: '1h 30m' },
@@ -933,7 +933,7 @@ const EXAM_DATES = {
     { paper: 'Paper 2 — Human Interactions', date: '2026-05-21', time: 'PM', duration: '2h 30m' },
     { paper: 'Paper 3 — Geographical Debates', date: '2026-06-08', time: 'PM', duration: '2h 30m' },
   ],
-  'Geography_Eduqas': [
+  'Geography_Eduqas|gcse': [
     { paper: 'Component 1 — Changing Physical World', date: '2026-05-13', time: 'AM', duration: '1h 45m' },
     { paper: 'Component 2 — Changing Human World', date: '2026-05-22', time: 'PM', duration: '1h 45m' },
     { paper: 'Component 3 — Environmental Challenges', date: '2026-06-09', time: 'AM', duration: '1h' },
@@ -1268,7 +1268,7 @@ function _lvLookup(map, base) {
 const SUBJECT_TOPIC_KEY = {
   'Computer Science_OCR': 'cs-ocr',
   'Computer Science_OCR|alevel': 'cs-ocr-alevel',
-  'Computer Science_AQA': 'cs-aqa',
+  'Computer Science_AQA|gcse': 'cs-aqa-gcse',
   'Physics_Edexcel': 'physics-edexcel',
   'Physics_AQA': 'physics-aqa',
   'Physics_OCR A': 'physics-ocr-a',
@@ -1289,9 +1289,9 @@ const SUBJECT_TOPIC_KEY = {
   'Geography_AQA': 'geography-aqa',
   'Geography_Edexcel': 'geography-edexcel',
   'Geography_OCR': 'geography-ocr',
-  'Geography_Eduqas': 'geography-eduqas',
+  'Geography_Eduqas|gcse': 'geography-eduqas-gcse',
   'Mathematics_AQA': 'maths-aqa',
-  'Mathematics_OCR': 'maths-ocr',
+  'Mathematics_OCR|gcse': 'maths-ocr-gcse',
   'Mathematics_Edexcel': 'maths-edexcel',
   'Further Mathematics_Edexcel': 'further-maths-edexcel',
   'Further Mathematics_AQA': 'further-maths-aqa',
@@ -1300,11 +1300,11 @@ const SUBJECT_TOPIC_KEY = {
   'English Language_AQA': 'english-aqa',
   'English Language_Edexcel': 'english-edexcel',
 };
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas': 12, 'maths-aqa': 17, 'maths-ocr': 19, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
 const SUBJECT_NOTES_PAGE = {
   'Computer Science_OCR': 'subject-notes/cs-ocr-gcse-notes.html',
   'Computer Science_OCR|alevel': 'subject-notes/cs-ocr-alevel-notes.html',
-  'Computer Science_AQA': 'subject-notes/cs-aqa-notes.html',
+  'Computer Science_AQA|gcse': 'subject-notes/cs-aqa-gcse-notes.html',
   'Physics_Edexcel': 'subject-notes/physics-edexcel-notes.html',
   'Physics_AQA': 'subject-notes/physics-aqa-notes.html',
   'Physics_OCR A': 'subject-notes/physics-ocr-a-notes.html',
@@ -1325,9 +1325,9 @@ const SUBJECT_NOTES_PAGE = {
   'Geography_AQA': 'subject-notes/geography-aqa-notes.html',
   'Geography_Edexcel': 'subject-notes/geography-edexcel-notes.html',
   'Geography_OCR': 'subject-notes/geography-ocr-notes.html',
-  'Geography_Eduqas': 'subject-notes/geography-eduqas-notes.html',
+  'Geography_Eduqas|gcse': 'subject-notes/geography-eduqas-gcse-notes.html',
   'Mathematics_AQA': 'subject-notes/maths-aqa-notes.html',
-  'Mathematics_OCR': 'subject-notes/maths-ocr-notes.html',
+  'Mathematics_OCR|gcse': 'subject-notes/maths-ocr-gcse-notes.html',
   'Mathematics_Edexcel': 'subject-notes/maths-edexcel-notes.html',
   'Further Mathematics_Edexcel': 'subject-notes/further-maths-edexcel-notes.html',
   'Further Mathematics_AQA': 'subject-notes/further-maths-aqa-notes.html',
@@ -2050,10 +2050,10 @@ const DIAG_TOPICS = {
       { id: '2.3', name: 'Algorithms', sub: 'Big-O, Dijkstra, A*, analysis' },
     ]
   },
-  'Computer Science_AQA': {
+  'Computer Science_AQA|gcse': {
     label: 'Computer Science — AQA',
     emoji: '💻',
-    page: 'diagnostics/cs-aqa-diagnostic.html',
+    page: 'diagnostics/cs-aqa-gcse-diagnostic.html',
     topics: [
       { id: '3.1', name: 'Fundamentals of Algorithms', sub: 'Decomposition, abstraction, searching, sorting, trace tables' },
       { id: '3.2', name: 'Programming', sub: 'Data types, selection, iteration, subroutines, arrays, strings' },
@@ -2356,10 +2356,10 @@ const DIAG_TOPICS = {
       { id: '2.5', name: 'Power & Borders', sub: 'Sovereignty, superpowers, global governance' },
     ],
   },
-  'Geography_Eduqas': {
+  'Geography_Eduqas|gcse': {
     label: 'Geography — Eduqas',
     emoji: '🌍',
-    page: 'diagnostics/geography-eduqas-diagnostic.html',
+    page: 'diagnostics/geography-eduqas-gcse-diagnostic.html',
     topics: [
       { id: '1.1', name: 'Coastal Landscapes', sub: 'Waves, erosion, transport, landforms, management' },
       { id: '1.2', name: 'River Landscapes', sub: 'Drainage basins, processes, landforms, flooding' },
@@ -2375,10 +2375,10 @@ const DIAG_TOPICS = {
       { id: '3.3', name: 'Water Management', sub: 'Water demand, supply, management strategies' },
     ],
   },
-  'Mathematics_OCR': {
+  'Mathematics_OCR|gcse': {
     label: 'Mathematics — OCR',
     emoji: '🔢',
-    page: 'diagnostics/maths-ocr-diagnostic.html',
+    page: 'diagnostics/maths-ocr-gcse-diagnostic.html',
     topics: [
       { id: '1.1', name: 'Number: Arithmetic & Place Value', sub: 'Place value, four operations, BIDMAS, primes, HCF, LCM' },
       { id: '1.2', name: 'Fractions, Decimals & Percentages', sub: 'FDP conversions, operations, reverse percentages, compound interest' },

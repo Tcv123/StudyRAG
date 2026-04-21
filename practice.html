@@ -552,7 +552,7 @@ let activeSubjectKey = null;
 const BUNDLE_MAP = {
   'Computer Science_OCR':         ['questions/cs/cs-ocr-gcse-practice.js'],
   'Computer Science_OCR|alevel':  ['questions/cs/cs-ocr-alevel-practice.js'],
-  'Computer Science_AQA':         ['questions/cs/cs-aqa-practice.js'],
+  'Computer Science_AQA|gcse':    ['questions/cs/cs-aqa-gcse-practice.js'],
   'Physics_Edexcel':              ['questions/physics/physics-edexcel-practice.js'],
   'Physics_AQA':                  ['questions/physics/physics-aqa-practice.js'],
   'Physics_OCR A':                ['questions/physics/physics-ocr-a-practice.js'],
@@ -572,10 +572,10 @@ const BUNDLE_MAP = {
   'Biology_OCR B':                ['questions/biology/biology-ocr-b-practice.js'],
   'Geography_AQA':                ['questions/geography-aqa/geography-aqa-practice.js'],
   'Geography_Edexcel':            ['questions/geography-edexcel/geography-edexcel-practice.js'],
-  'Geography_Eduqas':             ['questions/geography-eduqas/geography-eduqas-practice.js'],
+  'Geography_Eduqas|gcse':        ['questions/geography-eduqas-gcse/geography-eduqas-gcse-practice.js'],
   'Geography_OCR':                ['questions/geography-ocr/geography-ocr-practice.js'],
   'Mathematics_AQA':              ['questions/maths-aqa/maths-aqa-practice.js'],
-  'Mathematics_OCR':              ['questions/maths-ocr/maths-ocr-practice.js'],
+  'Mathematics_OCR|gcse':         ['questions/maths-ocr-gcse/maths-ocr-gcse-practice.js'],
   'Mathematics_Edexcel': [
     'questions/maths-edexcel/w-P1-P11.js',
     'questions/maths-edexcel/w-P12-P21.js',
@@ -645,7 +645,7 @@ function loadBundle(subjectKey) {
 const PRACTICE_MAP = {
   'Computer Science_OCR': () => typeof CS_OCR_PRACTICE !== 'undefined' ? CS_OCR_PRACTICE : null,
   'Computer Science_OCR|alevel': () => typeof CS_OCR_PRACTICE !== 'undefined' ? CS_OCR_PRACTICE : null,
-  'Computer Science_AQA': () => typeof CS_AQA_PRACTICE !== 'undefined' ? CS_AQA_PRACTICE : null,
+  'Computer Science_AQA|gcse': () => typeof CS_AQA_PRACTICE !== 'undefined' ? CS_AQA_PRACTICE : null,
   'Physics_Edexcel': () => typeof PHYSICS_EDEXCEL_PRACTICE !== 'undefined' ? PHYSICS_EDEXCEL_PRACTICE : null,
   'Physics_AQA': () => typeof PHYSICS_AQA_PRACTICE !== 'undefined' ? PHYSICS_AQA_PRACTICE : null,
   'Physics_OCR A': () => typeof PHYSICS_OCR_A_PRACTICE !== 'undefined' ? PHYSICS_OCR_A_PRACTICE : null,
@@ -665,10 +665,10 @@ const PRACTICE_MAP = {
   'Biology_OCR B': () => typeof BIOLOGY_OCR_B_PRACTICE !== 'undefined' ? BIOLOGY_OCR_B_PRACTICE : null,
   'Geography_AQA': () => typeof GEOGRAPHY_AQA_PRACTICE !== 'undefined' ? GEOGRAPHY_AQA_PRACTICE : null,
   'Geography_Edexcel': () => typeof GEOGRAPHY_EDEXCEL_PRACTICE !== 'undefined' ? GEOGRAPHY_EDEXCEL_PRACTICE : null,
-  'Geography_Eduqas': () => typeof GEOGRAPHY_EDUQAS_PRACTICE !== 'undefined' ? GEOGRAPHY_EDUQAS_PRACTICE : null,
+  'Geography_Eduqas|gcse': () => typeof GEOGRAPHY_EDUQAS_PRACTICE !== 'undefined' ? GEOGRAPHY_EDUQAS_PRACTICE : null,
   'Geography_OCR': () => typeof GEOGRAPHY_OCR_PRACTICE !== 'undefined' ? GEOGRAPHY_OCR_PRACTICE : null,
   'Mathematics_AQA': () => typeof MATHS_AQA_PRACTICE !== 'undefined' ? MATHS_AQA_PRACTICE : null,
-  'Mathematics_OCR': () => typeof MATHS_OCR_PRACTICE !== 'undefined' ? MATHS_OCR_PRACTICE : null,
+  'Mathematics_OCR|gcse': () => typeof MATHS_OCR_PRACTICE !== 'undefined' ? MATHS_OCR_PRACTICE : null,
   'Mathematics_Edexcel': () => typeof MATHS_EDEXCEL_PRACTICE !== 'undefined' ? MATHS_EDEXCEL_PRACTICE : null,
   'Further Mathematics_Edexcel': () => typeof FM_EDEXCEL_PRACTICE !== 'undefined' ? FM_EDEXCEL_PRACTICE : null,
   'Further Mathematics_AQA': () => typeof FM_AQA_PRACTICE !== 'undefined' ? FM_AQA_PRACTICE : null,
@@ -732,7 +732,7 @@ const SUBJECT_TOPICS = {
       ]},
     ]
   },
-  'Computer Science_AQA': {
+  'Computer Science_AQA|gcse': {
     sections: [
       { label: 'AQA — Paper 1: Computational Thinking & Programming', topics: [
         { id: '3.1', name: 'Fundamentals of Algorithms', sub: 'Decomposition, abstraction, searching, sorting' },
@@ -1069,7 +1069,7 @@ const SUBJECT_TOPICS = {
       ]},
     ]
   },
-  'Geography_Eduqas': {
+  'Geography_Eduqas|gcse': {
     sections: [
       { label: 'Eduqas — Physical Landscapes & Environments', topics: [
         { id: '1.1', name: 'Coastal Landscapes', sub: 'Waves, erosion, transport, landforms, management' },
@@ -1107,7 +1107,7 @@ const SUBJECT_TOPICS = {
       ]},
     ]
   },
-  'Mathematics_OCR': {
+  'Mathematics_OCR|gcse': {
     sections: [
       { label: 'Number', topics: [
         { id: '1.1', name: 'Number: Arithmetic & Place Value', sub: 'Place value, four operations, BIDMAS, primes, HCF, LCM' },
@@ -1366,7 +1366,7 @@ const SUBJECT_EMOJIS = Object.fromEntries(
 const DIAG_PAGE = {
   'Computer Science_OCR':         { url: 'diagnostics/cs-ocr-gcse-diagnostic.html',      total: 11, first: '1.1' },
   'Computer Science_OCR|alevel':  { url: 'diagnostics/cs-ocr-alevel-diagnostic.html',    total: 8,  first: '1.1' },
-  'Computer Science_AQA':         { url: 'diagnostics/cs-aqa-diagnostic.html',           total: 8,  first: '3.1' },
+  'Computer Science_AQA|gcse':    { url: 'diagnostics/cs-aqa-gcse-diagnostic.html',      total: 8,  first: '3.1' },
   'Physics_Edexcel':              { url: 'diagnostics/physics-edexcel-diagnostic.html',  total: 13, first: 'T1'  },
   'Physics_AQA':                  { url: 'diagnostics/physics-aqa-diagnostic.html',      total: 8,  first: '3.1' },
   'Physics_OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6,  first: 'M1'  },
@@ -1387,9 +1387,9 @@ const DIAG_PAGE = {
   'Geography_AQA':                { url: 'diagnostics/geography-aqa-diagnostic.html',         total: 8,  first: '1.1' },
   'Geography_Edexcel':            { url: 'diagnostics/geography-edexcel-diagnostic.html',     total: 8,  first: 'T1'  },
   'Geography_OCR':                { url: 'diagnostics/geography-ocr-diagnostic.html',         total: 8,  first: '1.1' },
-  'Geography_Eduqas':             { url: 'diagnostics/geography-eduqas-diagnostic.html',      total: 12, first: '1.1' },
+  'Geography_Eduqas|gcse':        { url: 'diagnostics/geography-eduqas-gcse-diagnostic.html', total: 12, first: '1.1' },
   'Mathematics_AQA':              { url: 'diagnostics/maths-aqa-diagnostic.html',             total: 17, first: '1.1' },
-  'Mathematics_OCR':              { url: 'diagnostics/maths-ocr-diagnostic.html',             total: 19, first: '1.1' },
+  'Mathematics_OCR|gcse':         { url: 'diagnostics/maths-ocr-gcse-diagnostic.html',        total: 19, first: '1.1' },
   'Mathematics_Edexcel':          { url: 'diagnostics/maths-edexcel-diagnostic.html',         total: 36, first: 'P1'  },
   'Further Mathematics_AQA':      { url: 'diagnostics/further-maths-aqa-diagnostic.html',     total: 9,  first: '1.1' },
   'Further Mathematics_Edexcel':  { url: 'diagnostics/further-maths-edexcel-diagnostic.html', total: 17, first: 'CP1.1' },
