@@ -2664,6 +2664,14 @@ function switchView(name, el) {
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   el.classList.add('active');
   document.querySelector('.topbar').style.display = name === 'Diagnostic' ? 'none' : '';
+
+  // Keep the URL hash in sync so a refresh lands on the view the user is
+  // actually looking at, instead of snapping back to a stale #diagnostic
+  // left over from an earlier stat-card click.
+  const desiredHash = name === 'Diagnostic' ? '#diagnostic' : '';
+  if ((location.hash || '') !== desiredHash) {
+    history.replaceState(null, '', location.pathname + location.search + desiredHash);
+  }
 }
 
 // ── Render diagnostic topic list grouped by subject ──────────────────────
