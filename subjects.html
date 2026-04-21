@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Subjects — RAG Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EEF5FC;
+      --surface: #FFFFFF;
+      --surface2: #F4F9FE;
+      --border: #D2E5F3;
+      --border-hover: #93C4E2;
+      --text: #1B2D4F;
+      --muted: #6B87A8;
+      --accent: #5BADCF;
+      --accent-dark: #3D95BC;
+      --accent-dim: rgba(91,173,207,0.1);
+      --accent-glow: rgba(91,173,207,0.22);
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(91,173,207,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(91,173,207,0.05) 1px, transparent 1px);
+      background-size: 48px 48px; pointer-events: none; z-index: 0;
+    }
+    .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; }
+    .orb-1 { width: 600px; height: 600px; background: rgba(91,173,207,0.12); top: -150px; left: -150px; }
+    .orb-2 { width: 400px; height: 400px; background: rgba(61,149,188,0.08); bottom: 100px; right: -100px; }
+
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(238,245,252,0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-wrap {
+      max-width: none; margin: 0; padding: 0 40px;
+      height: 64px; display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center; gap: 24px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; justify-self: start; }
+    .logo-bar {
+      width: 3px; height: 22px; border-radius: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+    .logo-name { font-family: var(--font-display); font-size: 20px; color: var(--text); letter-spacing: 0.02em; }
+    .nav-anchors {
+      display: flex; gap: 4px; align-items: center;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 999px; padding: 5px;
+      box-shadow: 0 2px 10px rgba(91,173,207,0.06);
+      justify-self: center;
+    }
+    .nav-anchor {
+      padding: 8px 18px; border-radius: 999px;
+      font-size: 12.5px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; transition: all 0.15s;
+    }
+    .nav-anchor:hover { color: var(--text); background: var(--surface2); }
+    .nav-anchor.active { color: var(--accent-dark); background: var(--accent-dim); }
+    .nav-right { justify-self: end; display: flex; align-items: center; gap: 10px; }
+    .nav-btn {
+      padding: 9px 22px; border-radius: 10px;
+      font-size: 12.5px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; border: 1px solid transparent; transition: all 0.15s;
+    }
+    .nav-ghost { color: var(--muted); }
+    .nav-ghost:hover { color: var(--text); }
+    .nav-fill {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; box-shadow: 0 2px 10px var(--accent-glow);
+    }
+    .nav-fill:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+    /* ── PAGE HEADER ── */
+    .page-header { position: relative; z-index: 1; padding: 140px 0 72px; animation: fadeUp 0.6s ease both; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 5px 13px; border-radius: 20px;
+      background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.28);
+      font-size: 12px; font-weight: 500; color: var(--accent-dark);
+      margin-bottom: 22px;
+    }
+    .pill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.03em; line-height: 1.1;
+      margin-bottom: 18px;
+    }
+    .page-header h1 em { color: var(--accent); font-style: normal; }
+    .page-sub { font-size: 16px; color: var(--muted); line-height: 1.7; max-width: 560px; }
+
+    /* ── SECTIONS ── */
+    .section { position: relative; z-index: 1; padding: 72px 0; }
+    .section-white { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .section-tag { font-size: 11px; font-weight: 600; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+    .section-h { font-family: var(--font-display); font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 10px; }
+    .section-p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 520px; margin-bottom: 40px; }
+
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+
+    /* Subject tiles */
+    .subject-tile {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 18px 16px;
+      display: flex; flex-direction: column; gap: 8px;
+      transition: border-color 0.15s, transform 0.15s;
+      text-decoration: none; color: inherit;
+    }
+    .section-white .subject-tile { background: var(--surface2); }
+    .subject-tile:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .subject-icon { font-size: 22px; }
+    .subject-name { font-size: 14px; font-weight: 600; color: var(--text); }
+    .subject-boards { font-size: 11px; color: var(--muted); line-height: 1.5; }
+    .board-chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 28px; justify-content: center; }
+    .board-chip {
+      font-size: 12px; font-weight: 500; color: var(--muted);
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 6px 12px; border-radius: 18px;
+    }
+    .section-white .board-chip { background: var(--surface2); }
+
+    /* CTA */
+    .cta { position: relative; z-index: 1; padding: 88px 0; }
+    .cta-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 72px 48px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-box::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% -10%, rgba(91,173,207,0.13) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cta-box h2 {
+      font-family: var(--font-display); font-size: clamp(28px, 3vw, 38px); letter-spacing: -0.02em;
+      margin-bottom: 12px; position: relative;
+    }
+    .cta-box p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; position: relative; }
+    .cta-btns { display: flex; justify-content: center; gap: 10px; position: relative; }
+    .btn {
+      display: inline-flex; align-items: center;
+      padding: 12px 24px; border-radius: 10px;
+      font-family: var(--font-body); font-size: 14px; font-weight: 600;
+      text-decoration: none; border: none; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-blue { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; box-shadow: 0 4px 14px var(--accent-glow); }
+    .btn-blue:hover { transform: translateY(-1px); box-shadow: 0 6px 20px var(--accent-glow); }
+    .btn-white { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .btn-white:hover { border-color: var(--border-hover); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+    @media (max-width: 900px) { .nav-anchors { display: none; } }
+    @media (max-width: 840px) { .grid-4 { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 520px) {
+      .grid-4 { grid-template-columns: 1fr 1fr; }
+      .cta-btns { flex-direction: column; }
+      .wrap { padding: 0 20px; }
+      .nav-wrap { padding: 0 20px; }
+      .cta-box { padding: 44px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">
+      <div class="logo-bar"></div>
+      <div class="logo-name">RAG LEARNING</div>
+    </a>
+    <div class="nav-anchors">
+      <a href="index.html" class="nav-anchor">Home</a>
+      <a href="features.html" class="nav-anchor">Features</a>
+      <a href="subjects.html" class="nav-anchor active">Subjects</a>
+      <a href="pricing.html" class="nav-anchor">Pricing</a>
+      <a href="support.html" class="nav-anchor">Support</a>
+    </div>
+    <div class="nav-right">
+      <a href="auth/login.html" class="nav-btn nav-ghost">Sign in</a>
+      <a href="auth/register.html" class="nav-btn nav-fill">Register</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Page header -->
+<section class="page-header">
+  <div class="wrap">
+    <div class="pill"><div class="pill-dot"></div>Subjects &amp; boards</div>
+    <h1>Every major UK <em>subject</em>, every major <em>board</em></h1>
+    <p class="page-sub">Content is built board-by-board so specifications, terminology and past-paper style match exactly what you'll sit in the exam hall.</p>
+  </div>
+</section>
+
+<!-- Subjects grid -->
+<section class="section section-white">
+  <div class="wrap">
+    <div class="section-tag">A Level coverage</div>
+    <div class="section-h">Pick your subject</div>
+    <p class="section-p">Each subject has dedicated notes, diagnostics and practice content per exam board — so switching boards doesn't mean starting over.</p>
+    <div class="grid-4">
+      <div class="subject-tile">
+        <div class="subject-icon" aria-hidden="true">🧬</div>
+        <div class="subject-name">Biology</div>
+        <div class="subject-boards">AQA · Edexcel A · Edexcel B · OCR A · OCR B</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon" aria-hidden="true">⚗️</div>
+        <div class="subject-name">Chemistry</div>
+        <div class="subject-boards">AQA · Edexcel · OCR A · OCR B</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon" aria-hidden="true">⚛️</div>
+        <div class="subject-name">Physics</div>
+        <div class="subject-boards">AQA · Edexcel · OCR A · OCR B</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon" aria-hidden="true">📐</div>
+        <div class="subject-name">Maths</div>
+        <div class="subject-boards">AQA · Edexcel · OCR</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon" aria-hidden="true">∫</div>
+        <div class="subject-name">Further Maths</div>
+        <div class="subject-boards">AQA · Edexcel · OCR · OCR B</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon" aria-hidden="true">💻</div>
+        <div class="subject-name">Computer Science</div>
+        <div class="subject-boards">AQA · OCR</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon" aria-hidden="true">💰</div>
+        <div class="subject-name">Economics</div>
+        <div class="subject-boards">AQA · Edexcel A · Edexcel B · OCR</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon" aria-hidden="true">🌍</div>
+        <div class="subject-name">Geography</div>
+        <div class="subject-boards">AQA · Edexcel · OCR · Eduqas</div>
+      </div>
+    </div>
+    <div class="board-chip-row">
+      <div class="board-chip">AQA</div>
+      <div class="board-chip">Edexcel</div>
+      <div class="board-chip">OCR</div>
+      <div class="board-chip">Eduqas</div>
+      <div class="board-chip">+ more being added</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>Your subjects, ready when you are</h2>
+      <p>Pick your level and board when you sign up — your subject list shapes the whole app around you.</p>
+      <div class="cta-btns">
+        <a href="auth/register.html" class="btn btn-blue">Create free account</a>
+        <a href="auth/login.html" class="btn btn-white">Sign in</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
