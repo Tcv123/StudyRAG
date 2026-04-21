@@ -270,12 +270,12 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
         answer: 0
       },
       {
-        q: 'If \\(P(A \\cap B) = 0.15\\) and \\(P(B) = 0.25\\), find \\(P(A\\'|B)\\).',
+        q: 'If \\(P(A \\cap B) = 0.15\\) and \\(P(B) = 0.25\\), find \\(P(A\'|B)\\).',
         options: ['\\(0.4\\)', '\\(0.6\\)', '\\(0.75\\)', '\\(0.25\\)'],
         answer: 0
       },
       {
-        q: 'Which of the following correctly applies Bayes\\' theorem?',
+        q: 'Which of the following correctly applies Bayes\' theorem?',
         options: ['\\(P(B|A) = \\dfrac{P(A|B)P(B)}{P(A)}\\)', '\\(P(B|A) = \\dfrac{P(B)}{P(A|B)}\\)', '\\(P(B|A) = P(A|B) \\cdot P(A)\\)', '\\(P(B|A) = P(A|B)\\)'],
         answer: 0
       },
@@ -285,7 +285,7 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
         answer: 0
       },
       {
-        q: 'If \\(P(A) = 0.6\\), \\(P(B\\'|A) = 0.3\\), find \\(P(A \\cap B)\\).',
+        q: 'If \\(P(A) = 0.6\\), \\(P(B\'|A) = 0.3\\), find \\(P(A \\cap B)\\).',
         options: ['\\(0.42\\)', '\\(0.18\\)', '\\(0.30\\)', '\\(0.48\\)'],
         answer: 0
       }

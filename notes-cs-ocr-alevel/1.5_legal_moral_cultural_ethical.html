@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 1.5 — Legal, Moral, Cultural and Ethical Issues</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .case-study { background: #fdf2f8; border-left: 4px solid #be185d; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .case-study::before { content: "Case Study: "; font-weight: 700; color: #9d174d; }
+        .case-study h4 { color: #831843; margin-top: 4px; margin-bottom: 8px; font-size: 1.05rem; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .case-study { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>1.5 Legal, Moral, Cultural and Ethical Issues</h1>
+<p class="spec-ref">OCR A-Level Computer Science (H446) &mdash; Component 01 (Computer Systems)</p>
+
+<h2>Introduction &mdash; Four Overlapping Lenses</h2>
+
+<p>Topic 1.5 is different from the rest of the H446 specification: there is almost no code, no hardware diagrams and no algorithmic complexity. Instead, you are expected to reason about the <strong>impact</strong> of computing on individuals, organisations, society and the environment &mdash; and to know a small number of UK Acts of Parliament <em>by name and by year</em>. Exam questions in this area are typically 6&ndash;10 mark extended-response questions which reward <strong>balanced arguments</strong>, <strong>named legislation</strong> and <strong>real-world examples</strong>.</p>
+
+<div class="definition">
+    <strong>Legal</strong> &mdash; required or forbidden by the law of a particular jurisdiction. Enforceable by courts; breach leads to fines or imprisonment. Objective and written down.
+</div>
+
+<div class="definition">
+    <strong>Moral</strong> &mdash; what an individual personally believes is <em>right</em> or <em>wrong</em>. Shaped by upbringing, religion and conscience. Subjective and internal.
+</div>
+
+<div class="definition">
+    <strong>Ethical</strong> &mdash; a shared, usually professional, set of principles for what is <em>right or wrong in practice</em> (e.g. medical ethics, the BCS Code of Conduct). Codified by a group but not law.
+</div>
+
+<div class="definition">
+    <strong>Cultural</strong> &mdash; accepted customs and expectations of a specific society. What is considered acceptable varies between countries and communities (e.g. privacy norms, acceptable speech, gender equality in the workplace).
+</div>
+
+<p>These four categories overlap but are not identical. Something can be <strong>legal but immoral</strong> (mass data collection that complies with terms of service), <strong>illegal but widely considered moral</strong> (downloading an out-of-print textbook for a blind student), <strong>ethical but culturally uncommon</strong> (transparent algorithmic decisions), or <strong>cultural but unethical</strong> (workplace surveillance norms that violate dignity). A good exam answer identifies <em>which</em> lens is in play.</p>
+
+<div class="exam-tip">When a question asks for "moral and ethical issues", do <strong>not</strong> just list laws. Examiners are looking for reasoning about fairness, harm, autonomy and responsibility &mdash; i.e. the <em>values</em> behind the law, or the places where law is silent.</div>
+
+<h2>1.5.1 Computing-Related Legislation</h2>
+
+<p>The OCR specification lists <strong>four principal Acts</strong> you must know by name and year: the Data Protection Act 2018, the Computer Misuse Act 1990, the Copyright, Designs and Patents Act 1988, and the Regulation of Investigatory Powers Act 2000. You should also be aware of the Freedom of Information Act 2000 and the Equality Act 2010, and the more recent Online Safety Act 2023 and Investigatory Powers Act 2016.</p>
+
+<h3>Timeline of Major UK Computing Legislation</h3>
+
+<!-- Timeline SVG -->
+<svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="tlArr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1e40af"/></marker>
+  </defs>
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">UK Computing Legislation Timeline (1988&ndash;2023)</text>
+  <!-- Main line -->
+  <line x1="40" y1="140" x2="720" y2="140" stroke="#1e40af" stroke-width="3" marker-end="url(#tlArr)"/>
+  <!-- Ticks and labels: 1988, 1990, 1998, 2000, 2010, 2016, 2018, 2023 -->
+  <!-- 1988 CDPA -->
+  <circle cx="70" cy="140" r="6" fill="#be185d"/>
+  <line x1="70" y1="140" x2="70" y2="90" stroke="#be185d" stroke-width="1.2"/>
+  <text x="70" y="82" text-anchor="middle" font-size="10" font-weight="bold" fill="#9d174d">1988</text>
+  <text x="70" y="68" text-anchor="middle" font-size="9" fill="#374151">Copyright,</text>
+  <text x="70" y="56" text-anchor="middle" font-size="9" fill="#374151">Designs &amp;</text>
+  <text x="70" y="44" text-anchor="middle" font-size="9" fill="#374151">Patents Act</text>
+  <!-- 1990 CMA -->
+  <circle cx="140" cy="140" r="6" fill="#2563eb"/>
+  <line x1="140" y1="140" x2="140" y2="170" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="140" y="184" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">1990</text>
+  <text x="140" y="198" text-anchor="middle" font-size="9" fill="#374151">Computer</text>
+  <text x="140" y="210" text-anchor="middle" font-size="9" fill="#374151">Misuse Act</text>
+  <!-- 1998 DPA (original) -->
+  <circle cx="240" cy="140" r="5" fill="#6b7280"/>
+  <line x1="240" y1="140" x2="240" y2="95" stroke="#6b7280" stroke-width="1.1"/>
+  <text x="240" y="86" text-anchor="middle" font-size="10" font-weight="bold" fill="#374151">1998</text>
+  <text x="240" y="72" text-anchor="middle" font-size="9" fill="#374151">Data Prot.</text>
+  <text x="240" y="60" text-anchor="middle" font-size="9" fill="#374151">Act (old)</text>
+  <!-- 2000 RIPA + FOIA -->
+  <circle cx="320" cy="140" r="6" fill="#7c3aed"/>
+  <line x1="320" y1="140" x2="320" y2="170" stroke="#7c3aed" stroke-width="1.2"/>
+  <text x="320" y="184" text-anchor="middle" font-size="10" font-weight="bold" fill="#5b21b6">2000</text>
+  <text x="320" y="198" text-anchor="middle" font-size="9" fill="#374151">RIPA +</text>
+  <text x="320" y="210" text-anchor="middle" font-size="9" fill="#374151">Freedom of Info.</text>
+  <!-- 2010 Equality -->
+  <circle cx="440" cy="140" r="5" fill="#16a34a"/>
+  <line x1="440" y1="140" x2="440" y2="95" stroke="#16a34a" stroke-width="1.1"/>
+  <text x="440" y="86" text-anchor="middle" font-size="10" font-weight="bold" fill="#166534">2010</text>
+  <text x="440" y="72" text-anchor="middle" font-size="9" fill="#374151">Equality Act</text>
+  <!-- 2016 IPA -->
+  <circle cx="520" cy="140" r="5" fill="#7c3aed"/>
+  <line x1="520" y1="140" x2="520" y2="170" stroke="#7c3aed" stroke-width="1.1"/>
+  <text x="520" y="184" text-anchor="middle" font-size="10" font-weight="bold" fill="#5b21b6">2016</text>
+  <text x="520" y="198" text-anchor="middle" font-size="9" fill="#374151">Investigatory</text>
+  <text x="520" y="210" text-anchor="middle" font-size="9" fill="#374151">Powers Act</text>
+  <!-- 2018 DPA + GDPR -->
+  <circle cx="610" cy="140" r="7" fill="#dc2626"/>
+  <line x1="610" y1="140" x2="610" y2="90" stroke="#dc2626" stroke-width="1.3"/>
+  <text x="610" y="82" text-anchor="middle" font-size="10" font-weight="bold" fill="#991b1b">2018</text>
+  <text x="610" y="68" text-anchor="middle" font-size="9" fill="#374151">Data Prot.</text>
+  <text x="610" y="56" text-anchor="middle" font-size="9" fill="#374151">Act + UK GDPR</text>
+  <!-- 2023 Online Safety Act -->
+  <circle cx="700" cy="140" r="5" fill="#f59e0b"/>
+  <line x1="700" y1="140" x2="700" y2="170" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="700" y="184" text-anchor="middle" font-size="10" font-weight="bold" fill="#b45309">2023</text>
+  <text x="700" y="198" text-anchor="middle" font-size="9" fill="#374151">Online</text>
+  <text x="700" y="210" text-anchor="middle" font-size="9" fill="#374151">Safety Act</text>
+  <text x="380" y="246" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Acts above the line: creative/personal rights. Acts below the line: state powers and criminal law.</text>
+</svg>
+
+<h3>1. Data Protection Act 2018 (incorporating UK GDPR)</h3>
+
+<div class="definition">
+    The <strong>Data Protection Act 2018 (DPA 2018)</strong> is the UK's implementation of the EU General Data Protection Regulation (GDPR). It regulates how <strong>personal data</strong> is collected, stored, processed and shared. Personal data is any information relating to an <strong>identified or identifiable living individual</strong> &mdash; names, addresses, IP addresses, cookies, biometric data, health records, online identifiers.
+</div>
+
+<p>The Act replaced the Data Protection Act 1998 and came into force on 25 May 2018. After Brexit, the GDPR was retained as the <strong>UK GDPR</strong>, supplemented by the DPA 2018.</p>
+
+<h4>The Seven GDPR Principles</h4>
+
+<p>Data controllers must process personal data in accordance with seven binding principles:</p>
+
+<ol>
+    <li><strong>Lawfulness, fairness and transparency</strong> &mdash; there must be a lawful basis (consent, contract, legal obligation, vital interests, public task, or legitimate interests) and individuals must be told what you are doing with their data.</li>
+    <li><strong>Purpose limitation</strong> &mdash; data must be collected for specified, explicit and legitimate purposes and not further processed in an incompatible way.</li>
+    <li><strong>Data minimisation</strong> &mdash; collect only what is <em>adequate, relevant and limited</em> to what is necessary. Do not "just in case" collect birthdays to send a marketing card.</li>
+    <li><strong>Accuracy</strong> &mdash; data must be accurate and kept up to date. Inaccurate data must be corrected or erased without delay.</li>
+    <li><strong>Storage limitation</strong> &mdash; data must not be kept in a form that identifies individuals for longer than is necessary.</li>
+    <li><strong>Integrity and confidentiality (security)</strong> &mdash; appropriate technical and organisational measures must be taken against unauthorised processing, accidental loss, destruction or damage (encryption, access control, backups).</li>
+    <li><strong>Accountability</strong> &mdash; the controller must be able to <em>demonstrate</em> compliance with all six preceding principles (records of processing, DPIAs, training).</li>
+</ol>
+
+<!-- GDPR 7 principles grid diagram -->
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">The Seven GDPR Principles</text>
+  <!-- Central hub -->
+  <circle cx="360" cy="190" r="55" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+  <text x="360" y="186" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">GDPR</text>
+  <text x="360" y="202" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Principles</text>
+  <!-- 7 radial boxes -->
+  <!-- 1 Lawfulness top -->
+  <rect x="290" y="55" width="140" height="52" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="360" y="74" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">1. Lawful, fair,</text>
+  <text x="360" y="89" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">transparent</text>
+  <line x1="360" y1="107" x2="360" y2="135" stroke="#2563eb" stroke-width="1.3"/>
+  <!-- 2 Purpose (upper-right) -->
+  <rect x="540" y="95" width="160" height="52" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="620" y="114" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">2. Purpose</text>
+  <text x="620" y="129" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">limitation</text>
+  <line x1="540" y1="147" x2="410" y2="170" stroke="#2563eb" stroke-width="1.3"/>
+  <!-- 3 Minimisation right -->
+  <rect x="560" y="165" width="150" height="52" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="635" y="184" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">3. Data</text>
+  <text x="635" y="199" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">minimisation</text>
+  <line x1="560" y1="191" x2="415" y2="191" stroke="#2563eb" stroke-width="1.3"/>
+  <!-- 4 Accuracy lower right -->
+  <rect x="540" y="235" width="160" height="52" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="620" y="266" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">4. Accuracy</text>
+  <line x1="540" y1="250" x2="410" y2="215" stroke="#2563eb" stroke-width="1.3"/>
+  <!-- 5 Storage bottom -->
+  <rect x="290" y="280" width="140" height="52" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="360" y="299" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">5. Storage</text>
+  <text x="360" y="314" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">limitation</text>
+  <line x1="360" y1="280" x2="360" y2="245" stroke="#2563eb" stroke-width="1.3"/>
+  <!-- 6 Integrity lower left -->
+  <rect x="20" y="235" width="160" height="52" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="100" y="254" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">6. Integrity &amp;</text>
+  <text x="100" y="269" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">confidentiality</text>
+  <line x1="180" y1="250" x2="310" y2="215" stroke="#2563eb" stroke-width="1.3"/>
+  <!-- 7 Accountability left -->
+  <rect x="10" y="95" width="170" height="52" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>
+  <text x="95" y="114" text-anchor="middle" font-size="11" font-weight="bold" fill="#b45309">7. Accountability</text>
+  <text x="95" y="129" text-anchor="middle" font-size="9" fill="#92400e">(overarches all 6)</text>
+  <line x1="180" y1="147" x2="310" y2="170" stroke="#f59e0b" stroke-width="1.3"/>
+  <text x="360" y="352" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Principle 7 binds the other six &mdash; the controller must be able to demonstrate compliance.</text>
+</svg>
+
+<h4>Data Subjects' Rights</h4>
+
+<p>Data subjects are the living individuals to whom personal data relates. Under the UK GDPR they have the following rights, which can be exercised free of charge:</p>
+
+<ul>
+    <li><strong>Right of access (subject access request, SAR)</strong> &mdash; ask what data an organisation holds about them; controller must respond within one month.</li>
+    <li><strong>Right to rectification</strong> &mdash; correct inaccurate or incomplete data.</li>
+    <li><strong>Right to erasure ("right to be forgotten")</strong> &mdash; delete data no longer necessary, or that was unlawfully processed.</li>
+    <li><strong>Right to restriction of processing</strong> &mdash; pause processing while a dispute is resolved.</li>
+    <li><strong>Right to data portability</strong> &mdash; receive their data in a structured, commonly used, machine-readable format (e.g. CSV, JSON) to take to another provider.</li>
+    <li><strong>Right to object</strong> &mdash; stop processing (especially for direct marketing or automated profiling).</li>
+    <li><strong>Rights relating to automated decision making and profiling</strong> &mdash; not to be subject to a solely automated decision with legal or similarly significant effects, unless specific conditions apply; and to have human intervention.</li>
+</ul>
+
+<h4>Roles</h4>
+
+<table>
+    <tr><th>Role</th><th>Definition</th><th>Example</th></tr>
+    <tr><td><strong>Data subject</strong></td><td>The living individual to whom personal data relates.</td><td>A customer on an online shop.</td></tr>
+    <tr><td><strong>Data controller</strong></td><td>The entity that determines the <em>purposes</em> and <em>means</em> of processing. Legally accountable.</td><td>The retail company that runs the shop.</td></tr>
+    <tr><td><strong>Data processor</strong></td><td>An entity that processes data on the controller's behalf, under instruction.</td><td>A third-party cloud provider hosting the shop's database (e.g. AWS, Azure).</td></tr>
+    <tr><td><strong>Data Protection Officer (DPO)</strong></td><td>Internal expert responsible for monitoring compliance; required for public bodies and large-scale sensitive processors.</td><td>DPO at the NHS.</td></tr>
+    <tr><td><strong>Information Commissioner (ICO)</strong></td><td>UK regulator that investigates breaches, advises, and issues fines.</td><td>ICO issued BA's &pound;20m fine in 2020.</td></tr>
+</table>
+
+<h4>Enforcement and Penalties</h4>
+
+<p>The Information Commissioner's Office (ICO) enforces the Act. The maximum fines are tiered:</p>
+
+<ul>
+    <li><strong>Standard tier:</strong> up to &pound;8.7m or 2% of global annual turnover (whichever is higher) &mdash; e.g. failure to keep records or notify a breach.</li>
+    <li><strong>Higher tier:</strong> up to <strong>&pound;17.5m or 4% of global annual turnover</strong> (whichever is higher) &mdash; e.g. breach of principles, rights violations, unlawful international transfers.</li>
+</ul>
+
+<p>Organisations must notify the ICO of a <strong>personal data breach</strong> within <strong>72 hours</strong> of becoming aware of it if there is a risk to individuals' rights and freedoms.</p>
+
+<div class="case-study">
+<h4>British Airways &mdash; ICO fine, 2020 (&pound;20m)</h4>
+<p>In 2018, malicious code was injected into the BA website, skimming the payment-card details of approximately <strong>400,000 customers</strong>. The ICO found BA had <em>inadequate security measures</em> (multi-factor authentication and monitoring were missing) &mdash; a breach of the integrity and confidentiality principle. Initial notice of intent was &pound;183m (c. 1.5% of global turnover); this was reduced to &pound;20m in 2020 partly due to COVID-19 economic impact on the airline. The fine demonstrated that <strong>Principle 6 (security)</strong> is not just good practice &mdash; it is a legal obligation.</p>
+</div>
+
+<h4>Exemptions</h4>
+
+<p>The DPA 2018 contains narrow exemptions where principles or rights are disapplied, including:</p>
+
+<ul>
+    <li><strong>National security</strong> (processing for MI5/MI6/GCHQ purposes)</li>
+    <li><strong>Crime and taxation</strong> (police investigations, HMRC)</li>
+    <li><strong>Journalism, literature and art</strong> (where publication is in the public interest)</li>
+    <li><strong>Research, history and statistics</strong> (with safeguards such as pseudonymisation)</li>
+    <li><strong>Legal privilege</strong> and judicial proceedings</li>
+</ul>
+
+<div class="exam-tip">Students often confuse the Data Protection Act (personal data of identifiable living people) with the Computer Misuse Act (unauthorised access/modification of any computer material). If the scenario is about <em>someone's personal data being leaked or mishandled</em>, the DPA is likely relevant. If it is about <em>hacking a system</em>, the CMA is likely relevant. Sometimes both apply &mdash; e.g. an attacker who hacks a database breaches the CMA, and the controller may separately have breached the DPA by failing to secure it.</div>
+
+<h3>2. Computer Misuse Act 1990</h3>
+
+<div class="definition">
+    The <strong>Computer Misuse Act 1990 (CMA)</strong> criminalises <strong>unauthorised access to, and modification of, computer material</strong>. It was introduced after the 1988 case <em>R v Gold and Schifreen</em>, in which two hackers who broke into Prestel (BT's viewdata system) were acquitted because existing laws did not cover computer intrusion. The CMA was updated by the Police and Justice Act 2006 and significantly expanded by the <strong>Serious Crime Act 2015</strong>.
+</div>
+
+<h4>Main Offences</h4>
+
+<table>
+    <tr><th>Section</th><th>Offence</th><th>Example</th><th>Maximum penalty</th></tr>
+    <tr><td><strong>s.1</strong></td><td>Unauthorised access to computer material</td><td>Guessing a teacher's password to look at a classmate's grade</td><td>2 years imprisonment and/or a fine</td></tr>
+    <tr><td><strong>s.2</strong></td><td>Unauthorised access with <em>intent</em> to commit or facilitate further offences (e.g. fraud, blackmail)</td><td>Hacking a bank's system to steal money</td><td>5 years imprisonment and/or a fine</td></tr>
+    <tr><td><strong>s.3</strong></td><td>Unauthorised acts with intent to <em>impair the operation</em> of any computer, or to hinder access (includes malware, DDoS, ransomware)</td><td>Releasing a virus that wipes hard drives; launching a DDoS against a rival website</td><td>10 years imprisonment and/or a fine</td></tr>
+    <tr><td><strong>s.3ZA</strong></td><td>Unauthorised acts causing, or creating risk of, <strong>serious damage</strong> of a material kind (human welfare, environment, economy, national security)</td><td>Attack on a hospital, water utility or power grid</td><td><strong>Life imprisonment</strong> (if endangering life or national security)</td></tr>
+    <tr><td><strong>s.3A</strong></td><td>Making, supplying or obtaining articles (tools, exploit kits) for use in s.1&ndash;s.3 offences</td><td>Writing and selling a ransomware toolkit on the dark web</td><td>2 years imprisonment and/or a fine</td></tr>
+</table>
+
+<p>Key elements for <strong>every</strong> offence:</p>
+<ol>
+    <li>The access/action is <strong>unauthorised</strong> (the accused did not have permission).</li>
+    <li>The accused <strong>knew</strong> at the time it was unauthorised (<em>mens rea</em>).</li>
+    <li>The accused caused a computer to perform a function (s.1) or did an act in relation to a computer (s.3).</li>
+</ol>
+
+<!-- CMA sections diagram -->
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Computer Misuse Act 1990 &mdash; What Each Section Prohibits</text>
+  <!-- s.1 -->
+  <rect x="30" y="50" width="210" height="200" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.8"/>
+  <text x="135" y="75" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">s.1</text>
+  <text x="135" y="95" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Unauthorised</text>
+  <text x="135" y="112" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">ACCESS</text>
+  <line x1="50" y1="125" x2="220" y2="125" stroke="#2563eb" stroke-width="1"/>
+  <text x="135" y="145" text-anchor="middle" font-size="10" fill="#374151">Looking at data you</text>
+  <text x="135" y="160" text-anchor="middle" font-size="10" fill="#374151">shouldn't. No further</text>
+  <text x="135" y="175" text-anchor="middle" font-size="10" fill="#374151">intent required.</text>
+  <text x="135" y="205" text-anchor="middle" font-size="10" font-weight="bold" fill="#991b1b">Max: 2 years</text>
+  <text x="135" y="225" text-anchor="middle" font-size="9" fill="#6b7280">Example: reading a</text>
+  <text x="135" y="238" text-anchor="middle" font-size="9" fill="#6b7280">colleague's email</text>
+  <!-- s.2 -->
+  <rect x="255" y="50" width="210" height="200" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.8"/>
+  <text x="360" y="75" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">s.2</text>
+  <text x="360" y="95" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">ACCESS with INTENT</text>
+  <text x="360" y="112" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">(to commit further crime)</text>
+  <line x1="275" y1="125" x2="445" y2="125" stroke="#f59e0b" stroke-width="1"/>
+  <text x="360" y="145" text-anchor="middle" font-size="10" fill="#374151">Access + intent to</text>
+  <text x="360" y="160" text-anchor="middle" font-size="10" fill="#374151">commit fraud, theft,</text>
+  <text x="360" y="175" text-anchor="middle" font-size="10" fill="#374151">blackmail.</text>
+  <text x="360" y="205" text-anchor="middle" font-size="10" font-weight="bold" fill="#991b1b">Max: 5 years</text>
+  <text x="360" y="225" text-anchor="middle" font-size="9" fill="#6b7280">Example: hacking a</text>
+  <text x="360" y="238" text-anchor="middle" font-size="9" fill="#6b7280">bank to steal money</text>
+  <!-- s.3 -->
+  <rect x="480" y="50" width="210" height="200" rx="10" fill="#fce7f3" stroke="#be185d" stroke-width="1.8"/>
+  <text x="585" y="75" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d174d">s.3 / s.3ZA</text>
+  <text x="585" y="95" text-anchor="middle" font-size="11" font-weight="bold" fill="#831843">Unauthorised</text>
+  <text x="585" y="112" text-anchor="middle" font-size="11" font-weight="bold" fill="#831843">MODIFICATION</text>
+  <line x1="500" y1="125" x2="670" y2="125" stroke="#be185d" stroke-width="1"/>
+  <text x="585" y="145" text-anchor="middle" font-size="10" fill="#374151">Impairing operation:</text>
+  <text x="585" y="160" text-anchor="middle" font-size="10" fill="#374151">malware, DDoS,</text>
+  <text x="585" y="175" text-anchor="middle" font-size="10" fill="#374151">ransomware.</text>
+  <text x="585" y="205" text-anchor="middle" font-size="10" font-weight="bold" fill="#991b1b">Max: 10 yrs &ndash; life</text>
+  <text x="585" y="225" text-anchor="middle" font-size="9" fill="#6b7280">Example: WannaCry,</text>
+  <text x="585" y="238" text-anchor="middle" font-size="9" fill="#6b7280">NHS attack 2017</text>
+  <text x="360" y="282" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Severity and penalty rise left-to-right: access &rarr; intent &rarr; modification / critical-infrastructure damage.</text>
+</svg>
+
+<div class="case-study">
+<h4>R v Cuthbert, 2005 &mdash; "Tsunami donation site"</h4>
+<p>Following the December 2004 Boxing Day tsunami, security consultant <strong>Daniel Cuthbert</strong> donated to a disaster-relief appeal through an online portal. When no confirmation page appeared, he suspected the site was a phishing scam and ran a basic <em>directory traversal test</em> (appending <code>../../../</code> to the URL) to see whether the server filtered suspicious input. The host's intrusion detection system flagged him; he was traced, arrested and convicted under <strong>s.1 CMA</strong>. Cuthbert received a &pound;400 fine and &pound;600 costs. The case is often cited to illustrate that <strong>good intentions are not a defence</strong> under the CMA &mdash; authorisation is a strict requirement. It also fuels ongoing debate about whether the Act chills <em>ethical (white-hat) security research</em>.</p>
+</div>
+
+<div class="case-study">
+<h4>WannaCry, May 2017 &mdash; NHS disruption</h4>
+<p>The <strong>WannaCry</strong> ransomware worm spread rapidly through networks that had not patched the Windows SMBv1 <em>EternalBlue</em> vulnerability (leaked from the NSA). It encrypted files and demanded Bitcoin. The NHS was heavily affected: <strong>an estimated 19,000 appointments cancelled</strong>, ambulances diverted, and some trusts reverted to paper records. In 2017, UK security researcher <em>Marcus Hutchins</em> accidentally activated a "kill switch" domain, halting propagation. The attackers (attributed to the Lazarus Group, North Korea) would be liable under <strong>s.3 / s.3ZA CMA</strong>. The episode illustrates how <em>one act of unauthorised modification</em> can impair critical national infrastructure &mdash; and shows why s.3ZA was added in 2015.</p>
+</div>
+
+<h3>3. Copyright, Designs and Patents Act 1988</h3>
+
+<div class="definition">
+    The <strong>Copyright, Designs and Patents Act 1988 (CDPA)</strong> gives <strong>automatic</strong> legal protection to the creators of original literary, dramatic, musical and artistic works, including <strong>computer software and databases</strong>. No registration is required &mdash; copyright exists the moment the work is fixed in a tangible form (saved to disk, written down, recorded).
+</div>
+
+<h4>What the Act Protects</h4>
+
+<ul>
+    <li><strong>Literary works</strong> &mdash; including <em>source code and object code</em>, technical documentation, novels, lyrics</li>
+    <li><strong>Dramatic works</strong> &mdash; plays, screenplays, choreography</li>
+    <li><strong>Musical works</strong> &mdash; compositions (separate copyright from sound recordings)</li>
+    <li><strong>Artistic works</strong> &mdash; images, photographs, sculptures, graphic design, icons, UI artwork</li>
+    <li><strong>Films and sound recordings</strong></li>
+    <li><strong>Broadcasts</strong> and <strong>typographical arrangements</strong> of published editions</li>
+    <li><strong>Databases</strong> (where there is "substantial investment" &mdash; <em>sui generis</em> database right)</li>
+</ul>
+
+<h4>Duration of Copyright</h4>
+
+<table>
+    <tr><th>Work type</th><th>Duration</th></tr>
+    <tr><td>Literary, dramatic, musical, artistic works</td><td>Life of the author + 70 years</td></tr>
+    <tr><td>Computer-generated works (no human author)</td><td>50 years from creation</td></tr>
+    <tr><td>Films</td><td>70 years from death of last of director / screenplay author / composer</td></tr>
+    <tr><td>Sound recordings, broadcasts</td><td>50&ndash;70 years from first publication/broadcast</td></tr>
+    <tr><td>Typographical arrangement</td><td>25 years from publication</td></tr>
+</table>
+
+<h4>Infringement</h4>
+
+<p>Primary infringement (civil) occurs when a person, without permission, does any restricted act: <strong>copying, distributing, performing, showing, communicating to the public, or adapting</strong> the work. Secondary infringement (can be criminal) includes <strong>importing, selling or dealing in infringing copies</strong>, or providing premises or equipment for infringement.</p>
+
+<p>Penalties range from damages and injunctions in civil cases to <strong>up to 10 years imprisonment</strong> for serious commercial copyright infringement (under the Digital Economy Act 2017 which increased online infringement penalties).</p>
+
+<h4>Fair Dealing / Permitted Acts</h4>
+
+<p>The CDPA contains narrow <strong>fair dealing</strong> exceptions. Unlike US <em>fair use</em>, these are a closed list:</p>
+
+<ul>
+    <li>Research and private study (non-commercial)</li>
+    <li>Criticism, review and quotation (with sufficient acknowledgement)</li>
+    <li>Reporting of current events (except photographs)</li>
+    <li>Caricature, parody or pastiche</li>
+    <li>Illustration for instruction (education, non-commercial)</li>
+    <li>Text and data mining for non-commercial research</li>
+    <li>Accessible copies for people with disabilities</li>
+    <li><strong>Backup copies of legitimately owned software</strong> (s.50A)</li>
+    <li><strong>Decompilation solely to achieve interoperability</strong> with another program (s.50B) &mdash; strict conditions; you may not use it to produce a competing program</li>
+</ul>
+
+<h4>Software Licensing Models</h4>
+
+<table>
+    <tr><th>Model</th><th>Description</th><th>Example</th></tr>
+    <tr><td><strong>Proprietary / commercial</strong></td><td>Source code closed. User buys a licence to use the binary under strict terms (no copying, no reverse engineering).</td><td>Microsoft Windows, Adobe Photoshop</td></tr>
+    <tr><td><strong>Freeware</strong></td><td>Free of charge, but source code not released and redistribution often restricted.</td><td>Skype (historically), Adobe Acrobat Reader</td></tr>
+    <tr><td><strong>Shareware</strong></td><td>Distributed free for a trial period, then user must pay.</td><td>WinRAR, older versions of WinZip</td></tr>
+    <tr><td><strong>Open source &mdash; permissive (MIT, BSD, Apache 2.0)</strong></td><td>Source code released; anyone may modify and redistribute, even in closed-source products, provided the licence text is preserved.</td><td>React (MIT), Kubernetes (Apache 2.0)</td></tr>
+    <tr><td><strong>Open source &mdash; copyleft (GPL, LGPL, AGPL)</strong></td><td>Derivative works must be released under the same licence. "Share-alike" effect keeps the code in the commons.</td><td>Linux kernel (GPL-2.0), GIMP (GPL-3.0)</td></tr>
+    <tr><td><strong>Creative Commons (CC)</strong></td><td>Suite of licences for creative works (not code) allowing attribution, share-alike, non-commercial, no-derivatives combinations.</td><td>Wikipedia text (CC BY-SA 4.0)</td></tr>
+</table>
+
+<h4>Copyright vs Patent vs Trademark</h4>
+
+<table>
+    <tr><th>Right</th><th>Protects</th><th>How granted</th><th>Duration</th></tr>
+    <tr><td><strong>Copyright</strong></td><td>Expression of an idea (source code, text, images)</td><td>Automatic on fixation</td><td>Life + 70 years (usually)</td></tr>
+    <tr><td><strong>Patent</strong></td><td>Novel, non-obvious, useful <em>inventions</em> (processes, machines). In Europe, pure software is not patentable, but software with a "technical effect" can be; in the US, software patents are more common.</td><td>Formal application + examination; costly</td><td>20 years from filing</td></tr>
+    <tr><td><strong>Registered design</strong></td><td>Appearance of a product (shape, pattern)</td><td>Registration with IPO</td><td>Up to 25 years</td></tr>
+    <tr><td><strong>Trademark</strong></td><td>Brand identifiers (logos, names, slogans)</td><td>Registration; renewable</td><td>Indefinite with renewal</td></tr>
+</table>
+
+<div class="case-study">
+<h4>Metallica v Napster, 2000 &mdash; Music Piracy</h4>
+<p>File-sharing service <strong>Napster</strong> let users swap MP3 files peer-to-peer. The band <em>Metallica</em> and rapper <em>Dr. Dre</em> sued, and the RIAA followed. Napster was found liable for contributory and vicarious copyright infringement and was forced into bankruptcy by mid-2002. The case shaped how UK and US courts treat platforms whose <em>main use</em> is infringement, and accelerated legitimate streaming (iTunes 2003, Spotify 2008). Under CDPA terms, Napster users were infringing by <strong>copying and distributing</strong>; Napster itself was liable for <strong>authorising</strong> infringement.</p>
+</div>
+
+<h3>4. Regulation of Investigatory Powers Act 2000 &amp; Investigatory Powers Act 2016</h3>
+
+<div class="definition">
+    The <strong>Regulation of Investigatory Powers Act 2000 (RIPA)</strong> is the framework that governs <strong>interception of communications</strong>, <strong>directed surveillance</strong>, and the <strong>acquisition of communications data</strong> by UK public authorities (police, intelligence agencies, HMRC, some local councils). Parts of RIPA have been superseded by the <strong>Investigatory Powers Act 2016 (IPA)</strong>, nicknamed the "Snooper's Charter".
+</div>
+
+<h4>Key Powers under RIPA / IPA</h4>
+
+<ul>
+    <li><strong>Interception of communications</strong> &mdash; opening post, phone tapping, reading emails/messages <em>in transit</em>. Requires a warrant signed by the Secretary of State and a Judicial Commissioner (the "double lock" under the IPA).</li>
+    <li><strong>Communications data acquisition</strong> &mdash; obtaining metadata (who contacted whom, when, for how long). Lower threshold than interception.</li>
+    <li><strong>Internet Connection Records (ICRs)</strong> &mdash; logs, retained for 12 months by ISPs, of which <em>services or websites</em> a device accessed (not full URLs). Required under the IPA 2016.</li>
+    <li><strong>Bulk interception / bulk acquisition / bulk equipment interference</strong> &mdash; mass collection, usually by GCHQ, of data crossing international links; authorised for serious national-security purposes.</li>
+    <li><strong>Equipment interference (hacking)</strong> &mdash; intelligence agencies may lawfully hack computers and phones, subject to warrants.</li>
+    <li><strong>Encryption notices</strong> &mdash; authorities may require a "technical capability" to remove electronic protection (a highly controversial provision that critics argue undermines end-to-end encryption).</li>
+</ul>
+
+<h4>Safeguards</h4>
+
+<ul>
+    <li><strong>Investigatory Powers Commissioner's Office (IPCO)</strong> independently oversees use of powers.</li>
+    <li><strong>Investigatory Powers Tribunal (IPT)</strong> hears complaints that powers were used unlawfully.</li>
+    <li><strong>"Double lock"</strong> &mdash; most warrants need both ministerial approval and a Judicial Commissioner's approval.</li>
+</ul>
+
+<h4>Controversy &mdash; Mass Surveillance vs National Security</h4>
+
+<p>The RIPA / IPA debate is the clearest A-Level example of <strong>security vs privacy</strong> trade-offs. Supporters argue lawful surveillance is essential to detect terrorism, organised crime and child sexual exploitation, and that the "double lock" provides proportionate oversight. Critics &mdash; including Liberty, Big Brother Watch and the European Court of Human Rights &mdash; argue that bulk powers amount to <em>mass suspicionless surveillance</em> incompatible with Article 8 of the European Convention on Human Rights (right to private life), and that ICRs give a disturbingly detailed picture of an individual's life.</p>
+
+<div class="case-study">
+<h4>Edward Snowden, 2013 &mdash; NSA/GCHQ Revelations</h4>
+<p>Former NSA contractor <strong>Edward Snowden</strong> leaked classified documents to journalists Glenn Greenwald and Laura Poitras, revealing the scope of programmes such as <em>PRISM</em> (US collection from major tech firms), <em>Tempora</em> (GCHQ tapping fibre-optic cables at UK landing stations) and <em>XKeyscore</em> (NSA analytic tool). The revelations prompted global debate, court challenges to bulk surveillance, a redesign of tech-company encryption, and ultimately the passage of the Investigatory Powers Act 2016 (which both legalised and constrained many of the programmes disclosed). Snowden sought asylum in Russia and remains wanted in the US under the Espionage Act. <strong>Moral dimension:</strong> he broke the law but argued he served the public interest &mdash; a whistleblowing dilemma directly relevant to the BCS Code's "public interest" principle.</p>
+</div>
+
+<h3>5. Freedom of Information Act 2000</h3>
+
+<div class="definition">
+    The <strong>Freedom of Information Act 2000 (FOIA)</strong> gives any person a <strong>right of access to recorded information held by UK public authorities</strong>. This includes government departments, the NHS, state schools, universities, the police, and local councils. A request must be answered within <strong>20 working days</strong>, with a fee only if the cost exceeds statutory limits (approximately &pound;450).
+</div>
+
+<p>Exemptions include national security, law enforcement, personal data (deferred to the DPA), commercial confidentiality, and information likely to cause "prejudice". The FOIA is the counterpart to the DPA: the DPA gives individuals rights over data about <em>themselves</em>; the FOIA gives everyone rights over information about <em>public authorities</em>. Investigative journalism and accountability campaigns (MPs' expenses scandal 2009, police use-of-force statistics) rely heavily on FOIA requests.</p>
+
+<h3>6. Equality Act 2010 &mdash; Relevance to Computing</h3>
+
+<p>The <strong>Equality Act 2010</strong> consolidates earlier anti-discrimination law and lists nine <em>protected characteristics</em> (age, disability, gender reassignment, marriage/civil partnership, pregnancy/maternity, race, religion/belief, sex, sexual orientation). Computing relevance:</p>
+
+<ul>
+    <li><strong>Accessibility</strong> &mdash; public-sector websites must comply with the Public Sector Bodies Accessibility Regulations 2018 (derived from the Equality Act) and WCAG 2.1 AA. Alt-text, keyboard navigation, sufficient colour contrast, screen-reader compatibility.</li>
+    <li><strong>Algorithmic discrimination</strong> &mdash; automated systems (hiring, credit scoring, facial recognition) must not indirectly discriminate on protected characteristics.</li>
+    <li><strong>Reasonable adjustments</strong> &mdash; employers must provide assistive technology where needed.</li>
+</ul>
+
+<h3>7. Online Safety Act 2023 (awareness)</h3>
+
+<p>The <strong>Online Safety Act 2023</strong> places duties of care on "user-to-user" and search services to protect users (especially children) from illegal content and "legal but harmful" content. Ofcom is the regulator, with powers to fine up to <strong>&pound;18 million or 10% of global turnover</strong>. Duties include risk assessments, age assurance, and takedown of priority illegal content (child sexual abuse, terrorism, fraud, revenge pornography). Controversial among privacy advocates for provisions that could require scanning of end-to-end-encrypted messages.</p>
+
+<h3>Legislation Summary Table</h3>
+
+<table>
+    <tr><th>Act</th><th>Year</th><th>Purpose</th><th>Example breach</th><th>Max penalty</th></tr>
+    <tr><td><strong>Copyright, Designs and Patents Act</strong></td><td>1988</td><td>Automatic protection for original creative works (incl. software)</td><td>Distributing pirated software / music; decompiling beyond interoperability</td><td>10 years (serious commercial infringement)</td></tr>
+    <tr><td><strong>Computer Misuse Act</strong> (updated 2015)</td><td>1990</td><td>Criminalises unauthorised access and modification of computer material</td><td>Hacking, malware, DDoS, ransomware</td><td>Life (s.3ZA &mdash; serious damage)</td></tr>
+    <tr><td><strong>Regulation of Investigatory Powers Act</strong></td><td>2000</td><td>Legal basis for interception and surveillance by public authorities</td><td>Unauthorised intercept by a public body</td><td>2 years (unlawful interception)</td></tr>
+    <tr><td><strong>Freedom of Information Act</strong></td><td>2000</td><td>Right of public access to information held by public authorities</td><td>Public body refusing a lawful request; destroying records to avoid disclosure</td><td>Criminal offence to destroy requested records (fine)</td></tr>
+    <tr><td><strong>Equality Act</strong></td><td>2010</td><td>Protection from discrimination; drives accessibility in digital services</td><td>Inaccessible public-sector website; discriminatory hiring algorithm</td><td>Unlimited compensation (tribunal)</td></tr>
+    <tr><td><strong>Investigatory Powers Act</strong></td><td>2016</td><td>Modern surveillance framework (bulk powers, ICRs, double-lock)</td><td>Use of bulk powers outside warrant scope</td><td>Criminal offence; 2 years</td></tr>
+    <tr><td><strong>Data Protection Act</strong> (+ UK GDPR)</td><td>2018</td><td>Protects personal data; rights for data subjects</td><td>Inadequate security; unlawful profiling; ignoring SARs</td><td>&pound;17.5m or 4% global turnover</td></tr>
+    <tr><td><strong>Online Safety Act</strong></td><td>2023</td><td>Duty of care on online platforms; protects users from illegal/harmful content</td><td>Failure to remove CSAM; no age assurance on adult sites</td><td>&pound;18m or 10% global turnover</td></tr>
+</table>
+
+<div class="exam-tip">If a question asks you to <em>name</em> an Act, you <strong>must</strong> give the year. "The Data Protection Act" without "2018" (or "1998" if the scenario is pre-2018) loses marks. Also remember the Computer Misuse Act was <em>amended</em> by the Serious Crime Act 2015 &mdash; knowing s.3ZA exists is worth a mark.</div>
+
+<h2>1.5.2 Moral and Ethical Issues</h2>
+
+<p>Beyond the letter of the law, computing raises profound questions about <em>how we should use</em> technology. The OCR specification asks students to understand ethical implications in several domains. A high-mark answer:</p>
+
+<ol>
+    <li><strong>Identifies</strong> the issue (what is being done and by whom).</li>
+    <li><strong>Weighs both sides</strong> &mdash; benefits and harms.</li>
+    <li><strong>References</strong> legislation or a code of conduct where relevant.</li>
+    <li><strong>Concludes</strong> with a reasoned judgement &mdash; not sitting on the fence.</li>
+</ol>
+
+<h3>Computing in the Workforce &mdash; Automation</h3>
+
+<p>Automation means substituting software or robotics for tasks previously done by humans. Three waves are evident:</p>
+
+<ul>
+    <li><strong>Industrial automation</strong> &mdash; car-factory welding robots, pick-and-place machines, warehouse robotics (Amazon Kiva).</li>
+    <li><strong>Retail/service automation</strong> &mdash; self-checkout, ATMs, chatbots, automated phone systems.</li>
+    <li><strong>Cognitive automation (2020s)</strong> &mdash; generative AI (LLMs, image generators) performing writing, coding, design and analysis tasks previously reserved for degree-educated "knowledge workers".</li>
+</ul>
+
+<h4>Arguments For</h4>
+<ul>
+    <li>Higher productivity &rarr; cheaper goods and services</li>
+    <li>Removes dull, dirty or dangerous work (e.g. robotic welding in extreme heat)</li>
+    <li>Consistency and 24/7 operation</li>
+    <li>Frees humans for creative, interpersonal work</li>
+    <li>New job categories (AI prompt engineers, robotics technicians)</li>
+</ul>
+
+<h4>Arguments Against</h4>
+<ul>
+    <li>Short-term job displacement concentrated in specific sectors and regions</li>
+    <li>Widening inequality &mdash; capital owners benefit; displaced workers often cannot retrain</li>
+    <li>Loss of skills / tacit knowledge (e.g. handcraft trades)</li>
+    <li>Social effects &mdash; loss of dignity, community, purpose</li>
+    <li>Concentration of economic power in a few tech firms</li>
+    <li>Retraining costs often borne by taxpayer, not the automating company</li>
+</ul>
+
+<div class="definition">
+    <strong>Technological unemployment</strong> &mdash; unemployment caused by technological change that destroys jobs faster than new ones are created. Keynes warned of it in 1930; economists still dispute whether the 21st-century wave is qualitatively different from earlier transitions (agricultural &rarr; industrial &rarr; service &rarr; information).
+</div>
+
+<h3>Artificial Intelligence and Automated Decision Making</h3>
+
+<p>Machine-learning systems are increasingly used for consequential decisions: recruitment shortlisting, loan approvals, insurance premiums, criminal-risk scoring, medical triage, social-welfare eligibility, predictive policing. Ethical issues cluster around four themes:</p>
+
+<h4>1. Bias</h4>
+
+<p>Training data reflects historical human decisions, which often contain discrimination. Examples:</p>
+
+<ul>
+    <li><strong>COMPAS</strong> (US criminal risk tool) &mdash; ProPublica's 2016 investigation found it wrongly flagged Black defendants as high-risk at nearly twice the rate of white defendants.</li>
+    <li><strong>Amazon recruiting tool (2018)</strong> &mdash; scrapped after it was found to downrank CVs mentioning "women's" (e.g. "women's chess club"), because it had trained on a male-dominated 10-year dataset.</li>
+    <li><strong>Facial recognition</strong> &mdash; NIST's 2019 study of 189 algorithms found higher false-positive rates for Black and Asian faces, and for women, than for white males.</li>
+    <li><strong>Apple Card credit limits (2019)</strong> &mdash; couples reported very different limits for husband vs wife despite shared finances; investigation found no overt sex-based variable, but proxy features correlated.</li>
+</ul>
+
+<h4>2. Explainability</h4>
+
+<p>Deep-learning models are often "black boxes". The GDPR includes a limited <strong>right to explanation</strong> for solely-automated decisions with significant effects. This is hard to deliver for a 70-billion-parameter neural network; research fields such as <em>interpretable ML</em> and <em>XAI (Explainable AI)</em> attempt to bridge the gap.</p>
+
+<h4>3. Accountability</h4>
+
+<p>When an AI system causes harm, <em>who is liable</em>? The developer, the deployer, the user, the data supplier? Current UK/EU approaches treat AI as a tool &mdash; the deployer remains legally responsible &mdash; but the <strong>EU AI Act 2024</strong> introduces risk-tiered obligations and may influence UK practice.</p>
+
+<h4>4. Power and Autonomy</h4>
+
+<p>Generative AI reshapes creative industries, journalism, education and public discourse. Concerns include deepfakes undermining trust in evidence, scale-industrial disinformation, erosion of teacher&ndash;student assessment integrity, and concentration of cutting-edge capability in a small number of firms controlling frontier compute.</p>
+
+<div class="case-study">
+<h4>Microsoft "Tay", March 2016 &mdash; AI gone wrong</h4>
+<p>Microsoft released <strong>Tay</strong>, a chatbot on Twitter designed to learn from conversation. Within <strong>16 hours</strong>, coordinated trolls exploited Tay's online learning to make it post racist, antisemitic and sexually explicit tweets; Microsoft took it offline. The incident illustrates (a) the brittleness of models that learn live from untrusted inputs, (b) the need for content moderation <em>and</em> adversarial testing before deployment, and (c) that the deploying company retains moral and reputational responsibility even when "the AI" did the posting.</p>
+</div>
+
+<div class="case-study">
+<h4>Uber self-driving fatality, Tempe AZ, March 2018</h4>
+<p>An Uber autonomous-test SUV in self-driving mode struck and killed pedestrian <strong>Elaine Herzberg</strong>, who was walking a bicycle across the road at night. The system's perception pipeline detected her but misclassified her repeatedly (vehicle &rarr; bicycle &rarr; unknown) and delayed braking. A safety driver was behind the wheel but was watching a streaming show. Prosecutors <em>declined</em> to charge Uber as a corporation; the safety driver pleaded guilty to endangerment (2023). The case raises core A-Level questions: <strong>who is liable when a self-driving car kills?</strong> The driver, the company, the sensor suppliers, the software engineers, the regulator? Jurisdictions are still converging on an answer.</p>
+</div>
+
+<h3>Environmental Effects</h3>
+
+<p>Computing's environmental footprint has four main pressure points:</p>
+
+<h4>1. Energy Consumption</h4>
+
+<ul>
+    <li>Data centres consumed roughly <strong>1&ndash;1.5% of global electricity</strong> pre-AI-boom; figures for 2024&ndash;25 are rising sharply due to LLM training and inference.</li>
+    <li><strong>Bitcoin</strong> mining alone consumes more electricity annually than some countries (Argentina-scale by some estimates). Proof-of-work's energy cost is the core target of critics; Ethereum's 2022 move to proof-of-stake cut its energy use by ~99.95%.</li>
+    <li>Mitigations: renewable-powered data centres (Google carbon-neutral since 2007, 24/7 clean-energy matching target 2030), liquid cooling, workload scheduling to follow renewable generation.</li>
+</ul>
+
+<h4>2. E-Waste</h4>
+
+<ul>
+    <li>The UN reported <strong>62 million tonnes</strong> of e-waste generated globally in 2022 &mdash; growing five times faster than recycling.</li>
+    <li>E-waste contains toxic metals (lead, cadmium, mercury) and valuable ones (gold, silver, copper, palladium).</li>
+    <li>Informal recycling in <strong>Agbogbloshie (Ghana)</strong>, Guiyu (China, historically), and parts of Pakistan and India involves burning cables for copper, releasing dioxins and poisoning groundwater.</li>
+    <li>The UK <strong>Waste Electrical and Electronic Equipment (WEEE) Regulations 2013</strong> require producers to fund collection and treatment; retailers must offer take-back.</li>
+</ul>
+
+<h4>3. Rare-Earth and Mineral Extraction</h4>
+
+<ul>
+    <li><strong>Cobalt</strong> (lithium-ion batteries) &mdash; ~70% comes from the Democratic Republic of Congo, with documented child labour and dangerous artisanal mining.</li>
+    <li><strong>Lithium</strong> &mdash; extraction in the Atacama (Chile/Bolivia/Argentina) depletes groundwater in arid regions.</li>
+    <li><strong>Rare-earth elements</strong> (neodymium, dysprosium) &mdash; processing concentrated in China; radioactive tailings; geopolitical leverage.</li>
+    <li>Ethical sourcing frameworks: EU Conflict Minerals Regulation, OECD Due Diligence Guidance, "Fairphone" business model.</li>
+</ul>
+
+<h4>4. Positive Environmental Effects of Computing</h4>
+
+<ul>
+    <li><strong>Smart grids</strong> balance renewable supply and demand, reducing fossil peaking.</li>
+    <li><strong>Remote work</strong> (post-2020) cut commuter emissions; offset by increased home energy and cloud use.</li>
+    <li><strong>Precision agriculture</strong> &mdash; sensors and drones reduce fertiliser, pesticide and water use.</li>
+    <li><strong>Climate modelling</strong> &mdash; HPC simulations underpin IPCC assessments.</li>
+    <li><strong>Digital documents</strong> &mdash; reduced paper demand (though the "paperless office" has been over-promised for decades).</li>
+</ul>
+
+<h3>Censorship and the Internet</h3>
+
+<p>Three distinct actors can censor:</p>
+
+<h4>State Censorship</h4>
+
+<ul>
+    <li><strong>Great Firewall of China</strong> &mdash; blocks Google, Facebook, Twitter, Wikipedia (partially), Western news; uses DNS poisoning, SNI filtering, deep packet inspection and mass TCP resets. Combined with domestic alternatives (Baidu, WeChat, Weibo) and the "50-cent army" of online commenters.</li>
+    <li><strong>Russia</strong> &mdash; RuNet isolation exercises; blocking of Twitter/X and Meta platforms since 2022.</li>
+    <li><strong>Iran, North Korea, Turkey, Myanmar</strong> &mdash; various models, from near-total isolation to targeted blocks during protests.</li>
+    <li><strong>UK</strong> &mdash; court-ordered ISP blocking of piracy sites; age-verification under the Online Safety Act; ISP family-filter defaults.</li>
+</ul>
+
+<h4>Platform Moderation (Private Censorship)</h4>
+
+<p>Social platforms apply their own <em>terms of service</em>. Decisions to de-platform individuals, down-rank content, or apply "misinformation" labels shape public discourse. Defenders argue private firms have free-speech rights; critics argue a handful of platforms now function as the public square and should be regulated accordingly. The Online Safety Act 2023 formalises some moderation duties; Section 230 in the US shields platforms from liability for user content.</p>
+
+<h4>Net Neutrality</h4>
+
+<div class="definition">
+    <strong>Net neutrality</strong> is the principle that ISPs must treat all internet traffic equally, without throttling or prioritising particular sources, destinations or applications. The UK/EU still broadly upholds it (Open Internet Regulation 2015/2120). The US Federal Communications Commission has oscillated &mdash; classified ISPs as common carriers (2015), reversed (2017), and partially restored rules (2024).
+</div>
+
+<p>Without net neutrality, ISPs could charge Netflix extra for "fast-lane" delivery, potentially disadvantaging start-ups that cannot afford the toll.</p>
+
+<h3>Monitoring and Surveillance</h3>
+
+<h4>Workplace Monitoring</h4>
+
+<ul>
+    <li>Keystroke logging, screenshot capture, email scanning, webcam checks &mdash; widely used in remote-work era.</li>
+    <li>Legal under UK law if proportionate, necessary, and covered by a Data Protection Impact Assessment; <strong>must be transparent</strong> under GDPR Principle 1.</li>
+    <li>Excessive monitoring can breach Article 8 ECHR (privacy) and cause psychological harm.</li>
+</ul>
+
+<h4>Public-Space Facial Recognition</h4>
+
+<ul>
+    <li>UK police trials (Metropolitan Police, South Wales Police) challenged successfully in <em>Bridges v South Wales Police</em> (Court of Appeal, 2020) on DPA/Equality grounds.</li>
+    <li>"Chilling effect" &mdash; the knowledge that one is being watched alters behaviour, potentially suppressing legitimate protest and free assembly.</li>
+</ul>
+
+<h4>The Surveillance Economy</h4>
+
+<p>Beyond the state, ad-tech firms construct detailed behavioural profiles from cookies, device fingerprints, location, and purchase histories. Targeted advertising funds much of the free web; the ethical question is whether users have meaningfully consented given pervasive dark patterns in cookie banners.</p>
+
+<div class="case-study">
+<h4>Cambridge Analytica / Facebook, 2018</h4>
+<p>A personality-quiz app (<em>thisisyourdigitallife</em>), run by academic Aleksandr Kogan, collected data not just from ~270,000 consenting users but &mdash; under Facebook's then-loose platform rules &mdash; from their friends, totalling <strong>~87 million profiles</strong>. The data were passed to <em>Cambridge Analytica</em> and used to build psychographic models for targeted political advertising, reportedly in the 2016 US presidential campaign and the UK Brexit referendum. The ICO fined Facebook <strong>&pound;500,000</strong> (the pre-GDPR maximum; a 2018 GDPR fine would have been potentially billions). Facebook later settled a US FTC case for <strong>$5 billion</strong>. The case illustrates: DPA principles (lawfulness, transparency, purpose limitation), platform responsibility for third-party developers, and democratic legitimacy of microtargeting.</p>
+</div>
+
+<h3>Piracy and Copyright Infringement</h3>
+
+<p>Digital piracy ranges from recreational file-sharing to industrial counterfeiting:</p>
+
+<ul>
+    <li><strong>Music</strong> &mdash; Napster &rarr; LimeWire &rarr; BitTorrent &rarr; Spotify. Streaming subscriptions have reduced (but not eliminated) audio piracy.</li>
+    <li><strong>Film and TV</strong> &mdash; BitTorrent, illegal IPTV ("Firestick streams"). Fragmentation of legal streaming services (Netflix, Disney+, Apple, HBO, Amazon, Paramount, Peacock) is widely blamed for resurgent piracy.</li>
+    <li><strong>Software</strong> &mdash; cracked installers, keygens. Subscription SaaS (Office 365, Adobe CC) reduces but does not eliminate.</li>
+    <li><strong>Academic publishing</strong> &mdash; <strong>Sci-Hub</strong> and Library Genesis distribute paywalled scholarly articles to researchers without institutional subscriptions. Illegal, widely used globally, and the subject of ongoing debate about open access.</li>
+    <li><strong>Video games</strong> &mdash; Denuvo and similar DRM; console jailbreaks.</li>
+</ul>
+
+<h4>Ethical arguments</h4>
+
+<ul>
+    <li><strong>For piracy (moral):</strong> access inequality; obsolescence (a 1992 game unavailable for sale); archival purposes; protest against digital-locker DRM that stops reselling; academic freedom in the Global South (Sci-Hub).</li>
+    <li><strong>Against piracy:</strong> creators deprived of income; smaller studios hit harder than majors; undermines investment in new works; breach of CDPA 1988.</li>
+</ul>
+
+<h3>Offensive Communications, Cyberbullying and Online Harms</h3>
+
+<p>The internet's global reach and <strong>anonymity</strong> make both harassment and hate speech easier. UK offences include:</p>
+
+<ul>
+    <li>Malicious Communications Act 1988 &mdash; sending indecent, grossly offensive or threatening communications.</li>
+    <li>Communications Act 2003, s.127 &mdash; grossly offensive, menacing or false messages via public electronic communications network.</li>
+    <li>Protection from Harassment Act 1997 &mdash; covers cyberstalking.</li>
+    <li>Online Safety Act 2023 &mdash; duty of care; criminalises cyberflashing and "false communications" intended to cause harm.</li>
+</ul>
+
+<p>Cyberbullying among school-age children is strongly correlated with mental-health harm, including self-harm. Case law increasingly holds platforms partly accountable (<em>Molly Russell inquest 2022</em>, which found Instagram content "contributed" to a 14-year-old's suicide).</p>
+
+<h3>Cultural Issues and the Digital Divide</h3>
+
+<div class="definition">
+    The <strong>digital divide</strong> is the gap between those with access to, and skills to use, modern digital technology and those without. It operates on three levels: <strong>access</strong> (hardware, broadband), <strong>skills</strong> (digital literacy) and <strong>outcomes</strong> (economic, educational, civic).
+</div>
+
+<ul>
+    <li><strong>Geographic</strong> &mdash; rural UK broadband lags urban; Project Gigabit targets 85% gigabit coverage by 2025. Globally, sub-Saharan Africa still has mobile-internet penetration below 50%.</li>
+    <li><strong>Economic</strong> &mdash; a laptop, smartphone and home broadband cost hundreds of pounds annually; UK "poverty-premium" sees the poorest paying more per GB.</li>
+    <li><strong>Generational</strong> &mdash; older adults may struggle with banking apps as branches close.</li>
+    <li><strong>Disability</strong> &mdash; Equality Act requires reasonable adjustments; not all services comply.</li>
+    <li><strong>Linguistic</strong> &mdash; the web is still skewed toward English; LLMs are dramatically worse in low-resource languages.</li>
+    <li><strong>Cultural acceptance</strong> &mdash; attitudes to privacy, surveillance, gambling and speech vary between cultures; a service designed in California may be inappropriate or illegal in Germany or Saudi Arabia.</li>
+</ul>
+
+<p>COVID-19 sharply exposed the divide: pupils without devices or broadband fell behind during remote schooling, and the gap persisted post-pandemic.</p>
+
+<h3>Professional Conduct</h3>
+
+<p>Professional ethics bridge the gap between personal morality and the law. Two codes are worth knowing:</p>
+
+<h4>British Computer Society (BCS) Code of Conduct</h4>
+
+<p>The BCS is the UK's Chartered Institute for IT. Its <strong>Code of Conduct</strong> has four pillars that all members must uphold:</p>
+
+<!-- BCS 4-pillar diagram -->
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">BCS Code of Conduct &mdash; Four Pillars</text>
+  <!-- 4 quadrant boxes -->
+  <rect x="40" y="50" width="310" height="130" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="195" y="75" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">1. Public Interest</text>
+  <text x="195" y="100" text-anchor="middle" font-size="10" fill="#374151">Have due regard for public</text>
+  <text x="195" y="115" text-anchor="middle" font-size="10" fill="#374151">health, privacy, security,</text>
+  <text x="195" y="130" text-anchor="middle" font-size="10" fill="#374151">wellbeing, human rights,</text>
+  <text x="195" y="145" text-anchor="middle" font-size="10" fill="#374151">environment, and rights of</text>
+  <text x="195" y="160" text-anchor="middle" font-size="10" fill="#374151">third parties.</text>
+  <rect x="370" y="50" width="310" height="130" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="525" y="75" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">2. Professional Competence</text>
+  <text x="525" y="90" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">and Integrity</text>
+  <text x="525" y="115" text-anchor="middle" font-size="10" fill="#374151">Only take on work within</text>
+  <text x="525" y="130" text-anchor="middle" font-size="10" fill="#374151">your competence; keep</text>
+  <text x="525" y="145" text-anchor="middle" font-size="10" fill="#374151">knowledge up to date; act</text>
+  <text x="525" y="160" text-anchor="middle" font-size="10" fill="#374151">honestly and without bias.</text>
+  <rect x="40" y="200" width="310" height="130" rx="10" fill="#fdf2f8" stroke="#be185d" stroke-width="2"/>
+  <text x="195" y="225" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d174d">3. Duty to Relevant Authority</text>
+  <text x="195" y="250" text-anchor="middle" font-size="10" fill="#374151">Act in the best interests of</text>
+  <text x="195" y="265" text-anchor="middle" font-size="10" fill="#374151">your employer/client; avoid</text>
+  <text x="195" y="280" text-anchor="middle" font-size="10" fill="#374151">conflicts of interest;</text>
+  <text x="195" y="295" text-anchor="middle" font-size="10" fill="#374151">respect confidentiality;</text>
+  <text x="195" y="310" text-anchor="middle" font-size="10" fill="#374151">don't misrepresent.</text>
+  <rect x="370" y="200" width="310" height="130" rx="10" fill="#ecfdf5" stroke="#16a34a" stroke-width="2"/>
+  <text x="525" y="225" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">4. Duty to the Profession</text>
+  <text x="525" y="250" text-anchor="middle" font-size="10" fill="#374151">Uphold the reputation and</text>
+  <text x="525" y="265" text-anchor="middle" font-size="10" fill="#374151">standing of the BCS and</text>
+  <text x="525" y="280" text-anchor="middle" font-size="10" fill="#374151">the profession; support</text>
+  <text x="525" y="295" text-anchor="middle" font-size="10" fill="#374151">colleagues in professional</text>
+  <text x="525" y="310" text-anchor="middle" font-size="10" fill="#374151">development.</text>
+  <text x="360" y="352" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Priority order: if pillars conflict, the public interest takes precedence over employer or profession.</text>
+</svg>
+
+<p>Crucially, Pillar 1 (<strong>Public Interest</strong>) takes precedence. A BCS member who discovers that their employer's software will endanger the public and is ordered not to disclose is ethically required to put public safety first &mdash; the classic <em>whistleblowing</em> duty.</p>
+
+<h4>ACM Code of Ethics</h4>
+
+<p>The Association for Computing Machinery (USA) publishes a broader, more detailed code (2018 revision) with seven general principles including "avoid harm", "be honest and trustworthy", "respect privacy", and "honour confidentiality". UK students should know it exists and is internationally influential, especially in academia.</p>
+
+<h4>Whistleblowing</h4>
+
+<p>Both codes recognise a duty to speak up. UK law (<strong>Public Interest Disclosure Act 1998</strong>) protects qualifying whistleblowers from dismissal. Famous computing-related whistleblowers:</p>
+
+<ul>
+    <li><strong>Edward Snowden (2013)</strong> &mdash; NSA mass surveillance. US position: Espionage Act violation. Ethical position: highly contested.</li>
+    <li><strong>Chelsea Manning (2010)</strong> &mdash; disclosed US military logs to WikiLeaks. Convicted under Espionage Act; sentence later commuted.</li>
+    <li><strong>Frances Haugen (2021)</strong> &mdash; former Facebook product manager disclosed internal research showing Instagram harm to teenagers; testified to UK Parliament and US Senate. Operated within whistleblower-protection frameworks.</li>
+</ul>
+
+<div class="case-study">
+<h4>Volkswagen "Dieselgate", 2015 &mdash; Engineered Deceit</h4>
+<p>Volkswagen installed "<strong>defeat device</strong>" software in 11 million diesel cars. When the engine-control unit detected the regulatory steering/throttle pattern of a laboratory emissions test, it enabled a cleaner-running mode; in normal driving, NOx emissions were up to 40 times the legal limit. The US EPA uncovered it in 2015; VW paid over &pound;25 billion in fines, settlements and buybacks. Several engineers were prosecuted (Oliver Schmidt, 7 years US prison). Ethical issues: engineers wrote code knowing its deceptive purpose &mdash; a direct breach of BCS Pillar 1 (public interest, environment) and Pillar 2 (integrity). <strong>"Just following orders"</strong> is not an acceptable defence under any major professional code.</p>
+</div>
+
+<div class="case-study">
+<h4>Ashley Madison data breach, July 2015</h4>
+<p>Ashley Madison, a dating site for married people seeking affairs, was breached by "The Impact Team". 37 million user records were dumped online, including names, emails and partial card details. Consequences included <strong>two reported suicides</strong>, divorces, resignations, and lawsuits. Ethical issues interweave: the attackers claimed a moral cause (the site's "paid delete" feature was not honoured); victims' privacy was obliterated irrespective of personal morality about infidelity; and the company was found by the Australian/Canadian regulators to have inadequate security practices (breach of what would become GDPR Principle 6). The case is used in ethics lectures worldwide to distinguish <strong>legal</strong> (the attackers committed a crime; the site was legal), <strong>moral</strong> (private judgements on infidelity) and <strong>ethical</strong> (professional obligation to secure data) dimensions.</p>
+</div>
+
+<h3>Extended Case Studies on Professional Conduct</h3>
+
+<div class="case-study">
+<h4>Therac-25, 1985&ndash;1987 &mdash; Radiation overdoses</h4>
+<p>The <strong>Therac-25</strong> was a computer-controlled radiotherapy machine. Six known accidents between 1985 and 1987 delivered massive radiation overdoses (up to 100 times the prescribed dose); three patients died and others suffered severe injuries. The root causes were a <em>race condition</em> in the control software (inherited from the older Therac-20 which had a hardware interlock to mask it), inadequate testing, and the manufacturer's initial denial. No formal independent code review had been conducted. The case is the canonical example in software engineering ethics courses of why Pillar 1 of the BCS Code &mdash; <em>due regard for public health</em> &mdash; must outrank commercial pressure. Modern medical-device standards (IEC 62304) and the UK MHRA regime descend directly from Therac lessons.</p>
+</div>
+
+<div class="case-study">
+<h4>Post Office Horizon IT scandal, 1999&ndash;present</h4>
+<p>Between 1999 and 2015, the UK Post Office prosecuted over <strong>900 sub-postmasters</strong> for theft and false accounting based on apparent shortfalls reported by its Horizon accounting software (built by Fujitsu). Many were bankrupted, imprisoned, or took their own lives. Horizon contained numerous bugs producing phantom shortfalls; Post Office management knew some of this and <em>withheld</em> evidence from the courts. The 2019 <em>Bates v Post Office</em> High Court ruling and subsequent 2024 public inquiry exposed systemic failures. Under the BCS Code, Fujitsu engineers who knew of the defects had a <strong>Pillar 1 duty</strong> to the public that arguably overrode their <strong>Pillar 3 duty</strong> to the employer. The case has prompted calls for a statutory duty of candour for software suppliers to the public sector, and for the reversal of a legal presumption (dating from 1999) that computer evidence is reliable unless proven otherwise.</p>
+</div>
+
+<div class="case-study">
+<h4>Boeing 737 MAX MCAS, 2018&ndash;2019</h4>
+<p>Two crashes (Lion Air 610, October 2018; Ethiopian 302, March 2019) killing <strong>346 people</strong> were traced to the <em>Manoeuvring Characteristics Augmentation System (MCAS)</em>, flight-control software added to compensate for larger engines. MCAS could command repeated nose-down trim based on <em>a single angle-of-attack sensor</em> &mdash; violating basic redundancy principles &mdash; and pilots were not informed of its existence. Internal Boeing messages showed engineers had raised concerns; commercial pressure to avoid pilot-retraining costs won out. Boeing paid over $20 billion in fines, settlements and grounding costs. The ethical lesson: engineers' duty to "speak up" (BCS Pillar 1) is only meaningful if the organisational culture lets those voices be heard.</p>
+</div>
+
+<h3>Frameworks for Ethical Reasoning</h3>
+
+<p>When evaluating a computing scenario, philosophers offer complementary frameworks:</p>
+
+<table>
+    <tr><th>Framework</th><th>Core question</th><th>Computing example</th></tr>
+    <tr><td><strong>Consequentialism / Utilitarianism</strong></td><td>Does the action maximise overall wellbeing?</td><td>Self-driving cars that reduce total deaths even if they shift <em>who</em> dies (trolley problem variants).</td></tr>
+    <tr><td><strong>Deontology (Kant)</strong></td><td>Is the action consistent with a universal duty or rule? Does it respect persons as ends?</td><td>Never use users' data in ways to which they could not reasonably consent &mdash; regardless of profit.</td></tr>
+    <tr><td><strong>Virtue ethics</strong></td><td>What would a person of good character do here?</td><td>A developer acts with <em>honesty</em> and <em>practical wisdom</em> when disclosing a security vulnerability responsibly.</td></tr>
+    <tr><td><strong>Rights-based</strong></td><td>Are fundamental rights (privacy, autonomy, dignity) respected?</td><td>Mass surveillance is impermissible even if effective, because it degrades the right to private life.</td></tr>
+    <tr><td><strong>Social-contract / Justice</strong></td><td>Are benefits and burdens distributed fairly across society?</td><td>The digital divide is unjust when public services move online without safeguards for those without access.</td></tr>
+</table>
+
+<p>A-Level answers do not need to name these frameworks, but being able to deploy "but from a rights-based view..." or "a utilitarian would argue..." shows maturity worth a mark.</p>
+
+<h3>Emerging Issues (2020s)</h3>
+
+<h4>Generative AI and Intellectual Property</h4>
+
+<p>Models such as GPT-4, Claude and Stable Diffusion were trained on massive scrapes of the web &mdash; including copyrighted text and images. Ongoing UK/US/EU litigation (<em>Getty Images v Stability AI</em>, <em>New York Times v OpenAI</em>, <em>Authors Guild v OpenAI</em>) will determine whether training constitutes infringement, fair dealing / fair use, or something requiring a new licensing regime. The UK government's 2024&ndash;25 consultation on a "text and data mining exception with opt-out" proved deeply controversial among artists.</p>
+
+<h4>Deepfakes and Synthetic Media</h4>
+
+<p>Realistic AI-generated video and voice create risks for fraud (CEO "voice clone" authorising a transfer), non-consensual intimate imagery, election interference, and evidentiary trust. The Online Safety Act 2023 criminalises sharing non-consensual sexual deepfakes; the UK government announced in 2024 intent to criminalise their <em>creation</em> as well.</p>
+
+<h4>Autonomous Weapons</h4>
+
+<p>Fully autonomous "lethal autonomous weapon systems" (LAWS) raise profound ethical questions. UN discussions have not produced a treaty; campaigns such as "Stop Killer Robots" argue meaningful human control must be legally required before a machine takes a human life.</p>
+
+<h4>Right to Repair</h4>
+
+<p>Manufacturers' serialisation, software locks and parts-pairing restrict independent repair and fuel e-waste. The UK Right to Repair regulations 2021 and EU Right to Repair Directive 2024 require spare-parts availability for many appliances; similar pressure is now focused on smartphones.</p>
+
+<h2>Synthesis &mdash; Applying the Four Lenses</h2>
+
+<p>When you see a scenario in the exam, systematically apply each lens:</p>
+
+<table>
+    <tr><th>Lens</th><th>Question to ask</th><th>Example answer tokens</th></tr>
+    <tr><td><strong>Legal</strong></td><td>Which Act(s) apply? Who is the data controller / defendant? What penalty?</td><td>"The company breached Principle 6 of the UK GDPR, risking a fine up to 4% of global turnover under the DPA 2018."</td></tr>
+    <tr><td><strong>Moral</strong></td><td>What would a reasonable individual think is right here? Whose autonomy is affected?</td><td>"Although lawful, tracking employees' keystrokes is intrusive and may violate their personal sense of dignity."</td></tr>
+    <tr><td><strong>Ethical</strong></td><td>What do professional codes say? What are the duties to public interest / employer / profession?</td><td>"Under BCS Pillar 1 the engineer has a duty to disclose the flaw to protect public safety, even over employer objections."</td></tr>
+    <tr><td><strong>Cultural</strong></td><td>Would this be viewed differently in another society? What expectations is the technology built on?</td><td>"Facial recognition in shops is routine in parts of Asia but widely rejected in the UK/EU, reflecting differing cultural norms about public-space privacy."</td></tr>
+</table>
+
+<div class="exam-tip">Examiners reward <strong>balance</strong>. If asked "Discuss the ethical implications of X" (6&ndash;9 marks), structure your answer as: <em>identify the issue &rarr; one benefit / argument for &rarr; one harm / argument against &rarr; reference to law or code &rarr; real-world example &rarr; reasoned conclusion</em>. Avoid one-sided rants.</div>
+
+<h3>Worked Exam Example</h3>
+
+<p><strong>Question:</strong> A supermarket deploys a new AI system that uses facial recognition at self-checkouts to estimate shoppers' ages for alcohol purchases and to flag "known shoplifters" against a private watch-list. Discuss the legal, moral and ethical issues raised. [9 marks]</p>
+
+<p><strong>Model answer skeleton:</strong></p>
+
+<ol>
+    <li><strong>Legal &mdash; DPA 2018 / UK GDPR:</strong> biometric data is <em>special category</em> data under Article 9 and requires explicit consent or another lawful condition. A private watchlist faces additional accuracy, transparency and fairness concerns (Principles 1 and 4). The ICO has already issued reprimands for similar deployments (e.g. Southern Co-op, 2024).</li>
+    <li><strong>Legal &mdash; Equality Act 2010:</strong> if the system has higher false-positive rates for certain ethnicities (as NIST evidence suggests), the retailer could be liable for indirect discrimination.</li>
+    <li><strong>Moral:</strong> customers may feel their dignity violated by being treated as suspects by default; shoppers whose faces are falsely matched face public humiliation. Counterpoint: reduces retail shrinkage and prevents unlawful sale of alcohol to minors, protecting staff from confrontational ID checks.</li>
+    <li><strong>Ethical (BCS):</strong> engineers deploying the system are bound by Pillar 1 (public interest) to consider disparate-impact harms and by Pillar 2 to acknowledge the limits of their model's accuracy. An ethical deployment would include transparent signage, an appeal mechanism, bias testing, and an independent audit &mdash; not a black-box watchlist.</li>
+    <li><strong>Cultural:</strong> UK norms are sceptical of public facial recognition (compare China's widespread acceptance). The proportionality of surveillance in a supermarket context should reflect those local norms.</li>
+    <li><strong>Conclusion:</strong> The age-estimation feature could be acceptable with consent, minimal data retention, and no-ID fallback; the watchlist feature is <em>likely unlawful</em> without extensive safeguards and is hard to justify ethically given the risks of misidentification.</li>
+</ol>
+
+<h3>Further Worked Exam Example</h3>
+
+<p><strong>Question:</strong> A student discovers that their college's online reporting form has a weakness allowing anyone with the URL pattern to view other students' submissions. They navigate to a few URLs to verify the issue, then email the IT department. Discuss the legal and ethical issues. [6 marks]</p>
+
+<p><strong>Model answer skeleton:</strong></p>
+
+<ol>
+    <li><strong>Legal (CMA 1990):</strong> Visiting URLs they are not authorised to access is <em>technically</em> an offence under <strong>s.1 CMA</strong> (unauthorised access), even if no further use is made of the information &mdash; parallel to the Daniel Cuthbert case 2005. Good intent is not a defence.</li>
+    <li><strong>Legal (DPA 2018):</strong> The <em>college</em> may separately be in breach &mdash; exposed submissions are personal data, and failing to secure them breaches Principle 6 (integrity and confidentiality). They would have to notify the ICO within 72 hours if risk to subjects is likely.</li>
+    <li><strong>Ethical (BCS Pillar 1):</strong> Disclosing the flaw responsibly serves the public interest &mdash; all students benefit from the fix. An ethical researcher would document minimally and report promptly, not exfiltrate data.</li>
+    <li><strong>Moral:</strong> The student's intentions were benign, yet the action was unlawful &mdash; a classic "legal / moral" gap. A remedy would be establishing a formal <em>responsible disclosure policy</em> so ethical researchers have safe-harbour.</li>
+    <li><strong>Conclusion:</strong> The student acted morally but illegally. Better practice: report the <em>suspected</em> vulnerability to IT without verifying it beyond the minimum, or first obtain written authorisation to test.</li>
+</ol>
+
+<h3>Comparative Impact on Stakeholders</h3>
+
+<p>Extended answers often benefit from a quick "who gains / who loses" grid. For a scenario such as large-scale workplace productivity monitoring:</p>
+
+<table>
+    <tr><th>Stakeholder</th><th>Potential benefit</th><th>Potential harm</th></tr>
+    <tr><td>Employer</td><td>Detects time theft; evidences performance</td><td>Damages trust and retention; legal exposure if disproportionate</td></tr>
+    <tr><td>Employee</td><td>Clear evidence when disputes arise</td><td>Dignity, autonomy, mental-health harm; chilling effect on creative risk</td></tr>
+    <tr><td>Customers</td><td>Possibly faster service</td><td>Interactions feel scripted; staff burnout raises error rates</td></tr>
+    <tr><td>Regulator (ICO)</td><td>&mdash;</td><td>Enforcement burden; reputational challenge if rules unclear</td></tr>
+    <tr><td>Society</td><td>Productivity gains circulate in economy</td><td>Normalisation of pervasive surveillance; political chilling effect</td></tr>
+</table>
+
+<h2>Quick-Reference Glossary</h2>
+
+<table>
+    <tr><th>Term</th><th>Meaning</th></tr>
+    <tr><td><strong>Personal data</strong></td><td>Any information relating to an identified or identifiable living individual.</td></tr>
+    <tr><td><strong>Special category data</strong></td><td>Biometric, genetic, health, racial, religious, political, sexual-orientation data; extra protection under UK GDPR Art 9.</td></tr>
+    <tr><td><strong>Data controller</strong></td><td>Entity deciding the purposes and means of processing; legally accountable.</td></tr>
+    <tr><td><strong>Data processor</strong></td><td>Entity processing data on the controller's behalf.</td></tr>
+    <tr><td><strong>Subject Access Request (SAR)</strong></td><td>Formal request by a data subject for a copy of all data held about them.</td></tr>
+    <tr><td><strong>DPIA</strong></td><td>Data Protection Impact Assessment &mdash; required for high-risk processing.</td></tr>
+    <tr><td><strong>ICO</strong></td><td>Information Commissioner's Office &mdash; UK data protection regulator.</td></tr>
+    <tr><td><strong>DDoS</strong></td><td>Distributed Denial of Service &mdash; an offence under CMA s.3.</td></tr>
+    <tr><td><strong>Copyleft</strong></td><td>Licensing approach that uses copyright law to require derivatives to be released under the same permissive terms (e.g. GPL).</td></tr>
+    <tr><td><strong>Fair dealing</strong></td><td>UK statutory list of permitted acts under CDPA 1988; narrower than US fair use.</td></tr>
+    <tr><td><strong>ICR</strong></td><td>Internet Connection Record &mdash; 12-month ISP log of services accessed, required under IPA 2016.</td></tr>
+    <tr><td><strong>Double lock</strong></td><td>Dual approval (Secretary of State + Judicial Commissioner) for IPA interception warrants.</td></tr>
+    <tr><td><strong>BCS</strong></td><td>British Computer Society, the Chartered Institute for IT; publishes UK's main code of conduct.</td></tr>
+    <tr><td><strong>Whistleblower</strong></td><td>A person disclosing wrongdoing; protected by Public Interest Disclosure Act 1998.</td></tr>
+    <tr><td><strong>WEEE</strong></td><td>Waste Electrical and Electronic Equipment Regulations &mdash; 2013 UK rules on e-waste producer responsibility.</td></tr>
+    <tr><td><strong>Digital divide</strong></td><td>Inequality in access to, skills in, and outcomes from digital technology.</td></tr>
+</table>
+
+<h2>Revision Checklist</h2>
+
+<ul>
+    <li>Can you <strong>name all six core Acts with their years</strong> without looking?</li>
+    <li>Can you recite the <strong>seven GDPR principles</strong>?</li>
+    <li>Can you distinguish <strong>CMA s.1 / s.2 / s.3 / s.3ZA</strong> and give an example of each?</li>
+    <li>Can you explain copyright duration and <strong>one fair dealing exception</strong> relevant to software?</li>
+    <li>Can you summarise the <strong>four BCS pillars</strong> and state which has priority?</li>
+    <li>Can you deploy <strong>two case studies</strong> (e.g. BA + Cambridge Analytica; WannaCry + Snowden; VW + Uber) from memory in an exam?</li>
+    <li>Can you argue <strong>both sides</strong> of automation, surveillance and algorithmic decision making?</li>
+    <li>Do you know the <strong>difference between legal, moral, ethical and cultural</strong> and can you pick the right lens for a scenario?</li>
+</ul>
+
+<div class="exam-tip">Final revision tip: legal/ethical questions reward <em>vocabulary density</em>. Practice reading your answers aloud and tallying named Acts, named principles, named case studies, and named professional codes. Answers with five named items typically outscore those with zero by a large margin &mdash; even if the argument quality is similar.</div>
+
+</div>
+</body>
+</html>

@@ -230,7 +230,7 @@ const EDEXCEL_MCQ_P17_P21 = {
     },
     {
       tier: 'green',
-      q: 'If \\(f''(x) > 0\\) at a stationary point, the point is a:',
+      q: 'If \\(f\'\'(x) > 0\\) at a stationary point, the point is a:',
       options: ['Local minimum', 'Local maximum', 'Point of inflection', 'Saddle point'],
       answer: 0
     },
