@@ -12,9 +12,9 @@ const ALL_MEDALS = [
   // ── Diagnostic Milestones ──
   { id: 'diag_5',            icon: '📝', name: 'Warming Up',        desc: 'Test 5 topics (or all of yours)',           cat: 'Diagnostic Milestones' },
   { id: 'diag_10',           icon: '📋', name: 'Getting Serious',   desc: 'Test 10 topics (or all of yours)',          cat: 'Diagnostic Milestones' },
-  { id: 'diag_25',           icon: '📊', name: 'Dedicated',         desc: 'Test 25 different topics',                  cat: 'Diagnostic Milestones' },
-  { id: 'diag_50',           icon: '🗂️', name: 'Half Century',      desc: 'Test 50 different topics',                  cat: 'Diagnostic Milestones' },
-  { id: 'diag_100',          icon: '💯', name: 'Century',           desc: 'Test 100 different topics',                 cat: 'Diagnostic Milestones' },
+  { id: 'diag_25',           icon: '📊', name: 'Dedicated',         desc: 'Test 25% of your topics',                   cat: 'Diagnostic Milestones' },
+  { id: 'diag_50',           icon: '🗂️', name: 'Half Century',      desc: 'Test 50% of your topics',                   cat: 'Diagnostic Milestones' },
+  { id: 'diag_100',          icon: '💯', name: 'Century',           desc: 'Test 100% of your topics',                  cat: 'Diagnostic Milestones' },
 
   // ── Perfect Scores ──
   { id: 'perfect_score',     icon: '⚡', name: 'Perfect Score',     desc: 'Get every question right in a diagnostic',  cat: 'Perfect Scores' },

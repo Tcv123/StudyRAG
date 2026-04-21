@@ -1394,9 +1394,9 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   // ── Diagnostic Milestones ──
   if (totalTested >= Math.min(5, scale(5)))   award('diag_5');
   if (totalTested >= Math.min(10, scale(10))) award('diag_10');
-  if (totalTested >= 25)                      award('diag_25');
-  if (totalTested >= 50)                      award('diag_50');
-  if (totalTested >= 100)                     award('diag_100');
+  if (totalTested >= frac(0.25))              award('diag_25');
+  if (totalTested >= frac(0.5))               award('diag_50');
+  if (totalCurriculumTopics > 0 && totalTested >= totalCurriculumTopics) award('diag_100');
 
   // perfect_score, perfect_3, perfect_10 — awarded from cs-ocr-gcse-diagnostic.html
   // We check the count of perfect_score medals stored (they get inserted per-perfect)
