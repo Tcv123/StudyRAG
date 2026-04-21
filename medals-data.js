@@ -147,5 +147,4 @@ const ALL_MEDALS = [
   { id: 'new_year',          icon: '🎆', name: 'New Year Scholar',  desc: 'Study on January 1st',                      cat: 'Secret' },
   { id: 'exam_season',       icon: '📋', name: 'Exam Season Warrior', desc: 'Study during May or June',                cat: 'Secret' },
   { id: 'midnight_oil',      icon: '🕯️', name: 'Midnight Oil',      desc: 'Study between midnight and 3am',            cat: 'Secret' },
-  { id: 'monday_motivation', icon: '💼', name: 'Monday Motivation', desc: 'Study on a Monday',                         cat: 'Secret' },
 ];
