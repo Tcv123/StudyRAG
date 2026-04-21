@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Pricing — RAG Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EEF5FC;
+      --surface: #FFFFFF;
+      --surface2: #F4F9FE;
+      --border: #D2E5F3;
+      --border-hover: #93C4E2;
+      --text: #1B2D4F;
+      --muted: #6B87A8;
+      --accent: #5BADCF;
+      --accent-dark: #3D95BC;
+      --accent-dim: rgba(91,173,207,0.1);
+      --accent-glow: rgba(91,173,207,0.22);
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(91,173,207,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(91,173,207,0.05) 1px, transparent 1px);
+      background-size: 48px 48px; pointer-events: none; z-index: 0;
+    }
+    .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; }
+    .orb-1 { width: 600px; height: 600px; background: rgba(91,173,207,0.12); top: -150px; left: -150px; }
+    .orb-2 { width: 400px; height: 400px; background: rgba(61,149,188,0.08); bottom: 100px; right: -100px; }
+
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(238,245,252,0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-wrap {
+      max-width: none; margin: 0; padding: 0 40px;
+      height: 64px; display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center; gap: 24px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; justify-self: start; }
+    .logo-bar {
+      width: 3px; height: 22px; border-radius: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+    .logo-name { font-family: var(--font-display); font-size: 20px; color: var(--text); letter-spacing: 0.02em; }
+    .nav-anchors {
+      display: flex; gap: 4px; align-items: center;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 999px; padding: 5px;
+      box-shadow: 0 2px 10px rgba(91,173,207,0.06);
+      justify-self: center;
+    }
+    .nav-anchor {
+      padding: 8px 18px; border-radius: 999px;
+      font-size: 12.5px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; transition: all 0.15s;
+    }
+    .nav-anchor:hover { color: var(--text); background: var(--surface2); }
+    .nav-anchor.active { color: var(--accent-dark); background: var(--accent-dim); }
+    .nav-right { justify-self: end; display: flex; align-items: center; gap: 10px; }
+    .nav-btn {
+      padding: 9px 22px; border-radius: 10px;
+      font-size: 12.5px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; border: 1px solid transparent; transition: all 0.15s;
+    }
+    .nav-ghost { color: var(--muted); }
+    .nav-ghost:hover { color: var(--text); }
+    .nav-fill {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; box-shadow: 0 2px 10px var(--accent-glow);
+    }
+    .nav-fill:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+    /* ── PAGE HEADER ── */
+    .page-header { position: relative; z-index: 1; padding: 140px 0 56px; animation: fadeUp 0.6s ease both; text-align: center; }
+    .page-header .wrap { max-width: 720px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 5px 13px; border-radius: 20px;
+      background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.28);
+      font-size: 12px; font-weight: 500; color: var(--accent-dark);
+      margin-bottom: 22px;
+    }
+    .pill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.03em; line-height: 1.1;
+      margin-bottom: 18px;
+    }
+    .page-header h1 em { color: var(--accent); font-style: normal; }
+    .page-sub { font-size: 16px; color: var(--muted); line-height: 1.7; max-width: 560px; margin: 0 auto; }
+
+    /* ── PRICING ── */
+    .pricing-section { position: relative; z-index: 1; padding: 40px 0 72px; }
+    .pricing-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+      max-width: 900px; margin: 0 auto;
+    }
+
+    .plan-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 32px 30px;
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .plan-card.pro {
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(91,173,207,0.12) 0%, transparent 55%),
+        linear-gradient(155deg, var(--surface) 0%, #F6FBFE 100%);
+      border-color: var(--border-hover);
+      box-shadow: 0 16px 48px rgba(91,173,207,0.18);
+    }
+    .plan-card.pro::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    }
+    .plan-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 4px 11px; border-radius: 20px; align-self: flex-start;
+      margin-bottom: 14px;
+    }
+    .plan-badge.free { color: var(--muted); background: var(--surface2); border: 1px solid var(--border); }
+    .plan-badge.pop { color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); box-shadow: 0 2px 10px var(--accent-glow); }
+    .plan-name { font-family: var(--font-display); font-size: 26px; letter-spacing: -0.02em; line-height: 1; margin-bottom: 12px; }
+    .plan-name em { color: var(--accent); font-style: normal; }
+    .plan-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+    .plan-price-amount { font-family: var(--font-display); font-size: 40px; line-height: 1; }
+    .plan-price-period { font-size: 14px; color: var(--muted); }
+    .plan-sub { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; flex-grow: 1; }
+    .plan-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--text); line-height: 1.5; }
+    .plan-check {
+      width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+      background: var(--accent-dim); color: var(--accent-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; margin-top: 1px;
+    }
+
+    .plan-btn { width: 100%; justify-content: center; }
+    .plan-foot { font-size: 12px; color: var(--muted); text-align: center; margin-top: 12px; }
+
+    /* Medals strip */
+    .section { position: relative; z-index: 1; padding: 72px 0; }
+    .section-white { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .section-tag { font-size: 11px; font-weight: 600; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+    .section-h { font-family: var(--font-display); font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 10px; }
+    .section-p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 520px; margin-bottom: 40px; }
+
+    .medals-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .medal-card {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px 18px; text-align: center;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .medal-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .medal-card.gold {
+      background: linear-gradient(135deg, rgba(217,119,6,0.07), rgba(217,119,6,0.02));
+      border-color: rgba(217,119,6,0.22);
+    }
+    .medal-emoji { font-size: 28px; margin-bottom: 9px; }
+    .medal-name { font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+    .medal-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* CTA */
+    .cta { position: relative; z-index: 1; padding: 88px 0; }
+    .cta-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 72px 48px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-box::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% -10%, rgba(91,173,207,0.13) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cta-box h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 38px); letter-spacing: -0.02em; margin-bottom: 12px; position: relative; }
+    .cta-box p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; position: relative; }
+    .cta-btns { display: flex; justify-content: center; gap: 10px; position: relative; }
+    .btn {
+      display: inline-flex; align-items: center;
+      padding: 12px 24px; border-radius: 10px;
+      font-family: var(--font-body); font-size: 14px; font-weight: 600;
+      text-decoration: none; border: none; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-blue { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; box-shadow: 0 4px 14px var(--accent-glow); }
+    .btn-blue:hover { transform: translateY(-1px); box-shadow: 0 6px 20px var(--accent-glow); }
+    .btn-white { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .btn-white:hover { border-color: var(--border-hover); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+    @media (max-width: 900px) { .nav-anchors { display: none; } }
+    @media (max-width: 760px) { .pricing-grid { grid-template-columns: 1fr; } .medals-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) {
+      .medals-grid { grid-template-columns: 1fr; }
+      .cta-btns { flex-direction: column; }
+      .wrap { padding: 0 20px; }
+      .nav-wrap { padding: 0 20px; }
+      .cta-box { padding: 44px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">
+      <div class="logo-bar"></div>
+      <div class="logo-name">RAG LEARNING</div>
+    </a>
+    <div class="nav-anchors">
+      <a href="index.html" class="nav-anchor">Home</a>
+      <a href="features.html" class="nav-anchor">Features</a>
+      <a href="subjects.html" class="nav-anchor">Subjects</a>
+      <a href="pricing.html" class="nav-anchor active">Pricing</a>
+      <a href="support.html" class="nav-anchor">Support</a>
+    </div>
+    <div class="nav-right">
+      <a href="auth/login.html" class="nav-btn nav-ghost">Sign in</a>
+      <a href="auth/register.html" class="nav-btn nav-fill">Register</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Page header -->
+<section class="page-header">
+  <div class="wrap">
+    <div class="pill"><div class="pill-dot"></div>Pricing</div>
+    <h1>Simple plans. <em>Serious results.</em></h1>
+    <p class="page-sub">Start free for life, or unlock Pro for every exam-day edge. No hidden fees, cancel any time.</p>
+  </div>
+</section>
+
+<!-- Pricing cards -->
+<section class="pricing-section">
+  <div class="wrap">
+    <div class="pricing-grid">
+      <!-- Free plan -->
+      <div class="plan-card">
+        <span class="plan-badge free">Always free</span>
+        <div class="plan-name">Free</div>
+        <div class="plan-price">
+          <span class="plan-price-amount">£0</span>
+          <span class="plan-price-period">/ forever</span>
+        </div>
+        <div class="plan-sub">For every UK student. No card needed.</div>
+        <ul class="plan-features">
+          <li><span class="plan-check">✓</span> Spec-matched notes for every supported subject</li>
+          <li><span class="plan-check">✓</span> 10-question diagnostic per topic</li>
+          <li><span class="plan-check">✓</span> Full RAG tracking &amp; progress dashboard</li>
+          <li><span class="plan-check">✓</span> Core practice-question bank</li>
+          <li><span class="plan-check">✓</span> Streaks, medals &amp; study tracker</li>
+          <li><span class="plan-check">✓</span> Works on desktop, tablet &amp; mobile</li>
+        </ul>
+        <a href="auth/register.html" class="btn btn-white plan-btn">Create free account</a>
+        <div class="plan-foot">No credit card required</div>
+      </div>
+
+      <!-- Pro plan -->
+      <div class="plan-card pro">
+        <span class="plan-badge pop">Most popular</span>
+        <div class="plan-name">RAG <em>Pro</em></div>
+        <div class="plan-price">
+          <span class="plan-price-amount">£9.99</span>
+          <span class="plan-price-period">/ month</span>
+        </div>
+        <div class="plan-sub">7-day free trial · cancel any time</div>
+        <ul class="plan-features">
+          <li><span class="plan-check">✓</span> Unlimited practice questions across every topic</li>
+          <li><span class="plan-check">✓</span> AI tutor — instant explanations on any question</li>
+          <li><span class="plan-check">✓</span> Full past-paper archive with examiner-style marking</li>
+          <li><span class="plan-check">✓</span> Predicted grade tracker &amp; weekly progress insights</li>
+          <li><span class="plan-check">✓</span> Custom study plans around your exam timetable</li>
+          <li><span class="plan-check">✓</span> Downloadable PDF notes for offline revision</li>
+          <li><span class="plan-check">✓</span> Priority support &amp; ad-free experience</li>
+        </ul>
+        <a href="auth/register.html" class="btn btn-blue plan-btn">Start 7-day free trial</a>
+        <div class="plan-foot">Cancel any time · No card charged during trial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Medals -->
+<section class="section section-white">
+  <div class="wrap">
+    <div class="section-tag">Milestones</div>
+    <div class="section-h">Earn medals along the way</div>
+    <p class="section-p">Both plans include our streaks, medals and milestone system — small wins that make daily revision feel worth showing up for.</p>
+    <div class="medals-grid">
+      <div class="medal-card">
+        <div class="medal-emoji">🥇</div>
+        <div class="medal-name">First Green</div>
+        <div class="medal-desc">Get your first topic rated green</div>
+      </div>
+      <div class="medal-card">
+        <div class="medal-emoji">🔥</div>
+        <div class="medal-name">On Fire</div>
+        <div class="medal-desc">Study 7 days in a row</div>
+      </div>
+      <div class="medal-card">
+        <div class="medal-emoji">📚</div>
+        <div class="medal-name">Subject Master</div>
+        <div class="medal-desc">All topics in one subject green</div>
+      </div>
+      <div class="medal-card">
+        <div class="medal-emoji">⚡</div>
+        <div class="medal-name">Perfect Score</div>
+        <div class="medal-desc">10/10 on a diagnostic</div>
+      </div>
+      <div class="medal-card">
+        <div class="medal-emoji">📈</div>
+        <div class="medal-name">Moving Up</div>
+        <div class="medal-desc">Move 5 topics up a colour</div>
+      </div>
+      <div class="medal-card gold">
+        <div class="medal-emoji">🏆</div>
+        <div class="medal-name">All Clear</div>
+        <div class="medal-desc">Every topic across all subjects is green</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>Ready to revise smarter?</h2>
+      <p>Free forever for UK students. Upgrade only when you want the extras.</p>
+      <div class="cta-btns">
+        <a href="auth/register.html" class="btn btn-blue">Create free account</a>
+        <a href="auth/login.html" class="btn btn-white">Sign in</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
