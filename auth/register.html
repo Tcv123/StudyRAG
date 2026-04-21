@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; base-uri 'self'; form-action 'self'">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>RAG Learning — Create Account</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -332,7 +333,7 @@
       <div class="field">
         <label for="password">Password</label>
         <div class="input-wrap">
-          <input id="password" type="password" placeholder="At least 6 characters" required oninput="checkPw(this.value)">
+          <input id="password" type="password" placeholder="At least 8 characters" required minlength="8" oninput="checkPw(this.value)">
           <button type="button" class="toggle-pw" id="togglePw" aria-label="Show password" aria-pressed="false">
             <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
           </button>
@@ -415,7 +416,7 @@ function checkPw(val) {
   const colors = ['#DC2626','#D97706','#5BADCF','#16A34A'];
   const labels = ['Too short','Weak','Good','Strong'];
   let score = 0;
-  if (val.length >= 6)           score++;
+  if (val.length >= 8)           score++;
   if (/[A-Z]/.test(val))         score++;
   if (/[0-9]/.test(val))         score++;
   if (/[^A-Za-z0-9]/.test(val))  score++;
@@ -473,9 +474,9 @@ form.onsubmit = async (e) => {
   msg.className = 'msg';
   msg.innerText = '';
 
-  if (password.value.length < 6) {
+  if (password.value.length < 8) {
     msg.className = 'msg error';
-    msg.innerText = 'Password must be at least 6 characters.';
+    msg.innerText = 'Password must be at least 8 characters.';
     return;
   }
   if (password.value !== confirmPassword.value) {
