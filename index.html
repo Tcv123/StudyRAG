@@ -14,7 +14,7 @@
         var lastSignIn = session && session.user && session.user.last_sign_in_at;
         if (!lastSignIn) return;
         var hoursSince = (Date.now() - new Date(lastSignIn).getTime()) / 36e5;
-        if (hoursSince < 24) {
+        if (hoursSince < 18) {
           document.documentElement.style.visibility = 'hidden';
           window.location.replace('Dashboard.html');
         }
