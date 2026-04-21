@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 2.1 — Elements of Computational Thinking</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>2.1 Elements of Computational Thinking</h1>
+<p class="spec-ref">OCR A-Level Computer Science (H446) &mdash; Component 02 (Algorithms and Programming)</p>
+
+<p>Computational thinking is <strong>a set of mental techniques used by computer scientists to formulate a problem in a way that a computer can solve it</strong>. OCR's 2.1 specification breaks it into <strong>five interrelated elements</strong>: thinking <em>abstractly</em>, <em>ahead</em>, <em>procedurally</em>, <em>logically</em> and <em>concurrently</em>. These are not steps in a recipe &mdash; they are complementary mindsets that a developer moves between fluidly while designing, coding and testing a system.</p>
+
+<div class="definition">
+    <strong>Computational thinking</strong> is the process of analysing and solving problems using techniques drawn from computer science, such that the solution could (in principle) be carried out by a computer or a human. It emphasises problem <em>formulation</em> as much as problem <em>coding</em>.
+</div>
+
+<h2>2.1.1 Thinking Abstractly</h2>
+
+<div class="definition">
+    <strong>Abstraction</strong> is the process of <strong>removing or hiding unnecessary detail</strong> so that the solver can focus on the features of a problem that matter. The result &mdash; the <strong>abstract model</strong> &mdash; is a simplified representation of reality.
+</div>
+
+<p>Abstraction is widely regarded as the single most important idea in computing. Every useful layer of a computer system &mdash; high-level languages, operating systems, network protocols, databases &mdash; exists because someone abstracted away the messy detail of the layer below. Without abstraction, a programmer writing a web page would have to think about voltage levels on transistors; with it, they think in terms of HTML tags.</p>
+
+<h3>Types of Abstraction (OCR-specified)</h3>
+
+<table>
+    <tr><th>Type</th><th>What it hides</th><th>Example</th></tr>
+    <tr><td><strong>Representational abstraction</strong></td><td>Physical or geographical detail not needed to use the model</td><td>The London Underground map: it preserves <em>connectivity</em> and <em>order of stations</em> but distorts distances and directions. It is <strong>topological</strong>, not geographical.</td></tr>
+    <tr><td><strong>Abstraction by generalisation</strong></td><td>The specifics that differ between similar problems</td><td>Noticing that "find the shortest delivery route", "find the fastest journey on the tube" and "find the cheapest airline connection" are all instances of a weighted-graph shortest-path problem.</td></tr>
+    <tr><td><strong>Procedural abstraction</strong></td><td>The implementation details behind a named procedure</td><td>A programmer calls <code>sort(list)</code> without needing to know whether it uses merge sort, quicksort or a hybrid; the routine is a "black box" with a defined interface.</td></tr>
+    <tr><td><strong>Data abstraction</strong></td><td>The internal storage mechanism of a data structure</td><td>A <strong>stack</strong> is characterised by <code>push</code>/<code>pop</code>/<code>peek</code> operations and LIFO behaviour; whether it is built on an array or a linked list is irrelevant to its user.</td></tr>
+    <tr><td><strong>Functional abstraction</strong></td><td>How a function achieves its result</td><td>Using <code>sqrt(x)</code> without caring about Newton's method, CORDIC or a lookup table.</td></tr>
+</table>
+
+<h3>Representational abstraction: the Tube map</h3>
+
+<p>Harry Beck's 1933 London Underground map is the canonical example. The real tunnels curve and branch unevenly, station spacing varies enormously, and the network covers thousands of square kilometres. A commuter does not care about any of that &mdash; they need to know "which line do I get on, do I change anywhere, which direction?". Beck's diagram keeps only that relational information. It is <em>wrong</em> geographically (stations appear equidistant; the Thames is a schematic curve) but <em>right</em> functionally: it answers the user's question with minimum cognitive load.</p>
+
+<div class="exam-tip">A good exam answer distinguishes <strong>what is removed</strong> (exact distances, curvature, geography) from <strong>what is preserved</strong> (station order, line colour, interchanges). Always state both.</div>
+
+<h3>Procedural and data abstraction in code</h3>
+
+<p>When a programmer writes:</p>
+<pre>
+result = shortest_path(graph, start, end)
+</pre>
+<p>they are using both forms of abstraction at once: <strong>procedural</strong> (the algorithm that computes the path is hidden behind the function name) and <strong>data</strong> (the graph is treated as a conceptual structure of nodes and edges, regardless of whether it is stored as an adjacency list, adjacency matrix or on-disk database).</p>
+
+<h3>Worked Example &mdash; Abstracting a Library</h3>
+
+<p>Asked to "design a library system", a student begins with <strong>representational abstraction</strong>: what are the essential entities and relationships, ignoring buildings, paint colour, opening hours and physical shelving?</p>
+
+<table>
+    <tr><th>Entity</th><th>Essential attributes</th><th>Relationship</th></tr>
+    <tr><td>Book</td><td>title, author, ISBN, copy count</td><td>borrowed by &rarr; Member</td></tr>
+    <tr><td>Member</td><td>member ID, name, contact, join date</td><td>borrows &rarr; Book; reserves &rarr; Book</td></tr>
+    <tr><td>Loan</td><td>book copy, member, issue date, due date</td><td>links Book &harr; Member</td></tr>
+    <tr><td>Reservation</td><td>book, member, date placed</td><td>links Book &harr; Member</td></tr>
+</table>
+
+<p>Notice what is <em>omitted</em>: shelf positions, the librarian's coffee preferences, the building's fire exits, whether the database runs on MySQL or PostgreSQL. These are irrelevant to modelling how borrowing works. The result is a conceptual <em>data model</em> that can later be refined into a relational schema, an object hierarchy, or a REST API &mdash; but the abstract model is independent of all of those.</p>
+
+<div class="exam-tip">When an OCR question asks you to "describe how abstraction has been used", do not just list features. Explicitly state a removed detail (e.g. "the geographical distance between stations is removed") and a retained detail (e.g. "the order of stations on each line is kept"), then say <em>why</em> the removal is appropriate for the intended user.</div>
+
+<h3>Why Abstraction is Powerful</h3>
+
+<p>Three benefits make abstraction the most reused tool in computing:</p>
+<ul>
+    <li><strong>Cognitive load reduction</strong>: the solver only holds the relevant detail in working memory. A programmer using <code>sort()</code> does not have to remember the quicksort partition invariant.</li>
+    <li><strong>Substitutability</strong>: so long as the abstraction's promises (interface, behaviour) are kept, the implementation can change without breaking the caller. A database can move from SQLite to PostgreSQL without every query needing a rewrite.</li>
+    <li><strong>Composition</strong>: small abstractions combine to form larger ones. An abstract "shape" is used to build an abstract "drawing", which is used to build an abstract "document editor".</li>
+</ul>
+
+<h3>Levels of Abstraction</h3>
+
+<p>Software is built as a stack of abstractions, each layer presenting a simpler interface to the layer above it. This is why it is practical for one developer to write a chess game without also designing a CPU.</p>
+
+<!-- Levels of abstraction layered stack -->
+<svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="abstrArr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Levels of Abstraction &mdash; from Human Concepts to Hardware</text>
+
+  <rect x="120" y="45" width="480" height="55" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="68" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a5f">Human-level concepts</text>
+  <text x="360" y="86" text-anchor="middle" font-size="10" fill="#374151">"Book a flight from London to Tokyo on Tuesday"</text>
+
+  <rect x="120" y="110" width="480" height="55" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="360" y="133" text-anchor="middle" font-size="13" font-weight="bold" fill="#3730a3">Problem model</text>
+  <text x="360" y="151" text-anchor="middle" font-size="10" fill="#374151">Graph of airports + flights, weights = price or duration</text>
+
+  <rect x="120" y="175" width="480" height="55" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="360" y="198" text-anchor="middle" font-size="13" font-weight="bold" fill="#5b21b6">Algorithm</text>
+  <text x="360" y="216" text-anchor="middle" font-size="10" fill="#374151">Shortest-path search over the graph</text>
+
+  <rect x="120" y="240" width="480" height="55" rx="8" fill="#fce7f3" stroke="#be185d" stroke-width="1.5"/>
+  <text x="360" y="263" text-anchor="middle" font-size="13" font-weight="bold" fill="#831843">High-level code</text>
+  <text x="360" y="281" text-anchor="middle" font-size="10" fill="#374151">Python / Java / C# source using standard library data structures</text>
+
+  <rect x="120" y="305" width="480" height="55" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="360" y="328" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">Assembly / bytecode</text>
+  <text x="360" y="346" text-anchor="middle" font-size="10" fill="#374151">LOAD, STORE, ADD, BRANCH &mdash; symbolic instructions</text>
+
+  <rect x="120" y="370" width="480" height="40" rx="8" fill="#e5e7eb" stroke="#374151" stroke-width="1.5"/>
+  <text x="360" y="395" text-anchor="middle" font-size="13" font-weight="bold" fill="#111827">Machine code / hardware (transistors, voltages)</text>
+
+  <line x1="60" y1="60" x2="60" y2="400" stroke="#2563eb" stroke-width="2" marker-end="url(#abstrArr)"/>
+  <text x="30" y="80" font-size="10" font-weight="bold" fill="#2563eb">more</text>
+  <text x="30" y="95" font-size="10" font-weight="bold" fill="#2563eb">abstract</text>
+  <text x="30" y="380" font-size="10" font-weight="bold" fill="#2563eb">less</text>
+  <text x="30" y="395" font-size="10" font-weight="bold" fill="#2563eb">abstract</text>
+</svg>
+
+<p>Each arrow downwards represents a <em>removal of abstraction</em>: more detail is added, the representation becomes more concrete, and the programmer's freedom to ignore implementation decreases. Each arrow upwards is an <em>application of abstraction</em>: detail is suppressed to allow higher-level reasoning.</p>
+
+<div class="exam-tip">Candidates frequently confuse <strong>abstraction</strong> (remove irrelevant detail to simplify a model) with <strong>decomposition</strong> (break a problem into smaller sub-problems). They are complementary but different: you can abstract without decomposing (e.g. the Tube map) and decompose without abstracting (chopping a task into sub-tasks while keeping every real-world detail).</div>
+
+<h2>2.1.2 Thinking Ahead</h2>
+
+<div class="definition">
+    <strong>Thinking ahead</strong> is anticipating what a program (and its users) will need before writing code: the <strong>inputs</strong> required, the <strong>outputs</strong> expected, the <strong>preconditions</strong> that must hold, the <strong>edge cases</strong> that may arise, and the <strong>reusable results</strong> that can be cached or precomputed.
+</div>
+
+<h3>Determining Inputs and Outputs</h3>
+
+<p>Before designing any procedure, the developer lists explicitly:</p>
+<ul>
+    <li><strong>Inputs</strong>: every piece of data the procedure needs &mdash; source, type, range, format.</li>
+    <li><strong>Outputs</strong>: every piece of data the procedure produces &mdash; destination, type, format, accuracy.</li>
+    <li><strong>Side effects</strong> (often overlooked): writes to a file, emails sent, global state mutated.</li>
+</ul>
+
+<p>Failing to do this produces code that "almost works" &mdash; it handles the developer's test data but breaks on real-world input.</p>
+
+<h3>Preconditions</h3>
+
+<div class="definition">
+    A <strong>precondition</strong> is a statement that must be true <em>before</em> a procedure is invoked for the procedure to work correctly. If the caller violates the precondition, the procedure's behaviour is undefined.
+</div>
+
+<p>Example: a procedure <code>withdraw(account, amount)</code> might state preconditions:</p>
+<ul>
+    <li>the account exists and is not frozen;</li>
+    <li><code>amount</code> is positive and &le; the current balance;</li>
+    <li>the caller holds the account lock (in a concurrent system).</li>
+</ul>
+
+<p>Making these explicit up-front prevents defensive code being scattered across every call-site and allows each procedure to be reasoned about in isolation.</p>
+
+<h3>Why Preconditions Matter in Big Systems</h3>
+
+<p>Explicit preconditions become increasingly important as a system grows. In a single-file script, the author remembers every invariant. In a 500,000-line codebase with 30 contributors, the only way anyone can safely call a procedure is if its preconditions are <em>stated</em> &mdash; ideally in comments or type annotations, and ideally checked by an automated test. Preconditions are therefore not merely a design nicety; they are a communication mechanism between today's code author and tomorrow's maintainer.</p>
+
+<h3>Caching and Reusability</h3>
+
+<div class="definition">
+    <strong>Caching</strong> is storing the result of a computation (or an I/O request) so that future identical requests can be served from the cached copy instead of being recomputed or re-fetched. <strong>Memoisation</strong> is the specific case of caching the results of pure functions keyed by their arguments.
+</div>
+
+<p>Caching is a forward-thinking optimisation: the developer anticipates that the same expensive work will be repeated and chooses to pay for memory to save time. Common forms include:</p>
+<ul>
+    <li><strong>Memoisation</strong>: wrapping a pure function so that repeated calls with the same arguments return the stored result.</li>
+    <li><strong>Precomputed lookup tables</strong>: values computed once at build-time and embedded in the program (e.g. sine tables for graphics, CRC tables for error detection).</li>
+    <li><strong>HTTP caches</strong>: browsers storing downloaded images so revisits do not re-download.</li>
+    <li><strong>CPU caches (L1/L2/L3)</strong>: hardware-level caching already studied in 1.1.</li>
+</ul>
+
+<h3>Edge Cases and Exceptions</h3>
+
+<p>An experienced developer thinks ahead to the unusual inputs that will inevitably arrive:</p>
+<ul>
+    <li><strong>Boundary values</strong>: 0, 1, maximum size, empty collections.</li>
+    <li><strong>Invalid inputs</strong>: malformed strings, out-of-range numbers, null/None values.</li>
+    <li><strong>Concurrent access</strong>: two users clicking "book" on the last seat at the same instant.</li>
+    <li><strong>Resource failure</strong>: network loss, disk full, database down.</li>
+    <li><strong>Locale</strong>: non-ASCII text, right-to-left scripts, 24-hour vs 12-hour clocks.</li>
+</ul>
+
+<h3>Forward-thinking design decisions</h3>
+
+<p>Thinking ahead also spans the <em>life of the system</em>: will the user base grow tenfold? will the data volumes outgrow a single machine? will a new regulation require encryption at rest? Such concerns influence the initial architecture (choice of database, statelessness of services, separation of logic from UI) even when they are not yet active requirements.</p>
+
+<h3>Worked Example &mdash; A Weather App Team Thinking Ahead</h3>
+
+<p>A small team is designing a mobile weather app. Before writing code they enumerate what they will need to anticipate:</p>
+
+<table>
+    <tr><th>Concern</th><th>Decision taken ahead of implementation</th></tr>
+    <tr><td><strong>API rate limit</strong>: the provider allows 500 calls/hour/user</td><td>Cache the last response for each location for 15 minutes on the device &mdash; most re-opens will be served from cache, well within the limit.</td></tr>
+    <tr><td><strong>Offline / no-signal use</strong></td><td>Persist the last successful response to local storage; on launch, show the cached data immediately with a timestamp, then refresh in the background.</td></tr>
+    <tr><td><strong>Time zone mismatch</strong>: user in Tokyo checking New York weather</td><td>Store all forecast timestamps as UTC internally; convert to the target location's local time in the UI. Never mix zones in the same comparison.</td></tr>
+    <tr><td><strong>Locale</strong></td><td>Drive Celsius/Fahrenheit from device settings, not hard-coded. Use Unicode throughout.</td></tr>
+    <tr><td><strong>Growth</strong></td><td>Design the API client so the provider can be swapped without touching the UI layer (procedural abstraction supports this).</td></tr>
+    <tr><td><strong>Failure</strong></td><td>Decide up-front what to display if the API is unreachable and the cache is empty &mdash; a clear error state rather than a blank screen.</td></tr>
+</table>
+
+<p>Each of these is an act of thinking ahead: identifying a future condition and making a design decision <em>now</em> that will handle it gracefully <em>later</em>. None of these changes the core algorithm (fetch &rarr; parse &rarr; display); they surround it with anticipatory structure.</p>
+
+<div class="exam-tip">When asked to "describe how a developer might think ahead when designing system X", structure your answer around the OCR list: inputs &amp; outputs; preconditions; caching / reusability; edge cases; scalability. Give one concrete example per heading and you will score across the mark scheme.</div>
+
+<h2>2.1.3 Thinking Procedurally</h2>
+
+<div class="definition">
+    <strong>Thinking procedurally</strong> is identifying the <strong>individual steps</strong> that make up a solution, their <strong>order</strong>, and the <strong>sub-procedures</strong> that are called in the process. It focuses on <em>how</em> a task is carried out rather than <em>what</em> conditions apply.
+</div>
+
+<p>Procedural thinking answers the question "what needs to happen, in what sequence?". It is the mindset most directly corresponding to writing the body of a function: first do A, then B, then call C (which itself does D then E). The big tools of procedural thinking are <strong>decomposition</strong> and the dual strategies of <strong>top-down</strong> and <strong>bottom-up</strong> design.</p>
+
+<h3>Decomposition</h3>
+
+<div class="definition">
+    <strong>Decomposition</strong> is breaking a complex problem down into smaller, more manageable sub-problems that can each be solved independently and whose solutions combine to solve the original. It is a divide-and-conquer mindset applied at design time.
+</div>
+
+<p>Decomposition is valuable because:</p>
+<ul>
+    <li><strong>Each sub-problem is simpler</strong> and often already solved (re-use existing libraries / patterns).</li>
+    <li><strong>Work can be shared</strong> across a team &mdash; different developers own different modules.</li>
+    <li><strong>Each sub-problem can be tested in isolation</strong>, making bugs easier to locate.</li>
+    <li><strong>Modules can be replaced</strong> without rewriting the whole system.</li>
+</ul>
+
+<h3>Worked Example &mdash; Decomposing "Build a Chat App"</h3>
+
+<p>"Build a chat app" is far too large to start coding. A developer decomposes it:</p>
+
+<!-- Decomposition tree -->
+<svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Decomposition Tree &mdash; "Build a Chat App"</text>
+
+  <!-- Root -->
+  <rect x="280" y="40" width="160" height="45" rx="8" fill="#2563eb" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="360" y="67" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Chat App</text>
+
+  <!-- Level 2 boxes -->
+  <rect x="20" y="130" width="120" height="40" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="80" y="155" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Accounts</text>
+
+  <rect x="160" y="130" width="120" height="40" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="220" y="155" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Messaging</text>
+
+  <rect x="300" y="130" width="120" height="40" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="360" y="155" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Notifications</text>
+
+  <rect x="440" y="130" width="120" height="40" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="500" y="155" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">UI</text>
+
+  <rect x="580" y="130" width="120" height="40" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="640" y="155" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Persistence</text>
+
+  <!-- Connectors root -> L2 -->
+  <line x1="360" y1="85" x2="80" y2="130" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="360" y1="85" x2="220" y2="130" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="360" y1="85" x2="360" y2="130" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="360" y1="85" x2="500" y2="130" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="360" y1="85" x2="640" y2="130" stroke="#2563eb" stroke-width="1.2"/>
+
+  <!-- Level 3 (examples under a couple of branches) -->
+  <rect x="10" y="230" width="75" height="35" rx="5" fill="#eff6ff" stroke="#60a5fa" stroke-width="1"/>
+  <text x="47" y="252" text-anchor="middle" font-size="9" fill="#1e3a5f">Sign-up</text>
+
+  <rect x="90" y="230" width="75" height="35" rx="5" fill="#eff6ff" stroke="#60a5fa" stroke-width="1"/>
+  <text x="127" y="252" text-anchor="middle" font-size="9" fill="#1e3a5f">Login</text>
+
+  <line x1="80" y1="170" x2="47" y2="230" stroke="#60a5fa" stroke-width="1"/>
+  <line x1="80" y1="170" x2="127" y2="230" stroke="#60a5fa" stroke-width="1"/>
+
+  <rect x="170" y="230" width="75" height="35" rx="5" fill="#eff6ff" stroke="#60a5fa" stroke-width="1"/>
+  <text x="207" y="252" text-anchor="middle" font-size="9" fill="#1e3a5f">Send msg</text>
+
+  <rect x="250" y="230" width="75" height="35" rx="5" fill="#eff6ff" stroke="#60a5fa" stroke-width="1"/>
+  <text x="287" y="252" text-anchor="middle" font-size="9" fill="#1e3a5f">Receive</text>
+
+  <line x1="220" y1="170" x2="207" y2="230" stroke="#60a5fa" stroke-width="1"/>
+  <line x1="220" y1="170" x2="287" y2="230" stroke="#60a5fa" stroke-width="1"/>
+
+  <rect x="320" y="230" width="85" height="35" rx="5" fill="#eff6ff" stroke="#60a5fa" stroke-width="1"/>
+  <text x="362" y="252" text-anchor="middle" font-size="9" fill="#1e3a5f">Push alerts</text>
+
+  <line x1="360" y1="170" x2="362" y2="230" stroke="#60a5fa" stroke-width="1"/>
+
+  <rect x="440" y="230" width="75" height="35" rx="5" fill="#eff6ff" stroke="#60a5fa" stroke-width="1"/>
+  <text x="477" y="252" text-anchor="middle" font-size="9" fill="#1e3a5f">Chat view</text>
+
+  <rect x="520" y="230" width="75" height="35" rx="5" fill="#eff6ff" stroke="#60a5fa" stroke-width="1"/>
+  <text x="557" y="252" text-anchor="middle" font-size="9" fill="#1e3a5f">Contacts</text>
+
+  <line x1="500" y1="170" x2="477" y2="230" stroke="#60a5fa" stroke-width="1"/>
+  <line x1="500" y1="170" x2="557" y2="230" stroke="#60a5fa" stroke-width="1"/>
+
+  <rect x="610" y="230" width="90" height="35" rx="5" fill="#eff6ff" stroke="#60a5fa" stroke-width="1"/>
+  <text x="655" y="252" text-anchor="middle" font-size="9" fill="#1e3a5f">Local DB</text>
+
+  <line x1="640" y1="170" x2="655" y2="230" stroke="#60a5fa" stroke-width="1"/>
+
+  <!-- Level 4 under Send msg -->
+  <rect x="140" y="330" width="80" height="30" rx="4" fill="#fafafa" stroke="#9ca3af" stroke-width="1"/>
+  <text x="180" y="349" text-anchor="middle" font-size="8" fill="#374151">Validate text</text>
+
+  <rect x="225" y="330" width="80" height="30" rx="4" fill="#fafafa" stroke="#9ca3af" stroke-width="1"/>
+  <text x="265" y="349" text-anchor="middle" font-size="8" fill="#374151">Serialise</text>
+
+  <rect x="310" y="330" width="80" height="30" rx="4" fill="#fafafa" stroke="#9ca3af" stroke-width="1"/>
+  <text x="350" y="349" text-anchor="middle" font-size="8" fill="#374151">Send over TLS</text>
+
+  <line x1="207" y1="265" x2="180" y2="330" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="207" y1="265" x2="265" y2="330" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="207" y1="265" x2="350" y2="330" stroke="#9ca3af" stroke-width="1"/>
+
+  <text x="360" y="400" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Each leaf is a unit small enough to be implemented and tested independently.</text>
+</svg>
+
+<p>The act of drawing this tree <em>is</em> decomposition. Each level answers the question "what smaller things would we have to build to build this?". At some leaf depth a box becomes "small enough" to be assigned to a developer and implemented directly.</p>
+
+<h3>Top-down (Stepwise Refinement) vs Bottom-up Design</h3>
+
+<div class="definition">
+    <strong>Top-down design (stepwise refinement)</strong>: start with a high-level statement of the whole problem, then repeatedly break each step into smaller steps until each is trivial to implement. Decomposition from the root downwards.
+</div>
+
+<div class="definition">
+    <strong>Bottom-up design</strong>: start by building small, reliable, reusable components (often already existing as libraries), then compose them upwards into ever larger modules until the complete system emerges.
+</div>
+
+<table>
+    <tr><th>Aspect</th><th>Top-down</th><th>Bottom-up</th></tr>
+    <tr><td>Starting point</td><td>The full problem as a single statement</td><td>Small, known pieces (libraries, utility functions)</td></tr>
+    <tr><td>Strength</td><td>Keeps overall architecture clear; every module exists for a reason</td><td>Promotes reuse; each component can be thoroughly tested before it is needed</td></tr>
+    <tr><td>Risk</td><td>May design modules whose leaves turn out to be hard or impossible</td><td>The composition at the top may not match what was actually needed</td></tr>
+    <tr><td>Typical use</td><td>Structured design in greenfield projects; OCR algorithm-design questions</td><td>Building on existing frameworks; library-driven development</td></tr>
+</table>
+
+<p>Real projects blend both: a top-down sketch gives direction, while bottom-up library reuse gives leverage. A chat app designer may use top-down decomposition overall, but at the leaves reaches for bottom-up reuse of, say, an existing TLS library.</p>
+
+<h3>Procedural steps and sub-procedures</h3>
+
+<p>Thinking procedurally is not just decomposing &mdash; it also means deciding <em>the order</em> in which steps run and <em>which steps become reusable sub-procedures</em>. If two branches of the tree both need "validate user input", that becomes one shared procedure called from each, not duplicated code. Identifying shared sub-procedures is where procedural thinking blurs productively into <strong>procedural abstraction</strong> (see 2.1.1).</p>
+
+<div class="exam-tip">Procedural thinking and decomposition are tightly linked. When OCR asks for a <em>decomposition diagram</em>, draw a tree with exactly the shapes above: a root box, branches to sub-problems, sub-sub-problems where needed. Label each box with a verb phrase ("Validate user input", not just "Input").</div>
+
+<h2>2.1.4 Thinking Logically</h2>
+
+<div class="definition">
+    <strong>Thinking logically</strong> is identifying the <strong>decision points</strong> in a problem and how they cause the program to follow different paths. It focuses on Boolean conditions, branching and the logical structure of choice.
+</div>
+
+<p>Where thinking procedurally answers "what steps, in what order?", thinking logically answers "<em>under what conditions</em> do we take each step?". Every <code>if</code>, <code>while</code> and <code>case</code> in a program is the result of a logical-thinking decision.</p>
+
+<h3>Decision Points and Boolean Conditions</h3>
+
+<p>A <strong>decision point</strong> is any place in a program where execution can take more than one path. It evaluates a Boolean expression and selects a branch accordingly. Typical sources of decision points:</p>
+<ul>
+    <li>User actions (keyboard input, mouse clicks)</li>
+    <li>Data validation (is the input in range? is the account active?)</li>
+    <li>Authorisation (does this user have permission?)</li>
+    <li>State-machine transitions (is the game paused / running / finished?)</li>
+    <li>Error handling (did the network request succeed?)</li>
+</ul>
+
+<h3>Worked Example &mdash; Decision Tree for a Game Turn</h3>
+
+<p>Consider a grid-based strategy game where it is the player's turn to move a unit. The decision tree is:</p>
+
+<pre>
+Is it this player's turn?
+    No  &rarr; ignore input, wait
+    Yes &rarr; Has a unit been selected?
+                No  &rarr; is the click on a friendly unit?
+                            Yes &rarr; select it
+                            No  &rarr; do nothing
+                Yes &rarr; is the clicked square a valid move target?
+                            No  &rarr; play error sound, deselect
+                            Yes &rarr; does the square contain an enemy?
+                                        Yes &rarr; resolve attack, update HP
+                                        No  &rarr; move unit to square
+                                    update turn state, end turn
+</pre>
+
+<p>Every arrow in that tree is a Boolean decision. Thinking logically produced the list of questions that must be asked in order; thinking procedurally then chose to answer them in that sequence. Without a careful logical analysis, a game is riddled with edge-case bugs (clicking on own unit while already having one selected; attacking your own unit; moving outside range).</p>
+
+<h3>Flowchart Conventions</h3>
+
+<p>Flowcharts are the canonical visual notation for logical structure. OCR expects you to know the standard shapes:</p>
+
+<table>
+    <tr><th>Shape</th><th>Meaning</th><th>Example text</th></tr>
+    <tr><td><strong>Oval (terminator)</strong></td><td>Start or End of the process</td><td>"START", "END"</td></tr>
+    <tr><td><strong>Rectangle (process)</strong></td><td>A step / action / calculation</td><td>"total &larr; price &times; qty"</td></tr>
+    <tr><td><strong>Diamond (decision)</strong></td><td>A Boolean test with two labelled exits</td><td>"age &ge; 18?" with Yes/No arrows</td></tr>
+    <tr><td><strong>Parallelogram (input / output)</strong></td><td>Reading input or producing output</td><td>"INPUT name", "OUTPUT total"</td></tr>
+    <tr><td><strong>Arrow</strong></td><td>Flow of control between shapes</td><td>(labelled with Yes / No on decision exits)</td></tr>
+</table>
+
+<!-- Flowchart example -->
+<svg viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="flowArr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1e3a5f"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Flowchart Example &mdash; Age-Restricted Purchase</text>
+
+  <!-- Start oval -->
+  <ellipse cx="360" cy="60" rx="60" ry="22" fill="#dcfce7" stroke="#166534" stroke-width="1.5"/>
+  <text x="360" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">START</text>
+
+  <line x1="360" y1="82" x2="360" y2="110" stroke="#1e3a5f" stroke-width="1.5" marker-end="url(#flowArr)"/>
+
+  <!-- Input parallelogram -->
+  <polygon points="280,115 450,115 430,155 260,155" fill="#ede9fe" stroke="#5b21b6" stroke-width="1.5"/>
+  <text x="355" y="140" text-anchor="middle" font-size="12" fill="#3b0764">INPUT age, item</text>
+
+  <line x1="355" y1="155" x2="355" y2="185" stroke="#1e3a5f" stroke-width="1.5" marker-end="url(#flowArr)"/>
+
+  <!-- Decision: is item restricted? -->
+  <polygon points="355,190 470,240 355,290 240,240" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="355" y="235" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">Is item</text>
+  <text x="355" y="250" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">age-restricted?</text>
+
+  <!-- No -> sell -->
+  <line x1="470" y1="240" x2="570" y2="240" stroke="#1e3a5f" stroke-width="1.5" marker-end="url(#flowArr)"/>
+  <text x="515" y="232" text-anchor="middle" font-size="10" font-weight="bold" fill="#166534">No</text>
+
+  <rect x="570" y="215" width="120" height="50" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="630" y="236" text-anchor="middle" font-size="11" fill="#1e3a5f">Complete sale</text>
+  <text x="630" y="252" text-anchor="middle" font-size="11" fill="#1e3a5f">(no ID check)</text>
+
+  <!-- Yes branch down -->
+  <line x1="355" y1="290" x2="355" y2="320" stroke="#1e3a5f" stroke-width="1.5" marker-end="url(#flowArr)"/>
+  <text x="370" y="305" font-size="10" font-weight="bold" fill="#92400e">Yes</text>
+
+  <!-- Second decision: age >= 18? -->
+  <polygon points="355,325 470,375 355,425 240,375" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="355" y="370" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">age &ge; 18?</text>
+
+  <!-- Yes -> sell with ID -->
+  <line x1="470" y1="375" x2="570" y2="375" stroke="#1e3a5f" stroke-width="1.5" marker-end="url(#flowArr)"/>
+  <text x="515" y="367" text-anchor="middle" font-size="10" font-weight="bold" fill="#166534">Yes</text>
+
+  <rect x="570" y="350" width="120" height="50" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="630" y="371" text-anchor="middle" font-size="11" fill="#1e3a5f">Verify ID,</text>
+  <text x="630" y="387" text-anchor="middle" font-size="11" fill="#1e3a5f">complete sale</text>
+
+  <!-- No -> refuse -->
+  <line x1="240" y1="375" x2="150" y2="375" stroke="#1e3a5f" stroke-width="1.5" marker-end="url(#flowArr)"/>
+  <text x="195" y="367" text-anchor="middle" font-size="10" font-weight="bold" fill="#b91c1c">No</text>
+
+  <polygon points="40,355 155,355 135,395 20,395" fill="#ede9fe" stroke="#5b21b6" stroke-width="1.5"/>
+  <text x="80" y="379" text-anchor="middle" font-size="11" fill="#3b0764">OUTPUT refuse</text>
+
+  <!-- All branches converge to END -->
+  <line x1="630" y1="265" x2="630" y2="470" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="630" y1="400" x2="630" y2="470" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="80" y1="395" x2="80" y2="470" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="80" y1="470" x2="630" y2="470" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="360" y1="470" x2="360" y2="500" stroke="#1e3a5f" stroke-width="1.5" marker-end="url(#flowArr)"/>
+
+  <ellipse cx="360" cy="520" rx="60" ry="22" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.5"/>
+  <text x="360" y="525" text-anchor="middle" font-size="12" font-weight="bold" fill="#7f1d1d">END</text>
+</svg>
+
+<p>The diamonds are the result of logical thinking; the rectangles are the result of procedural thinking; the parallelograms are the result of thinking ahead about inputs and outputs. Even this small diagram uses three of the five elements at once.</p>
+
+<h3>Truth Tables and Combined Conditions</h3>
+
+<p>Decision points often combine multiple Boolean expressions with <code>AND</code>, <code>OR</code> and <code>NOT</code>. Thinking logically includes reasoning about their interaction. Consider a login routine that permits access only when <strong>credentials are correct AND the account is not locked AND (the user is on the office network OR they have two-factor enabled)</strong>. A truth table lists each combination and the resulting action, and is often the fastest way to see that a chained set of <code>if</code> statements has a missing case or a redundant one.</p>
+
+<h3>Procedural vs Logical &mdash; the Distinction</h3>
+
+<table>
+    <tr><th>Thinking procedurally</th><th>Thinking logically</th></tr>
+    <tr><td>What steps and in what order?</td><td>Under what conditions does each step execute?</td></tr>
+    <tr><td>Sequence, sub-procedures, reuse</td><td>Boolean tests, branches, truth tables</td></tr>
+    <tr><td>Produces function bodies and call graphs</td><td>Produces <code>if</code>-statements, decision trees, guard clauses</td></tr>
+    <tr><td>"First validate, then save, then notify."</td><td>"Save only if validation passed AND user has write permission."</td></tr>
+</table>
+
+<div class="exam-tip">Do not conflate logical thinking with "thinking in a sensible order" &mdash; that is procedural. Logical thinking specifically concerns <strong>Boolean conditions and the branches they create</strong>. When answering OCR questions, point at a specific decision ("the program must decide whether ...") to demonstrate logical thinking.</div>
+
+<h2>2.1.5 Thinking Concurrently</h2>
+
+<div class="definition">
+    <strong>Thinking concurrently</strong> is identifying which parts of a problem can be carried out <strong>at the same time (in parallel)</strong> rather than strictly one after another (sequentially), and designing the solution so hardware can exploit that parallelism.
+</div>
+
+<h3>Why Concurrency Matters</h3>
+
+<p>For decades, CPUs got faster by raising the clock frequency of a single core. Since the mid-2000s this has plateaued due to heat and power limits, and performance gains have come instead from <strong>more cores</strong>. Modern hardware is concurrent by default:</p>
+<ul>
+    <li><strong>Multi-core CPUs</strong>: desktops have 4&ndash;32 cores, servers 64+.</li>
+    <li><strong>GPUs</strong>: thousands of simple cores executing the same instruction on different data (SIMD / SIMT).</li>
+    <li><strong>Cloud compute farms</strong>: tens of thousands of machines cooperating on a single job (MapReduce, Spark).</li>
+    <li><strong>Real-time systems</strong>: a car's engine controller must read several sensors simultaneously.</li>
+    <li><strong>Interactive UIs</strong>: the UI thread must stay responsive while background work runs.</li>
+</ul>
+
+<p>Software that does not think concurrently cannot exploit this hardware &mdash; it will run at single-core speed on a 16-core machine.</p>
+
+<h3>Serial vs Parallel Execution</h3>
+
+<!-- Serial vs parallel execution timeline -->
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Serial vs Parallel Execution &mdash; Four Tasks</text>
+
+  <!-- Serial -->
+  <text x="60" y="70" font-size="12" font-weight="bold" fill="#1e3a5f">Serial (1 core)</text>
+
+  <rect x="60" y="80" width="120" height="30" fill="#93c5fd" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="120" y="100" text-anchor="middle" font-size="11" fill="#1e3a5f">Task A</text>
+
+  <rect x="180" y="80" width="120" height="30" fill="#86efac" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="240" y="100" text-anchor="middle" font-size="11" fill="#1e3a5f">Task B</text>
+
+  <rect x="300" y="80" width="120" height="30" fill="#fcd34d" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="360" y="100" text-anchor="middle" font-size="11" fill="#1e3a5f">Task C</text>
+
+  <rect x="420" y="80" width="120" height="30" fill="#f9a8d4" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="480" y="100" text-anchor="middle" font-size="11" fill="#1e3a5f">Task D</text>
+
+  <line x1="60" y1="125" x2="620" y2="125" stroke="#111827" stroke-width="1.5" marker-end="url(#flowArr)"/>
+  <text x="540" y="100" font-size="10" fill="#6b7280">total = 4t</text>
+  <text x="620" y="140" text-anchor="end" font-size="10" fill="#374151">time &rarr;</text>
+
+  <!-- Parallel -->
+  <text x="60" y="190" font-size="12" font-weight="bold" fill="#1e3a5f">Parallel (4 cores)</text>
+
+  <rect x="60" y="200" width="120" height="28" fill="#93c5fd" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="120" y="219" text-anchor="middle" font-size="11" fill="#1e3a5f">Core 1: Task A</text>
+
+  <rect x="60" y="232" width="120" height="28" fill="#86efac" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="120" y="251" text-anchor="middle" font-size="11" fill="#1e3a5f">Core 2: Task B</text>
+
+  <rect x="60" y="264" width="120" height="28" fill="#fcd34d" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="120" y="283" text-anchor="middle" font-size="11" fill="#1e3a5f">Core 3: Task C</text>
+
+  <rect x="60" y="296" width="120" height="28" fill="#f9a8d4" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="120" y="315" text-anchor="middle" font-size="11" fill="#1e3a5f">Core 4: Task D</text>
+
+  <line x1="60" y1="340" x2="620" y2="340" stroke="#111827" stroke-width="1.5" marker-end="url(#flowArr)"/>
+  <text x="220" y="260" font-size="11" font-weight="bold" fill="#166534">total = 1t (ideal)</text>
+
+  <!-- time markers -->
+  <line x1="180" y1="335" x2="180" y2="345" stroke="#111827" stroke-width="1"/>
+  <text x="180" y="357" text-anchor="middle" font-size="9" fill="#374151">t</text>
+  <line x1="300" y1="335" x2="300" y2="345" stroke="#111827" stroke-width="1"/>
+  <text x="300" y="357" text-anchor="middle" font-size="9" fill="#374151">2t</text>
+  <line x1="420" y1="335" x2="420" y2="345" stroke="#111827" stroke-width="1"/>
+  <text x="420" y="357" text-anchor="middle" font-size="9" fill="#374151">3t</text>
+  <line x1="540" y1="335" x2="540" y2="345" stroke="#111827" stroke-width="1"/>
+  <text x="540" y="357" text-anchor="middle" font-size="9" fill="#374151">4t</text>
+</svg>
+
+<p>The idealised speed-up is linear in the number of cores. In practice, few problems scale that well &mdash; some work cannot be parallelised.</p>
+
+<h3>Worked Example &mdash; Image Filtering is "Embarrassingly Parallel"</h3>
+
+<p>Applying a brightness filter to a 4000 &times; 3000 photograph means running the same tiny computation on 12 million pixels. The pixels do not depend on each other, so the image can be divided into (say) 16 tiles and each tile given to a different core. When every core finishes its tile, the image is done. This is called an <strong>embarrassingly parallel</strong> workload: almost no coordination is needed between workers.</p>
+
+<p>GPUs go further, dedicating thousands of lanes to such workloads and completing an entire image filter in milliseconds. The same pattern powers deep-learning training (matrix multiplications), ray-traced rendering (rays are independent) and scientific simulation (grid cells).</p>
+
+<h3>Amdahl's Law</h3>
+
+<div class="definition">
+    <strong>Amdahl's Law</strong> states that the maximum speed-up from parallelising a program is limited by the fraction of the work that <em>must</em> remain serial. If a fraction <em>s</em> of the work is serial and (1&minus;<em>s</em>) can be parallelised over <em>n</em> processors, the best-case speed-up is <code>1 / (s + (1 &minus; s)/n)</code>.
+</div>
+
+<p>The key consequence: no matter how many cores you add, if 10% of the program is inherently serial, you cannot get more than a 10&times; speed-up. Thinking concurrently therefore means not only identifying parallel parts but also <strong>minimising the serial fraction</strong>.</p>
+
+<table>
+    <tr><th>Serial fraction s</th><th>Max speed-up (n &rarr; &infin;)</th><th>Speed-up at n = 16</th></tr>
+    <tr><td>0%</td><td>&infin;</td><td>16&times; (ideal)</td></tr>
+    <tr><td>5%</td><td>20&times;</td><td>~9.1&times;</td></tr>
+    <tr><td>10%</td><td>10&times;</td><td>~6.4&times;</td></tr>
+    <tr><td>50%</td><td>2&times;</td><td>~1.9&times;</td></tr>
+</table>
+
+<h3>Task Parallelism vs Data Parallelism</h3>
+
+<p>Two distinct patterns of concurrency appear in OCR-level examples:</p>
+<ul>
+    <li><strong>Data parallelism</strong>: the same operation applied to many items of data simultaneously (e.g. the image filter across pixels, or a spreadsheet recalculating 100,000 cells with the same formula). Ideal for GPUs and SIMD instructions.</li>
+    <li><strong>Task parallelism</strong>: different operations running at the same time, each doing its own work (e.g. the UI thread, a network thread, a logging thread, and an autosave thread in the same editor application). Ideal for multi-core CPUs.</li>
+</ul>
+
+<p>Identifying which pattern fits a workload is part of thinking concurrently. Data parallelism scales almost linearly up to huge core counts when the work is truly independent; task parallelism rarely scales past a handful of cores but keeps interactive programs responsive.</p>
+
+<h3>Challenges of Concurrency</h3>
+
+<p>Parallelism introduces problems that sequential programs never have:</p>
+
+<table>
+    <tr><th>Challenge</th><th>What it is</th><th>Mitigation (concept only)</th></tr>
+    <tr><td><strong>Race condition</strong></td><td>Two threads read/write a shared variable in an interleaving that produces an incorrect result.</td><td>Protect shared state using a <strong>mutex</strong> (mutual-exclusion lock) so only one thread accesses it at a time.</td></tr>
+    <tr><td><strong>Deadlock</strong></td><td>Two threads each hold a resource the other needs and neither can proceed.</td><td>Acquire locks in a consistent global order; use timeouts.</td></tr>
+    <tr><td><strong>Shared resource contention</strong></td><td>Many threads queue for the same lock / disk / network, throttling throughput.</td><td>Partition the data so each thread owns its own shard; use lock-free structures.</td></tr>
+    <tr><td><strong>Need for synchronisation</strong></td><td>One thread must wait until another finishes producing data.</td><td><strong>Semaphores</strong>, condition variables, barriers, producer/consumer queues.</td></tr>
+    <tr><td><strong>Non-determinism</strong></td><td>Two runs with the same input can schedule threads differently and produce different results or bugs.</td><td>Keep shared state minimal; prefer message-passing.</td></tr>
+</table>
+
+<p>OCR requires only a conceptual awareness of these at 2.1 depth &mdash; naming them correctly is enough. Implementation of mutexes and semaphores is beyond this topic.</p>
+
+<h3>Worked Example &mdash; Rendering an Animation</h3>
+
+<p>Imagine an animation studio rendering a 10-second clip at 24 frames per second &mdash; 240 frames, each taking five minutes on a single core.</p>
+
+<ul>
+    <li><strong>Serial approach</strong>: 240 &times; 5 min = 20 hours of wall-clock time.</li>
+    <li><strong>Parallel approach</strong>: the frames are independent (each computed from the same scene description). Distribute them across a render farm of 240 cores: in principle ~5 minutes of wall-clock time, plus a small coordination overhead.</li>
+    <li><strong>Interactive use</strong>: the animator's preview window runs on the <strong>main thread</strong> (so it stays responsive to mouse input); rendering runs on background worker threads. The main thread periodically polls for completed frames and updates the UI.</li>
+</ul>
+
+<p>This is a textbook case of thinking concurrently: spotting a naturally independent workload (one frame does not depend on another), mapping it onto parallel hardware, and keeping the user-facing work on a thread that is never blocked.</p>
+
+<div class="exam-tip">When asked whether a task can be parallelised, ask two questions: (1) <em>Are the sub-tasks independent?</em> (no data flows between them) and (2) <em>Can the hardware actually run them in parallel?</em>. If yes to both, it is a candidate for concurrent design. If sub-tasks depend on each other's output, the problem is inherently sequential.</div>
+
+<h2>Connections Between the Five Elements</h2>
+
+<p>The five elements are not steps taken in order; they are lenses a developer applies simultaneously. A real design session shifts between them constantly.</p>
+
+<!-- Five elements overlap / combined diagram -->
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">The Five Elements Combine in Every Good Design</text>
+
+  <!-- central circle -->
+  <circle cx="360" cy="240" r="70" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="360" y="235" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">Good</text>
+  <text x="360" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">Solution</text>
+
+  <!-- five outer circles arranged in pentagon -->
+  <!-- top: Abstractly -->
+  <circle cx="360" cy="100" r="65" fill="#dbeafe" stroke="#2563eb" stroke-width="2" opacity="0.85"/>
+  <text x="360" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Abstractly</text>
+  <text x="360" y="112" text-anchor="middle" font-size="9" fill="#374151">remove irrelevant detail</text>
+
+  <!-- top-right: Ahead -->
+  <circle cx="555" cy="200" r="65" fill="#dcfce7" stroke="#166534" stroke-width="2" opacity="0.85"/>
+  <text x="555" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">Ahead</text>
+  <text x="555" y="212" text-anchor="middle" font-size="9" fill="#374151">anticipate future needs</text>
+
+  <!-- bottom-right: Procedurally -->
+  <circle cx="495" cy="395" r="65" fill="#ede9fe" stroke="#5b21b6" stroke-width="2" opacity="0.85"/>
+  <text x="495" y="390" text-anchor="middle" font-size="12" font-weight="bold" fill="#3b0764">Procedurally</text>
+  <text x="495" y="407" text-anchor="middle" font-size="9" fill="#374151">steps &amp; decomposition</text>
+
+  <!-- bottom-left: Logically -->
+  <circle cx="225" cy="395" r="65" fill="#fce7f3" stroke="#be185d" stroke-width="2" opacity="0.85"/>
+  <text x="225" y="390" text-anchor="middle" font-size="12" font-weight="bold" fill="#831843">Logically</text>
+  <text x="225" y="407" text-anchor="middle" font-size="9" fill="#374151">decisions &amp; branches</text>
+
+  <!-- top-left: Concurrently -->
+  <circle cx="165" cy="200" r="65" fill="#fee2e2" stroke="#b91c1c" stroke-width="2" opacity="0.85"/>
+  <text x="165" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#7f1d1d">Concurrently</text>
+  <text x="165" y="212" text-anchor="middle" font-size="9" fill="#374151">parallel opportunities</text>
+
+  <!-- connecting lines from each to centre -->
+  <line x1="360" y1="165" x2="360" y2="170" stroke="#d97706" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <line x1="495" y1="215" x2="425" y2="228" stroke="#d97706" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <line x1="445" y1="355" x2="400" y2="300" stroke="#d97706" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <line x1="275" y1="355" x2="320" y2="300" stroke="#d97706" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <line x1="225" y1="215" x2="295" y2="228" stroke="#d97706" stroke-width="1.2" stroke-dasharray="3,3"/>
+</svg>
+
+<h2>Mini Case Study &mdash; Designing a Ride-Sharing App</h2>
+
+<p>A start-up is designing an app like Uber or Lyft. A driver opens the app and waits for requests; a rider opens the app, specifies pickup and destination, is shown a fare estimate, is matched to a nearby driver, watches the car approach on a map and pays at the end. We walk through how <strong>all five elements of computational thinking</strong> inform the design.</p>
+
+<h3>(1) Thinking Abstractly</h3>
+
+<p>The design team models only the entities that matter: <strong>Rider</strong>, <strong>Driver</strong>, <strong>Vehicle</strong>, <strong>Trip</strong>, <strong>Location</strong>, <strong>Payment</strong>. The city's actual road network is abstracted into a weighted graph of junctions and road segments &mdash; just as the Tube map abstracts real tunnels. Traffic is represented by time-varying edge weights. Irrelevant detail (building colour, street names, weather) is dropped. A <strong>data abstraction</strong> is introduced so the rest of the system can ask "compute fare for trip T" without knowing whether the pricing engine uses a lookup table, a regression model or a surge multiplier.</p>
+
+<h3>(2) Thinking Ahead</h3>
+
+<ul>
+    <li><strong>Inputs/outputs</strong> are specified up-front: rider sends GPS coordinate + destination; server returns list of candidate drivers + ETA + fare; driver accepts/declines.</li>
+    <li><strong>Preconditions</strong>: payment method on file; phone has GPS permission; driver is on-duty and not already on a trip.</li>
+    <li><strong>Caching</strong>: city map tiles are cached on-device (they change rarely); common routes between popular destinations (airport &harr; downtown) are precomputed so fare estimates appear instantly.</li>
+    <li><strong>Edge cases</strong>: no driver available within 20 minutes; GPS jitter; rider cancels mid-trip; driver loses signal inside a tunnel; two riders hit "Book" for the last nearby car at the same instant.</li>
+    <li><strong>Scalability</strong>: the matching service is designed <em>stateless</em> from day one so it can be horizontally scaled as the city grows.</li>
+</ul>
+
+<h3>(3) Thinking Procedurally</h3>
+
+<p>The overall flow is decomposed top-down:</p>
+<pre>
+Ride-sharing app
+    Rider app
+        Location + destination entry
+        Fare estimate display
+        Trip tracking UI
+        In-app payment
+    Driver app
+        Availability toggle
+        Incoming request UI
+        Navigation
+    Backend
+        Matching service         (rider requests &rarr; driver assignments)
+        Pricing service          (compute fare given distance, time, demand)
+        Tracking service         (real-time GPS from driver &rarr; rider)
+        Payment service          (card tokenisation, authorisation, settlement)
+        Account / auth service
+</pre>
+<p>Each leaf is a candidate for an independent team or microservice. <strong>Bottom-up reuse</strong> appears at the leaves: the payment service uses an existing payment gateway library rather than re-implementing card handling.</p>
+
+<h3>(4) Thinking Logically</h3>
+
+<p>Hundreds of decision points are identified. Examples:</p>
+<ul>
+    <li>Is the rider's payment method valid? If no &rarr; block booking.</li>
+    <li>Is surge pricing active in this area right now? If yes &rarr; apply multiplier.</li>
+    <li>Are there drivers within 2&nbsp;km? If no, try 5&nbsp;km. If no, show "no drivers available".</li>
+    <li>Did the driver accept within 15&nbsp;s? If no &rarr; offer the request to the next driver.</li>
+    <li>Has the trip actually ended at the destination? Combine GPS proximity AND driver tap on "end trip" to avoid accidental endings.</li>
+</ul>
+<p>Each of these becomes a Boolean test in the matching / pricing / trip state machines.</p>
+
+<h3>(5) Thinking Concurrently</h3>
+
+<ul>
+    <li><strong>Per-city sharding</strong>: the matching service for London runs independently of the one for Paris, so load in one city does not slow the other.</li>
+    <li><strong>Parallel driver search</strong>: when a rider requests, the server queries many candidate drivers in parallel rather than one at a time.</li>
+    <li><strong>Concurrent UI thread</strong>: the rider's map updates every second with the driver's GPS position <em>while</em> the user can still interact with buttons, because network I/O runs on a background thread.</li>
+    <li><strong>Pricing in parallel</strong>: distance, time and surge components are computed by independent workers and combined; none depends on the others' output.</li>
+    <li><strong>Serial bottleneck</strong>: payment authorisation is inherently serial per trip (you cannot charge before the trip ends), which Amdahl's Law warns limits the overall speed-up of a trip-completion workflow.</li>
+</ul>
+
+<h3>How the five lenses interact</h3>
+
+<table>
+    <tr><th>Design decision</th><th>Thinking modes applied</th></tr>
+    <tr><td>Model city as a weighted graph</td><td>Abstractly (remove irrelevant detail)</td></tr>
+    <tr><td>Cache common airport routes</td><td>Ahead (reusability); Abstractly (functional abstraction behind "getFare")</td></tr>
+    <tr><td>Split backend into services</td><td>Procedurally (decomposition); Concurrently (services run on separate hosts)</td></tr>
+    <tr><td>"Offer to next driver after 15&nbsp;s"</td><td>Logically (decision point); Ahead (edge case: driver does not respond)</td></tr>
+    <tr><td>Update map on UI thread while network runs in background</td><td>Concurrently; Procedurally (two cooperating sequences)</td></tr>
+    <tr><td>Pricing components computed by parallel workers</td><td>Concurrently; Procedurally (sub-procedures per component)</td></tr>
+    <tr><td>Stateless matching service for scale</td><td>Ahead (scalability); Abstractly (hides request state in shared store)</td></tr>
+</table>
+
+<p>No single row uses only one element. Real software engineering is <strong>the disciplined simultaneous use of all five</strong> &mdash; which is why OCR groups them together under 2.1.</p>
+
+<h3>Why the Five-Elements Framework is Valuable</h3>
+
+<p>Novice programmers often see only one element at a time &mdash; they leap to "thinking procedurally" and write code that works for their own test data but fails on edge cases (no thinking ahead), duplicates logic (no abstraction), tangles its <code>if</code> branches (weak logical thinking) and blocks the UI while waiting for the network (no concurrent thinking). Practising all five lenses in combination is what distinguishes a competent software engineer from a hobbyist, and it is exactly what the 2.1 specification is trying to develop.</p>
+
+<h2>Summary Table of the Five Elements</h2>
+
+<table>
+    <tr><th>Element</th><th>Core question it answers</th><th>Key techniques</th><th>Common exam trap</th></tr>
+    <tr><td>Thinking abstractly</td><td>What detail can I ignore?</td><td>Representational, procedural, data, functional abstraction; levels of abstraction</td><td>Confusing with decomposition</td></tr>
+    <tr><td>Thinking ahead</td><td>What inputs, outputs and future conditions must I prepare for?</td><td>I/O spec, preconditions, caching / memoisation, edge cases, scalability</td><td>Forgetting it is about anticipation, not just planning the code</td></tr>
+    <tr><td>Thinking procedurally</td><td>What steps, in what order, and what reusable sub-procedures?</td><td>Decomposition, top-down stepwise refinement, bottom-up composition</td><td>Listing steps without noting reusable sub-procedures</td></tr>
+    <tr><td>Thinking logically</td><td>Under what conditions do branches of the program run?</td><td>Boolean conditions, decision trees, flowcharts</td><td>Confusing with procedural (order vs condition)</td></tr>
+    <tr><td>Thinking concurrently</td><td>What can run at the same time?</td><td>Parallel sub-tasks, synchronisation (concept), Amdahl's Law, race/deadlock awareness</td><td>Assuming anything can be parallelised; ignoring the serial fraction</td></tr>
+</table>
+
+<h2>Exam Confidence Points</h2>
+
+<ul>
+    <li>Always <strong>define the term</strong> before applying it (one-mark hook in most 2.1 questions).</li>
+    <li>For <strong>abstraction</strong> questions, state both what is removed and what is preserved, and say why that suits the user.</li>
+    <li>Distinguish <strong>abstraction (remove detail)</strong> from <strong>decomposition (break into parts)</strong> explicitly if both are on the paper.</li>
+    <li>For <strong>thinking ahead</strong>, use the OCR sub-list (inputs/outputs, preconditions, caching, edge cases) as a hidden mark scheme.</li>
+    <li>Use the shape conventions when drawing flowcharts &mdash; diamonds for decisions, parallelograms for I/O. Label every decision exit with Yes/No.</li>
+    <li>For <strong>concurrency</strong>, mention <strong>Amdahl's Law</strong> and at least one named hazard (race, deadlock, shared resource). Name a realistic hardware context (multi-core CPU, GPU, render farm).</li>
+    <li>In extended-response questions, show how <strong>multiple thinking modes</strong> apply to the same example &mdash; examiners reward breadth as well as depth.</li>
+    <li>Drawing a <strong>small diagram</strong> (decomposition tree, flowchart, timeline) takes 30 seconds and often secures a mark a paragraph would not.</li>
+    <li>Use precise vocabulary: <em>representational abstraction</em>, <em>stepwise refinement</em>, <em>precondition</em>, <em>memoisation</em>, <em>race condition</em>, <em>embarrassingly parallel</em>. These are the terms mark schemes accept.</li>
+    <li>Never write "computational thinking means thinking like a computer" &mdash; it means formulating problems <strong>so a computer can solve them</strong>, which is the opposite emphasis.</li>
+</ul>
+
+</div>
+</body>
+</html>
